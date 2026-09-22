@@ -3,10 +3,9 @@
 #include "e4/e4_globals.hpp"
 
 // 0x4A3020
-HRESULT IStream::Read(IStream * pstm, void * pv, ULONG cb)
+void IStream::Read(IStream * pstm, void * pv, ULONG cb)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-HRESULT __stdcall IStream_Read(IStream *pstm, void *pv, ULONG cb)
 {
   HRESULT result; // eax
 

@@ -4,10 +4,9 @@
 #include "e4/classes/Math_e4.hpp"
 
 // 0x517440
-int Color::ConvertToRGB(int a2)
+void Color::ConvertToRGB(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Color_ConvertToRGB(unsigned __int8 *this, int a2)
 {
   __int16 v9; // [esp+10h] [ebp-20h]
   int v2 = this->q008; /*0x51744b*/
@@ -37,7 +36,6 @@ void Color_ConvertToRGB(unsigned __int8 *this, int a2)
 unsigned char * Color::Lerp2(int a2, int a3, float a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_BYTE *__thiscall sub_661020(_BYTE *this, int a2, int a3, float a4)
 {
 
   double v4 = 1.0 - a4; /*0x661028*/
@@ -63,7 +61,6 @@ _BYTE *__thiscall sub_661020(_BYTE *this, int a2, int a3, float a4)
 unsigned char * Color::ScaleRGB(unsigned char * a2, float a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_BYTE *__thiscall Color_ScaleRGB(_BYTE *this, unsigned __int8 *a2, float a3)
 {
 
   double v4 = (double)*a2 * a3; /*0x6611a4*/
@@ -108,7 +105,6 @@ _BYTE *__thiscall Color_ScaleRGB(_BYTE *this, unsigned __int8 *a2, float a3)
 unsigned char Color::Lerp(ObjectClass * aP1, unsigned char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Color::Lerp(unsigned __int8 *this, ObjectClass *aP1, unsigned __int8 *a2)
 {
   unsigned __int8 v3; // bl
   unsigned __int8 v4; // al
@@ -130,7 +126,6 @@ void Color::Lerp(unsigned __int8 *this, ObjectClass *aP1, unsigned __int8 *a2)
 unsigned int * Color::RGBFromFloat(IUnknown * aP1, float a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall Color::RGBFromFloat(_DWORD *this, IUnknown *aP1, float a3)
 {
 
   double v3 = 1.0 - a3; /*0x75f547*/

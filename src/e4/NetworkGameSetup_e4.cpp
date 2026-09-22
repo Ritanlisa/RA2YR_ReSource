@@ -3,10 +3,9 @@
 #include "e4/e4_globals.hpp"
 
 // 0x5B9750
-HWND NetworkGameSetup::ReadRulesUnknown()
+void NetworkGameSetup::ReadRulesUnknown()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-HWND __thiscall sub_5B9750(int this)
 {
   HWND result; // eax
 

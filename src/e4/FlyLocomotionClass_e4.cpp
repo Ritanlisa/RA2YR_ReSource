@@ -4,10 +4,9 @@
 #include "e4/classes/House_e4.hpp"
 
 // 0x4CC9A0
-int FlyLocomotionClass::LocomotionClass()
+void FlyLocomotionClass::LocomotionClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void FlyLocomotionClass::LocomotionClass(int this)
 {
 
   LocomotionClass::Init((_DWORD *)this); /*0x4cc9a3*/
@@ -42,7 +41,6 @@ void FlyLocomotionClass::LocomotionClass(int this)
 void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
 {
   int i; // edi
   int v7; // eax

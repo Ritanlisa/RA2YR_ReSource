@@ -11,10 +11,9 @@
 #include "e4/classes/VectorClass_ptr_SuperClass_e4.hpp"
 
 // 0x660840
-bool LoadGame::LoadTriggerEvents()
+void LoadGame::LoadTriggerEvents()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_660840(void *this)
 {
   int v12; // [esp+20h] [ebp-8h] BYREF
   int v13; // [esp+24h] [ebp-4h] BYREF
@@ -81,10 +80,9 @@ void sub_660840(void *this)
 }
 
 // 0x660F10
-char LoadGame::RemoveItem(int a2)
+void LoadGame::RemoveItem(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_660F10(_DWORD *this, int a2)
 {
 
   AbstractClass *v2 = this->q010; /*0x660f10*/
@@ -107,10 +105,9 @@ void sub_660F10(_DWORD *this, int a2)
 }
 
 // 0x67E730
-char LoadGame::Start()
+void LoadGame::Start()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void LoadGame::Start(LPSTREAM this)
 {
   char result; // al
   int *Viewport; // edx
@@ -923,10 +920,9 @@ LABEL_222:
 }
 
 // 0x69B5B0
-bool LoadGame::LoadBlock300(int a2)
+void LoadGame::LoadBlock300(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_69B5B0(_DWORD *this, int a2)
 {
   bool result; // al
 
@@ -947,10 +943,9 @@ void sub_69B5B0(_DWORD *this, int a2)
 }
 
 // 0x751710
-int LoadGame::RestoreAudioState()
+void LoadGame::RestoreAudioState()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_751710(void *this)
 {
   int *Next; // esi
   int NextAlt; // ebx
@@ -1032,10 +1027,9 @@ void sub_751710(void *this)
 }
 
 // 0x7533F0
-int LoadGame::LoadMagicAndAudio()
+void LoadGame::LoadMagicAndAudio()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_7533F0(void *this)
 {
   int result; // eax
 

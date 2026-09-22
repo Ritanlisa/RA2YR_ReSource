@@ -9,10 +9,9 @@
 #include "e4/classes/Voxel_e4.hpp"
 
 // 0x411580
-BOOL Surface::IsLocked()
+void Surface::IsLocked()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Surface_IsLocked(_DWORD *this)
 {
   return this->q00C != 0; /*0x41158a*/
 }
@@ -22,7 +21,6 @@ void Surface_IsLocked(_DWORD *this)
 unsigned int * Surface::CopyRect(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall Surface::CopyRect(_DWORD *this, ObjectClass *aP1)
 {
   ObjectClass *result; // eax
   ObjectClass *v7; // ecx
@@ -205,10 +203,9 @@ LABEL_16:
 
 // 0x626C60
 namespace gamemd {
-int sub_626C60()
+void sub_626C60()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_626C60()
 {
 
   if ( g_FileExtensionState ) /*0x626c68*/
@@ -298,10 +295,9 @@ void sub_626C60()
 } // namespace gamemd
 
 // 0x641DB0
-char Surface::LoadToSurfaceSHP(char * Source)
+void Surface::LoadToSurfaceSHP(char * Source)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void SHP_LoadToSurface(char **this, char *Source)
 {
   _BYTE v10[12]; // [esp+70h] [ebp-14h] BYREF
   int v11; // [esp+7Ch] [ebp-8h]
@@ -354,10 +350,9 @@ LABEL_11:
 }
 
 // 0x655250
-int Surface::RenderRadar()
+void Surface::RenderRadar()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Surface::RenderRadar()
 {
   RadarClass *v7; // ecx
   RadarClass *v17; // ecx
@@ -535,10 +530,9 @@ LABEL_33:
 }
 
 // 0x6BA3E0
-char Surface::TileBlit(INIClass * aP0, ObjectClass * aP1, int a3, int a4, int a5)
+void Surface::TileBlit(INIClass * aP0, ObjectClass * aP1, int a3, int a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Surface::TileBlit(INIClass *aP0, ObjectClass *aP1, int a3, int a4, int a5)
 {
   ObjectClass *v5; // ebx
   ObjectClass *v10; // esi
@@ -609,10 +603,9 @@ void Surface::TileBlit(INIClass *aP0, ObjectClass *aP1, int a3, int a4, int a5)
 }
 
 // 0x6BA580
-char Surface::BlitTransparent(int * a0, ObjectClass * aP1, int a3, ObjectClass * aP3)
+void Surface::BlitTransparent(int * a0, ObjectClass * aP1, int a3, ObjectClass * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Surface::BlitTransparent(int *a0, ObjectClass *aP1, int a3, ObjectClass *aP3)
 {
   int *a0a; // [esp+28h] [ebp+4h]
 
@@ -669,10 +662,9 @@ void Surface::BlitTransparent(int *a0, ObjectClass *aP1, int a3, ObjectClass *aP
 }
 
 // 0x6BA690
-char Surface::AlphaBlend(unsigned int * a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
+void Surface::AlphaBlend(unsigned int * a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Surface_AlphaBlend(_DWORD *a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
   __int16 v33; // cx
   __int16 v34; // ax
@@ -924,7 +916,6 @@ LABEL_43:
 void Surface::BlitTechnoTo(short * a1, TechnoClass * aP2, TechnoClass * aP3, TechnoClass * aP4, AbstractClass * aP5, TechnoClass * aP6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Surface::BlitTechnoTo(__int16 *a1, TechnoClass *aP2, TechnoClass *aP3, TechnoClass *aP4, AbstractClass *aP5, TechnoClass *aP6)
 {
   unsigned __int16 v8; // bp
   unsigned __int16 v9; // bx
@@ -1073,7 +1064,6 @@ void Surface::BlitTechnoTo(__int16 *a1, TechnoClass *aP2, TechnoClass *aP3, Tech
 void Surface::RenderToSurfaceVoxel(unsigned int * a2, int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Surface::RenderToSurfaceVoxel(int this, _DWORD *a2, int *a3)
 {
   CCINIClass *v16; // ecx
   unsigned __int16 *v20; // ebx
@@ -1382,10 +1372,9 @@ void Surface::RenderToSurfaceVoxel(int this, _DWORD *a2, int *a3)
 }
 
 // 0x769330
-int Surface::PixelToIndex(unsigned int * a2)
+void Surface::PixelToIndex(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Surface_PixelToIndex(int this, _DWORD *a2)
 {
 
   int v3 = *a2 - *(_DWORD *)(this + 68); /*0x769342*/
@@ -1407,10 +1396,9 @@ void Surface_PixelToIndex(int this, _DWORD *a2)
 }
 
 // 0x7BD690
-int Surface::CommitSurfaceBuffersAudio()
+void Surface::CommitSurfaceBuffersAudio()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_7BD690(int this)
 {
   unsigned __int16 *v13; // edi
   unsigned __int16 *v15; // edi

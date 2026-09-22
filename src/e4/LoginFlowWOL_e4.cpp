@@ -6,10 +6,9 @@
 
 // 0x786EF0
 namespace gamemd {
-char sub_786EF0()
+void sub_786EF0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_786EF0()
 {
   char Buffer[260]; // [esp+4h] [ebp-104h] BYREF
 

@@ -489,7 +489,6 @@ namespace gamemd { bool BufferIOFileClass::Write() {
 // 0x431F70
 namespace gamemd { bool BufferIOFileClass::Open() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void BufferIOFileClass::Open(int this, CDFileClass *aP1)
 {
   CDFileClass *v4; // eax
   if ( *(_BYTE *)(this + 41) ) /*0x431f76*/
@@ -566,7 +565,6 @@ LABEL_19:
 // 0x432050
 namespace gamemd { int FileClass::BufferedWriter() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-DWORD __thiscall FileClass::BufferedWriter(int *this, CCFileClass *aP1, DWORD nNumberOfBytesToWrite)
 {
   DWORD result; // eax
   AbstractClass *v8; // ebp
@@ -712,7 +710,6 @@ LABEL_38:
 // 0x4322A0
 namespace gamemd { int FileClass::BufferedReader() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-DWORD __thiscall FileClass::BufferedReader(int this, BufferIOFileClass *aP1, DWORD nNumberOfBytesToRead)
 {
   BlowStraw *v4; // ebx
   BlowStraw *v5; // edi
@@ -1038,7 +1035,6 @@ namespace gamemd { BOOL CellClass::HasContent() {
 // 0x4733A0
 namespace gamemd { void CellClass::AddObject(void* aP1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CellClass::AddObject(IUnknown *aP1)
 {
   IUnknown *v2; // esi
   IUnknown *v4; // eax
@@ -1545,7 +1541,6 @@ namespace gamemd { int INIClass::ParseFlagList(void* a1, void* a2, int a3) {
 // 0x475610
 namespace gamemd { int INIClass::SetHouseName(void* aP1, void* a2, void* aP3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void INIClass::SetHouseName(INIClass *aP1, char *a2, INIClass *aP3)
 {
   const char *v5; // edi
   INIClass Source[2]; // [esp+Ch] [ebp-80h] BYREF
@@ -1616,7 +1611,6 @@ namespace gamemd { int INIClass::ReadStringValue(void* a1, void* a2, int a3) {
 // 0x475D70
 namespace gamemd { int INIClass::ReadIntList(int a1, void* a2, void* a3, void* a4, void* a5, int a6, int a7, int a8, int a9, int a10) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void INIClass::ReadIntList(unsigned __int8 ***this, int a2, INIClass *aP2, unsigned __int8 *a3, void **a4, void *a5, int a7, __int16 a8, int a9, int a10, int a11)
 {
   char *i; // eax
   CCINIClass *v12; // esi
@@ -1721,7 +1715,6 @@ namespace gamemd { int ScenarioClass::SaveIntListToINI(void* a1, void* a2, int a
 // 0x476020
 namespace gamemd { int INIClass::ReadExitCellList(int a1, void* a2, void* a3, void* a4, void* a5, int a6, int a7, int a8, int a9, int a10) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void INIClass::ReadExitCellList(unsigned __int8 ***this, int arg0, unsigned __int8 *a2, unsigned __int8 *a3, DynamicVector *aP4, void *a5, int a7, __int16 a8, int a9, int a10, int a11)
 {
   INIClass *v11; // esi
   int ExitCellByName; // eax
@@ -1875,7 +1868,6 @@ namespace gamemd { void* INIClass::GetCoord2(void* a1, void* a2, void* a3, void*
 // 0x4764F0
 namespace gamemd { int INIClass::ReadTechnoTypeList(int a1, void* a2, void* a3, void* a4, void* a5, int a6, int a7, int a8, int a9, int a10) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void INIClass::ReadTechnoTypeList(unsigned __int8 ***this, CCINIClass *aP1, unsigned __int8 *a2, unsigned __int8 *a3, void **a4, void *a5, int a7, __int16 a8, int a9, int a10, int a11)
 {
   CCINIClass *i; // edi
   CCINIClass *v13; // esi
@@ -2001,18 +1993,6 @@ namespace gamemd { int ScenarioClass::SaveTypeNameListToINI(void* a1, void* a2, 
 // 0x4767C0
 namespace gamemd { void* INIClass::ReadSuperWeaponTypeList(void* a1, void* a2, void* a3, void* a4, void* a5, int a6, int a7, int a8, int a9, int a10) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall INIClass::ReadSuperWeaponTypeList(
-        unsigned __int8 ***this,
-        _DWORD *a1,
-        CCINIClass *aP2,
-        CCINIClass *aP3,
-        void **a4,
-        DynamicVector *aP5,
-        int aP1_8,
-        __int16 aP1_12,
-        int aP1_16,
-        int aP1_20,
-        int aP1_24)
 {
   CCINIClass *v11; // esi
   CCINIClass *v12; // edi
@@ -2172,7 +2152,6 @@ namespace gamemd { int INIClass::WriteSuperWeaponList(void* a2, void* a3, int a4
 // 0x476B20
 namespace gamemd { int INIClass::ReadRGBColorList(int a1, void* a2, void* a3, void* a4, void* a5, int a6, int a7, int a8, int a9, int a10) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_476B20(
         unsigned __int8 ***this,
         int a2,
         unsigned __int8 *a3,
@@ -2524,7 +2503,6 @@ namespace gamemd { int CD::SetCurrentInstance() {
 // 0x47AE10
 namespace gamemd { int FileClass::OpenWithCDSearch(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void FileClass::OpenWithCDSearch(IUnknown *aP1)
 {
 
   CCFileClass::SetName(this, aP1); /*0x47ae21*/
@@ -2575,7 +2553,6 @@ namespace gamemd { int CCFileClass::Reopen(void* a1, int a2) {
 // 0x47AF70
 namespace gamemd { int FileClass::FindFirstWithCD() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void FileClass_FindFirstWithCD(char *this)
 {
   HANDLE FirstFileA; // edx
   CHAR FileName[260]; // [esp+10h] [ebp-244h] BYREF
@@ -2745,7 +2722,6 @@ namespace gamemd { void* CellClass::FindInfantry(int a1) {
 // 0x47C620
 namespace gamemd { int CellClass::IsPassable(int a1, int a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CellClass::IsPassable(int this, IUnknown *aP1, IUnknown *aP2, IUnknown *aP3)
 {
   char result; // al
   BombClass *v10; // eax
@@ -2967,7 +2943,6 @@ LABEL_84:
 // 0x47CA80
 namespace gamemd { bool CellClass::DetermineTileType() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CellClass_DetermineTileType(int this)
 {
   int i; // ebx
   int j; // ebx
@@ -3425,7 +3400,6 @@ namespace gamemd { void* CellClass::GetCoords(void* aP1) {
 // 0x4814F0
 namespace gamemd { int CellClass::InitRandomOffsets(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CellClass::InitRandomOffsets(int this, BombClass *aP1, IUnknown *aP2)
 {
   int i; // ebx
   int result; // eax
@@ -3586,7 +3560,6 @@ namespace gamemd { int CellClass::SpawnTiberiumTree(int a1) {
 // 0x4839F0
 namespace gamemd { int CellClass::SaveLoad_Prefix() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CellClass::SaveLoad_Prefix(#378 *this)
 {
   int result; // eax
   int i; // edi
@@ -3742,7 +3715,6 @@ namespace gamemd { int CellClass::ddtor() {
 // 0x485390
 namespace gamemd { int CellClass::GetBridgeBitfield() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CellClass_GetBridgeBitfield(_DWORD *this)
 {
   int i; // edi
 
@@ -3787,7 +3759,6 @@ LABEL_12:
 // 0x485590
 namespace gamemd { void CellClass::ProcessBridgeRepair() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CellClass::ProcessBridgeRepair()
 {
   IUnknown *PlacementRect; // esi
   int *StartCoords; // eax
@@ -4753,7 +4724,6 @@ namespace gamemd { int INIClass::readSection() {
 namespace gamemd { void* ConvertClass::InitTables() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x48ebf0
-_DWORD *__thiscall ConvertClass::InitTables(int this)
 {
   _DWORD *result; // eax
   __int16 v59; // cx
@@ -8631,7 +8601,6 @@ retn
 // 0x4913F0
 namespace gamemd {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ConvertClass::_vt01(int a2, unsigned __int8 *a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
   unsigned __int8 v12; // [esp+14h] [ebp+Ch]
   int v9 = a4; /*0x4913f1*/
@@ -8930,7 +8899,6 @@ namespace gamemd { int CellClass::DestroyOverlay() {
 // 0x4A8270
 namespace gamemd { int CD::CheckDiscPresence(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_4A8270(void *this, int a2)
 {
   int YRCD; // eax
 
@@ -9073,22 +9041,13 @@ namespace gamemd { void* RadarClass::RenderSpySatellite() {
 // 0x4AA440
 namespace gamemd { void* CellClass::FindOpenNeighbor(void* a1, int a2, int a3, int a4, int a5, int a6, int a7) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int *__thiscall CellClass::FindOpenNeighbor(
-        int *this,
-        MouseClass *aP1,
-        MouseClass *aP2,
-        int a4,
-        int a5,
-        int a6,
-        int a7,
-        MouseClass *aP7)
 {
   IUnknown *v9; // ebp
   int *ScreenCenterOffset; // eax
   int v21; // edi
   IUnknown *v22; // eax
   int v23; // eax
-  int v24; // eax
+  bool v24; // eax
   int v25; // kr08_4
   _DWORD *v26; // eax
   int v27; // ecx
@@ -9105,7 +9064,7 @@ int *__thiscall CellClass::FindOpenNeighbor(
   MouseClass *v39; // ebx
   int v40; // ebp
   int v41; // edi
-  int v42; // eax
+  bool v42; // eax
   _DWORD *v43; // eax
   int v44; // ecx
   MapClass *v45; // eax
@@ -9211,7 +9170,7 @@ LABEL_33:
     v16 = v17; /*0x4aa540*/
   int v18 = this->q040; /*0x4aa542*/
   a7 = 2 * v16; /*0x4aa54b*/
-  int v19 = this->q042; /*0x4aa557*/
+  bool v19 = this->q042; /*0x4aa557*/
   int v20 = v14 - 2 * v18; /*0x4aa55d*/
   if ( v20 >= 2 * (v19 + v18) - v14 ) /*0x4aa568*/
     v20 = 2 * (v19 + v18) - v14; /*0x4aa56a*/
@@ -9554,7 +9513,6 @@ namespace gamemd { int TacticalClass::DispatchMode(int a1) {
 // 0x4AAE90
 namespace gamemd { int TacticalClass::HandlePlayerAction(void* a1, int a2, void* a3, int a4, int a5) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TacticalClass::HandlePlayerAction(MouseClass *aP1, MouseClass *aP2, void *a3, int aP3, int aP3_4)
 {
   IUnknown *v6; // ebx
   int v13; // edx
@@ -10954,7 +10912,6 @@ namespace gamemd { int INIClass::ClearSection(int a1, void* a2) {
 // 0x525A60
 namespace gamemd { int INIClass::LoadFile(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void INIClass::LoadFile(CCINIClass *aP1, INIClass *aP2)
 {
   INIClass *v5; // edi
   INIClass *v6; // ebx
@@ -11588,7 +11545,6 @@ namespace gamemd { int INIClass::SaveToPipe(int a1) {
 // 0x526470
 namespace gamemd { int INIClass::WriteToString(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void INIClass::WriteToString(CCINIClass *aP1)
 {
   CCINIClass *v2; // edx
   int j; // ebx
@@ -11779,7 +11735,6 @@ LABEL_34:
 // 0x526A30
 namespace gamemd { int INIClass::FindKey(AbstractClass * aP1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void INIClass::FindKey(AbstractClass *aP1)
 {
   unsigned __int8 *v3; // eax
   CCINIClass *v4; // esi
@@ -11845,7 +11800,6 @@ namespace gamemd { int INIClass::ResetSection() {
 // 0x526D90
 namespace gamemd { void* INIClass::GetStringByIndexEx(void* aP1, void* aP2, int aP3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char **__thiscall INIClass::GetStringByIndexEx(void *this, ObjectClass *aP1, ObjectClass *aP2, ObjectClass *aP3)
 {
   ObjectClass *v4; // ebp
   unsigned __int8 *v6; // eax
@@ -11945,7 +11899,6 @@ namespace gamemd { int INIClass::ReadBase64Data(void* a1, int a2, int a3) {
 // 0x526FB0
 namespace gamemd { int INIClass::GetBase64Data() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void INIClass_GetBase64Data(void *this, char *a2, int a3, size_t Size)
 {
   int i; // ebp
   unsigned __int8 *v15; // eax
@@ -12144,7 +12097,6 @@ namespace gamemd { int INIClass::SetIntFormat(void* a1, void* aP2, int a4, int a
 // 0x5276D0
 namespace gamemd { int INIClass::ReadInt_Overwrite(void* a1, void* a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void INIClass::ReadInt_Overwrite(int this, unsigned __int8 *a1, CCINIClass *aP2, INIClass *aP3)
 {
   unsigned __int8 *v4; // ebp
   CCINIClass *v6; // edx
@@ -12275,7 +12227,6 @@ LABEL_27:
 // 0x527920
 namespace gamemd { int INIClass::ReadGUID_Overwrite(int a1, void* a2, void* a3, int a4, int a5, int a6, int a7) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void INIClass::ReadGUID_Overwrite(int this, int a2, INIClass *aP2, unsigned __int8 *a3, int a5, int a6, int a7, int a8)
 {
   unsigned __int8 *v9; // edx
   int v10; // esi
@@ -12433,12 +12384,6 @@ namespace gamemd { int INIClass::ReadFloat(void* a1, void* a2, void* a3) {
 // 0x527CC0
 namespace gamemd { void* INIClass::ParseValue(void* a1, void* a2, void* a3, void* a4) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int *__thiscall INIClass::ParseValue(
-        int this,
-        CCINIClass *aP1,
-        INIClass *aP2,
-        unsigned __int8 *a3,
-        MouseClass *aP4)
 {
   CCINIClass *v6; // ebx
   CCINIClass *v7; // edx
@@ -12572,7 +12517,6 @@ LABEL_31:
 // 0x527F20
 namespace gamemd { void* INIClass::GetRect(void* a1, void* a2, void* a3, void* a4) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall INIClass::GetRect(int this, MSAnim *aP1, ObjectClass *aP2, CCINIClass *aP3, ObjectClass *aP4)
 {
   ObjectClass *v6; // edi
   unsigned __int8 *v7; // ebx
@@ -12720,7 +12664,6 @@ namespace gamemd { int INIClass::ReadDouble2(void* a1, void* a2, int a3) {
 namespace gamemd { double INIClass::ReadDouble_Overwrite(void* a1, void* a2, double a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // local variable allocation has failed, the output may be wrong!
-void INIClass::ReadDouble_Overwrite(int this, INIClass *aP1, unsigned __int8 *a2, INIClass *aP3)
 {
   INIClass *v4; // ebp
   unsigned __int8 *v6; // edx
@@ -12868,7 +12811,6 @@ namespace gamemd { int INIClass::GetString2(void* a1, void* a2, double a3) {
 // 0x528660
 namespace gamemd { int INIClass::SetString(void* a1, void* a2, void* a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void INIClass::SetString(INIClass *aP1, INIClass *aP2, INIClass *aP3)
 {
   GenericNode *v7; // eax
   GenericNode *v8; // esi
@@ -13063,7 +13005,6 @@ namespace gamemd { int INIClass::SetStringOrEmpty(void* a1, void* a2, void* a3) 
 // 0x528C00
 namespace gamemd { int INIClass::ReadString(void* a1, void* a2, void* a3, int a4) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void INIClass::ReadString(ObjectClass *aP1, ObjectClass *aP2, ReferenceCounted *aP3, int a5)
 {
   CCINIClass *v6; // edi
   unsigned __int8 *v7; // ebx
@@ -13221,7 +13162,6 @@ namespace gamemd { int INIClass::SetWideAsHex(void* a1, void* a2, void* a3) {
 // 0x528F00
 namespace gamemd { int INIClass::ParseValue_Wide() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void INIClass::ParseValue_Wide(char **this, unsigned __int8 *a1, CCINIClass *aP2, wchar_t *Source, CCINIClass *aP4, size_t Count)
 {
   CCINIClass *v7; // edx
   int v8; // esi
@@ -13348,7 +13288,6 @@ LABEL_12:
 // 0x529160
 namespace gamemd { int INIClass::GetStringEx() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void INIClass::GetStringEx(int this, INIClass *aP1, CCINIClass *aP2, CCINIClass *aP3, size_t Count)
 {
   CCINIClass *v6; // edx
   ObjectClass *v8; // eax
@@ -13464,7 +13403,6 @@ LABEL_29:
 // 0x529350
 namespace gamemd { int INIClass::GetCSFString() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void INIClass::GetCSFString(char **this, unsigned __int8 *a2, unsigned __int8 *a3, wchar_t *String, wchar_t *a5, size_t Count)
 {
   unsigned __int8 *v7; // edx
   int v8; // esi
@@ -13602,7 +13540,6 @@ namespace gamemd { int INIClass::ReadBool3(void* a1, void* a2, int a3) {
 // 0x5295F0
 namespace gamemd { int INIClass::ReadBool_Overwrite(void* a1, void* a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void INIClass::ReadBool_Overwrite(int this, unsigned __int8 *a1, CCINIClass *aP2, char a4)
 {
   unsigned __int8 *v4; // ebp
   CCINIClass *v6; // edx
@@ -13740,12 +13677,6 @@ namespace gamemd { int INIEntry::Write2Integers(void* a1, void* a2, void* a3) {
 // 0x529880
 namespace gamemd { void* INIClass::ReadPoint2D_Overwrite(void* a1, void* a2, int a3, void* a4) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int *__thiscall INIClass::ReadPoint2D_Overwrite(
-        _DWORD *this,
-        RandomStruct *aP1,
-        INIClass *aP2,
-        CCINIClass *aP3,
-        RandomStruct *aP4)
 {
   INIClass *v6; // ebx
   Color *v7; // edx
@@ -13834,7 +13765,6 @@ LABEL_18:
 // 0x529A30
 namespace gamemd { void* INIClass::GetCoordPair(void* a1, void* a2, void* a3, void* a4) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall INIClass::GetCoordPair(_DWORD *this, CCINIClass *aP1, ObjectClass *aP2, char **a3, CCINIClass *aP4)
 {
   char **v6; // edi
   int v8; // ebx
@@ -13943,12 +13873,6 @@ namespace gamemd { int INIClass::ReadCoord2(void* a1, void* a2, void* a3) {
 // 0x529CA0
 namespace gamemd { void* INIClass::ReadPoint3D_Overwrite(void* a1, void* a2, int a3, void* a4) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int *__thiscall INIClass::ReadPoint3D_Overwrite(
-        _DWORD *this,
-        CCINIClass *aP1,
-        unsigned __int8 *a2,
-        int aP1_4,
-        _DWORD *a4)
 {
   Color *v6; // ebx
   Color *v7; // edx
@@ -14064,7 +13988,6 @@ namespace gamemd { int INIClass::ReadBool(void* a1, void* a2, void* a3) {
 // 0x52A760
 namespace gamemd { int INIClass::ReadTimeString(void* a1, void* a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void INIClass::ReadTimeString(int this, unsigned __int8 *a1, unsigned __int8 *a2, CCINIClass *aP3)
 {
   Color *v5; // edx
   int v6; // esi
@@ -14254,7 +14177,6 @@ namespace gamemd { void* INIClass::getValue() {
 // 0x52B0A0
 namespace gamemd { int INIClass::setValue(void* a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void INIClass::setValue(int this, _DWORD *a1, CCINIClass *aP2)
 {
   int v5; // ebx
   int v6; // edi
@@ -14383,7 +14305,6 @@ namespace gamemd { int CellClass::GetTerrainFlag(int a1) {
 // 0x54E4D0
 namespace gamemd { int ScenarioClass::UpdateScriptActions() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_54E4D0(int *this)
 {
   int result; // eax
   void *NeighbourContent; // eax
@@ -14485,7 +14406,6 @@ namespace gamemd { int LayerClass::Save(void* a1) {
 // 0x551B90
 namespace gamemd { int LayerClass::Load(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void LayerClass::Load(_DWORD *a2)
 {
   int result; // eax
 
@@ -14681,7 +14601,6 @@ namespace gamemd { int TacticalClass::ScrollView(int a1) {
 // 0x555DA0
 namespace gamemd { int LightConvertClass::Constructor(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void LightConvertClass::Constructor(int this, ConvertClass *aP1, ObjectClass *aP2, int aP3, ObjectClass *aP4, LightConvertClass *aP5, ObjectClass *aP6, char a8, LightConvertClass *aP8, ObjectClass *aP9)
 {
   int v12; // edi
   int v13; // edx
@@ -14974,7 +14893,6 @@ namespace gamemd { void* CellClass::GetScreenCenterOffset(void* a1, void* a2) {
 namespace gamemd { void CellClass::UpdateTerrainAndWaypoints(void* a1, int a2, int a3, int a4) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x565c10
-void CellClass::UpdateTerrainAndWaypoints(int *a2, int jj, char a4, char a5)
 {
   __int16 v8; // si
   int j; // eax
@@ -17691,7 +17609,6 @@ namespace gamemd { int CellClass::CreateBuildingCrater(void* a1) {
 // 0x56D5A0
 namespace gamemd { int CellClass::DetermineTileConnectivity(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-__int16 __thiscall CellClass::DetermineTileConnectivity(int *this, IUnknown *aP1)
 {
   unsigned __int8 *v5; // esi
   unsigned __int8 *v10; // ebp
@@ -17768,7 +17685,6 @@ LABEL_9:
 // 0x570AE0
 namespace gamemd { int CellClass::RecursiveTileUpdate(void* a1, int a2, void* a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CellClass::RecursiveTileUpdate(IUnknown *aP1, int arg4, int *a3)
 {
   _DWORD *v6; // ecx
   int v7; // esi
@@ -18056,7 +17972,6 @@ LABEL_33:
 // 0x571050
 namespace gamemd { int CellClass::ProcessTileChange(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CellClass::ProcessTileChange(IUnknown *aP1)
 {
   IUnknown *v3; // edi
   int i; // ebx
@@ -18278,7 +18193,6 @@ LABEL_64:
 // 0x571490
 namespace gamemd { int CellClass::PropagateTerrainVariant2(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CellClass_PropagateTerrainVariant2(int *this, __int16 *a2)
 {
   _DWORD *v6; // esi
   int v7; // edx
@@ -20379,7 +20293,6 @@ namespace gamemd { int CellClass::ApplyTerrainModTile(int a1) {
 // 0x575220
 namespace gamemd { int CellClass::ApplyCliffMod2(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CellClass_ApplyCliffMod2(_DWORD *this, _DWORD *a2)
 {
   int v6; // eax
   int v7; // eax
@@ -20550,7 +20463,6 @@ LABEL_36:
 // 0x575540
 namespace gamemd { int CellClass::ApplyCliffMod(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CellClass_ApplyCliffMod(_DWORD *this, _DWORD *a2)
 {
   int v6; // eax
   int v7; // eax
@@ -20720,7 +20632,6 @@ LABEL_36:
 // 0x575870
 namespace gamemd { int CellClass::ApplyTerrainMod2(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CellClass::ApplyTerrainMod2(MouseClass *aP1)
 {
   IUnknown *v4; // ebx
   IUnknown *v5; // esi
@@ -20895,7 +20806,6 @@ LABEL_36:
 // 0x575BA0
 namespace gamemd { int CellClass::ApplyTerrainMod(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CellClass::ApplyTerrainMod(MouseClass *aP1)
 {
   IUnknown *v3; // ebx
   IUnknown *v5; // esi
@@ -21069,7 +20979,6 @@ LABEL_36:
 // 0x576200
 namespace gamemd { int CellClass::RecursiveCraterUpdate(void* a1, int a2, void* a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CellClass::RecursiveCraterUpdate(IUnknown *aP1, int arg4, int *a3)
 {
   _DWORD *v6; // ecx
   int v7; // esi
@@ -21357,7 +21266,6 @@ LABEL_33:
 // 0x576BA0
 namespace gamemd { int CellClass::PropagateTerrainVariant5(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CellClass_PropagateTerrainVariant5(int *this, __int16 *a2)
 {
   _DWORD *v6; // esi
   int v7; // ecx
@@ -24773,7 +24681,6 @@ namespace gamemd { void CellClass::ApplyTileMod58(int a1) {
 // 0x57F6A0
 namespace gamemd { void CellClass::ApplyTileModification6(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CellClass::ApplyTileModification6(MouseClass *aP1)
 {
   int v2; // eax
   __int16 v3; // cx
@@ -25075,7 +24982,6 @@ LABEL_49:
 // 0x57FBC0
 namespace gamemd { void CellClass::ApplyTileModification7(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CellClass::ApplyTileModification7(MouseClass *aP1)
 {
   int v2; // eax
   __int16 i; // di
@@ -25387,7 +25293,6 @@ LABEL_51:
 // 0x5800D0
 namespace gamemd { void CellClass::ApplyTileModification5(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CellClass::ApplyTileModification5(MouseClass *aP1)
 {
   int v2; // eax
   __int16 v3; // cx
@@ -25689,7 +25594,6 @@ LABEL_49:
 // 0x580600
 namespace gamemd { void CellClass::ApplyTileModification8(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CellClass::ApplyTileModification8(MouseClass *aP1)
 {
   int v2; // eax
   __int16 i; // di
@@ -26035,7 +25939,6 @@ namespace gamemd { bool CellClass::applyTileDamage() {
 // 0x582D70
 namespace gamemd { int RadarClass::RenderBlips(void* a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void RadarClass::RenderBlips(IUnknown *aP1, int a3)
 {
   ObjectClass *v5; // ecx
   int *v9; // esi
@@ -26419,7 +26322,6 @@ namespace gamemd { void LayerClass::Update_Pathfinding_2(int a1) {
 // 0x587180
 namespace gamemd { int CellClass::SetTerrainType(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CellClass::CheckConnectivity(IUnknown *aP1)
 {
   IUnknown *v2; // esi
   __int16 v6; // cx
@@ -26772,7 +26674,6 @@ LABEL_31:
 // 0x587410
 namespace gamemd { int CellClass::CheckConnectivity(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CellClass::CheckConnectivity(IUnknown *aP1)
 {
   IUnknown *v2; // esi
   __int16 v6; // cx
@@ -27225,7 +27126,6 @@ namespace gamemd { int CellClass::CopyNeighborData(int a2) {
 // 0x588C40
 namespace gamemd {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_WORD *__thiscall CellClass::initCellData(_WORD *this, MouseClass *aP1)
 {
   *this += LOWORD(aP1->field_0); /*0x588c49*/
   this->vtable2 += HIWORD(aP1->field_0); /*0x588c50*/
@@ -27235,7 +27135,6 @@ _WORD *__thiscall CellClass::initCellData(_WORD *this, MouseClass *aP1)
 // 0x589E20
 namespace gamemd { int RadarClass::updateRadarCells(int a2, void* a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_589E20(int *this, int a2, _DWORD *a3)
 {
 
   int v3 = *this; /*0x589e24*/
@@ -27591,7 +27490,6 @@ namespace gamemd { int CellClass::Reset() {
 // 0x5A7B40
 namespace gamemd { int CellClass::ProcessUpdate() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_5A7B40(int *this)
 {
 
   int v2 = *this; /*0x5a7b4f*/
@@ -27715,7 +27613,6 @@ namespace gamemd { int ScenarioClass::Load(ObjectClass * aP1) {
 // 0x5B3C20
 namespace gamemd { void* MixFileClass::FromFile(void* a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall MixFileClass::FromFile(_DWORD *this, MixFileClass *aP1, int a3)
 {
   MixHeaderData *v8; // ecx
   int eax12; // eax
@@ -27862,7 +27759,6 @@ namespace gamemd { void* MixFileClass::UnlinkFromPool(int a2) {
 // 0x5B5EF0
 namespace gamemd { int CellClass::LockSurface() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-DWORD __thiscall sub_5B5EF0(int this, char a2)
 {
   DWORD result; // eax
   __int16 v9; // [esp+104h] [ebp-4h]
@@ -27917,7 +27813,6 @@ LABEL_6:
 // 0x5B9F30
 namespace gamemd { int CellClass::SetOccupancy() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-DWORD __thiscall CellClass::SetOccupancy(int this, ModemHost *aP1)
 {
   DWORD result; // eax
   __int16 v9; // [esp+104h] [ebp-4h]
@@ -27996,7 +27891,6 @@ namespace gamemd { int TacticalClass::ProbeCalling(int a1) {
 // 0x5C0AC0
 namespace gamemd {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TacticalClass::_vt06(int a2)
 {
   return *(_DWORD *)(this->Items + 4 * a2); /*0x5c0aca*/
 }
@@ -28117,7 +28011,6 @@ namespace gamemd { void* ScenarioClass::executeTriggerActions(int a2) {
 // 0x5CBDA0
 namespace gamemd { int ScenarioClass::AdvanceSHPAnimationFrame(void* a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ScenarioClass::AdvanceSHPAnimationFrame(int *a1, _DWORD *a2)
 {
   int v8; // edi
   int v9; // eax
@@ -28367,7 +28260,6 @@ LABEL_6:
 // 0x5CC110
 namespace gamemd { void ScenarioClass::DrawConstructionFrame(int a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ScenarioClass::DrawConstructionFrame(int arg0, int *a2)
 {
   int *FoundationSize; // eax
 
@@ -28722,7 +28614,6 @@ namespace gamemd { int ScenarioClass::validateMap(int a2) {
 // 0x5D8160
 namespace gamemd {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ScenarioClass::sub_5D8160(int a2)
 {
   return *(_DWORD *)(this->Items + 4 * a2); /*0x5d816a*/
 }
@@ -29079,7 +28970,6 @@ namespace gamemd { void FileSystem::mountDrive() {
 // 0x6267A0
 namespace gamemd { void FileSystem::InitExtensionState() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void FileSystem::InitExtensionState()
 {
   void **v1; // edi
   void **v3; // eax
@@ -29331,7 +29221,6 @@ namespace gamemd { void* FileSystem::findFile() {
 // 0x6272A0
 namespace gamemd { void FileSystem::FlushTempFiles() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void FileSystem::FlushTempFiles()
 {
   void (__thiscall ***v6)(_DWORD, int); // ecx
   void (__thiscall ***v7)(_DWORD, int); // ecx
@@ -29545,7 +29434,6 @@ namespace gamemd { void* FileSystem::openFile(void* a1) {
 // 0x628170
 namespace gamemd { void* FileSystem::closeFile(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_BYTE *__thiscall sub_628170(_DWORD *this, int *a2)
 {
   int v3; // eax
   int v4; // edi
@@ -30373,7 +30261,6 @@ namespace gamemd { int RadarClass::Destru_vt53() {
 // 0x653100
 namespace gamemd { int RadarClass::Destru_vt16(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void RadarClass::Destru_vt16(int this, char a2)
 {
   DWORD Ticks; // eax
   int v45; // [esp+10h] [ebp-38h] BYREF
@@ -31147,7 +31034,6 @@ namespace gamemd { int RadarClass::UpdateFoundationShapesCustom() {
 // 0x6565A0
 namespace gamemd { void CellClass::RevealFogRect(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CellClass::RevealFogRect(int this, __int16 *a2)
 {
   BuildingTypeClass *v6; // eax
   BuildingTypeClass **v11; // eax
@@ -31223,7 +31109,6 @@ LABEL_6:
 // 0x656BE0
 namespace gamemd { void RadarClass::Toggle(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void RadarClass::Toggle(int this, char a2, MouseClass *aP2)
 {
 
   if ( a2 != 1 ) /*0x656be9*/
@@ -31249,7 +31134,6 @@ LABEL_9:
 // 0x656CB0
 namespace gamemd { int RadarClass::SetViewMode(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void RadarClass::SetViewMode(int this, int a2, MouseClass *aP2)
 {
   MouseClass *v5; // eax
   int v4; // edi
@@ -31517,7 +31401,6 @@ namespace gamemd { void* FileClass::SetName(void* a1) {
 // 0x65CB50
 namespace gamemd { bool FileClass::Open2() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void FileClass_Open2(const CHAR **this, const CHAR *a2)
 {
   const CHAR *v3; // eax
   const CHAR *FileA; // eax
@@ -31578,7 +31461,6 @@ namespace gamemd { int FileClass::CloseHandle() {
 // 0x65CDD0
 namespace gamemd { int FileClass::Write2() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-DWORD __thiscall FileClass::Write2(int *this, LPCVOID lpBuffer, IUnknown *aP2)
 {
   DWORD result; // eax
   DWORD LastError; // eax
@@ -31757,7 +31639,6 @@ retn
 // 0x65F520
 namespace gamemd { int ScenarioClass::ShowMissionBriefing() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_65F520(unsigned __int8 *this)
 {
   unsigned __int8 *v2; // esi
   wchar_t *StringCSF; // eax
@@ -32407,7 +32288,6 @@ namespace gamemd { int ScenarioClass::SaveLoad_Prefix(int * a2) {
 // 0x689470
 namespace gamemd { void ScenarioClass::SaveLoad_Prefix_0(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __userpurge ScenarioClass::SaveLoad_Prefix_0(int this@<ecx>, ScenarioClass aP1)
 {
   DWORD Ticks; // eax
   DWORD v7; // eax
@@ -32670,7 +32550,6 @@ namespace gamemd { int ScenarioClass::ReadWaypoint(void* a1) {
 namespace gamemd { int ScenarioClass::SaveToINI(void* a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x68ad70
-void ScenarioClass::SaveToINI(int this, char *a2, char a3)
 {
   __int16 *i; // edi
   int v14; // esi
@@ -33893,7 +33772,6 @@ retn    8
 // 0x68EC20
 namespace gamemd { int CellClass::CreateInstance() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-HWND __thiscall sub_68EC20(int *this, int a2)
 {
   __int16 v11; // [esp+110h] [ebp-100h]
 
@@ -33996,7 +33874,6 @@ namespace gamemd { void TacticalClass::ProcessView() {
 namespace gamemd { int ScenarioClass::LoadNetworkConfig() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x6980c0
-void ScenarioClass::LoadNetworkConfig(int this)
 {
   int i; // esi
   int j; // esi
@@ -35471,7 +35348,6 @@ namespace gamemd { void ScenarioClass::SaveMultiplayerSettings() {
 // 0x69AC30
 namespace gamemd { int ScenarioClass::CheckExists(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ScenarioClass_CheckExists(int *this, int a2)
 {
   _DWORD *i; // ecx
 
@@ -35920,7 +35796,6 @@ namespace gamemd { void* FactoryClass::ResetProductionTimers() {
 // 0x6B25C0
 namespace gamemd { int CellClass::IsBuildable() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CellClass_IsBuildable(int this)
 {
   __int16 v3; // cx
   __int16 v5; // dx
@@ -35968,7 +35843,6 @@ LABEL_6:
 // 0x6B5910
 namespace gamemd { int FactoryClass::FindOrCreate() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-SmudgeTypeClass *__thiscall FactoryClass::FindOrCreate(ObjectClass *Source)
 {
 
   if ( !_strcmpi(&stru_817460.sectionHead[1], Source) || !_strcmpi(g_Str_none, Source) ) /*0x6b592c*/
@@ -36590,7 +36464,6 @@ namespace gamemd { int RadarClass::DrawBlips(int a1) {
 // 0x6D59D0
 namespace gamemd { int RadarClass::DrawBlip(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void RadarClass::DrawBlip(char a2, AbstractClass *aP2)
 {
   int result; // eax
   ConvertClass *v6; // edi
@@ -36880,7 +36753,6 @@ namespace gamemd { int ScenarioClass::checkMissionObjectives(int a1) {
 // 0x6E5ED0
 namespace gamemd { int CCINIClass::ProcessSection() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-ObjectClass *__thiscall CCINIClass::ProcessSection(char *this)
 {
   ObjectClass *result; // eax
   ObjectClass *v3; // esi
@@ -36994,7 +36866,6 @@ namespace gamemd { int CCINIClass::IterateNodes(int a1) {
 // 0x71ABC0
 namespace gamemd { void* FactoryClass::CompleteItem() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall FactoryClass_CompleteItem(_DWORD *this)
 {
   _DWORD *result; // eax
 
@@ -37123,7 +36994,6 @@ namespace gamemd { int CCINIClass::LoadTypeFromINI() {
 // 0x720940
 namespace gamemd {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall ScenarioClass::processEndgame(_DWORD *this, INIClass *aP1)
 {
   if ( (unsigned int)aP1 >= this->q024 ) /*0x720949*/
     return &stru_830620[82256]; /*0x720954*/
@@ -37238,7 +37108,6 @@ namespace gamemd { int ScenarioClass::LoadWaypoints() {
 // 0x7311C0
 namespace gamemd { int TacticalClass::SetObserverView() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_7311C0(char *this)
 {
   char IsHumanPlayer; // al
   int NukeTakeOff; // ecx
@@ -37381,7 +37250,6 @@ namespace gamemd { void* TacticalClass::updateScroll(int a1, int a2) {
 namespace gamemd { int FactoryClass::CompleteProduction() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x73d630
-void FactoryClass::CompleteProduction()
 {
   __int16 *v12; // eax
   __int16 v17; // bx
@@ -37427,13 +37295,13 @@ void FactoryClass::CompleteProduction()
   int *v58; // eax
   int *v59; // edi
   BOOL v60; // eax
-  int v61; // eax
+  bool v61; // eax
   int v62; // eax
   __int16 *v63; // eax
   __int16 v64; // dx
   _DWORD *v65; // eax
   _DWORD *v66; // eax
-  int v67; // eax
+  bool v67; // eax
   int v68; // eax
   char *v69; // eax
   int v70; // esi
@@ -37713,7 +37581,7 @@ LABEL_4:
     {
       if ( *(_DWORD *)(v5 + 1028) )
       {
-        int v6 = this->q02F;
+        bool v6 = this->q02F;
         if ( v6 )
         {
           int v7 = v6 - 1;

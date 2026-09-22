@@ -5,10 +5,9 @@
 #include "e4/classes/Cell_e4.hpp"
 
 // 0x4AF540
-int LocomotionClass::Initialize()
+void LocomotionClass::Initialize()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_4AF540(int this)
 {
   wchar_t *v2; // ecx
   LocomotionClass::Init((_DWORD *)this); /*0x4af543*/
@@ -44,10 +43,9 @@ void sub_4AF540(int this)
 }
 
 // 0x4C54A0
-wchar_t * LocomotionClass::UpdateAll()
+void * LocomotionClass::UpdateAll()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-wchar_t *sub_4C54A0()
 {
   wchar_t *result; // eax
   int i; // esi
@@ -68,10 +66,9 @@ wchar_t *sub_4C54A0()
 }
 
 // 0x4CFA70
-char LocomotionClass::CheckBridgeBlock()
+void LocomotionClass::CheckBridgeBlock()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void LocomotionClass::CheckBridgeBlock(int this)
 {
 
   if ( (*(int (__thiscall **)(_DWORD))(*this->LinkedTo + 388))(this->LinkedTo) == 7 /*0x4cfa8e*/
@@ -104,10 +101,9 @@ void LocomotionClass::CheckBridgeBlock(int this)
 }
 
 // 0x4DC760
-double LocomotionClass::GetSpeedMultiplier()
+void LocomotionClass::GetSpeedMultiplier()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void LocomotionClass::GetSpeedMultiplier(int this)
 {
 
   int v1 = this->q5D4; /*0x4dc760*/
@@ -119,10 +115,9 @@ void LocomotionClass::GetSpeedMultiplier(int this)
 }
 
 // 0x513C20
-int LocomotionClass::ProcessData()
+void LocomotionClass::ProcessData()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_513C20(int this)
 {
   LocomotionClass::Init((_DWORD *)this); /*0x513c24*/
   *(_DWORD *)(this + 24) = g_ScoreDisplayState1; /*0x513c34*/
@@ -150,10 +145,9 @@ void sub_513C20(int this)
 }
 
 // 0x54AC40
-int LocomotionClass::Update()
+void LocomotionClass::Update()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_54AC40(int this)
 {
 
   LocomotionClass::Init((_DWORD *)this); /*0x54ac46*/
@@ -190,7 +184,6 @@ void sub_54AC40(int this)
 unsigned int * LocomotionClass::Init()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall LocomotionClass_Init(_DWORD *this)
 {
   this->Owner = 0; /*0x55a6c6*/
   this->LinkedTo = 0; /*0x55a6c9*/
@@ -207,7 +200,6 @@ _DWORD *__thiscall LocomotionClass_Init(_DWORD *this)
 void LocomotionClass::Construct()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void LocomotionClass_Constructor(_DWORD *this)
 {
   *this = &LocomotionClass::`vftable'; /*0x55a6f0*/
   this->vtable2 = &vt_LocomotionClass; /*0x55a6f6*/

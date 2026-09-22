@@ -3,10 +3,9 @@
 #include "e4/e4_globals.hpp"
 
 // 0x4346C0
-int Font::GetGlyphDataForChar(AbstractClass * aP1)
+void Font::GetGlyphDataForChar(AbstractClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Font::GetGlyphDataForChar(AbstractClass *aP1)
 {
   AbstractClass *v2; // ecx
   int result; // eax
@@ -24,10 +23,9 @@ void Font::GetGlyphDataForChar(AbstractClass *aP1)
 }
 
 // 0x434CD0
-char Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, int aP1a, AbstractClass * aP4, AbstractClass * aP5, AbstractClass * aP6, AbstractClass * aP7, AbstractClass * aP8, AbstractClass * aP9)
+void Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, int aP1a, AbstractClass * aP4, AbstractClass * aP5, AbstractClass * aP6, AbstractClass * aP7, AbstractClass * aP8, AbstractClass * aP9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Font::Print(AbstractClass *aP0, AbstractClass *aP1, AbstractClass *aP2, int aP1a, AbstractClass *aP4, AbstractClass *aP5, AbstractClass *aP6, AbstractClass *aP7, AbstractClass *aP8, AbstractClass *aP9)
 {
   AbstractClass *v11; // ebp
   __int16 v12; // ax

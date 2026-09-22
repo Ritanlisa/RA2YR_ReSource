@@ -4,10 +4,9 @@
 #include "e4/classes/CellStruct_e4.hpp"
 
 // 0x7BCB50
-char * Buffer::FillCircularBufferScroll2(int a2, MouseClass * aP2, unsigned short a4)
+void * Buffer::FillCircularBufferScroll2(int a2, MouseClass * aP2, unsigned short a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall Buffer::FillCircularBufferScroll2(signed int *this, int a2, MouseClass *aP2, unsigned __int16 a4)
 {
   char *result; // eax
   unsigned __int16 *v28; // edi
@@ -246,10 +245,9 @@ LABEL_60:
 }
 
 // 0x7C1730
-int Buffer::AllocateCodecFrameBuffers()
+void Buffer::AllocateCodecFrameBuffers()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void AllocateCodecFrameBuffers(int this)
 {
 
   int v28; // [esp+28h] [ebp-8h] BYREF

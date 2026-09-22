@@ -7,13 +7,6 @@
 void * GameOption_WorldDominationTour::ConstructorWDTFlagOption_Create(int arg0, void * a2, int arg8, void * a4, ObjectClass * aP5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void *__thiscall ConstructorWDTFlagOption_Create(
-        GameOption_WorldDominationTour *this,
-        int arg0,
-        void *a2,
-        int arg8,
-        void *a4,
-        ObjectClass *aP5)
 {
   ObjectClass *v6; // edx
   ObjectClass *v8; // ecx

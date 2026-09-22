@@ -10,10 +10,9 @@
 
 // 0x4C9B20
 namespace gamemd {
-char FactoryClass::UpdateProduction()
+void FactoryClass::UpdateProduction()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void FactoryClass::UpdateProduction(int this)
 {
   int Speed; // eax
   wchar_t *v9; // eax
@@ -99,10 +98,9 @@ void FactoryClass::UpdateProduction(int this)
 
 // 0x4C9C60
 namespace gamemd {
-char FactoryClass::HasProgressChanged()
+void FactoryClass::HasProgressChanged()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void FactoryClass::HasProgressChanged()
 {
   char result; // al
 
@@ -115,10 +113,9 @@ void FactoryClass::HasProgressChanged()
 
 // 0x4C9C70
 namespace gamemd {
-bool FactoryClass::DemandProduction(int a2, void * a3, char a4)
+void FactoryClass::DemandProduction(int a2, void * a3, char a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void FactoryClass::DemandProduction(int this, int a2, #375 *a3, char a4)
 {
 
   if ( (*(int (__thiscall **)(int))(*(_DWORD *)a2 + 44))(a2) == 7 ) /*0x4c9c85*/
@@ -190,10 +187,9 @@ void FactoryClass::DemandProduction(int this, int a2, #375 *a3, char a4)
 
 // 0x4C9E10
 namespace gamemd {
-char FactoryClass::SetObject(int a2)
+void FactoryClass::SetObject(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void FactoryClass::SetObject(int this, int a2)
 {
 
   FactoryClass::AbandonProduction(this); /*0x4c9e16*/
@@ -216,10 +212,9 @@ void FactoryClass::SetObject(int this, int a2)
 
 // 0x4C9E60
 namespace gamemd {
-char FactoryClass::StartProduction(char a2)
+void FactoryClass::StartProduction(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void FactoryClass_StartProduction(int this, char a2)
 {
   wchar_t *v2; // eax
   if ( this->isSuspended ) /*0x4c9e60*/
@@ -239,10 +234,9 @@ void FactoryClass_StartProduction(int this, char a2)
 
 // 0x4C9FB0
 namespace gamemd {
-int FactoryClass::GetBuildTimeFrames()
+void FactoryClass::GetBuildTimeFrames()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void FactoryClass::GetBuildTimeFrames()
 {
   int result; // eax
 
@@ -263,10 +257,9 @@ void FactoryClass::GetBuildTimeFrames()
 
 // 0x4CA270
 namespace gamemd {
-int FactoryClass::LoadFromStream(int a1, int * a2)
+void FactoryClass::LoadFromStream(int a1, int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void FactoryClass::vt_05_(int a1, int *a2)
 {
   int result; // eax
 
@@ -344,10 +337,9 @@ LABEL_14:
 
 // 0x4CA430
 namespace gamemd {
-int FactoryClass::Stat(int * a2)
+void FactoryClass::Stat(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void FactoryClass::Stat(#378 *this, int *a2)
 {
 
   Debug::Log(); /*0x4ca43f*/
@@ -388,10 +380,9 @@ void FactoryClass::Stat(#378 *this, int *a2)
 
 // 0x4CA580
 namespace gamemd {
-int FactoryClass::Revert(int a2, int a3)
+void FactoryClass::Revert(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void FactoryClass::_vt10(int a2, int a3)
 {
   int result; // eax
 
@@ -405,10 +396,9 @@ void FactoryClass::_vt10(int a2, int a3)
 
 // 0x4CA5A0
 namespace gamemd {
-char FactoryClass::StartProduction_2()
+void FactoryClass::StartProduction_2()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void FactoryClass::StartProduction_2(int this)
 {
 
   int v2 = this->q050; /*0x4ca5a4*/
@@ -450,10 +440,9 @@ void FactoryClass::StartProduction_2(int this)
 
 // 0x4CA670
 namespace gamemd {
-int FactoryClass::CountType(IUnknown * aP1)
+void FactoryClass::CountType(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void FactoryClass::CountType(IUnknown *aP1)
 {
   IUnknown **v6; // esi
 
@@ -481,10 +470,9 @@ void FactoryClass::CountType(IUnknown *aP1)
 
 // 0x4CA6B0
 namespace gamemd {
-char FactoryClass::IsQueued(int a2)
+void FactoryClass::IsQueued(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void FactoryClass::IsQueued(int a2)
 {
   _DWORD *i; // ecx
 
@@ -504,10 +492,9 @@ void FactoryClass::IsQueued(int a2)
 
 // 0x4CA770
 namespace gamemd {
-FactoryClass * FactoryClass::CopyTo(char a2)
+void * FactoryClass::CopyTo(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-FactoryClass *__thiscall FactoryClass::CopyTo(void **this, char a2)
 {
   void **v7; // [esp+4h] [ebp-4h] BYREF
 
@@ -559,10 +546,9 @@ FactoryClass *__thiscall FactoryClass::CopyTo(void **this, char a2)
 
 // 0x635060
 namespace gamemd {
-char FactoryClass::FinishProduction(int a2)
+void FactoryClass::FinishProduction(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_635060(int this, int a2)
 {
 
   if ( *(_BYTE *)(a2 + 12) ) /*0x63506c*/

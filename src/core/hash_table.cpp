@@ -31,7 +31,6 @@ uint32_t Hash::ComputeHashSHA1(const void* data, uint32_t size)
 void Hash::InsertOrdered(void* table, const void* entry)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Hash_InsertOrdered(void *this, int a2)
 {
   if ( (*(unsigned __int8 (__thiscall **)(void *, int))(*(_DWORD *)this + 44))(this, a2) )
     return 0;
@@ -119,7 +118,6 @@ void SHA1::Init()
 void SHA1::Process(const void* data, uint32_t size)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void SHA1_Process(_DWORD *this, int a2, int a3)
 {
   int result; // eax
 
@@ -213,7 +211,6 @@ retn    8
 void SHA1::Compute(uint8_t digest[20])
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void SHA1_Compute(_DWORD *this, char *a2)
 {
   int v6; // edx
   unsigned __int16 v7; // cx
@@ -516,11 +513,10 @@ static const uint32_t crc32_table[256] = {
 
 // IDA 0x69E000: Compute
 // 0x4a1fb0
-uint32_t CRC32::Compute(const void* data, uint32_t size)
+void CRC32::Compute(const void* data, uint32_t size)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x4a1fb0
-int __fastcall CRC32::Compute(unsigned __int8 *a1, int a2, int a3)
 {
 
   int v4 = a2 - 1;

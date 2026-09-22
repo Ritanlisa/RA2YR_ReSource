@@ -6,7 +6,6 @@
 unsigned int * CenterTeamCommand::Construct(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall CenterTeamCommand_Constructor(_DWORD *this, int a2)
 {
   this->CenterTeamCommand_field_00 = a2; /*0x5361a6*/
   *this = &vt_CenterTeamCommandClass; /*0x5361a9*/
@@ -15,10 +14,9 @@ _DWORD *__thiscall CenterTeamCommand_Constructor(_DWORD *this, int a2)
 }
 
 // 0x5361C0
-ObjectClass * CenterTeamCommand::AddRef()
+void * CenterTeamCommand::AddRef()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-ObjectClass *__thiscall CenterTeamCommand::AddRef(_DWORD *this)
 {
   sprintf(&HouseClass_Player[47208], &stru_8271A0, (INIClass *)this->CenterTeamCommand_field_00); /*0x5361ce*/
   return (ObjectClass *)&HouseClass_Player[47208]; /*0x5361db*/
@@ -26,10 +24,9 @@ ObjectClass *__thiscall CenterTeamCommand::AddRef(_DWORD *this)
 }
 
 // 0x5361E0
-wchar_t * CenterTeamCommand::Release()
+void * CenterTeamCommand::Release()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-wchar_t *__thiscall CenterTeamCommand::_vt02(const wchar_t **this)
 {
   wchar_t *StringCSF; // eax
   const wchar_t *v3; // [esp-4h] [ebp-4h]

@@ -26,10 +26,9 @@
 
 // 0x402720
 namespace gamemd {
-int Audio::GetChannelStatus()
+void Audio::GetChannelStatus()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_402720(int this)
 {
 
   if ( (*(_BYTE *)(this + 164) & 5) != 0 ) /*0x40272a*/
@@ -54,10 +53,9 @@ void sub_402720(int this)
 
 // 0x404D80
 namespace gamemd {
-int Audio::ReleaseChannelRefs()
+void Audio::ReleaseChannelRefs()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Audio::ReleaseChannelRefs()
 {
   int result; // eax
   _DWORD **v4; // esi
@@ -89,10 +87,9 @@ void Audio::ReleaseChannelRefs()
 
 // 0x4054A0
 namespace gamemd {
-int Audio::UpdatePlaybackPosition()
+void Audio::UpdatePlaybackPosition()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_4054A0(int *this)
 {
 
   _DWORD * v2 = (_DWORD *)this->q02C; /*0x4054a4*/
@@ -134,10 +131,9 @@ void sub_4054A0(int *this)
 
 // 0x4063B0
 namespace gamemd {
-ObjectClass * Audio::ProcessMixerOutput()
+void * Audio::ProcessMixerOutput()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-ObjectClass *__thiscall Audio::ProcessMixerOutput(char *this)
 {
   int *Next; // esi
   ObjectClass *v4; // esi
@@ -178,10 +174,9 @@ LABEL_6:
 
 // 0x406870
 namespace gamemd {
-BOOL Audio::ApplyFormatFlags(int * a1, char * a2)
+void Audio::ApplyFormatFlags(int * a1, char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __fastcall Audio::ApplyFormatFlags(int *a1, char *a2)
 {
   const void **v4; // esi
 
@@ -228,10 +223,9 @@ LABEL_10:
 
 // 0x4070B0
 namespace gamemd {
-int Audio::WaitForCallback()
+void Audio::WaitForCallback()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Audio::WaitForCallback(int this)
 {
 
   int v2 = Audio::Callback(); /*0x4070bd*/
@@ -260,7 +254,6 @@ namespace gamemd {
 void Audio::Release()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Audio_Release(_DWORD *this)
 {
   if ( !this->q022 ) /*0x407f43*/
   {
@@ -277,10 +270,9 @@ void Audio_Release(_DWORD *this)
 
 // 0x408070
 namespace gamemd {
-int Audio::IsSoundPlaying()
+void Audio::IsSoundPlaying()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Audio_IsSoundPlaying(_DWORD *this)
 {
   return this->q00C & 1; /*0x408076*/
 }
@@ -289,10 +281,9 @@ void Audio_IsSoundPlaying(_DWORD *this)
 
 // 0x408540
 namespace gamemd {
-int Audio::CalcRate(int a2, int a3)
+void Audio::CalcRate(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Audio_CalcRate(_DWORD *this, int a2, int a3)
 {
   return a2 * this->q014 / 1000; /*0x40855b*/
 }
@@ -301,10 +292,9 @@ void Audio_CalcRate(_DWORD *this, int a2, int a3)
 
 // 0x409320
 namespace gamemd {
-int Audio::GetSampleSize()
+void Audio::GetSampleSize()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Audio_GetSampleSize(_DWORD *this)
 {
   return this->q034 - this->q038; /*0x409328*/
 }
@@ -316,7 +306,6 @@ namespace gamemd {
 void sub_53E1D0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_53E1D0()
 {
   signed int SampleSize; // eax
 
@@ -396,10 +385,9 @@ void sub_53E1D0()
 
 // 0x5D0470
 namespace gamemd {
-int Audio::ParseVolume(const char ** a1, ObjectClass * aP2)
+void Audio::ParseVolume(const char ** a1, ObjectClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Audio::ParseVolume(int this, const char **a1, ObjectClass *aP2)
 {
   ObjectClass *v8; // [esp+8h] [ebp-4h] BYREF
   String::Assign((char **)this, 0); /*0x5d0478*/
@@ -444,7 +432,6 @@ namespace gamemd {
 char ** Audio::SetSoundFileName(char * Source, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char **__thiscall sub_5D5820(char **this, char *Source, int a3)
 {
   *this = 0; /*0x5d5825*/
   this->q010 = 0; /*0x5d5827*/
@@ -458,10 +445,9 @@ char **__thiscall sub_5D5820(char **this, char *Source, int a3)
 
 // 0x63F2E0
 namespace gamemd {
-int sub_63F2E0(int a1, int a2, int a3, int a4, int a5, int a6, unsigned int ** a7)
+void sub_63F2E0(int a1, int a2, int a3, int a4, int a5, int a6, unsigned int ** a7)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_63F2E0(int a1, int a2, int a3, int a4, int a5, int a6, _DWORD **a7)
 {
   int result; // eax
 
@@ -606,10 +592,9 @@ LABEL_50:
 
 // 0x7207F0
 namespace gamemd {
-char Audio::LoadWAVFiles()
+void Audio::LoadWAVFiles()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Audio_LoadWAVFiles(_DWORD *this)
 {
   int IsSoundEnabled; // eax
   int i; // ebx
@@ -665,10 +650,9 @@ void Audio_LoadWAVFiles(_DWORD *this)
 
 // 0x7510D0
 namespace gamemd {
-char Audio::InitFromINI()
+void Audio::InitFromINI()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Audio::InitFromINI(unsigned __int8 ***this)
 {
   CCINIClass *KeyCount; // eax
   CCINIClass *v7; // esi
@@ -832,7 +816,6 @@ namespace gamemd {
 void * Audio::LoadSoundINI()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void *Audio_LoadSoundINI()
 {
   void *result; // eax
 
@@ -886,7 +869,6 @@ namespace gamemd {
 void sub_752590(int a1, int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall sub_752590(int a1, int a2, int a3)
 {
 
   _DWORD * v5 = __2_YAPAXI_Z(0x20u); /*0x75259f*/
@@ -929,7 +911,6 @@ namespace gamemd {
 unsigned int Audio::GetSamplePosition(MouseClass * aP1, MouseClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Audio::GetSamplePosition(int this, MouseClass *aP1, MouseClass *aP2)
 {
   unsigned int result; // eax
 
@@ -952,7 +933,6 @@ namespace gamemd {
 int sub_7C1E10(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_7C1E10(int a1, int a2)
 {
   unsigned __int16 *v5; // edx
 
@@ -1024,7 +1004,6 @@ namespace gamemd {
 int sub_7C1F30(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_7C1F30(int a1, int a2)
 {
   unsigned __int16 *v6; // edx
 
@@ -1104,7 +1083,6 @@ namespace gamemd {
 int sub_7C2250(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_7C2250(int a1, int a2)
 {
   unsigned __int16 v12; // [esp+Ch] [ebp-4h] BYREF
   __int16 v13; // [esp+Eh] [ebp-2h]
@@ -1174,10 +1152,9 @@ int __fastcall sub_7C2250(int a1, int a2)
 
 // 0x7C7F20
 namespace gamemd {
-int Audio_Helper_7C7F20()
+void Audio_Helper_7C7F20()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __usercall sub_7C7F20@<eax>(int a1@<edx>, _WORD *a2, _BYTE *a3, int a4)
 {
   unsigned int i; // ecx
   unsigned __int8 v14; // ah
@@ -1383,7 +1360,6 @@ namespace gamemd {
 int sub_7BE830(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_7BE830(int a1, int a2)
 {
   bool v9; // zf
   int result; // eax
@@ -1471,10 +1447,9 @@ int __fastcall sub_7BE830(int a1, int a2)
 
 // 0x7BEE20
 namespace gamemd {
-signed int sub_7BEE20(int a1, int a2, int a3, int a4, int a5)
+void int sub_7BEE20(int a1, int a2, int a3, int a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-signed int __fastcall sub_7BEE20(int a1, int a2, int a3, int a4, int a5)
 {
   signed int result; // eax
   unsigned int Position; // eax
@@ -1561,7 +1536,6 @@ namespace gamemd {
 int Audio_Process_7C0530(int a1, int edx0, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall Audio_Process_7C0530(int a1, int edx0, int a3)
 {
   DSurface *v7; // eax
   DSurface *v9; // eax
@@ -1664,10 +1638,9 @@ LABEL_20:
 
 // 0x7C06B0
 namespace gamemd {
-int Audio_Process_7C06B0(DSurface * aP0, int edx0, unsigned int * a2, unsigned int * a3)
+void Audio_Process_7C06B0(DSurface * aP0, int edx0, unsigned int * a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall Audio_Process_7C06B0(DSurface *aP0, int edx0, _DWORD *a2, _DWORD *a3)
 {
   int result; // eax
   unsigned __int16 *v8; // ebx
@@ -1713,10 +1686,9 @@ LABEL_7:
 
 // 0x7C19F0
 namespace gamemd {
-int Audio_Process_7C19F0(int a1, DSurface * aP1, unsigned int * a2, unsigned int * a3)
+void Audio_Process_7C19F0(int a1, DSurface * aP1, unsigned int * a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall Audio_Process_7C19F0(int a1, DSurface *aP1, _DWORD *a2, _DWORD *a3)
 {
   int result; // eax
   unsigned __int16 *v8; // edi
@@ -1765,10 +1737,9 @@ LABEL_6:
 
 // 0x7C3270
 namespace gamemd {
-int Audio_Process_7C3270(int a1, int a2, unsigned int a3, ObjectClass * aP3, int a5, int a6)
+void Audio_Process_7C3270(int a1, int a2, unsigned int a3, ObjectClass * aP3, int a5, int a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall Audio_Process_7C3270(int a1, int a2, unsigned int a3, ObjectClass *aP3, int a5, int a6)
 {
   ObjectClass *v9; // edx
   int v12; // eax
@@ -1873,7 +1844,6 @@ namespace gamemd {
 int sub_7DF7C0(int * a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_7DF7C0(int *a1)
 {
   int result; // eax
   char *i; // edi
@@ -1967,7 +1937,6 @@ namespace gamemd {
 int sub_7DF8C0(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_7DF8C0(int a1)
 {
   int result; // eax
   unsigned __int8 *v12; // edi
@@ -2061,7 +2030,6 @@ namespace gamemd {
 int sub_7DFD00(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_7DFD00(int a1)
 {
   int result; // eax
   unsigned __int8 *v12; // edi
@@ -2154,7 +2122,6 @@ namespace gamemd {
 void sub_6C6D00()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_6C6D00()
 {
 
   int v0 = 0; /*0x6c6d08*/
@@ -2200,7 +2167,6 @@ namespace gamemd {
 void sub_6C6DE0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_6C6DE0()
 {
 
   int v0 = g_SidebarButtonState; /*0x6c6dea*/
@@ -2272,7 +2238,6 @@ namespace gamemd {
 int sub_7C2410(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_7C2410(int a1, int a2)
 {
   unsigned int i; // ecx
 
@@ -2348,7 +2313,6 @@ namespace gamemd {
 int sub_7C3860(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_7C3860(int a1, int a2)
 {
   int result; // eax
   unsigned __int16 *v3; // ebp

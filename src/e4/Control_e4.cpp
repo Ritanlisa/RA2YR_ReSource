@@ -4,10 +4,9 @@
 #include "e4/classes/Dialog_e4.hpp"
 
 // 0x48E620
-int Control::DispatchClick(ControlClass * aP1)
+void Control::DispatchClick(ControlClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Control::DispatchClick(ControlClass *aP1)
 {
 
   int v3 = *(this + 10); /*0x48e623*/
@@ -18,10 +17,9 @@ void Control::DispatchClick(ControlClass *aP1)
 }
 
 // 0x60B950
-char Control::RepositionControlsDialog()
+void Control::RepositionControlsDialog()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Control::RepositionControlsDialog(HWND this)
 {
   HWND Parent; // esi
   int DlgCtrlID; // edi
@@ -309,10 +307,9 @@ LABEL_171:
 }
 
 // 0x60C540
-char Control::CheckControlTypeDialog()
+void Control::CheckControlTypeDialog()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Dialog_CheckControlType(void *this)
 {
 
   Control *v5 = this; /*0x60c549*/

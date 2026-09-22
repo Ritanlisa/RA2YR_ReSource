@@ -13,7 +13,6 @@ namespace gamemd {
 int globalHelper_0108F0(unsigned int * a1, unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int globalHelper_0108F0(_DWORD *a1, _DWORD *a2)
 {
   if ( *a1 == *a2 )
     return 0; /*0x510900*/
@@ -28,7 +27,6 @@ namespace gamemd {
 unsigned char E4Recv_517360::sub_517360(unsigned char a2, unsigned char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_517360(unsigned __int8 *this, unsigned __int8 a2, unsigned __int8 *a3)
 {
   unsigned __int8 v3; // bl
   unsigned __int8 v4; // al
@@ -49,10 +47,9 @@ void sub_517360(unsigned __int8 *this, unsigned __int8 a2, unsigned __int8 *a3)
 
 // 0x5173F0
 namespace gamemd {
-int E4Recv_5173F0::sub_5173F0(unsigned char * a2)
+void E4Recv_5173F0::sub_5173F0(unsigned char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_5173F0(unsigned __int8 *this, unsigned __int8 *a2)
 {
 
   int v2 = *this - *a2; /*0x517400*/
@@ -71,10 +68,9 @@ void sub_5173F0(unsigned __int8 *this, unsigned __int8 *a2)
 
 // 0x51FEF0
 namespace gamemd {
-int SaveInfantryToINI()
+void SaveInfantryToINI()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __usercall SaveInfantryToINI@<eax>(int a1@<ecx>, int a2@<edi>, int a3@<esi>)
 {
   int result; // eax
   double HealthRatio; // st7

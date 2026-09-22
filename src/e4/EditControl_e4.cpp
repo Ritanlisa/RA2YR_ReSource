@@ -7,7 +7,6 @@ namespace gamemd {
 int sub_7781B0(short a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_7781B0(__int16 a1)
 {
   CHAR MultiByteStr; // [esp+0h] [ebp-8h] BYREF
   char v4; // [esp+1h] [ebp-7h]

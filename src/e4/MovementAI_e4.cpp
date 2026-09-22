@@ -3,10 +3,9 @@
 #include "e4/e4_globals.hpp"
 
 // 0x487E00
-bool MovementAI::IsPathMovementAllowed()
+void MovementAI::IsPathMovementAllowed()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_487E00(_DWORD *this)
 {
 
   if ( !g_WTFMode ) /*0x487e0b*/
@@ -25,10 +24,9 @@ void sub_487E00(_DWORD *this)
 }
 
 // 0x4A5150
-bool MovementAI::IsProgressAtEnd()
+void MovementAI::IsProgressAtEnd()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_4A5150(int this)
 {
 
   if ( !(unsigned char)this->MovementAI_field_18 ) /*0x4a5150*/
@@ -50,10 +48,9 @@ void sub_4A5150(int this)
 }
 
 // 0x4A5360
-char MovementAI::Check()
+void MovementAI::Check()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_4A5360(_BYTE *this)
 {
   char result; // al
 

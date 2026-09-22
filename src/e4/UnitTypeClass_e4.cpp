@@ -7,10 +7,9 @@
 #include "e4/classes/VoxelAnimType_e4.hpp"
 
 // 0x6B4DD0
-char UnitTypeClass::ReadINIEntry()
+void UnitTypeClass::ReadINIEntry()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_6B4DD0(char *this)
 {
   int i; // edi
   int v4; // eax
@@ -50,10 +49,9 @@ void sub_6B4DD0(char *this)
 }
 
 // 0x7470D0
-int UnitTypeClass::UnitTypeClass(INIClass * aP1)
+U UnitTypeClass::UnitTypeClass(INIClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-U UnitTypeClass::UnitTypeClass(int this, INIClass *aP1)
 {
   HouseClass *v3; // eax
   CCINIClass *v6; // edx
@@ -151,7 +149,7 @@ LABEL_11:
 
 // 0x7474B0
 namespace gamemd {
-int UnitTypeClass_CreateUnit()
+void UnitTypeClass_CreateUnit()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // (no pseudocode — ASM-only function)
@@ -169,10 +167,9 @@ void UnitTypeClass_ConstructUnit()
 
 // 0x747620
 namespace gamemd {
-int UnitTypeClass_LoadFromINI()
+void UnitTypeClass_LoadFromINI()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __userpurge UnitTypeClass::LoadFromINI@<al>(int a1@<ecx>, double a2@<st0>, unsigned __int8 ***a3)
 {
   unsigned __int8 *v4; // ebp
   char Bool_Overwrite; // al
@@ -418,10 +415,9 @@ char __userpurge UnitTypeClass::LoadFromINI@<al>(int a1@<ecx>, double a2@<st0>, 
 } // namespace gamemd
 
 // 0x74B960
-VoxelAnimTypeClass * UnitTypeClass::FindOrCreate()
+void * UnitTypeClass::FindOrCreate()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-VoxelAnimTypeClass *__thiscall UnitTypeClass::FindOrCreate(ObjectClass *this)
 {
 
   if ( !_strcmpi(&stru_817460.sectionHead[1], this) || !_strcmpi(g_Str_none, this) ) /*0x74b97c*/

@@ -4,10 +4,9 @@
 #include "e4/classes/String_e4.hpp"
 
 // 0x624760
-char HashTable::Get(IUnknown * aP1, IUnknown * aP2)
+void HashTable::Get(IUnknown * aP1, IUnknown * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HashTable::Get(IUnknown *aP1, IUnknown *aP2)
 {
 
   if ( !this->q004 ) /*0x624764*/
@@ -30,7 +29,6 @@ void HashTable::Get(IUnknown *aP1, IUnknown *aP2)
 void HashTable::Grow2()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HashTable_Grow2(_DWORD *this)
 {
 
   if ( (unsigned char)this->HashTable_field_0x14 != 1 ) /*0x624fc8*/
@@ -78,10 +76,9 @@ void HashTable_Grow2(_DWORD *this)
 }
 
 // 0x625090
-char HashTable::RemoveAndResize(unsigned int * a2, unsigned char * a3)
+void HashTable::RemoveAndResize(unsigned int * a2, unsigned char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HashTable::RemoveAndResize(_DWORD *a2, _BYTE *a3)
 {
 
   int v4 = this->q004; /*0x62509b*/
@@ -218,7 +215,6 @@ LABEL_23:
 void HashTable::Shrink2()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HashTable_Shrink2(_DWORD *this)
 {
 
   unsigned int v2 = this->q008; /*0x625785*/
@@ -269,7 +265,6 @@ void HashTable_Shrink2(_DWORD *this)
 void HashTable::Rebuild2()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HashTable_Rebuild2(_DWORD *this)
 {
 
   unsigned int v2 = this->q008; /*0x625835*/
@@ -317,10 +312,9 @@ void HashTable_Rebuild2(_DWORD *this)
 }
 
 // 0x625F60
-bool HashTable::FindString(char * Str1, IUnknown * aP2)
+void HashTable::FindString(char * Str1, IUnknown * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HashTable::FindString(char *Str1, IUnknown *aP2)
 {
   BOOL v4; // eax
   int v3 = this->q004; /*0x625f61*/
@@ -344,10 +338,9 @@ void HashTable::FindString(char *Str1, IUnknown *aP2)
 }
 
 // 0x625FB0
-bool HashTable::FindChunk(char * Str1, void * a2, CCINIClass * aP3)
+void HashTable::FindChunk(char * Str1, void * a2, CCINIClass * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HashTable::FindChunk(char *Str1, void *a2, CCINIClass *aP3)
 {
 
   int v4 = this->q004; /*0x625fb1*/
@@ -372,7 +365,6 @@ void HashTable::FindChunk(char *Str1, void *a2, CCINIClass *aP3)
 void HashTable::Clear()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HashTable::Clear(int this)
 {
   unsigned int v3; // edi
   int v4; // eax
@@ -530,10 +522,9 @@ LABEL_23:
 }
 
 // 0x6BA140
-int HashTable::Find(const char * a1, ConvertClass * aP2)
+void HashTable::Find(const char * a1, ConvertClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HashTable::Find(const char *a1, ConvertClass *aP2)
 {
   ObjectClass *v4; // esi
   String::Assign((char **)&a1, a1); /*0x6ba14c*/
@@ -576,7 +567,6 @@ LABEL_7:
 void HashTable::RemoveEntry(const char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HashTable::RemoveEntry(int this, const char *a2)
 {
 
   void *v16; // [esp+Ch] [ebp-310h] BYREF
@@ -660,10 +650,9 @@ LABEL_24:
 }
 
 // 0x6BAC40
-char HashTable::RemoveHashTableEntry(ObjectClass * aP1, void * a2)
+void HashTable::RemoveHashTableEntry(ObjectClass * aP1, void * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HashTable::RemoveHashTableEntry(ObjectClass *aP1, void *a2)
 {
   SessionClass *v9; // esi
   AbstractClass *v14; // ebx
@@ -821,7 +810,6 @@ LABEL_24:
 void HashTable::RebuildEx()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HashTable_RebuildEx(_DWORD *this)
 {
 
   unsigned int v2 = this->q008; /*0x6baef5*/
@@ -872,7 +860,6 @@ void HashTable_RebuildEx(_DWORD *this)
 void HashTable::Remove(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HashTable_Remove(int *this, int a2)
 {
   void **v8; // eax
   size_t v12; // eax
@@ -970,7 +957,6 @@ LABEL_13:
 unsigned int HashTable::CleanupAndResize()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HashTable_CleanupAndResize(_DWORD *this)
 {
   unsigned int i; // ebp
   void **v4; // edi
@@ -1044,7 +1030,6 @@ void HashTable_CleanupAndResize(_DWORD *this)
 unsigned int HashTable::Rebuild()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HashTable_Rebuild(_DWORD *this)
 {
   unsigned int i; // ebp
   void **v4; // edi
@@ -1115,10 +1100,9 @@ void HashTable_Rebuild(_DWORD *this)
 }
 
 // 0x7ADC60
-bool HashTable::LookupString(const char ** a2, unsigned int * a3)
+void HashTable::LookupString(const char ** a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HashTable_LookupString(_DWORD *this, const char **a2, _DWORD *a3)
 {
   bool result; // al
 
@@ -1142,10 +1126,9 @@ void HashTable_LookupString(_DWORD *this, const char **a2, _DWORD *a3)
 }
 
 // 0x7ADCD0
-char HashTable::Insert(ObjectClass * aP1, void * a2)
+void HashTable::Insert(ObjectClass * aP1, void * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HashTable::Insert(ObjectClass *aP1, void *a2)
 {
   SessionClass *v9; // esi
   AbstractClass *v14; // ebx
@@ -1300,10 +1283,9 @@ LABEL_24:
 }
 
 // 0x7AE1F0
-char HashTable::Lookup(ObjectClass * aP1, TechnoTypeClass * aP2)
+void HashTable::Lookup(ObjectClass * aP1, TechnoTypeClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HashTable::Lookup(ObjectClass *aP1, TechnoTypeClass *aP2)
 {
   ObjectClass *v8; // ebp
   TechnoTypeClass **v9; // ebp
@@ -1454,7 +1436,6 @@ LABEL_23:
 void HashTable::Grow()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HashTable_Grow(_DWORD *this)
 {
 
   if ( (unsigned char)this->HashTable_field_0x14 != 1 ) /*0x7ae518*/
@@ -1502,10 +1483,9 @@ void HashTable_Grow(_DWORD *this)
 }
 
 // 0x7AE950
-char HashTable::FindWOLHashTableEntry(const char ** a2, void * a3)
+void HashTable::FindWOLHashTableEntry(const char ** a2, void * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void FindWOLHashTableEntry(_DWORD *this, const char **a2, void *a3)
 {
 
   int v4 = this->q004; /*0x7ae95b*/
@@ -1651,7 +1631,6 @@ LABEL_24:
 void HashTable::Shrink()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_7AEC00(_DWORD *this)
 {
 
   unsigned int v2 = this->q008; /*0x7aec05*/

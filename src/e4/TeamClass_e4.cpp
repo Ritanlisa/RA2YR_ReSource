@@ -18,10 +18,9 @@
 
 // 0x4D9E70
 namespace gamemd {
-char TeamClass::CheckCohesion()
+void TeamClass::CheckCohesion()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TeamClass::CheckCohesion(#374 *this)
 {
 
   int v2 = (*(int (__thiscall **)(#374 *))(this->owner)(this); /*0x4d9e78*/
@@ -60,10 +59,9 @@ void TeamClass::CheckCohesion(#374 *this)
 
 // 0x4E0080
 namespace gamemd {
-BOOL TeamClass::HasAnyMemberFlagged()
+void TeamClass::HasAnyMemberFlagged()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_4E0080(_BYTE *this)
 {
   return this->__pad_68F || this->q690 || *(this + 1681); /*0x4e00a0*/
 }
@@ -72,10 +70,9 @@ void sub_4E0080(_BYTE *this)
 
 // 0x577BB0
 namespace gamemd {
-int TeamClass::DisbandTeam(int a2)
+void TeamClass::DisbandTeam(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_577BB0(_DWORD *this, int a2)
 {
   int result; // eax
   int i; // eax
@@ -113,10 +110,9 @@ LABEL_7:
 
 // 0x62A260
 namespace gamemd {
-char TeamClass::DeployUnit(int a2, int a3)
+void TeamClass::DeployUnit(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TeamClass_DeployUnit(int this, int a2, int a3)
 {
   char result; // al
   _DWORD *Value; // eax
@@ -226,10 +222,9 @@ LABEL_12:
 
 // 0x6339B0
 namespace gamemd {
-int TeamClass::GetLeaderIndex()
+void TeamClass::GetLeaderIndex()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TeamClass_GetLeaderIndex(_DWORD *this)
 {
 
   int v1 = this->q21C; /*0x6339b0*/
@@ -247,7 +242,6 @@ namespace gamemd {
 void TeamClass::DestroyAllMembers(TechnoClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TeamClass::DestroyAllMembers(TechnoClass *aP1)
 {
   ObjectClass *v5; // edi
   ObjectClass *v6; // ecx
@@ -375,10 +369,9 @@ LABEL_9:
 
 // 0x635A40
 namespace gamemd {
-int TeamClass::FindByMemberType(int a2)
+void TeamClass::FindByMemberType(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_635A40(int *this, int a2)
 {
   int result; // eax
   int Type; // esi
@@ -457,10 +450,9 @@ LABEL_19:
 
 // 0x635C10
 namespace gamemd {
-int TeamClass::GetMember()
+void TeamClass::GetMember()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_635C10(int *this)
 {
   int result; // eax
   unsigned __int8 v11; // dl
@@ -530,10 +522,9 @@ LABEL_16:
 
 // 0x635DB0
 namespace gamemd {
-char TeamClass::Reset(ObjectClass * aP1)
+void TeamClass::Reset(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TeamClass::Reset(ObjectClass *aP1)
 {
   int i; // eax
 
@@ -553,10 +544,9 @@ void TeamClass::Reset(ObjectClass *aP1)
 
 // 0x636120
 namespace gamemd {
-int TeamClass::RemoveAllMembers()
+void TeamClass::RemoveAllMembers()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_636120(int this)
 {
   int Value; // eax
   int result; // eax
@@ -643,10 +633,9 @@ void sub_636120(int this)
 
 // 0x6367B0
 namespace gamemd {
-int TeamClass::UpdateBuildQueue(AbstractClass * aP1, TechnoClass * aP2, TechnoClass * aP3)
+void TeamClass::UpdateBuildQueue(AbstractClass * aP1, TechnoClass * aP2, TechnoClass * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TeamClass::UpdateBuildQueue(AbstractClass *aP1, TechnoClass *aP2, TechnoClass *aP3)
 {
   TechnoClass *v4; // esi
   int result; // eax
@@ -765,10 +754,9 @@ LABEL_13:
 
 // 0x636980
 namespace gamemd {
-int TeamClass::ProcessScriptActions(unsigned int * a2, int a3)
+void TeamClass::ProcessScriptActions(unsigned int * a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_636980(_DWORD *this, _DWORD *a2, int a3)
 {
   int result; // eax
   _DWORD **v9; // edx
@@ -881,10 +869,9 @@ LABEL_13:
 
 // 0x636B50
 namespace gamemd {
-int TeamClass::Cleanup(BuildingClass * aP1)
+void TeamClass::Cleanup(BuildingClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TeamClass::Cleanup(BuildingClass *aP1)
 {
   int v3; // ebx
   int v4; // eax
@@ -991,10 +978,9 @@ LABEL_4:
 
 // 0x6E52A0
 namespace gamemd {
-TagClass * TeamClass::FindOrCreate()
+void * TeamClass::FindOrCreate()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-TagClass *__thiscall TeamClass::FindOrCreate(TeamTypeClass *this)
 {
   CCINIClass *v3; // edx
   TagClass *result; // eax
@@ -1030,10 +1016,9 @@ LABEL_5:
 
 // 0x6E53A0
 namespace gamemd {
-char TeamClass::Update_0(int aP1, AbstractClass * aP2, IUnknown * aP3, AbstractClass * aP4, AbstractClass * aP5)
+void TeamClass::Update_0(int aP1, AbstractClass * aP2, IUnknown * aP3, AbstractClass * aP4, AbstractClass * aP5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TeamClass::Update_0(void **this, int aP1, AbstractClass *aP2, IUnknown *aP3, AbstractClass *aP4, AbstractClass *aP5)
 {
   int v6; // edx
   char v7; // bl
@@ -1127,7 +1112,6 @@ namespace gamemd {
 void TeamClass::Destructor(void ** this, AbstractClass * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall TeamClass::Destructor(void **this, AbstractClass *a2)
 {
   int edi1; // edi
   int ecx2; // ecx
@@ -1275,7 +1259,6 @@ namespace gamemd {
 void TeamClass::Update(TechnoClass * aP0, unsigned int * a1, int j)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TeamClass::Update(TechnoClass *aP0, _DWORD *a1, int j)
 {
   int *countObjects; // ebp
   int jj; // edi
@@ -1991,14 +1974,13 @@ LABEL_74:
 
 // 0x6EA3E0
 namespace gamemd {
-char TeamClass::UpdateReadinessState()
+void TeamClass::UpdateReadinessState()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_6EA3E0(void *this)
 {
   int i; // edi
 
-  char v8 = this->TeamClass_field_7A; /*0x6ea3ec*/
+  bool v8 = this->TeamClass_field_7A; /*0x6ea3ec*/
   int v2 = TeamClass::SumMemberCounts(*(int **)(this->buildingType + 228)); /*0x6ea3f6*/
   int v3 = this->totalObjects; /*0x6ea3fb*/
   if ( v3 > 0 ) /*0x6ea404*/
@@ -2029,7 +2011,7 @@ void sub_6EA3E0(void *this)
     this->needsToDisappear = 0; /*0x6ea46a*/
     goto LABEL_14; /*0x6ea46a*/
   }
-  char v6 = this->spawnStatus; /*0x6ea483*/
+  bool v6 = this->spawnStatus; /*0x6ea483*/
   this->unknown76 = 0; /*0x6ea486*/
   this->TeamClass_field_7A = 1; /*0x6ea48b*/
   this->unknown79 = 0; /*0x6ea48f*/
@@ -2058,10 +2040,9 @@ LABEL_14:
 
 // 0x6EA870
 namespace gamemd {
-char TeamClass::LiberateMember_Start(IUnknown * aP1, unsigned int a3, AbstractClass * aP3)
+void TeamClass::LiberateMember_Start(IUnknown * aP1, unsigned int a3, AbstractClass * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TeamClass::LiberateMember_Start(int this, IUnknown *aP1, unsigned int a3, AbstractClass *aP3)
 {
   CellClass *v5; // eax
   #375 *v7; // ecx
@@ -2194,10 +2175,9 @@ void TeamClass::LiberateMember_Start(int this, IUnknown *aP1, unsigned int a3, A
 
 // 0x6EAA90
 namespace gamemd {
-int TeamClass::RecruitMember(int a2)
+void TeamClass::RecruitMember(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TeamClass::RecruitMember(int a2)
 {
   TeamClass *v2; // edi
   TechnoClass *v3; // ebx
@@ -2369,10 +2349,9 @@ void TeamClass::RecruitMember(int a2)
 
 // 0x6EAEE0
 namespace gamemd {
-char TeamClass::FindClosestEnemy(AbstractClass * aP1, AbstractClass * aP2)
+void TeamClass::FindClosestEnemy(AbstractClass * aP1, AbstractClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TeamClass::FindClosestEnemy(int this, AbstractClass *aP1, AbstractClass *aP2)
 {
   AbstractClass *v4; // esi
   IUnknown *v13; // eax
@@ -2591,10 +2570,9 @@ void TeamClass::FindClosestEnemy(int this, AbstractClass *aP1, AbstractClass *aP
 
 // 0x6EB490
 namespace gamemd {
-char TeamClass::AttackCoordinator()
+void TeamClass::AttackCoordinator()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_6EB490(int *this)
 {
   _DWORD *Entry; // eax
   int v19; // [esp+14h] [ebp-10h] BYREF
@@ -2749,7 +2727,6 @@ namespace gamemd {
 void TeamClass::UpdateMembers()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TeamClass_UpdateMembers(int this)
 {
 
   char v11 = 1; /*0x6ebad7*/
@@ -2905,10 +2882,9 @@ LABEL_87:
 
 // 0x6EBF50
 namespace gamemd {
-char TeamClass::ProcessMemberPositions()
+void TeamClass::ProcessMemberPositions()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_6EBF50(int this)
 {
   char result; // al
 
@@ -2986,10 +2962,9 @@ void sub_6EBF50(int this)
 
 // 0x6EC5A0
 namespace gamemd {
-int TeamClass::PowerDrainUpdate(int * a2)
+void TeamClass::PowerDrainUpdate(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TeamClass::_vt13(int this, int *a2)
 {
 
   AbstractClass::ProcessPower((#378 *)this); /*0x6ec5a9*/
@@ -3079,7 +3054,6 @@ namespace gamemd {
 void TeamClass::MoveTeamToWaypoint(ScriptClass * aP1, TeamClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TeamClass::MoveTeamToWaypoint(int **this, ScriptClass *aP1, TeamClass *aP2)
 {
   int **v3; // ebp
   FootClass *v4; // esi

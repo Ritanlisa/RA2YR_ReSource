@@ -21,10 +21,9 @@
 
 // 0x44F820
 namespace gamemd {
-int Scenario::ReadTeams()
+void Scenario::ReadTeams()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Scenario::ReadTeams()
 {
   Scenario *v1; // esi
   int result; // eax
@@ -296,10 +295,9 @@ void Scenario::ReadTeams()
 
 // 0x4C6180
 namespace gamemd {
-int Scenario::CopyLocalScenarioData()
+void Scenario::CopyLocalScenarioData()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_4C6180(int this)
 {
   int i; // eax
   int result; // eax
@@ -331,10 +329,9 @@ void sub_4C6180(int this)
 
 // 0x50D610
 namespace gamemd {
-int Scenario::ProcessSidebarUnits()
+void Scenario::ProcessSidebarUnits()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_50D610(int this)
 {
   int result; // eax
   int i; // [esp+Ch] [ebp-8h]
@@ -373,10 +370,9 @@ void sub_50D610(int this)
 
 // 0x552B10
 namespace gamemd {
-int Scenario::ComputeDisplayPosition()
+void Scenario::ComputeDisplayPosition()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_552B10(_DWORD *this)
 {
   int result; // eax
 
@@ -430,7 +426,6 @@ namespace gamemd {
 unsigned int * Scenario::ComputeDialogPos(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_552BE0(int *this, _DWORD *a2)
 {
   _DWORD *result; // eax
 
@@ -478,7 +473,6 @@ namespace gamemd {
 void Scenario::Update()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Scenario_Update(_DWORD *this)
 {
   void **v3; // esi
   _DWORD *v14; // ebp
@@ -845,10 +839,9 @@ LABEL_82:
 
 // 0x597A10
 namespace gamemd {
-char Scenario::LoadOrReloadOptions(IUnknown * aP1)
+void Scenario::LoadOrReloadOptions(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Scenario::LoadOrReloadOptions(IUnknown *aP1)
 {
   if ( aP1 ) /*0x597a16*/
     return (*(char (__thiscall **)(_DWORD *, IUnknown *))(*this + 4))(this, aP1); /*0x597a1b*/
@@ -863,7 +856,6 @@ namespace gamemd {
 int Scenario::PreGameInit()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int Scenario::PreGameInit()
 {
   ObjectClass *v0; // edx
   int result; // eax
@@ -890,7 +882,6 @@ namespace gamemd {
 void Scenario::SetByte96()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Scenario::SetByte96()
 {
   this->q060 = 0; /*0x642ad0*/
 }
@@ -899,10 +890,9 @@ void Scenario::SetByte96()
 
 // 0x684240
 namespace gamemd {
-HWND Scenario::ClearScreen()
+void Scenario::ClearScreen()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-HWND Scenario_ClearScreen()
 {
   HWND result; // eax
 
@@ -920,10 +910,9 @@ HWND Scenario_ClearScreen()
 
 // 0x684620
 namespace gamemd {
-char Scenario::LoadWithProgress()
+void Scenario::LoadWithProgress()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Scenario::LoadWithProgress()
 {
   ProgressScreenClass *v2; // edi
   wchar_t *StringCSF; // eax
@@ -1171,10 +1160,9 @@ void Scenario::LoadWithProgress()
 
 // 0x685670
 namespace gamemd {
-int Scenario_EndGameFlow()
+void Scenario_EndGameFlow()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-__int16 __usercall Scenario_EndGameFlow@<ax>(char a1@<bl>)
 {
   DWORD Ticks; // eax
   DWORD v4; // eax
@@ -1445,10 +1433,9 @@ LABEL_64:
 
 // 0x685DC0
 namespace gamemd {
-int Scenario_EndGame()
+void Scenario_EndGame()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __usercall Scenario::EndGame@<al>(int a1@<edi>)
 {
   DWORD Ticks; // eax
   DWORD v4; // eax

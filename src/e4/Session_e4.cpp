@@ -11,10 +11,9 @@
 
 // 0x5D1D80
 namespace gamemd {
-int Session::RemoveTeam(MSShapeAnim * aP1)
+void Session::RemoveTeam(MSShapeAnim * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Session::RemoveTeam(MSShapeAnim *aP1)
 {
   MSShapeAnim *result; // eax
 
@@ -51,10 +50,9 @@ void Session::RemoveTeam(MSShapeAnim *aP1)
 
 // 0x5E74E0
 namespace gamemd {
-int Session::PrepareGame()
+void Session::PrepareGame()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Session::PrepareGame(HWND this)
 {
   ObjectClass *v1; // esi
   char *Flagged; // eax
@@ -249,10 +247,9 @@ LABEL_12:
 
 // 0x69B700
 namespace gamemd {
-int Session::GetPlayerOption()
+void Session::GetPlayerOption()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Session_GetPlayerOption(_DWORD *this)
 {
   int result; // eax
 
@@ -266,10 +263,9 @@ void Session_GetPlayerOption(_DWORD *this)
 
 // 0x69B720
 namespace gamemd {
-int Session::GetPlayerColor()
+void Session::GetPlayerColor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Session_GetPlayerColor(_DWORD *this)
 {
   int result; // eax
 

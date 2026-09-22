@@ -39,10 +39,9 @@
 
 // 0x5A1350
 namespace gamemd {
-int Terrain_SelectTileVariant(int a1)
+void Terrain_SelectTileVariant(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Terrain_SelectTileVariant(int a1)
 {
 
   int v1 = a1 - unk_AA1020; /*0x5a135e*/
@@ -211,7 +210,6 @@ namespace gamemd {
 int ProcessRandomMapCellAdjacency()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int ProcessRandomMapCellAdjacency()
 {
   int result; // eax
   int i; // esi
@@ -309,10 +307,9 @@ LABEL_32:
 
 // 0x5A1C70
 namespace gamemd {
-int E4Recv_5A1C70::sub_5A1C70()
+void E4Recv_5A1C70::sub_5A1C70()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_5A1C70(_DWORD *this)
 {
   int i; // edi
   int j; // edi
@@ -404,10 +401,9 @@ void sub_5A1C70(_DWORD *this)
 
 // 0x5A33F0
 namespace gamemd {
-int GenerateTerrainHeightMapInternal()
+void GenerateTerrainHeightMapInternal()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void GenerateTerrainHeightMapInternal()
 {
   int result; // eax
   int *i; // edi
@@ -487,10 +483,9 @@ LABEL_24:
 
 // 0x5A45E0
 namespace gamemd {
-int ScatterTerrainTrees(IUnknown * aP0, int a2, double a3)
+void ScatterTerrainTrees(IUnknown * aP0, int a2, double a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ScatterTerrainTrees(IUnknown *aP0, int a2, double a3)
 {
   AbstractClass *v4; // eax
   AbstractClass *v5; // ebx
@@ -732,7 +727,6 @@ namespace gamemd {
 void FloodFillPathfinding(Random * aP0, int a2, CellClass * aP2, int a4, char a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void FloodFillPathfinding(Random *aP0, int a2, CellClass *aP2, int a4, char a5)
 {
   AbstractClass *v6; // eax
   AbstractClass *v7; // ebx
@@ -950,7 +944,6 @@ namespace gamemd {
 void MapSeed_PlaceBuildingsScatter2(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MapSeed_PlaceBuildingsScatter2(int a1)
 {
   unsigned int v5; // eax
   int v6; // ebp
@@ -1145,10 +1138,9 @@ LABEL_48:
 
 // 0x5A6920
 namespace gamemd {
-int PlaceRandomNeutralUnits(int a1)
+void PlaceRandomNeutralUnits(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void PlaceRandomNeutralUnits(int a1)
 {
   IUnknown *Owner; // ebp
   int result; // eax
@@ -1274,10 +1266,9 @@ LABEL_27:
 
 // 0x5A6BA0
 namespace gamemd {
-char E4Recv_5A6BA0::sub_5A6BA0()
+void E4Recv_5A6BA0::sub_5A6BA0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_5A6BA0(__int16 *this)
 {
   int v7; // esi
   void *v8; // eax
@@ -1320,10 +1311,9 @@ LABEL_6:
 
 // 0x5A6C10
 namespace gamemd {
-int PlaceMapSeedClassBuildings(ObjectClass * aP0, ObjectClass * aP1, int a3, int a4)
+void PlaceMapSeedClassBuildings(ObjectClass * aP0, ObjectClass * aP1, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall PlaceMapSeedClassBuildings(ObjectClass *aP0, ObjectClass *aP1, int a3, int a4)
 {
   int result; // eax
   int i; // edi
@@ -1396,7 +1386,6 @@ namespace gamemd {
 unsigned int * FindClearPlacementCell(unsigned int * a0, MapSeedClass * aP1, MapSeedClass * aP2, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__stdcall FindClearPlacementCell(_DWORD *a0, MapSeedClass *aP1, MapSeedClass *aP2, int a4)
 {
   MapSeedClass *v4; // ecx
   int v6; // edi
@@ -1535,7 +1524,6 @@ namespace gamemd {
 unsigned int * globalHelper_0A7070(MapSeedClass * aP0, short * a1, MapSeedClass * aP2, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__stdcall globalHelper_0A7070(MapSeedClass *aP0, __int16 *a1, MapSeedClass *aP2, int a4)
 {
   int v5; // esi
   int v6; // edi
@@ -1638,10 +1626,9 @@ _DWORD *__stdcall globalHelper_0A7070(MapSeedClass *aP0, __int16 *a1, MapSeedCla
 
 // 0x5A7250
 namespace gamemd {
-char IsAreaClearMap(MapClass * aP0, char a2, char a3)
+void IsAreaClearMap(MapClass * aP0, char a2, char a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall IsAreaClearMap(MapClass *aP0, char a2, char a3)
 {
 
   int v4 = aP0->field_0; /*0x5a7262*/
@@ -1731,10 +1718,9 @@ char __fastcall IsAreaClearMap(MapClass *aP0, char a2, char a3)
 
 // 0x5A7440
 namespace gamemd {
-char MapClass_IsAreaUniform(int * a1, char a2)
+void MapClass_IsAreaUniform(int * a1, char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall MapClass_IsAreaUniform(int *a1, char a2)
 {
 
   int v3 = *a1; /*0x5a7452*/
@@ -1817,10 +1803,9 @@ LABEL_28:
 
 // 0x5A78D0
 namespace gamemd {
-unsigned int PlaceMapSeedBuildingsStrategic(int a1)
+void int PlaceMapSeedBuildingsStrategic(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void PlaceMapSeedBuildingsStrategic(int a1)
 {
   unsigned int result; // eax
 
@@ -1943,10 +1928,9 @@ void PlaceMapSeedBuildingsStrategic(int a1)
 
 // 0x5A7FA0
 namespace gamemd {
-int IsoTile_Draw(int a1, unsigned short * a2, char a3)
+void IsoTile_Draw(int a1, unsigned short * a2, char a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall IsoTile_Draw(int a1, _WORD *a2, char a3)
 {
   int result; // eax
   int i; // ebx
@@ -2006,10 +1990,9 @@ int __fastcall IsoTile_Draw(int a1, _WORD *a2, char a3)
 
 // 0x5A8720
 namespace gamemd {
-int PlaceNeutralCreeps(unsigned short * a1)
+void PlaceNeutralCreeps(unsigned short * a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void PlaceNeutralCreeps(_WORD *a1)
 {
   IUnknown *OwnerHouseClass; // ebp
   int result; // eax
@@ -2153,10 +2136,9 @@ LABEL_27:
 
 // 0x5A89D0
 namespace gamemd {
-bool MapSeed_ScheduleBuildings(int * a1)
+void MapSeed_ScheduleBuildings(int * a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MapSeed_ScheduleBuildings(int *a1)
 {
   unsigned int v4; // edi
   int v5; // esi
@@ -2462,10 +2444,9 @@ LABEL_61:
 
 // 0x5A8F00
 namespace gamemd {
-char PlaceRandomTerrainFeatures(int a1, unsigned short * a2, int a3, unsigned int * a4, unsigned int * a5, int * a6)
+void PlaceRandomTerrainFeatures(int a1, unsigned short * a2, int a3, unsigned int * a4, unsigned int * a5, int * a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall PlaceRandomTerrainFeatures(int a1, _WORD *a2, int a3, _DWORD *a4, _DWORD *a5, int *a6)
 {
   double v7; // st7
   int v8; // eax
@@ -2605,7 +2586,6 @@ namespace gamemd {
 unsigned int * InitializePathData()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *InitializePathData()
 {
   int v2; // eax
   int v3; // eax
@@ -4081,7 +4061,6 @@ namespace gamemd {
 int sub_5AD9C0(unsigned int * a1, unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_5AD9C0(_DWORD *a1, _DWORD *a2)
 {
   if ( *a1 == *a2 )
     return 0; /*0x5ad9d0*/
@@ -4096,7 +4075,6 @@ namespace gamemd {
 void E4Recv_5AF550::sub_5AF550(float * a2, float * a3, AbstractClass * a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_5AF550(int this, float *a2, float *a3, AbstractClass *a4)
 {
   float aP2a; // [esp+18h] [ebp-10h]
   float aP2; // [esp+18h] [ebp-10h]
@@ -4172,10 +4150,9 @@ void sub_5AF550(int this, float *a2, float *a3, AbstractClass *a4)
 
 // 0x5AF980
 namespace gamemd {
-float * MultiplyMatrix3x4(ObjectClass * aP0, float * a1, float * a2)
+void * MultiplyMatrix3x4(ObjectClass * aP0, float * a1, float * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-float *__fastcall MultiplyMatrix3x4(ObjectClass *aP0, float *a1, float *a2)
 {
   float *result; // eax
   float a2a; // [esp+74h] [ebp+4h]
@@ -4945,10 +4922,9 @@ double E4Recv_5AF3B0::sub_5AF3B0()
 
 // 0x5AF470
 namespace gamemd {
-double E4Recv_5AF470::sub_5AF470()
+void E4Recv_5AF470::sub_5AF470()
  {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_5AF470(IUnknown *this)
 {
   __int128 aP0; // [esp+0h] [ebp-34h]
 

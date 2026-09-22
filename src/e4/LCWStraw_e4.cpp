@@ -3,10 +3,9 @@
 #include "e4/e4_globals.hpp"
 
 // 0x552450
-int LCWStraw::Dtor()
+void LCWStraw::Dtor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void LCWStraw_Destructor(int *this)
 {
 
   void * v2 = (void *)this->q014; /*0x552453*/

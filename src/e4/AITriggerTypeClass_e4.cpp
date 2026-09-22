@@ -9,10 +9,9 @@
 #include "e4/classes/Super_e4.hpp"
 
 // 0x41EC90
-bool AITriggerTypeClass::CivilianHouseOwns(int a2, int a3)
+void AITriggerTypeClass::CivilianHouseOwns(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void AITriggerTypeClass::CivilianHouseOwns(int a2, int a3)
 {
   bool result; // al
   int v10; // eax
@@ -90,10 +89,9 @@ LABEL_12:
 }
 
 // 0x41EE90
-bool AITriggerTypeClass::OwnerHouseOwns(unsigned int * a2, int a3)
+void AITriggerTypeClass::OwnerHouseOwns(unsigned int * a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void AITriggerTypeClass::OwnerHouseOwns(_DWORD *a2, int a3)
 {
   int v7; // eax
   bool result; // al
@@ -101,7 +99,7 @@ void AITriggerTypeClass::OwnerHouseOwns(_DWORD *a2, int a3)
   v9 = 0; /*0x41ee9a*/
   if ( !a2 ) /*0x41ee9f*/
     return v9; /*0x41efcb*/
-  int v4 = this->q036; /*0x41eea6*/
+  bool v4 = this->q036; /*0x41eea6*/
   if ( v4 ) /*0x41eeae*/
   {
     int v5 = (*(int (__thiscall **)(int))(*(_DWORD *)v4 + 64))(v4); /*0x41eec1*/
@@ -157,10 +155,9 @@ LABEL_8:
 }
 
 // 0x41F0D0
-bool AITriggerTypeClass::IronCurtainCharged(int a1, int a2)
+void AITriggerTypeClass::IronCurtainCharged(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void AITriggerTypeClass::IronCurtainCharged(int a1, int a2)
 {
   int i; // ecx
   int v9; // [esp+8h] [ebp+4h]
@@ -195,10 +192,9 @@ LABEL_12:
 }
 
 // 0x41F180
-bool AITriggerTypeClass::ChronoSphereCharged(int a1, int a2)
+void AITriggerTypeClass::ChronoSphereCharged(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void AITriggerTypeClass::ChronoSphereCharged(int a1, int a2)
 {
   int i; // ecx
   int v9; // [esp+8h] [ebp+4h]
@@ -233,10 +229,9 @@ LABEL_12:
 }
 
 // 0x41F230
-bool AITriggerTypeClass::HouseCredits(int a2, int a3)
+void AITriggerTypeClass::HouseCredits(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void AITriggerTypeClass::HouseCredits(int a2, int a3)
 {
   bool result; // al
 
@@ -271,10 +266,9 @@ void AITriggerTypeClass::HouseCredits(int a2, int a3)
 }
 
 // 0x41F580
-char AITriggerTypeClass::LoadFromINI(unsigned char *** a2)
+void AITriggerTypeClass::LoadFromINI(unsigned char *** a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void AITriggerTypeClass::vt_25_(int this, unsigned __int8 ***a2)
 {
   int ExitCellByName; // eax
   int Index; // eax
@@ -519,10 +513,9 @@ LABEL_26:
 }
 
 // 0x41FD60
-int AITriggerTypeClass::RegisterSuccess()
+void AITriggerTypeClass::RegisterSuccess()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void AITriggerTypeClass::RegisterSuccess(int this)
 {
   int result; // eax
 
@@ -554,10 +547,9 @@ void AITriggerTypeClass::RegisterSuccess(int this)
 }
 
 // 0x41FE20
-int AITriggerTypeClass::RegisterFailure()
+void AITriggerTypeClass::RegisterFailure()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void AITriggerTypeClass::RegisterFailure(int this)
 {
   int result; // eax
   __int16 v5; // fps

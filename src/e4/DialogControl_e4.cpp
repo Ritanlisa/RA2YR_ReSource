@@ -3,10 +3,9 @@
 #include "e4/e4_globals.hpp"
 
 // 0x4E1450
-int DialogControl::Hide()
+void DialogControl::Hide()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void DialogControl_Hide(_BYTE *this)
 {
 
   int v1 = *(_DWORD *)this; /*0x4e1450*/
@@ -17,10 +16,9 @@ void DialogControl_Hide(_BYTE *this)
 }
 
 // 0x4E1460
-int DialogControl::Show()
+void DialogControl::Show()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void DialogControl_Show(_BYTE *this)
 {
   *(this + 30) = 1; /*0x4e1462*/
   this->q01C = 1; /*0x4e1465*/
@@ -29,10 +27,9 @@ void DialogControl_Show(_BYTE *this)
 }
 
 // 0x4E1470
-BOOL DialogControl::IsHidden()
+void DialogControl::IsHidden()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void DialogControl_IsHidden(_BYTE *this)
 {
   return *(this + 30) == 0; /*0x4e147a*/
 }
@@ -42,7 +39,6 @@ void DialogControl_IsHidden(_BYTE *this)
 unsigned int * DialogControl::Constructor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall DialogControl::Constructor(_DWORD *this)
 {
 
   memset(this, 0, 0x200u); /*0x62334d*/

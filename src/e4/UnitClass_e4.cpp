@@ -7,7 +7,6 @@ namespace gamemd {
 void UnitClass::ProcessIdleOrders()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void UnitClass_ProcessIdleOrders(_DWORD *this)
 {
   int i; // edi
 

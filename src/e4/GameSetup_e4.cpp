@@ -3,10 +3,9 @@
 #include "e4/e4_globals.hpp"
 
 // 0x60D320
-int GameSetup::LookupDialogHash()
+void GameSetup::LookupDialogHash()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_60D320(void *this)
 {
 
   GameSetup *v4 = this; /*0x60d326*/
@@ -30,10 +29,9 @@ void sub_60D320(void *this)
 }
 
 // 0x698F90
-int GameSetup::WriteINI(CCINIClass * aP1, unsigned char * Block)
+void GameSetup::WriteINI(CCINIClass * aP1, unsigned char * Block)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void GameSetup::WriteINI(int this, CCINIClass *aP1, unsigned __int8 *Block)
 {
   INIClass *v4; // edx
   INIClass *v5; // eax

@@ -6,7 +6,6 @@
 unsigned int ListBox::EditSubclassProc(HWND hWnd, UINT Msg, WPARAM wParam, wchar_t * lParam)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ListBox_EditSubclassProc(HWND hWnd, UINT Msg, WPARAM wParam, wchar_t *lParam)
 {
   LRESULT (__stdcall *v4)(HWND, UINT, WPARAM, LPARAM); // esi
   LRESULT (__stdcall **v6)(HWND, UINT, WPARAM, LPARAM); // eax

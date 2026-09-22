@@ -56,7 +56,6 @@ extern bool g_DDraw_Active;  // data: 0xa8ed80
 // 0x734F50: RestartNetworkSession
 void RestartNetworkSession(int mode) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_734F50(void *this)
 {
   int result; // eax
 
@@ -90,7 +89,6 @@ retn
 // 0x734F80: ToggleNetworkSession
 void ToggleNetworkSession(int enable) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_734F80(void *this)
 {
   int result; // eax
 
@@ -124,7 +122,6 @@ retn
 // 0x6B8AE0: ScenarioClass::ResetIntroFlags
 void ResetIntroFlags(int* obj) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall sub_6B8AE0(unsigned int *this)
 {
   unsigned int result; // eax
 
@@ -146,7 +143,6 @@ retn
 void FindGameDirectoryCD(const char* path) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x47ab10
-BOOL __thiscall Game::FindGameDirectoryCD(char *Source)
 {
   char *i; // edx
   char Str1[260]; // [esp+8h] [ebp-104h] BYREF
@@ -473,7 +469,6 @@ retn
 // 0x53ECE0: NetworkAddress::Assign
 void NetworkAssignAddress(void* addr, void* port, int arg) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall NetworkAddress_Assign(_DWORD *this, _DWORD *a2, int a3, __int16 a4)
 {
   _DWORD *result; // eax
 
@@ -524,7 +519,6 @@ retn    0Ch
 void NetworkGetField(int port) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x542430
-int __thiscall Network::GetField(_WORD *this, __int16 a2)
 {
   int result; // eax
   __int16 v3; // dx
@@ -602,7 +596,6 @@ void FadePalette(int mode) {
 // 0x6C87F0: InitSkirmishSettings
 void InitSkirmishSettings() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int InitSkirmishSettings()
 {
 
   int v1; // [esp+4h] [ebp-4h] BYREF
@@ -632,7 +625,6 @@ retn
 void DumpNetworkStats() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x69bab0
-char __thiscall WTFMode::Init(_BYTE *this)
 {
   char result; // al
 
@@ -716,7 +708,6 @@ retn
 // 0x5F0070: CleanupCampaignResources
 void CleanupCampaignResources() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char CleanupCampaignResources()
 {
   __int16 v5; // [esp+74h] [ebp-4h]
 
@@ -821,7 +812,6 @@ retn
 void NetworkShutdownInterface() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x5da720
-int Network::ShutdownInterface()
 {
   int result; // eax
 
@@ -960,7 +950,6 @@ int dword_B07784 = 0;
 int HashString(const char* str) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x5f9e80
-int __thiscall Checksummer::HashString(char *Source)
 {
   int i; // edx
   int j; // esi
@@ -1293,7 +1282,6 @@ retn
 // 0x734E60: GetStringCSF -- returns "TXT_KEY" as placeholder
 const wchar_t* GetCSFString(const wchar_t* key, const char* file, int line) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-#72 *__fastcall GetStringCSF(#72 *Format, _DWORD *a2, const char *a3, int a4)
 {
 
   if ( a2 )

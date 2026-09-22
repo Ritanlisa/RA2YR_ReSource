@@ -31,7 +31,6 @@ namespace gamemd {
 unsigned char * sub_52A9E0(unsigned char * a1, unsigned int * a2, unsigned int * a3, unsigned int * a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_BYTE *__fastcall sub_52A9E0(unsigned __int8 *a1, unsigned int *a2, unsigned int *a3, unsigned int *a4)
 {
   _BYTE *result; // eax
   unsigned __int8 v5; // bl
@@ -84,10 +83,9 @@ LABEL_17:
 
 // 0x52B750
 namespace gamemd {
-int System_Search(ObjectClass * aP0, int edx0, int * a2)
+void System_Search(ObjectClass * aP0, int edx0, int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall System_Search(ObjectClass *aP0, int edx0, int *a2)
 {
   int v5; // edi
   int v3 = edx0; /*0x52b755*/
@@ -117,10 +115,9 @@ LABEL_7:
 
 // 0x6269A0
 namespace gamemd {
-int sub_6269A0()
+void sub_6269A0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_6269A0()
 {
 
   _DWORD * v0 = g_FileExtensionState; /*0x6269a0*/
@@ -192,10 +189,9 @@ void sub_6269A0()
 
 // 0x626AB0
 namespace gamemd {
-char sub_626AB0(const char * a1, int a2)
+void sub_626AB0(const char * a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall sub_626AB0(const char *a1, int a2)
 {
 
   if ( !g_FileExtensionState ) /*0x626ac5*/
@@ -288,7 +284,6 @@ namespace gamemd {
 int sub_7C8F46()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_7C8F46()
 {
   int result; // eax
 
@@ -303,10 +298,9 @@ int sub_7C8F46()
 
 // 0x7A2EA0
 namespace gamemd {
-int sub_7A2EA0(int (__stdcall ***a1)(unsigned int, void *, int *) a1, int a2, int a3, int a4)
+void sub_7A2EA0(int (__stdcall ***a1)(unsigned int, void *, int *) a1, int a2, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall sub_7A2EA0(int (__stdcall ***a1)(_DWORD, void *, int *), int a2, int a3, int a4)
 {
   int (__stdcall **v4)(_DWORD, void *, int *); // ecx
 
@@ -331,10 +325,9 @@ int __stdcall sub_7A2EA0(int (__stdcall ***a1)(_DWORD, void *, int *), int a2, i
 
 // 0x68C9C0
 namespace gamemd {
-int System_Read_68C9C0(BlowStraw * aP0, ObjectClass * a1, ObjectClass * aP3, int a4, int a5)
+void System_Read_68C9C0(BlowStraw * aP0, ObjectClass * a1, ObjectClass * aP3, int a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall System_Read_68C9C0(BlowStraw *aP0, ObjectClass *a1, ObjectClass *aP3, int a4, int a5)
 {
   int v6; // esi
   IUnknown *v7; // eax

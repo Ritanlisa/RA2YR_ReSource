@@ -12,7 +12,6 @@ namespace gamemd {
 unsigned int * VoxelAnimTypeClass::Constructor(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall VoxelAnimTypeClass::Constructor(_DWORD *this, ObjectClass *aP1)
 {
   VoxelAnimTypeClass *v4; // eax
   ObjectTypeClass::ConstructFull((int)this, (AbstractClass *)aP1); /*0x74ad89*/
@@ -87,10 +86,9 @@ _DWORD *__thiscall VoxelAnimTypeClass::Constructor(_DWORD *this, ObjectClass *aP
 
 // 0x74B050
 namespace gamemd {
-char VoxelAnimTypeClass::LoadFromINI(unsigned char *** aP1)
+void VoxelAnimTypeClass::LoadFromINI(unsigned char *** aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void VoxelAnimTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
 {
   char Bool_Overwrite; // al
   double Double_Overwrite; // st7
@@ -117,7 +115,7 @@ void VoxelAnimTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
   _DWORD *FileVXL; // eax
   INIClass *v38; // [esp-8h] [ebp-2A0h]
   INIClass *v39; // [esp-8h] [ebp-2A0h]
-  char v40; // [esp-4h] [ebp-29Ch]
+  bool v40; // [esp-4h] [ebp-29Ch]
   VoxelAnimTypeClass *v41; // [esp+10h] [ebp-288h]
   AbstractTypeClass *v42; // [esp+10h] [ebp-288h]
   int v43; // [esp+10h] [ebp-288h]
@@ -139,7 +137,7 @@ void VoxelAnimTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
                      (unsigned __int8 *)(this + 36),
                      &unk_818610,
                      this->Normalized);
-  char v5 = this->Translucent; /*0x74b092*/
+  bool v5 = this->Translucent; /*0x74b092*/
   this->Normalized = Bool_Overwrite; /*0x74b098*/
   char v6 = INIClass::ReadBool_Overwrite((int)aP1, (unsigned __int8 *)(this + 36), &unk_818604, v5); /*0x74b0a7*/
   v40 = this->IsTiberium; /*0x74b0b4*/
@@ -422,10 +420,9 @@ void VoxelAnimTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
 
 // 0x74B690
 namespace gamemd {
-int VoxelAnimTypeClass::PowerDrainUpdate(int * a2)
+void VoxelAnimTypeClass::PowerDrainUpdate(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void VoxelAnimTypeClass::_vt13(int this, int *a2)
 {
 
   int v3 = AbstractTypeClass::ProcessPower((char *)this, a2); /*0x74b699*/

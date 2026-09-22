@@ -5,10 +5,9 @@
 
 // 0x5862C0
 namespace gamemd {
-char VeinholeMonsterClass_Update(MouseClass * aP0, int a2)
+void VeinholeMonsterClass_Update(MouseClass * aP0, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void VeinholeMonsterClass_Update(MouseClass *aP0, int a2)
 {
   int v8; // ecx
   unsigned int v9; // eax

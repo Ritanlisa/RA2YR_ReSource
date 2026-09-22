@@ -17,10 +17,9 @@
 
 // 0x49B660
 namespace gamemd {
-int MPCooperative::processTurn(char * a2, char * a3)
+void MPCooperative::processTurn(char * a2, char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_49B660(int this, char *a2, char *a3)
 {
   if ( a2 ) /*0x49b66e*/
     strcpy((char *)this, ToWideStringChar(a2)); /*0x49b68b*/
@@ -55,10 +54,9 @@ void sub_49B660(int this, char *a2, char *a3)
 
 // 0x49BCE0
 namespace gamemd {
-char MPCooperative::BuildScoreEntries(int a2, CCINIClass * aP2)
+void MPCooperative::BuildScoreEntries(int a2, CCINIClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MPCooperative::BuildScoreEntries(int this, int a2, CCINIClass *aP2)
 {
   wchar_t *v9; // ebx
   int i; // ebx
@@ -125,10 +123,9 @@ void MPCooperative::BuildScoreEntries(int this, int a2, CCINIClass *aP2)
 
 // 0x49BE40
 namespace gamemd {
-char MPCooperative::WriteCoopSaveINI()
+void MPCooperative::WriteCoopSaveINI()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MPCooperative::WriteCoopSaveINI()
 {
   char i; // al
 
@@ -241,10 +238,9 @@ void MPCooperative::WriteCoopSaveINI()
 
 // 0x49CC50
 namespace gamemd {
-int MPCooperative_validateMove()
+void MPCooperative_validateMove()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_49CC50(
         _DWORD *this,
         int a2,
         int a3,
@@ -326,10 +322,9 @@ void sub_49CC50(
 
 // 0x49D120
 namespace gamemd {
-bool MPCooperative::ReadCoopSaveINI()
+void MPCooperative::ReadCoopSaveINI()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MPCooperative::ReadCoopSaveINI()
 {
   char i; // al
   _BYTE v17[12]; // [esp+64h] [ebp-D0h] BYREF
@@ -445,14 +440,6 @@ namespace gamemd {
 unsigned int * MPCooperative::ctor(MultiplayerGameMode * aP1, MPCooperative * aP2, MultiplayerGameMode * aP3, MPCooperative * aP4, MultiplayerGameMode * aP5, MPCooperative * aP6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall MPCooperative::ctor(
-        _DWORD *this,
-        MultiplayerGameMode *aP1,
-        MPCooperative *aP2,
-        MultiplayerGameMode *aP3,
-        MPCooperative *aP4,
-        MultiplayerGameMode *aP5,
-        MPCooperative *aP6)
 {
   IPXManagerClass *v8; // esi
   VectorClass *v10; // esi
@@ -547,14 +534,14 @@ _DWORD *__thiscall MPCooperative::ctor(
     {
       if ( !*((_BYTE *)this + 817) && v21 ) /*0x5c15fe*/
         continue; /*0x5c15fe*/
-      int v22 = this->q0CE; /*0x5c1600*/
+      bool v22 = this->q0CE; /*0x5c1600*/
       if ( v22 <= 0 /*0x5c160f*/
         || !(*((unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))v14->vtable0 + 2))(this + 201, v21 + v22, 0) )
       {
         continue; /*0x5c160f*/
       }
     }
-    int v23 = this->q0CD; /*0x5c1616*/
+    bool v23 = this->q0CD; /*0x5c1616*/
     int v24 = this->q328; /*0x5c1619*/
     this->q0CD = v23 + 1; /*0x5c161f*/
     *(_DWORD *)(v24 + 4 * v23) = v20; /*0x5c1622*/
@@ -569,7 +556,6 @@ namespace gamemd {
 void MPCooperative_Cleanup(MPCooperative * aP0, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MPCooperative_Cleanup(MPCooperative *aP0, int a2)
 {
   MPCooperative *ebp0; // ebp
   MPCooperative *v4; // edi
@@ -675,10 +661,9 @@ void MPCooperative_Cleanup(MPCooperative *aP0, int a2)
 
 // 0x5C18A0
 namespace gamemd {
-char MPCooperative::Read()
+void MPCooperative::Read()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MPCooperative::_vt04()
 {
   int i; // edi
   int j; // ebx
@@ -728,10 +713,9 @@ void MPCooperative::_vt04()
 
 // 0x5C1A10
 namespace gamemd {
-HWND MPCooperative::CopyTo()
+void MPCooperative::CopyTo()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-HWND __thiscall MPCooperative::vt_08_(int this)
 {
   HWND result; // eax
   HWND v12; // edi
@@ -854,7 +838,6 @@ namespace gamemd {
 void MPCooperative::COMStub()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MPCooperative::_vt09()
 {
   this->q340 = 1; /*0x5c1cb0*/
 }
@@ -863,10 +846,9 @@ void MPCooperative::_vt09()
 
 // 0x5C1CC0
 namespace gamemd {
-int MPCooperative::InitSession()
+void MPCooperative::InitSession()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MPCooperative::vt_17_()
 {
   char *String2; // [esp+14h] [ebp-4h] BYREF
 
@@ -905,10 +887,9 @@ LABEL_10:
 
 // 0x5C1DC0
 namespace gamemd {
-char MPCooperative::Seek()
+void MPCooperative::Seek()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MPCooperative::_vt06(int this)
 {
   char result; // al
   LRESULT v3; // edi
@@ -1017,10 +998,9 @@ LABEL_16:
 
 // 0x5C1FA0
 namespace gamemd {
-int MPCooperative::Revert()
+void MPCooperative::Revert()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MPCooperative::_vt10()
 {
   int v4; // eax
   int v5; // eax
@@ -1056,10 +1036,9 @@ void MPCooperative::_vt10()
 
 // 0x5C2040
 namespace gamemd {
-char MPCooperative::StartGame(int a2, void ** a3, void * Block, int a5, short a6, int a7, int a8, char * a9, char * a10)
+void MPCooperative::StartGame(int a2, void ** a3, void * Block, int a5, short a6, int a7, int a8, char * a9, char * a10)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MPCooperative::_vt22(int this, int a2, void **a3, void *Block, int a5, __int16 a6, int a7, int a8, char *a9, char *a10)
 {
   __int16 v15; // [esp-14h] [ebp-20h]
   if ( !this->MPCooperative_field_0x40 ) /*0x5c2045*/
@@ -1104,10 +1083,9 @@ void MPCooperative::_vt22(int this, int a2, void **a3, void *Block, int a5, __in
 
 // 0x5C2100
 namespace gamemd {
-char MPCooperative::EndGame(int a2, int a3, int a4)
+void MPCooperative::EndGame(int a2, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MPCooperative::_vt23(int this, int a2, int a3, int a4)
 {
   HWND GameUI; // eax
 
@@ -1197,10 +1175,9 @@ void MPCooperative::_vt23(int this, int a2, int a3, int a4)
 
 // 0x5C2680
 namespace gamemd {
-char MPCooperative::ProcessTurn()
+void MPCooperative::ProcessTurn()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MPCooperative::_vt24(int this)
 {
   HWND GameUI; // eax
 
@@ -1224,10 +1201,9 @@ void MPCooperative::_vt24(int this)
 
 // 0x5C2710
 namespace gamemd {
-char MPCooperative::SyncState()
+void MPCooperative::SyncState()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MPCooperative::_vt25()
 {
   int i; // [esp+20h] [ebp-1B4h]
   char Buffer[400]; // [esp+44h] [ebp-190h] BYREF
@@ -1367,7 +1343,6 @@ namespace gamemd {
 const char * MPCooperative::UpdateLobby(const char * a2, char * String)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-const char *__thiscall MPCooperative::_vt29(_DWORD *this, const char *a2, char *String)
 {
   const char *result; // eax
 
@@ -1498,10 +1473,9 @@ const char *__thiscall MPCooperative::_vt29(_DWORD *this, const char *a2, char *
 
 // 0x5C2D00
 namespace gamemd {
-int MPCooperative_Play(AnimClass * aP0, int a2, int a3)
+void MPCooperative_Play(AnimClass * aP0, int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MPCooperative_Play(AnimClass *aP0, int a2, int a3)
 {
   int i; // eax
   int j; // esi
@@ -1562,7 +1536,6 @@ namespace gamemd {
 unsigned int * MPCooperative::selectTeam(unsigned int * a1, int a2, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__stdcall MPCooperative::sub_5C2DE0(_DWORD *a1, int a2, int a3, int a4)
 {
   int i; // eax
   #375 *v10; // ecx
@@ -1631,10 +1604,9 @@ _DWORD *__stdcall MPCooperative::sub_5C2DE0(_DWORD *a1, int a2, int a3, int a4)
 
 // 0x5C2EF0
 namespace gamemd {
-char MPCooperative::GetPlayerCount(int a1)
+void MPCooperative::GetPlayerCount(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MPCooperative::_vt33(int a1)
 {
   int i; // ebp
   int *j; // eax
@@ -1721,10 +1693,9 @@ LABEL_17:
 
 // 0x5C30C0
 namespace gamemd {
-char MPCooperative::BroadcastMessage()
+void MPCooperative::BroadcastMessage()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MPCooperative::_vt26()
 {
 
   int v2 = ReadPlayerCountMap(g_GameRulesOptions) - *((_DWORD *)g_ScenarioClass_Instance + 1145); /*0x5c30db*/
@@ -1787,10 +1758,9 @@ void MPCooperative::_vt26()
 
 // 0x5C3220
 namespace gamemd {
-char MPCooperative::GetMapData()
+void MPCooperative::GetMapData()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MPCooperative::_vt34()
 {
 
   Debug::Log(); /*0x5c322c*/
@@ -1890,10 +1860,9 @@ void MPCooperative::_vt34()
 
 // 0x5C34F0
 namespace gamemd {
-int MPCooperative::ReceiveMessage()
+void MPCooperative::ReceiveMessage()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MPCooperative::_vt27()
 {
   int v8; // edi
   int v9; // esi
@@ -1943,10 +1912,9 @@ void MPCooperative::_vt27()
 
 // 0x5C35F0
 namespace gamemd {
-int MPCooperative::HandleEvent()
+void MPCooperative::HandleEvent()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MPCooperative::_vt28()
 {
   int v8; // edi
   int v9; // esi
@@ -1999,7 +1967,6 @@ namespace gamemd {
 void MPCooperative::LoadSettings(HWND hWnd, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MPCooperative::_vt19(int this, HWND hWnd, int a3, int a4)
 {
   MPCooperative *v4; // edi
   int i; // ebp
@@ -2067,14 +2034,14 @@ void MPCooperative::_vt19(int this, HWND hWnd, int a3, int a4)
       {
         if ( !*(_BYTE *)(v4 + 817) && v13 ) /*0x5c3c18*/
           continue; /*0x5c3c18*/
-        int v14 = v4->q0CE; /*0x5c3c1a*/
+        bool v14 = v4->q0CE; /*0x5c3c1a*/
         if ( v14 <= 0 /*0x5c3c2a*/
           || !(*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(v4->q324 + 8))(v4 + 804, v13 + v14, 0) )
         {
           continue; /*0x5c3c2a*/
         }
       }
-      int v15 = v4->q0CD; /*0x5c3c31*/
+      bool v15 = v4->q0CD; /*0x5c3c31*/
       int v16 = v4->q328; /*0x5c3c34*/
       v4->q0CD = v15 + 1; /*0x5c3c3a*/
       *(_DWORD *)(v16 + 4 * v15) = v12; /*0x5c3c3d*/
@@ -2174,7 +2141,6 @@ namespace gamemd {
 void MPCooperative::SetGameMode()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MPCooperative::vt_36_(int this)
 {
   HWND Current; // eax
   HWND DlgItem; // edi
@@ -2249,10 +2215,9 @@ LABEL_22:
 
 // 0x5C4110
 namespace gamemd {
-char MPCooperative::ProcessChat()
+void MPCooperative::ProcessChat()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MPCooperative::vt_37_()
 {
   LRESULT v2; // eax
   LPARAM v6; // ebp
@@ -2338,10 +2303,9 @@ void MPCooperative::vt_37_()
 
 // 0x5C42D0
 namespace gamemd {
-char MPCooperative::UpdateMovieScore()
+void MPCooperative::UpdateMovieScore()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MPCooperative::UpdateMovieScore()
 {
   int v6; // esi
   _DWORD *v7; // eax
@@ -2444,7 +2408,6 @@ namespace gamemd {
 void MPCooperative::ShowScoreScreen(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MPCooperative::sub_5C44E0(int a2)
 {
   void (__thiscall **v8)(_DWORD *, int); // edi
   LPARAM v14; // [esp+8h] [ebp-3Ch]
@@ -2553,10 +2516,9 @@ void MPCooperative::sub_5C44E0(int a2)
 
 // 0x5C4CA0
 namespace gamemd {
-int MPCooperative::InitializePlayers()
+void MPCooperative::InitializePlayers()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MPCooperative::sub_5C4CA0()
 {
   int result; // eax
 
@@ -2634,7 +2596,7 @@ LABEL_16:
 
 // 0x5C4F10
 namespace gamemd {
-int MPCooperative_QueryInterface()
+void MPCooperative_QueryInterface()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // (no pseudocode — ASM-only function)
@@ -2695,10 +2657,9 @@ _DWORD *__thiscall sub_5C4F30(_DWORD *this, _DWORD *a2)
 
 // 0x696F30
 namespace gamemd {
-int MPCooperative::finalizeSession()
+void MPCooperative::finalizeSession()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_696F30(int this)
 {
   int result; // eax
 

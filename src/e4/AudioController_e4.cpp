@@ -8,7 +8,6 @@ namespace game {
 int AudioController::LoadThemeBank(int a1, char * a2, signed int * a3, char * a4, signed int * a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_409DE0(int a1, char *a2, signed int *a3, char *a4, signed int *a5)
 {
 
   signed int v17 = 0; /*0x409df7*/

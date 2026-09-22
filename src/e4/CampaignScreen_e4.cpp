@@ -5,15 +5,9 @@
 
 // 0x470D30
 namespace gamemd {
-int CampaignScreen_Init()
+void CampaignScreen_Init()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __userpurge CampaignScreen::Init@<eax>(
-        CampaignScore *a1@<ebp>,
-        HWND hWnd,
-        unsigned int a3,
-        WPARAM wParam,
-        unsigned int a5)
 {
   int result; // eax
   _DWORD *WindowLongA; // eax

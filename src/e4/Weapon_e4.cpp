@@ -13,7 +13,6 @@ namespace gamemd {
 int sub_53AE00()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_53AE00()
 {
   wchar_t *StringCSF; // eax
 
@@ -28,10 +27,9 @@ int sub_53AE00()
 
 // 0x659CA0
 namespace gamemd {
-int Weapon_Update()
+void Weapon_Update()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool __usercall sub_659CA0@<al>(int a1@<ecx>, int a2@<ebx>)
 {
 
   if ( !*(_BYTE *)(a1 + 8) ) /*0x659ca7*/
@@ -96,10 +94,9 @@ bool __usercall sub_659CA0@<al>(int a1@<ecx>, int a2@<ebx>)
 } // namespace gamemd
 
 // 0x70C690
-int * Weapon::DestroyTerrain(int * a1, IUnknown * aP2, InfantryClass * aP3, IUnknown * aP4)
+void * Weapon::DestroyTerrain(int * a1, IUnknown * aP2, InfantryClass * aP3, IUnknown * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int *__thiscall Weapon::DestroyTerrain(int *this, int *a1, IUnknown *aP2, InfantryClass *aP3, IUnknown *aP4)
 {
   CCINIClass *v27; // edx
   int GroundHeight; // eax
@@ -358,7 +355,6 @@ namespace gamemd {
 int sub_53B410()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_53B410()
 {
   wchar_t *StringCSF; // eax
 

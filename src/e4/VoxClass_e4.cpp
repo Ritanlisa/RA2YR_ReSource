@@ -6,7 +6,6 @@
 void VoxClass::FindAndPlay(void * this, int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall VoxClass::FindAndPlay(void *this, int a2, int a3)
 {
 
   if ( this ) /*0x752708*/

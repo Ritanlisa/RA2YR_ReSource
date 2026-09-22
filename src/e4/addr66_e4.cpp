@@ -27,10 +27,9 @@
 
 // 0x6613A0
 namespace gamemd {
-int Color_ComputeSaturation(unsigned int a1, int a2, int a3)
+void Color_ComputeSaturation(unsigned int a1, int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall Color_ComputeSaturation(unsigned int a1, int a2, int a3)
 {
   __int16 v14; // [esp+1Ch] [ebp-8h]
 
@@ -110,7 +109,6 @@ namespace gamemd {
 unsigned char * sub_6615D0(char * a1, unsigned char * a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_BYTE *__stdcall sub_6615D0(char *a1, _BYTE *a2, int a3)
 {
 
   int v4 = a3; /*0x6615d6*/
@@ -150,7 +148,6 @@ namespace gamemd {
 unsigned char * sub_661640(unsigned short * a1, unsigned char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_BYTE *__stdcall sub_661640(unsigned __int16 *a1, _BYTE *a2)
 {
 
   _BYTE * v2 = a2; /*0x66164b*/
@@ -188,10 +185,9 @@ LABEL_6:
 
 // 0x6622C0
 namespace gamemd {
-char UpdateBullets(int a1)
+void UpdateBullets(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void UpdateBullets(int a1)
 {
   ObjectClass *v1; // ecx
   ObjectClass *v3; // eax
@@ -834,10 +830,9 @@ LABEL_47:
 
 // 0x663DB0
 namespace gamemd {
-bool E4Recv_663DB0::LaunchMultiplayerHost(unsigned char * a2)
+void E4Recv_663DB0::LaunchMultiplayerHost(unsigned char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void LaunchMultiplayerHost(int this, unsigned __int8 *a2)
 {
   unsigned __int8 *v4; // eax
   unsigned __int8 v6; // dl
@@ -950,10 +945,9 @@ LABEL_11:
 
 // 0x664750
 namespace gamemd {
-char E4Recv_664750::sub_664750(char a2)
+void E4Recv_664750::sub_664750(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_664750(unsigned __int8 *this, char a2)
 {
 
   _BYTE v4[340]; // [esp+4h] [ebp-154h] BYREF

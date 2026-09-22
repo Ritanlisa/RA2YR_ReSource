@@ -37,11 +37,10 @@ AircraftClass::AircraftClass() noexcept
 
 // IDA: 0x417FE0 (Mission_Attack, 3445B)
 // 0x417fe0
-int AircraftClass::Mission_Attack()
+void AircraftClass::Mission_Attack()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x417fe0
-void AircraftClass::Mission_Attack()
 {
   int result; // eax
   unsigned int TransitionCount; // eax
@@ -66,11 +65,11 @@ void AircraftClass::Mission_Attack()
       this->missionStatus = v3 + 10;
       return 1;
     case 1:
-      char v5 = this->AircraftClass_field_bool_6C8;
+      bool v5 = this->AircraftClass_field_bool_6C8;
       this->AircraftClass_field_bool_6D2 = 0;
       if ( v5 )
       {
-        int v6 = this->q0BF;
+        bool v6 = this->q0BF;
         this->AircraftClass_field_bool_6C8 = 0;
         this->q0BF = v6 - 1;
       }
@@ -91,7 +90,7 @@ LABEL_107:
     case 3:
       if ( this->AircraftClass_field_bool_6C8 )
       {
-        int v10 = this->q0BF;
+        bool v10 = this->q0BF;
         this->AircraftClass_field_bool_6C8 = 0;
         this->q0BF = v10 - 1;
       }
@@ -224,7 +223,7 @@ LABEL_14:
           }
           if ( !(*(int (__stdcall **)(int *))(*v20 + 28))(this + 432) )
             goto LABEL_54;
-          int v35 = this->q0BF;
+          bool v35 = this->q0BF;
           bool v36 = v35 == 0;
           bool v37 = v35 < 0;
           int v38 = *this;
@@ -534,11 +533,11 @@ LABEL_91:
       }
       return result;
     case 10:
-      char v78 = this->AircraftClass_field_bool_6C8;
+      bool v78 = this->AircraftClass_field_bool_6C8;
       this->AircraftClass_field_bool_6D2 = 0;
       if ( v78 )
       {
-        int v79 = this->q0BF;
+        bool v79 = this->q0BF;
         this->AircraftClass_field_bool_6C8 = 0;
         if ( v79 > 0 )
           this->q0BF = v79 - 1;
@@ -1911,10 +1910,9 @@ int AircraftClass::Mission_Retreat()
 
 // IDA: 0x4166C0 (Mission_Enter, 1037B)
 // 0x4166c0
-int AircraftClass::Mission_Enter()
+void AircraftClass::Mission_Enter()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __usercall AircraftClass::_vt139@<eax>(int a1@<ecx>, int a2@<ebx>, int a3@<ebp>, int a4@<edi>, int a5@<esi>)
 {
   int result; // eax
   char *MissionControl; // eax
@@ -2485,10 +2483,9 @@ retn
 
 // IDA: 0x419C80 (Mission_Transport, 1215B)
 // 0x419c80
-int AircraftClass::Mission_Transport()
+void AircraftClass::Mission_Transport()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __usercall AircraftClass::Mission_Transport@<eax>(int a1@<ecx>, int a2@<ebp>)
 {
   int result; // eax
   int Member; // eax
@@ -3209,11 +3206,10 @@ retn
 
 // IDA: 0x4190B0 (MissionDispatch, 1147B)
 // 0x4190b0
-int AircraftClass::MissionDispatch()
+void AircraftClass::MissionDispatch()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x4190b0
-void AircraftClass::MissionDispatch(int this, _DWORD *a2, int a3, void **a4)
 {
   int result; // eax
   void *ClosestPlacementCell; // eax
@@ -3849,10 +3845,9 @@ retn    0Ch
 
 // IDA: 0x414310 (MoveTo, 406B)
 // 0x414310
-int AircraftClass::MoveTo()
+void AircraftClass::MoveTo()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_414310(_DWORD *this, _DWORD *a2, int a3)
 {
   __int16 v10; // dx
   _DWORD * v3 = a2;
@@ -4077,10 +4072,9 @@ bool AircraftClass::CanEnterCell()
 
 // IDA: 0x41BA90 (ProcessLanding, 82B)
 // 0x41ba90
-int AircraftClass::ProcessLanding()
+void AircraftClass::ProcessLanding()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void AircraftClass::_vt122(int this, int a2, int a3)
 {
   int result; // eax
 
@@ -4311,10 +4305,9 @@ int AircraftClass::LandingCheckStub()
 
 // IDA: 0x41B870 (ProcessPassengerEjection, 21B)
 // 0x41b870
-int AircraftClass::ProcessPassengerEjection()
+void AircraftClass::ProcessPassengerEjection()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void AircraftClass::_vt123(#377 *this)
 {
   if ( this->q02B != 30 )
     this->AircraftClass_field_bool_6D2 = 0;
@@ -4383,10 +4376,9 @@ int AircraftClass::PowerDrainUpdate(int a2)
 
 // IDA: 0x41B660 (HandleTargetDestroyed, 56B)
 // 0x41b660
-int AircraftClass::HandleTargetDestroyed()
+void AircraftClass::HandleTargetDestroyed()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void AircraftClass::_vt10(int *a2, int *a3)
 {
   int result; // eax
 
@@ -4428,11 +4420,10 @@ retn    8
 
 // IDA: 0x414A80 (ProcessMissionTimeout, 302B)
 // 0x414a80
-int AircraftClass::ProcessMissionTimeout()
+void AircraftClass::ProcessMissionTimeout()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x414a80
-void AircraftClass::ProcessMissionTimeout()
 {
   char *MissionControl; // eax
 
@@ -4602,11 +4593,10 @@ retn
 
 // IDA: 0x41A5C0 (GetMissionTimer, 886B)
 // 0x41a5c0
-int AircraftClass::GetMissionTimer()
+void AircraftClass::GetMissionTimer()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x41a5c0
-void AircraftClass::GetMissionTimer(int this)
 {
   char *MissionControl; // eax
   int Member; // eax
@@ -5131,7 +5121,6 @@ void AircraftClass::Destruct()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x414080
-void AircraftClass::Destruct(void **this)
 {
   void **v2; // esi
   int Vtable3; // eax

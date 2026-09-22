@@ -3,10 +3,9 @@
 #include "e4/e4_globals.hpp"
 
 // 0x5D8CB0
-char PlayerClass::SetHouse(int a2)
+void PlayerClass::SetHouse(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void PlayerClass_SetHouse(_DWORD *this, int a2)
 {
   char result; // al
 

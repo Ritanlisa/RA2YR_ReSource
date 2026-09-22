@@ -6,10 +6,9 @@
 
 // 0x798340
 namespace gamemd {
-BOOL sub_798340()
+int sub_798340()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_798340()
 {
   HANDLE *v0; // esi
   BOOL result; // eax

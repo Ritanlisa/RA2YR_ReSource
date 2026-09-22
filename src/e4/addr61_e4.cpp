@@ -7,10 +7,9 @@
 
 // 0x610570
 namespace gamemd {
-BOOL DestroyDialogChildWindow(HWND hWnd, LPARAM a2)
+void DestroyDialogChildWindow(HWND hWnd, LPARAM a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void DestroyDialogChildWindow(HWND hWnd, LPARAM a2)
 {
   HWND *v8; // ecx
   HWND v9; // edi
@@ -125,7 +124,6 @@ namespace gamemd {
 char sub_610810(int a1, const wchar_t * a2, CoordStruct * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall sub_610810(int a1, const wchar_t *a2, CoordStruct *a3)
 {
   wchar_t *StringCSF; // eax
   CoordStruct *v6; // ecx
@@ -183,10 +181,9 @@ LABEL_8:
 
 // 0x610B50
 namespace gamemd {
-char sub_610B50()
+void sub_610B50()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_610B50()
 {
   __int128 v3; // [esp+14h] [ebp-10h] BYREF
   if ( !DataGlobal_AC1DCC ) /*0x610b5d*/
@@ -215,10 +212,9 @@ void sub_610B50()
 
 // 0x610BF0
 namespace gamemd {
-char sub_610BF0()
+void sub_610BF0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_610BF0()
 {
   __int128 v3; // [esp+14h] [ebp-10h] BYREF
   if ( !DataGlobal_AC1DCC ) /*0x610bfd*/
@@ -257,7 +253,6 @@ namespace gamemd {
 void sub_612930()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_612930()
 {
   unsigned int i; // edi
 
@@ -326,10 +321,9 @@ void sub_612930()
 
 // 0x612A60
 namespace gamemd {
-HGDIOBJ sub_612A60(HWND hWnd, UINT Msg, HDC hdc, LPARAM lParam)
+void sub_612A60(HWND hWnd, UINT Msg, HDC hdc, LPARAM lParam)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-HGDIOBJ __stdcall sub_612A60(HWND hWnd, UINT Msg, HDC hdc, LPARAM lParam)
 {
   LRESULT (__stdcall *v4)(HWND, UINT, WPARAM, LPARAM); // esi
   HWND v6; // ecx
@@ -391,10 +385,9 @@ LABEL_10:
 
 // 0x61D6D0
 namespace gamemd {
-int NetworkLobbyPaintProc(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
+void NetworkLobbyPaintProc(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void NetworkLobbyPaintProc(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 {
   HWND v4; // ebp
   int result; // eax
@@ -502,10 +495,9 @@ void NetworkLobbyPaintProc(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 
 // 0x61ECA0
 namespace gamemd {
-int RenderDialogSurface(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
+void RenderDialogSurface(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void RenderDialogSurface(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
 {
   UINT v4; // edi
   LRESULT (__stdcall *v5)(HWND, UINT, WPARAM, LPARAM); // esi
@@ -635,10 +627,9 @@ void RenderDialogSurface(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
 
 // 0x61EF70
 namespace gamemd {
-int FormatHotkeyDisplayString()
+void FormatHotkeyDisplayString()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __usercall FormatHotkeyDisplayString@<eax>(__int16 a1@<cx>, wchar_t *a2@<edx>, CampaignScore *a3@<edi>)
 {
   int result; // eax
   __int16 v4; // kr1C_2
@@ -696,7 +687,6 @@ namespace gamemd {
 char Dialog_InitCountryIcons(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall Dialog_InitCountryIcons(int a1, int a2)
 {
 
   LoadPaletteFromFile((int)g_DialogHashTable, a2, DataGlobal_833654, 2, 0);

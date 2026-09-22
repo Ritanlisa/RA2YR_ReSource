@@ -5,10 +5,9 @@
 
 // 0x557AC0
 namespace gamemd {
-int Array::GetClamped(CheckListClass * aP1)
+void Array::GetClamped(CheckListClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Array::GetClamped(CheckListClass *aP1)
 {
   int result; // eax
   CheckListClass *v3; // edx
@@ -29,10 +28,9 @@ void Array::GetClamped(CheckListClass *aP1)
 
 // 0x634290
 namespace gamemd {
-int Array::FindValue(IUnknown * aP1)
+void Array::FindValue(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Array::FindValue(IUnknown *aP1)
 {
   int result; // eax
   VectorClass *i; // ecx
@@ -56,10 +54,9 @@ void Array::FindValue(IUnknown *aP1)
 
 // 0x63E590
 namespace gamemd {
-char Array::RemoveAt(int a2)
+void Array::RemoveAt(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Array_RemoveAt(_DWORD *this, int a2)
 {
 
   int v2 = this->q010; /*0x63e590*/
@@ -84,10 +81,9 @@ void Array_RemoveAt(_DWORD *this, int a2)
 
 // 0x65AD40
 namespace gamemd {
-int Array::Get(int a2)
+void Array::Get(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Array_Get(_DWORD *this, int a2)
 {
   return *(_DWORD *)(this->q0E4 + 4 * a2); /*0x65ad4d*/
 }
@@ -96,10 +92,9 @@ void Array_Get(_DWORD *this, int a2)
 
 // 0x65ADF0
 namespace gamemd {
-char Array::ContainsValue(IUnknown * aP1)
+void Array::ContainsValue(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Array::ContainsValue(IUnknown *aP1)
 {
   IUnknown **i; // ecx
 
@@ -119,10 +114,9 @@ void Array::ContainsValue(IUnknown *aP1)
 
 // 0x7490D0
 namespace gamemd {
-int Array::Zero()
+void Array::Zero()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Array_Zero(_DWORD *this)
 {
   int result; // eax
 
@@ -148,7 +142,6 @@ namespace gamemd {
 void Array::ByteSwap()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Array_ByteSwap(u_long *this)
 {
   Array *v3; // esi
   signed int v2; // ebx
@@ -174,10 +167,9 @@ void Array_ByteSwap(u_long *this)
 
 // 0x763980
 namespace gamemd {
-int Array::GetElement(CampaignScore * aP1)
+void Array::GetElement(CampaignScore * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Array::GetElement(CampaignScore *aP1)
 {
   if ( (int)aP1 < 0 || (int)aP1 >= this->q038 ) /*0x76398b*/
     return 0; /*0x763999*/
@@ -189,10 +181,9 @@ void Array::GetElement(CampaignScore *aP1)
 
 // 0x7ACD30
 namespace gamemd {
-int Array::CleanupArrayWOL()
+void Array::CleanupArrayWOL()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void WOL_CleanupArray(int *this)
 {
   int i; // edi
   int result; // eax
@@ -210,10 +201,9 @@ void WOL_CleanupArray(int *this)
 
 // 0x7AD790
 namespace gamemd {
-char Array::InsertElement(const void * a1, ObjectClass * aP2)
+void Array::InsertElement(const void * a1, ObjectClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Array::InsertElement(const void *a1, ObjectClass *aP2)
 {
   CCINIClass *v8; // edx
   CCINIClass *v9; // esi

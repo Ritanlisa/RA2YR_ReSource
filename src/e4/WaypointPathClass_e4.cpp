@@ -6,10 +6,9 @@
 
 // 0x763730
 namespace gamemd {
-int WaypointPathClass::Init()
+void WaypointPathClass::Init()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_763730(int this)
 {
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x763733*/
@@ -43,10 +42,9 @@ void sub_763730(int this)
 
 // 0x763810
 namespace gamemd {
-int WaypointPathClass::Construct(WaypointClass * aP1)
+void WaypointPathClass::Construct(WaypointClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void WaypointPathClass::Construct(int this, WaypointClass *aP1)
 {
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x763813*/
@@ -81,10 +79,9 @@ void WaypointPathClass::Construct(int this, WaypointClass *aP1)
 
 // 0x763C70
 namespace gamemd {
-int WaypointPathClass::LoadState(unsigned int * a1, int a2)
+void WaypointPathClass::LoadState(unsigned int * a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void WaypointPathClass::_vt05(_DWORD *a1, int a2)
 {
   int result; // eax
 
@@ -162,7 +159,6 @@ namespace gamemd {
 unsigned int * WaypointPathClass::computePath(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_764760(_DWORD *this, int a2, _DWORD *a3)
 {
 
   this->vtable2 = 0; /*0x76476d*/

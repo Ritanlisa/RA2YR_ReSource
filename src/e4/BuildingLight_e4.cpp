@@ -8,10 +8,9 @@
 
 // 0x5FF850
 namespace gamemd {
-char BuildingLight::CalculateShading()
+void BuildingLight::CalculateShading()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void BuildingLight::CalculateShading()
 {
   int ebx1; // ebx
   ObjectClass *v3; // eax

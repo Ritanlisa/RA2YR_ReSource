@@ -100,6 +100,7 @@ R_INDEX = re.compile(
 
 def build_types(body, cls, addr):
     env = {}
+    env_val = {}  # primitive types adopted from member declarations (CSP)
     if cls:
         env['this'] = cls
     ai = '0x%08X' % addr if addr else None
@@ -126,8 +127,6 @@ def build_types(body, cls, addr):
             if not m:
                 continue
             v, rhs = m.group(1), m.group(2).strip()
-            if v in env:
-                continue
             cm = CAST_HINT.match(rhs)
             if cm and is_cls(cm.group(1)):
                 env[v] = cm.group(1)
@@ -138,14 +137,18 @@ def build_types(body, cls, addr):
                 grew = True
                 continue
             rm = MEMBER_RD.match(rhs)
-            if rm and ai and rm.group(1) in env:
+            if rm and rm.group(1) in env:
                 rc = env[rm.group(1)]
                 off = None
+                mtype = None
                 for o, info in (mtab.get(rc) or {}).get('members', {}).items():
                     if info.get('name') == rm.group(2):
                         off = int(o)
+                        mtype = info.get('type')
                         break
-                if off is not None:
+                if v not in env and off is not None:
+                    # value type: class results via type_map, primitives via
+                    # the member's own declared type (bool/int/float...)
                     for key in ('%s:this.member(0x%X)' % (ai, off),
                                 '%s:param0.member(0x%X)' % (ai, off),
                                 '%s:eax.member(0x%X)' % (ai, off),
@@ -155,6 +158,11 @@ def build_types(body, cls, addr):
                             env[v] = t
                             grew = True
                             break
+                    if v in env:
+                        continue
+                    if mtype and re.match(r'^[A-Za-z_]\w*$', str(mtype)):
+                        env_val[v] = str(mtype)
+                        grew = True
                 if v in env:
                     continue
             vm = re.match(r'^\(\s*[A-Za-z_]\w*\s*\*\s*\)?\s*([a-z]\w*)$', rhs)
@@ -167,13 +175,16 @@ def build_types(body, cls, addr):
                 grew = True
         if not grew:
             break
-    return env
+    return env, env_val
 
 
 def normalize(body, cls, addr):
     stats = defaultdict(int)
-    env = build_types(body, cls, addr)
+    env, env_val = build_types(body, cls, addr)
     stats['typed_vars'] = len([k for k in env if k != 'this'])
+    GENERIC = {'int', 'char', 'unsigned char', 'unsigned int', 'unsigned',
+               'short', 'unsigned short', 'long', 'unsigned long', '_DWORD',
+               '_BYTE', '_WORD', 'BOOL'}
 
     def rw(m, scaled):
         rec = m.group(2)
@@ -198,10 +209,17 @@ def normalize(body, cls, addr):
                      r'(v\d+|a\d+)$', type_and_name)
         if not m:
             return type_and_name
-        t = env.get(m.group(3))
+        var = m.group(3)
+        cur = m.group(1)
+        t = env.get(var)
         if t and is_cls(t):
             stats['retyped'] += 1
-            return '%s *%s' % (t, m.group(3))
+            return '%s *%s' % (t, var)
+        # primitive adoption from CSP member types (bool member source etc.)
+        vt = env_val.get(var)
+        if vt and not is_cls(vt) and cur in GENERIC and vt != cur:
+            stats['retyped_prim'] += 1
+            return '%s %s' % (vt, var)
         return type_and_name
 
     def rd(m):
@@ -291,6 +309,64 @@ for p in sorted(SRC.rglob('*.cpp')):
             nblk += 1
             for kk, vv in st.items():
                 tot[kk] += vv
+        # ---- duplicate-signature removal + outer def canon adoption ----
+        # the block's FIRST lines are the IDA-rendered def + its `{`; the
+        # signature duplicates the outer (tree) def -- drop the def line and
+        # keep the `{` as the span opener (span logic requires it).
+        seg_lines = lines[lo + 1:hi]
+        drop = -1
+        for j, ln in enumerate(seg_lines[:5]):
+            s = ln.strip()
+            if not s or s.startswith('//'):
+                continue
+            # materialized-signature shape: a `(...)` header line (not a
+            # statement) whose next line is its `{` -- structural, so any
+            # return-type/CC spelling matches
+            nxt = seg_lines[j + 1].strip() if j + 1 < len(seg_lines) else ''
+            is_ctl = re.match(r'^(if|for|while|switch|return|else)', s)
+            if ('(' in s and not s.endswith(';') and not s.endswith('}')
+                    and not is_ctl and nxt == '{'):
+                drop = j
+            elif ('(' in s and not s.endswith(';') and not s.endswith('}')
+                    and not is_ctl):
+                # multi-line header: params continue (up to 48 lines) until
+                # the `{` opener; drop the WHOLE header run, keep `{`
+                k2 = j
+                while k2 + 1 < min(j + 48, len(seg_lines)):
+                    k2 += 1
+                    t = seg_lines[k2].strip()
+                    if t == '{':
+                        seg_lines[j:k2] = []
+                        tot['dup_sig_removed'] += 1
+                        changed = True
+                        drop = -2
+                        break
+                    if ';' in t or re.match(r'^(if|for|while|switch|return)',
+                                            t):
+                        break
+                break
+            break
+        if drop >= 0:
+            del seg_lines[drop]
+        if drop >= 0 or drop == -2:
+            lines[lo + 1:hi] = seg_lines
+            changed = True
+        # outer def return type <- canon (when anchored and different)
+        if addr and addr in canon_ret:
+            cret = canon_ret[addr]
+            for j in range(lo - 1, max(lo - 8, -1), -1):
+                s = lines[j].strip()
+                if s.startswith('//') or not s or s in ('{', '}'):
+                    continue
+                od = re.match(r'^([A-Za-z_][\w:]*)\s+(\*?\s*~?[A-Za-z_]\w*'
+                              r'(?:\s*::)?\s*~?\w*\s*\()', s)
+                if od and od.group(1) != cret:
+                    rest = s[len(od.group(1)):].lstrip()
+                    pre = lines[j][:len(lines[j]) - len(lines[j].lstrip())]
+                    lines[j] = pre + cret + ' ' + rest
+                    tot['outer_ret_fixed'] += 1
+                    changed = True
+                break
     if changed:
         p.write_bytes('\n'.join(lines).encode('latin-1'))
 
@@ -299,5 +375,8 @@ print('typed vars:', tot['typed_vars'])
 print('offset rewrites (param/local receivers):', tot['offsets'])
 print('locals retyped:', tot['retyped'])
 print('member sigs normalized:', tot['sig'])
+print('dup sigs removed:', tot['dup_sig_removed'])
+print('outer rets fixed:', tot['outer_ret_fixed'])
+print('primitive retypes:', tot['retyped_prim'])
 print('free sigs normalized:', tot['sig_free'])
 print('DONE')

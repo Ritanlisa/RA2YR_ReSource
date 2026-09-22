@@ -19,7 +19,6 @@ namespace gamemd {
 void Game::initScenario()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_430980(void **this)
 {
   void **v2; // esi
 
@@ -55,7 +54,6 @@ namespace gamemd {
 int Game::SendCampaignOptions()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int Game_SendCampaignOptions()
 {
   int result; // eax
   int i; // esi
@@ -139,10 +137,9 @@ int Game_SendCampaignOptions()
 
 // 0x534450
 namespace gamemd {
-int Game::DestroyAllObjects()
+void Game::DestroyAllObjects()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_534450()
 {
   size_t i; // eax
 
@@ -360,10 +357,9 @@ void sub_534450()
 
 // 0x537BC0
 namespace gamemd {
-int Game::MakeScreenshot(int a1)
+void Game::MakeScreenshot(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Game::MakeScreenshot(int a1)
 {
   int result; // eax
   struct tagPOINT Point; // [esp+4h] [ebp-198h] BYREF
@@ -444,10 +440,9 @@ void Game::MakeScreenshot(int a1)
 
 // 0x5B7090
 namespace gamemd {
-char Game::StartModemMultiplayer(char a2)
+void Game::StartModemMultiplayer(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void StartModemMultiplayerGame(int this, char a2)
 {
   wchar_t *StringCSF; // eax
   HWND MessageBox; // eax
@@ -551,10 +546,9 @@ LABEL_31:
 
 // 0x5BA660
 namespace gamemd {
-int Game::BuildGameSetupPacket()
+void Game::BuildGameSetupPacket()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void BuildGameSetupPacket(int this)
 {
   HWND DlgItem; // eax
   __int16 v12; // [esp+100h] [ebp-70h]
@@ -623,10 +617,9 @@ void BuildGameSetupPacket(int this)
 
 // 0x5CA110
 namespace gamemd {
-int Game::GetMultiplayerScoreScreenBar()
+void Game::GetMultiplayerScoreScreenBar()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Game::GetMultiplayerScoreScreenBar()
 {
   int playerSideIndex; // eax
 
@@ -713,7 +706,6 @@ namespace gamemd {
 void Game::BuildGameSettingsPacket()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Game::BuildGameSettingsPacket()
 {
   char v2; // bl
   char **v3; // eax
@@ -804,7 +796,6 @@ namespace gamemd {
 unsigned char Game::ManageGameSpeed()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ManageGameSpeed(int this)
 {
   unsigned __int8 result; // al
   char v16; // [esp+12h] [ebp-1Eh]
@@ -930,7 +921,6 @@ namespace gamemd {
 unsigned int * Game::LockMutex(IUnknown * aP1, IUnknown * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall Game::LockMutex(_DWORD *this, IUnknown *aP1, IUnknown *aP2)
 {
   this->q004 = 0; /*0x67c3ab*/
   this->q008 = aP1; /*0x67c3ae*/
@@ -954,10 +944,9 @@ _DWORD *__thiscall Game::LockMutex(_DWORD *this, IUnknown *aP1, IUnknown *aP2)
 
 // 0x67E440
 namespace gamemd {
-char Game::LoadSaved()
+void Game::LoadSaved()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Game::LoadSaved()
 {
   int COM; // eax
   int *p_ppstgOpen; // ecx
@@ -1062,10 +1051,9 @@ LABEL_6:
 
 // 0x67F9C0
 namespace gamemd {
-int Game::SerializeGameSaveState()
+void Game::SerializeGameSaveState()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void SerializeGameSaveState(void *this)
 {
   int result; // eax
   wchar_t *v4; // eax
@@ -1260,10 +1248,9 @@ LABEL_39:
 
 // 0x680F70
 namespace gamemd {
-int Game::validateScenario(unsigned int * a2)
+void Game::validateScenario(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_680F70(_DWORD *this, _DWORD *a2)
 {
 
   if ( *a2 ) /*0x680f78*/
@@ -1301,10 +1288,9 @@ void sub_680F70(_DWORD *this, _DWORD *a2)
 
 // 0x685120
 namespace gamemd {
-int sub_685120()
+void sub_685120()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_685120()
 {
 
   BulletTypeClass::ReadArmor(); /*0x685121*/
@@ -1336,10 +1322,9 @@ void sub_685120()
 
 // 0x698CB0
 namespace gamemd {
-int Game_DumpMultiplayerGameInfo()
+void Game_DumpMultiplayerGameInfo()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __userpurge Game::DumpMultiplayerGameInfo@<al>(int this@<ecx>, CellStruct *a2@<ebp>, FILE *Stream)
 {
   CCINIClass *v2; // eax
   MouseClass *v4; // esi
@@ -1430,7 +1415,6 @@ namespace gamemd {
 void Game::EncodeGameSetupState()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Game::EncodeGameSetupState()
 {
   char v2; // bl
   char **v3; // eax
@@ -1548,10 +1532,9 @@ LABEL_16:
 
 // 0x77F900
 namespace gamemd {
-char Game::ProcessIdle()
+void Game::ProcessIdle()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Game::ProcessIdle()
 {
   IUnknown *v5; // eax
   wchar_t *StringCSF; // eax
@@ -1852,7 +1835,6 @@ namespace gamemd {
 void Game_Setup(CCINIClass * aP0, CCINIClass * aP1, char * Buffera, char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall Game_Setup(CCINIClass *aP0, CCINIClass *aP1, char *Buffera, char *a3)
 {
   Color *v5; // edi
   Color *v6; // esi
@@ -1904,10 +1886,9 @@ void __fastcall Game_Setup(CCINIClass *aP0, CCINIClass *aP1, char *Buffera, char
 
 // 0x7A2330
 namespace gamemd {
-char Game::SetupWOLTournament()
+void Game::SetupWOLTournament()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void SetupWOLTournamentGame(const char *this)
 {
   HWND v15; // eax
   wchar_t *v20; // eax

@@ -31,10 +31,9 @@
 
 // 0x431BC0
 namespace gamemd {
-bool E4Recv_431BC0::sub_431BC0(int a2, size_t a3)
+void E4Recv_431BC0::sub_431BC0(int a2, size_t a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_431BC0(size_t *this, int a2, size_t a3)
 {
   size_t v9; // eax
   if ( *(this + 12) ) /*0x431bc8*/
@@ -140,22 +139,9 @@ LABEL_14:
 
 // 0x4373B0
 namespace gamemd {
-char BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XSurface * aP3, int a4, XSurface * aP5, XSurface * aP6, XSurface * aP7, XSurface * aP8, int a10, int a11, int a12)
+void BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XSurface * aP3, int a4, XSurface * aP5, XSurface * aP6, XSurface * aP7, XSurface * aP8, int a10, int a11, int a12)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall BlitterCopySHP(
-        XSurface *aP0,
-        XSurface *aP1,
-        XSurface *aP2,
-        XSurface *aP3,
-        int a4,
-        XSurface *aP5,
-        XSurface *aP6,
-        XSurface *aP7,
-        XSurface *aP8,
-        int a10,
-        int a11,
-        int a12)
 {
   XSurface *v12; // eax
   int Width; // edx
@@ -504,25 +490,9 @@ char __fastcall BlitterCopySHP(
 
 // 0x437A10
 namespace gamemd {
-bool BlitterRLEBlitSHP(IUnknown * aP0, int * a1, TechnoClass * aP2, IUnknown * aP3, unsigned int * a4, int * a5, TechnoClass * aP6, int a8, int a9, TechnoClass * aP9, int a11, int a12, TechnoClass * aP12, int a14, int a15)
+void BlitterRLEBlitSHP(IUnknown * aP0, int * a1, TechnoClass * aP2, IUnknown * aP3, unsigned int * a4, int * a5, TechnoClass * aP6, int a8, int a9, TechnoClass * aP9, int a11, int a12, TechnoClass * aP12, int a14, int a15)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool __fastcall BlitterRLEBlitSHP(
-        IUnknown *aP0,
-        int *a1,
-        TechnoClass *aP2,
-        IUnknown *aP3,
-        _DWORD *a4,
-        int *a5,
-        TechnoClass *aP6,
-        int a8,
-        int a9,
-        TechnoClass *aP9,
-        int a11,
-        int a12,
-        TechnoClass *aP12,
-        int a14,
-        int a15)
 {
   bool result; // al
   MouseClass *v23; // edx
@@ -744,7 +714,6 @@ namespace gamemd {
 unsigned int * E4Recv_437F50::sub_437F50()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_437F50(_DWORD *this)
 {
   HRESULT v2; // esi
   LPVOID ppv; // [esp+Ch] [ebp-4h] BYREF
@@ -773,7 +742,6 @@ namespace gamemd {
 void BrainClass::sub_43A600()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_43A600(BrainClass *this)
 {
 
   int v2 = 0; /*0x43a608*/
@@ -810,7 +778,6 @@ namespace gamemd {
 unsigned int * BrainClass::sub_43AA90(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_43AA90(BrainClass *this, char a2)
 {
 
   int v3 = 0; /*0x43aa95*/
@@ -2524,7 +2491,6 @@ namespace gamemd {
 int sub_43B0F0()
  {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_43B0F0()
 {
   aP5 = 0; /*0x43b0f2*/
   unk_89C84C = 0; /*0x43b0f7*/

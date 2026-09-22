@@ -5,10 +5,9 @@
 // 0x5B3760
 namespace ra2 {
 namespace game {
-char MissionClass::LoadFromINI(unsigned int * a2)
+void MissionClass::LoadFromINI(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MissionClass::LoadFromINI(_DWORD *a2)
 {
   double Double_Overwrite; // st7
 

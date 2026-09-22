@@ -7,10 +7,9 @@
 
 // 0x4A60D0
 namespace gamemd {
-AbstractClass * TextRenderer::GetInstance()
+void * TextRenderer::GetInstance()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-AbstractClass *TextRenderer::GetInstance()
 {
   return aP0; /*0x4a60d5*/
 }
@@ -19,19 +18,9 @@ AbstractClass *TextRenderer::GetInstance()
 
 // 0x4B96A0
 namespace gamemd {
-int * TextRenderer::RenderCentered(int a1, int a2, ObjectClass * aP2, int * a3, wchar_t * Format, char a6, int a7, int _6C, int * a8)
+void * TextRenderer::RenderCentered(int a1, int a2, ObjectClass * aP2, int * a3, wchar_t * Format, char a6, int a7, int _6C, int * a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int *TextRenderer::RenderCentered(
-        int a1,
-        int a2,
-        ObjectClass *aP2,
-        int *a3,
-        wchar_t *Format,
-        char a6,
-        int a7,
-        int _6C,
-        int *a8)
 {
   CampaignScore *v9; // edx
   CampaignScore *v10; // ecx
@@ -139,10 +128,9 @@ int *TextRenderer::RenderCentered(
 
 // 0x642C80
 namespace gamemd {
-char TextRenderer::MeasureBuilding(int a2, ProgressScreenClass * aP2, ProgressScreenClass * aP3, ProgressScreenClass * aP4, char a6)
+void TextRenderer::MeasureBuilding(int a2, ProgressScreenClass * aP2, ProgressScreenClass * aP3, ProgressScreenClass * aP4, char a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TextRenderer::MeasureBuilding(int a2, ProgressScreenClass *aP2, ProgressScreenClass *aP3, ProgressScreenClass *aP4, char a6)
 {
   _DWORD *FoundationSize; // eax
   int Default; // edi
@@ -208,10 +196,9 @@ void TextRenderer::MeasureBuilding(int a2, ProgressScreenClass *aP2, ProgressScr
 
 // 0x642EF0
 namespace gamemd {
-int * TextRenderer::MeasureBuilding2()
+void * TextRenderer::MeasureBuilding2()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int *__thiscall TextRenderer::MeasureBuilding2(ProgressScreenClass *this)
 {
   _DWORD *FoundationSize; // eax
   int Default; // eax

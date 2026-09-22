@@ -5,10 +5,9 @@
 
 // 0x493930
 namespace gamemd {
-int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
+void BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25(_WORD *a1, _BYTE *a2, int a4, int argC, _WORD *a5, int a7, int a8, int a9)
 {
   int result; // eax
   TacticalMap *v11; // edx
@@ -46,10 +45,9 @@ void BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25(_WORD *a1, _BYTE 
 
 // 0x493A60
 namespace gamemd {
-int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent50(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
+void BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent50(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent50(_WORD *a1, _BYTE *a2, int a4, int argC, _WORD *a5, int a7, int a8, int a9)
 {
   int result; // eax
   TacticalMap *v14; // edi
@@ -89,10 +87,9 @@ void BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent50(_WORD *a1, _BYTE 
 
 // 0x493B90
 namespace gamemd {
-int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25_0(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
+void BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25_0(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25_0(_WORD *a1, _BYTE *a2, int a4, int argC, _WORD *a5, int a7, int a8, int a9)
 {
   int result; // eax
   TacticalMap *v11; // edx
@@ -130,10 +127,9 @@ void BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25_0(_WORD *a1, _BYT
 
 // 0x493DF0
 namespace gamemd {
-int BlitTransXlatAlpha_ushort::AddRef(unsigned short * a2, unsigned char * a3, int a4, int a5, int a6, unsigned short * a7, int a8, int a9)
+void BlitTransXlatAlpha_ushort::AddRef(unsigned short * a2, unsigned char * a3, int a4, int a5, int a6, unsigned short * a7, int a8, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void BlitTransXlatAlpha_ushort::_vt01(_WORD *a2, unsigned __int8 *a3, int a4, int a5, int a6, unsigned __int16 *a7, int a8, int a9)
 {
   int result; // eax
   unsigned __int8 v16; // bl
@@ -176,10 +172,9 @@ int BlitTransXlatAlpha_ushort::ddtor(int a2, int a3, int a4, int a5, int a6, int
 
 // 0x493ED0
 namespace gamemd {
-int BlitTransXlatAlpha_ushort::BlitRect(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
+void BlitTransXlatAlpha_ushort::BlitRect(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void BlitTransXlatAlpha_ushort::BlitRect(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x493efa*/
            this,
@@ -197,10 +192,9 @@ void BlitTransXlatAlpha_ushort::BlitRect(int a2, int a3, int a4, int a5, int a6,
 
 // 0x493F00
 namespace gamemd {
-int BlitTransXlatAlpha_ushort::GetSize(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
+void BlitTransXlatAlpha_ushort::GetSize(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void BlitTransXlatAlpha_ushort::_vt04(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x493f2a*/
            this,

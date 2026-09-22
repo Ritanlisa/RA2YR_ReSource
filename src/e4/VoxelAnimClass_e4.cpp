@@ -13,7 +13,6 @@ namespace gamemd {
 unsigned int VoxelAnimClass::ProcessFrame()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_4CAF20()
 {
   unsigned int result; // eax
 
@@ -73,10 +72,9 @@ void sub_4CAF20()
 
 // 0x7499F0
 namespace gamemd {
-int VoxelAnimClass::CleanupMembers()
+void VoxelAnimClass::CleanupMembers()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void VoxelAnimClass::CleanupMembers(#374 *this)
 {
   VoxelAnimClass *v6; // [esp+4h] [ebp-4h] BYREF
   *(_DWORD *)this = &VoxelAnimClass::`vftable'; /*0x7499f6*/
@@ -126,10 +124,9 @@ void VoxelAnimClass::CleanupMembers(#374 *this)
 
 // 0x749B70
 namespace gamemd {
-char VoxelAnimClass::ProcessAnim(int * a2, unsigned int * a3)
+void VoxelAnimClass::ProcessAnim(int * a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void VoxelAnimClass::_vt69(int *a2, _DWORD *a3)
 {
   __int16 *v12; // eax
   int *SHPFrame; // [esp-1Ch] [ebp-CCh]
@@ -216,7 +213,7 @@ LABEL_6:
         v27 = v10; /*0x749e1f*/
         v26 = v11; /*0x749e29*/
         v12 = (__int16 *)Coord::To_Cell(&DataGlobal_87F7E8, &v25); /*0x749e2d*/
-        int v13 = this->q043; /*0x749e32*/
+        bool v13 = this->q043; /*0x749e32*/
         int v14 = v12[133]; /*0x749e38*/
         if ( v13 ) /*0x749e41*/
         {
@@ -250,7 +247,7 @@ LABEL_6:
 
 // 0x749F30
 namespace gamemd {
-int VoxelAnimClass_Update()
+void VoxelAnimClass_Update()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // (no pseudocode — ASM-only function)
@@ -296,10 +293,9 @@ void VoxelAnimClass::SaveLoad_Prefix(ObjectClass *aP1, int aP1a)
 
 // 0x74AA30
 namespace gamemd {
-int VoxelAnimClass::GetFrameCount(int * a2)
+void VoxelAnimClass::GetFrameCount(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void VoxelAnimClass::_vt13(int this, int *a2)
 {
 
   HouseClass::ProcessPower((#374 *)this); /*0x74aa39*/
@@ -326,10 +322,9 @@ void VoxelAnimClass::_vt13(int this, int *a2)
 
 // 0x74AB30
 namespace gamemd {
-int VoxelAnimClass::LoadFrame()
+void VoxelAnimClass::LoadFrame()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void VoxelAnimClass::_vt34()
 {
   return this->q104; /*0x74ab36*/
 }
@@ -338,10 +333,9 @@ void VoxelAnimClass::_vt34()
 
 // 0x75AA90
 namespace gamemd {
-int VoxelAnimClass::Reset()
+void VoxelAnimClass::Reset()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_75AA90(int this)
 {
   LocomotionClass::Init((_DWORD *)this); /*0x75aa93*/
   this->VoxelAnimClass_field_0x1C = g_AsyncMovieState; /*0x75aaa1*/
@@ -364,10 +358,9 @@ void sub_75AA90(int this)
 
 // 0x75EBE0
 namespace gamemd {
-int VoxelAnimClass::Constructor()
+void VoxelAnimClass::Constructor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_75EBE0(int this)
 {
 
   ObjectClass::ctor((_DWORD *)this); /*0x75ebe4*/

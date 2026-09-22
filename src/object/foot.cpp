@@ -98,10 +98,9 @@ FootClass::FootClass() noexcept
 // ============================================================
 
 // 0x4da530
-bool FootClass::MovementAI()
+void FootClass::MovementAI()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall FootClass_MovementAI(int a1)
 {
   char result; // al
   int (__stdcall ***v29)(_DWORD, void *, int *); // eax

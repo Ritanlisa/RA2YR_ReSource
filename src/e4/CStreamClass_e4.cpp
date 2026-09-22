@@ -4,10 +4,9 @@
 #include "e4/classes/CStreamClass_16_e4.hpp"
 
 // 0x4A2CD0
-HRESULT CStreamClass::CopyStreamToBuffer(int a1, IStream * Src, signed int Size, size_t * a4)
+void CStreamClass::CopyStreamToBuffer(int a1, IStream * Src, signed int Size, size_t * a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-HRESULT __stdcall CStreamClass::CopyStreamToBuffer(int a1, IStream *Src, signed int Size, size_t *a4)
 {
   IStream *v4; // ebp
   size_t v5; // edi

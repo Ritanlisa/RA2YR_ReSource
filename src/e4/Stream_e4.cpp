@@ -3,10 +3,9 @@
 #include "e4/e4_globals.hpp"
 
 // 0x439110
-int Stream::FlushAndReset()
+void Stream::FlushAndReset()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Stream::FlushAndReset()
 {
 
   Stream *v1 = this; /*0x439111*/
@@ -24,10 +23,9 @@ void Stream::FlushAndReset()
 }
 
 // 0x49FB70
-int Stream::ReadIntArray(int a2)
+void Stream::ReadIntArray(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Stream_ReadIntArray(int *this, int a2)
 {
   int result; // eax
 
@@ -63,10 +61,9 @@ void Stream_ReadIntArray(int *this, int a2)
 }
 
 // 0x67A4A0
-int Stream::WriteIntArray(TechnoTypeClass * aP1)
+void Stream::WriteIntArray(TechnoTypeClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Stream::WriteIntArray(TechnoTypeClass *aP1)
 {
   int result; // eax
   int i; // esi
@@ -89,18 +86,9 @@ void Stream::WriteIntArray(TechnoTypeClass *aP1)
 }
 
 // 0x759260
-char * Stream::InitializeBinkAudio(const char * a1, IUnknown * aP2, int a4, int a5, IUnknown * aP5, int a7, int a8)
+void * Stream::InitializeBinkAudio(const char * a1, IUnknown * aP2, int a4, int a5, IUnknown * aP5, int a7, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall Stream::InitializeBinkAudio(
-        char *this,
-        const char *a1,
-        IUnknown *aP2,
-        int a4,
-        int a5,
-        IUnknown *aP5,
-        int a7,
-        int a8)
 {
 
   CCFileClass::Construct3((int)(this + 4)); /*0x75926a*/

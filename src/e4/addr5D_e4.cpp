@@ -35,10 +35,9 @@
 
 // 0x5D0190
 namespace gamemd {
-int E4Recv_5D0190::sub_5D0190(const char * a2)
+void E4Recv_5D0190::sub_5D0190(const char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_5D0190(_DWORD *this, const char *a2)
 {
 
   void *v6; // [esp+8h] [ebp-4h] BYREF
@@ -77,7 +76,6 @@ namespace gamemd {
 char ** E4Recv_5D0240::sub_5D0240(char ** a2, char a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char **__thiscall sub_5D0240(int *this, char **a2, char a3)
 {
 
   int v3 = *(this + 25); /*0x5d0242*/
@@ -108,11 +106,10 @@ LABEL_5:
 
 // 0x5D0580
 namespace gamemd {
-int j_DeleteAndZero()
+void j_DeleteAndZero()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // attributes: thunk
-void j_DeleteAndZero(void **this)
 {
   DeleteAndZero(this); /*0x5d0580*/
 }
@@ -121,10 +118,9 @@ void j_DeleteAndZero(void **this)
 
 // 0x5D2350
 namespace gamemd {
-int sub_5D2350(int a1, int * a2)
+void sub_5D2350(int a1, int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_5D2350(int a1, int *a2)
 {
   int result; // eax
   struct tagRECT Rect; // [esp+18h] [ebp-10h] BYREF
@@ -164,10 +160,9 @@ void sub_5D2350(int a1, int *a2)
 
 // 0x5D25D0
 namespace gamemd {
-char E4Recv_5D25D0::sub_5D25D0(char * Source, int a3)
+void E4Recv_5D25D0::sub_5D25D0(char * Source, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_5D25D0(int this, char *Source, int a3)
 {
   char **v4; // eax
   char **v5; // edi
@@ -202,7 +197,6 @@ namespace gamemd {
 void E4Recv_5D2650::sub_5D2650(void * a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_5D2650(_DWORD *this, void *a2, int a3)
 {
 
   if ( a2 ) /*0x5d265c*/
@@ -228,10 +222,9 @@ void sub_5D2650(_DWORD *this, void *a2, int a3)
 
 // 0x5D4510
 namespace gamemd {
-int ProcessEditControlKey(CellStruct * aP0, int edx0, int * a2, unsigned short a4)
+void ProcessEditControlKey(CellStruct * aP0, int edx0, int * a2, unsigned short a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall ProcessEditControlKey(CellStruct *aP0, int edx0, int *a2, unsigned __int16 a4)
 {
   CellStruct *v5; // esi
   void (__thiscall ***v8)(_DWORD, int); // ecx
@@ -535,10 +528,9 @@ LABEL_76:
 
 // 0x5D4D50
 namespace gamemd {
-HWND Dialog_MessageLoop()
+void* Dialog_MessageLoop()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-HWND Dialog_MessageLoop()
 {
   HWND result; // eax
   struct tagMSG Msg; // [esp+10h] [ebp-1Ch] BYREF
@@ -603,10 +595,9 @@ LABEL_12:
 
 // 0x5D4F20
 namespace gamemd {
-int E4Recv_5D4F20::sub_5D4F20()
+void E4Recv_5D4F20::sub_5D4F20()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_5D4F20(const char *this)
 {
 
   int v1 = 0; /*0x5d4f29*/
@@ -630,7 +621,6 @@ namespace gamemd {
 char sub_5D6000(HWND hWnd, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall sub_5D6000(HWND hWnd, int a2)
 {
   char result; // al
   LPARAM v5; // esi
@@ -682,10 +672,9 @@ char __fastcall sub_5D6000(HWND hWnd, int a2)
 
 // 0x5D7590
 namespace gamemd {
-int LoadMultiplayerModesList(AbstractClass * a1, int edx0)
+void LoadMultiplayerModesList(AbstractClass * a1, int edx0)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall LoadMultiplayerModesList(AbstractClass *a1, int edx0)
 {
   AbstractClass *v2; // esi
   signed int String; // esi
@@ -944,10 +933,9 @@ LABEL_50:
 
 // 0x5D7CE0
 namespace gamemd {
-int GameInit_Complete()
+void GameInit_Complete()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void GameInit_Complete()
 {
   int i; // esi
   void (__thiscall ***v1)(_DWORD, int); // ecx
@@ -1003,10 +991,9 @@ void GameInit_Complete()
 
 // 0x5D9060
 namespace gamemd {
-short E4Recv_5D9060::sub_5D9060(int a2)
+void E4Recv_5D9060::sub_5D9060(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-__int16 __thiscall sub_5D9060(_DWORD *this, int a2)
 {
   __int16 v6; // di
 
@@ -1038,10 +1025,9 @@ __int16 __thiscall sub_5D9060(_DWORD *this, int a2)
 
 // 0x5D9DB0
 namespace gamemd {
-int DetectPortAllocationPattern(int a1, short * a2, unsigned short * a3, unsigned char * a4, unsigned char * a5)
+void DetectPortAllocationPattern(int a1, short * a2, unsigned short * a3, unsigned char * a4, unsigned char * a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void DetectPortAllocationPattern(int a1, __int16 *a2, unsigned __int16 *a3, _BYTE *a4, _BYTE *a5)
 {
   __int16 *v5; // ebp
   __int16 *v9; // edx
@@ -1194,7 +1180,6 @@ namespace gamemd {
 void HandleNetworkPlayerDisconnect(wchar_t * a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall HandleNetworkPlayerDisconnect(wchar_t *a1, int a2)
 {
   wchar_t *v2; // ebp
   wchar_t *StringCSF; // [esp-8h] [ebp-134h]
@@ -1379,10 +1364,9 @@ LABEL_54:
 
 // 0x5DB720
 namespace gamemd {
-int CheckNetworkGameTimeout()
+void CheckNetworkGameTimeout()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CheckNetworkGameTimeout()
 {
   int result; // eax
   signed int i; // edi
@@ -1483,7 +1467,6 @@ namespace gamemd {
 void SetGameSetupPlayerState(char * a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall SetGameSetupPlayerState(char *a1, int a2)
 {
   HWND v4; // eax
 
@@ -1525,10 +1508,9 @@ void __fastcall SetGameSetupPlayerState(char *a1, int a2)
 
 // 0x5DBF50
 namespace gamemd {
-int UpdateMultiplayerPlayerOptions(CCINIClass * aP0, CCINIClass * aP1, CCINIClass * aP2, int a4, int a5)
+void UpdateMultiplayerPlayerOptions(CCINIClass * aP0, CCINIClass * aP1, CCINIClass * aP2, int a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall UpdateMultiplayerPlayerOptions(CCINIClass *aP0, CCINIClass *aP1, CCINIClass *aP2, int a4, int a5)
 {
   ObjectClass *v5; // edi
   ObjectClass *v7; // ebx
@@ -1625,10 +1607,9 @@ LABEL_6:
 
 // 0x5DD8A0
 namespace gamemd {
-int SynchronizeMultiplayerGameStart()
+void SynchronizeMultiplayerGameStart()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __usercall SynchronizeMultiplayerGameStart@<al>(int a1@<edi>)
 {
   int LobbyStatus; // eax
   wchar_t *v7; // eax
@@ -1753,10 +1734,9 @@ LABEL_8:
 
 // 0x5DF180
 namespace gamemd {
-int SkirmishDialogProc(SkirmishDialog * aP0, int a2, unsigned short a3, HWND a4)
+void SkirmishDialogProc(SkirmishDialog * aP0, int a2, unsigned short a3, HWND a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void SkirmishDialogProc(SkirmishDialog *aP0, int a2, unsigned __int16 a3, HWND a4)
 {
   if ( !*((_BYTE *)&g_MatrixTransformState + 5208) ) /*0x5df189*/
   {
@@ -1849,7 +1829,6 @@ namespace gamemd {
 int Network_SendJoinRequest(int a1, unsigned char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall Network_SendJoinRequest(int a1, unsigned __int8 a2)
 {
   wchar_t *String; // eax
   wchar_t *v5; // eax
@@ -1927,10 +1906,9 @@ int __fastcall Network_SendJoinRequest(int a1, unsigned __int8 a2)
 
 // 0x5DF9E0
 namespace gamemd {
-signed int Network_SendHeartbeat(int a1, int a2, int a3, int a4)
+void int Network_SendHeartbeat(int a1, int a2, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-signed int __fastcall Network_SendHeartbeat(int a1, int a2, int a3, int a4)
 {
   DWORD Ticks; // eax
   signed int result; // eax
@@ -2072,10 +2050,9 @@ LABEL_32:
 
 // 0x5DFE00
 namespace gamemd {
-char Network_SendPlayerOptions(unsigned int * a1, int a2)
+void Network_SendPlayerOptions(unsigned int * a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall Network_SendPlayerOptions(_DWORD *a1, int a2)
 {
   _DWORD v9[113]; // [esp+10h] [ebp-1C8h] BYREF
   __int16 v10; // [esp+1D4h] [ebp-4h]

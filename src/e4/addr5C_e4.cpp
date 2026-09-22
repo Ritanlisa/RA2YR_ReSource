@@ -35,10 +35,9 @@
 
 // 0x5C00E0
 namespace gamemd {
-int sub_5C00E0()
+void sub_5C00E0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __usercall sub_5C00E0@<al>(int a1@<ebx>, int a2@<ebp>, int a3@<edi>)
 {
   char result; // al
   struct tagRECT Rect; // [esp+14h] [ebp-10h] BYREF
@@ -82,7 +81,6 @@ namespace gamemd {
 unsigned int * Movie_Create(int a1, int a2, int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__fastcall Movie_Create(int a1, int a2, int *a3)
 {
   int v5; // ebx
   int v6; // edx
@@ -157,10 +155,9 @@ _DWORD *__fastcall Movie_Create(int a1, int a2, int *a3)
 
 // 0x5C17B0
 namespace gamemd {
-char MPCooperative___vt07(int a2)
+void MPCooperative___vt07(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MPCooperative::_vt07(int a2)
 {
   int v7; // eax
   int v8; // esi
@@ -225,10 +222,9 @@ void MPCooperative::_vt07(int a2)
 
 // 0x5C60D0
 namespace gamemd {
-BOOL E4Recv_5C60D0::ShowConfirmDialog()
+void E4Recv_5C60D0::ShowConfirmDialog()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ShowConfirmDialog(_WORD *this)
 {
   wchar_t *v3; // eax
   wchar_t *StringCSF; // [esp-Ch] [ebp-14h]
@@ -243,10 +239,9 @@ void ShowConfirmDialog(_WORD *this)
 
 // 0x5C6370
 namespace gamemd {
-char LCW_DecodeLength(int a1, unsigned char * a2, int a3)
+void LCW_DecodeLength(int a1, unsigned char * a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall LCW_DecodeLength(int a1, _BYTE *a2, int a3)
 {
   int v6; // edi
   unsigned __int8 *v7; // edx
@@ -322,15 +317,9 @@ LABEL_8:
 
 // 0x5C63F0
 namespace gamemd {
-int sub_5C63F0()
+void sub_5C63F0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __userpurge __spoils<ecx> sub_5C63F0@<eax>(
-        unsigned int a1@<edx>,
-        _BYTE *a2@<ecx>,
-        int a3@<ebx>,
-        int a4,
-        int a5)
 {
   unsigned int i; // ebp
 
@@ -371,7 +360,6 @@ namespace gamemd {
 void BitBuffer_RotateRight(unsigned int * a1, int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall BitBuffer_RotateRight(_DWORD *a1, int a2, int a3)
 {
   int i; // edx
 
@@ -463,7 +451,6 @@ namespace gamemd {
 void RotateBitBufferLeft(int * a0, int a2, Buffer * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall RotateBitBufferLeft(int *a0, int a2, Buffer *aP2)
 {
   Buffer *v6; // edx
   unsigned int j; // ebp
@@ -548,7 +535,6 @@ namespace gamemd {
 int BitArray_FindHighestBit(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall BitArray_FindHighestBit(int a1, int a2)
 {
   int result; // eax
 
@@ -585,10 +571,9 @@ LABEL_4:
 
 // 0x5C6BC0
 namespace gamemd {
-int Array_FillPattern(unsigned int * a1, char * a2, unsigned int * a3, int a4)
+void Array_FillPattern(unsigned int * a1, char * a2, unsigned int * a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall Array_FillPattern(_DWORD *a1, char *a2, _DWORD *a3, int a4)
 {
 
   int v4 = a4; /*0x5c6bc5*/
@@ -725,7 +710,6 @@ namespace gamemd {
 int MultiplyAddBigInteger(char * a1, unsigned short * a2, short a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall MultiplyAddBigInteger(char *a1, unsigned __int16 *a2, __int16 a3, int a4)
 {
   bool v10; // zf
   _DWORD *v11; // eax
@@ -923,10 +907,9 @@ int __fastcall MultiplyAddBigInteger(char *a1, unsigned __int16 *a2, __int16 a3,
 
 // 0x5C71E0
 namespace gamemd {
-short BigInt_ShiftAndScan(unsigned int * a1, int a2, int a3, int a4)
+void BigInt_ShiftAndScan(unsigned int * a1, int a2, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-__int16 __fastcall BigInt_ShiftAndScan(_DWORD *a1, int a2, int a3, int a4)
 {
   int v9; // esi
   int v10; // eax
@@ -1019,10 +1002,9 @@ LABEL_11:
 
 // 0x5C7310
 namespace gamemd {
-int SubtractBigInteger(unsigned int * a1, unsigned int * a2, int a3, char * a4, Buffer * aP2)
+void SubtractBigInteger(unsigned int * a1, unsigned int * a2, int a3, char * a4, Buffer * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall SubtractBigInteger(_DWORD *a1, _DWORD *a2, int a3, char *a4, Buffer *aP2)
 {
   Buffer *v11; // ecx
   int v14; // esi
@@ -1198,7 +1180,6 @@ namespace gamemd {
 char SubtractBigIntegerWithSign(char * a1, int * a2, const void * a3, const void * a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall SubtractBigIntegerWithSign(char *a1, int *a2, const void *a3, const void *a4, int a5)
 {
   bool v11; // zf
   _DWORD *v12; // eax
@@ -1398,10 +1379,9 @@ LABEL_29:
 
 // 0x5C7740
 namespace gamemd {
-int ModInverseBigInteger(char * a1, const void * a2, const void * a3, int a4)
+void ModInverseBigInteger(char * a1, const void * a2, const void * a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall ModInverseBigInteger(char *a1, const void *a2, const void *a3, int a4)
 {
   char *j; // eax
   unsigned __int16 v16; // ax
@@ -1500,10 +1480,9 @@ int __fastcall ModInverseBigInteger(char *a1, const void *a2, const void *a3, in
 
 // 0x5C7990
 namespace gamemd {
-int DivideBigInteger(unsigned int * a1, char * a2, int a3)
+void DivideBigInteger(unsigned int * a1, char * a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall DivideBigInteger(_DWORD *a1, char *a2, int a3)
 {
   int v12; // esi
   int v13; // eax
@@ -1654,7 +1633,6 @@ namespace gamemd {
 char sub_5C7BA0(const char * a1, unsigned short * a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall sub_5C7BA0(const char *a1, unsigned __int16 *a2, int a3)
 {
   unsigned __int16 *v3; // ebp
   unsigned __int16 *v5; // eax
@@ -1779,10 +1757,9 @@ char __fastcall sub_5C7BA0(const char *a1, unsigned __int16 *a2, int a3)
 
 // 0x5C8500
 namespace gamemd {
-int ModBigIntExp(unsigned int * a0, AbstractClass * aP1, char * a2, char * a3, int a5)
+void ModBigIntExp(unsigned int * a0, AbstractClass * aP1, char * a2, char * a3, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall ModBigIntExp(_DWORD *a0, AbstractClass *aP1, char *a2, char *a3, int a5)
 {
 
   int v5 = a5; /*0x5c8508*/
@@ -2003,7 +1980,6 @@ namespace gamemd {
 char sub_5C8980(char * a1, unsigned int edx0, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall sub_5C8980(char *a1, unsigned int edx0, int a3)
 {
   unsigned __int16 *i; // [esp+10h] [ebp-310h]
   AbstractClass aP1; // [esp+120h] [ebp-200h] BYREF
@@ -2065,7 +2041,6 @@ namespace gamemd {
 char ValidateRSAKey(int a1, char * a2, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall ValidateRSAKey(int a1, char *a2, int a3, int a4)
 {
   unsigned __int16 v5; // si
   unsigned __int16 v8; // ax
@@ -2260,10 +2235,9 @@ LABEL_38:
 
 // 0x5C8E40
 namespace gamemd {
-char sub_5C8E40(ObjectClass * aP0, int a2, int a3, ObjectClass * aP3, int a5)
+void sub_5C8E40(ObjectClass * aP0, int a2, int a3, ObjectClass * aP3, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall sub_5C8E40(ObjectClass *aP0, int a2, int a3, ObjectClass *aP3, int a5)
 {
   int v13; // ebp
   int *v14; // edx
@@ -2415,7 +2389,6 @@ namespace gamemd {
 char ModCryptoExp(char * a1, int edx0)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall ModCryptoExp(char *a1, int edx0)
 {
   unsigned __int16 v10; // bp
   char *v13; // ecx
@@ -2543,7 +2516,6 @@ namespace gamemd {
 int sub_5C9AE0(const void * a1, const void * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_5C9AE0(const void *a1, const void *a2)
 {
 
   int v2 = *(_DWORD *)(*(_DWORD *)a1 + 96); /*0x5c9aec*/
@@ -2561,7 +2533,6 @@ namespace gamemd {
 unsigned int * E4Recv_5CD690::sub_5CD690(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_5CD690(int this, int *a2)
 {
   wchar_t *v5; // eax
   _DWORD *result; // eax
@@ -2658,10 +2629,9 @@ LABEL_20:
 
 // 0x5CD850
 namespace gamemd {
-ObjectClass * WrapWideStringText(const wchar_t ** ecx0, int * a2, int a3)
+void * WrapWideStringText(const wchar_t ** ecx0, int * a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-ObjectClass *__fastcall WrapWideStringText(const wchar_t **ecx0, int *a2, int a3)
 {
   ObjectClass *v3; // esi
   wchar_t **v18; // eax
@@ -2820,10 +2790,9 @@ LABEL_25:
 
 // 0x5CE0C0
 namespace gamemd {
-char E4Recv_5CE0C0::sub_5CE0C0(int a2, unsigned int * a3)
+void E4Recv_5CE0C0::sub_5CE0C0(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_5CE0C0(int this, int a2, _DWORD *a3)
 {
   size_t v10; // ebp
   size_t v18; // [esp+Ch] [ebp-20h]

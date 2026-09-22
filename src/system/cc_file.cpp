@@ -25,10 +25,9 @@ CCFileClass::CCFileClass(const char* pFileName) noexcept
 // Searches MIX pool first, then falls back to disk
 REVERSE(0x473c50, "CCFileClass::Open: IDA verified", "None")
 // 0x473c50
-bool CCFileClass::Open(const char* pFileName)
+void CCFileClass::Open(const char* pFileName)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_473C50(_DWORD *this, int a2)
 {
   if ( this->q068 == 1 )
     return 1;
@@ -144,7 +143,6 @@ REVERSE(0x473ce0, "CCFileClass::Reset: IDA verified", "None")
 void CCFileClass::Reset()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CCFileClass_Reset(_DWORD *this)
 {
 
   _DWORD * v2 = this + 22;

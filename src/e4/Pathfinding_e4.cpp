@@ -9,7 +9,6 @@
 unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__stdcall Pathfinding_ExpandNode(__int16 *a1, int a2)
 {
   _DWORD *v4; // ebx
   int *v5; // eax

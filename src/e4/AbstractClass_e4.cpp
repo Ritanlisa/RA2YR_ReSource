@@ -14,7 +14,6 @@ namespace gamemd {
 void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void AbstractClass::Initialize(TechnoClass *aP1, TechnoClass *aP2)
 {
   AbstractClass *v4; // eax
   AbstractClass *v5; // esi
@@ -117,10 +116,9 @@ bool BuildingTypeClass::CanPlacePath(unsigned short *a2, int a3)
 
 // 0x4FB9B0
 namespace gamemd {
-int AbstractClass_RemoveObjectFromHouse()
+void AbstractClass_RemoveObjectFromHouse()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ***__userpurge RemoveObjectFromHouse@<eax>(_DWORD *a1@<ecx>, int a2@<edi>, void **a3, void **a4, void **a5)
 {
   void **v5; // ebp
   void ***result; // eax
@@ -277,10 +275,9 @@ void ***__userpurge RemoveObjectFromHouse@<eax>(_DWORD *a1@<ecx>, int a2@<edi>, 
 
 // 0x5C03D0
 namespace gamemd {
-int AbstractClass_getPathDirection()
+void AbstractClass_getPathDirection()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __usercall AbstractClass::sub_5C03D0@<al>(int a1@<ebx>, int a2@<ebp>, int a3@<edi>)
 {
   char result; // al
   struct tagRECT Rect; // [esp+14h] [ebp-10h] BYREF
@@ -324,7 +321,6 @@ namespace gamemd {
 unsigned int * AbstractClass::checkVisibility(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall AbstractClass::checkVisibility(InitializerBase_MultiplayerGameMode *this, char a2)
 {
   this->vfptr = &vt_MultiplayerGameMode_InitializerBase; /*0x5d7fd9*/
   if ( (a2 & 1) != 0 ) /*0x5d7fdf*/
@@ -339,7 +335,6 @@ namespace gamemd {
 unsigned int * AbstractClass::updateVisibilityState(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall AbstractClass::updateVisibilityState(InitializerBase_MultiplayerGameMode *this, char a2)
 {
   this->vfptr = &vt_MultiplayerGameMode_InitializerBase; /*0x5d8039*/
   if ( (a2 & 1) != 0 ) /*0x5d803f*/
@@ -354,7 +349,6 @@ namespace gamemd {
 unsigned int * AbstractClass::processFogReveal(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall AbstractClass::processFogReveal(InitializerBase_MultiplayerGameMode *this, char a2)
 {
   this->vfptr = &vt_MultiplayerGameMode_InitializerBase; /*0x5d8059*/
   if ( (a2 & 1) != 0 ) /*0x5d805f*/
@@ -369,7 +363,6 @@ namespace gamemd {
 unsigned int * AbstractClass::checkShroudState(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall AbstractClass::checkShroudState(InitializerBase_MultiplayerGameMode *this, char a2)
 {
   this->vfptr = &vt_MultiplayerGameMode_InitializerBase; /*0x5d8079*/
   if ( (a2 & 1) != 0 ) /*0x5d807f*/
@@ -384,7 +377,6 @@ namespace gamemd {
 unsigned int * AbstractClass::updateShroudMap(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall AbstractClass::updateShroudMap(InitializerBase_MultiplayerGameMode *this, char a2)
 {
   this->vfptr = &vt_MultiplayerGameMode_InitializerBase; /*0x5d8099*/
   if ( (a2 & 1) != 0 ) /*0x5d809f*/
@@ -399,7 +391,6 @@ namespace gamemd {
 void AbstractClass::ClearTargetToMeClearManagerTarget(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall AbstractClass::ClearTargetToMeClearManagerTarget(int a1)
 {
   int i; // ebx
   int j; // ecx
@@ -450,7 +441,6 @@ namespace gamemd {
 void AbstractClass::AnnounceExpiredPointer(AbstractClass * aP0, AbstractClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall AbstractClass::AnnounceExpiredPointer(AbstractClass *aP0, AbstractClass *aP1)
 {
   int k; // ebp
   int i; // ebx
@@ -1182,10 +1172,9 @@ int AbstractClass::COMStub_Return0_270()
 
 // 0x464A70
 namespace gamemd {
-int AbstractClass_queryInterface()
+void AbstractClass_queryInterface()
  {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__userpurge AbstractClass::sub_464A70@<eax>(int a1@<esi>, _DWORD *a2, int *a3)
 {
   int GroundHeight; // eax
 

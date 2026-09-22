@@ -3,10 +3,9 @@
 #include "e4/e4_globals.hpp"
 
 // 0x718000
-int TeleportLocomotionClass::TeleportLocomotionClass()
+T TeleportLocomotionClass::TeleportLocomotionClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-T TeleportLocomotionClass::TeleportLocomotionClass(int this)
 {
   wchar_t *v2; // ecx
 

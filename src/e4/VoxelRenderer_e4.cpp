@@ -3,10 +3,9 @@
 #include "e4/e4_globals.hpp"
 
 // 0x758EA0
-char VoxelRenderer::ProjectVertex(float a2, float a3, float a4, char a5)
+void VoxelRenderer::ProjectVertex(float a2, float a3, float a4, char a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_758EA0(int *this, float a2, float a3, float a4, char a5)
 {
   int i; // edi
   unsigned __int8 *v10; // eax
@@ -45,10 +44,9 @@ LABEL_13:
 }
 
 // 0x759FB0
-BOOL VoxelRenderer::InitializeBuffers(int a2, unsigned int * a3, int a4)
+void VoxelRenderer::InitializeBuffers(int a2, unsigned int * a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_759FB0(int this, int a2, _DWORD *a3, int a4)
 {
   BOOL result; // eax
 

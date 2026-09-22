@@ -29,10 +29,9 @@
 
 // 0x540C50
 namespace gamemd {
-int E4Recv_540C50::sub_540C50()
+void E4Recv_540C50::sub_540C50()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_540C50(unsigned __int8 *this)
 {
   return *(this + 4); /*0x540c55*/
 }
@@ -41,10 +40,9 @@ void sub_540C50(unsigned __int8 *this)
 
 // 0x541170
 namespace gamemd {
-int E4Recv_541170::sub_541170(int a2, int a3, int a4, int a5)
+void E4Recv_541170::sub_541170(int a2, int a3, int a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_541170(int this, int a2, int a3, int a4, int a5)
 {
   int i; // edx
 
@@ -94,10 +92,9 @@ void sub_541170(int this, int a2, int a3, int a4, int a5)
 
 // 0x542F30
 namespace gamemd {
-int E4Recv_542F30::sub_542F30()
+void E4Recv_542F30::sub_542F30()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_542F30(_DWORD *this)
 {
   int result; // eax
   _DWORD *i; // edi
@@ -151,10 +148,9 @@ LABEL_12:
 
 // 0x544E70
 namespace gamemd {
-int SurfaceClass_CreatePrimary(int a1, int a2, int a3)
+void SurfaceClass_CreatePrimary(int a1, int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall SurfaceClass_CreatePrimary(int a1, int a2, int a3)
 {
   int result; // eax
 
@@ -218,10 +214,9 @@ LABEL_14:
 
 // 0x545150
 namespace gamemd {
-char * LoadTerrainTypeClassTheatre(AbstractClass * a1, char a2)
+char * * LoadTerrainTypeClassTheatre(AbstractClass * a1, char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__fastcall LoadTerrainTypeClassTheatre(AbstractClass *a1, char a2)
 {
   size_t Size; // eax
   int i; // esi
@@ -1379,7 +1374,6 @@ namespace gamemd {
 void MapClass_LoadIsometricTiles(char a1, char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall MapClass_LoadIsometricTiles(char a1, char a2)
 {
   int i; // edi
   int inited; // eax
@@ -1494,7 +1488,6 @@ namespace gamemd {
 int ResetAllTechnoField776()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int ResetAllTechnoField776()
 {
   int result; // eax
   int i; // ecx
@@ -1517,7 +1510,6 @@ namespace gamemd {
 int Map_InitCoordinateOffsets(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall Map_InitCoordinateOffsets(int a1)
 {
   unsigned int v3; // eax
   int v5; // [esp+Ch] [ebp-4h]
@@ -1788,10 +1780,9 @@ int __fastcall Map_InitCoordinateOffsets(int a1)
 
 // 0x549830
 namespace gamemd {
-char E4Recv_549830::sub_549830(int a2, void ** a3, int a4, int a5)
+void E4Recv_549830::sub_549830(int a2, void ** a3, int a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_549830(void *this, int a2, void **a3, int a4, int a5)
 {
 
   memset(*a3, 0, a5 * a4); /*0x549859*/
@@ -1914,7 +1905,6 @@ namespace gamemd {
 int sub_549B30()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_549B30()
 {
   lpBuffer = 0; /*0x549b32*/
   unk_AA1060 = 0; /*0x549b37*/
@@ -1928,10 +1918,9 @@ int sub_549B30()
 
 // 0x54BA30
 namespace gamemd {
-int E4Recv_54BA30::UpdateFootMovement()
+void E4Recv_54BA30::UpdateFootMovement()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void UpdateFootMovement(int this)
 {
   void *NeighbourContentCell; // eax
   int result; // eax

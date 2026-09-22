@@ -23,7 +23,6 @@ namespace gamemd {
 int sub_6D1130()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_6D1130()
 {
 
   DataGlobal_B0CCD4 = 240; /*0x6d1149*/
@@ -50,7 +49,6 @@ namespace gamemd {
 unsigned int * sub_6D6BB0(unsigned short * a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__stdcall sub_6D6BB0(_WORD *a1)
 {
   __int16 v2; // ax
   _DWORD *result; // eax

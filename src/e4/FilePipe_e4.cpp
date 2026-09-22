@@ -6,10 +6,9 @@
 
 // 0x478340
 namespace gamemd {
-char FilePipe_38::Release(int a2, char * a3)
+void FilePipe_38::Release(int a2, char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void FilePipe_38_::_vt02(int a2, char *a3)
 {
 
   int v3 = a2; /*0x478342*/

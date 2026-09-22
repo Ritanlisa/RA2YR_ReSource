@@ -18,10 +18,9 @@
 
 // 0x48B390
 namespace gamemd {
-int EventClass::serializeEvent()
+void EventClass::serializeEvent()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_48B390(int *this)
 {
   int result; // eax
 
@@ -56,10 +55,9 @@ void sub_48B390(int *this)
 
 // 0x48BAD0
 namespace gamemd {
-int EventClass::SetData(int a2, int a3, int a4, int a5, int a6)
+void EventClass::SetData(int a2, int a3, int a4, int a5, int a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void EventClass::SetData(int a2, int a3, int a4, int a5, int a6)
 {
   this->q044 = a2; /*0x48bad8*/
   this->q048 = a3; /*0x48badf*/
@@ -73,10 +71,9 @@ void EventClass::SetData(int a2, int a3, int a4, int a5, int a6)
 
 // 0x4C65E0
 namespace gamemd {
-char * EventClass::Add(AbstractClass * aP1, unsigned char a3, int a4, char a5)
+void * EventClass::Add(AbstractClass * aP1, unsigned char a3, int a4, char a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall EventClass::Add(char *this, AbstractClass *aP1, unsigned __int8 a3, int a4, char a5)
 {
   Debug::Log(); /*0x4c65fc*/
   if ( (int)aP1 < 0 ) /*0x4c660a*/
@@ -101,10 +98,9 @@ char *__thiscall EventClass::Add(char *this, AbstractClass *aP1, unsigned __int8
 
 // 0x4C66C0
 namespace gamemd {
-char * EventClass::AddEvent(int a2, unsigned char a3)
+void * EventClass::AddEvent(int a2, unsigned char a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall EventClass_AddEvent(char *this, int a2, unsigned __int8 a3)
 {
   Debug::Log("Adding event %s\n", off_82091C[a3]); /*0x4c66dc*/
   if ( a2 < 0 ) /*0x4c66ea*/
@@ -127,10 +123,9 @@ char *__thiscall EventClass_AddEvent(char *this, int a2, unsigned __int8 a3)
 
 // 0x4C6720
 namespace gamemd {
-char * EventClass::Add2(AnimClass * aP1, unsigned char a3, IUnknown * aP3)
+void * EventClass::Add2(AnimClass * aP1, unsigned char a3, IUnknown * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall EventClass::Add2(char *this, AnimClass *aP1, unsigned __int8 a3, IUnknown *aP3)
 {
   Debug::Log(); /*0x4c673c*/
   if ( (int)aP1 < 0 ) /*0x4c674a*/
@@ -154,16 +149,9 @@ char *__thiscall EventClass::Add2(char *this, AnimClass *aP1, unsigned __int8 a3
 
 // 0x4C6970
 namespace gamemd {
-char * EventClass::AddEventEx(SelectClass_StripClass_SidebarClass * aP1, unsigned char a3, IUnknown * aP3, SelectClass_StripClass_SidebarClass * aP4, SelectClass_StripClass_SidebarClass * aP5)
+void * EventClass::AddEventEx(SelectClass_StripClass_SidebarClass * aP1, unsigned char a3, IUnknown * aP3, SelectClass_StripClass_SidebarClass * aP4, SelectClass_StripClass_SidebarClass * aP5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall EventClass::AddEventEx(
-        char *this,
-        SelectClass_StripClass_SidebarClass *aP1,
-        unsigned __int8 a3,
-        IUnknown *aP3,
-        SelectClass_StripClass_SidebarClass *aP4,
-        SelectClass_StripClass_SidebarClass *aP5)
 {
   Debug::Log(); /*0x4c698c*/
   if ( (int)aP1 < 0 ) /*0x4c699a*/
@@ -189,10 +177,9 @@ char *__thiscall EventClass::AddEventEx(
 
 // 0x4C6AE0
 namespace gamemd {
-char * EventClass::Init(IUnknown * aP1, char a3, int a4, int a5, int arg10, unsigned short * a6)
+void * EventClass::Init(IUnknown * aP1, char a3, int a4, int a5, int arg10, unsigned short * a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall EventClass::Init(char *this, IUnknown *aP1, char a3, int a4, int a5, int arg10, _WORD *a6)
 {
   Debug::Log(); /*0x4c6afc*/
   if ( (int)aP1 < 0 ) /*0x4c6b0a*/
@@ -223,7 +210,6 @@ namespace gamemd {
 void EventClass::ProcessEvent()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void EventClass::ProcessEvent(int this)
 {
   HouseClass *v3; // ecx
   BuildingClass *Building; // esi
@@ -1030,10 +1016,9 @@ LABEL_2:
 
 // 0x542280
 namespace gamemd {
-int EventClass::deserializeEvent(int a2, IUnknown * aP2)
+void EventClass::deserializeEvent(int a2, IUnknown * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void EventClass::deserializeEvent(int a2, IUnknown *aP2)
 {
   int result; // eax
 
@@ -1053,10 +1038,9 @@ void EventClass::deserializeEvent(int a2, IUnknown *aP2)
 
 // 0x54F200
 namespace gamemd {
-char EventClass::Enqueue(unsigned short a2, char a3)
+void EventClass::Enqueue(unsigned short a2, char a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void EventClass_Enqueue(_DWORD *this, unsigned __int16 a2, char a3)
 {
   __int16 v5; // si
   if ( (unsigned __int8)ChronoScreen::IsActive() ) /*0x54f205*/
@@ -1100,10 +1084,9 @@ void EventClass_Enqueue(_DWORD *this, unsigned __int16 a2, char a3)
 
 // 0x5F19C0
 namespace gamemd {
-int EventClass::CheckFlag()
+void EventClass::CheckFlag()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void EventClass::CheckFlag()
 {
 
   int v1 = this->q038; /*0x5f19c0*/
@@ -1116,10 +1099,9 @@ void EventClass::CheckFlag()
 
 // 0x664440
 namespace gamemd {
-int EventClass::validateEventType()
+void EventClass::validateEventType()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_664440(int *this)
 {
   unsigned __int8 v14[8]; // [esp+10h] [ebp-8h] BYREF
 

@@ -3,10 +3,9 @@
 #include "e4/e4_globals.hpp"
 
 // 0x543780
-IsometricTileClass * IsometricTileClass::IsometricTileClass(IsometricTileClass * aP1, IsometricTileClass * aP2)
+I * IsometricTileClass::IsometricTileClass(IsometricTileClass * aP1, IsometricTileClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-IsometricTileClass *__thiscall IsometricTileClass::IsometricTileClass(
         IsometricTileClass *this,
         IsometricTileClass *aP1,
         IsometricTileClass *aP2)

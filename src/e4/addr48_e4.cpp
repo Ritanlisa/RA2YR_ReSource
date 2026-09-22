@@ -31,10 +31,9 @@
 
 // 0x4880F0
 namespace gamemd {
-int E4Recv_4880F0::sub_4880F0(int a2)
+void E4Recv_4880F0::sub_4880F0(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_4880F0(int this, int a2)
 {
 
   if ( !Control::DispatchClick((_DWORD *)this, a2) ) /*0x4880fb*/
@@ -83,10 +82,9 @@ void sub_4880F0(int this, int a2)
 
 // 0x489180
 namespace gamemd {
-int Network_SendTimestamp(int a1, int a2, int a3, int a4)
+void Network_SendTimestamp(int a1, int a2, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall Network_SendTimestamp(int a1, int a2, int a3, int a4)
 {
   int result; // eax
 
@@ -111,10 +109,9 @@ int __fastcall Network_SendTimestamp(int a1, int a2, int a3, int a4)
 
 // 0x489280
 namespace gamemd {
-int PlaySoundEffectAt(TechnoClass * aP0, IUnknown * aP1, unsigned int * a2, ObjectClass * aP3, char a5, int aP6)
+void PlaySoundEffectAt(TechnoClass * aP0, IUnknown * aP1, unsigned int * a2, ObjectClass * aP3, char a5, int aP6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall PlaySoundEffectAt(TechnoClass *aP0, IUnknown *aP1, _DWORD *a2, ObjectClass *aP3, char a5, int aP6)
 {
   ObjectClass *v8; // esi
   VectorClass *v9; // eax
@@ -902,10 +899,9 @@ LABEL_213:
 
 // 0x48A620
 namespace gamemd {
-char CreateSmokeEffectAt(int a1, int a2, int a3, int a4, int a5, char a6, int a7)
+void CreateSmokeEffectAt(int a1, int a2, int a3, int a4, int a5, char a6, int a7)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall CreateSmokeEffectAt(int a1, int a2, int a3, int a4, int a5, char a6, int a7)
 {
 
   unsigned int v7; // eax
@@ -955,10 +951,9 @@ char __fastcall CreateSmokeEffectAt(int a1, int a2, int a3, int a4, int a5, char
 
 // 0x48A9D0
 namespace gamemd {
-char Math_SolveTrajectory(char a1, int a2, int a3, int a4, double a5, int a6)
+void Math_SolveTrajectory(char a1, int a2, int a3, int a4, double a5, int a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall Math_SolveTrajectory(char a1, int a2, int a3, int a4, double a5, int a6)
 {
 
   if ( a4 <= 0 )
@@ -999,10 +994,9 @@ char __fastcall Math_SolveTrajectory(char a1, int a2, int a3, int a4, double a5,
 
 // 0x48B0E0
 namespace gamemd {
-CommBufferClass * CommBufferClass::sub_48B0E0(int a2, int a3, size_t Size, int a5)
+void * CommBufferClass::sub_48B0E0(int a2, int a3, size_t Size, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-CommBufferClass *__thiscall sub_48B0E0(CommBufferClass *this, int a2, int a3, size_t Size, int a5)
 {
 
   *(_DWORD *)this->__pad_0 = &vt_CommBufferClass; /*0x48b0fd*/
@@ -1057,7 +1051,6 @@ namespace gamemd {
 bool sub_48BB60(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool __fastcall sub_48BB60(int a1)
 {
   int v6; // edx
   _DWORD *v7; // eax
@@ -1120,7 +1113,6 @@ namespace gamemd {
 int CompareFuncInt(unsigned int * a1, unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int CompareFuncInt(_DWORD *a1, _DWORD *a2)
 {
   if ( *a1 == *a2 )
     return 0; /*0x48bc30*/
@@ -1132,10 +1124,9 @@ int CompareFuncInt(_DWORD *a1, _DWORD *a2)
 
 // 0x48C8B0
 namespace gamemd {
-int Main_Game_Frame()
+void Main_Game_Frame()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Main_Game_Frame()
 {
   int result; // eax
   LPARAM v5; // eax
@@ -1301,10 +1292,9 @@ LABEL_45:
 
 // 0x48CCC0
 namespace gamemd {
-char MainGame()
+void MainGame()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MainGame()
 {
   int inited; // eax
   wchar_t *StringCSF; // eax
@@ -1438,7 +1428,6 @@ namespace gamemd {
 void sub_48DEE0(unsigned int * a1, int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall sub_48DEE0(_DWORD *a1, int a2, int a3)
 {
 
   if ( a1 ) /*0x48dee4*/
@@ -1473,10 +1462,9 @@ LABEL_7:
 
 // 0x48E0B0
 namespace gamemd {
-FILE * sub_48E0B0()
+void * sub_48E0B0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-FILE *sub_48E0B0()
 {
   FILE *result; // eax
   FILE *v1; // esi

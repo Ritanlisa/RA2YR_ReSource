@@ -8,10 +8,9 @@
 
 // 0x5F7A90
 namespace gamemd {
-char VoxelAnimType::LoadSection(const char * a2, int a3)
+void VoxelAnimType::LoadSection(const char * a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void VoxelAnimType_LoadSection(_DWORD *this, const char *a2, int a3)
 {
   _BYTE v16[12]; // [esp+6Ch] [ebp-284h] BYREF
   int v17; // [esp+78h] [ebp-278h]
@@ -122,10 +121,9 @@ void VoxelAnimType_LoadSection(_DWORD *this, const char *a2, int a3)
 
 // 0x5F7DB0
 namespace gamemd {
-char VoxelAnimType::LoadBarrel(const char * a2, int a3)
+void VoxelAnimType::LoadBarrel(const char * a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void VoxelAnimType_LoadBarrel(_DWORD *this, const char *a2, int a3)
 {
   _BYTE v13[12]; // [esp+6Ch] [ebp-284h] BYREF
   int v14; // [esp+78h] [ebp-278h]
@@ -224,10 +222,9 @@ void VoxelAnimType_LoadBarrel(_DWORD *this, const char *a2, int a3)
 
 // 0x5F8110
 namespace gamemd {
-int VoxelAnimType::LoadAnim()
+void VoxelAnimType::LoadAnim()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void VoxelAnimType::LoadAnim()
 {
   WaveClass *v3; // edi
   _DWORD *FileVXL; // eax

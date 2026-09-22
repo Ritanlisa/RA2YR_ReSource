@@ -4,10 +4,9 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 
 // 0x410800
-int AbstractTypeClass::Constructor(AbstractClass * aP1)
+void AbstractTypeClass::Constructor(AbstractClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void AbstractTypeClass::Constructor(int this, AbstractClass *aP1)
 {
   RandomStruct *v3; // ebx
   char Buffer[16]; // [esp+10h] [ebp-44h] BYREF
@@ -78,10 +77,9 @@ LABEL_9:
 }
 
 // 0x4109C0
-int AbstractTypeClass::Dtor()
+void AbstractTypeClass::Dtor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void AbstractTypeClass_Dtor(_DWORD *this)
 {
 
   *this = &AbstractTypeClass::`vftable'; /*0x4109cd*/
@@ -104,10 +102,9 @@ void AbstractTypeClass_Dtor(_DWORD *this)
 }
 
 // 0x410A60
-char AbstractTypeClass::LoadFromINI(AbstractTypeClass * aP1)
+void AbstractTypeClass::LoadFromINI(AbstractTypeClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void AbstractTypeClass::LoadFromINI(int this, AbstractTypeClass *aP1)
 {
   CCINIClass *v3; // edi
   char Destination[48]; // [esp+Ch] [ebp-434h] BYREF

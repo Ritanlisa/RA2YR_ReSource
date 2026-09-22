@@ -11,7 +11,6 @@ namespace gamemd {
 unsigned int * TaskForceClass::ParseUnitCountAndType(char * Buffer)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_4C4EF0(_DWORD *this, char *Buffer)
 {
   int ExitCellByName; // eax
   int Index; // eax
@@ -55,7 +54,6 @@ namespace gamemd {
 unsigned int * TaskForceClass::Construct(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall TaskForceClass::Construct(_DWORD *this, ObjectClass *aP1)
 {
   TaskForceClass *v3; // eax
   ObjectTypeClass *v4; // eax
@@ -95,10 +93,9 @@ _DWORD *__thiscall TaskForceClass::Construct(_DWORD *this, ObjectClass *aP1)
 
 // 0x6E8220
 namespace gamemd {
-CCINIClass * TaskForceClass::LoadFromINI(char * a1, int a2)
+void * TaskForceClass::LoadFromINI(char * a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-CCINIClass *__fastcall TaskForceClass::LoadFromINI(char *a1, int a2)
 {
   CCINIClass *result; // eax
   CCINIClass *v5; // esi
@@ -169,10 +166,9 @@ LABEL_12:
 
 // 0x6E87F0
 namespace gamemd {
-TaskForceClass * TaskForceClass::ExecuteAction(char a2)
+void * TaskForceClass::ExecuteAction(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-TaskForceClass *__thiscall TaskForceClass::ExecuteAction(void **this, char a2)
 {
   void **v5; // [esp+4h] [ebp-4h] BYREF
 

@@ -9,10 +9,9 @@
 
 // 0x501750
 namespace gamemd {
-char E4Recv_501750::sub_501750(int a2)
+void E4Recv_501750::sub_501750(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_501750(_DWORD *this, int a2)
 {
   char result; // al
 
@@ -69,10 +68,9 @@ LABEL_14:
 
 // 0x504790
 namespace gamemd {
-int UpdateHouseClassAnger(IUnknown * aP0, HouseClass * aP1, int a3, int a4)
+void UpdateHouseClassAnger(IUnknown * aP0, HouseClass * aP1, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall UpdateHouseClassAnger(IUnknown *aP0, HouseClass *aP1, int a3, int a4)
 {
   int result; // eax
 

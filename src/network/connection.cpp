@@ -23,7 +23,6 @@ void ConnectionClass::queueSendPacket(const uint8_t* data, int32_t length, int32
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x48b410
-void ConnectionClass::queueSendPacket(#487 *this, #473 *a2, int a3, int a4)
 {
   _BYTE *i; // edi
   __int16 v12; // [esp+24h] [ebp+14h]
@@ -265,10 +264,9 @@ void ConnectionClass::serviceSendQueue()
 
 // IDA 0x48C5A0 — connect: activate network connection
 // 0x48c5a0
-bool ConnectionClass::connect()
+void ConnectionClass::connect()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ConnectionClass::_vt08()
 {
   int TileType; // eax
 

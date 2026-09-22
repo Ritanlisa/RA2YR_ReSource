@@ -12,7 +12,6 @@
 void DSurface::Process(IUnknown * aP1, int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void DSurface::Process(int this, IUnknown *aP1, int *a2)
 {
   TerrainClass::GenerateTexture( /*0x4801de*/
     **(_DWORD ***)&g_NetworkPlayerBuffer[5872],
@@ -37,10 +36,9 @@ void DSurface::Process(int this, IUnknown *aP1, int *a2)
 }
 
 // 0x4BA5A0
-char * DSurface::Construct(IUnknown * aP1, DSurface * aP2, ObjectClass * aP3, char a5)
+void * DSurface::Construct(IUnknown * aP1, DSurface * aP2, ObjectClass * aP3, char a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall DSurface::Construct(char *this, IUnknown *aP1, DSurface *aP2, ObjectClass *aP3, char a5)
 {
   ObjectClass *v7; // edi
   IUnknown *v8; // eax
@@ -88,10 +86,9 @@ char *__thiscall DSurface::Construct(char *this, IUnknown *aP1, DSurface *aP2, O
 }
 
 // 0x4BA6B0
-int DSurface::Destroy()
+void DSurface::Destroy()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void DSurface_Destroy(void *this)
 {
   int result; // eax
 
@@ -125,7 +122,6 @@ void DSurface_Destroy(void *this)
 unsigned int * DSurface::CreatePrimary()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall DSurface_CreatePrimary(_DWORD *this)
 {
   const char *v2; // eax
   const char *v3; // eax
@@ -392,7 +388,6 @@ LABEL_65:
 unsigned int * DSurface::CreateBackBuffer(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_4BAC60(_DWORD *this, int a2)
 {
 
   this->q004 = 0; /*0x4bac6b*/
@@ -425,20 +420,18 @@ _DWORD *__thiscall sub_4BAC60(_DWORD *this, int a2)
 }
 
 // 0x4BAD60
-int DSurface::GetBytesPerPixel()
+void DSurface::GetBytesPerPixel()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void DSurface_GetBytesPerPixel(_DWORD *this)
 {
   return this->q010; /*0x4bad63*/
 }
 }
 
 // 0x4BB000
-char DSurface::RestoreIfLost()
+void DSurface::RestoreIfLost()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void DSurface_RestoreIfLost(int *this)
 {
 
   if ( !g_lpDirectDraw7 && !g_DDraw_Initialized ) /*0x4bb014*/
@@ -467,10 +460,9 @@ void DSurface_RestoreIfLost(int *this)
 }
 
 // 0x4BB0D0
-char DSurface::Blit(int * a1, int * a2, unsigned int * a3, int * a4, DSurface * aP5, int a7, char a8)
+void DSurface::Blit(int * a1, int * a2, unsigned int * a3, int * a4, DSurface * aP5, int a7, char a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void DSurface::Blit(int *a1, int *a2, _DWORD *a3, int *a4, DSurface *aP5, int a7, char a8)
 {
   void **v10; // ebx
   DSurface *v20; // ecx
@@ -697,10 +689,9 @@ LABEL_71:
 }
 
 // 0x4BB620
-char DSurface::FillRectEx(XSurface * aP1, int * a2, XSurface * aP3)
+void DSurface::FillRectEx(XSurface * aP1, int * a2, XSurface * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void DSurface::FillRectEx(XSurface *aP1, int *a2, XSurface *aP3)
 {
   int ecx15a; // ecx
   int Width; // ebx
@@ -791,10 +782,9 @@ LABEL_15:
 
 // 0x4BB830
 namespace gamemd {
-int DSurface_FillRectWithFlags()
+void DSurface_FillRectWithFlags()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __userpurge DSurface_FillRectWithFlags@<al>(int a1@<ecx>, int a2@<ebx>, int a3, _BYTE *a4, unsigned int a5)
 {
   unsigned __int16 *v23; // eax
   __int16 v25; // bp
@@ -881,7 +871,6 @@ char __userpurge DSurface_FillRectWithFlags@<al>(int a1@<ecx>, int a2@<ebx>, int
 void DSurface::BlitStretch(int a1, int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall sub_4BBB00(int a1, int a2, int a3)
 {
   int i; // ebp
   unsigned __int8 *v7; // ecx
@@ -923,19 +912,9 @@ void __fastcall sub_4BBB00(int a1, int a2, int a3)
 }
 
 // 0x4BBCA0
-char DSurface::DrawLineModulated(int * a1, int a2, int a3, unsigned int * a4, unsigned int * a5, int a6, int a7, int a8, char a9)
+void DSurface::DrawLineModulated(int * a1, int a2, int a3, unsigned int * a4, unsigned int * a5, int a6, int a7, int a8, char a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall DSurface_DrawLineModulated(
-        int *a1,
-        int a2,
-        int a3,
-        _DWORD *a4,
-        _DWORD *a5,
-        int a6,
-        int a7,
-        int a8,
-        char a9)
 {
   unsigned __int16 v45; // ax
   unsigned __int16 v58; // ax
@@ -1301,10 +1280,9 @@ LABEL_69:
 }
 
 // 0x4BC750
-char DSurface::DrawLineFaded(int a2, unsigned int * a3, int * a4, unsigned char * a5, int a6, int a7, char a8, float a9, char a10, char a11, float a12)
+void DSurface::DrawLineFaded(int a2, unsigned int * a3, int * a4, unsigned char * a5, int a6, int a7, char a8, float a9, char a10, char a11, float a12)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void DSurface_DrawLineFaded(
         void *this,
         int a2,
         _DWORD *a3,
@@ -2104,10 +2082,9 @@ void DSurface_DrawLineFaded(
 }
 
 // 0x4BDF00
-char DSurface::DrawLineZBufColored(int a2, unsigned int * a3, unsigned int * a4, unsigned char * a5, float a6, int a7, int a8)
+void DSurface::DrawLineZBufColored(int a2, unsigned int * a3, unsigned int * a4, unsigned char * a5, float a6, int a7, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void DSurface_DrawLineZBufColored(
         void *this,
         int a2,
         _DWORD *a3,
@@ -2500,10 +2477,9 @@ void DSurface_DrawLineZBufColored(
 }
 
 // 0x4BF750
-char DSurface::DrawGradientLine(int aP1, unsigned int * a2, DSurface * aP3, int a5, int arg10, float * a6, float * a7)
+void DSurface::DrawGradientLine(int aP1, unsigned int * a2, DSurface * aP3, int a5, int arg10, float * a6, float * a7)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void DSurface::DrawGradientLine(int aP1, _DWORD *a2, DSurface *aP3, int a5, int arg10, float *a6, float *a7)
 {
   IUnknown *v9; // eax
   IUnknown *v15; // ebx
@@ -2745,19 +2721,9 @@ LABEL_58:
 }
 
 // 0x4BFD30
-char DSurface::DrawLineZBuf(int a1, int a2, int a3, unsigned int * a4, unsigned int * a5, unsigned short a6, int a7, int a8, char a9)
+void DSurface::DrawLineZBuf(int a1, int a2, int a3, unsigned int * a4, unsigned int * a5, unsigned short a6, int a7, int a8, char a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall DSurface_DrawLineZBuf(
-        int a1,
-        int a2,
-        int a3,
-        _DWORD *a4,
-        _DWORD *a5,
-        unsigned __int16 a6,
-        int a7,
-        int a8,
-        char a9)
 {
   int v32; // ebp
   int v33; // ebx
@@ -3187,10 +3153,9 @@ LABEL_15:
 }
 
 // 0x4C0750
-int DSurface::DrawDashedLineStipple(int * a1, int * a2, short a4, int a5, int a6, DSurface * aP6)
+void DSurface::DrawDashedLineStipple(int * a1, int * a2, short a4, int a5, int a6, DSurface * aP6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void DSurface::DrawDashedLineStipple(int *a1, int *a2, __int16 a4, int a5, int a6, DSurface *aP6)
 {
   MouseClass *v7; // ebp
   MouseClass *v12; // ecx
@@ -3630,10 +3595,9 @@ LABEL_155:
 }
 
 // 0x4C0E30
-char DSurface::DrawStippledRect(unsigned int * a1, unsigned int * a2, short a4, DSurface * aP4)
+void DSurface::DrawStippledRect(unsigned int * a1, unsigned int * a2, short a4, DSurface * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void DSurface::DrawStippledRect(_DWORD *a1, _DWORD *a2, __int16 a4, DSurface *aP4)
 {
   MouseClass *v8; // eax
   MouseClass *v9; // ecx
@@ -4069,7 +4033,6 @@ void DSurface::DrawStippledRect(_DWORD *a1, _DWORD *a2, __int16 a4, DSurface *aP
 void * DSurface::loc_4C1AC0(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void *__thiscall DSurface::loc_4C1AC0(void *this, char a2)
 {
 
   char v3 = (unsigned char)this->DSurface_field_0x18; /*0x4c1ac3*/
@@ -4101,10 +4064,9 @@ void *__thiscall DSurface::loc_4C1AC0(void *this, char a2)
 }
 
 // 0x5D1E70
-int DSurface::RenderToSurface(ObjectClass * aP1)
+void DSurface::RenderToSurface(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void DSurface::RenderToSurface(ObjectClass *aP1)
 {
   int i; // ebp
   ObjectClass *v13; // eax
@@ -4186,10 +4148,9 @@ void DSurface::RenderToSurface(ObjectClass *aP1)
 }
 
 // 0x621B80
-int DSurface::FillRectWithColor(int * a0, ObjectClass * aP1, short a3, unsigned char a4)
+void DSurface::FillRectWithColor(int * a0, ObjectClass * aP1, short a3, unsigned char a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall DSurface::FillRectWithColor(int *a0, ObjectClass *aP1, __int16 a3, unsigned __int8 a4)
 {
   ObjectClass *v5; // ebp
   int result; // eax
@@ -4267,10 +4228,9 @@ int __fastcall DSurface::FillRectWithColor(int *a0, ObjectClass *aP1, __int16 a3
 }
 
 // 0x7BD210
-int DSurface::LockAndPrepareRect()
+void DSurface::LockAndPrepareRect()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_7BD210(int this)
 {
   int result; // eax
 
@@ -4293,10 +4253,9 @@ void sub_7BD210(int this)
 }
 
 // 0x7BDF80
-int DSurface::CommitBuffers()
+void DSurface::CommitBuffers()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void DSurface_CommitBuffers(int this)
 {
   int i; // edi
   int j; // ebx
@@ -4541,10 +4500,9 @@ void DSurface_CommitBuffers(int this)
 }
 
 // 0x7C2C60
-int DSurface::Flip()
+void DSurface::Flip()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void DSurface_Flip(int this)
 {
 
   if ( (*(_BYTE *)(this + 132) & 1) != 0 && (*(_BYTE *)(this + 234) & 3) != 0 ) /*0x7c2c73*/

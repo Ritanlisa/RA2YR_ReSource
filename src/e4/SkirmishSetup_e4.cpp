@@ -8,10 +8,9 @@
 
 // 0x5D6130
 namespace gamemd {
-char SkirmishSetup_Setup(HWND hWnd, int a2)
+void SkirmishSetup_Setup(HWND hWnd, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall SkirmishSetup_Setup(HWND hWnd, int a2)
 {
   char result; // al
   LPARAM v5; // esi
@@ -67,10 +66,9 @@ char __fastcall SkirmishSetup_Setup(HWND hWnd, int a2)
 } // namespace gamemd
 
 // 0x5E6920
-int SkirmishSetup::DlgProc(SkirmishDialog * aP0, int a2, HWND hWnd, signed int a4, WPARAM _3C, char * a5)
+void SkirmishSetup::DlgProc(SkirmishDialog * aP0, int a2, HWND hWnd, signed int a4, WPARAM _3C, char * a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void SkirmishSetup::DlgProc(SkirmishDialog *aP0, int a2, HWND hWnd, signed int a4, WPARAM _3C, char *a5)
 {
   int ebp0; // ebp
   int result; // eax
@@ -394,10 +392,9 @@ LABEL_28:
 }
 
 // 0x608260
-char SkirmishSetup::PlayButtonClickAnim()
+void SkirmishSetup::PlayButtonClickAnim()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void SkirmishSetup::PlayButtonClickAnim(HWND this)
 {
   HWND *v2; // eax
   SkirmishSetup *v7; // [esp+8h] [ebp-4h] BYREF
@@ -436,10 +433,9 @@ void SkirmishSetup::PlayButtonClickAnim(HWND this)
 
 // 0x5E8590
 namespace gamemd {
-ObjectClass * SkirmishSetup_Setup_5E8590()
+void * SkirmishSetup_Setup_5E8590()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-ObjectClass *SkirmishSetup_Setup_5E8590()
 {
   char (*v0)(); // ecx
   ObjectClass *v2; // esi

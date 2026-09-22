@@ -29,7 +29,6 @@ namespace gamemd {
 unsigned int * sub_6B2430(int * a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__fastcall sub_6B2430(int *a1, int a2)
 {
   _DWORD *result; // eax
 
@@ -58,10 +57,9 @@ _DWORD *__fastcall sub_6B2430(int *a1, int a2)
 
 // 0x6B2700
 namespace gamemd {
-int InitializeBuildabilityGrid(int a1)
+void InitializeBuildabilityGrid(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void InitializeBuildabilityGrid(int a1)
 {
   int result; // eax
   __int16 v6; // cx
@@ -194,10 +192,9 @@ LABEL_24:
 
 // 0x6B2A70
 namespace gamemd {
-int SlaveManager_InitGrid()
+void SlaveManager_InitGrid()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void SlaveManager_InitGrid()
 {
   int result; // eax
   __int16 v8; // dx
@@ -392,10 +389,9 @@ void SlaveManager_InitGrid()
 
 // 0x6B2F30
 namespace gamemd {
-char sub_6B2F30(char a1, int a2, int a3)
+void sub_6B2F30(char a1, int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall sub_6B2F30(char a1, int a2, int a3)
 {
   __int16 v4; // bp
   __int16 v5; // bx
@@ -930,10 +926,9 @@ LABEL_110:
 
 // 0x6B3850
 namespace gamemd {
-char ProcessSlaveManagerTerrain()
+void ProcessSlaveManagerTerrain()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ProcessSlaveManagerTerrain()
 {
   int BitLCW; // eax
   int i; // [esp+0h] [ebp-18h]
@@ -1034,10 +1029,9 @@ LABEL_36:
 
 // 0x6B3A80
 namespace gamemd {
-char Terrain_FlowCompute(int a1, char a2, int a3, int a4)
+void Terrain_FlowCompute(int a1, char a2, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall Terrain_FlowCompute(int a1, char a2, int a3, int a4)
 {
   int v8; // edi
   int v9; // ebp
@@ -1157,7 +1151,6 @@ namespace gamemd {
 char sub_6B3CD0(int a1, char a2, int a3, unsigned int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall sub_6B3CD0(int a1, char a2, int a3, unsigned int a4)
 {
 
   g_SlaveMgrPool = 0; /*0x6b3ce6*/
@@ -1229,10 +1222,9 @@ LABEL_20:
 
 // 0x6B3E60
 namespace gamemd {
-char ComputeTerrainFlowField(int a1, char a2, int a3, unsigned int a4)
+void ComputeTerrainFlowField(int a1, char a2, int a3, unsigned int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall ComputeTerrainFlowField(int a1, char a2, int a3, unsigned int a4)
 {
   int v10; // edi
   char *v11; // esi
@@ -1395,7 +1387,6 @@ namespace gamemd {
 int FactoryClass_LoadTheaterSHP(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall FactoryClass_LoadTheaterSHP(int a1)
 {
   int result; // eax
   int i; // ebp
@@ -1427,10 +1418,9 @@ int __fastcall FactoryClass_LoadTheaterSHP(int a1)
 
 // 0x6B59A0
 namespace gamemd {
-char StandardCreateUnitAtCoords(unsigned int * a0, IUnknown * aP1, int a3, char a4)
+void StandardCreateUnitAtCoords(unsigned int * a0, IUnknown * aP1, int a3, char a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall StandardCreateUnitAtCoords(_DWORD *a0, IUnknown *aP1, int a3, char a4)
 {
   IUnknown *v4; // ebp
   SmudgeTypeClass *v7; // esi
@@ -1590,10 +1580,9 @@ LABEL_37:
 
 // 0x6B5C90
 namespace gamemd {
-char TimedCreateUnitAtCoords(unsigned int * a0, IUnknown * aP1, int a3, char a4)
+void TimedCreateUnitAtCoords(unsigned int * a0, IUnknown * aP1, int a3, char a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall TimedCreateUnitAtCoords(_DWORD *a0, IUnknown *aP1, int a3, char a4)
 {
   IUnknown *v4; // ebp
   SmudgeTypeClass *v7; // esi
@@ -1756,7 +1745,6 @@ namespace gamemd {
 void sub_6B6230()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_6B6230()
 {
   unsigned __int16 v0; // cx
   HWND Dialog; // esi
@@ -1796,7 +1784,6 @@ namespace gamemd {
 int Texture_DrawAffine(int a1, unsigned int * a2, int * a3, int a4, unsigned char a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall Texture_DrawAffine(int a1, _DWORD *a2, int *a3, int a4, unsigned __int8 a5)
 {
 
   int v59 = (*(int (__stdcall **)(_DWORD, _DWORD))(*(_DWORD *)a1 + 92))(0, 0); /*0x6b8f27*/
@@ -2032,10 +2019,9 @@ int __fastcall Texture_DrawAffine(int a1, _DWORD *a2, int *a3, int a4, unsigned 
 
 // 0x6B9D00
 namespace gamemd {
-char Palette_LoadFromFile(int a1, int a2, char * Source, int a4, int a5)
+void Palette_LoadFromFile(int a1, int a2, char * Source, int a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall Palette_LoadFromFile(int a1, int a2, char *Source, int a4, int a5)
 {
   int i; // esi
   void (__thiscall ***v38)(_DWORD, int); // edi
@@ -2237,10 +2223,9 @@ LABEL_31:
 
 // 0x6BB390
 namespace gamemd {
-int sub_6BB390()
+void sub_6BB390()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_6BB390()
 {
   HKEY phkResult; // [esp+10h] [ebp-2E0h] BYREF
   ITypeLib *pptlib; // [esp+14h] [ebp-2DCh] BYREF
@@ -2341,10 +2326,9 @@ void sub_6BB390()
 
 // 0x6BB9A0
 namespace gamemd {
-int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd)
+void WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd)
 {
   HWND WindowA; // eax
   HWND v6; // esi
@@ -3666,7 +3650,6 @@ namespace gamemd {
 void WinMain_Setup()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void WinMain_Setup()
 {
   void (__thiscall ***v5)(_DWORD, int); // ecx
   int i; // esi

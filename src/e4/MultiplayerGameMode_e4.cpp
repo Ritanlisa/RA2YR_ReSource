@@ -6,7 +6,6 @@
 unsigned int * MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall VectorClass_Constructor_MultiplayerGameMode(_DWORD *this, int a2, int a3)
 {
   this->q004 = 0; /*0x5d89fb*/
   this->q008 = a2; /*0x5d89fe*/

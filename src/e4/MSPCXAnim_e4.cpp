@@ -5,10 +5,9 @@
 #include "e4/classes/MSPCXAnim_42_e4.hpp"
 
 // 0x5CEAB0
-char MSPCXAnim::Stub()
+void MSPCXAnim::Stub()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MSPCXAnim::_vt07()
 {
   return this->__pad_029; /*0x5ceab3*/
 }
@@ -16,10 +15,9 @@ void MSPCXAnim::_vt07()
 
 // 0x5D09C0
 namespace gamemd {
-char MSPCXAnim_42::AllocCopyData_8B(int a2, unsigned int * a3)
+void MSPCXAnim_42::AllocCopyData_8B(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MSPCXAnim_42_::sub_5D09C0(int a2, _DWORD *a3)
 {
 
   if ( a2 ) /*0x5d09cc*/

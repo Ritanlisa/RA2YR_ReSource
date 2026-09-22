@@ -28,10 +28,9 @@ int ObjectClass::processPointerInvalid()
 // 0x4D7D50
 namespace ra2 {
 namespace game {
-char ObjectClass::SpawnInfantry(FootClass * aP1, FootClass * aP2, FootClass * aP3, FootClass * aP4)
+void ObjectClass::SpawnInfantry(FootClass * aP1, FootClass * aP2, FootClass * aP3, FootClass * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ObjectClass::SpawnInfantry(FootClass *aP1, FootClass *aP2, FootClass *aP3, FootClass *aP4)
 {
   char result; // al
   RadarClass *v7; // edi
@@ -220,10 +219,9 @@ LABEL_52:
 // 0x4D9C60
 namespace ra2 {
 namespace game {
-int ObjectClass::CheckCellFlags(int a1, int a2, int * a3, unsigned char * a4, unsigned int * a5)
+void ObjectClass::CheckCellFlags(int a1, int a2, int * a3, unsigned char * a4, unsigned int * a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void FootClass_CheckCellFlags(int a1, int a2, int *a3, _BYTE *a4, _DWORD *a5)
 {
   __int16 v7; // dx
   _DWORD * v5 = a5; /*0x4d9c67*/
@@ -305,10 +303,9 @@ void FootClass_CheckCellFlags(int a1, int a2, int *a3, _BYTE *a4, _DWORD *a5)
 // 0x4DB3C0
 namespace ra2 {
 namespace game {
-int ObjectClass::LoadFromStream_Common(FootClass * aP0, LPSTREAM pStm)
+void ObjectClass::LoadFromStream_Common(FootClass * aP0, LPSTREAM pStm)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ObjectClass::LoadFromStream_Common(FootClass *aP0, LPSTREAM pStm)
 {
   IStream *v4; // ebp
   int result; // eax
@@ -478,10 +475,9 @@ LABEL_28:
 // 0x4DB690
 namespace ra2 {
 namespace game {
-HRESULT ObjectClass::SaveToStream_Common(IPersistStream * a0, FootClass * aP1, struct IPersistStreamVtbl * a2)
+void ObjectClass::SaveToStream_Common(IPersistStream * a0, FootClass * aP1, struct IPersistStreamVtbl * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-HRESULT __stdcall ObjectClass::SaveToStream_Common(IPersistStream *a0, FootClass *aP1, struct IPersistStreamVtbl *a2)
 {
   IStream *v3; // esi
   IPersistStream *v4; // edi
@@ -570,10 +566,9 @@ LABEL_6:
 // 0x4DE1D0
 namespace ra2 {
 namespace game {
-RadarClass * ObjectClass::FindPlacementCell(FootClass * aP0, int aP1, IUnknown ** a2, int a4, int a5, char a6)
+void * ObjectClass::FindPlacementCell(FootClass * aP0, int aP1, IUnknown ** a2, int a4, int a5, char a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-RadarClass *ObjectClass::FindPlacementCell(FootClass *aP0, int aP1, IUnknown **a2, int a4, int a5, char a6)
 {
   FootClass *v6; // ecx
   FootClass *esi1; // esi
@@ -760,11 +755,10 @@ LABEL_36:
 
 // 0x4DE620
 namespace gamemd {
-int ObjectClass_IsHeightAboveThreshold_0()
+void ObjectClass_IsHeightAboveThreshold_0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // attributes: thunk
-void ObjectClass::IsHeightAboveThreshold_0(#374 *this)
 {
   return ObjectClass::IsHeightAboveThreshold(this);
 }
@@ -774,10 +768,9 @@ void ObjectClass::IsHeightAboveThreshold_0(#374 *this)
 // 0x513F40
 namespace ra2 {
 namespace game {
-float * ObjectClass::BuildTransform(unsigned int * a1, float * a2, unsigned int * a3)
+void * ObjectClass::BuildTransform(unsigned int * a1, float * a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-float *__stdcall ObjectClass::BuildTransform(_DWORD *a1, float *a2, _DWORD *a3)
 {
   float *v7; // eax
   double v8; // st7
@@ -892,11 +885,10 @@ LABEL_16:
 
 // 0x5228B0
 namespace gamemd {
-int ObjectClass_GetTypeVt40_0()
+void ObjectClass_GetTypeVt40_0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // attributes: thunk
-void ObjectClass::GetTypeVt40_0(#377 *this)
 {
   return TechnoClass::GetTypeVt40(this);
 }
@@ -905,11 +897,10 @@ void ObjectClass::GetTypeVt40_0(#377 *this)
 
 // 0x5228C0
 namespace gamemd {
-int ObjectClass_GetTypeVt41_0()
+void ObjectClass_GetTypeVt41_0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // attributes: thunk
-void ObjectClass::GetTypeVt41_0(#377 *this)
 {
   return ObjectClass::GetTypeVt41(this);
 }
@@ -919,10 +910,9 @@ void ObjectClass::GetTypeVt41_0(#377 *this)
 // 0x556A20
 namespace ra2 {
 namespace game {
-char * ObjectClass::checkLimbo()
+void * ObjectClass::checkLimbo()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall sub_556A20(char *this)
 {
 
   *this = 0x80; /*0x556a29*/
@@ -967,7 +957,6 @@ namespace game {
 void ObjectClass::Dtor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ObjectClass::Dtor()
 {
   BombClass *v2; // ecx
   v2 = (BombClass *)this->attachedBomb; /*0x5f3b84*/
@@ -1083,7 +1072,6 @@ namespace game {
 int ObjectClass::DropAsBomb_Track()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int ObjectClass::DropAsBomb_Track(#374 *this)
 {
   int result; // eax
 
@@ -1131,7 +1119,6 @@ namespace game {
 int ObjectClass::GetBoundsRect()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int ObjectClass::GetBoundsRect(#374 *this)
 {
   __int16 *v4; // esi
   int *FoundationSize; // eax
@@ -1287,10 +1274,9 @@ LABEL_39:
 // 0x5F4D30
 namespace ra2 {
 namespace game {
-int ObjectClass::Undeploy()
+void ObjectClass::Undeploy()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ObjectClass::Undeploy(#374 *this)
 {
   int result; // eax
 
@@ -1348,10 +1334,9 @@ void ObjectClass::Undeploy(#374 *this)
 // 0x5F4EC0
 namespace ra2 {
 namespace game {
-int ObjectClass::Deploy()
+void ObjectClass::Deploy()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ObjectClass::Deploy(#374 *this)
 {
   int result; // eax
   ObjectClass *v3; // ebx
@@ -1503,10 +1488,9 @@ LABEL_41:
 // 0x5F5280
 namespace ra2 {
 namespace game {
-int ObjectClass::Destroy2()
+void ObjectClass::Destroy2()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ObjectClass::Destroy2(#374 *this)
 {
   ObjectClass *v3; // edi
   AbstractClass *v5; // edx
@@ -1541,10 +1525,9 @@ LABEL_10:
 // 0x5F5850
 namespace ra2 {
 namespace game {
-int ObjectClass::UpdateProductionDisplay()
+void ObjectClass::UpdateProductionDisplay()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ObjectClass::UpdateProductionDisplay(#374 *this)
 {
   int result; // eax
 
@@ -1602,10 +1585,9 @@ void ObjectClass::UpdateProductionDisplay(#374 *this)
 // 0x5F6BD0
 namespace ra2 {
 namespace game {
-int ObjectClass::GetBoundingSize()
+void ObjectClass::GetBoundingSize()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ObjectClass::GetBoundingSize(#374 *this)
 {
 
   _BYTE v4[12]; // [esp+8h] [ebp-18h] BYREF
@@ -1620,10 +1602,9 @@ void ObjectClass::GetBoundingSize(#374 *this)
 // 0x652E50
 namespace ra2 {
 namespace game {
-int ObjectClass::resetObjectState(SidebarClass * aP1)
+void ObjectClass::resetObjectState(SidebarClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ObjectClass::resetObjectState(SidebarClass *aP1)
 {
 
   int v3 = *this; /*0x652e5e*/
@@ -1648,7 +1629,6 @@ namespace game {
 void ObjectClass::CleanupSidebarResources()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CleanupSidebarResources()
 {
 
   PowerClass::checkLowPower(); /*0x6a5bf2*/
@@ -1789,7 +1769,6 @@ namespace game {
 unsigned char ObjectClass::ToggleSidebarDisplay(unsigned int * a0, TabClass * aP1, int a3, int _20, SidebarClass * a4, char a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ObjectClass::ToggleSidebarDisplay(_DWORD *a0, TabClass *aP1, int a3, int _20, SidebarClass *a4, char a6)
 {
   SidebarClass *v6; // ecx
   SidebarClass *v7; // esi
@@ -1914,10 +1893,9 @@ void ObjectClass::ToggleSidebarDisplay(_DWORD *a0, TabClass *aP1, int a3, int _2
 // 0x718260
 namespace ra2 {
 namespace game {
-char ObjectClass::FindPlacementPosition(int a2, int a3, int a4, int a5)
+void ObjectClass::FindPlacementPosition(int a2, int a3, int a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ObjectClass_FindPlacementPosition(_DWORD *this, int a2, int a3, int a4, int a5)
 {
   int TileIndex; // eax
   int *v35; // ebp
@@ -2127,11 +2105,10 @@ void ObjectClass_FindPlacementPosition(_DWORD *this, int a2, int a3, int a4, int
 
 // 0x746CB0
 namespace gamemd {
-int ObjectClass_GetTypeVt40_2()
+void ObjectClass_GetTypeVt40_2()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // attributes: thunk
-void ObjectClass::GetTypeVt40_2(#377 *this)
 {
   return TechnoClass::GetTypeVt40(this);
 }
@@ -2140,11 +2117,10 @@ void ObjectClass::GetTypeVt40_2(#377 *this)
 
 // 0x746CC0
 namespace gamemd {
-int ObjectClass_GetTypeVt41_2()
+void ObjectClass_GetTypeVt41_2()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // attributes: thunk
-void ObjectClass::GetTypeVt41_2(#377 *this)
 {
   return ObjectClass::GetTypeVt41(this);
 }
@@ -2154,10 +2130,9 @@ void ObjectClass::GetTypeVt41_2(#377 *this)
 // 0x74CD60
 namespace ra2 {
 namespace game {
-int ObjectClass::processDeath()
+void ObjectClass::processDeath()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_74CD60(_WORD *this)
 {
   char *i; // esi
 
@@ -2553,11 +2528,10 @@ unsigned int * ObjectClass::clearTarget(char a2)
 
 // 0x77D200
 namespace gamemd {
-int j_Game_ProcessIdle()
+char j_Game_ProcessIdle()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // attributes: thunk
-char j_Game_ProcessIdle(SimpleWonlineDialogControl *this)
 {
   return Game::ProcessIdle((CreateGameDialogControl *)this);
 }

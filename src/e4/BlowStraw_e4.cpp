@@ -8,10 +8,9 @@
 
 // 0x6D0680
 namespace gamemd {
-int BlowStraw_29::Seek(TabClass * aP1, unsigned int * a2)
+void BlowStraw_29::Seek(TabClass * aP1, unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void BlowStraw_29_::Seek(TabClass *aP1, _DWORD *a2)
 {
   ScrollClass *v8; // eax
   int i; // edi
@@ -160,10 +159,9 @@ LABEL_6:
 
 // 0x731AF0
 namespace gamemd {
-wchar_t * sub_731AF0()
+void * sub_731AF0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-wchar_t *sub_731AF0()
 {
   wchar_t *result; // eax
   wchar_t *StringCSF; // eax

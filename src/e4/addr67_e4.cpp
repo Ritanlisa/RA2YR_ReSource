@@ -9,7 +9,6 @@ namespace gamemd {
 int sub_679CC0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_679CC0()
 {
 
   if ( !byte_B053B8 ) /*0x679cd0*/
@@ -46,15 +45,9 @@ int sub_679CC0()
 
 // 0x67B550
 namespace gamemd {
-int ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, VectorClass * aP2, unsigned char * a3, unsigned int * a4)
+void ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, VectorClass * aP2, unsigned char * a3, unsigned int * a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall ReadINIClassBuildingTypeList(
-        INIClass *aP0,
-        unsigned __int8 ***edx0,
-        VectorClass *aP2,
-        unsigned __int8 *a3,
-        _DWORD *a4)
 {
   char *i; // eax
   INIClass *v7; // edi
@@ -157,15 +150,9 @@ int __fastcall ReadINIClassBuildingTypeList(
 
 // 0x67BB10
 namespace gamemd {
-InfantryTypeClass * ReadINIClassInfantryTypeList(INIClass * aP0, unsigned char *** edx0, INIClass * aP1, unsigned char * a3, unsigned int * a4)
+void * ReadINIClassInfantryTypeList(INIClass * aP0, unsigned char *** edx0, INIClass * aP1, unsigned char * a3, unsigned int * a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-InfantryTypeClass *__fastcall ReadINIClassInfantryTypeList(
-        INIClass *aP0,
-        unsigned __int8 ***edx0,
-        INIClass *aP1,
-        unsigned __int8 *a3,
-        _DWORD *a4)
 {
   ObjectClass *i; // eax
   INIClass *v7; // edi

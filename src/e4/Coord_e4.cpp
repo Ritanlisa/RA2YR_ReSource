@@ -6,10 +6,9 @@
 
 // 0x4138C0
 namespace gamemd {
-int Coord::ToGridIndex(VectorClass * aP1, VectorClass * aP2, VectorClass * aP3)
+void Coord::ToGridIndex(VectorClass * aP1, VectorClass * aP2, VectorClass * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Coord::ToGridIndex(VectorClass *aP1, VectorClass *aP2, VectorClass *aP3)
 {
   int result; // eax
 
@@ -90,7 +89,6 @@ namespace gamemd {
 unsigned int * Coord::ToCell(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall Coord::ToCell(_DWORD *this, IUnknown *aP1)
 {
 
   int v3; // [esp+0h] [ebp-4h]
@@ -104,10 +102,9 @@ _DWORD *__thiscall Coord::ToCell(_DWORD *this, IUnknown *aP1)
 
 // 0x41C230
 namespace gamemd {
-IUnknown * Coord::Subtract(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3)
+void * Coord::Subtract(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-IUnknown *__thiscall Coord::Subtract(_DWORD *this, IUnknown *aP1, IUnknown *aP2, IUnknown *aP3)
 {
   *this = aP1; /*0x41c23a*/
   this->q004 = aP2; /*0x41c240*/
@@ -119,10 +116,9 @@ IUnknown *__thiscall Coord::Subtract(_DWORD *this, IUnknown *aP1, IUnknown *aP2,
 
 // 0x41C380
 namespace gamemd {
-double Coord::Length()
+void Coord::Length()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Coord::Length()
 {
   double result; // st7
 
@@ -141,7 +137,6 @@ namespace gamemd {
 unsigned int * Coord::GetCoords(int * outCoords)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall Coord::GetCoords(float *this, int *outCoords)
 {
 
   int v3 = Math::RoundToInt(this->q006); /*0x4399b0*/
@@ -157,10 +152,9 @@ _DWORD *__thiscall Coord::GetCoords(float *this, int *outCoords)
 
 // 0x43A0D0
 namespace gamemd {
-float * Coord::Scale(IUnknown * aP1)
+void * Coord::Scale(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-float *__thiscall Coord::Scale(float *this, IUnknown *aP1)
 {
   *this = *(float *)&aP1 * *this; /*0x43a0d8*/
   this->q004 = *(float *)&aP1 * this->q004; /*0x43a0e1*/
@@ -175,7 +169,6 @@ namespace gamemd {
 void * Coord::To_Cell(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void *__thiscall Coord::To_Cell(_DWORD *this, IUnknown *aP1)
 {
   ObjectClass *aP1a; // [esp+Ch] [ebp+4h]
 
@@ -197,10 +190,9 @@ void *__thiscall Coord::To_Cell(_DWORD *this, IUnknown *aP1)
 
 // 0x5AC370
 namespace gamemd {
-BOOL Coord::Compare2D(unsigned short * a2)
+void Coord::Compare2D(unsigned short * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Coord_Compare2D(_WORD *this, _WORD *a2)
 {
   return *this != *a2 || this->q004 != a2[1]; /*0x5ac388*/
 }
@@ -209,10 +201,9 @@ void Coord_Compare2D(_WORD *this, _WORD *a2)
 
 // 0x6557F0
 namespace gamemd {
-int * Coord::WorldToScreen(MouseClass * aP1, MouseClass * aP2, char a4)
+void * Coord::WorldToScreen(MouseClass * aP1, MouseClass * aP2, char a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int *__thiscall Coord::WorldToScreen(int this, MouseClass *aP1, MouseClass *aP2, char a4)
 {
 
   int v4 = aP2->field_0; /*0x6557f7*/
@@ -241,10 +232,9 @@ int *__thiscall Coord::WorldToScreen(int this, MouseClass *aP1, MouseClass *aP2,
 
 // 0x6D2140
 namespace gamemd {
-bool Coord::To_Screen(unsigned int * a1, IUnknown * aP2)
+void Coord::To_Screen(unsigned int * a1, IUnknown * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Coord::To_Screen(_DWORD *a1, IUnknown *aP2)
 {
 
   int v10 = a1[1]; /*0x6d214f*/
@@ -270,10 +260,9 @@ void Coord::To_Screen(_DWORD *a1, IUnknown *aP2)
 
 // 0x710700
 namespace gamemd {
-int * Coord::Divide(int * a2, int a3)
+void * Coord::Divide(int * a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int *__thiscall Coord_Divide(_DWORD *this, int *a2, int a3)
 {
 
   if ( a3 ) /*0x710708*/

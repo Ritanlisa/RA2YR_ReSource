@@ -6,10 +6,9 @@
 
 // 0x46CB60
 namespace gamemd {
-int CampaignClass::CampaignClass(ObjectClass * aP1)
+C CampaignClass::CampaignClass(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-C CampaignClass::CampaignClass(int this, ObjectClass *aP1)
 {
 
   AbstractTypeClass::Constructor(this, (AbstractClass *)aP1); /*0x46cb68*/
@@ -39,10 +38,9 @@ C CampaignClass::CampaignClass(int this, ObjectClass *aP1)
 
 // 0x46CE10
 namespace gamemd {
-int CampaignClass::LoadFromINIList()
+void CampaignClass::LoadFromINIList()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CampaignClass::LoadFromINIList()
 {
   int result; // eax
   CCINIClass *v3; // ebp
@@ -116,10 +114,9 @@ LABEL_7:
 
 // 0x49C5A0
 namespace gamemd {
-char CampaignClass::SaveProgress()
+void CampaignClass::SaveProgress()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CampaignClass_SaveProgress(char *this)
 {
   unsigned __int8 v10; // al
   char i; // al

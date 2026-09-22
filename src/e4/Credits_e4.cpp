@@ -7,7 +7,6 @@
 char Credits::Screen()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char sub_52CB90()
 {
   HANDLE FirstFileA; // esi
   char *cAlternateFileName; // ebp

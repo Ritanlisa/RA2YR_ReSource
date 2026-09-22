@@ -9,10 +9,9 @@
 
 // 0x765840
 namespace gamemd {
-char Campaign_WorldDominationTour_16::Release(int a2, unsigned int * a3)
+void Campaign_WorldDominationTour_16::Release(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Campaign_WorldDominationTour_16_::_vt02(int a2, _DWORD *a3)
 {
   _DWORD *v6; // esi
   int v7; // ebx
@@ -101,10 +100,9 @@ LABEL_14:
 
 // 0x765700
 namespace gamemd {
-BOOL Campaign_WorldDominationTour_24::AddRef()
+void Campaign_WorldDominationTour_24::AddRef()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Campaign_WorldDominationTour_24_::_vt01()
 {
   return *(this + 2) < *(_DWORD *)(*(this + 1) + 16); /*0x76570d*/
 }
@@ -116,7 +114,6 @@ namespace gamemd {
 unsigned int * Campaign_WorldDominationTour_24::Release()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall Campaign_WorldDominationTour_24_::_vt02(_DWORD *this)
 {
   ++*(this + 2); /*0x765b42*/
   return this; /*0x765b45*/
@@ -129,7 +126,6 @@ namespace gamemd {
 unsigned int * Campaign_WorldDominationTour_24::ddtor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall Campaign_WorldDominationTour_24_::_vt03(_DWORD *this)
 {
   --*(this + 2); /*0x765b52*/
   return this; /*0x765b55*/

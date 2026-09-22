@@ -10,7 +10,6 @@ namespace gamemd {
 void TagClass::Destructor(void ** a1, AbstractClass * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall TagClass::Destructor(void **a1, AbstractClass *a2)
 {
   TagTypeClass *v2; // ecx
   int eax5; // eax
@@ -217,10 +216,9 @@ LABEL_45:
 
 // 0x6E6220
 namespace gamemd {
-char TagClass::HasValidHouse()
+void TagClass::HasValidHouse()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TagClass::HasValidHouse()
 {
 
   _DWORD * v1 = (_DWORD *)this->q0A0; /*0x6e6221*/
@@ -239,10 +237,9 @@ void TagClass::HasValidHouse()
 
 // 0x71ADE0
 namespace gamemd {
-int TagClass::Unlink()
+void TagClass::Unlink()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TagClass_Unlink(int *this)
 {
   int result; // eax
 

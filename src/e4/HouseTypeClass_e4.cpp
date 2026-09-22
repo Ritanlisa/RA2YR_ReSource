@@ -12,7 +12,6 @@ namespace gamemd {
 unsigned int * HouseTypeClass::loadVeteranWeapons(HouseTypeClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall HouseTypeClass::loadVeteranWeapons(_DWORD *this, HouseTypeClass *aP1)
 {
   AbstractTypeClass::Init((int)this, (AbstractTypeClass *)aP1); /*0x511658*/
   this->q14C = &vt_TypeList_InfantryTypeClass_const; /*0x51165d*/
@@ -29,10 +28,9 @@ _DWORD *__thiscall HouseTypeClass::loadVeteranWeapons(_DWORD *this, HouseTypeCla
 
 // 0x5116A0
 namespace gamemd {
-int HouseTypeClass::Dtor()
+void HouseTypeClass::Dtor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_5116A0(int this)
 {
   HouseTypeClass *v7; // [esp+8h] [ebp-4h] BYREF
   *(_DWORD *)this = &HouseTypeClass::`vftable'; /*0x5116a7*/
@@ -85,10 +83,9 @@ void sub_5116A0(int this)
 
 // 0x511850
 namespace gamemd {
-char HouseTypeClass::LoadFromINI(unsigned char *** aP1)
+void HouseTypeClass::LoadFromINI(unsigned char *** aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HouseTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
 {
   CCINIClass *v3; // esi
   double Double_Overwrite; // st7
@@ -513,10 +510,9 @@ void HouseTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
 
 // 0x512170
 namespace gamemd {
-int HouseTypeClass::ProcessPower(int * a2)
+void HouseTypeClass::ProcessPower(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HouseTypeClass::ProcessPower(int this, int *a2)
 {
 
   AbstractTypeClass::ProcessPower((char *)this, a2); /*0x51217a*/
@@ -542,10 +538,9 @@ void HouseTypeClass::ProcessPower(int this, int *a2)
 
 // 0x512290
 namespace gamemd {
-int HouseTypeClass::SaveLoad_Prefix(unsigned int * i, int a2)
+void HouseTypeClass::SaveLoad_Prefix(unsigned int * i, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HouseTypeClass::SaveLoad_Prefix(_DWORD *i, int a2)
 {
   int result; // eax
   int j; // ebx
@@ -611,10 +606,9 @@ void HouseTypeClass::SaveLoad_Prefix(_DWORD *i, int a2)
 
 // 0x512480
 namespace gamemd {
-int HouseTypeClass_SaveLoad_Prefix_0()
+void HouseTypeClass_SaveLoad_Prefix_0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __userpurge HouseTypeClass::SaveLoad_Prefix_0@<eax>(int a1@<ebx>, int *a2, int *a3, int a4, int a5)
 {
   int result; // eax
   int i; // ebx
@@ -651,7 +645,6 @@ namespace gamemd {
 unsigned int * HouseTypeClass::readBaseDefense(VectorClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall HouseTypeClass::readBaseDefense(_DWORD *this, VectorClass *aP1)
 {
 
   if ( this == (_DWORD *)aP1 ) /*0x51337a*/
@@ -687,15 +680,9 @@ _DWORD *__thiscall HouseTypeClass::readBaseDefense(_DWORD *this, VectorClass *aP
 
 // 0x67B8F0
 namespace gamemd {
-VectorClass * HouseTypeClass::ReadCountryName(int a1, unsigned char *** edx0, INIClass * aP1, unsigned char * a2, unsigned int * a5)
+void * HouseTypeClass::ReadCountryName(int a1, unsigned char *** edx0, INIClass * aP1, unsigned char * a2, unsigned int * a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__fastcall HouseTypeClass::ReadCountryName(
-        int a1,
-        unsigned __int8 ***edx0,
-        INIClass *aP1,
-        unsigned __int8 *a2,
-        _DWORD *a5)
 {
   ObjectClass *i; // eax
   INIClass *v7; // edi
@@ -1694,10 +1681,9 @@ int HouseTypeClass::readLoadoutData(int a1)
 
 // 0x6A46D0
 namespace gamemd {
-int HouseTypeClass::Find()
+void HouseTypeClass::Find()
  {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HouseTypeClass_Find(void *this)
 {
 
   int v1 = 0; /*0x6a46d6*/

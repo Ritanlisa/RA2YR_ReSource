@@ -3,10 +3,9 @@
 #include "e4/e4_globals.hpp"
 
 // 0x4A5110
-bool Window::IsVisible()
+void Window::IsVisible()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Window_IsVisible(_BYTE *this)
 {
   return this->q018 && *(this + 25); /*0x4a5120*/
 }

@@ -7,16 +7,6 @@
 unsigned int * LightSourceClass::Construct(int a2, int a3, LightSourceClass * aP3, int a5, int a6, int a7, TintStruct * aP7, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall LightSourceClass::Construct(
-        _DWORD *this,
-        int a2,
-        int a3,
-        LightSourceClass *aP3,
-        int a5,
-        int a6,
-        int a7,
-        TintStruct *aP7,
-        int a9)
 {
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x554763*/
@@ -50,10 +40,9 @@ _DWORD *__thiscall LightSourceClass::Construct(
 }
 
 // 0x554830
-int LightSourceClass::Constructor()
+void LightSourceClass::Constructor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_554830(int this)
 {
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x554833*/

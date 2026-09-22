@@ -3,10 +3,9 @@
 #include "e4/e4_globals.hpp"
 
 // 0x512F20
-char InfantryTypeVector::Add(InfantryTypeClass * aP1)
+void InfantryTypeVector::Add(InfantryTypeClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void InfantryTypeVector::Add(InfantryTypeClass *aP1)
 {
 
   int v3 = this->q008; /*0x512f23*/
@@ -30,7 +29,6 @@ void InfantryTypeVector::Add(InfantryTypeClass *aP1)
 unsigned int * InfantryTypeVector::Construct2(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall InfantryTypeVector_Constructor2(_DWORD *this, int a2, int a3)
 {
   this->q004 = 0; /*0x5138fb*/
   this->q008 = a2; /*0x5138fe*/
@@ -55,7 +53,6 @@ _DWORD *__thiscall InfantryTypeVector_Constructor2(_DWORD *this, int a2, int a3)
 unsigned int * InfantryTypeVector::ConstructFromData(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_5D89A0(_DWORD *this, int a2, int a3)
 {
   this->q004 = 0; /*0x5d89ab*/
   this->q008 = a2; /*0x5d89ae*/

@@ -10,7 +10,6 @@
 void AudioSettings::SetFlag70(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_5FA440(_BYTE *this, char a2)
 {
   *(this + 70) = a2; /*0x5fa444*/
   byte_A83D22 = a2; /*0x5fa447*/
@@ -22,7 +21,6 @@ void sub_5FA440(_BYTE *this, char a2)
 void AudioSettings::SetFlag68(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_5FA470(_BYTE *this, char a2)
 {
   this->q044 = a2; /*0x5fa474*/
   byte_A83D20 = a2; /*0x5fa477*/
@@ -31,10 +29,9 @@ void sub_5FA470(_BYTE *this, char a2)
 }
 
 // 0x6B6300
-int AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
+void AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_6B6300(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
 {
   int result; // eax
   BOOL IsSoundEnabled; // ebx

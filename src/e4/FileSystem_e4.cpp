@@ -4,10 +4,9 @@
 #include "e4/classes/String_e4.hpp"
 
 // 0x626DA0
-int FileSystem::ProcessNextFileExtension()
+void FileSystem::ProcessNextFileExtension()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void FileSystem::ProcessNextFileExtension()
 {
   int k; // ebp
   int i; // [esp+10h] [ebp-18h]

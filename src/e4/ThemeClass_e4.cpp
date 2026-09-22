@@ -6,10 +6,9 @@
 #include "e4/classes/AudioStream_e4.hpp"
 
 // 0x4080C0
-int ThemeClass::RequestBuffer()
+void ThemeClass::RequestBuffer()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ThemeClass_RequestBuffer(_DWORD *this)
 {
   return RequestBufferMixer((unsigned int *)(this->q014 + 16), 0);
 }
@@ -19,17 +18,15 @@ void ThemeClass_RequestBuffer(_DWORD *this)
 long long ThemeClass::GetValue()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-__int64 __thiscall sub_408140(_QWORD *this)
 {
   return this->ThemeClass_field_04; /*0x408146*/
 }
 }
 
 // 0x720480
-char ThemeClass::ReadThemeEntry(unsigned char *** a2)
+void ThemeClass::ReadThemeEntry(unsigned char *** a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ThemeClass::ReadThemeEntry(int this, unsigned __int8 ***a2)
 {
   CCINIClass *v3; // edi
   int Int_Overwrite; // eax
@@ -88,7 +85,6 @@ void ThemeClass::ReadThemeEntry(int this, unsigned __int8 ***a2)
 void * ThemeClass::InitializeThemes(char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void *__thiscall sub_720590(int this, char *a2)
 {
   int KeyCount; // ebp
   unsigned __int8 *StringByIndex; // eax
@@ -190,7 +186,6 @@ LABEL_10:
 int ThemeClass::ClearQueues()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int ThemeClass_ClearQueues()
 {
   int result; // eax
   int i; // esi

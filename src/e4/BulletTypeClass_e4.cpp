@@ -10,10 +10,9 @@
 #include "e4/classes/WalkLocomotion_e4.hpp"
 
 // 0x465450
-int BulletTypeClass::ReadArmor()
+void BulletTypeClass::ReadArmor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_465450()
 {
   int result; // eax
   int i; // edi
@@ -76,10 +75,9 @@ void sub_465450()
 }
 
 // 0x465CC0
-int BulletTypeClass::ReadTrailerAnim()
+void BulletTypeClass::ReadTrailerAnim()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_465CC0()
 {
   int result; // eax
   int i; // edi
@@ -110,7 +108,6 @@ void sub_465CC0()
 unsigned char * BulletTypeClass::Construct(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_BYTE *__thiscall BulletTypeClass::Construct(_BYTE *this, ObjectClass *aP1)
 {
   BulletTypeClass *v3; // eax
   ObjectTypeClass::ConstructFull((int)this, (AbstractClass *)aP1); /*0x46bbc9*/
@@ -197,10 +194,9 @@ _BYTE *__thiscall BulletTypeClass::Construct(_BYTE *this, ObjectClass *aP1)
 }
 
 // 0x46BEE0
-char BulletTypeClass::LoadFromINI(unsigned char *** a2)
+void BulletTypeClass::LoadFromINI(unsigned char *** a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void BulletTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
 {
   char Bool_Overwrite; // al
   WeaponTypeClass *v22; // eax
@@ -277,35 +273,35 @@ void BulletTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
                      (unsigned __int8 *)(this + 36),
                      &unk_81B0E8,
                      this->veryHigh);
-  char v5 = this->shadow; /*0x46c046*/
+  bool v5 = this->shadow; /*0x46c046*/
   this->veryHigh = Bool_Overwrite; /*0x46c04c*/
   char v6 = INIClass::ReadBool_Overwrite((int)a2, (unsigned __int8 *)(this + 36), &unk_818660, v5); /*0x46c05b*/
-  char v30 = this->dropping; /*0x46c068*/
+  bool v30 = this->dropping; /*0x46c068*/
   this->shadow = v6; /*0x46c06f*/
   this->dropping = INIClass::ReadBool_Overwrite((int)a2, (unsigned __int8 *)(this + 36), &unk_81B0DC, v30); /*0x46c07a*/
   char v7 = INIClass::ReadBool_Overwrite((int)a2, (unsigned __int8 *)(this + 36), &aLevel, this->level); /*0x46c08f*/
-  char v8 = this->inviso; /*0x46c094*/
+  bool v8 = this->inviso; /*0x46c094*/
   this->level = v7; /*0x46c09a*/
   char v9 = INIClass::ReadBool_Overwrite((int)a2, (unsigned __int8 *)(this + 36), &unk_81B0CC, v8); /*0x46c0a9*/
-  char v31 = this->proximity; /*0x46c0b6*/
+  bool v31 = this->proximity; /*0x46c0b6*/
   this->inviso = v9; /*0x46c0bd*/
   this->proximity = INIClass::ReadBool_Overwrite((int)a2, (unsigned __int8 *)(this + 36), &unk_81B0C0, v31); /*0x46c0c8*/
   char v10 = INIClass::ReadBool_Overwrite((int)a2, (unsigned __int8 *)(this + 36), &unk_81B0B8, this->ranged); /*0x46c0dd*/
-  char v11 = this->inaccurate; /*0x46c0e2*/
+  bool v11 = this->inaccurate; /*0x46c0e2*/
   this->ranged = v10; /*0x46c0e8*/
   char v12 = INIClass::ReadBool_Overwrite((int)a2, (unsigned __int8 *)(this + 36), &unk_81B0AC, v11); /*0x46c0f7*/
-  char v32 = this->flakScatter; /*0x46c104*/
+  bool v32 = this->flakScatter; /*0x46c104*/
   this->inaccurate = v12; /*0x46c10b*/
   this->flakScatter = INIClass::ReadBool_Overwrite((int)a2, (unsigned __int8 *)(this + 36), &unk_81B0A0, v32); /*0x46c116*/
   char v13 = INIClass::ReadBool_Overwrite((int)a2, (unsigned __int8 *)(this + 36), &unk_81B09C, this->AA); /*0x46c12b*/
   char v14 = this->AG; /*0x46c130*/
   this->AA = v13; /*0x46c136*/
   char v15 = INIClass::ReadBool_Overwrite((int)a2, (unsigned __int8 *)(this + 36), &unk_81B098, v14); /*0x46c145*/
-  char v16 = this->degenerates; /*0x46c14a*/
+  bool v16 = this->degenerates; /*0x46c14a*/
   this->AG = v15; /*0x46c150*/
   this->degenerates = INIClass::ReadBool_Overwrite((int)a2, (unsigned __int8 *)(this + 36), &unk_81B08C, v16); /*0x46c164*/
   char v17 = INIClass::ReadBool_Overwrite((int)a2, (unsigned __int8 *)(this + 36), &unk_81B084, this->bouncy); /*0x46c179*/
-  char v18 = this->airburst; /*0x46c17e*/
+  bool v18 = this->airburst; /*0x46c17e*/
   this->bouncy = v17; /*0x46c184*/
   char v19 = INIClass::ReadBool_Overwrite((int)a2, (unsigned __int8 *)(this + 36), &unk_81B078, v18); /*0x46c193*/
   v33 = this->cluster; /*0x46c1a0*/
@@ -356,7 +352,7 @@ void BulletTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
             (unsigned __int8 *)(this + 504),
             &unk_81B05C,
             this->noRotate == 0);
-    char v34 = this->flat; /*0x46c27d*/
+    bool v34 = this->flat; /*0x46c27d*/
     this->noRotate = v21 == 0; /*0x46c287*/
     this->flat = INIClass::ReadBool_Overwrite( /*0x46c292*/
                                (int)&DataGlobal_87F8E4[30876],
@@ -407,7 +403,7 @@ void BulletTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
                     (unsigned __int8 *)(this + 36),
                     (CCINIClass *)stru_81AFD0[72],
                     this->detonationAltitude);
-  char v25 = this->vertical; /*0x46c344*/
+  bool v25 = this->vertical; /*0x46c344*/
   this->detonationAltitude = Int_Overwrite; /*0x46c34a*/
   char v26; // al
   v26 = INIClass::ReadBool_Overwrite( /*0x46c359*/
@@ -415,7 +411,7 @@ void BulletTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
           (unsigned __int8 *)(this + 36),
           (CCINIClass *)&stru_81AFD0.INIClass_field_3C,
           v25);
-  char v36 = this->firersPalette; /*0x46c366*/
+  bool v36 = this->firersPalette; /*0x46c366*/
   this->vertical = v26; /*0x46c36d*/
   this->firersPalette = INIClass::ReadBool_Overwrite( /*0x46c378*/
                              (int)a2,
@@ -454,10 +450,9 @@ void BulletTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
 }
 
 // 0x46C560
-int BulletTypeClass::ProcessPower(int * a2)
+void BulletTypeClass::ProcessPower(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void BulletTypeClass::ProcessPower(int this, int *a2)
 {
 
   int v3 = AbstractTypeClass::ProcessPower((char *)this, a2); /*0x46c569*/
@@ -546,10 +541,9 @@ BulletTypeClass * BulletTypeClass::ddtor(char a2)
 }
 
 // 0x69FC10
-char BulletTypeClass::ProcessImpact(int a1)
+void BulletTypeClass::ProcessImpact(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void WalkLocomotionClass_Process(int a1)
 {
   void **v13; // eax
   char v22; // [esp-4h] [ebp-24h]

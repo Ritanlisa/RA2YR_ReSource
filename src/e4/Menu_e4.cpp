@@ -3,10 +3,9 @@
 #include "e4/e4_globals.hpp"
 
 // 0x4C6140
-int Menu::Reset()
+void Menu::Reset()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_4C6140(int this)
 {
   *(_DWORD *)(this + 52) = 0; /*0x4c614c*/
   *(_DWORD *)(this + 56) = 0; /*0x4c614f*/

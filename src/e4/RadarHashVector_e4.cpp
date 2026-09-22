@@ -3,10 +3,9 @@
 #include "e4/e4_globals.hpp"
 
 // 0x658B10
-char RadarHashVector::ComputeHashIndex(int a2, char * a3)
+void RadarHashVector::ComputeHashIndex(int a2, char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void RadarHashVector::sub_658B10(int a2, char *a3)
 {
 
   int v3 = a2; /*0x658b12*/
@@ -107,7 +106,6 @@ void RadarHashVector::sub_658B10(int a2, char *a3)
 unsigned int * RadarHashVector::Construct(MapClass * aP1, MapClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall RadarHashVector::Construct(_DWORD *this, MapClass *aP1, MapClass *aP2)
 {
   void **v4; // eax
   MapClass *v5; // ecx

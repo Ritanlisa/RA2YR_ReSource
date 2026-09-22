@@ -24,7 +24,6 @@
 // 0x40D280
 namespace gamemd {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MouseClass::_vt40()
 {
   return this->q5564; /*0x40d286*/
 }
@@ -623,7 +622,6 @@ namespace gamemd { void* DropListClass::GetItemText(void* a1) {
 // 0x4C3420
 namespace gamemd { int DropListClass::SetItemText(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void DropListClass::_vt38(int C)
 {
   _DWORD *Instance; // ebx
 
@@ -735,7 +733,6 @@ namespace gamemd { void* GadgetClass::QueryInterface(int a2) {
 // 0x5005B0
 namespace gamemd { int SidebarClass::MarkTabForRebuild(int a1, int a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void SidebarClass::MarkTabForRebuild(int a2, IUnknown *aP2, ControlClass *aP3)
 {
   char result; // al
 
@@ -1583,7 +1580,6 @@ namespace gamemd { int MouseClass::HandleClick() {
 // 0x5BDF70
 namespace gamemd { int MouseClass::LoadGameAssets() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MouseClass::LoadGameAssets(LPSTREAM pStm)
 {
   LPSTREAM v3; // esi
   int result; // eax
@@ -1962,7 +1958,7 @@ LABEL_99:
                                          0);
                               if ( result < 0 ) /*0x5be5bf*/
                                 break; /*0x5be5bf*/
-                              int v66 = this->q037; /*0x5be5c5*/
+                              bool v66 = this->q037; /*0x5be5c5*/
                               if ( this->q0E4 < v66 /*0x5be5f5*/
                                 || (this->q0E1 || !v66)
   int v67; // eax
@@ -2069,7 +2065,6 @@ LABEL_99:
 // 0x5BE6D0
 namespace gamemd { int MouseClass::DrawCursor() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-HRESULT __thiscall MouseClass::DrawCursor(int *this, LPSTREAM pStm)
 {
   IStream *v2; // esi
   HRESULT result; // eax
@@ -2374,7 +2369,6 @@ namespace gamemd { void MessageListClass::Init(int a1, int a2, int a3, int a4, i
 // 0x5D3BA0
 namespace gamemd { int MessageListClass::AddMessage(void* a1, int a2, void* a3, int a4, int a5, int a6, int a7) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MessageListClass::AddMessage(IUnknown *aP1, IUnknown *aP2, CellStruct *aP3, int a5, IUnknown *aP5, int a7, char a8)
 {
   AbstractClass *Instance; // edi
   ObjectClass *v11; // ebx
@@ -2713,7 +2707,6 @@ namespace gamemd { void TabClass::processTabInput() {
 // 0x637AB0
 namespace gamemd { int SidebarClass::ResetProductionState() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void SidebarClass::ResetProductionState()
 {
   int result; // eax
   int Type; // eax
@@ -2904,7 +2897,6 @@ namespace gamemd { void PowerClass::checkBlackout() {
 // 0x63FEA0
 namespace gamemd { void PowerClass::updatePowerBarAnimation() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void PowerClass::updatePowerBarAnimation(int this, SidebarClass *aP1, _DWORD *a2)
 {
   ObjectClass *v7; // edi
   ObjectClass *v14; // eax
@@ -3227,7 +3219,6 @@ namespace gamemd { void* PowerClass::Initialize(int a2) {
 // 0x6568A0
 namespace gamemd { int SidebarClass::Load(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void SidebarClass_Load(int this, int a2)
 {
   int result; // eax
   SidebarClass *v20; // [esp+8Ch] [ebp-10h]
@@ -3365,7 +3356,6 @@ LABEL_26:
 // 0x656AC0
 namespace gamemd { int SidebarClass::Save(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void SidebarClass_Save(int *this, int a2)
 {
   int result; // eax
 
@@ -3715,7 +3705,6 @@ namespace gamemd { void* TabClass::initTabData() {
 // 0x6A5310
 namespace gamemd { int SidebarClass::Init() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void SidebarClass::Init()
 {
   HouseClass *v14; // edx
   int i; // ebx
@@ -4031,7 +4020,6 @@ namespace gamemd { int SidebarClass::UpdateCameoProductionState(void* a1) {
 // 0x6A7780
 namespace gamemd { void SidebarClass::UpdateStrips(void* a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void SidebarClass::UpdateStrips(TabClass *aP1, _DWORD *a2)
 {
   SidebarClass *v22; // edi
   int playerSideIndex; // [esp+18h] [ebp-Ch]
@@ -4405,7 +4393,6 @@ namespace gamemd { int SidebarClass::sortCameoList() {
 // 0x6A8B30
 namespace gamemd { int SidebarClass::UpdateCameos(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void SidebarClass::UpdateCameos(int a2, int a3)
 {
   int Type; // eax
   wchar_t *v31; // ecx
@@ -4816,7 +4803,6 @@ LABEL_97:
 // 0x6AA600
 namespace gamemd { int SidebarClass::UpdateProduction() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_6AA600(int this)
 {
   unsigned __int8 *v10; // ebx
   char *v43; // [esp+1Ch] [ebp-138h]
@@ -5113,7 +5099,6 @@ LABEL_79:
 namespace gamemd { int SidebarClass::ProcessInput(int a1, void* a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x6aad00
-void SidebarClass::ProcessInput(int a2, _DWORD *a3, char a4)
 {
   #72 *v10; // edx
   char *v15; // eax
@@ -6622,7 +6607,6 @@ namespace gamemd { int SidebarClass::saveLoadPrefix(int a1) {
 // 0x6AC5E0
 namespace gamemd {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void SidebarClass_SaveLoad_Prefix_0(int *this, int a2)
 {
   return SidebarClass::Save(this, a2); /*0x6ac5ea*/
 }
@@ -6884,7 +6868,6 @@ namespace gamemd { int SliderClass::SetRange(int a1, int a2, int a3) {
 // 0x6CBEE0
 namespace gamemd { int SidebarClass::GetProductionState() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void SidebarClass_GetProductionState(int this)
 {
   double v5; // st7
   int v6; // edi
@@ -7001,7 +6984,6 @@ namespace gamemd { int SidebarClass::findEntryIndexByName() {
 // 0x6CFE20
 namespace gamemd { void* TabClass::Constructor() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall TabClass::Constructor(_DWORD *this)
 {
   wchar_t *v2; // ecx
   const char **v4; // edi
@@ -7305,7 +7287,6 @@ namespace gamemd { int SidebarClass::InitButtons() {
 // 0x6D0A20
 namespace gamemd { int SidebarClass::DrawTabs(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void SidebarClass_DrawTabs(_BYTE *this, char a2)
 {
   char v3; // bl
   int *v4; // ecx
@@ -7661,7 +7642,6 @@ namespace gamemd { int ToolTipManager::release(int a1) {
 // 0x724C80
 namespace gamemd {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ToolTipManager_7_::_vt06(int a2)
 {
   return *(_DWORD *)(this->Items + 4 * a2); /*0x724c8a*/
 }
@@ -7863,7 +7843,6 @@ namespace gamemd { void* ToolTipClass::compareString(int a2) {
 // 0x724FA0
 namespace gamemd {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CommandClass::executeAction(ObjectClass *aP1)
 {
 
   _DWORD * v2 = (_DWORD *)this->uniqueId; /*0x724fa0*/
@@ -8055,7 +8034,6 @@ namespace gamemd { int SidebarClass::registerBuildingType() {
 // 0x77DA50
 namespace gamemd { void* SidebarClass::FindProductionData() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void *__thiscall sub_77DA50(void *this)
 {
   const void *v5; // esi
   int v6; // esi

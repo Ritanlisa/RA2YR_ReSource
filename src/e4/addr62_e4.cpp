@@ -41,10 +41,9 @@
 
 // 0x620050
 namespace gamemd {
-char Surface_DrawLineAlpha(int a1, int * a2, int * a3, short a4, unsigned char a5)
+void Surface_DrawLineAlpha(int a1, int * a2, int * a3, short a4, unsigned char a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall Surface_DrawLineAlpha(int a1, int *a2, int *a3, __int16 a4, unsigned __int8 a5)
 {
   __int16 *v9; // edi
   __int16 v16; // bp
@@ -296,10 +295,9 @@ char __fastcall Surface_DrawLineAlpha(int a1, int *a2, int *a3, __int16 a4, unsi
 
 // 0x6208F0
 namespace gamemd {
-int Dialog_DrawGradient(int * a1, int * a2, int a3, int a4)
+void Dialog_DrawGradient(int * a1, int * a2, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall Dialog_DrawGradient(int *a1, int *a2, int a3, int a4)
 {
   int result; // eax
   int v33; // [esp+58h] [ebp-74h] BYREF
@@ -447,7 +445,6 @@ namespace gamemd {
 int ComputeHashModPrime(int * a1, int * a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall ComputeHashModPrime(int *a1, int *a2, int a3)
 {
   int result; // eax
   int i; // [esp+3Ch] [ebp-5Ch]
@@ -537,10 +534,9 @@ int __fastcall ComputeHashModPrime(int *a1, int *a2, int a3)
 
 // 0x621040
 namespace gamemd {
-int PrintFontLayout(AbstractClass * aP0, AbstractClass * aP1, AbstractClass aP3)
+void PrintFontLayout(AbstractClass * aP0, AbstractClass * aP1, AbstractClass aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void PrintFontLayout(AbstractClass *aP0, AbstractClass *aP1, AbstractClass aP3)
 {
   unsigned __int16 *v3; // edx
   AbstractClass *v4; // ecx
@@ -595,7 +591,6 @@ namespace gamemd {
 double sub_621150(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-double __fastcall sub_621150(int a1)
 {
   double result; // st7
 
@@ -637,19 +632,9 @@ LABEL_9:
 
 // 0x6211D0
 namespace gamemd {
-int DrawTextRendererTextAligned(int ecx0, unsigned int * a1, ObjectClass * aP2, unsigned short * a3, int a5, int a6, int arg10, int * a7, int a9)
+void DrawTextRendererTextAligned(int ecx0, unsigned int * a1, ObjectClass * aP2, unsigned short * a3, int a5, int a6, int arg10, int * a7, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall DrawTextRendererTextAligned(
-        int ecx0,
-        _DWORD *a1,
-        ObjectClass *aP2,
-        unsigned __int16 *a3,
-        int a5,
-        int a6,
-        int arg10,
-        int *a7,
-        int a9)
 {
   AbstractClass *v9; // edi
   AbstractClass *v13; // esi
@@ -718,10 +703,9 @@ LABEL_21:
 
 // 0x6214B0
 namespace gamemd {
-int SetupDialogRenderBuffer(int * a1, HWND a2, unsigned char a3)
+void SetupDialogRenderBuffer(int * a1, HWND a2, unsigned char a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall SetupDialogRenderBuffer(int *a1, HWND a2, unsigned __int8 a3)
 {
   HWND Parent; // eax
   __int16 *v13; // edi
@@ -884,7 +868,6 @@ namespace gamemd {
 unsigned int * E4Recv_6223C0::DestroyDialog()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall DestroyDialog(void *this)
 {
   _DWORD *result; // eax
   void (__thiscall ***v3)(_DWORD, int); // ecx
@@ -922,10 +905,9 @@ _DWORD *__thiscall DestroyDialog(void *this)
 
 // 0x622470
 namespace gamemd {
-BOOL AddDynamicVector(HWND a1, int * a2)
+void AddDynamicVector(HWND a1, int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void AddDynamicVector(HWND a1, int *a2)
 {
   LPARAM v16; // [esp+14h] [ebp+8h]
   LPARAM v17; // [esp+14h] [ebp+8h]
@@ -986,10 +968,9 @@ void AddDynamicVector(HWND a1, int *a2)
 
 // 0x622650
 namespace gamemd {
-int sub_622650(unsigned short a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, LPARAM) a2, LPARAM a3)
+void sub_622650(unsigned short a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, LPARAM) a2, LPARAM a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_622650(unsigned __int16 a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, LPARAM), LPARAM a3)
 {
   int result; // eax
   HWND *v6; // edi
@@ -1038,10 +1019,9 @@ int __fastcall sub_622650(unsigned __int16 a1, INT_PTR (__stdcall *a2)(HWND, UIN
 
 // 0x622820
 namespace gamemd {
-HWND SetupDialog(CoordStruct * hWnd, int a2)
+void SetupDialog(CoordStruct * hWnd, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-HWND __fastcall SetupDialog(CoordStruct *hWnd, int a2)
 {
   LPARAM lParam[2]; // [esp+14h] [ebp-8h] BYREF
 
@@ -1157,10 +1137,9 @@ HWND __fastcall SetupDialog(CoordStruct *hWnd, int a2)
 
 // 0x622B50
 namespace gamemd {
-int BaseDialogProc(SkirmishDialog * aP0, unsigned int a2, int a3, unsigned int aP2)
+void BaseDialogProc(SkirmishDialog * aP0, unsigned int a2, int a3, unsigned int aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall BaseDialogProc(SkirmishDialog *aP0, unsigned int a2, int a3, unsigned int aP2)
 {
   int result; // eax
   HWND DlgItem; // eax
@@ -1393,10 +1372,9 @@ LABEL_49:
 
 // 0x623230
 namespace gamemd {
-HWND CreateMessageBox(LPARAM lParam, LPARAM a2, LONG dwNewLong)
+void* CreateMessageBox(LPARAM lParam, LPARAM a2, LONG dwNewLong)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-HWND __fastcall CreateMessageBox(LPARAM lParam, LPARAM a2, LONG dwNewLong)
 {
   HWND Dialog; // esi
   HWND DlgItem; // eax
@@ -1426,7 +1404,6 @@ namespace gamemd {
 unsigned int * E4Recv_623730::sub_623730(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_623730(_DWORD *this, _DWORD *a2)
 {
   const wchar_t *v6; // esi
   size_t v7; // eax
@@ -1495,21 +1472,9 @@ LABEL_15:
 
 // 0x623880
 namespace gamemd {
-char DrawTextRendererMultiline(IUnknown * aP0, int * a1, wchar_t * String, ObjectClass * aP3, unsigned int * a4, int ecx0, signed int * a6, int a8, int a9, int a10, int a11)
+void DrawTextRendererMultiline(IUnknown * aP0, int * a1, wchar_t * String, ObjectClass * aP3, unsigned int * a4, int ecx0, signed int * a6, int a8, int a9, int a10, int a11)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall DrawTextRendererMultiline(
-        IUnknown *aP0,
-        int *a1,
-        wchar_t *String,
-        ObjectClass *aP3,
-        _DWORD *a4,
-        int ecx0,
-        signed int *a6,
-        int a8,
-        int a9,
-        int a10,
-        int a11)
 {
   wchar_t *v11; // edi
   wchar_t *v17; // edi
@@ -1770,10 +1735,9 @@ char __fastcall DrawTextRendererMultiline(
 
 // 0x623E40
 namespace gamemd {
-AbstractClass * GetDialogText(HWND hWnd, void ** a2)
+void * GetDialogText(HWND hWnd, void ** a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-AbstractClass *__fastcall GetDialogText(HWND hWnd, void **a2)
 {
   LRESULT v4; // edi
   CCINIClass *v6; // esi
@@ -1798,10 +1762,9 @@ AbstractClass *__fastcall GetDialogText(HWND hWnd, void **a2)
 
 // 0x6241F0
 namespace gamemd {
-int Dialog_Run(unsigned short a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, LPARAM) a2, LPARAM a3)
+void Dialog_Run(unsigned short a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, LPARAM) a2, LPARAM a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall Dialog_Run(unsigned __int16 a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, LPARAM), LPARAM a3)
 {
   HWND v3; // eax
   HWND v4; // edi
@@ -1847,10 +1810,9 @@ int __fastcall Dialog_Run(unsigned __int16 a1, INT_PTR (__stdcall *a2)(HWND, UIN
 
 // 0x6242B0
 namespace gamemd {
-bool E4Recv_6242B0::sub_6242B0()
+void E4Recv_6242B0::sub_6242B0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_6242B0(HWND this)
 {
   E4Recv_6242B0 *v3; // edi
   HWND hWnda; // [esp+Ch] [ebp-84h] BYREF
@@ -1890,7 +1852,6 @@ namespace gamemd {
 unsigned int * sub_627020()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *sub_627020()
 {
   _DWORD *result; // eax
 
@@ -1999,10 +1960,9 @@ _DWORD *sub_627020()
 
 // 0x6278C0
 namespace gamemd {
-char E4Recv_6278C0::sub_6278C0(const char * a2)
+void E4Recv_6278C0::sub_6278C0(const char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_6278C0(_DWORD *this, const char *a2)
 {
   int v11; // eax
   int v12; // ecx
@@ -2076,7 +2036,6 @@ namespace gamemd {
 unsigned int * E4Recv_627A10::sub_627A10(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_627A10(_DWORD *this, ObjectClass *aP1)
 {
   int *v8; // edi
   int v9; // esi
@@ -2153,7 +2112,6 @@ namespace gamemd {
 void E4Recv_629530::sub_629530()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_629530(int this)
 {
   E4Recv_629530 *v4; // [esp+8h] [ebp-4h] BYREF
   int v2 = this->M68; /*0x629537*/
@@ -2186,10 +2144,9 @@ void sub_629530(int this)
 
 // 0x62E070
 namespace gamemd {
-int DestructParticleSystemClass(ParticleSystemClass * aP0, int a2)
+void DestructParticleSystemClass(ParticleSystemClass * aP0, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void DestructParticleSystemClass(ParticleSystemClass *aP0, int a2)
 {
   AbstractClass *v2; // edx
   ParticleSystemClass *v4; // esi

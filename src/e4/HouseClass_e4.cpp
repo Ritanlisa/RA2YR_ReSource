@@ -14,7 +14,6 @@ namespace gamemd {
 void ** HouseClass::PsiWarn(InfantryClass * aP0, int a2, int arg0, void * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void **__fastcall HouseClass::PsiWarn(InfantryClass *aP0, int a2, int arg0, void *a3)
 {
   CoordStruct *v6; // edi
   void **v7; // eax
@@ -39,10 +38,9 @@ void **__fastcall HouseClass::PsiWarn(InfantryClass *aP0, int a2, int arg0, void
 
 // 0x459840
 namespace gamemd {
-int HouseClass::GetRepairStepAmount()
+void HouseClass::GetRepairStepAmount()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_459840(_DWORD *this)
 {
   int result; // eax
 
@@ -68,7 +66,6 @@ namespace gamemd {
 void HouseClass::ResetObjectOrders(char a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HouseClass_ResetObjectOrders(char a1, int a2)
 {
 
   int v2 = g_SidebarState; /*0x4adee1*/
@@ -116,10 +113,9 @@ LABEL_15:
 
 // 0x4ADFF0
 namespace gamemd {
-int HouseClass::RevealShroudForAllies(char a1, int a2)
+void HouseClass::RevealShroudForAllies(char a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HouseClass_RevealShroudForAllies(char a1, int a2)
 {
   int result; // eax
   int i; // ebp
@@ -154,7 +150,7 @@ void HouseClass_RevealShroudForAllies(char a1, int a2)
 
 // 0x4F54A0
 namespace gamemd {
-int HouseClass::Construct(CCINIClass * aP1)
+void HouseClass::Construct(CCINIClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // (v3 export truncated pseudocode — commented out; live version via get_context)
@@ -215,10 +211,9 @@ int HouseClass::Construct(CCINIClass * aP1)
 
 // 0x4F9A50
 namespace gamemd {
-int HouseClass::IsAlliedWith(IUnknown * aP1)
+void HouseClass::IsAlliedWith(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HouseClass::IsAlliedWith(IUnknown *aP1)
 {
   IUnknown *result; // eax
 
@@ -248,10 +243,9 @@ LABEL_8:
 
 // 0x4FBE40
 namespace gamemd {
-char HouseClass::IsCellOccupied(IUnknown * aP1, char a3)
+void HouseClass::IsCellOccupied(IUnknown * aP1, char a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HouseClass::IsCellOccupied(int this, IUnknown *aP1, char a3)
 {
   IUnknown *v9; // [esp+Ch] [ebp-10h] BYREF
   IUnknown *aP1a; // [esp+20h] [ebp+4h]
@@ -295,10 +289,9 @@ LABEL_10:
 
 // 0x4FC790
 namespace gamemd {
-char HouseClass::DestroyAllBuildings()
+void HouseClass::DestroyAllBuildings()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HouseClass::DestroyAllBuildings()
 {
   int PriorityTarget; // eax
 
@@ -341,10 +334,9 @@ void HouseClass::DestroyAllBuildings()
 
 // 0x4FC820
 namespace gamemd {
-char HouseClass::DestroyAllNonBuildingsNonNaval()
+void HouseClass::DestroyAllNonBuildingsNonNaval()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HouseClass::DestroyAllNonBuildingsNonNaval()
 {
   int PriorityTarget; // eax
 
@@ -388,10 +380,9 @@ void HouseClass::DestroyAllNonBuildingsNonNaval()
 
 // 0x4FC8D0
 namespace gamemd {
-char HouseClass::DestroyAllNonBuildingsNaval()
+void HouseClass::DestroyAllNonBuildingsNaval()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HouseClass::DestroyAllNonBuildingsNaval()
 {
   int PriorityTarget; // eax
 
@@ -435,10 +426,9 @@ void HouseClass::DestroyAllNonBuildingsNaval()
 
 // 0x501540
 namespace gamemd {
-bool HouseClass::CanAlly(HouseClass * aP1)
+void HouseClass::CanAlly(HouseClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HouseClass::CanAlly(int this, HouseClass *aP1)
 {
   int relatedTagsCount; // ecx
   HouseClass *v7; // edx
@@ -498,10 +488,9 @@ void HouseClass::CanAlly(int this, HouseClass *aP1)
 
 // 0x501640
 namespace gamemd {
-char HouseClass::CanDetect()
+void HouseClass::CanDetect()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HouseClass_CanDetect()
 {
   int i; // ebp
   int j; // edi
@@ -560,10 +549,9 @@ void HouseClass_CanDetect()
 
 // 0x503040
 namespace gamemd {
-HRESULT HouseClass::SaveLoad_Prefix(int a1, LPSTREAM pStm)
+void HouseClass::SaveLoad_Prefix(int a1, LPSTREAM pStm)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-HRESULT __stdcall HouseClass::SaveLoad_Prefix(int a1, LPSTREAM pStm)
 {
   int i; // edi
   int j; // edi
@@ -1506,10 +1494,9 @@ LABEL_187:
 
 // 0x505360
 namespace gamemd {
-char HouseClass::PrerequisitesForTechnoTypeAreListed(int a1, VectorClass * aP1, TechnoTypeClass * aP2)
+void HouseClass::PrerequisitesForTechnoTypeAreListed(int a1, VectorClass * aP1, TechnoTypeClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HouseClass::PrerequisitesForTechnoTypeAreListed(int a1, VectorClass *aP1, TechnoTypeClass *aP2)
 {
   _DWORD *j; // eax
   int i; // [esp+10h] [ebp-4h]
@@ -1587,7 +1574,7 @@ LABEL_20:
 
 // 0x506EF0
 namespace gamemd {
-char HouseClass::AutoBuildScanAndSort(int a2, unsigned int * a3)
+void HouseClass::AutoBuildScanAndSort(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // (v3 export truncated pseudocode — commented out; live version via get_context)
@@ -1645,10 +1632,9 @@ char HouseClass::AutoBuildScanAndSort(int a2, unsigned int * a3)
 
 // 0x508C30
 namespace gamemd {
-char HouseClass::UpdatePower()
+void HouseClass::UpdatePower()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HouseClass::UpdatePower(int this)
 {
 
   int v2 = this->powerOutput; /*0x508c39*/
@@ -1726,7 +1712,6 @@ namespace gamemd {
 void * HouseClass::CanTogglePower()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-#375 *__thiscall sub_508DF0(int this)
 {
   #375 *result; // eax
 
@@ -1800,10 +1785,9 @@ LABEL_29:
 
 // 0x5098F0
 namespace gamemd {
-char HouseClass::UpdateAITryFireSW()
+void HouseClass::UpdateAITryFireSW()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HouseClass::UpdateAITryFireSW(int this)
 {
   int i; // edi
   CellStruct *v6; // eax
@@ -1909,10 +1893,9 @@ LABEL_33:
 
 // 0x50BC90
 namespace gamemd {
-int HouseClass::CreatePowerOutage(int a2)
+void HouseClass::CreatePowerOutage(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HouseClass::CreatePowerOutage(int this, int a2)
 {
   wchar_t *v2; // eax
   v2 = g_CurrentFrame; /*0x50bc90*/
@@ -1928,10 +1911,9 @@ void HouseClass::CreatePowerOutage(int this, int a2)
 
 // 0x50BCD0
 namespace gamemd {
-int HouseClass::CreateRadarOutage(int a2)
+void HouseClass::CreateRadarOutage(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HouseClass::CreateRadarOutage(int this, int a2)
 {
   wchar_t *v2; // eax
   v2 = g_CurrentFrame; /*0x50bcd0*/
@@ -1947,14 +1929,9 @@ void HouseClass::CreateRadarOutage(int this, int a2)
 
 // 0x50D320
 namespace gamemd {
-int HouseClass_RespawnStartingBuildings()
+void HouseClass_RespawnStartingBuildings()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __usercall HouseClass::RespawnStartingBuildings@<eax>(
-        int a1@<ecx>,
-        _UNKNOWN **a2@<ebx>,
-        _DWORD *a3@<edi>,
-        int a4@<esi>)
 {
   int result; // eax
   __int16 *v6; // edi
@@ -2017,10 +1994,9 @@ int __usercall HouseClass::RespawnStartingBuildings@<eax>(
 
 // 0x50D440
 namespace gamemd {
-int HouseClass::RespawnStartingForces(TechnoClass * aP0, _UNKNOWN ** a1, unsigned int * a2, int a4)
+void HouseClass::RespawnStartingForces(TechnoClass * aP0, _UNKNOWN ** a1, unsigned int * a2, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HouseClass::RespawnStartingForces(TechnoClass *aP0, _UNKNOWN **a1, _DWORD *a2, int a4)
 {
   _UNKNOWN **v5; // ebp
   HouseClass *v8; // ebx
@@ -2093,10 +2069,9 @@ LABEL_9:
 
 // 0x50D9E0
 namespace gamemd {
-int HouseClass::GetInfSelfHealStep()
+void HouseClass::GetInfSelfHealStep()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HouseClass::GetInfSelfHealStep()
 {
   return this->q059 * g_RulesClass_Instance->SelfHealInfantryAmount; /*0x50d9ef*/
 }
@@ -2105,10 +2080,9 @@ void HouseClass::GetInfSelfHealStep()
 
 // 0x50D9F0
 namespace gamemd {
-int HouseClass::GetUnitSelfHealStep()
+void HouseClass::GetUnitSelfHealStep()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HouseClass::GetUnitSelfHealStep()
 {
   return this->q05A * g_RulesClass_Instance->SelfHealUnitAmount; /*0x50d9ff*/
 }
@@ -2120,7 +2094,6 @@ namespace gamemd {
 void HouseClass::LostPoweredCenter(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HouseClass::LostPoweredCenter(int this, int a2)
 {
 
   int v3 = this->poweredUnitCenters - 1; /*0x50e0eb*/
@@ -2170,10 +2143,9 @@ LABEL_16:
 
 // 0x5471B0
 namespace gamemd {
-int HouseClass::GetCameoTypeIndex(int a2)
+void HouseClass::GetCameoTypeIndex(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HouseClass::GetCameoTypeIndex(int a2)
 {
 
   _DWORD * v2 = (_DWORD *)(*(int (__thiscall **)(void *))(this->secretLabsCount)(this); /*0x5471b2*/
@@ -2188,10 +2160,9 @@ void HouseClass::GetCameoTypeIndex(int a2)
 
 // 0x5D70F0
 namespace gamemd {
-char HouseClass::AIDecision(ObjectClass * aP0, int * a1)
+void HouseClass::AIDecision(ObjectClass * aP0, int * a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HouseClass::AIDecision(ObjectClass *aP0, int *a1)
 {
   _DWORD *attachedTag; // eax
   CCINIClass *v6; // edi
@@ -2396,10 +2367,9 @@ LABEL_34:
 
 // 0x5D74A0
 namespace gamemd {
-char HouseClass::InitAlliances()
+void HouseClass::InitAlliances()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HouseClass_InitAlliances()
 {
 
   int v0 = HouseClass_Count; /*0x5d74a1*/
@@ -2448,7 +2418,6 @@ namespace gamemd {
 void HouseClass::FindStartPositions()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_5EE9D0()
 {
   int i; // edi
   int *started; // eax
@@ -2533,10 +2502,9 @@ void sub_5EE9D0()
 
 // 0x740DF0
 namespace gamemd {
-char HouseClass::SetPrimaryFactory(int a2)
+void HouseClass::SetPrimaryFactory(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_740DF0(_DWORD *this, int a2)
 {
   if ( a2 == -1 || this->q6CC != -1 ) /*0x740e00*/
     return 0; /*0x740e17*/

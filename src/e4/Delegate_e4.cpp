@@ -5,10 +5,9 @@
 #include "e4/classes/Vector_e4.hpp"
 
 // 0x42DDB0
-int Delegate::ProcessBitmapStream(char * Src, int a3)
+void Delegate::ProcessBitmapStream(char * Src, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Delegate::ProcessBitmapStream(char *Src, int a3)
 {
   AbstractClass *v3; // ebp
   int v5; // esi
@@ -78,10 +77,9 @@ void Delegate::ProcessBitmapStream(char *Src, int a3)
 }
 
 // 0x631D10
-Pipe * Delegate::Dispatch(Pipe * aP1, Pipe * aP2)
+void * Delegate::Dispatch(Pipe * aP1, Pipe * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-Pipe *__thiscall Delegate::Dispatch(_DWORD *this, Pipe *aP1, Pipe *aP2)
 {
   Pipe *v3; // ecx
   v3 = (Pipe *)this->m_count; /*0x631d10*/
@@ -96,7 +94,6 @@ Pipe *__thiscall Delegate::Dispatch(_DWORD *this, Pipe *aP1, Pipe *aP2)
 unsigned int * Delegate::GetField()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall Delegate::GetField(_DWORD *this)
 {
   *this = 0; /*0x6c95e6*/
   this->m_count = 0; /*0x6c95e8*/
@@ -110,7 +107,6 @@ _DWORD *__thiscall Delegate::GetField(_DWORD *this)
 void Delegate::Set(AbstractTypeClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Delegate::Set(AbstractTypeClass *aP1)
 {
   Straw *v3; // ecx
   AbstractTypeClass *v4; // eax
@@ -136,10 +132,9 @@ void Delegate::Set(AbstractTypeClass *aP1)
 }
 
 // 0x6C98E0
-int Delegate::Invoke(int a2, Straw * aP2)
+void Delegate::Invoke(int a2, Straw * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Delegate::Invoke(int a2, Straw *aP2)
 {
   Straw *v3; // ecx
   v3 = (Straw *)this->m_count; /*0x6c98e0*/

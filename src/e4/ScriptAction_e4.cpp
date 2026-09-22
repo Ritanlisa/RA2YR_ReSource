@@ -16,21 +16,9 @@
 
 // 0x4C6860
 namespace gamemd {
-IUnknown * ScriptAction::InitActionFields(int a2, int a3, char a4, char a5, int a6, char a7, int a8, char a9, int a10, char a11)
+void * ScriptAction::InitActionFields(int a2, int a3, char a4, char a5, int a6, char a7, int a8, char a9, int a10, char a11)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-IUnknown *__thiscall ScriptAction::InitActionFields(
-        char *this,
-        int a2,
-        int a3,
-        char a4,
-        char a5,
-        int a6,
-        char a7,
-        int a8,
-        char a9,
-        int a10,
-        char a11)
 {
   IUnknown *result; // eax
 
@@ -63,10 +51,9 @@ IUnknown *__thiscall ScriptAction::InitActionFields(
 
 // 0x633FA0
 namespace gamemd {
-int ScriptAction::CreatePlacementAction(AbstractClass * aP1, const void * a2)
+void ScriptAction::CreatePlacementAction(AbstractClass * aP1, const void * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ScriptAction::CreatePlacementAction(AbstractClass *aP1, const void *a2)
 {
   int v5; // ebx
   _BYTE *v6; // eax
@@ -135,7 +122,6 @@ namespace gamemd {
 unsigned int * ScriptAction::GetCoords(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall ScriptAction_GetCoords(_DWORD **this, _DWORD *a2)
 {
   int *ActionCoords; // eax
 
@@ -157,7 +143,6 @@ namespace gamemd {
 unsigned int * ScriptAction::GetScreenPos(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall ScriptAction_GetScreenPos(_DWORD **this, _DWORD *a2)
 {
   _DWORD *ActionCoords; // eax
 
@@ -178,10 +163,9 @@ _DWORD *__thiscall ScriptAction_GetScreenPos(_DWORD **this, _DWORD *a2)
 
 // 0x634550
 namespace gamemd {
-BOOL ScriptAction::GetActionCoordinates(int a2, int a3, int a4)
+void ScriptAction::GetActionCoordinates(int a2, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_634550(_DWORD **this, int a2, int a3, int a4)
 {
   _DWORD *ScenarioClassActionCoords; // eax
 
@@ -197,7 +181,6 @@ namespace gamemd {
 unsigned int * ScriptAction::FindItemByValue(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_6346B0(int *this, int a2)
 {
   _DWORD **v4; // esi
   _DWORD **i; // ecx
@@ -222,10 +205,9 @@ _DWORD *__thiscall sub_6346B0(int *this, int a2)
 
 // 0x6349B0
 namespace gamemd {
-int ScriptAction::FindSquadMember()
+void ScriptAction::FindSquadMember()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ScriptAction_FindSquadMember(int this)
 {
   int Type; // esi
   int Value; // eax
@@ -318,16 +300,15 @@ void ScriptAction_FindSquadMember(int this)
 
 // 0x634CC0
 namespace gamemd {
-int ScriptAction::FindBuildingMatch(AbstractClass * aP1)
+void ScriptAction::FindBuildingMatch(AbstractClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ScriptAction::FindBuildingMatch(AbstractClass *aP1)
 {
   int *Type; // esi
-  ScriptAction *v6; // esi
+  ObjectClass *v6; // esi
   ObjectClass *v11; // ecx
   int Value; // eax
-  ScriptAction *v15; // edi
+  ObjectClass *v15; // edi
   int *ScenarioClassActionCoords; // eax
   ObjectClass *nextObject; // [esp+10h] [ebp-100h] BYREF
   ScriptAction *v24; // [esp+14h] [ebp-FCh]
@@ -408,10 +389,9 @@ void ScriptAction::FindBuildingMatch(AbstractClass *aP1)
 
 // 0x634E10
 namespace gamemd {
-int ScriptAction::PlaceObject(AbstractClass * aP1)
+void ScriptAction::PlaceObject(AbstractClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ScriptAction::PlaceObject(int this, AbstractClass *aP1)
 {
   AbstractClass *v3; // edi
   int result; // eax
@@ -561,10 +541,9 @@ LABEL_30:
 
 // 0x6351E0
 namespace gamemd {
-int ScriptAction::DecrementRefCount(int a2)
+void ScriptAction::DecrementRefCount(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ScriptAction::DecrementRefCount(int a2)
 {
   int result; // eax
 
@@ -580,10 +559,9 @@ void ScriptAction::DecrementRefCount(int a2)
 
 // 0x635F20
 namespace gamemd {
-AbstractClass * ScriptAction::Constructor(AbstractClass * aP1)
+void * ScriptAction::Constructor(AbstractClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-AbstractClass *__thiscall ScriptAction::Constructor(_DWORD *this, AbstractClass *aP1)
 {
   this->q008 = 0; /*0x635f27*/
   this->q00C = 0; /*0x635f2a*/
@@ -607,10 +585,9 @@ AbstractClass *__thiscall ScriptAction::Constructor(_DWORD *this, AbstractClass 
 
 // 0x636570
 namespace gamemd {
-BOOL ScriptAction::Check()
+void ScriptAction::Check()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_636570(int *this)
 {
   BOOL result; // eax
 
@@ -628,10 +605,9 @@ void sub_636570(int *this)
 
 // 0x636CE0
 namespace gamemd {
-int ScriptAction::ClearBuildingState()
+void ScriptAction::ClearBuildingState()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_636CE0(int this)
 {
   int i; // eax
   int result; // eax
@@ -687,10 +663,9 @@ void sub_636CE0(int this)
 
 // 0x637E00
 namespace gamemd {
-char ScriptAction::DispatchBuilding()
+void ScriptAction::DispatchBuilding()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void DispatchBuildingScriptAction(char *this)
 {
   _DWORD *BuildingLoadQueue; // eax
   int TypeBuildingClass; // eax
@@ -870,10 +845,9 @@ void DispatchBuildingScriptAction(char *this)
 
 // 0x638C70
 namespace gamemd {
-char ScriptAction::IsBuildingTypeMatch()
+void ScriptAction::IsBuildingTypeMatch()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_638C70(_DWORD **this)
 {
   _BYTE *WaypointCoords; // eax
 
@@ -907,36 +881,6 @@ namespace gamemd {
 int ScriptAction::ExecutePlacement(int a1, int a2, int a3, long long a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, int a18, int a19, int a20, int a21, int a22, int a23, int a24, int a25, int a26, int a27, int a28, int a29)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall ScriptAction::ExecutePlacement(
-        int a1,
-        int a2,
-        int a3,
-        __int64 a4,
-        int a5,
-        int a6,
-        int a7,
-        int a8,
-        int a9,
-        int a10,
-        int a11,
-        int a12,
-        int a13,
-        int a14,
-        int a15,
-        int a16,
-        int a17,
-        int a18,
-        int a19,
-        int a20,
-        int a21,
-        int a22,
-        int a23,
-        int a24,
-        int a25,
-        int a26,
-        int a27,
-        int a28,
-        int a29)
 {
   int result; // eax
   AbstractClass *v31; // ebx
@@ -1021,10 +965,9 @@ int __fastcall ScriptAction::ExecutePlacement(
 
 // 0x63A8E0
 namespace gamemd {
-char ScriptAction::HitTest(MouseClass * aP0, int a2)
+void ScriptAction::HitTest(MouseClass * aP0, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ScriptAction::HitTest(MouseClass *aP0, int a2)
 {
   ObjectClass *v3; // esi
   _DWORD **v6; // esi
@@ -1101,10 +1044,9 @@ LABEL_22:
 
 // 0x63B550
 namespace gamemd {
-char ScriptAction::ProcessIdleAction()
+void ScriptAction::ProcessIdleAction()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ScriptAction::ProcessIdleAction()
 {
   int *PlanningToken; // esi
   ObjectClass *v6; // ebx
@@ -1494,10 +1436,9 @@ LABEL_55:
 
 // 0x63CE40
 namespace gamemd {
-int ScriptAction::DrawPlacementMarker()
+void ScriptAction::DrawPlacementMarker()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_63CE40(_DWORD *this)
 {
   int DrawColor; // edi
   int *Viewport; // eax
@@ -1537,10 +1478,9 @@ void sub_63CE40(_DWORD *this)
 
 // 0x6DD300
 namespace gamemd {
-int ScriptAction::Serialize(char * Buffer)
+void ScriptAction::Serialize(char * Buffer)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void SerializeScriptAction(int this, char *Buffer)
 {
   char *Buffera; // [esp+1Ch] [ebp+4h]
 
@@ -1713,7 +1653,6 @@ namespace gamemd {
 const char * ScriptAction::ParseScriptActionParams()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-const char *__thiscall ParseScriptActionParams(int this)
 {
   char i; // cl
   const char *result; // eax
@@ -1879,7 +1818,6 @@ namespace gamemd {
 unsigned int * ScriptAction::ReadParameter()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_6E1830(_DWORD *this)
 {
   _DWORD *result; // eax
   __int16 v5[2]; // [esp+4h] [ebp-4h] BYREF
@@ -1901,10 +1839,9 @@ _DWORD *__thiscall sub_6E1830(_DWORD *this)
 
 // 0x6E3B60
 namespace gamemd {
-int ScriptAction::GetActionTypeInfo()
+void ScriptAction::GetActionTypeInfo()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_6E3B60(void *this)
 {
   int result; // eax
 
@@ -2103,10 +2040,9 @@ void sub_6E3B60(void *this)
 
 // 0x6E4790
 namespace gamemd {
-IUnknown * ScriptAction::CopyStringField(char * Source)
+void * ScriptAction::CopyStringField(char * Source)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-IUnknown *__thiscall ScriptAction::CopyStringField(char *this, char *Source)
 {
   if ( Source ) /*0x6e4799*/
   {
@@ -2128,7 +2064,6 @@ namespace gamemd {
 unsigned char * ScriptAction::GetWaypointCoords(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_BYTE *__thiscall ScriptAction::GetWaypointCoords(_BYTE *this, IUnknown *aP1)
 {
   if ( aP1 ) /*0x6e6aba*/
   {
@@ -2156,10 +2091,9 @@ _BYTE *__thiscall ScriptAction::GetWaypointCoords(_BYTE *this, IUnknown *aP1)
 
 // 0x6FFBE0
 namespace gamemd {
-int ScriptAction::ExecuteMissionCmd()
+void ScriptAction::ExecuteMissionCmd()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ScriptAction::ExecuteMissionCmd(#377 *this)
 {
   _BYTE *WaypointCoords; // eax
   int result; // eax
@@ -2283,10 +2217,9 @@ void ScriptAction::ExecuteMissionCmd(#377 *this)
 
 // 0x721270
 namespace gamemd {
-ObjectClass * ScriptAction::GetArgumentString(int a2)
+void * ScriptAction::GetArgumentString(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-ObjectClass *__thiscall ScriptAction::GetArgumentString(_DWORD *this, int a2)
 {
   if ( a2 < 0 || a2 >= this->q024 ) /*0x72127b*/
     return (ObjectClass *)g_Str_none; /*0x721286*/

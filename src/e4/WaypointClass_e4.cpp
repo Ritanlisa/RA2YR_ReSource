@@ -6,10 +6,9 @@
 
 // 0x502160
 namespace gamemd {
-char WaypointClass::FindOrAddPath(unsigned int * a2)
+void WaypointClass::FindOrAddPath(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_502160(unsigned int *this, _DWORD *a2)
 {
   _DWORD *v7; // ecx
   int v8; // edi
@@ -17,7 +16,7 @@ void sub_502160(unsigned int *this, _DWORD *a2)
   int v10; // kr08_4
   int v11; // eax
   char result; // al
-  unsigned int v13; // esi
+  bool v13; // esi
   void *v14; // eax
   int v15; // eax
   signed int v16; // [esp+10h] [ebp-Ch]

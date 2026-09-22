@@ -4,10 +4,9 @@
 
 // 0x68C8D0
 namespace gamemd {
-int ColorScheme::Destructor()
+void ColorScheme::Destructor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ColorScheme_Destructor(int this)
 {
   void (__thiscall ***v2)(_DWORD, int); // ecx
   int result; // eax

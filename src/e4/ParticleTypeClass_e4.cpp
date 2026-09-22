@@ -10,7 +10,6 @@ namespace gamemd {
 void ParticleTypeClass::GetClassIdentifier()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ParticleTypeClass::_vt03(int this)
 {
 
   AbstractClass *v2 = this->vtable2; /*0x477906*/
@@ -28,10 +27,9 @@ void ParticleTypeClass::_vt03(int this)
 
 // 0x4784F0
 namespace gamemd {
-char ParticleTypeClass::Release(int a2, char * a3)
+void ParticleTypeClass::Release(int a2, char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ParticleTypeClass::_vt02(int a2, char *a3)
 {
 
   int v3 = a2; /*0x4784f2*/
@@ -132,7 +130,6 @@ namespace gamemd {
 unsigned int * ParticleTypeClass::EnsureCapacity(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_4788E0(_DWORD *this, _DWORD *a2)
 {
 
   if ( this == a2 ) /*0x4788ec*/
@@ -194,11 +191,10 @@ _DWORD *__thiscall sub_4788E0(_DWORD *this, _DWORD *a2)
 
 // 0x644F50
 namespace gamemd {
-int ParticleTypeClass_LoadFromINI()
+void ParticleTypeClass_LoadFromINI()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // local variable allocation has failed, the output may be wrong!
-void ParticleTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
 {
   INIClass *inited; // eax
   _DWORD *RGBColorList; // ebp
@@ -498,10 +494,9 @@ LABEL_17:
 
 // 0x6454E0
 namespace gamemd {
-int ParticleTypeClass::ProcessPower(int * a2)
+void ParticleTypeClass::ProcessPower(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ParticleTypeClass::ProcessPower(int this, int *a2)
 {
 
   AbstractTypeClass::ProcessPower((char *)this, a2); /*0x6454e9*/
@@ -540,10 +535,9 @@ void ParticleTypeClass::ProcessPower(int this, int *a2)
 
 // 0x645660
 namespace gamemd {
-int ParticleTypeClass::SaveLoad_Prefix(int a1, int a2)
+void ParticleTypeClass::SaveLoad_Prefix(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ParticleTypeClass::SaveLoad_Prefix(int a1, int a2)
 {
   int result; // eax
 
@@ -614,10 +608,9 @@ LABEL_14:
 
 // 0x6458B0
 namespace gamemd {
-int ParticleTypeClass::GetType(int a2, int a3)
+void ParticleTypeClass::GetType(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ParticleTypeClass::_vt10(int a2, int a3)
 {
   int result; // eax
 
@@ -681,7 +674,6 @@ namespace gamemd {
 unsigned int * ParticleTypeClass::Constructor(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_645A70(_DWORD *this, int a2, int a3)
 {
 
   this->vtable2 = 0; /*0x645a7d*/

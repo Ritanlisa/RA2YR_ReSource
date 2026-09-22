@@ -6,13 +6,6 @@
 unsigned int * ConvertClass::Construct(ConvertClass * aP1, int a3, ConvertClass * aP3, ObjectClass * aP4, ConvertClass * aP5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall ConvertClass::Construct(
-        _DWORD *this,
-        ConvertClass *aP1,
-        int a3,
-        ConvertClass *aP3,
-        ObjectClass *aP4,
-        ConvertClass *aP5)
 {
   ObjectClass *v7; // eax
   __int16 v12; // cx

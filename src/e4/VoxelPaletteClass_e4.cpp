@@ -3,10 +3,9 @@
 #include "e4/e4_globals.hpp"
 
 // 0x758A30
-int VoxelPaletteClass::ConvertFromFile(int a2)
+void VoxelPaletteClass::ConvertFromFile(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_758A30(_DWORD *this, int a2)
 {
 
   int v3 = 0; /*0x758a42*/

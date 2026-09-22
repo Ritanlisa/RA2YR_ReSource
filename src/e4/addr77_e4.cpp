@@ -49,7 +49,6 @@ namespace gamemd {
 void sub_770E70(char **this@<ecx> a1, ObjectClass * aP1, ObjectClass * aP2, ObjectClass aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __userpurge sub_770E70(char **this@<ecx>, ObjectClass *aP1, ObjectClass *aP2, ObjectClass aP3)
 {
   ObjectClass *v5; // edi
   ObjectClass *v6; // [esp+10h] [ebp-4h] BYREF
@@ -73,7 +72,6 @@ namespace gamemd {
 void E4Recv_771890::sub_771890()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_771890(_DWORD *this)
 {
   *this = &vt_WorldDominationTour_Voices_Anim; /*0x771890*/
   VtableStub::5CB6C0(this); /*0x771896*/
@@ -83,10 +81,9 @@ void sub_771890(_DWORD *this)
 
 // 0x7741C0
 namespace gamemd {
-HKEY E4Recv_7741C0::FindRegistrySubKey()
+void E4Recv_7741C0::FindRegistrySubKey()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-HKEY __thiscall FindRegistrySubKey(rc_ptr_base *this)
 {
   int *p_uniqueId; // ebx
   CCINIClass *v5; // esi
@@ -157,10 +154,9 @@ LABEL_6:
 
 // 0x775690
 namespace gamemd {
-BOOL ScreenDialogToClient(HWND hWnd, LPRECT lpRect)
+void ScreenDialogToClient(HWND hWnd, LPRECT lpRect)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __fastcall ScreenDialogToClient(HWND hWnd, LPRECT lpRect)
 {
   BOOL result; // eax
   LONG v5; // ecx
@@ -197,12 +193,6 @@ namespace gamemd {
 const DLGTEMPLATE * CreateDialogIndirect(ObjectClass * aP0, HWND a2, HWND hWndParent, DLGPROC lpDialogFunc, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-const DLGTEMPLATE *__fastcall CreateDialogIndirect(
-        ObjectClass *aP0,
-        HWND a2,
-        HWND hWndParent,
-        DLGPROC lpDialogFunc,
-        int a5)
 {
   HWND *v6; // edi
   const DLGTEMPLATE *result; // eax
@@ -247,10 +237,9 @@ const DLGTEMPLATE *__fastcall CreateDialogIndirect(
 
 // 0x7757E0
 namespace gamemd {
-char Dialog_Close(HWND a1, int a2)
+void Dialog_Close(HWND a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall Dialog_Close(HWND a1, int a2)
 {
   int *i; // esi
   HWND *v6; // esi
@@ -316,10 +305,9 @@ char __fastcall Dialog_Close(HWND a1, int a2)
 
 // 0x7759E0
 namespace gamemd {
-int MessageDialogLoopAlt(HWND hWnd, unsigned char (*a2)(void) a2, int a3, char a4, char a5)
+void MessageDialogLoopAlt(HWND hWnd, unsigned char (*a2)(void) a2, int a3, char a4, char a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall MessageDialogLoopAlt(HWND hWnd, unsigned __int8 (*a2)(void), int a3, char a4, char a5)
 {
   HWND *v8; // ecx
   HWND *v10; // ecx
@@ -385,7 +373,6 @@ namespace gamemd {
 int sub_775B30()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_775B30()
 {
   return dword_B72F4C; /*0x775b35*/
 }
@@ -397,7 +384,6 @@ namespace gamemd {
 int CacheRenderedText(HDC a1, const char * a2, int a3, int a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall CacheRenderedText(HDC a1, const char *a2, int a3, int a4, int a5)
 {
   int result; // eax
   HDC v14; // edx
@@ -520,7 +506,6 @@ namespace gamemd {
 char sub_776230(HWND hWnd, HWND a2, LPARAM * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall sub_776230(HWND hWnd, HWND a2, LPARAM *a3)
 {
   LRESULT v6; // eax
   LPARAM lParam[4]; // [esp+10h] [ebp-10h] BYREF
@@ -551,10 +536,9 @@ char __fastcall sub_776230(HWND hWnd, HWND a2, LPARAM *a3)
 
 // 0x776320
 namespace gamemd {
-char E4Recv_776320::sub_776320()
+void E4Recv_776320::sub_776320()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_776320(LPARAM this)
 {
   HCURSOR CursorA; // eax
   char v4; // bl
@@ -606,7 +590,6 @@ namespace gamemd {
 struct tagPOINT * Dialog_HitTest(unsigned int a1, int a2, struct tagPOINT * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-struct tagPOINT *__fastcall Dialog_HitTest(unsigned int a1, int a2, struct tagPOINT *a3)
 {
   LONG v3; // ebx
   LONG v4; // esi
@@ -649,7 +632,6 @@ namespace gamemd {
 void E4Recv_776570::sub_776570()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_776570(void *this)
 {
   HWND WindowLongA; // eax
   LRESULT v6; // eax
@@ -693,10 +675,9 @@ void sub_776570(void *this)
 
 // 0x777080
 namespace gamemd {
-BOOL SetDialogParent(HWND hWnd, HWND a2)
+void SetDialogParent(HWND hWnd, HWND a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __fastcall SetDialogParent(HWND hWnd, HWND a2)
 {
   struct tagRECT Rect; // [esp+10h] [ebp-20h] BYREF
   struct tagRECT v9; // [esp+20h] [ebp-10h] BYREF
@@ -730,7 +711,6 @@ namespace gamemd {
 int WindowProc_Main(int a1, int a2, HWND hWnd, UINT Msg, signed int wParam, LPARAM lParam)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall WindowProc_Main(int a1, int a2, HWND hWnd, UINT Msg, signed int wParam, LPARAM lParam)
 {
   HWND v7; // esi
   HWND v9; // edi
@@ -949,10 +929,9 @@ LABEL_72:
 
 // 0x777BB0
 namespace gamemd {
-ObjectClass * E4Recv_777BB0::sub_777BB0()
+void * E4Recv_777BB0::sub_777BB0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-ObjectClass *__thiscall sub_777BB0(char *this)
 {
   INIClass aP2; // [esp+4h] [ebp-100h] BYREF
   char Buffera[128]; // [esp+84h] [ebp-80h] BYREF
@@ -972,10 +951,9 @@ ObjectClass *__thiscall sub_777BB0(char *this)
 
 // 0x777C30
 namespace gamemd {
-HCURSOR InitWindowCreation(ObjectClass * aP0, int a2, int xRight, int yBottom)
+void InitWindowCreation(ObjectClass * aP0, int a2, int xRight, int yBottom)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-HCURSOR __fastcall InitWindowCreation(ObjectClass *aP0, int a2, int xRight, int yBottom)
 {
   LONG v6; // eax
   HCURSOR CursorA; // eax
@@ -1056,7 +1034,6 @@ namespace gamemd {
 int IME_ProcessComposition()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int IME_ProcessComposition()
 {
   int result; // eax
   CHAR Buf[516]; // [esp+8h] [ebp-204h] BYREF
@@ -1108,7 +1085,6 @@ namespace gamemd {
 unsigned int * PlayerProfile_Load(unsigned int * a1, const char ** a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__fastcall PlayerProfile_Load(_DWORD *a1, const char **a2)
 {
   unsigned __int8 *v5; // eax
   int Int; // esi
@@ -1259,10 +1235,9 @@ _DWORD *__fastcall PlayerProfile_Load(_DWORD *a1, const char **a2)
 
 // 0x778F30
 namespace gamemd {
-char LocalizeWOLDateString(char ** a1, void ** a2)
+void LocalizeWOLDateString(char ** a1, void ** a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall LocalizeWOLDateString(char **a1, void **a2)
 {
   CampaignScore *v5; // eax
   wchar_t *StringCSF; // eax
@@ -1425,7 +1400,6 @@ namespace gamemd {
 void ConvertDateMonthNames(wchar_t ** a1, void ** a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall ConvertDateMonthNames(wchar_t **a1, void **a2)
 {
   CampaignScore *v4; // eax
   CampaignScore *v5; // eax
@@ -1583,7 +1557,6 @@ namespace gamemd {
 int RunWOLMainLoop(char a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall RunWOLMainLoop(char a1)
 {
   char **AutoLogin; // eax
   char **Config; // eax
@@ -1768,7 +1741,6 @@ namespace gamemd {
 void sub_77BAE0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_77BAE0()
 {
   unsigned int i; // ebx
   void **v3; // edi
@@ -1842,7 +1814,6 @@ namespace gamemd {
 void sub_77BCB0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_77BCB0()
 {
   unsigned int i; // ebx
   void **v3; // edi
@@ -1916,7 +1887,6 @@ namespace gamemd {
 void sub_77BE80()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_77BE80()
 {
   unsigned int i; // ebx
   void **v3; // edi
@@ -1990,7 +1960,6 @@ namespace gamemd {
 void sub_77C050()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_77C050()
 {
   unsigned int i; // ebx
   void **v3; // edi
@@ -2064,7 +2033,6 @@ namespace gamemd {
 void sub_77C220()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_77C220()
 {
   unsigned int i; // ebx
   void **v3; // edi
@@ -2138,7 +2106,6 @@ namespace gamemd {
 void sub_77C450()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_77C450()
 {
   unsigned int i; // ebx
   void **v3; // edi
@@ -2212,7 +2179,6 @@ namespace gamemd {
 void sub_77CB00()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_77CB00()
 {
   unsigned int i; // ebx
   void **v3; // edi
@@ -2286,7 +2252,6 @@ namespace gamemd {
 void sub_77CCD0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_77CCD0()
 {
   unsigned int i; // ebx
   void **v3; // edi
@@ -2357,10 +2322,9 @@ void sub_77CCD0()
 
 // 0x77D3F0
 namespace gamemd {
-char E4Recv_77D3F0::sub_77D3F0()
+void E4Recv_77D3F0::sub_77D3F0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_77D3F0(const char *this)
 {
 
   if ( !this ) /*0x77d3f9*/
@@ -2396,7 +2360,6 @@ namespace gamemd {
 int sub_77D840()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_77D840()
 {
   HWND Dialog; // esi
   int GameUI; // eax
@@ -2420,10 +2383,9 @@ int sub_77D840()
 
 // 0x77DC90
 namespace gamemd {
-char OpenURLWOL(INIClass * a1, int a2)
+void OpenURLWOL(INIClass * a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall OpenURLWOL(INIClass *a1, int a2)
 {
   FILE *v4; // esi
   HINSTANCE ExecutableA; // esi
@@ -2518,7 +2480,6 @@ namespace gamemd {
 void AssignWOLPlayerSide(const char ** a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall AssignWOLPlayerSide(const char **a1, int a2)
 {
   const char **v5; // eax
   HWND v6; // eax
@@ -2646,10 +2607,9 @@ LABEL_21:
 
 // 0x77ED00
 namespace gamemd {
-int SetupLobbyPlayerSlot(CCINIClass * aP0, CCINIClass * aP1, CCINIClass * aP2, int a4, int aP1a)
+void SetupLobbyPlayerSlot(CCINIClass * aP0, CCINIClass * aP1, CCINIClass * aP2, int a4, int aP1a)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall SetupLobbyPlayerSlot(CCINIClass *aP0, CCINIClass *aP1, CCINIClass *aP2, int a4, int aP1a)
 {
   SessionClass *v7; // esi
   ObjectClass *v8; // eax
@@ -2771,7 +2731,6 @@ namespace gamemd {
 char WOL_RequestChannelList2(int a1, unsigned char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall WOL_RequestChannelList2(int a1, unsigned __int8 a2)
 {
   char *v8; // ebx
   void *v9; // eax
@@ -2853,7 +2812,6 @@ namespace gamemd {
 char RequestChannelListWOL()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char RequestChannelListWOL()
 {
   wchar_t *StringCSF; // eax
   CreateGameDialogControl *ecx2; // ecx
@@ -2954,10 +2912,9 @@ LABEL_5:
 
 // 0x77F320
 namespace gamemd {
-char WOL_RequestChannelListEx(int a1, unsigned char a2, char a3)
+void WOL_RequestChannelListEx(int a1, unsigned char a2, char a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall WOL_RequestChannelListEx(int a1, unsigned __int8 a2, char a3)
 {
   char result; // al
   HANDLE *v6; // esi
@@ -3049,7 +3006,6 @@ namespace gamemd {
 char sub_77F520(char a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall sub_77F520(char a1)
 {
   char result; // al
   HANDLE *v2; // esi
@@ -3138,7 +3094,6 @@ namespace gamemd {
 char sub_77F710(unsigned char a1, char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall sub_77F710(unsigned __int8 a1, char a2)
 {
   char result; // al
   HANDLE *v4; // esi

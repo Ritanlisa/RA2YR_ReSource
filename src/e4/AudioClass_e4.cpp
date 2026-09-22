@@ -7,10 +7,9 @@
 
 // 0x7228B0
 namespace gamemd {
-int AudioClass::ProcessEvent()
+void AudioClass::ProcessEvent()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void BuildingClass_RebuildOccupancy(int **this)
 {
   int i; // eax
   int result; // eax

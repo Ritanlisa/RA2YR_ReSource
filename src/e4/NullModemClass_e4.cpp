@@ -4,20 +4,18 @@
 #include "e4/classes/Debug_e4.hpp"
 
 // 0x5F1950
-int NullModemClass::COMStub()
+void NullModemClass::COMStub()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void NullModemClass::_vt04()
 {
   return this->linkOpen; /*0x5f1953*/
 }
 }
 
 // 0x5F1F00
-int NullModemClass::Flush(int a2)
+void NullModemClass::Flush(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void NullModemClass::_vt11(int a2)
 {
   int result; // eax
 
@@ -29,10 +27,9 @@ void NullModemClass::_vt11(int a2)
 }
 
 // 0x5F3560
-int NullModemClass::Release(int a2, int a3, int a4, int a5)
+void NullModemClass::Release(int a2, int a3, int a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void NullModemClass::_vt02(int this, int a2, int a3, int a4, int a5)
 {
   int result; // eax
 
@@ -60,10 +57,9 @@ int NullModemClass::ddtor(int a2, int a3, int a4)
 }
 
 // 0x5F35D0
-int NullModemClass::Receive()
+void NullModemClass::Receive()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void NullModemClass::_vt07()
 {
 
   int v1 = this->linkObject; /*0x5f35d0*/
@@ -75,10 +71,9 @@ void NullModemClass::_vt07()
 }
 
 // 0x5F35F0
-int NullModemClass::CheckStatus()
+void NullModemClass::CheckStatus()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void NullModemClass::_vt08()
 {
 
   int v1 = this->linkObject; /*0x5f35f0*/
@@ -90,10 +85,9 @@ void NullModemClass::_vt08()
 }
 
 // 0x5F3610
-int NullModemClass::GetAddress(int a2)
+void NullModemClass::GetAddress(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void NullModemClass::_vt09(int a2)
 {
 
   int v2 = this->linkObject; /*0x5f3610*/
@@ -105,10 +99,9 @@ void NullModemClass::_vt09(int a2)
 }
 
 // 0x5F3630
-int NullModemClass::SetAddress(int a2)
+void NullModemClass::SetAddress(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void NullModemClass::_vt10(int a2)
 {
 
   int v2 = this->linkObject; /*0x5f3630*/
@@ -120,10 +113,9 @@ void NullModemClass::_vt10(int a2)
 }
 
 // 0x5F3650
-NullModemClass * NullModemClass::QueryInterface(char a2)
+void * NullModemClass::QueryInterface(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-NullModemClass *__thiscall NullModemClass::QueryInterface(void ***this, char a2)
 {
   void **v3; // edi
 
@@ -160,10 +152,9 @@ LABEL_10:
 }
 
 // 0x774670
-char NullModemClass::sendData()
+void NullModemClass::sendData()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void NullModemClass::sendData(int this)
 {
   NullModemClass *v4; // edx
   DWORD cbInQue; // eax
@@ -222,10 +213,9 @@ void NullModemClass::sendData(int this)
 }
 
 // 0x7747C0
-int NullModemClass::receiveData()
+void NullModemClass::receiveData()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void NullModemClass::receiveData(int this)
 {
   NullModemClass *v2; // edx
   DWORD cbInQue; // eax
@@ -263,10 +253,9 @@ void NullModemClass::receiveData(int this)
 }
 
 // 0x7754C0
-int NullModemClass::GetMember23()
+void NullModemClass::GetMember23()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void NullModemClass_GetMember23(_DWORD *this)
 {
   return this->q05C; /*0x7754c3*/
 }

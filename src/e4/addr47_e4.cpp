@@ -21,7 +21,6 @@ namespace gamemd {
 void CaptureManagerClass__vt_03_()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CaptureManagerClass::vt_03_(int this)
 {
 
   void * v2 = *(void **)(this + 4); /*0x472a86*/
@@ -39,10 +38,9 @@ void CaptureManagerClass::vt_03_(int this)
 
 // 0x472AD0
 namespace gamemd {
-int CaptureManagerClass__vt_06_(int a2)
+void CaptureManagerClass__vt_06_(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CaptureManagerClass::vt_06_(int a2)
 {
   return *(_DWORD *)(this->Items + 4 * a2); /*0x472ada*/
 }
@@ -51,18 +49,9 @@ void CaptureManagerClass::vt_06_(int a2)
 
 // 0x4770E0
 namespace gamemd {
-VectorClass * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsigned char *** edx0, INIClass * a3, unsigned char * a2, VectorClass a5, int a6, int a7, int a8)
+void * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsigned char *** edx0, INIClass * a3, unsigned char * a2, VectorClass a5, int a6, int a7, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__fastcall LoadBuildingTypeClassPrerequisites(
-        _DWORD *a1,
-        unsigned __int8 ***edx0,
-        INIClass *a3,
-        unsigned __int8 *a2,
-        VectorClass a5,
-        int a6,
-        int a7,
-        int a8)
 {
   CCINIClass *i; // esi
   DynamicVector aP1; // [esp+2Ch] [ebp-A0h] BYREF
@@ -198,7 +187,6 @@ namespace gamemd {
 void SoundWarning_Set(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall SoundWarning_Set(int a1)
 {
   if ( DataGlobal_89E3A0 == 1 ) /*0x4790b7*/
   {
@@ -219,7 +207,6 @@ namespace gamemd {
 void E4Recv_479740::sub_479740(DWORD BytesReturned)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_479740(void *this, DWORD BytesReturned)
 {
   UINT v3; // eax
   DWORD v4; // edi
@@ -277,10 +264,9 @@ LABEL_18:
 
 // 0x479BA0
 namespace gamemd {
-char sub_479BA0(DWORD BytesReturned)
+void sub_479BA0(DWORD BytesReturned)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_479BA0(DWORD BytesReturned)
 {
   UINT v2; // eax
   DWORD v4; // edi
@@ -339,10 +325,9 @@ LABEL_17:
 
 // 0x479D60
 namespace gamemd {
-char sub_479D60(DWORD BytesReturned)
+void sub_479D60(DWORD BytesReturned)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_479D60(DWORD BytesReturned)
 {
   UINT v2; // eax
   DWORD v4; // edi
@@ -404,10 +389,9 @@ LABEL_13:
 
 // 0x479EF0
 namespace gamemd {
-char sub_479EF0(DWORD BytesReturned)
+void sub_479EF0(DWORD BytesReturned)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_479EF0(DWORD BytesReturned)
 {
   UINT v2; // eax
   DWORD v4; // edi
@@ -473,7 +457,6 @@ namespace game {
 void ObjectClass::sub_47A080(DWORD a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_47A080(ObjectClass *this, DWORD a2)
 {
   AnimClass *FileA; // esi
   DWORD BytesReturned; // [esp+10h] [ebp-20h] BYREF
@@ -517,10 +500,9 @@ LABEL_9:
 
 // 0x47A920
 namespace gamemd {
-char DriveControlCD(ObjectClass * aP0, HANDLE hDevice, DWORD BytesReturned)
+void DriveControlCD(ObjectClass * aP0, HANDLE hDevice, DWORD BytesReturned)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void DriveControlCD(ObjectClass *aP0, HANDLE hDevice, DWORD BytesReturned)
 {
   char result; // al
   _DWORD InBuffer[7]; // [esp+10h] [ebp-1Ch] BYREF
@@ -560,7 +542,6 @@ namespace gamemd {
 int sub_47AA50(char a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_47AA50(char a1)
 {
   HANDLE FirstFileA; // eax
   CHAR FileName[8]; // [esp+0h] [ebp-148h] BYREF
@@ -579,10 +560,9 @@ int __fastcall sub_47AA50(char a1)
 
 // 0x47E040
 namespace gamemd {
-char CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3, int a4)
+void CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3, int a4)
 {
   __int16 v19; // dx
   _DWORD *v25; // eax
@@ -776,10 +756,9 @@ char __fastcall CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3,
 
 // 0x47E470
 namespace gamemd {
-char CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int a4)
+void CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int a4)
 {
   __int16 v19; // dx
   _DWORD *v25; // eax
@@ -973,10 +952,9 @@ char __fastcall CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int
 
 // 0x47EFE0
 namespace gamemd {
-unsigned int sub_47EFE0(unsigned int * a1, int * a2, unsigned int a3)
+void int sub_47EFE0(unsigned int * a1, int * a2, unsigned int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_47EFE0(unsigned int *a1, int *a2, unsigned int a3)
 {
   int *FoundationSize; // eax
   unsigned int result; // eax
@@ -1123,7 +1101,6 @@ namespace gamemd {
 unsigned short * RenderFogOfWarOverlay(int a1, int * a2, unsigned int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_WORD *__stdcall RenderFogOfWarOverlay(int a1, int *a2, unsigned int a3)
 {
   int *FoundationSizeBuilding; // eax
   _WORD *result; // eax

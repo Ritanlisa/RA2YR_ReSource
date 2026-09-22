@@ -7,7 +7,6 @@
 unsigned int * VectorCursor::Release()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall VectorCursor::_vt02(_DWORD *this)
 {
   ++this->q008; /*0x76f182*/
   return this; /*0x76f185*/
@@ -18,7 +17,6 @@ _DWORD *__thiscall VectorCursor::_vt02(_DWORD *this)
 unsigned int * VectorCursor::ddtor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall VectorCursor::_vt03(_DWORD *this)
 {
   --this->q008; /*0x76f192*/
   return this; /*0x76f195*/
@@ -30,7 +28,6 @@ namespace gamemd {
 void VectorCursor_uint_DynamicVectorClass_uint____13::Remove()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void VectorCursor_uint_DynamicVectorClass_uint____13_::_vt07()
 {
   *(this + 3) = 2; /*0x4f42d0*/
 }
@@ -42,7 +39,6 @@ namespace gamemd {
 void VectorCursor_uint_DynamicVectorClass_uint____13::Count(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void VectorCursor_uint_DynamicVectorClass_uint____13_::_vt10(int a2, int a3)
 {
 
   if ( ((unsigned __int8)g_CurrentFrame & 1) == 0 ) /*0x4f4bb7*/

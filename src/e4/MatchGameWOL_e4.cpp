@@ -9,7 +9,6 @@ namespace gamemd {
 void sub_7A19E0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_7A19E0()
 {
   wchar_t *StringCSF; // eax
   int i; // esi

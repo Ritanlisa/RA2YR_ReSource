@@ -48,7 +48,6 @@ namespace gamemd { int Gap2Recv_402F60::ProcessAudioMixerFrame() {
     {
     return aP0 && *(_DWORD *)aP0->__pad_0;
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ProcessAudioMixerFrame(int this)
 {
   BOOL active; // [esp+10h] [ebp-Ch]
 
@@ -121,7 +120,6 @@ void ProcessAudioMixerFrame(int this)
 // 0x403A80
 namespace gamemd { int DumpAudioDeviceDebug(void* a1, char* a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall DumpAudioDeviceDebug(_DWORD *a1, void (__thiscall *a2)(char *), int a3)
 {
   void (__thiscall *v4)(char *); // edi
   int *Next; // esi
@@ -171,7 +169,6 @@ int __fastcall DumpAudioDeviceDebug(_DWORD *a1, void (__thiscall *a2)(char *), i
 // 0x4048B0
 namespace gamemd { int Gap2Recv_4048B0::PrefetchAudioSamples() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void PrefetchAudioSamples(_DWORD *this)
 {
   int result; // eax
   _DWORD **v5; // ebx
@@ -323,7 +320,6 @@ LABEL_25:
 // 0x4055C0
 namespace gamemd { int Gap2Recv_4055C0::UpdateVoicePlayback() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void VoiceClass_Update(int this)
 {
   _DWORD **v13; // edi
   _DWORD **v16; // edi
@@ -547,7 +543,6 @@ LABEL_41:
 // 0x40AA70
 namespace gamemd { bool Gap2Recv_40AA70::ProcessAudioChannelMovement() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ProcessAudioChannelMovement(int *this)
 {
   __int16 *v12; // edi
   unsigned __int8 v13; // bl
@@ -664,7 +659,6 @@ LABEL_11:
 // 0x415C60
 namespace gamemd { int Gap2Recv_415C60::ProcessTechnoMovementAction() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ProcessTechnoMovementAction(char *this)
 {
   wchar_t *v18; // eax
   _DWORD * v2 = (_DWORD *)LinkedList::Pop((_DWORD *)this + 69); /*0x415c73*/
@@ -737,7 +731,6 @@ void ProcessTechnoMovementAction(char *this)
 // 0x4197C0
 namespace gamemd { void* Gap2Recv_4197C0::FindSpiralMoveTarget(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void *__thiscall FindSpiralMoveTarget(void **this, ObjectClass *aP1)
 {
   ObjectClass *v4; // edi
   __int16 v9; // cx
@@ -879,7 +872,6 @@ LABEL_27:
 // 0x41AF80
 namespace gamemd { int Gap2Recv_41AF80::SaveAircraftToINI() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void SaveAircraftToINI(char *this)
 {
   int result; // eax
   _DWORD *Value; // eax
@@ -960,7 +952,6 @@ namespace gamemd { int CreateInstanceCOM(void* ppv, void* rclsid, int pUnkOuter,
 // 0x421350
 namespace gamemd { int Gap2Recv_421350::RenderAlphaShapes() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void RenderAlphaShapes(int *this)
 {
   int result; // eax
   char **v9; // edi
@@ -1119,7 +1110,6 @@ void RenderAlphaShapes(int *this)
 // 0x429830
 namespace gamemd { double Gap2Recv_429830::ComputeMovementWeight(void* a2, void* a3, char a4, int a5, int a6) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ComputeMovementWeight(int this, int *a1, _DWORD *a2, DynamicVectorClass_uint *aP3, int a5, int a6)
 {
   int v19; // ecx
   int v20; // edx
@@ -1219,7 +1209,6 @@ LABEL_20:
 // 0x42B210
 namespace gamemd { char Gap2Recv_42B210::ParsePathDirections(int a2, void* a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ParsePathDirections(void *this, int a2, _DWORD *a3)
 {
   __int16 v14; // dx
   __int16 v16; // dx
@@ -1322,7 +1311,6 @@ LABEL_25:
 // 0x42B7F0
 namespace gamemd { void* Gap2Recv_42B7F0::SimplifyPathFilter(void* a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall Path_FilterSimplify(void *this, _DWORD *a2, int a3)
 {
   __int16 v12; // cx
   __int16 v13; // bx
@@ -1537,7 +1525,6 @@ _DWORD *__thiscall Path_FilterSimplify(void *this, _DWORD *a2, int a3)
 // 0x42E1C0
 namespace gamemd { int Gap2Recv_42E1C0::RenderTooltipBorder() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void RenderTooltipBorder(int this)
 {
   int v17; // edi
   int v18; // edx
@@ -1677,7 +1664,6 @@ void RenderTooltipBorder(int this)
 // 0x430250
 namespace gamemd { char Gap2Recv_430250::RenderBuildingTag(int a2, int a3, int a4, int a5, int a6) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void RenderBuildingTag(int this, int a2, int a3, int a4, int a5, int a6)
 {
   size_t v7; // eax
   wchar_t *v9; // eax
@@ -1837,7 +1823,6 @@ namespace gamemd { int Gap2Recv_430AC0::RenderAlliedBuildingTags(int a2, int a3,
 // 0x430BA0
 namespace gamemd { void Gap2Recv_430BA0::PlacePlayerBeacon(int a2, int a3, int a4, int a5, int a6) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void PlacePlayerBeacon(_DWORD *this, int a2, int a3, int a4, int a5, int a6)
 {
   _DWORD *v11; // esi
   int v12; // eax
@@ -2001,7 +1986,6 @@ retn    4
 // 0x438BF0
 namespace gamemd { int Gap2Recv_438BF0::DispatchBuildingAudioEvents() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void DispatchBuildingAudioEvents(int *this)
 {
   int i; // esi
   int j; // ebx
@@ -2156,7 +2140,6 @@ LABEL_33:
 // 0x43B150
 namespace gamemd { bool Gap2Recv_43B150::DetectNearbyAlliedThreat() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void DetectNearbyAlliedThreat(#375 **this)
 {
   #375 **v1; // ebx
   #375 *v4; // edi
@@ -2281,7 +2264,6 @@ LABEL_23:
 // 0x43C0D0
 namespace gamemd { void* Gap2Recv_43C0D0::CreateDominatorDestructionEffects() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int *__thiscall CreateDominatorDestructionEffects(_DWORD *this)
 {
   int *result; // eax
   int **v3; // edi
@@ -2356,7 +2338,6 @@ int *__thiscall CreateDominatorDestructionEffects(_DWORD *this)
 // 0x4500F0
 namespace gamemd { void Gap2Recv_4500F0::ProcessAutoProduction() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ProcessAutoProduction(void *this)
 {
   _DWORD *TypeAbstractClass; // edi
   wchar_t *v10; // edi
@@ -2500,7 +2481,6 @@ LABEL_31:
 // 0x455F10
 namespace gamemd { char Gap2Recv_455F10::MarkBuildingFoundationCells(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MarkBuildingFoundationCells(int *this, int a2)
 {
   int FoundationWidthBuildingTypeClass; // eax
   __int16 v10; // cx
@@ -2654,7 +2634,6 @@ void MarkBuildingFoundationCells(int *this, int a2)
 // 0x4561F0
 namespace gamemd { int Gap2Recv_4561F0::RecalculateBuildingFoundation() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void RecalculateBuildingFoundation(_DWORD **this)
 {
   int FoundationHeightBuildingTypeClass; // eax
   __int16 v10; // cx
@@ -2847,7 +2826,6 @@ LABEL_47:
 // 0x458330
 namespace gamemd { char* Gap2Recv_458330::PlayHealthDependentBuildingAnim() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int *__thiscall PlayHealthDependentBuildingAnim(int *this)
 {
   bool v6; // zf
   BuildingTypeClass *v7; // eax
@@ -3035,7 +3013,6 @@ retn
 // 0x465570
 namespace gamemd { void* Gap2Recv_465570::CalculateBuildingFoundationBounds(void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int *__thiscall CalculateBuildingFoundationBounds(int *this, BuildingTypeClass *aP1)
 {
   __int16 *v3; // eax
   int *FoundationSize; // eax
@@ -3230,7 +3207,6 @@ int *__thiscall CalculateBuildingFoundationBounds(int *this, BuildingTypeClass *
 // 0x471890
 namespace gamemd { int Gap2Recv_471890::SmallFunc_471890() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_471890(int this)
 {
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x471893*/
@@ -3268,7 +3244,6 @@ void sub_471890(int this)
 // 0x47BDB0
 namespace gamemd { int Gap2Recv_47BDB0::GetBridgeCellColor(char* a2, char a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void GetBridgeCellColor(int this, _BYTE *a2, char a3)
 {
   int RadarColor; // eax
   BombClass *v13; // ecx
@@ -3366,7 +3341,6 @@ LABEL_27:
 // 0x47C060
 namespace gamemd { char Gap2Recv_47C060::GetCellRadarColors(int a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void GetCellRadarColors(int this, int a2, int a3)
 {
   int RadarColor; // eax
   Gap2Recv_47C060 *v5; // ecx
@@ -3514,7 +3488,6 @@ LABEL_18:
 // 0x4838E0
 namespace gamemd { char Gap2Recv_4838E0::IsCoordValidMap(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void IsCoordValidMap(int this, ObjectClass *aP1)
 {
 
   if ( LayerClass::IsWithinUsableArea(&DataGlobal_87F7E8, (IUnknown *)(this + 36), (TechnoClass *)1) /*0x483905*/
@@ -3718,7 +3691,6 @@ retn
 // 0x49B930
 namespace gamemd { char Gap2Recv_49B930::UpdateScoreScreenStatistics() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void UpdateScoreScreenStatistics(int this)
 {
   wchar_t Destination[24]; // [esp+4h] [ebp-2E0h] BYREF
   int v40; // [esp+34h] [ebp-2B0h]
@@ -3829,7 +3801,6 @@ void UpdateScoreScreenStatistics(int this)
 // 0x49E740
 namespace gamemd { char Gap2Recv_49E740::SmallFunc_49E740(void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_49E740(int this, _DWORD *a2)
 {
   wchar_t *v5; // eax
   if ( !*(_BYTE *)(this + 96) ) /*0x49e743*/
@@ -3860,7 +3831,6 @@ void sub_49E740(int this, _DWORD *a2)
 // 0x4A3660
 namespace gamemd { int Gap2Recv_4A3660::RenderTactical3DScene(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_4A3660(_DWORD *this, int a2)
 {
   int result; // eax
   int i; // ebx
@@ -3974,7 +3944,6 @@ LABEL_13:
 // 0x4A42F0
 namespace gamemd { char InitializeDDraw(int a1, int a2, int a3, int a4) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall InitializeDDraw(int a1, ObjectClass *aP1, DWORD a3, DWORD a4)
 {
   INIClass *v5; // eax
   INIClass *v8; // eax
@@ -4071,7 +4040,6 @@ LABEL_7:
 // 0x4B5AB0
 namespace gamemd { int Gap2Recv_4B5AB0::SmallFunc_4B5AB0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_4B5AB0(int this)
 {
   LocomotionClass::Init((_DWORD *)this); /*0x4b5ab3*/
   *(_BYTE *)(this + 28) = 0; /*0x4b5abd*/
@@ -4088,7 +4056,6 @@ void sub_4B5AB0(int this)
 // 0x4C5370
 namespace gamemd { int Gap2Recv_4C5370::Helper_4C5370() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_4C5370(int this)
 {
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x4c5373*/
@@ -4107,7 +4074,6 @@ void sub_4C5370(int this)
 // 0x4C54E0
 namespace gamemd { int Gap2Recv_4C54E0::ApplyEMPPulseEffect(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ApplyEMPPulseEffect(int this, int a2)
 {
   int result; // eax
   int j; // edx
@@ -4372,7 +4338,6 @@ retn    8
 // 0x4CBC40
 namespace gamemd { void* Gap2Recv_4CBC40::WalkPathfindingLine(void* a2, int a3, void* a4, int a5, int a6) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int *__thiscall WalkPathfindingLine(int *this, int *a2, int a3, int *a4, int a5, int a6)
 {
   int v15; // eax
   int v16; // edi
@@ -4652,7 +4617,6 @@ retn
 // 0x4DC340
 namespace gamemd { char Gap2Recv_4DC340::DrawFootTargetLine() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void DrawFootTargetLine(int *this)
 {
   int *TargetCoords; // eax
   int v5; // eax
@@ -4955,7 +4919,6 @@ retn    8
 // 0x4FD9A0
 namespace gamemd { int Gap2Recv_4FD9A0::ValidateAIBuildAffordability() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ValidateAIBuildAffordability(int this)
 {
   _DWORD *v10; // edx
   int v11; // eax
@@ -5176,7 +5139,6 @@ retn    4
 // 0x507B80
 namespace gamemd { int Gap2Recv_507B80::CollectSuperWeaponBuildingTypes(int a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CollectSuperWeaponBuildingTypes(_DWORD *this, int a2, VectorClass *aP2)
 {
   _DWORD *v8; // ebx
   int v9; // eax
@@ -5295,7 +5257,6 @@ void CollectSuperWeaponBuildingTypes(_DWORD *this, int a2, VectorClass *aP2)
 // 0x50BA00
 namespace gamemd { long long Gap2Recv_BA00::ComputeSessionColorVector() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-__int64 __thiscall ComputeSessionColorVector(unsigned __int8 *this)
 {
   double v3; // st7
   unsigned __int8 v5; // c0
@@ -5367,7 +5328,6 @@ __int64 __thiscall ComputeSessionColorVector(unsigned __int8 *this)
 // 0x50D6D0
 namespace gamemd { short Gap2Recv_50D6D0::SelectSimilarBuildingTypes(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-__int16 __thiscall SelectSimilarBuildingTypes(void *this, int a2)
 {
   int i; // eax
   _DWORD *v4; // esi
@@ -5562,7 +5522,6 @@ retn
 // 0x515ED0
 namespace gamemd { void Gap2Recv_515ED0::UpdateFootFacing() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void UpdateFootFacing(int this)
 {
   IUnknown *v3; // edi
   _DWORD *Value; // eax
@@ -5762,7 +5721,6 @@ namespace gamemd { bool Gap2Recv_5176C0::WinMain_Helper() {
 // 0x518D80
 namespace gamemd { int Gap2Recv_518D80::CalculateLocomotionFrameIndex() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CalculateLocomotionFrameIndex(int *this)
 {
   __int16 *v3; // eax
   AbstractClass *v4; // esi
@@ -6188,7 +6146,6 @@ namespace gamemd { char Gap2Recv_5202F0::ProcessTechnoSquadResponse() {
 // 0x5206B0
 namespace gamemd { void Gap2Recv_5206B0::FireTechnoAtTarget() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void FireTechnoAtTarget(int this)
 {
   TechnoClass *v2; // eax
   ObjectClass *v3; // edi
@@ -6372,7 +6329,6 @@ LABEL_46:
 // 0x5272B0
 namespace gamemd { char* Gap2Recv_5272B0::LookupCSFString(char* a2, char* Destination, int Count) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned __int8 *__thiscall LookupCSFString(_DWORD *this, unsigned __int8 *a2, char *Destination, int Count)
 {
   unsigned __int8 *v8; // edi
   unsigned int *inited; // eax
@@ -7137,7 +7093,6 @@ retn    8
 // 0x54BD30
 namespace gamemd { int Gap2Recv_54BD30::UpdateFootMoveToState() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void UpdateFootMoveToState(int this)
 {
   int result; // eax
 
@@ -7244,7 +7199,6 @@ LABEL_19:
 // 0x54F530
 namespace gamemd {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Event_Process(_BYTE *this, CCINIClass *aP1)
 {
   char result; // al
 
@@ -7507,7 +7461,6 @@ retn    8
 // 0x569760
 namespace gamemd { void Gap2Recv_569760::DestroyCliffMap(int a2, int a3, void* a4) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void DestroyCliffMap(int *this, int a2, int a3, IUnknown *aP3)
 {
   ObjectClass *v6; // eax
   AbstractClass *v7; // edi
@@ -8135,7 +8088,6 @@ namespace gamemd { int Gap2Recv_56A080::PlaceTerrainCliffsRegion() {
 // 0x56A4C0
 namespace gamemd { void Gap2Recv_56A4C0::FlattenCliffMap(void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __userpurge FlattenCliffMap(int *this@<ecx>, IUnknown aP0)
 {
   __int16 v7; // cx
   __int16 v15; // ax
@@ -8347,7 +8299,6 @@ void __userpurge FlattenCliffMap(int *this@<ecx>, IUnknown aP0)
 // 0x56A980
 namespace gamemd { void Gap2Recv_56A980::RepairMapCliff(void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __userpurge RepairMapCliff(int *this@<ecx>, IUnknown aP0)
 {
   __int16 v7; // cx
   __int16 v15; // ax
@@ -8599,7 +8550,6 @@ retn    4
 // 0x56DA10
 namespace gamemd { int Gap2Recv_56DA10::GetRegionMap(void* aP1, int a3, int a4) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void GetRegionMap(int *this, IUnknown *aP1, signed int a3, int a4)
 {
   IUnknown **i; // ecx
   IUnknown *v6; // eax
@@ -8978,7 +8928,6 @@ retn    0Ch
 // 0x57B870
 namespace gamemd { int Gap2Recv_57B870::Map_Create() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_57B870(_WORD *this)
 {
   int result; // eax
 
@@ -9087,7 +9036,6 @@ namespace gamemd { char Gap2Recv_57B990::Map_Create_57B990() {
 // 0x57CAB0
 namespace gamemd { int Gap2Recv_57CAB0::Map_Create_57CAB0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_57CAB0(_WORD *this)
 {
   int result; // eax
 
@@ -9197,7 +9145,6 @@ namespace gamemd { char Gap2Recv_57CBE0::Map_Create_57CBE0() {
 // 0x580BC0
 namespace gamemd { void* Gap2Recv_580BC0::FindMapSpawnCell(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall FindMapSpawnCell(_DWORD *this, FootClass *aP1)
 {
   ObjectClass *v8; // ecx
   IUnknown *v11; // eax
@@ -9543,7 +9490,6 @@ retn    4
 // 0x583C60
 namespace gamemd { int CollectMatchingTileCells(void* a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CollectMatchingTileCells(
         _DWORD *this,
         _WORD *a1,
         int a3,
@@ -10051,7 +9997,6 @@ namespace gamemd { char Gap2Recv_5840C0::CheckMapReachability(int a2, int a3, in
 // 0x584E50
 namespace gamemd { int Gap2Recv_584E50::UpdateCellConnectivityGraph(void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __userpurge UpdateCellConnectivityGraph@<eax>(int *this@<ecx>, IUnknown aP1)
 {
   ObjectClass *v3; // ecx
   int *v7; // edi
@@ -10744,7 +10689,6 @@ retn
 // 0x5868A0
 namespace gamemd { void Gap2Recv_5868A0::UpdateAreaConnectivityMap(void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void UpdateAreaConnectivityMap(int *this, IUnknown *aP1)
 {
   void **v10; // [esp+Ch] [ebp-18h] BYREF
   void *Block; // [esp+10h] [ebp-14h]
@@ -12475,7 +12419,6 @@ namespace gamemd { void Gap2Recv_594870::PlaceRandomWaypoints(int a2) {
 // 0x595400
 namespace gamemd { char Gap2Recv_595400::PlaceNeutralBuilding() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void PlaceNeutralBuilding(_DWORD *this)
 {
   int Owner; // ebp
   __int16 v12; // dx
@@ -12903,7 +12846,6 @@ namespace gamemd { char Gap2Recv_5A1FB0::SpreadMapSeedTerrainFromWaypoints() {
 // 0x5A2F50
 namespace gamemd { void Gap2Recv_5A2F50::SmoothTerrainMap() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Map_SmoothTerrain(int *this)
 {
   __int16 v6; // cx
   __int16 v7; // ax
@@ -13095,7 +13037,6 @@ LABEL_52:
 // 0x5A35F0
 namespace gamemd { int Gap2Recv_5A35F0::GenerateTerrainHeightMap() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void GenerateTerrainHeightMap(int *this)
 {
   __int16 *v3; // esi
   int BitLCW; // edi
@@ -13242,7 +13183,6 @@ LABEL_21:
 // 0x5A82E0
 namespace gamemd { void Gap2Recv_5A82E0::ScatterMapSeedBuildings(void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MapSeed_PlaceBuildingsScatter(_DWORD *this, __int16 *a2)
 {
   __int16 *v3; // edi
   char **v7; // esi
@@ -13448,7 +13388,6 @@ LABEL_47:
 // 0x5A95B0
 namespace gamemd { void* Gap2Recv_5A95B0::PlaceRandomAIBuildings() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-CCINIClass *__thiscall PlaceRandomAIBuildings(_DWORD *this)
 {
   CCINIClass *result; // eax
   CCINIClass *v3; // edi
@@ -13879,7 +13818,6 @@ namespace gamemd { int ReadMPMapsINI(char* Source) {
 // 0x5C80A0
 namespace gamemd { int Gap2Recv_5C80A0::ComputeModularInverse(void* a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ComputeModularInverse(int *this, _WORD *a2, int a3)
 {
   __int16 v22; // ax
   __int16 v23; // bx
@@ -14428,7 +14366,6 @@ retn    8
 // 0x5D4430
 namespace gamemd { int Gap2Recv_5D4430::SyncFrameCounter() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_5D4430(char *this)
 {
 
   int v2 = 0; /*0x5d4435*/
@@ -14497,7 +14434,6 @@ LABEL_13:
 // 0x5D6D80
 namespace gamemd { char Gap2Recv_5D6D80::ComputeMultiEngineerAdjustment() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ComputeMultiEngineerAdjustment(int *this)
 {
   HouseClass *v3; // eax
   RulesClass *v7; // ebp
@@ -15074,7 +15010,6 @@ namespace gamemd { char Gap2Recv_5EAE40::RefreshLobbyAll_Setup() {
 // 0x5EAEE0
 namespace gamemd { char Gap2Recv_5EAEE0::RefreshLobbyAll_Play_5EAEE0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-const wchar_t *__thiscall sub_5EAEE0(HWND this)
 {
   const wchar_t *result; // eax
   int v2; // ebp
@@ -15574,7 +15509,6 @@ namespace gamemd { int Gap2Recv_60B350::UI_Get_60B350() {
 // 0x60B420
 namespace gamemd { int Gap2Recv_60B420::UI_Get_60B420() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void UI_Get_60B420(HWND hWnd)
 {
   HWND Parent; // esi
   char GameSpeed; // bl
@@ -15660,7 +15594,6 @@ namespace gamemd { int Gap2Recv_60B550::UI_Get_60B550() {
 // 0x60B610
 namespace gamemd { int Gap2Recv_60B610::UI_Get_60B610() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void UI_Get_60B610(HWND hWnd)
 {
   HWND Parent; // esi
   char GameSpeed; // bl
@@ -16228,7 +16161,6 @@ retn    8
 // 0x62C6E0
 namespace gamemd { void ParticleClass::Update() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void UpdateParticleSystem(void *this)
 {
   MouseClass *v3; // eax
   IUnknown *v4; // eax
@@ -16376,7 +16308,7 @@ LABEL_31:
   Coord::Subtract(v40, v15, aP2c, v25); /*0x62ca5d*/
   (*(void (__thiscall **)(void *, _DWORD *))(*(_DWORD *)this + 436))(this, v40); /*0x62ca6c*/
   v31 = COERCE_FLOAT(Random::Range(&g_ScenarioClass_Instance->random[1], 0, (IUnknown *)0x7FFFFFFE)); /*0x62ca8b*/
-  int v16 = this->q02B; /*0x62ca8f*/
+  bool v16 = this->q02B; /*0x62ca8f*/
   double v17 = (double)SLODWORD(v31) * 4.656612877414201e-10 * 0.05 + *(double *)(v16 + 688) + this->q017; /*0x62caab*/
   this->q017 = v17; /*0x62cab1*/
   if ( v17 > 1.0 ) /*0x62cac2*/
@@ -16400,7 +16332,6 @@ LABEL_31:
 // 0x62CB10
 namespace gamemd { void Gap2Recv_62CB10::UpdateAreaDamageEffect() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void UpdateAreaDamageEffect(unsigned __int16 *this)
 {
 
   if ( *((float *)this + 57) <= 0.0 ) /*0x62cb30*/
@@ -16551,7 +16482,6 @@ namespace gamemd { int Gap2Recv_62E430::CreateFireAtSW(int a2, void* a3) {
 // 0x62E840
 namespace gamemd { char Gap2Recv_62E840::UpdateProductionParticleSystem() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void UpdateProductionParticleSystem(int this)
 {
   AbstractClass *v4; // edi
   AbstractClass *v11; // eax
@@ -16792,7 +16722,6 @@ LABEL_34:
 // 0x62ED40
 namespace gamemd { void Gap2Recv_62ED40::UpdateBuildingParticleSystem() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void UpdateBuildingParticleSystem(_DWORD *this)
 {
   int i; // edi
   int uniqueId; // ebx
@@ -17001,7 +16930,6 @@ LABEL_30:
 // 0x62F9A0
 namespace gamemd { char Gap2Recv_62F9A0::UpdateBuildingDamageParticles() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void UpdateBuildingDamageParticles(char *this)
 {
   int i; // ebx
   ParticleClass *v3; // edi
@@ -17146,7 +17074,6 @@ LABEL_13:
 // 0x630EA0
 namespace gamemd { char Gap2Recv_630EA0::UI_Get_630EA0() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_630EA0(int this)
 {
   HWND DlgItem; // eax
   HWND v3; // eax
@@ -17216,7 +17143,6 @@ LABEL_17:
 // 0x631380
 namespace gamemd { void* Gap2Recv_631380::UI_Pop() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_631380(int this)
 {
   _DWORD *result; // eax
   size_t v4; // eax
@@ -17299,7 +17225,6 @@ LABEL_13:
 // 0x631500
 namespace gamemd { void Gap2Recv_631500::UI_Pop_631500() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_631500(int this)
 {
   HWND DlgItem; // eax
   void **v6; // edx
@@ -17817,7 +17742,6 @@ retn
 // 0x63C690
 namespace gamemd { int Gap2Recv_63C690::RenderScenarioActionLines() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ScenarioClass_RenderActionLines(int this)
 {
   int *Coords; // eax
   int *ActionCoordsCopy; // eax
@@ -17993,7 +17917,6 @@ LABEL_17:
 // 0x63CAE0
 namespace gamemd { int Gap2Recv_63CAE0::RenderScenarioActionLines2() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void RenderScenarioActionLines2(int this)
 {
   int *Coords; // eax
   int *ActionCoordsCopy; // eax
@@ -18447,7 +18370,6 @@ namespace gamemd { void* Gap2Recv_63EFB0::Object_Set(int a2, int a3) {
 // 0x641B00
 namespace gamemd { char Gap2Recv_641B00::LoadMapPreviewImage(void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void LoadMapPreviewImage(char **this, _DWORD *a2)
 {
   size_t v10; // edi
   int Base64DataINIClass; // edi
@@ -19961,7 +19883,6 @@ namespace gamemd { void* Gap2Recv_65C6D0::SeedInitRNG(int aP1) {
 // 0x65DD30
 namespace gamemd { void* Gap2Recv_65DD30::ConstructTeamMembers() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-AbstractClass *__thiscall ConstructTeamMembers(int this)
 {
   TeamClass *v2; // esi
   AbstractClass *OwnerHouse; // eax
@@ -20235,7 +20156,6 @@ namespace gamemd { void* Gap2Recv_65FB80::Team_Load_65FB80(int a2, int a3) {
 // 0x65FE00
 namespace gamemd { void Gap2Recv_65FE00::Map_Helper_65FE00() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_65FE00(_BYTE *this)
 {
   float FlashFrameTime; // [esp+4h] [ebp-10h]
 
@@ -20320,7 +20240,6 @@ LABEL_8:
 // 0x660050
 namespace gamemd { char Gap2Recv_660050::RenderGradientTrapezoid() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void RenderGradientTrapezoid(float *this)
 {
   __int16 v2; // ax
   char v3; // cl
@@ -20954,7 +20873,6 @@ retn    4
 // 0x6686C0
 namespace gamemd { int RulesClass::ResetRules() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ResetRules(RulesClass *this)
 {
   ColorScheme *v2; // edi
   CCINIClass *KeyCount; // ebx
@@ -22824,7 +22742,6 @@ retn    4
 // 0x681840
 namespace gamemd { int Gap2Recv_681840::ScenarioPropertyReadCOM(void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_681840(int this, int a2)
 {
   int (__stdcall **v4)(int, void *, int *); // eax
   int Scenario; // esi
@@ -23250,7 +23167,6 @@ namespace gamemd { int Gap2Recv_68C860::LoadTheaterClassMIX_Load(void* a2, int a
 // 0x68FBB0
 namespace gamemd { int Gap2Recv_68FBB0::RenderScoreTypeText(int a2, int a3, int a4) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void RenderScoreTypeText(int this, int a2, int a3, ScoreScreen *aP3)
 {
   int i; // edi
   int j; // edi
@@ -23487,7 +23403,6 @@ LABEL_46:
 // 0x68FFE0
 namespace gamemd { int Gap2Recv_68FFE0::Render_Render_68FFE0(int a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-signed int __thiscall Render_Render_68FFE0(_DWORD *this, int a2, ScoreScreen *aP2)
 {
   signed int result; // eax
   char *v10; // [esp+28h] [ebp-18h]
@@ -23607,7 +23522,6 @@ namespace gamemd { int Gap2Recv_692290::SmallFunc_692290() {
 // 0x693440
 namespace gamemd { char Gap2Recv_693440::ScrollMapEdge(void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Map_EdgeScroll(int *this, _DWORD *a2)
 {
   char result; // al
   int SystemMetrics; // ecx
@@ -23804,7 +23718,6 @@ LABEL_51:
 // 0x695BC0
 namespace gamemd { char Gap2Recv_695BC0::ApplyModemConfigSettings() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ModemConfig_ApplySettings(int this)
 {
   HWND DlgItem; // eax
   HWND v3; // esi
@@ -23957,7 +23870,6 @@ LABEL_10:
 // 0x696200
 namespace gamemd { int Gap2Recv_696200::InitializeModemPortSelect() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-HWND __thiscall InitializeModemPortSelect(int this)
 {
   HWND result; // eax
   HWND v3; // esi
@@ -24089,7 +24001,6 @@ LABEL_25:
 // 0x6967B0
 namespace gamemd { int Gap2Recv_6967B0::DlgProcLoadGame_Load() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-HWND __thiscall DlgProcLoadGame_Load(int this)
 {
   ObjectClass *DlgItem; // ebx
   HWND result; // eax
@@ -24684,7 +24595,6 @@ namespace gamemd { void* Gap2Recv_69D870::ParseAndApplyAlliances_Parse(int a2, i
 // 0x69E430
 namespace gamemd { int LoadSHPFile(int lpBuffer, char* Source) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-CampaignScore *__thiscall LoadSHPFile(void *lpBuffer, char *Source)
 {
 
   *((_DWORD *)lpBuffer + 5) = (*(_DWORD *)&stru_830620[62032])++; /*0x69e440*/
@@ -25869,7 +25779,6 @@ namespace gamemd { void* Gap2Recv_6C9900::Render_Parse() {
 // 0x6C9F10
 namespace gamemd { int Gap2Recv_6C9F10::ParseMovieSubtitles(char* Source) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ParseMovieSubtitles(char *this, char *Source)
 {
   wchar_t *v4; // esi
   size_t v5; // eax
@@ -26198,7 +26107,6 @@ namespace gamemd { int Gap2Recv_6D3290::DrawBuildingAnimFrame(void* a2, void* a3
 // 0x6D3470
 namespace gamemd { int Gap2Recv_6D3470::DrawBuildingShadow(void* a2, void* a3, char a4) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void DrawBuildingShadow(_DWORD *this, IUnknown *aP1, AbstractClass *aP2, char a4)
 {
   IUnknown *v5; // ecx
   int result; // eax
@@ -26288,7 +26196,6 @@ LABEL_9:
 // 0x6D5730
 namespace gamemd { int Gap2Recv_6D5730::RenderBridgeRadarBlips(char a2, void* a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void RenderBridgeRadarBlips(_DWORD *this, AbstractClass *aP1, AbstractClass *aP2)
 {
   int result; // eax
   __int16 v8; // dx
@@ -26403,7 +26310,6 @@ LABEL_15:
 // 0x6D5C50
 namespace gamemd { int Gap2Recv_6D5C50::RenderRadarBlips(char a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void RenderRadarBlips(_DWORD *this, char a2, AbstractClass *aP2)
 {
   int result; // eax
   __int16 v8; // ax
@@ -26753,7 +26659,6 @@ namespace gamemd { char* Gap2Recv_6DA9D0::RenderSelectionBeacons(int a2) {
 // 0x6DAD60
 namespace gamemd { int Gap2Recv_6DAD60::RenderRallyPointLines(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __userpurge RenderRallyPointLines@<eax>(_DWORD *this@<ecx>, CampaignScore *a2@<ebp>, int a3)
 {
   CampaignScore *v3; // ebx
   int result; // eax
@@ -27349,7 +27254,6 @@ namespace gamemd { int Gap2Recv_6E5FE0::SaveTriggerTagsToINI() {
 // 0x6E7330
 namespace gamemd { int Gap2Recv_6E7330::System_Read_6E7330() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_6E7330(_BYTE *this)
 {
   #374 *v5; // edi
   int v6; // esi
@@ -27587,7 +27491,6 @@ namespace gamemd { void Gap2Recv_6EA0D0::SelectTeamProductionBuilding() {
 // 0x6ED200
 namespace gamemd { char Gap2Recv_6ED200::AssignTeamProductionFacilities(int a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void AssignTeamProductionFacilities(int **this, ScriptClass *aP1, int a3)
 {
   int health; // eax
   TechnoClass *v4; // esi
@@ -27763,7 +27666,6 @@ LABEL_17:
 // 0x6EE800
 namespace gamemd { char Gap2Recv_6EE800::SelectTeamMembers(int a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void SelectTeamMembers(_DWORD *this, ScriptClass *aP1, int a3)
 {
   FootClass *v24; // eax
   char result; // al
@@ -27967,7 +27869,6 @@ LABEL_27:
 // 0x6EF110
 namespace gamemd { char Gap2Recv_6EF110::DispatchTeamOrders(int a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void DispatchTeamOrders(ObjectClass **this, int a2, int a3)
 {
   ObjectClass **v3; // ebx
   ObjectClass *v4; // esi
@@ -28601,7 +28502,6 @@ namespace gamemd { int Gap2Recv_6FD800::SpreadRadiationAreaEffect(short a2) {
 // 0x706BD0
 namespace gamemd { int QueueTechnoVoiceLine(void* a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void QueueTechnoVoiceLine(
         int *this,
         TechnoClass *aP1,
         TechnoClass *aP2,
@@ -28793,19 +28693,6 @@ LABEL_16:
 // 0x707280
 namespace gamemd { void* RenderTechnoOverlaySHP(void* a1, int a2, int a3, int a4, void* a5, int a6, int a7, int a8, int a9, int a10, int a11) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void *__thiscall RenderTechnoOverlaySHP(
-        int *this,
-        TechnoClass *aP1,
-        int a3,
-        TechnoClass *aP3,
-        int a5,
-        TechnoClass *aP5,
-        TechnoClass *aP6,
-        int a8,
-        char a9,
-        TechnoClass *aP9,
-        TechnoClass *aP10,
-        int a12)
 {
   BSurface *v16; // eax
 
@@ -28994,7 +28881,6 @@ namespace gamemd { bool Gap2Recv_7087C0::ValidateAttackTarget(void* a2, int a3) 
 // 0x70E5A0
 namespace gamemd { int Gap2Recv_70E5A0::UpdateTechnoIdleTimer() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void UpdateTechnoIdleTimer(int *this)
 {
   int result; // eax
 
@@ -29483,7 +29369,6 @@ namespace gamemd { char Gap2Recv_721D10::SmallFunc_721D10() {
 // 0x722440
 namespace gamemd { void Gap2Recv_722440::PropagateCellOccupancy() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void PropagateCellOccupancy(int this)
 {
   Gap2Recv_722440 *v1; // ebx
   __int16 *v9; // eax
@@ -29664,7 +29549,6 @@ LABEL_52:
 // 0x722F00
 namespace gamemd { void Gap2Recv_722F00::RebuildBuildingOccupancy() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void RebuildBuildingOccupancy(int this)
 {
   __int16 *v9; // ebx
   __int16 *v23; // ebx
@@ -29835,7 +29719,6 @@ LABEL_48:
 // 0x724200
 namespace gamemd { void Gap2Recv_724200::HandleToolTipMessage(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HandleToolTipMessage(int this, int a2)
 {
 
   if ( *(_BYTE *)(this + 12) == 1 ) /*0x72420a*/
@@ -30349,7 +30232,6 @@ namespace gamemd { char Gap2Recv_734390::SelectFactionThemeMusic_Helper_734390(v
 // 0x736DF0
 namespace gamemd { int Gap2Recv_736DF0::UpdateTechnoFiring() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void UpdateTechnoFiring(#377 *this)
 {
   ObjectClass *v2; // edi
   int result; // eax
@@ -30503,7 +30385,6 @@ LABEL_52:
 // 0x737180
 namespace gamemd { int Gap2Recv_737180::UpdateInfantryIdleWander() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void UpdateInfantryIdleWander(int *this)
 {
   int result; // eax
   __int16 v10; // dx
@@ -30628,7 +30509,6 @@ LABEL_15:
 // 0x7436E0
 namespace gamemd { int Gap2Recv_7436E0::ReadFootINI() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_7436E0(char *this)
 {
   int result; // eax
   _DWORD *Value; // eax
@@ -30791,7 +30671,6 @@ namespace gamemd { int Gap2Recv_74CDB0::Helper_486E30_Helper() {
 // 0x74D7C0
 namespace gamemd { void VeinholeMonsterClass::UpdateVeinholeMonster() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void VeinholeMonsterClass::Update()
 {
   __int16 *v2; // ebp
   int VeinholeShrinkRate; // eax
@@ -31309,7 +31188,6 @@ namespace gamemd { void Gap2Recv_74E8A0::System_Init_74E8A0() {
 // 0x74EA70
 namespace gamemd { char Gap2Recv_74EA70::LoadVeinholeMonsters() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void LoadVeinholeMonsters(int *this)
 {
   int i; // edi
   size_t v4; // edi
@@ -34024,7 +33902,6 @@ namespace gamemd { void Gap2Recv_76CBF0::ConstructWDTSelection_Create_76CBF0(voi
 // 0x76CDA0
 namespace gamemd { void* Gap2Recv_76CDA0::ShowWDTTerritorySelection(void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-rc_ptr *__thiscall ShowWDTTerritorySelection(ObjectClass *this, _DWORD *a2)
 {
   int State; // eax
   wchar_t *StringCSF; // eax
@@ -34401,7 +34278,6 @@ namespace gamemd { void Gap2Recv_76E180::ShowWDTTerritorySelection_Show() {
 // 0x76E2F0
 namespace gamemd { char* Gap2Recv_76E2F0::Team_Start_76E2F0(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__userpurge Team_Start_76E2F0@<eax>(int this@<ecx>, ScoreScreen aP1)
 {
   int OwnerHouse; // eax
   ScoreScreen *v4; // ebp
@@ -34452,7 +34328,6 @@ char *__userpurge Team_Start_76E2F0@<eax>(int this@<ecx>, ScoreScreen aP1)
 // 0x76E430
 namespace gamemd { int Gap2Recv_76E430::Team_Start_76E430(int a2, void* aP2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Team_Start_76E430(int *this, int a2, ScoreScreen *aP2)
 {
   rc_ptr_base v8; // [esp+4h] [ebp-8h] BYREF
   ActivateScreenWDT((int)&v8, a2); /*0x76e449*/
@@ -34553,7 +34428,6 @@ namespace gamemd { void* Gap2Recv_76E750::Team_Start_76E750(int a2) {
 // 0x76E8B0
 namespace gamemd { bool Gap2Recv_76E8B0::Team_Start_76E8B0(int a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool __userpurge Team_Start_76E8B0@<al>(int *this@<ecx>, ScoreScreen aP2)
 {
   int ScoreScreen_field_0x04; // ebp
   int v9; // edi
@@ -35243,7 +35117,6 @@ namespace gamemd { int Gap2Recv_779F10::SavePersonaConfigWOL() {
 // 0x77A080
 namespace gamemd { void Gap2Recv_77A080::SaveProfileWOL(char* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void SaveProfileWOL(int this, ObjectClass *aP1)
 {
   CampaignScore *v3; // eax
   ObjectClass aP2; // [esp+8h] [ebp-ACh] BYREF
@@ -35458,7 +35331,6 @@ namespace gamemd { int Gap2Recv_77A8B0::Event_Process_77A8B0(int a2) {
 // 0x77A9F0
 namespace gamemd { void Gap2Recv_77A9F0::FillPersonaInfoWOL(int hDlg, char* a3, void* a4) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void FillPersonaInfoWOL(int this, HWND hDlg, ObjectClass *aP2, wchar_t **a3)
 {
   HWND v4; // ebx
   ObjectClass *DlgItem; // edi

@@ -3,10 +3,9 @@
 #include "e4/e4_globals.hpp"
 
 // 0x487F40
-BOOL Rect::Union(IUnknown * aP0, const RECT * lprcSrc1, const RECT * lprcSrc2)
+void Rect::Union(IUnknown * aP0, const RECT * lprcSrc1, const RECT * lprcSrc2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Rect::Union(IUnknown *aP0, const RECT *lprcSrc1, const RECT *lprcSrc2)
 {
   LPRECT lprcDst; // [esp+18h] [ebp+4h]
 

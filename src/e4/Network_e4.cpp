@@ -29,10 +29,9 @@
 
 // 0x4311C0
 namespace gamemd {
-char Network::SendBeaconDelete(int a2, int a3)
+void Network::SendBeaconDelete(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Network_SendBeaconDelete(int *this, int a2, int a3)
 {
 
   int v4 = this->q018; /*0x4311cc*/
@@ -161,10 +160,9 @@ LABEL_5:
 
 // 0x431450
 namespace gamemd {
-char Network::SendBeacon(CellStruct * aP1, int a3, int a4, char a5)
+void Network::SendBeacon(CellStruct * aP1, int a3, int a4, char a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Network::SendBeacon(CellStruct *aP1, int a3, int a4, char a5)
 {
   int v5; // eax
   int v6; // edi
@@ -316,10 +314,9 @@ LABEL_5:
 
 // 0x48D1E0
 namespace gamemd {
-char Network::Dispatch()
+void Network::Dispatch()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Network_Dispatch()
 {
   int i; // eax
   LPARAM *v8; // edi
@@ -657,10 +654,9 @@ LABEL_95:
 
 // 0x4C6C50
 namespace gamemd {
-char * Network::initConnection(int a2, unsigned int * a3, char a4)
+void * Network::initConnection(int a2, unsigned int * a3, char a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall sub_4C6C50(char *this, int a2, _DWORD *a3, char a4)
 {
 
   if ( a2 < 0 ) /*0x4c6c5c*/
@@ -689,10 +685,9 @@ char *__thiscall sub_4C6C50(char *this, int a2, _DWORD *a3, char a4)
 
 // 0x4FC980
 namespace gamemd {
-char Network::SendOffer()
+void Network::SendOffer()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Network_SendOffer(int this)
 {
   char result; // al
 
@@ -720,10 +715,9 @@ void Network_SendOffer(int this)
 
 // 0x52F3F0
 namespace gamemd {
-char Network::Init()
+void Network::Init()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Network_Init()
 {
 
   int v0 = g_NetworkInterface; /*0x52f3f0*/
@@ -809,10 +803,9 @@ void Network_Init()
 
 // 0x53ED60
 namespace gamemd {
-short Network::GetAddress(unsigned int * a1, ObjectClass * aP2, unsigned short * a3)
+void Network::GetAddress(unsigned int * a1, ObjectClass * aP2, unsigned short * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-__int16 __thiscall Network::GetAddress(_DWORD *this, _DWORD *a1, ObjectClass *aP2, _WORD *a3)
 {
   __int16 result; // ax
 
@@ -835,10 +828,9 @@ __int16 __thiscall Network::GetAddress(_DWORD *this, _DWORD *a1, ObjectClass *aP
 
 // 0x53EDA0
 namespace gamemd {
-char * Network::CopyAddress(unsigned int * a2, int a3)
+void * Network::CopyAddress(unsigned int * a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall Network_CopyAddress(_DWORD *this, _DWORD *a2, int a3)
 {
   char *result; // eax
 
@@ -854,10 +846,9 @@ char *__thiscall Network_CopyAddress(_DWORD *this, _DWORD *a2, int a3)
 
 // 0x53EE00
 namespace gamemd {
-int Network::IsBroadcastAddr()
+void Network::IsBroadcastAddr()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Network_IsBroadcastAddr(_BYTE *this)
 {
   if ( dword_828140 == 1 ) /*0x53ee0a*/
   {
@@ -891,10 +882,9 @@ void Network_IsBroadcastAddr(_BYTE *this)
 
 // 0x53EF60
 namespace gamemd {
-bool Network::processPacket(TechnoTypeClass * aP1)
+void Network::processPacket(TechnoTypeClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Network::processPacket(TechnoTypeClass *aP1)
 {
 
   if ( dword_828140 == 2 ) /*0x53ef6d*/
@@ -939,10 +929,9 @@ void Network::processPacket(TechnoTypeClass *aP1)
 
 // 0x53F5B0
 namespace gamemd {
-int sub_53F5B0()
+void sub_53F5B0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_53F5B0()
 {
   if ( g_NetworkInterface ) /*0x53f5b8*/
     (*(void (__thiscall **)(int))(*(_DWORD *)g_NetworkInterface + 32))(g_NetworkInterface); /*0x53f5bc*/
@@ -957,7 +946,6 @@ namespace gamemd {
 int sub_53F830(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_53F830(int a1, int a2)
 {
   (*(void (__thiscall **)(int, int, int, _DWORD))(*(_DWORD *)g_NetworkInterface + 16))(g_NetworkInterface, a1, a2, 0); /*0x53f83f*/
   return 1; /*0x53f847*/
@@ -967,10 +955,9 @@ int __fastcall sub_53F830(int a1, int a2)
 
 // 0x540C60
 namespace gamemd {
-int Network::SetConnectionParams(IUnknown * aP1, int a3, int a4, CellStruct * aP4)
+void Network::SetConnectionParams(IUnknown * aP1, int a3, int a4, CellStruct * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Network::SetConnectionParams(IUnknown *aP1, int a3, int a4, CellStruct *aP4)
 {
   int result; // eax
 
@@ -1011,10 +998,9 @@ void Network::SetConnectionParams(IUnknown *aP1, int a3, int a4, CellStruct *aP4
 
 // 0x540F00
 namespace gamemd {
-int Network::sendData(AnimClass * aP1)
+void Network::sendData(AnimClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Network::sendData(int this, AnimClass *aP1)
 {
   int i; // eax
   void (__thiscall ***v7)(_DWORD, int); // ecx
@@ -1059,10 +1045,9 @@ void Network::sendData(int this, AnimClass *aP1)
 
 // 0x540F90
 namespace gamemd {
-int Network::GetSendCount()
+void Network::GetSendCount()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Network_GetSendCount(_DWORD *this)
 {
   return this->q044; /*0x540f93*/
 }
@@ -1071,10 +1056,9 @@ void Network_GetSendCount(_DWORD *this)
 
 // 0x540FA0
 namespace gamemd {
-int Network::GetConnectionSpeed(CellStruct * aP1)
+void Network::GetConnectionSpeed(CellStruct * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Network::GetConnectionSpeed(CellStruct *aP1)
 {
   if ( (int)aP1 < 0 || (int)aP1 >= this->q044 ) /*0x540fab*/
     return -1; /*0x540fb7*/
@@ -1086,10 +1070,9 @@ void Network::GetConnectionSpeed(CellStruct *aP1)
 
 // 0x540FC0
 namespace gamemd {
-int Network::GetClass(int a2)
+void Network::GetClass(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Network_GetClass(int *this, int a2)
 {
   _DWORD *i; // edx
 
@@ -1109,10 +1092,9 @@ void Network_GetClass(int *this, int a2)
 
 // 0x541000
 namespace gamemd {
-int Network::FindPlayerByID(DynamicVector * aP1)
+void Network::FindPlayerByID(DynamicVector * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Network::FindPlayerByID(DynamicVector *aP1)
 {
   int *i; // edx
 
@@ -1132,10 +1114,9 @@ void Network::FindPlayerByID(DynamicVector *aP1)
 
 // 0x5410F0
 namespace gamemd {
-int Network::SendMessage(int a2, int a3, int a4, int a5, int a6, int a7)
+void Network::SendMessage(int a2, int a3, int a4, int a5, int a6, int a7)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Network_SendMessage(int this, int a2, int a3, int a4, int a5, int a6, int a7)
 {
 
   if ( !(unsigned char)this->Network_field_0x4 || !this->q014 ) /*0x5410fa*/
@@ -1165,10 +1146,9 @@ void Network_SendMessage(int this, int a2, int a3, int a4, int a5, int a6, int a
 
 // 0x541260
 namespace gamemd {
-int Network::SendToPlayer(int a2, int a3, int a4, wchar_t * String2)
+void Network::SendToPlayer(int a2, int a3, int a4, wchar_t * String2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Network_SendToPlayer(int this, int a2, int a3, int a4, wchar_t *String2)
 {
 
   if ( Game_PlayerCount && !_wcsicmp(*(const wchar_t **)Game_PlayerInfoArray, String2) ) /*0x54127e*/
@@ -1217,10 +1197,9 @@ void Network_SendToPlayer(int this, int a2, int a3, int a4, wchar_t *String2)
 
 // 0x541370
 namespace gamemd {
-int Network::Send(int a2, int a3, TechnoTypeClass * aP3, int a5)
+void Network::Send(int a2, int a3, TechnoTypeClass * aP3, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Network::Send(int this, int a2, int a3, TechnoTypeClass *aP3, int a5)
 {
   if ( (unsigned char)this->Network_field_0x4 && this->q014 ) /*0x541377*/
     return (*(int (__thiscall **)(_DWORD, int, int, TechnoTypeClass *, int))(*this->q048 + 52))( /*0x541397*/
@@ -1237,10 +1216,9 @@ void Network::Send(int this, int a2, int a3, TechnoTypeClass *aP3, int a5)
 
 // 0x5413B0
 namespace gamemd {
-int Network::SendPacketThunk(int a2, int a3, int a4, int a5, int a6, int a7)
+void Network::SendPacketThunk(int a2, int a3, int a4, int a5, int a6, int a7)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Network::SendPacketThunk(int this, int a2, int a3, int a4, int a5, int a6, int a7)
 {
   if ( (unsigned char)this->Network_field_0x4 && this->q014 ) /*0x5413b7*/
     return (*(int (__thiscall **)(_DWORD, int, int, int, int, int, int))(*this->q048 + 56))( /*0x5413e1*/
@@ -1259,10 +1237,9 @@ void Network::SendPacketThunk(int this, int a2, int a3, int a4, int a5, int a6, 
 
 // 0x5413F0
 namespace gamemd {
-char Network::receiveData(int a2)
+void Network::receiveData(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_5413F0(int this, int a2)
 {
   char result; // al
 
@@ -1280,10 +1257,9 @@ void sub_5413F0(int this, int a2)
 
 // 0x541410
 namespace gamemd {
-int Network::SendPacket(int a2, int a3, unsigned char a4)
+void Network::SendPacket(int a2, int a3, unsigned char a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Network_SendPacket(int this, int a2, int a3, unsigned __int8 a4)
 {
 
   if ( !(unsigned char)this->Network_field_0x4 ) /*0x541413*/
@@ -1306,10 +1282,9 @@ void Network_SendPacket(int this, int a2, int a3, unsigned __int8 a4)
 
 // 0x541480
 namespace gamemd {
-int Network::SendPacketThunk2(int a2, int a3, int a4, int a5)
+void Network::SendPacketThunk2(int a2, int a3, int a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Network::SendPacketThunk2(int this, int a2, int a3, int a4, int a5)
 {
   if ( (unsigned char)this->Network_field_0x4 && this->q014 ) /*0x541487*/
     return (*(int (__thiscall **)(_DWORD, int, int, int, int))(*this->q04C + 52))( /*0x5414a7*/
@@ -1329,7 +1304,6 @@ namespace gamemd {
 void * Network::ReceiveLoop()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void *__thiscall Network::ReceiveLoop(_DWORD *this)
 {
   __int16 v12; // ax
   __int16 v13; // bp
@@ -1782,10 +1756,9 @@ LABEL_92:
 
 // 0x5422D0
 namespace gamemd {
-int Network::GetQueueCount()
+void Network::GetQueueCount()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Network_GetQueueCount(int this)
 {
   if ( (unsigned char)this->Network_field_0x4 && this->q014 ) /*0x5422d7*/
     return *(_DWORD *)(*(_DWORD *)(this->Network_field_0x48 + 4) + 40); /*0x5422e4*/
@@ -1797,10 +1770,9 @@ void Network_GetQueueCount(int this)
 
 // 0x5424C0
 namespace gamemd {
-int Network::GetLobbyStatus()
+void Network::GetLobbyStatus()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Network_GetLobbyStatus(_DWORD *this)
 {
 
   int v1 = this->q048; /*0x5424c0*/
@@ -1814,10 +1786,9 @@ void Network_GetLobbyStatus(_DWORD *this)
 
 // 0x542500
 namespace gamemd {
-int Network::updateLatency()
+void Network::updateLatency()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_542500(_DWORD *this)
 {
 
   int v1 = this->q050; /*0x542500*/
@@ -1834,7 +1805,6 @@ namespace gamemd {
 unsigned int * Network::SetPlayerCoords(IPXManagerClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall Network::SetPlayerCoords(_DWORD *this, IPXManagerClass *aP1)
 {
   _DWORD *result; // eax
 
@@ -1852,10 +1822,9 @@ _DWORD *__thiscall Network::SetPlayerCoords(_DWORD *this, IPXManagerClass *aP1)
 
 // 0x543080
 namespace gamemd {
-int Network::Disconnect()
+void Network::Disconnect()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Network_Disconnect(_DWORD *this)
 {
   int result; // eax
 
@@ -1869,10 +1838,9 @@ void Network_Disconnect(_DWORD *this)
 
 // 0x5BCC40
 namespace gamemd {
-int Network::validateConnection(int a2, int a3)
+void Network::validateConnection(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_5BCC40(_DWORD *this, int a2, int a3)
 {
   this->q271C = a2; /*0x5bcc48*/
   this->q2720 = a3; /*0x5bcc4e*/
@@ -1883,10 +1851,9 @@ void sub_5BCC40(_DWORD *this, int a2, int a3)
 
 // 0x5C46E0
 namespace gamemd {
-int Network::SetupRematch()
+void Network::SetupRematch()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_5C46E0(int this)
 {
   wchar_t *v10; // esi
   int ConnectionSpeed; // eax
@@ -2085,10 +2052,9 @@ LABEL_35:
 
 // 0x5D93D0
 namespace gamemd {
-int Network::dispatchEvent()
+void Network::dispatchEvent()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_5D93D0(_DWORD *this)
 {
   int result; // eax
 
@@ -2110,10 +2076,9 @@ void sub_5D93D0(_DWORD *this)
 
 // 0x5D9410
 namespace gamemd {
-int Network::ResolveAndConnect(unsigned char * a2)
+void Network::ResolveAndConnect(unsigned char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Network_ResolveAndConnect(int *this, _BYTE *a2)
 {
   struct hostent *v9; // eax
   bool v20; // sf
@@ -2654,7 +2619,6 @@ namespace gamemd {
 unsigned short Network::ResolveNetworkAddress(unsigned short a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Network_ResolveAddress(int *this, unsigned __int16 a2)
 {
   __int16 v4; // bx
   struct hostent *v5; // eax
@@ -2790,10 +2754,9 @@ LABEL_19:
 
 // 0x5E2BA0
 namespace gamemd {
-int Network::processQueue()
+void Network::processQueue()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_5E2BA0(_BYTE *this)
 {
   int result; // eax
   HouseClass *v2; // esi
@@ -2819,10 +2782,9 @@ void sub_5E2BA0(_BYTE *this)
 
 // 0x5E2BE0
 namespace gamemd {
-int Network::CountDisconnectedHouses()
+void Network::CountDisconnectedHouses()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void NetworkLobby_ShowError(void *this)
 {
 
   int v1 = HouseClass_Count; /*0x5e2be3*/
@@ -2877,10 +2839,9 @@ LABEL_20:
 
 // 0x5EF4E0
 namespace gamemd {
-int Network_ModemConnectionDialog()
+void Network_ModemConnectionDialog()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-ObjectClass *__usercall Network::ModemConnectionDialog@<eax>(_DWORD *a1@<ebp>, int a2@<edi>)
 {
   ObjectClass *v0; // ebx
   LONG v4; // eax
@@ -3340,10 +3301,9 @@ LABEL_121:
 
 // 0x630B90
 namespace gamemd {
-int Network_resetConnectionState()
+void Network_resetConnectionState()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool __usercall Network::resetConnectionState@<al>(LONG dwNewLong@<ecx>, int a2@<ebx>, int a3@<ebp>)
 {
   HWND Dialog; // eax
 
@@ -3373,11 +3333,10 @@ bool __usercall Network::resetConnectionState@<al>(LONG dwNewLong@<ecx>, int a2@
 
 // 0x643C50
 namespace gamemd {
-int Network_UpdateLatencyDisplay()
+void Network_UpdateLatencyDisplay()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // local variable allocation has failed, the output may be wrong!
-void Network::UpdateLatencyDisplay(ProgressScreenClass *aP1, ProgressScreenClass *aP2, ProgressScreenClass *aP3)
 {
   void (__thiscall ***v15)(_DWORD, int, _DWORD *); // ecx
   HWND v16; // eax
@@ -3438,7 +3397,6 @@ namespace gamemd {
 int sub_646D70()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_646D70()
 {
   int result; // eax
 
@@ -3451,10 +3409,9 @@ int sub_646D70()
 
 // 0x6471A0
 namespace gamemd {
-char Network::AddFrameEvent()
+void Network::AddFrameEvent()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Network_AddFrameEvent()
 {
   unsigned __int8 v2; // [esp+0h] [ebp-74h]
   v2 = 19; /*0x6471a8*/
@@ -3483,7 +3440,6 @@ namespace gamemd {
 void Network::QueueProcessingLoop()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Network::QueueProcessingLoop()
 {
   CellStruct *v0; // eax
   char *v1; // ebp
@@ -4122,10 +4078,9 @@ LABEL_162:
 
 // 0x64AC90
 namespace gamemd {
-int Network::syncGameState()
+void Network::syncGameState()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_64AC90(_BYTE *this)
 {
   int result; // eax
 
@@ -4154,10 +4109,9 @@ void sub_64AC90(_BYTE *this)
 
 // 0x64C380
 namespace gamemd {
-int Network::ProcessEventList(int a1, int * a2, int a3)
+void Network::ProcessEventList(int a1, int * a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Network::ProcessEventList(int a1, int *a2, int a3)
 {
   IUnknown *v3; // ebx
   IUnknown *v4; // edi
@@ -4581,10 +4535,9 @@ LABEL_95:
 
 // 0x6521C0
 namespace gamemd {
-char Network::RecordEvent(long long a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, int a18, int a19, int a20, int a21, int a22, int a23, int a24, int a25, int a26, int a27)
+void Network::RecordEvent(long long a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, int a18, int a19, int a20, int a21, int a22, int a23, int a24, int a25, int a26, int a27)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Network_RecordEvent(
         __int64 a1,
         int a2,
         int a3,
@@ -4632,10 +4585,9 @@ void Network_RecordEvent(
 
 // 0x6523A0
 namespace gamemd {
-int Network::SendUnreachable()
+void Network::SendUnreachable()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Network_SendUnreachable()
 {
   int result; // eax
   int QueueCount; // edi
@@ -4702,7 +4654,6 @@ namespace gamemd {
 void Network::validatePacket()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_663910(int this)
 {
 
   while ( this->Network_field_0x10 ) /*0x663916*/
@@ -4729,10 +4680,9 @@ void sub_663910(int this)
 
 // 0x6639D0
 namespace gamemd {
-char Network::SendMasterPlayerList()
+void Network::SendMasterPlayerList()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Network_SendMasterPlayerList(int this)
 {
   Network *v1; // esi
   DWORD Ticks; // [esp+10h] [ebp-16Ch]
@@ -4793,10 +4743,9 @@ void Network_SendMasterPlayerList(int this)
 
 // 0x6640E0
 namespace gamemd {
-wchar_t * Network::ProcessAddressChange()
+void * Network::ProcessAddressChange()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-wchar_t *Network_ProcessAddressChange()
 {
   wchar_t *result; // eax
   __int16 v5; // [esp+8h] [ebp-94h]
@@ -4856,10 +4805,9 @@ wchar_t *Network_ProcessAddressChange()
 
 // 0x6642A0
 namespace gamemd {
-char * Network::processAcknowledgment(IUnknown * aP1)
+void * Network::processAcknowledgment(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall Network::processAcknowledgment(_DWORD *this, IUnknown *aP1)
 {
   IPXManagerClass *v5; // ecx
   IPXManagerClass v6; // [esp+Ch] [ebp-10h] BYREF
@@ -4895,10 +4843,9 @@ char *__thiscall Network::processAcknowledgment(_DWORD *this, IUnknown *aP1)
 
 // 0x664400
 namespace gamemd {
-char * Network::reconnect(DynamicVector * aP1, short a3)
+void * Network::reconnect(DynamicVector * aP1, short a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall Network::reconnect(int *this, DynamicVector *aP1, __int16 a3)
 {
   char *result; // eax
   char **v5; // esi
@@ -4927,7 +4874,6 @@ namespace gamemd {
 unsigned int * Network::processGameEvent()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_69B540(_DWORD *this)
 {
   _DWORD *result; // eax
 
@@ -4951,7 +4897,6 @@ namespace gamemd {
 void Network::SyncPlayerList()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Network_SyncPlayerList()
 {
   wchar_t *v4; // eax
   wchar_t *v5; // esi
@@ -5025,10 +4970,9 @@ void Network_SyncPlayerList()
 
 // 0x79C3A0
 namespace gamemd {
-unsigned int sub_79C3A0()
+void int sub_79C3A0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_79C3A0()
 {
   unsigned int result; // eax
 
@@ -5091,10 +5035,9 @@ void sub_79C3A0()
 
 // 0x7B2DB0
 namespace gamemd {
-int Network::finalizeSession()
+void Network::finalizeSession()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_7B2DB0(int this)
 {
   IPXInterfaceClass::bindSocket((char *)this); /*0x7b2db3*/
   this->q3F33C = 0; /*0x7b2dc4*/
@@ -5123,10 +5066,9 @@ void sub_7B2DB0(int this)
 
 // 0x793BB0
 namespace gamemd {
-int sub_793BB0()
+void sub_793BB0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_793BB0()
 {
   int result; // eax
   DWORD *v1; // ebp
@@ -5178,10 +5120,9 @@ LABEL_7:
 
 // 0x7A2730
 namespace gamemd {
-LPVOID sub_7A2730()
+void sub_7A2730()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_7A2730()
 {
   LPVOID result; // eax
 
@@ -5197,10 +5138,9 @@ void sub_7A2730()
 
 // 0x53F540
 namespace gamemd {
-int sub_53F540()
+void sub_53F540()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_53F540()
 {
   unsigned __int16 v0; // si
   v0 = unk_AA0568; /*0x53f54d*/
@@ -5223,10 +5163,9 @@ void sub_53F540()
 
 // 0x5F0120
 namespace gamemd {
-int Network_Process_5F0120()
+void Network_Process_5F0120()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __usercall sub_5F0120@<al>(int a1@<ebp>)
 {
   char result; // al
 
@@ -5269,7 +5208,6 @@ namespace gamemd {
 unsigned int * sub_5F6810(int a1, unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__fastcall sub_5F6810(int a1, _DWORD *a2)
 {
   _DWORD *result; // eax
 
@@ -5315,10 +5253,9 @@ LABEL_6:
 
 // 0x64AD10
 namespace gamemd {
-LRESULT sub_64AD10(int a1, int a2)
+long sub_64AD10(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-LRESULT __fastcall sub_64AD10(int a1, int a2)
 {
   LRESULT v3; // edi
   LRESULT result; // eax
@@ -5380,7 +5317,6 @@ namespace gamemd {
 int sub_7B2730()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_7B2730()
 {
   return dword_B780A0; /*0x7b2735*/
 }
@@ -6157,10 +6093,9 @@ char * sub_652110(int a1, int a2)
 
 // 0x664390
 namespace gamemd {
-short Network::handleDisconnect(IUnknown * aP1)
+void Network::handleDisconnect(IUnknown * aP1)
  {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-__int16 __thiscall Network::handleDisconnect(_DWORD *this, IUnknown *aP1)
 {
 
   int v3 = 0; /*0x664395*/
@@ -6178,10 +6113,9 @@ __int16 __thiscall Network::handleDisconnect(_DWORD *this, IUnknown *aP1)
 
 // 0x6643E0
 namespace gamemd {
-int Network::checkTimeout(int a2)
+void Network::checkTimeout(int a2)
  {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_6643E0(_DWORD *this, int a2)
 {
   if ( a2 >= this->q010 ) /*0x6643e9*/
     return 0; /*0x6643f5*/

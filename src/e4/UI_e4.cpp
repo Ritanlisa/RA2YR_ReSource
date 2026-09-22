@@ -40,10 +40,9 @@
 
 // 0x52B6D0
 namespace gamemd {
-int sub_52B6D0(int a1, int a2, int * a3)
+void sub_52B6D0(int a1, int a2, int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_52B6D0(int a1, int a2, int *a3)
 {
   int v5; // edi
 
@@ -77,7 +76,6 @@ namespace gamemd {
 int sub_53E720()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_53E720()
 {
   return unk_AA0444; /*0x53e725*/
 }
@@ -86,10 +84,9 @@ int sub_53E720()
 
 // 0x60AF50
 namespace gamemd {
-BOOL UI_Get(HWND hWnd, unsigned int * a2)
+void UI_Get(HWND hWnd, unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __fastcall UI_Get(HWND hWnd, _DWORD *a2)
 {
   HWND Parent; // ebp
   char GameSpeed; // bl
@@ -112,10 +109,9 @@ BOOL __fastcall UI_Get(HWND hWnd, _DWORD *a2)
 
 // 0x622610
 namespace gamemd {
-int sub_622610()
+void sub_622610()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_622610()
 {
   int result; // eax
 
@@ -140,10 +136,9 @@ void sub_622610()
 
 // 0x647040
 namespace gamemd {
-char sub_647040()
+void sub_647040()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_647040()
 {
 
   if ( *((_BYTE *)HouseClass_Player + 503) ) /*0x647048*/
@@ -167,10 +162,9 @@ void sub_647040()
 
 // 0x6470F0
 namespace gamemd {
-char sub_6470F0()
+void sub_6470F0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_6470F0()
 {
 
   if ( *((_BYTE *)HouseClass_Player + 503) ) /*0x6470f8*/
@@ -194,10 +188,9 @@ void sub_6470F0()
 
 // 0x725070
 namespace gamemd {
-int sub_725070(int a1, int a2, unsigned int * a3)
+void sub_725070(int a1, int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_725070(int a1, int a2, unsigned int *a3)
 {
   unsigned int v5; // edi
 
@@ -228,10 +221,9 @@ LABEL_7:
 
 // 0x6AC430
 namespace gamemd {
-int sub_6AC430()
+void sub_6AC430()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_6AC430()
 {
 
   int v0 = 26; /*0x6ac43b*/
@@ -245,10 +237,9 @@ void sub_6AC430()
 
 // 0x730EA0
 namespace gamemd {
-wchar_t * sub_730EA0()
+wchar_t * * sub_730EA0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-wchar_t *sub_730EA0()
 {
   wchar_t *result; // eax
   wchar_t *v1; // ebp
@@ -291,10 +282,9 @@ wchar_t *sub_730EA0()
 
 // 0x730F30
 namespace gamemd {
-wchar_t * sub_730F30()
+void * sub_730F30()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-wchar_t *sub_730F30()
 {
   wchar_t *result; // eax
 
@@ -324,10 +314,9 @@ wchar_t *sub_730F30()
 
 // 0x730FE0
 namespace gamemd {
-wchar_t * sub_730FE0()
+void * sub_730FE0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-wchar_t *sub_730FE0()
 {
   wchar_t *result; // eax
   wchar_t *v1; // ebp
@@ -370,10 +359,9 @@ wchar_t *sub_730FE0()
 
 // 0x7318F0
 namespace gamemd {
-char * sub_7318F0()
+void * sub_7318F0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *sub_7318F0()
 {
   char *result; // eax
 
@@ -422,7 +410,6 @@ namespace gamemd {
 void sub_6D0E60()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_6D0E60()
 {
 
   void * v0 = DataGlobal_B0FB08; /*0x6d0e73*/
@@ -439,10 +426,9 @@ void sub_6D0E60()
 
 // 0x60B1D0
 namespace gamemd {
-BOOL UI_Get_60B1D0(HWND hWnd, HWND a2)
+void UI_Get_60B1D0(HWND hWnd, HWND a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __fastcall UI_Get_60B1D0(HWND hWnd, HWND a2)
 {
   HWND Parent; // esi
   char GameSpeed; // bl
@@ -509,10 +495,9 @@ LABEL_9:
 
 // 0x602B90
 namespace gamemd {
-bool UI_Helper_602B90(int a1, HWND a2)
+void UI_Helper_602B90(int a1, HWND a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool __fastcall UI_Helper_602B90(int a1, HWND a2)
 {
   int DlgCtrlID; // eax
 
@@ -569,10 +554,9 @@ LABEL_5:
 
 // 0x603240
 namespace gamemd {
-BOOL UI_Helper_603240(int a1, HWND a2)
+void UI_Helper_603240(int a1, HWND a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __fastcall UI_Helper_603240(int a1, HWND a2)
 {
   int DlgCtrlID; // eax
 
@@ -635,7 +619,6 @@ namespace gamemd {
 unsigned int * sub_60D2C0(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__fastcall sub_60D2C0(int a1, int a2)
 {
   _DWORD *result; // eax
 
@@ -666,7 +649,6 @@ namespace gamemd {
 void UI_Helper_6217E0(ObjectClass * aP0, ObjectClass * aP1, short a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall UI_Helper_6217E0(ObjectClass *aP0, ObjectClass *aP1, __int16 a3, int a4)
 {
   ObjectClass *v4; // esi
   ObjectClass *v5; // ebp
@@ -768,10 +750,9 @@ void __fastcall UI_Helper_6217E0(ObjectClass *aP0, ObjectClass *aP1, __int16 a3,
 
 // 0x6D0FD0
 namespace gamemd {
-int sub_6D0FD0()
+void sub_6D0FD0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_6D0FD0()
 {
   int result; // eax
 
@@ -849,7 +830,6 @@ namespace gamemd {
 int sub_639DA0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_639DA0()
 {
   wchar_t *v0; // ebx
   v0 = g_SelectionManager; /*0x639da2*/
@@ -882,7 +862,6 @@ namespace gamemd {
 void UI_Setup_5EBDD0(SkirmishDialog * aP0, int a2, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall UI_Setup_5EBDD0(SkirmishDialog *aP0, int a2, int a3, int a4)
 {
   int v8; // edx
 
@@ -936,10 +915,9 @@ void __fastcall UI_Setup_5EBDD0(SkirmishDialog *aP0, int a2, int a3, int a4)
 
 // 0x793930
 namespace gamemd {
-ObjectClass * UI_Setup_793930(void * a1, void * a2, int a3)
+void * UI_Setup_793930(void * a1, void * a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-ObjectClass *__fastcall UI_Setup_793930(void *a1, void *a2, int a3)
 {
   SessionClass *v6; // esi
   ObjectClass *result; // eax
@@ -1374,10 +1352,9 @@ int * E4Recv_643670::UI_Render_643670()
 
 // 0x6AC480
 namespace gamemd {
-char sub_6AC480(int a1, int * a2, unsigned int * a3, int a4)
+void sub_6AC480(int a1, int * a2, unsigned int * a3, int a4)
  {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall sub_6AC480(int a1, int *a2, _DWORD *a3, int a4)
 {
   char result; // al
   int BuildingAnimByName; // eax

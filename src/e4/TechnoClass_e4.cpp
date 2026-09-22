@@ -14,15 +14,9 @@
 
 // 0x41A9E0
 namespace gamemd {
-int TechnoClass_CanFireAtTarget()
+void TechnoClass_CanFireAtTarget()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __userpurge TechnoClass::CanFireAtTarget@<eax>(
-        int a1@<ecx>,
-        TechnoClass *a2@<edx>,
-        ObjectClass *aP2,
-        int a4,
-        IUnknown aP1)
 {
   int result; // eax
 
@@ -58,7 +52,6 @@ namespace game {
 unsigned int * TechnoClass::TechnoClass(AbstractClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall TechnoClass::TechnoClass(_DWORD *this, AbstractClass *aP1)
 {
   IUnknown *v4; // edx
   IUnknown *v5; // ecx
@@ -333,7 +326,6 @@ namespace game {
 unsigned int * TechnoClass::Update(BuildingClass * aP0, FootClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *TechnoClass::Update(BuildingClass *aP0, FootClass *aP1)
 {
   TechnoClass *esi1; // esi
   HouseClass *v3; // eax
@@ -616,10 +608,9 @@ int TechnoClass::DTOR()
 // 0x702D40
 namespace ra2 {
 namespace game {
-int TechnoClass::RegisterKill()
+void TechnoClass::RegisterKill()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TechnoClass::RegisterKill(#377 *this)
 {
   void **v4; // ecx
   void **v5; // ecx
@@ -809,10 +800,9 @@ LABEL_67:
 // 0x705860
 namespace ra2 {
 namespace game {
-int TechnoClass::DrawAirstrikeFlare_SetContext(int a1, int a2, int a3, int a4, int a5, int a6)
+void TechnoClass::DrawAirstrikeFlare_SetContext(int a1, int a2, int a3, int a4, int a5, int a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TechnoClass::DrawAirstrikeFlare_SetContext(int a1, int a2, int a3, int a4, int a5, int a6)
 {
   int result; // eax
   unsigned __int8 v20; // [esp+30h] [ebp-60h] BYREF
@@ -946,10 +936,9 @@ void TechnoClass::DrawAirstrikeFlare_SetContext(int a1, int a2, int a3, int a4, 
 // 0x70D0D0
 namespace ra2 {
 namespace game {
-bool TechnoClass::HasVoiceResponse(int weaponIndex)
+void TechnoClass::HasVoiceResponse(int weaponIndex)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TechnoTypeClass::HasVoiceResponse(int weaponIndex)
 {
   HouseClass *v3; // edi
   v3 = (HouseClass *)&this->initialOwner; /*0x70d0d5*/
@@ -968,10 +957,9 @@ void TechnoTypeClass::HasVoiceResponse(int weaponIndex)
 // 0x73B140
 namespace ra2 {
 namespace game {
-char TechnoClass::RenderTechnoSHP(int * a0, int * a1, int * a2, HouseClass * aP3, HouseClass * aP4, int a6, int a7, TechnoClass * aP7, TechnoClass * aP8, int a10, int a11)
+void TechnoClass::RenderTechnoSHP(int * a0, int * a1, int * a2, HouseClass * aP3, HouseClass * aP4, int a6, int a7, TechnoClass * aP7, TechnoClass * aP8, int a10, int a11)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TechnoClass::RenderTechnoSHP(int *a0, int *a1, int *a2, HouseClass *aP3, HouseClass *aP4, int a6, int a7, TechnoClass *aP7, TechnoClass *aP8, int a10, int a11)
 {
   TechnoClass *v11; // ecx
   TechnoClass *v12; // esi
@@ -1126,19 +1114,9 @@ void TechnoClass::RenderTechnoSHP(int *a0, int *a1, int *a2, HouseClass *aP3, Ho
 
 // 0x73B470
 namespace gamemd {
-int TechnoClass_DrawVoxel()
+void TechnoClass_DrawVoxel()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __userpurge TechnoClass::DrawVoxel@<eax>(
-        _DWORD *ecx0@<ecx>,
-        __int64 a2,
-        int a3,
-        int a4,
-        int a5,
-        int a6,
-        BuildingTypeClass *started,
-        int a8,
-        int a9)
 {
   ObjectClass *v16; // eax
   float *inited; // eax

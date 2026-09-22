@@ -5,10 +5,9 @@
 
 // 0x5D4B20
 namespace gamemd {
-int WideString::WordWrap(wchar_t * a0, CampaignScore * aP1, int a3, CampaignScore * aP3, int a5)
+void WideString::WordWrap(wchar_t * a0, CampaignScore * aP1, int a3, CampaignScore * aP3, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void WideString::WordWrap(wchar_t *a0, CampaignScore *aP1, int a3, CampaignScore *aP3, int a5)
 {
   CampaignScore *v6; // ebp
   int v9; // ebx
@@ -70,10 +69,9 @@ LABEL_18:
 
 // 0x7B73F0
 namespace gamemd {
-char WideString::Replace(CampaignScore * aP1, wchar_t * String)
+void WideString::Replace(CampaignScore * aP1, wchar_t * String)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void WideString::Replace(void **this, CampaignScore *aP1, wchar_t *String)
 {
   GameSetup *v3; // ebx
   const wchar_t *v4; // edi

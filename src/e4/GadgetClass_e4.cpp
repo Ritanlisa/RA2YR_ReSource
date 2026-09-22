@@ -4,17 +4,9 @@
 
 // 0x4E12F0
 namespace gamemd {
-ControlClass * GadgetClass::Construct(GadgetClass * aP1, GadgetClass * aP2, GadgetClass * aP3, ControlClass * aP4, GadgetClass * aP5, GadgetClass * aP6)
+void * GadgetClass::Construct(GadgetClass * aP1, GadgetClass * aP2, GadgetClass * aP3, ControlClass * aP4, GadgetClass * aP5, GadgetClass * aP6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-ControlClass *__thiscall GadgetClass::Construct(
-        _DWORD *this,
-        GadgetClass *aP1,
-        GadgetClass *aP2,
-        GadgetClass *aP3,
-        ControlClass *aP4,
-        GadgetClass *aP5,
-        GadgetClass *aP6)
 {
   GadgetClass *result; // eax
 
@@ -39,10 +31,9 @@ ControlClass *__thiscall GadgetClass::Construct(
 
 // 0x4E1390
 namespace gamemd {
-int GadgetClass::Dtor()
+void GadgetClass::Dtor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void GadgetClass_Dtor(_DWORD *this)
 {
 
   *this = &vt_GadgetClass; /*0x4e1390*/
@@ -68,10 +59,9 @@ void GadgetClass_Dtor(_DWORD *this)
 
 // 0x557920
 namespace gamemd {
-int GadgetClass::DrawBuildingPlacement(ControlClass * aP1)
+void GadgetClass::DrawBuildingPlacement(ControlClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void GadgetClass::DrawBuildingPlacement(int this, ControlClass *aP1)
 {
   int i; // edi
 
@@ -83,7 +73,7 @@ void GadgetClass::DrawBuildingPlacement(int this, ControlClass *aP1)
     this->Height,
     this->Visible,
     this->ID);
-  int v3 = this->Visible; /*0x55796b*/
+  bool v3 = this->Visible; /*0x55796b*/
   int v4 = this->Height; /*0x55796e*/
   int v9[4]; // [esp+10h] [ebp-10h] BYREF
   v9[0] = this->Width; /*0x557971*/
@@ -115,10 +105,9 @@ void GadgetClass::DrawBuildingPlacement(int this, ControlClass *aP1)
 
 // 0x60AAB0
 namespace gamemd {
-BOOL GadgetClass::FindByWindow(HWND hWnd, LPARAM a2)
+void GadgetClass::FindByWindow(HWND hWnd, LPARAM a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void GadgetClass_FindByWindow(HWND hWnd, LPARAM a2)
 {
   HWND Parent; // edi
   HWND *v4; // eax
@@ -283,7 +272,6 @@ namespace gamemd {
 void GadgetClass::SetTooltip(CCINIClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void GadgetClass::SetTooltip(void **this, CCINIClass *aP1)
 {
   size_t v3; // eax
   if ( this->q028 ) /*0x623564*/
@@ -307,10 +295,9 @@ void GadgetClass::SetTooltip(void **this, CCINIClass *aP1)
 
 // 0x723EA0
 namespace gamemd {
-int GadgetClass::Show()
+void GadgetClass::Show()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void GadgetClass_Show(_BYTE *this)
 {
 
   int v1 = *(_DWORD *)this; /*0x723ea0*/

@@ -3,10 +3,9 @@
 #include "e4/e4_globals.hpp"
 
 // 0x4E1480
-int LinkClass::Destroy()
+void LinkClass::Destroy()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void LinkClass_Destroy(_DWORD *this)
 {
   (*(void (__thiscall **)(_DWORD *))(*this + 84))(this); /*0x4e1485*/
   return LinkedList::RemoveNode(this); /*0x4e148f*/
@@ -14,10 +13,9 @@ void LinkClass_Destroy(_DWORD *this)
 }
 
 // 0x5565A0
-int LinkClass::Destruct()
+void LinkClass::Destruct()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void LinkClass_Destructor(_DWORD *this)
 {
   _DWORD *Prev; // edi
   int result; // eax

@@ -8,7 +8,6 @@ namespace gamemd {
 unsigned int * Gadget::InitProperties()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall Gadget_InitProperties(_DWORD *this)
 {
   unknown_libname_74(this + 1); /*0x600636*/
   unknown_libname_74(this + 2); /*0x60063e*/

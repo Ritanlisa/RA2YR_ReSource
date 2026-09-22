@@ -10,10 +10,9 @@
 // 0x71A450
 namespace ra2 {
 namespace game {
-int TemporalClass::Constructor()
+void TemporalClass::Constructor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_71A450(int this)
 {
   wchar_t *v2; // eax
   AbstractClass::Constructor((AbstractClass *)this); /*0x71a453*/
@@ -47,7 +46,6 @@ namespace game {
 unsigned int * TemporalClass::TemporalClass(TechnoClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall TemporalClass::TemporalClass(_DWORD *this, TechnoClass *aP1)
 {
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x71a4e7*/
@@ -92,7 +90,6 @@ namespace game {
 void ** TemporalClass::ProcessTimeWarp()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void **__thiscall TemporalClass::_vt23(int *this)
 {
   void **result; // eax
   int **v13; // ecx
@@ -268,10 +265,9 @@ LABEL_10:
 // 0x71AB10
 namespace ra2 {
 namespace game {
-int TemporalClass::GetWarpPerStep(int a2)
+void TemporalClass::GetWarpPerStep(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TemporalClass::GetWarpPerStep(int **this, int a2)
 {
   int WarpPerStep; // ebx
 
@@ -292,10 +288,9 @@ void TemporalClass::GetWarpPerStep(int **this, int a2)
 // 0x71B1B0
 namespace ra2 {
 namespace game {
-TemporalClass * TemporalClass::ProcessEvent(char a2)
+void * TemporalClass::ProcessEvent(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-TemporalClass *__thiscall TemporalClass::ProcessEvent(_DWORD *this, char a2)
 {
 
   *this = &TemporalClass::`vftable'; /*0x71b1bd*/

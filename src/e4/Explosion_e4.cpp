@@ -3,10 +3,9 @@
 #include "e4/e4_globals.hpp"
 
 // 0x53DDA0
-char Explosion::RemoveItem(int a2)
+void Explosion::RemoveItem(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_53DDA0(_DWORD *this, int a2)
 {
 
   AbstractClass *v2 = this->q010; /*0x53dda0*/

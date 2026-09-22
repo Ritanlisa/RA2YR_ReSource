@@ -18,10 +18,9 @@
 
 // 0x5904B0
 namespace gamemd {
-char PlaceCabhutMap(FootClass * aP0)
+void PlaceCabhutMap(FootClass * aP0)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void PlaceCabhutMap(FootClass *aP0)
 {
   FootClass *v1; // ebp
   int v3; // edi
@@ -81,10 +80,9 @@ LABEL_7:
 
 // 0x594190
 namespace gamemd {
-int sub_594190(int * a1, int a2)
+void sub_594190(int * a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_594190(int *a1, int a2)
 {
   int result; // eax
   __int16 v15[2]; // [esp+10h] [ebp-4h] BYREF
@@ -179,7 +177,6 @@ namespace gamemd {
 void FloodFillRandomMapTerrain(int a1, IUnknown * a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall FloodFillRandomMapTerrain(int a1, IUnknown *a2, int a3)
 {
   ObjectClass *v5; // ebx
   void *nextObject; // eax
@@ -313,10 +310,9 @@ void __fastcall FloodFillRandomMapTerrain(int a1, IUnknown *a2, int a3)
 
 // 0x594B50
 namespace gamemd {
-char RandomMap_DistributeTerrain()
+void RandomMap_DistributeTerrain()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void RandomMap_DistributeTerrain()
 {
   int i; // esi
   int j; // edi
@@ -482,7 +478,6 @@ namespace gamemd {
 void CleanupRandomMapCache()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CleanupRandomMapCache()
 {
   struct _WIN32_FIND_DATAA *i; // esi
   HANDLE FirstFileA; // edi
@@ -644,7 +639,6 @@ namespace gamemd {
 unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)() a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__fastcall GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
 {
   HWND *v11; // eax
   int v17[9]; // [esp+20h] [ebp-250h] BYREF
@@ -771,7 +765,6 @@ namespace gamemd {
 void ArrangeBuildingPlacementGrid(int a1, int a2, MapResourceClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ArrangeBuildingPlacementGrid(int a1, int a2, MapResourceClass *aP2)
 {
   int v5; // ebx
   int v6; // esi
@@ -996,7 +989,6 @@ namespace gamemd {
 int sub_59C630()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_59C630()
 {
   int result; // eax
   int i; // esi

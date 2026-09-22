@@ -7,10 +7,9 @@
 
 // 0x539EB0
 namespace gamemd {
-int LightningStorm::Start(int a1, int a2, int a3, void * a4)
+void LightningStorm::Start(int a1, int a2, int a3, void * a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall LightningStorm::Start(int a1, int a2, int a3, #375 *a4)
 {
   int result; // eax
   __int16 v7; // si
@@ -77,10 +76,9 @@ int __fastcall LightningStorm::Start(int a1, int a2, int a3, #375 *a4)
 
 // 0x53A100
 namespace gamemd {
-char LightningStorm::IsActive()
+void LightningStorm::IsActive()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void LightningStorm_IsActive()
 {
   return unk_A9FAB4; /*0x53a105*/
 }
@@ -89,10 +87,9 @@ void LightningStorm_IsActive()
 
 // 0x53A140
 namespace gamemd {
-int LightningStorm::Strike(IUnknown * aP0)
+void LightningStorm::Strike(IUnknown * aP0)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void LightningStorm::Strike(IUnknown *aP0)
 {
   int result; // eax
   CoordStruct *v5; // esi
@@ -154,10 +151,9 @@ void LightningStorm::Strike(IUnknown *aP0)
 
 // 0x53A300
 namespace gamemd {
-char LightningStorm::Strike2(int a1, int a2, int a3)
+void LightningStorm::Strike2(int a1, int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void LightningStorm::Strike2(int a1, int a2, int a3)
 {
   int *Coords; // eax
   void **v8; // eax

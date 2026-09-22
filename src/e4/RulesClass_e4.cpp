@@ -10,7 +10,6 @@
 double RulesClass::GetFiringDistance()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-double RulesClass_GetFiringDistance()
 {
   return (double)*((int *)g_RulesClass_Instance + 1454) * 0.5; /*0x48ad01*/
 }
@@ -20,7 +19,6 @@ double RulesClass_GetFiringDistance()
 unsigned int * RulesClass::InitINIChain(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_538B30(_DWORD *this, int a2, int a3)
 {
   this->DetailMinFrameRateMovie = 0; /*0x538b3b*/
   this->DetailBufferZoneWidth = a2; /*0x538b3e*/
@@ -42,10 +40,9 @@ _DWORD *__thiscall sub_538B30(_DWORD *this, int a2, int a3)
 }
 
 // 0x665650
-int RulesClass::RulesClass()
+R RulesClass::RulesClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-R RulesClass::Constructor()
 {
   int *BarrelDebris; // ebp
 
@@ -1711,10 +1708,9 @@ int result;
 }
 
 // 0x66D150
-int RulesClass::readAudioVisual()
+void RulesClass::readAudioVisual()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_66D150(RulesClass *this)
 {
   int result; // eax
   int Int_Overwrite; // eax
@@ -1729,7 +1725,7 @@ void sub_66D150(RulesClass *this)
                       (unsigned __int8 *)DataGlobal_839E70,
                       (unsigned __int8 *)DataGlobal_83B370,
                       *((_DWORD *)this + 1550));
-    int v4 = this->IceCrackingWeight; /*0x66d188*/
+    double v4 = this->IceCrackingWeight; /*0x66d188*/
     *((_DWORD *)this + 1550) = Int_Overwrite; /*0x66d18e*/
   double v8; // [esp-8h] [ebp-10h]
     HIDWORD(v8) = this->LaserTargetColor; /*0x66d1a0*/
@@ -1758,10 +1754,9 @@ void sub_66D150(RulesClass *this)
 }
 
 // 0x673E80
-int RulesClass::ReadPowerupsSection()
+void RulesClass::ReadPowerupsSection()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_673E80(RulesClass *this)
 {
   int result; // eax
   char String[128]; // [esp+0h] [ebp-80h] BYREF
@@ -1844,10 +1839,9 @@ void sub_673E80(RulesClass *this)
 }
 
 // 0x6743D0
-int RulesClass::readDifficulty()
+void RulesClass::readDifficulty()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_6743D0(RulesClass *this)
 {
   int result; // eax
   int Int_Overwrite; // eax
@@ -1917,10 +1911,9 @@ void sub_6743D0(RulesClass *this)
 }
 
 // 0x674550
-int RulesClass::ReadMovies()
+void RulesClass::ReadMovies()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_674550(RulesClass *this)
 {
   int result; // eax
   int i; // ebx
@@ -1979,7 +1972,6 @@ void sub_674550(RulesClass *this)
 void RulesClass::readMaximums()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_679FA0(_DWORD *this)
 {
 
   void * v2 = (void *)this->DetailMinFrameRateMovie; /*0x679fa6*/
@@ -1998,7 +1990,6 @@ void sub_679FA0(_DWORD *this)
 void RulesClass::readInfantryTypes()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_679FD0(_DWORD *this)
 {
 
   void * v2 = (void *)this->DetailMinFrameRateMovie; /*0x679fd6*/
@@ -2017,7 +2008,6 @@ void sub_679FD0(_DWORD *this)
 void RulesClass::readCountries()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_67A000(_DWORD *this)
 {
 
   void * v2 = (void *)this->DetailMinFrameRateMovie; /*0x67a006*/
@@ -2036,7 +2026,6 @@ void sub_67A000(_DWORD *this)
 void RulesClass::readVehicleTypes()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_67A060(_DWORD *this)
 {
 
   void * v2 = (void *)this->DetailMinFrameRateMovie; /*0x67a066*/
@@ -2052,10 +2041,9 @@ void sub_67A060(_DWORD *this)
 }
 
 // 0x67A190
-int * RulesClass::readAircraftTypes(int * a2)
+void * RulesClass::readAircraftTypes(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int *__thiscall sub_67A190(int *this, int *a2)
 {
 
   if ( this != a2 ) /*0x67a19a*/
@@ -2097,10 +2085,9 @@ int *__thiscall sub_67A190(int *this, int *a2)
 }
 
 // 0x67A210
-int * RulesClass::readSuperWeaponTypes(int * a2)
+void * RulesClass::readSuperWeaponTypes(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int *__thiscall sub_67A210(int *this, int *a2)
 {
 
   if ( this != a2 ) /*0x67a21a*/
@@ -2142,10 +2129,9 @@ int *__thiscall sub_67A210(int *this, int *a2)
 }
 
 // 0x67A310
-int * RulesClass::readBuildingTypes(int * a2)
+void * RulesClass::readBuildingTypes(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int *__thiscall sub_67A310(int *this, int *a2)
 {
 
   if ( this != a2 ) /*0x67a31a*/
@@ -2190,7 +2176,6 @@ int *__thiscall sub_67A310(int *this, int *a2)
 unsigned int * RulesClass::readParticles()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_67A8B0(_DWORD *this)
 {
   this->DetailMinFrameRateMovie = 0; /*0x67a8b4*/
   this->DetailBufferZoneWidth = 0; /*0x67a8b7*/
@@ -2204,10 +2189,9 @@ _DWORD *__thiscall sub_67A8B0(_DWORD *this)
 }
 
 // 0x67B480
-char RulesClass::readAI(unsigned int * a2)
+void RulesClass::readAI(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_67B480(_DWORD *this, _DWORD *a2)
 {
 
   int v3 = this->DetailBufferZoneWidth; /*0x67b483*/
@@ -2228,15 +2212,9 @@ void sub_67B480(_DWORD *this, _DWORD *a2)
 }
 
 // 0x67BDD0
-VectorClass * RulesClass::LoadTypeList(int a1, unsigned char *** edx0, INIClass * aP1, unsigned char * a2, unsigned int * a5)
+void * RulesClass::LoadTypeList(int a1, unsigned char *** edx0, INIClass * aP1, unsigned char * a2, unsigned int * a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__fastcall RulesClass::LoadTypeList(
-        int a1,
-        unsigned __int8 ***edx0,
-        INIClass *aP1,
-        unsigned __int8 *a2,
-        _DWORD *a5)
 {
   char *i; // eax
   INIClass *v7; // edi
@@ -2338,7 +2316,6 @@ VectorClass *__fastcall RulesClass::LoadTypeList(
 unsigned int * RulesClass::readIQ(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_67C430(_DWORD *this, int a2, int a3)
 {
   this->DetailMinFrameRateMovie = 0; /*0x67c43b*/
   this->DetailBufferZoneWidth = a2; /*0x67c43e*/

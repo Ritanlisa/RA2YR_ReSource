@@ -627,10 +627,9 @@ int CDTimerClass::TimeRemaining()
 // rotation timer. Word widths follow the original (DirStruct low word holds
 // the facing value).
 // 0x4C9220
-int FacingClass::Update(unsigned int* a1)
+void FacingClass::Update(unsigned int* a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void FacingClass::Update(DirStruct *desiredFacing)
 {
   __int16 v2; // ax
   __int16 ROT; // bp
@@ -702,10 +701,9 @@ LABEL_16:
 // the elapsed fraction, then either accept the desired facing immediately
 // (timer zeroed, returns 0 when already in place) or snap both facings to it.
 // 0x4C9300
-int FacingClass::Set_SyncLog(unsigned int* a1)
+void FacingClass::Set_SyncLog(unsigned int* a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void FacingClass::Set_SyncLog(DirStruct *desiredFacing)
 {
   TerrainTypeClass *v3; // ebx
   int TimeLeft; // edx

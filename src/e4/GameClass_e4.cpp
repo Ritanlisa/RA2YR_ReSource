@@ -10,10 +10,9 @@
 
 // 0x437FD0
 namespace gamemd {
-int GameClass::initGameMode(int a2, int a3)
+void GameClass::initGameMode(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_437FD0(_DWORD *this, int a2, int a3)
 {
   if ( !*this ) /*0x437fd3*/
     WinAPI::Wrapper(-2147467261); /*0x437fdd*/
@@ -27,7 +26,6 @@ namespace gamemd {
 unsigned int * GameClass::processFrame(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_4381D0(_DWORD *this, int a2, int a3)
 {
   _DWORD *result; // eax
 
@@ -54,7 +52,6 @@ namespace gamemd {
 unsigned int * GameClass::updateUI(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_438300(_DWORD *this, int a2, int a3)
 {
   _DWORD *result; // eax
 
@@ -78,10 +75,9 @@ _DWORD *__thiscall sub_438300(_DWORD *this, int a2, int a3)
 
 // 0x5D2260
 namespace gamemd {
-int GameClass::loadScenarioFiles(ObjectClass * aP1)
+void GameClass::loadScenarioFiles(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void GameClass::loadScenarioFiles(ObjectClass *aP1)
 {
   int result; // eax
   ObjectClass *v4; // ebx
@@ -142,10 +138,9 @@ void GameClass::loadScenarioFiles(ObjectClass *aP1)
 
 // 0x5D2410
 namespace gamemd {
-int GameClass::FrameLoop(int a2)
+void GameClass::FrameLoop(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void GameClass::FrameLoop(int a2)
 {
   bool v7; // zf
   int result; // eax
@@ -203,10 +198,9 @@ void GameClass::FrameLoop(int a2)
 
 // 0x5D6370
 namespace gamemd {
-int GameClass::FindOpenSlot()
+void GameClass::FindOpenSlot()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void GameClass_FindOpenSlot(char *this)
 {
 
   int v1 = g_MultiplayerOptions; /*0x5d6372*/
@@ -239,10 +233,9 @@ LABEL_8:
 
 // 0x631D30
 namespace gamemd {
-int GameClass::GetRelatedObject()
+void GameClass::GetRelatedObject()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void GameClass_GetRelatedObject(_DWORD *this)
 {
 
   Pipe *v1 = this->q004; /*0x631d30*/
@@ -256,10 +249,9 @@ void GameClass_GetRelatedObject(_DWORD *this)
 
 // 0x632DC0
 namespace gamemd {
-Pipe * GameClass::WriteEncryptedStream(BombClass * Src, signed int aP2)
+void * GameClass::WriteEncryptedStream(BombClass * Src, signed int aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-Pipe *__thiscall GameClass::WriteEncryptedStream(int this, BombClass *Src, signed int aP2)
 {
   BombClass *v3; // ebx
   Pipe *v5; // ebp
@@ -315,10 +307,9 @@ Pipe *__thiscall GameClass::WriteEncryptedStream(int this, BombClass *Src, signe
 
 // 0x633130
 namespace gamemd {
-int GameClass::ReadEncryptedStream(char * a2, signed int Size)
+void GameClass::ReadEncryptedStream(char * a2, signed int Size)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void GameClass::ReadEncryptedStream(int this, char *a2, signed int Size)
 {
   Straw *v7; // eax
   Straw *v9; // ebx
@@ -388,10 +379,9 @@ void GameClass::ReadEncryptedStream(int this, char *a2, signed int Size)
 
 // 0x69AE10
 namespace gamemd {
-bool GameClass::initPlayerData(const char ** a2)
+void GameClass::initPlayerData(const char ** a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_69AE10(int *this, const char **a2)
 {
 
   int v3 = this->q06D; /*0x69ae15*/
@@ -415,7 +405,6 @@ namespace gamemd {
 void GameClass::Shutdown()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void GameClass_Shutdown()
 {
 
   DataGlobal_A8EDD8 = 1; /*0x6bec72*/
@@ -473,10 +462,9 @@ void GameClass_Shutdown()
 
 // 0x74F960
 namespace gamemd {
-short GameClass::ReadVersionFile()
+void GameClass::ReadVersionFile()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-__int16 __thiscall sub_74F960(int this)
 {
 
   if ( (*(_BYTE *)(this + 68) & 8) == 0 ) /*0x74f96a*/
@@ -515,10 +503,9 @@ __int16 __thiscall sub_74F960(int this)
 
 // 0x74FA20
 namespace gamemd {
-short GameClass::ReadVersionFile2()
+void GameClass::ReadVersionFile2()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-__int16 __thiscall sub_74FA20(int this)
 {
 
   if ( (*(_BYTE *)(this + 68) & 8) == 0 ) /*0x74fa2a*/
@@ -560,7 +547,6 @@ namespace gamemd {
 void GameClass::ReadVersionString()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_74FC80(char *this)
 {
 
   int v2[9]; // [esp+10h] [ebp-24h] BYREF
@@ -582,15 +568,14 @@ void sub_74FC80(char *this)
 
 // 0x7BA3C0
 namespace gamemd {
-int GameClass::processNetworkPacket(void * Src, signed int Size)
+void GameClass::processNetworkPacket(void * Src, signed int Size)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void GameClass::processNetworkPacket(void *Src, signed int Size)
 {
   int result; // eax
 
   result = 0; /*0x7ba3c4*/
-  int v5 = this->q003; /*0x7ba3c6*/
+  bool v5 = this->q003; /*0x7ba3c6*/
   if ( v5 && Src && Size > 0 ) /*0x7ba3db*/
   {
     int v6 = this->q004; /*0x7ba3dd*/

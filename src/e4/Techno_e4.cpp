@@ -6,10 +6,9 @@
 
 // 0x6F2070
 namespace gamemd {
-int Techno::GetOwnerHouse()
+void Techno::GetOwnerHouse()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Techno_GetOwnerHouse(int this)
 {
   int result; // eax
 

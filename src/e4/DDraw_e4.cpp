@@ -4,10 +4,9 @@
 #include "e4/classes/Debug_e4.hpp"
 
 // 0x4A3370
-int DDraw::ReleaseSurfaces()
+void DDraw::ReleaseSurfaces()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void DDraw::ReleaseSurfaces()
 {
   int result; // eax
 
@@ -31,7 +30,6 @@ void DDraw::ReleaseSurfaces()
 void DDraw::Init()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_4A3640(_DWORD *this)
 {
   this->q18000 = 0; /*0x4a3640*/
 }
@@ -41,7 +39,6 @@ void sub_4A3640(_DWORD *this)
 int DDraw::CapabilityCheck()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int DDraw_CapabilityCheck()
 {
   const char *v0; // eax
   int v2; // [esp+8h] [ebp-44h] BYREF
@@ -111,10 +108,9 @@ LABEL_7:
 }
 
 // 0x4A4830
-int DDraw::WaitForIdle()
+void DDraw::WaitForIdle()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void DDraw_WaitForIdle()
 {
   int result; // eax
 
@@ -126,10 +122,9 @@ void DDraw_WaitForIdle()
 }
 
 // 0x4C19B0
-int DDraw::CleanupSurfaces()
+void DDraw::CleanupSurfaces()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void DDraw_CleanupSurfaces()
 {
   int result; // eax
 
@@ -187,10 +182,9 @@ void DDraw_CleanupSurfaces()
 }
 
 // 0x5D2530
-char DDraw::HandleSuspend()
+void DDraw::HandleSuspend()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void DDraw_HandleSuspend(_DWORD *this)
 {
   int i; // edi
   int j; // edi

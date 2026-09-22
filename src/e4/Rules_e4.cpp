@@ -7,10 +7,9 @@
 
 // 0x6691E0
 namespace gamemd {
-int Rules::ReadMiscINI()
+void Rules::ReadMiscINI()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Rules::ReadMiscINI()
 {
   int result; // eax
   int Int_Overwrite; // eax
@@ -2206,10 +2205,9 @@ void Rules::ReadMiscINI()
 
 // 0x66BBB0
 namespace gamemd {
-int Rules::ReadCombatINI()
+void Rules::ReadCombatINI()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Rules::ReadCombatINI()
 {
   int result; // eax
   int Int_Overwrite; // eax
@@ -3293,7 +3291,6 @@ namespace gamemd {
 unsigned int * Rules::CopyDataArray(VectorClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall Rules::CopyDataArray(_DWORD *this, VectorClass *aP1)
 {
 
   if ( this == (_DWORD *)aP1 ) /*0x67a57a*/

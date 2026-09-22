@@ -13,7 +13,6 @@ namespace gamemd {
 unsigned int * BinkMovie::Close(char * FullPath)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall BinkMovie_Close(_DWORD *this, char *FullPath)
 {
   *(_BYTE *)this = 0; /*0x432695*/
   this->q004 = 0; /*0x432697*/
@@ -33,7 +32,6 @@ namespace gamemd {
 unsigned int * BinkMovie::Open(char * FullPath, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall BinkMovie_Open(_DWORD *this, char *FullPath, int a3)
 {
   this->q00C = a3; /*0x4326ce*/
   *(_BYTE *)this = 0; /*0x4326d3*/
@@ -50,10 +48,9 @@ _DWORD *__thiscall BinkMovie_Open(_DWORD *this, char *FullPath, int a3)
 
 // 0x432700
 namespace gamemd {
-int BinkMovie::Stop()
+void BinkMovie::Stop()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void BinkMovie_Stop(int this)
 {
   int result; // eax
 
@@ -82,10 +79,9 @@ void BinkMovie_Stop(int this)
 
 // 0x432750
 namespace gamemd {
-char BinkMovie::InitFromFile(LPCSTR * FullPath)
+void BinkMovie::InitFromFile(LPCSTR * FullPath)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_432750(int this, LPCSTR *FullPath)
 {
   int v9; // eax
   HANDLE FileA; // eax
@@ -262,10 +258,9 @@ LABEL_40:
 
 // 0x432C30
 namespace gamemd {
-int BinkMovie::Pause(unsigned char a2)
+void BinkMovie::Pause(unsigned char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void BinkMovie_Pause(_DWORD *this, unsigned __int8 a2)
 {
   return BinkPause(this->q004, a2); /*0x432c44*/
 }
@@ -274,10 +269,9 @@ void BinkMovie_Pause(_DWORD *this, unsigned __int8 a2)
 
 // 0x432C50
 namespace gamemd {
-BOOL BinkMovie::IsAtEnd()
+void BinkMovie::IsAtEnd()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void BinkMovie_IsAtEnd(_DWORD *this)
 {
 
   int v1 = this->q004; /*0x432c50*/
@@ -289,10 +283,9 @@ void BinkMovie_IsAtEnd(_DWORD *this)
 
 // 0x432C70
 namespace gamemd {
-int BinkMovie::Play()
+void BinkMovie::Play()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void BinkMovie_Play(_BYTE *this)
 {
   const char *Error; // eax
   void (__stdcall *v4)(HWND, LPPOINT); // ebp
@@ -376,10 +369,9 @@ void BinkMovie_Play(_BYTE *this)
 
 // 0x432E40
 namespace gamemd {
-bool BinkMovie::RenderLoop(DSurface * aP1, int a3, int a4)
+void BinkMovie::RenderLoop(DSurface * aP1, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void BinkMovie::RenderLoop(int this, DSurface *aP1, int a3, int a4)
 {
   bool result; // al
   struct tagRECT Rect; // [esp+8h] [ebp-10h] BYREF
@@ -467,10 +459,9 @@ void BinkMovie::RenderLoop(int this, DSurface *aP1, int a3, int a4)
 
 // 0x433040
 namespace gamemd {
-bool BinkMovie::RenderFrameToSurface()
+void BinkMovie::RenderFrameToSurface()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void BinkMovie_RenderFrameToSurface(int *this)
 {
   return BinkMovie::RenderLoop((int)this, this->q00C, this->q004, this->q014); /*0x433051*/
 }
@@ -482,7 +473,6 @@ namespace gamemd {
 unsigned int * BinkMovie::RenderSingleFrame(DSurface * aP1, int a3, int a4, char a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall BinkMovie::RenderSingleFrame(int *this, DSurface *aP1, int a3, int a4, char a5)
 {
 
   if ( a5 ) /*0x4331ff*/
@@ -508,7 +498,6 @@ namespace gamemd {
 unsigned int * BinkMovie::BlitToTarget(DSurface * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall BinkMovie::BlitToTarget(_DWORD *this, DSurface *aP1)
 {
   _DWORD *result; // eax
 
@@ -553,10 +542,9 @@ _DWORD *__thiscall BinkMovie::BlitToTarget(_DWORD *this, DSurface *aP1)
 
 // 0x433330
 namespace gamemd {
-int BinkMovie::AdjustSurfaceFormat(DSurface * aP1)
+void BinkMovie::AdjustSurfaceFormat(DSurface * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void BinkMovie::AdjustSurfaceFormat(DSurface *aP1)
 {
   int result; // eax
 
@@ -598,7 +586,6 @@ namespace gamemd {
 void BinkMovie::Cleanup()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void BinkMovie_Cleanup(_DWORD *this)
 {
 
   if ( *this ) /*0x5c01f4*/
@@ -624,10 +611,9 @@ void BinkMovie_Cleanup(_DWORD *this)
 
 // 0x6033F0
 namespace gamemd {
-int BinkMovie::HandleKeyboard(int a1, HWND a2)
+void BinkMovie::HandleKeyboard(int a1, HWND a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall BinkMovie::HandleKeyboard(int a1, HWND a2)
 {
   int DlgCtrlID; // eax
   bool v6; // zf
@@ -711,10 +697,9 @@ LABEL_46:
 
 // 0x6153E0
 namespace gamemd {
-int BinkMovie::WndProc(HWND hWnd, UINT Msg, int wParam, LPARAM lParam)
+void BinkMovie::WndProc(HWND hWnd, UINT Msg, int wParam, LPARAM lParam)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void BinkMovie_WndProc(HWND hWnd, UINT Msg, int wParam, LPARAM lParam)
 {
   HWND v4; // ecx
   HWND *v6; // eax
@@ -1387,7 +1372,6 @@ namespace gamemd {
 void BinkMovie::Destroy()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_6C9930(void **this)
 {
   if ( this->q014 ) /*0x6c9930*/
     __3_YAXPAX_Z(this->q014); /*0x6c9938*/
@@ -1397,10 +1381,9 @@ void sub_6C9930(void **this)
 
 // 0x6C9AE0
 namespace gamemd {
-int BinkMovie::FreeSurfaceTracker()
+void BinkMovie::FreeSurfaceTracker()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void BinkMovie_FreeSurfaceTracker(int *this)
 {
   int result; // eax
   int (__thiscall ***v6)(_DWORD, int); // ecx
@@ -1438,10 +1421,9 @@ void BinkMovie_FreeSurfaceTracker(int *this)
 
 // 0x6C9B40
 namespace gamemd {
-char BinkMovie::InitKeyframeTracking(char * Source)
+void BinkMovie::InitKeyframeTracking(char * Source)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void BinkMovie_InitKeyframeTracking(int *this, char *Source)
 {
   _BYTE v8[12]; // [esp+78h] [ebp-81Ch] BYREF
   int v9; // [esp+84h] [ebp-810h]
@@ -1490,10 +1472,9 @@ LABEL_6:
 
 // 0x6C9C60
 namespace gamemd {
-char BinkMovie::CheckKeyframeTransition(CellStruct * aP1)
+void BinkMovie::CheckKeyframeTransition(CellStruct * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void BinkMovie::CheckKeyframeTransition(CellStruct *aP1)
 {
   ObjectClass *v7; // ecx
   void (*v8)(void); // eax
@@ -1565,7 +1546,6 @@ namespace gamemd {
 void BinkMovie::ProcessKeyframe(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void BinkMovie::ProcessKeyframe(ObjectClass *aP1)
 {
   BitFont *v5; // esi
   ObjectClass *v6; // ebx
@@ -1648,7 +1628,6 @@ namespace gamemd {
 unsigned int * BinkMovie::VtableDispatch(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_6C9EC0(_DWORD *this, int a2)
 {
 
   int v3 = a2; /*0x6c9ec3*/

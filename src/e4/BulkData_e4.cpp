@@ -7,7 +7,6 @@
 void BulkData::InitMissionHashing()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_697AD0(_DWORD *this)
 {
   DWORD v2; // eax
   DWORD Time; // [esp+10h] [ebp-4h] BYREF

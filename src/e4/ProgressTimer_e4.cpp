@@ -6,7 +6,6 @@
 unsigned int * ProgressTimer::GetValue(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall ProgressTimer::GetValue(_WORD *this, IUnknown *aP1)
 {
   __int16 v2; // bx
   ObjectClass *v5; // esi

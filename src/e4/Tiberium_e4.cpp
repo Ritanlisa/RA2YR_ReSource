@@ -9,10 +9,9 @@
 
 // 0x59D510
 namespace gamemd {
-char Tiberium::ProcessGrowth(int a2, MapResourceClass * aP2, char _140)
+void Tiberium::ProcessGrowth(int a2, MapResourceClass * aP2, char _140)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Tiberium::ProcessGrowth(int a2, MapResourceClass *aP2, char _140)
 {
   __int16 v7; // si
   __int16 v11; // di
@@ -602,10 +601,9 @@ LABEL_147:
 
 // 0x59E740
 namespace gamemd {
-char Tiberium::CalculateSpread(MouseClass * aP1, MapResourceClass * aP2, short * a3, int a5, MouseClass * aP5, MapResourceClass * aP6, double * a7)
+void Tiberium::CalculateSpread(MouseClass * aP1, MapResourceClass * aP2, short * a3, int a5, MouseClass * aP5, MapResourceClass * aP6, double * a7)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Tiberium::CalculateSpread(MouseClass *aP1, MapResourceClass *aP2, __int16 *a3, int a5, MouseClass *aP5, MapResourceClass *aP6, double *a7)
 {
   MouseClass *v11; // eax
   MouseClass *v16; // eax

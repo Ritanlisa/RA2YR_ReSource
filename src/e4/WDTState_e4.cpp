@@ -5,10 +5,9 @@
 
 // 0x76BA70
 namespace gamemd {
-char WDTState_4::Release(int a2, unsigned int * a3)
+void WDTState_4::Release(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void WDTState_4_::_vt02(int a2, _DWORD *a3)
 {
   int i; // esi
   void (__thiscall ***v11)(_DWORD, int); // ecx

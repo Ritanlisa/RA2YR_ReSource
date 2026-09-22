@@ -7,7 +7,6 @@
 long long Isometric::InitTables(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-__int64 __thiscall Isometric::InitTables(int this, IUnknown *aP1)
 {
   __int64 result; // rax
 

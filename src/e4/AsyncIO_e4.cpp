@@ -4,10 +4,9 @@
 #include "e4/classes/Timer_e4.hpp"
 
 // 0x5BF450
-char AsyncIO::Shutdown()
+void AsyncIO::Shutdown()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void AsyncIO_Shutdown()
 {
   _DWORD *i; // eax
   void (__thiscall ***v2)(_DWORD, int); // ecx
@@ -47,10 +46,9 @@ void AsyncIO_Shutdown()
 }
 
 // 0x774BC0
-BOOL AsyncIO::WaitCompletion()
+void AsyncIO::WaitCompletion()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void AsyncIO_WaitCompletion(int this)
 {
   DWORD NumberOfBytesTransferred; // [esp+4h] [ebp-1Ch] BYREF
   DWORD Ticks; // [esp+8h] [ebp-18h]

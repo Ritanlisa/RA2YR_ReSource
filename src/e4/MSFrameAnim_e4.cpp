@@ -5,10 +5,9 @@
 
 // 0x769BD0
 namespace gamemd {
-MSFrameAnim * MSFrameAnim::QueryInterface(char a2)
+void * MSFrameAnim::QueryInterface(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-MSFrameAnim *__thiscall MSFrameAnim::QueryInterface(_DWORD *this, char a2)
 {
   *this = &vt_MSFrameAnim; /*0x769bd3*/
   VtableStub::5CB6C0(this); /*0x769bd9*/
@@ -21,10 +20,9 @@ MSFrameAnim *__thiscall MSFrameAnim::QueryInterface(_DWORD *this, char a2)
 
 // 0x769FE0
 namespace gamemd {
-char MSFrameAnim::setFrameRate(int a2, unsigned int * a3)
+void MSFrameAnim::setFrameRate(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MSFrameAnim::sub_769FE0(int a2, _DWORD *a3)
 {
   int i; // esi
   void (__thiscall ***v11)(_DWORD, int); // ecx

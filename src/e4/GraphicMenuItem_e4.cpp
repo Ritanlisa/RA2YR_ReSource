@@ -6,7 +6,6 @@
 void GraphicMenuItem::Dtor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void GraphicMenuItem_Destructor(void ***this)
 {
   void **v1; // esi
 

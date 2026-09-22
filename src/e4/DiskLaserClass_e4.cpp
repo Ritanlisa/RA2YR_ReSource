@@ -4,10 +4,9 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 
 // 0x4A7A30
-int DiskLaserClass::DiskLaserClass()
+D DiskLaserClass::DiskLaserClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-D DiskLaserClass::DiskLaserClass(int this)
 {
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x4a7a33*/
@@ -38,10 +37,9 @@ D DiskLaserClass::DiskLaserClass(int this)
 }
 
 // 0x4A7C90
-DiskLaserClass * DiskLaserClass::CopyTo(char a2)
+void * DiskLaserClass::CopyTo(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-DiskLaserClass *__thiscall DiskLaserClass::CopyTo(_DWORD *this, char a2)
 {
 
   *this = &DiskLaserClass::`vftable'; /*0x4a7c9d*/

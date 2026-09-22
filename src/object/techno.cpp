@@ -379,11 +379,10 @@ void TechnoClass::Uncloak(bool play_sound)
 }
 
 // 0x6f3330
-int TechnoClass::SelectWeapon(AbstractClass* target) const
+void TechnoClass::SelectWeapon(AbstractClass* target) const
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x6f3330
-void TechnoClass::SelectWeapon(#377 *this)
 {
   int result; // eax
 
@@ -1142,11 +1141,10 @@ void TechnoClass::AddPassenger(FootClass* passenger)
 // 10. Final unit creation via CreateUnitOnCompletion
 // ============================================================
 // 0x423ac0
-bool TechnoClass::CreateUnit()
+void TechnoClass::CreateUnit()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x423ac0
-void TechnoClass::CreateUnit(#361 *this)
 {
   void **v13; // eax
   void **v17; // eax
@@ -1537,7 +1535,7 @@ void TechnoClass::CreateUnit(#361 *this)
         this->queuedMission = dword_A8ED54[12];
         this->missionQueued = v73;
         this->missionStatus = Speed;
-        int v74 = this->q02B;
+        bool v74 = this->q02B;
         if ( *(double *)(this->missionTimer + 680) <= 0.0 || this->q194 )
           goto LABEL_120;
         int v75 = this->q033;
@@ -3733,7 +3731,6 @@ return missionState == 11
 void TechnoClass::CreateDestructionEffect() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x5f5390
-void TechnoClass::CreateDestructionEffect(#374 *this)
 {
   void **v10; // eax
   void **v14; // ecx
@@ -4493,10 +4490,9 @@ int TechnoClass::CanInitiateSell() const { return false; }
 // 0x6f3280
 int TechnoClass::IsNotAircraftOrBuilding() const { return false; }
 // 0x6f3330
-int TechnoClass::SelectWeapon() {
+void TechnoClass::SelectWeapon() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x6f3330
-void TechnoClass::SelectWeapon(#377 *this)
 {
   int result; // eax
 

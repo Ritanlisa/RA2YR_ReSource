@@ -17,7 +17,6 @@ namespace gamemd {
 int sub_4116A0(unsigned int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_4116A0(unsigned int a1)
 {
   int result; // eax
 
@@ -106,7 +105,6 @@ namespace gamemd {
 int ManageMultimediaTimer(struct _RTL_CRITICAL_SECTION * dwUser, int a2, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int ManageMultimediaTimer(struct _RTL_CRITICAL_SECTION *dwUser, int a2, int a3, int a4)
 {
   int result; // eax
   LONG LockCount; // eax
@@ -236,10 +234,9 @@ int ManageMultimediaTimer(struct _RTL_CRITICAL_SECTION *dwUser, int a2, int a3, 
 
 // 0x411B20
 namespace gamemd {
-int sub_411B20(DWORD_PTR dwUser, AnimClass * aP1, int a3)
+void sub_411B20(DWORD_PTR dwUser, AnimClass * aP1, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_411B20(DWORD_PTR dwUser, AnimClass *aP1, int a3)
 {
   LPDIRECTSOUND DirectSound; // [esp+8h] [ebp-64h]
 
@@ -306,10 +303,9 @@ void sub_411B20(DWORD_PTR dwUser, AnimClass *aP1, int a3)
 
 // 0x411DF0
 namespace gamemd {
-int InitializeSoundBufferPlayback(LPCRITICAL_SECTION lpCriticalSection)
+void InitializeSoundBufferPlayback(LPCRITICAL_SECTION lpCriticalSection)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void InitializeSoundBufferPlayback(LPCRITICAL_SECTION lpCriticalSection)
 {
   LONG LockCount; // eax
   int **v7; // edi
@@ -416,10 +412,9 @@ void InitializeSoundBufferPlayback(LPCRITICAL_SECTION lpCriticalSection)
 
 // 0x412000
 namespace gamemd {
-int SubmitDirectSoundBufferData(unsigned int a1, char * a2, char * a3)
+void SubmitDirectSoundBufferData(unsigned int a1, char * a2, char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void SubmitDirectSoundBufferData(unsigned int a1, char *a2, char *a3)
 {
   struct _RTL_CRITICAL_SECTION *v35; // eax
   LPCRITICAL_SECTION lpCriticalSection; // [esp+44h] [ebp-Ch]
@@ -551,7 +546,6 @@ namespace gamemd {
 void fptc(UINT uTimerID, UINT uMsg, DWORD_PTR dwUser, DWORD_PTR dw1, DWORD_PTR dw2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void fptc(UINT uTimerID, UINT uMsg, DWORD_PTR dwUser, DWORD_PTR dw1, DWORD_PTR dw2)
 {
   volatile LONG *v7; // ebx
   struct _RTL_CRITICAL_SECTION *v8; // edi
@@ -627,7 +621,6 @@ namespace gamemd {
 bool sub_413CD0(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool __fastcall sub_413CD0(int a1)
 {
 
   if ( !a1 ) /*0x413cd5*/
@@ -644,10 +637,9 @@ bool __fastcall sub_413CD0(int a1)
 
 // 0x41B110
 namespace gamemd {
-int PlaceAircraftFromINI()
+void PlaceAircraftFromINI()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-CCINIClass *__usercall PlaceAircraftFromINI@<eax>(char *a1@<ecx>, int a2@<edi>)
 {
   CCINIClass *result; // eax
   CCINIClass *v4; // ecx
@@ -784,7 +776,6 @@ namespace gamemd {
 int CompareFunction(unsigned int * a1, unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int CompareFunction(_DWORD *a1, _DWORD *a2)
 {
   if ( *a1 == *a2 )
     return 0; /*0x41c620*/

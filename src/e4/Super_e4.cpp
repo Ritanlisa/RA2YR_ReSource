@@ -5,10 +5,9 @@
 
 // 0x6CC260
 namespace gamemd {
-int Super::GetDefaultTimer()
+void Super::GetDefaultTimer()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Super_GetDefaultTimer(_DWORD *this)
 {
   int result; // eax
 

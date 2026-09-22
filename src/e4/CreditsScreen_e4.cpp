@@ -4,10 +4,9 @@
 #include "e4/classes/String_e4.hpp"
 
 // 0x531A00
-int CreditsScreen::DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
+void CreditsScreen::DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CreditsScreen_DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 {
   int result; // eax
   _DWORD *WindowLongA; // eax

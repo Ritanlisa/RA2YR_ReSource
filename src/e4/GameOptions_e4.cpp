@@ -4,10 +4,9 @@
 
 // 0x682780
 namespace gamemd {
-int sub_682780(int a1, int a2, wchar_t * String)
+void sub_682780(int a1, int a2, wchar_t * String)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_682780(int a1, int a2, wchar_t *String)
 {
   _UNKNOWN **v5; // ecx
   size_t v7; // eax
@@ -66,10 +65,9 @@ LABEL_18:
 
 // 0x6829A0
 namespace gamemd {
-int sub_6829A0(int * a1, int a2, int a3)
+void sub_6829A0(int * a1, int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_6829A0(int *a1, int a2, int a3)
 {
   __int16 v8[4]; // [esp+38h] [ebp-10h] BYREF
 

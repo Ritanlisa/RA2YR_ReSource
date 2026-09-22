@@ -7,10 +7,9 @@
 
 // 0x7AC630
 namespace gamemd {
-CreateGameDialogControl * WonlineStringDialogControl_12::Constructor_WonlineStringDialogControl(char a2)
+void * WonlineStringDialogControl_12::Constructor_WonlineStringDialogControl(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-CreateGameDialogControl *__thiscall WonlineStringDialogControl_12_::Constructor_WonlineStringDialogControl(
         DialogControl_OwnerDraw *this,
         char a2)
 {
@@ -27,10 +26,9 @@ CreateGameDialogControl *__thiscall WonlineStringDialogControl_12_::Constructor_
 
 // 0x7AD690
 namespace gamemd {
-int WonlineStringDialogControl_28::QueryInterface(char * a1, unsigned int * a2, char ** a3)
+void WonlineStringDialogControl_28::QueryInterface(char * a1, unsigned int * a2, char ** a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void WonlineStringDialogControl_28_::_vt00(char *a1, _DWORD *a2, char **a3)
 {
   _UNKNOWN **v3; // esi
   int result; // eax

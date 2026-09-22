@@ -42,7 +42,6 @@ namespace gamemd {
 unsigned int * CreateFractalNoise(CCINIClass * aP0)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__stdcall CreateFractalNoise(CCINIClass *aP0)
 {
   CCINIClass *v2; // ecx
   __int16 v9; // cx
@@ -108,10 +107,9 @@ LABEL_5:
 
 // 0x420F40
 namespace gamemd {
-int UpdateSpotlightsFoo(int * a1, int * a2)
+void UpdateSpotlightsFoo(int * a1, int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall UpdateSpotlightsFoo(int *a1, int *a2)
 {
   int result; // eax
   int *FoundationSize; // edx
@@ -297,7 +295,6 @@ namespace gamemd {
 unsigned int * ClipRectIntersection(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2, MapClass * aP3, unsigned int * a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__fastcall ClipRectIntersection(IUnknown *aP0, IUnknown *aP1, IUnknown *aP2, MapClass *aP3, _DWORD *a4)
 {
   _DWORD *result; // eax
   AbstractClass *v6; // ebx
@@ -362,11 +359,10 @@ LABEL_23:
 
 // 0x424CE0
 namespace gamemd {
-int ProductionCompletionCallback()
+void ProductionCompletionCallback()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // Production completion callback (543B). Handles audio, special building anims, unit creation.
-void ProductionCompletionCallback(BuildingClass_Full *this)
 {
   IUnknown *v5; // ebx
   void **v7; // ebp
@@ -457,11 +453,10 @@ void ProductionCompletionCallback(BuildingClass_Full *this)
 
 // 0x424F00
 namespace gamemd {
-int CreateUnitOnCompletion()
+void CreateUnitOnCompletion()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // Create unit at completion (583B). Calculates exit cell, foundation offsets, spawns unit.
-void CreateUnitOnCompletion(BuildingClass_Full *this)
 {
   int MissionTimer_StartTime; // eax
   int i; // edi
@@ -551,10 +546,9 @@ void CreateUnitOnCompletion(BuildingClass_Full *this)
 
 // 0x4251F0
 namespace gamemd {
-int sub_4251F0(int a1, short * a2)
+void sub_4251F0(int a1, short * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_4251F0(int a1, __int16 *a2)
 {
   int result; // eax
 
@@ -575,10 +569,9 @@ int __fastcall sub_4251F0(int a1, __int16 *a2)
 
 // 0x425670
 namespace gamemd {
-bool E4Recv_425670::ConstructionPositionTracker()
+void E4Recv_425670::ConstructionPositionTracker()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ConstructionPositionTracker(BuildingClass_Full *this)
 {
   IUnknown *v3; // edi
   int *p_Location_X; // ebp
@@ -828,10 +821,9 @@ LABEL_47:
 
 // 0x4261D0
 namespace gamemd {
-int sub_4261D0()
+void sub_4261D0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_4261D0()
 {
   int result; // eax
   int i; // edi
@@ -864,10 +856,9 @@ void sub_4261D0()
 
 // 0x4267F0
 namespace gamemd {
-int sub_4267F0()
+void sub_4267F0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __usercall sub_4267F0@<al>(int a1@<ecx>, int a2@<ebx>)
 {
   unsigned __int16 v10; // ax
   unsigned __int16 v11; // cx
@@ -937,10 +928,9 @@ char __usercall sub_4267F0@<al>(int a1@<ecx>, int a2@<ebx>)
 
 // 0x426ED0
 namespace gamemd {
-int E4Recv_426ED0::sub_426ED0(int a2)
+void E4Recv_426ED0::sub_426ED0(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_426ED0(int this, int a2)
 {
   unsigned __int16 *i; // ecx
   unsigned __int16 v10; // si
@@ -1002,10 +992,9 @@ void sub_426ED0(int this, int a2)
 
 // 0x4270D0
 namespace gamemd {
-char sub_4270D0(int a1, unsigned int a2, AnimFile * aP2, int arg4, char * a4, int a6)
+void sub_4270D0(int a1, unsigned int a2, AnimFile * aP2, int arg4, char * a4, int a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall sub_4270D0(int a1, unsigned int a2, AnimFile *aP2, int arg4, char *a4, int a6)
 {
   AnimFile *v8; // ebx
   char *i; // ebp
@@ -1117,7 +1106,6 @@ namespace gamemd {
 int BuildingTypeClass_LoadTheatreSHP(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall BuildingTypeClass_LoadTheatreSHP(int a1)
 {
   int result; // eax
   int i; // [esp+8h] [ebp-204h]
@@ -1170,10 +1158,9 @@ int __fastcall BuildingTypeClass_LoadTheatreSHP(int a1)
 
 // 0x428F70
 namespace gamemd {
-AnimTypeClass * globalHelper_028F70(AbstractClass * Source, int a2)
+void * globalHelper_028F70(AbstractClass * Source, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-AnimTypeClass *__fastcall globalHelper_028F70(AbstractClass *Source, int a2)
 {
 
   if ( !_strcmpi(&stru_817460.sectionHead[1], Source) || !_strcmpi(g_Str_none, Source) ) /*0x428f8f*/
@@ -1202,7 +1189,6 @@ namespace gamemd {
 unsigned int * PathClass_WalkPath(unsigned int * a1, int * a2, int a3, int * a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__fastcall PathClass_WalkPath(_DWORD *a1, int *a2, int a3, int *a4)
 {
 
   int v4 = *a2; /*0x429781*/
@@ -1250,7 +1236,6 @@ namespace gamemd {
 void E4Recv_42A900::sub_42A900()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_42A900(int this)
 {
   void **v2; // esi
   void **v3; // esi
@@ -1349,10 +1334,9 @@ void sub_42A900(int this)
 
 // 0x42AA90
 namespace gamemd {
-int * globalHelper_02AA90(int a1, DynamicVectorClass_uint * aP1)
+void * globalHelper_02AA90(int a1, DynamicVectorClass_uint * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int *__stdcall globalHelper_02AA90(int a1, DynamicVectorClass_uint *aP1)
 {
   DynamicVectorClass_uint *v4; // edx
   DynamicVectorClass_uint *v6; // ebx
@@ -1426,10 +1410,9 @@ int *__stdcall globalHelper_02AA90(int a1, DynamicVectorClass_uint *aP1)
 
 // 0x42B080
 namespace gamemd {
-int sub_42B080(short * a1, int a2)
+void sub_42B080(short * a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_42B080(__int16 *a1, int a2)
 {
   __int16 *v11; // [esp+14h] [ebp-14h]
   _WORD * v2 = a1; /*0x42b084*/
@@ -1493,10 +1476,9 @@ void sub_42B080(__int16 *a1, int a2)
 
 // 0x42B420
 namespace gamemd {
-int GeneratePathWaypoints(unsigned int * a1, int * a2, int a3, int a4, int a5, int ** a6)
+void GeneratePathWaypoints(unsigned int * a1, int * a2, int a3, int a4, int a5, int ** a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void GeneratePathWaypoints(_DWORD *a1, int *a2, int a3, int a4, int a5, int **a6)
 {
   __int16 v18; // ax
   __int16 *v20; // ebp
@@ -1718,10 +1700,9 @@ LABEL_38:
 
 // 0x42BCA0
 namespace gamemd {
-short sub_42BCA0(int a1, int a2, int a3, unsigned int * a4, int * a5)
+void sub_42BCA0(int a1, int a2, int a3, unsigned int * a4, int * a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-__int16 __stdcall sub_42BCA0(int a1, int a2, int a3, _DWORD *a4, int *a5)
 {
   __int16 v8; // cx
   __int16 v9; // bx
@@ -1803,10 +1784,9 @@ LABEL_11:
 
 // 0x42BE20
 namespace gamemd {
-char WalkLineOfSight(char * a1, int a2, unsigned int * a3, short * a4, unsigned int * a5, int a6, char a7)
+void WalkLineOfSight(char * a1, int a2, unsigned int * a3, short * a4, unsigned int * a5, int a6, char a7)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void WalkLineOfSight(char *a1, int a2, _DWORD *a3, __int16 *a4, _DWORD *a5, int a6, char a7)
 {
   __int16 v7; // dx
   int v16; // ebp
@@ -1958,7 +1938,6 @@ namespace gamemd {
 void * E4Recv_42C900::FindPathWithRetry(FootClass * aP1, short * a2, int aP4, int a5, int a6, int aP3, int aP6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void *__thiscall FindPathWithRetry(int this, FootClass *aP1, __int16 *a2, int aP4, int a5, int a6, int aP3, int aP6)
 {
   IUnknown *ecx3; // ecx
   IUnknown *v12; // ebx
@@ -2106,7 +2085,6 @@ namespace gamemd {
 void E4Recv_42CCD0::sub_42CCD0(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_42CCD0(int this, int a2)
 {
   E4Recv_42CCD0 *v2; // ebx
   unsigned __int16 v5; // di
@@ -2208,7 +2186,6 @@ namespace gamemd {
 void E4Recv_42CF80::sub_42CF80(int a2, IUnknown * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_42CF80(_BYTE *this, int a2, IUnknown *aP2)
 {
   IUnknown *v3; // esi
   unsigned __int16 *i; // ecx
@@ -2333,7 +2310,6 @@ namespace gamemd {
 unsigned int * Cell_GetNeighborCoord(unsigned int * a1, short * a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__fastcall Cell_GetNeighborCoord(_DWORD *a1, __int16 *a2, int a3)
 {
   __int16 v6; // ax
 
@@ -2361,10 +2337,9 @@ _DWORD *__fastcall Cell_GetNeighborCoord(_DWORD *a1, __int16 *a2, int a3)
 
 // 0x42E150
 namespace gamemd {
-int sub_42E150()
+void sub_42E150()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __usercall sub_42E150@<eax>(int result@<eax>, _DWORD *a2@<ecx>)
 {
 
   int v2 = a2[6]; /*0x42e150*/
@@ -2390,10 +2365,9 @@ int __usercall sub_42E150@<eax>(int result@<eax>, _DWORD *a2@<ecx>)
 
 // 0x42FD30
 namespace gamemd {
-int EncodeBitmapRGB(Pipe * aP0, int edx0, unsigned char * a2, int a4)
+void EncodeBitmapRGB(Pipe * aP0, int edx0, unsigned char * a2, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall EncodeBitmapRGB(Pipe *aP0, int edx0, _BYTE *a2, int a4)
 {
   Pipe *v5; // ebp
   char needsRedraw; // al
@@ -2474,10 +2448,9 @@ LABEL_19:
 
 // 0x42FE50
 namespace gamemd {
-int DecodeBitmapRGB(Pipe * aP0, BombClass * aP1, unsigned char * a2, int a4)
+void DecodeBitmapRGB(Pipe * aP0, BombClass * aP1, unsigned char * a2, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall DecodeBitmapRGB(Pipe *aP0, BombClass *aP1, _BYTE *a2, int a4)
 {
   Pipe *v6; // ebp
   unsigned __int8 v9; // cl

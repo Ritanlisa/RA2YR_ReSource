@@ -6,10 +6,9 @@
 #include "e4/classes/Math_e4.hpp"
 
 // 0x5A5B50
-short MapSeedClass::PlaceBuildingClusters(MapSeedClass * aP1)
+void MapSeedClass::PlaceBuildingClusters(MapSeedClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-__int16 __thiscall MapSeedClass::PlaceBuildingClusters(void *this, MapSeedClass *aP1)
 {
   MapSeedClass **v2; // eax
   MapSeedClass *v3; // ecx
@@ -390,10 +389,9 @@ LABEL_73:
 }
 
 // 0x5A76E0
-char MapSeedClass::ValidateRectBounds()
+void MapSeedClass::ValidateRectBounds()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_5A76E0(int *this)
 {
   __int16 v9; // dx
   int v2 = *this; /*0x5a76ee*/

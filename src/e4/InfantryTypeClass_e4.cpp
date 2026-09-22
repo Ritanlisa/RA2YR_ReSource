@@ -9,10 +9,9 @@
 #include "e4/classes/VoxelAnimType_e4.hpp"
 
 // 0x5236A0
-int InfantryTypeClass::Constructor(ObjectClass * aP1)
+void InfantryTypeClass::Constructor(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void InfantryTypeClass::Constructor(int this, ObjectClass *aP1)
 {
   InfantryTypeClass *v3; // eax
   CCINIClass *v6; // edx
@@ -146,7 +145,6 @@ LABEL_11:
 unsigned int * InfantryTypeClass::Constructor_523980(ObjectTypeClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall InfantryTypeClass::Constructor_523980(_DWORD *this, ObjectTypeClass *aP1)
 {
   TechnoTypeClass::Construct((int)this, aP1); /*0x523988*/
   this->qE50 = &vt_TypeList_AnimTypeClass_const; /*0x523992*/
@@ -161,10 +159,9 @@ _DWORD *__thiscall InfantryTypeClass::Constructor_523980(_DWORD *this, ObjectTyp
 }
 
 // 0x523B40
-char InfantryTypeClass::CreateInfantry(short * a2, AbstractClass * ppv)
+void InfantryTypeClass::CreateInfantry(short * a2, AbstractClass * ppv)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void InfantryTypeClass::CreateInfantry(__int16 *a2, AbstractClass *ppv)
 {
   InfantryClass *v5; // esi
   int v4 = __2_YAPAXI_Z(0x6F0u); /*0x523b4b*/
@@ -201,10 +198,9 @@ void InfantryTypeClass::CreateInfantry(__int16 *a2, AbstractClass *ppv)
 }
 
 // 0x5240A0
-char InfantryTypeClass::LoadFromINI(unsigned char *** a2)
+void InfantryTypeClass::LoadFromINI(unsigned char *** a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void InfantryTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
 {
   int PipIdx; // eax
   WeaponTypeClass *v5; // ebx
@@ -533,10 +529,9 @@ void InfantryTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
 
 // 0x524960
 namespace gamemd {
-int InfantryTypeClass_LoadTypeData()
+void InfantryTypeClass_LoadTypeData()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __userpurge InfantryTypeClass::_vt05@<eax>(int a1@<ebp>, int a2, int a3, int a4)
 {
   int result; // eax
   int i; // ebx
@@ -616,10 +611,9 @@ int __userpurge InfantryTypeClass::_vt05@<eax>(int a1@<ebp>, int a2, int a3, int
 
 // 0x524B60
 namespace gamemd {
-int InfantryTypeClass_SaveLoad_Prefix()
+void InfantryTypeClass_SaveLoad_Prefix()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __userpurge InfantryTypeClass::SaveLoad_Prefix@<eax>(int a1@<ebx>, _DWORD *a2, int *a3, int a4, int a5)
 {
   int result; // eax
   int i; // ebx
@@ -710,7 +704,6 @@ InfantryTypeClass * InfantryTypeClass::ddtor(char a2)
 unsigned int * InfantryTypeClass::CopyDataArray(DynamicVector * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall InfantryTypeClass::CopyDataArray(_DWORD *this, DynamicVector *aP1)
 {
 
   if ( this == (_DWORD *)aP1 ) /*0x524f2a*/
@@ -749,10 +742,9 @@ LABEL_8:
 }
 
 // 0x772FA0
-WeaponTypeClass * InfantryTypeClass::Find()
+void * InfantryTypeClass::Find()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-WeaponTypeClass *__thiscall InfantryTypeClass::Find(ObjectClass *this)
 {
 
   if ( !_strcmpi(&stru_817460.sectionHead[1], this) || !_strcmpi(g_Str_none, this) ) /*0x772fbc*/

@@ -6,7 +6,6 @@
 unsigned int * AddTeamCommand::Construct(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall AddTeamCommand_Constructor(_DWORD *this, int a2)
 {
   this->AddTeamCommand_field_00 = a2; /*0x5360b6*/
   *this = &vt_AddTeamCommandClass; /*0x5360b9*/
@@ -15,10 +14,9 @@ _DWORD *__thiscall AddTeamCommand_Constructor(_DWORD *this, int a2)
 }
 
 // 0x5360D0
-ObjectClass * AddTeamCommand::AddRef()
+void * AddTeamCommand::AddRef()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-ObjectClass *__thiscall AddTeamCommand::AddRef(_DWORD *this)
 {
   sprintf( /*0x5360de*/
     &HouseClass_Player[47208],
@@ -29,10 +27,9 @@ ObjectClass *__thiscall AddTeamCommand::AddRef(_DWORD *this)
 }
 
 // 0x5360F0
-wchar_t * AddTeamCommand::Release()
+void * AddTeamCommand::Release()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-wchar_t *__thiscall AddTeamCommand::_vt02(const wchar_t **this)
 {
   wchar_t *StringCSF; // eax
   const wchar_t *v3; // [esp-4h] [ebp-4h]

@@ -4,18 +4,10 @@
 
 // 0x7C8FD2
 namespace gamemd {
-int CIpow_Helper()
+void CIpow_Helper()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // local variable allocation has failed, the output may be wrong!
-long double __usercall CIpow_Helper@<st0>(
-        int CW@<eax>,
-        double a2@<st1>,
-        long double a3@<st0>,
-        int a4,
-        int a5,
-        int a6,
-        int a7)
 {
   long double result; // st7
   int v14; // ecx
@@ -125,10 +117,9 @@ LABEL_11:
 
 // 0x7C91A5
 namespace gamemd {
-void __usercall CIpow_Helper_Helper(double a1@<st0> a1)
+void* __usercall CIpow_Helper_Helper(double a1@<st0> a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __usercall CIpow_Helper_Helper(double a1@<st0>)
 {
   _ST6 = a1; /*0x7c91a5*/
   __asm { frndint } /*0x7c91a7*/

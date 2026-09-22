@@ -4,10 +4,9 @@
 #include "e4/classes/RocketLocomotionClass_17_e4.hpp"
 
 // 0x661EC0
-int RocketLocomotionClass::RocketLocomotionClass()
+R RocketLocomotionClass::RocketLocomotionClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-R RocketLocomotionClass::RocketLocomotionClass(int this)
 {
   wchar_t *v2; // ecx
 

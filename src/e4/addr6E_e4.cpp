@@ -45,10 +45,9 @@
 
 // 0x6E0250
 namespace gamemd {
-char E4Recv_6E0250::sub_6E0250(int a2, int a3, int a4, int a5)
+void E4Recv_6E0250::sub_6E0250(int a2, int a3, int a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_6E0250(_BYTE *this, int a2, int a3, int a4, int a5)
 {
   *((_BYTE *)g_ScenarioClass_Instance + 13479) = *(this + 144); /*0x6e025c*/
   return 1; /*0x6e0264*/
@@ -58,10 +57,9 @@ void sub_6E0250(_BYTE *this, int a2, int a3, int a4, int a5)
 
 // 0x6E0270
 namespace gamemd {
-char E4Recv_6E0270::sub_6E0270(int a2, int a3, int a4, int a5)
+void E4Recv_6E0270::sub_6E0270(int a2, int a3, int a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_6E0270(_BYTE *this, int a2, int a3, int a4, int a5)
 {
   *((_BYTE *)g_ScenarioClass_Instance + 13478) = *(this + 144); /*0x6e027c*/
   return 1; /*0x6e0284*/
@@ -71,10 +69,9 @@ void sub_6E0270(_BYTE *this, int a2, int a3, int a4, int a5)
 
 // 0x6E0290
 namespace gamemd {
-char E4Recv_6E0290::sub_6E0290(int a2, int a3, int a4, int a5)
+void E4Recv_6E0290::sub_6E0290(int a2, int a3, int a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_6E0290(_BYTE *this, int a2, int a3, int a4, int a5)
 {
   *((_BYTE *)g_ScenarioClass_Instance + 13480) = *(this + 144); /*0x6e029c*/
   return 1; /*0x6e02a4*/
@@ -84,7 +81,7 @@ void sub_6E0290(_BYTE *this, int a2, int a3, int a4, int a5)
 
 // 0x6E2050
 namespace gamemd {
-int globalHelper_0E2050()
+void globalHelper_0E2050()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // (no pseudocode — ASM-only function)
@@ -120,7 +117,7 @@ void sub_6E2790(int *this, int a2, int a3, int a4, int a5)
 
 // 0x6E30C0
 namespace gamemd {
-int CreateHouseClass()
+void CreateHouseClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // (no pseudocode — ASM-only function)
@@ -151,10 +148,9 @@ void sub_6E3380(int *this, int a2, int a3, int a4, int a5)
 
 // 0x6E37F0
 namespace gamemd {
-char E4Recv_6E37F0::sub_6E37F0(int a2, int a3, int a4, ObjectClass * aP4)
+void E4Recv_6E37F0::sub_6E37F0(int a2, int a3, int a4, ObjectClass * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_6E37F0(int this, int a2, int a3, int a4, ObjectClass *aP4)
 {
   char result; // al
 
@@ -182,10 +178,9 @@ LABEL_7:
 
 // 0x6E4090
 namespace gamemd {
-char sub_6E4090(int a1, int a2, int a3, int a4)
+void sub_6E4090(int a1, int a2, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_6E4090(int a1, int a2, int a3, int a4)
 {
   int v5; // esi
   _DWORD *v6; // ecx
@@ -224,7 +219,6 @@ namespace gamemd {
 int sub_6EC250(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_6EC250(int a1, int a2)
 {
   int result; // eax
   int i; // ebp
@@ -261,7 +255,6 @@ namespace gamemd {
 void E4Recv_6EDFD0::sub_6EDFD0(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_6EDFD0(int this, int a2, int a3)
 {
   char v5; // cl
   int v6; // [esp+8h] [ebp-4h] BYREF
@@ -302,7 +295,6 @@ namespace gamemd {
 unsigned int * DamageMapClassArea(int ecx0, void * a1, FootClass * aP2, int a4, char a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__fastcall DamageMapClassArea(int ecx0, void *a1, FootClass *aP2, int a4, char a5)
 {
   _DWORD *result; // eax
   HouseClass *v8; // eax
@@ -437,7 +429,6 @@ namespace gamemd {
 void E4Recv_6EFC70::ProcessAISuperWeaponSelection(ScriptClass * aP1, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ProcessAISuperWeaponSelection(int *this, ScriptClass *aP1, int a3)
 {
   TechnoClass *v3; // esi
   TechnoClass *i; // ebx

@@ -9,10 +9,9 @@
 
 // 0x401910
 namespace gamemd {
-int AudioStream::ReleaseSubsystem()
+void AudioStream::ReleaseSubsystem()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_401910(_DWORD *this)
 {
   int (__thiscall ***v2)(_DWORD, int); // ecx
   int result; // eax
@@ -31,10 +30,9 @@ void sub_401910(_DWORD *this)
 
 // 0x4026B0
 namespace gamemd {
-int AudioStream::Stop()
+void AudioStream::Stop()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void AudioStream_Stop(_DWORD *this)
 {
   return (*(int (**)(void))(this->q0D4 + 44))();
 }
@@ -43,10 +41,9 @@ void AudioStream_Stop(_DWORD *this)
 
 // 0x4026F0
 namespace gamemd {
-int AudioStream::ReleaseChannel()
+void AudioStream::ReleaseChannel()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void AudioStream_ReleaseChannel(_DWORD *this)
 {
   (*(void (**)(void))(this->q0D4 + 40))(); /*0x4026f9*/
   this->q029 &= ~0x10u; /*0x402705*/
@@ -60,7 +57,6 @@ namespace gamemd {
 void AudioStream::DestroyAll()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void AudioStream::DestroyAll()
 {
   int *Next; // edi
   int *i; // ebx
@@ -91,10 +87,9 @@ void AudioStream::DestroyAll()
 
 // 0x403820
 namespace gamemd {
-int AudioStream::Reset()
+void AudioStream::Reset()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void AudioStream::Reset()
 {
   *this = 0; /*0x403822*/
   this->q004 = 0; /*0x403824*/
@@ -123,10 +118,9 @@ void AudioStream::Reset()
 
 // 0x4038A0
 namespace gamemd {
-int AudioStream::ResetChannel(int a2, int a3)
+void AudioStream::ResetChannel(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void AudioStream::ResetChannel(int a2, int a3)
 {
   this->q008 = a2; /*0x4038a4*/
   this->q00C = a3; /*0x4038ab*/
@@ -137,10 +131,9 @@ void AudioStream::ResetChannel(int a2, int a3)
 
 // 0x4038C0
 namespace gamemd {
-int AudioStream::ResetChannel2(int a2, int a3)
+void AudioStream::ResetChannel2(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void AudioStream::ResetChannel2(int a2, int a3)
 {
   this->q020 = a2; /*0x4038c4*/
   this->q024 = a3; /*0x4038cb*/
@@ -151,10 +144,9 @@ void AudioStream::ResetChannel2(int a2, int a3)
 
 // 0x404700
 namespace gamemd {
-int AudioStream::SetupPlayback()
+void AudioStream::SetupPlayback()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void AudioStream_SetupPlayback(int this)
 {
 
   int v1 = this->AudioStream_field_0xA8; /*0x404700*/
@@ -202,10 +194,9 @@ void AudioStream_SetupPlayback(int this)
 
 // 0x4047B0
 namespace gamemd {
-int AudioStream::SelectRandom()
+void AudioStream::SelectRandom()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void AudioStream_SelectRandom(int this)
 {
   int v9; // ecx
   int v10; // ecx
@@ -271,7 +262,6 @@ namespace gamemd {
 void AudioStream::CleanupChannels()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void AudioStream_CleanupChannels()
 {
   void **v0; // esi
   void **v1; // edi
@@ -342,10 +332,9 @@ void AudioStream_CleanupChannels()
 
 // 0x4079C0
 namespace gamemd {
-int AudioStream::ReadStreamAndSyncPosition()
+void AudioStream::ReadStreamAndSyncPosition()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_4079C0(_DWORD *this)
 {
 
   int v2 = this->q0C0; /*0x4079c4*/
@@ -368,10 +357,9 @@ void sub_4079C0(_DWORD *this)
 
 // 0x407A30
 namespace gamemd {
-int AudioStream::SetPlaybackCallback()
+void AudioStream::SetPlaybackCallback()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_407A30(_DWORD *this)
 {
 
   int v1 = this->q0C0; /*0x407a31*/
@@ -392,10 +380,9 @@ void sub_407A30(_DWORD *this)
 
 // 0x407A60
 namespace gamemd {
-int AudioStream::ProcessCallback()
+void AudioStream::ProcessCallback()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_407A60(_DWORD *this)
 {
 
   int v1 = this->q0C0; /*0x407a61*/
@@ -419,7 +406,6 @@ namespace gamemd {
 void AudioStream::InitNodeFields()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_4084E0(_DWORD *this)
 {
   *this = 0; /*0x4084e2*/
   this->q004 = 0; /*0x4084e4*/
@@ -432,10 +418,9 @@ void sub_4084E0(_DWORD *this)
 
 // 0x408D50
 namespace gamemd {
-int AudioStream::GetChannel()
+void AudioStream::GetChannel()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Accessor_408d50(_DWORD *this)
 {
   return this->q014; /*0x408d53*/
 }
@@ -444,10 +429,9 @@ void Accessor_408d50(_DWORD *this)
 
 // 0x409310
 namespace gamemd {
-int AudioStream::ReadStreamAndReturn()
+void AudioStream::ReadStreamAndReturn()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_409310(int *this)
 {
   ReadAudioStream(this, 0); /*0x409315*/
   return this->q008; /*0x40931d*/
@@ -457,10 +441,9 @@ void sub_409310(int *this)
 
 // 0x4A33A0
 namespace gamemd {
-int AudioStream::ReadSamples(const void * a2)
+void AudioStream::ReadSamples(const void * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void AudioStream_ReadSamples(_DWORD *this, const void *a2)
 {
   _WORD *SamplePosition; // esi
 
@@ -572,10 +555,9 @@ void AudioStream_ReadSamples(_DWORD *this, const void *a2)
 
 // 0x4BEAC0
 namespace gamemd {
-char AudioStream::DrawWaveform(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnknown * aP4, int a6, int a7, int a8)
+void AudioStream::DrawWaveform(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnknown * aP4, int a6, int a7, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void AudioStream::DrawWaveform(IUnknown *aP1, IUnknown *aP2, IUnknown *aP3, IUnknown *aP4, int a6, int a7, int a8)
 {
   IUnknown **v9; // eax
   IUnknown *v10; // esi
@@ -987,10 +969,9 @@ LABEL_52:
 
 // 0x7BD270
 namespace gamemd {
-int AudioStream::SetFlag4C()
+void AudioStream::SetFlag4C()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void AudioStream::SetFlag4C(int this)
 {
   int result; // eax
 
@@ -1005,10 +986,9 @@ void AudioStream::SetFlag4C(int this)
 
 // 0x7BD2D0
 namespace gamemd {
-int AudioStream::CalcReadPos()
+void AudioStream::CalcReadPos()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void AudioStream_CalcReadPos(int this)
 {
   unsigned int i; // ecx
 
@@ -1078,10 +1058,9 @@ void AudioStream_CalcReadPos(int this)
 
 // 0x7BEA80
 namespace gamemd {
-int AudioStream::ProcessStream()
+void AudioStream::ProcessStream()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void AudioStream_ProcessStream(int this)
 {
   AudioStream *v1; // esi
   signed int Position; // ecx
@@ -1286,7 +1265,6 @@ namespace gamemd {
 unsigned int AudioStream::GetPosition()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void AudioStream_GetPosition(int this)
 {
   return (unsigned int)(60 * (*(int (__cdecl **)(int))(this + 80))(this)) / this->q1E0 /*0x7c3982*/
        + *(_DWORD *)(this + 328);

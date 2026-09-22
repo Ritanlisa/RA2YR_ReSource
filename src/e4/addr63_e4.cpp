@@ -98,7 +98,6 @@ namespace gamemd {
 unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__fastcall SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
 {
   size_t v6; // ebp
   _DWORD *v12; // esi
@@ -463,10 +462,9 @@ _DWORD *__fastcall SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
 
 // 0x630C10
 namespace gamemd {
-int PhoneEditorDialogProc(HWND hWnd, unsigned int a2, unsigned int a3, unsigned int a4)
+void PhoneEditorDialogProc(HWND hWnd, unsigned int a2, unsigned int a3, unsigned int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void PhoneEditorDialogProc(HWND hWnd, unsigned int a2, unsigned int a3, unsigned int a4)
 {
   int result; // eax
   LONG WindowLongA; // ebx
@@ -588,10 +586,9 @@ void PhoneEditorDialogProc(HWND hWnd, unsigned int a2, unsigned int a3, unsigned
 
 // 0x631300
 namespace gamemd {
-HWND E4Recv_631300::sub_631300()
+void E4Recv_631300::sub_631300()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-HWND __thiscall sub_631300(HWND *this)
 {
   HWND result; // eax
   HWND v3; // esi
@@ -624,7 +621,6 @@ namespace gamemd {
 void E4Recv_631640::sub_631640()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_631640(int this)
 {
   HWND DlgItem; // eax
   LRESULT v3; // eax
@@ -661,10 +657,9 @@ void sub_631640(int this)
 
 // 0x631760
 namespace gamemd {
-int NetworkSettingsDlgProc(HWND hWnd, unsigned int a2, unsigned int a3, HWND a4)
+void NetworkSettingsDlgProc(HWND hWnd, unsigned int a2, unsigned int a3, HWND a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void NetworkSettingsDlgProc(HWND hWnd, unsigned int a2, unsigned int a3, HWND a4)
 {
   int result; // eax
   LONG WindowLongA; // ecx
@@ -757,12 +752,11 @@ void NetworkSettingsDlgProc(HWND hWnd, unsigned int a2, unsigned int a3, HWND a4
 
 // 0x633AB0
 namespace gamemd {
-int sub_633AB0()
+void sub_633AB0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // ?do_decimal_point@?$_Mpunct@D@std@@MBEDXZ
 // doubtful name
-void sub_633AB0(_BYTE *this)
 {
   return this->vtable4; /*0x633ab3*/
 }
@@ -774,7 +768,6 @@ namespace gamemd {
 unsigned int * ScenarioClass_GetActionCoords(unsigned int * a1, unsigned char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__fastcall ScenarioClass_GetActionCoords(_DWORD *a1, _BYTE *a2)
 {
 
   if ( *a2 == 4 ) /*0x633bca*/
@@ -825,10 +818,9 @@ LABEL_11:
 
 // 0x635560
 namespace gamemd {
-int E4Recv_635560::sub_635560(int a2)
+void E4Recv_635560::sub_635560(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_635560(_DWORD *this, int a2)
 {
   int *Viewport; // eax
   _DWORD *ScenarioClassActionCoords; // eax
@@ -892,10 +884,9 @@ void sub_635560(_DWORD *this, int a2)
 
 // 0x635680
 namespace gamemd {
-int E4Recv_635680::sub_635680(int a2)
+void E4Recv_635680::sub_635680(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_635680(_DWORD **this, int a2)
 {
   int *Viewport; // eax
   _DWORD *Coords; // eax
@@ -961,10 +952,9 @@ void sub_635680(_DWORD **this, int a2)
 
 // 0x636F00
 namespace gamemd {
-int E4Recv_636F00::sub_636F00(int a2, int a3)
+void E4Recv_636F00::sub_636F00(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_636F00(int *this, int a2, int a3)
 {
   _DWORD **v8; // esi
   _DWORD **v9; // edi
@@ -1007,10 +997,9 @@ LABEL_9:
 
 // 0x637270
 namespace gamemd {
-char ExecutePlanningQueue()
+void ExecutePlanningQueue()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ExecutePlanningQueue()
 {
   int ValueArray; // eax
   int *TypeBuildingClass; // esi
@@ -1192,10 +1181,9 @@ LABEL_37:
 
 // 0x6375B0
 namespace gamemd {
-int E4Recv_6375B0::sub_6375B0()
+void E4Recv_6375B0::sub_6375B0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_6375B0(char *this)
 {
   _BYTE *v3; // ebx
   char *v4; // esi
@@ -1240,7 +1228,6 @@ namespace gamemd {
 void sub_637920()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_637920()
 {
 
   int v0 = 0; /*0x637928*/
@@ -1281,10 +1268,9 @@ void sub_637920()
 
 // 0x638120
 namespace gamemd {
-char ExecuteActionPlanManager(IUnknown * a1, char * a2)
+void ExecuteActionPlanManager(IUnknown * a1, char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall ExecuteActionPlanManager(IUnknown *a1, char *a2)
 {
   int *ScenarioClassActionCoords; // eax
   AbstractClass *v5; // ebx
@@ -1578,7 +1564,6 @@ namespace gamemd {
 void FactoryClass_ClearProduction(unsigned int * a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall FactoryClass_ClearProduction(_DWORD *a1, int a2)
 {
   int Type; // ebx
   int i; // ebp
@@ -1654,7 +1639,6 @@ namespace gamemd {
 void sub_638E60()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_638E60()
 {
   int *ScreenPos; // eax
 
@@ -1712,10 +1696,9 @@ LABEL_8:
 
 // 0x639040
 namespace gamemd {
-char sub_639040()
+void sub_639040()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_639040()
 {
   wchar_t *v1; // ebp
   int *i; // esi
@@ -1772,10 +1755,9 @@ void sub_639040()
 
 // 0x639130
 namespace gamemd {
-char sub_639130()
+void sub_639130()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_639130()
 {
   wchar_t *v2; // ebx
   int i; // esi
@@ -1822,7 +1804,6 @@ namespace gamemd {
 int sub_639210(int a1, int a2, int a3, int a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_639210(int a1, int a2, int a3, int a4, int a5)
 {
   _DWORD *ScenarioClassActionCoords; // eax
 
@@ -1863,7 +1844,6 @@ namespace gamemd {
 unsigned int ** sub_6392D0(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD **__stdcall sub_6392D0(int a1, int a2)
 {
   _DWORD **v3; // edi
   _DWORD *Coords; // eax
@@ -1902,7 +1882,6 @@ namespace gamemd {
 unsigned int ** sub_6393A0(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD **__stdcall sub_6393A0(int a1, int a2)
 {
   _DWORD **v3; // edi
   _DWORD *Coords; // eax
@@ -1938,10 +1917,9 @@ _DWORD **__stdcall sub_6393A0(int a1, int a2)
 
 // 0x639470
 namespace gamemd {
-int sub_639470(int a1, int a2, int a3)
+void sub_639470(int a1, int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_639470(int a1, int a2, int a3)
 {
   int v5; // esi
   _DWORD *ScenarioClassActionCoords; // eax
@@ -1967,10 +1945,9 @@ void sub_639470(int a1, int a2, int a3)
 
 // 0x639800
 namespace gamemd {
-char CompleteBuildingProduction(IUnknown * a1, int edx0)
+void CompleteBuildingProduction(IUnknown * a1, int edx0)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall CompleteBuildingProduction(IUnknown *a1, int edx0)
 {
   TechnoClass *v2; // edi
   AbstractClass *v4; // ebx
@@ -2131,7 +2108,6 @@ namespace gamemd {
 int FactoryClass_DecCounter(unsigned int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall FactoryClass_DecCounter(unsigned int a1)
 {
   int result; // eax
 
@@ -2147,10 +2123,9 @@ int __fastcall FactoryClass_DecCounter(unsigned int a1)
 
 // 0x63A5A0
 namespace gamemd {
-bool HandlePlanningModeClick(MouseClass * aP0, int a2)
+void HandlePlanningModeClick(MouseClass * aP0, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HandlePlanningModeClick(MouseClass *aP0, int a2)
 {
   ObjectClass *v3; // esi
   ObjectClass *v5; // ebx
@@ -2274,10 +2249,9 @@ LABEL_31:
 
 // 0x63AD50
 namespace gamemd {
-int ExportSelectionAsScriptAction()
+void ExportSelectionAsScriptAction()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ExportSelectionAsScriptAction()
 {
   int TypeBuildingClass; // eax
   _BYTE *WaypointCoordsScriptAction; // eax
@@ -2472,7 +2446,6 @@ namespace gamemd {
 void E4Recv_63B080::sub_63B080()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_63B080(void *this)
 {
   g_ScriptActionPool = (int)this; /*0x63b080*/
 }
@@ -2484,7 +2457,6 @@ namespace gamemd {
 void sub_63B150()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_63B150()
 {
   int i; // esi
   int j; // ebx
@@ -2563,10 +2535,9 @@ void sub_63B150()
 
 // 0x63B2F0
 namespace gamemd {
-int RenderScriptActionHighlight()
+void RenderScriptActionHighlight()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void RenderScriptActionHighlight()
 {
   _DWORD **v0; // edi
   int result; // eax
@@ -2692,10 +2663,9 @@ void RenderScriptActionHighlight()
 
 // 0x63CF10
 namespace gamemd {
-int E4Recv_63CF10::sub_63CF10()
+void E4Recv_63CF10::sub_63CF10()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_63CF10(_DWORD *this)
 {
   __int16 v5; // [esp+4h] [ebp-8h] BYREF
   unsigned __int8 v6; // [esp+6h] [ebp-6h]
@@ -2716,10 +2686,9 @@ void sub_63CF10(_DWORD *this)
 
 // 0x63CFC0
 namespace gamemd {
-int E4Recv_63CFC0::sub_63CFC0()
+void E4Recv_63CFC0::sub_63CFC0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_63CFC0(_DWORD *this)
 {
   __int16 v5; // [esp+4h] [ebp-8h] BYREF
   unsigned __int8 v6; // [esp+6h] [ebp-6h]
@@ -2743,7 +2712,6 @@ namespace gamemd {
 void Tactical_DrawWaypoint(int a1, int a2, int a3, int a4, int a5, int a6, unsigned int a7)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall Tactical_DrawWaypoint(int a1, int a2, int a3, int a4, int a5, int a6, unsigned int a7)
 {
   int *Viewport; // eax
 
@@ -2827,10 +2795,9 @@ void __fastcall Tactical_DrawWaypoint(int a1, int a2, int a3, int a4, int a5, in
 
 // 0x63D810
 namespace gamemd {
-char DrawTacticalLine2D(int a1, ObjectClass * aP1, int aP0, int aP0_4, int aP0_8, int aP0_12, char aP0_16)
+void DrawTacticalLine2D(int a1, ObjectClass * aP1, int aP0, int aP0_4, int aP0_8, int aP0_12, char aP0_16)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall DrawTacticalLine2D(int a1, ObjectClass *aP1, int aP0, int aP0_4, int aP0_8, int aP0_12, char aP0_16)
 {
   char result; // al
   DWORD Time; // eax
@@ -2883,7 +2850,6 @@ namespace gamemd {
 void Voxel_ProcessVertexData(unsigned int * a1, int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall Voxel_ProcessVertexData(_DWORD *a1, int *a2)
 {
 
   int v2 = a1[1]; /*0x63f086*/

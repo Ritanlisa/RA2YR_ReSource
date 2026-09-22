@@ -9,10 +9,9 @@
 #include "e4/classes/Team_e4.hpp"
 
 // 0x416D50
-int Carryall::MissionStateMachine()
+void Carryall::MissionStateMachine()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Carryall::MissionStateMachine(FootClass **this)
 {
   FootClass *v2; // ecx
   char *MissionControl; // eax

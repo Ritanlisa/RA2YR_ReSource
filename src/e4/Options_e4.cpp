@@ -12,10 +12,9 @@
 
 // 0x4F11B0
 namespace gamemd {
-int Options::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4)
+void Options::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Options::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4)
 {
   int result; // eax
   wchar_t *v6; // edi
@@ -249,10 +248,9 @@ LABEL_39:
 
 // 0x558840
 namespace gamemd {
-bool Options::PrepareSaveLoadDlg()
+void Options::PrepareSaveLoadDlg()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_558840(const char **this)
 {
   this->q004 = (const char *)3; /*0x558840*/
   this->q00C = 0; /*0x558847*/
@@ -266,7 +264,6 @@ namespace gamemd {
 void Options::Screen_Save()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Options::Screen_Save(HWND this)
 {
   HWND DlgItem; // eax
   HWND v4; // eax
@@ -340,7 +337,6 @@ namespace gamemd {
 char Options::Screen_Dialog()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char sub_55FC80()
 {
   HWND v0; // eax
   HWND v1; // esi
@@ -408,10 +404,9 @@ char sub_55FC80()
 
 // 0x6244E0
 namespace gamemd {
-int Options::DeleteAndZero()
+void Options::DeleteAndZero()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_6244E0(int *this)
 {
   int result; // eax
 
@@ -442,10 +437,9 @@ void sub_6244E0(int *this)
 
 // 0x6248A0
 namespace gamemd {
-char Options::EnsureCapacity()
+void Options::EnsureCapacity()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_6248A0(int *this)
 {
 
   int v2 = *this; /*0x6248a5*/
@@ -472,10 +466,9 @@ void sub_6248A0(int *this)
 
 // 0x6253B0
 namespace gamemd {
-char Options::GrowBuffer()
+void Options::GrowBuffer()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_6253B0(int *this)
 {
 
   int v2 = *this; /*0x6253b4*/
@@ -505,10 +498,9 @@ void sub_6253B0(int *this)
 
 // 0x6254D0
 namespace gamemd {
-char Options::ReadOptionValue()
+void Options::ReadOptionValue()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_6254D0(int *this)
 {
 
   int v2 = *this; /*0x6254d5*/
@@ -538,7 +530,6 @@ namespace gamemd {
 void * Options::DestroyComposite(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void *__thiscall Options::DestroyComposite(void *this, char a2)
 {
   _DWORD *i; // ecx
 
@@ -581,10 +572,9 @@ LABEL_12:
 
 // 0x6255F0
 namespace gamemd {
-int * Options::RebuildDropdownList(ObjectClass * aP1)
+void * Options::RebuildDropdownList(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int *__thiscall Options::RebuildDropdownList(int *this, ObjectClass *aP1)
 {
   ObjectClass *v2; // ebp
   SessionClass *v3; // edi
@@ -677,10 +667,9 @@ int *__thiscall Options::RebuildDropdownList(int *this, ObjectClass *aP1)
 
 // 0x625A20
 namespace gamemd {
-char Options::SaveOptionValue()
+void Options::SaveOptionValue()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_625A20(int *this)
 {
 
   int v2 = *this; /*0x625a24*/

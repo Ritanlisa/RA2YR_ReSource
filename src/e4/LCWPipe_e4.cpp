@@ -3,10 +3,9 @@
 #include "e4/e4_globals.hpp"
 
 // 0x552060
-int LCWPipe::Dtor()
+void LCWPipe::Dtor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void LCWPipe_Destructor(int *this)
 {
 
   void * v2 = (void *)this->q005; /*0x552063*/

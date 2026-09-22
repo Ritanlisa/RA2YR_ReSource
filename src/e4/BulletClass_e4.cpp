@@ -5,10 +5,9 @@
 
 // 0x466380
 namespace gamemd {
-int BulletClass::BulletClass()
+B BulletClass::BulletClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-B sub_466380(int this)
 {
 
   ObjectClass::ctor((_DWORD *)this); /*0x466384*/
@@ -64,10 +63,9 @@ B sub_466380(int this)
 
 // 0x466560
 namespace gamemd {
-int BulletClass::Dtor()
+void BulletClass::Dtor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void BulletClass::Dtor(#374 *this)
 {
   #374 *v5; // [esp+4h] [ebp-4h] BYREF
 

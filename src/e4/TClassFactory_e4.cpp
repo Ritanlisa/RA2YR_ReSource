@@ -3,10 +3,9 @@
 #include "e4/e4_globals.hpp"
 
 // 0x6C0260
-LONG TClassFactory_CampaignClass::GetClassName()
+void TClassFactory_CampaignClass::GetClassName()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-LONG __thiscall TClassFactory_CampaignClass::GetClassName(TClassFactory_VCampaignClass__ *this)
 {
   LONG v1; // esi
   volatile LONG *Block; // [esp+Ch] [ebp+4h]
@@ -19,10 +18,9 @@ LONG __thiscall TClassFactory_CampaignClass::GetClassName(TClassFactory_VCampaig
 }
 
 // 0x6C4D60
-LONG TClassFactory_MechLocomotionClass::GetClassName()
+void TClassFactory_MechLocomotionClass::GetClassName()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-LONG __thiscall TClassFactory_MechLocomotionClass::GetClassName(TClassFactory_VMechLocomotionClass__ *this)
 {
   LONG v1; // esi
   volatile LONG *Block; // [esp+Ch] [ebp+4h]

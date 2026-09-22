@@ -6,10 +6,9 @@
 // 0x41D860
 namespace ra2 {
 namespace game {
-int AirstrikeClass::SpawnAircraft(int * a2)
+void AirstrikeClass::SpawnAircraft(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_41D860(int this, int *a2)
 {
   int v5; // ebx
   _DWORD *v7; // eax
@@ -97,10 +96,9 @@ void sub_41D860(int this, int *a2)
 // 0x41DA20
 namespace ra2 {
 namespace game {
-char AirstrikeClass::ReassignTarget(int a2)
+void AirstrikeClass::ReassignTarget(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_41DA20(int this, int a2)
 {
   int v8; // eax
   _DWORD *v9; // esi
@@ -175,10 +173,9 @@ LABEL_6:
 // 0x41DC80
 namespace ra2 {
 namespace game {
-int AirstrikeClass::RemoveAircraft(AudioController * aP1)
+void AirstrikeClass::RemoveAircraft(AudioController * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void AirstrikeClass::RemoveAircraft(int this, AudioController *aP1)
 {
   int result; // eax
   IUnknown *v4; // edx
@@ -228,10 +225,9 @@ void AirstrikeClass::RemoveAircraft(int this, AudioController *aP1)
 // 0x41DD50
 namespace ra2 {
 namespace game {
-AirstrikeClass * AirstrikeClass::CopyTo(char a2)
+void * AirstrikeClass::CopyTo(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-AirstrikeClass *__thiscall AirstrikeClass::CopyTo(_DWORD *this, char a2)
 {
 
   *this = &AirstrikeClass::`vftable'; /*0x41dd5d*/
@@ -261,10 +257,9 @@ AirstrikeClass *__thiscall AirstrikeClass::CopyTo(_DWORD *this, char a2)
 // 0x420E90
 namespace ra2 {
 namespace game {
-char AirstrikeClass::UpdateAll()
+void AirstrikeClass::UpdateAll()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_420E90()
 {
 
   _DWORD *v0; // eax

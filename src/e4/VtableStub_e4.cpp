@@ -4,10 +4,9 @@
 
 // 0x643E70
 namespace gamemd {
-int VtableStub_643E70()
+void VtableStub_643E70()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void VtableStub::643E70()
 {
   this->q064 = 0; /*0x643e70*/
 }

@@ -7,10 +7,9 @@
 
 // 0x766C10
 namespace gamemd {
-char Conflict_WorldDominationTour_12::Release(int a2, unsigned int * a3)
+void Conflict_WorldDominationTour_12::Release(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Conflict_WorldDominationTour_12_::_vt02(int a2, _DWORD *a3)
 {
   _DWORD *v6; // esi
   int v7; // ebx
@@ -99,10 +98,9 @@ LABEL_14:
 
 // 0x766DC0
 namespace gamemd {
-char Conflict_WorldDominationTour_12::Constructor_1(int a2, unsigned int * a3)
+void Conflict_WorldDominationTour_12::Constructor_1(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Conflict_WorldDominationTour_12_::sub_766DC0(int a2, _DWORD *a3)
 {
   int i; // esi
   void (__thiscall ***v11)(_DWORD, int); // ecx
@@ -192,10 +190,9 @@ void Conflict_WorldDominationTour_12_::sub_766DC0(int a2, _DWORD *a3)
 
 // 0x766800
 namespace gamemd {
-int Conflict_WorldDominationTour_12_::ReleaseBuffer()
+void Conflict_WorldDominationTour_12_::ReleaseBuffer()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Conflict_WorldDominationTour_12_::sub_766800(int this)
 {
   int (__thiscall ***v2)(_DWORD, int); // ecx
   int result; // eax
@@ -216,10 +213,9 @@ void Conflict_WorldDominationTour_12_::sub_766800(int this)
 
 // 0x766920
 namespace gamemd {
-BOOL Conflict_WorldDominationTour_26::AddRef()
+void Conflict_WorldDominationTour_26::AddRef()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Conflict_WorldDominationTour_26_::_vt01()
 {
   return *(this + 2) < *(_DWORD *)(*(this + 1) + 16); /*0x76692d*/
 }
@@ -231,7 +227,6 @@ namespace gamemd {
 unsigned int * Conflict_WorldDominationTour_26::Release()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall Conflict_WorldDominationTour_26_::_vt02(_DWORD *this)
 {
   ++*(this + 2); /*0x766fa2*/
   return this; /*0x766fa5*/
@@ -244,7 +239,6 @@ namespace gamemd {
 unsigned int * Conflict_WorldDominationTour_26::ddtor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall Conflict_WorldDominationTour_26_::_vt03(_DWORD *this)
 {
   --*(this + 2); /*0x766fb2*/
   return this; /*0x766fb5*/

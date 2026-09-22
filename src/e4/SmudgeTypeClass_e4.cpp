@@ -6,10 +6,9 @@
 #include "e4/classes/VoxelAnimType_e4.hpp"
 
 // 0x6B5260
-char * SmudgeTypeClass::SmudgeTypeClass(ObjectClass * aP1)
+S * SmudgeTypeClass::SmudgeTypeClass(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall SmudgeTypeClass::SmudgeTypeClass(char *this, ObjectClass *aP1)
 {
   SmudgeTypeClass *v3; // eax
   CCINIClass *v6; // edx
@@ -72,7 +71,6 @@ LABEL_11:
 void SmudgeTypeClass::vt_entry_A0(int * a2, int * a3, int a4, int a5, short * a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void SmudgeTypeClass::vt_entry_A0(int *a2, int *a3, int a4, int a5, __int16 *a6)
 {
 
   int v7 = (*(int (__thiscall **)(_DWORD *))(*this + 156))(this); /*0x6b55ff*/
@@ -96,10 +94,9 @@ void SmudgeTypeClass::vt_entry_A0(int *a2, int *a3, int a4, int a5, __int16 *a6)
 }
 
 // 0x6B56D0
-char SmudgeTypeClass::GetSize(unsigned char *** aP1)
+void SmudgeTypeClass::GetSize(unsigned char *** aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void SmudgeTypeClass::GetSize(int this, unsigned __int8 ***aP1)
 {
   char Bool_Overwrite; // al
   INIClass *v7; // [esp-8h] [ebp-210h]
@@ -113,7 +110,7 @@ void SmudgeTypeClass::GetSize(int this, unsigned __int8 ***aP1)
                      (unsigned __int8 *)(this + 36),
                      &unk_8185F4,
                      this->Crater);
-  char v4 = this->Burn; /*0x6b5710*/
+  bool v4 = this->Burn; /*0x6b5710*/
   this->Crater = Bool_Overwrite; /*0x6b5716*/
   char v5; // al
   v5 = INIClass::ReadBool_Overwrite( /*0x6b5725*/

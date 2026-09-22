@@ -3,10 +3,9 @@
 #include "e4/e4_globals.hpp"
 
 // 0x5BCC90
-char TextBuffer::Init()
+void TextBuffer::Init()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TextBuffer_Init(_BYTE *this)
 {
 
   int v1 = 0; /*0x5bcc93*/

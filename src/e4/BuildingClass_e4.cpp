@@ -6,10 +6,9 @@
 
 // 0x453E20
 namespace gamemd {
-int BuildingClass::LoadFromStream()
+void BuildingClass::LoadFromStream()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void BuildingClass::LoadFromStream(#377 *this)
 {
   size_t v3; // eax
   size_t i; // eax
@@ -191,10 +190,9 @@ LABEL_36:
 
 // 0x455D50
 namespace gamemd {
-int BuildingClass::AssignDestination_SyncLog()
+void BuildingClass::AssignDestination_SyncLog()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void BuildingClass::AssignDestination_SyncLog(#377 *this)
 {
   int result; // eax
   IUnknown *aP1; // [esp+8h] [ebp+4h]
@@ -216,10 +214,9 @@ void BuildingClass::AssignDestination_SyncLog(#377 *this)
 
 // 0x4DFCB0
 namespace gamemd {
-char BuildingClass::FindClosestForRepair(unsigned int * a1)
+void BuildingClass::FindClosestForRepair(unsigned int * a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall BuildingClass_FindClosestForRepair(_DWORD *a1)
 {
 
   _DWORD * v12 = 0; /*0x4dfcbf*/
@@ -273,10 +270,9 @@ LABEL_10:
 
 // 0x4DFE00
 namespace gamemd {
-char BuildingClass::FindClosestForRepair2(int a1)
+void BuildingClass::FindClosestForRepair2(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall BuildingClass_FindClosestForRepair2(int a1)
 {
 
   int v1 = g_BuildingProductionState - 1; /*0x4dfe0f*/
@@ -334,10 +330,9 @@ LABEL_10:
 
 // 0x629720
 namespace gamemd {
-char BuildingClass::AnimController()
+void BuildingClass::AnimController()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void BuildingClass_AnimController(int *this)
 {
   unsigned int *Value; // eax
   int v5; // ebx
@@ -393,10 +388,9 @@ LABEL_8:
 
 // 0x70BF50
 namespace gamemd {
-int BuildingClass::AllocAndCtor(BuildingClass * aP0, int aP2)
+void BuildingClass::AllocAndCtor(BuildingClass * aP0, int aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void BuildingClass::AllocAndCtor(BuildingClass *aP0, int aP2)
 {
   int result; // eax
   MouseClass *v3; // edi
@@ -526,10 +520,9 @@ void BuildingClass::AllocAndCtor(BuildingClass *aP0, int aP2)
 
 // 0x712130
 namespace gamemd {
-char BuildingClass::processCapture()
+void BuildingClass::processCapture()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_712130(_DWORD *this)
 {
   char result; // al
 
@@ -547,7 +540,7 @@ void sub_712130(_DWORD *this)
 
 // 0x739EC0
 namespace gamemd {
-int BuildingClass_ProcessSell()
+void BuildingClass_ProcessSell()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // (no pseudocode — ASM-only function)

@@ -23,10 +23,9 @@
 
 // 0x730A90
 namespace gamemd {
-int AddMessageListPlayerMessage(CellStruct * a1, int a2)
+void AddMessageListPlayerMessage(CellStruct * a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall AddMessageListPlayerMessage(CellStruct *a1, int a2)
 {
 
   if ( a2 == -1 ) /*0x730a93*/
@@ -41,10 +40,9 @@ int __fastcall AddMessageListPlayerMessage(CellStruct *a1, int a2)
 
 // 0x730AF0
 namespace gamemd {
-char ProcessSelectionExperience()
+void ProcessSelectionExperience()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ProcessSelectionExperience()
 {
   #375 **v1; // esi
   wchar_t *v3; // ebp
@@ -171,10 +169,9 @@ LABEL_47:
 
 // 0x730D60
 namespace gamemd {
-char sub_730D60()
+void sub_730D60()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_730D60()
 {
   char result; // al
   wchar_t *v8; // [esp+10h] [ebp-4h]
@@ -233,10 +230,9 @@ void sub_730D60()
 
 // 0x731130
 namespace gamemd {
-char E4Recv_731130::sub_731130()
+void E4Recv_731130::sub_731130()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_731130(char *this)
 {
 
   int v1 = g_SidebarState - 1; /*0x731138*/
@@ -271,10 +267,9 @@ LABEL_17:
 
 // 0x731AA0
 namespace gamemd {
-char sub_731AA0()
+void sub_731AA0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_731AA0()
 {
   wchar_t *v0; // edi
   v0 = g_SelectionManager; /*0x731aa3*/
@@ -302,7 +297,6 @@ namespace gamemd {
 unsigned int * sub_731EB0(unsigned char (__fastcall *a1)(int, int) a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__fastcall sub_731EB0(unsigned __int8 (__fastcall *a1)(int, int), int a2)
 {
   _DWORD *v3; // esi
   int v4; // ebp
@@ -363,7 +357,6 @@ namespace gamemd {
 unsigned int * TechnoClass_GatherFiltered(unsigned char (__fastcall *a1)(int, int) a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__fastcall TechnoClass_GatherFiltered(unsigned __int8 (__fastcall *a1)(int, int), int a2)
 {
   _DWORD *v3; // esi
   int v4; // ebp
@@ -421,10 +414,9 @@ _DWORD *__fastcall TechnoClass_GatherFiltered(unsigned __int8 (__fastcall *a1)(i
 
 // 0x732770
 namespace gamemd {
-BOOL TechnoClass_StepCleanupIfHuman(int a1, void * a2)
+void TechnoClass_StepCleanupIfHuman(int a1, void * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __fastcall TechnoClass_StepCleanupIfHuman(int a1, void *a2)
 {
   BOOL result; // eax
 
@@ -442,10 +434,9 @@ BOOL __fastcall TechnoClass_StepCleanupIfHuman(int a1, void *a2)
 
 // 0x732950
 namespace gamemd {
-int SelectAllOfType()
+void SelectAllOfType()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void SelectAllOfType()
 {
   int result; // eax
   _DWORD *v5; // ebx
@@ -612,7 +603,6 @@ namespace gamemd {
 char sub_732FF0(void * a1, int (__fastcall *a2)(unsigned int, int) a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall sub_732FF0(void *a1, int (__fastcall *a2)(_DWORD, int), int a3)
 {
   int HeightMap; // eax
   _DWORD *v4; // esi
@@ -717,10 +707,9 @@ char __fastcall sub_732FF0(void *a1, int (__fastcall *a2)(_DWORD, int), int a3)
 
 // 0x7331B0
 namespace gamemd {
-char sub_7331B0()
+void sub_7331B0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_7331B0()
 {
   wchar_t *v3; // ebx
   int HeightMap; // eax
@@ -848,7 +837,6 @@ namespace gamemd {
 int E4Recv_733380::UpdateUnitHealthTooltip()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int UpdateUnitHealthTooltip(HealthNavCommandClass *this)
 {
   IUnknown *result; // eax
   ObjectClass *v8; // esi
@@ -1016,7 +1004,6 @@ namespace gamemd {
 int E4Recv_7336C0::DrawUnitExperiencePopup()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int DrawUnitExperiencePopup(VeterancyNavCommandClass *this)
 {
   IUnknown *result; // eax
   VectorClass *StringCSF; // ebx
@@ -1183,7 +1170,6 @@ namespace gamemd {
 int SelectUnitsByTheme(char a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall SelectUnitsByTheme(char a1)
 {
   int result; // eax
   wchar_t *StringCSF; // ebx
@@ -1301,7 +1287,6 @@ namespace gamemd {
 unsigned int * E4Recv_733CD0::sub_733CD0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_733CD0(_DWORD *this)
 {
   _DWORD *v3; // edi
   int v4; // eax
@@ -1382,10 +1367,9 @@ LABEL_13:
 
 // 0x733E10
 namespace gamemd {
-char * SelectFactionThemeMusic(int a1, const char * a2, int a3, unsigned int * a4)
+void * SelectFactionThemeMusic(int a1, const char * a2, int a3, unsigned int * a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__fastcall SelectFactionThemeMusic(int a1, const char *a2, int a3, _DWORD *a4)
 {
   int v6; // ebx
   int v7; // ebp
@@ -1590,10 +1574,9 @@ LABEL_39:
 
 // 0x734E60
 namespace gamemd {
-wchar_t * GetStringCSF(wchar_t * Format, unsigned int * a2, CampaignScore * aP3, int a4)
+void * GetStringCSF(wchar_t * Format, unsigned int * a2, CampaignScore * aP3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-wchar_t *__fastcall GetStringCSF(wchar_t *Format, _DWORD *a2, CampaignScore *aP3, int a4)
 {
   wchar_t *v8; // esi
   if ( a2 ) /*0x734e68*/
@@ -1622,10 +1605,9 @@ wchar_t *__fastcall GetStringCSF(wchar_t *Format, _DWORD *a2, CampaignScore *aP3
 
 // 0x734F50
 namespace gamemd {
-int E4Recv_734F50::sub_734F50()
+void E4Recv_734F50::sub_734F50()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_734F50(void *this)
 {
   int result; // eax
 
@@ -1643,10 +1625,9 @@ void sub_734F50(void *this)
 
 // 0x734F80
 namespace gamemd {
-int E4Recv_734F80::sub_734F80()
+void E4Recv_734F80::sub_734F80()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_734F80(void *this)
 {
   int result; // eax
 
@@ -1667,7 +1648,6 @@ namespace gamemd {
 int sub_734FB0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_734FB0()
 {
   return unk_B1CF84; /*0x734fb5*/
 }
@@ -1679,7 +1659,6 @@ namespace gamemd {
 int sub_734FC0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_734FC0()
 {
   return unk_B1CF60; /*0x734fc5*/
 }
@@ -1688,10 +1667,9 @@ int sub_734FC0()
 
 // 0x735120
 namespace gamemd {
-char * CharToWideString(unsigned char * a1)
+void * CharToWideString(unsigned char * a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__fastcall CharToWideString(_BYTE *a1)
 {
   char *result; // eax
 
@@ -1721,7 +1699,6 @@ namespace gamemd {
 int sub_735370()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_735370()
 {
   xmmword_B1CFA8 = 0; /*0x735372*/
   DataGlobal_B1CFAC = 0; /*0x735377*/
@@ -1737,7 +1714,6 @@ namespace gamemd {
 int sub_735390()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_735390()
 {
   aP6 = xmmword_B1CFA8; /*0x7353a1*/
   DataGlobal_B1CFC4 = DataGlobal_B1CFAC; /*0x7353ab*/

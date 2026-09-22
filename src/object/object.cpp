@@ -44,7 +44,6 @@ bool ObjectClass::Remove()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x5f44a0
-int ObjectClass::Remove(#374 *this)
 {
   int result; // eax
   #374 *v4; // [esp+4h] [ebp-4h] BYREF
@@ -79,7 +78,6 @@ void ObjectClass::Destroy()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x5f65f0
-void ObjectClass::Destroy(#374 *this)
 {
   int result; // eax
 

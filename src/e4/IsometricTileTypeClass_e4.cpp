@@ -5,10 +5,9 @@
 #include "e4/classes/Power_e4.hpp"
 
 // 0x549B70
-int IsometricTileTypeClass::ProcessPower(int * a2)
+void IsometricTileTypeClass::ProcessPower(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void IsometricTileTypeClass::ProcessPower(int this, int *a2)
 {
 
   AbstractTypeClass::ProcessPower((char *)this, a2); /*0x549b79*/
@@ -41,10 +40,9 @@ void IsometricTileTypeClass::ProcessPower(int this, int *a2)
 }
 
 // 0x549C80
-int IsometricTileTypeClass::LoadTypeData(int * a1, int a2)
+void IsometricTileTypeClass::LoadTypeData(int * a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void IsometricTileTypeClass::_vt05(int *a1, int a2)
 {
   int i; // esi
   void (__thiscall ***v3)(_DWORD, int); // ecx
@@ -84,10 +82,9 @@ void IsometricTileTypeClass::_vt05(int *a1, int a2)
 }
 
 // 0x549DD0
-int IsometricTileTypeClass::GetTileIndex(int a2, int a3)
+void IsometricTileTypeClass::GetTileIndex(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void IsometricTileTypeClass::_vt10(int a2, int a3)
 {
   int result; // eax
 
@@ -101,10 +98,9 @@ void IsometricTileTypeClass::_vt10(int a2, int a3)
 }
 
 // 0x54A160
-int IsometricTileTypeClass::GetAuxField()
+void IsometricTileTypeClass::GetAuxField()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void IsometricTileTypeClass::_vt16()
 {
   return this->q294; /*0x54a166*/
 }

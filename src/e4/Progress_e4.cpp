@@ -3,10 +3,9 @@
 #include "e4/e4_globals.hpp"
 
 // 0x6433D0
-double Progress::GetAverage()
+void Progress::GetAverage()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Progress_GetAverage(int this)
 {
 
   int v1 = *(char *)(this + 97); /*0x6433d1*/
@@ -26,10 +25,9 @@ void Progress_GetAverage(int this)
 }
 
 // 0x643E90
-double Progress::GetWeighted(int a2)
+void Progress::GetWeighted(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Progress::GetWeighted(int a2)
 {
   if ( a2 < *((char *)this + 97) ) /*0x643e9a*/
     return *(double *)&this->__pad_0[8 * a2 + 8] / *(double *)&this->field_48; /*0x643ea6*/

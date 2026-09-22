@@ -7,10 +7,9 @@
 
 // 0x5ACD30
 namespace gamemd {
-char MSEngine::Release(int a2, char * a3)
+void MSEngine::Release(int a2, char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MSEngine::_vt02(int a2, char *a3)
 {
 
   int v3 = a2; /*0x5acd32*/
@@ -84,10 +83,9 @@ void MSEngine::_vt02(int a2, char *a3)
 
 // 0x5ACED0
 namespace gamemd {
-char MSEngine::SetCapacity(int a2, char * a3)
+void MSEngine::SetCapacity(int a2, char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MSEngine::sub_5ACED0(int a2, char *a3)
 {
 
   int v3 = a2; /*0x5aced2*/
@@ -161,7 +159,6 @@ namespace gamemd {
 void MSEngine::Destructor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MSEngine::Destructor(int this)
 {
 
   SessionClass::Destruct((_DWORD *)this); /*0x5cee64*/
@@ -202,7 +199,6 @@ namespace gamemd {
 unsigned int * MSEngine::Construct()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_5D1AA0(_DWORD *this)
 {
 
   char * v2 = (char *)(this + 2); /*0x5d1aa5*/
@@ -241,7 +237,6 @@ namespace gamemd {
 void MSEngine::Destruct()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MSEngine_Destructor(_DWORD *this)
 {
   int i; // edi
   void (__thiscall ***v7)(_DWORD, int); // ecx
@@ -303,10 +298,9 @@ void MSEngine_Destructor(_DWORD *this)
 
 // 0x5D1DF0
 namespace gamemd {
-int MSEngine::ProcessEvents(MSVQAnim * aP1, int a3)
+void MSEngine::ProcessEvents(MSVQAnim * aP1, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MSEngine::ProcessEvents(MSVQAnim *aP1, int a3)
 {
   int result; // eax
 

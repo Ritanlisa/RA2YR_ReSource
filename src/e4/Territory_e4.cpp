@@ -8,10 +8,9 @@
 
 // 0x7718A0
 namespace gamemd {
-char Territory_WorldDominationTour_8::AddRef(char a2)
+void Territory_WorldDominationTour_8::AddRef(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Territory_WorldDominationTour_8_::_vt01(int this, char a2)
 {
   DWORD Ticks; // eax
   DWORD *v4; // esi
@@ -42,7 +41,6 @@ namespace gamemd {
 signed int Territory_WorldDominationTour_8::Release()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-signed int __thiscall Territory_WorldDominationTour_8_::_vt02(signed int *this)
 {
   signed int result; // eax
 
@@ -78,10 +76,9 @@ void Territory_WorldDominationTour_8::ddtor()
 
 // 0x771970
 namespace gamemd {
-char Territory_WorldDominationTour_8::Read(int a2, int a3)
+void Territory_WorldDominationTour_8::Read(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Territory_WorldDominationTour_8_::_vt04(int a2, int a3)
 {
   AudioQueue::Update(this->q01C); /*0x771973*/
   return 0; /*0x77197a*/
@@ -94,7 +91,6 @@ namespace gamemd {
 void Territory_WorldDominationTour_8::Write(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Territory_WorldDominationTour_8_::_vt05(int a2, int a3)
 {
   AudioQueue::Update(this->q01C); /*0x771983*/
 }
@@ -106,7 +102,6 @@ namespace gamemd {
 void Territory_WorldDominationTour_8::Close(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Territory_WorldDominationTour_8_::_vt08(int a2)
 {
   AudioQueue::Update(this->q01C); /*0x7719d3*/
 }
@@ -118,7 +113,6 @@ namespace gamemd {
 unsigned int * Territory_WorldDominationTour_8::QueryInterface(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall Territory_WorldDominationTour_8_::QueryInterface(_DWORD *this, char a2)
 {
   *this = &vt_WorldDominationTour_Voices_Anim; /*0x771a33*/
   VtableStub::5CB6C0(this); /*0x771a39*/

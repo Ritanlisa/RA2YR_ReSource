@@ -17,7 +17,6 @@ namespace gamemd {
 unsigned int * E4Recv_4E0A00::sub_4E0A00(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_4E0A00(_DWORD *this, int a2, _DWORD *a3)
 {
 
   *(this + 1) = 0; /*0x4e0a0a*/
@@ -84,10 +83,9 @@ _DWORD *__thiscall sub_4E0A00(_DWORD *this, int a2, _DWORD *a3)
 
 // 0x4E1FE0
 namespace gamemd {
-int GameOptionsDlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
+void GameOptionsDlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void GameOptionsDlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
 {
   int result; // eax
   HWND DlgItem; // eax
@@ -282,10 +280,9 @@ LABEL_38:
 
 // 0x4E34A0
 namespace gamemd {
-HWND * UpdateLobbyGraphicsWOL(HWND hDlg, int a2, int a3)
+void * UpdateLobbyGraphicsWOL(HWND hDlg, int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-HWND *__fastcall UpdateLobbyGraphicsWOL(HWND hDlg, int a2, int a3)
 {
   int v3; // edx
   HWND DlgItem; // esi
@@ -354,10 +351,9 @@ HWND *__fastcall UpdateLobbyGraphicsWOL(HWND hDlg, int a2, int a3)
 
 // 0x4E3690
 namespace gamemd {
-HWND * sub_4E3690(HWND hDlg, int a2)
+void * sub_4E3690(HWND hDlg, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-HWND *__fastcall sub_4E3690(HWND hDlg, int a2)
 {
   int v4; // eax
   HWND DlgItem; // ebp
@@ -446,10 +442,9 @@ HWND *__fastcall sub_4E3690(HWND hDlg, int a2)
 
 // 0x4E3CE0
 namespace gamemd {
-HWND * SetupSkirmishDialogPlayerSlot(HWND hDlg, int a2)
+void * SetupSkirmishDialogPlayerSlot(HWND hDlg, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-HWND *__fastcall SetupSkirmishDialogPlayerSlot(HWND hDlg, int a2)
 {
   int v3; // esi
   HWND DlgItem; // ebx
@@ -615,10 +610,9 @@ LABEL_23:
 
 // 0x4E3F70
 namespace gamemd {
-HWND * SetupLobbyCountryCombo(SkirmishDialog * aP0, int nIDDlgItem, int a3)
+void * SetupLobbyCountryCombo(SkirmishDialog * aP0, int nIDDlgItem, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-HWND *__fastcall SetupLobbyCountryCombo(SkirmishDialog *aP0, int nIDDlgItem, int a3)
 {
   LRESULT v5; // ebx
   WPARAM v6; // edi
@@ -736,10 +730,9 @@ LABEL_6:
 
 // 0x4E45A0
 namespace gamemd {
-bool FillComboBoxFactions(HWND hDlg, int nIDDlgItem)
+void FillComboBoxFactions(HWND hDlg, int nIDDlgItem)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool __fastcall FillComboBoxFactions(HWND hDlg, int nIDDlgItem)
 {
   HWND DlgItem; // esi
   wchar_t *StringCSF; // eax
@@ -816,10 +809,9 @@ bool __fastcall FillComboBoxFactions(HWND hDlg, int nIDDlgItem)
 
 // 0x4E48E0
 namespace gamemd {
-int SkirmishDialog_MapPlayerToControl(HWND a1, int a2)
+void SkirmishDialog_MapPlayerToControl(HWND a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall SkirmishDialog_MapPlayerToControl(HWND a1, int a2)
 {
   int v3; // eax
   int v4; // edx
@@ -871,10 +863,9 @@ int __fastcall SkirmishDialog_MapPlayerToControl(HWND a1, int a2)
 
 // 0x4E49A0
 namespace gamemd {
-char SetupSkirmishSpawnLocations(HWND hDlg, int nIDDlgItem, int a3)
+void SetupSkirmishSpawnLocations(HWND hDlg, int nIDDlgItem, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall SetupSkirmishSpawnLocations(HWND hDlg, int nIDDlgItem, int a3)
 {
   HWND v4; // ebp
   int v5; // eax
@@ -1036,10 +1027,9 @@ LABEL_44:
 
 // 0x4E4C20
 namespace gamemd {
-char FillColorComboBoxUI(HWND hDlg, int nIDDlgItem)
+void FillColorComboBoxUI(HWND hDlg, int nIDDlgItem)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall FillColorComboBoxUI(HWND hDlg, int nIDDlgItem)
 {
   int v4; // eax
   int v5; // eax
@@ -1175,10 +1165,9 @@ LABEL_22:
 
 // 0x4E50C0
 namespace gamemd {
-bool FillComboBoxAllianceSlots(HWND hDlg, int nIDDlgItem)
+void FillComboBoxAllianceSlots(HWND hDlg, int nIDDlgItem)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool __fastcall FillComboBoxAllianceSlots(HWND hDlg, int nIDDlgItem)
 {
   HWND DlgItem; // esi
   wchar_t *StringCSF; // eax
@@ -1253,10 +1242,9 @@ bool __fastcall FillComboBoxAllianceSlots(HWND hDlg, int nIDDlgItem)
 
 // 0x4E53D0
 namespace gamemd {
-int Lobby_FillFactionComboBox(HWND a1, int a2)
+void Lobby_FillFactionComboBox(HWND a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall Lobby_FillFactionComboBox(HWND a1, int a2)
 {
   int v3; // eax
   int v4; // edx
@@ -1306,10 +1294,9 @@ int __fastcall Lobby_FillFactionComboBox(HWND a1, int a2)
 
 // 0x4E5480
 namespace gamemd {
-char SetupLobbyFactionSlots(SessionClass * aP0, int nIDDlgItem, int a3)
+void SetupLobbyFactionSlots(SessionClass * aP0, int nIDDlgItem, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall SetupLobbyFactionSlots(SessionClass *aP0, int nIDDlgItem, int a3)
 {
   SessionClass *v4; // ebp
   int v5; // eax
@@ -1473,10 +1460,9 @@ LABEL_44:
 
 // 0x4E5700
 namespace gamemd {
-char FillComboBoxSides(HWND hDlg, int nIDDlgItem)
+void FillComboBoxSides(HWND hDlg, int nIDDlgItem)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall FillComboBoxSides(HWND hDlg, int nIDDlgItem)
 {
   int v4; // eax
   int v5; // eax
@@ -1612,10 +1598,9 @@ LABEL_22:
 
 // 0x4E5B60
 namespace gamemd {
-bool FillLobbyPlayerSlot(HWND hDlg, int nIDDlgItem)
+void FillLobbyPlayerSlot(HWND hDlg, int nIDDlgItem)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool __fastcall FillLobbyPlayerSlot(HWND hDlg, int nIDDlgItem)
 {
   HWND DlgItem; // esi
   wchar_t *StringCSF; // eax
@@ -1681,10 +1666,9 @@ LABEL_9:
 
 // 0x4E5E20
 namespace gamemd {
-bool Lobby_SetupPlayerSlotDialog(HWND a1, int a2)
+void Lobby_SetupPlayerSlotDialog(HWND a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool __fastcall Lobby_SetupPlayerSlotDialog(HWND a1, int a2)
 {
   int v3; // eax
   int v4; // edx
@@ -1734,10 +1718,9 @@ bool __fastcall Lobby_SetupPlayerSlotDialog(HWND a1, int a2)
 
 // 0x4E5ED0
 namespace gamemd {
-bool SetupLobbyPlayerSlots(SessionClass * aP0, int nIDDlgItem, int a3)
+void SetupLobbyPlayerSlots(SessionClass * aP0, int nIDDlgItem, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool __fastcall SetupLobbyPlayerSlots(SessionClass *aP0, int nIDDlgItem, int a3)
 {
   WPARAM v5; // ebp
   LRESULT v6; // ebx
@@ -1817,7 +1800,6 @@ namespace gamemd {
 int sub_4E6860()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_4E6860()
 {
   DataGlobal_A8ED44 = 0; /*0x4e6867*/
   DataGlobal_A8ED48 = 0; /*0x4e686c*/
@@ -1836,7 +1818,6 @@ namespace gamemd {
 int sub_4E6CE0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_4E6CE0()
 {
   HouseClass_Array = 0; /*0x4e6ce7*/
   dword_A80230 = 0; /*0x4e6cec*/
@@ -1855,7 +1836,6 @@ namespace gamemd {
 void sub_4E6D20()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_4E6D20()
 {
   HouseClass_Array_0 = (int)&vt_VectorClass_HouseClass; /*0x4e6d28*/
   if ( HouseClass_Array && byte_A80235 ) /*0x4e6d3c*/
@@ -1874,7 +1854,6 @@ namespace gamemd {
 int sub_4E7460()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_4E7460()
 {
   g_UnitTypeCount2 = 0; /*0x4e7467*/
   dword_A83CE8 = 0; /*0x4e746c*/
@@ -1893,7 +1872,6 @@ namespace gamemd {
 void sub_4E74A0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_4E74A0()
 {
   UnitTypeClass_Array = (int)&vt_VectorClass_UnitTypeClass; /*0x4e74a8*/
   if ( g_UnitTypeCount2 && byte_A83CED ) /*0x4e74bc*/
@@ -1912,7 +1890,6 @@ namespace gamemd {
 int sub_4E75E0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_4E75E0()
 {
   dword_A83C84 = 0; /*0x4e75e7*/
   dword_A83C88 = 0; /*0x4e75ec*/
@@ -1931,7 +1908,6 @@ namespace gamemd {
 void sub_4E7620()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_4E7620()
 {
   BulletTypeClass_Array = (int)&vt_VectorClass_BulletTypeClass; /*0x4e7628*/
   if ( dword_A83C84 && byte_A83C8D ) /*0x4e763c*/
@@ -1947,10 +1923,9 @@ void sub_4E7620()
 
 // 0x4E7EA0
 namespace gamemd {
-char * sub_4E7EA0()
+char * * sub_4E7EA0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *sub_4E7EA0()
 {
   char *result; // eax
 
@@ -1973,11 +1948,10 @@ char *sub_4E7EA0()
 
 // 0x4E8090
 namespace gamemd {
-int unknown_libname_18()
+void unknown_libname_18()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // Microsoft VisualC 2-14/net runtime
-void unknown_libname_18(ConnManClass *this)
 {
   void **v1; // edi
 
@@ -2013,10 +1987,9 @@ LABEL_10:
 
 // 0x4E9240
 namespace gamemd {
-char HouseClass__vt_02_(int a2, unsigned int * a3)
+void HouseClass__vt_02_(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HouseClass::vt_02_(int a2, _DWORD *a3)
 {
   int i; // eax
 
@@ -2064,10 +2037,9 @@ void HouseClass::vt_02_(int a2, _DWORD *a3)
 
 // 0x4E9E20
 namespace gamemd {
-char ParticleSystemClass__vt_02_(int a2, unsigned int * a3)
+void ParticleSystemClass__vt_02_(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ParticleSystemClass::vt_02_(int a2, _DWORD *a3)
 {
   int i; // eax
 
@@ -2118,7 +2090,6 @@ namespace gamemd {
 void ParticleSystemClass__vt_03_()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ParticleSystemClass::vt_03_(int this)
 {
   if ( this->vtable1 && *(_BYTE *)(this + 13) ) /*0x4e9edd*/
   {
@@ -2906,10 +2877,9 @@ wchar_t * sub_4E4F30()
 
 // 0x4E4F50
 namespace gamemd {
-char * _cfltcvt_init()
+int * _cfltcvt_init()
  {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *_cfltcvt_init()
 {
   char *result; // eax
 

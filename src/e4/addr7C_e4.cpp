@@ -21,10 +21,9 @@
 
 // 0x7C0740
 namespace gamemd {
-int ProcessAudioStreamPlayback(int a1, DSurface * aP1, int arg0, char a4, char arg8, char * a5)
+void ProcessAudioStreamPlayback(int a1, DSurface * aP1, int arg0, char a4, char arg8, char * a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall ProcessAudioStreamPlayback(int a1, DSurface *aP1, int arg0, char a4, char arg8, char *a5)
 {
   int v10; // ecx
   int v11; // eax
@@ -336,10 +335,9 @@ LABEL_82:
 
 // 0x7C2590
 namespace gamemd {
-int RenderAudioVideoFrame(const char * a0, unsigned int * a1, ObjectClass * aP2)
+void RenderAudioVideoFrame(const char * a0, unsigned int * a1, ObjectClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall RenderAudioVideoFrame(const char *a0, _DWORD *a1, ObjectClass *aP2)
 {
   int (__cdecl *v5)(_DWORD, int, _DWORD, int); // eax
   _WORD *v7; // ebx
@@ -647,10 +645,9 @@ LABEL_113:
 
 // 0x7C2D00
 namespace gamemd {
-int AudioStream_Process(int a1, int a2, char a3)
+void AudioStream_Process(int a1, int a2, char a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall AudioStream_Process(int a1, int a2, char a3)
 {
   int (__cdecl *v7)(int); // eax
   int v24; // eax
@@ -888,10 +885,9 @@ LABEL_80:
 
 // 0x7C34B0
 namespace gamemd {
-int SeekAudioStream(int a1, DSurface * aP1, DSurface * aP2, int a4, unsigned int a5)
+void SeekAudioStream(int a1, DSurface * aP1, DSurface * aP2, int a4, unsigned int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall SeekAudioStream(int a1, DSurface *aP1, DSurface *aP2, int a4, unsigned int a5)
 {
   int result; // eax
   DSurface *v7; // esi
@@ -963,10 +959,9 @@ int __fastcall SeekAudioStream(int a1, DSurface *aP1, DSurface *aP2, int a4, uns
 
 // 0x7C3D60
 namespace gamemd {
-unsigned int sub_7C3D60(int a1, unsigned short * a2, int * a3, unsigned int a4, int a5, int a6)
+unsigned int int sub_7C3D60(int a1, unsigned short * a2, int * a3, unsigned int a4, int a5, int a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int sub_7C3D60(int a1, _WORD *a2, int *a3, unsigned int a4, int a5, int a6)
 {
   unsigned int result; // eax
   unsigned __int16 *v16; // eax
@@ -1062,10 +1057,9 @@ unsigned int sub_7C3D60(int a1, _WORD *a2, int *a3, unsigned int a4, int a5, int
 
 // 0x7C4260
 namespace gamemd {
-unsigned int sub_7C4260(int a1, unsigned short * a2, int * a3, unsigned int a4, int a5, int a6)
+unsigned int int sub_7C4260(int a1, unsigned short * a2, int * a3, unsigned int a4, int a5, int a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int sub_7C4260(int a1, _WORD *a2, int *a3, unsigned int a4, int a5, int a6)
 {
   unsigned int result; // eax
   unsigned __int16 *v16; // eax
@@ -1161,10 +1155,9 @@ unsigned int sub_7C4260(int a1, _WORD *a2, int *a3, unsigned int a4, int a5, int
 
 // 0x7C43A0
 namespace gamemd {
-unsigned int DecodeSHPFrame16bpp(int a1, unsigned char * a2, int * a3, unsigned int a4, int a5, int a6)
+unsigned int int DecodeSHPFrame16bpp(int a1, unsigned char * a2, int * a3, unsigned int a4, int a5, int a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int DecodeSHPFrame16bpp(int a1, unsigned __int8 *a2, int *a3, unsigned int a4, int a5, int a6)
 {
   unsigned int result; // eax
   __int16 v11; // ax
@@ -1446,7 +1439,6 @@ namespace gamemd {
 int TileRenderer_DrawBlock(int a1, unsigned short * a2, unsigned char * a3, unsigned int a4, int a5, int a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int TileRenderer_DrawBlock(int a1, unsigned __int16 *a2, _BYTE *a3, unsigned int a4, int a5, int a6)
 {
   int result; // eax
   unsigned __int16 v9; // dx
@@ -1776,7 +1768,6 @@ namespace gamemd {
 int TileRenderer_DrawBlock16BPP(int a1, unsigned short * a2, unsigned char * a3, unsigned int a4, int a5, int a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int TileRenderer_DrawBlock16BPP(int a1, unsigned __int16 *a2, _BYTE *a3, unsigned int a4, int a5, int a6)
 {
   int result; // eax
   unsigned __int16 *v7; // ebp
@@ -2069,7 +2060,6 @@ namespace gamemd {
 int TileRenderer_DrawBlock8BPP(int a1, unsigned short * a2, unsigned char * a3, unsigned int a4, int a5, int a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int TileRenderer_DrawBlock8BPP(int a1, unsigned __int16 *a2, _BYTE *a3, unsigned int a4, int a5, int a6)
 {
   int result; // eax
   unsigned __int16 v9; // dx
@@ -2398,7 +2388,6 @@ namespace gamemd {
 int TileRenderer_DrawBlock2(int a1, unsigned short * a2, unsigned char * a3, unsigned int a4, int a5, int a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int TileRenderer_DrawBlock2(int a1, unsigned __int16 *a2, _BYTE *a3, unsigned int a4, int a5, int a6)
 {
   int result; // eax
   unsigned __int16 v9; // dx
@@ -2728,7 +2717,6 @@ namespace gamemd {
 int TileRenderer_DrawBlock2Sub(int a1, unsigned short * a2, unsigned char * a3, unsigned int a4, int a5, int a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int TileRenderer_DrawBlock2Sub(int a1, unsigned __int16 *a2, _BYTE *a3, unsigned int a4, int a5, int a6)
 {
   int result; // eax
   unsigned __int16 *v7; // ebp
@@ -3020,10 +3008,9 @@ LABEL_66:
 
 // 0x7C6620
 namespace gamemd {
-int sub_7C6620(int a1, int a2, int a3, int a4)
+void sub_7C6620(int a1, int a2, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_7C6620(int a1, int a2, int a3, int a4)
 {
 
   unsigned int v10 = *((_DWORD *)g_SlaveManagerPool + 2 * a1 + 2 * dword_8759A4 * a2); /*0x7c6642*/
@@ -3079,7 +3066,6 @@ namespace gamemd {
 short sub_7C6B70(int a1, unsigned char * a2, int * a3, int a4, int a5, int a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-__int16 __cdecl sub_7C6B70(int a1, _BYTE *a2, int *a3, int a4, int a5, int a6)
 {
   int v16; // eax
   int v17; // edx
@@ -3174,7 +3160,6 @@ namespace gamemd {
 short sub_7C6C79(int a1, unsigned char * a2, int * a3, int a4, int a5, int a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-__int16 __cdecl sub_7C6C79(int a1, _BYTE *a2, int *a3, int a4, int a5, int a6)
 {
   int v13; // eax
   int v14; // edx
@@ -3254,7 +3239,6 @@ namespace gamemd {
 short sub_7C6D40(int a1, unsigned char * a2, int * a3, int a4, int a5, int a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-__int16 __cdecl sub_7C6D40(int a1, _BYTE *a2, int *a3, int a4, int a5, int a6)
 {
   int v12; // eax
   int v13; // edx
@@ -3320,7 +3304,6 @@ namespace gamemd {
 short sub_7C6DD6(int a1, unsigned char * a2, unsigned int * a3, int a4, int a5, int a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-__int16 __cdecl sub_7C6DD6(int a1, _BYTE *a2, _DWORD *a3, int a4, int a5, int a6)
 {
   int v13; // eax
   int v14; // edx
@@ -3391,7 +3374,6 @@ namespace gamemd {
 short sub_7C6E94(int a1, unsigned char * a2, unsigned short * a3, int a4, int a5, int a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-__int16 __cdecl sub_7C6E94(int a1, _BYTE *a2, _WORD *a3, int a4, int a5, int a6)
 {
   __int16 v11; // ax
   __int16 result; // ax
@@ -3452,7 +3434,6 @@ namespace gamemd {
 short sub_7C6FC8(int a1, unsigned char * a2, int * a3, int a4, int a5, int a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-__int16 __cdecl sub_7C6FC8(int a1, _BYTE *a2, int *a3, int a4, int a5, int a6)
 {
   int v16; // eax
   int v17; // edx
@@ -3561,11 +3542,10 @@ int PostMessageA()
 
 // 0x7C8992
 namespace gamemd {
-int closesocket()
+void closesocket()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // attributes: thunk
-void closesocket(Color *this)
 {
   SOCKET s; // [esp+4h] [ebp+4h]
 
@@ -3579,7 +3559,6 @@ namespace gamemd {
 void qsort(AbstractClass * aP0, IUnknown * aP1, size_t SizeOfElements, _CoreCrtNonSecureSearchSortCompareFunction CompareFunction)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void qsort(
         AbstractClass *aP0,
         IUnknown *aP1,
         size_t SizeOfElements,
@@ -3683,10 +3662,9 @@ LABEL_6:
 
 // 0x7C8C9C
 namespace gamemd {
-unsigned int shortsort(AbstractClass * aP0, unsigned int a2, int a3, int (__cdecl *a4)(unsigned int) a4)
+void int shortsort(AbstractClass * aP0, unsigned int a2, int a3, int (__cdecl *a4)(unsigned int) a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __cdecl shortsort(AbstractClass *aP0, unsigned int a2, int a3, int (__cdecl *a4)(unsigned int))
 {
   AbstractClass *result; // eax
   AbstractClass *v6; // ebx
@@ -3716,10 +3694,9 @@ unsigned int __cdecl shortsort(AbstractClass *aP0, unsigned int a2, int a3, int 
 
 // 0x7C8D20
 namespace gamemd {
-int _strcmpi(char * a1, char * a2)
+void _strcmpi(char * a1, char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void _strcmpi(char *a1, char *a2)
 {
   int result; // eax
 
@@ -3792,12 +3769,6 @@ namespace gamemd {
 void * bsearch(const void * Key, const void * Base, ObjectClass * aP2, size_t SizeOfElements, _CoreCrtNonSecureSearchSortCompareFunction CompareFunction)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void *__cdecl bsearch(
-        const void *Key,
-        const void *Base,
-        ObjectClass *aP2,
-        size_t SizeOfElements,
-        _CoreCrtNonSecureSearchSortCompareFunction CompareFunction)
 {
   ObjectClass *v5; // eax
   ObjectClass *v7; // ebx
@@ -3849,7 +3820,6 @@ namespace gamemd {
 int int(__cdecl *_cfltcvt_init_13())( int, void * Src, int a3, size_t Size, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int (__cdecl *_cfltcvt_init_13())(int, void *Src, int, size_t Size, int)
 {
   DataGlobal_87C4D4[0] = (void (__noreturn *)())_cropzeros; /*0x7c8f63*/
   DataGlobal_87C4D0 = (void (__noreturn *)())_cfltcvt; /*0x7c8f6d*/
@@ -3864,10 +3834,9 @@ int (__cdecl *_cfltcvt_init_13())(int, void *Src, int, size_t Size, int)
 
 // 0x7C8F96
 namespace gamemd {
-int sub_7C8F96(int a1)
+void sub_7C8F96(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_7C8F96(int a1)
 {
   int result; // eax
 
@@ -3880,10 +3849,9 @@ void sub_7C8F96(int a1)
 
 // 0x7C91D0
 namespace gamemd {
-char * strncpy(char * Destination, const char * Source, IUnknown * aP2)
+void * strncpy(char * Destination, const char * Source, IUnknown * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__cdecl strncpy(char *Destination, const char *Source, IUnknown *aP2)
 {
   INIClass *v3; // ecx
   INIClass *v4; // ebx
@@ -4016,10 +3984,9 @@ fill_dwords_with_EOS:
 
 // 0x7C94EB
 namespace gamemd {
-size_t fread(void * Buffer, size_t ElementSize, size_t ElementCount, FILE * Stream)
+void fread(void * Buffer, size_t ElementSize, size_t ElementCount, FILE * Stream)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void fread(void *Buffer, size_t ElementSize, size_t ElementCount, FILE *Stream)
 {
   size_t v4; // edi
   size_t v6; // ecx
@@ -4093,10 +4060,9 @@ LABEL_20:
 
 // 0x7C9602
 namespace gamemd {
-size_t fwrite(const void * Buffer, size_t ElementSize, size_t ElementCount, FILE * Stream)
+void fwrite(const void * Buffer, size_t ElementSize, size_t ElementCount, FILE * Stream)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void fwrite(const void *Buffer, size_t ElementSize, size_t ElementCount, FILE *Stream)
 {
   size_t v4; // edi
   size_t v5; // ebx
@@ -4170,10 +4136,9 @@ LABEL_26:
 
 // 0x7C970C
 namespace gamemd {
-_onexit_t _onexit(_onexit_t Func)
+void _onexit(_onexit_t Func)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_onexit_t __cdecl _onexit(_onexit_t Func)
 {
   size_t v1; // eax
   _onexit_t *v2; // ecx
@@ -4209,10 +4174,9 @@ LABEL_6:
 
 // 0x7C979C
 namespace gamemd {
-void * __onexitinit()
+void* * __onexitinit()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void *__onexitinit()
 {
 
   _DWORD * v0 = malloc(0x80u); /*0x7c97a1*/
@@ -4228,10 +4192,9 @@ void *__onexitinit()
 
 // 0x7C97D3
 namespace gamemd {
-int toupper(Color * aP0)
+void toupper(Color * aP0)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void toupper(Color *aP0)
 {
   int result; // eax
   int C; // [esp+8h] [ebp+4h]
@@ -4266,10 +4229,9 @@ void toupper(Color *aP0)
 
 // 0x7C9842
 namespace gamemd {
-int toupper_0(int C)
+void toupper_0(int C)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void toupper_0(int C)
 {
   int result; // eax
   CHAR DestStr[4]; // [esp+4h] [ebp-4h] BYREF
@@ -4312,10 +4274,9 @@ void toupper_0(int C)
 
 // 0x7C990E
 namespace gamemd {
-int isalpha(int C)
+void isalpha(int C)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void isalpha(int C)
 {
   if ( (int)SrcSizeInBytes <= 1 ) /*0x7c9915*/
     return *((_WORD *)DataGlobal_87C590 + C) & 0x103; /*0x7c9936*/
@@ -4330,7 +4291,6 @@ namespace gamemd {
 int isupper(int C)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int isupper(int C)
 {
   if ( (int)SrcSizeInBytes <= 1 ) /*0x7c9943*/
     return *((_BYTE *)DataGlobal_87C590 + 2 * C) & 1; /*0x7c9960*/
@@ -4345,7 +4305,6 @@ namespace gamemd {
 int islower(int C)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int islower(int C)
 {
   if ( (int)SrcSizeInBytes <= 1 ) /*0x7c996b*/
     return *((_BYTE *)DataGlobal_87C590 + 2 * C) & 2; /*0x7c9988*/
@@ -4357,10 +4316,9 @@ int islower(int C)
 
 // 0x7C998C
 namespace gamemd {
-int isdigit(int C)
+void isdigit(int C)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void isdigit(int C)
 {
   if ( (int)SrcSizeInBytes <= 1 ) /*0x7c9993*/
     return *((_BYTE *)DataGlobal_87C590 + 2 * C) & 4; /*0x7c99b0*/
@@ -4372,10 +4330,9 @@ void isdigit(int C)
 
 // 0x7C99B4
 namespace gamemd {
-int isxdigit(int C)
+void isxdigit(int C)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void isxdigit(int C)
 {
   if ( (int)SrcSizeInBytes <= 1 ) /*0x7c99bb*/
     return *((_BYTE *)DataGlobal_87C590 + 2 * C) & 0x80; /*0x7c99db*/
@@ -4387,10 +4344,9 @@ void isxdigit(int C)
 
 // 0x7C99E1
 namespace gamemd {
-int isspace(int C)
+void isspace(int C)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void isspace(int C)
 {
   if ( (int)SrcSizeInBytes <= 1 ) /*0x7c99e8*/
     return *((_BYTE *)DataGlobal_87C590 + 2 * C) & 8; /*0x7c9a05*/
@@ -4405,7 +4361,6 @@ namespace gamemd {
 int ispunct(int C)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int ispunct(int C)
 {
   if ( (int)SrcSizeInBytes <= 1 ) /*0x7c9a10*/
     return *((_BYTE *)DataGlobal_87C590 + 2 * C) & 0x10; /*0x7c9a2d*/
@@ -4417,10 +4372,9 @@ int ispunct(int C)
 
 // 0x7C9A31
 namespace gamemd {
-int isalnum(int C)
+void isalnum(int C)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void isalnum(int C)
 {
   if ( (int)SrcSizeInBytes <= 1 ) /*0x7c9a38*/
     return *((_WORD *)DataGlobal_87C590 + C) & 0x107; /*0x7c9a59*/
@@ -4435,7 +4389,6 @@ namespace gamemd {
 int isprint(int C)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int isprint(int C)
 {
   if ( (int)SrcSizeInBytes <= 1 ) /*0x7c9a66*/
     return *((_WORD *)DataGlobal_87C590 + C) & 0x157; /*0x7c9a87*/
@@ -4447,10 +4400,9 @@ int isprint(int C)
 
 // 0x7C9A8D
 namespace gamemd {
-int isgraph(int C)
+void isgraph(int C)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void isgraph(int C)
 {
   if ( (int)SrcSizeInBytes <= 1 ) /*0x7c9a94*/
     return *((_WORD *)DataGlobal_87C590 + C) & 0x117; /*0x7c9ab5*/
@@ -4465,7 +4417,6 @@ namespace gamemd {
 int iscntrl(int C)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int iscntrl(int C)
 {
   if ( (int)SrcSizeInBytes <= 1 ) /*0x7c9ac2*/
     return *((_BYTE *)DataGlobal_87C590 + 2 * C) & 0x20; /*0x7c9adf*/
@@ -4480,7 +4431,6 @@ namespace gamemd {
 int __iscsymf(int C)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __iscsymf(int C)
 {
   int result; // eax
 
@@ -4500,7 +4450,6 @@ namespace gamemd {
 int __iscsym(int C)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __iscsym(int C)
 {
   int result; // eax
 
@@ -4517,10 +4466,9 @@ int __iscsym(int C)
 
 // 0x7C9B72
 namespace gamemd {
-int atol(const char * String)
+void atol(const char * String)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void atol(const char *String)
 {
   int result; // eax
 
@@ -4549,10 +4497,9 @@ void atol(const char *String)
 
 // 0x7C9C08
 namespace gamemd {
-long long _atoi64(const char * String)
+long long long _atoi64(const char * String)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-__int64 __cdecl _atoi64(const char *String)
 {
   __int64 result; // rax
 
@@ -4585,10 +4532,9 @@ __int64 __cdecl _atoi64(const char *String)
 
 // 0x7C9CC2
 namespace gamemd {
-char * strtok(char * String, ObjectClass * aP1)
+void * strtok(char * String, ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__cdecl strtok(char *String, ObjectClass *aP1)
 {
   char v3; // dl
   VectorClass *v4; // edx
@@ -4630,10 +4576,9 @@ char *__cdecl strtok(char *String, ObjectClass *aP1)
 
 // 0x7C9D66
 namespace gamemd {
-double atof(CCINIClass * aP0)
+void atof(CCINIClass * aP0)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void atof(CCINIClass *aP0)
 {
 
   while ( *(int *)&stru_87C374[1064] <= 1
@@ -4649,10 +4594,9 @@ void atof(CCINIClass *aP0)
 
 // 0x7C9DD4
 namespace gamemd {
-int strtoxl(unsigned char * a1, unsigned char ** a2, int a3, int a4)
+void strtoxl(unsigned char * a1, unsigned char ** a2, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void strtoxl(unsigned __int8 *a1, unsigned __int8 **a2, int a3, int a4)
 {
   unsigned __int8 v4; // bl
   unsigned __int8 *i; // esi
@@ -4768,7 +4712,6 @@ namespace gamemd {
 void * memcpy(void * a0, AbstractClass * aP1, size_t Size)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void *__cdecl memcpy(void *a0, AbstractClass *aP1, size_t Size)
 {
   AbstractClass *v3; // esi
   BlowStraw *v4; // edi
@@ -4938,10 +4881,9 @@ TrailUp3:
 
 // 0x7CA4B0
 namespace gamemd {
-char * strstr(ObjectClass * aP0, const char * SubStr)
+void * strstr(ObjectClass * aP0, const char * SubStr)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__cdecl strstr(ObjectClass *aP0, const char *SubStr)
 {
   ObjectClass *v3; // edi
   char v2 = *SubStr; /*0x7ca4b7*/
@@ -5002,7 +4944,6 @@ namespace gamemd {
 void _alloca_probe(WinModemClass * aP0, char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void _alloca_probe(WinModemClass *aP0, char a2)
 {
   WinModemClass **i; // ecx
 
@@ -5016,10 +4957,9 @@ void _alloca_probe(WinModemClass *aP0, char a2)
 
 // 0x7CA67F
 namespace gamemd {
-__time32_t time(__time32_t *const Time)
+void time(__time32_t *const Time)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-__time32_t __cdecl time(__time32_t *const Time)
 {
   int v1; // eax
   DWORD v2; // eax
@@ -5065,11 +5005,10 @@ __time32_t __cdecl time(__time32_t *const Time)
 
 // 0x7CA9AF
 namespace gamemd {
-int j_Exception_Destructor()
+void j_Exception_Destructor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // attributes: thunk
-void j_Exception_Destructor(void *this)
 {
   Exception::Destructor(this); /*0x7ca9af*/
 }
@@ -5078,11 +5017,10 @@ void j_Exception_Destructor(void *this)
 
 // 0x7CAA00
 namespace gamemd {
-int j_Exception_Destructor_2()
+void j_Exception_Destructor_2()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // attributes: thunk
-void j_Exception_Destructor_2(void *this)
 {
   Exception::Destructor(this); /*0x7caa00*/
 }
@@ -5091,11 +5029,10 @@ void j_Exception_Destructor_2(void *this)
 
 // 0x7CAC2F
 namespace gamemd {
-int j_Exception_Destructor_3()
+void j_Exception_Destructor_3()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // attributes: thunk
-void j_Exception_Destructor_3(void *this)
 {
   Exception::Destructor(this); /*0x7cac2f*/
 }
@@ -5107,12 +5044,6 @@ namespace gamemd {
 const struct _s_RTTIBaseClassDescriptor * _FindMITargetTypeInstance_YAPBU_s_RTTIBaseClassDescriptor__PAXPBU_s_RTTICompleteObjectLocator__ptr_TypeDescriptor__int_2_Z(void * a1, const struct _s_RTTICompleteObjectLocator * a2, struct TypeDescriptor * a3, int a4, struct TypeDescriptor * a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-const struct _s_RTTIBaseClassDescriptor *__cdecl _FindMITargetTypeInstance_YAPBU_s_RTTIBaseClassDescriptor__PAXPBU_s_RTTICompleteObjectLocator__ptr_TypeDescriptor__int_2_Z(
-        void *a1,
-        const struct _s_RTTICompleteObjectLocator *a2,
-        struct TypeDescriptor *a3,
-        int a4,
-        struct TypeDescriptor *a5)
 {
   const struct _s_RTTICompleteObjectLocator *v5; // ebx
   int **v7; // edi
@@ -5199,12 +5130,6 @@ namespace gamemd {
 const struct _s_RTTIBaseClassDescriptor * _FindVITargetTypeInstance_YAPBU_s_RTTIBaseClassDescriptor__PAXPBU_s_RTTICompleteObjectLocator__ptr_TypeDescriptor__int_2_Z(void * a1, const struct _s_RTTICompleteObjectLocator * a2, struct TypeDescriptor * a3, int a4, struct TypeDescriptor * a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-const struct _s_RTTIBaseClassDescriptor *__cdecl _FindVITargetTypeInstance_YAPBU_s_RTTIBaseClassDescriptor__PAXPBU_s_RTTICompleteObjectLocator__ptr_TypeDescriptor__int_2_Z(
-        void *a1,
-        const struct _s_RTTICompleteObjectLocator *a2,
-        struct TypeDescriptor *a3,
-        int a4,
-        struct TypeDescriptor *a5)
 {
   const struct _s_RTTICompleteObjectLocator *v5; // edi
   int **v7; // ebx
@@ -5293,10 +5218,9 @@ LABEL_15:
 
 // 0x7CAF30
 namespace gamemd {
-char * strchr(const char * Str, int Val)
+void * strchr(const char * Str, int Val)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__cdecl strchr(const char *Str, int Val)
 {
 
   const char * v2 = Str; /*0x7caf3c*/
@@ -5361,10 +5285,9 @@ main_loop_0:
 
 // 0x7CAFF4
 namespace gamemd {
-int tolower(int C)
+void tolower(int C)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void tolower(int C)
 {
   int result; // eax
   int Ca; // [esp+8h] [ebp+4h]
@@ -5399,10 +5322,9 @@ void tolower(int C)
 
 // 0x7CB063
 namespace gamemd {
-int tolower_0(int C)
+void tolower_0(int C)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void tolower_0(int C)
 {
   int result; // eax
   CHAR DestStr[4]; // [esp+Ch] [ebp-4h] BYREF
@@ -5443,10 +5365,9 @@ void tolower_0(int C)
 
 // 0x7CB12E
 namespace gamemd {
-int _putws(const wchar_t * Buffer)
+void _putws(const wchar_t * Buffer)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void _putws(const wchar_t *Buffer)
 {
   wchar_t v3; // ax
   int v1 = 0xFFFF; /*0x7cb13d*/
@@ -5473,10 +5394,9 @@ LABEL_7:
 
 // 0x7CB25E
 namespace gamemd {
-int flsall(MouseClass * aP0)
+void flsall(MouseClass * aP0)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void flsall(MouseClass *aP0)
 {
   type_info *v2; // edi
   int i; // esi
@@ -5519,10 +5439,9 @@ void flsall(MouseClass *aP0)
 
 // 0x7CB33D
 namespace gamemd {
-int __initstdio()
+void __initstdio()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __initstdio()
 {
   size_t v0; // eax
   _UNKNOWN **v2; // eax
@@ -5580,7 +5499,6 @@ namespace gamemd {
 void _lock_file(MouseClass * aP0)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void _lock_file(MouseClass *aP0)
 {
   if ( aP0 < (MouseClass *)&off_87BF50 || aP0 > (MouseClass *)&stru_87C1B0 ) /*0x7cb40b*/
     EnterCriticalSection((LPCRITICAL_SECTION)&aP0->__pad_18[8]); /*0x7cb421*/
@@ -5595,7 +5513,6 @@ namespace gamemd {
 void _unlock_file(MouseClass * aP0)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void _unlock_file(MouseClass *aP0)
 {
   if ( aP0 < (MouseClass *)&off_87BF50 || aP0 > (MouseClass *)&stru_87C1B0 ) /*0x7cb45d*/
     LeaveCriticalSection((LPCRITICAL_SECTION)&aP0->__pad_18[8]); /*0x7cb473*/
@@ -5607,10 +5524,9 @@ void _unlock_file(MouseClass *aP0)
 
 // 0x7CB504
 namespace gamemd {
-wchar_t * wcsncat(AbstractClass * aP0, const wchar_t * Source, size_t Count)
+void * wcsncat(AbstractClass * aP0, const wchar_t * Source, size_t Count)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-wchar_t *__cdecl wcsncat(AbstractClass *aP0, const wchar_t *Source, size_t Count)
 {
   AbstractClass *v3; // ecx
   AbstractClass *result; // eax
@@ -5651,10 +5567,9 @@ LABEL_6:
 
 // 0x7CB550
 namespace gamemd {
-char * strncat(CCINIClass * aP0, const char * Source, size_t Count)
+void * strncat(CCINIClass * aP0, const char * Source, size_t Count)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__cdecl strncat(CCINIClass *aP0, const char *Source, size_t Count)
 {
   size_t v3; // ecx
   CCINIClass *v4; // edi
@@ -5798,7 +5713,6 @@ namespace gamemd {
 void _splitpath(const char * FullPath, char * Drive, char * Dir, ObjectClass * aP3, char * Ext)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void _splitpath(const char *FullPath, char *Drive, char *Dir, ObjectClass *aP3, char *Ext)
 {
   size_t v7; // esi
   unsigned __int8 v8; // cl
@@ -5909,7 +5823,6 @@ namespace gamemd {
 int isleadbyte(int C)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int isleadbyte(int C)
 {
   return *((_WORD *)DataGlobal_87C590 + (unsigned __int8)C) & 0x8000; /*0x7cb85b*/
 }
@@ -5918,10 +5831,9 @@ int isleadbyte(int C)
 
 // 0x7CB911
 namespace gamemd {
-wchar_t * wcstok(wchar_t * String, CampaignScore * aP1, wchar_t ** Context)
+void * wcstok(wchar_t * String, CampaignScore * aP1, wchar_t ** Context)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-wchar_t *__cdecl wcstok(wchar_t *String, CampaignScore *aP1, wchar_t **Context)
 {
   ObjectClass *v3; // eax
   wchar_t *referenceCount; // ecx
@@ -5992,10 +5904,9 @@ LABEL_19:
 
 // 0x7CB9CF
 namespace gamemd {
-int wcstoxl(wint_t * a1, wint_t ** a2, int a3, int a4)
+void wcstoxl(wint_t * a1, wint_t ** a2, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void wcstoxl(wint_t *a1, wint_t **a2, int a3, int a4)
 {
   wint_t v4; // si
   wint_t *v5; // edi
@@ -6099,10 +6010,9 @@ LABEL_24:
 
 // 0x7CBE1C
 namespace gamemd {
-int doexit(UINT uExitCode, int a2, int a3)
+void doexit(UINT uExitCode, int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void doexit(UINT uExitCode, int a2, int a3)
 {
   HANDLE CurrentProcess; // eax
   void (**v4)(void); // esi
@@ -6149,7 +6059,6 @@ namespace gamemd {
 void _initterm(_PVFV * First, _PVFV * Last)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void _initterm(_PVFV *First, _PVFV *Last)
 {
   while ( First < Last ) /*0x7cbedc*/
   {
@@ -6163,10 +6072,9 @@ void _initterm(_PVFV *First, _PVFV *Last)
 
 // 0x7CBF00
 namespace gamemd {
-unsigned int _clearfp()
+unsigned int int _clearfp()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int _clearfp()
 {
   __asm { fnclex } /*0x7cbf07*/
   return _abstract_sw(); /*0x7cbf12*/
@@ -6179,7 +6087,6 @@ namespace gamemd {
 void _fpreset()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void _fpreset()
 {
 
   _DWORD * v0 = *__pxcptinfoptrs(); /*0x7cbf65*/
@@ -6200,10 +6107,9 @@ void _fpreset()
 
 // 0x7CC309
 namespace gamemd {
-size_t _mbstowcs_lk(LPWSTR lpWideCharStr, LPCCH lpMultiByteStr, unsigned int cchWideChar)
+void _mbstowcs_lk(LPWSTR lpWideCharStr, LPCCH lpMultiByteStr, unsigned int cchWideChar)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void _mbstowcs_lk(LPWSTR lpWideCharStr, LPCCH lpMultiByteStr, unsigned int cchWideChar)
 {
   LPWSTR v3; // edx
   size_t result; // eax
@@ -6270,10 +6176,9 @@ LABEL_9:
 
 // 0x7CC409
 namespace gamemd {
-wchar_t * wcspbrk(BlowStraw * aP0, CampaignScore * aP1)
+void * wcspbrk(BlowStraw * aP0, CampaignScore * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-wchar_t *__cdecl wcspbrk(BlowStraw *aP0, CampaignScore *aP1)
 {
   BlowStraw *result; // eax
   __int16 v3; // dx
@@ -6309,10 +6214,9 @@ LABEL_6:
 
 // 0x7CC4A4
 namespace gamemd {
-size_t _wcstombs_lk(CCINIClass * aP0, ObjectClass * aP1, unsigned int cchWideChar)
+void _wcstombs_lk(CCINIClass * aP0, ObjectClass * aP1, unsigned int cchWideChar)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void _wcstombs_lk(CCINIClass *aP0, ObjectClass *aP1, unsigned int cchWideChar)
 {
   size_t v3; // edi
   size_t result; // eax
@@ -6419,10 +6323,9 @@ LABEL_34:
 
 // 0x7CC6C3
 namespace gamemd {
-char * _Getdays()
+char * * _Getdays()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__cdecl _Getdays()
 {
   const char **v0; // esi
   size_t v2; // edi
@@ -6479,10 +6382,9 @@ char *__cdecl _Getdays()
 
 // 0x7CC752
 namespace gamemd {
-char * _Getmonths()
+char * * _Getmonths()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__cdecl _Getmonths()
 {
   const char **v1; // esi
   size_t v2; // ebx
@@ -6541,10 +6443,9 @@ char *__cdecl _Getmonths()
 
 // 0x7CC7E7
 namespace gamemd {
-void * _Gettnames()
+void * * _Gettnames()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void *__cdecl _Gettnames()
 {
   const char **v0; // esi
   size_t v2; // eax
@@ -6680,7 +6581,6 @@ namespace gamemd {
 void _expandtime(char a1, unsigned int * a2, unsigned int * a3, unsigned int * a4, unsigned char ** a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void _expandtime(char a1, _DWORD *a2, _DWORD *a3, _DWORD *a4, _BYTE **a5)
 {
   int v5; // edx
   _DWORD *v6; // eax
@@ -6884,7 +6784,6 @@ namespace gamemd {
 void _store_winword(unsigned char * a1, int a2, unsigned int * a3, unsigned int * a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void _store_winword(unsigned __int8 *a1, int a2, _DWORD *a3, _DWORD *a4, int a5)
 {
   unsigned __int8 *v5; // ebx
   unsigned __int8 v10; // dl
@@ -7139,7 +7038,6 @@ namespace gamemd {
 struct tm * localtime(CampaignScore * aP0)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-struct tm *__cdecl localtime(CampaignScore *aP0)
 {
   CampaignScore *v1; // esi
   CampaignScore *v4; // eax
@@ -7231,10 +7129,9 @@ struct tm *__cdecl localtime(CampaignScore *aP0)
 
 // 0x7CD460
 namespace gamemd {
-char * tmpnam(char * Buffer)
+void * tmpnam(char * Buffer)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__cdecl tmpnam(char *Buffer)
 {
   char *v1; // edi
   int v2; // edi
@@ -7274,10 +7171,9 @@ LABEL_12:
 
 // 0x7CD4DE
 namespace gamemd {
-FILE * tmpfile()
+void * * tmpfile()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-FILE *__cdecl tmpfile()
 {
   FILE *v0; // esi
   _lock(3); /*0x7cd4e4*/
@@ -7337,10 +7233,9 @@ LABEL_15:
 
 // 0x7CD5B4
 namespace gamemd {
-char * init_namebuf(int a1)
+void * init_namebuf(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__cdecl init_namebuf(int a1)
 {
   DWORD CurrentProcessId; // eax
 
@@ -7368,11 +7263,10 @@ char *__cdecl init_namebuf(int a1)
 
 // 0x7CD662
 namespace gamemd {
-int unknown_libname_75()
+void unknown_libname_75()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // Microsoft VisualC 2-14/net runtime
-char *__cdecl unknown_libname_75(CampaignScore *aP0)
 {
   struct tm *v1; // eax
 
@@ -7387,10 +7281,9 @@ char *__cdecl unknown_libname_75(CampaignScore *aP0)
 
 // 0x7CD680
 namespace gamemd {
-int _strnicmp(const char * String1, const char * String2, size_t MaxCount)
+void _strnicmp(const char * String1, const char * String2, size_t MaxCount)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void _strnicmp(const char *String1, const char *String2, size_t MaxCount)
 {
   size_t v3; // ecx
   unsigned __int8 v6; // ah
@@ -7493,10 +7386,9 @@ differ:
 
 // 0x7CD7CE
 namespace gamemd {
-size_t wcscspn(ObjectClass * aP0, const wchar_t * Control)
+void wcscspn(ObjectClass * aP0, const wchar_t * Control)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void wcscspn(ObjectClass *aP0, const wchar_t *Control)
 {
   ObjectClass *v2; // eax
   const wchar_t *v3; // edx
@@ -7532,7 +7424,6 @@ namespace gamemd {
 void __noreturn start()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __noreturn start()
 {
   DWORD Version; // eax
   int wShowWindow; // eax
@@ -7574,10 +7465,9 @@ void __noreturn start()
 
 // 0x7CDA90
 namespace gamemd {
-int strcmp(IUnknown * aP0, IUnknown * aP1)
+void strcmp(IUnknown * aP0, IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void strcmp(IUnknown *aP0, IUnknown *aP1)
 {
   IUnknown *v2; // edx
   IUnknown *v3; // ecx
@@ -7654,10 +7544,9 @@ dodwords:
 
 // 0x7CDB14
 namespace gamemd {
-char * setlocale(int Category, const char * Locale)
+char * * setlocale(int Category, const char * Locale)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__cdecl setlocale(int Category, const char *Locale)
 {
   char *all; // esi
   char *i; // esi
@@ -7786,10 +7675,9 @@ LABEL_31:
 
 // 0x7CDD5A
 namespace gamemd {
-char * _setlocale_set_cat(void * a0, IUnknown * aP1)
+void * _setlocale_set_cat(void * a0, IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__cdecl _setlocale_set_cat(void *a0, IUnknown *aP1)
 {
   size_t v3; // eax
   char Str[132]; // [esp+Ch] [ebp-A4h] BYREF
@@ -7835,10 +7723,9 @@ char *__cdecl _setlocale_set_cat(void *a0, IUnknown *aP1)
 
 // 0x7CDF2E
 namespace gamemd {
-char * _expandlocale(IUnknown * aP0, IUnknown * aP1, unsigned short * a2, unsigned int * a3)
+void * _expandlocale(IUnknown * aP0, IUnknown * aP1, unsigned short * a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__cdecl _expandlocale(IUnknown *aP0, IUnknown *aP1, _WORD *a2, _DWORD *a3)
 {
   AbstractClass *result; // eax
   char Source[136]; // [esp+Ch] [ebp-88h] BYREF
@@ -7883,10 +7770,9 @@ char *__cdecl _expandlocale(IUnknown *aP0, IUnknown *aP1, _WORD *a2, _DWORD *a3)
 
 // 0x7CE18D
 namespace gamemd {
-int _flsbuf(int Ch, FILE * File)
+void _flsbuf(int Ch, FILE * File)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void _flsbuf(int Ch, FILE *File)
 {
   FILE *v2; // esi
   int flag; // eax
@@ -7955,10 +7841,9 @@ LABEL_6:
 
 // 0x7CE2A5
 namespace gamemd {
-int _output(FILE * File, char * a2, int a3)
+void _output(FILE * File, char * a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void _output(FILE *File, char *a2, int a3)
 {
   int int_arg; // eax
   char *i; // eax
@@ -8410,10 +8295,9 @@ LABEL_171:
 
 // 0x7CEB28
 namespace gamemd {
-char _forcdecpt(char * a1)
+void _forcdecpt(char * a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void _forcdecpt(char *a1)
 {
   char result; // al
 
@@ -8448,10 +8332,9 @@ void _forcdecpt(char *a1)
 
 // 0x7CED9E
 namespace gamemd {
-char * _cftof2(char * Src, int Size, unsigned int * a3, char a4)
+void * _cftof2(char * Src, int Size, unsigned int * a3, char a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__cdecl _cftof2(char *Src, int Size, _DWORD *a3, char a4)
 {
   char *v8; // edi
   int v9; // esi
@@ -8516,11 +8399,10 @@ LABEL_15:
 
 // 0x7CF0AE
 namespace gamemd {
-int __ffexpm1()
+void* __ffexpm1()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // positive sp value has been detected, the output may be wrong!
-void __usercall _ffexpm1(int a1@<ebp>, long double a2@<st0>)
 {
   __int16 v6; // fps
   __int16 v10; // fps
@@ -8564,10 +8446,9 @@ void __usercall _ffexpm1(int a1@<ebp>, long double a2@<st0>)
 
 // 0x7CF0F1
 namespace gamemd {
-int _isintTOS()
+void* _isintTOS()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __usercall isintTOS@<eax>(double a1@<st0>)
 {
   _ST6 = a1; /*0x7cf0f1*/
   __asm { frndint } /*0x7cf0f3*/
@@ -8585,10 +8466,9 @@ int __usercall isintTOS@<eax>(double a1@<st0>)
 
 // 0x7CF125
 namespace gamemd {
-int _usepowhlp()
+void* _usepowhlp()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-double __usercall usepowhlp@<st0>(int a1@<ebp>, double a2@<st1>, double a3@<st0>)
 {
   double result; // st7
 
@@ -8608,10 +8488,9 @@ double __usercall usepowhlp@<st0>(int a1@<ebp>, double a2@<st1>, double a3@<st0>
 
 // 0x7CF390
 namespace gamemd {
-int __twoToTOS()
+void* __twoToTOS()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-long double __usercall _twoToTOS@<st0>(double a1@<st0>)
 {
   _ST6 = a1; /*0x7cf390*/
   __asm { frndint } /*0x7cf392*/
@@ -8622,7 +8501,7 @@ long double __usercall _twoToTOS@<st0>(double a1@<st0>)
 
 // 0x7CF479
 namespace gamemd {
-int __check_range_exit()
+void* __check_range_exit()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // (no pseudocode — ASM-only function)
@@ -8712,10 +8591,9 @@ LABEL_7:
 
 // 0x7CF6B1
 namespace gamemd {
-int _heap_init(int a1)
+void _heap_init(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void _heap_init(int a1)
 {
   hHeap = HeapCreate(a1 == 0, 0x1000u, 0); /*0x7cf6ca*/
   if ( !hHeap ) /*0x7cf6cf*/
@@ -8732,10 +8610,9 @@ void _heap_init(int a1)
 
 // 0x7CF6ED
 namespace gamemd {
-BOOL _heap_term()
+void* _heap_term()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void* _heap_term()
 {
   LPVOID *v1; // esi
   int v0 = 0; /*0x7cf6ee*/
@@ -8763,7 +8640,6 @@ namespace gamemd {
 int __sbh_heap_init()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __sbh_heap_init()
 {
   int result; // eax
 
@@ -8784,10 +8660,9 @@ int __sbh_heap_init()
 
 // 0x7CF7BD
 namespace gamemd {
-char * __sbh_find_block(INIClass * aP0)
+void * __sbh_find_block(INIClass * aP0)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__cdecl __sbh_find_block(INIClass *aP0)
 {
   AbstractClass *result; // eax
 
@@ -8808,7 +8683,6 @@ namespace gamemd {
 unsigned int * __sbh_free_block(AbstractClass * aP0, INIClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__cdecl __sbh_free_block(AbstractClass *aP0, INIClass *aP1)
 {
   int uniqueId; // eax
   int *p_INIClass_field_3C; // edx
@@ -8997,7 +8871,6 @@ namespace gamemd {
 unsigned int * __sbh_alloc_block(IUnknown * aP0)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__cdecl __sbh_alloc_block(IUnknown *aP0)
 {
   unsigned int v2; // esi
   AbstractClass *i; // ebx
@@ -9243,10 +9116,9 @@ LABEL_60:
 
 // 0x7CFE1C
 namespace gamemd {
-char * __sbh_alloc_new_region()
+void * __sbh_alloc_new_region()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__sbh_alloc_new_region()
 {
   LPVOID v3; // eax
   LPVOID v4; // eax
@@ -9285,10 +9157,9 @@ char *__sbh_alloc_new_region()
 
 // 0x7CFFC8
 namespace gamemd {
-int __sbh_resize_block(unsigned int * a0, CCINIClass * aP1, AbstractClass * aP2)
+void __sbh_resize_block(unsigned int * a0, CCINIClass * aP1, AbstractClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __sbh_resize_block(_DWORD *a0, CCINIClass *aP1, AbstractClass *aP2)
 {
   bool v13; // zf
   unsigned int v14; // ebx
@@ -15888,18 +15759,9 @@ void __noreturn _startTwoArgErrorHandling()
 
 // 0x7CF347
 namespace gamemd {
-int __startOneArgErrorHandling()
+void* __startOneArgErrorHandling()
  {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-double __usercall _startOneArgErrorHandling@<st0>(
-        int a1@<eax>,
-        int a2@<edx>,
-        int a3@<ecx>,
-        double a4@<st0>,
-        __int16 a5,
-        int a6,
-        int a7,
-        int a8)
 {
 
   _DWORD v9[6]; // [esp+0h] [ebp-20h] BYREF

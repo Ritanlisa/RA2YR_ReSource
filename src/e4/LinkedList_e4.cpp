@@ -6,10 +6,9 @@
 #include "e4/classes/Vector_e4.hpp"
 
 // 0x4791F0
-char LinkedList::LoadScenarioMixFiles(INIClass * aP0, int aP2, int a3, int a4)
+void LinkedList::LoadScenarioMixFiles(INIClass * aP0, int aP2, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void LinkedList::LoadScenarioMixFiles(INIClass *aP0, int aP2, int a3, int a4)
 {
   CD *v4; // ecx
   CD *v5; // esi
@@ -228,7 +227,6 @@ LABEL_60:
 void * LinkedList::MoveNode(void * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void *__thiscall LinkedList_MoveNode(void *this, void *a2)
 {
   if ( a2 != this ) /*0x55660a*/
   {
@@ -243,7 +241,6 @@ void *__thiscall LinkedList_MoveNode(void *this, void *a2)
 unsigned int * LinkedList::FindPrev()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall LinkedList_FindPrev(_DWORD *this)
 {
   _DWORD *result; // eax
 
@@ -263,10 +260,9 @@ _DWORD *__thiscall LinkedList_FindPrev(_DWORD *this)
 }
 
 // 0x5566A0
-int LinkedList::InsertAfter(int a2)
+void LinkedList::InsertAfter(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void LinkedList_InsertAfter(_DWORD *this, int a2)
 {
 
   (*(void (__thiscall **)(_DWORD *))(*this + 36))(this); /*0x5566a5*/
@@ -284,7 +280,6 @@ void LinkedList_InsertAfter(_DWORD *this, int a2)
 unsigned int * LinkedList::Attach(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall LinkedList_Attach(_DWORD *this, int a2)
 {
 
   (*(void (__thiscall **)(_DWORD *))(*this + 36))(this); /*0x5566d5*/
@@ -297,10 +292,9 @@ _DWORD *__thiscall LinkedList_Attach(_DWORD *this, int a2)
 }
 
 // 0x556700
-int LinkedList::Append(int a2)
+void LinkedList::Append(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void LinkedList_Append(_DWORD *this, int a2)
 {
 
   (*(void (__thiscall **)(_DWORD *))(*this + 36))(this); /*0x556705*/
@@ -314,10 +308,9 @@ void LinkedList_Append(_DWORD *this, int a2)
 }
 
 // 0x556730
-int LinkedList::RemoveNode()
+void LinkedList::RemoveNode()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void LinkedList_RemoveNode(_DWORD *this)
 {
 
   int v2 = (*(int (__thiscall **)(_DWORD *))(*this + 24))(this); /*0x55673e*/
@@ -342,7 +335,6 @@ void LinkedList_RemoveNode(_DWORD *this)
 void LinkedList::Remove(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void LinkedList_Remove(_DWORD *this, _DWORD *a2)
 {
 
   _DWORD * v2 = (_DWORD *)this->q034; /*0x623460*/
@@ -369,7 +361,6 @@ void LinkedList_Remove(_DWORD *this, _DWORD *a2)
 void LinkedList::RelinkNode(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void LinkedList_RelinkNode(_DWORD *this, int a2)
 {
 
   if ( *(this + 6) != a2 ) /*0x632d1b*/
@@ -396,10 +387,9 @@ void LinkedList_RelinkNode(_DWORD *this, int a2)
 }
 
 // 0x6E5380
-char LinkedList::Contains(IUnknown * aP1)
+void LinkedList::Contains(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void LinkedList::Contains(IUnknown *aP1)
 {
 
   int v2 = this->q028; /*0x6e5380*/

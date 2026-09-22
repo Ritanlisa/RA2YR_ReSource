@@ -8,10 +8,9 @@
 
 // 0x4FA350
 namespace gamemd {
-int Sidebar::StartSidebarProduction(void * a1, BuildingTypeClass * aP2, HouseClass * aP3, char a5)
+void Sidebar::StartSidebarProduction(void * a1, BuildingTypeClass * aP2, HouseClass * aP3, char a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Sidebar::StartSidebarProduction(int this, void *a1, BuildingTypeClass *aP2, HouseClass *aP3, char a5)
 {
   IUnknown *v6; // ebx
   int v7; // esi
@@ -248,10 +247,9 @@ LABEL_55:
 
 // 0x5007A0
 namespace gamemd {
-char Sidebar::Dispatch(IUnknown * aP1, char a3, int a4, char a5)
+void Sidebar::Dispatch(IUnknown * aP1, char a3, int a4, char a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Sidebar::Dispatch(IUnknown *aP1, char a3, int a4, char a5)
 {
   char result; // al
 
@@ -297,10 +295,9 @@ LABEL_3:
 
 // 0x533F50
 namespace gamemd {
-int Sidebar::ScrollSidebarSkipGame()
+void Sidebar::ScrollSidebarSkipGame()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Sidebar::ScrollSidebarSkipGame(const char *this)
 {
   int result; // eax
 
@@ -330,7 +327,6 @@ namespace gamemd {
 void Sidebar::CancelSidebarProductionQueue()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Sidebar::CancelSidebarProductionQueue()
 {
   int i; // ebp
   VectorClass *v4; // edi
@@ -429,10 +425,9 @@ void Sidebar::CancelSidebarProductionQueue()
 
 // 0x63F040
 namespace gamemd {
-char Sidebar::RemoveItem(int a2)
+void Sidebar::RemoveItem(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_63F040(_DWORD *this, int a2)
 {
 
   int v2 = this->q010; /*0x63f040*/
@@ -457,10 +452,9 @@ void sub_63F040(_DWORD *this, int a2)
 
 // 0x63FB20
 namespace gamemd {
-int Sidebar::Render(char a2)
+void Sidebar::Render(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Sidebar_Render(int this, char a2)
 {
 
   if ( (a2 || *(_BYTE *)(this + 5388)) && DataGlobal_884B8D ) /*0x63fb43*/
@@ -641,10 +635,9 @@ void Sidebar_Render(int this, char a2)
 
 // 0x6A60A0
 namespace gamemd {
-int Sidebar::ActivateTab(IUnknown * aP1)
+void Sidebar::ActivateTab(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Sidebar::ActivateTab(int this, IUnknown *aP1)
 {
   IUnknown *result; // eax
 
@@ -665,7 +658,6 @@ namespace gamemd {
 void Sidebar::FlushSidebarTooltip(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void FlushSidebarTooltip(_BYTE *this, char a2)
 {
   struct tagPOINT Point; // [esp+1Ch] [ebp-38h] BYREF
   int v10; // [esp+24h] [ebp-30h] BYREF
@@ -808,10 +800,9 @@ LABEL_25:
 
 // 0x6A9540
 namespace gamemd {
-int Sidebar_UpdateProductionDisplay()
+void Sidebar_UpdateProductionDisplay()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __userpurge Sidebar::UpdateProductionDisplay@<al>(int a1@<ecx>, CampaignScore *a2@<edi>, char a3)
 {
   char result; // al
   IUnknown *v6; // ebx

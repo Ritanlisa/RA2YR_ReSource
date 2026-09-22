@@ -5,10 +5,9 @@
 
 // 0x5422F0
 namespace gamemd {
-int Connection::GetSpeed()
+void Connection::GetSpeed()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Connection_GetSpeed(int this)
 {
   if ( (unsigned char)this->Connection_field_0x4 && *(_BYTE *)(this + 5) ) /*0x5422f7*/
     return *(_DWORD *)(*(_DWORD *)(this->Connection_field_0x48 + 4) + 56); /*0x542304*/
@@ -20,10 +19,9 @@ void Connection_GetSpeed(int this)
 
 // 0x543090
 namespace gamemd {
-int Connection::Close()
+void Connection::Close()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Connection_Close(_DWORD *this)
 {
   int result; // eax
 

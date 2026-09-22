@@ -19,7 +19,6 @@ namespace gamemd {
 char UpdateBuildingActiveAnim(int a1, int edx0)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall UpdateBuildingActiveAnim(int a1, int edx0)
 {
   IUnknown *v4; // edi
   double HealthRatio; // st7
@@ -133,10 +132,9 @@ char __fastcall UpdateBuildingActiveAnim(int a1, int edx0)
 
 // 0x452000
 namespace gamemd {
-int sub_452000(unsigned int * a1)
+void sub_452000(unsigned int * a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_452000(_DWORD *a1)
 {
   bool v10; // zf
   int v11; // ebx
@@ -212,10 +210,9 @@ int __fastcall sub_452000(_DWORD *a1)
 
 // 0x452D40
 namespace gamemd {
-int sub_452D40()
+void sub_452D40()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_452D40()
 {
   int result; // eax
   int i; // edi
@@ -245,19 +242,9 @@ void sub_452D40()
 
 // 0x456980
 namespace gamemd {
-char DrawTechnoDeployCircle(IUnknown * aP0, IUnknown * aP1, int a1, int a4, int a5, int a6, float a7, char a8, char a9)
+void DrawTechnoDeployCircle(IUnknown * aP0, IUnknown * aP1, int a1, int a4, int a5, int a6, float a7, char a8, char a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall DrawTechnoDeployCircle(
-        IUnknown *aP0,
-        IUnknown *aP1,
-        int a1,
-        int a4,
-        int a5,
-        int a6,
-        float a7,
-        char a8,
-        char a9)
 {
   int v10; // eax
   double v11; // st7
@@ -442,10 +429,9 @@ LABEL_20:
 
 // 0x456FB0
 namespace gamemd {
-int sub_456FB0(unsigned int * a1, int a2, int a3)
+void sub_456FB0(unsigned int * a1, int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_456FB0(_DWORD *a1, int a2, int a3)
 {
 
   int v4 = (*(int (__thiscall **)(_DWORD *, int))(*a1 + 1124))(a1, a3); /*0x456fc7*/
@@ -471,7 +457,6 @@ namespace gamemd {
 int ObjectType_IsBuildingType(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall ObjectType_IsBuildingType(int a1)
 {
   if ( a1 )
     return (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 44))(a1) == 6 ? a1 : 0;
@@ -486,7 +471,6 @@ namespace gamemd {
 int Map_InitCellOffsets()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int Map_InitCellOffsets()
 {
 
   unk_89D368 = 0x10000;
@@ -829,10 +813,9 @@ int Map_InitCellOffsets()
 
 // 0x45DD20
 namespace gamemd {
-char * E4Recv_45DD20::sub_45DD20()
+void * E4Recv_45DD20::sub_45DD20()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall sub_45DD20(void *this)
 {
 
   int v1 = 0; /*0x45dd20*/
@@ -851,10 +834,9 @@ char *__thiscall sub_45DD20(void *this)
 
 // 0x45DD50
 namespace gamemd {
-int E4Recv_45DD50::sub_45DD50()
+void E4Recv_45DD50::sub_45DD50()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_45DD50(void *this)
 {
   ObjectClass *v2; // edi
   const void **v3; // esi

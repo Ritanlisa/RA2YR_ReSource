@@ -18,10 +18,9 @@
 
 // 0x6A6AF0
 namespace gamemd {
-char E4Recv_6A6AF0::sub_6A6AF0(ObjectClass * aP1, int a3)
+void E4Recv_6A6AF0::sub_6A6AF0(ObjectClass * aP1, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_6A6AF0(_DWORD *this, ObjectClass *aP1, int a3)
 {
   _DWORD *v7; // eax
   int v8; // edx
@@ -83,10 +82,9 @@ LABEL_18:
 
 // 0x6A74A0
 namespace gamemd {
-int E4Recv_6A74A0::sub_6A74A0(int a2)
+void E4Recv_6A74A0::sub_6A74A0(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_6A74A0(_DWORD *this, int a2)
 {
 
   *(this + 5351) = a2; /*0x6a74b6*/
@@ -116,10 +114,9 @@ void sub_6A74A0(_DWORD *this, int a2)
 
 // 0x6A87F0
 namespace gamemd {
-char E4Recv_6A87F0::sub_6A87F0(int a2, int a3)
+void E4Recv_6A87F0::sub_6A87F0(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_6A87F0(int this, int a2, int a3)
 {
 
   int v4 = this->M84; /*0x6a87f5*/
@@ -151,10 +148,9 @@ LABEL_7:
 
 // 0x6A89E0
 namespace gamemd {
-char E4Recv_6A89E0::sub_6A89E0(char a2)
+void E4Recv_6A89E0::sub_6A89E0(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_6A89E0(_DWORD *this, char a2)
 {
 
   int v10 = *((_DWORD *)g_ScenarioClass_Instance + 3374); /*0x6a89f2*/
@@ -205,10 +201,9 @@ void sub_6A89E0(_DWORD *this, char a2)
 
 // 0x6A93F0
 namespace gamemd {
-char E4Recv_6A93F0::sub_6A93F0()
+void E4Recv_6A93F0::sub_6A93F0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_6A93F0(int this)
 {
 
   *(_BYTE *)(this + 28) = 1; /*0x6a93f8*/
@@ -237,10 +232,9 @@ void sub_6A93F0(int this)
 
 // 0x6ACBAE
 namespace gamemd {
-void __inc_tmpoff()
+void* __inc_tmpoff()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void* __inc_tmpoff()
 {
   ++DataGlobal_0000051D; /*0x6acbae*/
 }
@@ -249,10 +243,9 @@ void* __inc_tmpoff()
 
 // 0x6ADC20
 namespace gamemd {
-BOOL SetupSkirmishSpawnLocationEntry(SessionClass * hDlg, int nIDDlgItem)
+void SetupSkirmishSpawnLocationEntry(SessionClass * hDlg, int nIDDlgItem)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __fastcall SetupSkirmishSpawnLocationEntry(SessionClass *hDlg, int nIDDlgItem)
 {
   int v4; // eax
   int v5; // eax
@@ -358,7 +351,6 @@ namespace gamemd {
 void HideSkirmishSpawnLocations(HWND hDlg, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall HideSkirmishSpawnLocations(HWND hDlg, int a2)
 {
   LRESULT v5; // ebp
   WPARAM v6; // ebx
@@ -489,10 +481,9 @@ LABEL_22:
 
 // 0x6AE2C0
 namespace gamemd {
-int ShowSkirmishSetupScreen()
+void ShowSkirmishSetupScreen()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool __usercall Skirmish_Setup_Screen@<al>(int a1@<ebx>, int a2@<ebp>)
 {
   int i; // esi
   HWND v3; // esi
@@ -545,10 +536,9 @@ bool __usercall Skirmish_Setup_Screen@<al>(int a1@<ebx>, int a2@<ebp>)
 // 0x6AFD60
 namespace ra2 {
 namespace game {
-char TechnoClass::ProcessDeployAction()
+void TechnoClass::ProcessDeployAction()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ProcessDeployAction(TechnoClass **this)
 {
   SlaveManagerClass *v2; // eax
   TechnoClass *v3; // edi

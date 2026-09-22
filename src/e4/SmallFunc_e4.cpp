@@ -19,10 +19,9 @@
 
 // 0x6F19B0
 namespace gamemd {
-int SmallFunc_6F19B0(char * a1, int a2)
+void SmallFunc_6F19B0(char * a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall SmallFunc_6F19B0(char *a1, int a2)
 {
   int result; // eax
   CCINIClass *i; // ebx

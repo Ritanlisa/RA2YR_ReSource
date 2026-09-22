@@ -11,7 +11,6 @@ namespace gamemd {
 unsigned int * AudioQueue::CreateNode()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_402AF0(int this)
 {
 
   _DWORD * v2 = __2_YAPAXI_Z(0x60u); /*0x402afc*/
@@ -43,10 +42,9 @@ _DWORD *__thiscall sub_402AF0(int this)
 
 // 0x4035F0
 namespace gamemd {
-int AudioQueue::FindBestChannel(int a1, int a2)
+void AudioQueue::FindBestChannel(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_4035F0(int a1, int a2)
 {
   int result; // eax
 
@@ -116,10 +114,9 @@ int __fastcall sub_4035F0(int a1, int a2)
 
 // 0x403730
 namespace gamemd {
-int AudioQueue::StopAllVoices(__thiscall *__fastcall AudioQueue::StopAllVoices(int a1, int a2))( int)
+void AudioQueue::StopAllVoices(__thiscall *__fastcall AudioQueue::StopAllVoices(int a1, int a2))( int)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int (__thiscall *__fastcall AudioQueue::StopAllVoices(int a1, int a2))(int)
 {
   int (__thiscall *result)(int); // eax
 
@@ -145,10 +142,9 @@ int (__thiscall *__fastcall AudioQueue::StopAllVoices(int a1, int a2))(int)
 
 // 0x752680
 namespace gamemd {
-int * AudioQueue::FindByData()
+void * AudioQueue::FindByData()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int *__thiscall AudioQueue::FindByData(void *this)
 {
   int *result; // eax
 
@@ -208,7 +204,6 @@ namespace gamemd {
 void AudioQueue::Update()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void AudioQueue_Update(int this)
 {
 
   signed int v2 = *(_DWORD *)(this + 948); /*0x77162a*/
@@ -266,7 +261,6 @@ namespace gamemd {
 void AudioQueue::Cleanup()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void AudioQueue_Cleanup(int this)
 {
 
   while ( *(_DWORD *)(this + 48) ) /*0x7b1d16*/
@@ -332,7 +326,6 @@ namespace gamemd {
 unsigned char * AudioQueue::AllocBuffer(WinsockInterfaceClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_BYTE *__thiscall AudioQueue::AllocBuffer(_DWORD *this, WinsockInterfaceClass *aP1)
 {
   _BYTE *result; // eax
 
@@ -410,10 +403,9 @@ _BYTE *__thiscall AudioQueue::AllocBuffer(_DWORD *this, WinsockInterfaceClass *a
 
 // 0x7B22E0
 namespace gamemd {
-int AudioQueue::ReadBuffer(void * a2, int a3, void * a4, unsigned int * a5, unsigned short * a6)
+void AudioQueue::ReadBuffer(void * a2, int a3, void * a4, unsigned int * a5, unsigned short * a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void AudioQueue_ReadBuffer(int this, void *a2, int a3, void *a4, unsigned int *a5, _WORD *a6)
 {
 
   EventQueue::Process(g_BinkMoviePlayer); /*0x7b22e9*/
@@ -456,18 +448,9 @@ void AudioQueue_ReadBuffer(int this, void *a2, int a3, void *a4, unsigned int *a
 
 // 0x7B23B0
 namespace gamemd {
-short AudioQueue::WriteBuffer(WinsockInterfaceClass * aP1, unsigned int arg4, const void * a3, unsigned int a5, WinsockInterfaceClass * aP5, char a7, short a8)
+void AudioQueue::WriteBuffer(WinsockInterfaceClass * aP1, unsigned int arg4, const void * a3, unsigned int a5, WinsockInterfaceClass * aP5, char a7, short a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-__int16 __thiscall AudioQueue::WriteBuffer(
-        int this,
-        WinsockInterfaceClass *aP1,
-        unsigned int arg4,
-        const void *a3,
-        unsigned int a5,
-        WinsockInterfaceClass *aP5,
-        char a7,
-        __int16 a8)
 {
   int v14; // eax
   int v15; // ecx

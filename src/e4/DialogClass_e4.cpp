@@ -4,10 +4,9 @@
 
 // 0x5D6350
 namespace gamemd {
-char DialogClass::GetFlag()
+void DialogClass::GetFlag()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void DialogClass_GetFlag(_BYTE *this)
 {
   return this->q034; /*0x5d6353*/
 }
@@ -16,10 +15,9 @@ void DialogClass_GetFlag(_BYTE *this)
 
 // 0x775BC0
 namespace gamemd {
-BOOL DialogClass::Reposition(SkirmishDialog * aP0, LPARAM a2)
+void DialogClass::Reposition(SkirmishDialog * aP0, LPARAM a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void DialogClass::Reposition(SkirmishDialog *aP0, LPARAM a2)
 {
   HWND WindowLongA; // eax
   LONG right; // edi

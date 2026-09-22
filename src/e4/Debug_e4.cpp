@@ -5,10 +5,9 @@
 
 // 0x5BD0D0
 namespace gamemd {
-char Debug::ScrollText(CellStruct * aP1)
+void Debug::ScrollText(CellStruct * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Debug::ScrollText(int this, CellStruct *aP1)
 {
   char result; // al
   IUnknown *v5; // ebp
@@ -67,10 +66,9 @@ void Debug::ScrollText(int this, CellStruct *aP1)
 
 // 0x6E61F0
 namespace gamemd {
-int Debug::AccumFlags()
+void Debug::AccumFlags()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Debug_AccumFlags(_DWORD *this)
 {
   int i; // edi
 

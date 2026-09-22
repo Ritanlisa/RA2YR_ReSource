@@ -6,7 +6,6 @@
 unsigned int MovieClass::ComputeTime()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_7C3990(int this)
 {
 
   unsigned int v1 = *(_DWORD *)(this + 120); /*0x7c3995*/

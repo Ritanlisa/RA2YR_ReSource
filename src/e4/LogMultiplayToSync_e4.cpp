@@ -11,7 +11,6 @@ namespace gamemd {
 void __usercall LogMultiplayToSync_MPDEBUG(CellStruct *a1@<ecx> a1, unsigned char *a2@<edx> a2, CellStruct *a3@<ebp> a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __usercall LogMultiplayToSync_MPDEBUG(CellStruct *a1@<ecx>, unsigned __int8 *a2@<edx>, CellStruct *a3@<ebp>)
 {
   INIClass *v3; // edx
   ObjectClass *v4; // ebx

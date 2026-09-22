@@ -9,16 +9,14 @@ namespace gamemd {
 unsigned int * BSurface::Construct(int a2, int a3, int a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall BSurface_Constructor(_DWORD *this, int a2, int a3, int a4, int a5)
 {
   _DWORD *v13; // ecx
-  int v14; // eax
+  bool v14; // eax
   int v15; // eax
-  int v16; // ecx
+  bool v16; // ecx
   int v17; // ecx
   int v18; // edx
   int v19; // ecx
-
   int v6 = a2; /*0x410ce5*/
   int v7 = a4; /*0x410ce9*/
   int v8 = a5; /*0x410cef*/
@@ -33,8 +31,8 @@ _DWORD *__thiscall BSurface_Constructor(_DWORD *this, int a2, int a3, int a4, in
   _DWORD * v10 = __2_YAPAXI_Z(0x20u); /*0x410d17*/
   if ( v10 ) /*0x410d20*/
   {
-    int v11 = this->q00A; /*0x410d22*/
-    int v12 = this->q00B; /*0x410d25*/
+    bool v11 = this->q00A; /*0x410d22*/
+    bool v12 = this->q00B; /*0x410d25*/
     v10[1] = v11; /*0x410d28*/
     v10[2] = v12; /*0x410d30*/
     v10[3] = 0; /*0x410d38*/
@@ -72,10 +70,9 @@ _DWORD *__thiscall BSurface_Constructor(_DWORD *this, int a2, int a3, int a4, in
 
 // 0x7B8C60
 namespace gamemd {
-bool BSurface::CreateTripleBuffer()
+void BSurface::CreateTripleBuffer()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void BSurface_CreateTripleBuffer(int this)
 {
   void (__thiscall ***v3)(_DWORD, int); // ecx
   void (__thiscall ***v5)(_DWORD, int); // ecx
@@ -121,7 +118,7 @@ void BSurface_CreateTripleBuffer(int this)
       if ( v8 ) /*0x7b8d46*/
       {
         IUnknown *v9 = this->Width; /*0x7b8d4b*/
-        int v10 = v9->q004; /*0x7b8d50*/
+        IUnknown *v10 = v9->q004; /*0x7b8d50*/
         int v11 = v9->q008; /*0x7b8d54*/
         int v12 = (*(int (__thiscall **)(_DWORD))(*this->q009 + 112))(this->q009); /*0x7b8d58*/
         v8[4] = v12; /*0x7b8d5b*/
@@ -144,7 +141,7 @@ void BSurface_CreateTripleBuffer(int this)
       if ( v13 ) /*0x7b8da4*/
       {
         IUnknown *v14 = this->Width; /*0x7b8da6*/
-        int v15 = v14->q004; /*0x7b8dac*/
+        IUnknown *v15 = v14->q004; /*0x7b8dac*/
         int v16 = v14->q008; /*0x7b8db0*/
         int v17 = (*(int (__thiscall **)(_DWORD))(*this->q009 + 112))(this->q009); /*0x7b8db6*/
         v13[4] = v17; /*0x7b8db9*/
@@ -167,7 +164,7 @@ void BSurface_CreateTripleBuffer(int this)
       if ( v18 ) /*0x7b8e02*/
       {
         IUnknown *v19 = this->Width; /*0x7b8e07*/
-        int v20 = v19->q004; /*0x7b8e0c*/
+        IUnknown *v20 = v19->q004; /*0x7b8e0c*/
         int v21 = v19->q008; /*0x7b8e10*/
         int v22 = (*(int (__thiscall **)(_DWORD))(*this->q009 + 112))(this->q009); /*0x7b8e14*/
         v18[4] = v22; /*0x7b8e17*/
@@ -195,16 +192,14 @@ namespace gamemd {
 unsigned int * BSurface::ConstructEx(int a2, int a3, int a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall BSurface_ConstructorEx(_DWORD *this, int a2, int a3, int a4, int a5)
 {
   _DWORD *v13; // ecx
-  int v14; // eax
+  bool v14; // eax
   int v15; // eax
-  int v16; // ecx
+  bool v16; // ecx
   int v17; // ecx
   int v18; // edx
   int v19; // ecx
-
   int v6 = a2; /*0x7bc975*/
   int v7 = a4; /*0x7bc979*/
   int v8 = a5; /*0x7bc97f*/
@@ -219,8 +214,8 @@ _DWORD *__thiscall BSurface_ConstructorEx(_DWORD *this, int a2, int a3, int a4, 
   _DWORD * v10 = __2_YAPAXI_Z(0x20u); /*0x7bc9a7*/
   if ( v10 ) /*0x7bc9b0*/
   {
-    int v11 = this->q00A; /*0x7bc9b2*/
-    int v12 = this->q00B; /*0x7bc9b5*/
+    bool v11 = this->q00A; /*0x7bc9b2*/
+    bool v12 = this->q00B; /*0x7bc9b5*/
     v10[1] = v11; /*0x7bc9b8*/
     v10[2] = v12; /*0x7bc9c0*/
     v10[3] = 0; /*0x7bc9c8*/

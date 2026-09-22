@@ -14,10 +14,9 @@
 
 // 0x7937B0
 namespace gamemd {
-int CComObject_CChatEventSink___ATL::DispatchConnectionPairs()
+void CComObject_CChatEventSink___ATL::DispatchConnectionPairs()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_7937B0(char *this)
 {
   wchar_t **v3; // esi
   int i; // [esp+14h] [ebp-2Ch]
@@ -111,10 +110,9 @@ void sub_7937B0(char *this)
 
 // 0x7A4EC0
 namespace gamemd {
-int CComObject_CChatEventSink___ATL::DispatchStub_32(int a1, int a2, int a3, int a4)
+void CComObject_CChatEventSink___ATL::DispatchStub_32(int a1, int a2, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CComObject_CChatEventSink___ATL::vt_32_(int a1, int a2, int a3, int a4)
 {
   size_t v14; // ecx
   --dword_B77DDC; /*0x7a4ed2*/
@@ -263,10 +261,9 @@ LABEL_42:
 
 // 0x7A5290
 namespace gamemd {
-int CComObject_CChatEventSink___ATL::GetTypeInfo(int a1, int a2, const char * a3)
+void CComObject_CChatEventSink___ATL::GetTypeInfo(int a1, int a2, const char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CComObject_CChatEventSink___ATL::_vt06(int a1, int a2, const char *a3)
 {
   wchar_t *StringCSF; // eax
   wchar_t *v4; // eax
@@ -372,10 +369,9 @@ LABEL_20:
 
 // 0x7A5690
 namespace gamemd {
-int CComObject_CChatEventSink___ATL::FireEvent(int a1, int a2, unsigned char * a3)
+void CComObject_CChatEventSink___ATL::FireEvent(int a1, int a2, unsigned char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CComObject_CChatEventSink___ATL::vt_09_(int a1, int a2, _BYTE *a3)
 {
   wchar_t *v3; // eax
   HWND v4; // eax
@@ -457,10 +453,9 @@ void CComObject_CChatEventSink___ATL::vt_09_(int a1, int a2, _BYTE *a3)
 
 // 0x7A7B60
 namespace gamemd {
-int CComObject_CChatEventSink___ATL::DispatchStub_23(int a1, int a2, int a3, int a4, wchar_t * a5)
+void CComObject_CChatEventSink___ATL::DispatchStub_23(int a1, int a2, int a3, int a4, wchar_t * a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CComObject_CChatEventSink___ATL::vt_23_(int a1, int a2, int a3, int a4, wchar_t *a5)
 {
   HWND v10; // eax
   HWND v11; // eax
@@ -586,10 +581,9 @@ LABEL_41:
 
 // 0x7A7EA0
 namespace gamemd {
-int CComObject_CChatEventSink___ATL::DispatchStub_22(int a1, int a2, int a3, int a4, char * Source)
+void CComObject_CChatEventSink___ATL::DispatchStub_22(int a1, int a2, int a3, int a4, char * Source)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CComObject_CChatEventSink___ATL::_vt22(int a1, int a2, int a3, int a4, char *Source)
 {
   char *Flagged; // esi
   wchar_t *v9; // eax
@@ -737,10 +731,9 @@ void CComObject_CChatEventSink___ATL::_vt22(int a1, int a2, int a3, int a4, char
 
 // 0x7A8DA0
 namespace gamemd {
-int CComObject_CChatEventSink___ATL::DispatchStub_16(int a1, int a2, int a3, const char * a4, char * String1)
+void CComObject_CChatEventSink___ATL::DispatchStub_16(int a1, int a2, int a3, const char * a4, char * String1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CComObject_CChatEventSink___ATL::_vt16(int a1, int a2, int a3, const char *a4, char *String1)
 {
   wchar_t *v11; // eax
   if ( !g_NetworkLobby_Init && a2 >= 0 ) /*0x7a8db5*/
@@ -808,10 +801,9 @@ void CComObject_CChatEventSink___ATL::_vt16(int a1, int a2, int a3, const char *
 
 // 0x7A8ED0
 namespace gamemd {
-int CComObject_CChatEventSink___ATL::DispatchStub_40(int a1, int a2, int a3, const char * a4, wchar_t * String)
+void CComObject_CChatEventSink___ATL::DispatchStub_40(int a1, int a2, int a3, const char * a4, wchar_t * String)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CComObject_CChatEventSink___ATL::_vt40(int a1, int a2, int a3, const char *a4, wchar_t *String)
 {
   wchar_t *v11; // eax
   if ( g_NetworkLobby_Init ) /*0x7a8ed8*/
@@ -853,7 +845,7 @@ LABEL_21:
 
 // 0x7A8FC0
 namespace gamemd {
-int CComObject_CChatEventSink___ATL_DispatchStub_17()
+void CComObject_CChatEventSink___ATL_DispatchStub_17()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // (no pseudocode — ASM-only function)
@@ -907,10 +899,9 @@ LABEL_21:
 
 // 0x7A9200
 namespace gamemd {
-int CComObject_CChatEventSink___ATL::DispatchStub_28(int a1, int a2, const char * a3, const char * a4)
+void CComObject_CChatEventSink___ATL::DispatchStub_28(int a1, int a2, const char * a3, const char * a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CComObject_CChatEventSink___ATL::_vt28(int a1, int a2, const char *a3, const char *a4)
 {
   wchar_t *v8; // eax
   int Type; // esi
@@ -1029,10 +1020,9 @@ LABEL_12:
 
 // 0x7A9550
 namespace gamemd {
-int CComObject_CChatEventSink___ATL::DispatchStub_44(int a1, int a2, int a3, wchar_t * String)
+void CComObject_CChatEventSink___ATL::DispatchStub_44(int a1, int a2, int a3, wchar_t * String)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CComObject_CChatEventSink___ATL::_vt44(int a1, int a2, int a3, wchar_t *String)
 {
   bool v6; // bl
   bool v7; // zf
@@ -1141,10 +1131,9 @@ LABEL_27:
 
 // 0x7A9800
 namespace gamemd {
-int CComObject_CChatEventSink___ATL::DispatchStub_27(int a1, int a2)
+void CComObject_CChatEventSink___ATL::DispatchStub_27(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CComObject_CChatEventSink___ATL::DispatchStub_27(int a1, int a2)
 {
   wchar_t *StringCSF; // eax
   HWND Current; // eax
@@ -1223,14 +1212,9 @@ LABEL_19:
 
 // 0x7AA6D0
 namespace gamemd {
-int CComObject_CChatEventSink___ATL_DispatchStub_19()
+void CComObject_CChatEventSink___ATL_DispatchStub_19()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __userpurge CComObject_CChatEventSink___ATL::DispatchStub_19@<eax>(
-        const wchar_t *a1@<esi>,
-        CampaignScore *a2@<edi>,
-        int a3,
-        int a4)
 {
   wchar_t *StringCSF; // eax
   CampaignScore *Type; // esi
@@ -1303,10 +1287,9 @@ int __userpurge CComObject_CChatEventSink___ATL::DispatchStub_19@<eax>(
 
 // 0x7AB440
 namespace gamemd {
-int CComObject_CChatEventSink___ATL::DispatchStub_30(int a1, int a2, void * a3, int a4, int a5)
+void CComObject_CChatEventSink___ATL::DispatchStub_30(int a1, int a2, void * a3, int a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CComObject_CChatEventSink___ATL::_vt30(int a1, int a2, void *a3, int a4, int a5)
 {
   size_t v8; // eax
   size_t v14; // ecx
@@ -1413,10 +1396,9 @@ LABEL_31:
 
 // 0x7AB670
 namespace gamemd {
-int CComObject_CChatEventSink___ATL::DispatchStub_24(int a1, int a2, int a3, int a4, int a5)
+void CComObject_CChatEventSink___ATL::DispatchStub_24(int a1, int a2, int a3, int a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CComObject_CChatEventSink___ATL::_vt24(int a1, int a2, int a3, int a4, int a5)
 {
   wchar_t *v10; // eax
   wchar_t *v11; // eax
@@ -1505,10 +1487,9 @@ void CComObject_CChatEventSink___ATL::_vt24(int a1, int a2, int a3, int a4, int 
 
 // 0x7AB8E0
 namespace gamemd {
-int CComObject_CChatEventSink___ATL::DispatchStub_33(int a1, int a2, int a3)
+void CComObject_CChatEventSink___ATL::DispatchStub_33(int a1, int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CComObject_CChatEventSink___ATL::_vt33(int a1, int a2, int a3)
 {
   char **v6; // eax
   char **v7; // esi
@@ -1597,10 +1578,9 @@ void CComObject_CChatEventSink___ATL::_vt33(int a1, int a2, int a3)
 
 // 0x7ABAF0
 namespace gamemd {
-int CComObject_CChatEventSink___ATL::DispatchStub_35(int a1, int a2, char * a3)
+void CComObject_CChatEventSink___ATL::DispatchStub_35(int a1, int a2, char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CComObject_CChatEventSink___ATL::_vt35(int a1, int a2, char *a3)
 {
   char **v10; // eax
   char **v11; // esi
@@ -1692,10 +1672,9 @@ LABEL_19:
 
 // 0x7ABD40
 namespace gamemd {
-int CComObject_CChatEventSink___ATL::DispatchStub_34(int a1, int a2, float a3)
+void CComObject_CChatEventSink___ATL::DispatchStub_34(int a1, int a2, float a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CComObject_CChatEventSink___ATL::_vt34(int a1, int a2, float a3)
 {
   char **v13; // eax
   char **v14; // esi
@@ -1796,10 +1775,9 @@ LABEL_21:
 
 // 0x7ABFA0
 namespace gamemd {
-int CComObject_CChatEventSink___ATL::DispatchStub_36(int a1, int a2, int a3)
+void CComObject_CChatEventSink___ATL::DispatchStub_36(int a1, int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CComObject_CChatEventSink___ATL::_vt36(int a1, int a2, int a3)
 {
   char **v10; // eax
   char **v11; // esi
@@ -1892,10 +1870,9 @@ LABEL_20:
 
 // 0x7AC220
 namespace gamemd {
-int CComObject_CChatEventSink___ATL::DispatchStub_37(int a1, int a2, int a3)
+void CComObject_CChatEventSink___ATL::DispatchStub_37(int a1, int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CComObject_CChatEventSink___ATL::vt_37_(int a1, int a2, int a3)
 {
   char **v6; // ecx
   HWND v7; // eax
@@ -1999,10 +1976,9 @@ LABEL_21:
 
 // 0x7AC6B0
 namespace gamemd {
-LONG CComObject_CChatEventSink___ATL::Release()
+void CComObject_CChatEventSink___ATL::Release()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-LONG __thiscall CComObject_CChatEventSink___ATL::Release(CComObject_VCChatEventSink___ATL *this)
 {
   LONG v1; // ebx
   char *Block; // [esp+14h] [ebp+4h]
@@ -2023,10 +1999,9 @@ LONG __thiscall CComObject_CChatEventSink___ATL::Release(CComObject_VCChatEventS
 
 // 0x7AC700
 namespace gamemd {
-int CComObject_CChatEventSink___ATL::QueryInterface()
+void CComObject_CChatEventSink___ATL::QueryInterface()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CComObject_CChatEventSink___ATL::QueryInterface()
 {
   _UNKNOWN **v1; // esi
   int result; // eax
@@ -2078,10 +2053,9 @@ LABEL_17:
 
 // 0x7AE5B0
 namespace gamemd {
-int CComObject_CChatEventSink___ATL::Check(TechnoTypeClass * aP1)
+void CComObject_CChatEventSink___ATL::Check(TechnoTypeClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CComObject_CChatEventSink___ATL::Check(int this, TechnoTypeClass *aP1)
 {
   return (*(int (__thiscall **)(TechnoTypeClass *))(this + 24))(aP1) & ((1 << *(_DWORD *)(this + 12)) - 1); /*0x7ae5c4*/
 }

@@ -9,7 +9,6 @@ namespace gamemd {
 int Math_InitDegToRad()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __usercall Math_InitDegToRad@<eax>(char a1@<cf>, char a2@<zf>)
 {
   int result; // eax
 
@@ -26,7 +25,6 @@ namespace gamemd {
 void Math::Hypotenuse2D()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Math_Hypotenuse2D(double *this)
 {
   Math::Sqrt(*this * *this + this->q004 * this->q004); /*0x41c369*/
 }
@@ -35,11 +33,10 @@ void Math_Hypotenuse2D(double *this)
 
 // 0x4CAC40
 namespace gamemd {
-int Math_Sqrt()
+void Math_Sqrt()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // local variable allocation has failed, the output may be wrong!
-void Math::Sqrt(AbstractClass *aP0)
 {
   AbstractClass *aP0a; // [esp+4h] [ebp+4h]
 
@@ -60,11 +57,10 @@ void Math::Sqrt(AbstractClass *aP0)
 
 // 0x4CACB0
 namespace gamemd {
-int Math_SinCos()
+void Math_SinCos()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // local variable allocation has failed, the output may be wrong!
-void Math::SinCos(IUnknown *aP0)
 {
 
   int v1 = Math::RoundToInt(*(double *)&aP0 * flt_8223B0); /*0x4cacba*/
@@ -81,11 +77,10 @@ void Math::SinCos(IUnknown *aP0)
 
 // 0x4CAD00
 namespace gamemd {
-int Math_ArcTan2()
+void Math_ArcTan2()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // local variable allocation has failed, the output may be wrong!
-void Math::ArcTan2(IUnknown *aP0)
 {
 
   int v1 = Math::RoundToInt(*(double *)&aP0 * flt_8223B4); /*0x4cad0a*/
@@ -104,10 +99,9 @@ void Math::ArcTan2(IUnknown *aP0)
 
 // 0x4CAD50
 namespace gamemd {
-double Math::Sin(double a1)
+void Math::Sin(double a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Math_Sin(double a1)
 {
 
   signed int v1 = Math::RoundToInt(a1 * 651.8986469044033) & 0x80000FFF; /*0x4cad5f*/
@@ -120,11 +114,10 @@ void Math_Sin(double a1)
 
 // 0x4CAE30
 namespace gamemd {
-int Math_CalcAngle()
+void Math_CalcAngle()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // local variable allocation has failed, the output may be wrong!
-void Math::CalcAngle(AbstractClass *aP0, double a2)
 {
   double result; // st7
 
@@ -167,10 +160,9 @@ void Math::CalcAngle(AbstractClass *aP0, double a2)
 
 // 0x5AE750
 namespace gamemd {
-float * Math::BuildRotationMatrix(float * a2, float a3)
+void * Math::BuildRotationMatrix(float * a2, float a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-float *__thiscall Math_BuildRotationMatrix(float *this, float *a2, float a3)
 {
 
   double v3 = a3; /*0x5ae762*/
@@ -203,10 +195,9 @@ float *__thiscall Math_BuildRotationMatrix(float *this, float *a2, float a3)
 
 // 0x5F6560
 namespace gamemd {
-int Math::DistSq2D(TechnoClass * aP1)
+void Math::DistSq2D(TechnoClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Math::DistSq2D(TechnoClass *aP1)
 {
 
   _BYTE v6[8]; // [esp+4h] [ebp-Ch] BYREF
@@ -225,7 +216,6 @@ namespace gamemd {
 unsigned int * Math::QuaternionSlerp(unsigned int * a1, float * a2, float * a3, float a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__fastcall sub_646590(_DWORD *a1, float *a2, float *a3, float a4)
 {
 
   double v6 = a2[3] * a3[3]; /*0x6465a6*/
@@ -291,10 +281,9 @@ _DWORD *__fastcall sub_646590(_DWORD *a1, float *a2, float *a3, float a4)
 
 // 0x7C5F00
 namespace gamemd {
-int Math_RoundToInt()
+void Math_RoundToInt()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-__int64 __usercall Math::RoundToInt@<edx:eax>(double a1@<st0>)
 {
   return (__int64)a1; /*0x7c5f22*/
 }

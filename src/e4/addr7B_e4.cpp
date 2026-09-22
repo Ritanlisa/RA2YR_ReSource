@@ -51,10 +51,9 @@
 
 // 0x7B0310
 namespace gamemd {
-CCINIClass * sub_7B0310()
+void * * sub_7B0310()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-CCINIClass *sub_7B0310()
 {
   return dword_B77F54; /*0x7b0315*/
 }
@@ -63,10 +62,9 @@ CCINIClass *sub_7B0310()
 
 // 0x7B0340
 namespace gamemd {
-CCINIClass * sub_7B0340()
+void * * sub_7B0340()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-CCINIClass *sub_7B0340()
 {
   return dword_B77F60; /*0x7b0345*/
 }
@@ -75,10 +73,9 @@ CCINIClass *sub_7B0340()
 
 // 0x7B05C0
 namespace gamemd {
-char Screenshot_Compress(int * a1, int * a2, void * Src)
+void Screenshot_Compress(int * a1, int * a2, void * Src)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall Screenshot_Compress(int *a1, int *a2, void *Src)
 {
   __int16 v7; // ax
   __int16 v9; // ax
@@ -388,10 +385,9 @@ LABEL_33:
 
 // 0x7B0B00
 namespace gamemd {
-int Screenshot_EncodeRLE(int a1, char * a2, int a3)
+void Screenshot_EncodeRLE(int a1, char * a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall Screenshot_EncodeRLE(int a1, char *a2, int a3)
 {
   int result; // eax
 
@@ -466,7 +462,6 @@ namespace gamemd {
 void E4Recv_7B2E50::sub_7B2E50()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_7B2E50(int this)
 {
 
   *(_DWORD *)this = &vt_UDPInterfaceClass; /*0x7b2e56*/
@@ -528,11 +523,10 @@ void sub_7B2E50(int this)
 
 // 0x7B4620
 namespace gamemd {
-int unknown_libname_73()
+void unknown_libname_73()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // Microsoft VisualC 2-14/net runtime
-_DWORD *__thiscall unknown_libname_73(_DWORD *this)
 {
   *this = 0; /*0x7b4622*/
   return this; /*0x7b4628*/
@@ -542,10 +536,9 @@ _DWORD *__thiscall unknown_libname_73(_DWORD *this)
 
 // 0x7B60E0
 namespace gamemd {
-int E4Recv_7B60E0::sub_7B60E0(signed int a2, void ** a3)
+void E4Recv_7B60E0::sub_7B60E0(signed int a2, void ** a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_7B60E0(const char **this, signed int a2, void **a3)
 {
   size_t v11; // ecx
   size_t v14; // esi
@@ -618,7 +611,6 @@ namespace gamemd {
 char ** ProcessStringAndCopy(AbstractClass * aP0, CCINIClass * aP1, char ** a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char **__fastcall ProcessStringAndCopy(AbstractClass *aP0, CCINIClass *aP1, char **a2)
 {
   size_t v5; // ecx
   CCINIClass *v6; // ebx
@@ -665,7 +657,6 @@ namespace gamemd {
 char ** ConcatStringAlloc(ObjectClass * aP0, const char ** a1, char ** a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char **__fastcall ConcatStringAlloc(ObjectClass *aP0, const char **a1, char **a2)
 {
   char **v4; // ebp
   ObjectClass *v6; // eax
@@ -729,11 +720,10 @@ char **__fastcall ConcatStringAlloc(ObjectClass *aP0, const char **a1, char **a2
 
 // 0x7B66C0
 namespace gamemd {
-int unknown_libname_74()
+void unknown_libname_74()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // Microsoft VisualC 2-14/net runtime
-_DWORD *__thiscall unknown_libname_74(_DWORD *this)
 {
   *this = 0; /*0x7b66c2*/
   return this; /*0x7b66c8*/
@@ -743,10 +733,9 @@ _DWORD *__thiscall unknown_libname_74(_DWORD *this)
 
 // 0x7B7C00
 namespace gamemd {
-int E4Recv_7B7C00::sub_7B7C00(int a2, void ** a3)
+void E4Recv_7B7C00::sub_7B7C00(int a2, void ** a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_7B7C00(const wchar_t **this, int a2, void **a3)
 {
   const wchar_t *v6; // eax
   const wchar_t *v8; // eax
@@ -829,10 +818,9 @@ void sub_7B7C00(const wchar_t **this, int a2, void **a3)
 
 // 0x7B9530
 namespace gamemd {
-BOOL E4Recv_7B9530::sub_7B9530()
+void E4Recv_7B9530::sub_7B9530()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_7B9530(int this)
 {
   int *FoundationSize; // eax
   ObjectClass *v13; // ecx
@@ -892,10 +880,9 @@ void sub_7B9530(int this)
 
 // 0x7BBE20
 namespace gamemd {
-BOOL IntersectSurfaceRects(IUnknown * aP0, int a2, XSurface * aP2, int a4)
+void IntersectSurfaceRects(IUnknown * aP0, int a2, XSurface * aP2, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __fastcall IntersectSurfaceRects(IUnknown *aP0, int a2, XSurface *aP2, int a4)
 {
   int Height; // ecx
   int LockCount; // ecx
@@ -984,19 +971,9 @@ BOOL __fastcall IntersectSurfaceRects(IUnknown *aP0, int a2, XSurface *aP2, int 
 
 // 0x7BC040
 namespace gamemd {
-char CalcSurfaceBlitRects(int ecx0, int * a1, IUnknown * aP2, int arg4, int * a4, IUnknown * aP5, unsigned char * a6, int * a7, int * a8)
+void CalcSurfaceBlitRects(int ecx0, int * a1, IUnknown * aP2, int arg4, int * a4, IUnknown * aP5, unsigned char * a6, int * a7, int * a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall CalcSurfaceBlitRects(
-        int ecx0,
-        int *a1,
-        IUnknown *aP2,
-        int arg4,
-        int *a4,
-        IUnknown *aP5,
-        _BYTE *a6,
-        int *a7,
-        int *a8)
 {
   AbstractClass *v23; // [esp-4h] [ebp-2Ch]
   AbstractClass *v24; // [esp-4h] [ebp-2Ch]
@@ -1070,7 +1047,6 @@ namespace gamemd {
 char sub_7BC1F0(XSurface * a1, XSurface * a2, XSurface * aP2, int arg4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall sub_7BC1F0(XSurface *a1, XSurface *a2, XSurface *aP2, int arg4)
 {
   int a4; // [esp+8h] [ebp-4h] BYREF
 
@@ -1093,7 +1069,6 @@ namespace gamemd {
 char sub_7BC250(XSurface * a1, XSurface * a2, XSurface * aP2, int arg4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall sub_7BC250(XSurface *a1, XSurface *a2, XSurface *aP2, int arg4)
 {
   int a4; // [esp+8h] [ebp-4h] BYREF
 
@@ -1113,10 +1088,9 @@ char __fastcall sub_7BC250(XSurface *a1, XSurface *a2, XSurface *aP2, int arg4)
 
 // 0x7BC2B0
 namespace gamemd {
-char ClipLine(IUnknown * aP0, int * a1, int * a2)
+void ClipLine(IUnknown * aP0, int * a1, int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall ClipLine(IUnknown *aP0, int *a1, int *a2)
 {
 
   int v4 = a2[1]; /*0x7bc2c9*/
@@ -1250,11 +1224,10 @@ LABEL_14:
 
 // 0x7BC580
 namespace gamemd {
-int sub_7BC580()
+void sub_7BC580()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // local variable allocation has failed, the output may be wrong!
-void sub_7BC580(int *this, ObjectClass *aP1, double a3)
 {
   AbstractClass *v5; // [esp+8h] [ebp-4h]
   if ( (double)(*this + this->vtable3) > *(double *)&aP1 ) /*0x7bc5a3*/
@@ -1276,7 +1249,6 @@ namespace gamemd {
 int sub_7BD470(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_7BD470(int a1)
 {
 
   int v1 = *(_DWORD *)(a1 + 1980); /*0x7bd476*/
@@ -1359,10 +1331,9 @@ int sub_7BD470(int a1)
 
 // 0x7BEFE0
 namespace gamemd {
-char E4Recv_7BEFE0::sub_7BEFE0()
+void E4Recv_7BEFE0::sub_7BEFE0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_7BEFE0(int this)
 {
 
   int v2 = this->M416; /*0x7befe5*/
@@ -1433,7 +1404,6 @@ namespace gamemd {
 int AudioStream_FillBuffer(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall AudioStream_FillBuffer(int a1, int a2)
 {
   int (__cdecl *v13)(int, int, int, int); // eax
   int result; // eax

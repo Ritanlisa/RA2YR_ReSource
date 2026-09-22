@@ -4,10 +4,9 @@
 
 // 0x4B5030
 namespace gamemd {
-int DropListClass_OnKeyUp()
+void DropListClass_OnKeyUp()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-wchar_t *__userpurge DropListClass::_vt43@<eax>(int a1@<ecx>, int a2@<ebx>, unsigned int a3)
 {
   wchar_t *result; // eax
   const wchar_t *v8; // eax
@@ -32,10 +31,9 @@ wchar_t *__userpurge DropListClass::_vt43@<eax>(int a1@<ecx>, int a2@<ebx>, unsi
 } // namespace gamemd
 
 // 0x4B55A0
-int DropListClass::COMStub()
+void DropListClass::COMStub()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void DropListClass::_vt35()
 {
   return this->q034; /*0x4b55a3*/
 }

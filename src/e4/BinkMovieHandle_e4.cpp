@@ -4,10 +4,9 @@
 #include "e4/classes/BinkMovie_e4.hpp"
 
 // 0x432AB0
-int BinkMovieHandle::RenderFrameClipped(int a2, int a3)
+void BinkMovieHandle::RenderFrameClipped(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_432AB0(int this, int a2, int a3)
 {
   int result; // eax
   int v13; // edx
@@ -78,7 +77,6 @@ LABEL_18:
 unsigned int * BinkMovieHandle::CopyFrameToSurface()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall BinkMovieHandle::CopyFrameToSurface(int *this)
 {
   DSurface *v2; // edi
   struct tagRECT Rect; // [esp+18h] [ebp-10h] BYREF

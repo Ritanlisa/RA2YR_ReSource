@@ -6,30 +6,27 @@
 #include "e4/classes/VectorClass_ptr_ConvertClass_e4.hpp"
 
 // 0x4C9C50
-char SidebarClass::draw()
+void SidebarClass::draw()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_4C9C50(_BYTE *this)
 {
   return this->q05C; /*0x4c9c53*/
 }
 }
 
 // 0x4CA170
-int SidebarClass::draw2()
+void SidebarClass::draw2()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_4CA170(_DWORD *this)
 {
   return this->q068; /*0x4ca173*/
 }
 }
 
 // 0x6A5090
-int SidebarClass::InitPositions()
+void SidebarClass::InitPositions()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void SidebarClass::InitPositions()
 {
   if ( *((_DWORD *)g_ScenarioClass_Instance + 3374) ) /*0x6a5095*/
   {
@@ -54,10 +51,9 @@ void SidebarClass::InitPositions()
 }
 
 // 0x6A5130
-int SidebarClass::CalcBounds(char a1)
+void SidebarClass::CalcBounds(char a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void SidebarClass_CalcBounds(char a1)
 {
   int v1; // ebx
   int v2; // eax
@@ -145,7 +141,6 @@ void SidebarClass_CalcBounds(char a1)
 void * SidebarClass::LoadAssets()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void *SidebarClass_LoadAssets()
 {
   void *SHP; // eax
   void *result; // eax
@@ -232,10 +227,9 @@ void *SidebarClass_LoadAssets()
 }
 
 // 0x6A6C30
-int SidebarClass::Redraw(char a2)
+void SidebarClass::Redraw(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void SidebarClass::Redraw(char a2)
 {
   int i; // edi
   char v10; // dl
@@ -478,10 +472,9 @@ void SidebarClass::Redraw(char a2)
 }
 
 // 0x6A7590
-int SidebarClass::SwitchTab(int a2)
+void SidebarClass::SwitchTab(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void SidebarClass_SwitchTab(int this, int a2)
 {
   int result; // eax
 
@@ -526,10 +519,9 @@ void SidebarClass_SwitchTab(int this, int a2)
 }
 
 // 0x6ABD30
-char SidebarClass::LoadResources()
+void SidebarClass::LoadResources()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void SidebarClass_LoadResources()
 {
   int i; // edi
   char result; // al
@@ -701,11 +693,10 @@ void SidebarClass_LoadResources()
 
 // 0x40D270
 namespace gamemd {
-int SidebarClass::initButtons2()
+void SidebarClass::initButtons2()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // attributes: thunk
-void SidebarClass::InitButtons_0()
 {
   return SidebarClass::InitButtons(this);
 }

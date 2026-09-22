@@ -4,10 +4,9 @@
 
 // 0x6BB8E0
 namespace gamemd {
-int WinMainSetup_Setup_6BB8E0()
+void WinMainSetup_Setup_6BB8E0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned __int8 __usercall sub_6BB8E0@<al>(int a1@<esi>)
 {
   unsigned __int8 result; // al
 
@@ -59,7 +58,6 @@ namespace gamemd {
 void sub_72B130()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_72B130()
 {
 
   if ( DataGlobal_B0FC90 ) /*0x72b13b*/

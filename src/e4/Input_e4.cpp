@@ -4,10 +4,9 @@
 #include "e4/classes/Math_e4.hpp"
 
 // 0x4810A0
-char Input::OffsetToDirection()
+void Input::OffsetToDirection()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Input_OffsetToDirection(_DWORD *this)
 {
   int v4; // eax
   int v1 = (unsigned __int8)this->q004; /*0x4810aa*/

@@ -4,10 +4,9 @@
 
 // 0x41F2E0
 namespace gamemd {
-int CCINIClass::ReadTypeList(char * a1, CCINIClass * a2)
+void CCINIClass::ReadTypeList(char * a1, CCINIClass * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall CCINIClass::ReadTypeList(char *a1, CCINIClass *a2)
 {
   CCINIClass *v2; // edi
   int result; // eax
@@ -98,10 +97,9 @@ LABEL_28:
 
 // 0x473450
 namespace gamemd {
-int CCINIClass::GetDB()
+void CCINIClass::GetDB()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CCINIClass_GetDB(_DWORD *this)
 {
   return this->q004; /*0x473453*/
 }
@@ -110,10 +108,9 @@ void CCINIClass_GetDB(_DWORD *this)
 
 // 0x4741F0
 namespace gamemd {
-int CCINIClass::Load(MultiplayerGameMode * aP1, char a3, char aP2)
+void CCINIClass::Load(MultiplayerGameMode * aP1, char a3, char aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CCINIClass::Load(MultiplayerGameMode *aP1, char a3, char aP2)
 {
   CCINIClass *v5; // ebp
   int Base64Data; // eax
@@ -168,7 +165,6 @@ namespace gamemd {
 unsigned int * CCINIClass::CCINIClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall CCINIClass::Constructor(_DWORD *this)
 {
   _DWORD *result; // eax
 

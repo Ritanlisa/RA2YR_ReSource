@@ -6,10 +6,9 @@
 
 // 0x526810
 namespace gamemd {
-int INIClass::BinarySearchSection(INIClass * aP1)
+void INIClass::BinarySearchSection(INIClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void INIClass::BinarySearchSection(int this, INIClass *aP1)
 {
   ObjectClass *v4; // ecx
   ObjectClass *v6; // eax
@@ -94,10 +93,9 @@ LABEL_19:
 
 // 0x526960
 namespace gamemd {
-int INIClass::GetKeyCount(INIClass * aP1)
+void INIClass::GetKeyCount(INIClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void INIClass::GetKeyCount(INIClass *aP1)
 {
   CCINIClass *v2; // esi
   INIClass *v3; // edi
@@ -156,7 +154,6 @@ namespace gamemd {
 unsigned int INIClass::GetString(INIClass * aP1, unsigned char * a2, INIClass * aP3, INIClass * aP4, int Count)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void INIClass::GetString(unsigned __int8 ***this, INIClass *aP1, unsigned __int8 *a2, INIClass *aP3, INIClass *aP4, int Count)
 {
   INIClass *v6; // edi
   unsigned __int8 **v8; // ebx
@@ -303,7 +300,6 @@ namespace gamemd {
 unsigned int * INIClass::INIClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall INIClass_Constructor(_DWORD *this)
 {
   _DWORD *result; // eax
 

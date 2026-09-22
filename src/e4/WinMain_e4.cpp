@@ -74,10 +74,9 @@
 
 // 0x5BC180
 namespace gamemd {
-unsigned char WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
+void char WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned __int8 __fastcall WinMain_Create(ObjectClass *aP0, HWND a2, char a3)
 {
   CoordStruct **v3; // edi
   ObjectClass *v4; // eax
@@ -190,10 +189,9 @@ unsigned __int8 __fastcall WinMain_Create(ObjectClass *aP0, HWND a2, char a3)
 } // namespace gamemd
 
 // 0x69A1F0
-int WinMain::Constructor_VectorClass_Wstring_()
+void WinMain::Constructor_VectorClass_Wstring_()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_69A1F0(_DWORD *this)
 {
   int i; // ebp
   int j; // esi
@@ -235,7 +233,6 @@ void sub_69A1F0(_DWORD *this)
 unsigned int * WinMain::ShutdownCleanup()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *WinMain_ShutdownCleanup()
 {
   void **i; // eax
   void **v1; // ecx
@@ -303,10 +300,9 @@ _DWORD *WinMain_ShutdownCleanup()
 
 // 0x5D7E50
 namespace gamemd {
-char sub_5D7E50()
+void sub_5D7E50()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_5D7E50()
 {
   int i; // ebp
   char result; // al
@@ -352,10 +348,9 @@ void sub_5D7E50()
 
 // 0x7B84F0
 namespace gamemd {
-HANDLE sub_7B84F0()
+void* sub_7B84F0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-HANDLE sub_7B84F0()
 {
   HANDLE result; // eax
   DWORD LastError; // eax

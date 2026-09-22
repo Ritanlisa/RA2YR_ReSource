@@ -5,10 +5,9 @@
 #include "e4/classes/Event_e4.hpp"
 
 // 0x4080F0
-char ThemeManager::ProcessCallback()
+void ThemeManager::ProcessCallback()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_4080F0(int this)
 {
 
   int v2 = Audio::Callback(); /*0x4080fa*/
@@ -33,13 +32,12 @@ void sub_4080F0(int this)
 void ThemeManager::Cleanup()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ThemeManager::Cleanup(int this)
 {
 
   while ( this->q009 > 0 ) /*0x720778*/
   {
     __3_YAXPAX_Z(**(void ***)(this + 24)); /*0x720780*/
-    int v2 = this->q009; /*0x720785*/
+    bool v2 = this->q009; /*0x720785*/
     if ( v2 > 0 ) /*0x72078d*/
     {
       int v3 = v2 - 1; /*0x72078f*/

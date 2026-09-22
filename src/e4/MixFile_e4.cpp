@@ -10,10 +10,9 @@
 
 // 0x530460
 namespace gamemd {
-bool MixFile::LoadAll()
+void MixFile::LoadAll()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MixFile::LoadAll()
 {
   _DWORD *v66; // eax
   _DWORD *v67; // eax
@@ -449,10 +448,9 @@ LABEL_149:
 
 // 0x534FA0
 namespace gamemd {
-char MixFile::LoadSide()
+void MixFile::LoadSide()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MixFile_LoadSide(int this)
 {
   MixFile *v2; // ebx
   unsigned int YR; // eax
@@ -618,7 +616,6 @@ namespace gamemd {
 unsigned int * MIXFile::Load(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall MIXFile::Load(_DWORD *this, ObjectClass *aP1)
 {
   ObjectClass *v3; // edx
   int i; // esi

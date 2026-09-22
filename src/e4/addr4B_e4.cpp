@@ -21,10 +21,9 @@
 
 // 0x4B0500
 namespace gamemd {
-char JumpjetLocomotionClass_Process(int a1)
+void JumpjetLocomotionClass_Process(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void JumpjetLocomotionClass_Process(int a1)
 {
   void **v19; // eax
   char v29; // [esp-4h] [ebp-24h]
@@ -256,10 +255,9 @@ LABEL_39:
 
 // 0x4B69E0
 namespace gamemd {
-char E4Recv_4B69E0::sub_4B69E0(int a2)
+void E4Recv_4B69E0::sub_4B69E0(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_4B69E0(int *this, int a2)
 {
   int v3; // esi
   int v4; // eax
@@ -303,10 +301,9 @@ LABEL_11:
 
 // 0x4B6AB0
 namespace gamemd {
-char E4Recv_4B6AB0::sub_4B6AB0(int a2)
+void E4Recv_4B6AB0::sub_4B6AB0(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_4B6AB0(int *this, int a2)
 {
 
   int v3 = *(this + 4); /*0x4b6ab4*/
@@ -354,10 +351,9 @@ LABEL_12:
 
 // 0x4B6BF0
 namespace gamemd {
-int E4Recv_4B6BF0::sub_4B6BF0()
+void E4Recv_4B6BF0::sub_4B6BF0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_4B6BF0(void *this)
 {
   int result; // eax
 
@@ -380,10 +376,9 @@ void sub_4B6BF0(void *this)
 
 // 0x4B9890
 namespace gamemd {
-char DisplayBuildingInfoPanel(CampaignScore ** a1, unsigned int * a2, wchar_t * a3, char a4)
+void DisplayBuildingInfoPanel(CampaignScore ** a1, unsigned int * a2, wchar_t * a3, char a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall DisplayBuildingInfoPanel(CampaignScore **a1, _DWORD *a2, wchar_t *a3, char a4)
 {
   CampaignScore *v6; // eax
   CampaignScore *v7; // edi
@@ -573,10 +568,9 @@ char __fastcall DisplayBuildingInfoPanel(CampaignScore **a1, _DWORD *a2, wchar_t
 
 // 0x4BE9D0
 namespace gamemd {
-int Color_BlendPack(unsigned char * a1, int a2, int a3, int a4)
+void Color_BlendPack(unsigned char * a1, int a2, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall Color_BlendPack(unsigned __int8 *a1, int a2, int a3, int a4)
 {
 
   int v4 = a2 + *a1; /*0x4be9dc*/

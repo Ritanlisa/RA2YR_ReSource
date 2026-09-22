@@ -14,7 +14,6 @@ namespace gamemd {
 unsigned int * AircraftClass::Update()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall AircraftClass::Update(int *this)
 {
   _DWORD *result; // eax
   AircraftTypeClass *v4; // edi
@@ -76,10 +75,9 @@ LABEL_9:
 
 // 0x415B10
 namespace gamemd {
-int AircraftClass::FindLandingCell(int * a2, int a3)
+void AircraftClass::FindLandingCell(int * a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void AircraftClass::FindLandingCell(int *a2, int a3)
 {
   __int16 v10; // dx
   unsigned int v22; // [esp+44h] [ebp+4h]
@@ -130,19 +128,9 @@ void AircraftClass::FindLandingCell(int *a2, int a3)
 
 // 0x4165C0
 namespace gamemd {
-int AircraftClass_DeployWithAnim()
+void AircraftClass_DeployWithAnim()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __userpurge AircraftClass::DeployWithAnim@<eax>(
-        _DWORD *a1@<ecx>,
-        int a2@<ebx>,
-        IUnknown *aP0,
-        FootClass *aP1,
-        FootClass *aP2,
-        FootClass *aP3,
-        FootClass *aP4,
-        FootClass *aP5,
-        FootClass *aP6)
 {
   AircraftTypeClass *v13; // ebx
   CoordStruct *v14; // edi
@@ -181,10 +169,9 @@ int __userpurge AircraftClass::DeployWithAnim@<eax>(
 
 // 0x417CC0
 namespace gamemd {
-int AircraftClass::GetCursorOverObject(IUnknown * aP1, IUnknown * a3)
+void AircraftClass::GetCursorOverObject(IUnknown * aP1, IUnknown * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void AircraftClass::GetCursorOverObject(IUnknown *aP1, IUnknown *a3)
 {
   IUnknown *v3; // ebp
   IUnknown *v4; // edi
@@ -307,10 +294,9 @@ LABEL_36:
 
 // 0x4196B0
 namespace gamemd {
-int AircraftClass::ValidateLandingCell(unsigned int * a2, int a3, int a4, int a5, int a6)
+void AircraftClass::ValidateLandingCell(unsigned int * a2, int a3, int a4, int a5, int a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void AircraftClass::ValidateLandingCell(int this, _DWORD *a2, int a3, int a4, int a5, int a6)
 {
 
   int v7 = this->team; /*0x4196bc*/
@@ -345,10 +331,9 @@ void AircraftClass::ValidateLandingCell(int this, _DWORD *a2, int a3, int a4, in
 
 // 0x41A940
 namespace gamemd {
-int AircraftClass::EvaluateTargetingState()
+void AircraftClass::EvaluateTargetingState()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void AircraftClass::_vt136()
 {
 
   int v2 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->q1B1 + 188))(this->q1B1); /*0x41a956*/
@@ -382,14 +367,9 @@ void AircraftClass::_vt136()
 
 // 0x41AA80
 namespace gamemd {
-int AircraftClass_AssignDestination_SyncLog()
+void AircraftClass_AssignDestination_SyncLog()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __userpurge AircraftClass::AssignDestination_SyncLog@<al>(
-        IUnknown *a1@<ecx>,
-        int a2@<ebp>,
-        IUnknown *aP1,
-        TechnoClass *aP2)
 {
   IUnknown *ClosestPlacementCell; // edi
   int v6; // eax
@@ -533,10 +513,9 @@ LABEL_35:
 
 // 0x41ADF0
 namespace gamemd {
-int AircraftClass::RevealSight(int a2, int a3)
+void AircraftClass::RevealSight(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void AircraftClass::RevealSight(int a2, int a3)
 {
   #375 *v5; // edx
   #375 *v8; // edx
@@ -607,10 +586,9 @@ LABEL_4:
 
 // 0x41B430
 namespace gamemd {
-int AircraftClass::LoadFromStream(unsigned int * a0, FootClass * aP1)
+void AircraftClass::LoadFromStream(unsigned int * a0, FootClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void AircraftClass::LoadFromStream(_DWORD *a0, FootClass *aP1)
 {
   FootClass *v2; // esi
   size_t v4; // eax
@@ -693,10 +671,9 @@ LABEL_18:
 
 // 0x41B9F0
 namespace gamemd {
-int AircraftClass::UpdateDocking(int a2)
+void AircraftClass::UpdateDocking(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void AircraftClass::_vt124(int this, int a2)
 {
   int result; // eax
 
@@ -733,10 +710,9 @@ LABEL_4:
 
 // 0x41BB30
 namespace gamemd {
-int AircraftClass::OverrideMission_SyncLog(int a2, int a3, int a4)
+void AircraftClass::OverrideMission_SyncLog(int a2, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void AircraftClass::OverrideMission_SyncLog(int this, int a2, int a3, int a4)
 {
   int result; // eax
 

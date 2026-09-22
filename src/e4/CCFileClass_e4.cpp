@@ -4,10 +4,9 @@
 #include "e4/classes/Vector_e4.hpp"
 
 // 0x4325C0
-char CCFileClass::Close()
+void CCFileClass::Close()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CCFileClass_Close(_BYTE *this)
 {
   char result; // al
 
@@ -36,10 +35,9 @@ void CCFileClass_Close(_BYTE *this)
 }
 
 // 0x535A70
-int CCFileClass::Destruct()
+void CCFileClass::Destruct()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CCFileClass_Destructor(_DWORD *this)
 {
   *this = &vt_CCFileClass; /*0x535a76*/
   this->q064 = 0; /*0x535a7c*/
@@ -50,10 +48,9 @@ void CCFileClass_Destructor(_DWORD *this)
 }
 
 // 0x65D0D0
-int CCFileClass::GetFileSize()
+void CCFileClass::GetFileSize()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CCFileClass_GetFileSize(int *this)
 {
   DWORD FileSize; // edi
   int result; // eax
@@ -69,7 +66,7 @@ void CCFileClass_GetFileSize(int *this)
       if ( FileSize == -1 ) /*0x65d0f7*/
       {
         int v4 = *this; /*0x65d0fd*/
-        int v6 = this->FileNameAllocated; /*0x65d0ff*/
+        char v6 = this->FileNameAllocated; /*0x65d0ff*/
         LastError = GetLastError(); /*0x65d102*/
         (*(void (__thiscall **)(int *, DWORD, _DWORD, int))(v4 + 64))(this, LastError, 0, v6); /*0x65d10b*/
         result = -1 - this->Handle; /*0x65d113*/
@@ -93,7 +90,6 @@ void CCFileClass_GetFileSize(int *this)
 void CCFileClass::ProcessStream(unsigned int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall sub_69E320(unsigned int a1)
 {
 
   _DWORD * v1 = DataGlobal_B077B0; /*0x69e324*/

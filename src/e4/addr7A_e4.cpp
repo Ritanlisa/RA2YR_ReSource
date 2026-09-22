@@ -21,10 +21,9 @@
 
 // 0x7A0430
 namespace gamemd {
-signed int CollectWOLConnectionTokens()
+void int CollectWOLConnectionTokens()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-signed int CollectWOLConnectionTokens()
 {
   signed int result; // eax
   char **v12; // ecx
@@ -127,10 +126,9 @@ signed int CollectWOLConnectionTokens()
 
 // 0x7A0690
 namespace gamemd {
-char WOL_RequestMatch()
+void WOL_RequestMatch()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void WOL_RequestMatch()
 {
   HWND v0; // eax
   int i; // esi
@@ -367,7 +365,6 @@ namespace gamemd {
 void E4Recv_7A0DD0::sub_7A0DD0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_7A0DD0(const char *this)
 {
   char **v3; // edi
   HWND GameUI; // eax
@@ -393,10 +390,9 @@ void sub_7A0DD0(const char *this)
 
 // 0x7A1060
 namespace gamemd {
-char WOL_ProcessPingRequests()
+void WOL_ProcessPingRequests()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void WOL_ProcessPingRequests()
 {
   char result; // al
   ULONG S_addr; // ebx
@@ -526,7 +522,6 @@ namespace gamemd {
 void UpdateWOLLobbyPings()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void UpdateWOLLobbyPings()
 {
   char **v8; // eax
   char **v9; // eax
@@ -673,7 +668,7 @@ LABEL_40:
 
 // 0x7A16B0
 namespace gamemd {
-int HandleWOLMatchMessage()
+void HandleWOLMatchMessage()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // (no pseudocode — ASM-only function)
@@ -874,10 +869,9 @@ LABEL_25:
 
 // 0x7A2830
 namespace gamemd {
-int E4Recv_7A2830::sub_7A2830()
+void E4Recv_7A2830::sub_7A2830()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_7A2830(char **this)
 {
   int result; // eax
 
@@ -910,10 +904,9 @@ void sub_7A2830(char **this)
 
 // 0x7A29E0
 namespace gamemd {
-int BuddyDlgProcWOL(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
+void BuddyDlgProcWOL(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void BuddyDlgProcWOL(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 {
   int result; // eax
   wchar_t *StringCSF; // eax
@@ -1111,10 +1104,9 @@ LABEL_51:
 
 // 0x7A4C10
 namespace gamemd {
-int CComObject_CChatEventSink___ATL__vt_04_(int a1, int a2, int a3)
+void CComObject_CChatEventSink___ATL__vt_04_(int a1, int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CComObject_CChatEventSink___ATL::vt_04_(int a1, int a2, int a3)
 {
   HWND v6; // eax
   HWND Current; // eax
@@ -1222,10 +1214,9 @@ LABEL_16:
 
 // 0x7AF640
 namespace gamemd {
-int E4Recv_7AF640::sub_7AF640(int a2)
+void E4Recv_7AF640::sub_7AF640(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_7AF640(_DWORD *this, int a2)
 {
   int result; // eax
 
@@ -1259,10 +1250,9 @@ void sub_7AF640(_DWORD *this, int a2)
 
 // 0x7AF6C0
 namespace gamemd {
-int WorldDominationFactionDlgProc(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
+void WorldDominationFactionDlgProc(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void WorldDominationFactionDlgProc(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 {
   int result; // eax
   _DWORD *WindowLongA; // eax
@@ -1374,10 +1364,9 @@ LABEL_14:
 
 // 0x7AF970
 namespace gamemd {
-int sub_7AF970()
+void sub_7AF970()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __usercall sub_7AF970@<eax>(int a1@<ebx>, int a2@<ebp>)
 {
   void (__thiscall ***v8)(_DWORD, int); // [esp+20h] [ebp-78h]
 
@@ -1435,7 +1424,6 @@ namespace gamemd {
 int StartWDTCampaign()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __usercall StartWDTCampaign@<eax>(char a1@<cl>, char a2@<bl>, int a3@<edi>)
 {
   wchar_t *StringCSF; // eax
   CampaignScore *v2; // eax

@@ -8,7 +8,6 @@ namespace gamemd {
 unsigned int * RadSiteClass::RadSiteClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_65B1E0(_DWORD *this)
 {
   wchar_t *v2; // edx
 

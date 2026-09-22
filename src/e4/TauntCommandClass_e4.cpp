@@ -6,7 +6,6 @@
 unsigned int * TauntCommandClass::Construct(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall TauntCommandClass_Constructor(_DWORD *this, int a2)
 {
   this->TauntCommandClass_field_00 = a2; /*0x536296*/
   *this = &vt_TauntCommandClass; /*0x536299*/
@@ -15,10 +14,9 @@ _DWORD *__thiscall TauntCommandClass_Constructor(_DWORD *this, int a2)
 }
 
 // 0x5362B0
-ObjectClass * TauntCommandClass::AddRef()
+void * TauntCommandClass::AddRef()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-ObjectClass *__thiscall TauntCommandClass::AddRef(_DWORD *this)
 {
   sprintf( /*0x5362be*/
     &HouseClass_Player[47208],
@@ -29,10 +27,9 @@ ObjectClass *__thiscall TauntCommandClass::AddRef(_DWORD *this)
 }
 
 // 0x5362D0
-wchar_t * TauntCommandClass::Release()
+void * TauntCommandClass::Release()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-wchar_t *__thiscall TauntCommandClass::_vt02(const wchar_t **this)
 {
   wchar_t *StringCSF; // eax
   const wchar_t *v3; // [esp-4h] [ebp-4h]

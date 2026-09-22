@@ -9,7 +9,6 @@ namespace gamemd {
 unsigned int * DynamicVector::Copy(VectorClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall DynamicVector::Copy(_DWORD *this, VectorClass *aP1)
 {
 
   if ( this == (_DWORD *)aP1 ) /*0x5ac43a*/

@@ -37,7 +37,6 @@ namespace gamemd {
 int InGameUI_Open()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int InGameUI_Open()
 {
   unsigned __int16 v0; // cx
   HWND v1; // eax
@@ -89,10 +88,9 @@ LABEL_16:
 
 // 0x4F1840
 namespace gamemd {
-LONG sub_4F1840()
+long sub_4F1840()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-LONG sub_4F1840()
 {
   HWND Dialog; // esi
   LONG dwNewLong; // [esp+4h] [ebp-4h] BYREF
@@ -122,10 +120,9 @@ LABEL_7:
 
 // 0x4F18B0
 namespace gamemd {
-int sub_4F18B0(HWND hDlg, unsigned int a2, unsigned int a3, unsigned int a4)
+void sub_4F18B0(HWND hDlg, unsigned int a2, unsigned int a3, unsigned int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_4F18B0(HWND hDlg, unsigned int a2, unsigned int a3, unsigned int a4)
 {
   int result; // eax
   HWND DlgItem; // ebp
@@ -224,10 +221,9 @@ LABEL_19:
 
 // 0x4F1CA0
 namespace gamemd {
-int LoadFromINIGraphicMenu()
+void LoadFromINIGraphicMenu()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char **__usercall LoadFromINIGraphicMenu@<eax>(char **edx0@<edx>, ObjectClass *ecx0@<ecx>, int edi0@<edi>)
 {
   INIClass *v4; // eax
   VectorClass *v8; // edi
@@ -455,10 +451,9 @@ LABEL_22:
 
 // 0x4F2300
 namespace gamemd {
-int E4Recv_4F2300::ProcessGraphicMenu()
+void E4Recv_4F2300::ProcessGraphicMenu()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ProcessGraphicMenu(int this)
 {
   int StringList; // eax
   unsigned __int16 EventQueue; // ax
@@ -600,10 +595,9 @@ void ProcessGraphicMenu(int this)
 
 // 0x4F2640
 namespace gamemd {
-int E4Recv_4F2640::sub_4F2640(int (__thiscall ***a2)(unsigned int, int) a1)
+void E4Recv_4F2640::sub_4F2640(int (__thiscall ***a2)(unsigned int, int) a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_4F2640(_DWORD *this, int (__thiscall ***a2)(_DWORD, int))
 {
   int (__thiscall ***v3)(_DWORD, int); // eax
   int result; // eax
@@ -621,14 +615,9 @@ int __thiscall sub_4F2640(_DWORD *this, int (__thiscall ***a2)(_DWORD, int))
 
 // 0x4F2C70
 namespace gamemd {
-int ParseINIAnimGadgetDefinition()
+void ParseINIAnimGadgetDefinition()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int *__userpurge ParseINIAnimGadgetDefinition@<eax>(
-        ObjectClass *Source@<ecx>,
-        ObjectClass *edx0@<edx>,
-        _DWORD *arg0,
-        CCINIClass aP3)
 {
   ReferenceCounted *IntINIClass; // ebx
   Selection_WorldDominationTour **CoordPair; // eax
@@ -758,10 +747,9 @@ int *__userpurge ParseINIAnimGadgetDefinition@<eax>(
 
 // 0x4F3140
 namespace gamemd {
-int ParseINIGadgetDefinition(ObjectClass * aP0, ObjectClass * edx0, unsigned int * a2, ObjectClass a4)
+void ParseINIGadgetDefinition(ObjectClass * aP0, ObjectClass * edx0, unsigned int * a2, ObjectClass a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ParseINIGadgetDefinition(ObjectClass *aP0, ObjectClass *edx0, _DWORD *a2, ObjectClass a4)
 {
   ObjectClass *v4; // edx
   ObjectClass *v5; // ecx
@@ -879,10 +867,9 @@ void ParseINIGadgetDefinition(ObjectClass *aP0, ObjectClass *edx0, _DWORD *a2, O
 
 // 0x4F3460
 namespace gamemd {
-int E4Recv_4F3460::sub_4F3460(int aP1, ReferenceCounted * aP2, unsigned int * a3, ReferenceCounted * aP4, const char ** a5, ReferenceCounted * aP6, const char ** a7, ReferenceCounted * aP8, const char ** a9)
+void E4Recv_4F3460::sub_4F3460(int aP1, ReferenceCounted * aP2, unsigned int * a3, ReferenceCounted * aP4, const char ** a5, ReferenceCounted * aP6, const char ** a7, ReferenceCounted * aP8, const char ** a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_4F3460(
         int this,
         int aP1,
         ReferenceCounted *aP2,
@@ -985,7 +972,7 @@ void sub_4F3460(
 
 // 0x4F38B0
 namespace gamemd {
-int sub_4F38B0()
+void sub_4F38B0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // (no pseudocode — ASM-only function)
@@ -1018,7 +1005,6 @@ namespace gamemd {
 unsigned int * sub_4F3B80(ObjectClass * a1, ObjectClass * edx0)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__fastcall sub_4F3B80(ObjectClass *a1, ObjectClass *edx0)
 {
   ReferenceCounted *v4; // eax
   ReferenceCounted *Int; // ebx
@@ -1049,10 +1035,9 @@ _DWORD *__fastcall sub_4F3B80(ObjectClass *a1, ObjectClass *edx0)
 
 // 0x4F3D40
 namespace gamemd {
-int E4Recv_4F3D40::sub_4F3D40()
+void E4Recv_4F3D40::sub_4F3D40()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_4F3D40(const char **this)
 {
   const char **v4; // esi
   int v5; // ebx
@@ -1123,18 +1108,10 @@ LABEL_13:
 
 // 0x4F4E53
 namespace gamemd {
-int sub_4F4E53()
+void sub_4F4E53()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // positive sp value has been detected, the output may be wrong!
-_BYTE *__userpurge sub_4F4E53@<eax>(
-        _BYTE *result@<eax>,
-        int a2@<edx>,
-        int a3@<ebx>,
-        int a4@<esi>,
-        int a5,
-        int a6,
-        int a7)
 {
   __int16 v8; // cx
 
@@ -1163,10 +1140,9 @@ _BYTE *__userpurge sub_4F4E53@<eax>(
 
 // 0x4FA210
 namespace gamemd {
-int E4Recv_4FA210::sub_4FA210(int a2, int a3)
+void E4Recv_4FA210::sub_4FA210(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_4FA210(void *this, int a2, int a3)
 {
   bool v4; // zf
   int v5; // eax
@@ -1234,10 +1210,9 @@ void sub_4FA210(void *this, int a2, int a3)
 
 // 0x4FBD80
 namespace gamemd {
-int E4Recv_4FBD80::sub_4FBD80(int a2, int a3)
+void E4Recv_4FBD80::sub_4FBD80(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_4FBD80(_DWORD *this, int a2, int a3)
 {
   int result; // eax
 
@@ -1983,11 +1958,10 @@ bool E4Recv_4F4D30::sub_4F4D30(const char * a2)
 
 // 0x4F4D90
 namespace gamemd {
-int j_Stub_InfiniteLoop()
+void j_Stub_InfiniteLoop()
  {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // attributes: thunk
-void __fastcall __noreturn j_Stub_InfiniteLoop(int a1, int a2)
 {
   Stub::InfiniteLoop(a1, a2); /*0x4f4d90*/
 }

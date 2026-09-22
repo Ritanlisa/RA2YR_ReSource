@@ -5,10 +5,9 @@
 #include "e4/classes/WideString_e4.hpp"
 
 // 0x5CA680
-char MultiplayerSiege::Read()
+void MultiplayerSiege::Read()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MultiplayerSiege::_vt04()
 {
   char result; // al
 
@@ -32,10 +31,9 @@ void MultiplayerSiege::_vt04()
 }
 
 // 0x5CA6D0
-char MultiplayerSiege::Write(void ** a1)
+void MultiplayerSiege::Write(void ** a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MultiplayerSiege::_vt05(void **a1)
 {
   char result; // al
   wchar_t *StringCSF; // eax
@@ -108,10 +106,9 @@ LABEL_12:
 }
 
 // 0x5CA800
-char MultiplayerSiege::ProcessTurn(char a2)
+void MultiplayerSiege::ProcessTurn(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MultiplayerSiege::_vt33(char a2)
 {
   void *v5; // eax
   int v6; // eax

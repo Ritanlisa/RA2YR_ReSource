@@ -10,10 +10,9 @@
 
 // 0x4B0AD0
 namespace gamemd {
-char JumpjetLocomotion::MoveTo(IUnknown * aP1, int aP3)
+void JumpjetLocomotion::MoveTo(IUnknown * aP1, int aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void JumpjetLocomotion::MoveTo(int this, IUnknown *aP1, int aP3)
 {
   IUnknown *v3; // edx
   v3 = aP1; /*0x4b0ad0*/
@@ -104,10 +103,9 @@ void JumpjetLocomotion::MoveTo(int this, IUnknown *aP1, int aP3)
 
 // 0x4B0F20
 namespace gamemd {
-char JumpjetLocomotion::ProcessCollision(char a2)
+void JumpjetLocomotion::ProcessCollision(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void JumpjetLocomotion::ProcessCollision(int this, char a2)
 {
   MouseClass *v13; // ecx
   MouseClass *v21; // ecx
@@ -1070,10 +1068,9 @@ LABEL_197:
 
 // 0x4B2630
 namespace gamemd {
-char JumpjetLocomotion::Update(unsigned char * a2, int a3, int a4)
+void JumpjetLocomotion::Update(unsigned char * a2, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void JumpjetLocomotion_Update(int this, _BYTE *a2, int a3, int a4)
 {
   char result; // al
   wchar_t *v16; // edi
@@ -2454,7 +2451,6 @@ namespace gamemd {
 unsigned int * JumpjetLocomotion::TransformCoords(IUnknown * aP1, IUnknown * aP2, ObjectClass * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall JumpjetLocomotion::TransformCoords(_DWORD *this, IUnknown *aP1, IUnknown *aP2, ObjectClass *aP3)
 {
 
   int v4 = *(_DWORD *)aP3->__pad_0; /*0x4b478d*/
@@ -2489,10 +2485,9 @@ _DWORD *__thiscall JumpjetLocomotion::TransformCoords(_DWORD *this, IUnknown *aP
 
 // 0x54CA90
 namespace gamemd {
-char JumpjetLocomotion::Land()
+void JumpjetLocomotion::Land()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void JumpjetLocomotion_Land(int this)
 {
   int v48; // [esp+36h] [ebp-20h] BYREF
   int v49; // [esp+3Ah] [ebp-1Ch] BYREF
@@ -2772,10 +2767,9 @@ LABEL_74:
 
 // 0x54D0F0
 namespace gamemd {
-int JumpjetLocomotion::UpdateFacing()
+void JumpjetLocomotion::UpdateFacing()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void JumpjetLocomotion_UpdateFacing(int this)
 {
   unsigned __int8 v7; // c0
   unsigned __int8 v8; // c3

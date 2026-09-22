@@ -5,10 +5,9 @@
 
 // 0x5EBEC0
 namespace gamemd {
-char SetupMultiplayerLobbyScreen_Setup(SkirmishDialog * hDlg, char * a2, int nIDDlgItem)
+void SetupMultiplayerLobbyScreen_Setup(SkirmishDialog * hDlg, char * a2, int nIDDlgItem)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall SetupMultiplayerLobbyScreen_Setup(SkirmishDialog *hDlg, char *a2, int nIDDlgItem)
 {
   LRESULT v7; // eax
   CoordStruct *v8; // eax

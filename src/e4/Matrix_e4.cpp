@@ -4,10 +4,9 @@
 #include "e4/classes/Math_e4.hpp"
 
 // 0x5AE860
-int Matrix3x4::Identity()
+void Matrix3x4::Identity()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Matrix3x4_Identity(_DWORD *this)
 {
   *this = 1065353216; /*0x5ae867*/
   this->q004 = 0; /*0x5ae869*/
@@ -29,7 +28,6 @@ void Matrix3x4_Identity(_DWORD *this)
 void Matrix3x4::Translate(ParticleSystemClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Matrix3x4::Translate(ParticleSystemClass *aP1)
 {
   this->q00C = *(float *)&aP1 * *this + this->q00C; /*0x5ae989*/
   this->q01C = *(float *)&aP1 * this->q004 + this->q01C; /*0x5ae996*/

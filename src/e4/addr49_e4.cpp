@@ -212,10 +212,9 @@
 
 // 0x490400
 namespace gamemd {
-int E4Recv_490400::sub_490400()
+void E4Recv_490400::sub_490400()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_490400(int this)
 {
   int result; // eax
   E4Recv_490400 *v4; // [esp+4h] [ebp-4h] BYREF
@@ -244,10 +243,9 @@ void sub_490400(int this)
 
 // 0x491B40
 namespace gamemd {
-int E4Recv_491B40::sub_491B40(unsigned char * a2, unsigned char * a3, int a4, int a5, int a6, unsigned int a7, int a8, int a9, int a10, char * a11)
+void E4Recv_491B40::sub_491B40(unsigned char * a2, unsigned char * a3, int a4, int a5, int a6, unsigned int a7, int a8, int a9, int a10, char * a11)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_491B40(
         _DWORD *this,
         _BYTE *a2,
         unsigned __int8 *a3,
@@ -321,10 +319,9 @@ void sub_491B40(
 
 // 0x491C50
 namespace gamemd {
-int E4Recv_491C50::sub_491C50(unsigned char * a1, unsigned char * a2, int a4, int a5, int a6, unsigned int a7, int a8, int a9, int _38, char * a10)
+void E4Recv_491C50::sub_491C50(unsigned char * a1, unsigned char * a2, int a4, int a5, int a6, unsigned int a7, int a8, int a9, int _38, char * a10)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_491C50(
         RLEBlitTransZRemapXlatZRead_E *this,
         _BYTE *a1,
         unsigned __int8 *a2,
@@ -411,10 +408,9 @@ void sub_491C50(
 
 // 0x491D90
 namespace gamemd {
-char E4Recv_491D90::sub_491D90(unsigned char * a1, unsigned char * a2, RLEBlitTransRemapDestZRead_E * aP3, int a5, int a6, unsigned int a7, int a8, int a9, int _38, char * a10)
+void E4Recv_491D90::sub_491D90(unsigned char * a1, unsigned char * a2, RLEBlitTransRemapDestZRead_E * aP3, int a5, int a6, unsigned int a7, int a8, int a9, int _38, char * a10)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_491D90(
         RLEBlitTransRemapDestZRead_E *this,
         unsigned __int8 *a1,
         unsigned __int8 *a2,
@@ -495,10 +491,9 @@ void sub_491D90(
 
 // 0x491EA0
 namespace gamemd {
-int E4Recv_491EA0::sub_491EA0(int arg0, unsigned char * a2, int a4, int a5, int a6, unsigned int a7, int a8, int a9, int _38, char * a10)
+void E4Recv_491EA0::sub_491EA0(int arg0, unsigned char * a2, int a4, int a5, int a6, unsigned int a7, int a8, int a9, int _38, char * a10)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_491EA0(
         RLEBlitTransRemapXlatZRead_E *this,
         int arg0,
         unsigned __int8 *a2,
@@ -575,18 +570,6 @@ namespace gamemd {
 unsigned short * E4Recv_491FD0::sub_491FD0(int arg0, unsigned char * a2, RLEBlitTransXlatZReadWrite_E * aP3, int a5, int arg10, unsigned short * a6, int a8, int a9, int _38, char * a10)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_WORD *__thiscall sub_491FD0(
-        RLEBlitTransXlatZReadWrite_E *this,
-        int arg0,
-        unsigned __int8 *a2,
-        RLEBlitTransXlatZReadWrite_E *aP3,
-        int a5,
-        int arg10,
-        _WORD *a6,
-        int a8,
-        int a9,
-        int _38,
-        char *a10)
 {
   _WORD *result; // eax
   TacticalMap *v15; // ecx
@@ -655,18 +638,6 @@ namespace gamemd {
 unsigned short * E4Recv_492100::sub_492100(int arg0, unsigned char * a2, int a4, int a5, int arg10, unsigned short * a6, int a8, int a9, int _38, char * a10)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned __int16 *__thiscall sub_492100(
-        RLEBlitTransZRemapXlatZReadWrite_E *this,
-        int arg0,
-        unsigned __int8 *a2,
-        int a4,
-        int a5,
-        int arg10,
-        unsigned __int16 *a6,
-        int a8,
-        int a9,
-        int _38,
-        char *a10)
 {
   unsigned __int16 *result; // eax
   int v18; // ebx
@@ -749,18 +720,6 @@ namespace gamemd {
 unsigned short * E4Recv_492250::sub_492250(unsigned char * a1, unsigned char * a2, RLEBlitTransRemapDestZReadWrite_E * aP3, int a5, int arg10, unsigned short * a6, int a8, int a9, int _38, char * a10)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned __int16 *__thiscall sub_492250(
-        RLEBlitTransRemapDestZReadWrite_E *this,
-        _BYTE *a1,
-        unsigned __int8 *a2,
-        RLEBlitTransRemapDestZReadWrite_E *aP3,
-        int a5,
-        int arg10,
-        unsigned __int16 *a6,
-        int a8,
-        int a9,
-        int _38,
-        char *a10)
 {
   unsigned __int16 *result; // eax
   TacticalMap *v15; // ecx
@@ -838,18 +797,6 @@ namespace gamemd {
 unsigned short * E4Recv_492370::sub_492370(unsigned char * a1, unsigned char * a2, RLEBlitTransRemapXlatZReadWrite_E * aP3, int a5, int arg10, unsigned short * a6, int a8, int a9, int _38, char * a10)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned __int16 *__thiscall sub_492370(
-        RLEBlitTransRemapXlatZReadWrite_E *this,
-        _BYTE *a1,
-        unsigned __int8 *a2,
-        RLEBlitTransRemapXlatZReadWrite_E *aP3,
-        int a5,
-        int arg10,
-        unsigned __int16 *a6,
-        int a8,
-        int a9,
-        int _38,
-        char *a10)
 {
   unsigned __int16 *result; // eax
   TacticalMap *v15; // ecx
@@ -922,10 +869,9 @@ unsigned __int16 *__thiscall sub_492370(
 
 // 0x496310
 namespace gamemd {
-int E4Recv_496310::sub_496310()
+void E4Recv_496310::sub_496310()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_496310(RLEBlitTransLucent75_G *this)
 {
   int result; // eax
   unsigned __int8 *v4; // edi
@@ -990,10 +936,9 @@ void sub_496310(RLEBlitTransLucent75_G *this)
 
 // 0x4964D0
 namespace gamemd {
-int E4Recv_4964D0::sub_4964D0()
+void E4Recv_4964D0::sub_4964D0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_4964D0(RLEBlitTransLucent25_G *this)
 {
   int result; // eax
   unsigned __int8 *v4; // edi
@@ -1061,10 +1006,9 @@ void sub_4964D0(RLEBlitTransLucent25_G *this)
 
 // 0x4965B0
 namespace gamemd {
-int E4Recv_4965B0::sub_4965B0(unsigned short * a1, RLEBlitTransXlatZRead * aP2, int a4, int a5, int a6, unsigned int a7, int a8, int a9, int _38, char * a10)
+void E4Recv_4965B0::sub_4965B0(unsigned short * a1, RLEBlitTransXlatZRead * aP2, int a4, int a5, int a6, unsigned int a7, int a8, int a9, int _38, char * a10)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_4965B0(
         _DWORD *this,
         _WORD *a1,
         RLEBlitTransXlatZRead *aP2,
@@ -1147,10 +1091,9 @@ void sub_4965B0(
 
 // 0x4966D0
 namespace gamemd {
-int E4Recv_4966D0::sub_4966D0(int arg0, unsigned char * a2, int a4, int a5, int a6, unsigned int a7, int a8, int a9, int _38, char * a10)
+void E4Recv_4966D0::sub_4966D0(int arg0, unsigned char * a2, int a4, int a5, int a6, unsigned int a7, int a8, int a9, int _38, char * a10)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_4966D0(
         RLEBlitTransZRemapXlatZRead_G *this,
         int arg0,
         unsigned __int8 *a2,
@@ -1227,10 +1170,9 @@ void sub_4966D0(
 
 // 0x496930
 namespace gamemd {
-int E4Recv_496930::sub_496930(int arg0, unsigned char * a2, RLEBlitTransLucent75ZRead_G * aP3, int a5, int a6, unsigned int a7, int a8, int a9, int _38, char * a10)
+void E4Recv_496930::sub_496930(int arg0, unsigned char * a2, RLEBlitTransLucent75ZRead_G * aP3, int a5, int a6, unsigned int a7, int a8, int a9, int _38, char * a10)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_496930(
         RLEBlitTransLucent75ZRead_G *this,
         int arg0,
         unsigned __int8 *a2,
@@ -1304,10 +1246,9 @@ void sub_496930(
 
 // 0x496A80
 namespace gamemd {
-int E4Recv_496A80::sub_496A80(unsigned short * a1, unsigned char * a2, RLEBlitTransLucent50ZRead_G * aP3, int a5, int a6, unsigned int a7, int a8, int a9, int _38, char * a10)
+void E4Recv_496A80::sub_496A80(unsigned short * a1, unsigned char * a2, RLEBlitTransLucent50ZRead_G * aP3, int a5, int a6, unsigned int a7, int a8, int a9, int _38, char * a10)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_496A80(
         RLEBlitTransLucent50ZRead_G *this,
         _WORD *a1,
         unsigned __int8 *a2,
@@ -1381,10 +1322,9 @@ void sub_496A80(
 
 // 0x496BC0
 namespace gamemd {
-int E4Recv_496BC0::sub_496BC0(int arg0, unsigned char * a2, RLEBlitTransLucent25ZRead_G * aP3, int a5, int a6, unsigned int a7, int a8, int a9, int _38, char * a10)
+void E4Recv_496BC0::sub_496BC0(int arg0, unsigned char * a2, RLEBlitTransLucent25ZRead_G * aP3, int a5, int a6, unsigned int a7, int a8, int a9, int _38, char * a10)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_496BC0(
         RLEBlitTransLucent25ZRead_G *this,
         int arg0,
         unsigned __int8 *a2,
@@ -1458,10 +1398,9 @@ void sub_496BC0(
 
 // 0x496D10
 namespace gamemd {
-int E4Recv_496D10::sub_496D10(int arg0, unsigned char * a2, RLEBlitTransLucent75ZReadWarp_G * aP3, int a5, int a6, unsigned int a7, int a8, int a9, int arg20, char * a10)
+void E4Recv_496D10::sub_496D10(int arg0, unsigned char * a2, RLEBlitTransLucent75ZReadWarp_G * aP3, int a5, int a6, unsigned int a7, int a8, int a9, int arg20, char * a10)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_496D10(
         RLEBlitTransLucent75ZReadWarp_G *this,
         int arg0,
         unsigned __int8 *a2,
@@ -1535,10 +1474,9 @@ void sub_496D10(
 
 // 0x496E60
 namespace gamemd {
-int E4Recv_496E60::sub_496E60(unsigned short * a1, unsigned char * a2, RLEBlitTransLucent50ZReadWarp_G * aP3, int a5, int a6, unsigned int a7, int a8, int a9, int arg20, char * a10)
+void E4Recv_496E60::sub_496E60(unsigned short * a1, unsigned char * a2, RLEBlitTransLucent50ZReadWarp_G * aP3, int a5, int a6, unsigned int a7, int a8, int a9, int arg20, char * a10)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_496E60(
         RLEBlitTransLucent50ZReadWarp_G *this,
         _WORD *a1,
         unsigned __int8 *a2,
@@ -1612,10 +1550,9 @@ void sub_496E60(
 
 // 0x496FB0
 namespace gamemd {
-int E4Recv_496FB0::sub_496FB0(int arg0, unsigned char * a2, RLEBlitTransLucent25ZReadWarp_G * aP3, int a5, int a6, unsigned int a7, int a8, int a9, int arg20, char * a10)
+void E4Recv_496FB0::sub_496FB0(int arg0, unsigned char * a2, RLEBlitTransLucent25ZReadWarp_G * aP3, int a5, int a6, unsigned int a7, int a8, int a9, int arg20, char * a10)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_496FB0(
         RLEBlitTransLucent25ZReadWarp_G *this,
         int arg0,
         unsigned __int8 *a2,
@@ -1692,18 +1629,6 @@ namespace gamemd {
 unsigned short * E4Recv_497100::sub_497100(int arg0, unsigned char * a2, RLEBlitTransXlatZReadWrite_G * aP3, int a5, int arg10, unsigned short * a6, int a8, int a9, int _38, char * a10)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_WORD *__thiscall sub_497100(
-        RLEBlitTransXlatZReadWrite_G *this,
-        int arg0,
-        unsigned __int8 *a2,
-        RLEBlitTransXlatZReadWrite_G *aP3,
-        int a5,
-        int arg10,
-        _WORD *a6,
-        int a8,
-        int a9,
-        int _38,
-        char *a10)
 {
   _WORD *result; // eax
   RLEBlitTransXlatZReadWrite_G *v18; // ebp
@@ -1769,18 +1694,6 @@ namespace gamemd {
 unsigned short * E4Recv_497230::sub_497230(int arg0, unsigned char * a2, int a4, int a5, int arg10, unsigned short * a6, int a8, int a9, int _38, char * a10)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned __int16 *__thiscall sub_497230(
-        RLEBlitTransZRemapXlatZReadWrite_G *this,
-        int arg0,
-        unsigned __int8 *a2,
-        int a4,
-        int a5,
-        int arg10,
-        unsigned __int16 *a6,
-        int a8,
-        int a9,
-        int _38,
-        char *a10)
 {
   unsigned __int16 *result; // eax
   int v18; // ebx
@@ -1865,18 +1778,6 @@ namespace gamemd {
 unsigned short * E4Recv_497390::sub_497390(unsigned short * a1, unsigned char * a2, int a4, RLEBlitTransDarkenZReadWrite_G * aP4, int arg10, unsigned short * a6, int a8, int a9, int _38, char * a10)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned __int16 *__thiscall sub_497390(
-        RLEBlitTransDarkenZReadWrite_G *this,
-        _WORD *a1,
-        unsigned __int8 *a2,
-        int a4,
-        RLEBlitTransDarkenZReadWrite_G *aP4,
-        int arg10,
-        unsigned __int16 *a6,
-        int a8,
-        int a9,
-        int _38,
-        char *a10)
 {
   RLEBlitTransDarkenZReadWrite_G *v11; // edx
   RLEBlitTransDarkenZReadWrite_G *v13; // esi
@@ -1948,7 +1849,6 @@ namespace gamemd {
 void FillScoreScreenStats(IUnknown * Destination, char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall FillScoreScreenStats(IUnknown *Destination, char a2)
 {
   IUnknown *v2; // ebp
   HouseClass *i; // ecx
@@ -2026,10 +1926,9 @@ LABEL_8:
 
 // 0x49C0D0
 namespace gamemd {
-char E4Recv_49C0D0::CampaignClass_LoadCoopSave()
+void E4Recv_49C0D0::CampaignClass_LoadCoopSave()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CampaignClass_LoadCoopSave(char *this)
 {
   unsigned __int8 v8; // al
   char i; // al
@@ -2211,10 +2110,9 @@ LABEL_44:
 
 // 0x49CCF0
 namespace gamemd {
-char E4Recv_49CCF0::sub_49CCF0(int a2, int a3, void * Block, int a5, short a6, int a7, int a8, char * a9, char * a10)
+void E4Recv_49CCF0::sub_49CCF0(int a2, int a3, void * Block, int a5, short a6, int a7, int a8, char * a9, char * a10)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_49CCF0(
         int this,
         int a2,
         int a3,
@@ -2466,10 +2364,9 @@ void sub_49CCF0(
 
 // 0x49D390
 namespace gamemd {
-char E4Recv_49D390::LoadCoopCampaignSave(IUnknown * aP1)
+void E4Recv_49D390::LoadCoopCampaignSave(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void LoadCoopCampaignSave(char *this, IUnknown *aP1)
 {
   char i; // al
   int Int_Overwrite; // eax
@@ -2588,10 +2485,9 @@ LABEL_5:
 
 // 0x49D680
 namespace gamemd {
-char E4Recv_49D680::SerializeCampaignOptions()
+void E4Recv_49D680::SerializeCampaignOptions()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void SerializeCampaignOptions(char *this)
 {
   unsigned __int8 v12; // al
   int i; // esi
@@ -2738,10 +2634,9 @@ void SerializeCampaignOptions(char *this)
 
 // 0x49E7C0
 namespace gamemd {
-char * E4Recv_49E7C0::sub_49E7C0(char a2)
+void * E4Recv_49E7C0::sub_49E7C0(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall sub_49E7C0(char *this, char a2)
 {
   ObjectClass *v13; // eax
   if ( (a2 & 2) != 0 ) /*0x49e7cc*/

@@ -6,7 +6,6 @@
 unsigned int * ObjectVector::Construct(IUnknown * aP1, IUnknown * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall ObjectVector::Construct(_DWORD *this, IUnknown *aP1, IUnknown *aP2)
 {
   this->q004 = 0; /*0x4d044b*/
   this->q008 = aP1; /*0x4d044e*/

@@ -4,10 +4,9 @@
 
 // 0x5C7EC0
 namespace gamemd {
-int sub_5C7EC0(const void * a1, int a2)
+void sub_5C7EC0(const void * a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_5C7EC0(const void *a1, int a2)
 {
   int v8; // eax
   int v9; // eax

@@ -13,7 +13,6 @@ namespace gamemd {
 void sub_600750()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_600750()
 {
   unsigned int i; // edi
 
@@ -85,7 +84,6 @@ namespace gamemd {
 void sub_600920()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_600920()
 {
   unsigned int i; // edi
 
@@ -157,7 +155,6 @@ namespace gamemd {
 void sub_600AF0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_600AF0()
 {
   int j; // ebp
   _DWORD *k; // eax
@@ -240,10 +237,9 @@ void sub_600AF0()
 
 // 0x600C70
 namespace gamemd {
-char NavigateDialogTab(HWND hCtl, bool a2)
+void NavigateDialogTab(HWND hCtl, bool a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall NavigateDialogTab(HWND hCtl, bool a2)
 {
   HWND Parent; // eax
   HWND NextDlgTabItem; // eax
@@ -260,10 +256,9 @@ char __fastcall NavigateDialogTab(HWND hCtl, bool a2)
 
 // 0x600CA0
 namespace gamemd {
-int ValidateDialogEvent(int a1, HWND a2)
+void ValidateDialogEvent(int a1, HWND a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall ValidateDialogEvent(int a1, HWND a2)
 {
   int DlgCtrlID; // eax
 
@@ -470,10 +465,9 @@ LABEL_164:
 
 // 0x6015E0
 namespace gamemd {
-int CtlDialogColorHandler(int a1, HWND a2)
+void CtlDialogColorHandler(int a1, HWND a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall CtlDialogColorHandler(int a1, HWND a2)
 {
   int DlgCtrlID; // eax
   int result; // eax
@@ -673,10 +667,9 @@ LABEL_5:
 
 // 0x601D20
 namespace gamemd {
-int ValidateDialogControl(int a1, HWND a2)
+void ValidateDialogControl(int a1, HWND a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall ValidateDialogControl(int a1, HWND a2)
 {
   int DlgCtrlID; // eax
 
@@ -880,7 +873,6 @@ namespace gamemd {
 int sub_6023F0(int a1, HWND a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_6023F0(int a1, HWND a2)
 {
   int DlgCtrlID; // eax
 
@@ -913,10 +905,9 @@ LABEL_5:
 
 // 0x602490
 namespace gamemd {
-bool IsValidActionDialog(int a1, HWND a2)
+void IsValidActionDialog(int a1, HWND a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool __fastcall IsValidActionDialog(int a1, HWND a2)
 {
   int DlgCtrlID; // esi
 
@@ -1096,7 +1087,6 @@ namespace gamemd {
 char IsDialogControlHidden(int a1, HWND a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall IsDialogControlHidden(int a1, HWND a2)
 {
   int DlgCtrlID; // eax
 
@@ -1182,7 +1172,6 @@ namespace gamemd {
 int LoadCampaignMissionData(int a1, HWND a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall LoadCampaignMissionData(int a1, HWND a2)
 {
   int DlgCtrlID; // eax
 
@@ -1251,10 +1240,9 @@ LABEL_5:
 
 // 0x6035F0
 namespace gamemd {
-int DispatchDialogControlAction(int a1, HWND a2)
+void DispatchDialogControlAction(int a1, HWND a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall DispatchDialogControlAction(int a1, HWND a2)
 {
   int DlgCtrlID; // edi
   int result; // eax
@@ -1343,7 +1331,6 @@ namespace gamemd {
 void * GetDialogControlSHP(int a1, HWND a2, bool * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void *__fastcall GetDialogControlSHP(int a1, HWND a2, bool *a3)
 {
   int DlgCtrlID; // eax
 
@@ -1426,7 +1413,6 @@ namespace gamemd {
 int IsDialogWindowClass(HWND a1, HWND a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall IsDialogWindowClass(HWND a1, HWND a2)
 {
   HWND v8; // edi
   bool v9; // al
@@ -1507,10 +1493,9 @@ LABEL_37:
 
 // 0x603D30
 namespace gamemd {
-HWND * CacheDialogInvalidate(HWND hWnd, HWND a2)
+void * CacheDialogInvalidate(HWND hWnd, HWND a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-HWND *__fastcall CacheDialogInvalidate(HWND hWnd, HWND a2)
 {
   HWND *result; // eax
   HWND v5; // [esp+8h] [ebp-4h] BYREF
@@ -1545,7 +1530,6 @@ namespace gamemd {
 unsigned int * sub_603E40(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__fastcall sub_603E40(int a1, int a2)
 {
   _DWORD *result; // eax
 
@@ -1576,7 +1560,6 @@ namespace gamemd {
 wchar_t ** GetSkirmishMenuOwnerName(SkirmishDialog * aP0, HWND a2, HWND a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-wchar_t **__fastcall GetSkirmishMenuOwnerName(SkirmishDialog *aP0, HWND a2, HWND a3)
 {
   wchar_t *StringCSF; // eax
 
@@ -1597,10 +1580,9 @@ wchar_t **__fastcall GetSkirmishMenuOwnerName(SkirmishDialog *aP0, HWND a2, HWND
 
 // 0x6040B0
 namespace gamemd {
-char * DlgSkirmishMenuProc(HWND a1, HWND a2)
+void * DlgSkirmishMenuProc(HWND a1, HWND a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__fastcall DlgSkirmishMenuProc(HWND a1, HWND a2)
 {
   HWND *v3; // eax
   char *result; // eax
@@ -2913,7 +2895,6 @@ namespace gamemd {
 int Dialog_SetActiveFlag(int a1, char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall Dialog_SetActiveFlag(int a1, char a2)
 {
   int result; // eax
 
@@ -2942,10 +2923,9 @@ int __fastcall Dialog_SetActiveFlag(int a1, char a2)
 
 // 0x6071E0
 namespace gamemd {
-LRESULT GadgetClass_RenderAnimation(HWND a1, char a2)
+void GadgetClass_RenderAnimation(HWND a1, char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-LRESULT __fastcall GadgetClass_RenderAnimation(HWND a1, char a2)
 {
   HWND v23; // edi
   HWND v62; // [esp+3Ch] [ebp-188h] BYREF
@@ -3455,10 +3435,9 @@ LABEL_116:
 
 // 0x608500
 namespace gamemd {
-char ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
+void ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall ControlDialogHandler(int a1, HWND a2, _DWORD *a3)
 {
   int DlgCtrlID; // eax
   _DWORD *v6; // eax
@@ -3913,10 +3892,9 @@ LABEL_142:
 
 // 0x608CD0
 namespace gamemd {
-bool IsDialogControlVisible(int a1, HWND a2)
+void IsDialogControlVisible(int a1, HWND a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool __fastcall IsDialogControlVisible(int a1, HWND a2)
 {
   int DlgCtrlID; // eax
 
@@ -4188,10 +4166,9 @@ LABEL_244:
 
 // 0x6096A0
 namespace gamemd {
-bool sub_6096A0(int a1, HWND a2)
+char sub_6096A0(int a1, HWND a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool __fastcall sub_6096A0(int a1, HWND a2)
 {
   HWND *v4; // eax
   HWND v7; // [esp+8h] [ebp-4h] BYREF
@@ -4217,10 +4194,9 @@ bool __fastcall sub_6096A0(int a1, HWND a2)
 
 // 0x609730
 namespace gamemd {
-bool GetDialogDefaultButton(int a1, HWND a2)
+void GetDialogDefaultButton(int a1, HWND a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool __fastcall GetDialogDefaultButton(int a1, HWND a2)
 {
   int DlgCtrlID; // eax
 
@@ -4321,7 +4297,6 @@ namespace gamemd {
 bool sub_609AA0(int a1, HWND a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool __fastcall sub_609AA0(int a1, HWND a2)
 {
   HWND *v4; // eax
   HWND v7; // [esp+8h] [ebp-4h] BYREF
@@ -4350,7 +4325,6 @@ namespace gamemd {
 bool sub_609B30(int a1, HWND a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool __fastcall sub_609B30(int a1, HWND a2)
 {
   int DlgCtrlID; // edi
 
@@ -4383,7 +4357,6 @@ namespace gamemd {
 bool sub_609BC0(int a1, HWND a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool __fastcall sub_609BC0(int a1, HWND a2)
 {
   HWND *v4; // eax
   HWND *v5; // eax
@@ -4439,7 +4412,6 @@ namespace gamemd {
 bool sub_609CF0(int a1, HWND a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool __fastcall sub_609CF0(int a1, HWND a2)
 {
   HWND *v4; // eax
   HWND *v5; // eax
@@ -4492,10 +4464,9 @@ LABEL_7:
 
 // 0x609E20
 namespace gamemd {
-bool FilterDialogButtonAction(int a1, HWND a2)
+void FilterDialogButtonAction(int a1, HWND a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool __fastcall FilterDialogButtonAction(int a1, HWND a2)
 {
   int DlgCtrlID; // eax
 
@@ -4616,7 +4587,6 @@ namespace gamemd {
 bool sub_60A100(int a1, HWND a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool __fastcall sub_60A100(int a1, HWND a2)
 {
   int DlgCtrlID; // eax
 
@@ -4646,10 +4616,9 @@ LABEL_5:
 
 // 0x60A180
 namespace gamemd {
-BOOL EnumFunc(HWND hWnd, LPARAM a2)
+void EnumFunc(HWND hWnd, LPARAM a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void EnumFunc(HWND hWnd, LPARAM a2)
 {
   HWND v2; // esi
   HWND Parent; // edi
@@ -4686,10 +4655,9 @@ void EnumFunc(HWND hWnd, LPARAM a2)
 
 // 0x60A250
 namespace gamemd {
-BOOL sub_60A250(HWND hWnd, LPARAM a2)
+void sub_60A250(HWND hWnd, LPARAM a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_60A250(HWND hWnd, LPARAM a2)
 {
   HWND v2; // esi
   HWND Parent; // edi
@@ -4726,10 +4694,9 @@ void sub_60A250(HWND hWnd, LPARAM a2)
 
 // 0x60B000
 namespace gamemd {
-BOOL RepositionGameSpeedIndicator(HWND hWnd, int a2)
+void RepositionGameSpeedIndicator(HWND hWnd, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __fastcall RepositionGameSpeedIndicator(HWND hWnd, int a2)
 {
   HWND Parent; // esi
   char GameSpeed; // bl
@@ -4795,7 +4762,6 @@ namespace gamemd {
 bool sub_60B880(int a1, HWND a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool __fastcall sub_60B880(int a1, HWND a2)
 {
 
   int v7 = a1; /*0x60b88c*/
@@ -4835,10 +4801,9 @@ LABEL_5:
 
 // 0x60C0C0
 namespace gamemd {
-BOOL RepositionDialogControls(HWND hWnd, HWND a2)
+void RepositionDialogControls(HWND hWnd, HWND a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void RepositionDialogControls(HWND hWnd, HWND a2)
 {
   HWND v2; // esi
   HWND Parent; // ebx
@@ -5007,10 +4972,9 @@ LABEL_41:
 } // namespace gamemd
 
 // 0x60C4A0
-BOOL SkirmishDialog::ResizeDialogAndEnum()
+void SkirmishDialog::ResizeDialogAndEnum()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ResizeDialogAndEnum(SkirmishDialog *this)
 {
   LPARAM v1; // edx
   LPARAM v3; // edi
@@ -5023,10 +4987,9 @@ void ResizeDialogAndEnum(SkirmishDialog *this)
 
 // 0x60F4B0
 namespace gamemd {
-char InitializeDialogControls(HWND a1, LPARAM a2)
+void InitializeDialogControls(HWND a1, LPARAM a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall InitializeDialogControls(HWND a1, LPARAM a2)
 {
   LPARAM v2; // edi
   int **v6; // eax

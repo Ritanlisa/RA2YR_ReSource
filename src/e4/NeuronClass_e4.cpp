@@ -5,10 +5,9 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 
 // 0x43A350
-int NeuronClass::NeuronClass()
+N NeuronClass::NeuronClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-N NeuronClass::NeuronClass(int this)
 {
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x43a353*/
@@ -47,10 +46,9 @@ N NeuronClass::NeuronClass(int this)
 }
 
 // 0x43A9C0
-NeuronClass * NeuronClass::Reset(char a2)
+void * NeuronClass::Reset(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-NeuronClass *__thiscall NeuronClass::Reset(_DWORD *this, char a2)
 {
 
   *this = &NeuronClass::`vftable'; /*0x43a9cd*/

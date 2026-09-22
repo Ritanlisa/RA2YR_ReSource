@@ -4,10 +4,9 @@
 
 // 0x643E80
 namespace gamemd {
-int Function_643E80()
+void Function_643E80()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Function::643E80(int a2)
 {
   this->q004 = a2; /*0x643e84*/
   return a2; /*0x643e87*/

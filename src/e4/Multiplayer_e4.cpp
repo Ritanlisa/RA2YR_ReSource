@@ -8,10 +8,9 @@
 #include "e4/classes/Timer_e4.hpp"
 
 // 0x688380
-VectorClass * Multiplayer::FindStartPositions()
+void * Multiplayer::FindStartPositions()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__thiscall Multiplayer::FindStartPositions(VectorClass *this)
 {
   IUnknown *v1; // esi
   Multiplayer *v2; // edi
@@ -186,7 +185,6 @@ LABEL_24:
 unsigned int * Multiplayer::CopyDataArray(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall Multiplayer::CopyDataArray(_DWORD *this, ObjectClass *aP1)
 {
 
   if ( this == (_DWORD *)aP1 ) /*0x68c2bb*/
@@ -206,7 +204,7 @@ _DWORD *__thiscall Multiplayer::CopyDataArray(_DWORD *this, ObjectClass *aP1)
   this->q001 = v4; /*0x68c2eb*/
   if ( !v4 ) /*0x68c2ee*/
     return this; /*0x68c2ee*/
-  int v5 = this->q002; /*0x68c2f0*/
+  bool v5 = this->q002; /*0x68c2f0*/
   int v6 = 0; /*0x68c2f3*/
   *((_BYTE *)this + 13) = 1; /*0x68c2f7*/
   if ( v5 <= 0 ) /*0x68c2fb*/
@@ -225,7 +223,6 @@ _DWORD *__thiscall Multiplayer::CopyDataArray(_DWORD *this, ObjectClass *aP1)
 void Multiplayer::ShowProgress(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Multiplayer_ShowProgress(_DWORD *this, int a2)
 {
   int i; // esi
   DWORD Ticks; // [esp+8h] [ebp-1DCh]

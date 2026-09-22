@@ -7,10 +7,9 @@
 
 // 0x639FD0
 namespace gamemd {
-int NetworkClass::ExecutePlanningModeCmd()
+void NetworkClass::ExecutePlanningModeCmd()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_639FD0(char *this)
 {
   wchar_t *StringCSF; // eax
   wchar_t *v3; // eax
@@ -49,10 +48,9 @@ LABEL_10:
 
 // 0x6FFE00
 namespace gamemd {
-int NetworkClass::RecordEvent()
+void NetworkClass::RecordEvent()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void NetworkClass::RecordEvent(#377 *this)
 {
   _BYTE *WaypointCoords; // eax
   int result; // eax
@@ -94,10 +92,9 @@ void NetworkClass::RecordEvent(#377 *this)
 
 // 0x7B1C50
 namespace gamemd {
-SOCKET NetworkClass::UnregisterAsync()
+void NetworkClass::UnregisterAsync()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-SOCKET __thiscall NetworkClass_UnregisterAsync(SOCKET *this)
 {
   HWND v2; // ecx
   SOCKET v3; // eax

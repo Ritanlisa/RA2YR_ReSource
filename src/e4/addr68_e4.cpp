@@ -42,10 +42,9 @@
 
 // 0x682640
 namespace gamemd {
-int COM_WriteString(int a1, int a2, LPCCH lpMultiByteStr)
+void COM_WriteString(int a1, int a2, LPCCH lpMultiByteStr)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void COM_WriteString(int a1, int a2, LPCCH lpMultiByteStr)
 {
   _UNKNOWN **v5; // ecx
   size_t v7; // eax
@@ -107,10 +106,9 @@ LABEL_18:
 
 // 0x682880
 namespace gamemd {
-int COM_ReadString(int * a1, int a2, LPCCH lpMultiByteStr)
+void COM_ReadString(int * a1, int a2, LPCCH lpMultiByteStr)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void COM_ReadString(int *a1, int a2, LPCCH lpMultiByteStr)
 {
   __int16 v9[4]; // [esp+38h] [ebp-110h] BYREF
   WCHAR *v10; // [esp+40h] [ebp-108h]
@@ -160,10 +158,9 @@ LABEL_6:
 
 // 0x682A90
 namespace gamemd {
-int COM_Property_ReadBool(int a1, int a2, char a3)
+void COM_Property_ReadBool(int a1, int a2, char a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void COM_Property_ReadBool(int a1, int a2, char a3)
 {
   _UNKNOWN **v5; // ecx
 
@@ -221,10 +218,9 @@ LABEL_18:
 
 // 0x682B80
 namespace gamemd {
-int COM_PropertyBag_Read(int * a1, int a2, int a3)
+void COM_PropertyBag_Read(int * a1, int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void COM_PropertyBag_Read(int *a1, int a2, int a3)
 {
   __int16 v8[4]; // [esp+38h] [ebp-10h] BYREF
 
@@ -270,10 +266,9 @@ LABEL_6:
 
 // 0x682C70
 namespace gamemd {
-int sub_682C70(int a1, int a2, unsigned int * a3)
+void sub_682C70(int a1, int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_682C70(int a1, int a2, _DWORD *a3)
 {
   _UNKNOWN **v6; // ecx
 
@@ -331,10 +326,9 @@ LABEL_7:
 
 // 0x682E10
 namespace gamemd {
-int COM_WriteInt(int a1, int a2, int a3)
+void COM_WriteInt(int a1, int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void COM_WriteInt(int a1, int a2, int a3)
 {
   _UNKNOWN **v5; // ecx
 
@@ -392,10 +386,9 @@ LABEL_18:
 
 // 0x682F00
 namespace gamemd {
-int COM_SetBufferParams(int * a1, int a2, int * a3)
+void COM_SetBufferParams(int * a1, int a2, int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void COM_SetBufferParams(int *a1, int a2, int *a3)
 {
   __int16 v9[4]; // [esp+38h] [ebp-10h] BYREF
 
@@ -443,10 +436,9 @@ LABEL_6:
 
 // 0x683FB0
 namespace gamemd {
-int sub_683FB0()
+void sub_683FB0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_683FB0()
 {
   DWORD *v0; // esi
   MouseClass::GetPosition(&DataGlobal_87F7E8); /*0x683fb7*/
@@ -472,10 +464,9 @@ void sub_683FB0()
 
 // 0x684060
 namespace gamemd {
-void * ScenarioClass_SetTimer(int a1)
+void * * ScenarioClass_SetTimer(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void *__fastcall ScenarioClass_SetTimer(int a1)
 {
   DWORD Ticks; // eax
   void *result; // eax
@@ -531,10 +522,9 @@ void *__fastcall ScenarioClass_SetTimer(int a1)
 
 // 0x684290
 namespace gamemd {
-HWND Mouse_Update()
+void Mouse_Update()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-HWND Mouse_Update()
 {
   HWND result; // eax
 
@@ -556,10 +546,9 @@ HWND Mouse_Update()
 
 // 0x684370
 namespace gamemd {
-char WaitForMultiplayerLoadSync()
+void WaitForMultiplayerLoadSync()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void WaitForMultiplayerLoadSync()
 {
   int v0; // ebx
   int v1; // esi
@@ -661,10 +650,9 @@ LABEL_18:
 
 // 0x684C30
 namespace gamemd {
-int PostLoadInitScenario()
+void PostLoadInitScenario()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __usercall ScenarioClass_PostLoadInit@<eax>(int a1@<edi>)
 {
   int i; // esi
   int j; // ebx
@@ -862,10 +850,9 @@ int __usercall ScenarioClass_PostLoadInit@<eax>(int a1@<edi>)
 
 // 0x6851F0
 namespace gamemd {
-int ScenarioClass_Reset()
+void ScenarioClass_Reset()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ScenarioClass_Reset()
 {
   int i; // esi
   int j; // esi
@@ -1053,10 +1040,9 @@ LABEL_16:
 
 // 0x687CE0
 namespace gamemd {
-int SaveScenarioToINI()
+void SaveScenarioToINI()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__usercall SaveScenarioToINI@<eax>(RawFileClass *Source@<ecx>, ScenarioClass *a2@<edx>, int a3@<edi>)
 {
   CCFileClass *v4; // eax
   INIClass a1; // [esp+14h] [ebp-E8h] BYREF
@@ -1142,10 +1128,9 @@ char *__usercall SaveScenarioToINI@<eax>(RawFileClass *Source@<ecx>, ScenarioCla
 
 // 0x687F10
 namespace gamemd {
-char SessionClass_AssignHouses()
+void SessionClass_AssignHouses()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void SessionClass_AssignHouses()
 {
   LPARAM v10; // eax
   LPARAM v16; // edx
@@ -1353,7 +1338,7 @@ void SessionClass_AssignHouses()
 
 // 0x6886B0
 namespace gamemd {
-int GenerateScenarioUnits()
+void GenerateScenarioUnits()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // (no pseudocode — ASM-only function)

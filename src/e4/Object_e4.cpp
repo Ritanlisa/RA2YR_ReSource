@@ -17,10 +17,9 @@
 
 // 0x47C3D0
 namespace gamemd {
-int Object::FindClosestObjectCell(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3)
+void Object::FindClosestObjectCell(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Object::FindClosestObjectCell(IUnknown *aP1, IUnknown *aP2, IUnknown *aP3)
 {
   IUnknown *v6; // ecx
   IUnknown *v7; // esi
@@ -61,10 +60,9 @@ void Object::FindClosestObjectCell(IUnknown *aP1, IUnknown *aP2, IUnknown *aP3)
 
 // 0x47C5A0
 namespace gamemd {
-int Object::FindObjectCell(TechnoClass * aP1, char aP2)
+void Object::FindObjectCell(TechnoClass * aP1, char aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Object::FindObjectCell(TechnoClass *aP1, char aP2)
 {
   _DWORD *v4; // esi
   int result; // eax
@@ -110,10 +108,9 @@ LABEL_5:
 
 // 0x4F9A90
 namespace gamemd {
-bool Object::IsAlliedWithObjectHouse(IUnknown * aP1)
+void Object::IsAlliedWithObjectHouse(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Object::IsAlliedWithObjectHouse(IUnknown *aP1)
 {
 
   if ( !aP1 ) /*0x4f9a99*/
@@ -133,10 +130,9 @@ void Object::IsAlliedWithObjectHouse(IUnknown *aP1)
 
 // 0x4F9AF0
 namespace gamemd {
-bool Object::IsAlliedWithObjectSimpleHouse(unsigned char * a2)
+void Object::IsAlliedWithObjectSimpleHouse(unsigned char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void House_IsAlliedWithObjectSimple(_DWORD *this, _BYTE *a2)
 {
 
   if ( !a2 ) /*0x4f9af9*/
@@ -161,7 +157,6 @@ namespace gamemd {
 unsigned int * Object::FindNearestObjectAtCell(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall FindNearestObjectAtCell(_DWORD *this, _DWORD *a2)
 {
   __int16 v6; // ax
   __int16 v7; // cx
@@ -267,10 +262,9 @@ LABEL_20:
 
 // 0x5902C0
 namespace gamemd {
-char sub_5902C0(int a1)
+void sub_5902C0(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_5902C0(int a1)
 {
   __int16 v2; // ax
   int * v1 = (int *)a1; /*0x5902c4*/
@@ -347,10 +341,9 @@ LABEL_24:
 
 // 0x5FC380
 namespace gamemd {
-OverlayClass * Object::SpawnAtCell(IUnknown * aP1, IUnknown * aP2, BuildingTypeClass * aP3)
+void * Object::SpawnAtCell(IUnknown * aP1, IUnknown * aP2, BuildingTypeClass * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-OverlayClass *__thiscall Object::SpawnAtCell(void *this, IUnknown *aP1, IUnknown *aP2, BuildingTypeClass *aP3)
 {
   IUnknown *v5; // eax
 
@@ -394,7 +387,6 @@ namespace gamemd {
 void Object::HandleAction(int * a2, int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Object::_vt70(int this, int *a2, int *a3)
 {
   int GroundHeight; // eax
   BuildingTypeClass *v8; // edx
@@ -567,10 +559,9 @@ LABEL_20:
 
 // 0x5FDDE0
 namespace gamemd {
-int Object::ProcessEvent()
+void Object::ProcessEvent()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Object::_vt34()
 {
   return this->q0AC; /*0x5fdde6*/
 }
@@ -579,10 +570,9 @@ void Object::_vt34()
 
 // 0x5FDF70
 namespace gamemd {
-OverlayClass * Object::DrawObject(char a2)
+void * Object::DrawObject(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-OverlayClass *__thiscall Object::DrawObject(void **this, char a2)
 {
   void **v5; // [esp+4h] [ebp-4h] BYREF
 
@@ -615,10 +605,9 @@ OverlayClass *__thiscall Object::DrawObject(void **this, char a2)
 
 // 0x62AC30
 namespace gamemd {
-int * Object::CalculateObjectPlacementPosition(int * a2)
+void * Object::CalculateObjectPlacementPosition(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int *__thiscall CalculateObjectPlacementPosition(int this, int *a2)
 {
   int *result; // eax
   int v4; // edx
@@ -774,10 +763,9 @@ LABEL_34:
 
 // 0x639E30
 namespace gamemd {
-char sub_639E30(int * a1, unsigned int * a2)
+void sub_639E30(int * a1, unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall sub_639E30(int *a1, _DWORD *a2)
 {
   int v9; // ebp
   int v10; // edi
@@ -883,7 +871,6 @@ namespace gamemd {
 char Object_Init(char a1, int a2, int a3, char a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall Object_Init(char a1, int a2, int a3, char a4, int a5)
 {
   IUnknown *v5; // eax
 
@@ -913,10 +900,9 @@ char __fastcall Object_Init(char a1, int a2, int a3, char a4, int a5)
 
 // 0x7DEEFA
 namespace gamemd {
-char Object_Calc(MouseClass * aP0, unsigned short * a1, int a3, int a4, int a5, int a6)
+void Object_Calc(MouseClass * aP0, unsigned short * a1, int a3, int a4, int a5, int a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Object_Calc(MouseClass *aP0, _WORD *a1, int a3, int a4, int a5, int a6)
 {
   MouseClass *v6; // esi
   int v9; // eax
@@ -981,10 +967,9 @@ void Object_Calc(MouseClass *aP0, _WORD *a1, int a3, int a4, int a5, int a6)
 
 // 0x7DEFD7
 namespace gamemd {
-char Object_Calc_7DEFD7(MouseClass * aP0, unsigned short * a1, int a3, int a4, int a5, int a6)
+void Object_Calc_7DEFD7(MouseClass * aP0, unsigned short * a1, int a3, int a4, int a5, int a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Object_Calc_7DEFD7(MouseClass *aP0, _WORD *a1, int a3, int a4, int a5, int a6)
 {
   MouseClass *v6; // esi
   int v9; // eax
@@ -1049,10 +1034,9 @@ void Object_Calc_7DEFD7(MouseClass *aP0, _WORD *a1, int a3, int a4, int a5, int 
 
 // 0x7DF0B4
 namespace gamemd {
-char Object_Calc_7DF0B4(MouseClass * aP0, unsigned short * a1, int a3, int a4, int a5, int a6)
+void Object_Calc_7DF0B4(MouseClass * aP0, unsigned short * a1, int a3, int a4, int a5, int a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Object_Calc_7DF0B4(MouseClass *aP0, _WORD *a1, int a3, int a4, int a5, int a6)
 {
   MouseClass *v6; // esi
   int v9; // eax
@@ -1117,10 +1101,9 @@ void Object_Calc_7DF0B4(MouseClass *aP0, _WORD *a1, int a3, int a4, int a5, int 
 
 // 0x7DF191
 namespace gamemd {
-char Object_Calc_7DF191(MouseClass * aP0, unsigned short * a1, int a3, int a4, int a5, int a6)
+void Object_Calc_7DF191(MouseClass * aP0, unsigned short * a1, int a3, int a4, int a5, int a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Object_Calc_7DF191(MouseClass *aP0, _WORD *a1, int a3, int a4, int a5, int a6)
 {
   MouseClass *v6; // esi
   int v9; // eax
@@ -1185,10 +1168,9 @@ void Object_Calc_7DF191(MouseClass *aP0, _WORD *a1, int a3, int a4, int a5, int 
 
 // 0x7DF280
 namespace gamemd {
-char Object_Calc_7DF280(MouseClass * aP0, unsigned char * a1, unsigned short * a2, int a4, int a5, int a6, int a7, int a8)
+void Object_Calc_7DF280(MouseClass * aP0, unsigned char * a1, unsigned short * a2, int a4, int a5, int a6, int a7, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Object_Calc_7DF280(MouseClass *aP0, _BYTE *a1, _WORD *a2, int a4, int a5, int a6, int a7, int a8)
 {
   __m64 mm0_0; // mm0
   MouseClass *v8; // esi
@@ -1262,10 +1244,9 @@ LABEL_9:
 
 // 0x7DF3C2
 namespace gamemd {
-char Object_Calc_7DF3C2(MouseClass * aP0, unsigned char * a1, unsigned short * a2, int a4, int a5, int a6, int a7, int a8)
+void Object_Calc_7DF3C2(MouseClass * aP0, unsigned char * a1, unsigned short * a2, int a4, int a5, int a6, int a7, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Object_Calc_7DF3C2(MouseClass *aP0, _BYTE *a1, _WORD *a2, int a4, int a5, int a6, int a7, int a8)
 {
   __m64 mm0_0; // mm0
   MouseClass *v8; // esi
@@ -1339,10 +1320,9 @@ LABEL_9:
 
 // 0x7DF500
 namespace gamemd {
-char Object_Calc_7DF500(MouseClass * aP0, unsigned char * a1, unsigned short * a2, int a4, int a5, int a6, int a7, int a8)
+void Object_Calc_7DF500(MouseClass * aP0, unsigned char * a1, unsigned short * a2, int a4, int a5, int a6, int a7, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Object_Calc_7DF500(MouseClass *aP0, _BYTE *a1, _WORD *a2, int a4, int a5, int a6, int a7, int a8)
 {
   __m64 mm0_0; // mm0
   MouseClass *v8; // esi
@@ -1416,10 +1396,9 @@ LABEL_9:
 
 // 0x7DF640
 namespace gamemd {
-char Object_Calc_7DF640(MouseClass * aP0, unsigned char * a1, unsigned short * a2, int a4, int a5, int a6, int a7, int a8)
+void Object_Calc_7DF640(MouseClass * aP0, unsigned char * a1, unsigned short * a2, int a4, int a5, int a6, int a7, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Object_Calc_7DF640(MouseClass *aP0, _BYTE *a1, _WORD *a2, int a4, int a5, int a6, int a7, int a8)
 {
   __m64 mm0_0; // mm0
   MouseClass *v8; // esi
@@ -1493,10 +1472,9 @@ LABEL_9:
 
 // 0x5A7E90
 namespace gamemd {
-int sub_5A7E90(int a1, unsigned short * a2)
+void sub_5A7E90(int a1, unsigned short * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_5A7E90(int a1, _WORD *a2)
 {
   int result; // eax
   int i; // esi
@@ -1553,10 +1531,9 @@ int __fastcall sub_5A7E90(int a1, _WORD *a2)
 
 // 0x710890
 namespace gamemd {
-int sub_710890(int a1, int a2, int * a3)
+void sub_710890(int a1, int a2, int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_710890(int a1, int a2, int *a3)
 {
   int v5; // edi
 

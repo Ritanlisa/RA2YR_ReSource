@@ -8,7 +8,6 @@ namespace gamemd {
 unsigned int * FoggedObject::DrawVector_Constructor(IUnknown * aP1, IUnknown * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall FoggedObject::DrawVector_Constructor(_DWORD *this, IUnknown *aP1, IUnknown *aP2)
 {
   IUnknown *v6; // ecx
   IUnknown *v10; // edx

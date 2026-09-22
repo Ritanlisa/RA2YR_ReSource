@@ -7,10 +7,9 @@
 
 // 0x663D60
 namespace gamemd {
-char Factory::GetLinkedIndex(DynamicVector * aP1)
+void Factory::GetLinkedIndex(DynamicVector * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Factory::GetLinkedIndex(DynamicVector *aP1)
 {
   char result; // al
   char **v5; // esi
@@ -38,10 +37,9 @@ void Factory::GetLinkedIndex(DynamicVector *aP1)
 
 // 0x718B70
 namespace gamemd {
-int Factory_CalculateExitCell()
+void Factory_CalculateExitCell()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __userpurge Factory_CalculateExitCell@<al>(_DWORD *a1@<ecx>, int a2@<ebx>, int a3@<ebp>, int *a4, int a5, char a6)
 {
   __int16 *v15; // ecx
   __int16 *v33; // eax

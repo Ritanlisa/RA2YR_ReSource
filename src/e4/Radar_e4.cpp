@@ -14,10 +14,9 @@
 
 // 0x431090
 namespace gamemd {
-int Radar::FindNearestRadarTarget(int a2, int a3, int a4)
+void Radar::FindNearestRadarTarget(int a2, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_431090(_DWORD *this, int a2, int a3, int a4)
 {
   _DWORD **v4; // edi
   int i; // esi
@@ -62,7 +61,6 @@ namespace gamemd {
 void Radar::UpdateReveal(char a1, IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Radar::UpdateReveal(char a1, IUnknown *aP1)
 {
   MouseClass *v5; // edx
   MouseClass *v7; // eax
@@ -149,10 +147,9 @@ LABEL_19:
 
 // 0x5090F0
 namespace gamemd {
-bool Radar::IsRadarTargetEligible()
+void Radar::IsRadarTargetEligible()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_5090F0(unsigned int *this)
 {
 
   unsigned int v1 = this->q20C; /*0x5090f0*/
@@ -166,10 +163,9 @@ void sub_5090F0(unsigned int *this)
 
 // 0x5824A0
 namespace gamemd {
-int Radar::ProcessSubzone(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnknown * aP4, IUnknown * aP5)
+void Radar::ProcessSubzone(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnknown * aP4, IUnknown * aP5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Radar::ProcessSubzone(IUnknown *aP1, IUnknown *aP2, IUnknown *aP3, IUnknown *aP4, IUnknown *aP5)
 {
   IUnknown *v6; // ebp
   IUnknown *v7; // ebx
@@ -604,7 +600,6 @@ namespace gamemd {
 void Radar::Update(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Radar::Update(IUnknown *aP1)
 {
   Radar *v2; // ebx
   CCINIClass *v10; // edx
@@ -639,7 +634,7 @@ void Radar::Update(IUnknown *aP1)
   IUnknown *v111; // [esp+50h] [ebp-64h]
   IUnknown *v112; // [esp+54h] [ebp-60h]
   IUnknown *v114; // [esp+5Ch] [ebp-58h]
-  Radar *v116; // [esp+64h] [ebp-50h]
+  IUnknown *v116; // [esp+64h] [ebp-50h]
   CCINIClass *v119; // [esp+70h] [ebp-44h] BYREF
   void **v123; // [esp+80h] [ebp-34h] BYREF
   void *Block; // [esp+84h] [ebp-30h]
@@ -1128,10 +1123,9 @@ LABEL_72:
 
 // 0x58ABD0
 namespace gamemd {
-int * Radar::CopyDataArray(int * a2)
+void * Radar::CopyDataArray(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int *__thiscall sub_58ABD0(int *this, int *a2)
 {
 
   if ( this != a2 ) /*0x58abdc*/
@@ -1197,10 +1191,9 @@ int *__thiscall sub_58ABD0(int *this, int *a2)
 
 // 0x6558B0
 namespace gamemd {
-int Radar::PixelIndex()
+void Radar::PixelIndex()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Radar_PixelIndex(_DWORD *this)
 {
   return this->q004 + 251 * this->q008; /*0x6558c4*/
 }
@@ -1209,10 +1202,9 @@ void Radar_PixelIndex(_DWORD *this)
 
 // 0x656EC0
 namespace gamemd {
-char Radar::RenderMinimap()
+void Radar::RenderMinimap()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Radar::RenderMinimap(int this)
 {
   __int16 *v4; // eax
   int i; // ebp
@@ -1670,10 +1662,9 @@ LABEL_99:
 
 // 0x692610
 namespace gamemd {
-int Radar::ScanWaypoints(MouseClass * aP0, MouseClass * aP1, int aP3_4)
+void Radar::ScanWaypoints(MouseClass * aP0, MouseClass * aP1, int aP3_4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Radar::ScanWaypoints(MouseClass *aP0, MouseClass *aP1, int aP3_4)
 {
   MouseClass *v3; // esi
   int RadarClosestEnemy; // eax

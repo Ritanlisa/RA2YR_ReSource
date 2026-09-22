@@ -14,10 +14,9 @@
 
 // 0x53AE50
 namespace gamemd {
-RulesClass * SuperClass::LaunchPsychicDominator(int a2)
+void * SuperClass::LaunchPsychicDominator(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-RulesClass *__thiscall sub_53AE50(#375 *this, int a2)
 {
   RulesClass *result; // eax
   void **v6; // eax
@@ -54,10 +53,9 @@ RulesClass *__thiscall sub_53AE50(#375 *this, int a2)
 
 // 0x6CAEC0
 namespace gamemd {
-int SuperClass::Constructor()
+void SuperClass::Constructor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_6CAEC0(int this)
 {
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x6caec3*/
@@ -102,10 +100,9 @@ void sub_6CAEC0(int this)
 
 // 0x6CAF90
 namespace gamemd {
-int SuperClass::Construct(int a2, CCINIClass * aP2)
+void SuperClass::Construct(int a2, CCINIClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void SuperClass::Construct(int this, int a2, CCINIClass *aP2)
 {
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x6caf94*/
@@ -178,7 +175,6 @@ namespace gamemd {
 void SuperClass::CleanupMembers()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_6CB120(int this)
 {
   SuperClass *v9; // [esp+14h] [ebp-4h] BYREF
   int v2 = this->SuperClass_field_0x68; /*0x6cb124*/
@@ -254,10 +250,9 @@ void sub_6CB120(int this)
 
 // 0x6CB560
 namespace gamemd {
-char SuperClass::StartTimer(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3)
+void SuperClass::StartTimer(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void SuperClass::StartTimer(int this, IUnknown *aP1, IUnknown *aP2, IUnknown *aP3)
 {
   TerrainTypeClass *v11; // eax
   IUnknown *v12; // ecx
@@ -398,10 +393,9 @@ LABEL_45:
 
 // 0x6CB7B0
 namespace gamemd {
-char SuperClass::Lose()
+void SuperClass::Lose()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void SuperClass::Lose()
 {
 
   SuperClass *v3 = this; /*0x6cb7b0*/
@@ -427,10 +421,9 @@ void SuperClass::Lose()
 
 // 0x6CB830
 namespace gamemd {
-char SuperClass::StopPreclickAnim(IUnknown * aP1)
+void SuperClass::StopPreclickAnim(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void SuperClass::StopPreclickAnim(int this, IUnknown *aP1)
 {
   _DWORD v8[4]; // [esp+8h] [ebp-10h] BYREF
 
@@ -482,10 +475,9 @@ void SuperClass::StopPreclickAnim(int this, IUnknown *aP1)
 
 // 0x6CB920
 namespace gamemd {
-char SuperClass::ClickFire(int a2, short * a3)
+void SuperClass::ClickFire(int a2, short * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void SuperClass::ClickFire(int this, int a2, __int16 *a3)
 {
   __int16 *v6; // eax
   wchar_t *v9; // edi
@@ -671,10 +663,9 @@ LABEL_11:
 
 // 0x6CC080
 namespace gamemd {
-char SuperClass::AnnounceReady(DynamicVector * aP1)
+void SuperClass::AnnounceReady(DynamicVector * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void SuperClass::AnnounceReady(int this, DynamicVector *aP1)
 {
   char result; // al
 
@@ -746,10 +737,9 @@ void SuperClass::AnnounceReady(int this, DynamicVector *aP1)
 
 // 0x6CC1E0
 namespace gamemd {
-char SuperClass::SetCharge(int a2)
+void SuperClass::SetCharge(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void SuperClass::SetCharge(int this, int a2)
 {
 
   _DWORD *v3; // eax
@@ -784,7 +774,6 @@ namespace gamemd {
 void SuperClass::Launch(int ecx0, int a2, short * aP3, char a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall SuperClass::Launch(int ecx0, int a2, __int16 *aP3, char a4)
 {
   SuperClass *v4; // ebx
   AnimClass *v8; // eax
@@ -1981,10 +1970,9 @@ LABEL_180:
 
 // 0x6CE0B0
 namespace gamemd {
-int * SuperClass::Reset()
+void * SuperClass::Reset()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int *__thiscall SuperClass::Reset(int this)
 {
   int *result; // eax
   _DWORD v12[4]; // [esp+4h] [ebp-10h] BYREF

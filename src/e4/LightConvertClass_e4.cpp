@@ -3,10 +3,9 @@
 #include "e4/e4_globals.hpp"
 
 // 0x490E50
-int LightConvertClass::SelectRLEBlitter(IUnknown * aP1)
+void LightConvertClass::SelectRLEBlitter(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void LightConvertClass::SelectRLEBlitter(IUnknown *aP1)
 {
   if ( !this->q008 ) /*0x490e53*/
     ConvertClass::InitTables((int)this); /*0x490e5a*/

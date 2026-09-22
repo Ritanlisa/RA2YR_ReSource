@@ -5,10 +5,9 @@
 #include "e4/classes/CellStruct_e4.hpp"
 
 // 0x7BA8C0
-int XSurface::DrawDashedLine(int * a1, int * a2, XSurface * aP3, int a5, int a6)
+void XSurface::DrawDashedLine(int * a1, int * a2, XSurface * aP3, int a5, int a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void XSurface::DrawDashedLine(int *a1, int *a2, XSurface *aP3, int a5, int a6)
 {
   int v13; // esi
   _WORD *v14; // eax
@@ -196,10 +195,9 @@ void XSurface::DrawDashedLine(int *a1, int *a2, XSurface *aP3, int a5, int a6)
 }
 
 // 0x7BAB90
-char XSurface::WalkLine(int a2, unsigned int * a3, unsigned int * a4, void (__thiscall *a5)(int *) a4)
+void XSurface::WalkLine(int a2, unsigned int * a3, unsigned int * a4, void (__thiscall *a5)(int *) a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall XSurface_WalkLine(_DWORD *this, int a2, _DWORD *a3, _DWORD *a4, void (__thiscall *a5)(int *))
 {
   char result; // al
   int i; // ebx
@@ -341,10 +339,9 @@ char __thiscall XSurface_WalkLine(_DWORD *this, int a2, _DWORD *a3, _DWORD *a4, 
 }
 
 // 0x7BB050
-char XSurface::FillRectEx(XSurface * aP1, int * a2, XSurface * aP3)
+void XSurface::FillRectEx(XSurface * aP1, int * a2, XSurface * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void XSurface::FillRectEx(XSurface *aP1, int *a2, XSurface *aP3)
 {
   XSurface *v4; // edi
   int Width; // ebx
@@ -540,10 +537,9 @@ LABEL_9:
 }
 
 // 0x7BB350
-int XSurface::DrawEllipseOutline(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
+void XSurface::DrawEllipseOutline(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void XSurface_DrawEllipseOutline(
         int *this,
         int a2,
         int a3,
@@ -768,10 +764,9 @@ void XSurface_DrawEllipseOutline(
 }
 
 // 0x7BBB90
-char XSurface::BlitPart(void ** a2, XSurface * a3, void ** arg8, void ** a4, int a6)
+void XSurface::BlitPart(void ** a2, XSurface * a3, void ** arg8, void ** a4, int a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void XSurface::BlitPart(void **a2, XSurface *a3, void **arg8, void **a4, int a6)
 {
   XSurface *v6; // edi
   XSurface aP2; // [esp+Ch] [ebp-40h] BYREF
@@ -820,10 +815,9 @@ void XSurface::BlitPart(void **a2, XSurface *a3, void **arg8, void **a4, int a6)
 }
 
 // 0x7BBCF0
-char XSurface::Blit(int a2, void ** a3, XSurface * arg8, int a5, unsigned int * a6, void ** a4, int a8)
+void XSurface::Blit(int a2, void ** a3, XSurface * arg8, int a5, unsigned int * a6, void ** a4, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void XSurface::Blit(int a2, void **a3, XSurface *arg8, int a5, _DWORD *a6, void **a4, int a8)
 {
   XSurface aP2; // [esp+4h] [ebp-20h] BYREF
   XSurface aP1; // [esp+14h] [ebp-10h] BYREF

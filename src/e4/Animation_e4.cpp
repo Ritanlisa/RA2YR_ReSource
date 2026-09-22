@@ -8,7 +8,6 @@
 void Animation::UpdateBuildingAnimations()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Animation::UpdateBuildingAnimations()
 {
   IUnknown *v8; // ebp
   int i; // edi
@@ -170,10 +169,9 @@ LABEL_51:
 }
 
 // 0x4A52F0
-double Animation::GetProgress()
+void Animation::GetProgress()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Animation::GetProgress(int this)
 {
 
   if ( !this->q018 ) /*0x4a52f0*/
@@ -197,7 +195,6 @@ void Animation::GetProgress(int this)
 void Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Animation::LoadSidebarAnimations(_DWORD *a1, ObjectClass *aP2)
 {
   ObjectClass *v3; // ebx
   ObjectClass *v4; // ebp

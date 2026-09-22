@@ -11,10 +11,9 @@
 
 // 0x554A60
 namespace gamemd {
-char Trigger::EnableOnce(AbstractClass * aP1)
+void Trigger::EnableOnce(AbstractClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Trigger::EnableOnce(AbstractClass *aP1)
 {
   char result; // al
 
@@ -34,15 +33,6 @@ namespace gamemd {
 void * Trigger::initTrigger(MSShapeAnim * aP1, MSShapeAnim * aP2, int a4, int a5, int a6, int a7, MSShapeAnim * aP7)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void *__thiscall Trigger::initTrigger(
-        void *this,
-        MSShapeAnim *aP1,
-        MSShapeAnim *aP2,
-        int a4,
-        int a5,
-        int a6,
-        int a7,
-        MSShapeAnim *aP7)
 {
   int FileClassToBuffer; // eax
 
@@ -76,7 +66,6 @@ namespace gamemd {
 void Trigger::ProcessMapEvents(int this@<ecx> a1, int *a2@<ebp> a2, int a3@<edi> a3, int a4, char a5, char a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __userpurge Trigger::ProcessMapEvents(int this@<ecx>, int *a2@<ebp>, int a3@<edi>, int a4, char a5, char a6)
 {
   ObjectClass *v5; // ebx
   MSShapeAnim *v10; // eax
@@ -309,7 +298,6 @@ namespace gamemd {
 unsigned int * Trigger::processTrigger(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_76F090(_DWORD *this, int a2, int a3)
 {
   this->q004 = a2; /*0x76f09a*/
   this->q008 = a3; /*0x76f09d*/
@@ -324,7 +312,6 @@ namespace gamemd {
 unsigned int * Trigger::checkCondition(ObjectClass * aP1, ObjectClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall Trigger::checkCondition(_DWORD *this, ObjectClass *aP1, ObjectClass *aP2)
 {
   this->q004 = 0; /*0x76f1cb*/
   this->q008 = aP1; /*0x76f1ce*/
@@ -348,10 +335,9 @@ _DWORD *__thiscall Trigger::checkCondition(_DWORD *this, ObjectClass *aP1, Objec
 
 // 0x76FF20
 namespace gamemd {
-int Trigger::executeActions(int a2)
+void Trigger::executeActions(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_76FF20(_DWORD *this, int a2)
 {
   this->q02C = a2; /*0x76ff24*/
   return a2; /*0x76ff27*/

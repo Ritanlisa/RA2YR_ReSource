@@ -7,10 +7,9 @@
 #include "e4/classes/Math_e4.hpp"
 
 // 0x4CD600
-int DamageArea::ApplyScatter()
+void DamageArea::ApplyScatter()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void DamageArea_ApplyScatter(int this)
 {
   int result; // eax
   void **v17; // esi
@@ -550,10 +549,9 @@ LABEL_23:
 }
 
 // 0x4D0180
-char DamageArea::CheckOccupancyEligibility()
+void DamageArea::CheckOccupancyEligibility()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_4D0180(int this)
 {
   int (__stdcall ***v3)(_DWORD, void *, int *); // ecx
 
@@ -629,7 +627,6 @@ LABEL_24:
 unsigned int * DamageArea::CalcScatterOffset(unsigned int * a2, short * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_565660(_DWORD *this, _DWORD *a2, __int16 *a3)
 {
   __int16 v6; // di
 

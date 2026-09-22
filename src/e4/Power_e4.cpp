@@ -7,10 +7,9 @@
 
 // 0x43A5D0
 namespace gamemd {
-int Power::Update(int * a2)
+void Power::Update(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Power_Update(_DWORD *this, int *a2)
 {
   AbstractClass::ProcessPower((int)this, a2); /*0x43a5d9*/
   return Power::TimerProcess((int)g_CurrentFrame - this->q00C); /*0x43a5f0*/
@@ -23,7 +22,6 @@ namespace gamemd {
 unsigned int * Power::UpdateAll()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall Power_UpdateAll(_DWORD *this)
 {
   int i; // esi
   int j; // esi
@@ -280,10 +278,9 @@ _DWORD *__thiscall Power_UpdateAll(_DWORD *this)
 
 // 0x68B940
 namespace gamemd {
-int Power::ComputeHousePowerChecksum(unsigned int * a2)
+void Power::ComputeHousePowerChecksum(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ComputeHousePowerChecksum(int this, unsigned int *a2)
 {
 
   Checksum::AddString(a2, (unsigned __int8 *)(this + 5050)); /*0x68b952*/

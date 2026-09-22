@@ -31,7 +31,6 @@ namespace game {
 void ObjectClass::sub_550080()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_550080(ObjectClass **this)
 {
   ObjectClass *v5; // edx
   _DWORD v8[4]; // [esp+4h] [ebp-10h] BYREF
@@ -93,7 +92,6 @@ namespace gamemd {
 void sub_550150()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_550150()
 {
 
   int v0 = g_TimerPool - 1; /*0x550159*/
@@ -156,10 +154,9 @@ LABEL_10:
 
 // 0x5509F0
 namespace gamemd {
-int PrepareTacticalClassCellTransform(BuildingTypeClass * a1)
+void PrepareTacticalClassCellTransform(BuildingTypeClass * a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall PrepareTacticalClassCellTransform(BuildingTypeClass *a1)
 {
   BuildingTypeClass *v1; // ebx
   ObjectClass *v2; // eax
@@ -548,10 +545,9 @@ LABEL_37:
 
 // 0x551C60
 namespace gamemd {
-unsigned int LCW_BitStreamIO(unsigned char * a1, unsigned int a2, int a3)
+void int LCW_BitStreamIO(unsigned char * a1, unsigned int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __fastcall LCW_BitStreamIO(unsigned __int8 *a1, unsigned int a2, int a3)
 {
   unsigned __int8 v6; // al
   unsigned __int8 v11; // al
@@ -688,10 +684,9 @@ unsigned int __fastcall LCW_BitStreamIO(unsigned __int8 *a1, unsigned int a2, in
 
 // 0x551E50
 namespace gamemd {
-int DecompressCoreLCW(Pipe * aP0, unsigned char * a1, int a3)
+void DecompressCoreLCW(Pipe * aP0, unsigned char * a1, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall DecompressCoreLCW(Pipe *aP0, _BYTE *a1, int a3)
 {
   Pipe *v5; // edi
   Pipe *v7; // ebx
@@ -847,10 +842,9 @@ LABEL_35:
 
 // 0x552640
 namespace gamemd {
-unsigned int sub_552640(unsigned char * a1, unsigned int a2)
+unsigned int int sub_552640(unsigned char * a1, unsigned int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int sub_552640(unsigned __int8 *a1, unsigned int a2)
 {
   unsigned __int8 v5; // al
   unsigned __int8 v10; // al
@@ -983,10 +977,9 @@ unsigned int sub_552640(unsigned __int8 *a1, unsigned int a2)
 
 // 0x554400
 namespace gamemd {
-char E4Recv_554400::sub_554400(int a2, int a3)
+void E4Recv_554400::sub_554400(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_554400(_DWORD *this, int a2, int a3)
 {
 
   if ( a2 != 4526 ) /*0x55440a*/
@@ -1004,7 +997,6 @@ namespace gamemd {
 void UpdateDeferredLightSurfaces(int a1, char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall UpdateDeferredLightSurfaces(int a1, char a2)
 {
   int i; // edi
   __int16 v19; // [esp-10h] [ebp-44h]
@@ -1112,10 +1104,9 @@ void __fastcall UpdateDeferredLightSurfaces(int a1, char a2)
 
 // 0x557380
 namespace gamemd {
-int E4Recv_557380::sub_557380(int a2)
+void E4Recv_557380::sub_557380(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_557380(int this, int a2)
 {
 
   ControlClass::CtorFromData((_DWORD *)this, a2); /*0x55738b*/
@@ -1191,10 +1182,9 @@ void sub_557380(int this, int a2)
 
 // 0x557B10
 namespace gamemd {
-char CheckListClass__vt_19_(char a2, int a3, unsigned int * a4)
+void CheckListClass__vt_19_(char a2, int a3, unsigned int * a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CheckListClass::vt_19_(char a2, int a3, _DWORD *a4)
 {
   char result; // al
 
@@ -1220,10 +1210,9 @@ void CheckListClass::vt_19_(char a2, int a3, _DWORD *a4)
 
 // 0x558810
 namespace gamemd {
-bool E4Recv_558810::ShowSaveLoadDialog(CampaignScore * aP1)
+void E4Recv_558810::ShowSaveLoadDialog(CampaignScore * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ShowSaveLoadDialog(int this, CampaignScore *aP1)
 {
   CampaignScore *v2; // eax
   v2 = aP1; /*0x558810*/
@@ -1238,10 +1227,9 @@ void ShowSaveLoadDialog(int this, CampaignScore *aP1)
 
 // 0x55B720
 namespace gamemd {
-int E4Recv_55B720::sub_55B720()
+void E4Recv_55B720::sub_55B720()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_55B720(_DWORD *this)
 {
   RulesClass *v1; // ebx
   wchar_t *v3; // edi
@@ -1322,10 +1310,9 @@ LABEL_16:
 
 // 0x55BC00
 namespace gamemd {
-int CompressLCWBuffer(Pipe * aP0, int edx0, unsigned char * a2, unsigned int * a3, int a5)
+void CompressLCWBuffer(Pipe * aP0, int edx0, unsigned char * a2, unsigned int * a3, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall CompressLCWBuffer(Pipe *aP0, int edx0, unsigned __int8 *a2, _DWORD *a3, int a5)
 {
   Pipe *v5; // edi
   unsigned __int8 *v6; // ebp
@@ -1662,10 +1649,9 @@ LABEL_72:
 
 // 0x55C0E0
 namespace gamemd {
-int DecodeBlockLCW(AbstractClass * aP0, Pipe * aP1, unsigned char * a2, unsigned int * a3, int a5)
+void DecodeBlockLCW(AbstractClass * aP0, Pipe * aP1, unsigned char * a2, unsigned int * a3, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall DecodeBlockLCW(AbstractClass *aP0, Pipe *aP1, _BYTE *a2, _DWORD *a3, int a5)
 {
   AbstractClass *v5; // eax
   AbstractClass *v7; // ebp
@@ -1852,10 +1838,9 @@ LABEL_14:
 
 // 0x55CFD0
 namespace gamemd {
-BOOL Game_Frame_Check()
+void Game_Frame_Check()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Game_Frame_Check()
 {
   int i; // [esp+10h] [ebp-74h]
 
@@ -2008,10 +1993,9 @@ LABEL_52:
 
 // 0x55D360
 namespace gamemd {
-int GameFrameLoop()
+void GameFrameLoop()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool __usercall GameFrameLoop@<al>(int a1@<ebp>)
 {
   _BYTE *WaypointCoords; // eax
   unsigned __int8 v24; // cl
@@ -2450,10 +2434,9 @@ LABEL_128:
 
 // 0x55F1E0
 namespace gamemd {
-int * DrawHUD()
+void * DrawHUD()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int *DrawHUD()
 {
   int *result; // eax
   int Type; // eax
@@ -2738,11 +2721,10 @@ int *DrawHUD()
 
 // 0x55F970
 namespace gamemd {
-int unknown_libname_21()
+void* unknown_libname_21()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // Microsoft VisualC 2-14/net runtime
-_DWORD *unknown_libname_21()
 {
   dword_ABCE70[0] = 3; /*0x5fa35a*/
   dword_ABCE70[1] = 1; /*0x5fa360*/
@@ -2789,10 +2771,9 @@ _DWORD *unknown_libname_21()
 
 // 0x55FDB0
 namespace gamemd {
-int Options_Screen_DlgProc(HWND hWnd, WPARAM wParam, unsigned int a3, HWND a4)
+void Options_Screen_DlgProc(HWND hWnd, WPARAM wParam, unsigned int a3, HWND a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Options_Screen_DlgProc(HWND hWnd, WPARAM wParam, unsigned int a3, HWND a4)
 {
   int result; // eax
   HWND v6; // eax

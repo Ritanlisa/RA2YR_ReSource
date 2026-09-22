@@ -32,10 +32,9 @@
 
 // 0x4C1440
 namespace gamemd {
-int sub_4C1440()
+void sub_4C1440()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_4C1440()
 {
   int result; // eax
 
@@ -78,10 +77,9 @@ void sub_4C1440()
 
 // 0x4C14D0
 namespace gamemd {
-int sub_4C14D0()
+void sub_4C14D0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_4C14D0()
 {
   int result; // eax
 
@@ -172,10 +170,9 @@ void sub_4C14D0()
 
 // 0x4C1600
 namespace gamemd {
-int sub_4C1600()
+void sub_4C1600()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_4C1600()
 {
   int result; // eax
 
@@ -216,10 +213,9 @@ void sub_4C1600()
 
 // 0x4C16A0
 namespace gamemd {
-int InitializeRadialGradientTexture()
+void InitializeRadialGradientTexture()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void InitializeRadialGradientTexture()
 {
   int result; // eax
 
@@ -352,10 +348,9 @@ void InitializeRadialGradientTexture()
 
 // 0x4C1E70
 namespace gamemd {
-int sub_4C1E70(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
+void sub_4C1E70(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_4C1E70(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
 
   int v16[2]; // [esp+10h] [ebp-8h] BYREF
@@ -385,10 +380,9 @@ void sub_4C1E70(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, 
 
 // 0x4C2790
 namespace gamemd {
-int E4Recv_4C2790::sub_4C2790()
+void E4Recv_4C2790::sub_4C2790()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_4C2790(int this)
 {
   int result; // eax
 
@@ -419,10 +413,9 @@ void sub_4C2790(int this)
 
 // 0x4C2830
 namespace gamemd {
-int sub_4C2830()
+void sub_4C2830()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_4C2830()
 {
   int result; // eax
   void *Block; // [esp+18h] [ebp-24h] BYREF
@@ -511,7 +504,6 @@ namespace gamemd {
 void sub_4C29E0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_4C29E0()
 {
   int i; // esi
 
@@ -543,10 +535,9 @@ void sub_4C29E0()
 
 // 0x4C38E0
 namespace gamemd {
-char * sub_4C38E0(char * a1, int a2, int a3, char * a4)
+char * * sub_4C38E0(char * a1, int a2, int a3, char * a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__fastcall sub_4C38E0(char *a1, int a2, int a3, char *a4)
 {
   unsigned __int8 *v8; // edi
   __int16 v14; // [esp+10h] [ebp-10h] BYREF
@@ -604,10 +595,9 @@ LABEL_6:
 
 // 0x4C3DD0
 namespace gamemd {
-int E4Recv_4C3DD0::sub_4C3DD0(int a2)
+void E4Recv_4C3DD0::sub_4C3DD0(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_4C3DD0(int *this, int a2)
 {
 
   TextRenderer::GetInstance(); /*0x4c3dd9*/
@@ -631,10 +621,9 @@ void sub_4C3DD0(int *this, int a2)
 
 // 0x4C83E0
 namespace gamemd {
-INT_PTR DialogFunc(HWND hDlg, UINT a2, WPARAM a3, LPARAM a4)
+void DialogFunc(HWND hDlg, UINT a2, WPARAM a3, LPARAM a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-INT_PTR __stdcall DialogFunc(HWND hDlg, UINT a2, WPARAM a3, LPARAM a4)
 {
   if ( a2 > 0x111 ) /*0x4c83ea*/
   {
@@ -681,7 +670,6 @@ namespace gamemd {
 unsigned int * E4Recv_4C95D0::sub_4C95D0(unsigned int * a2, unsigned short * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_4C95D0(_WORD *this, _DWORD *a2, _WORD *a3)
 {
   __int16 v3; // bx
   __int16 v11; // cx
@@ -737,10 +725,9 @@ LABEL_15:
 
 // 0x4CB150
 namespace gamemd {
-double ComputeDistortionVariant(float a1)
+void ComputeDistortionVariant(float a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ComputeDistortionVariant(float a1)
 {
 
   int v1 = Math::RoundToInt(flt_8223B0 * a1); /*0x4cb161*/
@@ -758,11 +745,10 @@ void ComputeDistortionVariant(float a1)
 
 // 0x4CB4C0
 namespace gamemd {
-int sub_4CB4C0()
+void sub_4CB4C0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // write access to const memory has been detected, the output may be wrong!
-void sub_4CB4C0()
 {
   PVOID BaseAddress; // esi
   SIZE_T RegionSize; // edi
@@ -799,10 +785,9 @@ void sub_4CB4C0()
 
 // 0x4CB580
 namespace gamemd {
-ObjectClass * E4Recv_4CB580::sub_4CB580(char * Source, int a3)
+void * E4Recv_4CB580::sub_4CB580(char * Source, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-ObjectClass *__thiscall sub_4CB580(char *this, char *Source, int a3)
 {
 
   strncpy(this, Source, (IUnknown *)4); /*0x4cb58d*/
@@ -822,10 +807,9 @@ ObjectClass *__thiscall sub_4CB580(char *this, char *Source, int a3)
 
 // 0x4CB640
 namespace gamemd {
-ObjectClass * E4Recv_4CB640::sub_4CB640(RandomStruct * aP1, int a3)
+void * E4Recv_4CB640::sub_4CB640(RandomStruct * aP1, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-ObjectClass *__thiscall sub_4CB640(char *this, RandomStruct *aP1, int a3)
 {
 
   strncpy(this, (const char *)aP1, (IUnknown *)4); /*0x4cb64d*/
@@ -845,10 +829,9 @@ ObjectClass *__thiscall sub_4CB640(char *this, RandomStruct *aP1, int a3)
 
 // 0x4CB6A0
 namespace gamemd {
-ObjectClass * E4Recv_4CB6A0::sub_4CB6A0(RandomStruct * aP1, int a3)
+void * E4Recv_4CB6A0::sub_4CB6A0(RandomStruct * aP1, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-ObjectClass *__thiscall sub_4CB6A0(char *this, RandomStruct *aP1, int a3)
 {
 
   strncpy(this, (const char *)aP1, (IUnknown *)4); /*0x4cb6ad*/
@@ -868,10 +851,9 @@ ObjectClass *__thiscall sub_4CB6A0(char *this, RandomStruct *aP1, int a3)
 
 // 0x4CEFB0
 namespace gamemd {
-int FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a5, int a6)
+void FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a5, int a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a5, int a6)
 {
   int **v6; // esi
   void *NearbyCell; // eax

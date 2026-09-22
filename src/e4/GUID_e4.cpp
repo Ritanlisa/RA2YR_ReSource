@@ -6,7 +6,6 @@
 bool GUID::Compare(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool GUID_Compare(char *this, int a2)
 {
 
   if ( dword_828140 == 2 ) /*0x53ee7d*/

@@ -5,11 +5,10 @@
 
 // 0x537F90
 namespace gamemd {
-int DeleteCommandClass_Undo()
+void DeleteCommandClass_Undo()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // attributes: thunk
-void DeleteCommandClass::_vt08(int a1)
 {
   return UI_Delete(); /*0x537f95*/
 }

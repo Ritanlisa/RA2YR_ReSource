@@ -4,10 +4,9 @@
 
 // 0x5EA180
 namespace gamemd {
-char GameLobby_Setup(HWND hDlg, void * a2)
+void GameLobby_Setup(HWND hDlg, void * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall GameLobby_Setup(HWND hDlg, void *a2)
 {
   int i; // esi
   HWND DlgItem; // eax

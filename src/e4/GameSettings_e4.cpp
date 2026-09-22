@@ -6,10 +6,9 @@
 #include "e4/classes/Network_e4.hpp"
 
 // 0x5FA620
-char * GameSettings::Read()
+void * GameSettings::Read()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall GameSettings::Read(unsigned __int16 *this)
 {
   int Int_Overwrite; // eax
   CCINIClass *v6; // ecx
@@ -286,10 +285,9 @@ char *__thiscall GameSettings::Read(unsigned __int16 *this)
 }
 
 // 0x5FB050
-char * GameSettings::ParseNetworkAddress()
+void * GameSettings::ParseNetworkAddress()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall sub_5FB050(const char *this)
 {
   unsigned __int16 v2; // ax
   char *result; // eax
@@ -347,7 +345,6 @@ char *__thiscall sub_5FB050(const char *this)
 void GameSettings::SetScoreVolume(int volume)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void GameSettings::SetScoreVolume(int volume)
 {
   MouseClass *result; // eax
 

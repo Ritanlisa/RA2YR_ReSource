@@ -7,10 +7,9 @@
 #include "e4/classes/Object_e4.hpp"
 
 // 0x655C50
-int FogOfWar::RevealArea(RadarClass * aP1)
+void FogOfWar::RevealArea(RadarClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void FogOfWar::RevealArea(int this, RadarClass *aP1)
 {
   IUnknown *result; // eax
   IUnknown *v6; // ecx
@@ -221,10 +220,9 @@ LABEL_45:
 }
 
 // 0x656150
-int FogOfWar::RenderCell()
+void FogOfWar::RenderCell()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_656150(int this)
 {
   int result; // eax
   int BuildingAnimByName; // ebx
@@ -299,7 +297,6 @@ void sub_656150(int this)
 void FogOfWar::RevealCell(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void FogOfWar::RevealCell(int this, IUnknown *aP1)
 {
 
   if ( aP1->field_0 >= 0 /*0x656310*/
@@ -335,10 +332,9 @@ void FogOfWar::RevealCell(int this, IUnknown *aP1)
 }
 
 // 0x657CE0
-int FogOfWar::Render()
+void FogOfWar::Render()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void FogOfWar::Render(int **this)
 {
   int result; // eax
   int i; // [esp+10h] [ebp-24h]

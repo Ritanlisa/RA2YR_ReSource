@@ -17,10 +17,9 @@
 
 // 0x5D4210
 namespace gamemd {
-int NetworkLobby::MessageList_Append(int a2, int a3, CellStruct * aP3, char a5, int a6)
+void NetworkLobby::MessageList_Append(int a2, int a3, CellStruct * aP3, char a5, int a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void NetworkLobby::MessageList_Append(int a2, int a3, CellStruct *aP3, char a5, int a6)
 {
   int i; // edi
   CellStruct *v14; // ebx
@@ -129,7 +128,6 @@ namespace gamemd {
 int NetworkLobby_UpdatePlayerList()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __usercall NetworkLobby::UpdatePlayerList@<eax>(CampaignScore *a1@<edi>)
 {
   int result; // eax
   HWND Current; // esi
@@ -184,10 +182,9 @@ int __usercall NetworkLobby::UpdatePlayerList@<eax>(CampaignScore *a1@<edi>)
 
 // 0x5DC350
 namespace gamemd {
-char NetworkLobby::CreateGame()
+void NetworkLobby::CreateGame()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void NetworkLobby::CreateGame()
 {
   DLGTEMPLATE *DialogIndirect; // esi
   void (__stdcall *v1)(const MSG *); // edi
@@ -1160,10 +1157,9 @@ LABEL_202:
 
 // 0x5DE520
 namespace gamemd {
-INT_PTR NetworkLobby::DlgProc(HWND hDlg, UINT a2, WPARAM nIDDlgItem, unsigned int lParam)
+void NetworkLobby::DlgProc(HWND hDlg, UINT a2, WPARAM nIDDlgItem, unsigned int lParam)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-INT_PTR __stdcall NetworkLobby::DlgProc(HWND hDlg, UINT a2, WPARAM nIDDlgItem, unsigned int lParam)
 {
   wchar_t *StringCSF; // ebp
   HWND v5; // eax
@@ -1627,10 +1623,9 @@ LABEL_75:
 
 // 0x5E00B0
 namespace gamemd {
-int NetworkLobby_MessageHandler()
+void NetworkLobby_MessageHandler()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __usercall NetworkLobby::MessageHandler@<al>(CampaignScore *a1@<edi>)
 {
   char result; // al
   wchar_t *v10; // eax
@@ -2789,7 +2784,6 @@ namespace gamemd {
 void NetworkLobby::SetupPlayers()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void NetworkLobby::SetupPlayers()
 {
   CCINIClass *v2; // edi
   __int64 kr00_8_2; // kr00_8
@@ -3001,10 +2995,9 @@ void NetworkLobby::SetupPlayers()
 
 // 0x5E9240
 namespace gamemd {
-int NetworkLobby::AssignPlayerSlot()
+void NetworkLobby::AssignPlayerSlot()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void NetworkLobby::AssignPlayerSlot(LPARAM this)
 {
   int result; // eax
   LPARAM *v2; // edx
@@ -3026,10 +3019,9 @@ void NetworkLobby::AssignPlayerSlot(LPARAM this)
 
 // 0x5E9E00
 namespace gamemd {
-int NetworkLobby::InitLobbyDropdowns()
+void NetworkLobby::InitLobbyDropdowns()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void NetworkLobby::InitLobbyDropdowns()
 {
   int i; // ebp
   void *ResourceID4CSF; // esi
@@ -3060,10 +3052,9 @@ void NetworkLobby::InitLobbyDropdowns()
 
 // 0x5EA2A0
 namespace gamemd {
-HWND * NetworkLobby::Dispatch()
+void * NetworkLobby::Dispatch()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-HWND *__thiscall sub_5EA2A0(HWND this)
 {
   int i; // esi
   HWND DlgItem; // ebx
@@ -3141,10 +3132,9 @@ LABEL_34:
 
 // 0x5EB660
 namespace gamemd {
-char NetworkLobby::SetupPlayerSlotControls()
+void NetworkLobby::SetupPlayerSlotControls()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void NetworkLobby::SetupPlayerSlotControls(HWND this)
 {
   int i; // edi
   LRESULT v4; // eax
@@ -3221,7 +3211,6 @@ namespace gamemd {
 char NetworkLobby::FillOptionCombo()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char NetworkLobby_FillOptionCombo()
 {
   HWND ResourceID4; // eax
   HWND v4; // esi

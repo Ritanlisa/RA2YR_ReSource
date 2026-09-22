@@ -4,10 +4,9 @@
 #include "e4/classes/Debug_e4.hpp"
 
 // 0x7B2630
-char Socket::ConfigureBuffers(AnimClass * aP1)
+void Socket::ConfigureBuffers(AnimClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Socket::ConfigureBuffers(AnimClass *aP1)
 {
   AnimClass *v2; // esi
   v2 = aP1; /*0x7b2631*/

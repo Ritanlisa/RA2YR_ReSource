@@ -5,10 +5,9 @@
 #include "e4/classes/Vector_e4.hpp"
 
 // 0x533D20
-char KeyboardConfig::LoadINI()
+void KeyboardConfig::LoadINI()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void KeyboardConfig_LoadINI()
 {
   const char *StringByIndex; // ebp
   int i; // [esp+4h] [ebp-CCh]
@@ -88,10 +87,9 @@ LABEL_14:
 }
 
 // 0x538B80
-char KeyboardConfig::ReleaseBuffer(int a2)
+void KeyboardConfig::ReleaseBuffer(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_538B80(int this, int a2)
 {
   int i; // ecx
 

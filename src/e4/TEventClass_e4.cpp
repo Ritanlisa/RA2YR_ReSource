@@ -9,10 +9,9 @@
 
 // 0x71E940
 namespace gamemd {
-char TEventClass::Execute(int a2, int a3, int a4, int * a5, int a6, int a7)
+void TEventClass::Execute(int a2, int a3, int a4, int * a5, int a6, int a7)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TEventClass::Execute(int a2, int a3, int a4, int *a5, int a6, int a7)
 {
   int *WorldCoords; // eax
   int Owner; // esi
@@ -427,10 +426,9 @@ LABEL_122:
 
 // 0x71F390
 namespace gamemd {
-int TEventClass::PrepareSaveToINI(const char * a2)
+void TEventClass::PrepareSaveToINI(const char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TEventClass::PrepareSaveToINI(const char *a2)
 {
   int v3; // eax
   int v4; // esi
@@ -531,10 +529,9 @@ void TEventClass::PrepareSaveToINI(const char *a2)
 
 // 0x71F800
 namespace gamemd {
-int TEventClass::CheckConditions(int a2, int a3)
+void TEventClass::CheckConditions(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TEventClass::_vt10(int a2, int a3)
 {
   int result; // eax
 
@@ -553,10 +550,9 @@ void TEventClass::_vt10(int a2, int a3)
 
 // 0x71FA80
 namespace gamemd {
-TEventClass * TEventClass::Fire(char a2)
+void * TEventClass::Fire(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-TEventClass *__thiscall TEventClass::Fire(void **this, char a2)
 {
   void **v7; // [esp+8h] [ebp-4h] BYREF
 

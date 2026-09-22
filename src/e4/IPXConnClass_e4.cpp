@@ -8,16 +8,6 @@
 void * IPXConnClass::constructor(int aP1, SessionClass * aP2, IPXConnClass * aP3, IPXConnClass * aP4, unsigned int * a5, int a7, wchar_t * Source, int aP8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void *__thiscall IPXConnClass::constructor(
-        void *this,
-        int aP1,
-        SessionClass *aP2,
-        IPXConnClass *aP3,
-        IPXConnClass *aP4,
-        _DWORD *a5,
-        int a7,
-        wchar_t *Source,
-        int aP8)
 {
   IPXConnClass *v10; // ecx
   __int16 v11; // dx

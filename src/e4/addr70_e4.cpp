@@ -19,10 +19,9 @@
 
 // 0x7049C0
 namespace gamemd {
-char DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a5, int a6, int a7, char a8, char a9)
+void DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a5, int a6, int a7, char a8, char a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void DrawTacticalMapLine(
         FootClass *aP0,
         FootClass *aP1,
         int a3,
@@ -196,11 +195,10 @@ void DrawTacticalMapLine(
 
 // 0x704E40
 namespace gamemd {
-int DrawTacticalLaserLine()
+void DrawTacticalLaserLine()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // local variable allocation has failed, the output may be wrong!
-void TacticalMap_DrawLaserLine(int a1, int a2, int a3, int a4, int a5, int a6, int a7)
 {
   DWORD Time; // eax
   int result; // eax
@@ -313,18 +311,6 @@ namespace gamemd {
 void * TechnoClass_RenderVoxel(int * a1, int a2, void * a3, unsigned int * a4, const void * a5, int a6, int * a7, unsigned int a8, int a9, int a10, int a11)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void *__fastcall TechnoClass_RenderVoxel(
-        int *a1,
-        int a2,
-        void *a3,
-        _DWORD *a4,
-        const void *a5,
-        int a6,
-        int *a7,
-        unsigned int a8,
-        int a9,
-        int a10,
-        int a11)
 {
   int v19; // ebx
   _DWORD *v20; // edi
@@ -492,7 +478,6 @@ namespace gamemd {
 void __usercall SelectTargetByWeight(unsigned int *a1@<ecx> a1, int a2@<esi> a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __usercall SelectTargetByWeight(_DWORD *a1@<ecx>, int a2@<esi>)
 {
   int i; // edx
   int k; // eax
@@ -645,7 +630,6 @@ namespace gamemd {
 void UpdateTimedStateMachine(int * a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall UpdateTimedStateMachine(int *a1)
 {
 
   if ( a1
@@ -834,10 +818,9 @@ LABEL_50:
 
 // 0x70F120
 namespace gamemd {
-DWORD TechnoClass_RevealRadarEvent(int a1, int a2)
+unsigned long long TechnoClass_RevealRadarEvent(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-DWORD __fastcall TechnoClass_RevealRadarEvent(int a1, int a2)
 {
   DWORD Ticks; // eax
   DWORD result; // eax

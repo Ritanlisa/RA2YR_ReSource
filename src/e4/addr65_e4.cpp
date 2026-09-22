@@ -32,7 +32,6 @@ namespace gamemd {
 int Trigger_AllocateLog(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall Trigger_AllocateLog(int a1)
 {
   int result; // eax
   int i; // esi
@@ -493,7 +492,6 @@ namespace gamemd {
 int sub_652630(unsigned int * a1, unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_652630(_DWORD *a1, _DWORD *a2)
 {
   if ( *a1 == *a2 )
     return 0; /*0x652640*/
@@ -505,10 +503,9 @@ int sub_652630(_DWORD *a1, _DWORD *a2)
 
 // 0x653FA0
 namespace gamemd {
-int RenderScoreboardSidebar()
+void RenderScoreboardSidebar()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __usercall RenderScoreboardSidebar@<al>(_DWORD *a1@<ecx>, CampaignScore *a2@<ebp>, CampaignScore *a3@<ebx>)
 {
   ConvertClass *v6; // eax
   int BuildingAnimByName; // eax
@@ -715,7 +712,6 @@ namespace gamemd {
 unsigned int * E4Recv_655050::sub_655050(unsigned int * a2, short * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_655050(_DWORD *this, _DWORD *a2, __int16 *a3)
 {
 
   int v3 = *a3; /*0x655063*/
@@ -744,10 +740,9 @@ LABEL_5:
 
 // 0x655890
 namespace gamemd {
-int E4Recv_655890::sub_655890()
+void E4Recv_655890::sub_655890()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_655890(_DWORD *this)
 {
   return *this + 251 * *(this + 1); /*0x6558a3*/
 }
@@ -756,10 +751,9 @@ void sub_655890(_DWORD *this)
 
 // 0x658640
 namespace gamemd {
-LRESULT DrawPowerBarForPlayers(HWND hDlg)
+void DrawPowerBarForPlayers(HWND hDlg)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-LRESULT __stdcall DrawPowerBarForPlayers(HWND hDlg)
 {
   #375 *v4; // esi
 
@@ -801,10 +795,9 @@ LABEL_7:
 
 // 0x6586D0
 namespace gamemd {
-int sub_6586D0()
+void sub_6586D0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_6586D0()
 {
   HWND Dialog; // esi
   LONG dwNewLong; // [esp+4h] [ebp-4h] BYREF
@@ -838,7 +831,6 @@ namespace gamemd {
 void UpdateProjectileTrails()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void UpdateProjectileTrails()
 {
   void *Block; // [esp+14h] [ebp-1Ch] BYREF
 
@@ -962,10 +954,9 @@ LABEL_23:
 
 // 0x659590
 namespace gamemd {
-char E4Recv_659590::sub_659590(unsigned int * a2, unsigned int * a3, short a4)
+void E4Recv_659590::sub_659590(unsigned int * a2, unsigned int * a3, short a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_659590(_DWORD *this, _DWORD *a2, _DWORD *a3, __int16 a4)
 {
   char result; // al
 
@@ -1003,7 +994,6 @@ namespace gamemd {
 int sub_65B160()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_65B160()
 {
   dword_B04BD4 = 0; /*0x65b167*/
   dword_B04BD8 = 0; /*0x65b16c*/
@@ -1022,7 +1012,6 @@ namespace gamemd {
 void sub_65B1A0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_65B1A0()
 {
   RadSiteClass_Array = (int)&vt_VectorClass_RadSiteClass; /*0x65b1a8*/
   if ( dword_B04BD4 && byte_B04BDD ) /*0x65b1bc*/
@@ -1038,10 +1027,9 @@ void sub_65B1A0()
 
 // 0x65C300
 namespace gamemd {
-int RAMFileClass::nullsub_0_1()
+void RAMFileClass::nullsub_0_1()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void nullsub_0_1(RAMFileClass *this)
 {
   if ( (*(unsigned __int8 (__thiscall **)(RAMFileClass *))(*(_DWORD *)this->__pad_0 + 24))(this) ) /*0x65c305*/
     return 0; /*0x65c31a*/
@@ -1053,10 +1041,9 @@ void nullsub_0_1(RAMFileClass *this)
 
 // 0x65C350
 namespace gamemd {
-int RAMFileClass::nullsub_0_2(int a2)
+void RAMFileClass::nullsub_0_2(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void nullsub_0_2(RAMFileClass *this, int a2)
 {
   if ( !this->field_8 || (*(unsigned __int8 (__thiscall **)(RAMFileClass *))(*(_DWORD *)this->__pad_0 + 24))(this) ) /*0x65c35c*/
     return 0; /*0x65c391*/
@@ -1072,10 +1059,9 @@ void nullsub_0_2(RAMFileClass *this, int a2)
 
 // 0x65C3A0
 namespace gamemd {
-size_t RAMFileClass::nullsub_0_3(void * a1, signed int Size)
+void RAMFileClass::nullsub_0_3(void * a1, signed int Size)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void nullsub_0_3(RAMFileClass *this, void *a1, signed int Size)
 {
   size_t v4; // edi
   if ( !this->field_8 ) /*0x65c3a6*/
@@ -1109,10 +1095,9 @@ LABEL_7:
 
 // 0x65C420
 namespace gamemd {
-int RAMFileClass::nullsub_0_4(int a2, int a3)
+void RAMFileClass::nullsub_0_4(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void nullsub_0_4(RAMFileClass *this, int a2, int a3)
 {
   int result; // eax
 
@@ -1150,10 +1135,9 @@ LABEL_11:
 
 // 0x65C560
 namespace gamemd {
-int RAMFileClass::nullsub_0_6(int a2)
+void RAMFileClass::nullsub_0_6(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void nullsub_0_6(RAMFileClass *this, int a2)
 {
   return (*(int (__thiscall **)(RAMFileClass *))(*(_DWORD *)this->__pad_0 + 4))(this); /*0x65c565*/
 }
@@ -1165,7 +1149,6 @@ namespace gamemd {
 void * RAMFileClass::nullsub_0_10(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void *__thiscall nullsub_0_10(RAMFileClass *this, char a2)
 {
 
   char v3 = *((_BYTE *)this + 29); /*0x65c5a3*/
@@ -1187,11 +1170,10 @@ void *__thiscall nullsub_0_10(RAMFileClass *this, char a2)
 
 // 0x65C630
 namespace gamemd {
-int unknown_libname_28()
+void unknown_libname_28()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // Microsoft VisualC 2-14/net runtime
-_DWORD *__thiscall unknown_libname_28(_DWORD *this, int a2)
 {
   *this = a2; /*0x65c636*/
   return this; /*0x65c638*/
@@ -1201,10 +1183,9 @@ _DWORD *__thiscall unknown_libname_28(_DWORD *this, int a2)
 
 // 0x65C910
 namespace gamemd {
-int E4Recv_65C910::sub_65C910(ObjectClass * aP1, int a3)
+void E4Recv_65C910::sub_65C910(ObjectClass * aP1, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_65C910(_DWORD *this, ObjectClass *aP1, int a3)
 {
   int result; // eax
   ObjectClass *v5; // ecx
@@ -1284,10 +1265,9 @@ void sub_65C910(_DWORD *this, ObjectClass *aP1, int a3)
 
 // 0x65D510
 namespace gamemd {
-unsigned int sub_65D510(int a1, const char * a2, int a3, unsigned char * a4)
+unsigned int int sub_65D510(int a1, const char * a2, int a3, unsigned char * a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __fastcall sub_65D510(int a1, const char *a2, int a3, _BYTE *a4)
 {
 
   unsigned int v4 = 0; /*0x65d518*/
@@ -1333,10 +1313,9 @@ LABEL_10:
 
 // 0x65D5C0
 namespace gamemd {
-unsigned int Stream_ReadLine(int a1, const char * a2, int a3, unsigned char * a4)
+void int Stream_ReadLine(int a1, const char * a2, int a3, unsigned char * a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __fastcall Stream_ReadLine(int a1, const char *a2, int a3, _BYTE *a4)
 {
 
   if ( !a3 || !a2 ) /*0x65d5d3*/
@@ -1378,7 +1357,6 @@ namespace gamemd {
 bool DeployScriptActionPlane(int a1, int edx0)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool __fastcall DeployScriptActionPlane(int a1, int edx0)
 {
   ObjectClass *v2; // edi
   ScriptTypeClass *v4; // eax
@@ -1609,10 +1587,9 @@ LABEL_49:
 
 // 0x65E010
 namespace gamemd {
-char MoveScriptTypeClassToWaypoint(ScriptTypeClass * aP0, ObjectClass * aP1, int * a2, int aP1_4)
+void MoveScriptTypeClassToWaypoint(ScriptTypeClass * aP0, ObjectClass * aP1, int * a2, int aP1_4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall MoveScriptTypeClassToWaypoint(ScriptTypeClass *aP0, ObjectClass *aP1, int *a2, int aP1_4)
 {
   ScriptTypeClass *v4; // esi
   ObjectClass *v5; // ebp
@@ -1944,10 +1921,9 @@ LABEL_53:
 
 // 0x65E660
 namespace gamemd {
-int SpawnSuperWeaponUnits(unsigned int * a0, int a2, IUnknown * aP2, int a4, int a5, int a6, int a7, int a8)
+void SpawnSuperWeaponUnits(unsigned int * a0, int a2, IUnknown * aP2, int a4, int a5, int a6, int a7, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall SpawnSuperWeaponUnits(unsigned int *a0, int a2, IUnknown *aP2, int a4, int a5, int a6, int a7, int a8)
 {
   MouseClass *v9; // ecx
   MouseClass *TransitionCount; // eax
@@ -2040,10 +2016,9 @@ int __fastcall SpawnSuperWeaponUnits(unsigned int *a0, int a2, IUnknown *aP2, in
 
 // 0x65E850
 namespace gamemd {
-int PlaceAircraftOnMap(unsigned int * a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
+void PlaceAircraftOnMap(unsigned int * a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall PlaceAircraftOnMap(unsigned int *a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
   unsigned int TransitionCount; // eax
 
@@ -2162,10 +2137,9 @@ int __fastcall PlaceAircraftOnMap(unsigned int *a1, int a2, int a3, int a4, int 
 
 // 0x65EC30
 namespace gamemd {
-char ExecuteScriptTypeClassActions(unsigned int * ecx0, int a2)
+void ExecuteScriptTypeClassActions(unsigned int * ecx0, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall ExecuteScriptTypeClassActions(_DWORD *ecx0, int a2)
 {
   ScriptTypeClass *v4; // eax
   ScriptTypeClass *v6; // eax
@@ -2504,10 +2478,9 @@ LABEL_22:
 
 // 0x65FA70
 namespace gamemd {
-char CreateTriggerClassIfFarEnough(IUnknown * aP0, int a2, IUnknown * aP2)
+void CreateTriggerClassIfFarEnough(IUnknown * aP0, int a2, IUnknown * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall CreateTriggerClassIfFarEnough(IUnknown *aP0, int a2, IUnknown *aP2)
 {
   IUnknown *v3; // edi
   CCINIClass *v5; // ecx

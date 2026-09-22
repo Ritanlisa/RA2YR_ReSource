@@ -26,10 +26,9 @@
 
 // 0x792CF0
 namespace gamemd {
-INT_PTR sub_792CF0(HWND hWnd, UINT a2, WPARAM a3, char * a4)
+void sub_792CF0(HWND hWnd, UINT a2, WPARAM a3, char * a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-INT_PTR __stdcall sub_792CF0(HWND hWnd, UINT a2, WPARAM a3, char *a4)
 {
   INT_PTR result; // eax
   HWND DlgItem; // esi
@@ -98,10 +97,9 @@ LABEL_6:
 
 // 0x793280
 namespace gamemd {
-INT_PTR sub_793280(HWND hWnd, UINT a2, WPARAM a3, char * a4)
+void sub_793280(HWND hWnd, UINT a2, WPARAM a3, char * a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-INT_PTR __stdcall sub_793280(HWND hWnd, UINT a2, WPARAM a3, char *a4)
 {
   INT_PTR result; // eax
   HWND DlgItem; // eax
@@ -190,10 +188,9 @@ INT_PTR __stdcall sub_793280(HWND hWnd, UINT a2, WPARAM a3, char *a4)
 
 // 0x793490
 namespace gamemd {
-HWND HandleWOLForwardingError()
+void HandleWOLForwardingError()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-HWND HandleWOLForwardingError()
 {
   HWND result; // eax
   ObjectClass *i; // edx
@@ -322,7 +319,6 @@ namespace gamemd {
 int sub_793B30(char a1, const char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_793B30(char a1, const char *a2)
 {
 
   _BYTE v3[3]; // [esp+0h] [ebp-100h] BYREF
@@ -341,10 +337,9 @@ int __fastcall sub_793B30(char a1, const char *a2)
 
 // 0x793D20
 namespace gamemd {
-char NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
+void NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall NegotiateNetworkConnection(IUnknown *aP0, int a2, int a3)
 {
   IUnknown *v3; // ebp
   IUnknown *v5; // edi
@@ -824,7 +819,6 @@ namespace gamemd {
 char NetworkLobby_WaitForPlayers()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char NetworkLobby_WaitForPlayers()
 {
   HWND v1; // esi
   HWND DlgItem; // eax
@@ -998,7 +992,6 @@ namespace gamemd {
 void WOL_StartGame()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void WOL_StartGame()
 {
   DLGTEMPLATE *Indirect; // eax
   wchar_t *String; // eax
@@ -1427,7 +1420,6 @@ namespace gamemd {
 int WOL_NegotiateScenario(char a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall WOL_NegotiateScenario(char a1)
 {
   char *Flagged; // esi
   int v11; // esi
@@ -1892,7 +1884,6 @@ namespace gamemd {
 char HandleWOLRematch()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char HandleWOLRematch()
 {
   HWND v3; // eax
   HWND DlgItem; // eax
@@ -1981,10 +1972,9 @@ LABEL_13:
 
 // 0x796B90
 namespace gamemd {
-int WOL_LobbyDlgProc(HWND hWnd, LONG a2, int a3, HWND a4)
+void WOL_LobbyDlgProc(HWND hWnd, LONG a2, int a3, HWND a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void WOL_LobbyDlgProc(HWND hWnd, LONG a2, int a3, HWND a4)
 {
   HWND v4; // ebp
   HWND v5; // esi
@@ -2088,10 +2078,9 @@ void WOL_LobbyDlgProc(HWND hWnd, LONG a2, int a3, HWND a4)
 
 // 0x7970D0
 namespace gamemd {
-int NetworkGame_Init()
+void NetworkGame_Init()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void NetworkGame_Init()
 {
   int i; // esi
   DWORD nSize; // [esp+14h] [ebp-428h] BYREF
@@ -2291,7 +2280,6 @@ namespace gamemd {
 int sub_797640(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_797640(int a1)
 {
   DWORD i; // esi
   wchar_t *String; // eax
@@ -2387,10 +2375,9 @@ LABEL_22:
 
 // 0x797800
 namespace gamemd {
-char WOL_FetchData()
+void WOL_FetchData()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void WOL_FetchData()
 {
   wchar_t *String; // eax
   HANDLE *v1; // esi
@@ -2601,10 +2588,9 @@ LABEL_12:
 
 // 0x797C20
 namespace gamemd {
-char WOL_InitVersionStrings()
+void WOL_InitVersionStrings()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void WOL_InitVersionStrings()
 {
   char result; // al
   const char **v1; // esi
@@ -2730,10 +2716,9 @@ void WOL_InitVersionStrings()
 
 // 0x7982D0
 namespace gamemd {
-DWORD sub_7982D0(int a1, DWORD a2)
+int sub_7982D0(int a1, DWORD a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-DWORD __fastcall sub_7982D0(int a1, DWORD a2)
 {
   CreateGameDialogControl *v4; // ecx
   DWORD v5; // esi
@@ -2765,10 +2750,9 @@ LABEL_4:
 
 // 0x7983E0
 namespace gamemd {
-int Multiplayer_Setup2_DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
+void Multiplayer_Setup2_DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Multiplayer_Setup2_DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 {
   int result; // eax
   LONG WindowLongA; // ecx
@@ -2952,10 +2936,9 @@ void Multiplayer_Setup2_DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned int
 
 // 0x7988C0
 namespace gamemd {
-int Multiplayer_GameMode_DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
+void Multiplayer_GameMode_DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Multiplayer_GameMode_DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 {
   int result; // eax
   LONG WindowLongA; // ecx
@@ -3148,10 +3131,9 @@ void Multiplayer_GameMode_DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned i
 
 // 0x799080
 namespace gamemd {
-int MainLobbyDlgProcWOL(HWND hWnd, LPARAM lParam, ObjectClass a3)
+void MainLobbyDlgProcWOL(HWND hWnd, LPARAM lParam, ObjectClass a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MainLobbyDlgProcWOL(HWND hWnd, LPARAM lParam, ObjectClass a3)
 {
   HWND v5; // esi
   int result; // eax
@@ -3565,10 +3547,9 @@ LABEL_67:
 
 // 0x799EA0
 namespace gamemd {
-int WOL_OptionsDlgProc(HWND hWnd, const char * lParam, int a3, int hCtl)
+void WOL_OptionsDlgProc(HWND hWnd, const char * lParam, int a3, int hCtl)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void WOL_OptionsDlgProc(HWND hWnd, const char *lParam, int a3, int hCtl)
 {
   HWND v4; // ebp
   HWND v5; // esi
@@ -4165,10 +4146,9 @@ LABEL_44:
 
 // 0x79BA60
 namespace gamemd {
-char ValidateGameJoinWOL(BlowStraw * aP0, ObjectClass * aP1, char a3)
+void ValidateGameJoinWOL(BlowStraw * aP0, ObjectClass * aP1, char a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall ValidateGameJoinWOL(BlowStraw *aP0, ObjectClass *aP1, char a3)
 {
   int BlowStraw_field_0x08; // eax
   wchar_t *StringCSF; // eax
@@ -4265,7 +4245,6 @@ namespace gamemd {
 bool WOL_FindBuddy()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool WOL_FindBuddy()
 {
   bool result; // al
 
@@ -4347,10 +4326,9 @@ LABEL_27:
 
 // 0x79BF50
 namespace gamemd {
-BOOL E4Recv_79BF50::sub_79BF50()
+void E4Recv_79BF50::sub_79BF50()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_79BF50(HWND this)
 {
   HWND DlgItem; // eax
   HWND v3; // eax
@@ -4402,7 +4380,6 @@ namespace gamemd {
 void RemoveWOLPlayerLogin(const char ** a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall RemoveWOLPlayerLogin(const char **a1)
 {
   const char **v1; // ebp
 
@@ -4522,10 +4499,9 @@ LABEL_34:
 
 // 0x79CE70
 namespace gamemd {
-unsigned int WOL_RefreshChannelList()
+void int WOL_RefreshChannelList()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void WOL_RefreshChannelList()
 {
   HANDLE *v0; // esi
   unsigned int result; // eax
@@ -4623,7 +4599,6 @@ namespace gamemd {
 void WOL_SendGameList()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void WOL_SendGameList()
 {
 
   int v0 = g_WOL_BuddyList; /*0x79d114*/
@@ -4720,7 +4695,6 @@ namespace gamemd {
 void WOL_RefreshGameList()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void WOL_RefreshGameList()
 {
   int i; // esi
   char **v10; // ecx
@@ -4805,7 +4779,6 @@ namespace gamemd {
 void CleanupWOLSession()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CleanupWOLSession()
 {
   int i; // esi
   void **v5; // edi
@@ -4897,10 +4870,9 @@ void CleanupWOLSession()
 
 // 0x79D720
 namespace gamemd {
-int WOLLoginDialogProc(HWND hWnd, unsigned int a2, int a3, HWND a4)
+void WOLLoginDialogProc(HWND hWnd, unsigned int a2, int a3, HWND a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void WOLLoginDialogProc(HWND hWnd, unsigned int a2, int a3, HWND a4)
 {
   HWND v4; // ebp
   int result; // eax
@@ -5024,7 +4996,6 @@ namespace gamemd {
 char ** ExtractChatCommand(char ** a1, HWND a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char **__fastcall ExtractChatCommand(char **a1, HWND a2)
 {
   LRESULT v4; // esi
 
@@ -5065,10 +5036,9 @@ LABEL_7:
 
 // 0x79DFE0
 namespace gamemd {
-int WOL_GameSetup_DlgProc(HWND hWnd, unsigned int a2, unsigned int a3, HWND a4)
+void WOL_GameSetup_DlgProc(HWND hWnd, unsigned int a2, unsigned int a3, HWND a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void WOL_GameSetup_DlgProc(HWND hWnd, unsigned int a2, unsigned int a3, HWND a4)
 {
   int result; // eax
   LONG WindowLongA; // ecx
@@ -5274,10 +5244,9 @@ LABEL_50:
 
 // 0x79E520
 namespace gamemd {
-int WOL_PlayerOptions_DlgProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWND a4)
+void WOL_PlayerOptions_DlgProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWND a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void WOL_PlayerOptions_DlgProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWND a4)
 {
   int result; // eax
   LONG WindowLongA; // edi
@@ -5646,7 +5615,6 @@ namespace gamemd {
 char sub_79F0A0(char ** a1, int * a2, char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall sub_79F0A0(char **a1, int *a2, char *a3)
 {
 
   char * v3 = a3; /*0x79f0a6*/
@@ -5688,10 +5656,9 @@ LABEL_8:
 
 // 0x79F140
 namespace gamemd {
-int WOL_GameOptionsScreen()
+void WOL_GameOptionsScreen()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void WOL_GameOptionsScreen()
 {
   wchar_t *String; // eax
   int i; // esi
@@ -6141,10 +6108,9 @@ LABEL_143:
 
 // 0x79FC40
 namespace gamemd {
-int WOL_JoinLobby()
+void WOL_JoinLobby()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void WOL_JoinLobby()
 {
   wchar_t *String; // eax
   wchar_t *v2; // eax

@@ -5,10 +5,9 @@
 #include "e4/classes/EventClass_e4.hpp"
 
 // 0x7327D0
-char MoveFeedback::ProcessCommand()
+void MoveFeedback::ProcessCommand()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MoveFeedback_Process(void *this)
 {
   int Height; // eax
   _DWORD *v3; // esi

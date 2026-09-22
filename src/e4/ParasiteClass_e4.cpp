@@ -11,10 +11,9 @@
 // 0x629210
 namespace ra2 {
 namespace game {
-int ParasiteClass::Constructor()
+void ParasiteClass::Constructor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_629210(int this)
 {
   wchar_t *v2; // ecx
   AbstractClass::Constructor((AbstractClass *)this); /*0x629213*/
@@ -47,10 +46,9 @@ void sub_629210(int this)
 // 0x6292B0
 namespace ra2 {
 namespace game {
-int ParasiteClass::ParasiteClass(TechnoClass * aP1)
+P ParasiteClass::ParasiteClass(TechnoClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-P ParasiteClass::ParasiteClass(int this, TechnoClass *aP1)
 {
   IUnknown *v3; // ecx
 
@@ -99,10 +97,9 @@ P ParasiteClass::ParasiteClass(int this, TechnoClass *aP1)
 // 0x6294D0
 namespace ra2 {
 namespace game {
-int ParasiteClass::Attach(int * a2)
+void ParasiteClass::Attach(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ParasiteClass::_vt13(int this, int *a2)
 {
 
   AbstractClass::ProcessPower((#378 *)this); /*0x6294d9*/
@@ -129,7 +126,6 @@ namespace game {
 void ParasiteClass::DeploySquad()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ParasiteClass_DeploySquad(unsigned int this)
 {
   int Index; // eax
   void **v13; // eax
@@ -411,7 +407,6 @@ namespace game {
 void ParasiteClass::TickDamage()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ParasiteClass::_vt23(unsigned int this)
 {
   void **v15; // eax
   _DWORD v22[3]; // [esp+10h] [ebp-3Ch] BYREF
@@ -525,10 +520,9 @@ LABEL_8:
 // 0x62A980
 namespace ra2 {
 namespace game {
-int ParasiteClass::TryInfect(unsigned int * a2)
+void ParasiteClass::TryInfect(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ParasiteClass::TryInfect(int this, _DWORD *a2)
 {
   int result; // eax
   ParasiteClass *v14; // [esp+1Ch] [ebp-10h] BYREF
@@ -606,10 +600,9 @@ void ParasiteClass::TryInfect(int this, _DWORD *a2)
 // 0x62AB40
 namespace ra2 {
 namespace game {
-bool ParasiteClass::CanExistOnVictimCell()
+void ParasiteClass::CanExistOnVictimCell()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ParasiteClass::CanExistOnVictimCell(int this)
 {
 
   IUnknown *v2 = this->q028; /*0x62ab44*/
@@ -652,10 +645,9 @@ LABEL_20:
 // 0x62AF70
 namespace ra2 {
 namespace game {
-ParasiteClass * ParasiteClass::UpdateParasite(char a2)
+void * ParasiteClass::UpdateParasite(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-ParasiteClass *__thiscall ParasiteClass::UpdateParasite(ParasiteClass *this, char a2)
 {
   ParasiteClass *v7; // [esp+8h] [ebp-4h] BYREF
   int v3 = this->q011; /*0x62af77*/
@@ -709,14 +701,13 @@ ParasiteClass *__thiscall ParasiteClass::UpdateParasite(ParasiteClass *this, cha
 // 0x62BD50
 namespace ra2 {
 namespace game {
-char ParasiteClass::Update()
+void ParasiteClass::Update()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ParasiteClass_Update(char *this)
 {
   int Byte284; // eax
   int v24; // eax
-  int v25; // eax
+  bool v25; // eax
   int *v26; // esi
   int v27; // edx
   int v28; // edi
@@ -724,12 +715,12 @@ void ParasiteClass_Update(char *this)
   int v30; // ecx
   int *v31; // edi
   int v32; // ecx
-  int v33; // eax
+  bool v33; // eax
   int v34; // edx
-  int v35; // eax
+  bool v35; // eax
   int v36; // ebx
   __int64 v37; // rax
-  int v38; // edi
+  bool v38; // edi
   int v39; // ebx
   char result; // al
   int v41; // [esp-Ch] [ebp-100h]

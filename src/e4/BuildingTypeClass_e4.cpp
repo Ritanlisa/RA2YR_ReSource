@@ -10,10 +10,9 @@
 #include "e4/classes/Vector_e4.hpp"
 
 // 0x45DD90
-int BuildingTypeClass::ConstructFull(char * Source)
+void BuildingTypeClass::ConstructFull(char * Source)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void BuildingTypeClass_ConstructorFull(int this, char *Source)
 {
 
   TechnoTypeClass::ReadINI((char *)this, Source, 0); /*0x45dda1*/
@@ -362,7 +361,6 @@ LABEL_11:
 unsigned int * BuildingTypeClass::loadBuildingProperty_b_545E520(ObjectTypeClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall BuildingTypeClass::loadBuildingProperty_b_545E520(_DWORD *this, ObjectTypeClass *aP1)
 {
   TechnoTypeClass::Construct((int)this, aP1); /*0x45e528*/
   this->qE00 = 0; /*0x45e52f*/
@@ -380,10 +378,9 @@ _DWORD *__thiscall BuildingTypeClass::loadBuildingProperty_b_545E520(_DWORD *thi
 }
 
 // 0x45E580
-int BuildingTypeClass::CleanupMembers(AbstractClass * a1, AbstractClass * a2)
+void BuildingTypeClass::CleanupMembers(AbstractClass * a1, AbstractClass * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall BuildingTypeClass::CleanupMembers(AbstractClass *a1, AbstractClass *a2)
 {
   char nextArrayIndex; // al
   int eax22; // eax
@@ -466,7 +463,6 @@ int __fastcall BuildingTypeClass::CleanupMembers(AbstractClass *a1, AbstractClas
 void BuildingTypeClass::LoadRepairAnimations(void * this)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void BuildingTypeClass::LoadRepairAnimations(#376 *this)
 {
   ObjectTypeClass *v1; // ecx
   ObjectTypeClass *v2; // edi
@@ -574,10 +570,9 @@ void BuildingTypeClass::LoadRepairAnimations(#376 *this)
 }
 
 // 0x45F230
-int BuildingTypeClass::LoadAnimations(ObjectTypeClass * aP1)
+void BuildingTypeClass::LoadAnimations(ObjectTypeClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void BuildingTypeClass::LoadAnimations(int this, ObjectTypeClass *aP1)
 {
   void *FileSHP; // eax
   int result; // eax
@@ -887,7 +882,6 @@ void BuildingTypeClass::LoadAnimations(int this, ObjectTypeClass *aP1)
 void BuildingTypeClass::LoadVoxel()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void BuildingTypeClass_LoadVoxel(int this)
 {
   _DWORD *File; // eax
   int Info; // eax
@@ -1027,10 +1021,9 @@ void BuildingTypeClass_LoadVoxel(int this)
 }
 
 // 0x464B30
-int BuildingTypeClass::UpdatePower()
+void BuildingTypeClass::UpdatePower()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void BuildingTypeClass::UpdatePower(#376 *this)
 {
 
   int *v54; // [esp+Ch] [ebp+4h]
@@ -1208,10 +1201,9 @@ void BuildingTypeClass::UpdatePower(#376 *this)
 }
 
 // 0x465010
-int BuildingTypeClass::SaveLoad_Prefix()
+void BuildingTypeClass::SaveLoad_Prefix()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void BuildingTypeClass::SaveLoad_Prefix(#376 *this)
 {
   int result; // eax
 
@@ -1343,10 +1335,9 @@ LABEL_32:
 }
 
 // 0x4653C0
-BuildingTypeClass * BuildingTypeClass::FindOrCreate()
+void * BuildingTypeClass::FindOrCreate()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-BuildingTypeClass *__thiscall BuildingTypeClass::FindOrCreate(char *this)
 {
 
   if ( !_strcmpi(&stru_817460.sectionHead[1], this) || !_strcmpi(g_Str_none, this) ) /*0x4653dc*/
@@ -1373,7 +1364,6 @@ LABEL_6:
 void BuildingTypeClass::IsPowered()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void BuildingTypeClass_IsPowered(int this)
 {
   if ( this->FreeBuildup ) /*0x465af3*/
   {
@@ -1388,10 +1378,9 @@ void BuildingTypeClass_IsPowered(int this)
 }
 
 // 0x50B760
-char BuildingTypeClass::ProcessData(unsigned int * a2, short * a3)
+void BuildingTypeClass::ProcessData(unsigned int * a2, short * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_50B760(_DWORD *this, _DWORD *a2, __int16 *a3)
 {
   __int16 *v8; // ecx
   if ( !g_GameMode_Current[0] ) /*0x50b770*/
@@ -1433,10 +1422,9 @@ LABEL_8:
 }
 
 // 0x594010
-char BuildingTypeClass::CheckPlacementArea(ObjectClass * aP1, ObjectClass * aP2)
+void BuildingTypeClass::CheckPlacementArea(ObjectClass * aP1, ObjectClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void BuildingTypeClass::CheckPlacementArea(ObjectClass *aP1, ObjectClass *aP2)
 {
   IUnknown *v3; // edi
   __int16 v4; // ax
@@ -1504,10 +1492,9 @@ LABEL_15:
 }
 
 // 0x5FEC70
-OverlayTypeClass * BuildingTypeClass::FindOrCreate2()
+void * BuildingTypeClass::FindOrCreate2()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-OverlayTypeClass *__thiscall BuildingTypeClass::FindOrCreate2(ObjectClass *this)
 {
 
   if ( !_strcmpi(&stru_817460.sectionHead[1], this) || !_strcmpi(g_Str_none, this) ) /*0x5fec8c*/
@@ -1531,10 +1518,9 @@ LABEL_6:
 }
 
 // 0x644890
-ParticleSystemTypeClass * BuildingTypeClass::LoadOrGet()
+void * BuildingTypeClass::LoadOrGet()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-ParticleSystemTypeClass *__thiscall BuildingTypeClass::LoadOrGet(ObjectClass *this)
 {
 
   if ( !_strcmpi(&stru_817460.sectionHead[1], this) || !_strcmpi(g_Str_none, this) ) /*0x6448ac*/
@@ -1561,7 +1547,6 @@ LABEL_6:
 unsigned int * BuildingTypeClass::Construct(AbstractClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall BuildingTypeClass::Construct(_DWORD *this, AbstractClass *aP1)
 {
   ParticleTypeClass *v3; // eax
   ObjectTypeClass::ConstructFull((int)this, aP1); /*0x644beb*/
@@ -1635,10 +1620,9 @@ _DWORD *__thiscall BuildingTypeClass::Construct(_DWORD *this, AbstractClass *aP1
 }
 
 // 0x645430
-int BuildingTypeClass::FindOrCreateEx()
+void BuildingTypeClass::FindOrCreateEx()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void BuildingTypeClass::FindOrCreateEx()
 {
   ParticleTypeClass *v4; // eax
   ObjectClass *i; // edx
@@ -1677,10 +1661,9 @@ LABEL_5:
 }
 
 // 0x7171A0
-int BuildingTypeClass::ProcessPower(AbstractClass * aP1)
+void BuildingTypeClass::ProcessPower(AbstractClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void BuildingTypeClass::ProcessPower(int this, AbstractClass *aP1)
 {
 
   AbstractTypeClass::ProcessPower((char *)this, aP1); /*0x7171a9*/
@@ -1859,7 +1842,6 @@ void BuildingTypeClass::ProcessPower(int this, AbstractClass *aP1)
 unsigned int * BuildingTypeClass::GetUpgradeOffset(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall BuildingTypeClass_GetUpgradeOffset(int this, _DWORD *a2)
 {
 
   if ( this->DamSmkOffScrnRel ) /*0x7178c6*/
@@ -1898,10 +1880,9 @@ _DWORD *__thiscall BuildingTypeClass_GetUpgradeOffset(int this, _DWORD *a2)
 }
 
 // 0x746000
-bool BuildingTypeClass::IsPlacementValid(IUnknown * aP1, IUnknown * aP2)
+void BuildingTypeClass::IsPlacementValid(IUnknown * aP1, IUnknown * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void BuildingTypeClass::IsPlacementValid(IUnknown *aP1, IUnknown *aP2)
 {
   IUnknown *v6; // eax
   if ( (*(int (__fastcall **)(void *))(this->TurretOffset)(this) < 0 /*0x746030*/
@@ -1930,10 +1911,9 @@ void BuildingTypeClass::IsPlacementValid(IUnknown *aP1, IUnknown *aP2)
 }
 
 // 0x7480D0
-UnitTypeClass * BuildingTypeClass::FindOrCreateAlt()
+void * BuildingTypeClass::FindOrCreateAlt()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-UnitTypeClass *__thiscall BuildingTypeClass::FindOrCreateAlt(INIClass *this)
 {
 
   if ( !_strcmpi(&stru_817460.sectionHead[1], this) || !_strcmpi(g_Str_none, this) ) /*0x7480ec*/

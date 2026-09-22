@@ -55,11 +55,10 @@ unsigned int * MPBattleClass::MPSiegeClass(const wchar_t ** a1, MultiplayerSiege
 
 // 0x5CA7D0
 namespace gamemd {
-int MPBattleClass::vt_entry_18()
+void MPBattleClass::vt_entry_18()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // attributes: thunk
-void MPBattleClass::vt_entry_18(std::codecvt_base *this)
 {
   return ScenarioClass::createStartingForces(this);
 }

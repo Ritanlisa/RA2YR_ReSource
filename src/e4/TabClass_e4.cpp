@@ -7,7 +7,6 @@
 unsigned int * TabClass::initStripClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_4A2350(_DWORD *this)
 {
   *this = 0; /*0x4a2354*/
   this->q004 = 0; /*0x4a2356*/
@@ -20,10 +19,9 @@ _DWORD *__thiscall sub_4A2350(_DWORD *this)
 }
 
 // 0x658330
-LRESULT TabClass::DrawPower(HWND hDlg, void * a1, AbstractClass * aP2)
+void TabClass::DrawPower(HWND hDlg, void * a1, AbstractClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-LRESULT __stdcall TabClass::DrawPower(HWND hDlg, void *a1, AbstractClass *aP2)
 {
   int BuildingAnimByName; // eax
   LPARAM v7; // esi

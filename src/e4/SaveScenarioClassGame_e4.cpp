@@ -7,10 +7,9 @@
 
 // 0x67CEF0
 namespace gamemd {
-char SaveScenarioClassGame_AdjustMPSaveFileName(LPCCH lpMultiByteStr, wchar_t * Source, int a3)
+void SaveScenarioClassGame_AdjustMPSaveFileName(LPCCH lpMultiByteStr, wchar_t * Source, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall SaveScenarioClassGame_AdjustMPSaveFileName(LPCCH lpMultiByteStr, wchar_t *Source, int a3)
 {
   IStorage *ppstgOpen; // [esp+50h] [ebp-490h] BYREF
   LPSTREAM pStm; // [esp+5Ch] [ebp-484h] BYREF

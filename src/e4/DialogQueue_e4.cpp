@@ -3,10 +3,9 @@
 #include "e4/e4_globals.hpp"
 
 // 0x5D4E70
-int DialogQueue::PushEntry()
+void DialogQueue::PushEntry()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_5D4E70(void *this)
 {
   int result; // eax
 
@@ -28,10 +27,9 @@ void sub_5D4E70(void *this)
 }
 
 // 0x5D4ED0
-int DialogQueue::RemoveEntry()
+void DialogQueue::RemoveEntry()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void DialogQueue::RemoveEntry()
 {
   int result; // eax
 

@@ -9,10 +9,9 @@
 
 // 0x4F6540
 namespace gamemd {
-bool SuperWeaponTypeClass::IsAvailable()
+void SuperWeaponTypeClass::IsAvailable()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void SuperWeaponTypeClass::IsAvailable()
 {
   int v9; // ecx
   int v11; // ebp
@@ -191,7 +190,6 @@ namespace gamemd {
 unsigned char * SuperWeaponTypeClass::Construct(AbstractClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_BYTE *__thiscall SuperWeaponTypeClass::Construct(_BYTE *this, AbstractClass *aP1)
 {
   CCINIClass *v7; // edx
   CCINIClass *v8; // ecx
@@ -317,10 +315,9 @@ LABEL_16:
 
 // 0x6CEA20
 namespace gamemd {
-char SuperWeaponTypeClass::SD_vt25(unsigned char *** aP1)
+void SuperWeaponTypeClass::SD_vt25(unsigned char *** aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void SuperWeaponTypeClass::SD_vt25(int this, unsigned __int8 ***aP1)
 {
   WeaponTypeClass *v3; // edi
   WeaponTypeClass *v4; // eax
@@ -404,7 +401,7 @@ void SuperWeaponTypeClass::SD_vt25(int this, unsigned __int8 ***aP1)
           (unsigned __int8 *)(this + 36),
           (CCINIClass *)&stru_830620[73888],
           this->PreClick);
-  char v11 = this->PostClick; /*0x6ceb22*/
+  bool v11 = this->PostClick; /*0x6ceb22*/
   this->PreClick = v10; /*0x6ceb28*/
   char v12; // al
   v12 = INIClass::ReadBool_Overwrite( /*0x6ceb37*/
@@ -520,7 +517,7 @@ LABEL_25:
   {
     v24 = v23; /*0x6ced26*/
   }
-  char v25 = this->UseChargeDrain; /*0x6ced28*/
+  bool v25 = this->UseChargeDrain; /*0x6ced28*/
   this->AuxBuilding = v24; /*0x6ced2e*/
   char v26; // al
   v26 = INIClass::ReadBool_Overwrite( /*0x6ced3d*/
@@ -577,10 +574,9 @@ LABEL_25:
 
 // 0x6CEEB0
 namespace gamemd {
-int SuperWeaponTypeClass::FindFirstOfAction()
+void SuperWeaponTypeClass::FindFirstOfAction()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void SuperWeaponTypeClass::FindFirstOfAction()
 {
   char *i; // edx
 
@@ -599,10 +595,9 @@ void SuperWeaponTypeClass::FindFirstOfAction()
 
 // 0x6CEF80
 namespace gamemd {
-int SuperWeaponTypeClass::SD_vt27(int a2, int a3)
+void SuperWeaponTypeClass::SD_vt27(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void SuperWeaponTypeClass::SD_vt27(int a2, int a3)
 {
 
   if ( this->Type != 10 ) /*0x6cef8b*/

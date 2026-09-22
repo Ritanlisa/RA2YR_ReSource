@@ -6,16 +6,6 @@
 unsigned short * BlitTransXlatAlphaZRead_ushort::Blit_Alpha_Lucent50(unsigned short * a1, unsigned char * a2, int a4, int a5, int _14, unsigned short * a6, int a8, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_WORD *__thiscall BlitTransXlatAlphaZRead_ushort::Blit_Alpha_Lucent50(
-        BlitTranslucent50NonzeroAlpha_G *this,
-        _WORD *a1,
-        unsigned __int8 *a2,
-        int a4,
-        int a5,
-        int _14,
-        _WORD *a6,
-        int a8,
-        int a9)
 {
   _WORD *result; // eax
   TacticalClass *v12; // edi
@@ -52,16 +42,6 @@ _WORD *__thiscall BlitTransXlatAlphaZRead_ushort::Blit_Alpha_Lucent50(
 unsigned short * BlitTransXlatAlphaZRead_ushort::Blit_Alpha_Lucent50_0(unsigned short * a1, unsigned char * a2, int a4, int a5, int _14, unsigned short * a6, int a8, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_WORD *__thiscall BlitTransXlatAlphaZRead_ushort::Blit_Alpha_Lucent50_0(
-        BlitTranslucent50ZeroAlpha_G *this,
-        _WORD *a1,
-        unsigned __int8 *a2,
-        int a4,
-        int a5,
-        int _14,
-        _WORD *a6,
-        int a8,
-        int a9)
 {
   _WORD *result; // eax
   TacticalClass *v12; // edi
@@ -95,10 +75,9 @@ _WORD *__thiscall BlitTransXlatAlphaZRead_ushort::Blit_Alpha_Lucent50_0(
 }
 
 // 0x494B60
-int BlitTransXlatAlphaZRead_ushort::AddRef(unsigned short * a2, unsigned char * a3, int a4, int a5, unsigned short * a6, unsigned short * a7, int a8, int a9)
+void BlitTransXlatAlphaZRead_ushort::AddRef(unsigned short * a2, unsigned char * a3, int a4, int a5, unsigned short * a6, unsigned short * a7, int a8, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void BlitTransXlatAlphaZRead_ushort::_vt01(_WORD *a2, _BYTE *a3, int a4, int a5, unsigned __int16 *a6, unsigned __int16 *a7, int a8, int a9)
 {
   int result; // eax
   unsigned __int16 v15; // ax
@@ -134,10 +113,9 @@ void BlitTransXlatAlphaZRead_ushort::_vt01(_WORD *a2, _BYTE *a3, int a4, int a5,
 }
 
 // 0x494C40
-int BlitTransXlatAlphaZRead_ushort::BlitRect(unsigned short * a2, unsigned char * a3, int a4, int a5, unsigned short * a6, unsigned short * a7, int a8, int a9, short a10)
+void BlitTransXlatAlphaZRead_ushort::BlitRect(unsigned short * a2, unsigned char * a3, int a4, int a5, unsigned short * a6, unsigned short * a7, int a8, int a9, short a10)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void BlitTransXlatAlphaZRead_ushort::BlitRect(_WORD *a2, _BYTE *a3, int a4, int a5, unsigned __int16 *a6, unsigned __int16 *a7, int a8, int a9, __int16 a10)
 {
   int result; // eax
   unsigned __int16 v16; // ax
@@ -180,10 +158,9 @@ int BlitTransXlatAlphaZRead_ushort::ddtor(int a2, int a3, int a4, int a5, int a6
 }
 
 // 0x494D50
-int BlitTransXlatAlphaZRead_ushort::GetSize(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
+void BlitTransXlatAlphaZRead_ushort::GetSize(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void BlitTransXlatAlphaZRead_ushort::_vt04(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD, int))(this->q008)( /*0x494d7f*/
            this,

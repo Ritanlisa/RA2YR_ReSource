@@ -3,10 +3,9 @@
 #include "e4/e4_globals.hpp"
 
 // 0x578540
-bool Type::CheckAmbiguity(int a2, char a3)
+void Type::CheckAmbiguity(int a2, char a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Type_CheckAmbiguity(_DWORD *this, int a2, char a3)
 {
   bool result; // al
 

@@ -25,10 +25,9 @@
 
 // 0x5835D0
 namespace gamemd {
-int * FindCliffSeedCell(int * a0, IUnknown * aP1, IUnknown * aP2)
+void * FindCliffSeedCell(int * a0, IUnknown * aP1, IUnknown * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int *__stdcall FindCliffSeedCell(int *a0, IUnknown *aP1, IUnknown *aP2)
 {
   VectorClass *v4; // eax
   VectorClass *v5; // ecx
@@ -134,10 +133,9 @@ LABEL_28:
 
 // 0x583AD0
 namespace gamemd {
-int E4Recv_583AD0::sub_583AD0(int * a2)
+void E4Recv_583AD0::sub_583AD0(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_583AD0(_DWORD *this, int *a2)
 {
   _DWORD *i; // eax
   IUnknown *TileIndex; // eax
@@ -243,10 +241,9 @@ LABEL_16:
 
 // 0x585F40
 namespace gamemd {
-int InterpolateTerrainLighting(int a1, MouseClass * aP1, int a3, int a4)
+void InterpolateTerrainLighting(int a1, MouseClass * aP1, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void InterpolateTerrainLighting(int a1, MouseClass *aP1, int a3, int a4)
 {
   __int16 v8; // si
   __int16 v9; // di
@@ -343,7 +340,6 @@ namespace gamemd {
 int MarkCliffEdgePassability(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall MarkCliffEdgePassability(int a1)
 {
   int result; // eax
   unsigned __int16 v4; // cx
@@ -465,10 +461,9 @@ int __fastcall MarkCliffEdgePassability(int a1)
 
 // 0x588570
 namespace gamemd {
-char globalHelper_088570(MouseClass * aP0, VectorClass * aP1, MouseClass * aP2)
+void globalHelper_088570(MouseClass * aP0, VectorClass * aP1, MouseClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void globalHelper_088570(MouseClass *aP0, VectorClass *aP1, MouseClass *aP2)
 {
   MouseClass *v4; // ebp
   int v5; // eax
@@ -578,10 +573,9 @@ LABEL_21:
 
 // 0x588750
 namespace gamemd {
-int ScanBuildingPlacementCells(MouseClass * aP0, VectorClass * aP1, MouseClass * aP2)
+void ScanBuildingPlacementCells(MouseClass * aP0, VectorClass * aP1, MouseClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ScanBuildingPlacementCells(MouseClass *aP0, VectorClass *aP1, MouseClass *aP2)
 {
   MouseClass *v3; // edi
   int result; // eax
@@ -691,10 +685,9 @@ void unknown::ddtor()
 }
 
 // 0x5896A0
-int unknown::Read(unsigned short * a2)
+void unknown::Read(unsigned short * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void unknown::_vt04(_WORD *a2)
 {
   int result; // eax
   _WORD *i; // ecx
@@ -717,7 +710,6 @@ namespace gamemd {
 void sub_58B670()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_58B670()
 {
   *(double *)&Buffer[40] = Math::ArcTan((double)(2 * dword_ABED00) / dbl_ABE368); /*0x58b692*/
 }
@@ -729,7 +721,6 @@ namespace gamemd {
 int sub_58B6E0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_58B6E0()
 {
   *(_DWORD *)&Buffer[24] = 0; /*0x58b6e2*/
   *(_DWORD *)&Buffer[28] = 0; /*0x58b6e7*/
@@ -744,7 +735,6 @@ namespace gamemd {
 int sub_58B7E0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_58B7E0()
 {
   return dword_ABDFD4; /*0x58b7e5*/
 }
@@ -756,7 +746,6 @@ namespace gamemd {
 int sub_58B7F0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_58B7F0()
 {
   return dword_ABDFD0; /*0x58b7f5*/
 }
@@ -768,7 +757,6 @@ namespace gamemd {
 int sub_58B800()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_58B800()
 {
   return dword_ABEC90; /*0x58b805*/
 }
@@ -777,10 +765,9 @@ int sub_58B800()
 
 // 0x58B810
 namespace gamemd {
-MapSeedClass * sub_58B810()
+int * sub_58B810()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-MapSeedClass *sub_58B810()
 {
   return dword_ABECD0; /*0x58b815*/
 }
@@ -792,7 +779,6 @@ namespace gamemd {
 void * ComputeMapCameraBounds()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void *ComputeMapCameraBounds()
 {
   void *result; // eax
   int i; // edi
@@ -911,10 +897,9 @@ void *ComputeMapCameraBounds()
 
 // 0x58EBC0
 namespace gamemd {
-int BuildRandomMapTiles()
+void BuildRandomMapTiles()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void BuildRandomMapTiles()
 {
   int i; // esi
   int result; // eax
@@ -1075,10 +1060,9 @@ LABEL_32:
 
 // 0x58EF10
 namespace gamemd {
-char sub_58EF10()
+void sub_58EF10()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_58EF10()
 {
   int i; // eax
   int Terrain; // eax
@@ -1274,10 +1258,9 @@ unsigned int unknown::Write(int a2)
 }
 
 // 0x588D30
-int unknown::Seek(int a2, int a3)
+void unknown::Seek(int a2, int a3)
  {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void unknown::_vt06(int a2, int a3)
 {
 
   int v3 = this->m_Position + 16 * a3; /*0x588d3a*/

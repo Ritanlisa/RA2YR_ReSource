@@ -8,7 +8,6 @@ namespace gamemd {
 unsigned char * Palette_6BitTo16Bit(char a2, char a3, char a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_BYTE *__thiscall Palette_6BitTo16Bit(_BYTE *this, char a2, char a3, char a4)
 {
   *this = a2; /*0x4355ba*/
   this->q004 = a3; /*0x4355c0*/
@@ -20,10 +19,9 @@ _BYTE *__thiscall Palette_6BitTo16Bit(_BYTE *this, char a2, char a3, char a4)
 
 // 0x642130
 namespace gamemd {
-int Palette_Preview_Generate()
+void Palette_Preview_Generate()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int *__userpurge Palette::Preview_Generate@<eax>(int *a1@<ecx>, char a2@<sil>, int a3, AbstractClass **a4)
 {
   CCINIClass *v11; // ebx
   unsigned __int16 Pixel; // ax
@@ -250,10 +248,9 @@ LABEL_38:
 } // namespace gamemd
 
 // 0x661350
-int Palette::CalcColorDistance(unsigned char * a2)
+void Palette::CalcColorDistance(unsigned char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_661350(unsigned __int8 *this, unsigned __int8 *a2)
 {
 
   int v2 = *this - *a2; /*0x661360*/

@@ -7,10 +7,9 @@
 #include "e4/classes/NetworkClass_e4.hpp"
 
 // 0x7B1B50
-char UDPInterfaceClass::connect()
+void UDPInterfaceClass::connect()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_7B1B50(_BYTE *this)
 {
   char result; // al
 
@@ -30,7 +29,6 @@ void sub_7B1B50(_BYTE *this)
 void UDPInterfaceClass::CheckStatus(short a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void UDPInterfaceClass_Destru::_vt27(__int16 a2)
 {
   _WORD *i; // eax
   SOCKET *v6; // ebx
@@ -75,7 +73,6 @@ void UDPInterfaceClass_Destru::_vt27(__int16 a2)
 void UDPInterfaceClass::GetStatistics(unsigned short a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void UDPInterfaceClass_Destru::_vt29(unsigned __int16 a2)
 {
 
   int v3; // eax
@@ -101,10 +98,9 @@ LABEL_7:
 }
 
 // 0x7B3A20
-int UDPInterfaceClass::Flush()
+void UDPInterfaceClass::Flush()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void UDPInterfaceClass_Destru::_vt28()
 {
   int result; // eax
   SOCKET *v4; // esi
@@ -136,10 +132,9 @@ void UDPInterfaceClass_Destru::_vt28()
 }
 
 // 0x7B3AA0
-int UDPInterfaceClass::ProcessSocketIO(int a2, SOCKET s, int a4, unsigned int a5)
+void UDPInterfaceClass::ProcessSocketIO(int a2, SOCKET s, int a4, unsigned int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void UDPInterfaceClass::ProcessSocketIO(int a2, SOCKET s, int a4, unsigned int a5)
 {
   SOCKET v6; // ebx
   _DWORD *v13; // ebx
@@ -162,7 +157,7 @@ void UDPInterfaceClass::ProcessSocketIO(int a2, SOCKET s, int a4, unsigned int a
   _DWORD **v30; // edx
   int v31; // edi
   u_long v32; // eax
-  int v33; // ecx
+  bool v33; // ecx
   int v34; // eax
   char *v35; // ebp
   int v36; // eax
@@ -451,30 +446,27 @@ LABEL_43:
 }
 
 // 0x7B4150
-int UDPInterfaceClass::Connect(int a2)
+void UDPInterfaceClass::Connect(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void UDPInterfaceClass_Destru::_vt19(int a2)
 {
   return *(_DWORD *)(this->q3F554 + 4 * a2); /*0x7b415d*/
 }
 }
 
 // 0x7B4160
-short UDPInterfaceClass::Receive()
+void UDPInterfaceClass::Receive()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-__int16 __thiscall UDPInterfaceClass_Destru::_vt24(_WORD *this)
 {
   return this->q1F97E; /*0x7b4167*/
 }
 }
 
 // 0x7B4170
-UDPInterfaceClass * UDPInterfaceClass::Destructor(char a2)
+void * UDPInterfaceClass::Destructor(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-UDPInterfaceClass *__thiscall UDPInterfaceClass::Destructor(void ***this, char a2)
 {
   void **v4; // ecx
   void **v7; // ecx
@@ -534,7 +526,6 @@ UDPInterfaceClass *__thiscall UDPInterfaceClass::Destructor(void ***this, char a
 void UDPInterfaceClass::disconnect()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void UDPInterfaceClass_Destru::sub_7B42C0(int this)
 {
 
   AbstractClass *v2 = this->Initialized; /*0x7b42c6*/
@@ -553,7 +544,6 @@ void UDPInterfaceClass_Destru::sub_7B42C0(int this)
 unsigned int UDPInterfaceClass::reset(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void UDPInterfaceClass_Destru::sub_7B42F0(int this, int a2)
 {
   if ( this->q00C ) /*0x7b42f0*/
     return (unsigned int)(a2 - this->Initialized) >> 2; /*0x7b4305*/
@@ -563,10 +553,9 @@ void UDPInterfaceClass_Destru::sub_7B42F0(int this, int a2)
 }
 
 // 0x7B44A0
-char UDPInterfaceClass::flush(int a2, unsigned int * a3)
+void UDPInterfaceClass::flush(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void UDPInterfaceClass_Destru::sub_7B44A0(int a2, _DWORD *a3)
 {
   int i; // eax
 
@@ -609,15 +598,14 @@ void UDPInterfaceClass_Destru::sub_7B44A0(int a2, _DWORD *a3)
 }
 
 // 0x7B4550
-int UDPInterfaceClass::sendPacket(unsigned int * a2)
+void UDPInterfaceClass::sendPacket(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void UDPInterfaceClass_Destru::sub_7B4550(_DWORD *a2)
 {
   int result; // eax
   _DWORD *i; // ecx
 
-  int v2 = this->Initialized; /*0x7b4550*/
+  bool v2 = this->Initialized; /*0x7b4550*/
   result = 0; /*0x7b4553*/
   if ( v2 <= 0 ) /*0x7b4558*/
     return -1; /*0x7b456f*/
@@ -631,10 +619,9 @@ void UDPInterfaceClass_Destru::sub_7B4550(_DWORD *a2)
 }
 
 // 0x7B3450
-char UDPInterfaceClass_Destru::Bind(int a2)
+void UDPInterfaceClass_Destru::Bind(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void UDPInterfaceClass_Destru::Bind(void ***this, int a2)
 {
   char result; // al
   IUnknown *v4; // esi
@@ -741,16 +728,9 @@ short UDPInterfaceClass_Destru::ddtor(WinsockInterfaceClass * aP1, unsigned int 
 
 // 0x7B3720
 namespace gamemd {
-int UDPInterfaceClass_Destru_Connect()
+void UDPInterfaceClass_Destru_Connect()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __userpurge UDPInterfaceClass_Destru::Connect@<eax>(
-        int a1@<ecx>,
-        int a2@<edi>,
-        const void *a3,
-        unsigned int a4,
-        WinsockInterfaceClass *aP1,
-        char a6)
 {
   int result; // eax
   WPARAM v14; // eax
@@ -826,10 +806,9 @@ int __userpurge UDPInterfaceClass_Destru::Connect@<eax>(
 } // namespace gamemd
 
 // 0x7B3890
-char UDPInterfaceClass_Destru::Receive()
+void UDPInterfaceClass_Destru::Receive()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void UDPInterfaceClass_Destru::_vt07()
 {
   SOCKET *v3; // edi
   u_int v4; // eax
@@ -860,10 +839,9 @@ LABEL_6:
 }
 
 // 0x7B3900
-int UDPInterfaceClass_Destru::CheckStatus()
+void UDPInterfaceClass_Destru::CheckStatus()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void UDPInterfaceClass_Destru::_vt08()
 {
   NetworkClass::UnregisterAsync(this); /*0x7b3903*/
   return (*(int (__thiscall **)(SOCKET *))(*this + 112))(this); /*0x7b390f*/
@@ -874,7 +852,6 @@ void UDPInterfaceClass_Destru::_vt08()
 void UDPInterfaceClass_Destru::Reset(unsigned int * a2, short a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void UDPInterfaceClass_Destru::_vt30(_DWORD *a2, __int16 a3)
 {
   __int16 v5; // bp
   int v4 = *(this + 64858); /*0x7b3926*/
@@ -908,10 +885,9 @@ void UDPInterfaceClass_Destru::_vt30(_DWORD *a2, __int16 a3)
 }
 
 // 0x7B4100
-int UDPInterfaceClass_Destru::GetStatistics(int a2)
+void UDPInterfaceClass_Destru::GetStatistics(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void UDPInterfaceClass_Destru::_vt14(int a2)
 {
   if ( a2 == this->q3F06C || a2 == -1 )
     return 1140; /*0x7b412e*/
@@ -921,10 +897,9 @@ void UDPInterfaceClass_Destru::_vt14(int a2)
 }
 
 // 0x7B4140
-int UDPInterfaceClass_Destru::COMStub()
+void UDPInterfaceClass_Destru::COMStub()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void UDPInterfaceClass_Destru::_vt18()
 {
   return this->q3F560; /*0x7b4146*/
 }

@@ -7,10 +7,9 @@
 
 // 0x777420
 namespace gamemd {
-HWND sub_777420()
+void sub_777420()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-HWND sub_777420()
 {
   HWND result; // eax
   HWND Current; // eax
@@ -79,10 +78,9 @@ HWND sub_777420()
 
 // 0x5C09A0
 namespace gamemd {
-int sub_5C09A0()
+void sub_5C09A0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_5C09A0()
 {
   int result; // eax
 

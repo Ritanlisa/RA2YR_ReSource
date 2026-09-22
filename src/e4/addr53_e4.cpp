@@ -21,10 +21,9 @@
 
 // 0x530000
 namespace gamemd {
-char sub_530000()
+void sub_530000()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_530000()
 {
   HANDLE FirstFileA; // edi
   HANDLE v4; // edi
@@ -100,10 +99,9 @@ void sub_530000()
 
 // 0x5312A0
 namespace gamemd {
-int ShowLoadingScreen()
+void ShowLoadingScreen()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __usercall ShowLoadingScreen@<eax>(CampaignScore *a1@<edi>)
 {
   ConvertClass *v3; // esi
   ConvertClass *EntireFile; // ebp
@@ -315,7 +313,6 @@ namespace gamemd {
 char BulkData_Initialize()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char BulkData_Initialize()
 {
   _BYTE v4[12]; // [esp+5Ch] [ebp-80h] BYREF
   int v5; // [esp+68h] [ebp-74h]
@@ -407,10 +404,9 @@ LABEL_16:
 
 // 0x532150
 namespace gamemd {
-char InitCommands()
+void InitCommands()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void InitCommands()
 {
   _DWORD *v7; // esi
   int v8; // eax
@@ -1785,10 +1781,9 @@ void InitCommands()
 
 // 0x533FD0
 namespace gamemd {
-char AllocateSurfaceScreenSurfaces(int a1, ObjectClass * aP1, ObjectClass * aP2, int a4, char a5)
+void AllocateSurfaceScreenSurfaces(int a1, ObjectClass * aP1, ObjectClass * aP2, int a4, char a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall AllocateSurfaceScreenSurfaces(int a1, ObjectClass *aP1, ObjectClass *aP2, int a4, char a5)
 {
   DSurface *v9; // eax
   DSurface *v12; // eax
@@ -1975,7 +1970,6 @@ namespace gamemd {
 void TheaterClass_LoadMIX(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall TheaterClass_LoadMIX(int a1)
 {
   int i; // eax
   int j; // esi
@@ -2121,10 +2115,9 @@ void __fastcall TheaterClass_LoadMIX(int a1)
 
 // 0x5353D0
 namespace gamemd {
-int Radar_FindClosestEnemy(short * a1, int a2)
+void Radar_FindClosestEnemy(short * a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall Radar_FindClosestEnemy(__int16 *a1, int a2)
 {
   int result; // eax
 
@@ -2222,10 +2215,9 @@ LABEL_23:
 
 // 0x538D40
 namespace gamemd {
-int sub_538D40()
+void sub_538D40()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_538D40()
 {
   unsigned __int8 *v0; // eax
   unsigned __int8 *v1; // edi
@@ -2300,10 +2292,9 @@ void sub_538D40()
 
 // 0x538E70
 namespace gamemd {
-short E4Recv_538E70::sub_538E70(double a2)
+void E4Recv_538E70::sub_538E70(double a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-__int16 __thiscall sub_538E70(void *this, double a2)
 {
   unsigned __int8 v6; // cl
   __int16 result; // ax
@@ -2345,7 +2336,6 @@ namespace gamemd {
 char sub_538F20(int a1, int a2, char * Source)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall sub_538F20(int a1, int a2, char *Source)
 {
   char result; // al
   int v19[22]; // [esp+18h] [ebp-6Ch] BYREF
@@ -2439,7 +2429,6 @@ namespace gamemd {
 int sub_539560()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_539560()
 {
   unk_A9F9CC = unk_A9F9F8; /*0x539565*/
   return unk_A9F9F8; /*0x53956a*/
@@ -2452,7 +2441,6 @@ namespace gamemd {
 int sub_539570()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_539570()
 {
   word_A9FA48 = unk_A9F9F8; /*0x539575*/
   return unk_A9F9F8; /*0x53957a*/
@@ -2462,10 +2450,9 @@ int sub_539570()
 
 // 0x53A6C0
 namespace gamemd {
-char SuperWeapon_Update()
+void SuperWeapon_Update()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void SuperWeapon_Update()
 {
   int i; // esi
   int j; // edi
@@ -2697,7 +2684,6 @@ namespace gamemd {
 void PsyDom::Update()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void PsyDom::Update()
 {
 
   switch ( unk_A9FAC0 ) /*0x53af50*/
@@ -2750,7 +2736,6 @@ namespace gamemd {
 void sub_53B460(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall sub_53B460(int a1)
 {
 
   if ( a1 > 0 ) /*0x53b465*/
@@ -2797,7 +2782,6 @@ namespace gamemd {
 void UpdateChronosphereEffect()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void UpdateChronosphereEffect()
 {
   switch ( unk_A9FAB0 ) /*0x53b56e*/
   {
@@ -2874,7 +2858,6 @@ namespace gamemd {
 int RenderChronosphereScreenEffect(char a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall RenderChronosphereScreenEffect(char a1)
 {
 
   int v1 = (*(int (__thiscall **)(int))(*(_DWORD *)unk_A9FA9C + 124))(unk_A9FA9C); /*0x53bbbd*/
@@ -3079,10 +3062,9 @@ int __fastcall RenderChronosphereScreenEffect(char a1)
 
 // 0x53D330
 namespace gamemd {
-char GenerateLightningStormGlow()
+void GenerateLightningStormGlow()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void GenerateLightningStormGlow()
 {
   char result; // al
   int *i; // [esp+28h] [ebp-24h]
@@ -3165,7 +3147,6 @@ namespace gamemd {
 int InitializeAudioStreaming(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall InitializeAudioStreaming(int a1, int a2)
 {
   HANDLE Thread; // eax
   DWORD LastError; // eax
@@ -3260,10 +3241,9 @@ LABEL_8:
 
 // 0x53E730
 namespace gamemd {
-BOOL Message_IsDialog(LPMSG lpMsg, HWND a2, UINT wMsgFilterMin, UINT wMsgFilterMax)
+void Message_IsDialog(LPMSG lpMsg, HWND a2, UINT wMsgFilterMin, UINT wMsgFilterMax)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __fastcall Message_IsDialog(LPMSG lpMsg, HWND a2, UINT wMsgFilterMin, UINT wMsgFilterMax)
 {
   BOOL result; // eax
 
@@ -3279,10 +3259,9 @@ BOOL __fastcall Message_IsDialog(LPMSG lpMsg, HWND a2, UINT wMsgFilterMin, UINT 
 
 // 0x53E770
 namespace gamemd {
-BOOL GameLoopMessagePump(LPMSG lpMsg, HWND a2, UINT wMsgFilterMin, UINT wMsgFilterMax, UINT wRemoveMsg)
+void GameLoopMessagePump(LPMSG lpMsg, HWND a2, UINT wMsgFilterMin, UINT wMsgFilterMax, UINT wRemoveMsg)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __fastcall GameLoopMessagePump(LPMSG lpMsg, HWND a2, UINT wMsgFilterMin, UINT wMsgFilterMax, UINT wRemoveMsg)
 {
   void (__stdcall *v6)(LPCRITICAL_SECTION); // edi
   UINT message; // eax

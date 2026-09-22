@@ -5,10 +5,9 @@
 
 // 0x5D55A0
 namespace gamemd {
-char MSFont_18::SetCapacity8(int a2, unsigned int * a3)
+void MSFont_18::SetCapacity8(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MSFont_18_::sub_5D55A0(int a2, _DWORD *a3)
 {
 
   int v3 = a2; /*0x5d55a2*/

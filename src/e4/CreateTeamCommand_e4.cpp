@@ -8,10 +8,9 @@
 
 // 0x535CF0
 namespace gamemd {
-int CreateTeamCommand::vt02()
+void CreateTeamCommand::vt02()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CreateTeamCommand::vt02()
 {
   return (*(int (__thiscall **)(void *))(this->q010)(this);
 }
@@ -23,7 +22,6 @@ namespace gamemd {
 unsigned int * CreateTeamCommand::performAction_148()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall CreateTeamCommand::performAction_148(View1CommandClass *this)
 {
   IUnknown *result; // eax
   int GroundHeight; // [esp+Ch] [ebp-4h]
@@ -52,7 +50,6 @@ namespace gamemd {
 unsigned int * CreateTeamCommand::performAction_153()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall CreateTeamCommand::performAction_153(View2CommandClass *this)
 {
   IUnknown *result; // eax
   int GroundHeight; // [esp+Ch] [ebp-4h]
@@ -81,7 +78,6 @@ namespace gamemd {
 unsigned int * CreateTeamCommand::performAction_158()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall CreateTeamCommand::performAction_158(View3CommandClass *this)
 {
   IUnknown *result; // eax
   int GroundHeight; // [esp+Ch] [ebp-4h]
@@ -107,10 +103,9 @@ _DWORD *__thiscall CreateTeamCommand::performAction_158(View3CommandClass *this)
 
 // 0x5386A0
 namespace gamemd {
-char CreateTeamCommand::performAction_241(int a2, unsigned int * a3)
+void CreateTeamCommand::performAction_241(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CreateTeamCommand::sub_5386A0(int a2, _DWORD *a3)
 {
   int i; // eax
 
@@ -155,10 +150,9 @@ void CreateTeamCommand::sub_5386A0(int a2, _DWORD *a3)
 
 // 0x538A20
 namespace gamemd {
-rc_ptr_base * CreateTeamCommand::performAction_243(char a2)
+void * CreateTeamCommand::performAction_243(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-rc_ptr_base *__thiscall CreateTeamCommand::performAction_243(rc_ptr_base *this, char a2)
 {
   rc_ptr_base *v4; // ebp
   rc_ptr_base *v5; // esi
@@ -199,10 +193,9 @@ rc_ptr_base *__thiscall CreateTeamCommand::performAction_243(rc_ptr_base *this, 
 
 // 0x6A6A00
 namespace gamemd {
-char CreateTeamCommand::performAction_245(char a2, int a3)
+void CreateTeamCommand::performAction_245(char a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_6A6A00(_DWORD *this, char a2, int a3)
 {
 
   if ( !DataGlobal_A8ED8C ) /*0x6a6a09*/
@@ -248,7 +241,6 @@ namespace gamemd {
 void CreateTeamCommand::performAction_246()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_731060(char *this)
 {
   int i; // edi
 
@@ -1253,11 +1245,10 @@ wchar_t * CreateTeamCommand::performAction_78()
 
 // 0x536C00
 namespace gamemd {
-int CreateTeamCommand::performAction_79()
+void CreateTeamCommand::performAction_79()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // attributes: thunk
-wchar_t *__thiscall CreateTeamCommand::performAction_79(AllToCheerCommandClass *this)
 {
   return UI_Create_730F30(); /*0x536c05*/
 }
@@ -1504,11 +1495,10 @@ wchar_t * CreateTeamCommand::performAction_103()
 
 // 0x536EA0
 namespace gamemd {
-int CreateTeamCommand::performAction_104()
+void CreateTeamCommand::performAction_104()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // attributes: thunk
-void CreateTeamCommand::performAction_104()
 {
   return TAction::CenterOnStartCoords(); /*0x536ea5*/
 }
@@ -1553,11 +1543,10 @@ wchar_t * CreateTeamCommand::performAction_108()
 
 // 0x536F20
 namespace gamemd {
-int CreateTeamCommand::performAction_109()
+void CreateTeamCommand::performAction_109()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // attributes: thunk
-char *__thiscall CreateTeamCommand::performAction_109(AllianceCommandClass *this)
 {
   return UI_Create_7318F0(); /*0x536f25*/
 }
@@ -3018,7 +3007,6 @@ unsigned int CreateTeamCommand::performAction_240(int a2)
 // 0x538750
 namespace gamemd {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CreateTeamCommand::sub_538750(_DWORD *a2)
 {
   int result; // eax
   _DWORD *i; // ecx

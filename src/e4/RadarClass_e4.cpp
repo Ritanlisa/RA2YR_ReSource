@@ -4,10 +4,9 @@
 
 // 0x652C00
 namespace gamemd {
-int RadarClass::Destruct()
+void RadarClass::Destruct()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void RadarClass_Destructor(_DWORD *this)
 {
 
   *this = &vt_RadarClass; /*0x652c0c*/
@@ -55,10 +54,9 @@ void RadarClass_Destructor(_DWORD *this)
 
 // 0x654650
 namespace gamemd {
-int RadarClass_RecreateSurface()
+void RadarClass_RecreateSurface()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __usercall RadarClass::RecreateSurface@<al>(int a1@<ecx>, int a2@<ebx>)
 {
   CCINIClass *v3; // eax
   RadarClass *v4; // edi
@@ -137,10 +135,9 @@ char __usercall RadarClass::RecreateSurface@<al>(int a1@<ecx>, int a2@<ebx>)
 
 // 0x6A8420
 namespace gamemd {
-bool RadarClass::GetBlip(int a1, int a2, int a3, ObjectClass * aP3)
+void RadarClass::GetBlip(int a1, int a2, int a3, ObjectClass * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void RadarClass::GetBlip(int a1, int a2, int a3, ObjectClass *aP3)
 {
   const wchar_t *v14; // eax
   const wchar_t *v15; // ecx

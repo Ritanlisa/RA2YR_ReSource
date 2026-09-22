@@ -11,10 +11,9 @@
 
 // 0x49CAF0
 namespace gamemd {
-char Movie::SetupScreen(CCINIClass * aP1)
+void Movie::SetupScreen(CCINIClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Movie::SetupScreen(int this, CCINIClass *aP1)
 {
   CCINIClass *v3; // eax
   TechnoTypeClass *v4; // ecx
@@ -84,10 +83,9 @@ void Movie::SetupScreen(int this, CCINIClass *aP1)
 
 // 0x49E3B0
 namespace gamemd {
-char Movie::GetSection(CCINIClass * aP1, CCINIClass * aP2)
+void Movie::GetSection(CCINIClass * aP1, CCINIClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Movie::GetSection(int this, CCINIClass *aP1, CCINIClass *aP2)
 {
   if ( !*(_BYTE *)(this + 96) ) /*0x49e3b3*/
     CampaignClass::LoadFromINI(this); /*0x49e3ba*/
@@ -110,7 +108,6 @@ namespace gamemd {
 void Movie::Play(CCINIClass * aP0, int a2, CCINIClass * aP2, IUnknown * aP3, char a5, char a6, char a7)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Movie::Play(CCINIClass *aP0, int a2, CCINIClass *aP2, IUnknown *aP3, char a5, char a6, char a7)
 {
   Frame *v10; // ecx
   Frame *v11; // ecx
@@ -272,7 +269,7 @@ void Movie::Play(CCINIClass *aP0, int a2, CCINIClass *aP2, IUnknown *aP3, char a
 
 // 0x5BF260
 namespace gamemd {
-int Movie_PlayWrapper()
+void Movie_PlayWrapper()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // (no pseudocode — ASM-only function)
@@ -335,7 +332,6 @@ namespace gamemd {
 unsigned int Movie::SelectNextBuildableType(AnimClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Movie::SelectNextBuildableType(int this, AnimClass *aP1)
 {
   TechnoTypeClass *v2; // ebp
   TechnoTypeClass *v5; // eax

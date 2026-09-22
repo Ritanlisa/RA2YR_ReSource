@@ -3,10 +3,9 @@
 #include "e4/e4_globals.hpp"
 
 // 0x486730
-bool Value::InRange()
+void Value::InRange()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Value_InRange(int *this)
 {
 
   int v1 = this->q038; /*0x486730*/

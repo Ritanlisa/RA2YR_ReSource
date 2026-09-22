@@ -4,10 +4,9 @@
 #include "e4/classes/Vector_e4.hpp"
 
 // 0x76FC50
-int ArtConfig::validateConfig(Selection_WorldDominationTour * aP1, int a3, Selection_WorldDominationTour * aP3)
+void ArtConfig::validateConfig(Selection_WorldDominationTour * aP1, int a3, Selection_WorldDominationTour * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ArtConfig::validateConfig(int this, Selection_WorldDominationTour *aP1, int a3, Selection_WorldDominationTour *aP3)
 {
   ObjectClass *v5; // ebp
   MSShapeAnim *v9; // eax

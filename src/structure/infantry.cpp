@@ -67,11 +67,10 @@ void InfantryClass::ProcessDeploy()
 
 // IDA: 0x51D6F0 (ProcessDeployAction, 1013B) — validates weapon, checks mission, sets loco
 // 0x51d6f0
-int InfantryClass::ProcessDeployAction(int deploy_type, bool a3, bool a4)
+void InfantryClass::ProcessDeployAction(int deploy_type, bool a3, bool a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x51d6f0
-void InfantryClass::ProcessDeployAction(int a2, char a3, char a4)
 {
   __int16 *v6; // eax
   char *ProductionTimeMult; // eax
@@ -637,10 +636,9 @@ retn    0Ch
 
 // IDA: 0x5200B0 (ProcessIdleDeploy, 428B)
 // 0x5200b0
-int InfantryClass::ProcessIdleDeploy()
+void InfantryClass::ProcessIdleDeploy()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_5200B0(int *this)
 {
 
   if ( this->q1B5 > 0 )
@@ -680,7 +678,7 @@ LABEL_42:
       }
     }
   }
-  int v5; // eax
+  bool v5; // eax
   LOBYTE(v5) = *(_BYTE *)(this->animation + 3775);
   if ( (_BYTE)v5 )
   {
@@ -756,11 +754,10 @@ bool InfantryClass::IsBombDeployMission()
 }
 
 // 0x514310
-int InfantryClass::DeployAnimation()
+void InfantryClass::DeployAnimation()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x514310
-void InfantryClass::DeployAnimation(int a1)
 {
   __int16 v10; // bx
   int Member; // eax
@@ -2073,11 +2070,10 @@ retn    8
 }
 
 // 0x51c8b0
-int InfantryClass::GetFireError(int* target, int weapon_idx, int a4, int a5)
+void InfantryClass::GetFireError(int* target, int weapon_idx, int a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x51c8b0
-int __fastcall InfantryClass::GetFireError(int a1, int a2, int *a3, int a4, int a5)
 {
   int result; // eax
 
@@ -3482,10 +3478,9 @@ int InfantryClass::FindMoveTarget()
 }
 
 // 0x418e20
-int InfantryClass::FindNearbyCell()
+void InfantryClass::FindNearbyCell()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void *__thiscall InfantryClass_FindNearbyCell(_DWORD *this, int a2)
 {
   __int16 v11; // bx
   int v2 = a2;
@@ -4592,10 +4587,9 @@ int InfantryClass::ProcessTunnelMovement()
 }
 
 // 0x736579
-int InfantryClass::UpdateBehavior()
+void InfantryClass::UpdateBehavior()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __usercall InfantryClass::UpdateBehavior@<al>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>, _BYTE *a4@<esi>, int a5)
 {
   void **v5; // eax
   __int16 v17; // di
@@ -5080,11 +5074,10 @@ retn
 }
 
 // 0x51dbd0
-int InfantryClass::CalcFacingToTarget()
+void InfantryClass::CalcFacingToTarget()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x51dbd0
-void InfantryClass::CalcFacingToTarget(int *a2)
 {
   __int16 v6; // ax
   __int16 v17; // ax
@@ -5425,11 +5418,10 @@ retn    4
 }
 
 // 0x51bf90
-int InfantryClass::EvaluateTarget()
+void InfantryClass::EvaluateTarget()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x51bf90
-void InfantryClass::EvaluateTarget(int this, int a2, int a3, int a4, int a5, int a6)
 {
   _DWORD *Type; // eax
   int result; // eax
@@ -6636,11 +6628,10 @@ retn    14h
 }
 
 // 0x51e140
-int InfantryClass::SelectAutoTarget(unsigned int flags, __int64 a3)
+void InfantryClass::SelectAutoTarget(unsigned int flags, __int64 a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x51e140
-void InfantryClass::SelectAutoTarget(int this, unsigned int a2, __int64 a3)
 {
   unsigned int v9; // edi
   _BYTE *v10; // ecx
@@ -7568,11 +7559,10 @@ retn
 }
 
 // 0x522d50
-int InfantryClass::SlaveGiveMoney_RecordBalanceBefore()
+void InfantryClass::SlaveGiveMoney_RecordBalanceBefore()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x522d50
-void InfantryClass::SlaveGiveMoney_RecordBalanceBefore(_DWORD *a2)
 {
   int result; // eax
 

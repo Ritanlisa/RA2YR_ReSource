@@ -7,10 +7,9 @@
 
 // 0x4A8BF0
 namespace gamemd {
-int Mouse::SetBounds(IUnknown * aP1)
+void Mouse::SetBounds(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Mouse::SetBounds(int this, IUnknown *aP1)
 {
   int result; // eax
   __int16 v4; // cx
@@ -61,10 +60,9 @@ void Mouse::SetBounds(int this, IUnknown *aP1)
 
 // 0x5BDC80
 namespace gamemd {
-char Mouse::SetCursor(ObjectClass * aP1, ObjectClass * aP2)
+void Mouse::SetCursor(ObjectClass * aP1, ObjectClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Mouse::SetCursor(int this, ObjectClass *aP1, ObjectClass *aP2)
 {
   char v4; // bl
   MPCooperative *v6; // edi
@@ -127,10 +125,9 @@ void Mouse::SetCursor(int this, ObjectClass *aP1, ObjectClass *aP2)
 
 // 0x6938C0
 namespace gamemd {
-HWND Mouse::ReleaseCapture()
+void Mouse::ReleaseCapture()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-HWND __thiscall Mouse_ReleaseCapture(_BYTE *this)
 {
   HWND result; // eax
 
@@ -149,7 +146,6 @@ namespace gamemd {
 void Mouse::DrawCursor(IUnknown * aP1, WWMouseClass * aP2, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Mouse::DrawCursor(IUnknown *aP1, WWMouseClass *aP2, int a4)
 {
   char **v5; // ecx
   int SubFile; // eax

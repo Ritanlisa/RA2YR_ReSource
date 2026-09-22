@@ -12,7 +12,6 @@ namespace gamemd {
 void String::AssignWideToChar(CampaignScore * aP1, CampaignScore * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void String::AssignWideToChar(CampaignScore *aP1, CampaignScore *aP2)
 {
   if ( aP1 ) /*0x49b76b*/
     strcpy(this, ToWideStringChar(aP1->__pad_0)); /*0x49b788*/
@@ -28,10 +27,9 @@ void String::AssignWideToChar(CampaignScore *aP1, CampaignScore *aP2)
 
 // 0x4CB5E0
 namespace gamemd {
-char * String::AllocAndCopy(RandomStruct * aP1, IUnknown * aP2)
+void * String::AllocAndCopy(RandomStruct * aP1, IUnknown * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall String::AllocAndCopy(char *this, RandomStruct *aP1, IUnknown *aP2)
 {
 
   strncpy(this, (const char *)aP1, (IUnknown *)4); /*0x4cb5ed*/
@@ -54,7 +52,6 @@ namespace gamemd {
 void String::Release()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void String_Release(void **this)
 {
   if ( *(this + 3) ) /*0x5bd5a3*/
     __3_YAXPAX_Z(*(this + 3)); /*0x5bd5ab*/
@@ -65,10 +62,9 @@ void String_Release(void **this)
 
 // 0x5D0380
 namespace gamemd {
-int String::SplitComma(ObjectClass * aP1)
+void String::SplitComma(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void String::SplitComma(int this, ObjectClass *aP1)
 {
   ObjectClass *v3; // ebx
   ObjectClass *v4; // ebx
@@ -114,7 +110,6 @@ namespace gamemd {
 int String::NormalizeNewlines()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int String_NormalizeNewlines()
 {
 
   const char * v0 = (const char *)DataGlobal_A8EA7C; /*0x5f3351*/
@@ -149,10 +144,9 @@ LABEL_6:
 
 // 0x763690
 namespace gamemd {
-int String::To_Waypoint()
+void String::To_Waypoint()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void String::To_Waypoint()
 {
 
   int v2 = -1; /*0x763694*/
@@ -169,7 +163,6 @@ namespace gamemd {
 void String::TrimLeft(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void String::TrimLeft(const char **this, ObjectClass *aP1)
 {
   int i; // esi
 
@@ -195,7 +188,6 @@ namespace gamemd {
 unsigned int String::Length()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void String_Length(const char **this)
 {
   if ( *this ) /*0x7b54b1*/
     return strlen(*this); /*0x7b54c6*/
@@ -207,10 +199,9 @@ void String_Length(const char **this)
 
 // 0x7B57A0
 namespace gamemd {
-char String::Replace(char * SubStr, const char * a3)
+void String::Replace(char * SubStr, const char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void String_Replace(char **this, char *SubStr, const char *a3)
 {
   void **v3; // edi
   size_t v7; // eax
@@ -336,10 +327,9 @@ LABEL_35:
 
 // 0x7B5F10
 namespace gamemd {
-int String::Tokenize(int a2, ObjectClass * aP2, ObjectClass * aP3)
+void String::Tokenize(int a2, ObjectClass * aP2, ObjectClass * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void String::Tokenize(const char **this, int a2, ObjectClass *aP2, ObjectClass *aP3)
 {
   size_t v12; // ecx
   ObjectClass *v14; // edi
@@ -422,10 +412,9 @@ void String::Tokenize(const char **this, int a2, ObjectClass *aP2, ObjectClass *
 
 // 0x7B7A60
 namespace gamemd {
-int String::Tokenize2(int a2, wchar_t * Str, void ** a4)
+void String::Tokenize2(int a2, wchar_t * Str, void ** a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void String_Tokenize2(const wchar_t **this, int a2, wchar_t *Str, void **a4)
 {
   const wchar_t *v7; // eax
   const wchar_t *v8; // eax
@@ -515,10 +504,9 @@ void String_Tokenize2(const wchar_t **this, int a2, wchar_t *Str, void **a4)
 
 // 0x7CCA34
 namespace gamemd {
-unsigned int sub_7CCA34(unsigned char * a1, unsigned int a2, unsigned char * a3, int a4, void * a5)
+void int sub_7CCA34(unsigned char * a1, unsigned int a2, unsigned char * a3, int a4, void * a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_7CCA34(unsigned __int8 *a1, unsigned int a2, unsigned __int8 *a3, int a4, void *a5)
 {
   unsigned __int8 *v6; // esi
   unsigned __int8 v7; // al

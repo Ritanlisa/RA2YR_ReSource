@@ -13,7 +13,6 @@ namespace gamemd {
 int sub_6863E0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_6863E0()
 {
   DWORD Ticks; // eax
   DWORD v3; // eax
@@ -73,10 +72,9 @@ int sub_6863E0()
 
 // 0x686570
 namespace gamemd {
-char sub_686570()
+void sub_686570()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_686570()
 {
   DWORD Ticks; // eax
   DWORD v3; // eax

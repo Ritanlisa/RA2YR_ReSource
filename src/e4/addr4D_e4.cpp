@@ -11,10 +11,9 @@
 
 // 0x4D1650
 namespace gamemd {
-int DestructFoggedObjectClass(FoggedObjectClass * aP0)
+void DestructFoggedObjectClass(FoggedObjectClass * aP0)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall DestructFoggedObjectClass(FoggedObjectClass *aP0)
 {
   BuildingTypeClass *i; // eax
   int edx15; // edx
@@ -201,10 +200,9 @@ int globalHelper_0D2ED0(unsigned int * a1, unsigned int * a2)
 
 // 0x4D2F00
 namespace gamemd {
-int sub_4D2F00(int a1, int a2, int * a3)
+void sub_4D2F00(int a1, int a2, int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_4D2F00(int a1, int a2, int *a3)
 {
   int v5; // edi
 
@@ -235,10 +233,9 @@ LABEL_7:
 
 // 0x4DB8A0
 namespace gamemd {
-LPVOID E4Recv_4DB8A0::sub_4DB8A0()
+void E4Recv_4DB8A0::sub_4DB8A0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_4DB8A0(_DWORD *this)
 {
   LPVOID v5; // esi
   LPVOID result; // eax

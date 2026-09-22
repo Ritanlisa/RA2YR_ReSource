@@ -12,7 +12,6 @@ namespace gamemd {
 int sub_6F2040()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_6F2040()
 {
   int result; // eax
   int i; // esi

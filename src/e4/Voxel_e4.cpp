@@ -12,10 +12,9 @@
 
 // 0x748220
 namespace gamemd {
-char Voxel::BuildIndexTable()
+void Voxel::BuildIndexTable()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Voxel_BuildIndexTable(void *this)
 {
   __int16 v5; // bx
   char v12; // [esp+8h] [ebp-18h]
@@ -90,10 +89,9 @@ void Voxel_BuildIndexTable(void *this)
 
 // 0x754510
 namespace gamemd {
-float * Voxel::RenderFrame()
+void * Voxel::RenderFrame()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-float *__thiscall Voxel_RenderFrame(float *this)
 {
   _DWORD ***v13; // esi
   _DWORD ***v16; // edi
@@ -220,10 +218,9 @@ float *__thiscall Voxel_RenderFrame(float *this)
 
 // 0x754CB0
 namespace gamemd {
-int Voxel::Projection_Setup()
+void Voxel::Projection_Setup()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Voxel_Projection_Setup()
 {
   int result; // eax
 
@@ -469,10 +466,9 @@ void Voxel_Projection_Setup()
 
 // 0x755DB0
 namespace gamemd {
-int Voxel::SortDepth(ObjectClass * aP1, int a3)
+void Voxel::SortDepth(ObjectClass * aP1, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Voxel::SortDepth(ObjectClass *aP1, int a3)
 {
   CCINIClass *v5; // eax
   CCINIClass *v6; // eax
@@ -831,10 +827,9 @@ LABEL_70:
 
 // 0x756590
 namespace gamemd {
-int Voxel::ProcessColor(unsigned int * a2, float * a3)
+void Voxel::ProcessColor(unsigned int * a2, float * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Voxel_ProcessColor(_DWORD *this, _DWORD *a2, float *a3)
 {
   unsigned __int8 v6; // dl
   unsigned __int8 v16; // [esp+14h] [ebp-40h]
@@ -908,10 +903,9 @@ void Voxel_ProcessColor(_DWORD *this, _DWORD *a2, float *a3)
 
 // 0x75C240
 namespace gamemd {
-char Voxel::DrawHelper(IUnknown * aP1)
+void Voxel::DrawHelper(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Voxel::DrawHelper(IUnknown *aP1)
 {
   IUnknown *v3; // ebx
   BuildingTypeClass *v4; // ecx
@@ -1081,10 +1075,9 @@ void Voxel::DrawHelper(IUnknown *aP1)
 
 // 0x75EDF0
 namespace gamemd {
-int Voxel::BlendShadowColor(int a2, WaveClass * aP2, int arg8, unsigned short * a4)
+void Voxel::BlendShadowColor(int a2, WaveClass * aP2, int arg8, unsigned short * a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Voxel::BlendShadowColor(int a2, WaveClass *aP2, int arg8, _WORD *a4)
 {
   int result; // eax
 
@@ -1124,10 +1117,9 @@ void Voxel::BlendShadowColor(int a2, WaveClass *aP2, int arg8, _WORD *a4)
 
 // 0x75F140
 namespace gamemd {
-int Voxel::loadSectionData()
+void Voxel::loadSectionData()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_75F140(_DWORD *this)
 {
   int result; // eax
 
@@ -1164,10 +1156,9 @@ void sub_75F140(_DWORD *this)
 
 // 0x75F4C0
 namespace gamemd {
-char Voxel::renderSection(ObjectClass * aP1)
+void Voxel::renderSection(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Voxel::renderSection(ObjectClass *aP1)
 {
   ObjectClass *v3; // eax
   ObjectClass *v8; // edx
@@ -1200,7 +1191,6 @@ namespace gamemd {
 void Voxel::ShadowCalc(WaveClass * aP1, int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Voxel::ShadowCalc(int this, WaveClass *aP1, int *a2)
 {
   CCINIClass *v16; // ecx
   unsigned __int16 *v20; // ebx
@@ -1514,10 +1504,9 @@ void Voxel::ShadowCalc(int this, WaveClass *aP1, int *a2)
 
 // 0x760190
 namespace gamemd {
-int Voxel::BlendColor(int a2, WaveClass * aP2, int arg8, unsigned short * a4)
+void Voxel::BlendColor(int a2, WaveClass * aP2, int arg8, unsigned short * a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Voxel::BlendColor(int a2, WaveClass *aP2, int arg8, _WORD *a4)
 {
   unsigned __int16 v7; // dx
   int result; // eax
@@ -1563,7 +1552,6 @@ namespace gamemd {
 void Voxel::FaceDraw(unsigned int * a1, WaveClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Voxel::FaceDraw(_DWORD *a1, WaveClass *aP2)
 {
   WaveClass *v3; // ebx
   unsigned int SamplePosition; // edi
@@ -1768,7 +1756,6 @@ namespace gamemd {
 void Voxel::FaceBlit()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Voxel::FaceBlit(int this)
 {
   IUnknown *v6; // eax
   MouseClass *v7; // edx
@@ -1910,10 +1897,9 @@ void Voxel::FaceBlit(int this)
 
 // 0x761640
 namespace gamemd {
-int Voxel::SectionProject(int * a2, int a3)
+void Voxel::SectionProject(int * a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Voxel_Section_Project(_DWORD *this, int *a2, int a3)
 {
   int result; // eax
 
@@ -2131,10 +2117,9 @@ void Voxel_Section_Project(_DWORD *this, int *a2, int a3)
 
 // 0x762070
 namespace gamemd {
-int Voxel::LightRender(AbstractClass ** a2, int a3)
+void Voxel::LightRender(AbstractClass ** a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Voxel::LightRender(AbstractClass **a2, int a3)
 {
   AbstractClass *v6; // eax
   AbstractClass *v8; // edx
@@ -2414,10 +2399,9 @@ void Voxel::LightRender(AbstractClass **a2, int a3)
 
 // 0x762AF0
 namespace gamemd {
-int Voxel::TransformMatrix()
+void Voxel::TransformMatrix()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Voxel_Transform_Matrix(int this)
 {
   int v71; // [esp+20h] [ebp-1Ch] BYREF
   int v72; // [esp+24h] [ebp-18h]
@@ -2624,10 +2608,9 @@ LABEL_22:
 
 // 0x763330
 namespace gamemd {
-char Voxel::freeSectionMemory(unsigned int * a2)
+void Voxel::freeSectionMemory(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_763330(_DWORD *this, _DWORD *a2)
 {
 
   int v3 = this->q008; /*0x763333*/
@@ -2653,7 +2636,6 @@ namespace gamemd {
 int Voxel::FacePixelBuffer(int * a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int Voxel_FacePixelBuffer(int *a1)
 {
   int result; // eax
   _BYTE *i; // edi
@@ -2749,7 +2731,6 @@ namespace gamemd {
 int Voxel::FacePixelBufferEx(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int Voxel_FacePixelBufferEx(int a1)
 {
   int result; // eax
   unsigned __int8 *v12; // edi
@@ -2844,7 +2825,6 @@ namespace gamemd {
 int Voxel::FacePixelBuffer3(int * a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int Voxel_FacePixelBuffer3(int *a1)
 {
   int result; // eax
   char *i; // edi

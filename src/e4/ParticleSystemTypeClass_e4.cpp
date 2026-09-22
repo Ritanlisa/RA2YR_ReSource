@@ -6,10 +6,9 @@
 
 // 0x6442D0
 namespace gamemd {
-char ParticleSystemTypeClass::GetType(unsigned char *** aP1)
+void ParticleSystemTypeClass::GetType(unsigned char *** aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ParticleSystemTypeClass::GetType(int this, unsigned __int8 ***aP1)
 {
   char Bool_Overwrite; // al
   int Int_Overwrite; // eax
@@ -219,10 +218,9 @@ void ParticleSystemTypeClass::GetType(int this, unsigned __int8 ***aP1)
 
 // 0x644700
 namespace gamemd {
-int ParticleSystemTypeClass::PowerDrainUpdate(int * a2)
+void ParticleSystemTypeClass::PowerDrainUpdate(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ParticleSystemTypeClass::_vt13(int this, int *a2)
 {
 
   AbstractTypeClass::ProcessPower((char *)this, a2); /*0x644709*/

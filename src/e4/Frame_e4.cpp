@@ -4,10 +4,9 @@
 #include "e4/classes/Math_e4.hpp"
 
 // 0x4F4780
-int Frame::Present(IUnknown * aP1)
+void Frame::Present(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Frame::Present(IUnknown *aP1)
 {
   int result; // eax
   LONG v7; // eax
@@ -251,10 +250,9 @@ LABEL_51:
 }
 
 // 0x724C00
-BOOL Frame::Init()
+void Frame::Init()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_724C00(_DWORD *this)
 {
   return this->q004 != 0; /*0x724c0a*/
 }

@@ -44,11 +44,10 @@ UnitClass::UnitClass() noexcept
 // Merged: Westwood combined harvest + unload into a single 5-case state machine.
 // Case 3 handles unloading logic (pop cargo, apply overlay, handle team members).
 // No separate Mission_Unload override exists in the binary (vtable slot = Return450J).
-int UnitClass::Mission_Harvest()
+void UnitClass::Mission_Harvest()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x4151e0
-void UnitClass::Mission_Harvest()
 {
   char *MissionControl; // eax
   void *ClosestPlacementCell; // eax
@@ -115,7 +114,7 @@ void UnitClass::Mission_Harvest()
               void * v22 = CellCoord::To_CellObj(DataGlobal_87F7E8, Waypoint_Location);
               void * v23 = InfantryClass::FindNearbyCell(this, (int)v22);
               (*(void (__thiscall **)(int *, void *, int))(v20 + 1152))(this, v23, 1);
-              int v24 = this->q175;
+              bool v24 = this->q175;
               if ( v24 )
                 TeamClass::SelectMember(v24, this->q169);
             }
@@ -580,10 +579,9 @@ retn
 
 // IDA: 0x73D450 (ProcessResourceHarvesting, 477B)
 // 0x73d450
-int UnitClass::ProcessResourceHarvesting()
+void UnitClass::ProcessResourceHarvesting()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_73D450(void *this)
 {
   __int16 *v2; // ebp
   #72 *v9; // eax
@@ -829,10 +827,9 @@ UnitClass* UnitClass::updateHarvesting()
 
 // IDA: 0x6B4BE0 (UnloadPassengers, 136B)
 // 0x6b4be0
-int UnitClass::UnloadPassengers(int placementType)
+void UnitClass::UnloadPassengers(int placementType)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void UnitClass::UnloadPassengers(int a2)
 {
 
   int v2 = a2; /*0x6b4be3*/
@@ -2333,10 +2330,9 @@ retn
 
 // IDA: 0x6B6080 (CreateUnloadPlacementCraters, 167B)
 // 0x6b6080
-int UnitClass::CreateUnloadPlacementCraters(CellStruct* cell)
+void UnitClass::CreateUnloadPlacementCraters(CellStruct* cell)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_6B6080(int this, _WORD *a2)
 {
   int result; // eax
   int i; // ebx
@@ -2549,10 +2545,9 @@ retn    8
 
 // IDA: 0x7192F0 (Deploy, 2302B)
 // 0x7192f0
-int UnitClass::Deploy()
+void UnitClass::Deploy()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void UnitClass::Deploy(AnimClass *a1)
 {
   AnimClass *v1; // esi
   int i; // edi
@@ -2896,10 +2891,9 @@ LABEL_82:
 }
 }
 // 0x738d30
-int UnitClass::DeployToBuilding()
+void UnitClass::DeployToBuilding()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void UnitClass_DeployToBuilding(_DWORD *this)
 {
   _DWORD *BuildableFromArray; // eax
   int FoundationHeight; // eax
@@ -4561,10 +4555,9 @@ retn    0Ch
 
 // IDA: 0x7359F0 (CalcMoveTarget, 1730B)
 // 0x7359f0
-int UnitClass::CalcMoveTarget()
+void UnitClass::CalcMoveTarget()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void UnitClass_CalcMoveTarget(int *this)
 {
   _WORD *Height; // eax
   int GroundHeight; // ebx
@@ -9352,10 +9345,9 @@ retn
 
 // IDA: 0x743A50 (Scatter, 1622B)
 // 0x743a50
-int UnitClass::Scatter(CellStruct* threatPos, bool a3, bool a4)
+void UnitClass::Scatter(CellStruct* threatPos, bool a3, bool a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __userpurge UnitClass::Scatter@<eax>(_DWORD *this@<ecx>, int *a2, IUnknown aP14)
 {
   int result; // eax
   IUnknown *v9; // eax
@@ -10889,10 +10881,9 @@ retn    1Ch
 
 // IDA: 0x70DC70 (SetTurret, 110B)
 // 0x70dc70
-int UnitClass::SetTurret(unsigned int a2)
+void UnitClass::SetTurret(unsigned int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void UnitClass_SetTurret(_DWORD *this, unsigned int a2)
 {
   int result; // eax
 
@@ -12696,10 +12687,9 @@ retn    14h
 
 // IDA: 0x7438F0 (CanCrushTarget, 339B)
 // 0x7438f0
-bool UnitClass::CanCrushTarget(TechnoClass* aP1)
+void UnitClass::CanCrushTarget(TechnoClass* aP1)
  {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void UnitClass::CanCrushTarget(int this, TechnoClass *aP1)
 {
   bool result; // al
 
@@ -12763,10 +12753,9 @@ retn
 
 // IDA: 0x6B4A50 (Create, 234B static)
 // 0x6b4a50
-int UnitClass::Create(void* aP0, void* aP1, int aP2)
+void UnitClass::Create(void* aP0, void* aP1, int aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-SmudgeClass *__thiscall UnitClass::Create(void **this, AbstractClass *aP1, AbstractClass *aP2, int a4)
 {
 
   ObjectClass::ctor(this); /*0x6b4a53*/
@@ -12806,10 +12795,9 @@ SmudgeClass *__thiscall UnitClass::Create(void **this, AbstractClass *aP1, Abstr
 int UnitClass::ReadINI()
 {
 // 0x6b4fa0
-int UnitClass::DestroySmudge(char a2)
+void UnitClass::DestroySmudge(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-SmudgeClass *__thiscall UnitClass::DestroySmudge(void **Block, char a2)
 {
   void **v5; // [esp+4h] [ebp-4h] BYREF
 
@@ -13573,10 +13561,9 @@ retn    4
 
 // IDA: 0x746810 (PerFrameUpdate, 167B)
 // 0x746810
-int UnitClass::PerFrameUpdate(int _DWORD *a1@<ecx>, int int a2@<edi>)
+void UnitClass::PerFrameUpdate(int _DWORD *a1@<ecx>, int int a2@<edi>)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__usercall UnitClass_PerFrameUpdate@<eax>(_DWORD *a1@<ecx>, int a2@<edi>)
 {
   _DWORD *result; // eax
 
@@ -13648,10 +13635,9 @@ int UnitClass::CheckStatus()
 
 // IDA: 0x6B7C60 (ClearTargetRef, 206B)
 // 0x6b7c60
-int UnitClass::ClearTargetRef(int a2)
+void UnitClass::ClearTargetRef(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_6B7C60(_DWORD *this, int a2)
 {
   _DWORD **v6; // ecx
 
@@ -13811,7 +13797,6 @@ retn    4
 int UnitClass::ProcessIdleOrders()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_6B7C60(_DWORD *this, int a2)
 {
   _DWORD **v6; // ecx
 
@@ -13898,13 +13883,12 @@ retn
 
 // IDA: 0x4D4280 (ApproachEvaluate, 2177B)
 // 0x4d4280
-int UnitClass::ApproachEvaluate()
+void UnitClass::ApproachEvaluate()
 {
 {
 {
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void UnitClass_ApproachEvaluate(_DWORD *this)
 {
   char *MissionControl; // eax
   #375 **v22; // edi

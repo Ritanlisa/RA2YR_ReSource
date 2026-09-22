@@ -16,7 +16,6 @@ namespace gamemd {
 char sub_5F0070()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char sub_5F0070()
 {
   DWORD v0; // eax
   __int16 v5; // [esp+74h] [ebp-4h]
@@ -58,7 +57,6 @@ namespace gamemd {
 char HandlePlayerDisconnection(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall HandlePlayerDisconnection(int a1, int a2)
 {
   char result; // al
   wchar_t *StringCSF; // eax
@@ -164,10 +162,9 @@ LABEL_20:
 
 // 0x5F2CE0
 namespace gamemd {
-int WaitModemConnection()
+void WaitModemConnection()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __userpurge WaitModemConnection@<eax>(int a1@<ecx>, int a2@<edi>, char a3)
 {
   wchar_t *StringCSF; // eax
   ObjectClass *v5; // esi
@@ -351,10 +348,9 @@ LABEL_36:
 
 // 0x5F33B0
 namespace gamemd {
-int sub_5F33B0()
+void* sub_5F33B0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void* sub_5F33B0()
 {
   unsigned __int16 v0; // ax
 
@@ -378,7 +374,6 @@ namespace gamemd {
 unsigned int * sub_5F66A0(unsigned int * a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__fastcall sub_5F66A0(_DWORD *a1, int a2)
 {
 
   int v2 = *(_DWORD *)(a2 + 16); /*0x5f66a7*/
@@ -443,7 +438,6 @@ namespace gamemd {
 char sub_5FBEF0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char sub_5FBEF0()
 {
   HWND Dialog; // esi
   LONG dwNewLong; // [esp+4h] [ebp-4h] BYREF
@@ -474,10 +468,9 @@ char sub_5FBEF0()
 
 // 0x5FDD20
 namespace gamemd {
-int FindBuildingByTiberiumType(IUnknown * aP0)
+void FindBuildingByTiberiumType(IUnknown * aP0)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall FindBuildingByTiberiumType(IUnknown *aP0)
 {
   int **v3; // edi
 
@@ -528,7 +521,6 @@ namespace gamemd {
 void sub_5FDDF0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_5FDDF0()
 {
   int i; // edi
   void **v6; // [esp+Ch] [ebp-18h] BYREF
@@ -589,7 +581,6 @@ namespace gamemd {
 int BuildingTypeClass_LoadSHPs(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall BuildingTypeClass_LoadSHPs(int a1)
 {
   int result; // eax
   char Buffer[512]; // [esp+Ch] [ebp-200h] BYREF
@@ -648,7 +639,6 @@ namespace gamemd {
 void sub_5FF390()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_5FF390()
 {
   int i; // edi
 
@@ -679,10 +669,9 @@ void sub_5FF390()
 
 // 0x5FF420
 namespace gamemd {
-char * GenerateRangeRingTextures()
+void * GenerateRangeRingTextures()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *GenerateRangeRingTextures()
 {
   int j; // esi
   int k; // esi

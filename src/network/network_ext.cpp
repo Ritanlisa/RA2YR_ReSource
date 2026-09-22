@@ -188,7 +188,6 @@ void NetworkManager::RemovePlayer() {}
 void NetworkOptions::DlgProc() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x560480
-void NetworkOptions::DlgProc(int hWnd, int a2, int a3, int hCtl)
 {
   int result; // eax
   int i; // ebx

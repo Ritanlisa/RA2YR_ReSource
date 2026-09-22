@@ -6,10 +6,9 @@
 
 // 0x531CC0
 namespace gamemd {
-int MainMenu_Screen()
+long MainMenu_Screen()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-LONG __usercall MainMenu_Screen@<eax>(int a1@<ebx>, int a2@<ebp>)
 {
   HWND v2; // esi
   HWND DlgItem; // esi
@@ -118,10 +117,9 @@ LABEL_27:
 } // namespace gamemd
 
 // 0x531F60
-int MainMenu::DlgProc(HWND hWnd, int a2, int a3, int a4)
+void MainMenu::DlgProc(HWND hWnd, int a2, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MainMenu_DlgProc(HWND hWnd, int a2, int a3, int a4)
 {
   int result; // eax
   _DWORD *WindowLongA; // eax

@@ -8,7 +8,6 @@ namespace gamemd {
 IUnknown * CellStruct::Add(IUnknown * aP1, IUnknown * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-IUnknown *__thiscall CellStruct::Add(_WORD *this, IUnknown *aP1, IUnknown *aP2)
 {
   __int16 v3; // dx
   IUnknown *aP2a; // [esp+8h] [ebp+8h]
@@ -27,7 +26,6 @@ namespace gamemd {
 unsigned int * CellStruct::Copy(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall CellStruct::Copy(int *this, IUnknown *aP1)
 {
   AbstractClass *v3; // edx
   v3 = (AbstractClass *)*this; /*0x437f34*/
@@ -44,7 +42,6 @@ namespace gamemd {
 BOOL CellStruct::Equals(unsigned short * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL CellStruct_Equals(_WORD *this, _WORD *a2)
 {
   return *this == *a2 && this->q004 == a2[1]; /*0x50e48b*/
 }
@@ -56,7 +53,6 @@ namespace gamemd {
 IUnknown * CellStruct::Sub(IUnknown * aP1, IUnknown * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-IUnknown *__thiscall CellStruct::Sub(__int16 *this, IUnknown *aP1, IUnknown *aP2)
 {
   __int16 v3; // dx
   __int16 v4; // cx

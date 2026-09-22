@@ -9,10 +9,9 @@
 #include "e4/classes/String_e4.hpp"
 
 // 0x7AA870
-int CChatEventSink::HandleChatChannelList(int a1, int a2, const char * a3)
+void CChatEventSink::HandleChatChannelList(int a1, int a2, const char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CComObject_CChatEventSink___ATL::vt_08_(int a1, int a2, const char *a3)
 {
   char **v19; // ecx
   char **v24; // ecx
@@ -375,10 +374,9 @@ LABEL_104:
 }
 
 // 0x7AD930
-char CChatEventSink::GrowBuffer()
+void CChatEventSink::GrowBuffer()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_7AD930(int *this)
 {
 
   int v2 = *this; /*0x7ad935*/
@@ -403,10 +401,9 @@ void sub_7AD930(int *this)
 }
 
 // 0x7AED40
-char CChatEventSink::ProcessChatEvent()
+void CChatEventSink::ProcessChatEvent()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_7AED40(int *this)
 {
 
   int v2 = *this; /*0x7aed44*/
@@ -429,10 +426,9 @@ void sub_7AED40(int *this)
 }
 
 // 0x7AEE90
-char CChatEventSink::Check(unsigned int * a2, int a3)
+void CChatEventSink::Check(unsigned int * a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_7AEE90(int *this, _DWORD *a2, int a3)
 {
   if ( a3 < 0 || a3 >= *this ) /*0x7aee9a*/
     return 0; /*0x7aeead*/

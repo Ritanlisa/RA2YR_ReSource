@@ -6,10 +6,9 @@
 #include "e4/classes/Power_e4.hpp"
 
 // 0x512680
-HouseTypeClass * WeaponTypeClass::Create()
+void * WeaponTypeClass::Create()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-HouseTypeClass *__thiscall WeaponTypeClass::Create(AbstractClass *this)
 {
 
   if ( !_strcmpi(&stru_817460.sectionHead[1], this) || !_strcmpi(g_Str_none, this) ) /*0x51269c*/
@@ -33,10 +32,9 @@ LABEL_6:
 }
 
 // 0x6CEEF0
-int WeaponTypeClass::Process()
+void WeaponTypeClass::Process()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void WeaponTypeClass::Process()
 {
 
   if ( !_strcmpi(&stru_817460.sectionHead[1], this) || !_strcmpi(g_Str_none, this) ) /*0x6cef0c*/
@@ -63,7 +61,6 @@ LABEL_6:
 unsigned int * WeaponTypeClass::Constructor(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall WeaponTypeClass::Constructor(_DWORD *this, ObjectClass *aP1)
 {
   WeaponTypeClass *v3; // eax
   AbstractTypeClass::Constructor((int)this, (AbstractClass *)aP1); /*0x771c7a*/
@@ -154,10 +151,9 @@ _DWORD *__thiscall WeaponTypeClass::Constructor(_DWORD *this, ObjectClass *aP1)
 }
 
 // 0x771F50
-int WeaponTypeClass::Destructor()
+void WeaponTypeClass::Destructor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_771F50(int this)
 {
   WeaponTypeClass *v7; // [esp+8h] [ebp-4h] BYREF
   *(_DWORD *)this = &WeaponTypeClass::`vftable'; /*0x771f57*/
@@ -210,10 +206,9 @@ void sub_771F50(int this)
 }
 
 // 0x772AE0
-int WeaponTypeClass::ProcessPower(int * a2)
+void WeaponTypeClass::ProcessPower(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void WeaponTypeClass::ProcessPower(int this, int *a2)
 {
 
   AbstractTypeClass::ProcessPower((char *)this, a2); /*0x772ae9*/
@@ -286,10 +281,9 @@ void WeaponTypeClass::ProcessPower(int this, int *a2)
 
 // 0x772CD0
 namespace gamemd {
-int WeaponTypeClass_SaveLoad_Prefix()
+void WeaponTypeClass_SaveLoad_Prefix()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __userpurge WeaponTypeClass::SaveLoad_Prefix@<eax>(int a1@<ebx>, int *a2, int a3, int a4)
 {
   int result; // eax
   int i; // ebx
@@ -354,10 +348,9 @@ int __userpurge WeaponTypeClass::SaveLoad_Prefix@<eax>(int a1@<ebx>, int *a2, in
 
 // 0x772EB0
 namespace gamemd {
-int WeaponTypeClass_SaveLoad_Prefix_0()
+void WeaponTypeClass_SaveLoad_Prefix_0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __userpurge WeaponTypeClass::SaveLoad_Prefix_0@<eax>(int a1@<ebx>, int *a2, int *a3, int a4, int a5)
 {
   int result; // eax
   int i; // ebx

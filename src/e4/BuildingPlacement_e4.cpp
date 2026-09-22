@@ -8,10 +8,9 @@
 #include "e4/classes/Tactical_e4.hpp"
 
 // 0x4FB840
-char BuildingPlacement::Activate(int a2, unsigned int * a3)
+void BuildingPlacement::Activate(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void BuildingPlacement_Activate(int this, int a2, _DWORD *a3)
 {
 
   if ( (#375 *)this != HouseClass_Player ) /*0x4fb84c*/
@@ -45,10 +44,9 @@ void BuildingPlacement_Activate(int this, int a2, _DWORD *a3)
 }
 
 // 0x54C550
-char BuildingPlacement::ProcessBuildingPlacementAction()
+void BuildingPlacement::ProcessBuildingPlacementAction()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void BuildingPlacementClass::ProcessAction(int this)
 {
   void *NeighbourContent; // eax
   char *v12; // eax
@@ -313,7 +311,6 @@ void BuildingPlacementClass::ProcessAction(int this)
 unsigned int * BuildingPlacement::SelectBuildingPlacementCells(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall BuildingPlacement_SelectCells(int *this, int a2)
 {
   _DWORD *v35; // [esp+18h] [ebp-30h]
   int v36; // [esp+1Ch] [ebp-2Ch]

@@ -7,10 +7,9 @@
 
 // 0x52FEC0
 namespace gamemd {
-int Screen_Capture()
+void Screen_Capture()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __usercall sub_52FEC0@<al>(char a1@<dl>, int a2@<ecx>, int a3@<ebx>, int a4@<ebp>)
 {
   char result; // al
   int retaddr; // [esp+26h] [ebp+0h]
@@ -51,10 +50,9 @@ char __usercall sub_52FEC0@<al>(char a1@<dl>, int a2@<ecx>, int a3@<ebx>, int a4
 } // namespace gamemd
 
 // 0x68F060
-int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
+void Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Screen::TransitionRender(AnimClass *aP1, AnimClass *aP2, int a4)
 {
   CampaignScore *v17; // ebx
   int v19; // ecx
@@ -463,10 +461,9 @@ void Screen::TransitionRender(AnimClass *aP1, AnimClass *aP2, int a4)
 }
 
 // 0x690160
-int Screen::TransitionLoop(int a2)
+void Screen::TransitionLoop(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Screen::TransitionLoop(int a2)
 {
   int i; // esi
   int j; // esi

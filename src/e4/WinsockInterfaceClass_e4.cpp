@@ -4,10 +4,9 @@
 #include "e4/classes/NetworkClass_e4.hpp"
 
 // 0x7B1AB0
-void WinsockInterfaceClass::WinsockInterfaceClass()
+W WinsockInterfaceClass::WinsockInterfaceClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-W WinsockInterfaceClass_Destructor(int this)
 {
 
   char v2 = this->q3F068; /*0x7b1ab6*/

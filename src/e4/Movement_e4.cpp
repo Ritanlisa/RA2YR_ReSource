@@ -10,16 +10,6 @@
 long long Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, IUnknown * aP3, IUnknown * aP4, IUnknown * aP5, char a7, char a8, char a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-__int64 Movement::CalcVelocity(
-        IUnknown *aP0,
-        unsigned int *a1,
-        double a3,
-        IUnknown *aP3,
-        IUnknown *aP4,
-        IUnknown *aP5,
-        char a7,
-        char a8,
-        char a9)
 {
   int *v12; // ebx
   BuildingTypeClass *v13; // esi

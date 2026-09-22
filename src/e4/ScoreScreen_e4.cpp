@@ -12,7 +12,6 @@
 unsigned int * ScoreScreen::LoadScoreFont(ScoreFontClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall ScoreScreen::LoadScoreFont(_DWORD *this, ScoreFontClass *aP1)
 {
   IUnknown *v3; // edx
   this->q004 = 0; /*0x690a19*/
@@ -53,7 +52,6 @@ _DWORD *__thiscall ScoreScreen::LoadScoreFont(_DWORD *this, ScoreFontClass *aP1)
 unsigned int * ScoreScreen::LoadCountryFlags(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_690AE0(_DWORD *this, int a2)
 {
 
   this->q004 = 0; /*0x690ae9*/
@@ -93,7 +91,6 @@ _DWORD *__thiscall sub_690AE0(_DWORD *this, int a2)
 unsigned int * ScoreScreen::Constructor(ScoreAnimClass * aP1, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall ScoreScreen::Constructor(_DWORD *this, ScoreAnimClass *aP1, int a3, int a4)
 {
   this->q008 = a3; /*0x690f3b*/
   this->q004 = aP1; /*0x690f41*/
@@ -109,7 +106,6 @@ _DWORD *__thiscall ScoreScreen::Constructor(_DWORD *this, ScoreAnimClass *aP1, i
 void ScoreScreen::RemoveItem(int a2, int a3, ObjectClass * aP3, char a5, int a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ScoreScreen::RemoveItem(int this, int a2, int a3, ObjectClass *aP3, char a5, int a6)
 {
 
   int v7 = *(_DWORD *)(this + 976); /*0x7712d5*/
@@ -193,17 +189,9 @@ void ScoreScreen::RemoveItem(int this, int a2, int a3, ObjectClass *aP3, char a5
 
 // 0x778210
 namespace gamemd {
-int ScoreScreen_DrawSHPBackground()
+void ScoreScreen_DrawSHPBackground()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __userpurge ScoreScreen::DrawSHPBackground@<eax>(
-        char *Source@<ecx>,
-        ConvertClass *a2@<edx>,
-        int a3@<ebx>,
-        int a4@<ebp>,
-        int a5,
-        int a6,
-        ConvertClass *aP1)
 {
   int *Viewport; // eax
   void (__thiscall ***v26)(_DWORD, int); // [esp+1Ch] [ebp-C4h]

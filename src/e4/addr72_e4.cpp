@@ -31,7 +31,6 @@ namespace gamemd {
 void * sub_7221B0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void *sub_7221B0()
 {
   void *result; // eax
   int i; // esi
@@ -74,7 +73,6 @@ namespace gamemd {
 void * sub_722C40()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void *sub_722C40()
 {
   void *result; // eax
   int i; // esi
@@ -127,7 +125,6 @@ namespace gamemd {
 int CompareFunc2Int(unsigned int * a1, unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int CompareFunc2Int(_DWORD *a1, _DWORD *a2)
 {
   if ( *a1 == *a2 )
     return 0; /*0x725050*/
@@ -139,10 +136,9 @@ int CompareFunc2Int(_DWORD *a1, _DWORD *a2)
 
 // 0x725C70
 namespace gamemd {
-int sub_725C70()
+void sub_725C70()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_725C70()
 {
   int result; // eax
 
@@ -203,7 +199,6 @@ namespace gamemd {
 void sub_728200()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_728200()
 {
   __int16 *v2; // esi
   int i; // [esp+8h] [ebp-4h]
@@ -233,10 +228,9 @@ void sub_728200()
 
 // 0x72AA40
 namespace gamemd {
-unsigned char LoadMouseClassResources()
+unsigned char char LoadMouseClassResources()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned char LoadMouseClassResources()
 {
   unsigned __int8 result; // al
 
@@ -276,10 +270,9 @@ unsigned char LoadMouseClassResources()
 
 // 0x72ADE0
 namespace gamemd {
-int Palette_LoadSimple(char * Source, unsigned int * a2, unsigned int * a3)
+void Palette_LoadSimple(char * Source, unsigned int * a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall Palette_LoadSimple(char *Source, _DWORD *a2, _DWORD *a3)
 {
   __int16 v14; // [esp+8h] [ebp-78h]
 
@@ -344,11 +337,10 @@ int __fastcall Palette_LoadSimple(char *Source, _DWORD *a2, _DWORD *a3)
 
 // 0x72DAA0
 namespace gamemd {
-int CleanupEVASystem()
+void CleanupEVASystem()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // Microsoft VisualC 2-14/net runtime
-void EVASystem::Cleanup()
 {
   CleanupEVASystem_Cleanup(); /*0x72daa0*/
   if ( DataGlobal_B0FCB0 ) /*0x72dcfa*/
@@ -397,10 +389,9 @@ void EVASystem::Cleanup()
 
 // 0x72DFB0
 namespace gamemd {
-int * LoadingScreen_InitResources()
+int * * LoadingScreen_InitResources()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int *LoadingScreen_InitResources()
 {
   int *result; // eax
 
@@ -453,10 +444,9 @@ LABEL_3:
 
 // 0x72E2D0
 namespace gamemd {
-int DrawScoreScreenStats(ConvertClass * aP0, int a2)
+void DrawScoreScreenStats(ConvertClass * aP0, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall DrawScoreScreenStats(ConvertClass *aP0, int a2)
 {
   ObjectClass *result; // eax
 
@@ -528,7 +518,6 @@ namespace gamemd {
 void RenderScoreScreen(ConvertClass * a1, int * a2, char a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall RenderScoreScreen(ConvertClass *a1, int *a2, char a3)
 {
   int i; // [esp+Ch] [ebp-14h]
 
@@ -707,10 +696,9 @@ void __fastcall RenderScoreScreen(ConvertClass *a1, int *a2, char a3)
 
 // 0x72EC70
 namespace gamemd {
-int * MouseClass_SetupResources(int a1, int a2)
+int * * MouseClass_SetupResources(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int *__fastcall MouseClass_SetupResources(int a1, int a2)
 {
   int *result; // eax
 
@@ -880,7 +868,6 @@ namespace gamemd {
 void RenderCreditsScreen(int a1, ConvertClass * a2, char a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall RenderCreditsScreen(int a1, ConvertClass *a2, char a3)
 {
   int i; // [esp+14h] [ebp-24h]
 
@@ -1221,7 +1208,6 @@ namespace gamemd {
 unsigned int * Screen_SetupBuffers(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__fastcall Screen_SetupBuffers(int a1, int a2)
 {
   __int16 *v3; // eax
   int *v44; // ecx

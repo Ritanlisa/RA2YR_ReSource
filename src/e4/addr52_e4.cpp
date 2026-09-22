@@ -40,10 +40,9 @@
 
 // 0x522100
 namespace gamemd {
-bool E4Recv_522100::sub_522100()
+void E4Recv_522100::sub_522100()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_522100(_DWORD *this)
 {
   int (__stdcall ***v2)(_DWORD, void *, int *); // eax
   int v4; // eax
@@ -88,10 +87,9 @@ LABEL_11:
 
 // 0x523440
 namespace gamemd {
-int BinaryArraySearch(AbstractClass * aP0, int edx0, int * a2)
+void BinaryArraySearch(AbstractClass * aP0, int edx0, int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall BinaryArraySearch(AbstractClass *aP0, int edx0, int *a2)
 {
   int v5; // edi
   int v3 = edx0; /*0x523445*/
@@ -121,21 +119,9 @@ LABEL_7:
 
 // 0x525430
 namespace gamemd {
-VectorClass * GetINIClassIntList(int a1, unsigned char *** edx0, INIClass * aP1, unsigned char * a2, void ** a5, void * a6, int a7, short a8, int a9, int a10, int a11)
+void * GetINIClassIntList(int a1, unsigned char *** edx0, INIClass * aP1, unsigned char * a2, void ** a5, void * a6, int a7, short a8, int a9, int a10, int a11)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-VectorClass *__fastcall GetINIClassIntList(
-        int a1,
-        unsigned __int8 ***edx0,
-        INIClass *aP1,
-        unsigned __int8 *a2,
-        void **a5,
-        void *a6,
-        int a7,
-        __int16 a8,
-        int a9,
-        int a10,
-        int a11)
 {
   char *i; // eax
   void *_751520; // eax
@@ -222,10 +208,9 @@ LABEL_20:
 
 // 0x528220
 namespace gamemd {
-int E4Recv_528220::sub_528220(unsigned char * a2, unsigned char * a3, int a4)
+void E4Recv_528220::sub_528220(unsigned char * a2, unsigned char * a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_528220(int this, unsigned __int8 *a2, unsigned __int8 *a3, int a4)
 {
   unsigned __int8 *v4; // ebp
   unsigned __int8 *v6; // edx
@@ -343,7 +328,6 @@ namespace gamemd {
 char ** E4Recv_529E70::sub_529E70(char ** a2, char * Source, char ** a4, char ** a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char **__thiscall sub_529E70(_DWORD *this, char **a2, char *Source, char **a4, char **a5)
 {
   int v8; // ebx
   unsigned int v9; // kr04_4
@@ -436,10 +420,9 @@ LABEL_19:
 
 // 0x52A110
 namespace gamemd {
-float * E4Recv_52A110::sub_52A110(float * a2, unsigned char * a3, float a4, float * a5)
+void * E4Recv_52A110::sub_52A110(float * a2, unsigned char * a3, float a4, float * a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-float *__thiscall sub_52A110(_DWORD *this, float *a2, unsigned __int8 *a3, float a4, float *a5)
 {
   unsigned __int8 *v6; // ebx
   int v8; // esi
@@ -540,10 +523,9 @@ LABEL_18:
 
 // 0x52A2F0
 namespace gamemd {
-float * E4Recv_52A2F0::sub_52A2F0(float * a2, float Source, char ** a4, float * a5)
+void * E4Recv_52A2F0::sub_52A2F0(float * a2, float Source, char ** a4, float * a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-float *__thiscall sub_52A2F0(_DWORD *this, float *a2, float Source, char **a4, float *a5)
 {
   int v8; // ebx
   unsigned int v9; // kr04_4
@@ -642,10 +624,9 @@ LABEL_19:
 
 // 0x52A4D0
 namespace gamemd {
-int E4Recv_52A4D0::sub_52A4D0(unsigned char * a2)
+void E4Recv_52A4D0::sub_52A4D0(unsigned char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_52A4D0(int this, unsigned __int8 *a2)
 {
   size_t v4; // ecx
   size_t v10; // eax
@@ -724,10 +705,9 @@ LABEL_19:
 
 // 0x52A610
 namespace gamemd {
-char E4Recv_52A610::sub_52A610(void * a2)
+void E4Recv_52A610::sub_52A610(void * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_52A610(char *this, void *a2)
 {
   ObjectClass *v3; // eax
   ObjectClass *v4; // eax
@@ -747,7 +727,6 @@ namespace gamemd {
 int CompareFunc4Int(unsigned int * a1, unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int CompareFunc4Int(_DWORD *a1, _DWORD *a2)
 {
   if ( *a1 == *a2 )
     return 0; /*0x52b730*/
@@ -759,10 +738,9 @@ int CompareFunc4Int(_DWORD *a1, _DWORD *a2)
 
 // 0x52BA60
 namespace gamemd {
-int InitGame()
+void InitGame()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void InitGame()
 {
   RulesClass *v3; // eax
   _BYTE *TextBufferEntry; // eax
@@ -1426,10 +1404,9 @@ LABEL_106:
 
 // 0x52CB50
 namespace gamemd {
-int PlayIntroSequence()
+char PlayIntroSequence()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __usercall Init::Intro@<al>(int a1@<ebx>, int a2@<ebp>, int a3@<edi>)
 {
   if ( (g_IntroMovieObject & 4) != 0 ) /*0x52cb57*/
     Movie::Play(-1, a2, a3, 1, 1, 1, 0); /*0x52cb69*/
@@ -1441,10 +1418,9 @@ char __usercall Init::Intro@<al>(int a1@<ebx>, int a2@<ebp>, int a3@<edi>)
 
 // 0x52CD70
 namespace gamemd {
-char InitRules()
+void InitRules()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void InitRules()
 {
   HANDLE FirstFileA; // ebp
   char *cAlternateFileName; // edi
@@ -1714,10 +1690,9 @@ LABEL_36:
 
 // 0x52D870
 namespace gamemd {
-int sub_52D870(HWND hDlg, unsigned int a2, unsigned int a3, unsigned int a4)
+void sub_52D870(HWND hDlg, unsigned int a2, unsigned int a3, unsigned int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_52D870(HWND hDlg, unsigned int a2, unsigned int a3, unsigned int a4)
 {
   HWND DlgItem; // esi
   int result; // eax
@@ -1790,10 +1765,9 @@ void sub_52D870(HWND hDlg, unsigned int a2, unsigned int a3, unsigned int a4)
 
 // 0x52D9A0
 namespace gamemd {
-char MenuSelect()
+void MenuSelect()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MenuSelect()
 {
   Movie *v0; // eax
   int j; // edi
@@ -2588,7 +2562,6 @@ namespace gamemd {
 char CommandLine_Parse(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall CommandLine_Parse(int a1, int a2)
 {
   char **v4; // esi
   char *v5; // esi
@@ -2813,10 +2786,9 @@ LABEL_67:
 
 // 0x52FC20
 namespace gamemd {
-int Random_Init()
+void Random_Init()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Random_Init()
 {
   DWORD TickCount; // eax
   int result; // eax
@@ -2874,10 +2846,9 @@ void Random_Init()
 
 // 0x52FFD0
 namespace gamemd {
-int sub_52FFD0(char a1)
+void sub_52FFD0(char a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_52FFD0(char a1)
 {
   int result; // eax
   Frame *v3; // ecx

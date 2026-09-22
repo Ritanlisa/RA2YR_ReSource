@@ -5,10 +5,9 @@
 
 // 0x75F650
 namespace gamemd {
-int WaveClass::LoadWaveData(int a2, int a3)
+void WaveClass::LoadWaveData(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void WaveClass::_vt05(#374 *this, int a2, int a3)
 {
   int Register; // ebp
 

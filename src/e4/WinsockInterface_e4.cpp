@@ -10,10 +10,9 @@
 
 // 0x770270
 namespace gamemd {
-char * WinsockInterface::ProcessPacket(int a2)
+void * WinsockInterface::ProcessPacket(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall sub_770270(char *this, int a2)
 {
   void **v4; // edi
 
@@ -78,10 +77,9 @@ char *__thiscall sub_770270(char *this, int a2)
 
 // 0x7B1DE0
 namespace gamemd {
-char WinsockInterface::Init()
+void WinsockInterface::Init()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void WinsockInterface_Init(_DWORD *this)
 {
   struct WSAData *v3; // eax
   struct WSAData *v5; // esi

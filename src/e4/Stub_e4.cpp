@@ -4,11 +4,10 @@
 
 // 0x4F4D80
 namespace gamemd {
-int Stub_InfiniteLoop()
+void Stub_InfiniteLoop()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // attributes: thunk
-void __noreturn Stub_InfiniteLoop(void)
 {
   while ( 1 ) /*0x4f4d80*/
     ; /*0x4f4d80*/

@@ -8,10 +8,9 @@
 // 0x4717D0
 namespace ra2 {
 namespace game {
-int CaptureManagerClass::CaptureManagerClass(TechnoClass * aP1, int a3, char a4)
+C CaptureManagerClass::CaptureManagerClass(TechnoClass * aP1, int a3, char a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-C CaptureManagerClass::CaptureManagerClass(int this, TechnoClass *aP1, int a3, char a4)
 {
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x4717d3*/
@@ -52,10 +51,9 @@ C CaptureManagerClass::CaptureManagerClass(int this, TechnoClass *aP1, int a3, c
 // 0x471A50
 namespace ra2 {
 namespace game {
-char CaptureManagerClass::HandleOverload()
+void CaptureManagerClass::HandleOverload()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ProcessCashCrateEffect(int this)
 {
 
   int v2; // eax
@@ -173,10 +171,9 @@ void ProcessCashCrateEffect(int this)
 // 0x471C90
 namespace ra2 {
 namespace game {
-bool CaptureManagerClass::CanCapture(unsigned int * a2)
+void CaptureManagerClass::CanCapture(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CaptureManagerClass::CanCapture(int this, _DWORD *a2)
 {
   bool result; // al
 
@@ -210,10 +207,9 @@ void CaptureManagerClass::CanCapture(int this, _DWORD *a2)
 // 0x471D40
 namespace ra2 {
 namespace game {
-char CaptureManagerClass::CaptureUnit(int a2)
+void CaptureManagerClass::CaptureUnit(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CaptureManagerClass::CaptureUnit(int this, int a2)
 {
   char result; // al
   int i; // edi
@@ -347,10 +343,9 @@ void CaptureManagerClass::CaptureUnit(int this, int a2)
 // 0x471FF0
 namespace ra2 {
 namespace game {
-char CaptureManagerClass::FreeUnit(IUnknown * aP0, int _28, IUnknown * a2, IUnknown * aP1, int _34, IUnknown ** a5)
+void CaptureManagerClass::FreeUnit(IUnknown * aP0, int _28, IUnknown * a2, IUnknown * aP1, int _34, IUnknown ** a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CaptureManagerClass::FreeUnit(IUnknown *aP0, int _28, IUnknown *a2, IUnknown *aP1, int _34, IUnknown **a5)
 {
   IUnknown *v8; // ebp
   IUnknown **v12; // ebp
@@ -427,10 +422,9 @@ void CaptureManagerClass::FreeUnit(IUnknown *aP0, int _28, IUnknown *a2, IUnknow
 // 0x472160
 namespace ra2 {
 namespace game {
-char CaptureManagerClass::DrawLinks(int a1, ... a2)
+void CaptureManagerClass::DrawLinks(int a1, ... a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CaptureManagerClass::DrawLinks(int a1, ...)
 {
   void *retaddr; // [esp+30h] [ebp+0h]
   va_list va; // [esp+38h] [ebp+8h] BYREF
@@ -515,10 +509,9 @@ LABEL_5:
 // 0x4722A0
 namespace ra2 {
 namespace game {
-bool CaptureManagerClass::CannotControlAnyMore()
+void CaptureManagerClass::CannotControlAnyMore()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CaptureManagerClass::CannotControlAnyMore(int this)
 {
   return !this->CaptureManagerClass_field_40 && this->originalOwner >= this->q03C; /*0x4722a7*/
 }
@@ -532,7 +525,6 @@ namespace game {
 void CaptureManagerClass::DecideUnitFate(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CaptureManagerClass::DecideUnitFate(IUnknown *aP1)
 {
   AbstractClass *v3; // edi
   AbstractClass **v9; // esi
@@ -672,10 +664,9 @@ LABEL_33:
 // 0x472640
 namespace ra2 {
 namespace game {
-char CaptureManagerClass::NeedsToDrawLinks()
+void CaptureManagerClass::NeedsToDrawLinks()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CaptureManagerClass::NeedsToDrawLinks()
 {
   int i; // edi
 
@@ -720,10 +711,9 @@ LABEL_12:
 // 0x4726C0
 namespace ra2 {
 namespace game {
-char CaptureManagerClass::IsOverloading(bool * a2)
+void CaptureManagerClass::IsOverloading(bool * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CaptureManagerClass::IsOverloading(int this, bool *a2)
 {
   if ( !this->CaptureManagerClass_field_40 || this->originalOwner <= this->q03C ) /*0x4726cf*/
     return 0; /*0x4726e4*/
@@ -737,10 +727,9 @@ void CaptureManagerClass::IsOverloading(int this, bool *a2)
 // 0x472720
 namespace ra2 {
 namespace game {
-int CaptureManagerClass::LoadFromStream(int a1, int * a2)
+void CaptureManagerClass::LoadFromStream(int a1, int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CaptureManagerClass::LoadFromStream(int a1, int *a2)
 {
   int result; // eax
   wchar_t *v9; // ecx
@@ -844,10 +833,9 @@ LABEL_19:
 // 0x4728E0
 namespace ra2 {
 namespace game {
-int CaptureManagerClass::SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2)
+void CaptureManagerClass::SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CaptureManagerClass::SaveToINI(TechnoTypeClass *aP0, int *a1, int aP2)
 {
   int Prefix; // edi
   int result; // eax
@@ -884,10 +872,9 @@ void CaptureManagerClass::SaveToINI(TechnoTypeClass *aP0, int *a1, int aP2)
 // 0x472D70
 namespace ra2 {
 namespace game {
-int CaptureManagerClass::Capture(unsigned int * a2)
+void CaptureManagerClass::Capture(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CaptureManagerClass::_vt04(_DWORD *a2)
 {
   int result; // eax
   _DWORD *i; // ecx

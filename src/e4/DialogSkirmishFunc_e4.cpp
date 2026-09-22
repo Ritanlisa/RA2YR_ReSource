@@ -11,7 +11,6 @@ namespace gamemd {
 void DialogSkirmishFunc_UpdateMultiEngineer(SkirmishDialog * hWnd, int nIDDlgItem, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall DialogSkirmishFunc_UpdateMultiEngineer(SkirmishDialog *hWnd, int nIDDlgItem, int a3, int a4)
 {
   HWND DlgItem; // eax
   LRESULT v9; // eax

@@ -8,16 +8,15 @@
 
 // 0x4391C0
 namespace gamemd {
-int SaveGame::LoadArrayData(int * a2)
+void SaveGame::LoadArrayData(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_4391C0(int *this, int *a2)
 {
   int result; // eax
   int i; // ebx
 
   int v3 = *a2; /*0x4391cc*/
-  int v8 = this->q004; /*0x4391d9*/
+  bool v8 = this->q004; /*0x4391d9*/
   result = (*(int (__stdcall **)(int *, int *, int, _DWORD))(v3 + 16))(a2, &v8, 4, 0); /*0x4391dd*/
   if ( result >= 0 ) /*0x4391e2*/
   {
@@ -57,16 +56,15 @@ LABEL_5:
 
 // 0x54E750
 namespace gamemd {
-int SaveGame::WriteDataArray(int * a2)
+void SaveGame::WriteDataArray(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_54E750(_DWORD *this, int *a2)
 {
   int result; // eax
   int i; // edi
 
   int v3 = *a2; /*0x54e75c*/
-  int v6 = this->q007; /*0x54e769*/
+  bool v6 = this->q007; /*0x54e769*/
   result = (*(int (__stdcall **)(int *, int *, int, _DWORD))(v3 + 16))(a2, &v6, 4, 0); /*0x54e76d*/
   if ( result >= 0 ) /*0x54e772*/
   {
@@ -84,10 +82,9 @@ void sub_54E750(_DWORD *this, int *a2)
 
 // 0x6607D0
 namespace gamemd {
-bool SaveGame::SaveTriggerEvents()
+void SaveGame::SaveTriggerEvents()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_6607D0(int *this)
 {
 
   int v2 = *this; /*0x6607e0*/
@@ -115,10 +112,9 @@ void sub_6607D0(int *this)
 
 // 0x67D300
 namespace gamemd {
-char SaveGame::Start()
+void SaveGame::Start()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void SaveGame::Start(LPSTREAM this)
 {
   char result; // al
   int i; // ebx
@@ -892,10 +888,9 @@ void SaveGame::Start(LPSTREAM this)
 
 // 0x67F7E0
 namespace gamemd {
-int SaveGame::LoadMainGameState()
+void SaveGame::LoadMainGameState()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_67F7E0(int *this)
 {
   int result; // eax
   wchar_t *v10; // [esp+A0h] [ebp-4h] BYREF
@@ -1048,10 +1043,9 @@ LABEL_17:
 
 // 0x74ED60
 namespace gamemd {
-char SaveGame::LoadVeinholeData()
+void SaveGame::LoadVeinholeData()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_74ED60(int *this)
 {
   int i; // ebx
 
@@ -1120,10 +1114,9 @@ void sub_74ED60(int *this)
 
 // 0x751620
 namespace gamemd {
-int SaveGame::SaveAudioQueueItems()
+void SaveGame::SaveAudioQueueItems()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_751620(int *this)
 {
   int *i; // edi
   char *SampleName; // ebx

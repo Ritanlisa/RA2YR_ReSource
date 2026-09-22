@@ -11,13 +11,6 @@
 unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned char a4, MapClass * aP4, char a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall TerrainTypeClass::Construct(
-        _DWORD *this,
-        int a2,
-        unsigned __int8 a3,
-        unsigned __int8 a4,
-        MapClass *aP4,
-        char a6)
 {
   char Destination[48]; // [esp+10h] [ebp-34h] BYREF
   char v11; // [esp+40h] [ebp-4h]
@@ -111,7 +104,6 @@ _DWORD *__thiscall TerrainTypeClass::Construct(
 unsigned int * TerrainTypeClass::TerrainTypeClass(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall TerrainTypeClass::TerrainTypeClass(_DWORD *this, ObjectClass *aP1)
 {
   TerrainTypeClass *v3; // eax
   CCINIClass *v6; // edx
@@ -182,10 +174,9 @@ LABEL_11:
 }
 
 // 0x71DEA0
-char TerrainTypeClass::LoadFromINI(unsigned char *** aP1)
+void TerrainTypeClass::LoadFromINI(unsigned char *** aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TerrainTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
 {
   char Bool_Overwrite; // al
   Color *v7; // eax
@@ -216,7 +207,7 @@ void TerrainTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
     this->LegalTarget = 1; /*0x71df0c*/
   }
   char v4 = INIClass::ReadBool_Overwrite((int)aP1, (unsigned __int8 *)(this + 36), &stru_81AE4C, this->WaterBound); /*0x71df22*/
-  char v5 = this->SpawnsTiberium; /*0x71df27*/
+  bool v5 = this->SpawnsTiberium; /*0x71df27*/
   this->WaterBound = v4; /*0x71df2d*/
   char v6; // al
   v6 = INIClass::ReadBool_Overwrite( /*0x71df3c*/
@@ -258,7 +249,7 @@ void TerrainTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
             (INIClass *)(this + 36),
             (Color *)&stru_830620[12040],
             (Color *)(this + 668));
-  char v12 = this->IsAnimated; /*0x71e014*/
+  bool v12 = this->IsAnimated; /*0x71e014*/
   this->RadarColor = *(_WORD *)Coord; /*0x71e01a*/
   this->q29E = *(_BYTE *)(Coord + 2); /*0x71e02a*/
   char v13; // al
@@ -301,10 +292,9 @@ void TerrainTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
 }
 
 // 0x71E2A0
-TerrainTypeClass * TerrainTypeClass::FindOrCreate()
+void * TerrainTypeClass::FindOrCreate()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-TerrainTypeClass *__thiscall TerrainTypeClass::FindOrCreate(ObjectClass *this)
 {
 
   if ( !_strcmpi(&stru_817460.sectionHead[1], this) || !_strcmpi(g_Str_none, this) ) /*0x71e2bc*/

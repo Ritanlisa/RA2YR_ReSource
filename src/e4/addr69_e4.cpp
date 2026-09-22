@@ -35,10 +35,9 @@
 
 // 0x690400
 namespace gamemd {
-int E4Recv_690400::sub_690400()
+void E4Recv_690400::sub_690400()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_690400(int *this)
 {
   int result; // eax
   struct tagRECT Rect; // [esp+28h] [ebp-10h] BYREF
@@ -78,10 +77,9 @@ void sub_690400(int *this)
 
 // 0x693B70
 namespace gamemd {
-char Network_RequestFile(char * a1, int a2, int a3)
+void Network_RequestFile(char * a1, int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall Network_RequestFile(char *a1, int a2, int a3)
 {
   char *Flagged; // eax
   int v17; // eax
@@ -350,10 +348,9 @@ LABEL_78:
 
 // 0x6941A0
 namespace gamemd {
-char ReceiveNetworkFile(RawFileClass * a1, DWORD a2, int a3, char a4)
+void ReceiveNetworkFile(RawFileClass * a1, DWORD a2, int a3, char a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall ReceiveNetworkFile(RawFileClass *a1, DWORD a2, int a3, char a4)
 {
   size_t v7; // esi
   wchar_t *StringCSF; // eax
@@ -568,10 +565,9 @@ LABEL_54:
 
 // 0x694760
 namespace gamemd {
-char Network_SendFile(char * Source, int a2, char a3, char a4)
+void Network_SendFile(char * Source, int a2, char a3, char a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall Network_SendFile(char *Source, int a2, char a3, char a4)
 {
   int Size; // ebx
   wchar_t *String; // eax
@@ -1010,10 +1006,9 @@ LABEL_122:
 
 // 0x6951F0
 namespace gamemd {
-char FindAndValidateMap(ObjectClass * aP0, int edx0, const char * a2, int a4, char a5)
+void FindAndValidateMap(ObjectClass * aP0, int edx0, const char * a2, int a4, char a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall FindAndValidateMap(ObjectClass *aP0, int edx0, const char *a2, int a4, char a5)
 {
   ObjectClass *v5; // esi
   int Field; // eax
@@ -1106,10 +1101,9 @@ LABEL_16:
 
 // 0x695760
 namespace gamemd {
-int LoadGame_DlgProc(HWND hWnd, WPARAM wParam, unsigned int a3, HWND a4)
+void LoadGame_DlgProc(HWND hWnd, WPARAM wParam, unsigned int a3, HWND a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void LoadGame_DlgProc(HWND hWnd, WPARAM wParam, unsigned int a3, HWND a4)
 {
   int result; // eax
   LONG WindowLongA; // ebx
@@ -1320,17 +1314,9 @@ LABEL_38:
 
 // 0x6994F0
 namespace gamemd {
-int ParseMapFileHeader(CampaignScore * aP0, unsigned short * a1, char * a2, CampaignScore * aP3, unsigned char * a4, unsigned int * a5, unsigned int * a6)
+void ParseMapFileHeader(CampaignScore * aP0, unsigned short * a1, char * a2, CampaignScore * aP3, unsigned char * a4, unsigned int * a5, unsigned int * a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall ParseMapFileHeader(
-        CampaignScore *aP0,
-        _WORD *a1,
-        char *a2,
-        CampaignScore *aP3,
-        _BYTE *a4,
-        _DWORD *a5,
-        _DWORD *a6)
 {
   CampaignScore *v8; // ebp
   CCINIClass *v14; // esi
@@ -1491,10 +1477,9 @@ LABEL_20:
 
 // 0x69B690
 namespace gamemd {
-int E4Recv_69B690::sub_69B690()
+void E4Recv_69B690::sub_69B690()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_69B690(_DWORD *this)
 {
   int result; // eax
   _DWORD *i; // edx
@@ -1541,10 +1526,9 @@ LABEL_10:
 
 // 0x69BCC0
 namespace gamemd {
-int sub_69BCC0(ObjectClass * aP0)
+void sub_69BCC0(ObjectClass * aP0)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_69BCC0(ObjectClass *aP0)
 {
   ObjectClass *v1; // edi
   SessionClass *v2; // esi
@@ -1570,7 +1554,6 @@ namespace gamemd {
 void * E4Recv_69F0C0::sub_69F0C0(void * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void *__thiscall sub_69F0C0(int *this, void *a2)
 {
   const void *v10; // eax
   int v11; // edx

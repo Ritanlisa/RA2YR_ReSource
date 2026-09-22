@@ -3,10 +3,9 @@
 #include "e4/e4_globals.hpp"
 
 // 0x767010
-rc_ptr_base * COMClass::lockServer(char a2)
+void * COMClass::lockServer(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-rc_ptr_base *__thiscall COMClass::lockServer(rc_ptr_base *this, char a2)
 {
   rc_ptr_base *v4; // ebp
   rc_ptr_base *v5; // esi

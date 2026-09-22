@@ -6,13 +6,12 @@
 #include "e4/classes/Timer_e4.hpp"
 
 // 0x48B750
-int ConnectionClass::allocPacketSlot(const void * a2, signed int a3, const void * a4, signed int a5)
+void ConnectionClass::allocPacketSlot(const void * a2, signed int a3, const void * a4, signed int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ConnectionClass_AllocPacketSlot(int *this, const void *a2, signed int a3, const void *a4, signed int a5)
 {
 
-  int v6 = this->Active; /*0x48b755*/
+  bool v6 = this->Active; /*0x48b755*/
   if ( this->q038 == v6 || a3 > this->LastPacketTime ) /*0x48b768*/
     return 0; /*0x48b768*/
   int v8 = 0; /*0x48b76a*/
@@ -65,7 +64,6 @@ LABEL_9:
 unsigned int ConnectionClass::initQueue(unsigned int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_48BA10(unsigned int *this, unsigned int a2)
 {
   int v4; // eax
   unsigned int v5; // esi
@@ -99,7 +97,6 @@ void sub_48BA10(unsigned int *this, unsigned int a2)
 void ConnectionClass::dtor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ConnectionClass_Dtor(_DWORD *this)
 {
   void (__thiscall ***v3)(_DWORD, int); // ecx
 
@@ -113,10 +110,9 @@ void ConnectionClass_Dtor(_DWORD *this)
 }
 
 // 0x48BF40
-int ConnectionClass::sendAck(AnimClass * aP1, AnimClass * aP2, AnimClass * aP3, AnimClass * aP4)
+void ConnectionClass::sendAck(AnimClass * aP1, AnimClass * aP2, AnimClass * aP3, AnimClass * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ConnectionClass::sendAck(int this, AnimClass *aP1, AnimClass *aP2, AnimClass *aP3, AnimClass *aP4)
 {
   *this->q020 = this->q024; /*0x48bf4b*/
   if ( aP3 ) /*0x48bf54*/
@@ -156,10 +152,9 @@ void ConnectionClass::sendAck(int this, AnimClass *aP1, AnimClass *aP2, AnimClas
 }
 
 // 0x48C040
-int ConnectionClass::receivePacket(int a2, int a3)
+void ConnectionClass::receivePacket(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ConnectionClass_ReceivePacket(_DWORD *this, int a2, int a3)
 {
   _DWORD *TileIndex; // eax
   int TileType; // eax
@@ -308,10 +303,9 @@ LABEL_40:
 }
 
 // 0x48C320
-int ConnectionClass::processTileUpdate(void * a2, signed int * a3)
+void ConnectionClass::processTileUpdate(void * a2, signed int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ConnectionClass_ProcessTileUpdate(_DWORD *this, void *a2, signed int *a3)
 {
   int TileType; // eax
   int v7; // ecx
@@ -351,10 +345,9 @@ LABEL_10:
 }
 
 // 0x48C3E0
-int ConnectionClass::serviceSendQueue()
+void ConnectionClass::serviceSendQueue()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ConnectionClass_ServiceSendQueue(unsigned int *this)
 {
   int TileIndex; // eax
 

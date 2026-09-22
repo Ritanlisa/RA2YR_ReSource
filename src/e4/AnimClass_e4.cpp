@@ -22,7 +22,6 @@ namespace gamemd {
 void AnimClass::Destruct(void * this, AbstractClass * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall AnimClass::Destruct(#374 *this, AbstractClass *a2)
 {
   int ecx3; // ecx
   AudioController *v4; // edx
@@ -143,7 +142,6 @@ namespace gamemd {
 void AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void AnimClass::Render(ConvertClass *a2, ConvertClass *aP5)
 {
   __int16 v9; // bx
   ConvertClass *v10; // eax
@@ -730,10 +728,9 @@ LABEL_99:
 
 // 0x424CB0
 namespace gamemd {
-int AnimClass::InWhichLayer_AttachedObjectLayer()
+void AnimClass::InWhichLayer_AttachedObjectLayer()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void AnimClass::InWhichLayer_AttachedObjectLayer()
 {
 
   if ( this->q0CC ) /*0x424cb0*/
@@ -749,10 +746,9 @@ void AnimClass::InWhichLayer_AttachedObjectLayer()
 
 // 0x4253B0
 namespace gamemd {
-int AnimClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
+void AnimClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void AnimClass::SaveLoad_Prefix_0(TechnoTypeClass *aP0, int *a1, int aP2)
 {
 
   int v3 = aP0->ChargerTurrets[6]; /*0x4253b6*/
@@ -784,7 +780,6 @@ namespace gamemd {
 void AnimClass::FreeRenderBuffer()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_428DE0(int this)
 {
   if ( *(_BYTE *)(this + 862) && this->AnimClass_field_0xA4 ) /*0x428ded*/
   {
@@ -802,10 +797,9 @@ void sub_428DE0(int this)
 
 // 0x448260
 namespace gamemd {
-int AnimClass::drawFrame()
+void AnimClass::drawFrame()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void AnimClass::drawFrame(#377 *this)
 {
   int result; // eax
   BuildingTypeClass *v6; // ecx
@@ -898,7 +892,7 @@ void AnimClass::drawFrame(#377 *this)
         *((_DWORD *)this + 438) = v7;
       }
     }
-    int v8 = this->hasParachute;
+    bool v8 = this->hasParachute;
     int v2 = v2;
     int v3 = v3;
     int v9 = 1 << *(_DWORD *)(*((_DWORD *)v185 + 13) + 184);
@@ -1439,7 +1433,7 @@ LABEL_80:
       MapClass::MarkForRedraw(&stru_87C374[13428], 1);
     }
     int v101 = 1 << *(_DWORD *)(edi150->relatedTagsCapacity + 184);
-    int v102 = this->hasParachute;
+    bool v102 = this->hasParachute;
     if ( (v102 & v101) != 0 )
       this->hasParachute = v102 & ~v101;
     v103 = (BuildingTypeClass *)(*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 484))(this);
@@ -1713,7 +1707,7 @@ LABEL_183:
     {
       if ( !(unsigned __int8)House::IsCurrentPlayer((#375 *)v109) )
       {
-        int v162 = this->q053;
+        bool v162 = this->q053;
         if ( v162 != v109 && !*(_BYTE *)(*(_DWORD *)(v162 + 52) + 422) )
         {
           for ( i = *((_BYTE *)this + 1794); i > 0; i = *((_BYTE *)this + 1794) )
@@ -1750,10 +1744,9 @@ LABEL_183:
 
 // 0x7298F0
 namespace gamemd {
-int AnimClass_GetAnimation()
+void AnimClass_GetAnimation()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __usercall sub_7298F0@<eax>(_DWORD *a1@<ecx>, int a2@<edi>)
 {
   int GroundHeight; // ebx
   int result; // eax
@@ -1819,10 +1812,9 @@ int __usercall sub_7298F0@<eax>(_DWORD *a1@<ecx>, int a2@<edi>)
 
 // 0x761030
 namespace gamemd {
-int AnimClass::ProcessFrame()
+void AnimClass::ProcessFrame()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void AnimClass::ProcessFrame(#374 *this)
 {
   int i; // edi
   ObjectClass *Coords; // eax

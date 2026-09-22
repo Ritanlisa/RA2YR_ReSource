@@ -3,10 +3,9 @@
 #include "e4/e4_globals.hpp"
 
 // 0x642B60
-int LoadingScreen::GetColorScheme()
+void LoadingScreen::GetColorScheme()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void LoadingScreen::GetColorScheme()
 {
   if ( (g_GameMode_Current == (CellStruct *)3 || g_GameMode_Current == (CellStruct *)4) /*0x642b7a*/
     && *(_DWORD *)(**(_DWORD **)&g_NetworkPlayerBuffer[1084] + 107) == -1 )
@@ -23,7 +22,6 @@ void LoadingScreen::GetColorScheme()
 void LoadingScreen::DestroyFileTrees()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void LoadingScreen_DestroyFileTrees()
 {
 
   if ( DataGlobal_B0FC95 ) /*0x72ef6b*/
@@ -140,10 +138,9 @@ void LoadingScreen_DestroyFileTrees()
 }
 
 // 0x72FA10
-void * LoadingScreen::LoadSHPs()
+void * * LoadingScreen::LoadSHPs()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void *LoadingScreen_LoadSHPs()
 {
   void *SHP; // eax
   char *v1; // ecx

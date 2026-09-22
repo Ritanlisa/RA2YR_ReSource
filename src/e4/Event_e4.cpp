@@ -16,10 +16,9 @@
 
 // 0x48D080
 namespace gamemd {
-char Event::Dispatch()
+void Event::Dispatch()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Event::Dispatch()
 {
   CellStruct *v0; // eax
   UpdateAudioVideo(); /*0x48d08c*/
@@ -80,10 +79,9 @@ LABEL_11:
 
 // 0x5E2FA0
 namespace gamemd {
-WPARAM sub_5E2FA0()
+void sub_5E2FA0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-WPARAM sub_5E2FA0()
 {
   WPARAM result; // eax
   HWND Current; // esi
@@ -111,10 +109,9 @@ WPARAM sub_5E2FA0()
 
 // 0x5E95E0
 namespace gamemd {
-char sub_5E95E0()
+void sub_5E95E0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_5E95E0()
 {
   LPARAM *v1; // ecx
   LPARAM v2; // eax
@@ -159,10 +156,9 @@ LABEL_13:
 
 // 0x796960
 namespace gamemd {
-char sub_796960()
+void sub_796960()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_796960()
 {
   __int16 v10; // [esp+244h] [ebp-4h]
   int v0; // eax
@@ -244,7 +240,6 @@ namespace gamemd {
 int sub_7A0F40()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_7A0F40()
 {
   int result; // eax
   char Source[256]; // [esp+80h] [ebp-180h] BYREF
@@ -294,10 +289,9 @@ int sub_7A0F40()
 
 // 0x786270
 namespace gamemd {
-char sub_786270()
+void sub_786270()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_786270()
 {
   HKEY phkResult; // [esp+4h] [ebp-110h] BYREF
   BYTE Data[4]; // [esp+8h] [ebp-10Ch] BYREF
@@ -337,10 +331,9 @@ void sub_786270()
 
 // 0x7C5F3D
 namespace gamemd {
-int sub_7C5F3D()
+void sub_7C5F3D()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_7C5F3D()
 {
 
   DataGlobal_84E864 = 0; /*0x7c5f46*/
@@ -396,7 +389,6 @@ namespace gamemd {
 int sub_7C5FFF()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_7C5FFF()
 {
   if ( (unsigned __int8)DataGlobal_84E863 < 5u ) /*0x7c6008*/
     goto LABEL_4; /*0x7c6008*/

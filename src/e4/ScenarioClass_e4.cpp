@@ -22,7 +22,6 @@ namespace gamemd {
 void * ScenarioClass::CopyStartPositions()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void *ScenarioClass_CopyStartPositions()
 {
   void *result; // eax
 
@@ -76,10 +75,9 @@ void *ScenarioClass_CopyStartPositions()
 
 // 0x5CC330
 namespace gamemd {
-int ScenarioClass_AnimateConstructionStage()
+void ScenarioClass_AnimateConstructionStage()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool __userpurge ScenarioClass::sub_5CC330@<al>(int a1@<ecx>, int a2@<ebp>, int a3, _DWORD *a4)
 {
   _DWORD *FoundationSize; // eax
   int i; // ebp
@@ -216,11 +214,10 @@ LABEL_6:
 
 // 0x5D6430
 namespace gamemd {
-int ScenarioClass_dispatchEvents()
+void ScenarioClass_dispatchEvents()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // Microsoft VisualC 2-14/net runtime
-void ScenarioClass::dispatchEvents()
 {
   return Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 9); /*0x69b684*/
 }
@@ -229,10 +226,9 @@ void ScenarioClass::dispatchEvents()
 
 // 0x5D6440
 namespace gamemd {
-int ScenarioClass::MissionStubReturnZero3()
+void ScenarioClass::MissionStubReturnZero3()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ScenarioClass::_vt28()
 {
   return (*(int (__thiscall **)(void *))(*(_DWORD *)this + 108))(this);
 }
@@ -241,10 +237,9 @@ void ScenarioClass::_vt28()
 
 // 0x5D6BE0
 namespace gamemd {
-char ScenarioClass::AssignStartPositions(char a1)
+void ScenarioClass::AssignStartPositions(char a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ScenarioClass_AssignStartPositions(char a1)
 {
   int i; // edi
   void **v5; // [esp+4h] [ebp-18h] BYREF
@@ -275,10 +270,9 @@ void ScenarioClass_AssignStartPositions(char a1)
 
 // 0x6832C0
 namespace gamemd {
-int ScenarioClass::Constructor()
+void ScenarioClass::Constructor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ScenarioClass::Constructor(int this)
 {
   wchar_t *v2; // eax
   wchar_t *v3; // ecx
@@ -383,10 +377,9 @@ void ScenarioClass::Constructor(int this)
 
 // 0x683AB0
 namespace gamemd {
-char ScenarioClass::LoadScenarioAndStart(AnimClass * Source, char a2, int a3)
+void ScenarioClass::LoadScenarioAndStart(AnimClass * Source, char a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall ScenarioClass::LoadScenarioAndStart(AnimClass *Source, char a2, int a3)
 {
   AnimClass *v3; // ebp
   int Field; // ecx
@@ -525,10 +518,9 @@ LABEL_21:
 
 // 0x683EB0
 namespace gamemd {
-int ScenarioClass::CleanupTemporary()
+void ScenarioClass::CleanupTemporary()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_683EB0()
 {
   void *v0; // ecx
   _DWORD *v1; // esi
@@ -574,7 +566,6 @@ namespace gamemd {
 unsigned char * ScenarioClass::ProcessIntroTimer()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_BYTE *ScenarioClass_ProcessIntroTimer()
 {
   _BYTE *result; // eax
 
@@ -611,10 +602,9 @@ _BYTE *ScenarioClass_ProcessIntroTimer()
 
 // 0x686730
 namespace gamemd {
-int ScenarioClass_Construct()
+void ScenarioClass_Construct()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __usercall sub_686730@<al>(char *Source@<ecx>, double a2@<st0>)
 {
   char result; // al
   void **v6; // [esp+1Ch] [ebp-B8h] BYREF
@@ -669,10 +659,9 @@ char __usercall sub_686730@<al>(char *Source@<ecx>, double a2@<st0>)
 
 // 0x686B20
 namespace gamemd {
-int ScenarioClass_LoadMap()
+void ScenarioClass_LoadMap()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __usercall ScenarioClass::LoadMap@<al>(char a1@<dl>, CCINIClass *a2@<ecx>, double a3@<st0>)
 {
   CCINIClass *v3; // ebp
   ObjectClass *v5; // eax
@@ -1303,10 +1292,9 @@ LABEL_124:
 
 // 0x689E90
 namespace gamemd {
-char ScenarioClass::ReadMapINI(CCINIClass * aP1)
+void ScenarioClass::ReadMapINI(CCINIClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ScenarioClass::ReadMapINI(int this, CCINIClass *aP1)
 {
   void ***v4; // eax
   RandomStruct *v5; // ebx
@@ -1739,7 +1727,7 @@ void ScenarioClass::ReadMapINI(int this, CCINIClass *aP1)
           (unsigned __int8 *)&g_INI_Key_Lighting.sectionHead[1],
           (CCINIClass *)&stru_830620[55780],
           this->storedTiberium_death_to_visceroid);
-  char v37 = this->freeRadar;
+  bool v37 = this->freeRadar;
   this->storedTiberium_death_to_visceroid = v36;
   char v38; // al
   v38 = INIClass::ReadBool_Overwrite(

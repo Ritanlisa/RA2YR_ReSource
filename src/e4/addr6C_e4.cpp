@@ -28,10 +28,9 @@
 
 // 0x6C6F50
 namespace gamemd {
-void ProcessGameResults(char a1)
+int ProcessGameResults(char a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall ProcessGameResults(char a1)
 {
   IUnknown *v2; // esi
   char *inited; // eax
@@ -1306,7 +1305,6 @@ namespace gamemd {
 int sub_6C87F0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_6C87F0()
 {
 
   DataGlobal_B0BD28 = Timer::GetTicks(); /*0x6c87fc*/
@@ -1320,15 +1318,9 @@ int sub_6C87F0()
 
 // 0x6C8FF0
 namespace gamemd {
-int DlgProcScoreScreen()
+void DlgProcScoreScreen()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __userpurge DlgProcScoreScreen@<eax>(
-        CampaignScore *a1@<ebp>,
-        HWND hWnd,
-        unsigned int a3,
-        WPARAM wParam,
-        wchar_t *Format)
 {
   int result; // eax
   _DWORD *WindowLongA; // eax
@@ -1493,10 +1485,9 @@ int __userpurge DlgProcScoreScreen@<eax>(
 
 // 0x6CA1E0
 namespace gamemd {
-char E4Recv_6CA1E0::sub_6CA1E0(char * Source)
+void E4Recv_6CA1E0::sub_6CA1E0(char * Source)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_6CA1E0(char *this, char *Source)
 {
   wchar_t *v3; // ebp
   wchar_t *v5; // edi
@@ -1575,7 +1566,6 @@ namespace gamemd {
 void sub_6CA4A0(wchar_t * String2, int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_6CA4A0(wchar_t *String2, int a2, int a3)
 {
   const wchar_t **v3; // edi
   const wchar_t **v4; // esi
@@ -1601,10 +1591,9 @@ void sub_6CA4A0(wchar_t *String2, int a2, int a3)
 
 // 0x6CA4F0
 namespace gamemd {
-wchar_t * sub_6CA4F0(unsigned int * a1)
+wchar_t * * sub_6CA4F0(unsigned int * a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-wchar_t *__fastcall sub_6CA4F0(_DWORD *a1)
 {
   wchar_t *v1; // ebp
   wchar_t *v4; // edi
@@ -1658,7 +1647,6 @@ namespace gamemd {
 int sub_6CA6A0(BlowStraw * String1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_6CA6A0(BlowStraw *String1, int a2)
 {
   BlowStraw *v2; // ebx
   wchar_t *v4; // eax
@@ -1713,7 +1701,6 @@ namespace gamemd {
 int globalHelper_0CF320(unsigned int * a1, unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int globalHelper_0CF320(_DWORD *a1, _DWORD *a2)
 {
   if ( *a1 == *a2 )
     return 0; /*0x6cf330*/
@@ -1728,7 +1715,6 @@ namespace gamemd {
 unsigned int * sub_6CFD60(unsigned int * a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__fastcall sub_6CFD60(_DWORD *a1, int a2)
 {
   _DWORD *result; // eax
 
@@ -1750,7 +1736,6 @@ namespace gamemd {
 int sub_6CFDB0(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_6CFDB0(int a1)
 {
   int result; // eax
 

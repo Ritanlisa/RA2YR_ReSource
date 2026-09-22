@@ -4,10 +4,9 @@
 #include "e4/classes/File_e4.hpp"
 
 // 0x433880
-int BitTextClass::ParseFontData(char * Source)
+void BitTextClass::ParseFontData(char * Source)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_433880(int this, char *Source)
 {
   struct tagRECT *v3; // ebp
   _DWORD *Font; // eax
@@ -59,7 +58,6 @@ void sub_433880(int this, char *Source)
 unsigned int * BitTextClass::LoadFont()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_434AD0(_DWORD *this)
 {
   *this = &vt_BitText; /*0x434ad5*/
   if ( __2_YAPAXI_Z(0x44u) ) /*0x434adb*/

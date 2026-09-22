@@ -3,20 +3,18 @@
 #include "e4/e4_globals.hpp"
 
 // 0x4E30A0
-int GaugeClass::Stub()
+void GaugeClass::Stub()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void GaugeClass::_vt36()
 {
   return this->q034; /*0x4e30a3*/
 }
 }
 
 // 0x4E30B0
-bool GaugeClass::Draw(int a2)
+void GaugeClass::Draw(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void GaugeClass::_vt37(int a2)
 {
   *(this + 45) = a2 != 0; /*0x4e30b9*/
   return a2 != 0; /*0x4e30bc*/

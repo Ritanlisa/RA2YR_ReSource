@@ -18,16 +18,9 @@
 
 // 0x6DD8B0
 namespace gamemd {
-int TerrainClass_ProcessUpdate()
+void TerrainClass_ProcessUpdate()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __userpurge TerrainClass::ProcessUpdate@<al>(
-        int a1@<ecx>,
-        _DWORD *a2@<edi>,
-        AbstractClass *aP1,
-        _UNKNOWN **a4,
-        IUnknown *a5,
-        AbstractClass *aP4)
 {
   char result; // al
   _UNKNOWN **v9; // ecx
@@ -1188,10 +1181,9 @@ LABEL_290:
 
 // 0x71CDA0
 namespace gamemd {
-int TerrainClass::LoadFromStream(unsigned int * a1, int a2)
+void TerrainClass::LoadFromStream(unsigned int * a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TerrainClass::LoadFromStream(_DWORD *a1, int a2)
 {
   #374 *v5; // ecx
   size_t i; // eax
@@ -1267,10 +1259,9 @@ LABEL_16:
 
 // 0x71D000
 namespace gamemd {
-char TerrainClass::ProcessSpawnAnim(unsigned int * a1, AbstractClass * aP2)
+void TerrainClass::ProcessSpawnAnim(unsigned int * a1, AbstractClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TerrainClass::ProcessSpawnAnim(int this, _DWORD *a1, AbstractClass *aP2)
 {
   IUnknown *v3; // ebp
   IUnknown *v4; // edi

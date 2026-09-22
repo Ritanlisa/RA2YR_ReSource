@@ -13,7 +13,6 @@ namespace gamemd {
 void ParticleClass::DrawParticle(int * a2, int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ParticleClass::_vt69(int *a2, int *a3)
 {
   __int16 v20; // dx
   if ( (unsigned int)dword_ABCD44 >= PingPongBuffer::GetWriteOffset() || *(_DWORD *)(this->ParticleClass_field_0xAC + 744) ) /*0x62cedc*/
@@ -149,7 +148,6 @@ namespace gamemd {
 void ParticleClass::AdjustHeight()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ParticleClass::AdjustHeight()
 {
   int GroundHeight; // edi
   MouseClass *v10; // [esp+4h] [ebp-18h] BYREF

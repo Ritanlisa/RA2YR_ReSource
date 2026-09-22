@@ -7,7 +7,6 @@
 void Player::BuildListString()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Player::BuildListString()
 {
   SessionClass *v2; // edi
   ReferenceCounted *v3; // esi

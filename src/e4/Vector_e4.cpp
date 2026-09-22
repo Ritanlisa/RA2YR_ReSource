@@ -6,10 +6,9 @@
 
 // 0x4C1B50
 namespace gamemd {
-double Math_Vector2D_Magnitude()
+void Math_Vector2D_Magnitude()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Math_Vector2D_Magnitude(int *this)
 {
   double result; // st7
 
@@ -25,7 +24,6 @@ namespace gamemd {
 void Vector::Cleanup()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Vector_Cleanup(int this)
 {
   if ( this->Vector_field_0x4 && *(_BYTE *)(this + 13) ) /*0x512d3d*/
   {
@@ -43,7 +41,6 @@ namespace gamemd {
 void Vector::Destructor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Vector_Destructor(int this)
 {
   if ( this->Vector_field_0x4 && *(_BYTE *)(this + 13) ) /*0x51310d*/
   {
@@ -61,7 +58,6 @@ namespace gamemd {
 void Vector::MatrixMulVectorMath(float a2, float a3, float a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Math_MatrixMulVector(float *this, float a2, float a3, float a4)
 {
   this->IsInitialized = a3 * this->q004 + a4 * this->q008 + a2 * *this + this->IsInitialized; /*0x5ae8ab*/
   this->q007 = a2 * this->q004 + a3 * this->CapacityIncrement + a4 * this->q006 + this->q007; /*0x5ae8ca*/
@@ -75,7 +71,6 @@ namespace gamemd {
 void Vector::Cleanup2()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Vector_Cleanup2(int this)
 {
   if ( this->Vector_field_0x4 && *(_BYTE *)(this + 13) ) /*0x67abed*/
   {

@@ -142,22 +142,21 @@ namespace gamemd { void TActionClass::Destructor() {
 // 0x41E720
 namespace gamemd { int TriggerClass::EvaluateCondition(void* a1, int a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TriggerClass_EvaluateCondition(int this, _DWORD *a2, int a3, char a4)
 {
   _DWORD *v8; // edi
   char result; // al
   int v10; // eax
   int v11; // eax
   int v12; // eax
-  int v13; // eax
+  bool v13; // eax
   int v14; // eax
   char v15; // al
   int v16; // eax
-  int v17; // eax
+  bool v17; // eax
   int v18; // eax
   int v19; // [esp+1Ch] [ebp+Ch]
   int v20; // [esp+1Ch] [ebp+Ch]
-  int v5 = this->q037; /*0x41e726*/
+  bool v5 = this->q037; /*0x41e726*/
   bool v7 = 1; /*0x41e74e*/
   if ( !v5 || !*(_BYTE *)(v5 + 246) ) /*0x41e730*/
   {
@@ -464,7 +463,6 @@ namespace gamemd { int CampaignClass::Stat(void* a1) {
 // 0x49DB00
 namespace gamemd { int CampaignClass::LoadFromINI() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CampaignClass::LoadFromINI(int this)
 {
   MultiplayerGameMode *KeyCount; // esi
   MultiplayerGameMode **v5; // eax
@@ -853,7 +851,6 @@ LABEL_80:
 // 0x49E400
 namespace gamemd { int CampaignClass::FindMission(void* a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CampaignClass::FindMission(int this, char *String1, CCINIClass *aP2)
 {
 
   if ( !this->q060 ) /*0x49e409*/
@@ -1214,7 +1211,6 @@ namespace gamemd { int ScriptClass::PowerDrainUpdate(int a1) {
 // 0x6916B0
 namespace gamemd { void* ScriptTypeClass::Constructor(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall ScriptTypeClass::Constructor(_DWORD *this, ObjectClass *aP1)
 {
   CCINIClass *v6; // edx
   AbstractTypeClass::Constructor((int)this, (AbstractClass *)aP1); /*0x6916b8*/
@@ -1344,7 +1340,6 @@ namespace gamemd { int ScriptTypeClass::PowerDrainUpdate(void* a1) {
 // 0x691E30
 namespace gamemd { void ScriptTypeClass::GetAction(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ScriptTypeClass::_vt10(int a2, int a3)
 {
   _DWORD *i; // ecx
 
@@ -1436,7 +1431,6 @@ namespace gamemd { int ScriptTypeClass::GetAuxField() {
 // 0x6DD000
 namespace gamemd { int TActionClass::ctor() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_6DD000(int this)
 {
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x6dd004*/
@@ -1560,7 +1554,6 @@ namespace gamemd { int TeamClass::SumMemberCounts() {
 // 0x6EC9A0
 namespace gamemd { int TeamClass::SelectWaypointTarget(TeamClass * aP1, char a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TeamClass::SelectWaypointTarget(int this, TeamClass *aP1, char a3)
 {
   TechnoClass *CellFromArray; // eax
   TechnoClass *v5; // esi
@@ -1612,7 +1605,6 @@ LABEL_12:
 // 0x6ECA70
 namespace gamemd { int TeamClass::SelectAttackTarget(ScriptClass * aP1, char a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TeamClass::SelectAttackTarget(int this, ScriptClass *aP1, char a3)
 {
   TechnoClass *CellFromArray; // eax
   TechnoClass *v5; // esi
@@ -1744,7 +1736,6 @@ namespace gamemd { void TeamClass::MoveToCellAndAttack(int a1, int a2) {
 // 0x6ECE60
 namespace gamemd { int TeamClass::AssignMemberToCoordinator(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TeamClass::AssignMemberToCoordinator(int this, ScriptClass *aP1, TeamClass *aP2)
 {
   AbstractClass *CellFromArray; // eax
   AbstractClass *ObjectCell; // eax
@@ -1815,7 +1806,6 @@ namespace gamemd { int TeamClass::Create(int a1, int a2) {
 // 0x6ED090
 namespace gamemd { int TeamClass::CoordinateSuperWeaponAttack(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TeamClass::CoordinateSuperWeaponAttack(int this, ScriptClass *aP1, int a3)
 {
   TeamClass *v3; // ebp
   int SuperWeaponTypeFlag; // eax
@@ -1958,7 +1948,6 @@ namespace gamemd { int TeamClass::AssignAttackTarget(int a1, int a2) {
 // 0x6EDCA0
 namespace gamemd { void TeamClass::SyncMemberFacing(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_6EDCA0(int this, int a2, int a3)
 {
   TeamClass *v7; // [esp+Ch] [ebp-8h]
   int v3 = this->firstUnit; /*0x6edca5*/
@@ -2001,7 +1990,6 @@ LABEL_14:
 // 0x6EE310
 namespace gamemd { int TeamClass::SelectAreaAttackTarget(ScriptClass * aP1, TeamClass * aP2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TeamClass::SelectAreaAttackTarget(int this, ScriptClass *aP1, TeamClass *aP2)
 {
   FootClass *v4; // edi
   AbstractClass *v7; // eax
@@ -2148,7 +2136,6 @@ namespace gamemd { void TeamClass::ProcessTeamMovement(int a1, int a2) {
 // 0x6EE5C0
 namespace gamemd { void TeamClass::SelectBestMember(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TeamClass::SelectBestMember(ScriptClass *aP1, int a3)
 {
   MouseClass *v9; // edi
   int TileIndex; // [esp-30h] [ebp-60h]
@@ -2248,7 +2235,6 @@ LABEL_22:
 // 0x6EEEA0
 namespace gamemd { void* TeamClass::ScoreMember(void* a1, int a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall TeamClass::ScoreMember(void *this, _DWORD *a2, int a3, int a4)
 {
   _DWORD *result; // eax
   int TileData; // eax
@@ -2507,7 +2493,6 @@ namespace gamemd { void TeamClass::SelectDeploymentTarget(int a1, int a2) {
 // 0x6F0130
 namespace gamemd { void TeamClass::CheckMemberSuperWeapon(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TeamClass::CheckMemberSuperWeapon(int this, int a2, int a3)
 {
   TeamClass *v23; // [esp+14h] [ebp-20h] BYREF
   int DefaultTimer; // [esp+18h] [ebp-1Ch]
@@ -2936,7 +2921,6 @@ namespace gamemd { int TriggerClass::Construct(int a1) {
 // 0x726630
 namespace gamemd { int TriggerClass::Create() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-TriggerClass *__thiscall TriggerClass::Create(TriggerClass *this)
 {
   CCINIClass *v3; // ecx
   if ( !this ) /*0x726637*/
@@ -3256,7 +3240,6 @@ namespace gamemd { int TriggerTypeClass::GetAction(int a1, int a2) {
 // 0x727240
 namespace gamemd { int TriggerTypeClass::LoadFromINI(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TriggerTypeClass::_vt25(int this, unsigned __int8 ***a2)
 {
   char Destination[48]; // [esp+8h] [ebp-234h] BYREF
   char v28; // [esp+38h] [ebp-204h]
@@ -3398,7 +3381,6 @@ LABEL_15:
 // 0x7275D0
 namespace gamemd { int TriggerClass::Process() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TriggerClass::Process()
 {
   int result; // eax
   CCINIClass *v3; // ebx

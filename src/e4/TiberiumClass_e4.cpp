@@ -9,10 +9,9 @@
 
 // 0x5A0160
 namespace gamemd {
-char TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a7, char a8)
+void TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a7, char a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TiberiumClass_Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a7, char a8)
 {
   __int16 v14; // cx
   int i; // [esp+28h] [ebp-4h]
@@ -125,7 +124,6 @@ namespace gamemd {
 unsigned int * TiberiumClass::TiberiumClass(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall TiberiumClass::TiberiumClass(_DWORD *this, ObjectClass *aP1)
 {
   IUnknown *v3; // edx
 
@@ -196,10 +194,9 @@ _DWORD *__thiscall TiberiumClass::TiberiumClass(_DWORD *this, ObjectClass *aP1)
 
 // 0x721A50
 namespace gamemd {
-char TiberiumClass::LoadFromINI(unsigned char *** aP1)
+void TiberiumClass::LoadFromINI(unsigned char *** aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TiberiumClass::LoadFromINI(int this, unsigned __int8 ***aP1)
 {
   int Int_Overwrite; // eax
   double Double_Overwrite; // st7
@@ -346,10 +343,9 @@ LABEL_19:
 
 // 0x721E80
 namespace gamemd {
-int TiberiumClass::SaveLoad_Prefix(int a1, int a2)
+void TiberiumClass::SaveLoad_Prefix(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TiberiumClass::SaveLoad_Prefix(int a1, int a2)
 {
   int i; // ecx
   void **v6; // ecx

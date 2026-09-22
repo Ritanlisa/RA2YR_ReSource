@@ -29,10 +29,9 @@
 
 // 0x750920
 namespace gamemd {
-int VocClass_Play(int a1, int a2, float a3, int a4)
+void VocClass_Play(int a1, int a2, float a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall VocClass_Play(int a1, int a2, float a3, int a4)
 {
 
   if ( !VocClass_VoicesEnabled ) /*0x75092c*/
@@ -74,10 +73,9 @@ int __fastcall VocClass_Play(int a1, int a2, float a3, int a4)
 
 // 0x750AC0
 namespace gamemd {
-double ComputeAudioPosition(AudioMixer * aP0, unsigned int * a1, int a3)
+void ComputeAudioPosition(AudioMixer * aP0, unsigned int * a1, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-double __fastcall ComputeAudioPosition(AudioMixer *aP0, _DWORD *a1, int a3)
 {
   __int16 v6; // ax
 
@@ -152,7 +150,6 @@ namespace gamemd {
 int * StartAudioController(AudioMixer * ecx0, int ** a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int *__fastcall StartAudioController(AudioMixer *ecx0, int **a2)
 {
   int *result; // eax
   AudioMixer *eax2; // eax
@@ -210,7 +207,6 @@ namespace gamemd {
 char sub_751DD0(LPCSTR lpRootPathName, UINT * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall sub_751DD0(LPCSTR lpRootPathName, UINT *a2)
 {
   DWORD v5; // eax
   DWORD SectorsPerCluster; // [esp+Ch] [ebp-18h] BYREF
@@ -259,7 +255,6 @@ namespace gamemd {
 void ThemeManager_Update(int a1, int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall ThemeManager_Update(int a1, int a2, int a3)
 {
   int i; // esi
 
@@ -309,7 +304,6 @@ namespace gamemd {
 void ThemeClass_Update()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ThemeClass_Update()
 {
 
   if ( DataGlobal_A8ED64 ) /*0x752773*/
@@ -421,7 +415,6 @@ namespace gamemd {
 void ThemeQueue_ClearPlaylist(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall ThemeQueue_ClearPlaylist(int a1)
 {
   int i; // esi
 
@@ -448,7 +441,6 @@ namespace gamemd {
 int TauntClass_Play(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall TauntClass_Play(int a1)
 {
   int result; // eax
   char Buffer[20]; // [esp+0h] [ebp-14h] BYREF
@@ -510,10 +502,9 @@ LABEL_17:
 
 // 0x752CB0
 namespace gamemd {
-int E4Recv_752CB0::sub_752CB0(const char * a2)
+void E4Recv_752CB0::sub_752CB0(const char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_752CB0(int this, const char *a2)
 {
 
   this->M40 = 1065353216; /*0x752cbe*/
@@ -542,10 +533,9 @@ void sub_752CB0(int this, const char *a2)
 
 // 0x753000
 namespace gamemd {
-char CCINIClass::InitFromINIEVA()
+void CCINIClass::InitFromINIEVA()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void InitFromINIEVA(CCINIClass *this)
 {
   CCINIClass *v1; // edi
   unsigned int KeyCount; // eax
@@ -643,10 +633,9 @@ LABEL_10:
 
 // 0x7531A0
 namespace gamemd {
-int E4Recv_7531A0::EVA_LoadINI()
+void E4Recv_7531A0::EVA_LoadINI()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void EVA_LoadINI(void *this)
 {
   int result; // eax
 
@@ -685,10 +674,9 @@ void EVA_LoadINI(void *this)
 
 // 0x7532A0
 namespace gamemd {
-bool sub_7532A0(std::codecvt_base * a1)
+void sub_7532A0(std::codecvt_base * a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool __fastcall sub_7532A0(std::codecvt_base *a1)
 {
   if ( (int)a1 < 0 || (int)a1 >= g_InfantrySelectState ) /*0x7532aa*/
     return _do_always_noconv_codecvt_base_std__MBE_NXZ_21(a1); /*0x7532a2*/
@@ -700,10 +688,9 @@ bool __fastcall sub_7532A0(std::codecvt_base *a1)
 
 // 0x7540F0
 namespace gamemd {
-int TransformVoxelVertex(unsigned int * a1, SomeVoxelCache * a2, SomeVoxelCache * aP2, float * a4)
+void TransformVoxelVertex(unsigned int * a1, SomeVoxelCache * a2, SomeVoxelCache * aP2, float * a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall TransformVoxelVertex(_DWORD *a1, SomeVoxelCache *a2, SomeVoxelCache *aP2, float *a4)
 {
   int Info; // eax
   float *aP2a; // [esp+20h] [ebp+4h]
@@ -778,10 +765,9 @@ int __fastcall TransformVoxelVertex(_DWORD *a1, SomeVoxelCache *a2, SomeVoxelCac
 
 // 0x7542F0
 namespace gamemd {
-int InitializeAudioOcclusion(IUnknown * aP0, unsigned int * a1, unsigned int * a2)
+void InitializeAudioOcclusion(IUnknown * aP0, unsigned int * a1, unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall InitializeAudioOcclusion(IUnknown *aP0, _DWORD *a1, _DWORD *a2)
 {
   _DWORD **v5; // esi
   _DWORD ***v16; // esi
@@ -913,10 +899,9 @@ int __fastcall InitializeAudioOcclusion(IUnknown *aP0, _DWORD *a1, _DWORD *a2)
 
 // 0x757120
 namespace gamemd {
-int RenderVoxels()
+void RenderVoxels()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __usercall Voxel_Render@<al>(int *a1@<ebx>, int a2@<ebp>, int a3@<edi>, int *a4)
 {
   __int16 v7; // dx
   char result; // al
@@ -1058,10 +1043,9 @@ char __usercall Voxel_Render@<al>(int *a1@<ebx>, int a2@<ebp>, int a3@<edi>, int
 
 // 0x757360
 namespace gamemd {
-int ProcessVoxelDepthSamples()
+void ProcessVoxelDepthSamples()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __usercall ProcessVoxelDepthSamples@<al>(unsigned int a1@<ebx>, int a2@<ebp>, int a3@<edi>, unsigned int a4)
 {
   __int16 v7; // di
   char result; // al
@@ -1203,10 +1187,9 @@ char __usercall ProcessVoxelDepthSamples@<al>(unsigned int a1@<ebx>, int a2@<ebp
 
 // 0x757980
 namespace gamemd {
-int ProcessVoxelColorScanline()
+void ProcessVoxelColorScanline()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __usercall ProcessVoxelColorScanline@<al>(unsigned int a1@<edx>, int a2@<ebx>, int a3@<ebp>, int a4@<edi>, int a5)
 {
   __int16 v8; // dx
   unsigned __int8 *v11; // esi
@@ -1359,10 +1342,9 @@ char __usercall ProcessVoxelColorScanline@<al>(unsigned int a1@<edx>, int a2@<eb
 
 // 0x757BF0
 namespace gamemd {
-int VoxelDrawScanline()
+void VoxelDrawScanline()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __usercall VoxelDrawScanline@<al>(unsigned int a1@<ebx>, int a2@<ebp>, int a3@<edi>, int a4)
 {
   __int16 v7; // di
   unsigned __int8 *v11; // esi
@@ -1517,10 +1499,9 @@ char __usercall VoxelDrawScanline@<al>(unsigned int a1@<ebx>, int a2@<ebp>, int 
 
 // 0x7581F0
 namespace gamemd {
-int ProcessVoxelColorSamples()
+void ProcessVoxelColorSamples()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __usercall ProcessVoxelColorSamples@<al>(int *a1@<ebx>, int a2@<ebp>, int a3@<edi>, int *a4)
 {
   __int16 v7; // dx
   char result; // al
@@ -1662,10 +1643,9 @@ char __usercall ProcessVoxelColorSamples@<al>(int *a1@<ebx>, int a2@<ebp>, int a
 
 // 0x758430
 namespace gamemd {
-int ProcessVoxelScanSamples()
+void ProcessVoxelScanSamples()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __usercall ProcessVoxelScanSamples@<al>(unsigned int a1@<ebx>, int a2@<ebp>, int a3@<edi>, unsigned int a4)
 {
   __int16 v7; // di
   char result; // al
@@ -1805,10 +1785,9 @@ char __usercall ProcessVoxelScanSamples@<al>(unsigned int a1@<ebx>, int a2@<ebp>
 
 // 0x758AD0
 namespace gamemd {
-int E4Recv_758AD0::sub_758AD0(int * a2)
+void E4Recv_758AD0::sub_758AD0(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_758AD0(_DWORD *this, int *a2)
 {
 
   int v3 = 0; /*0x758ae2*/
@@ -1841,7 +1820,6 @@ namespace gamemd {
 int sub_759180()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_759180()
 {
   AsyncIO_Instance = 0; /*0x759187*/
   dword_B45B60 = 0; /*0x75918c*/
@@ -1860,7 +1838,6 @@ namespace gamemd {
 void sub_7591C0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_7591C0()
 {
   dword_B45B58 = (int)&vt_VectorClass_MovieHandle; /*0x7591c8*/
   if ( AsyncIO_Instance && byte_B45B65 ) /*0x7591dc*/
@@ -1876,10 +1853,9 @@ void sub_7591C0()
 
 // 0x759790
 namespace gamemd {
-LPDIRECTDRAW E4Recv_759790::sub_759790()
+void E4Recv_759790::sub_759790()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-LPDIRECTDRAW __thiscall sub_759790(int this)
 {
   return Surface::CreateSurfacePalette((void *)(this + 516));
 }
@@ -1888,10 +1864,9 @@ LPDIRECTDRAW __thiscall sub_759790(int this)
 
 // 0x75A120
 namespace gamemd {
-BOOL E4Recv_75A120::sub_75A120(int a2, int * a3, int a4)
+void E4Recv_75A120::sub_75A120(int a2, int * a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_75A120(int this, int a2, int *a3, int a4)
 {
   BOOL result; // eax
 
@@ -1962,10 +1937,9 @@ LABEL_14:
 
 // 0x75A2F0
 namespace gamemd {
-CCINIClass * sub_75A2F0(int a1, int a2, unsigned int * Block, size_t Size)
+unsigned int * * sub_75A2F0(int a1, int a2, unsigned int * Block, size_t Size)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-CCINIClass *sub_75A2F0(int a1, int a2, _DWORD *Block, size_t Size)
 {
   CCINIClass *result; // eax
 
@@ -2000,7 +1974,6 @@ namespace gamemd {
 int sub_75A350(int a1, int a2, unsigned char * a3, unsigned int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_75A350(int a1, int a2, _BYTE *a3, unsigned int a4)
 {
   int i; // eax
   int result; // eax
@@ -2042,7 +2015,6 @@ namespace gamemd {
 int AnimSystem_Reset(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall AnimSystem_Reset(int a1)
 {
   byte_B45BA8[a1 >> 3] |= 1 << (a1 & 7); /*0x75a7dc*/
   return a1 >> 3; /*0x75a7e2*/
@@ -2052,10 +2024,9 @@ int __fastcall AnimSystem_Reset(int a1)
 
 // 0x75F230
 namespace gamemd {
-int sub_75F230(unsigned int * a1, unsigned int * a2)
+void sub_75F230(unsigned int * a1, unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_75F230(_DWORD *a1, _DWORD *a2)
 {
 
   int v2 = *a2 - *a1; /*0x75f239*/
@@ -2924,18 +2895,9 @@ int sub_753B40()
 
 // 0x753BF0
 namespace gamemd {
-int sub_753BF0()
+void sub_753BF0()
  {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__userpurge sub_753BF0@<eax>(
-        char a1@<dl>,
-        char a2@<cl>,
-        int a3@<ebx>,
-        int a4@<ebp>,
-        char a5,
-        char a6,
-        char a7,
-        char a8)
 {
   char *result; // eax
 

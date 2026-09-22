@@ -5,10 +5,9 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 
 // 0x4A0760
-int ConnectionPointClass::GetConnectionInterface(unsigned int * a1, int a2)
+void ConnectionPointClass::GetConnectionInterface(unsigned int * a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ConnectionPointClass::_vt07(_DWORD *a1, int a2)
 {
   int i; // esi
 
@@ -74,7 +73,6 @@ void ConnectionPointClass::_vt07(_DWORD *a1, int a2)
 unsigned int * ConnectionPointClass::Construct(unsigned int * a1, ConnectionPointClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall ConnectionPointClass::Construct(_DWORD *this, _DWORD *a1, ConnectionPointClass *aP2)
 {
   this->q004 = *a1; /*0x4a087c*/
   this->q008 = a1[1]; /*0x4a0881*/
@@ -97,10 +95,9 @@ _DWORD *__thiscall ConnectionPointClass::Construct(_DWORD *this, _DWORD *a1, Con
 
 // 0x4A1280
 namespace gamemd {
-char ConnectionPointClass_9::Release(int a2, unsigned int * a3)
+void ConnectionPointClass_9::Release(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ConnectionPointClass_9_::_vt02(int a2, _DWORD *a3)
 {
   int i; // eax
 

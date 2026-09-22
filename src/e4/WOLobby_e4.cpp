@@ -15,10 +15,9 @@
 
 // 0x5E3850
 namespace gamemd {
-int INIClass::WOLobby_Play()
+void INIClass::WOLobby_Play()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void WOLobby_Play(INIClass *this)
 {
   const char *v1; // edx
   int v2; // ebx
@@ -72,10 +71,9 @@ void WOLobby_Play(INIClass *this)
 } // namespace gamemd
 
 // 0x78F7F0
-int WOLobby::SetupDlgProc(HWND hDlg, unsigned int a2, unsigned int nIDDlgItem, HWND hWnd)
+void WOLobby::SetupDlgProc(HWND hDlg, unsigned int a2, unsigned int nIDDlgItem, HWND hWnd)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_78F7F0(HWND hDlg, unsigned int a2, unsigned int nIDDlgItem, HWND hWnd)
 {
   int result; // eax
   HWND DlgItem; // eax
@@ -1451,10 +1449,9 @@ LABEL_93:
 }
 
 // 0x791B10
-int WOLobby::ChatDlgProc(HWND hDlg, UINT a2, WPARAM a3, HWND hWnd)
+void WOLobby::ChatDlgProc(HWND hDlg, UINT a2, WPARAM a3, HWND hWnd)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void WOLobby::ChatDlgProc(HWND hDlg, UINT a2, WPARAM a3, HWND hWnd)
 {
   int result; // eax
   HWND v5; // ebx

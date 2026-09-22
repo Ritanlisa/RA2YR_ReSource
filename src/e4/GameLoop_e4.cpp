@@ -9,7 +9,6 @@ int GameLoop::Thunk()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // attributes: thunk
-int GameLoop::Thunk()
 {
   return Game::ProcessIdle(this);
 }

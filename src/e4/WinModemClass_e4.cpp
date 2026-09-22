@@ -5,10 +5,9 @@
 #include "e4/classes/Timer_e4.hpp"
 
 // 0x774980
-bool WinModemClass::ReadSerial()
+void WinModemClass::ReadSerial()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void WinModemClass::ReadSerial(int this)
 {
   DWORD v4; // ecx
   DWORD v5; // eax
@@ -112,10 +111,9 @@ void WinModemClass::ReadSerial(int this)
 }
 
 // 0x774B30
-int WinModemClass::ReadBytes(void (**this)() a1, WinModemClass * aP1, WinModemClass * aP2)
+void WinModemClass::ReadBytes(void (**this)() a1, WinModemClass * aP1, WinModemClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall WinModemClass::ReadBytes(void (**this)(), WinModemClass *aP1, WinModemClass *aP2)
 {
   WinModemClass *v5; // ebx
   WinModemClass *v7; // ebp
@@ -149,10 +147,9 @@ int __thiscall WinModemClass::ReadBytes(void (**this)(), WinModemClass *aP1, Win
 }
 
 // 0x774C70
-int WinModemClass::WriteSerial(LPCVOID lpBuffer, WinModemClass * aP2)
+void WinModemClass::WriteSerial(LPCVOID lpBuffer, WinModemClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void WinModemClass::WriteSerial(int this, LPCVOID lpBuffer, WinModemClass *aP2)
 {
   int result; // eax
   DWORD NumberOfBytesWritten; // [esp+4h] [ebp-4h] BYREF
@@ -172,10 +169,9 @@ void WinModemClass::WriteSerial(int this, LPCVOID lpBuffer, WinModemClass *aP2)
 }
 
 // 0x774CD0
-int WinModemClass::LoadTypeData(int a2, char * Str, int a4, WinModemClass * aP4)
+void WinModemClass::LoadTypeData(int a2, char * Str, int a4, WinModemClass * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void WinModemClass::LoadTypeData(int a2, char *Str, int a4, WinModemClass *aP4)
 {
   WinModemClass *v5; // esi
   WinModemClass *v7; // edi
@@ -295,10 +291,9 @@ LABEL_38:
 }
 
 // 0x774F50
-BOOL WinModemClass::SaveToINI(const char * NumberOfBytesWritten)
+void WinModemClass::SaveToINI(const char * NumberOfBytesWritten)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void WinModemClass::_vt06(int this, const char *NumberOfBytesWritten)
 {
   char Buffer[80]; // [esp+10h] [ebp-50h] BYREF
 
@@ -335,10 +330,9 @@ void WinModemClass::_vt06(int this, const char *NumberOfBytesWritten)
 }
 
 // 0x775110
-int WinModemClass::Dial(const char * a2, unsigned char a3, char * Destination, signed int Count, int a6, int a7, int a8)
+void WinModemClass::Dial(const char * a2, unsigned char a3, char * Destination, signed int Count, int a6, int a7, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void WinModemClass::Dial(int this, const char *a2, unsigned __int8 a3, char *Destination, signed int Count, int a6, int a7, int a8)
 {
   ObjectClass *v10; // ecx
   DWORD v13; // eax
@@ -476,10 +470,9 @@ int WinModemClass::ddtor(int a2)
 }
 
 // 0x7754B0
-int WinModemClass::HangUp(int a2)
+void WinModemClass::HangUp(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void WinModemClass::_vt09(int a2)
 {
   this->q068 = a2; /*0x7754b4*/
   return a2; /*0x7754b7*/
@@ -487,10 +480,9 @@ void WinModemClass::_vt09(int a2)
 }
 
 // 0x7754D0
-int WinModemClass::LogCommErrors(NullModemClass * aP1, char a3, int a4, int a5)
+void WinModemClass::LogCommErrors(NullModemClass * aP1, char a3, int a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void WinModemClass::LogCommErrors(NullModemClass *aP1, char a3, int a4, int a5)
 {
   int result; // eax
 

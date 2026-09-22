@@ -196,7 +196,6 @@ ObjectClass* CellClass::FindObjectOfType(AbstractType type, bool alt) const
 void CellClass::Draw(const Point2D* screen_pos, const RectangleStruct* bounds) const
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CellClass_Draw(int this, int a2, _DWORD *a3, int a4)
 {
 
   if ( a2 )
@@ -282,7 +281,6 @@ retn    0Ch
 void CellClass::DrawDispatch(const Point2D* screen_pos, const RectangleStruct* bounds) const
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CellClass_DrawDispatch(int *this, unsigned int a2, _DWORD *a3, int a4)
 {
 
   if ( !*((_BYTE *)this + 45) )
@@ -535,7 +533,6 @@ retn    0Ch
 void CellClass::DrawWithFlags(const Point2D* screen_pos, const RectangleStruct* bounds, int flags) const
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CellClass_DrawWithFlags(_DWORD *this, int a2, _DWORD *a3, int a4)
 {
 
   int v4 = a2;
@@ -730,7 +727,6 @@ RectangleStruct* CellClass::GetScreenRect(RectangleStruct* out) const
 void CellClass::RegisterForRedraw()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_BYTE *__thiscall CellClass_RegisterForRedraw(int this, __int16 *a2)
 {
   _BYTE *result; // eax
 

@@ -4,10 +4,9 @@
 
 // 0x73C5F0
 namespace gamemd {
-int VoxelClass_RenderObject()
+void VoxelClass_RenderObject()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __userpurge VoxelClass::RenderObject@<eax>(_BYTE *a1@<ecx>, int a2, int a3, int a4, ConvertClass aP5)
 {
   int v11; // ecx
   int v12; // eax

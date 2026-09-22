@@ -6,10 +6,9 @@
 #include "e4/classes/WideString_e4.hpp"
 
 // 0x4E5D60
-int Lobby::InvalidatePlayerSlots()
+void Lobby::InvalidatePlayerSlots()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Lobby_InvalidatePlayerSlots(HWND this)
 {
   int i; // esi
   int result; // eax
@@ -67,7 +66,6 @@ void Lobby_InvalidatePlayerSlots(HWND this)
 void Lobby::UpdatePlayerLabels()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Lobby_UpdatePlayerLabels(HWND this)
 {
   int v1; // esi
   int v2; // eax
@@ -377,7 +375,6 @@ LABEL_111:
 void Lobby::SetupPlayerWidgets()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Lobby::SetupPlayerWidgets(HWND this)
 {
   INIClass *v1; // esi
   int ResourceID4CSF; // eax
@@ -498,10 +495,9 @@ void Lobby::SetupPlayerWidgets(HWND this)
 }
 
 // 0x77DB90
-int Lobby::BuildPlayerList()
+void Lobby::BuildPlayerList()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Lobby_BuildPlayerList()
 {
   wchar_t **v0; // esi
   wchar_t *v1; // edi

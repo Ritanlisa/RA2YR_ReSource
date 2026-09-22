@@ -12,7 +12,6 @@
 void IPXGlobalConnClass::ReceivePacket(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void IPXGlobalConnClass::_vt17(int this, int a2)
 {
   IPXGlobalConnClass *v2; // esi
   int i; // ebp
@@ -74,10 +73,9 @@ LABEL_14:
 }
 
 // 0x5403F0
-int IPXGlobalConnClass::SetAddress(int a2, int arg4, int * a3, IPXGlobalConnClass * aP4, int a6, int aP3)
+void IPXGlobalConnClass::SetAddress(int a2, int arg4, int * a3, IPXGlobalConnClass * aP4, int a6, int aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void IPXGlobalConnClass::SetAddress(int a2, int arg4, int *a3, IPXGlobalConnClass *aP4, int a6, int aP3)
 {
   int v8; // esi
   int v9; // ebp

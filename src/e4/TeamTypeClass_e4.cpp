@@ -12,10 +12,9 @@
 
 // 0x4C98B0
 namespace gamemd {
-int TeamTypeClass::Construct()
+void TeamTypeClass::Construct()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TeamTypeClass_Constructor(int this)
 {
   wchar_t *v2; // eax
   wchar_t *v4; // eax
@@ -84,10 +83,9 @@ void TeamTypeClass_Constructor(int this)
 
 // 0x691C00
 namespace gamemd {
-INIClass * TeamTypeClass::CreateScriptType()
+void * TeamTypeClass::CreateScriptType()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-INIClass *__thiscall TeamTypeClass::CreateScriptType(AbstractClass *this)
 {
   INIClass *v3; // eax
   INIClass *v4; // esi
@@ -160,10 +158,9 @@ LABEL_17:
 
 // 0x6E85F0
 namespace gamemd {
-TaskForceClass * TeamTypeClass::FindOrCreateTaskForce()
+void * TeamTypeClass::FindOrCreateTaskForce()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-TaskForceClass *__thiscall TeamTypeClass::FindOrCreateTaskForce(ObjectClass *this)
 {
 
   if ( !_strcmpi(&stru_817460.sectionHead[1], this) || !_strcmpi(g_Str_none, this) ) /*0x6e860c*/
@@ -189,10 +186,9 @@ LABEL_6:
 
 // 0x6EF5F0
 namespace gamemd {
-int TeamTypeClass::Check(int a2)
+void TeamTypeClass::Check(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_6EF5F0(_DWORD *this, int a2)
 {
   int result; // eax
 
@@ -205,10 +201,9 @@ void sub_6EF5F0(_DWORD *this, int a2)
 
 // 0x6F0A70
 namespace gamemd {
-int TeamTypeClass::DestroyAllInstances()
+void TeamTypeClass::DestroyAllInstances()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TeamTypeClass::DestroyAllInstances()
 {
   int result; // eax
   int i; // esi
@@ -232,10 +227,9 @@ void TeamTypeClass::DestroyAllInstances()
 
 // 0x6F1030
 namespace gamemd {
-int TeamTypeClass::GetTeam(int a2, int a3)
+void TeamTypeClass::GetTeam(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TeamTypeClass::_vt10(int a2, int a3)
 {
   int result; // eax
 
@@ -258,10 +252,9 @@ void TeamTypeClass::_vt10(int a2, int a3)
 
 // 0x6F1090
 namespace gamemd {
-char TeamTypeClass::LoadFromINI(unsigned char *** aP1)
+void TeamTypeClass::LoadFromINI(unsigned char *** aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TeamTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
 {
   CCINIClass *v3; // ecx
   int Int_Overwrite; // eax
@@ -398,7 +391,7 @@ void TeamTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
           (unsigned __int8 *)(this + 36),
           (CCINIClass *)&stru_830620[76352],
           this->q0A8);
-  char v17 = this->q02B; /*0x6f124e*/
+  bool v17 = this->q02B; /*0x6f124e*/
   this->q0A8 = v16; /*0x6f1254*/
   char v18; // al
   v18 = INIClass::ReadBool_Overwrite( /*0x6f1263*/
@@ -578,10 +571,9 @@ void TeamTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
 
 // 0x6F1550
 namespace gamemd {
-char TeamTypeClass::GetMaxCount(CCINIClass * aP1)
+void TeamTypeClass::GetMaxCount(CCINIClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TeamTypeClass::GetMaxCount(int this, CCINIClass *aP1)
 {
   INIClass *v5; // edi
   INIClass *v6; // eax
@@ -714,10 +706,9 @@ void TeamTypeClass::GetMaxCount(int this, CCINIClass *aP1)
 
 // 0x6F1870
 namespace gamemd {
-int TeamTypeClass::GetGroup()
+void TeamTypeClass::GetGroup()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TeamTypeClass::GetGroup()
 {
   int result; // eax
 
@@ -738,7 +729,6 @@ namespace gamemd {
 unsigned int * TeamTypeClass::GetTransportWaypoint(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall TeamTypeClass::GetTransportWaypoint(int *this, _DWORD *a2)
 {
 
   TeamTypeClass *v5 = this; /*0x6f18e0*/
@@ -760,10 +750,9 @@ _DWORD *__thiscall TeamTypeClass::GetTransportWaypoint(int *this, _DWORD *a2)
 
 // 0x6F1C80
 namespace gamemd {
-int TeamTypeClass::PowerDrainUpdate(int * a2)
+void TeamTypeClass::PowerDrainUpdate(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TeamTypeClass::_vt13(int this, int *a2)
 {
   int result; // eax
 
@@ -840,10 +829,9 @@ void TeamTypeClass::_vt13(int this, int *a2)
 
 // 0x6F1FA0
 namespace gamemd {
-int TeamTypeClass::ProcessTaskForce()
+void TeamTypeClass::ProcessTaskForce()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TeamTypeClass::ProcessTaskForce(int this)
 {
   int result; // eax
 
@@ -881,10 +869,9 @@ void TeamTypeClass::ProcessTaskForce(int this)
 
 // 0x6F20C0
 namespace gamemd {
-int TeamTypeClass::GetAuxField()
+void TeamTypeClass::GetAuxField()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TeamTypeClass::_vt16()
 {
   return this->q098; /*0x6f20c6*/
 }
@@ -927,10 +914,9 @@ TeamTypeClass * TeamTypeClass::ddtor(char a2)
 
 // 0x6F22F0
 namespace gamemd {
-char TeamTypeClass_28::Release(int a2, int * a3)
+void TeamTypeClass_28::Release(int a2, int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TeamTypeClass_28_::_vt02(int a2, int *a3)
 {
 
   if ( a2 ) /*0x6f22fc*/
@@ -1030,10 +1016,9 @@ void TeamTypeClass_28_::_vt02(int a2, int *a3)
 
 // 0x6F24B0
 namespace gamemd {
-char TeamTypeClass_28::SetCapacity(int a2, int * a3)
+void TeamTypeClass_28::SetCapacity(int a2, int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TeamTypeClass_28_::sub_6F24B0(int a2, int *a3)
 {
 
   if ( a2 ) /*0x6f24bc*/

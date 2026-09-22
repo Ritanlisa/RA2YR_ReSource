@@ -3,10 +3,9 @@
 #include "e4/e4_globals.hpp"
 
 // 0x473AE0
-int FileClass::Write(CCFileClass * aP1, DWORD nNumberOfBytesToWrite)
+void FileClass::Write(CCFileClass * aP1, DWORD nNumberOfBytesToWrite)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void FileClass::Write(CCFileClass *aP1, DWORD nNumberOfBytesToWrite)
 {
 
   if ( this->q058 ) /*0x473ae3*/
@@ -20,10 +19,9 @@ void FileClass::Write(CCFileClass *aP1, DWORD nNumberOfBytesToWrite)
 }
 
 // 0x473FC0
-int FileClass::SetFileName(IUnknown * aP1)
+void FileClass::SetFileName(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void FileClass::SetFileName(IUnknown *aP1)
 {
   this->q068 = 0; /*0x473fc4*/
   return FileClass::OpenWithCDSearch(this, aP1); /*0x473fd1*/
@@ -31,10 +29,9 @@ void FileClass::SetFileName(IUnknown *aP1)
 }
 
 // 0x65CBF0
-char FileClass::Open(int a2)
+void FileClass::Open(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void FileClass_Open(int *this, int a2)
 {
   int v4; // edi
   HANDLE FileA; // eax
@@ -77,10 +74,9 @@ LABEL_12:
 }
 
 // 0x65CCE0
-DWORD FileClass::Read(BufferIOFileClass * aP1, AbstractClass * aP2)
+void FileClass::Read(BufferIOFileClass * aP1, AbstractClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-DWORD __thiscall FileClass::Read(_DWORD *this, BufferIOFileClass *aP1, AbstractClass *aP2)
 {
   DWORD v4; // ebx
   DWORD result; // eax
@@ -146,10 +142,9 @@ DWORD __thiscall FileClass::Read(_DWORD *this, BufferIOFileClass *aP1, AbstractC
 }
 
 // 0x65CF00
-int FileClass::Seek(LONG lDistanceToMove, DWORD dwMoveMethod)
+void FileClass::Seek(LONG lDistanceToMove, DWORD dwMoveMethod)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void FileClass_Seek(int *this, LONG lDistanceToMove, DWORD dwMoveMethod)
 {
   LONG v4; // ecx
   DWORD v5; // edi
@@ -310,10 +305,9 @@ LABEL_27:
 }
 
 // 0x65D150
-int FileClass::Close()
+void FileClass::Close()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void FileClass_Close(_DWORD *this)
 {
   (*(void (__thiscall **)(_DWORD *))(*this + 52))(this); /*0x65d155*/
   if ( !(*(int (__thiscall **)(_DWORD *, int))(*this + 28))(this, 2) ) /*0x65d15e*/

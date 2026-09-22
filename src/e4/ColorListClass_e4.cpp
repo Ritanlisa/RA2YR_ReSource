@@ -3,10 +3,9 @@
 #include "e4/e4_globals.hpp"
 
 // 0x557AE0
-int ColorListClass::SetColor()
+void ColorListClass::SetColor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ColorListClass::_vt39()
 {
 
   int v1 = this->q16C; /*0x557ae0*/
@@ -18,10 +17,9 @@ void ColorListClass::_vt39()
 }
 
 // 0x557F40
-int ColorListClass::Clear(unsigned int a2)
+void ColorListClass::Clear(unsigned int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ColorListClass::_vt46(unsigned int a2)
 {
   int result; // eax
 
@@ -49,7 +47,6 @@ void ColorListClass::_vt46(unsigned int a2)
 void ColorListClass::RemoveColor(wchar_t * String2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ColorListClass::_vt45(wchar_t *String2)
 {
 
   if ( String2 && (int)this->q044 > 0 ) /*0x558022*/

@@ -6,10 +6,9 @@
 
 // 0x679A10
 namespace gamemd {
-char SideClass::LoadAllFromINI(CCINIClass * aP0)
+void SideClass::LoadAllFromINI(CCINIClass * aP0)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void SideClass::LoadAllFromINI(CCINIClass *aP0)
 {
   int i; // edi
   int j; // edi
@@ -128,7 +127,6 @@ namespace gamemd {
 unsigned int * SideClass::Construct(CCINIClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall SideClass::Construct(_DWORD *this, CCINIClass *aP1)
 {
 
   AbstractTypeClass::Constructor((int)this, (AbstractClass *)aP1); /*0x6a4559*/
@@ -162,10 +160,9 @@ _DWORD *__thiscall SideClass::Construct(_DWORD *this, CCINIClass *aP1)
 
 // 0x6A4710
 namespace gamemd {
-int SideClass::GetCountry(int * a2)
+void SideClass::GetCountry(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void SideClass::_vt13(int this, int *a2)
 {
   AbstractTypeClass::ProcessPower((char *)this, a2); /*0x6a4719*/
   return Power::TimerProcess(this->q0A8); /*0x6a472c*/
@@ -175,10 +172,9 @@ void SideClass::_vt13(int this, int *a2)
 
 // 0x6A4780
 namespace gamemd {
-int SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
+void SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void SideClass::SaveLoad_Prefix(_DWORD *a0, AbstractTypeClass *aP1)
 {
   AbstractTypeClass *v2; // esi
   AbstractClass *v3; // edi
@@ -256,10 +252,9 @@ void SideClass::SaveLoad_Prefix(_DWORD *a0, AbstractTypeClass *aP1)
 
 // 0x6A4930
 namespace gamemd {
-SideClass * SideClass::Init(char a2)
+void * SideClass::Init(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-SideClass *__thiscall SideClass::Init(void **this, char a2)
 {
   void **v6; // [esp+4h] [ebp-4h] BYREF
 

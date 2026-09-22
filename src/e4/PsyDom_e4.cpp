@@ -10,7 +10,6 @@ namespace gamemd {
 void PsyDom::Fire()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void PsyDom::Fire()
 {
   _DWORD *v3; // eax
   CoordStruct *v4; // esi

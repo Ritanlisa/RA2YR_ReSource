@@ -8,7 +8,6 @@ namespace gamemd {
 unsigned int * _com_error::ThrowErrorCOM_Helper(int a2, int a3, char a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall ThrowErrorCOM_Helper(_com_error *this, int a2, int a3, char a4)
 {
   this->q00C = 0; /*0x7dcdc7*/
   this->q004 = a2; /*0x7dcdcb*/

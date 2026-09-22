@@ -52,10 +52,9 @@
 
 // 0x539760
 namespace gamemd {
-int sub_539760()
+void sub_539760()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_539760()
 {
   word_A9FA48 = unk_A9F9F8; /*0x539766*/
   unk_A9F9CC = unk_A9F9F8; /*0x53976b*/
@@ -107,10 +106,9 @@ void sub_539760()
 
 // 0x5558E0
 namespace gamemd {
-int sub_5558E0(int * a1, int * a2, int * a3, int * a4, int * a5)
+void sub_5558E0(int * a1, int * a2, int * a3, int * a4, int * a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_5558E0(int *a1, int *a2, int *a3, int *a4, int *a5)
 {
   int result; // eax
 
@@ -200,10 +198,9 @@ LABEL_22:
 
 // 0x5A1E50
 namespace gamemd {
-char sub_5A1E50(short * a1, int a2, int a3, int a4)
+void sub_5A1E50(short * a1, int a2, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall sub_5A1E50(__int16 *a1, int a2, int a3, int a4)
 {
   __int16 v7; // si
   __int16 v8; // bx
@@ -266,10 +263,9 @@ LABEL_16:
 
 // 0x5ADD10
 namespace gamemd {
-int E4Recv_5ADD10::Map_Delete()
+void E4Recv_5ADD10::Map_Delete()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Map_Delete(int this)
 {
   wchar_t *v4; // eax
   wchar_t *StringCSF; // [esp-10h] [ebp-F8h]
@@ -306,10 +302,9 @@ void Map_Delete(int this)
 
 // 0x682150
 namespace gamemd {
-int sub_682150(int a1, int a2, LPSTR lpMultiByteStr)
+void sub_682150(int a1, int a2, LPSTR lpMultiByteStr)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_682150(int a1, int a2, LPSTR lpMultiByteStr)
 {
   _UNKNOWN **v5; // ecx
   WCHAR *i; // edi
@@ -363,7 +358,6 @@ namespace gamemd {
 void sub_68C050()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_68C050()
 {
   int WarRatio_high; // ecx
   int HelipadRatio; // edx
@@ -470,10 +464,9 @@ LABEL_29:
 
 // 0x55CF10
 namespace gamemd {
-char sub_55CF10()
+void sub_55CF10()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_55CF10()
 {
   char result; // al
   DWORD Ticks; // [esp+0h] [ebp-Ch]
@@ -525,10 +518,9 @@ void sub_55CF10()
 
 // 0x5C98A0
 namespace gamemd {
-int sub_5C98A0()
+void sub_5C98A0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_5C98A0()
 {
   int result; // eax
   size_t v3; // ebp
@@ -604,10 +596,9 @@ void sub_5C98A0()
 
 // 0x5EC880
 namespace gamemd {
-char Map_Handle_5EC880(HWND hDlg, int a2, char a3, char a4)
+void Map_Handle_5EC880(HWND hDlg, int a2, char a3, char a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall Map_Handle_5EC880(HWND hDlg, int a2, char a3, char a4)
 {
   HWND v4; // ebx
   LRESULT v7; // eax
@@ -698,7 +689,6 @@ namespace gamemd {
 char sub_6ACCA0(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall sub_6ACCA0(int a1)
 {
   HWND v1; // ebp
   LRESULT v4; // eax
@@ -748,10 +738,9 @@ char __fastcall sub_6ACCA0(int a1)
 
 // 0x584030
 namespace gamemd {
-char Map_Helper_584030(IUnknown * aP0)
+void Map_Helper_584030(IUnknown * aP0)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Map_Helper_584030(IUnknown *aP0)
 {
   int v5; // esi
   unsigned int v6; // eax
@@ -800,11 +789,10 @@ LABEL_10:
 
 // 0x59BAB0
 namespace gamemd {
-int Map_Helper_59BAB0()
+void Map_Helper_59BAB0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // local variable allocation has failed, the output may be wrong!
-void Map_Helper_59BAB0(__int16 *a0, MapResourceClass *aP1, char a3, double a4, MapResourceClass *aP4)
 {
   MapResourceClass v5; // esi
   MapResourceClass v12; // eax
@@ -846,10 +834,9 @@ void Map_Helper_59BAB0(__int16 *a0, MapResourceClass *aP1, char a3, double a4, M
 
 // 0x5A7D00
 namespace gamemd {
-char sub_5A7D00(int a1, unsigned short * a2, char a3, char a4)
+void sub_5A7D00(int a1, unsigned short * a2, char a3, char a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall sub_5A7D00(int a1, _WORD *a2, char a3, char a4)
 {
   __int16 v10; // cx
 
@@ -917,7 +904,6 @@ namespace gamemd {
 int sub_6B4240(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_6B4240(int a1, int a2)
 {
   int result; // eax
 
@@ -1020,7 +1006,6 @@ namespace gamemd {
 char sub_751C30()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char sub_751C30()
 {
   DWORD NumberOfFreeClusters; // [esp+10h] [ebp-1D0h] BYREF
   DWORD BytesPerSector; // [esp+14h] [ebp-1CCh] BYREF
@@ -1064,10 +1049,9 @@ char sub_751C30()
 
 // 0x63AB60
 namespace gamemd {
-char sub_63AB60(int a1, int a2)
+void sub_63AB60(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_63AB60(int a1, int a2)
 {
   _DWORD *Coords; // eax
 
@@ -1120,7 +1104,6 @@ namespace gamemd {
 void Map_Process_76FD40(int a1, ObjectClass * aP1, int a3, int _54, int * a4, int a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Map_Process_76FD40(int a1, ObjectClass *aP1, int a3, int _54, int *a4, int a6)
 {
 
   int v6 = v6; /*0x76fd44*/
@@ -1220,10 +1203,9 @@ void Map_Process_76FD40(int a1, ObjectClass *aP1, int a3, int _54, int *a4, int 
 
 // 0x682240
 namespace gamemd {
-int sub_682240(int a1, int a2, unsigned short * a3)
+void sub_682240(int a1, int a2, unsigned short * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_682240(int a1, int a2, _WORD *a3)
 {
   _UNKNOWN **v6; // ecx
 
@@ -1280,10 +1262,9 @@ LABEL_5:
 
 // 0x6824B0
 namespace gamemd {
-int sub_6824B0(int a1, int a2, unsigned int * a3)
+void sub_6824B0(int a1, int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_6824B0(int a1, int a2, _DWORD *a3)
 {
   _UNKNOWN **v6; // ecx
 
@@ -1343,7 +1324,6 @@ namespace gamemd {
 void sub_5549A0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_5549A0()
 {
 
   int v0 = g_BridgeCellPool; /*0x5549a0*/
@@ -1418,7 +1398,6 @@ namespace gamemd {
 int sub_660C50()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_660C50()
 {
   dword_B04D88 = -1; /*0x660c54*/
   dword_B04DD8 = -1; /*0x660c59*/
@@ -1433,7 +1412,6 @@ namespace gamemd {
 void sub_6DA980()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_6DA980()
 {
 
   int v0 = g_CraterCreationState; /*0x6da980*/
@@ -1461,10 +1439,9 @@ void sub_6DA980()
 
 // 0x769E30
 namespace gamemd {
-char Map_WorldDominationTour_20::Release(int a2, unsigned int * a3)
+void Map_WorldDominationTour_20::Release(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Map_WorldDominationTour_20_::_vt02(int a2, _DWORD *a3)
 {
   _DWORD *v6; // esi
   int v7; // ebx
@@ -1553,10 +1530,9 @@ LABEL_14:
 
 // 0x76A610
 namespace gamemd {
-rc_ptr_base * Map_WorldDominationTour_20::Constructor_0(char a2)
+void * Map_WorldDominationTour_20::Constructor_0(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-rc_ptr_base *__thiscall Map_WorldDominationTour_20_::Constructor_0(rc_ptr_base *this, char a2)
 {
   rc_ptr_base *v4; // ebp
   rc_ptr_base *v5; // esi
@@ -1597,10 +1573,9 @@ rc_ptr_base *__thiscall Map_WorldDominationTour_20_::Constructor_0(rc_ptr_base *
 
 // 0x76A3F0
 namespace gamemd {
-char Map_WorldDominationTour_43::Release(int a2, char * a3)
+void Map_WorldDominationTour_43::Release(int a2, char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Map_WorldDominationTour_43_::_vt02(int a2, char *a3)
 {
 
   int v3 = a2; /*0x76a3f2*/
@@ -2433,10 +2408,9 @@ unsigned int * Map_WorldDominationTour_20::Seek(unsigned int * a2, int a3)
 
 // 0x769D20
 namespace gamemd {
-int Map_WorldDominationTour_28::Seek(int a2)
+void Map_WorldDominationTour_28::Seek(int a2)
  {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Map_WorldDominationTour_28_::_vt06(int a2)
 {
   return *(_DWORD *)(this->q004 + 4 * a2); /*0x769d2a*/
 }
@@ -2448,7 +2422,6 @@ namespace gamemd {
 unsigned int * Map_WorldDominationTour_43::Seek(unsigned int * a2, int a3)
  {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall Map_WorldDominationTour_43_::_vt06(_DWORD *this, _DWORD *a2, int a3)
 {
 
   _DWORD * v3 = (_DWORD *)(this->q004 + 12 * a3); /*0x769d3b*/
@@ -2462,10 +2435,9 @@ _DWORD *__thiscall Map_WorldDominationTour_43_::_vt06(_DWORD *this, _DWORD *a2, 
 
 // 0x769D60
 namespace gamemd {
-BOOL Map_WorldDominationTour_38::AddRef()
+void Map_WorldDominationTour_38::AddRef()
  {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Map_WorldDominationTour_38_::_vt01()
 {
   return *(this + 2) < *(_DWORD *)(*(this + 1) + 8); /*0x769d6d*/
 }
@@ -2810,7 +2782,6 @@ namespace gamemd {
 unsigned int * Map_WorldDominationTour_38::Release()
  {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall Map_WorldDominationTour_38_::_vt02(_DWORD *this)
 {
   ++*(this + 2); /*0x76a5a2*/
   return this; /*0x76a5a5*/
@@ -2823,7 +2794,6 @@ namespace gamemd {
 unsigned int * Map_WorldDominationTour_38::ddtor()
  {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall Map_WorldDominationTour_38_::_vt03(_DWORD *this)
 {
   --*(this + 2); /*0x76a5b2*/
   return this; /*0x76a5b5*/

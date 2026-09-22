@@ -7,7 +7,6 @@
 void TunnelLocomotionClass::ProcessFormationPosition(unsigned int * a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TunnelLocomotionClass::ProcessFormationPosition(_DWORD *a1)
 {
   int TileIndexMapClass; // eax
   __int16 v9[2]; // [esp+18h] [ebp-1Ch] BYREF

@@ -6,7 +6,6 @@
 int Compare::Field96(const void * a1, const void * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int Compare_Field96(const void *a1, const void *a2)
 {
 
   int v2 = *(_DWORD *)(*(_DWORD *)a1 + 96); /*0x46dc9c*/

@@ -11,10 +11,9 @@
 #include "e4/classes/VoxelAnimType_e4.hpp"
 
 // 0x46C790
-BulletTypeClass * ObjectTypeClass::FindOrCreate()
+void * ObjectTypeClass::FindOrCreate()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-BulletTypeClass *__thiscall ObjectTypeClass::FindOrCreate(ObjectClass *this)
 {
 
   if ( !_strcmpi(&stru_817460.sectionHead[1], this) || !_strcmpi(g_Str_none, this) ) /*0x46c7ac*/
@@ -38,10 +37,9 @@ LABEL_6:
 }
 
 // 0x473980
-int ObjectTypeClass::loadTypeMember_473980()
+void ObjectTypeClass::loadTypeMember_473980()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ObjectTypeClass::loadTypeMember_473980()
 {
   ObjectClass *v3; // esi
   if ( !this ) /*0x473987*/
@@ -60,10 +58,9 @@ void ObjectTypeClass::loadTypeMember_473980()
 }
 
 // 0x474940
-int ObjectTypeClass::loadTypeMember_5474940(CCINIClass * aP1, unsigned char * a2, int a4)
+void ObjectTypeClass::loadTypeMember_5474940(CCINIClass * aP1, unsigned char * a2, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ObjectTypeClass::loadTypeMember_5474940(unsigned __int8 ***this, CCINIClass *aP1, unsigned __int8 *a2, int a4)
 {
   ObjectClass *v5; // esi
   char Destination[32]; // [esp+8h] [ebp-20h] BYREF
@@ -90,10 +87,9 @@ void ObjectTypeClass::loadTypeMember_5474940(unsigned __int8 ***this, CCINIClass
 }
 
 // 0x474F50
-int ObjectTypeClass::ReadInt(unsigned char * a2, unsigned char * a3, int a4)
+void ObjectTypeClass::ReadInt(unsigned char * a2, unsigned char * a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_474F50(unsigned __int8 ***this, unsigned __int8 *a2, unsigned __int8 *a3, int a4)
 {
   char *v4; // eax
   char v6; // [esp+0h] [ebp-3Ch] BYREF
@@ -114,10 +110,9 @@ void sub_474F50(unsigned __int8 ***this, unsigned __int8 *a2, unsigned __int8 *a
 }
 
 // 0x5F7090
-int ObjectTypeClass::ConstructFull(AbstractClass * aP1)
+void ObjectTypeClass::ConstructFull(AbstractClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ObjectTypeClass::ConstructFull(int this, AbstractClass *aP1)
 {
   char Destination[24]; // [esp+8h] [ebp-1Ch] BYREF
   char v10; // [esp+20h] [ebp-4h]
@@ -243,7 +238,6 @@ void ObjectTypeClass::ConstructFull(int this, AbstractClass *aP1)
 unsigned int * ObjectTypeClass::Construct(ObjectTypeClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall ObjectTypeClass::Construct(_DWORD *this, ObjectTypeClass *aP1)
 {
 
   AbstractTypeClass::Init((int)this, (AbstractTypeClass *)aP1); /*0x5f7328*/
@@ -297,10 +291,9 @@ _DWORD *__thiscall ObjectTypeClass::Construct(_DWORD *this, ObjectTypeClass *aP1
 }
 
 // 0x5F7400
-int ObjectTypeClass::Destruct()
+void ObjectTypeClass::Destruct()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ObjectTypeClass::Destruct(int this)
 {
   ObjectTypeClass *v8; // [esp+Ch] [ebp-4h] BYREF
   *(_DWORD *)this = &ObjectTypeClass::`vftable'; /*0x5f740b*/
@@ -378,7 +371,6 @@ void ObjectTypeClass::Destruct(int this)
 void ObjectTypeClass::UnloadPipsSHP()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ObjectTypeClass::UnloadPipsSHP()
 {
 
   if ( DataGlobal_AC1488 ) /*0x5f77fd*/
@@ -481,10 +473,9 @@ void ObjectTypeClass::UnloadPipsSHP()
 }
 
 // 0x5F9070
-int ObjectTypeClass::Load2DArt()
+void ObjectTypeClass::Load2DArt()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ObjectTypeClass::Load2DArt()
 {
   char v8; // dl
   int v9; // eax
@@ -591,10 +582,9 @@ LABEL_41:
 }
 
 // 0x5F92D0
-char ObjectTypeClass::LoadFromINI(CCINIClass * aP1)
+void ObjectTypeClass::LoadFromINI(CCINIClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ObjectTypeClass::LoadFromINI(CCINIClass *aP1)
 {
   int Index; // eax
   char Bool_Overwrite; // al
@@ -651,14 +641,14 @@ void ObjectTypeClass::LoadFromINI(CCINIClass *aP1)
   {
     v6 = v5; /*0x5f93fb*/
   }
-  char v7 = this->q22D; /*0x5f93fd*/
+  bool v7 = this->q22D; /*0x5f93fd*/
   this->AmbientSound = v6; /*0x5f9403*/
   Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x5f9412*/
                      (int)aP1,
                      (unsigned __int8 *)this + 36,
                      (CCINIClass *)&stru_830620[9656],
                      v7);
-  char v27 = this->q22E; /*0x5f941f*/
+  bool v27 = this->q22E; /*0x5f941f*/
   this->q22D = Bool_Overwrite; /*0x5f9426*/
   this->q22E = INIClass::ReadBool_Overwrite( /*0x5f9431*/
                     (int)aP1,
@@ -671,7 +661,7 @@ void ObjectTypeClass::LoadFromINI(CCINIClass *aP1)
          (unsigned __int8 *)this + 36,
          (CCINIClass *)&stru_830620[9632],
          this->q7A0);
-  char v10 = this->q211; /*0x5f944b*/
+  bool v10 = this->q211; /*0x5f944b*/
   this->q7A0 = v9; /*0x5f9451*/
   char v11; // al
   v11 = INIClass::ReadBool_Overwrite( /*0x5f9460*/
@@ -679,7 +669,7 @@ void ObjectTypeClass::LoadFromINI(CCINIClass *aP1)
           (unsigned __int8 *)this + 36,
           (CCINIClass *)&stru_830620[9612],
           v10);
-  char v28 = this->q22F; /*0x5f946d*/
+  bool v28 = this->q22F; /*0x5f946d*/
   this->q211 = v11; /*0x5f9474*/
   this->q22F = INIClass::ReadBool_Overwrite( /*0x5f947f*/
                     (int)aP1,
@@ -692,7 +682,7 @@ void ObjectTypeClass::LoadFromINI(CCINIClass *aP1)
           (unsigned __int8 *)this + 36,
           (CCINIClass *)&stru_830620[9584],
           this->q230);
-  char v13 = this->q231; /*0x5f9499*/
+  bool v13 = this->q231; /*0x5f9499*/
   this->q230 = v12; /*0x5f949f*/
   char v14; // al
   v14 = INIClass::ReadBool_Overwrite( /*0x5f94ae*/
@@ -712,7 +702,7 @@ void ObjectTypeClass::LoadFromINI(CCINIClass *aP1)
                     (unsigned __int8 *)this + 36,
                     (CCINIClass *)&stru_830620[9560],
                     this->Strength);
-  char v16 = this->q233; /*0x5f94e7*/
+  bool v16 = this->q233; /*0x5f94e7*/
   this->Strength = Int_Overwrite; /*0x5f94ed*/
   char v17; // al
   v17 = INIClass::ReadBool_Overwrite( /*0x5f94fc*/
@@ -720,7 +710,7 @@ void ObjectTypeClass::LoadFromINI(CCINIClass *aP1)
           (unsigned __int8 *)this + 36,
           (CCINIClass *)&stru_830620[9552],
           v16);
-  char v30 = this->q232; /*0x5f9509*/
+  bool v30 = this->q232; /*0x5f9509*/
   this->q233 = v17; /*0x5f9510*/
   this->q232 = INIClass::ReadBool_Overwrite( /*0x5f951b*/
                     (int)aP1,
@@ -738,7 +728,7 @@ void ObjectTypeClass::LoadFromINI(CCINIClass *aP1)
             (INIClass *)(this + 36),
             (Color *)&stru_830620[9504],
             (Color *)this + 38);
-  char v19 = this->q239; /*0x5f9557*/
+  bool v19 = this->q239; /*0x5f9557*/
   this->q04C = *(_WORD *)Coord; /*0x5f955d*/
   this->q268 = *(_BYTE *)(Coord + 2); /*0x5f956c*/
   char v20; // al
@@ -747,7 +737,7 @@ void ObjectTypeClass::LoadFromINI(CCINIClass *aP1)
           (unsigned __int8 *)this + 36,
           (CCINIClass *)&stru_830620[9484],
           v19);
-  char v31 = this->q23A; /*0x5f9580*/
+  bool v31 = this->q23A; /*0x5f9580*/
   this->q239 = v20; /*0x5f958c*/
   this->q23A = INIClass::ReadBool_Overwrite( /*0x5f959d*/
                     (int)&DataGlobal_87F8E4[30876],
@@ -770,7 +760,7 @@ void ObjectTypeClass::LoadFromINI(CCINIClass *aP1)
           (unsigned __int8 *)this + 504,
           (CCINIClass *)&stru_830620[9428],
           (INIClass *)v32);
-  char v23 = this->q22C; /*0x5f95dc*/
+  bool v23 = this->q22C; /*0x5f95dc*/
   this->LineTrailColorDecrement = v22; /*0x5f95e2*/
   char v24; // al
   v24 = INIClass::ReadBool_Overwrite( /*0x5f95f4*/
@@ -778,7 +768,7 @@ void ObjectTypeClass::LoadFromINI(CCINIClass *aP1)
           (unsigned __int8 *)this + 504,
           &unk_818658,
           v23);
-  char v33 = this->q237; /*0x5f9604*/
+  bool v33 = this->q237; /*0x5f9604*/
   this->q22C = v24; /*0x5f960b*/
   this->q237 = INIClass::ReadBool_Overwrite( /*0x5f9616*/
                     (int)&DataGlobal_87F8E4[30876],
@@ -807,17 +797,15 @@ void ObjectTypeClass::LoadFromINI(CCINIClass *aP1)
 void ObjectTypeClass::SetRTTI71()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ObjectTypeClass_SetRTTI71(_BYTE *this)
 {
   this->vtable2 = 71; /*0x5f9710*/
 }
 }
 
 // 0x5F9720
-int ObjectTypeClass::LoadCleanup(IUnknown * aP0, ObjectTypeClass * aP1)
+void ObjectTypeClass::LoadCleanup(IUnknown * aP0, ObjectTypeClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ObjectTypeClass::LoadCleanup(IUnknown *aP0, ObjectTypeClass *aP1)
 {
   void **v3; // ebp
   void **v5; // ebp
@@ -947,10 +935,9 @@ void ObjectTypeClass::LoadCleanup(IUnknown *aP0, ObjectTypeClass *aP1)
 }
 
 // 0x712040
-int ObjectTypeClass::SelectArtOrAlt()
+void ObjectTypeClass::SelectArtOrAlt()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ObjectTypeClass_SelectArtOrAlt(_DWORD *this)
 {
   #375 *v1; // eax
   int result; // eax
@@ -986,10 +973,9 @@ void ObjectTypeClass_SelectArtOrAlt(_DWORD *this)
 }
 
 // 0x712170
-char ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char *** a2)
+void ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char *** a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 ***a2)
 {
   WeaponTypeClass *v5; // edi
   WeaponTypeClass *v6; // eax
@@ -4845,10 +4831,9 @@ LABEL_286:
 }
 
 // 0x7170A0
-int ObjectTypeClass::DeserializeArrays()
+void ObjectTypeClass::DeserializeArrays()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ObjectTypeClass::DeserializeArrays(#376 *this)
 {
   int result; // eax
 
@@ -4899,10 +4884,9 @@ void ObjectTypeClass::DeserializeArrays(#376 *this)
 }
 
 // 0x717820
-char ObjectTypeClass::loadTypeMember_5717820()
+void ObjectTypeClass::loadTypeMember_5717820()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_717820(int this)
 {
 
   int v2; // eax
@@ -4921,7 +4905,6 @@ void sub_717820(int this)
 unsigned int * ObjectTypeClass::loadTypeMember_5717C00(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_717C00(_DWORD *this, _DWORD *a2)
 {
 
   if ( this == a2 ) /*0x717c0a*/

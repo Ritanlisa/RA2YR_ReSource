@@ -5,10 +5,9 @@
 #include "e4/classes/Debug_e4.hpp"
 
 // 0x720B20
-char Theme::QueueSong(IUnknown * aP1)
+void Theme::QueueSong(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Theme::QueueSong(int this, IUnknown *aP1)
 {
   int IsSoundEnabled; // eax
 
@@ -49,10 +48,9 @@ void Theme::QueueSong(int this, IUnknown *aP1)
 }
 
 // 0x720EA0
-char Theme::Stop(ObjectClass * aP1)
+void Theme::Stop(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Theme::Stop(ObjectClass *aP1)
 {
   int IsSoundEnabled; // eax
 
@@ -99,10 +97,9 @@ LABEL_14:
 }
 
 // 0x720FD0
-bool Theme::IsPlaying()
+void Theme::IsPlaying()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Theme_IsPlaying(int this)
 {
   if ( !this->audioSample ) /*0x720fd3*/
     return 0; /*0x721002*/

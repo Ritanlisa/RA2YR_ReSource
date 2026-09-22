@@ -8,10 +8,9 @@
 
 // 0x773600
 namespace gamemd {
-char WebBrowser::LoadURLFromRegistry(const char * a2)
+void WebBrowser::LoadURLFromRegistry(const char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void WebBrowser::LoadURLFromRegistry(int this, const char *a2)
 {
   LSTATUS v3; // esi
   LSTATUS v4; // esi
@@ -68,10 +67,9 @@ void WebBrowser::LoadURLFromRegistry(int this, const char *a2)
 
 // 0x773E90
 namespace gamemd {
-HWND WebBrowser::ShowDialog()
+void WebBrowser::ShowDialog()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-HWND __thiscall WebBrowser_ShowDialog(const char *this)
 {
   HWND result; // eax
   HWND v3; // edi
@@ -144,10 +142,9 @@ HWND __thiscall WebBrowser_ShowDialog(const char *this)
 
 // 0x7740A0
 namespace gamemd {
-int WebBrowser::GoForward()
+void WebBrowser::GoForward()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void WebBrowser::GoForward()
 {
 
   *(_DWORD *)this->__pad_0 = &vt_WebBrowser; /*0x7740a8*/

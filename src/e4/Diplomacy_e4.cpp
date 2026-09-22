@@ -5,10 +5,9 @@
 #include "e4/classes/WideString_e4.hpp"
 
 // 0x657DA0
-int Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4)
+void Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Diplomacy_DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4)
 {
   int result; // eax
   int i; // ebx

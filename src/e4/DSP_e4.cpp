@@ -8,7 +8,6 @@ namespace gamemd {
 int DSP_AudioMixBuffers(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall DSP_AudioMixBuffers(int a1, int a2)
 {
   DSurface *v11; // esi
   int result; // eax
@@ -724,10 +723,9 @@ LABEL_73:
 
 // 0x7C0C80
 namespace gamemd {
-int DSP_AudioProcess(AudioStream * aP0, int a2, char a3)
+void DSP_AudioProcess(AudioStream * aP0, int a2, char a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall DSP_AudioProcess(AudioStream *aP0, int a2, char a3)
 {
 
   int v4 = 0; /*0x7c0c89*/

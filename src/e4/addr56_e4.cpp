@@ -22,7 +22,6 @@ namespace gamemd {
 char ChangeVideoMode(ObjectClass * xRight, int yBottom)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall ChangeVideoMode(ObjectClass *xRight, int yBottom)
 {
   IUnknown *v5; // edx
   LONG eax41; // eax
@@ -268,10 +267,9 @@ LABEL_19:
 
 // 0x561400
 namespace gamemd {
-int VideoSettingsDialogProc(INIClass * aP0, unsigned int a2, WPARAM wParam, unsigned int a4)
+void VideoSettingsDialogProc(INIClass * aP0, unsigned int a2, WPARAM wParam, unsigned int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void VideoSettingsDialogProc(INIClass *aP0, unsigned int a2, WPARAM wParam, unsigned int a4)
 {
   int result; // eax
   _DWORD *WindowLongA; // esi
@@ -391,10 +389,9 @@ void VideoSettingsDialogProc(INIClass *aP0, unsigned int a2, WPARAM wParam, unsi
 
 // 0x568140
 namespace gamemd {
-int sub_568140(int * a1, int a2)
+void sub_568140(int * a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_568140(int *a1, int a2)
 {
   int result; // eax
   __int16 v19; // [esp+14h] [ebp-8h]
@@ -475,10 +472,9 @@ void sub_568140(int *a1, int a2)
 
 // 0x56AF40
 namespace gamemd {
-char * E4Recv_56AF40::sub_56AF40(int a2)
+void * E4Recv_56AF40::sub_56AF40(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall sub_56AF40(int *this, int a2)
 {
   int Src; // [esp+10h] [ebp-2Ch] BYREF
 
@@ -545,10 +541,9 @@ char *__thiscall sub_56AF40(int *this, int a2)
 
 // 0x56B250
 namespace gamemd {
-int E4Recv_56B250::sub_56B250(int a2)
+void E4Recv_56B250::sub_56B250(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_56B250(int *this, int a2)
 {
   int Src; // [esp+Ch] [ebp-30h] BYREF
 

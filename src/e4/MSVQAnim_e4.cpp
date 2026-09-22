@@ -4,10 +4,9 @@
 #include "e4/classes/BinkMovie_e4.hpp"
 
 // 0x5CD290
-int * MSVQAnim::GetFrameRect(int * a2)
+void * MSVQAnim::GetFrameRect(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int *__thiscall MSVQAnim::vt_06_(_DWORD *this, int *a2)
 {
 
   if ( (DataGlobal_ABFB98 & 1) == 0 ) /*0x5cd2a0*/
@@ -32,10 +31,9 @@ int *__thiscall MSVQAnim::vt_06_(_DWORD *this, int *a2)
 }
 
 // 0x5CD320
-char MSVQAnim::Stub()
+void MSVQAnim::Stub()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MSVQAnim::_vt07()
 {
   return *(this + 45); /*0x5cd323*/
 }

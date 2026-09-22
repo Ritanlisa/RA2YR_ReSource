@@ -36,10 +36,9 @@
 
 // 0x52FF90
 namespace gamemd {
-int Render_Load()
+void Render_Load()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __usercall Render_Load@<eax>(char *Source@<ecx>, char a2@<dl>, int a3@<ebp>)
 {
   int result; // eax
   Frame *v6; // ecx
@@ -60,10 +59,9 @@ int __usercall Render_Load@<eax>(char *Source@<ecx>, char a2@<dl>, int a3@<ebp>)
 
 // 0x53C0A0
 namespace gamemd {
-int sub_53C0A0(unsigned short * a1, int a2, unsigned short a3, int a4, int a5, int a6, int a7)
+void sub_53C0A0(unsigned short * a1, int a2, unsigned short a3, int a4, int a5, int a6, int a7)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_53C0A0(_WORD *a1, int a2, unsigned __int16 a3, int a4, int a5, int a6, int a7)
 {
   int result; // eax
 
@@ -143,10 +141,9 @@ int __fastcall sub_53C0A0(_WORD *a1, int a2, unsigned __int16 a3, int a4, int a5
 
 // 0x652230
 namespace gamemd {
-char Render_Show(CCINIClass * aP0, int a2)
+void Render_Show(CCINIClass * aP0, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Render_Show(CCINIClass *aP0, int a2)
 {
   char result; // al
   wchar_t *v6; // eax
@@ -206,10 +203,9 @@ void Render_Show(CCINIClass *aP0, int a2)
 } // namespace gamemd
 
 // 0x705270
-int Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a6, int a7, char a8)
+void Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a6, int a7, char a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Render_DrawLine(int a1, int a2, int a3, int a4, int a5, int a6, int a7, char a8)
 {
   unsigned __int8 v25; // al
   int result; // eax
@@ -379,7 +375,6 @@ namespace gamemd {
 wchar_t ** Render_Format(wchar_t ** a1, char ** a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-wchar_t **__fastcall Render_Format(wchar_t **a1, char **a2)
 {
   wchar_t *StringCSF; // eax
 
@@ -423,7 +418,6 @@ LABEL_6:
 void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, unsigned int a5, int a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Render_DrawTileBitmap(int a1, _WORD *a2, __int16 a3, __int16 a4, unsigned int a5, int a6)
 {
   bool k; // cc
   bool i; // cc
@@ -1078,10 +1072,9 @@ LABEL_39:
 
 // 0x731BF0
 namespace gamemd {
-char sub_731BF0()
+void sub_731BF0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_731BF0()
 {
   bool IsButtonDown; // al
   wchar_t *v3; // edi
@@ -1115,10 +1108,9 @@ void sub_731BF0()
 
 // 0x777E00
 namespace gamemd {
-BOOL sub_777E00()
+int sub_777E00()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_777E00()
 {
   BOOL result; // eax
 
@@ -1137,10 +1129,9 @@ int sub_777E00()
 
 // 0x778030
 namespace gamemd {
-int Render_Draw_778030(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
+void Render_Draw_778030(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall Render_Draw_778030(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
 {
   UINT v5; // edx
   UINT v6; // edx
@@ -1200,7 +1191,6 @@ namespace gamemd {
 int sub_778120()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_778120()
 {
   return dword_B73570; /*0x778125*/
 }
@@ -1209,10 +1199,9 @@ int sub_778120()
 
 // 0x6CA310
 namespace gamemd {
-char Render_Parse_6CA310(CampaignScore * aP0, CCINIClass * aP1)
+void Render_Parse_6CA310(CampaignScore * aP0, CCINIClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Render_Parse_6CA310(CampaignScore *aP0, CCINIClass *aP1)
 {
   BlowStraw *v2; // ebp
   wchar_t *i; // edi
@@ -1291,10 +1280,9 @@ LABEL_18:
 
 // 0x6CA940
 namespace gamemd {
-char sub_6CA940(int a1, unsigned short * a2, int a3)
+void sub_6CA940(int a1, unsigned short * a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall sub_6CA940(int a1, _WORD *a2, int a3)
 {
   __int16 v7; // [esp+12h] [ebp-6h] BYREF
 
@@ -1333,10 +1321,9 @@ LABEL_9:
 
 // 0x53D850
 namespace gamemd {
-char sub_53D850()
+void sub_53D850()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_53D850()
 {
   char result; // al
   int i; // esi
@@ -1368,17 +1355,9 @@ void sub_53D850()
 
 // 0x5541C0
 namespace gamemd {
-int Render_Render_5541C0(unsigned short * a0, int a2, AbstractClass * aP2, int a4, AbstractClass * aP4, char a6, char a7)
+void Render_Render_5541C0(unsigned short * a0, int a2, AbstractClass * aP2, int a4, AbstractClass * aP4, char a6, char a7)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall Render_Render_5541C0(
-        unsigned __int16 *a0,
-        int a2,
-        AbstractClass *aP2,
-        int a4,
-        AbstractClass *aP4,
-        char a6,
-        char a7)
 {
   AbstractClass *v8; // edx
   struct tagRECT *v10; // [esp+0h] [ebp-20h]
@@ -1419,10 +1398,9 @@ int __fastcall Render_Render_5541C0(
 
 // 0x554280
 namespace gamemd {
-int Render_Render_554280(unsigned short * a0, AbstractClass * aP1, int * a2, unsigned short a4, char a5)
+void Render_Render_554280(unsigned short * a0, AbstractClass * aP1, int * a2, unsigned short a4, char a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall Render_Render_554280(unsigned __int16 *a0, AbstractClass *aP1, int *a2, unsigned __int16 a4, char a5)
 {
   AbstractClass v9; // [esp-18h] [ebp-3Ch] BYREF
 
@@ -1449,7 +1427,6 @@ namespace gamemd {
 void sub_63B0A0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_63B0A0()
 {
   int i; // esi
 
@@ -1481,10 +1458,9 @@ void sub_63B0A0()
 
 // 0x642BB0
 namespace gamemd {
-int sub_642BB0(unsigned int a1)
+void sub_642BB0(unsigned int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_642BB0(unsigned int a1)
 {
   int result; // eax
   unsigned int PlayerColor; // eax
@@ -1507,10 +1483,9 @@ void sub_642BB0(unsigned int a1)
 
 // 0x660000
 namespace gamemd {
-int sub_660000()
+void sub_660000()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_660000()
 {
   int result; // eax
   int i; // edi
@@ -1545,7 +1520,6 @@ namespace gamemd {
 void sub_6603B0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_6603B0()
 {
 
   int v0 = g_TriggerEventState - 1; /*0x6603b7*/
@@ -1597,10 +1571,9 @@ LABEL_7:
 
 // 0x7760B0
 namespace gamemd {
-HFONT Render_Render_7760B0(HDC hdc, const char * a2, LONG a3, LONG a4, char a5)
+void Render_Render_7760B0(HDC hdc, const char * a2, LONG a3, LONG a4, char a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-HFONT __fastcall Render_Render_7760B0(HDC hdc, const char *a2, LONG a3, LONG a4, char a5)
 {
   HFONT v7; // eax
   HFONT v8; // esi

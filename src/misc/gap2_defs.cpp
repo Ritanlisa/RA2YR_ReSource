@@ -134,7 +134,6 @@ namespace gamemd { int AudioMixer::SetupChannels() {
 // 0x514F70
 namespace gamemd { int MovementAI::MainFootClass(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_514F70(int *this, char a2)
 {
   int result; // eax
   int *Coords; // eax
@@ -1957,7 +1956,6 @@ namespace gamemd { int MovementAI::MarkOccupiedPathCell() {
 // 0x5164D0
 namespace gamemd { int MovementAI::StepFootClass(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MovementAI::StepFootClass(ObjectClass *aP1)
 {
   TechnoClass *v3; // ecx
   int result; // eax
@@ -6690,7 +6688,6 @@ namespace gamemd { int RulesClass::LoadCountries() {
 // 0x672440
 namespace gamemd { int RulesClass::ReadDataList() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_672440(RulesClass *this)
 {
   int KeyCount; // edi
   void *StringByIndex; // ebx
@@ -8238,7 +8235,6 @@ namespace gamemd { int RulesClass::SaveLoad_Prefix(void* a1) {
 namespace gamemd { int RulesClass::SaveLoad_Prefix_0(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x675210
-void RulesClass::SaveLoad_Prefix_0(int i)
 {
   int j; // ebx
   int k; // ebx
@@ -9557,7 +9553,7 @@ void RulesClass::SaveLoad_Prefix_0(int i)
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->RadarCombatFlashTime + 4 * i138));
   for ( i139 = 0; i139 < this->CrateUnitSound; ++i139 )
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->CrateFireSound + 4 * i139));
-  int v155 = this->q0B3;
+  bool v155 = this->q0B3;
   for ( i140 = 0; i140 < v155; ++i140 )
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(this->q0B0 + 4 * i140));
   int v157 = this->q0BA;
@@ -15282,7 +15278,6 @@ bool HouseClass::IsProductionInfiltrated()
 namespace gamemd { int MovementAI::Begin() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x6f9e50
-void MovementAI::Begin()
 {
   int v15; // eax
   _DWORD *v16; // eax
@@ -17683,7 +17678,6 @@ namespace gamemd { int AudioSettings::Check(int a1) {
 // 0x720BB0
 namespace gamemd { int ThemeClass::Play(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ThemeClass::Play(Movie *aP1)
 {
 
   if ( g_NetworkPlayerBuffer[5688] && Audio::IsSoundEnabled() && !g_NetworkPlayerBuffer[5928] )

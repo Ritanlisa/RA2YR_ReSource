@@ -20,10 +20,9 @@
 
 // 0x5E2820
 namespace gamemd {
-int DrawDialogText(ObjectClass * aP0, const wchar_t * a1, HWND hWnd)
+void DrawDialogText(ObjectClass * aP0, const wchar_t * a1, HWND hWnd)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall DrawDialogText(ObjectClass *aP0, const wchar_t *a1, HWND hWnd)
 {
   BlowStraw *i; // esi
   HWND v4; // ebx
@@ -117,7 +116,6 @@ namespace gamemd {
 void sub_5E2AC0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_5E2AC0()
 {
   HWND Current; // edi
   HWND DlgItem; // esi
@@ -170,10 +168,9 @@ LABEL_5:
 
 // 0x5E2CD0
 namespace gamemd {
-int ShowDialogConfirm(CampaignScore * aP0, int nIDDlgItem, unsigned char (*a3)() a3, char a4)
+void ShowDialogConfirm(CampaignScore * aP0, int nIDDlgItem, unsigned char (*a3)() a3, char a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall ShowDialogConfirm(CampaignScore *aP0, int nIDDlgItem, unsigned __int8 (*a3)(), char a4)
 {
   CampaignScore *v4; // ebp
   int edi4; // edi
@@ -255,7 +252,6 @@ namespace gamemd {
 void SetDialogPlayerName(HWND hDlg, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall SetDialogPlayerName(HWND hDlg, int a2)
 {
   HWND DlgItem; // edi
   wchar_t *v4; // eax
@@ -272,10 +268,9 @@ void __fastcall SetDialogPlayerName(HWND hDlg, int a2)
 
 // 0x5E3010
 namespace gamemd {
-LRESULT InitSkirmishDialogControls(HWND hDlg, int a2)
+void InitSkirmishDialogControls(HWND hDlg, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-LRESULT __fastcall InitSkirmishDialogControls(HWND hDlg, int a2)
 {
   _DWORD *WDTTerritoryClass; // eax
   HWND DlgItem; // eax
@@ -375,7 +370,6 @@ namespace gamemd {
 char Game_CheckSettingsChanged(char a1, char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall Game_CheckSettingsChanged(char a1, char a2)
 {
   char result; // al
   char Buffer[520]; // [esp+8h] [ebp-208h] BYREF
@@ -463,7 +457,7 @@ LABEL_11:
 
 // 0x5E39C0
 namespace gamemd {
-int ValidateNetworkLobbyHostMap()
+void ValidateNetworkLobbyHostMap()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // (no pseudocode — ASM-only function)
@@ -621,10 +615,9 @@ LABEL_40:
 
 // 0x5E3D10
 namespace gamemd {
-bool SetupNetworkLobbyDialog(INIClass * Source, void * a2)
+void SetupNetworkLobbyDialog(INIClass * Source, void * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool __fastcall SetupNetworkLobbyDialog(INIClass *Source, void *a2)
 {
   HWND v7; // edi
   HWND DlgItem; // eax
@@ -2137,7 +2130,6 @@ namespace gamemd {
 void RehashGenericHashMap(HWND hWnd, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall RehashGenericHashMap(HWND hWnd, int a2)
 {
   __int16 WindowLongA; // ax
   void **v7; // eax
@@ -2298,7 +2290,6 @@ namespace gamemd {
 void ProcessComboBoxAddString(HWND hWnd, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall ProcessComboBoxAddString(HWND hWnd, int a2)
 {
   void (__stdcall *v2)(HWND, UINT, WPARAM, LPARAM); // esi
   LRESULT v5; // edi
@@ -2408,10 +2399,9 @@ LABEL_30:
 
 // 0x5E6520
 namespace gamemd {
-int Map_ReadPlayerCount(int a1)
+void Map_ReadPlayerCount(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall Map_ReadPlayerCount(int a1)
 {
   int Int_Overwrite; // edi
   int i; // esi
@@ -2478,7 +2468,6 @@ namespace gamemd {
 char sub_5E66F0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char sub_5E66F0()
 {
   LRESULT v0; // eax
   LRESULT v1; // eax
@@ -2567,10 +2556,9 @@ LABEL_20:
 
 // 0x5E7160
 namespace gamemd {
-char E4Recv_5E7160::HandleMultiplayerMapSelection()
+void E4Recv_5E7160::HandleMultiplayerMapSelection()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HandleMultiplayerMapSelection(HWND this)
 {
   LRESULT v1; // eax
   LRESULT v2; // eax
@@ -2732,7 +2720,6 @@ namespace gamemd {
 void ExchangeMultiplayerGameInfo()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ExchangeMultiplayerGameInfo()
 {
   char *FlaggedGameSettings; // eax
   int FileSize; // edi
@@ -2834,7 +2821,6 @@ namespace gamemd {
 char LoadScenarioClassByIndex(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall LoadScenarioClassByIndex(int a1)
 {
   char result; // al
   CCFileClass *v3; // eax
@@ -2939,10 +2925,9 @@ LABEL_9:
 
 // 0x5E87A0
 namespace gamemd {
-wchar_t * LoadNetworkShareStrings()
+void * LoadNetworkShareStrings()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-wchar_t *LoadNetworkShareStrings()
 {
   wchar_t *v0; // eax
   wchar_t *v1; // esi
@@ -3047,10 +3032,9 @@ wchar_t *LoadNetworkShareStrings()
 
 // 0x5E9B20
 namespace gamemd {
-LRESULT GetComboBoxSelectedDefault(SkirmishDialog * aP0, int nIDDlgItem, WPARAM wParam)
+void GetComboBoxSelectedDefault(SkirmishDialog * aP0, int nIDDlgItem, WPARAM wParam)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-LRESULT __fastcall GetComboBoxSelectedDefault(SkirmishDialog *aP0, int nIDDlgItem, WPARAM wParam)
 {
   SkirmishDialog *v3; // eax
   LRESULT v6; // eax
@@ -3065,10 +3049,9 @@ LRESULT __fastcall GetComboBoxSelectedDefault(SkirmishDialog *aP0, int nIDDlgIte
 
 // 0x5E9C00
 namespace gamemd {
-int Player_AssignColor(HWND hDlg, void * nIDDlgItem)
+void Player_AssignColor(HWND hDlg, void * nIDDlgItem)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall Player_AssignColor(HWND hDlg, void *nIDDlgItem)
 {
   LRESULT SelectedRaw; // ebx
   int result; // eax
@@ -3130,10 +3113,9 @@ LABEL_19:
 
 // 0x5E9CE0
 namespace gamemd {
-int Player_AssignSide(HWND hDlg, int nIDDlgItem)
+void Player_AssignSide(HWND hDlg, int nIDDlgItem)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall Player_AssignSide(HWND hDlg, int nIDDlgItem)
 {
   LRESULT v4; // ebx
   int result; // eax
@@ -3194,10 +3176,9 @@ LABEL_19:
 
 // 0x5E9DB0
 namespace gamemd {
-int ProcessNetworkLobbyOption(SessionClass * hDlg, void * nIDDlgItem)
+void ProcessNetworkLobbyOption(SessionClass * hDlg, void * nIDDlgItem)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall ProcessNetworkLobbyOption(SessionClass *hDlg, void *nIDDlgItem)
 {
   SessionClass *ComboBoxSelectedRaw2; // ebx
   int result; // eax
@@ -3222,10 +3203,9 @@ int __fastcall ProcessNetworkLobbyOption(SessionClass *hDlg, void *nIDDlgItem)
 
 // 0x5E9E70
 namespace gamemd {
-char SetupSkirmishPlayerSlots(SkirmishDialog * hDlg, int a2, HWND hWnd)
+void SetupSkirmishPlayerSlots(SkirmishDialog * hDlg, int a2, HWND hWnd)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall SetupSkirmishPlayerSlots(SkirmishDialog *hDlg, int a2, HWND hWnd)
 {
   int ResourceID2CSF; // edi
   int ResourceIDCSF; // ebx
@@ -3345,7 +3325,6 @@ namespace gamemd {
 char sub_5EA0D0(HWND hDlg, void * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall sub_5EA0D0(HWND hDlg, void *a2)
 {
   int i; // esi
   HWND DlgItem; // eax
@@ -3398,7 +3377,6 @@ namespace gamemd {
 void RefreshLobbyAll(HWND hDlg, char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall RefreshLobbyAll(HWND hDlg, char a2)
 {
   HWND v2; // edi
   int ResourceIDHardcodedCSF; // eax
@@ -3617,7 +3595,6 @@ namespace gamemd {
 int sub_5EA920(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_5EA920(int a1)
 {
   int result; // eax
   wchar_t *v3; // esi
@@ -3644,10 +3621,9 @@ int __fastcall sub_5EA920(int a1)
 
 // 0x5EB7B0
 namespace gamemd {
-int UpdateMultiplayerLobbySlots(HWND hDlg, char * a2, int nIDDlgItem)
+void UpdateMultiplayerLobbySlots(HWND hDlg, char * a2, int nIDDlgItem)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall UpdateMultiplayerLobbySlots(HWND hDlg, char *a2, int nIDDlgItem)
 {
   int result; // eax
   int ResourceIDHardcodedCSF; // ebx
@@ -3778,7 +3754,6 @@ namespace gamemd {
 void DisableCampaignSlots(HWND hDlg, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall DisableCampaignSlots(HWND hDlg, int a2)
 {
   int i; // ebp
   int nIDDlgItem; // [esp+8h] [ebp-1Ch]
@@ -3873,7 +3848,6 @@ namespace gamemd {
 char sub_5EC290(SkirmishDialog * hDlg, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall sub_5EC290(SkirmishDialog *hDlg, int a2)
 {
   int v4; // ebp
   int i; // esi
@@ -3948,7 +3922,6 @@ namespace gamemd {
 void SetupMultiplayerLobbyScreen(SkirmishDialog * hDlg, wchar_t * a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall SetupMultiplayerLobbyScreen(SkirmishDialog *hDlg, wchar_t *a2, int a3)
 {
   int PlayerCountMap; // esi
   char v7; // bl
@@ -4233,7 +4206,7 @@ LABEL_43:
 
 // 0x5EC9F0
 namespace gamemd {
-int PlayerSkirmishSlotHandler()
+void PlayerSkirmishSlotHandler()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // (no pseudocode — ASM-only function)
@@ -4297,10 +4270,9 @@ LABEL_18:
 
 // 0x5ED400
 namespace gamemd {
-char SaveMultiplayerLobbySettings(ReferenceCounted * hDlg, int a2)
+void SaveMultiplayerLobbySettings(ReferenceCounted * hDlg, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall SaveMultiplayerLobbySettings(ReferenceCounted *hDlg, int a2)
 {
   int i; // edi
   LRESULT v6; // eax
@@ -4400,10 +4372,9 @@ char __fastcall SaveMultiplayerLobbySettings(ReferenceCounted *hDlg, int a2)
 
 // 0x5ED5A0
 namespace gamemd {
-int SetupMultiplayerLobbyPlayers(SkirmishDialog * hDlg, int a2)
+void SetupMultiplayerLobbyPlayers(SkirmishDialog * hDlg, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall SetupMultiplayerLobbyPlayers(SkirmishDialog *hDlg, int a2)
 {
   char *First; // edi
   CoordStruct *v15; // ebp
@@ -4762,7 +4733,6 @@ namespace gamemd {
 void EnablePlayerSlotControls(HWND hDlg, bool a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall EnablePlayerSlotControls(HWND hDlg, bool a2)
 {
   SessionClass *v5; // esi
   const wchar_t *v6; // ebx
@@ -4832,7 +4802,6 @@ namespace gamemd {
 int Lobby_RefreshPlayerSlots(unsigned int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall Lobby_RefreshPlayerSlots(unsigned int a1)
 {
   HWND v2; // ebx
   int result; // eax
@@ -4910,7 +4879,6 @@ namespace gamemd {
 unsigned int * AssignRandomMapStartPositions(MouseClass * aP0, IUnknown * aP1, int a3, int a4, char a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__fastcall AssignRandomMapStartPositions(MouseClass *aP0, IUnknown *aP1, int a3, int a4, char a5)
 {
   int v9; // esi
   int v10; // eax

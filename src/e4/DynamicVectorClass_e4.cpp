@@ -14,10 +14,9 @@
 
 // 0x525110
 namespace gamemd {
-char DynamicVectorClass_AnimType::Release(int a2, unsigned int * a3)
+void DynamicVectorClass_AnimType::Release(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void DynamicVectorClass_AnimType::_vt02(int a2, _DWORD *a3)
 {
   int i; // eax
 
@@ -65,10 +64,9 @@ void DynamicVectorClass_AnimType::_vt02(int a2, _DWORD *a3)
 
 // 0x589190
 namespace gamemd {
-char DynamicVectorClass_SubzoneConn::Release(int a2, char * a3)
+void DynamicVectorClass_SubzoneConn::Release(int a2, char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void DynamicVectorClass_SubzoneConn::_vt02(int a2, char *a3)
 {
 
   int v3 = a2; /*0x589192*/
@@ -162,10 +160,9 @@ void DynamicVectorClass_SubzoneConn::_vt02(int a2, char *a3)
 
 // 0x517590
 namespace gamemd {
-BOOL DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::HashEntryCompare(unsigned char * a2)
+void DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::HashEntryCompare(unsigned char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_517590(_BYTE *this, _BYTE *a2)
 {
   return *this != *a2 || this->Items != a2[1] || this->Capacity != a2[2]; /*0x5175bd*/
 }
@@ -174,10 +171,9 @@ void sub_517590(_BYTE *this, _BYTE *a2)
 
 // 0x6284A0
 namespace gamemd {
-char DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::SetCapacity_0(int a2, char * a3)
+void DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::SetCapacity_0(int a2, char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::sub_6284A0(int a2, char *a3)
 {
 
   int v3 = a2; /*0x6284a2*/
@@ -275,10 +271,9 @@ void DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::sub_6284A0(int a
 
 // 0x628BB0
 namespace gamemd {
-char DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Remove(CCINIClass * aP1, unsigned char * a2)
+void DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Remove(CCINIClass * aP1, unsigned char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Remove(CCINIClass *aP1, _BYTE *a2)
 {
   CCINIClass *v3; // edi
   AbstractClass *v6; // ebx

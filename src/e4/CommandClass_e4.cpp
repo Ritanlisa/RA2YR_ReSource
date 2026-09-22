@@ -4,10 +4,9 @@
 #include "e4/classes/Array_e4.hpp"
 
 // 0x6D1200
-char CommandClass::BuildBar()
+void CommandClass::BuildBar()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CommandClass_BuildBar(void *this)
 {
   char *Entry; // eax
   int v37; // [esp+8h] [ebp-1Ch] BYREF
@@ -136,10 +135,9 @@ void CommandClass_BuildBar(void *this)
 }
 
 // 0x724580
-char CommandClass::AddAction(ToolTipManager * aP1)
+void CommandClass::AddAction(ToolTipManager * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CommandClass::AddAction(int this, ToolTipManager *aP1)
 {
   ToolTipManager *v2; // edi
   ObjectClass *v4; // esi

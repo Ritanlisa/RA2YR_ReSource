@@ -5,10 +5,9 @@
 // 0x659110
 namespace ra2 {
 namespace game {
-double * RadBeam::Create()
+void * RadBeam::Create()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-double *__thiscall RadBeam::Create(rc_ptr_base *this)
 {
   double *inited; // edi
 
@@ -41,7 +40,6 @@ namespace game {
 unsigned int * RadBeam::InitState(rc_ptr_base * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall RadBeam::InitState(_DWORD *this, rc_ptr_base *aP1)
 {
   this->nextArrayIndex = 0; /*0x6593fe*/
   *this = 0; /*0x659401*/

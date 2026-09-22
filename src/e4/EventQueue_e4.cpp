@@ -3,10 +3,9 @@
 #include "e4/e4_globals.hpp"
 
 // 0x54F000
-short EventQueue::Process()
+void EventQueue::Process()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-__int16 __thiscall EventQueue_Process(_DWORD *this)
 {
 
   if ( (this->q318 + 1) % 256 != this->q314 ) /*0x54f01e*/
@@ -20,10 +19,9 @@ __int16 __thiscall EventQueue_Process(_DWORD *this)
 }
 
 // 0x54F050
-short EventQueue::Read()
+void EventQueue::Read()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-__int16 __thiscall EventQueue_Read(_DWORD *this)
 {
   int v2; // eax
   int v3; // ecx
@@ -94,10 +92,9 @@ __int16 __thiscall EventQueue_Read(_DWORD *this)
 }
 
 // 0x54F650
-short EventQueue::Check()
+void EventQueue::Check()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-__int16 __thiscall sub_54F650(_DWORD *this)
 {
 
   int v1 = this->q314; /*0x54f650*/

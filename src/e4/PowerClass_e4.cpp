@@ -4,11 +4,10 @@
 
 // 0x63F7B0
 namespace gamemd {
-int PowerClass_Stub()
+void PowerClass_Stub()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // attributes: thunk
-void PowerClass::Stub()
 {
   return RadarClass::Destru_vt05(this);
 }
@@ -19,7 +18,6 @@ void PowerClass::Stub()
 void PowerClass::checkLowPower()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void PowerClass::_vt50()
 {
   RadarClass::Destru_vt50(); /*0x63f7e0*/
   if ( DataGlobal_AC4E78 ) /*0x63f7ec*/

@@ -21,7 +21,7 @@
 
 // 0x743270
 namespace gamemd {
-int PlaceScenarioUnits()
+void PlaceScenarioUnits()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // (no pseudocode — ASM-only function)
@@ -49,7 +49,6 @@ namespace gamemd {
 int CopySHPFrameToSurface(int a1, unsigned short * a2, int * a3, int a4, int a5, unsigned int a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int CopySHPFrameToSurface(int a1, unsigned __int16 *a2, int *a3, int a4, int a5, unsigned int a6)
 {
   int result; // eax
   unsigned __int16 v11; // ax
@@ -309,10 +308,9 @@ LABEL_55:
 
 // 0x748AF0
 namespace gamemd {
-unsigned int sub_748AF0(int a1, unsigned short * a2, int * a3, unsigned int a4, int a5, int a6)
+unsigned int int sub_748AF0(int a1, unsigned short * a2, int * a3, unsigned int a4, int a5, int a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int sub_748AF0(int a1, _WORD *a2, int *a3, unsigned int a4, int a5, int a6)
 {
   unsigned int result; // eax
   unsigned __int16 *v16; // eax
@@ -403,10 +401,9 @@ LABEL_17:
 
 // 0x74BB20
 namespace gamemd {
-VoxelAnimTypeClass * globalHelper_04BB20(ObjectClass * Source, int a2)
+void * globalHelper_04BB20(ObjectClass * Source, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-VoxelAnimTypeClass *__fastcall globalHelper_04BB20(ObjectClass *Source, int a2)
 {
 
   if ( !_strcmpi(&stru_817460.sectionHead[1], Source) || !_strcmpi(g_Str_none, Source) ) /*0x74bb3f*/
@@ -435,7 +432,6 @@ namespace gamemd {
 unsigned int * E4Recv_74BBF0::sub_74BBF0(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_74BBF0(_DWORD *this, int a2)
 {
   size_t v4; // eax
 
@@ -487,7 +483,6 @@ namespace gamemd {
 unsigned int * E4Recv_74BCA0::sub_74BCA0(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_74BCA0(_DWORD *this, int a2)
 {
   size_t v4; // eax
 
@@ -535,10 +530,9 @@ LABEL_10:
 
 // 0x74BDC0
 namespace gamemd {
-int E4Recv_74BDC0::sub_74BDC0(unsigned int a2)
+void E4Recv_74BDC0::sub_74BDC0(unsigned int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_74BDC0(unsigned int *this, unsigned int a2)
 {
   unsigned __int8 v6; // al
   int v3 = *(this + 2); /*0x74bdc8*/
@@ -601,7 +595,6 @@ namespace gamemd {
 void CleanupVeinholeSystem()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CleanupVeinholeSystem()
 {
   int i; // esi
 
@@ -628,7 +621,6 @@ namespace gamemd {
 int InitializeVeinholeSystem(char a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall InitializeVeinholeSystem(char a1)
 {
   size_t v2; // edi
   int i; // esi
@@ -745,10 +737,9 @@ LABEL_18:
 
 // 0x74F3C0
 namespace gamemd {
-char _::AddRef(int a2)
+void _::AddRef(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void _::_vt01(int a2)
 {
 
   int v2 = *(this + 2); /*0x74f3c2*/
@@ -774,10 +765,9 @@ void _::_vt01(int a2)
 
 // 0x74F400
 namespace gamemd {
-char _::Release(int a2, unsigned int * a3)
+void _::Release(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void _::_vt02(int a2, _DWORD *a3)
 {
   int i; // eax
 
@@ -839,10 +829,9 @@ void _::ddtor()
 
 // 0x74F4E0
 namespace gamemd {
-int _::Read(unsigned int * a2)
+void _::Read(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void _::_vt04(int this, _DWORD *a2)
 {
   int result; // eax
   _DWORD *i; // ecx
@@ -868,7 +857,6 @@ namespace gamemd {
 unsigned int _::Write(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void _::_vt05(int this, int a2)
 {
   if ( *(_BYTE *)(this + 12) ) /*0x74f520*/
     return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x74f535*/
@@ -880,10 +868,9 @@ void _::_vt05(int this, int a2)
 
 // 0x74FAE0
 namespace gamemd {
-char * E4Recv_74FAE0::sub_74FAE0()
+void * E4Recv_74FAE0::sub_74FAE0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall sub_74FAE0(int this)
 {
   unsigned __int16 v4; // bp
   unsigned __int16 v6; // ax
@@ -964,11 +951,10 @@ char *__thiscall sub_74FAE0(int this)
 
 // 0x74FF30
 namespace gamemd {
-int unknown_libname_35()
+void unknown_libname_35()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // Microsoft VisualC 2-14/net runtime
-_DWORD *__thiscall unknown_libname_35(_DWORD *this)
 {
   *this = 0; /*0x74ff32*/
   return this; /*0x74ff38*/
@@ -1822,10 +1808,9 @@ void sub_74C3C0()
 
 // 0x74F3B0
 namespace gamemd {
-int _::Seek(int a2)
+void _::Seek(int a2)
  {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void _::_vt06(int a2)
 {
   return *(_DWORD *)(*(this + 1) + 4 * a2); /*0x74f3ba*/
 }

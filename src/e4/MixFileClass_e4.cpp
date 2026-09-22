@@ -6,7 +6,6 @@
 void MixFileClass::CleanupCache()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_69E210()
 {
 
   _DWORD * v0 = DataGlobal_B077B0; /*0x69e213*/

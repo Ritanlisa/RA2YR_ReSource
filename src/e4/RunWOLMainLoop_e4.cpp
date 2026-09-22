@@ -8,10 +8,9 @@
 
 // 0x77E110
 namespace gamemd {
-char sub_77E110()
+void sub_77E110()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_77E110()
 {
   int v0; // eax
   int v1; // esi
@@ -50,10 +49,9 @@ LABEL_5:
 
 // 0x785EA0
 namespace gamemd {
-HWND sub_785EA0()
+void sub_785EA0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-HWND sub_785EA0()
 {
   unsigned int i; // ebx
   void **v3; // edi
@@ -146,10 +144,9 @@ HWND sub_785EA0()
 
 // 0x798DE0
 namespace gamemd {
-int RunWOLMainLoop_Read()
+void RunWOLMainLoop_Read()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __usercall sub_798DE0@<eax>(int a1@<ebx>, int a2@<ebp>)
 {
   BOOL v6; // esi
   int v8; // [esp+1Ch] [ebp-38h]

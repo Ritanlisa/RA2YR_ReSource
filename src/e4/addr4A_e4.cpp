@@ -36,10 +36,9 @@
 #include "e4/classes/Waypoint_e4.hpp"
 
 // 0x4A0190
-int EnumConnectionsClass::_vt06(unsigned int * a1, unsigned int * a2)
+void EnumConnectionsClass::_vt06(unsigned int * a1, unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void EnumConnectionsClass::_vt06(_DWORD *a1, _DWORD *a2)
 {
   int i; // esi
 
@@ -111,7 +110,6 @@ namespace gamemd {
 unsigned int * E4Recv_4A02B0::sub_4A02B0(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_4A02B0(_DWORD *this, _DWORD *a2)
 {
   int i; // esi
 
@@ -176,7 +174,6 @@ namespace gamemd {
 unsigned int * E4Recv_4A0380::sub_4A0380(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_4A0380(_DWORD *this, _DWORD *a2)
 {
   int i; // esi
 
@@ -238,10 +235,9 @@ _DWORD *__thiscall sub_4A0380(_DWORD *this, _DWORD *a2)
 } // namespace gamemd
 
 // 0x4A0B20
-int EnumConnectionPointsClass::_vt06(unsigned int * a1, unsigned int * a2)
+void EnumConnectionPointsClass::_vt06(unsigned int * a1, unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void EnumConnectionPointsClass::_vt06(_DWORD *a1, _DWORD *a2)
 {
   int i; // esi
 
@@ -305,10 +301,9 @@ void EnumConnectionPointsClass::_vt06(_DWORD *a1, _DWORD *a2)
 
 // 0x4A2370
 namespace gamemd {
-int DrawSidebarCreditsTimer()
+void DrawSidebarCreditsTimer()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned __int8 __userpurge DrawSidebarCreditsTimer@<al>(int a1@<ecx>, int a2@<edi>, char a3)
 {
   unsigned __int8 result; // al
   wchar_t *StringCSF; // eax
@@ -390,10 +385,9 @@ unsigned __int8 __userpurge DrawSidebarCreditsTimer@<al>(int a1@<ecx>, int a2@<e
 
 // 0x4A2B60
 namespace gamemd {
-int CStreamClass___vt03(int a1, char * a2, signed int Size, signed int * a4)
+void CStreamClass___vt03(int a1, char * a2, signed int Size, signed int * a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CStreamClass::_vt03(int a1, char *a2, signed int Size, signed int *a4)
 {
   int result; // eax
   size_t v9; // edi
@@ -461,10 +455,9 @@ void CStreamClass::_vt03(int a1, char *a2, signed int Size, signed int *a4)
 
 // 0x4A3270
 namespace gamemd {
-int * E4Recv_4A3270::sub_4A3270(int a2, int a3, int a4)
+void * E4Recv_4A3270::sub_4A3270(int a2, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int *__thiscall sub_4A3270(int *this, int a2, int a3, int a4)
 {
 
   int * v5 = this + 28; /*0x4a3287*/
@@ -525,7 +518,6 @@ namespace gamemd {
 void * LoadFileSHP(ConvertClass * aP0, ConvertClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void *__fastcall LoadFileSHP(ConvertClass *aP0, ConvertClass *aP1)
 {
   ConvertClass *v2; // ebx
   void *result; // eax
@@ -570,10 +562,9 @@ LABEL_6:
 
 // 0x4A3970
 namespace gamemd {
-int FileClass_LoadToBuffer(char ** a1, bool * a2)
+void FileClass_LoadToBuffer(char ** a1, bool * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall FileClass_LoadToBuffer(char **a1, bool *a2)
 {
   int result; // eax
   size_t v6; // ebx
@@ -616,10 +607,9 @@ LABEL_6:
 
 // 0x4A3C30
 namespace gamemd {
-int Palette_Fade(const void * a1, signed int a2, void (*a3)(void) a3)
+void Palette_Fade(const void * a1, signed int a2, void (*a3)(void) a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall Palette_Fade(const void *a1, signed int a2, void (*a3)(void))
 {
   int result; // eax
   DWORD v8; // edx
@@ -724,10 +714,9 @@ LABEL_18:
 
 // 0x4A4130
 namespace gamemd {
-unsigned int sub_4A4130()
+void int sub_4A4130()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_4A4130()
 {
   LPDIRECTDRAW v0; // eax
   HRESULT v2; // eax
@@ -807,7 +796,6 @@ namespace gamemd {
 unsigned int * sub_4A4900(unsigned int a1, unsigned int a2, unsigned int a3, unsigned int a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int *__fastcall sub_4A4900(unsigned int a1, unsigned int a2, unsigned int a3, unsigned int a4, int a5)
 {
   size_t NumOfElements; // [esp+14h] [ebp-24h]
   void **v16; // [esp+20h] [ebp-18h] BYREF
@@ -882,7 +870,6 @@ namespace gamemd {
 unsigned int * GetTextBoundingRect(unsigned int * a1, CampaignScore * a2, int a3, int a4, short a5, int a6, int a7)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__fastcall GetTextBoundingRect(_DWORD *a1, CampaignScore *a2, int a3, int a4, __int16 a5, int a6, int a7)
 {
   BitFont *v7; // edi
   int v13; // ecx
@@ -915,10 +902,9 @@ LABEL_6:
 
 // 0x4A5A50
 namespace gamemd {
-int SHP_DrawBuildingTiles(int * a1, int a2, char a3)
+void SHP_DrawBuildingTiles(int * a1, int a2, char a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall SHP_DrawBuildingTiles(int *a1, int a2, char a3)
 {
 
   int v81 = 15; /*0x4a5a69*/
@@ -1106,10 +1092,9 @@ int __fastcall SHP_DrawBuildingTiles(int *a1, int a2, char a3)
 
 // 0x4A5EB0
 namespace gamemd {
-int * RenderTextLabel(int * a0, AbstractClass * aP1, int * a2, AbstractClass aP3)
+void * RenderTextLabel(int * a0, AbstractClass * aP1, int * a2, AbstractClass aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int *RenderTextLabel(int *a0, AbstractClass *aP1, int *a2, AbstractClass aP3)
 {
   AbstractClass *v4; // edx
   AbstractClass *v6; // edi
@@ -1188,7 +1173,7 @@ int *RenderTextLabel(int *a0, AbstractClass *aP1, int *a2, AbstractClass aP3)
 
 // 0x4A6010
 namespace gamemd {
-int globalHelper_0A6010()
+void globalHelper_0A6010()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // (no pseudocode — ASM-only function)
@@ -1304,10 +1289,9 @@ int *__fastcall RenderTextLabelWordWrap(
 
 // 0x4A65C0
 namespace gamemd {
-int * sub_4A65C0(int * a1, int a2, int a3, unsigned int * a4, int a5, short a6, int a7, int a8, int a9, int a10)
+int * * sub_4A65C0(int * a1, int a2, int a3, unsigned int * a4, int a5, short a6, int a7, int a8, int a9, int a10)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int *__fastcall sub_4A65C0(int *a1, int a2, int a3, _DWORD *a4, int a5, __int16 a6, int a7, int a8, int a9, int a10)
 {
   int *v12; // eax
   int v14; // eax
@@ -1344,7 +1328,7 @@ int *__fastcall sub_4A65C0(int *a1, int a2, int a3, _DWORD *a4, int a5, __int16 
 
 // 0x4A66D0
 namespace gamemd {
-int globalHelper_0A66D0()
+void globalHelper_0A66D0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // (no pseudocode — ASM-only function)
@@ -1375,10 +1359,9 @@ int *__fastcall sub_4A67E0(char a1, int a2)
 
 // 0x4A6840
 namespace gamemd {
-char * E4Recv_4A6840::sub_4A6840(HWND hWnd, int a3, int a4, int a5)
+void * E4Recv_4A6840::sub_4A6840(HWND hWnd, int a3, int a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall sub_4A6840(char *this, HWND hWnd, int a3, int a4, int a5)
 {
   int i; // eax
   HDC DC; // edi
@@ -1467,10 +1450,9 @@ LABEL_12:
 
 // 0x4A6CF0
 namespace gamemd {
-long long Direction_InitOffsets()
+long long long Direction_InitOffsets()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-__int64 Direction_InitOffsets()
 {
   __int64 result; // rax
 
@@ -1566,7 +1548,6 @@ int sub_4A80D6()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // positive sp value has been detected, the output may be wrong!
-int __fastcall sub_4A80D6(int a1, signed int a2)
 {
   HANDLE FileA; // eax
   DWORD Ticks; // [esp-110h] [ebp-120h]
@@ -1629,10 +1610,9 @@ LABEL_12:
 
 // 0x4A8EB0
 namespace gamemd {
-char GetBuildingPlacement(IUnknown * aP0, int a2, DisplayClass * aP2, IUnknown * aP3)
+void GetBuildingPlacement(IUnknown * aP0, int a2, DisplayClass * aP2, IUnknown * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void GetBuildingPlacement(IUnknown *aP0, int a2, DisplayClass *aP2, IUnknown *aP3)
 {
   int FoundationWidth; // eax
   IUnknown *v15; // eax
@@ -1713,10 +1693,9 @@ void GetBuildingPlacement(IUnknown *aP0, int a2, DisplayClass *aP2, IUnknown *aP
 
 // 0x4A9070
 namespace gamemd {
-bool ProcessDataBuildingTypeClass(unsigned int * a0, DisplayClass * aP1, DisplayClass * aP2, short * a3)
+void ProcessDataBuildingTypeClass(unsigned int * a0, DisplayClass * aP1, DisplayClass * aP2, short * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ProcessDataBuildingTypeClass(_DWORD *a0, DisplayClass *aP1, DisplayClass *aP2, __int16 *a3)
 {
   int FoundationHeight; // edi
   int FoundationWidth; // eax
@@ -1783,7 +1762,6 @@ namespace gamemd {
 void RemoveTarget(IUnknown * aP0)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void RemoveTarget(IUnknown *aP0)
 {
   IUnknown *v1; // edi
   v1 = aP0; /*0x4a9772*/
@@ -1846,7 +1824,6 @@ namespace gamemd {
 unsigned char * sub_4AA2B0(unsigned char * a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_BYTE *__stdcall sub_4AA2B0(_BYTE *a1)
 {
   int v2; // ebp
   int v3; // eax
@@ -1901,7 +1878,6 @@ namespace gamemd {
 unsigned char * sub_4AA380(unsigned char * a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_BYTE *__stdcall sub_4AA380(_BYTE *a1)
 {
   int v2; // ebp
   _BYTE *v3; // esi
@@ -1950,7 +1926,6 @@ namespace gamemd {
 void * sub_4AC4F0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void *sub_4AC4F0()
 {
   int v6; // ecx
   void *result; // eax
@@ -2020,10 +1995,9 @@ void *sub_4AC4F0()
 
 // 0x4AE750
 namespace gamemd {
-int DispatchSelectionWaypointMove()
+void DispatchSelectionWaypointMove()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __userpurge DispatchSelectionWaypointMove@<al>(int a1, int a2, int a3, int a4)
 {
   _DWORD **v4; // eax
   wchar_t *v6; // ecx
@@ -2173,10 +2147,9 @@ LABEL_32:
 
 // 0x4AEA20
 namespace gamemd {
-int sub_4AEA20()
+void sub_4AEA20()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __userpurge sub_4AEA20@<eax>(int a1@<ebx>, int a2)
 {
   int result; // eax
 
@@ -2212,23 +2185,6 @@ namespace gamemd {
 void DrawToSurfaceSHP(int a1, int a2, ConvertClass * aP2, unsigned int arg4, ConvertClass * aP4, ConvertClass * aP5, ConvertClass * aP6, ConvertClass * aP7, int aP7a, ConvertClass * aP9, ConvertClass * aP10, ConvertClass * aP11, int a13, ConvertClass * aP13, int a15, ConvertClass * aP15)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall DrawToSurfaceSHP(
-        int a1,
-        int a2,
-        ConvertClass *aP2,
-        unsigned int arg4,
-        ConvertClass *aP4,
-        ConvertClass *aP5,
-        ConvertClass *aP6,
-        ConvertClass *aP7,
-        int aP7a,
-        ConvertClass *aP9,
-        ConvertClass *aP10,
-        ConvertClass *aP11,
-        int a13,
-        ConvertClass *aP13,
-        int a15,
-        ConvertClass *aP15)
 {
   ConvertClass *v16; // edi
   IUnknown **v20; // eax
@@ -2442,10 +2398,9 @@ LABEL_21:
 
 // 0x4AF2A0
 namespace gamemd {
-char E4Recv_4AF2A0::BlitterDrawSHP()
+void E4Recv_4AF2A0::BlitterDrawSHP()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void BlitterDrawSHP(IUnknown *this)
 {
   int SHPFrame; // eax
   XSurface *v7; // [esp-18h] [ebp-40h]
@@ -2484,7 +2439,6 @@ namespace gamemd {
 void * E4Recv_4AF9B0::sub_4AF9B0(void * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void *__thiscall sub_4AF9B0(int *this, void *a2)
 {
   const void *v10; // eax
   int v11; // edx
@@ -3740,10 +3694,9 @@ int sub_4A59C0()
 
 // 0x4A5E50
 namespace gamemd {
-int E4Recv_4A5E50::sub_4A5E50(int a2, AbstractClass * aP2, AbstractClass * aP3)
+void E4Recv_4A5E50::sub_4A5E50(int a2, AbstractClass * aP2, AbstractClass * aP3)
  {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_4A5E50(unsigned __int16 *this, int a2, AbstractClass *aP2, AbstractClass *aP3)
 {
   BitFont *v5; // esi
   int PixelData; // eax

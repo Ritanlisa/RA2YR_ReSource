@@ -5,18 +5,9 @@
 
 // 0x488520
 namespace gamemd {
-int CheckListClass_OnClick()
+void CheckListClass_OnClick()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-CheckListClass *__userpurge CheckListClass::OnClick@<eax>(
-        _DWORD *a1@<ecx>,
-        const wchar_t *a2@<edi>,
-        CampaignScore *a3@<ebp>,
-        CheckListClass *aP1,
-        int a5,
-        int a6,
-        int a7,
-        int a8)
 {
   CheckListClass *result; // eax
   wchar_t *Type; // ebx
@@ -87,10 +78,9 @@ CheckListClass *__userpurge CheckListClass::OnClick@<eax>(
 } // namespace gamemd
 
 // 0x4886B0
-int CheckListClass::COMStub()
+void CheckListClass::COMStub()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CheckListClass::_vt37()
 {
   return this->q044; /*0x4886b3*/
 }

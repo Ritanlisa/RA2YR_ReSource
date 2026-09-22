@@ -6,7 +6,6 @@
 unsigned int * SelectTeamCommand::Construct(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall SelectTeamCommand_Constructor(_DWORD *this, int a2)
 {
   this->SelectTeamCommand_field_00 = a2; /*0x535fc6*/
   *this = &vt_SelectTeamCommandClass; /*0x535fc9*/
@@ -15,10 +14,9 @@ _DWORD *__thiscall SelectTeamCommand_Constructor(_DWORD *this, int a2)
 }
 
 // 0x535FE0
-ObjectClass * SelectTeamCommand::AddRef()
+void * SelectTeamCommand::AddRef()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-ObjectClass *__thiscall SelectTeamCommand::AddRef(_DWORD *this)
 {
   sprintf(&HouseClass_Player[47208], &stru_8270D8, (INIClass *)this->SelectTeamCommand_field_00); /*0x535fee*/
   return (ObjectClass *)&HouseClass_Player[47208]; /*0x535ffb*/
@@ -26,10 +24,9 @@ ObjectClass *__thiscall SelectTeamCommand::AddRef(_DWORD *this)
 }
 
 // 0x536000
-wchar_t * SelectTeamCommand::Release()
+void * SelectTeamCommand::Release()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-wchar_t *__thiscall SelectTeamCommand::_vt02(const wchar_t **this)
 {
   wchar_t *StringCSF; // eax
   const wchar_t *v3; // [esp-4h] [ebp-4h]

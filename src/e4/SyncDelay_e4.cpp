@@ -8,7 +8,6 @@
 signed int SyncDelay::Start()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-signed int SyncDelay::Start()
 {
   DWORD Ticks; // eax
   DWORD v14; // eax
@@ -169,10 +168,9 @@ LABEL_44:
 }
 
 // 0x55F6C0
-bool SyncDelay::Check(unsigned int * a2)
+void SyncDelay::Check(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_55F6C0(_DWORD *this, _DWORD *a2)
 {
 
   _DWORD * v2 = (_DWORD *)this->q010; /*0x55f6c0*/

@@ -8,7 +8,6 @@ namespace gamemd {
 int sub_717840()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_717840()
 {
   int result; // eax
   int i; // edi

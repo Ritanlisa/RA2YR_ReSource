@@ -6,7 +6,6 @@
 unsigned int * Bounds::Subtract(IUnknown * aP1, unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall Bounds::Subtract(int *this, IUnknown *aP1, _DWORD *a2)
 {
 
   int v3 = this->q004; /*0x487ee0*/

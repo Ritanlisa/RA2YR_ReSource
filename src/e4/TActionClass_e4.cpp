@@ -14,10 +14,9 @@
 
 // 0x4FCDC0
 namespace gamemd {
-char TActionClass::executeBuildAction()
+void TActionClass::executeBuildAction()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_4FCDC0(int this)
 {
   char result; // al
 
@@ -40,10 +39,9 @@ void sub_4FCDC0(int this)
 
 // 0x50D2D0
 namespace gamemd {
-int TActionClass::executeMoveAction(int a2)
+void TActionClass::executeMoveAction(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_50D2D0(_DWORD *this, int a2)
 {
   int i; // ebx
   int result; // eax
@@ -67,10 +65,9 @@ void sub_50D2D0(_DWORD *this, int a2)
 
 // 0x50DA00
 namespace gamemd {
-int TActionClass::executeGuardAction(int a2)
+void TActionClass::executeGuardAction(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_50DA00(_DWORD *this, int a2)
 {
   this->q54F0 = a2; /*0x50da04*/
   return a2; /*0x50da0a*/
@@ -80,10 +77,9 @@ void sub_50DA00(_DWORD *this, int a2)
 
 // 0x50DA20
 namespace gamemd {
-int TActionClass::executeHuntAction(int a2)
+void TActionClass::executeHuntAction(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_50DA20(_DWORD *this, int a2)
 {
   this->q54F4 = a2; /*0x50da24*/
   this->q54FC = g_CurrentFrame; /*0x50da30*/
@@ -94,10 +90,9 @@ void sub_50DA20(_DWORD *this, int a2)
 
 // 0x50DFE0
 namespace gamemd {
-int TActionClass::executeDeployAction(int a2)
+void TActionClass::executeDeployAction(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_50DFE0(_DWORD *this, int a2)
 {
   this->q5494 = a2; /*0x50dfe4*/
   return a2; /*0x50dfea*/
@@ -107,10 +102,9 @@ void sub_50DFE0(_DWORD *this, int a2)
 
 // 0x567F70
 namespace gamemd {
-int sub_567F70(int * a1, int a2)
+void sub_567F70(int * a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_567F70(int *a1, int a2)
 {
   int result; // eax
   __int16 v20; // [esp+14h] [ebp-8h]
@@ -202,10 +196,9 @@ void sub_567F70(int *a1, int a2)
 
 // 0x577C90
 namespace gamemd {
-int TActionClass::executeRepairAction(int a2)
+void TActionClass::executeRepairAction(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_577C90(_DWORD *this, int a2)
 {
   int result; // eax
   int *i; // esi
@@ -249,10 +242,9 @@ LABEL_7:
 
 // 0x578850
 namespace gamemd {
-int TActionClass::executeSellAction()
+void TActionClass::executeSellAction()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_578850(_DWORD *this)
 {
   int result; // eax
 
@@ -270,7 +262,6 @@ namespace gamemd {
 unsigned int * TActionClass::executeHarvestAction(int a2, MouseClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall TActionClass::executeHarvestAction(_DWORD *this, int a2, MouseClass *aP2)
 {
   InfantryTypeClass *result; // eax
   CCINIClass *v6; // edx
@@ -383,10 +374,9 @@ LABEL_38:
 
 // 0x6E0B60
 namespace gamemd {
-char TActionClass::ConvertHouseUnits(int a2, int _14, unsigned int * a3, IUnknown * aP4)
+void TActionClass::ConvertHouseUnits(int a2, int _14, unsigned int * a3, IUnknown * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TActionClass::ConvertHouseUnits(int a2, int _14, _DWORD *a3, IUnknown *aP4)
 {
   int Field11; // eax
   int i; // edi
@@ -473,10 +463,9 @@ void TActionClass::ConvertHouseUnits(int a2, int _14, _DWORD *a3, IUnknown *aP4)
 
 // 0x6E1CC0
 namespace gamemd {
-char TActionClass::executeRetreatAction(AbstractClass * aP1, int a3, int a4, AbstractClass * aP4)
+void TActionClass::executeRetreatAction(AbstractClass * aP1, int a3, int a4, AbstractClass * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TActionClass::executeRetreatAction(AbstractClass *aP1, int a3, int a4, AbstractClass *aP4)
 {
   void **v5; // eax
   CoordStruct aP2; // [esp+8h] [ebp-Ch] BYREF
@@ -512,10 +501,9 @@ void TActionClass::executeRetreatAction(AbstractClass *aP1, int a3, int a4, Abst
 
 // 0x6E2290
 namespace gamemd {
-char TActionClass::executeEscortAction(int a2, int a3, int a4, IUnknown * aP4)
+void TActionClass::executeEscortAction(int a2, int a3, int a4, IUnknown * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TActionClass::executeEscortAction(int a2, int a3, int a4, IUnknown *aP4)
 {
   void **v6; // eax
   CoordStruct aP2; // [esp+Ch] [ebp-Ch] BYREF
@@ -551,10 +539,9 @@ void TActionClass::executeEscortAction(int a2, int a3, int a4, IUnknown *aP4)
 
 // 0x6E2390
 namespace gamemd {
-char TActionClass::CreateWeaponImpactAtWaypoint(int a2, int a3, int a4, IUnknown * aP4)
+void TActionClass::CreateWeaponImpactAtWaypoint(int a2, int a3, int a4, IUnknown * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TActionClass::CreateWeaponImpactAtWaypoint(int a2, int a3, int a4, IUnknown *aP4)
 {
   CoordStruct *WarheadVersusMultiplier; // esi
   void **v11; // ebp
@@ -607,10 +594,9 @@ void TActionClass::CreateWeaponImpactAtWaypoint(int a2, int a3, int a4, IUnknown
 
 // 0x6E2C40
 namespace gamemd {
-char TActionClass::SpawnMeteorShower(AbstractClass * aP1, int a3, int a4, AbstractClass * aP4)
+void TActionClass::SpawnMeteorShower(AbstractClass * aP1, int a3, int a4, AbstractClass * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TActionClass::SpawnMeteorShower(AbstractClass *aP1, int a3, int a4, AbstractClass *aP4)
 {
   int String; // ebp
   AnimClass *v12; // esi
@@ -676,10 +662,9 @@ void TActionClass::SpawnMeteorShower(AbstractClass *aP1, int a3, int a4, Abstrac
 
 // 0x6E36E0
 namespace gamemd {
-char TActionClass::executeParadropAction(int a2, int a3, int a4, IUnknown * aP4)
+void TActionClass::executeParadropAction(int a2, int a3, int a4, IUnknown * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TActionClass::executeParadropAction(int a2, int a3, int a4, IUnknown *aP4)
 {
   void **v10; // eax
   MouseClass *v11; // edi
@@ -739,10 +724,9 @@ void TActionClass::executeParadropAction(int a2, int a3, int a4, IUnknown *aP4)
 
 // 0x6E4150
 namespace gamemd {
-char TActionClass::executeGeneticMutatorAction(int a2, int a3, int a4, IUnknown * aP4)
+void TActionClass::executeGeneticMutatorAction(int a2, int a3, int a4, IUnknown * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TActionClass::executeGeneticMutatorAction(int a2, int a3, int a4, IUnknown *aP4)
 {
 
   int v5 = -1; /*0x6e415d*/
@@ -777,10 +761,9 @@ LABEL_7:
 
 // 0x6E42D0
 namespace gamemd {
-char TActionClass::executeIronCurtainAction(int a2, int a3, int a4, IUnknown * aP4)
+void TActionClass::executeIronCurtainAction(int a2, int a3, int a4, IUnknown * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TActionClass::executeIronCurtainAction(int a2, int a3, int a4, IUnknown *aP4)
 {
 
   if ( !a2 ) /*0x6e42d6*/
@@ -801,10 +784,9 @@ void TActionClass::executeIronCurtainAction(int a2, int a3, int a4, IUnknown *aP
 
 // 0x6E4320
 namespace gamemd {
-char TActionClass::executeNukeAction(int a2, int a3, int a4, IUnknown * aP4)
+void TActionClass::executeNukeAction(int a2, int a3, int a4, IUnknown * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TActionClass::executeNukeAction(int a2, int a3, int a4, IUnknown *aP4)
 {
 
   if ( !a2 ) /*0x6e4326*/
@@ -820,10 +802,9 @@ void TActionClass::executeNukeAction(int a2, int a3, int a4, IUnknown *aP4)
 
 // 0x71E6A0
 namespace gamemd {
-int TActionClass::TActionClass()
+T TActionClass::TActionClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-T TActionClass::TActionClass(int this)
 {
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x71e6a4*/

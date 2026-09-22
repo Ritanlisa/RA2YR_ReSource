@@ -18,7 +18,6 @@ namespace gamemd {
 int sub_710860(unsigned int * a1, unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_710860(_DWORD *a1, _DWORD *a2)
 {
   if ( *a1 == *a2 )
     return 0; /*0x710870*/
@@ -30,10 +29,9 @@ int sub_710860(_DWORD *a1, _DWORD *a2)
 
 // 0x7187A0
 namespace gamemd {
-char E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int a4)
+void E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ProcessUnitDeploymentAtCell(int **this, int a2, int a3, int a4)
 {
   _DWORD *i; // edi
   _DWORD *v12; // eax
@@ -169,7 +167,6 @@ namespace gamemd {
 int InitializeCellSpreadTables()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int InitializeCellSpreadTables()
 {
 
   int v4 = 0; /*0x71d582*/
@@ -254,7 +251,6 @@ namespace gamemd {
 int ObjectTypeClass_LoadTheaterSHP(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall ObjectTypeClass_LoadTheaterSHP(int a1)
 {
   int result; // eax
   int i; // edi

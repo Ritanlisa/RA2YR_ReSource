@@ -7,10 +7,9 @@
 
 // 0x425D10
 namespace gamemd {
-int * Building::ComputePosition(AnimClass * aP1)
+void * Building::ComputePosition(AnimClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int *__thiscall Building::ComputePosition(int *this, AnimClass *aP1)
 {
   BuildingTypeClass *v8; // edi
   VectorClass *v13; // eax
@@ -192,10 +191,9 @@ LABEL_41:
 
 // 0x485020
 namespace gamemd {
-int Building::GetNthOfType()
+void Building::GetNthOfType()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Building_GetNthOfType(int this)
 {
 
   int v2 = FindBuildingByTiberiumType(*(_DWORD *)(this + 68)); /*0x485026*/
@@ -209,10 +207,9 @@ void Building_GetNthOfType(int this)
 
 // 0x772A90
 namespace gamemd {
-char Building::GetRenderType()
+void Building::GetRenderType()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Building_GetRenderType(_DWORD *this)
 {
   char result; // al
 

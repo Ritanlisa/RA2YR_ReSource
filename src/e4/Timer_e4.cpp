@@ -6,10 +6,9 @@
 
 // 0x46B640
 namespace gamemd {
-DynamicVector * Timer::Start(DynamicVector * aP1)
+void * Timer::Start(DynamicVector * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-DynamicVector *__thiscall Timer::Start(_DWORD *this, DynamicVector *aP1)
 {
   *this = *(_DWORD *)&HouseClass_Player[45112]; /*0x46b64c*/
   *(this + 2) = aP1; /*0x46b64e*/
@@ -20,10 +19,9 @@ DynamicVector *__thiscall Timer::Start(_DWORD *this, DynamicVector *aP1)
 
 // 0x4A5240
 namespace gamemd {
-char Timer::StartDouble(double a2)
+void Timer::StartDouble(double a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Timer_StartDouble(_BYTE *this, double a2)
 {
   wchar_t *v4; // ecx
   int v3; // eax
@@ -47,10 +45,9 @@ void Timer_StartDouble(_BYTE *this, double a2)
 
 // 0x4F1B00
 namespace gamemd {
-DWORD * Timer::Init(DWORD a2)
+void * Timer::Init(DWORD a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-DWORD *__thiscall Timer_Init(DWORD *this, DWORD a2)
 {
   *this = Timer::GetTicks(); /*0x4f1b0b*/
   *(this + 2) = a2; /*0x4f1b11*/
@@ -61,10 +58,9 @@ DWORD *__thiscall Timer_Init(DWORD *this, DWORD a2)
 
 // 0x4F1B20
 namespace gamemd {
-int Timer::GetRemainingMs()
+void Timer::GetRemainingMs()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Timer_GetRemainingMs(signed int *this)
 {
 
   signed int v1 = *(this + 2); /*0x4f1b26*/
@@ -81,10 +77,9 @@ void Timer_GetRemainingMs(signed int *this)
 
 // 0x54F720
 namespace gamemd {
-HWND Timer::PumpMessages()
+void Timer::PumpMessages()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-HWND __thiscall Timer_PumpMessages(HWND *this)
 {
   HWND v2; // eax
   HWND result; // eax
@@ -110,10 +105,9 @@ HWND __thiscall Timer_PumpMessages(HWND *this)
 
 // 0x5B1E40
 namespace gamemd {
-double Timer::GetHighPrecision()
+void Timer::GetHighPrecision()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Timer_GetHighPrecision(double *this)
 {
 
   if ( dword_82C24C == -1 ) /*0x5b1e4e*/
@@ -130,10 +124,9 @@ void Timer_GetHighPrecision(double *this)
 
 // 0x5F1390
 namespace gamemd {
-int Timer::GetElapsed()
+void Timer::GetElapsed()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Timer_GetElapsed(_DWORD *this)
 {
 
   int v1 = *(this + 2); /*0x5f1396*/

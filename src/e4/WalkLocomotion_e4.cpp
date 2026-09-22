@@ -10,10 +10,9 @@
 
 // 0x6A01A0
 namespace gamemd {
-char WalkLocomotion::MoveTo(IUnknown * aP1, int aP3)
+void WalkLocomotion::MoveTo(IUnknown * aP1, int aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void WalkLocomotion::MoveTo(int this, IUnknown *aP1, int aP3)
 {
   IUnknown *v3; // edx
   v3 = aP1; /*0x6a01a0*/
@@ -104,10 +103,9 @@ void WalkLocomotion::MoveTo(int this, IUnknown *aP1, int aP3)
 
 // 0x6A05F0
 namespace gamemd {
-char WalkLocomotion::ProcessCollision(char a2)
+void WalkLocomotion::ProcessCollision(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void WalkLocomotion::ProcessCollision(int this, char a2)
 {
   MouseClass *v13; // ecx
   MouseClass *v21; // ecx
@@ -1011,10 +1009,9 @@ LABEL_190:
 
 // 0x6A1C80
 namespace gamemd {
-char WalkLocomotion::Update(unsigned char * a2, int a3, int a4)
+void WalkLocomotion::Update(unsigned char * a2, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void WalkLocomotion_Update(int this, _BYTE *a2, int a3, int a4)
 {
   char result; // al
   wchar_t *v16; // edi
@@ -2397,7 +2394,6 @@ namespace gamemd {
 unsigned int * WalkLocomotion::TransformCoords(ObjectClass * aP1, IUnknown * aP2, ObjectClass * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall WalkLocomotion::TransformCoords(_DWORD *this, ObjectClass *aP1, IUnknown *aP2, ObjectClass *aP3)
 {
 
   int v4 = *(_DWORD *)aP3->__pad_0; /*0x6a3dbd*/

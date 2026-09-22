@@ -29,11 +29,10 @@
 
 // 0x6406E0
 namespace gamemd {
-int unknown_libname_27()
+void unknown_libname_27()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // Microsoft VisualC 2-14/net runtime
-_DWORD *__thiscall unknown_libname_27(_DWORD *this)
 {
   *this = 0; /*0x6406e2*/
   return this; /*0x6406e8*/
@@ -43,10 +42,9 @@ _DWORD *__thiscall unknown_libname_27(_DWORD *this)
 
 // 0x645B60
 namespace gamemd {
-ObjectClass * E4Recv_645B60::sub_645B60()
+void * E4Recv_645B60::sub_645B60()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-ObjectClass *__thiscall sub_645B60(void *this)
 {
   ObjectClass *v2; // edi
   const void **v3; // esi
@@ -67,10 +65,9 @@ ObjectClass *__thiscall sub_645B60(void *this)
 
 // 0x645D60
 namespace gamemd {
-float * E4Recv_645D60::sub_645D60(float * a2)
+void * E4Recv_645D60::sub_645D60(float * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-float *__thiscall sub_645D60(float *this, float *a2)
 {
   unsigned __int8 v14; // c0
   unsigned __int8 v15; // c3
@@ -127,10 +124,9 @@ float *__thiscall sub_645D60(float *this, float *a2)
 
 // 0x646730
 namespace gamemd {
-float * ConvertMatrixToQuaternion(float * a1, float * a2)
+void * ConvertMatrixToQuaternion(float * a1, float * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-float *__fastcall ConvertMatrixToQuaternion(float *a1, float *a2)
 {
   float *result; // eax
 
@@ -233,7 +229,6 @@ namespace gamemd {
 char sub_646F70(IUnknown * a1, int a2, int a3, char a4, int a5, int a6, int a7)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall sub_646F70(IUnknown *a1, int a2, int a3, char a4, int a5, int a6, int a7)
 {
   IUnknown *v9; // [esp-20h] [ebp-98h]
 
@@ -268,7 +263,6 @@ namespace gamemd {
 void ProcessNetworkEvents()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ProcessNetworkEvents()
 {
   int Buffer; // [esp+10h] [ebp-74h] BYREF
   __int16 v7; // [esp+80h] [ebp-4h]
@@ -403,7 +397,6 @@ namespace gamemd {
 void RunNetworkGameLoop()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void RunNetworkGameLoop()
 {
   int v0; // eax
   void *v1; // ebx
@@ -582,18 +575,9 @@ LABEL_23:
 
 // 0x648710
 namespace gamemd {
-int QueueNetworkProcessor(CellStruct * aP0, int * a1, int arg0, int arg4, ScenarioClass * a4, int a6, short arg10, int * a7)
+void QueueNetworkProcessor(CellStruct * aP0, int * a1, int arg0, int arg4, ScenarioClass * a4, int a6, short arg10, int * a7)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall QueueNetworkProcessor(
-        CellStruct *aP0,
-        int *a1,
-        int arg0,
-        int arg4,
-        ScenarioClass *a4,
-        int a6,
-        __int16 arg10,
-        int *a7)
 {
   MSVQAnim *v9; // esi
   ObjectClass *v10; // ebp
@@ -1519,10 +1503,9 @@ LABEL_116:
 
 // 0x649CA0
 namespace gamemd {
-int BuildNetworkEventPacket(int a1, int a2, int a3, int a4, short a5)
+void BuildNetworkEventPacket(int a1, int a2, int a3, int a4, short a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall BuildNetworkEventPacket(int a1, int a2, int a3, int a4, __int16 a5)
 {
   int v20; // esi
   int v22; // [esp+10h] [ebp-1Ch]
@@ -1657,10 +1640,9 @@ int __fastcall BuildNetworkEventPacket(int a1, int a2, int a3, int a4, __int16 a
 
 // 0x64A000
 namespace gamemd {
-int Network_SendFrameSync(int * a1, short a2)
+void Network_SendFrameSync(int * a1, short a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall Network_SendFrameSync(int *a1, __int16 a2)
 {
   __int16 v7; // [esp+78h] [ebp-4h]
 
@@ -1690,10 +1672,9 @@ int __fastcall Network_SendFrameSync(int *a1, __int16 a2)
 
 // 0x64A0C0
 namespace gamemd {
-int Network_ProcessFrameSync(int a1, int a2, int a3, unsigned int a4, int a5, unsigned int * a6)
+void Network_ProcessFrameSync(int a1, int a2, int a3, unsigned int a4, int a5, unsigned int * a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall Network_ProcessFrameSync(int a1, int a2, int a3, unsigned int a4, int a5, _DWORD *a6)
 {
   char *Class; // eax
   int v27; // eax
@@ -1933,7 +1914,6 @@ namespace gamemd {
 int Network_ProcessMessage(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall Network_ProcessMessage(int a1, int a2)
 {
   wchar_t *v6; // edi
   int v2 = a1; /*0x64a631*/
@@ -2003,7 +1983,6 @@ namespace gamemd {
 void KickNetworkPlayer(HWND hDlg, LPARAM lParam)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall KickNetworkPlayer(HWND hDlg, LPARAM lParam)
 {
   HWND DlgItem; // eax
   HWND v5; // esi
@@ -2076,7 +2055,6 @@ namespace gamemd {
 void Network_KickPlayerNow(int a1, int a2, int a3, unsigned char a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall Network_KickPlayerNow(int a1, int a2, int a3, unsigned __int8 a4)
 {
   int i; // ecx
 
@@ -2138,10 +2116,9 @@ void __fastcall Network_KickPlayerNow(int a1, int a2, int a3, unsigned __int8 a4
 
 // 0x64B4D0
 namespace gamemd {
-char Compress_DictionaryLookup(unsigned char * a1, unsigned int * a2, unsigned char * a3, const void * a4, char a5)
+void Compress_DictionaryLookup(unsigned char * a1, unsigned int * a2, unsigned char * a3, const void * a4, char a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall Compress_DictionaryLookup(unsigned __int8 *a1, _DWORD *a2, _BYTE *a3, const void *a4, char a5)
 {
   unsigned __int8 v5; // dl
   char result; // al
@@ -2222,10 +2199,9 @@ LABEL_21:
 
 // 0x64B660
 namespace gamemd {
-int Network_CompressMegaMission(int a1, int a2, int a3, int a4, int a5, unsigned int * a6)
+void Network_CompressMegaMission(int a1, int a2, int a3, int a4, int a5, unsigned int * a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall Network_CompressMegaMission(int a1, int a2, int a3, int a4, int a5, _DWORD *a6)
 {
   unsigned __int8 v8; // al
   #375 *v13; // edx
@@ -2433,10 +2409,9 @@ LABEL_47:
 
 // 0x64BDD0
 namespace gamemd {
-int Network_DecodeEvents(char * a1, unsigned int a2)
+void Network_DecodeEvents(char * a1, unsigned int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall Network_DecodeEvents(char *a1, unsigned int a2)
 {
   unsigned __int8 v7; // al
   unsigned __int8 v10; // cl
@@ -2704,7 +2679,6 @@ namespace gamemd {
 void sub_64CD30(int a1, int a2, int a3, char a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall sub_64CD30(int a1, int a2, int a3, char a4, int a5)
 {
 
   int v5 = a1 + a2; /*0x64cd34*/
@@ -2729,7 +2703,6 @@ namespace gamemd {
 void Network_ProcessMapEvent(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall Network_ProcessMapEvent(int a1, int a2)
 {
   size_t v23; // eax
   _BYTE *WaypointCoords; // eax
@@ -3192,10 +3165,9 @@ LABEL_99:
 
 // 0x64DAB0
 namespace gamemd {
-int ComputeNetworkFrameCRC()
+void ComputeNetworkFrameCRC()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ComputeNetworkFrameCRC()
 {
   int i; // ebx
   _DWORD *Value; // eax
@@ -4449,11 +4421,10 @@ float * sub_646110(float * a1, float * a2)
 
 // 0x646464
 namespace gamemd {
-int sub_646464()
+void sub_646464()
  {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // positive sp value has been detected, the output may be wrong!
-int __userpurge sub_646464@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<esi>, int a4, int a5, int a6, int a7, int a8)
 {
   *(_DWORD *)(a2 + 12) = a1; /*0x646464*/
   return a3; /*0x64646e*/

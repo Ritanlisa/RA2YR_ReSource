@@ -12,7 +12,6 @@
 unsigned int * OverlayTypeClass::OverlayTypeClass(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall OverlayTypeClass::OverlayTypeClass(_DWORD *this, ObjectClass *aP1)
 {
   OverlayTypeClass *v3; // eax
   CCINIClass *v6; // edx
@@ -88,10 +87,9 @@ LABEL_11:
 }
 
 // 0x5FE770
-char OverlayTypeClass::LoadFromINI(unsigned char *** aP1)
+void OverlayTypeClass::LoadFromINI(unsigned char *** aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void OverlayTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
 {
   AnimTypeClass *v3; // eax
   INIClass *v4; // ecx
@@ -119,7 +117,7 @@ void OverlayTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
                     (unsigned __int8 *)(this + 36),
                     (CCINIClass *)&stru_830620[9560],
                     v4);
-  char v23 = this->NoUseTileLandType; /*0x5fe7d3*/
+  bool v23 = this->NoUseTileLandType; /*0x5fe7d3*/
   this->Wall = Int_Overwrite; /*0x5fe7da*/
   this->NoUseTileLandType = INIClass::ReadBool_Overwrite( /*0x5fe7e5*/
                              (int)aP1,
@@ -131,7 +129,7 @@ void OverlayTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
                      (unsigned __int8 *)(this + 36),
                      (CCINIClass *)&stru_817244.needsSave_flag,
                      this->IsVeinholeMonster);
-  char v7 = this->IsVeins; /*0x5fe7ff*/
+  bool v7 = this->IsVeins; /*0x5fe7ff*/
   this->IsVeinholeMonster = Bool_Overwrite; /*0x5fe805*/
   char v8; // al
   v8 = INIClass::ReadBool_Overwrite( /*0x5fe814*/
@@ -139,7 +137,7 @@ void OverlayTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
          (unsigned __int8 *)(this + 36),
          (CCINIClass *)&stru_830620[12120],
          v7);
-  char v24 = this->ImageLoaded; /*0x5fe821*/
+  bool v24 = this->ImageLoaded; /*0x5fe821*/
   this->IsVeins = v8; /*0x5fe828*/
   this->ImageLoaded = INIClass::ReadBool_Overwrite( /*0x5fe833*/
                              (int)aP1,
@@ -201,7 +199,7 @@ void OverlayTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
             (Color *)&stru_830620[12040],
             (Color *)(this + 694));
   this->q2B6 = *(_WORD *)Coord; /*0x5fe94f*/
-  char v25 = this->Explodes; /*0x5fe95e*/
+  bool v25 = this->Explodes; /*0x5fe95e*/
   this->q2B8 = *(_BYTE *)(Coord + 2); /*0x5fe965*/
   char v16; // al
   v16 = INIClass::ReadBool_Overwrite( /*0x5fe968*/
@@ -209,7 +207,7 @@ void OverlayTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
           (unsigned __int8 *)(this + 36),
           (CCINIClass *)&stru_830620[12020],
           v25);
-  char v17 = this->ChainReaction; /*0x5fe96d*/
+  bool v17 = this->ChainReaction; /*0x5fe96d*/
   this->Explodes = v16; /*0x5fe973*/
   char v18; // al
   v18 = INIClass::ReadBool_Overwrite( /*0x5fe982*/
@@ -217,7 +215,7 @@ void OverlayTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
           (unsigned __int8 *)(this + 36),
           (CCINIClass *)&stru_830620[12000],
           v17);
-  char v26 = this->Overrides; /*0x5fe98f*/
+  bool v26 = this->Overrides; /*0x5fe98f*/
   this->ChainReaction = v18; /*0x5fe996*/
   this->Overrides = INIClass::ReadBool_Overwrite((int)aP1, (unsigned __int8 *)(this + 36), &unk_8184A8, v26); /*0x5fe9a1*/
   char v19; // al
@@ -251,10 +249,9 @@ void OverlayTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
 }
 
 // 0x5FEAF0
-int OverlayTypeClass::SaveLoad_Prefix(int a1, int a2)
+void OverlayTypeClass::SaveLoad_Prefix(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void OverlayTypeClass::SaveLoad_Prefix(int a1, int a2)
 {
   int result; // eax
   char Buffer[512]; // [esp+8h] [ebp-200h] BYREF
@@ -303,7 +300,6 @@ void OverlayTypeClass::SaveLoad_Prefix(int a1, int a2)
 void * OverlayTypeClass::GetCategory()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void *__thiscall sub_5FEDE0(int this)
 {
   void *result; // eax
   void *EntireFile; // edi
@@ -349,7 +345,6 @@ void *__thiscall sub_5FEDE0(int this)
 unsigned int * OverlayTypeClass::Construct(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall OverlayTypeClass::Construct(_DWORD *this, ObjectClass *aP1)
 {
   ParticleSystemTypeClass *v3; // eax
   ObjectTypeClass::ConstructFull((int)this, (AbstractClass *)aP1); /*0x6440a9*/

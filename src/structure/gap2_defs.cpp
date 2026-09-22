@@ -19,7 +19,6 @@
 // 0x517CC0
 namespace gamemd { int InfantryClass::PerFrameUpdate() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall InfantryClass::PerFrameUpdate(int this)
 {
   _DWORD *result; // eax
   InfantryTypeClass *v5; // edi
@@ -72,7 +71,6 @@ LABEL_11:
 // 0x413D20
 namespace gamemd { int AircraftClass::Construct(int a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void AircraftClass::Construct(int this, IUnknown *aP1, AbstractClass *aP2)
 {
   int v3; // edi
   AbstractClass *v4; // eax
@@ -170,7 +168,6 @@ LABEL_25:
 // 0x435820
 namespace gamemd { void* BuildingLightClass::CTOR(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-BuildingLightClass *__thiscall BuildingLightClass::CTOR(int *this, BuildingClass *aP1)
 {
   _DWORD *Value; // eax
   IUnknown *v8; // eax
@@ -590,7 +587,6 @@ namespace gamemd { int BuildingLightClass::Draw_Start(int a1, int a2) {
 // 0x4361D0
 namespace gamemd { int BuildingLightClass::SD_vt23() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void BuildingLightClass::SD_vt23(int **this)
 {
   ObjectClass *v2; // ecx
   int **v3; // eax
@@ -610,7 +606,7 @@ void BuildingLightClass::SD_vt23(int **this)
   BuildingTypeClass *v28; // ebx
   double v29; // st7
   double v30; // st7
-  char v31; // al
+  bool v31; // al
   double v33; // st7
   unsigned __int8 v34; // c0
   unsigned __int8 v35; // c3
@@ -1093,7 +1089,6 @@ namespace gamemd { void* BuildingClass::ctor(int a1) {
 // 0x443410
 namespace gamemd { int BuildingClass::HandleFactoryCommand() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void BuildingClass::HandleFactoryCommand(#377 *this)
 {
   int result; // eax
   _BYTE *WaypointCoords; // eax
@@ -1799,7 +1794,6 @@ namespace gamemd { int SuperWeapon::EvaluateAITarget(int a1, void* a2) {
 // 0x50B1D0
 namespace gamemd { int SuperWeapon::UpdateSuperWeaponsUnavailableHouseClass() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void SuperWeapon::UpdateSuperWeaponsUnavailableHouseClass(#375 *this)
 {
   int i; // edi
   int j; // ebx
@@ -1879,7 +1873,6 @@ namespace gamemd { bool InfantryClass::SetField6() {
 // 0x517A50
 namespace gamemd { int InfantryClass::Construct(int a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void InfantryClass::Construct(int this, AbstractClass *aP1, AbstractClass *aP2)
 {
   ObjectClass *v4; // eax
   AbstractClass *v5; // eax
@@ -1982,7 +1975,6 @@ LABEL_25:
 namespace gamemd { int InfantryClass::ProcessDeployment(void* a1, int a2, int a3, void* a4, int a5, int a6, int a7) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x517fa0
-void InfantryClass::ProcessDeployment(int *a2, int a3, int a4, int *a5, int a6, int a7, int a8)
 {
   int result; // eax
   void **v17; // eax
@@ -3688,7 +3680,6 @@ retn    1Ch
 // 0x51BAB0
 namespace gamemd { int InfantryClass::Update() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void InfantryClass::Update(int this)
 {
   int v2; // eax
   void **v3; // eax
@@ -3958,7 +3949,6 @@ namespace gamemd { void* InfantryClass::updateOccupiedBuilding(void* aP1) {
 // 0x539AE0
 namespace gamemd { int SuperWeapon::SerializeSuperWeaponState() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void SerializeSuperWeaponState(void *this)
 {
   int result; // eax
 
@@ -4441,7 +4431,6 @@ namespace gamemd { int BuildingLightClass::FindAllTargets(int a1, int a2, int a3
 // 0x6EFE60
 namespace gamemd { void SuperWeapon::DispatchTeam(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void SuperWeapon::DispatchTeam(int this, ScriptClass *aP1, int a3)
 {
   TechnoClass *v5; // esi
   TechnoClass *v6; // eax
@@ -4587,7 +4576,6 @@ namespace gamemd { int BuildingClass::checkPlacement() {
 // 0x7353C0
 namespace gamemd { int UnitClass::Construct() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-UnitClass *UnitClass::Construct(AbstractClass *aP0, AbstractClass *aP1, IUnknown ppv)
 {
   UnitClass *v3; // ecx
   UnitClass *esi1; // esi

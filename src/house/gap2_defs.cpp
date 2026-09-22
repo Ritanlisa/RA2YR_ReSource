@@ -162,7 +162,6 @@ namespace gamemd { int BaseClass::Write(int a1) {
 // 0x42F3F0
 namespace gamemd {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void BaseClass::_vt06(int a2, int a3)
 {
 
   int v3 = this->Items + 16 * a3; /*0x42f3fa*/
@@ -352,7 +351,6 @@ namespace gamemd { void* BaseNodeClass::Vector_Constructor(int a1, int a2) {
 // 0x431410
 namespace gamemd {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_431410(int *this, int a2)
 {
 
   int v3 = this->nextArrayIndex; /*0x431413*/
@@ -416,7 +414,6 @@ namespace gamemd { int HouseClass::Render(int a2, int a3, int a4, int a5, int a6
 // 0x431800
 namespace gamemd { bool HouseClass::ProcessData() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_431800(int *this)
 {
 
   if ( !this->nextArrayIndex ) /*0x431803*/
@@ -716,7 +713,6 @@ namespace gamemd { void* CounterClass::Construct() {
 // 0x49FA70
 namespace gamemd { int CounterClass::Decrement(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CounterClass_Decrement(_DWORD *this, int a2)
 {
   int i; // eax
 
@@ -1757,7 +1753,6 @@ namespace gamemd { int HouseClass::Destruct() {
 // 0x4F7870
 namespace gamemd { int HouseClass::CanBuild(int a1, int a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HouseClass::CanBuild(IUnknown *aP1, AbstractClass *aP2, AbstractClass *aP3)
 {
   IUnknown *v5; // edi
   IUnknown **v20; // edx
@@ -1938,7 +1933,7 @@ LABEL_124:
       v10 = v73 == 0; /*0x4f7f31*/
       goto LABEL_125; /*0x4f7f31*/
     }
-    char v21 = v4->currentPlayer; /*0x4f7b76*/
+    bool v21 = v4->currentPlayer; /*0x4f7b76*/
     if ( !g_GameMode_Current ) /*0x4f7b7c*/
       v21 = v21 || v4->playerControl; /*0x4f7b90*/
     if ( !v21 ) /*0x4f7b94*/
@@ -2314,7 +2309,6 @@ LABEL_199:
 // 0x4F83C0
 namespace gamemd { int HouseClass::GetFactoryProducing(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HouseClass::GetFactoryProducing(int a2)
 {
   _DWORD *v5; // ecx
   int Type; // eax
@@ -4637,7 +4631,6 @@ namespace gamemd { int HouseClass::Update() {
 // 0x4F93E0
 namespace gamemd { int HouseClass::NotifyUnderAttack(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HouseClass::NotifyUnderAttack(BuildingClass *aP1)
 {
   int result; // eax
   _DWORD *Type; // eax
@@ -4726,7 +4719,6 @@ LABEL_31:
 // 0x4F9790
 namespace gamemd { int HouseClass::ProcessPowerDrain(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HouseClass::ProcessPowerDrain(int this, IUnknown *aP1)
 {
   BuildingTypeClass *v3; // esi
   int FloatPositive; // esi
@@ -4829,7 +4821,6 @@ namespace gamemd { bool HouseClass::IsAllied(int a1) {
 // 0x4F9B70
 namespace gamemd { int HouseClass::HandleAlliance(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HouseClass::HandleAlliance(int this, HouseClass *aP1, char a3)
 {
   HouseClass *v6; // edx
   int i; // ebx
@@ -4865,7 +4856,7 @@ LABEL_8:
       this->q1D8 |= 1 << aP1->relatedTagsCount; /*0x4f9c19*/
     if ( *(_DWORD *)&HouseClass_Player[29932] != 4 && *(_DWORD *)&HouseClass_Player[43616] ) /*0x4f9c31*/
       goto LABEL_80; /*0x4f9c31*/
-    char v7 = this->currentPlayer; /*0x4f9c37*/
+    bool v7 = this->currentPlayer; /*0x4f9c37*/
     if ( !*(_DWORD *)&HouseClass_Player[29932] ) /*0x4f9c3f*/
       v7 = v7 || this->playerControl; /*0x4f9c53*/
     if ( v7 /*0x4f9c78*/
@@ -4917,7 +4908,7 @@ LABEL_8:
         }
       }
     }
-    char v14 = this->currentPlayer; /*0x4f9d54*/
+    bool v14 = this->currentPlayer; /*0x4f9d54*/
     if ( !*(_DWORD *)&HouseClass_Player[29932] ) /*0x4f9d5c*/
       v14 = v14 || this->playerControl; /*0x4f9d70*/
     if ( !v14 /*0x4f9e0a*/
@@ -5005,7 +4996,6 @@ LABEL_71:
 // 0x4F9F90
 namespace gamemd { int HouseClass::SetAlliance(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HouseClass::SetAlliance(int this, IUnknown *aP0, char a3)
 {
   HouseClass *v5; // edx
   HouseClass *v8; // edx
@@ -5126,7 +5116,6 @@ namespace gamemd { int HouseClass::SetThreat_Bounds(int a1, int a2) {
 // 0x4FA910
 namespace gamemd { int HouseClass::StartFactoryProduction(void* a1, int a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HouseClass::StartFactoryProduction(int this, void *a1, BuildingTypeClass *aP2, char a4)
 {
   int v5; // eax
   int v6; // eax
@@ -5189,7 +5178,6 @@ LABEL_16:
 // 0x4FAA10
 namespace gamemd { int HouseClass::CancelProduction(void* a1, int a2, int a3, int a4) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HouseClass::CancelProduction(void *a1, BuildingTypeClass *aP2, char a4, IUnknown *aP4)
 {
   BuildingTypeClass *v5; // ebx
   IUnknown *v7; // edi
@@ -5313,7 +5301,6 @@ LABEL_31:
 // 0x4FB0E0
 namespace gamemd { int HouseClass::CompleteProduction(void* a1, int a2, int a3, int a4) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HouseClass::CompleteProduction(int this, void *a1, BuildingTypeClass *aP2, char aP4, int aP4_4)
 {
   void *v6; // esi
   int v7; // ecx
@@ -5640,7 +5627,6 @@ namespace gamemd { int HouseClass::ProcessPromotionSound(void* a1) {
 // 0x4FC0B0
 namespace gamemd { int HouseClass::DefeatPlayer() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HouseClass::DefeatPlayer(int this)
 {
   CellStruct *v4; // eax
   IUnknown *v5; // eax
@@ -5681,7 +5667,7 @@ void HouseClass::DefeatPlayer(int this)
   this->defeated = 1; /*0x4fc0c2*/
   if ( v2 == *(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 5172) ) /*0x4fc0d5*/
   {
-    char v3 = this->currentPlayer; /*0x4fc0dd*/
+    bool v3 = this->currentPlayer; /*0x4fc0dd*/
     if ( !*(_DWORD *)&HouseClass_Player[29932] ) /*0x4fc0e5*/
       v3 = v3 || this->playerControl; /*0x4fc0f9*/
     if ( !v3 /*0x4fc10b*/
@@ -5992,7 +5978,6 @@ namespace gamemd { int HouseClass::ClearLowPowerTargets() {
 // 0x4FC9E0
 namespace gamemd { int HouseClass::CheckWinCondition(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HouseClass_CheckWinCondition(int this, char a2)
 {
   wchar_t *v3; // esi
   wchar_t **v8; // eax
@@ -6088,7 +6073,6 @@ LABEL_29:
 // 0x4FCBD0
 namespace gamemd { int HouseClass::CheckDefeat(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HouseClass_CheckDefeat(int this, char a2)
 {
   char result; // al
   wchar_t *v6; // esi
@@ -6100,7 +6084,7 @@ void HouseClass_CheckDefeat(int this, char a2)
   wchar_t *v20; // [esp+4h] [ebp-10h] BYREF
   wchar_t *v22; // [esp+Ch] [ebp-8h]
   int v23 = 0; /*0x4fcbd6*/
-  char v3 = this->isGameOver; /*0x4fcbde*/
+  bool v3 = this->isGameOver; /*0x4fcbde*/
   this->isWinner = 0; /*0x4fcbe4*/
   bool v4 = v3 == 0; /*0x4fcbeb*/
   result = this->isLoser; /*0x4fcbed*/
@@ -6209,7 +6193,6 @@ namespace gamemd { double HouseClass::GetPowerRatio() {
 // 0x4FD060
 namespace gamemd { int HouseClass::FindBuildingOfType(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HouseClass::FindBuildingOfType(DynamicVector *aP1, int a3)
 {
   BuildingTypeClass *v5; // edi
   ObjectClass *v8; // ecx
@@ -6263,7 +6246,6 @@ LABEL_15:
 // 0x4FDD10
 namespace gamemd { int HouseClass::ManageProduction(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HouseClass::ManageProduction(int this, int a2)
 {
   int v9; // eax
   int v10; // eax
@@ -6726,7 +6708,6 @@ LABEL_97:
 // 0x4FE3E0
 namespace gamemd { int HouseClass::AutoBuild() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HouseClass_AutoBuild(int this)
 {
   int v57; // edi
   int v58; // ecx
@@ -7097,7 +7078,6 @@ LABEL_78:
 // 0x4FEA60
 namespace gamemd { int HouseClass::AIUnitProduction() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HouseClass::AIUnitProduction()
 {
   HouseClass *v1; // ebp
   _DWORD *BuildableFromArray; // eax
@@ -7851,7 +7831,6 @@ namespace gamemd { int HouseClass::LoadTypeList() {
 // 0x500B40
 namespace gamemd { int HouseClass::ReadFromINI(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HouseClass_ReadFromINI(int this, unsigned __int8 ***a2)
 {
   unsigned __int8 ***v3; // esi
   char Bool_Overwrite; // al
@@ -8084,7 +8063,6 @@ namespace gamemd { int HouseClass::SaveToINI(void* a1) {
 // 0x5018C0
 namespace gamemd { int HouseClass::NotifyPowerStateChange(int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_5018C0(_DWORD *this, int a2)
 {
   char result; // al
 
@@ -8138,7 +8116,6 @@ LABEL_13:
 // 0x501AC0
 namespace gamemd { void* HouseClass::GenerateAttackCoords(void* a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall HouseClass::GenerateAttackCoords(int *this, MouseClass *aP1, int a3)
 {
   ScenarioClass *v5; // esi
   AbstractClass *StartCoords; // edi
@@ -8352,7 +8329,6 @@ LABEL_23:
 // 0x5025F0
 namespace gamemd { void* HouseClass::RegisterGain(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall HouseClass::RegisterGain(int this, TechnoClass *aP1, char a3)
 {
   _DWORD *result; // eax
   BuildingTypeClass *v14; // ebx
@@ -8772,7 +8748,6 @@ namespace gamemd { int HouseClass::EnsurePlanningPathExists(int a1) {
 // 0x5051E0
 namespace gamemd { void* HouseClass::FirstBuildableFromArray(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall HouseClass::FirstBuildableFromArray(_DWORD *this, AbstractClass *aP1)
 {
   int uniqueId; // esi
   AbstractClass *v6; // eax
@@ -8840,7 +8815,6 @@ LABEL_16:
 // 0x5054B0
 namespace gamemd { void HouseClass::GenerateAIBuildListEnsureSanity() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HouseClass::GenerateAIBuildListEnsureSanity()
 {
   VectorClass *v2; // eax
   VectorClass *v6; // edx
@@ -9428,12 +9402,6 @@ LABEL_171:
 // 0x5060B0
 namespace gamemd { void* HouseClass::ScanBuildLocation(void* a1, int a2, void* a3, int a4) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int *__thiscall HouseClass::ScanBuildLocation(
-        int this,
-        VectorClass *aP1,
-        VectorClass *aP2,
-        int (__fastcall *a4)(int, int *, int, int),
-        int a5)
 {
   HouseClass *BuildableFromArray; // eax
   MouseClass *v8; // esi
@@ -9902,7 +9870,6 @@ LABEL_71:
 // 0x506B90
 namespace gamemd { void* HouseClass::FindBestProductionBuilding(void* a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_506B90(void *this, _DWORD *a2, int a3)
 {
   int IndexByName; // eax
 
@@ -10207,7 +10174,6 @@ namespace gamemd { int HouseClass::CollectAircraftBuildCandidates(int a1, int a2
 // 0x508150
 namespace gamemd { int HouseClass::ComputePowerDistribution() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_508150(float *this)
 {
   int result; // eax
 
@@ -10247,7 +10213,6 @@ LABEL_3:
 // 0x5082C0
 namespace gamemd { void HouseClass::FindAutoBuildLocation() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HouseClass_FindAutoBuildLocation(_DWORD *this)
 {
   __int16 *v6; // esi
   __int16 v12; // dx
@@ -10651,7 +10616,6 @@ LABEL_58:
 // 0x508F60
 namespace gamemd { int HouseClass::ToggleGapGeneratorReveal() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HouseClass::ToggleGapGeneratorReveal(int this)
 {
   int v5; // ecx
   char result; // al
@@ -10717,7 +10681,6 @@ LABEL_16:
 // 0x509140
 namespace gamemd { int HouseClass::UpdateProduction(int a1, int a2, int a3) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HouseClass::UpdateProduction(int this, IUnknown *aP1, AbstractClass *aP2, int a4)
 {
   int result; // eax
   int i; // edi
@@ -10916,7 +10879,6 @@ namespace gamemd { int HouseClass::UpdateFogVisibility() {
 // 0x509700
 namespace gamemd { int HouseClass::UpdateBuildState(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HouseClass::UpdateBuildState(int this, BuildingTypeClass *aP1)
 {
   AbstractClass *v4; // ecx
   char v5; // bl
@@ -11581,7 +11543,6 @@ namespace gamemd { int HouseClass::RecordCratePlacement(void* a1) {
 // 0x50A5C0
 namespace gamemd { int HouseClass::AIBuildBase() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HouseClass::AIBuildBase(#375 *this)
 {
   wchar_t *StringCSF; // eax
   CCINIClass *v5; // eax
@@ -12057,7 +12018,6 @@ LABEL_119:
 // 0x50B370
 namespace gamemd { int HouseClass::ShouldDisableCameo(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HouseClass::ShouldDisableCameo(int a2)
 {
   int i; // ebx
   RulesClass *v19; // eax
@@ -12314,7 +12274,6 @@ namespace gamemd { int HouseClass::FindByName() {
 // 0x50C210
 namespace gamemd { void HouseClass::SetPrimaryTechBuilding() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_50C210(int this)
 {
   int *i; // ebx
 
@@ -12350,7 +12309,7 @@ LABEL_9:
   int v10; // [esp+10h] [ebp-14h]
       LOWORD(v10) = *v7 / 256; /*0x50c2a2*/
       HIWORD(v10) = v7[1] / 256; /*0x50c2b5*/
-      char v8 = this->currentPlayer; /*0x50c2be*/
+      bool v8 = this->currentPlayer; /*0x50c2be*/
       this->baseSpawnCell = v10; /*0x50c2c4*/
       if ( !g_GameMode_Current[0] ) /*0x50c2d2*/
         v8 = v8 || this->playerControl; /*0x50c2e6*/
@@ -12373,7 +12332,6 @@ LABEL_9:
 // 0x50C340
 namespace gamemd { int HouseClass::FindBuildLocation(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HouseClass_FindBuildLocation(int this, int a2)
 {
   int FoundationWidth; // ebp
   int FoundationHeight; // eax
@@ -12623,7 +12581,6 @@ namespace gamemd { int HouseClass::NotifyImpactWater() {
 // 0x50CBF0
 namespace gamemd { void* HouseClass::FindSWBuilding(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall HouseClass::FindSWBuilding(_DWORD *this, HouseClass *aP1)
 {
   HouseClass *v2; // edi
   FactoryClass *v7; // edi
@@ -12901,7 +12858,6 @@ LABEL_87:
 // 0x50D170
 namespace gamemd { void* HouseClass::FindSWTarget(void* aP1, int aP2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall HouseClass::FindSWTarget(void *this, HouseClass *aP1, HouseClass *aP2)
 {
   int SuperWeaponTypeFlag; // ebx
   CCINIClass *v6; // edx
@@ -13034,7 +12990,6 @@ namespace gamemd { int HouseClass::SetMapSeed(int a1) {
 // 0x50E280
 namespace gamemd { void HouseClass::ReactivateTechnos(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_50E280(int this, int a2)
 {
 
   if ( a2 ) /*0x50e28b*/
@@ -13679,7 +13634,6 @@ namespace gamemd { int HouseClass::RouteFactoryRemoval(int a1, int a2, void* a3)
 // 0x6ABB60
 namespace gamemd { int HouseClass::RemoveFromProductionQueue(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_6ABB60(int this, _DWORD *a2)
 {
   HouseClass *v3; // esi
   int Type; // eax
@@ -13914,7 +13868,6 @@ namespace gamemd { int HouseClass::GetMaxBuildLevel() {
 // 0x6EB870
 namespace gamemd { int HouseClass::EvaluateTarget() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HouseClass_EvaluateTarget(int this)
 {
 
   char v2 = 1; /*0x6eb878*/
@@ -14026,7 +13979,6 @@ namespace gamemd { void* HouseClass::FindBestBuildingToRepair() {
 // 0x6ED770
 namespace gamemd { int HouseClass::CheckDefeated(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_6ED770(int this, int a2, char a3)
 {
   int result; // eax
 

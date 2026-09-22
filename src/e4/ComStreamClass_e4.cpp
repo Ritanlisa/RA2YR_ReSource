@@ -6,10 +6,9 @@
 #include "e4/classes/String_e4.hpp"
 
 // 0x7A3D90
-int ComStreamClass::Write()
+void ComStreamClass::Write()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ComStreamClass::Write()
 {
   HWND v1; // esi
   HWND DlgItem; // ebx
@@ -134,10 +133,9 @@ LABEL_16:
 }
 
 // 0x7AC820
-LONG ComStreamClass::Release()
+void ComStreamClass::Release()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-LONG __thiscall ComStreamClass::Release(CComObject_VCNetUtilEventSink___ATL *this)
 {
   LONG v1; // ebx
   char *Block; // [esp+14h] [ebp+4h]
@@ -156,10 +154,9 @@ LONG __thiscall ComStreamClass::Release(CComObject_VCNetUtilEventSink___ATL *thi
 }
 
 // 0x7AC870
-int ComStreamClass::QueryInterface()
+void ComStreamClass::QueryInterface()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ComStreamClass::QueryInterface()
 {
   _UNKNOWN **v1; // esi
   int result; // eax
@@ -212,7 +209,6 @@ LABEL_17:
 void ComStreamClass::readData()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_7AE0E0(_DWORD *this)
 {
 
   if ( (unsigned char)this->ComStreamClass_field_0x14 != 1 ) /*0x7ae0e8*/
@@ -263,7 +259,6 @@ void sub_7AE0E0(_DWORD *this)
 void ComStreamClass::flushStream()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_7AEF50(_DWORD *this)
 {
 
   unsigned int v2 = this->q008; /*0x7aef55*/
@@ -314,7 +309,6 @@ void sub_7AEF50(_DWORD *this)
 unsigned int * ComStreamClass::seekToPosition()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_7B0220(int *this)
 {
 
   ComPtr::Set(&stru_B77F58, this->q004); /*0x7b022f*/
@@ -334,7 +328,6 @@ _DWORD *__thiscall sub_7B0220(int *this)
 unsigned int * ComStreamClass::getStreamSize()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_7B02A0(int *this)
 {
 
   ComPtr::Set(&stru_B77F70, this->q004); /*0x7b02af*/

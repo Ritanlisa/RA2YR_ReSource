@@ -25,7 +25,6 @@ namespace gamemd {
 bool sub_46D650()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool sub_46D650()
 {
   HWND v1; // eax
   HWND DlgItem; // eax
@@ -104,10 +103,9 @@ bool sub_46D650()
 
 // 0x46D8B0
 namespace gamemd {
-char sub_46D8B0()
+void sub_46D8B0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_46D8B0()
 {
   const wchar_t **v2; // esi
   int PlayerSide; // eax
@@ -186,7 +184,6 @@ namespace gamemd {
 void sub_46DA70()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_46DA70()
 {
   size_t v3; // ebp
   int Count; // ebp
@@ -260,10 +257,9 @@ void sub_46DA70()
 
 // 0x46DCC0
 namespace gamemd {
-BOOL sub_46DCC0(HWND hDlg, bool a2)
+void sub_46DCC0(HWND hDlg, bool a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __fastcall sub_46DCC0(HWND hDlg, bool a2)
 {
   int i; // edi
   BOOL result; // eax
@@ -304,10 +300,9 @@ BOOL __fastcall sub_46DCC0(HWND hDlg, bool a2)
 
 // 0x46DD70
 namespace gamemd {
-HWND EnableGameModeControls(HWND hDlg, bool a2)
+void EnableGameModeControls(HWND hDlg, bool a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-HWND __fastcall EnableGameModeControls(HWND hDlg, bool a2)
 {
   HWND DlgItem; // eax
   int ResourceID2CSF; // eax
@@ -352,10 +347,9 @@ HWND __fastcall EnableGameModeControls(HWND hDlg, bool a2)
 
 // 0x46DE20
 namespace gamemd {
-HWND sub_46DE20(HWND hDlg, int nCmdShow)
+void sub_46DE20(HWND hDlg, int nCmdShow)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-HWND __fastcall sub_46DE20(HWND hDlg, int nCmdShow)
 {
   HWND DlgItem; // eax
   HWND v5; // eax
@@ -1178,10 +1172,9 @@ int sub_46D310()
 
 // 0x46D480
 namespace gamemd {
-int sub_46D480()
+void sub_46D480()
  {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-__int64 __usercall sub_46D480@<edx:eax>(__int64 result@<edx:eax>, int a2@<ecx>)
 {
   *((_BYTE *)&g_GameModeOptionState + a2) = BYTE4(result); /*0x46d480*/
   return result; /*0x46d486*/

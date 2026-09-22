@@ -8,7 +8,6 @@ namespace gamemd {
 char TriggerClass::FindByEventType(char a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall sub_610950(char a1)
 {
   size_t v7; // eax
   __int128 v8; // [esp+28h] [ebp-20h] BYREF
@@ -78,10 +77,9 @@ char __fastcall sub_610950(char a1)
 
 // 0x71FA30
 namespace gamemd {
-int TriggerClass::GetValue()
+void TriggerClass::GetValue()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_71FA30(_DWORD *this)
 {
   return this->q054; /*0x71fa33*/
 }
@@ -90,10 +88,9 @@ void sub_71FA30(_DWORD *this)
 
 // 0x7264C0
 namespace gamemd {
-char TriggerClass::RegisterEvent(TriggerClass * aP1, TechnoClass * aP2, char a4, char a5, int a6)
+void TriggerClass::RegisterEvent(TriggerClass * aP1, TechnoClass * aP2, char a4, char a5, int a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TriggerClass::RegisterEvent(int this, TriggerClass *aP1, TechnoClass *aP2, char a4, char a5, int a6)
 {
   int Owner; // eax
 

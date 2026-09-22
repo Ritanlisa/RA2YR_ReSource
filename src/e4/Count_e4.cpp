@@ -3,10 +3,9 @@
 #include "e4/e4_globals.hpp"
 
 // 0x408E70
-int Count::DecrementRefCountsAudio()
+void Count::DecrementRefCountsAudio()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Audio_DecrementRefCounts(_DWORD *this)
 {
   int result; // eax
 
@@ -27,10 +26,9 @@ void Audio_DecrementRefCounts(_DWORD *this)
 }
 
 // 0x46F6D0
-BOOL Count::SetupAllCountriesLobby()
+void Count::SetupAllCountriesLobby()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Lobby_SetupAllCountries(HWND this)
 {
   wchar_t **v2; // esi
   int ResourceID2; // ebp
@@ -107,10 +105,9 @@ void Lobby_SetupAllCountries(HWND this)
 }
 
 // 0x5F1EA0
-int Count::GetCountQueue()
+void Count::GetCountQueue()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Queue_GetCount(_DWORD *this)
 {
 
   int v1 = this->q038; /*0x5f1ea0*/
@@ -122,10 +119,9 @@ void Queue_GetCount(_DWORD *this)
 }
 
 // 0x76F080
-int Count::Get()
+void Count::Get()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Count_Get(_DWORD *this)
 {
   return this->q004; /*0x76f083*/
 }
@@ -135,7 +131,6 @@ void Count_Get(_DWORD *this)
 unsigned int * Count::Release()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall Count::_vt02(_DWORD *this)
 {
   ++this->q008; /*0x76f162*/
   return this; /*0x76f165*/
@@ -146,7 +141,6 @@ _DWORD *__thiscall Count::_vt02(_DWORD *this)
 unsigned int * Count::ddtor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall Count::_vt03(_DWORD *this)
 {
   --this->q008; /*0x76f172*/
   return this; /*0x76f175*/

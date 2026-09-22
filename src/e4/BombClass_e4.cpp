@@ -7,10 +7,9 @@
 // 0x4385D0
 namespace ra2 {
 namespace game {
-int BombClass::AbstractClass()
+void BombClass::AbstractClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void BombClass::AbstractClass(int this)
 {
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x4385d4*/
@@ -44,10 +43,9 @@ void BombClass::AbstractClass(int this)
 // 0x438A00
 namespace ra2 {
 namespace game {
-Iostream_init * BombClass::GetCurrentFrame()
+void * BombClass::GetCurrentFrame()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-Iostream_init *__thiscall BombClass::GetCurrentFrame(_DWORD *this)
 {
 
   if ( this->audioController == 1 ) /*0x438a04*/
@@ -67,10 +65,9 @@ Iostream_init *__thiscall BombClass::GetCurrentFrame(_DWORD *this)
 // 0x438A70
 namespace ra2 {
 namespace game {
-bool BombClass::TimeToExplode()
+void BombClass::TimeToExplode()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void BombClass::TimeToExplode(int this)
 {
   return !this->audioController && (int)g_CurrentFrame > this->q038 && !this->BombClass_field_58; /*0x438a8c*/
 }
@@ -81,10 +78,9 @@ void BombClass::TimeToExplode(int this)
 // 0x438A90
 namespace ra2 {
 namespace game {
-int BombClass::Stat(int * a2)
+void BombClass::Stat(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void BombClass::_vt13(int this, int *a2)
 {
 
   AbstractClass::ProcessPower((#378 *)this); /*0x438a99*/

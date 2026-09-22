@@ -7,7 +7,6 @@ namespace gamemd {
 int sub_53AB70()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_53AB70()
 {
 
   char * v0 = (char *)g_ScenarioClass_Instance + 4680; /*0x53ab7b*/

@@ -3,20 +3,18 @@
 #include "e4/e4_globals.hpp"
 
 // 0x69ACC0
-int GameOption::GetField()
+void GameOption::GetField()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void GameOption::GetField(_DWORD **this)
 {
   return *this->q18C; /*0x69acc8*/
 }
 }
 
 // 0x69ACD0
-wchar_t * GameOption::SetDescriptionWStr(CampaignScore * aP1)
+void * GameOption::SetDescriptionWStr(CampaignScore * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-wchar_t *__thiscall GameOption::SetDescriptionWStr(wchar_t *this, CampaignScore *aP1)
 {
   wchar_t *result; // eax
   wchar_t *StringCSF; // eax
@@ -36,10 +34,9 @@ wchar_t *__thiscall GameOption::SetDescriptionWStr(wchar_t *this, CampaignScore 
 }
 
 // 0x69AD80
-char * GameOption::SetDigest(CCINIClass * aP1)
+void * GameOption::SetDigest(CCINIClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall GameOption::SetDigest(char *this, CCINIClass *aP1)
 {
   char *result; // eax
 

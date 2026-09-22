@@ -11,10 +11,9 @@
 
 // 0x48B720
 namespace gamemd {
-int Terrain::GetTileIndex(int a2)
+void Terrain::GetTileIndex(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Terrain_GetTileIndex(_DWORD *this, int a2)
 {
   return (*(_DWORD *)(this->q024 + 36 * *(_DWORD *)(this->q030 + 4 * a2)) & 1) != 0
        ? this->q024 + 36 * *(_DWORD *)(this->q030 + 4 * a2)
@@ -25,10 +24,9 @@ void Terrain_GetTileIndex(_DWORD *this, int a2)
 
 // 0x48B9E0
 namespace gamemd {
-int Terrain::GetTileType(AnimClass * aP1)
+void Terrain::GetTileType(AnimClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Terrain::GetTileType(AnimClass *aP1)
 {
   return (*(_DWORD *)(this->q034 + 24 * *(_DWORD *)(this->q040 + 4 * (_DWORD)aP1)) & 1) != 0
        ? this->q034 + 24 * *(_DWORD *)(this->q040 + 4 * (_DWORD)aP1)
@@ -42,7 +40,6 @@ namespace gamemd {
 void Terrain::PlaceCliffs(int a2, int a3, IUnknown * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Terrain::PlaceCliffs(int a2, int a3, IUnknown *aP3)
 {
   ObjectClass *v6; // eax
   AbstractClass *v7; // edi
@@ -462,10 +459,9 @@ LABEL_44:
 
 // 0x56C510
 namespace gamemd {
-int Terrain::ConnectivityGraph()
+void Terrain::ConnectivityGraph()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Terrain::ConnectivityGraph()
 {
   _DWORD *nextArrayIndex; // ebp
   void **v7; // esi
@@ -914,10 +910,9 @@ LABEL_48:
 
 // 0x56CB90
 namespace gamemd {
-int Terrain::FloodFillConnectivity(unsigned char * a1, IUnknown * aP2, AbstractClass * aP3)
+void Terrain::FloodFillConnectivity(unsigned char * a1, IUnknown * aP2, AbstractClass * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Terrain::FloodFillConnectivity(int this, unsigned __int8 *a1, IUnknown *aP2, AbstractClass *aP3)
 {
   unsigned __int8 *v4; // ebx
   unsigned __int8 *v6; // ebp
@@ -1278,7 +1273,6 @@ namespace gamemd {
 void Terrain::ProcessCellModification(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Terrain::ProcessCellModification(IUnknown *aP1)
 {
   IUnknown *v2; // ebp
   IUnknown *v3; // edi
@@ -1759,7 +1753,6 @@ namespace gamemd {
 void Terrain::RecursiveModify(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Terrain::RecursiveModify(IUnknown *aP1)
 {
   IUnknown *v2; // ebx
   IUnknown *v3; // edi
@@ -2261,10 +2254,9 @@ LABEL_141:
 
 // 0x576770
 namespace gamemd {
-char Terrain::CreateCrater(IUnknown * aP1)
+void Terrain::CreateCrater(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Terrain::CreateCrater(IUnknown *aP1)
 {
   IUnknown *v2; // edi
   int i; // ebx
@@ -2463,10 +2455,9 @@ LABEL_64:
 
 // 0x579620
 namespace gamemd {
-bool Terrain::SelectTileType(Random * aP0, IUnknown * aP1)
+void Terrain::SelectTileType(Random * aP0, IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Terrain::SelectTileType(Random *aP0, IUnknown *aP1)
 {
   ObjectClass *v2; // eax
   Random *v3; // ebp
@@ -2712,7 +2703,6 @@ namespace gamemd {
 void Terrain::PlaceTiberiumTrees(ScenarioClass * aP0, int a2, int a3, char a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Terrain::PlaceTiberiumTrees(ScenarioClass *aP0, int a2, int a3, char a4)
 {
   __int16 *v4; // ebx
   AbstractClass *v8; // esi

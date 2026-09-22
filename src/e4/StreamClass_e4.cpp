@@ -3,10 +3,9 @@
 #include "e4/e4_globals.hpp"
 
 // 0x411310
-int StreamClass::WriteBytes(unsigned short a2, char a3, int a4, int a5, int a6)
+void StreamClass::WriteBytes(unsigned short a2, char a3, int a4, int a5, int a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void StreamClass_WriteBytes(_DWORD **this, unsigned __int16 a2, char a3, int a4, int a5, int a6)
 {
   return (*(int (__thiscall **)(_DWORD, char *, _DWORD))(*this->q014 + 20))(this->q014, &a3, a2); /*0x411328*/
 }
@@ -16,7 +15,6 @@ void StreamClass_WriteBytes(_DWORD **this, unsigned __int16 a2, char a3, int a4,
 unsigned int StreamClass::ReadAndSeek(MouseClass * aP1, MouseClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void StreamClass::ReadAndSeek(int this, MouseClass *aP1, MouseClass *aP2)
 {
   unsigned int result; // eax
 
@@ -34,10 +32,9 @@ void StreamClass::ReadAndSeek(int this, MouseClass *aP1, MouseClass *aP2)
 }
 
 // 0x45AEA0
-int StreamClass::Set2(unsigned int * a2)
+void StreamClass::Set2(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void StreamClass_Set2(_DWORD *this, _DWORD *a2)
 {
 
   if ( *a2 ) /*0x45aea8*/
@@ -73,10 +70,9 @@ void StreamClass_Set2(_DWORD *this, _DWORD *a2)
 }
 
 // 0x45AF20
-int StreamClass::Set(IUnknown * aP1)
+void StreamClass::Set(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void StreamClass::Set(IUnknown *aP1)
 {
   IUnknown *v5; // ebx
   if ( aP1->field_0 ) /*0x45af28*/

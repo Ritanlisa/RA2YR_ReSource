@@ -18,7 +18,6 @@
 // 0x41DB40
 namespace gamemd { int WTFMode::ResetUnitFlags() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void WTFMode_ResetUnitFlags(int this)
 {
 
   _DWORD *v1; // eax
@@ -319,7 +318,6 @@ namespace gamemd { int Stream::WriteBlock(int a1, int a2, int a3) {
 // 0x5F1C60
 namespace gamemd { int Stream::ReadPacket() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Stream_ReadPacket(int this)
 {
 
   if ( !this->q03C ) /*0x5f1c69*/

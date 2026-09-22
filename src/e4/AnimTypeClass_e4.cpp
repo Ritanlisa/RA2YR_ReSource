@@ -12,7 +12,6 @@ namespace gamemd {
 unsigned int * AnimTypeClass::Construct2(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall AnimTypeClass::Construct2(_DWORD *this, ObjectClass *aP1)
 {
   AITriggerTypeClass *v3; // eax
   AbstractTypeClass::Constructor((int)this, (AbstractClass *)aP1); /*0x41e359*/
@@ -65,7 +64,6 @@ namespace gamemd {
 unsigned int * AnimTypeClass::Construct(AbstractClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall AnimTypeClass::Construct(_DWORD *this, AbstractClass *aP1)
 {
   AnimTypeClass *v3; // eax
   ObjectClass *v6; // ecx
@@ -206,10 +204,9 @@ LABEL_17:
 
 // 0x427B50
 namespace gamemd {
-char AnimTypeClass::GetWarhead(int a2)
+void AnimTypeClass::GetWarhead(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void AnimTypeClass::_vt40(int this, int a2)
 {
   char Buffer[512]; // [esp+4h] [ebp-200h] BYREF
 
@@ -253,7 +250,7 @@ void AnimTypeClass::_vt40(int this, int a2)
     if ( !v7 ) /*0x427c2b*/
     {
       int v8 = *(__int16 *)(v6 + 6); /*0x427c2d*/
-      char v9 = this->Shadow; /*0x427c31*/
+      bool v9 = this->Shadow; /*0x427c31*/
       this->End = v8; /*0x427c37*/
       if ( v9 ) /*0x427c3f*/
         this->End = v8 / 2; /*0x427c46*/
@@ -272,10 +269,9 @@ void AnimTypeClass::_vt40(int this, int a2)
 
 // 0x427D00
 namespace gamemd {
-char AnimTypeClass::LoadFromINI(unsigned char *** a2)
+void AnimTypeClass::LoadFromINI(unsigned char *** a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void AnimTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
 {
   char Bool_Overwrite; // al
   int Int_Overwrite; // eax
@@ -303,7 +299,7 @@ void AnimTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
   AnimTypeClass *v49; // eax
   WarheadTypeClass *v54; // eax
   char v55; // al
-  char v56; // cl
+  bool v56; // cl
   char v57; // al
   int *v58; // eax
   int v59; // ecx
@@ -317,7 +313,7 @@ void AnimTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
   RandomStruct *v66; // [esp-Ch] [ebp-C4h]
   RandomStruct *v67; // [esp-Ch] [ebp-C4h]
   char _FFFFFFF4b; // [esp-Ch] [ebp-C4h]
-  char v71; // [esp-Ch] [ebp-C4h]
+  bool v71; // [esp-Ch] [ebp-C4h]
   ObjectClass *v70; // [esp+8h] [ebp-B0h] BYREF
   int aP4_4; // [esp+Ch] [ebp-ACh]
   RandomStruct aP1; // [esp+10h] [ebp-A8h] BYREF
@@ -580,7 +576,7 @@ void AnimTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
                               &unk_8184BC,
                               (INIClass *)v65);
   char v23 = INIClass::ReadBool_Overwrite((int)a2, (unsigned __int8 *)(this + 36), &unk_8184B0, this->IsMeteor);
-  char v24 = this->IsVeins;
+  bool v24 = this->IsVeins;
   this->IsMeteor = v23;
   char v25 = INIClass::ReadBool_Overwrite((int)a2, (unsigned __int8 *)(this + 36), &unk_8184A8, v24);
   v64 = this->TiberiumSpreadRadius;
@@ -602,7 +598,7 @@ void AnimTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
   {
     v28 = v27;
   }
-  char v29 = this->IsAnimatedTiberium;
+  bool v29 = this->IsAnimatedTiberium;
   this->TiberiumSpawnType = v28;
   char v30; // al
   v30 = INIClass::ReadBool_Overwrite(
@@ -889,10 +885,9 @@ LABEL_70:
 
 // 0x428800
 namespace gamemd {
-int AnimTypeClass::SaveLoad_Prefix(int a1, int a2)
+void AnimTypeClass::SaveLoad_Prefix(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void AnimTypeClass::SaveLoad_Prefix(int a1, int a2)
 {
   int result; // eax
   char Buffer[512]; // [esp+8h] [ebp-200h] BYREF
@@ -943,10 +938,9 @@ void AnimTypeClass::SaveLoad_Prefix(int a1, int a2)
 
 // 0x4289D0
 namespace gamemd {
-int AnimTypeClass::PowerDrainUpdate(int * a2)
+void AnimTypeClass::PowerDrainUpdate(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void AnimTypeClass::_vt13(int this, int *a2)
 {
 
   AbstractTypeClass::ProcessPower((char *)this, a2); /*0x4289d9*/
@@ -1005,10 +999,9 @@ void AnimTypeClass::_vt13(int this, int *a2)
 
 // 0x428B80
 namespace gamemd {
-AnimTypeClass * AnimTypeClass::FindOrCreate()
+void * AnimTypeClass::FindOrCreate()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-AnimTypeClass *__thiscall AnimTypeClass::FindOrCreate(AbstractClass *this)
 {
 
   if ( !_strcmpi(&stru_817460.sectionHead[1], this) || !_strcmpi(g_Str_none, this) ) /*0x428b9c*/
@@ -1034,10 +1027,9 @@ LABEL_6:
 
 // 0x428C30
 namespace gamemd {
-int AnimTypeClass::GetDamage()
+void AnimTypeClass::GetDamage()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void AnimTypeClass::_vt39()
 {
   int result; // eax
   void *EntireFile; // eax
@@ -1135,10 +1127,9 @@ AnimTypeClass * AnimTypeClass::ddtor(char a2)
 
 // 0x48E050
 namespace gamemd {
-int AnimTypeClass::LookupByName()
+void AnimTypeClass::LookupByName()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void AnimTypeClass::LookupByName()
 {
   const void **v3; // esi
 

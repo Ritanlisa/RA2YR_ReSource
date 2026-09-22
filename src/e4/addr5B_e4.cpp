@@ -46,7 +46,6 @@ namespace gamemd {
 void sub_5B3B10()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_5B3B10()
 {
 
   if ( (DataGlobal_ABF008 & 1) == 0 ) /*0x5b3b1b*/
@@ -103,7 +102,6 @@ namespace gamemd {
 unsigned int * sub_5B3FF0(unsigned int * a1, unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__fastcall sub_5B3FF0(_DWORD *a1, _DWORD *a2)
 {
   _DWORD *result; // eax
 
@@ -123,10 +121,9 @@ _DWORD *__fastcall sub_5B3FF0(_DWORD *a1, _DWORD *a2)
 
 // 0x5B40B0
 namespace gamemd {
-int SearchMIXFile(char * Source, IUnknown * aP1)
+void SearchMIXFile(char * Source, IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall SearchMIXFile(char *Source, IUnknown *aP1)
 {
   int v5; // ecx
   bool v6; // cc
@@ -226,10 +223,9 @@ LABEL_9:
 
 // 0x5B4430
 namespace gamemd {
-char FileInfoCache_Lookup(const char * a1, unsigned int * a2, unsigned int * a3, unsigned int * a4, unsigned int * a5)
+void FileInfoCache_Lookup(const char * a1, unsigned int * a2, unsigned int * a3, unsigned int * a4, unsigned int * a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall FileInfoCache_Lookup(const char *a1, _DWORD *a2, _DWORD *a3, _DWORD *a4, _DWORD *a5)
 {
   int v10; // edx
   int v11; // eax
@@ -307,10 +303,9 @@ LABEL_14:
 
 // 0x5B4B10
 namespace gamemd {
-int GameSetupDialogProc(HWND hWnd, unsigned int a2, unsigned int a3, unsigned int a4)
+void GameSetupDialogProc(HWND hWnd, unsigned int a2, unsigned int a3, unsigned int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void GameSetupDialogProc(HWND hWnd, unsigned int a2, unsigned int a3, unsigned int a4)
 {
   int result; // eax
   LONG WindowLongA; // ebp
@@ -460,10 +455,9 @@ void GameSetupDialogProc(HWND hWnd, unsigned int a2, unsigned int a3, unsigned i
 
 // 0x5B67F0
 namespace gamemd {
-char ApplyGameOptions(CampaignScore * aP0)
+void ApplyGameOptions(CampaignScore * aP0)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ApplyGameOptions(CampaignScore *aP0)
 {
   ObjectClass *v5; // edx
   const wchar_t *v11; // esi
@@ -584,7 +578,6 @@ namespace gamemd {
 void __usercall GenerateRandomMapPreview(int a1@<esi> a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __usercall GenerateRandomMapPreview(int a1@<esi>)
 {
   int *Palette; // esi
   DWORD v6; // esi
@@ -685,10 +678,9 @@ LABEL_15:
 
 // 0x5BC6E0
 namespace gamemd {
-INT_PTR AudioDebug_DlgProc(HWND hWnd, UINT a2, WPARAM a3, LPARAM a4)
+void AudioDebug_DlgProc(HWND hWnd, UINT a2, WPARAM a3, LPARAM a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-INT_PTR __stdcall AudioDebug_DlgProc(HWND hWnd, UINT a2, WPARAM a3, LPARAM a4)
 {
   int Index; // eax
   void *Enabled; // eax
@@ -912,10 +904,9 @@ LABEL_15:
 
 // 0x5BCE10
 namespace gamemd {
-char E4Recv_5BCE10::sub_5BCE10(int a2)
+void E4Recv_5BCE10::sub_5BCE10(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_5BCE10(int *this, int a2)
 {
   char result; // al
 
@@ -1010,10 +1001,9 @@ void sub_5BCE10(int *this, int a2)
 
 // 0x5BDC00
 namespace gamemd {
-int * sub_5BDC00(int * a1, int a2)
+void * sub_5BDC00(int * a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int *__stdcall sub_5BDC00(int *a1, int a2)
 {
 
   int v2 = 0; /*0x5bdc17*/
@@ -1040,7 +1030,6 @@ namespace gamemd {
 void sub_5BF390(int a1, char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall sub_5BF390(int a1, char a2)
 {
 
   if ( a1 >= 0 && a1 < DataGlobal_ABF3A0 ) /*0x5bf3a2*/
@@ -1075,10 +1064,9 @@ void __fastcall sub_5BF390(int a1, char a2)
 
 // 0x5BF8C0
 namespace gamemd {
-char sub_5BF8C0()
+void sub_5BF8C0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_5BF8C0()
 {
   char result; // al
   struct tagRECT Rect; // [esp+10h] [ebp-10h] BYREF
@@ -1111,10 +1099,9 @@ void sub_5BF8C0()
 
 // 0x5BF950
 namespace gamemd {
-int sub_5BF950()
+void sub_5BF950()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __usercall sub_5BF950@<al>(int a1@<ebx>, int a2@<edi>, int a3@<esi>)
 {
   char result; // al
   struct tagRECT Rect; // [esp+54h] [ebp-14h] BYREF
@@ -1182,22 +1169,9 @@ char __usercall sub_5BF950@<al>(int a1@<ebx>, int a2@<edi>, int a3@<esi>)
 
 // 0x5BFAA0
 namespace gamemd {
-ObjectClass * LoadVQMovie(char * Source, int * a2, int a3, int a4, IUnknown * a5, int a6, int a7, int a8, IUnknown * a9, int a10, int a11, char a12)
+void * LoadVQMovie(char * Source, int * a2, int a3, int a4, IUnknown * a5, int a6, int a7, int a8, IUnknown * a9, int a10, int a11, char a12)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-ObjectClass *__fastcall LoadVQMovie(
-        char *Source,
-        int *a2,
-        int a3,
-        int a4,
-        IUnknown *a5,
-        int a6,
-        int a7,
-        int a8,
-        IUnknown *a9,
-        int a10,
-        int a11,
-        char a12)
 {
   ObjectClass *v15; // esi
   CCFileClass *v16; // eax
@@ -1392,10 +1366,9 @@ LABEL_47:
 
 // 0x5BFF60
 namespace gamemd {
-char Movie_RenderFrame(int a1, char a2, int a3, char a4)
+void Movie_RenderFrame(int a1, char a2, int a3, char a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall Movie_RenderFrame(int a1, char a2, int a3, char a4)
 {
   char result; // al
 
@@ -3117,7 +3090,6 @@ namespace gamemd {
 int sub_5BC450(int a1)
  {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_5BC450(int a1)
 {
   return DataGlobal_ABF168[a1]; /*0x5bc457*/
 }

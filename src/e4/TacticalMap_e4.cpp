@@ -8,10 +8,9 @@
 #include "e4/classes/Timer_e4.hpp"
 
 // 0x484680
-int TacticalMap::ComputeScreenTint()
+void TacticalMap::ComputeScreenTint()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TacticalMap::ComputeScreenTint(int this)
 {
   __int16 v2; // dx
   __int16 v3; // ax
@@ -95,10 +94,9 @@ void TacticalMap::ComputeScreenTint(int this)
 }
 
 // 0x4F4480
-int TacticalMap::Redraw()
+void TacticalMap::Redraw()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_4F4480(_DWORD *this)
 {
   int result; // eax
 
@@ -144,7 +142,6 @@ void sub_4F4480(_DWORD *this)
 void TacticalMap::MultiplyByScalar(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TacticalMap::MultiplyByScalar(ObjectClass *aP1)
 {
   *this = *(float *)&aP1 * *this; /*0x5aea16*/
   this->TacticalMap_field_04 = *(float *)&aP1 * this->TacticalMap_field_04; /*0x5aea1f*/
@@ -159,10 +156,9 @@ void TacticalMap::MultiplyByScalar(ObjectClass *aP1)
 }
 
 // 0x5D49A0
-char TacticalMap::DrawCursor()
+void TacticalMap::DrawCursor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_5D49A0(_DWORD *this)
 {
   char result; // al
 
@@ -200,10 +196,9 @@ void sub_5D49A0(_DWORD *this)
 }
 
 // 0x6D1C20
-int TacticalMap::Construct()
+void TacticalMap::Construct()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TacticalMap_Constructor(int this)
 {
 
   AbstractClass::Constructor(this); /*0x6d1c25*/
@@ -276,10 +271,9 @@ void TacticalMap_Constructor(int this)
 }
 
 // 0x6D2B60
-int TacticalMap::RenderCell(char arg0, AbstractClass * aP2, int a4, int a2)
+void TacticalMap::RenderCell(char arg0, AbstractClass * aP2, int a4, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TacticalMap::RenderCell(char arg0, AbstractClass *aP2, int a4, int a2)
 {
   IUnknown *v8; // eax
   AbstractClass *v9; // eax
@@ -403,7 +397,7 @@ void TacticalMap::RenderCell(char arg0, AbstractClass *aP2, int a4, int a2)
 
 // 0x6D3D10
 namespace gamemd {
-int TacticalMap_Render()
+void TacticalMap_Render()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // (no pseudocode — ASM-only function)
@@ -755,10 +749,9 @@ LABEL_53:
 }
 
 // 0x6DA180
-int TacticalMap::DrawOccupiedRegion()
+void TacticalMap::DrawOccupiedRegion()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_6DA180(int *this)
 {
   int result; // eax
 
@@ -804,7 +797,6 @@ void sub_6DA180(int *this)
 unsigned int TacticalMap::FillScanlinesOpaque(int a2, int a3, TacticalMap * aP3, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TacticalMap::FillScanlinesOpaque(int this, int a2, int a3, TacticalMap *aP3, int a5)
 {
   TacticalMap *v5; // edi
   unsigned int result; // eax
@@ -866,7 +858,7 @@ void TacticalMap::FillScanlinesOpaque(int this, int a2, int a3, TacticalMap *aP3
         if ( (v23 & 1) != 0 && v12 ) /*0x7bd052*/
           *(_WORD *)v12 = -1; /*0x7bd054*/
         int v14 = (int)v9 - v11; /*0x7bd05f*/
-        _WORD * v15 = this->m_TintFactor; /*0x7bd061*/
+        float v15 = this->m_TintFactor; /*0x7bd061*/
         char v25 = v14; /*0x7bd064*/
         _WORD * v24 = v15; /*0x7bd06b*/
         if ( ((unsigned __int8)v15 & 2) != 0 && v14 ) /*0x7bd073*/

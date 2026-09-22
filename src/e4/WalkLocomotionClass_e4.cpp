@@ -5,10 +5,9 @@
 #include "e4/classes/WalkLocomotion_e4.hpp"
 
 // 0x6A0310
-char WalkLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, long long a4)
+void WalkLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, long long a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void JumpjetLocomotionClass::sub_6A0310(int a1, int a2, unsigned int a3, __int64 a4)
 {
 
   *(_DWORD *)(a1 + 84) = a2; /*0x6a0323*/
@@ -65,10 +64,9 @@ void JumpjetLocomotionClass::sub_6A0310(int a1, int a2, unsigned int a3, __int64
 }
 
 // 0x6A3F50
-bool WalkLocomotionClass::IsAtDestination(int a1, int a2, int a3, int a4)
+void WalkLocomotionClass::IsAtDestination(int a1, int a2, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void JumpjetLocomotionClass::sub_6A3F50(int a1, int a2, int a3, int a4)
 {
 
   int v4 = a1; /*0x6a3f55*/

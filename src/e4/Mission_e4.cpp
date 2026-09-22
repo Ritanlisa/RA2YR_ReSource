@@ -8,7 +8,6 @@ namespace gamemd {
 int Mission::ExecuteTechnoMissionAction()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int TechnoClass_MissionAction(_DWORD *this)
 {
   void **v4; // ebp
   int result; // eax
@@ -184,7 +183,6 @@ namespace gamemd {
 char Mission::ProcessUnitMissionAI()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char ProcessUnitMissionAI(_DWORD *this)
 {
   int (__stdcall ***v12)(_DWORD, void *, int *); // eax
   int v17; // eax
@@ -344,10 +342,9 @@ LABEL_55:
 
 // 0x5BDA80
 namespace gamemd {
-int Mission::SetAndCall(IUnknown * aP1, IUnknown * aP2)
+void Mission::SetAndCall(IUnknown * aP1, IUnknown * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Mission::SetAndCall(IUnknown *aP1, IUnknown *aP2)
 {
 
   int v3 = *this; /*0x5bda84*/
@@ -362,7 +359,6 @@ namespace gamemd {
 char Mission::AssignTeamMemberMissions(ScriptClass * aP1, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char Mission::AssignTeamMemberMissions(int this, ScriptClass *aP1, int a3)
 {
   ScriptClass *v3; // eax
   ScriptClass *v4; // ebx
@@ -489,7 +485,6 @@ namespace gamemd {
 int Mission::GetMissionDelay()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_70F770(_DWORD *this)
 {
   int result; // eax
 

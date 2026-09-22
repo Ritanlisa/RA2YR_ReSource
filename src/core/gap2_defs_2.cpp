@@ -524,7 +524,6 @@ namespace gamemd { int COMObject::ValidatePtr() {
 // 0x69B8C0
 namespace gamemd { void Player::RandomAssign() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Player_RandomAssign(_DWORD *this)
 {
   int i; // ebx
 

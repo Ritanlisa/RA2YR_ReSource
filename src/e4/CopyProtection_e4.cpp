@@ -7,7 +7,6 @@
 bool CopyProtection::CheckLauncher()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool CopyProtection_CheckLauncher()
 {
   HANDLE MutexA; // esi
 
@@ -25,7 +24,6 @@ bool CopyProtection_CheckLauncher()
 char CopyProtection::NotifyLauncher()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char CopyProtection_NotifyLauncher()
 {
   DWORD v0; // edi
   HANDLE v1; // esi

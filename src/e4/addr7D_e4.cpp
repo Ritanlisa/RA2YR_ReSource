@@ -13,10 +13,9 @@
 
 // 0x7D038F
 namespace gamemd {
-int __sbh_heap_check()
+void __sbh_heap_check()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __sbh_heap_check()
 {
   LPVOID lp; // [esp+13Ch] [ebp-Ch]
 
@@ -192,10 +191,9 @@ void __sbh_heap_check()
 
 // 0x7D06BE
 namespace gamemd {
-int int_0x7D06BE(__cdecl *__cdecl __set_new_handler_YAP6AHI_ZP6AHI_Z_Z(int (__cdecl *a1)(unsigned int)))(unsigned int)
+void int_0x7D06BE(__cdecl *__cdecl __set_new_handler_YAP6AHI_ZP6AHI_Z_Z(int (__cdecl *a1)(unsigned int)))(unsigned int)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int (__cdecl *__cdecl __set_new_handler_YAP6AHI_ZP6AHI_Z_Z(int (__cdecl *a1)(unsigned int)))(unsigned int)
 {
   int (__cdecl *v1)(_DWORD); // esi
 
@@ -210,10 +208,9 @@ int (__cdecl *__cdecl __set_new_handler_YAP6AHI_ZP6AHI_Z_Z(int (__cdecl *a1)(uns
 
 // 0x7D0703
 namespace gamemd {
-int _filbuf(MouseClass * aP0)
+void _filbuf(MouseClass * aP0)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void _filbuf(MouseClass *aP0)
 {
   unsigned __int8 *v6; // ecx
   int result; // eax
@@ -271,10 +268,9 @@ void _filbuf(MouseClass *aP0)
 
 // 0x7D0844
 namespace gamemd {
-unsigned int _read_lk(int FileHandle, char * lpBuffer, DWORD nNumberOfBytesToRead)
+void int _read_lk(int FileHandle, char * lpBuffer, DWORD nNumberOfBytesToRead)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void _read_lk(int FileHandle, char *lpBuffer, DWORD nNumberOfBytesToRead)
 {
   DWORD LastError; // eax
   DWORD NumberOfBytesRead; // [esp+Ch] [ebp-Ch] BYREF
@@ -427,7 +423,6 @@ namespace gamemd {
 void * memcpy_0(void * a0, CCINIClass * aP1, AbstractClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void *__cdecl memcpy_0(void *a0, CCINIClass *aP1, AbstractClass *aP2)
 {
   CCINIClass *v3; // esi
   CCINIClass *v4; // edi
@@ -596,10 +591,9 @@ TrailUp3_0:
 
 // 0x7D0DBA
 namespace gamemd {
-int _write_lk(int FileHandle, unsigned char * lpBuffer, DWORD nNumberOfBytesToWrite)
+void _write_lk(int FileHandle, unsigned char * lpBuffer, DWORD nNumberOfBytesToWrite)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void _write_lk(int FileHandle, _BYTE *lpBuffer, DWORD nNumberOfBytesToWrite)
 {
   _BYTE Buffer[1028]; // [esp+Ch] [ebp-414h] BYREF
   DWORD NumberOfBytesWritten; // [esp+414h] [ebp-Ch] BYREF
@@ -689,7 +683,6 @@ namespace gamemd {
 void * realloc(CCINIClass * aP0, size_t Size)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void *__cdecl realloc(CCINIClass *aP0, size_t Size)
 {
   AbstractClass *v3; // esi
   char *block; // eax
@@ -769,10 +762,9 @@ LABEL_22:
 
 // 0x7D10C2
 namespace gamemd {
-int __crtLCMapStringA(CampaignScore * aP0, DWORD dwMapFlags, ObjectClass * aP2, int cchSrc, LPSTR lpDestStr, int cchDest, UINT CodePage, int a8)
+void __crtLCMapStringA(CampaignScore * aP0, DWORD dwMapFlags, ObjectClass * aP2, int cchSrc, LPSTR lpDestStr, int cchDest, UINT CodePage, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __crtLCMapStringA(
         CampaignScore *aP0,
         DWORD dwMapFlags,
         ObjectClass *aP2,
@@ -861,10 +853,9 @@ void __crtLCMapStringA(
 
 // 0x7D1311
 namespace gamemd {
-int _isctype(int C, int Type)
+void _isctype(int C, int Type)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void _isctype(int C, int Type)
 {
   int v3; // eax
   int result; // eax
@@ -900,10 +891,9 @@ void _isctype(int C, int Type)
 
 // 0x7D15A0
 namespace gamemd {
-size_t strlen(const char * Str)
+void strlen(const char * Str)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void strlen(const char *Str)
 {
 
   const char * v1 = Str; /*0x7d15a0*/
@@ -942,10 +932,9 @@ main_loop_2:
 
 // 0x7D170D
 namespace gamemd {
-int _input(FILE * Stream, char * a2, int a3)
+void _input(FILE * Stream, char * a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void _input(FILE *Stream, char *a2, int a3)
 {
   unsigned __int8 v4; // al
   FILE *v5; // edi
@@ -1669,10 +1658,9 @@ LABEL_256:
 
 // 0x7D2132
 namespace gamemd {
-unsigned int _hextodec(int C)
+void int _hextodec(int C)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void _hextodec(int C)
 {
 
   int v1 = C; /*0x7d213c*/
@@ -1689,10 +1677,9 @@ void _hextodec(int C)
 
 // 0x7D21BE
 namespace gamemd {
-int _woutput(FILE * File, CampaignScore * aP1, ObjectClass * aP2)
+void _woutput(FILE * File, CampaignScore * aP1, ObjectClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void _woutput(FILE *File, CampaignScore *aP1, ObjectClass *aP2)
 {
   wchar_t v5; // bx
   int int_arg_0; // eax
@@ -2145,7 +2132,6 @@ namespace gamemd {
 unsigned int * _openfile(char * FileName, unsigned char * a2, int ShareFlag, unsigned int * a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__cdecl _openfile(char *FileName, _BYTE *a2, int ShareFlag, _DWORD *a4)
 {
   unsigned int v6; // ecx
   unsigned int v7; // esi
@@ -2294,7 +2280,6 @@ namespace gamemd {
 unsigned int * _getstream()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *_getstream()
 {
 
   _DWORD * v0 = 0; /*0x7d2dad*/
@@ -2348,10 +2333,9 @@ LABEL_13:
 
 // 0x7D2FC8
 namespace gamemd {
-wchar_t _putwc_lk(wchar_t WCh, FILE * File)
+void _putwc_lk(wchar_t WCh, FILE * File)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-wchar_t __cdecl _putwc_lk(wchar_t WCh, FILE *File)
 {
   FILE *v2; // esi
   bool v6; // sf
@@ -2425,10 +2409,9 @@ LABEL_14:
 
 // 0x7D30D1
 namespace gamemd {
-int _commit(int FileHandle)
+void _commit(int FileHandle)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void _commit(int FileHandle)
 {
   void *osfhandle; // eax
   DWORD LastError; // esi
@@ -2465,10 +2448,9 @@ LABEL_10:
 
 // 0x7D3164
 namespace gamemd {
-UINT _ioinit()
+void _ioinit()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-UINT _ioinit()
 {
   unsigned int i; // eax
   LPBYTE v4; // ebx
@@ -2575,10 +2557,9 @@ LABEL_19:
 
 // 0x7D3320
 namespace gamemd {
-void _ioterm_0()
+void* _ioterm_0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void* _ioterm_0()
 {
   void **v0; // esi
   struct _RTL_CRITICAL_SECTION *v2; // ebx
@@ -2613,10 +2594,9 @@ void* _ioterm_0()
 
 // 0x7D3482
 namespace gamemd {
-int _setmbcp(int CodePage)
+void _setmbcp(int CodePage)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void _setmbcp(int CodePage)
 {
   UINT SystemCP; // eax
   UINT v2; // ebx
@@ -2758,10 +2738,9 @@ LABEL_34:
 
 // 0x7D36AC
 namespace gamemd {
-int setSBCS()
+void* setSBCS()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void* setSBCS()
 {
   memset(&unk_B78960, 0, 0x100u); /*0x7d36b7*/
   unk_B78A60 = 0; /*0x7d36b9*/
@@ -2778,10 +2757,9 @@ void* setSBCS()
 
 // 0x7D36D5
 namespace gamemd {
-unsigned int setSBUpLow()
+void int setSBUpLow()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void setSBUpLow()
 {
   unsigned int i; // eax
   BYTE v1; // al
@@ -2875,10 +2853,9 @@ int _getmbcp()
 
 // 0x7D386A
 namespace gamemd {
-int __initmbctable()
+void* __initmbctable()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void* __initmbctable()
 {
   int result; // eax
 
@@ -2897,7 +2874,6 @@ namespace gamemd {
 unsigned char * _mbsnbcpy(IUnknown * aP0, const unsigned char * Source, size_t Count)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned __int8 *__cdecl _mbsnbcpy(IUnknown *aP0, const unsigned __int8 *Source, size_t Count)
 {
   ObjectClass *v3; // edi
   size_t v5; // edx
@@ -2958,10 +2934,9 @@ LABEL_14:
 
 // 0x7D3920
 namespace gamemd {
-int iswctype(wint_t C, wctype_t Type)
+void iswctype(wint_t C, wctype_t Type)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void iswctype(wint_t C, wctype_t Type)
 {
   WORD v3; // ax
   WORD CharType[2]; // [esp+0h] [ebp-4h] BYREF
@@ -2987,10 +2962,9 @@ void iswctype(wint_t C, wctype_t Type)
 
 // 0x7D3A6D
 namespace gamemd {
-int _winput(FILE * File, CampaignScore * aP1, int a3)
+void _winput(FILE * File, CampaignScore * aP1, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void _winput(FILE *File, CampaignScore *aP1, int a3)
 {
   CampaignScore *v4; // edi
   wint_t v5; // ax
@@ -3701,10 +3675,9 @@ LABEL_252:
 
 // 0x7D453C
 namespace gamemd {
-wint_t _hextodec_0(wint_t C)
+void _hextodec_0(wint_t C)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-wint_t __cdecl _hextodec_0(wint_t C)
 {
   wint_t result; // ax
 
@@ -3731,7 +3704,6 @@ namespace gamemd {
 _crt_signal_t signal(int Signal, _crt_signal_t Function)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_crt_signal_t __cdecl signal(int Signal, _crt_signal_t Function)
 {
   void (__cdecl *v5)(int); // edi
   DWORD LastError; // esi
@@ -3808,10 +3780,9 @@ LABEL_28:
 
 // 0x7D4A10
 namespace gamemd {
-int raise(int Signal)
+void raise(int Signal)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void raise(int Signal)
 {
   void (__cdecl *v2)(_DWORD); // ebx
   int *v3; // edi
@@ -3918,10 +3889,9 @@ LABEL_32:
 
 // 0x7D4C00
 namespace gamemd {
-char * strcat(CCINIClass * aP0, ObjectClass * aP1)
+void * strcat(CCINIClass * aP0, ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__cdecl strcat(CCINIClass *aP0, ObjectClass *aP1)
 {
   CCINIClass *v2; // ecx
   int unknown54; // eax
@@ -4025,10 +3995,9 @@ LABEL_26:
 
 // 0x7D4CE0
 namespace gamemd {
-void __tzset()
+void* __tzset()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void* __tzset()
 {
   if ( !CRTGlobal_B783A8 ) /*0x7d4ce7*/
   {
@@ -4049,7 +4018,6 @@ namespace gamemd {
 void _tzset()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void _tzset()
 {
   _lock(11); /*0x7d4d10*/
   _tzset_lk(); /*0x7d4d15*/
@@ -4060,10 +4028,9 @@ void _tzset()
 
 // 0x7D4D24
 namespace gamemd {
-LPSTR _tzset_lk()
+void* _tzset_lk()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void* _tzset_lk()
 {
   LPSTR result; // eax
   size_t v3; // eax
@@ -4195,10 +4162,9 @@ LABEL_41:
 
 // 0x7D4FCC
 namespace gamemd {
-BOOL _isindst_0(unsigned int * a1)
+void _isindst_0(unsigned int * a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void _isindst_0(_DWORD *a1)
 {
 
   if ( !DataGlobal_87CA64 ) /*0x7d4fd7*/
@@ -4294,10 +4260,9 @@ LABEL_24:
 
 // 0x7D5178
 namespace gamemd {
-int cvtdate(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11)
+void cvtdate(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void cvtdate(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11)
 {
   int v15; // ecx
   int v16; // esi
@@ -4376,10 +4341,9 @@ LABEL_25:
 
 // 0x7D544A
 namespace gamemd {
-int _sopen(const char * FileName, int OpenFlag, int ShareFlag, ... a4)
+void _sopen(const char * FileName, int OpenFlag, int ShareFlag, ... a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void _sopen(const char *FileName, int OpenFlag, int ShareFlag, ...)
 {
   DWORD v5; // esi
   HANDLE v7; // eax
@@ -4575,7 +4539,6 @@ namespace gamemd {
 unsigned char * _mbsrchr(const unsigned char * String, unsigned int C)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned __int8 *__cdecl _mbsrchr(const unsigned __int8 *String, unsigned int C)
 {
   unsigned __int8 *v2; // esi
   const unsigned __int8 *v4; // ecx
@@ -4623,7 +4586,6 @@ namespace gamemd {
 int _rmtmp()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int _rmtmp()
 {
   signed int i; // esi
 
@@ -4654,7 +4616,6 @@ namespace gamemd {
 unsigned char * _wincmdln()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_BYTE *_wincmdln()
 {
   unsigned __int8 v1; // al
 
@@ -4695,10 +4656,9 @@ LABEL_12:
 
 // 0x7D5AC0
 namespace gamemd {
-void _setenvp()
+int _setenvp()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int _setenvp()
 {
   char **v2; // esi
   const char *i; // edi
@@ -4744,7 +4704,6 @@ namespace gamemd {
 int _setargv()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int _setargv()
 {
   CHAR *v0; // edi
   if ( !CRTGlobal_B78BB8 ) /*0x7d5b89*/
@@ -4773,7 +4732,6 @@ namespace gamemd {
 unsigned int * parse_cmdline(unsigned char * a1, unsigned char ** a2, unsigned char * a3, unsigned int * a4, unsigned int * a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__cdecl parse_cmdline(unsigned __int8 *a1, unsigned __int8 **a2, unsigned __int8 *a3, _DWORD *a4, _DWORD *a5)
 {
   unsigned __int8 *v6; // esi
   unsigned __int8 **v7; // edi
@@ -4930,10 +4888,9 @@ LABEL_28:
 
 // 0x7D5DC6
 namespace gamemd {
-CHAR * __crtGetEnvironmentStringsA()
+int * __crtGetEnvironmentStringsA()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-CHAR *__crtGetEnvironmentStringsA()
 {
   CHAR *v0; // ebx
   WCHAR *EnvironmentStringsW; // esi
@@ -5025,10 +4982,9 @@ LABEL_7:
 
 // 0x7D60B5
 namespace gamemd {
-int __init_time()
+void* __init_time()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void* __init_time()
 {
 
   if ( CRTGlobal_B782AC ) /*0x7d60bd*/
@@ -5062,10 +5018,9 @@ void* __init_time()
 
 // 0x7D6624
 namespace gamemd {
-int __init_numeric()
+void __init_numeric()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __init_numeric()
 {
   LCID v0; // edi
   v0 = (unsigned __int16)CRTGlobal_B7853A; /*0x7d662f*/
@@ -5131,10 +5086,9 @@ void __init_numeric()
 
 // 0x7D6AA2
 namespace gamemd {
-int __init_ctype()
+void __init_ctype()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __init_ctype()
 {
   WORD *v1; // edi
   const WCHAR *v2; // eax
@@ -5258,10 +5212,9 @@ LABEL_38:
 
 // 0x7D6D2A
 namespace gamemd {
-int __get_qualified_locale(char * a0, CCINIClass * aP1, int a3)
+void __get_qualified_locale(char * a0, CCINIClass * aP1, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __get_qualified_locale(char *a0, CCINIClass *aP1, int a3)
 {
   char *unknown50; // eax
 
@@ -5332,10 +5285,9 @@ LABEL_21:
 
 // 0x7D6F86
 namespace gamemd {
-BOOL LangCountryEnumProc_4(LPSTR a1)
+void LangCountryEnumProc_4(LPSTR a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void LangCountryEnumProc_4(LPSTR a1)
 {
   char String2[120]; // [esp+Ch] [ebp-78h] BYREF
 
@@ -5410,10 +5362,9 @@ LABEL_28:
 
 // 0x7D71E0
 namespace gamemd {
-BOOL LanguageEnumProc_4(LPSTR a1)
+void LanguageEnumProc_4(LPSTR a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void LanguageEnumProc_4(LPSTR a1)
 {
   int v4; // eax
   char String2[120]; // [esp+4h] [ebp-78h] BYREF
@@ -5453,10 +5404,9 @@ LABEL_11:
 
 // 0x7D72D4
 namespace gamemd {
-unsigned int CountryEnumProc_4(LPSTR a1)
+void int CountryEnumProc_4(LPSTR a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void CountryEnumProc_4(LPSTR a1)
 {
 
   int v1 = LcidFromHexString(a1); /*0x7d72e4*/
@@ -5487,10 +5437,9 @@ void CountryEnumProc_4(LPSTR a1)
 
 // 0x7D735A
 namespace gamemd {
-LCID GetLcidFromDefault()
+int GetLcidFromDefault()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-LCID GetLcidFromDefault()
 {
   LCID result; // eax
 
@@ -5508,7 +5457,6 @@ namespace gamemd {
 void * memset(void * a0, int Val, AbstractClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void *__cdecl memset(void *a0, int Val, AbstractClass *aP2)
 {
   AbstractClass *v3; // edx
   AbstractClass *v7; // ecx
@@ -5552,10 +5500,9 @@ LABEL_13:
 
 // 0x7D77D6
 namespace gamemd {
-int _wctomb_lk(LPSTR lpMultiByteStr, WCHAR WideCharStr)
+void _wctomb_lk(LPSTR lpMultiByteStr, WCHAR WideCharStr)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void _wctomb_lk(LPSTR lpMultiByteStr, WCHAR WideCharStr)
 {
   int result; // eax
 
@@ -5595,10 +5542,9 @@ LABEL_7:
 
 // 0x7D7AAF
 namespace gamemd {
-int _ld12cvt(unsigned short * a1, unsigned int * a2, int * a3)
+void _ld12cvt(unsigned short * a1, unsigned int * a2, int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void _ld12cvt(unsigned __int16 *a1, unsigned int *a2, int *a3)
 {
   unsigned __int16 v4; // bx
   int v8; // esi
@@ -5697,11 +5643,10 @@ LABEL_17:
 
 // 0x7D7EE0
 namespace gamemd {
-int unknown_libname_76()
+void unknown_libname_76()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // Microsoft VisualC 2-14/net runtime
-void unknown_libname_76(_TBYTE a1, _TBYTE a2)
 {
 
   double v2 = *(double *)&a2; /*0x7d7ee0*/
@@ -5744,7 +5689,6 @@ int unknown_libname_77()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // Microsoft VisualC 2-14/net runtime
 // positive sp value has been detected, the output may be wrong!
-void __usercall unknown_libname_77(char a1@<al>)
 {
   _TBYTE v1; // [esp-2Ch] [ebp-58h]
   _TBYTE v2; // [esp-20h] [ebp-4Ch]
@@ -6405,11 +6349,10 @@ LABEL_62:
 
 // 0x7D86E6
 namespace gamemd {
-int unknown_libname_90()
+void* unknown_libname_90()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // Microsoft VisualC 2-14/net runtime
-unsigned int __usercall unknown_libname_90@<eax>(char a1@<dl>, __int128 a2, int a3, int a4, __int128 a5)
 {
   unsigned int result; // eax
   __int16 v8; // fps
@@ -6480,11 +6423,10 @@ unsigned int __usercall unknown_libname_90@<eax>(char a1@<dl>, __int128 a2, int 
 
 // 0x7D88EC
 namespace gamemd {
-int unknown_libname_91()
+void* unknown_libname_91()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // Microsoft VisualC 2-14/net runtime
-int __usercall __spoils<ecx,st0> unknown_libname_91@<eax>(double a1@<st1>, double a2@<st0>)
 {
   int result; // eax
   __int128 v6; // [esp+18h] [ebp-1Ch]
@@ -6515,11 +6457,10 @@ int __usercall __spoils<ecx,st0> unknown_libname_91@<eax>(double a1@<st1>, doubl
 
 // 0x7D899E
 namespace gamemd {
-int unknown_libname_92()
+void* unknown_libname_92()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // Microsoft VisualC 2-14/net runtime
-unsigned int __usercall unknown_libname_92@<eax>(char a1@<dl>, __int128 a2, int a3, int a4, __int128 a5)
 {
   unsigned int result; // eax
   __int16 v8; // fps
@@ -6590,11 +6531,10 @@ unsigned int __usercall unknown_libname_92@<eax>(char a1@<dl>, __int128 a2, int 
 
 // 0x7D8BA4
 namespace gamemd {
-int unknown_libname_93()
+void* unknown_libname_93()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // Microsoft VisualC 2-14/net runtime
-int __usercall __spoils<ecx,st0> unknown_libname_93@<eax>(double a1@<st1>, double a2@<st0>)
 {
   int result; // eax
   __int128 v6; // [esp+18h] [ebp-1Ch]
@@ -6625,10 +6565,9 @@ int __usercall __spoils<ecx,st0> unknown_libname_93@<eax>(double a1@<st1>, doubl
 
 // 0x7D8C6B
 namespace gamemd {
-int _87except(int a1, int a2, unsigned short * a3)
+void _87except(int a1, int a2, unsigned short * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void _87except(int a1, int a2, unsigned __int16 *a3)
 {
   unsigned __int16 *v3; // ecx
   DWORD v11; // ebx
@@ -6710,11 +6649,10 @@ LABEL_21:
 
 // 0x7D8E22
 namespace gamemd {
-int __decomp()
+void __decomp()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // local variable allocation has failed, the output may be wrong!
-void _decomp(double a1, int *a2)
 {
   int v2; // esi
   BOOL v3; // eax
@@ -6754,10 +6692,9 @@ void _decomp(double a1, int *a2)
 
 // 0x7D8EE3
 namespace gamemd {
-double _frnd(double a1)
+void _frnd(double a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void _frnd(double a1)
 {
   double result; // st7
 
@@ -6773,7 +6710,6 @@ namespace gamemd {
 double _nextafter(double X, double Y)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-double _nextafter(double X, double Y)
 {
   double result; // st7
   int v3; // edi
@@ -6876,10 +6812,9 @@ LABEL_32:
 
 // 0x7D93A1
 namespace gamemd {
-int _alloc_osfhnd()
+void _alloc_osfhnd()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void _alloc_osfhnd()
 {
   unsigned int i; // eax
 
@@ -6956,10 +6891,9 @@ LABEL_22:
 
 // 0x7D9729
 namespace gamemd {
-BOOL __crtGetStringTypeA(DWORD dwInfoType, CCINIClass * aP1, int cchSrc, LPWORD lpCharType, UINT CodePage, LCID Locale, int a7)
+void __crtGetStringTypeA(DWORD dwInfoType, CCINIClass * aP1, int cchSrc, LPWORD lpCharType, UINT CodePage, LCID Locale, int a7)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __crtGetStringTypeA(
         DWORD dwInfoType,
         CCINIClass *aP1,
         int cchSrc,
@@ -7029,10 +6963,9 @@ void __crtGetStringTypeA(
 
 // 0x7D9872
 namespace gamemd {
-int __strgtold12(int a1, char ** a2, char * a3, int a4, int a5, int a6, int a7)
+void __strgtold12(int a1, char ** a2, char * a3, int a4, int a5, int a6, int a7)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __strgtold12(int a1, char **a2, char *a3, int a4, int a5, int a6, int a7)
 {
   __int16 v27; // ax
   __int16 v28; // dx
@@ -7395,10 +7328,9 @@ LABEL_125:
 
 // 0x7D9DDC
 namespace gamemd {
-unsigned int _mbtowc_lk(LPWSTR lpWideCharStr, unsigned char * lpMultiByteStr, unsigned int a3)
+void int _mbtowc_lk(LPWSTR lpWideCharStr, unsigned char * lpMultiByteStr, unsigned int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void _mbtowc_lk(LPWSTR lpWideCharStr, unsigned __int8 *lpMultiByteStr, unsigned int a3)
 {
   unsigned __int8 v3; // al
   unsigned int result; // eax
@@ -7449,10 +7381,9 @@ LABEL_16:
 
 // 0x7D9FAC
 namespace gamemd {
-int LONG(__stdcall *sub_7D9FAC())(struct _EXCEPTION_POINTERS * ExceptionInfo)
+void LONG(__stdcall *sub_7D9FAC())(struct _EXCEPTION_POINTERS * ExceptionInfo)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-LONG (__stdcall *sub_7D9FAC())(struct _EXCEPTION_POINTERS *ExceptionInfo)
 {
   LONG (__stdcall *result)(struct _EXCEPTION_POINTERS *); // eax
 
@@ -7465,10 +7396,9 @@ LONG (__stdcall *sub_7D9FAC())(struct _EXCEPTION_POINTERS *ExceptionInfo)
 
 // 0x7D9FCA
 namespace gamemd {
-int _flswbuf(unsigned short Buf, FILE * a2)
+void _flswbuf(unsigned short Buf, FILE * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void _flswbuf(unsigned __int16 Buf, FILE *a2)
 {
   FILE *v2; // esi
   int flag; // eax
@@ -7549,10 +7479,9 @@ LABEL_6:
 
 // 0x7DA0F1
 namespace gamemd {
-BOOL __crtGetStringTypeW(DWORD dwInfoType, CCINIClass * aP1, int cchSrc, CCINIClass * aP3, UINT CodePage, LCID Locale)
+void __crtGetStringTypeW(DWORD dwInfoType, CCINIClass * aP1, int cchSrc, CCINIClass * aP3, UINT CodePage, LCID Locale)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __crtGetStringTypeW(
         DWORD dwInfoType,
         CCINIClass *aP1,
         int cchSrc,
@@ -7638,10 +7567,9 @@ void __crtGetStringTypeW(
 
 // 0x7DA2B6
 namespace gamemd {
-int __crtLCMapStringW(CampaignScore * aP0, CampaignScore * aP1, CampaignScore * aP2, int cchSrc, CampaignScore * aP4, CampaignScore * aP5, CampaignScore * aP6)
+void __crtLCMapStringW(CampaignScore * aP0, CampaignScore * aP1, CampaignScore * aP2, int cchSrc, CampaignScore * aP4, CampaignScore * aP5, CampaignScore * aP6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __crtLCMapStringW(
         CampaignScore *aP0,
         CampaignScore *aP1,
         CampaignScore *aP2,
@@ -7740,10 +7668,9 @@ void __crtLCMapStringW(
 
 // 0x7DA512
 namespace gamemd {
-short _getwc_lk(FILE * File)
+void _getwc_lk(FILE * File)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-__int16 __cdecl _getwc_lk(FILE *File)
 {
   FILE *v1; // esi
   bool v3; // sf
@@ -7813,10 +7740,9 @@ __int16 __cdecl _getwc_lk(FILE *File)
 
 // 0x7DA638
 namespace gamemd {
-short _ungetwc_lk(wchar_t MbCh, unsigned int * a2)
+void _ungetwc_lk(wchar_t MbCh, unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-__int16 __cdecl _ungetwc_lk(wchar_t MbCh, _DWORD *a2)
 {
   wchar_t v2; // bx
 
@@ -7879,10 +7805,9 @@ __int16 __cdecl _ungetwc_lk(wchar_t MbCh, _DWORD *a2)
 
 // 0x7DA725
 namespace gamemd {
-int __crtCompareStringA(LCID Locale, DWORD dwCmpFlags, CHAR * lpString1, int cchCount1, CHAR * lpString2, int cchCount2, UINT CodePage)
+void __crtCompareStringA(LCID Locale, DWORD dwCmpFlags, CHAR * lpString1, int cchCount1, CHAR * lpString2, int cchCount2, UINT CodePage)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __crtCompareStringA(
         LCID Locale,
         DWORD dwCmpFlags,
         CHAR *lpString1,
@@ -8016,10 +7941,9 @@ void __crtCompareStringA(
 
 // 0x7DA9CD
 namespace gamemd {
-int __crtsetenv(char * Str, int a2)
+void __crtsetenv(char * Str, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __crtsetenv(char *Str, int a2)
 {
   unsigned __int8 *v2; // eax
   unsigned __int8 *v3; // esi
@@ -8134,10 +8058,9 @@ LABEL_30:
 
 // 0x7DAC6C
 namespace gamemd {
-int _chsize_lk(int FileHandle, LONG lDistanceToMove)
+void _chsize_lk(int FileHandle, LONG lDistanceToMove)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void _chsize_lk(int FileHandle, LONG lDistanceToMove)
 {
   DWORD v3; // eax
   DWORD v5; // eax
@@ -8201,10 +8124,9 @@ LABEL_13:
 
 // 0x7DAE6E
 namespace gamemd {
-int isctype_CRT(unsigned char a1, int a2, unsigned char a3)
+void isctype_CRT(unsigned char a1, int a2, unsigned char a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void isctype_CRT(unsigned __int8 a1, int a2, unsigned __int8 a3)
 {
   int result; // eax
 
@@ -8220,10 +8142,9 @@ void isctype_CRT(unsigned __int8 a1, int a2, unsigned __int8 a3)
 
 // 0x7DAE9F
 namespace gamemd {
-int __crtMessageBoxA(int a1, int a2, int a3)
+void __crtMessageBoxA(int a1, int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __crtMessageBoxA(int a1, int a2, int a3)
 {
   HMODULE LibraryA; // eax
   HMODULE v5; // edi
@@ -8256,10 +8177,9 @@ void __crtMessageBoxA(int a1, int a2, int a3)
 
 // 0x7DAF28
 namespace gamemd {
-int __getlocaleinfo(int a1, LCID Locale, LCTYPE LCType, CCINIClass * aP3)
+void __getlocaleinfo(int a1, LCID Locale, LCTYPE LCType, CCINIClass * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __getlocaleinfo(int a1, LCID Locale, LCTYPE LCType, CCINIClass *aP3)
 {
   CCINIClass *p_Source; // edi
   AbstractClass *LocaleInfoA; // esi
@@ -8334,10 +8254,9 @@ LABEL_9:
 
 // 0x7DB207
 namespace gamemd {
-int _I10_OUTPUT(long long a1, int a2, int a3, char a4, int a5)
+void _I10_OUTPUT(long long a1, int a2, int a3, char a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void _I10_OUTPUT(__int64 a1, int a2, int a3, char a4, int a5)
 {
   __int16 v6; // cx
   unsigned __int16 v7; // dx
@@ -8513,10 +8432,9 @@ LABEL_54:
 
 // 0x7DB68B
 namespace gamemd {
-int _raise_exc(ULONG_PTR Arguments, unsigned int * a2, DWORD dwExceptionCode, short a4, double * a5, double * a6)
+void _raise_exc(ULONG_PTR Arguments, unsigned int * a2, DWORD dwExceptionCode, short a4, double * a5, double * a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void _raise_exc(
         ULONG_PTR Arguments,
         unsigned int *a2,
         DWORD dwExceptionCode,
@@ -8685,10 +8603,9 @@ LABEL_63:
 
 // 0x7DB93E
 namespace gamemd {
-BOOL _handle_exc(char a1, double * a2, short a3)
+void _handle_exc(char a1, double * a2, short a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void _handle_exc(char a1, double *a2, __int16 a3)
 {
   __int16 v16; // ax
   int v3 = a1 & 0x1F; /*0x7db94b*/
@@ -8815,10 +8732,9 @@ LABEL_46:
 
 // 0x7DBC68
 namespace gamemd {
-int __clrfp()
+void* __clrfp()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __usercall _clrfp@<eax>(__int16 a1@<fpstat>)
 {
   __asm { fnclex } /*0x7dbc6f*/
   return a1; /*0x7dbc75*/
@@ -8828,10 +8744,9 @@ int __usercall _clrfp@<eax>(__int16 a1@<fpstat>)
 
 // 0x7DBCF0
 namespace gamemd {
-double ldexp(double X, int Y)
+void ldexp(double X, int Y)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void ldexp(double X, int Y)
 {
   __int16 v2; // cx
   __int16 v4; // cx
@@ -8910,10 +8825,9 @@ LABEL_8:
 
 // 0x7DBED6
 namespace gamemd {
-int __ld12mul(int a1, int a2)
+void __ld12mul(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __ld12mul(int a1, int a2)
 {
   __int16 v4; // cx
   __int16 v5; // ax
@@ -9063,10 +8977,9 @@ LABEL_45:
 
 // 0x7DC291
 namespace gamemd {
-int _filwbuf(unsigned short ** a1)
+void _filwbuf(unsigned short ** a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void _filwbuf(unsigned __int16 **a1)
 {
   unsigned __int16 *v1; // eax
   unsigned __int16 *v3; // edx
@@ -9130,7 +9043,6 @@ namespace gamemd {
 unsigned char * _mbschr(const unsigned char * Str, unsigned int C)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned __int8 *__cdecl _mbschr(const unsigned __int8 *Str, unsigned int C)
 {
   const unsigned __int8 *i; // esi
   unsigned __int16 v4; // bx
@@ -9171,10 +9083,9 @@ unsigned __int8 *__cdecl _mbschr(const unsigned __int8 *Str, unsigned int C)
 
 // 0x7DC468
 namespace gamemd {
-int _setmode_lk(int a1, int a2)
+void _setmode_lk(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void _setmode_lk(int a1, int a2)
 {
   char v4; // cl
   int v5; // eax
@@ -9202,10 +9113,9 @@ LABEL_5:
 
 // 0x7DC4C9
 namespace gamemd {
-int __crtGetLocaleInfoW(LCID Locale, LCTYPE LCType, LPWSTR lpLCData, int cchData, UINT CodePage)
+void __crtGetLocaleInfoW(LCID Locale, LCTYPE LCType, LPWSTR lpLCData, int cchData, UINT CodePage)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __crtGetLocaleInfoW(LCID Locale, LCTYPE LCType, LPWSTR lpLCData, int cchData, UINT CodePage)
 {
   int LocaleInfoA; // eax
   CHAR v11[16]; // [esp+0h] [ebp-30h] BYREF
@@ -9257,10 +9167,9 @@ void __crtGetLocaleInfoW(LCID Locale, LCTYPE LCType, LPWSTR lpLCData, int cchDat
 
 // 0x7DC5DC
 namespace gamemd {
-int __crtGetLocaleInfoA(LCID Locale, LCTYPE LCType, CCINIClass * aP2, int cchData, UINT CodePage)
+void __crtGetLocaleInfoA(LCID Locale, LCTYPE LCType, CCINIClass * aP2, int cchData, UINT CodePage)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __crtGetLocaleInfoA(LCID Locale, LCTYPE LCType, CCINIClass *aP2, int cchData, UINT CodePage)
 {
   int LocaleInfoW; // eax
   WCHAR v11[8]; // [esp+0h] [ebp-30h] BYREF
@@ -9312,10 +9221,9 @@ void __crtGetLocaleInfoA(LCID Locale, LCTYPE LCType, CCINIClass *aP2, int cchDat
 
 // 0x7DC7CB
 namespace gamemd {
-int HandleErrorCOM(int a1, int a2, int a3, VARTYPE vt, ICreateErrorInfo * pperrinfo, LPCWSTR lpString, int a7, void ** a8)
+void HandleErrorCOM(int a1, int a2, int a3, VARTYPE vt, ICreateErrorInfo * pperrinfo, LPCWSTR lpString, int a7, void ** a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void HandleErrorCOM(
         int a1,
         int a2,
         int a3,
@@ -9677,7 +9585,6 @@ namespace gamemd {
 unsigned int * _com_error::sub_7DCE0E(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_7DCE0E(_com_error *this, int a2)
 {
 
   this->q004 = *(_com_error *)(a2 + 4); /*0x7dce18*/
@@ -9694,10 +9601,9 @@ _DWORD *__thiscall sub_7DCE0E(_com_error *this, int a2)
 
 // 0x7DCE3B
 namespace gamemd {
-HLOCAL _com_error::sub_7DCE3B()
+void _com_error::sub_7DCE3B()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-HLOCAL __thiscall sub_7DCE3B(_com_error *this)
 {
   HLOCAL result; // eax
 
@@ -9715,10 +9621,9 @@ HLOCAL __thiscall sub_7DCE3B(_com_error *this)
 
 // 0x7DCFC4
 namespace gamemd {
-char * _strupr(char * String)
+void * _strupr(char * String)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__cdecl _strupr(char *String)
 {
   char *result; // eax
   char *j; // edx
@@ -9798,7 +9703,6 @@ namespace gamemd {
 int _getch()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int _getch()
 {
   int result; // eax
   BOOL i; // eax
@@ -9856,10 +9760,9 @@ LABEL_17:
 
 // 0x7DD505
 namespace gamemd {
-int output(char * a1, int a2)
+void output(char * a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void output(char *a1, int a2)
 {
   int int_arg_1; // eax
   char *i; // eax
@@ -10308,10 +10211,9 @@ LABEL_171:
 
 // 0x7DDCD6
 namespace gamemd {
-wchar_t * _wcsupr(CampaignScore * aP0)
+void * _wcsupr(CampaignScore * aP0)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-wchar_t *__cdecl _wcsupr(CampaignScore *aP0)
 {
   CampaignScore *result; // eax
   CampaignScore *j; // ecx
@@ -10392,7 +10294,6 @@ namespace gamemd {
 unsigned int  __spoils<ecx> ConvertRGB24to556(int a1, unsigned short * a2, __m64 a3, __m64 a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __cdecl __spoils<ecx> ConvertRGB24to556(int a1, _WORD *a2, __m64 a3, __m64 a4, int a5)
 {
   unsigned __int8 *v6; // esi
   unsigned __int8 *v10; // esi
@@ -10562,7 +10463,6 @@ namespace gamemd {
 unsigned int  __spoils<ecx> ConvertRGB24toRGB565(int a1, unsigned short * a2, __m64 a3, __m64 a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __cdecl __spoils<ecx> ConvertRGB24toRGB565(int a1, _WORD *a2, __m64 a3, __m64 a4, int a5)
 {
   unsigned __int8 *v6; // esi
   unsigned __int8 *v10; // esi
@@ -10732,7 +10632,6 @@ namespace gamemd {
 unsigned int  __spoils<ecx> ConvertRGB24to655(int a1, unsigned short * a2, __m64 a3, __m64 a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __cdecl __spoils<ecx> ConvertRGB24to655(int a1, _WORD *a2, __m64 a3, __m64 a4, int a5)
 {
   unsigned __int8 *v6; // esi
   unsigned __int8 *v10; // esi
@@ -10902,7 +10801,6 @@ namespace gamemd {
 unsigned int  __spoils<ecx> ConvertRGB24to565(int a1, unsigned short * a2, __m64 a3, __m64 a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __cdecl __spoils<ecx> ConvertRGB24to565(int a1, _WORD *a2, __m64 a3, __m64 a4, int a5)
 {
   unsigned __int8 *v6; // esi
   unsigned __int8 *v10; // esi
@@ -15092,10 +14990,9 @@ return 0;
 
 // 0x7DBC5A
 namespace gamemd {
-int __statfp()
+void __statfp()
  {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __usercall _statfp@<eax>(__int16 a1@<fpstat>)
 {
   return a1; /*0x7dbc66*/
 }

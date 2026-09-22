@@ -7,10 +7,9 @@
 
 // 0x4D4DC0
 namespace gamemd {
-int InfantryClass::ScanTarget(int * a1)
+void InfantryClass::ScanTarget(int * a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall InfantryClass::ScanTarget(int *a1)
 {
   __int16 *PlacementCellsAlt; // eax
   char *MissionControl; // eax
@@ -79,10 +78,9 @@ int __fastcall InfantryClass::ScanTarget(int *a1)
 
 // 0x4D5350
 namespace gamemd {
-int InfantryClass::ProcessDeploy(void ** a1)
+void InfantryClass::ProcessDeploy(void ** a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall InfantryClass_ProcessDeploy(#375 **a1)
 {
   #375 *v2; // edx
   #375 **v4; // edi
@@ -162,10 +160,9 @@ LABEL_25:
 
 // 0x517D90
 namespace gamemd {
-int InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
+void InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall InfantryClass::Destruct(IUnknown *a1, AbstractClass *edx0)
 {
   AbstractClass *edi1; // edi
   InfantryTypeClass *v3; // eax

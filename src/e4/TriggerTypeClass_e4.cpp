@@ -7,10 +7,9 @@
 
 // 0x6FC0B0
 namespace gamemd {
-int TriggerTypeClass::ReadINI(unsigned int * a0, TechnoClass * aP1, TechnoClass * aP2, int a4, TechnoClass * aP4)
+void TriggerTypeClass::ReadINI(unsigned int * a0, TechnoClass * aP1, TechnoClass * aP2, int a4, TechnoClass * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall TriggerTypeClass::ReadINI(_DWORD *a0, TechnoClass *aP1, TechnoClass *aP2, int a4, TechnoClass *aP4)
 {
   TechnoClass *v8; // ebp
   IUnknown *v9; // eax

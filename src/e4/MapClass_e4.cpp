@@ -18,10 +18,9 @@
 #include "e4/classes/VectorCursor_uint_DynamicVectorClass_uint____13_e4.hpp"
 
 // 0x4112D0
-int MapClass::isLocationShrouded(unsigned short a2)
+void MapClass::isLocationShrouded(unsigned short a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_4112D0(_DWORD *this, unsigned __int16 a2)
 {
 
   _DWORD v5[4]; // [esp+0h] [ebp-10h] BYREF
@@ -39,7 +38,6 @@ void sub_4112D0(_DWORD *this, unsigned __int16 a2)
 unsigned int * MapClass::AllocArrays()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_42C1C0(char *this)
 {
   void **v1; // esi
   _DWORD *result; // eax
@@ -108,10 +106,9 @@ _DWORD *__thiscall sub_42C1C0(char *this)
 }
 
 // 0x485130
-int MapClass::RemoveCellReference(int a2)
+void MapClass::RemoveCellReference(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_485130(int *this, int a2)
 {
   int result; // eax
 
@@ -163,10 +160,9 @@ void sub_485130(int *this, int a2)
 }
 
 // 0x4A95A0
-char MapClass::SetCellFlagsAlongPath(IUnknown * aP1, unsigned short * a2)
+void MapClass::SetCellFlagsAlongPath(IUnknown * aP1, unsigned short * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MapClass::SetCellFlagsAlongPath(__int16 **this, IUnknown *aP1, _WORD *a2)
 {
   IUnknown *v3; // ebp
   __int16 *v6; // esi
@@ -206,10 +202,9 @@ void MapClass::SetCellFlagsAlongPath(__int16 **this, IUnknown *aP1, _WORD *a2)
 }
 
 // 0x4AC960
-int MapClass::ToggleZoom(int a2)
+void MapClass::ToggleZoom(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MapClass_ToggleZoom(int *this, int a2)
 {
   int result; // eax
 
@@ -263,10 +258,9 @@ void MapClass_ToggleZoom(int *this, int a2)
 }
 
 // 0x4AD7E0
-int MapClass::SaveCellTagsToINI(char * a2)
+void MapClass::SaveCellTagsToINI(char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MapClass::SaveCellTagsToINI(char *a2)
 {
   __int16 v3; // bp
   int j; // edi
@@ -336,10 +330,9 @@ void MapClass::SaveCellTagsToINI(char *a2)
 }
 
 // 0x4AEB30
-bool MapClass::SetScrollMode(MouseClass * aP1)
+void MapClass::SetScrollMode(MouseClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MapClass::SetScrollMode(int this, MouseClass *aP1)
 {
   this->MapClass_field_0x11A0 = aP1; /*0x4aeb36*/
   this->q119C = aP1 != 0; /*0x4aeb3f*/
@@ -348,10 +341,9 @@ void MapClass::SetScrollMode(int this, MouseClass *aP1)
 }
 
 // 0x506D50
-int MapClass::CalcVisibleCellRange(int a1, int a2, VectorClass * aP2, int * a3)
+void MapClass::CalcVisibleCellRange(int a1, int a2, VectorClass * aP2, int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MapClass::CalcVisibleCellRange(int a1, int a2, VectorClass *aP2, int *a3)
 {
   int v6; // ebx
   VectorClass *v7; // esi
@@ -432,10 +424,9 @@ void MapClass::CalcVisibleCellRange(int a1, int a2, VectorClass *aP2, int *a3)
 }
 
 // 0x547020
-int MapClass::LoadFileData()
+void MapClass::LoadFileData()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MapClass_LoadFileData(int this)
 {
   int Size; // ebx
   unsigned __int8 *v4; // eax
@@ -483,10 +474,9 @@ void MapClass_LoadFileData(int this)
 }
 
 // 0x554A80
-char MapClass::ScrollOnce(AbstractClass * aP1)
+void MapClass::ScrollOnce(AbstractClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MapClass::ScrollOnce(int this, AbstractClass *aP1)
 {
   char result; // al
 
@@ -504,7 +494,6 @@ void MapClass::ScrollOnce(int this, AbstractClass *aP1)
 void MapClass::Destruct()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MapClass_Destructor(char *this)
 {
   _DWORD **v3; // ebp
 
@@ -605,10 +594,9 @@ void MapClass_Destructor(char *this)
 }
 
 // 0x565800
-int MapClass::Destru_vt05()
+void MapClass::Destru_vt05()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MapClass::Destru_vt05()
 {
 
   MapClass *v1 = this; /*0x565806*/
@@ -749,7 +737,6 @@ LABEL_14:
 void MapClass::Destru_vt07()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MapClass::Destru_vt07(int this)
 {
 
   Debug::Log(); /*0x5659fa*/
@@ -790,10 +777,9 @@ void MapClass::Destru_vt07(int this)
 }
 
 // 0x565AA0
-int MapClass::InitCellVector()
+void MapClass::InitCellVector()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MapClass_InitCellVector(_DWORD *this)
 {
   int result; // eax
 
@@ -817,7 +803,6 @@ void MapClass_InitCellVector(_DWORD *this)
 unsigned int * MapClass::InitAllCells()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall MapClass_InitAllCells(_DWORD *this)
 {
   _DWORD *result; // eax
 
@@ -848,10 +833,9 @@ _DWORD *__thiscall MapClass_InitAllCells(_DWORD *this)
 }
 
 // 0x5673A0
-int MapClass::RevealArea0(IUnknown * aP1, MouseClass * aP2, HouseClass * aP3, MouseClass * aP4, HouseClass * aP5, char a7, char a8, char a9)
+void MapClass::RevealArea0(IUnknown * aP1, MouseClass * aP2, HouseClass * aP3, MouseClass * aP4, HouseClass * aP5, char a7, char a8, char a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MapClass::RevealArea0(IUnknown *aP1, MouseClass *aP2, HouseClass *aP3, MouseClass *aP4, HouseClass *aP5, char a7, char a8, char a9)
 {
   int result; // eax
   IUnknown *v18; // edi
@@ -1067,7 +1051,6 @@ LABEL_54:
 void MapClass::FillRevealBuffer(MouseClass * aP1, IUnknown * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MapClass::FillRevealBuffer(MouseClass *aP1, IUnknown *aP2)
 {
   MouseClass *v3; // ebx
   __int16 v13; // cx
@@ -1276,7 +1259,6 @@ LABEL_17:
 void MapClass::ApplyOverlayReveal(MouseClass * aP1, BuildingClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MapClass::ApplyOverlayReveal(MouseClass *aP1, BuildingClass *aP2)
 {
   MouseClass *v3; // ebx
   int esi7; // esi
@@ -1467,10 +1449,9 @@ LABEL_17:
 }
 
 // 0x568BB0
-int MapClass::PostProcessReveal(char a2)
+void MapClass::PostProcessReveal(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MapClass_PostProcessReveal(_DWORD *this, char a2)
 {
   int i; // eax
   int j; // esi
@@ -1569,10 +1550,9 @@ void MapClass_PostProcessReveal(_DWORD *this, char a2)
 }
 
 // 0x56B3F0
-int MapClass::DecompressCellData(MouseClass * aP1)
+void MapClass::DecompressCellData(MouseClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MapClass::DecompressCellData(MouseClass *aP1)
 {
   MouseClass *v2; // esi
   TagClass *v6; // ebx
@@ -1635,10 +1615,9 @@ void MapClass::DecompressCellData(MouseClass *aP1)
 }
 
 // 0x56D230
-int MapClass::GetTileIndex(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3)
+void MapClass::GetTileIndex(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MapClass::GetTileIndex(IUnknown *aP1, IUnknown *aP2, IUnknown *aP3)
 {
   IUnknown *v4; // esi
   IUnknown *v5; // edi
@@ -1710,10 +1689,9 @@ void MapClass::GetTileIndex(IUnknown *aP1, IUnknown *aP2, IUnknown *aP3)
 }
 
 // 0x56D6E0
-int MapClass::ProcessRegion()
+void MapClass::ProcessRegion()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MapClass_ProcessRegion(_DWORD *this)
 {
   int result; // eax
   void *NeighbourContent; // eax
@@ -1863,10 +1841,9 @@ LABEL_30:
 }
 
 // 0x56DAE0
-char MapClass::ClearRegions(IUnknown * aP1)
+void MapClass::ClearRegions(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MapClass::ClearRegions(IUnknown *aP1)
 {
   int RegionMap; // edi
   char aP1a; // [esp+10h] [ebp+4h]
@@ -1896,10 +1873,9 @@ void MapClass::ClearRegions(IUnknown *aP1)
 }
 
 // 0x56E7C0
-char MapClass::CheckCellsBuildable(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnknown * aP4, IUnknown * aP5, int aP6, IUnknown * aP7, IUnknown * aP8)
+void MapClass::CheckCellsBuildable(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnknown * aP4, IUnknown * aP5, int aP6, IUnknown * aP7, IUnknown * aP8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MapClass::CheckCellsBuildable(IUnknown *aP0, IUnknown *aP1, IUnknown *aP2, IUnknown *aP3, IUnknown *aP4, IUnknown *aP5, int aP6, IUnknown *aP7, IUnknown *aP8)
 {
   int v11; // esi
   unsigned int v12; // eax
@@ -1942,10 +1918,9 @@ LABEL_11:
 }
 
 // 0x574780
-int MapClass::TransitionCliff(MouseClass * aP0)
+void MapClass::TransitionCliff(MouseClass * aP0)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MapClass::TransitionCliff(MouseClass *aP0)
 {
   MouseClass *v2; // esi
   _DWORD *v3; // edi
@@ -2045,7 +2020,6 @@ void MapClass::TransitionCliff(MouseClass *aP0)
 void MapClass::ApplyTerrainDamage(IUnknown *this@<ecx> a1, IUnknown aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __userpurge MapClass::ApplyTerrainDamage(IUnknown *this@<ecx>, IUnknown aP1)
 {
   MapClass *v2; // ebp
   IUnknown *v3; // edi
@@ -2388,10 +2362,9 @@ LABEL_79:
 }
 
 // 0x577920
-int MapClass::RemoveTriggerRef(AbstractClass * aP1, int a3)
+void MapClass::RemoveTriggerRef(AbstractClass * aP1, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MapClass::RemoveTriggerRef(AbstractClass *aP1, int a3)
 {
   AbstractClass *v3; // esi
   int i; // ebp
@@ -2469,7 +2442,6 @@ void MapClass::RemoveTriggerRef(AbstractClass *aP1, int a3)
 void * MapClass::ClearShroud(HouseClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void *__thiscall MapClass::ClearShroud(_DWORD *this, HouseClass *aP1)
 {
   HouseClass *result; // eax
   __int16 *v7; // esi
@@ -2540,10 +2512,9 @@ LABEL_26:
 
 // 0x578390
 namespace gamemd {
-int MapClass_IsRectInBounds()
+void MapClass_IsRectInBounds()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __userpurge MapClass::IsRectInBounds@<eax>(_DWORD *this@<ecx>, IUnknown aP1)
 {
   TechnoClass *v2; // ebx
   IUnknown *v4; // esi
@@ -2582,7 +2553,6 @@ BOOL __userpurge MapClass::IsRectInBounds@<eax>(_DWORD *this@<ecx>, IUnknown aP1
 unsigned int * MapClass::SpiralSearch()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall MapClass::SpiralSearch(_DWORD *this)
 {
   _DWORD *result; // eax
   IUnknown *v13; // [esp+10h] [ebp-4h] BYREF
@@ -2637,7 +2607,6 @@ _DWORD *__thiscall MapClass::SpiralSearch(_DWORD *this)
 unsigned int * MapClass::FastCellLookup(short * a2, int a3, char a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall MapClass::FastCellLookup(_DWORD *this, __int16 *a2, int a3, char a4)
 {
   _DWORD *result; // eax
   __int16 v14; // bx
@@ -2726,17 +2695,15 @@ _DWORD *__thiscall MapClass::FastCellLookup(_DWORD *this, __int16 *a2, int a3, c
 void MapClass::IncrementRedrawCounter()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_578AC0(_BYTE *this)
 {
   ++this->q1158; /*0x578ac0*/
 }
 }
 
 // 0x57A0C0
-char MapClass::InitTileData(MouseClass * aP0, int aP3)
+void MapClass::InitTileData(MouseClass * aP0, int aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MapClass::InitTileData(MouseClass *aP0, int aP3)
 {
   MapClass *v2; // ecx
   MapClass *v3; // ebp
@@ -2862,10 +2829,9 @@ void MapClass::InitTileData(MouseClass *aP0, int aP3)
 }
 
 // 0x5856B0
-char MapClass::InitializeTileData(MapClass * aP1)
+void MapClass::InitializeTileData(MapClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MapClass::InitializeTileData(MapClass *aP1)
 {
   AbstractClass *v4; // ebp
   AbstractClass *v5; // ebx
@@ -2992,10 +2958,9 @@ void MapClass::InitializeTileData(MapClass *aP1)
 }
 
 // 0x585D00
-char MapClass::LoadTerrainData(MapClass * aP1)
+void MapClass::LoadTerrainData(MapClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MapClass::LoadTerrainData(MapClass *aP1)
 {
   AbstractClass *v5; // ebx
   AbstractClass *v6; // esi
@@ -3094,10 +3059,9 @@ void MapClass::LoadTerrainData(MapClass *aP1)
 }
 
 // 0x586780
-bool MapClass::IsAreaFree(int * a2, int a3)
+void MapClass::IsAreaFree(int * a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MapClass::IsAreaFree(int *a2, int a3)
 {
   int v6; // edi
   int v7; // ebp
@@ -3164,10 +3128,9 @@ LABEL_20:
 }
 
 // 0x589370
-char MapClass::AllocateCellDataBuffer(int a2, char * a3)
+void MapClass::AllocateCellDataBuffer(int a2, char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MapClass::sub_589370(int a2, char *a3)
 {
   char *v8; // edi
   char *v9; // eax
@@ -3274,10 +3237,9 @@ LABEL_14:
 }
 
 // 0x589A60
-char MapClass::AllocateMapDataBuffer(int a2, int * a3)
+void MapClass::AllocateMapDataBuffer(int a2, int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MapClass::sub_589A60(int a2, int *a3)
 {
   _DWORD *v8; // esi
   _DWORD *v9; // esi
@@ -3392,7 +3354,6 @@ LABEL_28:
 unsigned int * MapClass::allocateMapBuffers()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_589BD0(_DWORD *this)
 {
   this->q004 = 0; /*0x589bd6*/
   this->q008 = 0; /*0x589bd9*/
@@ -3413,7 +3374,6 @@ _DWORD *__thiscall sub_589BD0(_DWORD *this)
 int MapClass::Cleanup(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_594700(int a1, int a2)
 {
   int i; // edi
   int result; // eax
@@ -3483,10 +3443,9 @@ int __fastcall sub_594700(int a1, int a2)
 }
 
 // 0x599530
-int MapClass::ProcessTile()
+void MapClass::ProcessTile()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_599530(_DWORD *this)
 {
   int i; // edi
 
@@ -3539,10 +3498,9 @@ void sub_599530(_DWORD *this)
 }
 
 // 0x5A0410
-char MapClass::GrowLayer(int a2, int a3, int a4)
+void MapClass::GrowLayer(int a2, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MapClass_GrowLayer(_BYTE *this, int a2, int a3, int a4)
 {
   int i; // eax
   int j; // esi
@@ -3680,7 +3638,6 @@ void MapClass_GrowLayer(_BYTE *this, int a2, int a3, int a4)
 int MapClass::FindPassableNeighbor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_5A17F0()
 {
   int result; // eax
   int i; // edi
@@ -3751,7 +3708,6 @@ int sub_5A17F0()
 unsigned int MapClass::TransformCoordToScreen(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MapClass::TransformCoordToScreen(int this, int a2, _DWORD *a3)
 {
   unsigned int result; // eax
   __int16 v25; // [esp+20h] [ebp-44h]
@@ -3850,7 +3806,6 @@ void MapClass::TransformCoordToScreen(int this, int a2, _DWORD *a3)
 unsigned int * MapClass::FindPlacementCellsAlt(IUnknown * aP1, IUnknown * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall MapClass::FindPlacementCellsAlt(char *this, IUnknown *aP1, IUnknown *aP2)
 {
   int eax6; // eax
   MouseClass *v7; // edi
@@ -3905,10 +3860,9 @@ _DWORD *__thiscall MapClass::FindPlacementCellsAlt(char *this, IUnknown *aP1, IU
 }
 
 // 0x7BCF50
-int MapClass::isCellShrouded(unsigned short a2)
+void MapClass::isCellShrouded(unsigned short a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_7BCF50(_DWORD *this, unsigned __int16 a2)
 {
 
   _DWORD v5[4]; // [esp+0h] [ebp-10h] BYREF

@@ -10,7 +10,6 @@
 unsigned int * WWMouseClass::initSurface()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_7B9040(_DWORD *this)
 {
   _DWORD *result; // eax
 
@@ -52,10 +51,9 @@ _DWORD *__thiscall sub_7B9040(_DWORD *this)
 }
 
 // 0x7B9930
-BOOL WWMouseClass::hideCursor()
+void WWMouseClass::hideCursor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void WWMouseClass::_vt03()
 {
 
   if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b994f*/
@@ -115,7 +113,6 @@ void WWMouseClass::_vt03()
 void WWMouseClass::captureMouse()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void WWMouseClass::captureMouse()
 {
   int *FoundationSize; // eax
   IUnknown *v14; // eax
@@ -193,7 +190,6 @@ void WWMouseClass::captureMouse()
 void WWMouseClass::releaseMouse()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void WWMouseClass::_vt05()
 {
 
   if ( this && (*(unsigned __int8 (__thiscall **)(_BYTE *))(this->q01C)(this) ) /*0x7b9c40*/
@@ -249,10 +245,9 @@ void WWMouseClass::_vt05()
 }
 
 // 0x7BA340
-int WWMouseClass::checkRegion()
+void WWMouseClass::checkRegion()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void WWMouseClass::_vt11()
 {
   return this->q01C; /*0x7ba343*/
 }
@@ -262,7 +257,6 @@ void WWMouseClass::_vt11()
 unsigned int * WWMouseClass::updatePosition(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall WWMouseClass::_vt13(_DWORD *this, _DWORD *a2)
 {
 
   int v3 = this->q01C; /*0x7ba364*/

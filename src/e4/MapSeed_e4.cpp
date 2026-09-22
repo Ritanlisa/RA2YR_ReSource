@@ -5,10 +5,9 @@
 #include "e4/classes/String_e4.hpp"
 
 // 0x597730
-char MapSeed::ValidateName(int a2)
+void MapSeed::ValidateName(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MapSeed::ValidateName(int a2)
 {
   if ( a2 ) /*0x597736*/
     return (*(int (__stdcall **)(int, char *))(this->q008)(a2, this + 120); /*0x597740*/
@@ -18,10 +17,9 @@ void MapSeed::ValidateName(int a2)
 }
 
 // 0x5AC230
-bool MapSeed::IsCellInBounds()
+void MapSeed::IsCellInBounds()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_5AC230(__int16 *this)
 {
 
   int v1 = *this; /*0x5ac230*/
@@ -34,10 +32,9 @@ void sub_5AC230(__int16 *this)
 }
 
 // 0x79C520
-char MapSeed::CheckName()
+void MapSeed::CheckName()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MapSeed_CheckName(const char **this)
 {
   char **v2; // eax
   char **v6; // [esp-8h] [ebp-18h]
@@ -95,7 +92,6 @@ LABEL_12:
 void MapSeed::InsertName()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void MapSeed::InsertName(const char **this)
 {
   char **v4; // ecx
   char **v7; // ecx

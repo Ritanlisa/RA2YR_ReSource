@@ -23,10 +23,9 @@
 
 // 0x780110
 namespace gamemd {
-int WOL_ResetSystem()
+void WOL_ResetSystem()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void WOL_ResetSystem()
 {
   void **v5; // edi
   int i; // esi
@@ -251,7 +250,6 @@ namespace gamemd {
 void PopulateWOLLobbyListBox()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void PopulateWOLLobbyListBox()
 {
   HWND v0; // eax
   HWND DlgItem; // ebp
@@ -358,7 +356,6 @@ namespace gamemd {
 wchar_t ** FormatWOLPlayerInfo(wchar_t ** a1, const char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-wchar_t **__fastcall FormatWOLPlayerInfo(wchar_t **a1, const char *a2)
 {
   wchar_t **v4; // eax
   wchar_t *v7; // eax
@@ -483,10 +480,9 @@ LABEL_27:
 
 // 0x780E30
 namespace gamemd {
-CampaignScore * FormatWOLPlayerInfoForDisplay(wchar_t ** a1, HWND a2, WPARAM wParam)
+void * FormatWOLPlayerInfoForDisplay(wchar_t ** a1, HWND a2, WPARAM wParam)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-CampaignScore *__fastcall FormatWOLPlayerInfoForDisplay(wchar_t **a1, HWND a2, WPARAM wParam)
 {
   wchar_t *StringCSF; // eax
   LRESULT v5; // eax
@@ -581,10 +577,9 @@ LABEL_14:
 
 // 0x781130
 namespace gamemd {
-bool FilterWOLGameListEntry(AbstractClass * aP0, int a2, int a3, int a4)
+void FilterWOLGameListEntry(AbstractClass * aP0, int a2, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool __fastcall FilterWOLGameListEntry(AbstractClass *aP0, int a2, int a3, int a4)
 {
   if ( g_WOL_GameListRender != (ObjectClass *)2 ) /*0x781142*/
   {
@@ -777,7 +772,6 @@ namespace gamemd {
 int sub_781380(unsigned int * a1, unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_781380(_DWORD *a1, _DWORD *a2)
 {
 
   int v2 = a1[1]; /*0x781388*/
@@ -804,7 +798,6 @@ namespace gamemd {
 void __usercall GameListRenderWOL(CampaignScore *a1@<edi> a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __usercall GameListRenderWOL(CampaignScore *a1@<edi>)
 {
   HWND v1; // eax
   ObjectClass *DlgItem; // esi
@@ -1168,10 +1161,9 @@ LABEL_100:
 
 // 0x781FB0
 namespace gamemd {
-char InsertGameSettings(unsigned char * a1, char a2)
+void InsertGameSettings(unsigned char * a1, char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall InsertGameSettings(_BYTE *a1, char a2)
 {
   char result; // al
   AbstractClass *v6; // ebp
@@ -1340,7 +1332,6 @@ namespace gamemd {
 void InsertBuddyList(char * a1, char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall InsertBuddyList(char *a1, char a2)
 {
   ObjectClass *v4; // eax
   ObjectClass *v5; // esi
@@ -1765,10 +1756,9 @@ LABEL_160:
 
 // 0x782BB0
 namespace gamemd {
-char FindBuddyList(int a1, char a2)
+int FindBuddyList(int a1, char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall FindBuddyList(int a1, char a2)
 {
   ObjectClass *v3; // eax
   bool v9; // sf
@@ -2019,7 +2009,6 @@ namespace gamemd {
 int sub_7830C0(signed int * a1, signed int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_7830C0(signed int *a1, signed int *a2)
 {
 
   signed int v2 = a1[2]; /*0x7830ca*/
@@ -2070,7 +2059,6 @@ namespace gamemd {
 void SortWOLPlayerList(char a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall SortWOLPlayerList(char a1)
 {
   size_t v13; // [esp+10h] [ebp-F8h]
   void *Block; // [esp+24h] [ebp-E4h]
@@ -2201,7 +2189,6 @@ namespace gamemd {
 int sub_7835C0(int a1, signed int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_7835C0(int a1, signed int *a2)
 {
   int result; // eax
 
@@ -2250,7 +2237,6 @@ namespace gamemd {
 int sub_7836E0(const void * a1, signed int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_7836E0(const void *a1, signed int *a2)
 {
   int result; // eax
   ObjectClass *v8; // eax
@@ -2296,10 +2282,9 @@ LABEL_6:
 
 // 0x786080
 namespace gamemd {
-char WOL_HandleLogout()
+void WOL_HandleLogout()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void WOL_HandleLogout()
 {
   HWND v1; // eax
   int (__stdcall **v2)(LPVOID, void *, int *); // ecx
@@ -2389,10 +2374,9 @@ void WOL_HandleLogout()
 
 // 0x786DC0
 namespace gamemd {
-char E4Recv_786DC0::sub_786DC0()
+void E4Recv_786DC0::sub_786DC0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_786DC0(char **this)
 {
   void *v6; // [esp+10h] [ebp-8h] BYREF
   const char *v7; // [esp+14h] [ebp-4h] BYREF
@@ -2434,10 +2418,9 @@ void sub_786DC0(char **this)
 
 // 0x787010
 namespace gamemd {
-int WOL_LoginFlow()
+void WOL_LoginFlow()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void WOL_LoginFlow()
 {
   int result; // eax
   wchar_t *String; // eax
@@ -2796,10 +2779,9 @@ LABEL_87:
 
 // 0x787770
 namespace gamemd {
-int NetworkLobbyWOL(HWND hWnd, char a2)
+void NetworkLobbyWOL(HWND hWnd, char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall NetworkLobbyWOL(HWND hWnd, char a2)
 {
   int i; // edi
   int j; // esi
@@ -3223,10 +3205,9 @@ LABEL_88:
 
 // 0x788180
 namespace gamemd {
-int WOL_FindLobbyID(char a1)
+void WOL_FindLobbyID(char a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall WOL_FindLobbyID(char a1)
 {
   int v3; // ebx
   _DWORD *v4; // ebp
@@ -3438,10 +3419,9 @@ LABEL_56:
 
 // 0x788710
 namespace gamemd {
-BOOL sub_788710(int a1, char a2)
+int sub_788710(int a1, char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __fastcall sub_788710(int a1, char a2)
 {
   wchar_t *StringCSF; // eax
   int i; // esi
@@ -3484,10 +3464,9 @@ BOOL __fastcall sub_788710(int a1, char a2)
 
 // 0x788800
 namespace gamemd {
-int WOL_LeaveChannelEx(int a1, char ** a2, void * a3)
+void WOL_LeaveChannelEx(int a1, char ** a2, void * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall WOL_LeaveChannelEx(int a1, char **a2, void *a3)
 {
   wchar_t *String; // eax
   int i; // esi
@@ -3561,7 +3540,6 @@ namespace gamemd {
 int WOL_JoinGameLobby()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int WOL_JoinGameLobby()
 {
   wchar_t *String; // eax
   wchar_t *v3; // ecx
@@ -3605,10 +3583,9 @@ LABEL_9:
 
 // 0x788B00
 namespace gamemd {
-int CreateAccountWOL()
+void CreateAccountWOL()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __usercall WOL_CreateAccount@<eax>(HWND a1@<ecx>, int a2@<ebx>, int a3@<ebp>)
 {
   HANDLE *v3; // esi
   wchar_t *String; // eax
@@ -3969,10 +3946,9 @@ LABEL_75:
 
 // 0x789500
 namespace gamemd {
-int WOL_FindChannel(const char * a1, int a2, unsigned char a3, int a4)
+void WOL_FindChannel(const char * a1, int a2, unsigned char a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall WOL_FindChannel(const char *a1, int a2, unsigned __int8 a3, int a4)
 {
   const char *v9; // [esp+20h] [ebp-Ch] BYREF
   int v10; // [esp+24h] [ebp-8h] BYREF
@@ -4048,10 +4024,9 @@ LABEL_15:
 
 // 0x7896A0
 namespace gamemd {
-char PopulateWOLUserList(HWND hWnd, char a2)
+void PopulateWOLUserList(HWND hWnd, char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall PopulateWOLUserList(HWND hWnd, char a2)
 {
   LPARAM v4; // ebp
   _DWORD *PlayerProfile; // eax
@@ -4183,10 +4158,9 @@ LABEL_30:
 
 // 0x789960
 namespace gamemd {
-int ValidateJoinWOL()
+void ValidateJoinWOL()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __usercall ValidateJoinWOL@<al>(ObjectClass *a1@<edx>, BlowStraw *a2@<ecx>, int a3@<ebx>, int a4@<ebp>)
 {
   char result; // al
   int BlowStraw_field_0x08; // eax
@@ -4272,10 +4246,9 @@ char __usercall ValidateJoinWOL@<al>(ObjectClass *a1@<edx>, BlowStraw *a2@<ecx>,
 
 // 0x789B60
 namespace gamemd {
-int CreateGameWOL()
+void CreateGameWOL()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __usercall CreateGameWOL@<al>(int a1@<edi>, int a2@<esi>)
 {
   int v4; // eax
   wchar_t *StringCSF; // eax
@@ -4652,10 +4625,9 @@ LABEL_71:
 
 // 0x78D120
 namespace gamemd {
-int OnlineLobbyDlgProcWOL(HWND hDlg, unsigned int a2, int a3, HWND hWnd)
+void OnlineLobbyDlgProcWOL(HWND hDlg, unsigned int a2, int a3, HWND hWnd)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void OnlineLobbyDlgProcWOL(HWND hDlg, unsigned int a2, int a3, HWND hWnd)
 {
   int result; // eax
   HWND v5; // eax
@@ -4966,10 +4938,9 @@ LABEL_50:
 
 // 0x78DA30
 namespace gamemd {
-int sub_78DA30(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
+void sub_78DA30(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_78DA30(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 {
   int result; // eax
   wchar_t *v5; // eax
@@ -5031,10 +5002,9 @@ void sub_78DA30(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 
 // 0x78E230
 namespace gamemd {
-int sub_78E230(HWND hWnd, UINT a2, WPARAM a3, HWND hCtl)
+void sub_78E230(HWND hWnd, UINT a2, WPARAM a3, HWND hCtl)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_78E230(HWND hWnd, UINT a2, WPARAM a3, HWND hCtl)
 {
   HWND v5; // eax
   HWND v6; // eax
@@ -5295,10 +5265,9 @@ void sub_78E230(HWND hWnd, UINT a2, WPARAM a3, HWND hCtl)
 
 // 0x78E950
 namespace gamemd {
-int WOLobbySmallDlgProc(HWND hWnd, UINT a2, WPARAM a3, HWND hCtl)
+void WOLobbySmallDlgProc(HWND hWnd, UINT a2, WPARAM a3, HWND hCtl)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void WOLobbySmallDlgProc(HWND hWnd, UINT a2, WPARAM a3, HWND hCtl)
 {
   HWND v6; // eax
   HWND v7; // eax
@@ -5406,10 +5375,9 @@ void WOLobbySmallDlgProc(HWND hWnd, UINT a2, WPARAM a3, HWND hCtl)
 
 // 0x78EBC0
 namespace gamemd {
-int GameSetup_DlgProc(HWND hWnd, unsigned int a2, int a3, HWND a4)
+void GameSetup_DlgProc(HWND hWnd, unsigned int a2, int a3, HWND a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void GameSetup_DlgProc(HWND hWnd, unsigned int a2, int a3, HWND a4)
 {
   int result; // eax
   HWND DlgItem; // eax

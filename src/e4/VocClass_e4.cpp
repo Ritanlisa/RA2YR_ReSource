@@ -4,10 +4,9 @@
 #include "e4/classes/AudioStream_e4.hpp"
 
 // 0x4052F0
-int VocClass::Release()
+void VocClass::Release()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void VocClass_Cleanup(int this)
 {
   int result; // eax
   _DWORD **v5; // edi

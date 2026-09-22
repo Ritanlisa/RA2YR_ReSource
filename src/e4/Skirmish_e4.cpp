@@ -7,10 +7,9 @@
 #include "e4/classes/WideString_e4.hpp"
 
 // 0x46F600
-int Skirmish::FillPlayerNames()
+void Skirmish::FillPlayerNames()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Skirmish_FillPlayerNames(HWND this)
 {
   int result; // eax
   HWND v3; // esi
@@ -58,7 +57,6 @@ LABEL_9:
 void Skirmish::SetupAllSpawnLocations()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Skirmish::SetupAllSpawnLocations(HWND this)
 {
   int ResourceIDCSF; // eax
   SessionClass *v4; // esi
@@ -142,10 +140,9 @@ void Skirmish::SetupAllSpawnLocations(HWND this)
 }
 
 // 0x596C70
-int Skirmish::ReadSettings(HWND hDlg)
+void Skirmish::ReadSettings(HWND hDlg)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Skirmish::ReadSettings(HWND hDlg)
 {
   LRESULT v4; // eax
   HWND v5; // eax
@@ -235,10 +232,9 @@ void Skirmish::ReadSettings(HWND hDlg)
 }
 
 // 0x597260
-int Skirmish::RandomizeSettings(ObjectClass * aP1)
+void Skirmish::RandomizeSettings(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Skirmish::RandomizeSettings(ObjectClass *aP1)
 {
   int result; // eax
 
@@ -294,10 +290,9 @@ void Skirmish::RandomizeSettings(ObjectClass *aP1)
 }
 
 // 0x640710
-int Skirmish::RenderPreview(SkirmishDialog * aP1)
+void Skirmish::RenderPreview(SkirmishDialog * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Skirmish::RenderPreview(SkirmishDialog *aP1)
 {
   int result; // eax
   HWND DlgItem; // eax
@@ -423,10 +418,9 @@ void Skirmish::RenderPreview(SkirmishDialog *aP1)
 }
 
 // 0x6ACD60
-HWND Skirmish::EnableSpawnButtons()
+void Skirmish::EnableSpawnButtons()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-HWND __thiscall Skirmish::EnableSpawnButtons(HWND this)
 {
   Skirmish *v1; // ebp
   HWND result; // eax
@@ -500,10 +494,9 @@ HWND __thiscall Skirmish::EnableSpawnButtons(HWND this)
 }
 
 // 0x6AE3F0
-int Skirmish::Setup_DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, int a4)
+void Skirmish::Setup_DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Skirmish_Setup_DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, int a4)
 {
   int result; // eax
   HWND DlgItem; // eax
@@ -620,10 +613,9 @@ void Skirmish_Setup_DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, int a4)
 }
 
 // 0x6AE6E0
-int Skirmish::SetupGame(int a2)
+void Skirmish::SetupGame(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Skirmish::SetupGame(int a2)
 {
   HWND DlgItem; // eax
   HWND v4; // esi
@@ -994,10 +986,9 @@ LABEL_92:
 
 // 0x6ADF00
 namespace gamemd {
-int Skirmish_Setup_6ADDF0_Setup(HWND hDlg, int a2, int nIDDlgItem)
+void Skirmish_Setup_6ADDF0_Setup(HWND hDlg, int a2, int nIDDlgItem)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall Skirmish_Setup_6ADDF0_Setup(HWND hDlg, int a2, int nIDDlgItem)
 {
   int result; // eax
   HWND ResourceIDHardcodedCSF; // [esp+4h] [ebp-1Ch]

@@ -13,10 +13,9 @@
 
 // 0x42A6D0
 namespace gamemd {
-char * Tactical::ConstructTacticalSurface()
+void * Tactical::ConstructTacticalSurface()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall ConstructTacticalSurface(char *this)
 {
   int i; // ecx
 
@@ -176,17 +175,9 @@ char *__thiscall ConstructTacticalSurface(char *this)
 
 // 0x484050
 namespace gamemd {
-int * Tactical::CreateTacticalLightSurface(int * a2, int * a1, IUnknown * aP2, int * a3, int * a4, IUnknown * aP5)
+void * Tactical::CreateTacticalLightSurface(int * a2, int * a1, IUnknown * aP2, int * a3, int * a4, IUnknown * aP5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int *__thiscall Tactical::CreateTacticalLightSurface(
-        int this,
-        int *a2,
-        int *a1,
-        IUnknown *aP2,
-        int *a3,
-        int *a4,
-        IUnknown *aP5)
 {
   IUnknown *v9; // ebx
   IUnknown *v11; // ecx
@@ -241,10 +232,9 @@ int *__thiscall Tactical::CreateTacticalLightSurface(
 
 // 0x484180
 namespace gamemd {
-int Tactical::CalculateTacticalLighting(int * a1, IUnknown * aP2, int * a3, int * a4, IUnknown * aP5, int * a6, long long a8)
+void Tactical::CalculateTacticalLighting(int * a1, IUnknown * aP2, int * a3, int * a4, IUnknown * aP5, int * a6, long long a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Tactical::CalculateTacticalLighting(int *a1, IUnknown *aP2, int *a3, int *a4, IUnknown *aP5, int *a6, __int64 a8)
 {
   Tactical *v8; // edi
   int v22; // eax
@@ -394,7 +384,6 @@ namespace gamemd {
 unsigned int * Tactical::MouseMove(MouseClass * aP1, MouseClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall Tactical::MouseMove(int this, MouseClass *aP1, MouseClass *aP2)
 {
   MouseClass *v3; // ebp
   MouseClass *v6; // eax
@@ -539,10 +528,9 @@ LABEL_11:
 
 // 0x568350
 namespace gamemd {
-bool Tactical::IsCellVisible(IUnknown * aP1)
+void Tactical::IsCellVisible(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Tactical::IsCellVisible(IUnknown *aP1)
 {
 
   int v2 = this->q0F4; /*0x56836f*/
@@ -555,10 +543,9 @@ void Tactical::IsCellVisible(IUnknown *aP1)
 
 // 0x58C2A0
 namespace gamemd {
-char * Tactical::GetCellData()
+void * Tactical::GetCellData()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall Tactical_GetCellData(__int16 *this)
 {
   return (char *)g_MapTileArray + 80 * *this + 80 * unk_89C2DC * this->vtable2; /*0x58c2be*/
 }
@@ -567,18 +554,9 @@ char *__thiscall Tactical_GetCellData(__int16 *this)
 
 // 0x640A40
 namespace gamemd {
-int Tactical_Radar_Render()
+void Tactical_Radar_Render()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int *__userpurge Tactical_Radar_Render@<eax>(
-        int **a1@<ecx>,
-        int a2@<ebx>,
-        int a3@<ebp>,
-        int a4@<edi>,
-        int a5,
-        char a6,
-        int a7,
-        int *a8)
 {
   int *result; // eax
   int i; // eax
@@ -778,10 +756,9 @@ int *__userpurge Tactical_Radar_Render@<eax>(
 
 // 0x692300
 namespace gamemd {
-char Tactical::MouseOver(MouseClass * aP0, MouseClass * aP1, MouseClass * aP2, MouseClass * aP3, MouseClass * aP4, MouseClass * aP5)
+void Tactical::MouseOver(MouseClass * aP0, MouseClass * aP1, MouseClass * aP2, MouseClass * aP3, MouseClass * aP4, MouseClass * aP5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Tactical::MouseOver(MouseClass *aP0, MouseClass *aP1, MouseClass *aP2, MouseClass *aP3, MouseClass *aP4, MouseClass *aP5)
 {
   MouseClass *v6; // edx
   MouseClass *v7; // esi
@@ -941,10 +918,9 @@ void Tactical::MouseOver(MouseClass *aP0, MouseClass *aP1, MouseClass *aP2, Mous
 
 // 0x6930A0
 namespace gamemd {
-char Tactical::HandleTacticalMouseInput(int _28, unsigned int * a2, int a4, MouseClass * aP4)
+void Tactical::HandleTacticalMouseInput(int _28, unsigned int * a2, int a4, MouseClass * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Tactical::HandleTacticalMouseInput(int _28, _DWORD *a2, int a4, MouseClass *aP4)
 {
   __int16 v10; // [esp+8h] [ebp-1Ch] BYREF
   MouseClass *aP2; // [esp+Ch] [ebp-18h] BYREF
@@ -1066,10 +1042,9 @@ void Tactical::HandleTacticalMouseInput(int _28, _DWORD *a2, int a4, MouseClass 
 
 // 0x6A6610
 namespace gamemd {
-int Tactical::UpdateUIVisibility()
+void Tactical::UpdateUIVisibility()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Tactical_UpdateUIVisibility(_DWORD *this)
 {
   int result; // eax
 
@@ -1123,7 +1098,6 @@ namespace gamemd {
 void Tactical::DisplayTacticalOverlayText(wchar_t * String)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void DisplayTacticalOverlayText(signed int *this, wchar_t *String)
 {
 
   if ( !ArmageddonMode && (String && wcslen(String) || this->q0A4 != -1) ) /*0x6d4e52*/
@@ -1197,7 +1171,6 @@ namespace gamemd {
 unsigned int Tactical::SetTacticalPosition(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Tactical::SetTacticalPosition(int this, IUnknown *aP1)
 {
   IUnknown *v5; // esi
   unsigned int result; // eax
@@ -1231,7 +1204,6 @@ namespace gamemd {
 unsigned int * Tactical::PixelToCell(AbstractClass * aP1, IUnknown * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall Tactical::PixelToCell(int this, AbstractClass *aP1, IUnknown *aP2)
 {
   BuildingTypeClass *v8; // esi
   BuildingTypeClass *v14; // esi
@@ -1284,7 +1256,7 @@ _DWORD *__thiscall Tactical::PixelToCell(int this, AbstractClass *aP1, IUnknown 
   v40 = v10 + 180; /*0x6d669c*/
   for ( i = 0; ; ++i )
   {
-    int v12 = this->q02D; /*0x6d66b4*/
+    bool v12 = this->q02D; /*0x6d66b4*/
     v43[0] = v39 + this->q02C; /*0x6d66bc*/
     v43[1] = v11 + v12; /*0x6d66c6*/
     v47 = (float)v43[0]; /*0x6d66d5*/
@@ -1393,10 +1365,9 @@ _DWORD *__thiscall Tactical::PixelToCell(int this, AbstractClass *aP1, IUnknown 
 
 // 0x6DA7D0
 namespace gamemd {
-int Tactical::AddCellToDrawList(IUnknown * aP1)
+void Tactical::AddCellToDrawList(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Tactical::AddCellToDrawList(int this, IUnknown *aP1)
 {
   int result; // eax
   ObjectClass *Coords; // eax
@@ -1459,10 +1430,9 @@ void Tactical::AddCellToDrawList(int this, IUnknown *aP1)
 
 // 0x6DB210
 namespace gamemd {
-int Tactical::DrawTacticalConnectorLines()
+void Tactical::DrawTacticalConnectorLines()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Tactical::DrawTacticalConnectorLines()
 {
   int result; // eax
   ObjectClass *Coords; // eax
@@ -1531,7 +1501,7 @@ void Tactical::DrawTacticalConnectorLines()
         v45[0] = *v11; /*0x6db37b*/
         int v14 = v45[0] - v12; /*0x6db37f*/
         int v15 = v13[1]; /*0x6db381*/
-        int v16 = this->q02D; /*0x6db384*/
+        bool v16 = this->q02D; /*0x6db384*/
         v45[0] = v14; /*0x6db390*/
         v56[1] = v42 - 1; /*0x6db39a*/
         v45[1] = v15 - v16; /*0x6db3a6*/
@@ -1560,7 +1530,7 @@ void Tactical::DrawTacticalConnectorLines()
         v51 = *(_DWORD *)&v17->__pad_0[8]; /*0x6db432*/
         int * v18 = Coord::To_ScreenRaw(&v62, &a1); /*0x6db436*/
         int v19 = this->q02C; /*0x6db43d*/
-        int v20 = this->q02D; /*0x6db443*/
+        bool v20 = this->q02D; /*0x6db443*/
         v43 = *v18; /*0x6db449*/
         int v21 = v18[1] - v20; /*0x6db452*/
         v43 -= v19; /*0x6db454*/
@@ -1571,7 +1541,7 @@ void Tactical::DrawTacticalConnectorLines()
         v48 = v22[2]; /*0x6db48f*/
         int * v23 = Coord::To_ScreenRaw(v57, &v46); /*0x6db493*/
         v37 = (IUnknown *)*v23; /*0x6db49a*/
-        int v24 = this->q02D; /*0x6db49e*/
+        bool v24 = this->q02D; /*0x6db49e*/
         int v25 = v23[1]; /*0x6db4a4*/
         int v26 = this->q02C; /*0x6db4a7*/
         v38 = v25; /*0x6db4ad*/
@@ -1613,7 +1583,7 @@ void Tactical::DrawTacticalConnectorLines()
       int * v30 = Coord::To_ScreenRaw(v57, &v46); /*0x6db582*/
       int v31 = this->q02C; /*0x6db589*/
       v37 = (IUnknown *)*v30; /*0x6db58f*/
-      int v32 = this->q02D; /*0x6db593*/
+      bool v32 = this->q02D; /*0x6db593*/
       int v33 = v30[1]; /*0x6db599*/
       v39 = v31; /*0x6db59c*/
       v38 = v33; /*0x6db5a0*/
@@ -1640,10 +1610,9 @@ void Tactical::DrawTacticalConnectorLines()
 
 // 0x6DBB60
 namespace gamemd {
-char Tactical::DrawOverlay(int * a1, BuildingTypeClass * aP2, int a4, int a5)
+void Tactical::DrawOverlay(int * a1, BuildingTypeClass * aP2, int a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Tactical::DrawOverlay(int *a1, BuildingTypeClass *aP2, int a4, int a5)
 {
   Tactical *v14; // ecx
   ObjectClass *v22; // esi
@@ -1654,7 +1623,7 @@ void Tactical::DrawOverlay(int *a1, BuildingTypeClass *aP2, int a4, int a5)
   int v7 = v6[1]; /*0x6dbb83*/
   int v8 = *v6 / 256; /*0x6dbb93*/
   int v9 = ZCoordToScreenY(a1[2]); /*0x6dbb9b*/
-  int v10 = this->q02D; /*0x6dbbac*/
+  bool v10 = this->q02D; /*0x6dbbac*/
   int v11 = v7 / 256 - v9; /*0x6dbbb5*/
   int v12 = this->q02C; /*0x6dbbb7*/
   _DWORD v32[2]; // [esp+28h] [ebp-8h] BYREF
@@ -1700,10 +1669,9 @@ void Tactical::DrawOverlay(int *a1, BuildingTypeClass *aP2, int a4, int a5)
 
 // 0x6E4A80
 namespace gamemd {
-int Tactical_42::FindItem(unsigned int * a2)
+void Tactical_42::FindItem(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Tactical_42_::sub_6E4A80(_DWORD *a2)
 {
   int result; // eax
   _DWORD *i; // ecx

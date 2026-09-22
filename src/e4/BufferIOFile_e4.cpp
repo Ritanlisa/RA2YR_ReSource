@@ -5,10 +5,9 @@
 
 // 0x47A9D0
 namespace gamemd {
-CDFileClass * BufferIOFile::Constructor(char * Source)
+void * BufferIOFile::Constructor(char * Source)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-CDFileClass *__thiscall BufferIOFile::Constructor(_BYTE *this, char *Source)
 {
   BufferIOFileClass::Constructor(this); /*0x47a9d3*/
   *(this + 84) = 0; /*0x47a9df*/
@@ -24,7 +23,6 @@ namespace gamemd {
 unsigned char * BufferIOFile::Init()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_BYTE *__thiscall BufferIOFile_Init(_BYTE *this)
 {
   BufferIOFileClass::Constructor(); /*0x47aa33*/
   *(this + 84) = 0; /*0x47aa38*/

@@ -11,7 +11,6 @@ namespace game {
 unsigned int * RadioClass::Release()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall RadioClass::RadioClass(_DWORD *this)
 {
   RadioClass::Constructor((int)this); /*0x65a753*/
   this->q0E4 = 0; /*0x65a75a*/
@@ -38,10 +37,9 @@ _DWORD *__thiscall RadioClass::RadioClass(_DWORD *this)
 // 0x65AA80
 namespace ra2 {
 namespace game {
-int RadioClass::ProcessCmd()
+void RadioClass::ProcessCmd()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void RadioClass::ProcessCmd(#374 *this)
 {
   if ( !this->inLimbo ) /*0x65aa83*/
     (*(void (__thiscall **)(#374 *, int))(this->q0A0)(this, 3); /*0x65aa91*/
@@ -54,10 +52,9 @@ void RadioClass::ProcessCmd(#374 *this)
 // 0x65AB10
 namespace ra2 {
 namespace game {
-int RadioClass::PowerDrainUpdate(AbstractClass * aP1)
+void RadioClass::PowerDrainUpdate(AbstractClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void RadioClass::PowerDrainUpdate(AbstractClass *aP1)
 {
   BaseClass *result; // eax
   int i; // edi
@@ -87,10 +84,9 @@ void RadioClass::PowerDrainUpdate(AbstractClass *aP1)
 // 0x65AB80
 namespace ra2 {
 namespace game {
-int RadioClass::LoadState(ObjectClass * aP1, ObjectClass * aP2)
+void RadioClass::LoadState(ObjectClass * aP1, ObjectClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void RadioClass::LoadState(ObjectClass *aP1, ObjectClass *aP2)
 {
   ObjectClass *v3; // ebp
   ObjectClass *v4; // edi
@@ -161,10 +157,9 @@ LABEL_8:
 // 0x65AD90
 namespace ra2 {
 namespace game {
-int RadioClass::FindLinkIndex(int a2)
+void RadioClass::FindLinkIndex(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void RadioClass::FindLinkIndex(int a2)
 {
   int result; // eax
   _DWORD *i; // ecx
@@ -189,10 +184,9 @@ void RadioClass::FindLinkIndex(int a2)
 // 0x65ADC0
 namespace ra2 {
 namespace game {
-char RadioClass::HasFreeLink()
+void RadioClass::HasFreeLink()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void RadioClass::HasFreeLink()
 {
   _DWORD *i; // ecx
 
@@ -217,7 +211,6 @@ namespace game {
 void RadioClass::SetLinkCount(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void RadioClass::SetLinkCount(int a2)
 {
 
   int v3 = this->q0E8; /*0x65ae69*/

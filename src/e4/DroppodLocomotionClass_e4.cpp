@@ -9,10 +9,9 @@
 
 // 0x4B5B70
 namespace gamemd {
-char DroppodLocomotionClass::ILoco_Process(int a1)
+void DroppodLocomotionClass::ILoco_Process(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void DroppodLocomotionClass::ILoco_Process(int a1)
 {
   double v4; // st7
   __int64 v5; // rax

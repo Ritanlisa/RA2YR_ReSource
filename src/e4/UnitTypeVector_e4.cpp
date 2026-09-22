@@ -6,7 +6,6 @@
 unsigned int * UnitTypeVector::ConstructUnitTypeVectorClass(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall VectorClass_Constructor_UnitType(_DWORD *this, int a2, int a3)
 {
   this->q004 = 0; /*0x51394b*/
   this->q008 = a2; /*0x51394e*/
@@ -31,7 +30,6 @@ _DWORD *__thiscall VectorClass_Constructor_UnitType(_DWORD *this, int a2, int a3
 unsigned int * UnitTypeVector::Construct2(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_5D8950(_DWORD *this, int a2, int a3)
 {
   this->q004 = 0; /*0x5d895b*/
   this->q008 = a2; /*0x5d895e*/

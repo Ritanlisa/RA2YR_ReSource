@@ -3,10 +3,9 @@
 #include "e4/e4_globals.hpp"
 
 // 0x52B620
-size_t SortedArray::BinarySearch(CCINIClass * aP1)
+void SortedArray::BinarySearch(CCINIClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void SortedArray::BinarySearch(char **this, CCINIClass *aP1)
 {
   size_t result; // eax
   ObjectClass *v4; // edi
@@ -49,10 +48,9 @@ void SortedArray::BinarySearch(char **this, CCINIClass *aP1)
 }
 
 // 0x5387D0
-char SortedArray::Append(DynamicVector * aP1, unsigned int * a2)
+void SortedArray::Append(DynamicVector * aP1, unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void SortedArray::Append(int this, DynamicVector *aP1, _DWORD *a2)
 {
   int v5; // ebx
   int v6; // edi
@@ -103,10 +101,9 @@ LABEL_9:
 }
 
 // 0x5388A0
-char SortedArray::RemoveByKey(DynamicVector * aP1)
+void SortedArray::RemoveByKey(DynamicVector * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void SortedArray::RemoveByKey(int this, DynamicVector *aP1)
 {
   size_t v3; // eax
   int v6; // edx
@@ -171,10 +168,9 @@ LABEL_9:
 }
 
 // 0x538980
-char SortedArray::FindPair(int * a2)
+void SortedArray::FindPair(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void SortedArray_FindPair(int this, int *a2)
 {
   size_t v3; // ecx
   int v9; // esi

@@ -6,10 +6,9 @@
 #include "e4/classes/VoxelAnimType_e4.hpp"
 
 // 0x41C8B0
-int AircraftTypeClass::AircraftTypeClass(ObjectClass * aP1)
+A AircraftTypeClass::AircraftTypeClass(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-A AircraftTypeClass::AircraftTypeClass(int this, ObjectClass *aP1)
 {
   AircraftTypeClass *v3; // eax
   CCINIClass *v6; // edx
@@ -79,10 +78,9 @@ LABEL_11:
 
 // 0x41CC20
 namespace gamemd {
-int AircraftTypeClass_LoadTypeData()
+void AircraftTypeClass_LoadTypeData()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __userpurge AircraftTypeClass::vt_25_@<al>(int a1@<ecx>, double a2@<st0>, unsigned __int8 ***a3)
 {
   char Bool_Overwrite; // al
   int v9; // eax

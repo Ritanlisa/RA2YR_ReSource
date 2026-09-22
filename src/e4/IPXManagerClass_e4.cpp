@@ -3,10 +3,9 @@
 #include "e4/e4_globals.hpp"
 
 // 0x540D80
-int IPXManagerClass::sendPacket(int a2, int a3, int a4)
+void IPXManagerClass::sendPacket(int a2, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void IPXManagerClass::_vt18(int a2, int a3, int a4)
 {
   int result; // eax
 
@@ -30,10 +29,9 @@ void IPXManagerClass::_vt18(int a2, int a3, int a4)
 }
 
 // 0x541040
-int IPXManagerClass::send(int a2)
+void IPXManagerClass::send(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void IPXManagerClass::_vt06(int a2)
 {
   int result; // eax
   _DWORD *i; // ecx
@@ -52,10 +50,9 @@ void IPXManagerClass::_vt06(int a2)
 }
 
 // 0x541070
-int IPXManagerClass::receivePacket(int a2)
+void IPXManagerClass::receivePacket(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void IPXManagerClass::_vt19(int a2)
 {
   int result; // eax
 

@@ -6,18 +6,6 @@
 unsigned short * RLEBlitTransZRemapXlatAlpha_ushort::AddRef(int arg0, unsigned char * a2, int a4, RLEBlitTransZRemapXlatAlpha_ushort * aP4, int a6, int _2C, unsigned short * a7, int a9, int a10, int a11)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned __int16 *__thiscall RLEBlitTransZRemapXlatAlpha_ushort::AddRef(
-        int this,
-        int arg0,
-        unsigned __int8 *a2,
-        int a4,
-        RLEBlitTransZRemapXlatAlpha_ushort *aP4,
-        int a6,
-        int _2C,
-        unsigned __int16 *a7,
-        int a9,
-        int a10,
-        int a11)
 {
   unsigned __int16 *result; // eax
   RLEBlitTransZRemapXlatAlpha_ushort *v15; // edx
@@ -83,10 +71,9 @@ unsigned __int16 *__thiscall RLEBlitTransZRemapXlatAlpha_ushort::AddRef(
 }
 
 // 0x497B40
-int RLEBlitTransZRemapXlatAlpha_ushort::Release(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
+void RLEBlitTransZRemapXlatAlpha_ushort::Release(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void RLEBlitTransZRemapXlatAlpha_ushort::_vt02(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
 {
   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(this->q004)( /*0x497b77*/
            this,

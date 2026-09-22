@@ -11,10 +11,9 @@
 #include "e4/classes/Vector_e4.hpp"
 
 // 0x4D0980
-int FoggedObjectClass::InitBuildingFog(unsigned int * a2, int a3, int a4)
+void FoggedObjectClass::InitBuildingFog(unsigned int * a2, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void FoggedObjectClass::InitBuildingFog(int this, _DWORD *a2, int a3, int a4)
 {
   int *PlacementRectBuildingClass; // edi
   int *StartCoordsHouse; // eax
@@ -151,10 +150,9 @@ LABEL_27:
 }
 
 // 0x4D0C40
-FoggedObjectClass * FoggedObjectClass::InitTerrainFog(IUnknown * aP1, int a3, int a4)
+void * FoggedObjectClass::InitTerrainFog(IUnknown * aP1, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-FoggedObjectClass *__thiscall FoggedObjectClass::InitTerrainFog(int this, IUnknown *aP1, int a3, int a4)
 {
   IUnknown *v12; // edx
   int v16; // ebp
@@ -262,10 +260,9 @@ LABEL_15:
 }
 
 // 0x4D0EF0
-int FoggedObjectClass::Constructor(BuildingClass * aP1, FoggedObjectClass * aP2)
+void FoggedObjectClass::Constructor(BuildingClass * aP1, FoggedObjectClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void FoggedObjectClass::Constructor(int this, BuildingClass *aP1, FoggedObjectClass *aP2)
 {
   HouseClass *v4; // eax
   VectorClass *v7; // esi
@@ -493,10 +490,9 @@ LABEL_47:
 }
 
 // 0x4D1370
-int FoggedObjectClass::InitDrawRecord(unsigned int * a2)
+void FoggedObjectClass::InitDrawRecord(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void FoggedObjectClass::InitDrawRecord(int this, _DWORD *a2)
 {
   int v17; // ebp
   _DWORD *v18; // ebx
@@ -607,10 +603,9 @@ LABEL_21:
 }
 
 // 0x4D2510
-int FoggedObjectClass::LoadTypeData(int * a1, int a2)
+void FoggedObjectClass::LoadTypeData(int * a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void FoggedObjectClass::_vt05(int *a1, int a2)
 {
   int result; // eax
   signed int i; // eax
@@ -720,10 +715,9 @@ LABEL_22:
 }
 
 // 0x4D2810
-int FoggedObjectClass::PowerDrainUpdate(int a2)
+void FoggedObjectClass::PowerDrainUpdate(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void FoggedObjectClass::_vt13(int this, int a2)
 {
   AbstractClass::ProcessPower((#378 *)this); /*0x4d2819*/
   Power::TimerProcess(this->LastSight); /*0x4d2824*/
@@ -747,7 +741,6 @@ void FoggedObjectClass::_vt13(int this, int a2)
 unsigned int * FoggedObjectClass::CheckVisibility(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall FoggedObjectClass::_vt24(_DWORD *this, _DWORD *a2)
 {
 
   int v3; // [esp+0h] [ebp-4h]
@@ -759,10 +752,9 @@ _DWORD *__thiscall FoggedObjectClass::_vt24(_DWORD *this, _DWORD *a2)
 }
 
 // 0x4D2BC0
-char FoggedObjectClass::ResizeArray(int a2, char * a3)
+void FoggedObjectClass::ResizeArray(int a2, char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void FoggedObjectClass::ResizeArray(int a2, char *a3)
 {
 
   int v3 = a2; /*0x4d2bc2*/
@@ -862,10 +854,9 @@ void FoggedObjectClass::ResizeArray(int a2, char *a3)
 }
 
 // 0x4D2CD0
-int FoggedObjectClass::Read(unsigned int * a2)
+void FoggedObjectClass::Read(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void FoggedObjectClass::_vt04(_DWORD *a2)
 {
   int result; // eax
   _DWORD *i; // ecx
@@ -885,10 +876,9 @@ void FoggedObjectClass::_vt04(_DWORD *a2)
 
 // 0x4E07B0
 namespace gamemd {
-int FoggedObjectClass_42::FindItem(unsigned int * a2)
+void FoggedObjectClass_42::FindItem(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void FoggedObjectClass_42_::sub_4E07B0(_DWORD *a2)
 {
   int result; // eax
   _DWORD *i; // ecx

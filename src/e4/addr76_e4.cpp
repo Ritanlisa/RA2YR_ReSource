@@ -44,11 +44,10 @@
 
 // 0x7636F0
 namespace gamemd {
-int unknown_libname_36()
+void unknown_libname_36()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // Microsoft VisualC 2-14/net runtime
-_DWORD *__thiscall unknown_libname_36(_DWORD *this)
 {
   *this = 0; /*0x7636f4*/
   this->vtable2 = 0; /*0x7636f6*/
@@ -60,10 +59,9 @@ _DWORD *__thiscall unknown_libname_36(_DWORD *this)
 
 // 0x764B90
 namespace gamemd {
-char * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int a3)
+void * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall WDT_Campaign_Constructor(char *this, const char **a2, int a3)
 {
   int OwnerHouse; // eax
   int Int; // ebp
@@ -231,10 +229,9 @@ char *__thiscall WDT_Campaign_Constructor(char *this, const char **a2, int a3)
 
 // 0x765000
 namespace gamemd {
-char * E4Recv_765000::sub_765000(ScoreScreen * aP1)
+void * E4Recv_765000::sub_765000(ScoreScreen * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall sub_765000(int this, ScoreScreen *aP1)
 {
   char **v3; // eax
   char **RegionStringWOL; // [esp-4h] [ebp-10Ch]
@@ -290,10 +287,9 @@ char *__thiscall sub_765000(int this, ScoreScreen *aP1)
 
 // 0x7651D0
 namespace gamemd {
-char * E4Recv_7651D0::sub_7651D0()
+void * E4Recv_7651D0::sub_7651D0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall sub_7651D0(char **this)
 {
   char **v2; // edi
   int i; // esi
@@ -351,7 +347,6 @@ namespace gamemd {
 int WDT_InitGameOptions()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int WDT_InitGameOptions()
 {
   void **v27; // [esp+28h] [ebp-10h] BYREF
   int v28; // [esp+2Ch] [ebp-Ch]
@@ -505,10 +500,9 @@ int WDT_InitGameOptions()
 
 // 0x7667E0
 namespace gamemd {
-int E4Recv_7667E0::sub_7667E0()
+void E4Recv_7667E0::sub_7667E0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_7667E0(unsigned __int8 *this)
 {
   return *(this + 14); /*0x7667e5*/
 }
@@ -517,10 +511,9 @@ void sub_7667E0(unsigned __int8 *this)
 
 // 0x7667F0
 namespace gamemd {
-int E4Recv_7667F0::sub_7667F0()
+void E4Recv_7667F0::sub_7667F0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_7667F0(unsigned __int8 *this)
 {
   return *(this + 15); /*0x7667f5*/
 }
@@ -532,7 +525,6 @@ namespace gamemd {
 void E4Recv_767EC0::sub_767EC0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_767EC0(_DWORD *this)
 {
   *this = &vt_MSFrameAnim; /*0x767ec0*/
   VtableStub::5CB6C0(this); /*0x767ec6*/
@@ -542,11 +534,10 @@ void sub_767EC0(_DWORD *this)
 
 // 0x769480
 namespace gamemd {
-int unknown_libname_37()
+void unknown_libname_37()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // Microsoft VisualC 2-14/net runtime
-ObjectClass *__thiscall unknown_libname_37(_DWORD *this)
 {
   *this = 0; /*0x769484*/
   this->vtable2 = 0; /*0x769486*/
@@ -561,7 +552,6 @@ namespace gamemd {
 int WDTMap_LoadAsset(const char ** a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall WDTMap_LoadAsset(const char **a1, int a2)
 {
   void **v8; // eax
   void **v27; // eax
@@ -894,7 +884,6 @@ namespace gamemd {
 unsigned int * E4Recv_76B7B0::sub_76B7B0(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_76B7B0(_DWORD *this, _DWORD *a2)
 {
   _DWORD *v8; // eax
   int v9; // eax
@@ -957,16 +946,9 @@ _DWORD *__thiscall sub_76B7B0(_DWORD *this, _DWORD *a2)
 
 // 0x76F970
 namespace gamemd {
-char * WorldDominationTour__Territory::Constructor(int aP1, unsigned int * a2, ReferenceCounted * aP3, const char ** a4, ReferenceCounted * aP5)
+void * WorldDominationTour__Territory::Constructor(int aP1, unsigned int * a2, ReferenceCounted * aP3, const char ** a4, ReferenceCounted * aP5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall WorldDominationTour::Territory::Constructor(
-        char *this,
-        int aP1,
-        _DWORD *a2,
-        ReferenceCounted *aP3,
-        const char **a4,
-        ReferenceCounted *aP5)
 {
   MPCooperative *v6; // ebp
   CCINIClass *v8; // edi
@@ -1459,10 +1441,9 @@ int sub_764A00()
 // 0x764A20
 namespace ra2 {
 namespace game {
-GenericNode * ObjectClass::sub_764A20()
+void * ObjectClass::sub_764A20()
  {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-GenericNode *__thiscall sub_764A20(ObjectClass *this)
 {
   GenericNode *Int; // esi
   ReferenceCounted aP2; // [esp+8h] [ebp-9Ch] BYREF

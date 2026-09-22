@@ -3,10 +3,9 @@
 #include "e4/e4_globals.hpp"
 
 // 0x48B2A0
-int Struct::ClearAllMemberFlags()
+void Struct::ClearAllMemberFlags()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Struct::ClearAllMemberFlags()
 {
   int result; // eax
 
@@ -70,10 +69,9 @@ void Struct::ClearAllMemberFlags()
 }
 
 // 0x48BF10
-int Struct::ZeroInitAndSetup()
+void Struct::ZeroInitAndSetup()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Struct_ZeroInitAndSetup(_DWORD *this)
 {
   this->q034 = 0; /*0x48bf12*/
   this->q038 = 0; /*0x48bf15*/
@@ -94,7 +92,6 @@ void Struct_ZeroInitAndSetup(_DWORD *this)
 unsigned char * Struct::Zero3()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_BYTE *__thiscall Struct::Zero3(_BYTE *this)
 {
   *this = 0; /*0x4b9bd4*/
   this->q004 = 0; /*0x4b9bd6*/
@@ -114,11 +111,10 @@ int Struct::ZeroInit32()
 
 // 0x53F4E0
 namespace gamemd {
-int Struct::ZeroInitAndSetup_0()
+void Struct::ZeroInitAndSetup_0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // attributes: thunk
-void Struct::ZeroInitAndSetup_0()
 {
   return Struct::ZeroInitAndSetup(this);
 }
@@ -126,11 +122,10 @@ void Struct::ZeroInitAndSetup_0()
 }
 // 0x5EF280
 namespace gamemd {
-int Struct::ZeroInitAndSetup_0_0()
+void Struct::ZeroInitAndSetup_0_0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // attributes: thunk
-void Struct::ZeroInitAndSetup_0_0()
 {
   return Struct::ZeroInitAndSetup(this);
 }

@@ -6,10 +6,9 @@
 
 // 0x4C9480
 namespace gamemd {
-BOOL TimerClass::Active()
+void TimerClass::Active()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TimerClass_Active(int this)
 {
 
   if ( *(__int16 *)(this + 20) <= 0 ) /*0x4c9485*/
@@ -29,27 +28,9 @@ void TimerClass_Active(int this)
 
 // 0x54FE60
 namespace gamemd {
-char * TimerClass::Construct(int a2, int a3, TechnoTypeClass * aP3, int a5, int a6, int a7, int a8, char a9, int a10, int a11, int a12, int a13, char a14, char a15, int a16, int a17)
+void * TimerClass::Construct(int a2, int a3, TechnoTypeClass * aP3, int a5, int a6, int a7, int a8, char a9, int a10, int a11, int a12, int a13, char a14, char a15, int a16, int a17)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall TimerClass::Construct(
-        char *this,
-        int a2,
-        int a3,
-        TechnoTypeClass *aP3,
-        int a5,
-        int a6,
-        int a7,
-        int a8,
-        char a9,
-        int a10,
-        int a11,
-        int a12,
-        int a13,
-        char a14,
-        char a15,
-        int a16,
-        int a17)
 {
   IUnknown *v19; // ecx
 
@@ -119,7 +100,6 @@ namespace gamemd {
 signed int TimerClass::GetRemaining()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-signed int __thiscall TimerClass_GetRemaining(signed int *this)
 {
   signed int result; // eax
 
@@ -149,7 +129,6 @@ namespace gamemd {
 void TimerClass::StartIfIdle()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TimerClass_StartIfIdle(_DWORD *this)
 {
   if ( this->q010 == -1 ) /*0x5ceb27*/
     this->q010 = Timer::GetTicks(); /*0x5ceb31*/

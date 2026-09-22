@@ -24,7 +24,6 @@
 // 0x415EE0
 namespace gamemd { void* BulletClass::FlightUpdate(int a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-double *__thiscall BulletClass::FlightUpdate(void *this, InfantryClass *aP1, int a3)
 {
   InfantryClass *v5; // ebx
   BuildingTypeClass *v8; // esi
@@ -1221,7 +1220,6 @@ namespace gamemd { int AnimClass::initAnimation() {
 // 0x448070
 namespace gamemd { bool AnimClass::updateAnimation(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void AnimClass::updateAnimation(int this, IUnknown *aP1)
 {
   int v9; // eax
   int v10; // ecx
@@ -1390,7 +1388,6 @@ namespace gamemd { int AnimClass::setLoopCount() {
 // 0x449C30
 namespace gamemd { int AnimClass::finalizeAnimation() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_729370(int this)
 {
   void **v6; // eax
 
@@ -8008,7 +8005,6 @@ namespace gamemd { bool BulletClass::CheckBulletCollision(void* a1) {
 // 0x468D80
 namespace gamemd { int BulletClass::Fire(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void BulletClass::Fire(int this, char a2)
 {
   AbstractClass *v5; // ecx
   AbstractClass *v8; // ecx
@@ -8377,7 +8373,6 @@ namespace gamemd { int BulletClass::InitDetonationTimer(void* a1, void* a2, int 
 // 0x4E11F0
 namespace gamemd { int BulletClass::CheckProximityDetonation(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_4E11F0(_DWORD *this, _DWORD *a2)
 {
 
   int v3 = this->vtable4; /*0x4e11f6*/
@@ -10922,7 +10917,6 @@ namespace gamemd { int TerrainClass::InitTheatre() {
 // 0x574000
 namespace gamemd { void TerrainClass::ProcessSlope(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __userpurge TerrainClass::ProcessSlope(IUnknown *this@<ecx>, IUnknown aP1)
 {
   TerrainClass *v2; // ebp
   IUnknown *v3; // edi
@@ -11269,7 +11263,6 @@ LABEL_79:
 // 0x59C920
 namespace gamemd { int TiberiumClass::Grow(void* a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TiberiumClass::Grow(MapResourceClass *aP1)
 {
   AbstractClass *v8; // esi
   int i; // eax
@@ -13322,7 +13315,6 @@ namespace gamemd { int ParticleSystemClass::UpdateSystem(int a1, int a2) {
 // 0x62FF20
 namespace gamemd { int ParticleSystemClass::Write(int a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void C07EFB9C::_vt05(#374 *this, int a2, int *a3)
 {
   int result; // eax
   int i; // esi
@@ -13506,7 +13498,6 @@ namespace gamemd { int RadSiteClass::PowerDrainUpdate(int a1) {
 // 0x65B800
 namespace gamemd { int RadSiteClass::Tick() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void RadSiteClass::_vt23()
 {
   wchar_t *v4; // edi
   int result; // eax
@@ -13705,7 +13696,6 @@ namespace gamemd { int TerrainClass::CleanupMembers() {
 // 0x71B920
 namespace gamemd { int TerrainClass::UpdateAnims(int a1, int a2, int a3, int a4, int a5, int a6, void* a7) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-TerrainClass *__thiscall TerrainClass::Construct(void **this, TerrainTypeClass *aP1, TerrainClass *aP2)
 {
   IUnknown *v4; // eax
   IUnknown *v6; // eax
@@ -13803,7 +13793,6 @@ LABEL_19:
 // 0x71BB90
 namespace gamemd { void* TerrainClass::Construct(void* a1, void* a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-TerrainClass *__thiscall TerrainClass::Construct(void **this, TerrainTypeClass *aP1, TerrainClass *aP2)
 {
   IUnknown *v4; // eax
   IUnknown *v6; // eax
@@ -13901,7 +13890,6 @@ LABEL_19:
 // 0x71BFB0
 namespace gamemd { int TerrainClass::CheckNearbyObjects(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __userpurge TerrainClass::CheckNearbyObjects@<al>(int this@<ecx>, MouseClass aP1)
 {
   SmudgeClass *v2; // esi
   v2 = (SmudgeClass *)aP1.field_0; /*0x71bfb4*/
@@ -14723,7 +14711,6 @@ namespace gamemd { int TiberiumClass::Harvest(void* a1) {
 // 0x7220A0
 namespace gamemd {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TiberiumClass::_vt07(#374 *this, int a2, _DWORD *a3)
 {
   int result; // eax
 
@@ -14791,7 +14778,6 @@ namespace gamemd { void* TiberiumClass::DrawOre(int a2) {
 // 0x727FD0
 namespace gamemd { void* TubeClass::Construct(void* a1, int a2) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-AbstractClass *__thiscall TubeClass::Construct(AbstractClass *this, CCINIClass *aP1, int a3)
 {
   AbstractClass **v7; // edi
 
@@ -14870,7 +14856,6 @@ namespace gamemd { int TubeClass::PowerDrainUpdate(void* a1) {
 // 0x728710
 namespace gamemd { void* TubeClass::ProcessEvent(int a1) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-TubeClass *__thiscall TubeClass::ProcessEvent(_DWORD *Block, char a2)
 {
   __int16 *v3; // eax
   _DWORD **v5; // edx
@@ -14924,7 +14909,6 @@ LABEL_6:
 // 0x729370
 namespace gamemd { void AnimClass::ProcessSequence() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_729370(int this)
 {
   void **v6; // eax
 
@@ -15210,7 +15194,6 @@ namespace gamemd { void WaveClass::ProcessWaveCollision(void* a1, void* a2) {
 // 0x760F50
 namespace gamemd { int WaveClass::Update() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void WaveClass::Update(#374 *this)
 {
   int result; // eax
   int i; // edi

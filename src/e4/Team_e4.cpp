@@ -32,10 +32,9 @@
 
 // 0x561180
 namespace gamemd {
-int Team_Start()
+void Team_Start()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __usercall sub_561180@<al>(int xRight@<ecx>, int yBottom@<edx>, int a3@<ebx>, int a4@<edi>)
 {
   char result; // al
   HWND Dialog; // edi
@@ -119,10 +118,9 @@ LABEL_13:
 
 // 0x5D26C0
 namespace gamemd {
-int Team::ReleaseAll(ObjectClass * aP1)
+void Team::ReleaseAll(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Team::ReleaseAll(ObjectClass *aP1)
 {
   int result; // eax
 
@@ -146,10 +144,9 @@ void Team::ReleaseAll(ObjectClass *aP1)
 
 // 0x6219D0
 namespace gamemd {
-int sub_6219D0(int * a1, int a2, int a3, int a4)
+void sub_6219D0(int * a1, int a2, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall sub_6219D0(int *a1, int a2, int a3, int a4)
 {
   int result; // eax
 
@@ -253,7 +250,6 @@ namespace gamemd {
 void E4Recv_634B20::sub_634B20()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_634B20(int *this)
 {
   int i; // [esp+10h] [ebp-90h]
   int j; // [esp+18h] [ebp-88h]
@@ -324,7 +320,6 @@ namespace gamemd {
 _UNKNOWN ** E4Recv_637640::sub_637640()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_UNKNOWN **__thiscall sub_637640(_UNKNOWN **this)
 {
   _UNKNOWN **result; // eax
   _UNKNOWN **v5; // [esp+Ch] [ebp-4h] BYREF
@@ -376,10 +371,9 @@ _UNKNOWN **__thiscall sub_637640(_UNKNOWN **this)
 
 // 0x638B70
 namespace gamemd {
-char sub_638B70(int * a1, int a2, char a3, char a4)
+void sub_638B70(int * a1, int a2, char a3, char a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall sub_638B70(int *a1, int a2, char a3, char a4)
 {
 
   if ( a2 != 11 ) /*0x638b79*/
@@ -416,10 +410,9 @@ LABEL_9:
 
 // 0x65AD30
 namespace gamemd {
-int Team::GetMember(AbstractClass * aP1)
+void Team::GetMember(AbstractClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Team::GetMember(AbstractClass *aP1)
 {
   return *(_DWORD *)(this->q0E4 + 4 * (_DWORD)aP1); /*0x65ad3d*/
 }
@@ -428,10 +421,9 @@ void Team::GetMember(AbstractClass *aP1)
 
 // 0x65AE30
 namespace gamemd {
-char Team::AllMembersValid()
+void Team::AllMembersValid()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Team_AllMembersValid(int *this)
 {
   _DWORD *i; // ecx
 
@@ -454,7 +446,6 @@ namespace gamemd {
 void sub_63A1B0(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __fastcall sub_63A1B0(int a1)
 {
   wchar_t *StringCSF; // eax
 
@@ -483,10 +474,9 @@ LABEL_7:
 
 // 0x76ED10
 namespace gamemd {
-int Team_Start_76ED10()
+bool Team_Start_76ED10()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool __usercall Team_Start_76ED10@<al>(int a1@<ecx>, int a2@<edx>, int a3@<ebx>)
 {
   int State; // eax
   wchar_t *StringCSF; // eax
@@ -549,10 +539,9 @@ bool __usercall Team_Start_76ED10@<al>(int a1@<ecx>, int a2@<edx>, int a3@<ebx>)
 
 // 0x7AFAD0
 namespace gamemd {
-int Team_Start_7AFAD0()
+void Team_Start_7AFAD0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __usercall sub_7AFAD0@<eax>(void *a1@<ecx>, int a2@<edi>)
 {
   char **v2; // eax
   char **v3; // esi

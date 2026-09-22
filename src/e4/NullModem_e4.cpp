@@ -6,10 +6,9 @@
 
 // 0x5F03B0
 namespace gamemd {
-int NullModem_TestConnection()
+char NullModem_TestConnection()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __usercall NullModem::TestConnection@<al>(int a1@<edi>)
 {
   ObjectClass *String; // esi
   wchar_t *StringCSF; // eax

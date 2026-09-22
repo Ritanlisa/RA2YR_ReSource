@@ -16,7 +16,6 @@ namespace gamemd {
 void House::AnnounceUpgrade(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void House::AnnounceUpgrade(int this, IUnknown *aP1)
 {
   IUnknown *v3; // edi
   __int16 v10; // dx
@@ -360,7 +359,6 @@ namespace gamemd {
 unsigned int * House::GetStartCoords(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall House::GetStartCoords(int this, IUnknown *aP1)
 {
   int BuildingByTiberiumType; // eax
   char **v9; // eax
@@ -451,10 +449,9 @@ LABEL_13:
 
 // 0x4FD500
 namespace gamemd {
-int House::UpdateHouseAI()
+void House::UpdateHouseAI()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void House::UpdateHouseAI(int this)
 {
   HouseClass *v2; // ebp
   CellStruct *v5; // eax
@@ -707,7 +704,6 @@ namespace gamemd {
 void sub_501A20()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_501A20()
 {
   wchar_t *v0; // ebx
   v0 = g_SelectionManager; /*0x501a21*/
@@ -738,10 +734,9 @@ void sub_501A20()
 
 // 0x50B6F0
 namespace gamemd {
-int House::IsHumanPlayer()
+void House::IsHumanPlayer()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void House::IsHumanPlayer(#375 *this)
 {
   if ( g_GameMode_Current[0] ) /*0x50b6f7*/
     return this == HouseClass_Player; /*0x50b720*/
@@ -752,10 +747,9 @@ void House::IsHumanPlayer(#375 *this)
 
 // 0x50B730
 namespace gamemd {
-int House::IsCurrentPlayer()
+void House::IsCurrentPlayer()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void House::IsCurrentPlayer(#375 *this)
 {
   int result; // eax
 
@@ -770,10 +764,9 @@ void House::IsCurrentPlayer(#375 *this)
 
 // 0x50DB00
 namespace gamemd {
-int House::ChooseHouseEnemy(BuildingClass * aP1)
+void House::ChooseHouseEnemy(BuildingClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void House::ChooseHouseEnemy(BuildingClass *aP1)
 {
   MouseClass *v7; // ecx
   int v8; // eax
@@ -955,10 +948,9 @@ LABEL_24:
 
 // 0x544BE0
 namespace gamemd {
-int House::LookupObject(int a2)
+void House::LookupObject(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_544BE0(void *this, int a2)
 {
 
   _DWORD * v2 = (_DWORD *)(*(int (__thiscall **)(void *))(*(_DWORD *)this + 156))(this); /*0x544be2*/
@@ -973,10 +965,9 @@ void sub_544BE0(void *this, int a2)
 
 // 0x544C20
 namespace gamemd {
-bool House::LoadMapFileData(int a2, char a3)
+void House::LoadMapFileData(int a2, char a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_544C20(_DWORD *this, int a2, char a3)
 {
 
   if ( a3 && !this->__pad_029 && *((_BYTE *)this + 756) ) /*0x544c35*/
@@ -992,7 +983,6 @@ namespace gamemd {
 void House::Constructor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_69E090(char **this)
 {
   char *EntireFile; // eax
 
@@ -1019,10 +1009,9 @@ void sub_69E090(char **this)
 
 // 0x70C270
 namespace gamemd {
-int House::PowerBeginUpdate(AbstractClass * aP1)
+void House::PowerBeginUpdate(AbstractClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void House::PowerBeginUpdate(int this, AbstractClass *aP1)
 {
   CellStruct *v22; // eax
   int i; // ebx
@@ -1126,7 +1115,6 @@ namespace gamemd {
 unsigned int * sub_72F350()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *sub_72F350()
 {
   _DWORD *result; // eax
 
@@ -1157,10 +1145,9 @@ _DWORD *sub_72F350()
 
 // 0x6D1660
 namespace gamemd {
-int House_Play_6D1660()
+void House_Play_6D1660()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __usercall sub_6D1660@<al>(_BYTE *a1@<ecx>, int a2@<esi>)
 {
   char result; // al
 

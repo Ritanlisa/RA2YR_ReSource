@@ -96,7 +96,6 @@ LoadOptions::~LoadOptions() {
 // 0x558790
 void LoadOptions::Cleanup() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void LoadOptions_Cleanup(_DWORD *this)
 {
 
   int v2 = 0;
@@ -181,10 +180,9 @@ bool LoadOptions::DeleteSaveFile(const char* filename) {
 
 // IDA 0x5587F0: Run — launch save/load dialog
 // 0x5587f0
-int LoadOptions::Run() {
+void LoadOptions::Run() {
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void LoadOptions::Run(const char **this)
 {
   this->Items = (const char *)1; /*0x5587f0*/
   this->q00C = 0; /*0x5587f7*/
@@ -367,10 +365,9 @@ bool LoadOptions::ReadEntry(FileEntryClass* dest, int a2) {
 
 // IDA 0x55A1F0: CopyItems — resize vector, preserve existing entries
 // 0x55a1f0
-bool LoadOptions::CopyItems(uint32_t new_size, FileEntryClass** out_buffer) {
+void LoadOptions::CopyItems(uint32_t new_size, FileEntryClass** out_buffer) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x55a1f0
-void LoadOptions::CopyItems(int a2, _DWORD *a3)
 {
   int i; // eax
 
@@ -515,7 +512,6 @@ retn    8
 // 0x55a2a0
 void LoadOptions::ClearBuffer() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void LoadOptions::sub_55A2A0(int this)
 {
   if ( this->Items && this->IsAllocated ) /*0x55a2ad*/
   {
@@ -528,9 +524,8 @@ void LoadOptions::sub_55A2A0(int this)
 
 // IDA 0x55A2D0: FindItem — linear search by first dword
 // 0x55a2d0
-int LoadOptions::FindItem(FileEntryClass* const* key) {
+void LoadOptions::FindItem(FileEntryClass* const* key) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void LoadOptions::sub_55A2D0(int this, _DWORD *a2)
 {
   int result; // eax
   _DWORD *i; // ecx

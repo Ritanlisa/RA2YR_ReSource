@@ -12,10 +12,9 @@
 #include "e4/classes/Trigger_e4.hpp"
 
 // 0x41D7E0
-bool Warhead::GetWarheadSound(int a2)
+void Warhead::GetWarheadSound(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_41D7E0(int this, int a2)
 {
 
   if ( VeterancyStruct::IsElite((float *)(this->q013 + 336)) ) /*0x41d7ec*/
@@ -27,10 +26,9 @@ void sub_41D7E0(int this, int a2)
 }
 
 // 0x452820
-char Warhead::RemoveFromDamageList(int a2)
+void Warhead::RemoveFromDamageList(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_452820(_DWORD *this, int a2)
 {
 
   _DWORD * v2 = this + 411; /*0x452827*/
@@ -62,10 +60,9 @@ void sub_452820(_DWORD *this, int a2)
 }
 
 // 0x4690B0
-char Warhead::ApplyDamage(ObjectClass * aP1)
+void Warhead::ApplyDamage(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Warhead::ApplyDamage(ObjectClass *aP1)
 {
   IUnknown *v4; // ecx
   IUnknown *v6; // ecx
@@ -552,7 +549,7 @@ void Warhead::ApplyDamage(ObjectClass *aP1)
   }
   v140 = (int)(this + 156);
   LODWORD(v141) = *((_DWORD *)this + 39);
-  int v75 = this->q01B;
+  bool v75 = this->q01B;
   HIDWORD(v141) = *((_DWORD *)this + 40);
   int v76 = *((_DWORD *)this + 74);
   LODWORD(v142) = *((_DWORD *)this + 41);
@@ -830,10 +827,9 @@ LABEL_158:
 }
 
 // 0x46A310
-int Warhead::ApplyPostDamageEffects()
+void Warhead::ApplyPostDamageEffects()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Warhead_ApplyPostDamageEffects(int *this)
 {
   int result; // eax
   __int16 v22; // ax
@@ -1178,10 +1174,9 @@ void Warhead_ApplyPostDamageEffects(int *this)
 }
 
 // 0x65B580
-int Warhead::ProcessDamageArea()
+void Warhead::ProcessDamageArea()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Warhead_ProcessDamageArea(int this)
 {
 
   int v24 = *((_DWORD *)g_RulesClass_Instance + 1540); /*0x65b5a3*/
@@ -1221,7 +1216,7 @@ void Warhead_ProcessDamageArea(int this)
   if ( v11 > 2000.0 ) /*0x65b705*/
     v11 = 2000.0; /*0x65b709*/
   int v12 = Math::RoundToInt(v11); /*0x65b70f*/
-  int v13 = this->q01B; /*0x65b714*/
+  bool v13 = this->q01B; /*0x65b714*/
   int v14 = v12; /*0x65b71b*/
   *(_DWORD *)(this + 88) = v22; /*0x65b71f*/
   *(_DWORD *)(this + 92) = v10; /*0x65b722*/

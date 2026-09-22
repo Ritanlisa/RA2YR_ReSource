@@ -3,10 +3,9 @@
 #include "e4/e4_globals.hpp"
 
 // 0x401F90
-int RefCount::Decrement()
+void RefCount::Decrement()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void RefCount_Decrement(_DWORD *this)
 {
   int result; // eax
 
@@ -19,10 +18,9 @@ void RefCount_Decrement(_DWORD *this)
 }
 
 // 0x49FA00
-int RefCount::Increment(int a2)
+void RefCount::Increment(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void RefCount_Increment(_DWORD *this, int a2)
 {
   int i; // eax
 

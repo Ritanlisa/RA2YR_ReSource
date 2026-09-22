@@ -11,7 +11,6 @@ namespace gamemd {
 unsigned int * BuildingLightClass::FindTarget(CCINIClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall BuildingLightClass::FindTarget(_DWORD *this, CCINIClass *aP1)
 {
   CCINIClass *result; // eax
   BuildingLightClass *v3; // edi
@@ -131,7 +130,6 @@ namespace gamemd {
 signed int BuildingLightClass::UpdateOscillation()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-signed int __thiscall BuildingLightClass::UpdateOscillation(int this)
 {
   int GroundHeight; // edi
   signed int result; // eax

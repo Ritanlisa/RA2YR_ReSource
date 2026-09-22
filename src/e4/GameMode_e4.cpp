@@ -5,10 +5,9 @@
 
 // 0x5D5DE0
 namespace gamemd {
-bool GameMode::IsValid(unsigned int a2)
+void GameMode::IsValid(unsigned int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void GameMode_IsValid(_BYTE *this, unsigned int a2)
 {
   return (!*(this + 63) || a2 != -2) && a2 < 4; /*0x5d5df2*/
 }
@@ -20,7 +19,6 @@ namespace gamemd {
 unsigned int GameMode::ReadFlagsFromINI(CCINIClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int GameMode::ReadFlagsFromINI(CCINIClass *aP1)
 {
   char Bool_Overwrite; // al
   unsigned int result; // eax

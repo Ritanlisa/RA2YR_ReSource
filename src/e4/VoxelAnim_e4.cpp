@@ -9,10 +9,9 @@
 #include "e4/classes/Voxel_e4.hpp"
 
 // 0x7586F0
-char VoxelAnim::ComputeTransform(float * a1, float * a2, float a3, int a4)
+void VoxelAnim::ComputeTransform(float * a1, float * a2, float a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall sub_7586F0(float *a1, float *a2, float a3, int a4)
 {
   float v8; // edx
   int v9; // ebx
@@ -86,10 +85,9 @@ char __fastcall sub_7586F0(float *a1, float *a2, float a3, int a4)
 }
 
 // 0x75AEC0
-char VoxelAnim::Draw(unsigned int * a2)
+void VoxelAnim::Draw(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void VoxelAnim_Draw(int this, _DWORD *a2)
 {
   int v9; // eax
   int v10; // eax

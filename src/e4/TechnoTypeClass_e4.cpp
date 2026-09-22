@@ -7,10 +7,9 @@
 #include "e4/classes/Math_e4.hpp"
 
 // 0x48DCD0
-int TechnoTypeClass::GetByTypeAndIndex(int a1, int a2)
+void TechnoTypeClass::GetByTypeAndIndex(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall FactoryClass_LookupType(int a1, int a2)
 {
   int result; // eax
 
@@ -41,10 +40,9 @@ int __fastcall FactoryClass_LookupType(int a1, int a2)
 }
 
 // 0x50BDF0
-double TechnoTypeClass::Dispatch(TechnoTypeClass * aP1)
+void TechnoTypeClass::Dispatch(TechnoTypeClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TechnoTypeClass::Dispatch(TechnoTypeClass *aP1)
 {
   double result; // st7
 
@@ -74,10 +72,9 @@ void TechnoTypeClass::Dispatch(TechnoTypeClass *aP1)
 }
 
 // 0x50BEB0
-double TechnoTypeClass::GetThreatMultiplier(TechnoTypeClass * aP1)
+void TechnoTypeClass::GetThreatMultiplier(TechnoTypeClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TechnoTypeClass::GetThreatMultiplier(TechnoTypeClass *aP1)
 {
   double result; // st7
 
@@ -110,7 +107,6 @@ void TechnoTypeClass::GetThreatMultiplier(TechnoTypeClass *aP1)
 unsigned int * TechnoTypeClass::LoadBase(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall TechnoTypeClass::LoadBase(_DWORD *this, ObjectClass *aP1)
 {
   TeamTypeClass *v3; // ecx
   CCINIClass *v6; // edx
@@ -199,10 +195,9 @@ LABEL_11:
 }
 
 // 0x710AF0
-char * TechnoTypeClass::ReadINI(char * Source, int a3)
+void * TechnoTypeClass::ReadINI(char * Source, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a3)
 {
 
   ObjectTypeClass::ConstructFull((int)this, Source); /*0x710afb*/
@@ -730,10 +725,9 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
 }
 
 // 0x711840
-int TechnoTypeClass::Construct(ObjectTypeClass * aP1)
+void TechnoTypeClass::Construct(ObjectTypeClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TechnoTypeClass::Construct(int this, ObjectTypeClass *aP1)
 {
   CCINIClass *v5; // edx
   ObjectTypeClass::Construct((_DWORD *)this, aP1); /*0x71184b*/
@@ -954,10 +948,9 @@ int TechnoTypeClass::DTOR()
 }
 
 // 0x711F00
-int TechnoTypeClass::ComputeValueSimple(float * a2)
+void TechnoTypeClass::ComputeValueSimple(float * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TechnoTypeClass::ComputeValueSimple(float *a2)
 {
   float ThreatMultiplier; // [esp+8h] [ebp-8h]
 
@@ -971,10 +964,9 @@ void TechnoTypeClass::ComputeValueSimple(float *a2)
 }
 
 // 0x711F60
-int TechnoTypeClass::ComputeValue(void * a2, float a3)
+void TechnoTypeClass::ComputeValue(void * a2, float a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TechnoTypeClass::ComputeValue(#375 *a2, float a3)
 {
   float ThreatMultiplier; // [esp+Ch] [ebp-4h]
   #375 *v9; // [esp+14h] [ebp+4h]
@@ -1008,10 +1000,9 @@ void TechnoTypeClass::ComputeValue(#375 *a2, float a3)
 }
 
 // 0x7162F0
-int TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
+void TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass *aP0, int aP1)
 {
   int result; // eax
   int j; // ebp
@@ -1369,10 +1360,9 @@ void TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass *aP0, int aP1)
 }
 
 // 0x716DC0
-int TechnoTypeClass::SaveLoad_Prefix_0(void * a1, TechnoTypeClass * aP2, TechnoTypeClass * aP3)
+void TechnoTypeClass::SaveLoad_Prefix_0(void * a1, TechnoTypeClass * aP2, TechnoTypeClass * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TechnoTypeClass::SaveLoad_Prefix_0(void *a1, TechnoTypeClass *aP2, TechnoTypeClass *aP3)
 {
   int result; // eax
   int i; // ebx
@@ -1498,11 +1488,10 @@ char TechnoTypeClass::vt_entry_A0()
 
 // 0x5247C0
 namespace gamemd {
-int TechnoTypeClass::CanAttackMove_IgnoreWeapon_0()
+void* TechnoTypeClass::CanAttackMove_IgnoreWeapon_0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // attributes: thunk
-void* TechnoTypeClass::CanAttackMove_IgnoreWeapon_0(int this)
 {
   return TechnoTypeClass::CanAttackMove_IgnoreWeapon(this);
 }
@@ -1620,11 +1609,10 @@ char TechnoTypeClass::RemoveItem(int a2)
 
 // 0x7473D0
 namespace gamemd {
-int TechnoTypeClass::CanAttackMove_IgnoreWeapon_0_0()
+void* TechnoTypeClass::CanAttackMove_IgnoreWeapon_0_0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // attributes: thunk
-void* TechnoTypeClass::CanAttackMove_IgnoreWeapon_0_0(int this)
 {
   return TechnoTypeClass::CanAttackMove_IgnoreWeapon(this);
 }
