@@ -9,7 +9,6 @@
 // 0x6B4DD0
 INIClass * * UnitTypeClass::ReadINIEntry()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // edi
   int v4; // eax
@@ -45,12 +44,10 @@ INIClass * * UnitTypeClass::ReadINIEntry()
   while ( v1 < 512 ); /*0x6b4e8e*/
   return v4; /*0x6b4e94*/
 }
-}
 
 // 0x7470D0
 U UnitTypeClass::UnitTypeClass(INIClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HouseClass *v3; // eax
   CCINIClass *v6; // edx
@@ -144,31 +141,25 @@ LABEL_11:
   *(_BYTE *)(this + 3374) = 1; /*0x7472aa*/
   return this; /*0x7472b1*/
 }
-}
 
 // 0x7474B0
 namespace gamemd {
 void UnitTypeClass_CreateUnit()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // (no pseudocode — ASM-only function)
-}
 } // namespace gamemd
 
 // 0x747560
 namespace gamemd {
 void UnitTypeClass_ConstructUnit()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // (no pseudocode — ASM-only function)
-}
 } // namespace gamemd
 
 // 0x747620
 namespace gamemd {
 void* UnitTypeClass_LoadFromINI()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned __int8 *v4; // ebp
   char Bool_Overwrite; // al
@@ -376,13 +367,11 @@ void* UnitTypeClass_LoadFromINI()
   }
   return 1; /*0x747e92*/
 }
-}
 } // namespace gamemd
 
 // 0x74B960
 VoxelAnimTypeClass * * UnitTypeClass::FindOrCreate()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( !_strcmpi(&stru_817460.sectionHead[1], this) || !_strcmpi(g_Str_none, this) ) /*0x74b97c*/
@@ -402,7 +391,6 @@ LABEL_6:
       goto LABEL_6; /*0x74b9b4*/
   }
   return *(VoxelAnimTypeClass **)(*(_DWORD *)&HouseClass_Player[44512] + 4 * v2); /*0x74b9cf*/
-}
 }
 
 // 0x747590

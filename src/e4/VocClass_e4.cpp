@@ -6,7 +6,6 @@
 // 0x4052F0
 int VocClass::Release()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   _DWORD **v5; // edi
@@ -50,7 +49,6 @@ int VocClass::Release()
     this->Volume |= 1u; /*0x4053ca*/
   }
   return result; /*0x4053cf*/
-}
 }
 
 // 0x751590

@@ -5,7 +5,6 @@
 // 0x46DC90
 int Compare::Field96(const void * a1, const void * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v2 = *(_DWORD *)(*(_DWORD *)a1 + 96); /*0x46dc9c*/
@@ -14,5 +13,4 @@ int Compare::Field96(const void * a1, const void * a2)
     return 0; /*0x46dca6*/
   else
     return v2 <= v3 ? 1 : -1;
-}
 }

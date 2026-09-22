@@ -5,7 +5,6 @@
 // 0x53DDA0
 int Explosion::RemoveItem(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   AbstractClass *v2 = this->q010; /*0x53dda0*/
@@ -24,5 +23,4 @@ int Explosion::RemoveItem(int a2)
     while ( v3 < this->q010 ); /*0x53ddc4*/
   }
   return 1; /*0x53ddc9*/
-}
 }

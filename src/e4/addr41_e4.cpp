@@ -16,7 +16,6 @@
 namespace gamemd {
 int sub_4116A0(unsigned int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -97,14 +96,12 @@ LABEL_14:
   }
   return *(_DWORD *)(v3 + 32); /*0x4116da*/
 }
-}
 } // namespace gamemd
 
 // 0x411820
 namespace gamemd {
 int ManageMultimediaTimer(struct _RTL_CRITICAL_SECTION * dwUser, int a2, int a3, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   LONG LockCount; // eax
@@ -229,14 +226,12 @@ int ManageMultimediaTimer(struct _RTL_CRITICAL_SECTION * dwUser, int a2, int a3,
   }
   return result; /*0x411840*/
 }
-}
 } // namespace gamemd
 
 // 0x411B20
 namespace gamemd {
 AbstractClass * * sub_411B20(DWORD_PTR dwUser, AnimClass * aP1, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   LPDIRECTSOUND DirectSound; // [esp+8h] [ebp-64h]
 
@@ -298,14 +293,12 @@ AbstractClass * * sub_411B20(DWORD_PTR dwUser, AnimClass * aP1, int a3)
   Debug::Log(); /*0x411cb9*/
   return *((_DWORD *)v5 + 24) != 0 ? -1 : -13;
 }
-}
 } // namespace gamemd
 
 // 0x411DF0
 namespace gamemd {
 void InitializeSoundBufferPlayback(LPCRITICAL_SECTION lpCriticalSection)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   LONG LockCount; // eax
   int **v7; // edi
@@ -407,14 +400,12 @@ void InitializeSoundBufferPlayback(LPCRITICAL_SECTION lpCriticalSection)
     return -1; /*0x411e7a*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x412000
 namespace gamemd {
 void SubmitDirectSoundBufferData(unsigned int a1, char * a2, char * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   struct _RTL_CRITICAL_SECTION *v35; // eax
   LPCRITICAL_SECTION lpCriticalSection; // [esp+44h] [ebp-Ch]
@@ -538,14 +529,12 @@ LABEL_21:
   LeaveCriticalSection(v35); /*0x412211*/
   return -1; /*0x4120c7*/
 }
-}
 } // namespace gamemd
 
 // 0x4123A0
 namespace gamemd {
 void fptc(UINT uTimerID, UINT uMsg, DWORD_PTR dwUser, DWORD_PTR dw1, DWORD_PTR dw2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   volatile LONG *v7; // ebx
   struct _RTL_CRITICAL_SECTION *v8; // edi
@@ -613,14 +602,12 @@ LABEL_21:
   LeaveCriticalSection(v8); /*0x41250d*/
   InterlockedDecrement(lpAddend); /*0x412518*/
 }
-}
 } // namespace gamemd
 
 // 0x413CD0
 namespace gamemd {
 bool sub_413CD0(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( !a1 ) /*0x413cd5*/
@@ -632,14 +619,12 @@ bool sub_413CD0(int a1)
     return *(_BYTE *)(v2 + 1753) == 0; /*0x413d10*/
   return 0; /*0x413cd9*/
 }
-}
 } // namespace gamemd
 
 // 0x41B110
 namespace gamemd {
 INIClass * * PlaceAircraftFromINI()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   CCINIClass *result; // eax
   CCINIClass *v4; // ecx
@@ -768,20 +753,17 @@ INIClass * * PlaceAircraftFromINI()
   }
   return result; /*0x41b421*/
 }
-}
 } // namespace gamemd
 
 // 0x41C610
 namespace gamemd {
 int CompareFunction(unsigned int * a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   if ( *a1 == *a2 )
     return 0; /*0x41c620*/
   else
     return *a1 >= *a2 ? 1 : -1;
-}
 }
 } // namespace gamemd
 

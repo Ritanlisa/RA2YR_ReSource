@@ -8,7 +8,6 @@
 // 0x512680
 void * WeaponTypeClass::Create()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( !_strcmpi(&stru_817460.sectionHead[1], this) || !_strcmpi(g_Str_none, this) ) /*0x51269c*/
@@ -29,12 +28,10 @@ LABEL_6:
   }
   return (HouseTypeClass *)*((_DWORD *)g_SuperWeaponTypeCount + v2); /*0x5126ef*/
 }
-}
 
 // 0x6CEEF0
 int WeaponTypeClass::Process()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( !_strcmpi(&stru_817460.sectionHead[1], this) || !_strcmpi(g_Str_none, this) ) /*0x6cef0c*/
@@ -55,12 +52,10 @@ LABEL_6:
   }
   return *(_DWORD *)(*(_DWORD *)&HouseClass_Player[42472] + 4 * v2); /*0x6cef5f*/
 }
-}
 
 // 0x771C70
 unsigned int * WeaponTypeClass::Constructor(ObjectClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   WeaponTypeClass *v3; // eax
   AbstractTypeClass::Constructor((int)this, (AbstractClass *)aP1); /*0x771c7a*/
@@ -148,12 +143,10 @@ unsigned int * WeaponTypeClass::Constructor(ObjectClass * aP1)
   }
   return this; /*0x771eeb*/
 }
-}
 
 // 0x771F50
 int WeaponTypeClass::Destructor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   WeaponTypeClass *v7; // [esp+8h] [ebp-4h] BYREF
   *(_DWORD *)this = &WeaponTypeClass::`vftable'; /*0x771f57*/
@@ -203,12 +196,10 @@ int WeaponTypeClass::Destructor()
   this->Report.Capacity = 0; /*0x77206f*/
   return AbstractTypeClass::Dtor((_DWORD *)this); /*0x77207a*/
 }
-}
 
 // 0x772AE0
 int WeaponTypeClass::ProcessPower(int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   AbstractTypeClass::ProcessPower((char *)this, a2); /*0x772ae9*/
@@ -277,13 +268,11 @@ int WeaponTypeClass::ProcessPower(int * a2)
   LOBYTE(v22) = this->DistributedWeaponFire; /*0x772c76*/
   return Power::FlagProcess(a2, v22); /*0x772c84*/
 }
-}
 
 // 0x772CD0
 namespace gamemd {
 void WeaponTypeClass_SaveLoad_Prefix()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int i; // ebx
@@ -343,14 +332,12 @@ void WeaponTypeClass_SaveLoad_Prefix()
   }
   return result; /*0x772ea6*/
 }
-}
 } // namespace gamemd
 
 // 0x772EB0
 namespace gamemd {
 void WeaponTypeClass_SaveLoad_Prefix_0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int i; // ebx
@@ -378,7 +365,6 @@ void WeaponTypeClass_SaveLoad_Prefix_0()
     return 0; /*0x772f89*/
   }
   return result; /*0x772f8c*/
-}
 }
 } // namespace gamemd
 

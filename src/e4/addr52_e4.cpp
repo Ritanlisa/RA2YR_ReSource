@@ -42,7 +42,6 @@
 namespace gamemd {
 int E4Recv_522100::sub_522100()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int (__stdcall ***v2)(_DWORD, void *, int *); // eax
   int v4; // eax
@@ -81,14 +80,12 @@ LABEL_11:
     (*(void (__stdcall **)(int))(*(_DWORD *)v7 + 8))(v7); /*0x5221b6*/
   return v6; /*0x522115*/
 }
-}
 } // namespace gamemd
 
 // 0x523440
 namespace gamemd {
 void BinaryArraySearch(AbstractClass * aP0, int edx0, int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v5; // edi
   int v3 = edx0; /*0x523445*/
@@ -113,14 +110,12 @@ LABEL_7:
   }
   return (int)&aP0->__pad_0[8 * (v3 / 2)]; /*0x523474*/
 }
-}
 } // namespace gamemd
 
 // 0x525430
 namespace gamemd {
 void * GetINIClassIntList(int a1, unsigned char *** edx0, INIClass * aP1, unsigned char * a2, void ** a5, void * a6, int a7, short a8, int a9, int a10, int a11)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char *i; // eax
   void *_751520; // eax
@@ -199,14 +194,12 @@ LABEL_20:
   }
   return (VectorClass *)a1; /*0x5255db*/
 }
-}
 } // namespace gamemd
 
 // 0x528220
 namespace gamemd {
 int E4Recv_528220::sub_528220(unsigned char * a2, unsigned char * a3, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned __int8 *v4; // ebp
   unsigned __int8 *v6; // edx
@@ -316,14 +309,12 @@ LABEL_27:
   }
   return a4; /*0x528383*/
 }
-}
 } // namespace gamemd
 
 // 0x529E70
 namespace gamemd {
 char ** E4Recv_529E70::sub_529E70(char ** a2, char * Source, char ** a4, char ** a5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v8; // ebx
   Color *v14; // ecx
@@ -402,14 +393,12 @@ LABEL_19:
   a2[2] = v16; /*0x52a02b*/
   return a2; /*0x52a02e*/
 }
-}
 } // namespace gamemd
 
 // 0x52A110
 namespace gamemd {
 void * E4Recv_52A110::sub_52A110(float * a2, unsigned char * a3, float a4, float * a5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned __int8 *v6; // ebx
   int v8; // esi
@@ -499,14 +488,12 @@ LABEL_18:
   a2[2] = *(float *)(LODWORD(v17) + 8); /*0x52a2e1*/
   return a2; /*0x52a249*/
 }
-}
 } // namespace gamemd
 
 // 0x52A2F0
 namespace gamemd {
 Color * * E4Recv_52A2F0::sub_52A2F0(float * a2, float Source, char ** a4, float * a5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v8; // ebx
   Color *v14; // ecx
@@ -591,14 +578,12 @@ LABEL_19:
   a2[2] = v16; /*0x52a4c3*/
   return a2; /*0x52a4c6*/
 }
-}
 } // namespace gamemd
 
 // 0x52A4D0
 namespace gamemd {
 ObjectClass * * E4Recv_52A4D0::sub_52A4D0(unsigned char * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ObjectClass *v4; // ecx
   ObjectClass *v10; // eax
@@ -672,14 +657,12 @@ LABEL_19:
   }
   return unk_B78830; /*0x52a5d2*/
 }
-}
 } // namespace gamemd
 
 // 0x52A610
 namespace gamemd {
 ObjectClass * * E4Recv_52A610::sub_52A610(void * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ObjectClass *v3; // eax
   ObjectClass *v4; // eax
@@ -691,20 +674,17 @@ ObjectClass * * E4Recv_52A610::sub_52A610(void * a2)
   INIClass::ReadBase64Data(this, (unsigned __int8 *)&g_Str_no.sectionHead[1], aP1, v4); /*0x52a658*/
   return 1; /*0x52a65d*/
 }
-}
 } // namespace gamemd
 
 // 0x52B720
 namespace gamemd {
 int CompareFunc4Int(unsigned int * a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   if ( *a1 == *a2 )
     return 0; /*0x52b730*/
   else
     return *a1 >= *a2 ? 1 : -1;
-}
 }
 } // namespace gamemd
 
@@ -712,7 +692,6 @@ int CompareFunc4Int(unsigned int * a1, unsigned int * a2)
 namespace gamemd {
 void InitGame()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   RulesClass *v3; // eax
   _BYTE *TextBufferEntry; // eax
@@ -1370,20 +1349,17 @@ LABEL_106:
   CCFileClass::Destruct(&aP1);
   return 0;
 }
-}
 } // namespace gamemd
 
 // 0x52CB50
 namespace gamemd {
 char PlayIntroSequence()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   if ( (g_IntroMovieObject & 4) != 0 ) /*0x52cb57*/
     Movie::Play(-1, a2, a3, 1, 1, 1, 0); /*0x52cb69*/
   Screen::Capture(1, 0, a1, a2); /*0x52cb72*/
   return Event::Dispatch();
-}
 }
 } // namespace gamemd
 
@@ -1391,7 +1367,6 @@ char PlayIntroSequence()
 namespace gamemd {
 void InitRules()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HANDLE FirstFileA; // ebp
   char *cAlternateFileName; // edi
@@ -1655,14 +1630,12 @@ LABEL_36:
     __3_YAXPAX_Z(Src); /*0x52d41b*/
   return 1; /*0x52d028*/
 }
-}
 } // namespace gamemd
 
 // 0x52D870
 namespace gamemd {
 void sub_52D870(HWND hDlg, unsigned int a2, unsigned int a3, unsigned int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND DlgItem; // esi
   int result; // eax
@@ -1730,14 +1703,12 @@ void sub_52D870(HWND hDlg, unsigned int a2, unsigned int a3, unsigned int a4)
   }
   return result; /*0x52d90f*/
 }
-}
 } // namespace gamemd
 
 // 0x52D9A0
 namespace gamemd {
 void MenuSelect()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   Movie *v0; // eax
   int j; // edi
@@ -2524,14 +2495,12 @@ LABEL_116:
     }
   }
 }
-}
 } // namespace gamemd
 
 // 0x52F620
 namespace gamemd {
 char CommandLine_Parse(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char **v4; // esi
   AbstractClass *v5; // esi
@@ -2743,14 +2712,12 @@ LABEL_67:
   _putws(v17); /*0x52fb57*/
   return 0; /*0x52fb37*/
 }
-}
 } // namespace gamemd
 
 // 0x52FC20
 namespace gamemd {
 Straw * * Random_Init()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   DWORD TickCount; // eax
   int result; // eax
@@ -2803,18 +2770,15 @@ Straw * * Random_Init()
   }
   return result; /*0x52fe53*/
 }
-}
 } // namespace gamemd
 
 // 0x52FFD0
 namespace gamemd {
 void sub_52FFD0(char a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   Frame *v3; // ecx
-
   result = (*(int (__thiscall **)(int, _DWORD))(*(_DWORD *)g_DSurface_Hidden + 24))(g_DSurface_Hidden, 0); /*0x52ffdd*/
   if ( a1 ) /*0x52ffe3*/
   {
@@ -2822,7 +2786,6 @@ void sub_52FFD0(char a1)
     return Frame::Present(v3, 0); /*0x52ffef*/
   }
   return result; /*0x52ffe2*/
-}
 }
 } // namespace gamemd
 

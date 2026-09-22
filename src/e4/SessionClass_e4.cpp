@@ -15,7 +15,6 @@
 // 0x540DC0
 int SessionClass::initLAN(int a2, wchar_t * Source, unsigned int * a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( !(unsigned char)this->MPGameMode ) /*0x540dc3*/
@@ -47,12 +46,10 @@ int SessionClass::initLAN(int a2, wchar_t * Source, unsigned int * a4)
   *(_DWORD *)(*(_DWORD *)(this + 4 * (*(_DWORD *)(this + 68))++ + 40) + 48) = this->Color2; /*0x540e58*/
   return 1; /*0x540dcc*/
 }
-}
 
 // 0x540E70
 int SessionClass::initInternet()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -90,12 +87,10 @@ int SessionClass::initInternet()
   }
   return result; /*0x540e7c*/
 }
-}
 
 // 0x552CC0
 unsigned int * SessionClass::Load()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *result; // eax
   void *PlayerSide; // eax
@@ -146,12 +141,10 @@ unsigned int * SessionClass::Load()
   }
   return result; /*0x552d5d*/
 }
-}
 
 // 0x5ADF20
 int SessionClass::LoadGameSession(ObjectClass * aP1, CellStruct * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v10; // ecx
   ObjectClass *v11; // esi
@@ -213,12 +206,10 @@ LABEL_17:
   SessionClass::Destruct(v6); /*0x5ae0cd*/
   return strlen((const char *)&aP1[27].attachedBomb) != 0; /*0x5adf6f*/
 }
-}
 
 // 0x5CEEF0
 AbstractClass * * SessionClass::LoadMapSelection(char ** a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char **v5; // eax
   char **v7; // eax
@@ -475,12 +466,10 @@ LABEL_17:
     return 0; /*0x5cf0cf*/
   }
 }
-}
 
 // 0x5CF5F0
 int SessionClass::Destruct()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // ebx
   int j; // ebx
@@ -524,12 +513,10 @@ int SessionClass::Destruct()
   }
   return this->vt_slot_12(); /*0x5cf6ab*/
 }
-}
 
 // 0x5D0070
 CampaignClass * * SessionClass::loadSettings()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // ebp
   void **v3; // edi
@@ -601,12 +588,10 @@ CampaignClass * * SessionClass::loadSettings()
   DeleteAndZero(this + 4); /*0x5d0178*/
   DeleteAndZero(this); /*0x5d017f*/
 }
-}
 
 // 0x5D39D0
 unsigned int * SessionClass::saveSettings()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   *this = 0; /*0x5d39da*/
   this->MPGameMode = 0; /*0x5d39dc*/
@@ -631,12 +616,10 @@ unsigned int * SessionClass::saveSettings()
   memset32(this + 1312, 65537, 7u); /*0x5d3a38*/
   return this; /*0x5d3a3c*/
 }
-}
 
 // 0x5E64C0
 unsigned int SessionClass::initPlayers()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int PlayerCountMap; // esi
 
@@ -658,12 +641,10 @@ unsigned int SessionClass::initPlayers()
   }
   return PlayerCountMap; /*0x5e64ca*/
 }
-}
 
 // 0x663B40
 AbstractClass * * SessionClass::BuildLobbyPlayerList()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int i; // [esp+8h] [ebp-14h]
@@ -732,12 +713,10 @@ LABEL_15:
   }
   return result; /*0x663cc3*/
 }
-}
 
 // 0x691500
 unsigned int * SessionClass::GetEntry(IUnknown * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   AbstractClass *v2 = this->q02C; /*0x691500*/
@@ -755,21 +734,17 @@ unsigned int * SessionClass::GetEntry(IUnknown * aP1)
     return &aP1->field_0; /*0x69151b*/
   }
 }
-}
 
 // 0x6915D0
 int SessionClass::SetField()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return this->q02C < *(_DWORD *)(this->q024 + 160); /*0x6915e0*/
-}
 }
 
 // 0x696F10
 int SessionClass::GetPlayerSide()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -778,12 +753,10 @@ int SessionClass::GetPlayerSide()
     return *(_DWORD *)(this + 75); /*0x696f1c*/
   return result; /*0x696f1f*/
 }
-}
 
 // 0x696F20
 int SessionClass::GetPlayerColor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -792,12 +765,10 @@ int SessionClass::GetPlayerColor()
     return this->q14C; /*0x696f2c*/
   return result; /*0x696f2f*/
 }
-}
 
 // 0x696F50
 int SessionClass::GetOption()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -806,12 +777,10 @@ int SessionClass::GetOption()
     return this->SessionClass_field_16C; /*0x696f62*/
   return result; /*0x696f65*/
 }
-}
 
 // 0x696F70
 int SessionClass::GetOption2()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -820,12 +789,10 @@ int SessionClass::GetOption2()
     return this->SkirmishPreferences; /*0x696f82*/
   return result; /*0x696f85*/
 }
-}
 
 // 0x696F90
 int SessionClass::SetPlayerOption(SkirmishDialog * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   SkirmishDialog *result; // eax
 
@@ -842,12 +809,10 @@ int SessionClass::SetPlayerOption(SkirmishDialog * aP1)
   }
   return (int)result->__pad_0; /*0x696fa3*/
 }
-}
 
 // 0x696FC0
 int SessionClass::SetPlayerColor(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -864,12 +829,10 @@ int SessionClass::SetPlayerColor(int a2)
   }
   return result; /*0x696fd3*/
 }
-}
 
 // 0x696FF0
 int SessionClass::SetOption(SessionClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   SessionClass *result; // eax
 
@@ -886,12 +849,10 @@ int SessionClass::SetOption(SessionClass * aP1)
   }
   return (int)result->GameMode; /*0x697003*/
 }
-}
 
 // 0x697020
 int SessionClass::SetOption2(SessionClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   SessionClass *result; // eax
 
@@ -908,12 +869,10 @@ int SessionClass::SetOption2(SessionClass * aP1)
   }
   return (int)result->GameMode; /*0x697033*/
 }
-}
 
 // 0x6970A0
 S * SessionClass::SessionClass()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   DWORD *v11; // esi
   this->MPGameMode = 0; /*0x6970b8*/
@@ -1212,12 +1171,10 @@ S * SessionClass::SessionClass()
   *((_DWORD *)this + 565) = 0; /*0x6977a9*/
   return this; /*0x6977a8*/
 }
-}
 
 // 0x697B70
 int SessionClass::CreateConnections()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // eax
   DWORD Ticks; // ecx
@@ -1312,12 +1269,10 @@ LABEL_22:
   Debug::Log(); /*0x697e59*/
   return 1; /*0x697b95*/
 }
-}
 
 // 0x697E70
 int SessionClass::IsValidHouse(void * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   #375 *v2; // edi
   HouseClass *i; // edx
@@ -1350,12 +1305,10 @@ LABEL_9:
   }
   return v2 = = v7; /*0x697ea0*/
 }
-}
 
 // 0x699980
 AbstractClass * * SessionClass::LoadMissionList()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   wchar_t *Description; // esi
   int KeyCount; // ebx
@@ -1687,12 +1640,10 @@ AbstractClass * * SessionClass::LoadMissionList()
   BufferIOFileClass::Dtor(v67); /*0x69a1d2*/
   return HashTable::DestroyHashTableINIClass((void **)v60); /*0x69a1e0*/
 }
-}
 
 // 0x69A980
 ObjectClass * * SessionClass::ParseGameInfo(char * Source, CampaignScore * aP2, CCINIClass * aP3, CampaignScore * aP4, const char * a5, CampaignScore * aP6, int a8)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   SessionClass *v8; // esi
   VectorClass *v9; // ebx
@@ -1816,12 +1767,10 @@ ObjectClass * * SessionClass::ParseGameInfo(char * Source, CampaignScore * aP2, 
   }
   return v8; /*0x69ac21*/
 }
-}
 
 // 0x69B7E0
 int SessionClass::AssignColor(int a2, MPCooperative * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -1890,12 +1839,10 @@ LABEL_15:
   this->SessionClass_field_160 = v12; /*0x69b8a2*/
   return result; /*0x69b8a8*/
 }
-}
 
 // 0x69BD60
 void SessionClass::SetupNetwork()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char **v3; // edi
   int i; // eax
@@ -2213,12 +2160,10 @@ LABEL_58:
       __3_YAXPAX_Z(Block); /*0x69c47e*/
   }
 }
-}
 
 // 0x78F000
 Coord * * SessionClass::BuildLaunchString()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   wchar_t **v4; // edi
   SessionClass *v5; // esi
@@ -2313,7 +2258,6 @@ LABEL_15:
     (*(void (__stdcall **)(LPVOID, int, char *))(*(_DWORD *)ppv + 252))(ppv, 1, &v7[v19]); /*0x78f1e5*/
     DeleteAndZero((void **)&v20); /*0x78f1ef*/
   }
-}
 }
 
 // 0x69A310

@@ -9,7 +9,6 @@
 namespace gamemd {
 int Factory::GetLinkedIndex(DynamicVector * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char result; // al
   char **v5; // esi
@@ -32,14 +31,12 @@ int Factory::GetLinkedIndex(DynamicVector * aP1)
     return -1; /*0x663da3*/
   return result; /*0x663d6c*/
 }
-}
 } // namespace gamemd
 
 // 0x718B70
 namespace gamemd {
 void* Factory_CalculateExitCell()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 *v15; // ecx
   __int16 *v33; // eax
@@ -301,7 +298,6 @@ void* Factory_CalculateExitCell()
     (*(void (__thiscall **)(_DWORD, _DWORD *))(*(_DWORD *)a1[3] + 240))(a1[3], a1 + 10); /*0x719276*/
     return 1; /*0x71927d*/
   }
-}
 }
 } // namespace gamemd
 

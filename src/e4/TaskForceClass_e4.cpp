@@ -10,7 +10,6 @@
 namespace gamemd {
 unsigned int * TaskForceClass::ParseUnitCountAndType(char * Buffer)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int ExitCellByName; // eax
   int Index; // eax
@@ -46,14 +45,12 @@ unsigned int * TaskForceClass::ParseUnitCountAndType(char * Buffer)
     return this; /*0x4c4f3c*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x6E7E80
 namespace gamemd {
 unsigned int * TaskForceClass::Construct(ObjectClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   TaskForceClass *v3; // eax
   ObjectTypeClass *v4; // eax
@@ -88,14 +85,12 @@ unsigned int * TaskForceClass::Construct(ObjectClass * aP1)
   while ( v5 ); /*0x6e7f38*/
   return this; /*0x6e7f3c*/
 }
-}
 } // namespace gamemd
 
 // 0x6E8220
 namespace gamemd {
 AbstractClass * * TaskForceClass::LoadFromINI(char * a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   CCINIClass *result; // eax
   CCINIClass *v5; // esi
@@ -161,14 +156,12 @@ LABEL_12:
   }
   return result; /*0x6e8330*/
 }
-}
 } // namespace gamemd
 
 // 0x6E87F0
 namespace gamemd {
 void * TaskForceClass::ExecuteAction(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void **v5; // [esp+4h] [ebp-4h] BYREF
 
@@ -192,7 +185,6 @@ void * TaskForceClass::ExecuteAction(char a2)
   if ( (a2 & 1) != 0 ) /*0x6e886b*/
     __3_YAXPAX_Z(this); /*0x6e886e*/
   return (TaskForceClass *)this; /*0x6e8878*/
-}
 }
 } // namespace gamemd
 

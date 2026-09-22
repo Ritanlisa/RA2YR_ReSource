@@ -10,7 +10,6 @@
 namespace gamemd {
 unsigned int * AudioQueue::CreateNode()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   AbstractClass *v2 = __2_YAPAXI_Z(0x60u); /*0x402afc*/
@@ -37,14 +36,12 @@ unsigned int * AudioQueue::CreateNode()
     DataGlobal_87DE28 = 1; /*0x402b72*/
   return v2; /*0x402b44*/
 }
-}
 } // namespace gamemd
 
 // 0x4035F0
 namespace gamemd {
 int AudioQueue::FindBestChannel(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -109,14 +106,12 @@ int AudioQueue::FindBestChannel(int a1, int a2)
     return v4; /*0x4036b0*/
   return result; /*0x4036b2*/
 }
-}
 } // namespace gamemd
 
 // 0x403730
 namespace gamemd {
 int AudioQueue::StopAllVoices(__thiscall *__fastcall AudioQueue::StopAllVoices(int a1, int a2))( int)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int (__thiscall *result)(int); // eax
 
@@ -137,14 +132,12 @@ int AudioQueue::StopAllVoices(__thiscall *__fastcall AudioQueue::StopAllVoices(i
   }
   return result; /*0x403768*/
 }
-}
 } // namespace gamemd
 
 // 0x752680
 namespace gamemd {
 void * AudioQueue::FindByData()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int *result; // eax
 
@@ -196,14 +189,12 @@ LABEL_10:
   }
   return result; /*0x7526fb*/
 }
-}
 } // namespace gamemd
 
 // 0x771620
 namespace gamemd {
 RandomStruct * * AudioQueue::Update()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   signed int v2 = *(_DWORD *)(this + 948); /*0x77162a*/
@@ -253,14 +244,12 @@ LABEL_5:
     }
   }
 }
-}
 } // namespace gamemd
 
 // 0x7B1D10
 namespace gamemd {
 CampaignClass * * AudioQueue::Cleanup()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   while ( *(_DWORD *)(this + 48) ) /*0x7b1d16*/
@@ -318,14 +307,12 @@ CampaignClass * * AudioQueue::Cleanup()
   this->q3F064 = 0; /*0x7b1dca*/
   this->q3F058 = 0; /*0x7b1dd0*/
 }
-}
 } // namespace gamemd
 
 // 0x7B20E0
 namespace gamemd {
 unsigned char * AudioQueue::AllocBuffer(WinsockInterfaceClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _BYTE *result; // eax
 
@@ -398,14 +385,12 @@ unsigned char * AudioQueue::AllocBuffer(WinsockInterfaceClass * aP1)
   }
   return result; /*0x7b2153*/
 }
-}
 } // namespace gamemd
 
 // 0x7B22E0
 namespace gamemd {
 int AudioQueue::ReadBuffer(void * a2, int a3, void * a4, unsigned int * a5, unsigned short * a6)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   EventQueue::Process(g_BinkMoviePlayer); /*0x7b22e9*/
@@ -443,14 +428,12 @@ int AudioQueue::ReadBuffer(void * a2, int a3, void * a4, unsigned int * a5, unsi
   }
   return *(_DWORD *)a3; /*0x7b22f7*/
 }
-}
 } // namespace gamemd
 
 // 0x7B23B0
 namespace gamemd {
 AnimClass * * AudioQueue::WriteBuffer(WinsockInterfaceClass * aP1, unsigned int arg4, const void * a3, unsigned int a5, WinsockInterfaceClass * aP5, char a7, short a8)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AnimClass *v14; // eax
   UINT v19; // eax
@@ -497,7 +480,6 @@ AnimClass * * AudioQueue::WriteBuffer(WinsockInterfaceClass * aP1, unsigned int 
   v19 = this->vt_slot_56(v14); /*0x7b24af*/
   SendMessageA((HWND)g_hWnd, v19, 0, 2); /*0x7b24b9*/
   return EventQueue::Process(g_BinkMoviePlayer); /*0x7b24ca*/
-}
 }
 } // namespace gamemd
 

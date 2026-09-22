@@ -7,7 +7,6 @@
 namespace gamemd {
 AbstractClass * * WDTState_4::Release(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // esi
   void (__thiscall ***v11)(_DWORD, int); // ecx
@@ -91,7 +90,6 @@ AbstractClass * * WDTState_4::Release(int a2, unsigned int * a3)
   if ( v12 < this->WDTState_4_field_0x10 ) /*0x76bb74*/
     this->WDTState_4_field_0x10 = v12; /*0x76bb76*/
   return 1; /*0x76bb79*/
-}
 }
 } // namespace gamemd
 

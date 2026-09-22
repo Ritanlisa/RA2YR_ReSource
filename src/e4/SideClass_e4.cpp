@@ -8,7 +8,6 @@
 namespace gamemd {
 int SideClass::LoadAllFromINI(CCINIClass * aP0)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // edi
   int j; // edi
@@ -119,14 +118,12 @@ int SideClass::LoadAllFromINI(CCINIClass * aP0)
   while ( (int)v20 < (int)&HouseClass_Player[43612] ); /*0x679cad*/
   return 1; /*0x679caf*/
 }
-}
 } // namespace gamemd
 
 // 0x6A4550
 namespace gamemd {
 unsigned int * SideClass::Construct(CCINIClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   AbstractTypeClass::Constructor((int)this, (AbstractClass *)aP1); /*0x6a4559*/
@@ -155,18 +152,15 @@ unsigned int * SideClass::Construct(CCINIClass * aP1)
   }
   return this; /*0x6a460b*/
 }
-}
 } // namespace gamemd
 
 // 0x6A4710
 namespace gamemd {
 int SideClass::GetCountry(int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AbstractTypeClass::ProcessPower((char *)this, a2); /*0x6a4719*/
   return Power::TimerProcess(this->q0A8); /*0x6a472c*/
-}
 }
 } // namespace gamemd
 
@@ -174,7 +168,6 @@ int SideClass::GetCountry(int * a2)
 namespace gamemd {
 int SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AbstractTypeClass *v2; // esi
   AbstractClass *v3; // edi
@@ -247,14 +240,12 @@ int SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
   }
   return result; /*0x6a488b*/
 }
-}
 } // namespace gamemd
 
 // 0x6A4930
 namespace gamemd {
 void * SideClass::Init(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void **v6; // [esp+4h] [ebp-4h] BYREF
 
@@ -287,7 +278,6 @@ void * SideClass::Init(char a2)
   if ( (a2 & 1) != 0 ) /*0x6a49ed*/
     __3_YAXPAX_Z(this); /*0x6a49f0*/
   return (SideClass *)this; /*0x6a49fa*/
-}
 }
 } // namespace gamemd
 

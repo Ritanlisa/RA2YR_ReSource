@@ -12,7 +12,6 @@
 namespace gamemd {
 AbstractClass * * WalkLocomotion::MoveTo(IUnknown * aP1, int aP3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v3; // edx
   v3 = aP1; /*0x6a01a0*/
@@ -96,14 +95,12 @@ AbstractClass * * WalkLocomotion::MoveTo(IUnknown * aP1, int aP3)
   }
   return v5; /*0x6a0295*/
 }
-}
 } // namespace gamemd
 
 // 0x6A05F0
 namespace gamemd {
 int WalkLocomotion::ProcessCollision(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   MouseClass *v13; // ecx
   MouseClass *v21; // ecx
@@ -1000,14 +997,12 @@ LABEL_190:
     return 0;
   }
 }
-}
 } // namespace gamemd
 
 // 0x6A1C80
 namespace gamemd {
 int WalkLocomotion::Update(unsigned char * a2, int a3, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char result; // al
   wchar_t *v16; // edi
@@ -2316,14 +2311,12 @@ LABEL_336:
   return 0;
 }
 
-}
 } // namespace gamemd
 
 // 0x6A3DB0
 namespace gamemd {
 unsigned int * WalkLocomotion::TransformCoords(ObjectClass * aP1, IUnknown * aP2, ObjectClass * aP3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v4 = *(_DWORD *)aP3->__pad_0; /*0x6a3dbd*/
@@ -2352,6 +2345,5 @@ unsigned int * WalkLocomotion::TransformCoords(ObjectClass * aP1, IUnknown * aP2
   *(_DWORD *)aP1->__pad_0 = v6 + v8; /*0x6a3e22*/
   *(_DWORD *)&aP1->__pad_0[4] = v7 + v9; /*0x6a3e25*/
   return aP1->__pad_0; /*0x6a3e20*/
-}
 }
 } // namespace gamemd

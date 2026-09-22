@@ -14,7 +14,6 @@
 namespace gamemd {
 void TacticalClass::DrawBuildingPlacement(IUnknown * aP1, int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned __int8 v12; // cl
   _BYTE * v4 = *(_BYTE **)&g_BuildingTypeClass_Array->__pad_0[4 * this->field44]; /*0x47f52c*/
@@ -92,14 +91,12 @@ LABEL_9:
         0);
   }
 }
-}
 } // namespace gamemd
 
 // 0x4801F0
 namespace gamemd {
 unsigned int TacticalClass::RenderCellFogOfWar(IUnknown * aP1, Tactical * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned int result; // eax
 
@@ -134,14 +131,12 @@ unsigned int TacticalClass::RenderCellFogOfWar(IUnknown * aP1, Tactical * aP2)
   }
   return result; /*0x48027d*/
 }
-}
 } // namespace gamemd
 
 // 0x4802A0
 namespace gamemd {
 void TacticalClass::DrawCellTerrainOverlay(int * a2, int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v5; // ebx
   int v6; // esi
@@ -171,14 +166,12 @@ void TacticalClass::DrawCellTerrainOverlay(int * a2, int * a3)
       a3[3],
       58 - 15 * *(char *)(this + 283));
 }
-}
 } // namespace gamemd
 
 // 0x4AC380
 namespace gamemd {
 void* TacticalClass::ProcessScroll(int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   VectorClass *v3; // eax
   VectorClass *v10; // [esp+10h] [ebp-10h] BYREF
@@ -233,14 +226,12 @@ void* TacticalClass::ProcessScroll(int * a2)
   }
   return v3; /*0x4ac42e*/
 }
-}
 } // namespace gamemd
 
 // 0x4AC700
 namespace gamemd {
 unsigned int * TacticalClass::SetDisplayMode(unsigned int * a2, char a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *result; // eax
 
@@ -306,14 +297,12 @@ unsigned int * TacticalClass::SetDisplayMode(unsigned int * a2, char a3)
   }
   return result; /*0x4ac7a0*/
 }
-}
 } // namespace gamemd
 
 // 0x4AE290
 namespace gamemd {
 void TacticalClass::InterpolateView()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   wchar_t *v0; // ebp
   wchar_t *v16; // [esp+8h] [ebp-40h]
@@ -418,14 +407,12 @@ void TacticalClass::InterpolateView()
     Tactical::SetTacticalPosition(&v18); /*0x4ae437*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x4F45B0
 namespace gamemd {
 AbstractClass * * TacticalClass_RenderFrame()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char result; // al
   int v5[24]; // [esp+4h] [ebp-C0h] BYREF
@@ -475,14 +462,12 @@ LABEL_13:
   }
   return result; /*0x4f476d*/
 }
-}
 } // namespace gamemd
 
 // 0x547230
 namespace gamemd {
 void TacticalClass::DrawCellOverlay(int a2, IUnknown * aP2, int a4, int a5, IUnknown * aP5, int a7, int a8, int a9, int a10)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   CCINIClass *v11; // esi
   int v13; // esi
@@ -557,14 +542,12 @@ LABEL_17:
     }
   }
 }
-}
 } // namespace gamemd
 
 // 0x6D04F0
 namespace gamemd {
 void TacticalClass_BuildCommandBar()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned __int8 v4; // bl
   ShapeButtonClass *v7; // edi
@@ -634,14 +617,12 @@ LABEL_18:
   (*(void (__thiscall **)(_BYTE *, int))(*(_DWORD *)a1 + 56))(a1, 2); /*0x6d0640*/
   return v4; /*0x6d0535*/
 }
-}
 } // namespace gamemd
 
 // 0x6D2DE0
 namespace gamemd {
 signed int TacticalClass::RenderIsometricOverlay(IUnknown * aP1, IUnknown * aP2, char a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   signed int result; // eax
   IUnknown *v15; // ecx
@@ -744,14 +725,12 @@ signed int TacticalClass::RenderIsometricOverlay(IUnknown * aP1, IUnknown * aP2,
   }
   return result; /*0x6d3034*/
 }
-}
 } // namespace gamemd
 
 // 0x6D3660
 namespace gamemd {
 int TacticalClass::CalcAllDrawPositions(AbstractClass * aP1, BuildingTypeClass * aP2, int * a3, char a5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ObjectClass *Coords; // eax
   int result; // eax
@@ -833,14 +812,12 @@ LABEL_11:
   }
   return result; /*0x6d3866*/
 }
-}
 } // namespace gamemd
 
 // 0x6D6D10
 namespace gamemd {
 void* * TacticalClass::DrawBuildingsInView(AbstractClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   BuildingTypeClass *v7; // ebx
   int *result; // eax
@@ -1028,14 +1005,12 @@ void* * TacticalClass::DrawBuildingsInView(AbstractClass * aP1)
   }
   return result; /*0x6d71d3*/
 }
-}
 } // namespace gamemd
 
 // 0x6D9B50
 namespace gamemd {
 int TacticalClass::CheckUnitOverlap(int a2, int a3, AbstractClass * aP3, int a5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v5 = this->visibleArea; /*0x6d9b53*/
@@ -1070,14 +1045,12 @@ LABEL_10:
       return 0; /*0x6d9cb7*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x6DA380
 namespace gamemd {
 void * TacticalClass::IsOccupiedByTechno(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   MouseClass *v5; // esi
   IUnknown *v8; // eax
@@ -1166,14 +1139,12 @@ LABEL_15:
   }
   return result; /*0x6da501*/
 }
-}
 } // namespace gamemd
 
 // 0x6DBE20
 namespace gamemd {
 void* TacticalClass::DrawPlacementCircles()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   CellStruct *v0; // ebx
   int i; // edi
@@ -1401,14 +1372,12 @@ LABEL_44:
     }
   }
 }
-}
 } // namespace gamemd
 
 // 0x732D10
 namespace gamemd {
 unsigned int * TacticalClass::CollectSelectedIDs()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   VectorClass *v2; // ebx
   VectorClass *v26; // [esp+10h] [ebp-10h]
@@ -1553,7 +1522,6 @@ LABEL_11:
   }
   while ( v30 < (int)v31 ); /*0x732fc9*/
   return v2; /*0x732fd0*/
-}
 }
 } // namespace gamemd
 

@@ -8,7 +8,6 @@
 namespace gamemd {
 int WaypointPathClass::Init()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x763733*/
@@ -37,14 +36,12 @@ int WaypointPathClass::Init()
   }
   return this; /*0x7637cd*/
 }
-}
 } // namespace gamemd
 
 // 0x763810
 namespace gamemd {
 int WaypointPathClass::Construct(WaypointClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x763813*/
@@ -74,14 +71,12 @@ int WaypointPathClass::Construct(WaypointClass * aP1)
   }
   return this; /*0x7638bb*/
 }
-}
 } // namespace gamemd
 
 // 0x763C70
 namespace gamemd {
 int WaypointPathClass::LoadState(unsigned int * a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -151,14 +146,12 @@ int WaypointPathClass::LoadState(unsigned int * a1, int a2)
   }
   return result; /*0x763d7a*/
 }
-}
 } // namespace gamemd
 
 // 0x764760
 namespace gamemd {
 unsigned int * WaypointPathClass::computePath(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   this->vtable2 = 0; /*0x76476d*/
@@ -219,7 +212,6 @@ unsigned int * WaypointPathClass::computePath(int a2, unsigned int * a3)
   }
   this->vtable2 = a3 + 1; /*0x7647a7*/
   return this; /*0x7647ac*/
-}
 }
 } // namespace gamemd
 

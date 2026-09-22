@@ -9,16 +9,13 @@
 // 0x48ACF0
 double RulesClass::GetFiringDistance()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return (double)*((int *)g_RulesClass_Instance + 1454) * 0.5; /*0x48ad01*/
-}
 }
 
 // 0x538B30
 unsigned int * RulesClass::InitINIChain(int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   this->DetailMinFrameRateMovie = 0; /*0x538b3b*/
   this->DetailBufferZoneWidth = a2; /*0x538b3e*/
@@ -37,12 +34,10 @@ unsigned int * RulesClass::InitINIChain(int a2, int a3)
   }
   return this; /*0x538b5d*/
 }
-}
 
 // 0x665650
 R RulesClass::RulesClass()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int *BarrelDebris; // ebp
 
@@ -1172,7 +1167,6 @@ R RulesClass::RulesClass()
   while ( v6 );
   return (int)this;
 }
-}
 
 // 0x667A30
 int RulesClass::DTOR()
@@ -1710,7 +1704,6 @@ int result;
 // 0x66D150
 void* RulesClass::readAudioVisual()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int Int_Overwrite; // eax
@@ -1751,12 +1744,10 @@ void* RulesClass::readAudioVisual()
   }
   return result; /*0x66d1dc*/
 }
-}
 
 // 0x673E80
 INIClass * * RulesClass::ReadPowerupsSection()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   char String[128]; // [esp+0h] [ebp-80h] BYREF
@@ -1836,12 +1827,10 @@ INIClass * * RulesClass::ReadPowerupsSection()
   }
   return result; /*0x673fe2*/
 }
-}
 
 // 0x6743D0
 INIClass * * RulesClass::readDifficulty()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int Int_Overwrite; // eax
@@ -1908,12 +1897,10 @@ INIClass * * RulesClass::readDifficulty()
   }
   return result; /*0x6744e4*/
 }
-}
 
 // 0x674550
 INIClass * * RulesClass::ReadMovies()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int i; // ebx
@@ -1966,12 +1953,10 @@ INIClass * * RulesClass::ReadMovies()
   }
   return result; /*0x67463c*/
 }
-}
 
 // 0x679FA0
 void RulesClass::readMaximums()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   AbstractClass *v2 = (void *)this->DetailMinFrameRateMovie; /*0x679fa6*/
@@ -1984,12 +1969,10 @@ void RulesClass::readMaximums()
   this->SelfHealInfantryAmount = 0; /*0x679fc4*/
   this->DetailBufferZoneWidth = 0; /*0x679fc7*/
 }
-}
 
 // 0x679FD0
 void RulesClass::readInfantryTypes()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   AbstractClass *v2 = (void *)this->DetailMinFrameRateMovie; /*0x679fd6*/
@@ -2002,12 +1985,10 @@ void RulesClass::readInfantryTypes()
   this->SelfHealInfantryAmount = 0; /*0x679ff4*/
   this->DetailBufferZoneWidth = 0; /*0x679ff7*/
 }
-}
 
 // 0x67A000
 void RulesClass::readCountries()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   AbstractClass *v2 = (void *)this->DetailMinFrameRateMovie; /*0x67a006*/
@@ -2020,12 +2001,10 @@ void RulesClass::readCountries()
   this->SelfHealInfantryAmount = 0; /*0x67a024*/
   this->DetailBufferZoneWidth = 0; /*0x67a027*/
 }
-}
 
 // 0x67A060
 void RulesClass::readVehicleTypes()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   AbstractClass *v2 = (void *)this->DetailMinFrameRateMovie; /*0x67a066*/
@@ -2038,12 +2017,10 @@ void RulesClass::readVehicleTypes()
   this->SelfHealInfantryAmount = 0; /*0x67a084*/
   this->DetailBufferZoneWidth = 0; /*0x67a087*/
 }
-}
 
 // 0x67A190
 void * RulesClass::readAircraftTypes(int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( this != a2 ) /*0x67a19a*/
@@ -2082,12 +2059,10 @@ void * RulesClass::readAircraftTypes(int * a2)
   this->AttackingAircraftSightRange = a2[6]; /*0x67a1ff*/
   return this; /*0x67a204*/
 }
-}
 
 // 0x67A210
 void * RulesClass::readSuperWeaponTypes(int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( this != a2 ) /*0x67a21a*/
@@ -2126,12 +2101,10 @@ void * RulesClass::readSuperWeaponTypes(int * a2)
   this->AttackingAircraftSightRange = a2[6]; /*0x67a27f*/
   return this; /*0x67a284*/
 }
-}
 
 // 0x67A310
 void * RulesClass::readBuildingTypes(int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( this != a2 ) /*0x67a31a*/
@@ -2170,12 +2143,10 @@ void * RulesClass::readBuildingTypes(int * a2)
   this->AttackingAircraftSightRange = a2[6]; /*0x67a37f*/
   return this; /*0x67a384*/
 }
-}
 
 // 0x67A8B0
 unsigned int * RulesClass::readParticles()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   this->DetailMinFrameRateMovie = 0; /*0x67a8b4*/
   this->DetailBufferZoneWidth = 0; /*0x67a8b7*/
@@ -2186,12 +2157,10 @@ unsigned int * RulesClass::readParticles()
   *this = &vt_TypeList_TerrainTypeClass_const; /*0x67a8cb*/
   return this; /*0x67a8d1*/
 }
-}
 
 // 0x67B480
 int RulesClass::readAI(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v3 = this->DetailBufferZoneWidth; /*0x67b483*/
@@ -2209,12 +2178,10 @@ int RulesClass::readAI(unsigned int * a2)
   *(_DWORD *)(v7 + 4 * v6) = *a2; /*0x67b4c8*/
   return 1; /*0x67b4b1*/
 }
-}
 
 // 0x67BDD0
 void * RulesClass::LoadTypeList(int a1, unsigned char *** edx0, INIClass * aP1, unsigned char * a2, unsigned int * a5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char *i; // eax
   INIClass *v7; // edi
@@ -2310,12 +2277,10 @@ void * RulesClass::LoadTypeList(int a1, unsigned char *** edx0, INIClass * aP1, 
   }
   return (VectorClass *)a1; /*0x67bf02*/
 }
-}
 
 // 0x67C430
 unsigned int * RulesClass::readIQ(int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   this->DetailMinFrameRateMovie = 0; /*0x67c43b*/
   this->DetailBufferZoneWidth = a2; /*0x67c43e*/
@@ -2333,7 +2298,6 @@ unsigned int * RulesClass::readIQ(int a2, int a3)
     this->SelfHealInfantryAmount = 1; /*0x67c470*/
   }
   return this; /*0x67c45d*/
-}
 }
 
 // 0x6614F0

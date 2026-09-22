@@ -8,7 +8,6 @@
 namespace gamemd {
 long MainMenu_Screen()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v2; // esi
   HWND DlgItem; // esi
@@ -113,13 +112,11 @@ LABEL_27:
   SetFocus(g_hWnd); /*0x531f50*/
   return dwNewLong; /*0x531f5a*/
 }
-}
 } // namespace gamemd
 
 // 0x531F60
 int MainMenu::DlgProc(HWND hWnd, int a2, int a3, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   _DWORD *WindowLongA; // eax
@@ -183,5 +180,4 @@ int MainMenu::DlgProc(HWND hWnd, int a2, int a3, int a4)
     return 0; /*0x5320f1*/
   }
   return result; /*0x532017*/
-}
 }

@@ -76,7 +76,6 @@
 namespace gamemd {
 void char WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   CoordStruct **v3; // edi
   ObjectClass *v4; // eax
@@ -185,13 +184,11 @@ void char WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
   }
   return result; /*0x5bc2b9*/
 }
-}
 } // namespace gamemd
 
 // 0x69A1F0
 int WinMain::Constructor_VectorClass_Wstring_()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // ebp
   int j; // esi
@@ -227,12 +224,10 @@ int WinMain::Constructor_VectorClass_Wstring_()
   }
   return (*(int (__thiscall **)(_DWORD *))(this->qA3F + 12))(this + 2623); /*0x69a2ee*/
 }
-}
 
 // 0x734D30
 unsigned int * WinMain::ShutdownCleanup()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void **i; // eax
   void **v1; // ecx
@@ -296,13 +291,11 @@ unsigned int * WinMain::ShutdownCleanup()
   unk_B1CF80 = 0; /*0x734e1d*/
   return result; /*0x734e23*/
 }
-}
 
 // 0x5D7E50
 namespace gamemd {
 void sub_5D7E50()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // ebp
   char result; // al
@@ -343,14 +336,12 @@ void sub_5D7E50()
   }
   return result; /*0x5d7f1a*/
 }
-}
 } // namespace gamemd
 
 // 0x7B84F0
 namespace gamemd {
 void* sub_7B84F0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HANDLE result; // eax
   DWORD LastError; // eax
@@ -393,7 +384,6 @@ void* sub_7B84F0()
     }
   }
   return result; /*0x7b85fe*/
-}
 }
 } // namespace gamemd
 

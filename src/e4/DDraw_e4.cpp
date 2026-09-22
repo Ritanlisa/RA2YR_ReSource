@@ -6,7 +6,6 @@
 // 0x4A3370
 int DDraw::ReleaseSurfaces()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -24,21 +23,17 @@ int DDraw::ReleaseSurfaces()
   }
   return result; /*0x4a339b*/
 }
-}
 
 // 0x4A3640
 void DDraw::Init()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   this->q18000 = 0; /*0x4a3640*/
-}
 }
 
 // 0x4A3E40
 int DDraw::CapabilityCheck()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   const char *v0; // eax
   int v2; // [esp+8h] [ebp-44h] BYREF
@@ -105,12 +100,10 @@ LABEL_7:
   }
   return DSurface::Destroy(v7); /*0x4a3fa1*/
 }
-}
 
 // 0x4A4830
 int DDraw::WaitForIdle()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -119,12 +112,10 @@ int DDraw::WaitForIdle()
   while ( result && result != -2005532222 ); /*0x4a4846*/
   return result; /*0x4a4848*/
 }
-}
 
 // 0x4C19B0
 int DDraw::CleanupSurfaces()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -179,12 +170,10 @@ int DDraw::CleanupSurfaces()
   }
   return result; /*0x4c1a88*/
 }
-}
 
 // 0x5D2530
 int DDraw::HandleSuspend()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // edi
   int j; // edi
@@ -215,7 +204,6 @@ int DDraw::HandleSuspend()
     }
   }
   return v1; /*0x5d25c4*/
-}
 }
 
 // 0x4A3DD0

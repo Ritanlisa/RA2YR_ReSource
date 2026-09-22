@@ -6,7 +6,6 @@
 namespace gamemd {
 int CCINIClass::ReadTypeList(char * a1, CCINIClass * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v2; // edi
   int result; // eax
@@ -92,17 +91,14 @@ LABEL_28:
   }
   return result; /*0x41f480*/
 }
-}
 } // namespace gamemd
 
 // 0x473450
 namespace gamemd {
 int CCINIClass::GetDB()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return this->q004; /*0x473453*/
-}
 }
 } // namespace gamemd
 
@@ -110,7 +106,6 @@ int CCINIClass::GetDB()
 namespace gamemd {
 MultiplayerGameMode * * CCINIClass::Load(MultiplayerGameMode * aP1, char a3, char aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   CCINIClass *v5; // ebp
   int Base64Data; // eax
@@ -157,14 +152,12 @@ LABEL_8:
   FileStraw::Destructor((int)&v10); /*0x474306*/
   return (int)v7->__pad_0; /*0x474311*/
 }
-}
 } // namespace gamemd
 
 // 0x535B30
 namespace gamemd {
 unsigned int * CCINIClass::CCINIClass()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *result; // eax
 
@@ -212,7 +205,6 @@ unsigned int * CCINIClass::CCINIClass()
   result->ownsFile = 0; /*0x535bb7*/
   *result = &CCINIClass_Vtable; /*0x535bba*/
   return result; /*0x535ba3*/
-}
 }
 } // namespace gamemd
 

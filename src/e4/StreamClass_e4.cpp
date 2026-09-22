@@ -5,16 +5,13 @@
 // 0x411310
 int StreamClass::WriteBytes(unsigned short a2, char a3, int a4, int a5, int a6)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return (*(int (__thiscall **)(_DWORD, char *, _DWORD))(*this->q014 + 20))(this->q014, &a3, a2); /*0x411328*/
-}
 }
 
 // 0x4114B0
 unsigned int StreamClass::ReadAndSeek(MouseClass * aP1, MouseClass * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned int result; // eax
 
@@ -29,12 +26,10 @@ unsigned int StreamClass::ReadAndSeek(MouseClass * aP1, MouseClass * aP2)
     result -= this->m_Position; /*0x4114dc*/
   return result; /*0x4114df*/
 }
-}
 
 // 0x45AEA0
 int StreamClass::Set2(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( *a2 ) /*0x45aea8*/
@@ -67,12 +62,10 @@ int StreamClass::Set2(unsigned int * a2)
     return -2147467262; /*0x45af0e*/
   }
 }
-}
 
 // 0x45AF20
 int StreamClass::Set(IUnknown * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v5; // ebx
   if ( aP1->field_0 ) /*0x45af28*/
@@ -104,7 +97,6 @@ int StreamClass::Set(IUnknown * aP1)
     }
     return -2147467262; /*0x45af8e*/
   }
-}
 }
 
 // 0x4B4C30

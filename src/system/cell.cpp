@@ -195,7 +195,6 @@ ObjectClass* CellClass::FindObjectOfType(AbstractType type, bool alt) const
 // 0x48e5a0
 int CellClass::Draw(const Point2D* screen_pos, const RectangleStruct* bounds) const
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( a2 )
@@ -270,7 +269,6 @@ pop     ebx
 retn    0Ch
 */
     // TODO stub - translate quarantined IDA block above
-}
 
 // IDA: 0x4E2830 -- CellClass::DrawDispatch  
 // Main cell drawing dispatcher (161 bytes).
@@ -280,7 +278,6 @@ retn    0Ch
 // 0x4e2830
 int CellClass::DrawDispatch(const Point2D* screen_pos, const RectangleStruct* bounds) const
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( !*((_BYTE *)this + 45) )
@@ -518,7 +515,6 @@ pop     ebx
 retn    0Ch
 */
     // TODO stub - translate quarantined IDA block above
-}
 
 // IDA: 0x557830 -- CellClass::DrawWithFlags
 // Draws the cell with specific rendering flags (240 bytes).
@@ -532,7 +528,6 @@ retn    0Ch
 // 0x557830
 int CellClass::DrawWithFlags(const Point2D* screen_pos, const RectangleStruct* bounds, int flags) const
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v4 = a2;
@@ -689,7 +684,6 @@ pop     esi
 pop     ebx
 retn    0Ch
 */
-}
 
 // IDA: 0x47FF80 -- CellClass::GetScreenRect
 // Computes the screen-space bounding rectangle for this cell.
@@ -726,7 +720,6 @@ RectangleStruct* CellClass::GetScreenRect(RectangleStruct* out) const
 // 0x7235a0
 int CellClass::RegisterForRedraw()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _BYTE *result; // eax
 
@@ -893,7 +886,6 @@ pop     esi
 add     esp, 8
 retn    4
 */
-}
 
 // IDA: 0x653F50 -- CellClass::DrawWrapper
 // Thin wrapper that calls Draw.

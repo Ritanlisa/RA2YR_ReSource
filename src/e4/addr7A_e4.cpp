@@ -23,7 +23,6 @@
 namespace gamemd {
 Coord * * int CollectWOLConnectionTokens()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   signed int result; // eax
   char **v12; // ecx
@@ -121,14 +120,12 @@ Coord * * int CollectWOLConnectionTokens()
   }
   return result; /*0x7a067b*/
 }
-}
 } // namespace gamemd
 
 // 0x7A0690
 namespace gamemd {
 void WOL_RequestMatch()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND v0; // eax
   int i; // esi
@@ -357,14 +354,12 @@ LABEL_50:
   ComPtr::Release(&v33); /*0x7a0cfe*/
   return 1; /*0x7a07c7*/
 }
-}
 } // namespace gamemd
 
 // 0x7A0DD0
 namespace gamemd {
 void E4Recv_7A0DD0::sub_7A0DD0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char **v3; // edi
   HWND GameUI; // eax
@@ -385,14 +380,12 @@ void E4Recv_7A0DD0::sub_7A0DD0()
       UpdateLobbyGraphicsWOL(GameUI, v2, -1); /*0x7a0e3c*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x7A1060
 namespace gamemd {
 Coord * * WOL_ProcessPingRequests()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char result; // al
   ULONG S_addr; // ebx
@@ -514,14 +507,12 @@ LABEL_37:
   }
   return result; /*0x7a1328*/
 }
-}
 } // namespace gamemd
 
 // 0x7A1330
 namespace gamemd {
 Coord * * UpdateWOLLobbyPings()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char **v8; // eax
   char **v9; // eax
@@ -663,23 +654,19 @@ LABEL_40:
     DeleteAndZero(&v19); /*0x7a168f*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x7A16B0
 namespace gamemd {
 ObjectClass * * HandleWOLMatchMessage()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // (no pseudocode — ASM-only function)
-}
 } // namespace gamemd
 
 // 0x7A1BB0
 namespace gamemd {
 AbstractClass * * WOL_MatchGame()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   wchar_t *String; // eax
   wchar_t *v8; // eax
@@ -861,14 +848,12 @@ LABEL_25:
     return 0; /*0x7a2061*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x7A2830
 namespace gamemd {
 Coord * * E4Recv_7A2830::sub_7A2830()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -896,14 +881,12 @@ Coord * * E4Recv_7A2830::sub_7A2830()
   }
   return result; /*0x7a288f*/
 }
-}
 } // namespace gamemd
 
 // 0x7A29E0
 namespace gamemd {
 void BuddyDlgProcWOL(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   wchar_t *StringCSF; // eax
@@ -1096,14 +1079,12 @@ LABEL_51:
   }
   return result; /*0x7a2a54*/
 }
-}
 } // namespace gamemd
 
 // 0x7A4C10
 namespace gamemd {
 CampaignScore * * CComObject_CChatEventSink___ATL__vt_04_(int a1, int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND v6; // eax
   HWND Current; // eax
@@ -1206,14 +1187,12 @@ LABEL_16:
     return 0; /*0x7a4e92*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x7AF640
 namespace gamemd {
 AbstractClass * * E4Recv_7AF640::sub_7AF640(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -1242,14 +1221,12 @@ AbstractClass * * E4Recv_7AF640::sub_7AF640(int a2)
   }
   return result; /*0x7af6aa*/
 }
-}
 } // namespace gamemd
 
 // 0x7AF6C0
 namespace gamemd {
 void WorldDominationFactionDlgProc(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   _DWORD *WindowLongA; // eax
@@ -1356,14 +1333,12 @@ LABEL_14:
   }
   return result; /*0x7af75a*/
 }
-}
 } // namespace gamemd
 
 // 0x7AF970
 namespace gamemd {
 AbstractClass * * sub_7AF970()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void (__thiscall ***v8)(_DWORD, int); // [esp+20h] [ebp-78h]
 
@@ -1413,14 +1388,12 @@ AbstractClass * * sub_7AF970()
   OwnerDrawControl::InitVtable(v5); /*0x7afab9*/
   return v3; /*0x7afac0*/
 }
-}
 } // namespace gamemd
 
 // 0x7AFB90
 namespace gamemd {
 int StartWDTCampaign()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   wchar_t *StringCSF; // eax
   CampaignScore *v2; // eax
@@ -1603,7 +1576,6 @@ LABEL_41:
         continue; /*0x7affed*/
     }
   }
-}
 }
 } // namespace gamemd
 

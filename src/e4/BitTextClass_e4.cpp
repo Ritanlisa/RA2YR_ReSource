@@ -6,7 +6,6 @@
 // 0x433880
 int BitTextClass::ParseFontData(char * Source)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   struct tagRECT *v3; // ebp
   _DWORD *Font; // eax
@@ -52,12 +51,10 @@ int BitTextClass::ParseFontData(char * Source)
   }
   return this; /*0x4338f4*/
 }
-}
 
 // 0x434AD0
 unsigned int * BitTextClass::LoadFont()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   *this = &vt_BitText; /*0x434ad5*/
   if ( __2_YAPAXI_Z(0x44u) ) /*0x434adb*/
@@ -70,5 +67,4 @@ unsigned int * BitTextClass::LoadFont()
     aP0 = 0; /*0x434afe*/
     return this; /*0x434afc*/
   }
-}
 }

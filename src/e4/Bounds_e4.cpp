@@ -5,7 +5,6 @@
 // 0x487EE0
 unsigned int * Bounds::Subtract(IUnknown * aP1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   AbstractClass *v3 = this->q004; /*0x487ee0*/
@@ -18,5 +17,4 @@ unsigned int * Bounds::Subtract(IUnknown * aP1, unsigned int * a2)
   aP1->field_8 = v5; /*0x487f09*/
   aP1->field_C = v6; /*0x487f0d*/
   return &aP1->field_0; /*0x487f05*/
-}
 }

@@ -5,7 +5,6 @@
 // 0x6C0260
 int TClassFactory_CampaignClass::GetClassName()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   LONG v1; // esi
   volatile LONG *Block; // [esp+Ch] [ebp+4h]
@@ -15,12 +14,10 @@ int TClassFactory_CampaignClass::GetClassName()
     __3_YAXPAX_Z((void *)Block); /*0x6c0277*/
   return v1; /*0x6c0281*/
 }
-}
 
 // 0x6C4D60
 int TClassFactory_MechLocomotionClass::GetClassName()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   LONG v1; // esi
   volatile LONG *Block; // [esp+Ch] [ebp+4h]
@@ -29,7 +26,6 @@ int TClassFactory_MechLocomotionClass::GetClassName()
   if ( !v1 ) /*0x6c4d74*/
     __3_YAXPAX_Z((void *)Block); /*0x6c4d77*/
   return v1; /*0x6c4d81*/
-}
 }
 
 // 0x6C0290

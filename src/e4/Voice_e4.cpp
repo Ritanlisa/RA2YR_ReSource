@@ -6,7 +6,6 @@
 // 0x4025B0
 int Voice::Stop(__thiscall *__thiscall Voice_Stop(int this))( int)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int (__thiscall *result)(int); // eax
 
@@ -20,12 +19,10 @@ int Voice::Stop(__thiscall *__thiscall Voice_Stop(int this))( int)
   *(_DWORD *)(this + 360) = 0; /*0x4025e9*/
   return result; /*0x4025f3*/
 }
-}
 
 // 0x404140
 int Voice::DetachChannel()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -46,5 +43,4 @@ int Voice::DetachChannel()
     this->q02C = 0; /*0x4041c2*/
   }
   return result; /*0x4041c8*/
-}
 }

@@ -12,7 +12,6 @@ namespace ra2 {
 namespace game {
 int TemporalClass::Constructor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v2; // eax
   AbstractClass::Constructor((AbstractClass *)this); /*0x71a453*/
@@ -36,7 +35,6 @@ int TemporalClass::Constructor()
   }
   return this; /*0x71a4d8*/
 }
-}
 } // namespace game
 } // namespace ra2
 
@@ -45,7 +43,6 @@ namespace ra2 {
 namespace game {
 unsigned int * TemporalClass::TemporalClass(TechnoClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x71a4e7*/
@@ -80,7 +77,6 @@ unsigned int * TemporalClass::TemporalClass(TechnoClass * aP1)
   this->q03C = 0; /*0x71a591*/
   return this; /*0x71a596*/
 }
-}
 } // namespace game
 } // namespace ra2
 
@@ -89,7 +85,6 @@ namespace ra2 {
 namespace game {
 void ** TemporalClass::ProcessTimeWarp()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void **result; // eax
   int **v13; // ecx
@@ -258,7 +253,6 @@ LABEL_10:
   }
   return result; /*0x71a795*/
 }
-}
 } // namespace game
 } // namespace ra2
 
@@ -267,7 +261,6 @@ namespace ra2 {
 namespace game {
 int TemporalClass::GetWarpPerStep(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int WarpPerStep; // ebx
 
@@ -281,7 +274,6 @@ int TemporalClass::GetWarpPerStep(int a2)
   this->q04C = v7; /*0x71ab50*/
   return (int)v7 + WarpPerStep; /*0x71ab49*/
 }
-}
 } // namespace game
 } // namespace ra2
 
@@ -290,7 +282,6 @@ namespace ra2 {
 namespace game {
 void * TemporalClass::ProcessEvent(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   *this = &TemporalClass::`vftable'; /*0x71b1bd*/
@@ -312,7 +303,6 @@ void * TemporalClass::ProcessEvent(char a2)
   if ( (a2 & 1) != 0 ) /*0x71b224*/
     __3_YAXPAX_Z(this); /*0x71b227*/
   return (TemporalClass *)this; /*0x71b231*/
-}
 }
 } // namespace game
 } // namespace ra2

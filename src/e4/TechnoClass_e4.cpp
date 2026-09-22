@@ -16,7 +16,6 @@
 namespace gamemd {
 void TechnoClass_CanFireAtTarget()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -43,7 +42,6 @@ void TechnoClass_CanFireAtTarget()
   }
   return result; /*0x41aa13*/
 }
-}
 } // namespace gamemd
 
 // 0x6F2B40
@@ -51,7 +49,6 @@ namespace ra2 {
 namespace game {
 unsigned int * TechnoClass::TechnoClass(AbstractClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   TimerStruct *v4; // edx
   IUnknown *v5; // ecx
@@ -315,7 +312,6 @@ unsigned int * TechnoClass::TechnoClass(AbstractClass * aP1)
   this->q1E4 = Random::State(&g_ScenarioClass_Instance->random[1]); /*0x6f3259*/
   return this; /*0x6f3262*/
 }
-}
 } // namespace game
 } // namespace ra2
 
@@ -324,7 +320,6 @@ namespace ra2 {
 namespace game {
 unsigned int * TechnoClass::Update(BuildingClass * aP0, FootClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   TechnoClass *esi1; // esi
   HouseClass *v3; // eax
@@ -491,7 +486,6 @@ unsigned int * TechnoClass::Update(BuildingClass * aP0, FootClass * aP1)
   }
   return result; /*0x6f42f7*/
 }
-}
 } // namespace game
 } // namespace ra2
 
@@ -609,7 +603,6 @@ namespace ra2 {
 namespace game {
 Coord * * TechnoClass::RegisterKill()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void **v4; // ecx
   void **v5; // ecx
@@ -792,7 +785,6 @@ LABEL_67:
   }
   return result; /*0x7030cc*/
 }
-}
 } // namespace game
 } // namespace ra2
 
@@ -801,7 +793,6 @@ namespace ra2 {
 namespace game {
 int TechnoClass::DrawAirstrikeFlare_SetContext(int a1, int a2, int a3, int a4, int a5, int a6)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   unsigned __int8 v20; // [esp+30h] [ebp-60h] BYREF
@@ -928,7 +919,6 @@ int TechnoClass::DrawAirstrikeFlare_SetContext(int a1, int a2, int a3, int a4, i
   }
   return result; /*0x705c94*/
 }
-}
 } // namespace game
 } // namespace ra2
 
@@ -937,7 +927,6 @@ namespace ra2 {
 namespace game {
 int TechnoClass::HasVoiceResponse(int weaponIndex)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HouseClass *v3; // edi
   v3 = (HouseClass *)&this->initialOwner; /*0x70d0d5*/
@@ -949,7 +938,6 @@ int TechnoClass::HasVoiceResponse(int weaponIndex)
   return VeterancyStruct::IsElite((float *)v3->__pad_0) /*0x70d142*/
       && (*(_BYTE *)(v4 + weaponIndex + 668) || *(_BYTE *)(v4 + weaponIndex + 686));
 }
-}
 } // namespace game
 } // namespace ra2
 
@@ -958,7 +946,6 @@ namespace ra2 {
 namespace game {
 HouseClass * * TechnoClass::RenderTechnoSHP(int * a0, int * a1, int * a2, HouseClass * aP3, HouseClass * aP4, int a6, int a7, TechnoClass * aP7, TechnoClass * aP8, int a10, int a11)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   TechnoClass *v11; // ecx
   TechnoClass *v12; // esi
@@ -1107,7 +1094,6 @@ HouseClass * * TechnoClass::RenderTechnoSHP(int * a0, int * a1, int * a2, HouseC
              v37);
   }
 }
-}
 } // namespace game
 } // namespace ra2
 
@@ -1115,7 +1101,6 @@ HouseClass * * TechnoClass::RenderTechnoSHP(int * a0, int * a1, int * a2, HouseC
 namespace gamemd {
 void TechnoClass_DrawVoxel()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ObjectClass *v16; // eax
   float *inited; // eax
@@ -1840,7 +1825,6 @@ LABEL_102:
     }
   }
   return (*(int (__thiscall **)(ObjectClass *, _DWORD *, _DWORD))(*(_DWORD *)v116->__pad_0 + 20))(v116, v143, 0);
-}
 }
 } // namespace gamemd
 

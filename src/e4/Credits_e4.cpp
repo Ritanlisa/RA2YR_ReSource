@@ -6,7 +6,6 @@
 // 0x52CB90
 char Credits::Screen()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HANDLE FirstFileA; // esi
   char *cAlternateFileName; // ebp
@@ -101,5 +100,4 @@ LABEL_15:
     return BufferIOFileClass::Dtor(v11); /*0x52cd5a*/
   }
   return result; /*0x52cd5f*/
-}
 }

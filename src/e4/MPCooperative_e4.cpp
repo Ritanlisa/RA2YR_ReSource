@@ -19,7 +19,6 @@
 namespace gamemd {
 int MPCooperative::processTurn(char * a2, char * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   if ( a2 ) /*0x49b66e*/
     strcpy((char *)this, ToWideStringChar(a2)); /*0x49b68b*/
@@ -49,14 +48,12 @@ int MPCooperative::processTurn(char * a2, char * a3)
   this->MPCooperative_field_0x64 = 0; /*0x49b709*/
   return this; /*0x49b6d2*/
 }
-}
 } // namespace gamemd
 
 // 0x49BCE0
 namespace gamemd {
 int MPCooperative::BuildScoreEntries(int a2, CCINIClass * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   wchar_t *v9; // ebx
   int i; // ebx
@@ -118,14 +115,12 @@ int MPCooperative::BuildScoreEntries(int a2, CCINIClass * aP2)
   *(_DWORD *)aP2->__pad_0 = this->MPCooperative_field_0x68; /*0x49be28*/
   return 1; /*0x49bced*/
 }
-}
 } // namespace gamemd
 
 // 0x49BE40
 namespace gamemd {
 int MPCooperative::WriteCoopSaveINI()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char i; // al
 
@@ -233,14 +228,12 @@ int MPCooperative::WriteCoopSaveINI()
   BufferIOFileClass::Dtor(v22); /*0x49c0b1*/
   return 1; /*0x49c0b7*/
 }
-}
 } // namespace gamemd
 
 // 0x49CC50
 namespace gamemd {
 void MPCooperative_validateMove()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
         _DWORD *this,
         int a2,
         int a3,
@@ -317,14 +310,12 @@ void MPCooperative_validateMove()
   this->q068 = a3; /*0x49ccd5*/
   return 1; /*0x49ccdb*/
 }
-}
 } // namespace gamemd
 
 // 0x49D120
 namespace gamemd {
 int MPCooperative::ReadCoopSaveINI()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char i; // al
   _BYTE v17[12]; // [esp+64h] [ebp-D0h] BYREF
@@ -432,14 +423,12 @@ int MPCooperative::ReadCoopSaveINI()
   BufferIOFileClass::Dtor(v16); /*0x49d37d*/
   return v15; /*0x49d1de*/
 }
-}
 } // namespace gamemd
 
 // 0x5C1470
 namespace gamemd {
 unsigned int * MPCooperative::ctor(MultiplayerGameMode * aP1, MPCooperative * aP2, MultiplayerGameMode * aP3, MPCooperative * aP4, MultiplayerGameMode * aP5, MPCooperative * aP6)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IPXManagerClass *v8; // esi
   VectorClass *v10; // esi
@@ -548,14 +537,12 @@ unsigned int * MPCooperative::ctor(MultiplayerGameMode * aP1, MPCooperative * aP
   }
   return this; /*0x5c1638*/
 }
-}
 } // namespace gamemd
 
 // 0x5C1640
 namespace gamemd {
 AbstractClass * * MPCooperative_Cleanup(MPCooperative * aP0, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   MPCooperative *ebp0; // ebp
   MPCooperative *v4; // edi
@@ -656,14 +643,12 @@ AbstractClass * * MPCooperative_Cleanup(MPCooperative * aP0, int a2)
   v4->field_60 = 0; /*0x5c1797*/
   MultiplayerGameMode::Dtor(v4); /*0x5c179a*/
 }
-}
 } // namespace gamemd
 
 // 0x5C18A0
 namespace gamemd {
 int MPCooperative::Read()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // edi
   int j; // ebx
@@ -708,14 +693,12 @@ int MPCooperative::Read()
   }
   return 1; /*0x5c1970*/
 }
-}
 } // namespace gamemd
 
 // 0x5C1A10
 namespace gamemd {
 CampaignClass * * MPCooperative::CopyTo()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND result; // eax
   CampaignClass *v12; // edi
@@ -830,17 +813,14 @@ LABEL_25:
   }
   return result; /*0x5c1c9f*/
 }
-}
 } // namespace gamemd
 
 // 0x5C1CB0
 namespace gamemd {
 void MPCooperative::COMStub()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   this->q340 = 1; /*0x5c1cb0*/
-}
 }
 } // namespace gamemd
 
@@ -848,7 +828,6 @@ void MPCooperative::COMStub()
 namespace gamemd {
 int MPCooperative::InitSession()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char *String2; // [esp+14h] [ebp-4h] BYREF
 
@@ -882,14 +861,12 @@ LABEL_10:
   }
   return v2; /*0x5c1d65*/
 }
-}
 } // namespace gamemd
 
 // 0x5C1DC0
 namespace gamemd {
 CampaignClass * * MPCooperative::Seek()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char result; // al
   CampaignClass *v3; // edi
@@ -993,14 +970,12 @@ LABEL_16:
   }
   return result; /*0x5c1dcf*/
 }
-}
 } // namespace gamemd
 
 // 0x5C1FA0
 namespace gamemd {
 int MPCooperative::Revert()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v4; // eax
   int v5; // eax
@@ -1031,14 +1006,12 @@ int MPCooperative::Revert()
     return SideClass::FindByName(**(void ***)(v5 + 4)); /*0x5c2035*/
   return -2; /*0x5c1fd1*/
 }
-}
 } // namespace gamemd
 
 // 0x5C2040
 namespace gamemd {
 int MPCooperative::StartGame(int a2, void ** a3, void * Block, int a5, short a6, int a7, int a8, char * a9, char * a10)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 v15; // [esp-14h] [ebp-20h]
   if ( !this->MPCooperative_field_0x40 ) /*0x5c2045*/
@@ -1078,14 +1051,12 @@ int MPCooperative::StartGame(int a2, void ** a3, void * Block, int a5, short a6,
     return 0; /*0x5c2080*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x5C2100
 namespace gamemd {
 int MPCooperative::EndGame(int a2, int a3, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND GameUI; // eax
 
@@ -1170,14 +1141,12 @@ int MPCooperative::EndGame(int a2, int a3, int a4)
   }
   return v7; /*0x5c2110*/
 }
-}
 } // namespace gamemd
 
 // 0x5C2680
 namespace gamemd {
 int MPCooperative::ProcessTurn()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND GameUI; // eax
 
@@ -1196,14 +1165,12 @@ int MPCooperative::ProcessTurn()
   }
   return SerializeCampaignOptions(this->q040); /*0x5c268c*/
 }
-}
 } // namespace gamemd
 
 // 0x5C2710
 namespace gamemd {
 int MPCooperative::SyncState()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // [esp+20h] [ebp-1B4h]
   char Buffer[400]; // [esp+44h] [ebp-190h] BYREF
@@ -1335,14 +1302,12 @@ LABEL_31:
   Debug::Log(); /*0x5c2a3c*/
   return 1; /*0x5c2a46*/
 }
-}
 } // namespace gamemd
 
 // 0x5C2A60
 namespace gamemd {
 const char * MPCooperative::UpdateLobby(const char * a2, char * String)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   const char *result; // eax
 
@@ -1468,14 +1433,12 @@ const char * MPCooperative::UpdateLobby(const char * a2, char * String)
   }
   return result; /*0x5c2c9e*/
 }
-}
 } // namespace gamemd
 
 // 0x5C2D00
 namespace gamemd {
 void MPCooperative_Play(AnimClass * aP0, int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // eax
   int j; // esi
@@ -1528,14 +1491,12 @@ void MPCooperative_Play(AnimClass * aP0, int a2, int a3)
   *(_DWORD *)(*(_DWORD *)&HouseClass_Player[29924] + 4 * result + 4480) = aP0; /*0x5c2dc7*/
   return result; /*0x5c2dc4*/
 }
-}
 } // namespace gamemd
 
 // 0x5C2DE0
 namespace gamemd {
 unsigned int * MPCooperative::selectTeam(unsigned int * a1, int a2, int a3, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // eax
   #375 *v10; // ecx
@@ -1599,14 +1560,12 @@ unsigned int * MPCooperative::selectTeam(unsigned int * a1, int a2, int a3, int 
     return a1; /*0x5c2e94*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x5C2EF0
 namespace gamemd {
 AbstractClass * * MPCooperative::GetPlayerCount(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // ebp
   int *j; // eax
@@ -1688,14 +1647,12 @@ LABEL_17:
     __3_YAXPAX_Z(Block); /*0x5c30a3*/
   return 1; /*0x5c30ad*/
 }
-}
 } // namespace gamemd
 
 // 0x5C30C0
 namespace gamemd {
 ScenarioClass * * MPCooperative::BroadcastMessage()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v2 = ReadPlayerCountMap(g_GameRulesOptions) - *((_DWORD *)g_ScenarioClass_Instance + 1145); /*0x5c30db*/
@@ -1753,14 +1710,12 @@ ScenarioClass * * MPCooperative::BroadcastMessage()
   }
   return 1; /*0x5c30f5*/
 }
-}
 } // namespace gamemd
 
 // 0x5C3220
 namespace gamemd {
 AbstractClass * * MPCooperative::GetMapData()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   Debug::Log(); /*0x5c322c*/
@@ -1855,14 +1810,12 @@ AbstractClass * * MPCooperative::GetMapData()
   }
   return 1; /*0x5c34d7*/
 }
-}
 } // namespace gamemd
 
 // 0x5C34F0
 namespace gamemd {
 int MPCooperative::ReceiveMessage()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v8; // edi
   int v11; // [esp+10h] [ebp-Ch] BYREF
@@ -1905,14 +1858,12 @@ int MPCooperative::ReceiveMessage()
   Debug::Log(); /*0x5c35dc*/
   return v8; /*0x5c3532*/
 }
-}
 } // namespace gamemd
 
 // 0x5C35F0
 namespace gamemd {
 int MPCooperative::HandleEvent()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v8; // edi
   int v11; // [esp+10h] [ebp-Ch] BYREF
@@ -1955,14 +1906,12 @@ int MPCooperative::HandleEvent()
   Debug::Log(); /*0x5c36dc*/
   return v8; /*0x5c3632*/
 }
-}
 } // namespace gamemd
 
 // 0x5C3B10
 namespace gamemd {
 void MPCooperative::LoadSettings(HWND hWnd, int a3, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   MPCooperative *v4; // edi
   int i; // ebp
@@ -2129,14 +2078,12 @@ LABEL_47:
       __3_YAXPAX_Z(Block); /*0x5c3eaf*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x5C3F80
 namespace gamemd {
 void MPCooperative::SetGameMode()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND Current; // eax
   HWND DlgItem; // edi
@@ -2204,14 +2151,12 @@ LABEL_21:
 LABEL_22:
   String::AssignWideToChar(v5, (char *)&g_TypeClass_DefaultString, (char *)&g_TypeClass_DefaultString); /*0x5c40f0*/
 }
-}
 } // namespace gamemd
 
 // 0x5C4110
 namespace gamemd {
 AbstractClass * * MPCooperative::ProcessChat()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AbstractClass *v2; // eax
   LPARAM v6; // ebp
@@ -2292,14 +2237,12 @@ AbstractClass * * MPCooperative::ProcessChat()
   }
   return v2; /*0x5c427f*/
 }
-}
 } // namespace gamemd
 
 // 0x5C42D0
 namespace gamemd {
 int MPCooperative::UpdateMovieScore()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v6; // esi
   char v10; // bl
@@ -2392,14 +2335,12 @@ int MPCooperative::UpdateMovieScore()
   }
   return v10; /*0x5c4303*/
 }
-}
 } // namespace gamemd
 
 // 0x5C44E0
 namespace gamemd {
 void MPCooperative::ShowScoreScreen(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void (__thiscall **v8)(_DWORD *, int); // edi
   LPARAM v14; // [esp+8h] [ebp-3Ch]
@@ -2503,14 +2444,12 @@ void MPCooperative::ShowScoreScreen(int a2)
     }
   }
 }
-}
 } // namespace gamemd
 
 // 0x5C4CA0
 namespace gamemd {
 IPXInterfaceClass * * MPCooperative::InitializePlayers()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -2583,23 +2522,19 @@ LABEL_16:
   }
   return result; /*0x5c4e83*/
 }
-}
 } // namespace gamemd
 
 // 0x5C4F10
 namespace gamemd {
 void MPCooperative_QueryInterface()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // (no pseudocode — ASM-only function)
-}
 } // namespace gamemd
 
 // 0x5C4F30
 namespace gamemd {
 unsigned int * MPCooperative::processTurnEnd(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   this->q004 = 0; /*0x5c4f3d*/
@@ -2643,14 +2578,12 @@ unsigned int * MPCooperative::processTurnEnd(unsigned int * a2)
   *this = &vt_DynamicVectorClass_MPlayerScoreType; /*0x5c4faa*/
   return this; /*0x5c4fb2*/
 }
-}
 } // namespace gamemd
 
 // 0x696F30
 namespace gamemd {
 int MPCooperative::finalizeSession()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -2658,7 +2591,6 @@ int MPCooperative::finalizeSession()
   if ( *(_DWORD *)(this + 87) != -2 || *(_DWORD *)(this + 83) != -1 ) /*0x696f40*/
     return *(_DWORD *)(this + 83); /*0x696f42*/
   return result; /*0x696f45*/
-}
 }
 } // namespace gamemd
 

@@ -14,7 +14,6 @@
 namespace gamemd {
 int Options::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   wchar_t *v6; // edi
@@ -243,19 +242,16 @@ LABEL_39:
   }
   return result; /*0x4f120d*/
 }
-}
 } // namespace gamemd
 
 // 0x558840
 namespace gamemd {
 int Options::PrepareSaveLoadDlg()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   this->q004 = (const char *)3; /*0x558840*/
   this->q00C = 0; /*0x558847*/
   return SaveLoadDialog::DlgProc(this);
-}
 }
 } // namespace gamemd
 
@@ -263,7 +259,6 @@ int Options::PrepareSaveLoadDlg()
 namespace gamemd {
 AbstractClass * * Options::Screen_Save()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND DlgItem; // eax
   HWND v4; // eax
@@ -329,14 +324,12 @@ AbstractClass * * Options::Screen_Save()
     Options::SetVoiceVolume((float *)g_GameModeOptions, v15, 0); /*0x55fc72*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x55FC80
 namespace gamemd {
 char Options::Screen_Dialog()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND v0; // eax
   IUnknown *v1; // esi
@@ -399,14 +392,12 @@ char Options::Screen_Dialog()
   g_WTFMode = v7; /*0x55fd9a*/
   return v7; /*0x55fd97*/
 }
-}
 } // namespace gamemd
 
 // 0x6244E0
 namespace gamemd {
 int Options::DeleteAndZero()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -432,14 +423,12 @@ int Options::DeleteAndZero()
   }
   return result; /*0x624518*/
 }
-}
 } // namespace gamemd
 
 // 0x6248A0
 namespace gamemd {
 int Options::EnsureCapacity()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v2 = *this; /*0x6248a5*/
@@ -461,14 +450,12 @@ int Options::EnsureCapacity()
   this->q004 = v5; /*0x62491e*/
   return 1; /*0x6248b2*/
 }
-}
 } // namespace gamemd
 
 // 0x6253B0
 namespace gamemd {
 int Options::GrowBuffer()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v2 = *this; /*0x6253b4*/
@@ -493,14 +480,12 @@ int Options::GrowBuffer()
   this->q008 = (int)v5; /*0x625434*/
   return 1; /*0x6253bf*/
 }
-}
 } // namespace gamemd
 
 // 0x6254D0
 namespace gamemd {
 int Options::ReadOptionValue()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v2 = *this; /*0x6254d5*/
@@ -522,14 +507,12 @@ int Options::ReadOptionValue()
   this->q004 = v5; /*0x62554e*/
   return 1; /*0x6254e2*/
 }
-}
 } // namespace gamemd
 
 // 0x625560
 namespace gamemd {
 AbstractClass * * Options::DestroyComposite(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *i; // ecx
 
@@ -567,14 +550,12 @@ LABEL_12:
     __3_YAXPAX_Z(this); /*0x6255dc*/
   return this; /*0x6255e6*/
 }
-}
 } // namespace gamemd
 
 // 0x6255F0
 namespace gamemd {
 void * Options::RebuildDropdownList(ObjectClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ObjectClass *v2; // ebp
   SessionClass *v3; // edi
@@ -662,14 +643,12 @@ void * Options::RebuildDropdownList(ObjectClass * aP1)
   DeleteAndZero::Alt((void **)&v19); /*0x625763*/
   return v3->GameMode; /*0x62576a*/
 }
-}
 } // namespace gamemd
 
 // 0x625A20
 namespace gamemd {
 int Options::SaveOptionValue()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v2 = *this; /*0x625a24*/
@@ -688,7 +667,6 @@ int Options::SaveOptionValue()
   this->q004 = v4; /*0x625a99*/
   this->q008 = v7; /*0x625a9c*/
   return 1; /*0x625a2f*/
-}
 }
 } // namespace gamemd
 

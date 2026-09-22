@@ -9,7 +9,6 @@
 namespace gamemd {
 Tactical * * Mouse::SetBounds(IUnknown * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   __int16 v4; // cx
@@ -55,14 +54,12 @@ Tactical * * Mouse::SetBounds(IUnknown * aP1)
   }
   return result; /*0x4a8d17*/
 }
-}
 } // namespace gamemd
 
 // 0x5BDC80
 namespace gamemd {
 int Mouse::SetCursor(ObjectClass * aP1, ObjectClass * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char v4; // bl
   MPCooperative *v6; // edi
@@ -120,14 +117,12 @@ int Mouse::SetCursor(ObjectClass * aP1, ObjectClass * aP2)
   *(_BYTE *)(this + 21852) = (_BYTE)aP2; /*0x5bdda5*/
   return 1; /*0x5bdcd8*/
 }
-}
 } // namespace gamemd
 
 // 0x6938C0
 namespace gamemd {
 int Mouse::ReleaseCapture()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND result; // eax
 
@@ -138,14 +133,12 @@ int Mouse::ReleaseCapture()
     return (HWND)ReleaseCapture(); /*0x6938e0*/
   return result; /*0x6938db*/
 }
-}
 } // namespace gamemd
 
 // 0x7B93F0
 namespace gamemd {
 AbstractClass * * Mouse::DrawCursor(IUnknown * aP1, WWMouseClass * aP2, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char **v5; // ecx
   int SubFile; // eax
@@ -175,7 +168,6 @@ AbstractClass * * Mouse::DrawCursor(IUnknown * aP1, WWMouseClass * aP2, int a4)
     BlitterDrawSHP(v9); /*0x7b9516*/
     Vector::Clear((int)v17); /*0x7b951f*/
   }
-}
 }
 } // namespace gamemd
 

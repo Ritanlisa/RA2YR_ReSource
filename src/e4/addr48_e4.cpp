@@ -33,7 +33,6 @@
 namespace gamemd {
 ConvertClass * * E4Recv_4880F0::sub_4880F0(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( !Control::DispatchClick((_DWORD *)this, a2) ) /*0x4880fb*/
@@ -76,14 +75,12 @@ ConvertClass * * E4Recv_4880F0::sub_4880F0(int a2)
   (*(void (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 16))(g_WWMouseClass_Instance); /*0x4881f5*/
   return 1; /*0x4881fd*/
 }
-}
 } // namespace gamemd
 
 // 0x489180
 namespace gamemd {
 void Network_SendTimestamp(int a1, int a2, int a3, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -103,14 +100,12 @@ void Network_SendTimestamp(int a1, int a2, int a3, int a4)
     return *((_DWORD *)g_RulesClass_Instance + 1458); /*0x48925a*/
   return result; /*0x4891b8*/
 }
-}
 } // namespace gamemd
 
 // 0x489280
 namespace gamemd {
 void PlaySoundEffectAt(TechnoClass * aP0, IUnknown * aP1, unsigned int * a2, ObjectClass * aP3, char a5, int aP6)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ObjectClass *v8; // esi
   VectorClass *v9; // eax
@@ -891,14 +886,12 @@ LABEL_213:
     __3_YAXPAX_Z(Block);
   return v103;
 }
-}
 } // namespace gamemd
 
 // 0x48A620
 namespace gamemd {
 AbstractClass * * CreateSmokeEffectAt(int a1, int a2, int a3, int a4, int a5, char a6, int a7)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   unsigned int v7; // eax
@@ -943,14 +936,12 @@ AbstractClass * * CreateSmokeEffectAt(int a1, int a2, int a3, int a4, int a5, ch
   }
   return v7; /*0x48a6ef*/
 }
-}
 } // namespace gamemd
 
 // 0x48A9D0
 namespace gamemd {
 void Math_SolveTrajectory(char a1, int a2, int a3, int a4, double a5, int a6)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( a4 <= 0 )
@@ -986,14 +977,12 @@ void Math_SolveTrajectory(char a1, int a2, int a3, int a4, double a5, int a6)
     return 1; /*0x48a9f4*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x48B0E0
 namespace gamemd {
 AbstractClass * * CommBufferClass::sub_48B0E0(int a2, int a3, size_t Size, int a5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   *(_DWORD *)this->__pad_0 = &vt_CommBufferClass; /*0x48b0fd*/
@@ -1040,14 +1029,12 @@ AbstractClass * * CommBufferClass::sub_48B0E0(int a2, int a3, size_t Size, int a
   Struct::ClearAllMemberFlags(this); /*0x48b1df*/
   return this; /*0x48b1e6*/
 }
-}
 } // namespace gamemd
 
 // 0x48BB60
 namespace gamemd {
 bool sub_48BB60(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v6; // edx
   _DWORD *v7; // eax
@@ -1101,20 +1088,17 @@ LABEL_12:
   v7 = &unk_B7883C; /*0x48bbef*/
   return !*v7 || (*(unsigned __int8 (__thiscall **)(_DWORD, int))(*(_DWORD *)*v7 + 20))(*v7, v1) == 0; /*0x48bc1d*/
 }
-}
 } // namespace gamemd
 
 // 0x48BC20
 namespace gamemd {
 int CompareFuncInt(unsigned int * a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   if ( *a1 == *a2 )
     return 0; /*0x48bc30*/
   else
     return *a1 >= *a2 ? 1 : -1;
-}
 }
 } // namespace gamemd
 
@@ -1122,7 +1106,6 @@ int CompareFuncInt(unsigned int * a1, unsigned int * a2)
 namespace gamemd {
 AbstractClass * * Main_Game_Frame()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   LPARAM v5; // eax
@@ -1283,14 +1266,12 @@ LABEL_45:
   WTFMode::Init(&g_GameMode_Current); /*0x48cc70*/
   return PostFrameCleanup(); /*0x48c990*/
 }
-}
 } // namespace gamemd
 
 // 0x48CCC0
 namespace gamemd {
 void MainGame()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int inited; // eax
   wchar_t *StringCSF; // eax
@@ -1416,14 +1397,12 @@ LABEL_34:
     LOBYTE(inited) = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)&stru_87C374[45772] + 20))(*(_DWORD *)&stru_87C374[45772]); /*0x48cfc3*/
   return inited; /*0x48cd8b*/
 }
-}
 } // namespace gamemd
 
 // 0x48DEE0
 namespace gamemd {
 void sub_48DEE0(unsigned int * a1, int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( a1 ) /*0x48dee4*/
@@ -1453,14 +1432,12 @@ LABEL_7:
     }
   }
 }
-}
 } // namespace gamemd
 
 // 0x48E0B0
 namespace gamemd {
 CellStruct * * sub_48E0B0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   FILE *result; // eax
   FILE *v1; // esi
@@ -1519,7 +1496,6 @@ CellStruct * * sub_48E0B0()
     }
   }
   return result; /*0x48e26c*/
-}
 }
 } // namespace gamemd
 

@@ -16,7 +16,6 @@
 namespace gamemd {
 AbstractClass * * DynamicVectorClass_AnimType::Release(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // eax
 
@@ -58,14 +57,12 @@ AbstractClass * * DynamicVectorClass_AnimType::Release(int a2, unsigned int * a3
     return 1; /*0x5251b8*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x589190
 namespace gamemd {
 AbstractClass * * DynamicVectorClass_SubzoneConn::Release(int a2, char * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v3 = a2; /*0x589192*/
@@ -154,17 +151,14 @@ AbstractClass * * DynamicVectorClass_SubzoneConn::Release(int a2, char * a3)
     this->Count = v15; /*0x589275*/
   return 1; /*0x589278*/
 }
-}
 } // namespace gamemd
 
 // 0x517590
 namespace gamemd {
 int DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::HashEntryCompare(unsigned char * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return *this != *a2 || this->Items != a2[1] || this->Capacity != a2[2]; /*0x5175bd*/
-}
 }
 } // namespace gamemd
 
@@ -172,7 +166,6 @@ int DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::HashEntryCompare(
 namespace gamemd {
 AbstractClass * * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::SetCapacity_0(int a2, char * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v3 = a2; /*0x6284a2*/
@@ -265,14 +258,12 @@ AbstractClass * * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Set
     this->Count = v15; /*0x628583*/
   return 1; /*0x628586*/
 }
-}
 } // namespace gamemd
 
 // 0x628BB0
 namespace gamemd {
 AbstractClass * * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Remove(CCINIClass * aP1, unsigned char * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AbstractClass *v3; // edi
   AbstractClass *v6; // ebx
@@ -370,7 +361,6 @@ AbstractClass * * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Rem
   if ( v13 < this->Count ) /*0x628ce6*/
     this->Count = v13; /*0x628ce8*/
   return 1; /*0x628ceb*/
-}
 }
 } // namespace gamemd
 

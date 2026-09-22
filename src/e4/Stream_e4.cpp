@@ -5,7 +5,6 @@
 // 0x439110
 int Stream::FlushAndReset()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   Stream *v1 = this; /*0x439111*/
@@ -20,12 +19,10 @@ int Stream::FlushAndReset()
   (*(void (__thiscall **)(_DWORD *))(v4 + 12))(v1); /*0x439138*/
   return v1->vt_slot_8(v5, 0); /*0x439145*/
 }
-}
 
 // 0x49FB70
 int Stream::ReadIntArray(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -58,12 +55,10 @@ int Stream::ReadIntArray(int a2)
   }
   return result; /*0x49fbcf*/
 }
-}
 
 // 0x67A4A0
 int Stream::WriteIntArray(TechnoTypeClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int i; // esi
@@ -83,12 +78,10 @@ int Stream::WriteIntArray(TechnoTypeClass * aP1)
   }
   return result; /*0x67a4e4*/
 }
-}
 
 // 0x759260
 void * Stream::InitializeBinkAudio(const char * a1, IUnknown * aP2, int a4, int a5, IUnknown * aP5, int a7, int a8)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   CCFileClass::Construct3((int)(this + 4)); /*0x75926a*/
@@ -200,7 +193,6 @@ LABEL_14:
   this->q551 = 0; /*0x7594fa*/
   *(_DWORD *)this = 0; /*0x759500*/
   return this; /*0x7594b6*/
-}
 }
 
 // 0x45A050

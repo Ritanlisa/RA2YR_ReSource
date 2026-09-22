@@ -10,7 +10,6 @@
 // 0x484680
 ScenarioClass * * TacticalMap::ComputeScreenTint()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 v2; // dx
   __int16 v3; // ax
@@ -91,12 +90,10 @@ ScenarioClass * * TacticalMap::ComputeScreenTint()
     return v14; /*0x484890*/
   }
 }
-}
 
 // 0x4F4480
 int TacticalMap::Redraw()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -136,12 +133,10 @@ int TacticalMap::Redraw()
   g_DSurface_Hidden_2 = v1; /*0x4f459d*/
   return result; /*0x4f45a3*/
 }
-}
 
 // 0x5AEA10
 void TacticalMap::MultiplyByScalar(ObjectClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   *this = *(float *)&aP1 * *this; /*0x5aea16*/
   this->TacticalMap_field_04 = *(float *)&aP1 * this->TacticalMap_field_04; /*0x5aea1f*/
@@ -153,12 +148,10 @@ void TacticalMap::MultiplyByScalar(ObjectClass * aP1)
   this->m_TintFactor = *(float *)&aP1 * this->m_TintFactor; /*0x5aea5b*/
   this->q028 = *(float *)&aP1 * this->q028; /*0x5aea65*/
 }
-}
 
 // 0x5D49A0
 int TacticalMap::DrawCursor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char result; // al
 
@@ -193,12 +186,10 @@ int TacticalMap::DrawCursor()
     return (*(int (__thiscall **)(_DWORD, int))(*(_DWORD *)*this + 44))(*this, 1); /*0x5d4a98*/
   return result; /*0x5d4a8f*/
 }
-}
 
 // 0x6D1C20
 int TacticalMap::Construct()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   AbstractClass::Constructor(this); /*0x6d1c25*/
@@ -268,12 +259,10 @@ int TacticalMap::Construct()
   g_TacticalClass_Instance = (LPPERSISTSTREAM)this; /*0x6d1e1e*/
   return this; /*0x6d1e26*/
 }
-}
 
 // 0x6D2B60
 void* TacticalMap::RenderCell(char arg0, AbstractClass * aP2, int a4, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v8; // eax
   AbstractClass *v9; // eax
@@ -392,21 +381,17 @@ void* TacticalMap::RenderCell(char arg0, AbstractClass * aP2, int a4, int a2)
   }
   return result; /*0x6d2dc8*/
 }
-}
 
 // 0x6D3D10
 namespace gamemd {
 AbstractClass * * TacticalMap_Render()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // (no pseudocode — ASM-only function)
-}
 } // namespace gamemd
 
 // 0x6D8DB0
 int TacticalMap::RenderAllObjects(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AbstractClass *v19; // edi
   AbstractClass *v39; // ebx
@@ -740,12 +725,10 @@ LABEL_53:
   while ( (int)v62 < (int)((int *)&DataGlobal_8A03D8 + 1) ); /*0x6d97b5*/
   return result; /*0x6d97bb*/
 }
-}
 
 // 0x6DA180
 int TacticalMap::DrawOccupiedRegion()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -785,12 +768,10 @@ int TacticalMap::DrawOccupiedRegion()
   }
   return result; /*0x6da224*/
 }
-}
 
 // 0x7BCFB0
 unsigned int TacticalMap::FillScanlinesOpaque(int a2, int a3, TacticalMap * aP3, int a5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   TacticalMap *v5; // edi
   unsigned int result; // eax
@@ -883,5 +864,4 @@ unsigned int TacticalMap::FillScanlinesOpaque(int a2, int a3, TacticalMap * aP3,
     while ( v26 ); /*0x7bd0cf*/
   }
   return result; /*0x7bd0d7*/
-}
 }

@@ -7,10 +7,8 @@
 namespace gamemd {
 int GameMode::IsValid(unsigned int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return (!*(this + 63) || a2 != -2) && a2 < 4; /*0x5d5df2*/
-}
 }
 } // namespace gamemd
 
@@ -18,7 +16,6 @@ int GameMode::IsValid(unsigned int a2)
 namespace gamemd {
 unsigned int GameMode::ReadFlagsFromINI(CCINIClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char Bool_Overwrite; // al
   unsigned int result; // eax
@@ -152,6 +149,5 @@ unsigned int GameMode::ReadFlagsFromINI(CCINIClass * aP1)
     *this = result; /*0x6b8ed7*/
   }
   return result; /*0x6b8ed9*/
-}
 }
 } // namespace gamemd

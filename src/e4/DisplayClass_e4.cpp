@@ -11,7 +11,6 @@
 // 0x487630
 int DisplayClass::UpdateDisplayTimer()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( this->q130 == 1 ) /*0x487637*/
@@ -39,12 +38,10 @@ int DisplayClass::UpdateDisplayTimer()
   }
   return v3; /*0x48766c*/
 }
-}
 
 // 0x487690
 int DisplayClass::AdvanceFrameCounter()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -69,12 +66,10 @@ int DisplayClass::AdvanceFrameCounter()
   }
   return result; /*0x4876c7*/
 }
-}
 
 // 0x4A8850
 int DisplayClass::LoadTypeData()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int *Viewport; // eax
 
@@ -92,12 +87,10 @@ int DisplayClass::LoadTypeData()
   v6[3] = v3; /*0x4a88a6*/
   return this->SetViewDimensions(v6); /*0x4a88b0*/
 }
-}
 
 // 0x4A88C0
 int DisplayClass::SetSize()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -121,7 +114,6 @@ int DisplayClass::SetSize()
   while ( (int)v2 < (int)&DataGlobal_8A03D8 ); /*0x4a891e*/
   return result; /*0x4a8920*/
 }
-}
 
 // 0x4A8930
 char DisplayClass::ddtor()
@@ -140,7 +132,6 @@ char DisplayClass::ddtor()
 // 0x4A9890
 Tactical * * DisplayClass::UpdateCellPassability(short * a1, IUnknown * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v3; // esi
   IUnknown *v5; // ebp
@@ -308,12 +299,10 @@ LABEL_34:
     CellClass::UpdateZone(v5); /*0x4a9c8c*/
   return v30; /*0x4a9c91*/
 }
-}
 
 // 0x4A9DD0
 VectorClass * * DisplayClass::ProcessCellReveal(MouseClass * aP1, IUnknown * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v5; // edi
   char AdjacentPassableMask; // al
@@ -415,12 +404,10 @@ LABEL_12:
     CellClass::UpdateZone(v5); /*0x4aa036*/
   return aP1a; /*0x4aa03b*/
 }
-}
 
 // 0x4AA050
 int DisplayClass::RevealFogCell(short * a1, IUnknown * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v3; // edi
   Tactical *v5; // esi
@@ -518,12 +505,10 @@ LABEL_12:
     CellClass::SpiralFindClosest((int)v28, (int)aP2, var8); /*0x4aa27c*/
   return v8; /*0x4aa281*/
 }
-}
 
 // 0x4AC310
 int DisplayClass::InitViewBounds(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v2; // eax
@@ -551,12 +536,10 @@ int DisplayClass::InitViewBounds(unsigned int * a2)
   }
   return v2; /*0x4ac36e*/
 }
-}
 
 // 0x4AE4F0
 void * DisplayClass::Draw(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   wchar_t *result; // eax
   int v9; // esi
@@ -618,12 +601,10 @@ void * DisplayClass::Draw(int a2)
   }
   return result; /*0x4ae5b9*/
 }
-}
 
 // 0x4AEAD0
 int DisplayClass::ExitMode()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   if ( g_TacticalClass_Instance ) /*0x4aeadb*/
     TacticalClass::ResetScrollBounds(); /*0x4aeadd*/
@@ -632,12 +613,10 @@ int DisplayClass::ExitMode()
   DataGlobal_A8ED9D = 1; /*0x4aeaf0*/
   return (*(int (__thiscall **)(_BYTE *, _DWORD, _DWORD))(this->q048)(this, 0, 0); /*0x4aeb02*/
 }
-}
 
 // 0x5519B0
 int DisplayClass::RenderStatusText(IUnknown * aP1, char a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( a3 ) /*0x5519b9*/
@@ -657,12 +636,10 @@ int DisplayClass::RenderStatusText(IUnknown * aP1, char a3)
   *(_DWORD *)(v8 + 4 * v7) = aP1; /*0x551a1a*/
   return 1; /*0x5519c9*/
 }
-}
 
 // 0x551A90
 int DisplayClass::InsertPriorityText(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // edi
   int j; // eax
@@ -687,23 +664,19 @@ int DisplayClass::InsertPriorityText(int a2)
   ++this->Count; /*0x551b0f*/
   return 1; /*0x551ac1*/
 }
-}
 
 // 0x5F6220
 int DisplayClass::checkScreenBounds(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v3 = (*(int (__thiscall **)(int))(*(_DWORD *)a2 + 184))(a2); /*0x5f6234*/
   return this->HandlePlayerAction() > v3; /*0x5f623e*/
 }
-}
 
 // 0x6D8530
 int DisplayClass::ScrollTacticalView(IUnknown * aP1, IUnknown * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -741,12 +714,10 @@ int DisplayClass::ScrollTacticalView(IUnknown * aP1, IUnknown * aP2)
   }
   return result; /*0x6d8628*/
 }
-}
 
 // 0x6DA230
 int DisplayClass::GetCoordDelta(AbstractClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   IUnknown *v5; // edx
@@ -797,12 +768,10 @@ int DisplayClass::GetCoordDelta(AbstractClass * aP1)
   }
   return result; /*0x6da343*/
 }
-}
 
 // 0x7BA4D0
 int DisplayClass::ReadFromBuffer(void * a1, signed int Size)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -825,7 +794,6 @@ int DisplayClass::ReadFromBuffer(void * a1, signed int Size)
     return v7; /*0x7ba520*/
   }
   return result; /*0x7ba523*/
-}
 }
 
 // 0x4A9700

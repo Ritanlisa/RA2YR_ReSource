@@ -6,7 +6,6 @@
 // 0x7B1AB0
 W WinsockInterfaceClass::WinsockInterfaceClass()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   char v2 = this->q3F068; /*0x7b1ab6*/
@@ -45,7 +44,6 @@ W WinsockInterfaceClass::WinsockInterfaceClass()
   }
   this->q015 = 0; /*0x7b1b47*/
   this->q010 = 0; /*0x7b1b4a*/
-}
 }
 
 // 0x7B2740

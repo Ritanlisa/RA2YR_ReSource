@@ -8,7 +8,6 @@
 namespace gamemd {
 void Math_Vector2D_Magnitude()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   double result; // st7
 
@@ -16,14 +15,12 @@ void Math_Vector2D_Magnitude()
   Math::RoundToInt(result); /*0x4c1b71*/
   return result; /*0x4c1b6e*/
 }
-}
 } // namespace gamemd
 
 // 0x512D30
 namespace gamemd {
 void Vector::Cleanup()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   if ( this->Vector_field_0x4 && *(_BYTE *)(this + 13) ) /*0x512d3d*/
   {
@@ -33,14 +30,12 @@ void Vector::Cleanup()
   *(_BYTE *)(this + 13) = 0; /*0x512d4e*/
   this->Vector_field_0x8 = 0; /*0x512d51*/
 }
-}
 } // namespace gamemd
 
 // 0x513100
 namespace gamemd {
 void Vector::Destructor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   if ( this->Vector_field_0x4 && *(_BYTE *)(this + 13) ) /*0x51310d*/
   {
@@ -50,19 +45,16 @@ void Vector::Destructor()
   *(_BYTE *)(this + 13) = 0; /*0x51311e*/
   this->Vector_field_0x8 = 0; /*0x513121*/
 }
-}
 } // namespace gamemd
 
 // 0x5AE890
 namespace gamemd {
 void Vector::MatrixMulVectorMath(float a2, float a3, float a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   this->IsInitialized = a3 * this->q004 + a4 * this->q008 + a2 * *this + this->IsInitialized; /*0x5ae8ab*/
   this->q007 = a2 * this->q004 + a3 * this->CapacityIncrement + a4 * this->q006 + this->q007; /*0x5ae8ca*/
   this->q00B = a2 * this->q008 + a3 * this->q009 + a4 * this->q00A + this->q00B; /*0x5ae8e9*/
-}
 }
 } // namespace gamemd
 
@@ -70,7 +62,6 @@ void Vector::MatrixMulVectorMath(float a2, float a3, float a4)
 namespace gamemd {
 void Vector::Cleanup2()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   if ( this->Vector_field_0x4 && *(_BYTE *)(this + 13) ) /*0x67abed*/
   {
@@ -79,7 +70,6 @@ void Vector::Cleanup2()
   }
   *(_BYTE *)(this + 13) = 0; /*0x67abfe*/
   this->Vector_field_0x8 = 0; /*0x67ac01*/
-}
 }
 } // namespace gamemd
 

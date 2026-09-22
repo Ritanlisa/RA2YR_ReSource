@@ -7,7 +7,6 @@
 namespace gamemd {
 void CampaignScreen_Init()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   _DWORD *WindowLongA; // eax
@@ -243,6 +242,5 @@ LABEL_25:
     goto LABEL_26; /*0x471319*/
   }
   return result; /*0x470da5*/
-}
 }
 } // namespace gamemd

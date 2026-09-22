@@ -6,7 +6,6 @@
 namespace gamemd {
 void sub_5C7EC0(const void * a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v8; // eax
   int v9; // eax
@@ -21,7 +20,6 @@ void sub_5C7EC0(const void * a1, int a2)
   int *v23; // eax
   int v24; // edx
   int *v25; // eax
-
   int v2 = a2; /*0x5c7ec1*/
   int v3 = a2; /*0x5c7ed5*/
   qmemcpy(&DataGlobal_ABF5B4, a1, v3 * 4); /*0x5c7eda*/
@@ -150,6 +148,5 @@ LABEL_24:
   LOWORD(DataGlobal_ABF6B4) = HIWORD(DataGlobal_ABF5A4); /*0x5c8091*/
   LOWORD(DataGlobal_ABF5A0[0]) = DataGlobal_ABF5A4; /*0x5c8091*/
   return 0; /*0x5c809a*/
-}
 }
 } // namespace gamemd

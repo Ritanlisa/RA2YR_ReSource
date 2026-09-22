@@ -21,7 +21,6 @@
 namespace gamemd {
 char ChangeVideoMode(ObjectClass * xRight, int yBottom)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v5; // edx
   LONG eax41; // eax
@@ -262,14 +261,12 @@ LABEL_19:
   (*(void (__thiscall **)(_DWORD))(**(_DWORD **)&stru_87C374[45772] + 16))(*(_DWORD *)&stru_87C374[45772]); /*0x560dc2*/
   return 0; /*0x560dc7*/
 }
-}
 } // namespace gamemd
 
 // 0x561400
 namespace gamemd {
 void VideoSettingsDialogProc(INIClass * aP0, unsigned int a2, WPARAM wParam, unsigned int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   _DWORD *WindowLongA; // esi
@@ -384,14 +381,12 @@ void VideoSettingsDialogProc(INIClass * aP0, unsigned int a2, WPARAM wParam, uns
   EnableWindow(v13, (unsigned __int8)stru_89E138[11446]); /*0x5615a3*/
   return 0; /*0x5615aa*/
 }
-}
 } // namespace gamemd
 
 // 0x568140
 namespace gamemd {
 void sub_568140(int * a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   __int16 v19; // [esp+14h] [ebp-8h]
@@ -467,14 +462,12 @@ void sub_568140(int * a1, int a2)
   }
   return result; /*0x5682f5*/
 }
-}
 } // namespace gamemd
 
 // 0x56AF40
 namespace gamemd {
 BombClass * * E4Recv_56AF40::sub_56AF40(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int Src; // [esp+10h] [ebp-2Ch] BYREF
 
@@ -536,14 +529,12 @@ BombClass * * E4Recv_56AF40::sub_56AF40(int a2)
   LCWPipe::Dtor(v17); /*0x56b0d8*/
   return v11; /*0x56b0df*/
 }
-}
 } // namespace gamemd
 
 // 0x56B250
 namespace gamemd {
 BombClass * * E4Recv_56B250::sub_56B250(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int Src; // [esp+Ch] [ebp-30h] BYREF
 
@@ -597,7 +588,6 @@ BombClass * * E4Recv_56B250::sub_56B250(int a2)
   BombClass *v12 = (*(int (__thiscall **)(int *))(v17[0] + 4))(v17); /*0x56b3cf*/
   LZOPipe::Destructor(v17); /*0x56b3d1*/
   return v12 + v11; /*0x56b3d9*/
-}
 }
 } // namespace gamemd
 

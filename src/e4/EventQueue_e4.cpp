@@ -5,7 +5,6 @@
 // 0x54F000
 int EventQueue::Process()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( (this->q318 + 1) % 256 != this->q314 ) /*0x54f01e*/
@@ -16,12 +15,10 @@ int EventQueue::Process()
   else
     return *((_WORD *)this + v2 + 138); /*0x54f03a*/
 }
-}
 
 // 0x54F050
 int EventQueue::Read()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v2; // eax
   int v3; // ecx
@@ -30,7 +27,6 @@ int EventQueue::Read()
   unsigned __int16 v7; // cx
   unsigned __int16 v9; // dx
   __int16 v11; // dx
-
   do /*0x54f086*/
   {
     if ( (this->q318 + 1) % 256 != this->q314 ) /*0x54f06f*/
@@ -86,12 +82,10 @@ int EventQueue::Read()
   }
   return result; /*0x54f177*/
 }
-}
 
 // 0x54F650
 int EventQueue::Check()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   AbstractClass *v1 = this->q314; /*0x54f650*/
@@ -99,5 +93,4 @@ int EventQueue::Check()
     return 0; /*0x54f669*/
   else
     return *((_WORD *)this + v1 + 138); /*0x54f660*/
-}
 }

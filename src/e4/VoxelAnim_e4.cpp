@@ -11,7 +11,6 @@
 // 0x7586F0
 int VoxelAnim::ComputeTransform(float * a1, float * a2, float a3, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   float v8; // edx
   int v9; // ebx
@@ -73,12 +72,10 @@ int VoxelAnim::ComputeTransform(float * a1, float * a2, float a3, int a4)
   byte_B45A8D = 16; /*0x75886b*/
   return 16; /*0x75885c*/
 }
-}
 
 // 0x75AEC0
 int VoxelAnim::Draw(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v9; // eax
   int v10; // eax
@@ -821,5 +818,4 @@ LABEL_67:
     *(_BYTE *)(v9 + 1674) = 0;
   }
   return v9;
-}
 }

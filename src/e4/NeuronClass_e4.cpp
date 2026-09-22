@@ -7,7 +7,6 @@
 // 0x43A350
 N NeuronClass::NeuronClass()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x43a353*/
@@ -43,12 +42,10 @@ N NeuronClass::NeuronClass()
   }
   return this; /*0x43a43c*/
 }
-}
 
 // 0x43A9C0
 void * NeuronClass::Reset(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   *this = &NeuronClass::`vftable'; /*0x43a9cd*/
@@ -81,7 +78,6 @@ void * NeuronClass::Reset(char a2)
   if ( (a2 & 1) != 0 ) /*0x43aa7d*/
     __3_YAXPAX_Z(this); /*0x43aa80*/
   return (NeuronClass *)this; /*0x43aa8a*/
-}
 }
 
 // 0x43AB20

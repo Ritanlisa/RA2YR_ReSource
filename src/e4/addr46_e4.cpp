@@ -24,7 +24,6 @@ void E4Recv_46D350::sub_46D350()
 namespace gamemd {
 bool sub_46D650()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND v1; // eax
   HWND DlgItem; // eax
@@ -98,14 +97,12 @@ bool sub_46D650()
   while ( (int)v4 < (int)&g_PlayerNameListEnd ); /*0x46d7fd*/
   return v0; /*0x46d808*/
 }
-}
 } // namespace gamemd
 
 // 0x46D8B0
 namespace gamemd {
 void sub_46D8B0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   const wchar_t **v2; // esi
   int PlayerSide; // eax
@@ -176,14 +173,12 @@ void sub_46D8B0()
   }
   return v0; /*0x46d8e2*/
 }
-}
 } // namespace gamemd
 
 // 0x46DA70
 namespace gamemd {
 void sub_46DA70()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   size_t v3; // ebp
   int Count; // ebp
@@ -252,14 +247,12 @@ void sub_46DA70()
     ++v1; /*0x46dc2c*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x46DCC0
 namespace gamemd {
 void sub_46DCC0(HWND hDlg, bool a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // edi
   BOOL result; // eax
@@ -270,7 +263,6 @@ void sub_46DCC0(HWND hDlg, bool a2)
   HWND v10; // eax
   int ResourceID3CSF; // eax
   HWND v12; // eax
-
   for ( i = 0; i < 8; ++i )
   {
     result = IsKnownPointer((wchar_t *)*(&g_NetworkPlayerName + i)); /*0x46dcda*/
@@ -295,14 +287,12 @@ void sub_46DCC0(HWND hDlg, bool a2)
   }
   return result; /*0x46dd60*/
 }
-}
 } // namespace gamemd
 
 // 0x46DD70
 namespace gamemd {
 void EnableGameModeControls(HWND hDlg, bool a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND DlgItem; // eax
   int ResourceID2CSF; // eax
@@ -313,7 +303,6 @@ void EnableGameModeControls(HWND hDlg, bool a2)
   HWND v11; // eax
   HWND result; // eax
   HWND v13; // edi
-
   if ( *(_DWORD *)&g_NetworkPlayerBuffer[1104] )
     int v4 = *(_DWORD *)&g_NetworkPlayerBuffer[1104] != 1 ? -1 : 1042;
   else
@@ -342,14 +331,12 @@ void EnableGameModeControls(HWND hDlg, bool a2)
   }
   return result; /*0x46de10*/
 }
-}
 } // namespace gamemd
 
 // 0x46DE20
 namespace gamemd {
 void sub_46DE20(HWND hDlg, int nCmdShow)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND DlgItem; // eax
   HWND v5; // eax
@@ -450,7 +437,6 @@ void sub_46DE20(HWND hDlg, int nCmdShow)
   if ( result ) /*0x46dfbb*/
     return (HWND)ShowWindow(result, nCmdShow); /*0x46dfbf*/
   return result; /*0x46dfc1*/
-}
 }
 } // namespace gamemd
 
@@ -1174,11 +1160,9 @@ int sub_46D310()
 namespace gamemd {
 void sub_46D480()
  {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   *((_BYTE *)&g_GameModeOptionState + a2) = BYTE4(result); /*0x46d480*/
   return result; /*0x46d486*/
-}
 }
 } // namespace gamemd
 

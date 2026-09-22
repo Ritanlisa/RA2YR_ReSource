@@ -6,7 +6,6 @@
 // 0x4A7A30
 D DiskLaserClass::DiskLaserClass()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x4a7a33*/
@@ -34,12 +33,10 @@ D DiskLaserClass::DiskLaserClass()
   }
   return this; /*0x4a7abf*/
 }
-}
 
 // 0x4A7C90
 void * DiskLaserClass::CopyTo(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   *this = &DiskLaserClass::`vftable'; /*0x4a7c9d*/
@@ -61,7 +58,6 @@ void * DiskLaserClass::CopyTo(char a2)
   if ( (a2 & 1) != 0 ) /*0x4a7d04*/
     __3_YAXPAX_Z(this); /*0x4a7d07*/
   return (DiskLaserClass *)this; /*0x4a7d11*/
-}
 }
 
 // 0x4A7B90

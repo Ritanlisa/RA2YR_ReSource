@@ -7,7 +7,6 @@ namespace ra2 {
 namespace game {
 AbstractClass * * MissionClass::LoadFromINI(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   double Double_Overwrite; // st7
 
@@ -87,7 +86,6 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int * a2)
     this->referenceCount = v15; /*0x5b38fb*/
   }
   return 1; /*0x5b38fe*/
-}
 }
 } // namespace game
 } // namespace ra2

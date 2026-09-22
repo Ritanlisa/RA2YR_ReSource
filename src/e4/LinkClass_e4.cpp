@@ -5,17 +5,14 @@
 // 0x4E1480
 int LinkClass::Destroy()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   this->vt_slot_84(); /*0x4e1485*/
   return LinkedList::RemoveNode(this); /*0x4e148f*/
-}
 }
 
 // 0x5565A0
 int LinkClass::Destruct()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *Prev; // edi
   int result; // eax
@@ -34,7 +31,6 @@ int LinkClass::Destruct()
   if ( Prev == this && (_DWORD *)result != this ) /*0x5565e2*/
     return (*(int (__thiscall **)(int))(*(_DWORD *)result + 24))(result); /*0x5565e8*/
   return result; /*0x5565eb*/
-}
 }
 
 // 0x4E1AD0

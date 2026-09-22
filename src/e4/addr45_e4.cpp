@@ -18,7 +18,6 @@
 namespace gamemd {
 char UpdateBuildingActiveAnim(int a1, int edx0)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v4; // edi
   double HealthRatio; // st7
@@ -127,14 +126,12 @@ char UpdateBuildingActiveAnim(int a1, int edx0)
     }
   }
 }
-}
 } // namespace gamemd
 
 // 0x452000
 namespace gamemd {
 void sub_452000(unsigned int * a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   bool v10; // zf
   int v11; // ebx
@@ -204,14 +201,12 @@ void sub_452000(unsigned int * a1)
   while ( v13 ); /*0x45215b*/
   return result; /*0x45215d*/
 }
-}
 } // namespace gamemd
 
 // 0x452D40
 namespace gamemd {
 void sub_452D40()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int i; // edi
@@ -236,14 +231,12 @@ void sub_452D40()
   }
   return result; /*0x452dbe*/
 }
-}
 } // namespace gamemd
 
 // 0x456980
 namespace gamemd {
 void* DrawTechnoDeployCircle(IUnknown * aP0, IUnknown * aP1, int a1, int a4, int a5, int a6, float a7, char a8, char a9)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v10; // eax
   int v12; // esi
@@ -408,14 +401,12 @@ LABEL_20:
   }
   return v14; /*0x456df5*/
 }
-}
 } // namespace gamemd
 
 // 0x456FB0
 namespace gamemd {
 BuildingTypeClass * * sub_456FB0(unsigned int * a1, int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   BuildingTypeClass *v4 = (*(int (__thiscall **)(_DWORD *, int))(*a1 + 1124))(a1, a3); /*0x456fc7*/
@@ -433,20 +424,17 @@ BuildingTypeClass * * sub_456FB0(unsigned int * a1, int a2, int a3)
     return v4; /*0x45700f*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x459F40
 namespace gamemd {
 int ObjectType_IsBuildingType(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   if ( a1 )
     return (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 44))(a1) == 6 ? a1 : 0;
   else
     return 0; /*0x459f47*/
-}
 }
 } // namespace gamemd
 
@@ -454,7 +442,6 @@ int ObjectType_IsBuildingType(int a1)
 namespace gamemd {
 int Map_InitCellOffsets()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   unk_89D368 = 0x10000;
@@ -792,14 +779,12 @@ int Map_InitCellOffsets()
   memset(&stru_89DD44, 0, 0x74u);
   return Array::ForEach((int)&stru_89DD44, 4, 29, (int (__thiscall *)(int))__0Iostream_init_QAE_XZ_2);
 }
-}
 } // namespace gamemd
 
 // 0x45DD20
 namespace gamemd {
 void * E4Recv_45DD20::sub_45DD20()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v1 = 0; /*0x45dd20*/
@@ -813,14 +798,12 @@ void * E4Recv_45DD20::sub_45DD20()
   }
   return (&off_819288)[2 * v1]; /*0x45dd3b*/
 }
-}
 } // namespace gamemd
 
 // 0x45DD50
 namespace gamemd {
 int E4Recv_45DD50::sub_45DD50()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ObjectClass *v2; // edi
   const void **v3; // esi
@@ -835,7 +818,6 @@ int E4Recv_45DD50::sub_45DD50()
       return 0; /*0x45dd7d*/
   }
   return dword_81928C[2 * (_DWORD)v2]; /*0x45dd78*/
-}
 }
 } // namespace gamemd
 

@@ -39,7 +39,6 @@ AircraftClass::AircraftClass() noexcept
 // 0x417fe0
 AbstractClass * * AircraftClass::Mission_Attack()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x417fe0
 {
   int result; // eax
@@ -1856,7 +1855,6 @@ pop     ebx
 add     esp, 0C8h
 retn
 */
-}
 
 // IDA: 0x415A50 (ProcessReturnToBase, 185B)
 int AircraftClass::Mission_Return()
@@ -1900,7 +1898,6 @@ int AircraftClass::Mission_Retreat()
 // 0x4166c0
 int AircraftClass::Mission_Enter()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   char *MissionControl; // eax
@@ -2467,13 +2464,11 @@ pop     ebx
 add     esp, 44h
 retn
 */
-}
 
 // IDA: 0x419C80 (Mission_Transport, 1215B)
 // 0x419c80
 ILocomotion * * AircraftClass::Mission_Transport()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int Member; // eax
@@ -3190,13 +3185,11 @@ pop     ebx
 add     esp, 30h
 retn
 */
-}
 
 // IDA: 0x4190B0 (MissionDispatch, 1147B)
 // 0x4190b0
 int AircraftClass::MissionDispatch()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x4190b0
 {
   int result; // eax
@@ -3825,7 +3818,6 @@ mov     eax, 0Ah
 pop     ebx
 retn    0Ch
 */
-}
 
 // ============================================================
 // Phase 3: Flight Paths
@@ -3835,7 +3827,6 @@ retn    0Ch
 // 0x414310
 int AircraftClass::MoveTo()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 v10; // dx
   _DWORD * v3 = a2;
@@ -4038,7 +4029,6 @@ pop     ebx
 add     esp, 0Ch
 retn    8
 */
-}
 
 // IDA: 0x417BD0 (ValidateMovement, 137B)
 int AircraftClass::ValidateMovement()
@@ -4062,7 +4052,6 @@ bool AircraftClass::CanEnterCell()
 // 0x41ba90
 int AircraftClass::ProcessLanding()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -4136,7 +4125,6 @@ def_41BACC:                             ; CODE XREF: AircraftClass__ProcessLandi
 pop     esi             ; jumptable 0041BACC default case, cases 5-25,28,29
 retn    8
 */
-}
 
 // IDA: 0x415B10 (FindLandingCell, 336B)
 int AircraftClass::FindLandingCell()
@@ -4295,7 +4283,6 @@ int AircraftClass::LandingCheckStub()
 // 0x41b870
 int AircraftClass::ProcessPassengerEjection()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   if ( this->q02B != 30 )
     this->AircraftClass_field_bool_6D2 = 0;
@@ -4310,7 +4297,6 @@ mov     byte ptr [ecx+6D2h], 0
 loc_41B880:                             ; CODE XREF: AircraftClass__ProcessPassengerEjection+7↑j
 jmp     MissionClass__AdvanceState
 */
-}
 
 // IDA: 0x41B5C0 (CheckPassengerCount, 23B)
 int AircraftClass::CheckPassengerCount()
@@ -4366,7 +4352,6 @@ int AircraftClass::PowerDrainUpdate(int a2)
 // 0x41b660
 AircraftTypeClass * * AircraftClass::HandleTargetDestroyed()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -4404,13 +4389,11 @@ pop     edi
 pop     esi
 retn    8
 */
-}
 
 // IDA: 0x414A80 (ProcessMissionTimeout, 302B)
 // 0x414a80
 AbstractClass * * AircraftClass::ProcessMissionTimeout()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x414a80
 {
   char *MissionControl; // eax
@@ -4577,13 +4560,11 @@ pop     esi
 add     esp, 0Ch
 retn
 */
-}
 
 // IDA: 0x41A5C0 (GetMissionTimer, 886B)
 // 0x41a5c0
 int AircraftClass::GetMissionTimer()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x41a5c0
 {
   char *MissionControl; // eax
@@ -5048,7 +5029,6 @@ pop     esi
 add     esp, 0Ch
 retn
 */
-}
 
 // IDA: 0x41A940 (EvaluateTargetingState, 157B)
 int AircraftClass::EvaluateTargetingState()
@@ -5107,7 +5087,6 @@ int AircraftClass::LoadFromStream()
 // 0x414080
 int AircraftClass::Destruct()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x414080
 {
   void **v2; // esi
@@ -5409,7 +5388,6 @@ pop     ebx
 pop     ecx
 retn
 */
-}
 
 // ============================================================
 // Phase 3: Cursor & State

@@ -5,7 +5,6 @@
 // 0x758EA0
 int VoxelRenderer::ProjectVertex(float a2, float a3, float a4, char a5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // edi
   unsigned __int8 *v10; // eax
@@ -41,12 +40,10 @@ LABEL_13:
   }
   return v6; /*0x758f5b*/
 }
-}
 
 // 0x759FB0
 int VoxelRenderer::InitializeBuffers(int a2, unsigned int * a3, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   BOOL result; // eax
 
@@ -105,5 +102,4 @@ LABEL_13:
       return result;
   }
   return result; /*0x759fee*/
-}
 }

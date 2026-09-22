@@ -14,14 +14,12 @@ namespace ra2 {
 namespace game {
 int SlaveManagerClass::Check()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
   if ( this->q02B != 10 ) /*0x522d07*/
     return this->vt_slot_488(10, 0); /*0x522d0f*/
   return result; /*0x522d15*/
-}
 }
 } // namespace game
 } // namespace ra2
@@ -31,10 +29,8 @@ namespace ra2 {
 namespace game {
 int SlaveManagerClass::VtableDispatch()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return (*(int (__thiscall **)(void *, int, _DWORD))(this->q7A0)(this, 5, 0); /*0x522d2c*/
-}
 }
 } // namespace game
 } // namespace ra2
@@ -44,10 +40,8 @@ namespace ra2 {
 namespace game {
 int SlaveManagerClass::CheckIsOne()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return ((double (__thiscall *)(void *))*(_DWORD *)(*(_DWORD *)this + 692))(this) == 1.0; /*0x522d47*/
-}
 }
 } // namespace game
 } // namespace ra2
@@ -57,10 +51,8 @@ namespace ra2 {
 namespace game {
 int SlaveManagerClass::IsMasterHarvester()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return this->vt_slot_388() == 10; /*0x522fd2*/
-}
 }
 } // namespace game
 } // namespace ra2
@@ -70,7 +62,6 @@ namespace ra2 {
 namespace game {
 void* SlaveManagerClass::ctor(TechnoClass * aP1, int a3, int a4, int a5, int a6)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v8; // ecx
   int v19; // [esp+10h] [ebp-8h]
@@ -155,7 +146,6 @@ void* SlaveManagerClass::ctor(TechnoClass * aP1, int a3, int a4, int a5, int a6)
   }
   return this; /*0x6af34f*/
 }
-}
 } // namespace game
 } // namespace ra2
 
@@ -164,7 +154,6 @@ namespace ra2 {
 namespace game {
 int SlaveManagerClass::Constructor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x6af366*/
@@ -205,7 +194,6 @@ int SlaveManagerClass::Constructor()
   }
   return this; /*0x6af42d*/
 }
-}
 } // namespace game
 } // namespace ra2
 
@@ -214,7 +202,6 @@ namespace ra2 {
 namespace game {
 void SlaveManagerClass::Constructor_SlaveManagerClass()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // esi
   SlaveManagerClass *v6; // [esp+8h] [ebp-4h] BYREF
@@ -252,7 +239,6 @@ void SlaveManagerClass::Constructor_SlaveManagerClass()
   this->slaveVectorCapacity = 0; /*0x6af569*/
   AbstractClass::DTOR((_DWORD *)this); /*0x6af570*/
 }
-}
 } // namespace game
 } // namespace ra2
 
@@ -261,7 +247,6 @@ namespace ra2 {
 namespace game {
 int SlaveManagerClass::SetOwner(TechnoClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // ecx
 
@@ -285,7 +270,6 @@ int SlaveManagerClass::SetOwner(TechnoClass * aP1)
   }
   return v3; /*0x6af5e0*/
 }
-}
 } // namespace game
 } // namespace ra2
 
@@ -294,7 +278,6 @@ namespace ra2 {
 namespace game {
 int SlaveManagerClass::UpdateSlaves()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   IUnknown *v2 = (int *)g_CurrentFrame; /*0x6af5f7*/
@@ -325,7 +308,6 @@ LABEL_5:
   }
   return v4; /*0x6af63d*/
 }
-}
 } // namespace game
 } // namespace ra2
 
@@ -333,7 +315,6 @@ LABEL_5:
 namespace gamemd {
 TechnoClass * * SlaveManagerClass_ProcessSlaves()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int FoundationWidth; // eax
@@ -645,7 +626,6 @@ LABEL_61:
   }
   return result; /*0x6afd36*/
 }
-}
 } // namespace gamemd
 
 // 0x6B0A20
@@ -653,7 +633,6 @@ namespace ra2 {
 namespace game {
 int SlaveManagerClass::LostSlave(ObjectClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   ObjectClass ***i; // edx
@@ -681,7 +660,6 @@ int SlaveManagerClass::LostSlave(ObjectClass * aP1)
   }
   return result; /*0x6b0a44*/
 }
-}
 } // namespace game
 } // namespace ra2
 
@@ -690,7 +668,6 @@ namespace ra2 {
 namespace game {
 int SlaveManagerClass::ShouldWakeUpNow()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   _DWORD * v2 = (_DWORD *)this->master; /*0x6b1024*/
@@ -710,7 +687,6 @@ int SlaveManagerClass::ShouldWakeUpNow()
                     0);
   return v4 != DataGlobal_B0B5B8; /*0x6b10c6*/
 }
-}
 } // namespace game
 } // namespace ra2
 
@@ -719,7 +695,6 @@ namespace ra2 {
 namespace game {
 int SlaveManagerClass::AssignTask(AbstractClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int i; // esi
@@ -730,7 +705,6 @@ int SlaveManagerClass::AssignTask(AbstractClass * aP1)
     result = Power::TimerProcess(aP1); /*0x6b111c*/
   return result; /*0x6b1124*/
 }
-}
 } // namespace game
 } // namespace ra2
 
@@ -739,7 +713,6 @@ namespace ra2 {
 namespace game {
 AbstractClass * * SlaveManagerClass::LoadManager(unsigned int * a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int Prefix_0; // ebx
   wchar_t *v9; // ecx
@@ -828,7 +801,6 @@ LABEL_20:
   }
   return Prefix_0; /*0x6b12f1*/
 }
-}
 } // namespace game
 } // namespace ra2
 
@@ -837,12 +809,10 @@ namespace ra2 {
 namespace game {
 long long SlaveManagerClass::Calc2DDistance()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   double v1 = Math::Sqrt((double)*this * (double)*this + (double)this->vtable2 * (double)this->vtable2); /*0x6b1a9c*/
   return Math::RoundToInt(v1); /*0x6b1aa9*/
-}
 }
 } // namespace game
 } // namespace ra2

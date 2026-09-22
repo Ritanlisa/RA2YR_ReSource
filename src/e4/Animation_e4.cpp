@@ -7,7 +7,6 @@
 // 0x4549B0
 BuildingClass * * Animation::UpdateBuildingAnimations()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v8; // ebp
   int i; // edi
@@ -166,12 +165,10 @@ LABEL_51:
     goto LABEL_52; /*0x454c57*/
   }
 }
-}
 
 // 0x4A52F0
 int Animation::GetProgress()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( !this->q018 ) /*0x4a52f0*/
@@ -189,12 +186,10 @@ int Animation::GetProgress()
   }
   return (double)(v1 - v4) / (double)v1; /*0x4a530d*/
 }
-}
 
 // 0x770550
 ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AbstractClass *v3; // ebx
   ObjectClass *v4; // ebp
@@ -315,7 +310,6 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
   DeleteAndZero((void **)&a1); /*0x770824*/
   DeleteAndZero((void **)&v24); /*0x77082d*/
   DeleteAndZero(&v23); /*0x770836*/
-}
 }
 
 // 0x661D80

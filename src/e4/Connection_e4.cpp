@@ -7,13 +7,11 @@
 namespace gamemd {
 int Connection::GetSpeed()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   if ( (unsigned char)this->Connection_field_0x4 && *(_BYTE *)(this + 5) ) /*0x5422f7*/
     return *(_DWORD *)(*(_DWORD *)(this->Connection_field_0x48 + 4) + 56); /*0x542304*/
   else
     return 0; /*0x542308*/
-}
 }
 } // namespace gamemd
 
@@ -21,7 +19,6 @@ int Connection::GetSpeed()
 namespace gamemd {
 int Connection::Close()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -29,6 +26,5 @@ int Connection::Close()
   if ( result ) /*0x543095*/
     *(_BYTE *)(result + 200) = 1; /*0x543097*/
   return result; /*0x54309e*/
-}
 }
 } // namespace gamemd

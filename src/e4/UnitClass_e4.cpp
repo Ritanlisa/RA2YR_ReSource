@@ -6,7 +6,6 @@
 namespace gamemd {
 void UnitClass::ProcessIdleOrders()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // edi
 
@@ -30,6 +29,5 @@ void UnitClass::ProcessIdleOrders()
   this->estimatedHealth = 0; /*0x6b7c26*/
   this->health = 0; /*0x6b7c29*/
   this->bombVisible = 0; /*0x6b7c2c*/
-}
 }
 } // namespace gamemd

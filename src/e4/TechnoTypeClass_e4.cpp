@@ -9,7 +9,6 @@
 // 0x48DCD0
 AbstractClass * * TechnoTypeClass::GetByTypeAndIndex(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -37,12 +36,10 @@ AbstractClass * * TechnoTypeClass::GetByTypeAndIndex(int a1, int a2)
   }
   return result; /*0x48dcef*/
 }
-}
 
 // 0x50BDF0
 int TechnoTypeClass::Dispatch(TechnoTypeClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   double result; // st7
 
@@ -69,12 +66,10 @@ int TechnoTypeClass::Dispatch(TechnoTypeClass * aP1)
   }
   return result; /*0x50be6b*/
 }
-}
 
 // 0x50BEB0
 int TechnoTypeClass::GetThreatMultiplier(TechnoTypeClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   double result; // st7
 
@@ -101,12 +96,10 @@ int TechnoTypeClass::GetThreatMultiplier(TechnoTypeClass * aP1)
   }
   return result; /*0x50bedc*/
 }
-}
 
 // 0x6F06E0
 unsigned int * TechnoTypeClass::LoadBase(ObjectClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   TeamTypeClass *v3; // ecx
   CCINIClass *v6; // edx
@@ -192,12 +185,10 @@ LABEL_11:
   }
   return this; /*0x6f08e6*/
 }
-}
 
 // 0x710AF0
 void * TechnoTypeClass::ReadINI(char * Source, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   ObjectTypeClass::ConstructFull((int)this, Source); /*0x710afb*/
@@ -722,12 +713,10 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3)
   }
   return this; /*0x711837*/
 }
-}
 
 // 0x711840
 AbstractClass * * TechnoTypeClass::Construct(ObjectTypeClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   CCINIClass *v5; // edx
   ObjectTypeClass::Construct((_DWORD *)this, aP1); /*0x71184b*/
@@ -819,7 +808,6 @@ LABEL_5:
       goto LABEL_5; /*0x711a82*/
   }
   return this; /*0x711ad0*/
-}
 }
 
 // 0x711AE0
@@ -950,7 +938,6 @@ int TechnoTypeClass::DTOR()
 // 0x711F00
 int TechnoTypeClass::ComputeValueSimple(float * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   float ThreatMultiplier; // [esp+8h] [ebp-8h]
 
@@ -961,12 +948,10 @@ int TechnoTypeClass::ComputeValueSimple(float * a2)
   float * v6 = (float *)(*(int (__thiscall **)(TechnoTypeClass *))(*(_DWORD *)this->vtable0 + 172))(this); /*0x711f31*/
   return Math::RoundToInt((double)(int)v6 * ThreatMultiplier * v5); /*0x711f46*/
 }
-}
 
 // 0x711F60
 int TechnoTypeClass::ComputeValue(void * a2, float a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   float ThreatMultiplier; // [esp+Ch] [ebp-4h]
   #375 *v9; // [esp+14h] [ebp+4h]
@@ -997,12 +982,10 @@ int TechnoTypeClass::ComputeValue(void * a2, float a3)
     return Math::RoundToInt((double)v11 * v7); /*0x71202c*/
   }
 }
-}
 
 // 0x7162F0
 DynamicVectorClass * * TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int j; // ebp
@@ -1357,12 +1340,10 @@ DynamicVectorClass * * TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, i
   }
   return result; /*0x716dac*/
 }
-}
 
 // 0x716DC0
 int TechnoTypeClass::SaveLoad_Prefix_0(void * a1, TechnoTypeClass * aP2, TechnoTypeClass * aP3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int i; // ebx
@@ -1476,7 +1457,6 @@ int TechnoTypeClass::SaveLoad_Prefix_0(void * a1, TechnoTypeClass * aP2, TechnoT
   }
   return result; /*0x717094*/
 }
-}
 
 // 0x41CB50
 char TechnoTypeClass::vt_entry_A0()
@@ -1490,11 +1470,9 @@ char TechnoTypeClass::vt_entry_A0()
 namespace gamemd {
 void* TechnoTypeClass::CanAttackMove_IgnoreWeapon_0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // attributes: thunk
 {
   return TechnoTypeClass::CanAttackMove_IgnoreWeapon(this);
-}
 }
 }
 // 0x711E90
@@ -1611,10 +1589,8 @@ char TechnoTypeClass::RemoveItem(int a2)
 namespace gamemd {
 void* TechnoTypeClass::CanAttackMove_IgnoreWeapon_0_0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // attributes: thunk
 {
   return TechnoTypeClass::CanAttackMove_IgnoreWeapon(this);
-}
 }
 }

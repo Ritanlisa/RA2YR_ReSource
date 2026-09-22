@@ -7,7 +7,6 @@
 namespace gamemd {
 int Super::GetDefaultTimer()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -15,6 +14,5 @@ int Super::GetDefaultTimer()
   if ( result == -1 ) /*0x6cc266*/
     return *(_DWORD *)(this->q028 + 176); /*0x6cc26b*/
   return result; /*0x6cc271*/
-}
 }
 } // namespace gamemd

@@ -6,7 +6,6 @@
 // 0x624760
 int HashTable::Get(IUnknown * aP1, IUnknown * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( !this->q004 ) /*0x624764*/
@@ -23,12 +22,10 @@ int HashTable::Get(IUnknown * aP1, IUnknown * aP2)
   aP2->field_0 = (int)(v4 + 1); /*0x6247c3*/
   return 1; /*0x62476b*/
 }
-}
 
 // 0x624FC0
 AbstractClass * * HashTable::Grow2()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( (unsigned char)this->HashTable_field_0x14 != 1 ) /*0x624fc8*/
@@ -73,12 +70,10 @@ AbstractClass * * HashTable::Grow2()
     __3_YAXPAX_Z(v3); /*0x625054*/
   }
 }
-}
 
 // 0x625090
 AbstractClass * * HashTable::RemoveAndResize(unsigned int * a2, unsigned char * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v4 = this->q004; /*0x62509b*/
@@ -209,12 +204,10 @@ LABEL_23:
     return v34; /*0x6252e1*/
   }
 }
-}
 
 // 0x625780
 void HashTable::Shrink2()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   unsigned int v2 = this->q008; /*0x625785*/
@@ -259,12 +252,10 @@ void HashTable::Shrink2()
     __3_YAXPAX_Z(v3); /*0x62581a*/
   }
 }
-}
 
 // 0x625830
 void HashTable::Rebuild2()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   unsigned int v2 = this->q008; /*0x625835*/
@@ -309,12 +300,10 @@ void HashTable::Rebuild2()
     __3_YAXPAX_Z(v3); /*0x6258d0*/
   }
 }
-}
 
 // 0x625F60
 int HashTable::FindString(char * Str1, IUnknown * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   BOOL v4; // eax
   int v3 = this->q004; /*0x625f61*/
@@ -335,12 +324,10 @@ int HashTable::FindString(char * Str1, IUnknown * aP2)
   }
   return v4; /*0x625f86*/
 }
-}
 
 // 0x625FB0
 int HashTable::FindChunk(char * Str1, void * a2, CCINIClass * aP3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v4 = this->q004; /*0x625fb1*/
@@ -359,12 +346,10 @@ int HashTable::FindChunk(char * Str1, void * a2, CCINIClass * aP3)
   *(_DWORD *)aP3->__pad_0 = *(unsigned __int16 *)(v4 + 6); /*0x626013*/
   return v4 != 0; /*0x625fd6*/
 }
-}
 
 // 0x6B9530
 CampaignClass * * HashTable::Clear()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   CampaignClass *v3; // edi
   const char **v7; // esi
@@ -494,12 +479,10 @@ LABEL_23:
   }
   __3_YAXPAX_Z(*(void **)this); /*0x6b972b*/
 }
-}
 
 // 0x6BA140
 int HashTable::Find(const char * a1, ConvertClass * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ObjectClass *v4; // esi
   String::Assign((char **)&a1, a1); /*0x6ba14c*/
@@ -536,12 +519,10 @@ LABEL_7:
     return 0; /*0x6ba1cd*/
   }
 }
-}
 
 // 0x6BA230
 CampaignClass * * HashTable::RemoveEntry(const char * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   void *v16; // [esp+Ch] [ebp-310h] BYREF
@@ -622,12 +603,10 @@ LABEL_22:
 LABEL_24:
   DeleteAndZero(&v16); /*0x6ba3c2*/
 }
-}
 
 // 0x6BAC40
 AbstractClass * * HashTable::RemoveHashTableEntry(ObjectClass * aP1, void * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   SessionClass *v9; // esi
   AbstractClass *v14; // ebx
@@ -779,12 +758,10 @@ LABEL_24:
     return aP1a; /*0x6baede*/
   }
 }
-}
 
 // 0x6BAEF0
 AbstractClass * * HashTable::RebuildEx()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   unsigned int v2 = this->q008; /*0x6baef5*/
@@ -829,12 +806,10 @@ AbstractClass * * HashTable::RebuildEx()
     __3_YAXPAX_Z(v3); /*0x6baf90*/
   }
 }
-}
 
 // 0x724730
 ObjectClass * * HashTable::Remove(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void **v8; // eax
   ObjectClass *v12; // eax
@@ -926,12 +901,10 @@ LABEL_13:
   if ( Block ) /*0x72489e*/
     __3_YAXPAX_Z(Block); /*0x7248a1*/
 }
-}
 
 // 0x7ACE60
 unsigned int HashTable::CleanupAndResize()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned int i; // ebp
   void **v4; // edi
@@ -999,12 +972,10 @@ unsigned int HashTable::CleanupAndResize()
   }
   return result; /*0x7acf65*/
 }
-}
 
 // 0x7ACF70
 unsigned int HashTable::Rebuild()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned int i; // ebp
   void **v4; // edi
@@ -1072,12 +1043,10 @@ unsigned int HashTable::Rebuild()
   }
   return result; /*0x7ad07e*/
 }
-}
 
 // 0x7ADC60
 int HashTable::LookupString(const char ** a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   bool result; // al
 
@@ -1098,12 +1067,10 @@ int HashTable::LookupString(const char ** a2, unsigned int * a3)
   *a3 = v4 + 4; /*0x7adcc5*/
   return 1; /*0x7adc6b*/
 }
-}
 
 // 0x7ADCD0
 AbstractClass * * HashTable::Insert(ObjectClass * aP1, void * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   SessionClass *v9; // esi
   AbstractClass *v14; // ebx
@@ -1255,12 +1222,10 @@ LABEL_24:
     return aP1a; /*0x7adf53*/
   }
 }
-}
 
 // 0x7AE1F0
 AbstractClass * * HashTable::Lookup(ObjectClass * aP1, TechnoTypeClass * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ObjectClass *v8; // ebp
   TechnoTypeClass **v9; // ebp
@@ -1405,12 +1370,10 @@ LABEL_23:
     return aP1a; /*0x7ae44a*/
   }
 }
-}
 
 // 0x7AE510
 AbstractClass * * HashTable::Grow()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( (unsigned char)this->HashTable_field_0x14 != 1 ) /*0x7ae518*/
@@ -1455,12 +1418,10 @@ AbstractClass * * HashTable::Grow()
     __3_YAXPAX_Z(v3); /*0x7ae59e*/
   }
 }
-}
 
 // 0x7AE950
 AbstractClass * * HashTable::FindWOLHashTableEntry(const char ** a2, void * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v4 = this->q004; /*0x7ae95b*/
@@ -1600,12 +1561,10 @@ LABEL_24:
     return v38; /*0x7aebee*/
   }
 }
-}
 
 // 0x7AEC00
 void HashTable::Shrink()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   unsigned int v2 = this->q008; /*0x7aec05*/
@@ -1649,7 +1608,6 @@ void HashTable::Shrink()
     }
     __3_YAXPAX_Z(v3); /*0x7aeca0*/
   }
-}
 }
 
 // 0x625070

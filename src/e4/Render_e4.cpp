@@ -38,11 +38,9 @@
 namespace gamemd {
 void Render_Load()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   Frame *v6; // ecx
-
   (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)g_DSurface_Hidden + 24))(g_DSurface_Hidden, 0); /*0x52ffa0*/
   int v8; // [esp+4h] [ebp-4h]
   int v7; // [esp+0h] [ebp-8h]
@@ -54,14 +52,12 @@ void Render_Load()
   }
   return result; /*0x52ffb7*/
 }
-}
 } // namespace gamemd
 
 // 0x53C0A0
 namespace gamemd {
 void sub_53C0A0(unsigned short * a1, int a2, unsigned short a3, int a4, int a5, int a6, int a7)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -136,14 +132,12 @@ void sub_53C0A0(unsigned short * a1, int a2, unsigned short a3, int a4, int a5, 
   }
   return result; /*0x53c273*/
 }
-}
 } // namespace gamemd
 
 // 0x652230
 namespace gamemd {
 AbstractClass * * Render_Show(CCINIClass * aP0, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char result; // al
   wchar_t *v6; // eax
@@ -199,13 +193,11 @@ AbstractClass * * Render_Show(CCINIClass * aP0, int a2)
   }
   return result; /*0x6522a2*/
 }
-}
 } // namespace gamemd
 
 // 0x705270
 AbstractClass * * Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a6, int a7, char a8)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned __int8 v25; // al
   int result; // eax
@@ -365,13 +357,11 @@ AbstractClass * * Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a
   while ( v22 <= 64 ); /*0x705841*/
   return result; /*0x705847*/
 }
-}
 
 // 0x780D90
 namespace gamemd {
 wchar_t ** Render_Format(wchar_t ** a1, char ** a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   wchar_t *StringCSF; // eax
 
@@ -408,13 +398,11 @@ LABEL_6:
     return a1; /*0x780dcf*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x7C7371
 void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, unsigned int a5, int a6)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   bool k; // cc
   bool i; // cc
@@ -1065,13 +1053,11 @@ LABEL_39:
     }
   }
 }
-}
 
 // 0x731BF0
 namespace gamemd {
 void sub_731BF0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   bool IsButtonDown; // al
   CellStruct *v3; // edi
@@ -1100,14 +1086,12 @@ void sub_731BF0()
   }
   return 0; /*0x731bfc*/
 }
-}
 } // namespace gamemd
 
 // 0x777E00
 namespace gamemd {
 int sub_777E00()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   BOOL result; // eax
 
@@ -1121,19 +1105,16 @@ int sub_777E00()
     return ImmNotifyIME(dword_B7355C, 0x15u, 4u, 0); /*0x777e2d*/
   return result; /*0x777e32*/
 }
-}
 } // namespace gamemd
 
 // 0x778030
 namespace gamemd {
 void Render_Draw_778030(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   UINT v5; // edx
   UINT v6; // edx
   LRESULT v7; // eax
-
   if ( Msg > 0x281 ) /*0x778039*/
   {
     switch ( Msg ) /*0x7780d6*/
@@ -1180,17 +1161,14 @@ LABEL_12:
   }
   return 0; /*0x7780f9*/
 }
-}
 } // namespace gamemd
 
 // 0x778120
 namespace gamemd {
 int sub_778120()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return dword_B73570; /*0x778125*/
-}
 }
 } // namespace gamemd
 
@@ -1198,7 +1176,6 @@ int sub_778120()
 namespace gamemd {
 WinModemClass * * Render_Parse_6CA310(CampaignScore * aP0, CCINIClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   BlowStraw *v2; // ebp
   wchar_t *i; // edi
@@ -1272,17 +1249,14 @@ LABEL_18:
   Debug::Log(); /*0x6ca426*/
   return 0; /*0x6ca440*/
 }
-}
 } // namespace gamemd
 
 // 0x6CA940
 namespace gamemd {
 void sub_6CA940(int a1, unsigned short * a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 v7; // [esp+12h] [ebp-6h] BYREF
-
   int v4 = 0; /*0x6ca94f*/
   int v8 = a1; /*0x6ca953*/
   *a2 = 0; /*0x6ca957*/
@@ -1313,14 +1287,12 @@ LABEL_9:
     return 1; /*0x6ca9b1*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x53D850
 namespace gamemd {
 void sub_53D850()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char result; // al
   int i; // esi
@@ -1347,14 +1319,12 @@ void sub_53D850()
     result = ZBuffer::RenderSprite(*((int **)unk_AA011C + i)); /*0x53d8cb*/
   return result; /*0x53d8d3*/
 }
-}
 } // namespace gamemd
 
 // 0x5541C0
 namespace gamemd {
 CampaignScore * * Render_Render_5541C0(unsigned short * a0, int a2, AbstractClass * aP2, int a4, AbstractClass * aP4, char a6, char a7)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   CampaignScore *v8; // edx
   struct tagRECT *v10; // [esp+0h] [ebp-20h]
@@ -1390,17 +1360,14 @@ CampaignScore * * Render_Render_5541C0(unsigned short * a0, int a2, AbstractClas
   Rect::Inflate(v10, v11, (int)dy); /*0x554252*/
   return DSurface::FillRectWithColor(a0a, (ObjectClass *)a2, 0, 0x9Fu); /*0x554269*/
 }
-}
 } // namespace gamemd
 
 // 0x554280
 namespace gamemd {
 void Render_Render_554280(unsigned short * a0, AbstractClass * aP1, int * a2, unsigned short a4, char a5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AbstractClass v9; // [esp-18h] [ebp-3Ch] BYREF
-
   int v5 = a2[1]; /*0x55428a*/
   int v6 = *a2; /*0x554294*/
   int v7 = *a2 + a2[2]; /*0x55429b*/
@@ -1416,14 +1383,12 @@ void Render_Render_554280(unsigned short * a0, AbstractClass * aP1, int * a2, un
                           | ((unsigned __int8)((unsigned __int8)(a4 >> stru_89E138[11424]) << stru_89E138[11428]) << 8)) << 8);
   return PrintFontLayout((AbstractClass *)v10, aP0, v9); /*0x554341*/
 }
-}
 } // namespace gamemd
 
 // 0x63B0A0
 namespace gamemd {
 AbstractClass * * sub_63B0A0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // esi
 
@@ -1450,14 +1415,12 @@ AbstractClass * * sub_63B0A0()
       ScriptAction::ProcessIdleAction(v5); /*0x63b141*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x642BB0
 namespace gamemd {
 void sub_642BB0(unsigned int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   unsigned int PlayerColor; // eax
@@ -1475,14 +1438,12 @@ void sub_642BB0(unsigned int a1)
   }
   return result; /*0x642bec*/
 }
-}
 } // namespace gamemd
 
 // 0x660000
 namespace gamemd {
 void sub_660000()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int i; // edi
@@ -1509,14 +1470,12 @@ LABEL_7:
   }
   return result; /*0x660049*/
 }
-}
 } // namespace gamemd
 
 // 0x6603B0
 namespace gamemd {
 void sub_6603B0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v0 = g_TriggerEventState - 1; /*0x6603b7*/
@@ -1563,14 +1522,12 @@ LABEL_7:
     while ( v0 >= 0 ); /*0x6603ca*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x7760B0
 namespace gamemd {
 void Render_Render_7760B0(HDC hdc, const char * a2, LONG a3, LONG a4, char a5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HFONT v7; // eax
   HFONT v8; // esi
@@ -1613,7 +1570,6 @@ void Render_Render_7760B0(HDC hdc, const char * a2, LONG a3, LONG a4, char a5)
   }
   RestoreDC(hdc, -1); /*0x7761fc*/
   return v8; /*0x776204*/
-}
 }
 } // namespace gamemd
 

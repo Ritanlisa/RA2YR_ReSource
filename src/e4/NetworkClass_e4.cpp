@@ -9,7 +9,6 @@
 namespace gamemd {
 int NetworkClass::ExecutePlanningModeCmd()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   wchar_t *StringCSF; // eax
   wchar_t *v3; // eax
@@ -43,14 +42,12 @@ LABEL_10:
   }
   return PlayVocClass(g_RulesClass_Instance->?[3], 0x2000, 1.0, 0); /*0x63a0c0*/
 }
-}
 } // namespace gamemd
 
 // 0x6FFE00
 namespace gamemd {
 AbstractClass * * NetworkClass::RecordEvent()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _BYTE *WaypointCoords; // eax
   int result; // eax
@@ -87,14 +84,12 @@ AbstractClass * * NetworkClass::RecordEvent()
   }
   return result; /*0x6ffe4d*/
 }
-}
 } // namespace gamemd
 
 // 0x7B1C50
 namespace gamemd {
 AnimClass * * NetworkClass::UnregisterAsync()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ObjectClass *v2; // ecx
   AnimClass *v3; // eax
@@ -114,6 +109,5 @@ AnimClass * * NetworkClass::UnregisterAsync()
       return WSAAsyncSelect(result, v2, 0, 0); /*0x7b1c8f*/
   }
   return result; /*0x7b1c7f*/
-}
 }
 } // namespace gamemd

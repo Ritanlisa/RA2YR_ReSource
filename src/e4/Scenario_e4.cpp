@@ -23,7 +23,6 @@
 namespace gamemd {
 int Scenario::ReadTeams()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   Scenario *v1; // esi
   int result; // eax
@@ -290,14 +289,12 @@ int Scenario::ReadTeams()
   }
   return result; /*0x44fe4a*/
 }
-}
 } // namespace gamemd
 
 // 0x4C6180
 namespace gamemd {
 int Scenario::CopyLocalScenarioData()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // eax
   int result; // eax
@@ -324,14 +321,12 @@ int Scenario::CopyLocalScenarioData()
   this->q010 = *((_WORD *)g_ScenarioClass_Instance + 6864); /*0x4c61fc*/
   return result; /*0x4c6200*/
 }
-}
 } // namespace gamemd
 
 // 0x50D610
 namespace gamemd {
 int Scenario::ProcessSidebarUnits()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int i; // [esp+Ch] [ebp-8h]
@@ -365,14 +360,12 @@ int Scenario::ProcessSidebarUnits()
   }
   return result; /*0x50d6bd*/
 }
-}
 } // namespace gamemd
 
 // 0x552B10
 namespace gamemd {
 Game * * Scenario::ComputeDisplayPosition()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -418,14 +411,12 @@ Game * * Scenario::ComputeDisplayPosition()
   }
   return result; /*0x552b87*/
 }
-}
 } // namespace gamemd
 
 // 0x552BE0
 namespace gamemd {
 unsigned int * Scenario::ComputeDialogPos(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *result; // eax
 
@@ -465,14 +456,12 @@ unsigned int * Scenario::ComputeDialogPos(unsigned int * a2)
   }
   return result; /*0x552c11*/
 }
-}
 } // namespace gamemd
 
 // 0x55AFB0
 namespace gamemd {
 void Scenario::Update()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void **v3; // esi
   _DWORD *v14; // ebp
@@ -815,20 +804,17 @@ LABEL_82:
       __3_YAXPAX_Z(Block); /*0x55b711*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x597A10
 namespace gamemd {
 int Scenario::LoadOrReloadOptions(IUnknown * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   if ( aP1 ) /*0x597a16*/
     return this->vt_slot_4(aP1); /*0x597a1b*/
   else
     return (unsigned __int8)LoadOptions::Run(this) != 0; /*0x597a28*/
-}
 }
 } // namespace gamemd
 
@@ -836,7 +822,6 @@ int Scenario::LoadOrReloadOptions(IUnknown * aP1)
 namespace gamemd {
 int Scenario::PreGameInit()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ObjectClass *v0; // edx
   int result; // eax
@@ -855,17 +840,14 @@ int Scenario::PreGameInit()
   nullsub_37(); /*0x5e74d9*/
   return result;
 }
-}
 } // namespace gamemd
 
 // 0x642AD0
 namespace gamemd {
 void Scenario::SetByte96()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   this->q060 = 0; /*0x642ad0*/
-}
 }
 } // namespace gamemd
 
@@ -873,7 +855,6 @@ void Scenario::SetByte96()
 namespace gamemd {
 int Scenario::ClearScreen()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND result; // eax
 
@@ -886,14 +867,12 @@ int Scenario::ClearScreen()
   DataGlobal_B07784 = 0; /*0x684282*/
   return result; /*0x68428c*/
 }
-}
 } // namespace gamemd
 
 // 0x684620
 namespace gamemd {
 int Scenario::LoadWithProgress()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ProgressScreenClass *v2; // edi
   wchar_t *StringCSF; // eax
@@ -1128,14 +1107,12 @@ int Scenario::LoadWithProgress()
     return 0; /*0x684a90*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x685670
 namespace gamemd {
 void Scenario_EndGameFlow()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   DWORD Ticks; // eax
   DWORD v4; // eax
@@ -1390,14 +1367,12 @@ LABEL_64:
   TacticalMap::Redraw(&DataGlobal_87F7E8); /*0x685d9a*/
   return FadePalette(&FileSystem_TEMPERAT_PAL, 7, (void (*)(void))Event::Dispatch); /*0x6858fa*/
 }
-}
 } // namespace gamemd
 
 // 0x685DC0
 namespace gamemd {
 void Scenario_EndGame()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   DWORD Ticks; // eax
   DWORD v4; // eax
@@ -1642,7 +1617,6 @@ LABEL_60:
   if ( *(_DWORD *)&HouseClass_Player[29932] == 4 ) /*0x68621d*/
     LOBYTE(v13) = ChatMessageWOL(0, (wchar_t *)&stru_87C374[46016]); /*0x68622a*/
   return v13; /*0x686045*/
-}
 }
 } // namespace gamemd
 

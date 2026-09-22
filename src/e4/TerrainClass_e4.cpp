@@ -20,7 +20,6 @@
 namespace gamemd {
 AbstractClass * * TerrainClass_ProcessUpdate()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char result; // al
   _UNKNOWN **v9; // ecx
@@ -1173,14 +1172,12 @@ LABEL_290:
   return 1;
 }
 
-}
 } // namespace gamemd
 
 // 0x71CDA0
 namespace gamemd {
 void* TerrainClass::LoadFromStream(unsigned int * a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   #374 *v5; // ecx
   size_t i; // eax
@@ -1251,14 +1248,12 @@ LABEL_16:
   }
   return Register; /*0x71cf25*/
 }
-}
 } // namespace gamemd
 
 // 0x71D000
 namespace gamemd {
 AbstractClass * * TerrainClass::ProcessSpawnAnim(unsigned int * a1, AbstractClass * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v3; // ebp
   IUnknown *v4; // edi
@@ -1296,7 +1291,6 @@ AbstractClass * * TerrainClass::ProcessSpawnAnim(unsigned int * a1, AbstractClas
     }
   }
   return 1; /*0x71d137*/
-}
 }
 } // namespace gamemd
 

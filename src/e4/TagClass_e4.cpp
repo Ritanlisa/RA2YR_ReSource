@@ -9,7 +9,6 @@
 namespace gamemd {
 TriggerClass * * TagClass::Destructor(void ** a1, AbstractClass * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   TagTypeClass *v2; // ecx
   int eax5; // eax
@@ -211,14 +210,12 @@ LABEL_45:
   AbstractClass::AnnounceExpiredPointer((AbstractClass *)a1, v22); /*0x6e5212*/
   AbstractClass::DTOR(a1); /*0x6e5219*/
 }
-}
 } // namespace gamemd
 
 // 0x6E6220
 namespace gamemd {
 int TagClass::HasValidHouse()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   _DWORD * v1 = (_DWORD *)this->q0A0; /*0x6e6221*/
@@ -232,14 +229,12 @@ int TagClass::HasValidHouse()
   }
   return 1; /*0x6e6242*/
 }
-}
 } // namespace gamemd
 
 // 0x71ADE0
 namespace gamemd {
 Coord * * TagClass::Unlink()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -268,7 +263,6 @@ Coord * * TagClass::Unlink()
   if ( v4 ) /*0x71ae3a*/
     return (*(int (__thiscall **)(int, _DWORD, int))(*(_DWORD *)v4 + 1156))(v4, 0, 1); /*0x71ae41*/
   return result; /*0x71ae47*/
-}
 }
 } // namespace gamemd
 

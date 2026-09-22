@@ -13,12 +13,10 @@
 namespace gamemd {
 int Terrain::GetTileIndex(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return (*(_DWORD *)(this->q024 + 36 * *(_DWORD *)(this->q030 + 4 * a2)) & 1) != 0
        ? this->q024 + 36 * *(_DWORD *)(this->q030 + 4 * a2)
        : 0;
-}
 }
 } // namespace gamemd
 
@@ -26,12 +24,10 @@ int Terrain::GetTileIndex(int a2)
 namespace gamemd {
 int Terrain::GetTileType(AnimClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return (*(_DWORD *)(this->q034 + 24 * *(_DWORD *)(this->q040 + 4 * (_DWORD)aP1)) & 1) != 0
        ? this->q034 + 24 * *(_DWORD *)(this->q040 + 4 * (_DWORD)aP1)
        : 0;
-}
 }
 } // namespace gamemd
 
@@ -39,7 +35,6 @@ int Terrain::GetTileType(AnimClass * aP1)
 namespace gamemd {
 AbstractClass * * Terrain::PlaceCliffs(int a2, int a3, IUnknown * aP3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ObjectClass *v6; // eax
   AbstractClass *v7; // edi
@@ -431,14 +426,12 @@ LABEL_44:
     }
   }
 }
-}
 } // namespace gamemd
 
 // 0x56C510
 namespace gamemd {
 AbstractClass * * Terrain::ConnectivityGraph()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *nextArrayIndex; // ebp
   void **v7; // esi
@@ -864,14 +857,12 @@ LABEL_48:
     __3_YAXPAX_Z(aP3.NeedsSaveOrLink); /*0x56cb6e*/
   return v81; /*0x56cb57*/
 }
-}
 } // namespace gamemd
 
 // 0x56CB90
 namespace gamemd {
 int Terrain::FloodFillConnectivity(unsigned char * a1, IUnknown * aP2, AbstractClass * aP3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned __int8 *v4; // ebx
   unsigned __int8 *v6; // ebp
@@ -1180,14 +1171,12 @@ LABEL_82:
   }
   return v77; /*0x56d0f0*/
 }
-}
 } // namespace gamemd
 
 // 0x570050
 namespace gamemd {
 AbstractClass * * Terrain::ProcessCellModification(IUnknown * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v2; // ebp
   IUnknown *v3; // edi
@@ -1637,14 +1626,12 @@ LABEL_101:
     }
   }
 }
-}
 } // namespace gamemd
 
 // 0x573540
 namespace gamemd {
 AbstractClass * * Terrain::RecursiveModify(IUnknown * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v2; // ebx
   IUnknown *v3; // edi
@@ -2110,14 +2097,12 @@ LABEL_141:
     }
   }
 }
-}
 } // namespace gamemd
 
 // 0x576770
 namespace gamemd {
 int Terrain::CreateCrater(IUnknown * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v2; // edi
   int i; // ebx
@@ -2300,14 +2285,12 @@ LABEL_64:
   }
   return v10; /*0x5768c0*/
 }
-}
 } // namespace gamemd
 
 // 0x579620
 namespace gamemd {
 VectorClass * * Terrain::SelectTileType(Random * aP0, IUnknown * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ObjectClass *v2; // eax
   Random *v3; // ebp
@@ -2537,14 +2520,12 @@ LABEL_82:
   LOBYTE(aP0) = 1; /*0x579b3a*/
   return GenerateTerrainMap(0, 0, Random_field_0x08_high, (MouseClass *)aP1, (MouseClass *)&aP0, 0) || (_BYTE)aP0; /*0x579b4e*/
 }
-}
 } // namespace gamemd
 
 // 0x5A28C0
 namespace gamemd {
 void Terrain::PlaceTiberiumTrees(ScenarioClass * aP0, int a2, int a3, char a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 *v4; // ebx
   AbstractClass *v8; // esi
@@ -2854,7 +2835,6 @@ LABEL_72:
     __3_YAXPAX_Z(*(void **)&v8->__pad_0[8]); /*0x5a2eb4*/
     __3_YAXPAX_Z(v8); /*0x5a2eba*/
   }
-}
 }
 } // namespace gamemd
 

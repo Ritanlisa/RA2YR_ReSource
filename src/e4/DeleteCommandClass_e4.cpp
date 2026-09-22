@@ -7,11 +7,9 @@
 namespace gamemd {
 void DeleteCommandClass_Undo()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // attributes: thunk
 {
   return UI_Delete(); /*0x537f95*/
-}
 }
 } // namespace gamemd
 

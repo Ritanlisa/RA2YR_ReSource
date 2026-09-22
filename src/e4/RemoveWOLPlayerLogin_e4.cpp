@@ -7,7 +7,6 @@
 namespace gamemd {
 void E4Recv_7AE830::sub_7AE830()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   unsigned int v2 = *(this + 2); /*0x7ae835*/
@@ -51,6 +50,5 @@ void E4Recv_7AE830::sub_7AE830()
     }
     __3_YAXPAX_Z(v3); /*0x7ae8ca*/
   }
-}
 }
 } // namespace gamemd

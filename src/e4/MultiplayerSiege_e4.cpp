@@ -7,7 +7,6 @@
 // 0x5CA680
 int MultiplayerSiege::Read()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char result; // al
 
@@ -28,12 +27,10 @@ int MultiplayerSiege::Read()
   }
   return result; /*0x5ca689*/
 }
-}
 
 // 0x5CA6D0
 int MultiplayerSiege::Write(void ** a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char result; // al
   wchar_t *StringCSF; // eax
@@ -103,12 +100,10 @@ LABEL_12:
   }
   return result; /*0x5ca6e3*/
 }
-}
 
 // 0x5CA800
 AbstractClass * * MultiplayerSiege::ProcessTurn(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AbstractClass *v5; // eax
   int v6; // eax
@@ -182,7 +177,6 @@ LABEL_26:
   if ( Block && v16 ) /*0x5ca969*/
     __3_YAXPAX_Z(Block); /*0x5ca96c*/
   return 1; /*0x5ca974*/
-}
 }
 
 // 0x5CA7E0

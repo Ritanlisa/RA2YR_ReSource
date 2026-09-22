@@ -376,7 +376,6 @@ namespace ra2 { namespace game { int AbstractClass::COMStub_8() {
 } } }
 // 0x414BB0
 namespace ra2 { namespace game { int TechnoClass::SmokeUpdate() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void **v3; // eax
   void **v14; // eax
@@ -591,7 +590,6 @@ LABEL_70:
   }
   return v4; /*0x414d24*/
 }
-} } }
 // 0x417C80
 namespace ra2 { namespace game { int ObjectClass::vt_entry_140(int a1, void* a2, void* a3, void* a4) {
 {
@@ -1073,7 +1071,6 @@ namespace ra2 { namespace game { int AbstractClass::Construct(void* a1) {
 } } }
 // 0x43DA80
 namespace ra2 { namespace game { int FootClass::DrawPlacementPreview() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int (__thiscall **vfptr0)(#377 *); // eax
   int i; // edi
@@ -2648,7 +2645,6 @@ pop     ebx
 add     esp, 11Ch
 retn    8
 */
-} } }
 // 0x4436F0
 namespace ra2 { namespace game { int ObjectClass::HandleRallyPointCommand() {
 {
@@ -3165,10 +3161,8 @@ namespace ra2 { namespace game { int AbstractClass::LoadTheaterSHP() {
 } } }
 // 0x46B270
 namespace ra2 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return this->q130; /*0x46b276*/
-}
 }
 // 0x471F90
 namespace ra2 { namespace game { int ObjectClass::RemoveFromPointerList(int a2) {
@@ -3397,7 +3391,6 @@ namespace ra2 { namespace game { int AbstractClass::readFactoryINI(void* a1, voi
 } } }
 // 0x4915E0
 namespace ra2 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return (*((int (__thiscall **)(BlitTransZRemapXlat_E *, int, int, int, int, int, int, int, _DWORD))this->vfptr + 1))( /*0x49160a*/
            this,
@@ -3409,7 +3402,6 @@ namespace ra2 {
            a7,
            a8,
            0);
-}
 }
 // 0x491610
 namespace ra2 { namespace game { int AbstractClass::resetFactoryState(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9) {
@@ -4008,7 +4000,6 @@ namespace ra2 { namespace game { void TechnoClass::checkBuildLimit() {
 } } }
 // 0x50E010
 namespace ra2 { namespace game { void TechnoClass::Find(int a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v3 = this->slaveManager + 1; /*0x50e01c*/
@@ -4053,11 +4044,9 @@ LABEL_16:
     }
   }
 }
-} } }
 
 // 0x50E1C0
 namespace ra2 { namespace game { void TechnoClass::Process(int a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( a2 ) /*0x50e1cb*/
@@ -4097,7 +4086,6 @@ LABEL_15:
     }
   }
 }
-} } }
 
 // 0x50E380
 namespace ra2 { namespace game { void* AbstractClass::getMovementSpeed(int a2) {
@@ -4287,7 +4275,6 @@ namespace ra2 { namespace game { bool TechnoClass::updateTurretRotation() {
 
 // 0x543330
 namespace ra2 { namespace game { int AbstractClass::ModifyCellTiles(int a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AbstractClass *v2; // edi
   IsometricTileClass v4; // eax
@@ -4472,7 +4459,6 @@ LABEL_45:
   }
   return 1; /*0x543736*/
 }
-} } }
 
 // 0x543990
 namespace ra2 { namespace game { int AbstractClass::COMStub_5(void* a1, int a2) {
@@ -4695,7 +4681,6 @@ retn
 
 // 0x5B3060
 namespace ra2 { namespace game { int ObjectClass::ProcessCloaking() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   ObjectClass::DetectCloaked((int *)this); /*0x5b3067*/
@@ -4895,7 +4880,6 @@ LABEL_5:
   }
   return v2; /*0x5b30d8*/
 }
-} } }
 
 // 0x5B3570
 namespace ra2 { namespace game { int MissionClass::NextMission() {
@@ -5430,7 +5414,6 @@ namespace ra2 { namespace game { int ObjectClass::StepCleanup(void* a2) {
 
 // 0x5F3E70
 namespace ra2 { namespace game { int ObjectClass::DetectCloaked() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   AbstractClass *v3; // edx
@@ -5589,7 +5572,6 @@ LABEL_19:
   }
   return result; /*0x5f413f*/
 }
-} } }
 
 // 0x5F4260
 namespace ra2 { namespace game { int ObjectClass::GetThreatLevel() {
@@ -5631,7 +5613,6 @@ namespace ra2 { namespace game { int ObjectClass::MoveToDirection() {
 
 // 0x5F4520
 namespace ra2 { namespace game { int ObjectClass::HandleSelection() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   #375 *v4; // ebx
@@ -5736,7 +5717,6 @@ LABEL_29:
   LOBYTE(result) = 1; /*0x5f46b6*/
   return result; /*0x5f454e*/
 }
-} } }
 
 // 0x5F4730
 namespace ra2 { namespace game { int ObjectClass::GetPlacementScreenRect() {
@@ -5945,7 +5925,6 @@ namespace ra2 { namespace game { int AbstractClass::IsNotNull() {
 
 // 0x5F5940
 namespace ra2 { namespace game { int ObjectClass::ParachuteDrop() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v1; // edi
   int result; // eax
@@ -6056,7 +6035,6 @@ LABEL_19:
   LOBYTE(result) = 0; /*0x5f5b43*/
   return result; /*0x5f5b36*/
 }
-} } }
 
 // 0x5F5B50
 namespace ra2 { namespace game { int ObjectClass::SetReference(int a1) {
@@ -6324,7 +6302,6 @@ namespace ra2 { namespace game { int ObjectClass::CoordToCell() {
 
 // 0x5F6A70
 namespace ra2 { namespace game { int ObjectClass::CheckGroundHeightDiff() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int GroundHeight; // edi
   int result; // eax
@@ -6366,7 +6343,6 @@ LABEL_6:
     LOBYTE(result) = v2; /*0x5f6b46*/
   return result; /*0x5f6b14*/
 }
-} } }
 
 // 0x5F6B60
 namespace ra2 { namespace game { int ObjectClass::IsBelowScreen() {
@@ -8284,7 +8260,6 @@ namespace ra2 { namespace game { int RadBeam::drawTiberiumPips(int a2, int a3) {
 
 // 0x65A820
 namespace ra2 { namespace game { int ObjectClass::ProcessGroupInput(int a1, int a2, int a3) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   BaseClass *v7; // ecx
   RadioClass **i; // eax
@@ -8360,7 +8335,6 @@ LABEL_23:
   v16[v15] = aP1; /*0x65a95b*/
   return 1; /*0x65a880*/
 }
-} } }
 
 // 0x65AAA0
 namespace ra2 { namespace game { int ObjectClass::ThunkTo636() {
@@ -8430,7 +8404,6 @@ namespace ra2 { namespace game { int AbstractClass::dispatchTeamEvent(int a2, in
 
 // 0x65C4B0
 namespace ra2 { namespace game { int AbstractClass::validateTeamConfig() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ModemGame *v4; // edi
   if ( !this->field_8 ) /*0x65c4b6*/
@@ -8463,7 +8436,6 @@ LABEL_7:
     (*(void (__thiscall **)(RAMFileClass *))(*(_DWORD *)this->__pad_0 + 52))(this); /*0x65c528*/
   return v4; /*0x65c52d*/
 }
-} } }
 
 // 0x65D4D0
 namespace ra2 { namespace game { void* AbstractClass::checkAICondition(int a1) {
@@ -8499,7 +8471,6 @@ namespace ra2 { namespace game { void* ObjectClass::GetSidebarTooltip(int a1) { 
 
 // 0x6AC210
 namespace ra2 { namespace game { void* ObjectClass::GetTooltipText(int a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   CampaignScore *StringCSF; // edi
   wchar_t *v5; // eax
@@ -8579,7 +8550,6 @@ LABEL_4:
   }
   return (wchar_t *)StringCSF; /*0x6ac28f*/
 }
-} } }
 
 // 0x6AC7F0
 namespace ra2 { namespace game { void* ObjectClass::DestructWithRadar(int a2) {
@@ -8887,7 +8857,6 @@ namespace ra2 { namespace game { void* ObjectClass::ComputeDelta(void* a1) {
 
 // 0x6E1440
 namespace ra2 { namespace game { int ObjectClass::Render(int a1, int a2, int a3, int a4) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v8; // esi
   bool v9; // eax
@@ -8913,11 +8882,9 @@ LABEL_5:
   ObjectClass::PreDraw(&DataGlobal_87F7E8); /*0x6e148c*/
   return 1; /*0x6e1491*/
 }
-} } }
 
 // 0x6E15F0
 namespace ra2 { namespace game { int ObjectClass::ReadINIEntry(int a1, int a2, int a3, int a4) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   RandomStruct *v5; // esi
   int *missionTimer_text; // edi
@@ -8962,7 +8929,6 @@ LABEL_10:
   ObjectClass::PreDraw(&DataGlobal_87F7E8); /*0x6e16b2*/
   return 1; /*0x6e16bc*/
 }
-} } }
 
 // 0x6E52F0
 namespace ra2 { namespace game { void* FootClass::processScriptAction(void* a1) {
@@ -9264,7 +9230,6 @@ namespace ra2 { namespace game { void* TechnoClass::GetTurretOffset(void* a1, in
 
 // 0x6F4300
 namespace ra2 { namespace game { void* TechnoClass::Constructor(int a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   wchar_t *v3; // ecx
   void **v5; // edx
@@ -9345,7 +9310,6 @@ LABEL_7:
   }
   return this; /*0x6f44ec*/
 }
-} } }
 
 // 0x6FBFA0
 namespace ra2 { namespace game { int TechnoClass::ExecuteMoveCommand() {
@@ -9738,7 +9702,6 @@ namespace ra2 { namespace game { int TechnoClass::GetDrawHeight() {
 
 // 0x7077C0
 namespace ra2 { namespace game { int ObjectClass::NotifyExpired(void* a1, void* a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v13; // eax
   _WORD *eax49a; // eax
@@ -10008,7 +9971,6 @@ LABEL_118:
   }
   return result; /*0x707ca4*/
 }
-} } }
 
 // 0x707CB0
 namespace ra2 { namespace game { int TechnoClass::CleanupAll(int a1) {
@@ -10755,7 +10717,6 @@ namespace ra2 { namespace game { int TechnoClass::DrawVeterancy() {
 
 // 0x70AA60
 namespace ra2 { namespace game { int TechnoClass::DrawPowerIndicator() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   CampaignScore *v3; // esi
@@ -10871,7 +10832,6 @@ LABEL_6:
   *(_DWORD *)v17[0] = v16; /*0x70ad35*/
   return (int)RenderTextLabel(*(int **)&stru_87C374[44960], (AbstractClass *)aP2, a2, v17); /*0x70ad42*/
 }
-} } }
 
 // 0x70C5B0
 namespace ra2 { namespace game { int ObjectClass::GetShroudByte() {
@@ -10985,7 +10945,6 @@ namespace ra2 { namespace game { int ObjectClass::ResetTimer2() {
 
 // 0x70E4B0
 namespace ra2 { namespace game { int TechnoClass::CalcFlashAlpha(int a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   BuildingTypeClass *result; // eax
 
@@ -11032,7 +10991,6 @@ LABEL_12:
   }
   return result; /*0x70e4d9*/
 }
-} } }
 
 // 0x70F000
 namespace ra2 { namespace game { int TechnoClass::ClearUnknownFlag() {
@@ -11195,7 +11153,6 @@ namespace ra2 { namespace game { void* ObjectClass::UnlinkFromFactory(void* a2) 
 
 // 0x71BDF0
 namespace ra2 { namespace game { int ObjectClass::ProcessFoggedState() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   wchar_t *v2; // eax
   int v4; // ebp
@@ -11267,7 +11224,6 @@ LABEL_15:
   }
   return this; /*0x71bfa8*/
 }
-} } }
 
 // 0x71FFE0
 namespace ra2 { namespace game { int AbstractClass::checkWeaponCooldown(int a2) {
@@ -11428,7 +11384,6 @@ namespace ra2 { namespace game { void* AbstractClass::checkAmmunition(int a1) {
 
 // 0x729AA0
 namespace ra2 { namespace game { void FootClass::Process() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v2 = this->attachedTag; /*0x729aa7*/
@@ -11457,7 +11412,6 @@ LABEL_7:
     }
   }
 }
-} } }
 
 // 0x72A4A0
 namespace ra2 { namespace game { int ObjectClass::DrawTypewriterText(int a1) {
@@ -11613,7 +11567,6 @@ namespace ra2 { namespace game { int TechnoClass::ShouldSkipOccupierDraw(int a1,
 
 // 0x73CEC0
 namespace ra2 { namespace game { int TechnoClass::Draw(void* a1, void* a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   Tactical *v4; // ebx
   AbstractClass *v6; // edi
@@ -11862,7 +11815,6 @@ LABEL_39:
     LOBYTE(v10) = TechnoClass::DrawTargetLine(this); /*0x73d43a*/
   return v10; /*0x73d43f*/
 }
-} } }
 
 // 0x740B10
 namespace ra2 { namespace game { int TechnoClass::updateTargeting() {
@@ -12004,7 +11956,6 @@ namespace ra2 { namespace game { int ObjectClass::Initialize() {
 
 // 0x74D670
 namespace ra2 { namespace game { int ObjectClass::IsCellSuitableForPlacement() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( g_IKnowWhatImDoing > 0 ) /*0x74d680*/
@@ -12057,7 +12008,6 @@ LABEL_10:
   }
   return 0; /*0x74d6eb*/
 }
-} } }
 
 // 0x74F360
 namespace ra2 { namespace game { void IRTTITypeInfo::ClearBuffer() {

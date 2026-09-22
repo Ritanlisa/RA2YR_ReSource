@@ -8,7 +8,6 @@
 namespace gamemd {
 void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char Bool_Overwrite; // al
   int Int_Overwrite; // eax
@@ -213,14 +212,12 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
                               aP3a);
   return 1; /*0x644617*/
 }
-}
 } // namespace gamemd
 
 // 0x644700
 namespace gamemd {
 void* ParticleSystemTypeClass::PowerDrainUpdate(int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   AbstractTypeClass::ProcessPower((char *)this, a2); /*0x644709*/
@@ -236,7 +233,6 @@ void* ParticleSystemTypeClass::PowerDrainUpdate(int * a2)
   Checksummer::Add_float((unsigned int *)a2, this->DamageDelay); /*0x644779*/
   Power::TimerProcess(this->ParticleSystemTypeClass_field_0x2B4); /*0x644787*/
   return Power::TimerProcess(this->ParticleSystemTypeClass_field_0x2B8); /*0x64479a*/
-}
 }
 } // namespace gamemd
 

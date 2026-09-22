@@ -8,7 +8,6 @@
 namespace gamemd {
 void sub_786EF0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char Buffer[260]; // [esp+4h] [ebp-104h] BYREF
 
@@ -57,7 +56,6 @@ LABEL_16:
     ShowDialogConfirm(&word_B77AD0, 0, (int)GameLoop::Thunk, 0); /*0x786f36*/
     return 0; /*0x786f3b*/
   }
-}
 }
 } // namespace gamemd
 

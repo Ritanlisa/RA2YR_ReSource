@@ -9,11 +9,9 @@
 namespace gamemd {
 int Power::Update(int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AbstractClass::ProcessPower((int)this, a2); /*0x43a5d9*/
   return Power::TimerProcess((int)g_CurrentFrame - this->q00C); /*0x43a5f0*/
-}
 }
 } // namespace gamemd
 
@@ -21,7 +19,6 @@ int Power::Update(int * a2)
 namespace gamemd {
 unsigned int * Power::UpdateAll()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // esi
   int j; // esi
@@ -273,14 +270,12 @@ unsigned int * Power::UpdateAll()
   this->q008 = v51; /*0x67cedb*/
   return this; /*0x67ced4*/
 }
-}
 } // namespace gamemd
 
 // 0x68B940
 namespace gamemd {
 void* Power::ComputeHousePowerChecksum(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   Checksum::AddString(a2, (unsigned __int8 *)(this + 5050)); /*0x68b952*/
@@ -396,7 +391,6 @@ void* Power::ComputeHousePowerChecksum(unsigned int * a2)
   Power::TimerProcess(*(_DWORD *)(this + 13608)); /*0x68bc81*/
   Power::TimerProcess(*(_DWORD *)(this + 13612)); /*0x68bc8f*/
   return Power::TimerProcess(*(_DWORD *)(this + 13616)); /*0x68bca2*/
-}
 }
 } // namespace gamemd
 

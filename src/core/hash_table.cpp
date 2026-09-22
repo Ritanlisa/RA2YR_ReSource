@@ -30,7 +30,6 @@ uint32_t Hash::ComputeHashSHA1(const void* data, uint32_t size)
 // 0x4f4410
 int Hash::InsertOrdered(void* table, const void* entry)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   if ( this->vt_slot_44(a2) )
     return 0;
@@ -73,7 +72,6 @@ mov     al, 1
 pop     esi
 retn    4
 */
-}
 
 // ============================================================================
 // SHA1 implementation (simplified — full SHA-1 is ~200 lines)
@@ -117,7 +115,6 @@ void SHA1::Init()
 // 0x69d960
 EditClass * * SHA1::Process(const void* data, uint32_t size)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -204,13 +201,11 @@ loc_69D9D5:                             ; CODE XREF: SHA1__Process+1D↑j
 pop     esi
 retn    8
 */
-}
 
 // IDA 0x69DC00: Compute
 // 0x69d9e0
 int SHA1::Compute(uint8_t digest[20])
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v6; // edx
   unsigned __int16 v7; // cx
@@ -386,7 +381,6 @@ pop     ebx
 add     esp, 58h
 retn    4
 */
-}
 
 // Transform: process one 64-byte block
 // 0x69db30
@@ -514,7 +508,6 @@ static const uint32_t crc32_table[256] = {
 // 0x4a1fb0
 int CRC32::Compute(const void* data, uint32_t size)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x4a1fb0
 {
 
@@ -563,6 +556,5 @@ not     eax
 pop     esi
 retn    4
 */
-}
 
 } // namespace gamemd

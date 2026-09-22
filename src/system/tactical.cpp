@@ -175,7 +175,6 @@ int ZCoordToScreenY(int z_world)
 // 0x6d7560
 void* TacticalClass::RenderIsometric(const RectangleStruct& viewRect, int flags)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned int result; // eax
   int *ScreenRect; // eax
@@ -495,14 +494,12 @@ pop     ebx
 add     esp, 98h
 retn    8
 */
-}
 
 // IDA: 0x480350 -- TacticalClass::CheckCellVisibility
 // Checks if a cell at given world coordinate is visible and processes it.
 // 0x480350
 int TacticalClass::CheckCellVisibility(const Point2D& screen_pos, int flags, bool unk)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int *v7; // edi
   int inited; // eax
@@ -747,14 +744,12 @@ pop     ebx
 add     esp, 0Ch
 retn    0Ch
 */
-}
 
 // IDA: 0x6D7840 -- TacticalClass::DrawMap
 // Main map drawing function. Draws terrain, overlays, and building debris.
 // 0x6d7840
 int TacticalClass::DrawMap(const RectangleStruct& viewRect, RectangleStruct* bounds)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x6d7840
 {
   unsigned int result; // eax
@@ -1214,14 +1209,12 @@ pop     esi
 add     esp, 48h
 retn    8
 */
-}
 
 // IDA: 0x6D7C00 -- TacticalClass::DrawTerrain
 // Draws terrain tiles for all visible cells.
 // 0x6d7c00
 int TacticalClass::DrawTerrain(const RectangleStruct& viewRect)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned int result; // eax
   __int16 v26; // dx
@@ -1583,7 +1576,6 @@ pop     ebx
 add     esp, 4Ch
 retn    8
 */
-}
 
 // IDA: 0x4802A0 -- TacticalClass::DrawCellTerrainOverlay
 // Draws terrain overlay for a specific cell at (cx, cy).
@@ -1602,7 +1594,6 @@ void TacticalClass::DrawCellTerrainOverlay(int cx, int cy, RectangleStruct* boun
 // 0x6d3040
 int TacticalClass::DrawTerrainPartial(const RectangleStruct& rect)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x6d3040
 {
   signed int result; // eax
@@ -1909,7 +1900,6 @@ pop     ebx
 add     esp, 54h
 retn    0Ch
 */
-}
 
 // ============================================================
 // Building drawing functions
@@ -1945,7 +1935,6 @@ Point2D* TacticalClass::CalcBuildingDrawPos(Point2D* out, BuildingClass* buildin
 // 0x4d1890
 void* TacticalClass::DrawBuildings(const RectangleStruct& viewRect)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x4d1890
 {
   int result; // eax
@@ -3229,7 +3218,6 @@ pop     esi
 add     esp, 144h
 retn
 */
-}
 
 // IDA: 0x47F510 -- TacticalClass::DrawBuildingPlacement
 // Draws building placement preview during construction.
@@ -3305,7 +3293,6 @@ void TacticalClass::RenderCellFogOfWar(int cx, int cy)
 // 0x550260
 int TacticalClass::RenderCells()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned __int8 v11; // dl
   unsigned __int8 v12; // al
@@ -4235,7 +4222,6 @@ pop     ebx
 add     esp, 40h
 retn
 */
-}
 
 // ============================================================
 // Viewport management
@@ -4246,7 +4232,6 @@ retn
 // 0x6d8b30
 BuildingTypeClass * * TacticalClass::CalcViewportCells()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned int result; // eax
 
@@ -4363,14 +4348,12 @@ pop     esi
 add     esp, 18h
 retn
 */
-}
 
 // IDA: 0x653760 -- TacticalClass::PixelToCellCheck
 // Converts pixel coordinates to cell coordinates and checks validity.
 // 0x653760
 int TacticalClass::PixelToCellCheck(int * a1, int * a2) const
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v2 = a2[1];
@@ -4456,14 +4439,12 @@ add     esp, 14h
 retn    8
 */
     return false; // TODO stub - translate quarantined IDA block above
-}
 
 // IDA: 0x656750 -- TacticalClass::ScreenToCellLookup
 // Converts screen coordinates to cell index lookup.
 // 0x656750
 int TacticalClass::ScreenToCellLookup(const Point2D& screen) const
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   _DWORD v14[3]; // [esp+18h] [ebp-Ch] BYREF
@@ -4633,7 +4614,6 @@ add     esp, 14h
 retn    0Ch
 */
     return {}; // TODO stub - translate quarantined IDA block above
-}
 
 // ============================================================
 // View control
@@ -4644,7 +4624,6 @@ retn    0Ch
 // 0x483e30
 int TacticalClass::SetView(int view_x, int view_y, int view_width, int view_height)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 v13; // cx
   __int16 v14; // dx
@@ -4655,7 +4634,6 @@ int TacticalClass::SetView(int view_x, int view_y, int view_width, int view_heig
   __int16 v19; // cx
   int v21; // [esp+4h] [ebp-14h] BYREF
   int v22; // [esp+8h] [ebp-10h] BYREF
-
   int v7 = a2;
   if ( a2 )
   {
@@ -4895,14 +4873,12 @@ pop     esi
 add     esp, 14h
 retn    18h
 */
-}
 
 // IDA: 0x4A8960 -- TacticalClass::SetViewDimensions
 // Sets viewport dimensions and recalculates visible area.
 // 0x4a8960
 AbstractClass * * TacticalClass::SetViewDimensions(int width, int height)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x4a8960
 {
 
@@ -5193,14 +5169,12 @@ pop     ebx
 add     esp, 1Ch
 retn    4
 */
-}
 
 // IDA: 0x537620 -- TacticalClass::InitView
 // Initializes the tactical view for first use.
 // 0x537620
 int TacticalClass::InitView()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *result; // eax
   int GroundHeight; // [esp+Ch] [ebp-4h]
@@ -5253,14 +5227,12 @@ loc_537698:                             ; CODE XREF: TacticalClass__InitView+62â
 add     esp, 10h
 retn    4
 */
-}
 
 // IDA: 0x6D5F60 -- TacticalClass::SetViewportPosition
 // Sets the viewport scroll position.
 // 0x6d5f60
 int TacticalClass::SetViewportPosition(int x, int y)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v4; // eax
   int v5; // ecx
@@ -5341,14 +5313,12 @@ pop     esi
 add     esp, 8
 retn    4
 */
-}
 
 // IDA: 0x6D2540 -- TacticalClass::ScrollViewport
 // Scrolls the viewport by a delta amount.
 // 0x6d2540
 AbstractClass * * TacticalClass::ScrollViewport(int dx, int dy)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x6d2540
 {
   unsigned int Ticks; // eax
@@ -5654,7 +5624,6 @@ pop     ebx
 add     esp, 14h
 retn
 */
-}
 
 // ============================================================
 // Visibility / fog
@@ -5747,7 +5716,6 @@ retn
 // 0x74d490
 void TacticalClass::Render(ObjectClass* obj)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 *v8; // eax
   if ( !this->field40 )
@@ -5888,7 +5856,6 @@ pop     edi
 add     esp, 14h
 retn
 */
-}
 
 // IDA: 0x4F45B0 -- TacticalClass::RenderFrame
 // Renders a complete frame. Called each game tick.
@@ -5918,7 +5885,6 @@ void TacticalClass::RenderFrame()
 // 0x6d9ef0
 int TacticalClass::AddToDrawQueue(ObjectClass* obj, int screen_x, int screen_y)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   float v4 = this->floats;
@@ -5980,7 +5946,6 @@ xor     al, al
 pop     esi
 retn    0Ch
 */
-}
 
 // ============================================================
 // Helper functions
@@ -6040,7 +6005,6 @@ void TacticalClass::InterpolateView()
 // 0x6d2280
 int TacticalClass::TransformPixel(const Point2D& pixel) const
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v3; // esi
@@ -6143,14 +6107,12 @@ add     esp, 18h
 retn    8
 */
     return {}; // TODO stub - translate quarantined IDA block above
-}
 
 // IDA: 0x631E50 -- TacticalClass::InterpolateColor
 // Interpolates between two colors for fade effects.
 // 0x631e50
 int TacticalClass::InterpolateColor(uint32_t elapsed_ms)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -6219,14 +6181,12 @@ mov     [ecx+0Ch], esi
 pop     esi
 retn    4
 */
-}
 
 // IDA: 0x631EE0 -- TacticalClass::DecrementCounter
 // Decrements a frame counter.
 // 0x631ee0
 int TacticalClass::DecrementCounter(uint32_t delta)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v2 = this->field38 - a2;
@@ -6254,7 +6214,6 @@ loc_631EFE:                             ; CODE XREF: TacticalClass__DecrementCou
 xor     al, al
 retn    4
 */
-}
 
 // IDA: 0x70F0B0 -- TacticalClass::MapSpecialDrawMode
 // Handles special map drawing modes (e.g., waypoint mode).
@@ -6272,7 +6231,6 @@ void TacticalClass::MapSpecialDrawMode()
 // 0x653850
 int TacticalClass::MouseInput(int x, int y, int buttons)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -6478,14 +6436,12 @@ pop     ebp
 pop     ebx
 retn    8
 */
-}
 
 // IDA: 0x6539D0 -- TacticalClass::ProcessMouseClick
 // Handles mouse click events in the tactical view.
 // 0x6539d0
 int TacticalClass::ProcessMouseClick(int x, int y)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x6539d0
 {
   int ClosestEnemy; // eax
@@ -7272,7 +7228,6 @@ pop     ebx
 add     esp, 44h
 retn    0Ch
 */
-}
 
 // ============================================================
 // Original stub implementations upgraded

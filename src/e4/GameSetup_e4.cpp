@@ -5,7 +5,6 @@
 // 0x60D320
 int GameSetup::LookupDialogHash()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   GameSetup *v4 = this; /*0x60d326*/
@@ -26,12 +25,10 @@ int GameSetup::LookupDialogHash()
   else
     return 0; /*0x60d366*/
 }
-}
 
 // 0x698F90
 AbstractClass * * GameSetup::WriteINI(CCINIClass * aP1, unsigned char * Block)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   INIClass *v4; // edx
   INIClass *v5; // eax
@@ -83,5 +80,4 @@ AbstractClass * * GameSetup::WriteINI(CCINIClass * aP1, unsigned char * Block)
   }
   while ( v9 < 8 ); /*0x69908e*/
   return result; /*0x699090*/
-}
 }

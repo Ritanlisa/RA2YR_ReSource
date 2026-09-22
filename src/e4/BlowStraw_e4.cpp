@@ -10,7 +10,6 @@
 namespace gamemd {
 int BlowStraw_29::Seek(TabClass * aP1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ScrollClass *v8; // eax
   int i; // edi
@@ -154,14 +153,12 @@ LABEL_6:
   ((CountdownTimer *)((char *)this + 5447)).UpdateDisplay(0); /*0x6d099d*/
   return SidebarClass::UpdateStrips((char *)this, aP1, a2); /*0x6d09af*/
 }
-}
 } // namespace gamemd
 
 // 0x731AF0
 namespace gamemd {
 CellStruct * * sub_731AF0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   wchar_t *result; // eax
   wchar_t *StringCSF; // eax
@@ -209,7 +206,6 @@ LABEL_5:
   if ( HouseClass_Player ) /*0x731bad*/
     v7 = *((_DWORD *)HouseClass_Player + 22549); /*0x731baf*/
   return (wchar_t *)MessageListClass::AddMessage(g_GameNetworkObject, 0, 0, v6, v7, 16454, 240, 1); /*0x731b43*/
-}
 }
 } // namespace gamemd
 

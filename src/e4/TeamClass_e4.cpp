@@ -20,7 +20,6 @@
 namespace gamemd {
 int TeamClass::CheckCohesion()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v2 = (*(int (__thiscall **)(#374 *))(this->owner)(this); /*0x4d9e78*/
@@ -54,17 +53,14 @@ int TeamClass::CheckCohesion()
     return AbstractClass::COMStub_Return0_38(this); /*0x4d9f5d*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x4E0080
 namespace gamemd {
 int TeamClass::HasAnyMemberFlagged()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return this->__pad_68F || this->q690 || *(this + 1681); /*0x4e00a0*/
-}
 }
 } // namespace gamemd
 
@@ -72,7 +68,6 @@ int TeamClass::HasAnyMemberFlagged()
 namespace gamemd {
 int TeamClass::DisbandTeam(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int i; // eax
@@ -105,14 +100,12 @@ LABEL_7:
   FogOfWar::Render((int **)&DataGlobal_87F7E8); /*0x577c76*/
   return this->computeDistanceSquared(2); /*0x577c84*/
 }
-}
 } // namespace gamemd
 
 // 0x62A260
 namespace gamemd {
 int TeamClass::DeployUnit(int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char result; // al
   _DWORD *Value; // eax
@@ -217,14 +210,12 @@ LABEL_12:
   }
   return result; /*0x62a27a*/
 }
-}
 } // namespace gamemd
 
 // 0x6339B0
 namespace gamemd {
 int TeamClass::GetLeaderIndex()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   BuildingClass *v1 = this->q21C; /*0x6339b0*/
@@ -234,14 +225,12 @@ int TeamClass::GetLeaderIndex()
   else
     return v2; /*0x6339d1*/
 }
-}
 } // namespace gamemd
 
 // 0x6340B0
 namespace gamemd {
 AbstractClass * * TeamClass::DestroyAllMembers(TechnoClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ObjectClass *v5; // edi
   ObjectClass *v6; // ecx
@@ -357,14 +346,12 @@ LABEL_9:
     }
   }
 }
-}
 } // namespace gamemd
 
 // 0x635A40
 namespace gamemd {
 int TeamClass::FindByMemberType(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int Type; // esi
@@ -438,14 +425,12 @@ LABEL_19:
   }
   return result; /*0x635b54*/
 }
-}
 } // namespace gamemd
 
 // 0x635C10
 namespace gamemd {
 int TeamClass::GetMember()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   unsigned __int8 v11; // dl
@@ -510,14 +495,12 @@ LABEL_16:
   }
   return result; /*0x635c60*/
 }
-}
 } // namespace gamemd
 
 // 0x635DB0
 namespace gamemd {
 int TeamClass::Reset(ObjectClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // eax
 
@@ -532,14 +515,12 @@ int TeamClass::Reset(ObjectClass * aP1)
   }
   return i; /*0x635de2*/
 }
-}
 } // namespace gamemd
 
 // 0x636120
 namespace gamemd {
 TechnoClass * * TeamClass::RemoveAllMembers()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int Value; // eax
   int result; // eax
@@ -621,14 +602,12 @@ TechnoClass * * TeamClass::RemoveAllMembers()
   *(_BYTE *)(this + 153) = 0; /*0x6362ff*/
   return result; /*0x636306*/
 }
-}
 } // namespace gamemd
 
 // 0x6367B0
 namespace gamemd {
 int TeamClass::UpdateBuildQueue(AbstractClass * aP1, TechnoClass * aP2, TechnoClass * aP3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   TechnoClass *v4; // esi
   int result; // eax
@@ -742,14 +721,12 @@ LABEL_13:
   }
   return result; /*0x63696c*/
 }
-}
 } // namespace gamemd
 
 // 0x636980
 namespace gamemd {
 TeamClass * * TeamClass::ProcessScriptActions(unsigned int * a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   _DWORD **v9; // edx
@@ -856,14 +833,12 @@ LABEL_13:
   }
   return result; /*0x636b38*/
 }
-}
 } // namespace gamemd
 
 // 0x636B50
 namespace gamemd {
 CampaignClass * * TeamClass::Cleanup(BuildingClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v3; // ebx
   int v4; // eax
@@ -960,14 +935,12 @@ LABEL_4:
   }
   return result; /*0x636ccc*/
 }
-}
 } // namespace gamemd
 
 // 0x6E52A0
 namespace gamemd {
 void * TeamClass::FindOrCreate()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   CCINIClass *v3; // edx
   TagClass *result; // eax
@@ -998,14 +971,12 @@ LABEL_5:
   }
   return result; /*0x6e52db*/
 }
-}
 } // namespace gamemd
 
 // 0x6E53A0
 namespace gamemd {
 int TeamClass::Update_0(int aP1, AbstractClass * aP2, IUnknown * aP3, AbstractClass * aP4, AbstractClass * aP5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   TagTypeClass *v6; // edx
   char v7; // bl
@@ -1089,14 +1060,12 @@ LABEL_14:
   }
   return v7; /*0x6e554b*/
 }
-}
 } // namespace gamemd
 
 // 0x6E8DE0
 namespace gamemd {
 void TeamClass::Destructor(void ** this, AbstractClass * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int edi1; // edi
   int ecx2; // ecx
@@ -1236,14 +1205,12 @@ void TeamClass::Destructor(void ** this, AbstractClass * a2)
   }
   AbstractClass::DTOR(this); /*0x6e903f*/
 }
-}
 } // namespace gamemd
 
 // 0x6E9140
 namespace gamemd {
 void TeamClass::Update(TechnoClass * aP0, unsigned int * a1, int j)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int *countObjects; // ebp
   int jj; // edi
@@ -1954,14 +1921,12 @@ LABEL_74:
     }
   }
 }
-}
 } // namespace gamemd
 
 // 0x6EA3E0
 namespace gamemd {
 int TeamClass::UpdateReadinessState()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // edi
 
@@ -2020,14 +1985,12 @@ LABEL_14:
     (*(void (__thiscall **)(void *, int))(this->NeedsSaveOrLink)(this, 1); /*0x6ea4de*/
   return 0; /*0x6ea47c*/
 }
-}
 } // namespace gamemd
 
 // 0x6EA870
 namespace gamemd {
 int TeamClass::LiberateMember_Start(IUnknown * aP1, unsigned int a3, AbstractClass * aP3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   CellClass *v5; // eax
   #375 *v7; // ecx
@@ -2155,14 +2118,12 @@ int TeamClass::LiberateMember_Start(IUnknown * aP1, unsigned int a3, AbstractCla
   this->needsToDisappear = 1; /*0x6eaa77*/
   return 1; /*0x6ea88a*/
 }
-}
 } // namespace gamemd
 
 // 0x6EAA90
 namespace gamemd {
 TeamTypeClass * * TeamClass::RecruitMember(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   TeamClass *v2; // edi
   TechnoClass *v3; // ebx
@@ -2329,14 +2290,12 @@ TeamTypeClass * * TeamClass::RecruitMember(int a2)
   TeamClass::AddMember((int)v2, (IUnknown *)v3, 0); /*0x6eac36*/
   return 1; /*0x6eac3b*/
 }
-}
 } // namespace gamemd
 
 // 0x6EAEE0
 namespace gamemd {
 AbstractClass * * TeamClass::FindClosestEnemy(AbstractClass * aP1, AbstractClass * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AbstractClass *v4; // esi
   IUnknown *v13; // eax
@@ -2550,14 +2509,12 @@ AbstractClass * * TeamClass::FindClosestEnemy(AbstractClass * aP1, AbstractClass
   }
   return v3; /*0x6eb187*/
 }
-}
 } // namespace gamemd
 
 // 0x6EB490
 namespace gamemd {
 void* TeamClass::AttackCoordinator()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *Entry; // eax
   int v19; // [esp+14h] [ebp-10h] BYREF
@@ -2704,14 +2661,12 @@ LABEL_67:
     goto LABEL_72; /*0x6eb859*/
   return (char)Entry; /*0x6eb862*/
 }
-}
 } // namespace gamemd
 
 // 0x6EBAD0
 namespace gamemd {
 AbstractClass * * TeamClass::UpdateMembers()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   char v11 = 1; /*0x6ebad7*/
@@ -2862,14 +2817,12 @@ LABEL_87:
     }
   }
 }
-}
 } // namespace gamemd
 
 // 0x6EBF50
 namespace gamemd {
 int TeamClass::ProcessMemberPositions()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char result; // al
 
@@ -2942,14 +2895,12 @@ int TeamClass::ProcessMemberPositions()
   }
   return result; /*0x6ebf6f*/
 }
-}
 } // namespace gamemd
 
 // 0x6EC5A0
 namespace gamemd {
 int TeamClass::PowerDrainUpdate(int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   AbstractClass::ProcessPower((#378 *)this); /*0x6ec5a9*/
@@ -3031,14 +2982,12 @@ int TeamClass::PowerDrainUpdate(int * a2)
   Power::FlagProcess(a2, v25); /*0x6ec709*/
   return Checksummer::Add_Buffer((unsigned int *)a2, (unsigned __int8 *)(this + 136), 24); /*0x6ec71e*/
 }
-}
 } // namespace gamemd
 
 // 0x6EC7D0
 namespace gamemd {
 void TeamClass::MoveTeamToWaypoint(ScriptClass * aP1, TeamClass * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int **v3; // ebp
   FootClass *v4; // esi
@@ -3127,7 +3076,6 @@ void TeamClass::MoveTeamToWaypoint(ScriptClass * aP1, TeamClass * aP2)
     }
   }
   TeamClass::UpdateMembers((int)v3); /*0x6ec98b*/
-}
 }
 } // namespace gamemd
 

@@ -14,7 +14,6 @@
 namespace gamemd {
 int Voxel::BuildIndexTable()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 v5; // bx
   char v12; // [esp+8h] [ebp-18h]
@@ -83,14 +82,12 @@ int Voxel::BuildIndexTable()
   }
   return 1; /*0x748340*/
 }
-}
 } // namespace gamemd
 
 // 0x754510
 namespace gamemd {
 AbstractClass * * Voxel::RenderFrame()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD ***v13; // esi
   _DWORD ***v16; // edi
@@ -212,14 +209,12 @@ AbstractClass * * Voxel::RenderFrame()
   qmemcpy(this, v25, 0x18u); /*0x75470f*/
   return this; /*0x754711*/
 }
-}
 } // namespace gamemd
 
 // 0x754CB0
 namespace gamemd {
 int Voxel::Projection_Setup()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -460,14 +455,12 @@ int Voxel::Projection_Setup()
   dword_B4515C = 0; /*0x755978*/
   return result; /*0x75591d*/
 }
-}
 } // namespace gamemd
 
 // 0x755DB0
 namespace gamemd {
 AbstractClass * * Voxel::SortDepth(ObjectClass * aP1, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   CCINIClass *v5; // eax
   CCINIClass *v6; // eax
@@ -821,14 +814,12 @@ LABEL_70:
   (*(void (__thiscall **)(ObjectClass *))(*(_DWORD *)aP1->__pad_0 + 52))(aP1); /*0x75611b*/
   return 0; /*0x755f94*/
 }
-}
 } // namespace gamemd
 
 // 0x756590
 namespace gamemd {
 int Voxel::ProcessColor(unsigned int * a2, float * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned __int8 v6; // dl
   unsigned __int8 v16; // [esp+14h] [ebp-40h]
@@ -897,14 +888,12 @@ int Voxel::ProcessColor(unsigned int * a2, float * a3)
     v13 |= 8u; /*0x75683b*/
   return funcs_756843[v13]((int)v19); /*0x75684d*/
 }
-}
 } // namespace gamemd
 
 // 0x75C240
 namespace gamemd {
 void* Voxel::DrawHelper(IUnknown * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v3; // ebx
   BuildingTypeClass *v4; // ecx
@@ -1069,14 +1058,12 @@ void* Voxel::DrawHelper(IUnknown * aP1)
     return 1; /*0x75c5f9*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x75EDF0
 namespace gamemd {
 int Voxel::BlendShadowColor(int a2, WaveClass * aP2, int arg8, unsigned short * a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -1111,14 +1098,12 @@ int Voxel::BlendShadowColor(int a2, WaveClass * aP2, int arg8, unsigned short * 
       | (v10 >> g_CellDirectionOffsets[5972] << g_CellDirectionOffsets[5968]);
   return result; /*0x75ef1c*/
 }
-}
 } // namespace gamemd
 
 // 0x75F140
 namespace gamemd {
 int Voxel::loadSectionData()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -1150,14 +1135,12 @@ int Voxel::loadSectionData()
   *(this + 142) = result; /*0x75f21a*/
   return result; /*0x75f220*/
 }
-}
 } // namespace gamemd
 
 // 0x75F4C0
 namespace gamemd {
 CellStruct * * Voxel::renderSection(ObjectClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ObjectClass *v3; // eax
   ObjectClass *v8; // edx
@@ -1182,14 +1165,12 @@ CellStruct * * Voxel::renderSection(ObjectClass * aP1)
   }
   return v6; /*0x75f530*/
 }
-}
 } // namespace gamemd
 
 // 0x75FA90
 namespace gamemd {
 void Voxel::ShadowCalc(WaveClass * aP1, int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   CCINIClass *v16; // ecx
   unsigned __int16 *v20; // ebx
@@ -1498,14 +1479,12 @@ void Voxel::ShadowCalc(WaveClass * aP1, int * a2)
     }
   }
 }
-}
 } // namespace gamemd
 
 // 0x760190
 namespace gamemd {
 int Voxel::BlendColor(int a2, WaveClass * aP2, int arg8, unsigned short * a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned __int16 v7; // dx
   int result; // eax
@@ -1543,14 +1522,12 @@ int Voxel::BlendColor(int a2, WaveClass * aP2, int arg8, unsigned short * a4)
       | (v9 >> g_CellDirectionOffsets[5956] << g_CellDirectionOffsets[5952]);
   return result; /*0x7602d3*/
 }
-}
 } // namespace gamemd
 
 // 0x7609E0
 namespace gamemd {
 AbstractClass * * Voxel::FaceDraw(unsigned int * a1, WaveClass * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   WaveClass *v3; // ebx
   unsigned int SamplePosition; // edi
@@ -1747,14 +1724,12 @@ AbstractClass * * Voxel::FaceDraw(unsigned int * a1, WaveClass * aP2)
     }
   }
 }
-}
 } // namespace gamemd
 
 // 0x7610F0
 namespace gamemd {
 void* Voxel::FaceBlit()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v6; // eax
   MouseClass *v7; // edx
@@ -1889,14 +1864,12 @@ void* Voxel::FaceBlit()
     }
   }
 }
-}
 } // namespace gamemd
 
 // 0x761640
 namespace gamemd {
 int Voxel::SectionProject(int * a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -2109,14 +2082,12 @@ int Voxel::SectionProject(int * a2, int a3)
   qmemcpy(this + 118, (const void *)(*(this + 117) + 928), 0x18u); /*0x762049*/
   return result; /*0x76204b*/
 }
-}
 } // namespace gamemd
 
 // 0x762070
 namespace gamemd {
 AbstractClass * * Voxel::LightRender(AbstractClass ** a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AbstractClass *v6; // eax
   AbstractClass *v8; // edx
@@ -2391,14 +2362,12 @@ AbstractClass * * Voxel::LightRender(AbstractClass ** a2, int a3)
   qmemcpy(this + 118, (const void *)(*(this + 117) + 928), 0x18u); /*0x762aca*/
   return result; /*0x762acc*/
 }
-}
 } // namespace gamemd
 
 // 0x762AF0
 namespace gamemd {
 DynamicVectorClass * * Voxel::TransformMatrix()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v71; // [esp+20h] [ebp-1Ch] BYREF
   _BYTE v75[12]; // [esp+30h] [ebp-Ch] BYREF
@@ -2585,14 +2554,12 @@ LABEL_22:
   *(_DWORD *)(v43 + 28) = v42; /*0x762f50*/
   return Voxel::FaceBlit(this); /*0x762eb3*/
 }
-}
 } // namespace gamemd
 
 // 0x763330
 namespace gamemd {
 int Voxel::freeSectionMemory(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v3 = this->q008; /*0x763333*/
@@ -2610,14 +2577,12 @@ int Voxel::freeSectionMemory(unsigned int * a2)
   *(_DWORD *)(v7 + 4 * v6) = *a2; /*0x763378*/
   return 1; /*0x763361*/
 }
-}
 } // namespace gamemd
 
 // 0x7DF9C0
 namespace gamemd {
 int Voxel::FacePixelBuffer(int * a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   _BYTE *i; // edi
@@ -2705,14 +2670,12 @@ int Voxel::FacePixelBuffer(int * a1)
   while ( BYTE1(v3) ); /*0x7dfa51*/
   return result; /*0x7dfa55*/
 }
-}
 } // namespace gamemd
 
 // 0x7DFAE0
 namespace gamemd {
 int Voxel::FacePixelBufferEx(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   unsigned __int8 *v12; // edi
@@ -2799,14 +2762,12 @@ int Voxel::FacePixelBufferEx(int a1)
   while ( BYTE1(v3) ); /*0x7dfb72*/
   return result; /*0x7dfb76*/
 }
-}
 } // namespace gamemd
 
 // 0x7DFC00
 namespace gamemd {
 int Voxel::FacePixelBuffer3(int * a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   char *i; // edi
@@ -2892,7 +2853,6 @@ int Voxel::FacePixelBuffer3(int * a1)
   }
   while ( BYTE1(v3) ); /*0x7dfc94*/
   return result; /*0x7dfc98*/
-}
 }
 } // namespace gamemd
 

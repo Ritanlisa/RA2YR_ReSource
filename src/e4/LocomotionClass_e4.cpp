@@ -7,7 +7,6 @@
 // 0x4AF540
 int LocomotionClass::Initialize()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   RateTimer *v2; // ecx
   LocomotionClass::Init((_DWORD *)this); /*0x4af543*/
@@ -40,12 +39,10 @@ int LocomotionClass::Initialize()
   *(_DWORD *)(this + 24) = &off_7E7E8C; /*0x4af5cf*/
   return this; /*0x4af5d8*/
 }
-}
 
 // 0x4C54A0
 void * LocomotionClass::UpdateAll()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   wchar_t *result; // eax
   int i; // esi
@@ -63,12 +60,10 @@ void * LocomotionClass::UpdateAll()
   }
   return result; /*0x4c54d5*/
 }
-}
 
 // 0x4CFA70
 int LocomotionClass::CheckBridgeBlock()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( (*(int (__thiscall **)(_DWORD))(*this->LinkedTo + 388))(this->LinkedTo) == 7 /*0x4cfa8e*/
@@ -98,12 +93,10 @@ int LocomotionClass::CheckBridgeBlock()
   }
   return v2; /*0x4cfadc*/
 }
-}
 
 // 0x4DC760
 int LocomotionClass::GetSpeedMultiplier()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   LocomotionClass *v1 = this->q5D4; /*0x4dc760*/
@@ -112,12 +105,10 @@ int LocomotionClass::GetSpeedMultiplier()
   else
     return *(double *)(this + 1328); /*0x4dc77e*/
 }
-}
 
 // 0x513C20
 int LocomotionClass::ProcessData()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   LocomotionClass::Init((_DWORD *)this); /*0x513c24*/
   *(_DWORD *)(this + 24) = g_ScoreDisplayState1; /*0x513c34*/
@@ -142,12 +133,10 @@ int LocomotionClass::ProcessData()
   this->vtable2 = &vt_HoverLocomotionClass; /*0x513c97*/
   return this; /*0x513ca0*/
 }
-}
 
 // 0x54AC40
 int LocomotionClass::Update()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   LocomotionClass::Init((_DWORD *)this); /*0x54ac46*/
@@ -178,12 +167,10 @@ int LocomotionClass::Update()
   ((FacingClass *)((char *)this + 84)).Set_SyncLog((char *)(this + 84), &v4); /*0x54aced*/
   return this; /*0x54acf4*/
 }
-}
 
 // 0x55A6C0
 unsigned int * LocomotionClass::Init()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   this->Owner = 0; /*0x55a6c6*/
   this->LinkedTo = 0; /*0x55a6c9*/
@@ -194,17 +181,14 @@ unsigned int * LocomotionClass::Init()
   this->vtable2 = &vt_LocomotionClass; /*0x55a6db*/
   return this; /*0x55a6e2*/
 }
-}
 
 // 0x55A6F0
 void LocomotionClass::Construct()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   *this = &LocomotionClass::`vftable'; /*0x55a6f0*/
   this->vtable2 = &vt_LocomotionClass; /*0x55a6f6*/
   this->LinkedTo = 0; /*0x55a6fd*/
-}
 }
 
 // 0x5172F0

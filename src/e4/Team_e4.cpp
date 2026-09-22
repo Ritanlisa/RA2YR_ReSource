@@ -34,7 +34,6 @@
 namespace gamemd {
 void Team_Start()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char result; // al
   HWND Dialog; // edi
@@ -112,14 +111,12 @@ LABEL_13:
   }
   return result; /*0x5611d9*/
 }
-}
 } // namespace gamemd
 
 // 0x5D26C0
 namespace gamemd {
 int Team::ReleaseAll(ObjectClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -138,14 +135,12 @@ int Team::ReleaseAll(ObjectClass * aP1)
   }
   return result; /*0x5d26e7*/
 }
-}
 } // namespace gamemd
 
 // 0x6219D0
 namespace gamemd {
 void sub_6219D0(int * a1, int a2, int a3, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -241,14 +236,12 @@ void sub_6219D0(int * a1, int a2, int a3, int a4)
   }
   return result; /*0x621b6c*/
 }
-}
 } // namespace gamemd
 
 // 0x634B20
 namespace gamemd {
 Game * * E4Recv_634B20::sub_634B20()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // [esp+10h] [ebp-90h]
   int j; // [esp+18h] [ebp-88h]
@@ -311,14 +304,12 @@ Game * * E4Recv_634B20::sub_634B20()
     }
   }
 }
-}
 } // namespace gamemd
 
 // 0x637640
 namespace gamemd {
 _UNKNOWN ** E4Recv_637640::sub_637640()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _UNKNOWN **result; // eax
   _UNKNOWN **v5; // [esp+Ch] [ebp-4h] BYREF
@@ -365,14 +356,12 @@ _UNKNOWN ** E4Recv_637640::sub_637640()
     g_ScriptActionPool = 0; /*0x637740*/
   return result; /*0x637747*/
 }
-}
 } // namespace gamemd
 
 // 0x638B70
 namespace gamemd {
 void sub_638B70(int * a1, int a2, char a3, char a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( a2 != 11 ) /*0x638b79*/
@@ -404,17 +393,14 @@ LABEL_9:
   }
   return (_WORD)v6 == (_WORD)v8 && HIWORD(v12) == HIWORD(v11); /*0x638b89*/
 }
-}
 } // namespace gamemd
 
 // 0x65AD30
 namespace gamemd {
 int Team::GetMember(AbstractClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return *(_DWORD *)(this->q0E4 + 4 * (_DWORD)aP1); /*0x65ad3d*/
-}
 }
 } // namespace gamemd
 
@@ -422,7 +408,6 @@ int Team::GetMember(AbstractClass * aP1)
 namespace gamemd {
 int Team::AllMembersValid()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *i; // ecx
 
@@ -437,14 +422,12 @@ int Team::AllMembersValid()
   }
   return 1; /*0x65ae51*/
 }
-}
 } // namespace gamemd
 
 // 0x63A1B0
 namespace gamemd {
 void sub_63A1B0(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   wchar_t *StringCSF; // eax
 
@@ -468,14 +451,12 @@ LABEL_7:
     goto LABEL_7; /*0x63a1f7*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x76ED10
 namespace gamemd {
 bool Team_Start_76ED10()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int State; // eax
   wchar_t *StringCSF; // eax
@@ -533,14 +514,12 @@ bool Team_Start_76ED10()
   SelectionInitializeWOL((Selection_WorldDominationTour *)&v10[0].ScoreScreen_field_0x1C); /*0x76ee9f*/
   return v7; /*0x76ed22*/
 }
-}
 } // namespace gamemd
 
 // 0x7AFAD0
 namespace gamemd {
 void Team_Start_7AFAD0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char **v2; // eax
   char **v3; // esi
@@ -569,7 +548,6 @@ void Team_Start_7AFAD0()
       return 3; /*0x7afb64*/
   }
   return 0; /*0x7afb34*/
-}
 }
 } // namespace gamemd
 

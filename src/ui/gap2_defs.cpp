@@ -23,10 +23,8 @@
 
 // 0x40D280
 namespace gamemd {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return this->q5564; /*0x40d286*/
-}
 }
 // 0x40D290
 namespace gamemd { void* MouseClass::InitMouse(int a1) {
@@ -621,7 +619,6 @@ namespace gamemd { void* DropListClass::GetItemText(void* a1) {
 } }
 // 0x4C3420
 namespace gamemd { int DropListClass::SetItemText(int a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *Instance; // ebx
 
@@ -683,7 +680,6 @@ LABEL_11:
   }
   return 1; /*0x4c3529*/
 }
-} }
 // 0x4C3570
 namespace gamemd { int DropListClass::Close() {
 {
@@ -732,7 +728,6 @@ namespace gamemd { void* GadgetClass::QueryInterface(int a2) {
 } }
 // 0x5005B0
 namespace gamemd { int SidebarClass::MarkTabForRebuild(int a1, int a2, int a3) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char result; // al
 
@@ -768,7 +763,6 @@ LABEL_3:
   }
   return result; /*0x5005e0*/
 }
-} }
 // 0x500700
 namespace gamemd { int SidebarClass::getTypeProductionCount(int a1, int a2, int a3) {
 {
@@ -1579,7 +1573,6 @@ namespace gamemd { int MouseClass::HandleClick() {
 } }
 // 0x5BDF70
 namespace gamemd { int MouseClass::LoadGameAssets() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   LPSTREAM v3; // esi
   int result; // eax
@@ -2058,10 +2051,8 @@ LABEL_99:
   }
   return result; /*0x5be6b8*/
 }
-} }
 // 0x5BE6D0
 namespace gamemd { int MouseClass::DrawCursor() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   MouseClass *v2; // esi
   HRESULT result; // eax
@@ -2244,7 +2235,6 @@ LABEL_29:
   }
   return result; /*0x5be831*/
 }
-} }
 // 0x5BE9B0
 namespace gamemd { void* MouseClass::drawCursor(int a1) {
 {
@@ -2365,7 +2355,6 @@ namespace gamemd { void MessageListClass::Init(int a1, int a2, int a3, int a4, i
 } }
 // 0x5D3BA0
 namespace gamemd { int MessageListClass::AddMessage(void* a1, int a2, void* a3, int a4, int a5, int a6, int a7) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AbstractClass *Instance; // edi
   ObjectClass *v11; // ebx
@@ -2529,7 +2518,6 @@ LABEL_38:
   }
   return (int)v23->__pad_0; /*0x5d3bc5*/
 }
-} }
 // 0x60CBA0
 namespace gamemd { int CampaignScore::LookupDialogHash() {
 {
@@ -2703,7 +2691,6 @@ namespace gamemd { void TabClass::processTabInput() {
 } }
 // 0x637AB0
 namespace gamemd { int SidebarClass::ResetProductionState() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int Type; // eax
@@ -2827,7 +2814,6 @@ LABEL_46:
   }
   return result; /*0x637cec*/
 }
-} }
 // 0x63E880
 namespace gamemd { int SidebarClass::addToList(void* a1) {
 {
@@ -2893,7 +2879,6 @@ namespace gamemd { void PowerClass::checkBlackout() {
 } }
 // 0x63FEA0
 namespace gamemd { void PowerClass::updatePowerBarAnimation() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ObjectClass *v7; // edi
   ObjectClass *v14; // eax
@@ -3141,7 +3126,6 @@ LABEL_62:
   }
   return TacticalClass::MouseInput((_DWORD *)this, (PowerClass *)aP1, a2); /*0x640396*/
 }
-} }
 // 0x6403A0
 namespace gamemd { int PowerClass::getDrain() {
 {
@@ -3204,7 +3188,6 @@ namespace gamemd { void* PowerClass::Initialize(int a2) {
 } }
 // 0x6568A0
 namespace gamemd { int SidebarClass::Load(int a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   SidebarClass *v20; // [esp+8Ch] [ebp-10h]
@@ -3338,10 +3321,8 @@ LABEL_26:
   return result; /*0x656ab3*/
 }
 }
-}
 // 0x656AC0
 namespace gamemd { int SidebarClass::Save(int a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -3414,7 +3395,6 @@ LABEL_10:
   }
   return result; /*0x656bcd*/
 }
-} }
 // 0x674650
 namespace gamemd { int SidebarClass::ReadButtonList() {
 {
@@ -3680,7 +3660,6 @@ namespace gamemd { void* TabClass::initTabData() {
 } }
 // 0x6A5310
 namespace gamemd { int SidebarClass::Init() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HouseClass *v14; // edx
   int i; // ebx
@@ -3903,7 +3882,6 @@ LABEL_44:
   }
   return v2; /*0x6a5839*/
 }
-} }
 // 0x6A5F20
 namespace gamemd { int SidebarClass::UpdateCameoProductionState(void* a1) {
 {
@@ -3995,7 +3973,6 @@ namespace gamemd { int SidebarClass::UpdateCameoProductionState(void* a1) {
 } }
 // 0x6A7780
 namespace gamemd { void SidebarClass::UpdateStrips(void* a1, void* a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   SidebarClass *v22; // edi
   int playerSideIndex; // [esp+18h] [ebp-Ch]
@@ -4211,7 +4188,6 @@ LABEL_32:
     GadgetClass::Hide(&g_OverlayTypeConfig[15272]); /*0x6a7af9*/
   return PowerClass::updatePowerBarAnimation((int)this, (SidebarClass *)aP1, a2); /*0x6a7b0f*/
 }
-} }
 // 0x6A80A0
 namespace gamemd { void* TabClass::updateTabProduction(int a1) {
 {
@@ -4368,7 +4344,6 @@ namespace gamemd { int SidebarClass::sortCameoList() {
 } }
 // 0x6A8B30
 namespace gamemd { int SidebarClass::UpdateCameos(int a1, int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int Type; // eax
   wchar_t *v31; // ecx
@@ -4775,10 +4750,8 @@ LABEL_97:
   }
   return result; /*0x6a92b5*/
 }
-} }
 // 0x6AA600
 namespace gamemd { int SidebarClass::UpdateProduction() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AbstractClass *v10; // ebx
   char *v43; // [esp+1Ch] [ebp-138h]
@@ -5063,10 +5036,8 @@ LABEL_79:
     __3_YAXPAX_Z(v43 - 4); /*0x6aac8f*/
   return v39; /*0x6aac9b*/
 }
-} }
 // 0x6AAD00
 namespace gamemd { int SidebarClass::ProcessInput(int a1, void* a2, int a3) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x6aad00
 {
   #72 *v10; // edx
@@ -6538,7 +6509,6 @@ pop     edi
 add     esp, 9Ch
 retn    0Ch
 */
-} }
 // 0x6AC5D0
 namespace gamemd { int SidebarClass::saveLoadPrefix(int a1) {
 {
@@ -6547,10 +6517,8 @@ namespace gamemd { int SidebarClass::saveLoadPrefix(int a1) {
 } }
 // 0x6AC5E0
 namespace gamemd {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return SidebarClass::Save(this, a2); /*0x6ac5ea*/
-}
 }
 // 0x6AC780
 namespace gamemd { void* SidebarClass::queryInterface(int a2) {
@@ -6808,7 +6776,6 @@ namespace gamemd { int SliderClass::SetRange(int a1, int a2, int a3) {
 } }
 // 0x6CBEE0
 namespace gamemd { int SidebarClass::GetProductionState() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   double v5; // st7
   TechnoClass *v9; // ecx
@@ -6897,7 +6864,6 @@ LABEL_37:
     return 53; /*0x6cc05a*/
   return result; /*0x6cbfec*/
 }
-} }
 // 0x6CFCC0
 namespace gamemd { int SidebarClass::findEntryIndexByName() {
 {
@@ -6917,7 +6883,6 @@ namespace gamemd { int SidebarClass::findEntryIndexByName() {
 } }
 // 0x6CFE20
 namespace gamemd { void* TabClass::Constructor() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v2; // ecx
   const char **v4; // edi
@@ -7133,7 +7098,6 @@ LABEL_65:
   TabClass::processTabInput(this != 0 ? this + 5446 : 0);
   return this; /*0x6d0248*/
 }
-} }
 // 0x6D02B0
 namespace gamemd { int SidebarClass::LoadButtonSHPs() {
 {
@@ -7219,7 +7183,6 @@ namespace gamemd { int SidebarClass::InitButtons() {
 } }
 // 0x6D0A20
 namespace gamemd { int SidebarClass::DrawTabs(int a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char v3; // bl
   SidebarClass *v17; // esi
@@ -7423,7 +7386,6 @@ LABEL_29:
   }
   return SidebarClass::Redraw(a2); /*0x6d0e3d*/
 }
-} }
 // 0x723EA0
 // moved to ui/gadget.cpp: GadgetClass::Show
 // 0x723EB0
@@ -7547,10 +7509,8 @@ namespace gamemd { int ToolTipManager::release(int a1) {
 } }
 // 0x724C80
 namespace gamemd {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return *(_DWORD *)(this->Items + 4 * a2); /*0x724c8a*/
-}
 }
 // 0x724C90
 namespace gamemd { int ToolTipClass::addRef(int a2) {
@@ -7748,12 +7708,10 @@ namespace gamemd { void* ToolTipClass::compareString(int a2) {
 } }
 // 0x724FA0
 namespace gamemd {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   AbstractClass *v2 = (_DWORD *)this->uniqueId; /*0x724fa0*/
   return v2 && *v2 == *(_DWORD *)aP1->__pad_0; /*0x724fb3*/
-}
 }
 // 0x724FC0
 namespace gamemd { int CommandClass::BinarySearchAction() {
@@ -7939,7 +7897,6 @@ namespace gamemd { int SidebarClass::registerBuildingType() {
 // moved to ui/gadget.cpp: GadgetClass::TrackState
 // 0x77DA50
 namespace gamemd { void* SidebarClass::FindProductionData() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   const void *v5; // esi
   SidebarClass *v7; // [esp+0h] [ebp-4h] BYREF
@@ -7993,7 +7950,6 @@ LABEL_18:
   DeleteAndZero(&v7); /*0x77db73*/
   return v2; /*0x77da87*/
 }
-} }
 // 0x7B8730
 namespace gamemd { void* MouseClass::Construct(int a1, int a2) {
 {

@@ -5,7 +5,6 @@
 // 0x487F40
 int Rect::Union(IUnknown * aP0, const RECT * lprcSrc1, const RECT * lprcSrc2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   LPRECT lprcDst; // [esp+18h] [ebp+4h]
 
@@ -62,7 +61,6 @@ int Rect::Union(IUnknown * aP0, const RECT * lprcSrc1, const RECT * lprcSrc2)
       return (BOOL)v15; /*0x487fcf*/
     }
   }
-}
 }
 
 // 0x42E410

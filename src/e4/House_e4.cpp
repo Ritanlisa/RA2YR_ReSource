@@ -15,7 +15,6 @@
 namespace gamemd {
 void House::AnnounceUpgrade(IUnknown * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v3; // edi
   __int16 v10; // dx
@@ -351,14 +350,12 @@ LABEL_89:
   *v53 = *(_BYTE *)(this + 76); /*0x47dd4b*/
   *(_BYTE *)(v56 + 8) = *(_BYTE *)(this + 283); /*0x47dd57*/
 }
-}
 } // namespace gamemd
 
 // 0x47FB90
 namespace gamemd {
 unsigned int * House::GetStartCoords(IUnknown * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int BuildingByTiberiumType; // eax
   char **v9; // eax
@@ -444,14 +441,12 @@ LABEL_13:
   aP1->field_C = v22; /*0x47fdc9*/
   return &aP1->field_0; /*0x47fd5c*/
 }
-}
 } // namespace gamemd
 
 // 0x4FD500
 namespace gamemd {
 int House::UpdateHouseAI()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HouseClass *v2; // ebp
   CellStruct *v5; // eax
@@ -693,14 +688,12 @@ LABEL_70:
   return Random::Range((_DWORD *)(*(_DWORD *)&HouseClass_Player[29924] + 536), (IUnknown *)1, (IUnknown *)7) /*0x4fd927*/
        + 105;
 }
-}
 } // namespace gamemd
 
 // 0x501A20
 namespace gamemd {
 void sub_501A20()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   CellStruct *v0; // ebx
   v0 = g_SelectionManager; /*0x501a21*/
@@ -726,19 +719,16 @@ void sub_501A20()
     }
   }
 }
-}
 } // namespace gamemd
 
 // 0x50B6F0
 namespace gamemd {
 int House::IsHumanPlayer()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   if ( g_GameMode_Current[0] ) /*0x50b6f7*/
     return this == HouseClass_Player; /*0x50b720*/
   return (unsigned char)this->House_field_0x1EC || *((_BYTE *)this + 493); /*0x50b70f*/
-}
 }
 } // namespace gamemd
 
@@ -746,7 +736,6 @@ int House::IsHumanPlayer()
 namespace gamemd {
 int House::IsCurrentPlayer()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -756,14 +745,12 @@ int House::IsCurrentPlayer()
     LOBYTE(result) = (_BYTE)result || *((_BYTE *)this + 493); /*0x50b750*/
   return result; /*0x50b74f*/
 }
-}
 } // namespace gamemd
 
 // 0x50DB00
 namespace gamemd {
 AbstractClass * * House::ChooseHouseEnemy(BuildingClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   MouseClass *v7; // ecx
   int v8; // eax
@@ -939,14 +926,12 @@ LABEL_24:
     return 0; /*0x50ded7*/
   return result; /*0x50dc9d*/
 }
-}
 } // namespace gamemd
 
 // 0x544BE0
 namespace gamemd {
 int House::LookupObject(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   _DWORD * v2 = (_DWORD *)this->vt_slot_156(); /*0x544be2*/
@@ -956,14 +941,12 @@ int House::LookupObject(int a2)
   else
     return 0; /*0x544c13*/
 }
-}
 } // namespace gamemd
 
 // 0x544C20
 namespace gamemd {
 int House::LoadMapFileData(int a2, char a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( a3 && !this->__pad_029 && *((_BYTE *)this + 756) ) /*0x544c35*/
@@ -971,14 +954,12 @@ int House::LoadMapFileData(int a2, char a3)
   _DWORD * v4 = (_DWORD *)this->vt_slot_156(); /*0x544c48*/
   return v4 && a2 < *v4 * v4[1] && v4[a2 + 4]; /*0x544c50*/
 }
-}
 } // namespace gamemd
 
 // 0x69E090
 namespace gamemd {
 void House::Constructor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char *EntireFile; // eax
 
@@ -1000,14 +981,12 @@ void House::Constructor()
     BufferIOFileClass::Dtor(v3); /*0x69e0e9*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x70C270
 namespace gamemd {
 int House::PowerBeginUpdate(AbstractClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   CellStruct *v22; // eax
   int i; // ebx
@@ -1103,14 +1082,12 @@ int House::PowerBeginUpdate(AbstractClass * aP1)
   }
   return result; /*0x70c599*/
 }
-}
 } // namespace gamemd
 
 // 0x72F350
 namespace gamemd {
 unsigned int * sub_72F350()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *result; // eax
 
@@ -1136,14 +1113,12 @@ unsigned int * sub_72F350()
   DataGlobal_B0FC0C = 1; /*0x72f41a*/
   return result; /*0x72f421*/
 }
-}
 } // namespace gamemd
 
 // 0x6D1660
 namespace gamemd {
 void House_Play_6D1660()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char result; // al
 
@@ -1193,7 +1168,6 @@ void House_Play_6D1660()
     return (*(int (__thiscall **)(_BYTE *, _DWORD))(v9 + 56))(a1, 0); /*0x6d1766*/
   }
   return result; /*0x6d1769*/
-}
 }
 } // namespace gamemd
 

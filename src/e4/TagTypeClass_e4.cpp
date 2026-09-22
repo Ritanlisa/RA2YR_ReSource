@@ -8,7 +8,6 @@
 namespace gamemd {
 AbstractTypeClass * * TagTypeClass::Construct(ObjectClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AbstractTypeClass *v3; // eax
   char Destination[48]; // [esp+8h] [ebp-34h] BYREF
@@ -60,14 +59,12 @@ AbstractTypeClass * * TagTypeClass::Construct(ObjectClass * aP1)
   }
   return this; /*0x6e5c92*/
 }
-}
 } // namespace gamemd
 
 // 0x6E5CA0
 namespace gamemd {
 AbstractClass * * TagTypeClass::CleanupMembers()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   TagTypeClass *v10; // [esp+Ch] [ebp-4h] BYREF
   *(_DWORD *)this = &TagTypeClass::`vftable'; /*0x6e5ca7*/
@@ -134,14 +131,12 @@ AbstractClass * * TagTypeClass::CleanupMembers()
   }
   return AbstractTypeClass::Dtor((_DWORD *)this); /*0x6e5dc9*/
 }
-}
 } // namespace gamemd
 
 // 0x6E5E50
 namespace gamemd {
 int TagTypeClass::GetEvent(int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -153,14 +148,12 @@ int TagTypeClass::GetEvent(int a2, int a3)
   }
   return result; /*0x6e5e6a*/
 }
-}
 } // namespace gamemd
 
 // 0x6E6080
 namespace gamemd {
 void* TagTypeClass::GetAction(unsigned char *** a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char Destination[48]; // [esp+8h] [ebp-B4h] BYREF
   char v7; // [esp+38h] [ebp-84h]
@@ -196,14 +189,12 @@ void* TagTypeClass::GetAction(unsigned char *** a2)
   this->q0A0 = TagTypeClass::FindOrCreateTriggerType(v4); /*0x6e613d*/
   return 1; /*0x6e6143*/
 }
-}
 } // namespace gamemd
 
 // 0x6E6160
 namespace gamemd {
 int TagTypeClass::GetParameter(char * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   CHAR Source[128]; // [esp+4h] [ebp-80h] BYREF
 
@@ -215,14 +206,12 @@ int TagTypeClass::GetParameter(char * a2)
   INIClass::SetString(a2, (unsigned __int8 *)DataGlobal_842C3C, (char *)(this + 36), Source); /*0x6e6199*/
   return 1; /*0x6e61db*/
 }
-}
 } // namespace gamemd
 
 // 0x6E6310
 namespace gamemd {
 AbstractTypeClass * * TagTypeClass::FindOrCreate()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( !_strcmpi(&stru_817460.sectionHead[1], this) || !_strcmpi(g_Str_none, this) ) /*0x6e632c*/
@@ -243,18 +232,15 @@ LABEL_6:
   }
   return *(char **)(*(_DWORD *)&stru_B05488[37628] + 4 * v2); /*0x6e637f*/
 }
-}
 } // namespace gamemd
 
 // 0x6E63E0
 namespace gamemd {
 int TagTypeClass::PowerDrainUpdate(int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AbstractTypeClass::ProcessPower((char *)this, a2); /*0x6e63e9*/
   return Power::TimerProcess(this->q09C); /*0x6e63fc*/
-}
 }
 } // namespace gamemd
 
@@ -262,10 +248,8 @@ int TagTypeClass::PowerDrainUpdate(int * a2)
 namespace gamemd {
 int TagTypeClass::GetAuxField()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return this->q098; /*0x6e64b6*/
-}
 }
 } // namespace gamemd
 
@@ -273,7 +257,6 @@ int TagTypeClass::GetAuxField()
 namespace gamemd {
 TriggerTypeClass * * TagTypeClass::FindOrCreateTriggerType()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( !_strcmpi(&stru_817460.sectionHead[1], this) || !_strcmpi(g_Str_none, this) ) /*0x727abc*/
@@ -293,7 +276,6 @@ LABEL_6:
       goto LABEL_6; /*0x727af4*/
   }
   return (TriggerTypeClass *)*((_DWORD *)unk_8B417C + v2); /*0x727b0f*/
-}
 }
 } // namespace gamemd
 

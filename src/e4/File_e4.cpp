@@ -9,13 +9,11 @@
 namespace gamemd {
 int File::IsReady(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   if ( this->__pad_029 ) /*0x431f10*/
     return 1; /*0x431f17*/
   else
     return FileClass::Open(0); /*0x431f1e*/
-}
 }
 } // namespace gamemd
 
@@ -23,7 +21,6 @@ int File::IsReady(int a2)
 namespace gamemd {
 unsigned int * File::LoadFont()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void **v13; // edi
   void **v16; // ecx
@@ -162,14 +159,12 @@ LABEL_24:
   }
   return v3; /*0x433bf8*/
 }
-}
 } // namespace gamemd
 
 // 0x4CB920
 namespace gamemd {
 File * * File::Dispatch()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   u_short v2; // ax
   u_short v3; // cx
@@ -198,14 +193,12 @@ File * * File::Dispatch()
   }
   return v5; /*0x4cb962*/
 }
-}
 } // namespace gamemd
 
 // 0x5BD570
 namespace gamemd {
 unsigned int * File::LoadFileHVA(ObjectClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   *(_BYTE *)this = 0; /*0x5bd575*/
   this->q004 = 0; /*0x5bd577*/
@@ -215,14 +208,12 @@ unsigned int * File::LoadFileHVA(ObjectClass * aP1)
     *(_BYTE *)this = 1; /*0x5bd58e*/
   return this; /*0x5bd593*/
 }
-}
 } // namespace gamemd
 
 // 0x5BD5C0
 namespace gamemd {
 AbstractClass * * File::ParseFileHVA(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -296,14 +287,12 @@ LABEL_15:
   }
   return result; /*0x5bd5f2*/
 }
-}
 } // namespace gamemd
 
 // 0x625AF0
 namespace gamemd {
 File * * File::LoadPaletteData(ObjectClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   u_short v3; // cx
   u_short v4; // ax
@@ -350,14 +339,12 @@ File * * File::LoadPaletteData(ObjectClass * aP1)
   }
   return result; /*0x625bec*/
 }
-}
 } // namespace gamemd
 
 // 0x625DB0
 namespace gamemd {
 int File::FindByPrefix(char * Str1, unsigned char * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v3 = this->q004; /*0x625db1*/
@@ -372,14 +359,12 @@ int File::FindByPrefix(char * Str1, unsigned char * a3)
   *a3 = **(_BYTE **)(v3 + 8); /*0x625def*/
   return v3 != 0; /*0x625dd6*/
 }
-}
 } // namespace gamemd
 
 // 0x734990
 namespace gamemd {
 AbstractClass * * File::ParseCSFString()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AbstractClass *v2; // eax
   AbstractClass *v7; // eax
@@ -540,14 +525,12 @@ LABEL_43:
   BufferIOFileClass::Dtor(v23); /*0x734d10*/
   return 0; /*0x734cde*/
 }
-}
 } // namespace gamemd
 
 // 0x755CD0
 namespace gamemd {
 unsigned int * File::LoadFileVXL(ObjectClass * aP1, SomeVoxelCache * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   this->__pad_0[0] = 0; /*0x755cd9*/
   *(_DWORD *)&this->__pad_0[4] = 0; /*0x755cdb*/
@@ -560,14 +543,12 @@ unsigned int * File::LoadFileVXL(ObjectClass * aP1, SomeVoxelCache * aP2)
     this->__pad_0[0] = 1; /*0x755cfe*/
   return this->__pad_0; /*0x755d03*/
 }
-}
 } // namespace gamemd
 
 // 0x76AC90
 namespace gamemd {
 AbstractClass * * File::LoadWDT(ObjectClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   u_short *v3; // eax
   u_short *PaletteData; // ebp
@@ -691,14 +672,12 @@ LABEL_25:
   }
   return (WDTState *)this; /*0x76afb6*/
 }
-}
 } // namespace gamemd
 
 // 0x76B0A0
 namespace gamemd {
 AbstractClass * * File::LoadWDTDecompress(CCINIClass * aP1, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   size_t i; // edi
   unsigned __int8 v13; // dl
@@ -769,14 +748,12 @@ LABEL_15:
   }
   return 1; /*0x76b0b9*/
 }
-}
 } // namespace gamemd
 
 // 0x7C12B0
 namespace gamemd {
 int File::ParseAudioFileRIFF()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   signed int v19; // ecx
   int v27; // edi
@@ -967,6 +944,5 @@ LABEL_53:
     }
   }
   return -8; /*0x7c12cd*/
-}
 }
 } // namespace gamemd

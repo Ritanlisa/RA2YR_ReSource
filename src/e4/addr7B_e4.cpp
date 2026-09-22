@@ -53,10 +53,8 @@
 namespace gamemd {
 void * * sub_7B0310()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return dword_B77F54; /*0x7b0315*/
-}
 }
 } // namespace gamemd
 
@@ -64,10 +62,8 @@ void * * sub_7B0310()
 namespace gamemd {
 void * * sub_7B0340()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return dword_B77F60; /*0x7b0345*/
-}
 }
 } // namespace gamemd
 
@@ -75,7 +71,6 @@ void * * sub_7B0340()
 namespace gamemd {
 AbstractClass * * Screenshot_Compress(int * a1, int * a2, void * Src)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 v7; // ax
   __int16 v9; // ax
@@ -377,14 +372,12 @@ LABEL_33:
       goto LABEL_11; /*0x7b092e*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x7B0B00
 namespace gamemd {
 void Screenshot_EncodeRLE(int a1, char * a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -451,14 +444,12 @@ LABEL_16:
   }
   return result; /*0x7b0b8f*/
 }
-}
 } // namespace gamemd
 
 // 0x7B2E50
 namespace gamemd {
 CampaignClass * * E4Recv_7B2E50::sub_7B2E50()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   *(_DWORD *)this = &vt_UDPInterfaceClass; /*0x7b2e56*/
@@ -515,19 +506,16 @@ CampaignClass * * E4Recv_7B2E50::sub_7B2E50()
   this->M258880 = 0; /*0x7b2f73*/
   WinsockInterfaceClass::WinsockInterfaceClass(this); /*0x7b2f79*/
 }
-}
 } // namespace gamemd
 
 // 0x7B4620
 namespace gamemd {
 void unknown_libname_73()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // Microsoft VisualC 2-14/net runtime
 {
   *this = 0; /*0x7b4622*/
   return this; /*0x7b4628*/
-}
 }
 } // namespace gamemd
 
@@ -535,7 +523,6 @@ void unknown_libname_73()
 namespace gamemd {
 AbstractClass * * E4Recv_7B60E0::sub_7B60E0(signed int a2, void ** a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AbstractClass *v11; // ecx
   size_t v14; // esi
@@ -598,14 +585,12 @@ AbstractClass * * E4Recv_7B60E0::sub_7B60E0(signed int a2, void ** a3)
     __3_YAXPAX_Z(v16); /*0x7b6261*/
   return v20 + 1; /*0x7b6104*/
 }
-}
 } // namespace gamemd
 
 // 0x7B63C0
 namespace gamemd {
 char ** ProcessStringAndCopy(AbstractClass * aP0, CCINIClass * aP1, char ** a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AbstractClass *v5; // ecx
   CCINIClass *v6; // ebx
@@ -643,14 +628,12 @@ char ** ProcessStringAndCopy(AbstractClass * aP0, CCINIClass * aP1, char ** a2)
     __3_YAXPAX_Z(v6); /*0x7b64cb*/
   return (char **)aP0; /*0x7b64d3*/
 }
-}
 } // namespace gamemd
 
 // 0x7B64E0
 namespace gamemd {
 char ** ConcatStringAlloc(ObjectClass * aP0, const char ** a1, char ** a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char **v4; // ebp
   ObjectClass *v6; // eax
@@ -709,19 +692,16 @@ char ** ConcatStringAlloc(ObjectClass * aP0, const char ** a1, char ** a2)
   }
   return v4; /*0x7b6624*/
 }
-}
 } // namespace gamemd
 
 // 0x7B66C0
 namespace gamemd {
 void unknown_libname_74()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // Microsoft VisualC 2-14/net runtime
 {
   *this = 0; /*0x7b66c2*/
   return this; /*0x7b66c8*/
-}
 }
 } // namespace gamemd
 
@@ -729,7 +709,6 @@ void unknown_libname_74()
 namespace gamemd {
 AbstractClass * * E4Recv_7B7C00::sub_7B7C00(int a2, void ** a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   const wchar_t *v6; // eax
   const wchar_t *v8; // eax
@@ -807,14 +786,12 @@ AbstractClass * * E4Recv_7B7C00::sub_7B7C00(int a2, void ** a3)
     __3_YAXPAX_Z(v17); /*0x7b7d60*/
   return v21 + 1; /*0x7b7c1e*/
 }
-}
 } // namespace gamemd
 
 // 0x7B9530
 namespace gamemd {
 AbstractClass * * E4Recv_7B9530::sub_7B9530()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int *FoundationSize; // eax
   ObjectClass *v13; // ecx
@@ -869,14 +846,12 @@ AbstractClass * * E4Recv_7B9530::sub_7B9530()
   Mouse::DrawCursor((_DWORD *)this, *(IUnknown **)(this + 36), 0, 0); /*0x7b966a*/
   return ReleaseMutex(hMutex); /*0x7b967c*/
 }
-}
 } // namespace gamemd
 
 // 0x7BBE20
 namespace gamemd {
 void IntersectSurfaceRects(IUnknown * aP0, int a2, XSurface * aP2, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int Height; // ecx
   int LockCount; // ecx
@@ -960,14 +935,12 @@ void IntersectSurfaceRects(IUnknown * aP0, int a2, XSurface * aP2, int a4)
   }
   return aP0->field_8 > 0 && aP0->field_C > 0 && aP2->Height > 0 && aP2->LockCount > 0; /*0x7bbfd6*/
 }
-}
 } // namespace gamemd
 
 // 0x7BC040
 namespace gamemd {
 void* CalcSurfaceBlitRects(int ecx0, int * a1, IUnknown * aP2, int arg4, int * a4, IUnknown * aP5, unsigned char * a6, int * a7, int * a8)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AbstractClass *v23; // [esp-4h] [ebp-2Ch]
   AbstractClass *v24; // [esp-4h] [ebp-2Ch]
@@ -1033,17 +1006,14 @@ void* CalcSurfaceBlitRects(int ecx0, int * a1, IUnknown * aP2, int arg4, int * a
   }
   return 1; /*0x7bc1d2*/
 }
-}
 } // namespace gamemd
 
 // 0x7BC1F0
 namespace gamemd {
 char sub_7BC1F0(XSurface * a1, XSurface * a2, XSurface * aP2, int arg4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int a4; // [esp+8h] [ebp-4h] BYREF
-
   if ( (*(int (__thiscall **)(XSurface *))(*(_DWORD *)a1->__pad_0 + 112))(a1) == 1 ) /*0x7bc1ff*/
   {
     a4 = (int)&vt_BlitPlain_unsigned_char; /*0x7bc20a*/
@@ -1055,17 +1025,14 @@ char sub_7BC1F0(XSurface * a1, XSurface * a2, XSurface * aP2, int arg4)
     return BlitterCopySimpleSHP(a1, a2, aP2, arg4, &a4, 0, 3, 1000, 0); /*0x7bc240*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x7BC250
 namespace gamemd {
 char sub_7BC250(XSurface * a1, XSurface * a2, XSurface * aP2, int arg4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int a4; // [esp+8h] [ebp-4h] BYREF
-
   if ( (*(int (__thiscall **)(XSurface *))(*(_DWORD *)a1->__pad_0 + 112))(a1) == 1 ) /*0x7bc25f*/
   {
     a4 = (int)&vt_BlitTrans_unsigned_char; /*0x7bc26a*/
@@ -1077,14 +1044,12 @@ char sub_7BC250(XSurface * a1, XSurface * a2, XSurface * aP2, int arg4)
     return BlitterCopySimpleSHP(a1, a2, aP2, arg4, &a4, 0, 3, 1000, 0); /*0x7bc2a0*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x7BC2B0
 namespace gamemd {
 void ClipLine(IUnknown * aP0, int * a1, int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v4 = a2[1]; /*0x7bc2c9*/
@@ -1213,14 +1178,12 @@ LABEL_14:
     }
   }
 }
-}
 } // namespace gamemd
 
 // 0x7BC580
 namespace gamemd {
 AbstractClass * * sub_7BC580()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // local variable allocation has failed, the output may be wrong!
 {
   AbstractClass *v5; // [esp+8h] [ebp-4h]
@@ -1235,14 +1198,12 @@ AbstractClass * * sub_7BC580()
     return v3 | 8; /*0x7bc5f9*/
   return v3; /*0x7bc5e4*/
 }
-}
 } // namespace gamemd
 
 // 0x7BD470
 namespace gamemd {
 int sub_7BD470(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v1 = *(_DWORD *)(a1 + 1980); /*0x7bd476*/
@@ -1320,14 +1281,12 @@ int sub_7BD470(int a1)
   }
   return v2; /*0x7bd487*/
 }
-}
 } // namespace gamemd
 
 // 0x7BEFE0
 namespace gamemd {
 int E4Recv_7BEFE0::sub_7BEFE0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v2 = this->M416; /*0x7befe5*/
@@ -1390,14 +1349,12 @@ int E4Recv_7BEFE0::sub_7BEFE0()
   }
   return v3; /*0x7bf0a7*/
 }
-}
 } // namespace gamemd
 
 // 0x7BF470
 namespace gamemd {
 int AudioStream_FillBuffer(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int (__cdecl *v13)(int, int, int, int); // eax
   int result; // eax
@@ -1536,7 +1493,6 @@ LABEL_51:
   if ( v19 ) /*0x7bf721*/
     *(_DWORD *)(a1 + 64) = v25; /*0x7bf727*/
   return result; /*0x7bf680*/
-}
 }
 } // namespace gamemd
 

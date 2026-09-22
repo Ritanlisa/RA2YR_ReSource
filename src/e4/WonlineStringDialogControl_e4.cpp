@@ -9,7 +9,6 @@
 namespace gamemd {
 void * WonlineStringDialogControl_12::Constructor_WonlineStringDialogControl(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
         DialogControl_OwnerDraw *this,
         char a2)
 {
@@ -21,14 +20,12 @@ void * WonlineStringDialogControl_12::Constructor_WonlineStringDialogControl(cha
     __3_YAXPAX_Z(this); /*0x7ac656*/
   return (CreateGameDialogControl *)this; /*0x7ac660*/
 }
-}
 } // namespace gamemd
 
 // 0x7AD690
 namespace gamemd {
 int WonlineStringDialogControl_28::QueryInterface(char * a1, unsigned int * a2, char ** a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _UNKNOWN **v3; // esi
   int result; // eax
@@ -69,7 +66,6 @@ LABEL_17:
   (*(void (__stdcall **)(char *))(*(_DWORD *)v9 + 4))(v9); /*0x7ad775*/
   *a3 = v9; /*0x7ad778*/
   return 0; /*0x7ad6a1*/
-}
 }
 } // namespace gamemd
 

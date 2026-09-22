@@ -13,7 +13,6 @@
 // 0x4D0980
 int FoggedObjectClass::InitBuildingFog(unsigned int * a2, int a3, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int *PlacementRectBuildingClass; // edi
   int *StartCoordsHouse; // eax
@@ -139,12 +138,10 @@ LABEL_27:
   }
   return this; /*0x4d0c2a*/
 }
-}
 
 // 0x4D0C40
 AbstractClass * * FoggedObjectClass::InitTerrainFog(IUnknown * aP1, int a3, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v12; // edx
   int v16; // ebp
@@ -249,12 +246,10 @@ LABEL_15:
   }
   return (FoggedObjectClass *)this; /*0x4d0ee3*/
 }
-}
 
 // 0x4D0EF0
 int FoggedObjectClass::Constructor(BuildingClass * aP1, FoggedObjectClass * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HouseClass *v4; // eax
   VectorClass *v7; // esi
@@ -476,12 +471,10 @@ LABEL_47:
   this->q044 += *(_DWORD *)(*(_DWORD *)&stru_87C374[44976] + 180); /*0x4d135f*/
   return this; /*0x4d1364*/
 }
-}
 
 // 0x4D1370
 AbstractClass * * FoggedObjectClass::InitDrawRecord(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v17; // ebp
   AbstractClass *v18; // ebx
@@ -589,12 +582,10 @@ LABEL_21:
   }
   return this; /*0x4d1641*/
 }
-}
 
 // 0x4D2510
 int FoggedObjectClass::LoadTypeData(int * a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   signed int i; // eax
@@ -701,12 +692,10 @@ LABEL_22:
       goto LABEL_14; /*0x4d265f*/
   }
 }
-}
 
 // 0x4D2810
 HouseClass * * FoggedObjectClass::PowerDrainUpdate(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AbstractClass::ProcessPower((#378 *)this); /*0x4d2819*/
   Power::TimerProcess(this->LastSight); /*0x4d2824*/
@@ -724,12 +713,10 @@ HouseClass * * FoggedObjectClass::PowerDrainUpdate(int a2)
   Power::TimerProcess(this->q058); /*0x4d28a8*/
   return Power::TimerProcess(this->q06C); /*0x4d28b8*/
 }
-}
 
 // 0x4D28D0
 unsigned int * FoggedObjectClass::CheckVisibility(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v3; // [esp+0h] [ebp-4h]
@@ -738,12 +725,10 @@ unsigned int * FoggedObjectClass::CheckVisibility(unsigned int * a2)
   *a2 = v3; /*0x4d2901*/
   return a2; /*0x4d2904*/
 }
-}
 
 // 0x4D2BC0
 AbstractClass * * FoggedObjectClass::ResizeArray(int a2, char * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v3 = a2; /*0x4d2bc2*/
@@ -840,12 +825,10 @@ AbstractClass * * FoggedObjectClass::ResizeArray(int a2, char * a3)
     this->uniqueId = v15; /*0x4d2cb8*/
   return 1; /*0x4d2cbb*/
 }
-}
 
 // 0x4D2CD0
 int FoggedObjectClass::Read(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   _DWORD *i; // ecx
@@ -861,13 +844,11 @@ int FoggedObjectClass::Read(unsigned int * a2)
   }
   return result; /*0x4d2cff*/
 }
-}
 
 // 0x4E07B0
 namespace gamemd {
 int FoggedObjectClass_42::FindItem(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   _DWORD *i; // ecx
@@ -882,7 +863,6 @@ int FoggedObjectClass_42::FindItem(unsigned int * a2)
       return -1; /*0x4e07cd*/
   }
   return result; /*0x4e07d2*/
-}
 }
 } // namespace gamemd
 

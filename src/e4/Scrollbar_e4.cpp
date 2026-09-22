@@ -6,7 +6,6 @@
 namespace gamemd {
 void Scrollbar_Draw(ObjectClass * aP0, int * a1, int a3, int a4, unsigned char a5, unsigned char a6, unsigned char a7, unsigned char a8)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char result; // al
   __int16 v10; // bp
@@ -70,6 +69,5 @@ void Scrollbar_Draw(ObjectClass * aP0, int * a1, int a3, int a4, unsigned char a
     while ( v9 < a4 ); /*0x620710*/
   }
   return result; /*0x620716*/
-}
 }
 } // namespace gamemd

@@ -21,7 +21,6 @@
 namespace gamemd {
 void AnimClass::Destruct(void * this, AbstractClass * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int ecx3; // ecx
   AudioController *v4; // edx
@@ -134,14 +133,12 @@ void AnimClass::Destruct(void * this, AbstractClass * a2)
   }
   ObjectClass::Dtor(this); /*0x422b10*/
 }
-}
 } // namespace gamemd
 
 // 0x422CA0
 namespace gamemd {
 void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 v9; // bx
   ConvertClass *v10; // eax
@@ -705,14 +702,12 @@ LABEL_99:
     }
   }
 }
-}
 } // namespace gamemd
 
 // 0x424CB0
 namespace gamemd {
 int AnimClass::InWhichLayer_AttachedObjectLayer()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( this->q0CC ) /*0x424cb0*/
@@ -723,14 +718,12 @@ int AnimClass::InWhichLayer_AttachedObjectLayer()
   else
     return 3; /*0x424cd1*/
 }
-}
 } // namespace gamemd
 
 // 0x4253B0
 namespace gamemd {
 int AnimClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v3 = aP0->ChargerTurrets[6]; /*0x4253b6*/
@@ -754,14 +747,12 @@ LABEL_6:
   }
   return AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x4253ff*/
 }
-}
 } // namespace gamemd
 
 // 0x428DE0
 namespace gamemd {
 void AnimClass::FreeRenderBuffer()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   if ( *(_BYTE *)(this + 862) && this->AnimClass_field_0xA4 ) /*0x428ded*/
   {
@@ -774,14 +765,12 @@ void AnimClass::FreeRenderBuffer()
     }
   }
 }
-}
 } // namespace gamemd
 
 // 0x448260
 namespace gamemd {
 BuildingTypeClass * * AnimClass::drawFrame()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   BuildingTypeClass *v6; // ecx
@@ -1721,19 +1710,16 @@ LABEL_183:
   }
   return result;
 }
-}
 } // namespace gamemd
 
 // 0x7298F0
 namespace gamemd {
 void AnimClass_GetAnimation()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int GroundHeight; // ebx
   int result; // eax
   int v17; // [esp+1Ch] [ebp-Ch]
-
   int * v3 = (int *)(a1[3] + 156); /*0x7298fa*/
   int v13 = *v3; /*0x729901*/
   int v14 = v3[1]; /*0x72990d*/
@@ -1788,14 +1774,12 @@ void AnimClass_GetAnimation()
   }
   return result; /*0x729a34*/
 }
-}
 } // namespace gamemd
 
 // 0x761030
 namespace gamemd {
 int AnimClass::ProcessFrame()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // edi
   ObjectClass *Coords; // eax
@@ -1813,7 +1797,6 @@ int AnimClass::ProcessFrame()
     return ObjectClass::DetectCloaked(this); /*0x76108f*/
   else
     return (*(int (__thiscall **)(#374 *))(this->TintColor)(this); /*0x761081*/
-}
 }
 } // namespace gamemd
 

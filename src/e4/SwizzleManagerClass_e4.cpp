@@ -7,7 +7,6 @@
 namespace gamemd {
 int SwizzleManagerClass_19::Release(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v3 = a2; /*0x6cf5a2*/
@@ -99,14 +98,12 @@ int SwizzleManagerClass_19::Release(int a2, unsigned int * a3)
     return 1; /*0x6cf68a*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x6CF720
 namespace gamemd {
 AbstractClass * * SwizzleManagerClass_19::SetCapacity(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v3 = a2; /*0x6cf722*/
@@ -194,7 +191,6 @@ AbstractClass * * SwizzleManagerClass_19::SetCapacity(int a2, unsigned int * a3)
   if ( v15 < this->SwizzleManagerClass_19_field_0x10 ) /*0x6cf803*/
     this->SwizzleManagerClass_19_field_0x10 = v15; /*0x6cf805*/
   return 1; /*0x6cf808*/
-}
 }
 } // namespace gamemd
 

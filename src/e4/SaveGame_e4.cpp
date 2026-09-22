@@ -10,7 +10,6 @@
 namespace gamemd {
 int SaveGame::LoadArrayData(int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int i; // ebx
@@ -51,14 +50,12 @@ LABEL_5:
   }
   return result; /*0x43924e*/
 }
-}
 } // namespace gamemd
 
 // 0x54E750
 namespace gamemd {
 int SaveGame::WriteDataArray(int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int i; // edi
@@ -77,14 +74,12 @@ int SaveGame::WriteDataArray(int * a2)
   }
   return result; /*0x54e79c*/
 }
-}
 } // namespace gamemd
 
 // 0x6607D0
 namespace gamemd {
 int SaveGame::SaveTriggerEvents()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v2 = *this; /*0x6607e0*/
@@ -104,14 +99,12 @@ int SaveGame::SaveTriggerEvents()
   }
   return this->vt_slot_16(&word_B04D78, 4, 0) >= 0; /*0x6607f1*/
 }
-}
 } // namespace gamemd
 
 // 0x67D300
 namespace gamemd {
 int SaveGame::Start()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char result; // al
   int i; // ebx
@@ -880,14 +873,12 @@ int SaveGame::Start()
   }
   return result;
 }
-}
 } // namespace gamemd
 
 // 0x67F7E0
 namespace gamemd {
 int SaveGame::LoadMainGameState()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   wchar_t *v10; // [esp+A0h] [ebp-4h] BYREF
@@ -1008,14 +999,12 @@ LABEL_17:
   }
   return result; /*0x67f9b8*/
 }
-}
 } // namespace gamemd
 
 // 0x74ED60
 namespace gamemd {
 int SaveGame::LoadVeinholeData()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // ebx
 
@@ -1068,14 +1057,12 @@ int SaveGame::LoadVeinholeData()
   }
   return 1; /*0x74ed85*/
 }
-}
 } // namespace gamemd
 
 // 0x751620
 namespace gamemd {
 int SaveGame::SaveAudioQueueItems()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int *i; // edi
   char *SampleName; // ebx
@@ -1126,7 +1113,6 @@ LABEL_11:
     }
   }
   return v2; /*0x751701*/
-}
 }
 } // namespace gamemd
 

@@ -37,7 +37,6 @@
 namespace gamemd {
 AbstractClass * * E4Recv_690400::sub_690400()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   struct tagRECT Rect; // [esp+28h] [ebp-10h] BYREF
@@ -72,14 +71,12 @@ AbstractClass * * E4Recv_690400::sub_690400()
              0);
   return result; /*0x6904b7*/
 }
-}
 } // namespace gamemd
 
 // 0x693B70
 namespace gamemd {
 CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char *Flagged; // eax
   int v17; // eax
@@ -330,14 +327,12 @@ LABEL_78:
   Debug::Log(DataGlobal_83E7D0, v31); /*0x694189*/
   return v30; /*0x693d6c*/
 }
-}
 } // namespace gamemd
 
 // 0x6941A0
 namespace gamemd {
 void ReceiveNetworkFile(RawFileClass * a1, DWORD a2, int a3, char a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   size_t v7; // esi
   wchar_t *StringCSF; // eax
@@ -546,14 +541,12 @@ LABEL_54:
   RawFileClass::Dtor((int *)v35); /*0x69474e*/
   return v21; /*0x694755*/
 }
-}
 } // namespace gamemd
 
 // 0x694760
 namespace gamemd {
 void Network_SendFile(char * Source, int a2, char a3, char a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int Size; // ebx
   wchar_t *String; // eax
@@ -984,14 +977,12 @@ LABEL_122:
   BufferIOFileClass::Dtor(v61); /*0x6951cf*/
   return v48; /*0x6947de*/
 }
-}
 } // namespace gamemd
 
 // 0x6951F0
 namespace gamemd {
 AbstractClass * * FindAndValidateMap(ObjectClass * aP0, int edx0, const char * a2, int a4, char a5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ObjectClass *v5; // esi
   int Field; // eax
@@ -1079,14 +1070,12 @@ LABEL_16:
   BufferIOFileClass::Dtor(v18); /*0x6954ab*/
   return 1; /*0x695401*/
 }
-}
 } // namespace gamemd
 
 // 0x695760
 namespace gamemd {
 void LoadGame_DlgProc(HWND hWnd, WPARAM wParam, unsigned int a3, HWND a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   LONG WindowLongA; // ebx
@@ -1292,14 +1281,12 @@ LABEL_38:
   SetFocus(v14); /*0x695a2b*/
   return 0; /*0x6957ff*/
 }
-}
 } // namespace gamemd
 
 // 0x6994F0
 namespace gamemd {
 void ParseMapFileHeader(CampaignScore * aP0, unsigned short * a1, char * a2, CampaignScore * aP3, unsigned char * a4, unsigned int * a5, unsigned int * a6)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   CampaignScore *v8; // ebp
   CCINIClass *v14; // esi
@@ -1455,14 +1442,12 @@ LABEL_20:
   v20[0] = (int)&off_7E1668; /*0x699963*/
   return BufferIOFileClass::Dtor(v20); /*0x699970*/
 }
-}
 } // namespace gamemd
 
 // 0x69B690
 namespace gamemd {
 int E4Recv_69B690::sub_69B690()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   _DWORD *i; // edx
@@ -1504,14 +1489,12 @@ LABEL_10:
     }
   }
 }
-}
 } // namespace gamemd
 
 // 0x69BCC0
 namespace gamemd {
 void sub_69BCC0(ObjectClass * aP0)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ObjectClass *v1; // edi
   SessionClass *v2; // esi
@@ -1529,14 +1512,12 @@ void sub_69BCC0(ObjectClass * aP0)
   }
   return (int)v1->__pad_0; /*0x69bcef*/
 }
-}
 } // namespace gamemd
 
 // 0x69F0C0
 namespace gamemd {
 void * E4Recv_69F0C0::sub_69F0C0(void * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   const void *v10; // eax
   int v11; // edx
@@ -1590,7 +1571,6 @@ LABEL_17:
   }
   qmemcpy(a2, v13, 0x30u); /*0x69f189*/
   return a2; /*0x69f19a*/
-}
 }
 } // namespace gamemd
 

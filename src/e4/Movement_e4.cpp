@@ -9,7 +9,6 @@
 // 0x5B20F0
 long long Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, IUnknown * aP3, IUnknown * aP4, IUnknown * aP5, char a7, char a8, char a9)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int *v12; // ebx
   BuildingTypeClass *v13; // esi
@@ -347,7 +346,6 @@ LABEL_48:
     aP1.NeedsSaveOrLink = (void *)((int)aP1.NeedsSaveOrLink / 4); /*0x5b290f*/
   Coord::Length(&aP1.nextArrayIndex); /*0x5b2917*/
   return result; /*0x5b2347*/
-}
 }
 
 // 0x5B2930

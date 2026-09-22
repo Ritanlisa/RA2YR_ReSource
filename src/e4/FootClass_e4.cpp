@@ -10,7 +10,6 @@ namespace ra2 {
 namespace game {
 AbstractClass * * FootClass::Destruct()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AbstractClass *v5; // ecx
   ILocomotion *v7; // eax
@@ -75,7 +74,6 @@ AbstractClass * * FootClass::Destruct()
   this->q164 = 0; /*0x4d36fb*/
   return TechnoClass::DTOR((int)this); /*0x4d3706*/
 }
-}
 } // namespace game
 } // namespace ra2
 
@@ -84,7 +82,6 @@ namespace ra2 {
 namespace game {
 void FootClass::Destroyed(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( (unsigned __int8)House::IsHumanPlayer(this->owner) /*0x4d98dd*/
@@ -96,7 +93,6 @@ void FootClass::Destroyed(int a2)
       VoxClass::FindAndPlay(aEvaUnitlost, -1); /*0x4d9911*/
   }
 }
-}
 } // namespace game
 } // namespace ra2
 
@@ -105,7 +101,6 @@ namespace ra2 {
 namespace game {
 int FootClass::updateThreat()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   IUnknown *v1 = this->targetingTimer; /*0x70f7e0*/
@@ -118,7 +113,6 @@ int FootClass::updateThreat()
   }
   return v2 = = 0; /*0x70f808*/
 }
-}
 } // namespace game
 } // namespace ra2
 
@@ -127,7 +121,6 @@ namespace ra2 {
 namespace game {
 void FootClass::FootClass_ImbueLocomotor(int *a1@<ecx> a1, int a2@<ebp> a2, int a3@<edi> a3, unsigned int * ppv, IID rclsid, int a6)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int Member; // eax
 
@@ -272,7 +265,6 @@ void FootClass::FootClass_ImbueLocomotor(int *a1@<ecx> a1, int a2@<ebp> a2, int 
     if ( v27 ) /*0x7103fd*/
       (*(void (__stdcall **)(int))(*(_DWORD *)v27 + 8))(v27); /*0x710402*/
   }
-}
 }
 } // namespace game
 } // namespace ra2

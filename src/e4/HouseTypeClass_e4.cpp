@@ -11,7 +11,6 @@
 namespace gamemd {
 unsigned int * HouseTypeClass::loadVeteranWeapons(HouseTypeClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AbstractTypeClass::Init((int)this, (AbstractTypeClass *)aP1); /*0x511658*/
   this->q14C = &vt_TypeList_InfantryTypeClass_const; /*0x51165d*/
@@ -23,14 +22,12 @@ unsigned int * HouseTypeClass::loadVeteranWeapons(HouseTypeClass * aP1)
   this->vtable4 = &vt_HouseTypeClass; /*0x51168f*/
   return this; /*0x511698*/
 }
-}
 } // namespace gamemd
 
 // 0x5116A0
 namespace gamemd {
 AbstractClass * * HouseTypeClass::Dtor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HouseTypeClass *v7; // [esp+8h] [ebp-4h] BYREF
   *(_DWORD *)this = &HouseTypeClass::`vftable'; /*0x5116a7*/
@@ -78,14 +75,12 @@ AbstractClass * * HouseTypeClass::Dtor()
   this->veteranUnits = 0; /*0x5117b3*/
   return AbstractTypeClass::Dtor((_DWORD *)this); /*0x5117be*/
 }
-}
 } // namespace gamemd
 
 // 0x511850
 namespace gamemd {
 void* HouseTypeClass::LoadFromINI(unsigned char *** aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   CCINIClass *v3; // esi
   double Double_Overwrite; // st7
@@ -505,14 +500,12 @@ void* HouseTypeClass::LoadFromINI(unsigned char *** aP1)
   }
   return 1; /*0x512151*/
 }
-}
 } // namespace gamemd
 
 // 0x512170
 namespace gamemd {
 AbstractClass * * HouseTypeClass::ProcessPower(int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   AbstractTypeClass::ProcessPower((char *)this, a2); /*0x51217a*/
@@ -533,14 +526,12 @@ AbstractClass * * HouseTypeClass::ProcessPower(int * a2)
   LOBYTE(v4) = this->q1A5; /*0x512265*/
   return Power::FlagProcess(a2, v4); /*0x512273*/
 }
-}
 } // namespace gamemd
 
 // 0x512290
 namespace gamemd {
 int HouseTypeClass::SaveLoad_Prefix(unsigned int * i, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int j; // ebx
@@ -601,14 +592,12 @@ int HouseTypeClass::SaveLoad_Prefix(unsigned int * i, int a2)
   }
   return result; /*0x51246d*/
 }
-}
 } // namespace gamemd
 
 // 0x512480
 namespace gamemd {
 void HouseTypeClass_SaveLoad_Prefix_0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int i; // ebx
@@ -637,14 +626,12 @@ void HouseTypeClass_SaveLoad_Prefix_0()
   }
   return result; /*0x51255c*/
 }
-}
 } // namespace gamemd
 
 // 0x513370
 namespace gamemd {
 unsigned int * HouseTypeClass::readBaseDefense(VectorClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( this == (_DWORD *)aP1 ) /*0x51337a*/
@@ -675,14 +662,12 @@ unsigned int * HouseTypeClass::readBaseDefense(VectorClass * aP1)
   while ( v6 < this->vtable3 ); /*0x5133c1*/
   return this; /*0x5133c5*/
 }
-}
 } // namespace gamemd
 
 // 0x67B8F0
 namespace gamemd {
 void * HouseTypeClass::ReadCountryName(int a1, unsigned char *** edx0, INIClass * aP1, unsigned char * a2, unsigned int * a5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ObjectClass *i; // eax
   INIClass *v7; // edi
@@ -779,7 +764,6 @@ void * HouseTypeClass::ReadCountryName(int a1, unsigned char *** edx0, INIClass 
     *(_DWORD *)a1 = &vt_TypeList_AircraftTypeClass_const; /*0x67baac*/
   }
   return (VectorClass *)a1; /*0x67ba22*/
-}
 }
 } // namespace gamemd
 
@@ -1683,7 +1667,6 @@ int HouseTypeClass::readLoadoutData(int a1)
 namespace gamemd {
 int HouseTypeClass::Find()
  {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v1 = 0; /*0x6a46d6*/
@@ -1695,6 +1678,5 @@ int HouseTypeClass::Find()
       return -1; /*0x6a4700*/
   }
   return v1; /*0x6a4702*/
-}
 }
 } // namespace gamemd

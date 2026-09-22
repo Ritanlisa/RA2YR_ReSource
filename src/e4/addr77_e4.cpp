@@ -48,11 +48,9 @@
 namespace gamemd {
 void sub_770E70(char **this@<ecx> a1, ObjectClass * aP1, ObjectClass * aP2, ObjectClass aP3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ObjectClass *v5; // edi
   ObjectClass *v6; // [esp+10h] [ebp-4h] BYREF
-
   String::Assign((char **)&v6, &stru_830620[56168]); /*0x770e80*/
   v5 = *(ObjectClass **)aP3[0]; /*0x770e85*/
   INIClass::ReadTokenizedPair(this, aP1, aP2, *(ObjectClass **)aP3[0], 0, (ObjectClass *)&v6); /*0x770e9d*/
@@ -64,18 +62,15 @@ void sub_770E70(char **this@<ecx> a1, ObjectClass * aP1, ObjectClass * aP2, Obje
   INIClass::ReadTokenizedPair(this, aP1, aP2, v5, 2, &aP3); /*0x770eed*/
   DeleteAndZero((void **)&aP3); /*0x770ef6*/
 }
-}
 } // namespace gamemd
 
 // 0x771890
 namespace gamemd {
 void E4Recv_771890::sub_771890()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   *this = &vt_WorldDominationTour_Voices_Anim; /*0x771890*/
   VtableStub::5CB6C0(this); /*0x771896*/
-}
 }
 } // namespace gamemd
 
@@ -83,7 +78,6 @@ void E4Recv_771890::sub_771890()
 namespace gamemd {
 int E4Recv_7741C0::FindRegistrySubKey()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int *p_uniqueId; // ebx
   CCINIClass *v5; // esi
@@ -149,14 +143,12 @@ LABEL_6:
   __3_YAXPAX_Z(lpClass); /*0x7742ef*/
   return phkResult; /*0x7742c3*/
 }
-}
 } // namespace gamemd
 
 // 0x775690
 namespace gamemd {
 void ScreenDialogToClient(HWND hWnd, LPRECT lpRect)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   BOOL result; // eax
   LONG v5; // ecx
@@ -185,14 +177,12 @@ void ScreenDialogToClient(HWND hWnd, LPRECT lpRect)
   }
   return result; /*0x7756a5*/
 }
-}
 } // namespace gamemd
 
 // 0x775700
 namespace gamemd {
 const DLGTEMPLATE * CreateDialogIndirect(ObjectClass * aP0, HWND a2, HWND hWndParent, DLGPROC lpDialogFunc, int a5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND *v6; // edi
   const DLGTEMPLATE *result; // eax
@@ -232,14 +222,12 @@ const DLGTEMPLATE * CreateDialogIndirect(ObjectClass * aP0, HWND a2, HWND hWndPa
   }
   return result; /*0x775734*/
 }
-}
 } // namespace gamemd
 
 // 0x7757E0
 namespace gamemd {
 void Dialog_Close(HWND a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int *i; // esi
   HWND *v6; // esi
@@ -300,14 +288,12 @@ void Dialog_Close(HWND a1, int a2)
   dword_B72F4C = a2; /*0x7758d3*/
   return 1; /*0x775800*/
 }
-}
 } // namespace gamemd
 
 // 0x7759E0
 namespace gamemd {
 void MessageDialogLoopAlt(HWND hWnd, unsigned char (*a2)(void) a2, int a3, char a4, char a5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND *v8; // ecx
   HWND *v10; // ecx
@@ -365,17 +351,14 @@ LABEL_23:
     SendMessageA(hWnd, 0x4A9u, 0, 0); /*0x775af7*/
   return dword_B72F4C; /*0x775b02*/
 }
-}
 } // namespace gamemd
 
 // 0x775B30
 namespace gamemd {
 int sub_775B30()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return dword_B72F4C; /*0x775b35*/
-}
 }
 } // namespace gamemd
 
@@ -383,7 +366,6 @@ int sub_775B30()
 namespace gamemd {
 int CacheRenderedText(HDC a1, const char * a2, int a3, int a4, int a5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   HDC v14; // edx
@@ -498,14 +480,12 @@ LABEL_11:
   }
   return result; /*0x775e79*/
 }
-}
 } // namespace gamemd
 
 // 0x776230
 namespace gamemd {
 char sub_776230(HWND hWnd, HWND a2, LPARAM * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   LRESULT v6; // eax
   LPARAM lParam[4]; // [esp+10h] [ebp-10h] BYREF
@@ -531,14 +511,12 @@ char sub_776230(HWND hWnd, HWND a2, LPARAM * a3)
   }
   return byte_B7309C; /*0x776261*/
 }
-}
 } // namespace gamemd
 
 // 0x776320
 namespace gamemd {
 int E4Recv_776320::sub_776320()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HCURSOR CursorA; // eax
   char v4; // bl
@@ -582,14 +560,12 @@ int E4Recv_776320::sub_776320()
   SendMessageA(qword_B730A0, 0x110Bu, 8u, 0); /*0x776470*/
   return 1; /*0x776478*/
 }
-}
 } // namespace gamemd
 
 // 0x776490
 namespace gamemd {
 struct tagPOINT * Dialog_HitTest(unsigned int a1, int a2, struct tagPOINT * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   LONG v3; // ebx
   LONG v4; // esi
@@ -624,14 +600,12 @@ struct tagPOINT * Dialog_HitTest(unsigned int a1, int a2, struct tagPOINT * a3)
   qmemcpy(a3, v12, 0x28u); /*0x77655a*/
   return a3; /*0x77655c*/
 }
-}
 } // namespace gamemd
 
 // 0x776570
 namespace gamemd {
 void E4Recv_776570::sub_776570()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND WindowLongA; // eax
   LRESULT v6; // eax
@@ -670,14 +644,12 @@ void E4Recv_776570::sub_776570()
     }
   }
 }
-}
 } // namespace gamemd
 
 // 0x777080
 namespace gamemd {
 AbstractClass * * SetDialogParent(HWND hWnd, HWND a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   struct tagRECT Rect; // [esp+10h] [ebp-20h] BYREF
   struct tagRECT v9; // [esp+20h] [ebp-10h] BYREF
@@ -703,14 +675,12 @@ AbstractClass * * SetDialogParent(HWND hWnd, HWND a2)
     v6 = 0; /*0x77713f*/
   return SetWindowPos(hWnd, 0, v5, v6, -1, -1, 5u); /*0x777152*/
 }
-}
 } // namespace gamemd
 
 // 0x7775C0
 namespace gamemd {
 int WindowProc_Main(int a1, int a2, HWND hWnd, UINT Msg, signed int wParam, LPARAM lParam)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND v7; // esi
   HWND v9; // edi
@@ -924,14 +894,12 @@ LABEL_72:
   }
   return DefWindowProcA(v9, Msg, wParam, lParam); /*0x777624*/
 }
-}
 } // namespace gamemd
 
 // 0x777BB0
 namespace gamemd {
 void * E4Recv_777BB0::sub_777BB0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   INIClass aP2; // [esp+4h] [ebp-100h] BYREF
   char Buffera[128]; // [esp+84h] [ebp-80h] BYREF
@@ -946,14 +914,12 @@ void * E4Recv_777BB0::sub_777BB0()
   sprintf(this, (ObjectClass *)&stru_849F20.NeedsSaveOrLink, &aP2); /*0x777c12*/
   return (ObjectClass *)this; /*0x777c1c*/
 }
-}
 } // namespace gamemd
 
 // 0x777C30
 namespace gamemd {
 ObjectClass * * InitWindowCreation(ObjectClass * aP0, int a2, int xRight, int yBottom)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   LONG v6; // eax
   HCURSOR CursorA; // eax
@@ -1026,14 +992,12 @@ ObjectClass * * InitWindowCreation(ObjectClass * aP0, int a2, int xRight, int yB
   CursorA = LoadCursorA((HINSTANCE)g_hInstance, (LPCSTR)0x68); /*0x777dea*/
   return SetCursor(CursorA); /*0x777df3*/
 }
-}
 } // namespace gamemd
 
 // 0x777EA0
 namespace gamemd {
 int IME_ProcessComposition()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   CHAR Buf[516]; // [esp+8h] [ebp-204h] BYREF
@@ -1077,14 +1041,12 @@ int IME_ProcessComposition()
   }
   return result; /*0x777f6c*/
 }
-}
 } // namespace gamemd
 
 // 0x778A20
 namespace gamemd {
 unsigned int * PlayerProfile_Load(unsigned int * a1, const char ** a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned __int8 *v5; // eax
   int Int; // esi
@@ -1229,14 +1191,12 @@ unsigned int * PlayerProfile_Load(unsigned int * a1, const char ** a2)
     return a1; /*0x778aaf*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x778F30
 namespace gamemd {
 CampaignScore * * LocalizeWOLDateString(char ** a1, void ** a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   CampaignScore *v5; // eax
   wchar_t *StringCSF; // eax
@@ -1390,14 +1350,12 @@ CampaignScore * * LocalizeWOLDateString(char ** a1, void ** a2)
   }
   return (char)v7; /*0x778f80*/
 }
-}
 } // namespace gamemd
 
 // 0x779230
 namespace gamemd {
 CampaignScore * * ConvertDateMonthNames(wchar_t ** a1, void ** a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   CampaignScore *v4; // eax
   CampaignScore *v5; // eax
@@ -1546,14 +1504,12 @@ CampaignScore * * ConvertDateMonthNames(wchar_t ** a1, void ** a2)
   String::Assign_Bool(a2, v30); /*0x77963c*/
   DeleteAndZero::Alt((void **)&v43); /*0x779645*/
 }
-}
 } // namespace gamemd
 
 // 0x77B2A0
 namespace gamemd {
 int RunWOLMainLoop(char a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char **AutoLogin; // eax
   char **Config; // eax
@@ -1730,14 +1686,12 @@ LABEL_42:
     return 0; /*0x77b5ef*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x77BAE0
 namespace gamemd {
 void sub_77BAE0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned int i; // ebx
   void **v3; // edi
@@ -1803,14 +1757,12 @@ void sub_77BAE0()
   }
   __3_YAXPAX_Z(g_WOL_ListParser); /*0x77bc01*/
 }
-}
 } // namespace gamemd
 
 // 0x77BCB0
 namespace gamemd {
 void sub_77BCB0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned int i; // ebx
   void **v3; // edi
@@ -1876,14 +1828,12 @@ void sub_77BCB0()
   }
   __3_YAXPAX_Z(DataGlobal_B73AF8); /*0x77bdd1*/
 }
-}
 } // namespace gamemd
 
 // 0x77BE80
 namespace gamemd {
 void sub_77BE80()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned int i; // ebx
   void **v3; // edi
@@ -1949,14 +1899,12 @@ void sub_77BE80()
   }
   __3_YAXPAX_Z(dword_B77D80); /*0x77bfa1*/
 }
-}
 } // namespace gamemd
 
 // 0x77C050
 namespace gamemd {
 void sub_77C050()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned int i; // ebx
   void **v3; // edi
@@ -2022,14 +1970,12 @@ void sub_77C050()
   }
   __3_YAXPAX_Z(dword_B76640); /*0x77c171*/
 }
-}
 } // namespace gamemd
 
 // 0x77C220
 namespace gamemd {
 void sub_77C220()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned int i; // ebx
   void **v3; // edi
@@ -2095,14 +2041,12 @@ void sub_77C220()
   }
   __3_YAXPAX_Z(g_WOL_MessageQueue); /*0x77c341*/
 }
-}
 } // namespace gamemd
 
 // 0x77C450
 namespace gamemd {
 void sub_77C450()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned int i; // ebx
   void **v3; // edi
@@ -2168,14 +2112,12 @@ void sub_77C450()
   }
   __3_YAXPAX_Z(g_WOL_ConnectionPool); /*0x77c571*/
 }
-}
 } // namespace gamemd
 
 // 0x77CB00
 namespace gamemd {
 void sub_77CB00()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned int i; // ebx
   void **v3; // edi
@@ -2241,14 +2183,12 @@ void sub_77CB00()
   }
   __3_YAXPAX_Z(g_WOL_AccountInfo); /*0x77cc21*/
 }
-}
 } // namespace gamemd
 
 // 0x77CCD0
 namespace gamemd {
 void sub_77CCD0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned int i; // ebx
   void **v3; // edi
@@ -2314,14 +2254,12 @@ void sub_77CCD0()
   }
   __3_YAXPAX_Z(g_WOL_EventQueue); /*0x77cdfa*/
 }
-}
 } // namespace gamemd
 
 // 0x77D3F0
 namespace gamemd {
 int E4Recv_77D3F0::sub_77D3F0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( !this ) /*0x77d3f9*/
@@ -2349,14 +2287,12 @@ LABEL_9:
   DeleteAndZero(&v6); /*0x77d483*/
   return 1; /*0x77d477*/
 }
-}
 } // namespace gamemd
 
 // 0x77D840
 namespace gamemd {
 int sub_77D840()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND Dialog; // esi
   int GameUI; // eax
@@ -2375,14 +2311,12 @@ int sub_77D840()
   g_GameActive = *((_BYTE *)g_ScenarioClass_Instance + 13730); /*0x77d8a7*/
   return MapClass::MarkForRedraw(&DataGlobal_87F7E8, 2); /*0x77d8b7*/
 }
-}
 } // namespace gamemd
 
 // 0x77DC90
 namespace gamemd {
 void OpenURLWOL(INIClass * a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   FILE *v4; // esi
   HINSTANCE ExecutableA; // esi
@@ -2467,14 +2401,12 @@ void OpenURLWOL(INIClass * a1, int a2)
   }
   return v7; /*0x77de8d*/
 }
-}
 } // namespace gamemd
 
 // 0x77E900
 namespace gamemd {
 Coord * * AssignWOLPlayerSide(const char ** a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   const char **v5; // eax
   HWND v6; // eax
@@ -2595,14 +2527,12 @@ LABEL_21:
   DeleteAndZero(&v26); /*0x77eb81*/
   DeleteAndZero(&v24); /*0x77eb8a*/
 }
-}
 } // namespace gamemd
 
 // 0x77ED00
 namespace gamemd {
 void SetupLobbyPlayerSlot(CCINIClass * aP0, CCINIClass * aP1, CCINIClass * aP2, int a4, int aP1a)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   SessionClass *v7; // esi
   ObjectClass *v8; // eax
@@ -2715,14 +2645,12 @@ LABEL_6:
     return (int)v26; /*0x77ef77*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x77EF90
 namespace gamemd {
 char WOL_RequestChannelList2(int a1, unsigned char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AbstractClass *v8; // ebx
   char *v12; // ecx
@@ -2792,14 +2720,12 @@ char WOL_RequestChannelList2(int a1, unsigned char a2)
   g_WOL_RequestState = v5 + 1; /*0x77f113*/
   return 1; /*0x77efc3*/
 }
-}
 } // namespace gamemd
 
 // 0x77F120
 namespace gamemd {
 char RequestChannelListWOL()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   wchar_t *StringCSF; // eax
   CreateGameDialogControl *ecx2; // ecx
@@ -2895,14 +2821,12 @@ LABEL_5:
   SetEvent(Handles); /*0x77f214*/
   return 0; /*0x77f21c*/
 }
-}
 } // namespace gamemd
 
 // 0x77F320
 namespace gamemd {
 AbstractClass * * WOL_RequestChannelListEx(int a1, unsigned char a2, char a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char result; // al
   HANDLE *v6; // esi
@@ -2985,14 +2909,12 @@ AbstractClass * * WOL_RequestChannelListEx(int a1, unsigned char a2, char a3)
   }
   return result; /*0x77f341*/
 }
-}
 } // namespace gamemd
 
 // 0x77F520
 namespace gamemd {
 char sub_77F520(char a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char result; // al
   HANDLE *v2; // esi
@@ -3072,14 +2994,12 @@ char sub_77F520(char a1)
   }
   return result; /*0x77f53b*/
 }
-}
 } // namespace gamemd
 
 // 0x77F710
 namespace gamemd {
 char sub_77F710(unsigned char a1, char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char result; // al
   HANDLE *v4; // esi
@@ -3158,7 +3078,6 @@ char sub_77F710(unsigned char a1, char a2)
     }
   }
   return result; /*0x77f72e*/
-}
 }
 } // namespace gamemd
 

@@ -7,17 +7,14 @@
 // 0x5CEAB0
 int MSPCXAnim::Stub()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return this->__pad_029; /*0x5ceab3*/
-}
 }
 
 // 0x5D09C0
 namespace gamemd {
 AbstractClass * * MSPCXAnim_42::AllocCopyData_8B(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( a2 ) /*0x5d09cc*/
@@ -75,7 +72,6 @@ AbstractClass * * MSPCXAnim_42::AllocCopyData_8B(int a2, unsigned int * a3)
   if ( v10 < this->MSPCXAnim_42_field_0x10 ) /*0x5d0a7f*/
     this->MSPCXAnim_42_field_0x10 = v10; /*0x5d0a81*/
   return 1; /*0x5d0a84*/
-}
 }
 } // namespace gamemd
 

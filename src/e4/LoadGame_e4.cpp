@@ -13,7 +13,6 @@
 // 0x660840
 int LoadGame::LoadTriggerEvents()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v12; // [esp+20h] [ebp-8h] BYREF
   int v13; // [esp+24h] [ebp-4h] BYREF
@@ -77,12 +76,10 @@ int LoadGame::LoadTriggerEvents()
   }
   return (*(int (__stdcall **)(void *, __int16 *, int, _DWORD))(this->q00C)(this, &word_B04D78, 4, 0) >= 0; /*0x6608df*/
 }
-}
 
 // 0x660F10
 int LoadGame::RemoveItem(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   AbstractClass *v2 = this->q010; /*0x660f10*/
@@ -102,12 +99,10 @@ int LoadGame::RemoveItem(int a2)
   }
   return 1; /*0x660f39*/
 }
-}
 
 // 0x67E730
 int LoadGame::Start()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char result; // al
   int *Viewport; // edx
@@ -917,12 +912,10 @@ LABEL_222:
   }
   return result;
 }
-}
 
 // 0x69B5B0
 int LoadGame::LoadBlock300(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   bool result; // al
 
@@ -940,12 +933,10 @@ int LoadGame::LoadBlock300(int a2)
   }
   return result; /*0x69b5f2*/
 }
-}
 
 // 0x751710
 int LoadGame::RestoreAudioState()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int *Next; // esi
   int NextAlt; // ebx
@@ -1024,12 +1015,10 @@ int LoadGame::RestoreAudioState()
   }
   return result; /*0x751895*/
 }
-}
 
 // 0x7533F0
 int LoadGame::LoadMagicAndAudio()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -1067,7 +1056,6 @@ int LoadGame::LoadMagicAndAudio()
     }
   }
   return result; /*0x7534c6*/
-}
 }
 
 // 0x54E7B0

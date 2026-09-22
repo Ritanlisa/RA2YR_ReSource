@@ -8,7 +8,6 @@
 namespace gamemd {
 unsigned int * DynamicVector::Copy(VectorClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( this == (_DWORD *)aP1 ) /*0x5ac43a*/
@@ -43,7 +42,6 @@ LABEL_8:
   this->q010 = aP1[1].vtable0; /*0x5ac486*/
   this->CapacityIncrement = aP1[1].Items; /*0x5ac48c*/
   return this; /*0x5ac491*/
-}
 }
 } // namespace gamemd
 

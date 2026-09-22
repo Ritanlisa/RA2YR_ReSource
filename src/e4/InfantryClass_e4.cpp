@@ -9,7 +9,6 @@
 namespace gamemd {
 int InfantryClass::ScanTarget(int * a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 *PlacementCellsAlt; // eax
   char *MissionControl; // eax
@@ -72,14 +71,12 @@ int InfantryClass::ScanTarget(int * a1)
     return v9 / 2; /*0x4d4fa3*/
   return result; /*0x4d4fa0*/
 }
-}
 } // namespace gamemd
 
 // 0x4D5350
 namespace gamemd {
 AbstractClass * * InfantryClass::ProcessDeploy(void ** a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   #375 *v2; // edx
   #375 **v4; // edi
@@ -154,14 +151,12 @@ LABEL_25:
   int v10 = Math::RoundToInt(*((double *)MissionControl + 2) * 900.0); /*0x4d55a7*/
   return v10 + Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 2); /*0x4d55b0*/
 }
-}
 } // namespace gamemd
 
 // 0x517D90
 namespace gamemd {
 void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AbstractClass *edi1; // edi
   InfantryTypeClass *v3; // eax
@@ -265,7 +260,6 @@ void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
   }
   a1->__pad_8C[4] = 0; /*0x517f83*/
   return FootClass::Destruct(a1); /*0x517f8e*/
-}
 }
 } // namespace gamemd
 

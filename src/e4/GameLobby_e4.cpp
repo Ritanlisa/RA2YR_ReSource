@@ -6,13 +6,11 @@
 namespace gamemd {
 void GameLobby_Setup(HWND hDlg, void * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // esi
   HWND DlgItem; // eax
   int v6; // eax
   HWND v7; // eax
-
   for ( i = 0; i < 8; ++i )
   {
   int v4; // eax
@@ -89,6 +87,5 @@ void GameLobby_Setup(HWND hDlg, void * a2)
   v7 = GetDlgItem(hDlg, v6); /*0x5ea285*/
   EnableWindow(v7, 1); /*0x5ea28a*/
   return SetupSkirmishPlayerSlots(hDlg, a2, (HWND)1); /*0x5ea297*/
-}
 }
 } // namespace gamemd

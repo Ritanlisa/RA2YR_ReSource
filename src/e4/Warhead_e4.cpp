@@ -14,7 +14,6 @@
 // 0x41D7E0
 int Warhead::GetWarheadSound(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( VeterancyStruct::IsElite((float *)(this->q013 + 336)) ) /*0x41d7ec*/
@@ -23,12 +22,10 @@ int Warhead::GetWarheadSound(int a2)
     v3 = this->q044; /*0x41d7fa*/
   return !*(_BYTE *)(this + 60) && v3 + this->q040 <= (int)g_CurrentFrame || a2 != *(_DWORD *)(this + 80); /*0x41d814*/
 }
-}
 
 // 0x452820
 int Warhead::RemoveFromDamageList(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   _DWORD * v2 = this + 411; /*0x452827*/
@@ -57,12 +54,10 @@ int Warhead::RemoveFromDamageList(int a2)
   }
   return v7; /*0x45289c*/
 }
-}
 
 // 0x4690B0
 int Warhead::ApplyDamage(ObjectClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v4; // ecx
   IUnknown *v6; // ecx
@@ -822,12 +817,10 @@ LABEL_158:
   }
   return Instance;
 }
-}
 
 // 0x46A310
 int Warhead::ApplyPostDamageEffects()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   __int16 v22; // ax
@@ -1163,12 +1156,10 @@ int Warhead::ApplyPostDamageEffects()
   }
   return result; /*0x46adcd*/
 }
-}
 
 // 0x65B580
 int Warhead::ProcessDamageArea()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v24 = *((_DWORD *)g_RulesClass_Instance + 1540); /*0x65b5a3*/
@@ -1241,5 +1232,4 @@ int Warhead::ProcessDamageArea()
     Trigger::EnableOnce(*(_BYTE **)(this + 36), 0); /*0x65b7ca*/
     return RadSiteClass::Radiate(this); /*0x65b7d1*/
   }
-}
 }

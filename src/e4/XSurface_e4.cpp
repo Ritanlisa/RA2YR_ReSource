@@ -7,7 +7,6 @@
 // 0x7BA8C0
 int XSurface::DrawDashedLine(int * a1, int * a2, XSurface * aP3, int a5, int a6)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v13; // esi
   _WORD *v14; // eax
@@ -171,12 +170,10 @@ int XSurface::DrawDashedLine(int * a1, int * a2, XSurface * aP3, int a5, int a6)
   }
   return v13; /*0x7bab23*/
 }
-}
 
 // 0x7BAB90
 void* XSurface::WalkLine(int a2, unsigned int * a3, unsigned int * a4, void (__thiscall *a5)(int *) a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char result; // al
   int i; // ebx
@@ -315,12 +312,10 @@ void* XSurface::WalkLine(int a2, unsigned int * a3, unsigned int * a4, void (__t
   }
   return result; /*0x7bac0f*/
 }
-}
 
 // 0x7BB050
 XSurface * * XSurface::FillRectEx(XSurface * aP1, int * a2, XSurface * aP3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   XSurface *v4; // edi
   int Width; // ebx
@@ -513,12 +508,10 @@ LABEL_9:
   (*(void (__thiscall **)(XSurface *))(*(_DWORD *)v4->__pad_0 + 96))(v4); /*0x7bb21e*/
   return 1; /*0x7bb1c0*/
 }
-}
 
 // 0x7BB350
 int XSurface::DrawEllipseOutline(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
         int *this,
         int a2,
         int a3,
@@ -735,12 +728,10 @@ int XSurface::DrawEllipseOutline(int a2, int a3, int a4, int a5, int a6, int a7,
   }
   return this->Unlock(); /*0x7bb90c*/
 }
-}
 
 // 0x7BBB90
 XSurface * * XSurface::BlitPart(void ** a2, XSurface * a3, void ** arg8, void ** a4, int a6)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   XSurface *v6; // edi
   XSurface aP2; // [esp+Ch] [ebp-40h] BYREF
@@ -786,12 +777,10 @@ XSurface * * XSurface::BlitPart(void ** a2, XSurface * a3, void ** arg8, void **
     return BlitterCopySimpleSHP(this, &aP1, v6, (int)&aP2, (int *)&arg8, 0, 3, 1000, 0); /*0x7bbcca*/
   }
 }
-}
 
 // 0x7BBCF0
 XSurface * * XSurface::Blit(int a2, void ** a3, XSurface * arg8, int a5, unsigned int * a6, void ** a4, int a8)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   XSurface aP2; // [esp+4h] [ebp-20h] BYREF
   XSurface aP1; // [esp+14h] [ebp-10h] BYREF
@@ -829,7 +818,6 @@ XSurface * * XSurface::Blit(int a2, void ** a3, XSurface * arg8, int a5, unsigne
     a3 = &vt_BlitPlain_unsigned_short; /*0x7bbde2*/
     return BlitterCopySimpleSHP(this, &aP1, arg8, (int)&aP2, (int *)&a3, 0, 3, 1000, 0); /*0x7bbe01*/
   }
-}
 }
 
 // 0x410600

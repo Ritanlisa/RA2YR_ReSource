@@ -5,7 +5,6 @@
 // 0x578540
 int Type::CheckAmbiguity(int a2, char a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   bool result; // al
 
@@ -30,5 +29,4 @@ int Type::CheckAmbiguity(int a2, char a3)
       return 1; /*0x57859b*/
   }
   return result; /*0x5785dd*/
-}
 }

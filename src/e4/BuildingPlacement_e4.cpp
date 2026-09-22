@@ -10,7 +10,6 @@
 // 0x4FB840
 void* BuildingPlacement::Activate(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( (#375 *)this != HouseClass_Player ) /*0x4fb84c*/
@@ -41,12 +40,10 @@ void* BuildingPlacement::Activate(int a2, unsigned int * a3)
   (*(void (__thiscall **)(int, int))(*(_DWORD *)v4 + 292))(v4, 2); /*0x4fb909*/
   return 1; /*0x4fb90f*/
 }
-}
 
 // 0x54C550
 VectorClass * * BuildingPlacement::ProcessBuildingPlacementAction()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void *NeighbourContent; // eax
   AbstractClass *v12; // eax
@@ -281,12 +278,10 @@ VectorClass * * BuildingPlacement::ProcessBuildingPlacementAction()
   }
   return (char)v12; /*0x54c60c*/
 }
-}
 
 // 0x594F40
 unsigned int * BuildingPlacement::SelectBuildingPlacementCells(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   VectorClass *v35; // [esp+18h] [ebp-30h]
   MapClass *v36; // [esp+1Ch] [ebp-2Ch]
@@ -494,7 +489,6 @@ LABEL_72:
     return v7; /*0x595235*/
   }
   return v7; /*0x594fbd*/
-}
 }
 
 // 0x500200

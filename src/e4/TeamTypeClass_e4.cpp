@@ -14,7 +14,6 @@
 namespace gamemd {
 int TeamTypeClass::Construct()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   wchar_t *v2; // eax
   wchar_t *v4; // eax
@@ -78,14 +77,12 @@ int TeamTypeClass::Construct()
   }
   return this; /*0x4c99fd*/
 }
-}
 } // namespace gamemd
 
 // 0x691C00
 namespace gamemd {
 void * TeamTypeClass::CreateScriptType()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   INIClass *v3; // eax
   INIClass *v4; // esi
@@ -153,14 +150,12 @@ LABEL_17:
   }
   return (INIClass *)*((_DWORD *)unk_8B41CC + v2); /*0x691d2e*/
 }
-}
 } // namespace gamemd
 
 // 0x6E85F0
 namespace gamemd {
 AbstractClass * * TeamTypeClass::FindOrCreateTaskForce()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( !_strcmpi(&stru_817460.sectionHead[1], this) || !_strcmpi(g_Str_none, this) ) /*0x6e860c*/
@@ -181,14 +176,12 @@ LABEL_6:
   }
   return *(TaskForceClass **)(*(_DWORD *)&HouseClass_Player[43912] + 4 * v2); /*0x6e865f*/
 }
-}
 } // namespace gamemd
 
 // 0x6EF5F0
 namespace gamemd {
 int TeamTypeClass::Check(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -196,14 +189,12 @@ int TeamTypeClass::Check(int a2)
     *(_DWORD *)(result + 240) = a2; /*0x6ef5fb*/
   return result; /*0x6ef60b*/
 }
-}
 } // namespace gamemd
 
 // 0x6F0A70
 namespace gamemd {
 int TeamTypeClass::DestroyAllInstances()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int i; // esi
@@ -222,14 +213,12 @@ int TeamTypeClass::DestroyAllInstances()
   }
   return result; /*0x6f0aa2*/
 }
-}
 } // namespace gamemd
 
 // 0x6F1030
 namespace gamemd {
 int TeamTypeClass::GetTeam(int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -247,14 +236,12 @@ int TeamTypeClass::GetTeam(int a2, int a3)
     return (*(int (__thiscall **)(int, int, int))(*(_DWORD *)v4 + 40))(v4, a2, a3); /*0x6f1083*/
   return result; /*0x6f1086*/
 }
-}
 } // namespace gamemd
 
 // 0x6F1090
 namespace gamemd {
 AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AbstractClass *v3; // ecx
   int Int_Overwrite; // eax
@@ -566,14 +553,12 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1)
   }
   return 0; /*0x6f1528*/
 }
-}
 } // namespace gamemd
 
 // 0x6F1550
 namespace gamemd {
 AbstractClass * * TeamTypeClass::GetMaxCount(CCINIClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   INIClass *v5; // edi
   INIClass *v6; // eax
@@ -701,14 +686,12 @@ AbstractClass * * TeamTypeClass::GetMaxCount(CCINIClass * aP1)
     INIClass::SetString(aP1->__pad_0, v5, &stru_8172FC, (INIClass *)(v31 + 36)); /*0x6f184c*/
   return 1; /*0x6f1853*/
 }
-}
 } // namespace gamemd
 
 // 0x6F1870
 namespace gamemd {
 int TeamTypeClass::GetGroup()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -721,14 +704,12 @@ int TeamTypeClass::GetGroup()
   }
   return result; /*0x6f1890*/
 }
-}
 } // namespace gamemd
 
 // 0x6F18E0
 namespace gamemd {
 unsigned int * TeamTypeClass::GetTransportWaypoint(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   TeamTypeClass *v5 = this; /*0x6f18e0*/
@@ -745,14 +726,12 @@ unsigned int * TeamTypeClass::GetTransportWaypoint(unsigned int * a2)
     return a2; /*0x6f190f*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x6F1C80
 namespace gamemd {
 int TeamTypeClass::PowerDrainUpdate(int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -824,14 +803,12 @@ int TeamTypeClass::PowerDrainUpdate(int * a2)
   }
   return result; /*0x6f1e11*/
 }
-}
 } // namespace gamemd
 
 // 0x6F1FA0
 namespace gamemd {
 int TeamTypeClass::ProcessTaskForce()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -864,17 +841,14 @@ int TeamTypeClass::ProcessTaskForce()
     this->q0F0 = 0; /*0x6f2028*/
   return result; /*0x6f202e*/
 }
-}
 } // namespace gamemd
 
 // 0x6F20C0
 namespace gamemd {
 int TeamTypeClass::GetAuxField()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return this->q098; /*0x6f20c6*/
-}
 }
 } // namespace gamemd
 
@@ -916,7 +890,6 @@ TeamTypeClass * TeamTypeClass::ddtor(char a2)
 namespace gamemd {
 AbstractClass * * TeamTypeClass_28::Release(int a2, int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( a2 ) /*0x6f22fc*/
@@ -1011,14 +984,12 @@ AbstractClass * * TeamTypeClass_28::Release(int a2, int * a3)
     return 1; /*0x6f23eb*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x6F24B0
 namespace gamemd {
 AbstractClass * * TeamTypeClass_28::SetCapacity(int a2, int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( a2 ) /*0x6f24bc*/
@@ -1114,7 +1085,6 @@ AbstractClass * * TeamTypeClass_28::SetCapacity(int a2, int * a3)
   if ( v16 < this->TeamTypeClass_28_field_0x10 ) /*0x6f25b6*/
     this->TeamTypeClass_28_field_0x10 = v16; /*0x6f25b8*/
   return 1; /*0x6f25bb*/
-}
 }
 } // namespace gamemd
 

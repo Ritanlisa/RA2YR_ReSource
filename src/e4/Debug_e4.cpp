@@ -7,7 +7,6 @@
 namespace gamemd {
 int Debug::ScrollText(CellStruct * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char result; // al
   IUnknown *v5; // ebp
@@ -61,14 +60,12 @@ int Debug::ScrollText(CellStruct * aP1)
   }
   return result; /*0x5bd1e8*/
 }
-}
 } // namespace gamemd
 
 // 0x6E61F0
 namespace gamemd {
 int Debug::AccumFlags()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // edi
 
@@ -80,7 +77,6 @@ int Debug::AccumFlags()
     v1 = *(_DWORD *)(v1 + 168); /*0x6e6205*/
   }
   return i; /*0x6e6213*/
-}
 }
 } // namespace gamemd
 

@@ -8,7 +8,6 @@
 // 0x7B0D90
 unsigned int * IPXInterfaceClass::Construct()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IPXInterfaceClass::bindSocket(); /*0x7b0d93*/
   *this = &vt_IPXInterfaceClass; /*0x7b0da4*/
@@ -19,12 +18,10 @@ unsigned int * IPXInterfaceClass::Construct()
   *((_WORD *)this + 129413) = -1; /*0x7b0dc8*/
   return this; /*0x7b0dce*/
 }
-}
 
 // 0x7B0DD0
 AbstractClass * * IPXInterfaceClass::initSocket(IUnknown * aP1, Color * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   SOCKET v4; // esi
   Color *v6; // ecx
@@ -84,12 +81,10 @@ AbstractClass * * IPXInterfaceClass::initSocket(IUnknown * aP1, Color * aP2)
     return 1; /*0x7b0f40*/
   }
 }
-}
 
 // 0x7B13D0
 AbstractClass * * IPXInterfaceClass::SendPacket(ObjectClass * aP1, int a3, int a4, unsigned int fromlen)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   CCINIClass *v7; // esi
   AbstractClass *v11; // eax
@@ -251,22 +246,18 @@ LABEL_6:
   }
   return 0; /*0x7b13e4*/
 }
-}
 
 // 0x7B1760
 int IPXInterfaceClass::GetLocalAddress(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   this->q3F2F8 = a2; /*0x7b1764*/
   return a2; /*0x7b176a*/
-}
 }
 
 // 0x7B19C0
 void * IPXInterfaceClass::bindSocket()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   this->LocalNode = 0; /*0x7b19d2*/
@@ -321,12 +312,10 @@ void * IPXInterfaceClass::bindSocket()
   Debug::Log(); /*0x7b1a9b*/
   return this; /*0x7b1aa5*/
 }
-}
 
 // 0x7B1B80
 AnimClass * * IPXInterfaceClass::AddRef()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -343,12 +332,10 @@ AnimClass * * IPXInterfaceClass::AddRef()
   }
   return result; /*0x7b1bb9*/
 }
-}
 
 // 0x7B1BC0
 AbstractClass * * IPXInterfaceClass::Receive()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   u_int v2; // eax
   u_int v5; // eax
@@ -366,12 +353,10 @@ AbstractClass * * IPXInterfaceClass::Receive()
   Debug::Log(); /*0x7b1bf0*/
   return 0; /*0x7b1bfa*/
 }
-}
 
 // 0x7B1CA0
 void IPXInterfaceClass::Disconnect()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   while ( this->BoundSocket ) /*0x7b1ca6*/
@@ -402,12 +387,10 @@ void IPXInterfaceClass::Disconnect()
   this->q3F05C = 0; /*0x7b1cfa*/
   this->q3F050 = 0; /*0x7b1d00*/
 }
-}
 
 // 0x7B2240
 unsigned char * IPXInterfaceClass::processPacket()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _BYTE *result; // eax
 
@@ -444,12 +427,10 @@ unsigned char * IPXInterfaceClass::processPacket()
   }
   return result; /*0x7b22a6*/
 }
-}
 
 // 0x7B24E0
 AnimClass * * IPXInterfaceClass::Connect(const void * a1, unsigned int a3, UDPInterfaceClass * aP3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   UDPInterfaceClass *v5; // ebx
   AnimClass *v10; // eax
@@ -495,12 +476,10 @@ AnimClass * * IPXInterfaceClass::Connect(const void * a1, unsigned int a3, UDPIn
   SendMessageA((HWND)g_hWnd, v15, 0, 2); /*0x7b25c3*/
   return EventQueue::Process(g_BinkMoviePlayer); /*0x7b25d4*/
 }
-}
 
 // 0x7B2A20
 AbstractClass * * IPXInterfaceClass::getSocketState(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // eax
 
@@ -538,7 +517,6 @@ AbstractClass * * IPXInterfaceClass::getSocketState(int a2, unsigned int * a3)
   if ( v7 < this->Initialized ) /*0x7b2ab9*/
     this->Initialized = v7; /*0x7b2abb*/
   return 1; /*0x7b2abe*/
-}
 }
 
 // 0x7B1720

@@ -6,7 +6,6 @@
 // 0x5BF450
 AbstractClass * * AsyncIO::Shutdown()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *i; // eax
   void (__thiscall ***v2)(_DWORD, int); // ecx
@@ -43,12 +42,10 @@ AbstractClass * * AsyncIO::Shutdown()
   }
   return result; /*0x5bf4f5*/
 }
-}
 
 // 0x774BC0
 int AsyncIO::WaitCompletion()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   DWORD NumberOfBytesTransferred; // [esp+4h] [ebp-1Ch] BYREF
   DWORD Ticks; // [esp+8h] [ebp-18h]
@@ -83,7 +80,6 @@ int AsyncIO::WaitCompletion()
     *(_BYTE *)(this + 81) = 0; /*0x774c4f*/
   }
   return ResetEvent(*(HANDLE *)(this + 76)); /*0x774c60*/
-}
 }
 
 // 0x5BF500

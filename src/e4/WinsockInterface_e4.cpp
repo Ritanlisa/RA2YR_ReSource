@@ -12,7 +12,6 @@
 namespace gamemd {
 void * WinsockInterface::ProcessPacket(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void **v4; // edi
 
@@ -72,14 +71,12 @@ void * WinsockInterface::ProcessPacket(int a2)
   DeleteAndZero((void **)&a2); /*0x770414*/
   return this; /*0x77041b*/
 }
-}
 } // namespace gamemd
 
 // 0x7B1DE0
 namespace gamemd {
 int WinsockInterface::Init()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   struct WSAData *v3; // eax
   struct WSAData *v5; // esi
@@ -165,6 +162,5 @@ int WinsockInterface::Init()
       }
     }
   }
-}
 }
 } // namespace gamemd

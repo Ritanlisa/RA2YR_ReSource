@@ -100,7 +100,6 @@ FootClass::FootClass() noexcept
 // 0x4da530
 Coord * * FootClass::MovementAI()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char result; // al
   int (__stdcall ***v29)(_DWORD, void *, int *); // eax
@@ -108,7 +107,6 @@ Coord * * FootClass::MovementAI()
   int v38; // [esp+78h] [ebp-Ch] BYREF
   int v39; // [esp+7Ch] [ebp-8h]
   int v40; // [esp+80h] [ebp-4h]
-
   MovementAI::Begin();
   result = *(_BYTE *)(a1 + 144);
   if ( !result )
@@ -1305,7 +1303,6 @@ pop     ebx
 add     esp, 14h
 retn
 */
-}
 
 void FootClass::EmitMovementSmoke()
 {

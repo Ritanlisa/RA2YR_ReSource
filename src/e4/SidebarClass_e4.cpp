@@ -8,25 +8,20 @@
 // 0x4C9C50
 int SidebarClass::draw()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return this->q05C; /*0x4c9c53*/
-}
 }
 
 // 0x4CA170
 int SidebarClass::draw2()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return this->q068; /*0x4ca173*/
-}
 }
 
 // 0x6A5090
 int SidebarClass::InitPositions()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   if ( *((_DWORD *)g_ScenarioClass_Instance + 3374) ) /*0x6a5095*/
   {
@@ -48,12 +43,10 @@ int SidebarClass::InitPositions()
   }
   return g_DSurface_SidebarBounds + 69; /*0x6a50db*/
 }
-}
 
 // 0x6A5130
 int SidebarClass::CalcBounds(char a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v1; // ebx
   TechnoTypeClass *v2; // eax
@@ -132,12 +125,10 @@ int SidebarClass::CalcBounds(char a1)
   }
   return result; /*0x6a52a5*/
 }
-}
 
 // 0x6A5840
 void * SidebarClass::LoadAssets()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void *SHP; // eax
   void *result; // eax
@@ -221,12 +212,10 @@ void * SidebarClass::LoadAssets()
   DataGlobal_B0B4C8 = result; /*0x6a5bdb*/
   return result; /*0x6a5bd9*/
 }
-}
 
 // 0x6A6C30
 int SidebarClass::Redraw(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // edi
   AudioController *v10; // dl
@@ -463,12 +452,10 @@ int SidebarClass::Redraw(char a2)
   g_DSurface_Hidden_2 = v19; /*0x6a70c5*/
   return v19; /*0x6a70c3*/
 }
-}
 
 // 0x6A7590
 int SidebarClass::SwitchTab(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -510,12 +497,10 @@ int SidebarClass::SwitchTab(int a2)
   }
   return result; /*0x6a76e1*/
 }
-}
 
 // 0x6ABD30
 GadgetClass * * SidebarClass::LoadResources()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // edi
   char result; // al
@@ -681,17 +666,14 @@ GadgetClass * * SidebarClass::LoadResources()
   }
   return result; /*0x6ac1fb*/
 }
-}
 
 // 0x40D270
 namespace gamemd {
 int SidebarClass::initButtons2()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // attributes: thunk
 {
   return SidebarClass::InitButtons(this);
-}
 }
 }
 // 0x653010

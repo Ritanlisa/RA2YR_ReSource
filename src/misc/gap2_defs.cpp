@@ -133,7 +133,6 @@ namespace gamemd { int AudioMixer::SetupChannels() {
 } }
 // 0x514F70
 namespace gamemd { int MovementAI::MainFootClass(int a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int *Coords; // eax
@@ -1904,7 +1903,6 @@ mov     esp, ebp
 pop     ebp
 retn    4
 */
-} }
 // 0x5163B0
 namespace gamemd { int MovementAI::MarkOccupiedPathCell() {
 {
@@ -1951,7 +1949,6 @@ namespace gamemd { int MovementAI::MarkOccupiedPathCell() {
 } }
 // 0x5164D0
 namespace gamemd { int MovementAI::StepFootClass(int a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   TechnoClass *v3; // ecx
   int result; // eax
@@ -2244,7 +2241,6 @@ LABEL_28:
   }
   return result; /*0x5166dd*/
 }
-} }
 // 0x583820
 namespace gamemd { void* Pathfinding::CheckCliff(void* a1, void* a2, int a3, int a4) {
 {
@@ -6682,7 +6678,6 @@ namespace gamemd { int RulesClass::LoadCountries() {
 } }
 // 0x672440
 namespace gamemd { int RulesClass::ReadDataList() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int KeyCount; // edi
   void *StringByIndex; // ebx
@@ -6790,7 +6785,6 @@ LABEL_17:
   }
   return KeyCount > 0; /*0x6725df*/
 }
-} }
 // 0x672660
 namespace gamemd { int RulesClass::LoadBuildingTypes() {
 {
@@ -8228,7 +8222,6 @@ namespace gamemd { int RulesClass::SaveLoad_Prefix(void* a1) {
 } }
 // 0x675210
 namespace gamemd { int RulesClass::SaveLoad_Prefix_0(int a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x675210
 {
   int j; // ebx
@@ -15159,7 +15152,6 @@ pop     ebx
 add     esp, 8
 retn    4
 */
-} }
 // 0x6CE220
 namespace gamemd { void* SuperClass::ProcessEvent(int a2) {
 {
@@ -17672,7 +17664,6 @@ namespace gamemd { int AudioSettings::Check(int a1) {
 } }
 // 0x720BB0
 namespace gamemd { int ThemeClass::Play(int a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( g_NetworkPlayerBuffer[5688] && Audio::IsSoundEnabled() && !g_NetworkPlayerBuffer[5928] )
@@ -17768,7 +17759,6 @@ LABEL_47:
   }
   return *this; /*0x720e0a*/
 }
-} }
 // 0x720E50
 namespace gamemd { int AudioSettings::ComputeTransform(int a1) {
 {

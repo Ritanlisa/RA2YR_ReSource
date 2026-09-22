@@ -8,7 +8,6 @@
 // 0x5A5360
 unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AbstractClass *v4; // ebx
   int *v5; // eax
@@ -387,5 +386,4 @@ LABEL_98:
     }
     return v24; /*0x5a5a93*/
   }
-}
 }

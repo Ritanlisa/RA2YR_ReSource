@@ -9,7 +9,6 @@
 // 0x46F600
 int Skirmish::FillPlayerNames()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   HWND v3; // esi
@@ -51,12 +50,10 @@ LABEL_9:
   }
   return result; /*0x46f6c5*/
 }
-}
 
 // 0x46F8F0
 CampaignClass * * Skirmish::SetupAllSpawnLocations()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int ResourceIDCSF; // eax
   SessionClass *v4; // esi
@@ -137,12 +134,10 @@ CampaignClass * * Skirmish::SetupAllSpawnLocations()
   }
   while ( (int)v8 < (int)g_CampaignSideIndex ); /*0x46fa03*/
 }
-}
 
 // 0x596C70
 int Skirmish::ReadSettings(HWND hDlg)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   LRESULT v4; // eax
   HWND v5; // eax
@@ -229,12 +224,10 @@ int Skirmish::ReadSettings(HWND hDlg)
   byte_ABE2D8 = 0; /*0x596e31*/
   return SettingsClass::ClampValues((int *)this); /*0x596e3f*/
 }
-}
 
 // 0x597260
 TechnoTypeClass * * Skirmish::RandomizeSettings(ObjectClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -287,12 +280,10 @@ TechnoTypeClass * * Skirmish::RandomizeSettings(ObjectClass * aP1)
   *(this + 29) = result; /*0x597372*/
   return result; /*0x597375*/
 }
-}
 
 // 0x640710
 int Skirmish::RenderPreview(SkirmishDialog * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   HWND DlgItem; // eax
@@ -415,12 +406,10 @@ int Skirmish::RenderPreview(SkirmishDialog * aP1)
   }
   return result; /*0x640a2f*/
 }
-}
 
 // 0x6ACD60
 int Skirmish::EnableSpawnButtons()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   Skirmish *v1; // ebp
   HWND result; // eax
@@ -491,12 +480,10 @@ int Skirmish::EnableSpawnButtons()
   }
   return result; /*0x6ace79*/
 }
-}
 
 // 0x6AE3F0
 ReferenceCounted * * Skirmish::Setup_DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   HWND DlgItem; // eax
@@ -610,12 +597,10 @@ ReferenceCounted * * Skirmish::Setup_DlgProc(HWND hDlg, unsigned int a2, unsigne
   }
   return result; /*0x6ae448*/
 }
-}
 
 // 0x6AE6E0
 AbstractClass * * Skirmish::SetupGame(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND DlgItem; // eax
   HWND v4; // esi
@@ -982,13 +967,11 @@ LABEL_92:
     Session::PrepareGame((HWND)this); /*0x6aeef2*/
   return 0; /*0x6aeef7*/
 }
-}
 
 // 0x6ADF00
 namespace gamemd {
 void Skirmish_Setup_6ADDF0_Setup(HWND hDlg, int a2, int nIDDlgItem)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   HWND ResourceIDHardcodedCSF; // [esp+4h] [ebp-1Ch]
@@ -1065,7 +1048,6 @@ void Skirmish_Setup_6ADDF0_Setup(HWND hDlg, int a2, int nIDDlgItem)
     while ( (int)(v5 + 1) < v17 );
   }
   return result; /*0x6ae06d*/
-}
 }
 } // namespace gamemd
 

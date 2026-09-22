@@ -5,7 +5,6 @@
 // 0x557AE0
 int ColorListClass::SetColor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   ListClass *v1 = this->q16C; /*0x557ae0*/
@@ -14,12 +13,10 @@ int ColorListClass::SetColor()
   else
     return 0; /*0x557aed*/
 }
-}
 
 // 0x557F40
 int ColorListClass::Clear(unsigned int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -41,12 +38,10 @@ int ColorListClass::Clear(unsigned int a2)
   }
   return result; /*0x557f97*/
 }
-}
 
 // 0x558010
 void ColorListClass::RemoveColor(wchar_t * String2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( String2 && (int)this->q044 > 0 ) /*0x558022*/
@@ -59,7 +54,6 @@ void ColorListClass::RemoveColor(wchar_t * String2)
     }
     this->Clear(v3); /*0x558051*/
   }
-}
 }
 
 // 0x488EE0

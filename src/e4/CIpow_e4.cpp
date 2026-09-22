@@ -6,7 +6,6 @@
 namespace gamemd {
 void CIpow_Helper()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // local variable allocation has failed, the output may be wrong!
 {
   long double result; // st7
@@ -109,14 +108,12 @@ LABEL_11:
     return -0.0; /*0x7c915e*/
   return result; /*0x7cf43a*/
 }
-}
 } // namespace gamemd
 
 // 0x7C91A5
 namespace gamemd {
 void* __usercall CIpow_Helper_Helper(double a1@<st0> a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _ST6 = a1; /*0x7c91a5*/
   __asm { frndint } /*0x7c91a7*/
@@ -125,6 +122,5 @@ void* __usercall CIpow_Helper_Helper(double a1@<st0> a1)
     _ST6 = a1 * dbl_87BED0; /*0x7c91bb*/
     __asm { frndint } /*0x7c91bd*/
   }
-}
 }
 } // namespace gamemd

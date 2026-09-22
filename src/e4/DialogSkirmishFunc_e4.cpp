@@ -10,7 +10,6 @@
 namespace gamemd {
 AbstractClass * * DialogSkirmishFunc_UpdateMultiEngineer(SkirmishDialog * hWnd, int nIDDlgItem, int a3, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND DlgItem; // eax
   LRESULT v9; // eax
@@ -623,6 +622,5 @@ LABEL_153:
         return;
     }
   }
-}
 }
 } // namespace gamemd

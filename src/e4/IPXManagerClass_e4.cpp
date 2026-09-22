@@ -5,7 +5,6 @@
 // 0x540D80
 int IPXManagerClass::sendPacket(int a2, int a3, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -26,12 +25,10 @@ int IPXManagerClass::sendPacket(int a2, int a3, int a4)
   }
   return result; /*0x540dba*/
 }
-}
 
 // 0x541040
 int IPXManagerClass::send(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   _DWORD *i; // ecx
@@ -47,12 +44,10 @@ int IPXManagerClass::send(int a2)
   }
   return result; /*0x541064*/
 }
-}
 
 // 0x541070
 int IPXManagerClass::receivePacket(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -86,7 +81,6 @@ LABEL_5:
     }
   }
   return result; /*0x541093*/
-}
 }
 
 // 0x5415F0

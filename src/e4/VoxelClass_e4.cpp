@@ -6,7 +6,6 @@
 namespace gamemd {
 void* VoxelClass_RenderObject()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v11; // ecx
   int v12; // eax
@@ -352,6 +351,5 @@ LABEL_21:
              v38);
   }
   return result; /*0x73ce00*/
-}
 }
 } // namespace gamemd

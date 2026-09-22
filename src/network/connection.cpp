@@ -21,7 +21,6 @@ ConnectionClass::ConnectionClass() noexcept
 // 0x48b410
 void ConnectionClass::queueSendPacket(const uint8_t* data, int32_t length, int32_t flags)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x48b410
 {
   _BYTE *i; // edi
@@ -223,7 +222,6 @@ xor     eax, eax
 pop     ebx
 retn    14h
 */
-}
 
 // IDA 0x48B750 — allocPacketSlot: reserve a queue slot for incoming packet
 void* ConnectionClass::allocPacketSlot()
@@ -266,7 +264,6 @@ void ConnectionClass::serviceSendQueue()
 // 0x48c5a0
 int ConnectionClass::connect()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int TileType; // eax
 
@@ -337,7 +334,6 @@ mov     eax, 1
 pop     esi
 retn
 */
-}
 
 // ============================================================================
 // IPXConnClass

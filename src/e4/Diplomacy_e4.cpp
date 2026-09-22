@@ -7,7 +7,6 @@
 // 0x657DA0
 CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int i; // ebx
@@ -254,7 +253,6 @@ LABEL_60:
     SendMessageA(a4, 0xF1u, 1u, 0); /*0x65824c*/
   SquadClass::ProcessMove(v26); /*0x658269*/
   return 0; /*0x658178*/
-}
 }
 
 // 0x603DB0

@@ -7,7 +7,6 @@
 namespace gamemd {
 B BulletClass::BulletClass()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   ObjectClass::ctor((_DWORD *)this); /*0x466384*/
@@ -58,14 +57,12 @@ B BulletClass::BulletClass()
   }
   return this; /*0x4664bc*/
 }
-}
 } // namespace gamemd
 
 // 0x466560
 namespace gamemd {
 BulletClass * * BulletClass::Dtor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   #374 *v5; // [esp+4h] [ebp-4h] BYREF
 
@@ -105,7 +102,6 @@ BulletClass * * BulletClass::Dtor()
     while ( v3 < DataGlobal_A8ED50 ); /*0x46664e*/
   }
   return ObjectClass::Dtor(this); /*0x466657*/
-}
 }
 } // namespace gamemd
 

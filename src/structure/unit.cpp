@@ -46,7 +46,6 @@ UnitClass::UnitClass() noexcept
 // No separate Mission_Unload override exists in the binary (vtable slot = Return450J).
 ILocomotion * * UnitClass::Mission_Harvest()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x4151e0
 {
   char *MissionControl; // eax
@@ -575,13 +574,11 @@ pop     ebx
 add     esp, 20h
 retn
 */
-}
 
 // IDA: 0x73D450 (ProcessResourceHarvesting, 477B)
 // 0x73d450
 int UnitClass::ProcessResourceHarvesting()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 *v2; // ebp
   #72 *v9; // eax
@@ -806,7 +803,6 @@ pop     ebx
 add     esp, 10h
 retn
 */
-}
 
 // IDA: 0x4C2C10 (updateHarvesting, 19B)
 // 0x4c2c10
@@ -829,7 +825,6 @@ UnitClass* UnitClass::updateHarvesting()
 // 0x6b4be0
 int UnitClass::UnloadPassengers(int placementType)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   ObjectClass *v2 = a2; /*0x6b4be3*/
@@ -843,7 +838,6 @@ int UnitClass::UnloadPassengers(int placementType)
   this->isOnMap = 0; /*0x6b4c4e*/
   this->PreDestroy(); /*0x6b4c52*/
   return 1; /*0x6b4c58*/
-}
 }
 // 0x6b7230
 void __thiscall UnitClass::ProcessExitQueue(int *this)
@@ -2332,7 +2326,6 @@ retn
 // 0x6b6080
 int UnitClass::CreateUnloadPlacementCraters(CellStruct* cell)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int i; // ebx
@@ -2359,7 +2352,6 @@ int UnitClass::CreateUnloadPlacementCraters(CellStruct* cell)
     while ( v7 < this->chronoDestCoords ); /*0x6b611c*/
   }
   return result; /*0x6b6120*/
-}
 }
 // 0x54e3b0
 int __thiscall UnitClass::GetExitCell(int this, _DWORD *a2, _DWORD *a3)
@@ -2547,7 +2539,6 @@ retn    8
 // 0x7192f0
 void* UnitClass::Deploy()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AnimClass *v1; // esi
   int i; // edi
@@ -2889,11 +2880,9 @@ LABEL_82:
   ++*(_DWORD *)v1->__pad_34; /*0x719b85*/
   return 0; /*0x719327*/
 }
-}
 // 0x738d30
 AbstractClass * * UnitClass::DeployToBuilding()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *BuildableFromArray; // eax
   int FoundationHeight; // eax
@@ -3076,7 +3065,6 @@ LABEL_23:
   if ( !this->FootClass_field_5A4 && !(unsigned __int8)House::IsCurrentPlayer((#375 *)this->owner) ) /*0x739380*/
     this->COMStub_Return0_93(&unk_B1CFE8, 0, 0); /*0x739394*/
   return 0; /*0x738d49*/
-}
 }
 // 0x739ac0
 char __thiscall UnitClass::SimpleDeployerDeploy(int *this)
@@ -4556,7 +4544,6 @@ retn    0Ch
 // 0x7359f0
 void UnitClass::CalcMoveTarget()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _WORD *Height; // eax
   int GroundHeight; // ebx
@@ -5379,7 +5366,6 @@ mov     esp, ebp
 pop     ebp
 retn
 */
-}
 
 // IDA: 0x741970 (AssignDestination_SyncLog, 6167B)
 }
@@ -9343,7 +9329,6 @@ retn
 // 0x743a50
 void* UnitClass::Scatter(CellStruct* threatPos, bool a3, bool a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   IUnknown *v9; // eax
@@ -9571,7 +9556,6 @@ LABEL_66:
   if ( v34 ) /*0x74407c*/
     return (*(int (__stdcall **)(int))(*(_DWORD *)v34 + 8))(v34); /*0x744096*/
   return result; /*0x743afe*/
-}
 }
 // 0x458a00
 int UnitClass::IsCellBlockedByBridge(void* aP1)
@@ -10872,7 +10856,6 @@ retn    1Ch
 // 0x70dc70
 int UnitClass::SetTurret(unsigned int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -10939,7 +10922,6 @@ pop     edi
 pop     esi
 retn    4
 */
-}
 
 // IDA: 0x73F0A0 (EvaluateTarget, 3238B)
 // 0x73f0a0
@@ -12678,7 +12660,6 @@ retn    14h
 // 0x7438f0
 int UnitClass::CanCrushTarget(TechnoClass* aP1)
  {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   bool result; // al
 
@@ -12713,7 +12694,6 @@ int UnitClass::CanCrushTarget(TechnoClass* aP1)
              this->owner) == 0;
   return result; /*0x743a2e*/
 }
-}
 // 0x5f6cd0
     && aP1 && ObjectClass::IsCrushable(aP1, (AbstractClass *)this)
     && (v3 = (int *)(*(int (__thiscall **)(TechnoClass *, char *))(*(int *)aP1->__pad_0 + 72))(aP1, v10), v4 = (int *)this->GetCoords_0(v11), v8 = v4[1] - v3[1], v9 = v4[2] - v3[2], v5 = Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64( (double)(*v4 - *v3) * (double)(*v4 - *v3) + (double)v9 * (double)v9 + (double)v8 * (double)v8)), (int)Math::RoundToInt(v5) <= *(int *)(*(int *)&DataGlobal_87C374[44652] + 5928))
@@ -12744,7 +12724,6 @@ retn
 // 0x6b4a50
 AbstractClass * * UnitClass::Create(void* aP0, void* aP1, int aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   ObjectClass::ctor(this); /*0x6b4a53*/
@@ -12779,14 +12758,12 @@ AbstractClass * * UnitClass::Create(void* aP0, void* aP1, int aP2)
   }
   return (SmudgeClass *)this; /*0x6b4b26*/
 }
-}
 // 0x6b4c80
 int UnitClass::ReadINI()
 {
 // 0x6b4fa0
 int UnitClass::DestroySmudge(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void **v5; // [esp+4h] [ebp-4h] BYREF
 
@@ -12813,7 +12790,6 @@ int UnitClass::DestroySmudge(char a2)
   if ( (a2 & 1) != 0 ) /*0x6b5035*/
     __3_YAXPAX_Z(Block); /*0x6b5038*/
   return (SmudgeClass *)Block; /*0x6b5042*/
-}
 }
 // 0x735780
 int __thiscall UnitClass::Destructor(void **this)
@@ -13552,7 +13528,6 @@ retn    4
 // 0x746810
 UnitTypeClass * * UnitClass::PerFrameUpdate(int _DWORD *a1@<ecx>, int int a2@<edi>)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *result; // eax
 
@@ -13599,7 +13574,6 @@ LABEL_9:
   }
   return result;
 }
-}
 
 // IDA: 0x7446E0 (HandleTargetDestroyed, 56B)
 // 0x7446e0
@@ -13626,7 +13600,6 @@ int UnitClass::CheckStatus()
 // 0x6b7c60
 void UnitClass::ClearTargetRef(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD **v6; // ecx
 
@@ -13777,7 +13750,6 @@ mov     [eax+8], edx
 add     esp, 0Ch
 retn    4
 */
-}
 
 // IDA: 0x6B7BB0 (ProcessIdleOrders, 133B)
 // Iterates the idle-order array and queues exit-cell missions for units
@@ -13785,7 +13757,6 @@ retn    4
 // idleOrderBase() / idleOrderCount() (stored in ambientSoundController fields).
 int UnitClass::ProcessIdleOrders()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD **v6; // ecx
 
@@ -13838,7 +13809,6 @@ LABEL_10:
   }
 }
     return {}; // TODO stub - retranslate via C-line pipeline
-}
 
 // IDA: 0x6B4F30 (StubReturn176, 6B)
 // 0x6b4f30
@@ -13877,7 +13847,6 @@ AbstractClass * * UnitClass::ApproachEvaluate()
 {
 {
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char *MissionControl; // eax
   #375 **v22; // edi
@@ -15029,7 +14998,6 @@ pop     ebx
 add     esp, 90h
 retn
 */
-}
 
 // ============================================================
 // Phase 3: Drawing

@@ -8,7 +8,6 @@
 // 0x41C8B0
 A AircraftTypeClass::AircraftTypeClass(ObjectClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AircraftTypeClass *v3; // eax
   CCINIClass *v6; // edx
@@ -74,13 +73,11 @@ LABEL_11:
   *(_BYTE *)(this + 3374) = 0; /*0x41c9db*/
   return this; /*0x41c9e3*/
 }
-}
 
 // 0x41CC20
 namespace gamemd {
 AnimTypeClass * * AircraftTypeClass_LoadTypeData()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char Bool_Overwrite; // al
   AnimTypeClass *v9; // eax
@@ -133,7 +130,6 @@ AnimTypeClass * * AircraftTypeClass_LoadTypeData()
   *(_BYTE *)(a1 + 3595) = v10; /*0x41cd6e*/
   *(_BYTE *)(a1 + 3596) = INIClass::ReadBool_Overwrite(a1 + 36, unk_817FF0, v11); /*0x41cd83*/
   return 1; /*0x41cd8a*/
-}
 }
 } // namespace gamemd
 

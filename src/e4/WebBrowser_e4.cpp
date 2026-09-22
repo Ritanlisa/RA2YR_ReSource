@@ -10,7 +10,6 @@
 namespace gamemd {
 int WebBrowser::LoadURLFromRegistry(const char * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   LSTATUS v3; // esi
   LSTATUS v4; // esi
@@ -62,14 +61,12 @@ int WebBrowser::LoadURLFromRegistry(const char * a2)
   }
   return 1; /*0x77381e*/
 }
-}
 } // namespace gamemd
 
 // 0x773E90
 namespace gamemd {
 int WebBrowser::ShowDialog()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND result; // eax
   IUnknown *v3; // edi
@@ -137,14 +134,12 @@ int WebBrowser::ShowDialog()
   }
   return result; /*0x774051*/
 }
-}
 } // namespace gamemd
 
 // 0x7740A0
 namespace gamemd {
 int WebBrowser::GoForward()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   *(_DWORD *)this->__pad_0 = &vt_WebBrowser; /*0x7740a8*/
@@ -162,7 +157,6 @@ int WebBrowser::GoForward()
   if ( (v4 & 1) != 0 ) /*0x7740ef*/
     __3_YAXPAX_Z(this); /*0x7740f2*/
   return (int)this->__pad_0; /*0x7740fc*/
-}
 }
 } // namespace gamemd
 

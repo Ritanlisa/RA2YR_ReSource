@@ -161,7 +161,6 @@ namespace gamemd { int BaseClass::Write(int a1) {
 } }
 // 0x42F3F0
 namespace gamemd {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v3 = this->Items + 16 * a3; /*0x42f3fa*/
@@ -170,7 +169,6 @@ namespace gamemd {
   *(_BYTE *)(a2 + 8) = *(_BYTE *)(v3 + 8); /*0x42f40d*/
   *(_DWORD *)(a2 + 12) = *(_DWORD *)(v3 + 12); /*0x42f413*/
   return a2; /*0x42f416*/
-}
 }
 // 0x42F490
 namespace gamemd { int BaseClass::AddRef(int a2) {
@@ -350,7 +348,6 @@ namespace gamemd { void* BaseNodeClass::Vector_Constructor(int a1, int a2) {
 } }
 // 0x431410
 namespace gamemd {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v3 = this->nextArrayIndex; /*0x431413*/
@@ -369,7 +366,6 @@ namespace gamemd {
     while ( v4 < 3 ); /*0x43143f*/
   }
   return v3; /*0x431444*/
-}
 }
 // 0x431700
 namespace gamemd { int HouseClass::Render(int a2, int a3, int a4, int a5, int a6) {
@@ -413,7 +409,6 @@ namespace gamemd { int HouseClass::Render(int a2, int a3, int a4, int a5, int a6
 } }
 // 0x431800
 namespace gamemd { bool HouseClass::ProcessData() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( !this->nextArrayIndex ) /*0x431803*/
@@ -453,7 +448,6 @@ LABEL_12:
   while ( v7 ); /*0x43189e*/
   return v6 && (int)g_CurrentFrame % this->bunkersCapacity < dword_89C428 + 1; /*0x4318c3*/
 }
-} }
 // 0x4575B0
 namespace gamemd { int HouseClass::Add() {
 {
@@ -712,7 +706,6 @@ namespace gamemd { void* CounterClass::Construct() {
 
 // 0x49FA70
 namespace gamemd { int CounterClass::Decrement(int a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // eax
 
@@ -733,7 +726,6 @@ LABEL_5:
   }
   return 0; /*0x49fab0*/
 }
-} }
 
 // 0x49FB40
 namespace gamemd { int CounterClass::ddtor() {
@@ -1752,7 +1744,6 @@ namespace gamemd { int HouseClass::Destruct() {
 
 // 0x4F7870
 namespace gamemd { int HouseClass::CanBuild(int a1, int a2, int a3) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v5; // edi
   IUnknown **v20; // edx
@@ -2296,11 +2287,9 @@ LABEL_199:
     return 1; /*0x4f7bee*/
   return -1; /*0x4f7be2*/
 }
-} }
 
 // 0x4F83C0
 namespace gamemd { int HouseClass::GetFactoryProducing(int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *v5; // ecx
   int Type; // eax
@@ -2327,7 +2316,6 @@ LABEL_7:
   }
   return *((_DWORD *)g_TeamTypeCount + v2); /*0x4f8419*/
 }
-} }
 
 // 0x4f8440
 void __thiscall HouseClass::Update_TogglePower(#375 *this)
@@ -4622,7 +4610,6 @@ namespace gamemd { int HouseClass::Update() {
 
 // 0x4F93E0
 namespace gamemd { int HouseClass::NotifyUnderAttack(void* a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   _DWORD *Type; // eax
@@ -4706,11 +4693,9 @@ LABEL_31:
   }
   return result; /*0x4f95ff*/
 }
-} }
 
 // 0x4F9790
 namespace gamemd { int HouseClass::ProcessPowerDrain(int a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   BuildingTypeClass *v3; // esi
   int FloatPositive; // esi
@@ -4789,7 +4774,6 @@ LABEL_16:
   this->HouseClass_field_2DC = result; /*0x4f9936*/
   return result; /*0x4f9935*/
 }
-} }
 
 // 0x4F9950
 namespace gamemd { int HouseClass::AddPower(int a1) {
@@ -4812,7 +4796,6 @@ namespace gamemd { bool HouseClass::IsAllied(int a1) {
 
 // 0x4F9B70
 namespace gamemd { int HouseClass::HandleAlliance(int a1, int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HouseClass *v6; // edx
   int i; // ebx
@@ -4983,11 +4966,9 @@ LABEL_71:
     goto LABEL_79; /*0x4f9f35*/
   }
 }
-} }
 
 // 0x4F9F90
 namespace gamemd { int HouseClass::SetAlliance(int a1, int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HouseClass *v5; // edx
   HouseClass *v8; // edx
@@ -5062,7 +5043,6 @@ LABEL_31:
     Radar::UpdateReveal(0, 0); /*0x4fa1da*/
   }
 }
-} }
 
 // 0x4FA2E0
 namespace gamemd { int HouseClass::SetThreat_Bounds(int a1, int a2) {
@@ -5107,7 +5087,6 @@ namespace gamemd { int HouseClass::SetThreat_Bounds(int a1, int a2) {
 
 // 0x4FA910
 namespace gamemd { int HouseClass::StartFactoryProduction(void* a1, int a2, int a3) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v5; // eax
   int v6; // eax
@@ -5164,11 +5143,9 @@ LABEL_16:
   }
   return result; /*0x4fa998*/
 }
-} }
 
 // 0x4FAA10
 namespace gamemd { int HouseClass::CancelProduction(void* a1, int a2, int a3, int a4) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   BuildingTypeClass *v5; // ebx
   IUnknown *v7; // edi
@@ -5287,11 +5264,9 @@ LABEL_31:
       return 3; /*0x4faac2*/
   }
 }
-} }
 
 // 0x4FB0E0
 namespace gamemd { int HouseClass::CompleteProduction(void* a1, int a2, int a3, int a4) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void *v6; // esi
   int v7; // ecx
@@ -5527,7 +5502,6 @@ LABEL_48:
       return v27;
   }
 }
-} }
 
 // 0x4FB6B0
 namespace gamemd { int HouseClass::ProcessPromotionSound(void* a1) {
@@ -5607,7 +5581,6 @@ namespace gamemd { int HouseClass::ProcessPromotionSound(void* a1) {
 
 // 0x4FC0B0
 namespace gamemd { int HouseClass::DefeatPlayer() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   CellStruct *v4; // eax
   IUnknown *v5; // eax
@@ -5898,7 +5871,6 @@ LABEL_103:
   }
   return result; /*0x4fc690*/
 }
-} }
 
 // 0x4FC6D0
 namespace gamemd { int HouseClass::ClearLowPowerTargets() {
@@ -5951,7 +5923,6 @@ namespace gamemd { int HouseClass::ClearLowPowerTargets() {
 
 // 0x4FC9E0
 namespace gamemd { int HouseClass::CheckWinCondition(int a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   wchar_t *v3; // esi
   wchar_t **v8; // eax
@@ -6042,11 +6013,9 @@ LABEL_29:
   }
   return this->isWinner; /*0x4fcbc0*/
 }
-} }
 
 // 0x4FCBD0
 namespace gamemd { int HouseClass::CheckDefeat(int a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char result; // al
   wchar_t *v6; // esi
@@ -6147,7 +6116,6 @@ LABEL_29:
   }
   return result; /*0x4fcdb8*/
 }
-} }
 
 // 0x4FCE30
 namespace gamemd { double HouseClass::GetPowerRatio() {
@@ -6166,7 +6134,6 @@ namespace gamemd { double HouseClass::GetPowerRatio() {
 
 // 0x4FD060
 namespace gamemd { int HouseClass::FindBuildingOfType(int a1, int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   BuildingTypeClass *v5; // edi
   ObjectClass *v8; // ecx
@@ -6215,11 +6182,9 @@ LABEL_15:
       return 0; /*0x4fd0f9*/
   }
 }
-} }
 
 // 0x4FDD10
 namespace gamemd { int HouseClass::ManageProduction(int a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v9; // eax
   int v10; // eax
@@ -6634,11 +6599,9 @@ LABEL_97:
     goto LABEL_98; /*0x4fe3c0*/
   return 0; /*0x4fe3cc*/
 }
-} }
 
 // 0x4FE3E0
 namespace gamemd { int HouseClass::AutoBuild() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v57; // edi
   int v63; // esi
@@ -6988,11 +6951,9 @@ LABEL_78:
   }
   return 1; /*0x4fe50c*/
 }
-} }
 
 // 0x4FEA60
 namespace gamemd { int HouseClass::AIUnitProduction() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HouseClass *v1; // ebp
   _DWORD *BuildableFromArray; // eax
@@ -7187,7 +7148,6 @@ LABEL_6:
   }
   return 15; /*0x4feb08*/
 }
-} }
 
 // 0x4FEEE0
 namespace gamemd { int HouseClass::AIInfantryProduction() {
@@ -7745,7 +7705,6 @@ namespace gamemd { int HouseClass::LoadTypeList() {
 
 // 0x500B40
 namespace gamemd { int HouseClass::ReadFromINI(void* a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned __int8 ***v3; // esi
   char Bool_Overwrite; // al
@@ -7927,7 +7886,6 @@ LABEL_11:
   *(_DWORD *)(this + 22388) = this; /*0x501147*/
   return result; /*0x501146*/
 }
-} }
 
 // 0x501210
 namespace gamemd { int HouseClass::SaveToINI(void* a1) {
@@ -7977,7 +7935,6 @@ namespace gamemd { int HouseClass::SaveToINI(void* a1) {
 
 // 0x5018C0
 namespace gamemd { int HouseClass::NotifyPowerStateChange(int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char result; // al
 
@@ -8026,11 +7983,9 @@ LABEL_13:
   }
   return result; /*0x501a0d*/
 }
-} }
 
 // 0x501AC0
 namespace gamemd { void* HouseClass::GenerateAttackCoords(void* a1, int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ScenarioClass *v5; // esi
   AbstractClass *StartCoords; // edi
@@ -8237,11 +8192,9 @@ LABEL_23:
     aP1->field_0 = *HouseClass::ClampToUsableCell(&DataGlobal_87F7E8, (MouseClass *)&v52[1], (MouseClass *)&v48); /*0x5020c9*/
   return &aP1->field_0; /*0x5020cd*/
 }
-} }
 
 // 0x5025F0
 namespace gamemd { void* HouseClass::RegisterGain(int a1, int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *result; // eax
   BuildingTypeClass *v14; // ebx
@@ -8408,7 +8361,6 @@ LABEL_26:
   }
   return result; /*0x5028a7*/
 }
-} }
 
 // 0x502A80
 namespace gamemd { int HouseClass::RegisterGain_0(void* a1, int a2) {
@@ -8660,7 +8612,6 @@ namespace gamemd { int HouseClass::EnsurePlanningPathExists(int a1) {
 
 // 0x5051E0
 namespace gamemd { void* HouseClass::FirstBuildableFromArray(int a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int uniqueId; // esi
   AbstractClass *v6; // eax
@@ -8723,11 +8674,9 @@ LABEL_16:
   }
   return result; /*0x5052f9*/
 }
-} }
 
 // 0x5054B0
 namespace gamemd { void HouseClass::GenerateAIBuildListEnsureSanity() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   VectorClass *v2; // eax
   VectorClass *v6; // edx
@@ -9292,11 +9241,9 @@ LABEL_171:
       __3_YAXPAX_Z(v100); /*0x505f64*/
   }
 }
-} }
 
 // 0x5060B0
 namespace gamemd { void* HouseClass::ScanBuildLocation(void* a1, int a2, void* a3, int a4) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HouseClass *BuildableFromArray; // eax
   MouseClass *v8; // esi
@@ -9746,11 +9693,9 @@ LABEL_71:
     }
   }
 }
-} }
 
 // 0x506B90
 namespace gamemd { void* HouseClass::FindBestProductionBuilding(void* a2, int a3) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int IndexByName; // eax
 
@@ -9803,7 +9748,6 @@ LABEL_14:
 LABEL_17:
   *a2 = 0; /*0x506cb2*/
   return a2; /*0x506bb1*/
-}
 }
 }
 // 0x507D70
@@ -10054,7 +9998,6 @@ namespace gamemd { int HouseClass::CollectAircraftBuildCandidates(int a1, int a2
 
 // 0x508150
 namespace gamemd { int HouseClass::ComputePowerDistribution() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -10089,11 +10032,9 @@ LABEL_3:
   }
   return result; /*0x508283*/
 }
-} }
 
 // 0x5082C0
 namespace gamemd { void HouseClass::FindAutoBuildLocation() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 *v6; // esi
   __int16 v12; // dx
@@ -10485,11 +10426,9 @@ LABEL_58:
   if ( v100 && v102 ) /*0x508c13*/
     __3_YAXPAX_Z(v100); /*0x508c16*/
 }
-} }
 
 // 0x508F60
 namespace gamemd { int HouseClass::ToggleGapGeneratorReveal() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v5; // ecx
   char result; // al
@@ -10550,11 +10489,9 @@ LABEL_16:
   }
   return result; /*0x509044*/
 }
-} }
 
 // 0x509140
 namespace gamemd { int HouseClass::UpdateProduction(int a1, int a2, int a3) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int i; // edi
@@ -10641,7 +10578,6 @@ LABEL_10:
   }
   return result; /*0x5092a3*/
 }
-} }
 
 // 0x509400
 namespace gamemd { int HouseClass::UpdateFogVisibility() {
@@ -10750,7 +10686,6 @@ namespace gamemd { int HouseClass::UpdateFogVisibility() {
 
 // 0x509700
 namespace gamemd { int HouseClass::UpdateBuildState(int a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AbstractClass *v4; // ecx
   char v5; // bl
@@ -10859,7 +10794,6 @@ LABEL_26:
     goto LABEL_31; /*0x50986a*/
   return v3; /*0x509780*/
 }
-} }
 
 // 0x509B20
 namespace gamemd { void HouseClass::Find(int a1) {
@@ -11414,7 +11348,6 @@ namespace gamemd { int HouseClass::RecordCratePlacement(void* a1) {
 
 // 0x50A5C0
 namespace gamemd { int HouseClass::AIBuildBase() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   wchar_t *StringCSF; // eax
   AbstractClass *v5; // eax
@@ -11833,11 +11766,9 @@ LABEL_119:
   }
   return v2; /*0x50a73f*/
 }
-} }
 
 // 0x50B370
 namespace gamemd { int HouseClass::ShouldDisableCameo(int a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // ebx
   RulesClass *v19; // eax
@@ -11978,7 +11909,6 @@ LABEL_47:
   }
   return 1; /*0x50b5ed*/
 }
-} }
 
 // 0x50B840
 namespace gamemd { int HouseClass::GetColor() {
@@ -12093,7 +12023,6 @@ namespace gamemd { int HouseClass::FindByName() {
 }
 // 0x50C210
 namespace gamemd { void HouseClass::SetPrimaryTechBuilding() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int *i; // ebx
 
@@ -12147,11 +12076,9 @@ LABEL_9:
     }
   }
 }
-} }
 
 // 0x50C340
 namespace gamemd { int HouseClass::FindBuildLocation(int a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int FoundationWidth; // ebp
   int FoundationHeight; // eax
@@ -12379,7 +12306,6 @@ LABEL_8:
   VectorClass::InsertAt(v50, v8); /*0x50c89a*/
   return 1; /*0x50c89f*/
 }
-} }
 
 // 0x50C8C0
 namespace gamemd { int HouseClass::NotifyImpactWater() {
@@ -12400,7 +12326,6 @@ namespace gamemd { int HouseClass::NotifyImpactWater() {
 
 // 0x50CBF0
 namespace gamemd { void* HouseClass::FindSWBuilding(void* a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HouseClass *v2; // edi
   IUnknown *v7; // edi
@@ -12673,11 +12598,9 @@ LABEL_87:
   }
   return v28->__pad_0; /*0x50d12f*/
 }
-} }
 
 // 0x50D170
 namespace gamemd { void* HouseClass::FindSWTarget(void* aP1, int aP2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int SuperWeaponTypeFlag; // ebx
   CCINIClass *v6; // edx
@@ -12727,7 +12650,6 @@ LABEL_10:
     return aP1->__pad_0; /*0x50d239*/
   }
 }
-} }
 
 // 0x50DA80
 namespace gamemd { int HouseClass::GetTransitionCount() {
@@ -12805,7 +12727,6 @@ namespace gamemd { int HouseClass::SetMapSeed(int a1) {
 
 // 0x50E280
 namespace gamemd { void HouseClass::ReactivateTechnos(int a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( a2 ) /*0x50e28b*/
@@ -12845,7 +12766,6 @@ LABEL_15:
     }
   }
 }
-} }
 
 // 0x50E430
 namespace gamemd { int HouseClass::processRadar(int a1, int a2, int a3) {
@@ -13449,7 +13369,6 @@ namespace gamemd { int HouseClass::RouteFactoryRemoval(int a1, int a2, void* a3)
 
 // 0x6ABB60
 namespace gamemd { int HouseClass::RemoveFromProductionQueue(void* a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HouseClass *v3; // esi
   int Type; // eax
@@ -13510,7 +13429,6 @@ LABEL_19:
   }
   return v6; /*0x6abc33*/
 }
-} }
 
 // 0x6C9740
 namespace gamemd { void* HouseClass::AccumulateFloat4(void* a1, int a2) { return nullptr; } }
@@ -13683,7 +13601,6 @@ namespace gamemd { int HouseClass::GetMaxBuildLevel() {
 
 // 0x6EB870
 namespace gamemd { int HouseClass::EvaluateTarget() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   char v2 = 1; /*0x6eb878*/
@@ -13763,7 +13680,6 @@ LABEL_34:
     this->q075 = 0; /*0x6ebac2*/
   return v2; /*0x6ebac6*/
 }
-} }
 
 // 0x6EC3D0
 namespace gamemd { void* HouseClass::FindBestBuildingToRepair() {
@@ -13794,7 +13710,6 @@ namespace gamemd { void* HouseClass::FindBestBuildingToRepair() {
 
 // 0x6ED770
 namespace gamemd { int HouseClass::CheckDefeated(int a1, int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -13825,7 +13740,6 @@ LABEL_7:
   this->occupiables = 1; /*0x6ed7c4*/
   return result; /*0x6ed7cb*/
 }
-} }
 
 // 0x6EF4D0
 namespace gamemd { int HouseClass::UpdateProductionQueue(int a1) {

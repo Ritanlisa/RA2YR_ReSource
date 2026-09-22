@@ -57,11 +57,9 @@ unsigned int * MPBattleClass::MPSiegeClass(const wchar_t ** a1, MultiplayerSiege
 namespace gamemd {
 int MPBattleClass::vt_entry_18()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // attributes: thunk
 {
   return ScenarioClass::createStartingForces(this);
-}
 }
 }
 // 0x5CACF0

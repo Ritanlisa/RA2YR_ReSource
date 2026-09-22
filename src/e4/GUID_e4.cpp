@@ -5,7 +5,6 @@
 // 0x53EE70
 bool GUID::Compare(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( dword_828140 == 2 ) /*0x53ee7d*/
@@ -40,5 +39,4 @@ bool GUID::Compare(int a2)
   }
   while ( v7 ); /*0x53eeec*/
   return v7; /*0x53ee9f*/
-}
 }

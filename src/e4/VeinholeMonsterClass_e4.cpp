@@ -7,7 +7,6 @@
 namespace gamemd {
 void VeinholeMonsterClass_Update(MouseClass * aP0, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v8; // ecx
   ObjectClass *aP0a; // [esp+14h] [ebp+4h]
@@ -44,7 +43,6 @@ LABEL_9:
     if ( ++v8 > a2 + SLOWORD(aP0->field_0) ) /*0x586332*/
       goto LABEL_9; /*0x586332*/
   }
-}
 }
 } // namespace gamemd
 

@@ -8,7 +8,6 @@
 namespace gamemd {
 int Coord::ToGridIndex(VectorClass * aP1, VectorClass * aP2, VectorClass * aP3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -81,14 +80,12 @@ int Coord::ToGridIndex(VectorClass * aP1, VectorClass * aP2, VectorClass * aP3)
   }
   return result; /*0x413a24*/
 }
-}
 } // namespace gamemd
 
 // 0x413A30
 namespace gamemd {
 unsigned int * Coord::ToCell(IUnknown * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v3; // [esp+0h] [ebp-4h]
@@ -97,20 +94,17 @@ unsigned int * Coord::ToCell(IUnknown * aP1)
   aP1->field_0 = v3; /*0x413a60*/
   return &aP1->field_0; /*0x413a63*/
 }
-}
 } // namespace gamemd
 
 // 0x41C230
 namespace gamemd {
 void * Coord::Subtract(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   *this = aP1; /*0x41c23a*/
   this->q004 = aP2; /*0x41c240*/
   this->q008 = aP3; /*0x41c243*/
   return (IUnknown *)this; /*0x41c246*/
-}
 }
 } // namespace gamemd
 
@@ -118,7 +112,6 @@ void * Coord::Subtract(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3)
 namespace gamemd {
 int Coord::Length()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   double result; // st7
 
@@ -129,14 +122,12 @@ int Coord::Length()
   Math::RoundToInt(result); /*0x41c3ac*/
   return result; /*0x41c3a9*/
 }
-}
 } // namespace gamemd
 
 // 0x4399A0
 namespace gamemd {
 unsigned int * Coord::GetCoords(int * outCoords)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v3 = Math::RoundToInt(this->q006); /*0x4399b0*/
@@ -147,20 +138,17 @@ unsigned int * Coord::GetCoords(int * outCoords)
   outCoords[2] = v5; /*0x4399cf*/
   return outCoords; /*0x4399c9*/
 }
-}
 } // namespace gamemd
 
 // 0x43A0D0
 namespace gamemd {
 void * Coord::Scale(IUnknown * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   *this = *(float *)&aP1 * *this; /*0x43a0d8*/
   this->q004 = *(float *)&aP1 * this->q004; /*0x43a0e1*/
   this->__pad_002 = *(float *)&aP1 * this->__pad_002; /*0x43a0eb*/
   return this; /*0x43a0ee*/
-}
 }
 } // namespace gamemd
 
@@ -168,7 +156,6 @@ void * Coord::Scale(IUnknown * aP1)
 namespace gamemd {
 void * Coord::To_Cell(IUnknown * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ObjectClass *aP1a; // [esp+Ch] [ebp+4h]
 
@@ -185,17 +172,14 @@ void * Coord::To_Cell(IUnknown * aP1)
   g_Map_GlobalCellIndex = (IUnknown *)aP1a; /*0x565789*/
   return g_CellClassArray; /*0x565773*/
 }
-}
 } // namespace gamemd
 
 // 0x5AC370
 namespace gamemd {
 int Coord::Compare2D(unsigned short * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return *this != *a2 || this->q004 != a2[1]; /*0x5ac388*/
-}
 }
 } // namespace gamemd
 
@@ -203,7 +187,6 @@ int Coord::Compare2D(unsigned short * a2)
 namespace gamemd {
 void * Coord::WorldToScreen(MouseClass * aP1, MouseClass * aP2, char a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v4 = aP2->field_0; /*0x6557f7*/
@@ -227,14 +210,12 @@ void * Coord::WorldToScreen(MouseClass * aP1, MouseClass * aP2, char a4)
   aP1->field_4 = v8; /*0x655883*/
   return &aP1->field_0; /*0x65587f*/
 }
-}
 } // namespace gamemd
 
 // 0x6D2140
 namespace gamemd {
 AbstractClass * * Coord::To_Screen(unsigned int * a1, IUnknown * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v10 = a1[1]; /*0x6d214f*/
@@ -255,14 +236,12 @@ AbstractClass * * Coord::To_Screen(unsigned int * a1, IUnknown * aP2)
     return v8 <= *(_DWORD *)&g_OverlayTypeConfig[22076] + 180; /*0x6d2269*/
   return 0; /*0x6d2220*/
 }
-}
 } // namespace gamemd
 
 // 0x710700
 namespace gamemd {
 void * Coord::Divide(int * a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( a3 ) /*0x710708*/
@@ -280,7 +259,6 @@ void * Coord::Divide(int * a2, int a3)
     a2[2] = 0; /*0x710719*/
   }
   return a2; /*0x71071c*/
-}
 }
 } // namespace gamemd
 

@@ -8,7 +8,6 @@
 namespace gamemd {
 int TimerClass::Active()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( *(__int16 *)(this + 20) <= 0 ) /*0x4c9485*/
@@ -23,17 +22,14 @@ int TimerClass::Active()
   }
   return v2 != 0; /*0x4c94a9*/
 }
-}
 } // namespace gamemd
 
 // 0x54FE60
 namespace gamemd {
 void * TimerClass::Construct(int a2, int a3, TechnoTypeClass * aP3, int a5, int a6, int a7, int a8, char a9, int a10, int a11, int a12, int a13, char a14, char a15, int a16, int a17)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v19; // ecx
-
   *(_DWORD *)this = 0; /*0x54fe6a*/
   this->q004 = 0; /*0x54fe6c*/
   this->TimerClass_field_0x8 = *(_DWORD *)&g_NetworkPlayerBuffer[5960]; /*0x54fe75*/
@@ -92,14 +88,12 @@ void * TimerClass::Construct(int a2, int a3, TechnoTypeClass * aP3, int a5, int 
   }
   return this; /*0x54ffa6*/
 }
-}
 } // namespace gamemd
 
 // 0x5CEAD0
 namespace gamemd {
 signed int TimerClass::GetRemaining()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   signed int result; // eax
 
@@ -121,17 +115,14 @@ signed int TimerClass::GetRemaining()
   }
   return result; /*0x5ceb00*/
 }
-}
 } // namespace gamemd
 
 // 0x5CEB20
 namespace gamemd {
 void TimerClass::StartIfIdle()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   if ( this->q010 == -1 ) /*0x5ceb27*/
     this->q010 = Timer::GetTicks(); /*0x5ceb31*/
-}
 }
 } // namespace gamemd

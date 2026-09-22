@@ -8,7 +8,6 @@
 // 0x5A5B50
 MapSeedClass * * MapSeedClass::PlaceBuildingClusters(MapSeedClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   MapSeedClass **v2; // eax
   MapSeedClass *v3; // ecx
@@ -385,12 +384,10 @@ LABEL_73:
   }
   return v5; /*0x5a64f5*/
 }
-}
 
 // 0x5A76E0
 int MapSeedClass::ValidateRectBounds()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 v9; // dx
   int v2 = *this; /*0x5a76ee*/
@@ -470,7 +467,6 @@ LABEL_23:
     }
   }
   return 0; /*0x5a78b0*/
-}
 }
 
 // 0x597FA0

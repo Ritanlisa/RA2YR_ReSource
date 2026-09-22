@@ -10,7 +10,6 @@
 namespace gamemd {
 unsigned int * BuildingLightClass::FindTarget(CCINIClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   CCINIClass *result; // eax
   BuildingLightClass *v3; // edi
@@ -96,7 +95,6 @@ unsigned int * BuildingLightClass::FindTarget(CCINIClass * aP1)
   }
   return result->__pad_0; /*0x436d88*/
 }
-}
 } // namespace gamemd
 
 // 0x4370C0
@@ -129,7 +127,6 @@ BuildingLightClass * BuildingLightClass::SDDTOR(char a2)
 namespace gamemd {
 signed int BuildingLightClass::UpdateOscillation()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int GroundHeight; // edi
   signed int result; // eax
@@ -204,7 +201,6 @@ signed int BuildingLightClass::UpdateOscillation()
   this->q060 = v23; /*0x513f18*/
   this->q060 = v23 * *(double *)&g_RulesClass_Instance->HoverDampen; /*0x513f27*/
   return result; /*0x513f2a*/
-}
 }
 } // namespace gamemd
 

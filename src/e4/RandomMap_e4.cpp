@@ -20,12 +20,10 @@
 namespace gamemd {
 int RandomMap::Check()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v1 = this->q038; /*0x486790*/
   return v1 >= unk_AA0E24 && v1 < unk_AA0E24 + 16; /*0x4867a6*/
-}
 }
 } // namespace gamemd
 
@@ -33,7 +31,6 @@ int RandomMap::Check()
 namespace gamemd {
 unsigned int * RandomMap::TerrainTileDataConstructor(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   bool IsGroundTypeRange; // al
 
@@ -78,14 +75,12 @@ unsigned int * RandomMap::TerrainTileDataConstructor(int a2)
   }
   return this; /*0x58c062*/
 }
-}
 } // namespace gamemd
 
 // 0x58C800
 namespace gamemd {
 int RandomMap::GenerateTerrain()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   size_t v5; // edx
   int i; // ebx
@@ -346,14 +341,12 @@ LABEL_84:
   Buffer::Cleanup((int)&v53); /*0x58ce7f*/
   return v40; /*0x58cc98*/
 }
-}
 } // namespace gamemd
 
 // 0x58D1C0
 namespace gamemd {
 MapClass * * RandomMap::ExpandTerrainCells(int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int i; // esi
@@ -488,14 +481,12 @@ MapClass * * RandomMap::ExpandTerrainCells(int a2, int a3)
   }
   return result; /*0x58d3da*/
 }
-}
 } // namespace gamemd
 
 // 0x58D410
 namespace gamemd {
 unsigned int * RandomMap::TerrainAlloc()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   VectorClass *v3; // ebx
   _DWORD *Bit; // ebp
@@ -572,14 +563,12 @@ unsigned int * RandomMap::TerrainAlloc()
   while ( Bit );
   return v3; /*0x58d588*/
 }
-}
 } // namespace gamemd
 
 // 0x58E740
 namespace gamemd {
 RandomMap * * RandomMap::CollectTerrainCells(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 v9; // dx
   int i; // [esp+24h] [ebp-4h]
@@ -681,14 +670,12 @@ RandomMap * * RandomMap::CollectTerrainCells(int a2)
     (*(void (__thiscall **)(_DWORD *, int))*v25)(v25, 1); /*0x58e978*/
   return 1; /*0x58e97a*/
 }
-}
 } // namespace gamemd
 
 // 0x58E9B0
 namespace gamemd {
 AbstractClass * * RandomMap::PlaceRandomMapTerrain()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // eax
   int k; // esi
@@ -780,14 +767,12 @@ LABEL_12:
     __3_YAXPAX_Z(Block); /*0x58eba9*/
   return 1; /*0x58eb91*/
 }
-}
 } // namespace gamemd
 
 // 0x58F0C0
 namespace gamemd {
 void* RandomMap::CollectBorderCells()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 v12; // cx
   signed int i; // edi
@@ -894,14 +879,12 @@ void* RandomMap::CollectBorderCells()
     (*(void (__thiscall **)(_DWORD *, int))*v6)(v6, 1); /*0x58f2a8*/
   __3_YAXPAX_Z(Block); /*0x58f2af*/
 }
-}
 } // namespace gamemd
 
 // 0x58F2C0
 namespace gamemd {
 void* RandomMap::PlaceBuildings(int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char result; // al
   __int16 v36; // di
@@ -1514,14 +1497,12 @@ LABEL_129:
     this = v57;
   }
 }
-}
 } // namespace gamemd
 
 // 0x5905D0
 namespace gamemd {
 int RandomMap::AllocateArea()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   RandomMap *v23; // ebp
   int v41; // [esp+1Ch] [ebp-3Ch] BYREF
@@ -1760,14 +1741,12 @@ LABEL_66:
   }
   return v2; /*0x590723*/
 }
-}
 } // namespace gamemd
 
 // 0x590970
 namespace gamemd {
 int RandomMap::CheckCellPlacement(short * a1, void * a2, DynamicVector * aP3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 *v4; // esi
   DynamicVector *v7; // ebx
@@ -2066,14 +2045,12 @@ LABEL_64:
   }
   return v9; /*0x5909a3*/
 }
-}
 } // namespace gamemd
 
 // 0x590FD0
 namespace gamemd {
 int RandomMap::CheckNeighborhoodCompatibility(unsigned short * a1, DynamicVector * aP2, int a4, DynamicVector * aP4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 v6; // cx
   DynamicVector *v7; // ebx
@@ -2129,14 +2106,12 @@ int RandomMap::CheckNeighborhoodCompatibility(unsigned short * a1, DynamicVector
     return 0; /*0x591054*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x592440
 namespace gamemd {
 ObjectClass * * RandomMap::CheckPlacementArea(short * a2, short * a3, ObjectClass * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 v5; // ax
   __int16 v6; // bp
@@ -2468,14 +2443,12 @@ ObjectClass * * RandomMap::CheckPlacementArea(short * a2, short * a3, ObjectClas
   }
   return result; /*0x5924b6*/
 }
-}
 } // namespace gamemd
 
 // 0x5958E0
 namespace gamemd {
 CampaignClass * * RandomMap::CleanupRandomMapData()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // ebp
   void (__thiscall ***v6)(_DWORD, int); // ecx
@@ -2615,14 +2588,12 @@ CampaignClass * * RandomMap::CleanupRandomMapData()
   this->q190 = 0; /*0x595ba6*/
   LoadOptions::Cleanup((_DWORD *)this); /*0x595bac*/
 }
-}
 } // namespace gamemd
 
 // 0x596E50
 namespace gamemd {
 int RandomMap::SetupDialog(HWND hDlg)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND i; // edi
   LPARAM v3; // ebp
@@ -2758,14 +2729,12 @@ int RandomMap::SetupDialog(HWND hDlg)
   v28[20] = v39; /*0x597249*/
   return result; /*0x597248*/
 }
-}
 } // namespace gamemd
 
 // 0x597D60
 namespace gamemd {
 AbstractClass * * RandomMap::LoadInfo(wchar_t * Destination, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _BYTE v11[12]; // [esp+A4h] [ebp-114h] BYREF
   int v12; // [esp+B0h] [ebp-108h]
@@ -2831,14 +2800,12 @@ AbstractClass * * RandomMap::LoadInfo(wchar_t * Destination, int a2)
   BufferIOFileClass::Dtor(v10); /*0x597f20*/
   return 1; /*0x597f26*/
 }
-}
 } // namespace gamemd
 
 // 0x5981F0
 namespace gamemd {
 WeaponStruct * * RandomMap::LoadConfig()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int Int_Overwrite; // eax
   void ***v8; // eax
@@ -3215,14 +3182,12 @@ WeaponStruct * * RandomMap::LoadConfig()
   CCFileClass::Reset(v39); /*0x598938*/
   return CCFileClass::Destruct(v39); /*0x598946*/
 }
-}
 } // namespace gamemd
 
 // 0x598960
 namespace gamemd {
 AbstractClass * * RandomMap::Generate(char a2, HWND hDlg)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND DlgItem; // eax
   int i; // esi
@@ -3627,14 +3592,12 @@ AbstractClass * * RandomMap::Generate(char a2, HWND hDlg)
   }
   return result; /*0x59951f*/
 }
-}
 } // namespace gamemd
 
 // 0x599650
 namespace gamemd {
 AbstractClass * * RandomMap::SetupTheater(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   double v5; // st7
   int v6; // eax
@@ -4201,14 +4164,12 @@ LABEL_153:
   }
   return HashTable::DestroyHashTableINIClass(v79);
 }
-}
 } // namespace gamemd
 
 // 0x59A6C0
 namespace gamemd {
 int RandomMap::FinalizeMapData()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // eax
   _DWORD *j; // edi
@@ -4326,14 +4287,12 @@ int RandomMap::FinalizeMapData()
   }
   return result; /*0x59a8db*/
 }
-}
 } // namespace gamemd
 
 // 0x59AD10
 namespace gamemd {
 void RandomMap::ArrangeBuildingGrid()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned int v5; // eax
   int v6; // edx
@@ -4438,14 +4397,12 @@ void RandomMap::ArrangeBuildingGrid()
       __3_YAXPAX_Z(Block); /*0x59af85*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x59AFA0
 namespace gamemd {
 void RandomMap::FillTerrainProgressively()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   RandomMap *v1; // edi
   MapResourceClass *i; // eax
@@ -4518,14 +4475,12 @@ void RandomMap::FillTerrainProgressively()
     }
   }
 }
-}
 } // namespace gamemd
 
 // 0x59B200
 namespace gamemd {
 int RandomMap::PlaceTerrainFeatures()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // eax
   __int16 *v9; // esi
@@ -4684,14 +4639,12 @@ int RandomMap::PlaceTerrainFeatures()
   while ( !v16 ); /*0x59b6c1*/
   return result; /*0x59b6c7*/
 }
-}
 } // namespace gamemd
 
 // 0x59B740
 namespace gamemd {
 void RandomMap::PlaceShoreObjects()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int *i; // ebp
   signed int j; // edi
@@ -4785,14 +4738,12 @@ void RandomMap::PlaceShoreObjects()
       __3_YAXPAX_Z(Block); /*0x59b929*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x59BBC0
 namespace gamemd {
 int RandomMap::PlaceTerrain(int a2, MapResourceClass * aP2, MapResourceClass * aP3, int a5, MapResourceClass * aP5, double a7, char a8)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AbstractClass *v12; // esi
   MapResourceClass *v14; // ecx
@@ -5222,14 +5173,12 @@ LABEL_27:
   }
   return result; /*0x59bde3*/
 }
-}
 } // namespace gamemd
 
 // 0x59C580
 namespace gamemd {
 int RandomMap::GrowTiberium()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char result; // al
   MapResourceClass aP1; // [esp+Ch] [ebp-4h] BYREF
@@ -5267,14 +5216,12 @@ int RandomMap::GrowTiberium()
   }
   return result; /*0x59c60b*/
 }
-}
 } // namespace gamemd
 
 // 0x5A0700
 namespace gamemd {
 unsigned int * RandomMap::CellListAlloc(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 v8; // dx
   __int16 v12; // ax
@@ -5372,14 +5319,12 @@ LABEL_33:
     return v4; /*0x5a08b5*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x5A08D0
 namespace gamemd {
 int RandomMap::SpreadArea(MouseClass * aP1, float a3, MapResourceClass * aP3, short * a4, char a6)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   MapResourceClass *v9; // eax
   AbstractClass *v10; // esi
@@ -5846,14 +5791,12 @@ LABEL_123:
     Scalar::Dtor((void **)v10, 1); /*0x5a1174*/
   return v81; /*0x5a117d*/
 }
-}
 } // namespace gamemd
 
 // 0x5A23A0
 namespace gamemd {
 int RandomMap::PlaceRandomMapTiberium()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 v2; // bx
   int result; // eax
@@ -6105,14 +6048,12 @@ int RandomMap::PlaceRandomMapTiberium()
   }
   return result; /*0x5a2896*/
 }
-}
 } // namespace gamemd
 
 // 0x5A3AE0
 namespace gamemd {
 VectorClass * * RandomMap::PlaceResources()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // eax
   int Bit; // edi
@@ -6391,14 +6332,12 @@ LABEL_71:
   }
   return result; /*0x5a4277*/
 }
-}
 } // namespace gamemd
 
 // 0x5A4280
 namespace gamemd {
 int RandomMap::GenerateRandomMapTerrain()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // eax
   int BitLCW; // esi
@@ -6519,14 +6458,12 @@ LABEL_27:
   }
   return result; /*0x5a45d5*/
 }
-}
 } // namespace gamemd
 
 // 0x5A80B0
 namespace gamemd {
 VectorClass * * RandomMap::PlaceMapSeedBuildings()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   __int16 v28; // [esp+38h] [ebp-24h] BYREF
@@ -6634,14 +6571,12 @@ LABEL_19:
   while ( v25 < 10 ); /*0x5a82c4*/
   return result; /*0x5a82ca*/
 }
-}
 } // namespace gamemd
 
 // 0x5B9C90
 namespace gamemd {
 AbstractClass * * RandomMap::RegenerateRandomMapPreview()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND DlgItem; // eax
   wchar_t *v8; // eax
@@ -6732,14 +6667,12 @@ LABEL_9:
   DataGlobal_8316D4 = 1; /*0x5b9f10*/
   Debug::Log(); /*0x5b9f17*/
 }
-}
 } // namespace gamemd
 
 // 0x6558D0
 namespace gamemd {
 unsigned int * RandomMap::PlaceTileSet()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *result; // eax
 
@@ -6802,14 +6735,12 @@ unsigned int * RandomMap::PlaceTileSet()
   }
   return result; /*0x65597b*/
 }
-}
 } // namespace gamemd
 
 // 0x74EF10
 namespace gamemd {
 int RandomMap::RemoveMatching(IUnknown * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v2; // ebp
   int VeinholeMonsterClass_field_0x28; // eax
@@ -7006,7 +6937,6 @@ LABEL_39:
     }
   }
   return VeinholeMonsterClass_field_0x28; /*0x74f19e*/
-}
 }
 } // namespace gamemd
 

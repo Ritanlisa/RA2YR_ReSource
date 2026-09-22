@@ -6,7 +6,5 @@
 namespace gamemd {
 void AI_CreateMCV()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // (no pseudocode — ASM-only function)
-}
 } // namespace gamemd

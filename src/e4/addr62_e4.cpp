@@ -43,7 +43,6 @@
 namespace gamemd {
 void Surface_DrawLineAlpha(int a1, int * a2, int * a3, short a4, unsigned char a5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 *v9; // edi
   __int16 v16; // bp
@@ -290,14 +289,12 @@ void Surface_DrawLineAlpha(int a1, int * a2, int * a3, short a4, unsigned char a
   (*(void (__thiscall **)(int))(*(_DWORD *)a1 + 96))(a1); /*0x620311*/
   return 1; /*0x6200e3*/
 }
-}
 } // namespace gamemd
 
 // 0x6208F0
 namespace gamemd {
 void Dialog_DrawGradient(int * a1, int * a2, int a3, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int v33; // [esp+58h] [ebp-74h] BYREF
@@ -431,14 +428,12 @@ void Dialog_DrawGradient(int * a1, int * a2, int a3, int a4)
   }
   return result; /*0x620cbb*/
 }
-}
 } // namespace gamemd
 
 // 0x620CD0
 namespace gamemd {
 int ComputeHashModPrime(int * a1, int * a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int i; // [esp+3Ch] [ebp-5Ch]
@@ -523,14 +518,12 @@ int ComputeHashModPrime(int * a1, int * a2, int a3)
   }
   return result; /*0x620f4c*/
 }
-}
 } // namespace gamemd
 
 // 0x621040
 namespace gamemd {
 void PrintFontLayout(AbstractClass * aP0, AbstractClass * aP1, AbstractClass aP3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned __int16 *v3; // edx
   AbstractClass *v4; // ecx
@@ -577,14 +570,12 @@ void PrintFontLayout(AbstractClass * aP0, AbstractClass * aP1, AbstractClass aP3
     (AbstractClass *)aP3.abstractFlags);
   return 0; /*0x621146*/
 }
-}
 } // namespace gamemd
 
 // 0x621150
 namespace gamemd {
 double sub_621150(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   double result; // st7
 
@@ -621,14 +612,12 @@ LABEL_9:
   while ( v3 ); /*0x6211c6*/
   return result; /*0x6211c8*/
 }
-}
 } // namespace gamemd
 
 // 0x6211D0
 namespace gamemd {
 void DrawTextRendererTextAligned(int ecx0, unsigned int * a1, ObjectClass * aP2, unsigned short * a3, int a5, int a6, int arg10, int * a7, int a9)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AbstractClass *v9; // edi
   AbstractClass *v13; // esi
@@ -692,14 +681,12 @@ LABEL_21:
   Property::Set(v9, v13); /*0x62135e*/
   return FontRenderer::DrawText(v9, a7, a3, v12, yTop, a5, a9) - v12; /*0x6211e4*/
 }
-}
 } // namespace gamemd
 
 // 0x6214B0
 namespace gamemd {
 AbstractClass * * SetupDialogRenderBuffer(int * a1, HWND a2, unsigned char a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND Parent; // eax
   __int16 *v13; // edi
@@ -854,14 +841,12 @@ LABEL_17:
            0,
            1);
 }
-}
 } // namespace gamemd
 
 // 0x6223C0
 namespace gamemd {
 unsigned int * E4Recv_6223C0::DestroyDialog()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *result; // eax
   void (__thiscall ***v3)(_DWORD, int); // ecx
@@ -894,14 +879,12 @@ unsigned int * E4Recv_6223C0::DestroyDialog()
   }
   return result; /*0x622407*/
 }
-}
 } // namespace gamemd
 
 // 0x622470
 namespace gamemd {
 void AddDynamicVector(HWND a1, int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   LPARAM v16; // [esp+14h] [ebp+8h]
   LPARAM v17; // [esp+14h] [ebp+8h]
@@ -957,14 +940,12 @@ void AddDynamicVector(HWND a1, int * a2)
   ++*a2; /*0x6225c2*/
   return 1; /*0x6225ca*/
 }
-}
 } // namespace gamemd
 
 // 0x622650
 namespace gamemd {
 void sub_622650(unsigned short a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, LPARAM) a2, LPARAM a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   HWND *v6; // edi
@@ -1008,14 +989,12 @@ void sub_622650(unsigned short a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, L
   }
   return result; /*0x622675*/
 }
-}
 } // namespace gamemd
 
 // 0x622820
 namespace gamemd {
 AbstractClass * * SetupDialog(CoordStruct * hWnd, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   LPARAM lParam[2]; // [esp+14h] [ebp-8h] BYREF
 
@@ -1126,14 +1105,12 @@ AbstractClass * * SetupDialog(CoordStruct * hWnd, int a2)
   EnumChildWindows((HWND)hWnd, Dialog::DispatchEvent, 0); /*0x622b39*/
   return Dialog::RestoreParent((HWND)hWnd); /*0x622b42*/
 }
-}
 } // namespace gamemd
 
 // 0x622B50
 namespace gamemd {
 CampaignScore * * BaseDialogProc(SkirmishDialog * aP0, unsigned int a2, int a3, unsigned int aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   HWND DlgItem; // eax
@@ -1361,19 +1338,16 @@ LABEL_49:
   DeleteAndZero::Alt((void **)&aP2); /*0x622e89*/
   return 0; /*0x622ba9*/
 }
-}
 } // namespace gamemd
 
 // 0x623230
 namespace gamemd {
 void* CreateMessageBox(LPARAM lParam, LPARAM a2, LONG dwNewLong)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND Dialog; // esi
   HWND DlgItem; // eax
   HWND v7; // edi
-
   Dialog = (HWND)CreateDialog(0xF0u, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))sub_6232B0, 0); /*0x623249*/
   if ( Dialog ) /*0x62324d*/
   {
@@ -1390,14 +1364,12 @@ void* CreateMessageBox(LPARAM lParam, LPARAM a2, LONG dwNewLong)
   }
   return Dialog; /*0x6232a9*/
 }
-}
 } // namespace gamemd
 
 // 0x623730
 namespace gamemd {
 unsigned int * E4Recv_623730::sub_623730(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   const wchar_t *v6; // esi
   size_t v7; // eax
@@ -1461,14 +1433,12 @@ LABEL_15:
   }
   return this; /*0x623828*/
 }
-}
 } // namespace gamemd
 
 // 0x623880
 namespace gamemd {
 CampaignScore * * DrawTextRendererMultiline(IUnknown * aP0, int * a1, wchar_t * String, ObjectClass * aP3, unsigned int * a4, int ecx0, signed int * a6, int a8, int a9, int a10, int a11)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   wchar_t *v11; // edi
   wchar_t *v17; // edi
@@ -1706,14 +1676,12 @@ CampaignScore * * DrawTextRendererMultiline(IUnknown * aP0, int * a1, wchar_t * 
   }
   return result; /*0x623ca7*/
 }
-}
 } // namespace gamemd
 
 // 0x623E40
 namespace gamemd {
 AbstractClass * * GetDialogText(HWND hWnd, void ** a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   LRESULT v4; // edi
   CCINIClass *v6; // esi
@@ -1733,18 +1701,15 @@ AbstractClass * * GetDialogText(HWND hWnd, void ** a2)
     return 0; /*0x623e61*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x6241F0
 namespace gamemd {
 void Dialog_Run(unsigned short a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, LPARAM) a2, LPARAM a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND v3; // eax
   HWND v4; // edi
-
   v3 = (HWND)CreateDialog(a1, a2, a3); /*0x6241f7*/
   v4 = v3; /*0x6241fc*/
   if ( v3 ) /*0x624200*/
@@ -1781,14 +1746,12 @@ void Dialog_Run(unsigned short a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, L
     return 0; /*0x62420b*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x6242B0
 namespace gamemd {
 int E4Recv_6242B0::sub_6242B0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   E4Recv_6242B0 *v3; // edi
   HWND hWnda; // [esp+Ch] [ebp-84h] BYREF
@@ -1820,14 +1783,12 @@ int E4Recv_6242B0::sub_6242B0()
     return !strcmp(ClassName, g_INI_Key_ComboBox) && (GetWindowLongA(v3, -16) & 3) != 3; /*0x624445*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x627020
 namespace gamemd {
 unsigned int * sub_627020()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *result; // eax
 
@@ -1931,14 +1892,12 @@ unsigned int * sub_627020()
   }
   return result; /*0x627146*/
 }
-}
 } // namespace gamemd
 
 // 0x6278C0
 namespace gamemd {
 int E4Recv_6278C0::sub_6278C0(const char * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v11; // eax
   _DWORD *v17; // [esp+10h] [ebp-208h]
@@ -1999,14 +1958,12 @@ LABEL_8:
   }
   return v11; /*0x6279f4*/
 }
-}
 } // namespace gamemd
 
 // 0x627A10
 namespace gamemd {
 unsigned int * E4Recv_627A10::sub_627A10(ObjectClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int *v8; // edi
   int v9; // esi
@@ -2074,14 +2031,12 @@ LABEL_5:
   }
   return result->__pad_0; /*0x627af5*/
 }
-}
 } // namespace gamemd
 
 // 0x629530
 namespace gamemd {
 void E4Recv_629530::sub_629530()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   E4Recv_629530 *v4; // [esp+8h] [ebp-4h] BYREF
   AudioController *v2 = this->M68; /*0x629537*/
@@ -2109,14 +2064,12 @@ void E4Recv_629530::sub_629530()
     *(_BYTE *)(this + 84) = 0; /*0x6295a0*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x62E070
 namespace gamemd {
 AbstractClass * * DestructParticleSystemClass(ParticleSystemClass * aP0, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AbstractClass *v2; // edx
   ParticleSystemClass *v4; // esi
@@ -2235,7 +2188,6 @@ AbstractClass * * DestructParticleSystemClass(ParticleSystemClass * aP0, int a2)
   v5->TargetCoords[1] = 0; /*0x62e271*/
   ObjectClass::Dtor(v5); /*0x62e277*/
   return result; /*0x62e27c*/
-}
 }
 } // namespace gamemd
 

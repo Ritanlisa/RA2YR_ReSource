@@ -11,7 +11,6 @@
 namespace gamemd {
 int E4Recv_501750::sub_501750(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char result; // al
 
@@ -63,14 +62,12 @@ LABEL_14:
   }
   return result; /*0x5018ae*/
 }
-}
 } // namespace gamemd
 
 // 0x504790
 namespace gamemd {
 void UpdateHouseClassAnger(IUnknown * aP0, HouseClass * aP1, int a3, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -120,7 +117,6 @@ void UpdateHouseClassAnger(IUnknown * aP0, HouseClass * aP1, int a3, int a4)
 LABEL_18:
     *(_DWORD *)(result + 22016) = -1; /*0x50484f*/
   return result; /*0x50483f*/
-}
 }
 } // namespace gamemd
 

@@ -7,7 +7,6 @@
 namespace gamemd {
 int ArrayClass::GetAt_Wrap(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v2 = this->q014; /*0x636e62*/
@@ -24,6 +23,5 @@ int ArrayClass::GetAt_Wrap(int a2)
   if ( v3 >= 0 && v3 < v2 ) /*0x636e90*/
     return *(_DWORD *)(this->q008 + 4 * v3); /*0x636e9a*/
   return 0; /*0x636e95*/
-}
 }
 } // namespace gamemd

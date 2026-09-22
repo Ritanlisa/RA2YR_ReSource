@@ -6,16 +6,13 @@
 // 0x5F1950
 int NullModemClass::COMStub()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return this->linkOpen; /*0x5f1953*/
-}
 }
 
 // 0x5F1F00
 int NullModemClass::Flush(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -24,12 +21,10 @@ int NullModemClass::Flush(int a2)
     return Rect::SetRedraw(result->PlayerIndex, 1); /*0x5f1f0c*/
   return result; /*0x5f1f11*/
 }
-}
 
 // 0x5F3560
 int NullModemClass::Release(int a2, int a3, int a4, int a5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -45,7 +40,6 @@ int NullModemClass::Release(int a2, int a3, int a4, int a5)
     ++this->q068; /*0x5f358d*/
   return result; /*0x5f356c*/
 }
-}
 
 // 0x5F35A0
 int NullModemClass::ddtor(int a2, int a3, int a4)
@@ -59,7 +53,6 @@ int NullModemClass::ddtor(int a2, int a3, int a4)
 // 0x5F35D0
 int NullModemClass::Receive()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   NullModemClass *v1 = this->linkObject; /*0x5f35d0*/
@@ -68,12 +61,10 @@ int NullModemClass::Receive()
   else
     return 0; /*0x5f35de*/
 }
-}
 
 // 0x5F35F0
 int NullModemClass::CheckStatus()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   NullModemClass *v1 = this->linkObject; /*0x5f35f0*/
@@ -82,12 +73,10 @@ int NullModemClass::CheckStatus()
   else
     return 0; /*0x5f35fe*/
 }
-}
 
 // 0x5F3610
 int NullModemClass::GetAddress(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   NullModemClass *v2 = this->linkObject; /*0x5f3610*/
@@ -96,12 +85,10 @@ int NullModemClass::GetAddress(int a2)
   else
     return 0; /*0x5f3620*/
 }
-}
 
 // 0x5F3630
 int NullModemClass::SetAddress(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   NullModemClass *v2 = this->linkObject; /*0x5f3630*/
@@ -110,12 +97,10 @@ int NullModemClass::SetAddress(int a2)
   else
     return 0; /*0x5f3640*/
 }
-}
 
 // 0x5F3650
 void * NullModemClass::QueryInterface(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void **v3; // edi
 
@@ -149,12 +134,10 @@ LABEL_10:
     __3_YAXPAX_Z(this); /*0x5f36de*/
   return (NullModemClass *)this; /*0x5f36e8*/
 }
-}
 
 // 0x774670
 int NullModemClass::sendData()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   NullModemClass *v4; // edx
   DWORD cbInQue; // eax
@@ -210,12 +193,10 @@ int NullModemClass::sendData()
   }
   return 1; /*0x77470a*/
 }
-}
 
 // 0x7747C0
 int NullModemClass::receiveData()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   NullModemClass *v2; // edx
   DWORD cbInQue; // eax
@@ -250,15 +231,12 @@ int NullModemClass::receiveData()
   }
   return (*(int (__thiscall **)(int, int))(this->PacketsSent)(this, 1); /*0x774893*/
 }
-}
 
 // 0x7754C0
 int NullModemClass::GetMember23()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return this->q05C; /*0x7754c3*/
-}
 }
 
 // 0x5F3520

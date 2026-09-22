@@ -8,7 +8,6 @@
 namespace gamemd {
 unsigned int * BSurface::Construct(int a2, int a3, int a4, int a5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *v13; // ecx
   bool v14; // eax
@@ -65,14 +64,12 @@ unsigned int * BSurface::Construct(int a2, int a3, int a4, int a5)
   (*(void (__thiscall **)(int))(*(_DWORD *)v19 + 96))(v19); /*0x410dab*/
   return this; /*0x410db0*/
 }
-}
 } // namespace gamemd
 
 // 0x7B8C60
 namespace gamemd {
 int BSurface::CreateTripleBuffer()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void (__thiscall ***v3)(_DWORD, int); // ecx
   void (__thiscall ***v5)(_DWORD, int); // ecx
@@ -184,14 +181,12 @@ int BSurface::CreateTripleBuffer()
   }
   return *(_DWORD *)(this + 68) && *(_DWORD *)(this + 88) && *(_DWORD *)(this + 108); /*0x7b8e62*/
 }
-}
 } // namespace gamemd
 
 // 0x7BC970
 namespace gamemd {
 unsigned int * BSurface::ConstructEx(int a2, int a3, int a4, int a5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *v13; // ecx
   bool v14; // eax
@@ -247,7 +242,6 @@ unsigned int * BSurface::ConstructEx(int a2, int a3, int a4, int a5)
   this->q007 = v18; /*0x7bca39*/
   (*(void (__thiscall **)(int))(*(_DWORD *)v19 + 96))(v19); /*0x7bca3e*/
   return this; /*0x7bca43*/
-}
 }
 } // namespace gamemd
 

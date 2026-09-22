@@ -5,7 +5,6 @@
 // 0x4A3020
 int IStream::Read(IStream * pstm, void * pv, ULONG cb)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HRESULT result; // eax
 
@@ -35,5 +34,4 @@ int IStream::Read(IStream * pstm, void * pv, ULONG cb)
     }
   }
   return result; /*0x4a3088*/
-}
 }

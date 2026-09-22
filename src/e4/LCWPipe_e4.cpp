@@ -5,7 +5,6 @@
 // 0x552060
 int LCWPipe::Dtor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   AbstractClass *v2 = (void *)this->q005; /*0x552063*/
@@ -16,5 +15,4 @@ int LCWPipe::Dtor()
   __3_YAXPAX_Z(v3); /*0x55207d*/
   this->q006 = 0; /*0x552087*/
   return Pipe::Dtor(this); /*0x552093*/
-}
 }

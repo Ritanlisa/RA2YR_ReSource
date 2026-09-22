@@ -9,7 +9,6 @@
 namespace gamemd {
 AbstractClass * * DestroyDialogChildWindow(HWND hWnd, LPARAM a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND *v8; // ecx
   AbstractClass *v9; // edi
@@ -116,20 +115,17 @@ LABEL_31:
   Object::RemoveObjectArray(hWnd); /*0x61077f*/
   return 1; /*0x610784*/
 }
-}
 } // namespace gamemd
 
 // 0x610810
 namespace gamemd {
 char sub_610810(int a1, const wchar_t * a2, CoordStruct * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   wchar_t *StringCSF; // eax
   CoordStruct *v6; // ecx
   const wchar_t *v8; // [esp+0h] [ebp-30h]
   CampaignScore *v9; // [esp+4h] [ebp-2Ch]
-
   if ( *(&g_MatrixTransformState + 3055) ) /*0x610829*/
   {
     if ( *(&g_MatrixTransformState + 3056) != (CoordStruct *)1 ) /*0x610835*/
@@ -176,14 +172,12 @@ LABEL_8:
   *(&g_MatrixTransformState + 3057) = a3; /*0x61092d*/
   return TriggerClass::FindByEventType(1); /*0x610938*/
 }
-}
 } // namespace gamemd
 
 // 0x610B50
 namespace gamemd {
 void sub_610B50()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int128 v3; // [esp+14h] [ebp-10h] BYREF
   if ( !DataGlobal_AC1DCC ) /*0x610b5d*/
@@ -207,14 +201,12 @@ void sub_610B50()
   DataGlobal_AC1DD0 = 1; /*0x610bd6*/
   return 1; /*0x610b61*/
 }
-}
 } // namespace gamemd
 
 // 0x610BF0
 namespace gamemd {
 AbstractClass * * sub_610BF0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int128 v3; // [esp+14h] [ebp-10h] BYREF
   if ( !DataGlobal_AC1DCC ) /*0x610bfd*/
@@ -245,14 +237,12 @@ LABEL_6:
   DataGlobal_AC1DD0 = 0; /*0x610c90*/
   return 1; /*0x610c01*/
 }
-}
 } // namespace gamemd
 
 // 0x612930
 namespace gamemd {
 void sub_612930()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned int i; // edi
 
@@ -316,14 +306,12 @@ void sub_612930()
   }
   __3_YAXPAX_Z(DataGlobal_AC1858); /*0x612a46*/
 }
-}
 } // namespace gamemd
 
 // 0x612A60
 namespace gamemd {
 AbstractClass * * sub_612A60(HWND hWnd, UINT Msg, HDC hdc, LPARAM lParam)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   LRESULT (__stdcall *v4)(HWND, UINT, WPARAM, LPARAM); // esi
   HWND v6; // ecx
@@ -380,14 +368,12 @@ LABEL_10:
   SetBkMode(v10, 1); /*0x612b39*/
   return GetStockObject(5); /*0x612b47*/
 }
-}
 } // namespace gamemd
 
 // 0x61D6D0
 namespace gamemd {
 AbstractClass * * NetworkLobbyPaintProc(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND v4; // ebp
   int result; // eax
@@ -490,14 +476,12 @@ AbstractClass * * NetworkLobbyPaintProc(HWND hWnd, unsigned int a2, int a3, unsi
       return 0; /*0x61d76b*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x61ECA0
 namespace gamemd {
 AbstractClass * * RenderDialogSurface(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   UINT v4; // edi
   LRESULT (__stdcall *v5)(HWND, UINT, WPARAM, LPARAM); // esi
@@ -622,14 +606,12 @@ AbstractClass * * RenderDialogSurface(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM
   }
   return CallWindowProcA(v5, v7, v4, wParam, lParam); /*0x61ed43*/
 }
-}
 } // namespace gamemd
 
 // 0x61EF70
 namespace gamemd {
 void FormatHotkeyDisplayString()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   __int16 v4; // kr1C_2
@@ -679,14 +661,12 @@ void FormatHotkeyDisplayString()
   }
   return result; /*0x61f180*/
 }
-}
 } // namespace gamemd
 
 // 0x61F210
 namespace gamemd {
 char Dialog_InitCountryIcons(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   LoadPaletteFromFile((int)g_DialogHashTable, a2, DataGlobal_833654, 2, 0);
@@ -1071,7 +1051,6 @@ char Dialog_InitCountryIcons(int a1, int a2)
   LoadPaletteFromFile((int)g_DialogHashTable, v190, DataGlobal_00835A4C, 2, 0);
   int v191; // edx
   return LoadPaletteFromFile((int)g_DialogHashTable, v191, DataGlobal_00835A38, 2, 0);
-}
 }
 } // namespace gamemd
 

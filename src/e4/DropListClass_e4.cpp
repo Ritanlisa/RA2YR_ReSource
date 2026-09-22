@@ -6,7 +6,6 @@
 namespace gamemd {
 void DropListClass_OnKeyUp()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   wchar_t *result; // eax
   const wchar_t *v8; // eax
@@ -27,14 +26,11 @@ void DropListClass_OnKeyUp()
   }
   return result; /*0x4b507f*/
 }
-}
 } // namespace gamemd
 
 // 0x4B55A0
 int DropListClass::COMStub()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return this->q034; /*0x4b55a3*/
-}
 }

@@ -8,7 +8,6 @@ namespace ra2 {
 namespace game {
 int AirstrikeClass::SpawnAircraft(int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v5; // ebx
   _DWORD *v7; // eax
@@ -86,7 +85,6 @@ int AirstrikeClass::SpawnAircraft(int * a2)
   }
   return result; /*0x41da0b*/
 }
-}
 } // namespace game
 } // namespace ra2
 
@@ -95,7 +93,6 @@ namespace ra2 {
 namespace game {
 int AirstrikeClass::ReassignTarget(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v8; // eax
   int v3 = this->AirstrikeClass_field_5C; /*0x41da26*/
@@ -158,7 +155,6 @@ LABEL_6:
   }
   return v8; /*0x41da61*/
 }
-}
 } // namespace game
 } // namespace ra2
 
@@ -167,7 +163,6 @@ namespace ra2 {
 namespace game {
 int AirstrikeClass::RemoveAircraft(AudioController * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   IUnknown *v4; // edx
@@ -210,7 +205,6 @@ int AirstrikeClass::RemoveAircraft(AudioController * aP1)
   }
   return result; /*0x41dd01*/
 }
-}
 } // namespace game
 } // namespace ra2
 
@@ -219,7 +213,6 @@ namespace ra2 {
 namespace game {
 void * AirstrikeClass::CopyTo(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   *this = &AirstrikeClass::`vftable'; /*0x41dd5d*/
@@ -242,7 +235,6 @@ void * AirstrikeClass::CopyTo(char a2)
     __3_YAXPAX_Z(this); /*0x41ddc7*/
   return (AirstrikeClass *)this; /*0x41ddd1*/
 }
-}
 } // namespace game
 } // namespace ra2
 
@@ -251,7 +243,6 @@ namespace ra2 {
 namespace game {
 AbstractClass * * AirstrikeClass::UpdateAll()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   AbstractClass *v0; // eax
@@ -303,7 +294,6 @@ LABEL_9:
     while ( v4 >= 0 ); /*0x420f36*/
   }
   return (char)v0; /*0x420f38*/
-}
 }
 } // namespace game
 } // namespace ra2

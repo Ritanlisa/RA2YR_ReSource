@@ -5,7 +5,6 @@
 // 0x543780
 I * IsometricTileClass::IsometricTileClass(IsometricTileClass * aP1, IsometricTileClass * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
         IsometricTileClass *this,
         IsometricTileClass *aP1,
         IsometricTileClass *aP2)
@@ -35,5 +34,4 @@ I * IsometricTileClass::IsometricTileClass(IsometricTileClass * aP1, IsometricTi
     *(_DWORD *)(*(_DWORD *)&stru_87C374[13280] + 4 * v4) = this; /*0x543871*/
   }
   return this; /*0x543876*/
-}
 }

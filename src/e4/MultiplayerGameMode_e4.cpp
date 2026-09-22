@@ -5,7 +5,6 @@
 // 0x5D89F0
 unsigned int * MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass(int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   this->q004 = 0; /*0x5d89fb*/
   this->q008 = a2; /*0x5d89fe*/
@@ -23,7 +22,6 @@ unsigned int * MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass(int 
     this->q034 = 1; /*0x5d8a30*/
   }
   return this; /*0x5d8a1d*/
-}
 }
 
 // 0x5D7F20

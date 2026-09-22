@@ -7,7 +7,6 @@
 namespace gamemd {
 int Mission::ExecuteTechnoMissionAction()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void **v4; // ebp
   int result; // eax
@@ -174,14 +173,12 @@ LABEL_51:
   }
   return result; /*0x520ef4*/
 }
-}
 } // namespace gamemd
 
 // 0x520F40
 namespace gamemd {
 char Mission::ProcessUnitMissionAI()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int (__stdcall ***v12)(_DWORD, void *, int *); // eax
   int v17; // eax
@@ -334,20 +331,17 @@ LABEL_55:
   }
   return v17; /*0x52125a*/
 }
-}
 } // namespace gamemd
 
 // 0x5BDA80
 namespace gamemd {
 int Mission::SetAndCall(IUnknown * aP1, IUnknown * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v3 = *this; /*0x5bda84*/
   this->q5564 = (int)aP1; /*0x5bda8d*/
   return this->vt_slot_76(aP1, aP2); /*0x5bda96*/
-}
 }
 } // namespace gamemd
 
@@ -355,7 +349,6 @@ int Mission::SetAndCall(IUnknown * aP1, IUnknown * aP2)
 namespace gamemd {
 char Mission::AssignTeamMemberMissions(ScriptClass * aP1, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ScriptClass *v3; // eax
   ScriptClass *v4; // ebx
@@ -474,14 +467,12 @@ char Mission::AssignTeamMemberMissions(ScriptClass * aP1, int a3)
   }
   return (char)v3; /*0x6eda86*/
 }
-}
 } // namespace gamemd
 
 // 0x70F770
 namespace gamemd {
 int Mission::GetMissionDelay()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -506,6 +497,5 @@ int Mission::GetMissionDelay()
     }
   }
   return result; /*0x70f7cd*/
-}
 }
 } // namespace gamemd

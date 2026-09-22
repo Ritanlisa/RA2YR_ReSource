@@ -7,7 +7,6 @@
 namespace gamemd {
 void * MSFrameAnim::QueryInterface(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   *this = &vt_MSFrameAnim; /*0x769bd3*/
   VtableStub::5CB6C0(this); /*0x769bd9*/
@@ -15,14 +14,12 @@ void * MSFrameAnim::QueryInterface(char a2)
     __3_YAXPAX_Z(this); /*0x769be6*/
   return (MSFrameAnim *)this; /*0x769bf0*/
 }
-}
 } // namespace gamemd
 
 // 0x769FE0
 namespace gamemd {
 AbstractClass * * MSFrameAnim::setFrameRate(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // esi
   void (__thiscall ***v11)(_DWORD, int); // ecx
@@ -106,7 +103,6 @@ AbstractClass * * MSFrameAnim::setFrameRate(int a2, unsigned int * a3)
   if ( v12 < this->MSFrameAnim_field_0x10 ) /*0x76a0e4*/
     this->MSFrameAnim_field_0x10 = v12; /*0x76a0e6*/
   return 1; /*0x76a0e9*/
-}
 }
 } // namespace gamemd
 

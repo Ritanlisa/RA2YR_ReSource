@@ -6,10 +6,8 @@
 namespace gamemd {
 void VtableStub_643E70()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   this->q064 = 0; /*0x643e70*/
-}
 }
 } // namespace gamemd
 

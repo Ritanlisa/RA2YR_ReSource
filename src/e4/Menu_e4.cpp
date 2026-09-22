@@ -5,7 +5,6 @@
 // 0x4C6140
 int Menu::Reset()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   *(_DWORD *)(this + 52) = 0; /*0x4c614c*/
   *(_DWORD *)(this + 56) = 0; /*0x4c614f*/
@@ -14,5 +13,4 @@ int Menu::Reset()
   memset((void *)this, 0, 0x30u); /*0x4c615d*/
   *(_WORD *)(this + 48) = 0; /*0x4c615f*/
   return this; /*0x4c6163*/
-}
 }

@@ -11,7 +11,6 @@
 namespace gamemd {
 void String::AssignWideToChar(CampaignScore * aP1, CampaignScore * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   if ( aP1 ) /*0x49b76b*/
     strcpy(this, ToWideStringChar(aP1->__pad_0)); /*0x49b788*/
@@ -22,14 +21,12 @@ void String::AssignWideToChar(CampaignScore * aP1, CampaignScore * aP2)
   else
     *(this + 28) = 0; /*0x49b7cc*/
 }
-}
 } // namespace gamemd
 
 // 0x4CB5E0
 namespace gamemd {
 void * String::AllocAndCopy(RandomStruct * aP1, IUnknown * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   strncpy(this, (const char *)aP1, (IUnknown *)4); /*0x4cb5ed*/
@@ -44,19 +41,16 @@ void * String::AllocAndCopy(RandomStruct * aP1, IUnknown * aP2)
   *((_DWORD *)this + 3) = 0; /*0x4cb628*/
   return this; /*0x4cb627*/
 }
-}
 } // namespace gamemd
 
 // 0x5BD5A0
 namespace gamemd {
 void String::Release()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   if ( *(this + 3) ) /*0x5bd5a3*/
     __3_YAXPAX_Z(*(this + 3)); /*0x5bd5ab*/
   *(this + 3) = 0; /*0x5bd5b3*/
-}
 }
 } // namespace gamemd
 
@@ -64,7 +58,6 @@ void String::Release()
 namespace gamemd {
 ObjectClass * * String::SplitComma(ObjectClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ObjectClass *v3; // ebx
   ObjectClass *v4; // ebx
@@ -102,14 +95,12 @@ ObjectClass * * String::SplitComma(ObjectClass * aP1)
   DeleteAndZero((void **)&v10); /*0x5d045a*/
   return this; /*0x5d0461*/
 }
-}
 } // namespace gamemd
 
 // 0x5F3350
 namespace gamemd {
 int String::NormalizeNewlines()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   const char * v0 = (const char *)DataGlobal_A8EA7C; /*0x5f3351*/
@@ -139,14 +130,12 @@ LABEL_6:
   }
   return v1; /*0x5f3394*/
 }
-}
 } // namespace gamemd
 
 // 0x763690
 namespace gamemd {
 ControlClass * * String::To_Waypoint()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v2 = -1; /*0x763694*/
@@ -155,14 +144,12 @@ ControlClass * * String::To_Waypoint()
   else
     return v2; /*0x7636e0*/
 }
-}
 } // namespace gamemd
 
 // 0x7B51D0
 namespace gamemd {
 void String::TrimLeft(ObjectClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // esi
 
@@ -180,20 +167,17 @@ void String::TrimLeft(ObjectClass * aP1)
   if ( i > 0 ) /*0x7b5219*/
     String::Erase(this, 0, i); /*0x7b5220*/
 }
-}
 } // namespace gamemd
 
 // 0x7B54B0
 namespace gamemd {
 unsigned int String::Length()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   if ( *this ) /*0x7b54b1*/
     return strlen(*this); /*0x7b54c6*/
   else
     return 0; /*0x7b54b7*/
-}
 }
 } // namespace gamemd
 
@@ -201,7 +185,6 @@ unsigned int String::Length()
 namespace gamemd {
 AbstractClass * * String::Replace(char * SubStr, const char * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void **v3; // edi
   size_t v7; // eax
@@ -319,14 +302,12 @@ LABEL_35:
     __3_YAXPAX_Z(v4); /*0x7b5a2c*/
   return 1; /*0x7b5a34*/
 }
-}
 } // namespace gamemd
 
 // 0x7B5F10
 namespace gamemd {
 AbstractClass * * String::Tokenize(int a2, ObjectClass * aP2, ObjectClass * aP3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AbstractClass *v12; // ecx
   ObjectClass *v14; // edi
@@ -402,14 +383,12 @@ AbstractClass * * String::Tokenize(int a2, ObjectClass * aP2, ObjectClass * aP3)
     __3_YAXPAX_Z(v17); /*0x7b60c6*/
   return (int)(Str + 1); /*0x7b5f1e*/
 }
-}
 } // namespace gamemd
 
 // 0x7B7A60
 namespace gamemd {
 AbstractClass * * String::Tokenize2(int a2, wchar_t * Str, void ** a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   const wchar_t *v7; // eax
   const wchar_t *v8; // eax
@@ -494,14 +473,12 @@ AbstractClass * * String::Tokenize2(int a2, wchar_t * Str, void ** a4)
     __3_YAXPAX_Z(v19); /*0x7b7be3*/
   return v23 + 1; /*0x7b7a6d*/
 }
-}
 } // namespace gamemd
 
 // 0x7CCA34
 namespace gamemd {
 exception * * int sub_7CCA34(unsigned char * a1, unsigned int a2, unsigned char * a3, int a4, void * a5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned __int8 *v6; // esi
   unsigned __int8 v7; // al
@@ -565,7 +542,6 @@ exception * * int sub_7CCA34(unsigned char * a1, unsigned int a2, unsigned char 
     return 0; /*0x7ccb2a*/
   *a1 = 0; /*0x7ccb1f*/
   return a2 - v11; /*0x7ccb17*/
-}
 }
 } // namespace gamemd
 

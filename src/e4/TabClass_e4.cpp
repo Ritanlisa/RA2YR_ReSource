@@ -6,7 +6,6 @@
 // 0x4A2350
 unsigned int * TabClass::initStripClass()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   *this = 0; /*0x4a2354*/
   this->q004 = 0; /*0x4a2356*/
@@ -16,12 +15,10 @@ unsigned int * TabClass::initStripClass()
   this->q00C = 0; /*0x4a2362*/
   return this; /*0x4a2365*/
 }
-}
 
 // 0x658330
 int TabClass::DrawPower(HWND hDlg, void * a1, AbstractClass * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int BuildingAnimByName; // eax
   LPARAM v7; // esi
@@ -136,5 +133,4 @@ int TabClass::DrawPower(HWND hDlg, void * a1, AbstractClass * aP2)
     v24 = GetDlgItem(hDlg, v3); /*0x658619*/
     return SendMessageA(v24, 0x4B2u, 0, (LPARAM)lParam); /*0x658628*/
   }
-}
 }

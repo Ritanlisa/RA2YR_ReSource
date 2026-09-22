@@ -7,7 +7,6 @@
 namespace gamemd {
 unsigned int * Gadget::InitProperties()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unknown_libname_74(this + 1); /*0x600636*/
   unknown_libname_74(this + 2); /*0x60063e*/
@@ -16,6 +15,5 @@ unsigned int * Gadget::InitProperties()
   *(this + 5) = -1; /*0x60064f*/
   *(this + 4) = 0; /*0x600652*/
   return this; /*0x60065b*/
-}
 }
 } // namespace gamemd

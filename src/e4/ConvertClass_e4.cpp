@@ -5,7 +5,6 @@
 // 0x48E740
 unsigned int * ConvertClass::Construct(ConvertClass * aP1, int a3, ConvertClass * aP3, ObjectClass * aP4, ConvertClass * aP5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   CampaignClass *v7; // eax
   __int16 v12; // cx
@@ -207,7 +206,6 @@ unsigned int * ConvertClass::Construct(ConvertClass * aP1, int a3, ConvertClass 
     *(_DWORD *)(*(_DWORD *)&stru_89E138[3012] + 4 * v26) = this; /*0x48ebd3*/
   }
   return this; /*0x48ebd8*/
-}
 }
 
 // 0x491430

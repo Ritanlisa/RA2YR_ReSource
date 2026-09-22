@@ -95,7 +95,6 @@ LoadOptions::~LoadOptions() {
 // IDA 0x558790: LoadOptions::Cleanup
 // 0x558790
 void LoadOptions::Cleanup() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v2 = 0;
@@ -163,7 +162,6 @@ pop     esi
 pop     ebx
 retn
 */
-}
 
 // IDA 0x55A0D0: VT00_Destroy (QueryInterface destructor)
 void LoadOptions::VT00_Destroy(char free_self) {
@@ -182,12 +180,10 @@ bool LoadOptions::DeleteSaveFile(const char* filename) {
 // 0x5587f0
 int LoadOptions::Run() {
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   this->Items = (const char *)1; /*0x5587f0*/
   this->q00C = 0; /*0x5587f7*/
   return SaveLoadDialog::DlgProc(this);
-}
 }
 // 0x559c20
 bool LoadOptions::Check() {
@@ -366,7 +362,6 @@ bool LoadOptions::ReadEntry(FileEntryClass* dest, int a2) {
 // IDA 0x55A1F0: CopyItems — resize vector, preserve existing entries
 // 0x55a1f0
 AbstractClass * * LoadOptions::CopyItems(uint32_t new_size, FileEntryClass** out_buffer) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x55a1f0
 {
   int i; // eax
@@ -506,7 +501,6 @@ mov     al, 1
 pop     ebx
 retn    8
 */
-}
 
 // IDA 0x55A2A0: ClearBuffer
 // 0x55a2a0
@@ -525,7 +519,6 @@ void LoadOptions::ClearBuffer() {
 // IDA 0x55A2D0: FindItem — linear search by first dword
 // 0x55a2d0
 int LoadOptions::FindItem(FileEntryClass* const* key) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   _DWORD *i; // ecx
@@ -742,7 +735,6 @@ void LoadSaveDialog_FillList(LoadOptions* opts, HWND hWnd) {
     }
 }
 
-} // namespace gamemd
 
 #include "core/load_options.hpp"
 

@@ -5,11 +5,9 @@
 // 0x767010
 void * COMClass::lockServer(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   rc_ptr_base *v4; // ebp
   rc_ptr_base *v5; // esi
-
   if ( (a2 & 2) != 0 ) /*0x76701b*/
   {
     int v3 = *((_DWORD *)this - 1); /*0x76701d*/
@@ -40,7 +38,6 @@ void * COMClass::lockServer(char a2)
       __3_YAXPAX_Z(this); /*0x76706b*/
     return this; /*0x767073*/
   }
-}
 }
 
 // 0x7669F0

@@ -6,7 +6,6 @@
 // 0x5E8DC0
 void Player::BuildListString()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   SessionClass *v2; // edi
   ReferenceCounted *v3; // esi
@@ -46,7 +45,6 @@ void Player::BuildListString()
     v2 = (SessionClass *)((char *)v2 + 4); /*0x5e8e80*/
   }
   while ( (int)v2 < (int)&HouseClass_Player[40292] ); /*0x5e8e89*/
-}
 }
 
 // 0x5E8BF0

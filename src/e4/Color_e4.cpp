@@ -6,7 +6,6 @@
 // 0x517440
 int Color::ConvertToRGB(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 v9; // [esp+10h] [ebp-20h]
   int v2 = this->q008; /*0x51744b*/
@@ -30,12 +29,10 @@ int Color::ConvertToRGB(int a2)
   *(_BYTE *)(a2 + 2) = v6; /*0x51754a*/
   return a2; /*0x517530*/
 }
-}
 
 // 0x661020
 unsigned char * Color::Lerp2(int a2, int a3, float a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   double v4 = 1.0 - a4; /*0x661028*/
@@ -55,12 +52,10 @@ unsigned char * Color::Lerp2(int a2, int a3, float a4)
     return this; /*0x661154*/
   }
 }
-}
 
 // 0x661190
 unsigned char * Color::ScaleRGB(unsigned char * a2, float a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   double v4 = (double)*a2 * a3; /*0x6611a4*/
@@ -99,12 +94,10 @@ unsigned char * Color::ScaleRGB(unsigned char * a2, float a3)
     return this; /*0x661285*/
   }
 }
-}
 
 // 0x6612C0
 unsigned char Color::Lerp(ObjectClass * aP1, unsigned char * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AbstractClass *v3; // bl
   unsigned __int8 v4; // al
@@ -120,12 +113,10 @@ unsigned char Color::Lerp(ObjectClass * aP1, unsigned char * a2)
   this->q008 = result; /*0x661340*/
   return result; /*0x66132a*/
 }
-}
 
 // 0x75F540
 unsigned int * Color::RGBFromFloat(IUnknown * aP1, float a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   double v3 = 1.0 - a3; /*0x75f547*/
@@ -136,5 +127,4 @@ unsigned int * Color::RGBFromFloat(IUnknown * aP1, float a3)
   this->q004 = v8; /*0x75f5a0*/
   this->q008 = v6; /*0x75f5a3*/
   return this; /*0x75f5ac*/
-}
 }

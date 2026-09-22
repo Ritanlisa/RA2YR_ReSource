@@ -6,7 +6,6 @@
 // 0x4810A0
 int Input::OffsetToDirection()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v4; // eax
   IPXGlobalConnClass *v1 = (unsigned __int8)this->q004; /*0x4810aa*/
@@ -25,5 +24,4 @@ int Input::OffsetToDirection()
     LOBYTE(v4) = 0; /*0x4810f3*/
   }
   return v4; /*0x4810f2*/
-}
 }

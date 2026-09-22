@@ -22,7 +22,6 @@
 namespace gamemd {
 int sub_6D1130()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   DataGlobal_B0CCD4 = 240; /*0x6d1149*/
@@ -41,14 +40,12 @@ int sub_6D1130()
   Rect_Point::Set(DataGlobal_B0CC40, *(_DWORD *)DataGlobal_B0FC64, *((_DWORD *)DataGlobal_B0FC64 + 1)); /*0x6d11e2*/
   return ShapeButton::SetShape((int)DataGlobal_B0CC40, (int)v0, 0, 0); /*0x6d11f4*/
 }
-}
 } // namespace gamemd
 
 // 0x6D6BB0
 namespace gamemd {
 unsigned int * sub_6D6BB0(unsigned short * a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 v2; // ax
   _DWORD *result; // eax
@@ -119,7 +116,6 @@ unsigned int * sub_6D6BB0(unsigned short * a1)
     }
   }
   return result; /*0x6d6cfc*/
-}
 }
 } // namespace gamemd
 

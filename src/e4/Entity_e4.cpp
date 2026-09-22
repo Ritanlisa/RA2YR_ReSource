@@ -6,7 +6,6 @@
 namespace gamemd {
 int sub_53AB70()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   char * v0 = (char *)g_ScenarioClass_Instance + 4680; /*0x53ab7b*/
@@ -24,7 +23,6 @@ int sub_53AB70()
     1000 * *((_DWORD *)g_ScenarioClass_Instance + 3419) / 100,
     1);
   return MapClass::MarkForRedraw(&DataGlobal_87F7E8, 1); /*0x53ac4a*/
-}
 }
 } // namespace gamemd
 

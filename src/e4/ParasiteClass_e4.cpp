@@ -13,7 +13,6 @@ namespace ra2 {
 namespace game {
 int ParasiteClass::Constructor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   wchar_t *v2; // ecx
   AbstractClass::Constructor((AbstractClass *)this); /*0x629213*/
@@ -39,7 +38,6 @@ int ParasiteClass::Constructor()
   }
   return this; /*0x62929f*/
 }
-}
 } // namespace game
 } // namespace ra2
 
@@ -48,10 +46,8 @@ namespace ra2 {
 namespace game {
 P ParasiteClass::ParasiteClass(TechnoClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v3; // ecx
-
   AbstractClass::Constructor((AbstractClass *)this); /*0x6292b6*/
   this->q02C = *(_DWORD *)&g_NetworkPlayerBuffer[5960]; /*0x6292c4*/
   this->ParasiteClass_field_34 = 0; /*0x6292c9*/
@@ -90,7 +86,6 @@ P ParasiteClass::ParasiteClass(TechnoClass * aP1)
   }
   return this; /*0x629381*/
 }
-}
 } // namespace game
 } // namespace ra2
 
@@ -99,7 +94,6 @@ namespace ra2 {
 namespace game {
 int ParasiteClass::Attach(int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   AbstractClass::ProcessPower((#378 *)this); /*0x6294d9*/
@@ -116,7 +110,6 @@ int ParasiteClass::Attach(int * a2)
   LOBYTE(v5) = this->q054; /*0x629518*/
   return Power::FlagProcess(a2, v5); /*0x629523*/
 }
-}
 } // namespace game
 } // namespace ra2
 
@@ -125,7 +118,6 @@ namespace ra2 {
 namespace game {
 void ParasiteClass::DeploySquad()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int Index; // eax
   void **v13; // eax
@@ -392,7 +384,6 @@ LABEL_47:
     }
   }
 }
-}
 } // namespace game
 } // namespace ra2
 
@@ -401,7 +392,6 @@ namespace ra2 {
 namespace game {
 void ParasiteClass::TickDamage()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void **v15; // eax
   _DWORD v22[3]; // [esp+10h] [ebp-3Ch] BYREF
@@ -501,7 +491,6 @@ LABEL_8:
       0);
   }
 }
-}
 } // namespace game
 } // namespace ra2
 
@@ -510,7 +499,6 @@ namespace ra2 {
 namespace game {
 AbstractClass * * ParasiteClass::TryInfect(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   ParasiteClass *v14; // [esp+1Ch] [ebp-10h] BYREF
@@ -581,7 +569,6 @@ AbstractClass * * ParasiteClass::TryInfect(unsigned int * a2)
   }
   return result; /*0x62aa41*/
 }
-}
 } // namespace game
 } // namespace ra2
 
@@ -590,7 +577,6 @@ namespace ra2 {
 namespace game {
 int ParasiteClass::CanExistOnVictimCell()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   IUnknown *v2 = this->q028; /*0x62ab44*/
@@ -626,7 +612,6 @@ LABEL_20:
   _DWORD * v9 = (_DWORD *)(*(int (__thiscall **)(_DWORD))(*this->q028 + 444))(this->q028); /*0x62ac14*/
   return Cell::IsBridge(v9) == 0; /*0x62ab4b*/
 }
-}
 } // namespace game
 } // namespace ra2
 
@@ -635,7 +620,6 @@ namespace ra2 {
 namespace game {
 void * ParasiteClass::UpdateParasite(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ParasiteClass *v7; // [esp+8h] [ebp-4h] BYREF
   AnimClass *v3 = this->q011; /*0x62af77*/
@@ -682,7 +666,6 @@ void * ParasiteClass::UpdateParasite(char a2)
     __3_YAXPAX_Z(this); /*0x62b056*/
   return this; /*0x62b060*/
 }
-}
 } // namespace game
 } // namespace ra2
 
@@ -691,7 +674,6 @@ namespace ra2 {
 namespace game {
 Coord * * ParasiteClass::Update()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int Byte284; // eax
   int v24; // eax
@@ -960,7 +942,6 @@ LABEL_50:
       *(this + 302) = 0; /*0x62c38d*/
   }
   return result; /*0x62c37b*/
-}
 }
 } // namespace game
 } // namespace ra2

@@ -12,7 +12,6 @@
 namespace gamemd {
 void ParticleClass::DrawParticle(int * a2, int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 v20; // dx
   if ( (unsigned int)dword_ABCD44 >= PingPongBuffer::GetWriteOffset() || *(_DWORD *)(this->ParticleClass_field_0xAC + 744) ) /*0x62cedc*/
@@ -140,14 +139,12 @@ void ParticleClass::DrawParticle(int * a2, int * a3)
     }
   }
 }
-}
 } // namespace gamemd
 
 // 0x62D5E0
 namespace gamemd {
 void ParticleClass::AdjustHeight()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int GroundHeight; // edi
   MouseClass *v10; // [esp+4h] [ebp-18h] BYREF
@@ -199,7 +196,6 @@ void ParticleClass::AdjustHeight()
   {
     BuildingClass::UpdateFloatPosition(this); /*0x62d6db*/
   }
-}
 }
 } // namespace gamemd
 

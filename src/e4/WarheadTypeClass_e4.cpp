@@ -8,7 +8,6 @@
 // 0x474810
 void * WarheadTypeClass::loadWarheadINI(CCINIClass * aP1, unsigned char * a2, CCINIClass * aP3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int Int_Overwrite; // eax
   CCINIClass *result; // eax
@@ -27,12 +26,10 @@ void * WarheadTypeClass::loadWarheadINI(CCINIClass * aP1, unsigned char * a2, CC
     return (CCINIClass *)255; /*0x47485e*/
   return result; /*0x47482a*/
 }
-}
 
 // 0x525300
 AbstractClass * * WarheadTypeClass::Release(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // eax
 
@@ -71,12 +68,10 @@ AbstractClass * * WarheadTypeClass::Release(int a2, unsigned int * a3)
     this->WarheadTypeClass_field_0x10 = v7; /*0x52539b*/
   return 1; /*0x52539e*/
 }
-}
 
 // 0x52AB80
 AbstractClass * * WarheadTypeClass::parseVerses()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   CCINIClass *v2; // eax
   char *result; // eax
@@ -188,12 +183,10 @@ AbstractClass * * WarheadTypeClass::parseVerses()
   }
   return result; /*0x52acdb*/
 }
-}
 
 // 0x52AFC0
 void * WarheadTypeClass::ReadParticleSystems(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   *this = &vt_GenericList; /*0x52afc6*/
@@ -252,12 +245,10 @@ void * WarheadTypeClass::ReadParticleSystems(char a2)
     __3_YAXPAX_Z(this); /*0x52b064*/
   return (GenericList *)this; /*0x52b06e*/
 }
-}
 
 // 0x644630
 ParticleSystemTypeClass * * WarheadTypeClass::applyDamage()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ParticleSystemTypeClass *v4; // eax
   ParticleSystemTypeClass **i; // edx
@@ -291,12 +282,10 @@ LABEL_6:
   }
   return v2; /*0x6446a0*/
 }
-}
 
 // 0x75CEC0
 int WarheadTypeClass::Construct(ObjectClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   AbstractTypeClass::Constructor(this, (AbstractClass *)aP1); /*0x75cecb*/
@@ -410,12 +399,10 @@ int WarheadTypeClass::Construct(ObjectClass * aP1)
   qmemcpy((void *)(this + 168), (const void *)(this + 160), 0x50u); /*0x75d1a7*/
   return this; /*0x75d1a9*/
 }
-}
 
 // 0x75DEC0
 void* WarheadTypeClass::ProcessPower(int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v3 = AbstractTypeClass::ProcessPower((char *)this, a2); /*0x75ded0*/
@@ -479,12 +466,10 @@ void* WarheadTypeClass::ProcessPower(int * a2)
   Power::TimerProcess(this->WarheadTypeClass_field_0x114); /*0x75e05a*/
   return Power::TimerProcess(this->WarheadTypeClass_field_0x120); /*0x75e06d*/
 }
-}
 
 // 0x75E0C0
 int WarheadTypeClass::SaveLoad_Prefix(unsigned int * a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int i; // ebx
@@ -549,13 +534,11 @@ int WarheadTypeClass::SaveLoad_Prefix(unsigned int * a1, int a2)
   }
   return result; /*0x75e2ae*/
 }
-}
 
 // 0x75E2C0
 namespace gamemd {
 void WarheadTypeClass_SaveLoad_Prefix_0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int i; // ebx
@@ -584,13 +567,11 @@ void WarheadTypeClass_SaveLoad_Prefix_0()
   }
   return result; /*0x75e39c*/
 }
-}
 } // namespace gamemd
 
 // 0x75E3B0
 int WarheadTypeClass::FindOrCreate()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( !_strcmpi(&stru_817460.sectionHead[1], this) || !_strcmpi(g_Str_none, this) ) /*0x75e3cc*/
@@ -611,12 +592,10 @@ LABEL_6:
   }
   return *(_DWORD *)(*(_DWORD *)&stru_87C374[45392] + 4 * v2); /*0x75e41f*/
 }
-}
 
 // 0x75E440
 int WarheadTypeClass::GetDamage(int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -638,12 +617,10 @@ int WarheadTypeClass::GetDamage(int a2, int a3)
   }
   return result; /*0x75e496*/
 }
-}
 
 // 0x75E510
 CampaignClass * * WarheadTypeClass::Destructor(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void **v9; // [esp+4h] [ebp-4h] BYREF
 
@@ -706,13 +683,11 @@ CampaignClass * * WarheadTypeClass::Destructor(char a2)
     __3_YAXPAX_Z(this); /*0x75e681*/
   return (WarheadTypeClass *)this; /*0x75e68b*/
 }
-}
 
 // 0x772080
 namespace gamemd {
 void* WarheadTypeClass_ReadINI()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // local variable allocation has failed, the output may be wrong!
 {
   VectorClass *v4; // eax
@@ -1191,7 +1166,6 @@ void* WarheadTypeClass_ReadINI()
     *(_DWORD *)(a1 + 160) = v55;
   }
   return 1;
-}
 }
 } // namespace gamemd
 

@@ -11,7 +11,6 @@
 // 0x5FE250
 unsigned int * OverlayTypeClass::OverlayTypeClass(ObjectClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   OverlayTypeClass *v3; // eax
   CCINIClass *v6; // edx
@@ -84,12 +83,10 @@ LABEL_11:
     return this; /*0x5fe3ad*/
   }
 }
-}
 
 // 0x5FE770
 AnimTypeClass * * OverlayTypeClass::LoadFromINI(unsigned char *** aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AnimTypeClass *v3; // eax
   INIClass *v4; // ecx
@@ -246,12 +243,10 @@ AnimTypeClass * * OverlayTypeClass::LoadFromINI(unsigned char *** aP1)
                              this->q2B4);
   return 1; /*0x5fea11*/
 }
-}
 
 // 0x5FEAF0
 ScenarioClass * * OverlayTypeClass::SaveLoad_Prefix(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   char Buffer[512]; // [esp+8h] [ebp-200h] BYREF
@@ -294,12 +289,10 @@ ScenarioClass * * OverlayTypeClass::SaveLoad_Prefix(int a1, int a2)
   }
   return result; /*0x5febf9*/
 }
-}
 
 // 0x5FEDE0
 AnimTypeClass * * OverlayTypeClass::GetCategory()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void *result; // eax
   void *EntireFile; // edi
@@ -339,12 +332,10 @@ AnimTypeClass * * OverlayTypeClass::GetCategory()
   }
   return result; /*0x5feeed*/
 }
-}
 
 // 0x6440A0
 unsigned int * OverlayTypeClass::Construct(ObjectClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ParticleSystemTypeClass *v3; // eax
   ObjectTypeClass::ConstructFull((int)this, (AbstractClass *)aP1); /*0x6440a9*/
@@ -398,7 +389,6 @@ unsigned int * OverlayTypeClass::Construct(ObjectClass * aP1)
   }
   this->IsLogic = 1; /*0x64420e*/
   return this; /*0x644217*/
-}
 }
 
 // 0x4754B0

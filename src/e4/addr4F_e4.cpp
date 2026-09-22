@@ -36,7 +36,6 @@
 namespace gamemd {
 int InGameUI_Open()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned __int16 v0; // cx
   HWND v1; // eax
@@ -83,14 +82,12 @@ LABEL_16:
     ScenarioClass::ShowMissionBriefing(g_ScenarioClass_Instance); /*0x4f1191*/
   return MapClass::MarkForRedraw(2); /*0x4f11a2*/
 }
-}
 } // namespace gamemd
 
 // 0x4F1840
 namespace gamemd {
 long sub_4F1840()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND Dialog; // esi
   LONG dwNewLong; // [esp+4h] [ebp-4h] BYREF
@@ -115,14 +112,12 @@ LABEL_7:
   }
   return dwNewLong; /*0x4f18a4*/
 }
-}
 } // namespace gamemd
 
 // 0x4F18B0
 namespace gamemd {
 void sub_4F18B0(HWND hDlg, unsigned int a2, unsigned int a3, unsigned int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   HWND DlgItem; // ebp
@@ -216,14 +211,12 @@ LABEL_19:
   }
   return result; /*0x4f1a2f*/
 }
-}
 } // namespace gamemd
 
 // 0x4F1CA0
 namespace gamemd {
 void LoadFromINIGraphicMenu()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   INIClass *v4; // eax
   VectorClass *v8; // edi
@@ -446,14 +439,12 @@ LABEL_22:
   DeleteAndZero((void **)&aP2_4); /*0x4f2121*/
   return (char **)aP2_4.nextArrayIndex; /*0x4f1ccf*/
 }
-}
 } // namespace gamemd
 
 // 0x4F2300
 namespace gamemd {
 ObjectClass * * E4Recv_4F2300::ProcessGraphicMenu()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int StringList; // eax
   unsigned __int16 EventQueue; // ax
@@ -590,14 +581,12 @@ ObjectClass * * E4Recv_4F2300::ProcessGraphicMenu()
   else
     return -1; /*0x4f2632*/
 }
-}
 } // namespace gamemd
 
 // 0x4F2640
 namespace gamemd {
 int E4Recv_4F2640::sub_4F2640(int (__thiscall ***a2)(unsigned int, int) a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int (__thiscall ***v3)(_DWORD, int); // eax
   int result; // eax
@@ -610,14 +599,12 @@ int E4Recv_4F2640::sub_4F2640(int (__thiscall ***a2)(unsigned int, int) a1)
   *(this + 21) = a2; /*0x4f2659*/
   return result; /*0x4f265c*/
 }
-}
 } // namespace gamemd
 
 // 0x4F2C70
 namespace gamemd {
 void ParseINIAnimGadgetDefinition()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ReferenceCounted *IntINIClass; // ebx
   Selection_WorldDominationTour **CoordPair; // eax
@@ -742,14 +729,12 @@ void ParseINIAnimGadgetDefinition()
     return 0; /*0x4f2d1a*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x4F3140
 namespace gamemd {
 ReferenceCounted * * ParseINIGadgetDefinition(ObjectClass * aP0, ObjectClass * edx0, unsigned int * a2, ObjectClass a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ObjectClass *v4; // edx
   ObjectClass *v5; // ecx
@@ -862,14 +847,12 @@ ReferenceCounted * * ParseINIGadgetDefinition(ObjectClass * aP0, ObjectClass * e
   DeleteAndZero((int)&a5); /*0x4f344d*/
   return v10; /*0x4f317b*/
 }
-}
 } // namespace gamemd
 
 // 0x4F3460
 namespace gamemd {
 MSAnim * * E4Recv_4F3460::sub_4F3460(int aP1, ReferenceCounted * aP2, unsigned int * a3, ReferenceCounted * aP4, const char ** a5, ReferenceCounted * aP6, const char ** a7, ReferenceCounted * aP8, const char ** a9)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
         int this,
         int aP1,
         ReferenceCounted *aP2,
@@ -964,23 +947,19 @@ MSAnim * * E4Recv_4F3460::sub_4F3460(int aP1, ReferenceCounted * aP2, unsigned i
   }
   return this; /*0x4f35f5*/
 }
-}
 } // namespace gamemd
 
 // 0x4F38B0
 namespace gamemd {
 void sub_4F38B0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // (no pseudocode — ASM-only function)
-}
 } // namespace gamemd
 
 // 0x4F3AB0
 namespace gamemd {
 int E4Recv_4F3AB0::sub_4F3AB0(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -993,14 +972,12 @@ int E4Recv_4F3AB0::sub_4F3AB0(int a2)
   }
   return result; /*0x4f3ac4*/
 }
-}
 } // namespace gamemd
 
 // 0x4F3B80
 namespace gamemd {
 unsigned int * sub_4F3B80(ObjectClass * a1, ObjectClass * edx0)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ReferenceCounted *v4; // eax
   ReferenceCounted *Int; // ebx
@@ -1026,14 +1003,12 @@ unsigned int * sub_4F3B80(ObjectClass * a1, ObjectClass * edx0)
   DeleteAndZero((int)&v9); /*0x4f3c2f*/
   return v8; /*0x4f3bb3*/
 }
-}
 } // namespace gamemd
 
 // 0x4F3D40
 namespace gamemd {
 int E4Recv_4F3D40::sub_4F3D40()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   const char **v4; // esi
   int v5; // ebx
@@ -1099,18 +1074,15 @@ LABEL_13:
   DeleteAndZero(&v8); /*0x4f3e54*/
   return v5; /*0x4f3e5b*/
 }
-}
 } // namespace gamemd
 
 // 0x4F4E53
 namespace gamemd {
 void sub_4F4E53()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // positive sp value has been detected, the output may be wrong!
 {
   __int16 v8; // cx
-
   int v7 = a2; /*0x4f4e5a*/
   do /*0x4f4ea3*/
   {
@@ -1131,14 +1103,12 @@ void sub_4F4E53()
   while ( v7 ); /*0x4f4ea3*/
   return result; /*0x4f4ea9*/
 }
-}
 } // namespace gamemd
 
 // 0x4FA210
 namespace gamemd {
 int E4Recv_4FA210::sub_4FA210(int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   bool v4; // zf
   int v8; // ecx
@@ -1198,14 +1168,12 @@ int E4Recv_4FA210::sub_4FA210(int a2, int a3)
     __3_YAXPAX_Z(v9); /*0x4fa2c5*/
   return a2; /*0x4fa2cf*/
 }
-}
 } // namespace gamemd
 
 // 0x4FBD80
 namespace gamemd {
 AbstractClass * * E4Recv_4FBD80::sub_4FBD80(int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -1245,7 +1213,6 @@ LABEL_10:
       break; /*0x4fbdf3*/
   }
   return result; /*0x4fbdac*/
-}
 }
 } // namespace gamemd
 
@@ -1953,11 +1920,9 @@ bool E4Recv_4F4D30::sub_4F4D30(const char * a2)
 namespace gamemd {
 void j_Stub_InfiniteLoop()
  {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // attributes: thunk
 {
   Stub::InfiniteLoop(a1, a2); /*0x4f4d90*/
-}
 }
 } // namespace gamemd
 

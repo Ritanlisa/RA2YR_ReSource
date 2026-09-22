@@ -6,11 +6,9 @@
 namespace gamemd {
 void Stub_InfiniteLoop()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // attributes: thunk
 {
   while ( 1 ) /*0x4f4d80*/
     ; /*0x4f4d80*/
-}
 }
 } // namespace gamemd

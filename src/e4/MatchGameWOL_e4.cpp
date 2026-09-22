@@ -8,7 +8,6 @@
 namespace gamemd {
 void sub_7A19E0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   wchar_t *StringCSF; // eax
   int i; // esi
@@ -87,6 +86,5 @@ LABEL_12:
   }
   Dialog::ShowMessage(12648447, (size_t)v8); /*0x7a1b90*/
   DeleteAndZero(&v12); /*0x7a1b9c*/
-}
 }
 } // namespace gamemd

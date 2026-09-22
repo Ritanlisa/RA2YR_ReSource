@@ -11,7 +11,6 @@
 namespace gamemd {
 unsigned int * AnimTypeClass::Construct2(ObjectClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AITriggerTypeClass *v3; // eax
   AbstractTypeClass::Constructor((int)this, (AbstractClass *)aP1); /*0x41e359*/
@@ -56,14 +55,12 @@ unsigned int * AnimTypeClass::Construct2(ObjectClass * aP1)
   }
   return this; /*0x41e473*/
 }
-}
 } // namespace gamemd
 
 // 0x427530
 namespace gamemd {
 unsigned int * AnimTypeClass::Construct(AbstractClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AnimTypeClass *v3; // eax
   ObjectClass *v6; // ecx
@@ -199,14 +196,12 @@ LABEL_17:
   this->MiddleFrameIndex = v5; /*0x427842*/
   return this; /*0x42784a*/
 }
-}
 } // namespace gamemd
 
 // 0x427B50
 namespace gamemd {
 void* AnimTypeClass::GetWarhead(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char Buffer[512]; // [esp+4h] [ebp-200h] BYREF
 
@@ -264,14 +259,12 @@ void* AnimTypeClass::GetWarhead(int a2)
   }
   return v3; /*0x427c80*/
 }
-}
 } // namespace gamemd
 
 // 0x427D00
 namespace gamemd {
 int AnimTypeClass::LoadFromINI(unsigned char *** a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char Bool_Overwrite; // al
   int Int_Overwrite; // eax
@@ -873,14 +866,12 @@ LABEL_70:
     this->RandomRate = v61;
   return 1;
 }
-}
 } // namespace gamemd
 
 // 0x428800
 namespace gamemd {
 ScenarioClass * * AnimTypeClass::SaveLoad_Prefix(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   char Buffer[512]; // [esp+8h] [ebp-200h] BYREF
@@ -926,14 +917,12 @@ ScenarioClass * * AnimTypeClass::SaveLoad_Prefix(int a1, int a2)
   }
   return result; /*0x42892b*/
 }
-}
 } // namespace gamemd
 
 // 0x4289D0
 namespace gamemd {
 int AnimTypeClass::PowerDrainUpdate(int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   AbstractTypeClass::ProcessPower((char *)this, a2); /*0x4289d9*/
@@ -987,14 +976,12 @@ int AnimTypeClass::PowerDrainUpdate(int * a2)
   LOBYTE(v14) = this->Tiled; /*0x428b5f*/
   return Power::FlagProcess(a2, v14); /*0x428b6d*/
 }
-}
 } // namespace gamemd
 
 // 0x428B80
 namespace gamemd {
 AnimTypeClass * * AnimTypeClass::FindOrCreate()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( !_strcmpi(&stru_817460.sectionHead[1], this) || !_strcmpi(g_Str_none, this) ) /*0x428b9c*/
@@ -1015,14 +1002,12 @@ LABEL_6:
   }
   return *(AnimTypeClass **)(*(_DWORD *)&stru_89E138[90140] + 4 * v2); /*0x428bef*/
 }
-}
 } // namespace gamemd
 
 // 0x428C30
 namespace gamemd {
 int AnimTypeClass::GetDamage()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   void *EntireFile; // eax
@@ -1080,7 +1065,6 @@ int AnimTypeClass::GetDamage()
   }
   return result; /*0x428dd4*/
 }
-}
 } // namespace gamemd
 
 // 0x428EA0
@@ -1122,7 +1106,6 @@ AnimTypeClass * AnimTypeClass::ddtor(char a2)
 namespace gamemd {
 int AnimTypeClass::LookupByName()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   const void **v3; // esi
 
@@ -1138,7 +1121,6 @@ int AnimTypeClass::LookupByName()
       return -1; /*0x48e07a*/
   }
   return v2; /*0x48e07c*/
-}
 }
 } // namespace gamemd
 

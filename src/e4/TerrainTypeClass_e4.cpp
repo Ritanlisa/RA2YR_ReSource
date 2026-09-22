@@ -10,11 +10,9 @@
 // 0x5447C0
 unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned char a4, MapClass * aP4, char a6)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char Destination[48]; // [esp+10h] [ebp-34h] BYREF
   char v11; // [esp+40h] [ebp-4h]
-
   ObjectTypeClass::ConstructFull((int)this, (AbstractClass *)aP4); /*0x5447ce*/
   this->ArrayIndex = a2; /*0x5447d9*/
   this->Foundation = 0xFFFF; /*0x5447e4*/
@@ -98,12 +96,10 @@ unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned ch
   this->AllowCellContent = 0; /*0x5449ec*/
   return this; /*0x5449c4*/
 }
-}
 
 // 0x71DA80
 unsigned int * TerrainTypeClass::TerrainTypeClass(ObjectClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   TerrainTypeClass *v3; // eax
   CCINIClass *v6; // edx
@@ -171,12 +167,10 @@ LABEL_11:
   this->Armor = 6; /*0x71dbb6*/
   return this; /*0x71dbc2*/
 }
-}
 
 // 0x71DEA0
 int TerrainTypeClass::LoadFromINI(unsigned char *** aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char Bool_Overwrite; // al
   Color *v7; // eax
@@ -289,12 +283,10 @@ int TerrainTypeClass::LoadFromINI(unsigned char *** aP1)
                               v19);
   return 1; /*0x71e0a7*/
 }
-}
 
 // 0x71E2A0
 TerrainTypeClass * * TerrainTypeClass::FindOrCreate()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( !_strcmpi(&stru_817460.sectionHead[1], this) || !_strcmpi(g_Str_none, this) ) /*0x71e2bc*/
@@ -314,7 +306,6 @@ LABEL_6:
       goto LABEL_6; /*0x71e2f4*/
   }
   return *(TerrainTypeClass **)(*(_DWORD *)&HouseClass_Player[42448] + 4 * v2); /*0x71e30f*/
-}
 }
 
 // 0x71E360

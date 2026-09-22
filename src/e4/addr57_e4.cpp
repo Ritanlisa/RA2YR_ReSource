@@ -15,11 +15,9 @@
 namespace gamemd {
 void sub_574600(int a1, int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v4; // edx
   int v5; // eax
-
   char v3 = 2; /*0x574601*/
   if ( a2 == 2 ) /*0x574609*/
   {
@@ -50,14 +48,12 @@ LABEL_20:
   }
   return *(_BYTE *)(v4 + 282) == v3; /*0x574669*/
 }
-}
 } // namespace gamemd
 
 // 0x575EE0
 namespace gamemd {
 Coord * * sub_575EE0(void * a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned __int16 v2; // bp
   void *v4; // eax
@@ -195,14 +191,12 @@ Coord * * sub_575EE0(void * a1, int a2)
   }
   return (char)v4; /*0x5761ef*/
 }
-}
 } // namespace gamemd
 
 // 0x578E60
 namespace gamemd {
 void* CreateMapObject(ProgressScreenClass * aP0, int aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AbstractClass *v4; // ebp
   AbstractClass *v5; // edi
@@ -286,14 +280,12 @@ void* CreateMapObject(ProgressScreenClass * aP0, int aP1)
   }
   return v2; /*0x579000*/
 }
-}
 } // namespace gamemd
 
 // 0x57A430
 namespace gamemd {
 MapClass * * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, IUnknown * aP2, int aP1a, int a5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v5; // ebp
   MapClass *v7; // eax
@@ -482,14 +474,12 @@ MapClass * * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, I
   }
   return 1; /*0x57a81e*/
 }
-}
 } // namespace gamemd
 
 // 0x57ACF0
 namespace gamemd {
 MapClass * * GenerateMapClassCliffTransitions()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // local variable allocation has failed, the output may be wrong!
 {
   IUnknown *v8; // edi
@@ -747,14 +737,12 @@ LABEL_71:
   }
   return (_BYTE)aP2 != 0; /*0x57b1ee*/
 }
-}
 } // namespace gamemd
 
 // 0x57B440
 namespace gamemd {
 MapClass * * GenerateTerrainMap(MouseClass * aP0, MouseClass * aP1, MouseClass * aP2, MouseClass * aP3, MouseClass * aP4, MouseClass * aP5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
         MouseClass *aP0,
         MouseClass *aP1,
         MouseClass *aP2,
@@ -906,14 +894,12 @@ LABEL_58:
   }
   return 0; /*0x57b6aa*/
 }
-}
 } // namespace gamemd
 
 // 0x57C870
 namespace gamemd {
 void sub_57C870(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 v2; // bx
   __int16 v3; // dx
@@ -973,14 +959,12 @@ void sub_57C870(int a1)
   HIWORD(v18) = HIWORD(Direction_X_Offsets[0]) + v9; /*0x57c96d*/
   return UpdateTeamsInAreaMap(v17, v18); /*0x57c985*/
 }
-}
 } // namespace gamemd
 
 // 0x57C990
 namespace gamemd {
 void sub_57C990(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 v2; // bx
   __int16 v3; // dx
@@ -1040,14 +1024,12 @@ void sub_57C990(int a1)
   HIWORD(v18) = HIWORD(Direction_Y_Offsets) + v9; /*0x57ca8d*/
   return UpdateTeamsInAreaMap(v17, v18); /*0x57caa5*/
 }
-}
 } // namespace gamemd
 
 // 0x57DAF0
 namespace gamemd {
 void sub_57DAF0(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 v2; // bx
   __int16 v3; // dx
@@ -1107,14 +1089,12 @@ void sub_57DAF0(int a1)
   HIWORD(v18) = HIWORD(Direction_X_Offsets[0]) + v9; /*0x57dbf5*/
   return UpdateTeamsInAreaMap(v17, v18); /*0x57dc0d*/
 }
-}
 } // namespace gamemd
 
 // 0x57DC20
 namespace gamemd {
 void sub_57DC20(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 v2; // bx
   __int16 v3; // dx
@@ -1174,14 +1154,12 @@ void sub_57DC20(int a1)
   HIWORD(v18) = HIWORD(Direction_Y_Offsets) + v9; /*0x57dd25*/
   return UpdateTeamsInAreaMap(v17, v18); /*0x57dd3d*/
 }
-}
 } // namespace gamemd
 
 // 0x57DD50
 namespace gamemd {
 AbstractClass * * CreateCliffRampMap(IUnknown * aP0)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v1; // ebp
   int result; // eax
@@ -1453,14 +1431,12 @@ AbstractClass * * CreateCliffRampMap(IUnknown * aP0)
   }
   return result; /*0x57e290*/
 }
-}
 } // namespace gamemd
 
 // 0x57E2A0
 namespace gamemd {
 void* CreateCliffStraightMap(IUnknown * aP0)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v1; // ebx
   __int16 v6; // cx
@@ -1732,14 +1708,12 @@ void* CreateCliffStraightMap(IUnknown * aP0)
   }
   return v2; /*0x57e785*/
 }
-}
 } // namespace gamemd
 
 // 0x57E7A0
 namespace gamemd {
 AbstractClass * * CreateCliffBridgeMap(IUnknown * aP0)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v1; // ebp
   int result; // eax
@@ -2011,14 +1985,12 @@ AbstractClass * * CreateCliffBridgeMap(IUnknown * aP0)
   }
   return result; /*0x57eced*/
 }
-}
 } // namespace gamemd
 
 // 0x57ED00
 namespace gamemd {
 void* CreateCliffStraightBridgeMap(IUnknown * aP0)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v1; // ebx
   __int16 v6; // cx
@@ -2289,7 +2261,6 @@ void* CreateCliffStraightBridgeMap(IUnknown * aP0)
     }
   }
   return v2; /*0x57f1f2*/
-}
 }
 } // namespace gamemd
 

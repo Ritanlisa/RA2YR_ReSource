@@ -5,7 +5,6 @@
 // 0x5D8CB0
 int PlayerClass::SetHouse(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char result; // al
 
@@ -16,7 +15,6 @@ int PlayerClass::SetHouse(int a2)
     return 1; /*0x5d8cd8*/
   }
   return result; /*0x5d8cc2*/
-}
 }
 
 // 0x5D62C0

@@ -27,7 +27,6 @@ REVERSE(0x473c50, "CCFileClass::Open: IDA verified", "None")
 // 0x473c50
 int CCFileClass::Open(const char* pFileName)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   if ( this->q068 == 1 )
     return 1;
@@ -122,7 +121,6 @@ xor     al, al
 pop     ebx
 retn    4
 */
-}
 
 REVERSE(0x4a3890, "CCFileClass::ReadEntireFile: IDA verified", "None")
 // IDA 0x4A3890 -- CCFileClass::ReadEntireFile
@@ -142,7 +140,6 @@ REVERSE(0x473ce0, "CCFileClass::Reset: IDA verified", "None")
 // 0x473ce0
 int CCFileClass::Reset()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   _DWORD * v2 = this + 22;
@@ -169,6 +166,5 @@ call    CCFileClass__Close
 pop     esi
 retn
 */
-}
 
 } // namespace gamemd

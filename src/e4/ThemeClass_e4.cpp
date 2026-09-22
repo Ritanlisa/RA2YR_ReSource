@@ -8,25 +8,20 @@
 // 0x4080C0
 int ThemeClass::RequestBuffer()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return RequestBufferMixer((unsigned int *)(this->q014 + 16), 0);
-}
 }
 
 // 0x408140
 long long ThemeClass::GetValue()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return this->ThemeClass_field_04; /*0x408146*/
-}
 }
 
 // 0x720480
 int ThemeClass::ReadThemeEntry(unsigned char *** a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   CCINIClass *v3; // edi
   int Int_Overwrite; // eax
@@ -79,12 +74,10 @@ int ThemeClass::ReadThemeEntry(unsigned char *** a2)
       0x40u);
   return 1; /*0x72057c*/
 }
-}
 
 // 0x720590
 void * ThemeClass::InitializeThemes(char * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int KeyCount; // ebp
   unsigned __int8 *StringByIndex; // eax
@@ -180,12 +173,10 @@ LABEL_10:
   }
   return result; /*0x72075f*/
 }
-}
 
 // 0x752370
 int ThemeClass::ClearQueues()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int i; // esi
@@ -229,7 +220,6 @@ int ThemeClass::ClearQueues()
     while ( (int)v3 < (int)&DataGlobal_B1D480 ); /*0x752457*/
   }
   return result; /*0x75245c*/
-}
 }
 
 // 0x752AB0

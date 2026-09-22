@@ -46,7 +46,6 @@
 namespace gamemd {
 void unknown_libname_36()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // Microsoft VisualC 2-14/net runtime
 {
   *this = 0; /*0x7636f4*/
@@ -54,14 +53,12 @@ void unknown_libname_36()
   this->vtable3 = 0; /*0x7636f9*/
   return this; /*0x7636fc*/
 }
-}
 } // namespace gamemd
 
 // 0x764B90
 namespace gamemd {
 HashTable * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int OwnerHouse; // eax
   int Int; // ebp
@@ -221,14 +218,12 @@ HashTable * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int a3)
   BufferIOFileClass::Dtor(v34); /*0x764f16*/
   return this; /*0x764f1d*/
 }
-}
 } // namespace gamemd
 
 // 0x765000
 namespace gamemd {
 AbstractClass * * E4Recv_765000::sub_765000(ScoreScreen * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char **v3; // eax
   char **RegionStringWOL; // [esp-4h] [ebp-10Ch]
@@ -279,14 +274,12 @@ AbstractClass * * E4Recv_765000::sub_765000(ScoreScreen * aP1)
   DeleteAndZero((void **)&aP2[4]); /*0x7651af*/
   return HashTable::DestroyHashTableINIClass((void **)&aP2[8]); /*0x7651bd*/
 }
-}
 } // namespace gamemd
 
 // 0x7651D0
 namespace gamemd {
 AbstractClass * * E4Recv_7651D0::sub_7651D0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char **v2; // edi
   int i; // esi
@@ -336,14 +329,12 @@ AbstractClass * * E4Recv_7651D0::sub_7651D0()
   BufferIOFileClass::Dtor(&aP2.location[1]); /*0x765361*/
   return HashTable::DestroyHashTableINIClass((void **)&aP2[8]); /*0x76536f*/
 }
-}
 } // namespace gamemd
 
 // 0x7660F0
 namespace gamemd {
 int WDT_InitGameOptions()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void **v27; // [esp+28h] [ebp-10h] BYREF
   int v28; // [esp+2Ch] [ebp-Ch]
@@ -492,17 +483,14 @@ int WDT_InitGameOptions()
   System_Init_7668F0(v29); /*0x766570*/
   return System_Init_766910(&v27); /*0x76657e*/
 }
-}
 } // namespace gamemd
 
 // 0x7667E0
 namespace gamemd {
 int E4Recv_7667E0::sub_7667E0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return *(this + 14); /*0x7667e5*/
-}
 }
 } // namespace gamemd
 
@@ -510,10 +498,8 @@ int E4Recv_7667E0::sub_7667E0()
 namespace gamemd {
 int E4Recv_7667F0::sub_7667F0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return *(this + 15); /*0x7667f5*/
-}
 }
 } // namespace gamemd
 
@@ -521,11 +507,9 @@ int E4Recv_7667F0::sub_7667F0()
 namespace gamemd {
 void E4Recv_767EC0::sub_767EC0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   *this = &vt_MSFrameAnim; /*0x767ec0*/
   VtableStub::5CB6C0(this); /*0x767ec6*/
-}
 }
 } // namespace gamemd
 
@@ -533,7 +517,6 @@ void E4Recv_767EC0::sub_767EC0()
 namespace gamemd {
 void unknown_libname_37()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // Microsoft VisualC 2-14/net runtime
 {
   *this = 0; /*0x769484*/
@@ -541,14 +524,12 @@ void unknown_libname_37()
   this->vtable3 = 0; /*0x769489*/
   return (ObjectClass *)this; /*0x76948c*/
 }
-}
 } // namespace gamemd
 
 // 0x769550
 namespace gamemd {
 int WDTMap_LoadAsset(const char ** a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void **v8; // eax
   void **v27; // eax
@@ -870,14 +851,12 @@ LABEL_68:
   HashTable::DestroyHashTableINIClass(v74); /*0x769baf*/
   return BufferIOFileClass::Destruct(v77); /*0x769bc0*/
 }
-}
 } // namespace gamemd
 
 // 0x76B7B0
 namespace gamemd {
 unsigned int * E4Recv_76B7B0::sub_76B7B0(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *v8; // eax
   int v9; // eax
@@ -934,14 +913,12 @@ unsigned int * E4Recv_76B7B0::sub_76B7B0(unsigned int * a2)
   while ( v10 < *(this + 2) ); /*0x76b84a*/
   return this; /*0x76b84e*/
 }
-}
 } // namespace gamemd
 
 // 0x76F970
 namespace gamemd {
 SessionClass * * WorldDominationTour__Territory::Constructor(int aP1, unsigned int * a2, ReferenceCounted * aP3, const char ** a4, ReferenceCounted * aP5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   MPCooperative *v6; // ebp
   CCINIClass *v8; // edi
@@ -1032,7 +1009,6 @@ SessionClass * * WorldDominationTour__Territory::Constructor(int aP1, unsigned i
   DeleteAndZero((int)&aP1); /*0x76fb73*/
   DeleteAndZero((int)&v32); /*0x76fb7c*/
   return this; /*0x76fb83*/
-}
 }
 } // namespace gamemd
 
@@ -1436,7 +1412,6 @@ namespace ra2 {
 namespace game {
 AbstractClass * * ObjectClass::sub_764A20()
  {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   GenericNode *Int; // esi
   ReferenceCounted aP2; // [esp+8h] [ebp-9Ch] BYREF
@@ -1475,7 +1450,6 @@ AbstractClass * * ObjectClass::sub_764A20()
     BufferIOFileClass::Dtor(v11); /*0x764b17*/
     return (GenericNode *)-1; /*0x764b1c*/
   }
-}
 }
 } // namespace game
 } // namespace ra2

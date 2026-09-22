@@ -12,7 +12,6 @@
 // 0x45DD90
 int BuildingTypeClass::ConstructFull(char * Source)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   TechnoTypeClass::ReadINI((char *)this, Source, 0); /*0x45dda1*/
@@ -355,12 +354,10 @@ LABEL_11:
   this->qD2E = 0; /*0x45e502*/
   return this; /*0x45e508*/
 }
-}
 
 // 0x45E520
 unsigned int * BuildingTypeClass::loadBuildingProperty_b_545E520(ObjectTypeClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   TechnoTypeClass::Construct((int)this, aP1); /*0x45e528*/
   this->qE00 = 0; /*0x45e52f*/
@@ -375,12 +372,10 @@ unsigned int * BuildingTypeClass::loadBuildingProperty_b_545E520(ObjectTypeClass
   this->vtable4 = &vt_BuildingTypeClass; /*0x45e56c*/
   return this; /*0x45e575*/
 }
-}
 
 // 0x45E580
 AbstractClass * * BuildingTypeClass::CleanupMembers(AbstractClass * a1, AbstractClass * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char nextArrayIndex; // al
   int eax22; // eax
@@ -457,12 +452,10 @@ AbstractClass * * BuildingTypeClass::CleanupMembers(AbstractClass * a1, Abstract
   a1[167].uniqueId = 0; /*0x45e73a*/
   return TechnoTypeClass::DTOR((int)a1); /*0x45e745*/
 }
-}
 
 // 0x45E970
 AbstractClass * * BuildingTypeClass::LoadRepairAnimations(void * this)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ObjectTypeClass *v1; // ecx
   ObjectTypeClass *v2; // edi
@@ -567,12 +560,10 @@ AbstractClass * * BuildingTypeClass::LoadRepairAnimations(void * this)
     }
   }
 }
-}
 
 // 0x45F230
 void* BuildingTypeClass::LoadAnimations(ObjectTypeClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void *FileSHP; // eax
   int result; // eax
@@ -876,12 +867,10 @@ void* BuildingTypeClass::LoadAnimations(ObjectTypeClass * aP1)
   BuildingTypeClass::LoadVoxel(this); /*0x45fa78*/
   return result; /*0x45fa7d*/
 }
-}
 
 // 0x45FA90
 void BuildingTypeClass::LoadVoxel()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *File; // eax
   int Info; // eax
@@ -1015,12 +1004,10 @@ void BuildingTypeClass::LoadVoxel()
     BufferIOFileClass::Dtor(v28); /*0x45fe3d*/
   }
 }
-}
 
 // 0x464B30
 int BuildingTypeClass::UpdatePower()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int *v54; // [esp+Ch] [ebp+4h]
@@ -1195,12 +1182,10 @@ int BuildingTypeClass::UpdatePower()
   LOBYTE(v52) = this->ConcentricRadialIndicator; /*0x464ff3*/
   return Power::FlagProcess(v54, v52); /*0x465001*/
 }
-}
 
 // 0x465010
 AbstractClass * * BuildingTypeClass::SaveLoad_Prefix()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -1329,12 +1314,10 @@ LABEL_32:
   }
   return result; /*0x4652ed*/
 }
-}
 
 // 0x4653C0
 BuildingTypeClass * * BuildingTypeClass::FindOrCreate()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( !_strcmpi(&stru_817460.sectionHead[1], this) || !_strcmpi(g_Str_none, this) ) /*0x4653dc*/
@@ -1355,12 +1338,10 @@ LABEL_6:
   }
   return (BuildingTypeClass *)*((_DWORD *)g_TriggerTypeCount + v2); /*0x46542f*/
 }
-}
 
 // 0x465AF0
 void BuildingTypeClass::IsPowered()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   if ( this->FreeBuildup ) /*0x465af3*/
   {
@@ -1372,12 +1353,10 @@ void BuildingTypeClass::IsPowered()
     }
   }
 }
-}
 
 // 0x50B760
 int BuildingTypeClass::ProcessData(unsigned int * a2, short * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 *v8; // ecx
   if ( !g_GameMode_Current[0] ) /*0x50b770*/
@@ -1416,12 +1395,10 @@ LABEL_8:
   }
   return 0; /*0x50b772*/
 }
-}
 
 // 0x594010
 int BuildingTypeClass::CheckPlacementArea(ObjectClass * aP1, ObjectClass * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v3; // edi
   __int16 v4; // ax
@@ -1486,12 +1463,10 @@ LABEL_15:
   }
   return 0; /*0x594170*/
 }
-}
 
 // 0x5FEC70
 OverlayTypeClass * * BuildingTypeClass::FindOrCreate2()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( !_strcmpi(&stru_817460.sectionHead[1], this) || !_strcmpi(g_Str_none, this) ) /*0x5fec8c*/
@@ -1512,12 +1487,10 @@ LABEL_6:
   }
   return *(OverlayTypeClass **)(HouseClass_Player.field_38 + 4 * v2); /*0x5fecdf*/
 }
-}
 
 // 0x644890
 ParticleSystemTypeClass * * BuildingTypeClass::LoadOrGet()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( !_strcmpi(&stru_817460.sectionHead[1], this) || !_strcmpi(g_Str_none, this) ) /*0x6448ac*/
@@ -1538,12 +1511,10 @@ LABEL_6:
   }
   return *(ParticleSystemTypeClass **)(*(_DWORD *)&HouseClass_Player[32] + 4 * v2); /*0x6448ff*/
 }
-}
 
 // 0x644BE0
 unsigned int * BuildingTypeClass::Construct(AbstractClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ParticleTypeClass *v3; // eax
   ObjectTypeClass::ConstructFull((int)this, aP1); /*0x644beb*/
@@ -1614,12 +1585,10 @@ unsigned int * BuildingTypeClass::Construct(AbstractClass * aP1)
   this->IsLogic = 0; /*0x644db5*/
   return this; /*0x644dbd*/
 }
-}
 
 // 0x645430
 ParticleTypeClass * * BuildingTypeClass::FindOrCreateEx()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ParticleTypeClass *v4; // eax
   ObjectClass *i; // edx
@@ -1655,12 +1624,10 @@ LABEL_5:
   }
   return v2; /*0x645491*/
 }
-}
 
 // 0x7171A0
 void* BuildingTypeClass::ProcessPower(AbstractClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   AbstractTypeClass::ProcessPower((char *)this, aP1); /*0x7171a9*/
@@ -1833,12 +1800,10 @@ void* BuildingTypeClass::ProcessPower(AbstractClass * aP1)
   LOBYTE(v41) = this->DistributedFire; /*0x71779f*/
   return Power::FlagProcess(aP1, v41); /*0x7177ad*/
 }
-}
 
 // 0x7178C0
 unsigned int * BuildingTypeClass::GetUpgradeOffset(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( this->DamSmkOffScrnRel ) /*0x7178c6*/
@@ -1873,12 +1838,10 @@ unsigned int * BuildingTypeClass::GetUpgradeOffset(unsigned int * a2)
     return a2; /*0x717971*/
   }
 }
-}
 
 // 0x746000
 int BuildingTypeClass::IsPlacementValid(IUnknown * aP1, IUnknown * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v6; // eax
   if ( (*(int (__fastcall **)(void *))(this->TurretOffset)(this) < 0 /*0x746030*/
@@ -1904,12 +1867,10 @@ int BuildingTypeClass::IsPlacementValid(IUnknown * aP1, IUnknown * aP2)
   LOBYTE(v6) = (unsigned __int8)v6 & 1; /*0x7460d0*/
   return Pathfinding::CalcDistance((int)g_AudioInitFlag, aP1, aP2, (TechnoClass *)this, 0, v6, 0) > 15; /*0x746052*/
 }
-}
 
 // 0x7480D0
 AbstractClass * * BuildingTypeClass::FindOrCreateAlt()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( !_strcmpi(&stru_817460.sectionHead[1], this) || !_strcmpi(g_Str_none, this) ) /*0x7480ec*/
@@ -1929,7 +1890,6 @@ LABEL_6:
       goto LABEL_6; /*0x748124*/
   }
   return *(UnitTypeClass **)&g_UnitTypeCount2->__pad_0[4 * v2]; /*0x74813f*/
-}
 }
 
 // 0x41C500

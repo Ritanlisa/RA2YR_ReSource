@@ -7,7 +7,6 @@
 // 0x53F430
 void * IPXConnClass::constructor(int aP1, SessionClass * aP2, IPXConnClass * aP3, IPXConnClass * aP4, unsigned int * a5, int a7, wchar_t * Source, int aP8)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IPXConnClass *v10; // ecx
   __int16 v11; // dx
@@ -40,5 +39,4 @@ void * IPXConnClass::constructor(int aP1, SessionClass * aP2, IPXConnClass * aP3
   *((_DWORD *)this + 22) = v10; /*0x53f4c4*/
   *((_WORD *)this + 46) = v11; /*0x53f4c6*/
   return this; /*0x53f4c3*/
-}
 }

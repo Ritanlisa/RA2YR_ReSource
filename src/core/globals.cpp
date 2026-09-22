@@ -55,7 +55,6 @@ extern bool g_DDraw_Active;  // data: 0xa8ed80
 
 // 0x734F50: RestartNetworkSession
 void RestartNetworkSession(int mode) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -84,11 +83,9 @@ loc_734F72:                             ; CODE XREF: RestartNetworkSession+A↑j
 pop     esi
 retn
 */
-}
 
 // 0x734F80: ToggleNetworkSession
 void ToggleNetworkSession(int enable) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -117,11 +114,9 @@ loc_734FA2:                             ; CODE XREF: ToggleNetworkSession+A↑j
 pop     esi
 retn
 */
-}
 
 // 0x6B8AE0: ScenarioClass::ResetIntroFlags
 void ResetIntroFlags(int* obj) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned int result; // eax
 
@@ -137,11 +132,9 @@ or      eax, 8088h
 mov     [ecx], eax
 retn
 */
-}
 
 // 0x47AB10: Game::FindGameDirectoryCD
 void FindGameDirectoryCD(const char* path) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x47ab10
 {
   char *i; // edx
@@ -224,7 +217,7 @@ LABEL_24:
     }
   }
   free(v3);
-  return v1 == 0;
+  return v1 = = 0;
 }
 
 /* ASM:
@@ -464,11 +457,9 @@ setz    al
 add     esp, 108h
 retn
 */
-}
 
 // 0x53ECE0: NetworkAddress::Assign
 void NetworkAssignAddress(void* addr, void* port, int arg) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *result; // eax
 
@@ -513,16 +504,13 @@ mov     dword ptr [eax], 0
 mov     [eax], cx
 retn    0Ch
 */
-}
 
 // 0x542430: Network::GetField
 void NetworkGetField(int port) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x542430
 {
   int result; // eax
   __int16 v3; // dx
-
   LOWORD(result) = a2;
   LOBYTE(v3) = HIBYTE(a2);
   HIBYTE(v3) = a2;
@@ -538,7 +526,6 @@ mov     dh, al
 mov     [ecx+22h], dx
 retn    4
 */
-}
 
 // IDA 0x7B2720 -- SessionClass::SetInstance (defined in app/cmdline.cpp)
 
@@ -595,7 +582,6 @@ void FadePalette(int mode) {
 
 // 0x6C87F0: InitSkirmishSettings
 void InitSkirmishSettings() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v1; // [esp+4h] [ebp-4h] BYREF
@@ -616,14 +602,12 @@ mov     byte ptr dword_A8ED54+7D060h, 1
 add     esp, 8
 retn
 */
-}
 
 // 0x69BAB0: WTFMode::Init (see game_loop.hpp struct)
 // 0x69BB40: WTFMode::Shutdown (see game_loop.hpp struct)
 
 // 0x48E0B0: DumpNetworkStats
 void DumpNetworkStats() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x69bab0
 {
   char result; // al
@@ -701,16 +685,13 @@ locret_69BB3F:                          ; CODE XREF: WTFMode__Init+8↑j
 ; WTFMode__Init+15↑j
 retn
 */
-}
 
 // 0x532100: ScreenSaver::Process (see game_loop.hpp struct)
 
 // 0x5F0070: CleanupCampaignResources
 void CleanupCampaignResources() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 v5; // [esp+74h] [ebp-4h]
-
   int v0; // eax
   LOBYTE(v0) = DataGlobal_87F7E8[538500];
   _BYTE v4[108]; // [esp+8h] [ebp-70h] BYREF
@@ -806,11 +787,9 @@ pop     esi
 add     esp, 70h
 retn
 */
-}
 
 // 0x5DA720: Network::ShutdownInterface
 void NetworkShutdownInterface() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x5da720
 {
   int result; // eax
@@ -838,7 +817,6 @@ mov     ds:887628h, esi
 pop     esi
 retn
 */
-}
 
 // IDA: 0x6E6FF0 -- BuildingLoadQueue_FindObject
 // These globals are used by all object constructors (Unit/Infantry/Aircraft/Building)
@@ -948,7 +926,6 @@ int dword_B07784 = 0;
 
 // 0x5F9E80: Checksummer::HashString
 int HashString(const char* str) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x5f9e80
 {
   int i; // edx
@@ -1277,11 +1254,9 @@ pop     ebp
 add     esp, 9Ch
 retn
 */
-}
 
 // 0x734E60: GetStringCSF -- returns "TXT_KEY" as placeholder
 const wchar_t* GetCSFString(const wchar_t* key, const char* file, int line) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( a2 )
@@ -1384,7 +1359,6 @@ pop     esi
 pop     ebx
 retn    8
 */
-}
 
 // IDA: 0x55D360 -- GameFrameLoop stub
 bool GameFrameLoop() { return false; }

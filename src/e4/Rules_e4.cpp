@@ -9,7 +9,6 @@
 namespace gamemd {
 int Rules::ReadMiscINI()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int Int_Overwrite; // eax
@@ -2200,14 +2199,12 @@ int Rules::ReadMiscINI()
   return result;
 }
 
-}
 } // namespace gamemd
 
 // 0x66BBB0
 namespace gamemd {
 IUnknown * * Rules::ReadCombatINI()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int Int_Overwrite; // eax
@@ -3283,14 +3280,12 @@ IUnknown * * Rules::ReadCombatINI()
   }
   return result;
 }
-}
 } // namespace gamemd
 
 // 0x67A570
 namespace gamemd {
 unsigned int * Rules::CopyDataArray(VectorClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( this == (_DWORD *)aP1 ) /*0x67a57a*/
@@ -3325,7 +3320,6 @@ LABEL_8:
   *(this + 4) = aP1[1].vtable0; /*0x67a5c6*/
   *(this + 5) = aP1[1].Items; /*0x67a5cc*/
   return this; /*0x67a5d1*/
-}
 }
 } // namespace gamemd
 

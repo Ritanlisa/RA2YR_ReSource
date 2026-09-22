@@ -5,7 +5,6 @@
 // 0x758A30
 int VoxelPaletteClass::ConvertFromFile(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v3 = 0; /*0x758a42*/
@@ -30,7 +29,6 @@ LABEL_5:
   }
   (*(void (__thiscall **)(int))(*(_DWORD *)a2 + 52))(a2); /*0x758ab5*/
   return v3; /*0x758ab8*/
-}
 }
 
 // 0x753B70

@@ -9,7 +9,6 @@
 // 0x655C50
 MapClass * * FogOfWar::RevealArea(RadarClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *result; // eax
   IUnknown *v6; // ecx
@@ -216,12 +215,10 @@ LABEL_45:
   *(_DWORD *)(v24 + 12) = v33; /*0x656135*/
   return (int)result; /*0x656138*/
 }
-}
 
 // 0x656150
 int FogOfWar::RenderCell()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int BuildingAnimByName; // ebx
@@ -290,12 +287,10 @@ int FogOfWar::RenderCell()
   while ( v8 < 6144 ); /*0x6562b5*/
   return result; /*0x6562bb*/
 }
-}
 
 // 0x6562D0
 AbstractClass * * FogOfWar::RevealCell(IUnknown * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( aP1->field_0 >= 0 /*0x656310*/
@@ -328,12 +323,10 @@ AbstractClass * * FogOfWar::RevealCell(IUnknown * aP1)
     }
   }
 }
-}
 
 // 0x657CE0
 int FogOfWar::Render()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int i; // [esp+10h] [ebp-24h]
@@ -372,7 +365,6 @@ int FogOfWar::Render()
     return FogOfWar::RenderCell((int)this); /*0x657d30*/
   }
   return result; /*0x657d35*/
-}
 }
 
 // 0x5864A0

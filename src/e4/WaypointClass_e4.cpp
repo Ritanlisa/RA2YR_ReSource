@@ -8,7 +8,6 @@
 namespace gamemd {
 WaypointPathClass * * WaypointClass::FindOrAddPath(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *v7; // ecx
   int v8; // edi
@@ -73,6 +72,5 @@ LABEL_13:
       goto LABEL_13; /*0x50221a*/
     }
   }
-}
 }
 } // namespace gamemd

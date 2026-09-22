@@ -31,12 +31,10 @@
 namespace gamemd {
 void unknown_libname_27()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // Microsoft VisualC 2-14/net runtime
 {
   *this = 0; /*0x6406e2*/
   return this; /*0x6406e8*/
-}
 }
 } // namespace gamemd
 
@@ -44,7 +42,6 @@ void unknown_libname_27()
 namespace gamemd {
 void * E4Recv_645B60::sub_645B60()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ObjectClass *v2; // edi
   const void **v3; // esi
@@ -60,18 +57,15 @@ void * E4Recv_645B60::sub_645B60()
   }
   return v2; /*0x645b88*/
 }
-}
 } // namespace gamemd
 
 // 0x645D60
 namespace gamemd {
 ObjectClass * * E4Recv_645D60::sub_645D60(float * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned __int8 v14; // c0
   unsigned __int8 v15; // c3
-
   float v21 = *this; /*0x645d6f*/
   int v22 = this->M4; /*0x645d76*/
   int v23 = this->M8; /*0x645d7d*/
@@ -119,14 +113,12 @@ ObjectClass * * E4Recv_645D60::sub_645D60(float * a2)
   }
   return this; /*0x645ebe*/
 }
-}
 } // namespace gamemd
 
 // 0x646730
 namespace gamemd {
 void * ConvertMatrixToQuaternion(float * a1, float * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   float *result; // eax
 
@@ -221,17 +213,14 @@ void * ConvertMatrixToQuaternion(float * a1, float * a2)
   }
   return result; /*0x646801*/
 }
-}
 } // namespace gamemd
 
 // 0x646F70
 namespace gamemd {
 char sub_646F70(IUnknown * a1, int a2, int a3, char a4, int a5, int a6, int a7)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v9; // [esp-20h] [ebp-98h]
-
   LOBYTE(v9) = a4; /*0x646fbd*/
   char *v7; // eax
   v7 = sub_4C68E0( /*0x646fcd*/
@@ -255,14 +244,12 @@ char sub_646F70(IUnknown * a1, int a2, int a3, char a4, int a5, int a6, int a7)
   Networking_NextPacketIndex = ((_BYTE)Networking_NextPacketIndex + 1) & 0x7F; /*0x647025*/
   return 1; /*0x64702d*/
 }
-}
 } // namespace gamemd
 
 // 0x647260
 namespace gamemd {
 AbstractClass * * ProcessNetworkEvents()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int Buffer; // [esp+10h] [ebp-74h] BYREF
   __int16 v7; // [esp+80h] [ebp-4h]
@@ -389,14 +376,12 @@ LABEL_31:
     }
   }
 }
-}
 } // namespace gamemd
 
 // 0x648350
 namespace gamemd {
 void RunNetworkGameLoop()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v0; // eax
   void *v1; // ebx
@@ -557,14 +542,12 @@ LABEL_23:
   SendNetworkFrameSync(v2, dword_AFA400); /*0x6486c5*/
   SendNetworkFrameSync(v2, dword_AFA400); /*0x6486d8*/
 }
-}
 } // namespace gamemd
 
 // 0x648710
 namespace gamemd {
 AbstractClass * * QueueNetworkProcessor(CellStruct * aP0, int * a1, int arg0, int arg4, ScenarioClass * a4, int a6, short arg10, int * a7)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   MSVQAnim *v9; // esi
   ObjectClass *v10; // ebp
@@ -1482,14 +1465,12 @@ LABEL_116:
     Connection::Close(&HouseClass_Player[44148]);
   return 7;
 }
-}
 } // namespace gamemd
 
 // 0x649CA0
 namespace gamemd {
 AbstractClass * * BuildNetworkEventPacket(int a1, int a2, int a3, int a4, short a5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AbstractClass *v20; // esi
   int v22; // [esp+10h] [ebp-1Ch]
@@ -1616,17 +1597,14 @@ AbstractClass * * BuildNetworkEventPacket(int a1, int a2, int a3, int a4, short 
     Debug::Log(); /*0x649fe8*/
   return v20; /*0x649ff2*/
 }
-}
 } // namespace gamemd
 
 // 0x64A000
 namespace gamemd {
 void Network_SendFrameSync(int * a1, short a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 v7; // [esp+78h] [ebp-4h]
-
   _BYTE v6[108]; // [esp+Ch] [ebp-70h] BYREF
   memset(v6, 0, sizeof(v6)); /*0x64a015*/
   v7 = 0; /*0x64a017*/
@@ -1648,14 +1626,12 @@ void Network_SendFrameSync(int * a1, short a2)
   ((void (*)(const char *, ...))Debug::Log)(DataGlobal_8377DC); /*0x64a098*/
   return ++dword_B0487C; /*0x64a0a6*/
 }
-}
 } // namespace gamemd
 
 // 0x64A0C0
 namespace gamemd {
 AbstractClass * * Network_ProcessFrameSync(int a1, int a2, int a3, unsigned int a4, int a5, unsigned int * a6)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char *Class; // eax
   int v27; // eax
@@ -1880,14 +1856,12 @@ LABEL_59:
     return v41; /*0x64a593*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x64A630
 namespace gamemd {
 int Network_ProcessMessage(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   wchar_t *v6; // edi
   int v2 = a1; /*0x64a631*/
@@ -1949,14 +1923,12 @@ LABEL_7:
   LOBYTE(v11) = v11 & 0xFA; /*0x64a7a7*/
   return v11 + 6; /*0x64a660*/
 }
-}
 } // namespace gamemd
 
 // 0x64AAE0
 namespace gamemd {
 void KickNetworkPlayer(HWND hDlg, LPARAM lParam)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND DlgItem; // eax
   HWND v5; // esi
@@ -2021,14 +1993,12 @@ LABEL_10:
     Network_Process_64AD10(*(_DWORD *)(*(_DWORD *)v11 + 111), *(_DWORD *)(*(_DWORD *)(v11 + 4 * lParam) + 111)); /*0x64ac77*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x64B240
 namespace gamemd {
 AbstractClass * * Network_KickPlayerNow(int a1, int a2, int a3, unsigned char a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // ecx
 
@@ -2085,14 +2055,12 @@ AbstractClass * * Network_KickPlayerNow(int a1, int a2, int a3, unsigned char a4
     HandleNetworkPlayerDisconnect(v6, a4); /*0x64b3fe*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x64B4D0
 namespace gamemd {
 void Compress_DictionaryLookup(unsigned char * a1, unsigned int * a2, unsigned char * a3, const void * a4, char a5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned __int8 v5; // dl
   char result; // al
@@ -2167,14 +2135,12 @@ LABEL_21:
   }
   return 0; /*0x64b5c4*/
 }
-}
 } // namespace gamemd
 
 // 0x64B660
 namespace gamemd {
 AbstractClass * * Network_CompressMegaMission(int a1, int a2, int a3, int a4, int a5, unsigned int * a6)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned __int8 v8; // al
   #375 *v13; // edx
@@ -2376,14 +2342,12 @@ LABEL_47:
   *a6 = v28; /*0x64bdbc*/
   return result; /*0x64bdb9*/
 }
-}
 } // namespace gamemd
 
 // 0x64BDD0
 namespace gamemd {
 AbstractClass * * Network_DecodeEvents(char * a1, unsigned int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AbstractClass *v7; // al
   unsigned __int8 v10; // cl
@@ -2629,14 +2593,12 @@ LABEL_48:
   }
   return -1; /*0x64c362*/
 }
-}
 } // namespace gamemd
 
 // 0x64CD30
 namespace gamemd {
 void sub_64CD30(int a1, int a2, int a3, char a4, int a5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v5 = a1 + a2; /*0x64cd34*/
@@ -2653,14 +2615,12 @@ void sub_64CD30(int a1, int a2, int a3, char a4, int a5)
     v6[4] = *(_BYTE *)(a5 + 4); /*0x64cd90*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x64CDA0
 namespace gamemd {
 void Network_ProcessMapEvent(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ObjectClass *v23; // eax
   _BYTE *WaypointCoords; // eax
@@ -3118,14 +3078,12 @@ LABEL_99:
     }
   }
 }
-}
 } // namespace gamemd
 
 // 0x64DAB0
 namespace gamemd {
 void ComputeNetworkFrameCRC()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // ebx
   _DWORD *Value; // eax
@@ -3244,7 +3202,6 @@ void ComputeNetworkFrameCRC()
                               + (*(_DWORD *)Networking_CurrentFrameCRC >> 31)
                               + 2 * *(_DWORD *)Networking_CurrentFrameCRC;
   return AllocateTriggerLog((int)g_CurrentFrame % 256); /*0x64de75*/
-}
 }
 } // namespace gamemd
 
@@ -4380,12 +4337,10 @@ float * sub_646110(float * a1, float * a2)
 namespace gamemd {
 void sub_646464()
  {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // positive sp value has been detected, the output may be wrong!
 {
   *(_DWORD *)(a2 + 12) = a1; /*0x646464*/
   return a3; /*0x64646e*/
-}
 }
 } // namespace gamemd
 

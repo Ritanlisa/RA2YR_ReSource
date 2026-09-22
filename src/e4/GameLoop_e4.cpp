@@ -7,10 +7,8 @@
 namespace gamemd {
 int GameLoop::Thunk()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // attributes: thunk
 {
   return Game::ProcessIdle(this);
-}
 }
 }

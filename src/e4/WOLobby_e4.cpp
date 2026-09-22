@@ -17,7 +17,6 @@
 namespace gamemd {
 int INIClass::WOLobby_Play()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   const char *v1; // edx
   Coord *v2; // ebx
@@ -65,13 +64,11 @@ int INIClass::WOLobby_Play()
   }
   return result; /*0x5e38a6*/
 }
-}
 } // namespace gamemd
 
 // 0x78F7F0
 int WOLobby::SetupDlgProc(HWND hDlg, unsigned int a2, unsigned int nIDDlgItem, HWND hWnd)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   HWND DlgItem; // eax
@@ -1442,12 +1439,10 @@ LABEL_93:
     return 0;
   }
 }
-}
 
 // 0x791B10
 int WOLobby::ChatDlgProc(HWND hDlg, UINT a2, WPARAM a3, HWND hWnd)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   HWND v5; // ebx
@@ -2116,7 +2111,6 @@ LABEL_33:
   Dialog::ShowMessage((ObjectClass *)v16, (CampaignScore *)g_Str_Trace__hs, *(ObjectClass *)&v82[4]);
   DeleteAndZero::Alt((void **)&v82[28]);
   return 0;
-}
 }
 
 // 0x603F60

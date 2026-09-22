@@ -10,12 +10,10 @@
 namespace gamemd {
 int CellClass::EnsureFileLoaded()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   if ( !this->q0A4 && *(_BYTE *)(this + 756) ) /*0x544c8d*/
     MapClass::LoadFileData(this); /*0x544c97*/
   return this->q0A4 != 0; /*0x544ca9*/
-}
 }
 } // namespace gamemd
 
@@ -23,7 +21,6 @@ int CellClass::EnsureFileLoaded()
 namespace gamemd {
 HouseClass * * CellClass::UpdateVariant3(IUnknown * aP0, IUnknown * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v2; // edi
   ObjectClass *v3; // ecx
@@ -185,14 +182,12 @@ HouseClass * * CellClass::UpdateVariant3(IUnknown * aP0, IUnknown * aP1)
   }
   return v9; /*0x56f1c5*/
 }
-}
 } // namespace gamemd
 
 // 0x56F2F0
 namespace gamemd {
 HouseClass * * CellClass::UpdateVariant4(IUnknown * aP0, IUnknown * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v2; // edi
   ObjectClass *v3; // ecx
@@ -354,14 +349,12 @@ HouseClass * * CellClass::UpdateVariant4(IUnknown * aP0, IUnknown * aP1)
   }
   return v9; /*0x56f565*/
 }
-}
 } // namespace gamemd
 
 // 0x56F8B0
 namespace gamemd {
 HouseClass * * CellClass::UpdateTerrain(IUnknown * aP0, IUnknown * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v2; // edi
   ObjectClass *v3; // ecx
@@ -531,14 +524,12 @@ HouseClass * * CellClass::UpdateTerrain(IUnknown * aP0, IUnknown * aP1)
   }
   return v9; /*0x56fb2c*/
 }
-}
 } // namespace gamemd
 
 // 0x56FC80
 namespace gamemd {
 HouseClass * * CellClass::UpdateTileVariant2(IUnknown * aP0, IUnknown * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v2; // edi
   ObjectClass *v3; // ecx
@@ -708,14 +699,12 @@ HouseClass * * CellClass::UpdateTileVariant2(IUnknown * aP0, IUnknown * aP1)
   }
   return v9; /*0x56fefc*/
 }
-}
 } // namespace gamemd
 
 // 0x572440
 namespace gamemd {
 HouseClass * * CellClass::UpdateVariant7(IUnknown * aP0, IUnknown * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v2; // edi
   ObjectClass *v3; // ecx
@@ -877,14 +866,12 @@ HouseClass * * CellClass::UpdateVariant7(IUnknown * aP0, IUnknown * aP1)
   }
   return v9; /*0x5726b5*/
 }
-}
 } // namespace gamemd
 
 // 0x5727E0
 namespace gamemd {
 HouseClass * * CellClass::UpdateVariant8(IUnknown * aP0, IUnknown * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v2; // edi
   ObjectClass *v3; // ecx
@@ -1046,14 +1033,12 @@ HouseClass * * CellClass::UpdateVariant8(IUnknown * aP0, IUnknown * aP1)
   }
   return v9; /*0x572a55*/
 }
-}
 } // namespace gamemd
 
 // 0x572DA0
 namespace gamemd {
 HouseClass * * CellClass::UpdateVariant5(IUnknown * aP0, IUnknown * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v2; // edi
   ObjectClass *v3; // ecx
@@ -1223,14 +1208,12 @@ HouseClass * * CellClass::UpdateVariant5(IUnknown * aP0, IUnknown * aP1)
   }
   return v9; /*0x57301c*/
 }
-}
 } // namespace gamemd
 
 // 0x573170
 namespace gamemd {
 HouseClass * * CellClass::UpdateVariant6(IUnknown * aP0, IUnknown * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v2; // edi
   ObjectClass *v3; // ecx
@@ -1400,14 +1383,12 @@ HouseClass * * CellClass::UpdateVariant6(IUnknown * aP0, IUnknown * aP1)
   }
   return v9; /*0x5733ec*/
 }
-}
 } // namespace gamemd
 
 // 0x57BAA0
 namespace gamemd {
 int CellClass::CheckTilePassable2(IUnknown * aP0)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 *v2; // esi
   int *v3; // edi
@@ -1499,14 +1480,12 @@ int CellClass::CheckTilePassable2(IUnknown * aP0)
     return 0; /*0x57bcdd*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x57CCF0
 namespace gamemd {
 int CellClass::CheckTilePassable(IUnknown * aP0)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 *v2; // esi
   int *v3; // edi
@@ -1598,14 +1577,12 @@ int CellClass::CheckTilePassable(IUnknown * aP0)
     return 0; /*0x57cf51*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x65B510
 namespace gamemd {
 int CellClass::GetOccupiedRatio()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v1 = this->CellClass_field_6C; /*0x65b511*/
@@ -1613,7 +1590,6 @@ int CellClass::GetOccupiedRatio()
     return this->CellClass_field_4C * this->rubble / v1; /*0x65b524*/
   else
     return 0; /*0x65b518*/
-}
 }
 } // namespace gamemd
 

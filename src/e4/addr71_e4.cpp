@@ -17,13 +17,11 @@
 namespace gamemd {
 int sub_710860(unsigned int * a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   if ( *a1 == *a2 )
     return 0; /*0x710870*/
   else
     return *a1 >= *a2 ? 1 : -1;
-}
 }
 } // namespace gamemd
 
@@ -31,7 +29,6 @@ int sub_710860(unsigned int * a1, unsigned int * a2)
 namespace gamemd {
 UnitTypeClass * * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *i; // edi
   UnitTypeClass *v12; // eax
@@ -148,14 +145,12 @@ UnitTypeClass * * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int
   }
   return (char)v12; /*0x7189d4*/
 }
-}
 } // namespace gamemd
 
 // 0x71D580
 namespace gamemd {
 int InitializeCellSpreadTables()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v4 = 0; /*0x71d582*/
@@ -232,14 +227,12 @@ int InitializeCellSpreadTables()
   memset(&DataGlobal_B0EF00, 0, 0x230u); /*0x71da73*/
   return Array::ForEach((int)&DataGlobal_B0EEFC, 4, 141, (int (__thiscall *)(int))__0Iostream_init_QAE_XZ_2); /*0x71da7a*/
 }
-}
 } // namespace gamemd
 
 // 0x71DCA0
 namespace gamemd {
 int ObjectTypeClass_LoadTheaterSHP(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int i; // edi
@@ -272,7 +265,6 @@ int ObjectTypeClass_LoadTheaterSHP(int a1)
     result = g_RulesClassInitState; /*0x71dd63*/
   }
   return result; /*0x71dd72*/
-}
 }
 } // namespace gamemd
 

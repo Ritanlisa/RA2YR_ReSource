@@ -5,7 +5,6 @@
 // 0x4E1450
 int DialogControl::Hide()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   GadgetClass *v1 = *(_DWORD *)this; /*0x4e1450*/
@@ -13,32 +12,26 @@ int DialogControl::Hide()
   this->q01C = 1; /*0x4e1456*/
   return v1->DeactivateGlobal();
 }
-}
 
 // 0x4E1460
 int DialogControl::Show()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   *(this + 30) = 1; /*0x4e1462*/
   this->q01C = 1; /*0x4e1465*/
   return this->vt_slot_84();
 }
-}
 
 // 0x4E1470
 int DialogControl::IsHidden()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return *(this + 30) == 0; /*0x4e147a*/
-}
 }
 
 // 0x623340
 unsigned int * DialogControl::Constructor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   memset(this, 0, 0x200u); /*0x62334d*/
@@ -54,5 +47,4 @@ unsigned int * DialogControl::Constructor()
   this->q017 = 0; /*0x62337f*/
   this->q024 = -1; /*0x623382*/
   return this; /*0x62338e*/
-}
 }

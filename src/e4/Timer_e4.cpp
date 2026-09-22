@@ -8,12 +8,10 @@
 namespace gamemd {
 void * Timer::Start(DynamicVector * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   *this = *(_DWORD *)&HouseClass_Player[45112]; /*0x46b64c*/
   *(this + 2) = aP1; /*0x46b64e*/
   return (DynamicVector *)this; /*0x46b651*/
-}
 }
 } // namespace gamemd
 
@@ -21,7 +19,6 @@ void * Timer::Start(DynamicVector * aP1)
 namespace gamemd {
 int Timer::StartDouble(double a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   wchar_t *v4; // ecx
   int v3; // eax
@@ -40,19 +37,16 @@ int Timer::StartDouble(double a2)
   }
   return v3; /*0x4a5285*/
 }
-}
 } // namespace gamemd
 
 // 0x4F1B00
 namespace gamemd {
 void * Timer::Init(DWORD a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   *this = Timer::GetTicks(); /*0x4f1b0b*/
   *(this + 2) = a2; /*0x4f1b11*/
   return this; /*0x4f1b16*/
-}
 }
 } // namespace gamemd
 
@@ -60,7 +54,6 @@ void * Timer::Init(DWORD a2)
 namespace gamemd {
 int Timer::GetRemainingMs()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   signed int v1 = *(this + 2); /*0x4f1b26*/
@@ -72,14 +65,12 @@ int Timer::GetRemainingMs()
   else
     return v1 - v2; /*0x4f1b43*/
 }
-}
 } // namespace gamemd
 
 // 0x54F720
 namespace gamemd {
 int Timer::PumpMessages()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND v2; // eax
   HWND result; // eax
@@ -100,14 +91,12 @@ int Timer::PumpMessages()
   }
   return result; /*0x54f779*/
 }
-}
 } // namespace gamemd
 
 // 0x5B1E40
 namespace gamemd {
 int Timer::GetHighPrecision()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( dword_82C24C == -1 ) /*0x5b1e4e*/
@@ -119,21 +108,18 @@ int Timer::GetHighPrecision()
   __int64 v5 = v4; /*0x5b1e9b*/
   return ((double)v2 + (double)v4 * 4294967296.0) / *this; /*0x5b1eb5*/
 }
-}
 } // namespace gamemd
 
 // 0x5F1390
 namespace gamemd {
 int Timer::GetElapsed()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v1 = *(this + 2); /*0x5f1396*/
   if ( *this != -1 ) /*0x5f139c*/
     v1 += Timer::GetTicks() - *this; /*0x5f13a8*/
   return v1; /*0x5f13ac*/
-}
 }
 } // namespace gamemd
 

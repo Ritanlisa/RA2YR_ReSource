@@ -11,7 +11,6 @@
 // 0x7AA870
 Coord * * CChatEventSink::HandleChatChannelList(int a1, int a2, const char * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char **v19; // ecx
   char **v24; // ecx
@@ -371,12 +370,10 @@ LABEL_104:
   DeleteAndZero(&v32); /*0x7aaf8e*/
   return 0; /*0x7aaf9a*/
 }
-}
 
 // 0x7AD930
 int CChatEventSink::GrowBuffer()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v2 = *this; /*0x7ad935*/
@@ -398,12 +395,10 @@ int CChatEventSink::GrowBuffer()
   this->q004 = v5; /*0x7ad9bc*/
   return 1; /*0x7ad942*/
 }
-}
 
 // 0x7AED40
 int CChatEventSink::ProcessChatEvent()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v2 = *this; /*0x7aed44*/
@@ -423,18 +418,15 @@ int CChatEventSink::ProcessChatEvent()
   this->q008 = v7; /*0x7aedc3*/
   return 1; /*0x7aed4f*/
 }
-}
 
 // 0x7AEE90
 int CChatEventSink::Check(unsigned int * a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   if ( a3 < 0 || a3 >= *this ) /*0x7aee9a*/
     return 0; /*0x7aeead*/
   *a2 = *(_DWORD *)(this->q008 + 4 * a3); /*0x7aeea6*/
   return 1; /*0x7aeeaa*/
-}
 }
 
 // 0x7AD350

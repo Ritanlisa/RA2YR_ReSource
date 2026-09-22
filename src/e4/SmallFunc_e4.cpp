@@ -21,7 +21,6 @@
 namespace gamemd {
 TeamTypeClass * * SmallFunc_6F19B0(char * a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   CCINIClass *i; // ebx
@@ -66,7 +65,6 @@ LABEL_11:
     i = (CCINIClass *)((char *)i + 1); /*0x6f1a8e*/
   }
   return result; /*0x6f1aa2*/
-}
 }
 } // namespace gamemd
 

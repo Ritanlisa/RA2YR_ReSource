@@ -9,7 +9,6 @@
 // 0x4CD600
 int DamageArea::ApplyScatter()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   void **v17; // esi
@@ -544,12 +543,10 @@ LABEL_23:
   CreateSmokeEffectAt(v11, *((_DWORD *)g_RulesClass_Instance + 1002), SLODWORD(v108), SHIDWORD(v108), v109, 0, 0);
   return PlaySoundEffectAt(&v108, v11, 0, *((_DWORD *)g_RulesClass_Instance + 1002), 1, 0);
 }
-}
 
 // 0x4D0180
 int DamageArea::CheckOccupancyEligibility()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int (__stdcall ***v3)(_DWORD, void *, int *); // ecx
 
@@ -619,15 +616,12 @@ LABEL_24:
   }
   return 0; /*0x4d0295*/
 }
-}
 
 // 0x565660
 unsigned int * DamageArea::CalcScatterOffset(unsigned int * a2, short * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 v6; // di
-
   int v3 = this->q0F4; /*0x565668*/
   int v4 = this->q0FC; /*0x56566f*/
   int v5 = a3[1]; /*0x565676*/
@@ -643,5 +637,4 @@ unsigned int * DamageArea::CalcScatterOffset(unsigned int * a2, short * a3)
   HIWORD(v11) = v6 + v5 - v3 - v7; /*0x5656b6*/
   *a2 = v11; /*0x5656c2*/
   return a2; /*0x5656bf*/
-}
 }

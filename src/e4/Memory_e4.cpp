@@ -8,7 +8,6 @@
 namespace gamemd {
 int sub_53EC40(unsigned char a1, char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -17,14 +16,12 @@ int sub_53EC40(unsigned char a1, char a2)
     unk_AA0168[a1] = a2 != 0 ? 0 : 0x8000;
   return result; /*0x53ec67*/
 }
-}
 } // namespace gamemd
 
 // 0x6149B0
 namespace gamemd {
 void Memory_Helper_6149B0(HWND hWnd, WCHAR * a2, int cchWideChar, size_t * a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   LRESULT (__stdcall *v4)(HWND, UINT, WPARAM, LPARAM); // ebx
   LRESULT (__stdcall **v7)(HWND, UINT, WPARAM, LPARAM); // eax
@@ -105,7 +102,6 @@ LABEL_8:
   wcscpy(lpWideCharStr, (const wchar_t *)v11); /*0x614b04*/
   __3_YAXPAX_Z(v11); /*0x614b0a*/
   return wcslen(v17); /*0x614b18*/
-}
 }
 } // namespace gamemd
 

@@ -7,7 +7,6 @@
 namespace gamemd {
 int BaseClass::LoadBaseNodeClass(VectorClass * aP0, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v2 = a2; /*0x42ee3a*/
@@ -127,14 +126,12 @@ LABEL_34:
   }
   return 0; /*0x42f056*/
 }
-}
 } // namespace gamemd
 
 // 0x42F070
 namespace gamemd {
 int BaseClass::LoadArrayFields(unsigned int * a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -199,6 +196,5 @@ LABEL_11:
     }
   }
   return 0; /*0x42f161*/
-}
 }
 } // namespace gamemd

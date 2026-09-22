@@ -8,7 +8,6 @@
 namespace gamemd {
 unsigned int * Waypoint::FindByCell(IUnknown * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char *i; // ebx
   WaypointPathClass *v5; // eax
@@ -54,14 +53,12 @@ LABEL_12:
     }
   }
 }
-}
 } // namespace gamemd
 
 // 0x53ECB0
 namespace gamemd {
 void * Waypoint::InitInvalid()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   *this = -1; /*0x53ecb4*/
   *(this + 1) = -1; /*0x53ecb6*/
@@ -75,14 +72,12 @@ void * Waypoint::InitInvalid()
   *(this + 9) = -1; /*0x53ecce*/
   return (IPXManagerClass *)this; /*0x53ecd1*/
 }
-}
 } // namespace gamemd
 
 // 0x763A50
 namespace gamemd {
 int Waypoint::FindCell(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *i; // edi
 
@@ -101,7 +96,6 @@ int Waypoint::FindCell(unsigned int * a2)
   }
   v7[9] = v3; /*0x763ad0*/
   return 1; /*0x763acd*/
-}
 }
 } // namespace gamemd
 

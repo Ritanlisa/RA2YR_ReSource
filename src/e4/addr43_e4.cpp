@@ -33,7 +33,6 @@
 namespace gamemd {
 int E4Recv_431BC0::sub_431BC0(int a2, size_t a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AbstractClass *v9; // eax
   if ( *(this + 12) ) /*0x431bc8*/
@@ -134,14 +133,12 @@ LABEL_14:
   *((_BYTE *)this + 41) = 1; /*0x431d68*/
   return 1; /*0x431be1*/
 }
-}
 } // namespace gamemd
 
 // 0x4373B0
 namespace gamemd {
 MouseClass * * BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XSurface * aP3, int a4, XSurface * aP5, XSurface * aP6, XSurface * aP7, XSurface * aP8, int a10, int a11, int a12)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   XSurface *v12; // eax
   int Width; // edx
@@ -485,14 +482,12 @@ MouseClass * * BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XS
   }
   return result; /*0x43746a*/
 }
-}
 } // namespace gamemd
 
 // 0x437A10
 namespace gamemd {
 MouseClass * * BlitterRLEBlitSHP(IUnknown * aP0, int * a1, TechnoClass * aP2, IUnknown * aP3, unsigned int * a4, int * a5, TechnoClass * aP6, int a8, int a9, TechnoClass * aP9, int a11, int a12, TechnoClass * aP12, int a14, int a15)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   bool result; // al
   MouseClass *v23; // edx
@@ -706,14 +701,12 @@ LABEL_12:
     return 0; /*0x437d45*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x437F50
 namespace gamemd {
 unsigned int * E4Recv_437F50::sub_437F50()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HRESULT v2; // esi
   LPVOID ppv; // [esp+Ch] [ebp-4h] BYREF
@@ -734,14 +727,12 @@ LABEL_5:
   }
   return this; /*0x437fba*/
 }
-}
 } // namespace gamemd
 
 // 0x43A600
 namespace gamemd {
 void BrainClass::sub_43A600()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v2 = 0; /*0x43a608*/
@@ -770,14 +761,12 @@ void BrainClass::sub_43A600()
   *((_BYTE *)this + 17) = 0; /*0x43a65d*/
   *((_DWORD *)this + 3) = 0; /*0x43a660*/
 }
-}
 } // namespace gamemd
 
 // 0x43AA90
 namespace gamemd {
 unsigned int * BrainClass::sub_43AA90(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v3 = 0; /*0x43aa95*/
@@ -808,7 +797,6 @@ unsigned int * BrainClass::sub_43AA90(char a2)
   if ( (a2 & 1) != 0 ) /*0x43ab05*/
     __3_YAXPAX_Z(this); /*0x43ab08*/
   return &this->vfptr; /*0x43ab12*/
-}
 }
 } // namespace gamemd
 
@@ -2490,13 +2478,11 @@ int sub_43B0E0()
 namespace gamemd {
 int sub_43B0F0()
  {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   aP5 = 0; /*0x43b0f2*/
   unk_89C84C = 0; /*0x43b0f7*/
   unk_89C850 = 0; /*0x43b0fc*/
   return 0; /*0x43b101*/
-}
 }
 } // namespace gamemd
 

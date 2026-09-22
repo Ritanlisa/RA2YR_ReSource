@@ -20,7 +20,6 @@
 namespace gamemd {
 int E4Recv_6A6AF0::sub_6A6AF0(ObjectClass * aP1, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *v7; // eax
   int v8; // edx
@@ -75,14 +74,12 @@ LABEL_18:
   }
   return 0; /*0x6a6c1d*/
 }
-}
 } // namespace gamemd
 
 // 0x6A74A0
 namespace gamemd {
 int E4Recv_6A74A0::sub_6A74A0(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   *(this + 5351) = a2; /*0x6a74b6*/
@@ -107,14 +104,12 @@ int E4Recv_6A74A0::sub_6A74A0(int a2)
   g_CameoRenderFlag = 1; /*0x6a7574*/
   return Tactical::UpdateUIVisibility(this); /*0x6a7580*/
 }
-}
 } // namespace gamemd
 
 // 0x6A87F0
 namespace gamemd {
 int E4Recv_6A87F0::sub_6A87F0(int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v4 = this->M84; /*0x6a87f5*/
@@ -141,14 +136,12 @@ LABEL_7:
   g_CameoRenderFlag = 1; /*0x6a884c*/
   return 1; /*0x6a8847*/
 }
-}
 } // namespace gamemd
 
 // 0x6A89E0
 namespace gamemd {
 int E4Recv_6A89E0::sub_6A89E0(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v10 = *((_DWORD *)g_ScenarioClass_Instance + 3374); /*0x6a89f2*/
@@ -194,14 +187,12 @@ int E4Recv_6A89E0::sub_6A89E0(char a2)
     return 1; /*0x6a8aff*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x6A93F0
 namespace gamemd {
 BombClass * * E4Recv_6A93F0::sub_6A93F0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   *(_BYTE *)(this + 28) = 1; /*0x6a93f8*/
@@ -225,17 +216,14 @@ BombClass * * E4Recv_6A93F0::sub_6A93F0()
   g_CameoRenderFlag = 1; /*0x6a9498*/
   return v5; /*0x6a9496*/
 }
-}
 } // namespace gamemd
 
 // 0x6ACBAE
 namespace gamemd {
 void* __inc_tmpoff()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ++DataGlobal_0000051D; /*0x6acbae*/
-}
 }
 } // namespace gamemd
 
@@ -243,7 +231,6 @@ void* __inc_tmpoff()
 namespace gamemd {
 void SetupSkirmishSpawnLocationEntry(SessionClass * hDlg, int nIDDlgItem)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v4; // eax
   int v6; // edi
@@ -259,7 +246,6 @@ void SetupSkirmishSpawnLocationEntry(SessionClass * hDlg, int nIDDlgItem)
   unsigned __int8 v20; // [esp+18h] [ebp-8h]
   HWND ResourceID4CSF; // [esp+1Ch] [ebp-4h]
   HWND v22; // [esp+1Ch] [ebp-4h]
-
   switch ( nIDDlgItem ) /*0x6adc31*/
   {
     case 1291: /*0x6adc31*/
@@ -337,14 +323,12 @@ void SetupSkirmishSpawnLocationEntry(SessionClass * hDlg, int nIDDlgItem)
   EnableWindow(hWnda, v20); /*0x6addcc*/
   return EnableWindow(v22, v20); /*0x6addd6*/
 }
-}
 } // namespace gamemd
 
 // 0x6AE080
 namespace gamemd {
 void HideSkirmishSpawnLocations(HWND hDlg, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   LRESULT v5; // ebp
   WPARAM v6; // ebx
@@ -361,7 +345,6 @@ void HideSkirmishSpawnLocations(HWND hDlg, int a2)
   HWND v19; // [esp+20h] [ebp-8h]
   HWND ResourceID4CSF; // [esp+24h] [ebp-4h]
   HWND v21; // [esp+24h] [ebp-4h]
-
   if ( a2 < 8 )
   {
     int v3 = a2 - 1; /*0x6ae096*/
@@ -470,14 +453,12 @@ LABEL_22:
     }
   }
 }
-}
 } // namespace gamemd
 
 // 0x6AE2C0
 namespace gamemd {
 void ShowSkirmishSetupScreen()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // esi
   IUnknown *v3; // esi
@@ -524,7 +505,6 @@ void ShowSkirmishSetupScreen()
     Screen::Capture(1, 0, a1, a2); /*0x6ae3cf*/
   return dwNewLong == 1559; /*0x6ae3e0*/
 }
-}
 } // namespace gamemd
 
 // 0x6AFD60
@@ -532,7 +512,6 @@ namespace ra2 {
 namespace game {
 int TechnoClass::ProcessDeployAction()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   SlaveManagerClass *v2; // eax
   TechnoClass *v3; // edi
@@ -778,7 +757,6 @@ LABEL_53:
       return (char)v2;
   }
   return (char)v2; /*0x6afdbb*/
-}
 }
 } // namespace game
 } // namespace ra2

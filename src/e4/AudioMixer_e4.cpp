@@ -8,7 +8,6 @@
 // 0x406650
 int AudioMixer::SetVolume()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -17,12 +16,10 @@ int AudioMixer::SetVolume()
     return 0; /*0x406663*/
   return result; /*0x406665*/
 }
-}
 
 // 0x4071C0
 int AudioMixer::PlaySample()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v2 = this->AudioMixer_field_08; /*0x4071c7*/
@@ -93,7 +90,6 @@ int AudioMixer::PlaySample()
       return 1; /*0x407244*/
     }
   }
-}
 }
 
 // 0x401000

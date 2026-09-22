@@ -69,7 +69,6 @@ void InfantryClass::ProcessDeploy()
 // 0x51d6f0
 InfantryTypeClass * * InfantryClass::ProcessDeployAction(int deploy_type, bool a3, bool a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x51d6f0
 {
   __int16 *v6; // eax
@@ -630,13 +629,11 @@ pop     ebx
 add     esp, 0Ch
 retn    0Ch
 */
-}
 
 // IDA: 0x5200B0 (ProcessIdleDeploy, 428B)
 // 0x5200b0
 AnimClass * * InfantryClass::ProcessIdleDeploy()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( this->q1B5 > 0 )
@@ -750,7 +747,6 @@ AnimClass * InfantryClass::IsBombDeployMission()
 // 0x514310
 AnimClass * InfantryClass::DeployAnimation()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x514310
 {
   __int16 v10; // bx
@@ -1842,7 +1838,6 @@ mov     esp, ebp
 pop     ebp
 retn    4
 */
-}
 
 // 0x521d80
 AnimClass * InfantryClass::ComputeDeploySpeedFactor()
@@ -1967,7 +1962,6 @@ call    dword ptr [eax+16Ch]
 pop     ecx
 retn    0Ch
 */
-}
 
 // 0x51df60
 int InfantryClass::FireWeaponWithCleanup(int a2, int a3)
@@ -2052,7 +2046,6 @@ retn    8
 // 0x51c8b0
 int InfantryClass::GetFireError(int* target, int weapon_idx, int a4, int a5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x51c8b0
 {
   int result; // eax
@@ -2476,7 +2469,6 @@ pop     ebx
 add     esp, 14h
 retn    0Ch
 */
-}
 
 // IDA: 0x5227F0 — checks if target can be attacked (not allied, not cloaked, in range)
 // 0x5227f0
@@ -3460,7 +3452,6 @@ int InfantryClass::FindMoveTarget()
 // 0x418e20
 int InfantryClass::FindNearbyCell()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 v11; // bx
   int v2 = a2;
@@ -3767,7 +3758,6 @@ mov     esp, ebp
 pop     ebp
 retn    4
 */
-}
 
 // 0x51f330
 int InfantryClass::FindPathToBuilding()
@@ -4569,7 +4559,6 @@ int InfantryClass::ProcessTunnelMovement()
 // 0x736579
 int InfantryClass::UpdateBehavior()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void **v5; // eax
   __int16 v17; // di
@@ -5051,12 +5040,10 @@ pop     ebx
 add     esp, 20h
 retn
 */
-}
 
 // 0x51dbd0
 void* InfantryClass::CalcFacingToTarget()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x51dbd0
 {
   __int16 v6; // ax
@@ -5395,12 +5382,10 @@ mov     esp, ebp
 pop     ebp
 retn    4
 */
-}
 
 // 0x51bf90
 int InfantryClass::EvaluateTarget()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x51bf90
 {
   _DWORD *Type; // eax
@@ -6605,12 +6590,10 @@ pop     ebx
 add     esp, 24h
 retn    14h
 */
-}
 
 // 0x51e140
 BuildingTypeClass * * InfantryClass::SelectAutoTarget(unsigned int flags, __int64 a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x51e140
 {
   unsigned int v9; // edi
@@ -6937,7 +6920,6 @@ pop     esi
 add     esp, 24h
 retn    0Ch
 */
-}
 
 // 0x51b1f0
 int InfantryClass::AssignTarget_SyncLog(int syncFlag)
@@ -7538,7 +7520,6 @@ retn
 // 0x522d50
 int InfantryClass::SlaveGiveMoney_RecordBalanceBefore()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x522d50
 {
   int result; // eax
@@ -7687,7 +7668,6 @@ pop     ebx
 add     esp, 0Ch
 retn    4
 */
-}
 
 // 0x772ac0
 void InfantryClass::startPanic()

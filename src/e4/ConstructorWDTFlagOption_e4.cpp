@@ -6,7 +6,6 @@
 // 0x767820
 void * GameOption_WorldDominationTour::ConstructorWDTFlagOption_Create(int arg0, void * a2, int arg8, void * a4, ObjectClass * aP5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ObjectClass *v6; // edx
   ObjectClass *v8; // ecx
@@ -23,5 +22,4 @@ void * GameOption_WorldDominationTour::ConstructorWDTFlagOption_Create(int arg0,
   DeleteAndZero(&a2); /*0x767869*/
   DeleteAndZero(&a4); /*0x767872*/
   return this; /*0x767879*/
-}
 }

@@ -29,10 +29,8 @@
 namespace gamemd {
 void Color_ComputeSaturation(unsigned int a1, int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 v14; // [esp+1Ch] [ebp-8h]
-
   int v3 = *(unsigned __int8 *)a1; /*0x6613ad*/
   int v4 = *(unsigned __int8 *)(a1 + 2); /*0x6613b4*/
   int v5 = *(unsigned __int8 *)(a1 + 1); /*0x6613b7*/
@@ -101,14 +99,12 @@ LABEL_24:
   *(_BYTE *)(a3 + 2) = v6; /*0x6614d7*/
   return a3; /*0x6614d4*/
 }
-}
 } // namespace gamemd
 
 // 0x6615D0
 namespace gamemd {
 unsigned char * sub_6615D0(char * a1, unsigned char * a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v4 = a3; /*0x6615d6*/
@@ -140,14 +136,12 @@ LABEL_6:
   }
   return (_BYTE *)(v5 - a2); /*0x66162a*/
 }
-}
 } // namespace gamemd
 
 // 0x661640
 namespace gamemd {
 unsigned char * sub_661640(unsigned short * a1, unsigned char * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   _BYTE * v2 = a2; /*0x66164b*/
@@ -180,14 +174,12 @@ LABEL_6:
   }
   return (_BYTE *)(v2 - a2); /*0x66169e*/
 }
-}
 } // namespace gamemd
 
 // 0x6622C0
 namespace gamemd {
 void UpdateBullets(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ObjectClass *v1; // ecx
   ObjectClass *v3; // eax
@@ -771,14 +763,12 @@ LABEL_47:
       goto LABEL_111;
   }
 }
-}
 } // namespace gamemd
 
 // 0x663DB0
 namespace gamemd {
 AbstractClass * * E4Recv_663DB0::LaunchMultiplayerHost(unsigned char * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned __int8 *v4; // eax
   unsigned __int8 v6; // dl
@@ -886,14 +876,12 @@ LABEL_11:
     return 0; /*0x664012*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x664750
 namespace gamemd {
 int E4Recv_664750::sub_664750(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   _BYTE v4[340]; // [esp+4h] [ebp-154h] BYREF
@@ -907,7 +895,6 @@ int E4Recv_664750::sub_664750(char a2)
     LOBYTE(v2) = Network::SendPacket((int)g_NetworkManager, (int)v4, 338, 1u); /*0x6647a2*/
   }
   return v2; /*0x66476f*/
-}
 }
 } // namespace gamemd
 

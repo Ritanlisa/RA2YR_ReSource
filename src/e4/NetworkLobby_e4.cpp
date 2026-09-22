@@ -19,7 +19,6 @@
 namespace gamemd {
 int NetworkLobby::MessageList_Append(int a2, int a3, CellStruct * aP3, char a5, int a6)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // edi
   CellStruct *v14; // ebx
@@ -120,14 +119,12 @@ int NetworkLobby::MessageList_Append(int a2, int a3, CellStruct * aP3, char a5, 
     return *(this + 9); /*0x5d4378*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x5DB9B0
 namespace gamemd {
 int NetworkLobby_UpdatePlayerList()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   HWND Current; // esi
@@ -177,14 +174,12 @@ int NetworkLobby_UpdatePlayerList()
   }
   return result; /*0x5dbb52*/
 }
-}
 } // namespace gamemd
 
 // 0x5DC350
 namespace gamemd {
 int NetworkLobby::CreateGame()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   DLGTEMPLATE *DialogIndirect; // esi
   void (__stdcall *v1)(const MSG *); // edi
@@ -1152,14 +1147,12 @@ LABEL_202:
   Network::ReceiveLoop(&HouseClass_Player[44148]);
   return 0;
 }
-}
 } // namespace gamemd
 
 // 0x5DE520
 namespace gamemd {
 int NetworkLobby::DlgProc(HWND hDlg, UINT a2, WPARAM nIDDlgItem, unsigned int lParam)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   wchar_t *StringCSF; // ebp
   HWND v5; // eax
@@ -1618,14 +1611,12 @@ LABEL_75:
   }
   return result;
 }
-}
 } // namespace gamemd
 
 // 0x5E00B0
 namespace gamemd {
 void NetworkLobby_MessageHandler()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char result; // al
   wchar_t *v10; // eax
@@ -2776,14 +2767,12 @@ LABEL_336:
   return result;
 }
 
-}
 } // namespace gamemd
 
 // 0x5E8EA0
 namespace gamemd {
 void NetworkLobby::SetupPlayers()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   CCINIClass *v2; // edi
   __int64 kr00_8_2; // kr00_8
@@ -2990,14 +2979,12 @@ void NetworkLobby::SetupPlayers()
     }
   }
 }
-}
 } // namespace gamemd
 
 // 0x5E9240
 namespace gamemd {
 int NetworkLobby::AssignPlayerSlot()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   LPARAM *v2; // edx
@@ -3014,14 +3001,12 @@ int NetworkLobby::AssignPlayerSlot()
   *(&g_NetworkPlayerName + result) = this; /*0x5e9284*/
   return result; /*0x5e927a*/
 }
-}
 } // namespace gamemd
 
 // 0x5E9E00
 namespace gamemd {
 int NetworkLobby::InitLobbyDropdowns()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // ebp
   void *ResourceID4CSF; // esi
@@ -3047,14 +3032,12 @@ int NetworkLobby::InitLobbyDropdowns()
   }
   return result; /*0x5e9e5c*/
 }
-}
 } // namespace gamemd
 
 // 0x5EA2A0
 namespace gamemd {
 void * NetworkLobby::Dispatch()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // esi
   HWND DlgItem; // ebx
@@ -3127,14 +3110,12 @@ LABEL_34:
   }
   return result; /*0x5ea3d3*/
 }
-}
 } // namespace gamemd
 
 // 0x5EB660
 namespace gamemd {
 int NetworkLobby::SetupPlayerSlotControls()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // edi
   LRESULT v4; // eax
@@ -3203,14 +3184,12 @@ int NetworkLobby::SetupPlayerSlotControls()
   }
   return v7; /*0x5eb7a2*/
 }
-}
 } // namespace gamemd
 
 // 0x5EE3A0
 namespace gamemd {
 char NetworkLobby::FillOptionCombo()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND ResourceID4; // eax
   SkirmishDialog *v4; // esi
@@ -3281,7 +3260,6 @@ LABEL_19:
     while ( (int)v2 < (int)&AlliesAllowed ); /*0x5ee419*/
   }
   return (char)ResourceID4; /*0x5ee4a5*/
-}
 }
 } // namespace gamemd
 

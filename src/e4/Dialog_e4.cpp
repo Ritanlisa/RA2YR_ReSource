@@ -12,7 +12,6 @@
 namespace gamemd {
 void Dialog::MapDialogResource()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   if ( this->q010 == 48879 ) /*0x49f74a*/
   {
@@ -21,14 +20,12 @@ void Dialog::MapDialogResource()
     Debug::Log(); /*0x49f77e*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x5B5BC0
 namespace gamemd {
 int Dialog::InitializeGameSettings()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND DlgItem; // eax
   HWND v3; // eax
@@ -107,14 +104,12 @@ int Dialog::InitializeGameSettings()
     EnableWindow(v19, 1); /*0x5b5e59*/
   return PlayVocClass(HIDWORD(g_RulesClass_Instance->MovieOff), 0x2000, 1.0, 0); /*0x5b5e7c*/
 }
-}
 } // namespace gamemd
 
 // 0x5D3490
 namespace gamemd {
 int Dialog::ShowMessageBox(int lParam, unsigned short * a2, Movie * aP2, IUnknown * aP3, IUnknown * aP4, int a6)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned __int16 v9; // cx
   ObjectClass *Dialog; // eax
@@ -204,17 +199,14 @@ int Dialog::ShowMessageBox(int lParam, unsigned short * a2, Movie * aP2, IUnknow
     (*(void (__thiscall **)(_DWORD))(**(_DWORD **)&stru_87C374[45772] + 12))(*(_DWORD *)&stru_87C374[45772]); /*0x5d367d*/
   return dwNewLong; /*0x5d3693*/
 }
-}
 } // namespace gamemd
 
 // 0x5D5DC0
 namespace gamemd {
 int Dialog::GetModeNeg2()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return *(this + 63) != 0 ? 0 : -2;
-}
 }
 } // namespace gamemd
 
@@ -222,10 +214,8 @@ int Dialog::GetModeNeg2()
 namespace gamemd {
 int Dialog::GetMode3()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return this->q03C != 0 ? 3 : -2;
-}
 }
 } // namespace gamemd
 
@@ -233,7 +223,6 @@ int Dialog::GetMode3()
 namespace gamemd {
 int Dialog::RefreshDialogsGame()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND v1; // eax
   HWND v2; // eax
@@ -252,14 +241,12 @@ int Dialog::RefreshDialogsGame()
     return (HWND)UpdateObserveButtonWOL(result); /*0x5ee393*/
   return result; /*0x5ee398*/
 }
-}
 } // namespace gamemd
 
 // 0x5F2950
 namespace gamemd {
 int Dialog::RunModemDialing(ObjectClass * aP1, int a3, char a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   wchar_t *StringCSF; // eax
   LPARAM v8; // ebp
@@ -393,14 +380,12 @@ LABEL_36:
   Dialog::Destroy((SkirmishDialog *)hWnd); /*0x5f2cc3*/
   return v6; /*0x5f2cca*/
 }
-}
 } // namespace gamemd
 
 // 0x606800
 namespace gamemd {
 AbstractClass * * Dialog::MapControlToAction(HWND hWnd, LPARAM a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND v2; // ebp
   int DlgCtrlID; // edi
@@ -677,14 +662,12 @@ LABEL_208:
   }
   return 1; /*0x60711e*/
 }
-}
 } // namespace gamemd
 
 // 0x607FD0
 namespace gamemd {
 int Dialog::StopBink()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND DlgItem; // eax
   Dialog *v6; // [esp+8h] [ebp-4h] BYREF
@@ -719,14 +702,12 @@ int Dialog::StopBink()
   }
   return v1; /*0x60801e*/
 }
-}
 } // namespace gamemd
 
 // 0x608070
 namespace gamemd {
 AbstractClass * * Dialog::IdleProcess()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   SkirmishDialog **v2; // eax
   Dialog *v10; // [esp+Ch] [ebp-Ch] BYREF
@@ -799,14 +780,12 @@ LABEL_31:
   EnableWindow((HWND)this, (unsigned __int8)v12); /*0x608250*/
   return 1; /*0x6080cb*/
 }
-}
 } // namespace gamemd
 
 // 0x60A330
 namespace gamemd {
 int Dialog::HandleTabKey(HWND hWnd, LPARAM a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND *v3; // eax
   HWND Parent; // ebp
@@ -912,14 +891,12 @@ LABEL_33:
   *((_DWORD *)hWnda + 44) = 2; /*0x60a581*/
   return 1; /*0x60a47a*/
 }
-}
 } // namespace gamemd
 
 // 0x60A5B0
 namespace gamemd {
 AbstractClass * * Dialog::DispatchEvent(HWND hWnd, LPARAM a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND v2; // ebp
   HWND Parent; // edi
@@ -1125,14 +1102,12 @@ LABEL_74:
     return 1; /*0x60a6d9*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x60F760
 namespace gamemd {
 AbstractClass * * Dialog::InitWindow(SkirmishDialog * aP0, LPARAM a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   SkirmishDialog **v8; // esi
   SkirmishDialog *v10; // eax
@@ -1220,14 +1195,12 @@ LABEL_22:
     return 1; /*0x60f962*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x60F9A0
 namespace gamemd {
 AbstractClass * * Dialog::InitializeControls(HWND hWnd, LPARAM a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int (__stdcall *v4)(int, int, int, int); // ebp
   const char **WindowLongA; // eax
@@ -1519,14 +1492,12 @@ LABEL_71:
   SendMessageA(hWnd, 0x497u, 0, 0); /*0x610339*/
   return 1; /*0x61033f*/
 }
-}
 } // namespace gamemd
 
 // 0x610360
 namespace gamemd {
 AbstractClass * * Dialog::DestroyDialogSystem()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *i; // eax
   HWND *v7; // ecx
@@ -1613,14 +1584,12 @@ LABEL_22:
   Object::RemoveObjectArray(hWnd); /*0x610552*/
   return 1; /*0x61055c*/
 }
-}
 } // namespace gamemd
 
 // 0x6137D0
 namespace gamemd {
 AbstractClass * * Dialog_TabControlPaint()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   LRESULT (__stdcall *v2)(HWND, UINT, WPARAM, LPARAM); // edi
   HWND v4; // ecx
@@ -1993,14 +1962,12 @@ LABEL_43:
   ValidateRect(*(HWND *)hWnd[0], 0); /*0x61417c*/
   return v67; /*0x613896*/
 }
-}
 } // namespace gamemd
 
 // 0x6213A0
 namespace gamemd {
 AbstractClass * * Dialog::Resize()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   LONG result; // eax
   int SystemMetrics; // esi
@@ -2057,14 +2024,12 @@ AbstractClass * * Dialog::Resize()
   }
   return result; /*0x621476*/
 }
-}
 } // namespace gamemd
 
 // 0x621E90
 namespace gamemd {
 AbstractClass * * Dialog::DrawBackground()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND *v4; // eax
   LONG right; // eax
@@ -2332,14 +2297,12 @@ LABEL_72:
     }
   }
 }
-}
 } // namespace gamemd
 
 // 0x622720
 namespace gamemd {
 int Dialog::Destroy()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND result; // eax
   HWND *i; // ecx
@@ -2384,14 +2347,12 @@ int Dialog::Destroy()
   }
   return result; /*0x622760*/
 }
-}
 } // namespace gamemd
 
 // 0x6233A0
 namespace gamemd {
 CampaignClass * * Dialog::CleanupTree()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *i; // ecx
   void **v5; // esi
@@ -2427,14 +2388,12 @@ LABEL_12:
     __3_YAXPAX_Z(v5); /*0x623409*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x624930
 namespace gamemd {
 int Dialog::UpdateControlState(unsigned int * a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( !this->q010 ) /*0x624934*/
@@ -2451,14 +2410,12 @@ int Dialog::UpdateControlState(unsigned int * a2, unsigned int * a3)
   *a3 = v4 + 1; /*0x624990*/
   return 1; /*0x62493b*/
 }
-}
 } // namespace gamemd
 
 // 0x624BE0
 namespace gamemd {
 AbstractClass * * Dialog::GrowBuffer()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( this->q005 != 1 ) /*0x624be8*/
@@ -2503,14 +2460,12 @@ AbstractClass * * Dialog::GrowBuffer()
     __3_YAXPAX_Z(v3); /*0x624c6e*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x624CA0
 namespace gamemd {
 AbstractClass * * Dialog::BindGadgetData(IUnknown * aP1, IUnknown * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v4; // eax
   AbstractClass *v7; // ecx
@@ -2687,14 +2642,12 @@ LABEL_41:
     return v33; /*0x624fb0*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x671EA0
 namespace gamemd {
 INIClass * * Dialog::ReadMultiplayerDialogSettings()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int IntOverwriteINIClass; // eax
@@ -2774,14 +2727,12 @@ INIClass * * Dialog::ReadMultiplayerDialogSettings()
   }
   return result; /*0x672219*/
 }
-}
 } // namespace gamemd
 
 // 0x775940
 namespace gamemd {
 int Dialog::FindByHandle()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void **i; // edx
 
@@ -2795,17 +2746,14 @@ int Dialog::FindByHandle()
   }
   return a0[2 * v1]; /*0x77595f*/
 }
-}
 } // namespace gamemd
 
 // 0x775B10
 namespace gamemd {
 int Dialog::GetCurrent()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return dword_B72F44; /*0x775b15*/
-}
 }
 } // namespace gamemd
 
@@ -2813,10 +2761,8 @@ int Dialog::GetCurrent()
 namespace gamemd {
 int Dialog::GetCurrentType()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return dword_B72F48; /*0x775b25*/
-}
 }
 } // namespace gamemd
 

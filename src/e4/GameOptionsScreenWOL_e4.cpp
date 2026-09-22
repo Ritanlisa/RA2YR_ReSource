@@ -8,7 +8,6 @@
 namespace gamemd {
 int sub_798340()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HANDLE *v0; // esi
   BOOL result; // eax
@@ -18,7 +17,6 @@ int sub_798340()
     result = ResetEvent(*v0++); /*0x798350*/
   while ( (int)v0 < (int)g_WOL_RequestObject ); /*0x79835b*/
   return result; /*0x79835d*/
-}
 }
 } // namespace gamemd
 

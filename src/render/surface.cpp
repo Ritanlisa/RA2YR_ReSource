@@ -325,7 +325,6 @@ REVERSE(0x4C1A90, "DSurface::BlitWhole: Thin wrapper around Blit", "None")
 // 0x4c1a90
 int DSurface::BlitWhole(class Surface* src, bool option1, bool option2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return XSurface::BlitWhole(a1, a2, a3);
 }
@@ -340,7 +339,6 @@ push    eax
 call    XSurface__BlitWhole
 retn    0Ch
 */
-}
 
 // IDA: 0x4BB080 — DSurface::BlitPart (75B)
 // If HW blit possible (both surfaces exist, BPP/pitch match) → Blit
@@ -822,7 +820,6 @@ REVERSE(0x4BB5F0, "DSurface::FillRect: Fill rectangle with color", "None")
 // 0x4bb5f0
 int DSurface::FillRect(const RectangleStruct& fill_rect, uint32_t color)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   _BYTE v6[16]; // [esp+4h] [ebp-10h] BYREF
@@ -850,7 +847,6 @@ pop     esi
 add     esp, 10h
 retn    8
 */
-}
 
 // IDA: 0x4BB830 — DSurface::FillRectWithFlags (711B)
 // CPU software pixel fill with per-pixel alpha blending.
@@ -1043,7 +1039,6 @@ REVERSE(0x4BAF40, "DSurface::Unlock: Release DDraw surface lock", "None")
 // 0x4baf40
 int DSurface::Unlock()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( g_lpDirectDraw7 || g_DDraw_Initialized )
@@ -1161,7 +1156,6 @@ xor     al, al
 pop     esi
 retn
 */
-}
 
 // IDA: 0x4BAEC0 -- DSurface::CanLock (95B)
 // vtable[25] — Probes whether the surface can be locked via test-lock-then-unlock.
@@ -1169,7 +1163,6 @@ REVERSE(0x4BAEC0, "DSurface::CanLock: Test if surface can be locked", "None")
 // 0x4baec0
 int DSurface::CanLock(uint32_t /*unk1*/, uint32_t /*unk2*/)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( !this->q00C )
@@ -1230,7 +1223,6 @@ pop     esi
 add     esp, 6Ch
 retn    8
 */
-}
 
 // 0x4bad70
 int DSurface::GetPitch() const
@@ -1392,7 +1384,6 @@ REVERSE(0x7baeb0, "XSurface::SetPixel: pixel write", "None")
 // 0x7baeb0
 int XSurface::SetPixel(const Point2D& point, uint32_t color)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   _WORD * v4 = (_WORD *)this->Lock(*a2, a2[1]);
@@ -1455,7 +1446,6 @@ xor     al, al
 pop     esi
 retn    8
 */
-}
 
 // IDA: 0x7BAE60 -- XSurface::GetPixel (80B)
 // vtable[10] 0x28 -- Lock(point) -> check BPP -> read pixel -> Unlock
@@ -1463,7 +1453,6 @@ REVERSE(0x7bae60, "XSurface::GetPixel: pixel read", "None")
 // 0x7bae60
 int XSurface::GetPixel(const Point2D& point)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v3 = 0;
@@ -1529,7 +1518,6 @@ pop     esi
 pop     ebx
 retn    4
 */
-}
 
 // IDA: 0x7BAF90 -- XSurface::PutPixel (130B)
 // vtable[34] 0x88 -- bounds check -> Lock -> check BPP -> write -> Unlock
@@ -1537,7 +1525,6 @@ REVERSE(0x7baf90, "XSurface::PutPixel: pixel write + bounds", "Inject")
 // 0x7baf90
 int XSurface::PutPixel(const Point2D& point, uint16_t color, const RectangleStruct& clip_rect)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( *a2 < *a4 )
@@ -1630,7 +1617,6 @@ xor     al, al
 pop     esi
 retn    0Ch
 */
-}
 
 // IDA: 0x7BAF10 -- XSurface::GetPixelAtCoords (119B)
 // vtable[35] 0x8C -- bounds check -> Lock -> check BPP -> read -> Unlock
@@ -1638,7 +1624,6 @@ REVERSE(0x7baf10, "XSurface::GetPixelAtCoords: pixel read + bounds", "Inject")
 // 0x7baf10
 int XSurface::GetPixelAtCoords(const Point2D& point, const RectangleStruct& clip_rect)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v4 = 0;
@@ -1731,7 +1716,6 @@ pop     esi
 pop     ebx
 retn    8
 */
-}
 
 // --- XSurface line drawing (Batch B) ---
 
@@ -1988,7 +1972,6 @@ bool XSurface::DrawLineEx(
 // 0x7ba5e0
 int XSurface::DrawLine(const Point2D& start, const Point2D& end, uint32_t color)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   _BYTE v7[16]; // [esp+4h] [ebp-10h] BYREF
@@ -2018,7 +2001,6 @@ pop     esi
 add     esp, 10h
 retn    0Ch
 */
-}
 
 // IDA: 0x7BA8C0 -- XSurface::DrawDashedLine (621B)
 // vtable[18] 0x48 -- Bresenham dashed line with 16-byte stipple pattern
@@ -2207,7 +2189,6 @@ REVERSE(0x7bbab0, "XSurface::Fill: fill surface", "None")
 // 0x7bbab0
 int XSurface::Fill(uint32_t color)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v3 = *this;
@@ -2244,7 +2225,6 @@ pop     esi
 add     esp, 20h
 retn    4
 */
-}
 
 // IDA: 0x7BADC0 -- XSurface::DrawRectEx (158B)
 // vtable[21] 0x54 -- rectangle outline drawing 4 edges via DrawLineEx
@@ -2272,7 +2252,6 @@ bool XSurface::DrawRectEx(
 // 0x7bad90
 int XSurface::DrawRect(const RectangleStruct& draw_rect, uint32_t color)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   _BYTE v6[16]; // [esp+4h] [ebp-10h] BYREF
@@ -2300,7 +2279,6 @@ pop     esi
 add     esp, 10h
 retn    8
 */
-}
 
 // IDA: 0x7BB350 -- XSurface::DrawEllipseOutline (1478B)
 // vtable[8] 0x20 -- midpoint ellipse algorithm
@@ -2383,7 +2361,6 @@ REVERSE(0x7BB020, "XSurface::FillRect: rect fill wrapper", "None")
 // 0x7bb020
 int XSurface::FillRect(const RectangleStruct& fill_rect, uint32_t color)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   _BYTE v6[16]; // [esp+4h] [ebp-10h] BYREF
@@ -2410,7 +2387,6 @@ pop     esi
 add     esp, 10h
 retn    8
 */
-}
 
 // IDA: 0x7BB050 -- XSurface::FillRectEx (748B)
 // vtable[4] 0x10 -- software pixel fill with BPP-aware memset
@@ -2551,7 +2527,6 @@ REVERSE(0x7BBAF0, "XSurface::BlitWhole: Blit wrapper with zero origins", "None")
 // 0x7bbaf0
 int XSurface::BlitWhole(Surface* src, bool option1, bool option2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   _BYTE v20[16]; // [esp+2Ch] [ebp-10h] BYREF
@@ -2632,7 +2607,6 @@ pop     ebx
 add     esp, 30h
 retn    0Ch
 */
-}
 
 // IDA: 0x7BBB90 -- XSurface::BlitPart (339B)
 // vtable[2] 0x08 -- IntersectSurfaceRects then BlitterCopySimpleSHP

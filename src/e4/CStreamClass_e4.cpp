@@ -6,7 +6,6 @@
 // 0x4A2CD0
 ModemGame * * CStreamClass::CopyStreamToBuffer(int a1, IStream * Src, signed int Size, size_t * a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IStream *v4; // ebp
   ModemGame *v5; // edi
@@ -74,7 +73,6 @@ LABEL_23:
       goto LABEL_23; /*0x4a2dce*/
     }
   }
-}
 }
 
 // 0x4A3110

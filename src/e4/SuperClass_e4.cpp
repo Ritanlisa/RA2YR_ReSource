@@ -16,7 +16,6 @@
 namespace gamemd {
 void * SuperClass::LaunchPsychicDominator(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   RulesClass *result; // eax
   void **v6; // eax
@@ -48,14 +47,12 @@ void * SuperClass::LaunchPsychicDominator(int a2)
   }
   return result; /*0x53af2d*/
 }
-}
 } // namespace gamemd
 
 // 0x6CAEC0
 namespace gamemd {
 int SuperClass::Constructor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x6caec3*/
@@ -95,14 +92,12 @@ int SuperClass::Constructor()
   }
   return this; /*0x6caf85*/
 }
-}
 } // namespace gamemd
 
 // 0x6CAF90
 namespace gamemd {
 int SuperClass::Construct(int a2, CCINIClass * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x6caf94*/
@@ -167,14 +162,12 @@ int SuperClass::Construct(int a2, CCINIClass * aP2)
   }
   return this; /*0x6cb110*/
 }
-}
 } // namespace gamemd
 
 // 0x6CB120
 namespace gamemd {
 SuperClass * * SuperClass::CleanupMembers()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   SuperClass *v9; // [esp+14h] [ebp-4h] BYREF
   int v2 = this->SuperClass_field_0x68; /*0x6cb124*/
@@ -245,14 +238,12 @@ SuperClass * * SuperClass::CleanupMembers()
   }
   AbstractClass::DTOR((_DWORD *)this); /*0x6cb2d3*/
 }
-}
 } // namespace gamemd
 
 // 0x6CB560
 namespace gamemd {
 AbstractClass * * SuperClass::StartTimer(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   TerrainTypeClass *v11; // eax
   IUnknown *v12; // ecx
@@ -388,14 +379,12 @@ LABEL_45:
   }
   return 0; /*0x6cb79a*/
 }
-}
 } // namespace gamemd
 
 // 0x6CB7B0
 namespace gamemd {
 int SuperClass::Lose()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   SuperClass *v3 = this; /*0x6cb7b0*/
@@ -416,14 +405,12 @@ int SuperClass::Lose()
   }
   return 1; /*0x6cb80c*/
 }
-}
 } // namespace gamemd
 
 // 0x6CB830
 namespace gamemd {
 AbstractClass * * SuperClass::StopPreclickAnim(IUnknown * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD v8[4]; // [esp+8h] [ebp-10h] BYREF
 
@@ -470,14 +457,12 @@ AbstractClass * * SuperClass::StopPreclickAnim(IUnknown * aP1)
     this->SuperClass_field_0x7C = 0; /*0x6cb8ff*/
   return 1; /*0x6cb902*/
 }
-}
 } // namespace gamemd
 
 // 0x6CB920
 namespace gamemd {
 int SuperClass::ClickFire(int a2, short * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 *v6; // eax
   wchar_t *v9; // edi
@@ -658,14 +643,12 @@ LABEL_11:
     SuperClass::RemoveFromPointerArray(v22); /*0x6cbb53*/
   return 1; /*0x6cb9bc*/
 }
-}
 } // namespace gamemd
 
 // 0x6CC080
 namespace gamemd {
 int SuperClass::AnnounceReady(DynamicVector * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char result; // al
 
@@ -732,14 +715,12 @@ int SuperClass::AnnounceReady(DynamicVector * aP1)
   }
   return result; /*0x6cc19b*/
 }
-}
 } // namespace gamemd
 
 // 0x6CC1E0
 namespace gamemd {
 int SuperClass::SetCharge(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   _DWORD *v3; // eax
@@ -766,14 +747,12 @@ int SuperClass::SetCharge(int a2)
   }
   return (char)v3; /*0x6cc251*/
 }
-}
 } // namespace gamemd
 
 // 0x6CC390
 namespace gamemd {
 void SuperClass::Launch(int ecx0, int a2, short * aP3, char a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   SuperClass *v4; // ebx
   AnimClass *v8; // eax
@@ -1965,14 +1944,12 @@ LABEL_180:
   }
 }
 
-}
 } // namespace gamemd
 
 // 0x6CE0B0
 namespace gamemd {
 AbstractClass * * SuperClass::Reset()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int *result; // eax
   _DWORD v12[4]; // [esp+4h] [ebp-10h] BYREF
@@ -2026,7 +2003,6 @@ AbstractClass * * SuperClass::Reset()
     }
   }
   return result; /*0x6ce18b*/
-}
 }
 } // namespace gamemd
 

@@ -6,7 +6,6 @@
 // 0x661EC0
 R RocketLocomotionClass::RocketLocomotionClass()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   CDTimerClass *v2; // ecx
   LocomotionClass::Init((_DWORD *)this); /*0x661ec3*/
@@ -29,7 +28,6 @@ R RocketLocomotionClass::RocketLocomotionClass()
   *(_DWORD *)this = &RocketLocomotionClass::`vftable'; /*0x661f19*/
   this->__pad_004 = &vt_RocketLocomotionClass; /*0x661f1f*/
   return this; /*0x661f28*/
-}
 }
 
 // 0x6633D0

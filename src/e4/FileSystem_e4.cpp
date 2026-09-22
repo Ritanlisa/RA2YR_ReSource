@@ -6,7 +6,6 @@
 // 0x626DA0
 int FileSystem::ProcessNextFileExtension()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int k; // ebp
   int i; // [esp+10h] [ebp-18h]
@@ -146,7 +145,6 @@ LABEL_36:
     }
   }
   return v27; /*0x626eb6*/
-}
 }
 
 // 0x5F76B0

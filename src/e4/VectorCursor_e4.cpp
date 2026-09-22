@@ -6,31 +6,25 @@
 // 0x76F180
 unsigned int * VectorCursor::Release()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ++this->q008; /*0x76f182*/
   return this; /*0x76f185*/
-}
 }
 
 // 0x76F190
 unsigned int * VectorCursor::ddtor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   --this->q008; /*0x76f192*/
   return this; /*0x76f195*/
-}
 }
 
 // 0x4F42D0
 namespace gamemd {
 void VectorCursor_uint_DynamicVectorClass_uint____13::Remove()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   *(this + 3) = 2; /*0x4f42d0*/
-}
 }
 } // namespace gamemd
 
@@ -38,7 +32,6 @@ void VectorCursor_uint_DynamicVectorClass_uint____13::Remove()
 namespace gamemd {
 void VectorCursor_uint_DynamicVectorClass_uint____13::Count(int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( ((unsigned __int8)g_CurrentFrame & 1) == 0 ) /*0x4f4bb7*/
@@ -68,7 +61,6 @@ LABEL_7:
       *(this + 2) = -1 - v5; /*0x4f4bdd*/
     }
   }
-}
 }
 } // namespace gamemd
 

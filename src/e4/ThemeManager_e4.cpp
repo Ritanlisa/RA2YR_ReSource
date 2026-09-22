@@ -7,7 +7,6 @@
 // 0x4080F0
 int ThemeManager::ProcessCallback()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v2 = Audio::Callback(); /*0x4080fa*/
@@ -26,12 +25,10 @@ int ThemeManager::ProcessCallback()
   }
   return v3; /*0x408130*/
 }
-}
 
 // 0x720770
 void ThemeManager::Cleanup()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   while ( this->q009 > 0 ) /*0x720778*/
@@ -59,5 +56,4 @@ void ThemeManager::Cleanup()
     AudioSample::Destructor(*(void **)(this + 44)); /*0x7207d3*/
     *(_DWORD *)(this + 44) = 0; /*0x7207d8*/
   }
-}
 }

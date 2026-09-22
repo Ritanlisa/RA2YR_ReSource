@@ -30,12 +30,10 @@
 namespace gamemd {
 unsigned char * sub_52A9E0(unsigned char * a1, unsigned int * a2, unsigned int * a3, unsigned int * a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _BYTE *result; // eax
   unsigned __int8 v5; // bl
   unsigned __int8 v7; // bl
-
   *a2 = -1; /*0x52a9ec*/
   result = 0; /*0x52a9f2*/
   *a3 = -1; /*0x52a9f4*/
@@ -78,14 +76,12 @@ LABEL_17:
   *a4 &= ((*a4 & 0x80000000) != 0) - 1; /*0x52aa79*/
   return result; /*0x52aa75*/
 }
-}
 } // namespace gamemd
 
 // 0x52B750
 namespace gamemd {
 void System_Search(ObjectClass * aP0, int edx0, int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v5; // edi
   int v3 = edx0; /*0x52b755*/
@@ -110,14 +106,12 @@ LABEL_7:
   }
   return (int)&aP0->__pad_0[8 * (v3 / 2)]; /*0x52b784*/
 }
-}
 } // namespace gamemd
 
 // 0x6269A0
 namespace gamemd {
 void sub_6269A0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   ObjectClass *v0 = g_FileExtensionState; /*0x6269a0*/
@@ -184,14 +178,12 @@ void sub_6269A0()
   (*(void (__thiscall **)(_DWORD))(*(_DWORD *)v0[1] + 12))(v0[1]); /*0x626a99*/
   return (*(int (__thiscall **)(_DWORD))(*g_FileExtensionState->vtable3 + 12))(g_FileExtensionState->vtable3); /*0x626aa9*/
 }
-}
 } // namespace gamemd
 
 // 0x626AB0
 namespace gamemd {
 void sub_626AB0(const char * a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( !g_FileExtensionState ) /*0x626ac5*/
@@ -276,14 +268,12 @@ void sub_626AB0(const char * a1, int a2)
   }
   return v17; /*0x626c57*/
 }
-}
 } // namespace gamemd
 
 // 0x7C8F46
 namespace gamemd {
 int sub_7C8F46()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -293,14 +283,12 @@ int sub_7C8F46()
   __asm { fnclex } /*0x7c8f5a*/
   return result; /*0x7c8f5c*/
 }
-}
 } // namespace gamemd
 
 // 0x7A2EA0
 namespace gamemd {
 void sub_7A2EA0(int (__stdcall ***a1)(unsigned int, void *, int *) a1, int a2, int a3, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int (__stdcall **v4)(_DWORD, void *, int *); // ecx
 
@@ -320,14 +308,12 @@ void sub_7A2EA0(int (__stdcall ***a1)(unsigned int, void *, int *) a1, int a2, i
     (*(void (__stdcall **)(int))(*(_DWORD *)v8 + 8))(v8); /*0x7a2f16*/
   return v5; /*0x7a2f1b*/
 }
-}
 } // namespace gamemd
 
 // 0x68C9C0
 namespace gamemd {
 AbstractClass * * System_Read_68C9C0(BlowStraw * aP0, ObjectClass * a1, ObjectClass * aP3, int a4, int a5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v6; // esi
   IUnknown *v7; // eax
@@ -351,7 +337,6 @@ LABEL_6:
     if ( ++v6 >= *(int *)stru_B05488[88] ) /*0x68ca13*/
       goto LABEL_6; /*0x68ca13*/
   }
-}
 }
 } // namespace gamemd
 

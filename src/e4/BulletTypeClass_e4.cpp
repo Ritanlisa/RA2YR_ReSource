@@ -12,7 +12,6 @@
 // 0x465450
 BuildingTypeClass * * BulletTypeClass::ReadArmor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int i; // edi
@@ -72,12 +71,10 @@ BuildingTypeClass * * BulletTypeClass::ReadArmor()
   }
   return result; /*0x465541*/
 }
-}
 
 // 0x465CC0
 BuildingTypeClass * * BulletTypeClass::ReadTrailerAnim()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int i; // edi
@@ -102,12 +99,10 @@ BuildingTypeClass * * BulletTypeClass::ReadTrailerAnim()
   }
   return result; /*0x465d29*/
 }
-}
 
 // 0x46BBC0
 unsigned char * BulletTypeClass::Construct(ObjectClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   BulletTypeClass *v3; // eax
   ObjectTypeClass::ConstructFull((int)this, (AbstractClass *)aP1); /*0x46bbc9*/
@@ -191,12 +186,10 @@ unsigned char * BulletTypeClass::Construct(ObjectClass * aP1)
   }
   return this; /*0x46bdd9*/
 }
-}
 
 // 0x46BEE0
 WeaponTypeClass * * BulletTypeClass::LoadFromINI(unsigned char *** a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char Bool_Overwrite; // al
   WeaponTypeClass *v22; // eax
@@ -447,12 +440,10 @@ WeaponTypeClass * * BulletTypeClass::LoadFromINI(unsigned char *** a2)
     VoxelAnimType::LoadAnim((char *)this); /*0x46c417*/
   return 1; /*0x46c41c*/
 }
-}
 
 // 0x46C560
 int BulletTypeClass::ProcessPower(int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v3 = AbstractTypeClass::ProcessPower((char *)this, a2); /*0x46c569*/
@@ -504,7 +495,6 @@ int BulletTypeClass::ProcessPower(int * a2)
   LOBYTE(v18) = this->flat; /*0x46c67f*/
   return Power::FlagProcess(a2, v18); /*0x46c68d*/
 }
-}
 
 // 0x46C890
 BulletTypeClass * BulletTypeClass::ddtor(char a2)
@@ -543,7 +533,6 @@ BulletTypeClass * BulletTypeClass::ddtor(char a2)
 // 0x69FC10
 int BulletTypeClass::ProcessImpact(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void **v13; // eax
   char v22; // [esp-4h] [ebp-24h]
@@ -750,7 +739,6 @@ LABEL_32:
       (*(void (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)v15 + 1348))(v15, 0, 0); /*0x69ff47*/
   }
   return (*(int (__stdcall **)(int))(*(_DWORD *)v1 + 16))(v1); /*0x69fd72*/
-}
 }
 
 // 0x46C4F0

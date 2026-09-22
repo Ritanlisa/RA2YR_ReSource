@@ -14,7 +14,6 @@
 namespace gamemd {
 void AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   CCINIClass *v7; // ecx
   CCINIClass *v13; // edi
@@ -331,14 +330,12 @@ LABEL_70:
   }
   return (int)v40; /*0x6f0f66*/
 }
-}
 } // namespace gamemd
 
 // 0x6F8960
 namespace gamemd {
 AbstractClass * * SelectTechnoClassAreaTarget(IUnknown * aP0, IUnknown * aP1, IUnknown * a2, IUnknown * aP3, IUnknown * aP4, IUnknown * aP3a, IUnknown * aP6, int * a7, int a9)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   TechnoClass *v14; // ebp
   char aP1a; // [esp+1Ch] [ebp+Ch]
@@ -440,7 +437,6 @@ LABEL_34:
              (int)&stru_B05488[38408]);
   }
   return v18; /*0x6f89b6*/
-}
 }
 } // namespace gamemd
 

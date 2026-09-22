@@ -6,7 +6,6 @@
 // 0x432AB0
 int BinkMovieHandle::RenderFrameClipped(int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int v13; // edx
@@ -71,12 +70,10 @@ LABEL_18:
   this->throttleCounter = v14; /*0x432bba*/
   return result; /*0x432bbd*/
 }
-}
 
 // 0x433060
 unsigned int * BinkMovieHandle::CopyFrameToSurface()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   DSurface *v2; // edi
   struct tagRECT Rect; // [esp+18h] [ebp-10h] BYREF
@@ -115,7 +112,6 @@ LABEL_6:
     }
   }
   return BinkMovie::BlitToTarget(this, v2); /*0x43316a*/
-}
 }
 
 // 0x432BD0

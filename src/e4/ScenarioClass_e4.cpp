@@ -21,7 +21,6 @@
 namespace gamemd {
 ScenarioClass * * ScenarioClass::CopyStartPositions()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void *result; // eax
 
@@ -70,14 +69,12 @@ ScenarioClass * * ScenarioClass::CopyStartPositions()
   }
   return result; /*0x58bc16*/
 }
-}
 } // namespace gamemd
 
 // 0x5CC330
 namespace gamemd {
 CampaignClass * * ScenarioClass_AnimateConstructionStage()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *FoundationSize; // eax
   int i; // ebp
@@ -209,18 +206,15 @@ LABEL_6:
   }
   return *(_BYTE *)(a1 + 72) == 0; /*0x5cc51b*/
 }
-}
 } // namespace gamemd
 
 // 0x5D6430
 namespace gamemd {
 void ScenarioClass_dispatchEvents()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // Microsoft VisualC 2-14/net runtime
 {
   return Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 9); /*0x69b684*/
-}
 }
 } // namespace gamemd
 
@@ -228,10 +222,8 @@ void ScenarioClass_dispatchEvents()
 namespace gamemd {
 int ScenarioClass::MissionStubReturnZero3()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return this->vt_slot_108();
-}
 }
 } // namespace gamemd
 
@@ -239,7 +231,6 @@ int ScenarioClass::MissionStubReturnZero3()
 namespace gamemd {
 int ScenarioClass::AssignStartPositions(char a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // edi
   void **v5; // [esp+4h] [ebp-18h] BYREF
@@ -265,14 +256,12 @@ int ScenarioClass::AssignStartPositions(char a1)
     __3_YAXPAX_Z(Block); /*0x5d6c5b*/
   return 1; /*0x5d6c4f*/
 }
-}
 } // namespace gamemd
 
 // 0x6832C0
 namespace gamemd {
 TimerStruct * * ScenarioClass::Constructor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   TimerStruct *v2; // eax
   TimerStruct *v3; // ecx
@@ -372,14 +361,12 @@ TimerStruct * * ScenarioClass::Constructor()
   *(_DWORD *)(this + 13466) = 0; /*0x683549*/
   return this; /*0x683533*/
 }
-}
 } // namespace gamemd
 
 // 0x683AB0
 namespace gamemd {
 int ScenarioClass::LoadScenarioAndStart(AnimClass * Source, char a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AnimClass *v3; // ebp
   int Field; // ecx
@@ -513,14 +500,12 @@ LABEL_21:
     ChatMessageWOL(0, &g_TypeClass_DefaultString); /*0x683e8f*/
   return 1; /*0x683d4a*/
 }
-}
 } // namespace gamemd
 
 // 0x683EB0
 namespace gamemd {
 int ScenarioClass::CleanupTemporary()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ScenarioClass *v0; // ecx
   DWORD Ticks; // eax
@@ -556,14 +541,12 @@ int ScenarioClass::CleanupTemporary()
   TacticalMap::Redraw(&DataGlobal_87F7E8); /*0x683f9a*/
   return (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 16))(g_WWMouseClass_Instance);
 }
-}
 } // namespace gamemd
 
 // 0x684180
 namespace gamemd {
 unsigned char * ScenarioClass::ProcessIntroTimer()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _BYTE *result; // eax
 
@@ -595,14 +578,12 @@ unsigned char * ScenarioClass::ProcessIntroTimer()
   }
   return result; /*0x684239*/
 }
-}
 } // namespace gamemd
 
 // 0x686730
 namespace gamemd {
 void ScenarioClass_Construct()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char result; // al
   void **v6; // [esp+1Ch] [ebp-B8h] BYREF
@@ -652,14 +633,12 @@ void ScenarioClass_Construct()
   }
   return result; /*0x686756*/
 }
-}
 } // namespace gamemd
 
 // 0x686B20
 namespace gamemd {
 ScenarioClass * * ScenarioClass_LoadMap()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   CCINIClass *v3; // ebp
   ObjectClass *v5; // eax
@@ -1285,14 +1264,12 @@ LABEL_124:
   HashTable::DestroyHashTableINIClass((void **)var158);
   return 1;
 }
-}
 } // namespace gamemd
 
 // 0x689E90
 namespace gamemd {
 int ScenarioClass::ReadMapINI(CCINIClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void ***v4; // eax
   RandomStruct *v5; // ebx
@@ -2077,7 +2054,6 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
   Multiplayer::ShowProgress(&g_GameMode_Current, 60);
   Event::Dispatch();
   return 1;
-}
 }
 } // namespace gamemd
 

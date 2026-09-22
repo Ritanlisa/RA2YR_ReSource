@@ -5,7 +5,6 @@
 // 0x408E70
 AbstractClass * * Count::DecrementRefCountsAudio()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -23,12 +22,10 @@ AbstractClass * * Count::DecrementRefCountsAudio()
   }
   return result; /*0x408ea1*/
 }
-}
 
 // 0x46F6D0
 int Count::SetupAllCountriesLobby()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   wchar_t **v2; // esi
   int ResourceID2; // ebp
@@ -102,12 +99,10 @@ int Count::SetupAllCountriesLobby()
   while ( (int)v2 < (int)&g_PlayerNameListEnd ); /*0x46f7ff*/
   return result; /*0x46f805*/
 }
-}
 
 // 0x5F1EA0
 int Count::GetCountQueue()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v1 = this->q038; /*0x5f1ea0*/
@@ -116,33 +111,26 @@ int Count::GetCountQueue()
   else
     return 0; /*0x5f1eae*/
 }
-}
 
 // 0x76F080
 int Count::Get()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return this->q004; /*0x76f083*/
-}
 }
 
 // 0x76F160
 unsigned int * Count::Release()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ++this->q008; /*0x76f162*/
   return this; /*0x76f165*/
-}
 }
 
 // 0x76F170
 unsigned int * Count::ddtor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   --this->q008; /*0x76f172*/
   return this; /*0x76f175*/
-}
 }

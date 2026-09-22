@@ -6,7 +6,6 @@
 namespace gamemd {
 CampaignClass * * RadarClass::Destruct()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   *this = &vt_RadarClass; /*0x652c0c*/
@@ -49,14 +48,12 @@ CampaignClass * * RadarClass::Destruct()
   this->q122C = 0; /*0x652cbf*/
   return MapClass::Destruct(this); /*0x652cca*/
 }
-}
 } // namespace gamemd
 
 // 0x654650
 namespace gamemd {
 void RadarClass_RecreateSurface()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   CampaignClass *v3; // eax
   RadarClass *v4; // edi
@@ -130,14 +127,12 @@ void RadarClass_RecreateSurface()
   }
   return (char)v3; /*0x6547b3*/
 }
-}
 } // namespace gamemd
 
 // 0x6A8420
 namespace gamemd {
 int RadarClass::GetBlip(int a1, int a2, int a3, ObjectClass * aP3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   const wchar_t *v14; // eax
   const wchar_t *v15; // ecx
@@ -321,7 +316,6 @@ LABEL_74:
   v14 = *(const wchar_t **)(v16 + 96); /*0x6a86ed*/
   v15 = (const wchar_t *)v25[24]; /*0x6a86f0*/
   return wcscmp(v14, v15) <= 0; /*0x6a8457*/
-}
 }
 } // namespace gamemd
 

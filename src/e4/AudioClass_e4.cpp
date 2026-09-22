@@ -9,7 +9,6 @@
 namespace gamemd {
 BuildingTypeClass * * AudioClass::ProcessEvent()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // eax
   int result; // eax
@@ -81,6 +80,5 @@ BuildingTypeClass * * AudioClass::ProcessEvent()
     result = LayerClass::CellIteratorNext(&DataGlobal_87F7E8); /*0x722a00*/
   }
   return result; /*0x722a11*/
-}
 }
 } // namespace gamemd

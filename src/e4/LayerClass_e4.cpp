@@ -14,7 +14,6 @@
 namespace gamemd {
 int LayerClass::CoordinatesLegal(IUnknown * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v2 = this->q0F4; /*0x568304*/
@@ -22,14 +21,12 @@ int LayerClass::CoordinatesLegal(IUnknown * aP1)
   int v4 = SHIWORD(aP1->field_0); /*0x56830f*/
   return v4 + v3 > v2 && v3 - v4 < v2 && v4 - v3 < v2 && v4 + v3 <= v2 + 2 * this->q0F8; /*0x568337*/
 }
-}
 } // namespace gamemd
 
 // 0x56DC20
 namespace gamemd {
 unsigned int * LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnknown * aP4, IUnknown * aP5, IUnknown * aP6, IUnknown * aP7, IUnknown * aP8, IUnknown * aP9, IUnknown * aP10, IUnknown * aP11, IUnknown * aP12, IUnknown * aP13, IUnknown * aP14, MouseClass * aP15, char a17)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v17; // ebx
   Tactical *v18; // edx
@@ -454,14 +451,12 @@ LABEL_123:
     return &aP2->field_0; /*0x56e780*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x577D90
 namespace gamemd {
 void * LayerClass::Reveal(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   #375 *result; // eax
 
@@ -535,14 +530,12 @@ LABEL_25:
   }
   return result; /*0x577f1e*/
 }
-}
 } // namespace gamemd
 
 // 0x578290
 namespace gamemd {
 int LayerClass::CellIteratorNext()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v1 = this->q114; /*0x578290*/
@@ -581,14 +574,12 @@ int LayerClass::CellIteratorNext()
     return *(_DWORD *)v2; /*0x57833d*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x578350
 namespace gamemd {
 int LayerClass::CellIteratorReset()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -600,14 +591,12 @@ int LayerClass::CellIteratorReset()
   this->q118 = result; /*0x57837c*/
   return result; /*0x578382*/
 }
-}
 } // namespace gamemd
 
 // 0x578460
 namespace gamemd {
 int LayerClass::IsWithinUsableArea(IUnknown * aP1, TechnoClass * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   bool result; // al
 
@@ -637,14 +626,12 @@ int LayerClass::IsWithinUsableArea(IUnknown * aP1, TechnoClass * aP2)
   }
   return result; /*0x578525*/
 }
-}
 } // namespace gamemd
 
 // 0x581140
 namespace gamemd {
 void* LayerClass::DestroyCliff(int * a1, int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   __int16 v7; // di
@@ -671,7 +658,6 @@ void* LayerClass::DestroyCliff(int * a1, int a2, int a3)
   int v104; // [esp+60h] [ebp-Ch] BYREF
   int v105; // [esp+64h] [ebp-8h]
   int v106; // [esp+68h] [ebp-4h]
-
   v94 = a1;
   result = *(_DWORD *)(a3 + 56);
   if ( result == dword_ABC2C8 )
@@ -1154,6 +1140,5 @@ void* LayerClass::DestroyCliff(int * a1, int a2, int a3)
     }
   }
   return result;
-}
 }
 } // namespace gamemd

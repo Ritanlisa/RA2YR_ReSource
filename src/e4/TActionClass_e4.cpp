@@ -16,7 +16,6 @@
 namespace gamemd {
 int TActionClass::executeBuildAction()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char result; // al
 
@@ -34,14 +33,12 @@ int TActionClass::executeBuildAction()
   }
   return result; /*0x4fcddb*/
 }
-}
 } // namespace gamemd
 
 // 0x50D2D0
 namespace gamemd {
 int TActionClass::executeMoveAction(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // ebx
   int result; // eax
@@ -60,18 +57,15 @@ int TActionClass::executeMoveAction(int a2)
   }
   return result; /*0x50d30e*/
 }
-}
 } // namespace gamemd
 
 // 0x50DA00
 namespace gamemd {
 int TActionClass::executeGuardAction(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   this->q54F0 = a2; /*0x50da04*/
   return a2; /*0x50da0a*/
-}
 }
 } // namespace gamemd
 
@@ -79,12 +73,10 @@ int TActionClass::executeGuardAction(int a2)
 namespace gamemd {
 int TActionClass::executeHuntAction(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   this->q54F4 = a2; /*0x50da24*/
   this->q54FC = g_CurrentFrame; /*0x50da30*/
   return a2; /*0x50da36*/
-}
 }
 } // namespace gamemd
 
@@ -92,11 +84,9 @@ int TActionClass::executeHuntAction(int a2)
 namespace gamemd {
 int TActionClass::executeDeployAction(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   this->q5494 = a2; /*0x50dfe4*/
   return a2; /*0x50dfea*/
-}
 }
 } // namespace gamemd
 
@@ -104,7 +94,6 @@ int TActionClass::executeDeployAction(int a2)
 namespace gamemd {
 void sub_567F70(int * a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   __int16 v20; // [esp+14h] [ebp-8h]
@@ -191,14 +180,12 @@ void sub_567F70(int * a1, int a2)
   }
   return result; /*0x568137*/
 }
-}
 } // namespace gamemd
 
 // 0x577C90
 namespace gamemd {
 int TActionClass::executeRepairAction(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int *i; // esi
@@ -237,14 +224,12 @@ LABEL_7:
   FogOfWar::Render((int **)&DataGlobal_87F7E8); /*0x577d79*/
   return this->computeDistanceSquared(2); /*0x577d88*/
 }
-}
 } // namespace gamemd
 
 // 0x578850
 namespace gamemd {
 int TActionClass::executeSellAction()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -254,14 +239,12 @@ int TActionClass::executeSellAction()
   this->q120 = result + this->q0F4 - v2; /*0x578871*/
   return result; /*0x578877*/
 }
-}
 } // namespace gamemd
 
 // 0x6AC5F0
 namespace gamemd {
 unsigned int * TActionClass::executeHarvestAction(int a2, MouseClass * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   InfantryTypeClass *result; // eax
   CCINIClass *v6; // edx
@@ -369,14 +352,12 @@ LABEL_38:
   this->q14E8 = result; /*0x6ac728*/
   return result->vtable0; /*0x6ac670*/
 }
-}
 } // namespace gamemd
 
 // 0x6E0B60
 namespace gamemd {
 AbstractClass * * TActionClass::ConvertHouseUnits(int a2, int _14, unsigned int * a3, IUnknown * aP4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int Field11; // eax
   int i; // edi
@@ -458,14 +439,12 @@ AbstractClass * * TActionClass::ConvertHouseUnits(int a2, int _14, unsigned int 
   }
   return v6; /*0x6e0ba6*/
 }
-}
 } // namespace gamemd
 
 // 0x6E1CC0
 namespace gamemd {
 AnimClass * * TActionClass::executeRetreatAction(AbstractClass * aP1, int a3, int a4, AbstractClass * aP4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void **v5; // eax
   CoordStruct aP2; // [esp+8h] [ebp-Ch] BYREF
@@ -496,14 +475,12 @@ AnimClass * * TActionClass::executeRetreatAction(AbstractClass * aP1, int a3, in
     DataGlobal_00000198 = 1; /*0x6e1da3*/
   return 1; /*0x6e1d9b*/
 }
-}
 } // namespace gamemd
 
 // 0x6E2290
 namespace gamemd {
 AnimClass * * TActionClass::executeEscortAction(int a2, int a3, int a4, IUnknown * aP4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void **v6; // eax
   CoordStruct aP2; // [esp+Ch] [ebp-Ch] BYREF
@@ -534,14 +511,12 @@ AnimClass * * TActionClass::executeEscortAction(int a2, int a3, int a4, IUnknown
     DataGlobal_00000198 = 1; /*0x6e237b*/
   return 1; /*0x6e2371*/
 }
-}
 } // namespace gamemd
 
 // 0x6E2390
 namespace gamemd {
 AbstractClass * * TActionClass::CreateWeaponImpactAtWaypoint(int a2, int a3, int a4, IUnknown * aP4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   CoordStruct *WarheadVersusMultiplier; // esi
   void **v11; // ebp
@@ -589,14 +564,12 @@ AbstractClass * * TActionClass::CreateWeaponImpactAtWaypoint(int a2, int a3, int
     0);
   return 1; /*0x6e2510*/
 }
-}
 } // namespace gamemd
 
 // 0x6E2C40
 namespace gamemd {
 ScenarioClass * * TActionClass::SpawnMeteorShower(AbstractClass * aP1, int a3, int a4, AbstractClass * aP4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int String; // ebp
   AnimClass *v12; // esi
@@ -657,14 +630,12 @@ ScenarioClass * * TActionClass::SpawnMeteorShower(AbstractClass * aP1, int a3, i
   while ( v18 ); /*0x6e2dfa*/
   return 1; /*0x6e2e01*/
 }
-}
 } // namespace gamemd
 
 // 0x6E36E0
 namespace gamemd {
 int TActionClass::executeParadropAction(int a2, int a3, int a4, IUnknown * aP4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void **v10; // eax
   MouseClass *v11; // edi
@@ -719,14 +690,12 @@ int TActionClass::executeParadropAction(int a2, int a3, int a4, IUnknown * aP4)
   while ( v12 ); /*0x6e37da*/
   return 1; /*0x6e37dc*/
 }
-}
 } // namespace gamemd
 
 // 0x6E4150
 namespace gamemd {
 AbstractClass * * TActionClass::executeGeneticMutatorAction(int a2, int a3, int a4, IUnknown * aP4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   AbstractClass *v5 = -1; /*0x6e415d*/
@@ -756,14 +725,12 @@ LABEL_7:
     (MouseClass *)this->idxArray);
   return 1; /*0x6e41c3*/
 }
-}
 } // namespace gamemd
 
 // 0x6E42D0
 namespace gamemd {
 int TActionClass::executeIronCurtainAction(int a2, int a3, int a4, IUnknown * aP4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( !a2 ) /*0x6e42d6*/
@@ -779,14 +746,12 @@ int TActionClass::executeIronCurtainAction(int a2, int a3, int a4, IUnknown * aP
   SuperClass::SetCharge(v6, this->q012); /*0x6e430d*/
   return 1; /*0x6e4314*/
 }
-}
 } // namespace gamemd
 
 // 0x6E4320
 namespace gamemd {
 int TActionClass::executeNukeAction(int a2, int a3, int a4, IUnknown * aP4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( !a2 ) /*0x6e4326*/
@@ -797,14 +762,12 @@ int TActionClass::executeNukeAction(int a2, int a3, int a4, IUnknown * aP4)
   SuperClass::SetRechargeTime(*(_DWORD **)(*(_DWORD *)(a2 + 600) + 4 * v5), this->q012); /*0x6e434b*/
   return 1; /*0x6e4352*/
 }
-}
 } // namespace gamemd
 
 // 0x71E6A0
 namespace gamemd {
 T TActionClass::TActionClass()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x71e6a4*/
@@ -876,7 +839,6 @@ LABEL_11:
   }
   this->TActionClass_field_34 = 0; /*0x71e7f8*/
   return this; /*0x71e7fd*/
-}
 }
 } // namespace gamemd
 

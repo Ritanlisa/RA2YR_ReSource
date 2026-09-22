@@ -5,20 +5,16 @@
 // 0x4E30A0
 int GaugeClass::Stub()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return this->q034; /*0x4e30a3*/
-}
 }
 
 // 0x4E30B0
 int GaugeClass::Draw(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   *(this + 45) = a2 != 0; /*0x4e30b9*/
   return a2 != 0; /*0x4e30bc*/
-}
 }
 
 // 0x4E30D0

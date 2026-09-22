@@ -5,7 +5,6 @@
 // 0x6433D0
 int Progress::GetAverage()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v1 = *(char *)(this + 97); /*0x6433d1*/
@@ -22,16 +21,13 @@ int Progress::GetAverage()
   }
   return v2 / (double)*(char *)(this + 97) / *(double *)(this + 72); /*0x6433f6*/
 }
-}
 
 // 0x643E90
 int Progress::GetWeighted(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   if ( a2 < *((char *)this + 97) ) /*0x643e9a*/
     return *(double *)&this->__pad_0[8 * a2 + 8] / *(double *)&this->field_48; /*0x643ea6*/
   else
     return *(double *)&this->field_48; /*0x643e9c*/
-}
 }

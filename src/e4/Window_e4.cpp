@@ -5,10 +5,8 @@
 // 0x4A5110
 int Window::IsVisible()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return this->q018 && *(this + 25); /*0x4a5120*/
-}
 }
 
 // 0x776D80

@@ -5,7 +5,6 @@
 // 0x69E210
 void MixFileClass::CleanupCache()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   AbstractClass *v0 = DataGlobal_B077B0; /*0x69e213*/
@@ -78,7 +77,6 @@ void MixFileClass::CleanupCache()
     DataGlobal_B077B8 = 0; /*0x69e303*/
     DataGlobal_B077BC = 0; /*0x69e309*/
   }
-}
 }
 
 // 0x69E180

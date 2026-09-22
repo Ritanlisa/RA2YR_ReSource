@@ -6,7 +6,6 @@
 namespace gamemd {
 int ColorScheme::Destructor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void (__thiscall ***v2)(_DWORD, int); // ecx
   int result; // eax
@@ -30,6 +29,5 @@ int ColorScheme::Destructor()
     while ( result < g_AnimClass_SaveState ); /*0x68c953*/
   }
   return result; /*0x68c925*/
-}
 }
 } // namespace gamemd

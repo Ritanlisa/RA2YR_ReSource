@@ -6,7 +6,6 @@
 namespace gamemd {
 int sub_7781B0(short a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   CHAR MultiByteStr; // [esp+0h] [ebp-8h] BYREF
   char v4; // [esp+1h] [ebp-7h]
@@ -24,7 +23,6 @@ int sub_7781B0(short a1)
     v4 = 0; /*0x7781d0*/
   }
   int v1 = MultiByteToWideChar(0, 0, &MultiByteStr, strlen(&MultiByteStr), WideCharStr, 1); /*0x7781f3*/
-  return v1 == 1 ? *(_DWORD *)WideCharStr : 0;
-}
+  return v1 = = 1 ? *(_DWORD *)WideCharStr : 0;
 }
 } // namespace gamemd

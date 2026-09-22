@@ -5,7 +5,6 @@
 // 0x7BB920
 int Draw::Ellipse(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -73,5 +72,4 @@ int Draw::Ellipse(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9
     v13 = a4; /*0x7bb963*/
   }
   return result; /*0x7bba9f*/
-}
 }

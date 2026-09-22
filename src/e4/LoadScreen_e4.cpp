@@ -5,8 +5,6 @@
 // 0x643E60
 int LoadScreen::IsActive()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return this->q064 != 0; /*0x643e6a*/
-}
 }

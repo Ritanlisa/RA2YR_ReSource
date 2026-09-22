@@ -8,7 +8,6 @@
 // 0x48B750
 int ConnectionClass::allocPacketSlot(const void * a2, signed int a3, const void * a4, signed int a5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   bool v6 = this->Active; /*0x48b755*/
@@ -58,12 +57,10 @@ LABEL_9:
   this->q03C = v14; /*0x48b878*/
   return 1; /*0x48b7a2*/
 }
-}
 
 // 0x48BA10
 unsigned int ConnectionClass::initQueue(unsigned int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v4; // eax
   unsigned int result; // eax
@@ -89,12 +86,10 @@ unsigned int ConnectionClass::initQueue(unsigned int a2)
     this->Active = a2; /*0x48ba6a*/
   return result; /*0x48ba6d*/
 }
-}
 
 // 0x48BEE0
 void ConnectionClass::dtor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void (__thiscall ***v3)(_DWORD, int); // ecx
 
@@ -105,12 +100,10 @@ void ConnectionClass::dtor()
   if ( v3 ) /*0x48befb*/
     (**v3)(v3, 1); /*0x48bf01*/
 }
-}
 
 // 0x48BF40
 AbstractClass * * ConnectionClass::sendAck(AnimClass * aP1, AnimClass * aP2, AnimClass * aP3, AnimClass * aP4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   *this->q020 = this->q024; /*0x48bf4b*/
   if ( aP3 ) /*0x48bf54*/
@@ -147,12 +140,10 @@ AbstractClass * * ConnectionClass::sendAck(AnimClass * aP1, AnimClass * aP2, Ani
     ++this->q03C; /*0x48c026*/
   return 1; /*0x48bfc9*/
 }
-}
 
 // 0x48C040
 int ConnectionClass::receivePacket(int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *TileIndex; // eax
   int TileType; // eax
@@ -292,12 +283,10 @@ LABEL_40:
   }
   return 1; /*0x48c059*/
 }
-}
 
 // 0x48C320
 int ConnectionClass::processTileUpdate(void * a2, signed int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int TileType; // eax
   int v7; // ecx
@@ -333,12 +322,10 @@ LABEL_10:
   *a3 = v10; /*0x48c3a5*/
   return 1; /*0x48c364*/
 }
-}
 
 // 0x48C3E0
 int ConnectionClass::serviceSendQueue()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int TileIndex; // eax
 
@@ -431,7 +418,6 @@ int ConnectionClass::serviceSendQueue()
     return 1; /*0x48c57a*/
   Debug::Log(); /*0x48c565*/
   return 0; /*0x48c56f*/
-}
 }
 
 // 0x48C590

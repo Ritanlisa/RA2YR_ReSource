@@ -27,7 +27,6 @@
 namespace gamemd {
 VectorClass * * FindCliffSeedCell(int * a0, IUnknown * aP1, IUnknown * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   VectorClass *v4; // eax
   VectorClass *v5; // ecx
@@ -128,14 +127,12 @@ LABEL_28:
     return a0; /*0x58361a*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x583AD0
 namespace gamemd {
 AbstractClass * * E4Recv_583AD0::sub_583AD0(int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *i; // eax
   IUnknown *TileIndex; // eax
@@ -236,14 +233,12 @@ LABEL_16:
     return v16; /*0x583c23*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x585F40
 namespace gamemd {
 void InterpolateTerrainLighting(int a1, MouseClass * aP1, int a3, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 v8; // si
   __int16 v9; // di
@@ -332,14 +327,12 @@ void InterpolateTerrainLighting(int a1, MouseClass * aP1, int a3, int a4)
     v23 = v24; /*0x586278*/
   return (v23 + v25) >> 1; /*0x586076*/
 }
-}
 } // namespace gamemd
 
 // 0x586BF0
 namespace gamemd {
 int MarkCliffEdgePassability(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   unsigned __int16 v4; // cx
@@ -456,14 +449,12 @@ int MarkCliffEdgePassability(int a1)
   }
   return result; /*0x586e48*/
 }
-}
 } // namespace gamemd
 
 // 0x588570
 namespace gamemd {
 void globalHelper_088570(MouseClass * aP0, VectorClass * aP1, MouseClass * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   MouseClass *v4; // ebp
   int v5; // eax
@@ -560,14 +551,12 @@ LABEL_21:
   }
   return v5; /*0x588744*/
 }
-}
 } // namespace gamemd
 
 // 0x588750
 namespace gamemd {
 void ScanBuildingPlacementCells(MouseClass * aP0, VectorClass * aP1, MouseClass * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   MouseClass *v3; // edi
   int result; // eax
@@ -659,7 +648,6 @@ LABEL_24:
   }
   return result; /*0x58894c*/
 }
-}
 } // namespace gamemd
 
 // 0x588CE0
@@ -679,7 +667,6 @@ void unknown::ddtor()
 // 0x5896A0
 int unknown::Read(unsigned short * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   _WORD *i; // ecx
@@ -695,16 +682,13 @@ int unknown::Read(unsigned short * a2)
   }
   return result; /*0x5896e4*/
 }
-}
 
 // 0x58B670
 namespace gamemd {
 void sub_58B670()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   *(double *)&Buffer[40] = Math::ArcTan((double)(2 * dword_ABED00) / dbl_ABE368); /*0x58b692*/
-}
 }
 } // namespace gamemd
 
@@ -712,13 +696,11 @@ void sub_58B670()
 namespace gamemd {
 int sub_58B6E0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   *(_DWORD *)&Buffer[24] = 0; /*0x58b6e2*/
   *(_DWORD *)&Buffer[28] = 0; /*0x58b6e7*/
   *(_DWORD *)&Buffer[32] = 0; /*0x58b6ec*/
   return 0; /*0x58b6f1*/
-}
 }
 } // namespace gamemd
 
@@ -726,10 +708,8 @@ int sub_58B6E0()
 namespace gamemd {
 int sub_58B7E0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return dword_ABDFD4; /*0x58b7e5*/
-}
 }
 } // namespace gamemd
 
@@ -737,10 +717,8 @@ int sub_58B7E0()
 namespace gamemd {
 int sub_58B7F0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return dword_ABDFD0; /*0x58b7f5*/
-}
 }
 } // namespace gamemd
 
@@ -748,10 +726,8 @@ int sub_58B7F0()
 namespace gamemd {
 int sub_58B800()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return dword_ABEC90; /*0x58b805*/
-}
 }
 } // namespace gamemd
 
@@ -759,10 +735,8 @@ int sub_58B800()
 namespace gamemd {
 int * sub_58B810()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return dword_ABECD0; /*0x58b815*/
-}
 }
 } // namespace gamemd
 
@@ -770,7 +744,6 @@ int * sub_58B810()
 namespace gamemd {
 ScenarioClass * * ComputeMapCameraBounds()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void *result; // eax
   int i; // edi
@@ -882,14 +855,12 @@ ScenarioClass * * ComputeMapCameraBounds()
   }
   return result; /*0x58baef*/
 }
-}
 } // namespace gamemd
 
 // 0x58EBC0
 namespace gamemd {
 AbstractClass * * BuildRandomMapTiles()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // esi
   int result; // eax
@@ -1045,14 +1016,12 @@ LABEL_32:
   }
   return result; /*0x58ee90*/
 }
-}
 } // namespace gamemd
 
 // 0x58EF10
 namespace gamemd {
 AbstractClass * * sub_58EF10()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // eax
   int Terrain; // eax
@@ -1165,7 +1134,6 @@ AbstractClass * * sub_58EF10()
   }
   return 1; /*0x58f0ac*/
 }
-}
 } // namespace gamemd
 
 // 0x585EE0
@@ -1250,7 +1218,6 @@ unsigned int unknown::Write(int a2)
 // 0x588D30
 int unknown::Seek(int a2, int a3)
  {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v3 = this->m_Position + 16 * a3; /*0x588d3a*/
@@ -1259,7 +1226,6 @@ int unknown::Seek(int a2, int a3)
   *(_BYTE *)(a2 + 8) = *(_BYTE *)(v3 + 8); /*0x588d4d*/
   *(_DWORD *)(a2 + 12) = *(_DWORD *)(v3 + 12); /*0x588d53*/
   return a2; /*0x588d56*/
-}
 }
 
 // 0x58B110

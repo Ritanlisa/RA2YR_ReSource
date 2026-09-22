@@ -7,7 +7,6 @@
 // 0x720B20
 int Theme::QueueSong(IUnknown * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int IsSoundEnabled; // eax
 
@@ -45,12 +44,10 @@ int Theme::QueueSong(IUnknown * aP1)
   }
   return IsSoundEnabled; /*0x720ba2*/
 }
-}
 
 // 0x720EA0
 int Theme::Stop(ObjectClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int IsSoundEnabled; // eax
 
@@ -94,12 +91,10 @@ LABEL_14:
   }
   return IsSoundEnabled; /*0x720f5f*/
 }
-}
 
 // 0x720FD0
 int Theme::IsPlaying()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   if ( !this->audioSample ) /*0x720fd3*/
     return 0; /*0x721002*/
@@ -109,5 +104,4 @@ int Theme::IsPlaying()
       Audio::Release(this->audioSample); /*0x720fed*/
   }
   return Audio::IsSoundPlaying(this->audioSample) != 0; /*0x720ffe*/
-}
 }

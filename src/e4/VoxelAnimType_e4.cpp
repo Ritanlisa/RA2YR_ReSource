@@ -10,7 +10,6 @@
 namespace gamemd {
 AbstractClass * * VoxelAnimType::LoadSection(const char * a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _BYTE v16[12]; // [esp+6Ch] [ebp-284h] BYREF
   int v17; // [esp+78h] [ebp-278h]
@@ -116,14 +115,12 @@ AbstractClass * * VoxelAnimType::LoadSection(const char * a2, int a3)
   BufferIOFileClass::Dtor(v15); /*0x5f7d99*/
   return 0; /*0x5f7cf6*/
 }
-}
 } // namespace gamemd
 
 // 0x5F7DB0
 namespace gamemd {
 AbstractClass * * VoxelAnimType::LoadBarrel(const char * a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _BYTE v13[12]; // [esp+6Ch] [ebp-284h] BYREF
   int v14; // [esp+78h] [ebp-278h]
@@ -217,14 +214,12 @@ AbstractClass * * VoxelAnimType::LoadBarrel(const char * a2, int a3)
     return 1; /*0x5f7e6d*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x5F8110
 namespace gamemd {
 int VoxelAnimType::LoadAnim()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   WaveClass *v3; // edi
   _DWORD *FileVXL; // eax
@@ -665,6 +660,5 @@ LABEL_146:
   Vector::Clear((int)v59); /*0x5f8cb4*/
   v58[0] = &off_7E1668; /*0x5f8cc0*/
   return BufferIOFileClass::Dtor(v58); /*0x5f8cd0*/
-}
 }
 } // namespace gamemd

@@ -12,7 +12,6 @@
 namespace gamemd {
 int FactoryClass::UpdateProduction()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int Speed; // eax
   wchar_t *v9; // eax
@@ -92,14 +91,12 @@ int FactoryClass::UpdateProduction()
   }
   return Speed; /*0x4c9bbe*/
 }
-}
 } // namespace gamemd
 
 // 0x4C9C60
 namespace gamemd {
 int FactoryClass::HasProgressChanged()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char result; // al
 
@@ -107,14 +104,12 @@ int FactoryClass::HasProgressChanged()
   this->q174 = 0; /*0x4c9c63*/
   return result; /*0x4c9c67*/
 }
-}
 } // namespace gamemd
 
 // 0x4C9C70
 namespace gamemd {
 int FactoryClass::DemandProduction(int a2, void * a3, char a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( (*(int (__thiscall **)(int))(*(_DWORD *)a2 + 44))(a2) == 7 ) /*0x4c9c85*/
@@ -181,14 +176,12 @@ int FactoryClass::DemandProduction(int a2, void * a3, char a4)
     return 1; /*0x4c9d32*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x4C9E10
 namespace gamemd {
 int FactoryClass::SetObject(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   FactoryClass::AbandonProduction(this); /*0x4c9e16*/
@@ -206,14 +199,12 @@ int FactoryClass::SetObject(int a2)
   this->isSuspended = 1; /*0x4c9e53*/
   return 1; /*0x4c9e56*/
 }
-}
 } // namespace gamemd
 
 // 0x4C9E60
 namespace gamemd {
 int FactoryClass::StartProduction(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   wchar_t *v2; // eax
   if ( this->isSuspended ) /*0x4c9e60*/
@@ -228,14 +219,12 @@ int FactoryClass::StartProduction(char a2)
   this->queuedCount = 0; /*0x4c9e8e*/
   return 1; /*0x4c9e92*/
 }
-}
 } // namespace gamemd
 
 // 0x4C9FB0
 namespace gamemd {
 int FactoryClass::GetBuildTimeFrames()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -251,14 +240,12 @@ int FactoryClass::GetBuildTimeFrames()
     return 255; /*0x4c9fe5*/
   return result; /*0x4c9fdd*/
 }
-}
 } // namespace gamemd
 
 // 0x4CA270
 namespace gamemd {
 int FactoryClass::LoadFromStream(int a1, int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -331,14 +318,12 @@ LABEL_14:
   }
   return result; /*0x4ca3b0*/
 }
-}
 } // namespace gamemd
 
 // 0x4CA430
 namespace gamemd {
 AbstractClass * * FactoryClass::Stat(int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   Debug::Log(); /*0x4ca43f*/
@@ -374,14 +359,12 @@ AbstractClass * * FactoryClass::Stat(int * a2)
   int v7 = (*(int (__stdcall **)(int))(*(_DWORD *)(this->owner + 4) + 16))(this->owner + 4); /*0x4ca563*/
   return Power::TimerProcess(v7); /*0x4ca56e*/
 }
-}
 } // namespace gamemd
 
 // 0x4CA580
 namespace gamemd {
 int FactoryClass::Revert(int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -390,14 +373,12 @@ int FactoryClass::Revert(int a2, int a3)
     this->q058 = 0; /*0x4ca58b*/
   return result; /*0x4ca592*/
 }
-}
 } // namespace gamemd
 
 // 0x4CA5A0
 namespace gamemd {
 int FactoryClass::StartProduction_2()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v2 = this->q050; /*0x4ca5a4*/
@@ -434,14 +415,12 @@ int FactoryClass::StartProduction_2()
   }
   return v2; /*0x4ca60f*/
 }
-}
 } // namespace gamemd
 
 // 0x4CA670
 namespace gamemd {
 int FactoryClass::CountType(IUnknown * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown **v6; // esi
 
@@ -464,14 +443,12 @@ int FactoryClass::CountType(IUnknown * aP1)
   }
   return v3; /*0x4ca6aa*/
 }
-}
 } // namespace gamemd
 
 // 0x4CA6B0
 namespace gamemd {
 int FactoryClass::IsQueued(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *i; // ecx
 
@@ -486,14 +463,12 @@ int FactoryClass::IsQueued(int a2)
   }
   return 1; /*0x4ca6cf*/
 }
-}
 } // namespace gamemd
 
 // 0x4CA770
 namespace gamemd {
 void * FactoryClass::CopyTo(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void **v7; // [esp+4h] [ebp-4h] BYREF
 
@@ -540,14 +515,12 @@ void * FactoryClass::CopyTo(char a2)
     __3_YAXPAX_Z(this); /*0x4ca877*/
   return (FactoryClass *)this; /*0x4ca881*/
 }
-}
 } // namespace gamemd
 
 // 0x635060
 namespace gamemd {
 int FactoryClass::FinishProduction(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( *(_BYTE *)(a2 + 12) ) /*0x63506c*/
@@ -593,7 +566,6 @@ int FactoryClass::FinishProduction(int a2)
   }
   *(_DWORD *)(a2 + 8) = -1; /*0x63510e*/
   return v4; /*0x635111*/
-}
 }
 } // namespace gamemd
 

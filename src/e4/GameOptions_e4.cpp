@@ -6,7 +6,6 @@
 namespace gamemd {
 void sub_682780(int a1, int a2, wchar_t * String)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _UNKNOWN **v5; // ecx
   size_t v7; // eax
@@ -60,14 +59,12 @@ LABEL_18:
   }
   return v6; /*0x6827d6*/
 }
-}
 } // namespace gamemd
 
 // 0x6829A0
 namespace gamemd {
 void sub_6829A0(int * a1, int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 v8[4]; // [esp+38h] [ebp-10h] BYREF
 
@@ -107,6 +104,5 @@ LABEL_6:
     return v4; /*0x682a0f*/
   }
   return v4; /*0x682a0b*/
-}
 }
 } // namespace gamemd

@@ -20,7 +20,6 @@
 namespace gamemd {
 void PlaceCabhutMap(FootClass * aP0)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   FootClass *v1; // ebp
   int v3; // edi
@@ -75,14 +74,12 @@ LABEL_7:
   (*(void (__thiscall **)(BuildingClass *, _DWORD *, _DWORD))(v13 + 216))(v11, v14, 0); /*0x5905b2*/
   return 1; /*0x59052b*/
 }
-}
 } // namespace gamemd
 
 // 0x594190
 namespace gamemd {
 void sub_594190(int * a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   __int16 v15[2]; // [esp+10h] [ebp-4h] BYREF
@@ -169,14 +166,12 @@ LABEL_19:
   }
   return result; /*0x5942df*/
 }
-}
 } // namespace gamemd
 
 // 0x594420
 namespace gamemd {
 void FloodFillRandomMapTerrain(int a1, IUnknown * a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ObjectClass *v5; // ebx
   void *nextObject; // eax
@@ -305,14 +300,12 @@ void FloodFillRandomMapTerrain(int a1, IUnknown * a2, int a3)
       __3_YAXPAX_Z(Block); /*0x5946e8*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x594B50
 namespace gamemd {
 ObjectClass * * RandomMap_DistributeTerrain()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // esi
   int j; // edi
@@ -470,14 +463,12 @@ ObjectClass * * RandomMap_DistributeTerrain()
     __3_YAXPAX_Z(Block); /*0x594f28*/
   return 1; /*0x594f03*/
 }
-}
 } // namespace gamemd
 
 // 0x595CE0
 namespace gamemd {
 AbstractTypeClass * * CleanupRandomMapCache()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   struct _WIN32_FIND_DATAA *i; // esi
   HANDLE FirstFileA; // edi
@@ -631,14 +622,12 @@ LABEL_37:
       __3_YAXPAX_Z(v7); /*0x595f9c*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x595FB0
 namespace gamemd {
 unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)() a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND *v11; // eax
   int v17[9]; // [esp+20h] [ebp-250h] BYREF
@@ -756,14 +745,12 @@ LABEL_39:
   v15[0] = &vt_rc_ptr_WDTTerritory; /*0x5962e8*/
   return ComPtr::Release(v15); /*0x5962f5*/
 }
-}
 } // namespace gamemd
 
 // 0x59A8F0
 namespace gamemd {
 AbstractClass * * ArrangeBuildingPlacementGrid(int a1, int a2, MapResourceClass * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v5; // ebx
   int v6; // esi
@@ -970,14 +957,12 @@ AbstractClass * * ArrangeBuildingPlacementGrid(int a1, int a2, MapResourceClass 
       __3_YAXPAX_Z(v44); /*0x59acfd*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x59C630
 namespace gamemd {
 int sub_59C630()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int i; // esi
@@ -1043,7 +1028,6 @@ LABEL_25:
     result = LayerClass::CellIteratorNext(&DataGlobal_87F7E8); /*0x59c7e2*/
   }
   return result; /*0x59c7f3*/
-}
 }
 } // namespace gamemd
 

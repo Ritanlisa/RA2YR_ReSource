@@ -5,7 +5,6 @@
 // 0x5B9750
 int NetworkGameSetup::ReadRulesUnknown()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND result; // eax
 
@@ -17,7 +16,6 @@ int NetworkGameSetup::ReadRulesUnknown()
     *(_BYTE *)(this + 9) = 1; /*0x5b977a*/
   }
   return result; /*0x5b977e*/
-}
 }
 
 // 0x5BA970

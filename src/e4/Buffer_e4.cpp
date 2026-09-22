@@ -6,7 +6,6 @@
 // 0x7BCB50
 void * Buffer::FillCircularBufferScroll2(int a2, MouseClass * aP2, unsigned short a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char *result; // eax
   unsigned __int16 *v28; // edi
@@ -241,12 +240,10 @@ LABEL_60:
   }
   return result; /*0x7bcece*/
 }
-}
 
 // 0x7C1730
 int Buffer::AllocateCodecFrameBuffers()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v28; // [esp+28h] [ebp-8h] BYREF
@@ -340,7 +337,6 @@ LABEL_16:
     }
   }
   return -8; /*0x7c174d*/
-}
 }
 
 // 0x43AD00

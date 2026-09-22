@@ -9,7 +9,6 @@
 namespace gamemd {
 void SaveScenarioClassGame_AdjustMPSaveFileName(LPCCH lpMultiByteStr, wchar_t * Source, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IStorage *ppstgOpen; // [esp+50h] [ebp-490h] BYREF
   LPSTREAM pStm; // [esp+5Ch] [ebp-484h] BYREF
@@ -128,6 +127,5 @@ LABEL_9:
   if ( ppstgOpen ) /*0x67d2e9*/
     ppstgOpen->lpVtbl->Release(ppstgOpen); /*0x67d2ee*/
   return v7; /*0x67cf57*/
-}
 }
 } // namespace gamemd

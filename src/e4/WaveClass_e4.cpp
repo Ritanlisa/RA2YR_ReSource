@@ -7,7 +7,6 @@
 namespace gamemd {
 int WaveClass::LoadWaveData(int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int Register; // ebp
 
@@ -75,7 +74,6 @@ LABEL_17:
     }
   }
   return Register; /*0x75f7ba*/
-}
 }
 } // namespace gamemd
 

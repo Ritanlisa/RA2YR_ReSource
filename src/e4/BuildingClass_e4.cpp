@@ -8,7 +8,6 @@
 namespace gamemd {
 void* BuildingClass::LoadFromStream()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   size_t v3; // eax
   size_t i; // eax
@@ -185,14 +184,12 @@ LABEL_36:
   }
   return result; /*0x45417e*/
 }
-}
 } // namespace gamemd
 
 // 0x455D50
 namespace gamemd {
 int BuildingClass::AssignDestination_SyncLog()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   IUnknown *aP1; // [esp+8h] [ebp+4h]
@@ -209,14 +206,12 @@ int BuildingClass::AssignDestination_SyncLog()
   }
   return result; /*0x455d93*/
 }
-}
 } // namespace gamemd
 
 // 0x4DFCB0
 namespace gamemd {
 int BuildingClass::FindClosestForRepair(unsigned int * a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   _DWORD * v12 = 0; /*0x4dfcbf*/
@@ -265,14 +260,12 @@ LABEL_10:
     return 0; /*0x4dfdb0*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x4DFE00
 namespace gamemd {
 int BuildingClass::FindClosestForRepair2(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v1 = g_BuildingProductionState - 1; /*0x4dfe0f*/
@@ -325,14 +318,12 @@ LABEL_10:
     return 0; /*0x4dfef6*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x629720
 namespace gamemd {
 int BuildingClass::AnimController()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned int *Value; // eax
   int v5; // ebx
@@ -380,14 +371,12 @@ LABEL_8:
   }
   return 0; /*0x62978a*/
 }
-}
 } // namespace gamemd
 
 // 0x70BF50
 namespace gamemd {
 int BuildingClass::AllocAndCtor(BuildingClass * aP0, int aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   MouseClass *v3; // edi
@@ -512,14 +501,12 @@ int BuildingClass::AllocAndCtor(BuildingClass * aP0, int aP2)
   }
   return result; /*0x70c249*/
 }
-}
 } // namespace gamemd
 
 // 0x712130
 namespace gamemd {
 int BuildingClass::processCapture()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char result; // al
 
@@ -532,16 +519,13 @@ int BuildingClass::processCapture()
     return 0; /*0x712161*/
   return result; /*0x712163*/
 }
-}
 } // namespace gamemd
 
 // 0x739EC0
 namespace gamemd {
 void* BuildingClass_ProcessSell()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // (no pseudocode — ASM-only function)
-}
 } // namespace gamemd
 
 // 0x451690

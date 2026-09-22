@@ -19,7 +19,6 @@
 namespace gamemd {
 int Object::FindClosestObjectCell(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v6; // ecx
   IUnknown *v7; // esi
@@ -55,14 +54,12 @@ int Object::FindClosestObjectCell(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3
   while ( v7 ); /*0x47c4ac*/
   return v12; /*0x47c4b6*/
 }
-}
 } // namespace gamemd
 
 // 0x47C5A0
 namespace gamemd {
 int Object::FindObjectCell(TechnoClass * aP1, char aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *v4; // esi
   int result; // eax
@@ -103,14 +100,12 @@ LABEL_5:
   }
   return result; /*0x47c609*/
 }
-}
 } // namespace gamemd
 
 // 0x4F9A90
 namespace gamemd {
 int Object::IsAlliedWithObjectHouse(IUnknown * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( !aP1 ) /*0x4f9a99*/
@@ -125,14 +120,12 @@ int Object::IsAlliedWithObjectHouse(IUnknown * aP1)
     return 1; /*0x4f9abb*/
   return v5 != -1 && (*(this + 5602) & (1 << v5)) != 0; /*0x4f9ad5*/
 }
-}
 } // namespace gamemd
 
 // 0x4F9AF0
 namespace gamemd {
 int Object::IsAlliedWithObjectSimpleHouse(unsigned char * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( !a2 ) /*0x4f9af9*/
@@ -149,14 +142,12 @@ int Object::IsAlliedWithObjectSimpleHouse(unsigned char * a2)
     return 1; /*0x4f9b21*/
   return v5 != -1 && (*(this + 5602) & (1 << v5)) != 0; /*0x4f9b3b*/
 }
-}
 } // namespace gamemd
 
 // 0x56C210
 namespace gamemd {
 unsigned int * Object::FindNearestObjectAtCell(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 v6; // ax
   __int16 v7; // cx
@@ -256,14 +247,12 @@ LABEL_20:
   }
   return result; /*0x56c4de*/
 }
-}
 } // namespace gamemd
 
 // 0x5902C0
 namespace gamemd {
 void sub_5902C0(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 v2; // ax
   IUnknown *v1 = (int *)a1; /*0x5902c4*/
@@ -335,17 +324,14 @@ LABEL_24:
   }
   return 0; /*0x590492*/
 }
-}
 } // namespace gamemd
 
 // 0x5FC380
 namespace gamemd {
 void * Object::SpawnAtCell(IUnknown * aP1, IUnknown * aP2, BuildingTypeClass * aP3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v5; // eax
-
   ObjectClass::ctor(this); /*0x5fc386*/
   v5 = aP1; /*0x5fc38b*/
   *(_DWORD *)this = &OverlayClass::`vftable'; /*0x5fc38f*/
@@ -378,14 +364,12 @@ void * Object::SpawnAtCell(IUnknown * aP1, IUnknown * aP2, BuildingTypeClass * a
   }
   return (OverlayClass *)this; /*0x5fc4c2*/
 }
-}
 } // namespace gamemd
 
 // 0x5FD970
 namespace gamemd {
 void* Object::HandleAction(int * a2, int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int GroundHeight; // eax
   BuildingTypeClass *v8; // edx
@@ -553,17 +537,14 @@ LABEL_20:
       0);
   }
 }
-}
 } // namespace gamemd
 
 // 0x5FDDE0
 namespace gamemd {
 int Object::ProcessEvent()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return this->q0AC; /*0x5fdde6*/
-}
 }
 } // namespace gamemd
 
@@ -571,7 +552,6 @@ int Object::ProcessEvent()
 namespace gamemd {
 void * Object::DrawObject(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void **v5; // [esp+4h] [ebp-4h] BYREF
 
@@ -599,14 +579,12 @@ void * Object::DrawObject(char a2)
     __3_YAXPAX_Z(this); /*0x5fe008*/
   return (OverlayClass *)this; /*0x5fe012*/
 }
-}
 } // namespace gamemd
 
 // 0x62AC30
 namespace gamemd {
 void* * Object::CalculateObjectPlacementPosition(int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int *result; // eax
   IUnknown *v4; // edx
@@ -741,14 +719,12 @@ LABEL_34:
   a2[2] = v29; /*0x62ad11*/
   return a2; /*0x62ad00*/
 }
-}
 } // namespace gamemd
 
 // 0x639E30
 namespace gamemd {
 void sub_639E30(int * a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v9; // ebp
   int v10; // edi
@@ -763,7 +739,6 @@ void sub_639E30(int * a1, unsigned int * a2)
   _DWORD **j; // ecx
   int v21; // [esp+10h] [ebp-4h]
   int v22; // [esp+10h] [ebp-4h]
-
   if ( !a1 && !a2 ) /*0x639e3d*/
     return 1; /*0x639e46*/
   int v4 = 0; /*0x639e47*/
@@ -845,17 +820,14 @@ LABEL_28:
   }
   return v19 != -1; /*0x639f49*/
 }
-}
 } // namespace gamemd
 
 // 0x646E90
 namespace gamemd {
 char Object_Init(char a1, int a2, int a3, char a4, int a5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v5; // eax
-
   v5 = ScriptAction::InitActionFields( /*0x646ef0*/
   char v7[112]; // [esp+8h] [ebp-70h] BYREF
          v7,
@@ -877,14 +849,12 @@ char Object_Init(char a1, int a2, int a3, char a4, int a5)
   Networking_NextPacketIndex = ((_BYTE)Networking_NextPacketIndex + 1) & 0x7F; /*0x646f48*/
   return 1; /*0x646f50*/
 }
-}
 } // namespace gamemd
 
 // 0x7DEEFA
 namespace gamemd {
 void Object_Calc(MouseClass * aP0, unsigned short * a1, int a3, int a4, int a5, int a6)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   MouseClass *v6; // esi
   int v9; // eax
@@ -936,14 +906,12 @@ void Object_Calc(MouseClass * aP0, unsigned short * a1, int a3, int a4, int a5, 
   while ( a6 );
   return v9; /*0x7defd4*/
 }
-}
 } // namespace gamemd
 
 // 0x7DEFD7
 namespace gamemd {
 void Object_Calc_7DEFD7(MouseClass * aP0, unsigned short * a1, int a3, int a4, int a5, int a6)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   MouseClass *v6; // esi
   int v9; // eax
@@ -995,14 +963,12 @@ void Object_Calc_7DEFD7(MouseClass * aP0, unsigned short * a1, int a3, int a4, i
   while ( a6 );
   return v9; /*0x7df0b1*/
 }
-}
 } // namespace gamemd
 
 // 0x7DF0B4
 namespace gamemd {
 void Object_Calc_7DF0B4(MouseClass * aP0, unsigned short * a1, int a3, int a4, int a5, int a6)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   MouseClass *v6; // esi
   int v9; // eax
@@ -1054,14 +1020,12 @@ void Object_Calc_7DF0B4(MouseClass * aP0, unsigned short * a1, int a3, int a4, i
   while ( a6 );
   return v9; /*0x7df18e*/
 }
-}
 } // namespace gamemd
 
 // 0x7DF191
 namespace gamemd {
 void Object_Calc_7DF191(MouseClass * aP0, unsigned short * a1, int a3, int a4, int a5, int a6)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   MouseClass *v6; // esi
   int v9; // eax
@@ -1113,14 +1077,12 @@ void Object_Calc_7DF191(MouseClass * aP0, unsigned short * a1, int a3, int a4, i
   while ( a6 );
   return v9; /*0x7df26b*/
 }
-}
 } // namespace gamemd
 
 // 0x7DF280
 namespace gamemd {
 void Object_Calc_7DF280(MouseClass * aP0, unsigned char * a1, unsigned short * a2, int a4, int a5, int a6, int a7, int a8)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __m64 mm0_0; // mm0
   MouseClass *v8; // esi
@@ -1188,14 +1150,12 @@ LABEL_9:
   _m_empty(); /*0x7df3b9*/
   return v12; /*0x7df3bf*/
 }
-}
 } // namespace gamemd
 
 // 0x7DF3C2
 namespace gamemd {
 void Object_Calc_7DF3C2(MouseClass * aP0, unsigned char * a1, unsigned short * a2, int a4, int a5, int a6, int a7, int a8)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __m64 mm0_0; // mm0
   MouseClass *v8; // esi
@@ -1263,14 +1223,12 @@ LABEL_9:
   _m_empty(); /*0x7df4f7*/
   return v12; /*0x7df4fd*/
 }
-}
 } // namespace gamemd
 
 // 0x7DF500
 namespace gamemd {
 void Object_Calc_7DF500(MouseClass * aP0, unsigned char * a1, unsigned short * a2, int a4, int a5, int a6, int a7, int a8)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __m64 mm0_0; // mm0
   MouseClass *v8; // esi
@@ -1338,14 +1296,12 @@ LABEL_9:
   _m_empty(); /*0x7df637*/
   return v12; /*0x7df63d*/
 }
-}
 } // namespace gamemd
 
 // 0x7DF640
 namespace gamemd {
 void Object_Calc_7DF640(MouseClass * aP0, unsigned char * a1, unsigned short * a2, int a4, int a5, int a6, int a7, int a8)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __m64 mm0_0; // mm0
   MouseClass *v8; // esi
@@ -1413,14 +1369,12 @@ LABEL_9:
   _m_empty(); /*0x7df778*/
   return v12; /*0x7df77e*/
 }
-}
 } // namespace gamemd
 
 // 0x5A7E90
 namespace gamemd {
 void sub_5A7E90(int a1, unsigned short * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int i; // esi
@@ -1472,17 +1426,14 @@ void sub_5A7E90(int a1, unsigned short * a2)
   }
   return result; /*0x5a7f8d*/
 }
-}
 } // namespace gamemd
 
 // 0x710890
 namespace gamemd {
 void sub_710890(int a1, int a2, int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v5; // edi
-
   int v3 = a2; /*0x710895*/
   if ( a2 <= 0 ) /*0x710897*/
     return 0; /*0x7108c9*/
@@ -1504,7 +1455,6 @@ LABEL_7:
     goto LABEL_7; /*0x7108be*/
   }
   return a1 + 8 * (v3 / 2); /*0x7108c4*/
-}
 }
 } // namespace gamemd
 

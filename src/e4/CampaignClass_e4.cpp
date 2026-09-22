@@ -8,7 +8,6 @@
 namespace gamemd {
 C CampaignClass::CampaignClass(ObjectClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   AbstractTypeClass::Constructor(this, (AbstractClass *)aP1); /*0x46cb68*/
@@ -33,14 +32,12 @@ C CampaignClass::CampaignClass(ObjectClass * aP1)
   wcscpy((wchar_t *)(this + 672), (const wchar_t *)&DataGlobal_87F8E4[32336]); /*0x46cbfe*/
   return this; /*0x46cc08*/
 }
-}
 } // namespace gamemd
 
 // 0x46CE10
 namespace gamemd {
 int CampaignClass::LoadFromINIList()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   CCINIClass *v3; // ebp
@@ -109,14 +106,12 @@ LABEL_7:
   }
   return result; /*0x46cf75*/
 }
-}
 } // namespace gamemd
 
 // 0x49C5A0
 namespace gamemd {
 AbstractClass * * CampaignClass::SaveProgress()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned __int8 v10; // al
   char i; // al
@@ -291,7 +286,6 @@ LABEL_47:
   BufferIOFileClass::Dtor(v36); /*0x49cacc*/
   this->q06C = 1; /*0x49cad2*/
   return 1; /*0x49c618*/
-}
 }
 } // namespace gamemd
 

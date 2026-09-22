@@ -7,7 +7,6 @@
 namespace gamemd {
 void SetupMultiplayerLobbyScreen_Setup(SkirmishDialog * hDlg, char * a2, int nIDDlgItem)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   LRESULT v7; // eax
   CoordStruct *v8; // eax
@@ -96,6 +95,5 @@ void SetupMultiplayerLobbyScreen_Setup(SkirmishDialog * hDlg, char * a2, int nID
   UpdateMultiplayerLobbySlots((HWND)hDlg, v3, nIDDlgItem); /*0x5ec00d*/
   RetVtableStubZero_eax_27(); /*0x5ec012*/
   return CheckGameSettingsChanged(1, 0); /*0x5ec020*/
-}
 }
 } // namespace gamemd

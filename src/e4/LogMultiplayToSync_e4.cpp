@@ -10,7 +10,6 @@
 namespace gamemd {
 CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct *a1@<ecx> a1, unsigned char *a2@<edx> a2, CellStruct *a3@<ebp> a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   INIClass *v3; // edx
   ObjectClass *v4; // ebx
@@ -360,6 +359,5 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct *a1@<ecx> a1, un
     GetLastError(); /*0x651764*/
     Debug::Log(); /*0x651770*/
   }
-}
 }
 } // namespace gamemd

@@ -13,7 +13,6 @@
 namespace gamemd {
 void ** HouseClass::PsiWarn(InfantryClass * aP0, int a2, int arg0, void * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   Coord *v6; // edi
   void **v7; // eax
@@ -32,14 +31,12 @@ void ** HouseClass::PsiWarn(InfantryClass * aP0, int a2, int arg0, void * a3)
   v9->__pad_194[9] = 1; /*0x43b661*/
   return (void **)v9; /*0x43b66a*/
 }
-}
 } // namespace gamemd
 
 // 0x459840
 namespace gamemd {
 int HouseClass::GetRepairStepAmount()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -57,14 +54,12 @@ int HouseClass::GetRepairStepAmount()
   }
   return result; /*0x45986a*/
 }
-}
 } // namespace gamemd
 
 // 0x4ADEE0
 namespace gamemd {
 void HouseClass::ResetObjectOrders(char a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v2 = g_SidebarState; /*0x4adee1*/
@@ -107,14 +102,12 @@ LABEL_15:
     goto LABEL_16; /*0x4adfd9*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x4ADFF0
 namespace gamemd {
 int HouseClass::RevealShroudForAllies(char a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int i; // ebp
@@ -144,14 +137,12 @@ int HouseClass::RevealShroudForAllies(char a1, int a2)
   }
   return result; /*0x4ae0a4*/
 }
-}
 } // namespace gamemd
 
 // 0x4F54A0
 namespace gamemd {
 void HouseClass::Construct(CCINIClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // (v3 export truncated pseudocode — commented out; live version via get_context)
 // int __thiscall HouseClass::Construct(int this, CCINIClass *aP1)
 // {
@@ -206,13 +197,11 @@ void HouseClass::Construct(CCINIClass * aP1)
 //   int v51; //... [33044 chars total]
 // end truncated pseudocode
 }
-} // namespace gamemd
 
 // 0x4F9A50
 namespace gamemd {
 int HouseClass::IsAlliedWith(IUnknown * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *result; // eax
 
@@ -237,14 +226,12 @@ LABEL_8:
     LOBYTE(result) = ((1 << v3) & *(_DWORD *)&result->__pad_5778[16]) != 0; /*0x4f9a84*/
   return (int)result; /*0x4f9a60*/
 }
-}
 } // namespace gamemd
 
 // 0x4FBE40
 namespace gamemd {
 int HouseClass::IsCellOccupied(IUnknown * aP1, char a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v9; // [esp+Ch] [ebp-10h] BYREF
   IUnknown *aP1a; // [esp+20h] [ebp+4h]
@@ -283,14 +270,12 @@ LABEL_10:
   }
   return v4; /*0x4fbf43*/
 }
-}
 } // namespace gamemd
 
 // 0x4FC790
 namespace gamemd {
 int HouseClass::DestroyAllBuildings()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int PriorityTarget; // eax
 
@@ -328,14 +313,12 @@ int HouseClass::DestroyAllBuildings()
   }
   return PriorityTarget; /*0x4fc81a*/
 }
-}
 } // namespace gamemd
 
 // 0x4FC820
 namespace gamemd {
 int HouseClass::DestroyAllNonBuildingsNonNaval()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int PriorityTarget; // eax
 
@@ -374,14 +357,12 @@ int HouseClass::DestroyAllNonBuildingsNonNaval()
   }
   return PriorityTarget; /*0x4fc8c6*/
 }
-}
 } // namespace gamemd
 
 // 0x4FC8D0
 namespace gamemd {
 int HouseClass::DestroyAllNonBuildingsNaval()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int PriorityTarget; // eax
 
@@ -420,14 +401,12 @@ int HouseClass::DestroyAllNonBuildingsNaval()
   }
   return PriorityTarget; /*0x4fc976*/
 }
-}
 } // namespace gamemd
 
 // 0x501540
 namespace gamemd {
 int HouseClass::CanAlly(HouseClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int relatedTagsCount; // ecx
   HouseClass *v7; // edx
@@ -482,14 +461,12 @@ int HouseClass::CanAlly(HouseClass * aP1)
   }
   return v5 != v6 + 1; /*0x501575*/
 }
-}
 } // namespace gamemd
 
 // 0x501640
 namespace gamemd {
 int HouseClass::CanDetect()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // ebp
   int j; // edi
@@ -543,14 +520,12 @@ int HouseClass::CanDetect()
   }
   return (char)v0; /*0x50174c*/
 }
-}
 } // namespace gamemd
 
 // 0x503040
 namespace gamemd {
 AbstractClass * * HouseClass::SaveLoad_Prefix(int a1, LPSTREAM pStm)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // edi
   int j; // edi
@@ -1488,14 +1463,12 @@ LABEL_187:
   return result;
 }
 
-}
 } // namespace gamemd
 
 // 0x505360
 namespace gamemd {
 int HouseClass::PrerequisitesForTechnoTypeAreListed(int a1, VectorClass * aP1, TechnoTypeClass * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *j; // eax
   int i; // [esp+10h] [ebp-4h]
@@ -1568,14 +1541,12 @@ LABEL_20:
   }
   return 1; /*0x505475*/
 }
-}
 } // namespace gamemd
 
 // 0x506EF0
 namespace gamemd {
 AbstractClass * * HouseClass::AutoBuildScanAndSort(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // (v3 export truncated pseudocode — commented out; live version via get_context)
 // char __thiscall HouseClass::AutoBuildScanAndSort(int this, int a2, _DWORD *a3)
 // {
@@ -1627,13 +1598,11 @@ AbstractClass * * HouseClass::AutoBuildScanAndSort(int a2, unsigned int * a3)
 //   do... [24279 chars total]
 // end truncated pseudocode
 }
-} // namespace gamemd
 
 // 0x508C30
 namespace gamemd {
 int HouseClass::UpdatePower()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v2 = this->powerOutput; /*0x508c39*/
@@ -1703,14 +1672,12 @@ LABEL_28:
   *(_BYTE *)(this + 22393) = 1; /*0x508de0*/
   return v10; /*0x508de7*/
 }
-}
 } // namespace gamemd
 
 // 0x508DF0
 namespace gamemd {
 void * HouseClass::CanTogglePower()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   #375 *result; // eax
 
@@ -1779,14 +1746,12 @@ LABEL_29:
   }
   return result; /*0x508f54*/
 }
-}
 } // namespace gamemd
 
 // 0x5098F0
 namespace gamemd {
 CellStruct * * HouseClass::UpdateAITryFireSW()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // edi
   CellStruct *v6; // eax
@@ -1886,14 +1851,12 @@ LABEL_33:
   }
   return v2; /*0x509ae2*/
 }
-}
 } // namespace gamemd
 
 // 0x50BC90
 namespace gamemd {
 int HouseClass::CreatePowerOutage(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   wchar_t *v2; // eax
   v2 = g_CurrentFrame; /*0x50bc90*/
@@ -1904,14 +1867,12 @@ int HouseClass::CreatePowerOutage(int a2)
   this->q0AB = a2; /*0x50bcb7*/
   return v4; /*0x50bcba*/
 }
-}
 } // namespace gamemd
 
 // 0x50BCD0
 namespace gamemd {
 int HouseClass::CreateRadarOutage(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   wchar_t *v2; // eax
   v2 = g_CurrentFrame; /*0x50bcd0*/
@@ -1922,14 +1883,12 @@ int HouseClass::CreateRadarOutage(int a2)
   this->q2B8 = a2; /*0x50bcf7*/
   return v4; /*0x50bcfa*/
 }
-}
 } // namespace gamemd
 
 // 0x50D320
 namespace gamemd {
 void HouseClass_RespawnStartingBuildings()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   __int16 *v6; // edi
@@ -1987,14 +1946,12 @@ void HouseClass_RespawnStartingBuildings()
   }
   return result; /*0x50d439*/
 }
-}
 } // namespace gamemd
 
 // 0x50D440
 namespace gamemd {
 int HouseClass::RespawnStartingForces(TechnoClass * aP0, _UNKNOWN ** a1, unsigned int * a2, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _UNKNOWN **v5; // ebp
   HouseClass *v8; // ebx
@@ -2062,17 +2019,14 @@ LABEL_9:
   }
   return result; /*0x50d51f*/
 }
-}
 } // namespace gamemd
 
 // 0x50D9E0
 namespace gamemd {
 int HouseClass::GetInfSelfHealStep()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return this->q059 * g_RulesClass_Instance->SelfHealInfantryAmount; /*0x50d9ef*/
-}
 }
 } // namespace gamemd
 
@@ -2080,10 +2034,8 @@ int HouseClass::GetInfSelfHealStep()
 namespace gamemd {
 int HouseClass::GetUnitSelfHealStep()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return this->q05A * g_RulesClass_Instance->SelfHealUnitAmount; /*0x50d9ff*/
-}
 }
 } // namespace gamemd
 
@@ -2091,7 +2043,6 @@ int HouseClass::GetUnitSelfHealStep()
 namespace gamemd {
 void HouseClass::LostPoweredCenter(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v3 = this->poweredUnitCenters - 1; /*0x50e0eb*/
@@ -2136,14 +2087,12 @@ LABEL_16:
     }
   }
 }
-}
 } // namespace gamemd
 
 // 0x5471B0
 namespace gamemd {
 int HouseClass::GetCameoTypeIndex(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   _DWORD * v2 = (_DWORD *)(*(int (__thiscall **)(void *))(this->secretLabsCount)(this); /*0x5471b2*/
@@ -2153,14 +2102,12 @@ int HouseClass::GetCameoTypeIndex(int a2)
   else
     return 0; /*0x5471dc*/
 }
-}
 } // namespace gamemd
 
 // 0x5D70F0
 namespace gamemd {
 AbstractClass * * HouseClass::AIDecision(ObjectClass * aP0, int * a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *attachedTag; // eax
   CCINIClass *v6; // edi
@@ -2360,14 +2307,12 @@ LABEL_34:
   }
   return 0; /*0x5d730a*/
 }
-}
 } // namespace gamemd
 
 // 0x5D74A0
 namespace gamemd {
 int HouseClass::InitAlliances()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v0 = HouseClass_Count; /*0x5d74a1*/
@@ -2408,14 +2353,12 @@ int HouseClass::InitAlliances()
   while ( v2 - 1 < v0 ); /*0x5d7540*/
   return 1; /*0x5d7549*/
 }
-}
 } // namespace gamemd
 
 // 0x5EE9D0
 namespace gamemd {
 AbstractClass * * HouseClass::FindStartPositions()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // edi
   int *started; // eax
@@ -2495,21 +2438,18 @@ AbstractClass * * HouseClass::FindStartPositions()
       __3_YAXPAX_Z(Block); /*0x5eeb9f*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x740DF0
 namespace gamemd {
 int HouseClass::SetPrimaryFactory(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   if ( a2 == -1 || this->q6CC != -1 ) /*0x740e00*/
     return 0; /*0x740e17*/
   this->q6CC = a2; /*0x740e02*/
   this->ModifyCellTiles(2); /*0x740e0c*/
   return 1; /*0x740e14*/
-}
 }
 } // namespace gamemd
 

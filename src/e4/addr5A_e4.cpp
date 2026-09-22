@@ -41,7 +41,6 @@
 namespace gamemd {
 void Terrain_SelectTileVariant(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v1 = a1 - unk_AA1020; /*0x5a135e*/
@@ -202,14 +201,12 @@ LABEL_37:
       return unk_AA1020 + v1;
   }
 }
-}
 } // namespace gamemd
 
 // 0x5A19E0
 namespace gamemd {
 int ProcessRandomMapCellAdjacency()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int i; // esi
@@ -302,14 +299,12 @@ LABEL_32:
   }
   return result; /*0x5a1c60*/
 }
-}
 } // namespace gamemd
 
 // 0x5A1C70
 namespace gamemd {
 int E4Recv_5A1C70::sub_5A1C70()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // edi
   int j; // edi
@@ -396,14 +391,12 @@ int E4Recv_5A1C70::sub_5A1C70()
   }
   return result; /*0x5a1e09*/
 }
-}
 } // namespace gamemd
 
 // 0x5A33F0
 namespace gamemd {
 void GenerateTerrainHeightMapInternal()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int *i; // edi
@@ -478,14 +471,12 @@ LABEL_24:
   }
   return result; /*0x5a35e6*/
 }
-}
 } // namespace gamemd
 
 // 0x5A45E0
 namespace gamemd {
 void ScatterTerrainTrees(IUnknown * aP0, int a2, double a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AbstractClass *v4; // eax
   AbstractClass *v5; // ebx
@@ -716,14 +707,12 @@ void ScatterTerrainTrees(IUnknown * aP0, int a2, double a3)
     Scalar::Dtor((void **)v7, 1); /*0x5a4ac1*/
   return v42; /*0x5a4aca*/
 }
-}
 } // namespace gamemd
 
 // 0x5A4B60
 namespace gamemd {
 void FloodFillPathfinding(Random * aP0, int a2, CellClass * aP2, int a4, char a5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AbstractClass *v6; // eax
   AbstractClass *v7; // ebx
@@ -932,14 +921,12 @@ void FloodFillPathfinding(Random * aP0, int a2, CellClass * aP2, int a4, char a5
     __3_YAXPAX_Z(v9); /*0x5a4f80*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x5A6510
 namespace gamemd {
 FootClass * * MapSeed_PlaceBuildingsScatter2(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned int v5; // eax
   int v6; // ebp
@@ -1114,14 +1101,12 @@ LABEL_48:
       __3_YAXPAX_Z(Block); /*0x5a690e*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x5A6920
 namespace gamemd {
 void PlaceRandomNeutralUnits(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *Owner; // ebp
   int result; // eax
@@ -1236,14 +1221,12 @@ LABEL_27:
   }
   return result; /*0x5a6b96*/
 }
-}
 } // namespace gamemd
 
 // 0x5A6BA0
 namespace gamemd {
 int E4Recv_5A6BA0::sub_5A6BA0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v7; // esi
   __int16 v10[2]; // [esp+10h] [ebp-8h] BYREF
@@ -1280,20 +1263,17 @@ LABEL_6:
     }
   }
 }
-}
 } // namespace gamemd
 
 // 0x5A6C10
 namespace gamemd {
 void PlaceMapSeedClassBuildings(ObjectClass * aP0, ObjectClass * aP1, int a3, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int i; // edi
   __int16 v9; // cx
   ObjectClass *v19; // [esp+14h] [ebp-8h]
-
   v19 = aP1; /*0x5a6c1a*/
   _DWORD * v4 = *(_DWORD **)(*(_DWORD *)&HouseClass_Player[45024] + 4 * (_DWORD)aP0); /*0x5a6c1e*/
   result = (*(int (__thiscall **)(_DWORD *))(*v4 + 156))(v4); /*0x5a6c26*/
@@ -1352,14 +1332,12 @@ void PlaceMapSeedClassBuildings(ObjectClass * aP0, ObjectClass * aP1, int a3, in
   }
   return result; /*0x5a6d6e*/
 }
-}
 } // namespace gamemd
 
 // 0x5A6D80
 namespace gamemd {
 unsigned int * FindClearPlacementCell(unsigned int * a0, MapSeedClass * aP1, MapSeedClass * aP2, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   MapSeedClass *v4; // ecx
   int v6; // edi
@@ -1485,14 +1463,12 @@ unsigned int * FindClearPlacementCell(unsigned int * a0, MapSeedClass * aP1, Map
   *a0 = v13; /*0x5a7067*/
   return a0; /*0x5a6e7b*/
 }
-}
 } // namespace gamemd
 
 // 0x5A7070
 namespace gamemd {
 unsigned int * globalHelper_0A7070(MapSeedClass * aP0, short * a1, MapSeedClass * aP2, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v5; // esi
   int v6; // edi
@@ -1586,14 +1562,12 @@ unsigned int * globalHelper_0A7070(MapSeedClass * aP0, short * a1, MapSeedClass 
   *(_DWORD *)aP0->__pad_0 = v10; /*0x5a723d*/
   return aP0->__pad_0; /*0x5a723f*/
 }
-}
 } // namespace gamemd
 
 // 0x5A7250
 namespace gamemd {
 void IsAreaClearMap(MapClass * aP0, char a2, char a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v4 = aP0->field_0; /*0x5a7262*/
@@ -1678,14 +1652,12 @@ void IsAreaClearMap(MapClass * aP0, char a2, char a3)
   }
   return 1; /*0x5a741e*/
 }
-}
 } // namespace gamemd
 
 // 0x5A7440
 namespace gamemd {
 void MapClass_IsAreaUniform(int * a1, char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v3 = *a1; /*0x5a7452*/
@@ -1763,14 +1735,12 @@ LABEL_28:
   }
   return 0; /*0x5a762c*/
 }
-}
 } // namespace gamemd
 
 // 0x5A78D0
 namespace gamemd {
 void int PlaceMapSeedBuildingsStrategic(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned int result; // eax
 
@@ -1888,14 +1858,12 @@ void int PlaceMapSeedBuildingsStrategic(int a1)
   }
   return result; /*0x5a7b2c*/
 }
-}
 } // namespace gamemd
 
 // 0x5A7FA0
 namespace gamemd {
 void IsoTile_Draw(int a1, unsigned short * a2, char a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int i; // ebx
@@ -1949,14 +1917,12 @@ void IsoTile_Draw(int a1, unsigned short * a2, char a3)
   }
   return result; /*0x5a809c*/
 }
-}
 } // namespace gamemd
 
 // 0x5A8720
 namespace gamemd {
 void PlaceNeutralCreeps(unsigned short * a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *OwnerHouseClass; // ebp
   int result; // eax
@@ -2090,14 +2056,12 @@ LABEL_27:
   }
   return result; /*0x5a89bb*/
 }
-}
 } // namespace gamemd
 
 // 0x5A89D0
 namespace gamemd {
 void MapSeed_ScheduleBuildings(int * a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned int v4; // edi
   int v5; // esi
@@ -2365,14 +2329,12 @@ LABEL_61:
   while ( !v37 ); /*0x5a8edd*/
   return v42 > 1; /*0x5a8ee4*/
 }
-}
 } // namespace gamemd
 
 // 0x5A8F00
 namespace gamemd {
 void PlaceRandomTerrainFeatures(int a1, unsigned short * a2, int a3, unsigned int * a4, unsigned int * a5, int * a6)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   double v7; // st7
   int v9; // ebp
@@ -2388,7 +2350,6 @@ void PlaceRandomTerrainFeatures(int a1, unsigned short * a2, int a3, unsigned in
   double v27; // [esp+38h] [ebp-38h]
   int v30; // [esp+68h] [ebp-8h]
   int v31; // [esp+74h] [ebp+4h]
-
   int v6 = 1; /*0x5a8f0b*/
   v19 = 1; /*0x5a8f1a*/
   v22 = 1; /*0x5a8f1e*/
@@ -2497,14 +2458,12 @@ LABEL_22:
   *a6 = v12; /*0x5a919a*/
   return 1; /*0x5a9199*/
 }
-}
 } // namespace gamemd
 
 // 0x5A9C40
 namespace gamemd {
 unsigned int * InitializePathData()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v2; // eax
   int v3; // eax
@@ -3972,20 +3931,17 @@ unsigned int * InitializePathData()
   return WaypointPath::Constructor(dword_ABE880, (rc_ptr_base *)&v118, (rc_ptr_base *)&v120);
 }
 
-}
 } // namespace gamemd
 
 // 0x5AD9C0
 namespace gamemd {
 int sub_5AD9C0(unsigned int * a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   if ( *a1 == *a2 )
     return 0; /*0x5ad9d0*/
   else
     return *a1 >= *a2 ? 1 : -1;
-}
 }
 } // namespace gamemd
 
@@ -3993,7 +3949,6 @@ int sub_5AD9C0(unsigned int * a1, unsigned int * a2)
 namespace gamemd {
 void E4Recv_5AF550::sub_5AF550(float * a2, float * a3, AbstractClass * a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   float aP2a; // [esp+18h] [ebp-10h]
   float aP2; // [esp+18h] [ebp-10h]
@@ -4064,14 +4019,12 @@ void E4Recv_5AF550::sub_5AF550(float * a2, float * a3, AbstractClass * a4)
   sub_5AF000((float *)this, (ObjectClass *)LODWORD(aP1), (ObjectClass *)LODWORD(aP2)); /*0x5af6f5*/
   Matrix2D::Rotate((float *)this, a4); /*0x5af701*/
 }
-}
 } // namespace gamemd
 
 // 0x5AF980
 namespace gamemd {
 void * MultiplyMatrix3x4(ObjectClass * aP0, float * a1, float * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   float *result; // eax
   float a2a; // [esp+74h] [ebp+4h]
@@ -4113,7 +4066,6 @@ void * MultiplyMatrix3x4(ObjectClass * aP0, float * a1, float * a2)
   v25[11] = v23 * v15 + v11 * v16 + v24 * v17 + a1[11]; /*0x5afb6e*/
   qmemcpy(result, v25, 0x30u); /*0x5afb72*/
   return result; /*0x5afb74*/
-}
 }
 } // namespace gamemd
 
@@ -4843,7 +4795,6 @@ double E4Recv_5AF3B0::sub_5AF3B0()
 namespace gamemd {
 int E4Recv_5AF470::sub_5AF470()
  {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int128 aP0; // [esp+0h] [ebp-34h]
 
@@ -4856,7 +4807,6 @@ int E4Recv_5AF470::sub_5AF470()
   *((double *)&aP0 + 1) = *v1; /*0x5af4ae*/
   *(double *)&aP0 = v1[1]; /*0x5af4c1*/
   return Math::CalcAngle((AbstractClass *)aP0, *(double *)((char *)&aP0 + 4)); /*0x5af4cc*/
-}
 }
 } // namespace gamemd
 

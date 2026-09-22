@@ -6,7 +6,6 @@
 namespace gamemd {
 AbstractClass * * WinMainSetup_Setup_6BB8E0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned __int8 result; // al
 
@@ -50,14 +49,12 @@ AbstractClass * * WinMainSetup_Setup_6BB8E0()
   }
   return result; /*0x6bb98d*/
 }
-}
 } // namespace gamemd
 
 // 0x72B130
 namespace gamemd {
 void sub_72B130()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( DataGlobal_B0FC90 ) /*0x72b13b*/
@@ -115,7 +112,6 @@ void sub_72B130()
     DataGlobal_B0FC94 = 0; /*0x72b213*/
   }
   DataGlobal_B0FACC = 0; /*0x72b219*/
-}
 }
 } // namespace gamemd
 

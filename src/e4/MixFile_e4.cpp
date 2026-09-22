@@ -12,7 +12,6 @@
 namespace gamemd {
 MixFileClass * * MixFile::LoadAll()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *v66; // eax
   _DWORD *v67; // eax
@@ -442,14 +441,12 @@ LABEL_149:
   Debug::Log_0(); /*0x531269*/
   return DataGlobal_87F7E8[5521] != 0; /*0x5304f2*/
 }
-}
 } // namespace gamemd
 
 // 0x534FA0
 namespace gamemd {
 AbstractClass * * MixFile::LoadSide()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   MixFile *v2; // ebx
   unsigned int YR; // eax
@@ -603,14 +600,12 @@ AbstractClass * * MixFile::LoadSide()
     return 0; /*0x53523b*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x627590
 namespace gamemd {
 unsigned int * MIXFile::Load(ObjectClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ObjectClass *v3; // edx
   int i; // esi
@@ -751,6 +746,5 @@ unsigned int * MIXFile::Load(ObjectClass * aP1)
     }
   }
   return v14; /*0x6275a8*/
-}
 }
 } // namespace gamemd

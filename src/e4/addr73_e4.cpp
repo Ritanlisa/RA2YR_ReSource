@@ -25,7 +25,6 @@
 namespace gamemd {
 void AddMessageListPlayerMessage(CellStruct * a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( a2 == -1 ) /*0x730a93*/
@@ -35,14 +34,12 @@ void AddMessageListPlayerMessage(CellStruct * a1, int a2)
     v2 = HouseClass_Player[1].field_24; /*0x730aaa*/
   return MessageListClass::AddMessage(g_GameNetworkObject, 0, 0, a1, v2, (IUnknown *)0x4046, a2, 1); /*0x730ac9*/
 }
-}
 } // namespace gamemd
 
 // 0x730AF0
 namespace gamemd {
 AbstractClass * * ProcessSelectionExperience()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   #375 **v1; // esi
   wchar_t *v3; // ebp
@@ -164,14 +161,12 @@ LABEL_47:
   }
   return v0; /*0x730d55*/
 }
-}
 } // namespace gamemd
 
 // 0x730D60
 namespace gamemd {
 CellStruct * * sub_730D60()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char result; // al
   wchar_t *v8; // [esp+10h] [ebp-4h]
@@ -225,14 +220,12 @@ CellStruct * * sub_730D60()
   }
   return result; /*0x730d73*/
 }
-}
 } // namespace gamemd
 
 // 0x731130
 namespace gamemd {
 int E4Recv_731130::sub_731130()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v1 = g_SidebarState - 1; /*0x731138*/
@@ -262,14 +255,12 @@ LABEL_17:
       return 1; /*0x7311a4*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x731AA0
 namespace gamemd {
 AbstractClass * * sub_731AA0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   CellStruct *v0; // edi
   v0 = g_SelectionManager; /*0x731aa3*/
@@ -289,19 +280,16 @@ AbstractClass * * sub_731AA0()
   }
   return 0; /*0x731ad8*/
 }
-}
 } // namespace gamemd
 
 // 0x731EB0
 namespace gamemd {
 unsigned int * sub_731EB0(unsigned char (__fastcall *a1)(int, int) a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *v3; // esi
   int v4; // ebp
   int v13; // [esp+14h] [ebp-4h]
-
   _DWORD * v2 = __2_YAPAXI_Z(0x18u); /*0x731ec0*/
   if ( v2 ) /*0x731ecc*/
   {
@@ -345,14 +333,12 @@ unsigned int * sub_731EB0(unsigned char (__fastcall *a1)(int, int) a1, int a2)
   while ( v4 < v13 ); /*0x731f56*/
   return v3; /*0x731f5b*/
 }
-}
 } // namespace gamemd
 
 // 0x731F70
 namespace gamemd {
 unsigned int * TechnoClass_GatherFiltered(unsigned char (__fastcall *a1)(int, int) a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *v3; // esi
   int v4; // ebp
@@ -402,14 +388,12 @@ unsigned int * TechnoClass_GatherFiltered(unsigned char (__fastcall *a1)(int, in
   while ( v4 < Height ); /*0x732031*/
   return v3; /*0x732036*/
 }
-}
 } // namespace gamemd
 
 // 0x732770
 namespace gamemd {
 void TechnoClass_StepCleanupIfHuman(int a1, void * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   BOOL result; // eax
 
@@ -422,14 +406,12 @@ void TechnoClass_StepCleanupIfHuman(int a1, void * a2)
   }
   return result; /*0x7327b6*/
 }
-}
 } // namespace gamemd
 
 // 0x732950
 namespace gamemd {
 void SelectAllOfType()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   VectorClass *v5; // ebx
@@ -580,14 +562,12 @@ LABEL_36:
     return (*(int (__thiscall **)(_DWORD *, int))*v5)(v5, 1); /*0x732c1e*/
   return result; /*0x732c20*/
 }
-}
 } // namespace gamemd
 
 // 0x732FF0
 namespace gamemd {
 char sub_732FF0(void * a1, int (__fastcall *a2)(unsigned int, int) a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int HeightMap; // eax
   VectorClass *v4; // esi
@@ -679,14 +659,12 @@ char sub_732FF0(void * a1, int (__fastcall *a2)(unsigned int, int) a2, int a3)
     LOBYTE(HeightMap) = (*(int (__thiscall **)(_DWORD *, int))*v4)(v4, 1); /*0x733151*/
   return HeightMap; /*0x733153*/
 }
-}
 } // namespace gamemd
 
 // 0x7331B0
 namespace gamemd {
 void sub_7331B0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   CellStruct *v3; // ebx
   int HeightMap; // eax
@@ -803,14 +781,12 @@ void sub_7331B0()
   }
   return HeightMap; /*0x73336c*/
 }
-}
 } // namespace gamemd
 
 // 0x733380
 namespace gamemd {
 int E4Recv_733380::UpdateUnitHealthTooltip()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *result; // eax
   ObjectClass *v8; // esi
@@ -970,14 +946,12 @@ LABEL_42:
   }
   return (int)result; /*0x7335de*/
 }
-}
 } // namespace gamemd
 
 // 0x7336C0
 namespace gamemd {
 int E4Recv_7336C0::DrawUnitExperiencePopup()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *result; // eax
   VectorClass *StringCSF; // ebx
@@ -1136,14 +1110,12 @@ LABEL_42:
   }
   return (int)result; /*0x733928*/
 }
-}
 } // namespace gamemd
 
 // 0x7339B0
 namespace gamemd {
 int SelectUnitsByTheme(char a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   wchar_t *StringCSF; // ebx
@@ -1253,14 +1225,12 @@ LABEL_31:
   }
   return result; /*0x733c50*/
 }
-}
 } // namespace gamemd
 
 // 0x733CD0
 namespace gamemd {
 unsigned int * E4Recv_733CD0::sub_733CD0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *v3; // edi
   ObjectClass *v4; // eax
@@ -1328,14 +1298,12 @@ LABEL_13:
     v1 = this; /*0x733d27*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x733E10
 namespace gamemd {
 void * SelectFactionThemeMusic(int a1, const char * a2, int a3, unsigned int * a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   VectorClass *v6; // ebx
   int v7; // ebp
@@ -1516,14 +1484,12 @@ LABEL_39:
     (*(void (__thiscall **)(_DWORD *, int))*v11)(v11, 1); /*0x73410a*/
   return v34; /*0x73410c*/
 }
-}
 } // namespace gamemd
 
 // 0x734E60
 namespace gamemd {
 void * GetStringCSF(wchar_t * Format, unsigned int * a2, CampaignScore * aP3, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   wchar_t *v8; // esi
   if ( a2 ) /*0x734e68*/
@@ -1547,14 +1513,12 @@ void * GetStringCSF(wchar_t * Format, unsigned int * a2, CampaignScore * aP3, in
     return v8 + 2; /*0x734f03*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x734F50
 namespace gamemd {
 int E4Recv_734F50::sub_734F50()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -1567,14 +1531,12 @@ int E4Recv_734F50::sub_734F50()
   }
   return result; /*0x734f72*/
 }
-}
 } // namespace gamemd
 
 // 0x734F80
 namespace gamemd {
 int E4Recv_734F80::sub_734F80()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -1587,17 +1549,14 @@ int E4Recv_734F80::sub_734F80()
   }
   return result; /*0x734fa2*/
 }
-}
 } // namespace gamemd
 
 // 0x734FB0
 namespace gamemd {
 int sub_734FB0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return unk_B1CF84; /*0x734fb5*/
-}
 }
 } // namespace gamemd
 
@@ -1605,10 +1564,8 @@ int sub_734FB0()
 namespace gamemd {
 int sub_734FC0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return unk_B1CF60; /*0x734fc5*/
-}
 }
 } // namespace gamemd
 
@@ -1616,7 +1573,6 @@ int sub_734FC0()
 namespace gamemd {
 void * * CharToWideString(unsigned char * a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char *result; // eax
 
@@ -1638,14 +1594,12 @@ void * * CharToWideString(unsigned char * a1)
   unk_B1CF94 = ((_BYTE)unk_B1CF94 + 1) & 7; /*0x735179*/
   return result; /*0x735126*/
 }
-}
 } // namespace gamemd
 
 // 0x735370
 namespace gamemd {
 int sub_735370()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   xmmword_B1CFA8 = 0; /*0x735372*/
   DataGlobal_B1CFAC = 0; /*0x735377*/
@@ -1653,21 +1607,18 @@ int sub_735370()
   DataGlobal_B1CFB4 = 0; /*0x735381*/
   return 0; /*0x735386*/
 }
-}
 } // namespace gamemd
 
 // 0x735390
 namespace gamemd {
 int sub_735390()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   aP6 = xmmword_B1CFA8; /*0x7353a1*/
   DataGlobal_B1CFC4 = DataGlobal_B1CFAC; /*0x7353ab*/
   DataGlobal_B1CFC8 = DataGlobal_B1CFB0; /*0x7353b1*/
   DataGlobal_B1CFCC = DataGlobal_B1CFB4; /*0x7353b7*/
   return DataGlobal_B1CFB4; /*0x7353bc*/
-}
 }
 } // namespace gamemd
 

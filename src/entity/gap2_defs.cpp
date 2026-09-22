@@ -23,7 +23,6 @@
 
 // 0x415EE0
 namespace gamemd { void* BulletClass::FlightUpdate(int a1, int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   InfantryClass *v5; // ebx
   BuildingTypeClass *v8; // esi
@@ -262,7 +261,6 @@ LABEL_21:
     return (double *)v7; /*0x4165b2*/
   }
 }
-} }
 
 // 0x41C3F0
 namespace gamemd { void BulletClass::NormalizeZeroVector() {
@@ -1059,7 +1057,6 @@ namespace gamemd { int AnimClass::initAnimation() {
 
 // 0x448070
 namespace gamemd { bool AnimClass::updateAnimation(int a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v9; // eax
   int v10; // ecx
@@ -1113,7 +1110,6 @@ LABEL_17:
   if ( *(_DWORD *)(this->q520 + 3768) == 7 ) /*0x448134*/
     House::ChooseHouseEnemy(this->q21C, (BuildingClass *)this); /*0x44813d*/
   return *(_BYTE *)(this + 979) != v12; /*0x44808c*/
-}
 }
 }
 // 0x449540
@@ -1227,7 +1223,6 @@ namespace gamemd { int AnimClass::setLoopCount() {
 
 // 0x449C30
 namespace gamemd { int AnimClass::finalizeAnimation() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void **v6; // eax
 
@@ -1269,7 +1264,6 @@ LABEL_7:
     (*(void (__thiscall **)(_DWORD, _DWORD))(*this->vtable4 + 220))(this->vtable4, 0); /*0x729465*/
   }
 }
-} }
 
 // 0x4666C0
 namespace gamemd { bool BulletClass::CheckMirrorState(int a1) {
@@ -7844,7 +7838,6 @@ namespace gamemd { bool BulletClass::CheckBulletCollision(void* a1) {
 
 // 0x468D80
 namespace gamemd { int BulletClass::Fire(int a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AbstractClass *v5; // ecx
   AbstractClass *v8; // ecx
@@ -7982,7 +7975,6 @@ LABEL_30:
   }
   return v21; /*0x469091*/
 }
-} }
 
 // 0x46AE70
 namespace gamemd { int BulletClass::SaveLoad_Prefix(void* a1, int a2) {
@@ -8212,7 +8204,6 @@ namespace gamemd { int BulletClass::InitDetonationTimer(void* a1, void* a2, int 
 
 // 0x4E11F0
 namespace gamemd { int BulletClass::CheckProximityDetonation(void* a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v3 = this->vtable4; /*0x4e11f6*/
@@ -8241,7 +8232,6 @@ LABEL_5:
   this->q024 = v6; /*0x4e12a1*/
   return 0; /*0x4e1282*/
 }
-} }
 
 // 0x4E87B0
 namespace gamemd { int ParticleSystemClass::updateParticles(int a1) {
@@ -10756,7 +10746,6 @@ namespace gamemd { int TerrainClass::InitTheatre() {
 
 // 0x574000
 namespace gamemd { void TerrainClass::ProcessSlope(void* a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   TerrainClass *v2; // ebp
   IUnknown *v3; // edi
@@ -11074,11 +11063,9 @@ LABEL_79:
     }
   }
 }
-} }
 
 // 0x59C920
 namespace gamemd { int TiberiumClass::Grow(void* a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AbstractClass *v8; // esi
   int i; // eax
@@ -11578,7 +11565,6 @@ LABEL_122:
   }
   return 0; /*0x59cc78*/
 }
-} }
 
 // 0x5B35E0
 namespace gamemd { int MissionClass::QueueMission() {
@@ -13130,7 +13116,6 @@ namespace gamemd { int ParticleSystemClass::UpdateSystem(int a1, int a2) {
 
 // 0x62FF20
 namespace gamemd { int ParticleSystemClass::Write(int a1, void* a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int i; // esi
@@ -13197,7 +13182,6 @@ LABEL_14:
   }
   return result; /*0x630088*/
 }
-} }
 
 // 0x630100
 namespace gamemd { int ParticleSystemClass::PowerDrainUpdate(void* a1) {
@@ -13313,7 +13297,6 @@ namespace gamemd { int RadSiteClass::PowerDrainUpdate(int a1) {
 
 // 0x65B800
 namespace gamemd { int RadSiteClass::Tick() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   wchar_t *v4; // edi
   int result; // eax
@@ -13375,7 +13358,6 @@ LABEL_11:
   }
   return result; /*0x65b8dc*/
 }
-} }
 
 // 0x65BED0
 namespace gamemd { void* RadSiteClass::ProcessEvent(int a2) {
@@ -13511,7 +13493,6 @@ namespace gamemd { int TerrainClass::CleanupMembers() {
 
 // 0x71B920
 namespace gamemd { int TerrainClass::UpdateAnims(int a1, int a2, int a3, int a4, int a5, int a6, void* a7) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v4; // eax
   IUnknown *v6; // eax
@@ -13603,11 +13584,9 @@ LABEL_19:
   }
   return (TerrainClass *)this; /*0x71bdd7*/
 }
-} }
 
 // 0x71BB90
 namespace gamemd { void* TerrainClass::Construct(void* a1, void* a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v4; // eax
   IUnknown *v6; // eax
@@ -13699,11 +13678,9 @@ LABEL_19:
   }
   return (TerrainClass *)this; /*0x71bdd7*/
 }
-} }
 
 // 0x71BFB0
 namespace gamemd { int TerrainClass::CheckNearbyObjects(int a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   SmudgeClass *v2; // esi
   v2 = (SmudgeClass *)aP1.field_0; /*0x71bfb4*/
@@ -13732,7 +13709,6 @@ namespace gamemd { int TerrainClass::CheckNearbyObjects(int a1) {
   }
   return 1; /*0x71c026*/
 }
-} }
 
 // 0x71C070
 namespace gamemd { void* TerrainClass::ClearCellFlags(void* a1) {
@@ -14524,7 +14500,6 @@ namespace gamemd { int TiberiumClass::Harvest(void* a1) {
 
 // 0x7220A0
 namespace gamemd {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -14535,7 +14510,6 @@ namespace gamemd {
     return 0; /*0x7220c8*/
   }
   return result; /*0x7220ca*/
-}
 }
 
 // 0x722140
@@ -14591,7 +14565,6 @@ namespace gamemd { void* TiberiumClass::DrawOre(int a2) {
 
 // 0x727FD0
 namespace gamemd { void* TubeClass::Construct(void* a1, int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AbstractClass **v7; // edi
 
@@ -14641,7 +14614,6 @@ LABEL_13:
   }
   return this; /*0x7280c0*/
 }
-} }
 
 // 0x728630
 namespace gamemd { int TubeClass::PowerDrainUpdate(void* a1) {
@@ -14669,7 +14641,6 @@ namespace gamemd { int TubeClass::PowerDrainUpdate(void* a1) {
 
 // 0x728710
 namespace gamemd { void* TubeClass::ProcessEvent(int a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 *v3; // eax
   _DWORD **v5; // edx
@@ -14718,11 +14689,9 @@ LABEL_6:
     __3_YAXPAX_Z(Block); /*0x7287d7*/
   return (TubeClass *)Block; /*0x7287e1*/
 }
-} }
 
 // 0x729370
 namespace gamemd { void AnimClass::ProcessSequence() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void **v6; // eax
 
@@ -14764,7 +14733,6 @@ LABEL_7:
     (*(void (__thiscall **)(_DWORD, _DWORD))(*this->vtable4 + 220))(this->vtable4, 0); /*0x729465*/
   }
 }
-} }
 
 // 0x755D10
 namespace gamemd { void WaveClass::Destroy() {
@@ -15007,7 +14975,6 @@ namespace gamemd { void WaveClass::ProcessWaveCollision(void* a1, void* a2) {
 
 // 0x760F50
 namespace gamemd { int WaveClass::Update() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int i; // edi
@@ -15053,7 +15020,6 @@ LABEL_3:
   }
   return result; /*0x760f8c*/
 }
-} }
 
 // 0x7632D0
 namespace gamemd { void* WaveClass::Constructor_7632D0(int a1, int a2) { return nullptr; } }

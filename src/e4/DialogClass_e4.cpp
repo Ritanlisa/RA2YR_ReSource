@@ -6,10 +6,8 @@
 namespace gamemd {
 int DialogClass::GetFlag()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return this->q034; /*0x5d6353*/
-}
 }
 } // namespace gamemd
 
@@ -17,7 +15,6 @@ int DialogClass::GetFlag()
 namespace gamemd {
 int DialogClass::Reposition(SkirmishDialog * aP0, LPARAM a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND WindowLongA; // eax
   LONG right; // edi
@@ -63,7 +60,6 @@ int DialogClass::Reposition(SkirmishDialog * aP0, LPARAM a2)
   Rect.bottom = v8 + Rect.top - 1; /*0x775d48*/
   MoveWindow((HWND)aP0, Rect.left, Rect.top, v7, v8, 1); /*0x775d4c*/
   return 1; /*0x775d52*/
-}
 }
 } // namespace gamemd
 

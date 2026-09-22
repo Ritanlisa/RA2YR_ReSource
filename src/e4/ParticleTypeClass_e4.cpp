@@ -9,7 +9,6 @@
 namespace gamemd {
 void ParticleTypeClass::GetClassIdentifier()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   AbstractClass *v2 = this->vtable2; /*0x477906*/
@@ -22,14 +21,12 @@ void ParticleTypeClass::GetClassIdentifier()
   this->ParticleTypeClass_field_2BC = 0; /*0x477921*/
   this->BehavesLike = 0; /*0x477924*/
 }
-}
 } // namespace gamemd
 
 // 0x4784F0
 namespace gamemd {
 AbstractClass * * ParticleTypeClass::Release(int a2, char * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v3 = a2; /*0x4784f2*/
@@ -122,14 +119,12 @@ AbstractClass * * ParticleTypeClass::Release(int a2, char * a3)
     this->ParticleTypeClass_field_0x10 = v15; /*0x4785d3*/
   return 1; /*0x4785d6*/
 }
-}
 } // namespace gamemd
 
 // 0x4788E0
 namespace gamemd {
 unsigned int * ParticleTypeClass::EnsureCapacity(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( this == a2 ) /*0x4788ec*/
@@ -186,14 +181,12 @@ unsigned int * ParticleTypeClass::EnsureCapacity(unsigned int * a2)
   while ( v8 < this->vtable3 ); /*0x478969*/
   return this; /*0x47896d*/
 }
-}
 } // namespace gamemd
 
 // 0x644F50
 namespace gamemd {
 void ParticleTypeClass_LoadFromINI()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // local variable allocation has failed, the output may be wrong!
 {
   INIClass *inited; // eax
@@ -489,14 +482,12 @@ LABEL_17:
   this->ParticleTypeClass_field_0x314 = v41; /*0x6453ff*/
   return 1; /*0x645407*/
 }
-}
 } // namespace gamemd
 
 // 0x6454E0
 namespace gamemd {
 int ParticleTypeClass::ProcessPower(int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   AbstractTypeClass::ProcessPower((char *)this, a2); /*0x6454e9*/
@@ -530,14 +521,12 @@ int ParticleTypeClass::ProcessPower(int * a2)
   Power::TimerProcess(this->ParticleTypeClass_field_0x314); /*0x6455f7*/
   return Checksummer::Add_double(this->ParticleTypeClass_field_0x2B0, this->ParticleTypeClass_field_0x2B4); /*0x645611*/
 }
-}
 } // namespace gamemd
 
 // 0x645660
 namespace gamemd {
 int ParticleTypeClass::SaveLoad_Prefix(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -603,14 +592,12 @@ LABEL_14:
   }
   return result; /*0x64578c*/
 }
-}
 } // namespace gamemd
 
 // 0x6458B0
 namespace gamemd {
 int ParticleTypeClass::GetType(int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -618,7 +605,6 @@ int ParticleTypeClass::GetType(int a2, int a3)
   if ( result == a2 ) /*0x6458bc*/
     this->q2E4 = 0; /*0x6458be*/
   return result; /*0x6458c8*/
-}
 }
 } // namespace gamemd
 
@@ -673,7 +659,6 @@ ParticleTypeClass * ParticleTypeClass::ddtor(char a2)
 namespace gamemd {
 unsigned int * ParticleTypeClass::Constructor(int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   this->vtable2 = 0; /*0x645a7d*/
@@ -733,7 +718,6 @@ unsigned int * ParticleTypeClass::Constructor(int a2, int a3)
   this->Damage = 10; /*0x645af2*/
   this->q010 = 0; /*0x645af9*/
   return this; /*0x645afe*/
-}
 }
 } // namespace gamemd
 

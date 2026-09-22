@@ -7,7 +7,6 @@
 // 0x774980
 int WinModemClass::ReadSerial()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   DWORD v4; // ecx
   DWORD v5; // eax
@@ -105,12 +104,10 @@ int WinModemClass::ReadSerial()
   Debug::Log(); /*0x774b14*/
   return v16 != 0; /*0x7749fb*/
 }
-}
 
 // 0x774B30
 int WinModemClass::ReadBytes(void (**this)() a1, WinModemClass * aP1, WinModemClass * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   WinModemClass *v5; // ebx
   WinModemClass *v7; // ebp
@@ -141,12 +138,10 @@ int WinModemClass::ReadBytes(void (**this)() a1, WinModemClass * aP1, WinModemCl
   while ( v7 ); /*0x774b96*/
   return (int)v5->__pad_0; /*0x774b99*/
 }
-}
 
 // 0x774C70
 int WinModemClass::WriteSerial(LPCVOID lpBuffer, WinModemClass * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   DWORD NumberOfBytesWritten; // [esp+4h] [ebp-4h] BYREF
@@ -163,12 +158,10 @@ int WinModemClass::WriteSerial(LPCVOID lpBuffer, WinModemClass * aP2)
   }
   return result; /*0x774cab*/
 }
-}
 
 // 0x774CD0
 WinModemClass * * WinModemClass::LoadTypeData(int a2, char * Str, int a4, WinModemClass * aP4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   WinModemClass *v5; // esi
   WinModemClass *v7; // edi
@@ -285,12 +278,10 @@ LABEL_38:
     v5 = this; /*0x774d5f*/
   }
 }
-}
 
 // 0x774F50
 int WinModemClass::SaveToINI(const char * NumberOfBytesWritten)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char Buffer[80]; // [esp+10h] [ebp-50h] BYREF
 
@@ -324,12 +315,10 @@ int WinModemClass::SaveToINI(const char * NumberOfBytesWritten)
   }
   return AsyncIO::WaitCompletion(this); /*0x7750d8*/
 }
-}
 
 // 0x775110
 AbstractClass * * WinModemClass::Dial(const char * a2, unsigned char a3, char * Destination, signed int Count, int a6, int a7, int a8)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ObjectClass *v10; // ecx
   DWORD v13; // eax
@@ -456,7 +445,6 @@ LABEL_21:
   }
   return 0; /*0x775428*/
 }
-}
 
 // 0x7754A0
 int WinModemClass::ddtor(int a2)
@@ -469,17 +457,14 @@ int WinModemClass::ddtor(int a2)
 // 0x7754B0
 int WinModemClass::HangUp(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   this->q068 = a2; /*0x7754b4*/
   return a2; /*0x7754b7*/
-}
 }
 
 // 0x7754D0
 int WinModemClass::LogCommErrors(NullModemClass * aP1, char a3, int a4, int a5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -539,7 +524,6 @@ int WinModemClass::LogCommErrors(NullModemClass * aP1, char a3, int a4, int a5)
   if ( (a3 & 0x40) != 0 ) /*0x7755fd*/
     Debug::Log(); /*0x775604*/
   return result; /*0x7755f8*/
-}
 }
 
 // 0x775610

@@ -8,10 +8,8 @@ namespace ra2 {
 namespace game {
 unsigned int IRTTITypeInfo::GetOffset()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return this->q0C8; /*0x71d156*/
-}
 }
 } // namespace game
 } // namespace ra2

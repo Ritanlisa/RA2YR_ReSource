@@ -47,7 +47,6 @@ retn    4
 namespace gamemd { int Gap2Recv_402F60::ProcessAudioMixerFrame() {
     {
     return aP0 && *(_DWORD *)aP0->__pad_0;
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   BOOL active; // [esp+10h] [ebp-Ch]
 
@@ -116,10 +115,8 @@ namespace gamemd { int Gap2Recv_402F60::ProcessAudioMixerFrame() {
   }
   return 0; /*0x402f73*/
 }
-} }
 // 0x403A80
 namespace gamemd { int DumpAudioDeviceDebug(void* a1, char* a2, int a3) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void (__thiscall *v4)(char *); // edi
   int *Next; // esi
@@ -165,10 +162,8 @@ namespace gamemd { int DumpAudioDeviceDebug(void* a1, char* a2, int a3) {
   }
   return v4(&stru_815EA8.objectTypeFlags); /*0x403cd2*/
 }
-} }
 // 0x4048B0
 namespace gamemd { int Gap2Recv_4048B0::PrefetchAudioSamples() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   _DWORD **v5; // ebx
@@ -316,10 +311,8 @@ LABEL_25:
   }
   return result; /*0x404ac2*/
 }
-} }
 // 0x4055C0
 namespace gamemd { int Gap2Recv_4055C0::UpdateVoicePlayback() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD **v13; // edi
   _DWORD **v16; // edi
@@ -539,10 +532,8 @@ LABEL_41:
     return v2; /*0x405634*/
   }
 }
-} }
 // 0x40AA70
 namespace gamemd { bool Gap2Recv_40AA70::ProcessAudioChannelMovement() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 *v12; // edi
   unsigned __int8 v13; // bl
@@ -655,10 +646,8 @@ LABEL_11:
     }
   }
 }
-} }
 // 0x415C60
 namespace gamemd { int Gap2Recv_415C60::ProcessTechnoMovementAction() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   wchar_t *v18; // eax
   AbstractClass *v2 = (_DWORD *)LinkedList::Pop((_DWORD *)this + 69); /*0x415c73*/
@@ -727,10 +716,8 @@ namespace gamemd { int Gap2Recv_415C60::ProcessTechnoMovementAction() {
   *((_DWORD *)this + 189) = 0; /*0x415eaa*/
   return 0; /*0x415ea2*/
 }
-} }
 // 0x4197C0
 namespace gamemd { void* Gap2Recv_4197C0::FindSpiralMoveTarget(int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ObjectClass *v4; // edi
   __int16 v9; // cx
@@ -867,10 +854,8 @@ LABEL_27:
     return CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v30); /*0x419adf*/
   return CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v27); /*0x4197f3*/
 }
-} }
 // 0x41AF80
 namespace gamemd { int Gap2Recv_41AF80::SaveAircraftToINI() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   _DWORD *Value; // eax
@@ -924,7 +909,6 @@ namespace gamemd { int Gap2Recv_41AF80::SaveAircraftToINI() {
   }
   return result; /*0x41b0fc*/
 }
-} }
 // 0x41C250
 namespace gamemd { int CreateInstanceCOM(void* ppv, void* rclsid, int pUnkOuter, int dwClsContext) {
 {
@@ -948,7 +932,6 @@ namespace gamemd { int CreateInstanceCOM(void* ppv, void* rclsid, int pUnkOuter,
 } }
 // 0x421350
 namespace gamemd { int Gap2Recv_421350::RenderAlphaShapes() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   char **v9; // edi
@@ -1103,10 +1086,8 @@ namespace gamemd { int Gap2Recv_421350::RenderAlphaShapes() {
   }
   return result; /*0x4216a9*/
 }
-} }
 // 0x429830
 namespace gamemd { double Gap2Recv_429830::ComputeMovementWeight(void* a2, void* a3, char a4, int a5, int a6) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v19; // ecx
   int v20; // edx
@@ -1200,10 +1181,8 @@ LABEL_20:
     v17 = 2.0; /*0x429a6f*/
   return v17 * v28; /*0x429a5c*/
 }
-} }
 // 0x42B210
 namespace gamemd { char Gap2Recv_42B210::ParsePathDirections(int a2, void* a3) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 v14; // dx
   __int16 v16; // dx
@@ -1302,10 +1281,8 @@ LABEL_25:
     LOBYTE(v5) = GeneratePathWaypoints(a3, (int *)(v4 + 4 * v9), v27 + 4 * v9, v8, v19, &v20); /*0x42b406*/
   return (char)v5; /*0x42b40b*/
 }
-} }
 // 0x42B7F0
 namespace gamemd { void* Gap2Recv_42B7F0::SimplifyPathFilter(void* a2, int a3) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 v12; // cx
   __int16 v13; // bx
@@ -1516,10 +1493,8 @@ namespace gamemd { void* Gap2Recv_42B7F0::SimplifyPathFilter(void* a2, int a3) {
   v3[2] = v7 + 1; /*0x42bc90*/
   return result; /*0x42bc8e*/
 }
-} }
 // 0x42E1C0
 namespace gamemd { int Gap2Recv_42E1C0::RenderTooltipBorder() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AbstractClass *v17; // edi
   int result; // eax
@@ -1647,10 +1622,8 @@ namespace gamemd { int Gap2Recv_42E1C0::RenderTooltipBorder() {
   *(_BYTE *)(this + 48) = 1; /*0x42e403*/
   return result; /*0x42e407*/
 }
-} }
 // 0x430250
 namespace gamemd { char Gap2Recv_430250::RenderBuildingTag(int a2, int a3, int a4, int a5, int a6) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   size_t v7; // eax
   wchar_t *v9; // eax
@@ -1772,7 +1745,6 @@ LABEL_11:
   }
   return v7; /*0x43056e*/
 }
-} }
 // 0x430AC0
 namespace gamemd { int Gap2Recv_430AC0::RenderAlliedBuildingTags(int a2, int a3, int a4, int a5, int a6) {
 {
@@ -1809,7 +1781,6 @@ namespace gamemd { int Gap2Recv_430AC0::RenderAlliedBuildingTags(int a2, int a3,
 } }
 // 0x430BA0
 namespace gamemd { void Gap2Recv_430BA0::PlacePlayerBeacon(int a2, int a3, int a4, int a5, int a6) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AbstractClass *v11; // esi
   _DWORD *i; // ecx
@@ -1934,7 +1905,6 @@ namespace gamemd { void Gap2Recv_430BA0::PlacePlayerBeacon(int a2, int a3, int a
     }
   }
 }
-} }
 // 0x432C10
 namespace gamemd { int Gap2Recv_432C10::COMStub_432C10(int a2) {
 {
@@ -1960,7 +1930,6 @@ retn    4
 } }
 // 0x438BF0
 namespace gamemd { int Gap2Recv_438BF0::DispatchBuildingAudioEvents() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // esi
   int j; // ebx
@@ -2111,10 +2080,8 @@ LABEL_33:
   }
   return result; /*0x438d0f*/
 }
-} }
 // 0x43B150
 namespace gamemd { bool Gap2Recv_43B150::DetectNearbyAlliedThreat() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   #375 **v1; // ebx
   #375 *v4; // edi
@@ -2235,10 +2202,8 @@ LABEL_23:
   }
   return 0; /*0x43b4a9*/
 }
-} }
 // 0x43C0D0
 namespace gamemd { void* Gap2Recv_43C0D0::CreateDominatorDestructionEffects() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int *result; // eax
   int **v3; // edi
@@ -2309,10 +2274,8 @@ namespace gamemd { void* Gap2Recv_43C0D0::CreateDominatorDestructionEffects() {
   }
   return result; /*0x43c294*/
 }
-} }
 // 0x4500F0
 namespace gamemd { void Gap2Recv_4500F0::ProcessAutoProduction() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *TypeAbstractClass; // edi
   wchar_t *v10; // edi
@@ -2444,10 +2407,8 @@ LABEL_31:
     }
   }
 }
-} }
 // 0x455F10
 namespace gamemd { char Gap2Recv_455F10::MarkBuildingFoundationCells(int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int FoundationWidthBuildingTypeClass; // eax
   __int16 v10; // cx
@@ -2597,10 +2558,8 @@ namespace gamemd { char Gap2Recv_455F10::MarkBuildingFoundationCells(int a2) {
   }
   return v20; /*0x4561e2*/
 }
-} }
 // 0x4561F0
 namespace gamemd { int Gap2Recv_4561F0::RecalculateBuildingFoundation() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int FoundationHeightBuildingTypeClass; // eax
   __int16 v10; // cx
@@ -2789,10 +2748,8 @@ LABEL_47:
   while ( v20 < v22 ); /*0x45656a*/
   return result; /*0x456570*/
 }
-} }
 // 0x458330
 namespace gamemd { char* Gap2Recv_458330::PlayHealthDependentBuildingAnim() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   bool v6; // zf
   BuildingTypeClass *v7; // eax
@@ -2910,7 +2867,6 @@ namespace gamemd { char* Gap2Recv_458330::PlayHealthDependentBuildingAnim() {
   }
   return result; /*0x4585bc*/
 }
-} }
 // 0x459CA0
 namespace gamemd { char Gap2Recv_459CA0::ProcessDataCellClass() {
 {
@@ -2971,7 +2927,6 @@ retn
 }
 // 0x465570
 namespace gamemd { void* Gap2Recv_465570::CalculateBuildingFoundationBounds(void* a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 *v3; // eax
   int *FoundationSize; // eax
@@ -3162,10 +3117,8 @@ namespace gamemd { void* Gap2Recv_465570::CalculateBuildingFoundationBounds(void
     return (int *)aP1->vtable0; /*0x4655b9*/
   }
 }
-} }
 // 0x471890
 namespace gamemd { int Gap2Recv_471890::SmallFunc_471890() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x471893*/
@@ -3199,10 +3152,8 @@ namespace gamemd { int Gap2Recv_471890::SmallFunc_471890() {
   }
   return this; /*0x471940*/
 }
-} }
 // 0x47BDB0
 namespace gamemd { int Gap2Recv_47BDB0::GetBridgeCellColor(char* a2, char a3) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int RadarColor; // eax
   BombClass *v13; // ecx
@@ -3296,10 +3247,8 @@ LABEL_27:
   }
   return v12 | (v12 << 16); /*0x47be7f*/
 }
-} }
 // 0x47C060
 namespace gamemd { char Gap2Recv_47C060::GetCellRadarColors(int a2, int a3) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int RadarColor; // eax
   Gap2Recv_47C060 *v5; // ecx
@@ -3436,10 +3385,8 @@ LABEL_18:
   }
   return RadarColor; /*0x47c082*/
 }
-} }
 // 0x4838E0
 namespace gamemd { char Gap2Recv_4838E0::IsCoordValidMap(int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( LayerClass::IsWithinUsableArea(&DataGlobal_87F7E8, (IUnknown *)(this + 36), (TechnoClass *)1) /*0x483905*/
@@ -3495,7 +3442,6 @@ LABEL_17:
   }
   return 0; /*0x4839e2*/
 }
-} }
 // 0x486E30
 namespace gamemd { int Gap2Recv_486E30::Helper_486E30() {
 {
@@ -3642,7 +3588,6 @@ retn
 } }
 // 0x49B930
 namespace gamemd { char Gap2Recv_49B930::UpdateScoreScreenStatistics() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   wchar_t Destination[24]; // [esp+4h] [ebp-2E0h] BYREF
   int v40; // [esp+34h] [ebp-2B0h]
@@ -3749,10 +3694,8 @@ namespace gamemd { char Gap2Recv_49B930::UpdateScoreScreenStatistics() {
   ++*(_DWORD *)(this + 56); /*0x49bc65*/
   return 1; /*0x49b942*/
 }
-} }
 // 0x49E740
 namespace gamemd { char Gap2Recv_49E740::SmallFunc_49E740(void* a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   wchar_t *v5; // eax
   if ( !*(_BYTE *)(this + 96) ) /*0x49e743*/
@@ -3779,10 +3722,8 @@ namespace gamemd { char Gap2Recv_49E740::SmallFunc_49E740(void* a2) {
   }
   return 1; /*0x49e7b3*/
 }
-} }
 // 0x4A3660
 namespace gamemd { int Gap2Recv_4A3660::RenderTactical3DScene(int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int i; // ebx
@@ -3892,10 +3833,8 @@ LABEL_13:
   }
   return result; /*0x4a37f2*/
 }
-} }
 // 0x4A42F0
 namespace gamemd { char InitializeDDraw(int a1, int a2, int a3, int a4) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   INIClass *v5; // eax
   INIClass *v8; // eax
@@ -3988,10 +3927,8 @@ LABEL_7:
   Debug::Log(); /*0x4a44d7*/
   return 1; /*0x4a4383*/
 }
-} }
 // 0x4B5AB0
 namespace gamemd { int Gap2Recv_4B5AB0::SmallFunc_4B5AB0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   LocomotionClass::Init((_DWORD *)this); /*0x4b5ab3*/
   *(_BYTE *)(this + 28) = 0; /*0x4b5abd*/
@@ -4004,10 +3941,8 @@ namespace gamemd { int Gap2Recv_4B5AB0::SmallFunc_4B5AB0() {
   *(_DWORD *)(this + 24) = &vt_DropPodLocomotionClass; /*0x4b5aea*/
   return this; /*0x4b5af3*/
 }
-} }
 // 0x4C5370
 namespace gamemd { int Gap2Recv_4C5370::Helper_4C5370() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x4c5373*/
@@ -4022,10 +3957,8 @@ namespace gamemd { int Gap2Recv_4C5370::Helper_4C5370() {
   *(_DWORD *)(this + 12) = &vt_EMPulseClass; /*0x4c539f*/
   return this; /*0x4c53a8*/
 }
-} }
 // 0x4C54E0
 namespace gamemd { int Gap2Recv_4C54E0::ApplyEMPPulseEffect(int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int j; // edx
@@ -4161,7 +4094,6 @@ namespace gamemd { int Gap2Recv_4C54E0::ApplyEMPPulseEffect(int a2) {
   }
   return result; /*0x4c58af*/
 }
-} }
 // 0x4CB760
 namespace gamemd { char* TerrainInitMap(char* Destination, char* Source, int a3) {
 {
@@ -4289,7 +4221,6 @@ retn    8
 } }
 // 0x4CBC40
 namespace gamemd { void* Gap2Recv_4CBC40::WalkPathfindingLine(void* a2, int a3, void* a4, int a5, int a6) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v15; // eax
   SpeedType *v20; // edi
@@ -4409,7 +4340,6 @@ LABEL_23:
   *a2 = a3; /*0x4cbec8*/
   return a2; /*0x4cbeb1*/
 }
-} }
 // 0x4CE4B0
 namespace gamemd { int Gap2Recv_4CE4B0::ProcessDataHelper(void* a2, int a3) {
 {
@@ -4548,7 +4478,6 @@ retn
 }
 // 0x4DC340
 namespace gamemd { char Gap2Recv_4DC340::DrawFootTargetLine() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int *TargetCoords; // eax
   int v5; // eax
@@ -4704,7 +4633,6 @@ LABEL_12:
   }
   return v2; /*0x4dc74a*/
 }
-} }
 // 0x4E3320
 namespace gamemd { int Gap2Recv_4E3320::GetResourceIDHardcodedCSF() {
 // [IDA decompile]
@@ -4850,7 +4778,6 @@ retn    8
 } }
 // 0x4FD9A0
 namespace gamemd { int Gap2Recv_4FD9A0::ValidateAIBuildAffordability() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *v10; // edx
   int v11; // eax
@@ -5007,7 +4934,6 @@ LABEL_34:
     return 1; /*0x4fdbb2*/
   return v30; /*0x4fd9d8*/
 }
-} }
 // 0x504860
 namespace gamemd { int Gap2Recv_504860::Team_Helper(int a2) {
 {
@@ -5062,7 +4988,6 @@ retn    4
 } }
 // 0x507B80
 namespace gamemd { int Gap2Recv_507B80::CollectSuperWeaponBuildingTypes(int a2, int a3) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *v8; // ebx
   int v9; // eax
@@ -5170,10 +5095,8 @@ namespace gamemd { int Gap2Recv_507B80::CollectSuperWeaponBuildingTypes(int a2, 
     __3_YAXPAX_Z(v19); /*0x507d4d*/
   return a2; /*0x507d57*/
 }
-} }
 // 0x50BA00
 namespace gamemd { long long Gap2Recv_BA00::ComputeSessionColorVector() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   double v3; // st7
   unsigned __int8 v5; // c0
@@ -5187,7 +5110,6 @@ namespace gamemd { long long Gap2Recv_BA00::ComputeSessionColorVector() {
   double v13; // [esp+18h] [ebp-10h]
   double v14; // [esp+20h] [ebp-8h]
   double v15; // [esp+20h] [ebp-8h]
-
   v12 = (double)*(this + 22265); /*0x50ba33*/
   v14 = (double)*(this + 22266); /*0x50ba3f*/
   v10 = (double)*(this + 22267); /*0x50ba47*/
@@ -5241,10 +5163,8 @@ namespace gamemd { long long Gap2Recv_BA00::ComputeSessionColorVector() {
   *(this + 22270) = result; /*0x50bc85*/
   return result; /*0x50bc8b*/
 }
-} }
 // 0x50D6D0
 namespace gamemd { short Gap2Recv_50D6D0::SelectSimilarBuildingTypes(int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // eax
   _DWORD *v4; // esi
@@ -5374,7 +5294,6 @@ LABEL_23:
       goto LABEL_23; /*0x50d926*/
   }
 }
-} }
 // 0x50DA10
 namespace gamemd { int Gap2Recv_50DA10::GlobalHelper_0E4440_Helper() {
 {
@@ -5427,7 +5346,6 @@ retn
 } }
 // 0x515ED0
 namespace gamemd { void Gap2Recv_515ED0::UpdateFootFacing() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v3; // edi
   _DWORD *Value; // eax
@@ -5591,7 +5509,6 @@ LABEL_19:
     }
   }
 }
-} }
 // 0x5175F0
 namespace gamemd { char Gap2Recv_5175F0::ReadRegistryOptionsWOL() {
 {
@@ -5626,7 +5543,6 @@ namespace gamemd { bool Gap2Recv_5176C0::WinMain_Helper() {
 } }
 // 0x518D80
 namespace gamemd { int Gap2Recv_518D80::CalculateLocomotionFrameIndex() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 *v3; // eax
   AbstractClass *v4; // esi
@@ -5704,7 +5620,6 @@ LABEL_25:
          + *(_DWORD *)(v6 + *(_DWORD *)&v10[101].__pad_0[8]);
   return (int)v15 + *v11; /*0x518f0d*/
 }
-} }
 // 0x51FB00
 namespace gamemd { int Gap2Recv_51FB00::PlaceScenarioInfantry() {
 {
@@ -6051,7 +5966,6 @@ namespace gamemd { char Gap2Recv_5202F0::ProcessTechnoSquadResponse() {
 } }
 // 0x5206B0
 namespace gamemd { void Gap2Recv_5206B0::FireTechnoAtTarget() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ObjectClass *v2; // eax
   ObjectClass *v3; // edi
@@ -6228,10 +6142,8 @@ LABEL_46:
     }
   }
 }
-} }
 // 0x5272B0
 namespace gamemd { char* Gap2Recv_5272B0::LookupCSFString(char* a2, char* Destination, int Count) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned __int8 *v8; // edi
   unsigned int *inited; // eax
@@ -6392,7 +6304,6 @@ LABEL_33:
   }
   return a2; /*0x5272c5*/
 }
-} }
 // 0x52A670
 namespace gamemd { void* Gap2Recv_52A670::WinMain_Init(void* a2, char a3) {
 {
@@ -6991,7 +6902,6 @@ retn    8
 } }
 // 0x54BD30
 namespace gamemd { int Gap2Recv_54BD30::UpdateFootMoveToState() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -7094,10 +7004,8 @@ LABEL_19:
   }
   return result; /*0x54be34*/
 }
-} }
 // 0x54F530
 namespace gamemd {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char result; // al
 
@@ -7126,7 +7034,6 @@ namespace gamemd {
       return 0;
   }
   return result; /*0x54f562*/
-}
 }
 // 0x551A30
 namespace gamemd { int Gap2Recv_551A30::ProcessAutoSave() {
@@ -7359,7 +7266,6 @@ retn    8
 } }
 // 0x569760
 namespace gamemd { void Gap2Recv_569760::DestroyCliffMap(int a2, int a3, void* a4) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ObjectClass *v6; // eax
   AbstractClass *v7; // edi
@@ -7751,7 +7657,6 @@ LABEL_44:
     }
   }
 }
-} }
 // 0x56A080
 namespace gamemd { int Gap2Recv_56A080::PlaceTerrainCliffsRegion() {
 {
@@ -7963,7 +7868,6 @@ namespace gamemd { int Gap2Recv_56A080::PlaceTerrainCliffsRegion() {
 } }
 // 0x56A4C0
 namespace gamemd { void Gap2Recv_56A4C0::FlattenCliffMap(void* a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 v7; // cx
   __int16 v15; // ax
@@ -8171,10 +8075,8 @@ namespace gamemd { void Gap2Recv_56A4C0::FlattenCliffMap(void* a2) {
     v31 = v3; /*0x56a682*/
   }
 }
-} }
 // 0x56A980
 namespace gamemd { void Gap2Recv_56A980::RepairMapCliff(void* a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 v7; // cx
   __int16 v15; // ax
@@ -8382,7 +8284,6 @@ namespace gamemd { void Gap2Recv_56A980::RepairMapCliff(void* a2) {
     v31 = v3; /*0x56ab42*/
   }
 }
-} }
 // 0x56D3F0
 namespace gamemd { int Gap2Recv_56D3F0::CellToTileIndexMap(void* a2) {
 {
@@ -8425,7 +8326,6 @@ retn    4
 } }
 // 0x56DA10
 namespace gamemd { int Gap2Recv_56DA10::GetRegionMap(void* aP1, int a3, int a4) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown **i; // ecx
   AbstractClass *v6; // eax
@@ -8463,7 +8363,6 @@ LABEL_12:
     goto LABEL_12; /*0x56daa3*/
   return a4; /*0x56dab9*/
 }
-} }
 // 0x56DB70
 namespace gamemd { char Gap2Recv_56DB70::InvalidateTileRegionMap(void* a2) {
 {
@@ -8803,7 +8702,6 @@ retn    0Ch
 
 // 0x57B870
 namespace gamemd { int Gap2Recv_57B870::Map_Create() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -8863,7 +8761,6 @@ LABEL_13:
   }
   return result; /*0x57b920*/
 }
-} }
 
 // 0x57B990
 namespace gamemd { char Gap2Recv_57B990::Map_Create_57B990() {
@@ -8911,7 +8808,6 @@ namespace gamemd { char Gap2Recv_57B990::Map_Create_57B990() {
 }
 // 0x57CAB0
 namespace gamemd { int Gap2Recv_57CAB0::Map_Create_57CAB0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -8971,7 +8867,6 @@ LABEL_13:
   }
   return result; /*0x57cb66*/
 }
-} }
 
 // 0x57CBE0
 namespace gamemd { char Gap2Recv_57CBE0::Map_Create_57CBE0() {
@@ -9020,7 +8915,6 @@ namespace gamemd { char Gap2Recv_57CBE0::Map_Create_57CBE0() {
 
 // 0x580BC0
 namespace gamemd { void* Gap2Recv_580BC0::FindMapSpawnCell(int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ObjectClass *v8; // ecx
   IUnknown *v11; // eax
@@ -9237,7 +9131,6 @@ LABEL_37:
   }
   return result; /*0x581031*/
 }
-} }
 
 // 0x581090
 namespace gamemd { int Gap2Recv_581090::CleanupMapSystems() {
@@ -9365,7 +9258,6 @@ retn    4
 
 // 0x583C60
 namespace gamemd { int CollectMatchingTileCells(void* a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
         _DWORD *this,
         _WORD *a1,
         int a3,
@@ -9578,7 +9470,6 @@ LABEL_31:
   }
   return result; /*0x584024*/
 }
-} }
 
 // 0x5840C0
 namespace gamemd { char Gap2Recv_5840C0::CheckMapReachability(int a2, int a3, int a4, int j) {
@@ -9872,7 +9763,6 @@ namespace gamemd { char Gap2Recv_5840C0::CheckMapReachability(int a2, int a3, in
 
 // 0x584E50
 namespace gamemd { int Gap2Recv_584E50::UpdateCellConnectivityGraph(void* a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HouseClass *v3; // ecx
   int *v7; // edi
@@ -10041,7 +9931,6 @@ namespace gamemd { int Gap2Recv_584E50::UpdateCellConnectivityGraph(void* a2) {
   while ( v13 < 3 ); /*0x58519f*/
   return result; /*0x5851a5*/
 }
-} }
 
 // 0x5851B0
 namespace gamemd { int Gap2Recv_5851B0::BuildTileAdjacencyTable(void* a2) {
@@ -10526,7 +10415,6 @@ retn
 
 // 0x5868A0
 namespace gamemd { void Gap2Recv_5868A0::UpdateAreaConnectivityMap(void* a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void **v10; // [esp+Ch] [ebp-18h] BYREF
   void *Block; // [esp+10h] [ebp-14h]
@@ -10586,7 +10474,6 @@ LABEL_13:
       __3_YAXPAX_Z(Block); /*0x586982*/
   }
 }
-} }
 
 // 0x587C50
 namespace gamemd { char Gap2Recv_587C50::DiagnoseMapCheck() {
@@ -12256,7 +12143,6 @@ namespace gamemd { void Gap2Recv_594870::PlaceRandomWaypoints(int a2) {
 
 // 0x595400
 namespace gamemd { char Gap2Recv_595400::PlaceNeutralBuilding() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int Owner; // ebp
   __int16 v12; // dx
@@ -12346,7 +12232,6 @@ LABEL_24:
     return (*(int (__thiscall **)(int *, int))(*v18 + 32))(v18, 1); /*0x595669*/
   return result; /*0x59564d*/
 }
-} }
 
 // 0x597430
 namespace gamemd { void* Gap2Recv_597430::Team_Start_597430() {
@@ -12681,7 +12566,6 @@ namespace gamemd { char Gap2Recv_5A1FB0::SpreadMapSeedTerrainFromWaypoints() {
 
 // 0x5A2F50
 namespace gamemd { void Gap2Recv_5A2F50::SmoothTerrainMap() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 v6; // cx
   __int16 v7; // ax
@@ -12868,11 +12752,9 @@ LABEL_52:
     }
   }
 }
-} }
 
 // 0x5A35F0
 namespace gamemd { int Gap2Recv_5A35F0::GenerateTerrainHeightMap() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 *v3; // esi
   int BitLCW; // edi
@@ -13014,11 +12896,9 @@ LABEL_21:
   }
   return result; /*0x5a38a9*/
 }
-} }
 
 // 0x5A82E0
 namespace gamemd { void Gap2Recv_5A82E0::ScatterMapSeedBuildings(void* a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   CellStruct *v3; // edi
   char **v7; // esi
@@ -13211,11 +13091,9 @@ LABEL_47:
       __3_YAXPAX_Z(Block); /*0x5a8708*/
   }
 }
-} }
 
 // 0x5A95B0
 namespace gamemd { void* Gap2Recv_5A95B0::PlaceRandomAIBuildings() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   CCINIClass *result; // eax
   CCINIClass *v3; // edi
@@ -13388,7 +13266,6 @@ LABEL_47:
   }
   return result; /*0x5a9628*/
 }
-} }
 
 // 0x5A99B0
 namespace gamemd { void* Gap2Recv_5A99B0::Object_Helper_5A99B0() {
@@ -13645,7 +13522,6 @@ namespace gamemd { int ReadMPMapsINI(char* Source) {
 
 // 0x5C80A0
 namespace gamemd { int Gap2Recv_5C80A0::ComputeModularInverse(void* a2, int a3) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 v22; // ax
   __int16 v23; // bx
@@ -13851,7 +13727,6 @@ LABEL_35:
   qmemcpy(this, &g_BigIntModExpObject, 4 * a3); /*0x5c83a5*/
   return 0; /*0x5c83a7*/
 }
-} }
 
 // 0x5CB790
 namespace gamemd { unsigned int Gap2Recv_5CB790::TerritoryUpdateDisplayWOL(int a2) {
@@ -14193,7 +14068,6 @@ retn    8
 
 // 0x5D4430
 namespace gamemd { int Gap2Recv_5D4430::SyncFrameCounter() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v2 = 0; /*0x5d4435*/
@@ -14257,11 +14131,9 @@ LABEL_13:
   }
   return v2; /*0x5d4506*/
 }
-} }
 
 // 0x5D6D80
 namespace gamemd { char Gap2Recv_5D6D80::ComputeMultiEngineerAdjustment() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HouseClass *v3; // eax
   RulesClass *v7; // ebp
@@ -14386,7 +14258,6 @@ LABEL_41:
       goto LABEL_42; /*0x5d6fe5*/
   }
 }
-} }
 
 // 0x5D9360
 namespace gamemd { void Gap2Recv_5D9360::SmallFunc_5D9360() {
@@ -14836,7 +14707,6 @@ namespace gamemd { char Gap2Recv_5EAE40::RefreshLobbyAll_Setup() {
 }
 // 0x5EAEE0
 namespace gamemd { char Gap2Recv_5EAEE0::RefreshLobbyAll_Play_5EAEE0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   const wchar_t *result; // eax
   int v2; // ebp
@@ -14953,7 +14823,6 @@ LABEL_8:
   while ( (int)v12 < (int)g_CampaignSideIndex ); /*0x5eb04b*/
   return result; /*0x5eb051*/
 }
-} }
 
 // 0x5EE100
 namespace gamemd { bool Gap2Recv_5EE100::Network_Send() {
@@ -15331,7 +15200,6 @@ namespace gamemd { int Gap2Recv_60B350::UI_Get_60B350() {
 
 // 0x60B420
 namespace gamemd { int Gap2Recv_60B420::UI_Get_60B420() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND Parent; // esi
   char GameSpeed; // bl
@@ -15382,7 +15250,6 @@ LABEL_9:
     v10 = *((_DWORD *)DataGlobal_B0FC28 + 1); /*0x60b530*/
   return MoveWindow(hWnd, v9, v10 - v6, v5, v6, 0); /*0x60b542*/
 }
-} }
 
 // 0x60B550
 namespace gamemd { int Gap2Recv_60B550::UI_Get_60B550() {
@@ -15416,7 +15283,6 @@ namespace gamemd { int Gap2Recv_60B550::UI_Get_60B550() {
 
 // 0x60B610
 namespace gamemd { int Gap2Recv_60B610::UI_Get_60B610() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND Parent; // esi
   char GameSpeed; // bl
@@ -15467,7 +15333,6 @@ LABEL_9:
     v10 = (ScenarioClass *)DataGlobal_B0FC28; /*0x60b6fb*/
   return MoveWindow(hWnd, v9, v10->nextScenario[1] + v10->nextScenario[3] - v6, v5, v6, 0); /*0x60b718*/
 }
-} }
 
 // 0x60B7A0
 namespace gamemd { char Gap2Recv_60B7A0::UI_Get_60B7A0() {
@@ -15983,7 +15848,6 @@ retn    8
 
 // 0x62C6E0
 namespace gamemd { void ParticleClass::Update() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   MouseClass *v3; // eax
   IUnknown *v4; // eax
@@ -16150,11 +16014,9 @@ LABEL_31:
     }
   }
 }
-} }
 
 // 0x62CB10
 namespace gamemd { void Gap2Recv_62CB10::UpdateAreaDamageEffect() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( *((float *)this + 57) <= 0.0 ) /*0x62cb30*/
@@ -16260,7 +16122,6 @@ LABEL_16:
     }
   }
 }
-} }
 
 // 0x62E430
 namespace gamemd { int Gap2Recv_62E430::CreateFireAtSW(int a2, void* a3) {
@@ -16304,7 +16165,6 @@ namespace gamemd { int Gap2Recv_62E430::CreateFireAtSW(int a2, void* a3) {
 
 // 0x62E840
 namespace gamemd { char Gap2Recv_62E840::UpdateProductionParticleSystem() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AbstractClass *v4; // edi
   AbstractClass *v11; // eax
@@ -16540,11 +16400,9 @@ LABEL_34:
   }
   return v38; /*0x62ed35*/
 }
-} }
 
 // 0x62ED40
 namespace gamemd { void Gap2Recv_62ED40::UpdateBuildingParticleSystem() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // edi
   int uniqueId; // ebx
@@ -16747,11 +16605,9 @@ LABEL_30:
   if ( v44 > *(float *)&v43->field_2AC ) /*0x62f216*/
     *((_BYTE *)this + 248) = 1; /*0x62f218*/
 }
-} }
 
 // 0x62F9A0
 namespace gamemd { char Gap2Recv_62F9A0::UpdateBuildingDamageParticles() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // ebx
   ParticleClass *v3; // edi
@@ -16888,11 +16744,9 @@ LABEL_13:
   }
   return v22; /*0x62fd50*/
 }
-} }
 
 // 0x630EA0
 namespace gamemd { char Gap2Recv_630EA0::UI_Get_630EA0() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND DlgItem; // eax
   HWND v3; // eax
@@ -16957,11 +16811,9 @@ LABEL_17:
   }
   return 1; /*0x630f39*/
 }
-} }
 
 // 0x631380
 namespace gamemd { void* Gap2Recv_631380::UI_Pop() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *result; // eax
   ObjectClass *v4; // eax
@@ -17039,11 +16891,9 @@ LABEL_13:
   }
   return result; /*0x6314da*/
 }
-} }
 
 // 0x631500
 namespace gamemd { void Gap2Recv_631500::UI_Pop_631500() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND DlgItem; // eax
   void **v6; // edx
@@ -17102,7 +16952,6 @@ LABEL_10:
     }
   }
 }
-} }
 
 // 0x6316E0
 namespace gamemd { bool Gap2Recv_6316E0::UI_Pop_631500_Pop(int a2) {
@@ -17560,7 +17409,6 @@ retn
 
 // 0x63C690
 namespace gamemd { int Gap2Recv_63C690::RenderScenarioActionLines() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int *Coords; // eax
   int *ActionCoordsCopy; // eax
@@ -17728,11 +17576,9 @@ LABEL_17:
   }
   return ScenarioClass::RenderAction((_DWORD *)this, (int)v32); /*0x63ca60*/
 }
-} }
 
 // 0x63CAE0
 namespace gamemd { int Gap2Recv_63CAE0::RenderScenarioActionLines2() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int *Coords; // eax
   int *ActionCoordsCopy; // eax
@@ -17876,7 +17722,6 @@ LABEL_17:
   DrawColor = BuildingClass::GetDrawColor(this); /*0x63ce15*/
   return Render_Render_635490(DrawColor); /*0x63ce22*/
 }
-} }
 
 // 0x63D0F0
 namespace gamemd { int Gap2Recv_63D0F0::Render_Render_63D0F0() {
@@ -18184,7 +18029,6 @@ namespace gamemd { void* Gap2Recv_63EFB0::Object_Set(int a2, int a3) {
 
 // 0x641B00
 namespace gamemd { char Gap2Recv_641B00::LoadMapPreviewImage(void* a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   size_t v10; // edi
   int Base64DataINIClass; // edi
@@ -18289,7 +18133,6 @@ LABEL_12:
   Straw::Dtor(v22); /*0x641d98*/
   return 0; /*0x641d59*/
 }
-} }
 
 // 0x643720
 namespace gamemd { int Gap2Recv_643720::RenderBuildingProductionButton(int a2, int a3, void* a4, int a5, char a6) {
@@ -19696,7 +19539,6 @@ namespace gamemd { void* Gap2Recv_65C6D0::SeedInitRNG(int aP1) {
 
 // 0x65DD30
 namespace gamemd { void* Gap2Recv_65DD30::ConstructTeamMembers() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   TeamClass *v2; // esi
   AbstractClass *OwnerHouse; // eax
@@ -19863,7 +19705,6 @@ LABEL_50:
     (*(void (__thiscall **)(TeamClass *, int))(*(_DWORD *)v5->__pad_0 + 32))(v5, 1); /*0x65dff7*/
   return 0; /*0x65dfaa*/
 }
-} }
 
 // 0x65FB80
 namespace gamemd { void* Gap2Recv_65FB80::Team_Load_65FB80(int a2, int a3) {
@@ -19969,7 +19810,6 @@ namespace gamemd { void* Gap2Recv_65FB80::Team_Load_65FB80(int a2, int a3) {
 
 // 0x65FE00
 namespace gamemd { void Gap2Recv_65FE00::Map_Helper_65FE00() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   float FlashFrameTime; // [esp+4h] [ebp-10h]
 
@@ -20049,11 +19889,9 @@ LABEL_8:
     *((_DWORD *)this + 6) = 1065353216; /*0x65ffe7*/
   }
 }
-} }
 
 // 0x660050
 namespace gamemd { char Gap2Recv_660050::RenderGradientTrapezoid() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 v2; // ax
   char v3; // cl
@@ -20238,7 +20076,6 @@ LABEL_12:
   }
   return (char)v13; /*0x66035c*/
 }
-} }
 
 // 0x660540
 namespace gamemd { int Gap2Recv_660540::Map_Helper_660540() {
@@ -20669,7 +20506,6 @@ retn    4
 
 // 0x6686C0
 namespace gamemd { int RulesClass::ResetRules() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ColorScheme *v2; // edi
   CCINIClass *KeyCount; // ebx
@@ -20885,7 +20721,6 @@ LABEL_99:
   v25[0] = &off_7E1668; /*0x668bce*/
   return BufferIOFileClass::Dtor(v25); /*0x668bdb*/
 }
-} }
 
 // 0x66B900
 namespace gamemd { int Gap2Recv_66B900::ReadCrateRulesINI() {
@@ -22538,7 +22373,6 @@ retn    4
 
 // 0x681840
 namespace gamemd { int Gap2Recv_681840::ScenarioPropertyReadCOM(void* a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int (__stdcall **v4)(int, void *, int *); // eax
   int Scenario; // esi
@@ -22885,7 +22719,6 @@ LABEL_91:
     (*(void (__stdcall **)(int))(*(_DWORD *)v33 + 8))(v33); /*0x681e98*/
   return v22; /*0x681857*/
 }
-} }
 
 // 0x683050
 namespace gamemd { int Gap2Recv_683050::Map_Read_683050() {
@@ -22957,7 +22790,6 @@ namespace gamemd { int Gap2Recv_68C860::LoadTheaterClassMIX_Load(void* a2, int a
 
 // 0x68FBB0
 namespace gamemd { int Gap2Recv_68FBB0::RenderScoreTypeText(int a2, int a3, int a4) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // edi
   int j; // edi
@@ -23189,11 +23021,9 @@ LABEL_46:
   while ( v34 != 13 ); /*0x68ffc4*/
   return result; /*0x68ffca*/
 }
-} }
 
 // 0x68FFE0
 namespace gamemd { int Gap2Recv_68FFE0::Render_Render_68FFE0(int a2, int a3) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   signed int result; // eax
   char *v10; // [esp+28h] [ebp-18h]
@@ -23201,7 +23031,6 @@ namespace gamemd { int Gap2Recv_68FFE0::Render_Render_68FFE0(int a2, int a3) {
   char *v12; // [esp+34h] [ebp-Ch]
   int v13; // [esp+38h] [ebp-8h]
   int v14; // [esp+3Ch] [ebp-4h]
-
   if ( (DataGlobal_00B054F0 & 1) == 0 ) /*0x68ffef*/
   {
     DataGlobal_00B054F0 |= 1u; /*0x68fffb*/
@@ -23277,7 +23106,6 @@ LABEL_12:
   DataGlobal_00B05530 = 5; /*0x690134*/
   return result; /*0x69013a*/
 }
-} }
 
 // 0x691590
 namespace gamemd { char Gap2Recv_691590::SetLandTypeMap() {
@@ -23312,7 +23140,6 @@ namespace gamemd { int Gap2Recv_692290::SmallFunc_692290() {
 
 // 0x693440
 namespace gamemd { char Gap2Recv_693440::ScrollMapEdge(void* a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char result; // al
   int SystemMetrics; // ecx
@@ -23504,11 +23331,9 @@ LABEL_51:
   }
   return result; /*0x693835*/
 }
-} }
 
 // 0x695BC0
 namespace gamemd { char Gap2Recv_695BC0::ApplyModemConfigSettings() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND DlgItem; // eax
   AbstractClass *v3; // esi
@@ -23656,11 +23481,9 @@ LABEL_10:
   }
   return 0; /*0x695f01*/
 }
-} }
 
 // 0x696200
 namespace gamemd { int Gap2Recv_696200::InitializeModemPortSelect() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND result; // eax
   AbstractClass *v3; // esi
@@ -23787,11 +23610,9 @@ LABEL_25:
   }
   return result; /*0x6964b4*/
 }
-} }
 
 // 0x6967B0
 namespace gamemd { int Gap2Recv_6967B0::DlgProcLoadGame_Load() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ObjectClass *DlgItem; // ebx
   HWND result; // eax
@@ -23871,7 +23692,6 @@ LABEL_9:
   }
   return result; /*0x6968ca*/
 }
-} }
 // 0x696C40
 namespace gamemd { int Gap2Recv_696C40::DlgProcLoadGame_Load_696C40() {
 {
@@ -24385,7 +24205,6 @@ namespace gamemd { void* Gap2Recv_69D870::ParseAndApplyAlliances_Parse(int a2, i
 
 // 0x69E430
 namespace gamemd { int LoadSHPFile(int lpBuffer, char* Source) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   *((_DWORD *)lpBuffer + 5) = (*(_DWORD *)&stru_830620[62032])++; /*0x69e440*/
@@ -24415,7 +24234,6 @@ namespace gamemd { int LoadSHPFile(int lpBuffer, char* Source) {
   BufferIOFileClass::Dtor(v5); /*0x69e4e9*/
   return (CampaignScore *)lpBuffer; /*0x69e4f0*/
 }
-} }
 
 // 0x69E900
 namespace gamemd { char Gap2Recv_69E900::Helper_69E900(unsigned int a2) {
@@ -25569,7 +25387,6 @@ namespace gamemd { void* Gap2Recv_6C9900::Render_Parse() {
 
 // 0x6C9F10
 namespace gamemd { int Gap2Recv_6C9F10::ParseMovieSubtitles(char* Source) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   wchar_t *v4; // esi
   size_t v5; // eax
@@ -25707,7 +25524,6 @@ LABEL_39:
   }
   return result; /*0x6ca1c7*/
 }
-} }
 
 // 0x6CABA0
 namespace gamemd { void* Gap2Recv_6CABA0::Render_Parse_6CABA0(int a2, int a3) {
@@ -25897,7 +25713,6 @@ namespace gamemd { int Gap2Recv_6D3290::DrawBuildingAnimFrame(void* a2, void* a3
 
 // 0x6D3470
 namespace gamemd { int Gap2Recv_6D3470::DrawBuildingShadow(void* a2, void* a3, char a4) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v5; // ecx
   int result; // eax
@@ -25981,11 +25796,9 @@ LABEL_9:
   }
   return result; /*0x6d3649*/
 }
-} }
 
 // 0x6D5730
 namespace gamemd { int Gap2Recv_6D5730::RenderBridgeRadarBlips(char a2, void* a3) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   __int16 v8; // dx
@@ -26095,11 +25908,9 @@ LABEL_15:
   while ( v3 < 8 );
   return result; /*0x6d59ba*/
 }
-} }
 
 // 0x6D5C50
 namespace gamemd { int Gap2Recv_6D5C50::RenderRadarBlips(char a2, int a3) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   __int16 v8; // ax
@@ -26222,7 +26033,6 @@ LABEL_14:
   }
   return result; /*0x6d5f27*/
 }
-} }
 
 // 0x6D6170
 namespace gamemd { void* Gap2Recv_6D6170::RequestMapSnapshot(void* a2) {
@@ -26448,7 +26258,6 @@ namespace gamemd { char* Gap2Recv_6DA9D0::RenderSelectionBeacons(int a2) {
 
 // 0x6DAD60
 namespace gamemd { int Gap2Recv_6DAD60::RenderRallyPointLines(int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   CampaignScore *v3; // ebx
   int result; // eax
@@ -26657,7 +26466,6 @@ LABEL_16:
   }
   return result; /*0x6db203*/
 }
-} }
 
 // 0x6DB620
 namespace gamemd { int LWCViewClass::RenderCells() {
@@ -27043,7 +26851,6 @@ namespace gamemd { int Gap2Recv_6E5FE0::SaveTriggerTagsToINI() {
 
 // 0x6E7330
 namespace gamemd { int Gap2Recv_6E7330::System_Read_6E7330() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   #374 *v5; // edi
   int v6; // esi
@@ -27097,7 +26904,6 @@ LABEL_12:
 LABEL_13:
   v7 = (void ***)&unk_B78828; /*0x6e73c7*/
   return __RTDynamicCast(*v7, 0, &AbstractClass `RTTI Type Descriptor', &DataGlobal_817F98, 0); /*0x6e73e7*/
-}
 }
 }
 // 0x6E7C20
@@ -27280,7 +27086,6 @@ namespace gamemd { void Gap2Recv_6EA0D0::SelectTeamProductionBuilding() {
 
 // 0x6ED200
 namespace gamemd { char Gap2Recv_6ED200::AssignTeamProductionFacilities(int a2, int a3) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int health; // eax
   TechnoClass *v4; // esi
@@ -27445,11 +27250,9 @@ LABEL_17:
   }
   return health; /*0x6ed2bc*/
 }
-} }
 
 // 0x6EE800
 namespace gamemd { char Gap2Recv_6EE800::SelectTeamMembers(int a2, int a3) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   FootClass *v24; // eax
   char result; // al
@@ -27648,11 +27451,9 @@ LABEL_27:
     *((_BYTE *)v3 + 128) = 1; /*0x6eebb4*/
   return result; /*0x6eebaa*/
 }
-} }
 
 // 0x6EF110
 namespace gamemd { char Gap2Recv_6EF110::DispatchTeamOrders(int a2, int a3) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ObjectClass **v3; // ebx
   ObjectClass *v4; // esi
@@ -27811,7 +27612,6 @@ LABEL_52:
   }
   return attachedBomb; /*0x6ef446*/
 }
-} }
 
 // 0x6EF470
 namespace gamemd { char Gap2Recv_6EF470::Team_Create() {
@@ -28285,7 +28085,6 @@ namespace gamemd { int Gap2Recv_6FD800::SpreadRadiationAreaEffect(short a2) {
 
 // 0x706BD0
 namespace gamemd { int QueueTechnoVoiceLine(void* a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
         int *this,
         TechnoClass *aP1,
         TechnoClass *aP2,
@@ -28472,11 +28271,9 @@ LABEL_16:
     goto LABEL_21; /*0x706cd5*/
   return (int)result->__pad_0; /*0x706cc5*/
 }
-} }
 
 // 0x707280
 namespace gamemd { void* RenderTechnoOverlaySHP(void* a1, int a2, int a3, int a4, void* a5, int a6, int a7, int a8, int a9, int a10, int a11) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   BSurface *v16; // eax
   qmemcpy( /*0x7072ca*/
@@ -28531,7 +28328,6 @@ namespace gamemd { void* RenderTechnoOverlaySHP(void* a1, int a2, int a3, int a4
   qmemcpy(aP1, v22, 0x18u); /*0x707467*/
   return aP1; /*0x707469*/
 }
-} }
 
 // 0x7087C0
 namespace gamemd { bool Gap2Recv_7087C0::ValidateAttackTarget(void* a2, int a3) {
@@ -28663,7 +28459,6 @@ namespace gamemd { bool Gap2Recv_7087C0::ValidateAttackTarget(void* a2, int a3) 
 
 // 0x70E5A0
 namespace gamemd { int Gap2Recv_70E5A0::UpdateTechnoIdleTimer() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -28858,7 +28653,6 @@ LABEL_47:
   }
   return result; /*0x70e5eb*/
 }
-} }
 
 // 0x70F1D0
 namespace gamemd { char Gap2Recv_70F1D0::DrawBuildingRangeIndicator(void* a2, int a3) {
@@ -29151,7 +28945,6 @@ namespace gamemd { char Gap2Recv_721D10::SmallFunc_721D10() {
 
 // 0x722440
 namespace gamemd { void Gap2Recv_722440::PropagateCellOccupancy() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   Gap2Recv_722440 *v1; // ebx
   __int16 *v9; // eax
@@ -29327,11 +29120,9 @@ LABEL_52:
     }
   }
 }
-} }
 
 // 0x722F00
 namespace gamemd { void Gap2Recv_722F00::RebuildBuildingOccupancy() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   CellStruct *v9; // ebx
   __int16 *v23; // ebx
@@ -29497,11 +29288,9 @@ LABEL_48:
     }
   }
 }
-} }
 
 // 0x724200
 namespace gamemd { void Gap2Recv_724200::HandleToolTipMessage(int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( *(_BYTE *)(this + 12) == 1 ) /*0x72420a*/
@@ -29606,7 +29395,6 @@ LABEL_8:
     }
   }
 }
-} }
 
 // 0x724510
 namespace gamemd { int Gap2Recv_724510::sub_724510() {
@@ -30014,7 +29802,6 @@ namespace gamemd { char Gap2Recv_734390::SelectFactionThemeMusic_Helper_734390(v
 
 // 0x736DF0
 namespace gamemd { int Gap2Recv_736DF0::UpdateTechnoFiring() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ObjectClass *v2; // edi
   int result; // eax
@@ -30158,11 +29945,9 @@ LABEL_52:
   }
   return result; /*0x736e67*/
 }
-} }
 
 // 0x737180
 namespace gamemd { int Gap2Recv_737180::UpdateInfantryIdleWander() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   __int16 v10; // dx
@@ -30277,11 +30062,9 @@ LABEL_15:
   }
   return result; /*0x7371dd*/
 }
-} }
 
 // 0x7436E0
 namespace gamemd { int Gap2Recv_7436E0::ReadFootINI() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   _DWORD *Value; // eax
@@ -30365,7 +30148,6 @@ LABEL_10:
   }
   return result; /*0x7438a4*/
 }
-} }
 
 // 0x746D90
 namespace gamemd { bool Gap2Recv_746D90::Event_Process_746D90() {
@@ -30433,7 +30215,6 @@ namespace gamemd { int Gap2Recv_74CDB0::Helper_486E30_Helper() {
 
 // 0x74D7C0
 namespace gamemd { void VeinholeMonsterClass::UpdateVeinholeMonster() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 *v2; // ebp
   int VeinholeShrinkRate; // eax
@@ -30641,7 +30422,6 @@ LABEL_55:
     }
   }
 }
-} }
 
 // 0x74E1C0
 namespace gamemd { void Gap2Recv_74E1C0::ProcessVeinholeMonster() {
@@ -30950,7 +30730,6 @@ namespace gamemd { void Gap2Recv_74E8A0::System_Init_74E8A0() {
 
 // 0x74EA70
 namespace gamemd { char Gap2Recv_74EA70::LoadVeinholeMonsters() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // edi
   AbstractClass *v4; // edi
@@ -31065,7 +30844,6 @@ LABEL_32:
   }
   return 1; /*0x74eaf0*/
 }
-} }
 
 // 0x74F620
 namespace gamemd { void Gap2Recv_74F620::DestroyVeinholeMonster_Destroy() {
@@ -33662,7 +33440,6 @@ namespace gamemd { void Gap2Recv_76CBF0::ConstructWDTSelection_Create_76CBF0(voi
 
 // 0x76CDA0
 namespace gamemd { void* Gap2Recv_76CDA0::ShowWDTTerritorySelection(void* a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int State; // eax
   wchar_t *StringCSF; // eax
@@ -33832,7 +33609,6 @@ LABEL_38:
   }
   return (rc_ptr *)a2; /*0x76d175*/
 }
-} }
 
 // 0x76DAD0
 namespace gamemd { bool Gap2Recv_76DAD0::TerritorySelectWDT(int a2) {
@@ -34035,7 +33811,6 @@ namespace gamemd { void Gap2Recv_76E180::ShowWDTTerritorySelection_Show() {
 
 // 0x76E2F0
 namespace gamemd { char* Gap2Recv_76E2F0::Team_Start_76E2F0(int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int OwnerHouse; // eax
   ScoreScreen *v4; // ebp
@@ -34080,11 +33855,9 @@ namespace gamemd { char* Gap2Recv_76E2F0::Team_Start_76E2F0(int a2) {
   ComPtr::Release(&v12); /*0x76e418*/
   return sub_765000(*(_DWORD *)(this + 76), v4); /*0x76e426*/
 }
-} }
 
 // 0x76E430
 namespace gamemd { int Gap2Recv_76E430::Team_Start_76E430(int a2, void* aP2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   rc_ptr_base v8; // [esp+4h] [ebp-8h] BYREF
   ActivateScreenWDT((int)&v8, a2); /*0x76e449*/
@@ -34117,7 +33890,6 @@ LABEL_6:
     return 2; /*0x76e4e3*/
   }
 }
-} }
 
 // 0x76E750
 namespace gamemd { void* Gap2Recv_76E750::Team_Start_76E750(int a2) {
@@ -34184,7 +33956,6 @@ namespace gamemd { void* Gap2Recv_76E750::Team_Start_76E750(int a2) {
 
 // 0x76E8B0
 namespace gamemd { bool Gap2Recv_76E8B0::Team_Start_76E8B0(int a2, int a3) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int ScoreScreen_field_0x04; // ebp
   int v9; // edi
@@ -34192,7 +33963,6 @@ namespace gamemd { bool Gap2Recv_76E8B0::Team_Start_76E8B0(int a2, int a3) {
   bool v11; // bl
   CampaignScore v13; // [esp-8h] [ebp-28h] BYREF
   _DWORD *v14; // [esp+1Ch] [ebp-4h]
-
   int v2 = *(_DWORD *)aP2[0]; /*0x76e8b4*/
   ActivateScreenWDT((int)&v13.CampaignScore_field_0x20, *(int *)aP2[0]); /*0x76e8cc*/
   int v4 = WDTClass::CountCellType(v14, *(_DWORD *)(*(this + 19) + 68)); /*0x76e8dc*/
@@ -34242,7 +34012,6 @@ LABEL_12:
   ComPtr::Release((rc_ptr_base *)&v13.CampaignScore_field_0x20); /*0x76e9b2*/
   return v11; /*0x76e9b7*/
 }
-} }
 
 // 0x76EEB0
 namespace gamemd { int Gap2Recv_76EEB0::ConstructWDTSelection_Create_76EEB0() {
@@ -34873,7 +34642,6 @@ namespace gamemd { int Gap2Recv_779F10::SavePersonaConfigWOL() {
 
 // 0x77A080
 namespace gamemd { void Gap2Recv_77A080::SaveProfileWOL(char* a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   CampaignScore *v3; // eax
   ObjectClass aP2; // [esp+8h] [ebp-ACh] BYREF
@@ -34979,7 +34747,6 @@ LABEL_10:
     goto LABEL_10; /*0x77a47f*/
   }
 }
-} }
 
 // 0x77A760
 namespace gamemd { char Gap2Recv_77A760::MainLobbyDlgProcWOL_Helper(char a2) {
@@ -35087,7 +34854,6 @@ namespace gamemd { int Gap2Recv_77A8B0::Event_Process_77A8B0(int a2) {
 
 // 0x77A9F0
 namespace gamemd { void Gap2Recv_77A9F0::FillPersonaInfoWOL(int hDlg, char* a3, void* a4) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND v4; // ebx
   ObjectClass *DlgItem; // edi
@@ -35414,7 +35180,6 @@ LABEL_30:
     __3_YAXPAX_Z(v69); /*0x77b006*/
   DeleteAndZero::Alt((void **)&hDlg); /*0x77b012*/
 }
-} }
 
 // 0x77D1F0
 namespace gamemd { void Gap2Recv_77D1F0::ConnectAndLoginWOL_Connect() {

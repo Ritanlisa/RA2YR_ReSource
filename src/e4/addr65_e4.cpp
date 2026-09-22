@@ -31,7 +31,6 @@
 namespace gamemd {
 int Trigger_AllocateLog(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int i; // esi
@@ -43,7 +42,6 @@ int Trigger_AllocateLog(int a1)
   __int16 *v44; // ebp
   __int16 *v48; // edi
   __int16 *v58; // edi
-
   if ( byte_B04880 )
   {
   int v86; // [esp+34h] [ebp-4h]
@@ -484,20 +482,17 @@ int Trigger_AllocateLog(int a1)
   }
   return result;
 }
-}
 } // namespace gamemd
 
 // 0x652630
 namespace gamemd {
 int sub_652630(unsigned int * a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   if ( *a1 == *a2 )
     return 0; /*0x652640*/
   else
     return *a1 >= *a2 ? 1 : -1;
-}
 }
 } // namespace gamemd
 
@@ -505,7 +500,6 @@ int sub_652630(unsigned int * a1, unsigned int * a2)
 namespace gamemd {
 void RenderScoreboardSidebar()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ConvertClass *v6; // eax
   int BuildingAnimByName; // eax
@@ -704,14 +698,12 @@ void RenderScoreboardSidebar()
   }
   return v3; /*0x654310*/
 }
-}
 } // namespace gamemd
 
 // 0x655050
 namespace gamemd {
 unsigned int * E4Recv_655050::sub_655050(unsigned int * a2, short * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v3 = *a3; /*0x655063*/
@@ -735,17 +727,14 @@ LABEL_5:
   a2[3] = 1; /*0x6550aa*/
   return a2; /*0x6550a5*/
 }
-}
 } // namespace gamemd
 
 // 0x655890
 namespace gamemd {
 int E4Recv_655890::sub_655890()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return *this + 251 * *(this + 1); /*0x6558a3*/
-}
 }
 } // namespace gamemd
 
@@ -753,7 +742,6 @@ int E4Recv_655890::sub_655890()
 namespace gamemd {
 void DrawPowerBarForPlayers(HWND hDlg)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   #375 *v4; // esi
 
@@ -790,14 +778,12 @@ LABEL_7:
   TabClass::DrawPower(hDlg, 0, *(#375 **)&HouseClass_Array->__pad_0[4 * v1]); /*0x6586b4*/
   return TabClass::DrawPower(hDlg, (void *)v1, v4); /*0x6586c3*/
 }
-}
 } // namespace gamemd
 
 // 0x6586D0
 namespace gamemd {
 void sub_6586D0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND Dialog; // esi
   LONG dwNewLong; // [esp+4h] [ebp-4h] BYREF
@@ -823,14 +809,12 @@ LABEL_7:
   g_GameActive = *((_BYTE *)g_ScenarioClass_Instance + 13730); /*0x658758*/
   return MapClass::MarkForRedraw(&DataGlobal_87F7E8, 2); /*0x658763*/
 }
-}
 } // namespace gamemd
 
 // 0x6591B0
 namespace gamemd {
 AbstractClass * * UpdateProjectileTrails()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void *Block; // [esp+14h] [ebp-1Ch] BYREF
 
@@ -949,14 +933,12 @@ LABEL_23:
     goto LABEL_36; /*0x6593cd*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x659590
 namespace gamemd {
 int E4Recv_659590::sub_659590(unsigned int * a2, unsigned int * a3, short a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char result; // al
 
@@ -986,14 +968,12 @@ int E4Recv_659590::sub_659590(unsigned int * a2, unsigned int * a3, short a4)
   }
   return result; /*0x659642*/
 }
-}
 } // namespace gamemd
 
 // 0x65B160
 namespace gamemd {
 int sub_65B160()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   dword_B04BD4 = 0; /*0x65b167*/
   dword_B04BD8 = 0; /*0x65b16c*/
@@ -1004,14 +984,12 @@ int sub_65B160()
   dword_B04BE0 = 0; /*0x65b191*/
   return atexit(sub_65B1A0); /*0x65b19c*/
 }
-}
 } // namespace gamemd
 
 // 0x65B1A0
 namespace gamemd {
 void sub_65B1A0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   RadSiteClass_Array = (int)&vt_VectorClass_RadSiteClass; /*0x65b1a8*/
   if ( dword_B04BD4 && byte_B04BDD ) /*0x65b1bc*/
@@ -1022,20 +1000,17 @@ void sub_65B1A0()
   byte_B04BDD = 0; /*0x65b1cd*/
   dword_B04BD8 = 0; /*0x65b1d3*/
 }
-}
 } // namespace gamemd
 
 // 0x65C300
 namespace gamemd {
 int RAMFileClass::nullsub_0_1()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   if ( (*(unsigned __int8 (__thiscall **)(RAMFileClass *))(*(_DWORD *)this->__pad_0 + 24))(this) ) /*0x65c305*/
     return 0; /*0x65c31a*/
   this->field_10 = 0; /*0x65c30c*/
   return 1; /*0x65c318*/
-}
 }
 } // namespace gamemd
 
@@ -1043,7 +1018,6 @@ int RAMFileClass::nullsub_0_1()
 namespace gamemd {
 int RAMFileClass::nullsub_0_2(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   if ( !this->field_8 || (*(unsigned __int8 (__thiscall **)(RAMFileClass *))(*(_DWORD *)this->__pad_0 + 24))(this) ) /*0x65c35c*/
     return 0; /*0x65c391*/
@@ -1054,14 +1028,12 @@ int RAMFileClass::nullsub_0_2(int a2)
     this->field_10 = 0; /*0x65c37a*/
   return (*(unsigned __int8 (__thiscall **)(RAMFileClass *))(*(_DWORD *)this->__pad_0 + 24))(this); /*0x65c38d*/
 }
-}
 } // namespace gamemd
 
 // 0x65C3A0
 namespace gamemd {
 AbstractClass * * RAMFileClass::nullsub_0_3(void * a1, signed int Size)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ModemGame *v4; // edi
   if ( !this->field_8 ) /*0x65c3a6*/
@@ -1090,14 +1062,12 @@ LABEL_7:
     (*(void (__thiscall **)(RAMFileClass *))(*(_DWORD *)this->__pad_0 + 52))(this); /*0x65c409*/
   return v4; /*0x65c40e*/
 }
-}
 } // namespace gamemd
 
 // 0x65C420
 namespace gamemd {
 AbstractClass * * RAMFileClass::nullsub_0_4(int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -1130,17 +1100,14 @@ LABEL_11:
     this->field_10 = result; /*0x65c48d*/
   return result; /*0x65c490*/
 }
-}
 } // namespace gamemd
 
 // 0x65C560
 namespace gamemd {
 int RAMFileClass::nullsub_0_6(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return (*(int (__thiscall **)(RAMFileClass *))(*(_DWORD *)this->__pad_0 + 4))(this); /*0x65c565*/
-}
 }
 } // namespace gamemd
 
@@ -1148,7 +1115,6 @@ int RAMFileClass::nullsub_0_6(int a2)
 namespace gamemd {
 void * RAMFileClass::nullsub_0_10(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   char v3 = *((_BYTE *)this + 29); /*0x65c5a3*/
@@ -1165,19 +1131,16 @@ void * RAMFileClass::nullsub_0_10(char a2)
     __3_YAXPAX_Z(this); /*0x65c5da*/
   return this; /*0x65c5e4*/
 }
-}
 } // namespace gamemd
 
 // 0x65C630
 namespace gamemd {
 void unknown_libname_28()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // Microsoft VisualC 2-14/net runtime
 {
   *this = a2; /*0x65c636*/
   return this; /*0x65c638*/
-}
 }
 } // namespace gamemd
 
@@ -1185,7 +1148,6 @@ void unknown_libname_28()
 namespace gamemd {
 int E4Recv_65C910::sub_65C910(ObjectClass * aP1, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   ObjectClass *v5; // ecx
@@ -1260,14 +1222,12 @@ int E4Recv_65C910::sub_65C910(ObjectClass * aP1, int a3)
   }
   return result; /*0x65c9ef*/
 }
-}
 } // namespace gamemd
 
 // 0x65D510
 namespace gamemd {
 unsigned int int sub_65D510(int a1, const char * a2, int a3, unsigned char * a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   unsigned int v4 = 0; /*0x65d518*/
@@ -1308,14 +1268,12 @@ LABEL_10:
   FileStraw::Destructor((int)v10); /*0x65d5b1*/
   return v4; /*0x65d5b8*/
 }
-}
 } // namespace gamemd
 
 // 0x65D5C0
 namespace gamemd {
 void int Stream_ReadLine(int a1, const char * a2, int a3, unsigned char * a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( !a3 || !a2 ) /*0x65d5d3*/
@@ -1349,14 +1307,12 @@ LABEL_11:
   a2[v6] = 0; /*0x65d639*/
   return strlen(a2); /*0x65d644*/
 }
-}
 } // namespace gamemd
 
 // 0x65D8E0
 namespace gamemd {
 bool DeployScriptActionPlane(int a1, int edx0)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ObjectClass *v2; // edi
   ScriptTypeClass *v4; // eax
@@ -1582,14 +1538,12 @@ LABEL_49:
   (*(void (__thiscall **)(int, int))(*(_DWORD *)v31 + 32))(v31, 1); /*0x65dd0e*/
   return 1; /*0x65db14*/
 }
-}
 } // namespace gamemd
 
 // 0x65E010
 namespace gamemd {
 void MoveScriptTypeClassToWaypoint(ScriptTypeClass * aP0, ObjectClass * aP1, int * a2, int aP1_4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ScriptTypeClass *v4; // esi
   ObjectClass *v5; // ebp
@@ -1899,14 +1853,12 @@ LABEL_53:
   }
   return v14; /*0x65e643*/
 }
-}
 } // namespace gamemd
 
 // 0x65E660
 namespace gamemd {
 void SpawnSuperWeaponUnits(unsigned int * a0, int a2, IUnknown * aP2, int a4, int a5, int a6, int a7, int a8)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   MouseClass *v9; // ecx
   MouseClass *TransitionCount; // eax
@@ -1994,14 +1946,12 @@ void SpawnSuperWeaponUnits(unsigned int * a0, int a2, IUnknown * aP2, int a4, in
   }
   return v10; /*0x65e820*/
 }
-}
 } // namespace gamemd
 
 // 0x65E850
 namespace gamemd {
 void PlaceAircraftOnMap(unsigned int * a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned int TransitionCount; // eax
 
@@ -2115,14 +2065,12 @@ void PlaceAircraftOnMap(unsigned int * a1, int a2, int a3, int a4, int a5, int a
   }
   return v24; /*0x65ea81*/
 }
-}
 } // namespace gamemd
 
 // 0x65EC30
 namespace gamemd {
 void* ExecuteScriptTypeClassActions(unsigned int * ecx0, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ScriptTypeClass *v4; // eax
   ScriptTypeClass *v6; // eax
@@ -2456,14 +2404,12 @@ LABEL_22:
   }
   return 1; /*0x65f2f6*/
 }
-}
 } // namespace gamemd
 
 // 0x65FA70
 namespace gamemd {
 void CreateTriggerClassIfFarEnough(IUnknown * aP0, int a2, IUnknown * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v3; // edi
   AbstractClass *v5; // ecx
@@ -2504,7 +2450,6 @@ LABEL_8:
       Team_Load_65FB80(v10, (int)v3, aP2); /*0x65fb3a*/
     return 1; /*0x65fb3f*/
   }
-}
 }
 } // namespace gamemd
 

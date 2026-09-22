@@ -6,7 +6,6 @@
 // 0x6D1200
 int CommandClass::BuildBar()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char *Entry; // eax
   int v37; // [esp+8h] [ebp-1Ch] BYREF
@@ -132,12 +131,10 @@ int CommandClass::BuildBar()
   PushCommandClass::Execute(v35, (int)DataGlobal_842858); /*0x6d14d8*/
   return PushCommandClass::Execute(DataGlobal_B0CCB0, (int)DataGlobal_842848); /*0x6d14ec*/
 }
-}
 
 // 0x724580
 int CommandClass::AddAction(ToolTipManager * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ToolTipManager *v2; // edi
   ObjectClass *v4; // esi
@@ -228,5 +225,4 @@ LABEL_19:
     __3_YAXPAX_Z(v8); /*0x72471d*/
   }
   return 0; /*0x7245c4*/
-}
 }

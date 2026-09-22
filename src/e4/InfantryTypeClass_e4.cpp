@@ -11,7 +11,6 @@
 // 0x5236A0
 InfantryTypeClass * * InfantryTypeClass::Constructor(ObjectClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   InfantryTypeClass *v3; // eax
   CCINIClass *v6; // edx
@@ -139,12 +138,10 @@ LABEL_11:
   }
   return this; /*0x523972*/
 }
-}
 
 // 0x523980
 unsigned int * InfantryTypeClass::Constructor_523980(ObjectTypeClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   TechnoTypeClass::Construct((int)this, aP1); /*0x523988*/
   this->qE50 = &vt_TypeList_AnimTypeClass_const; /*0x523992*/
@@ -156,12 +153,10 @@ unsigned int * InfantryTypeClass::Constructor_523980(ObjectTypeClass * aP1)
   this->vtable4 = &vt_InfantryTypeClass; /*0x5239bc*/
   return this; /*0x5239c5*/
 }
-}
 
 // 0x523B40
 int InfantryTypeClass::CreateInfantry(short * a2, AbstractClass * ppv)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   InfantryClass *v5; // esi
   int v4 = __2_YAPAXI_Z(0x6F0u); /*0x523b4b*/
@@ -195,12 +190,10 @@ int InfantryTypeClass::CreateInfantry(short * a2, AbstractClass * ppv)
   }
   return 0; /*0x523c07*/
 }
-}
 
 // 0x5240A0
 int InfantryTypeClass::LoadFromINI(unsigned char *** a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int PipIdx; // eax
   WeaponStruct *v5; // ebx
@@ -524,13 +517,11 @@ int InfantryTypeClass::LoadFromINI(unsigned char *** a2)
   AnimSequence::Parse(this); /*0x52473a*/
   return 1; /*0x524741*/
 }
-}
 
 // 0x524960
 namespace gamemd {
 ObjectTypeClass * * InfantryTypeClass_LoadTypeData()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int i; // ebx
@@ -605,14 +596,12 @@ ObjectTypeClass * * InfantryTypeClass_LoadTypeData()
   }
   return result; /*0x524b57*/
 }
-}
 } // namespace gamemd
 
 // 0x524B60
 namespace gamemd {
 TechnoTypeClass * * InfantryTypeClass_SaveLoad_Prefix()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int i; // ebx
@@ -642,7 +631,6 @@ TechnoTypeClass * * InfantryTypeClass_SaveLoad_Prefix()
     return v6; /*0x524c52*/
   }
   return result; /*0x524c51*/
-}
 }
 } // namespace gamemd
 
@@ -702,7 +690,6 @@ InfantryTypeClass * InfantryTypeClass::ddtor(char a2)
 // 0x524F20
 unsigned int * InfantryTypeClass::CopyDataArray(DynamicVector * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( this == (_DWORD *)aP1 ) /*0x524f2a*/
@@ -738,12 +725,10 @@ LABEL_8:
   this->abstractFlags = *(_DWORD *)aP1->__pad_14; /*0x524f7c*/
   return this; /*0x524f81*/
 }
-}
 
 // 0x772FA0
 WeaponTypeClass * * InfantryTypeClass::Find()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( !_strcmpi(&stru_817460.sectionHead[1], this) || !_strcmpi(g_Str_none, this) ) /*0x772fbc*/
@@ -763,7 +748,6 @@ LABEL_6:
       goto LABEL_6; /*0x772ff4*/
   }
   return *(WeaponTypeClass **)(*(_DWORD *)&stru_87C374[45560] + 4 * v2); /*0x77300f*/
-}
 }
 
 // 0x523B10

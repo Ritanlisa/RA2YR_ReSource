@@ -9,7 +9,6 @@
 // 0x7B1B50
 int UDPInterfaceClass::connect()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char result; // al
 
@@ -23,12 +22,10 @@ int UDPInterfaceClass::connect()
   }
   return result; /*0x7b1b75*/
 }
-}
 
 // 0x7B3310
 void UDPInterfaceClass::CheckStatus(short a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _WORD *i; // eax
   SOCKET *v6; // ebx
@@ -67,12 +64,10 @@ void UDPInterfaceClass::CheckStatus(short a2)
     }
   }
 }
-}
 
 // 0x7B33D0
 void UDPInterfaceClass::GetStatistics(unsigned short a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v3; // eax
@@ -95,12 +90,10 @@ LABEL_7:
     this->q3F334 = *(this + v3 + 64704); /*0x7b3422*/
   }
 }
-}
 
 // 0x7B3A20
 AbstractClass * * UDPInterfaceClass::Flush()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   Game *v4; // esi
@@ -129,12 +122,10 @@ AbstractClass * * UDPInterfaceClass::Flush()
   }
   return result; /*0x7b3a85*/
 }
-}
 
 // 0x7B3AA0
 AbstractClass * * UDPInterfaceClass::ProcessSocketIO(int a2, SOCKET s, int a4, unsigned int a5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AbstractClass *v6; // ebx
   AbstractClass *v13; // ebx
@@ -426,30 +417,24 @@ LABEL_43:
   }
   return 0; /*0x7b3b27*/
 }
-}
 
 // 0x7B4150
 int UDPInterfaceClass::Connect(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return *(_DWORD *)(this->q3F554 + 4 * a2); /*0x7b415d*/
-}
 }
 
 // 0x7B4160
 int UDPInterfaceClass::Receive()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return this->q1F97E; /*0x7b4167*/
-}
 }
 
 // 0x7B4170
 CampaignClass * * UDPInterfaceClass::Destructor(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void **v4; // ecx
   void **v7; // ecx
@@ -503,12 +488,10 @@ CampaignClass * * UDPInterfaceClass::Destructor(char a2)
     __3_YAXPAX_Z(this); /*0x7b42a6*/
   return (UDPInterfaceClass *)this; /*0x7b42b0*/
 }
-}
 
 // 0x7B42C0
 void UDPInterfaceClass::disconnect()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   AbstractClass *v2 = this->Initialized; /*0x7b42c6*/
@@ -521,24 +504,20 @@ void UDPInterfaceClass::disconnect()
   *(_BYTE *)(this + 13) = 0; /*0x7b42e1*/
   this->q008 = 0; /*0x7b42e4*/
 }
-}
 
 // 0x7B42F0
 unsigned int UDPInterfaceClass::reset(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   if ( this->q00C ) /*0x7b42f0*/
     return (unsigned int)(a2 - this->Initialized) >> 2; /*0x7b4305*/
   else
     return 0; /*0x7b42f7*/
 }
-}
 
 // 0x7B44A0
 AbstractClass * * UDPInterfaceClass::flush(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // eax
 
@@ -577,12 +556,10 @@ AbstractClass * * UDPInterfaceClass::flush(int a2, unsigned int * a3)
     this->Initialized = v7; /*0x7b453b*/
   return 1; /*0x7b453e*/
 }
-}
 
 // 0x7B4550
 int UDPInterfaceClass::sendPacket(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   _DWORD *i; // ecx
@@ -598,12 +575,10 @@ int UDPInterfaceClass::sendPacket(unsigned int * a2)
   }
   return result; /*0x7b4572*/
 }
-}
 
 // 0x7B3450
 AbstractClass * * UDPInterfaceClass_Destru::Bind(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char result; // al
   IUnknown *v4; // esi
@@ -697,7 +672,6 @@ AbstractClass * * UDPInterfaceClass_Destru::Bind(int a2)
   }
   return result; /*0x7b346d*/
 }
-}
 
 // 0x7B36C0
 short UDPInterfaceClass_Destru::ddtor(WinsockInterfaceClass * aP1, unsigned int arg4, unsigned char * a3, unsigned int a5, WinsockInterfaceClass * aP5, char a7, short a8)
@@ -712,7 +686,6 @@ short UDPInterfaceClass_Destru::ddtor(WinsockInterfaceClass * aP1, unsigned int 
 namespace gamemd {
 void UDPInterfaceClass_Destru_Connect()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   AnimClass *v14; // eax
@@ -783,13 +756,11 @@ void UDPInterfaceClass_Destru_Connect()
   }
   return result; /*0x7b387e*/
 }
-}
 } // namespace gamemd
 
 // 0x7B3890
 int UDPInterfaceClass_Destru::Receive()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   Game *v3; // edi
   u_int v4; // eax
@@ -817,22 +788,18 @@ LABEL_6:
     return 1; /*0x7b38e5*/
   }
 }
-}
 
 // 0x7B3900
 int UDPInterfaceClass_Destru::CheckStatus()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   NetworkClass::UnregisterAsync(this); /*0x7b3903*/
   return this->vt_slot_112(); /*0x7b390f*/
-}
 }
 
 // 0x7B3920
 void UDPInterfaceClass_Destru::Reset(unsigned int * a2, short a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 v5; // bp
   int v4 = *(this + 64858); /*0x7b3926*/
@@ -863,27 +830,22 @@ void UDPInterfaceClass_Destru::Reset(unsigned int * a2, short a3)
     *((_WORD *)this + (*(this + 64858))++ + 129750) = v5; /*0x7b39aa*/
   }
 }
-}
 
 // 0x7B4100
 int UDPInterfaceClass_Destru::GetStatistics(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   if ( a2 == this->q3F06C || a2 == -1 )
     return 1140; /*0x7b412e*/
   else
     return a2 != this->q3F070 ? 0 : 0x475;
 }
-}
 
 // 0x7B4140
 int UDPInterfaceClass_Destru::COMStub()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return this->q3F560; /*0x7b4146*/
-}
 }
 
 // 0x7B40F0

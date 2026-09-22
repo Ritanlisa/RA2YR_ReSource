@@ -9,7 +9,6 @@
 namespace gamemd {
 void Screen_Capture()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char result; // al
   int retaddr; // [esp+26h] [ebp+0h]
@@ -46,13 +45,11 @@ void Screen_Capture()
     return Frame::Present(0); /*0x52ff7f*/
   return result; /*0x52ff84*/
 }
-}
 } // namespace gamemd
 
 // 0x68F060
 int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   CampaignScore *v17; // ebx
   int v19; // ecx
@@ -431,12 +428,10 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
   *(_DWORD *)this->q003->vt_slot_8(this->q003, v81); /*0x68f878*/
   return Screen::TransitionLoop((MPCooperative *)this, 20); /*0x68f884*/
 }
-}
 
 // 0x690160
 int Screen::TransitionLoop(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // esi
   int j; // esi
@@ -530,7 +525,6 @@ int Screen::TransitionLoop(int a2)
   }
   while ( !v14 );
   return result; /*0x690356*/
-}
 }
 
 // 0x690360

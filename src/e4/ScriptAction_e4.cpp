@@ -18,7 +18,6 @@
 namespace gamemd {
 void * ScriptAction::InitActionFields(int a2, int a3, char a4, char a5, int a6, char a7, int a8, char a9, int a10, char a11)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *result; // eax
 
@@ -46,14 +45,12 @@ void * ScriptAction::InitActionFields(int a2, int a3, char a4, char a5, int a6, 
   this->q00C = *(_DWORD *)&HouseClass_Player[45112]; /*0x4c68c4*/
   return result; /*0x4c68c7*/
 }
-}
 } // namespace gamemd
 
 // 0x633FA0
 namespace gamemd {
 int ScriptAction::CreatePlacementAction(AbstractClass * aP1, const void * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ObjectClass *v5; // ebx
   _BYTE *v6; // eax
@@ -111,14 +108,12 @@ int ScriptAction::CreatePlacementAction(AbstractClass * aP1, const void * a2)
     *(_DWORD *)(Type + 140) = *(_DWORD *)(Type + 20) - 1; /*0x634093*/
   return ScriptAction::PlaceObject((int)this, (AbstractClass *)v5); /*0x6340a1*/
 }
-}
 } // namespace gamemd
 
 // 0x6343C0
 namespace gamemd {
 unsigned int * ScriptAction::GetCoords(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int *ActionCoords; // eax
 
@@ -132,14 +127,12 @@ unsigned int * ScriptAction::GetCoords(unsigned int * a2)
   a2[2] = v5; /*0x6343e9*/
   return a2; /*0x6343ec*/
 }
-}
 } // namespace gamemd
 
 // 0x634400
 namespace gamemd {
 unsigned int * ScriptAction::GetScreenPos(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *ActionCoords; // eax
 
@@ -155,14 +148,12 @@ unsigned int * ScriptAction::GetScreenPos(unsigned int * a2)
   a2[1] = v3; /*0x63445a*/
   return a2; /*0x63445d*/
 }
-}
 } // namespace gamemd
 
 // 0x634550
 namespace gamemd {
 int ScriptAction::GetActionCoordinates(int a2, int a3, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *ScenarioClassActionCoords; // eax
 
@@ -170,14 +161,12 @@ int ScriptAction::GetActionCoordinates(int a2, int a3, int a4)
   ScenarioClassActionCoords = GetScenarioClassActionCoords(v6, *(_BYTE **)(*this->q004 + 4)); /*0x634560*/
   return *ScenarioClassActionCoords == a2 && ScenarioClassActionCoords[1] == a3 && ScenarioClassActionCoords[2] == a4; /*0x63456f*/
 }
-}
 } // namespace gamemd
 
 // 0x6346B0
 namespace gamemd {
 unsigned int * ScriptAction::FindItemByValue(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD **v4; // esi
   _DWORD **i; // ecx
@@ -197,14 +186,12 @@ unsigned int * ScriptAction::FindItemByValue(int a2)
   else
     return v4[v3]; /*0x6346e8*/
 }
-}
 } // namespace gamemd
 
 // 0x6349B0
 namespace gamemd {
 int ScriptAction::FindSquadMember()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int Type; // esi
   int Value; // eax
@@ -291,14 +278,12 @@ int ScriptAction::FindSquadMember()
   }
   return result; /*0x634b09*/
 }
-}
 } // namespace gamemd
 
 // 0x634CC0
 namespace gamemd {
 int ScriptAction::FindBuildingMatch(AbstractClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int *Type; // esi
   ObjectClass *v6; // esi
@@ -380,14 +365,12 @@ int ScriptAction::FindBuildingMatch(AbstractClass * aP1)
   }
   return -1; /*0x634de7*/
 }
-}
 } // namespace gamemd
 
 // 0x634E10
 namespace gamemd {
 ObjectClass * * ScriptAction::PlaceObject(AbstractClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AbstractClass *v3; // edi
   int result; // eax
@@ -532,14 +515,12 @@ LABEL_30:
   }
   return result; /*0x634e95*/
 }
-}
 } // namespace gamemd
 
 // 0x6351E0
 namespace gamemd {
 int ScriptAction::DecrementRefCount(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -550,14 +531,12 @@ int ScriptAction::DecrementRefCount(int a2)
     this->q0B0 = -1; /*0x6351f7*/
   return result; /*0x635201*/
 }
-}
 } // namespace gamemd
 
 // 0x635F20
 namespace gamemd {
 void * ScriptAction::Constructor(AbstractClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   this->q008 = 0; /*0x635f27*/
   this->q00C = 0; /*0x635f2a*/
@@ -576,14 +555,12 @@ void * ScriptAction::Constructor(AbstractClass * aP1)
   *this = aP1; /*0x635f6d*/
   return (AbstractClass *)this; /*0x635f6f*/
 }
-}
 } // namespace gamemd
 
 // 0x636570
 namespace gamemd {
 int ScriptAction::Check()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   BOOL result; // eax
 
@@ -596,14 +573,12 @@ int ScriptAction::Check()
   }
   return result; /*0x63658b*/
 }
-}
 } // namespace gamemd
 
 // 0x636CE0
 namespace gamemd {
 int ScriptAction::ClearBuildingState()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // eax
   int result; // eax
@@ -654,14 +629,12 @@ int ScriptAction::ClearBuildingState()
   this->ScriptAction_field_0x8C = -1; /*0x636d84*/
   return result; /*0x636d8a*/
 }
-}
 } // namespace gamemd
 
 // 0x637E00
 namespace gamemd {
 TechnoClass * * ScriptAction::DispatchBuilding()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *BuildingLoadQueue; // eax
   int TypeBuildingClass; // eax
@@ -834,14 +807,12 @@ TechnoClass * * ScriptAction::DispatchBuilding()
   }
   return (char)BuildingLoadQueue; /*0x637e97*/
 }
-}
 } // namespace gamemd
 
 // 0x638C70
 namespace gamemd {
 int ScriptAction::IsBuildingTypeMatch()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _BYTE *WaypointCoords; // eax
 
@@ -867,14 +838,12 @@ int ScriptAction::IsBuildingTypeMatch()
     return 0; /*0x638ccb*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x639A50
 namespace gamemd {
 int ScriptAction::ExecutePlacement(int a1, int a2, int a3, long long a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, int a18, int a19, int a20, int a21, int a22, int a23, int a24, int a25, int a26, int a27, int a28, int a29)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   TechnoClass *v31; // ebx
@@ -954,14 +923,12 @@ int ScriptAction::ExecutePlacement(int a1, int a2, int a3, long long a4, int a5,
   }
   return result; /*0x639baa*/
 }
-}
 } // namespace gamemd
 
 // 0x63A8E0
 namespace gamemd {
 AbstractClass * * ScriptAction::HitTest(MouseClass * aP0, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ObjectClass *v3; // esi
   _DWORD **v6; // esi
@@ -1033,14 +1000,12 @@ LABEL_22:
   ExportSelectionAsScriptAction(); /*0x63aa5e*/
   return v3 || v11; /*0x63a8f0*/
 }
-}
 } // namespace gamemd
 
 // 0x63B550
 namespace gamemd {
 int ScriptAction::ProcessIdleAction()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int *PlanningToken; // esi
   ObjectClass *v6; // ebx
@@ -1421,14 +1386,12 @@ LABEL_55:
                         *(int *)&v68[4]);
   return updated; /*0x63b914*/
 }
-}
 } // namespace gamemd
 
 // 0x63CE40
 namespace gamemd {
 int ScriptAction::DrawPlacementMarker()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int DrawColor; // edi
   int *Viewport; // eax
@@ -1463,14 +1426,12 @@ int ScriptAction::DrawPlacementMarker()
            v11,
            DrawColor);
 }
-}
 } // namespace gamemd
 
 // 0x6DD300
 namespace gamemd {
 AbstractClass * * ScriptAction::Serialize(char * Buffer)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char *Buffera; // [esp+1Ch] [ebp+4h]
 
@@ -1635,14 +1596,12 @@ LABEL_33:
                  v13);
   }
 }
-}
 } // namespace gamemd
 
 // 0x6DD5B0
 namespace gamemd {
 const char * ScriptAction::ParseScriptActionParams()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char i; // cl
   const char *result; // eax
@@ -1800,14 +1759,12 @@ const char * ScriptAction::ParseScriptActionParams()
   }
   return result; /*0x6dd7b4*/
 }
-}
 } // namespace gamemd
 
 // 0x6E1830
 namespace gamemd {
 unsigned int * ScriptAction::ReadParameter()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *result; // eax
   __int16 v5[2]; // [esp+4h] [ebp-4h] BYREF
@@ -1824,14 +1781,12 @@ unsigned int * ScriptAction::ReadParameter()
     return CellClass::FindInfantry(v3, 0); /*0x6e1896*/
   return result; /*0x6e189b*/
 }
-}
 } // namespace gamemd
 
 // 0x6E3B60
 namespace gamemd {
 int ScriptAction::GetActionTypeInfo()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -2025,14 +1980,12 @@ int ScriptAction::GetActionTypeInfo()
   }
   return result; /*0x6e3b82*/
 }
-}
 } // namespace gamemd
 
 // 0x6E4790
 namespace gamemd {
 void * ScriptAction::CopyStringField(char * Source)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   if ( Source ) /*0x6e4799*/
   {
@@ -2046,14 +1999,12 @@ void * ScriptAction::CopyStringField(char * Source)
     return (IUnknown *)this; /*0x6e479d*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x6E6AB0
 namespace gamemd {
 unsigned char * ScriptAction::GetWaypointCoords(IUnknown * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   if ( aP1 ) /*0x6e6aba*/
   {
@@ -2076,14 +2027,12 @@ unsigned char * ScriptAction::GetWaypointCoords(IUnknown * aP1)
     return this; /*0x6e6b0f*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x6FFBE0
 namespace gamemd {
 TechnoClass * * ScriptAction::ExecuteMissionCmd()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _BYTE *WaypointCoords; // eax
   int result; // eax
@@ -2202,20 +2151,17 @@ TechnoClass * * ScriptAction::ExecuteMissionCmd()
   }
   return result; /*0x6ffcb0*/
 }
-}
 } // namespace gamemd
 
 // 0x721270
 namespace gamemd {
 void * ScriptAction::GetArgumentString(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   if ( a2 < 0 || a2 >= this->q024 ) /*0x72127b*/
     return (ObjectClass *)g_Str_none; /*0x721286*/
   else
     return *(ObjectClass **)(this->q018 + 4 * a2); /*0x721280*/
-}
 }
 } // namespace gamemd
 

@@ -5,7 +5,6 @@
 // 0x4C93D0
 unsigned int * ProgressTimer::GetValue(IUnknown * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 v2; // bx
   ObjectClass *v5; // esi
@@ -53,5 +52,4 @@ LABEL_11:
 LABEL_14:
   aP1->field_0 = *(_DWORD *)this; /*0x4c945a*/
   return &aP1->field_0; /*0x4c944d*/
-}
 }

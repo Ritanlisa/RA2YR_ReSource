@@ -6,11 +6,9 @@
 namespace gamemd {
 void Function_643E80()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   this->q004 = a2; /*0x643e84*/
   return a2; /*0x643e87*/
-}
 }
 } // namespace gamemd
 

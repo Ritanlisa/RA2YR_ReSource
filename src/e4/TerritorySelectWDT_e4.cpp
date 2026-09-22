@@ -13,7 +13,6 @@
 namespace gamemd {
 wchar_t ** E4Recv_7665D0::sub_7665D0(wchar_t ** a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   const wchar_t **v6; // eax
   const wchar_t **v9; // eax
@@ -96,14 +95,12 @@ wchar_t ** E4Recv_7665D0::sub_7665D0(wchar_t ** a2)
   DeleteAndZero::Alt(&v11); /*0x766787*/
   return a2; /*0x76678e*/
 }
-}
 } // namespace gamemd
 
 // 0x7714B0
 namespace gamemd {
 void E4Recv_7714B0::sub_7714B0(int a2, char a3, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v5 = *(this + 244); /*0x7714c4*/
@@ -159,6 +156,5 @@ void E4Recv_7714B0::sub_7714B0(int a2, char a3, int a4)
     }
   }
   DeleteAndZero(v17); /*0x77160b*/
-}
 }
 } // namespace gamemd

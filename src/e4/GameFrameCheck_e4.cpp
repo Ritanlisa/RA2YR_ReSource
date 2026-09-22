@@ -12,7 +12,6 @@
 namespace gamemd {
 int sub_6863E0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   DWORD Ticks; // eax
   DWORD v3; // eax
@@ -67,14 +66,12 @@ int sub_6863E0()
     Tooltip::Enable((void *)g_TacticalRender, DataGlobal_A8EB80); /*0x686553*/
   return TacticalMap::Redraw(&DataGlobal_87F7E8); /*0x686562*/
 }
-}
 } // namespace gamemd
 
 // 0x686570
 namespace gamemd {
 AbstractClass * * sub_686570()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   DWORD Ticks; // eax
   DWORD v3; // eax
@@ -131,6 +128,5 @@ AbstractClass * * sub_686570()
   }
   g_WTFMode = 0; /*0x6866ef*/
   return result; /*0x6866f5*/
-}
 }
 } // namespace gamemd

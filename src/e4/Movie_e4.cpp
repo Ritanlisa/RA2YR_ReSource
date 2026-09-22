@@ -13,7 +13,6 @@
 namespace gamemd {
 AbstractClass * * Movie::SetupScreen(CCINIClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   CCINIClass *v3; // eax
   TechnoTypeClass *v4; // ecx
@@ -78,14 +77,12 @@ AbstractClass * * Movie::SetupScreen(CCINIClass * aP1)
   this->Movie_field_0x44 = v3; /*0x49cc39*/
   return 1; /*0x49cc3d*/
 }
-}
 } // namespace gamemd
 
 // 0x49E3B0
 namespace gamemd {
 CampaignClass * * Movie::GetSection(CCINIClass * aP1, CCINIClass * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   if ( !*(_BYTE *)(this + 96) ) /*0x49e3b3*/
     CampaignClass::LoadFromINI(this); /*0x49e3ba*/
@@ -100,14 +97,12 @@ CampaignClass * * Movie::GetSection(CCINIClass * aP1, CCINIClass * aP2)
     return 1; /*0x49e3dd*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x5BED40
 namespace gamemd {
 void Movie::Play(CCINIClass * aP0, int a2, CCINIClass * aP2, IUnknown * aP3, char a5, char a6, char a7)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   Frame *v10; // ecx
   Frame *v11; // ecx
@@ -264,23 +259,19 @@ void Movie::Play(CCINIClass * aP0, int a2, CCINIClass * aP2, IUnknown * aP3, cha
     }
   }
 }
-}
 } // namespace gamemd
 
 // 0x5BF260
 namespace gamemd {
 void Movie_PlayWrapper()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // (no pseudocode — ASM-only function)
-}
 } // namespace gamemd
 
 // 0x7209D0
 namespace gamemd {
 AbstractClass * * Movie::Update()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int IsSoundEnabled; // eax
 
@@ -323,14 +314,12 @@ LABEL_10:
   }
   return IsSoundEnabled; /*0x720a7b*/
 }
-}
 } // namespace gamemd
 
 // 0x720A80
 namespace gamemd {
 unsigned int Movie::SelectNextBuildableType(AnimClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   TechnoTypeClass *v2; // ebp
   TechnoTypeClass *v5; // eax
@@ -383,7 +372,6 @@ unsigned int Movie::SelectNextBuildableType(AnimClass * aP1)
     }
     return 0; /*0x720b12*/
   }
-}
 }
 } // namespace gamemd
 

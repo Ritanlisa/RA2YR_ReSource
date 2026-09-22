@@ -7,7 +7,6 @@
 // 0x42DDB0
 int Delegate::ProcessBitmapStream(char * Src, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AbstractClass *v3; // ebp
   AbstractClass *v5; // esi
@@ -73,12 +72,10 @@ int Delegate::ProcessBitmapStream(char * Src, int a3)
   }
   return (int)v13->__pad_0; /*0x42df15*/
 }
-}
 
 // 0x631D10
 void * Delegate::Dispatch(Pipe * aP1, Pipe * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   Pipe *v3; // ecx
   v3 = (Pipe *)this->m_count; /*0x631d10*/
@@ -87,12 +84,10 @@ void * Delegate::Dispatch(Pipe * aP1, Pipe * aP2)
   else
     return aP2; /*0x631d29*/
 }
-}
 
 // 0x6C95E0
 unsigned int * Delegate::GetField()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   *this = 0; /*0x6c95e6*/
   this->m_count = 0; /*0x6c95e8*/
@@ -100,12 +95,10 @@ unsigned int * Delegate::GetField()
   this->m_allocated = 0; /*0x6c95ee*/
   return this; /*0x6c95f1*/
 }
-}
 
 // 0x6C9890
 void Delegate::Set(AbstractTypeClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   Straw *v3; // ecx
   AbstractTypeClass *v4; // eax
@@ -128,12 +121,10 @@ void Delegate::Set(AbstractTypeClass * aP1)
       *(_DWORD *)&aP1->__pad_0[8] = this; /*0x6c98cb*/
   }
 }
-}
 
 // 0x6C98E0
 int Delegate::Invoke(int a2, Straw * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   Straw *v3; // ecx
   v3 = (Straw *)this->m_count; /*0x6c98e0*/
@@ -141,7 +132,6 @@ int Delegate::Invoke(int a2, Straw * aP2)
     return (*(int (__thiscall **)(Straw *, int, Straw *))(*(_DWORD *)v3->__pad_0 + 8))(v3, a2, aP2); /*0x6c98f3*/
   else
     return 0; /*0x6c98f9*/
-}
 }
 
 // 0x42DF40

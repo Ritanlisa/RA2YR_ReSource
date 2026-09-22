@@ -6,7 +6,6 @@
 // 0x7B2630
 int Socket::ConfigureBuffers(AnimClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AnimClass *v2; // esi
   v2 = aP1; /*0x7b2631*/
@@ -19,5 +18,4 @@ int Socket::ConfigureBuffers(AnimClass * aP1)
     WSAGetLastError(); /*0x7b269b*/
   Debug::Log(); /*0x7b26a6*/
   return 1; /*0x7b26b0*/
-}
 }

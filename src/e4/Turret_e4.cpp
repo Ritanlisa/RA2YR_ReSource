@@ -8,7 +8,6 @@
 // 0x5F8CE0
 AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *File; // eax
   int Info; // eax
@@ -133,7 +132,6 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
     }
   }
   return v2; /*0x5f9059*/
-}
 }
 
 // 0x55A730

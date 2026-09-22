@@ -8,7 +8,6 @@
 namespace gamemd {
 int Math_InitDegToRad()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -17,17 +16,14 @@ int Math_InitDegToRad()
   DataGlobal_887648 = 0.0174532925199433 * 90.0; /*0x41001c*/
   return result; /*0x410022*/
 }
-}
 } // namespace gamemd
 
 // 0x41C350
 namespace gamemd {
 void Math::Hypotenuse2D()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   Math::Sqrt(*this * *this + this->q004 * this->q004); /*0x41c369*/
-}
 }
 } // namespace gamemd
 
@@ -35,7 +31,6 @@ void Math::Hypotenuse2D()
 namespace gamemd {
 void Math_Sqrt()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // local variable allocation has failed, the output may be wrong!
 {
   AbstractClass *aP0a; // [esp+4h] [ebp+4h]
@@ -52,14 +47,12 @@ void Math_Sqrt()
     v3 |= (unsigned int)&unk_800000; /*0x4cac87*/
   return COERCE_FLOAT(((((__int16)v4 >> 1) + 127) << 23) + dword_8650BC[v3 >> 10]); /*0x4cac59*/
 }
-}
 } // namespace gamemd
 
 // 0x4CACB0
 namespace gamemd {
 void Math_SinCos()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // local variable allocation has failed, the output may be wrong!
 {
 
@@ -72,14 +65,12 @@ void Math_SinCos()
     ++v3; /*0x4cace9*/
   return *(float *)&stru_84DD9C[4696][4 * v3 + 144]; /*0x4cacf1*/
 }
-}
 } // namespace gamemd
 
 // 0x4CAD00
 namespace gamemd {
 void Math_ArcTan2()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // local variable allocation has failed, the output may be wrong!
 {
 
@@ -94,14 +85,12 @@ void Math_ArcTan2()
     ++v4; /*0x4cad40*/
   return *(float *)&stru_84DD9C[4696][4 * v4 + 144]; /*0x4cad48*/
 }
-}
 } // namespace gamemd
 
 // 0x4CAD50
 namespace gamemd {
 int Math::Sin(double a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   signed int v1 = Math::RoundToInt(a1 * 651.8986469044033) & 0x80000FFF; /*0x4cad5f*/
@@ -109,14 +98,12 @@ int Math::Sin(double a1)
     v1 = (((_WORD)v1 - 1) | 0xFFFFF000) + 1 + ((int)((((_WORD)v1 - 1) | 0xFFFFF000) + 1) < 0 ? 0x1000 : 0);
   return DataGlobal_85D0A4[v1]; /*0x4cad7b*/
 }
-}
 } // namespace gamemd
 
 // 0x4CAE30
 namespace gamemd {
 void Math_CalcAngle()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // local variable allocation has failed, the output may be wrong!
 {
   double result; // st7
@@ -155,14 +142,12 @@ void Math_CalcAngle()
   }
   return result; /*0x4cae6a*/
 }
-}
 } // namespace gamemd
 
 // 0x5AE750
 namespace gamemd {
 void * Math::BuildRotationMatrix(float * a2, float a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   double v3 = a3; /*0x5ae762*/
@@ -190,14 +175,12 @@ void * Math::BuildRotationMatrix(float * a2, float a3)
   *(this + 10) = (1.0 - v14) * v16 + v14; /*0x5ae84a*/
   return this; /*0x5ae851*/
 }
-}
 } // namespace gamemd
 
 // 0x5F6560
 namespace gamemd {
 int Math::DistSq2D(TechnoClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   _BYTE v6[8]; // [esp+4h] [ebp-Ch] BYREF
@@ -208,14 +191,12 @@ int Math::DistSq2D(TechnoClass * aP1)
   return (v3 - *(_DWORD *)aP1->__pad_0) * (v3 - *(_DWORD *)aP1->__pad_0) /*0x5f658b*/
        + (v4 - *(_DWORD *)&aP1->__pad_0[4]) * (v4 - *(_DWORD *)&aP1->__pad_0[4]);
 }
-}
 } // namespace gamemd
 
 // 0x646590
 namespace gamemd {
 unsigned int * Math::QuaternionSlerp(unsigned int * a1, float * a2, float * a3, float a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   double v6 = a2[3] * a3[3]; /*0x6465a6*/
@@ -276,17 +257,14 @@ unsigned int * Math::QuaternionSlerp(unsigned int * a1, float * a2, float * a3, 
   a1[3] = v20; /*0x64671d*/
   return a1; /*0x646722*/
 }
-}
 } // namespace gamemd
 
 // 0x7C5F00
 namespace gamemd {
 void Math_RoundToInt()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return (__int64)a1; /*0x7c5f22*/
-}
 }
 } // namespace gamemd
 

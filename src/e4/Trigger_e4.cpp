@@ -13,7 +13,6 @@
 namespace gamemd {
 int Trigger::EnableOnce(AbstractClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char result; // al
 
@@ -25,14 +24,12 @@ int Trigger::EnableOnce(AbstractClass * aP1)
   }
   return result; /*0x554a75*/
 }
-}
 } // namespace gamemd
 
 // 0x5CBD20
 namespace gamemd {
 MSShapeAnim * * Trigger::initTrigger(MSShapeAnim * aP1, MSShapeAnim * aP2, int a4, int a5, int a6, int a7, MSShapeAnim * aP7)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int FileClassToBuffer; // eax
 
@@ -58,14 +55,12 @@ MSShapeAnim * * Trigger::initTrigger(MSShapeAnim * aP1, MSShapeAnim * aP2, int a
   *(_DWORD *)this = &vt_MSFadeAnim; /*0x5cbd8d*/
   return this; /*0x5cbd95*/
 }
-}
 } // namespace gamemd
 
 // 0x76D4D0
 namespace gamemd {
 void Trigger::ProcessMapEvents(int this@<ecx> a1, int *a2@<ebp> a2, int a3@<edi> a3, int a4, char a5, char a6)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ObjectClass *v5; // ebx
   MSShapeAnim *v10; // eax
@@ -288,20 +283,17 @@ void Trigger::ProcessMapEvents(int this@<ecx> a1, int *a2@<ebp> a2, int a3@<edi>
       __3_YAXPAX_Z(v48); /*0x76daba*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x76F090
 namespace gamemd {
 unsigned int * Trigger::processTrigger(int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   this->q004 = a2; /*0x76f09a*/
   this->q008 = a3; /*0x76f09d*/
   *this = &vt_VectorCursor_MSSfxEntry_DynamicVectorClass_MSSfxEntry; /*0x76f0a0*/
   return this; /*0x76f0a6*/
-}
 }
 } // namespace gamemd
 
@@ -309,7 +301,6 @@ unsigned int * Trigger::processTrigger(int a2, int a3)
 namespace gamemd {
 unsigned int * Trigger::checkCondition(ObjectClass * aP1, ObjectClass * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   this->q004 = 0; /*0x76f1cb*/
   this->q008 = aP1; /*0x76f1ce*/
@@ -328,17 +319,14 @@ unsigned int * Trigger::checkCondition(ObjectClass * aP1, ObjectClass * aP2)
   }
   return this; /*0x76f1ed*/
 }
-}
 } // namespace gamemd
 
 // 0x76FF20
 namespace gamemd {
 int Trigger::executeActions(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   this->q02C = a2; /*0x76ff24*/
   return a2; /*0x76ff27*/
-}
 }
 } // namespace gamemd

@@ -7,7 +7,6 @@
 namespace gamemd {
 AbstractClass * * MSFont_18::SetCapacity8(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v3 = a2; /*0x5d55a2*/
@@ -95,7 +94,6 @@ AbstractClass * * MSFont_18::SetCapacity8(int a2, unsigned int * a3)
   if ( v15 < this->MSFont_18_field_0x10 ) /*0x5d5683*/
     this->MSFont_18_field_0x10 = v15; /*0x5d5685*/
   return 1; /*0x5d5688*/
-}
 }
 } // namespace gamemd
 

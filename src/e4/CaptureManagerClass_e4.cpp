@@ -10,7 +10,6 @@ namespace ra2 {
 namespace game {
 C CaptureManagerClass::CaptureManagerClass(TechnoClass * aP1, int a3, char a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x4717d3*/
@@ -44,7 +43,6 @@ C CaptureManagerClass::CaptureManagerClass(TechnoClass * aP1, int a3, char a4)
   }
   return this; /*0x471889*/
 }
-}
 } // namespace game
 } // namespace ra2
 
@@ -53,7 +51,6 @@ namespace ra2 {
 namespace game {
 ScenarioClass * * CaptureManagerClass::HandleOverload()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v2; // eax
@@ -164,7 +161,6 @@ ScenarioClass * * CaptureManagerClass::HandleOverload()
   }
   return v2; /*0x471a77*/
 }
-}
 } // namespace game
 } // namespace ra2
 
@@ -173,7 +169,6 @@ namespace ra2 {
 namespace game {
 int CaptureManagerClass::CanCapture(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   bool result; // al
 
@@ -200,7 +195,6 @@ int CaptureManagerClass::CanCapture(unsigned int * a2)
   }
   return result; /*0x471d2e*/
 }
-}
 } // namespace game
 } // namespace ra2
 
@@ -209,7 +203,6 @@ namespace ra2 {
 namespace game {
 void* CaptureManagerClass::CaptureUnit(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char result; // al
   int i; // edi
@@ -335,7 +328,6 @@ void* CaptureManagerClass::CaptureUnit(int a2)
   }
   return result; /*0x471d51*/
 }
-}
 } // namespace game
 } // namespace ra2
 
@@ -344,7 +336,6 @@ namespace ra2 {
 namespace game {
 AnimClass * * CaptureManagerClass::FreeUnit(IUnknown * aP0, int _28, IUnknown * a2, IUnknown * aP1, int _34, IUnknown ** a5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v8; // ebp
   IUnknown **v12; // ebp
@@ -414,7 +405,6 @@ AnimClass * * CaptureManagerClass::FreeUnit(IUnknown * aP0, int _28, IUnknown * 
   }
   return 1; /*0x471fff*/
 }
-}
 } // namespace game
 } // namespace ra2
 
@@ -423,7 +413,6 @@ namespace ra2 {
 namespace game {
 int CaptureManagerClass::DrawLinks(int a1, ... a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void *retaddr; // [esp+30h] [ebp+0h]
   va_list va; // [esp+38h] [ebp+8h] BYREF
@@ -501,7 +490,6 @@ LABEL_5:
   }
   return v3; /*0x472292*/
 }
-}
 } // namespace game
 } // namespace ra2
 
@@ -510,10 +498,8 @@ namespace ra2 {
 namespace game {
 int CaptureManagerClass::CannotControlAnyMore()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return !this->CaptureManagerClass_field_40 && this->originalOwner >= this->q03C; /*0x4722a7*/
-}
 }
 } // namespace game
 } // namespace ra2
@@ -523,7 +509,6 @@ namespace ra2 {
 namespace game {
 AbstractClass * * CaptureManagerClass::DecideUnitFate(IUnknown * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AbstractClass *v3; // edi
   AbstractClass **v9; // esi
@@ -656,7 +641,6 @@ LABEL_33:
       goto LABEL_22; /*0x472535*/
   }
 }
-}
 } // namespace game
 } // namespace ra2
 
@@ -665,7 +649,6 @@ namespace ra2 {
 namespace game {
 int CaptureManagerClass::NeedsToDrawLinks()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // edi
 
@@ -703,7 +686,6 @@ LABEL_12:
   }
   return 0; /*0x472650*/
 }
-}
 } // namespace game
 } // namespace ra2
 
@@ -712,13 +694,11 @@ namespace ra2 {
 namespace game {
 int CaptureManagerClass::IsOverloading(bool * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   if ( !this->CaptureManagerClass_field_40 || this->originalOwner <= this->q03C ) /*0x4726cf*/
     return 0; /*0x4726e4*/
   *a2 = this->overloadLimit > 0; /*0x4726dd*/
   return 1; /*0x4726e1*/
-}
 }
 } // namespace game
 } // namespace ra2
@@ -728,7 +708,6 @@ namespace ra2 {
 namespace game {
 TechnoClass * * CaptureManagerClass::LoadFromStream(int a1, int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   wchar_t *v9; // ecx
@@ -825,7 +804,6 @@ LABEL_19:
   }
   return result; /*0x4728ca*/
 }
-}
 } // namespace game
 } // namespace ra2
 
@@ -834,7 +812,6 @@ namespace ra2 {
 namespace game {
 int CaptureManagerClass::SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int Prefix; // edi
   int result; // eax
@@ -864,7 +841,6 @@ int CaptureManagerClass::SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2)
   }
   return result; /*0x472958*/
 }
-}
 } // namespace game
 } // namespace ra2
 
@@ -873,7 +849,6 @@ namespace ra2 {
 namespace game {
 int CaptureManagerClass::Capture(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   _DWORD *i; // ecx
@@ -888,7 +863,6 @@ int CaptureManagerClass::Capture(unsigned int * a2)
       return -1; /*0x472d8d*/
   }
   return result; /*0x472d92*/
-}
 }
 } // namespace game
 } // namespace ra2

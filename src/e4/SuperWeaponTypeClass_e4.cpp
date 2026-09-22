@@ -11,7 +11,6 @@
 namespace gamemd {
 AbstractClass * * SuperWeaponTypeClass::IsAvailable()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v9; // ecx
   int v11; // ebp
@@ -174,14 +173,12 @@ LABEL_28:
   }
   return 0; /*0x4f65ea*/
 }
-}
 } // namespace gamemd
 
 // 0x5113F0
 namespace gamemd {
 unsigned char * SuperWeaponTypeClass::Construct(AbstractClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   CCINIClass *v7; // edx
   CCINIClass *v8; // ecx
@@ -302,14 +299,12 @@ LABEL_16:
     return this; /*0x511640*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x6CEA20
 namespace gamemd {
 void* SuperWeaponTypeClass::SD_vt25(unsigned char *** aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   WeaponTypeClass *v3; // edi
   WeaponTypeClass *v4; // eax
@@ -561,14 +556,12 @@ LABEL_25:
     this->SidebarImage = SearchMIXFile(g_Str_File_XXICON_SHP, 0); /*0x6cee3d*/
   return 1; /*0x6cee43*/
 }
-}
 } // namespace gamemd
 
 // 0x6CEEB0
 namespace gamemd {
 int SuperWeaponTypeClass::FindFirstOfAction()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char *i; // edx
 
@@ -582,14 +575,12 @@ int SuperWeaponTypeClass::FindFirstOfAction()
   }
   return *((_DWORD *)g_SuperWeaponPool + v1); /*0x6ceed9*/
 }
-}
 } // namespace gamemd
 
 // 0x6CEF80
 namespace gamemd {
 int SuperWeaponTypeClass::SD_vt27(int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( this->Type != 10 ) /*0x6cef8b*/
@@ -606,7 +597,6 @@ int SuperWeaponTypeClass::SD_vt27(int a2, int a3)
   {
     return 70; /*0x6cefca*/
   }
-}
 }
 } // namespace gamemd
 

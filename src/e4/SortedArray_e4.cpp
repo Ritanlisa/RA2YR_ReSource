@@ -5,7 +5,6 @@
 // 0x52B620
 int SortedArray::BinarySearch(CCINIClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   size_t result; // eax
   ObjectClass *v4; // edi
@@ -45,12 +44,10 @@ int SortedArray::BinarySearch(CCINIClass * aP1)
   }
   return result; /*0x52b62a*/
 }
-}
 
 // 0x5387D0
 int SortedArray::Append(DynamicVector * aP1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v5; // ebx
   int v6; // edi
@@ -96,12 +93,10 @@ LABEL_9:
   }
   return 0; /*0x538864*/
 }
-}
 
 // 0x5388A0
 ObjectClass * * SortedArray::RemoveByKey(DynamicVector * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   size_t v3; // eax
   int v6; // edx
@@ -162,12 +157,10 @@ LABEL_9:
   this->SortedArray_field_0x10 = 0; /*0x538966*/
   return 1; /*0x538917*/
 }
-}
 
 // 0x538980
 int SortedArray::FindPair(int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   size_t v3; // ecx
   int v9; // esi
@@ -210,5 +203,4 @@ LABEL_12:
     return 0; /*0x538a04*/
   this->SortedArray_field_0x10 = v10; /*0x538a0d*/
   return 1; /*0x5389a0*/
-}
 }

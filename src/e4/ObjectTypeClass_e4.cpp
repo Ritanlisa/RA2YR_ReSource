@@ -13,7 +13,6 @@
 // 0x46C790
 BulletTypeClass * * ObjectTypeClass::FindOrCreate()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( !_strcmpi(&stru_817460.sectionHead[1], this) || !_strcmpi(g_Str_none, this) ) /*0x46c7ac*/
@@ -34,12 +33,10 @@ LABEL_6:
   }
   return *(BulletTypeClass **)&dword_A83C84->__pad_0[4 * v2]; /*0x46c7ff*/
 }
-}
 
 // 0x473980
 int ObjectTypeClass::loadTypeMember_473980()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ObjectClass *v3; // esi
   if ( !this ) /*0x473987*/
@@ -55,12 +52,10 @@ int ObjectTypeClass::loadTypeMember_473980()
   }
   return v2; /*0x4739bd*/
 }
-}
 
 // 0x474940
 int ObjectTypeClass::loadTypeMember_5474940(CCINIClass * aP1, unsigned char * a2, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ObjectClass *v5; // esi
   char Destination[32]; // [esp+8h] [ebp-20h] BYREF
@@ -84,12 +79,10 @@ int ObjectTypeClass::loadTypeMember_5474940(CCINIClass * aP1, unsigned char * a2
   }
   return dword_81B9B4[2 * v4]; /*0x47498b*/
 }
-}
 
 // 0x474F50
 int ObjectTypeClass::ReadInt(unsigned char * a2, unsigned char * a3, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char *v4; // eax
   char Destination[32]; // [esp+1Ch] [ebp-20h] BYREF
@@ -106,12 +99,10 @@ int ObjectTypeClass::ReadInt(unsigned char * a2, unsigned char * a3, int a4)
   INIClass::GetString(this, a2, a3, v4, Destination, 32); /*0x474f85*/
   return ObjectTypeClass_Read(Destination); /*0x474f93*/
 }
-}
 
 // 0x5F7090
 int ObjectTypeClass::ConstructFull(AbstractClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char Destination[24]; // [esp+8h] [ebp-1Ch] BYREF
   char v10; // [esp+20h] [ebp-4h]
@@ -231,12 +222,10 @@ int ObjectTypeClass::ConstructFull(AbstractClass * aP1)
   }
   return this; /*0x5f730f*/
 }
-}
 
 // 0x5F7320
 unsigned int * ObjectTypeClass::Construct(ObjectTypeClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   AbstractTypeClass::Init((int)this, (AbstractTypeClass *)aP1); /*0x5f7328*/
@@ -287,12 +276,10 @@ unsigned int * ObjectTypeClass::Construct(ObjectTypeClass * aP1)
   this->vtable4 = &vt_ObjectTypeClass; /*0x5f73ed*/
   return this; /*0x5f73f6*/
 }
-}
 
 // 0x5F7400
 SomeVoxelCache * * ObjectTypeClass::Destruct()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ObjectTypeClass *v8; // [esp+Ch] [ebp-4h] BYREF
   *(_DWORD *)this = &ObjectTypeClass::`vftable'; /*0x5f740b*/
@@ -364,12 +351,10 @@ SomeVoxelCache * * ObjectTypeClass::Destruct()
   ObjectTypeClass::ReleaseWaveAndString((int *)(this + 176)); /*0x5f7593*/
   return AbstractTypeClass::Dtor((_DWORD *)this); /*0x5f759f*/
 }
-}
 
 // 0x5F77F0
 void ObjectTypeClass::UnloadPipsSHP()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( DataGlobal_AC1488 ) /*0x5f77fd*/
@@ -469,12 +454,10 @@ void ObjectTypeClass::UnloadPipsSHP()
     DataGlobal_AC148B = 0; /*0x5f78f1*/
   }
 }
-}
 
 // 0x5F9070
 AbstractClass * * ObjectTypeClass::Load2DArt()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char v8; // dl
   int result; // eax
@@ -577,12 +560,10 @@ LABEL_41:
   }
   return result; /*0x5f92bb*/
 }
-}
 
 // 0x5F92D0
 void* ObjectTypeClass::LoadFromINI(CCINIClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int Index; // eax
   char Bool_Overwrite; // al
@@ -789,21 +770,17 @@ void* ObjectTypeClass::LoadFromINI(CCINIClass * aP1)
   }
   return 1; /*0x5f9690*/
 }
-}
 
 // 0x5F9710
 void ObjectTypeClass::SetRTTI71()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   this->vtable2 = 71; /*0x5f9710*/
-}
 }
 
 // 0x5F9720
 int ObjectTypeClass::LoadCleanup(IUnknown * aP0, ObjectTypeClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void **v3; // ebp
   void **v5; // ebp
@@ -930,12 +907,10 @@ int ObjectTypeClass::LoadCleanup(IUnknown * aP0, ObjectTypeClass * aP1)
   }
   return result; /*0x5f993e*/
 }
-}
 
 // 0x712040
 SHPStruct * * ObjectTypeClass::SelectArtOrAlt()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   #375 *v1; // eax
   int result; // eax
@@ -968,12 +943,10 @@ SHPStruct * * ObjectTypeClass::SelectArtOrAlt()
     return *(this + 444); /*0x7120bd*/
   return result; /*0x7120c5*/
 }
-}
 
 // 0x712170
 int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char *** a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   WeaponTypeClass *v5; // edi
   WeaponTypeClass *v6; // eax
@@ -4814,12 +4787,10 @@ LABEL_286:
   return 1;
 }
 
-}
 
 // 0x7170A0
 int ObjectTypeClass::DeserializeArrays()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -4867,12 +4838,10 @@ int ObjectTypeClass::DeserializeArrays()
   }
   return result; /*0x71719a*/
 }
-}
 
 // 0x717820
 int ObjectTypeClass::loadTypeMember_5717820()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v2; // eax
@@ -4885,12 +4854,10 @@ int ObjectTypeClass::loadTypeMember_5717820()
   }
   return v2; /*0x71783e*/
 }
-}
 
 // 0x717C00
 unsigned int * ObjectTypeClass::loadTypeMember_5717C00(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( this == a2 ) /*0x717c0a*/
@@ -4920,7 +4887,6 @@ unsigned int * ObjectTypeClass::loadTypeMember_5717C00(unsigned int * a2)
   }
   while ( v6 < this->vtable3 ); /*0x717c51*/
   return this; /*0x717c55*/
-}
 }
 
 // 0x41CBF0

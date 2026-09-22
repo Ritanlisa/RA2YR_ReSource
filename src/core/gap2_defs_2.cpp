@@ -523,7 +523,6 @@ namespace gamemd { int COMObject::ValidatePtr() {
 } }
 // 0x69B8C0
 namespace gamemd { void Player::RandomAssign() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // ebx
 
@@ -626,7 +625,6 @@ LABEL_35:
   }
   while ( (int)v7 < (int)g_CampaignConfig ); /*0x69baa0*/
 }
-} }
 // 0x6ABAC0
 namespace gamemd { bool PlayerClass::HasPlayers() {
 {

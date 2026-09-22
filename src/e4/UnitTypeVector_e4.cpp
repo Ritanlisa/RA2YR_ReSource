@@ -5,7 +5,6 @@
 // 0x513940
 unsigned int * UnitTypeVector::ConstructUnitTypeVectorClass(int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   this->q004 = 0; /*0x51394b*/
   this->q008 = a2; /*0x51394e*/
@@ -24,12 +23,10 @@ unsigned int * UnitTypeVector::ConstructUnitTypeVectorClass(int a2, int a3)
   }
   return this; /*0x51396d*/
 }
-}
 
 // 0x5D8950
 unsigned int * UnitTypeVector::Construct2(int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   this->q004 = 0; /*0x5d895b*/
   this->q008 = a2; /*0x5d895e*/
@@ -47,5 +44,4 @@ unsigned int * UnitTypeVector::Construct2(int a2, int a3)
     *((_BYTE *)this + 13) = 1; /*0x5d8990*/
   }
   return this; /*0x5d897d*/
-}
 }

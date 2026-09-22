@@ -9,10 +9,8 @@
 namespace gamemd {
 int ParticleSystemClass::Draw()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return this->q0F8 && !this->Owner; /*0x62fe79*/
-}
 }
 } // namespace gamemd
 
@@ -42,10 +40,8 @@ _DWORD * ParticleSystemClass::ddtor(int a2, int a3)
 namespace gamemd {
 int ParticleSystemClass_16::Write(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return *(_DWORD *)(this->q004 + 4 * a2); /*0x4e87da*/
-}
 }
 } // namespace gamemd
 

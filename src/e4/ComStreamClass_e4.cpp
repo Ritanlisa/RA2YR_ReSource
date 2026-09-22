@@ -8,7 +8,6 @@
 // 0x7A3D90
 int ComStreamClass::Write()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND v1; // esi
   HWND DlgItem; // ebx
@@ -130,12 +129,10 @@ LABEL_16:
     SetFocus(v14); /*0x7a405b*/
   return 0; /*0x7a4054*/
 }
-}
 
 // 0x7AC820
 int ComStreamClass::Release()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   LONG v1; // ebx
   char *Block; // [esp+14h] [ebp+4h]
@@ -151,12 +148,10 @@ int ComStreamClass::Release()
   }
   return v1; /*0x7ac864*/
 }
-}
 
 // 0x7AC870
 int ComStreamClass::QueryInterface()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _UNKNOWN **v1; // esi
   int result; // eax
@@ -202,12 +197,10 @@ LABEL_17:
   *v10 = v7; /*0x7ac958*/
   return 0; /*0x7ac881*/
 }
-}
 
 // 0x7AE0E0
 AbstractClass * * ComStreamClass::readData()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( (unsigned char)this->ComStreamClass_field_0x14 != 1 ) /*0x7ae0e8*/
@@ -252,12 +245,10 @@ AbstractClass * * ComStreamClass::readData()
     __3_YAXPAX_Z(v3); /*0x7ae16e*/
   }
 }
-}
 
 // 0x7AEF50
 void ComStreamClass::flushStream()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   unsigned int v2 = this->q008; /*0x7aef55*/
@@ -302,12 +293,10 @@ void ComStreamClass::flushStream()
     __3_YAXPAX_Z(v3); /*0x7aefea*/
   }
 }
-}
 
 // 0x7B0220
 unsigned int * ComStreamClass::seekToPosition()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   ComPtr::Set(&stru_B77F58, this->q004); /*0x7b022f*/
@@ -321,12 +310,10 @@ unsigned int * ComStreamClass::seekToPosition()
   v6[0] = &vt_rc_ptr_WorldDominationTour_CampaignProperties; /*0x7b0271*/
   return ComPtr::Release(v6); /*0x7b027e*/
 }
-}
 
 // 0x7B02A0
 unsigned int * ComStreamClass::getStreamSize()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   ComPtr::Set(&stru_B77F70, this->q004); /*0x7b02af*/
@@ -339,7 +326,6 @@ unsigned int * ComStreamClass::getStreamSize()
   ComPtr::Release(v5); /*0x7b02e8*/
   v6[0] = &vt_rc_ptr_WorldDominationTour_CampaignProperties; /*0x7b02f1*/
   return ComPtr::Release(v6); /*0x7b02fe*/
-}
 }
 
 // 0x7A4070

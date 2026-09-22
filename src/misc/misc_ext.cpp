@@ -2595,7 +2595,6 @@ void ReinforcementClass::CreateObject()
 // 0x4cb890
 int ResultNode::Init()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __3_YAXPAX_Z((void *)this->headNode[1]); /*0x4cb897*/
   this->headNode[1] = 0; /*0x4cb89f*/
@@ -5224,4 +5223,3 @@ DiskLaserClass::DiskLaserClass() {}
 NeuronClass::NeuronClass() {}
 
 WorldDominationTour::WorldDominationTour() {}
-} // namespace gamemd

@@ -13,7 +13,6 @@
 namespace gamemd {
 void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AbstractClass *v4; // eax
   AbstractClass *v5; // esi
@@ -87,7 +86,6 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
     }
   }
 }
-}
 } // namespace gamemd
 
 // 0x44B760
@@ -118,7 +116,6 @@ bool BuildingTypeClass::CanPlacePath(unsigned short *a2, int a3)
 namespace gamemd {
 VectorClass * * AbstractClass_RemoveObjectFromHouse()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void **v5; // ebp
   void ***result; // eax
@@ -270,14 +267,12 @@ VectorClass * * AbstractClass_RemoveObjectFromHouse()
     a1[5363] = 0; /*0x4fbced*/
   return result; /*0x4fbcf3*/
 }
-}
 } // namespace gamemd
 
 // 0x5C03D0
 namespace gamemd {
 ObjectClass * * AbstractClass_getPathDirection()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char result; // al
   struct tagRECT Rect; // [esp+14h] [ebp-10h] BYREF
@@ -313,20 +308,17 @@ ObjectClass * * AbstractClass_getPathDirection()
   }
   return result; /*0x5c047d*/
 }
-}
 } // namespace gamemd
 
 // 0x5D7FD0
 namespace gamemd {
 unsigned int * AbstractClass::checkVisibility(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   this->vfptr = &vt_MultiplayerGameMode_InitializerBase; /*0x5d7fd9*/
   if ( (a2 & 1) != 0 ) /*0x5d7fdf*/
     __3_YAXPAX_Z(this); /*0x5d7fe2*/
   return &this->vfptr; /*0x5d7fec*/
-}
 }
 } // namespace gamemd
 
@@ -334,13 +326,11 @@ unsigned int * AbstractClass::checkVisibility(char a2)
 namespace gamemd {
 unsigned int * AbstractClass::updateVisibilityState(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   this->vfptr = &vt_MultiplayerGameMode_InitializerBase; /*0x5d8039*/
   if ( (a2 & 1) != 0 ) /*0x5d803f*/
     __3_YAXPAX_Z(this); /*0x5d8042*/
   return &this->vfptr; /*0x5d804c*/
-}
 }
 } // namespace gamemd
 
@@ -348,13 +338,11 @@ unsigned int * AbstractClass::updateVisibilityState(char a2)
 namespace gamemd {
 unsigned int * AbstractClass::processFogReveal(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   this->vfptr = &vt_MultiplayerGameMode_InitializerBase; /*0x5d8059*/
   if ( (a2 & 1) != 0 ) /*0x5d805f*/
     __3_YAXPAX_Z(this); /*0x5d8062*/
   return &this->vfptr; /*0x5d806c*/
-}
 }
 } // namespace gamemd
 
@@ -362,13 +350,11 @@ unsigned int * AbstractClass::processFogReveal(char a2)
 namespace gamemd {
 unsigned int * AbstractClass::checkShroudState(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   this->vfptr = &vt_MultiplayerGameMode_InitializerBase; /*0x5d8079*/
   if ( (a2 & 1) != 0 ) /*0x5d807f*/
     __3_YAXPAX_Z(this); /*0x5d8082*/
   return &this->vfptr; /*0x5d808c*/
-}
 }
 } // namespace gamemd
 
@@ -376,13 +362,11 @@ unsigned int * AbstractClass::checkShroudState(char a2)
 namespace gamemd {
 unsigned int * AbstractClass::updateShroudMap(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   this->vfptr = &vt_MultiplayerGameMode_InitializerBase; /*0x5d8099*/
   if ( (a2 & 1) != 0 ) /*0x5d809f*/
     __3_YAXPAX_Z(this); /*0x5d80a2*/
   return &this->vfptr; /*0x5d80ac*/
-}
 }
 } // namespace gamemd
 
@@ -390,7 +374,6 @@ unsigned int * AbstractClass::updateShroudMap(char a2)
 namespace gamemd {
 void AbstractClass::ClearTargetToMeClearManagerTarget(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // ebx
   int j; // ecx
@@ -433,14 +416,12 @@ void AbstractClass::ClearTargetToMeClearManagerTarget(int a1)
       *(_DWORD *)(v8 + 64) = 0; /*0x70d577*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x7258D0
 namespace gamemd {
 AbstractClass * * AbstractClass::AnnounceExpiredPointer(AbstractClass * aP0, AbstractClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int k; // ebp
   int i; // ebx
@@ -611,7 +592,6 @@ LABEL_20:
         return;
     }
   }
-}
 }
 } // namespace gamemd
 
@@ -1174,7 +1154,6 @@ int AbstractClass::COMStub_Return0_270()
 namespace gamemd {
 void AbstractClass_queryInterface()
  {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int GroundHeight; // eax
 
@@ -1186,7 +1165,6 @@ void AbstractClass_queryInterface()
   a2[1] = v6; /*0x464aab*/
   a2[2] = GroundHeight; /*0x464aaf*/
   return a2; /*0x464a9f*/
-}
 }
 } // namespace gamemd
 

@@ -5,7 +5,6 @@
 // 0x718000
 T TeleportLocomotionClass::TeleportLocomotionClass()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   CDTimerClass *v2; // ecx
   LocomotionClass::Init((_DWORD *)this); /*0x718003*/
@@ -27,5 +26,4 @@ T TeleportLocomotionClass::TeleportLocomotionClass()
   this->vtable2 = &TeleportLocomotionClass::`vftable'; /*0x718064*/
   *(_DWORD *)(this + 24) = &vt_TeleportLocomotionClass; /*0x71806b*/
   return this; /*0x718074*/
-}
 }

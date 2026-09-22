@@ -6,7 +6,6 @@
 // 0x4F4780
 TechnoTypeClass * * Frame::Present(IUnknown * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   LONG v7; // eax
@@ -244,13 +243,10 @@ LABEL_51:
   }
   return result; /*0x4f4ba4*/
 }
-}
 
 // 0x724C00
 int Frame::Init()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return this->q004 != 0; /*0x724c0a*/
-}
 }

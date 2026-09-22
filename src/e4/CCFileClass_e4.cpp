@@ -6,7 +6,6 @@
 // 0x4325C0
 AudioController * * CCFileClass::Close()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char result; // al
 
@@ -32,12 +31,10 @@ AudioController * * CCFileClass::Close()
   this->q025 = 0; /*0x432601*/
   return result; /*0x4325f4*/
 }
-}
 
 // 0x535A70
 int CCFileClass::Destruct()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   *this = &vt_CCFileClass; /*0x535a76*/
   this->q064 = 0; /*0x535a7c*/
@@ -45,12 +42,10 @@ int CCFileClass::Destruct()
   *this = &off_7E1668; /*0x535a8a*/
   return BufferIOFileClass::Dtor(this); /*0x535a95*/
 }
-}
 
 // 0x65D0D0
 int CCFileClass::GetFileSize()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   DWORD FileSize; // edi
   int result; // eax
@@ -84,12 +79,10 @@ int CCFileClass::GetFileSize()
   }
   return result; /*0x65d119*/
 }
-}
 
 // 0x69E320
 void CCFileClass::ProcessStream(unsigned int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   AbstractClass *v1 = DataGlobal_B077B0; /*0x69e324*/
@@ -162,5 +155,4 @@ void CCFileClass::ProcessStream(unsigned int a1)
     DataGlobal_B077B8 = 0; /*0x69e419*/
     DataGlobal_B077BC = 0; /*0x69e41f*/
   }
-}
 }

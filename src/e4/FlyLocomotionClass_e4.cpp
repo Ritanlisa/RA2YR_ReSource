@@ -6,7 +6,6 @@
 // 0x4CC9A0
 int FlyLocomotionClass::LocomotionClass()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   LocomotionClass::Init((_DWORD *)this); /*0x4cc9a3*/
@@ -35,12 +34,10 @@ int FlyLocomotionClass::LocomotionClass()
   this->LinkedTo = v2; /*0x4cca1b*/
   return this; /*0x4cca1e*/
 }
-}
 
 // 0x4CFE80
 void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // edi
   int v7; // eax
@@ -165,7 +162,6 @@ LABEL_45:
     if ( v19 ) /*0x4d015f*/
       __3_YAXPAX_Z(v17); /*0x4d0162*/
   }
-}
 }
 
 // 0x4CFC80

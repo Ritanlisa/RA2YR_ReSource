@@ -31,10 +31,8 @@
 namespace gamemd {
 int E4Recv_540C50::sub_540C50()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return *(this + 4); /*0x540c55*/
-}
 }
 } // namespace gamemd
 
@@ -42,7 +40,6 @@ int E4Recv_540C50::sub_540C50()
 namespace gamemd {
 AbstractClass * * E4Recv_541170::sub_541170(int a2, int a3, int a4, int a5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // edx
 
@@ -87,14 +84,12 @@ AbstractClass * * E4Recv_541170::sub_541170(int a2, int a3, int a4, int a5)
   }
   return v13; /*0x5411af*/
 }
-}
 } // namespace gamemd
 
 // 0x542F30
 namespace gamemd {
 int E4Recv_542F30::sub_542F30()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   _DWORD *i; // edi
@@ -143,14 +138,12 @@ LABEL_12:
   }
   return result; /*0x542fab*/
 }
-}
 } // namespace gamemd
 
 // 0x544E70
 namespace gamemd {
 AbstractClass * * SurfaceClass_CreatePrimary(int a1, int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -209,14 +202,12 @@ LABEL_14:
   }
   return result; /*0x544e88*/
 }
-}
 } // namespace gamemd
 
 // 0x545150
 namespace gamemd {
 char * * LoadTerrainTypeClassTheatre(AbstractClass * a1, char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   size_t Size; // eax
   int i; // esi
@@ -1366,14 +1357,12 @@ LABEL_217:
   return HashTable::DestroyHashTableINIClass((void **)v77);
 }
 
-}
 } // namespace gamemd
 
 // 0x546DA0
 namespace gamemd {
 void MapClass_LoadIsometricTiles(char a1, char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // edi
   int inited; // eax
@@ -1480,14 +1469,12 @@ LABEL_23:
 LABEL_39:
   Debug::Log(); /*0x546ff8*/
 }
-}
 } // namespace gamemd
 
 // 0x547110
 namespace gamemd {
 int ResetAllTechnoField776()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int i; // ecx
@@ -1502,18 +1489,15 @@ int ResetAllTechnoField776()
   }
   return result; /*0x547143*/
 }
-}
 } // namespace gamemd
 
 // 0x547370
 namespace gamemd {
 int Map_InitCoordinateOffsets(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned int v3; // eax
   int v5; // [esp+Ch] [ebp-4h]
-
   v5 = a1; /*0x54737f*/
   if ( !*(_BYTE *)(a1 + 737) ) /*0x547373*/
     return 0; /*0x547cbb*/
@@ -1775,14 +1759,12 @@ int Map_InitCoordinateOffsets(int a1)
   }
   return 24 * v3 + 11250996; /*0x547cbb*/
 }
-}
 } // namespace gamemd
 
 // 0x549830
 namespace gamemd {
 int E4Recv_549830::sub_549830(int a2, void ** a3, int a4, int a5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   memset(*a3, 0, a5 * a4); /*0x549859*/
@@ -1897,14 +1879,12 @@ LABEL_31:
   }
   return 1; /*0x54990d*/
 }
-}
 } // namespace gamemd
 
 // 0x549B30
 namespace gamemd {
 int sub_549B30()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   lpBuffer = 0; /*0x549b32*/
   unk_AA1060 = 0; /*0x549b37*/
@@ -1913,14 +1893,12 @@ int sub_549B30()
   unk_AA106C = 0; /*0x549b46*/
   return 0; /*0x549b4b*/
 }
-}
 } // namespace gamemd
 
 // 0x54BA30
 namespace gamemd {
 AbstractClass * * E4Recv_54BA30::UpdateFootMovement()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void *NeighbourContentCell; // eax
   int result; // eax
@@ -2030,7 +2008,6 @@ AbstractClass * * E4Recv_54BA30::UpdateFootMovement()
     this->M80 = 2; /*0x54bb80*/
   }
   return result; /*0x54bb45*/
-}
 }
 } // namespace gamemd
 

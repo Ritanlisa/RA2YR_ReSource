@@ -13,7 +13,6 @@
 namespace gamemd {
 int Session::RemoveTeam(MSShapeAnim * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   MSShapeAnim *result; // eax
 
@@ -45,14 +44,12 @@ int Session::RemoveTeam(MSShapeAnim * aP1)
   }
   return (int)result->__pad_0; /*0x5d1dde*/
 }
-}
 } // namespace gamemd
 
 // 0x5E74E0
 namespace gamemd {
 int Session::PrepareGame()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ObjectClass *v1; // esi
   char *Flagged; // eax
@@ -242,14 +239,12 @@ LABEL_12:
     Event::Dispatch(); /*0x5e75cd*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x69B700
 namespace gamemd {
 int Session::GetPlayerOption()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -258,14 +253,12 @@ int Session::GetPlayerOption()
     return this->q174; /*0x69b70f*/
   return result; /*0x69b715*/
 }
-}
 } // namespace gamemd
 
 // 0x69B720
 namespace gamemd {
 int Session::GetPlayerColor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -273,7 +266,6 @@ int Session::GetPlayerColor()
   if ( this->q160 != -2 ) /*0x69b72d*/
     return this->q15C; /*0x69b72f*/
   return result; /*0x69b735*/
-}
 }
 } // namespace gamemd
 

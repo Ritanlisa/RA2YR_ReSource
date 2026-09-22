@@ -7,7 +7,6 @@
 // 0x5FB320
 ObjectClass * * HotkeyOptions::DlgProc(int hWnd, unsigned int a2, unsigned int a3, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   __int16 v15; // bx
@@ -506,16 +505,13 @@ LABEL_81:
   SendMessageA(v42, 1202, 0, v41); /*0x5fb8b3*/
   return 1; /*0x5fb4da*/
 }
-}
 
 // 0x5FC120
 namespace gamemd {
 void sub_5FC120(int a1, int a2, int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v5; // edi
-
   int v3 = a2; /*0x5fc125*/
   if ( a2 <= 0 ) /*0x5fc127*/
     return 0; /*0x5fc159*/
@@ -537,6 +533,5 @@ LABEL_7:
     goto LABEL_7; /*0x5fc14e*/
   }
   return a1 + 8 * (v3 / 2); /*0x5fc154*/
-}
 }
 } // namespace gamemd

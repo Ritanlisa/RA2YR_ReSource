@@ -11,16 +11,13 @@
 // 0x411580
 int Surface::IsLocked()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return this->q00C != 0; /*0x41158a*/
-}
 }
 
 // 0x5D1FD0
 unsigned int * Surface::CopyRect(ObjectClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ObjectClass *result; // eax
   ObjectClass *v7; // ecx
@@ -199,13 +196,11 @@ LABEL_16:
   }
   return Surface::CopyRect(this, (ObjectClass *)&v44); /*0x5d208c*/
 }
-}
 
 // 0x626C60
 namespace gamemd {
 void sub_626C60()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( g_FileExtensionState ) /*0x626c68*/
@@ -291,13 +286,11 @@ void sub_626C60()
     return *(_DWORD *)(4 + 16); /*0x626d8b*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x641DB0
 AbstractClass * * Surface::LoadToSurfaceSHP(char * Source)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _BYTE v10[12]; // [esp+70h] [ebp-14h] BYREF
   int v11; // [esp+7Ch] [ebp-8h]
@@ -347,12 +340,10 @@ LABEL_11:
     return 0; /*0x641ed6*/
   }
 }
-}
 
 // 0x655250
 int Surface::RenderRadar()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   RadarClass *v7; // ecx
   RadarClass *v17; // ecx
@@ -527,12 +518,10 @@ LABEL_33:
   v29[3] = v30; /*0x655551*/
   return result; /*0x655554*/
 }
-}
 
 // 0x6BA3E0
 int Surface::TileBlit(INIClass * aP0, ObjectClass * aP1, int a3, int a4, int a5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ObjectClass *v5; // ebx
   ObjectClass *v10; // esi
@@ -600,12 +589,10 @@ int Surface::TileBlit(INIClass * aP0, ObjectClass * aP1, int a3, int a4, int a5)
     return 0; /*0x6ba429*/
   }
 }
-}
 
 // 0x6BA580
 int Surface::BlitTransparent(int * a0, ObjectClass * aP1, int a3, ObjectClass * aP3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int *a0a; // [esp+28h] [ebp+4h]
 
@@ -659,12 +646,10 @@ int Surface::BlitTransparent(int * a0, ObjectClass * aP1, int a3, ObjectClass * 
     return 0; /*0x6ba5ca*/
   }
 }
-}
 
 // 0x6BA690
 int Surface::AlphaBlend(unsigned int * a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 v33; // cx
   __int16 v34; // ax
@@ -910,12 +895,10 @@ LABEL_43:
   (*(void (__thiscall **)(int))(*(_DWORD *)a4 + 96))(a4); /*0x6bac1f*/
   return 1; /*0x6ba7cf*/
 }
-}
 
 // 0x707480
 TechnoClass * * Surface::BlitTechnoTo(short * a1, TechnoClass * aP2, TechnoClass * aP3, TechnoClass * aP4, AbstractClass * aP5, TechnoClass * aP6)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned __int16 v8; // bp
   unsigned __int16 v9; // bx
@@ -1053,12 +1036,10 @@ TechnoClass * * Surface::BlitTechnoTo(short * a1, TechnoClass * aP2, TechnoClass
   }
   Vector::Clear((int)v41); /*0x70773f*/
 }
-}
 
 // 0x7602E0
 void Surface::RenderToSurfaceVoxel(unsigned int * a2, int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   CCINIClass *v16; // ecx
   unsigned __int16 *v20; // ebx
@@ -1364,12 +1345,10 @@ void Surface::RenderToSurfaceVoxel(unsigned int * a2, int * a3)
     }
   }
 }
-}
 
 // 0x769330
 int Surface::PixelToIndex(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v3 = *a2 - *(_DWORD *)(this + 68); /*0x769342*/
@@ -1388,12 +1367,10 @@ int Surface::PixelToIndex(unsigned int * a2)
     return (*(int (__thiscall **)(_DWORD, int *))(*this->q024 + 40))(this->q024, &v6); /*0x769386*/
   }
 }
-}
 
 // 0x7BD690
 int Surface::CommitSurfaceBuffersAudio()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned __int16 *v13; // edi
   unsigned __int16 *v15; // edi
@@ -1775,7 +1752,6 @@ LABEL_103:
   this->vt_slot_68(4, v47, 4 * *(unsigned __int16 *)(this + 236)); /*0x7bdf4d*/
   this->q00C += 4 * *(unsigned __int16 *)(this + 236); /*0x7bdf65*/
   return -1; /*0x7bd6a3*/
-}
 }
 
 // 0x411510

@@ -13,7 +13,6 @@
 namespace gamemd {
 unsigned int * AircraftClass::Update()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *result; // eax
   AircraftTypeClass *v4; // edi
@@ -70,14 +69,12 @@ LABEL_9:
     return (_DWORD *)BuildingClass::PowerUpdate(v15, (TechnoClass *)this); /*0x414068*/
   return result; /*0x41406d*/
 }
-}
 } // namespace gamemd
 
 // 0x415B10
 namespace gamemd {
 int AircraftClass::FindLandingCell(int * a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 v10; // dx
   unsigned int v22; // [esp+44h] [ebp+4h]
@@ -123,14 +120,12 @@ int AircraftClass::FindLandingCell(int * a2, int a3)
     this->ThunkTo159x4(9); /*0x415c3f*/
   return 1; /*0x415c45*/
 }
-}
 } // namespace gamemd
 
 // 0x4165C0
 namespace gamemd {
 void AircraftClass_DeployWithAnim()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AircraftTypeClass *v13; // ebx
   CoordStruct *v14; // edi
@@ -164,14 +159,12 @@ void AircraftClass_DeployWithAnim()
   }
   return v11; /*0x4165ff*/
 }
-}
 } // namespace gamemd
 
 // 0x417CC0
 namespace gamemd {
 AircraftTypeClass * * AircraftClass::GetCursorOverObject(IUnknown * aP1, IUnknown * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v3; // ebp
   IUnknown *v4; // edi
@@ -289,14 +282,12 @@ LABEL_36:
   }
   return v7; /*0x417cdf*/
 }
-}
 } // namespace gamemd
 
 // 0x4196B0
 namespace gamemd {
 int AircraftClass::ValidateLandingCell(unsigned int * a2, int a3, int a4, int a5, int a6)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v7 = this->team; /*0x4196bc*/
@@ -326,14 +317,12 @@ int AircraftClass::ValidateLandingCell(unsigned int * a2, int a3, int a4, int a5
   else
     return 7; /*0x41979e*/
 }
-}
 } // namespace gamemd
 
 // 0x41A940
 namespace gamemd {
 int AircraftClass::EvaluateTargetingState()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v2 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->q1B1 + 188))(this->q1B1); /*0x41a956*/
@@ -362,14 +351,12 @@ int AircraftClass::EvaluateTargetingState()
     }
   }
 }
-}
 } // namespace gamemd
 
 // 0x41AA80
 namespace gamemd {
 void* AircraftClass_AssignDestination_SyncLog()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *ClosestPlacementCell; // edi
   int v6; // eax
@@ -501,14 +488,12 @@ LABEL_35:
   LOBYTE(v6) = FootClass::AssignDestination((int)a1, 0, aP2); /*0x41aaa6*/
   return v6; /*0x41aaab*/
 }
-}
 } // namespace gamemd
 
 // 0x41ADF0
 namespace gamemd {
 int AircraftClass::RevealSight(int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   #375 *v5; // edx
   #375 *v8; // edx
@@ -574,14 +559,12 @@ LABEL_4:
   }
   return result; /*0x41ae9b*/
 }
-}
 } // namespace gamemd
 
 // 0x41B430
 namespace gamemd {
 void* AircraftClass::LoadFromStream(unsigned int * a0, FootClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   FootClass *v2; // esi
   size_t v4; // eax
@@ -659,14 +642,12 @@ LABEL_18:
   }
   return result; /*0x41b5b5*/
 }
-}
 } // namespace gamemd
 
 // 0x41B9F0
 namespace gamemd {
 int AircraftClass::UpdateDocking(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -698,14 +679,12 @@ LABEL_4:
   }
   return result; /*0x41ba39*/
 }
-}
 } // namespace gamemd
 
 // 0x41BB30
 namespace gamemd {
 int AircraftClass::OverrideMission_SyncLog(int a2, int a3, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -736,7 +715,6 @@ LABEL_4:
       break; /*0x41bb7e*/
   }
   return result; /*0x41bb83*/
-}
 }
 } // namespace gamemd
 

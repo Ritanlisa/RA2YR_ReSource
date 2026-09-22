@@ -11,7 +11,6 @@
 // 0x41EC90
 int AITriggerTypeClass::CivilianHouseOwns(int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   bool result; // al
   int v10; // eax
@@ -86,12 +85,10 @@ LABEL_12:
   }
   return result; /*0x41ecdc*/
 }
-}
 
 // 0x41EE90
 DynamicVector * * AITriggerTypeClass::OwnerHouseOwns(unsigned int * a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   DynamicVector *v7; // eax
   bool result; // al
@@ -152,12 +149,10 @@ LABEL_8:
   }
   return result; /*0x41ef58*/
 }
-}
 
 // 0x41F0D0
 int AITriggerTypeClass::IronCurtainCharged(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // ecx
   int v9; // [esp+8h] [ebp+4h]
@@ -189,12 +184,10 @@ LABEL_12:
   v9 = 0; /*0x41f171*/
   return 1.0 - *(float *)&g_RulesClass_Instance->? >= (double)v9 / (double)Super::GetDefaultTimer((_DWORD *)v6); /*0x41f167*/
 }
-}
 
 // 0x41F180
 int AITriggerTypeClass::ChronoSphereCharged(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // ecx
   int v9; // [esp+8h] [ebp+4h]
@@ -226,12 +219,10 @@ LABEL_12:
   v9 = 0; /*0x41f221*/
   return 1.0 - *(float *)&g_RulesClass_Instance->? >= (double)v9 / (double)Super::GetDefaultTimer((_DWORD *)v6); /*0x41f217*/
 }
-}
 
 // 0x41F230
 int AITriggerTypeClass::HouseCredits(int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   bool result; // al
 
@@ -263,12 +254,10 @@ int AITriggerTypeClass::HouseCredits(int a2, int a3)
   }
   return result; /*0x41f260*/
 }
-}
 
 // 0x41F580
 ObjectClass * * AITriggerTypeClass::LoadFromINI(unsigned char *** a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int ExitCellByName; // eax
   int Index; // eax
@@ -502,12 +491,10 @@ LABEL_26:
   }
   return 1; /*0x41fab7*/
 }
-}
 
 // 0x41FD60
 int AITriggerTypeClass::RegisterSuccess()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -536,12 +523,10 @@ int AITriggerTypeClass::RegisterSuccess()
   this->q108 = v1 + 1; /*0x41fe17*/
   return result; /*0x41fe1e*/
 }
-}
 
 // 0x41FE20
 int AITriggerTypeClass::RegisterFailure()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   __int16 v5; // fps
@@ -576,7 +561,6 @@ int AITriggerTypeClass::RegisterFailure()
   }
   this->q108 = v1 + 1; /*0x41fed3*/
   return result; /*0x41fed9*/
-}
 }
 
 // 0x41FFF0

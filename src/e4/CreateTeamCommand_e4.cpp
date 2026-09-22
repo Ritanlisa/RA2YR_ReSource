@@ -10,10 +10,8 @@
 namespace gamemd {
 int CreateTeamCommand::vt02()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return (*(int (__thiscall **)(void *))(this->q010)(this);
-}
 }
 } // namespace gamemd
 
@@ -21,7 +19,6 @@ int CreateTeamCommand::vt02()
 namespace gamemd {
 unsigned int * CreateTeamCommand::performAction_148()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *result; // eax
   int GroundHeight; // [esp+Ch] [ebp-4h]
@@ -42,14 +39,12 @@ unsigned int * CreateTeamCommand::performAction_148()
              (MouseClass *)&g_EventManager[2184]);
   return &result->field_0; /*0x5373c8*/
 }
-}
 } // namespace gamemd
 
 // 0x537440
 namespace gamemd {
 unsigned int * CreateTeamCommand::performAction_153()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *result; // eax
   int GroundHeight; // [esp+Ch] [ebp-4h]
@@ -70,14 +65,12 @@ unsigned int * CreateTeamCommand::performAction_153()
              (MouseClass *)&g_EventManager[2184]);
   return &result->field_0; /*0x5374b8*/
 }
-}
 } // namespace gamemd
 
 // 0x537530
 namespace gamemd {
 unsigned int * CreateTeamCommand::performAction_158()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *result; // eax
   int GroundHeight; // [esp+Ch] [ebp-4h]
@@ -98,14 +91,12 @@ unsigned int * CreateTeamCommand::performAction_158()
              (MouseClass *)&g_EventManager[2184]);
   return &result->field_0; /*0x5375a8*/
 }
-}
 } // namespace gamemd
 
 // 0x5386A0
 namespace gamemd {
 AbstractClass * * CreateTeamCommand::performAction_241(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // eax
 
@@ -144,18 +135,15 @@ AbstractClass * * CreateTeamCommand::performAction_241(int a2, unsigned int * a3
     this->CreateTeamCommand_field_0x10 = v7; /*0x53873b*/
   return 1; /*0x53873e*/
 }
-}
 } // namespace gamemd
 
 // 0x538A20
 namespace gamemd {
 void * CreateTeamCommand::performAction_243(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   rc_ptr_base *v4; // ebp
   rc_ptr_base *v5; // esi
-
   if ( (a2 & 2) != 0 ) /*0x538a2b*/
   {
     int v3 = *((_DWORD *)this - 1); /*0x538a2d*/
@@ -187,14 +175,12 @@ void * CreateTeamCommand::performAction_243(char a2)
     return this; /*0x538a83*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x6A6A00
 namespace gamemd {
 int CreateTeamCommand::performAction_245(char a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( !DataGlobal_A8ED8C ) /*0x6a6a09*/
@@ -232,14 +218,12 @@ LABEL_13:
   }
   return 0; /*0x6a6a53*/
 }
-}
 } // namespace gamemd
 
 // 0x731060
 namespace gamemd {
 void CreateTeamCommand::performAction_246()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // edi
 
@@ -259,7 +243,6 @@ void CreateTeamCommand::performAction_246()
       }
     }
   }
-}
 }
 } // namespace gamemd
 
@@ -1246,11 +1229,9 @@ wchar_t * CreateTeamCommand::performAction_78()
 namespace gamemd {
 int CreateTeamCommand::performAction_79()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // attributes: thunk
 {
   return UI_Create_730F30(); /*0x536c05*/
-}
 }
 // 0x536C10
 namespace gamemd {
@@ -1496,11 +1477,9 @@ wchar_t * CreateTeamCommand::performAction_103()
 namespace gamemd {
 int CreateTeamCommand::performAction_104()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // attributes: thunk
 {
   return TAction::CenterOnStartCoords(); /*0x536ea5*/
-}
 }
 // 0x536EB0
 namespace gamemd {
@@ -1544,11 +1523,9 @@ wchar_t * CreateTeamCommand::performAction_108()
 namespace gamemd {
 int CreateTeamCommand::performAction_109()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // attributes: thunk
 {
   return UI_Create_7318F0(); /*0x536f25*/
-}
 }
 // 0x536F30
 namespace gamemd {
@@ -3005,7 +2982,6 @@ unsigned int CreateTeamCommand::performAction_240(int a2)
 
 // 0x538750
 namespace gamemd {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   _DWORD *i; // ecx
@@ -3020,7 +2996,6 @@ namespace gamemd {
       return -1; /*0x53876d*/
   }
   return result; /*0x538772*/
-}
 }
     return -1;
     for ( i = (int *)this->Items; *i != *a2; ++i )

@@ -6,7 +6,6 @@
 namespace gamemd {
 void * GadgetClass::Construct(GadgetClass * aP1, GadgetClass * aP2, GadgetClass * aP3, ControlClass * aP4, GadgetClass * aP5, GadgetClass * aP6)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   GadgetClass *result; // eax
 
@@ -26,14 +25,12 @@ void * GadgetClass::Construct(GadgetClass * aP1, GadgetClass * aP2, GadgetClass 
     this->q020 = (unsigned int)aP5 | 5; /*0x4e1339*/
   return (ControlClass *)result; /*0x4e1333*/
 }
-}
 } // namespace gamemd
 
 // 0x4E1390
 namespace gamemd {
 GadgetClass * * GadgetClass::Dtor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   *this = &vt_GadgetClass; /*0x4e1390*/
@@ -54,14 +51,12 @@ GadgetClass * * GadgetClass::Dtor()
     DataGlobal_8B3E90 = 0; /*0x4e13d7*/
   return LinkClass::Destruct();
 }
-}
 } // namespace gamemd
 
 // 0x557920
 namespace gamemd {
 int GadgetClass::DrawBuildingPlacement(ControlClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // edi
 
@@ -100,14 +95,12 @@ int GadgetClass::DrawBuildingPlacement(ControlClass * aP1)
   (*(void (__thiscall **)(_DWORD))(**(_DWORD **)&DataGlobal_87F8E4[32092] + 36))(*(_DWORD *)&DataGlobal_87F8E4[32092]); /*0x5579f6*/
   return 1; /*0x5579fe*/
 }
-}
 } // namespace gamemd
 
 // 0x60AAB0
 namespace gamemd {
 AbstractClass * * GadgetClass::FindByWindow(HWND hWnd, LPARAM a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND Parent; // edi
   HWND *v4; // eax
@@ -264,14 +257,12 @@ LABEL_86:
   }
   return 1; /*0x60af23*/
 }
-}
 } // namespace gamemd
 
 // 0x623560
 namespace gamemd {
 AbstractClass * * GadgetClass::SetTooltip(CCINIClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   size_t v3; // eax
   if ( this->q028 ) /*0x623564*/
@@ -290,19 +281,16 @@ AbstractClass * * GadgetClass::SetTooltip(CCINIClass * aP1)
     }
   }
 }
-}
 } // namespace gamemd
 
 // 0x723EA0
 namespace gamemd {
 int GadgetClass::Show()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   AbstractClass *v1 = *(_DWORD *)this; /*0x723ea0*/
   this->q0B4 = 1; /*0x723ea2*/
   return v1->GetInvalidCoord();
-}
 }
 } // namespace gamemd

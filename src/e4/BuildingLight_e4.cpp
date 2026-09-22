@@ -10,7 +10,6 @@
 namespace gamemd {
 Coord * * BuildingLight::CalculateShading()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int ebx1; // ebx
   ObjectClass *v3; // eax
@@ -300,7 +299,6 @@ LABEL_23:
     }
   }
   return (char)v3; /*0x5fff77*/
-}
 }
 } // namespace gamemd
 

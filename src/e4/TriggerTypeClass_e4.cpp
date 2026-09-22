@@ -9,7 +9,6 @@
 namespace gamemd {
 TechnoClass * * TriggerTypeClass::ReadINI(unsigned int * a0, TechnoClass * aP1, TechnoClass * aP2, int a4, TechnoClass * aP4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   TechnoClass *v8; // ebp
   IUnknown *v9; // eax
@@ -394,7 +393,6 @@ LABEL_231:
   if ( !(_BYTE)aP4 || (*(unsigned __int8 (__thiscall **)(_DWORD *, TechnoClass *, int))(*a0 + 936))(a0, aP2, a4) ) /*0x6fcd04*/
     return 0; /*0x6fcd20*/
   return 8; /*0x6fc0df*/
-}
 }
 } // namespace gamemd
 

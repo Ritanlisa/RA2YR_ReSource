@@ -11,7 +11,6 @@
 namespace gamemd {
 int DroppodLocomotionClass::ILoco_Process(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   double v4; // st7
   ObjectClass *v5; // rax
@@ -170,7 +169,6 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
     (*(void (__stdcall **)(int))(*(_DWORD *)v11 + 8))(a1 - 4); /*0x4b5e92*/
     return 1; /*0x4b5e95*/
   }
-}
 }
 } // namespace gamemd
 

@@ -9,7 +9,6 @@
 namespace gamemd {
 int Conflict_WorldDominationTour_12::Release(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   rc_ptr_base *v6; // esi
   rc_ptr_base *v8; // ebx
@@ -90,14 +89,12 @@ LABEL_14:
   this->IsAllocated = a3 == 0; /*0x766d0c*/
   return 1; /*0x766ca7*/
 }
-}
 } // namespace gamemd
 
 // 0x766DC0
 namespace gamemd {
 AbstractClass * * Conflict_WorldDominationTour_12::Constructor_1(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // esi
   void (__thiscall ***v11)(_DWORD, int); // ecx
@@ -182,14 +179,12 @@ AbstractClass * * Conflict_WorldDominationTour_12::Constructor_1(int a2, unsigne
     this->Conflict_WorldDominationTour_12_field_0x10 = v12; /*0x766ec6*/
   return 1; /*0x766ec9*/
 }
-}
 } // namespace gamemd
 
 // 0x766800
 namespace gamemd {
 int Conflict_WorldDominationTour_12_::ReleaseBuffer()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int (__thiscall ***v2)(_DWORD, int); // ecx
   int result; // eax
@@ -205,17 +200,14 @@ int Conflict_WorldDominationTour_12_::ReleaseBuffer()
   *(_DWORD *)(this + 8) = 0; /*0x766825*/
   return result; /*0x766828*/
 }
-}
 } // namespace gamemd
 
 // 0x766920
 namespace gamemd {
 int Conflict_WorldDominationTour_26::AddRef()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return *(this + 2) < *(_DWORD *)(*(this + 1) + 16); /*0x76692d*/
-}
 }
 } // namespace gamemd
 
@@ -223,11 +215,9 @@ int Conflict_WorldDominationTour_26::AddRef()
 namespace gamemd {
 unsigned int * Conflict_WorldDominationTour_26::Release()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ++*(this + 2); /*0x766fa2*/
   return this; /*0x766fa5*/
-}
 }
 } // namespace gamemd
 
@@ -235,11 +225,9 @@ unsigned int * Conflict_WorldDominationTour_26::Release()
 namespace gamemd {
 unsigned int * Conflict_WorldDominationTour_26::ddtor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   --*(this + 2); /*0x766fb2*/
   return this; /*0x766fb5*/
-}
 }
 } // namespace gamemd
 

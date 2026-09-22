@@ -5,7 +5,6 @@
 // 0x4F3A70
 void GraphicMenuItem::Dtor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void **v1; // esi
 
@@ -16,5 +15,4 @@ void GraphicMenuItem::Dtor()
     j_DeleteAndZero(v1); /*0x4f3a80*/
     __3_YAXPAX_Z(v1); /*0x4f3a86*/
   }
-}
 }

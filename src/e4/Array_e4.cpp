@@ -7,7 +7,6 @@
 namespace gamemd {
 int Array::GetClamped(CheckListClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   CheckListClass *v3; // edx
@@ -23,14 +22,12 @@ int Array::GetClamped(CheckListClass * aP1)
   }
   return result; /*0x557ac7*/
 }
-}
 } // namespace gamemd
 
 // 0x634290
 namespace gamemd {
 int Array::FindValue(IUnknown * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   VectorClass *i; // ecx
@@ -49,14 +46,12 @@ int Array::FindValue(IUnknown * aP1)
   }
   return result; /*0x6342b4*/
 }
-}
 } // namespace gamemd
 
 // 0x63E590
 namespace gamemd {
 int Array::RemoveAt(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   VectorClass *v2 = this->q010; /*0x63e590*/
@@ -76,17 +71,14 @@ int Array::RemoveAt(int a2)
   }
   return 1; /*0x63e5b9*/
 }
-}
 } // namespace gamemd
 
 // 0x65AD40
 namespace gamemd {
 int Array::Get(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return *(_DWORD *)(this->q0E4 + 4 * a2); /*0x65ad4d*/
-}
 }
 } // namespace gamemd
 
@@ -94,7 +86,6 @@ int Array::Get(int a2)
 namespace gamemd {
 int Array::ContainsValue(IUnknown * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown **i; // ecx
 
@@ -109,14 +100,12 @@ int Array::ContainsValue(IUnknown * aP1)
   }
   return 1; /*0x65ae1a*/
 }
-}
 } // namespace gamemd
 
 // 0x7490D0
 namespace gamemd {
 int Array::Zero()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -134,14 +123,12 @@ int Array::Zero()
   }
   return result; /*0x7490f4*/
 }
-}
 } // namespace gamemd
 
 // 0x749150
 namespace gamemd {
 void Array::ByteSwap()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   Array *v3; // esi
   signed int v2; // ebx
@@ -162,20 +149,17 @@ void Array::ByteSwap()
     this->q201 = 0; /*0x749191*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x763980
 namespace gamemd {
 int Array::GetElement(CampaignScore * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   if ( (int)aP1 < 0 || (int)aP1 >= this->q038 ) /*0x76398b*/
     return 0; /*0x763999*/
   else
     return this->q02C + 12 * (_DWORD)aP1; /*0x763993*/
-}
 }
 } // namespace gamemd
 
@@ -183,7 +167,6 @@ int Array::GetElement(CampaignScore * aP1)
 namespace gamemd {
 int Array::CleanupArrayWOL()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // edi
   int result; // eax
@@ -196,14 +179,12 @@ int Array::CleanupArrayWOL()
   *this = 0; /*0x7acd4d*/
   return result; /*0x7acd53*/
 }
-}
 } // namespace gamemd
 
 // 0x7AD790
 namespace gamemd {
 AbstractClass * * Array::InsertElement(const void * a1, ObjectClass * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   CCINIClass *v8; // edx
   CCINIClass *v9; // esi
@@ -257,7 +238,6 @@ AbstractClass * * Array::InsertElement(const void * a1, ObjectClass * aP2)
     qmemcpy(v14, a1, 0x10Cu); /*0x7ad917*/
   ++*this; /*0x7ad91e*/
   return 1; /*0x7ad91b*/
-}
 }
 } // namespace gamemd
 

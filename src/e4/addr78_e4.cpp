@@ -25,7 +25,6 @@
 namespace gamemd {
 void WOL_ResetSystem()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void **v5; // edi
   int i; // esi
@@ -242,14 +241,12 @@ void WOL_ResetSystem()
   CCINIClass_AIHash = result; /*0x7806b2*/
   return result; /*0x7806b7*/
 }
-}
 } // namespace gamemd
 
 // 0x7806C0
 namespace gamemd {
 AbstractClass * * PopulateWOLLobbyListBox()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND v0; // eax
   HWND DlgItem; // ebp
@@ -348,14 +345,12 @@ AbstractClass * * PopulateWOLLobbyListBox()
     }
   }
 }
-}
 } // namespace gamemd
 
 // 0x780A90
 namespace gamemd {
 wchar_t ** FormatWOLPlayerInfo(wchar_t ** a1, const char * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   wchar_t **v4; // eax
   wchar_t *v7; // eax
@@ -473,14 +468,12 @@ LABEL_27:
   DeleteAndZero(&v23); /*0x780d74*/
   return a1; /*0x780d7b*/
 }
-}
 } // namespace gamemd
 
 // 0x780E30
 namespace gamemd {
 void * FormatWOLPlayerInfoForDisplay(wchar_t ** a1, HWND a2, WPARAM wParam)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   wchar_t *StringCSF; // eax
   LRESULT v5; // eax
@@ -570,14 +563,12 @@ LABEL_14:
   DeleteAndZero((int)&aP1_8); /*0x781045*/
   return (CampaignScore *)a1; /*0x78104c*/
 }
-}
 } // namespace gamemd
 
 // 0x781130
 namespace gamemd {
 void FilterWOLGameListEntry(AbstractClass * aP0, int a2, int a3, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   if ( g_WOL_GameListRender != (ObjectClass *)2 ) /*0x781142*/
   {
@@ -762,14 +753,12 @@ LABEL_85:
   return *(_DWORD *)&HouseClass_Player[29932] == 4 /*0x781370*/
       && (aP0->abstractFlags || ((int)aP0->NeedsSaveOrLink & 0x100) != 0);
 }
-}
 } // namespace gamemd
 
 // 0x781380
 namespace gamemd {
 int sub_781380(unsigned int * a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v2 = a1[1]; /*0x781388*/
@@ -788,14 +777,12 @@ int sub_781380(unsigned int * a1, unsigned int * a2)
     return v4 + 1; /*0x781399*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x781480
 namespace gamemd {
 AbstractClass * * __usercall GameListRenderWOL(CampaignScore *a1@<edi> a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND v1; // eax
   ObjectClass *DlgItem; // esi
@@ -1154,14 +1141,12 @@ LABEL_100:
   DeleteAndZero((int)&v54); /*0x781ca6*/
   DeleteAndZero((int)&a2); /*0x781caf*/
 }
-}
 } // namespace gamemd
 
 // 0x781FB0
 namespace gamemd {
 AbstractClass * * InsertGameSettings(unsigned char * a1, char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char result; // al
   AbstractClass *v6; // ebp
@@ -1321,14 +1306,12 @@ LABEL_75:
   g_WOL_State = v3 + 1; /*0x78230e*/
   return result; /*0x781fea*/
 }
-}
 } // namespace gamemd
 
 // 0x782320
 namespace gamemd {
 void InsertBuddyList(char * a1, char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ObjectClass *v4; // eax
   ObjectClass *v5; // esi
@@ -1748,14 +1731,12 @@ LABEL_160:
   }
   DeleteAndZero(&v46); /*0x782b93*/
 }
-}
 } // namespace gamemd
 
 // 0x782BB0
 namespace gamemd {
 int FindBuddyList(int a1, char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ObjectClass *v3; // eax
   bool v9; // sf
@@ -1983,14 +1964,12 @@ LABEL_50:
   }
   return DynamicClass::Insert((int *)&g_WOL_State, (HashTable *)a1, (IUnknown *)aP2); /*0x782be6*/
 }
-}
 } // namespace gamemd
 
 // 0x7830C0
 namespace gamemd {
 int sub_7830C0(signed int * a1, signed int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   signed int v2 = a1[2]; /*0x7830ca*/
@@ -2033,14 +2012,12 @@ int sub_7830C0(signed int * a1, signed int * a2)
     return v3 + 1; /*0x7830e1*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x783270
 namespace gamemd {
 void SortWOLPlayerList(char a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   Coord *v13; // [esp+10h] [ebp-F8h]
   void *Block; // [esp+24h] [ebp-E4h]
@@ -2163,14 +2140,12 @@ void SortWOLPlayerList(char a1)
     __3_YAXPAX_Z(Block); /*0x7832b7*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x7835C0
 namespace gamemd {
 int sub_7835C0(int a1, signed int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -2211,14 +2186,12 @@ LABEL_6:
     qmemcpy(v10, (char *)g_WOL_ConnectionFlags + 108 * v9, sizeof(v10)); /*0x783690*/
   return _strcmpi(&v11[36], &v10[36]); /*0x7835e0*/
 }
-}
 } // namespace gamemd
 
 // 0x7836E0
 namespace gamemd {
 int sub_7836E0(const void * a1, signed int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   ObjectClass *v8; // eax
@@ -2259,14 +2232,12 @@ LABEL_6:
     qmemcpy(v10, &g_WOL_ConnectionFlags[3 * v9], sizeof(v10)); /*0x7837b0*/
   return _strcmpi(&v11[36], &v10[36]); /*0x783700*/
 }
-}
 } // namespace gamemd
 
 // 0x786080
 namespace gamemd {
 Coord * * WOL_HandleLogout()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND v1; // eax
   int (__stdcall **v2)(LPVOID, void *, int *); // ecx
@@ -2351,14 +2322,12 @@ Coord * * WOL_HandleLogout()
   }
   return (char)v1; /*0x78626a*/
 }
-}
 } // namespace gamemd
 
 // 0x786DC0
 namespace gamemd {
 int E4Recv_786DC0::sub_786DC0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void *v6; // [esp+10h] [ebp-8h] BYREF
   const char *v7; // [esp+14h] [ebp-4h] BYREF
@@ -2395,14 +2364,12 @@ int E4Recv_786DC0::sub_786DC0()
   LOBYTE(dword_84A238) = 0; /*0x786e54*/
   return 1; /*0x786e2f*/
 }
-}
 } // namespace gamemd
 
 // 0x787010
 namespace gamemd {
 void WOL_LoginFlow()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   wchar_t *String; // eax
@@ -2752,14 +2719,12 @@ LABEL_87:
   OwnerDrawControl::InitVtable(v42); /*0x7876df*/
   return 1; /*0x787348*/
 }
-}
 } // namespace gamemd
 
 // 0x787770
 namespace gamemd {
 void NetworkLobbyWOL(HWND hWnd, char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // edi
   int j; // esi
@@ -3178,14 +3143,12 @@ LABEL_88:
   }
   return result; /*0x788148*/
 }
-}
 } // namespace gamemd
 
 // 0x788180
 namespace gamemd {
 void WOL_FindLobbyID(char a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   Coord *v3; // ebx
   char **v5; // eax
@@ -3387,14 +3350,12 @@ LABEL_56:
   DeleteAndZero(&v15); /*0x7886ee*/
   return v8; /*0x788619*/
 }
-}
 } // namespace gamemd
 
 // 0x788710
 namespace gamemd {
 int sub_788710(int a1, char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   wchar_t *StringCSF; // eax
   int i; // esi
@@ -3432,14 +3393,12 @@ int sub_788710(int a1, char a2)
   }
   return g_WOL_ChannelState == 0; /*0x7887f6*/
 }
-}
 } // namespace gamemd
 
 // 0x788800
 namespace gamemd {
 Coord * * WOL_LeaveChannelEx(int a1, char ** a2, void * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   wchar_t *String; // eax
   int i; // esi
@@ -3505,14 +3464,12 @@ LABEL_14:
     }
   }
 }
-}
 } // namespace gamemd
 
 // 0x788A30
 namespace gamemd {
 int WOL_JoinGameLobby()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   wchar_t *String; // eax
   wchar_t *v3; // ecx
@@ -3551,14 +3508,12 @@ LABEL_9:
     return v1; /*0x788ae2*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x788B00
 namespace gamemd {
 Coord * * CreateAccountWOL()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HANDLE *v3; // esi
   wchar_t *String; // eax
@@ -3914,19 +3869,16 @@ LABEL_75:
   Dialog::InitWindow(v46, 0); /*0x7894e9*/
   return CreateAccountWOL_Create_72C290(); /*0x788c94*/
 }
-}
 } // namespace gamemd
 
 // 0x789500
 namespace gamemd {
 Coord * * WOL_FindChannel(const char * a1, int a2, unsigned char a3, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   const char *v9; // [esp+20h] [ebp-Ch] BYREF
   int v10; // [esp+24h] [ebp-8h] BYREF
   int v11; // [esp+28h] [ebp-4h]
-
   v11 = a2; /*0x789507*/
   int v5 = 1; /*0x78950d*/
   while ( 1 ) /*0x789522*/
@@ -3992,14 +3944,12 @@ LABEL_15:
     goto LABEL_20; /*0x7895ee*/
   return v6; /*0x789626*/
 }
-}
 } // namespace gamemd
 
 // 0x7896A0
 namespace gamemd {
 MapClass * * PopulateWOLUserList(HWND hWnd, char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   LPARAM v4; // ebp
   _DWORD *PlayerProfile; // eax
@@ -4126,14 +4076,12 @@ LABEL_30:
     return 1; /*0x789954*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x789960
 namespace gamemd {
 void ValidateJoinWOL()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char result; // al
   int BlowStraw_field_0x08; // eax
@@ -4213,14 +4161,12 @@ void ValidateJoinWOL()
   }
   return result; /*0x789974*/
 }
-}
 } // namespace gamemd
 
 // 0x789B60
 namespace gamemd {
 void CreateGameWOL()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v4; // eax
   wchar_t *StringCSF; // eax
@@ -4591,14 +4537,12 @@ LABEL_71:
   DeleteAndZero((int)&v42); /*0x78a456*/
   return 1; /*0x789c37*/
 }
-}
 } // namespace gamemd
 
 // 0x78D120
 namespace gamemd {
 Coord * * OnlineLobbyDlgProcWOL(HWND hDlg, unsigned int a2, int a3, HWND hWnd)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   HWND v5; // eax
@@ -4902,14 +4846,12 @@ LABEL_50:
   DeleteAndZero::Alt((void **)&v39); /*0x78d36b*/
   return 0; /*0x78d266*/
 }
-}
 } // namespace gamemd
 
 // 0x78DA30
 namespace gamemd {
 Coord * * sub_78DA30(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   wchar_t *v5; // eax
@@ -4966,14 +4908,12 @@ Coord * * sub_78DA30(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
   }
   return result; /*0x78da98*/
 }
-}
 } // namespace gamemd
 
 // 0x78E230
 namespace gamemd {
 ObjectClass * * sub_78E230(HWND hWnd, UINT a2, WPARAM a3, HWND hCtl)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND v5; // eax
   HWND v6; // eax
@@ -5229,14 +5169,12 @@ ObjectClass * * sub_78E230(HWND hWnd, UINT a2, WPARAM a3, HWND hCtl)
     }
   }
 }
-}
 } // namespace gamemd
 
 // 0x78E950
 namespace gamemd {
 void WOLobbySmallDlgProc(HWND hWnd, UINT a2, WPARAM a3, HWND hCtl)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND v6; // eax
   HWND v7; // eax
@@ -5339,14 +5277,12 @@ void WOLobbySmallDlgProc(HWND hWnd, UINT a2, WPARAM a3, HWND hCtl)
   CloseDialog(hWnd, 1); /*0x78eac3*/
   return 0; /*0x78e97b*/
 }
-}
 } // namespace gamemd
 
 // 0x78EBC0
 namespace gamemd {
 void GameSetup_DlgProc(HWND hWnd, unsigned int a2, int a3, HWND a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   HWND DlgItem; // eax
@@ -5502,7 +5438,6 @@ LABEL_37:
     return 0; /*0x78eded*/
   }
   return result; /*0x78ec13*/
-}
 }
 } // namespace gamemd
 

@@ -11,7 +11,6 @@
 // 0x690A10
 unsigned int * ScoreScreen::LoadScoreFont(ScoreFontClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v3; // edx
   this->q004 = 0; /*0x690a19*/
@@ -46,12 +45,10 @@ unsigned int * ScoreScreen::LoadScoreFont(ScoreFontClass * aP1)
   this->q008 = 21; /*0x690ac1*/
   return this; /*0x690aca*/
 }
-}
 
 // 0x690AE0
 unsigned int * ScoreScreen::LoadCountryFlags(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   this->q004 = 0; /*0x690ae9*/
@@ -85,12 +82,10 @@ unsigned int * ScoreScreen::LoadCountryFlags(int a2)
   this->q008 = 35; /*0x690b91*/
   return this; /*0x690b9a*/
 }
-}
 
 // 0x690F30
 unsigned int * ScoreScreen::Constructor(ScoreAnimClass * aP1, int a3, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   this->q008 = a3; /*0x690f3b*/
   this->q004 = aP1; /*0x690f41*/
@@ -100,12 +95,10 @@ unsigned int * ScoreScreen::Constructor(ScoreAnimClass * aP1, int a3, int a4)
   *this = &vt_ScoreAnimClass; /*0x690f5a*/
   return this; /*0x690f62*/
 }
-}
 
 // 0x7712C0
 void ScoreScreen::RemoveItem(int a2, int a3, ObjectClass * aP3, char a5, int a6)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v7 = *(_DWORD *)(this + 976); /*0x7712d5*/
@@ -185,13 +178,11 @@ void ScoreScreen::RemoveItem(int a2, int a3, ObjectClass * aP3, char a5, int a6)
   }
   DeleteAndZero(v24); /*0x77149b*/
 }
-}
 
 // 0x778210
 namespace gamemd {
 AbstractClass * * ScoreScreen_DrawSHPBackground()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int *Viewport; // eax
   void (__thiscall ***v26)(_DWORD, int); // [esp+1Ch] [ebp-C4h]
@@ -289,6 +280,5 @@ AbstractClass * * ScoreScreen_DrawSHPBackground()
   Vector::Clear((int)v38); /*0x778474*/
   v37[0] = &off_7E1668; /*0x77847d*/
   return BufferIOFileClass::Dtor(v37); /*0x77848a*/
-}
 }
 } // namespace gamemd

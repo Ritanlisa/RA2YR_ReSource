@@ -17,7 +17,6 @@
 
 // 0x41DB40
 namespace gamemd { int WTFMode::ResetUnitFlags() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   AudioController *v1; // eax
@@ -94,7 +93,6 @@ LABEL_8:
   }
   return (char)v1; /*0x41dc3f*/
 }
-} }
 // 0x47EC40
 namespace gamemd { void* WTFMode::FindObjectByType(int a1) {
 {
@@ -317,7 +315,6 @@ namespace gamemd { int Stream::WriteBlock(int a1, int a2, int a3) {
 } }
 // 0x5F1C60
 namespace gamemd { int Stream::ReadPacket() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( !this->q03C ) /*0x5f1c69*/
@@ -414,7 +411,6 @@ LABEL_11:
     return (*(int (__thiscall **)(_DWORD))(*this->q038 + 20))(this->q038); /*0x5f1d24*/
   }
 }
-} }
 // 0x67C690
 namespace gamemd { int Stream::ReadOLEObjects() {
 {

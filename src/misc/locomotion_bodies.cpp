@@ -703,7 +703,6 @@ LABEL_16:
 // 0x4C9300
 int FacingClass::Set_SyncLog(unsigned int* a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   TerrainTypeClass *v3; // ebx
   int TimeLeft; // edx
@@ -762,6 +761,5 @@ LABEL_12:
   }
   p_RotationTimer->TimeLeft = 0; /*0x4c939e*/
   return result; /*0x4c93a1*/
-}
 }
 

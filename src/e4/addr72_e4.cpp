@@ -30,7 +30,6 @@
 namespace gamemd {
 void * sub_7221B0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void *result; // eax
   int i; // esi
@@ -65,14 +64,12 @@ LABEL_7:
   }
   return result; /*0x722236*/
 }
-}
 } // namespace gamemd
 
 // 0x722C40
 namespace gamemd {
 void * sub_722C40()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void *result; // eax
   int i; // esi
@@ -117,20 +114,17 @@ LABEL_7:
   }
   return result; /*0x722cf7*/
 }
-}
 } // namespace gamemd
 
 // 0x725040
 namespace gamemd {
 int CompareFunc2Int(unsigned int * a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   if ( *a1 == *a2 )
     return 0; /*0x725050*/
   else
     return *a1 >= *a2 ? 1 : -1;
-}
 }
 } // namespace gamemd
 
@@ -138,7 +132,6 @@ int CompareFunc2Int(unsigned int * a1, unsigned int * a2)
 namespace gamemd {
 AbstractClass * * sub_725C70()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -191,14 +184,12 @@ AbstractClass * * sub_725C70()
   }
   return result; /*0x725d8c*/
 }
-}
 } // namespace gamemd
 
 // 0x728200
 namespace gamemd {
 void sub_728200()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 *v2; // esi
   int i; // [esp+8h] [ebp-4h]
@@ -223,14 +214,12 @@ void sub_728200()
     }
   }
 }
-}
 } // namespace gamemd
 
 // 0x72AA40
 namespace gamemd {
 unsigned char char LoadMouseClassResources()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned __int8 result; // al
 
@@ -265,14 +254,12 @@ unsigned char char LoadMouseClassResources()
   }
   return result; /*0x72ac38*/
 }
-}
 } // namespace gamemd
 
 // 0x72ADE0
 namespace gamemd {
 void Palette_LoadSimple(char * Source, unsigned int * a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 v14; // [esp+8h] [ebp-78h]
   MapClass *v3 = a2; /*0x72ade5*/
@@ -331,14 +318,12 @@ void Palette_LoadSimple(char * Source, unsigned int * a2, unsigned int * a3)
   v16[0] = &off_7E1668; /*0x72aefa*/
   return BufferIOFileClass::Dtor(v16); /*0x72af07*/
 }
-}
 } // namespace gamemd
 
 // 0x72DAA0
 namespace gamemd {
 void CleanupEVASystem()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // Microsoft VisualC 2-14/net runtime
 {
   CleanupEVASystem_Cleanup(); /*0x72daa0*/
@@ -383,14 +368,12 @@ void CleanupEVASystem()
     DataGlobal_B0FBC0 = 0; /*0x72dda5*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x72DFB0
 namespace gamemd {
 int * * LoadingScreen_InitResources()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int *result; // eax
 
@@ -438,14 +421,12 @@ LABEL_3:
   }
   return result; /*0x72e19f*/
 }
-}
 } // namespace gamemd
 
 // 0x72E2D0
 namespace gamemd {
 void DrawScoreScreenStats(ConvertClass * aP0, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ObjectClass *result; // eax
 
@@ -509,14 +490,12 @@ void DrawScoreScreenStats(ConvertClass * aP0, int a2)
   }
   return (int)result->__pad_0; /*0x72e44a*/
 }
-}
 } // namespace gamemd
 
 // 0x72E450
 namespace gamemd {
 AbstractClass * * RenderScoreScreen(ConvertClass * a1, int * a2, char a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // [esp+Ch] [ebp-14h]
 
@@ -690,14 +669,12 @@ AbstractClass * * RenderScoreScreen(ConvertClass * a1, int * a2, char a3)
       0,
       0);
 }
-}
 } // namespace gamemd
 
 // 0x72EC70
 namespace gamemd {
 int * * MouseClass_SetupResources(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int *result; // eax
 
@@ -859,14 +836,12 @@ int * * MouseClass_SetupResources(int a1, int a2)
   }
   return result; /*0x72ef32*/
 }
-}
 } // namespace gamemd
 
 // 0x72F540
 namespace gamemd {
 AbstractClass * * RenderCreditsScreen(int a1, ConvertClass * a2, char a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // [esp+14h] [ebp-24h]
 
@@ -1199,14 +1174,12 @@ AbstractClass * * RenderCreditsScreen(int a1, ConvertClass * a2, char a3)
     0,
     0);
 }
-}
 } // namespace gamemd
 
 // 0x72FC60
 namespace gamemd {
 unsigned int * Screen_SetupBuffers(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 *v3; // eax
   AbstractClass *v44; // ecx
@@ -1503,7 +1476,6 @@ unsigned int * Screen_SetupBuffers(int a1, int a2)
     DataGlobal_B0FC54 = 0; /*0x7300ec*/
   }
   return result; /*0x7300d6*/
-}
 }
 } // namespace gamemd
 

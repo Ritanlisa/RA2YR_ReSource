@@ -20,7 +20,6 @@
 namespace gamemd {
 int EventClass::serializeEvent()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -50,14 +49,12 @@ int EventClass::serializeEvent()
   }
   return result; /*0x48b405*/
 }
-}
 } // namespace gamemd
 
 // 0x48BAD0
 namespace gamemd {
 int EventClass::SetData(int a2, int a3, int a4, int a5, int a6)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   this->q044 = a2; /*0x48bad8*/
   this->q048 = a3; /*0x48badf*/
@@ -66,14 +63,12 @@ int EventClass::SetData(int a2, int a3, int a4, int a5, int a6)
   this->q054 = a6; /*0x48baf0*/
   return a6; /*0x48baf3*/
 }
-}
 } // namespace gamemd
 
 // 0x4C65E0
 namespace gamemd {
 void * EventClass::Add(AbstractClass * aP1, unsigned char a3, int a4, char a5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   Debug::Log(); /*0x4c65fc*/
   if ( (int)aP1 < 0 ) /*0x4c660a*/
@@ -93,14 +88,12 @@ void * EventClass::Add(AbstractClass * aP1, unsigned char a3, int a4, char a5)
     return this; /*0x4c661e*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x4C66C0
 namespace gamemd {
 void * EventClass::AddEvent(int a2, unsigned char a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   Debug::Log("Adding event %s\n", off_82091C[a3]); /*0x4c66dc*/
   if ( a2 < 0 ) /*0x4c66ea*/
@@ -118,14 +111,12 @@ void * EventClass::AddEvent(int a2, unsigned char a3)
     return this; /*0x4c66f7*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x4C6720
 namespace gamemd {
 void * EventClass::Add2(AnimClass * aP1, unsigned char a3, IUnknown * aP3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   Debug::Log(); /*0x4c673c*/
   if ( (int)aP1 < 0 ) /*0x4c674a*/
@@ -144,14 +135,12 @@ void * EventClass::Add2(AnimClass * aP1, unsigned char a3, IUnknown * aP3)
     return this; /*0x4c6760*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x4C6970
 namespace gamemd {
 void * EventClass::AddEventEx(SelectClass_StripClass_SidebarClass * aP1, unsigned char a3, IUnknown * aP3, SelectClass_StripClass_SidebarClass * aP4, SelectClass_StripClass_SidebarClass * aP5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   Debug::Log(); /*0x4c698c*/
   if ( (int)aP1 < 0 ) /*0x4c699a*/
@@ -172,14 +161,12 @@ void * EventClass::AddEventEx(SelectClass_StripClass_SidebarClass * aP1, unsigne
     return this; /*0x4c69bc*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x4C6AE0
 namespace gamemd {
 void * EventClass::Init(IUnknown * aP1, char a3, int a4, int a5, int arg10, unsigned short * a6)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   Debug::Log(); /*0x4c6afc*/
   if ( (int)aP1 < 0 ) /*0x4c6b0a*/
@@ -202,14 +189,12 @@ void * EventClass::Init(IUnknown * aP1, char a3, int a4, int a5, int arg10, unsi
     return this; /*0x4c6b42*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x4C6CB0
 namespace gamemd {
 AbstractClass * * EventClass::ProcessEvent()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HouseClass *v3; // ecx
   BuildingClass *Building; // esi
@@ -999,14 +984,12 @@ LABEL_2:
     v76[2] = (HouseClass *)GroundHeight;
   }
 }
-}
 } // namespace gamemd
 
 // 0x542280
 namespace gamemd {
 int EventClass::deserializeEvent(int a2, IUnknown * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -1021,14 +1004,12 @@ int EventClass::deserializeEvent(int a2, IUnknown * aP2)
   }
   return result; /*0x5422b4*/
 }
-}
 } // namespace gamemd
 
 // 0x54F200
 namespace gamemd {
 int EventClass::Enqueue(unsigned short a2, char a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 v5; // si
   if ( (unsigned __int8)ChronoScreen::IsActive() ) /*0x54f205*/
@@ -1067,14 +1048,12 @@ int EventClass::Enqueue(unsigned short a2, char a3)
   }
   return 0; /*0x54f2d7*/
 }
-}
 } // namespace gamemd
 
 // 0x5F19C0
 namespace gamemd {
 int EventClass::CheckFlag()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v1 = this->q038; /*0x5f19c0*/
@@ -1082,14 +1061,12 @@ int EventClass::CheckFlag()
     EventClass::serializeEvent(*(int **)(v1 + 4)); /*0x5f19ca*/
   return 1; /*0x5f19d4*/
 }
-}
 } // namespace gamemd
 
 // 0x664440
 namespace gamemd {
 AbstractClass * * EventClass::validateEventType()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned __int8 v14[8]; // [esp+10h] [ebp-8h] BYREF
 
@@ -1154,7 +1131,6 @@ LABEL_23:
   Network::CopyAddress(v9, &v13, (int)v14); /*0x664500*/
   LaunchMultiplayerHost((int)this, v14); /*0x664516*/
   return v1; /*0x66451c*/
-}
 }
 } // namespace gamemd
 

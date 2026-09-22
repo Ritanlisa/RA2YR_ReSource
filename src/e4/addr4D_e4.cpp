@@ -13,7 +13,6 @@
 namespace gamemd {
 void* DestructFoggedObjectClass(FoggedObjectClass * aP0)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   BuildingTypeClass *i; // eax
   int edx15; // edx
@@ -121,7 +120,6 @@ void* DestructFoggedObjectClass(FoggedObjectClass * aP0)
   AbstractClass::DTOR(aP0); /*0x4d1879*/
   return result; /*0x4d187e*/
 }
-}
 } // namespace gamemd
 
 // 0x4D2370
@@ -202,10 +200,8 @@ int globalHelper_0D2ED0(unsigned int * a1, unsigned int * a2)
 namespace gamemd {
 void sub_4D2F00(int a1, int a2, int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v5; // edi
-
   int v3 = a2; /*0x4d2f05*/
   if ( a2 <= 0 ) /*0x4d2f07*/
     return 0; /*0x4d2f39*/
@@ -228,14 +224,12 @@ LABEL_7:
   }
   return a1 + 8 * (v3 / 2); /*0x4d2f34*/
 }
-}
 } // namespace gamemd
 
 // 0x4DB8A0
 namespace gamemd {
 int E4Recv_4DB8A0::sub_4DB8A0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   LPVOID v5; // esi
   LPVOID result; // eax
@@ -287,7 +281,6 @@ LABEL_13:
   if ( v2 ) /*0x4db99b*/
     return (LPVOID)(*(int (__stdcall **)(int))(*(_DWORD *)v2 + 8))(v2); /*0x4db9a0*/
   return result; /*0x4db9a3*/
-}
 }
 } // namespace gamemd
 

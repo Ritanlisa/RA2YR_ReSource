@@ -6,7 +6,6 @@
 // 0x47B3A0
 long long Isometric::InitTables(IUnknown * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int64 result; // rax
 
@@ -201,5 +200,4 @@ long long Isometric::InitTables(IUnknown * aP1)
     return Math::RoundToInt(v6); /*0x47bb4d*/
   }
   return result; /*0x47bb54*/
-}
 }

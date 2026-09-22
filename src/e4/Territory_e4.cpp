@@ -10,7 +10,6 @@
 namespace gamemd {
 int Territory_WorldDominationTour_8::AddRef(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   DWORD Ticks; // eax
   DWORD *v4; // esi
@@ -33,14 +32,12 @@ int Territory_WorldDominationTour_8::AddRef(char a2)
   }
   return Ticks; /*0x7718f0*/
 }
-}
 } // namespace gamemd
 
 // 0x771900
 namespace gamemd {
 signed int Territory_WorldDominationTour_8::Release()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   signed int result; // eax
 
@@ -62,7 +59,6 @@ signed int Territory_WorldDominationTour_8::Release()
   }
   return result; /*0x771930*/
 }
-}
 } // namespace gamemd
 
 // 0x771950
@@ -78,11 +74,9 @@ void Territory_WorldDominationTour_8::ddtor()
 namespace gamemd {
 int Territory_WorldDominationTour_8::Read(int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AudioQueue::Update(this->q01C); /*0x771973*/
   return 0; /*0x77197a*/
-}
 }
 } // namespace gamemd
 
@@ -90,10 +84,8 @@ int Territory_WorldDominationTour_8::Read(int a2, int a3)
 namespace gamemd {
 void Territory_WorldDominationTour_8::Write(int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AudioQueue::Update(this->q01C); /*0x771983*/
-}
 }
 } // namespace gamemd
 
@@ -101,10 +93,8 @@ void Territory_WorldDominationTour_8::Write(int a2, int a3)
 namespace gamemd {
 void Territory_WorldDominationTour_8::Close(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AudioQueue::Update(this->q01C); /*0x7719d3*/
-}
 }
 } // namespace gamemd
 
@@ -112,14 +102,12 @@ void Territory_WorldDominationTour_8::Close(int a2)
 namespace gamemd {
 unsigned int * Territory_WorldDominationTour_8::QueryInterface(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   *this = &vt_WorldDominationTour_Voices_Anim; /*0x771a33*/
   VtableStub::5CB6C0(this); /*0x771a39*/
   if ( (a2 & 1) != 0 ) /*0x771a43*/
     __3_YAXPAX_Z(this); /*0x771a46*/
   return this; /*0x771a50*/
-}
 }
 } // namespace gamemd
 

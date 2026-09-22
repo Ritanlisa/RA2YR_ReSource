@@ -8,7 +8,6 @@
 // 0x4E5D60
 int Lobby::InvalidatePlayerSlots()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // esi
   int result; // eax
@@ -60,12 +59,10 @@ int Lobby::InvalidatePlayerSlots()
   }
   return result; /*0x4e5e0e*/
 }
-}
 
 // 0x5EB060
 void Lobby::UpdatePlayerLabels()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v1; // esi
   int v2; // eax
@@ -361,12 +358,10 @@ LABEL_111:
   }
   while ( v16 + 1 < 8 );
 }
-}
 
 // 0x5EBA00
 void Lobby::SetupPlayerWidgets()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   INIClass *v1; // esi
   int ResourceID4CSF; // eax
@@ -484,12 +479,10 @@ void Lobby::SetupPlayerWidgets()
     }
   }
 }
-}
 
 // 0x77DB90
 int Lobby::BuildPlayerList()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   wchar_t **v0; // esi
   HashTable *v1; // edi
@@ -527,5 +520,4 @@ int Lobby::BuildPlayerList()
   }
   while ( (int)v0 < (int)&g_PlayerNameListEnd ); /*0x77dc6e*/
   return (*(int (__stdcall **)(LPVOID, char *))(*(_DWORD *)ppv + 60))(ppv, Destination); /*0x77dc84*/
-}
 }

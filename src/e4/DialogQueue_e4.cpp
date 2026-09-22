@@ -5,7 +5,6 @@
 // 0x5D4E70
 int DialogQueue::PushEntry()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -24,12 +23,10 @@ int DialogQueue::PushEntry()
   }
   return result; /*0x5d4ec6*/
 }
-}
 
 // 0x5D4ED0
 int DialogQueue::RemoveEntry()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -45,5 +42,4 @@ int DialogQueue::RemoveEntry()
     while ( result < DataGlobal_ABFCA0 ); /*0x5d4f18*/
   }
   return result; /*0x5d4f1b*/
-}
 }

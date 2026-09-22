@@ -5,7 +5,6 @@
 // 0x496130
 int BlitTransLucent25AlphaZReadWrite_ushort::CallBlit0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(this->q004)( /*0x496167*/
            this,
@@ -20,17 +19,14 @@ int BlitTransLucent25AlphaZReadWrite_ushort::CallBlit0(int a2, int a3, int a4, i
            a10,
            a11);
 }
-}
 
 // 0x496250
 unsigned short * BlitTransLucent25AlphaZReadWrite_ushort::Blit_RLE_Lucent50(unsigned short * a1, unsigned char * a2, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _WORD *result; // eax
   int v17; // edi
   unsigned __int8 v19; // dl
-
   int v11 = a5; /*0x496250*/
   result = a1; /*0x496254*/
   if ( a5 <= 0 ) /*0x496263*/
@@ -67,7 +63,6 @@ unsigned short * BlitTransLucent25AlphaZReadWrite_ushort::Blit_RLE_Lucent50(unsi
     }
   }
   return result; /*0x4962c3*/
-}
 }
 
 // 0x494500

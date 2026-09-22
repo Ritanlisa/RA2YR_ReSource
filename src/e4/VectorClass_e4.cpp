@@ -154,7 +154,6 @@
 // 0x4137A0
 int VectorClass::RemoveObjectById()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   VectorClass *v7; // [esp+4h] [ebp-4h] BYREF
   v7 = this; /*0x4137a0*/
@@ -180,12 +179,10 @@ int VectorClass::RemoveObjectById()
   }
   return v7; /*0x4137ae*/
 }
-}
 
 // 0x65A970
 int VectorClass::RemoveElement()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int **v14; // ecx
   int v18; // [esp+18h] [ebp+8h]
@@ -258,12 +255,10 @@ LABEL_20:
   }
   return 10; /*0x65a98a*/
 }
-}
 
 // 0x763BA0
 int VectorClass::GetAtChecked(IUnknown * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v3 = this->q028->SaveLoad_Register(aP1) + 1; /*0x763bb4*/
@@ -274,13 +269,11 @@ int VectorClass::GetAtChecked(IUnknown * aP1)
   else
     return this->q02C + 12 * v3; /*0x763bd1*/
 }
-}
 
 // 0x42F6F0
 namespace gamemd {
 AbstractClass * * VectorClass_Cell::Release(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // eax
 
@@ -331,14 +324,12 @@ AbstractClass * * VectorClass_Cell::Release(int a2, unsigned int * a3)
     return 1; /*0x42f7ae*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x4E0840
 namespace gamemd {
 AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::Release(int a2, int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( a2 ) /*0x4e084c*/
@@ -433,14 +424,12 @@ AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistrib
     return 1; /*0x4e093b*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x4E0B10
 namespace gamemd {
 AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::SetCapacity(int a2, int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( a2 ) /*0x4e0b1c*/
@@ -537,14 +526,12 @@ AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistrib
     this->Count = v16; /*0x4e0c18*/
   return 1; /*0x4e0c1b*/
 }
-}
 } // namespace gamemd
 
 // 0x4A2820
 namespace gamemd {
 unsigned int * VectorClass_K_8::Constructor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   *(this + 2) = 0; /*0x4a282a*/
   *(this + 3) = 0; /*0x4a282d*/
@@ -559,14 +546,12 @@ unsigned int * VectorClass_K_8::Constructor()
   *(this + 9) = 0xFFFF; /*0x4a286b*/
   return this; /*0x4a2874*/
 }
-}
 } // namespace gamemd
 
 // 0x5AD010
 namespace gamemd {
 AbstractClass * * VectorClass_Ptr::ResizeAndCopy(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // eax
 
@@ -605,14 +590,12 @@ AbstractClass * * VectorClass_Ptr::ResizeAndCopy(int a2, unsigned int * a3)
     *((_DWORD *)this + 4) = v7; /*0x5ad0ab*/
   return 1; /*0x5ad0ae*/
 }
-}
 } // namespace gamemd
 
 // 0x4A0C20
 namespace gamemd {
 unsigned int * VectorClass_ptr_BuildChoiceClass_int_ouseClass::Constructor(EnumConnectionPointsClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
         _DWORD *this,
         EnumConnectionPointsClass *aP1)
 {
@@ -669,14 +652,12 @@ unsigned int * VectorClass_ptr_BuildChoiceClass_int_ouseClass::Constructor(EnumC
   }
   return this; /*0x4a0cd1*/
 }
-}
 } // namespace gamemd
 
 // 0x4F6A20
 namespace gamemd {
 int VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v2 = 0; /*0x4f6a27*/
@@ -693,14 +674,12 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity(int a1, int a2)
   while ( v3 < g_SidebarState ); /*0x4f6a66*/
   return v2; /*0x4f6a6c*/
 }
-}
 } // namespace gamemd
 
 // 0x4F6A80
 namespace gamemd {
 int VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_0(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v2 = 0; /*0x4f6a87*/
@@ -717,14 +696,12 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_0(int a1, int a2
   while ( v3 < g_SidebarState ); /*0x4f6ac6*/
   return v2; /*0x4f6acc*/
 }
-}
 } // namespace gamemd
 
 // 0x4F6AE0
 namespace gamemd {
 int VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_1(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v2 = 0; /*0x4f6ae7*/
@@ -742,14 +719,12 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_1(int a1, int a2
   while ( v3 < g_SidebarState ); /*0x4f6b39*/
   return v2; /*0x4f6b3f*/
 }
-}
 } // namespace gamemd
 
 // 0x4F6B50
 namespace gamemd {
 int VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_2(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v2 = 0; /*0x4f6b57*/
@@ -767,14 +742,12 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_2(int a1, int a2
   while ( v3 < g_SidebarState ); /*0x4f6ba9*/
   return v2; /*0x4f6baf*/
 }
-}
 } // namespace gamemd
 
 // 0x4F6BC0
 namespace gamemd {
 unsigned int * VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_3(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v4; // eax
   bool v7; // zf
@@ -831,14 +804,12 @@ unsigned int * VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_3(int
   *a2 = v13; /*0x4f6d02*/
   return a2; /*0x4f6cea*/
 }
-}
 } // namespace gamemd
 
 // 0x4F6D10
 namespace gamemd {
 unsigned int * VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_4(int a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v4; // eax
   bool v7; // zf
@@ -895,14 +866,12 @@ unsigned int * VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_4(int
   *a2 = v13; /*0x4f6e52*/
   return a2; /*0x4f6e3a*/
 }
-}
 } // namespace gamemd
 
 // 0x501400
 namespace gamemd {
 int VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_5(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v1 = g_SidebarState - 1; /*0x501409*/
@@ -955,14 +924,12 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_5(int a1)
     return 0; /*0x501523*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x50F520
 namespace gamemd {
 AbstractClass * * VectorClass_ptr_BuildChoiceClass_int_ouseClass::Release(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // eax
 
@@ -1004,14 +971,12 @@ AbstractClass * * VectorClass_ptr_BuildChoiceClass_int_ouseClass::Release(int a2
     return 1; /*0x50f5c8*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x50F660
 namespace gamemd {
 AbstractClass * * VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_6(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // eax
 
@@ -1050,14 +1015,12 @@ AbstractClass * * VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_6(
     this->Count = v7; /*0x50f6fb*/
   return 1; /*0x50f6fe*/
 }
-}
 } // namespace gamemd
 
 // 0x6288F0
 namespace gamemd {
 AbstractClass * * VectorClass_ptr_ColorScheme::SetCapacity_0(CCINIClass * aP1, unsigned char * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   CCINIClass *v3; // edi
   AbstractClass *v6; // ebx
@@ -1159,14 +1122,12 @@ AbstractClass * * VectorClass_ptr_ColorScheme::SetCapacity_0(CCINIClass * aP1, u
     return 1; /*0x628a33*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x491210
 namespace gamemd {
 void * VectorClass_ptr_ConvertClass::Constructor_ConvertClass(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void **v6; // [esp+4h] [ebp-4h] BYREF
 
@@ -1192,17 +1153,14 @@ void * VectorClass_ptr_ConvertClass::Constructor_ConvertClass(char a2)
     __3_YAXPAX_Z(this); /*0x49129e*/
   return (ConvertClass *)this; /*0x4912a8*/
 }
-}
 } // namespace gamemd
 
 // 0x4E1960
 namespace gamemd {
 void VectorClass_ptr_ConvertClass::MarkDirty()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   this->q01C = 1; /*0x4e1960*/
-}
 }
 } // namespace gamemd
 
@@ -1210,7 +1168,6 @@ void VectorClass_ptr_ConvertClass::MarkDirty()
 namespace gamemd {
 AbstractClass * * VectorClass_ptr_PlanningBranchClass::Release(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // eax
 
@@ -1252,14 +1209,12 @@ AbstractClass * * VectorClass_ptr_PlanningBranchClass::Release(int a2, unsigned 
     return 1; /*0x63e138*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x76B8C0
 namespace gamemd {
 int VectorClass_rc_ptr_WDTTerritory::Release(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   rc_ptr_base *v6; // esi
   rc_ptr_base *v8; // ebx
@@ -1340,14 +1295,12 @@ LABEL_14:
   this->IsAllocated = a3 == 0; /*0x76b9bc*/
   return 1; /*0x76b957*/
 }
-}
 } // namespace gamemd
 
 // 0x5D8470
 namespace gamemd {
 AbstractClass * * VectorClass_Scenario::ResizeAndCopy(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // eax
 
@@ -1386,14 +1339,12 @@ AbstractClass * * VectorClass_Scenario::ResizeAndCopy(int a2, unsigned int * a3)
     *((_DWORD *)this + 4) = v7; /*0x5d850b*/
   return 1; /*0x5d850e*/
 }
-}
 } // namespace gamemd
 
 // 0x5D8730
 namespace gamemd {
 AbstractClass * * VectorClass_Scenario2::ResizeAndCopy(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // eax
 
@@ -1432,14 +1383,12 @@ AbstractClass * * VectorClass_Scenario2::ResizeAndCopy(int a2, unsigned int * a3
     *((_DWORD *)this + 4) = v7; /*0x5d87cb*/
   return 1; /*0x5d87ce*/
 }
-}
 } // namespace gamemd
 
 // 0x5D8590
 namespace gamemd {
 AbstractClass * * VectorClass_Scenario3::ResizeAndCopy(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // eax
 
@@ -1481,14 +1430,12 @@ AbstractClass * * VectorClass_Scenario3::ResizeAndCopy(int a2, unsigned int * a3
     return 1; /*0x5d8638*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x4E9840
 namespace gamemd {
 AbstractClass * * VectorClass_SuperPtr::ResizeAndCopy(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // eax
 
@@ -1527,14 +1474,12 @@ AbstractClass * * VectorClass_SuperPtr::ResizeAndCopy(int a2, unsigned int * a3)
     *((_DWORD *)this + 4) = v7; /*0x4e98db*/
   return 1; /*0x4e98de*/
 }
-}
 } // namespace gamemd
 
 // 0x6DC850
 namespace gamemd {
 AbstractClass * * VectorClass_UDirtyAreaStruct::SetCapacity(CCINIClass * aP1, char * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   CCINIClass *v3; // edi
   CCINIClass *v6; // ebx
@@ -1628,14 +1573,12 @@ LABEL_26:
     this->Count = v13; /*0x6dc957*/
   return 1; /*0x6dc95a*/
 }
-}
 } // namespace gamemd
 
 // 0x6B44A0
 namespace gamemd {
 AbstractClass * * VectorClass_UUndoInfoStruct::Release(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *v8; // edi
   int v3 = a2; /*0x6b44a2*/
@@ -1723,14 +1666,12 @@ LABEL_14:
   this->IsAllocated = a3 == 0; /*0x6b4581*/
   return 1; /*0x6b451b*/
 }
-}
 } // namespace gamemd
 
 // 0x6B4650
 namespace gamemd {
 AbstractClass * * VectorClass_UUndoInfoStruct::SetCapacity(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *v8; // edi
   AbstractClass *v10; // ecx
@@ -1822,7 +1763,6 @@ LABEL_26:
   if ( v14 < this->Count ) /*0x6b473c*/
     this->Count = v14; /*0x6b473e*/
   return 1; /*0x6b4741*/
-}
 }
 } // namespace gamemd
 
@@ -9252,7 +9192,6 @@ this->Capacity = 0;
 namespace gamemd {
 void VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass_GetSize()
  {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   _DWORD *i; // ecx
@@ -9269,7 +9208,6 @@ void VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_Ce
       return -1; /*0x4e09ca*/
   }
   return result; /*0x4e099b*/
-}
 }
 } // namespace gamemd
 

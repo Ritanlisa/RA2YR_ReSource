@@ -11,7 +11,6 @@
 namespace gamemd {
 unsigned int * VoxelAnimTypeClass::Constructor(ObjectClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   VoxelAnimTypeClass *v4; // eax
   ObjectTypeClass::ConstructFull((int)this, (AbstractClass *)aP1); /*0x74ad89*/
@@ -81,14 +80,12 @@ unsigned int * VoxelAnimTypeClass::Constructor(ObjectClass * aP1)
   }
   return this; /*0x74af5e*/
 }
-}
 } // namespace gamemd
 
 // 0x74B050
 namespace gamemd {
 AbstractTypeClass * * VoxelAnimTypeClass::LoadFromINI(unsigned char *** aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char Bool_Overwrite; // al
   double Double_Overwrite; // st7
@@ -415,14 +412,12 @@ AbstractTypeClass * * VoxelAnimTypeClass::LoadFromINI(unsigned char *** aP1)
   }
   return 1; /*0x74b4f2*/
 }
-}
 } // namespace gamemd
 
 // 0x74B690
 namespace gamemd {
 int VoxelAnimTypeClass::PowerDrainUpdate(int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v3 = AbstractTypeClass::ProcessPower((char *)this, a2); /*0x74b699*/
@@ -453,7 +448,6 @@ int VoxelAnimTypeClass::PowerDrainUpdate(int * a2)
   int v7; // edx
   LOBYTE(v7) = this->IsTiberium; /*0x74b7b6*/
   return Power::FlagProcess(a2, v7); /*0x74b7c4*/
-}
 }
 } // namespace gamemd
 

@@ -5,7 +5,6 @@
 // 0x473AE0
 int FileClass::Write(CCFileClass * aP1, DWORD nNumberOfBytesToWrite)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( this->q058 ) /*0x473ae3*/
@@ -16,22 +15,18 @@ int FileClass::Write(CCFileClass * aP1, DWORD nNumberOfBytesToWrite)
   }
   return FileClass::BufferedWriter(this, aP1, nNumberOfBytesToWrite); /*0x473b0c*/
 }
-}
 
 // 0x473FC0
 int FileClass::SetFileName(IUnknown * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   this->q068 = 0; /*0x473fc4*/
   return FileClass::OpenWithCDSearch(this, aP1); /*0x473fd1*/
-}
 }
 
 // 0x65CBF0
 int FileClass::Open(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v4; // edi
   HANDLE FileA; // eax
@@ -71,12 +66,10 @@ LABEL_12:
   }
   return 1; /*0x65cbfb*/
 }
-}
 
 // 0x65CCE0
 int FileClass::Read(BufferIOFileClass * aP1, AbstractClass * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   DWORD v4; // ebx
   DWORD result; // eax
@@ -139,12 +132,10 @@ int FileClass::Read(BufferIOFileClass * aP1, AbstractClass * aP2)
     this->vt_slot_52(); /*0x65cdbf*/
   return NumberOfBytesRead; /*0x65cd07*/
 }
-}
 
 // 0x65CF00
 int FileClass::Seek(LONG lDistanceToMove, DWORD dwMoveMethod)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   LONG v4; // ecx
   DWORD v5; // edi
@@ -302,12 +293,10 @@ LABEL_27:
   }
   return result; /*0x65d020*/
 }
-}
 
 // 0x65D150
 int FileClass::Close()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   this->vt_slot_52(); /*0x65d155*/
   if ( !this->vt_slot_28(2) ) /*0x65d15e*/
@@ -316,7 +305,6 @@ int FileClass::Close()
     this->vt_slot_40(0, 0); /*0x65d173*/
   this->vt_slot_52(); /*0x65d17a*/
   return 1; /*0x65d182*/
-}
 }
 
 // 0x401950

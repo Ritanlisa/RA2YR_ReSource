@@ -6,7 +6,6 @@
 // 0x48E620
 int Control::DispatchClick(ControlClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v3 = *(this + 10); /*0x48e623*/
@@ -14,12 +13,10 @@ int Control::DispatchClick(ControlClass * aP1)
     (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)v3 + 108))(v3, 0); /*0x48e62e*/
   return GadgetClass::ClearState(this, aP1); /*0x48e63d*/
 }
-}
 
 // 0x60B950
 int Control::RepositionControlsDialog()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND Parent; // esi
   int DlgCtrlID; // edi
@@ -304,12 +301,10 @@ LABEL_171:
     return MoveWindow(hWnda, X, v3, nWidth, nHeight, 0); /*0x60c090*/
   return result; /*0x60c0af*/
 }
-}
 
 // 0x60C540
 int Control::CheckControlTypeDialog()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   Control *v5 = this; /*0x60c549*/
@@ -389,5 +384,4 @@ int Control::CheckControlTypeDialog()
   v3[44] = 1; /*0x60c7b9*/
   *((_BYTE *)v3 + 189) = 1; /*0x60c7bf*/
   return 1; /*0x60c58b*/
-}
 }

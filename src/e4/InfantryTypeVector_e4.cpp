@@ -5,7 +5,6 @@
 // 0x512F20
 int InfantryTypeVector::Add(InfantryTypeClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v3 = this->q008; /*0x512f23*/
@@ -23,12 +22,10 @@ int InfantryTypeVector::Add(InfantryTypeClass * aP1)
   *(_DWORD *)(v7 + 4 * v6) = *(_DWORD *)aP1->vtable0; /*0x512f68*/
   return 1; /*0x512f51*/
 }
-}
 
 // 0x5138F0
 unsigned int * InfantryTypeVector::Construct2(int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   this->q004 = 0; /*0x5138fb*/
   this->q008 = a2; /*0x5138fe*/
@@ -47,12 +44,10 @@ unsigned int * InfantryTypeVector::Construct2(int a2, int a3)
   }
   return this; /*0x51391d*/
 }
-}
 
 // 0x5D89A0
 unsigned int * InfantryTypeVector::ConstructFromData(int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   this->q004 = 0; /*0x5d89ab*/
   this->q008 = a2; /*0x5d89ae*/
@@ -70,5 +65,4 @@ unsigned int * InfantryTypeVector::ConstructFromData(int a2, int a3)
     *((_BYTE *)this + 13) = 1; /*0x5d89e0*/
   }
   return this; /*0x5d89cd*/
-}
 }

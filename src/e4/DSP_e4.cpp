@@ -7,7 +7,6 @@
 namespace gamemd {
 int DSP_AudioMixBuffers(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   DSurface *v11; // esi
   int result; // eax
@@ -18,7 +17,6 @@ int DSP_AudioMixBuffers(int a1, int a2)
   int v117; // [esp+20h] [ebp-10h]
   __int16 v118; // [esp+24h] [ebp-Ch] BYREF
   __int16 v120; // [esp+2Ah] [ebp-6h]
-
   int v3 = *(_DWORD *)(a1 + 132);
   _DWORD * v4 = *(_DWORD **)(a1 + 368);
   char v114[4]; // [esp+14h] [ebp-1Ch]
@@ -718,14 +716,12 @@ LABEL_73:
   }
   return -2;
 }
-}
 } // namespace gamemd
 
 // 0x7C0C80
 namespace gamemd {
 void DSP_AudioProcess(AudioStream * aP0, int a2, char a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v4 = 0; /*0x7c0c89*/
@@ -983,6 +979,5 @@ LABEL_64:
     }
   }
   return -1; /*0x7c10f2*/
-}
 }
 } // namespace gamemd

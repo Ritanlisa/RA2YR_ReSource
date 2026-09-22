@@ -7,7 +7,6 @@
 // 0x406060
 int Mixer::ReleaseChannel()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -45,7 +44,6 @@ int Mixer::ReleaseChannel()
 LABEL_14:
   *(this + 2) = 0; /*0x4060e7*/
   return result; /*0x4060d9*/
-}
 }
 
 // 0x4083D0

@@ -7,7 +7,6 @@
 // 0x6A0310
 int WalkLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, long long a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   *(_DWORD *)(a1 + 84) = a2; /*0x6a0323*/
@@ -61,12 +60,10 @@ int WalkLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, long
   }
   return v4; /*0x6a0430*/
 }
-}
 
 // 0x6A3F50
 int WalkLocomotionClass::IsAtDestination(int a1, int a2, int a3, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v4 = a1; /*0x6a3f55*/
@@ -121,7 +118,6 @@ int WalkLocomotionClass::IsAtDestination(int a1, int a2, int a3, int a4)
   return (unsigned __int16)(v23 / 256) == (unsigned __int16)(a2 / 256) /*0x6a411e*/
       && (unsigned __int16)(v24 / 256) == (unsigned __int16)(a3 / 256)
       && (int)abs32(v25 - a4) <= DataGlobal_B07838;
-}
 }
 
 // 0x75C640

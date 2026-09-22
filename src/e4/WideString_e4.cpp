@@ -7,7 +7,6 @@
 namespace gamemd {
 int WideString::WordWrap(wchar_t * a0, CampaignScore * aP1, int a3, CampaignScore * aP3, int a5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   CampaignScore *v6; // ebp
   int v9; // ebx
@@ -62,14 +61,12 @@ LABEL_18:
   memcpy(v6, (AbstractClass *)((char *)v6 + 2 * v9), 2 * (v7 + 0x7FFFFFFF * v9) + 2); /*0x5d4bdc*/
   return v9; /*0x5d4b2b*/
 }
-}
 } // namespace gamemd
 
 // 0x7B73F0
 namespace gamemd {
 AbstractClass * * WideString::Replace(CampaignScore * aP1, wchar_t * String)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   GameSetup *v3; // ebx
   const wchar_t *v4; // edi
@@ -183,7 +180,6 @@ LABEL_35:
   if ( v5 ) /*0x7b75e2*/
     __3_YAXPAX_Z(v5); /*0x7b75e5*/
   return 1; /*0x7b75ed*/
-}
 }
 } // namespace gamemd
 

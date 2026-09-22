@@ -12,7 +12,6 @@
 namespace gamemd {
 AbstractClass * * JumpjetLocomotion::MoveTo(IUnknown * aP1, int aP3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v3; // edx
   v3 = aP1; /*0x4b0ad0*/
@@ -96,14 +95,12 @@ AbstractClass * * JumpjetLocomotion::MoveTo(IUnknown * aP1, int aP3)
   }
   return v5; /*0x4b0bc5*/
 }
-}
 } // namespace gamemd
 
 // 0x4B0F20
 namespace gamemd {
 int JumpjetLocomotion::ProcessCollision(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   MouseClass *v13; // ecx
   MouseClass *v21; // ecx
@@ -1058,14 +1055,12 @@ LABEL_197:
     return 0;
   }
 }
-}
 } // namespace gamemd
 
 // 0x4B2630
 namespace gamemd {
 int JumpjetLocomotion::Update(unsigned char * a2, int a3, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char result; // al
   wchar_t *v16; // edi
@@ -2372,14 +2367,12 @@ LABEL_338:
   return 0;
 }
 
-}
 } // namespace gamemd
 
 // 0x4B4780
 namespace gamemd {
 unsigned int * JumpjetLocomotion::TransformCoords(IUnknown * aP1, IUnknown * aP2, ObjectClass * aP3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v4 = *(_DWORD *)aP3->__pad_0; /*0x4b478d*/
@@ -2409,14 +2402,12 @@ unsigned int * JumpjetLocomotion::TransformCoords(IUnknown * aP1, IUnknown * aP2
   aP1->field_4 = v7 + v9; /*0x4b47f5*/
   return &aP1->field_0; /*0x4b47f0*/
 }
-}
 } // namespace gamemd
 
 // 0x54CA90
 namespace gamemd {
 void* JumpjetLocomotion::Land()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v48; // [esp+36h] [ebp-20h] BYREF
   int v49; // [esp+3Ah] [ebp-1Ch] BYREF
@@ -2675,14 +2666,12 @@ LABEL_74:
   }
   return v39; /*0x54d0ad*/
 }
-}
 } // namespace gamemd
 
 // 0x54D0F0
 namespace gamemd {
 void* JumpjetLocomotion::UpdateFacing()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned __int8 v7; // c0
   unsigned __int8 v8; // c3
@@ -2933,6 +2922,5 @@ LABEL_50:
   result = this->q00C; /*0x54d6b4*/
   result->q01D = v55; /*0x54d6bd*/
   return result; /*0x54d6ac*/
-}
 }
 } // namespace gamemd

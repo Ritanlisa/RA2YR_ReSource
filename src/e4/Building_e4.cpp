@@ -9,7 +9,6 @@
 namespace gamemd {
 AnimClass * * Building::ComputePosition(AnimClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   BuildingTypeClass *v8; // edi
   VectorClass *v13; // eax
@@ -182,14 +181,12 @@ LABEL_41:
   aP1->field_8 = 0; /*0x4260e0*/
   return &aP1->field_0; /*0x425faa*/
 }
-}
 } // namespace gamemd
 
 // 0x485020
 namespace gamemd {
 int Building::GetNthOfType()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v2 = FindBuildingByTiberiumType(*(_DWORD *)(this + 68)); /*0x485026*/
@@ -198,14 +195,12 @@ int Building::GetNthOfType()
   else
     return (*(unsigned __int8 *)(this + 286) + 1) * *(_DWORD *)(*((_DWORD *)BuildingClass_InstanceArray + v2) + 184); /*0x48504f*/
 }
-}
 } // namespace gamemd
 
 // 0x772A90
 namespace gamemd {
 int Building::GetRenderType()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char result; // al
 
@@ -216,7 +211,6 @@ int Building::GetRenderType()
   if ( v1->EliteWeapon ) /*0x772aa7*/
     return result | 0xB8; /*0x772ab1*/
   return result; /*0x772ab3*/
-}
 }
 } // namespace gamemd
 

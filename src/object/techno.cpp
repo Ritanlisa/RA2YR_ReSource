@@ -381,7 +381,6 @@ void TechnoClass::Uncloak(bool play_sound)
 // 0x6f3330
 AbstractClass * * TechnoClass::SelectWeapon(AbstractClass* target) const
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x6f3330
 {
   int result; // eax
@@ -1013,7 +1012,6 @@ add     esp, 8
 retn    4
 */
     return {}; // TODO stub - translate quarantined IDA block above
-}
 
 void TechnoClass::DecreaseAmmo()
 {
@@ -1143,7 +1141,6 @@ void TechnoClass::AddPassenger(FootClass* passenger)
 // 0x423ac0
 int TechnoClass::CreateUnit()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x423ac0
 {
   void **v13; // eax
@@ -3191,7 +3188,6 @@ mov     esp, ebp
 pop     ebp
 retn
 */
-}
 
 // ============================================================
 // ProductionCompletionCallback (IDA: 0x424CE0, 543B)
@@ -3719,7 +3715,6 @@ return missionState == 11
 }
 // 0x5f5390
 int TechnoClass::CreateDestructionEffect() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x5f5390
 {
   void **v10; // eax
@@ -4423,7 +4418,6 @@ pop     ebx
 add     esp, 14h
 retn    1Ch
 */
-}
 // 0x5f7900
 int TechnoClass::FindMatchingUnit() { return -1; }
 // 0x5f99e0
@@ -4481,7 +4475,6 @@ int TechnoClass::CanInitiateSell() const { return false; }
 int TechnoClass::IsNotAircraftOrBuilding() const { return false; }
 // 0x6f3330
 AbstractClass * * TechnoClass::SelectWeapon() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x6f3330
 {
   int result; // eax
@@ -5113,7 +5106,6 @@ pop     ebx
 add     esp, 8
 retn    4
 */
-}
 // 0x6f3820
 int TechnoClass::CanTargetHouse() const { return false; }
 // 0x70fb50

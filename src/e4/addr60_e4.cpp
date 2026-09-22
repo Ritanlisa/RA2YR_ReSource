@@ -12,7 +12,6 @@
 namespace gamemd {
 void sub_600750()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned int i; // edi
 
@@ -76,14 +75,12 @@ void sub_600750()
   }
   __3_YAXPAX_Z(g_DialogHashMap_Entries); /*0x600866*/
 }
-}
 } // namespace gamemd
 
 // 0x600920
 namespace gamemd {
 void sub_600920()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned int i; // edi
 
@@ -147,14 +144,12 @@ void sub_600920()
   }
   __3_YAXPAX_Z(g_DialogPool); /*0x600a36*/
 }
-}
 } // namespace gamemd
 
 // 0x600AF0
 namespace gamemd {
 void sub_600AF0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int j; // ebp
   _DWORD *k; // eax
@@ -232,14 +227,12 @@ void sub_600AF0()
   }
   __3_YAXPAX_Z(g_DialogHashMap_Base); /*0x600c53*/
 }
-}
 } // namespace gamemd
 
 // 0x600C70
 namespace gamemd {
 void NavigateDialogTab(HWND hCtl, bool a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND Parent; // eax
   HWND NextDlgTabItem; // eax
@@ -251,14 +244,12 @@ void NavigateDialogTab(HWND hCtl, bool a2)
   SetFocus(NextDlgTabItem); /*0x600c93*/
   return 1; /*0x600c8e*/
 }
-}
 } // namespace gamemd
 
 // 0x600CA0
 namespace gamemd {
 void ValidateDialogEvent(int a1, HWND a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int DlgCtrlID; // eax
 
@@ -460,14 +451,12 @@ LABEL_164:
   }
   return 15; /*0x600f07*/
 }
-}
 } // namespace gamemd
 
 // 0x6015E0
 namespace gamemd {
 void CtlDialogColorHandler(int a1, HWND a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int DlgCtrlID; // eax
   int result; // eax
@@ -662,14 +651,12 @@ LABEL_5:
     return 1; /*0x601d0f*/
   return result; /*0x6018af*/
 }
-}
 } // namespace gamemd
 
 // 0x601D20
 namespace gamemd {
 void ValidateDialogControl(int a1, HWND a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int DlgCtrlID; // eax
 
@@ -865,14 +852,12 @@ LABEL_5:
   }
   return 8; /*0x601fef*/
 }
-}
 } // namespace gamemd
 
 // 0x6023F0
 namespace gamemd {
 int sub_6023F0(int a1, HWND a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int DlgCtrlID; // eax
 
@@ -900,14 +885,12 @@ LABEL_5:
   else
     return -1; /*0x60247b*/
 }
-}
 } // namespace gamemd
 
 // 0x602490
 namespace gamemd {
 void IsValidActionDialog(int a1, HWND a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int DlgCtrlID; // esi
 
@@ -1079,14 +1062,12 @@ LABEL_5:
   }
   return Event::IsValidActionType(v4) && DlgCtrlID == 1685 && !SessionClass::GetGameSpeed(g_GameMode_Current); /*0x60262e*/
 }
-}
 } // namespace gamemd
 
 // 0x602DD0
 namespace gamemd {
 char IsDialogControlHidden(int a1, HWND a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int DlgCtrlID; // eax
 
@@ -1164,14 +1145,12 @@ LABEL_5:
   }
   return 0; /*0x602f56*/
 }
-}
 } // namespace gamemd
 
 // 0x603040
 namespace gamemd {
 int LoadCampaignMissionData(int a1, HWND a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int DlgCtrlID; // eax
 
@@ -1235,14 +1214,12 @@ LABEL_5:
   }
   return 0; /*0x6031c6*/
 }
-}
 } // namespace gamemd
 
 // 0x6035F0
 namespace gamemd {
 AbstractClass * * DispatchDialogControlAction(int a1, HWND a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int DlgCtrlID; // edi
   int result; // eax
@@ -1323,14 +1300,12 @@ LABEL_5:
   }
   return result; /*0x603798*/
 }
-}
 } // namespace gamemd
 
 // 0x603870
 namespace gamemd {
 AbstractClass * * GetDialogControlSHP(int a1, HWND a2, bool * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int DlgCtrlID; // eax
 
@@ -1405,14 +1380,12 @@ LABEL_5:
   }
   return 0; /*0x603a05*/
 }
-}
 } // namespace gamemd
 
 // 0x603AA0
 namespace gamemd {
 int IsDialogWindowClass(HWND a1, HWND a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND v8; // edi
   bool v9; // al
@@ -1488,14 +1461,12 @@ LABEL_37:
     return 0; /*0x603afb*/
   return 192; /*0x603af0*/
 }
-}
 } // namespace gamemd
 
 // 0x603D30
 namespace gamemd {
 void * CacheDialogInvalidate(HWND hWnd, HWND a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND *result; // eax
   HWND v5; // [esp+8h] [ebp-4h] BYREF
@@ -1522,14 +1493,12 @@ void * CacheDialogInvalidate(HWND hWnd, HWND a2)
   }
   return result; /*0x603d7c*/
 }
-}
 } // namespace gamemd
 
 // 0x603E40
 namespace gamemd {
 unsigned int * sub_603E40(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *result; // eax
 
@@ -1552,14 +1521,12 @@ unsigned int * sub_603E40(int a1, int a2)
   }
   return result; /*0x603e89*/
 }
-}
 } // namespace gamemd
 
 // 0x604060
 namespace gamemd {
 wchar_t ** GetSkirmishMenuOwnerName(SkirmishDialog * aP0, HWND a2, HWND a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   wchar_t *StringCSF; // eax
 
@@ -1575,14 +1542,12 @@ wchar_t ** GetSkirmishMenuOwnerName(SkirmishDialog * aP0, HWND a2, HWND a3)
   }
   return (wchar_t **)aP0; /*0x604091*/
 }
-}
 } // namespace gamemd
 
 // 0x6040B0
 namespace gamemd {
 AbstractClass * * DlgSkirmishMenuProc(HWND a1, HWND a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND *v3; // eax
   char *result; // eax
@@ -2887,14 +2852,12 @@ LABEL_885:
   }
   return result;
 }
-}
 } // namespace gamemd
 
 // 0x606740
 namespace gamemd {
 int Dialog_SetActiveFlag(int a1, char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -2918,14 +2881,12 @@ int Dialog_SetActiveFlag(int a1, char a2)
   }
   return result; /*0x606789*/
 }
-}
 } // namespace gamemd
 
 // 0x6071E0
 namespace gamemd {
 AbstractClass * * GadgetClass_RenderAnimation(HWND a1, char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND v23; // edi
   HWND v62; // [esp+3Ch] [ebp-188h] BYREF
@@ -3430,14 +3391,12 @@ LABEL_116:
     (*(void (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 16))(g_WWMouseClass_Instance);
   return SendMessageA(hWnd, 0x4ECu, 0, 0);
 }
-}
 } // namespace gamemd
 
 // 0x608500
 namespace gamemd {
 AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int DlgCtrlID; // eax
   _DWORD *v6; // eax
@@ -3884,14 +3843,12 @@ LABEL_142:
   }
   return 0; /*0x608cbc*/
 }
-}
 } // namespace gamemd
 
 // 0x608CD0
 namespace gamemd {
 void IsDialogControlVisible(int a1, HWND a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int DlgCtrlID; // eax
 
@@ -4158,14 +4115,12 @@ LABEL_244:
   }
   return 1; /*0x608f34*/
 }
-}
 } // namespace gamemd
 
 // 0x6096A0
 namespace gamemd {
 char sub_6096A0(int a1, HWND a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND *v4; // eax
   HWND v7; // [esp+8h] [ebp-4h] BYREF
@@ -4186,14 +4141,12 @@ char sub_6096A0(int a1, HWND a2)
   _DWORD * v6 = v4 + 1; /*0x609706*/
   return v6 && !v6[26] && IsDialogControlVisible(a1, a2); /*0x609718*/
 }
-}
 } // namespace gamemd
 
 // 0x609730
 namespace gamemd {
 void GetDialogDefaultButton(int a1, HWND a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int DlgCtrlID; // eax
 
@@ -4286,14 +4239,12 @@ LABEL_5:
   }
   return 0; /*0x609795*/
 }
-}
 } // namespace gamemd
 
 // 0x609AA0
 namespace gamemd {
 bool sub_609AA0(int a1, HWND a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND *v4; // eax
   HWND v7; // [esp+8h] [ebp-4h] BYREF
@@ -4314,14 +4265,12 @@ bool sub_609AA0(int a1, HWND a2)
   _DWORD * v6 = v4 + 1; /*0x609b06*/
   return v6 && !v6[26] && GetDialogDefaultButton(a1, a2); /*0x609b18*/
 }
-}
 } // namespace gamemd
 
 // 0x609B30
 namespace gamemd {
 bool sub_609B30(int a1, HWND a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int DlgCtrlID; // edi
 
@@ -4346,14 +4295,12 @@ LABEL_5:
   DlgCtrlID = GetDlgCtrlID(a2); /*0x609b85*/
   return Event::IsValidActionType(v4) && DlgCtrlID == 1685; /*0x609b98*/
 }
-}
 } // namespace gamemd
 
 // 0x609BC0
 namespace gamemd {
 bool sub_609BC0(int a1, HWND a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND *v4; // eax
   HWND *v5; // eax
@@ -4401,14 +4348,12 @@ LABEL_7:
   _DWORD * v8 = v5 + 1; /*0x609cbb*/
   return v8 && !v8[26] && GetDialogDefaultButton(a1, a2); /*0x609cd8*/
 }
-}
 } // namespace gamemd
 
 // 0x609CF0
 namespace gamemd {
 bool sub_609CF0(int a1, HWND a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND *v4; // eax
   HWND *v5; // eax
@@ -4456,14 +4401,12 @@ LABEL_7:
   _DWORD * v8 = v5 + 1; /*0x609deb*/
   return v8 && !v8[26] && GetDialogDefaultButton(a1, a2); /*0x609e08*/
 }
-}
 } // namespace gamemd
 
 // 0x609E20
 namespace gamemd {
 void FilterDialogButtonAction(int a1, HWND a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int DlgCtrlID; // eax
 
@@ -4576,14 +4519,12 @@ LABEL_57:
   }
   return 0; /*0x609f09*/
 }
-}
 } // namespace gamemd
 
 // 0x60A100
 namespace gamemd {
 bool sub_60A100(int a1, HWND a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int DlgCtrlID; // eax
 
@@ -4606,8 +4547,7 @@ bool sub_60A100(int a1, HWND a2)
 LABEL_5:
     v4 = 0; /*0x60a14a*/
   DlgCtrlID = GetDlgCtrlID(a2); /*0x60a14d*/
-  return v4 == 226 && DlgCtrlID == 1821; /*0x60a159*/
-}
+  return v4 = = 226 && DlgCtrlID == 1821; /*0x60a159*/
 }
 } // namespace gamemd
 
@@ -4615,7 +4555,6 @@ LABEL_5:
 namespace gamemd {
 void EnumFunc(HWND hWnd, LPARAM a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND v2; // esi
   HWND Parent; // edi
@@ -4647,14 +4586,12 @@ void EnumFunc(HWND hWnd, LPARAM a2)
   }
   return 1; /*0x60a1e4*/
 }
-}
 } // namespace gamemd
 
 // 0x60A250
 namespace gamemd {
 void sub_60A250(HWND hWnd, LPARAM a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND v2; // esi
   HWND Parent; // edi
@@ -4686,14 +4623,12 @@ void sub_60A250(HWND hWnd, LPARAM a2)
   }
   return 1; /*0x60a2b4*/
 }
-}
 } // namespace gamemd
 
 // 0x60B000
 namespace gamemd {
 AbstractClass * * RepositionGameSpeedIndicator(HWND hWnd, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND Parent; // esi
   char GameSpeed; // bl
@@ -4751,14 +4686,12 @@ AbstractClass * * RepositionGameSpeedIndicator(HWND hWnd, int a2)
              0);
   }
 }
-}
 } // namespace gamemd
 
 // 0x60B880
 namespace gamemd {
 bool sub_60B880(int a1, HWND a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v7 = a1; /*0x60b88c*/
@@ -4780,7 +4713,7 @@ bool sub_60B880(int a1, HWND a2)
 LABEL_5:
     v4 = 0; /*0x60b8ca*/
   GetDlgCtrlID(a2); /*0x60b8cd*/
-  return v4 == 183 /*0x60b930*/
+  return v4 = = 183 /*0x60b930*/
       || v4 == 692
       || v4 == 3003
       || v4 == 245
@@ -4793,14 +4726,12 @@ LABEL_5:
       || v4 == 255
       || v4 == 234;
 }
-}
 } // namespace gamemd
 
 // 0x60C0C0
 namespace gamemd {
 void RepositionDialogControls(HWND hWnd, HWND a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND v2; // esi
   HWND Parent; // ebx
@@ -4965,13 +4896,11 @@ LABEL_41:
     }
   }
 }
-}
 } // namespace gamemd
 
 // 0x60C4A0
 int SkirmishDialog::ResizeDialogAndEnum()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   LPARAM v1; // edx
   LPARAM v3; // edi
@@ -4980,13 +4909,11 @@ int SkirmishDialog::ResizeDialogAndEnum()
   DataGlobal_AC48A8 = (int)this; /*0x60c4c0*/
   return EnumChildWindows((HWND)this, (WNDENUMPROC)RepositionDialogControls, v3); /*0x60c4d3*/
 }
-}
 
 // 0x60F4B0
 namespace gamemd {
 AbstractClass * * InitializeDialogControls(HWND a1, LPARAM a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   LPARAM v2; // edi
   int **v6; // eax
@@ -5097,7 +5024,6 @@ LABEL_20:
     v15[8] = 0; /*0x60f734*/
     return 1; /*0x60f738*/
   }
-}
 }
 } // namespace gamemd
 

@@ -7,7 +7,6 @@
 namespace gamemd {
 int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   MouseClass *v11; // edx
@@ -40,14 +39,12 @@ int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25(unsigned short * a
   }
   return result; /*0x4939c9*/
 }
-}
 } // namespace gamemd
 
 // 0x493A60
 namespace gamemd {
 int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent50(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   MouseClass *v14; // edi
@@ -82,14 +79,12 @@ int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent50(unsigned short * a
   }
   return result; /*0x493af4*/
 }
-}
 } // namespace gamemd
 
 // 0x493B90
 namespace gamemd {
 int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25_0(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   MouseClass *v11; // edx
@@ -122,14 +117,12 @@ int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25_0(unsigned short *
   }
   return result; /*0x493c29*/
 }
-}
 } // namespace gamemd
 
 // 0x493DF0
 namespace gamemd {
 int BlitTransXlatAlpha_ushort::AddRef(unsigned short * a2, unsigned char * a3, int a4, int a5, int a6, unsigned short * a7, int a8, int a9)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   unsigned __int8 v16; // bl
@@ -159,7 +152,6 @@ int BlitTransXlatAlpha_ushort::AddRef(unsigned short * a2, unsigned char * a3, i
   }
   return result; /*0x493e92*/
 }
-}
 } // namespace gamemd
 
 // 0x493EA0
@@ -174,7 +166,6 @@ int BlitTransXlatAlpha_ushort::ddtor(int a2, int a3, int a4, int a5, int a6, int
 namespace gamemd {
 int BlitTransXlatAlpha_ushort::BlitRect(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x493efa*/
            this,
@@ -187,14 +178,12 @@ int BlitTransXlatAlpha_ushort::BlitRect(int a2, int a3, int a4, int a5, int a6, 
            a8,
            0);
 }
-}
 } // namespace gamemd
 
 // 0x493F00
 namespace gamemd {
 int BlitTransXlatAlpha_ushort::GetSize(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x493f2a*/
            this,
@@ -206,7 +195,6 @@ int BlitTransXlatAlpha_ushort::GetSize(int a2, int a3, int a4, int a5, int a6, i
            a7,
            a8,
            0);
-}
 }
 } // namespace gamemd
 

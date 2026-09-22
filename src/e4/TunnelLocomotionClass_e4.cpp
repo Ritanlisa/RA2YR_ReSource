@@ -6,7 +6,6 @@
 // 0x728C00
 void TunnelLocomotionClass::ProcessFormationPosition(unsigned int * a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int TileIndexMapClass; // eax
   __int16 v9[2]; // [esp+18h] [ebp-1Ch] BYREF
@@ -117,7 +116,6 @@ LABEL_8:
     default:
       return;
   }
-}
 }
 
 // 0x72A110

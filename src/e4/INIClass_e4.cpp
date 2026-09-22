@@ -8,7 +8,6 @@
 namespace gamemd {
 ObjectClass * * INIClass::BinarySearchSection(INIClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ObjectClass *v4; // ecx
   ObjectClass *v6; // eax
@@ -88,14 +87,12 @@ LABEL_19:
   }
   return unk_B7882C; /*0x526912*/
 }
-}
 } // namespace gamemd
 
 // 0x526960
 namespace gamemd {
 VoxelStruct * * INIClass::GetKeyCount(INIClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   CCINIClass *v2; // esi
   INIClass *v3; // edi
@@ -146,14 +143,12 @@ LABEL_14:
     return *(_DWORD *)(v10 + 48); /*0x526a14*/
   return 0; /*0x526a0f*/
 }
-}
 } // namespace gamemd
 
 // 0x528A10
 namespace gamemd {
 unsigned int INIClass::GetString(INIClass * aP1, unsigned char * a2, INIClass * aP3, INIClass * aP4, int Count)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   INIClass *v6; // edi
   unsigned __int8 **v8; // ebx
@@ -292,14 +287,12 @@ LABEL_36:
   String::Trim(v6->__pad_0); /*0x528be3*/
   return strlen(v6->__pad_0); /*0x528bbe*/
 }
-}
 } // namespace gamemd
 
 // 0x535AA0
 namespace gamemd {
 unsigned int * INIClass::INIClass()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *result; // eax
 
@@ -346,7 +339,6 @@ unsigned int * INIClass::INIClass()
   result[15] = 0; /*0x535b23*/
   *result = &vt_INIClass; /*0x535b27*/
   return result; /*0x535b22*/
-}
 }
 } // namespace gamemd
 

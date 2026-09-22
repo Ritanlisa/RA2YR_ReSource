@@ -11,7 +11,6 @@
 namespace gamemd {
 int TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a7, char a8)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 v14; // cx
   int i; // [esp+28h] [ebp-4h]
@@ -116,14 +115,12 @@ int TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a
     (*(void (__thiscall **)(_DWORD *, int))*v28)(v28, 1); /*0x5a03d0*/
   return 1; /*0x5a03d2*/
 }
-}
 } // namespace gamemd
 
 // 0x7216C0
 namespace gamemd {
 unsigned int * TiberiumClass::TiberiumClass(ObjectClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v3; // edx
   AbstractTypeClass::Constructor((int)this, (AbstractClass *)aP1); /*0x7216ca*/
@@ -188,14 +185,12 @@ unsigned int * TiberiumClass::TiberiumClass(ObjectClass * aP1)
   }
   return this; /*0x721878*/
 }
-}
 } // namespace gamemd
 
 // 0x721A50
 namespace gamemd {
 int TiberiumClass::LoadFromINI(unsigned char *** aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int Int_Overwrite; // eax
   double Double_Overwrite; // st7
@@ -337,14 +332,12 @@ LABEL_19:
   }
   return result; /*0x721c7b*/
 }
-}
 } // namespace gamemd
 
 // 0x721E80
 namespace gamemd {
 AbstractClass * * TiberiumClass::SaveLoad_Prefix(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // ecx
   void **v6; // ecx
@@ -448,7 +441,6 @@ AbstractClass * * TiberiumClass::SaveLoad_Prefix(int a1, int a2)
     *(_DWORD *)(v2 + 252) = 0; /*0x722086*/
   }
   return result; /*0x72208c*/
-}
 }
 } // namespace gamemd
 

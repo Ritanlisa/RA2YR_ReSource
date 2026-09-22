@@ -10,7 +10,6 @@ namespace ra2 {
 namespace game {
 unsigned int * RadioClass::Release()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   RadioClass::Constructor((int)this); /*0x65a753*/
   this->q0E4 = 0; /*0x65a75a*/
@@ -30,7 +29,6 @@ unsigned int * RadioClass::Release()
   this->q0DC = 0; /*0x65a7d2*/
   return this; /*0x65a7d8*/
 }
-}
 } // namespace game
 } // namespace ra2
 
@@ -39,12 +37,10 @@ namespace ra2 {
 namespace game {
 int RadioClass::ProcessCmd()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   if ( !this->inLimbo ) /*0x65aa83*/
     (*(void (__thiscall **)(#374 *, int))(this->q0A0)(this, 3); /*0x65aa91*/
   return ObjectClass::Undeploy(this); /*0x65aa9e*/
-}
 }
 } // namespace game
 } // namespace ra2
@@ -54,7 +50,6 @@ namespace ra2 {
 namespace game {
 int RadioClass::PowerDrainUpdate(AbstractClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   BaseClass *result; // eax
   int i; // edi
@@ -77,7 +72,6 @@ int RadioClass::PowerDrainUpdate(AbstractClass * aP1)
   }
   return (int)result; /*0x65ab79*/
 }
-}
 } // namespace game
 } // namespace ra2
 
@@ -86,7 +80,6 @@ namespace ra2 {
 namespace game {
 int RadioClass::LoadState(ObjectClass * aP1, ObjectClass * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ObjectClass *v3; // ebp
   ObjectClass *v4; // edi
@@ -150,7 +143,6 @@ LABEL_8:
   }
   return result; /*0x65ac37*/
 }
-}
 } // namespace game
 } // namespace ra2
 
@@ -159,7 +151,6 @@ namespace ra2 {
 namespace game {
 int RadioClass::FindLinkIndex(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   _DWORD *i; // ecx
@@ -177,7 +168,6 @@ int RadioClass::FindLinkIndex(int a2)
   }
   return result; /*0x65adba*/
 }
-}
 } // namespace game
 } // namespace ra2
 
@@ -186,7 +176,6 @@ namespace ra2 {
 namespace game {
 int RadioClass::HasFreeLink()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *i; // ecx
 
@@ -201,7 +190,6 @@ int RadioClass::HasFreeLink()
   }
   return 1; /*0x65ade1*/
 }
-}
 } // namespace game
 } // namespace ra2
 
@@ -210,7 +198,6 @@ namespace ra2 {
 namespace game {
 void RadioClass::SetLinkCount(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v3 = this->q0E8; /*0x65ae69*/
@@ -225,7 +212,6 @@ void RadioClass::SetLinkCount(int a2)
     }
     while ( v4 < a2 ); /*0x65ae9c*/
   }
-}
 }
 } // namespace game
 } // namespace ra2

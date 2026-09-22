@@ -8,7 +8,6 @@
 namespace gamemd {
 char NullModem_TestConnection()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ObjectClass *String; // esi
   wchar_t *StringCSF; // eax
@@ -116,6 +115,5 @@ char NullModem_TestConnection()
 LABEL_33:
   Dialog::Destroy(hWnd); /*0x5f0666*/
   return v1; /*0x5f0673*/
-}
 }
 } // namespace gamemd

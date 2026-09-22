@@ -10,7 +10,6 @@
 namespace gamemd {
 void SkirmishSetup_Setup(HWND hWnd, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char result; // al
   LPARAM v5; // esi
@@ -62,13 +61,11 @@ void SkirmishSetup_Setup(HWND hWnd, int a2)
   }
   return result; /*0x5d62b4*/
 }
-}
 } // namespace gamemd
 
 // 0x5E6920
 int SkirmishSetup::DlgProc(SkirmishDialog * aP0, int a2, HWND hWnd, signed int a4, WPARAM _3C, char * a5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int ebp0; // ebp
   int result; // eax
@@ -389,12 +386,10 @@ LABEL_28:
   }
   return 1; /*0x5e695c*/
 }
-}
 
 // 0x608260
 int SkirmishSetup::PlayButtonClickAnim()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND *v2; // eax
   SkirmishSetup *v7; // [esp+8h] [ebp-4h] BYREF
@@ -429,13 +424,11 @@ int SkirmishSetup::PlayButtonClickAnim()
   InvalidateRect(this, 0, 0); /*0x608364*/
   return 1; /*0x6082b8*/
 }
-}
 
 // 0x5E8590
 namespace gamemd {
 AbstractClass * * SkirmishSetup_Setup_5E8590()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char (*v0)(); // ecx
   ObjectClass *v2; // esi
@@ -521,7 +514,6 @@ LABEL_18:
     GameOption::SetDigest(*v10, v11); /*0x5e8716*/
     return (ObjectClass *)v5; /*0x5e871b*/
   }
-}
 }
 } // namespace gamemd
 

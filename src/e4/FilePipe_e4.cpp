@@ -8,7 +8,6 @@
 namespace gamemd {
 AbstractClass * * FilePipe_38::Release(int a2, char * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v3 = a2; /*0x478342*/
@@ -103,7 +102,6 @@ AbstractClass * * FilePipe_38::Release(int a2, char * a3)
     (*(void (__thiscall **)(void *))(this->q00C)(this); /*0x478426*/
     return 1; /*0x47842c*/
   }
-}
 }
 } // namespace gamemd
 

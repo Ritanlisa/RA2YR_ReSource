@@ -5,7 +5,6 @@
 // 0x4346C0
 int Font::GetGlyphDataForChar(AbstractClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AbstractClass *v2; // ecx
   int result; // eax
@@ -20,12 +19,10 @@ int Font::GetGlyphDataForChar(AbstractClass * aP1)
   }
   return result; /*0x4346ee*/
 }
-}
 
 // 0x434CD0
 int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, int aP1a, AbstractClass * aP4, AbstractClass * aP5, AbstractClass * aP6, AbstractClass * aP7, AbstractClass * aP8, AbstractClass * aP9)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AbstractClass *v11; // ebp
   __int16 v12; // ax
@@ -338,5 +335,4 @@ LABEL_59:
 LABEL_73:
   BufferIO::Cleanup(aP0, aP1); /*0x4352ed*/
   return 1; /*0x435157*/
-}
 }

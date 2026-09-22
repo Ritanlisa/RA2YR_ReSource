@@ -7,7 +7,6 @@
 // 0x7327D0
 int MoveFeedback::ProcessCommand()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int Height; // eax
   VectorClass *v3; // esi
@@ -109,7 +108,6 @@ int MoveFeedback::ProcessCommand()
     LOBYTE(Height) = (*(int (__thiscall **)(_DWORD *, int))*v3)(v3, 1); /*0x732933*/
   g_MoveFeedback = v1; /*0x732937*/
   return Height; /*0x732935*/
-}
 }
 
 // 0x40B960

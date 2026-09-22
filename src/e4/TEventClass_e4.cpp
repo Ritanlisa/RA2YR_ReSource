@@ -11,7 +11,6 @@
 namespace gamemd {
 DynamicVector * * TEventClass::Execute(int a2, int a3, int a4, int * a5, int a6, int a7)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int *WorldCoords; // eax
   int Owner; // esi
@@ -421,14 +420,12 @@ LABEL_122:
       return 1;
   }
 }
-}
 } // namespace gamemd
 
 // 0x71F390
 namespace gamemd {
 int TEventClass::PrepareSaveToINI(const char * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v3; // eax
   int v4; // esi
@@ -524,14 +521,12 @@ int TEventClass::PrepareSaveToINI(const char * a2)
   }
   return wsprintfA((LPSTR)&a2[strlen(a2)], v6, v7, v8, v9); /*0x71f441*/
 }
-}
 } // namespace gamemd
 
 // 0x71F800
 namespace gamemd {
 int TEventClass::CheckConditions(int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -545,14 +540,12 @@ int TEventClass::CheckConditions(int a2, int a3)
     this->TEventClass_field_30 = 0; /*0x71f816*/
   return result; /*0x71f81d*/
 }
-}
 } // namespace gamemd
 
 // 0x71FA80
 namespace gamemd {
 void * TEventClass::Fire(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void **v7; // [esp+8h] [ebp-4h] BYREF
 
@@ -598,7 +591,6 @@ void * TEventClass::Fire(char a2)
   if ( (a2 & 1) != 0 ) /*0x71fb8d*/
     __3_YAXPAX_Z(this); /*0x71fb90*/
   return (TEventClass *)this; /*0x71fb9a*/
-}
 }
 } // namespace gamemd
 

@@ -12,13 +12,11 @@
 namespace gamemd {
 int globalHelper_0108F0(unsigned int * a1, unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   if ( *a1 == *a2 )
     return 0; /*0x510900*/
   else
     return *a1 >= *a2 ? 1 : -1;
-}
 }
 } // namespace gamemd
 
@@ -26,7 +24,6 @@ int globalHelper_0108F0(unsigned int * a1, unsigned int * a2)
 namespace gamemd {
 unsigned char E4Recv_517360::sub_517360(unsigned char a2, unsigned char * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AbstractClass *v3; // bl
   unsigned __int8 v4; // al
@@ -42,14 +39,12 @@ unsigned char E4Recv_517360::sub_517360(unsigned char a2, unsigned char * a3)
   *this = result; /*0x5173e1*/
   return result; /*0x5173cb*/
 }
-}
 } // namespace gamemd
 
 // 0x5173F0
 namespace gamemd {
 int E4Recv_5173F0::sub_5173F0(unsigned char * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v2 = *this - *a2; /*0x517400*/
@@ -63,14 +58,12 @@ int E4Recv_5173F0::sub_5173F0(unsigned char * a2)
     v4 = a2[2] - *(this + 2); /*0x517426*/
   return v2 * v2 + v3 * v3 + v4 * v4; /*0x517437*/
 }
-}
 } // namespace gamemd
 
 // 0x51FEF0
 namespace gamemd {
 void SaveInfantryToINI()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   double HealthRatio; // st7
@@ -147,7 +140,6 @@ void SaveInfantryToINI()
     ++result; /*0x520094*/
   }
   return result; /*0x5200a5*/
-}
 }
 } // namespace gamemd
 

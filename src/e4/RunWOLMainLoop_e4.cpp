@@ -10,7 +10,6 @@
 namespace gamemd {
 Coord * * sub_77E110()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v0; // eax
   if ( ppv ) /*0x77e117*/
@@ -43,14 +42,12 @@ LABEL_5:
   }
   return v0; /*0x77e17b*/
 }
-}
 } // namespace gamemd
 
 // 0x785EA0
 namespace gamemd {
 void sub_785EA0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned int i; // ebx
   void **v3; // edi
@@ -138,14 +135,12 @@ void sub_785EA0()
   }
   return result; /*0x786072*/
 }
-}
 } // namespace gamemd
 
 // 0x798DE0
 namespace gamemd {
 Coord * * RunWOLMainLoop_Read()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   BOOL v6; // esi
   int v10; // [esp+34h] [ebp-20h] BYREF
@@ -198,7 +193,6 @@ Coord * * RunWOLMainLoop_Read()
     OwnerDrawControl::InitVtable(v13); /*0x798f41*/
   }
   return v6; /*0x798efa*/
-}
 }
 } // namespace gamemd
 

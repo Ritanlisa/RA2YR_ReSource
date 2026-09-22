@@ -5,7 +5,6 @@
 // 0x642B60
 int LoadingScreen::GetColorScheme()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   if ( (g_GameMode_Current == (CellStruct *)3 || g_GameMode_Current == (CellStruct *)4) /*0x642b7a*/
     && *(_DWORD *)(**(_DWORD **)&g_NetworkPlayerBuffer[1084] + 107) == -1 )
@@ -16,12 +15,10 @@ int LoadingScreen::GetColorScheme()
     return FindBuildingAnimByName(&stru_830620[26772], 1); /*0x642ba9*/
   return FindBuildingAnimByName(&stru_830620[26784], 1);
 }
-}
 
 // 0x72EF60
 void LoadingScreen::DestroyFileTrees()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( DataGlobal_B0FC95 ) /*0x72ef6b*/
@@ -135,12 +132,10 @@ void LoadingScreen::DestroyFileTrees()
   }
   DataGlobal_B0FA54 = 0; /*0x72f134*/
 }
-}
 
 // 0x72FA10
 void * * LoadingScreen::LoadSHPs()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void *SHP; // eax
   char *v1; // ecx
@@ -176,7 +171,6 @@ void * * LoadingScreen::LoadSHPs()
   result = LoadFileSHP(DataGlobal_844D38, (bool *)&DataGlobal_B0FCAE); /*0x72fbab*/
   DataGlobal_B0FABC = result; /*0x72fbb0*/
   return result; /*0x72fbb5*/
-}
 }
 
 // 0x72B2F0

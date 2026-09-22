@@ -47,11 +47,9 @@
 namespace gamemd {
 int E4Recv_6E0250::sub_6E0250(int a2, int a3, int a4, int a5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   *((_BYTE *)g_ScenarioClass_Instance + 13479) = *(this + 144); /*0x6e025c*/
   return 1; /*0x6e0264*/
-}
 }
 } // namespace gamemd
 
@@ -59,11 +57,9 @@ int E4Recv_6E0250::sub_6E0250(int a2, int a3, int a4, int a5)
 namespace gamemd {
 int E4Recv_6E0270::sub_6E0270(int a2, int a3, int a4, int a5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   *((_BYTE *)g_ScenarioClass_Instance + 13478) = *(this + 144); /*0x6e027c*/
   return 1; /*0x6e0284*/
-}
 }
 } // namespace gamemd
 
@@ -71,11 +67,9 @@ int E4Recv_6E0270::sub_6E0270(int a2, int a3, int a4, int a5)
 namespace gamemd {
 int E4Recv_6E0290::sub_6E0290(int a2, int a3, int a4, int a5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   *((_BYTE *)g_ScenarioClass_Instance + 13480) = *(this + 144); /*0x6e029c*/
   return 1; /*0x6e02a4*/
-}
 }
 } // namespace gamemd
 
@@ -83,16 +77,13 @@ int E4Recv_6E0290::sub_6E0290(int a2, int a3, int a4, int a5)
 namespace gamemd {
 void globalHelper_0E2050()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // (no pseudocode — ASM-only function)
-}
 } // namespace gamemd
 
 // 0x6E2790
 namespace gamemd {
 int E4Recv_6E2790::sub_6E2790(int a2, int a3, int a4, int a5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int GroundHeight; // [esp+10h] [ebp-4h]
 
@@ -111,23 +102,19 @@ int E4Recv_6E2790::sub_6E2790(int a2, int a3, int a4, int a5)
   Tactical::SetTacticalPosition((int)g_TacticalClass_Instance, v8); /*0x6e2836*/
   return 1; /*0x6e283d*/
 }
-}
 } // namespace gamemd
 
 // 0x6E30C0
 namespace gamemd {
 void CreateHouseClass()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // (no pseudocode — ASM-only function)
-}
 } // namespace gamemd
 
 // 0x6E3380
 namespace gamemd {
 int E4Recv_6E3380::sub_6E3380(int a2, int a3, int a4, int a5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int GroundHeight; // [esp+Ch] [ebp-4h]
 
@@ -141,14 +128,12 @@ int E4Recv_6E3380::sub_6E3380(int a2, int a3, int a4, int a5)
     ActionQueue::PushEntry(v5, v8, v9, GroundHeight); /*0x6e3400*/
   return 1; /*0x6e3407*/
 }
-}
 } // namespace gamemd
 
 // 0x6E37F0
 namespace gamemd {
 int E4Recv_6E37F0::sub_6E37F0(int a2, int a3, int a4, ObjectClass * aP4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char result; // al
 
@@ -171,14 +156,12 @@ LABEL_7:
     --v7; /*0x6e3878*/
   return result; /*0x6e3867*/
 }
-}
 } // namespace gamemd
 
 // 0x6E4090
 namespace gamemd {
 void sub_6E4090(int a1, int a2, int a3, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v5; // esi
   int v4 = 0; /*0x6e409b*/
@@ -208,14 +191,12 @@ void sub_6E4090(int a1, int a2, int a3, int a4)
   BuildingClass::UnloadUnits((int *)v5, 0, 0); /*0x6e40f2*/
   return 1; /*0x6e40e3*/
 }
-}
 } // namespace gamemd
 
 // 0x6EC250
 namespace gamemd {
 int sub_6EC250(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int i; // ebp
@@ -243,14 +224,12 @@ int sub_6EC250(int a1, int a2)
   }
   return result; /*0x6ec2f9*/
 }
-}
 } // namespace gamemd
 
 // 0x6EDFD0
 namespace gamemd {
 void E4Recv_6EDFD0::sub_6EDFD0(int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char v5; // cl
   do /*0x6ee038*/
@@ -282,14 +261,12 @@ void E4Recv_6EDFD0::sub_6EDFD0(int a2, int a3)
   while ( v5 ); /*0x6ee038*/
   *(_BYTE *)(this + 128) = 1; /*0x6ee03a*/
 }
-}
 } // namespace gamemd
 
 // 0x6EEBD0
 namespace gamemd {
 unsigned int * DamageMapClassArea(int ecx0, void * a1, FootClass * aP2, int a4, char a5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *result; // eax
   HouseClass *v8; // eax
@@ -416,14 +393,12 @@ LABEL_19:
     goto LABEL_22; /*0x6eee6d*/
   return result; /*0x6eee7a*/
 }
-}
 } // namespace gamemd
 
 // 0x6EFC70
 namespace gamemd {
 AbstractClass * * E4Recv_6EFC70::ProcessAISuperWeaponSelection(ScriptClass * aP1, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   TechnoClass *v3; // esi
   TechnoClass *i; // ebx
@@ -508,7 +483,6 @@ LABEL_24:
   {
     *((_BYTE *)v17 + 128) = 1; /*0x6efe42*/
   }
-}
 }
 } // namespace gamemd
 

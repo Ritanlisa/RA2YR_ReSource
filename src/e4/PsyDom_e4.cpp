@@ -9,7 +9,6 @@
 namespace gamemd {
 void PsyDom::Fire()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AnimClass *v3; // eax
   Coord *v4; // esi
@@ -157,7 +156,6 @@ void PsyDom::Fire()
     if ( BYTE1(v38) ) /*0x53b3da*/
       __3_YAXPAX_Z(Block); /*0x53b3dd*/
   }
-}
 }
 } // namespace gamemd
 

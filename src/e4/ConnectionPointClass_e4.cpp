@@ -7,7 +7,6 @@
 // 0x4A0760
 int ConnectionPointClass::GetConnectionInterface(unsigned int * a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // esi
 
@@ -67,12 +66,10 @@ int ConnectionPointClass::GetConnectionInterface(unsigned int * a1, int a2)
   }
   return (*(int (__stdcall **)(_DWORD *, void *, int))*v3)(v3, &unk_7F7CB0, a2); /*0x4a076c*/
 }
-}
 
 // 0x4A0870
 unsigned int * ConnectionPointClass::Construct(unsigned int * a1, ConnectionPointClass * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   this->q004 = *a1; /*0x4a087c*/
   this->q008 = a1[1]; /*0x4a0881*/
@@ -91,13 +88,11 @@ unsigned int * ConnectionPointClass::Construct(unsigned int * a1, ConnectionPoin
   (*(void (__stdcall **)(ConnectionPointClass *))(*(_DWORD *)aP2->__pad_0 + 4))(aP2); /*0x4a08c3*/
   return this; /*0x4a08c8*/
 }
-}
 
 // 0x4A1280
 namespace gamemd {
 AbstractClass * * ConnectionPointClass_9::Release(int a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // eax
 
@@ -138,7 +133,6 @@ AbstractClass * * ConnectionPointClass_9::Release(int a2, unsigned int * a3)
     (*(void (__thiscall **)(void *))(this->q00C)(this); /*0x4a1322*/
     return 1; /*0x4a1328*/
   }
-}
 }
 } // namespace gamemd
 

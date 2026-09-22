@@ -7,19 +7,16 @@
 // 0x597730
 int MapSeed::ValidateName(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   if ( a2 ) /*0x597736*/
     return (*(int (__stdcall **)(int, char *))(this->q008)(a2, this + 120); /*0x597740*/
   else
     return (unsigned __int8)ShowSaveLoadDialog(this + 120) != 0; /*0x597752*/
 }
-}
 
 // 0x5AC230
 int MapSeed::IsCellInBounds()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v1 = *this; /*0x5ac230*/
@@ -29,12 +26,10 @@ int MapSeed::IsCellInBounds()
       && v2 - v1 < g_MapCellHeight_Value
       && v2 + v1 <= g_MapCellCount;
 }
-}
 
 // 0x79C520
 int MapSeed::CheckName()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char **v2; // eax
   char **v6; // [esp-8h] [ebp-18h]
@@ -86,12 +81,10 @@ LABEL_12:
     }
   }
 }
-}
 
 // 0x79C650
 AbstractClass * * MapSeed::InsertName()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char **v4; // ecx
   char **v7; // ecx
@@ -198,5 +191,4 @@ LABEL_33:
     }
     goto LABEL_33; /*0x79c8b3*/
   }
-}
 }

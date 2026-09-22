@@ -5,7 +5,6 @@
 // 0x658B10
 AbstractClass * * RadarHashVector::ComputeHashIndex(int a2, char * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v3 = a2; /*0x658b12*/
@@ -100,12 +99,10 @@ AbstractClass * * RadarHashVector::ComputeHashIndex(int a2, char * a3)
     this->RadarHashVector_field_0x10 = v15; /*0x658c02*/
   return 1; /*0x658c05*/
 }
-}
 
 // 0x658DE0
 unsigned int * RadarHashVector::Construct(MapClass * aP1, MapClass * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void **v4; // eax
   MapClass *v5; // ecx
@@ -167,7 +164,6 @@ unsigned int * RadarHashVector::Construct(MapClass * aP1, MapClass * aP2)
   this->q014 = 10; /*0x658e64*/
   this->q010 = 0; /*0x658e6b*/
   return this; /*0x658e70*/
-}
 }
 
 // 0x658A70

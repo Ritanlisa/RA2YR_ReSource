@@ -421,7 +421,6 @@ REVERSE(0x5301a0, "MixFileClass::Bootstrap: IDA verified", "None")
 // 0x5301a0
 MixFileClass * * MixFileClass::Bootstrap()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x5301a0
 {
   int i; // edi
@@ -798,7 +797,6 @@ pop     ebx
 add     esp, 68h
 retn
 */
-}
 
 // ============================================================
 // Compute MIX ID from filename

@@ -6,22 +6,18 @@
 namespace gamemd {
 AbstractClass * * UnholyAlliance_GetResult()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // (no pseudocode — ASM-only function)
-}
 } // namespace gamemd
 
 // 0x5CB540
 UnholyAlliance * UnholyAlliance::QueryInterface(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   *this = &vt_UnholyAlliance; /*0x5cb543*/
   MultiplayerGameMode::Dtor(this); /*0x5cb549*/
   if ( (a2 & 1) != 0 ) /*0x5cb553*/
     __3_YAXPAX_Z(this); /*0x5cb556*/
   return (UnholyAlliance *)this; /*0x5cb560*/
-}
 }
 
 // 0x5CB3F0

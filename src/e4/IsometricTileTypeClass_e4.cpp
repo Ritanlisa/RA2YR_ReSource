@@ -7,7 +7,6 @@
 // 0x549B70
 int IsometricTileTypeClass::ProcessPower(int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   AbstractTypeClass::ProcessPower((char *)this, a2); /*0x549b79*/
@@ -37,12 +36,10 @@ int IsometricTileTypeClass::ProcessPower(int * a2)
   Power::TimerProcess(*(_DWORD *)(this + 748)); /*0x549c67*/
   return Power::TimerProcess(*(_DWORD *)(this + 752)); /*0x549c7a*/
 }
-}
 
 // 0x549C80
 AbstractClass * * IsometricTileTypeClass::LoadTypeData(int * a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // esi
   void (__thiscall ***v3)(_DWORD, int); // ecx
@@ -79,12 +76,10 @@ AbstractClass * * IsometricTileTypeClass::LoadTypeData(int * a1, int a2)
   }
   return result; /*0x549d5d*/
 }
-}
 
 // 0x549DD0
 int IsometricTileTypeClass::GetTileIndex(int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -95,15 +90,12 @@ int IsometricTileTypeClass::GetTileIndex(int a2, int a3)
     this->q2C8 = -1; /*0x549e04*/
   return result; /*0x549e0e*/
 }
-}
 
 // 0x54A160
 int IsometricTileTypeClass::GetAuxField()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return this->q294; /*0x54a166*/
-}
 }
 
 // 0x549D70

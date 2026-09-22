@@ -28,7 +28,6 @@
 namespace gamemd {
 void sub_792CF0(HWND hWnd, UINT a2, WPARAM a3, char * a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   INT_PTR result; // eax
   HWND DlgItem; // esi
@@ -92,20 +91,17 @@ LABEL_6:
   }
   return result; /*0x792d2c*/
 }
-}
 } // namespace gamemd
 
 // 0x793280
 namespace gamemd {
 void sub_793280(HWND hWnd, UINT a2, WPARAM a3, char * a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   INT_PTR result; // eax
   HWND DlgItem; // eax
   int i; // esi
   HWND v9; // edi
-
   if ( a2 > 0x111 ) /*0x79328c*/
   {
     if ( a2 < 0x132 ) /*0x793355*/
@@ -183,14 +179,12 @@ void sub_793280(HWND hWnd, UINT a2, WPARAM a3, char * a4)
   }
   return result; /*0x7932b0*/
 }
-}
 } // namespace gamemd
 
 // 0x793490
 namespace gamemd {
 AbstractClass * * HandleWOLForwardingError()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND result; // eax
   ObjectClass *i; // edx
@@ -311,14 +305,12 @@ LABEL_26:
   }
   return result; /*0x7934d6*/
 }
-}
 } // namespace gamemd
 
 // 0x793B30
 namespace gamemd {
 int sub_793B30(char a1, const char * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   _BYTE v3[3]; // [esp+0h] [ebp-100h] BYREF
@@ -332,14 +324,12 @@ int sub_793B30(char a1, const char * a2)
   Debug::Log(); /*0x793b85*/
   return (*(int (__stdcall **)(LPVOID, _BYTE *))(*(_DWORD *)ppv + 60))(ppv, v3); /*0x793b9d*/
 }
-}
 } // namespace gamemd
 
 // 0x793D20
 namespace gamemd {
 void NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v3; // ebp
   WinModemClass *v5; // edi
@@ -795,14 +785,12 @@ LABEL_100:
   Debug::Log(); /*0x794794*/
   return v44; /*0x793e37*/
 }
-}
 } // namespace gamemd
 
 // 0x7947B0
 namespace gamemd {
 char NetworkLobby_WaitForPlayers()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AbstractClass *v1; // esi
   HWND DlgItem; // eax
@@ -956,14 +944,12 @@ LABEL_45:
   Debug::Log(); /*0x794b7d*/
   return 0; /*0x7947f5*/
 }
-}
 } // namespace gamemd
 
 // 0x794BA0
 namespace gamemd {
 AbstractClass * * WOL_StartGame()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   DLGTEMPLATE *Indirect; // eax
   wchar_t *String; // eax
@@ -1384,14 +1370,12 @@ LABEL_97:
     byte_B77E26 = 0; /*0x794c1b*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x795CD0
 namespace gamemd {
 int WOL_NegotiateScenario(char a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char *Flagged; // esi
   int v11; // esi
@@ -1822,14 +1806,12 @@ LABEL_147:
     return 1; /*0x7966fe*/
   return result; /*0x796703*/
 }
-}
 } // namespace gamemd
 
 // 0x796710
 namespace gamemd {
 char HandleWOLRematch()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND v3; // eax
   HWND DlgItem; // eax
@@ -1913,14 +1895,12 @@ LABEL_13:
   Network::SetConnectionParams(g_NetworkManager, 30, -1, 600, 1); /*0x79694c*/
   return 1; /*0x7968d9*/
 }
-}
 } // namespace gamemd
 
 // 0x796B90
 namespace gamemd {
 CampaignScore * * WOL_LobbyDlgProc(HWND hWnd, LONG a2, int a3, HWND a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND v4; // ebp
   HWND v5; // esi
@@ -2019,14 +1999,12 @@ CampaignScore * * WOL_LobbyDlgProc(HWND hWnd, LONG a2, int a3, HWND a4)
   }
   return result; /*0x796c01*/
 }
-}
 } // namespace gamemd
 
 // 0x7970D0
 namespace gamemd {
 AbstractClass * * NetworkGame_Init()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // esi
   DWORD nSize; // [esp+14h] [ebp-428h] BYREF
@@ -2218,14 +2196,12 @@ AbstractClass * * NetworkGame_Init()
   byte_B76568[0] = 0; /*0x797596*/
   return Scenario::PreGameInit(); /*0x7975a0*/
 }
-}
 } // namespace gamemd
 
 // 0x797640
 namespace gamemd {
 int sub_797640(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   DWORD i; // esi
   wchar_t *String; // eax
@@ -2236,7 +2212,6 @@ int sub_797640(int a1)
   char v8; // [esp+21h] [ebp-3h]
   char v9; // [esp+22h] [ebp-2h]
   char v10; // [esp+23h] [ebp-1h]
-
   v10 = byte_B77DC0; /*0x797650*/
   byte_B77DC0 = 1; /*0x797669*/
   g_WOL_UserList = 0; /*0x797670*/
@@ -2316,14 +2291,12 @@ LABEL_22:
   byte_B77DC0 = v10; /*0x7977d6*/
   return v3; /*0x7977d3*/
 }
-}
 } // namespace gamemd
 
 // 0x797800
 namespace gamemd {
 ObjectClass * * WOL_FetchData()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   wchar_t *String; // eax
   HANDLE *v1; // esi
@@ -2529,14 +2502,12 @@ LABEL_12:
   }
   return 0; /*0x79789f*/
 }
-}
 } // namespace gamemd
 
 // 0x797C20
 namespace gamemd {
 AbstractClass * * WOL_InitVersionStrings()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char result; // al
   const char **v1; // esi
@@ -2657,18 +2628,15 @@ AbstractClass * * WOL_InitVersionStrings()
   }
   return result; /*0x798112*/
 }
-}
 } // namespace gamemd
 
 // 0x7982D0
 namespace gamemd {
 int sub_7982D0(int a1, DWORD a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   CreateGameDialogControl *v4; // ecx
   DWORD v5; // esi
-
   int v3 = 1000 * a1; /*0x7982ef*/
   v5 = WaitForMultipleObjects(a2, (const HANDLE *)&Handles, 0, 0x64u); /*0x7982f4*/
   if ( v5 == 258 ) /*0x7982fc*/
@@ -2691,14 +2659,12 @@ LABEL_4:
     return v5; /*0x79832e*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x7983E0
 namespace gamemd {
 void Multiplayer_Setup2_DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   LONG WindowLongA; // ecx
@@ -2877,14 +2843,12 @@ void Multiplayer_Setup2_DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned int
   }
   return result; /*0x798452*/
 }
-}
 } // namespace gamemd
 
 // 0x7988C0
 namespace gamemd {
 void Multiplayer_GameMode_DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   LONG WindowLongA; // ecx
@@ -3072,14 +3036,12 @@ void Multiplayer_GameMode_DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned i
   }
   return result; /*0x798932*/
 }
-}
 } // namespace gamemd
 
 // 0x799080
 namespace gamemd {
 void MainLobbyDlgProcWOL(HWND hWnd, LPARAM lParam, ObjectClass a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND v5; // esi
   int result; // eax
@@ -3488,14 +3450,12 @@ LABEL_67:
   }
   return result;
 }
-}
 } // namespace gamemd
 
 // 0x799EA0
 namespace gamemd {
 rc_ptr * * WOL_OptionsDlgProc(HWND hWnd, const char * lParam, int a3, int hCtl)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND v4; // ebp
   HWND v5; // esi
@@ -4083,20 +4043,17 @@ LABEL_44:
     return 0;
   }
 }
-}
 } // namespace gamemd
 
 // 0x79BA60
 namespace gamemd {
 void ValidateGameJoinWOL(BlowStraw * aP0, ObjectClass * aP1, char a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int BlowStraw_field_0x08; // eax
   wchar_t *StringCSF; // eax
   wchar_t *v10; // eax
   ObjectClass v11; // [esp+0h] [ebp-ACh] BYREF
-
   v11[14] = (char)aP1; /*0x79ba74*/
   char v5 = 0; /*0x79ba9c*/
   if ( *(_DWORD *)&HouseClass_Player[29932] == 4 ) /*0x79ba7a*/
@@ -4179,14 +4136,12 @@ LABEL_35:
   DeleteAndZero((int)&v11.uniqueId); /*0x79bc64*/
   return 0; /*0x79bb0a*/
 }
-}
 } // namespace gamemd
 
 // 0x79BC80
 namespace gamemd {
 bool WOL_FindBuddy()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   bool result; // al
 
@@ -4263,14 +4218,12 @@ LABEL_27:
   DeleteAndZero(&v11); /*0x79be54*/
   return v10; /*0x79bc98*/
 }
-}
 } // namespace gamemd
 
 // 0x79BF50
 namespace gamemd {
 int E4Recv_79BF50::sub_79BF50()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND DlgItem; // eax
   HWND v3; // eax
@@ -4314,14 +4267,12 @@ LABEL_12:
   v5 = GetDlgItem(this, 1474); /*0x79c01b*/
   return EnableWindow(v5, v9); /*0x79c031*/
 }
-}
 } // namespace gamemd
 
 // 0x79CBA0
 namespace gamemd {
 AbstractClass * * RemoveWOLPlayerLogin(const char ** a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   const char **v1; // ebp
 
@@ -4436,14 +4387,12 @@ LABEL_34:
     DeleteAndZero(&v16); /*0x79ce53*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x79CE70
 namespace gamemd {
 AbstractClass * * int WOL_RefreshChannelList()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HANDLE *v0; // esi
   unsigned int result; // eax
@@ -4533,14 +4482,12 @@ AbstractClass * * int WOL_RefreshChannelList()
   }
   return result; /*0x79ceda*/
 }
-}
 } // namespace gamemd
 
 // 0x79D110
 namespace gamemd {
 AbstractClass * * WOL_SendGameList()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v0 = g_WOL_BuddyList; /*0x79d114*/
@@ -4629,14 +4576,12 @@ AbstractClass * * WOL_SendGameList()
     v11);
   DeleteAndZero(&v12); /*0x79d2dd*/
 }
-}
 } // namespace gamemd
 
 // 0x79D2F0
 namespace gamemd {
 AbstractClass * * WOL_RefreshGameList()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // esi
   char **v10; // ecx
@@ -4713,14 +4658,12 @@ AbstractClass * * WOL_RefreshGameList()
   }
   SendGameListWOL(); /*0x79d4d0*/
 }
-}
 } // namespace gamemd
 
 // 0x79D4E0
 namespace gamemd {
 AbstractClass * * CleanupWOLSession()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // esi
   void **v5; // edi
@@ -4807,14 +4750,12 @@ AbstractClass * * CleanupWOLSession()
   }
   RefreshGameListWOL(); /*0x79d70c*/
 }
-}
 } // namespace gamemd
 
 // 0x79D720
 namespace gamemd {
 void WOLLoginDialogProc(HWND hWnd, unsigned int a2, int a3, HWND a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND v4; // ebp
   int result; // eax
@@ -4930,17 +4871,14 @@ void WOLLoginDialogProc(HWND hWnd, unsigned int a2, int a3, HWND a4)
   }
   return result; /*0x79d771*/
 }
-}
 } // namespace gamemd
 
 // 0x79DA90
 namespace gamemd {
 char ** ExtractChatCommand(char ** a1, HWND a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   LRESULT v4; // esi
-
   v4 = SendMessageA(a2, 0x188u, 0, 0); /*0x79daab*/
   if ( v4 == -1 ) /*0x79dab0*/
     v4 = 0; /*0x79dab2*/
@@ -4973,14 +4911,12 @@ LABEL_7:
     return a1; /*0x79db48*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x79DFE0
 namespace gamemd {
 void WOL_GameSetup_DlgProc(HWND hWnd, unsigned int a2, unsigned int a3, HWND a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   LONG WindowLongA; // ecx
@@ -5181,14 +5117,12 @@ LABEL_50:
   }
   return result; /*0x79e069*/
 }
-}
 } // namespace gamemd
 
 // 0x79E520
 namespace gamemd {
 AbstractClass * * WOL_PlayerOptions_DlgProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWND a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   LONG WindowLongA; // edi
@@ -5549,14 +5483,12 @@ LABEL_90:
   }
   return result; /*0x79e598*/
 }
-}
 } // namespace gamemd
 
 // 0x79F0A0
 namespace gamemd {
 char sub_79F0A0(char ** a1, int * a2, char * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   ObjectClass *v3 = a3; /*0x79f0a6*/
@@ -5593,14 +5525,12 @@ LABEL_8:
     }
   }
 }
-}
 } // namespace gamemd
 
 // 0x79F140
 namespace gamemd {
 Coord * * WOL_GameOptionsScreen()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   wchar_t *String; // eax
   int i; // esi
@@ -6044,14 +5974,12 @@ LABEL_143:
   OwnerDrawControl::InitVtable(v44); /*0x79fb22*/
   return 0; /*0x79f195*/
 }
-}
 } // namespace gamemd
 
 // 0x79FC40
 namespace gamemd {
 Coord * * WOL_JoinLobby()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   wchar_t *String; // eax
   wchar_t *v2; // eax
@@ -6338,7 +6266,6 @@ LABEL_73:
     g_UIControlState = 0; /*0x7a0419*/
   }
   return i; /*0x79fd7e*/
-}
 }
 } // namespace gamemd
 

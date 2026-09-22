@@ -23,7 +23,6 @@
 namespace gamemd {
 void JumpjetLocomotionClass_Process(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void **v19; // eax
   char v29; // [esp-4h] [ebp-24h]
@@ -250,14 +249,12 @@ LABEL_39:
   }
   return (*(int (__stdcall **)(int))(*(_DWORD *)v1 + 16))(v1); /*0x4b06cb*/
 }
-}
 } // namespace gamemd
 
 // 0x4B69E0
 namespace gamemd {
 int E4Recv_4B69E0::sub_4B69E0(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v3; // esi
   if ( *(this + 4) >= 5 ) /*0x4b69f1*/
@@ -295,14 +292,12 @@ LABEL_11:
     ++*(_DWORD *)(*((_DWORD *)g_ScenarioClass_Instance + 3396) + 4 * v3); /*0x4b6a8b*/
   return 1; /*0x4b6a8d*/
 }
-}
 } // namespace gamemd
 
 // 0x4B6AB0
 namespace gamemd {
 int E4Recv_4B6AB0::sub_4B6AB0(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v3 = *(this + 4); /*0x4b6ab4*/
@@ -345,14 +340,12 @@ LABEL_12:
   *(this + v10 + 5) = 0; /*0x4b6b62*/
   return 1; /*0x4b6b6a*/
 }
-}
 } // namespace gamemd
 
 // 0x4B6BF0
 namespace gamemd {
 int E4Recv_4B6BF0::sub_4B6BF0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -370,14 +363,12 @@ int E4Recv_4B6BF0::sub_4B6BF0()
   }
   return result; /*0x4b6c28*/
 }
-}
 } // namespace gamemd
 
 // 0x4B9890
 namespace gamemd {
 CampaignScore * * DisplayBuildingInfoPanel(CampaignScore ** a1, unsigned int * a2, wchar_t * a3, char a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   CampaignScore *v6; // eax
   CampaignScore *v7; // edi
@@ -562,14 +553,12 @@ CampaignScore * * DisplayBuildingInfoPanel(CampaignScore ** a1, unsigned int * a
   }
   return result; /*0x4b9bbf*/
 }
-}
 } // namespace gamemd
 
 // 0x4BE9D0
 namespace gamemd {
 void Color_BlendPack(unsigned char * a1, int a2, int a3, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v4 = a2 + *a1; /*0x4be9dc*/
@@ -616,7 +605,6 @@ LABEL_17:
   return (v4 >> g_BitShift_Green_0 << g_DDraw_BlueMask) /*0x4bea7f*/
        | (v5 >> g_BitMask_Blue << g_BitMask_Green)
        | (v6 >> g_BitShift_Blue << g_BitShift_Blue);
-}
 }
 } // namespace gamemd
 

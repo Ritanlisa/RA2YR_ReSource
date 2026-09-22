@@ -8,13 +8,11 @@
 namespace gamemd {
 unsigned int * TrajectoryHelper::FindFirstObstacle(IUnknown * aP0, int * a1, int arg0, void * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *result; // eax
   int v30; // [esp+38h] [ebp-Ch]
   int v31; // [esp+3Ch] [ebp-8h]
   int v32; // [esp+40h] [ebp-4h]
-
   if ( !*(_BYTE *)(arg0 + 662) && !*(_BYTE *)(arg0 + 664) ) /*0x4cc11d*/
     return 0; /*0x4cc11d*/
   int v5 = *a1; /*0x4cc12d*/
@@ -77,14 +75,12 @@ unsigned int * TrajectoryHelper::FindFirstObstacle(IUnknown * aP0, int * a1, int
   }
   return result; /*0x4cc304*/
 }
-}
 } // namespace gamemd
 
 // 0x4CC360
 namespace gamemd {
 unsigned int * TrajectoryHelper::GetObstacle(unsigned char * a1, unsigned char * a2, int a3, int a4, int a5, int a6, int a7, void * other)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int SlopeIndex; // ebx
   #375 *v15; // ecx
@@ -191,7 +187,6 @@ LABEL_22:
     }
   }
   return 0; /*0x4cc5c8*/
-}
 }
 } // namespace gamemd
 

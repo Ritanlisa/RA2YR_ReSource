@@ -12,7 +12,6 @@
 namespace gamemd {
 unsigned int VoxelAnimClass::ProcessFrame()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned int result; // eax
 
@@ -67,14 +66,12 @@ unsigned int VoxelAnimClass::ProcessFrame()
   while ( v2 ); /*0x4cb050*/
   return result; /*0x4cb056*/
 }
-}
 } // namespace gamemd
 
 // 0x7499F0
 namespace gamemd {
 int VoxelAnimClass::CleanupMembers()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   VoxelAnimClass *v6; // [esp+4h] [ebp-4h] BYREF
   *(_DWORD *)this = &VoxelAnimClass::`vftable'; /*0x7499f6*/
@@ -119,14 +116,12 @@ int VoxelAnimClass::CleanupMembers()
   this->VoxelAnimClass_field_0x104 = 0; /*0x749b02*/
   return ObjectClass::Dtor(this); /*0x749b11*/
 }
-}
 } // namespace gamemd
 
 // 0x749B70
 namespace gamemd {
 Coord * * VoxelAnimClass::ProcessAnim(int * a2, unsigned int * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 *v12; // eax
   int *SHPFrame; // [esp-1Ch] [ebp-CCh]
@@ -242,23 +237,19 @@ LABEL_6:
   }
   return v4; /*0x749eea*/
 }
-}
 } // namespace gamemd
 
 // 0x749F30
 namespace gamemd {
 void VoxelAnimClass_Update()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // (no pseudocode — ASM-only function)
-}
 } // namespace gamemd
 
 // 0x74A970
 namespace gamemd {
 int VoxelAnimClass::SaveLoad_Prefix(ObjectClass * aP1, int aP1a)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ObjectClass *Register; // edi
 
@@ -287,14 +278,12 @@ int VoxelAnimClass::SaveLoad_Prefix(ObjectClass * aP1, int aP1a)
   }
   return (int)Register->__pad_0; /*0x74a9fd*/
 }
-}
 } // namespace gamemd
 
 // 0x74AA30
 namespace gamemd {
 AbstractClass * * VoxelAnimClass::GetFrameCount(int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   HouseClass::ProcessPower((#374 *)this); /*0x74aa39*/
@@ -316,17 +305,14 @@ AbstractClass * * VoxelAnimClass::GetFrameCount(int * a2)
   Power::FlagProcess(a2, v8); /*0x74aaad*/
   return Power::TimerProcess(this->VoxelAnimClass_field_0x140); /*0x74aac0*/
 }
-}
 } // namespace gamemd
 
 // 0x74AB30
 namespace gamemd {
 int VoxelAnimClass::LoadFrame()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return this->q104; /*0x74ab36*/
-}
 }
 } // namespace gamemd
 
@@ -334,7 +320,6 @@ int VoxelAnimClass::LoadFrame()
 namespace gamemd {
 int VoxelAnimClass::Reset()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   LocomotionClass::Init((_DWORD *)this); /*0x75aa93*/
   this->VoxelAnimClass_field_0x1C = g_AsyncMovieState; /*0x75aaa1*/
@@ -352,14 +337,12 @@ int VoxelAnimClass::Reset()
   this->nextArrayIndex = &vt_WalkLocomotionClass; /*0x75aaec*/
   return this; /*0x75aaf5*/
 }
-}
 } // namespace gamemd
 
 // 0x75EBE0
 namespace gamemd {
 int VoxelAnimClass::Constructor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   ObjectClass::ctor((_DWORD *)this); /*0x75ebe4*/
@@ -407,7 +390,6 @@ int VoxelAnimClass::Constructor()
   if ( !byte_B725CC ) /*0x75ed20*/
     Voxel::InitDistanceTable(); /*0x75ed22*/
   return this; /*0x75ed29*/
-}
 }
 } // namespace gamemd
 

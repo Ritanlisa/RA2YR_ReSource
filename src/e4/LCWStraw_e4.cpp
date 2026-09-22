@@ -5,7 +5,6 @@
 // 0x552450
 int LCWStraw::Dtor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   AbstractClass *v2 = (void *)this->q014; /*0x552453*/
@@ -16,5 +15,4 @@ int LCWStraw::Dtor()
   __3_YAXPAX_Z(v3); /*0x55246d*/
   this->q018 = 0; /*0x552477*/
   return Straw::Dtor(this); /*0x552483*/
-}
 }

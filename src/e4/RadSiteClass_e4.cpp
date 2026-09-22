@@ -7,7 +7,6 @@
 namespace gamemd {
 unsigned int * RadSiteClass::RadSiteClass()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   TimerStruct *v2; // edx
   AbstractClass::Constructor((int)this); /*0x65b1e3*/
@@ -44,7 +43,6 @@ unsigned int * RadSiteClass::RadSiteClass()
     *((_DWORD *)dword_B04BD4 + v3) = this; /*0x65b293*/
   }
   return this; /*0x65b298*/
-}
 }
 } // namespace gamemd
 

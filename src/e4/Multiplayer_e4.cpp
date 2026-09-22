@@ -10,7 +10,6 @@
 // 0x688380
 void * Multiplayer::FindStartPositions()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v1; // esi
   Multiplayer *v2; // edi
@@ -179,12 +178,10 @@ LABEL_24:
     __3_YAXPAX_Z(v16); /*0x68869b*/
   return v2; /*0x6886a5*/
 }
-}
 
 // 0x68C2B0
 unsigned int * Multiplayer::CopyDataArray(ObjectClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( this == (_DWORD *)aP1 ) /*0x68c2bb*/
@@ -217,12 +214,10 @@ unsigned int * Multiplayer::CopyDataArray(ObjectClass * aP1)
   while ( v6 < this->q002 ); /*0x68c30f*/
   return this; /*0x68c313*/
 }
-}
 
 // 0x69AE90
 void Multiplayer::ShowProgress(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // esi
   DWORD Ticks; // [esp+8h] [ebp-1DCh]
@@ -313,7 +308,6 @@ LABEL_25:
       Event::Dispatch(); /*0x69b148*/
     }
   }
-}
 }
 
 // 0x53F1F0

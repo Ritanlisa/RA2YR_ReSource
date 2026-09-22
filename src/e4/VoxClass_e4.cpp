@@ -5,7 +5,6 @@
 // 0x752700
 void VoxClass::FindAndPlay(void * this, int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( this ) /*0x752708*/
@@ -26,5 +25,4 @@ LABEL_5:
       UpdateThemeManager(v5, a2, a3); /*0x752754*/
     }
   }
-}
 }

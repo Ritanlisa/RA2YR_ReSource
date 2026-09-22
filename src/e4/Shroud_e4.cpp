@@ -5,7 +5,6 @@
 // 0x654490
 RadarClass * * Shroud::ProcessCellVisibility(MouseClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 v5; // di
   __int16 v6; // ax
@@ -81,5 +80,4 @@ LABEL_9:
     goto LABEL_9; /*0x6545d0*/
   }
   return result; /*0x65463e*/
-}
 }

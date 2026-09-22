@@ -6,7 +6,6 @@
 // 0x5CD290
 void * MSVQAnim::GetFrameRect(int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( (DataGlobal_ABFB98 & 1) == 0 ) /*0x5cd2a0*/
@@ -28,15 +27,12 @@ void * MSVQAnim::GetFrameRect(int * a2)
   a2[3] = v4[3]; /*0x5cd2fb*/
   return a2; /*0x5cd2e8*/
 }
-}
 
 // 0x5CD320
 int MSVQAnim::Stub()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return *(this + 45); /*0x5cd323*/
-}
 }
 
 // 0x5CECB0

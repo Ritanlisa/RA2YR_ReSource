@@ -9,7 +9,6 @@
 namespace gamemd {
 AbstractClass * * MSEngine::Release(int a2, char * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v3 = a2; /*0x5acd32*/
@@ -77,14 +76,12 @@ AbstractClass * * MSEngine::Release(int a2, char * a3)
     return 1; /*0x5ace0b*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x5ACED0
 namespace gamemd {
 AbstractClass * * MSEngine::SetCapacity(int a2, char * a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   AbstractClass *v3 = a2; /*0x5aced2*/
@@ -149,14 +146,12 @@ AbstractClass * * MSEngine::SetCapacity(int a2, char * a3)
     this->MSEngine_field_0x10 = v12; /*0x5acfa4*/
   return 1; /*0x5acfa7*/
 }
-}
 } // namespace gamemd
 
 // 0x5CEE60
 namespace gamemd {
 CampaignClass * * MSEngine::Destructor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   SessionClass::Destruct((_DWORD *)this); /*0x5cee64*/
@@ -189,14 +184,12 @@ CampaignClass * * MSEngine::Destructor()
   this->IsAllocated = 0; /*0x5ceedb*/
   this->MSEngine_field_0x8 = 0; /*0x5ceede*/
 }
-}
 } // namespace gamemd
 
 // 0x5D1AA0
 namespace gamemd {
 unsigned int * MSEngine::Construct()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   char * v2 = (char *)(this + 2); /*0x5d1aa5*/
@@ -227,14 +220,12 @@ unsigned int * MSEngine::Construct()
   this->q00C->vt_slot_12(); /*0x5d1b18*/
   return this; /*0x5d1b1b*/
 }
-}
 } // namespace gamemd
 
 // 0x5D1B30
 namespace gamemd {
 void MSEngine::Destruct()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // edi
   void (__thiscall ***v7)(_DWORD, int); // ecx
@@ -291,14 +282,12 @@ void MSEngine::Destruct()
   *((_BYTE *)v10 + 13) = 0; /*0x5d1c12*/
   v10[2] = 0; /*0x5d1c15*/
 }
-}
 } // namespace gamemd
 
 // 0x5D1DF0
 namespace gamemd {
 int MSEngine::ProcessEvents(MSVQAnim * aP1, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -316,7 +305,6 @@ int MSEngine::ProcessEvents(MSVQAnim * aP1, int a3)
     GameClass::FrameLoop(this, 1); /*0x5d1e38*/
   }
   return result; /*0x5d1e3f*/
-}
 }
 } // namespace gamemd
 

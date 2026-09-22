@@ -5,7 +5,6 @@
 // 0x5BCC90
 int TextBuffer::Init()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v1 = 0; /*0x5bcc93*/
@@ -30,5 +29,4 @@ int TextBuffer::Init()
   while ( v1 < 25 ); /*0x5bccbe*/
   this->q2734 = 1; /*0x5bccc8*/
   return Text::DrawRepeated(this, 0, 0, 80, 25); /*0x5bccd4*/
-}
 }

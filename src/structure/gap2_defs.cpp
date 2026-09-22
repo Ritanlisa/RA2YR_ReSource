@@ -18,7 +18,6 @@
 
 // 0x517CC0
 namespace gamemd { int InfantryClass::PerFrameUpdate() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *result; // eax
   InfantryTypeClass *v5; // edi
@@ -66,10 +65,8 @@ LABEL_11:
   }
   return result; /*0x517d8c*/
 }
-} }
 // 0x413D20
 namespace gamemd { int AircraftClass::Construct(int a1, void* a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v3; // edi
   AbstractClass *v4; // eax
@@ -161,10 +158,8 @@ LABEL_25:
   }
   return this; /*0x413f6a*/
 }
-} }
 // 0x435820
 namespace gamemd { void* BuildingLightClass::CTOR(int a1) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *Value; // eax
   IUnknown *v8; // eax
@@ -295,7 +290,6 @@ LABEL_14:
   }
   return (BuildingLightClass *)this; /*0x435b47*/
 }
-} }
 // 0x435BE0
 namespace gamemd { int BuildingLightClass::Draw_Start(int a1, int a2) {
 {
@@ -583,7 +577,6 @@ namespace gamemd { int BuildingLightClass::Draw_Start(int a1, int a2) {
 } }
 // 0x4361D0
 namespace gamemd { int BuildingLightClass::SD_vt23() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ObjectClass *v2; // ecx
   int **v3; // eax
@@ -894,7 +887,6 @@ LABEL_31:
   }
   return (char)attachedTag; /*0x4368d9*/
 }
-} }
 // 0x436950
 namespace gamemd { int BuildingLightClass::SD_vt05(void* a1, int a2) {
 {
@@ -1048,7 +1040,6 @@ namespace gamemd { void* BuildingClass::ctor(int a1) {
 } }
 // 0x443410
 namespace gamemd { int BuildingClass::HandleFactoryCommand() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   _BYTE *WaypointCoords; // eax
@@ -1151,7 +1142,6 @@ LABEL_25:
   LOBYTE(result) = 1; /*0x4436dd*/
   return result; /*0x443444*/
 }
-} }
 // 0x445F80
 namespace gamemd { int SuperWeapon::CreateUnits() {
 {
@@ -1745,7 +1735,6 @@ namespace gamemd { int SuperWeapon::EvaluateAITarget(int a1, void* a2) {
 } }
 // 0x50B1D0
 namespace gamemd { int SuperWeapon::UpdateSuperWeaponsUnavailableHouseClass() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // edi
   int j; // ebx
@@ -1815,7 +1804,6 @@ LABEL_16:
   }
   return v2; /*0x50b369*/
 }
-} }
 // 0x5176A0
 namespace gamemd { bool InfantryClass::SetField6() {
 {
@@ -1824,7 +1812,6 @@ namespace gamemd { bool InfantryClass::SetField6() {
 } }
 // 0x517A50
 namespace gamemd { int InfantryClass::Construct(int a1, void* a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ObjectClass *v4; // eax
   AbstractClass *v5; // eax
@@ -1922,10 +1909,8 @@ LABEL_25:
   }
   return this; /*0x517cb2*/
 }
-} }
 // 0x517FA0
 namespace gamemd { int InfantryClass::ProcessDeployment(void* a1, int a2, int a3, void* a4, int a5, int a6, int a7) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x517fa0
 {
   int result; // eax
@@ -1951,7 +1936,6 @@ namespace gamemd { int InfantryClass::ProcessDeployment(void* a1, int a2, int a3
   void **v57; // eax
   #375 *v62; // ecx
   int v74; // [esp+42h] [ebp-A4h]
-
   if ( this->Crawling )
   {
     v74 = *a2;
@@ -3627,10 +3611,8 @@ pop     ebx
 add     esp, 0C0h
 retn    1Ch
 */
-} }
 // 0x51BAB0
 namespace gamemd { int InfantryClass::Update() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v2; // eax
   void **v3; // eax
@@ -3837,7 +3819,6 @@ LABEL_91:
   }
   return v2; /*0x51bad3*/
 }
-} }
 // 0x523370
 namespace gamemd { void* InfantryClass::checkBridgeClearance(int a2) {
 {
@@ -3889,7 +3870,6 @@ namespace gamemd { void* InfantryClass::updateOccupiedBuilding(void* aP1) {
 } }
 // 0x539AE0
 namespace gamemd { int SuperWeapon::SerializeSuperWeaponState() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -4139,7 +4119,6 @@ LABEL_49:
   }
   return result; /*0x539e95*/
 }
-} }
 // 0x5AEAD0
 namespace gamemd { void BuildingClass::processBaseExpansion(float a2) {
 {
@@ -4371,7 +4350,6 @@ namespace gamemd { int BuildingLightClass::FindAllTargets(int a1, int a2, int a3
 } }
 // 0x6EFE60
 namespace gamemd { void SuperWeapon::DispatchTeam(int a1, int a2) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   TechnoClass *v5; // esi
   TechnoClass *v6; // eax
@@ -4507,7 +4485,6 @@ LABEL_31:
     v24->q080 = 1; /*0x6f0102*/
   }
 }
-} }
 // 0x70DDC0
 namespace gamemd { int BuildingClass::checkPlacement() {
 {
@@ -4516,7 +4493,6 @@ namespace gamemd { int BuildingClass::checkPlacement() {
 } }
 // 0x7353C0
 namespace gamemd { int UnitClass::Construct() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   UnitClass *v3; // ecx
   UnitClass *esi1; // esi
@@ -4695,4 +4671,3 @@ LABEL_50:
   }
   return esi1; /*0x735776*/
 }
-} }

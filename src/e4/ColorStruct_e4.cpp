@@ -5,7 +5,6 @@
 // 0x4A35A0
 int ColorStruct::SetRGB(unsigned char a2, unsigned char a3, unsigned char a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   unsigned int v4 = a4 | ((a3 | ((a2 | 0xFFFFFF00) << 8)) << 8); /*0x4a35c5*/
@@ -16,5 +15,4 @@ int ColorStruct::SetRGB(unsigned char a2, unsigned char a3, unsigned char a4)
   this->q034 = -16777216; /*0x4a35d8*/
   this->q014 = -16777216; /*0x4a35db*/
   return -16777216; /*0x4a35de*/
-}
 }

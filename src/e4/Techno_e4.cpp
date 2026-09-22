@@ -8,7 +8,6 @@
 namespace gamemd {
 int Techno::GetOwnerHouse()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -21,7 +20,6 @@ int Techno::GetOwnerHouse()
       return 0; /*0x6f2098*/
   }
   return result; /*0x6f2092*/
-}
 }
 } // namespace gamemd
 

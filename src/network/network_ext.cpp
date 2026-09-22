@@ -186,7 +186,6 @@ void NetworkManager::RemovePlayer() {}
 
 // 0x560480
 int NetworkOptions::DlgProc() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x560480
 {
   int result; // eax
@@ -1113,7 +1112,6 @@ pop     ebx
 add     esp, 100h
 retn    10h
 */
-}
 // 0x7b0f50
 void NetworkOptions::ApplySettings() {}
 

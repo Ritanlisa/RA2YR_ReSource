@@ -9,12 +9,10 @@
 namespace gamemd {
 AbstractClass * * sub_777420()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND result; // eax
   HWND Current; // eax
   HWND v4; // eax
-
   Debug::Log(); /*0x777425*/
   int v0; // ecx
   sub_407040(v0); /*0x77742d*/
@@ -73,21 +71,18 @@ AbstractClass * * sub_777420()
   }
   return result; /*0x7775bb*/
 }
-}
 } // namespace gamemd
 
 // 0x5C09A0
 namespace gamemd {
 void sub_5C09A0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
   if ( DataGlobal_ABF3F8 ) /*0x5c09a8*/
     return (*(int (__thiscall **)(int))(*(_DWORD *)DataGlobal_ABF3F8 + 40))(DataGlobal_ABF3F8); /*0x5c09ac*/
   return result; /*0x5c09af*/
-}
 }
 } // namespace gamemd
 

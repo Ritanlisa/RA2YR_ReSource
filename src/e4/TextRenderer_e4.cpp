@@ -9,10 +9,8 @@
 namespace gamemd {
 void * TextRenderer::GetInstance()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return aP0; /*0x4a60d5*/
-}
 }
 } // namespace gamemd
 
@@ -20,7 +18,6 @@ void * TextRenderer::GetInstance()
 namespace gamemd {
 void * TextRenderer::RenderCentered(int a1, int a2, ObjectClass * aP2, int * a3, wchar_t * Format, char a6, int a7, int _6C, int * a8)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   CampaignScore *v9; // edx
   CampaignScore *v10; // ecx
@@ -123,14 +120,12 @@ void * TextRenderer::RenderCentered(int a1, int a2, ObjectClass * aP2, int * a3,
            _FFFFFFF8,
            v28);
 }
-}
 } // namespace gamemd
 
 // 0x642C80
 namespace gamemd {
 int TextRenderer::MeasureBuilding(int a2, ProgressScreenClass * aP2, ProgressScreenClass * aP3, ProgressScreenClass * aP4, char a6)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *FoundationSize; // eax
   int Default; // edi
@@ -191,14 +186,12 @@ int TextRenderer::MeasureBuilding(int a2, ProgressScreenClass * aP2, ProgressScr
   *((_BYTE *)this + 113) = a6; /*0x642ddc*/
   return a6; /*0x642ddf*/
 }
-}
 } // namespace gamemd
 
 // 0x642EF0
 namespace gamemd {
 void * TextRenderer::MeasureBuilding2()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *FoundationSize; // eax
   int Default; // eax
@@ -256,7 +249,6 @@ void * TextRenderer::MeasureBuilding2()
   if ( v18 > 1 ) /*0x642fe3*/
     *v17 = v18 * v11; /*0x642fe8*/
   return result; /*0x642fdf*/
-}
 }
 } // namespace gamemd
 

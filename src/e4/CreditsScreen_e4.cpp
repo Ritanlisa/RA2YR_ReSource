@@ -6,7 +6,6 @@
 // 0x531A00
 INIClass * * CreditsScreen::DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   _DWORD *WindowLongA; // eax
@@ -62,7 +61,6 @@ INIClass * * CreditsScreen::DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned
   CreditsScreen::Init(Buffer); /*0x531bea*/
   SendMessageA(DlgItem, 0x4C8u, 0, (LPARAM)Buffer); /*0x531bfc*/
   return 0; /*0x531bfe*/
-}
 }
 
 // 0x4A3C00

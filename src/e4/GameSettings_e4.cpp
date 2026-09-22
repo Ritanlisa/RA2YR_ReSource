@@ -8,7 +8,6 @@
 // 0x5FA620
 AbstractClass * * GameSettings::Read()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int Int_Overwrite; // eax
   CCINIClass *v6; // ecx
@@ -282,18 +281,15 @@ AbstractClass * * GameSettings::Read()
   SetGlobalFlag(*((_BYTE *)this + 30)); /*0x5facfd*/
   return GameSettings::ParseNetworkAddress((const char *)this); /*0x5fad09*/
 }
-}
 
 // 0x5FB050
 void * GameSettings::ParseNetworkAddress()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned __int16 v2; // ax
   char *result; // eax
   size_t v5; // kr04_4
   __int16 v12; // [esp+14h] [ebp-10h]
-
   v2 = this->q025; /*0x5fb057*/
   if ( v2 == 0xFFFF ) /*0x5fb05f*/
   {
@@ -339,12 +335,10 @@ void * GameSettings::ParseNetworkAddress()
   }
   return result; /*0x5fb159*/
 }
-}
 
 // 0x721290
 void GameSettings::SetScoreVolume(int volume)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   MouseClass *result; // eax
 
@@ -352,7 +346,6 @@ void GameSettings::SetScoreVolume(int volume)
   if ( volume >= 255 ) /*0x721299*/
     result = (MouseClass *)255; /*0x72129b*/
   *((_DWORD *)this + 3) = result; /*0x7212a0*/
-}
 }
 
 // 0x7931A0

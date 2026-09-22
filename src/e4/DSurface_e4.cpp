@@ -11,7 +11,6 @@
 // 0x480180
 AbstractClass * * DSurface::Process(IUnknown * aP1, int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   TerrainClass::GenerateTexture( /*0x4801de*/
     **(_DWORD ***)&g_NetworkPlayerBuffer[5872],
@@ -33,12 +32,10 @@ AbstractClass * * DSurface::Process(IUnknown * aP1, int * a2)
     0,
     0);
 }
-}
 
 // 0x4BA5A0
 AbstractClass * * DSurface::Construct(IUnknown * aP1, DSurface * aP2, ObjectClass * aP3, char a5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ObjectClass *v7; // edi
   IUnknown *v8; // eax
@@ -83,12 +80,10 @@ AbstractClass * * DSurface::Construct(IUnknown * aP1, DSurface * aP2, ObjectClas
   }
   return this; /*0x4ba69a*/
 }
-}
 
 // 0x4BA6B0
 int DSurface::Destroy()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -116,12 +111,10 @@ int DSurface::Destroy()
   *(_DWORD *)this = &Surface_Vtable; /*0x4ba709*/
   return result; /*0x4ba70f*/
 }
-}
 
 // 0x4BA770
 unsigned int * DSurface::CreatePrimary()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   const char *v2; // eax
   const char *v3; // eax
@@ -364,12 +357,10 @@ LABEL_65:
     (*(void (__thiscall **)(_DWORD *, int))*v7)(v7, 1); /*0x4bac4d*/
   return 0; /*0x4bab91*/
 }
-}
 
 // 0x4BAC60
 unsigned int * DSurface::CreateBackBuffer(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   this->q004 = 0; /*0x4bac6b*/
@@ -399,21 +390,17 @@ unsigned int * DSurface::CreateBackBuffer(int a2)
   }
   return this; /*0x4baceb*/
 }
-}
 
 // 0x4BAD60
 int DSurface::GetBytesPerPixel()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return this->q010; /*0x4bad63*/
-}
 }
 
 // 0x4BB000
 int DSurface::RestoreIfLost()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( !g_lpDirectDraw7 && !g_DDraw_Initialized ) /*0x4bb014*/
@@ -439,12 +426,10 @@ int DSurface::RestoreIfLost()
   }
   return 1; /*0x4bb016*/
 }
-}
 
 // 0x4BB0D0
 DSurface * * DSurface::Blit(int * a1, int * a2, unsigned int * a3, int * a4, DSurface * aP5, int a7, char a8)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void **v10; // ebx
   DSurface *v20; // ecx
@@ -668,12 +653,10 @@ LABEL_71:
   }
   return 0; /*0x4bb298*/
 }
-}
 
 // 0x4BB620
 void* DSurface::FillRectEx(XSurface * aP1, int * a2, XSurface * aP3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int ecx15a; // ecx
   int Width; // ebx
@@ -760,13 +743,11 @@ LABEL_15:
   }
   return 0; /*0x4bb7ef*/
 }
-}
 
 // 0x4BB830
 namespace gamemd {
 void DSurface_FillRectWithFlags()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned __int16 *v23; // eax
   __int16 v25; // bp
@@ -846,17 +827,14 @@ void DSurface_FillRectWithFlags()
   (*(void (__thiscall **)(int))(*(_DWORD *)a1 + 96))(a1); /*0x4bbae8*/
   return 1; /*0x4bb849*/
 }
-}
 } // namespace gamemd
 
 // 0x4BBB00
 void DSurface::BlitStretch(int a1, int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // ebp
   unsigned __int8 *v7; // ecx
-
   int v3 = a2; /*0x4bbb05*/
   if ( a2 >= 1 && a2 - 1 >= 0 )
   {
@@ -891,12 +869,10 @@ void DSurface::BlitStretch(int a1, int a2, int a3)
     }
   }
 }
-}
 
 // 0x4BBCA0
 Coord * * DSurface::DrawLineModulated(int * a1, int a2, int a3, unsigned int * a4, unsigned int * a5, int a6, int a7, int a8, char a9)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned __int16 v45; // ax
   unsigned __int16 v58; // ax
@@ -1256,12 +1232,10 @@ LABEL_69:
   }
   return 0; /*0x4bc28d*/
 }
-}
 
 // 0x4BC750
 Coord * * DSurface::DrawLineFaded(int a2, unsigned int * a3, int * a4, unsigned char * a5, int a6, int a7, char a8, float a9, char a10, char a11, float a12)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
         void *this,
         int a2,
         _DWORD *a3,
@@ -2056,12 +2030,10 @@ Coord * * DSurface::DrawLineFaded(int a2, unsigned int * a3, int * a4, unsigned 
     return 0; /*0x4bcbf1*/
   }
 }
-}
 
 // 0x4BDF00
 void* DSurface::DrawLineZBufColored(int a2, unsigned int * a3, unsigned int * a4, unsigned char * a5, float a6, int a7, int a8)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
         void *this,
         int a2,
         _DWORD *a3,
@@ -2428,12 +2400,10 @@ void* DSurface::DrawLineZBufColored(int a2, unsigned int * a3, unsigned int * a4
   (*(void (__thiscall **)(void *))(this->q018)(this); /*0x4be599*/
   return 1; /*0x4be59c*/
 }
-}
 
 // 0x4BF750
 void* DSurface::DrawGradientLine(int aP1, unsigned int * a2, DSurface * aP3, int a5, int arg10, float * a6, float * a7)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v9; // eax
   IUnknown *v15; // ebx
@@ -2672,12 +2642,10 @@ LABEL_58:
   }
   return 0; /*0x4bf94b*/
 }
-}
 
 // 0x4BFD30
 int DSurface::DrawLineZBuf(int a1, int a2, int a3, unsigned int * a4, unsigned int * a5, unsigned short a6, int a7, int a8, char a9)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   BuildingTypeClass *v32; // ebp
   int v33; // ebx
@@ -3073,12 +3041,10 @@ LABEL_15:
   (*(void (__thiscall **)(_DWORD))(*(_DWORD *)v84[0] + 96))(v84[0]); /*0x4c0364*/
   return 1; /*0x4c0367*/
 }
-}
 
 // 0x4C0750
 int DSurface::DrawDashedLineStipple(int * a1, int * a2, short a4, int a5, int a6, DSurface * aP6)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   MouseClass *v7; // ebp
   MouseClass *v12; // ecx
@@ -3515,12 +3481,10 @@ LABEL_155:
   }
   return a6; /*0x4c077f*/
 }
-}
 
 // 0x4C0E30
 MouseClass * * DSurface::DrawStippledRect(unsigned int * a1, unsigned int * a2, short a4, DSurface * aP4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   MouseClass *v8; // eax
   MouseClass *v9; // ecx
@@ -3919,12 +3883,10 @@ MouseClass * * DSurface::DrawStippledRect(unsigned int * a1, unsigned int * a2, 
   (*(void (__thiscall **)(void *))(this->q018)(this); /*0x4c1386*/
   return 1; /*0x4c0fba*/
 }
-}
 
 // 0x4C1AC0
 void * DSurface::loc_4C1AC0(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   char v3 = (unsigned char)this->DSurface_field_0x18; /*0x4c1ac3*/
@@ -3953,12 +3915,10 @@ void * DSurface::loc_4C1AC0(char a2)
     __3_YAXPAX_Z(this); /*0x4c1b34*/
   return this; /*0x4c1b3e*/
 }
-}
 
 // 0x5D1E70
 ObjectClass * * DSurface::RenderToSurface(ObjectClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // ebp
   ObjectClass *v13; // eax
@@ -4033,19 +3993,16 @@ ObjectClass * * DSurface::RenderToSurface(ObjectClass * aP1)
   }
   return result; /*0x5d1fbe*/
 }
-}
 
 // 0x621B80
 int DSurface::FillRectWithColor(int * a0, ObjectClass * aP1, short a3, unsigned char a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ObjectClass *v5; // ebp
   int result; // eax
   __int16 v15; // bx
   __int16 v16; // si
   __int16 v17; // bp
-
   int * v4 = a0; /*0x621b85*/
   v5 = aP1; /*0x621b87*/
   result = (*(int (__thiscall **)(ObjectClass *, _DWORD, _DWORD))(*(_DWORD *)aP1->__pad_0 + 92))(aP1, 0, 0); /*0x621b9c*/
@@ -4113,12 +4070,10 @@ int DSurface::FillRectWithColor(int * a0, ObjectClass * aP1, short a3, unsigned 
   }
   return result; /*0x621d21*/
 }
-}
 
 // 0x7BD210
 int DSurface::LockAndPrepareRect()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -4138,12 +4093,10 @@ int DSurface::LockAndPrepareRect()
   }
   return result; /*0x7bd262*/
 }
-}
 
 // 0x7BDF80
 int DSurface::CommitBuffers()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // edi
   int j; // ebx
@@ -4368,12 +4321,10 @@ int DSurface::CommitBuffers()
   }
   return result; /*0x7be498*/
 }
-}
 
 // 0x7C2C60
 int DSurface::Flip()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( (*(_BYTE *)(this + 132) & 1) != 0 && (*(_BYTE *)(this + 234) & 3) != 0 ) /*0x7c2c73*/
@@ -4399,7 +4350,6 @@ int DSurface::Flip()
   this->entry_40_(4, 0, 0); /*0x7c2cdd*/
   this->WalkLine(5, this, 2012); /*0x7c2ce9*/
   return this->WalkLine(3, this, 0); /*0x7c2cf8*/
-}
 }
 
 // 0x4BA480

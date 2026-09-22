@@ -15,7 +15,6 @@
 namespace gamemd {
 char sub_5F0070()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   DWORD v0; // eax
   __int16 v5; // [esp+74h] [ebp-4h]
@@ -49,14 +48,12 @@ char sub_5F0070()
   }
   return v0; /*0x5f0119*/
 }
-}
 } // namespace gamemd
 
 // 0x5F0180
 namespace gamemd {
 char HandlePlayerDisconnection(int a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char result; // al
   wchar_t *StringCSF; // eax
@@ -157,14 +154,12 @@ LABEL_20:
   }
   return result; /*0x5f03a2*/
 }
-}
 } // namespace gamemd
 
 // 0x5F2CE0
 namespace gamemd {
 AbstractClass * * WaitModemConnection()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   wchar_t *StringCSF; // eax
   ObjectClass *v5; // esi
@@ -343,17 +338,14 @@ LABEL_36:
   Dialog::Destroy((SkirmishDialog *)v20); /*0x5f3141*/
   return v3; /*0x5f3149*/
 }
-}
 } // namespace gamemd
 
 // 0x5F33B0
 namespace gamemd {
 void* sub_5F33B0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned __int16 v0; // ax
-
   Event::Dispatch(); /*0x5f33b1*/
   MessageLoop(); /*0x5f33b6*/
   v0 = EventQueue::Process(g_BinkMoviePlayer); /*0x5f33c1*/
@@ -366,14 +358,12 @@ void* sub_5F33B0()
   g_NetworkTestFlag = 1; /*0x5f33e1*/
   return -1000; /*0x5f33ed*/
 }
-}
 } // namespace gamemd
 
 // 0x5F66A0
 namespace gamemd {
 unsigned int * sub_5F66A0(unsigned int * a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v2 = *(_DWORD *)(a2 + 16); /*0x5f66a7*/
@@ -430,14 +420,12 @@ unsigned int * sub_5F66A0(unsigned int * a1, int a2)
   a1[3] = v6; /*0x5f6774*/
   return a1; /*0x5f6777*/
 }
-}
 } // namespace gamemd
 
 // 0x5FBEF0
 namespace gamemd {
 char sub_5FBEF0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND Dialog; // esi
   LONG dwNewLong; // [esp+4h] [ebp-4h] BYREF
@@ -463,14 +451,12 @@ char sub_5FBEF0()
   }
   return 1; /*0x5fbf60*/
 }
-}
 } // namespace gamemd
 
 // 0x5FDD20
 namespace gamemd {
 void FindBuildingByTiberiumType(IUnknown * aP0)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int **v3; // edi
 
@@ -513,14 +499,12 @@ LABEL_11:
     return v4[38]; /*0x5fddc9*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x5FDDF0
 namespace gamemd {
 AbstractClass * * sub_5FDDF0()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // edi
   void **v6; // [esp+Ch] [ebp-18h] BYREF
@@ -573,14 +557,12 @@ AbstractClass * * sub_5FDDF0()
       __3_YAXPAX_Z(Block); /*0x5fdee6*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x5FE620
 namespace gamemd {
 int BuildingTypeClass_LoadSHPs(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   char Buffer[512]; // [esp+Ch] [ebp-200h] BYREF
@@ -631,14 +613,12 @@ LABEL_5:
   }
   return result; /*0x5fe763*/
 }
-}
 } // namespace gamemd
 
 // 0x5FF390
 namespace gamemd {
 void sub_5FF390()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // edi
 
@@ -664,14 +644,12 @@ void sub_5FF390()
     }
   }
 }
-}
 } // namespace gamemd
 
 // 0x5FF420
 namespace gamemd {
 AbstractClass * * GenerateRangeRingTextures()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int j; // esi
   int k; // esi
@@ -834,7 +812,6 @@ AbstractClass * * GenerateRangeRingTextures()
     while ( v0 < 0x10000 ); /*0x5ff7ed*/
   }
   return result; /*0x5ff7ef*/
-}
 }
 } // namespace gamemd
 

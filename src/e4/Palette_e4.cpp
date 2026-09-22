@@ -7,13 +7,11 @@
 namespace gamemd {
 unsigned char * Palette_6BitTo16Bit(char a2, char a3, char a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   *this = a2; /*0x4355ba*/
   this->q004 = a3; /*0x4355c0*/
   this->q008 = a4; /*0x4355c3*/
   return this; /*0x4355c6*/
-}
 }
 } // namespace gamemd
 
@@ -21,7 +19,6 @@ unsigned char * Palette_6BitTo16Bit(char a2, char a3, char a4)
 namespace gamemd {
 AbstractClass * * Palette_Preview_Generate()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   CCINIClass *v11; // ebx
   unsigned __int16 Pixel; // ax
@@ -244,13 +241,11 @@ LABEL_38:
   DSurface::Destroy(&v60); /*0x6425d7*/
   return (int *)v38; /*0x64213f*/
 }
-}
 } // namespace gamemd
 
 // 0x661350
 int Palette::CalcColorDistance(unsigned char * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v2 = *this - *a2; /*0x661360*/
@@ -263,7 +258,6 @@ int Palette::CalcColorDistance(unsigned char * a2)
   if ( v4 < 0 ) /*0x661384*/
     v4 = a2[2] - *(this + 2); /*0x661386*/
   return 3 * v4 + 2 * (v2 + 2 * v3); /*0x66138e*/
-}
 }
 
 // 0x626200

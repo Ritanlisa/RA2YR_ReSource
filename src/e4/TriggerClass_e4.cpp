@@ -7,7 +7,6 @@
 namespace gamemd {
 char TriggerClass::FindByEventType(char a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   size_t v7; // eax
   __int128 v8; // [esp+28h] [ebp-20h] BYREF
@@ -71,17 +70,14 @@ char TriggerClass::FindByEventType(char a1)
   DrawDialogGradient((int *)g_DSurface_Primary, (int *)&v8, 1, -1); /*0x610b36*/
   return 1; /*0x610961*/
 }
-}
 } // namespace gamemd
 
 // 0x71FA30
 namespace gamemd {
 int TriggerClass::GetValue()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return this->q054; /*0x71fa33*/
-}
 }
 } // namespace gamemd
 
@@ -89,7 +85,6 @@ int TriggerClass::GetValue()
 namespace gamemd {
 int TriggerClass::RegisterEvent(TriggerClass * aP1, TechnoClass * aP2, char a4, char a5, int a6)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int Owner; // eax
 
@@ -130,7 +125,6 @@ LABEL_16:
       BuildingClass::ProcessUpgradeEffects((int *)this); /*0x7265a4*/
   }
   return v12; /*0x7265af*/
-}
 }
 } // namespace gamemd
 

@@ -9,7 +9,6 @@ namespace ra2 {
 namespace game {
 int BombClass::AbstractClass()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x4385d4*/
@@ -36,7 +35,6 @@ int BombClass::AbstractClass()
   }
   return this; /*0x43866b*/
 }
-}
 } // namespace game
 } // namespace ra2
 
@@ -45,7 +43,6 @@ namespace ra2 {
 namespace game {
 void * BombClass::GetCurrentFrame()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( this->audioController == 1 ) /*0x438a04*/
@@ -58,7 +55,6 @@ void * BombClass::GetCurrentFrame()
   else
     return __0Iostream_init_QAE_XZ_1((Iostream_init *)0xB); /*0x438a5c*/
 }
-}
 } // namespace game
 } // namespace ra2
 
@@ -67,10 +63,8 @@ namespace ra2 {
 namespace game {
 int BombClass::TimeToExplode()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return !this->audioController && (int)g_CurrentFrame > this->q038 && !this->BombClass_field_58; /*0x438a8c*/
-}
 }
 } // namespace game
 } // namespace ra2
@@ -80,7 +74,6 @@ namespace ra2 {
 namespace game {
 int BombClass::Stat(int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   AbstractClass::ProcessPower((#378 *)this); /*0x438a99*/
@@ -105,7 +98,6 @@ int BombClass::Stat(int * a2)
   int v3; // edx
   LOBYTE(v3) = this->BombClass_field_58; /*0x438ae9*/
   return Power::FlagProcess(a2, v3); /*0x438af4*/
-}
 }
 } // namespace game
 } // namespace ra2

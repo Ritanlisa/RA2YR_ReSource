@@ -11,7 +11,6 @@ namespace ra2 {
 namespace game {
 S SpawnManagerClass::SpawnManagerClass(TechnoClass * aP1, int a3, int a4, int a5, int a6)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v7; // eax
   IUnknown *v9; // eax
@@ -98,7 +97,6 @@ S SpawnManagerClass::SpawnManagerClass(TechnoClass * aP1, int a3, int a4, int a5
   }
   return this; /*0x6b6e8a*/
 }
-}
 } // namespace game
 } // namespace ra2
 
@@ -107,7 +105,6 @@ namespace ra2 {
 namespace game {
 void* SpawnManagerClass::Constructor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x6b6ea8*/
@@ -149,7 +146,6 @@ void* SpawnManagerClass::Constructor()
   }
   return this; /*0x6b6f8a*/
 }
-}
 } // namespace game
 } // namespace ra2
 
@@ -158,7 +154,6 @@ namespace ra2 {
 namespace game {
 void SpawnManagerClass::Constructor_SpawnManagerClass()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // esi
   SpawnManagerClass *v6; // [esp+8h] [ebp-4h] BYREF
@@ -198,7 +193,6 @@ void SpawnManagerClass::Constructor_SpawnManagerClass()
   this->spawnVectorCapacity = 0; /*0x6b70e7*/
   AbstractClass::DTOR((_DWORD *)this); /*0x6b70ee*/
 }
-}
 } // namespace game
 } // namespace ra2
 
@@ -207,7 +201,6 @@ namespace ra2 {
 namespace game {
 int SpawnManagerClass::SetTarget(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -215,7 +208,6 @@ int SpawnManagerClass::SetTarget(int a2)
   if ( a2 != this->SpawnManagerClass_field_68 ) /*0x6b7b99*/
     this->SpawnManagerClass_field_6C = a2; /*0x6b7b9b*/
   return result; /*0x6b7b9e*/
-}
 }
 } // namespace game
 } // namespace ra2
@@ -225,7 +217,6 @@ namespace ra2 {
 namespace game {
 int SpawnManagerClass::CountAliveSpawns()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -245,7 +236,6 @@ int SpawnManagerClass::CountAliveSpawns()
   }
   return result; /*0x6b7d4d*/
 }
-}
 } // namespace game
 } // namespace ra2
 
@@ -254,7 +244,6 @@ namespace ra2 {
 namespace game {
 int SpawnManagerClass::CountDockedSpawns()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -275,7 +264,6 @@ int SpawnManagerClass::CountDockedSpawns()
   }
   return result; /*0x6b7d72*/
 }
-}
 } // namespace game
 } // namespace ra2
 
@@ -284,7 +272,6 @@ namespace ra2 {
 namespace game {
 int SpawnManagerClass::PowerDrainUpdate(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -338,7 +325,6 @@ int SpawnManagerClass::PowerDrainUpdate(int a2)
   }
   return result; /*0x6b7ebd*/
 }
-}
 } // namespace game
 } // namespace ra2
 
@@ -347,7 +333,6 @@ namespace ra2 {
 namespace game {
 AbstractClass * * SpawnManagerClass::LoadFromStream(int aP1, AbstractClass * aP1_4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AbstractClass *v2; // ebx
   AbstractClass *v3; // esi
@@ -455,7 +440,6 @@ LABEL_20:
     }
   }
   return Prefix_0; /*0x6b80a3*/
-}
 }
 } // namespace game
 } // namespace ra2

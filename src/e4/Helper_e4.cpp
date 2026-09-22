@@ -11,7 +11,6 @@
 namespace gamemd {
 int sub_6F2040()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int i; // esi
@@ -23,7 +22,6 @@ int sub_6F2040()
     result = g_MultiplayerLogState; /*0x6f2059*/
   }
   return result; /*0x6f2063*/
-}
 }
 } // namespace gamemd
 

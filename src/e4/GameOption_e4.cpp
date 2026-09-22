@@ -5,16 +5,13 @@
 // 0x69ACC0
 int GameOption::GetField()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return *this->q18C; /*0x69acc8*/
-}
 }
 
 // 0x69ACD0
 void * GameOption::SetDescriptionWStr(CampaignScore * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   wchar_t *result; // eax
   wchar_t *StringCSF; // eax
@@ -31,12 +28,10 @@ void * GameOption::SetDescriptionWStr(CampaignScore * aP1)
   }
   return result; /*0x69aced*/
 }
-}
 
 // 0x69AD80
 void * GameOption::SetDigest(CCINIClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char *result; // eax
 
@@ -51,7 +46,6 @@ void * GameOption::SetDigest(CCINIClass * aP1)
     qmemcpy(this + 348, &stru_830620[60868], (unsigned int)result); /*0x69adc8*/
   }
   return result; /*0x69ada4*/
-}
 }
 
 // 0x5E9560

@@ -11,7 +11,6 @@
 // 0x416D50
 FootClass * * Carryall::MissionStateMachine()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   FootClass *v2; // ecx
   char *MissionControl; // eax
@@ -221,5 +220,4 @@ LABEL_44:
     default:
       goto LABEL_5;
   }
-}
 }

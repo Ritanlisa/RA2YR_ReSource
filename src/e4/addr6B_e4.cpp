@@ -28,7 +28,6 @@
 namespace gamemd {
 unsigned int * sub_6B2430(int * a1, int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *result; // eax
 
@@ -52,14 +51,12 @@ unsigned int * sub_6B2430(int * a1, int a2)
   }
   return result; /*0x6b249b*/
 }
-}
 } // namespace gamemd
 
 // 0x6B2700
 namespace gamemd {
 CellClass * * InitializeBuildabilityGrid(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   __int16 v6; // cx
@@ -187,14 +184,12 @@ LABEL_24:
   }
   return result; /*0x6b2a58*/
 }
-}
 } // namespace gamemd
 
 // 0x6B2A70
 namespace gamemd {
 AbstractClass * * SlaveManager_InitGrid()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   __int16 v8; // dx
@@ -384,14 +379,12 @@ AbstractClass * * SlaveManager_InitGrid()
   }
   return result; /*0x6b2f23*/
 }
-}
 } // namespace gamemd
 
 // 0x6B2F30
 namespace gamemd {
 AbstractClass * * sub_6B2F30(char a1, int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 v4; // bp
   __int16 v5; // bx
@@ -874,14 +867,12 @@ LABEL_110:
     __3_YAXPAX_Z(Block); /*0x6b3830*/
   return 1; /*0x6b3838*/
 }
-}
 } // namespace gamemd
 
 // 0x6B3850
 namespace gamemd {
 void ProcessSlaveManagerTerrain()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int BitLCW; // eax
   int i; // [esp+0h] [ebp-18h]
@@ -976,14 +967,12 @@ LABEL_36:
   g_SlaveManagerPool = 0; /*0x6b3a6d*/
   return 1; /*0x6b3a7c*/
 }
-}
 } // namespace gamemd
 
 // 0x6B3A80
 namespace gamemd {
 void Terrain_FlowCompute(int a1, char a2, int a3, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v8; // edi
   int v9; // ebp
@@ -994,7 +983,6 @@ void Terrain_FlowCompute(int a1, char a2, int a3, int a4)
   int v19; // [esp+14h] [ebp-18h]
   int v20; // [esp+18h] [ebp-14h]
   int v22; // [esp+20h] [ebp-Ch]
-
   int v4 = dword_8759A4; /*0x6b3a83*/
   int v5 = -1; /*0x6b3aa3*/
   int v6 = -1; /*0x6b3aa6*/
@@ -1091,14 +1079,12 @@ LABEL_33:
     goto LABEL_39; /*0x6b3c87*/
   return 0; /*0x6b3cb3*/
 }
-}
 } // namespace gamemd
 
 // 0x6B3CD0
 namespace gamemd {
 char sub_6B3CD0(int a1, char a2, int a3, unsigned int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   g_SlaveMgrPool = 0; /*0x6b3ce6*/
@@ -1165,14 +1151,12 @@ LABEL_20:
   }
   return ProcessBuildingClassConstruction(a2, v10, v5); /*0x6b3e13*/
 }
-}
 } // namespace gamemd
 
 // 0x6B3E60
 namespace gamemd {
 AbstractClass * * ComputeTerrainFlowField(int a1, char a2, int a3, unsigned int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v10; // edi
   int v24; // [esp+14h] [ebp-14h]
@@ -1315,14 +1299,12 @@ LABEL_36:
   DataGlobal_B0B65D = 0; /*0x6b40ed*/
   return 0; /*0x6b402d*/
 }
-}
 } // namespace gamemd
 
 // 0x6B5490
 namespace gamemd {
 int FactoryClass_LoadTheaterSHP(int a1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int i; // ebp
@@ -1349,14 +1331,12 @@ int FactoryClass_LoadTheaterSHP(int a1)
   }
   return result; /*0x6b553a*/
 }
-}
 } // namespace gamemd
 
 // 0x6B59A0
 namespace gamemd {
 void StandardCreateUnitAtCoords(unsigned int * a0, IUnknown * aP1, int a3, char a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v4; // ebp
   SmudgeTypeClass *v7; // esi
@@ -1511,14 +1491,12 @@ LABEL_37:
   }
   return 0; /*0x6b59e2*/
 }
-}
 } // namespace gamemd
 
 // 0x6B5C90
 namespace gamemd {
 void TimedCreateUnitAtCoords(unsigned int * a0, IUnknown * aP1, int a3, char a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v4; // ebp
   SmudgeTypeClass *v7; // esi
@@ -1673,14 +1651,12 @@ LABEL_37:
   }
   return 0; /*0x6b5cd2*/
 }
-}
 } // namespace gamemd
 
 // 0x6B6230
 namespace gamemd {
 void sub_6B6230()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned __int16 v0; // cx
   HWND Dialog; // esi
@@ -1712,14 +1688,12 @@ void sub_6B6230()
   }
   Debug::Log(); /*0x6b62e9*/
 }
-}
 } // namespace gamemd
 
 // 0x6B8F00
 namespace gamemd {
 int Texture_DrawAffine(int a1, unsigned int * a2, int * a3, int a4, unsigned char a5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v59 = (*(int (__stdcall **)(_DWORD, _DWORD))(*(_DWORD *)a1 + 92))(0, 0); /*0x6b8f27*/
@@ -1950,14 +1924,12 @@ int Texture_DrawAffine(int a1, unsigned int * a2, int * a3, int a4, unsigned cha
   }
   return (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 96))(a1); /*0x6b9203*/
 }
-}
 } // namespace gamemd
 
 // 0x6B9D00
 namespace gamemd {
 AbstractClass * * Palette_LoadFromFile(int a1, int a2, char * Source, int a4, int a5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // esi
   void (__thiscall ***v38)(_DWORD, int); // edi
@@ -2154,14 +2126,12 @@ LABEL_31:
     return 0; /*0x6b9d90*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x6BB390
 namespace gamemd {
 void sub_6BB390()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HKEY phkResult; // [esp+10h] [ebp-2E0h] BYREF
   ITypeLib *pptlib; // [esp+14h] [ebp-2DCh] BYREF
@@ -2257,14 +2227,12 @@ void sub_6BB390()
     pptlib->lpVtbl->Release(pptlib); /*0x6bb745*/
   return 0; /*0x6bb73a*/
 }
-}
 } // namespace gamemd
 
 // 0x6BB9A0
 namespace gamemd {
 void WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   HWND WindowA; // eax
   HWND v6; // esi
@@ -3578,14 +3546,12 @@ LABEL_374:
   return v10;
 }
 
-}
 } // namespace gamemd
 
 // 0x6BE1C0
 namespace gamemd {
 void WinMain_Setup()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void (__thiscall ***v5)(_DWORD, int); // ecx
   int i; // esi
@@ -4172,7 +4138,6 @@ void WinMain_Setup()
     CloseHandle(hMutex); /*0x7b8716*/
     hMutex = 0; /*0x7b8718*/
   }
-}
 }
 } // namespace gamemd
 

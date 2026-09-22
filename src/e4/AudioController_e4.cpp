@@ -7,7 +7,6 @@ namespace ra2 {
 namespace game {
 int AudioController::LoadThemeBank(int a1, char * a2, signed int * a3, char * a4, signed int * a5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   signed int v17 = 0; /*0x409df7*/
@@ -96,7 +95,6 @@ LABEL_25:
         continue;
     }
   }
-}
 }
 } // namespace game
 } // namespace ra2

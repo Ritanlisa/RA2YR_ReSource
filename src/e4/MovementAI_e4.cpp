@@ -5,7 +5,6 @@
 // 0x487E00
 int MovementAI::IsPathMovementAllowed()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( !g_WTFMode ) /*0x487e0b*/
@@ -21,12 +20,10 @@ int MovementAI::IsPathMovementAllowed()
   }
   return this->MovementAI_field_10 != 1 && this->MovementAI_field_10 != 0; /*0x487e48*/
 }
-}
 
 // 0x4A5150
 int MovementAI::IsProgressAtEnd()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( !(unsigned char)this->MovementAI_field_18 ) /*0x4a5150*/
@@ -45,12 +42,10 @@ int MovementAI::IsProgressAtEnd()
   }
   return (double)(v1 - v3) / (double)this->MovementAI_field_14 == 1.0; /*0x4a519e*/
 }
-}
 
 // 0x4A5360
 int MovementAI::Check()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char result; // al
 
@@ -72,5 +67,4 @@ int MovementAI::Check()
     }
   }
   return result; /*0x4a5385*/
-}
 }

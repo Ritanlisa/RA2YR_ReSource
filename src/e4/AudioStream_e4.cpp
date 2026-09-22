@@ -11,7 +11,6 @@
 namespace gamemd {
 int AudioStream::ReleaseSubsystem()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int (__thiscall ***v2)(_DWORD, int); // ecx
   int result; // eax
@@ -25,17 +24,14 @@ int AudioStream::ReleaseSubsystem()
   }
   return result; /*0x401937*/
 }
-}
 } // namespace gamemd
 
 // 0x4026B0
 namespace gamemd {
 int AudioStream::Stop()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return this->q0D4->vt_slot_44();
-}
 }
 } // namespace gamemd
 
@@ -43,12 +39,10 @@ int AudioStream::Stop()
 namespace gamemd {
 int AudioStream::ReleaseChannel()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   this->q0D4->vt_slot_40(); /*0x4026f9*/
   this->q029 &= ~0x10u; /*0x402705*/
   return this->q0D4->vt_slot_44();
-}
 }
 } // namespace gamemd
 
@@ -56,7 +50,6 @@ int AudioStream::ReleaseChannel()
 namespace gamemd {
 void AudioStream::DestroyAll()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int *Next; // edi
   int *i; // ebx
@@ -82,14 +75,12 @@ void AudioStream::DestroyAll()
     *(_DWORD *)(this->AudioStream_field_0x18 + 16) = 0; /*0x40344b*/
   __3_YAXPAX_Z(this); /*0x403453*/
 }
-}
 } // namespace gamemd
 
 // 0x403820
 namespace gamemd {
 int AudioStream::Reset()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   *this = 0; /*0x403822*/
   this->q004 = 0; /*0x403824*/
@@ -113,19 +104,16 @@ int AudioStream::Reset()
   this->q04C = 0; /*0x40385e*/
   return 0; /*0x403861*/
 }
-}
 } // namespace gamemd
 
 // 0x4038A0
 namespace gamemd {
 int AudioStream::ResetChannel(int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   this->q008 = a2; /*0x4038a4*/
   this->q00C = a3; /*0x4038ab*/
   return a2; /*0x4038ae*/
-}
 }
 } // namespace gamemd
 
@@ -133,12 +121,10 @@ int AudioStream::ResetChannel(int a2, int a3)
 namespace gamemd {
 int AudioStream::ResetChannel2(int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   this->q020 = a2; /*0x4038c4*/
   this->q024 = a3; /*0x4038cb*/
   return a2; /*0x4038ce*/
-}
 }
 } // namespace gamemd
 
@@ -146,7 +132,6 @@ int AudioStream::ResetChannel2(int a2, int a3)
 namespace gamemd {
 int AudioStream::SetupPlayback()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   AudioStream *v1 = this->AudioStream_field_0xA8; /*0x404700*/
@@ -189,14 +174,12 @@ int AudioStream::SetupPlayback()
   else
     return AudioStream::SelectRandom(); /*0x404793*/
 }
-}
 } // namespace gamemd
 
 // 0x4047B0
 namespace gamemd {
 int AudioStream::SelectRandom()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int v9; // ecx
   int v12; // eax
@@ -253,14 +236,12 @@ int AudioStream::SelectRandom()
   v9 = *(_DWORD *)(this + 4 * v12 + 36); /*0x40489d*/
   return v9 + 28; /*0x404878*/
 }
-}
 } // namespace gamemd
 
 // 0x404E70
 namespace gamemd {
 void AudioStream::CleanupChannels()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void **v0; // esi
   void **v1; // edi
@@ -326,14 +307,12 @@ void AudioStream::CleanupChannels()
     }
   }
 }
-}
 } // namespace gamemd
 
 // 0x4079C0
 namespace gamemd {
 int AudioStream::ReadStreamAndSyncPosition()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v2 = this->q0C0; /*0x4079c4*/
@@ -351,14 +330,12 @@ int AudioStream::ReadStreamAndSyncPosition()
   this->q05C = *(_DWORD *)(*(_DWORD *)(v2 + 56) + 4); /*0x407a16*/
   return 0; /*0x407a1c*/
 }
-}
 } // namespace gamemd
 
 // 0x407A30
 namespace gamemd {
 int AudioStream::SetPlaybackCallback()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v1 = this->q0C0; /*0x407a31*/
@@ -374,14 +351,12 @@ int AudioStream::SetPlaybackCallback()
   *(_DWORD *)(v1 + 128) = 0; /*0x407a50*/
   return 0; /*0x407a5c*/
 }
-}
 } // namespace gamemd
 
 // 0x407A60
 namespace gamemd {
 int AudioStream::ProcessCallback()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v1 = this->q0C0; /*0x407a61*/
@@ -397,14 +372,12 @@ int AudioStream::ProcessCallback()
   *(_DWORD *)(v1 + 128) = 0; /*0x407a80*/
   return 0; /*0x407a8c*/
 }
-}
 } // namespace gamemd
 
 // 0x4084E0
 namespace gamemd {
 void AudioStream::InitNodeFields()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   *this = 0; /*0x4084e2*/
   this->q004 = 0; /*0x4084e4*/
@@ -412,17 +385,14 @@ void AudioStream::InitNodeFields()
   this->q018 = 0; /*0x4084ea*/
   this->DListNode_2.Init(); /*0x4084f0*/
 }
-}
 } // namespace gamemd
 
 // 0x408D50
 namespace gamemd {
 int AudioStream::GetChannel()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return this->q014; /*0x408d53*/
-}
 }
 } // namespace gamemd
 
@@ -430,11 +400,9 @@ int AudioStream::GetChannel()
 namespace gamemd {
 int AudioStream::ReadStreamAndReturn()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   ReadAudioStream(this, 0); /*0x409315*/
   return this->q008; /*0x40931d*/
-}
 }
 } // namespace gamemd
 
@@ -442,7 +410,6 @@ int AudioStream::ReadStreamAndReturn()
 namespace gamemd {
 int AudioStream::ReadSamples(const void * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _WORD *SamplePosition; // esi
 
@@ -549,14 +516,12 @@ int AudioStream::ReadSamples(const void * a2)
     }
   }
 }
-}
 } // namespace gamemd
 
 // 0x4BEAC0
 namespace gamemd {
 MouseClass * * AudioStream::DrawWaveform(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnknown * aP4, int a6, int a7, int a8)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown **v9; // eax
   IUnknown *v10; // esi
@@ -963,14 +928,12 @@ LABEL_52:
   (*(void (__thiscall **)(void *))(this->q018)(this); /*0x4bf132*/
   return 1; /*0x4bf13b*/
 }
-}
 } // namespace gamemd
 
 // 0x7BD270
 namespace gamemd {
 int AudioStream::SetFlag4C()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -980,14 +943,12 @@ int AudioStream::SetFlag4C()
   *(_DWORD *)(this + 1980) = result; /*0x7bd288*/
   return result; /*0x7bd28e*/
 }
-}
 } // namespace gamemd
 
 // 0x7BD2D0
 namespace gamemd {
 int AudioStream::CalcReadPos()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   unsigned int i; // ecx
 
@@ -1052,14 +1013,12 @@ int AudioStream::CalcReadPos()
   while ( v12 < v8 ); /*0x7bd3ba*/
   return -1; /*0x7bd352*/
 }
-}
 } // namespace gamemd
 
 // 0x7BEA80
 namespace gamemd {
 int AudioStream::ProcessStream()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   AudioStream *v1; // esi
   signed int Position; // ecx
@@ -1253,18 +1212,15 @@ int AudioStream::ProcessStream()
     return -9; /*0x7bee0c*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x7C3960
 namespace gamemd {
 unsigned int AudioStream::GetPosition()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return (unsigned int)(60 * this->vt_slot_80()) / this->q1E0 /*0x7c3982*/
        + *(_DWORD *)(this + 328);
-}
 }
 } // namespace gamemd
 

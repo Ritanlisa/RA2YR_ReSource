@@ -5,7 +5,6 @@
 // 0x4D0440
 unsigned int * ObjectVector::Construct(IUnknown * aP1, IUnknown * aP2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   this->q004 = 0; /*0x4d044b*/
   this->q008 = aP1; /*0x4d044e*/
@@ -23,5 +22,4 @@ unsigned int * ObjectVector::Construct(IUnknown * aP1, IUnknown * aP2)
     this->IsAllocated = 1; /*0x4d0480*/
   }
   return this; /*0x4d046d*/
-}
 }

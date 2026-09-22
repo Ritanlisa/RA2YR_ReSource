@@ -7,7 +7,6 @@ namespace ra2 {
 namespace game {
 void * RadBeam::Create()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   double *inited; // edi
 
@@ -30,7 +29,6 @@ void * RadBeam::Create()
   inited[3] = (double)(this != (rc_ptr_base *)1 ? 20 : 10);
   return inited; /*0x6591a1*/
 }
-}
 } // namespace game
 } // namespace ra2
 
@@ -39,7 +37,6 @@ namespace ra2 {
 namespace game {
 unsigned int * RadBeam::InitState(rc_ptr_base * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   this->nextArrayIndex = 0; /*0x6593fe*/
   *this = 0; /*0x659401*/
@@ -71,7 +68,6 @@ unsigned int * RadBeam::InitState(rc_ptr_base * aP1)
   *((_BYTE *)this + 193) = 0; /*0x659451*/
   *((_BYTE *)this + 194) = 0; /*0x659457*/
   return this; /*0x65945d*/
-}
 }
 } // namespace game
 } // namespace ra2

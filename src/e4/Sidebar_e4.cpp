@@ -10,7 +10,6 @@
 namespace gamemd {
 AbstractClass * * Sidebar::StartSidebarProduction(void * a1, BuildingTypeClass * aP2, HouseClass * aP3, char a5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v6; // ebx
   int v7; // esi
@@ -235,14 +234,12 @@ LABEL_55:
   }
   return result; /*0x4fa4a0*/
 }
-}
 } // namespace gamemd
 
 // 0x5007A0
 namespace gamemd {
 int Sidebar::Dispatch(IUnknown * aP1, char a3, int a4, char a5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char result; // al
 
@@ -283,14 +280,12 @@ LABEL_3:
   }
   return result; /*0x5007d2*/
 }
-}
 } // namespace gamemd
 
 // 0x533F50
 namespace gamemd {
 CreateTeamCommand * * Sidebar::ScrollSidebarSkipGame()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -312,14 +307,12 @@ CreateTeamCommand * * Sidebar::ScrollSidebarSkipGame()
   }
   return result; /*0x533fab*/
 }
-}
 } // namespace gamemd
 
 // 0x636310
 namespace gamemd {
 TechnoClass * * Sidebar::CancelSidebarProductionQueue()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // ebp
   VectorClass *v4; // edi
@@ -413,14 +406,12 @@ TechnoClass * * Sidebar::CancelSidebarProductionQueue()
     __3_YAXPAX_Z(this); /*0x636501*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x63F040
 namespace gamemd {
 int Sidebar::RemoveItem(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v2 = this->q010; /*0x63f040*/
@@ -440,14 +431,12 @@ int Sidebar::RemoveItem(int a2)
   }
   return 1; /*0x63f069*/
 }
-}
 } // namespace gamemd
 
 // 0x63FB20
 namespace gamemd {
 ObjectClass * * Sidebar::Render(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( (a2 || *(_BYTE *)(this + 5388)) && DataGlobal_884B8D ) /*0x63fb43*/
@@ -623,14 +612,12 @@ ObjectClass * * Sidebar::Render(char a2)
   }
   return RadarClass::Destru_vt16(a2); /*0x63fdb1*/
 }
-}
 } // namespace gamemd
 
 // 0x6A60A0
 namespace gamemd {
 int Sidebar::ActivateTab(IUnknown * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *result; // eax
 
@@ -643,14 +630,12 @@ int Sidebar::ActivateTab(IUnknown * aP1)
   }
   return (int)result; /*0x6a60d8*/
 }
-}
 } // namespace gamemd
 
 // 0x6A70E0
 namespace gamemd {
 AbstractClass * * Sidebar::FlushSidebarTooltip(char a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   struct tagPOINT Point; // [esp+1Ch] [ebp-38h] BYREF
   int v10; // [esp+24h] [ebp-30h] BYREF
@@ -788,14 +773,12 @@ LABEL_24:
 LABEL_25:
   g_TooltipActive = 0; /*0x6a7488*/
 }
-}
 } // namespace gamemd
 
 // 0x6A9540
 namespace gamemd {
 void Sidebar_UpdateProductionDisplay()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char result; // al
   IUnknown *v6; // ebx
@@ -1592,7 +1575,6 @@ LABEL_121:
     }
   }
   return result;
-}
 }
 } // namespace gamemd
 

@@ -137,7 +137,6 @@ BuildingClass::BuildingClass() noexcept
 // 0x43b740
 AbstractClass * * BuildingClass::Construct()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x43b740
 {
   __int16 v6; // cx
@@ -745,13 +744,11 @@ pop     ebp
 pop     ebx
 retn    8
 */
-}
 
 // IDA 0x43bcf0
 // 0x43bcf0
 int BuildingClass::Dtor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x43bcf0
 {
   void **v2; // edi
@@ -1251,7 +1248,6 @@ pop     ebx
 pop     ecx
 retn
 */
-}
 
 // IDA 0x459f20: scalar destructor → calls Dtor, conditionally frees memory
 // 0x459f20
@@ -1296,7 +1292,6 @@ int BuildingClass::Activate()
 // 0x452480
 BuildingTypeClass * * BuildingClass::Deactivate()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _BYTE **v6; // ebx
 
@@ -1330,7 +1325,6 @@ BuildingTypeClass * * BuildingClass::Deactivate()
     ++v6;
   }
   while ( v5 < 1428 );
-}
 }
 
 // IDA 0x459e80: Destroyed notification — set destroyed state
@@ -1376,7 +1370,6 @@ retn    8
 // 0x441f60
 int BuildingClass::AfterDestruction()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 v5; // dx
   __int16 *v6; // esi
@@ -1760,13 +1753,11 @@ pop     ebx
 add     esp, 40h
 retn
 */
-}
 
 // IDA 0x43bd10: Cleanup → clear anims + super weapon anim
 // 0x43eeb0
 void BuildingClass::Cleanup()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( a2 != this->BuildingClass_field_5FC && !*(_BYTE *)(this->gattlingValue + 5829) )
@@ -1869,7 +1860,6 @@ pop     ebx
 add     esp, 40h
 retn    4
 */
-}
 
 // IDA 0x43bcf0: Place building on map
 void BuildingClass::Place(bool bUnk)
@@ -1894,7 +1884,6 @@ void BuildingClass::LoadFromStream(void* stream)
 // 0x454190
 int BuildingClass::Size()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x454190
 {
   int SizeMax; // ebp
@@ -1944,7 +1933,6 @@ LABEL_6:
       goto LABEL_6;
   }
 }
-}
 
 // ============================================================
 // Section 2: Foundation / Cell
@@ -1954,7 +1942,6 @@ LABEL_6:
 // 0x4260f0
 int BuildingClass::IsCellPlaceable(int cell_x, int cell_y) const
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   _BYTE * v3 = CellCoord::To_CellObj(&MapClass_Instance, a2); /*0x426101*/
@@ -1987,12 +1974,10 @@ int BuildingClass::IsCellPlaceable(int cell_x, int cell_y) const
   return 1; /*0x42614d*/
 }
     return false; // TODO stub - retranslate via C-line pipeline
-}
 
 // IDA 0x44d310: validate placement passes all checks
 // 0x480630
 AbstractClass * * BuildingClass::ValidatePlacement() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   void **v4; // esi
   int *StartCoords; // edi
@@ -2550,7 +2535,6 @@ pop     ebx
 add     esp, 0CCh
 retn    4
 */
-}
 // 0x44efb0
 bool BuildingClass::ValidateFoundation() { return CheckBuildability(); }
 // 0x4dc8c0
@@ -2566,7 +2550,6 @@ bool BuildingClass::ValidatePlacementEx() { return ValidateFoundation(); }
 // 0x7447b0
 void* BuildingClass::FindPlacementCells()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD **v2; // edi
   char IsBuildableAdvanced; // al
@@ -6125,7 +6108,6 @@ pop     ebx
 add     esp, 30h
 retn    4
 */
-}
 
 // IDA 0x449830: find placement cells variant
 // 0x6b0300
@@ -6387,7 +6369,6 @@ retn    8
 // 0x56bec0
 int BuildingClass::SearchPlacement()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 v12[2]; // [esp+Ch] [ebp-8h] BYREF
 
@@ -6599,13 +6580,11 @@ pop     ebx
 add     esp, 8
 retn    8
 */
-}
 
 // IDA 0x449850: visualize placement footprint
 // 0x485af0
 void* BuildingClass::VisualizePlacement()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x485af0
 {
   int *PlacementRect; // esi
@@ -7708,7 +7687,6 @@ pop     ebx
 add     esp, 1A8h
 retn
 */
-}
 
 // IDA 0x4258c0: get placement coords
 // 0x45f160
@@ -8021,7 +7999,6 @@ void BuildingClass::RepairPlacement() {}
 // 0x63ac70
 int BuildingClass::CheckBuildability()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   #72 *v1; // ebp
   int Type; // eax
@@ -8166,13 +8143,11 @@ pop     ebx
 add     esp, 8
 retn
 */
-}
 
 // IDA 0x70c5a0: check cell passability (delegates to TechnoClass flag)
 // 0x70c5a0
 int BuildingClass::CheckCellPassability()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -8186,13 +8161,11 @@ test    al, al
 setnz   al
 retn
 */
-}
 
 // IDA 0x710670: placement complete notification
 // 0x710670
 int BuildingClass::OnCellPlacementComplete()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -8254,7 +8227,6 @@ pop     esi
 add     esp, 0Ch
 retn    4
 */
-}
 
 // ============================================================
 // Section 3: Exit / Unlimbo
@@ -8372,7 +8344,6 @@ CoordStruct* BuildingClass::GetBuildCoordsAdjusted(CoordStruct* out) const
 // 0x443860
 void BuildingClass::SetRallyPoint(CoordStruct* target)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x443860
 {
   int TileIndex; // eax
@@ -8734,13 +8705,11 @@ pop     ebx
 add     esp, 94h
 retn    8
 */
-}
 
 // IDA 0x4a9650: mark exit path cells
 // 0x4a9650
 int BuildingClass::MarkExitPath()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 *v6; // esi
   __int16 *v8; // eax
@@ -8844,13 +8813,11 @@ pop     ebp
 pop     ebx
 retn    8
 */
-}
 
 // IDA 0x44f590: check exit path is clear
 // 0x639cb0
 int BuildingClass::CheckExitPath()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int v6; // edi
@@ -9067,7 +9034,6 @@ pop     ebx
 add     esp, 8
 retn
 */
-}
 
 // 0x453840
 void BuildingClass::RenderExitPosition() {}
@@ -9077,7 +9043,6 @@ void BuildingClass::ReassignFlagPosition() {}
 // 0x447e90
 BuildingTypeClass * * BuildingClass::TogglePrimaryFactory()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x447e90
 {
 
@@ -9094,7 +9059,6 @@ BuildingTypeClass * * BuildingClass::TogglePrimaryFactory()
   v6[1] = v3[1];
   v6[2] = v3[2];
   return (int)v6;
-}
 }
 
 // IDA 0x44f640: is factory selectable
@@ -9124,7 +9088,6 @@ int BuildingClass::Mission_Construction()
 // 0x443c60
 VectorClass * * BuildingClass::UpdateConstruction()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x443c60
 {
   __int16 v6; // di
@@ -12370,7 +12333,6 @@ pop     ebx
 add     esp, 130h
 retn    8
 */
-}
 
 // IDA 0x44f2d0: selling mission
 int BuildingClass::Mission_Selling()
@@ -12518,7 +12480,6 @@ retn
 // 0x480cb0
 AbstractClass * * BuildingClass::SellEffects()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int *PlacementRect; // esi
   int *StartCoords; // eax
@@ -13065,13 +13026,11 @@ pop     ebx
 add     esp, 40h
 retn    4
 */
-}
 
 // IDA 0x4d9f70: sell unit - create MCV from undeployable building
 // 0x4d9f70
 int BuildingClass::SellUnit()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -13134,13 +13093,11 @@ loc_4D9FE9:                             ; CODE XREF: BuildingClass__SellUnit+9�
 pop     esi
 retn    4
 */
-}
 
 // IDA 0x701410: handle sell or repair from sidebar
 // 0x701410
 int BuildingClass::HandleSellOrRepair()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x701410
 {
   int result; // eax
@@ -13162,13 +13119,11 @@ int BuildingClass::HandleSellOrRepair()
   }
   return result; /*0x701499*/
 }
-}
 
 // IDA 0x44f450: repair mission
 int BuildingClass::Mission_Repair()
 {
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x701410
 {
   int result; // eax
@@ -13191,7 +13146,6 @@ int BuildingClass::Mission_Repair()
   return result; /*0x701499*/
 }
     return {}; // TODO stub - retranslate via C-line pipeline
-}
     return 20;
 }
 
@@ -13467,7 +13421,6 @@ BuildingClass* BuildingClass::FindBySWType(int sw_type)
 // ordered member WRITES, two direct calls, multiple returns, no loop.
 char BuildingClass::ClearSuperWeaponAnim()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x505310
 {
   int uniqueId; // ecx
@@ -13487,7 +13440,6 @@ char BuildingClass::ClearSuperWeaponAnim()
   return *(_DWORD *)(*(_DWORD *)&aP1->__pad_0[4] + 4 * v3); /*0x50534e*/
 }
     return {}; // TODO stub - retranslate via C-line pipeline
-}
 
 // 0x4503f0
 void BuildingClass::UpdatePrism() {}
@@ -13498,7 +13450,6 @@ void BuildingClass::Disappear_PrismForward() {}
 // 0x43c2d0
 BuildingTypeClass * * BuildingClass::MissionController()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x43c2d0
 {
   int result; // eax
@@ -15047,7 +14998,6 @@ pop     ebx
 add     esp, 40h
 retn    0Ch
 */
-}
 
 // 0x5b01c0
 int BuildingClass::ProcessMission() { return MissionController(); }
@@ -15108,7 +15058,6 @@ bool BuildingClass::CheckMissionAttack() { return missionStatus == 1; }
 // 0x454260
 int BuildingClass::PowerDrainUpdate(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x454260
 {
 
@@ -15414,7 +15363,6 @@ pop     edi
 pop     esi
 retn    4
 */
-}
 
 // GOLDEN: 0x44E7B0 — BuildingClass::GetPowerOutput.  Faithful 1:1 with IDA.
 // Base output (+bonus, +overpower scaling, +summed upgrade outputs), gated by a
@@ -15423,7 +15371,6 @@ retn    4
 // do-while over Upgrades, two direct calls, multiple returns.  vtable +468 =
 // slot 117 = Mission_Harvest (project header vtable; binary impl IDA-labels GetShroudByte).
 // 0x44e7b0
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x44e7b0
 {
   double HealthRatio; // st7
@@ -15469,7 +15416,6 @@ retn    4
     return 0; /*0x44e874*/
   HealthRatio = BuildingClass::GetHealthRatio(this); /*0x44e861*/
   return Math::RoundToInt(HealthRatio * (double)v10); /*0x44e86f*/
-}
 }
 
 
@@ -15521,7 +15467,6 @@ bool BuildingClass::IsPoweredOn()
 // 0x4555d0
 BuildingTypeClass * * BuildingClass::IsPoweredActive()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x4555d0
 {
   int result; // eax
@@ -15590,7 +15535,6 @@ LABEL_20:
   return result; /*0x4556b8*/
 }
     return false; // TODO stub - retranslate via C-line pipeline
-}
 
 // IDA 0x4a51b0: check power flags
 // 0x4a51b0
@@ -15694,7 +15638,6 @@ int BuildingClass::GetPowerFrame()
 // 0x447780
 BuildingTypeClass * * BuildingClass::StartProduction(int type_index)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x447780
 {
   int result; // eax
@@ -16191,13 +16134,11 @@ pop     esi
 add     esp, 0Ch
 retn    4
 */
-}
 
 // IDA 0x447ab0: update production timer
 // 0x4496b0
 BuildingTypeClass * * BuildingClass::CheckState1()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x4496b0
 {
   char *MissionControl; // eax
@@ -16644,13 +16585,11 @@ mov     esp, ebp
 pop     ebp
 retn
 */
-}
 
 // IDA 0x639740: complete production
 // 0x639740
 int BuildingClass::CompleteProduction()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int Type; // eax
   int i; // esi
@@ -16771,7 +16710,6 @@ pop     ebx
 add     esp, 8
 retn
 */
-}
 
 // 0x43f180
 void BuildingClass::ProductionDisplayUpdate() {}
@@ -16877,7 +16815,6 @@ void BuildingClass::AddToProductionQueue(int) {}
 // 0x6395b0
 char BuildingClass::SetProduction(int type_index)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x6395b0
 {
   int Type; // eax
@@ -17101,7 +17038,6 @@ pop     ebx
 add     esp, 0Ch
 retn
 */
-}
 
 // 0x43ef90
 int BuildingClass::GetProductionFrame() const { return ProductionFrame; }
@@ -17206,7 +17142,6 @@ retn
 // 0x4571e0
 void BuildingClass::Infiltrate()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x4571e0
 {
   #375 *v3; // edi
@@ -17676,7 +17611,6 @@ pop     ebp
 pop     ecx
 retn    4
 */
-}
 
 // 0x458200
 void BuildingClass::ProcessStructureAbandoned() {}
@@ -17696,7 +17630,6 @@ bool BuildingClass::IsIdleWithNoCaptives()
 // 0x44eb10
 int BuildingClass::GetCrew()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x44eb10
 {
   if ( this->HasBeenCaptured /*0x44eb43*/
@@ -17712,13 +17645,11 @@ int BuildingClass::GetCrew()
   }
 }
     return {}; // TODO stub - retranslate via C-line pipeline
-}
 
 // IDA 0x451330: get crew count
 // 0x451330
 int BuildingClass::GetCrewCount()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x451330
 {
   int v5; // esi
@@ -17759,13 +17690,11 @@ int BuildingClass::GetCrewCount()
     return 5;
   return result;
 }
-}
 
 // IDA 0x44eb50: eject crew units
 // 0x442d90
 void BuildingClass::EjectCrew()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x442d90
 {
   int i; // esi
@@ -18532,7 +18461,6 @@ pop     ebx
 add     esp, 7Ch
 retn    4
 */
-}
 
 // 0x454db0
 void BuildingClass::CleanupOccupation() {}
@@ -18553,7 +18481,6 @@ void BuildingClass::InitBuildLimit() {}
 // 0x6b0d60
 int BuildingClass::RefreshOccupierCache()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int *result; // eax
   int i; // edi
@@ -18613,7 +18540,6 @@ pop     edi
 pop     esi
 retn
 */
-}
 
 // 0x722240
 void BuildingClass::ClearFactoryData() {}
@@ -18622,7 +18548,6 @@ void BuildingClass::ClearFactoryData() {}
 // 0x722390
 int BuildingClass::FreeUpgradeQueue()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int i; // ebp
@@ -18740,7 +18665,6 @@ pop     ebp
 pop     ebx
 retn
 */
-}
 // 0x722e50
 void BuildingClass::FreeUpgradeQueue2() { FreeUpgradeQueue(); }
 
@@ -18773,7 +18697,6 @@ void BuildingClass::CalculateTurretAngle() {}
 // 0x445e50
 int BuildingClass::GetFacingToTarget()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x445e50
 {
   int v9; // [esp+24h] [ebp-1Ch] BYREF
@@ -18798,7 +18721,6 @@ int BuildingClass::GetFacingToTarget()
     *v12 = v9;
     return (int)v12;
   }
-}
 }
 
 // IDA 0x44d7d0: get target facing (delegates to GetFacingToTarget)
@@ -18872,7 +18794,6 @@ void BuildingClass::AcquireTarget() {}
 // 0x445f00
 BuildingTypeClass * * BuildingClass::SelectTargetTypeFlags()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x445f00
 {
   _DWORD **v2; // eax
@@ -18900,7 +18821,6 @@ BuildingTypeClass * * BuildingClass::SelectTargetTypeFlags()
     v4 |= v6;
   }
   return TechnoClass::SelectAutoTarget_Start_AU(v4 | 1, v9, v10);
-}
 }
 
 int BuildingClass::DistanceToTarget() { return 0; }
@@ -18932,7 +18852,6 @@ bool BuildingClass::CheckBridge() { return false; }
 // 0x4576f0
 ObjectClass * * BuildingClass::DestroyOnBridgeCollapse()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   int i; // edi
@@ -19024,7 +18943,6 @@ pop     ebx
 add     esp, 0Ch
 retn
 */
-}
 
 // 0x705ca0
 CoordStruct* BuildingClass::GetBridgeAwareCoords(CoordStruct* out) const
@@ -19041,7 +18959,6 @@ CoordStruct* BuildingClass::GetBridgeAwareCoords(CoordStruct* out) const
 // 0x62a4a0
 BuildingTypeClass * * BuildingClass::Deploy()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 v7; // dx
   int result; // eax
@@ -19055,7 +18972,6 @@ BuildingTypeClass * * BuildingClass::Deploy()
   int v41; // [esp+4Ch] [ebp-14h]
   int v42; // [esp+50h] [ebp-10h]
   int v44; // [esp+58h] [ebp-8h]
-
   char v4 = *(_BYTE *)((*(int (__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 36) + 132))(*(_DWORD *)(a1 + 36)) + 3278);
   if ( (((unsigned int)((*ProgressTimer::GetValue((_WORD *)(*(_DWORD *)(a1 + 40) + 904), &v37) >> 12) + 1) >> 1) & 7) > 2 )
     LOWORD(v37) = *(_WORD *)ProgressTimer::GetValue((_WORD *)(*(_DWORD *)(a1 + 40) + 904), &v38) - 0x3FFF;
@@ -19597,7 +19513,6 @@ pop     ebx
 add     esp, 2Ch
 retn
 */
-}
 
 // IDA 0x465d40: check if 1x1 and undeployable
 // 0x465d40
@@ -19782,7 +19697,6 @@ retn    10h
 // 0x451f60
 BuildingTypeClass * * BuildingClass::SyncCrateVisuals()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -19888,7 +19802,6 @@ pop     ebx
 pop     ecx
 retn    8
 */
-}
 
 // 0x42f260
 void BuildingClass::MarkUpgradeComponentUsed() {}
@@ -19910,7 +19823,6 @@ void BuildingClass::UpdateCloak() {}
 // 0x457c90
 int BuildingClass::IronCurtain()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   #72 *v1; // eax
 
@@ -19958,13 +19870,11 @@ call    TechnoClass__IronCurtain
 add     esp, 0Ch
 retn    0Ch
 */
-}
 
 // IDA 0x6f9e10: IsInvisible — vtable[33] → GetType, member(176) → ptr check
 // 0x6f9e10
 int BuildingClass::IsInvisible()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x6f9e10
 {
   int result; // eax
@@ -19981,7 +19891,6 @@ int BuildingClass::IsInvisible()
   }
   return result; /*0x6f9e27*/
 }
-}
 
 // 0x452260
 void BuildingClass::AnnounceReady() {}
@@ -19990,7 +19899,6 @@ void BuildingClass::AnnounceReady() {}
 // 0x456580
 int BuildingClass::UpdateRevealField()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char *Field; // ebx
   int result; // eax
@@ -20057,13 +19965,11 @@ pop     esi
 pop     ebx
 retn
 */
-}
 
 // IDA 0x4565e0: update gap generator field
 // 0x4565e0
 int BuildingClass::UpdateGapGeneratorField()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char *Field; // ebp
   int result; // eax
@@ -20130,7 +20036,6 @@ pop     esi
 pop     ebp
 retn
 */
-}
 
 // IDA 0x456640: update detection field
 // 0x456640
@@ -20232,7 +20137,6 @@ void BuildingClass::ProcessFogCellOccupancy() {}
 // 0x655740
 void BuildingClass::RemoveGapCellCoverage()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v5 = *this->q1258;
@@ -20348,7 +20252,6 @@ pop     esi
 add     esp, 10h
 retn    0Ch
 */
-}
 
 // ============================================================
 // Section 13: Update
@@ -20365,7 +20268,6 @@ void BuildingClass::Update()
 // 0x44e8f0
 BuildingTypeClass * * BuildingClass::OnObjectExpired(ObjectClass* obj)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x44e8f0
 {
   int result; // eax
@@ -20728,13 +20630,11 @@ pop     ebp
 pop     ebx
 retn    8
 */
-}
 
 // IDA 0x4a5290: update timer with elapsed seconds
 // 0x4a5290
 int BuildingClass::UpdateTimerWithElapsed()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char result; // al
 
@@ -20791,7 +20691,6 @@ mov     [ecx+19h], al
 locret_4A52C9:                          ; CODE XREF: BuildingClass__UpdateTimerWithElapsed+5↑j
 retn
 */
-}
 
 // IDA 0x458db0: check if has active parameter
 // 0x458db0
@@ -21002,7 +20901,6 @@ void BuildingClass::SaveLoad_Register()
 // 0x634310
 int BuildingClass::CopyTypeDataForRender(int a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD **v5; // esi
   _DWORD **v6; // ecx
@@ -21036,7 +20934,6 @@ LABEL_9:
   *(_WORD *)(a2 + 108) = *(_WORD *)v8;
   *(_BYTE *)(a2 + 110) = v8[2];
   return a2;
-}
 }
 
 // IDA 0x705d20: get type pointer (duplicate of GetTypePtr at different address)
@@ -21081,15 +20978,12 @@ BuildingTypeClass* BuildingClass::GetType_Thunk() { return Type; }
 // 0x449a40
 HouseClass* BuildingClass::CheckState2()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return (*(int (__thiscall **)(#377 *))(this->owner)(this);
-}
 }
 // 0x6347b0
 int BuildingClass::GetTypeEntry()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD **v4; // edx
   int v5; // eax
@@ -21177,7 +21071,6 @@ mov     eax, [eax+edx*4]
 locret_6347F9:                          ; CODE XREF: BuildingClass__GetTypeEntry+41↑j
 retn    4
 */
-}
 
 // IDA 0x459ed0: get type field at offset 60
 // 0x459ed0
@@ -21299,7 +21192,6 @@ void BuildingClass::ReadConstructionData() {}
 // 0x4527d0
 BuildingTypeClass * * BuildingClass::HasOccupantAudio()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x4527d0
 {
   int result; // eax
@@ -21383,7 +21275,6 @@ xor     al, al
 pop     ebx
 retn
 */
-}
 
 // 0x4526f0
 ra2::game::WeaponStruct* BuildingClass::SelectWeaponSlot(int weaponIndex) { return nullptr; }
@@ -21400,7 +21291,6 @@ void BuildingClass::ApplyFoundationDamage() {}
 // 0x4ff980
 int BuildingClass::DecrementTypeCounter()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *result; // eax
 
@@ -21519,13 +21409,11 @@ pop     edi             ; jumptable 004FF9CF default case, cases 4,5,8-14,17-39
 pop     esi
 retn    4
 */
-}
 
 // IDA 0x4ffa50: increment occupant type counter
 // 0x4ffa50
 int BuildingClass::IncrementOccupantTypeCounter()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *result; // eax
 
@@ -21644,7 +21532,6 @@ pop     edi             ; jumptable 004FFA9F default case, cases 4,5,8-14,17-39
 pop     esi
 retn    4
 */
-}
 
 // IDA 0x459c00: check if mass selectable
 // 0x459c00
@@ -21679,7 +21566,6 @@ retn
 // 0x6551c0
 int BuildingClass::AddUpgrade(BuildingTypeClass* upgrade)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v3 = *(_DWORD *)(this + 4660) - 1;
@@ -21783,13 +21669,11 @@ pop     esi
 pop     ebx
 retn    4
 */
-}
 
 // IDA 0x726400: process upgrade effects
 // 0x726400
 int BuildingClass::ProcessUpgradeEffects()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
   _DWORD *i; // edi
@@ -21901,13 +21785,11 @@ pop     ebp
 add     esp, 0Ch
 retn
 */
-}
 
 // IDA 0x7265c0: execute triggers
 // 0x7265c0
 int BuildingClass::ExecuteTriggers()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int i; // esi
   int Owner; // eax
@@ -21979,13 +21861,11 @@ xor     al, al
 pop     edi
 retn    8
 */
-}
 
 // IDA 0x459c20: process upgrade targeting
 // 0x459c20
 BuildingTypeClass * * BuildingClass::ProcessUpgradeTargeting()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -22070,7 +21950,6 @@ call    TechnoClass__PickAlternateTarget
 pop     edi
 retn
 */
-}
 
 // 0x43fb20
 void BuildingClass::ProcessSpreadEffect() {}
@@ -22141,7 +22020,6 @@ retn    4
 }
 
 // 0x4852d0
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x4852d0
 {
 
@@ -22155,7 +22033,6 @@ retn    4
   Coord::To_Screen((_DWORD *)DataGlobal_87F7E8[7887], v6, v5); /*0x485330*/
   return Cell::CreateCrater(v5[0] - 30, DataGlobal_87F7E8[7663] - 15 * *(char *)(this + 283) + v5[1] - 15, 60, 30, 0); /*0x485389*/
 }
-}
 
 
 // 0x486e70
@@ -22168,7 +22045,6 @@ void BuildingClass::BeginCrumblingTimer() {}
 // 0x453d60
 int BuildingClass::MarkCellOccupied(int cell_x, int cell_y)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -22183,11 +22059,9 @@ int BuildingClass::MarkCellOccupied(int cell_x, int cell_y)
   *(_DWORD *)result = v3; /*0x453db0*/
   return result; /*0x453db2*/
 }
-}
 // 0x453dc0
 int BuildingClass::ClearCellOccupied(int cell_x, int cell_y)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
@@ -22201,7 +22075,6 @@ int BuildingClass::ClearCellOccupied(int cell_x, int cell_y)
   LOBYTE(v3) = v3 & 0x7F; /*0x453e0d*/
   *(_DWORD *)result = v3; /*0x453e10*/
   return result; /*0x453e12*/
-}
 }
 // 0x455980
 void BuildingClass::ScanCircleForTiberium() {}
@@ -22481,7 +22354,6 @@ retn
 // IDA 0x424c90: set field at offset 95
 // 0x424c90
 int AnimClass::SetField95(int v) {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   this->q17C = a2;
   return a2;
@@ -22492,7 +22364,6 @@ mov     eax, [esp+arg_0]
 mov     [ecx+17Ch], eax
 retn    4
 */
-}
 
 // IDA 0x425260: set field at offset 8 (activates flag)
 // 0x425260
@@ -22512,7 +22383,6 @@ int BuildingClass::GetCursorAction() { return 0; }
 // 0x70f6e0
 BuildingTypeClass * * BuildingClass::UpdateThreatBounds()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x70f6e0
 {
 
@@ -22565,7 +22435,6 @@ pop     edi
 pop     esi
 retn    4
 */
-}
 
 // 0x716150
 bool BuildingClass::ValidatePath(void *a1, unsigned short *a2, int a3)

@@ -16,7 +16,6 @@
 namespace gamemd {
 int Radar::FindNearestRadarTarget(int a2, int a3, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD **v4; // edi
   int i; // esi
@@ -53,14 +52,12 @@ int Radar::FindNearestRadarTarget(int a2, int a3, int a4)
   }
   return 0; /*0x431148*/
 }
-}
 } // namespace gamemd
 
 // 0x4ADCD0
 namespace gamemd {
 void Radar::UpdateReveal(char a1, IUnknown * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   MouseClass *v5; // edx
   MouseClass *v7; // eax
@@ -142,14 +139,12 @@ LABEL_19:
     goto LABEL_20; /*0x4adebf*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x5090F0
 namespace gamemd {
 int Radar::IsRadarTargetEligible()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   unsigned int v1 = this->q20C; /*0x5090f0*/
@@ -158,14 +153,12 @@ int Radar::IsRadarTargetEligible()
   int v2 = *(this + v1 + 132); /*0x5090ff*/
   return *(_DWORD *)(v2 + 56) < g_RulesClass_Instance->InfantryVirus && *(_DWORD *)(v2 + 36) == -1; /*0x509126*/
 }
-}
 } // namespace gamemd
 
 // 0x5824A0
 namespace gamemd {
 void* Radar::ProcessSubzone(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnknown * aP4, IUnknown * aP5)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   IUnknown *v6; // ebp
   IUnknown *v7; // ebx
@@ -592,14 +585,12 @@ LABEL_102:
   }
   return v110; /*0x582d1e*/
 }
-}
 } // namespace gamemd
 
 // 0x584550
 namespace gamemd {
 AbstractClass * * Radar::Update(IUnknown * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   Radar *v2; // ebx
   CCINIClass *v10; // edx
@@ -1118,14 +1109,12 @@ LABEL_72:
       __3_YAXPAX_Z(v111); /*0x584db1*/
   }
 }
-}
 } // namespace gamemd
 
 // 0x58ABD0
 namespace gamemd {
 void * Radar::CopyDataArray(int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( this != a2 ) /*0x58abdc*/
@@ -1186,17 +1175,14 @@ void * Radar::CopyDataArray(int * a2)
   this->q014 = a2[5]; /*0x58ac5e*/
   return this; /*0x58ac57*/
 }
-}
 } // namespace gamemd
 
 // 0x6558B0
 namespace gamemd {
 int Radar::PixelIndex()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   return this->q004 + 251 * this->q008; /*0x6558c4*/
-}
 }
 } // namespace gamemd
 
@@ -1204,7 +1190,6 @@ int Radar::PixelIndex()
 namespace gamemd {
 MapClass * * Radar::RenderMinimap()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   __int16 *v4; // eax
   int i; // ebp
@@ -1657,14 +1642,12 @@ LABEL_99:
   }
   return v82; /*0x6578e3*/
 }
-}
 } // namespace gamemd
 
 // 0x692610
 namespace gamemd {
 AbstractClass * * Radar::ScanWaypoints(MouseClass * aP0, MouseClass * aP1, int aP3_4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   MouseClass *v3; // esi
   int RadarClosestEnemy; // eax
@@ -1906,6 +1889,5 @@ LABEL_81:
     return 0; /*0x692b45*/
   else
     return (int)v30; /*0x692b51*/
-}
 }
 } // namespace gamemd

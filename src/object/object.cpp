@@ -42,7 +42,6 @@ bool ObjectClass::Put(const CoordStruct& coords, unsigned int face_dir)
 // 0x5f44a0
 bool ObjectClass::Remove()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x5f44a0
 {
   int result; // eax
@@ -70,13 +69,11 @@ bool ObjectClass::Remove()
   }
   return result;
 }
-}
 
 // IDA: 0x5F65F0 -- ObjectClass::Destroy (146B)
 // 0x5f65f0
 AbstractClass * * ObjectClass::Destroy()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x5f65f0
 {
   int result; // eax
@@ -167,7 +164,6 @@ loc_5F6680:                             ; CODE XREF: ObjectClass__Destroy+55↑j
 pop     esi
 retn
 */
-}
 
 void ObjectClass::RestoreMission(Mission mission)
 {

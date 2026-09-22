@@ -8,7 +8,6 @@
 // 0x4791F0
 AbstractClass * * LinkedList::LoadScenarioMixFiles(INIClass * aP0, int aP2, int a3, int a4)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   CD *v4; // ecx
   CD *v5; // esi
@@ -221,12 +220,10 @@ LABEL_60:
     goto LABEL_61; /*0x479662*/
   return Map_Load_751C30(); /*0x479390*/
 }
-}
 
 // 0x556600
 void * LinkedList::MoveNode(void * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   if ( a2 != this ) /*0x55660a*/
   {
@@ -235,12 +232,10 @@ void * LinkedList::MoveNode(void * a2)
   }
   return this; /*0x55661b*/
 }
-}
 
 // 0x556640
 unsigned int * LinkedList::FindPrev()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   _DWORD *result; // eax
 
@@ -257,12 +252,10 @@ unsigned int * LinkedList::FindPrev()
   while ( result[2] ); /*0x556651*/
   return result; /*0x55665b*/
 }
-}
 
 // 0x5566A0
 LinkClass * * LinkedList::InsertAfter(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   this->vt_slot_36(); /*0x5566a5*/
@@ -274,12 +267,10 @@ LinkClass * * LinkedList::InsertAfter(int a2)
     v3->m_Prev = this; /*0x5566bc*/
   return this->vt_slot_24(); /*0x5566c6*/
 }
-}
 
 // 0x5566D0
 unsigned int * LinkedList::Attach(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   this->vt_slot_36(); /*0x5566d5*/
@@ -289,12 +280,10 @@ unsigned int * LinkedList::Attach(int a2)
   this->q008 = 0; /*0x5566e7*/
   return this; /*0x5566f0*/
 }
-}
 
 // 0x556700
 LinkClass * * LinkedList::Append(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   this->vt_slot_36(); /*0x556705*/
@@ -305,12 +294,10 @@ LinkClass * * LinkedList::Append(int a2)
   this->Tail = 0; /*0x55671b*/
   return this->vt_slot_24(); /*0x556725*/
 }
-}
 
 // 0x556730
 int LinkedList::RemoveNode()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v2 = this->vt_slot_24(); /*0x55673e*/
@@ -329,12 +316,10 @@ int LinkedList::RemoveNode()
     return 0; /*0x55676f*/
   return (*(int (__thiscall **)(int))(*(_DWORD *)v3 + 24))(v3); /*0x55676d*/
 }
-}
 
 // 0x623460
 void LinkedList::Remove(unsigned int * a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   CampaignClass *v2 = (_DWORD *)this->q034; /*0x623460*/
@@ -355,12 +340,10 @@ void LinkedList::Remove(unsigned int * a2)
     __3_YAXPAX_Z(v2); /*0x62348b*/
   }
 }
-}
 
 // 0x632D10
 void LinkedList::RelinkNode(int a2)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   if ( *(this + 6) != a2 ) /*0x632d1b*/
@@ -384,12 +367,10 @@ void LinkedList::RelinkNode(int a2)
     this->Tail = this + 5; /*0x632d57*/
   }
 }
-}
 
 // 0x6E5380
 int LinkedList::Contains(IUnknown * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v2 = this->q028; /*0x6e5380*/
@@ -402,7 +383,6 @@ int LinkedList::Contains(IUnknown * aP1)
       return 0; /*0x6e5394*/
   }
   return 1; /*0x6e5398*/
-}
 }
 
 // 0x407450

@@ -8,7 +8,6 @@
 // 0x6B5260
 S * SmudgeTypeClass::SmudgeTypeClass(ObjectClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   SmudgeTypeClass *v3; // eax
   CCINIClass *v6; // edx
@@ -65,12 +64,10 @@ LABEL_11:
     return this; /*0x6b5367*/
   }
 }
-}
 
 // 0x6B55F0
 void SmudgeTypeClass::vt_entry_A0(int * a2, int * a3, int a4, int a5, short * a6)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v7 = this->GetMember41_2(); /*0x6b55ff*/
@@ -91,12 +88,10 @@ void SmudgeTypeClass::vt_entry_A0(int * a2, int * a3, int a4, int a5, short * a6
     DrawToSurfaceSHP(g_DSurface_Hidden_2, v10[13], v7, 0, &v13, a3, 3584, 0, -1 - v11, 0, v12, 0, 0, 0, 0, 0); /*0x6b56b4*/
   }
 }
-}
 
 // 0x6B56D0
 int SmudgeTypeClass::GetSize(unsigned char *** aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   char Bool_Overwrite; // al
   INIClass *v7; // [esp-8h] [ebp-210h]
@@ -136,7 +131,6 @@ int SmudgeTypeClass::GetSize(unsigned char *** aP1)
     _makepath(Buffer, 0, 0, (const char *)(this + 504), Ext); /*0x6b5784*/
   this->Image = SearchMIXFile(Buffer, 0); /*0x6b57c7*/
   return 1; /*0x6b57cd*/
-}
 }
 
 // 0x6B6160

@@ -6,7 +6,6 @@
 // 0x410800
 int AbstractTypeClass::Constructor(AbstractClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   RandomStruct *v3; // ebx
   char Buffer[16]; // [esp+10h] [ebp-44h] BYREF
@@ -74,12 +73,10 @@ LABEL_9:
   }
   return this; /*0x410948*/
 }
-}
 
 // 0x4109C0
 int AbstractTypeClass::Dtor()
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   *this = &AbstractTypeClass::`vftable'; /*0x4109cd*/
@@ -99,12 +96,10 @@ int AbstractTypeClass::Dtor()
   }
   return AbstractClass::DTOR(this); /*0x410a2f*/
 }
-}
 
 // 0x410A60
 int AbstractTypeClass::LoadFromINI(AbstractTypeClass * aP1)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   CCINIClass *v3; // edi
   char Destination[48]; // [esp+Ch] [ebp-434h] BYREF
@@ -160,7 +155,6 @@ int AbstractTypeClass::LoadFromINI(AbstractTypeClass * aP1)
   else
     this->UIName = &DataGlobal_87F8E4[32336]; /*0x410b69*/
   return 1; /*0x410b57*/
-}
 }
 
 // 0x410C30

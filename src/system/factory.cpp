@@ -25,7 +25,6 @@ void FactoryClass::calculateChecksum(void* checksum) const {}
 // owner fix 2026-09-10: FactoryClass (not BuildingClass) — YRpp layout owner@0x6C/object@0x58 tri-mapped
 // 0x4c9ff0
 HouseClass * * FactoryClass::AbandonProduction() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
 {
   #72 *v7; // eax
   #375 *v8; // ecx
@@ -193,6 +192,5 @@ pop     esi
 add     esp, 0Ch
 retn
 */
-}
 
 } // namespace gamemd
