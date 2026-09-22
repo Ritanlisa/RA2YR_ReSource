@@ -40,8 +40,6 @@ void WalkLocomotion::MoveTo(IUnknown * aP1, int aP3)
             aP3 = v9[2]; /*0x6a0223*/
             if ( this->q05C < v5 ) /*0x6a022c*/
             {
-  int v21; // [esp+20h] [ebp-4h]
-  int v20; // [esp+1Ch] [ebp-8h]
               int v10 = v9[1]; /*0x6a0234*/
   _DWORD v18[2]; // [esp+10h] [ebp-14h] BYREF
               v18[0] = *v9; /*0x6a0237*/
@@ -59,8 +57,8 @@ void WalkLocomotion::MoveTo(IUnknown * aP1, int aP3)
                 int v13 = (*(int (__thiscall **)(_DWORD))(*this->q00C + 464))(this->q00C); /*0x6a0263*/
                 int v14 = this->q00C; /*0x6a0269*/
                 v19 = v11; /*0x6a026c*/
-                v20 = v12; /*0x6a0270*/
-                v21 = v13; /*0x6a0274*/
+                int v20 = v12; /*0x6a0270*/
+                int v21 = v13; /*0x6a0274*/
                 (*(void (__thiscall **)(int, int *))(*(_DWORD *)v14 + 244))(v14, &v19); /*0x6a027f*/
                 LOBYTE(v5) = (*(char (__thiscall **)(_DWORD, IUnknown *))(*this->q00C + 244))( /*0x6a028f*/
                                this->q00C,

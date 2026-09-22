@@ -4654,7 +4654,6 @@ void TClassFactory_UnitClass::GetClassName()
 int TClassFactory_UnitClass::ddtor(int *a2, int a3)
 {
     int v1 = a2[1];
-    int v2;
     if ( a3 )
         v2 = v1 + 1;
     else
@@ -4662,6 +4661,7 @@ int TClassFactory_UnitClass::ddtor(int *a2, int a3)
     a2[1] = v2;
     return 0;
 }
+    int v2;
 
 // 0x6c3490
 void TClassFactory_UnitClass::GetSize()

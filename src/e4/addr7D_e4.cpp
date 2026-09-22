@@ -8617,14 +8617,14 @@ void _handle_exc(char a1, double * a2, short a3)
   }
   if ( (a1 & 4) != 0 && (a3 & 4) != 0 ) /*0x7db971*/
   {
-  double v7; // st7
-  double *v5; // ecx
     _set_statfp(4); /*0x7db975*/
     v3 = a1 & 0x1B; /*0x7db97b*/
     goto LABEL_46; /*0x7db97e*/
   }
   if ( (a1 & 1) != 0 && (a3 & 8) != 0 ) /*0x7db98f*/
   {
+  double *v5; // ecx
+  double v7; // st7
     _set_statfp(8); /*0x7db997*/
     int v4 = a3 & 0xC00; /*0x7db9a5*/
     if ( (a3 & 0xC00) != 0 ) /*0x7db9a7*/

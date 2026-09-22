@@ -298,14 +298,7 @@ void AnimTypeClass::LoadFromINI(unsigned char *** a2)
   int ebp62; // ebp
   AnimTypeClass *v49; // eax
   WarheadTypeClass *v54; // eax
-  char v55; // al
-  bool v56; // cl
-  char v57; // al
-  int *v58; // eax
-  int v59; // ecx
-  int v60; // edi
   int eax77; // eax
-  int v62; // eax
   RandomStruct *v61; // eax
   RandomStruct *v65; // [esp-Ch] [ebp-C4h]
   RandomStruct *v64; // [esp-Ch] [ebp-C4h]
@@ -313,7 +306,6 @@ void AnimTypeClass::LoadFromINI(unsigned char *** a2)
   RandomStruct *v66; // [esp-Ch] [ebp-C4h]
   RandomStruct *v67; // [esp-Ch] [ebp-C4h]
   char _FFFFFFF4b; // [esp-Ch] [ebp-C4h]
-  bool v71; // [esp-Ch] [ebp-C4h]
   ObjectClass *v70; // [esp+8h] [ebp-B0h] BYREF
   int aP4_4; // [esp+Ch] [ebp-ACh]
   RandomStruct aP1; // [esp+10h] [ebp-A8h] BYREF
@@ -822,15 +814,16 @@ LABEL_70:
                              (unsigned __int8 *)(this + 36),
                              &unk_8183AC,
                              _FFFFFFF4b);
+  char v55; // al
   v55 = INIClass::ReadBool_Overwrite(
           (int)a2,
           (unsigned __int8 *)(this + 36),
           (CCINIClass *)&aP3.unknown50,
           this->Tiled);
-  v56 = this->ShouldUseCellDrawer;
+  bool v56 = this->ShouldUseCellDrawer;
   this->Tiled = v55;
-  v57 = INIClass::ReadBool_Overwrite((int)a2, (unsigned __int8 *)(this + 36), (CCINIClass *)&aP3.INIClass_field_3C, v56);
-  v71 = this->UseNormalLight;
+  char v57 = INIClass::ReadBool_Overwrite((int)a2, (unsigned __int8 *)(this + 36), (CCINIClass *)&aP3.INIClass_field_3C, v56);
+  bool v71 = this->UseNormalLight;
   this->ShouldUseCellDrawer = v57;
   this->UseNormalLight = INIClass::ReadBool_Overwrite(
                              (int)a2,
@@ -854,9 +847,9 @@ LABEL_70:
                               this->NumParticles);
   v70 = (ObjectClass *)-1;
   aP4_4 = -1;
-  v58 = INIClass::ReadPoint2D_Overwrite(a2, &aP1, (INIClass *)(this + 36), &aP3, (RandomStruct *)&v70);
-  v59 = *v58;
-  v60 = v58[1];
+  int * v58 = INIClass::ReadPoint2D_Overwrite(a2, &aP1, (INIClass *)(this + 36), &aP3, (RandomStruct *)&v70);
+  int v59 = *v58;
+  int v60 = v58[1];
   if ( *v58 != -1 )
   {
     if ( v59 <= 0 )
@@ -868,7 +861,7 @@ LABEL_70:
   if ( v60 != -1 )
   {
     if ( v60 <= 0 )
-      v62 = 0;
+      int v62 = 0;
     else
       v62 = 900 / v60;
     this->RandomRate.Max = v62;

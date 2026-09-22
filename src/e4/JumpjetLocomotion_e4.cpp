@@ -40,8 +40,6 @@ void JumpjetLocomotion::MoveTo(IUnknown * aP1, int aP3)
             aP3 = v9[2]; /*0x4b0b53*/
             if ( this->q05C < v5 ) /*0x4b0b5c*/
             {
-  int v21; // [esp+20h] [ebp-4h]
-  int v20; // [esp+1Ch] [ebp-8h]
               int v10 = v9[1]; /*0x4b0b64*/
   _DWORD v18[2]; // [esp+10h] [ebp-14h] BYREF
               v18[0] = *v9; /*0x4b0b67*/
@@ -59,8 +57,8 @@ void JumpjetLocomotion::MoveTo(IUnknown * aP1, int aP3)
                 int v13 = (*(int (__thiscall **)(_DWORD))(*this->q00C + 464))(this->q00C); /*0x4b0b93*/
                 int v14 = this->q00C; /*0x4b0b99*/
                 v19 = v11; /*0x4b0b9c*/
-                v20 = v12; /*0x4b0ba0*/
-                v21 = v13; /*0x4b0ba4*/
+                int v20 = v12; /*0x4b0ba0*/
+                int v21 = v13; /*0x4b0ba4*/
                 (*(void (__thiscall **)(int, int *))(*(_DWORD *)v14 + 244))(v14, &v19); /*0x4b0baf*/
                 LOBYTE(v5) = (*(char (__thiscall **)(_DWORD, IUnknown *))(*this->q00C + 244))( /*0x4b0bbf*/
                                this->q00C,

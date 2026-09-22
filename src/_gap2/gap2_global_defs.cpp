@@ -912,13 +912,13 @@ namespace gamemd { int Gap2Recv_41AF80::SaveAircraftToINI() {
                           *(__int16 *)(v11 + 2));
       HealthRatio = BuildingClass::GetHealthRatio((int *)v2); /*0x41b0a3*/
       int v13 = Math::RoundToInt(HealthRatio * 256.0); /*0x41b0ae*/
-  int v15; // [esp-28h] [ebp-D4h]
-  int v16; // [esp-24h] [ebp-D0h]
   const char *v17; // [esp-20h] [ebp-CCh]
   const char *v18; // [esp-1Ch] [ebp-C8h]
   int v19; // [esp-18h] [ebp-C4h]
   int v20; // [esp-14h] [ebp-C0h]
   int v21; // [esp-10h] [ebp-BCh]
+  int v15; // [esp-28h] [ebp-D4h]
+  int v16; // [esp-24h] [ebp-D0h]
       sprintf(Source, stru_817F40, v7, v6, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22); /*0x41b0c0*/
       INIClass::SetString(this, (unsigned __int8 *)stru_817460, Buffer, Source); /*0x41b0dc*/
       result = i; /*0x41b0e1*/

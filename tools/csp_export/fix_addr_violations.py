@@ -18,6 +18,7 @@ vocabulary and are NOT touched.
 
 Usage: python tools/csp_export/fix_addr_violations.py [--workers 6]
 """
+from _blockspan import block_span, find_marker
 import json, re, subprocess, sys, time
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor
@@ -146,18 +147,11 @@ def process_file(rel):
         if lines[i].rstrip('\r') != INSIDE:
             i += 1
             continue
-        depth, started, k = 0, False, i
-        while k < len(lines):
-            if '{' in lines[k]:
-                started = True
-            if started:
-                depth += lines[k].count('{') - lines[k].count('}')
-                if depth <= 0:
-                    break
-            k += 1
-        if not started or depth > 0:
+        _, close = block_span(lines, i)
+        if close < 0:
             i += 1
             continue
+        k = close
         cls = None
         for j in range(i - 1, max(i - 8, -1), -1):
             ln = lines[j].strip()

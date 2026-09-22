@@ -34,6 +34,10 @@ MEMBER_LOOKUP = PROJECT_ROOT / "tools" / "member_lookup.json"
 STATE_FILE = PROJECT_ROOT / ".omo" / "mcp_translate_state.json"
 BUILD_LOG = PROJECT_ROOT / ".omo" / "mcp_build.log"
 
+import sys as _sys, pathlib as _pathlib
+if str(_pathlib.Path(__file__).resolve().parent) not in _sys.path:
+    _sys.path.insert(0, str(_pathlib.Path(__file__).resolve().parent))
+from csp_export._blockspan import block_span, find_marker, skip_pending
 INSIDE_MARKER = "// [IDA decompile] original pseudocode - translation pending (final goal)"
 IDA_MCP_URL = "http://127.0.0.1:13337/mcp"
 MSBUILD = (r"C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools"
@@ -157,21 +161,10 @@ def _enclosing_function(lines, marker_idx, rel):
 
 
 def _pseudocode_span(lines, marker_idx):
-    depth = 0
-    started = False
-    for k in range(marker_idx + 1, min(len(lines), marker_idx + 5000)):
-        if "{" in lines[k]:
-            started = True
-        if started:
-            depth += lines[k].count("{") - lines[k].count("}")
-            if depth <= 0:
-                return k - marker_idx + 1
-    return 0
+    # generic v2 span: marker inside function body, depth starts at 1
+    _, close = block_span(lines, marker_idx)
+    return close - marker_idx + 1 if close > 0 else 0
 
-
-# ============================================================================
-# data sources
-# ============================================================================
 def snapshot_index():
     global _snapshot_index
     if _snapshot_index is None:
@@ -531,18 +524,7 @@ def audit_access(rel_path=None):
         i = 0
         while i < len(lines):
             if lines[i].rstrip("\r") == INSIDE_MARKER:
-                depth = 0
-                started = False
-                k = i + 1
-                while k < len(lines):
-                    if "{" in lines[k]:
-                        started = True
-                    if started:
-                        depth += lines[k].count("{") - lines[k].count("}")
-                        if depth <= 0:
-                            break
-                    k += 1
-                i = k + 1
+                i = skip_pending(lines, i)
                 continue
             for pat, label in AUDIT_PATTERNS:
                 if re.search(pat, lines[i].split("//")[0]):
@@ -802,12 +784,8 @@ def annotate_function(target, addr=None):
 def replace_pseudocode(entry, new_body, dry_run):
     p = PROJECT_ROOT / entry["file"]
     lines = _read_latin1(p).split("\n")
-    marker_idx = None
-    for i in range(entry["line"] - 1, min(entry["line"] + 40, len(lines))):
-        if lines[i].rstrip("\r") == INSIDE_MARKER:
-            marker_idx = i
-            break
-    if marker_idx is None:
+    marker_idx = find_marker(lines, entry["line"] - 1)
+    if marker_idx < 0:
         return {"ok": False, "error": "marker not found near function"}
     # guard (#146): the block's own annotation must name the entry's address —
     # a stale index must never steer a body write into a neighbouring function
@@ -823,19 +801,10 @@ def replace_pseudocode(entry, new_body, dry_run):
                     "error": "annotation mismatch: block at // 0x%X but "
                              "target is %s (stale index? re-resolve)"
                              % (ann, want)}
-    depth = 0
-    started = False
-    end = marker_idx
-    for k in range(marker_idx + 1, len(lines)):
-        if "{" in lines[k]:
-            started = True
-        if started:
-            depth += lines[k].count("{") - lines[k].count("}")
-            if depth <= 0:
-                end = k
-                break
-        if k > marker_idx + 5000:
-            return {"ok": False, "error": "pseudocode span not bounded"}
+    body_lo, close = block_span(lines, marker_idx)
+    if close < 0:
+        return {"ok": False, "error": "pseudocode span not bounded"}
+    end = close
     # Issue #2 guard: if new_body wrongly starts with a duplicate signature
     # line ("RetType Class::Method(...) {"), auto-strip it (and its matching
     # trailing '}') — the replacement span keeps the outer real signature, so
@@ -2012,12 +1981,8 @@ def _harvest_one(entry, ret_stmt, dry_run):
         entry = fresh
     p = PROJECT_ROOT / entry["file"]
     lines = _read_latin1(p).split("\n")
-    marker_idx = None
-    for i in range(entry["line"] - 1, min(entry["line"] + 40, len(lines))):
-        if lines[i].rstrip("\r") == INSIDE_MARKER:
-            marker_idx = i
-            break
-    if marker_idx is None:
+    marker_idx = find_marker(lines, entry["line"] - 1)
+    if marker_idx < 0:
         return {"skipped": "marker not found"}
     # guard: the block's own annotation must name the target address (#146)
     want = entry.get("address")
@@ -2032,18 +1997,10 @@ def _harvest_one(entry, ret_stmt, dry_run):
         if want_i is not None and ann != want_i:
             return {"skipped": "annotation mismatch: block is 0x%X, "
                                "target is %s" % (ann, want)}
-    depth = started = 0
-    end = marker_idx
-    for k in range(marker_idx + 1, len(lines)):
-        if "{" in lines[k]:
-            started = 1
-        if started:
-            depth += lines[k].count("{") - lines[k].count("}")
-            if depth <= 0:
-                end = k
-                break
-    if not started or depth > 0:
+    body_lo, close = block_span(lines, marker_idx)
+    if close < 0:
         return {"skipped": "pseudocode span unbounded"}
+    end = close
     if dry_run:
         return {"verdict": "DRY", "body": ret_stmt,
                 "would_replace_lines": [entry["line"], end + 1]}

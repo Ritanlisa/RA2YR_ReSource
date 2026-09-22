@@ -574,9 +574,9 @@ void RenderScoreboardSidebar()
                       25);
     v27 = *(IUnknown **)&stru_87C374[44940]; /*0x654057*/
     StringCSF = GetStringCSF((wchar_t *)&stru_830620[36184], 0, &stru_830620[36200], 1268); /*0x654069*/
+  int a0; // [esp+30h] [ebp-98h] BYREF
   int v33; // [esp+8h] [ebp-C0h]
   int v38; // [esp+10h] [ebp-B8h]
-  int a0; // [esp+30h] [ebp-98h] BYREF
     TextRenderer::DrawText(&a0, (size_t)StringCSF, v27, v30, v33, v35, v38, (int)v41); /*0x654074*/
     int v10 = a1[1150]; /*0x654079*/
     int v11 = a1[1148]; /*0x65407f*/

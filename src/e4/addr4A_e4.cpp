@@ -2426,9 +2426,9 @@ void E4Recv_4AF2A0::BlitterDrawSHP()
   v7 = (XSurface *)SHPFrame; /*0x4af308*/
   char v9[16]; // [esp+18h] [ebp-10h] BYREF
   int v5 = (*(int (__thiscall **)(XSurface *, char *))(*(_DWORD *)aP3->__pad_0 + 120))(aP3, v9); /*0x4af313*/
-  int v18; // [esp+4Ch] [ebp+24h]
   int v19; // [esp+50h] [ebp+28h]
   int v20; // [esp+54h] [ebp+2Ch]
+  int v18; // [esp+4Ch] [ebp+24h]
   return BlitterCopySHP((XSurface *)this, aP1, &aP2, aP3, v5, aP5, v7, aP7, aP8, v18, v19, v20); /*0x4af328*/
 }
 }

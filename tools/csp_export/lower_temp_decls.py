@@ -12,6 +12,9 @@ Blocks are processed back-to-front so line shifts stay local. Idempotent.
 import re
 from pathlib import Path
 from collections import defaultdict
+import sys as _sys, pathlib as _pathlib
+_sys.path.insert(0, str(_pathlib.Path(__file__).resolve().parent))
+from _blockspan import block_span, find_marker
 
 ROOT = Path(__file__).resolve().parents[2]
 SRC = ROOT / 'src'
@@ -67,6 +70,10 @@ def lower_block(lines, lo, hi):
         uses = [t for t in range(j + 1, len(seg)) if use_re.search(seg[t])]
         if not uses:
             continue
+        if uses[0] - j <= 2 and all(not seg[t].strip()
+                for t in range(j + 1, uses[0])):
+            skipped += 1  # already placed (idempotency)
+            continue
         cp = list(paths[uses[0]])
         for t in uses[1:]:
             k = 0
@@ -111,20 +118,12 @@ def main():
             if lines[i].rstrip('\r') != INSIDE:
                 i += 1
                 continue
-            depth, started, k = 0, False, i
-            while k < len(lines):
-                if '{' in lines[k]:
-                    started = True
-                if started:
-                    depth += lines[k].count('{') - lines[k].count('}')
-                    if depth <= 0:
-                        break
-                k += 1
-            if not started or depth > 0:
-                i = k + 1
+            _, close = block_span(lines, i)
+            if close < 0:
+                i += 1
                 continue
-            spans.append((i + 1, k - 1))
-            i = k + 1
+            spans.append((i + 1, close - 1))
+            i = close + 1
         if not spans:
             continue
         changed = False

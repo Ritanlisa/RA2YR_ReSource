@@ -1903,9 +1903,9 @@ void BuildingClass::Size()
   int SizeMax; // ebp
   int result; // eax
 
-  int v8; // [esp+3Ch] [ebp+8h]
   int v9; // [esp+40h] [ebp+Ch] BYREF
   _DWORD *v7; // [esp+38h] [ebp+4h]
+  int v8; // [esp+3Ch] [ebp+8h]
   SizeMax = IPersistStream::GetSizeMax((int)v7, v8, v9);
   if ( SizeMax < 0 )
     return SizeMax;
@@ -20050,9 +20050,9 @@ void BuildingClass::IronCurtain()
     this->q52C = v3;
     this->ammoReloadTimer = 0;
   }
+  char v6; // [esp+18h] [ebp+Ch]
   int v4; // [esp+10h] [ebp+4h]
   int v5; // [esp+14h] [ebp+8h]
-  char v6; // [esp+18h] [ebp+Ch]
   return TechnoClass::IronCurtain(v4, v5, v6);
 }
 

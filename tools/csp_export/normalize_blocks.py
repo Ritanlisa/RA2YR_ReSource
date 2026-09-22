@@ -22,6 +22,9 @@ Idempotent; deterministic; reports totals.
 import json, re
 from pathlib import Path
 from collections import defaultdict
+import sys as _sys, pathlib as _pathlib
+_sys.path.insert(0, str(_pathlib.Path(__file__).resolve().parent))
+from _blockspan import block_span, find_marker
 
 ROOT = Path(__file__).resolve().parents[2]
 SRC = ROOT / 'src'
@@ -238,7 +241,12 @@ def normalize(body, cls, addr):
 
         def sigfix(m):
             ret, cc, cls2, name, params = m.groups()
-            newret = (cr or ret) if cr else ret
+            value_ret = bool(re.search(
+                r'return\s+[^;\s]', body))
+            if cr and cr.strip() == 'void' and value_ret:
+                newret = ret  # unsound: body returns values
+            else:
+                newret = cr or ret
             if cls2:
                 ps = [s.strip() for s in params.split(',') if s.strip()]
                 ps = [s for s in ps
@@ -271,20 +279,12 @@ for p in sorted(SRC.rglob('*.cpp')):
         if lines[i].rstrip('\r') != INSIDE:
             i += 1
             continue
-        depth, started, k = 0, False, i
-        while k < len(lines):
-            if '{' in lines[k]:
-                started = True
-            if started:
-                depth += lines[k].count('{') - lines[k].count('}')
-                if depth <= 0:
-                    break
-            k += 1
-        if not started or depth > 0:
-            i = k + 1
+        _, close = block_span(lines, i)
+        if close < 0:
+            i += 1
             continue
-        spans.append((i, k))
-        i = k + 1
+        spans.append((i, close))
+        i = close + 1
     if not spans:
         continue
     changed = False
@@ -351,16 +351,35 @@ for p in sorted(SRC.rglob('*.cpp')):
         if drop >= 0 or drop == -2:
             lines[lo + 1:hi] = seg_lines
             changed = True
+        # outer def soundness: a void return with value-returning body is
+        # unsound -- the body wins (generic value type int)
+        body_lo = lo + 1
+        seg_txt = chr(10).join(lines[body_lo:hi])
+        for j in range(lo - 1, max(lo - 8, -1), -1):
+            s = lines[j].strip()
+            if s.startswith('//') or not s or s in ('{', '}'):
+                continue
+            vm2 = re.match(r'^void\s+\w+::', s)
+            if vm2 and re.search(r'return\s+[^;\s]', seg_txt):
+                rest = s[4:].lstrip()
+                pre = lines[j][:len(lines[j]) - len(lines[j].lstrip())]
+                lines[j] = pre + 'int ' + rest
+                tot['void_to_int'] = tot.get('void_to_int', 0) + 1
+                changed = True
+            break
         # outer def return type <- canon (when anchored and different)
         if addr and addr in canon_ret:
             cret = canon_ret[addr]
+            seg_txt2 = chr(10).join(lines[body_lo:hi])
+            if cret.strip() == 'void' and re.search(r'return\s+[^;\s]', seg_txt2):
+                cret = None  # unsound: body returns values
             for j in range(lo - 1, max(lo - 8, -1), -1):
                 s = lines[j].strip()
                 if s.startswith('//') or not s or s in ('{', '}'):
                     continue
                 od = re.match(r'^([A-Za-z_][\w:]*)\s+(\*?\s*~?[A-Za-z_]\w*'
                               r'(?:\s*::)?\s*~?\w*\s*\()', s)
-                if od and od.group(1) != cret:
+                if od and cret is not None and od.group(1) != cret:
                     rest = s[len(od.group(1)):].lstrip()
                     pre = lines[j][:len(lines[j]) - len(lines[j].lstrip())]
                     lines[j] = pre + cret + ' ' + rest
