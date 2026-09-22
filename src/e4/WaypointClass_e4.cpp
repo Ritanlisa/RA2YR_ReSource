@@ -53,7 +53,7 @@ LABEL_13:
     v16 = v4; /*0x502225*/
     if ( v4 >= 12 ) /*0x502229*/
     {
-      v13 = *(this + 131); /*0x502233*/
+      v13 = this->q083; /*0x502233*/
       if ( !*(this + v13 + 132) ) /*0x502239*/
       {
         v14 = __2_YAPAXI_Z(0x40u); /*0x502246*/
@@ -63,7 +63,7 @@ LABEL_13:
           v15 = 0; /*0x50225c*/
         *(this + v13 + 132) = v15; /*0x50225e*/
       }
-      return WaypointClass_Find((_DWORD *)*(this + *(this + 131) + 132), a2); /*0x502277*/
+      return WaypointClass_Find((_DWORD *)*(this + this->q083 + 132), a2); /*0x502277*/
     }
   }
   while ( 1 ) /*0x5021cf*/
@@ -74,7 +74,7 @@ LABEL_13:
     if ( (unsigned __int16)(v10 / 256) == (_WORD)v3 && (_WORD)v11 == v18 ) /*0x5021ff*/
     {
       result = v16; /*0x502205*/
-      if ( v16 != *(this + 131) ) /*0x50220f*/
+      if ( v16 != this->q083 ) /*0x50220f*/
         return result; /*0x50227c*/
     }
     v7 = (_DWORD *)*v2; /*0x502211*/

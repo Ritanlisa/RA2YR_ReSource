@@ -69,39 +69,39 @@ _DWORD *__thiscall WeaponTypeClass::Constructor(_DWORD *this, ObjectClass *aP1)
   WeaponTypeClass *v3; // eax
 
   AbstractTypeClass::Constructor((int)this, (AbstractClass *)aP1); /*0x771c7a*/
-  *(this + 38) = 0; /*0x771c87*/
-  *(this + 39) = 1; /*0x771c8d*/
-  *(this + 40) = 0; /*0x771c97*/
-  *(this + 41) = 0; /*0x771c9d*/
-  *(this + 42) = 0; /*0x771ca3*/
-  *(this + 43) = 0; /*0x771ca9*/
-  *(this + 44) = 0; /*0x771caf*/
-  *(this + 45) = 0; /*0x771cb6*/
-  *(this + 46) = 0; /*0x771cbf*/
+  this->AmbientDamage = 0; /*0x771c87*/
+  this->Burst = 1; /*0x771c8d*/
+  this->Projectile = 0; /*0x771c97*/
+  this->Damage = 0; /*0x771c9d*/
+  this->Speed = 0; /*0x771ca3*/
+  this->Warhead = 0; /*0x771ca9*/
+  this->ROF = 0; /*0x771caf*/
+  this->Range = 0; /*0x771cb6*/
+  this->MinimumRange = 0; /*0x771cbf*/
   VectorClass::Construct(this + 47, 0, 0); /*0x771cc5*/
-  *(this + 52) = 10; /*0x771cca*/
-  *(this + 51) = 0; /*0x771cd1*/
-  *(this + 47) = &vt_TypeList_int; /*0x771cd4*/
+  this->AttachedParticleSystem = 10; /*0x771cca*/
+  this->OpenToppedAnim = 0; /*0x771cd1*/
+  this->Report = &vt_TypeList_int; /*0x771cd4*/
   VectorClass::Construct(this + 54, 0, 0); /*0x771ce4*/
-  *(this + 59) = 10; /*0x771ce9*/
-  *(this + 58) = 0; /*0x771cf0*/
-  *(this + 54) = &vt_TypeList_int; /*0x771cf3*/
+  this->TerrainFire = 10; /*0x771ce9*/
+  this->CellRangefinding = 0; /*0x771cf0*/
+  this->q0D8 = &vt_TypeList_int; /*0x771cf3*/
   AnimTypeVector::Constructor(this + 61, 0, 0); /*0x771d03*/
-  *(this + 66) = 10; /*0x771d08*/
-  *(this + 65) = 0; /*0x771d0f*/
-  *(this + 61) = &vt_TypeList_AnimTypeClass_const; /*0x771d12*/
-  *(this + 68) = 0; /*0x771d18*/
-  *(this + 69) = 0; /*0x771d1e*/
-  *(this + 70) = 0; /*0x771d24*/
-  *(this + 71) = 0; /*0x771d2a*/
-  *((_BYTE *)this + 288) = 0; /*0x771d30*/
+  this->IsRadBeam = 10; /*0x771d08*/
+  this->AreaFire = 0; /*0x771d0f*/
+  this->q0F4 = &vt_TypeList_AnimTypeClass_const; /*0x771d12*/
+  this->q110 = 0; /*0x771d18*/
+  this->q114 = 0; /*0x771d1e*/
+  this->q118 = 0; /*0x771d24*/
+  this->q11C = 0; /*0x771d2a*/
+  this->q120 = 0; /*0x771d30*/
   *((_BYTE *)this + 289) = 0; /*0x771d36*/
-  *((_BYTE *)this + 290) = 0; /*0x771d3c*/
-  *((_BYTE *)this + 291) = 0; /*0x771d42*/
-  *(this + 73) = 0; /*0x771d48*/
-  *(this + 74) = 0; /*0x771d60*/
-  *(this + 75) = 0; /*0x771d78*/
-  *(this + 76) = 0x1000000; /*0x771d90*/
+  this->q488 = 0; /*0x771d3c*/
+  this->q48C = 0; /*0x771d42*/
+  this->q124 = 0; /*0x771d48*/
+  this->q128 = 0; /*0x771d60*/
+  this->q12C = 0; /*0x771d78*/
+  this->q130 = 0x1000000; /*0x771d90*/
   this->CellRangefinding = 0; /*0x771da9*/
   this->FireOnce = 0; /*0x771daf*/
   this->NeverUse = 0; /*0x771db5*/
@@ -110,7 +110,7 @@ _DWORD *__thiscall WeaponTypeClass::Constructor(_DWORD *this, ObjectClass *aP1)
   this->SabotageCursor = 0; /*0x771dc8*/
   this->MigAttackCursor = 0; /*0x771dce*/
   this->DisguiseFireOnly = 0; /*0x771dd4*/
-  *(this + 79) = 0; /*0x771dda*/
+  this->q13C = 0; /*0x771dda*/
   this->InfiniteMindControl = 0; /*0x771de0*/
   this->FireWhileMoving = 1; /*0x771de6*/
   this->DrainWeapon = 0; /*0x771ded*/
@@ -133,12 +133,12 @@ _DWORD *__thiscall WeaponTypeClass::Constructor(_DWORD *this, ObjectClass *aP1)
   this->IsAlternateColor = 0; /*0x771e59*/
   this->IsRadBeam = 0; /*0x771e5f*/
   this->IsRadEruption = 0; /*0x771e65*/
-  *(this + 86) = 0; /*0x771e6b*/
+  this->q158 = 0; /*0x771e6b*/
   this->IsMagBeam = 0; /*0x771e71*/
   *this = &WeaponTypeClass::`vftable'; /*0x771e77*/
-  *(this + 1) = &WeaponTypeClass::`vftable'; /*0x771e7d*/
-  *(this + 2) = &WeaponTypeClass::`vftable'; /*0x771e83*/
-  *(this + 3) = &vt_WeaponTypeClass; /*0x771e8a*/
+  this->vtable2 = &WeaponTypeClass::`vftable'; /*0x771e7d*/
+  this->vtable3 = &WeaponTypeClass::`vftable'; /*0x771e83*/
+  this->vtable4 = &vt_WeaponTypeClass; /*0x771e8a*/
   AbstractClass::GenerateUniqueID((int)(this + 1)); /*0x771e91*/
   if ( *(int *)&stru_87C374.__pad_579C[23144] < *(int *)&stru_87C374.__pad_579C[23136] /*0x771eca*/
     || (stru_87C374.__pad_579C[23141] || !*(_DWORD *)&stru_87C374.__pad_579C[23136])

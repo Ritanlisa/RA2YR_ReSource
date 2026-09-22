@@ -20,7 +20,7 @@ int *__thiscall MSVQAnim::vt_06_(_DWORD *this, int *a2)
     MEMORY[0xABFBAC] = 0; /*0x5cd2c3*/
     atexit(nullsub_190); /*0x5cd2c9*/
   }
-  v3 = *(this + 7); /*0x5cd2d1*/
+  v3 = this->q01C; /*0x5cd2d1*/
   v4 = (int *)(v3 + 52); /*0x5cd2d6*/
   if ( !v3 ) /*0x5cd2d9*/
     v4 = &MEMORY[0xABFBA0]; /*0x5cd2db*/

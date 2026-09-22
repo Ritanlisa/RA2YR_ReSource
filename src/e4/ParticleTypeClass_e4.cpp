@@ -48,7 +48,7 @@ char __thiscall ParticleTypeClass::_vt02(void *this, int a2, char *a3)
   if ( a2 ) /*0x4784fe*/
   {
     v5 = a3; /*0x478504*/
-    *((_BYTE *)this + 12) = 0; /*0x478508*/
+    this->vtable4 = 0; /*0x478508*/
     if ( a3 ) /*0x47850d*/
     {
       if ( a2 - 1 >= 0 ) /*0x478546*/
@@ -92,7 +92,7 @@ char __thiscall ParticleTypeClass::_vt02(void *this, int a2, char *a3)
         v5 = 0; /*0x47853d*/
       }
     }
-    *((_BYTE *)this + 12) = 1; /*0x47855c*/
+    this->vtable4 = 1; /*0x47855c*/
     if ( !v5 ) /*0x478560*/
       return 0; /*0x4785e2*/
     if ( this->ParticleTypeClass_field_28C ) /*0x478562*/
@@ -115,7 +115,7 @@ char __thiscall ParticleTypeClass::_vt02(void *this, int a2, char *a3)
         while ( v11 ); /*0x478590*/
         v3 = a2; /*0x478592*/
       }
-      if ( *((_BYTE *)this + 13) ) /*0x478598*/
+      if ( this->ParticleTypeClass_field_2BC ) /*0x478598*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x4785a1*/
         this->ParticleTypeClass_field_28C = 0; /*0x4785a9*/
@@ -123,11 +123,11 @@ char __thiscall ParticleTypeClass::_vt02(void *this, int a2, char *a3)
     }
     this->ParticleTypeClass_field_28C = v5; /*0x4785b4*/
     this->BehavesLike = v3; /*0x4785ba*/
-    *((_BYTE *)this + 13) = a3 == 0; /*0x4785bd*/
+    this->ParticleTypeClass_field_2BC = a3 == 0; /*0x4785bd*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x4785c6*/
+    (*(void (__thiscall **)(void *))(this->vtable4)(this); /*0x4785c6*/
   }
   v15 = this->BehavesLike; /*0x4785c9*/
   if ( v15 < this->ParticleTypeClass_field_0x10 ) /*0x4785d1*/
@@ -158,11 +158,11 @@ _DWORD *__thiscall sub_4788E0(_DWORD *this, _DWORD *a2)
     return this; /*0x4788ec*/
   (*(void (__thiscall **)(_DWORD *))(*this + 12))(this); /*0x4788f4*/
   v3 = a2[2]; /*0x4788f7*/
-  *(this + 2) = v3; /*0x4788fe*/
+  this->vtable3 = v3; /*0x4788fe*/
   if ( !v3 ) /*0x478901*/
   {
-    *(this + 1) = 0; /*0x478974*/
-    *((_BYTE *)this + 13) = 0; /*0x478977*/
+    this->vtable2 = 0; /*0x478974*/
+    this->ParticleTypeClass_field_2BC = 0; /*0x478977*/
     return this; /*0x47897a*/
   }
   v4 = (char *)__2_YAPAXI_Z(3 * v3); /*0x478907*/
@@ -187,25 +187,25 @@ _DWORD *__thiscall sub_4788E0(_DWORD *this, _DWORD *a2)
   {
     v4 = 0; /*0x47892e*/
   }
-  *(this + 1) = v4; /*0x478932*/
+  this->vtable2 = v4; /*0x478932*/
   if ( !v4 ) /*0x478935*/
     return this; /*0x478935*/
-  v7 = *(this + 2); /*0x478937*/
+  v7 = this->vtable3; /*0x478937*/
   v8 = 0; /*0x47893a*/
-  *((_BYTE *)this + 13) = 1; /*0x47893e*/
+  this->ParticleTypeClass_field_2BC = 1; /*0x47893e*/
   if ( v7 <= 0 ) /*0x478942*/
     return this; /*0x478942*/
   v9 = 0; /*0x478944*/
   do /*0x478969*/
   {
     v10 = a2[1] + v9; /*0x47894e*/
-    v11 = *(this + 1) + v9; /*0x478952*/
+    v11 = this->vtable2 + v9; /*0x478952*/
     ++v8; /*0x478954*/
     v9 += 3; /*0x478958*/
     *(_WORD *)v11 = *(_WORD *)v10; /*0x47895b*/
     *(_BYTE *)(v11 + 2) = *(_BYTE *)(v10 + 2); /*0x478961*/
   }
-  while ( v8 < *(this + 2) ); /*0x478969*/
+  while ( v8 < this->vtable3 ); /*0x478969*/
   return this; /*0x47896d*/
 }
 }
@@ -667,9 +667,9 @@ int __thiscall ParticleTypeClass::_vt10(_DWORD *this, int a2, int a3)
 {
   int result; // eax
 
-  result = *(this + 185); /*0x6458b0*/
+  result = this->q2E4; /*0x6458b0*/
   if ( result == a2 ) /*0x6458bc*/
-    *(this + 185) = 0; /*0x6458be*/
+    this->q2E4 = 0; /*0x6458be*/
   return result; /*0x6458c8*/
 }
 }
@@ -735,10 +735,10 @@ _DWORD *__thiscall sub_645A70(_DWORD *this, int a2, int a3)
   _BYTE *v7; // ecx
   int v8; // edx
 
-  *(this + 1) = 0; /*0x645a7d*/
-  *(this + 2) = a2; /*0x645a80*/
-  *((_BYTE *)this + 12) = 1; /*0x645a83*/
-  *((_BYTE *)this + 13) = 0; /*0x645a87*/
+  this->vtable2 = 0; /*0x645a7d*/
+  this->vtable3 = a2; /*0x645a80*/
+  this->Translucency = 1; /*0x645a83*/
+  this->ParticleTypeClass_field_2BC = 0; /*0x645a87*/
   *this = &vt_VectorClass_RGBClass; /*0x645a8a*/
   if ( a2 ) /*0x645a90*/
   {
@@ -758,7 +758,7 @@ _DWORD *__thiscall sub_645A70(_DWORD *this, int a2, int a3)
         }
         while ( v5 ); /*0x645ab1*/
       }
-      *(this + 1) = a3; /*0x645ab3*/
+      this->vtable2 = a3; /*0x645ab3*/
     }
     else
     {
@@ -784,13 +784,13 @@ _DWORD *__thiscall sub_645A70(_DWORD *this, int a2, int a3)
       {
         v6 = 0; /*0x645ae3*/
       }
-      *(this + 1) = v6; /*0x645ae5*/
-      *((_BYTE *)this + 13) = 1; /*0x645ae8*/
+      this->vtable2 = v6; /*0x645ae5*/
+      this->ParticleTypeClass_field_2BC = 1; /*0x645ae8*/
     }
   }
   *this = &vt_DynamicVectorClass_RGBClass; /*0x645aec*/
-  *(this + 5) = 10; /*0x645af2*/
-  *(this + 4) = 0; /*0x645af9*/
+  this->Damage = 10; /*0x645af2*/
+  this->q010 = 0; /*0x645af9*/
   return this; /*0x645afe*/
 }
 }

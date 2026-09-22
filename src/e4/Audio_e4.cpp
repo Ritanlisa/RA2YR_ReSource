@@ -98,37 +98,37 @@ int __thiscall sub_4054A0(int *this)
   int v7; // edx
   int v8; // eax
 
-  v2 = (_DWORD *)*(this + 44); /*0x4054a4*/
+  v2 = (_DWORD *)this->q02C; /*0x4054a4*/
   if ( this != (int *)v2[48] ) /*0x4054b0*/
     return 0; /*0x4054b3*/
   AudioFile::GetCallback(v2); /*0x4054b7*/
   v4 = (_DWORD *)*(this + 82); /*0x4054bc*/
-  v5 = *(this + 6); /*0x4054c2*/
+  v5 = this->q006; /*0x4054c2*/
   LOBYTE(v5) = v5 | 8; /*0x4054c5*/
-  *(this + 6) = v5; /*0x4054c7*/
-  BindChannelAudioStream((_DWORD *)*(this + 44), v4); /*0x4054d2*/
-  EndBufferMixer((int *)(*(this + 44) + 56), *(this + 83)); /*0x4054e6*/
+  this->q006 = v5; /*0x4054c7*/
+  BindChannelAudioStream((_DWORD *)this->q02C, v4); /*0x4054d2*/
+  EndBufferMixer((int *)(this->q02C + 56), *(this + 83)); /*0x4054e6*/
   v6 = *(this + 84); /*0x4054eb*/
   v7 = 0x4000; /*0x4054f1*/
   if ( v6 > 0 ) /*0x4054f8*/
     v7 = 0x4000 - (v6 << 14) / 0x64u; /*0x40550e*/
-  EndBufferMixer((int *)(*(this + 44) + 16), v7); /*0x405519*/
-  *(this + 7) = 3; /*0x40551e*/
-  *(this + 6) |= 2u; /*0x40552b*/
+  EndBufferMixer((int *)(this->q02C + 16), v7); /*0x405519*/
+  this->q007 = 3; /*0x40551e*/
+  this->q006 |= 2u; /*0x40552b*/
   *(this + 82) = 0; /*0x40552e*/
-  if ( Audio::GetChannelStatus(*(this + 44)) ) /*0x40553e*/
+  if ( Audio::GetChannelStatus(this->q02C) ) /*0x40553e*/
   {
-    *(this + 7) = 1; /*0x405547*/
+    this->q007 = 1; /*0x405547*/
     *(this + 82) = (int)v4; /*0x40554e*/
-    v8 = *(this + 6); /*0x405554*/
+    v8 = this->q006; /*0x405554*/
     LOBYTE(v8) = v8 & 0xFD; /*0x405557*/
-    *(this + 6) = v8; /*0x405559*/
-    AudioStream::Stop((_DWORD *)*(this + 44)); /*0x405562*/
+    this->q006 = v8; /*0x405559*/
+    AudioStream::Stop((_DWORD *)this->q02C); /*0x405562*/
     return 0; /*0x405567*/
   }
   else
   {
-    AudioStream::Stop((_DWORD *)*(this + 44)); /*0x405572*/
+    AudioStream::Stop((_DWORD *)this->q02C); /*0x405572*/
     return 1; /*0x405577*/
   }
 }
@@ -269,12 +269,12 @@ void Audio::Release()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall Audio_Release(_DWORD *this)
 {
-  if ( !*(this + 34) ) /*0x407f43*/
+  if ( !this->q022 ) /*0x407f43*/
   {
-    if ( *(this + 5) ) /*0x407f4d*/
+    if ( this->q014 ) /*0x407f4d*/
     {
       EnterCriticalSection(&MEMORY[0x87E7F8]); /*0x407f59*/
-      Voice::Stop(*(this + 5)); /*0x407f62*/
+      Voice::Stop(this->q014); /*0x407f62*/
       LeaveCriticalSection(&MEMORY[0x87E7F8]); /*0x407f6c*/
     }
   }
@@ -289,7 +289,7 @@ int Audio::IsSoundPlaying()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall Audio_IsSoundPlaying(_DWORD *this)
 {
-  return *(this + 3) & 1; /*0x408076*/
+  return this->q00C & 1; /*0x408076*/
 }
 }
 } // namespace gamemd
@@ -301,7 +301,7 @@ int Audio::CalcRate(int a2, int a3)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall Audio_CalcRate(_DWORD *this, int a2, int a3)
 {
-  return a2 * *(this + 5) / 1000; /*0x40855b*/
+  return a2 * this->q014 / 1000; /*0x40855b*/
 }
 }
 } // namespace gamemd
@@ -313,7 +313,7 @@ int Audio::GetSampleSize()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall Audio_GetSampleSize(_DWORD *this)
 {
-  return *(this + 13) - *(this + 14); /*0x409328*/
+  return this->q034 - this->q038; /*0x409328*/
 }
 }
 } // namespace gamemd
@@ -457,8 +457,8 @@ char ** Audio::SetSoundFileName(char * Source, int a3)
 char **__thiscall sub_5D5820(char **this, char *Source, int a3)
 {
   *this = 0; /*0x5d5825*/
-  *(this + 1) = 0; /*0x5d5827*/
-  *((_BYTE *)this + 8) = 0; /*0x5d582a*/
+  this->q010 = 0; /*0x5d5827*/
+  this->q002 = 0; /*0x5d582a*/
   if ( Audio::IsSoundEnabled() ) /*0x5d582d*/
     *this = _strdup(Source); /*0x5d5843*/
   return this; /*0x5d5847*/
@@ -654,20 +654,20 @@ char __thiscall Audio_LoadWAVFiles(_DWORD *this)
       LOBYTE(IsSoundEnabled) = MEMORY[0xA8ED64]; /*0x720814*/
       if ( !MEMORY[0xA8ED64] ) /*0x72081b*/
       {
-        IsSoundEnabled = *(this + 9); /*0x720821*/
+        IsSoundEnabled = this->q009; /*0x720821*/
         for ( i = 0; i < IsSoundEnabled; ++i ) /*0x720828*/
         {
-          _makepath(Buffer, 0, 0, (const char *)(*(_DWORD *)(*(this + 6) + 4 * i) + 256), MEMORY[0x844768]); /*0x720855*/
+          _makepath(Buffer, 0, 0, (const char *)(*(_DWORD *)(this->q018 + 4 * i) + 256), MEMORY[0x844768]); /*0x720855*/
           CCFileClass::Construct(v10, Buffer); /*0x720869*/
-          v4 = 4 * i + *(this + 6); /*0x720877*/
+          v4 = 4 * i + this->q018; /*0x720877*/
           *(_BYTE *)(*(_DWORD *)v4 + 650) = CCFileClass::Open(v10, 0); /*0x720881*/
-          if ( *(_BYTE *)(*(_DWORD *)(*(this + 6) + 4 * i) + 650) ) /*0x72088d*/
+          if ( *(_BYTE *)(*(_DWORD *)(this->q018 + 4 * i) + 650) ) /*0x72088d*/
           {
             Struct::ZeroInit32(v9); /*0x72089b*/
             FileClass::Load(v10, 1); /*0x7208a6*/
             if ( ParseWaveFileHeader((int)v10, v9, v8) ) /*0x7208b8*/
             {
-              v5 = (_DWORD *)(4 * i + *(this + 6)); /*0x7208cc*/
+              v5 = (_DWORD *)(4 * i + this->q018); /*0x7208cc*/
               v6 = sub_408560(v9, v8[0]) / 0x3E8uLL; /*0x7208dc*/
               HIDWORD(v6) = *v5; /*0x7208e1*/
               v8[1] = v6; /*0x7208e4*/
@@ -679,7 +679,7 @@ char __thiscall Audio_LoadWAVFiles(_DWORD *this)
           Vector::Clear((int)v11); /*0x72090c*/
           v10[0] = (int)&off_7E1668; /*0x720915*/
           BufferIOFileClass::Dtor(v10); /*0x72091d*/
-          IsSoundEnabled = *(this + 9); /*0x720922*/
+          IsSoundEnabled = this->q009; /*0x720922*/
         }
       }
     }

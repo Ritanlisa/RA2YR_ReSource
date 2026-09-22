@@ -375,7 +375,7 @@ int __thiscall Mission::SetAndCall(int *this, IUnknown *aP1, IUnknown *aP2)
   int v3; // edx
 
   v3 = *this; /*0x5bda84*/
-  *(this + 5465) = (int)aP1; /*0x5bda8d*/
+  this->q5564 = (int)aP1; /*0x5bda8d*/
   return (*(int (__stdcall **)(IUnknown *, IUnknown *))(v3 + 76))(aP1, aP2); /*0x5bda96*/
 }
 }
@@ -525,8 +525,8 @@ int __thiscall sub_70F770(_DWORD *this)
   _DWORD *v3; // esi
   int v4; // [esp+8h] [ebp-8h]
 
-  v1 = *(this + 96); /*0x70f770*/
-  result = *(this + 98); /*0x70f779*/
+  v1 = this->q180; /*0x70f770*/
+  result = this->q188; /*0x70f779*/
   v3 = this + 96; /*0x70f783*/
   if ( v1 != -1 ) /*0x70f789*/
   {

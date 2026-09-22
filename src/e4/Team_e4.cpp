@@ -465,7 +465,7 @@ int Team::GetMember(AbstractClass * aP1)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall Team::GetMember(_DWORD *this, AbstractClass *aP1)
 {
-  return *(_DWORD *)(*(this + 57) + 4 * (_DWORD)aP1); /*0x65ad3d*/
+  return *(_DWORD *)(this->q0E4 + 4 * (_DWORD)aP1); /*0x65ad3d*/
 }
 }
 } // namespace gamemd
@@ -481,11 +481,11 @@ char __thiscall Team_AllMembersValid(int *this)
   int v2; // eax
   _DWORD *i; // ecx
 
-  v1 = *(this + 58); /*0x65ae30*/
+  v1 = this->q0E8; /*0x65ae30*/
   v2 = 0; /*0x65ae36*/
   if ( v1 <= 0 ) /*0x65ae3a*/
     return 0; /*0x65ae4f*/
-  for ( i = (_DWORD *)*(this + 57); !*i; ++i ) /*0x65ae3c*/
+  for ( i = (_DWORD *)this->q0E4; !*i; ++i ) /*0x65ae3c*/
   {
     if ( ++v2 >= v1 ) /*0x65ae4d*/
       return 0; /*0x65ae4d*/

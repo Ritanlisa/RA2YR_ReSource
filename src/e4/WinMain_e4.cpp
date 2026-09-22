@@ -207,9 +207,9 @@ int __thiscall sub_69A1F0(_DWORD *this)
   int j; // esi
   int k; // esi
 
-  for ( i = 0; i < *(this + 424); ++i ) /*0x69a200*/
+  for ( i = 0; i < this->q1A8; ++i ) /*0x69a200*/
   {
-    v3 = *(_DWORD *)(*(this + 421) + 4 * i); /*0x69a208*/
+    v3 = *(_DWORD *)(this->q1A5 + 4 * i); /*0x69a208*/
     if ( v3 ) /*0x69a20d*/
     {
       *(_DWORD *)(v3 + 420) = &vt_VectorClass_Wstring; /*0x69a215*/
@@ -226,16 +226,16 @@ int __thiscall sub_69A1F0(_DWORD *this)
       __3_YAXPAX_Z((void *)v3); /*0x69a258*/
     }
   }
-  (*(void (__thiscall **)(_DWORD *))(*(this + 420) + 12))(this + 420); /*0x69a277*/
-  for ( j = 0; j < *(this + 2633); ++j ) /*0x69a284*/
-    __3_YAXPAX_Z(*(void **)(*(this + 2630) + 4 * j)); /*0x69a290*/
-  (*(void (__thiscall **)(_DWORD *))(*(this + 2629) + 12))(this + 2629); /*0x69a2af*/
-  for ( k = 0; k < *(this + 2627); ++k ) /*0x69a2bc*/
+  (*(void (__thiscall **)(_DWORD *))(this->q1A4 + 12))(this + 420); /*0x69a277*/
+  for ( j = 0; j < this->qA49; ++j ) /*0x69a284*/
+    __3_YAXPAX_Z(*(void **)(this->qA46 + 4 * j)); /*0x69a290*/
+  (*(void (__thiscall **)(_DWORD *))(this->qA45 + 12))(this + 2629); /*0x69a2af*/
+  for ( k = 0; k < this->qA43; ++k ) /*0x69a2bc*/
   {
-    if ( *(_DWORD *)(*(this + 2624) + 4 * k) ) /*0x69a2c4*/
-      __3_YAXPAX_Z(*(void **)(*(this + 2624) + 4 * k)); /*0x69a2cc*/
+    if ( *(_DWORD *)(this->qA40 + 4 * k) ) /*0x69a2c4*/
+      __3_YAXPAX_Z(*(void **)(this->qA40 + 4 * k)); /*0x69a2cc*/
   }
-  return (*(int (__thiscall **)(_DWORD *))(*(this + 2623) + 12))(this + 2623); /*0x69a2ee*/
+  return (*(int (__thiscall **)(_DWORD *))(this->qA3F + 12))(this + 2623); /*0x69a2ee*/
 }
 }
 

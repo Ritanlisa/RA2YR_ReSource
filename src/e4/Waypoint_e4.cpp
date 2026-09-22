@@ -97,10 +97,10 @@ char __thiscall Waypoint_FindCell(int *this, _DWORD *a2)
 
   v3 = 0; /*0x763a59*/
   v7 = this; /*0x763a5b*/
-  v6 = *(this + 14); /*0x763a64*/
+  v6 = this->q038; /*0x763a64*/
   if ( v6 <= 0 ) /*0x763a68*/
     return 0; /*0x763adc*/
-  for ( i = (_DWORD *)*(this + 11); /*0x763a6e*/
+  for ( i = (_DWORD *)this->q00B; /*0x763a6e*/
         (unsigned __int16)(*i / 256) != (unsigned __int16)(*a2 / 256)
      || (unsigned __int16)(i[1] / 256) != (unsigned __int16)(a2[1] / 256);
         i += 3 )

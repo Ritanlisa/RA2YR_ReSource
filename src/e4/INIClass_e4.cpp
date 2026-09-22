@@ -200,9 +200,9 @@ unsigned int __thiscall INIClass::GetString(
   v9 = a2; /*0x528a3d*/
   if ( !a2 ) /*0x528a43*/
     return 0; /*0x528a43*/
-  if ( aP1 == (INIClass *)*(this + 1) ) /*0x528a4f*/
+  if ( aP1 == (INIClass *)this->headNode ) /*0x528a4f*/
   {
-    v10 = (unsigned __int8 *)*(this + 2); /*0x528a55*/
+    v10 = (unsigned __int8 *)this->q008; /*0x528a55*/
     goto LABEL_7; /*0x528a55*/
   }
   v26 = 0; /*0x528af3*/
@@ -213,9 +213,9 @@ unsigned int __thiscall INIClass::GetString(
                       (unsigned __int8 *)aP1,
                       (IUnknown *)strlen(aP1->__pad_0));
   aP1 = v19; /*0x528b1b*/
-  if ( !*(this + 11) ) /*0x528b1f*/
+  if ( !this->INIClass_field_2C ) /*0x528b1f*/
     goto LABEL_29; /*0x528b1f*/
-  v20 = (INIClass **)*(this + 14); /*0x528b26*/
+  v20 = (INIClass **)this->unknown38; /*0x528b26*/
   if ( v20 && *v20 == v19 ) /*0x528b2f*/
     goto LABEL_24; /*0x528b2f*/
   v21 = (unsigned __int8 **)SortedArray::BinarySearch((char **)this + 10, (CCINIClass *)&aP1); /*0x528b38*/
@@ -224,15 +224,15 @@ unsigned int __thiscall INIClass::GetString(
 LABEL_29:
     v23 = aP3; /*0x528b80*/
     v6 = aP4; /*0x528b84*/
-    *(this + 1) = 0; /*0x528b8a*/
-    *(this + 2) = 0; /*0x528b8d*/
+    this->headNode = 0; /*0x528b8a*/
+    this->q008 = 0; /*0x528b8d*/
     goto LABEL_36; /*0x528b90*/
   }
-  *(this + 14) = v21; /*0x528b41*/
+  this->unknown38 = v21; /*0x528b41*/
 LABEL_24:
   aP1 = v19; /*0x528b44*/
   if ( HashTable::BinarySearch((int)(this + 10), (ObjectClass *)&aP1) ) /*0x528b4f*/
-    v22 = *(this + 14) + 1; /*0x528b5b*/
+    v22 = this->unknown38 + 1; /*0x528b5b*/
   else
     v22 = (unsigned __int8 **)&unk_B7882C; /*0x528b60*/
   v10 = *v22; /*0x528b65*/
@@ -240,8 +240,8 @@ LABEL_24:
     goto LABEL_29; /*0x528b69*/
   v9 = a2; /*0x528b6b*/
   v6 = aP4; /*0x528b6f*/
-  *(this + 2) = (unsigned __int8 **)v10; /*0x528b73*/
-  *(this + 1) = v8; /*0x528b76*/
+  this->q008 = (unsigned __int8 **)v10; /*0x528b73*/
+  this->headNode = v8; /*0x528b76*/
 LABEL_7:
   if ( v10 ) /*0x528a5a*/
   {

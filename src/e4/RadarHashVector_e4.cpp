@@ -25,7 +25,7 @@ char __thiscall RadarHashVector::sub_658B10(void *this, int a2, char *a3)
   if ( a2 ) /*0x658b1e*/
   {
     v5 = a3; /*0x658b24*/
-    *((_BYTE *)this + 12) = 0; /*0x658b28*/
+    this->q00C = 0; /*0x658b28*/
     if ( a3 ) /*0x658b2d*/
     {
       if ( a2 - 1 >= 0 ) /*0x658b67*/
@@ -69,7 +69,7 @@ char __thiscall RadarHashVector::sub_658B10(void *this, int a2, char *a3)
         v5 = 0; /*0x658b5e*/
       }
     }
-    *((_BYTE *)this + 12) = 1; /*0x658b7d*/
+    this->q00C = 1; /*0x658b7d*/
     if ( !v5 ) /*0x658b81*/
       return 0; /*0x658c11*/
     if ( this->RadarHashVector_field_0x04 ) /*0x658b87*/
@@ -94,7 +94,7 @@ char __thiscall RadarHashVector::sub_658B10(void *this, int a2, char *a3)
         while ( v11 ); /*0x658bbf*/
         v3 = a2; /*0x658bc1*/
       }
-      if ( *((_BYTE *)this + 13) ) /*0x658bc7*/
+      if ( this->IsAllocated ) /*0x658bc7*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x658bd0*/
         this->RadarHashVector_field_0x04 = 0; /*0x658bd8*/
@@ -102,11 +102,11 @@ char __thiscall RadarHashVector::sub_658B10(void *this, int a2, char *a3)
     }
     this->RadarHashVector_field_0x04 = v5; /*0x658be3*/
     this->RadarHashVector_field_0x08 = v3; /*0x658be9*/
-    *((_BYTE *)this + 13) = a3 == 0; /*0x658bec*/
+    this->IsAllocated = a3 == 0; /*0x658bec*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x658bf5*/
+    (*(void (__thiscall **)(void *))(this->q00C)(this); /*0x658bf5*/
   }
   v15 = this->RadarHashVector_field_0x08; /*0x658bf8*/
   if ( v15 < this->RadarHashVector_field_0x10 ) /*0x658c00*/
@@ -127,10 +127,10 @@ _DWORD *__thiscall RadarHashVector::Construct(_DWORD *this, MapClass *aP1, MapCl
   _DWORD *v7; // ecx
   MapClass *v8; // edx
 
-  *(this + 1) = 0; /*0x658ded*/
-  *(this + 2) = aP1; /*0x658df0*/
-  *((_BYTE *)this + 12) = 1; /*0x658df3*/
-  *((_BYTE *)this + 13) = 0; /*0x658df7*/
+  this->q004 = 0; /*0x658ded*/
+  this->q008 = aP1; /*0x658df0*/
+  this->q030 = 1; /*0x658df3*/
+  this->IsAllocated = 0; /*0x658df7*/
   *this = &vt_VectorClass_HashObject_RadarTrackingStruct_TechnoClass; /*0x658dfa*/
   if ( aP1 ) /*0x658e00*/
   {
@@ -150,7 +150,7 @@ _DWORD *__thiscall RadarHashVector::Construct(_DWORD *this, MapClass *aP1, MapCl
         }
         while ( v5 ); /*0x658e21*/
       }
-      *(this + 1) = aP2; /*0x658e23*/
+      this->q004 = aP2; /*0x658e23*/
     }
     else
     {
@@ -176,13 +176,13 @@ _DWORD *__thiscall RadarHashVector::Construct(_DWORD *this, MapClass *aP1, MapCl
       {
         v6 = 0; /*0x658e55*/
       }
-      *(this + 1) = v6; /*0x658e57*/
-      *((_BYTE *)this + 13) = 1; /*0x658e5a*/
+      this->q004 = v6; /*0x658e57*/
+      this->IsAllocated = 1; /*0x658e5a*/
     }
   }
   *this = &vt_DynamicVectorClass_HashObject_RadarTrackingStruct_TechnoClass; /*0x658e5e*/
-  *(this + 5) = 10; /*0x658e64*/
-  *(this + 4) = 0; /*0x658e6b*/
+  this->q014 = 10; /*0x658e64*/
+  this->q010 = 0; /*0x658e6b*/
   return this; /*0x658e70*/
 }
 }

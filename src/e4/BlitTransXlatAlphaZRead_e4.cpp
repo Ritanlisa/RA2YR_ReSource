@@ -119,7 +119,7 @@ int __thiscall BlitTransXlatAlphaZRead_ushort::_vt01(
   v11 = (261 * (a8 <= 0 ? 0 : a8)) >> 11;
   if ( v11 > 254 ) /*0x494b8b*/
     v11 = 254; /*0x494b8d*/
-  result = *(this + 2) + (v11 << 9); /*0x494b98*/
+  result = this->q008 + (v11 << 9); /*0x494b98*/
   v17 = result; /*0x494ba0*/
   if ( a4 > 0 ) /*0x494ba4*/
   {
@@ -130,7 +130,7 @@ int __thiscall BlitTransXlatAlphaZRead_ushort::_vt01(
       v15 = *a6++; /*0x494bbf*/
       if ( a5 < v15 && *a3 ) /*0x494bd1*/
       {
-        *a2 = *(_WORD *)(*(this + 1) + 2 * ((unsigned __int8)*a3 | *(unsigned __int16 *)(v17 + 2 * *a7))); /*0x494bf9*/
+        *a2 = *(_WORD *)(this->q004 + 2 * ((unsigned __int8)*a3 | *(unsigned __int16 *)(v17 + 2 * *a7))); /*0x494bf9*/
         v13 = MEMORY[0x887644]; /*0x494bfc*/
       }
       ++a2; /*0x494c06*/
@@ -173,7 +173,7 @@ int __thiscall BlitTransXlatAlphaZRead_ushort::BlitRect(
   v12 = (261 * (a8 <= 0 ? 0 : a8)) >> 11;
   if ( v12 > 254 ) /*0x494c6b*/
     v12 = 254; /*0x494c6d*/
-  result = *(this + 2) + (v12 << 9); /*0x494c78*/
+  result = this->q008 + (v12 << 9); /*0x494c78*/
   v18 = result; /*0x494c80*/
   if ( a4 > 0 ) /*0x494c84*/
   {
@@ -184,7 +184,7 @@ int __thiscall BlitTransXlatAlphaZRead_ushort::BlitRect(
       v16 = *a6++; /*0x494c9f*/
       if ( a5 < v16 && *a3 ) /*0x494cb1*/
       {
-        *a2 = a10 | *(_WORD *)(*(this + 1) + 2 * ((unsigned __int8)*a3 | *(unsigned __int16 *)(v18 + 2 * *a7))); /*0x494cde*/
+        *a2 = a10 | *(_WORD *)(this->q004 + 2 * ((unsigned __int8)*a3 | *(unsigned __int16 *)(v18 + 2 * *a7))); /*0x494cde*/
         v14 = MEMORY[0x887644]; /*0x494ce1*/
       }
       ++a2; /*0x494ceb*/
@@ -223,7 +223,7 @@ int __thiscall BlitTransXlatAlphaZRead_ushort::_vt04(
         int a8,
         int a9)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD, int))(*(_DWORD *)this + 8))( /*0x494d7f*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD, int))(this->q008)( /*0x494d7f*/
            this,
            a2,
            a3,

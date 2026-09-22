@@ -27,7 +27,7 @@ int __thiscall Connection_Close(_DWORD *this)
 {
   int result; // eax
 
-  result = *(this + 18); /*0x543090*/
+  result = this->q048; /*0x543090*/
   if ( result ) /*0x543095*/
     *(_BYTE *)(result + 200) = 1; /*0x543097*/
   return result; /*0x54309e*/

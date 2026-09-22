@@ -137,7 +137,7 @@ int __thiscall SHA1_Process(_DWORD *this, int a2, int a3)
       {
         SHA1::Transform(v5, this + 6);
         v5 += 64;
-        *(this + 11) += 64;
+        this->q02C += 64;
         --v6;
         a3 -= 64;
       }
@@ -229,8 +229,8 @@ int __thiscall SHA1_Compute(_DWORD *this, char *a2)
 
   if ( *(_BYTE *)this )
     qmemcpy(a2, this + 1, 0x14u);
-  v3 = *(this + 12);
-  v4 = *(this + 11);
+  v3 = this->q030;
+  v4 = this->q02C;
   qmemcpy(v13, this + 13, sizeof(v13));
   v5 = v3 + v4;
   *((_BYTE *)v13 + v3) = 0x80;

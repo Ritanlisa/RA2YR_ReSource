@@ -85,7 +85,7 @@ Pipe *__thiscall Delegate::Dispatch(_DWORD *this, Pipe *aP1, Pipe *aP2)
 {
   Pipe *v3; // ecx
 
-  v3 = (Pipe *)*(this + 1); /*0x631d10*/
+  v3 = (Pipe *)this->m_count; /*0x631d10*/
   if ( v3 ) /*0x631d15*/
     return (*(Pipe *(__thiscall **)(Pipe *, Pipe *, Pipe *))(*(_DWORD *)v3->__pad_0 + 16))(v3, aP1, aP2); /*0x631d23*/
   else
@@ -100,9 +100,9 @@ unsigned int * Delegate::GetField()
 _DWORD *__thiscall Delegate::GetField(_DWORD *this)
 {
   *this = 0; /*0x6c95e6*/
-  *(this + 1) = 0; /*0x6c95e8*/
-  *(this + 2) = 0; /*0x6c95eb*/
-  *(this + 3) = 0; /*0x6c95ee*/
+  this->m_count = 0; /*0x6c95e8*/
+  this->Delegate_field_08 = 0; /*0x6c95eb*/
+  this->m_allocated = 0; /*0x6c95ee*/
   return this; /*0x6c95f1*/
 }
 }
@@ -116,7 +116,7 @@ void __thiscall Delegate::Set(_DWORD *this, AbstractTypeClass *aP1)
   Straw *v3; // ecx
   AbstractTypeClass *v4; // eax
 
-  if ( (AbstractTypeClass *)*(this + 1) != aP1 ) /*0x6c989b*/
+  if ( (AbstractTypeClass *)this->m_count != aP1 ) /*0x6c989b*/
   {
     if ( aP1 ) /*0x6c989f*/
     {
@@ -127,10 +127,10 @@ void __thiscall Delegate::Set(_DWORD *this, AbstractTypeClass *aP1)
         *(_DWORD *)&aP1->__pad_0[8] = 0; /*0x6c98af*/
       }
     }
-    v4 = (AbstractTypeClass *)*(this + 1); /*0x6c98b6*/
+    v4 = (AbstractTypeClass *)this->m_count; /*0x6c98b6*/
     if ( v4 ) /*0x6c98bb*/
       *(_DWORD *)&v4->__pad_0[8] = 0; /*0x6c98bd*/
-    *(this + 1) = aP1; /*0x6c98c6*/
+    this->m_count = aP1; /*0x6c98c6*/
     if ( aP1 ) /*0x6c98c9*/
       *(_DWORD *)&aP1->__pad_0[8] = this; /*0x6c98cb*/
   }
@@ -145,7 +145,7 @@ int __thiscall Delegate::Invoke(_DWORD *this, int a2, Straw *aP2)
 {
   Straw *v3; // ecx
 
-  v3 = (Straw *)*(this + 1); /*0x6c98e0*/
+  v3 = (Straw *)this->m_count; /*0x6c98e0*/
   if ( v3 ) /*0x6c98e5*/
     return (*(int (__thiscall **)(Straw *, int, Straw *))(*(_DWORD *)v3->__pad_0 + 8))(v3, a2, aP2); /*0x6c98f3*/
   else

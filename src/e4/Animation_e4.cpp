@@ -35,16 +35,16 @@ void __thiscall Animation::UpdateBuildingAnimations(int *this)
   int j; // edi
 
   v2 = (*(unsigned __int8 (__thiscall **)(int *))(*this + 848))(this) == 0; /*0x4549bd*/
-  v3 = *(this + 328); /*0x4549bf*/
+  v3 = this->q148; /*0x4549bf*/
   v4 = *(_DWORD *)(v3 + 1036); /*0x4549c5*/
   if ( !v2 ) /*0x4549cb*/
   {
     if ( v4 && !*((_BYTE *)this + 1634) ) /*0x4549d5*/
     {
       *((_BYTE *)this + 1634) = 1; /*0x4549df*/
-      TechnoClass::Find(*(this + 135), *(_DWORD *)(v3 + 1036)); /*0x4549f3*/
+      TechnoClass::Find(this->q087, *(_DWORD *)(v3 + 1036)); /*0x4549f3*/
     }
-    v5 = (_BYTE *)*(this + 328); /*0x4549f8*/
+    v5 = (_BYTE *)this->q148; /*0x4549f8*/
     if ( v5[5831] ) /*0x4549fe*/
     {
       if ( *((char *)this + 1771) <= 0 ) /*0x454a10*/
@@ -61,29 +61,29 @@ void __thiscall Animation::UpdateBuildingAnimations(int *this)
     }
     if ( v5[3281] && !*((_BYTE *)this + 617) ) /*0x454a4b*/
       (*(void (__thiscall **)(int *))(*this + 1044))(this); /*0x454a59*/
-    v7 = *(this + 328); /*0x454a5f*/
+    v7 = this->q148; /*0x454a5f*/
     if ( *(_BYTE *)(v7 + 5491) && *(int *)(v7 + 3812) > 0 ) /*0x454a77*/
       BuildingClass::ProcessAnimationStates((int)this); /*0x454a7b*/
-    if ( *(_BYTE *)(*(this + 328) + 5492) ) /*0x454a86*/
+    if ( *(_BYTE *)(this->q148 + 5492) ) /*0x454a86*/
     {
       BuildingClass::ClearAnims(this, (TechnoClass *)0x13); /*0x454a98*/
       v8 = 0; /*0x454a9d*/
       for ( i = 0; i < 1428; i += 68 ) /*0x454a9f*/
       {
-        if ( *(_BYTE *)(i + *(this + 328) + 3983) ) /*0x454aa7*/
+        if ( *(_BYTE *)(i + this->q148 + 3983) ) /*0x454aa7*/
         {
           HealthRatio = BuildingClass::GetHealthRatio(this); /*0x454ab4*/
           v11 = *(_DWORD *)&stru_87C374.__pad_579C[22224]; /*0x454ab9*/
           if ( HealthRatio > *(double *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 5888) ) /*0x454aca*/
           {
-            v11 = *(this + 328); /*0x454ae0*/
+            v11 = this->q148; /*0x454ae0*/
             v12 = 0; /*0x454ae6*/
             v13 = (_BYTE *)(i + v11 + 3916); /*0x454ae8*/
           }
           else
           {
             v12 = 1; /*0x454ad2*/
-            v13 = (_BYTE *)(i + *(this + 328) + 3932); /*0x454ad7*/
+            v13 = (_BYTE *)(i + this->q148 + 3932); /*0x454ad7*/
           }
           if ( v13 ) /*0x454af1*/
           {
@@ -98,16 +98,16 @@ void __thiscall Animation::UpdateBuildingAnimations(int *this)
   }
   if ( v4 && *((_BYTE *)this + 1634) ) /*0x454b1a*/
   {
-    v14 = *(this + 135); /*0x454b24*/
+    v14 = this->q087; /*0x454b24*/
     *((_BYTE *)this + 1634) = 0; /*0x454b2a*/
     HouseClass::LostPoweredCenter(v14, *(_DWORD *)(v3 + 1036)); /*0x454b38*/
   }
-  v15 = (_DWORD *)*(this + 175); /*0x454b3d*/
+  v15 = (_DWORD *)this->q0AF; /*0x454b3d*/
   if ( v15 ) /*0x454b45*/
     CaptureManager::FreeAll(v15); /*0x454b47*/
-  if ( *(this + 171) ) /*0x454b4c*/
+  if ( this->q0AB ) /*0x454b4c*/
     TechnoClass::EjectPassengers(this, 1); /*0x454b5a*/
-  v16 = *(this + 328); /*0x454b5f*/
+  v16 = this->q148; /*0x454b5f*/
   if ( *(_BYTE *)(v16 + 5831) && *((char *)this + 1771) >= 0 && *((_BYTE *)this + 1772) ) /*0x454b79*/
   {
     *((_BYTE *)this + 1771) = -1; /*0x454b83*/
@@ -120,22 +120,22 @@ void __thiscall Animation::UpdateBuildingAnimations(int *this)
       (*(void (__thiscall **)(int *))(*this + 1048))(this); /*0x454ba9*/
       if ( *((_BYTE *)this + 616) ) /*0x454baf*/
       {
-        v17 = *(this + 135); /*0x454bb9*/
+        v17 = this->q087; /*0x454bb9*/
         *((_BYTE *)this + 616) = 0; /*0x454bbf*/
         *((_BYTE *)this + 1641) = 0; /*0x454bc6*/
         *(_BYTE *)(v17 + 22392) = 1; /*0x454bcd*/
         v18 = *this; /*0x454bda*/
-        *(this + 155) = *(char *)(*(this + 328) + 3282); /*0x454be5*/
+        this->q09B = *(char *)(this->q148 + 3282); /*0x454be5*/
         (*(void (__thiscall **)(int *))(v18 + 1044))(this); /*0x454beb*/
       }
     }
   }
-  v19 = *(this + 328); /*0x454bf1*/
+  v19 = this->q148; /*0x454bf1*/
   if ( *(_BYTE *)(v19 + 5491) && *(int *)(v19 + 3812) > 0 ) /*0x454c09*/
     BuildingClass::UpdateAnimationSlots(this); /*0x454c0d*/
-  if ( *(_BYTE *)(*(this + 328) + 5492) ) /*0x454c18*/
+  if ( *(_BYTE *)(this->q148 + 5492) ) /*0x454c18*/
   {
-    v20 = *(this + 135); /*0x454c26*/
+    v20 = this->q087; /*0x454c26*/
     v21 = *(_DWORD *)(v20 + 676); /*0x454c2c*/
     v22 = *(_DWORD *)(v20 + 684); /*0x454c32*/
     if ( v21 != -1 ) /*0x454c3b*/
@@ -150,12 +150,12 @@ LABEL_52:
       if ( BuildingClass::GetHealthRatio(this) > *(double *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 5888) ) /*0x454c71*/
       {
         v23 = 0; /*0x454c8b*/
-        v24 = (_BYTE *)(*(this + 328) + 5208); /*0x454c8d*/
+        v24 = (_BYTE *)(this->q148 + 5208); /*0x454c8d*/
       }
       else
       {
         v23 = 1; /*0x454c79*/
-        v24 = (_BYTE *)(*(this + 328) + 5224); /*0x454c7e*/
+        v24 = (_BYTE *)(this->q148 + 5224); /*0x454c7e*/
       }
       if ( v24 && *v24 ) /*0x454c96*/
         BuildingClass::PlayAnim( /*0x454ca5*/
@@ -169,7 +169,7 @@ LABEL_52:
       v25 = 0; /*0x454caa*/
       for ( j = 0; j < 1428; j += 68 ) /*0x454cac*/
       {
-        if ( *(_BYTE *)(j + *(this + 328) + 3983) ) /*0x454cb4*/
+        if ( *(_BYTE *)(j + this->q148 + 3983) ) /*0x454cb4*/
           BuildingClass::ClearAnims(this, v25); /*0x454cc2*/
         v25 = (TechnoClass *)((char *)v25 + 1); /*0x454cca*/
       }

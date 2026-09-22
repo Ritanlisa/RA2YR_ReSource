@@ -261,17 +261,17 @@ char __thiscall Sidebar::Dispatch(_BYTE *this, IUnknown *aP1, char a3, int a4, c
       goto LABEL_3;
     case 2u: /*0x5007b7*/
     case 3u: /*0x5007b7*/
-      *(this + 21456) = a5; /*0x500807*/
+      this->q53D0 = a5; /*0x500807*/
       break; /*0x500807*/
     case 6u: /*0x5007b7*/
     case 7u: /*0x5007b7*/
       if ( a4 == 5 ) /*0x5007e5*/
       {
-        *(this + 21464) = a5; /*0x5007ec*/
+        this->q53D8 = a5; /*0x5007ec*/
       }
       else
       {
-        *(this + 21460) = a5; /*0x5007fa*/
+        this->q53D4 = a5; /*0x5007fa*/
         result = a5; /*0x5007f5*/
       }
       break; /*0x5007f2*/
@@ -348,10 +348,10 @@ void __thiscall Sidebar::CancelSidebarProductionQueue(int *this)
   void *Blocka; // [esp+14h] [ebp-8h] BYREF
   _DWORD *v17; // [esp+18h] [ebp-4h] BYREF
 
-  v2 = *(this + 5); /*0x636319*/
+  v2 = this->q014; /*0x636319*/
   for ( i = 0; i < v2; ++i ) /*0x636327*/
   {
-    v4 = *(VectorClass **)(*(this + 2) + 4 * i); /*0x63632c*/
+    v4 = *(VectorClass **)(this->q008 + 4 * i); /*0x63632c*/
     Value = Array::FindValue((int *)v4, (IUnknown *)*this); /*0x636334*/
     if ( Value == -1 ) /*0x63633c*/
       v6 = 0; /*0x63633e*/
@@ -381,10 +381,10 @@ void __thiscall Sidebar::CancelSidebarProductionQueue(int *this)
     VectorClass::EraseAt((int *)&g_MatrixTransformState + 6028, (IUnknown *)&Blocka); /*0x6363e4*/
   }
   v10 = this + 1; /*0x6363ec*/
-  (*(void (__thiscall **)(int *))(*(this + 1) + 12))(this + 1); /*0x6363f1*/
+  (*(void (__thiscall **)(int *))(this->q004 + 12))(this + 1); /*0x6363f1*/
   *((_BYTE *)this + 152) = 0; /*0x6363f7*/
   *(this + 35) = -1; /*0x636400*/
-  *(this + 36) = -1; /*0x636406*/
+  this->q024 = -1; /*0x636406*/
   *(this + 37) = -1; /*0x63640c*/
   *((_BYTE *)this + 153) = 0; /*0x636412*/
   *this = 0; /*0x636419*/
@@ -401,9 +401,9 @@ void __thiscall Sidebar::CancelSidebarProductionQueue(int *this)
       if ( v11 != -1 ) /*0x636454*/
         Sidebar::RemoveItem(&g_MatrixTransformState + 6042, v11); /*0x63645c*/
     }
-    v12 = *(this + 5); /*0x636461*/
+    v12 = this->q014; /*0x636461*/
     for ( j = 0; j < v12; ++j ) /*0x63646f*/
-      TeamClass::DestroyAllMembers(*(_DWORD **)(*(this + 2) + 4 * j), (TechnoClass *)*this); /*0x63647a*/
+      TeamClass::DestroyAllMembers(*(_DWORD **)(this->q008 + 4 * j), (TechnoClass *)*this); /*0x63647a*/
     if ( v12 ) /*0x63648a*/
     {
       v17 = (_DWORD *)*this; /*0x63648e*/
@@ -414,21 +414,21 @@ void __thiscall Sidebar::CancelSidebarProductionQueue(int *this)
     (*(void (__thiscall **)(int *))(*v10 + 12))(this + 1); /*0x6364b1*/
     *((_BYTE *)this + 152) = 0; /*0x6364b7*/
     *(this + 35) = -1; /*0x6364be*/
-    *(this + 36) = -1; /*0x6364c4*/
+    this->q024 = -1; /*0x6364c4*/
     *(this + 37) = -1; /*0x6364ca*/
     *((_BYTE *)this + 153) = 0; /*0x6364d0*/
-    v15 = (void *)*(this + 2); /*0x6364d7*/
+    v15 = (void *)this->q008; /*0x6364d7*/
     *v10 = &vt_VectorClass_PlanningNodeClass; /*0x6364de*/
     if ( v15 ) /*0x6364e4*/
     {
-      if ( *((_BYTE *)this + 17) ) /*0x6364e6*/
+      if ( this->q044 ) /*0x6364e6*/
       {
         __3_YAXPAX_Z(v15); /*0x6364ee*/
-        *(this + 2) = 0; /*0x6364f6*/
+        this->q008 = 0; /*0x6364f6*/
       }
     }
-    *((_BYTE *)this + 17) = 0; /*0x6364fa*/
-    *(this + 3) = 0; /*0x6364fe*/
+    this->q044 = 0; /*0x6364fa*/
+    this->q00C = 0; /*0x6364fe*/
     __3_YAXPAX_Z(this); /*0x636501*/
   }
 }
@@ -446,20 +446,20 @@ char __thiscall sub_63F040(_DWORD *this, int a2)
   int v3; // eax
   int v4; // edx
 
-  v2 = *(this + 4); /*0x63f040*/
+  v2 = this->q010; /*0x63f040*/
   v3 = a2; /*0x63f043*/
   if ( a2 >= v2 ) /*0x63f049*/
     return 0; /*0x63f06c*/
   v4 = v2 - 1; /*0x63f04b*/
-  *(this + 4) = v4; /*0x63f04e*/
+  this->q010 = v4; /*0x63f04e*/
   if ( a2 < v4 ) /*0x63f051*/
   {
     do /*0x63f064*/
     {
       ++v3; /*0x63f057*/
-      *(_DWORD *)(*(this + 1) + 4 * v3 - 4) = *(_DWORD *)(*(this + 1) + 4 * v3); /*0x63f05b*/
+      *(_DWORD *)(this->q004 + 4 * v3 - 4) = *(_DWORD *)(this->q004 + 4 * v3); /*0x63f05b*/
     }
-    while ( v3 < *(this + 4) ); /*0x63f064*/
+    while ( v3 < this->q010 ); /*0x63f064*/
   }
   return 1; /*0x63f069*/
 }

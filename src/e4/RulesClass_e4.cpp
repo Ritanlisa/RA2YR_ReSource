@@ -18,20 +18,20 @@ unsigned int * RulesClass::InitINIChain(int a2, int a3)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_538B30(_DWORD *this, int a2, int a3)
 {
-  *(this + 1) = 0; /*0x538b3b*/
-  *(this + 2) = a2; /*0x538b3e*/
-  *((_BYTE *)this + 12) = 1; /*0x538b41*/
-  *((_BYTE *)this + 13) = 0; /*0x538b45*/
+  this->DetailMinFrameRateMovie = 0; /*0x538b3b*/
+  this->DetailBufferZoneWidth = a2; /*0x538b3e*/
+  this->SelfHealInfantryFrames = 1; /*0x538b41*/
+  this->SelfHealInfantryAmount = 0; /*0x538b45*/
   *this = &vt_VectorClass_CCINIClass; /*0x538b48*/
   if ( a2 ) /*0x538b4e*/
   {
     if ( a3 ) /*0x538b56*/
     {
-      *(this + 1) = a3; /*0x538b58*/
+      this->DetailMinFrameRateMovie = a3; /*0x538b58*/
       return this; /*0x538b5e*/
     }
-    *(this + 1) = __2_YAPAXI_Z(4 * a2); /*0x538b6d*/
-    *((_BYTE *)this + 13) = 1; /*0x538b70*/
+    this->DetailMinFrameRateMovie = __2_YAPAXI_Z(4 * a2); /*0x538b6d*/
+    this->SelfHealInfantryAmount = 1; /*0x538b70*/
   }
   return this; /*0x538b5d*/
 }
@@ -918,24 +918,24 @@ int __thiscall RulesClass::Constructor(RulesClass *this)
   *((_DWORD *)this + 1290) = 0;
   *((_DWORD *)this + 1291) = 1071644672;
   *((_DWORD *)this + 1292) = 256;
-  *((_DWORD *)this + 1293) = 5;
-  *((_DWORD *)this + 1294) = 4;
-  *((_DWORD *)this + 1295) = 5;
-  *((_QWORD *)this + 648) = 0x300000004LL;
-  *((_QWORD *)this + 649) = 0x300000002LL;
-  *((_DWORD *)this + 1300) = 4;
-  *((_DWORD *)this + 1301) = 4;
-  *((_DWORD *)this + 1302) = 3;
-  *((_DWORD *)this + 1303) = 2;
-  *((_DWORD *)this + 1304) = 1;
-  *((_DWORD *)this + 1305) = 2;
+  this->q1434 = 5;
+  this->q1438 = 4;
+  this->q143C = 5;
+  this->BaseSizeAdd = 0x300000004LL;
+  this->PowerSurplus = 0x300000002LL;
+  this->q1450 = 4;
+  this->q1454 = 4;
+  this->q1458 = 3;
+  this->q145C = 2;
+  this->q1460 = 1;
+  this->q1464 = 2;
   *((_DWORD *)this + 1306) = 0;
   *((_DWORD *)this + 1307) = 0;
   *((_DWORD *)this + 1308) = 1;
   *((_DWORD *)this + 1309) = 255;
   *((_DWORD *)this + 1310) = 0x2000;
   *((_DWORD *)this + 1311) = 0;
-  *((_DWORD *)this + 1312) = 2500;
+  this->AddPlanningModeCommandSound = 2500;
   *((_DWORD *)this + 1313) = 10000;
   *((_DWORD *)this + 1314) = 10000;
   *((_DWORD *)this + 1315) = 100;
@@ -951,24 +951,24 @@ int __thiscall RulesClass::Constructor(RulesClass *this)
   *((_DWORD *)this + 1325) = 0;
   *((_DWORD *)this + 1326) = 16843009;
   *((_DWORD *)this + 1327) = 1024;
-  *((_DWORD *)this + 1328) = 858993459;
+  this->ExecutePlanSound = 858993459;
   *((_DWORD *)this + 1329) = 1071854387;
   *((_DWORD *)this + 1330) = -343597384;
   *((_DWORD *)this + 1331) = 1067366481;
   *((_DWORD *)this + 1332) = 8;
-  *((_QWORD *)this + 667) = 0x3FD0000000000000LL;
+  this->SuperWeapons = 0x3FD0000000000000LL;
   *((_DWORD *)this + 1336) = 20;
-  *((_QWORD *)this + 669) = 0x4000000000000000LL;
+  this->GuardArea = 0x4000000000000000LL;
   *((_DWORD *)this + 1340) = 0;
   *((_DWORD *)this + 1341) = 1071644672;
   *((_DWORD *)this + 1342) = 200;
   *((_DWORD *)this + 1343) = 100;
-  *((_DWORD *)this + 1344) = 300;
+  this->EndPlanningModeSound = 300;
   *((_DWORD *)this + 1346) = -1717986918;
   *((_DWORD *)this + 1347) = 1068079513;
-  *((_DWORD *)this + 1348) = 0;
-  *((_DWORD *)this + 1349) = 1075052544;
-  *((_DWORD *)this + 1350) = -1717986918;
+  this->q1510 = 0;
+  this->q1514 = 1075052544;
+  this->q1518 = -1717986918;
   *((_DWORD *)this + 1351) = 1068079513;
   *((_DWORD *)this + 1352) = 2;
   *((_DWORD *)this + 1354) = -755914244;
@@ -991,9 +991,9 @@ int __thiscall RulesClass::Constructor(RulesClass *this)
   this->CrateRegen = 1069128089;
   *((_DWORD *)this + 1438) = 0;
   this->TimerWarning = 1076101120;
-  *((_DWORD *)this + 1440) = 0;
+  this->MissileSafetyAltitude = 0;
   this->SpeakDelay = 0x40000000;
-  *((_DWORD *)this + 1444) = 0;
+  this->DropPodWeapon = 0;
   this->Gravity = 1076625408;
   this->LeptonsPerSightIncrease = 0;
   this->Incoming = 1075052544;
@@ -1001,7 +1001,7 @@ int __thiscall RulesClass::Constructor(RulesClass *this)
   this->MaxDamage = 1076101120;
   this->RepairStep = 0;
   this->RepairPercent = 0x40000000;
-  *((_DWORD *)this + 1452) = 0;
+  this->DropPodSpeed = 0;
   this->IRepairStep = 1072693248;
   this->RepairRate = 3;
   *((_DWORD *)this + 1455) = 50;
@@ -1028,7 +1028,7 @@ int __thiscall RulesClass::Constructor(RulesClass *this)
   this->BuildSpeed = 1068842876;
   *((_DWORD *)this + 1478) = 640;
   this->C4Delay = 512;
-  *((_DWORD *)this + 1480) = 512;
+  this->ShakeScreen = 512;
   this->PathDelay = 384;
   *((_DWORD *)this + 1483) = 640;
   this->BlockagePathDelay = 512;
@@ -1041,73 +1041,73 @@ int __thiscall RulesClass::Constructor(RulesClass *this)
   this->LightningHitDelay = -343597384;
   this->LightningScatterDelay = 1067366481;
   this->LightningCellSpread = 1000;
-  *((_DWORD *)this + 1496) = -755914244;
+  this->HoverBoost = -755914244;
   this->LightningWarhead = 1066426957;
   this->ForceShieldRadius = 60;
   this->ForceShieldBlackoutDuration = 0;
   this->ForceShieldPlayFadeSoundTime = 1070596096;
-  *((_DWORD *)this + 1502) = 1536;
+  this->MutateExplosion = 1536;
   this->CollapseChance = 0x2000;
   this->WeedCapacity = 1280;
   this->ExtraUnitLight = 4096;
   this->ExtraInfantryLight = 20480;
   this->ExtraAircraftLight = 768;
-  *((_DWORD *)this + 1508) = 0x7FFFFFFF;
-  *((_DWORD *)this + 1509) = 250;
+  this->Paranoid = 0x7FFFFFFF;
+  this->FineDiffControl = 250;
   *((_QWORD *)this + 755) = 0x384000000C8LL;
-  *((_DWORD *)this + 1512) = 90;
+  this->HoverBrake = 90;
   this->EngineerCaptureLevel = 10;
   *((_QWORD *)this + 757) = 0x30000000ALL;
-  *((_BYTE *)this + 6064) = 1;
+  this->RadApplicationDelay = 1;
   this->RadLevelMax = 0;
   this->RadLevelDelay = 10;
   this->RadLightDelay = 400;
   this->RadLevelFactor = 800;
   *((_DWORD *)this + 1521) = 50;
-  *((_BYTE *)this + 6088) = 0;
+  this->RadLightFactor = 0;
   *((_DWORD *)this + 1523) = 100;
   this->RadTintFactor = 0;
   *((_DWORD *)this + 1525) = 0;
-  *((_DWORD *)this + 1526) = 0;
+  this->RadColor = 0;
   this->RadSiteWarhead = 0;
   this->ElevationIncrement = 16842753;
   this->ElevationIncrementBonus = 16842752;
   *((_DWORD *)this + 1530) = 0;
   this->ElevationBonusCap = 0x10000;
   *((_DWORD *)this + 1532) = 16843008;
-  *((_DWORD *)this + 1533) = 0;
+  this->AlliedWallTransparency = 0;
   this->WallPenetratorThreshold = 1065353216;
   *((_DWORD *)this + 1535) = 0;
-  *((_DWORD *)this + 1536) = 300;
-  *((_DWORD *)this + 1537) = 0;
-  *((_DWORD *)this + 1538) = 0;
+  this->CloakingStages = 300;
+  this->q1804 = 0;
+  this->q1808 = 0;
   this->OreTwinkleChance = 0;
   this->OreTwinkle = 0;
   this->ColorAdd = 0;
-  *((_DWORD *)this + 1542) = 0;
-  *((_DWORD *)this + 1543) = 0;
-  *((_DWORD *)this + 1544) = 0;
+  this->q1818 = 0;
+  this->q181C = 0;
+  this->ShipSinkingWeight = 0;
   *((_DWORD *)this + 1545) = 0;
   *((_DWORD *)this + 1546) = 0;
   *((_DWORD *)this + 1547) = 0;
-  *((_BYTE *)this + 6192) = 0;
+  this->q1830 = 0;
   *((_BYTE *)this + 6193) = 0;
-  *((_BYTE *)this + 6194) = 0;
-  *((_DWORD *)this + 1549) = 0;
+  this->q1832 = 0;
+  this->q1834 = 0;
   *((_DWORD *)this + 1550) = 0;
-  *((_DWORD *)this + 1552) = 0;
+  this->IceCrackingWeight = 0;
   this->LaserTargetColor = 1072693248;
   this->IronCurtainColor = 0;
   this->BerserkColor = 0;
-  *((_BYTE *)this + 6224) = 0;
+  this->ForceShieldColor = 0;
   this->FallBackCoefficient = 0;
   this->CrewCount = 1071644672;
-  *((_DWORD *)this + 1560) = 0xFFFFFF;
+  this->IceBreakingWeight = 0xFFFFFF;
   *((_DWORD *)this + 1561) = 0;
   *((_DWORD *)this + 1562) = 0;
   v3 = (char *)this + 6260;
   *((_DWORD *)this + 1563) = 50;
-  *((_DWORD *)this + 1564) = 0;
+  this->q1870 = 0;
   v4 = (char *)this + 6260;
   v5 = 16;
   do
@@ -1734,7 +1734,7 @@ int __thiscall sub_66D150(RulesClass *this)
                       (unsigned __int8 *)MEMORY[0x839E70],
                       (unsigned __int8 *)MEMORY[0x83B370],
                       *((_DWORD *)this + 1550));
-    v4 = *((_DWORD *)this + 1552); /*0x66d188*/
+    v4 = this->IceCrackingWeight; /*0x66d188*/
     *((_DWORD *)this + 1550) = Int_Overwrite; /*0x66d18e*/
     HIDWORD(v8) = this->LaserTargetColor; /*0x66d1a0*/
     LODWORD(v8) = v4; /*0x66d1a1*/
@@ -2006,15 +2006,15 @@ void __thiscall sub_679FA0(_DWORD *this)
 {
   void *v2; // eax
 
-  v2 = (void *)*(this + 1); /*0x679fa6*/
+  v2 = (void *)this->DetailMinFrameRateMovie; /*0x679fa6*/
   *this = &vt_VectorClass_BuildingTypeClass_const; /*0x679fa9*/
-  if ( v2 && *((_BYTE *)this + 13) ) /*0x679fb3*/
+  if ( v2 && this->SelfHealInfantryAmount ) /*0x679fb3*/
   {
     __3_YAXPAX_Z(v2); /*0x679fb9*/
-    *(this + 1) = 0; /*0x679fc1*/
+    this->DetailMinFrameRateMovie = 0; /*0x679fc1*/
   }
-  *((_BYTE *)this + 13) = 0; /*0x679fc4*/
-  *(this + 2) = 0; /*0x679fc7*/
+  this->SelfHealInfantryAmount = 0; /*0x679fc4*/
+  this->DetailBufferZoneWidth = 0; /*0x679fc7*/
 }
 }
 
@@ -2026,15 +2026,15 @@ void __thiscall sub_679FD0(_DWORD *this)
 {
   void *v2; // eax
 
-  v2 = (void *)*(this + 1); /*0x679fd6*/
+  v2 = (void *)this->DetailMinFrameRateMovie; /*0x679fd6*/
   *this = &vt_VectorClass_UnitTypeClass_const; /*0x679fd9*/
-  if ( v2 && *((_BYTE *)this + 13) ) /*0x679fe3*/
+  if ( v2 && this->SelfHealInfantryAmount ) /*0x679fe3*/
   {
     __3_YAXPAX_Z(v2); /*0x679fe9*/
-    *(this + 1) = 0; /*0x679ff1*/
+    this->DetailMinFrameRateMovie = 0; /*0x679ff1*/
   }
-  *((_BYTE *)this + 13) = 0; /*0x679ff4*/
-  *(this + 2) = 0; /*0x679ff7*/
+  this->SelfHealInfantryAmount = 0; /*0x679ff4*/
+  this->DetailBufferZoneWidth = 0; /*0x679ff7*/
 }
 }
 
@@ -2046,15 +2046,15 @@ void __thiscall sub_67A000(_DWORD *this)
 {
   void *v2; // eax
 
-  v2 = (void *)*(this + 1); /*0x67a006*/
+  v2 = (void *)this->DetailMinFrameRateMovie; /*0x67a006*/
   *this = &vt_VectorClass_AircraftTypeClass_const; /*0x67a009*/
-  if ( v2 && *((_BYTE *)this + 13) ) /*0x67a013*/
+  if ( v2 && this->SelfHealInfantryAmount ) /*0x67a013*/
   {
     __3_YAXPAX_Z(v2); /*0x67a019*/
-    *(this + 1) = 0; /*0x67a021*/
+    this->DetailMinFrameRateMovie = 0; /*0x67a021*/
   }
-  *((_BYTE *)this + 13) = 0; /*0x67a024*/
-  *(this + 2) = 0; /*0x67a027*/
+  this->SelfHealInfantryAmount = 0; /*0x67a024*/
+  this->DetailBufferZoneWidth = 0; /*0x67a027*/
 }
 }
 
@@ -2066,15 +2066,15 @@ void __thiscall sub_67A060(_DWORD *this)
 {
   void *v2; // eax
 
-  v2 = (void *)*(this + 1); /*0x67a066*/
+  v2 = (void *)this->DetailMinFrameRateMovie; /*0x67a066*/
   *this = &vt_VectorClass_TerrainTypeClass_const; /*0x67a069*/
-  if ( v2 && *((_BYTE *)this + 13) ) /*0x67a073*/
+  if ( v2 && this->SelfHealInfantryAmount ) /*0x67a073*/
   {
     __3_YAXPAX_Z(v2); /*0x67a079*/
-    *(this + 1) = 0; /*0x67a081*/
+    this->DetailMinFrameRateMovie = 0; /*0x67a081*/
   }
-  *((_BYTE *)this + 13) = 0; /*0x67a084*/
-  *(this + 2) = 0; /*0x67a087*/
+  this->SelfHealInfantryAmount = 0; /*0x67a084*/
+  this->DetailBufferZoneWidth = 0; /*0x67a087*/
 }
 }
 
@@ -2093,36 +2093,36 @@ int *__thiscall sub_67A190(int *this, int *a2)
   {
     (*(void (__thiscall **)(int *))(*this + 12))(this); /*0x67a19e*/
     v3 = a2[2]; /*0x67a1a1*/
-    *(this + 2) = v3; /*0x67a1a6*/
+    this->DetailBufferZoneWidth = v3; /*0x67a1a6*/
     if ( v3 ) /*0x67a1a9*/
     {
       v4 = __2_YAPAXI_Z(4 * v3); /*0x67a1b3*/
-      *(this + 1) = (int)v4; /*0x67a1bb*/
+      this->DetailMinFrameRateMovie = (int)v4; /*0x67a1bb*/
       if ( v4 ) /*0x67a1c0*/
       {
-        v5 = *(this + 2); /*0x67a1c2*/
+        v5 = this->DetailBufferZoneWidth; /*0x67a1c2*/
         v6 = 0; /*0x67a1c5*/
-        *((_BYTE *)this + 13) = 1; /*0x67a1c9*/
+        this->SelfHealInfantryAmount = 1; /*0x67a1c9*/
         if ( v5 > 0 ) /*0x67a1cd*/
         {
           do /*0x67a1e1*/
           {
-            *(_DWORD *)(*(this + 1) + 4 * v6) = *(_DWORD *)(a2[1] + 4 * v6); /*0x67a1d8*/
+            *(_DWORD *)(this->DetailMinFrameRateMovie + 4 * v6) = *(_DWORD *)(a2[1] + 4 * v6); /*0x67a1d8*/
             ++v6; /*0x67a1de*/
           }
-          while ( v6 < *(this + 2) ); /*0x67a1e1*/
+          while ( v6 < this->DetailBufferZoneWidth ); /*0x67a1e1*/
         }
       }
     }
     else
     {
-      *(this + 1) = 0; /*0x67a1e5*/
-      *((_BYTE *)this + 13) = 0; /*0x67a1ec*/
+      this->DetailMinFrameRateMovie = 0; /*0x67a1e5*/
+      this->SelfHealInfantryAmount = 0; /*0x67a1ec*/
     }
   }
-  *(this + 4) = a2[4]; /*0x67a1f3*/
-  *(this + 5) = a2[5]; /*0x67a1f9*/
-  *(this + 6) = a2[6]; /*0x67a1ff*/
+  this->DetailMinFrameRateMovie = a2[4]; /*0x67a1f3*/
+  this->SmallVisceroid = a2[5]; /*0x67a1f9*/
+  this->AttackingAircraftSightRange = a2[6]; /*0x67a1ff*/
   return this; /*0x67a204*/
 }
 }
@@ -2142,36 +2142,36 @@ int *__thiscall sub_67A210(int *this, int *a2)
   {
     (*(void (__thiscall **)(int *))(*this + 12))(this); /*0x67a21e*/
     v3 = a2[2]; /*0x67a221*/
-    *(this + 2) = v3; /*0x67a226*/
+    this->DetailBufferZoneWidth = v3; /*0x67a226*/
     if ( v3 ) /*0x67a229*/
     {
       v4 = __2_YAPAXI_Z(4 * v3); /*0x67a233*/
-      *(this + 1) = (int)v4; /*0x67a23b*/
+      this->DetailMinFrameRateMovie = (int)v4; /*0x67a23b*/
       if ( v4 ) /*0x67a240*/
       {
-        v5 = *(this + 2); /*0x67a242*/
+        v5 = this->DetailBufferZoneWidth; /*0x67a242*/
         v6 = 0; /*0x67a245*/
-        *((_BYTE *)this + 13) = 1; /*0x67a249*/
+        this->SelfHealInfantryAmount = 1; /*0x67a249*/
         if ( v5 > 0 ) /*0x67a24d*/
         {
           do /*0x67a261*/
           {
-            *(_DWORD *)(*(this + 1) + 4 * v6) = *(_DWORD *)(a2[1] + 4 * v6); /*0x67a258*/
+            *(_DWORD *)(this->DetailMinFrameRateMovie + 4 * v6) = *(_DWORD *)(a2[1] + 4 * v6); /*0x67a258*/
             ++v6; /*0x67a25e*/
           }
-          while ( v6 < *(this + 2) ); /*0x67a261*/
+          while ( v6 < this->DetailBufferZoneWidth ); /*0x67a261*/
         }
       }
     }
     else
     {
-      *(this + 1) = 0; /*0x67a265*/
-      *((_BYTE *)this + 13) = 0; /*0x67a26c*/
+      this->DetailMinFrameRateMovie = 0; /*0x67a265*/
+      this->SelfHealInfantryAmount = 0; /*0x67a26c*/
     }
   }
-  *(this + 4) = a2[4]; /*0x67a273*/
-  *(this + 5) = a2[5]; /*0x67a279*/
-  *(this + 6) = a2[6]; /*0x67a27f*/
+  this->DetailMinFrameRateMovie = a2[4]; /*0x67a273*/
+  this->SmallVisceroid = a2[5]; /*0x67a279*/
+  this->AttackingAircraftSightRange = a2[6]; /*0x67a27f*/
   return this; /*0x67a284*/
 }
 }
@@ -2191,36 +2191,36 @@ int *__thiscall sub_67A310(int *this, int *a2)
   {
     (*(void (__thiscall **)(int *))(*this + 12))(this); /*0x67a31e*/
     v3 = a2[2]; /*0x67a321*/
-    *(this + 2) = v3; /*0x67a326*/
+    this->DetailBufferZoneWidth = v3; /*0x67a326*/
     if ( v3 ) /*0x67a329*/
     {
       v4 = __2_YAPAXI_Z(4 * v3); /*0x67a333*/
-      *(this + 1) = (int)v4; /*0x67a33b*/
+      this->DetailMinFrameRateMovie = (int)v4; /*0x67a33b*/
       if ( v4 ) /*0x67a340*/
       {
-        v5 = *(this + 2); /*0x67a342*/
+        v5 = this->DetailBufferZoneWidth; /*0x67a342*/
         v6 = 0; /*0x67a345*/
-        *((_BYTE *)this + 13) = 1; /*0x67a349*/
+        this->SelfHealInfantryAmount = 1; /*0x67a349*/
         if ( v5 > 0 ) /*0x67a34d*/
         {
           do /*0x67a361*/
           {
-            *(_DWORD *)(*(this + 1) + 4 * v6) = *(_DWORD *)(a2[1] + 4 * v6); /*0x67a358*/
+            *(_DWORD *)(this->DetailMinFrameRateMovie + 4 * v6) = *(_DWORD *)(a2[1] + 4 * v6); /*0x67a358*/
             ++v6; /*0x67a35e*/
           }
-          while ( v6 < *(this + 2) ); /*0x67a361*/
+          while ( v6 < this->DetailBufferZoneWidth ); /*0x67a361*/
         }
       }
     }
     else
     {
-      *(this + 1) = 0; /*0x67a365*/
-      *((_BYTE *)this + 13) = 0; /*0x67a36c*/
+      this->DetailMinFrameRateMovie = 0; /*0x67a365*/
+      this->SelfHealInfantryAmount = 0; /*0x67a36c*/
     }
   }
-  *(this + 4) = a2[4]; /*0x67a373*/
-  *(this + 5) = a2[5]; /*0x67a379*/
-  *(this + 6) = a2[6]; /*0x67a37f*/
+  this->DetailMinFrameRateMovie = a2[4]; /*0x67a373*/
+  this->SmallVisceroid = a2[5]; /*0x67a379*/
+  this->AttackingAircraftSightRange = a2[6]; /*0x67a37f*/
   return this; /*0x67a384*/
 }
 }
@@ -2231,12 +2231,12 @@ unsigned int * RulesClass::readParticles()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_67A8B0(_DWORD *this)
 {
-  *(this + 1) = 0; /*0x67a8b4*/
-  *(this + 2) = 0; /*0x67a8b7*/
-  *((_BYTE *)this + 12) = 1; /*0x67a8ba*/
-  *((_BYTE *)this + 13) = 0; /*0x67a8be*/
-  *(this + 5) = 10; /*0x67a8c1*/
-  *(this + 4) = 0; /*0x67a8c8*/
+  this->DetailMinFrameRateMovie = 0; /*0x67a8b4*/
+  this->DetailBufferZoneWidth = 0; /*0x67a8b7*/
+  this->SelfHealInfantryFrames = 1; /*0x67a8ba*/
+  this->SelfHealInfantryAmount = 0; /*0x67a8be*/
+  this->SmallVisceroid = 10; /*0x67a8c1*/
+  this->LargeVisceroid = 0; /*0x67a8c8*/
   *this = &vt_TypeList_TerrainTypeClass_const; /*0x67a8cb*/
   return this; /*0x67a8d1*/
 }
@@ -2253,18 +2253,18 @@ char __thiscall sub_67B480(_DWORD *this, _DWORD *a2)
   int v6; // eax
   int v7; // edx
 
-  v3 = *(this + 2); /*0x67b483*/
-  if ( *(this + 4) >= v3 ) /*0x67b48b*/
+  v3 = this->DetailBufferZoneWidth; /*0x67b483*/
+  if ( this->LargeVisceroid >= v3 ) /*0x67b48b*/
   {
-    if ( !*((_BYTE *)this + 13) && v3 ) /*0x67b496*/
+    if ( !this->SelfHealInfantryAmount && v3 ) /*0x67b496*/
       return 0; /*0x67b496*/
-    v4 = *(this + 5); /*0x67b498*/
+    v4 = this->SmallVisceroid; /*0x67b498*/
     if ( v4 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*this + 8))(this, v3 + v4, 0) ) /*0x67b4a8*/
       return 0; /*0x67b4af*/
   }
-  v6 = *(this + 4); /*0x67b4b5*/
-  v7 = *(this + 1); /*0x67b4b8*/
-  *(this + 4) = v6 + 1; /*0x67b4be*/
+  v6 = this->LargeVisceroid; /*0x67b4b5*/
+  v7 = this->DetailMinFrameRateMovie; /*0x67b4b8*/
+  this->LargeVisceroid = v6 + 1; /*0x67b4be*/
   *(_DWORD *)(v7 + 4 * v6) = *a2; /*0x67b4c8*/
   return 1; /*0x67b4b1*/
 }
@@ -2391,20 +2391,20 @@ unsigned int * RulesClass::readIQ(int a2, int a3)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_67C430(_DWORD *this, int a2, int a3)
 {
-  *(this + 1) = 0; /*0x67c43b*/
-  *(this + 2) = a2; /*0x67c43e*/
-  *((_BYTE *)this + 12) = 1; /*0x67c441*/
-  *((_BYTE *)this + 13) = 0; /*0x67c445*/
+  this->DetailMinFrameRateMovie = 0; /*0x67c43b*/
+  this->DetailBufferZoneWidth = a2; /*0x67c43e*/
+  this->SelfHealInfantryFrames = 1; /*0x67c441*/
+  this->SelfHealInfantryAmount = 0; /*0x67c445*/
   *this = &vt_VectorClass_TerrainTypeClass_const; /*0x67c448*/
   if ( a2 ) /*0x67c44e*/
   {
     if ( a3 ) /*0x67c456*/
     {
-      *(this + 1) = a3; /*0x67c458*/
+      this->DetailMinFrameRateMovie = a3; /*0x67c458*/
       return this; /*0x67c45e*/
     }
-    *(this + 1) = __2_YAPAXI_Z(4 * a2); /*0x67c46d*/
-    *((_BYTE *)this + 13) = 1; /*0x67c470*/
+    this->DetailMinFrameRateMovie = __2_YAPAXI_Z(4 * a2); /*0x67c46d*/
+    this->SelfHealInfantryAmount = 1; /*0x67c470*/
   }
   return this; /*0x67c45d*/
 }

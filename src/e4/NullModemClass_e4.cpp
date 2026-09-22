@@ -8,7 +8,7 @@ int NullModemClass::COMStub()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall NullModemClass::_vt04(_DWORD *this)
 {
-  return *(this + 15); /*0x5f1953*/
+  return this->linkOpen; /*0x5f1953*/
 }
 }
 
@@ -20,7 +20,7 @@ int __thiscall NullModemClass::_vt11(int *this, int a2)
 {
   int result; // eax
 
-  result = *(this + 14); /*0x5f1f00*/
+  result = this->linkObject; /*0x5f1f00*/
   if ( result ) /*0x5f1f05*/
     return Rect::SetRedraw(*(_DWORD **)(result + 4), 1); /*0x5f1f0c*/
   return result; /*0x5f1f11*/
@@ -66,7 +66,7 @@ int __thiscall NullModemClass::_vt07(_DWORD *this)
 {
   int v1; // eax
 
-  v1 = *(this + 14); /*0x5f35d0*/
+  v1 = this->linkObject; /*0x5f35d0*/
   if ( v1 ) /*0x5f35d5*/
     return *(_DWORD *)(*(_DWORD *)(v1 + 4) + 40); /*0x5f35da*/
   else
@@ -82,7 +82,7 @@ int __thiscall NullModemClass::_vt08(_DWORD *this)
 {
   int v1; // eax
 
-  v1 = *(this + 14); /*0x5f35f0*/
+  v1 = this->linkObject; /*0x5f35f0*/
   if ( v1 ) /*0x5f35f5*/
     return *(_DWORD *)(*(_DWORD *)(v1 + 4) + 56); /*0x5f35fa*/
   else
@@ -98,7 +98,7 @@ int __thiscall NullModemClass::_vt09(_DWORD *this, int a2)
 {
   int v2; // eax
 
-  v2 = *(this + 14); /*0x5f3610*/
+  v2 = this->linkObject; /*0x5f3610*/
   if ( v2 ) /*0x5f3615*/
     return *(_DWORD *)(*(_DWORD *)(v2 + 4) + 40); /*0x5f361a*/
   else
@@ -114,7 +114,7 @@ int __thiscall NullModemClass::_vt10(_DWORD *this, int a2)
 {
   int v2; // eax
 
-  v2 = *(this + 14); /*0x5f3630*/
+  v2 = this->linkObject; /*0x5f3630*/
   if ( v2 ) /*0x5f3635*/
     return *(_DWORD *)(*(_DWORD *)(v2 + 4) + 56); /*0x5f363a*/
   else
@@ -130,7 +130,7 @@ NullModemClass *__thiscall NullModemClass::QueryInterface(void ***this, char a2)
 {
   void **v3; // edi
 
-  v3 = *(this + 13); /*0x5f3654*/
+  v3 = this->q034; /*0x5f3654*/
   *this = &vt_NullModemClass; /*0x5f3657*/
   if ( v3 ) /*0x5f365f*/
   {
@@ -138,7 +138,7 @@ NullModemClass *__thiscall NullModemClass::QueryInterface(void ***this, char a2)
     __3_YAXPAX_Z(v3); /*0x5f3669*/
   }
   ObjectClass::FreeResources((int)this); /*0x5f3673*/
-  if ( *(this + 16) != (void **)-1 ) /*0x5f3680*/
+  if ( this->PacketsSent != (void **)-1 ) /*0x5f3680*/
   {
     if ( !g_ClipboardBuffer ) /*0x5f368a*/
       goto LABEL_10; /*0x5f368a*/
@@ -146,7 +146,7 @@ NullModemClass *__thiscall NullModemClass::QueryInterface(void ***this, char a2)
     if ( g_ClipboardBuffer ) /*0x5f3699*/
       (**(void (__thiscall ***)(HWND, int))g_ClipboardBuffer)(g_ClipboardBuffer, 1); /*0x5f369f*/
     g_ClipboardBuffer = 0; /*0x5f36a1*/
-    *(this + 16) = (void **)-1; /*0x5f36ad*/
+    this->PacketsSent = (void **)-1; /*0x5f36ad*/
     ObjectClass::FreeResources((int)this); /*0x5f36b0*/
   }
   if ( g_ClipboardBuffer ) /*0x5f36bd*/
@@ -205,8 +205,8 @@ char __thiscall NullModemClass::sendData(int this)
     Debug::Log(); /*0x774717*/
   }
   GetCommMask(*(HANDLE *)(this + 92), &EvtMask); /*0x774728*/
-  (*(void (__thiscall **)(int, int))(*(_DWORD *)this + 16))(this, 1); /*0x774734*/
-  (*(void (__thiscall **)(int))(*(_DWORD *)this + 12))(this); /*0x77473b*/
+  (*(void (__thiscall **)(int, int))(this->PacketsSent)(this, 1); /*0x774734*/
+  (*(void (__thiscall **)(int))(this->LastPacketTime)(this); /*0x77473b*/
   if ( !EscapeCommFunction(*(HANDLE *)(this + 92), 3u) ) /*0x774744*/
   {
     GetLastError(); /*0x77474f*/
@@ -266,7 +266,7 @@ int __thiscall NullModemClass::receiveData(int this)
     if ( !v5 ) /*0x77486f*/
       WinModemClass::LogCommErrors((_DWORD *)this, v2, *(_BYTE *)&Stat, cbInQue, cbOutQue); /*0x774885*/
   }
-  return (*(int (__thiscall **)(int, int))(*(_DWORD *)this + 16))(this, 1); /*0x774893*/
+  return (*(int (__thiscall **)(int, int))(this->PacketsSent)(this, 1); /*0x774893*/
 }
 }
 
@@ -276,7 +276,7 @@ int NullModemClass::GetMember23()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall NullModemClass_GetMember23(_DWORD *this)
 {
-  return *(this + 23); /*0x7754c3*/
+  return this->q05C; /*0x7754c3*/
 }
 }
 

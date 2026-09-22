@@ -2039,12 +2039,12 @@ char __thiscall HouseClass::vt_02_(void *this, int a2, _DWORD *a3)
 
   if ( a2 ) /*0x4e924c*/
   {
-    *((_BYTE *)this + 12) = 0; /*0x4e9256*/
+    this->IsInitialized = 0; /*0x4e9256*/
     if ( a3 ) /*0x4e925c*/
       v4 = a3; /*0x4e9272*/
     else
       v4 = __2_YAPAXI_Z(4 * a2); /*0x4e926e*/
-    *((_BYTE *)this + 12) = 1; /*0x4e9276*/
+    this->IsInitialized = 1; /*0x4e9276*/
     if ( v4 ) /*0x4e927a*/
     {
       if ( this->vtable1 ) /*0x4e9285*/
@@ -2054,7 +2054,7 @@ char __thiscall HouseClass::vt_02_(void *this, int a2, _DWORD *a3)
           v6 = a2; /*0x4e9293*/
         for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->vtable1 + 4 * i - 4) ) /*0x4e9299*/
           ++i; /*0x4e929e*/
-        if ( *((_BYTE *)this + 13) ) /*0x4e92ab*/
+        if ( this->IsAllocated ) /*0x4e92ab*/
         {
           __3_YAXPAX_Z(*((void **)this + 1)); /*0x4e92b6*/
           this->vtable1 = 0; /*0x4e92be*/
@@ -2062,7 +2062,7 @@ char __thiscall HouseClass::vt_02_(void *this, int a2, _DWORD *a3)
       }
       this->vtable1 = v4; /*0x4e92c7*/
       this->vtable2 = a2; /*0x4e92cf*/
-      *((_BYTE *)this + 13) = a3 == 0; /*0x4e92d2*/
+      this->IsAllocated = a3 == 0; /*0x4e92d2*/
       return 1; /*0x4e92d8*/
     }
     else
@@ -2072,7 +2072,7 @@ char __thiscall HouseClass::vt_02_(void *this, int a2, _DWORD *a3)
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x4e92e2*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x4e92e2*/
     return 1; /*0x4e92e8*/
   }
 }
@@ -2092,12 +2092,12 @@ char __thiscall ParticleSystemClass::vt_02_(void *this, int a2, _DWORD *a3)
 
   if ( a2 ) /*0x4e9e2c*/
   {
-    *((_BYTE *)this + 12) = 0; /*0x4e9e36*/
+    this->IsInitialized = 0; /*0x4e9e36*/
     if ( a3 ) /*0x4e9e3c*/
       v4 = a3; /*0x4e9e52*/
     else
       v4 = __2_YAPAXI_Z(4 * a2); /*0x4e9e4e*/
-    *((_BYTE *)this + 12) = 1; /*0x4e9e56*/
+    this->IsInitialized = 1; /*0x4e9e56*/
     if ( v4 ) /*0x4e9e5a*/
     {
       if ( this->vtable1 ) /*0x4e9e65*/
@@ -2107,7 +2107,7 @@ char __thiscall ParticleSystemClass::vt_02_(void *this, int a2, _DWORD *a3)
           v6 = a2; /*0x4e9e73*/
         for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->vtable1 + 4 * i - 4) ) /*0x4e9e79*/
           ++i; /*0x4e9e7e*/
-        if ( *((_BYTE *)this + 13) ) /*0x4e9e8b*/
+        if ( this->IsAllocated ) /*0x4e9e8b*/
         {
           __3_YAXPAX_Z(*((void **)this + 1)); /*0x4e9e96*/
           this->vtable1 = 0; /*0x4e9e9e*/
@@ -2115,7 +2115,7 @@ char __thiscall ParticleSystemClass::vt_02_(void *this, int a2, _DWORD *a3)
       }
       this->vtable1 = v4; /*0x4e9ea7*/
       this->vtable2 = a2; /*0x4e9eaf*/
-      *((_BYTE *)this + 13) = a3 == 0; /*0x4e9eb2*/
+      this->IsAllocated = a3 == 0; /*0x4e9eb2*/
       return 1; /*0x4e9eb8*/
     }
     else
@@ -2125,7 +2125,7 @@ char __thiscall ParticleSystemClass::vt_02_(void *this, int a2, _DWORD *a3)
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x4e9ec2*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x4e9ec2*/
     return 1; /*0x4e9ec8*/
   }
 }

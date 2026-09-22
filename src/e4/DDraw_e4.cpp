@@ -33,7 +33,7 @@ void DDraw::Init()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_4A3640(_DWORD *this)
 {
-  *(this + 24576) = 0; /*0x4a3640*/
+  this->q18000 = 0; /*0x4a3640*/
 }
 }
 

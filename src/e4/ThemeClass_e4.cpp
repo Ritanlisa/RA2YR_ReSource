@@ -8,7 +8,7 @@ int ThemeClass::RequestBuffer()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall ThemeClass_RequestBuffer(_DWORD *this)
 {
-  return RequestBufferMixer((unsigned int *)(*(this + 5) + 16), 0);
+  return RequestBufferMixer((unsigned int *)(this->q014 + 16), 0);
 }
 }
 
@@ -18,7 +18,7 @@ long long ThemeClass::GetValue()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 __int64 __thiscall sub_408140(_QWORD *this)
 {
-  return *(this + 4); /*0x408146*/
+  return this->ThemeClass_field_04; /*0x408146*/
 }
 }
 

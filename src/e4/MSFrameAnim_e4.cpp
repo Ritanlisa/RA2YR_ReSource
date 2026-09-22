@@ -40,7 +40,7 @@ char __thiscall MSFrameAnim::sub_769FE0(_BYTE *this, int a2, _DWORD *a3)
   v3 = a2; /*0x769fe3*/
   if ( a2 ) /*0x769fed*/
   {
-    *(this + 12) = 0; /*0x769ff7*/
+    this->q00C = 0; /*0x769ff7*/
     if ( a3 ) /*0x769ffd*/
     {
       *a3 = a2; /*0x76a041*/
@@ -85,7 +85,7 @@ char __thiscall MSFrameAnim::sub_769FE0(_BYTE *this, int a2, _DWORD *a3)
         v6 = 0; /*0x76a03d*/
       }
     }
-    *(this + 12) = 1; /*0x76a06f*/
+    this->q00C = 1; /*0x76a06f*/
     if ( !v6 ) /*0x76a073*/
       return 0; /*0x76a0f6*/
     if ( this->MSFrameAnim_field_0x4 ) /*0x76a075*/
@@ -94,7 +94,7 @@ char __thiscall MSFrameAnim::sub_769FE0(_BYTE *this, int a2, _DWORD *a3)
         v3 = this->MSFrameAnim_field_0x8; /*0x76a083*/
       for ( i = 0; i < v3; ++i ) /*0x76a089*/
         ComPtr::Set(&v6[2 * i], *(_DWORD *)(this->MSFrameAnim_field_0x4 + 8 * i + 4)); /*0x76a096*/
-      if ( *(this + 13) ) /*0x76a0a0*/
+      if ( this->IsAllocated ) /*0x76a0a0*/
       {
         v11 = (void (__thiscall ***)(_DWORD, int))this->MSFrameAnim_field_0x4; /*0x76a0a7*/
         if ( v11 ) /*0x76a0ac*/
@@ -105,11 +105,11 @@ char __thiscall MSFrameAnim::sub_769FE0(_BYTE *this, int a2, _DWORD *a3)
     }
     this->MSFrameAnim_field_0x4 = v6; /*0x76a0ca*/
     this->MSFrameAnim_field_0x8 = v3; /*0x76a0cd*/
-    *(this + 13) = a3 == 0; /*0x76a0d0*/
+    this->IsAllocated = a3 == 0; /*0x76a0d0*/
   }
   else
   {
-    (*(void (__thiscall **)(_BYTE *))(*(_DWORD *)this + 12))(this); /*0x76a0d9*/
+    (*(void (__thiscall **)(_BYTE *))(this->q00C)(this); /*0x76a0d9*/
   }
   v12 = this->MSFrameAnim_field_0x8; /*0x76a0dc*/
   if ( v12 < this->MSFrameAnim_field_0x10 ) /*0x76a0e4*/

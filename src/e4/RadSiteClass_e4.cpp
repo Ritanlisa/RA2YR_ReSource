@@ -13,27 +13,27 @@ _DWORD *__thiscall sub_65B1E0(_DWORD *this)
   int v3; // eax
 
   AbstractClass::Constructor((int)this); /*0x65b1e3*/
-  *(this + 9) = 0; /*0x65b1ea*/
-  *(this + 10) = MEMORY[0xA8ED84]; /*0x65b1f3*/
-  *(this + 12) = 0; /*0x65b1f6*/
+  this->LightSource = 0; /*0x65b1ea*/
+  this->RadLevelTimer = MEMORY[0xA8ED84]; /*0x65b1f3*/
+  this->q030 = 0; /*0x65b1f6*/
   v2 = MEMORY[0xA8ED84]; /*0x65b1f9*/
-  *(this + 15) = 0; /*0x65b1ff*/
-  *(this + 13) = v2; /*0x65b202*/
-  *((_WORD *)this + 32) = 0; /*0x65b205*/
-  *((_WORD *)this + 33) = 0; /*0x65b209*/
-  *(this + 17) = 0; /*0x65b20d*/
-  *(this + 18) = 0; /*0x65b210*/
-  *(this + 19) = 0; /*0x65b213*/
-  *(this + 20) = 0; /*0x65b216*/
-  *(this + 21) = 0; /*0x65b219*/
-  *(this + 25) = 0; /*0x65b21c*/
-  *(this + 26) = 0; /*0x65b21f*/
-  *(this + 27) = 0; /*0x65b222*/
-  *(this + 28) = 0; /*0x65b225*/
+  this->q03C = 0; /*0x65b1ff*/
+  this->RadLightTimer = v2; /*0x65b202*/
+  this->q080 = 0; /*0x65b205*/
+  this->alignmentPadding = 0; /*0x65b209*/
+  this->Spread = 0; /*0x65b20d*/
+  this->SpreadInLeptons = 0; /*0x65b210*/
+  this->RadLevel = 0; /*0x65b213*/
+  this->LevelSteps = 0; /*0x65b216*/
+  this->Intensity = 0; /*0x65b219*/
+  this->q064 = 0; /*0x65b21c*/
+  this->q068 = 0; /*0x65b21f*/
+  this->RadDuration = 0; /*0x65b222*/
+  this->RadTimeLeft = 0; /*0x65b225*/
   *this = &RadSiteClass::`vftable'; /*0x65b228*/
-  *(this + 1) = &RadSiteClass::`vftable'; /*0x65b22e*/
-  *(this + 2) = &RadSiteClass::`vftable'; /*0x65b235*/
-  *(this + 3) = &vt_RadSiteClass; /*0x65b23c*/
+  this->vtable2 = &RadSiteClass::`vftable'; /*0x65b22e*/
+  this->vtable3 = &RadSiteClass::`vftable'; /*0x65b235*/
+  this->vtable4 = &vt_RadSiteClass; /*0x65b23c*/
   if ( dword_B04BE0 < dword_B04BD8 /*0x65b277*/
     || (byte_B04BDD || !dword_B04BD8)
     && dword_B04BE4 > 0

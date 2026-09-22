@@ -8,7 +8,7 @@ int GaugeClass::Stub()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall GaugeClass::_vt36(_DWORD *this)
 {
-  return *(this + 13); /*0x4e30a3*/
+  return this->q034; /*0x4e30a3*/
 }
 }
 

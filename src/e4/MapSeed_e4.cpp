@@ -9,7 +9,7 @@ char MapSeed::ValidateName(int a2)
 char __thiscall MapSeed::ValidateName(char *this, int a2)
 {
   if ( a2 ) /*0x597736*/
-    return (*(int (__stdcall **)(int, char *))(*(_DWORD *)this + 8))(a2, this + 120); /*0x597740*/
+    return (*(int (__stdcall **)(int, char *))(this->q008)(a2, this + 120); /*0x597740*/
   else
     return (unsigned __int8)ShowSaveLoadDialog(this + 120) != 0; /*0x597752*/
 }
@@ -25,7 +25,7 @@ bool __thiscall sub_5AC230(__int16 *this)
   int v2; // eax
 
   v1 = *this; /*0x5ac230*/
-  v2 = *(this + 1); /*0x5ac233*/
+  v2 = this->q004; /*0x5ac233*/
   return v2 + v1 > g_MapCellHeight_Value /*0x5ac25f*/
       && v1 - v2 < g_MapCellHeight_Value
       && v2 - v1 < g_MapCellHeight_Value

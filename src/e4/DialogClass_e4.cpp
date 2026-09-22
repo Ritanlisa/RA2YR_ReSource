@@ -9,7 +9,7 @@ char DialogClass::GetFlag()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall DialogClass_GetFlag(_BYTE *this)
 {
-  return *(this + 52); /*0x5d6353*/
+  return this->q034; /*0x5d6353*/
 }
 }
 } // namespace gamemd

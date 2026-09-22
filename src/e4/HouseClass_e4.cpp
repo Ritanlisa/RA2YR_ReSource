@@ -41,7 +41,7 @@ int __thiscall sub_459840(_DWORD *this)
   _DWORD *v1; // edx
   int result; // eax
 
-  v1 = (_DWORD *)*(this + 328); /*0x459840*/
+  v1 = (_DWORD *)this->q520; /*0x459840*/
   result = v1[937]; /*0x459846*/
   if ( !result ) /*0x45984e*/
   {
@@ -50,7 +50,7 @@ int __thiscall sub_459840(_DWORD *this)
     {
       result = v1[939]; /*0x45985a*/
       if ( !result ) /*0x459862*/
-        return *(this + 445); /*0x459864*/
+        return this->q6F4; /*0x459864*/
     }
   }
   return result; /*0x45986a*/
@@ -2266,7 +2266,7 @@ int HouseClass::GetInfSelfHealStep()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall HouseClass::GetInfSelfHealStep(_DWORD *this)
 {
-  return *(this + 89) * MEMORY[0x8871E0]->SelfHealInfantryAmount; /*0x50d9ef*/
+  return this->q059 * MEMORY[0x8871E0]->SelfHealInfantryAmount; /*0x50d9ef*/
 }
 }
 } // namespace gamemd
@@ -2278,7 +2278,7 @@ int HouseClass::GetUnitSelfHealStep()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall HouseClass::GetUnitSelfHealStep(_DWORD *this)
 {
-  return *(this + 90) * MEMORY[0x8871E0]->SelfHealUnitAmount; /*0x50d9ff*/
+  return this->q05A * MEMORY[0x8871E0]->SelfHealUnitAmount; /*0x50d9ff*/
 }
 }
 } // namespace gamemd
@@ -2350,7 +2350,7 @@ int __thiscall HouseClass::GetCameoTypeIndex(void *this, int a2)
   _DWORD *v2; // eax
   int v3; // ecx
 
-  v2 = (_DWORD *)(*(int (__thiscall **)(void *))(*(_DWORD *)this + 156))(this); /*0x5471b2*/
+  v2 = (_DWORD *)(*(int (__thiscall **)(void *))(this->secretLabsCount)(this); /*0x5471b2*/
   if ( v2 && (v3 = v2[a2 % (*v2 * v2[1]) + 4]) != 0 ) /*0x5471d3*/
     return *(char *)(v3 + 42); /*0x5471d5*/
   else
@@ -2750,9 +2750,9 @@ char HouseClass::SetPrimaryFactory(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_740DF0(_DWORD *this, int a2)
 {
-  if ( a2 == -1 || *(this + 435) != -1 ) /*0x740e00*/
+  if ( a2 == -1 || this->q6CC != -1 ) /*0x740e00*/
     return 0; /*0x740e17*/
-  *(this + 435) = a2; /*0x740e02*/
+  this->q6CC = a2; /*0x740e02*/
   (*(void (__thiscall **)(_DWORD *, int))(*this + 292))(this, 2); /*0x740e0c*/
   return 1; /*0x740e14*/
 }

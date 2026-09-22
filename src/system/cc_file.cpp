@@ -30,11 +30,11 @@ bool CCFileClass::Open(const char* pFileName)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_473C50(_DWORD *this, int a2)
 {
-  if ( *(this + 26) == 1 )
+  if ( this->q068 == 1 )
     return 1;
   if ( (*(unsigned __int8 (__thiscall **)(_DWORD *))(*this + 24))(this) )
   {
-    *(this + 26) = 1;
+    this->q068 = 1;
     return 1;
   }
   else
@@ -42,17 +42,17 @@ char __thiscall sub_473C50(_DWORD *this, int a2)
     (*(void (__thiscall **)(_DWORD *))(*this + 4))(this);
     if ( (unsigned __int8)LookupFileInfoCache(0, 0, 0) )
     {
-      *(this + 26) = 1;
+      this->q068 = 1;
       return 1;
     }
     else if ( (unsigned __int8)File::IsReady(0) )
     {
-      *(this + 26) = 1;
+      this->q068 = 1;
       return 1;
     }
     else
     {
-      *(this + 26) = 2;
+      this->q068 = 2;
       return 0;
     }
   }
@@ -151,7 +151,7 @@ int __thiscall CCFileClass_Reset(_DWORD *this)
   v2 = this + 22;
   if ( v2 )
     Buffer::Init(v2, 0, 0);
-  *(this + 25) = 0;
+  this->q064 = 0;
   return CCFileClass::Close(this);
 }
 

@@ -37,11 +37,11 @@ int __thiscall Carryall::MissionStateMachine(FootClass **this)
   _BYTE v29[20]; // [esp+2Ch] [ebp-18h] BYREF
   int v30; // [esp+40h] [ebp-4h]
 
-  switch ( (unsigned int)*(this + 47) ) /*0x416d64*/
+  switch ( (unsigned int)this->q0BC ) /*0x416d64*/
   {
     case 0u: /*0x416d64*/
       Debug::Log(); /*0x416d70*/
-      v2 = *(this + 361); /*0x416d75*/
+      v2 = this->q5A4; /*0x416d75*/
       if ( !v2 ) /*0x416d80*/
       {
         Debug::Log(); /*0x416d87*/
@@ -52,9 +52,9 @@ LABEL_4:
       v6 = (TechnoClass *)AbstractClass::IsTechnoType(v2); /*0x416dd8*/
       if ( !v6 ) /*0x416ddc*/
         goto LABEL_18; /*0x416ddc*/
-      if ( *(this + 70) ) /*0x416de2*/
+      if ( this->q046 ) /*0x416de2*/
         goto LABEL_18; /*0x416de2*/
-      if ( !Object::IsAlliedWithObjectHouse(*(this + 135), (IUnknown *)v6) ) /*0x416df7*/
+      if ( !Object::IsAlliedWithObjectHouse(this->q087, (IUnknown *)v6) ) /*0x416df7*/
         goto LABEL_18; /*0x416df7*/
       if ( (v6->abstractFlags & 1) != 0 ) /*0x416e0e*/
       {
@@ -78,12 +78,12 @@ LABEL_4:
         (*(void (__thiscall **)(FootClass **, int))&(*this)->__pad_26A[10])(this, 7); /*0x416ec3*/
 LABEL_18:
         v8 = *this; /*0x416ec9*/
-        NearbyCell = InfantryClass::FindNearbyCell(this, (IUnknown *)*(this + 361)); /*0x416ed6*/
+        NearbyCell = InfantryClass::FindNearbyCell(this, (IUnknown *)this->q5A4); /*0x416ed6*/
         ((void (__thiscall *)(FootClass **, void *, int))v8->audioController4[1])(this, NearbyCell, 1); /*0x416ede*/
-        v10 = (int)*(this + 373); /*0x416ee4*/
+        v10 = (int)this->q175; /*0x416ee4*/
         if ( v10 ) /*0x416eec*/
-          TeamClass::SelectMember(v10, (AbstractClass *)*(this + 361)); /*0x416ef5*/
-        *(this + 47) = (FootClass *)1; /*0x416eff*/
+          TeamClass::SelectMember(v10, (AbstractClass *)this->q5A4); /*0x416ef5*/
+        this->q0BC = (FootClass *)1; /*0x416eff*/
         Debug::Log(); /*0x416f09*/
       }
       else
@@ -97,18 +97,18 @@ LABEL_5:
       v4 = Math::RoundToInt(*((double *)MissionControl + 2) * 900.0); /*0x416dc2*/
       return v4 + Random::Range((_DWORD *)(*(_DWORD *)&HouseClass_Player.__pad_5568[8060] + 536), 0, (IUnknown *)2);
     case 1u: /*0x416d64*/
-      v11 = *(this + 361); /*0x416f29*/
+      v11 = this->q5A4; /*0x416f29*/
       if ( v11 ) /*0x416f31*/
       {
         v12 = (_DWORD *)(*(int (__thiscall **)(FootClass *, _BYTE *))(*(_DWORD *)v11->__pad_0 + 72))(v11, v29); /*0x416f54*/
-        if ( !*(this + 413) ) /*0x416f5f*/
+        if ( !this->q19D ) /*0x416f5f*/
           WinAPI::Wrapper(-2147467261); /*0x416f6e*/
-        (*(void (__stdcall **)(_DWORD, _DWORD, _DWORD, _DWORD))(*(_DWORD *)(*(this + 413))->__pad_0 + 68))( /*0x416f89*/
-          *(this + 413),
+        (*(void (__stdcall **)(_DWORD, _DWORD, _DWORD, _DWORD))(*(_DWORD *)(this->q19D)->__pad_0 + 68))( /*0x416f89*/
+          this->q19D,
           *v12,
           v12[1],
           v12[2]);
-        *(this + 47) = (FootClass *)2; /*0x416f8c*/
+        this->q0BC = (FootClass *)2; /*0x416f8c*/
         return 1; /*0x416f96*/
       }
       else
@@ -117,63 +117,63 @@ LABEL_5:
         return 1; /*0x416f40*/
       }
     case 2u: /*0x416d64*/
-      v13 = *(this + 361); /*0x416fa3*/
+      v13 = this->q5A4; /*0x416fa3*/
       if ( v13 /*0x416fc7*/
         && (*(int (__thiscall **)(FootClass *))(*(_DWORD *)v13->__pad_0 + 44))(v13) != 11
-        && (FootClass *)Team::GetMember(this, 0) != *(this + 361) )
+        && (FootClass *)Team::GetMember(this, 0) != this->q5A4 )
       {
         Debug::Log(); /*0x416fce*/
-        *(this + 47) = 0; /*0x416fd6*/
+        this->q0BC = 0; /*0x416fd6*/
         return 1; /*0x416fe8*/
       }
-      v14 = *(this + 361); /*0x416fe9*/
+      v14 = this->q5A4; /*0x416fe9*/
       if ( v14 /*0x417008*/
         && (*(int (__thiscall **)(FootClass *))(*(_DWORD *)v14->__pad_0 + 44))(v14) == 11
-        && !((unsigned __int8 (__thiscall *)(FootClass **, _DWORD))(*this)->audioController7[3])(this, *(this + 361)) )
+        && !((unsigned __int8 (__thiscall *)(FootClass **, _DWORD))(*this)->audioController7[3])(this, this->q5A4) )
       {
-        *(this + 47) = 0; /*0x417012*/
+        this->q0BC = 0; /*0x417012*/
         return 1; /*0x417024*/
       }
-      if ( !*(this + 413) ) /*0x417025*/
+      if ( !this->q19D ) /*0x417025*/
         WinAPI::Wrapper(-2147467261); /*0x417032*/
-      if ( (*(int (__stdcall **)(_DWORD))(*(_DWORD *)(*(this + 413))->__pad_0 + 144))(*(this + 413)) != 1 ) /*0x417049*/
+      if ( (*(int (__stdcall **)(_DWORD))(*(_DWORD *)(this->q19D)->__pad_0 + 144))(this->q19D) != 1 ) /*0x417049*/
         goto LABEL_44; /*0x417049*/
       Debug::Log(); /*0x417054*/
-      v15 = *(this + 361); /*0x417059*/
+      v15 = this->q5A4; /*0x417059*/
       if ( !v15 /*0x4170e9*/
         || (*(int (__thiscall **)(FootClass *))(*(_DWORD *)v15->__pad_0 + 44))(v15) != 1
-        || (v16 = (int)*(this + 39),
-            v17 = (int)*(this + 40),
-            v30 = (int)*(this + 41),
+        || (v16 = (int)this->q027,
+            v17 = (int)this->q028,
+            v30 = (int)this->q029,
             v18 = v16 / 256,
-            v19 = (*(this + 361))->location[0],
-            v20 = (*(this + 361))->location[1],
-            v30 = (*(this + 361))->location[2],
+            v19 = (this->q5A4)->location[0],
+            v20 = (this->q5A4)->location[1],
+            v30 = (this->q5A4)->location[2],
             (unsigned __int16)(v19 / 256) == (_WORD)v18)
         && (unsigned __int16)(v20 / 256) == (unsigned __int16)(v17 / 256) )
       {
         *((_BYTE *)this + 1748) = 0; /*0x41710f*/
 LABEL_44:
-        if ( !*(this + 413) ) /*0x417116*/
+        if ( !this->q19D ) /*0x417116*/
           WinAPI::Wrapper(-2147467261); /*0x417125*/
-        if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)(*(this + 413))->__pad_0 + 16))(*(this + 413)) ) /*0x417133*/
+        if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)(this->q19D)->__pad_0 + 16))(this->q19D) ) /*0x417133*/
         {
           Debug::Log(); /*0x41713f*/
-          *(this + 47) = (FootClass *)3; /*0x417147*/
+          this->q0BC = (FootClass *)3; /*0x417147*/
         }
         return 1; /*0x417151*/
       }
       else
       {
-        *(this + 47) = 0; /*0x4170f0*/
+        this->q0BC = 0; /*0x4170f0*/
         Debug::Log(); /*0x4170fa*/
         return 1; /*0x417102*/
       }
     case 3u: /*0x416d64*/
       Debug::Log(); /*0x417163*/
-      if ( *(this + 70) ) /*0x417168*/
+      if ( this->q046 ) /*0x417168*/
       {
-        if ( *(this + 320) ) /*0x417177*/
+        if ( this->q140 ) /*0x417177*/
         {
           *((_BYTE *)this + 1748) = 1; /*0x41717f*/
         }
@@ -182,7 +182,7 @@ LABEL_44:
           (*(void (__thiscall **)(FootClass **, _DWORD))&(*this)->__pad_115[15])(this, 0); /*0x41719c*/
           FootClass::MissionMoveCarryallLand((int *)this); /*0x4171a4*/
           (*(void (__thiscall **)(FootClass **, int))&(*this)->__pad_115[15])(this, 1); /*0x4171af*/
-          *(this + 47) = 0; /*0x4171b5*/
+          this->q0BC = 0; /*0x4171b5*/
         }
         return 1; /*0x417186*/
       }
@@ -190,13 +190,13 @@ LABEL_44:
       {
         Debug::Log(); /*0x4171cd*/
         (*(void (__thiscall **)(FootClass **, _DWORD))&(*this)->__pad_115[15])(this, 0); /*0x4171da*/
-        v27[0] = *(this + 39); /*0x4171ea*/
-        v27[1] = *(this + 40); /*0x4171f1*/
-        v21 = (int)*(this + 41); /*0x4171f7*/
-        v28[0] = *(this + 39); /*0x4171fa*/
-        v22 = (int)*(this + 41); /*0x4171fe*/
+        v27[0] = this->q027; /*0x4171ea*/
+        v27[1] = this->q028; /*0x4171f1*/
+        v21 = (int)this->q029; /*0x4171f7*/
+        v28[0] = this->q027; /*0x4171fa*/
+        v22 = (int)this->q029; /*0x4171fe*/
         v27[2] = v21; /*0x417201*/
-        v28[1] = *(this + 40); /*0x41720c*/
+        v28[1] = this->q028; /*0x41720c*/
         v28[2] = v22; /*0x417216*/
         v26 = BYTE1(*((_DWORD *)Coord::To_Cell(&stru_87C374.__pad_14B0[8132], (IUnknown *)v27) + 80)) & 1; /*0x41722f*/
         v23 = Coord::To_Cell(&stru_87C374.__pad_14B0[8132], (IUnknown *)v28); /*0x417236*/
@@ -213,7 +213,7 @@ LABEL_44:
         }
         else
         {
-          *(this + 47) = 0; /*0x4172a5*/
+          this->q0BC = 0; /*0x4172a5*/
         }
         (*(void (__thiscall **)(FootClass **, int))&(*this)->__pad_26A[10])(this, 3); /*0x4172b1*/
         (*(void (__thiscall **)(FootClass **, int))&(*this)->__pad_115[15])(this, 1); /*0x4172bd*/

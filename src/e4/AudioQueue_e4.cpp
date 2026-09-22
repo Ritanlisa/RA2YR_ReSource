@@ -369,7 +369,7 @@ _BYTE *__thiscall AudioQueue::AllocBuffer(_DWORD *this, WinsockInterfaceClass *a
   result = 0; /*0x7b20e7*/
   if ( (_BYTE)aP1 ) /*0x7b20ed*/
   {
-    if ( *(this + 64537) == 128 ) /*0x7b219e*/
+    if ( this->q3F064 == 128 ) /*0x7b219e*/
     {
       result = (_BYTE *)__2_YAPAXI_Z(0x2A0u); /*0x7b21a5*/
       result[22] = 1; /*0x7b21af*/
@@ -380,10 +380,10 @@ _BYTE *__thiscall AudioQueue::AllocBuffer(_DWORD *this, WinsockInterfaceClass *a
       v5 = 0; /*0x7b21b7*/
       while ( 1 ) /*0x7b21b9*/
       {
-        v6 = *(this + 64534); /*0x7b21b9*/
-        *(this + 64534) = v6 + 1; /*0x7b21c5*/
+        v6 = this->q3F058; /*0x7b21b9*/
+        this->q3F058 = v6 + 1; /*0x7b21c5*/
         if ( v6 + 1 > 127 ) /*0x7b21cb*/
-          *(this + 64534) = 0; /*0x7b21cd*/
+          this->q3F058 = 0; /*0x7b21cd*/
         if ( !*((_BYTE *)this + 672 * v6 + 172133) ) /*0x7b21e2*/
           break; /*0x7b21e2*/
         if ( ++v5 >= 128 ) /*0x7b21f2*/
@@ -391,7 +391,7 @@ _BYTE *__thiscall AudioQueue::AllocBuffer(_DWORD *this, WinsockInterfaceClass *a
       }
       result = this + 168 * v6 + 43028; /*0x7b220b*/
       *((_BYTE *)this + 672 * v6 + 172133) = 1; /*0x7b2212*/
-      ++*(this + 64537); /*0x7b221c*/
+      ++this->q3F064; /*0x7b221c*/
     }
     if ( result ) /*0x7b2224*/
     {
@@ -401,7 +401,7 @@ _BYTE *__thiscall AudioQueue::AllocBuffer(_DWORD *this, WinsockInterfaceClass *a
   }
   else
   {
-    if ( *(this + 64536) == 128 ) /*0x7b20fd*/
+    if ( this->q3F060 == 128 ) /*0x7b20fd*/
     {
       result = (_BYTE *)__2_YAPAXI_Z(0x2A0u); /*0x7b2104*/
       result[22] = 1; /*0x7b210e*/
@@ -412,10 +412,10 @@ _BYTE *__thiscall AudioQueue::AllocBuffer(_DWORD *this, WinsockInterfaceClass *a
       v3 = 0; /*0x7b2116*/
       while ( 1 ) /*0x7b2118*/
       {
-        v4 = *(this + 64533); /*0x7b2118*/
-        *(this + 64533) = v4 + 1; /*0x7b2124*/
+        v4 = this->q3F054; /*0x7b2118*/
+        this->q3F054 = v4 + 1; /*0x7b2124*/
         if ( v4 + 1 > 127 ) /*0x7b212a*/
-          *(this + 64533) = 0; /*0x7b212c*/
+          this->q3F054 = 0; /*0x7b212c*/
         if ( !*((_BYTE *)this + 672 * v4 + 86117) ) /*0x7b2141*/
           break; /*0x7b2141*/
         if ( ++v3 >= 128 ) /*0x7b2151*/
@@ -423,7 +423,7 @@ _BYTE *__thiscall AudioQueue::AllocBuffer(_DWORD *this, WinsockInterfaceClass *a
       }
       result = this + 168 * v4 + 21524; /*0x7b2168*/
       *((_BYTE *)this + 672 * v4 + 86117) = 1; /*0x7b216f*/
-      ++*(this + 64536); /*0x7b217a*/
+      ++this->q3F060; /*0x7b217a*/
     }
     if ( result ) /*0x7b2182*/
     {

@@ -752,11 +752,11 @@ int __thiscall unknown::_vt04(int *this, _WORD *a2)
   int result; // eax
   _WORD *i; // ecx
 
-  v2 = *(this + 4); /*0x5896a2*/
+  v2 = this->m_Position; /*0x5896a2*/
   result = 0; /*0x5896a5*/
   if ( v2 <= 0 ) /*0x5896aa*/
     return -1; /*0x5896e1*/
-  for ( i = (_WORD *)*(this + 1); *i != *a2 || i[1] != a2[1] || i[2] != a2[2] || i[3] != a2[3]; i += 8 ) /*0x5896b0*/
+  for ( i = (_WORD *)this->m_Position; *i != *a2 || i[1] != a2[1] || i[2] != a2[2] || i[3] != a2[3]; i += 8 ) /*0x5896b0*/
   {
     if ( ++result >= v2 ) /*0x5896df*/
       return -1; /*0x5896df*/
@@ -1385,7 +1385,7 @@ int __thiscall unknown::_vt06(_DWORD *this, int a2, int a3)
 {
   int v3; // edx
 
-  v3 = *(this + 1) + 16 * a3; /*0x588d3a*/
+  v3 = this->m_Position + 16 * a3; /*0x588d3a*/
   *(_DWORD *)a2 = *(_DWORD *)v3; /*0x588d42*/
   *(_DWORD *)(a2 + 4) = *(_DWORD *)(v3 + 4); /*0x588d47*/
   *(_BYTE *)(a2 + 8) = *(_BYTE *)(v3 + 8); /*0x588d4d*/

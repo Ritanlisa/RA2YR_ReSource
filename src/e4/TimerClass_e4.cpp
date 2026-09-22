@@ -57,7 +57,7 @@ char *__thiscall TimerClass::Construct(
   int v20; // eax
 
   *(_DWORD *)this = 0; /*0x54fe6a*/
-  *(this + 4) = 0; /*0x54fe6c*/
+  this->q004 = 0; /*0x54fe6c*/
   this->TimerClass_field_0x8 = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x54fe75*/
   v18 = this + 36; /*0x54fe78*/
   this->TimerClass_field_0x10 = 0; /*0x54fe7b*/
@@ -66,14 +66,14 @@ char *__thiscall TimerClass::Construct(
   *((_DWORD *)this + 6) = 1; /*0x54fe8c*/
   *((_DWORD *)v18 + 1) = a3; /*0x54fe8f*/
   *((_DWORD *)this + 7) = 1; /*0x54fe96*/
-  *(this + 32) = 0; /*0x54fe99*/
+  this->q008 = 0; /*0x54fe99*/
   *((_DWORD *)v18 + 2) = aP3; /*0x54fe9c*/
   *(this + 33) = 0; /*0x54fea6*/
-  *((_DWORD *)this + 12) = a5; /*0x54fea9*/
+  this->q00C = a5; /*0x54fea9*/
   *((_DWORD *)this + 13) = a6; /*0x54feaf*/
   *((_DWORD *)this + 14) = a7; /*0x54feb6*/
   *((_DWORD *)this + 15) = a8; /*0x54febd*/
-  *(this + 64) = a9; /*0x54fec4*/
+  this->q010 = a9; /*0x54fec4*/
   *(this + 65) = 0; /*0x54fecb*/
   *(this + 66) = 0; /*0x54fece*/
   *(this + 67) = 0; /*0x54fed1*/
@@ -93,7 +93,7 @@ char *__thiscall TimerClass::Construct(
   v19 = *(IUnknown **)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x54ff0a*/
   *((_DWORD *)this + 5) = 1; /*0x54ff10*/
   this->TimerClass_field_0x8 = v19; /*0x54ff13*/
-  *((_DWORD *)this + 3) = a3; /*0x54ff1a*/
+  this->q00C = a3; /*0x54ff1a*/
   this->TimerClass_field_0x10 = 1; /*0x54ff21*/
   *(_WORD *)(this + 65) = a10; /*0x54ff29*/
   *(this + 67) = BYTE2(a10); /*0x54ff32*/
@@ -127,19 +127,19 @@ signed int __thiscall TimerClass_GetRemaining(signed int *this)
   signed int result; // eax
   signed int v3; // edi
 
-  result = *(this + 4); /*0x5cead3*/
+  result = this->q004; /*0x5cead3*/
   if ( result != -1 ) /*0x5cead9*/
   {
     v3 = *(this + 6); /*0x5ceadc*/
-    result = Timer::GetTicks() - *(this + 4); /*0x5ceaec*/
+    result = Timer::GetTicks() - this->q004; /*0x5ceaec*/
     if ( result >= v3 ) /*0x5ceaf1*/
     {
       *(this + 6) = 0; /*0x5ceb04*/
-      *(this + 4) = -1; /*0x5ceb07*/
+      this->q004 = -1; /*0x5ceb07*/
     }
     else
     {
-      *(this + 4) = -1; /*0x5ceaf5*/
+      this->q004 = -1; /*0x5ceaf5*/
       *(this + 6) = v3 - result; /*0x5ceafc*/
     }
   }
@@ -155,8 +155,8 @@ void TimerClass::StartIfIdle()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall TimerClass_StartIfIdle(_DWORD *this)
 {
-  if ( *(this + 4) == -1 ) /*0x5ceb27*/
-    *(this + 4) = Timer::GetTicks(); /*0x5ceb31*/
+  if ( this->q010 == -1 ) /*0x5ceb27*/
+    this->q010 = Timer::GetTicks(); /*0x5ceb31*/
 }
 }
 } // namespace gamemd

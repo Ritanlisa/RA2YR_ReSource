@@ -144,13 +144,13 @@ unsigned int * InfantryTypeClass::Constructor_523980(ObjectTypeClass * aP1)
 _DWORD *__thiscall InfantryTypeClass::Constructor_523980(_DWORD *this, ObjectTypeClass *aP1)
 {
   TechnoTypeClass::Construct((int)this, aP1); /*0x523988*/
-  *(this + 916) = &vt_TypeList_AnimTypeClass_const; /*0x523992*/
-  *(this + 923) = &vt_TypeList_AnimTypeClass_const; /*0x523998*/
-  *(this + 930) = &vt_TypeList_int; /*0x52399e*/
+  this->qE50 = &vt_TypeList_AnimTypeClass_const; /*0x523992*/
+  this->qE6C = &vt_TypeList_AnimTypeClass_const; /*0x523998*/
+  this->qE88 = &vt_TypeList_int; /*0x52399e*/
   *this = &InfantryTypeClass::`vftable'; /*0x5239a8*/
-  *(this + 1) = &InfantryTypeClass::`vftable'; /*0x5239ae*/
-  *(this + 2) = &InfantryTypeClass::`vftable'; /*0x5239b5*/
-  *(this + 3) = &vt_InfantryTypeClass; /*0x5239bc*/
+  this->vtable2 = &InfantryTypeClass::`vftable'; /*0x5239ae*/
+  this->vtable3 = &InfantryTypeClass::`vftable'; /*0x5239b5*/
+  this->vtable4 = &vt_InfantryTypeClass; /*0x5239bc*/
   return this; /*0x5239c5*/
 }
 }
@@ -749,33 +749,33 @@ _DWORD *__thiscall InfantryTypeClass::CopyDataArray(_DWORD *this, DynamicVector 
     goto LABEL_8; /*0x524f2a*/
   (*(void (__thiscall **)(_DWORD *))(*this + 12))(this); /*0x524f2e*/
   v3 = aP1->field_8; /*0x524f31*/
-  *(this + 2) = v3; /*0x524f36*/
+  this->vtable3 = v3; /*0x524f36*/
   if ( !v3 ) /*0x524f39*/
   {
-    *(this + 1) = 0; /*0x524f86*/
-    *((_BYTE *)this + 13) = 0; /*0x524f8d*/
+    this->vtable2 = 0; /*0x524f86*/
+    this->q034 = 0; /*0x524f8d*/
 LABEL_8:
-    *(this + 4) = aP1->field_10; /*0x524f91*/
-    *(this + 5) = *(_DWORD *)aP1->__pad_14; /*0x524f9a*/
+    this->uniqueId = aP1->field_10; /*0x524f91*/
+    this->abstractFlags = *(_DWORD *)aP1->__pad_14; /*0x524f9a*/
     return this; /*0x524f9d*/
   }
   v4 = __2_YAPAXI_Z(4 * v3); /*0x524f43*/
-  *(this + 1) = v4; /*0x524f4b*/
+  this->vtable2 = v4; /*0x524f4b*/
   if ( !v4 ) /*0x524f50*/
     goto LABEL_8; /*0x524f50*/
-  v5 = *(this + 2); /*0x524f52*/
+  v5 = this->vtable3; /*0x524f52*/
   v6 = 0; /*0x524f55*/
-  *((_BYTE *)this + 13) = 1; /*0x524f59*/
+  this->q034 = 1; /*0x524f59*/
   if ( v5 <= 0 ) /*0x524f5d*/
     goto LABEL_8; /*0x524f5d*/
   do /*0x524f71*/
   {
-    *(_DWORD *)(*(this + 1) + 4 * v6) = *(_DWORD *)(*(_DWORD *)&aP1->field_1[3] + 4 * v6); /*0x524f68*/
+    *(_DWORD *)(this->vtable2 + 4 * v6) = *(_DWORD *)(*(_DWORD *)&aP1->field_1[3] + 4 * v6); /*0x524f68*/
     ++v6; /*0x524f6e*/
   }
-  while ( v6 < *(this + 2) ); /*0x524f71*/
-  *(this + 4) = aP1->field_10; /*0x524f76*/
-  *(this + 5) = *(_DWORD *)aP1->__pad_14; /*0x524f7c*/
+  while ( v6 < this->vtable3 ); /*0x524f71*/
+  this->uniqueId = aP1->field_10; /*0x524f76*/
+  this->abstractFlags = *(_DWORD *)aP1->__pad_14; /*0x524f7c*/
   return this; /*0x524f81*/
 }
 }

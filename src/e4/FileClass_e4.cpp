@@ -11,7 +11,7 @@ int __thiscall FileClass::Write(_DWORD *this, CCFileClass *aP1, DWORD nNumberOfB
   int v4; // edi
   int v5; // eax
 
-  if ( *(this + 22) ) /*0x473ae3*/
+  if ( this->q058 ) /*0x473ae3*/
   {
     v4 = *this; /*0x473aeb*/
     v5 = (*(int (__thiscall **)(_DWORD *))(*this + 4))(this); /*0x473aed*/
@@ -27,7 +27,7 @@ int FileClass::SetFileName(IUnknown * aP1)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall FileClass::SetFileName(_DWORD *this, IUnknown *aP1)
 {
-  *(this + 26) = 0; /*0x473fc4*/
+  this->q068 = 0; /*0x473fc4*/
   return FileClass::OpenWithCDSearch(this, aP1); /*0x473fd1*/
 }
 }
@@ -43,33 +43,33 @@ char __thiscall FileClass_Open(int *this, int a2)
   DWORD LastError; // eax
   int v7; // [esp-4h] [ebp-Ch]
 
-  if ( !*(this + 6) ) /*0x65cbf4*/
+  if ( !this->q018 ) /*0x65cbf4*/
     return 0; /*0x65cbff*/
   if ( (*(unsigned __int8 (__thiscall **)(int *))(*this + 24))(this) ) /*0x65cc06*/
     return 1; /*0x65cc0b*/
   if ( !a2 ) /*0x65cc17*/
   {
-    FileA = CreateFileA((LPCSTR)*(this + 6), 0x80000000, 1u, 0, 3u, 0x80u, 0); /*0x65cc59*/
-    *(this + 5) = (int)FileA; /*0x65cc62*/
+    FileA = CreateFileA((LPCSTR)this->q018, 0x80000000, 1u, 0, 3u, 0x80u, 0); /*0x65cc59*/
+    this->q014 = (int)FileA; /*0x65cc62*/
     if ( FileA == (HANDLE)-1 ) /*0x65cc65*/
       return 0; /*0x65cc6b*/
     if ( CloseHandle(FileA) ) /*0x65cc6f*/
       goto LABEL_13; /*0x65cc77*/
     v4 = *this; /*0x65cc7c*/
-    v7 = *(this + 6); /*0x65cc7e*/
+    v7 = this->q018; /*0x65cc7e*/
     goto LABEL_12; /*0x65cc7e*/
   }
   FileClass::Open2(1); /*0x65cc1d*/
   if ( (*(unsigned __int8 (__thiscall **)(int *))(*this + 24))(this) ) /*0x65cc26*/
   {
-    if ( CloseHandle((HANDLE)*(this + 5)) ) /*0x65cc31*/
+    if ( CloseHandle((HANDLE)this->q014) ) /*0x65cc31*/
     {
 LABEL_13:
-      *(this + 5) = -1; /*0x65cc8d*/
+      this->q014 = -1; /*0x65cc8d*/
       return 1; /*0x65cc8d*/
     }
     v4 = *this; /*0x65cc3e*/
-    v7 = *(this + 6); /*0x65cc40*/
+    v7 = this->q018; /*0x65cc40*/
 LABEL_12:
     LastError = GetLastError(); /*0x65cc7f*/
     (*(void (__thiscall **)(int *, DWORD, _DWORD, int))(v4 + 64))(this, LastError, 0, v7); /*0x65cc8a*/
@@ -107,7 +107,7 @@ DWORD __thiscall FileClass::Read(_DWORD *this, BufferIOFileClass *aP1, AbstractC
       return result; /*0x65cd05*/
     v14 = 1; /*0x65cd0f*/
   }
-  if ( *(this + 4) == -1 ) /*0x65cd1e*/
+  if ( this->q010 == -1 ) /*0x65cd1e*/
   {
     v7 = aP2; /*0x65cd3b*/
   }
@@ -115,12 +115,12 @@ DWORD __thiscall FileClass::Read(_DWORD *this, BufferIOFileClass *aP1, AbstractC
   {
     v6 = (*(int (__thiscall **)(_DWORD *, _DWORD, int))(*this + 40))(this, 0, 1); /*0x65cd27*/
     v7 = aP2; /*0x65cd2d*/
-    if ( (int)aP2 >= *(this + 4) - v6 ) /*0x65cd35*/
-      v7 = (AbstractClass *)(*(this + 4) - v6); /*0x65cd37*/
+    if ( (int)aP2 >= this->q010 - v6 ) /*0x65cd35*/
+      v7 = (AbstractClass *)(this->q010 - v6); /*0x65cd37*/
   }
   while ( (int)v7 > 0 ) /*0x65cd41*/
   {
-    v11 = (void *)*(this + 5); /*0x65cd54*/
+    v11 = (void *)this->q014; /*0x65cd54*/
     NumberOfBytesRead = 0; /*0x65cd55*/
     if ( ReadFile(v11, aP1, (DWORD)v7, &NumberOfBytesRead, 0) ) /*0x65cd5d*/
     {
@@ -139,7 +139,7 @@ DWORD __thiscall FileClass::Read(_DWORD *this, BufferIOFileClass *aP1, AbstractC
       if ( byte_B04BEC ) /*0x65cd7c*/
         break; /*0x65cd7c*/
       v9 = *this; /*0x65cd81*/
-      v12 = *(this + 6); /*0x65cd83*/
+      v12 = this->q018; /*0x65cd83*/
       LastError = GetLastError(); /*0x65cd86*/
       (*(void (__thiscall **)(_DWORD *, DWORD, int, int))(v9 + 64))(this, LastError, 1, v12); /*0x65cd8f*/
       v4 = nNumberOfBytesToRead; /*0x65cd92*/
@@ -184,7 +184,7 @@ int __thiscall FileClass_Seek(int *this, LONG lDistanceToMove, DWORD dwMoveMetho
   int v26; // [esp-Ch] [ebp-14h]
   int v27; // [esp-4h] [ebp-Ch]
 
-  v4 = *(this + 4); /*0x65cf04*/
+  v4 = this->q004; /*0x65cf04*/
   if ( v4 != -1 ) /*0x65cf0a*/
   {
     v5 = dwMoveMethod; /*0x65cf10*/
@@ -193,7 +193,7 @@ int __thiscall FileClass_Seek(int *this, LONG lDistanceToMove, DWORD dwMoveMetho
       if ( dwMoveMethod == 2 ) /*0x65cf20*/
       {
         v5 = 0; /*0x65cf2b*/
-        v6 = v4 + *(this + 3) + lDistanceToMove; /*0x65cf2d*/
+        v6 = v4 + this->q00C + lDistanceToMove; /*0x65cf2d*/
       }
       else
       {
@@ -205,7 +205,7 @@ int __thiscall FileClass_Seek(int *this, LONG lDistanceToMove, DWORD dwMoveMetho
       v7 = lDistanceToMove; /*0x65cf31*/
       if ( lDistanceToMove > v4 ) /*0x65cf37*/
         v7 = v4; /*0x65cf39*/
-      v6 = *(this + 3) + v7; /*0x65cf3b*/
+      v6 = this->q00C + v7; /*0x65cf3b*/
     }
     if ( (*(unsigned __int8 (__thiscall **)(int *))(*this + 24))(this) ) /*0x65cf48*/
     {
@@ -224,68 +224,68 @@ int __thiscall FileClass_Seek(int *this, LONG lDistanceToMove, DWORD dwMoveMetho
       {
         v5 = 0; /*0x65cf81*/
       }
-      v8 = SetFilePointer((HANDLE)*(this + 5), v6, 0, v5); /*0x65cf8b*/
+      v8 = SetFilePointer((HANDLE)this->q014, v6, 0, v5); /*0x65cf8b*/
       if ( v8 != -1 ) /*0x65cf90*/
       {
 LABEL_20:
-        v11 = *(this + 3); /*0x65cfa8*/
+        v11 = this->q00C; /*0x65cfa8*/
         result = v8 - v11; /*0x65cfab*/
         if ( result >= 0 ) /*0x65cfad*/
           goto LABEL_27; /*0x65cfad*/
         if ( (*(unsigned __int8 (__thiscall **)(int *))(*this + 24))(this) ) /*0x65cfb3*/
         {
-          v13 = SetFilePointer((HANDLE)*(this + 5), v11, 0, 0); /*0x65cfd4*/
+          v13 = SetFilePointer((HANDLE)this->q014, v11, 0, 0); /*0x65cfd4*/
           if ( v13 != -1 ) /*0x65cfd9*/
           {
 LABEL_26:
-            v11 = *(this + 3); /*0x65cff1*/
+            v11 = this->q00C; /*0x65cff1*/
             result = v13 - v11; /*0x65cff4*/
 LABEL_27:
-            v16 = *(this + 4); /*0x65cff6*/
+            v16 = this->q004; /*0x65cff6*/
             if ( result > v16 ) /*0x65cffb*/
             {
               v17 = v16 + v11; /*0x65cfff*/
               if ( (*(unsigned __int8 (__thiscall **)(int *))(*this + 24))(this) ) /*0x65d003*/
               {
-                v18 = SetFilePointer((HANDLE)*(this + 5), v17, 0, 0); /*0x65d030*/
+                v18 = SetFilePointer((HANDLE)this->q014, v17, 0, 0); /*0x65d030*/
                 if ( v18 == -1 ) /*0x65d035*/
                 {
                   v19 = *this; /*0x65d03a*/
-                  v26 = *(this + 6); /*0x65d03c*/
+                  v26 = this->q018; /*0x65d03c*/
                   LastError = GetLastError(); /*0x65d03f*/
                   (*(void (__thiscall **)(int *, DWORD, _DWORD, int))(v19 + 64))(this, LastError, 0, v26); /*0x65d048*/
                   v18 = 0; /*0x65d04b*/
                 }
-                return v18 - *(this + 3); /*0x65d04d*/
+                return v18 - this->q00C; /*0x65d04d*/
               }
               else
               {
-                (*(void (__thiscall **)(int *, int, _DWORD, _DWORD))(*this + 64))(this, 9, 0, *(this + 6)); /*0x65d016*/
-                return -*(this + 3); /*0x65d021*/
+                (*(void (__thiscall **)(int *, int, _DWORD, _DWORD))(*this + 64))(this, 9, 0, this->q018); /*0x65d016*/
+                return -this->q00C; /*0x65d021*/
               }
             }
             return result; /*0x65d024*/
           }
           v14 = *this; /*0x65cfde*/
-          v25 = *(this + 6); /*0x65cfe0*/
+          v25 = this->q018; /*0x65cfe0*/
           v15 = GetLastError(); /*0x65cfe3*/
           (*(void (__thiscall **)(int *, DWORD, _DWORD, int))(v14 + 64))(this, v15, 0, v25); /*0x65cfec*/
         }
         else
         {
-          (*(void (__thiscall **)(int *, int, _DWORD, _DWORD))(*this + 64))(this, 9, 0, *(this + 6)); /*0x65cfc6*/
+          (*(void (__thiscall **)(int *, int, _DWORD, _DWORD))(*this + 64))(this, 9, 0, this->q018); /*0x65cfc6*/
         }
         v13 = 0; /*0x65cfef*/
         goto LABEL_26; /*0x65cfef*/
       }
       v9 = *this; /*0x65cf95*/
-      v24 = *(this + 6); /*0x65cf97*/
+      v24 = this->q018; /*0x65cf97*/
       v10 = GetLastError(); /*0x65cf9a*/
       (*(void (__thiscall **)(int *, DWORD, _DWORD, int))(v9 + 64))(this, v10, 0, v24); /*0x65cfa3*/
     }
     else
     {
-      (*(void (__thiscall **)(int *, int, _DWORD, _DWORD))(*this + 64))(this, 9, 0, *(this + 6)); /*0x65cf61*/
+      (*(void (__thiscall **)(int *, int, _DWORD, _DWORD))(*this + 64))(this, 9, 0, this->q018); /*0x65cf61*/
     }
     v8 = 0; /*0x65cfa6*/
     goto LABEL_20; /*0x65cfa6*/
@@ -308,11 +308,11 @@ LABEL_27:
     {
       v21 = 0; /*0x65d097*/
     }
-    result = SetFilePointer((HANDLE)*(this + 5), lDistanceToMove, 0, v21); /*0x65d0a5*/
+    result = SetFilePointer((HANDLE)this->q014, lDistanceToMove, 0, v21); /*0x65d0a5*/
     if ( result == -1 ) /*0x65d0ae*/
     {
       v22 = *this; /*0x65d0b3*/
-      v27 = *(this + 6); /*0x65d0b5*/
+      v27 = this->q018; /*0x65d0b5*/
       v23 = GetLastError(); /*0x65d0b8*/
       (*(void (__thiscall **)(int *, DWORD, _DWORD, int))(v22 + 64))(this, v23, 0, v27); /*0x65d0c1*/
       return 0; /*0x65d0c4*/
@@ -320,7 +320,7 @@ LABEL_27:
   }
   else
   {
-    (*(void (__thiscall **)(int *, int, _DWORD, _DWORD))(*this + 64))(this, 9, 0, *(this + 6)); /*0x65d072*/
+    (*(void (__thiscall **)(int *, int, _DWORD, _DWORD))(*this + 64))(this, 9, 0, this->q018); /*0x65d072*/
     return 0; /*0x65d076*/
   }
   return result; /*0x65d020*/
@@ -336,7 +336,7 @@ int __thiscall FileClass_Close(_DWORD *this)
   (*(void (__thiscall **)(_DWORD *))(*this + 52))(this); /*0x65d155*/
   if ( !(*(int (__thiscall **)(_DWORD *, int))(*this + 28))(this, 2) ) /*0x65d15e*/
     return 0; /*0x65d184*/
-  if ( *(this + 4) != -1 ) /*0x65d169*/
+  if ( this->q010 != -1 ) /*0x65d169*/
     (*(void (__thiscall **)(_DWORD *, _DWORD, _DWORD))(*this + 40))(this, 0, 0); /*0x65d173*/
   (*(void (__thiscall **)(_DWORD *))(*this + 52))(this); /*0x65d17a*/
   return 1; /*0x65d182*/

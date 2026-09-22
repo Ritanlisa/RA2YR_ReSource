@@ -417,21 +417,21 @@ char __thiscall sub_5A76E0(int *this)
   int v14; // [esp+18h] [ebp-4h]
 
   v2 = *this; /*0x5a76ee*/
-  v3 = *(this + 1); /*0x5a76f0*/
+  v3 = this->q004; /*0x5a76f0*/
   v12 = (__int16)v3 + (__int16)v2; /*0x5a76fe*/
   if ( v12 > g_MapCellHeight_Value /*0x5a772a*/
     && (__int16)v2 - (__int16)v3 < g_MapCellHeight_Value
     && (__int16)v3 - (__int16)v2 < g_MapCellHeight_Value
     && v12 <= g_MapCellCount )
   {
-    v13 = *(this + 2) + v2 - 1; /*0x5a7737*/
+    v13 = this->q008 + v2 - 1; /*0x5a7737*/
     v12 = (__int16)v3 + (__int16)v13; /*0x5a7746*/
     if ( v12 > g_MapCellHeight_Value /*0x5a7772*/
       && (__int16)v13 - (__int16)v3 < g_MapCellHeight_Value
       && (__int16)v3 - (__int16)v13 < g_MapCellHeight_Value
       && v12 <= g_MapCellCount )
     {
-      v14 = *(this + 3) + v3 - 1; /*0x5a7782*/
+      v14 = this->q00C + v3 - 1; /*0x5a7782*/
       v12 = (__int16)v14 + (__int16)v2; /*0x5a778e*/
       if ( v12 > g_MapCellHeight_Value /*0x5a77ba*/
         && (__int16)v2 - (__int16)v14 < g_MapCellHeight_Value
@@ -453,7 +453,7 @@ LABEL_24:
               return 1; /*0x5a78b9*/
             while ( 1 ) /*0x5a786b*/
             {
-              v9 = *(this + 1) + 3; /*0x5a786b*/
+              v9 = this->q004 + 3; /*0x5a786b*/
               LOWORD(v12) = v8; /*0x5a7874*/
               HIWORD(v12) = v9; /*0x5a7879*/
               v10 = (int *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v12); /*0x5a7883*/
@@ -471,7 +471,7 @@ LABEL_24:
               if ( !__OFSUB__(v2, v2 + 3) ) /*0x5a780e*/
                 break; /*0x5a780e*/
 LABEL_23:
-              if ( ++v3 >= *(this + 1) + 3 ) /*0x5a7859*/
+              if ( ++v3 >= this->q004 + 3 ) /*0x5a7859*/
                 goto LABEL_24; /*0x5a7859*/
             }
             while ( 1 ) /*0x5a7814*/

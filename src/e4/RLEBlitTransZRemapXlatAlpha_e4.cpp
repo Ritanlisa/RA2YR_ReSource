@@ -103,7 +103,7 @@ int __thiscall RLEBlitTransZRemapXlatAlpha_ushort::_vt02(
         int a11,
         int a12)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(*(_DWORD *)this + 4))( /*0x497b77*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(this->q004)( /*0x497b77*/
            this,
            a2,
            a3,

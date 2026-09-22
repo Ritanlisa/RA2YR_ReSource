@@ -160,20 +160,20 @@ char __thiscall CampaignClass_SaveProgress(char *this)
   int v38; // [esp+1A0h] [ebp-28h]
   char Buffer[32]; // [esp+1A8h] [ebp-20h] BYREF
 
-  if ( !*(this + 108) ) /*0x49c5ac*/
+  if ( !this->q06C ) /*0x49c5ac*/
     return 0; /*0x49c5ac*/
   if ( !*this ) /*0x49c5b7*/
     return 0; /*0x49c5b7*/
   v2 = this + 28; /*0x49c5c4*/
-  if ( !*(this + 28) ) /*0x49c5c1*/
+  if ( !this->referenceCount ) /*0x49c5c1*/
     return 0; /*0x49c5c1*/
-  v3 = *((_DWORD *)this + 17); /*0x49c5d4*/
+  v3 = this->alignmentPadding_3; /*0x49c5d4*/
   if ( !MEMORY[0x89F578] ) /*0x49c5d9*/
     CampaignClass::LoadFromINI((int)&MEMORY[0x89F518]); /*0x49c5e0*/
   if ( v3 < 0 || v3 >= MEMORY[0x89F574] ) /*0x49c5f5*/
     return 0; /*0x49cae5*/
   v27 = MEMORY[0x89F570] + 76 * v3; /*0x49c60d*/
-  if ( *((_DWORD *)this + 16) == *((_DWORD *)this + 14) ) /*0x49c616*/
+  if ( this->uniqueId == this->q038 ) /*0x49c616*/
     return 1; /*0x49c61b*/
   CCFileClass::Construct(v36, MEMORY[0x81F0F8]); /*0x49c631*/
   v28[1] = 0; /*0x49c63a*/
@@ -259,11 +259,11 @@ char __thiscall CampaignClass_SaveProgress(char *this)
   (*(void (__thiscall **)(_DWORD *, char *))(v33[0] + 8))(v33, MEMORY[0x81F0F8]); /*0x49c807*/
   (*(void (__thiscall **)(_DWORD *, int))(v33[0] + 28))(v33, 2); /*0x49c81a*/
   INIClass::ClearSection((int)v28, (int)Block, 0); /*0x49c828*/
-  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, unk_81F19C, *((_DWORD *)this + 14), 0); /*0x49c841*/
-  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, unk_81F184, *((_DWORD *)this + 17), 0); /*0x49c85a*/
+  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, unk_81F19C, this->q038, 0); /*0x49c841*/
+  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, unk_81F184, this->alignmentPadding_3, 0); /*0x49c85a*/
   for ( j = 0; /*0x49c863*/
         j < *(char *)(v27 + 8);
-        INIClass::SetString((char *)v28, (unsigned __int8 *)Block, Buffer, *(char **)(*((_DWORD *)this + 15) + 4 * j++)) )
+        INIClass::SetString((char *)v28, (unsigned __int8 *)Block, Buffer, *(char **)(this->q03C + 4 * j++)) )
   {
     sprintf(Buffer, MEMORY[0x81F114], j + 1); /*0x49c87d*/
   }
@@ -293,15 +293,15 @@ char __thiscall CampaignClass_SaveProgress(char *this)
     INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, unk_81F164, v26, 0); /*0x49c95d*/
   }
 LABEL_47:
-  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, MEMORY[0x81F11C], *((_DWORD *)this + 26), 0); /*0x49c962*/
-  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, unk_81F15C, *((_DWORD *)this + 18), 0); /*0x49c98f*/
-  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, unk_81F154, *((_DWORD *)this + 19), 0); /*0x49c9a8*/
-  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, MEMORY[0x81F14C], *((_DWORD *)this + 20), 0); /*0x49c9c1*/
-  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, MEMORY[0x81F144], *((_DWORD *)this + 21), 0); /*0x49c9da*/
-  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, MEMORY[0x81F13C], *((_DWORD *)this + 22), 0); /*0x49c9f3*/
-  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, MEMORY[0x81F134], *((_DWORD *)this + 23), 0); /*0x49ca0c*/
-  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, MEMORY[0x81F12C], *((_DWORD *)this + 24), 0); /*0x49ca25*/
-  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, MEMORY[0x81F124], *((_DWORD *)this + 25), 0); /*0x49ca3e*/
+  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, MEMORY[0x81F11C], this->q01A, 0); /*0x49c962*/
+  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, unk_81F15C, this->q012, 0); /*0x49c98f*/
+  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, unk_81F154, this->q04C, 0); /*0x49c9a8*/
+  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, MEMORY[0x81F14C], this->abstractFlags, 0); /*0x49c9c1*/
+  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, MEMORY[0x81F144], this->q054, 0); /*0x49c9da*/
+  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, MEMORY[0x81F13C], this->q058, 0); /*0x49c9f3*/
+  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, MEMORY[0x81F134], this->q017, 0); /*0x49ca0c*/
+  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, MEMORY[0x81F12C], this->nextArrayIndex, 0); /*0x49ca25*/
+  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, MEMORY[0x81F124], this->Name, 0); /*0x49ca3e*/
   INIClass::WriteDigest(v28, (int)v33, 0); /*0x49ca51*/
   CCFileClass::Reset(v33); /*0x49ca5d*/
   v33[0] = &vt_CCFileClass; /*0x49ca67*/
@@ -315,7 +315,7 @@ LABEL_47:
   Vector::Clear((int)v37); /*0x49cab9*/
   v36[0] = &off_7E1668; /*0x49cac5*/
   BufferIOFileClass::Dtor(v36); /*0x49cacc*/
-  *(this + 108) = 1; /*0x49cad2*/
+  this->q06C = 1; /*0x49cad2*/
   return 1; /*0x49c618*/
 }
 }

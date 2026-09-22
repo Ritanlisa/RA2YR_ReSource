@@ -878,7 +878,7 @@ int __thiscall House::ChooseHouseEnemy(int *this, BuildingClass *aP1)
     v38 = v7->field_8; /*0x50db6a*/
     goto LABEL_20; /*0x50db6e*/
   }
-  if ( !*(this + 188) || (v9 = 0, aP1a = 0, *(this + 30) <= 0) ) /*0x50db8c*/
+  if ( !this->q0BC || (v9 = 0, aP1a = 0, this->q078 <= 0) ) /*0x50db8c*/
   {
 LABEL_23:
     v8 = v5; /*0x50dc5c*/
@@ -906,7 +906,7 @@ LABEL_23:
 LABEL_18:
     v9 = (int)&aP1a->__pad_0[1]; /*0x50dc1c*/
     aP1a = (BuildingClass *)v9; /*0x50dc28*/
-    if ( v9 >= *(this + 30) ) /*0x50dc2e*/
+    if ( v9 >= this->q078 ) /*0x50dc2e*/
     {
       v8 = v36; /*0x50dc34*/
       v4 = this; /*0x50dc38*/
@@ -984,20 +984,20 @@ LABEL_24:
     if ( v24 > (int)aP1b || v24 > v31 ) /*0x50de97*/
     {
       if ( (int)aP1b > v31 ) /*0x50deab*/
-        *(this + 5599) = 3; /*0x50dec1*/
+        this->q577C = 3; /*0x50dec1*/
       else
-        *(this + 5599) = 2; /*0x50deb1*/
+        this->q577C = 2; /*0x50deb1*/
     }
     else
     {
-      *(this + 5599) = 1; /*0x50de9d*/
+      this->q577C = 1; /*0x50de9d*/
     }
   }
   else
   {
-    *(this + 5599) = 0; /*0x50de85*/
+    this->q577C = 0; /*0x50de85*/
   }
-  result = *(this + 5599); /*0x50decf*/
+  result = this->q577C; /*0x50decf*/
   if ( (unsigned int)result >= 4 ) /*0x50ded7*/
     return 0; /*0x50ded7*/
   return result; /*0x50dc9d*/
@@ -1033,7 +1033,7 @@ bool __thiscall sub_544C20(_DWORD *this, int a2, char a3)
 {
   _DWORD *v4; // eax
 
-  if ( a3 && !*(this + 41) && *((_BYTE *)this + 756) ) /*0x544c35*/
+  if ( a3 && !this->__pad_029 && *((_BYTE *)this + 756) ) /*0x544c35*/
     MapClass::LoadFileData((int)this); /*0x544c3f*/
   v4 = (_DWORD *)(*(int (__thiscall **)(_DWORD *))(*this + 156))(this); /*0x544c48*/
   return v4 && a2 < *v4 * v4[1] && v4[a2 + 4]; /*0x544c50*/
@@ -1053,14 +1053,14 @@ void __thiscall sub_69E090(char **this)
   char v4[12]; // [esp+5Ch] [ebp-14h] BYREF
   int v5; // [esp+68h] [ebp-8h]
 
-  if ( *(_WORD *)this == 0xFFFF && !*((_BYTE *)this + 16) ) /*0x69e09c*/
+  if ( *(_WORD *)this == 0xFFFF && !this->q004 ) /*0x69e09c*/
   {
-    CCFileClass::Construct(v3, *(this + 2)); /*0x69e0ab*/
+    CCFileClass::Construct(v3, this->q008); /*0x69e0ab*/
     EntireFile = (char *)CCFileClass::ReadEntireFile(v3); /*0x69e0b4*/
     if ( EntireFile ) /*0x69e0bb*/
     {
-      *(this + 3) = EntireFile; /*0x69e0bd*/
-      *((_BYTE *)this + 16) = 1; /*0x69e0c0*/
+      this->q00C = EntireFile; /*0x69e0bd*/
+      this->q004 = 1; /*0x69e0c0*/
     }
     v3[0] = &vt_CCFileClass; /*0x69e0c8*/
     v5 = 0; /*0x69e0d0*/

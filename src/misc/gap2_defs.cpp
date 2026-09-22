@@ -248,21 +248,21 @@ int __thiscall sub_514F70(int *this, char a2)
   int v113; // [esp+80h] [ebp-8h]
 
   v3 = this + 9;
-  if ( *(this + 9) != MEMORY[0xA8F180] || *(this + 10) != MEMORY[0xA8F184] || *(this + 11) != MEMORY[0xA8F188] )
+  if ( this->q024 != MEMORY[0xA8F180] || this->q028 != MEMORY[0xA8F184] || this->q0B0 != MEMORY[0xA8F188] )
   {
-    (*(void (__thiscall **)(_DWORD, int *))(*(_DWORD *)*(this + 3) + 244))(*(this + 3), this + 9);
+    (*(void (__thiscall **)(_DWORD, int *))(*(_DWORD *)this->m_State + 244))(this->m_State, this + 9);
     *v3 = MEMORY[0xA8F180];
-    *(this + 10) = MEMORY[0xA8F184];
-    *(this + 11) = MEMORY[0xA8F188];
+    this->q028 = MEMORY[0xA8F184];
+    this->q0B0 = MEMORY[0xA8F188];
   }
-  if ( (*(unsigned __int8 (__thiscall **)(_DWORD))(*(_DWORD *)*(this + 3) + 896))(*(this + 3)) )
+  if ( (*(unsigned __int8 (__thiscall **)(_DWORD))(*(_DWORD *)this->m_State + 896))(this->m_State) )
     return 7;
-  if ( !(*(unsigned __int8 (__stdcall **)(int *))(*(this + 1) + 16))(this + 1)
-    || *(this + 6) == MEMORY[0xA8F180] && *(this + 7) == MEMORY[0xA8F184] && *(this + 8) == MEMORY[0xA8F188] )
+  if ( !(*(unsigned __int8 (__stdcall **)(int *))(this->q004 + 16))(this + 1)
+    || this->MovementAI_field_18 == MEMORY[0xA8F180] && this->q01C == MEMORY[0xA8F184] && this->q008 == MEMORY[0xA8F188] )
   {
     return 0;
   }
-  v5 = (int *)*(this + 3);
+  v5 = (int *)this->m_State;
   v96 = v5[376];
   if ( v96 == 8 )
   {
@@ -274,25 +274,25 @@ int __thiscall sub_514F70(int *this, char a2)
     v95 = v7;
     if ( v7 < 0 || v7 >= MEMORY[0x8B4148] )
     {
-      *(_DWORD *)(*(this + 3) + 1504) = -1;
+      *(_DWORD *)(this->m_State + 1504) = -1;
       *v3 = MEMORY[0xA8F180];
-      v31 = *(this + 3);
-      *(this + 10) = MEMORY[0xA8F184];
-      *(this + 11) = MEMORY[0xA8F188];
+      v31 = this->m_State;
+      this->q028 = MEMORY[0xA8F184];
+      this->q0B0 = MEMORY[0xA8F188];
       (*(void (__thiscall **)(int, _DWORD, int))(*(_DWORD *)v31 + 1152))(v31, 0, 1);
-      v32 = *(this + 3);
-      *(this + 20) = 0;
+      v32 = this->m_State;
+      this->MovementAI_field_14 = 0;
       *(this + 18) = 0;
       *(this + 21) = 0;
       *(this + 19) = 0;
       (*(void (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)v32 + 1348))(v32, 0, 0);
-      (*(void (__thiscall **)(_DWORD, _DWORD, int))(*(_DWORD *)*(this + 3) + 1152))(*(this + 3), 0, 1);
+      (*(void (__thiscall **)(_DWORD, _DWORD, int))(*(_DWORD *)this->m_State + 1152))(this->m_State, 0, 1);
       return 7;
     }
     else
     {
-      (*(void (__thiscall **)(_DWORD, _DWORD))(*(_DWORD *)*(this + 3) + 292))(*(this + 3), 0);
-      v8 = (_DWORD *)*(this + 3);
+      (*(void (__thiscall **)(_DWORD, _DWORD))(*(_DWORD *)this->m_State + 292))(this->m_State, 0);
+      v8 = (_DWORD *)this->m_State;
       v99 = v8[39];
       v100 = v8[40];
       v101 = v8[41];
@@ -300,19 +300,19 @@ int __thiscall sub_514F70(int *this, char a2)
       v97 = *((_DWORD *)MEMORY[0x8B413C] + v95);
       v96 = *(_DWORD *)(v97 + 40);
       v9 = SHIWORD(v96) << 8;
-      *(this + 9) = ((__int16)v96 << 8) + 128;
-      v10 = *(this + 3);
-      *(this + 10) = v9 + 128;
-      *(this + 11) = 0;
+      this->q024 = ((__int16)v96 << 8) + 128;
+      v10 = this->m_State;
+      this->q028 = v9 + 128;
+      this->q0B0 = 0;
       qmemcpy((void *)(v10 + 1504), (const void *)(v10 + 1508), 0x5Cu);
-      LOWORD(v96) = *(this + 9) / 256;
-      v11 = *(this + 3);
-      HIWORD(v96) = *(this + 10) / 256;
+      LOWORD(v96) = this->q024 / 256;
+      v11 = this->m_State;
+      HIWORD(v96) = this->q028 / 256;
       *(_DWORD *)(v11 + 1368) = v96;
       LOBYTE(v10) = v95;
-      *(_DWORD *)(*(this + 3) + 1596) = -1;
-      *(_BYTE *)(*(this + 3) + 1668) = v10;
-      *(_BYTE *)(*(this + 3) + 1669) = 0;
+      *(_DWORD *)(this->m_State + 1596) = -1;
+      *(_BYTE *)(this->m_State + 1668) = v10;
+      *(_BYTE *)(this->m_State + 1669) = 0;
       v12 = *(_DWORD *)(v97 + 48) & 7;
       v96 = *(_DWORD *)(v97 + 36);
       v95 = v96;
@@ -324,7 +324,7 @@ int __thiscall sub_514F70(int *this, char a2)
       Coords = CellClass::GetCoords(v15, &v108);
       v17 = Coords[1];
       v18 = *Coords - (v13 + 128);
-      v19 = (_DWORD *)*(this + 3);
+      v19 = (_DWORD *)this->m_State;
       v110 = Coords[2];
       v20 = v17 - v14;
       v21 = v19 + 39;
@@ -338,8 +338,8 @@ int __thiscall sub_514F70(int *this, char a2)
       *v19 = v102 + v18;
       v19[1] = v23;
       v19[2] = v25 + v24;
-      v26 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)*(this + 3) + 464))(*(this + 3));
-      v27 = (int *)(*(this + 3) + 156);
+      v26 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->m_State + 464))(this->m_State);
+      v27 = (int *)(this->m_State + 156);
       v102 = *v27;
       v103 = v27[1];
       v104 = v27[2];
@@ -350,7 +350,7 @@ int __thiscall sub_514F70(int *this, char a2)
       v102 = ((__int16)v29 << 8) + 128;
       v103 = (SHIWORD(v29) << 8) + 128;
       v30 = Cell::GetGroundHeight(&v102);
-      *(_DWORD *)(*(this + 3) + 1392) = v26 + (v30 - GroundHeight) / v97;
+      *(_DWORD *)(this->m_State + 1392) = v26 + (v30 - GroundHeight) / v97;
       return 7;
     }
   }
@@ -363,42 +363,42 @@ int __thiscall sub_514F70(int *this, char a2)
   v34 = v96 & 7;
   v35 = v33[1] + HIWORD(MEMORY[0x89F688][v34]);
   *v3 = ((__int16)(LOWORD(MEMORY[0x89F688][v34]) + *v33) << 8) + 128;
-  *(this + 10) = (v35 << 8) + 128;
-  *(this + 11) = 0;
+  this->q028 = (v35 << 8) + 128;
+  this->q0B0 = 0;
   v36 = Cell::GetGroundHeight(this + 9);
-  v37 = (int *)*(this + 3);
-  *(this + 11) = v36;
+  v37 = (int *)this->m_State;
+  this->q0B0 = v36;
   v37 += 39;
   v102 = *v37;
   v103 = v37[1];
   v104 = v37[2];
   if ( v104 >= v36 + 2 * MEMORY[0xA8F1C0] + MEMORY[0xA8F1C0] )
-    *(this + 11) = MEMORY[0xA8F1B4] + v36;
-  v93 = *(this + 3);
+    this->q0B0 = MEMORY[0xA8F1B4] + v36;
+  v93 = this->m_State;
   v38 = Coord::To_Cell(&MEMORY[0x87F7E8], this + 9);
   if ( !CrateClass::ProcessPickup(v38, v93) )
   {
-    v39 = *(this + 3);
+    v39 = this->m_State;
     if ( !*(_BYTE *)(v39 + 129) )
     {
       if ( *(_BYTE *)(v39 + 144) && !*(_BYTE *)(v39 + 141) )
       {
         *(_DWORD *)(v39 + 1504) = -1;
         *v3 = MEMORY[0xA8F180];
-        *(this + 10) = MEMORY[0xA8F184];
-        *(this + 11) = MEMORY[0xA8F188];
-        (*(void (__thiscall **)(_DWORD, _DWORD, int))(*(_DWORD *)*(this + 3) + 1152))(*(this + 3), 0, 1);
-        *(this + 20) = 0;
+        this->q028 = MEMORY[0xA8F184];
+        this->q0B0 = MEMORY[0xA8F188];
+        (*(void (__thiscall **)(_DWORD, _DWORD, int))(*(_DWORD *)this->m_State + 1152))(this->m_State, 0, 1);
+        this->MovementAI_field_14 = 0;
         *(this + 18) = 0;
         *(this + 21) = 0;
         *(this + 19) = 0;
-        (*(void (__thiscall **)(_DWORD, _DWORD, _DWORD))(*(_DWORD *)*(this + 3) + 1348))(*(this + 3), 0, 0);
+        (*(void (__thiscall **)(_DWORD, _DWORD, _DWORD))(*(_DWORD *)this->m_State + 1348))(this->m_State, 0, 0);
         return 7;
       }
       return 7;
     }
   }
-  v40 = *(this + 3);
+  v40 = this->m_State;
   if ( !*(_BYTE *)(v40 + 144) || *(_BYTE *)(v40 + 129) || *(_BYTE *)(v40 + 141) )
     return 7;
   v41 = Coord::Subtract(
@@ -410,19 +410,19 @@ int __thiscall sub_514F70(int *this, char a2)
   v103 = v41[1];
   v104 = v41[2];
   v42 = Coord::To_Cell(&MEMORY[0x87F7E8], &v102);
-  v43 = *(this + 3);
+  v43 = this->m_State;
   if ( *(_BYTE *)(v43 + 140) != ((v42[80] >> 8) & 1) )
     *(_BYTE *)(v43 + 1675) = 1;
   LOWORD(v97) = *v3 / 256;
-  HIWORD(v97) = *(this + 10) / 256;
+  HIWORD(v97) = this->q028 / 256;
   v95 = v97;
-  v44 = (_BYTE *)*(this + 3);
+  v44 = (_BYTE *)this->m_State;
   v45 = *(_DWORD *)v44;
   LandHeight = ObjectClass::GetLandHeight(v44);
   v91 = v96;
   v46 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v95);
   v96 = (*(int (__thiscall **)(_DWORD, void *, int, int, _DWORD, int))(v45 + 428))(
-          *(this + 3),
+          this->m_State,
           v46,
           v91,
           LandHeight,
@@ -431,17 +431,17 @@ int __thiscall sub_514F70(int *this, char a2)
   switch ( v96 )
   {
     case 0:
-      (*(void (__thiscall **)(_DWORD, int))(*(_DWORD *)*(this + 3) + 396))(*(this + 3), 2);
-      v65 = (_BYTE *)*(this + 3);
+      (*(void (__thiscall **)(_DWORD, int))(*(_DWORD *)this->m_State + 396))(this->m_State, 2);
+      v65 = (_BYTE *)this->m_State;
       if ( !v65[144] || v65[129] || v65[141] )
         return 7;
       if ( v65[981] )
         (*(void (__thiscall **)(_BYTE *, int *))(*(_DWORD *)v65 + 240))(v65, this + 9);
-      qmemcpy((void *)(*(this + 3) + 1504), (const void *)(*(this + 3) + 1508), 0x5Cu);
-      *(_DWORD *)(*(this + 3) + 1596) = -1;
-      LOWORD(v97) = *(this + 9) / 256;
-      v66 = *(this + 3);
-      HIWORD(v97) = *(this + 10) / 256;
+      qmemcpy((void *)(this->m_State + 1504), (const void *)(this->m_State + 1508), 0x5Cu);
+      *(_DWORD *)(this->m_State + 1596) = -1;
+      LOWORD(v97) = this->q024 / 256;
+      v66 = this->m_State;
+      HIWORD(v97) = this->q028 / 256;
       *(_DWORD *)(v66 + 1368) = v97;
       return v96;
     case 1:
@@ -450,42 +450,42 @@ int __thiscall sub_514F70(int *this, char a2)
       CellClass::DamageAllObjects(v47);
       if ( a2 )
       {
-        v48 = *(this + 3);
-        *(this + 20) = 0;
+        v48 = this->m_State;
+        this->MovementAI_field_14 = 0;
         *(this + 18) = 0;
         *(this + 21) = 0;
         *(this + 19) = 0;
         (*(void (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)v48 + 1348))(v48, 0, 0);
-        if ( *v3 != MEMORY[0xA8F180] || *(this + 10) != MEMORY[0xA8F184] || *(this + 11) != MEMORY[0xA8F188] )
+        if ( *v3 != MEMORY[0xA8F180] || this->q028 != MEMORY[0xA8F184] || this->q0B0 != MEMORY[0xA8F188] )
         {
-          (*(void (__thiscall **)(_DWORD, int *))(*(_DWORD *)*(this + 3) + 244))(*(this + 3), this + 9);
+          (*(void (__thiscall **)(_DWORD, int *))(*(_DWORD *)this->m_State + 244))(this->m_State, this + 9);
           *v3 = MEMORY[0xA8F180];
-          *(this + 10) = MEMORY[0xA8F184];
-          *(this + 11) = MEMORY[0xA8F188];
+          this->q028 = MEMORY[0xA8F184];
+          this->q0B0 = MEMORY[0xA8F188];
         }
-        v49 = (_DWORD *)(*(this + 3) + 1600);
+        v49 = (_DWORD *)(this->m_State + 1600);
         *v49 = MEMORY[0xA8ED84];
         v49[1] = v109;
         v49[2] = 0;
-        *(_DWORD *)(*(this + 3) + 1504) = -1;
+        *(_DWORD *)(this->m_State + 1504) = -1;
         MovementAI::StepFootClass(this, 0);
         v96 = MovementAI::MainFootClass(0);
       }
       if ( v96 )
       {
         *v3 = MEMORY[0xA8F180];
-        *(this + 10) = MEMORY[0xA8F184];
+        this->q028 = MEMORY[0xA8F184];
         v50 = MEMORY[0xA8F188];
-        *(this + 20) = 0;
+        this->MovementAI_field_14 = 0;
         *(this + 18) = 0;
-        *(this + 11) = v50;
-        v51 = *(this + 3);
+        this->q0B0 = v50;
+        v51 = this->m_State;
         *(this + 21) = 0;
         *(this + 19) = 0;
         (*(void (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)v51 + 1348))(v51, 0, 0);
-        if ( *v3 != MEMORY[0xA8F180] || *(this + 10) != MEMORY[0xA8F184] || *(this + 11) != MEMORY[0xA8F188] )
+        if ( *v3 != MEMORY[0xA8F180] || this->q028 != MEMORY[0xA8F184] || this->q0B0 != MEMORY[0xA8F188] )
         {
-          (*(void (__thiscall **)(_DWORD, _DWORD *))(*(_DWORD *)*(this + 3) + 244))(*(this + 3), v3);
+          (*(void (__thiscall **)(_DWORD, _DWORD *))(*(_DWORD *)this->m_State + 244))(this->m_State, v3);
           *v3 = MEMORY[0xA8F180];
           v3[1] = MEMORY[0xA8F184];
           v3[2] = MEMORY[0xA8F188];
@@ -494,32 +494,32 @@ int __thiscall sub_514F70(int *this, char a2)
       return v96;
     case 2:
       *v3 = MEMORY[0xA8F180];
-      *(this + 10) = MEMORY[0xA8F184];
-      v78 = *(this + 3);
-      *(this + 11) = MEMORY[0xA8F188];
-      *(this + 20) = 0;
+      this->q028 = MEMORY[0xA8F184];
+      v78 = this->m_State;
+      this->q0B0 = MEMORY[0xA8F188];
+      this->MovementAI_field_14 = 0;
       *(this + 18) = 0;
       *(this + 21) = 0;
       *(this + 19) = 0;
       (*(void (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)v78 + 1348))(v78, 0, 0);
-      if ( *v3 != MEMORY[0xA8F180] || *(this + 10) != MEMORY[0xA8F184] || *(this + 11) != MEMORY[0xA8F188] )
+      if ( *v3 != MEMORY[0xA8F180] || this->q028 != MEMORY[0xA8F184] || this->q0B0 != MEMORY[0xA8F188] )
       {
-        (*(void (__thiscall **)(_DWORD, int *))(*(_DWORD *)*(this + 3) + 244))(*(this + 3), this + 9);
+        (*(void (__thiscall **)(_DWORD, int *))(*(_DWORD *)this->m_State + 244))(this->m_State, this + 9);
         *v3 = MEMORY[0xA8F180];
-        *(this + 10) = MEMORY[0xA8F184];
-        *(this + 11) = MEMORY[0xA8F188];
+        this->q028 = MEMORY[0xA8F184];
+        this->q0B0 = MEMORY[0xA8F188];
       }
-      v79 = *(this + 3);
+      v79 = this->m_State;
       if ( !*(_BYTE *)(v79 + 1719) )
       {
         *(_BYTE *)(v79 + 1719) = 1;
-        v80 = (_DWORD *)(*(this + 3) + 1640);
+        v80 = (_DWORD *)(this->m_State + 1640);
         v81 = *((_DWORD *)MEMORY[0x8871E0] + 1498);
         *v80 = MEMORY[0xA8ED84];
         v80[1] = v113;
         v80[2] = v81;
       }
-      v82 = (_DWORD *)*(this + 3);
+      v82 = (_DWORD *)this->m_State;
       v83 = MEMORY[0xA8ED84];
       v84 = v82[400];
       v85 = v82[402];
@@ -535,7 +535,7 @@ LABEL_91:
         v82[376] = -1;
         v83 = MEMORY[0xA8ED84];
       }
-      v86 = *(this + 3);
+      v86 = this->m_State;
       if ( !*(_BYTE *)(v86 + 1719) )
         goto LABEL_98;
       v87 = *(_DWORD *)(v86 + 1648);
@@ -557,43 +557,43 @@ LABEL_97:
       return v96;
     case 3:
       *v3 = MEMORY[0xA8F180];
-      *(this + 10) = MEMORY[0xA8F184];
-      *(this + 11) = MEMORY[0xA8F188];
-      Cell::IsPassableAllied(*(this + 3), (__int16 *)&v95);
-      v52 = *(this + 3);
-      *(this + 20) = 0;
+      this->q028 = MEMORY[0xA8F184];
+      this->q0B0 = MEMORY[0xA8F188];
+      Cell::IsPassableAllied(this->m_State, (__int16 *)&v95);
+      v52 = this->m_State;
+      this->MovementAI_field_14 = 0;
       *(this + 18) = 0;
       *(this + 21) = 0;
       *(this + 19) = 0;
       (*(void (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)v52 + 1348))(v52, 0, 0);
-      if ( *v3 == MEMORY[0xA8F180] && *(this + 10) == MEMORY[0xA8F184] )
+      if ( *v3 == MEMORY[0xA8F180] && this->q028 == MEMORY[0xA8F184] )
         goto LABEL_61;
       goto LABEL_62;
     case 4:
     case 5:
       *v3 = MEMORY[0xA8F180];
-      *(this + 10) = MEMORY[0xA8F184];
-      *(this + 11) = MEMORY[0xA8F188];
+      this->q028 = MEMORY[0xA8F184];
+      this->q0B0 = MEMORY[0xA8F188];
       if ( a2 )
       {
-        v67 = *(this + 3);
-        *(this + 20) = 0;
+        v67 = this->m_State;
+        this->MovementAI_field_14 = 0;
         *(this + 18) = 0;
         *(this + 21) = 0;
         *(this + 19) = 0;
         (*(void (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)v67 + 1348))(v67, 0, 0);
-        if ( *v3 != MEMORY[0xA8F180] || *(this + 10) != MEMORY[0xA8F184] || *(this + 11) != MEMORY[0xA8F188] )
+        if ( *v3 != MEMORY[0xA8F180] || this->q028 != MEMORY[0xA8F184] || this->q0B0 != MEMORY[0xA8F188] )
         {
-          (*(void (__thiscall **)(_DWORD, int *))(*(_DWORD *)*(this + 3) + 244))(*(this + 3), this + 9);
+          (*(void (__thiscall **)(_DWORD, int *))(*(_DWORD *)this->m_State + 244))(this->m_State, this + 9);
           *v3 = MEMORY[0xA8F180];
-          *(this + 10) = MEMORY[0xA8F184];
-          *(this + 11) = MEMORY[0xA8F188];
+          this->q028 = MEMORY[0xA8F184];
+          this->q0B0 = MEMORY[0xA8F188];
         }
-        v68 = (_DWORD *)(*(this + 3) + 1600);
+        v68 = (_DWORD *)(this->m_State + 1600);
         *v68 = MEMORY[0xA8ED84];
         v68[1] = v113;
         v68[2] = 0;
-        *(_DWORD *)(*(this + 3) + 1504) = -1;
+        *(_DWORD *)(this->m_State + 1504) = -1;
         MovementAI::StepFootClass(this, 0);
         result = MovementAI::MainFootClass(0);
         v96 = result;
@@ -608,15 +608,15 @@ LABEL_97:
         v100 = 0;
         v70 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v95);
         Object = Object::FindObjectCell(v70, &v99, 0);
-        if ( Object::IsAlliedWithObjectHouse(*(_DWORD **)(*(this + 3) + 540), Object) )
+        if ( Object::IsAlliedWithObjectHouse(*(_DWORD **)(this->m_State + 540), Object) )
           return v96;
-        v72 = (int *)*(this + 3);
+        v72 = (int *)this->m_State;
         v102 = 0;
         v103 = 0;
         v73 = *v72;
         v74 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v95);
         v75 = Object::FindObjectCell(v74, &v102, 0);
-        (*(void (__thiscall **)(_DWORD, int, int, _DWORD))(v73 + 500))(*(this + 3), 1, v75, 0);
+        (*(void (__thiscall **)(_DWORD, int, int, _DWORD))(v73 + 500))(this->m_State, 1, v75, 0);
         return v96;
       }
       if ( *((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v95) + 17) != -1
@@ -624,26 +624,26 @@ LABEL_97:
                       + *((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v95) + 17))
                     + 680) )
       {
-        v76 = *(_DWORD *)*(this + 3);
+        v76 = *(_DWORD *)this->m_State;
         v77 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v95);
-        (*(void (__thiscall **)(_DWORD, int, void *, _DWORD))(v76 + 500))(*(this + 3), 1, v77, 0);
+        (*(void (__thiscall **)(_DWORD, int, void *, _DWORD))(v76 + 500))(this->m_State, 1, v77, 0);
         return v96;
       }
       return v96;
     case 6:
       if ( !a2 )
       {
-        v56 = (_DWORD *)(*(int (__thiscall **)(_DWORD, char *))(*(_DWORD *)*(this + 3) + 72))(*(this + 3), v111);
-        v57 = Coord::Subtract(&v112, *v56 - *(this + 6), v56[1] - *(this + 7), v56[2] - *(this + 8));
+        v56 = (_DWORD *)(*(int (__thiscall **)(_DWORD, char *))(*(_DWORD *)this->m_State + 72))(this->m_State, v111);
+        v57 = Coord::Subtract(&v112, *v56 - this->MovementAI_field_18, v56[1] - this->q01C, v56[2] - this->q008);
         v105 = *v57;
         v106 = v57[1];
         v107 = v57[2];
         if ( (int)Coord::Length(&v105) < *((_DWORD *)MEMORY[0x8871E0] + 1478) )
         {
-          v58 = (int *)(*(this + 3) + 156);
+          v58 = (int *)(this->m_State + 156);
           v105 = *v58;
           v106 = v58[1];
-          v59 = *(this + 8) - v58[2];
+          v59 = this->q008 - v58[2];
           if ( (int)((HIDWORD(v59) ^ v59) - HIDWORD(v59)) < 2 * MEMORY[0xA8F1C0] )
           {
             v108 = *v58;
@@ -651,14 +651,14 @@ LABEL_97:
             v110 = v58[2];
             if ( *((_DWORD *)Coord::To_Cell(&MEMORY[0x87F7E8], &v108) + 59) != 10 )
             {
-              (*(void (__stdcall **)(int *))(*(this + 1) + 72))(this + 1);
-              (*(void (__thiscall **)(_DWORD, _DWORD, int))(*(_DWORD *)*(this + 3) + 1152))(*(this + 3), 0, 1);
+              (*(void (__stdcall **)(int *))(this->q004 + 72))(this + 1);
+              (*(void (__thiscall **)(_DWORD, _DWORD, int))(*(_DWORD *)this->m_State + 1152))(this->m_State, 0, 1);
               return 7;
             }
           }
         }
         if ( (*((_DWORD *)Coord::To_Cell(&MEMORY[0x87F7E8], this + 9) + 80) & 0x100) == 0
-          || (v60 = (int *)(*(this + 3) + 156),
+          || (v60 = (int *)(this->m_State + 156),
               v105 = *v60,
               v106 = v60[1],
               v61 = v60[2],
@@ -672,49 +672,49 @@ LABEL_97:
         v63 = Coord::To_Cell(&MEMORY[0x87F7E8], this + 9);
         Cell::ApplyDamage(v63, (int)&MEMORY[0xA8F180], 1, 1, v94);
         *v3 = MEMORY[0xA8F180];
-        *(this + 10) = MEMORY[0xA8F184];
-        *(this + 11) = MEMORY[0xA8F188];
-        v64 = *(this + 3);
-        *(this + 20) = 0;
+        this->q028 = MEMORY[0xA8F184];
+        this->q0B0 = MEMORY[0xA8F188];
+        v64 = this->m_State;
+        this->MovementAI_field_14 = 0;
         *(this + 18) = 0;
         *(this + 21) = 0;
         *(this + 19) = 0;
         (*(void (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)v64 + 1348))(v64, 0, 0);
-        if ( *v3 == MEMORY[0xA8F180] && *(this + 10) == MEMORY[0xA8F184] )
+        if ( *v3 == MEMORY[0xA8F180] && this->q028 == MEMORY[0xA8F184] )
         {
 LABEL_61:
-          if ( *(this + 11) == MEMORY[0xA8F188] )
+          if ( this->q0B0 == MEMORY[0xA8F188] )
             return v96;
         }
 LABEL_62:
-        (*(void (__thiscall **)(_DWORD, _DWORD *))(*(_DWORD *)*(this + 3) + 244))(*(this + 3), v3);
+        (*(void (__thiscall **)(_DWORD, _DWORD *))(*(_DWORD *)this->m_State + 244))(this->m_State, v3);
         *v3 = MEMORY[0xA8F180];
         v3[1] = MEMORY[0xA8F184];
         v3[2] = MEMORY[0xA8F188];
         return v96;
       }
       *v3 = MEMORY[0xA8F180];
-      *(this + 10) = MEMORY[0xA8F184];
+      this->q028 = MEMORY[0xA8F184];
       v53 = MEMORY[0xA8F188];
-      *(this + 20) = 0;
+      this->MovementAI_field_14 = 0;
       *(this + 18) = 0;
-      *(this + 11) = v53;
-      v54 = *(this + 3);
+      this->q0B0 = v53;
+      v54 = this->m_State;
       *(this + 21) = 0;
       *(this + 19) = 0;
       (*(void (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)v54 + 1348))(v54, 0, 0);
-      if ( *v3 != MEMORY[0xA8F180] || *(this + 10) != MEMORY[0xA8F184] || *(this + 11) != MEMORY[0xA8F188] )
+      if ( *v3 != MEMORY[0xA8F180] || this->q028 != MEMORY[0xA8F184] || this->q0B0 != MEMORY[0xA8F188] )
       {
-        (*(void (__thiscall **)(_DWORD, int *))(*(_DWORD *)*(this + 3) + 244))(*(this + 3), this + 9);
+        (*(void (__thiscall **)(_DWORD, int *))(*(_DWORD *)this->m_State + 244))(this->m_State, this + 9);
         *v3 = MEMORY[0xA8F180];
-        *(this + 10) = MEMORY[0xA8F184];
-        *(this + 11) = MEMORY[0xA8F188];
+        this->q028 = MEMORY[0xA8F184];
+        this->q0B0 = MEMORY[0xA8F188];
       }
-      v55 = (_DWORD *)(*(this + 3) + 1600);
+      v55 = (_DWORD *)(this->m_State + 1600);
       *v55 = MEMORY[0xA8ED84];
       v55[1] = v109;
       v55[2] = 0;
-      *(_DWORD *)(*(this + 3) + 1504) = -1;
+      *(_DWORD *)(this->m_State + 1504) = -1;
       MovementAI::StepFootClass(this, 0);
       result = MovementAI::MainFootClass(0);
       v96 = result;
@@ -2107,55 +2107,55 @@ int __thiscall MovementAI::StepFootClass(int *this, ObjectClass *aP1)
   _DWORD v67[3]; // [esp+5Ch] [ebp-Ch] BYREF
 
   MovementAI::MarkOccupiedPathCell(this); /*0x5164d9*/
-  v3 = (TechnoClass *)*(this + 3); /*0x5164de*/
+  v3 = (TechnoClass *)this->m_State; /*0x5164de*/
   v4 = this + 6; /*0x5164e4*/
   aP4 = (IUnknown *)v3[1].missionStartTime; /*0x5164ed*/
-  if ( *(this + 6) != *(_DWORD *)&HouseClass_Player.__pad_5568[24268] /*0x516511*/
-    || *(this + 7) != *(_DWORD *)&HouseClass_Player.__pad_5568[24272]
+  if ( this->MovementAI_field_18 != *(_DWORD *)&HouseClass_Player.__pad_5568[24268] /*0x516511*/
+    || this->q01C != *(_DWORD *)&HouseClass_Player.__pad_5568[24272]
     || (result = *(_DWORD *)&HouseClass_Player.__pad_5568[24276],
-        *(this + 8) != *(_DWORD *)&HouseClass_Player.__pad_5568[24276]) )
+        this->q008 != *(_DWORD *)&HouseClass_Player.__pad_5568[24276]) )
   {
     v6 = *v4 / 256; /*0x516535*/
-    v7 = *(this + 7) / 256; /*0x516538*/
+    v7 = this->q01C / 256; /*0x516538*/
     result = (*(int (__thiscall **)(TechnoClass *, IUnknown **))(*(_DWORD *)v3->__pad_0 + 440))(v3, &v61); /*0x51653b*/
     if ( *(_WORD *)result == (_WORD)v6 && *(_WORD *)(result + 2) == (_WORD)v7 ) /*0x51654a*/
     {
-      v8 = *(_DWORD *)((*(int (__thiscall **)(_DWORD, int *, _DWORD))(*(_DWORD *)*(this + 3) + 76))( /*0x516569*/
-                         *(this + 3),
+      v8 = *(_DWORD *)((*(int (__thiscall **)(_DWORD, int *, _DWORD))(*(_DWORD *)this->m_State + 76))( /*0x516569*/
+                         this->m_State,
                          &aP0,
                          0)
                      + 8)
-         - *(this + 8);
+         - this->q008;
       result = (HIDWORD(v8) ^ v8) - HIDWORD(v8); /*0x51656c*/
       if ( result < 2 * *(_DWORD *)&HouseClass_Player.__pad_5568[24332] ) /*0x516573*/
       {
-        (*(void (__stdcall **)(int *))(*(this + 1) + 72))(this + 1); /*0x51657c*/
-        return (*(int (__thiscall **)(_DWORD, _DWORD, int))(*(_DWORD *)*(this + 3) + 1152))(*(this + 3), 0, 1); /*0x5166e4*/
+        (*(void (__stdcall **)(int *))(this->q004 + 72))(this + 1); /*0x51657c*/
+        return (*(int (__thiscall **)(_DWORD, _DWORD, int))(*(_DWORD *)this->m_State + 1152))(this->m_State, 0, 1); /*0x5166e4*/
       }
     }
   }
   if ( aP4 != (IUnknown *)-1 ) /*0x516589*/
     return result; /*0x516589*/
   if ( *v4 == *(_DWORD *)&HouseClass_Player.__pad_5568[24268] /*0x5165a5*/
-    && *(this + 7) == *(_DWORD *)&HouseClass_Player.__pad_5568[24272] )
+    && this->q01C == *(_DWORD *)&HouseClass_Player.__pad_5568[24272] )
   {
-    result = *(this + 8); /*0x5165ad*/
+    result = this->q008; /*0x5165ad*/
     if ( result == *(_DWORD *)&HouseClass_Player.__pad_5568[24276] ) /*0x5165b2*/
       return result; /*0x5165b2*/
   }
   v9 = *v4 / 256; /*0x5165dd*/
-  v10 = *(this + 7) / 256; /*0x5165e0*/
-  v11 = (_WORD *)(*(int (__thiscall **)(_DWORD, IUnknown **))(*(_DWORD *)*(this + 3) + 440))(*(this + 3), &v61); /*0x5165e3*/
+  v10 = this->q01C / 256; /*0x5165e0*/
+  v11 = (_WORD *)(*(int (__thiscall **)(_DWORD, IUnknown **))(*(_DWORD *)this->m_State + 440))(this->m_State, &v61); /*0x5165e3*/
   if ( *v11 == (_WORD)v9 && v11[1] == (_WORD)v10 ) /*0x5165f2*/
   {
-    v12 = *(_DWORD *)((*(int (__thiscall **)(_DWORD, int *, _DWORD))(*(_DWORD *)*(this + 3) + 76))(*(this + 3), &aP0, 0) /*0x516611*/
+    v12 = *(_DWORD *)((*(int (__thiscall **)(_DWORD, int *, _DWORD))(*(_DWORD *)this->m_State + 76))(this->m_State, &aP0, 0) /*0x516611*/
                     + 8)
-        - *(this + 8);
+        - this->q008;
     result = (HIDWORD(v12) ^ v12) - HIDWORD(v12); /*0x516614*/
     if ( result <= 2 * *(_DWORD *)&HouseClass_Player.__pad_5568[24332] ) /*0x51661b*/
       return result; /*0x51661b*/
   }
-  v13 = (TechnoClass *)*(this + 3); /*0x516621*/
+  v13 = (TechnoClass *)this->m_State; /*0x516621*/
   v14 = *(_DWORD *)&v13[1].__pad_115[11]; /*0x516624*/
   result = *(_DWORD *)&v13[1].__pad_115[19]; /*0x51662a*/
   if ( v14 != -1 ) /*0x516633*/
@@ -2168,27 +2168,27 @@ int __thiscall MovementAI::StepFootClass(int *this, ObjectClass *aP1)
     return result; /*0x516645*/
 LABEL_19:
   LOWORD(aP4b) = *v4 / 256; /*0x51664b*/
-  HIWORD(aP4b) = *(this + 7) / 256; /*0x51666d*/
+  HIWORD(aP4b) = this->q01C / 256; /*0x51666d*/
   if ( FootClass::MovementStep(aP4b, 0, (int)aP1, (int)v56, _34, v57) ) /*0x51667e*/
   {
     v28 = *(_DWORD *)&HouseClass_Player.__pad_5568[23248]; /*0x5168d6*/
     v29 = Math::RoundToInt(*(double *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 5984) * 900.0); /*0x5168e8*/
     v31 = (IUnknown *)v67[1]; /*0x5168f0*/
-    ecx45 = (_DWORD *)(*(this + 3) + 1600); /*0x5168f4*/
+    ecx45 = (_DWORD *)(this->m_State + 1600); /*0x5168f4*/
     *ecx45 = v28; /*0x5168fa*/
     ecx45[1] = v31; /*0x5168fc*/
     ecx45[2] = v29; /*0x516904*/
-    v32 = (_DWORD *)(*(int (__thiscall **)(_DWORD, _DWORD *))(*(_DWORD *)*(this + 3) + 72))(*(this + 3), v67); /*0x51690c*/
-    v33 = *(_DWORD *)(*(this + 3) + 1504) & 7; /*0x516939*/
+    v32 = (_DWORD *)(*(int (__thiscall **)(_DWORD, _DWORD *))(*(_DWORD *)this->m_State + 72))(this->m_State, v67); /*0x51690c*/
+    v33 = *(_DWORD *)(this->m_State + 1504) & 7; /*0x516939*/
     LOWORD(aP4a) = *v32 / 256 + *(_WORD *)&stru_89E138.__pad_14B0[4 * v33 + 160]; /*0x516955*/
     HIWORD(aP4a) = v32[1] / 256 + *(_WORD *)&stru_89E138.__pad_14B0[4 * v33 + 162]; /*0x516961*/
     aP1 = (ObjectClass *)aP4a; /*0x516970*/
     if ( LayerClass::IsWithinUsableArea(&stru_87C374.__pad_14B0[8132], (IUnknown *)&aP1, (TechnoClass *)1) ) /*0x516974*/
     {
-      v35 = (TechnoClass *)*(this + 3); /*0x516981*/
+      v35 = (TechnoClass *)this->m_State; /*0x516981*/
       ebp46 = *(_DWORD *)v35->__pad_0; /*0x51698a*/
       LandHeight = (IUnknown *)ObjectClass::GetLandHeight(v35); /*0x516994*/
-      v54 = *(IUnknown **)(*(this + 3) + 1504); /*0x5169a4*/
+      v54 = *(IUnknown **)(this->m_State + 1504); /*0x5169a4*/
       v36 = CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (__int16 *)&aP1); /*0x5169a6*/
       if ( (*(int (__thiscall **)(TechnoClass *, void *, IUnknown *, IUnknown *, _DWORD, int))(ebp46 + 428))( /*0x5169b7*/
              v35,
@@ -2199,7 +2199,7 @@ LABEL_19:
              1) == 6 )
       {
         v38 = (IUnknown *)CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (__int16 *)&aP1); /*0x5169cf*/
-        edx47 = (int *)(*(this + 3) + 156); /*0x5169d1*/
+        edx47 = (int *)(this->m_State + 156); /*0x5169d1*/
         aP0 = *edx47; /*0x5169d9*/
         v65 = (IUnknown *)edx47[1]; /*0x5169e5*/
         v39 = edx47[2]; /*0x5169ed*/
@@ -2213,15 +2213,15 @@ LABEL_19:
         ClosestObjectCell = (IUnknown *)Object::FindClosestObjectCell(v38, (IUnknown *)&v61, v40, 0); /*0x516a41*/
         if ( ClosestObjectCell ) /*0x516a48*/
         {
-          if ( Object::IsAlliedWithObjectHouse(*(_DWORD **)(*(this + 3) + 540), ClosestObjectCell) ) /*0x516a58*/
+          if ( Object::IsAlliedWithObjectHouse(*(_DWORD **)(this->m_State + 540), ClosestObjectCell) ) /*0x516a58*/
           {
-            v42 = (_DWORD *)(*(int (__thiscall **)(_DWORD, _DWORD *))(*(_DWORD *)*(this + 3) + 72))(*(this + 3), v67); /*0x516a6f*/
-            v43 = *(this + 7); /*0x516a76*/
+            v42 = (_DWORD *)(*(int (__thiscall **)(_DWORD, _DWORD *))(*(_DWORD *)this->m_State + 72))(this->m_State, v67); /*0x516a6f*/
+            v43 = this->q01C; /*0x516a76*/
             v44 = (IUnknown *)(*v42 - *v4); /*0x516a79*/
             v45 = v42[1]; /*0x516a7b*/
             v46 = v42[2]; /*0x516a7e*/
             v61 = v44; /*0x516a81*/
-            v47 = v46 - *(this + 8); /*0x516a8a*/
+            v47 = v46 - this->q008; /*0x516a8a*/
             v62 = v45 - v43; /*0x516a8c*/
             v63 = (BuildingTypeClass *)v47; /*0x516a90*/
             v48 = Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64( /*0x516abc*/
@@ -2229,12 +2229,12 @@ LABEL_19:
                                               + (double)v47 * (double)v47
                                               + (double)(v45 - v43) * (double)(v45 - v43)));
             if ( (int)Math::RoundToInt(v48) < *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 5912) /*0x516ade*/
-              && !Team::AllMembersValid((int *)*(this + 3)) )
+              && !Team::AllMembersValid((int *)this->m_State) )
             {
-              v49 = (int *)(*(this + 3) + 156); /*0x516aee*/
+              v49 = (int *)(this->m_State + 156); /*0x516aee*/
               aP0 = *v49; /*0x516af8*/
               v65 = (IUnknown *)v49[1]; /*0x516aff*/
-              v50 = *(this + 8) - v49[2]; /*0x516b0b*/
+              v50 = this->q008 - v49[2]; /*0x516b0b*/
               if ( (int)((HIDWORD(v50) ^ v50) - HIDWORD(v50)) < 2 * *(_DWORD *)&HouseClass_Player.__pad_5568[24332] ) /*0x516b1a*/
               {
                 aP0 = *v49; /*0x516b1e*/
@@ -2242,14 +2242,14 @@ LABEL_19:
                 v66 = v49[2]; /*0x516b30*/
                 if ( *((_DWORD *)Coord::To_Cell(&stru_87C374.__pad_14B0[8132], (IUnknown *)&aP0) + 59) != 10 ) /*0x516b46*/
                 {
-                  (*(void (__stdcall **)(int *))(*(this + 1) + 72))(this + 1); /*0x516b4f*/
-                  return (*(int (__thiscall **)(_DWORD, _DWORD, int))(*(_DWORD *)*(this + 3) + 1152))(*(this + 3), 0, 1); /*0x516b6a*/
+                  (*(void (__stdcall **)(int *))(this->q004 + 72))(this + 1); /*0x516b4f*/
+                  return (*(int (__thiscall **)(_DWORD, _DWORD, int))(*(_DWORD *)this->m_State + 1152))(this->m_State, 0, 1); /*0x516b6a*/
                 }
               }
             }
             if ( (v38->field_140 & 0x100) == 0 /*0x516bae*/
               || (LOBYTE(aP4a) = 1,
-                  v51 = (int *)(*(this + 3) + 156),
+                  v51 = (int *)(this->m_State + 156),
                   aP0 = *v51,
                   v65 = (IUnknown *)v51[1],
                   v52 = v51[2] / *(_DWORD *)&HouseClass_Player.__pad_5568[24332] - SHIBYTE(v38->field_118),
@@ -2262,7 +2262,7 @@ LABEL_19:
         }
       }
     }
-    result = *(this + 3); /*0x516bca*/
+    result = this->m_State; /*0x516bca*/
     *(_DWORD *)(result + 1612) = 10; /*0x516bcd*/
   }
   else
@@ -2270,20 +2270,20 @@ LABEL_19:
     v15 = *(IUnknown **)&HouseClass_Player.__pad_5568[23248]; /*0x516690*/
     v16 = (IUnknown *)Math::RoundToInt(*(double *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 5984) * 900.0); /*0x5166a2*/
     v18 = v65; /*0x5166aa*/
-    ecx20 = (IUnknown **)(*(this + 3) + 1600); /*0x5166ae*/
+    ecx20 = (IUnknown **)(this->m_State + 1600); /*0x5166ae*/
     *ecx20 = v15; /*0x5166b5*/
     ecx20[1] = v18; /*0x5166b7*/
     ecx20[2] = v16; /*0x5166ba*/
-    if ( !(*(unsigned __int8 (__thiscall **)(_DWORD, int *))(*(_DWORD *)*(this + 3) + 716))(*(this + 3), this + 6) ) /*0x5166c2*/
-      return (*(int (__thiscall **)(_DWORD, _DWORD, int))(*(_DWORD *)*(this + 3) + 1152))(*(this + 3), 0, 1); /*0x5166ca*/
-    if ( FootClass::ClearSomeVector2((void *)*(this + 3)) ) /*0x5166ea*/
+    if ( !(*(unsigned __int8 (__thiscall **)(_DWORD, int *))(*(_DWORD *)this->m_State + 716))(this->m_State, this + 6) ) /*0x5166c2*/
+      return (*(int (__thiscall **)(_DWORD, _DWORD, int))(*(_DWORD *)this->m_State + 1152))(this->m_State, 0, 1); /*0x5166ca*/
+    if ( FootClass::ClearSomeVector2((void *)this->m_State) ) /*0x5166ea*/
       goto LABEL_28; /*0x5166ea*/
-    v19 = (_DWORD *)(*(int (__thiscall **)(_DWORD, int *))(*(_DWORD *)*(this + 3) + 72))(*(this + 3), &aP0); /*0x516701*/
+    v19 = (_DWORD *)(*(int (__thiscall **)(_DWORD, int *))(*(_DWORD *)this->m_State + 72))(this->m_State, &aP0); /*0x516701*/
     v21 = Coord::Subtract( /*0x516721*/
             v67,
             (IUnknown *)(*v19 - *v4),
-            (IUnknown *)(v19[1] - *(this + 7)),
-            (IUnknown *)(v19[2] - *(this + 8)));
+            (IUnknown *)(v19[1] - this->q01C),
+            (IUnknown *)(v19[2] - this->q008));
     v61 = (IUnknown *)v21->field_0; /*0x51672b*/
     edx23 = v21->field_4; /*0x51672f*/
     v23 = (BuildingTypeClass *)v21->field_8; /*0x516736*/
@@ -2295,61 +2295,61 @@ LABEL_19:
                                          + (double)(int)v61 * (double)(int)v61));
     if ( (int)Math::RoundToInt(st7_23) >= *(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 5912) ) /*0x51677b*/
       goto LABEL_28; /*0x51677b*/
-    if ( (*(int (__thiscall **)(_DWORD))(*(_DWORD *)*(this + 3) + 388))(*(this + 3)) == 2 /*0x51679b*/
-      || (*(int (__thiscall **)(_DWORD))(*(_DWORD *)*(this + 3) + 388))(*(this + 3)) == 11 )
+    if ( (*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->m_State + 388))(this->m_State) == 2 /*0x51679b*/
+      || (*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->m_State + 388))(this->m_State) == 11 )
     {
-      (*(void (__thiscall **)(_DWORD, _DWORD, int))(*(_DWORD *)*(this + 3) + 1152))(*(this + 3), 0, 1); /*0x5167a6*/
-      result = *(this + 3); /*0x5167ac*/
+      (*(void (__thiscall **)(_DWORD, _DWORD, int))(*(_DWORD *)this->m_State + 1152))(this->m_State, 0, 1); /*0x5167a6*/
+      result = this->m_State; /*0x5167ac*/
       if ( !*(_BYTE *)(result + 144) ) /*0x5167b7*/
         return result; /*0x5167b7*/
     }
     else
     {
 LABEL_28:
-      v25 = (TechnoClass *)*(this + 3); /*0x5167bf*/
+      v25 = (TechnoClass *)this->m_State; /*0x5167bf*/
       eax28 = *(_DWORD *)&v25[1].__pad_115[23]; /*0x5167c2*/
       if ( eax28 <= 0 ) /*0x5167ca*/
       {
         (*(void (__thiscall **)(TechnoClass *, _DWORD, int))(*(_DWORD *)v25->__pad_0 + 1152))(v25, 0, 1); /*0x5167db*/
-        result = *(this + 3); /*0x5167e1*/
+        result = this->m_State; /*0x5167e1*/
         if ( !*(_BYTE *)(result + 144) ) /*0x5167ec*/
           return result; /*0x5167ec*/
         if ( *(_BYTE *)(result + 1674) ) /*0x5167f2*/
           PlayVocClass(*(_DWORD *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 1792), 0x2000, 1.0, 0); /*0x516813*/
-        *(_BYTE *)(*(this + 3) + 1674) = 0; /*0x51681b*/
+        *(_BYTE *)(this->m_State + 1674) = 0; /*0x51681b*/
       }
       else
       {
         *(_DWORD *)&v25[1].__pad_115[23] = eax28 - 1; /*0x5167cd*/
       }
     }
-    if ( !(*(unsigned __int8 (__stdcall **)(int *))(*(this + 1) + 16))(this + 1) ) /*0x516829*/
+    if ( !(*(unsigned __int8 (__stdcall **)(int *))(this->q004 + 16))(this + 1) ) /*0x516829*/
     {
-      v27 = (TechnoClass *)*(this + 3); /*0x516830*/
+      v27 = (TechnoClass *)this->m_State; /*0x516830*/
       if ( v27->sprayOffsetIndex ) /*0x516833*/
       {
         if ( !(*(unsigned __int8 (__thiscall **)(TechnoClass *, int))(*(_DWORD *)v27->__pad_0 + 940))( /*0x516840*/
                 v27,
                 v27->sprayOffsetIndex) )
         {
-          *(_BYTE *)(*(this + 3) + 1672) = 1; /*0x51684d*/
-          ecx37 = *(_DWORD **)(*(this + 3) + 1492); /*0x516857*/
+          *(_BYTE *)(this->m_State + 1672) = 1; /*0x51684d*/
+          ecx37 = *(_DWORD **)(this->m_State + 1492); /*0x516857*/
           if ( ecx37 ) /*0x51685f*/
             TeamClass::WakeUpAllMembers(ecx37); /*0x516861*/
-          (*(void (__thiscall **)(_DWORD, _DWORD))(*(_DWORD *)*(this + 3) + 968))(*(this + 3), 0); /*0x51686d*/
+          (*(void (__thiscall **)(_DWORD, _DWORD))(*(_DWORD *)this->m_State + 968))(this->m_State, 0); /*0x51686d*/
         }
       }
     }
-    if ( *(this + 9) != *(_DWORD *)&HouseClass_Player.__pad_5568[24268] /*0x516899*/
-      || *(this + 10) != *(_DWORD *)&HouseClass_Player.__pad_5568[24272]
-      || *(this + 11) != *(_DWORD *)&HouseClass_Player.__pad_5568[24276] )
+    if ( this->q024 != *(_DWORD *)&HouseClass_Player.__pad_5568[24268] /*0x516899*/
+      || this->q028 != *(_DWORD *)&HouseClass_Player.__pad_5568[24272]
+      || this->q0B0 != *(_DWORD *)&HouseClass_Player.__pad_5568[24276] )
     {
-      (*(void (__thiscall **)(_DWORD, int *))(*(_DWORD *)*(this + 3) + 244))(*(this + 3), this + 9); /*0x5168a1*/
-      *(this + 9) = *(_DWORD *)&HouseClass_Player.__pad_5568[24268]; /*0x5168ad*/
-      *(this + 10) = *(_DWORD *)&HouseClass_Player.__pad_5568[24272]; /*0x5168b5*/
-      *(this + 11) = *(_DWORD *)&HouseClass_Player.__pad_5568[24276]; /*0x5168bd*/
+      (*(void (__thiscall **)(_DWORD, int *))(*(_DWORD *)this->m_State + 244))(this->m_State, this + 9); /*0x5168a1*/
+      this->q024 = *(_DWORD *)&HouseClass_Player.__pad_5568[24268]; /*0x5168ad*/
+      this->q028 = *(_DWORD *)&HouseClass_Player.__pad_5568[24272]; /*0x5168b5*/
+      this->q0B0 = *(_DWORD *)&HouseClass_Player.__pad_5568[24276]; /*0x5168bd*/
     }
-    return (*(int (__stdcall **)(int *))(*(this + 1) + 72))(this + 1); /*0x5168c3*/
+    return (*(int (__stdcall **)(int *))(this->q004 + 72))(this + 1); /*0x5168c3*/
   }
   return result; /*0x5166dd*/
 }
@@ -8527,104 +8527,104 @@ int __thiscall RulesClass::SaveLoad_Prefix_0(int *this, int i)
   int v169; // [esp+D50h] [ebp-4h] BYREF
 
   v3 = this + 1125;
-  (*(void (__thiscall **)(int *))(*(this + 1125) + 12))(this + 1125);
-  (*(void (__thiscall **)(int *))(*(this + 1132) + 12))(this + 1132);
-  (*(void (__thiscall **)(int *))(*(this + 1139) + 12))(this + 1139);
-  (*(void (__thiscall **)(int *))(*(this + 1146) + 12))(this + 1146);
-  (*(void (__thiscall **)(int *))(*(this + 1153) + 12))(this + 1153);
-  (*(void (__thiscall **)(int *))(*(this + 1160) + 12))(this + 1160);
-  (*(void (__thiscall **)(int *))(*(this + 1167) + 12))(this + 1167);
-  (*(void (__thiscall **)(int *))(*(this + 1174) + 12))(this + 1174);
-  (*(void (__thiscall **)(int *))(*(this + 1181) + 12))(this + 1181);
-  (*(void (__thiscall **)(int *))(*(this + 1188) + 12))(this + 1188);
-  (*(void (__thiscall **)(int *))(*(this + 1195) + 12))(this + 1195);
-  (*(void (__thiscall **)(int *))(*(this + 1202) + 12))(this + 1202);
-  (*(void (__thiscall **)(int *))(*(this + 1209) + 12))(this + 1209);
-  (*(void (__thiscall **)(int *))(*(this + 1276) + 12))(this + 1276);
-  (*(void (__thiscall **)(int *))(*(this + 1110) + 12))(this + 1110);
-  (*(void (__thiscall **)(int *))(*(this + 618) + 12))(this + 618);
-  (*(void (__thiscall **)(int *))(*(this + 864) + 12))(this + 864);
-  (*(void (__thiscall **)(int *))(*(this + 871) + 12))(this + 871);
-  (*(void (__thiscall **)(int *))(*(this + 878) + 12))(this + 878);
-  (*(void (__thiscall **)(int *))(*(this + 954) + 12))(this + 954);
-  (*(void (__thiscall **)(int *))(*(this + 961) + 12))(this + 961);
-  (*(void (__thiscall **)(int *))(*(this + 968) + 12))(this + 968);
-  (*(void (__thiscall **)(int *))(*(this + 900) + 12))(this + 900);
-  (*(void (__thiscall **)(int *))(*(this + 945) + 12))(this + 945);
-  (*(void (__thiscall **)(int *))(*(this + 907) + 12))(this + 907);
-  (*(void (__thiscall **)(int *))(*(this + 885) + 12))(this + 885);
-  (*(void (__thiscall **)(int *))(*(this + 1252) + 12))(this + 1252);
-  (*(void (__thiscall **)(int *))(*(this + 1259) + 12))(this + 1259);
-  (*(void (__thiscall **)(int *))(*(this + 915) + 12))(this + 915);
-  (*(void (__thiscall **)(int *))(*(this + 922) + 12))(this + 922);
-  (*(void (__thiscall **)(int *))(*(this + 929) + 12))(this + 929);
-  (*(void (__thiscall **)(int *))(*(this + 936) + 12))(this + 936);
-  (*(void (__thiscall **)(int *))(*(this + 1217) + 12))(this + 1217);
-  (*(void (__thiscall **)(int *))(*(this + 1224) + 12))(this + 1224);
-  (*(void (__thiscall **)(int *))(*(this + 1231) + 12))(this + 1231);
-  (*(void (__thiscall **)(int *))(*(this + 1238) + 12))(this + 1238);
-  (*(void (__thiscall **)(int *))(*(this + 1245) + 12))(this + 1245);
-  (*(void (__thiscall **)(int *))(*(this + 1266) + 12))(this + 1266);
-  (*(void (__thiscall **)(int *))(*(this + 1117) + 12))(this + 1117);
-  (*(void (__thiscall **)(int *))(*(this + 271) + 12))(this + 271);
-  (*(void (__thiscall **)(int *))(*(this + 278) + 12))(this + 278);
-  (*(void (__thiscall **)(int *))(*(this + 285) + 12))(this + 285);
-  (*(void (__thiscall **)(int *))(*(this + 384) + 12))(this + 384);
-  (*(void (__thiscall **)(int *))(*(this + 214) + 12))(this + 214);
-  (*(void (__thiscall **)(int *))(*(this + 221) + 12))(this + 221);
-  (*(void (__thiscall **)(int *))(*(this + 228) + 12))(this + 228);
-  (*(void (__thiscall **)(int *))(*(this + 235) + 12))(this + 235);
-  (*(void (__thiscall **)(int *))(*(this + 242) + 12))(this + 242);
-  (*(void (__thiscall **)(int *))(*(this + 249) + 12))(this + 249);
-  (*(void (__thiscall **)(int *))(*(this + 435) + 12))(this + 435);
-  (*(void (__thiscall **)(int *))(*(this + 461) + 12))(this + 461);
-  (*(void (__thiscall **)(int *))(*(this + 497) + 12))(this + 497);
-  (*(void (__thiscall **)(int *))(*(this + 504) + 12))(this + 504);
-  (*(void (__thiscall **)(int *))(*(this + 511) + 12))(this + 511);
-  (*(void (__thiscall **)(int *))(*(this + 518) + 12))(this + 518);
-  (*(void (__thiscall **)(int *))(*(this + 525) + 12))(this + 525);
-  (*(void (__thiscall **)(int *))(*(this + 532) + 12))(this + 532);
-  (*(void (__thiscall **)(int *))(*(this + 544) + 12))(this + 544);
-  (*(void (__thiscall **)(int *))(*(this + 555) + 12))(this + 555);
-  (*(void (__thiscall **)(int *))(*(this + 562) + 12))(this + 562);
-  (*(void (__thiscall **)(int *))(*(this + 569) + 12))(this + 569);
-  (*(void (__thiscall **)(int *))(*(this + 576) + 12))(this + 576);
-  (*(void (__thiscall **)(int *))(*(this + 583) + 12))(this + 583);
-  (*(void (__thiscall **)(int *))(*(this + 590) + 12))(this + 590);
-  (*(void (__thiscall **)(int *))(*(this + 597) + 12))(this + 597);
-  (*(void (__thiscall **)(int *))(*(this + 604) + 12))(this + 604);
-  (*(void (__thiscall **)(int *))(*(this + 611) + 12))(this + 611);
-  (*(void (__thiscall **)(int *))(*(this + 625) + 12))(this + 625);
-  (*(void (__thiscall **)(int *))(*(this + 632) + 12))(this + 632);
-  (*(void (__thiscall **)(int *))(*(this + 639) + 12))(this + 639);
-  (*(void (__thiscall **)(int *))(*(this + 646) + 12))(this + 646);
-  (*(void (__thiscall **)(int *))(*(this + 653) + 12))(this + 653);
-  (*(void (__thiscall **)(int *))(*(this + 660) + 12))(this + 660);
-  (*(void (__thiscall **)(int *))(*(this + 667) + 12))(this + 667);
-  (*(void (__thiscall **)(int *))(*(this + 674) + 12))(this + 674);
-  (*(void (__thiscall **)(int *))(*(this + 681) + 12))(this + 681);
-  (*(void (__thiscall **)(int *))(*(this + 688) + 12))(this + 688);
-  (*(void (__thiscall **)(int *))(*(this + 695) + 12))(this + 695);
-  (*(void (__thiscall **)(int *))(*(this + 726) + 12))(this + 726);
-  (*(void (__thiscall **)(int *))(*(this + 733) + 12))(this + 733);
-  (*(void (__thiscall **)(int *))(*(this + 740) + 12))(this + 740);
-  (*(void (__thiscall **)(int *))(*(this + 752) + 12))(this + 752);
-  (*(void (__thiscall **)(int *))(*(this + 712) + 12))(this + 712);
-  (*(void (__thiscall **)(int *))(*(this + 1022) + 12))(this + 1022);
-  (*(void (__thiscall **)(int *))(*(this + 719) + 12))(this + 719);
-  (*(void (__thiscall **)(int *))(*(this + 832) + 12))(this + 832);
-  (*(void (__thiscall **)(int *))(*(this + 839) + 12))(this + 839);
-  (*(void (__thiscall **)(int *))(*(this + 846) + 12))(this + 846);
-  (*(void (__thiscall **)(int *))(*(this + 402) + 12))(this + 402);
-  (*(void (__thiscall **)(int *))(*(this + 769) + 12))(this + 769);
-  (*(void (__thiscall **)(int *))(*(this + 776) + 12))(this + 776);
-  (*(void (__thiscall **)(int *))(*(this + 783) + 12))(this + 783);
-  (*(void (__thiscall **)(int *))(*(this + 790) + 12))(this + 790);
-  (*(void (__thiscall **)(int *))(*(this + 797) + 12))(this + 797);
-  (*(void (__thiscall **)(int *))(*(this + 804) + 12))(this + 804);
-  (*(void (__thiscall **)(int *))(*(this + 811) + 12))(this + 811);
-  (*(void (__thiscall **)(int *))(*(this + 818) + 12))(this + 818);
-  (*(void (__thiscall **)(int *))(*(this + 825) + 12))(this + 825);
+  (*(void (__thiscall **)(int *))(this->q465 + 12))(this + 1125);
+  (*(void (__thiscall **)(int *))(this->q11B0 + 12))(this + 1132);
+  (*(void (__thiscall **)(int *))(this->q11CC + 12))(this + 1139);
+  (*(void (__thiscall **)(int *))(this->q11E8 + 12))(this + 1146);
+  (*(void (__thiscall **)(int *))(this->q481 + 12))(this + 1153);
+  (*(void (__thiscall **)(int *))(this->q1220 + 12))(this + 1160);
+  (*(void (__thiscall **)(int *))(this->q123C + 12))(this + 1167);
+  (*(void (__thiscall **)(int *))(this->q1258 + 12))(this + 1174);
+  (*(void (__thiscall **)(int *))(this->q1274 + 12))(this + 1181);
+  (*(void (__thiscall **)(int *))(this->q1290 + 12))(this + 1188);
+  (*(void (__thiscall **)(int *))(this->q12AC + 12))(this + 1195);
+  (*(void (__thiscall **)(int *))(this->q12C8 + 12))(this + 1202);
+  (*(void (__thiscall **)(int *))(this->q12E4 + 12))(this + 1209);
+  (*(void (__thiscall **)(int *))(this->q13F0 + 12))(this + 1276);
+  (*(void (__thiscall **)(int *))(this->q1158 + 12))(this + 1110);
+  (*(void (__thiscall **)(int *))(this->AttackInterval + 12))(this + 618);
+  (*(void (__thiscall **)(int *))(this->q360 + 12))(this + 864);
+  (*(void (__thiscall **)(int *))(this->qD9C + 12))(this + 871);
+  (*(void (__thiscall **)(int *))(this->qDB8 + 12))(this + 878);
+  (*(void (__thiscall **)(int *))(this->qEE8 + 12))(this + 954);
+  (*(void (__thiscall **)(int *))(this->qF04 + 12))(this + 961);
+  (*(void (__thiscall **)(int *))(this->q3C8 + 12))(this + 968);
+  (*(void (__thiscall **)(int *))(this->qE10 + 12))(this + 900);
+  (*(void (__thiscall **)(int *))(this->qEC4 + 12))(this + 945);
+  (*(void (__thiscall **)(int *))(this->qE2C + 12))(this + 907);
+  (*(void (__thiscall **)(int *))(this->qDD4 + 12))(this + 885);
+  (*(void (__thiscall **)(int *))(this->q1390 + 12))(this + 1252);
+  (*(void (__thiscall **)(int *))(this->q13AC + 12))(this + 1259);
+  (*(void (__thiscall **)(int *))(this->qE4C + 12))(this + 915);
+  (*(void (__thiscall **)(int *))(this->qE68 + 12))(this + 922);
+  (*(void (__thiscall **)(int *))(this->q3A1 + 12))(this + 929);
+  (*(void (__thiscall **)(int *))(this->qEA0 + 12))(this + 936);
+  (*(void (__thiscall **)(int *))(this->q1304 + 12))(this + 1217);
+  (*(void (__thiscall **)(int *))(this->q1320 + 12))(this + 1224);
+  (*(void (__thiscall **)(int *))(this->q133C + 12))(this + 1231);
+  (*(void (__thiscall **)(int *))(this->q1358 + 12))(this + 1238);
+  (*(void (__thiscall **)(int *))(this->q1374 + 12))(this + 1245);
+  (*(void (__thiscall **)(int *))(this->q13C8 + 12))(this + 1266);
+  (*(void (__thiscall **)(int *))(this->q1174 + 12))(this + 1117);
+  (*(void (__thiscall **)(int *))(this->q43C + 12))(this + 271);
+  (*(void (__thiscall **)(int *))(this->q458 + 12))(this + 278);
+  (*(void (__thiscall **)(int *))(this->q474 + 12))(this + 285);
+  (*(void (__thiscall **)(int *))(this->BombAttachSound + 12))(this + 384);
+  (*(void (__thiscall **)(int *))(this->q358 + 12))(this + 214);
+  (*(void (__thiscall **)(int *))(this->q374 + 12))(this + 221);
+  (*(void (__thiscall **)(int *))(this->CreateUnitSound + 12))(this + 228);
+  (*(void (__thiscall **)(int *))(this->q3AC + 12))(this + 235);
+  (*(void (__thiscall **)(int *))(this->q3C8 + 12))(this + 242);
+  (*(void (__thiscall **)(int *))(this->q3E4 + 12))(this + 249);
+  (*(void (__thiscall **)(int *))(this->HealCrateSound + 12))(this + 435);
+  (*(void (__thiscall **)(int *))(this->q734 + 12))(this + 461);
+  (*(void (__thiscall **)(int *))(this->q1F1 + 12))(this + 497);
+  (*(void (__thiscall **)(int *))(this->Dig + 12))(this + 504);
+  (*(void (__thiscall **)(int *))(this->Parachute + 12))(this + 511);
+  (*(void (__thiscall **)(int *))(this->ChronoReinfDelay + 12))(this + 518);
+  (*(void (__thiscall **)(int *))(this->ThirdDisguise + 12))(this + 525);
+  (*(void (__thiscall **)(int *))(this->ConditionRedSparkingProbability + 12))(this + 532);
+  (*(void (__thiscall **)(int *))(this->MutateWarhead + 12))(this + 544);
+  (*(void (__thiscall **)(int *))(this->IonCannonWarhead + 12))(this + 555);
+  (*(void (__thiscall **)(int *))(this->CHRONOSK_SHP + 12))(this + 562);
+  (*(void (__thiscall **)(int *))(this->q8E4 + 12))(this + 569);
+  (*(void (__thiscall **)(int *))(this->q900 + 12))(this + 576);
+  (*(void (__thiscall **)(int *))(this->q91C + 12))(this + 583);
+  (*(void (__thiscall **)(int *))(this->q938 + 12))(this + 590);
+  (*(void (__thiscall **)(int *))(this->q954 + 12))(this + 597);
+  (*(void (__thiscall **)(int *))(this->MyEffectivenessCoefficientDefault + 12))(this + 604);
+  (*(void (__thiscall **)(int *))(this->q98C + 12))(this + 611);
+  (*(void (__thiscall **)(int *))(this->q9C4 + 12))(this + 625);
+  (*(void (__thiscall **)(int *))(this->TeslaLimit + 12))(this + 632);
+  (*(void (__thiscall **)(int *))(this->WarRatio + 12))(this + 639);
+  (*(void (__thiscall **)(int *))(this->RefineryRatio + 12))(this + 646);
+  (*(void (__thiscall **)(int *))(this->TreeStrength + 12))(this + 653);
+  (*(void (__thiscall **)(int *))(this->qA50 + 12))(this + 660);
+  (*(void (__thiscall **)(int *))(this->SuperWeapons + 12))(this + 667);
+  (*(void (__thiscall **)(int *))(this->Aircraft + 12))(this + 674);
+  (*(void (__thiscall **)(int *))(this->CrateMinimum + 12))(this + 681);
+  (*(void (__thiscall **)(int *))(this->MinUnitCount + 12))(this + 688);
+  (*(void (__thiscall **)(int *))(this->TiberiumGrows + 12))(this + 695);
+  (*(void (__thiscall **)(int *))(this->qB58 + 12))(this + 726);
+  (*(void (__thiscall **)(int *))(this->qB74 + 12))(this + 733);
+  (*(void (__thiscall **)(int *))(this->qB90 + 12))(this + 740);
+  (*(void (__thiscall **)(int *))(this->qBC0 + 12))(this + 752);
+  (*(void (__thiscall **)(int *))(this->q2C8 + 12))(this + 712);
+  (*(void (__thiscall **)(int *))(this->qFF8 + 12))(this + 1022);
+  (*(void (__thiscall **)(int *))(this->HarvesterLoadRate + 12))(this + 719);
+  (*(void (__thiscall **)(int *))(this->qD00 + 12))(this + 832);
+  (*(void (__thiscall **)(int *))(this->qD1C + 12))(this + 839);
+  (*(void (__thiscall **)(int *))(this->qD38 + 12))(this + 846);
+  (*(void (__thiscall **)(int *))(this->VeteranROF + 12))(this + 402);
+  (*(void (__thiscall **)(int *))(this->qC04 + 12))(this + 769);
+  (*(void (__thiscall **)(int *))(this->qC20 + 12))(this + 776);
+  (*(void (__thiscall **)(int *))(this->qC3C + 12))(this + 783);
+  (*(void (__thiscall **)(int *))(this->qC58 + 12))(this + 790);
+  (*(void (__thiscall **)(int *))(this->qC74 + 12))(this + 797);
+  (*(void (__thiscall **)(int *))(this->qC90 + 12))(this + 804);
+  (*(void (__thiscall **)(int *))(this->qCAC + 12))(this + 811);
+  (*(void (__thiscall **)(int *))(this->qCC8 + 12))(this + 818);
+  (*(void (__thiscall **)(int *))(this->qCE4 + 12))(this + 825);
   v4 = i;
   (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)i + 12))(i, this, 6336, 0);
   if ( this )
@@ -9597,115 +9597,115 @@ int __thiscall RulesClass::SaveLoad_Prefix_0(int *this, int i)
   ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 62);
   ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 63);
   ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], this + 64);
-  *(this + 1016) = SearchMIXFile(aBombcursShp, 0);
-  *(this + 1017) = SearchMIXFile(aChronoskShp, 0);
-  for ( i97 = 0; i97 < *(this + 26); ++i97 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 23) + 4 * i97));
-  for ( i98 = 0; i98 < *(this + 737); ++i98 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 734) + 4 * i98));
-  for ( i99 = 0; i99 < *(this + 744); ++i99 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 741) + 4 * i99));
-  for ( i100 = 0; i100 < *(this + 756); ++i100 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 753) + 4 * i100));
-  for ( i101 = 0; i101 < *(this + 501); ++i101 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 498) + 4 * i101));
-  for ( i102 = 0; i102 < *(this + 508); ++i102 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 505) + 4 * i102));
-  for ( i103 = 0; i103 < *(this + 515); ++i103 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 512) + 4 * i103));
-  for ( i104 = 0; i104 < *(this + 522); ++i104 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 519) + 4 * i104));
-  for ( i105 = 0; i105 < *(this + 529); ++i105 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 526) + 4 * i105));
-  for ( i106 = 0; i106 < *(this + 716); ++i106 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 713) + 4 * i106));
-  for ( i107 = 0; i107 < *(this + 1026); ++i107 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 1023) + 4 * i107));
-  for ( i108 = 0; i108 < *(this + 723); ++i108 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 720) + 4 * i108));
-  for ( i109 = 0; i109 < *(this + 836); ++i109 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 833) + 4 * i109));
-  for ( i110 = 0; i110 < *(this + 843); ++i110 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 840) + 4 * i110));
-  for ( i111 = 0; i111 < *(this + 850); ++i111 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 847) + 4 * i111));
-  for ( i112 = 0; i112 < *(this + 536); ++i112 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 533) + 4 * i112));
-  for ( i113 = 0; i113 < *(this + 548); ++i113 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 545) + 4 * i113));
-  for ( i114 = 0; i114 < *(this + 559); ++i114 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 556) + 4 * i114));
-  for ( i115 = 0; i115 < *(this + 566); ++i115 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 563) + 4 * i115));
-  for ( i116 = 0; i116 < *(this + 573); ++i116 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 570) + 4 * i116));
-  for ( i117 = 0; i117 < *(this + 580); ++i117 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 577) + 4 * i117));
-  for ( i118 = 0; i118 < *(this + 587); ++i118 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 584) + 4 * i118));
-  for ( i119 = 0; i119 < *(this + 594); ++i119 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 591) + 4 * i119));
-  for ( i120 = 0; i120 < *(this + 601); ++i120 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 598) + 4 * i120));
-  for ( i121 = 0; i121 < *(this + 608); ++i121 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 605) + 4 * i121));
-  for ( i122 = 0; i122 < *(this + 615); ++i122 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 612) + 4 * i122));
-  for ( i123 = 0; i123 < *(this + 629); ++i123 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 626) + 4 * i123));
-  for ( i124 = 0; i124 < *(this + 636); ++i124 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 633) + 4 * i124));
-  for ( i125 = 0; i125 < *(this + 643); ++i125 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 640) + 4 * i125));
-  for ( i126 = 0; i126 < *(this + 650); ++i126 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 647) + 4 * i126));
-  for ( i127 = 0; i127 < *(this + 657); ++i127 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 654) + 4 * i127));
-  for ( i128 = 0; i128 < *(this + 664); ++i128 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 661) + 4 * i128));
-  for ( i129 = 0; i129 < *(this + 671); ++i129 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 668) + 4 * i129));
-  for ( i130 = 0; i130 < *(this + 678); ++i130 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 675) + 4 * i130));
-  for ( i131 = 0; i131 < *(this + 685); ++i131 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 682) + 4 * i131));
-  for ( i132 = 0; i132 < *(this + 692); ++i132 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 689) + 4 * i132));
-  for ( i133 = 0; i133 < *(this + 699); ++i133 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 696) + 4 * i133));
-  for ( i134 = 0; i134 < *(this + 730); ++i134 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 727) + 4 * i134));
-  for ( i135 = 0; i135 < *(this + 388); ++i135 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 385) + 4 * i135));
-  for ( i136 = 0; i136 < *(this + 76); ++i136 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 73) + 4 * i136));
-  for ( i137 = 0; i137 < *(this + 69); ++i137 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 66) + 4 * i137));
-  for ( i138 = 0; i138 < *(this + 83); ++i138 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 80) + 4 * i138));
-  for ( i139 = 0; i139 < *(this + 90); ++i139 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 87) + 4 * i139));
-  v155 = *(this + 179);
+  this->q3F8 = SearchMIXFile(aBombcursShp, 0);
+  this->q3F9 = SearchMIXFile(aChronoskShp, 0);
+  for ( i97 = 0; i97 < this->DropPodPuff; ++i97 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->RadarEventMinRadius + 4 * i97));
+  for ( i98 = 0; i98 < this->q2E1; ++i98 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q2DE + 4 * i98));
+  for ( i99 = 0; i99 < this->q2E8; ++i99 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q2E5 + 4 * i99));
+  for ( i100 = 0; i100 < this->q2F4; ++i100 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q2F1 + 4 * i100));
+  for ( i101 = 0; i101 < this->MaximumBaseDefenseValue; ++i101 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->GDIBaseDefenseCoefficient + 4 * i101));
+  for ( i102 = 0; i102 < this->IonBlast; ++i102 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->OnFire + 4 * i102));
+  for ( i103 = 0; i103 < this->Paratrooper; ++i103 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->IonBeam + 4 * i103));
+  for ( i104 = 0; i104 < this->ChronoRangeMinimum; ++i104 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->ChronoDistanceFactor + 4 * i104));
+  for ( i105 = 0; i105 < this->AIMinorSuperReadyPercent; ++i105 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->SpyPowerBlackout + 4 * i105));
+  for ( i106 = 0; i106 < this->q2CC; ++i106 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q2C9 + 4 * i106));
+  for ( i107 = 0; i107 < this->q402; ++i107 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->qFFC + 4 * i107));
+  for ( i108 = 0; i108 < this->Easy; ++i108 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q2D0 + 4 * i108));
+  for ( i109 = 0; i109 < this->q344; ++i109 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q341 + 4 * i109));
+  for ( i110 = 0; i110 < this->q34B; ++i110 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q348 + 4 * i110));
+  for ( i111 = 0; i111 < this->q352; ++i111 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q34F + 4 * i111));
+  for ( i112 = 0; i112 < this->AlliedCrew; ++i112 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->Technician + 4 * i112));
+  for ( i113 = 0; i113 < this->TiberiumExplosionDamage; ++i113 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->MutateExplosionWarhead + 4 * i113));
+  for ( i114 = 0; i114 < this->IvanIconFlickerRate; ++i114 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->MinLowPowerProductionSpeed + 4 * i114));
+  for ( i115 = 0; i115 < this->q236; ++i115 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->IronCurtainDuration + 4 * i115));
+  for ( i116 = 0; i116 < this->q23D; ++i116 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q8E8 + 4 * i116));
+  for ( i117 = 0; i117 < this->q244; ++i117 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q241 + 4 * i117));
+  for ( i118 = 0; i118 < this->q24B; ++i118 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q248 + 4 * i118));
+  for ( i119 = 0; i119 < this->q252; ++i119 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q24F + 4 * i119));
+  for ( i120 = 0; i120 < this->q259; ++i120 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q256 + 4 * i120));
+  for ( i121 = 0; i121 < this->TargetSpecialThreatCoefficientDefault; ++i121 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q25D + 4 * i121));
+  for ( i122 = 0; i122 < this->q267; ++i122 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->TargetDistanceCoefficientDefault + 4 * i122));
+  for ( i123 = 0; i123 < this->HelipadLimit; ++i123 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->AirstripLimit + 4 * i123));
+  for ( i124 = 0; i124 < this->DefenseRatio; ++i124 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->AARatio + 4 * i124));
+  for ( i125 = 0; i125 < this->q283; ++i125 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q0A0 + 4 * i125));
+  for ( i126 = 0; i126 < this->InfantryReserve; ++i126 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q287 + 4 * i126));
+  for ( i127 = 0; i127 < this->CloakDelay; ++i127 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->UnitCrateType + 4 * i127));
+  for ( i128 = 0; i128 < this->q298; ++i128 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->BaseBias + 4 * i128));
+  for ( i129 = 0; i129 < this->AutoCrush; ++i129 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q29C + 4 * i129));
+  for ( i130 = 0; i130 < this->SilverCrate; ++i130 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->Harvester + 4 * i130));
+  for ( i131 = 0; i131 < this->q2AD; ++i131 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->CrateMaximum + 4 * i131));
+  for ( i132 = 0; i132 < this->AIPlayers; ++i132 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q2B1 + 4 * i132));
+  for ( i133 = 0; i133 < this->MessageDelay; ++i133 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->MultiEngineer + 4 * i133));
+  for ( i134 = 0; i134 < this->q2DA; ++i134 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q2D7 + 4 * i134));
+  for ( i135 = 0; i135 < this->YuriMindControlSound; ++i135 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->RevealTriggerRadius + 4 * i135));
+  for ( i136 = 0; i136 < this->FlashFrameTime; ++i136 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->IFVTransformSound + 4 * i136));
+  for ( i137 = 0; i137 < this->GUIComboOpenSound; ++i137 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q042 + 4 * i137));
+  for ( i138 = 0; i138 < this->ExecutePlanSound; ++i138 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->RadarCombatFlashTime + 4 * i138));
+  for ( i139 = 0; i139 < this->CrateUnitSound; ++i139 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->CrateFireSound + 4 * i139));
+  v155 = this->q0B3;
   for ( i140 = 0; i140 < v155; ++i140 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 176) + 4 * i140));
-  v157 = *(this + 186);
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q0B0 + 4 * i140));
+  v157 = this->q0BA;
   for ( i141 = 0; i141 < v157; ++i141 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 183) + 4 * i141));
-  for ( i142 = 0; i142 < *(this + 773); ++i142 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 770) + 4 * i142));
-  for ( i143 = 0; i143 < *(this + 787); ++i143 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 784) + 4 * i143));
-  for ( i144 = 0; i144 < *(this + 801); ++i144 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 798) + 4 * i144));
-  for ( i145 = 0; i145 < *(this + 815); ++i145 )
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 812) + 4 * i145));
-  result = *(this + 829);
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q2DC + 4 * i141));
+  for ( i142 = 0; i142 < this->q305; ++i142 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q302 + 4 * i142));
+  for ( i143 = 0; i143 < this->q313; ++i143 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->q0C4 + 4 * i143));
+  for ( i144 = 0; i144 < this->q321; ++i144 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->qC78 + 4 * i144));
+  for ( i145 = 0; i145 < this->q32F; ++i145 )
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->qCB0 + 4 * i145));
+  result = this->q33D;
   for ( i146 = 0; i146 < result; ++i146 )
   {
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(this + 826) + 4 * i146));
-    result = *(this + 829);
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(this->qCE8 + 4 * i146));
+    result = this->q33D;
   }
-  v165 = *(this + 172);
+  v165 = this->q0AC;
   v166 = 0;
   if ( v165 > 0 )
   {
@@ -15572,16 +15572,16 @@ LABEL_10:
     }
   }
   v4 = *(this + 27);
-  if ( *(this + 28) > v4 )
-    *(this + 28) = v4;
+  if ( this->q01C > v4 )
+    this->q01C = v4;
   if ( (dword_A8ED54[12] & 4) != 0 )
   {
-    v5 = *(this + 28);
+    v5 = this->q01C;
     if ( v5 < *(this + 27) )
     {
       if ( v5 + 30 < 0 )
-        *(this + 28) = -30;
-      ++*(this + 28);
+        this->q01C = -30;
+      ++this->q01C;
     }
   }
   if ( *(_BYTE *)((*(int (__thiscall **)(int *))(*this + 132))(this) + 3233) )
@@ -15671,7 +15671,7 @@ LABEL_10:
   if ( (*(unsigned __int8 (__thiscall **)(int *))(*this + 664))(this) )
   {
     (*(void (__thiscall **)(int *))(*this + 1052))(this);
-    LOBYTE(v15) = *((_BYTE *)this + 144);
+    LOBYTE(v15) = this->q090;
     if ( !(_BYTE)v15 )
       return v15;
   }
@@ -15712,9 +15712,9 @@ LABEL_10:
   {
     goto LABEL_93;
   }
-  if ( *(this + 173) )
+  if ( this->q2B4 )
   {
-    v96 = (_BYTE *)*(this + 173);
+    v96 = (_BYTE *)this->q2B4;
     if ( (_BYTE)v9 )
     {
       if ( !Object::IsAlliedWithObjectSimpleHouse(v19, v96) )
@@ -15725,29 +15725,29 @@ LABEL_10:
       goto LABEL_93;
     }
     v21 = (*(int (__thiscall **)(int *))(*this + 44))(this) == 15;
-    v22 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)*(this + 173) + 44))(*(this + 173)) == 6;
+    v22 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->q2B4 + 44))(this->q2B4) == 6;
     v101 = v22;
-    if ( !v21 || !v22 || (v100 = 1, !BuildingClass::CanRepair((_DWORD *)*(this + 173), (int)this)) )
+    if ( !v21 || !v22 || (v100 = 1, !BuildingClass::CanRepair((_DWORD *)this->q2B4, (int)this)) )
       v100 = 0;
     LOBYTE(v9) = v21 && *(_BYTE *)(*(this + 432) + 3779);
     v23 = *(_DWORD *)(*(int (__thiscall **)(int *, int))(*this + 1016))(this, 1)
        && *(_BYTE *)(*(_DWORD *)(*(_DWORD *)(*(int (__thiscall **)(int *, int))(*this + 1016))(this, 1) + 172) + 344)
        && v101
-       && *(_BYTE *)(*(_DWORD *)(*(this + 173) + 1312) + 5493);
+       && *(_BYTE *)(*(_DWORD *)(this->q2B4 + 1312) + 5493);
     if ( !(_BYTE)v9 && !v23 && !v100 && !*((_BYTE *)this + 664) )
       (*(void (__thiscall **)(int *, _DWORD))(*this + 968))(this, 0);
   }
 LABEL_93:
-  if ( *(this + 173) )
+  if ( this->q2B4 )
   {
     if ( !(dword_A8ED54[12] % 16) )
     {
-      v24 = *(this + 43);
+      v24 = this->q0AC;
       if ( v24 != 8 && v24 != 17 )
       {
         v25 = *this;
-        v26 = (*(int (__thiscall **)(int *, _DWORD))(*this + 740))(this, *(this + 173));
-        v27 = (*(int (__thiscall **)(int *, _DWORD, int))(v25 + 956))(this, *(this + 173), v26);
+        v26 = (*(int (__thiscall **)(int *, _DWORD))(*this + 740))(this, this->q2B4);
+        v27 = (*(int (__thiscall **)(int *, _DWORD, int))(v25 + 956))(this, this->q2B4, v26);
         if ( v27 == 5 || v27 == 6 )
           (*(void (__thiscall **)(int *, _DWORD))(*this + 968))(this, 0);
       }
@@ -15807,11 +15807,11 @@ LABEL_116:
   v35 = *((_BYTE *)this + 1054);
   if ( v35 )
     *((_BYTE *)this + 1054) = v35 - 1;
-  if ( *(this + 173) )
+  if ( this->q2B4 )
   {
     if ( *((_BYTE *)this + 1292) )
     {
-      v36 = *(this + 43);
+      v36 = this->q0AC;
       if ( !v36
         || v36 == 7
         || v36 == 13
@@ -15831,7 +15831,7 @@ LABEL_116:
   }
   ++*(this + 49);
   ObjectClass::ProcessCloaking((int)this);
-  v37 = *(this + 96);
+  v37 = this->MovementAI_field_18;
   v38 = *(this + 98);
   if ( v37 == -1 )
   {
@@ -15852,23 +15852,23 @@ LABEL_139:
   }
   else
   {
-    v39 = *(this + 43);
+    v39 = this->q0AC;
     if ( (v39 == 2 || v39 == 10 || v39 == 5) && FootClass::CanEnterCell((int)this, (int)v9) )
     {
       v40 = *this;
-      v41 = *(this + 173);
+      v41 = this->q2B4;
       *(this + 319) = dword_A8ED54[12];
       v42 = (*(int (__thiscall **)(int *, double *, int))(v40 + 72))(this, &v106, 1);
       if ( (*(unsigned __int8 (__thiscall **)(int *, int))(v40 + 924))(this, v42) )
       {
-        if ( *(this + 173) != v41 )
+        if ( this->q2B4 != v41 )
           *((_BYTE *)this + 1292) = 1;
       }
     }
   }
 LABEL_148:
   v43 = *(this + 14);
-  if ( v43 && !*((_BYTE *)this + 129) && BombClass::TimeToExplode(v43) )
+  if ( v43 && !this->__pad_081 && BombClass::TimeToExplode(v43) )
     TechnoClass::ApplyDamageEffects(*(this + 14));
   v44 = *(this + 182);
   if ( v44 )
@@ -15876,7 +15876,7 @@ LABEL_148:
   v45 = *(this + 175);
   if ( v45 )
     CaptureManagerClass::HandleOverload(v45);
-  LOBYTE(v15) = *((_BYTE *)this + 144);
+  LOBYTE(v15) = this->q090;
   if ( !(_BYTE)v15 )
     return v15;
   if ( (*(unsigned __int8 (__thiscall **)(int *))(*this + 660))(this) )
@@ -15931,28 +15931,28 @@ LABEL_148:
   }
   if ( !MEMORY[0x87F7E8][536212]
     && !(unsigned __int8)House::IsHumanPlayer((#375 *)*(this + 135))
-    && *(this + 173)
-    && !Object::IsAlliedWithObjectSimpleHouse((_DWORD *)*(this + 135), (_BYTE *)*(this + 173))
+    && this->q2B4
+    && !Object::IsAlliedWithObjectSimpleHouse((_DWORD *)*(this + 135), (_BYTE *)this->q2B4)
 // 0x6f3970
     && TechnoClass::GetValue(this, -1) < 0 )
   {
     (*(void (__thiscall **)(int *, _DWORD))(*this + 968))(this, 0);
   }
-  if ( *(this + 173)
+  if ( this->q2B4
     && MEMORY[0x87F7E8][536212]
     && *(_BYTE *)(*(this + 135) + 492)
 // 0x6f3970
     && TechnoClass::GetValue(this, -1) < 0
-    && !Object::IsAlliedWithObjectSimpleHouse((_DWORD *)*(this + 135), (_BYTE *)*(this + 173)) )
+    && !Object::IsAlliedWithObjectSimpleHouse((_DWORD *)*(this + 135), (_BYTE *)this->q2B4) )
   {
     (*(void (__thiscall **)(int *, _DWORD))(*this + 968))(this, 0);
   }
-  v59 = *(this + 173);
+  v59 = this->q2B4;
   if ( v59 )
   {
     if ( (*(int (__thiscall **)(int))(*(_DWORD *)v59 + 44))(v59) == 2 )
     {
-      v60 = *(this + 173);
+      v60 = this->q2B4;
       if ( (*(int (__thiscall **)(int *))(*this + 44))(this) == 1 && TechnoClass::GetValue(this, -1) < 0 )
       {
         if ( (*(int (__thiscall **)(int))(*(_DWORD *)v60 + 456))(v60) > 0
@@ -15969,22 +15969,22 @@ LABEL_148:
   }
   if ( (*(int (__thiscall **)(int *))(*this + 44))(this) != 2 )
   {
-    if ( *(this + 173) )
+    if ( this->q2B4 )
     {
       if ( !(*(unsigned __int8 (__thiscall **)(int *))(*this + 656))(this) )
       {
         v63 = 0;
         if ( !this || (*(_BYTE *)(this + 5) & 4) == 0 || (v63 = this, !*(this + 361)) )
         {
-          if ( !(*(unsigned __int8 (__thiscall **)(int *, _DWORD))(*this + 708))(this, *(this + 173))
+          if ( !(*(unsigned __int8 (__thiscall **)(int *, _DWORD))(*this + 708))(this, this->q2B4)
             || *((_BYTE *)this + 130) )
           {
             if ( this && (*(_BYTE *)(this + 5) & 4) != 0 )
               (*(void (__thiscall **)(int *, _DWORD))(*v63 + 1340))(v63, 0);
             if ( !v63 || !v63[361] )
             {
-              v64 = (*(int (__thiscall **)(int *, _DWORD))(*this + 740))(this, *(this + 173));
-              if ( !(*(unsigned __int8 (__thiscall **)(int *, _DWORD, int))(*this + 936))(this, *(this + 173), v64) )
+              v64 = (*(int (__thiscall **)(int *, _DWORD))(*this + 740))(this, this->q2B4);
+              if ( !(*(unsigned __int8 (__thiscall **)(int *, _DWORD, int))(*this + 936))(this, this->q2B4, v64) )
                 (*(void (__thiscall **)(int *, _DWORD))(*this + 968))(this, 0);
             }
           }
@@ -15994,7 +15994,7 @@ LABEL_148:
   }
   if ( (*(int (__thiscall **)(int *))(*this + 44))(this) == 6 )
     goto LABEL_236;
-  v65 = *(this + 64);
+  v65 = this->MovementAI_field_10;
   v66 = *(this + 66);
   if ( v65 != -1 )
   {
@@ -16017,7 +16017,7 @@ LABEL_233:
   *((_BYTE *)this + 252) = 1;
   *(this + 62) = v68 + v69;
   v70 = v109;
-  *(this + 64) = dword_A8ED54[12];
+  this->MovementAI_field_10 = dword_A8ED54[12];
   *(this + 65) = v70;
   *(this + 66) = v67;
 LABEL_236:
@@ -16155,8 +16155,8 @@ LABEL_258:
       }
       else if ( this && (*(_BYTE *)(this + 5) & 4) != 0 )
       {
-        if ( *(this + 413) )
-          (*(void (__stdcall **)(_DWORD))(*(_DWORD *)*(this + 413) + 88))(*(this + 413));
+        if ( this->q674 )
+          (*(void (__stdcall **)(_DWORD))(*(_DWORD *)this->q674 + 88))(this->q674);
         LOBYTE(v15) = MEMORY[0x87F7E8][539764];
         for ( i = 0; i < MEMORY[0x87F7E8][539764]; ++i )
         {
@@ -17834,12 +17834,12 @@ int __thiscall ThemeClass::Play(int *this, Movie *aP1)
 
   if ( MEMORY[0xA8D63C].__pad_14B0[392] && Audio::IsSoundEnabled() && !MEMORY[0xA8D63C].__pad_14B0[632] )
   {
-    v3 = *(this + 11); /*0x720bdc*/
+    v3 = this->ThemeClass_field_2C; /*0x720bdc*/
     if ( !v3 ) /*0x720be5*/
       goto LABEL_13; /*0x720be5*/
     if ( *((_BYTE *)this + 17) && !AudioSample::IsBuffering(v3) ) /*0x720bee*/
-      Audio::Release((_DWORD *)*(this + 11)); /*0x720bfa*/
-    if ( !Audio::IsSoundPlaying((_DWORD *)*(this + 11)) || (Movie *)*(this + 1) != aP1 )
+      Audio::Release((_DWORD *)this->ThemeClass_field_2C); /*0x720bfa*/
+    if ( !Audio::IsSoundPlaying((_DWORD *)this->ThemeClass_field_2C) || (Movie *)this->ThemeClass_field_04 != aP1 )
     {
 LABEL_13:
       if ( MEMORY[0xA8D63C].__pad_14B0[392] /*0x720c37*/
@@ -17848,26 +17848,26 @@ LABEL_13:
         && *this != -1 )
       {
         Debug::Log(); /*0x720c42*/
-        v4 = (_DWORD *)*(this + 11); /*0x720c47*/
+        v4 = (_DWORD *)this->ThemeClass_field_2C; /*0x720c47*/
         if ( v4 ) /*0x720c4f*/
           Audio::Release(v4); /*0x720c51*/
         *this = -1; /*0x720c56*/
-        *(this + 1) = -1; /*0x720c5c*/
-        *(this + 2) = -1; /*0x720c63*/
+        this->ThemeClass_field_04 = -1; /*0x720c5c*/
+        this->m_Name = -1; /*0x720c63*/
       }
       *((_BYTE *)this + 17) = 0; /*0x720c6d*/
       if ( aP1 != (Movie *)-1 && aP1 != (Movie *)-3 )
       {
-        if ( (int)aP1 <= -1 || *(this + 3) <= 0 ) /*0x720c8e*/
+        if ( (int)aP1 <= -1 || this->q030 <= 0 ) /*0x720c8e*/
           goto LABEL_47; /*0x720c8e*/
-        *(this + 1) = (int)aP1; /*0x720c94*/
+        this->ThemeClass_field_04 = (int)aP1; /*0x720c94*/
         v5 = MEMORY[0x89E3A0] ? 0 : Game::CheckForGameCD(0);
-        v6 = *(this + 11); /*0x720cab*/
+        v6 = this->ThemeClass_field_2C; /*0x720cab*/
         if ( v6 && v5 > -1 ) /*0x720cba*/
         {
-          if ( (unsigned int)aP1 >= *(this + 9) ) /*0x720cbf*/
+          if ( (unsigned int)aP1 >= this->q024 ) /*0x720cbf*/
           {
-            ThreadAudioMixerMain((_DWORD *)*(this + 11), (RawFileClass *)&MEMORY[0x87F8E4].__pad_5568[20760], 1); /*0x720d02*/
+            ThreadAudioMixerMain((_DWORD *)this->ThemeClass_field_2C, (RawFileClass *)&MEMORY[0x87F8E4].__pad_5568[20760], 1); /*0x720d02*/
           }
           else
           {
@@ -17877,7 +17877,7 @@ LABEL_13:
               0,
               (const char *)(*(_DWORD *)(*(this + 6) + 4 * (_DWORD)aP1) + 256),
               &stru_830620.__pad_579C[59820]);
-            ThreadAudioMixerMain((_DWORD *)*(this + 11), (RawFileClass *)&MEMORY[0xB077F8].__pad_579C[8804], 1); /*0x720ced*/
+            ThreadAudioMixerMain((_DWORD *)this->ThemeClass_field_2C, (RawFileClass *)&MEMORY[0xB077F8].__pad_579C[8804], 1); /*0x720ced*/
           }
           *this = (int)aP1; /*0x720cf2*/
         }
@@ -17886,7 +17886,7 @@ LABEL_13:
           *this = -1; /*0x720d10*/
           if ( v6 ) /*0x720d16*/
           {
-            if ( v5 <= -1 && *(this + 2) == -1 ) /*0x720d29*/
+            if ( v5 <= -1 && this->m_Name == -1 ) /*0x720d29*/
             {
               if ( MEMORY[0xA8D63C].__pad_14B0[392] ) /*0x720d36*/
               {
@@ -17917,9 +17917,9 @@ LABEL_13:
           }
         }
         Debug::Log(); /*0x720de8*/
-        if ( *((_BYTE *)this + 16) == 1 || *(_BYTE *)(*(_DWORD *)(*(this + 6) + 4 * (_DWORD)aP1) + 649) == 1 ) /*0x720e03*/
+        if ( this->ThemeClass_field_04 == 1 || *(_BYTE *)(*(_DWORD *)(*(this + 6) + 4 * (_DWORD)aP1) + 649) == 1 ) /*0x720e03*/
 LABEL_47:
-          *(this + 2) = (int)aP1; /*0x720e05*/
+          this->m_Name = (int)aP1; /*0x720e05*/
       }
     }
   }

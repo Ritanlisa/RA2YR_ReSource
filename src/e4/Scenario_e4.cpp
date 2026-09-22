@@ -438,11 +438,11 @@ int __thiscall sub_552B10(_DWORD *this)
     if ( MEMORY[0x8A00A4] != 640 ) /*0x552ba2*/
       v9 = 600; /*0x552ba4*/
     v10 = MEMORY[0x8A00A8]; /*0x552baa*/
-    *(this + 9) = v2; /*0x552baf*/
-    *(this + 10) = v9; /*0x552bb4*/
-    *(this + 8) = (v10 - v9) / 2; /*0x552bc6*/
+    this->q024 = v2; /*0x552baf*/
+    this->q028 = v9; /*0x552bb4*/
+    this->q020 = (v10 - v9) / 2; /*0x552bc6*/
     result = (v1 - v2) / 2; /*0x552bc9*/
-    *(this + 7) = result; /*0x552bcd*/
+    this->q01C = result; /*0x552bcd*/
   }
   else
   {
@@ -451,22 +451,22 @@ int __thiscall sub_552B10(_DWORD *this)
       v3 = 600; /*0x552b46*/
     v4 = v3 - 80; /*0x552b4b*/
     v5 = MEMORY[0x8A00A8] - (v3 - 80); /*0x552b5c*/
-    *(this + 5) = v2; /*0x552b5e*/
-    *(this + 9) = v2; /*0x552b64*/
+    this->q014 = v2; /*0x552b5e*/
+    this->q024 = v2; /*0x552b64*/
     v6 = (v5 - 80) / 2; /*0x552b6f*/
-    *(this + 4) = v6; /*0x552b71*/
+    this->q010 = v6; /*0x552b71*/
     v6 += 40; /*0x552b74*/
     v7 = (v1 - v2) / 2; /*0x552b76*/
-    *(this + 13) = v2; /*0x552b78*/
-    *(this + 3) = v7; /*0x552b7b*/
-    *(this + 7) = v7; /*0x552b7e*/
-    *(this + 8) = v6; /*0x552b81*/
-    *(this + 11) = v7; /*0x552b84*/
+    this->q034 = v2; /*0x552b78*/
+    this->q00C = v7; /*0x552b7b*/
+    this->q01C = v7; /*0x552b7e*/
+    this->q020 = v6; /*0x552b81*/
+    this->q02C = v7; /*0x552b84*/
     result = v4 + v6; /*0x552b88*/
-    *(this + 10) = v4; /*0x552b8b*/
-    *(this + 6) = 40; /*0x552b8f*/
-    *(this + 12) = result; /*0x552b92*/
-    *(this + 14) = 40; /*0x552b95*/
+    this->q028 = v4; /*0x552b8b*/
+    this->q018 = 40; /*0x552b8f*/
+    this->q030 = result; /*0x552b92*/
+    this->q038 = 40; /*0x552b95*/
   }
   return result; /*0x552b87*/
 }
@@ -512,8 +512,8 @@ _DWORD *__thiscall sub_552BE0(int *this, _DWORD *a2)
   }
   else
   {
-    v2 = *(this + 11); /*0x552bf8*/
-    v3 = *(this + 12); /*0x552bff*/
+    v2 = this->q02C; /*0x552bf8*/
+    v3 = this->q00C; /*0x552bff*/
     result = a2; /*0x552c02*/
     if ( MEMORY[0x8A00A4] == 640 ) /*0x552bfd*/
       v5 = v2 + 84; /*0x552c06*/
@@ -867,9 +867,9 @@ LABEL_82:
   LOBYTE(v47) = 0; /*0x55b5ea*/
   UpdateDeferredLightSurfaces(6, v47); /*0x55b5f1*/
   LocomotionClass::UpdateAll(); /*0x55b5f6*/
-  for ( m = 0; m < *(this + 4); ++m ) /*0x55b606*/
+  for ( m = 0; m < this->q010; ++m ) /*0x55b606*/
   {
-    v50 = *(_DWORD *)(*(this + 1) + 4 * m); /*0x55b60b*/
+    v50 = *(_DWORD *)(this->q004 + 4 * m); /*0x55b60b*/
     (*(void (__thiscall **)(int))(*(_DWORD *)v50 + 92))(v50); /*0x55b610*/
   }
   if ( MEMORY[0xA8B238] ) /*0x55b622*/
@@ -960,7 +960,7 @@ void Scenario::SetByte96()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall Scenario::SetByte96(ProgressScreenClass *this)
 {
-  *((_BYTE *)this + 96) = 0; /*0x642ad0*/
+  this->q060 = 0; /*0x642ad0*/
 }
 }
 } // namespace gamemd

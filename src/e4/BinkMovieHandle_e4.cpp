@@ -102,36 +102,36 @@ _DWORD *__thiscall BinkMovieHandle::CopyFrameToSurface(int *this)
   int v13; // [esp+14h] [ebp-14h]
   struct tagRECT Rect; // [esp+18h] [ebp-10h] BYREF
 
-  v2 = (DSurface *)*(this + 3); /*0x43306e*/
+  v2 = (DSurface *)this->width; /*0x43306e*/
   if ( v2 == *(DSurface **)&MEMORY[0x87F8E4].__pad_5568[9404] ) /*0x433073*/
   {
     GetClientRect((HWND)g_hWnd, &Rect); /*0x433085*/
     ClientToScreen((HWND)g_hWnd, (LPPOINT)&Rect); /*0x433096*/
-    v3 = Rect.left + *(this + 4); /*0x4330a7*/
-    v4 = Rect.top + *(this + 5); /*0x4330ae*/
-    v2 = (DSurface *)*(this + 3); /*0x4330b0*/
+    v3 = Rect.left + this->tempPath; /*0x4330a7*/
+    v4 = Rect.top + this->currentFrame; /*0x4330ae*/
+    v2 = (DSurface *)this->width; /*0x4330b0*/
     BinkMovie::AdjustSurfaceFormat(this, v2); /*0x4330b4*/
     v12 = (*(int (__thiscall **)(DSurface *, _DWORD, _DWORD))(v2->field_0 + 92))(v2, 0, 0); /*0x4330c8*/
     if ( v12 ) /*0x4330cc*/
     {
       v10 = (*(int (__thiscall **)(DSurface *))(v2->field_0 + 116))(v2); /*0x4330dd*/
       v5 = (*(int (__thiscall **)(DSurface *))(v2->field_0 + 128))(v2); /*0x4330e1*/
-      BinkCopyToBuffer(*(this + 1), v12, v10, v5, v3, v4, *(this + 2) | 0x80000000); /*0x4330fe*/
+      BinkCopyToBuffer(this->tempPath, v12, v10, v5, v3, v4, this->renderTarget | 0x80000000); /*0x4330fe*/
 LABEL_6:
       (*(void (__thiscall **)(DSurface *))(v2->field_0 + 96))(v2); /*0x43315b*/
     }
   }
   else
   {
-    v6 = *(this + 5); /*0x433103*/
-    v13 = *(this + 4); /*0x433109*/
-    BinkMovie::AdjustSurfaceFormat(this, (DSurface *)*(this + 3)); /*0x43310d*/
+    v6 = this->currentFrame; /*0x433103*/
+    v13 = this->tempPath; /*0x433109*/
+    BinkMovie::AdjustSurfaceFormat(this, (DSurface *)this->width); /*0x43310d*/
     v7 = (*(int (__thiscall **)(DSurface *, _DWORD, _DWORD))(v2->field_0 + 92))(v2, 0, 0); /*0x43311f*/
     if ( v7 ) /*0x433123*/
     {
       v11 = (*(int (__thiscall **)(DSurface *))(v2->field_0 + 116))(v2); /*0x433130*/
       v8 = (*(int (__thiscall **)(DSurface *))(v2->field_0 + 128))(v2); /*0x433134*/
-      BinkCopyToBuffer(*(this + 1), v7, v11, v8, v13, v6, *(this + 2) | 0x80000000); /*0x433155*/
+      BinkCopyToBuffer(this->tempPath, v7, v11, v8, v13, v6, this->renderTarget | 0x80000000); /*0x433155*/
       goto LABEL_6; /*0x433155*/
     }
   }

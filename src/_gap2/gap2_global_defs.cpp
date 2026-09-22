@@ -7876,10 +7876,10 @@ char __thiscall Event_Process(_BYTE *this, CCINIClass *aP1)
     case 27: /*0x54f559*/
       return result;
     case 10: /*0x54f559*/
-      result = *(this + 8); /*0x54f56c*/
+      result = this->vtable3; /*0x54f56c*/
       if ( result == 13 ) /*0x54f571*/
         result = 0; /*0x54f573*/
-      *((_WORD *)this + 4) = 0; /*0x54f575*/
+      this->vtable2 = 0; /*0x54f575*/
       break; /*0x54f57c*/
     case 35: /*0x54f559*/
       result = 92; /*0x54f566*/
@@ -17151,9 +17151,9 @@ void __thiscall UpdateParticleSystem(void *this)
   char v47[48]; // [esp+DCh] [ebp-60h] BYREF
   float v48[12]; // [esp+10Ch] [ebp-30h] BYREF
 
-  a2 = (MouseClass *)*((_DWORD *)this + 39); /*0x62c6f8*/
+  a2 = (MouseClass *)this->q027; /*0x62c6f8*/
   v2 = (double)*(int *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 5816); /*0x62c705*/
-  v3 = (MouseClass *)*((_DWORD *)this + 41); /*0x62c70b*/
+  v3 = (MouseClass *)this->q029; /*0x62c70b*/
   v29 = *((float *)this + 40); /*0x62c70e*/
   v30 = *(float *)&v3; /*0x62c712*/
   *((float *)this + 69) = *((float *)this + 69) - v2; /*0x62c71c*/
@@ -17249,7 +17249,7 @@ LABEL_30:
     v37 = -v29; /*0x62ca26*/
     v30 = *(float *)&v14; /*0x62ca2c*/
     aP3 = v14; /*0x62ca30*/
-    *((_BYTE *)this + 305) = 1; /*0x62ca34*/
+    this->q131 = 1; /*0x62ca34*/
     goto LABEL_31; /*0x62ca34*/
   }
   if ( v26 ) /*0x62c8ef*/
@@ -17270,22 +17270,22 @@ LABEL_31:
   Coord::Subtract(v40, v15, aP2c, v25); /*0x62ca5d*/
   (*(void (__thiscall **)(void *, _DWORD *))(*(_DWORD *)this + 436))(this, v40); /*0x62ca6c*/
   v31 = COERCE_FLOAT(Random::Range(&MEMORY[0xA8B230]->random[1], 0, (IUnknown *)0x7FFFFFFE)); /*0x62ca8b*/
-  v16 = *((_DWORD *)this + 43); /*0x62ca8f*/
+  v16 = this->q02B; /*0x62ca8f*/
   v17 = (double)SLODWORD(v31) * 4.656612877414201e-10 * 0.05 + *(double *)(v16 + 688) + *((double *)this + 23); /*0x62caab*/
   *((double *)this + 23) = v17; /*0x62cab1*/
   if ( v17 > 1.0 ) /*0x62cac2*/
   {
-    v18 = *((_DWORD *)this + 45); /*0x62caca*/
+    v18 = this->q0B4; /*0x62caca*/
     if ( v18 >= *(_DWORD *)(v16 + 712) - 2 ) /*0x62cad5*/
     {
-      *((_DWORD *)this + 46) = 0; /*0x62caf5*/
-      *((_DWORD *)this + 47) = 1072693248; /*0x62cafb*/
+      this->q0B8 = 0; /*0x62caf5*/
+      this->q0BC = 1072693248; /*0x62cafb*/
     }
     else
     {
-      *((_DWORD *)this + 46) = 0; /*0x62cad8*/
-      *((_DWORD *)this + 47) = 0; /*0x62cade*/
-      *((_DWORD *)this + 45) = v18 + 1; /*0x62cae5*/
+      this->q0B8 = 0; /*0x62cad8*/
+      this->q0BC = 0; /*0x62cade*/
+      this->q0B4 = v18 + 1; /*0x62cae5*/
     }
   }
 }
@@ -29994,7 +29994,7 @@ int __thiscall QueueTechnoVoiceLine(
   _BYTE v39[24]; // [esp+34h] [ebp-18h] BYREF
   TechnoClass *aP8a; // [esp+6Ch] [ebp+20h]
 
-  result = (AbstractClass *)*(this + 136); /*0x706bdd*/
+  result = (AbstractClass *)this->parachute; /*0x706bdd*/
   if ( result ) /*0x706be5*/
     return (int)result->__pad_0; /*0x706be5*/
   result = (AbstractClass *)(*(int (__thiscall **)(int *))(*this + 132))(this); /*0x706bed*/
@@ -32325,16 +32325,16 @@ void __thiscall VeinholeMonsterClass::Update(_DWORD *this)
   int v52; // [esp+34h] [ebp-4h]
 
   v2 = 0; /*0x74d7c8*/
-  if ( *(this + 44) ) /*0x74d7cb*/
+  if ( this->q0B0 ) /*0x74d7cb*/
   {
     VeinholeShrinkRate = MEMORY[0x8871E0]->AircraftFogReveal; /*0x74d7e2*/
-    if ( *(this + 43) <= VeinholeShrinkRate - 40 /*0x74d80a*/
-      && *(this + 65) <= VeinholeShrinkRate - 100
+    if ( this->q0AC <= VeinholeShrinkRate - 40 /*0x74d80a*/
+      && this->q104 <= VeinholeShrinkRate - 100
       && *((_BYTE *)MEMORY[0xA8B230] + 13479) )
     {
       v49 = 0; /*0x74d81e*/
       v4 = (int)abs32(Random::State((_DWORD *)MEMORY[0xA8B230] + 134)) % 5; /*0x74d832*/
-      v5 = (int *)*(this + 44); /*0x74d834*/
+      v5 = (int *)this->q0B0; /*0x74d834*/
       v6 = *v5; /*0x74d83c*/
       v7 = v4 + 1; /*0x74d83e*/
       v8 = *v5 == 0; /*0x74d83f*/
@@ -32367,13 +32367,13 @@ void __thiscall VeinholeMonsterClass::Update(_DWORD *this)
             if ( v11[286] < 0x30u ) /*0x74d89f*/
             {
               BuildingClass::VisualizePlacement(v11); /*0x74d8a3*/
-              ++*(this + 65); /*0x74d8a8*/
+              ++this->q104; /*0x74d8a8*/
             }
             if ( *((_DWORD *)v12 + 17) == 126 ) /*0x74d8b2*/
             {
               v13 = Cell::PosToIndex(v2); /*0x74d8bb*/
               if ( v13 >= 0 && v13 < Object::ComputeAllocationSize() ) /*0x74d8c8*/
-                *(_BYTE *)(*(this + 49) + v13) = 1; /*0x74d8d0*/
+                *(_BYTE *)(this->q0C4 + v13) = 1; /*0x74d8d0*/
             }
             if ( v12[286] >= 0x30u ) /*0x74d8db*/
             {
@@ -32399,22 +32399,22 @@ void __thiscall VeinholeMonsterClass::Update(_DWORD *this)
                       {
                         if ( !*((_BYTE *)MEMORY[0xB1D2F0] + v19) ) /*0x74d99c*/
                         {
-                          v20 = *(this + 43); /*0x74d9ac*/
+                          v20 = this->q0AC; /*0x74d9ac*/
                           if ( v20 < MEMORY[0x8871E0]->AircraftFogReveal ) /*0x74d9b8*/
                           {
-                            *(_DWORD *)(*(this + 45) + 8 * v20) = v44; /*0x74d9c8*/
+                            *(_DWORD *)(this->q0B4 + 8 * v20) = v44; /*0x74d9c8*/
                             v21 = (int)MEMORY[0xA8ED84] / 50 /*0x74da04*/
                                 + abs32(Random::State((_DWORD *)MEMORY[0xA8B230] + 134) % 50)
                                 + 1;
-                            v22 = *(this + 43); /*0x74da08*/
-                            v23 = *(this + 45); /*0x74da0e*/
+                            v22 = this->q0AC; /*0x74da08*/
+                            v23 = this->q0B4; /*0x74da0e*/
                             v50 = (__int16 *)v21; /*0x74da14*/
                             *(float *)(v23 + 8 * v22 + 4) = (float)v21; /*0x74da1c*/
                             *((_BYTE *)MEMORY[0xB1D2F0] + v19) = 1; /*0x74da26*/
-                            v24 = *(this + 43); /*0x74da2a*/
-                            v25 = (_DWORD *)*(this + 44); /*0x74da36*/
-                            v26 = *(this + 45) + 8 * v24; /*0x74da3c*/
-                            *(this + 43) = v24 + 1; /*0x74da40*/
+                            v24 = this->q0AC; /*0x74da2a*/
+                            v25 = (_DWORD *)this->q0B0; /*0x74da36*/
+                            v26 = this->q0B4 + 8 * v24; /*0x74da3c*/
+                            this->q0AC = v24 + 1; /*0x74da40*/
                             v27 = *v25 + 1; /*0x74da4b*/
                             v51 = *(float *)(v26 + 4); /*0x74da4e*/
                             v28 = v27 >> 1; /*0x74da55*/
@@ -32446,7 +32446,7 @@ void __thiscall VeinholeMonsterClass::Update(_DWORD *this)
                           }
                         }
                       }
-                      *(_BYTE *)(*(this + 49) + v19) = 1; /*0x74daae*/
+                      *(_BYTE *)(this->q0C4 + v19) = 1; /*0x74daae*/
                     }
                     v12 = v47; /*0x74dab2*/
                   }
@@ -32456,7 +32456,7 @@ void __thiscall VeinholeMonsterClass::Update(_DWORD *this)
             }
             if ( ++v49 >= v52 ) /*0x74dad9*/
               return; /*0x74dad9*/
-            v31 = (int *)*(this + 44); /*0x74dadf*/
+            v31 = (int *)this->q0B0; /*0x74dadf*/
             if ( *v31 ) /*0x74dae5*/
               break; /*0x74dae5*/
             v43 = 0; /*0x74daeb*/

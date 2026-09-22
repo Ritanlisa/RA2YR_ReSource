@@ -1082,7 +1082,7 @@ CommBufferClass *__thiscall sub_48B0E0(CommBufferClass *this, int a2, int a3, si
   this->field_24 = __2_YAPAXI_Z(36 * a2); /*0x48b117*/
   this->field_34 = __2_YAPAXI_Z(24 * a3); /*0x48b123*/
   *(_DWORD *)&this->__pad_28[8] = __2_YAPAXI_Z(4 * a2); /*0x48b13a*/
-  *((_DWORD *)this + 16) = __2_YAPAXI_Z(4 * a3); /*0x48b143*/
+  this->q010 = __2_YAPAXI_Z(4 * a3); /*0x48b143*/
   v6 = 0; /*0x48b14c*/
   if ( *(int *)&this->__pad_0[4] > 0 ) /*0x48b150*/
   {

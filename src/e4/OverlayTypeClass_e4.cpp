@@ -14,13 +14,13 @@ _DWORD *__thiscall OverlayTypeClass::OverlayTypeClass(_DWORD *this, ObjectClass 
   CCINIClass *v6; // edx
 
   ObjectTypeClass::ConstructFull((int)this, (AbstractClass *)aP1); /*0x5fe259*/
-  *(this + 168) = 1; /*0x5fe265*/
-  *(this + 169) = 1; /*0x5fe26b*/
+  this->q2A0 = 1; /*0x5fe265*/
+  this->Wall = 1; /*0x5fe26b*/
   this->Explodes = 1; /*0x5fe271*/
   *((_BYTE *)this + 691) = 1; /*0x5fe277*/
-  *(this + 165) = -1; /*0x5fe280*/
-  *(this + 166) = 0; /*0x5fe28a*/
-  *(this + 167) = 0; /*0x5fe290*/
+  this->LandType = -1; /*0x5fe280*/
+  this->CellAnim = 0; /*0x5fe28a*/
+  this->DamageLevels = 0; /*0x5fe290*/
   this->NoUseTileLandType = 0; /*0x5fe296*/
   this->IsVeinholeMonster = 0; /*0x5fe29c*/
   this->IsVeins = 0; /*0x5fe2a2*/
@@ -30,16 +30,16 @@ _DWORD *__thiscall OverlayTypeClass::OverlayTypeClass(_DWORD *this, ObjectClass 
   this->DrawFlat = 0; /*0x5fe2ba*/
   this->IsRubble = 0; /*0x5fe2c0*/
   this->IsARock = 0; /*0x5fe2c6*/
-  *((_BYTE *)this + 690) = 0; /*0x5fe2cc*/
-  *((_BYTE *)this + 692) = 0; /*0x5fe2d2*/
-  *((_BYTE *)this + 693) = 0; /*0x5fe2d8*/
-  *((_BYTE *)this + 694) = 0; /*0x5fe2de*/
-  *((_BYTE *)this + 695) = 0; /*0x5fe2e4*/
-  *((_BYTE *)this + 696) = 0; /*0x5fe2ea*/
+  this->q2B2 = 0; /*0x5fe2cc*/
+  this->q2B4 = 0; /*0x5fe2d2*/
+  this->tail_2B5 = 0; /*0x5fe2d8*/
+  this->q2B6 = 0; /*0x5fe2de*/
+  this->q2B7 = 0; /*0x5fe2e4*/
+  this->q2B8 = 0; /*0x5fe2ea*/
   *this = &OverlayTypeClass::`vftable'; /*0x5fe2f1*/
-  *(this + 1) = &OverlayTypeClass::`vftable'; /*0x5fe2f7*/
-  *(this + 2) = &OverlayTypeClass::`vftable'; /*0x5fe2fd*/
-  *(this + 3) = &vt_OverlayTypeClass; /*0x5fe304*/
+  this->vtable2 = &OverlayTypeClass::`vftable'; /*0x5fe2f7*/
+  this->vtable3 = &OverlayTypeClass::`vftable'; /*0x5fe2fd*/
+  this->vtable4 = &vt_OverlayTypeClass; /*0x5fe304*/
   AbstractClass::GenerateUniqueID((int)(this + 1)); /*0x5fe30b*/
   this->RadarInvisible = 1; /*0x5fe310*/
   this->Selectable = 0; /*0x5fe317*/
@@ -64,7 +64,7 @@ _DWORD *__thiscall OverlayTypeClass::OverlayTypeClass(_DWORD *this, ObjectClass 
   if ( (int)v3 <= 0 ) /*0x5fe383*/
   {
 LABEL_11:
-    *(this + 165) = -1; /*0x5fe397*/
+    this->LandType = -1; /*0x5fe397*/
     return this; /*0x5fe3a0*/
   }
   else
@@ -77,7 +77,7 @@ LABEL_11:
       if ( v5 >= (int)v3 ) /*0x5fe395*/
         goto LABEL_11; /*0x5fe395*/
     }
-    *(this + 165) = v5; /*0x5fe3a7*/
+    this->LandType = v5; /*0x5fe3a7*/
     return this; /*0x5fe3ad*/
   }
 }
@@ -360,41 +360,41 @@ _DWORD *__thiscall OverlayTypeClass::Construct(_DWORD *this, ObjectClass *aP1)
   ParticleSystemTypeClass *v3; // eax
 
   ObjectTypeClass::ConstructFull((int)this, (AbstractClass *)aP1); /*0x6440a9*/
-  *(this + 165) = -1; /*0x6440b3*/
-  *(this + 173) = -1; /*0x6440b9*/
-  *(this + 174) = -1; /*0x6440bf*/
-  *((_BYTE *)this + 664) = 0; /*0x6440c5*/
-  *(this + 167) = 1; /*0x6440cb*/
-  *(this + 168) = 0; /*0x6440d5*/
-  *(this + 169) = 50; /*0x6440db*/
-  *(this + 170) = 0; /*0x6440e5*/
-  *(this + 171) = 0; /*0x6440eb*/
-  *(this + 172) = 0; /*0x6440f1*/
-  *(this + 175) = 0; /*0x6440fc*/
-  *(this + 176) = 0; /*0x644102*/
+  this->LandType = -1; /*0x6440b3*/
+  this->q2B4 = -1; /*0x6440b9*/
+  this->q2B8 = -1; /*0x6440bf*/
+  this->CellAnim = 0; /*0x6440c5*/
+  this->DamageLevels = 1; /*0x6440cb*/
+  this->q2A0 = 0; /*0x6440d5*/
+  this->Wall = 50; /*0x6440db*/
+  this->NoUseTileLandType = 0; /*0x6440e5*/
+  this->Explodes = 0; /*0x6440eb*/
+  this->IsRubble = 0; /*0x6440f1*/
+  this->q2BC = 0; /*0x6440fc*/
+  this->MainVoxel = 0; /*0x644102*/
   *(this + 177) = 0; /*0x644108*/
   *(this + 178) = -1717986918; /*0x64410e*/
-  *(this + 180) = -1717986918; /*0x644114*/
+  this->TurretVoxel = -1717986918; /*0x644114*/
   *(this + 182) = 0; /*0x64411a*/
-  *(this + 184) = 0; /*0x644120*/
+  this->BarrelVoxel = 0; /*0x644120*/
   *(this + 186) = 0; /*0x644126*/
-  *(this + 188) = 0; /*0x64412c*/
+  this->ChargerTurrets = 0; /*0x64412c*/
   *(this + 190) = 0; /*0x644132*/
   *(this + 179) = 1069128089; /*0x64413b*/
   *(this + 181) = 1067030937; /*0x644145*/
   *(this + 183) = 1077477376; /*0x64414f*/
-  *(this + 185) = 0; /*0x644159*/
+  this->q0B9 = 0; /*0x644159*/
   *(this + 187) = 0; /*0x64415f*/
   *(this + 189) = 0; /*0x644165*/
   *(this + 191) = 0; /*0x64416b*/
-  *(this + 192) = 0; /*0x644171*/
+  this->NoSpawnAlt = 0; /*0x644171*/
   *(this + 193) = 0; /*0x644177*/
   *(this + 194) = 0; /*0x64417d*/
-  *((_BYTE *)this + 780) = 0; /*0x644196*/
+  this->q0C3 = 0; /*0x644196*/
   *this = &ParticleSystemTypeClass::`vftable'; /*0x64419c*/
-  *(this + 1) = &ParticleSystemTypeClass::`vftable'; /*0x6441a2*/
-  *(this + 2) = &ParticleSystemTypeClass::`vftable'; /*0x6441a8*/
-  *(this + 3) = &vt_ParticleSystemTypeClass; /*0x6441af*/
+  this->vtable2 = &ParticleSystemTypeClass::`vftable'; /*0x6441a2*/
+  this->vtable3 = &ParticleSystemTypeClass::`vftable'; /*0x6441a8*/
+  this->vtable4 = &vt_ParticleSystemTypeClass; /*0x6441af*/
   AbstractClass::GenerateUniqueID((int)(this + 1)); /*0x6441b6*/
   if ( (int)MEMORY[0xA83D78] < MEMORY[0xA83D70] /*0x6441ef*/
     || (MEMORY[0xA83D75] || !MEMORY[0xA83D70])

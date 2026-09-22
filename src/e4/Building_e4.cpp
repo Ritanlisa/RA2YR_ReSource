@@ -230,7 +230,7 @@ char __thiscall Building_GetRenderType(_DWORD *this)
   int v1; // ecx
   char result; // al
 
-  v1 = *(this + 40); /*0x772a90*/
+  v1 = this->q0A0; /*0x772a90*/
   result = 0; /*0x772a96*/
   if ( *(_BYTE *)(v1 + 676) ) /*0x772a98*/
     result = 4; /*0x772aa2*/

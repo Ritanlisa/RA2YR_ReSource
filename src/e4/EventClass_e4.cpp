@@ -14,29 +14,29 @@ int __thiscall sub_48B390(int *this)
   int v2; // esi
   _DWORD *v3; // edx
 
-  result = *(this + 1); /*0x48b390*/
+  result = this->q004; /*0x48b390*/
   v2 = 0; /*0x48b397*/
-  *(this + 10) = 0; /*0x48b39b*/
+  this->q028 = 0; /*0x48b39b*/
   if ( result > 0 ) /*0x48b39e*/
   {
     result = 0; /*0x48b3a1*/
     do /*0x48b402*/
     {
-      *(_DWORD *)(result + *(this + 9)) &= ~1u; /*0x48b3ad*/
-      *(_DWORD *)(result + *(this + 9)) &= ~2u; /*0x48b3b9*/
-      v3 = (_DWORD *)(result + *(this + 9)); /*0x48b3be*/
+      *(_DWORD *)(result + this->q024) &= ~1u; /*0x48b3ad*/
+      *(_DWORD *)(result + this->q024) &= ~2u; /*0x48b3b9*/
+      v3 = (_DWORD *)(result + this->q024); /*0x48b3be*/
       result += 36; /*0x48b3c0*/
       ++v2; /*0x48b3c8*/
       *v3 &= ~4u; /*0x48b3c9*/
-      *(_DWORD *)(*(this + 9) + result - 32) = 0; /*0x48b3ce*/
-      *(_DWORD *)(*(this + 9) + result - 28) = 0; /*0x48b3d5*/
-      *(_DWORD *)(*(this + 9) + result - 24) = 0; /*0x48b3dc*/
-      *(_DWORD *)(*(this + 9) + result - 20) = 0; /*0x48b3e3*/
-      *(_DWORD *)(*(this + 9) + result - 12) = 0; /*0x48b3ea*/
-      *(_WORD *)(*(this + 9) + result - 4) = 0; /*0x48b3f1*/
-      *(_DWORD *)(*(this + 12) + 4 * v2 - 4) = 0; /*0x48b3f9*/
+      *(_DWORD *)(this->q024 + result - 32) = 0; /*0x48b3ce*/
+      *(_DWORD *)(this->q024 + result - 28) = 0; /*0x48b3d5*/
+      *(_DWORD *)(this->q024 + result - 24) = 0; /*0x48b3dc*/
+      *(_DWORD *)(this->q024 + result - 20) = 0; /*0x48b3e3*/
+      *(_DWORD *)(this->q024 + result - 12) = 0; /*0x48b3ea*/
+      *(_WORD *)(this->q024 + result - 4) = 0; /*0x48b3f1*/
+      *(_DWORD *)(this->q00C + 4 * v2 - 4) = 0; /*0x48b3f9*/
     }
-    while ( v2 < *(this + 1) ); /*0x48b402*/
+    while ( v2 < this->q004 ); /*0x48b402*/
   }
   return result; /*0x48b405*/
 }
@@ -50,11 +50,11 @@ int EventClass::SetData(int a2, int a3, int a4, int a5, int a6)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall EventClass::SetData(_DWORD *this, int a2, int a3, int a4, int a5, int a6)
 {
-  *(this + 17) = a2; /*0x48bad8*/
-  *(this + 18) = a3; /*0x48badf*/
-  *(this + 19) = a4; /*0x48bae6*/
-  *(this + 20) = a5; /*0x48baed*/
-  *(this + 21) = a6; /*0x48baf0*/
+  this->q044 = a2; /*0x48bad8*/
+  this->q048 = a3; /*0x48badf*/
+  this->q04C = a4; /*0x48bae6*/
+  this->q050 = a5; /*0x48baed*/
+  this->q054 = a6; /*0x48baf0*/
   return a6; /*0x48baf3*/
 }
 }
@@ -70,17 +70,17 @@ char *__thiscall EventClass::Add(char *this, AbstractClass *aP1, unsigned __int8
   Debug::Log(); /*0x4c65fc*/
   if ( (int)aP1 < 0 ) /*0x4c660a*/
   {
-    *(this + 2) = -1; /*0x4c6631*/
+    this->q008 = -1; /*0x4c6631*/
     *this = 0; /*0x4c6635*/
     *(_DWORD *)(this + 3) = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x4c663d*/
     return this; /*0x4c6640*/
   }
   else
   {
-    *(this + 2) = (char)aP1; /*0x4c6610*/
+    this->q008 = (char)aP1; /*0x4c6610*/
     *this = a3; /*0x4c661a*/
     *(_DWORD *)(this + 7) = a4; /*0x4c661c*/
-    *(this + 11) = a5; /*0x4c6620*/
+    this->q00B = a5; /*0x4c6620*/
     *(_DWORD *)(this + 3) = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x4c6629*/
     return this; /*0x4c661e*/
   }
@@ -98,14 +98,14 @@ char *__thiscall EventClass_AddEvent(char *this, int a2, unsigned __int8 a3)
   Debug::Log("Adding event %s\n", off_82091C[a3]); /*0x4c66dc*/
   if ( a2 < 0 ) /*0x4c66ea*/
   {
-    *(this + 2) = -1; /*0x4c6701*/
+    this->q008 = -1; /*0x4c6701*/
     *this = 0; /*0x4c6705*/
     *(_DWORD *)(this + 3) = MEMORY[0xA8ED84]; /*0x4c670d*/
     return this; /*0x4c6710*/
   }
   else
   {
-    *(this + 2) = a2; /*0x4c66ec*/
+    this->q008 = a2; /*0x4c66ec*/
     *this = a3; /*0x4c66ef*/
     *(_DWORD *)(this + 3) = MEMORY[0xA8ED84]; /*0x4c66f9*/
     return this; /*0x4c66f7*/
@@ -124,14 +124,14 @@ char *__thiscall EventClass::Add2(char *this, AnimClass *aP1, unsigned __int8 a3
   Debug::Log(); /*0x4c673c*/
   if ( (int)aP1 < 0 ) /*0x4c674a*/
   {
-    *(this + 2) = -1; /*0x4c6767*/
+    this->q008 = -1; /*0x4c6767*/
     *this = 0; /*0x4c676b*/
     *(_DWORD *)(this + 3) = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x4c6776*/
     return this; /*0x4c6774*/
   }
   else
   {
-    *(this + 2) = (char)aP1; /*0x4c6750*/
+    this->q008 = (char)aP1; /*0x4c6750*/
     *this = a3; /*0x4c6753*/
     *(_DWORD *)(this + 7) = aP3; /*0x4c6755*/
     *(_DWORD *)(this + 3) = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x4c675d*/
@@ -157,14 +157,14 @@ char *__thiscall EventClass::AddEventEx(
   Debug::Log(); /*0x4c698c*/
   if ( (int)aP1 < 0 ) /*0x4c699a*/
   {
-    *(this + 2) = -1; /*0x4c69c6*/
+    this->q008 = -1; /*0x4c69c6*/
     *this = 0; /*0x4c69ca*/
     *(_DWORD *)(this + 3) = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x4c69d2*/
     return this; /*0x4c69d5*/
   }
   else
   {
-    *(this + 2) = (char)aP1; /*0x4c69a4*/
+    this->q008 = (char)aP1; /*0x4c69a4*/
     *this = a3; /*0x4c69ab*/
     *(_DWORD *)(this + 7) = aP3; /*0x4c69ad*/
     *(_DWORD *)(this + 11) = aP4; /*0x4c69b0*/
@@ -186,14 +186,14 @@ char *__thiscall EventClass::Init(char *this, IUnknown *aP1, char a3, int a4, in
   Debug::Log(); /*0x4c6afc*/
   if ( (int)aP1 < 0 ) /*0x4c6b0a*/
   {
-    *(this + 2) = -1; /*0x4c6b49*/
+    this->q008 = -1; /*0x4c6b49*/
     *this = 0; /*0x4c6b4d*/
     *(_DWORD *)(this + 3) = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x4c6b58*/
     return this; /*0x4c6b56*/
   }
   else
   {
-    *(this + 2) = (char)aP1; /*0x4c6b14*/
+    this->q008 = (char)aP1; /*0x4c6b14*/
     *(_DWORD *)(this + 11) = a5; /*0x4c6b1b*/
     *this = a3; /*0x4c6b22*/
     *(_DWORD *)(this + 7) = a4; /*0x4c6b24*/
@@ -1048,7 +1048,7 @@ int __thiscall EventClass::deserializeEvent(_DWORD *this, int a2, IUnknown *aP2)
   int *v5; // edx
 
   result = (*(int (__thiscall **)(_DWORD *, int))(*this + 24))(this, a2); /*0x54228c*/
-  if ( result != -1 && result < *(this + 17) ) /*0x542297*/
+  if ( result != -1 && result < this->q044 ) /*0x542297*/
   {
     v5 = (int *)(*(this + result + 10) + 76); /*0x5422a1*/
     *v5 = aP2->field_0; /*0x5422a6*/
@@ -1120,7 +1120,7 @@ int __thiscall EventClass::CheckFlag(_DWORD *this)
 {
   int v1; // eax
 
-  v1 = *(this + 14); /*0x5f19c0*/
+  v1 = this->q038; /*0x5f19c0*/
   if ( v1 ) /*0x5f19c5*/
     EventClass::serializeEvent(*(int **)(v1 + 4)); /*0x5f19ca*/
   return 1; /*0x5f19d4*/
@@ -1151,13 +1151,13 @@ int __thiscall sub_664440(int *this)
   v1 = MEMORY[0xA8E2CC]; /*0x664444*/
   if ( MEMORY[0xA8E2CC] == -1 ) /*0x664451*/
   {
-    v3 = *(this + 4); /*0x664453*/
+    v3 = this->q004; /*0x664453*/
     v4 = 0; /*0x664456*/
     if ( v3 > 0 ) /*0x66445a*/
     {
       do /*0x66447c*/
       {
-        v5 = *(char **)(*(this + 1) + 4 * v4); /*0x664461*/
+        v5 = *(char **)(this->q004 + 4 * v4); /*0x664461*/
         if ( v5[41] && !v5[39] ) /*0x66446a*/
         {
           v1 = *v5; /*0x664470*/
@@ -1165,22 +1165,22 @@ int __thiscall sub_664440(int *this)
         }
         ++v4; /*0x664479*/
       }
-      while ( v4 < *(this + 4) ); /*0x66447c*/
+      while ( v4 < this->q004 ); /*0x66447c*/
     }
   }
   else
   {
-    v6 = *(this + 4); /*0x664480*/
+    v6 = this->q004; /*0x664480*/
     v7 = 0; /*0x664483*/
     if ( v6 > 0 ) /*0x664487*/
     {
       do /*0x6644a7*/
       {
-        v8 = *(char **)(*(this + 1) + 4 * v7); /*0x66448e*/
+        v8 = *(char **)(this->q004 + 4 * v7); /*0x66448e*/
         v8[39] = *v8 == v1; /*0x664498*/
         ++v7; /*0x6644a4*/
       }
-      while ( v7 < *(this + 4) ); /*0x6644a7*/
+      while ( v7 < this->q004 ); /*0x6644a7*/
     }
   }
   if ( SessionClass::IsValidHouse((int)MEMORY[0xA8B238], 0) /*0x6644d2*/

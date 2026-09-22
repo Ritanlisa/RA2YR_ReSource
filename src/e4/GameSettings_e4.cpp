@@ -130,7 +130,7 @@ char *__thiscall GameSettings::Read(unsigned __int16 *this)
          (CCINIClass *)&stru_830620.__pad_14B0[5784],
          *((INIClass **)this + 9));
   v6 = (CCINIClass *)*((_DWORD *)this + 10); /*0x5fa8c2*/
-  *((_DWORD *)this + 9) = v5; /*0x5fa8c5*/
+  this->q024 = v5; /*0x5fa8c5*/
   *((_DWORD *)this + 10) = INIClass::ReadInt_Overwrite( /*0x5fa8e7*/
                              (int)&stru_87C374.__pad_579C[21936],
                              (unsigned __int8 *)&stru_830620.__pad_14B0[5776],
@@ -258,19 +258,19 @@ char *__thiscall GameSettings::Read(unsigned __int16 *this)
   v26 = *((_DWORD *)this + 20); /*0x5fac45*/
   if ( v26 < -1 || v26 >= 8 ) /*0x5fac4f*/
     *((_DWORD *)this + 20) = -1; /*0x5fac51*/
-  *(this + 36) = INIClass::ReadInt_Overwrite( /*0x5fac6f*/
+  this->q024 = INIClass::ReadInt_Overwrite( /*0x5fac6f*/
                    (int)&stru_87C374.__pad_579C[21936],
                    (unsigned __int8 *)&stru_830620.__pad_14B0[5604],
                    (CCINIClass *)&stru_830620.__pad_14B0[5504],
-                   (INIClass *)*(this + 36));
+                   (INIClass *)this->q024);
   Debug::Log(); /*0x5fac7e*/
   v27 = INIClass::ReadInt_Overwrite( /*0x5fac9c*/
           (int)&stru_87C374.__pad_579C[21936],
           (unsigned __int8 *)&stru_830620.__pad_14B0[5520],
           (CCINIClass *)&stru_830620.__pad_14B0[5452],
-          (INIClass *)*(this + 37));
+          (INIClass *)this->q025);
   aP3_4 = (INIClass *)*((_DWORD *)this + 21); /*0x5faca9*/
-  *(this + 37) = v27; /*0x5facb4*/
+  this->q025 = v27; /*0x5facb4*/
   *((_DWORD *)this + 21) = INIClass::ReadInt_Overwrite( /*0x5facbd*/
                              (int)&stru_87C374.__pad_579C[21936],
                              (unsigned __int8 *)&stru_830620.__pad_14B0[5520],
@@ -310,7 +310,7 @@ char *__thiscall sub_5FB050(const char *this)
   __int16 v12; // [esp+14h] [ebp-10h]
   _DWORD v13[3]; // [esp+18h] [ebp-Ch] BYREF
 
-  v2 = *((_WORD *)this + 37); /*0x5fb057*/
+  v2 = this->q025; /*0x5fb057*/
   if ( v2 == 0xFFFF ) /*0x5fb05f*/
   {
     Network::GetField(MEMORY[0xA8E9C0], 34835); /*0x5fb066*/

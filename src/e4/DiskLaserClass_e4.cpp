@@ -47,9 +47,9 @@ DiskLaserClass *__thiscall DiskLaserClass::CopyTo(_DWORD *this, char a2)
   _DWORD *v5; // [esp+4h] [ebp-4h] BYREF
 
   *this = &DiskLaserClass::`vftable'; /*0x4a7c9d*/
-  *(this + 1) = &DiskLaserClass::`vftable'; /*0x4a7ca3*/
-  *(this + 2) = &DiskLaserClass::`vftable'; /*0x4a7caa*/
-  *(this + 3) = &vt_DiskLaserClass; /*0x4a7cb1*/
+  this->vtable2 = &DiskLaserClass::`vftable'; /*0x4a7ca3*/
+  this->vtable3 = &DiskLaserClass::`vftable'; /*0x4a7caa*/
+  this->vtable4 = &vt_DiskLaserClass; /*0x4a7cb1*/
   v5 = this; /*0x4a7cbf*/
   v3 = (*(int (__thiscall **)(int *, _DWORD **))(MEMORY[0x8A0208] + 16))(&MEMORY[0x8A0208], &v5); /*0x4a7cc3*/
   if ( v3 != -1 && v3 < MEMORY[0x8A0218] && v3 < --MEMORY[0x8A0218] ) /*0x4a7cde*/

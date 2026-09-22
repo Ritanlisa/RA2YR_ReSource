@@ -724,11 +724,11 @@ _DWORD *__thiscall sub_565660(_DWORD *this, _DWORD *a2, __int16 *a3)
   int v9; // ecx
   int v11; // [esp+20h] [ebp+8h]
 
-  v3 = *(this + 61); /*0x565668*/
-  v4 = *(this + 63); /*0x56566f*/
+  v3 = this->q0F4; /*0x565668*/
+  v4 = this->q0FC; /*0x56566f*/
   v5 = a3[1]; /*0x565676*/
   v6 = *a3; /*0x56567b*/
-  v7 = *(this + 64); /*0x56567e*/
+  v7 = this->q100; /*0x56567e*/
   v8 = *a3; /*0x565684*/
   if ( (v3 & 1) != 0 ) /*0x56568d*/
     v9 = v8 - v5 + 1; /*0x565691*/

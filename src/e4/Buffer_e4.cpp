@@ -62,55 +62,55 @@ char *__thiscall Buffer::FillCircularBufferScroll2(signed int *this, int a2, Mou
   int aP2a; // [esp+2Ch] [ebp+8h]
   char *v58; // [esp+30h] [ebp+Ch]
 
-  v5 = *(this + 10); /*0x7bcb60*/
-  v52 = *(this + 4) / 2 % v5; /*0x7bcb72*/
-  if ( (int)abs32(a2) > v5 || (result = (char *)abs32((int)aP2), (int)result > *(this + 11)) ) /*0x7bcb8e*/
+  v5 = this->q028; /*0x7bcb60*/
+  v52 = this->Buffer_field_04 / 2 % v5; /*0x7bcb72*/
+  if ( (int)abs32(a2) > v5 || (result = (char *)abs32((int)aP2), (int)result > this->q0B0) ) /*0x7bcb8e*/
   {
-    v50 = *(this + 11); /*0x7bcf06*/
+    v50 = this->q0B0; /*0x7bcf06*/
     v53 = 0; /*0x7bcf0b*/
     v54 = 0; /*0x7bcf0f*/
     v56 = v50; /*0x7bcf17*/
-    v51 = *(this + 5); /*0x7bcf1b*/
+    v51 = this->Buffer_field_14; /*0x7bcf1b*/
     v55 = v5; /*0x7bcf24*/
     result = (char *)(*(int (__thiscall **)(int, int *, _DWORD))(*(_DWORD *)v51 + 20))(v51, &v53, a4); /*0x7bcf2f*/
-    *(this + 9) = 0x8000; /*0x7bcf32*/
+    this->Buffer_field_24 = 0x8000; /*0x7bcf32*/
     return result; /*0x7bcf32*/
   }
-  v8 = a2 + *(this + 4) / 2 % v5; /*0x7bcb98*/
+  v8 = a2 + this->Buffer_field_04 / 2 % v5; /*0x7bcb98*/
   if ( a2 ) /*0x7bcb9c*/
   {
-    v9 = *(this + 6); /*0x7bcba5*/
-    v10 = *(this + 4) + 2 * a2; /*0x7bcba8*/
-    *(this + 4) = v10; /*0x7bcbab*/
+    v9 = this->Buffer_field_18; /*0x7bcba5*/
+    v10 = this->Buffer_field_04 + 2 * a2; /*0x7bcba8*/
+    this->Buffer_field_04 = v10; /*0x7bcbab*/
     v11 = v9 + v10; /*0x7bcbae*/
     if ( v11 < v9 ) /*0x7bcbb2*/
-      v11 += *(this + 8); /*0x7bcbb4*/
-    if ( v11 >= *(this + 7) ) /*0x7bcbba*/
-      v11 -= *(this + 8); /*0x7bcbbc*/
-    *(this + 4) = v11 - *(this + 6); /*0x7bcbc4*/
+      v11 += this->Buffer_field_08; /*0x7bcbb4*/
+    if ( v11 >= this->Buffer_field_1C ) /*0x7bcbba*/
+      v11 -= this->Buffer_field_08; /*0x7bcbbc*/
+    this->Buffer_field_04 = v11 - this->Buffer_field_18; /*0x7bcbc4*/
     if ( a2 >= 0 ) /*0x7bcbc7*/
     {
       v53 = v52; /*0x7bcc6e*/
       if ( v8 < v5 ) /*0x7bcc64*/
       {
         v54 = 0; /*0x7bcccf*/
-        v23 = *(this + 11); /*0x7bccd3*/
+        v23 = this->q0B0; /*0x7bccd3*/
         v55 = a2; /*0x7bccd6*/
-        v22 = *(this + 5); /*0x7bccda*/
+        v22 = this->Buffer_field_14; /*0x7bccda*/
         v56 = v23; /*0x7bcce3*/
       }
       else
       {
-        v18 = *(this + 11); /*0x7bcc72*/
+        v18 = this->q0B0; /*0x7bcc72*/
         v55 = v5 - v52; /*0x7bcc75*/
         v54 = 0; /*0x7bcc79*/
-        v19 = *(this + 5); /*0x7bcc7d*/
+        v19 = this->Buffer_field_14; /*0x7bcc7d*/
         v56 = v18; /*0x7bcc82*/
         (*(void (__thiscall **)(int, int *, _DWORD))(*(_DWORD *)v19 + 20))(v19, &v53, a4); /*0x7bcc94*/
-        v20 = v8 - *(this + 10); /*0x7bcc9e*/
-        v21 = *(this + 11); /*0x7bcca0*/
+        v20 = v8 - this->q028; /*0x7bcc9e*/
+        v21 = this->q0B0; /*0x7bcca0*/
         v54 = 0; /*0x7bcca3*/
-        v22 = *(this + 5); /*0x7bcca7*/
+        v22 = this->Buffer_field_14; /*0x7bcca7*/
         v53 = 0; /*0x7bccaa*/
         v55 = v20; /*0x7bccae*/
         v56 = v21; /*0x7bccb2*/
@@ -121,10 +121,10 @@ char *__thiscall Buffer::FillCircularBufferScroll2(signed int *this, int a2, Mou
     {
       v53 = v8; /*0x7bcc33*/
       v54 = 0; /*0x7bcc37*/
-      v56 = *(this + 11); /*0x7bcc3e*/
+      v56 = this->q0B0; /*0x7bcc3e*/
       v55 = -a2; /*0x7bcc46*/
-      result = (char *)(*(int (__thiscall **)(_DWORD, int *, _DWORD))(*(_DWORD *)*(this + 5) + 20))( /*0x7bcc5a*/
-                         *(this + 5),
+      result = (char *)(*(int (__thiscall **)(_DWORD, int *, _DWORD))(*(_DWORD *)this->Buffer_field_14 + 20))( /*0x7bcc5a*/
+                         this->Buffer_field_14,
                          &v53,
                          a4);
     }
@@ -132,16 +132,16 @@ char *__thiscall Buffer::FillCircularBufferScroll2(signed int *this, int a2, Mou
     {
       v53 = 0; /*0x7bcbd5*/
       v55 = v52; /*0x7bcbdd*/
-      v12 = *(this + 11); /*0x7bcbe1*/
+      v12 = this->q0B0; /*0x7bcbe1*/
       v54 = 0; /*0x7bcbe4*/
-      v13 = *(this + 5); /*0x7bcbe8*/
+      v13 = this->Buffer_field_14; /*0x7bcbe8*/
       v56 = v12; /*0x7bcbed*/
       (*(void (__thiscall **)(int, int *, _DWORD))(*(_DWORD *)v13 + 20))(v13, &v53, a4); /*0x7bcbff*/
-      v14 = *(this + 10); /*0x7bcc02*/
-      v15 = *(this + 11); /*0x7bcc05*/
+      v14 = this->q028; /*0x7bcc02*/
+      v15 = this->q0B0; /*0x7bcc05*/
       v16 = v14 + v8; /*0x7bcc08*/
       v54 = 0; /*0x7bcc0e*/
-      v17 = *(this + 5); /*0x7bcc12*/
+      v17 = this->Buffer_field_14; /*0x7bcc12*/
       v55 = v14 - v16; /*0x7bcc15*/
       v53 = v16; /*0x7bcc19*/
       v56 = v15; /*0x7bcc1d*/
@@ -150,27 +150,27 @@ char *__thiscall Buffer::FillCircularBufferScroll2(signed int *this, int a2, Mou
   }
   if ( aP2 ) /*0x7bccf8*/
   {
-    v24 = *(this + 4); /*0x7bccfe*/
-    v25 = *(this + 10); /*0x7bcd01*/
-    *(this + 9) -= (int)aP2; /*0x7bcd16*/
+    v24 = this->Buffer_field_04; /*0x7bccfe*/
+    v25 = this->q028; /*0x7bcd01*/
+    this->Buffer_field_24 -= (int)aP2; /*0x7bcd16*/
     v26 = v24 + 2 * (_DWORD)aP2 * v25; /*0x7bcd19*/
-    *(this + 4) = v26; /*0x7bcd1c*/
+    this->Buffer_field_04 = v26; /*0x7bcd1c*/
     v27 = (char *)aP2 + v24 / 2 / v25; /*0x7bcd1f*/
-    v28 = (unsigned __int16 *)*(this + 6); /*0x7bcd21*/
+    v28 = (unsigned __int16 *)this->Buffer_field_18; /*0x7bcd21*/
     v29 = (unsigned int)v28 + v26; /*0x7bcd24*/
     v58 = v27; /*0x7bcd26*/
     if ( v29 < (unsigned int)v28 ) /*0x7bcd2c*/
-      v29 += *(this + 8); /*0x7bcd2e*/
-    if ( v29 >= *(this + 7) ) /*0x7bcd34*/
-      v29 -= *(this + 8); /*0x7bcd36*/
+      v29 += this->Buffer_field_08; /*0x7bcd2e*/
+    if ( v29 >= this->Buffer_field_1C ) /*0x7bcd34*/
+      v29 -= this->Buffer_field_08; /*0x7bcd36*/
     v30 = v29 - (_DWORD)v28; /*0x7bcd3f*/
-    *(this + 4) = v29 - (_DWORD)v28; /*0x7bcd43*/
+    this->Buffer_field_04 = v29 - (_DWORD)v28; /*0x7bcd43*/
     if ( (int)aP2 >= 0 ) /*0x7bcd46*/
     {
-      v44 = *(this + 11); /*0x7bce1d*/
+      v44 = this->q0B0; /*0x7bce1d*/
       if ( (int)v58 >= v44 ) /*0x7bce26*/
       {
-        v45 = 2 * *(this + 10) * v44 - v24; /*0x7bce34*/
+        v45 = 2 * this->q028 * v44 - v24; /*0x7bce34*/
         LODWORD(v45) = v45 - HIDWORD(v45); /*0x7bce35*/
         v46 = (unsigned __int16 *)((char *)v28 + v24); /*0x7bce37*/
         v47 = (int)v45 >> 1; /*0x7bce3c*/
@@ -187,8 +187,8 @@ char *__thiscall Buffer::FillCircularBufferScroll2(signed int *this, int a2, Mou
         }
         if ( (v47 & 1) != 0 && v48 ) /*0x7bce80*/
           *v48 = a4; /*0x7bce82*/
-        v37 = (unsigned __int16 *)*(this + 6); /*0x7bce8b*/
-        v38 = *(this + 4) / 2; /*0x7bce90*/
+        v37 = (unsigned __int16 *)this->Buffer_field_18; /*0x7bce8b*/
+        v38 = this->Buffer_field_04 / 2; /*0x7bce90*/
         if ( ((unsigned __int8)v37 & 2) != 0 && v38 ) /*0x7bce99*/
         {
           *v37++ = a4; /*0x7bce9b*/
@@ -257,10 +257,10 @@ LABEL_55:
       }
       if ( (v32 & 1) != 0 && v33 ) /*0x7bcda2*/
         *v33 = a4; /*0x7bcda4*/
-      v35 = *(this + 4); /*0x7bcdaa*/
-      v36 = 2 * *(this + 10) * *(this + 11) - v35; /*0x7bcdb5*/
+      v35 = this->Buffer_field_04; /*0x7bcdaa*/
+      v36 = 2 * this->q028 * this->q0B0 - v35; /*0x7bcdb5*/
       LODWORD(v36) = v36 - HIDWORD(v36); /*0x7bcdb6*/
-      v37 = (unsigned __int16 *)(v35 + *(this + 6)); /*0x7bcdbd*/
+      v37 = (unsigned __int16 *)(v35 + this->Buffer_field_18); /*0x7bcdbd*/
       v38 = (int)v36 >> 1; /*0x7bcdbf*/
       if ( ((unsigned __int8)v37 & 2) != 0 && v38 ) /*0x7bcdcc*/
       {

@@ -24,7 +24,7 @@ char __thiscall WDTState_4_::_vt02(_BYTE *this, int a2, _DWORD *a3)
   v3 = a2; /*0x76ba73*/
   if ( a2 ) /*0x76ba7d*/
   {
-    *(this + 12) = 0; /*0x76ba87*/
+    this->q00C = 0; /*0x76ba87*/
     if ( a3 ) /*0x76ba8d*/
     {
       *a3 = a2; /*0x76bad1*/
@@ -69,16 +69,16 @@ char __thiscall WDTState_4_::_vt02(_BYTE *this, int a2, _DWORD *a3)
         v6 = 0; /*0x76bacd*/
       }
     }
-    *(this + 12) = 1; /*0x76baff*/
+    this->q00C = 1; /*0x76baff*/
     if ( !v6 ) /*0x76bb03*/
       return 0; /*0x76bb86*/
     if ( this->WDTState_4_field_0x4 ) /*0x76bb05*/
     {
-      if ( a2 >= *((_DWORD *)this + 2) ) /*0x76bb11*/
-        v3 = *((_DWORD *)this + 2); /*0x76bb13*/
+      if ( a2 >= this->Capacity ) /*0x76bb11*/
+        v3 = this->Capacity; /*0x76bb13*/
       for ( i = 0; i < v3; ++i ) /*0x76bb19*/
         ComPtr::Set(&v6[2 * i], *(_DWORD *)(this->WDTState_4_field_0x4 + 8 * i + 4)); /*0x76bb26*/
-      if ( *(this + 13) ) /*0x76bb30*/
+      if ( this->IsAllocated ) /*0x76bb30*/
       {
         v11 = (void (__thiscall ***)(_DWORD, int))this->WDTState_4_field_0x4; /*0x76bb37*/
         if ( v11 ) /*0x76bb3c*/
@@ -88,14 +88,14 @@ char __thiscall WDTState_4_::_vt02(_BYTE *this, int a2, _DWORD *a3)
       v3 = a2; /*0x76bb4b*/
     }
     this->WDTState_4_field_0x4 = v6; /*0x76bb5a*/
-    *((_DWORD *)this + 2) = v3; /*0x76bb5d*/
-    *(this + 13) = a3 == 0; /*0x76bb60*/
+    this->Capacity = v3; /*0x76bb5d*/
+    this->IsAllocated = a3 == 0; /*0x76bb60*/
   }
   else
   {
-    (*(void (__thiscall **)(_BYTE *))(*(_DWORD *)this + 12))(this); /*0x76bb69*/
+    (*(void (__thiscall **)(_BYTE *))(this->q00C)(this); /*0x76bb69*/
   }
-  v12 = *((_DWORD *)this + 2); /*0x76bb6c*/
+  v12 = this->Capacity; /*0x76bb6c*/
   if ( v12 < this->WDTState_4_field_0x10 ) /*0x76bb74*/
     this->WDTState_4_field_0x10 = v12; /*0x76bb76*/
   return 1; /*0x76bb79*/

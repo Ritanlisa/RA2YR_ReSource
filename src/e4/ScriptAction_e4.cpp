@@ -26,23 +26,23 @@ IUnknown *__thiscall ScriptAction::InitActionFields(
   result = (IUnknown *)this; /*0x4c6860*/
   if ( a2 < 0 ) /*0x4c6868*/
   {
-    *(this + 2) = -1; /*0x4c68ca*/
+    this->q008 = -1; /*0x4c68ca*/
     *this = 0; /*0x4c68ce*/
   }
   else
   {
-    *(this + 2) = a2; /*0x4c686e*/
+    this->q008 = a2; /*0x4c686e*/
     *this = 4; /*0x4c6874*/
-    *(this + 29) = 0; /*0x4c6877*/
+    this->q074 = 0; /*0x4c6877*/
     *(_DWORD *)(this + 7) = a3; /*0x4c687b*/
-    *(this + 11) = a4; /*0x4c6881*/
-    *(this + 12) = a5; /*0x4c6888*/
+    this->q0B0 = a4; /*0x4c6881*/
+    this->q00C = a5; /*0x4c6888*/
     *(_DWORD *)(this + 14) = a6; /*0x4c6892*/
-    *(this + 18) = a7; /*0x4c6899*/
+    this->q048 = a7; /*0x4c6899*/
     *(_DWORD *)(this + 19) = a8; /*0x4c68a3*/
     *(this + 23) = a9; /*0x4c68aa*/
     this->ScriptAction_field_0x18 = a10; /*0x4c68b4*/
-    *(this + 28) = a11; /*0x4c68bb*/
+    this->q01C = a11; /*0x4c68bb*/
   }
   *(_DWORD *)(this + 3) = *(_DWORD *)&HouseClass_Player.__pad_5568[23248]; /*0x4c68c4*/
   return result; /*0x4c68c7*/
@@ -91,15 +91,15 @@ int __thiscall ScriptAction::CreatePlacementAction(_DWORD *this, AbstractClass *
     v6 = 0; /*0x633fea*/
   qmemcpy(v6, a2, 0x6Fu); /*0x633ff8*/
   *(_DWORD *)(v5 + 4) = v6; /*0x633ffd*/
-  v7 = *(this + 2); /*0x634000*/
-  if ( *(this + 4) < v7 /*0x634024*/
-    || (*((_BYTE *)this + 13) || !v7)
-    && (v8 = *(this + 5), v8 > 0)
+  v7 = this->q008; /*0x634000*/
+  if ( this->q010 < v7 /*0x634024*/
+    || (this->q034 || !v7)
+    && (v8 = this->q014, v8 > 0)
     && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*this + 8))(this, v7 + v8, 0) )
   {
-    v9 = *(this + 4); /*0x63402b*/
-    v10 = (AbstractClass *)*(this + 1); /*0x63402e*/
-    *(this + 4) = v9 + 1; /*0x634034*/
+    v9 = this->q010; /*0x63402b*/
+    v10 = (AbstractClass *)this->q004; /*0x63402e*/
+    this->q010 = v9 + 1; /*0x634034*/
     *(_DWORD *)&v10->__pad_0[4 * v9] = v5; /*0x634037*/
   }
   Type = BuildingClass::GetPlanningToken(aP1); /*0x634043*/
@@ -134,7 +134,7 @@ _DWORD *__thiscall ScriptAction_GetCoords(_DWORD **this, _DWORD *a2)
   int v5; // esi
   _DWORD v7[3]; // [esp+8h] [ebp-Ch] BYREF
 
-  ActionCoords = GetScenarioClassActionCoords(v7, *(_BYTE **)(**(this + 1) + 4)); /*0x6343d1*/
+  ActionCoords = GetScenarioClassActionCoords(v7, *(_BYTE **)(*this->q004 + 4)); /*0x6343d1*/
   v3 = *ActionCoords; /*0x6343d6*/
   v4 = ActionCoords[1]; /*0x6343d8*/
   v5 = ActionCoords[2]; /*0x6343db*/
@@ -158,7 +158,7 @@ _DWORD *__thiscall ScriptAction_GetScreenPos(_DWORD **this, _DWORD *a2)
   int v5[3]; // [esp+0h] [ebp-18h] BYREF
   _DWORD v6[3]; // [esp+Ch] [ebp-Ch] BYREF
 
-  ActionCoords = GetScenarioClassActionCoords(v5, *(_BYTE **)(**(this + 1) + 4)); /*0x63440f*/
+  ActionCoords = GetScenarioClassActionCoords(v5, *(_BYTE **)(*this->q004 + 4)); /*0x63440f*/
   v6[0] = *ActionCoords; /*0x634416*/
   v6[1] = ActionCoords[1]; /*0x63441d*/
   v6[2] = ActionCoords[2]; /*0x634434*/
@@ -181,7 +181,7 @@ BOOL __thiscall sub_634550(_DWORD **this, int a2, int a3, int a4)
   _DWORD *ScenarioClassActionCoords; // eax
   _DWORD v6[3]; // [esp+4h] [ebp-Ch] BYREF
 
-  ScenarioClassActionCoords = GetScenarioClassActionCoords(v6, *(_BYTE **)(**(this + 1) + 4)); /*0x634560*/
+  ScenarioClassActionCoords = GetScenarioClassActionCoords(v6, *(_BYTE **)(*this->q004 + 4)); /*0x634560*/
   return *ScenarioClassActionCoords == a2 && ScenarioClassActionCoords[1] == a3 && ScenarioClassActionCoords[2] == a4; /*0x63456f*/
 }
 }
@@ -199,11 +199,11 @@ _DWORD *__thiscall sub_6346B0(int *this, int a2)
   _DWORD **v4; // esi
   _DWORD **i; // ecx
 
-  v2 = *(this + 4); /*0x6346b0*/
+  v2 = this->q004; /*0x6346b0*/
   v3 = 0; /*0x6346b4*/
   if ( v2 <= 0 ) /*0x6346ba*/
     return 0; /*0x6346ba*/
-  v4 = (_DWORD **)*(this + 1); /*0x6346bc*/
+  v4 = (_DWORD **)this->q004; /*0x6346bc*/
   for ( i = v4; **i != a2; ++i ) /*0x6346c3*/
   {
     if ( ++v3 >= v2 ) /*0x6346d1*/
@@ -626,10 +626,10 @@ int __thiscall ScriptAction::DecrementRefCount(_DWORD *this, int a2)
   int result; // eax
 
   *(_BYTE *)(a2 + 12) = 0; /*0x6351e4*/
-  result = *(this + 42) - 1; /*0x6351ee*/
-  *(this + 42) = result; /*0x6351ef*/
+  result = this->q0A8 - 1; /*0x6351ee*/
+  this->q0A8 = result; /*0x6351ef*/
   if ( !result ) /*0x6351f5*/
-    *(this + 44) = -1; /*0x6351f7*/
+    this->q0B0 = -1; /*0x6351f7*/
   return result; /*0x635201*/
 }
 }
@@ -642,20 +642,20 @@ AbstractClass * ScriptAction::Constructor(AbstractClass * aP1)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 AbstractClass *__thiscall ScriptAction::Constructor(_DWORD *this, AbstractClass *aP1)
 {
-  *(this + 2) = 0; /*0x635f27*/
-  *(this + 3) = 0; /*0x635f2a*/
-  *((_BYTE *)this + 16) = 1; /*0x635f2d*/
-  *((_BYTE *)this + 17) = 0; /*0x635f31*/
-  *(this + 1) = &vt_DynamicVectorClass_PlanningNodeClass; /*0x635f34*/
-  *(this + 6) = 10; /*0x635f3b*/
-  *(this + 5) = 0; /*0x635f42*/
-  *((_BYTE *)this + 28) = 0; /*0x635f45*/
-  *((_BYTE *)this + 29) = 0; /*0x635f48*/
-  *((_BYTE *)this + 152) = 0; /*0x635f4b*/
+  this->q008 = 0; /*0x635f27*/
+  this->q00C = 0; /*0x635f2a*/
+  this->q010 = 1; /*0x635f2d*/
+  this->q044 = 0; /*0x635f31*/
+  this->q004 = &vt_DynamicVectorClass_PlanningNodeClass; /*0x635f34*/
+  this->q018 = 10; /*0x635f3b*/
+  this->q014 = 0; /*0x635f42*/
+  this->q070 = 0; /*0x635f45*/
+  this->q074 = 0; /*0x635f48*/
+  this->q098 = 0; /*0x635f4b*/
   *((_BYTE *)this + 153) = 0; /*0x635f51*/
-  *(this + 35) = -1; /*0x635f5b*/
-  *(this + 36) = -1; /*0x635f61*/
-  *(this + 37) = -1; /*0x635f67*/
+  this->q08C = -1; /*0x635f5b*/
+  this->q090 = -1; /*0x635f61*/
+  this->q094 = -1; /*0x635f67*/
   *this = aP1; /*0x635f6d*/
   return (AbstractClass *)this; /*0x635f6f*/
 }
@@ -673,9 +673,9 @@ BOOL __thiscall sub_636570(int *this)
   BOOL result; // eax
 
   result = 0; /*0x636586*/
-  if ( *(this + 5) > 0 ) /*0x636575*/
+  if ( this->q014 > 0 ) /*0x636575*/
   {
-    v1 = *(this + 35); /*0x636577*/
+    v1 = this->q08C; /*0x636577*/
     if ( v1 == -1 || v1 > 0 ) /*0x636584*/
       return 1; /*0x636575*/
   }
@@ -799,7 +799,7 @@ char __thiscall DispatchBuildingScriptAction(char *this)
   v2 = *this; /*0x637e09*/
   if ( *this == 43 ) /*0x637e0d*/
   {
-    v32 = *(this + 2); /*0x637e17*/
+    v32 = this->q008; /*0x637e17*/
     LOBYTE(BuildingLoadQueue) = MEMORY[0xA8EC88]; /*0x637e1b*/
     v4 = 0; /*0x637e20*/
     for ( v33[0] = MEMORY[0xA8EC88]; v4 < v33[0]; ++v4 ) /*0x637e28*/
@@ -842,7 +842,7 @@ char __thiscall DispatchBuildingScriptAction(char *this)
                                         &v37);
         v12 = *BuildingLoadQueue; /*0x637ed7*/
         v13 = 0; /*0x637ed9*/
-        v14 = (_DWORD *)*(this + 2); /*0x637edb*/
+        v14 = (_DWORD *)this->q008; /*0x637edb*/
         v34 = BuildingLoadQueue[1]; /*0x637ee2*/
         v35 = BuildingLoadQueue[2]; /*0x637ee9*/
         LOBYTE(BuildingLoadQueue) = MEMORY[0xAC4B40]; /*0x637eed*/
@@ -907,7 +907,7 @@ char __thiscall DispatchBuildingScriptAction(char *this)
                                         v40);
         v21 = *BuildingLoadQueue; /*0x63802c*/
         v22 = 0; /*0x63802e*/
-        v23 = (_DWORD *)*(this + 2); /*0x638030*/
+        v23 = (_DWORD *)this->q008; /*0x638030*/
         v38 = BuildingLoadQueue[1]; /*0x638037*/
         v39 = BuildingLoadQueue[2]; /*0x63803e*/
         LOBYTE(BuildingLoadQueue) = MEMORY[0xAC4B40]; /*0x638042*/
@@ -1642,7 +1642,7 @@ int __thiscall sub_63CE40(_DWORD *this)
   v12[1] = Viewport[1]; /*0x63ce60*/
   v12[2] = Viewport[2]; /*0x63ce67*/
   v4 = Viewport[3]; /*0x63ce6b*/
-  v5 = *(this + 1); /*0x63ce6e*/
+  v5 = this->q004; /*0x63ce6e*/
   v12[3] = v4; /*0x63ce71*/
   ScenarioClassActionCoords = GetScenarioClassActionCoords(v10, *(_BYTE **)(*(_DWORD *)v5 + 4)); /*0x63ce7e*/
   v9[0] = *ScenarioClassActionCoords; /*0x63ce85*/
@@ -2040,7 +2040,7 @@ _DWORD *__thiscall sub_6E1830(_DWORD *this)
   __int16 v5[2]; // [esp+4h] [ebp-4h] BYREF
 
   v1 = *this / 256; /*0x6e184b*/
-  v2 = *(this + 1) / 256; /*0x6e184e*/
+  v2 = this->q004 / 256; /*0x6e184e*/
   v5[0] = v1; /*0x6e1851*/
   v5[1] = v2; /*0x6e1856*/
   if ( __PAIR32__(v2, v1) == MEMORY[0xB0E680] ) /*0x6e186c*/
@@ -2289,19 +2289,19 @@ _BYTE *__thiscall ScriptAction::GetWaypointCoords(_BYTE *this, IUnknown *aP1)
   {
     if ( (*(int (__thiscall **)(IUnknown *))(aP1->field_0 + 44))(aP1) == 11 ) /*0x6e6ac6*/
     {
-      *(this + 4) = 11; /*0x6e6ac8*/
+      this->q004 = 11; /*0x6e6ac8*/
       *(_DWORD *)this = (__int16)aP1->field_24 + 1000 * (__int16)HIWORD(aP1->field_24); /*0x6e6ae7*/
     }
     else
     {
-      *(this + 4) = 52; /*0x6e6af2*/
+      this->q004 = 52; /*0x6e6af2*/
       *(_DWORD *)this = (*(int (__stdcall **)(int *))(aP1->field_4 + 16))(&aP1->field_4); /*0x6e6afc*/
     }
     return this; /*0x6e6ae9*/
   }
   else
   {
-    *(this + 4) = 0; /*0x6e6b05*/
+    this->q004 = 0; /*0x6e6b05*/
     *(_DWORD *)this = 0; /*0x6e6b09*/
     return this; /*0x6e6b0f*/
   }
@@ -2448,10 +2448,10 @@ ObjectClass * ScriptAction::GetArgumentString(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 ObjectClass *__thiscall ScriptAction::GetArgumentString(_DWORD *this, int a2)
 {
-  if ( a2 < 0 || a2 >= *(this + 9) ) /*0x72127b*/
+  if ( a2 < 0 || a2 >= this->q024 ) /*0x72127b*/
     return (ObjectClass *)g_Str_none; /*0x721286*/
   else
-    return *(ObjectClass **)(*(this + 6) + 4 * a2); /*0x721280*/
+    return *(ObjectClass **)(this->q018 + 4 * a2); /*0x721280*/
 }
 }
 } // namespace gamemd

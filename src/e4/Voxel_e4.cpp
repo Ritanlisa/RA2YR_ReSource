@@ -1049,7 +1049,7 @@ int __thiscall Voxel_ProcessColor(_DWORD *this, _DWORD *a2, float *a3)
   int v35; // [esp+58h] [ebp+4h]
   float v36; // [esp+5Ch] [ebp+8h]
 
-  v4 = *(this + 5) + 164 * (a2[2] + *(_DWORD *)(*(this + 4) + 12 * a2[1])); /*0x7565b8*/
+  v4 = this->q014 + 164 * (a2[2] + *(_DWORD *)(this->q010 + 12 * a2[1])); /*0x7565b8*/
   v5 = 9 * a2[3]; /*0x7565be*/
   v16 = *(_BYTE *)(v4 + 161); /*0x7565cd*/
   v6 = *(_BYTE *)(v4 + 162); /*0x7565d1*/
@@ -1144,11 +1144,11 @@ char __thiscall Voxel::DrawHelper(_DWORD *this, IUnknown *aP1)
   char aP1a; // [esp+2Ch] [ebp+4h]
 
   v3 = (IUnknown *)CONTAINING_RECORD(this, IUnknown, field_0)->__pad_28; /*0x75c251*/
-  if ( *(this + 10) == g_AsyncMovieState.field_0 /*0x75c26e*/
-    && *(this + 11) == g_AsyncMovieState.field_4
-    && *(this + 12) == g_AsyncMovieState.field_8 )
+  if ( this->q028 == g_AsyncMovieState.field_0 /*0x75c26e*/
+    && this->q02C == g_AsyncMovieState.field_4
+    && this->q030 == g_AsyncMovieState.field_8 )
   {
-    v4 = (BuildingTypeClass *)*(this + 3); /*0x75c278*/
+    v4 = (BuildingTypeClass *)this->q00C; /*0x75c278*/
     a1 = v4->Armor[0]; /*0x75c287*/
     Strength = v4->Strength; /*0x75c28e*/
     v34 = (IUnknown *)v4->Image; /*0x75c295*/
@@ -1156,7 +1156,7 @@ char __thiscall Voxel::DrawHelper(_DWORD *this, IUnknown *aP1)
   }
   else
   {
-    (*(void (__stdcall **)(_DWORD *))(*(_DWORD *)*(this + 3) + 244))(this + 10); /*0x75c276*/
+    (*(void (__stdcall **)(_DWORD *))(*(_DWORD *)this->q00C + 244))(this + 10); /*0x75c276*/
   }
   aP1a = 0; /*0x75c2aa*/
   v38[0] = aP1->field_0; /*0x75c2b3*/
@@ -1168,18 +1168,18 @@ char __thiscall Voxel::DrawHelper(_DWORD *this, IUnknown *aP1)
     && aP1->field_8 == g_AsyncMovieState.field_8 )
   {
     v3->field_0 = aP1->field_0; /*0x75c5b7*/
-    *(this + 11) = aP1->field_4; /*0x75c5bc*/
-    *(this + 12) = aP1->field_8; /*0x75c5c2*/
+    this->q02C = aP1->field_4; /*0x75c5bc*/
+    this->q030 = aP1->field_8; /*0x75c5c2*/
   }
   else
   {
-    if ( (*(int (__thiscall **)(_DWORD))(*(_DWORD *)*(this + 3) + 388))(*(this + 3)) == 8 /*0x75c33c*/
-      || (*(int (__thiscall **)(_DWORD))(*(_DWORD *)*(this + 3) + 388))(*(this + 3)) == 9
-      || (*(int (__thiscall **)(_DWORD))(*(_DWORD *)*(this + 3) + 388))(*(this + 3)) == 7
-      || (*(int (__thiscall **)(_DWORD))(*(_DWORD *)*(this + 3) + 388))(*(this + 3)) == 11
-      || (*(int (__thiscall **)(_DWORD))(*(_DWORD *)*(this + 3) + 388))(*(this + 3)) == 25 )
+    if ( (*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->q00C + 388))(this->q00C) == 8 /*0x75c33c*/
+      || (*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->q00C + 388))(this->q00C) == 9
+      || (*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->q00C + 388))(this->q00C) == 7
+      || (*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->q00C + 388))(this->q00C) == 11
+      || (*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->q00C + 388))(this->q00C) == 25 )
     {
-      v7 = (BuildingTypeClass *)*(this + 3); /*0x75c342*/
+      v7 = (BuildingTypeClass *)this->q00C; /*0x75c342*/
       v8 = *(_DWORD *)&v7->DebrisTypes[656]; /*0x75c345*/
       if ( v8 ) /*0x75c34d*/
       {
@@ -1192,7 +1192,7 @@ char __thiscall Voxel::DrawHelper(_DWORD *this, IUnknown *aP1)
             aP1a = 1; /*0x75c39e*/
         }
       }
-      v11 = *(_DWORD *)(*(this + 3) + 1444); /*0x75c3a6*/
+      v11 = *(_DWORD *)(this->q00C + 1444); /*0x75c3a6*/
       *(_DWORD *)v32 = v11; /*0x75c3ae*/
       if ( v11 ) /*0x75c3b2*/
       {
@@ -1205,7 +1205,7 @@ char __thiscall Voxel::DrawHelper(_DWORD *this, IUnknown *aP1)
             aP1a = 1; /*0x75c3fb*/
         }
       }
-      v15 = (BuildingTypeClass *)*(this + 3); /*0x75c400*/
+      v15 = (BuildingTypeClass *)this->q00C; /*0x75c400*/
       v16 = *(_DWORD **)&v15->DebrisTypes[656]; /*0x75c403*/
       if ( v16 ) /*0x75c40b*/
       {
@@ -1217,12 +1217,12 @@ char __thiscall Voxel::DrawHelper(_DWORD *this, IUnknown *aP1)
         }
       }
     }
-    v18 = *(IUnknown **)(*(this + 3) + 732); /*0x75c439*/
+    v18 = *(IUnknown **)(this->q00C + 732); /*0x75c439*/
     if ( v18 )
     {
       if ( *(_DWORD *)&v18->__pad_2B8[32] )
       {
-        v19 = (_DWORD *)*(this + 3); /*0x75c44b*/
+        v19 = (_DWORD *)this->q00C; /*0x75c44b*/
         a1 = 0; /*0x75c44f*/
         Strength = 0; /*0x75c453*/
         v20 = Coord::To_Cell(&MEMORY[0x87F7E8], aP1); /*0x75c463*/
@@ -1230,13 +1230,13 @@ char __thiscall Voxel::DrawHelper(_DWORD *this, IUnknown *aP1)
         {
           v21 = v19 ? ((*(int (__thiscall **)(_DWORD *))(*v19 + 44))(v19) == 15 ? (ObjectClass *)v19 : 0) : 0;
           v22 = (IUnknown *)Coord::To_Cell(&MEMORY[0x87F7E8], aP1); /*0x75c49a*/
-          if ( BuildingClass::CheckBridge(*(_DWORD **)(*(_DWORD *)(*(this + 3) + 732) + 728), v21, v22) ) /*0x75c4b0*/
+          if ( BuildingClass::CheckBridge(*(_DWORD **)(*(_DWORD *)(this->q00C + 732) + 728), v21, v22) ) /*0x75c4b0*/
             aP1a = 1; /*0x75c4b9*/
         }
       }
     }
     if ( (*((_DWORD *)Coord::To_Cell(&MEMORY[0x87F7E8], (IUnknown *)v38) + 80) & 0x100) == 0 /*0x75c513*/
-      || (v23 = (int *)(*(this + 3) + 156),
+      || (v23 = (int *)(this->q00C + 156),
           a1 = *v23,
           Strength = v23[1],
           v24 = v23[2],
@@ -1248,19 +1248,19 @@ char __thiscall Voxel::DrawHelper(_DWORD *this, IUnknown *aP1)
     eax39 = Coord::To_Cell(&MEMORY[0x87F7E8], (IUnknown *)v38); /*0x75c53a*/
     v26 = ObjectPlacement::CalcPosition(eax39, &a1, (IUnknown *)v38, aP1a, v33, 0); /*0x75c541*/
     v3 = (IUnknown *)(this + 10); /*0x75c548*/
-    *(this + 10) = *v26; /*0x75c54d*/
-    *(this + 11) = v26[1]; /*0x75c552*/
-    v31 = (AbstractClass *)*(this + 3); /*0x75c55b*/
-    *(this + 12) = v26[2]; /*0x75c562*/
+    this->q028 = *v26; /*0x75c54d*/
+    this->q02C = v26[1]; /*0x75c552*/
+    v31 = (AbstractClass *)this->q00C; /*0x75c55b*/
+    this->q030 = v26[2]; /*0x75c562*/
     eax39b = Coord::To_Cell(&MEMORY[0x87F7E8], (IUnknown *)(this + 10)); /*0x75c565*/
     if ( !CrateClass::ProcessPickup(eax39b, v31) ) /*0x75c56c*/
     {
-      v25 = (BuildingTypeClass *)*(this + 3); /*0x75c575*/
+      v25 = (BuildingTypeClass *)this->q00C; /*0x75c575*/
       if ( !v25->Name[29] ) /*0x75c578*/
       {
         v3->field_0 = g_AsyncMovieState.field_0; /*0x75c58a*/
-        *(this + 11) = g_AsyncMovieState.field_4; /*0x75c592*/
-        *(this + 12) = g_AsyncMovieState.field_8; /*0x75c59b*/
+        this->q02C = g_AsyncMovieState.field_4; /*0x75c592*/
+        this->q030 = g_AsyncMovieState.field_8; /*0x75c59b*/
         if ( !v25->Name[44] ) /*0x75c59e*/
           return 0; /*0x75c5b0*/
       }
@@ -1270,7 +1270,7 @@ char __thiscall Voxel::DrawHelper(_DWORD *this, IUnknown *aP1)
     && v3->field_4 == g_AsyncMovieState.field_4
     && v3->field_8 == g_AsyncMovieState.field_8 )
   {
-    v27 = (BuildingTypeClass *)*(this + 3); /*0x75c602*/
+    v27 = (BuildingTypeClass *)this->q00C; /*0x75c602*/
     a1 = v27->Armor[0]; /*0x75c611*/
     Strength = v27->Strength; /*0x75c618*/
     v34 = (IUnknown *)v27->Image; /*0x75c61f*/
@@ -1279,7 +1279,7 @@ char __thiscall Voxel::DrawHelper(_DWORD *this, IUnknown *aP1)
   }
   else
   {
-    (*(void (__thiscall **)(_DWORD, IUnknown *))(*(_DWORD *)*(this + 3) + 240))(*(this + 3), v3); /*0x75c5f1*/
+    (*(void (__thiscall **)(_DWORD, IUnknown *))(*(_DWORD *)this->q00C + 240))(this->q00C, v3); /*0x75c5f1*/
     return 1; /*0x75c5f9*/
   }
 }
@@ -1301,13 +1301,13 @@ int __thiscall Voxel::BlendShadowColor(_DWORD *this, int a2, WaveClass *aP2, int
   int v10; // esi
   int result; // eax
 
-  v5 = *(__int16 *)&g_AsyncMovieState.__pad_524[2 * *(this + 76) /*0x75ee44*/
+  v5 = *(__int16 *)&g_AsyncMovieState.__pad_524[2 * this->q130 /*0x75ee44*/
                                               + 328
                                               + 2
                                               * *(unsigned __int16 *)&g_AsyncMovieState.__pad_71C[600 * arg8
                                                                                                 + 920
                                                                                                 + 2
-                                                                                                * abs32(a2 - *(this + 51) - (_DWORD)aP2)]];
+                                                                                                * abs32(a2 - this->q0CC - (_DWORD)aP2)]];
   LODWORD(v5) = (HIDWORD(v5) ^ v5) - HIDWORD(v5); /*0x75ee47*/
   v6 = *(_DWORD *)&g_AsyncMovieState.__pad_71C[4 * v5 + 836]; /*0x75ee50*/
   WORD2(v5) = a4[*(this + (_DWORD)v5 + 130)]; /*0x75ee57*/
@@ -1350,7 +1350,7 @@ int __thiscall sub_75F140(_DWORD *this)
   *(this + 108) = 1 - v2; /*0x75f164*/
   *(this + 110) = v2 + 1; /*0x75f16a*/
   *(this + 111) = v2; /*0x75f176*/
-  *(this + 112) = v2 - 1; /*0x75f17c*/
+  this->q01C = v2 - 1; /*0x75f17c*/
   v3 = *(this + 115); /*0x75f182*/
   v4 = -1 - v2; /*0x75f188*/
   *(this + 130) = 0; /*0x75f18c*/
@@ -1364,9 +1364,9 @@ int __thiscall sub_75F140(_DWORD *this)
   *(this + 134) = *v5; /*0x75f1cb*/
   *(this + 135) = *v5; /*0x75f1d3*/
   *(this + 136) = *v5; /*0x75f1db*/
-  *(this + 137) = 2 * *v5; /*0x75f1e5*/
-  *(this + 138) = 2 * *v5; /*0x75f1ef*/
-  *(this + 139) = 2 * *v5; /*0x75f1f9*/
+  this->q089 = 2 * *v5; /*0x75f1e5*/
+  this->q08A = 2 * *v5; /*0x75f1ef*/
+  this->q08B = 2 * *v5; /*0x75f1f9*/
   *(this + 140) = 3 * *v5; /*0x75f204*/
   *(this + 141) = 3 * *v5; /*0x75f20f*/
   result = 3 * *v5; /*0x75f217*/
@@ -1805,13 +1805,13 @@ int __thiscall Voxel::BlendColor(_DWORD *this, int a2, WaveClass *aP2, int arg8,
   int v10; // eax
   int result; // eax
 
-  v5 = *(__int16 *)&g_AsyncMovieState.__pad_220[2 * *(this + 76) /*0x7601d9*/
+  v5 = *(__int16 *)&g_AsyncMovieState.__pad_220[2 * this->q130 /*0x7601d9*/
                                               + 96
                                               + 2
                                               * *(unsigned __int16 *)&g_AsyncMovieState.__pad_71C[600 * arg8
                                                                                                 + 920
                                                                                                 + 2
-                                                                                                * abs32(a2 - *(this + 51) - (_DWORD)aP2)]];
+                                                                                                * abs32(a2 - this->q0CC - (_DWORD)aP2)]];
   v6 = (HIDWORD(v5) ^ v5) - HIDWORD(v5); /*0x7601dc*/
   if ( v6 >= 9 ) /*0x7601e1*/
     v6 = 9; /*0x7601e3*/
@@ -2389,7 +2389,7 @@ int __thiscall Voxel_Section_Project(_DWORD *this, int *a2, int a3)
     MEMORY[0xB45E64] = 0; /*0x7619ba*/
     atexit(nullsub_46); /*0x7619c0*/
   }
-  v4 = *(this + 44); /*0x7619cb*/
+  v4 = this->q02C; /*0x7619cb*/
   v5 = flt_7F6BB4[v4]; /*0x7619d6*/
   v58 = *a2; /*0x7619dd*/
   v6 = a2[2]; /*0x7619f6*/
@@ -2421,7 +2421,7 @@ int __thiscall Voxel_Section_Project(_DWORD *this, int *a2, int a3)
   v12 = v61; /*0x761b41*/
   v13 = v62; /*0x761b45*/
   *(this + 82) = 6; /*0x761b55*/
-  *(this + 48) = v12; /*0x761b60*/
+  this->q030 = v12; /*0x761b60*/
   v14 = v63; /*0x761b62*/
   *(this + 49) = v13; /*0x761b66*/
   *(this + 83) = this + 84; /*0x761b6f*/
@@ -2433,9 +2433,9 @@ int __thiscall Voxel_Section_Project(_DWORD *this, int *a2, int a3)
   *(_DWORD *)(v15 + 8) = *(this + 53); /*0x761bab*/
   *(_DWORD *)(v15 + 12) = *(this + 54); /*0x761bb1*/
   v17 = *(this + 83); /*0x761bb4*/
-  *(_DWORD *)(v17 + 32) = *(this + 51); /*0x761bbc*/
-  *(_DWORD *)(v17 + 36) = *(this + 52); /*0x761bc4*/
-  v18 = 48 * *(this + 44); /*0x761bd2*/
+  *(_DWORD *)(v17 + 32) = this->q0CC; /*0x761bbc*/
+  *(_DWORD *)(v17 + 36) = this->q0D0; /*0x761bc4*/
+  v18 = 48 * this->q02C; /*0x761bd2*/
   v77 = v16 + *(float *)&MEMORY[0xB45DA8][v18 / 4u]; /*0x761bdb*/
   v78 = *(float *)(v18 + 11820460); /*0x761be9*/
   v19 = *(float *)(v18 + 11820464); /*0x761bed*/
@@ -2504,7 +2504,7 @@ int __thiscall Voxel_Section_Project(_DWORD *this, int *a2, int a3)
   v50 = Math::RoundToInt(v31); /*0x761eb5*/
   v33 = Math::RoundToInt(v31); /*0x761eb9*/
   *(this + 63) = v32; /*0x761ed0*/
-  *(this + 64) = v50; /*0x761ed2*/
+  this->q010 = v50; /*0x761ed2*/
   *(this + 65) = v33; /*0x761ed5*/
   v34 = Math::RoundToInt(v31); /*0x761ee5*/
   v51 = Math::RoundToInt(v31); /*0x761ef0*/
@@ -2691,7 +2691,7 @@ int __thiscall Voxel::LightRender(_DWORD *this, AbstractClass **a2, int a3)
     *(_DWORD *)&g_AsyncMovieState.__pad_164[16] = 0; /*0x7623ea*/
     atexit(nullsub_47); /*0x7623f0*/
   }
-  v4 = *(this + 44); /*0x7623fb*/
+  v4 = this->q02C; /*0x7623fb*/
   v5 = flt_7F6BB4[v4]; /*0x762406*/
   a1 = *a2; /*0x76240d*/
   v55 = *(AbstractClass **)a3; /*0x76241b*/
@@ -2733,7 +2733,7 @@ int __thiscall Voxel::LightRender(_DWORD *this, AbstractClass **a2, int a3)
   v10 = var94; /*0x7625d5*/
   v11 = v59; /*0x7625d9*/
   *(this + 82) = 4; /*0x7625e3*/
-  *(this + 48) = v10; /*0x7625ed*/
+  this->q030 = v10; /*0x7625ed*/
   v15 = v61; /*0x7625ef*/
   *(this + 49) = v11; /*0x7625f3*/
   *(this + 83) = this + 96; /*0x7625fc*/
@@ -2742,7 +2742,7 @@ int __thiscall Voxel::LightRender(_DWORD *this, AbstractClass **a2, int a3)
   Coord::To_Screen(*(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[9432], &var94, (IUnknown *)(this + 53)); /*0x76262e*/
   LODWORD(v53) = Math::RoundToInt(*(float *)&v62); /*0x76263c*/
   v16 = (double)SLODWORD(v53); /*0x762646*/
-  v17 = 48 * *(this + 44); /*0x76264d*/
+  v17 = 48 * this->q02C; /*0x76264d*/
   v77 = v16 + *(float *)&g_AsyncMovieState.__pad_A8[v17 + 16]; /*0x762658*/
   v78 = *(AbstractClass **)(v17 + 11820196); /*0x76266c*/
   v18 = *(float *)(v17 + 11820200); /*0x762673*/
@@ -3142,18 +3142,18 @@ char __thiscall sub_763330(_DWORD *this, _DWORD *a2)
   int v6; // eax
   int v7; // edx
 
-  v3 = *(this + 2); /*0x763333*/
-  if ( *(this + 4) >= v3 ) /*0x76333b*/
+  v3 = this->q008; /*0x763333*/
+  if ( this->q010 >= v3 ) /*0x76333b*/
   {
-    if ( !*((_BYTE *)this + 13) && v3 ) /*0x763346*/
+    if ( !this->q0D0 && v3 ) /*0x763346*/
       return 0; /*0x763346*/
-    v4 = *(this + 5); /*0x763348*/
+    v4 = this->q014; /*0x763348*/
     if ( v4 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*this + 8))(this, v3 + v4, 0) ) /*0x763358*/
       return 0; /*0x76335f*/
   }
-  v6 = *(this + 4); /*0x763365*/
-  v7 = *(this + 1); /*0x763368*/
-  *(this + 4) = v6 + 1; /*0x76336e*/
+  v6 = this->q010; /*0x763365*/
+  v7 = this->q004; /*0x763368*/
+  this->q010 = v6 + 1; /*0x76336e*/
   *(_DWORD *)(v7 + 4 * v6) = *a2; /*0x763378*/
   return 1; /*0x763361*/
 }

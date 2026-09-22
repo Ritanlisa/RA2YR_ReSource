@@ -44,12 +44,12 @@ char __thiscall WarheadTypeClass::_vt02(void *this, int a2, _DWORD *a3)
 
   if ( a2 ) /*0x52530c*/
   {
-    *((_BYTE *)this + 12) = 0; /*0x525312*/
+    this->vtable4 = 0; /*0x525312*/
     if ( a3 ) /*0x525318*/
       v4 = a3; /*0x52532e*/
     else
       v4 = __2_YAPAXI_Z(4 * a2); /*0x52532a*/
-    *((_BYTE *)this + 12) = 1; /*0x525332*/
+    this->vtable4 = 1; /*0x525332*/
     if ( !v4 ) /*0x525336*/
       return 0; /*0x5253aa*/
     if ( this->WarheadTypeClass_field_0x4 ) /*0x525338*/
@@ -59,7 +59,7 @@ char __thiscall WarheadTypeClass::_vt02(void *this, int a2, _DWORD *a3)
         v5 = a2; /*0x525346*/
       for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->WarheadTypeClass_field_0x4 + 4 * i - 4) ) /*0x52534c*/
         ++i; /*0x525351*/
-      if ( *((_BYTE *)this + 13) ) /*0x52535e*/
+      if ( this->CombatLightSize ) /*0x52535e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x525369*/
         this->WarheadTypeClass_field_0x4 = 0; /*0x525371*/
@@ -67,11 +67,11 @@ char __thiscall WarheadTypeClass::_vt02(void *this, int a2, _DWORD *a3)
     }
     this->WarheadTypeClass_field_0x4 = v4; /*0x52537a*/
     this->WarheadTypeClass_field_0x8 = a2; /*0x525382*/
-    *((_BYTE *)this + 13) = a3 == 0; /*0x525385*/
+    this->CombatLightSize = a3 == 0; /*0x525385*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x52538e*/
+    (*(void (__thiscall **)(void *))(this->vtable4)(this); /*0x52538e*/
   }
   v7 = this->WarheadTypeClass_field_0x8; /*0x525391*/
   if ( v7 < this->WarheadTypeClass_field_0x10 ) /*0x525399*/
@@ -114,7 +114,7 @@ char *__thiscall WarheadTypeClass::parseVerses(INISection_INIClass *this)
   this->field_2C = 0; /*0x52abc1*/
   this->DelayKillAtMax = 0; /*0x52abc4*/
   this->CombatLightSize = 0; /*0x52abc7*/
-  *((_BYTE *)this + 56) = 0; /*0x52abca*/
+  this->Particle = 0; /*0x52abca*/
   this->Wall = 0; /*0x52abcd*/
   if ( this->Tiberium ) /*0x52abd0*/
   {
@@ -131,7 +131,7 @@ char *__thiscall WarheadTypeClass::parseVerses(INISection_INIClass *this)
   this->field_2C = 0; /*0x52ac08*/
   this->DelayKillAtMax = 0; /*0x52ac0b*/
   this->CombatLightSize = 0; /*0x52ac0e*/
-  *((_BYTE *)this + 56) = 0; /*0x52ac11*/
+  this->Particle = 0; /*0x52ac11*/
   this->Wall = 0; /*0x52ac14*/
   *(_DWORD *)this->__pad_10 = &vt_GenericList; /*0x52ac1a*/
   while ( 1 ) /*0x52ac21*/
@@ -224,7 +224,7 @@ GenericList *__thiscall WarheadTypeClass::ReadParticleSystems(_DWORD *this, char
   *this = &vt_GenericList; /*0x52afc6*/
   while ( 1 ) /*0x52afcc*/
   {
-    v3 = *(this + 2); /*0x52afcc*/
+    v3 = this->vtable3; /*0x52afcc*/
     if ( !v3 ) /*0x52afd1*/
       break; /*0x52afd1*/
     if ( !*(_DWORD *)(v3 + 4) ) /*0x52afd3*/
@@ -241,35 +241,35 @@ GenericList *__thiscall WarheadTypeClass::ReadParticleSystems(_DWORD *this, char
       *(_DWORD *)(v3 + 4) = 0; /*0x52affd*/
     }
   }
-  *(this + 4) = &vt_GenericNode; /*0x52b007*/
+  this->q010 = &vt_GenericNode; /*0x52b007*/
   if ( this != (_DWORD *)-16 ) /*0x52b00d*/
   {
-    v6 = *(this + 5); /*0x52b00f*/
+    v6 = this->AnimList; /*0x52b00f*/
     if ( v6 ) /*0x52b014*/
     {
-      v7 = *(this + 6); /*0x52b016*/
+      v7 = this->InfDeath; /*0x52b016*/
       if ( v7 ) /*0x52b01b*/
       {
         *(_DWORD *)(v7 + 4) = v6; /*0x52b01d*/
-        *(_DWORD *)(*(this + 5) + 8) = *(this + 6); /*0x52b026*/
-        *(this + 6) = 0; /*0x52b029*/
-        *(this + 5) = 0; /*0x52b02c*/
+        *(_DWORD *)(this->AnimList + 8) = this->InfDeath; /*0x52b026*/
+        this->InfDeath = 0; /*0x52b029*/
+        this->AnimList = 0; /*0x52b02c*/
       }
     }
   }
-  *(this + 1) = &vt_GenericNode; /*0x52b034*/
+  this->vtable2 = &vt_GenericNode; /*0x52b034*/
   if ( this != (_DWORD *)-4 ) /*0x52b03a*/
   {
-    v8 = *(this + 2); /*0x52b03c*/
+    v8 = this->vtable3; /*0x52b03c*/
     if ( v8 ) /*0x52b041*/
     {
-      v9 = *(this + 3); /*0x52b043*/
+      v9 = this->vtable4; /*0x52b043*/
       if ( v9 ) /*0x52b048*/
       {
         *(_DWORD *)(v9 + 4) = v8; /*0x52b04a*/
-        *(_DWORD *)(*(this + 2) + 8) = *(this + 3); /*0x52b053*/
-        *(this + 3) = 0; /*0x52b056*/
-        *(this + 2) = 0; /*0x52b059*/
+        *(_DWORD *)(this->vtable3 + 8) = this->vtable4; /*0x52b053*/
+        this->vtable4 = 0; /*0x52b056*/
+        this->vtable3 = 0; /*0x52b059*/
       }
     }
   }
@@ -678,11 +678,11 @@ int __thiscall WarheadTypeClass::_vt10(_DWORD *this, int a2, int a3)
   int v7; // ecx
 
   v3 = a2; /*0x75e440*/
-  if ( a2 == *(this + 80) ) /*0x75e44c*/
-    *(this + 80) = 0; /*0x75e44e*/
+  if ( a2 == this->q140 ) /*0x75e44c*/
+    this->q140 = 0; /*0x75e44e*/
   v4 = this + 65; /*0x75e459*/
   a2 = v3; /*0x75e463*/
-  result = (*(int (__thiscall **)(_DWORD *, int *))(*(this + 65) + 16))(this + 65, &a2); /*0x75e46c*/
+  result = (*(int (__thiscall **)(_DWORD *, int *))(this->q104 + 16))(this + 65, &a2); /*0x75e46c*/
   if ( result != -1 ) /*0x75e472*/
   {
     v6 = v4[4]; /*0x75e474*/
@@ -711,9 +711,9 @@ WarheadTypeClass *__thiscall WarheadTypeClass::Destructor(void **this, char a2)
   void **v9; // [esp+4h] [ebp-4h] BYREF
 
   *this = &WarheadTypeClass::`vftable'; /*0x75e516*/
-  *(this + 1) = &WarheadTypeClass::`vftable'; /*0x75e51c*/
-  *(this + 2) = &WarheadTypeClass::`vftable'; /*0x75e523*/
-  *(this + 3) = &vt_WarheadTypeClass; /*0x75e52a*/
+  this->vtable2 = &WarheadTypeClass::`vftable'; /*0x75e51c*/
+  this->vtable3 = &WarheadTypeClass::`vftable'; /*0x75e523*/
+  this->vtable4 = &vt_WarheadTypeClass; /*0x75e52a*/
   AbstractClass::AnnounceExpiredPointer(this, 1); /*0x75e531*/
   v9 = this; /*0x75e546*/
   v3 = ((int (__thiscall *)(WarheadTypeClass **, void ***))MEMORY[0x8874C0]->field_10)(&MEMORY[0x8874C0], &v9); /*0x75e54a*/
@@ -737,33 +737,33 @@ WarheadTypeClass *__thiscall WarheadTypeClass::Destructor(void **this, char a2)
     }
     while ( v4 < MEMORY[0xB0F680] ); /*0x75e5c6*/
   }
-  v5 = *(this + 107); /*0x75e5c8*/
+  v5 = this->q1AC; /*0x75e5c8*/
   *(this + 106) = &vt_VectorClass_int; /*0x75e5d1*/
-  if ( v5 && *((_BYTE *)this + 437) ) /*0x75e5df*/
+  if ( v5 && this->q1B5 ) /*0x75e5df*/
   {
     __3_YAXPAX_Z(v5); /*0x75e5e8*/
-    *(this + 107) = 0; /*0x75e5f0*/
+    this->q1AC = 0; /*0x75e5f0*/
   }
-  *((_BYTE *)this + 437) = 0; /*0x75e5f6*/
-  *(this + 108) = 0; /*0x75e5fc*/
-  v6 = *(this + 100); /*0x75e602*/
-  *(this + 99) = &vt_VectorClass_VoxelAnimTypeClass_const; /*0x75e608*/
-  if ( v6 && *((_BYTE *)this + 409) ) /*0x75e616*/
+  this->q1B5 = 0; /*0x75e5f6*/
+  this->q1B0 = 0; /*0x75e5fc*/
+  v6 = this->Name; /*0x75e602*/
+  this->DebrisTypes = &vt_VectorClass_VoxelAnimTypeClass_const; /*0x75e608*/
+  if ( v6 && this->q199 ) /*0x75e616*/
   {
     __3_YAXPAX_Z(v6); /*0x75e61f*/
-    *(this + 100) = 0; /*0x75e627*/
+    this->Name = 0; /*0x75e627*/
   }
-  *((_BYTE *)this + 409) = 0; /*0x75e62d*/
-  *(this + 101) = 0; /*0x75e633*/
-  v7 = *(this + 66); /*0x75e639*/
-  *(this + 65) = &vt_VectorClass_AnimTypeClass_const; /*0x75e63f*/
-  if ( v7 && *((_BYTE *)this + 273) ) /*0x75e64d*/
+  this->q199 = 0; /*0x75e62d*/
+  this->MaxDebris = 0; /*0x75e633*/
+  v7 = this->q042; /*0x75e639*/
+  this->q104 = &vt_VectorClass_AnimTypeClass_const; /*0x75e63f*/
+  if ( v7 && this->q111 ) /*0x75e64d*/
   {
     __3_YAXPAX_Z(v7); /*0x75e656*/
-    *(this + 66) = 0; /*0x75e65e*/
+    this->q042 = 0; /*0x75e65e*/
   }
-  *((_BYTE *)this + 273) = 0; /*0x75e666*/
-  *(this + 67) = 0; /*0x75e66c*/
+  this->q111 = 0; /*0x75e666*/
+  this->q043 = 0; /*0x75e66c*/
   AbstractTypeClass::Dtor(this); /*0x75e672*/
   if ( (a2 & 1) != 0 ) /*0x75e67e*/
     __3_YAXPAX_Z(this); /*0x75e681*/

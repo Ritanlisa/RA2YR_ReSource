@@ -9,7 +9,7 @@ BOOL Surface::IsLocked()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 BOOL __thiscall Surface_IsLocked(_DWORD *this)
 {
-  return *(this + 3) != 0; /*0x41158a*/
+  return this->q00C != 0; /*0x41158a*/
 }
 }
 
@@ -75,7 +75,7 @@ _DWORD *__thiscall Surface::CopyRect(_DWORD *this, ObjectClass *aP1)
   v39 = *(_DWORD *)&aP1->__pad_0[12]; /*0x5d1ff7*/
   if ( v39 <= 0 ) /*0x5d1ffb*/
     return result->__pad_0; /*0x5d1ffb*/
-  v5 = *(this + 1); /*0x5d2001*/
+  v5 = this->Width; /*0x5d2001*/
   v34 = 0; /*0x5d2004*/
   v41 = v5; /*0x5d200a*/
   if ( v5 <= 0 ) /*0x5d200e*/
@@ -97,7 +97,7 @@ LABEL_18:
         v43 = *(_DWORD *)aP1->__pad_0 + v37; /*0x5d219b*/
         v38 = *(ObjectClass **)&aP1->__pad_0[4]; /*0x5d21a3*/
         v40 = &v38->__pad_0[v39]; /*0x5d21a9*/
-        v24 = (int *)*(this + 3); /*0x5d21b1*/
+        v24 = (int *)this->q00C; /*0x5d21b1*/
         while ( 1 ) /*0x5d21c0*/
         {
           v25 = (ObjectClass *)v24[1]; /*0x5d21c0*/
@@ -210,13 +210,13 @@ LABEL_16:
   else
     v47 = (ObjectClass *)((char *)aP1b - (char *)v13); /*0x5d2102*/
   v17 = v34; /*0x5d2116*/
-  *(this + 1) = v41 - 1; /*0x5d211d*/
+  this->Width = v41 - 1; /*0x5d211d*/
   if ( v34 < v41 - 1 ) /*0x5d2120*/
   {
     v18 = 16 * v34; /*0x5d2124*/
     do /*0x5d214f*/
     {
-      v19 = *(this + 3); /*0x5d2127*/
+      v19 = this->q00C; /*0x5d2127*/
       v20 = (_DWORD *)(v18 + v19 + 16); /*0x5d212a*/
       v21 = (_DWORD *)(v18 + v19); /*0x5d212e*/
       ++v17; /*0x5d2130*/
@@ -226,7 +226,7 @@ LABEL_16:
       v21[2] = v20[2]; /*0x5d2141*/
       v21[3] = v20[3]; /*0x5d2147*/
     }
-    while ( v17 < *(this + 1) ); /*0x5d214f*/
+    while ( v17 < this->Width ); /*0x5d214f*/
   }
   return Surface::CopyRect(this, (ObjectClass *)&v44); /*0x5d208c*/
 }

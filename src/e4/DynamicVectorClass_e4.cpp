@@ -57,7 +57,7 @@ char __thiscall DynamicVectorClass_AnimType::_vt02(void *this, int a2, _DWORD *a
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x5251b2*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x5251b2*/
     return 1; /*0x5251b8*/
   }
 }
@@ -163,7 +163,7 @@ char __thiscall DynamicVectorClass_SubzoneConn::_vt02(void *this, int a2, char *
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x589268*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x589268*/
   }
   v15 = this->Capacity; /*0x58926b*/
   if ( v15 < this->Count ) /*0x589273*/
@@ -180,7 +180,7 @@ BOOL DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::HashEntryCompare
 // [IDA decompile] original pseudocode - translation pending (final goal)
 BOOL __thiscall sub_517590(_BYTE *this, _BYTE *a2)
 {
-  return *this != *a2 || *(this + 1) != a2[1] || *(this + 2) != a2[2]; /*0x5175bd*/
+  return *this != *a2 || this->Items != a2[1] || this->Capacity != a2[2]; /*0x5175bd*/
 }
 }
 } // namespace gamemd
@@ -288,7 +288,7 @@ char __thiscall DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::sub_6
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x628576*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x628576*/
   }
   v15 = this->Capacity; /*0x628579*/
   if ( v15 < this->Count ) /*0x628581*/
@@ -403,7 +403,7 @@ char __thiscall DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Remov
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x628cdb*/
+    (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x628cdb*/
   }
   v13 = this->Capacity; /*0x628cde*/
   if ( v13 < this->Count ) /*0x628ce6*/

@@ -11,17 +11,17 @@ bool __thiscall sub_487E00(_DWORD *this)
   _DWORD *v2; // esi
 
   if ( !MEMORY[0xA8E9A0] ) /*0x487e0b*/
-    return *(this + 64) != 0; /*0x487e0b*/
-  v2 = (_DWORD *)*(this + 57); /*0x487e0d*/
+    return this->MovementAI_field_10 != 0; /*0x487e0b*/
+  v2 = (_DWORD *)this->q039; /*0x487e0d*/
   if ( !v2 ) /*0x487e15*/
-    return *(this + 64) != 0; /*0x487e15*/
+    return this->MovementAI_field_10 != 0; /*0x487e15*/
   while ( (*(int (__thiscall **)(_DWORD *))(*v2 + 44))(v2) != 6 ) /*0x487e21*/
   {
     v2 = (_DWORD *)v2[12]; /*0x487e23*/
     if ( !v2 ) /*0x487e28*/
-      return *(this + 64) != 0; /*0x487e28*/
+      return this->MovementAI_field_10 != 0; /*0x487e28*/
   }
-  return *(this + 64) != 1 && *(this + 64) != 0; /*0x487e48*/
+  return this->MovementAI_field_10 != 1 && this->MovementAI_field_10 != 0; /*0x487e48*/
 }
 }
 
@@ -62,18 +62,18 @@ char __thiscall sub_4A5360(_BYTE *this)
   char result; // al
 
   result = 0; /*0x4a5363*/
-  if ( *(this + 24) ) /*0x4a5360*/
+  if ( this->MovementAI_field_18 ) /*0x4a5360*/
   {
     if ( *(this + 25) ) /*0x4a5369*/
     {
-      *(this + 24) = 0; /*0x4a536e*/
+      this->MovementAI_field_18 = 0; /*0x4a536e*/
       *(this + 25) = 1; /*0x4a5371*/
     }
-    if ( *(this + 24) ) /*0x4a5375*/
+    if ( this->MovementAI_field_18 ) /*0x4a5375*/
     {
       if ( !*(this + 25) ) /*0x4a537a*/
       {
-        *(this + 24) = 0; /*0x4a537f*/
+        this->MovementAI_field_18 = 0; /*0x4a537f*/
         *(this + 25) = 0; /*0x4a5382*/
       }
     }

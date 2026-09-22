@@ -374,7 +374,7 @@ _DWORD *__thiscall BuildingPlacement_SelectCells(int *this, int a2)
   double v49; // [esp+40h] [ebp-8h]
   double v50; // [esp+40h] [ebp-8h]
 
-  v2 = *(this + 8); /*0x594f51*/
+  v2 = this->q008; /*0x594f51*/
   v49 = -1.0; /*0x594f5f*/
   v41 = -1; /*0x594f6f*/
   v3 = Math::RoundToInt(((double)dword_ABE030 * 0.01 * 12.0 / (double)dword_ABE028 + 2.0) * (double)v2); /*0x594f8d*/

@@ -2569,7 +2569,7 @@ _DWORD *__thiscall WalkLocomotion::TransformCoords(_DWORD *this, ObjectClass *aP
   int v9; // ecx
 
   v4 = *(_DWORD *)aP3->__pad_0; /*0x6a3dbd*/
-  v5 = dword_7F2A48[3 * *(this + 22)]; /*0x6a3dc1*/
+  v5 = dword_7F2A48[3 * this->q058]; /*0x6a3dc1*/
   v6 = aP2->field_0; /*0x6a3dcf*/
   v7 = aP2->field_4; /*0x6a3dd1*/
   if ( (v5 & 1) != 0 ) /*0x6a3dd4*/
@@ -2589,8 +2589,8 @@ _DWORD *__thiscall WalkLocomotion::TransformCoords(_DWORD *this, ObjectClass *aP
     v4 = (unsigned __int8)(0x80 - v4); /*0x6a3e0d*/
   }
   *(_DWORD *)aP3->__pad_0 = v4; /*0x6a3e0f*/
-  v8 = *(this + 16); /*0x6a3e12*/
-  v9 = *(this + 17); /*0x6a3e15*/
+  v8 = this->q040; /*0x6a3e12*/
+  v9 = this->q044; /*0x6a3e15*/
   *(_DWORD *)aP1->__pad_0 = v6 + v8; /*0x6a3e22*/
   *(_DWORD *)&aP1->__pad_0[4] = v7 + v9; /*0x6a3e25*/
   return aP1->__pad_0; /*0x6a3e20*/

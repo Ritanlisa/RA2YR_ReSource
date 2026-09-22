@@ -185,9 +185,9 @@ _DWORD *__thiscall sub_764760(_DWORD *this, int a2, _DWORD *a3)
   _DWORD *v9; // eax
   int v10; // ecx
 
-  *(this + 1) = 0; /*0x76476d*/
-  *(this + 2) = a2; /*0x764770*/
-  *((_BYTE *)this + 12) = 1; /*0x764773*/
+  this->vtable2 = 0; /*0x76476d*/
+  this->vtable3 = a2; /*0x764770*/
+  this->vtable4 = 1; /*0x764773*/
   *((_BYTE *)this + 13) = 0; /*0x764777*/
   *this = &vt_VectorClass_WaypointClass; /*0x76477a*/
   if ( !a2 ) /*0x764780*/
@@ -212,7 +212,7 @@ _DWORD *__thiscall sub_764760(_DWORD *this, int a2, _DWORD *a3)
           --v10; /*0x7647e3*/
         }
         while ( v10 ); /*0x7647e4*/
-        *(this + 1) = v8; /*0x7647e6*/
+        this->vtable2 = v8; /*0x7647e6*/
         *((_BYTE *)this + 13) = 1; /*0x7647e9*/
         return this; /*0x7647f2*/
       }
@@ -221,7 +221,7 @@ _DWORD *__thiscall sub_764760(_DWORD *this, int a2, _DWORD *a3)
     {
       v8 = 0; /*0x7647f5*/
     }
-    *(this + 1) = v8; /*0x7647f7*/
+    this->vtable2 = v8; /*0x7647f7*/
     *((_BYTE *)this + 13) = 1; /*0x7647fa*/
     return this; /*0x7647fe*/
   }
@@ -240,7 +240,7 @@ _DWORD *__thiscall sub_764760(_DWORD *this, int a2, _DWORD *a3)
     }
     while ( v5 ); /*0x7647a5*/
   }
-  *(this + 1) = a3 + 1; /*0x7647a7*/
+  this->vtable2 = a3 + 1; /*0x7647a7*/
   return this; /*0x7647ac*/
 }
 }

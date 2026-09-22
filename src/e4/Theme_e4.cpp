@@ -70,15 +70,15 @@ char __thiscall Theme::Stop(_DWORD *this, ObjectClass *aP1)
       {
         if ( !(_BYTE)aP1 ) /*0x720ed9*/
           goto LABEL_14; /*0x720ed9*/
-        v4 = *(this + 11); /*0x720edb*/
+        v4 = this->audioSample; /*0x720edb*/
         if ( !v4 ) /*0x720ee0*/
           goto LABEL_14; /*0x720ee0*/
         if ( *((_BYTE *)this + 17) && !AudioSample::IsBuffering(v4) ) /*0x720ee9*/
-          Audio::Release((_DWORD *)*(this + 11)); /*0x720ef5*/
-        if ( Audio::IsSoundPlaying((_DWORD *)*(this + 11)) != 0 ) /*0x720f04*/
+          Audio::Release((_DWORD *)this->audioSample); /*0x720ef5*/
+        if ( Audio::IsSoundPlaying((_DWORD *)this->audioSample) != 0 ) /*0x720f04*/
         {
           Debug::Log(); /*0x720f14*/
-          v5 = (_DWORD *)*(this + 11); /*0x720f19*/
+          v5 = (_DWORD *)this->audioSample; /*0x720f19*/
           if ( v5 ) /*0x720f21*/
             LOBYTE(IsSoundEnabled) = ThemeClass::RequestBuffer(v5); /*0x720f23*/
           *((_BYTE *)this + 17) = 1; /*0x720f28*/
@@ -87,13 +87,13 @@ char __thiscall Theme::Stop(_DWORD *this, ObjectClass *aP1)
         {
 LABEL_14:
           Debug::Log(); /*0x720f37*/
-          v6 = (_DWORD *)*(this + 11); /*0x720f3c*/
+          v6 = (_DWORD *)this->audioSample; /*0x720f3c*/
           if ( v6 ) /*0x720f44*/
             Audio::Release(v6); /*0x720f46*/
         }
         *this = -1; /*0x720f4b*/
-        *(this + 1) = -1; /*0x720f51*/
-        *(this + 2) = -1; /*0x720f58*/
+        this->q001 = -1; /*0x720f51*/
+        this->q002 = -1; /*0x720f58*/
       }
     }
   }

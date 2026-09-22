@@ -53,11 +53,11 @@ char __thiscall CommandClass_BuildBar(void *this)
   do /*0x6d1224*/
   {
     (*(void (__thiscall **)(int *))(*v2 + 32))(v2); /*0x6d1210*/
-    (*(void (__thiscall **)(void *, int *))(*(_DWORD *)this + 48))(this, v2); /*0x6d1218*/
+    (*(void (__thiscall **)(void *, int *))(this->q00C)(this, v2); /*0x6d1218*/
     v2 += 24; /*0x6d121b*/
   }
   while ( (int)v2 < (int)&MEMORY[0xB0CB20] ); /*0x6d1224*/
-  (*(void (__thiscall **)(void *, _DWORD *))(*(_DWORD *)this + 48))(this, MEMORY[0xB0CCB0]); /*0x6d122f*/
+  (*(void (__thiscall **)(void *, _DWORD *))(this->q00C)(this, MEMORY[0xB0CCB0]); /*0x6d122f*/
   v3 = MEMORY[0xB0CB78][MEMORY[0xB0CD24]]; /*0x6d1238*/
   if ( v3 <= 0x18 ) /*0x6d1241*/
   {

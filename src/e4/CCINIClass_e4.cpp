@@ -108,7 +108,7 @@ int CCINIClass::GetDB()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CCINIClass_GetDB(_DWORD *this)
 {
-  return *(this + 1); /*0x473453*/
+  return this->q004; /*0x473453*/
 }
 }
 } // namespace gamemd
@@ -133,7 +133,7 @@ int __thiscall CCINIClass::Load(_BYTE *this, MultiplayerGameMode *aP1, char a3, 
   LOBYTE(v10.sectionHead[0]) = 0; /*0x47421f*/
   *(_DWORD *)v10.__pad_0 = &vt_FileStraw; /*0x474223*/
   v5 = (CCINIClass *)INIClass::LoadFile(this, &v10, (INIClass *)aP2); /*0x474230*/
-  *(this + 64) = 0; /*0x474232*/
+  this->ownsFile = 0; /*0x474232*/
   if ( !v5 || !a3 ) /*0x474244*/
     goto LABEL_7; /*0x474244*/
   Base64Data = INIClass::GetBase64Data(this, g_INI_Key_Digest.__pad_0, (int)v11, 0x14u); /*0x47425b*/
@@ -156,7 +156,7 @@ int __thiscall CCINIClass::Load(_BYTE *this, MultiplayerGameMode *aP1, char a3, 
   v10.sectionHead[1] = (int)&vt_SHAPipe; /*0x4742c5*/
   INIClass::WriteToString(this, (CCINIClass *)&v10.sectionHead[1]); /*0x4742cd*/
   SHA1::ComputeThunk(&v10.sectionHead[1], (ObjectClass *)(this + 65)); /*0x4742da*/
-  *(this + 64) = 1; /*0x4742e3*/
+  this->ownsFile = 1; /*0x4742e3*/
   Pipe::Dtor(&v10.sectionHead[1]); /*0x4742e7*/
   v8 = memcmp(v11, this + 65, 0x14u) == 0; /*0x4742fa*/
   v7 = (CCINIClass *)2; /*0x4742fd*/

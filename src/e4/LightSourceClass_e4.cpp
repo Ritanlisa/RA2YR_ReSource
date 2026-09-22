@@ -20,20 +20,20 @@ _DWORD *__thiscall LightSourceClass::Construct(
   int v10; // eax
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x554763*/
-  *(this + 10) = a7; /*0x554774*/
-  *(this + 9) = a6; /*0x554777*/
-  *(this + 11) = aP7; /*0x55477e*/
-  *(this + 12) = a9; /*0x554788*/
-  *(this + 13) = 2; /*0x55478f*/
-  *(this + 14) = a2; /*0x554796*/
+  this->LightTint = a7; /*0x554774*/
+  this->LightIntensity = a6; /*0x554777*/
+  this->q02C = aP7; /*0x55477e*/
+  this->q030 = a9; /*0x554788*/
+  this->DetailLevel = 2; /*0x55478f*/
+  this->Location = a2; /*0x554796*/
   this->Activated = 0; /*0x55479c*/
   *this = &LightSourceClass::`vftable'; /*0x5547a0*/
-  *(this + 15) = a3; /*0x5547a6*/
-  *(this + 17) = a5; /*0x5547ad*/
-  *(this + 1) = &LightSourceClass::`vftable'; /*0x5547b0*/
-  *(this + 16) = aP3; /*0x5547b7*/
-  *(this + 2) = &LightSourceClass::`vftable'; /*0x5547ba*/
-  *(this + 3) = &vt_LightSourceClass; /*0x5547c1*/
+  this->q03C = a3; /*0x5547a6*/
+  this->LightVisibility = a5; /*0x5547ad*/
+  this->vtable2 = &LightSourceClass::`vftable'; /*0x5547b0*/
+  this->uniqueId = aP3; /*0x5547b7*/
+  this->vtable3 = &LightSourceClass::`vftable'; /*0x5547ba*/
+  this->vtable4 = &vt_LightSourceClass; /*0x5547c1*/
   if ( g_BridgeCellPool < dword_ABCA18 /*0x5547fd*/
     || (byte_ABCA1D || !dword_ABCA18)
     && dword_ABCA24 > 0

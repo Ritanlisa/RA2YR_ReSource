@@ -18,7 +18,7 @@ _DWORD *__thiscall FoggedObject::DrawVector_Constructor(_DWORD *this, IUnknown *
   IUnknown *v10; // edx
 
   v4 = 0; /*0x4d2db9*/
-  *(this + 1) = 0; /*0x4d2dbd*/
+  this->q004 = 0; /*0x4d2dbd*/
   *(this + 2) = aP1; /*0x4d2dc0*/
   *((_BYTE *)this + 12) = 1; /*0x4d2dc3*/
   *((_BYTE *)this + 13) = 0; /*0x4d2dc7*/
@@ -47,7 +47,7 @@ _DWORD *__thiscall FoggedObject::DrawVector_Constructor(_DWORD *this, IUnknown *
       }
       v4 = v8; /*0x4d2e2f*/
     }
-    *(this + 1) = v4; /*0x4d2e31*/
+    this->q004 = v4; /*0x4d2e31*/
     *((_BYTE *)this + 13) = 1; /*0x4d2e34*/
     return this; /*0x4d2e34*/
   }
@@ -66,7 +66,7 @@ _DWORD *__thiscall FoggedObject::DrawVector_Constructor(_DWORD *this, IUnknown *
     }
     while ( v6 ); /*0x4d2df4*/
   }
-  *(this + 1) = aP2; /*0x4d2df6*/
+  this->q004 = aP2; /*0x4d2df6*/
   return this; /*0x4d2dfb*/
 }
 }

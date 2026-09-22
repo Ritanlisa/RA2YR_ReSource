@@ -25,10 +25,10 @@ char __thiscall Conflict_WorldDominationTour_12_::_vt02(_BYTE *this, int a2, _DW
   v3 = a2; /*0x766c13*/
   if ( !a2 ) /*0x766c1d*/
   {
-    (*(void (__thiscall **)(_BYTE *))(*(_DWORD *)this + 12))(this); /*0x766d1d*/
+    (*(void (__thiscall **)(_BYTE *))(this->q00C)(this); /*0x766d1d*/
     return 1; /*0x766d23*/
   }
-  *(this + 12) = 0; /*0x766c27*/
+  this->q00C = 0; /*0x766c27*/
   if ( a3 ) /*0x766c2d*/
   {
     *a3 = a2; /*0x766c73*/
@@ -74,7 +74,7 @@ char __thiscall Conflict_WorldDominationTour_12_::_vt02(_BYTE *this, int a2, _DW
   }
   v8 = v6; /*0x766c9d*/
 LABEL_14:
-  *(this + 12) = 1; /*0x766c9f*/
+  this->q00C = 1; /*0x766c9f*/
   if ( !v8 ) /*0x766ca5*/
     return 0; /*0x766caa*/
   if ( this->Conflict_WorldDominationTour_12_field_0x4 ) /*0x766cb1*/
@@ -83,7 +83,7 @@ LABEL_14:
       v3 = this->Conflict_WorldDominationTour_12_field_0x8; /*0x766cbf*/
     for ( i = 0; i < v3; ++i ) /*0x766cc5*/
       ComPtr::Set(&v8[2 * i], *(_DWORD *)(this->Conflict_WorldDominationTour_12_field_0x4 + 8 * i + 4)); /*0x766cd2*/
-    if ( *(this + 13) ) /*0x766cdc*/
+    if ( this->IsAllocated ) /*0x766cdc*/
     {
       v12 = (void (__thiscall ***)(_DWORD, int))this->Conflict_WorldDominationTour_12_field_0x4; /*0x766ce3*/
       if ( v12 ) /*0x766ce8*/
@@ -94,7 +94,7 @@ LABEL_14:
   }
   this->Conflict_WorldDominationTour_12_field_0x4 = v8; /*0x766d06*/
   this->Conflict_WorldDominationTour_12_field_0x8 = v3; /*0x766d09*/
-  *(this + 13) = a3 == 0; /*0x766d0c*/
+  this->IsAllocated = a3 == 0; /*0x766d0c*/
   return 1; /*0x766ca7*/
 }
 }
@@ -121,7 +121,7 @@ char __thiscall Conflict_WorldDominationTour_12_::sub_766DC0(_BYTE *this, int a2
   v3 = a2; /*0x766dc3*/
   if ( a2 ) /*0x766dcd*/
   {
-    *(this + 12) = 0; /*0x766dd7*/
+    this->q00C = 0; /*0x766dd7*/
     if ( a3 ) /*0x766ddd*/
     {
       *a3 = a2; /*0x766e21*/
@@ -166,7 +166,7 @@ char __thiscall Conflict_WorldDominationTour_12_::sub_766DC0(_BYTE *this, int a2
         v6 = 0; /*0x766e1d*/
       }
     }
-    *(this + 12) = 1; /*0x766e4f*/
+    this->q00C = 1; /*0x766e4f*/
     if ( !v6 ) /*0x766e53*/
       return 0; /*0x766ed6*/
     if ( this->Conflict_WorldDominationTour_12_field_0x4 ) /*0x766e55*/
@@ -175,7 +175,7 @@ char __thiscall Conflict_WorldDominationTour_12_::sub_766DC0(_BYTE *this, int a2
         v3 = this->Conflict_WorldDominationTour_12_field_0x8; /*0x766e63*/
       for ( i = 0; i < v3; ++i ) /*0x766e69*/
         ComPtr::Set(&v6[2 * i], *(_DWORD *)(this->Conflict_WorldDominationTour_12_field_0x4 + 8 * i + 4)); /*0x766e76*/
-      if ( *(this + 13) ) /*0x766e80*/
+      if ( this->IsAllocated ) /*0x766e80*/
       {
         v11 = (void (__thiscall ***)(_DWORD, int))this->Conflict_WorldDominationTour_12_field_0x4; /*0x766e87*/
         if ( v11 ) /*0x766e8c*/
@@ -186,11 +186,11 @@ char __thiscall Conflict_WorldDominationTour_12_::sub_766DC0(_BYTE *this, int a2
     }
     this->Conflict_WorldDominationTour_12_field_0x4 = v6; /*0x766eaa*/
     this->Conflict_WorldDominationTour_12_field_0x8 = v3; /*0x766ead*/
-    *(this + 13) = a3 == 0; /*0x766eb0*/
+    this->IsAllocated = a3 == 0; /*0x766eb0*/
   }
   else
   {
-    (*(void (__thiscall **)(_BYTE *))(*(_DWORD *)this + 12))(this); /*0x766eb9*/
+    (*(void (__thiscall **)(_BYTE *))(this->q00C)(this); /*0x766eb9*/
   }
   v12 = this->Conflict_WorldDominationTour_12_field_0x8; /*0x766ebc*/
   if ( v12 < this->Conflict_WorldDominationTour_12_field_0x10 ) /*0x766ec4*/

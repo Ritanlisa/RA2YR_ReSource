@@ -14,18 +14,18 @@ size_t __thiscall SortedArray::BinarySearch(char **this, CCINIClass *aP1)
   int v6; // ecx
   ObjectClass *v7; // esi
 
-  result = (size_t)*(this + 1); /*0x52b623*/
+  result = (size_t)this->q004; /*0x52b623*/
   if ( result ) /*0x52b628*/
   {
     if ( !(unsigned char)this->SortedArray_field_0x0C ) /*0x52b62e*/
     {
       qsort(*this, result, 8u, CompareFunc4Int); /*0x52b640*/
-      *(this + 4) = 0; /*0x52b648*/
-      *((_BYTE *)this + 12) = 1; /*0x52b64f*/
+      this->q004 = 0; /*0x52b648*/
+      this->q00C = 1; /*0x52b64f*/
     }
     v4 = (ObjectClass *)*this; /*0x52b659*/
     v5 = *(ObjectClass **)aP1->__pad_0; /*0x52b65b*/
-    v6 = (int)*(this + 1); /*0x52b65d*/
+    v6 = (int)this->q004; /*0x52b65d*/
     if ( v6 <= 0 ) /*0x52b662*/
       return 0; /*0x52b68e*/
     while ( 1 ) /*0x52b66b*/

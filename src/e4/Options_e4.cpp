@@ -255,8 +255,8 @@ bool Options::PrepareSaveLoadDlg()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall sub_558840(const char **this)
 {
-  *(this + 1) = (const char *)3; /*0x558840*/
-  *(this + 3) = 0; /*0x558847*/
+  this->q004 = (const char *)3; /*0x558840*/
+  this->q00C = 0; /*0x558847*/
   return SaveLoadDialog::DlgProc(this);
 }
 }
@@ -437,7 +437,7 @@ int __thiscall sub_6244E0(int *this)
     v3 = 0; /*0x6244ed*/
     do /*0x62450e*/
     {
-      v4 = *(this + 2) + v3; /*0x6244f4*/
+      v4 = this->q008 + v3; /*0x6244f4*/
       DeleteAndZero::Alt((void **)(v4 + 8)); /*0x6244f9*/
       DeleteAndZero::Alt((void **)(v4 + 4)); /*0x624501*/
       result = *this; /*0x624506*/
@@ -467,7 +467,7 @@ char __thiscall sub_6248A0(int *this)
   int v8; // [esp+8h] [ebp-4h]
 
   v2 = *this; /*0x6248a5*/
-  v3 = *(this + 1); /*0x6248a8*/
+  v3 = this->q004; /*0x6248a8*/
   if ( 3 * v2 > v3 ) /*0x6248b0*/
     return 0; /*0x6248b3*/
   v5 = v3 / 2; /*0x6248bf*/
@@ -476,13 +476,13 @@ char __thiscall sub_6248A0(int *this)
   if ( v5 >= v3 ) /*0x6248cd*/
     return 0; /*0x6248d0*/
   v6 = __2_YAPAXI_Z(24 * v5); /*0x6248dd*/
-  v7 = (const void *)*(this + 2); /*0x6248e2*/
+  v7 = (const void *)this->q008; /*0x6248e2*/
   v8 = (int)v6; /*0x6248ea*/
   if ( v7 ) /*0x6248ee*/
     qmemcpy(v6, v7, 24 * *this); /*0x624901*/
-  __3_YAXPAX_Z((void *)*(this + 2)); /*0x62490f*/
-  *(this + 2) = v8; /*0x62491b*/
-  *(this + 1) = v5; /*0x62491e*/
+  __3_YAXPAX_Z((void *)this->q008); /*0x62490f*/
+  this->q008 = v8; /*0x62491b*/
+  this->q004 = v5; /*0x62491e*/
   return 1; /*0x6248b2*/
 }
 }
@@ -501,7 +501,7 @@ char __thiscall sub_6253B0(int *this)
   int v6; // [esp+4h] [ebp-4h]
 
   v2 = *this; /*0x6253b4*/
-  if ( *this < *(this + 1) ) /*0x6253bb*/
+  if ( *this < this->q004 ) /*0x6253bb*/
     return 0; /*0x6253bd*/
   v4 = 2 * v2; /*0x6253c4*/
   v6 = 2 * v2; /*0x6253cb*/
@@ -512,14 +512,14 @@ char __thiscall sub_6253B0(int *this)
   }
   v5 = __2_YAPAXI_Z(4 * v4); /*0x6253ec*/
   memset(v5, 0, 4 * ((unsigned int)(4 * v4) >> 2)); /*0x6253fa*/
-  if ( *(this + 2) ) /*0x625403*/
+  if ( this->q008 ) /*0x625403*/
   {
-    qmemcpy(v5, (const void *)*(this + 2), 4 * *this); /*0x625418*/
+    qmemcpy(v5, (const void *)this->q008, 4 * *this); /*0x625418*/
     v4 = v6; /*0x625421*/
   }
-  __3_YAXPAX_Z((void *)*(this + 2)); /*0x625429*/
-  *(this + 1) = v4; /*0x625431*/
-  *(this + 2) = (int)v5; /*0x625434*/
+  __3_YAXPAX_Z((void *)this->q008); /*0x625429*/
+  this->q004 = v4; /*0x625431*/
+  this->q008 = (int)v5; /*0x625434*/
   return 1; /*0x6253bf*/
 }
 }
@@ -540,7 +540,7 @@ char __thiscall sub_6254D0(int *this)
   int v8; // [esp+8h] [ebp-4h]
 
   v2 = *this; /*0x6254d5*/
-  v3 = *(this + 1); /*0x6254d8*/
+  v3 = this->q004; /*0x6254d8*/
   if ( 3 * v2 > v3 ) /*0x6254e0*/
     return 0; /*0x6254e3*/
   v5 = v3 / 2; /*0x6254ef*/
@@ -549,13 +549,13 @@ char __thiscall sub_6254D0(int *this)
   if ( v5 >= v3 ) /*0x6254fd*/
     return 0; /*0x625500*/
   v6 = __2_YAPAXI_Z(20 * v5); /*0x62550d*/
-  v7 = (const void *)*(this + 2); /*0x625512*/
+  v7 = (const void *)this->q008; /*0x625512*/
   v8 = (int)v6; /*0x62551a*/
   if ( v7 ) /*0x62551e*/
     qmemcpy(v6, v7, 20 * *this); /*0x625531*/
-  __3_YAXPAX_Z((void *)*(this + 2)); /*0x62553f*/
-  *(this + 2) = v8; /*0x62554b*/
-  *(this + 1) = v5; /*0x62554e*/
+  __3_YAXPAX_Z((void *)this->q008); /*0x62553f*/
+  this->q008 = v8; /*0x62554b*/
+  this->q004 = v5; /*0x62554e*/
   return 1; /*0x6254e2*/
 }
 }
@@ -597,7 +597,7 @@ void *__thiscall Options::DestroyComposite(void *this, char a2)
 LABEL_12:
     ; /*0x6255b3*/
   }
-  v6 = (void *)*((_DWORD *)this + 16); /*0x6255bb*/
+  v6 = (void *)this->q010; /*0x6255bb*/
   if ( v6 ) /*0x6255c0*/
   {
     DeleteAndZero::Alt(*((void ***)this + 16)); /*0x6255c4*/
@@ -643,10 +643,10 @@ int *__thiscall Options::RebuildDropdownList(int *this, ObjectClass *aP1)
   v4 = 0; /*0x625600*/
   *this = *(_DWORD *)aP1->__pad_0; /*0x625602*/
   v5 = (ReferenceCounted *)(this + 2); /*0x625607*/
-  *(this + 1) = *(_DWORD *)&aP1->__pad_0[4]; /*0x62560a*/
-  *(this + 2) = 0; /*0x625615*/
-  *(this + 3) = 0; /*0x625617*/
-  *(this + 4) = 0; /*0x62561a*/
+  this->q004 = *(_DWORD *)&aP1->__pad_0[4]; /*0x62560a*/
+  this->q008 = 0; /*0x625615*/
+  this->q00C = 0; /*0x625617*/
+  this->q004 = 0; /*0x62561a*/
   unknown_libname_74(&v19); /*0x62561d*/
   unknown_libname_74(&v20); /*0x625626*/
   v18 = 0; /*0x62562e*/
@@ -733,7 +733,7 @@ char __thiscall sub_625A20(int *this)
   int v7; // [esp+4h] [ebp-4h]
 
   v2 = *this; /*0x625a24*/
-  if ( *this < *(this + 1) ) /*0x625a2b*/
+  if ( *this < this->q004 ) /*0x625a2b*/
     return 0; /*0x625a2d*/
   v4 = 2 * v2; /*0x625a33*/
   if ( 2 * v2 < 10 ) /*0x625a3b*/
@@ -741,12 +741,12 @@ char __thiscall sub_625A20(int *this)
   v5 = __2_YAPAXI_Z(20 * v4); /*0x625a4f*/
   memset(v5, 0, 4 * ((unsigned int)(20 * v4) >> 2)); /*0x625a5a*/
   v7 = (int)v5; /*0x625a64*/
-  v6 = (const void *)*(this + 2); /*0x625a6a*/
+  v6 = (const void *)this->q008; /*0x625a6a*/
   if ( v6 ) /*0x625a6f*/
     qmemcpy(v5, v6, 20 * *this); /*0x625a80*/
-  __3_YAXPAX_Z((void *)*(this + 2)); /*0x625a8d*/
-  *(this + 1) = v4; /*0x625a99*/
-  *(this + 2) = v7; /*0x625a9c*/
+  __3_YAXPAX_Z((void *)this->q008); /*0x625a8d*/
+  this->q004 = v4; /*0x625a99*/
+  this->q008 = v7; /*0x625a9c*/
   return 1; /*0x625a2f*/
 }
 }

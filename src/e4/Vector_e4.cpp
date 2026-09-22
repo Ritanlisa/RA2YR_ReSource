@@ -12,7 +12,7 @@ double __thiscall Math_Vector2D_Magnitude(int *this)
 {
   double result; // st7
 
-  result = Math::Sqrt((double)*this * (double)*this + (double)*(this + 1) * (double)*(this + 1)); /*0x4c1b69*/
+  result = Math::Sqrt((double)*this * (double)*this + (double)this->vtable2 * (double)this->vtable2); /*0x4c1b69*/
   Math::RoundToInt(result); /*0x4c1b71*/
   return result; /*0x4c1b6e*/
 }
@@ -62,9 +62,9 @@ void Vector::MatrixMulVectorMath(float a2, float a3, float a4)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall Math_MatrixMulVector(float *this, float a2, float a3, float a4)
 {
-  *(this + 3) = a3 * *(this + 1) + a4 * *(this + 2) + a2 * *this + *(this + 3); /*0x5ae8ab*/
-  *(this + 7) = a2 * *(this + 4) + a3 * *(this + 5) + a4 * *(this + 6) + *(this + 7); /*0x5ae8ca*/
-  *(this + 11) = a2 * *(this + 8) + a3 * *(this + 9) + a4 * *(this + 10) + *(this + 11); /*0x5ae8e9*/
+  this->IsInitialized = a3 * this->q004 + a4 * this->q008 + a2 * *this + this->IsInitialized; /*0x5ae8ab*/
+  this->q007 = a2 * this->q004 + a3 * this->CapacityIncrement + a4 * this->q006 + this->q007; /*0x5ae8ca*/
+  this->q00B = a2 * this->q008 + a3 * this->q009 + a4 * this->q00A + this->q00B; /*0x5ae8e9*/
 }
 }
 } // namespace gamemd

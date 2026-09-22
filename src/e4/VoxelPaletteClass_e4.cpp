@@ -24,12 +24,12 @@ int __thiscall sub_758A30(_DWORD *this, int a2)
   v5 = v9[1]; /*0x758a66*/
   *this = v9[0]; /*0x758a6a*/
   v6 = v9[3]; /*0x758a6c*/
-  *(this + 2) = v4; /*0x758a70*/
-  v7 = *(this + 4); /*0x758a73*/
-  *(this + 1) = v5; /*0x758a76*/
-  *(this + 3) = v6; /*0x758a79*/
+  this->q002 = v4; /*0x758a70*/
+  v7 = this->q004; /*0x758a73*/
+  this->q004 = v5; /*0x758a76*/
+  this->q003 = v6; /*0x758a79*/
   if ( (*(int (__thiscall **)(int, int, int))(*(_DWORD *)a2 + 36))(a2, v7, 768) != 768 /*0x758aaa*/
-    || (*(int (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)a2 + 36))(a2, *(this + 5), *(this + 2) << 8) != *(this + 2) << 8 )
+    || (*(int (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)a2 + 36))(a2, this->q005, this->q002 << 8) != this->q002 << 8 )
   {
 LABEL_5:
     v3 = 1; /*0x758aac*/

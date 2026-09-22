@@ -57,24 +57,24 @@ int __thiscall FootClass::Destruct(void *this)
   v7 = (ILocomotion *)this->locomotor; /*0x4d3683*/
   if ( v7 ) /*0x4d368b*/
     (*(void (__stdcall **)(_DWORD))(*(_DWORD *)v7 + 8))(this->locomotor); /*0x4d3690*/
-  v8 = (CCINIClass *)*((_DWORD *)this + 364); /*0x4d3693*/
+  v8 = (CCINIClass *)this->q16C; /*0x4d3693*/
   this->FootClass_field_abstract_array_5AC = &vt_VectorClass_AbstractClass; /*0x4d36a0*/
   if ( v8 && *((_BYTE *)this + 1465) ) /*0x4d36a8*/
   {
     __3_YAXPAX_Z(v8); /*0x4d36b1*/
-    *((_DWORD *)this + 364) = 0; /*0x4d36b9*/
+    this->q16C = 0; /*0x4d36b9*/
   }
   *((_BYTE *)this + 1465) = 0; /*0x4d36bf*/
-  *((_DWORD *)this + 365) = 0; /*0x4d36c5*/
-  v9 = (CCINIClass *)*((_DWORD *)this + 355); /*0x4d36cb*/
+  this->q16D = 0; /*0x4d36c5*/
+  v9 = (CCINIClass *)this->q163; /*0x4d36cb*/
   this->unknownAbstractArray588 = &vt_VectorClass_AbstractClass; /*0x4d36d1*/
   if ( v9 && *((_BYTE *)this + 1429) ) /*0x4d36dc*/
   {
     __3_YAXPAX_Z(v9); /*0x4d36e5*/
-    *((_DWORD *)this + 355) = 0; /*0x4d36ed*/
+    this->q163 = 0; /*0x4d36ed*/
   }
   *((_BYTE *)this + 1429) = 0; /*0x4d36f5*/
-  *((_DWORD *)this + 356) = 0; /*0x4d36fb*/
+  this->q164 = 0; /*0x4d36fb*/
   return TechnoClass::DTOR((int)this); /*0x4d3706*/
 }
 }
@@ -92,7 +92,7 @@ void __thiscall FootClass::Destroyed(#375 **this, int a2)
   __int64 v3; // rax
   _BYTE v4[4]; // [esp+4h] [ebp-4h] BYREF
 
-  if ( (unsigned __int8)House::IsHumanPlayer(*(this + 135)) /*0x4d98dd*/
+  if ( (unsigned __int8)House::IsHumanPlayer(this->owner) /*0x4d98dd*/
     && !*(_BYTE *)((*((int (__thiscall **)(#375 **))*this + 33))(this) + 3412) )
   {
     v3 = ((__int64 (__thiscall *)(#375 **, _BYTE *))*((_DWORD *)*this + 110))(this, v4); /*0x4d98f0*/
@@ -115,8 +115,8 @@ bool __thiscall sub_70F7E0(_DWORD *this)
   int v1; // edx
   int v2; // eax
 
-  v1 = *(this + 96); /*0x70f7e0*/
-  v2 = *(this + 98); /*0x70f7e6*/
+  v1 = this->targetingTimer; /*0x70f7e0*/
+  v2 = this->q188; /*0x70f7e6*/
   if ( v1 != -1 ) /*0x70f7ef*/
   {
     if ( (int)MEMORY[0xA8ED84] - v1 < v2 ) /*0x70f7fb*/

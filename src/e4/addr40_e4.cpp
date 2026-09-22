@@ -3327,7 +3327,7 @@ int sub_401FB0(unsigned int* a1)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_401FB0(_DWORD *this)
 {
-  return *(this + 3); /*0x401fb3*/
+  return this->vtable4; /*0x401fb3*/
 }
 }
 }
@@ -3360,7 +3360,7 @@ int sub_402020(unsigned int* a1)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_402020(_DWORD *this)
 {
-  return *(this + 5); /*0x402023*/
+  return this->abstractFlags; /*0x402023*/
 }
 }
 } // namespace gamemd
@@ -3372,7 +3372,7 @@ int sub_402430(unsigned int* a1)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_402430(_DWORD *this)
 {
-  return *(this + 41) & 8; /*0x402439*/
+  return this->q0A4 & 8; /*0x402439*/
 }
 }
 } // namespace gamemd
@@ -3599,7 +3599,7 @@ int sub_403810(int (**a1)(void))
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_403810(int (**this)(void))
 {
-  return (*(this + 67))();
+  return (this->q043)();
 }
 }
 } // namespace gamemd
@@ -3611,7 +3611,7 @@ int sub_4038E0(unsigned long long* a1, unsigned long long a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 BOOL __thiscall sub_4038E0(_QWORD *this, __int64 a2)
 {
-  return (unsigned __int64)(a2 - *(this + 5)) >= *this; /*0x403903*/
+  return (unsigned __int64)(a2 - this->abstractFlags) >= *this; /*0x403903*/
 }
 }
 } // namespace gamemd

@@ -32,8 +32,8 @@ _DWORD *__thiscall ProgressTimer::GetValue(_WORD *this, IUnknown *aP1)
   }
   if ( v4 ) /*0x4c93fa*/
   {
-    v5 = (ObjectClass *)(__int16)(*this - *(this + 2)); /*0x4c9406*/
-    v6 = (__int16)(*this - *(this + 2)); /*0x4c940b*/
+    v5 = (ObjectClass *)(__int16)(*this - this->q008); /*0x4c9406*/
+    v6 = (__int16)(*this - this->q008); /*0x4c940b*/
     v7 = (int)((HIDWORD(v6) ^ v6) - HIDWORD(v6)) / v2; /*0x4c9411*/
     v12 = *(ObjectClass **)this; /*0x4c9415*/
     if ( (__int16)v7 <= 0 ) /*0x4c941c*/

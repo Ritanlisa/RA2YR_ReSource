@@ -14,10 +14,10 @@ _DWORD *__thiscall Bounds::Subtract(int *this, IUnknown *aP1, _DWORD *a2)
   int v6; // ecx
   int v7; // edx
 
-  v3 = *(this + 1); /*0x487ee0*/
+  v3 = this->q004; /*0x487ee0*/
   v4 = *this; /*0x487ee3*/
-  v5 = *(this + 2); /*0x487ef1*/
-  v6 = *(this + 3); /*0x487ef4*/
+  v5 = this->q008; /*0x487ef1*/
+  v6 = this->q00C; /*0x487ef4*/
   v7 = v3 - a2[1]; /*0x487ef7*/
   aP1->field_0 = v4 - *a2; /*0x487f01*/
   aP1->field_4 = v7; /*0x487f06*/

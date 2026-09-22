@@ -17,18 +17,18 @@ char *__thiscall SmudgeTypeClass::SmudgeTypeClass(char *this, ObjectClass *aP1)
   this->ArrayIndex = -1; /*0x6b5277*/
   this->Width = 1; /*0x6b5281*/
   this->Height = 1; /*0x6b5287*/
-  *(this + 672) = 0; /*0x6b528d*/
-  *(this + 673) = 0; /*0x6b5294*/
+  this->q2A0 = 0; /*0x6b528d*/
+  this->q2A1 = 0; /*0x6b5294*/
   *(_DWORD *)this = &SmudgeTypeClass::`vftable'; /*0x6b529b*/
   this->vtable1 = &SmudgeTypeClass::`vftable'; /*0x6b52a1*/
   this->vtable2 = &SmudgeTypeClass::`vftable'; /*0x6b52a7*/
   this->vtable3 = &vt_SmudgeTypeClass; /*0x6b52ae*/
   AbstractClass::GenerateUniqueID((int)(this + 4)); /*0x6b52b5*/
   *(_WORD *)(this + 559) = 1; /*0x6b52ba*/
-  *(this + 561) = 0; /*0x6b52c7*/
-  *(this + 562) = 1; /*0x6b52ce*/
-  *(this + 563) = 1; /*0x6b52d4*/
-  *(this + 565) = 0; /*0x6b52da*/
+  this->LegalTarget = 0; /*0x6b52c7*/
+  this->Insignificant = 1; /*0x6b52ce*/
+  this->q233 = 1; /*0x6b52d4*/
+  this->q235 = 0; /*0x6b52da*/
   v3 = *(SmudgeTypeClass **)&MEMORY[0xA8D63C].__pad_14B0[316]; /*0x6b52e1*/
   if ( *(int *)&MEMORY[0xA8D63C].__pad_14B0[316] < *(int *)&MEMORY[0xA8D63C].__pad_14B0[308] /*0x6b5322*/
     || (MEMORY[0xA8D63C].__pad_14B0[313] || !*(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[308])
@@ -90,7 +90,7 @@ void __thiscall SmudgeTypeClass::vt_entry_A0(_DWORD *this, int *a2, int *a3, int
     v14 = v8; /*0x6b561d*/
     if ( a4 ) /*0x6b5621*/
     {
-      v9 = *(this + 166); /*0x6b5623*/
+      v9 = this->Width; /*0x6b5623*/
       v14 += -15 * (a4 / v9 + a4 % v9); /*0x6b5659*/
       v13 += 60 * (a4 / v9 - a4 % v9) / 2; /*0x6b5661*/
     }

@@ -27,7 +27,7 @@ char __thiscall FilePipe_38_::_vt02(void *this, int a2, char *a3)
   if ( a2 ) /*0x47834e*/
   {
     v5 = a3; /*0x478354*/
-    *((_BYTE *)this + 12) = 0; /*0x478358*/
+    this->q00C = 0; /*0x478358*/
     if ( a3 ) /*0x47835d*/
     {
       if ( a2 - 1 >= 0 ) /*0x478396*/
@@ -71,10 +71,10 @@ char __thiscall FilePipe_38_::_vt02(void *this, int a2, char *a3)
         v5 = 0; /*0x47838d*/
       }
     }
-    *((_BYTE *)this + 12) = 1; /*0x4783ac*/
+    this->q00C = 1; /*0x4783ac*/
     if ( v5 ) /*0x4783b0*/
     {
-      if ( *((_DWORD *)this + 1) ) /*0x4783bb*/
+      if ( this->q001 ) /*0x4783bb*/
       {
         v12 = this->FilePipe_38_field_0x8; /*0x4783c0*/
         if ( a2 < v12 ) /*0x4783c5*/
@@ -84,7 +84,7 @@ char __thiscall FilePipe_38_::_vt02(void *this, int a2, char *a3)
           v13 = 0; /*0x4783cd*/
           do /*0x4783e9*/
           {
-            v14 = *((_DWORD *)this + 1) + v13; /*0x4783d4*/
+            v14 = this->q001 + v13; /*0x4783d4*/
             v15 = &v5[v13]; /*0x4783d6*/
             v13 += 3; /*0x4783d9*/
             --v12; /*0x4783dc*/
@@ -94,15 +94,15 @@ char __thiscall FilePipe_38_::_vt02(void *this, int a2, char *a3)
           while ( v12 ); /*0x4783e9*/
           v3 = a2; /*0x4783eb*/
         }
-        if ( *((_BYTE *)this + 13) ) /*0x4783f1*/
+        if ( this->IsAllocated ) /*0x4783f1*/
         {
           __3_YAXPAX_Z(*((void **)this + 1)); /*0x4783fa*/
-          *((_DWORD *)this + 1) = 0; /*0x478402*/
+          this->q001 = 0; /*0x478402*/
         }
       }
-      *((_DWORD *)this + 1) = v5; /*0x47840d*/
+      this->q001 = v5; /*0x47840d*/
       this->FilePipe_38_field_0x8 = v3; /*0x478413*/
-      *((_BYTE *)this + 13) = a3 == 0; /*0x478416*/
+      this->IsAllocated = a3 == 0; /*0x478416*/
       return 1; /*0x47841c*/
     }
     else
@@ -112,7 +112,7 @@ char __thiscall FilePipe_38_::_vt02(void *this, int a2, char *a3)
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x478426*/
+    (*(void (__thiscall **)(void *))(this->q00C)(this); /*0x478426*/
     return 1; /*0x47842c*/
   }
 }

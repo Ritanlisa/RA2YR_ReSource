@@ -12,10 +12,10 @@ char __thiscall Trigger::EnableOnce(_BYTE *this, AbstractClass *aP1)
 {
   char result; // al
 
-  result = *(this + 72); /*0x554a60*/
+  result = this->q048; /*0x554a60*/
   if ( !result ) /*0x554a65*/
   {
-    *(this + 72) = 1; /*0x554a6b*/
+    this->q048 = 1; /*0x554a6b*/
     return TacticalClass::ScrollView(this, aP1); /*0x554a70*/
   }
   return result; /*0x554a75*/
@@ -41,12 +41,12 @@ void *__thiscall Trigger::initTrigger(
   int FileClassToBuffer; // eax
   int v10; // edx
 
-  *((_DWORD *)this + 2) = a4; /*0x5cbd2c*/
+  this->q008 = a4; /*0x5cbd2c*/
   this->Trigger_field_0x4 = aP2; /*0x5cbd32*/
-  *((_BYTE *)this + 12) = 1; /*0x5cbd35*/
+  this->q030 = 1; /*0x5cbd35*/
   this->Trigger_field_0x10 = Timer::GetTicks(); /*0x5cbd48*/
-  *((_DWORD *)this + 6) = 0; /*0x5cbd4f*/
-  *((_DWORD *)this + 8) = a5; /*0x5cbd52*/
+  this->q018 = 0; /*0x5cbd4f*/
+  this->q008 = a5; /*0x5cbd52*/
   *((_DWORD *)this + 14) = a7; /*0x5cbd58*/
   *((_DWORD *)this + 9) = a6; /*0x5cbd5f*/
   *((_DWORD *)this + 10) = 0; /*0x5cbd62*/
@@ -58,8 +58,8 @@ void *__thiscall Trigger::initTrigger(
   this->Trigger_field_0x2C = 0; /*0x5cbd78*/
   v10 = *(__int16 *)(FileClassToBuffer + 6) - 1; /*0x5cbd83*/
   *((_DWORD *)this + 17) = aP7; /*0x5cbd84*/
-  *((_DWORD *)this + 12) = v10; /*0x5cbd87*/
-  *((_DWORD *)this + 16) = 0; /*0x5cbd8a*/
+  this->q030 = v10; /*0x5cbd87*/
+  this->q010 = 0; /*0x5cbd8a*/
   *(_DWORD *)this = &vt_MSFadeAnim; /*0x5cbd8d*/
   return this; /*0x5cbd95*/
 }
@@ -318,8 +318,8 @@ unsigned int * Trigger::processTrigger(int a2, int a3)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_76F090(_DWORD *this, int a2, int a3)
 {
-  *(this + 1) = a2; /*0x76f09a*/
-  *(this + 2) = a3; /*0x76f09d*/
+  this->q004 = a2; /*0x76f09a*/
+  this->q008 = a3; /*0x76f09d*/
   *this = &vt_VectorCursor_MSSfxEntry_DynamicVectorClass_MSSfxEntry; /*0x76f0a0*/
   return this; /*0x76f0a6*/
 }
@@ -333,19 +333,19 @@ unsigned int * Trigger::checkCondition(ObjectClass * aP1, ObjectClass * aP2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall Trigger::checkCondition(_DWORD *this, ObjectClass *aP1, ObjectClass *aP2)
 {
-  *(this + 1) = 0; /*0x76f1cb*/
-  *(this + 2) = aP1; /*0x76f1ce*/
-  *((_BYTE *)this + 12) = 1; /*0x76f1d1*/
+  this->q004 = 0; /*0x76f1cb*/
+  this->q008 = aP1; /*0x76f1ce*/
+  this->q030 = 1; /*0x76f1d1*/
   *((_BYTE *)this + 13) = 0; /*0x76f1d5*/
   *this = &vt_VectorClass_MSAnim; /*0x76f1d8*/
   if ( aP1 ) /*0x76f1de*/
   {
     if ( aP2 ) /*0x76f1e6*/
     {
-      *(this + 1) = aP2; /*0x76f1e8*/
+      this->q004 = aP2; /*0x76f1e8*/
       return this; /*0x76f1ee*/
     }
-    *(this + 1) = __2_YAPAXI_Z(4 * (_DWORD)aP1); /*0x76f1fd*/
+    this->q004 = __2_YAPAXI_Z(4 * (_DWORD)aP1); /*0x76f1fd*/
     *((_BYTE *)this + 13) = 1; /*0x76f200*/
   }
   return this; /*0x76f1ed*/
@@ -360,7 +360,7 @@ int Trigger::executeActions(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_76FF20(_DWORD *this, int a2)
 {
-  *(this + 11) = a2; /*0x76ff24*/
+  this->q02C = a2; /*0x76ff24*/
   return a2; /*0x76ff27*/
 }
 }

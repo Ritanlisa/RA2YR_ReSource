@@ -34,9 +34,9 @@ int __thiscall Object::FindClosestObjectCell(_DWORD *this, IUnknown *aP1, IUnkno
   v4 = 7 * aP1->field_0; /*0x47c3f2*/
   v5 = 7 * aP1->field_4; /*0x47c3fe*/
   if ( (_BYTE)aP2 ) /*0x47c405*/
-    v6 = (IUnknown *)*(this + 58); /*0x47c407*/
+    v6 = (IUnknown *)this->q0E8; /*0x47c407*/
   else
-    v6 = (IUnknown *)*(this + 57); /*0x47c40f*/
+    v6 = (IUnknown *)this->q0E4; /*0x47c40f*/
   if ( !v6 ) /*0x47c417*/
     return 0; /*0x47c4bf*/
   v7 = v6; /*0x47c41d*/
@@ -76,7 +76,7 @@ int __thiscall Object::FindObjectCell(_DWORD *this, TechnoClass *aP1, char aP2)
 
   if ( MEMORY[0xA8D63C].__pad_1258[268] ) /*0x47c5ab*/
   {
-    v4 = (_DWORD *)*(this + 57); /*0x47c5ad*/
+    v4 = (_DWORD *)this->q0E4; /*0x47c5ad*/
     if ( v4 ) /*0x47c5b5*/
     {
       while ( (*(int (__thiscall **)(_DWORD *))(*v4 + 44))(v4) != 2 ) /*0x47c5c1*/
@@ -94,7 +94,7 @@ LABEL_5:
   {
     if ( MEMORY[0xA8D63C].__pad_1258[268] ) /*0x47c5e8*/
     {
-      v4 = (_DWORD *)*(this + 57); /*0x47c5ea*/
+      v4 = (_DWORD *)this->q0E4; /*0x47c5ea*/
       if ( v4 ) /*0x47c5f2*/
       {
         while ( (*(int (__thiscall **)(_DWORD *))(*v4 + 44))(v4) != 36 ) /*0x47c5fe*/
@@ -131,7 +131,7 @@ bool __thiscall Object::IsAlliedWithObjectHouse(_DWORD *this, IUnknown *aP1)
   if ( v3 == this ) /*0x4f9aa6*/
     return 1; /*0x4f9aab*/
   v5 = v3[12]; /*0x4f9aae*/
-  if ( v5 == *(this + 12) ) /*0x4f9ab6*/
+  if ( v5 == this->q030 ) /*0x4f9ab6*/
     return 1; /*0x4f9abb*/
   return v5 != -1 && (*(this + 5602) & (1 << v5)) != 0; /*0x4f9ad5*/
 }
@@ -158,7 +158,7 @@ bool __thiscall House_IsAlliedWithObjectSimple(_DWORD *this, _BYTE *a2)
   if ( (_DWORD *)v3 == this ) /*0x4f9b0c*/
     return 1; /*0x4f9b11*/
   v5 = *(_DWORD *)(v3 + 48); /*0x4f9b14*/
-  if ( v5 == *(this + 12) ) /*0x4f9b1c*/
+  if ( v5 == this->q030 ) /*0x4f9b1c*/
     return 1; /*0x4f9b21*/
   return v5 != -1 && (*(this + 5602) & (1 << v5)) != 0; /*0x4f9b3b*/
 }
@@ -229,14 +229,14 @@ _DWORD *__thiscall FindNearestObjectAtCell(_DWORD *this, _DWORD *a2)
     v7 = v4 + *((_WORD *)v5 + 1); /*0x56c351*/
     LOWORD(v23) = v3 + v6; /*0x56c354*/
     v8 = (__int16)(v3 + v6); /*0x56c359*/
-    v9 = *(this + 61); /*0x56c35c*/
+    v9 = this->q03D; /*0x56c35c*/
     HIWORD(v23) = v7; /*0x56c362*/
     v10 = v7; /*0x56c367*/
     v11 = v8 + v7; /*0x56c36a*/
-    if ( v11 > v9 && v8 - v10 < v9 && v10 - v8 < v9 && v11 <= v9 + 2 * *(this + 62) ) /*0x56c39c*/
+    if ( v11 > v9 && v8 - v10 < v9 && v10 - v8 < v9 && v11 <= v9 + 2 * this->q03E ) /*0x56c39c*/
     {
       v12 = v8 + (v10 << 9); /*0x56c3a7*/
-      if ( v12 >= 0x40000 || (v13 = *(_DWORD **)(*(this + 79) + 4 * v12)) == 0 ) /*0x56c3c1*/
+      if ( v12 >= 0x40000 || (v13 = *(_DWORD **)(this->q13C + 4 * v12)) == 0 ) /*0x56c3c1*/
       {
         g_Map_GlobalCellIndex = v23; /*0x56c3c7*/
         v13 = g_CellClassArray; /*0x56c3cc*/
@@ -399,8 +399,8 @@ OverlayClass *__thiscall Object::SpawnAtCell(void *this, IUnknown *aP1, IUnknown
   *(_DWORD *)this = &OverlayClass::`vftable'; /*0x5fc38f*/
   this->Object_field_0xAC = v5; /*0x5fc395*/
   this->Object_field_0x8 = &OverlayClass::`vftable'; /*0x5fc39f*/
-  *((_DWORD *)this + 1) = &OverlayClass::`vftable'; /*0x5fc3a6*/
-  *((_DWORD *)this + 3) = &vt_OverlayClass; /*0x5fc3ac*/
+  this->q004 = &OverlayClass::`vftable'; /*0x5fc3a6*/
+  this->q00C = &vt_OverlayClass; /*0x5fc3ac*/
   AbstractClass::GenerateUniqueID((int)this + 4); /*0x5fc3b3*/
   if ( *(int *)&HouseClass_Player.__pad_5568[22956] < *(int *)&HouseClass_Player.__pad_5568[22948] /*0x5fc3ef*/
     || (HouseClass_Player.__pad_5568[22953] || !*(_DWORD *)&HouseClass_Player.__pad_5568[22948])
@@ -638,7 +638,7 @@ int Object::ProcessEvent()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall Object::_vt34(_DWORD *this)
 {
-  return *(this + 43); /*0x5fdde6*/
+  return this->q0AC; /*0x5fdde6*/
 }
 }
 } // namespace gamemd
@@ -654,9 +654,9 @@ OverlayClass *__thiscall Object::DrawObject(void **this, char a2)
   void **v5; // [esp+4h] [ebp-4h] BYREF
 
   *this = &OverlayClass::`vftable'; /*0x5fdf76*/
-  *(this + 1) = &OverlayClass::`vftable'; /*0x5fdf7c*/
-  *(this + 2) = &OverlayClass::`vftable'; /*0x5fdf83*/
-  *(this + 3) = &vt_OverlayClass; /*0x5fdf8a*/
+  this->q004 = &OverlayClass::`vftable'; /*0x5fdf7c*/
+  this->__pad_002 = &OverlayClass::`vftable'; /*0x5fdf83*/
+  this->q00C = &vt_OverlayClass; /*0x5fdf8a*/
   AbstractClass::AnnounceExpiredPointer(this, 1); /*0x5fdf91*/
   v5 = this; /*0x5fdfa6*/
   v3 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xA8EC50] + 16))(&MEMORY[0xA8EC50], &v5); /*0x5fdfaa*/
@@ -671,7 +671,7 @@ OverlayClass *__thiscall Object::DrawObject(void **this, char a2)
   }
   if ( MEMORY[0xA8E9A0] ) /*0x5fdfe6*/
     ObjectClass::Undeploy((#374 *)this); /*0x5fdfea*/
-  *(this + 43) = 0; /*0x5fdff1*/
+  this->q0AC = 0; /*0x5fdff1*/
   ObjectClass::Dtor(this); /*0x5fdffb*/
   if ( (a2 & 1) != 0 ) /*0x5fe005*/
     __3_YAXPAX_Z(this); /*0x5fe008*/

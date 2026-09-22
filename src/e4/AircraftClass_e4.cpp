@@ -121,9 +121,9 @@ int __thiscall AircraftClass::FindLandingCell(_DWORD *this, int *a2, int a3)
   }
   while ( (int)v5 < (int)dword_817A78 ); /*0x415bab*/
   LOWORD(v22) = (unsigned __int16)dword_817A58[v19] << 13; /*0x415bc3*/
-  v13 = *(this + 40); /*0x415bc8*/
-  v21[0] = *(this + 39); /*0x415bcb*/
-  v14 = *(this + 41); /*0x415bd3*/
+  v13 = this->q0A0; /*0x415bc8*/
+  v21[0] = this->location; /*0x415bcb*/
+  v14 = this->q0A4; /*0x415bd3*/
   v21[1] = v13; /*0x415bd6*/
   v21[2] = v14; /*0x415bda*/
   if ( !(*(unsigned __int8 (__thiscall **)(int *, _DWORD *, _DWORD))(*a2 + 216))( /*0x415bf3*/
@@ -381,22 +381,22 @@ int __thiscall AircraftClass::_vt136(int *this)
 {
   int v2; // edi
 
-  v2 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)*(this + 433) + 188))(*(this + 433)); /*0x41a956*/
+  v2 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->q1B1 + 188))(this->q1B1); /*0x41a956*/
   if ( (*(int (__thiscall **)(int *))(*this + 456))(this) == v2 ) /*0x41a960*/
   {
-    if ( !*(this + 373) ) /*0x41a962*/
+    if ( !this->q175 ) /*0x41a962*/
       (*(void (__thiscall **)(int *, _DWORD, int))(*this + 1156))(this, 0, 1); /*0x41a974*/
     return 1; /*0x41a97b*/
   }
   else
   {
-    if ( !*(this + 191) /*0x41a99c*/
+    if ( !this->q0BF /*0x41a99c*/
       && (*(unsigned __int8 (__thiscall **)(int *))(*this + 684))(this)
       && !Team::AllMembersValid(this) )
     {
       (*(void (__thiscall **)(int *, _DWORD, int))(*this + 1156))(this, 0, 1); /*0x41a9ad*/
     }
-    if ( *(this + 173) ) /*0x41a9b3*/
+    if ( this->q2B4 ) /*0x41a9b3*/
     {
       (*(void (__thiscall **)(int *, int, _DWORD))(*this + 488))(this, 1, 0); /*0x41a9c5*/
       return 1; /*0x41a9cc*/
@@ -586,21 +586,21 @@ int __thiscall AircraftClass::RevealSight(int *this, int a2, int a3)
   int v18; // [esp+10h] [ebp-8h]
   int v19; // [esp+14h] [ebp-4h]
 
-  v4 = *(_DWORD *)(*(this + 433) + 1512); /*0x41ae00*/
+  v4 = *(_DWORD *)(this->q1B1 + 1512); /*0x41ae00*/
   if ( !(*(int (__thiscall **)(int *))(*this + 456))(this) ) /*0x41ae06*/
   {
     v4 = 1; /*0x41ae10*/
 LABEL_4:
-    v17 = *(this + 39); /*0x41ae1f*/
-    v18 = *(this + 40); /*0x41ae40*/
-    v5 = (#375 *)*(this + 135); /*0x41ae44*/
-    v19 = *(this + 41); /*0x41ae4e*/
+    v17 = this->q027; /*0x41ae1f*/
+    v18 = this->owningHouseIndex; /*0x41ae40*/
+    v5 = (#375 *)this->focus; /*0x41ae44*/
+    v19 = this->q029; /*0x41ae4e*/
     MapClass::RevealArea1(&v17, v4, v5, a2, a3, 0, 1, 0); /*0x41ae5e*/
-    v6 = *(this + 40); /*0x41ae65*/
-    v7 = *(this + 41); /*0x41ae68*/
-    v17 = *(this + 39); /*0x41ae6d*/
+    v6 = this->owningHouseIndex; /*0x41ae65*/
+    v7 = this->q029; /*0x41ae68*/
+    v17 = this->q027; /*0x41ae6d*/
     v18 = v6; /*0x41ae77*/
-    v8 = (#375 *)*(this + 135); /*0x41ae7b*/
+    v8 = (#375 *)this->focus; /*0x41ae7b*/
     v19 = v7; /*0x41ae84*/
     return MapClass::RevealArea1(&v17, v4, v8, a2, a3, 0, 1, 1); /*0x41aea1*/
   }
@@ -610,23 +610,23 @@ LABEL_4:
   if ( (*(_DWORD *)MEMORY[0xA8B230] & 0x1000) != 0 ) /*0x41aeaf*/
   {
     CrateImg = MEMORY[0x8871E0]->GUIMainButtonSound; /*0x41aec5*/
-    v17 = *(this + 39); /*0x41aecd*/
-    v18 = *(this + 40); /*0x41aed6*/
+    v17 = this->q027; /*0x41aecd*/
+    v18 = this->owningHouseIndex; /*0x41aed6*/
     v11 = *this; /*0x41aeda*/
-    v19 = *(this + 41); /*0x41aedf*/
+    v19 = this->q029; /*0x41aedf*/
     v12 = (*(int (__thiscall **)(int *))(v11 + 456))(this); /*0x41aee3*/
     MapClass::RevealArea1( /*0x41af1a*/
       &v17,
       CrateImg,
-      (#375 *)*(this + 135),
+      (#375 *)this->focus,
       0,
       0,
       1,
       v12 < MEMORY[0x8871E0]->BuildWeapons[3] / 2,
       0);
-    v13 = *(this + 40); /*0x41af21*/
-    v14 = *(this + 41); /*0x41af24*/
-    v17 = *(this + 39); /*0x41af27*/
+    v13 = this->owningHouseIndex; /*0x41af21*/
+    v14 = this->q029; /*0x41af24*/
+    v17 = this->q027; /*0x41af27*/
     v15 = *this; /*0x41af2b*/
     v18 = v13; /*0x41af2d*/
     v19 = v14; /*0x41af35*/
@@ -634,7 +634,7 @@ LABEL_4:
     return MapClass::RevealArea1( /*0x41af70*/
              &v17,
              CrateImg,
-             (#375 *)*(this + 135),
+             (#375 *)this->focus,
              0,
              0,
              1,

@@ -12,11 +12,11 @@ int __thiscall sub_4112D0(_DWORD *this, unsigned __int16 a2)
   int v3; // ecx
   _DWORD v5[4]; // [esp+0h] [ebp-10h] BYREF
 
-  v5[3] = *(this + 11); /*0x4112d8*/
+  v5[3] = this->q02C; /*0x4112d8*/
   v5[0] = 0; /*0x4112e0*/
   v5[1] = 0; /*0x4112e4*/
-  v2 = *(this + 10); /*0x4112e8*/
-  v3 = *(this + 5); /*0x4112eb*/
+  v2 = this->q028; /*0x4112e8*/
+  v3 = this->q014; /*0x4112eb*/
   v5[2] = v2; /*0x4112f4*/
   return (*(int (__thiscall **)(int, _DWORD *, _DWORD))(*(_DWORD *)v3 + 20))(v3, v5, a2); /*0x411303*/
 }
@@ -121,12 +121,12 @@ int __thiscall sub_485130(int *this, int a2)
   int v9; // ecx
 
   v3 = a2; /*0x485134*/
-  v4 = *(this + 15); /*0x485138*/
+  v4 = this->q03C; /*0x485138*/
   if ( v4 == a2 ) /*0x48513d*/
   {
     if ( v4 ) /*0x485141*/
       --*(_DWORD *)(v4 + 44); /*0x485143*/
-    *(this + 15) = 0; /*0x485146*/
+    this->q03C = 0; /*0x485146*/
     v5 = (*(int (__thiscall **)(int *, int *))(MEMORY[0x880944] + 16))(&MEMORY[0x880944], this + 9); /*0x48515c*/
     if ( v5 != -1 && v5 < MEMORY[0x880954] && v5 < --MEMORY[0x880954] ) /*0x485177*/
     {
@@ -138,17 +138,17 @@ int __thiscall sub_485130(int *this, int a2)
       while ( v5 < MEMORY[0x880954] ); /*0x48518f*/
     }
   }
-  if ( *(this + 11) == v3 ) /*0x485194*/
-    *(this + 11) = 0; /*0x485196*/
-  if ( *(this + 12) == v3 ) /*0x4851a0*/
-    *(this + 12) = 0; /*0x4851a2*/
-  result = *(this + 10); /*0x4851a9*/
+  if ( this->q02C == v3 ) /*0x485194*/
+    this->q02C = 0; /*0x485196*/
+  if ( this->q00C == v3 ) /*0x4851a0*/
+    this->q00C = 0; /*0x4851a2*/
+  result = this->q028; /*0x4851a9*/
   if ( result ) /*0x4851ae*/
   {
     result = (*(int (__thiscall **)(int))(*(_DWORD *)v3 + 44))(v3); /*0x4851b4*/
     if ( result == 61 ) /*0x4851ba*/
     {
-      v7 = (_DWORD *)*(this + 10); /*0x4851bc*/
+      v7 = (_DWORD *)this->q028; /*0x4851bc*/
       a2 = v3; /*0x4851bf*/
       result = (*(int (__thiscall **)(_DWORD *, int *))(*v7 + 16))(v7, &a2); /*0x4851cc*/
       if ( result != -1 ) /*0x4851d2*/
@@ -186,7 +186,7 @@ char __thiscall MapClass::SetCellFlagsAlongPath(__int16 **this, IUnknown *aP1, _
   if ( LOWORD(aP1->field_0) != *(_WORD *)&MEMORY[0x89F690].__pad_BC0[424] /*0x4a95c2*/
     || HIWORD(aP1->field_0) != *(_WORD *)&MEMORY[0x89F690].__pad_BC0[426] )
   {
-    v6 = *(this + 1119); /*0x4a95c4*/
+    v6 = this->q117C; /*0x4a95c4*/
     v7 = (char)a2; /*0x4a95ca*/
     while ( *v6 != 0x7FFF || v6[1] != 0x7FFF ) /*0x4a95db*/
     {
@@ -225,7 +225,7 @@ int __thiscall MapClass_ToggleZoom(int *this, int a2)
   int v6; // eax
 
   result = a2; /*0x4ac960*/
-  v4 = *((_BYTE *)this + 4528); /*0x4ac96b*/
+  v4 = this->q11B0; /*0x4ac96b*/
   if ( a2 == -1 ) /*0x4ac971*/
   {
     v4 = v4 == 0; /*0x4ac986*/
@@ -239,9 +239,9 @@ int __thiscall MapClass_ToggleZoom(int *this, int a2)
   {
     v4 = 0; /*0x4ac980*/
   }
-  if ( v4 != *((_BYTE *)this + 4532) ) /*0x4ac98f*/
+  if ( v4 != this->q11B4 ) /*0x4ac98f*/
   {
-    result = *(this + 1130); /*0x4ac991*/
+    result = this->q11A8; /*0x4ac991*/
     if ( !result ) /*0x4ac999*/
     {
       if ( v4 /*0x4ac9ad*/
@@ -251,20 +251,20 @@ int __thiscall MapClass_ToggleZoom(int *this, int a2)
         v4 = 0; /*0x4ac9b6*/
       }
       v5 = *this; /*0x4ac9b8*/
-      *((_BYTE *)this + 4529) = 0; /*0x4ac9c0*/
-      *((_BYTE *)this + 4530) = 0; /*0x4ac9c7*/
-      *((_BYTE *)this + 4531) = 0; /*0x4ac9ce*/
-      *((_BYTE *)this + 4528) = 0; /*0x4ac9d5*/
+      this->q11B1 = 0; /*0x4ac9c0*/
+      this->q11B2 = 0; /*0x4ac9c7*/
+      this->q11B3 = 0; /*0x4ac9ce*/
+      this->q11B0 = 0; /*0x4ac9d5*/
       (*(void (__thiscall **)(int *, _DWORD, _DWORD))(v5 + 72))(this, 0, 0); /*0x4ac9dc*/
       if ( v4 ) /*0x4ac9e1*/
       {
-        *((_BYTE *)this + 4532) = 1; /*0x4ac9e3*/
+        this->q11B4 = 1; /*0x4ac9e3*/
         return MapClass::UnselectAll_ClearLimboLaunchers(); /*0x4ac9ea*/
       }
       else
       {
         v6 = *this; /*0x4ac9f4*/
-        *((_BYTE *)this + 4532) = 0; /*0x4ac9f8*/
+        this->q11B4 = 0; /*0x4ac9f8*/
         return (*(int (__thiscall **)(int *))(v6 + 80))(this); /*0x4ac9ff*/
       }
     }
@@ -555,10 +555,10 @@ void __thiscall MapClass_Destructor(char *this)
   Map_Destroy(); /*0x5652d0*/
   BuildingClass::FreeUpgradeQueue(); /*0x5652d5*/
   BuildingClass::FreeUpgradeQueue2(); /*0x5652da*/
-  if ( *((_DWORD *)this + 26) ) /*0x5652df*/
+  if ( this->q01A ) /*0x5652df*/
   {
     __3_YAXPAX_Z(*((void **)this + 26)); /*0x5652e9*/
-    *((_DWORD *)this + 26) = 0; /*0x5652f1*/
+    this->q01A = 0; /*0x5652f1*/
   }
   v2 = (_DWORD *)this->MapClass_field_0x14; /*0x5652f6*/
   if ( v2 ) /*0x5652fb*/
@@ -568,10 +568,10 @@ void __thiscall MapClass_Destructor(char *this)
     __3_YAXPAX_Z(v2); /*0x56530a*/
     this->MapClass_field_0x14 = 0; /*0x565312*/
   }
-  if ( *((_DWORD *)this + 28) ) /*0x565315*/
+  if ( this->q01C ) /*0x565315*/
   {
     __3_YAXPAX_Z(*((void **)this + 28)); /*0x56531d*/
-    *((_DWORD *)this + 28) = 0; /*0x565325*/
+    this->q01C = 0; /*0x565325*/
   }
   v3 = (_DWORD **)(this + 128); /*0x565328*/
   v12 = 3; /*0x56532e*/
@@ -591,30 +591,30 @@ void __thiscall MapClass_Destructor(char *this)
   while ( v12 ); /*0x565361*/
   v5 = (void *)this->MapClass_field_0x1160; /*0x565363*/
   this->MapClass_field_0x115C = &vt_VectorClass_Cell; /*0x565370*/
-  if ( v5 && *(this + 4457) ) /*0x565378*/
+  if ( v5 && this->q1169 ) /*0x565378*/
   {
     __3_YAXPAX_Z(v5); /*0x565381*/
     this->MapClass_field_0x1160 = 0; /*0x565389*/
   }
-  *(this + 4457) = 0; /*0x56538f*/
+  this->q1169 = 0; /*0x56538f*/
   this->MapClass_field_0x1164 = 0; /*0x565395*/
   v6 = (void *)this->MapClass_field_0x13C; /*0x56539b*/
-  *((_DWORD *)this + 78) = &vt_VectorClass_CellClass; /*0x5653a1*/
-  if ( v6 && *(this + 325) ) /*0x5653af*/
+  this->q04E = &vt_VectorClass_CellClass; /*0x5653a1*/
+  if ( v6 && this->q145 ) /*0x5653af*/
   {
     __3_YAXPAX_Z(v6); /*0x5653b8*/
     this->MapClass_field_0x13C = 0; /*0x5653c0*/
   }
-  *(this + 325) = 0; /*0x5653c6*/
+  this->q145 = 0; /*0x5653c6*/
   this->MapClass_field_0x140 = 0; /*0x5653cc*/
-  v7 = (void *)*((_DWORD *)this + 54); /*0x5653d2*/
+  v7 = (void *)this->q0D8; /*0x5653d2*/
   this->MapClass_field_0xD4 = &vt_VectorClass_Cell; /*0x5653d8*/
-  if ( v7 && *(this + 225) ) /*0x5653e2*/
+  if ( v7 && this->q0E1 ) /*0x5653e2*/
   {
     __3_YAXPAX_Z(v7); /*0x5653eb*/
-    *((_DWORD *)this + 54) = 0; /*0x5653f3*/
+    this->q0D8 = 0; /*0x5653f3*/
   }
-  *(this + 225) = 0; /*0x5653f9*/
+  this->q0E1 = 0; /*0x5653f9*/
   this->MapClass_field_0xDC = 0; /*0x5653ff*/
   v8 = this + 212; /*0x565405*/
   v9 = 3; /*0x56540b*/
@@ -633,14 +633,14 @@ void __thiscall MapClass_Destructor(char *this)
     *((_DWORD *)v8 + 2) = 0; /*0x565437*/
   }
   while ( v9 ); /*0x56543a*/
-  v11 = (void *)*((_DWORD *)this + 21); /*0x56543c*/
+  v11 = (void *)this->q054; /*0x56543c*/
   this->MapClass_field_0x50 = &vt_VectorClass_ZoneConnectionClass; /*0x565442*/
-  if ( v11 && *(this + 93) ) /*0x56544c*/
+  if ( v11 && this->q05D ) /*0x56544c*/
   {
     __3_YAXPAX_Z(v11); /*0x565452*/
-    *((_DWORD *)this + 21) = 0; /*0x56545a*/
+    this->q054 = 0; /*0x56545a*/
   }
-  *(this + 93) = 0; /*0x56545d*/
+  this->q05D = 0; /*0x56545d*/
   this->MapClass_field_0x58 = 0; /*0x565460*/
   *(_DWORD *)this = &off_7EA6FC; /*0x565463*/
 }
@@ -878,8 +878,8 @@ int __thiscall MapClass_InitCellVector(_DWORD *this)
     *((_BYTE *)v2 + 13) = 0; /*0x565abf*/
     *v2 = &vt_VectorClass_CellClass; /*0x565ac3*/
   }
-  (*(void (__thiscall **)(_DWORD *, _DWORD, _DWORD))(*v2 + 8))(v2, *(this + 85), 0); /*0x565ad4*/
-  for ( result = 0; result < *(this + 85); *(_DWORD *)(*(this + 79) + 4 * result - 4) = 0 ) /*0x565ae1*/
+  (*(void (__thiscall **)(_DWORD *, _DWORD, _DWORD))(*v2 + 8))(v2, this->q154, 0); /*0x565ad4*/
+  for ( result = 0; result < this->q154; *(_DWORD *)(this->q13C + 4 * result - 4) = 0 ) /*0x565ae1*/
     ++result; /*0x565ae9*/
   return result; /*0x565afc*/
 }
@@ -899,15 +899,15 @@ _DWORD *__thiscall MapClass_InitAllCells(_DWORD *this)
 
   v2 = 0; /*0x565bc6*/
   v3 = 0; /*0x565bc8*/
-  *(this + 77) = 0; /*0x565bca*/
+  this->q134 = 0; /*0x565bca*/
   do /*0x565bfc*/
   {
     v4 = 512; /*0x565bd0*/
     do /*0x565bf4*/
     {
-      if ( v2 < *(this + 80) ) /*0x565bdb*/
+      if ( v2 < this->q140 ) /*0x565bdb*/
       {
-        result = (_DWORD *)*(this + 79); /*0x565bdd*/
+        result = (_DWORD *)this->q13C; /*0x565bdd*/
         v6 = (_DWORD *)result[v3]; /*0x565be3*/
         if ( v6 ) /*0x565be8*/
           result = CellClass::Construct(v6); /*0x565bea*/
@@ -1001,7 +1001,7 @@ int __thiscall MapClass::RevealArea0(
   v46 = v42 - v44[0] - 2; /*0x56749b*/
   v47 = v43 - v44[1] - 2; /*0x5674a7*/
   result = v43; /*0x5674af*/
-  v14 = *(this + 61); /*0x5674b2*/
+  v14 = this->q03D; /*0x5674b2*/
   v15 = v43 + v42; /*0x5674b8*/
   if ( v15 <= v14 ) /*0x5674bd*/
     return result; /*0x5674bd*/
@@ -1010,7 +1010,7 @@ int __thiscall MapClass::RevealArea0(
   result = v43 - v42; /*0x5674cf*/
   if ( result >= v14 ) /*0x5674d3*/
     return result; /*0x5674d3*/
-  result = *(this + 62); /*0x5674d9*/
+  result = this->q0F8; /*0x5674d9*/
   if ( v15 > v14 + 2 * result ) /*0x5674e4*/
     return result; /*0x5674e4*/
   result = (int)aP2; /*0x5674ea*/
@@ -1078,7 +1078,7 @@ LABEL_22:
       v23 = v43 + HIWORD(v21->field_0); /*0x56762d*/
       LOWORD(v45) = v22; /*0x567635*/
       aP1b = (IUnknown *)((char *)aP1b + 4); /*0x56763a*/
-      v24 = *(this + 61); /*0x56763e*/
+      v24 = this->q03D; /*0x56763e*/
       HIWORD(v45) = v23; /*0x567644*/
       *(_DWORD *)v44 = v45; /*0x567653*/
       v25 = v23 + v22; /*0x567657*/
@@ -1090,7 +1090,7 @@ LABEL_22:
           continue; /*0x5678a3*/
         }
         LOWORD(v12) = v42; /*0x56767e*/
-        if ( v25 > v24 + 2 * *(this + 62) ) /*0x567688*/
+        if ( v25 > v24 + 2 * this->q0F8 ) /*0x567688*/
           continue; /*0x567688*/
         if ( (int)abs32(v22 - v42) > (int)aP2 ) /*0x56769e*/
           continue; /*0x56769e*/
@@ -1100,7 +1100,7 @@ LABEL_22:
         if ( (__int16)Math::RoundToInt(v26) > (int)aP2 ) /*0x5676f0*/
           continue; /*0x5676f0*/
         v27 = v44[0] + (v44[1] << 9); /*0x567707*/
-        if ( v27 < 0x40000 && (v28 = *(int **)(*(this + 79) + 4 * v27)) != 0 ) /*0x56771e*/
+        if ( v27 < 0x40000 && (v28 = *(int **)(this->q04F + 4 * v27)) != 0 ) /*0x56771e*/
         {
           v29 = v28; /*0x567720*/
         }
@@ -1152,15 +1152,15 @@ LABEL_54:
         }
         if ( v32 == 7 ) /*0x5677d7*/
         {
-          if ( v33 == *(this + 61) + 5 ) /*0x5677e4*/
+          if ( v33 == this->q03D + 5 ) /*0x5677e4*/
             continue; /*0x5677e4*/
         }
-        else if ( v32 == 13 && v33 == *(this + 61) + 11 ) /*0x5677fc*/
+        else if ( v32 == 13 && v33 == this->q03D + 11 ) /*0x5677fc*/
         {
           continue; /*0x5677fc*/
         }
-        v34 = *(this + 62); /*0x567802*/
-        if ( v32 != v34 + 13 || v33 != *(this + 61) + v34 - 15 ) /*0x56781b*/
+        v34 = this->q0F8; /*0x567802*/
+        if ( v32 != v34 + 13 || v33 != this->q03D + v34 - 15 ) /*0x56781b*/
           goto LABEL_54; /*0x56781b*/
       }
     }
@@ -1222,7 +1222,7 @@ void __thiscall MapClass::FillRevealBuffer(_DWORD *this, MouseClass *aP1, IUnkno
   v3 = (MouseClass *)this; /*0x5683d1*/
   if ( !aP2 ) /*0x5683d9*/
     return; /*0x5683d9*/
-  v40 = *(this + 80); /*0x5683e9*/
+  v40 = this->q140; /*0x5683e9*/
   if ( !*(_BYTE *)((*(int (__thiscall **)(IUnknown *))(aP2->field_0 + 136))(aP2) + 565) /*0x56840b*/
     || (*(int (__thiscall **)(IUnknown *))(aP2->field_0 + 120))(aP2) != 2 )
   {
@@ -1248,7 +1248,7 @@ void __thiscall MapClass::FillRevealBuffer(_DWORD *this, MouseClass *aP1, IUnkno
         v8 = *(_DWORD **)(v7 + 4 * v6); /*0x5684a0*/
       }
       CellClass::AddContent((int)v8, aP2, aP2->__pad_8C[0]); /*0x5684bb*/
-      if ( v6 >= 0x40000 || (v9 = *(_DWORD *)(*(this + 79) + 4 * v6)) == 0 ) /*0x5684db*/
+      if ( v6 >= 0x40000 || (v9 = *(_DWORD *)(this->q13C + 4 * v6)) == 0 ) /*0x5684db*/
       {
         g_Map_GlobalCellIndex = (IUnknown *)v35; /*0x5684f9*/
         House::AnnounceUpgrade((int)g_CellClassArray, (IUnknown *)0xFFFFFFFF); /*0x5684ff*/
@@ -1314,7 +1314,7 @@ LABEL_17:
                 v21 = (v17 << 9) + v18; /*0x568623*/
                 if ( v21 >= 0 && v21 < v40 ) /*0x56862d*/
                 {
-                  v22 = *(this + 79); /*0x568633*/
+                  v22 = this->q13C; /*0x568633*/
                   if ( *(_DWORD *)(v22 + 4 * v21) ) /*0x568639*/
                   {
                     if ( v21 >= 0x40000 || (v23 = *(_DWORD **)(v22 + 4 * v21)) == 0 ) /*0x56864f*/
@@ -1352,7 +1352,7 @@ LABEL_17:
           v26 = (__int16)v33 + (SHIWORD(v33) << 9); /*0x5686ef*/
           if ( v26 >= 0 && v26 < v40 ) /*0x5686f9*/
           {
-            v27 = *(this + 79); /*0x5686ff*/
+            v27 = this->q13C; /*0x5686ff*/
             if ( *(_DWORD *)(v27 + 4 * v26) ) /*0x568705*/
             {
               if ( v26 >= 0x40000 ) /*0x568715*/
@@ -1376,7 +1376,7 @@ LABEL_17:
           v30 = (__int16)v34 + (SHIWORD(v34) << 9); /*0x568786*/
           if ( v30 >= 0 && v30 < v40 ) /*0x568790*/
           {
-            v31 = *(this + 79); /*0x568796*/
+            v31 = this->q13C; /*0x568796*/
             if ( *(_DWORD *)(v31 + 4 * v30) ) /*0x56879c*/
             {
               if ( v30 >= 0x40000 ) /*0x5687ac*/
@@ -1451,7 +1451,7 @@ void __thiscall MapClass::ApplyOverlayReveal(_DWORD *this, MouseClass *aP1, Buil
   v3 = (MouseClass *)this; /*0x568801*/
   if ( !aP2 ) /*0x568809*/
     return; /*0x568809*/
-  v38 = *(this + 80); /*0x568819*/
+  v38 = this->q140; /*0x568819*/
   if ( !*(_BYTE *)((*(int (__thiscall **)(BuildingClass *))(*(_DWORD *)aP2->__pad_0 + 136))(aP2) + 565) /*0x56883b*/
     || (*(int (__thiscall **)(BuildingClass *))(*(_DWORD *)aP2->__pad_0 + 120))(aP2) != 2 )
   {
@@ -1477,7 +1477,7 @@ void __thiscall MapClass::ApplyOverlayReveal(_DWORD *this, MouseClass *aP1, Buil
         v8 = *(_DWORD **)(v7 + 4 * esi7); /*0x5688d0*/
       }
       CellClass::RemoveContent((int)v8, aP2, aP2->onBridge); /*0x5688eb*/
-      if ( esi7 >= 0x40000 || (v6 = *(IUnknown **)(*(this + 79) + 4 * esi7)) == 0 ) /*0x56890b*/
+      if ( esi7 >= 0x40000 || (v6 = *(IUnknown **)(this->q13C + 4 * esi7)) == 0 ) /*0x56890b*/
       {
         g_Map_GlobalCellIndex = (IUnknown *)v32; /*0x568929*/
         House::AnnounceUpgrade((int)g_CellClassArray, (IUnknown *)0xFFFFFFFF); /*0x56892f*/
@@ -1543,7 +1543,7 @@ LABEL_17:
                 v22 = (v18 << 9) + v19; /*0x568a55*/
                 if ( v22 >= 0 && v22 < v38 ) /*0x568a5f*/
                 {
-                  v23 = *(this + 79); /*0x568a65*/
+                  v23 = this->q13C; /*0x568a65*/
                   if ( *(_DWORD *)(v23 + 4 * v22) ) /*0x568a6b*/
                   {
                     if ( v22 >= 0x40000 || (v24 = *(_DWORD **)(v23 + 4 * v22)) == 0 ) /*0x568a81*/
@@ -1585,7 +1585,7 @@ LABEL_17:
           HIWORD(v31) = v28; /*0x568b34*/
           if ( v29 >= 0 && v29 < v38 ) /*0x568b41*/
           {
-            ecx49 = *(this + 79); /*0x568b47*/
+            ecx49 = this->q13C; /*0x568b47*/
             if ( *(_DWORD *)(ecx49 + 4 * v29) ) /*0x568b4d*/
             {
               if ( v29 >= 0x40000 ) /*0x568b5d*/
@@ -1657,18 +1657,18 @@ int __thiscall MapClass_PostProcessReveal(_DWORD *this, char a2)
     }
     while ( v2 < MEMORY[0xA8E9B8] ); /*0x568bfb*/
   }
-  v6 = *(this + 61); /*0x568bfd*/
-  *(this + 67) = 1; /*0x568c03*/
-  *(this + 68) = v6; /*0x568c09*/
-  *(this + 69) = v6 - 1; /*0x568c12*/
-  *(this + 70) = (v6 << 11) + *(this + 79) + 4; /*0x568c27*/
+  v6 = this->q0F4; /*0x568bfd*/
+  this->q10C = 1; /*0x568c03*/
+  this->CellIterator_NextY = v6; /*0x568c09*/
+  this->CellIterator_CurrentY = v6 - 1; /*0x568c12*/
+  this->CellIterator_NextCell = (v6 << 11) + this->q13C + 4; /*0x568c27*/
   for ( i = LayerClass::CellIteratorNext(this); i; i = LayerClass::CellIteratorNext(this) ) /*0x568c34*/
     *(_DWORD *)(i + 320) &= 0xFFCFFFFF; /*0x568c45*/
-  v8 = *(this + 61); /*0x568c54*/
-  *(this + 67) = 1; /*0x568c5a*/
-  *(this + 68) = v8; /*0x568c60*/
-  *(this + 69) = v8 - 1; /*0x568c69*/
-  *(this + 70) = (v8 << 11) + *(this + 79) + 4; /*0x568c7e*/
+  v8 = this->q0F4; /*0x568c54*/
+  this->q10C = 1; /*0x568c5a*/
+  this->CellIterator_NextY = v8; /*0x568c60*/
+  this->CellIterator_CurrentY = v8 - 1; /*0x568c69*/
+  this->CellIterator_NextCell = (v8 << 11) + this->q13C + 4; /*0x568c7e*/
   for ( j = LayerClass::CellIteratorNext(this); j; j = LayerClass::CellIteratorNext(this) ) /*0x568c8d*/
   {
     *(_DWORD *)(j + 48) = 0; /*0x568cb2*/
@@ -1682,7 +1682,7 @@ int __thiscall MapClass_PostProcessReveal(_DWORD *this, char a2)
         for ( k = 0; k < MEMORY[0x87F914]; v13[80] |= 0x100000u ) /*0x568cef*/
         {
           HIWORD(v21) = *(_WORD *)(j + 38); /*0x568d01*/
-          LOWORD(v21) = k + *(this + 73); /*0x568d09*/
+          LOWORD(v21) = k + this->MapCoordBounds; /*0x568d09*/
           v12 = (__int16)v21 + (SHIWORD(v21) << 9); /*0x568d14*/
           if ( v12 >= 0x40000 || (v13 = *(_DWORD **)(MEMORY[0x87F924] + 4 * v12)) == 0 ) /*0x568d2a*/
           {
@@ -1697,7 +1697,7 @@ int __thiscall MapClass_PostProcessReveal(_DWORD *this, char a2)
         for ( m = 0; m < MEMORY[0x87F918]; v16[80] |= 0x200000u ) /*0x568d6d*/
         {
           LOWORD(v22) = *(_WORD *)(j + 36); /*0x568d7b*/
-          HIWORD(v22) = m + *(this + 74); /*0x568d80*/
+          HIWORD(v22) = m + this->q128; /*0x568d80*/
           v15 = (__int16)v22 + (SHIWORD(v22) << 9); /*0x568d8e*/
           if ( v15 >= 0x40000 || (v16 = *(_DWORD **)(MEMORY[0x87F924] + 4 * v15)) == 0 ) /*0x568da4*/
           {
@@ -1761,12 +1761,12 @@ int __thiscall MapClass::DecompressCellData(int *this, MouseClass *aP1)
         {
           v6 = *(TagClass **)(v5 + 36); /*0x56b44a*/
           Src = (int)v6; /*0x56b451*/
-          v7 = *(this + 61); /*0x56b45a*/
+          v7 = this->q03D; /*0x56b45a*/
           Src = SHIWORD(v6) + (__int16)v6; /*0x56b468*/
           if ( Src > v7 /*0x56b49b*/
             && (__int16)v6 - SHIWORD(v6) < v7
             && SHIWORD(v6) - (__int16)v6 < v7
-            && Src <= v7 + 2 * *(this + 62) )
+            && Src <= v7 + 2 * this->q0F8 )
           {
             Src = (int)v6; /*0x56b4a8*/
             if ( v6 != g_MapSeedState /*0x56b4d9*/
@@ -1787,7 +1787,7 @@ int __thiscall MapClass::DecompressCellData(int *this, MouseClass *aP1)
       v4 = (int)&aP1a->field_0 + 1; /*0x56b543*/
       aP1a = (MouseClass *)v4; /*0x56b54a*/
     }
-    while ( v4 < *(this + 80) ); /*0x56b550*/
+    while ( v4 < this->q050 ); /*0x56b550*/
   }
   *(_DWORD *)v17.__pad_0 = g_MapSeedState; /*0x56b568*/
   v12 = Compression::Read((int)&v17.__pad_0[4], &v17, (IUnknown *)4) + v3; /*0x56b579*/
@@ -1929,12 +1929,12 @@ int __thiscall MapClass_ProcessRegion(_DWORD *this)
   int v45; // [esp+38h] [ebp-8h]
 
   v2 = this + 20; /*0x56d6ef*/
-  (*(void (__thiscall **)(_DWORD *))(*(this + 20) + 12))(this + 20); /*0x56d6f4*/
-  v3 = *(this + 61); /*0x56d6f7*/
-  *(this + 67) = 1; /*0x56d6fd*/
-  *(this + 68) = v3; /*0x56d707*/
-  *(this + 69) = v3 - 1; /*0x56d710*/
-  *(this + 70) = (v3 << 11) + *(this + 79) + 4; /*0x56d725*/
+  (*(void (__thiscall **)(_DWORD *))(this->q050 + 12))(this + 20); /*0x56d6f4*/
+  v3 = this->q0F4; /*0x56d6f7*/
+  this->q10C = 1; /*0x56d6fd*/
+  this->CellIterator_NextY = v3; /*0x56d707*/
+  this->CellIterator_CurrentY = v3 - 1; /*0x56d710*/
+  this->CellIterator_NextCell = (v3 << 11) + this->q13C + 4; /*0x56d725*/
   result = LayerClass::CellIteratorNext(this); /*0x56d72b*/
   v5 = result; /*0x56d730*/
   if ( result ) /*0x56d734*/
@@ -2004,9 +2004,9 @@ LABEL_42:
         v23 = (int *)i; /*0x56d8b0*/
         v24 = i[18]; /*0x56d8b2*/
         v25 = i[19]; /*0x56d8b6*/
-        v26 = *(this + 61); /*0x56d8ba*/
+        v26 = this->q0F4; /*0x56d8ba*/
         v43 = v25 + v24; /*0x56d8c5*/
-        if ( v25 + v24 <= v26 || v24 - v25 >= v26 || v25 - v24 >= v26 || v43 > v26 + 2 * *(this + 62) ) /*0x56d8f8*/
+        if ( v25 + v24 <= v26 || v24 - v25 >= v26 || v25 - v24 >= v26 || v43 > v26 + 2 * this->q0F8 ) /*0x56d8f8*/
         {
           if ( !v38 ) /*0x56d979*/
             goto LABEL_42; /*0x56d979*/
@@ -2080,11 +2080,11 @@ char __thiscall MapClass::ClearRegions(int *this, IUnknown *aP1)
   aP1a = 0; /*0x56db1f*/
   do /*0x56db5e*/
   {
-    if ( *(_BYTE *)(16 * RegionMap + *(this + 21) + 8) ) /*0x56db31*/
+    if ( *(_BYTE *)(16 * RegionMap + this->q054 + 8) ) /*0x56db31*/
     {
-      UpdateCellConnectivityGraph(this, (int *)(16 * RegionMap + *(this + 21))); /*0x56db3b*/
+      UpdateCellConnectivityGraph(this, (int *)(16 * RegionMap + this->q054)); /*0x56db3b*/
       aP1a = 1; /*0x56db43*/
-      *(_BYTE *)(*(this + 21) + 16 * RegionMap + 8) = 0; /*0x56db48*/
+      *(_BYTE *)(this->q054 + 16 * RegionMap + 8) = 0; /*0x56db48*/
     }
     RegionMap = GetRegionMap(this, aP1, 3, RegionMap + 1); /*0x56db59*/
   }
@@ -2624,14 +2624,14 @@ int __thiscall MapClass::RemoveTriggerRef(int *this, AbstractClass *aP1, int a3)
   v3 = aP1; /*0x577922*/
   if ( (*(int (__thiscall **)(AbstractClass *))(*(_DWORD *)aP1->__pad_0 + 44))(aP1) == 44 ) /*0x577932*/
   {
-    for ( i = 0; i < *(this + 1115); ++i ) /*0x577943*/
+    for ( i = 0; i < this->q116C; ++i ) /*0x577943*/
     {
-      v6 = *(this + 1112); /*0x57794a*/
+      v6 = this->q1160; /*0x57794a*/
       v7 = *(__int16 *)(v6 + 4 * i + 2); /*0x577950*/
       v8 = *(__int16 *)(v6 + 4 * i); /*0x577955*/
       v9 = (IUnknown **)(v6 + 4 * i); /*0x577959*/
       v10 = v8 + (v7 << 9); /*0x57795f*/
-      if ( v10 < 0x40000 && (v11 = *(_DWORD **)(*(this + 79) + 4 * v10)) != 0 ) /*0x577975*/
+      if ( v10 < 0x40000 && (v11 = *(_DWORD **)(this->q04F + 4 * v10)) != 0 ) /*0x577975*/
       {
         v12 = v11; /*0x577977*/
       }
@@ -2643,16 +2643,16 @@ int __thiscall MapClass::RemoveTriggerRef(int *this, AbstractClass *aP1, int a3)
       if ( v12 && (AbstractClass *)v12[15] == v3 ) /*0x57798e*/
       {
         ObjectClass::SetTriggerTarget(v12, 0); /*0x577994*/
-        v13 = (*(int (__thiscall **)(int *, _DWORD *))(*(this + 1111) + 16))(this + 1111, v12 + 9); /*0x5779ab*/
+        v13 = (*(int (__thiscall **)(int *, _DWORD *))(this->q115C + 16))(this + 1111, v12 + 9); /*0x5779ab*/
         if ( v13 != -1 ) /*0x5779b1*/
         {
-          v14 = *(this + 1115); /*0x5779b3*/
+          v14 = this->q116C; /*0x5779b3*/
           if ( v13 < v14 ) /*0x5779b8*/
           {
             v15 = v14 - 1; /*0x5779ba*/
-            for ( *(this + 1115) = v15; /*0x5779c0*/
-                  v13 < *(this + 1115);
-                  *(_DWORD *)(*(this + 1112) + 4 * v13 - 4) = *(_DWORD *)(*(this + 1112) + 4 * v13) )
+            for ( this->q116C = v15; /*0x5779c0*/
+                  v13 < this->q116C;
+                  *(_DWORD *)(this->q1160 + 4 * v13 - 4) = *(_DWORD *)(this->q1160 + 4 * v13) )
             {
               ++v13; /*0x5779c5*/
             }
@@ -2737,18 +2737,18 @@ LABEL_8:
           goto LABEL_24; /*0x578000*/
         if ( v6 != 7 ) /*0x578005*/
           break; /*0x578005*/
-        if ( v8 != *(this + 61) + 5 ) /*0x578012*/
+        if ( v8 != this->q0F4 + 5 ) /*0x578012*/
           goto LABEL_22; /*0x578012*/
 LABEL_25:
         v5 = LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]); /*0x578054*/
         if ( !v5 ) /*0x578060*/
           goto LABEL_26; /*0x578060*/
       }
-      if ( v6 == 13 && v8 == *(this + 61) + 11 ) /*0x578026*/
+      if ( v6 == 13 && v8 == this->q0F4 + 11 ) /*0x578026*/
         goto LABEL_25; /*0x578026*/
 LABEL_22:
-      v9 = *(this + 62); /*0x578028*/
-      if ( v6 == v9 + 13 && v8 == *(this + 61) + v9 - 15 ) /*0x578041*/
+      v9 = this->q0F8; /*0x578028*/
+      if ( v6 == v9 + 13 && v8 == this->q0F4 + v9 - 15 ) /*0x578041*/
         goto LABEL_25; /*0x578041*/
 LABEL_24:
       DisplayClass::RevealFogCell(&MEMORY[0x87F7E8], v7, HouseClass_Player); /*0x578043*/
@@ -2826,45 +2826,45 @@ _DWORD *__thiscall MapClass::SpiralSearch(_DWORD *this)
   unsigned int v12; // eax
   IUnknown *v13; // [esp+10h] [ebp-4h] BYREF
 
-  v2 = *(this + 61); /*0x578723*/
-  v3 = *(this + 72); /*0x578729*/
-  v4 = *(this + 71); /*0x57872f*/
-  if ( v4 + v3 > v2 + 2 * (*(this + 66) + *(this + 64)) + 12 ) /*0x578740*/
+  v2 = this->q0F4; /*0x578723*/
+  v3 = this->ZoneIterator_Y; /*0x578729*/
+  v4 = this->ZoneIterator_X; /*0x57872f*/
+  if ( v4 + v3 > v2 + 2 * (this->q108 + this->q100) + 12 ) /*0x578740*/
     return 0; /*0x57880b*/
   while ( 1 ) /*0x578746*/
   {
-    v5 = *(this + 65); /*0x578746*/
-    v6 = 2 * (v5 + *(this + 63)) - v2 - 2; /*0x57875c*/
+    v5 = this->q104; /*0x578746*/
+    v6 = 2 * (v5 + this->q0FC) - v2 - 2; /*0x57875c*/
     LOWORD(v13) = v4; /*0x57875f*/
     HIWORD(v13) = v3; /*0x578766*/
     if ( v4 - v3 < v6 ) /*0x57876b*/
     {
-      *(this + 71) = v4 + 1; /*0x5787be*/
-      *(this + 72) = v3 - 1; /*0x5787c4*/
+      this->ZoneIterator_X = v4 + 1; /*0x5787be*/
+      this->ZoneIterator_Y = v3 - 1; /*0x5787c4*/
     }
     else
     {
       v7 = (((_BYTE)v4 - (_BYTE)v2 + (_BYTE)v3 - 1) & 1) == 1; /*0x578785*/
       v8 = v5 - (v7 + 1); /*0x578790*/
-      v9 = *(this + 71) - v8; /*0x578792*/
-      v10 = v8 + *(this + 72); /*0x578794*/
-      *(this + 71) = v9; /*0x578798*/
-      *(this + 72) = v10; /*0x5787a0*/
+      v9 = this->ZoneIterator_X - v8; /*0x578792*/
+      v10 = v8 + this->ZoneIterator_Y; /*0x578794*/
+      this->ZoneIterator_X = v9; /*0x578798*/
+      this->ZoneIterator_Y = v10; /*0x5787a0*/
       if ( v7 ) /*0x5787a8*/
-        *(this + 72) = v10 + 1; /*0x5787ab*/
+        this->ZoneIterator_Y = v10 + 1; /*0x5787ab*/
       else
-        *(this + 71) = v9 + 1; /*0x5787b4*/
+        this->ZoneIterator_X = v9 + 1; /*0x5787b4*/
     }
     if ( LayerClass::IsWithinUsableArea(this, (IUnknown *)&v13, (TechnoClass *)1) ) /*0x5787d3*/
       break; /*0x5787d3*/
-    v2 = *(this + 61); /*0x5787e8*/
-    v3 = *(this + 72); /*0x5787ee*/
-    v4 = *(this + 71); /*0x5787f4*/
-    if ( v4 + v3 > v2 + 2 * (*(this + 66) + *(this + 64)) + 12 ) /*0x578805*/
+    v2 = this->q0F4; /*0x5787e8*/
+    v3 = this->ZoneIterator_Y; /*0x5787ee*/
+    v4 = this->ZoneIterator_X; /*0x5787f4*/
+    if ( v4 + v3 > v2 + 2 * (this->q108 + this->q100) + 12 ) /*0x578805*/
       return 0; /*0x578805*/
   }
   v12 = (__int16)v13 + (SHIWORD(v13) << 9); /*0x578820*/
-  if ( v12 >= 0x40000 || (result = *(_DWORD **)(*(this + 79) + 4 * v12)) == 0 ) /*0x578836*/
+  if ( v12 >= 0x40000 || (result = *(_DWORD **)(this->q13C + 4 * v12)) == 0 ) /*0x578836*/
   {
     g_Map_GlobalCellIndex = v13; /*0x57883f*/
     return g_CellClassArray; /*0x578845*/
@@ -2917,11 +2917,11 @@ _DWORD *__thiscall MapClass::FastCellLookup(_DWORD *this, __int16 *a2, int a3, c
   }
   else
   {
-    v6 = *(this + 63); /*0x5788d4*/
+    v6 = this->q0FC; /*0x5788d4*/
     v7 = *a2; /*0x5788da*/
     v8 = a2[1]; /*0x5788dd*/
-    v9 = *(this + 64); /*0x5788e1*/
-    v10 = (__int16)(v9 + *(this + 61) - v6); /*0x5788fd*/
+    v9 = this->q100; /*0x5788e1*/
+    v10 = (__int16)(v9 + this->q0F4 - v6); /*0x5788fd*/
     v25 = (__int16)(v9 + v6 + 1); /*0x57890e*/
     v26 = (6000 * a3 + v25 - v7) % a3; /*0x578928*/
     v12 = (6000 * a3 + (__int16)v10 - v8) % a3; /*0x57892d*/
@@ -2930,7 +2930,7 @@ _DWORD *__thiscall MapClass::FastCellLookup(_DWORD *this, __int16 *a2, int a3, c
     if ( v12 > 0 ) /*0x578947*/
       v8 += a3 - v12; /*0x57894d*/
     v27 = v25 + v10; /*0x57895b*/
-    if ( a4 || (v13 = *(this + 66), v8 + v7 < v27 + 2 * v13 / 3) ) /*0x578987*/
+    if ( a4 || (v13 = this->q108, v8 + v7 < v27 + 2 * v13 / 3) ) /*0x578987*/
     {
       v23 = (__int16)v8 << 9; /*0x578a74*/
       v17 = (__int16)v7 + v23 < 0; /*0x578a77*/
@@ -2984,7 +2984,7 @@ void MapClass::IncrementRedrawCounter()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_578AC0(_BYTE *this)
 {
-  ++*(this + 4440); /*0x578ac0*/
+  ++this->q1158; /*0x578ac0*/
 }
 }
 
@@ -3458,11 +3458,11 @@ char __thiscall MapClass::sub_589370(void *this, int a2, char *a3)
   v3 = a2; /*0x589373*/
   if ( !a2 ) /*0x58937f*/
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x589492*/
+    (*(void (__thiscall **)(void *))(this->q00C)(this); /*0x589492*/
     return 1; /*0x589498*/
   }
   v5 = a3; /*0x589385*/
-  *((_BYTE *)this + 12) = 0; /*0x589389*/
+  this->q00C = 0; /*0x589389*/
   if ( a3 ) /*0x58938e*/
   {
     if ( a2 - 1 >= 0 ) /*0x5893d6*/
@@ -3512,7 +3512,7 @@ char __thiscall MapClass::sub_589370(void *this, int a2, char *a3)
   }
   v8 = v5; /*0x5893fe*/
 LABEL_14:
-  *((_BYTE *)this + 12) = 1; /*0x589400*/
+  this->q00C = 1; /*0x589400*/
   if ( !v8 ) /*0x589406*/
     return 0; /*0x58940b*/
   if ( this->MapClass_field_0x4 ) /*0x589412*/
@@ -3538,7 +3538,7 @@ LABEL_14:
       while ( v16 ); /*0x589456*/
       v3 = a2; /*0x589458*/
     }
-    if ( *((_BYTE *)this + 13) ) /*0x58945c*/
+    if ( this->IsAllocated ) /*0x58945c*/
     {
       __3_YAXPAX_Z(*((void **)this + 1)); /*0x589465*/
       this->MapClass_field_0x4 = 0; /*0x58946d*/
@@ -3546,7 +3546,7 @@ LABEL_14:
   }
   this->MapClass_field_0x4 = v8; /*0x589478*/
   this->MapClass_field_0x8 = v3; /*0x58947e*/
-  *((_BYTE *)this + 13) = a3 == 0; /*0x589481*/
+  this->IsAllocated = a3 == 0; /*0x589481*/
   return 1; /*0x589408*/
 }
 }
@@ -3577,10 +3577,10 @@ char __thiscall MapClass::sub_589A60(void *this, int a2, int *a3)
   v3 = a2; /*0x589a67*/
   if ( !a2 ) /*0x589a6f*/
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x589ba0*/
+    (*(void (__thiscall **)(void *))(this->q00C)(this); /*0x589ba0*/
     goto LABEL_28; /*0x589ba0*/
   }
-  *((_BYTE *)this + 12) = 0; /*0x589a79*/
+  this->q00C = 0; /*0x589a79*/
   if ( a3 ) /*0x589a7f*/
   {
     *a3 = a2; /*0x589ad2*/
@@ -3625,7 +3625,7 @@ char __thiscall MapClass::sub_589A60(void *this, int a2, int *a3)
   }
   v8 = v18; /*0x589afe*/
 LABEL_14:
-  *((_BYTE *)this + 12) = 1; /*0x589b02*/
+  this->q00C = 1; /*0x589b02*/
   if ( !v8 ) /*0x589b08*/
     return 0; /*0x589bbf*/
   if ( this->MapClass_field_0x4 ) /*0x589b0e*/
@@ -3652,7 +3652,7 @@ LABEL_14:
       v3 = a2; /*0x589b61*/
       v8 = v18; /*0x589b65*/
     }
-    if ( *((_BYTE *)this + 13) ) /*0x589b69*/
+    if ( this->IsAllocated ) /*0x589b69*/
     {
       v14 = (_DWORD *)this->MapClass_field_0x4; /*0x589b70*/
       if ( v14 ) /*0x589b75*/
@@ -3662,7 +3662,7 @@ LABEL_14:
   }
   this->MapClass_field_0x4 = v8; /*0x589b90*/
   this->MapClass_field_0x8 = v3; /*0x589b93*/
-  *((_BYTE *)this + 13) = a3 == 0; /*0x589b96*/
+  this->IsAllocated = a3 == 0; /*0x589b96*/
 LABEL_28:
   v15 = this->MapClass_field_0x8; /*0x589ba3*/
   if ( v15 < this->MapClass_field_0x10 ) /*0x589bab*/
@@ -3677,17 +3677,17 @@ unsigned int * MapClass::allocateMapBuffers()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_589BD0(_DWORD *this)
 {
-  *(this + 1) = 0; /*0x589bd6*/
-  *(this + 2) = 0; /*0x589bd9*/
-  *((_BYTE *)this + 12) = 1; /*0x589bdc*/
-  *((_BYTE *)this + 13) = 0; /*0x589be0*/
+  this->q004 = 0; /*0x589bd6*/
+  this->q008 = 0; /*0x589bd9*/
+  this->q030 = 1; /*0x589bdc*/
+  this->MovementZones = 0; /*0x589be0*/
   *this = &vt_DynamicVectorClass_SubzoneConnectionStruct; /*0x589be3*/
-  *(this + 5) = 10; /*0x589be9*/
-  *(this + 4) = 0; /*0x589bf0*/
+  this->q014 = 10; /*0x589be9*/
+  this->q010 = 0; /*0x589bf0*/
   VectorClass::CleanupSubzone((int)this); /*0x589bf3*/
-  *((_WORD *)this + 12) = 0; /*0x589bf9*/
-  *(this + 7) = 0; /*0x589bfd*/
-  *(this + 8) = 0; /*0x589c00*/
+  this->q030 = 0; /*0x589bf9*/
+  this->q01C = 0; /*0x589bfd*/
+  this->q020 = 0; /*0x589c00*/
   return this; /*0x589c05*/
 }
 }
@@ -3787,8 +3787,8 @@ int __thiscall sub_599530(_DWORD *this)
   void *v4; // eax
   _DWORD *v6; // [esp+8h] [ebp-4h] BYREF
 
-  *(this + 193) = 0; /*0x599534*/
-  *(this + 194) = 0; /*0x59953a*/
+  this->q304 = 0; /*0x599534*/
+  this->q308 = 0; /*0x59953a*/
   if ( g_MapTileArray ) /*0x599548*/
   {
     __3_YAXPAX_Z(g_MapTileArray); /*0x59954b*/
@@ -4222,13 +4222,13 @@ _DWORD *__thiscall MapClass::FindPlacementCellsAlt(char *this, IUnknown *aP1, IU
   int v12; // [esp+14h] [ebp-10h] BYREF
   _BYTE v13[12]; // [esp+18h] [ebp-Ch] BYREF
 
-  v4 = *(_DWORD *)((*(int (__thiscall **)(char *))(*(_DWORD *)this + 132))(this) + 1660); /*0x7035a1*/
+  v4 = *(_DWORD *)((*(int (__thiscall **)(char *))(this->LevelAndPassability)(this) + 1660); /*0x7035a1*/
   if ( v4 == 4 ) /*0x7035aa*/
     v4 = 1; /*0x7035ac*/
   if ( aP2 ) /*0x7035b9*/
     v5 = (_DWORD *)(*(int (__thiscall **)(IUnknown *, _BYTE *))(aP2->field_0 + 72))(aP2, v13); /*0x7035c2*/
   else
-    v5 = (_DWORD *)(*(int (__thiscall **)(char *, _BYTE *))(*(_DWORD *)this + 72))(this, v13); /*0x7035fd*/
+    v5 = (_DWORD *)(*(int (__thiscall **)(char *, _BYTE *))(this->q048)(this, v13); /*0x7035fd*/
   LOWORD(aP2) = *v5 / 256; /*0x7035d5*/
   HIWORD(aP2) = v5[1] / 256; /*0x7035e9*/
   v6 = *(_DWORD *)this; /*0x70362d*/
@@ -4241,19 +4241,19 @@ _DWORD *__thiscall MapClass::FindPlacementCellsAlt(char *this, IUnknown *aP1, IU
   }
   else
   {
-    LOBYTE(eax6) = *(this + 140); /*0x703646*/
+    LOBYTE(eax6) = this->LevelAndPassabilityStruct2pointer_70; /*0x703646*/
     TileIndex = MapClass::GetTileIndex(&MEMORY[0x87F7E8], (IUnknown *)&v11, (IUnknown *)v7, (IUnknown *)eax6); /*0x703658*/
   }
   aP2 = 0; /*0x703663*/
   aP1->field_0 = *LayerClass::Pathfinding_Find( /*0x7036aa*/
                     &MEMORY[0x87F7E8],
-                    (unsigned __int8)*(this + 140),
+                    (unsigned __int8)this->LevelAndPassabilityStruct2pointer_70,
                     &v12,
                     (__int16 *)&v11,
                     v4,
                     TileIndex,
                     (int)v7,
-                    (unsigned __int8)*(this + 140),
+                    (unsigned __int8)this->LevelAndPassabilityStruct2pointer_70,
                     1,
                     1,
                     0,
@@ -4277,11 +4277,11 @@ int __thiscall sub_7BCF50(_DWORD *this, unsigned __int16 a2)
   int v3; // ecx
   _DWORD v5[4]; // [esp+0h] [ebp-10h] BYREF
 
-  v5[3] = *(this + 11); /*0x7bcf58*/
+  v5[3] = this->q02C; /*0x7bcf58*/
   v5[0] = 0; /*0x7bcf60*/
   v5[1] = 0; /*0x7bcf64*/
-  v2 = *(this + 10); /*0x7bcf68*/
-  v3 = *(this + 5); /*0x7bcf6b*/
+  v2 = this->q028; /*0x7bcf68*/
+  v3 = this->q014; /*0x7bcf6b*/
   v5[2] = v2; /*0x7bcf74*/
   return (*(int (__thiscall **)(int, _DWORD *, _DWORD))(*(_DWORD *)v3 + 20))(v3, v5, a2); /*0x7bcf83*/
 }

@@ -11,26 +11,26 @@ char __thiscall CCFileClass_Close(_BYTE *this)
   char result; // al
   int v3; // eax
 
-  if ( !*(this + 41) ) /*0x4325c3*/
+  if ( !this->q029 ) /*0x4325c3*/
     return ((int (*)(void))FileClass::CloseHandle)(); /*0x432607*/
   BufferIO::Flush(); /*0x4325ca*/
-  result = *(this + 38); /*0x4325cf*/
+  result = this->q026; /*0x4325cf*/
   if ( result ) /*0x4325d4*/
   {
     if ( this->MixFileIndex ) /*0x4325d6*/
     {
       v3 = *(_DWORD *)this; /*0x4325dd*/
-      *(this + 41) = 0; /*0x4325e1*/
+      this->q029 = 0; /*0x4325e1*/
       result = (*(int (__thiscall **)(_BYTE *))(v3 + 52))(this); /*0x4325e5*/
-      *(this + 41) = 1; /*0x4325e8*/
-      *(this + 38) = 0; /*0x4325ec*/
-      *(this + 37) = 0; /*0x4325f0*/
+      this->q029 = 1; /*0x4325e8*/
+      this->q026 = 0; /*0x4325ec*/
+      this->q025 = 0; /*0x4325f0*/
       return result; /*0x4325f5*/
     }
     result = FileClass::CloseHandle(this); /*0x4325f8*/
-    *(this + 38) = 0; /*0x4325fd*/
+    this->q026 = 0; /*0x4325fd*/
   }
-  *(this + 37) = 0; /*0x432601*/
+  this->q025 = 0; /*0x432601*/
   return result; /*0x4325f4*/
 }
 }
@@ -42,7 +42,7 @@ int CCFileClass::Destruct()
 int __thiscall CCFileClass_Destructor(_DWORD *this)
 {
   *this = &vt_CCFileClass; /*0x535a76*/
-  *(this + 25) = 0; /*0x535a7c*/
+  this->q064 = 0; /*0x535a7c*/
   Vector::Clear((int)(this + 22)); /*0x535a83*/
   *this = &off_7E1668; /*0x535a8a*/
   return BufferIOFileClass::Dtor(this); /*0x535a95*/
@@ -62,20 +62,20 @@ int __thiscall CCFileClass_GetFileSize(int *this)
   int v6; // [esp-8h] [ebp-10h]
 
   FileSize = 0; /*0x65d0d4*/
-  result = *(this + 4); /*0x65d0d6*/
+  result = this->FilePointer; /*0x65d0d6*/
   if ( result == -1 ) /*0x65d0dc*/
   {
     if ( (*(unsigned __int8 (__thiscall **)(int *))(*this + 24))(this) ) /*0x65d0e0*/
     {
-      FileSize = GetFileSize((HANDLE)*(this + 5), 0); /*0x65d0f2*/
+      FileSize = GetFileSize((HANDLE)this->FileTimeDateLo, 0); /*0x65d0f2*/
       if ( FileSize == -1 ) /*0x65d0f7*/
       {
         v4 = *this; /*0x65d0fd*/
-        v6 = *(this + 6); /*0x65d0ff*/
+        v6 = this->FileNameAllocated; /*0x65d0ff*/
         LastError = GetLastError(); /*0x65d102*/
         (*(void (__thiscall **)(int *, DWORD, _DWORD, int))(v4 + 64))(this, LastError, 0, v6); /*0x65d10b*/
-        result = -1 - *(this + 3); /*0x65d113*/
-        *(this + 4) = result; /*0x65d116*/
+        result = -1 - this->Handle; /*0x65d113*/
+        this->FilePointer = result; /*0x65d116*/
         return result; /*0x65d11b*/
       }
     }
@@ -84,8 +84,8 @@ int __thiscall CCFileClass_GetFileSize(int *this)
       FileSize = (*(int (__thiscall **)(int *))(*this + 44))(this); /*0x65d130*/
       (*(void (__thiscall **)(int *))(*this + 52))(this); /*0x65d136*/
     }
-    result = FileSize - *(this + 3); /*0x65d13e*/
-    *(this + 4) = result; /*0x65d140*/
+    result = FileSize - this->Handle; /*0x65d13e*/
+    this->FilePointer = result; /*0x65d140*/
   }
   return result; /*0x65d119*/
 }

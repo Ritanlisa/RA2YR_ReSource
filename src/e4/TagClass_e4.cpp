@@ -222,7 +222,7 @@ char __thiscall TagClass::HasValidHouse(_DWORD *this)
 {
   _DWORD *v1; // esi
 
-  v1 = (_DWORD *)*(this + 40); /*0x6e6221*/
+  v1 = (_DWORD *)this->q0A0; /*0x6e6221*/
   if ( !v1 ) /*0x6e6229*/
     return 0; /*0x6e6240*/
   while ( !HouseClass::FindType15(v1) ) /*0x6e6234*/
@@ -247,28 +247,28 @@ int __thiscall TagClass_Unlink(int *this)
   int result; // eax
   int v4; // ecx
 
-  *(_BYTE *)(*(this + 10) + 624) = 0; /*0x71ade9*/
-  *(_DWORD *)(*(this + 10) + 632) = 0; /*0x71adf2*/
-  v2 = *(this + 17); /*0x71adf8*/
-  *(this + 10) = 0; /*0x71adfd*/
+  *(_BYTE *)(this->firstTrigger + 624) = 0; /*0x71ade9*/
+  *(_DWORD *)(this->firstTrigger + 632) = 0; /*0x71adf2*/
+  v2 = this->q011; /*0x71adf8*/
+  this->firstTrigger = 0; /*0x71adfd*/
   if ( v2 ) /*0x71ae00*/
   {
     if ( *(int **)(v2 + 64) == this ) /*0x71ae05*/
       *(_DWORD *)(v2 + 64) = 0; /*0x71ae07*/
-    TagClass::Unlink(*(this + 17)); /*0x71ae0d*/
+    TagClass::Unlink(this->q011); /*0x71ae0d*/
   }
-  result = *(this + 16); /*0x71ae12*/
+  result = this->uniqueId; /*0x71ae12*/
   if ( result ) /*0x71ae17*/
   {
     if ( *(int **)(result + 68) == this ) /*0x71ae1c*/
       *(_DWORD *)(result + 68) = 0; /*0x71ae1e*/
-    result = TagClass::Unlink(*(this + 16)); /*0x71ae24*/
+    result = TagClass::Unlink(this->uniqueId); /*0x71ae24*/
   }
-  v4 = *(this + 9); /*0x71ae29*/
-  *(this + 17) = 0; /*0x71ae2c*/
-  *(this + 16) = 0; /*0x71ae31*/
-  *(this + 15) = 0; /*0x71ae34*/
-  *(this + 14) = 0; /*0x71ae37*/
+  v4 = this->buildingType; /*0x71ae29*/
+  this->q011 = 0; /*0x71ae2c*/
+  this->uniqueId = 0; /*0x71ae31*/
+  this->q03C = 0; /*0x71ae34*/
+  this->q038 = 0; /*0x71ae37*/
   if ( v4 ) /*0x71ae3a*/
     return (*(int (__thiscall **)(int, _DWORD, int))(*(_DWORD *)v4 + 1156))(v4, 0, 1); /*0x71ae41*/
   return result; /*0x71ae47*/

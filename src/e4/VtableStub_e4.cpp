@@ -9,7 +9,7 @@ int VtableStub_643E70()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall VtableStub::643E70(_DWORD *this)
 {
-  *(this + 25) = 0; /*0x643e70*/
+  this->q064 = 0; /*0x643e70*/
 }
 }
 } // namespace gamemd

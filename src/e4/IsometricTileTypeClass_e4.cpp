@@ -92,11 +92,11 @@ int __thiscall IsometricTileTypeClass::_vt10(_DWORD *this, int a2, int a3)
 {
   int result; // eax
 
-  if ( *(this + 175) == a2 ) /*0x549ddc*/
-    *(this + 175) = 0; /*0x549dde*/
-  result = *(this + 178); /*0x549de8*/
+  if ( this->q2BC == a2 ) /*0x549ddc*/
+    this->q2BC = 0; /*0x549dde*/
+  result = this->q2C8; /*0x549de8*/
   if ( result != -1 && *((_DWORD *)MEMORY[0x8B4154] + result) == a2 ) /*0x549e02*/
-    *(this + 178) = -1; /*0x549e04*/
+    this->q2C8 = -1; /*0x549e04*/
   return result; /*0x549e0e*/
 }
 }
@@ -107,7 +107,7 @@ int IsometricTileTypeClass::GetAuxField()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall IsometricTileTypeClass::_vt16(_DWORD *this)
 {
-  return *(this + 165); /*0x54a166*/
+  return this->q294; /*0x54a166*/
 }
 }
 

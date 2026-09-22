@@ -30,7 +30,7 @@ void __thiscall sub_697AD0(_DWORD *this)
       while ( v5 < strlen(v4) ); /*0x697b35*/
     }
   }
-  *(this + 81) = Time; /*0x697b41*/
+  this->q051 = Time; /*0x697b41*/
   Debug::Log(); /*0x697b47*/
 }
 }

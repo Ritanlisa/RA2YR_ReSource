@@ -34,7 +34,7 @@ char __thiscall TextBuffer_Init(_BYTE *this)
     ++v2; /*0x5bccb8*/
   }
   while ( v1 < 25 ); /*0x5bccbe*/
-  *(this + 10036) = 1; /*0x5bccc8*/
+  this->q2734 = 1; /*0x5bccc8*/
   return Text::DrawRepeated(this, 0, 0, 80, 25); /*0x5bccd4*/
 }
 }

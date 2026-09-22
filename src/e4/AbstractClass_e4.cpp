@@ -64,18 +64,18 @@ void __thiscall AbstractClass::Initialize(_DWORD *this, TechnoClass *aP1, Techno
     *(_DWORD *)&v5[1].__pad_0[12] = 0; /*0x438f89*/
     v5[1].abstractFlags = v7; /*0x438f8c*/
     aP2->attachedBomb = v5; /*0x438f8f*/
-    v8 = *(this + 2); /*0x438f92*/
-    if ( *(this + 4) < v8 /*0x438fb4*/
-      || (*((_BYTE *)this + 13) || !v8)
-      && (v9 = *(this + 5), v9 > 0)
+    v8 = this->vtable3; /*0x438f92*/
+    if ( this->uniqueId < v8 /*0x438fb4*/
+      || (this->q034 || !v8)
+      && (v9 = this->abstractFlags, v9 > 0)
       && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*this + 8))(this, v8 + v9, 0) )
     {
-      v10 = *(this + 4); /*0x438fbb*/
-      v11 = *(this + 1); /*0x438fbe*/
-      *(this + 4) = v10 + 1; /*0x438fc4*/
+      v10 = this->uniqueId; /*0x438fbb*/
+      v11 = this->vtable2; /*0x438fbe*/
+      this->uniqueId = v10 + 1; /*0x438fc4*/
       *(_DWORD *)(v11 + 4 * v10) = v5; /*0x438fc7*/
     }
-    *(this + 12) = 1; /*0x438fca*/
+    this->q030 = 1; /*0x438fca*/
     if ( *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 528) != -1 ) /*0x438fde*/
     {
       if ( (unsigned __int8)House::IsHumanPlayer((#375 *)aP1->focus) ) /*0x438fe6*/

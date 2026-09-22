@@ -19,7 +19,7 @@ bool __thiscall GUID_Compare(char *this, int a2)
 
   if ( dword_828140 == 2 ) /*0x53ee7d*/
     return this->Data4 == *(_DWORD *)(a2 + 4) && *(_WORD *)this == *(_WORD *)a2; /*0x53ef1b*/
-  if ( (*this || *(this + 1) || *(this + 2) || *(this + 3)) /*0x53eed8*/
+  if ( (*this || this->Data4 || this->Data3 || *(this + 3)) /*0x53eed8*/
     && (*(_BYTE *)a2 || *(_BYTE *)(a2 + 1) || *(_BYTE *)(a2 + 2) || *(_BYTE *)(a2 + 3)) )
   {
     v8 = 3; /*0x53eef8*/

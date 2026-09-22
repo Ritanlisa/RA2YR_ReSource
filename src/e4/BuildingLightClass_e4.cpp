@@ -40,9 +40,9 @@ _DWORD *__thiscall BuildingLightClass::FindTarget(_DWORD *this, CCINIClass *aP1)
 
   result = aP1; /*0x436be9*/
   v3 = (BuildingLightClass *)this; /*0x436bef*/
-  *(this + 44) = 0; /*0x436bfa*/
-  *(this + 55) = aP1; /*0x436c00*/
-  *(this + 45) = 0; /*0x436c06*/
+  this->q0B0 = 0; /*0x436bfa*/
+  this->BehaviourMode = aP1; /*0x436c00*/
+  this->q0B4 = 0; /*0x436c06*/
   if ( aP1 == (CCINIClass *)3 ) /*0x436c0c*/
   {
     v4 = *(_DWORD *)(*(int (__thiscall **)(_DWORD *, _DWORD **))(*this + 440))(this, &nextArrayIndex); /*0x436c21*/

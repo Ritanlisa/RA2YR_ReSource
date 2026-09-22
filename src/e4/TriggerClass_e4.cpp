@@ -87,7 +87,7 @@ int TriggerClass::GetValue()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_71FA30(_DWORD *this)
 {
-  return *(this + 21); /*0x71fa33*/
+  return this->q054; /*0x71fa33*/
 }
 }
 } // namespace gamemd

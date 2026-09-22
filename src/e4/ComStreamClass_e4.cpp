@@ -230,14 +230,14 @@ void __thiscall sub_7AE0E0(_DWORD *this)
 
   if ( (unsigned char)this->ComStreamClass_field_0x14 != 1 ) /*0x7ae0e8*/
   {
-    v2 = *(this + 2); /*0x7ae0f0*/
+    v2 = this->q008; /*0x7ae0f0*/
     v3 = (_DWORD *)*this; /*0x7ae0f3*/
-    v4 = *(this + 3) + 1; /*0x7ae0fc*/
-    *(this + 2) = 2 * v2; /*0x7ae0fd*/
+    v4 = this->q00C + 1; /*0x7ae0fc*/
+    this->q008 = 2 * v2; /*0x7ae0fd*/
     v13 = v3; /*0x7ae100*/
-    *(this + 3) = v4; /*0x7ae108*/
+    this->q00C = v4; /*0x7ae108*/
     v5 = __2_YAPAXI_Z(8 * v2); /*0x7ae113*/
-    v6 = 4 * *(this + 2); /*0x7ae118*/
+    v6 = 4 * this->q008; /*0x7ae118*/
     *this = v5; /*0x7ae11f*/
     memset(v5, 0, v6); /*0x7ae124*/
     if ( v2 > 0 ) /*0x7ae12f*/
@@ -251,7 +251,7 @@ void __thiscall sub_7AE0E0(_DWORD *this)
         {
           do /*0x7ae161*/
           {
-            v10 = ((int (__thiscall *)(int))*(this + 6))(v9) & ((1 << *(this + 3)) - 1); /*0x7ae14b*/
+            v10 = ((int (__thiscall *)(int))this->q018)(v9) & ((1 << this->q00C) - 1); /*0x7ae14b*/
             v11 = *(_DWORD *)(*this + 4 * v10); /*0x7ae14f*/
             *(_DWORD *)(*this + 4 * v10) = v9; /*0x7ae155*/
             v12 = *(_DWORD *)(v9 + 72); /*0x7ae157*/
@@ -290,16 +290,16 @@ void __thiscall sub_7AEF50(_DWORD *this)
   int v12; // eax
   int *v13; // [esp+8h] [ebp-4h]
 
-  v2 = *(this + 2); /*0x7aef55*/
-  if ( v2 > *(this + 12) && (unsigned char)this->ComStreamClass_field_0x14 != 1 ) /*0x7aef67*/
+  v2 = this->q008; /*0x7aef55*/
+  if ( v2 > this->q030 && (unsigned char)this->ComStreamClass_field_0x14 != 1 ) /*0x7aef67*/
   {
     v3 = (int *)*this; /*0x7aef70*/
-    v4 = *(this + 3); /*0x7aef73*/
+    v4 = this->q00C; /*0x7aef73*/
     v13 = (int *)*this; /*0x7aef76*/
-    *(this + 2) = v2 >> 1; /*0x7aef7c*/
-    *(this + 3) = v4 - 1; /*0x7aef84*/
+    this->q008 = v2 >> 1; /*0x7aef7c*/
+    this->q00C = v4 - 1; /*0x7aef84*/
     v5 = __2_YAPAXI_Z(4 * (v2 >> 1)); /*0x7aef8f*/
-    v6 = 4 * *(this + 2); /*0x7aef94*/
+    v6 = 4 * this->q008; /*0x7aef94*/
     *this = v5; /*0x7aef9b*/
     memset(v5, 0, v6); /*0x7aefa0*/
     if ( (int)v2 > 0 ) /*0x7aefab*/
@@ -313,7 +313,7 @@ void __thiscall sub_7AEF50(_DWORD *this)
         {
           do /*0x7aefdd*/
           {
-            v10 = ((int (__thiscall *)(int))*(this + 6))(v9) & ((1 << *(this + 3)) - 1); /*0x7aefc7*/
+            v10 = ((int (__thiscall *)(int))this->q018)(v9) & ((1 << this->q00C) - 1); /*0x7aefc7*/
             v11 = *(_DWORD *)(*this + 4 * v10); /*0x7aefcb*/
             *(_DWORD *)(*this + 4 * v10) = v9; /*0x7aefd1*/
             v12 = *(_DWORD *)(v9 + 72); /*0x7aefd3*/
@@ -344,7 +344,7 @@ _DWORD *__thiscall sub_7B0220(int *this)
   _DWORD v5[2]; // [esp+4h] [ebp-10h] BYREF
   _DWORD v6[2]; // [esp+Ch] [ebp-8h] BYREF
 
-  ComPtr::Set(&stru_B77F58, *(this + 1)); /*0x7b022f*/
+  ComPtr::Set(&stru_B77F58, this->q004); /*0x7b022f*/
   v2 = Audio_Create_76BE90(v6, (int)this); /*0x7b023a*/
   v3 = Audio_Create(v5, (const char **)&g_WebBrowser, (int)v2); /*0x7b0249*/
   ComPtr::Set(&stru_B77F68, v3[1]); /*0x7b0257*/
@@ -366,7 +366,7 @@ _DWORD *__thiscall sub_7B02A0(int *this)
   _DWORD v5[2]; // [esp+4h] [ebp-10h] BYREF
   _DWORD v6[2]; // [esp+Ch] [ebp-8h] BYREF
 
-  ComPtr::Set(&stru_B77F70, *(this + 1)); /*0x7b02af*/
+  ComPtr::Set(&stru_B77F70, this->q004); /*0x7b02af*/
   v2 = Audio_Create_76BE90(v6, (int)this); /*0x7b02ba*/
   v3 = Audio_Create(v5, (const char **)&g_WebBrowser, (int)v2); /*0x7b02c9*/
   ComPtr::Set(&stru_B77F78, v3[1]); /*0x7b02d7*/

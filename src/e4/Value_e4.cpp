@@ -10,7 +10,7 @@ bool __thiscall Value_InRange(int *this)
 {
   int v1; // eax
 
-  v1 = *(this + 14); /*0x486730*/
+  v1 = this->q038; /*0x486730*/
   return v1 >= unk_AA0E20 && v1 < unk_AA0E20 + 14; /*0x486746*/
 }
 }

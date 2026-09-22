@@ -10,7 +10,7 @@ char MSPCXAnim::Stub()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall MSPCXAnim::_vt07(_BYTE *this)
 {
-  return *(this + 41); /*0x5ceab3*/
+  return this->__pad_029; /*0x5ceab3*/
 }
 }
 
@@ -32,7 +32,7 @@ char __thiscall MSPCXAnim_42_::sub_5D09C0(void *this, int a2, _DWORD *a3)
   if ( a2 ) /*0x5d09cc*/
   {
     v4 = a3; /*0x5d09d2*/
-    *((_BYTE *)this + 12) = 0; /*0x5d09d6*/
+    this->q00C = 0; /*0x5d09d6*/
     if ( a3 ) /*0x5d09dc*/
     {
       v6 = a3; /*0x5d0a04*/
@@ -45,7 +45,7 @@ char __thiscall MSPCXAnim_42_::sub_5D09C0(void *this, int a2, _DWORD *a3)
       else
         v6 = 0; /*0x5d09fd*/
     }
-    *((_BYTE *)this + 12) = 1; /*0x5d0a0c*/
+    this->q00C = 1; /*0x5d0a0c*/
     if ( !v6 ) /*0x5d0a10*/
       return 0; /*0x5d0a90*/
     if ( this->MSPCXAnim_42_field_0x4 ) /*0x5d0a12*/
@@ -66,7 +66,7 @@ char __thiscall MSPCXAnim_42_::sub_5D09C0(void *this, int a2, _DWORD *a3)
         while ( v8 < v7 ); /*0x5d0a3e*/
         v4 = a3; /*0x5d0a40*/
       }
-      if ( *((_BYTE *)this + 13) ) /*0x5d0a44*/
+      if ( this->IsAllocated ) /*0x5d0a44*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x5d0a4f*/
         this->MSPCXAnim_42_field_0x4 = 0; /*0x5d0a57*/
@@ -74,11 +74,11 @@ char __thiscall MSPCXAnim_42_::sub_5D09C0(void *this, int a2, _DWORD *a3)
     }
     this->MSPCXAnim_42_field_0x4 = v6; /*0x5d0a60*/
     this->MSPCXAnim_42_field_0x8 = a2; /*0x5d0a68*/
-    *((_BYTE *)this + 13) = v4 == 0; /*0x5d0a6b*/
+    this->IsAllocated = v4 == 0; /*0x5d0a6b*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x5d0a74*/
+    (*(void (__thiscall **)(void *))(this->q00C)(this); /*0x5d0a74*/
   }
   v10 = this->MSPCXAnim_42_field_0x8; /*0x5d0a77*/
   if ( v10 < this->MSPCXAnim_42_field_0x10 ) /*0x5d0a7f*/

@@ -11,21 +11,21 @@ unsigned int * RadioClass::Release()
 _DWORD *__thiscall RadioClass::RadioClass(_DWORD *this)
 {
   RadioClass::Constructor((int)this); /*0x65a753*/
-  *(this + 57) = 0; /*0x65a75a*/
-  *(this + 58) = 1; /*0x65a764*/
-  *((_BYTE *)this + 236) = 1; /*0x65a76e*/
-  *((_BYTE *)this + 237) = 0; /*0x65a775*/
-  *(this + 56) = &vt_VectorClass_TechnoClass; /*0x65a77c*/
-  *(this + 57) = __2_YAPAXI_Z(4u); /*0x65a78b*/
-  *((_BYTE *)this + 237) = 1; /*0x65a791*/
+  this->q0E4 = 0; /*0x65a75a*/
+  this->q0E8 = 1; /*0x65a764*/
+  this->q0EC = 1; /*0x65a76e*/
+  this->q0ED = 0; /*0x65a775*/
+  this->radioLinks = &vt_VectorClass_TechnoClass; /*0x65a77c*/
+  this->q0E4 = __2_YAPAXI_Z(4u); /*0x65a78b*/
+  this->q0ED = 1; /*0x65a791*/
   *this = &RadioClass::`vftable'; /*0x65a798*/
-  *(this + 1) = &RadioClass::`vftable'; /*0x65a79e*/
-  *(this + 2) = &RadioClass::`vftable'; /*0x65a7a5*/
-  *(this + 3) = &vt_RadioClass; /*0x65a7ac*/
-  *(_DWORD *)*(this + 57) = 0; /*0x65a7be*/
-  *(this + 53) = 0; /*0x65a7c4*/
-  *(this + 54) = 0; /*0x65a7ca*/
-  *(this + 55) = 0; /*0x65a7d2*/
+  this->vtable2 = &RadioClass::`vftable'; /*0x65a79e*/
+  this->vtable3 = &RadioClass::`vftable'; /*0x65a7a5*/
+  this->vtable4 = &vt_RadioClass; /*0x65a7ac*/
+  *(_DWORD *)this->q0E4 = 0; /*0x65a7be*/
+  this->lastCommands = 0; /*0x65a7c4*/
+  this->q0D8 = 0; /*0x65a7ca*/
+  this->q0DC = 0; /*0x65a7d2*/
   return this; /*0x65a7d8*/
 }
 }
@@ -41,7 +41,7 @@ int RadioClass::ProcessCmd()
 int __thiscall RadioClass::ProcessCmd(#374 *this)
 {
   if ( !this->inLimbo ) /*0x65aa83*/
-    (*(void (__thiscall **)(#374 *, int))(*(_DWORD *)this + 640))(this, 3); /*0x65aa91*/
+    (*(void (__thiscall **)(#374 *, int))(this->q0A0)(this, 3); /*0x65aa91*/
   return ObjectClass::Undeploy(this); /*0x65aa9e*/
 }
 }
@@ -63,19 +63,19 @@ int __thiscall RadioClass::PowerDrainUpdate(int *this, AbstractClass *aP1)
 
   AbstractClass::COMStub_13((int)this, aP1); /*0x65ab1a*/
   Power::TimerProcess(aP1); /*0x65ab28*/
-  result = (BaseClass *)*(this + 58); /*0x65ab2d*/
+  result = (BaseClass *)this->q03A; /*0x65ab2d*/
   for ( i = 0; i < (int)result; ++i ) /*0x65ab37*/
   {
-    v5 = *(_DWORD *)(*(this + 57) + 4 * i); /*0x65ab3f*/
+    v5 = *(_DWORD *)(this->q0E4 + 4 * i); /*0x65ab3f*/
     if ( v5 ) /*0x65ab44*/
     {
       (*(void (__stdcall **)(int))(*(_DWORD *)(v5 + 4) + 16))(v5 + 4); /*0x65ab4d*/
       Power::TimerProcess(aP1); /*0x65ab53*/
-      v6 = *(_DWORD *)(*(this + 57) + 4 * i); /*0x65ab5e*/
+      v6 = *(_DWORD *)(this->q0E4 + 4 * i); /*0x65ab5e*/
       (*(void (__thiscall **)(int))(*(_DWORD *)v6 + 44))(v6); /*0x65ab63*/
       Power::TimerProcess(aP1); /*0x65ab69*/
     }
-    result = (BaseClass *)*(this + 58); /*0x65ab6e*/
+    result = (BaseClass *)this->q03A; /*0x65ab6e*/
   }
   return (int)result; /*0x65ab79*/
 }
@@ -174,11 +174,11 @@ int __thiscall RadioClass::FindLinkIndex(int *this, int a2)
 
   if ( !a2 ) /*0x65ad97*/
     return -1; /*0x65ad97*/
-  v2 = *(this + 58); /*0x65ad99*/
+  v2 = this->q03A; /*0x65ad99*/
   result = 0; /*0x65ad9f*/
   if ( v2 <= 0 ) /*0x65ada3*/
     return -1; /*0x65adb7*/
-  for ( i = (_DWORD *)*(this + 57); *i != a2; ++i ) /*0x65ada5*/
+  for ( i = (_DWORD *)this->q0E4; *i != a2; ++i ) /*0x65ada5*/
   {
     if ( ++result >= v2 ) /*0x65adb5*/
       return -1; /*0x65adb5*/
@@ -201,11 +201,11 @@ char __thiscall RadioClass::HasFreeLink(int *this)
   int v2; // eax
   _DWORD *i; // ecx
 
-  v1 = *(this + 58); /*0x65adc0*/
+  v1 = this->q03A; /*0x65adc0*/
   v2 = 0; /*0x65adc6*/
   if ( v1 <= 0 ) /*0x65adca*/
     return 0; /*0x65addf*/
-  for ( i = (_DWORD *)*(this + 57); *i; ++i ) /*0x65adcc*/
+  for ( i = (_DWORD *)this->q0E4; *i; ++i ) /*0x65adcc*/
   {
     if ( ++v2 >= v1 ) /*0x65addd*/
       return 0; /*0x65addd*/
@@ -227,15 +227,15 @@ void __thiscall RadioClass::SetLinkCount(_DWORD *this, int a2)
   int v3; // ebx
   int v4; // eax
 
-  v3 = *(this + 58); /*0x65ae69*/
+  v3 = this->q0E8; /*0x65ae69*/
   if ( a2 > v3 ) /*0x65ae71*/
   {
-    (*(void (__thiscall **)(_DWORD *, int, _DWORD))(*(this + 56) + 8))(this + 56, a2, 0); /*0x65ae82*/
+    (*(void (__thiscall **)(_DWORD *, int, _DWORD))(this->radioLinks + 8))(this + 56, a2, 0); /*0x65ae82*/
     v4 = v3; /*0x65ae87*/
     do /*0x65ae9c*/
     {
       ++v4; /*0x65ae91*/
-      *(_DWORD *)(*(this + 57) + 4 * v4 - 4) = 0; /*0x65ae94*/
+      *(_DWORD *)(this->q0E4 + 4 * v4 - 4) = 0; /*0x65ae94*/
     }
     while ( v4 < a2 ); /*0x65ae9c*/
   }

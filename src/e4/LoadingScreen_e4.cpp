@@ -13,7 +13,7 @@ int __thiscall LoadingScreen::GetColorScheme(ProgressScreenClass *this)
   {
     return FindBuildingAnimByName(&stru_830620.__pad_579C[4368], 1); /*0x642b86*/
   }
-  if ( *((_DWORD *)this + 32) ) /*0x642b8b*/
+  if ( this->q020 ) /*0x642b8b*/
     return FindBuildingAnimByName(&stru_830620.__pad_579C[4344], 1); /*0x642ba9*/
   return FindBuildingAnimByName(&stru_830620.__pad_579C[4356], 1);
 }

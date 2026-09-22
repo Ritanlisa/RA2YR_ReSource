@@ -40,6 +40,6 @@ int DropListClass::COMStub()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall DropListClass::_vt35(_DWORD *this)
 {
-  return *(this + 13); /*0x4b55a3*/
+  return this->q034; /*0x4b55a3*/
 }
 }

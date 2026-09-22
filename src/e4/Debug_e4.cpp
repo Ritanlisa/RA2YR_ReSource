@@ -81,7 +81,7 @@ int __thiscall Debug_AccumFlags(_DWORD *this)
   int i; // edi
   int v3; // eax
 
-  v1 = *(this + 40); /*0x6e61f1*/
+  v1 = this->q0A0; /*0x6e61f1*/
   for ( i = 0; v1; i |= v3 ) /*0x6e61fc*/
   {
     v3 = TriggerTypeClass::GetFlags(v1); /*0x6e6200*/

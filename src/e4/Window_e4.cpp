@@ -8,7 +8,7 @@ bool Window::IsVisible()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall Window_IsVisible(_BYTE *this)
 {
-  return *(this + 24) && *(this + 25); /*0x4a5120*/
+  return this->q018 && *(this + 25); /*0x4a5120*/
 }
 }
 

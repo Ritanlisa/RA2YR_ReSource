@@ -83,19 +83,19 @@ unsigned int * ConnectionPointClass::Construct(unsigned int * a1, ConnectionPoin
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall ConnectionPointClass::Construct(_DWORD *this, _DWORD *a1, ConnectionPointClass *aP2)
 {
-  *(this + 1) = *a1; /*0x4a087c*/
-  *(this + 2) = a1[1]; /*0x4a0881*/
-  *(this + 3) = a1[2]; /*0x4a0887*/
-  *(this + 4) = a1[3]; /*0x4a088d*/
-  *(this + 6) = aP2; /*0x4a0896*/
-  *(this + 5) = 0; /*0x4a0899*/
-  *(this + 8) = 0; /*0x4a089c*/
-  *(this + 9) = 0; /*0x4a089f*/
+  this->q004 = *a1; /*0x4a087c*/
+  this->q008 = a1[1]; /*0x4a0881*/
+  this->q00C = a1[2]; /*0x4a0887*/
+  this->q010 = a1[3]; /*0x4a088d*/
+  this->q018 = aP2; /*0x4a0896*/
+  this->q014 = 0; /*0x4a0899*/
+  this->q020 = 0; /*0x4a089c*/
+  this->q024 = 0; /*0x4a089f*/
   *((_BYTE *)this + 40) = 1; /*0x4a08a2*/
   *((_BYTE *)this + 41) = 0; /*0x4a08a6*/
-  *(this + 7) = &vt_DynamicVectorClass_tagCONNECTDATA; /*0x4a08a9*/
-  *(this + 12) = 10; /*0x4a08b0*/
-  *(this + 11) = 0; /*0x4a08b7*/
+  this->q01C = &vt_DynamicVectorClass_tagCONNECTDATA; /*0x4a08a9*/
+  this->q00C = 10; /*0x4a08b0*/
+  this->q00B = 0; /*0x4a08b7*/
   *this = &vt_ConnectionPointClass; /*0x4a08ba*/
   (*(void (__stdcall **)(ConnectionPointClass *))(*(_DWORD *)aP2->__pad_0 + 4))(aP2); /*0x4a08c3*/
   return this; /*0x4a08c8*/
@@ -115,12 +115,12 @@ char __thiscall ConnectionPointClass_9_::_vt02(void *this, int a2, _DWORD *a3)
 
   if ( a2 ) /*0x4a128c*/
   {
-    *((_BYTE *)this + 12) = 0; /*0x4a1296*/
+    this->q00C = 0; /*0x4a1296*/
     if ( a3 ) /*0x4a129c*/
       v4 = a3; /*0x4a12b2*/
     else
       v4 = __2_YAPAXI_Z(4 * a2); /*0x4a12ae*/
-    *((_BYTE *)this + 12) = 1; /*0x4a12b6*/
+    this->q00C = 1; /*0x4a12b6*/
     if ( v4 ) /*0x4a12ba*/
     {
       if ( this->ConnectionPointClass_9_field_0x4 ) /*0x4a12c5*/
@@ -130,7 +130,7 @@ char __thiscall ConnectionPointClass_9_::_vt02(void *this, int a2, _DWORD *a3)
           v6 = a2; /*0x4a12d3*/
         for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->ConnectionPointClass_9_field_0x4 + 4 * i - 4) ) /*0x4a12d9*/
           ++i; /*0x4a12de*/
-        if ( *((_BYTE *)this + 13) ) /*0x4a12eb*/
+        if ( this->IsAllocated ) /*0x4a12eb*/
         {
           __3_YAXPAX_Z(*((void **)this + 1)); /*0x4a12f6*/
           this->ConnectionPointClass_9_field_0x4 = 0; /*0x4a12fe*/
@@ -138,7 +138,7 @@ char __thiscall ConnectionPointClass_9_::_vt02(void *this, int a2, _DWORD *a3)
       }
       this->ConnectionPointClass_9_field_0x4 = v4; /*0x4a1307*/
       this->ConnectionPointClass_9_field_0x8 = a2; /*0x4a130f*/
-      *((_BYTE *)this + 13) = a3 == 0; /*0x4a1312*/
+      this->IsAllocated = a3 == 0; /*0x4a1312*/
       return 1; /*0x4a1318*/
     }
     else
@@ -148,7 +148,7 @@ char __thiscall ConnectionPointClass_9_::_vt02(void *this, int a2, _DWORD *a3)
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x4a1322*/
+    (*(void (__thiscall **)(void *))(this->q00C)(this); /*0x4a1322*/
     return 1; /*0x4a1328*/
   }
 }

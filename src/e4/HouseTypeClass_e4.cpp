@@ -12,13 +12,13 @@ unsigned int * HouseTypeClass::loadVeteranWeapons(HouseTypeClass * aP1)
 _DWORD *__thiscall HouseTypeClass::loadVeteranWeapons(_DWORD *this, HouseTypeClass *aP1)
 {
   AbstractTypeClass::Init((int)this, (AbstractTypeClass *)aP1); /*0x511658*/
-  *(this + 83) = &vt_TypeList_InfantryTypeClass_const; /*0x51165d*/
-  *(this + 90) = &vt_TypeList_UnitTypeClass_const; /*0x511667*/
-  *(this + 97) = &vt_TypeList_AircraftTypeClass_const; /*0x511671*/
+  this->q14C = &vt_TypeList_InfantryTypeClass_const; /*0x51165d*/
+  this->q168 = &vt_TypeList_UnitTypeClass_const; /*0x511667*/
+  this->q184 = &vt_TypeList_AircraftTypeClass_const; /*0x511671*/
   *this = &HouseTypeClass::`vftable'; /*0x51167b*/
-  *(this + 1) = &HouseTypeClass::`vftable'; /*0x511681*/
-  *(this + 2) = &HouseTypeClass::`vftable'; /*0x511688*/
-  *(this + 3) = &vt_HouseTypeClass; /*0x51168f*/
+  this->vtable2 = &HouseTypeClass::`vftable'; /*0x511681*/
+  this->vtable3 = &HouseTypeClass::`vftable'; /*0x511688*/
+  this->vtable4 = &vt_HouseTypeClass; /*0x51168f*/
   return this; /*0x511698*/
 }
 }
@@ -696,28 +696,28 @@ _DWORD *__thiscall HouseTypeClass::readBaseDefense(_DWORD *this, VectorClass *aP
     return this; /*0x51337a*/
   (*(void (__thiscall **)(_DWORD *))(*this + 12))(this); /*0x51337e*/
   v3 = aP1->Capacity; /*0x513381*/
-  *(this + 2) = v3; /*0x513386*/
+  this->vtable3 = v3; /*0x513386*/
   if ( !v3 ) /*0x513389*/
   {
-    *(this + 1) = 0; /*0x5133ca*/
-    *((_BYTE *)this + 13) = 0; /*0x5133d1*/
+    this->vtable2 = 0; /*0x5133ca*/
+    this->q0D0 = 0; /*0x5133d1*/
     return this; /*0x5133d5*/
   }
   v4 = __2_YAPAXI_Z(4 * (_DWORD)v3); /*0x513393*/
-  *(this + 1) = v4; /*0x51339b*/
+  this->vtable2 = v4; /*0x51339b*/
   if ( !v4 ) /*0x5133a0*/
     return this; /*0x5133a0*/
-  v5 = *(this + 2); /*0x5133a2*/
+  v5 = this->vtable3; /*0x5133a2*/
   v6 = 0; /*0x5133a5*/
-  *((_BYTE *)this + 13) = 1; /*0x5133a9*/
+  this->q0D0 = 1; /*0x5133a9*/
   if ( v5 <= 0 ) /*0x5133ad*/
     return this; /*0x5133ad*/
   do /*0x5133c1*/
   {
-    *(_DWORD *)(*(this + 1) + 4 * v6) = *(_DWORD *)(*(_DWORD *)&aP1->?[3] + 4 * v6); /*0x5133b8*/
+    *(_DWORD *)(this->vtable2 + 4 * v6) = *(_DWORD *)(*(_DWORD *)&aP1->?[3] + 4 * v6); /*0x5133b8*/
     ++v6; /*0x5133be*/
   }
-  while ( v6 < *(this + 2) ); /*0x5133c1*/
+  while ( v6 < this->vtable3 ); /*0x5133c1*/
   return this; /*0x5133c5*/
 }
 }

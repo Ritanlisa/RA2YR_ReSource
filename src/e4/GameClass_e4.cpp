@@ -28,7 +28,7 @@ _DWORD *__thiscall sub_4381D0(_DWORD *this, int a2, int a3)
   _DWORD *v5; // eax
   _DWORD *v6; // ecx
 
-  result = (_DWORD *)*(this + 3); /*0x4381d3*/
+  result = (_DWORD *)this->q003; /*0x4381d3*/
   if ( !result ) /*0x4381d8*/
   {
     v5 = __2_YAPAXI_Z(4u); /*0x4381dc*/
@@ -36,9 +36,9 @@ _DWORD *__thiscall sub_4381D0(_DWORD *this, int a2, int a3)
       result = sub_437F50(v5); /*0x4381ea*/
     else
       result = 0; /*0x4381f1*/
-    *(this + 3) = result; /*0x4381f3*/
+    this->q003 = result; /*0x4381f3*/
   }
-  v6 = (_DWORD *)*(this + 3); /*0x4381f6*/
+  v6 = (_DWORD *)this->q003; /*0x4381f6*/
   if ( v6 ) /*0x4381fc*/
     return (_DWORD *)GameClass::initGameMode(v6, a2, a3); /*0x438208*/
   return result; /*0x4381f9*/
@@ -57,7 +57,7 @@ _DWORD *__thiscall sub_438300(_DWORD *this, int a2, int a3)
   _DWORD *v5; // eax
   _DWORD *v6; // ecx
 
-  result = (_DWORD *)*(this + 3); /*0x438303*/
+  result = (_DWORD *)this->q003; /*0x438303*/
   if ( !result ) /*0x438308*/
   {
     v5 = __2_YAPAXI_Z(4u); /*0x43830c*/
@@ -65,9 +65,9 @@ _DWORD *__thiscall sub_438300(_DWORD *this, int a2, int a3)
       result = sub_437F50(v5); /*0x43831a*/
     else
       result = 0; /*0x438321*/
-    *(this + 3) = result; /*0x438323*/
+    this->q003 = result; /*0x438323*/
   }
-  v6 = (_DWORD *)*(this + 3); /*0x438326*/
+  v6 = (_DWORD *)this->q003; /*0x438326*/
   if ( v6 ) /*0x43832c*/
     return (_DWORD *)GameClass::initGameMode(v6, a2, a3); /*0x438338*/
   return result; /*0x438329*/
@@ -93,7 +93,7 @@ int __thiscall GameClass::loadScenarioFiles(int *this, ObjectClass *aP1)
   int v11; // [esp+2Ch] [ebp-14h]
   struct tagRECT Rect; // [esp+30h] [ebp-10h] BYREF
 
-  result = *(this + 1); /*0x5d2267*/
+  result = this->q004; /*0x5d2267*/
   if ( result > 0 ) /*0x5d226c*/
   {
     GetClientRect((HWND)g_hWnd, &Rect); /*0x5d227e*/
@@ -104,7 +104,7 @@ int __thiscall GameClass::loadScenarioFiles(int *this, ObjectClass *aP1)
         *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[10228],
         aP1,
         0);
-    result = *(this + 1); /*0x5d22ab*/
+    result = this->q004; /*0x5d22ab*/
     v5 = 0; /*0x5d22af*/
     if ( result > 0 ) /*0x5d22b3*/
     {
@@ -112,7 +112,7 @@ int __thiscall GameClass::loadScenarioFiles(int *this, ObjectClass *aP1)
       v7 = 0; /*0x5d22b8*/
       do /*0x5d231d*/
       {
-        v6 = (int *)(*(this + 3) + result); /*0x5d22c7*/
+        v6 = (int *)(this->q003 + result); /*0x5d22c7*/
         v8 = *v6; /*0x5d22ce*/
         v9 = v6[1]; /*0x5d22d5*/
         v10 = v6[2]; /*0x5d22dc*/
@@ -132,9 +132,9 @@ int __thiscall GameClass::loadScenarioFiles(int *this, ObjectClass *aP1)
         result = v7 + 16; /*0x5d2314*/
         v7 += 16; /*0x5d2319*/
       }
-      while ( v5 < *(this + 1) ); /*0x5d231d*/
+      while ( v5 < this->q004 ); /*0x5d231d*/
     }
-    *(this + 1) = 0; /*0x5d2320*/
+    this->q004 = 0; /*0x5d2320*/
     if ( *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[10228] ) /*0x5d2330*/
       return (*(int (__thiscall **)(_DWORD, ObjectClass *, _DWORD))(**(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[10228] + 64))( /*0x5d2337*/
                *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[10228],
@@ -259,7 +259,7 @@ int __thiscall GameClass_GetRelatedObject(_DWORD *this)
 {
   int v1; // ecx
 
-  v1 = *(this + 1); /*0x631d30*/
+  v1 = this->q004; /*0x631d30*/
   if ( v1 ) /*0x631d35*/
     return (*(int (__thiscall **)(int))(*(_DWORD *)v1 + 4))(v1); /*0x631d39*/
   else
@@ -424,15 +424,15 @@ bool __thiscall sub_69AE10(int *this, const char **a2)
   int v3; // eax
   int v5; // esi
 
-  v3 = *(this + 109); /*0x69ae15*/
+  v3 = this->q06D; /*0x69ae15*/
   if ( !v3 ) /*0x69ae1d*/
     return String::Equals_Alt(a2, MEMORY[0x83F668]); /*0x69ae28*/
   v5 = 0; /*0x69ae33*/
   if ( v3 <= 0 ) /*0x69ae37*/
     return 0; /*0x69ae5d*/
-  while ( !String::Compare(a2, (const char **)(*(this + 106) + 4 * v5)) ) /*0x69ae50*/
+  while ( !String::Compare(a2, (const char **)(this->q06A + 4 * v5)) ) /*0x69ae50*/
   {
-    if ( ++v5 >= *(this + 109) ) /*0x69ae5b*/
+    if ( ++v5 >= this->q06D ) /*0x69ae5b*/
       return 0; /*0x69ae5b*/
   }
   return 1; /*0x69ae2d*/
@@ -608,12 +608,12 @@ void __thiscall sub_74FC80(char *this)
   if ( FileClass::Open(v2, 0) ) /*0x74fc9e*/
   {
     FileClass::Read(v2, this + 42, 16); /*0x74fcb1*/
-    for ( *(this + 57) = 0; *(this + strlen(this + 42) + 41) == 13; *(this + strlen(this + 42) + 41) = 0 ) /*0x74fccb*/
+    for ( this->q039 = 0; *(this + strlen(this + 42) + 41) == 13; *(this + strlen(this + 42) + 41) = 0 ) /*0x74fccb*/
       ; /*0x74fcdb*/
   }
   else
   {
-    *(this + 42) = 0; /*0x74fcfe*/
+    this->q02A = 0; /*0x74fcfe*/
   }
   RawFileClass::Dtor(v2); /*0x74fd05*/
 }
@@ -634,10 +634,10 @@ int __thiscall GameClass::processNetworkPacket(BufferPipe *this, void *Src, sign
   signed int v8; // eax
 
   result = 0; /*0x7ba3c4*/
-  v5 = *((_DWORD *)this + 3); /*0x7ba3c6*/
+  v5 = this->q003; /*0x7ba3c6*/
   if ( v5 && Src && Size > 0 ) /*0x7ba3db*/
   {
-    v6 = *((_DWORD *)this + 4); /*0x7ba3dd*/
+    v6 = this->q004; /*0x7ba3dd*/
     v7 = Size; /*0x7ba3e3*/
     if ( v6 ) /*0x7ba3e5*/
     {

@@ -46,7 +46,7 @@ int ParticleSystemClass_16::Write(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall ParticleSystemClass_16_::_vt06(_DWORD *this, int a2)
 {
-  return *(_DWORD *)(*(this + 1) + 4 * a2); /*0x4e87da*/
+  return *(_DWORD *)(this->q004 + 4 * a2); /*0x4e87da*/
 }
 }
 } // namespace gamemd

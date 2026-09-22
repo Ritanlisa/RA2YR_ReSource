@@ -641,13 +641,13 @@ char __thiscall WTFMode::Init(_BYTE *this)
 {
   char result; // al
 
-  result = *(this + 12504);
+  result = this->q30D8;
   if ( !result )
   {
     result = MEMORY[0x87F7E8][539758];
     if ( LOBYTE(MEMORY[0x87F7E8][539758]) )
     {
-      *(this + 12504) = 1;
+      this->q30D8 = 1;
       if ( dword_83ED20 == -1 )
         dword_83ED20 = MEMORY[0x87F7E8][539870];
       if ( !*(_DWORD *)this )

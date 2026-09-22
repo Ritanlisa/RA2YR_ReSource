@@ -375,16 +375,16 @@ unsigned int * BuildingTypeClass::loadBuildingProperty_b_545E520(ObjectTypeClass
 _DWORD *__thiscall BuildingTypeClass::loadBuildingProperty_b_545E520(_DWORD *this, ObjectTypeClass *aP1)
 {
   TechnoTypeClass::Construct((int)this, aP1); /*0x45e528*/
-  *(this + 896) = 0; /*0x45e52f*/
-  *(this + 1506) = 0; /*0x45e535*/
-  *(this + 1507) = 0; /*0x45e53b*/
-  *((_BYTE *)this + 6032) = 1; /*0x45e541*/
-  *((_BYTE *)this + 6033) = 0; /*0x45e548*/
-  *(this + 1505) = &vt_VectorClass_TPoint3D_int; /*0x45e54e*/
+  this->qE00 = 0; /*0x45e52f*/
+  this->PreventsPlacementOverlap = 0; /*0x45e535*/
+  this->ProductionCompletionThreshold = 0; /*0x45e53b*/
+  this->CostRatePerFrame = 1; /*0x45e541*/
+  this->q1791 = 0; /*0x45e548*/
+  this->DockingOffsets = &vt_VectorClass_TPoint3D_int; /*0x45e54e*/
   *this = &BuildingTypeClass::`vftable'; /*0x45e558*/
-  *(this + 1) = &BuildingTypeClass::`vftable'; /*0x45e55e*/
-  *(this + 2) = &BuildingTypeClass::`vftable'; /*0x45e565*/
-  *(this + 3) = &vt_BuildingTypeClass; /*0x45e56c*/
+  this->vtable2 = &BuildingTypeClass::`vftable'; /*0x45e55e*/
+  this->vtable3 = &BuildingTypeClass::`vftable'; /*0x45e565*/
+  this->vtable4 = &vt_BuildingTypeClass; /*0x45e56c*/
   return this; /*0x45e575*/
 }
 }
@@ -1141,7 +1141,7 @@ int __thiscall BuildingTypeClass::UpdatePower(#376 *this)
   int *v54; // [esp+Ch] [ebp+4h]
 
   BuildingTypeClass::ProcessPower((int)this, v54); /*0x464b39*/
-  Checksummer::Add_double(this->GateCloseDelay, *((_DWORD *)this + 907)); /*0x464b4e*/
+  Checksummer::Add_double(this->GateCloseDelay, this->qE2C); /*0x464b4e*/
   Power::TimerProcess(this->LightVisibility); /*0x464b5c*/
   Power::TimerProcess(this->LightIntensity); /*0x464b6a*/
   Power::TimerProcess(this->LightRedTint); /*0x464b78*/
@@ -1162,8 +1162,8 @@ int __thiscall BuildingTypeClass::UpdatePower(#376 *this)
   Power::TimerProcess(this->DoorStages); /*0x464c4a*/
   Checksummer::Add_Buffer((unsigned int *)v54, (unsigned __int8 *)this + 3844, 72); /*0x464c5a*/
   Checksummer::Add_Buffer((unsigned int *)v54, (unsigned __int8 *)this + 3916, 1428); /*0x464c6d*/
-  Power::TimerProcess(*((_DWORD *)this + 1336)); /*0x464c7b*/
-  v2 = Power::TimerProcess(*((_DWORD *)this + 1349)); /*0x464c89*/
+  Power::TimerProcess(this->IFVMode); /*0x464c7b*/
+  v2 = Power::TimerProcess(this->CloseRange); /*0x464c89*/
   LOBYTE(v2) = this->HoverPad; /*0x464c8e*/
   Power::FlagProcess(v54, v2); /*0x464c97*/
   LOBYTE(v3) = this->IsPlug; /*0x464c9c*/
@@ -1188,9 +1188,9 @@ int __thiscall BuildingTypeClass::UpdatePower(#376 *this)
   Power::FlagProcess(v54, v12); /*0x464d23*/
   LOBYTE(v13) = this->Unsellable; /*0x464d28*/
   v14 = Power::FlagProcess(v54, v13); /*0x464d31*/
-  LOBYTE(v14) = *((_BYTE *)this + 5796); /*0x464d36*/
+  LOBYTE(v14) = this->Radar; /*0x464d36*/
   Power::FlagProcess(v54, v14); /*0x464d3f*/
-  LOBYTE(v15) = *((_BYTE *)this + 5797); /*0x464d44*/
+  LOBYTE(v15) = this->SpySat; /*0x464d44*/
   Power::FlagProcess(v54, v15); /*0x464d4d*/
   LOBYTE(v16) = this->ChargeAnim; /*0x464d52*/
   v17 = Power::FlagProcess(v54, v16); /*0x464d5b*/
@@ -1267,13 +1267,13 @@ int __thiscall BuildingTypeClass::UpdatePower(#376 *this)
   Checksummer::Add_Buffer((unsigned int *)v54, (unsigned __int8 *)this + 5948, 12); /*0x464f88*/
   Checksummer::Add_Buffer((unsigned int *)v54, (unsigned __int8 *)this + 5960, 12); /*0x464f98*/
   v49 = Checksummer::Add_Buffer((unsigned int *)v54, (unsigned __int8 *)this + 5972, 12); /*0x464fa8*/
-  LOBYTE(v49) = *((_BYTE *)this + 5991); /*0x464fad*/
+  LOBYTE(v49) = this->CrateBeneath; /*0x464fad*/
   Power::FlagProcess(v54, v49); /*0x464fb6*/
-  LOBYTE(v50) = *((_BYTE *)this + 5992); /*0x464fbb*/
+  LOBYTE(v50) = this->LeaveRubble; /*0x464fbb*/
   Power::FlagProcess(v54, v50); /*0x464fc4*/
-  LOBYTE(v51) = *((_BYTE *)this + 5993); /*0x464fc9*/
+  LOBYTE(v51) = this->CrateBeneathIsMoney; /*0x464fc9*/
   Power::FlagProcess(v54, v51); /*0x464fd2*/
-  Power::TimerProcess(*((_DWORD *)this + 1504)); /*0x464fe0*/
+  Power::TimerProcess(this->q5E0); /*0x464fe0*/
   Power::TimerProcess(this->BarrelStartPitch); /*0x464fee*/
   LOBYTE(v52) = this->ConcentricRadialIndicator; /*0x464ff3*/
   return Power::FlagProcess(v54, v52); /*0x465001*/
@@ -1494,7 +1494,7 @@ char __thiscall sub_50B760(_DWORD *this, _DWORD *a2, __int16 *a3)
   v11 = *(_DWORD *)&MEMORY[0x8871E0][1].FreeMCV; /*0x50b78f*/
   v12 = 2 * v11 + BuildingTypeClass::GetFoundationWidth(a2); /*0x50b7a3*/
   v6 = 2 * v11 + BuildingTypeClass::GetFoundationHeight(v5, 0); /*0x50b7b1*/
-  v7 = 1 << *(this + 12); /*0x50b7b8*/
+  v7 = 1 << this->TargetSpecialThreatCoefficient; /*0x50b7b8*/
   v8 = a3; /*0x50b7ba*/
   v9 = *a3 - v11 - 1; /*0x50b7cd*/
   if ( v9 < *a3 + v12 + 1 ) /*0x50b7d0*/
@@ -1587,7 +1587,7 @@ LABEL_15:
             v13 = (ObjectClass *)(g_MapTileArray
                                 ? *((_DWORD *)g_MapTileArray + 20 * (__int16)v12 + 20 * unk_89C2DC * (__int16)v10 + 14)
                                 : -1);
-            if ( v13 != (ObjectClass *)*(this + 2) && v13 != v11 ) /*0x59413b*/
+            if ( v13 != (ObjectClass *)this->vtable3 && v13 != v11 ) /*0x59413b*/
               break; /*0x59413b*/
             v14 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&aP1); /*0x594147*/
             if ( !Cell::IsEmpty(v14) ) /*0x59414e*/
@@ -1671,47 +1671,47 @@ _DWORD *__thiscall BuildingTypeClass::Construct(_DWORD *this, AbstractClass *aP1
   int v4; // eax
 
   ObjectTypeClass::ConstructFull((int)this, aP1); /*0x644beb*/
-  *(this + 165) = 0; /*0x644bf8*/
-  *(this + 166) = 0; /*0x644bfe*/
-  *(this + 167) = 0; /*0x644c04*/
-  *(this + 172) = 0; /*0x644c10*/
-  *(this + 168) = 1; /*0x644c19*/
-  *(this + 169) = 1; /*0x644c1f*/
-  *(this + 170) = 0; /*0x644c25*/
-  *(this + 171) = 1; /*0x644c2b*/
-  *(this + 173) = 0; /*0x644c31*/
+  this->armed = 0; /*0x644bf8*/
+  this->weaponCount = 0; /*0x644bfe*/
+  this->weapon1 = 0; /*0x644c04*/
+  this->guardRange = 0; /*0x644c10*/
+  this->weapon2 = 1; /*0x644c19*/
+  this->eliteWeapon1 = 1; /*0x644c1f*/
+  this->eliteWeapon2 = 0; /*0x644c25*/
+  this->ammo = 1; /*0x644c2b*/
+  this->sight = 0; /*0x644c31*/
   BuildingTypeClass::loadBuildingProperty_b_5478850(this + 174, 0, 0); /*0x644c37*/
-  *(this + 179) = 10; /*0x644c3c*/
-  *(this + 178) = 0; /*0x644c43*/
-  *(this + 174) = &vt_TypeList_RGBClass; /*0x644c46*/
-  *(this + 181) = 0; /*0x644c4c*/
-  *((_BYTE *)this + 728) = 0; /*0x644c66*/
+  this->speed = 10; /*0x644c3c*/
+  this->pipScale = 0; /*0x644c43*/
+  this->cost = &vt_TypeList_RGBClass; /*0x644c46*/
+  this->threatPosed = 0; /*0x644c4c*/
+  this->threatAvoidValue = 0; /*0x644c66*/
   *((_BYTE *)this + 729) = 0; /*0x644c6c*/
   *((_BYTE *)this + 781) = -1; /*0x644c72*/
   *((_BYTE *)this + 782) = -1; /*0x644c78*/
-  *(this + 183) = 0; /*0x644c81*/
-  *(this + 184) = 1; /*0x644c87*/
-  *(this + 185) = 0; /*0x644c8d*/
-  *(this + 186) = 0; /*0x644c93*/
-  *(this + 187) = 0; /*0x644c99*/
-  *(this + 188) = 1; /*0x644c9f*/
-  *(this + 189) = 0; /*0x644ca5*/
-  *(this + 190) = 0; /*0x644cab*/
-  *(this + 191) = 0; /*0x644cb1*/
-  *(this + 192) = 0; /*0x644cb7*/
+  this->cloakable = 0; /*0x644c81*/
+  this->cloakRadius = 1; /*0x644c87*/
+  this->trainable = 0; /*0x644c8d*/
+  this->buildLimit = 0; /*0x644c93*/
+  this->FoundationData = 0; /*0x644c99*/
+  this->Buildup = 1; /*0x644c9f*/
+  this->BuildupLoaded = 0; /*0x644ca5*/
+  this->BuildCat = 0; /*0x644cab*/
+  this->q2FC = 0; /*0x644cb1*/
+  this->TechnoTypeClass_field_double_300 = 0; /*0x644cb7*/
   *(this + 193) = 0; /*0x644cbd*/
-  *((_BYTE *)this + 776) = 0; /*0x644cc3*/
+  this->AccelerationFactor = 0; /*0x644cc3*/
   *((_BYTE *)this + 777) = 0; /*0x644cc9*/
-  *((_BYTE *)this + 778) = 0; /*0x644ccf*/
+  this->q30A = 0; /*0x644ccf*/
   *((_BYTE *)this + 779) = 4; /*0x644cd5*/
-  *((_BYTE *)this + 780) = 0; /*0x644cdc*/
+  this->q0C3 = 0; /*0x644cdc*/
   *((_BYTE *)this + 783) = 0; /*0x644ce2*/
-  *(this + 196) = -1; /*0x644ce8*/
-  *(this + 197) = -1; /*0x644cee*/
+  this->CloakingSpeed = -1; /*0x644ce8*/
+  this->DebrisTypes = -1; /*0x644cee*/
   *this = &ParticleTypeClass::`vftable'; /*0x644cf4*/
-  *(this + 1) = &ParticleTypeClass::`vftable'; /*0x644cfa*/
-  *(this + 2) = &ParticleTypeClass::`vftable'; /*0x644d01*/
-  *(this + 3) = &vt_ParticleTypeClass; /*0x644d08*/
+  this->vtable2 = &ParticleTypeClass::`vftable'; /*0x644cfa*/
+  this->vtable3 = &ParticleTypeClass::`vftable'; /*0x644d01*/
+  this->vtable4 = &vt_ParticleTypeClass; /*0x644d08*/
   if ( (int)MEMORY[0xA83DA8] < MEMORY[0xA83DA0] /*0x644d43*/
     || (MEMORY[0xA83DA5] || !MEMORY[0xA83DA0])
     && MEMORY[0xA83DAC] > 0
@@ -2040,7 +2040,7 @@ bool __thiscall BuildingTypeClass::IsPlacementValid(void *this, IUnknown *aP1, I
   int v5; // eax
   IUnknown *v6; // eax
 
-  if ( (*(int (__fastcall **)(void *))(*(_DWORD *)this + 456))(this) < 0 /*0x746030*/
+  if ( (*(int (__fastcall **)(void *))(this->TurretOffset)(this) < 0 /*0x746030*/
     || !MapSeed::CheckTileMatch(&MEMORY[0x87F7E8], (__int16 *)aP1, (__int16 *)aP2, 0, 0, 0, 0) )
   {
     return 1; /*0x746030*/

@@ -133,17 +133,17 @@ _DWORD *__thiscall SideClass::Construct(_DWORD *this, CCINIClass *aP1)
   int v3; // eax
 
   AbstractTypeClass::Constructor((int)this, (AbstractClass *)aP1); /*0x6a4559*/
-  *(this + 39) = 0; /*0x6a4563*/
-  *(this + 40) = 0; /*0x6a4569*/
-  *((_BYTE *)this + 164) = 1; /*0x6a456f*/
+  this->houseTypesCount = 0; /*0x6a4563*/
+  this->q0A0 = 0; /*0x6a4569*/
+  this->q0A4 = 1; /*0x6a456f*/
   *((_BYTE *)this + 165) = 0; /*0x6a4576*/
-  *(this + 43) = 10; /*0x6a457c*/
-  *(this + 42) = 0; /*0x6a4586*/
-  *(this + 38) = &vt_TypeList_int; /*0x6a458c*/
+  this->q02B = 10; /*0x6a457c*/
+  this->q0A8 = 0; /*0x6a4586*/
+  this->houseTypes = &vt_TypeList_int; /*0x6a458c*/
   *this = &SideClass::`vftable'; /*0x6a4597*/
-  *(this + 1) = &SideClass::`vftable'; /*0x6a459d*/
-  *(this + 2) = &SideClass::`vftable'; /*0x6a45a3*/
-  *(this + 3) = &vt_SideClass; /*0x6a45aa*/
+  this->vtable2 = &SideClass::`vftable'; /*0x6a459d*/
+  this->vtable3 = &SideClass::`vftable'; /*0x6a45a3*/
+  this->vtable4 = &vt_SideClass; /*0x6a45aa*/
   AbstractClass::GenerateUniqueID((int)(this + 1)); /*0x6a45b1*/
   if ( *(int *)stru_89E138.__pad_15FF8 < *(int *)&stru_89E138.__pad_579C[67668] /*0x6a45ea*/
     || (BYTE1(stru_89E138.field_15FF4) || !*(_DWORD *)&stru_89E138.__pad_579C[67668])
@@ -269,9 +269,9 @@ SideClass *__thiscall SideClass::Init(void **this, char a2)
   void **v6; // [esp+4h] [ebp-4h] BYREF
 
   *this = &SideClass::`vftable'; /*0x6a4936*/
-  *(this + 1) = &SideClass::`vftable'; /*0x6a493c*/
-  *(this + 2) = &SideClass::`vftable'; /*0x6a4943*/
-  *(this + 3) = &vt_SideClass; /*0x6a494a*/
+  this->vtable2 = &SideClass::`vftable'; /*0x6a493c*/
+  this->vtable3 = &SideClass::`vftable'; /*0x6a4943*/
+  this->vtable4 = &vt_SideClass; /*0x6a494a*/
   AbstractClass::AnnounceExpiredPointer(this, 1); /*0x6a4951*/
   v6 = this; /*0x6a4966*/
   v3 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0x8B4120] + 16))(&MEMORY[0x8B4120], &v6); /*0x6a496a*/
@@ -284,15 +284,15 @@ SideClass *__thiscall SideClass::Init(void **this, char a2)
     }
     while ( v3 < MEMORY[0x8B4130] ); /*0x6a499d*/
   }
-  v4 = *(this + 39); /*0x6a499f*/
-  *(this + 38) = &vt_VectorClass_int; /*0x6a49a5*/
+  v4 = this->houseTypesCount; /*0x6a499f*/
+  this->houseTypes = &vt_VectorClass_int; /*0x6a49a5*/
   if ( v4 && *((_BYTE *)this + 165) ) /*0x6a49b3*/
   {
     __3_YAXPAX_Z(v4); /*0x6a49be*/
-    *(this + 39) = 0; /*0x6a49c6*/
+    this->houseTypesCount = 0; /*0x6a49c6*/
   }
   *((_BYTE *)this + 165) = 0; /*0x6a49d2*/
-  *(this + 40) = 0; /*0x6a49d9*/
+  this->q028 = 0; /*0x6a49d9*/
   AbstractTypeClass::Dtor(this); /*0x6a49e3*/
   if ( (a2 & 1) != 0 ) /*0x6a49ed*/
     __3_YAXPAX_Z(this); /*0x6a49f0*/

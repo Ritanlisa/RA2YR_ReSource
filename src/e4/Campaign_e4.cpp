@@ -24,10 +24,10 @@ char __thiscall Campaign_WorldDominationTour_16_::_vt02(_BYTE *this, int a2, _DW
   v3 = a2; /*0x765843*/
   if ( !a2 ) /*0x76584d*/
   {
-    (*(void (__thiscall **)(_BYTE *))(*(_DWORD *)this + 12))(this); /*0x76594d*/
+    (*(void (__thiscall **)(_BYTE *))(this->q00C)(this); /*0x76594d*/
     return 1; /*0x765953*/
   }
-  *(this + 12) = 0; /*0x765857*/
+  this->q00C = 0; /*0x765857*/
   if ( a3 ) /*0x76585d*/
   {
     *a3 = a2; /*0x7658a3*/
@@ -73,7 +73,7 @@ char __thiscall Campaign_WorldDominationTour_16_::_vt02(_BYTE *this, int a2, _DW
   }
   v8 = v6; /*0x7658cd*/
 LABEL_14:
-  *(this + 12) = 1; /*0x7658cf*/
+  this->q00C = 1; /*0x7658cf*/
   if ( !v8 ) /*0x7658d5*/
     return 0; /*0x7658da*/
   if ( this->Campaign_WorldDominationTour_16_field_0x4 ) /*0x7658e1*/
@@ -82,7 +82,7 @@ LABEL_14:
       v3 = this->Campaign_WorldDominationTour_16_field_0x8; /*0x7658ef*/
     for ( i = 0; i < v3; ++i ) /*0x7658f5*/
       ComPtr::Set(&v8[2 * i], *(_DWORD *)(this->Campaign_WorldDominationTour_16_field_0x4 + 8 * i + 4)); /*0x765902*/
-    if ( *(this + 13) ) /*0x76590c*/
+    if ( this->IsAllocated ) /*0x76590c*/
     {
       v12 = (void (__thiscall ***)(_DWORD, int))this->Campaign_WorldDominationTour_16_field_0x4; /*0x765913*/
       if ( v12 ) /*0x765918*/
@@ -93,7 +93,7 @@ LABEL_14:
   }
   this->Campaign_WorldDominationTour_16_field_0x4 = v8; /*0x765936*/
   this->Campaign_WorldDominationTour_16_field_0x8 = v3; /*0x765939*/
-  *(this + 13) = a3 == 0; /*0x76593c*/
+  this->IsAllocated = a3 == 0; /*0x76593c*/
   return 1; /*0x7658d7*/
 }
 }

@@ -23,7 +23,7 @@ void *__thiscall ConstructorWDTFlagOption_Create(
   *((_DWORD *)this + 3) = v8; /*0x767836*/
   this->GameOption_WorldDominationTour_field_0x04 = 0; /*0x76783d*/
   *(_DWORD *)this->__pad_0 = &WorldDominationTour::GameOption::`vftable'; /*0x767844*/
-  *((_DWORD *)this + 4) = v6; /*0x76784a*/
+  this->q004 = v6; /*0x76784a*/
   String::AssignFromPtr((char **)this + 5, (const char **)&a4); /*0x76784d*/
   String::AssignFromPtr((char **)this + 6, (const char **)&a2); /*0x76785a*/
   *(_DWORD *)this->__pad_0 = &WorldDominationTour::FlagGameOption::`vftable'; /*0x767863*/

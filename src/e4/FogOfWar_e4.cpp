@@ -386,8 +386,8 @@ int __thiscall FogOfWar::Render(int **this)
 
   if ( g_hWnd ) /*0x657cf0*/
   {
-    v7 = (*(int (__thiscall **)(_DWORD))(**(this + 1159) + 124))(*(this + 1159)); /*0x657d4e*/
-    result = (*(int (__thiscall **)(_DWORD))(**(this + 1159) + 128))(*(this + 1159)); /*0x657d52*/
+    v7 = (*(int (__thiscall **)(_DWORD))(*this->q487 + 124))(this->q487); /*0x657d4e*/
+    result = (*(int (__thiscall **)(_DWORD))(*this->q487 + 128))(this->q487); /*0x657d52*/
     v8 = 0; /*0x657d58*/
     for ( i = result; v8 < result; ++v8 ) /*0x657d60*/
     {
@@ -408,11 +408,11 @@ int __thiscall FogOfWar::Render(int **this)
   }
   else
   {
-    v2 = *(this + 1159); /*0x657cf2*/
+    v2 = this->q487; /*0x657cf2*/
     v3 = *v2; /*0x657d06*/
-    v4 = (*(int (__thiscall **)(_DWORD, _DWORD *, _DWORD, int))(**(this + 1160) + 120))(*(this + 1160), v11, 0, 1); /*0x657d0d*/
-    v5 = (*(int (__thiscall **)(int *, _BYTE *, _DWORD, int))(*v2 + 120))(v2, v12, *(this + 1160), v4); /*0x657d21*/
-    (*(void (__thiscall **)(_DWORD, int))(v3 + 8))(*(this + 1159), v5); /*0x657d2b*/
+    v4 = (*(int (__thiscall **)(_DWORD, _DWORD *, _DWORD, int))(*this->q488 + 120))(this->q488, v11, 0, 1); /*0x657d0d*/
+    v5 = (*(int (__thiscall **)(int *, _BYTE *, _DWORD, int))(*v2 + 120))(v2, v12, this->q488, v4); /*0x657d21*/
+    (*(void (__thiscall **)(_DWORD, int))(v3 + 8))(this->q487, v5); /*0x657d2b*/
     return FogOfWar::RenderCell((int)this); /*0x657d30*/
   }
   return result; /*0x657d35*/

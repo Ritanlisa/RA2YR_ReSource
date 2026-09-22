@@ -240,7 +240,7 @@ void *__thiscall LinkedList_MoveNode(void *this, void *a2)
   if ( a2 != this ) /*0x55660a*/
   {
     (*(void (__thiscall **)(void *))(*(_DWORD *)this + 36))(this); /*0x55660e*/
-    (*(void (__thiscall **)(void *, void *))(*(_DWORD *)this + 12))(this, a2); /*0x556616*/
+    (*(void (__thiscall **)(void *, void *))(this->q00C)(this, a2); /*0x556616*/
   }
   return this; /*0x55661b*/
 }
@@ -256,7 +256,7 @@ _DWORD *__thiscall LinkedList_FindPrev(_DWORD *this)
   _DWORD *result; // eax
 
   v1 = this + 2; /*0x556643*/
-  if ( !*(this + 2) ) /*0x556640*/
+  if ( !this->q008 ) /*0x556640*/
     return this; /*0x55665d*/
   do /*0x556651*/
   {
@@ -281,8 +281,8 @@ int __thiscall LinkedList_InsertAfter(_DWORD *this, int a2)
   (*(void (__thiscall **)(_DWORD *))(*this + 36))(this); /*0x5566a5*/
   v3 = *(_DWORD *)(a2 + 4); /*0x5566ac*/
   *(_DWORD *)(a2 + 4) = this; /*0x5566af*/
-  *(this + 2) = a2; /*0x5566b4*/
-  *(this + 1) = v3; /*0x5566b7*/
+  this->q008 = a2; /*0x5566b4*/
+  this->Tail = v3; /*0x5566b7*/
   if ( v3 ) /*0x5566ba*/
     *(_DWORD *)(v3 + 8) = this; /*0x5566bc*/
   return (*(int (__thiscall **)(_DWORD *))(*this + 24))(this); /*0x5566c6*/
@@ -300,8 +300,8 @@ _DWORD *__thiscall LinkedList_Attach(_DWORD *this, int a2)
   (*(void (__thiscall **)(_DWORD *))(*this + 36))(this); /*0x5566d5*/
   v3 = (*(int (__thiscall **)(int))(*(_DWORD *)a2 + 24))(a2); /*0x5566de*/
   *(_DWORD *)(v3 + 8) = this; /*0x5566e1*/
-  *(this + 1) = v3; /*0x5566e4*/
-  *(this + 2) = 0; /*0x5566e7*/
+  this->Tail = v3; /*0x5566e4*/
+  this->q008 = 0; /*0x5566e7*/
   return this; /*0x5566f0*/
 }
 }
@@ -318,9 +318,9 @@ int __thiscall LinkedList_Append(_DWORD *this, int a2)
   (*(void (__thiscall **)(_DWORD *))(*this + 36))(this); /*0x556705*/
   v3 = (*(int (__thiscall **)(int))(*(_DWORD *)a2 + 28))(a2); /*0x55670e*/
   *(_DWORD *)(v3 + 4) = this; /*0x556711*/
-  *(this + 2) = v3; /*0x556714*/
+  this->q008 = v3; /*0x556714*/
   v4 = *this; /*0x556717*/
-  *(this + 1) = 0; /*0x55671b*/
+  this->Tail = 0; /*0x55671b*/
   return (*(int (__thiscall **)(_DWORD *))(v4 + 24))(this); /*0x556725*/
 }
 }
@@ -338,14 +338,14 @@ int __thiscall LinkedList_RemoveNode(_DWORD *this)
 
   v2 = (*(int (__thiscall **)(_DWORD *))(*this + 24))(this); /*0x55673e*/
   v3 = (*(int (__thiscall **)(_DWORD *))(*this + 28))(this); /*0x556740*/
-  v4 = *(this + 2); /*0x556743*/
+  v4 = this->q008; /*0x556743*/
   if ( v4 ) /*0x55674a*/
-    *(_DWORD *)(v4 + 4) = *(this + 1); /*0x55674f*/
-  v5 = *(this + 1); /*0x556752*/
+    *(_DWORD *)(v4 + 4) = this->Tail; /*0x55674f*/
+  v5 = this->Tail; /*0x556752*/
   if ( v5 ) /*0x556757*/
-    *(_DWORD *)(v5 + 8) = *(this + 2); /*0x55675c*/
-  *(this + 2) = 0; /*0x556761*/
-  *(this + 1) = 0; /*0x556764*/
+    *(_DWORD *)(v5 + 8) = this->q008; /*0x55675c*/
+  this->q008 = 0; /*0x556761*/
+  this->Tail = 0; /*0x556764*/
   if ( (_DWORD *)v2 != this ) /*0x556767*/
     return v2; /*0x55677e*/
   if ( (_DWORD *)v3 == this ) /*0x55676b*/
@@ -363,7 +363,7 @@ void __thiscall LinkedList_Remove(_DWORD *this, _DWORD *a2)
   _DWORD *v2; // eax
   _DWORD *v3; // edx
 
-  v2 = (_DWORD *)*(this + 13); /*0x623460*/
+  v2 = (_DWORD *)this->q034; /*0x623460*/
   v3 = 0; /*0x623463*/
   if ( v2 ) /*0x623468*/
   {
@@ -377,7 +377,7 @@ void __thiscall LinkedList_Remove(_DWORD *this, _DWORD *a2)
     if ( v3 ) /*0x623484*/
       *v3 = *v2; /*0x623489*/
     else
-      *(this + 13) = *v2; /*0x62349a*/
+      this->q034 = *v2; /*0x62349a*/
     __3_YAXPAX_Z(v2); /*0x62348b*/
   }
 }
@@ -410,7 +410,7 @@ void __thiscall LinkedList_RelinkNode(_DWORD *this, int a2)
     if ( a2 ) /*0x632d49*/
       *(_DWORD *)(a2 + 8) = this + 5; /*0x632d4e*/
     *(this + 7) = this; /*0x632d54*/
-    *(this + 1) = this + 5; /*0x632d57*/
+    this->Tail = this + 5; /*0x632d57*/
   }
 }
 }
@@ -423,7 +423,7 @@ char __thiscall LinkedList::Contains(_DWORD *this, IUnknown *aP1)
 {
   int v2; // eax
 
-  v2 = *(this + 10); /*0x6e5380*/
+  v2 = this->q028; /*0x6e5380*/
   if ( !v2 ) /*0x6e5385*/
     return 0; /*0x6e5396*/
   while ( (IUnknown *)v2 != aP1 ) /*0x6e538d*/

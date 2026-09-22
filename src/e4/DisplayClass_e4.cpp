@@ -12,28 +12,28 @@ char __thiscall sub_487630(_DWORD *this)
   int v2; // edx
   int v3; // eax
 
-  if ( *(this + 76) == 1 ) /*0x487637*/
-    *(this + 76) = 0; /*0x487639*/
-  v1 = *(this + 76) - 1; /*0x487649*/
-  *(this + 76) = v1; /*0x48764a*/
+  if ( this->q130 == 1 ) /*0x487637*/
+    this->q130 = 0; /*0x487639*/
+  v1 = this->q130 - 1; /*0x487649*/
+  this->q130 = v1; /*0x48764a*/
   v2 = v1; /*0x487650*/
-  v3 = *(this + 75); /*0x487652*/
+  v3 = this->q12C; /*0x487652*/
   if ( (v3 & 8) != 0 && (v3 & 0x10) != 0 ) /*0x48765e*/
   {
     if ( v2 <= 0 ) /*0x48766f*/
     {
-      v3 = *(this + 80); /*0x487671*/
+      v3 = this->q140; /*0x487671*/
       if ( (*(_BYTE *)(this + 80) & 0x20) == 0x20 ) /*0x48767f*/
       {
         LOBYTE(v3) = v3 & 0xDF; /*0x487681*/
-        *(this + 80) = v3; /*0x487683*/
+        this->q140 = v3; /*0x487683*/
       }
     }
   }
   else if ( v2 <= 0 ) /*0x487662*/
   {
     LOBYTE(v3) = v3 | 0x18; /*0x487664*/
-    *(this + 75) = v3; /*0x487666*/
+    this->q12C = v3; /*0x487666*/
   }
   return v3; /*0x48766c*/
 }
@@ -50,23 +50,23 @@ int __thiscall sub_487690(int *this)
   int v3; // edx
   int result; // eax
 
-  v1 = *(this + 76); /*0x487691*/
+  v1 = this->q130; /*0x487691*/
   if ( v1 == -1 ) /*0x48769a*/
-    *(this + 76) = 0; /*0x48769c*/
-  v2 = *(this + 76) + 1; /*0x4876ac*/
-  *(this + 76) = v2; /*0x4876ad*/
+    this->q130 = 0; /*0x48769c*/
+  v2 = this->q130 + 1; /*0x4876ac*/
+  this->q130 = v2; /*0x4876ad*/
   v3 = v2; /*0x4876b3*/
-  result = *(this + 77); /*0x4876b5*/
+  result = this->q134; /*0x4876b5*/
   if ( v3 > result ) /*0x4876bd*/
-    *(this + 76) = result; /*0x4876bf*/
+    this->q130 = result; /*0x4876bf*/
   if ( v1 <= 0 ) /*0x4876c8*/
   {
-    result = *(this + 76); /*0x4876ca*/
+    result = this->q130; /*0x4876ca*/
     if ( result > 0 ) /*0x4876d2*/
     {
-      result = *(this + 80); /*0x4876d4*/
+      result = this->q140; /*0x4876d4*/
       LOBYTE(result) = result | 0x20; /*0x4876da*/
-      *(this + 80) = result; /*0x4876dc*/
+      this->q140 = result; /*0x4876dc*/
     }
   }
   return result; /*0x4876c7*/
@@ -681,10 +681,10 @@ int __thiscall TacticalClass_ExitMode(_BYTE *this)
 {
   if ( MEMORY[0x887324] ) /*0x4aeadb*/
     TacticalClass::ResetScrollBounds(); /*0x4aeadd*/
-  *(this + 4559) = 0; /*0x4aeae2*/
-  *(this + 4560) = 0; /*0x4aeae9*/
+  this->q11CF = 0; /*0x4aeae2*/
+  this->q11D0 = 0; /*0x4aeae9*/
   MEMORY[0xA8ED9D] = 1; /*0x4aeaf0*/
-  return (*(int (__thiscall **)(_BYTE *, _DWORD, _DWORD))(*(_DWORD *)this + 72))(this, 0, 0); /*0x4aeb02*/
+  return (*(int (__thiscall **)(_BYTE *, _DWORD, _DWORD))(this->q048)(this, 0, 0); /*0x4aeb02*/
 }
 }
 
@@ -707,7 +707,7 @@ bool __thiscall DisplayClass::RenderStatusText(int this, IUnknown *aP1, char a3)
     if ( !*(_BYTE *)(this + 13) && v5 ) /*0x5519e2*/
       return 0; /*0x5519e2*/
     v6 = *(_DWORD *)(this + 20); /*0x5519e4*/
-    if ( v6 <= 0 || !(*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)this + 8))(this, v5 + v6, 0) ) /*0x5519f4*/
+    if ( v6 <= 0 || !(*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(this->q008)(this, v5 + v6, 0) ) /*0x5519f4*/
       return 0; /*0x551a04*/
   }
   v7 = *(_DWORD *)(this + 16); /*0x551a0a*/
@@ -729,24 +729,24 @@ int __thiscall sub_551A90(_DWORD *this, int a2)
   int i; // edi
   int j; // eax
 
-  v3 = *(this + 2); /*0x551a93*/
-  if ( *(this + 4) >= v3 ) /*0x551a9b*/
+  v3 = this->q008; /*0x551a93*/
+  if ( this->Count >= v3 ) /*0x551a9b*/
   {
-    if ( !*((_BYTE *)this + 13) && v3 ) /*0x551aa6*/
+    if ( !this->MovementZones && v3 ) /*0x551aa6*/
       return 0; /*0x551aa6*/
-    v4 = *(this + 5); /*0x551aa8*/
+    v4 = this->CapacityIncrement; /*0x551aa8*/
     if ( v4 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*this + 8))(this, v3 + v4, 0) ) /*0x551ab8*/
       return 0; /*0x551abf*/
   }
-  for ( i = 0; i < *(this + 4); ++i ) /*0x551ad2*/
+  for ( i = 0; i < this->Count; ++i ) /*0x551ad2*/
   {
-    if ( DisplayClass::checkScreenBounds(*(void **)(*(this + 1) + 4 * i), a2) ) /*0x551adb*/
+    if ( DisplayClass::checkScreenBounds(*(void **)(this->q004 + 4 * i), a2) ) /*0x551adb*/
       break; /*0x551ae2*/
   }
-  for ( j = *(this + 4) - 1; j >= i; *(_DWORD *)(*(this + 1) + 4 * j + 8) = *(_DWORD *)(*(this + 1) + 4 * j + 4) ) /*0x551af2*/
+  for ( j = this->Count - 1; j >= i; *(_DWORD *)(this->q004 + 4 * j + 8) = *(_DWORD *)(this->q004 + 4 * j + 4) ) /*0x551af2*/
     --j; /*0x551af7*/
-  *(_DWORD *)(*(this + 1) + 4 * i) = a2; /*0x551b07*/
-  ++*(this + 4); /*0x551b0f*/
+  *(_DWORD *)(this->q004 + 4 * i) = a2; /*0x551b07*/
+  ++this->Count; /*0x551b0f*/
   return 1; /*0x551ac1*/
 }
 }
@@ -888,18 +888,18 @@ int __thiscall DisplayClass::ReadFromBuffer(BufferStraw *this, void *a1, signed 
   v5 = this->DisplayClass_field_0xC; /*0x7ba4d6*/
   if ( v5 && a1 && Size > 0 ) /*0x7ba4eb*/
   {
-    v6 = *((_DWORD *)this + 4); /*0x7ba4ed*/
+    v6 = this->q004; /*0x7ba4ed*/
     v7 = Size; /*0x7ba4f3*/
     if ( v6 ) /*0x7ba4f5*/
     {
-      v8 = v6 - *((_DWORD *)this + 6); /*0x7ba4fa*/
+      v8 = v6 - this->q018; /*0x7ba4fa*/
       v7 = Size; /*0x7ba4fc*/
       if ( Size >= v8 ) /*0x7ba500*/
         v7 = v8; /*0x7ba502*/
     }
     if ( v7 > 0 ) /*0x7ba506*/
-      memcpy(a1, (const void *)(v5 + *((_DWORD *)this + 6)), v7); /*0x7ba510*/
-    *((_DWORD *)this + 6) += v7; /*0x7ba51d*/
+      memcpy(a1, (const void *)(v5 + this->q018), v7); /*0x7ba510*/
+    this->q018 += v7; /*0x7ba51d*/
     return v7; /*0x7ba520*/
   }
   return result; /*0x7ba523*/

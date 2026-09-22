@@ -273,6 +273,6 @@ BOOL Frame::Init()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 BOOL __thiscall sub_724C00(_DWORD *this)
 {
-  return *(this + 1) != 0; /*0x724c0a*/
+  return this->q004 != 0; /*0x724c0a*/
 }
 }

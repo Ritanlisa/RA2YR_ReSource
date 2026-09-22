@@ -46,19 +46,19 @@ signed int __thiscall Territory_WorldDominationTour_8_::_vt02(signed int *this)
   signed int result; // eax
   signed int v3; // edi
 
-  result = *(this + 4); /*0x771903*/
+  result = this->q004; /*0x771903*/
   if ( result != -1 ) /*0x771909*/
   {
     v3 = *(this + 6); /*0x77190c*/
-    result = Timer::GetTicks() - *(this + 4); /*0x77191c*/
+    result = Timer::GetTicks() - this->q004; /*0x77191c*/
     if ( result >= v3 ) /*0x771921*/
     {
       *(this + 6) = 0; /*0x771934*/
-      *(this + 4) = -1; /*0x771937*/
+      this->q004 = -1; /*0x771937*/
     }
     else
     {
-      *(this + 4) = -1; /*0x771925*/
+      this->q004 = -1; /*0x771925*/
       *(this + 6) = v3 - result; /*0x77192c*/
     }
   }
@@ -83,7 +83,7 @@ char Territory_WorldDominationTour_8::Read(int a2, int a3)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall Territory_WorldDominationTour_8_::_vt04(int *this, int a2, int a3)
 {
-  AudioQueue::Update(*(this + 7)); /*0x771973*/
+  AudioQueue::Update(this->q01C); /*0x771973*/
   return 0; /*0x77197a*/
 }
 }
@@ -96,7 +96,7 @@ void Territory_WorldDominationTour_8::Write(int a2, int a3)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall Territory_WorldDominationTour_8_::_vt05(int *this, int a2, int a3)
 {
-  AudioQueue::Update(*(this + 7)); /*0x771983*/
+  AudioQueue::Update(this->q01C); /*0x771983*/
 }
 }
 } // namespace gamemd
@@ -108,7 +108,7 @@ void Territory_WorldDominationTour_8::Close(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall Territory_WorldDominationTour_8_::_vt08(int *this, int a2)
 {
-  AudioQueue::Update(*(this + 7)); /*0x7719d3*/
+  AudioQueue::Update(this->q01C); /*0x7719d3*/
 }
 }
 } // namespace gamemd

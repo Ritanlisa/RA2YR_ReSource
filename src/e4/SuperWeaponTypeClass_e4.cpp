@@ -46,12 +46,12 @@ bool __thiscall SuperWeaponTypeClass::IsAvailable(_DWORD *this)
   bool v37; // [esp+17h] [ebp-5h]
   int v38; // [esp+18h] [ebp-4h]
 
-  v36 = *(this + 87) > 0; /*0x4f6565*/
-  v33 = *(this + 86) > 0; /*0x4f656c*/
-  v37 = *(this + 88) > 0; /*0x4f6573*/
+  v36 = this->q057 > 0; /*0x4f6565*/
+  v33 = this->q056 > 0; /*0x4f656c*/
+  v37 = this->q058 > 0; /*0x4f6573*/
   v2 = *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 2848; /*0x4f657d*/
-  v32 = *(this + 24) > 0; /*0x4f6583*/
-  v3 = SuperWeaponTypeClass::FindByName((void *)(*(this + 13) + 152)); /*0x4f6598*/
+  v32 = this->UIName > 0; /*0x4f6583*/
+  v3 = SuperWeaponTypeClass::FindByName((void *)(this->SidebarImageFile_0x18 + 152)); /*0x4f6598*/
   v4 = *(_DWORD *)(v2 + 16); /*0x4f659a*/
   v5 = 1 << v3; /*0x4f659d*/
   v6 = 0; /*0x4f659f*/
@@ -77,14 +77,14 @@ LABEL_5:
     v32 = 1; /*0x4f65d5*/
   if ( v36 && v33 ) /*0x4f65e8*/
     return 1; /*0x4f65f3*/
-  v11 = (*(int (__stdcall **)(_DWORD *))(*(this + 9) + 24))(this + 9); /*0x4f6603*/
+  v11 = (*(int (__stdcall **)(_DWORD *))(this->ActionValue + 24))(this + 9); /*0x4f6603*/
   v38 = v11; /*0x4f6612*/
   BuildableFromArray = HouseClass::FirstBuildableFromArray( /*0x4f6616*/
                          this,
                          (AbstractClass *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 2276));
   v13 = *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 2876; /*0x4f6623*/
   v34 = BuildableFromArray != 0; /*0x4f662c*/
-  v14 = SuperWeaponTypeClass::FindByName((void *)(*(this + 13) + 152)); /*0x4f6641*/
+  v14 = SuperWeaponTypeClass::FindByName((void *)(this->SidebarImageFile_0x18 + 152)); /*0x4f6641*/
   v15 = *(_DWORD *)(v13 + 16); /*0x4f6643*/
   v16 = 1 << v14; /*0x4f6646*/
   v17 = 0; /*0x4f6648*/
@@ -114,7 +114,7 @@ LABEL_17:
   if ( v20 ) /*0x4f6677*/
   {
     v21 = *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 2876; /*0x4f668c*/
-    v22 = 1 << SuperWeaponTypeClass::FindByName((void *)(*(this + 13) + 152)); /*0x4f669e*/
+    v22 = 1 << SuperWeaponTypeClass::FindByName((void *)(this->SidebarImageFile_0x18 + 152)); /*0x4f669e*/
     v23 = *(_DWORD *)(v21 + 16); /*0x4f66a0*/
     v24 = 0; /*0x4f66a3*/
     if ( v23 <= 0 ) /*0x4f66a7*/
@@ -205,60 +205,60 @@ _BYTE *__thiscall SuperWeaponTypeClass::Construct(_BYTE *this, AbstractClass *aP
 
   AbstractTypeClass::Constructor((int)this, aP1); /*0x5113fa*/
   v3 = 0; /*0x5113ff*/
-  *(this + 152) = 0; /*0x511404*/
+  this->ArrayIndex = 0; /*0x511404*/
   this->Type = -1; /*0x51140a*/
   this->SidebarImage = -1; /*0x511410*/
   this->ActionValue = -1; /*0x511416*/
   this->SpecialSound = 0; /*0x51141c*/
   this->AuxBuilding = 0; /*0x511427*/
   this->SidebarImageFile = 1072693248; /*0x51142d*/
-  *((_DWORD *)this + 52) = 0; /*0x511433*/
-  *((_DWORD *)this + 53) = 1072693248; /*0x511439*/
-  *((_DWORD *)this + 54) = 0; /*0x51143f*/
-  *((_DWORD *)this + 55) = 1072693248; /*0x511445*/
-  *((_DWORD *)this + 56) = 0; /*0x51144b*/
-  *((_DWORD *)this + 57) = 1072693248; /*0x511451*/
+  this->SidebarImageFile_0x18 = 0; /*0x511433*/
+  this->zero_E4 = 1072693248; /*0x511439*/
+  this->UseChargeDrain = 0; /*0x51143f*/
+  this->IsPowered = 1072693248; /*0x511445*/
+  this->DisableableFromShell = 0; /*0x51144b*/
+  this->q0E4 = 1072693248; /*0x511451*/
   this->FlashSidebarTabFrames = 0; /*0x511457*/
   this->PreDependent = 0; /*0x51145d*/
   this->Range = 0; /*0x511463*/
-  *((_DWORD *)this + 59) = 1072693248; /*0x511469*/
-  *((_DWORD *)this + 61) = 1072693248; /*0x51146f*/
+  this->q03B = 1072693248; /*0x511469*/
+  this->UINameLabel = 1072693248; /*0x51146f*/
   this->LineMultiplier = 1072693248; /*0x511475*/
-  *((_DWORD *)this + 64) = 1065353216; /*0x51148a*/
-  *((_DWORD *)this + 65) = 1065353216; /*0x511490*/
-  *((_DWORD *)this + 66) = 1065353216; /*0x511496*/
-  *((_DWORD *)this + 67) = 1065353216; /*0x51149c*/
-  *((_DWORD *)this + 68) = 1065353216; /*0x5114a2*/
+  this->AIDefendAgainst = 1065353216; /*0x51148a*/
+  this->PreClick = 1065353216; /*0x511490*/
+  this->PostClick = 1065353216; /*0x511496*/
+  this->q043 = 1065353216; /*0x51149c*/
+  this->PreDependent = 1065353216; /*0x5114a2*/
   *((_DWORD *)this + 69) = 1065353216; /*0x5114a8*/
   *((_DWORD *)this + 70) = 1065353216; /*0x5114ae*/
-  *((_DWORD *)this + 71) = 1065353216; /*0x5114b4*/
-  *((_DWORD *)this + 72) = 1065353216; /*0x5114ba*/
-  *((_DWORD *)this + 73) = 1065353216; /*0x5114c0*/
-  *((_DWORD *)this + 74) = 1065353216; /*0x5114c6*/
-  *((_DWORD *)this + 75) = 1065353216; /*0x5114cc*/
-  *((_DWORD *)this + 76) = 1065353216; /*0x5114d2*/
-  *((_DWORD *)this + 77) = 1065353216; /*0x5114d8*/
-  *((_DWORD *)this + 78) = 1065353216; /*0x5114de*/
-  *((_DWORD *)this + 79) = 1065353216; /*0x5114e4*/
-  *((_DWORD *)this + 80) = 1065353216; /*0x5114ea*/
-  *((_DWORD *)this + 81) = 1065353216; /*0x5114f0*/
-  *((_DWORD *)this + 82) = 1065353216; /*0x5114f6*/
+  this->q11C = 1065353216; /*0x5114b4*/
+  this->ShowTimer = 1065353216; /*0x5114ba*/
+  this->ManualControl = 1065353216; /*0x5114c0*/
+  this->q04A = 1065353216; /*0x5114c6*/
+  this->q12C = 1065353216; /*0x5114cc*/
+  this->Range = 1065353216; /*0x5114d2*/
+  this->q134 = 1065353216; /*0x5114d8*/
+  this->q138 = 1065353216; /*0x5114de*/
+  this->q04F = 1065353216; /*0x5114e4*/
+  this->LineMultiplier = 1065353216; /*0x5114ea*/
+  this->q144 = 1065353216; /*0x5114f0*/
+  this->q148 = 1065353216; /*0x5114f6*/
   InfantryTypeVector::Construct2((_DWORD *)this + 83, 0, 0); /*0x5114fc*/
-  *((_DWORD *)this + 88) = 10; /*0x511501*/
-  *((_DWORD *)this + 87) = 0; /*0x511508*/
+  this->q058 = 10; /*0x511501*/
+  this->q057 = 0; /*0x511508*/
   *((_DWORD *)this + 83) = &vt_TypeList_InfantryTypeClass_const; /*0x51150b*/
   UnitTypeVector::ConstructUnitTypeVectorClass((_DWORD *)this + 90, 0, 0); /*0x51151b*/
   *((_DWORD *)this + 95) = 10; /*0x511520*/
   *((_DWORD *)this + 94) = 0; /*0x511527*/
   *((_DWORD *)this + 90) = &vt_TypeList_UnitTypeClass_const; /*0x51152a*/
   AircraftTypeVector::Constructor((_DWORD *)this + 97, 0, 0); /*0x51153a*/
-  *((_DWORD *)this + 102) = 10; /*0x511542*/
-  *((_DWORD *)this + 101) = 0; /*0x511549*/
+  this->q198 = 10; /*0x511542*/
+  this->q194 = 0; /*0x511549*/
   *((_DWORD *)this + 97) = &vt_TypeList_AircraftTypeClass_const; /*0x51154c*/
   *(this + 420) = 65; /*0x511552*/
-  *(this + 421) = 0; /*0x511559*/
+  this->q1A5 = 0; /*0x511559*/
   *(this + 422) = 0; /*0x51155f*/
-  *(this + 423) = 1; /*0x511565*/
+  this->q1A7 = 1; /*0x511565*/
   *(this + 424) = 0; /*0x51156c*/
   *(_DWORD *)this = &HouseTypeClass::`vftable'; /*0x511572*/
   this->vtable1 = &HouseTypeClass::`vftable'; /*0x511578*/
@@ -623,14 +623,14 @@ int __thiscall SuperWeaponTypeClass::SD_vt27(_DWORD *this, int a2, int a3)
 {
   int v4; // eax
 
-  if ( *(this + 45) != 10 ) /*0x6cef8b*/
-    return *(this + 47); /*0x6cef8b*/
+  if ( this->Type != 10 ) /*0x6cef8b*/
+    return this->q0BC; /*0x6cef8b*/
   if ( a3
     && (*(int (__thiscall **)(int))(*(_DWORD *)a3 + 44))(a3) == 6
     && (v4 = (*(int (__thiscall **)(int))(*(_DWORD *)a3 + 44))(a3),
         (unsigned __int8)HouseClass::IsAlliedWith(*(#375 **)(v4 == 6 ? a3 + 0x21C : 540), HouseClass_Player)) )
   {
-    return *(this + 47); /*0x6cefd3*/
+    return this->q0BC; /*0x6cefd3*/
   }
   else
   {

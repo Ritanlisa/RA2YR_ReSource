@@ -26,7 +26,7 @@ char __thiscall SwizzleManagerClass_19_::_vt02(void *this, int a2, _DWORD *a3)
   if ( a2 ) /*0x6cf5ae*/
   {
     v5 = a3; /*0x6cf5b4*/
-    *((_BYTE *)this + 12) = 0; /*0x6cf5b8*/
+    this->q00C = 0; /*0x6cf5b8*/
     if ( a3 ) /*0x6cf5bd*/
     {
       v9 = a3; /*0x6cf5f3*/
@@ -68,7 +68,7 @@ char __thiscall SwizzleManagerClass_19_::_vt02(void *this, int a2, _DWORD *a3)
         v5 = 0; /*0x6cf5ec*/
       }
     }
-    *((_BYTE *)this + 12) = 1; /*0x6cf607*/
+    this->q00C = 1; /*0x6cf607*/
     if ( v5 ) /*0x6cf60b*/
     {
       if ( this->SwizzleManagerClass_19_field_0x4 ) /*0x6cf616*/
@@ -89,7 +89,7 @@ char __thiscall SwizzleManagerClass_19_::_vt02(void *this, int a2, _DWORD *a3)
           while ( v13 < v12 ); /*0x6cf647*/
           v3 = a2; /*0x6cf649*/
         }
-        if ( *((_BYTE *)this + 13) ) /*0x6cf64f*/
+        if ( this->IsAllocated ) /*0x6cf64f*/
         {
           __3_YAXPAX_Z(*((void **)this + 1)); /*0x6cf658*/
           this->SwizzleManagerClass_19_field_0x4 = 0; /*0x6cf660*/
@@ -97,7 +97,7 @@ char __thiscall SwizzleManagerClass_19_::_vt02(void *this, int a2, _DWORD *a3)
       }
       this->SwizzleManagerClass_19_field_0x4 = v5; /*0x6cf66b*/
       this->SwizzleManagerClass_19_field_0x8 = v3; /*0x6cf671*/
-      *((_BYTE *)this + 13) = a3 == 0; /*0x6cf674*/
+      this->IsAllocated = a3 == 0; /*0x6cf674*/
       return 1; /*0x6cf67a*/
     }
     else
@@ -107,7 +107,7 @@ char __thiscall SwizzleManagerClass_19_::_vt02(void *this, int a2, _DWORD *a3)
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x6cf684*/
+    (*(void (__thiscall **)(void *))(this->q00C)(this); /*0x6cf684*/
     return 1; /*0x6cf68a*/
   }
 }
@@ -138,7 +138,7 @@ char __thiscall SwizzleManagerClass_19_::sub_6CF720(void *this, int a2, _DWORD *
   if ( a2 ) /*0x6cf72e*/
   {
     v5 = a3; /*0x6cf734*/
-    *((_BYTE *)this + 12) = 0; /*0x6cf738*/
+    this->q00C = 0; /*0x6cf738*/
     if ( a3 ) /*0x6cf73d*/
     {
       v9 = a3; /*0x6cf773*/
@@ -180,7 +180,7 @@ char __thiscall SwizzleManagerClass_19_::sub_6CF720(void *this, int a2, _DWORD *
         v5 = 0; /*0x6cf76c*/
       }
     }
-    *((_BYTE *)this + 12) = 1; /*0x6cf787*/
+    this->q00C = 1; /*0x6cf787*/
     if ( !v5 ) /*0x6cf78b*/
       return 0; /*0x6cf814*/
     if ( this->SwizzleManagerClass_19_field_0x4 ) /*0x6cf791*/
@@ -201,7 +201,7 @@ char __thiscall SwizzleManagerClass_19_::sub_6CF720(void *this, int a2, _DWORD *
         while ( v12 < v11 ); /*0x6cf7c2*/
         v3 = a2; /*0x6cf7c4*/
       }
-      if ( *((_BYTE *)this + 13) ) /*0x6cf7ca*/
+      if ( this->IsAllocated ) /*0x6cf7ca*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x6cf7d3*/
         this->SwizzleManagerClass_19_field_0x4 = 0; /*0x6cf7db*/
@@ -209,11 +209,11 @@ char __thiscall SwizzleManagerClass_19_::sub_6CF720(void *this, int a2, _DWORD *
     }
     this->SwizzleManagerClass_19_field_0x4 = v5; /*0x6cf7e6*/
     this->SwizzleManagerClass_19_field_0x8 = v3; /*0x6cf7ec*/
-    *((_BYTE *)this + 13) = a3 == 0; /*0x6cf7ef*/
+    this->IsAllocated = a3 == 0; /*0x6cf7ef*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x6cf7f8*/
+    (*(void (__thiscall **)(void *))(this->q00C)(this); /*0x6cf7f8*/
   }
   v15 = this->SwizzleManagerClass_19_field_0x8; /*0x6cf7fb*/
   if ( v15 < this->SwizzleManagerClass_19_field_0x10 ) /*0x6cf803*/

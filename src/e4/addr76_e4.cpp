@@ -37,8 +37,8 @@ int unknown_libname_36()
 _DWORD *__thiscall unknown_libname_36(_DWORD *this)
 {
   *this = 0; /*0x7636f4*/
-  *(this + 1) = 0; /*0x7636f6*/
-  *(this + 2) = 0; /*0x7636f9*/
+  this->vtable2 = 0; /*0x7636f6*/
+  this->vtable3 = 0; /*0x7636f9*/
   return this; /*0x7636fc*/
 }
 }
@@ -571,8 +571,8 @@ int unknown_libname_37()
 ObjectClass *__thiscall unknown_libname_37(_DWORD *this)
 {
   *this = 0; /*0x769484*/
-  *(this + 1) = 0; /*0x769486*/
-  *(this + 2) = 0; /*0x769489*/
+  this->vtable2 = 0; /*0x769486*/
+  this->vtable3 = 0; /*0x769489*/
   return (ObjectClass *)this; /*0x76948c*/
 }
 }

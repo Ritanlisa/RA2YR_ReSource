@@ -260,7 +260,7 @@ _DWORD *__thiscall ObjectTypeClass::Construct(_DWORD *this, ObjectTypeClass *aP1
 
   AbstractTypeClass::Init((int)this, (AbstractTypeClass *)aP1); /*0x5f7328*/
   v3 = this + 50; /*0x5f732f*/
-  *(this + 41) = 0; /*0x5f7335*/
+  this->Image = 0; /*0x5f7335*/
   v4 = 18; /*0x5f733b*/
   do /*0x5f7349*/
   {
@@ -280,30 +280,30 @@ _DWORD *__thiscall ObjectTypeClass::Construct(_DWORD *this, ObjectTypeClass *aP1
     --v6; /*0x5f735e*/
   }
   while ( v6 ); /*0x5f735f*/
-  *(this + 145) = 0; /*0x5f7361*/
-  *(this + 146) = 0; /*0x5f7367*/
-  *(this + 147) = 0; /*0x5f736d*/
-  *((_BYTE *)this + 592) = 0; /*0x5f7373*/
-  *(this + 149) = 0; /*0x5f7379*/
-  *(this + 150) = 0; /*0x5f737f*/
-  *(this + 151) = 0; /*0x5f7385*/
-  *(this + 152) = 0; /*0x5f738b*/
-  *((_BYTE *)this + 612) = 0; /*0x5f7391*/
-  *(this + 154) = 0; /*0x5f7397*/
-  *(this + 155) = 0; /*0x5f739d*/
-  *(this + 156) = 0; /*0x5f73a3*/
-  *(this + 157) = 0; /*0x5f73a9*/
-  *((_BYTE *)this + 632) = 0; /*0x5f73af*/
-  *(this + 159) = 0; /*0x5f73b5*/
-  *(this + 160) = 0; /*0x5f73bb*/
-  *(this + 161) = 0; /*0x5f73c1*/
-  *(this + 162) = 0; /*0x5f73c7*/
-  *((_BYTE *)this + 652) = 0; /*0x5f73cd*/
-  *(this + 164) = 0; /*0x5f73d3*/
+  this->VoxelCaches_4 = 0; /*0x5f7361*/
+  this->q248 = 0; /*0x5f7367*/
+  this->q24C = 0; /*0x5f736d*/
+  this->q094 = 0; /*0x5f7373*/
+  this->q254 = 0; /*0x5f7379*/
+  this->q258 = 0; /*0x5f737f*/
+  this->q25C = 0; /*0x5f7385*/
+  this->q260 = 0; /*0x5f738b*/
+  this->q264 = 0; /*0x5f7391*/
+  this->q268 = 0; /*0x5f7397*/
+  this->q26C = 0; /*0x5f739d*/
+  this->q270 = 0; /*0x5f73a3*/
+  this->q274 = 0; /*0x5f73a9*/
+  this->q278 = 0; /*0x5f73af*/
+  this->q27C = 0; /*0x5f73b5*/
+  this->q280 = 0; /*0x5f73bb*/
+  this->q284 = 0; /*0x5f73c1*/
+  this->q288 = 0; /*0x5f73c7*/
+  this->q28C = 0; /*0x5f73cd*/
+  this->q290 = 0; /*0x5f73d3*/
   *this = &ObjectTypeClass::`vftable'; /*0x5f73d9*/
-  *(this + 1) = &ObjectTypeClass::`vftable'; /*0x5f73df*/
-  *(this + 2) = &ObjectTypeClass::`vftable'; /*0x5f73e6*/
-  *(this + 3) = &vt_ObjectTypeClass; /*0x5f73ed*/
+  this->vtable2 = &ObjectTypeClass::`vftable'; /*0x5f73df*/
+  this->vtable3 = &ObjectTypeClass::`vftable'; /*0x5f73e6*/
+  this->vtable4 = &vt_ObjectTypeClass; /*0x5f73ed*/
   return this; /*0x5f73f6*/
 }
 }
@@ -544,9 +544,9 @@ int __thiscall ObjectTypeClass::Load2DArt(char *this)
   char v15; // [esp+25h] [ebp-203h]
   char Buffer[256]; // [esp+128h] [ebp-100h] BYREF
 
-  if ( *(this + 529) && *((_DWORD *)MEMORY[0xA8B230] + 1174) == 1 && !*(this + 168) ) /*0x5f9096*/
+  if ( this->q211 && *((_DWORD *)MEMORY[0xA8B230] + 1174) == 1 && !this->ImageAllocated ) /*0x5f9096*/
   {
-    if ( !*(this + 530) ) /*0x5f90a0*/
+    if ( !this->q212 ) /*0x5f90a0*/
     {
       v2 = this + 504; /*0x5f90ab*/
       sprintf(Buffer, MEMORY[0x832AE8], this + 504); /*0x5f90bf*/
@@ -562,21 +562,21 @@ int __thiscall ObjectTypeClass::Load2DArt(char *this)
       if ( Destination != v2 ) /*0x5f90fa*/
       {
         qmemcpy(v2, Destination, 0x18u); /*0x5f9105*/
-        *(this + 528) = v13; /*0x5f9107*/
+        this->q210 = v13; /*0x5f9107*/
       }
-      *(this + 530) = 1; /*0x5f9108*/
+      this->q212 = 1; /*0x5f9108*/
     }
   }
   else
   {
-    *(this + 530) = 0; /*0x5f9112*/
+    this->q212 = 0; /*0x5f9112*/
   }
   _makepath(&Source, 0, 0, this + 504, Ext); /*0x5f912e*/
-  if ( *(this + 556) ) /*0x5f9133*/
+  if ( this->q22C ) /*0x5f9133*/
   {
     _makepath(&Source, 0, 0, this + 504, (const char *)&off_7E1BC6 + 112 * *((_DWORD *)MEMORY[0xA8B230] + 1174)); /*0x5f9169*/
   }
-  else if ( *(this + 567) ) /*0x5f9173*/
+  else if ( this->q237 ) /*0x5f9173*/
   {
     v3 = *((_DWORD *)MEMORY[0xA8B230] + 1174); /*0x5f9183*/
     if ( v3 != -1 ) /*0x5f918c*/
@@ -591,13 +591,13 @@ int __thiscall ObjectTypeClass::Load2DArt(char *this)
         v15 = byte_7E1BCE[112 * v3]; /*0x5f91dd*/
     }
   }
-  if ( *(this + 168) && this->Image ) /*0x5f91eb*/
+  if ( this->ImageAllocated && this->Image ) /*0x5f91eb*/
     __3_YAXPAX_Z(*((void **)this + 41)); /*0x5f91f6*/
   v6 = *(_DWORD *)this; /*0x5f91fe*/
   this->Image = 0; /*0x5f9203*/
-  *(this + 168) = 0; /*0x5f920d*/
+  this->ImageAllocated = 0; /*0x5f920d*/
   if ( (*(int (__thiscall **)(char *))(v6 + 44))(this) == 21 /*0x5f9227*/
-    || (*(int (__thiscall **)(char *))(*(_DWORD *)this + 44))(this) == 5 )
+    || (*(int (__thiscall **)(char *))(this->ChargerBarrels_0x12)(this) == 5 )
   {
     v9 = SearchMIXFile(&Source, 1); /*0x5f9267*/
     this->Image = v9; /*0x5f926e*/
@@ -607,8 +607,8 @@ int __thiscall ObjectTypeClass::Load2DArt(char *this)
     v8 = 1; /*0x5f927b*/
     goto LABEL_40; /*0x5f927b*/
   }
-  if ( (*(int (__thiscall **)(char *))(*(_DWORD *)this + 44))(this) != 30 /*0x5f9241*/
-    && (*(int (__thiscall **)(char *))(*(_DWORD *)this + 44))(this) != 37 )
+  if ( (*(int (__thiscall **)(char *))(this->ChargerBarrels_0x12)(this) != 30 /*0x5f9241*/
+    && (*(int (__thiscall **)(char *))(this->ChargerBarrels_0x12)(this) != 37 )
   {
     v7 = SearchMIXFile(&Source, 0); /*0x5f9249*/
     this->Image = v7; /*0x5f9250*/
@@ -722,16 +722,16 @@ char __thiscall ObjectTypeClass::LoadFromINI(char *this, CCINIClass *aP1)
   {
     v6 = v5; /*0x5f93fb*/
   }
-  v7 = *(this + 557); /*0x5f93fd*/
+  v7 = this->q22D; /*0x5f93fd*/
   this->AmbientSound = v6; /*0x5f9403*/
   Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x5f9412*/
                      (int)aP1,
                      (unsigned __int8 *)this + 36,
                      (CCINIClass *)&stru_830620.__pad_14B0[4360],
                      v7);
-  v27 = *(this + 558); /*0x5f941f*/
-  *(this + 557) = Bool_Overwrite; /*0x5f9426*/
-  *(this + 558) = INIClass::ReadBool_Overwrite( /*0x5f9431*/
+  v27 = this->q22E; /*0x5f941f*/
+  this->q22D = Bool_Overwrite; /*0x5f9426*/
+  this->q22E = INIClass::ReadBool_Overwrite( /*0x5f9431*/
                     (int)aP1,
                     (unsigned __int8 *)this + 36,
                     (CCINIClass *)&stru_830620.__pad_14B0[4348],
@@ -740,17 +740,17 @@ char __thiscall ObjectTypeClass::LoadFromINI(char *this, CCINIClass *aP1)
          (int)aP1,
          (unsigned __int8 *)this + 36,
          (CCINIClass *)&stru_830620.__pad_14B0[4336],
-         *(this + 488));
-  v10 = *(this + 529); /*0x5f944b*/
-  *(this + 488) = v9; /*0x5f9451*/
+         this->q7A0);
+  v10 = this->q211; /*0x5f944b*/
+  this->q7A0 = v9; /*0x5f9451*/
   v11 = INIClass::ReadBool_Overwrite( /*0x5f9460*/
           (int)aP1,
           (unsigned __int8 *)this + 36,
           (CCINIClass *)&stru_830620.__pad_14B0[4316],
           v10);
-  v28 = *(this + 559); /*0x5f946d*/
-  *(this + 529) = v11; /*0x5f9474*/
-  *(this + 559) = INIClass::ReadBool_Overwrite( /*0x5f947f*/
+  v28 = this->q22F; /*0x5f946d*/
+  this->q211 = v11; /*0x5f9474*/
+  this->q22F = INIClass::ReadBool_Overwrite( /*0x5f947f*/
                     (int)aP1,
                     (unsigned __int8 *)this + 36,
                     (CCINIClass *)&stru_830620.__pad_14B0[4300],
@@ -759,16 +759,16 @@ char __thiscall ObjectTypeClass::LoadFromINI(char *this, CCINIClass *aP1)
           (int)aP1,
           (unsigned __int8 *)this + 36,
           (CCINIClass *)&stru_830620.__pad_14B0[4288],
-          *(this + 560));
-  v13 = *(this + 561); /*0x5f9499*/
-  *(this + 560) = v12; /*0x5f949f*/
+          this->q230);
+  v13 = this->q231; /*0x5f9499*/
+  this->q230 = v12; /*0x5f949f*/
   v14 = INIClass::ReadBool_Overwrite( /*0x5f94ae*/
           (int)aP1,
           (unsigned __int8 *)this + 36,
           (CCINIClass *)&stru_830620.__pad_14B0[4276],
           v13);
   v29 = (CCINIClass *)this->Armor; /*0x5f94bb*/
-  *(this + 561) = v14; /*0x5f94c2*/
+  this->q231 = v14; /*0x5f94c2*/
   this->Armor = ArmorType::FindIndex( /*0x5f94cd*/
                              (unsigned __int8 ***)aP1,
                              (CCINIClass *)(this + 36),
@@ -779,42 +779,42 @@ char __thiscall ObjectTypeClass::LoadFromINI(char *this, CCINIClass *aP1)
                     (unsigned __int8 *)this + 36,
                     (CCINIClass *)&stru_830620.__pad_14B0[4264],
                     *((INIClass **)this + 40));
-  v16 = *(this + 563); /*0x5f94e7*/
+  v16 = this->q233; /*0x5f94e7*/
   this->Strength = Int_Overwrite; /*0x5f94ed*/
   v17 = INIClass::ReadBool_Overwrite( /*0x5f94fc*/
           (int)aP1,
           (unsigned __int8 *)this + 36,
           (CCINIClass *)&stru_830620.__pad_14B0[4256],
           v16);
-  v30 = *(this + 562); /*0x5f9509*/
-  *(this + 563) = v17; /*0x5f9510*/
-  *(this + 562) = INIClass::ReadBool_Overwrite( /*0x5f951b*/
+  v30 = this->q232; /*0x5f9509*/
+  this->q233 = v17; /*0x5f9510*/
+  this->q232 = INIClass::ReadBool_Overwrite( /*0x5f951b*/
                     (int)aP1,
                     (unsigned __int8 *)this + 36,
                     (CCINIClass *)&stru_830620.__pad_14B0[4240],
                     v30);
-  *(this + 568) = INIClass::ReadBool_Overwrite( /*0x5f9549*/
+  this->q238 = INIClass::ReadBool_Overwrite( /*0x5f9549*/
                     (int)aP1,
                     (unsigned __int8 *)this + 36,
                     (CCINIClass *)&stru_830620.__pad_14B0[4220],
-                    *(this + 568));
+                    this->q238);
   Coord = INIClass::GetCoord( /*0x5f954f*/
             (unsigned __int8 ***)aP1,
             &v34,
             (INIClass *)(this + 36),
             (Color *)&stru_830620.__pad_14B0[4208],
             (Color *)this + 38);
-  v19 = *(this + 569); /*0x5f9557*/
-  *((_WORD *)this + 76) = *(_WORD *)Coord; /*0x5f955d*/
-  *(this + 154) = *(_BYTE *)(Coord + 2); /*0x5f956c*/
+  v19 = this->q239; /*0x5f9557*/
+  this->q04C = *(_WORD *)Coord; /*0x5f955d*/
+  this->q268 = *(_BYTE *)(Coord + 2); /*0x5f956c*/
   v20 = INIClass::ReadBool_Overwrite( /*0x5f956f*/
           (int)aP1,
           (unsigned __int8 *)this + 36,
           (CCINIClass *)&stru_830620.__pad_14B0[4188],
           v19);
-  v31 = *(this + 570); /*0x5f9580*/
-  *(this + 569) = v20; /*0x5f958c*/
-  *(this + 570) = INIClass::ReadBool_Overwrite( /*0x5f959d*/
+  v31 = this->q23A; /*0x5f9580*/
+  this->q239 = v20; /*0x5f958c*/
+  this->q23A = INIClass::ReadBool_Overwrite( /*0x5f959d*/
                     (int)&MEMORY[0x87F8E4].__pad_5568[9012],
                     (unsigned __int8 *)this + 504,
                     (CCINIClass *)&stru_830620.__pad_14B0[4172],
@@ -827,22 +827,22 @@ char __thiscall ObjectTypeClass::LoadFromINI(char *this, CCINIClass *aP1)
           (Color *)(this + 571));
   *(_WORD *)(this + 571) = *(_WORD *)v21; /*0x5f95bc*/
   v32 = (CCINIClass *)this->LineTrailColorDecrement; /*0x5f95cd*/
-  *(this + 573) = *(_BYTE *)(v21 + 2); /*0x5f95d4*/
+  this->q23D = *(_BYTE *)(v21 + 2); /*0x5f95d4*/
   v22 = INIClass::ReadInt_Overwrite( /*0x5f95d7*/
           (int)&MEMORY[0x87F8E4].__pad_5568[9012],
           (unsigned __int8 *)this + 504,
           (CCINIClass *)&stru_830620.__pad_14B0[4132],
           (INIClass *)v32);
-  v23 = *(this + 556); /*0x5f95dc*/
+  v23 = this->q22C; /*0x5f95dc*/
   this->LineTrailColorDecrement = v22; /*0x5f95e2*/
   v24 = INIClass::ReadBool_Overwrite( /*0x5f95f4*/
           (int)&MEMORY[0x87F8E4].__pad_5568[9012],
           (unsigned __int8 *)this + 504,
           &unk_818658,
           v23);
-  v33 = *(this + 567); /*0x5f9604*/
-  *(this + 556) = v24; /*0x5f960b*/
-  *(this + 567) = INIClass::ReadBool_Overwrite( /*0x5f9616*/
+  v33 = this->q237; /*0x5f9604*/
+  this->q22C = v24; /*0x5f960b*/
+  this->q237 = INIClass::ReadBool_Overwrite( /*0x5f9616*/
                     (int)&MEMORY[0x87F8E4].__pad_5568[9012],
                     (unsigned __int8 *)this + 504,
                     &unk_81864C,
@@ -851,11 +851,11 @@ char __thiscall ObjectTypeClass::LoadFromINI(char *this, CCINIClass *aP1)
           (int)&MEMORY[0x87F8E4].__pad_5568[9012],
           (unsigned __int8 *)this + 504,
           (CCINIClass *)&stru_830620.__pad_14B0[4124],
-          *(this + 566));
-  *(this + 566) = v25; /*0x5f9634*/
-  if ( !v25 && (*(int (__thiscall **)(char *))(*(_DWORD *)this + 44))(this) != 5 ) /*0x5f9649*/
+          this->q236);
+  this->q236 = v25; /*0x5f9634*/
+  if ( !v25 && (*(int (__thiscall **)(char *))(this->ChargerBarrels_0x12)(this) != 5 ) /*0x5f9649*/
     ObjectTypeClass::Load2DArt(this); /*0x5f964d*/
-  if ( *(this + 531) ) /*0x5f9652*/
+  if ( this->AlphaImageFile ) /*0x5f9652*/
   {
     _makepath(Buffer, 0, 0, this + 531, Ext); /*0x5f9674*/
     this->AlphaImage = SearchMIXFile(Buffer, 0); /*0x5f968a*/
@@ -870,7 +870,7 @@ void ObjectTypeClass::SetRTTI71()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall ObjectTypeClass_SetRTTI71(_BYTE *this)
 {
-  *(this + 1) = 71; /*0x5f9710*/
+  this->vtable2 = 71; /*0x5f9710*/
 }
 }
 
@@ -1028,7 +1028,7 @@ int __thiscall ObjectTypeClass_SelectArtOrAlt(_DWORD *this)
   {
     if ( (*(int (__thiscall **)(_DWORD *))(*this + 44))(this) == 16 ) /*0x712060*/
     {
-      result = *(this + 452); /*0x712062*/
+      result = this->q710; /*0x712062*/
       if ( result ) /*0x71206a*/
       {
         if ( *((_BYTE *)this + 3214) ) /*0x71206c*/
@@ -1044,7 +1044,7 @@ int __thiscall ObjectTypeClass_SelectArtOrAlt(_DWORD *this)
   {
     return *(this + 444); /*0x7120a1*/
   }
-  result = *(this + 452); /*0x7120ab*/
+  result = this->q710; /*0x7120ab*/
   if ( !result || !*((_BYTE *)this + 3214) ) /*0x7120b5*/
     return *(this + 444); /*0x7120bd*/
   return result; /*0x7120c5*/
@@ -5082,28 +5082,28 @@ _DWORD *__thiscall sub_717C00(_DWORD *this, _DWORD *a2)
     return this; /*0x717c0a*/
   (*(void (__thiscall **)(_DWORD *))(*this + 12))(this); /*0x717c0e*/
   v3 = a2[2]; /*0x717c11*/
-  *(this + 2) = v3; /*0x717c16*/
+  this->vtable3 = v3; /*0x717c16*/
   if ( !v3 ) /*0x717c19*/
   {
-    *(this + 1) = 0; /*0x717c5a*/
+    this->vtable2 = 0; /*0x717c5a*/
     *((_BYTE *)this + 13) = 0; /*0x717c61*/
     return this; /*0x717c65*/
   }
   v4 = __2_YAPAXI_Z(4 * v3); /*0x717c23*/
-  *(this + 1) = v4; /*0x717c2b*/
+  this->vtable2 = v4; /*0x717c2b*/
   if ( !v4 ) /*0x717c30*/
     return this; /*0x717c30*/
-  v5 = *(this + 2); /*0x717c32*/
+  v5 = this->vtable3; /*0x717c32*/
   v6 = 0; /*0x717c35*/
   *((_BYTE *)this + 13) = 1; /*0x717c39*/
   if ( v5 <= 0 ) /*0x717c3d*/
     return this; /*0x717c3d*/
   do /*0x717c51*/
   {
-    *(_DWORD *)(*(this + 1) + 4 * v6) = *(_DWORD *)(a2[1] + 4 * v6); /*0x717c48*/
+    *(_DWORD *)(this->vtable2 + 4 * v6) = *(_DWORD *)(a2[1] + 4 * v6); /*0x717c48*/
     ++v6; /*0x717c4e*/
   }
-  while ( v6 < *(this + 2) ); /*0x717c51*/
+  while ( v6 < this->vtable3 ); /*0x717c51*/
   return this; /*0x717c55*/
 }
 }

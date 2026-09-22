@@ -14,7 +14,7 @@ void __thiscall sub_430980(void **this)
   int v3; // ebx
   int v4; // edi
 
-  if ( *(this + 24) ) /*0x430983*/
+  if ( this->q180 ) /*0x430983*/
   {
     v2 = this; /*0x43098d*/
     v3 = 8; /*0x43098f*/
@@ -35,7 +35,7 @@ void __thiscall sub_430980(void **this)
       --v3; /*0x4309b4*/
     }
     while ( v3 ); /*0x4309b5*/
-    *(this + 24) = 0; /*0x4309b9*/
+    this->q180 = 0; /*0x4309b9*/
   }
 }
 }
@@ -980,19 +980,19 @@ unsigned int * Game::LockMutex(IUnknown * aP1, IUnknown * aP2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall Game::LockMutex(_DWORD *this, IUnknown *aP1, IUnknown *aP2)
 {
-  *(this + 1) = 0; /*0x67c3ab*/
-  *(this + 2) = aP1; /*0x67c3ae*/
-  *((_BYTE *)this + 12) = 1; /*0x67c3b1*/
+  this->q004 = 0; /*0x67c3ab*/
+  this->q008 = aP1; /*0x67c3ae*/
+  this->q003 = 1; /*0x67c3b1*/
   *((_BYTE *)this + 13) = 0; /*0x67c3b5*/
   *this = &vt_VectorClass_SmudgeTypeClass_const; /*0x67c3b8*/
   if ( aP1 ) /*0x67c3be*/
   {
     if ( aP2 ) /*0x67c3c6*/
     {
-      *(this + 1) = aP2; /*0x67c3c8*/
+      this->q004 = aP2; /*0x67c3c8*/
       return this; /*0x67c3ce*/
     }
-    *(this + 1) = __2_YAPAXI_Z(4 * (_DWORD)aP1); /*0x67c3dd*/
+    this->q004 = __2_YAPAXI_Z(4 * (_DWORD)aP1); /*0x67c3dd*/
     *((_BYTE *)this + 13) = 1; /*0x67c3e0*/
   }
   return this; /*0x67c3cd*/
@@ -1132,22 +1132,22 @@ int __thiscall SerializeGameSaveState(void *this)
   int v13; // [esp+B8h] [ebp-8h] BYREF
   int v14; // [esp+BCh] [ebp-4h] BYREF
 
-  result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(*(_DWORD *)this + 12))(this, &MEMORY[0xA8ED78], 4, 0); /*0x67f9d3*/
+  result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(this->q003)(this, &MEMORY[0xA8ED78], 4, 0); /*0x67f9d3*/
   if ( result >= 0 )
   {
     ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], &MEMORY[0xA8ED78]); /*0x67f9e8*/
-    result = (*(int (__stdcall **)(void *, #375 **, int, _DWORD))(*(_DWORD *)this + 12))(this, &HouseClass_Player, 4, 0); /*0x67f9f9*/
+    result = (*(int (__stdcall **)(void *, #375 **, int, _DWORD))(this->q003)(this, &HouseClass_Player, 4, 0); /*0x67f9f9*/
     if ( result >= 0 )
     {
       ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)&HouseClass_Player); /*0x67fa0e*/
-      result = (*(int (__stdcall **)(void *, wchar_t **, int, _DWORD))(*(_DWORD *)this + 12))( /*0x67fa1f*/
+      result = (*(int (__stdcall **)(void *, wchar_t **, int, _DWORD))(this->q003)( /*0x67fa1f*/
                  this,
                  &MEMORY[0xA8ED84],
                  4,
                  0);
       if ( result >= 0 )
       {
-        result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(*(_DWORD *)this + 12))(this, &v13, 4, 0); /*0x67fa36*/
+        result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(this->q003)(this, &v13, 4, 0); /*0x67fa36*/
         if ( result >= 0 )
         {
           v3 = 0; /*0x67fa45*/
@@ -1156,7 +1156,7 @@ int __thiscall SerializeGameSaveState(void *this)
 LABEL_14:
             for ( i = 0; i < (int)MEMORY[0xA8ECC8]; ++i ) /*0x67face*/
               ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)MEMORY[0xA8ECBC] + i); /*0x67fade*/
-            result = (*(int (__stdcall **)(void *, float *, int, _DWORD))(*(_DWORD *)this + 12))( /*0x67fafc*/
+            result = (*(int (__stdcall **)(void *, float *, int, _DWORD))(this->q003)( /*0x67fafc*/
                        this,
                        MEMORY[0x89EA40],
                        432,
@@ -1164,7 +1164,7 @@ LABEL_14:
             if ( result >= 0 )
             {
               SuperWeapon::SerializeSuperWeaponState(this); /*0x67fb09*/
-              result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(*(_DWORD *)this + 12))(this, &v13, 4, 0); /*0x67fb1a*/
+              result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(this->q003)(this, &v13, 4, 0); /*0x67fb1a*/
               if ( result >= 0 )
               {
                 v6 = 0; /*0x67fb29*/
@@ -1173,7 +1173,7 @@ LABEL_14:
 LABEL_27:
                   for ( j = 0; j < MEMORY[0x8B40D8]; ++j ) /*0x67fbb2*/
                     ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)MEMORY[0x8B40CC] + j); /*0x67fbc2*/
-                  result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(*(_DWORD *)this + 12))(this, &v13, 4, 0); /*0x67fbdd*/
+                  result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(this->q003)(this, &v13, 4, 0); /*0x67fbdd*/
                   if ( result >= 0 )
                   {
                     v9 = 0; /*0x67fbec*/
@@ -1182,42 +1182,42 @@ LABEL_27:
 LABEL_39:
                       for ( k = 0; k < dword_8B41B8; ++k ) /*0x67fc74*/
                         ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)unk_8B41AC + k); /*0x67fc84*/
-                      result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(*(_DWORD *)this + 12))( /*0x67fc9f*/
+                      result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(this->q003)( /*0x67fc9f*/
                                  this,
                                  &dword_81DA8C,
                                  76,
                                  0);
                       if ( result >= 0 )
                       {
-                        result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(*(_DWORD *)this + 12))( /*0x67fcb2*/
+                        result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(this->q003)( /*0x67fcb2*/
                                    this,
                                    dword_81DAD8,
                                    76,
                                    0);
                         if ( result >= 0 )
                         {
-                          result = (*(int (__stdcall **)(void *, double *, int, _DWORD))(*(_DWORD *)this + 12))( /*0x67fcc8*/
+                          result = (*(int (__stdcall **)(void *, double *, int, _DWORD))(this->q003)( /*0x67fcc8*/
                                      this,
                                      MEMORY[0x89EC28],
                                      152,
                                      0);
                           if ( result >= 0 )
                           {
-                            result = (*(int (__stdcall **)(void *, char *, int, _DWORD))(*(_DWORD *)this + 12))( /*0x67fcdb*/
+                            result = (*(int (__stdcall **)(void *, char *, int, _DWORD))(this->q003)( /*0x67fcdb*/
                                        this,
                                        MEMORY[0x89ECC0],
                                        19,
                                        0);
                             if ( result >= 0 )
                             {
-                              result = (*(int (__stdcall **)(void *, void *, int, _DWORD))(*(_DWORD *)this + 12))( /*0x67fcf1*/
+                              result = (*(int (__stdcall **)(void *, void *, int, _DWORD))(this->q003)( /*0x67fcf1*/
                                          this,
                                          &MEMORY[0xA8E3A8],
                                          1024,
                                          0);
                               if ( result >= 0 )
                               {
-                                v12 = (*(int (__stdcall **)(void *, int *, int, _DWORD))(*(_DWORD *)this + 12))( /*0x67fd04*/
+                                v12 = (*(int (__stdcall **)(void *, int *, int, _DWORD))(this->q003)( /*0x67fd04*/
                                         this,
                                         &MEMORY[0xB07784],
                                         4,
@@ -1233,7 +1233,7 @@ LABEL_39:
                     {
                       while ( 1 ) /*0x67fbfe*/
                       {
-                        result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(*(_DWORD *)this + 12))( /*0x67fbfe*/
+                        result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(this->q003)( /*0x67fbfe*/
                                    this,
                                    &v14,
                                    4,
@@ -1261,7 +1261,7 @@ LABEL_39:
                 {
                   while ( 1 ) /*0x67fb3b*/
                   {
-                    result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(*(_DWORD *)this + 12))(this, &v14, 4, 0); /*0x67fb3b*/
+                    result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(this->q003)(this, &v14, 4, 0); /*0x67fb3b*/
                     if ( result < 0 ) /*0x67fb40*/
                       break; /*0x67fb40*/
                     if ( MEMORY[0x8B40D8] < MEMORY[0x8B40D0] /*0x67fb7d*/
@@ -1286,7 +1286,7 @@ LABEL_39:
           {
             while ( 1 ) /*0x67fa57*/
             {
-              result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(*(_DWORD *)this + 12))(this, &v14, 4, 0); /*0x67fa57*/
+              result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(this->q003)(this, &v14, 4, 0); /*0x67fa57*/
               if ( result < 0 ) /*0x67fa5c*/
                 break; /*0x67fa5c*/
               if ( (int)MEMORY[0xA8ECC8] < MEMORY[0xA8ECC0] /*0x67fa99*/

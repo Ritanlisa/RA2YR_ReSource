@@ -43,17 +43,17 @@ void __thiscall ParticleClass::_vt69(void *this, int *a2, int *a3)
       if ( MEMORY[0xA8ED6B] /*0x62cf58*/
         || !g_hWnd
         || (*(_DWORD *)MEMORY[0xA8B230] & 0x1000) == 0
-        || (v27 = *((_DWORD *)this + 39),
-            v28 = *((_DWORD *)this + 40),
-            v29 = *((_DWORD *)this + 41),
+        || (v27 = this->q027,
+            v28 = this->q028,
+            v29 = this->q029,
             !Game::Stub3((int)&v27)) )
       {
         v5 = *(_DWORD *)(this->ParticleClass_field_0xAC + 788); /*0x62cf6b*/
         if ( v5 == 3 || v5 == 4 ) /*0x62cf7d*/
         {
-          v26[0] = *((_DWORD *)this + 39); /*0x62d036*/
-          v26[1] = *((_DWORD *)this + 40); /*0x62d048*/
-          v26[2] = *((_DWORD *)this + 41); /*0x62d054*/
+          v26[0] = this->q027; /*0x62d036*/
+          v26[1] = this->q028; /*0x62d048*/
+          v26[2] = this->q029; /*0x62d054*/
           Coord::To_Screen(MEMORY[0x887324], v26, &v27); /*0x62d058*/
           v12 = MEMORY[0x886FA4] + v28; /*0x62d06b*/
           v28 += MEMORY[0x886FA4]; /*0x62d071*/
@@ -70,7 +70,7 @@ void __thiscall ParticleClass::_vt69(void *this, int *a2, int *a3)
               {
                 v15 = v28 - *((_DWORD *)MEMORY[0x887644] + 1); /*0x62d0d4*/
                 v26[0] = v27; /*0x62d0d9*/
-                v16 = ZCoordToScreenY(*((_DWORD *)this + 41)); /*0x62d0e8*/
+                v16 = ZCoordToScreenY(this->q029); /*0x62d0e8*/
                 v17 = (unsigned __int16)(*((_WORD *)MEMORY[0x887644] + 2) + *((_WORD *)MEMORY[0x887644] + 18) - v28) /*0x62d10f*/
                     - v16
                     - 50;
@@ -108,16 +108,16 @@ void __thiscall ParticleClass::_vt69(void *this, int *a2, int *a3)
         }
         else
         {
-          v6 = (*(int (__thiscall **)(void *))(*(_DWORD *)this + 464))(this); /*0x62cf87*/
+          v6 = (*(int (__thiscall **)(void *))(this->isOnMap)(this); /*0x62cf87*/
           v7 = -15 - ZCoordToScreenY(v6); /*0x62cf9d*/
-          v8 = (*(int (__thiscall **)(void *))(*(_DWORD *)this + 108))(this); /*0x62cfa2*/
+          v8 = (*(int (__thiscall **)(void *))(this->health)(this); /*0x62cfa2*/
           if ( v8 ) /*0x62cfa6*/
           {
             v9 = 10240; /*0x62cfb0*/
-            v10 = (*(int (__thiscall **)(void *))(*(_DWORD *)this + 488))(this); /*0x62cfb5*/
+            v10 = (*(int (__thiscall **)(void *))(this->q7A0)(this); /*0x62cfb5*/
             if ( MEMORY[0xA8EB78] == 2 ) /*0x62cfc2*/
             {
-              v11 = *((_BYTE *)this + 303); /*0x62cfc4*/
+              v11 = this->Translucency; /*0x62cfc4*/
               if ( v11 == 25 ) /*0x62cfcd*/
               {
                 v9 = 10242; /*0x62cfcf*/

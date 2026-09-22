@@ -2623,7 +2623,7 @@ _DWORD *__thiscall JumpjetLocomotion::TransformCoords(_DWORD *this, IUnknown *aP
   int v9; // ecx
 
   v4 = *(_DWORD *)aP3->__pad_0; /*0x4b478d*/
-  v5 = dword_7E7B30[3 * *(this + 22)]; /*0x4b4791*/
+  v5 = dword_7E7B30[3 * this->q058]; /*0x4b4791*/
   v6 = aP2->field_0; /*0x4b479f*/
   v7 = aP2->field_4; /*0x4b47a1*/
   if ( (v5 & 1) != 0 ) /*0x4b47a4*/
@@ -2643,8 +2643,8 @@ _DWORD *__thiscall JumpjetLocomotion::TransformCoords(_DWORD *this, IUnknown *aP
     v4 = (unsigned __int8)(0x80 - v4); /*0x4b47dd*/
   }
   *(_DWORD *)aP3->__pad_0 = v4; /*0x4b47df*/
-  v8 = *(this + 16); /*0x4b47e2*/
-  v9 = *(this + 17); /*0x4b47e5*/
+  v8 = this->q040; /*0x4b47e2*/
+  v9 = this->q044; /*0x4b47e5*/
   aP1->field_0 = v6 + v8; /*0x4b47f2*/
   aP1->field_4 = v7 + v9; /*0x4b47f5*/
   return &aP1->field_0; /*0x4b47f0*/

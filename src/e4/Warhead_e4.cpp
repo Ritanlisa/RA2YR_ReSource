@@ -33,7 +33,7 @@ char __thiscall sub_452820(_DWORD *this, int a2)
   int v8; // edx
 
   v2 = this + 411; /*0x452827*/
-  v3 = (*(int (__thiscall **)(_DWORD *, int *))(*(this + 411) + 16))(this + 411, &a2); /*0x452834*/
+  v3 = (*(int (__thiscall **)(_DWORD *, int *))(this->q66C + 16))(this + 411, &a2); /*0x452834*/
   if ( v3 != -1 ) /*0x45283a*/
   {
     v4 = v2[4]; /*0x45283c*/
@@ -238,7 +238,7 @@ char __thiscall Warhead::ApplyDamage(char *this, ObjectClass *aP1)
                                             &MEMORY[0x87F8E4].__pad_5568[7484],
                                             v6,
                                             *(IUnknown **)(v5 + 392));
-  v7 = *((_DWORD *)this + 76);
+  v7 = this->q013;
   if ( v7 )
   {
     v153 = *(InfantryClass **)(v7 + 344);
@@ -491,7 +491,7 @@ char __thiscall Warhead::ApplyDamage(char *this, ObjectClass *aP1)
       v49 = 0;
     if ( *((_DWORD *)this + 44) && v49 && !(*(unsigned __int8 (__thiscall **)(int *))(*v49 + 352))(v49) )
     {
-      v140 = (*((_DWORD *)this + 27) * *((_DWORD *)this + 84)) >> 8;
+      v140 = (this->q01B * *((_DWORD *)this + 84)) >> 8;
       v50 = (double)v140 * *(float *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 6324) / dbl_81AEF8;
       if ( v50 >= 4.0 )
         v131 = 4.0;
@@ -567,7 +567,7 @@ char __thiscall Warhead::ApplyDamage(char *this, ObjectClass *aP1)
     }
     else
     {
-      if ( *(_DWORD *)(*((_DWORD *)this + 43) + 692) )
+      if ( *(_DWORD *)(this->q0AC + 692) )
         Warhead::ApplyPostDamageEffects((int *)this);
       v63 = (TechnoClass *)*((_DWORD *)this + 44);
       focus = 0;
@@ -575,7 +575,7 @@ char __thiscall Warhead::ApplyDamage(char *this, ObjectClass *aP1)
         focus = v63->focus;
       Instance = PlaySoundEffectAt(
                    aP1,
-                   (*((_DWORD *)this + 27) * *((_DWORD *)this + 84)) >> 8,
+                   (this->q01B * *((_DWORD *)this + 84)) >> 8,
                    v63,
                    *((_DWORD *)this + 74),
                    1,
@@ -591,13 +591,13 @@ char __thiscall Warhead::ApplyDamage(char *this, ObjectClass *aP1)
   v67 = *(_DWORD *)&aP1->__pad_0[4];
   aP2.X = *(_DWORD *)aP1->__pad_0;
   v68 = *(_DWORD *)&aP1->__pad_0[8];
-  v69 = (RadSiteClass *)*((_DWORD *)this + 43);
+  v69 = (RadSiteClass *)this->q0AC;
   aP2.Y = v67;
   aP2.Z = v68;
   if ( BYTE2(v69[6].abstractFlags) )
     aP2 = *(CoordStruct *)RandomCoordScatter((int *)&v141, &aP2.X, 32, 0);
   v70 = -1;
-  if ( (*(int (__thiscall **)(char *))(*(_DWORD *)this + 456))(this) < 2 * unk_89DE70 )
+  if ( (*(int (__thiscall **)(char *))(this->q1C8)(this) < 2 * unk_89DE70 )
   {
     v141 = *(double *)(this + 156);
     LODWORD(v142) = *((_DWORD *)this + 41);
@@ -626,7 +626,7 @@ char __thiscall Warhead::ApplyDamage(char *this, ObjectClass *aP1)
   }
   v140 = (int)(this + 156);
   LODWORD(v141) = *((_DWORD *)this + 39);
-  v75 = *((_DWORD *)this + 27);
+  v75 = this->q01B;
   HIDWORD(v141) = *((_DWORD *)this + 40);
   v76 = *((_DWORD *)this + 74);
   LODWORD(v142) = *((_DWORD *)this + 41);
@@ -644,7 +644,7 @@ char __thiscall Warhead::ApplyDamage(char *this, ObjectClass *aP1)
         LOBYTE(v79) = v79 | 4;
       if ( v78[339] )
         LOBYTE(v79) = v79 | 8;
-      CreateSmokeEffectAt(*((_DWORD *)this + 27), (int)v78, aP2.X, aP2.Y, aP2.Z, 1, v79);
+      CreateSmokeEffectAt(this->q01B, (int)v78, aP2.X, aP2.Y, aP2.Z, 1, v79);
       goto LABEL_158;
     }
   }
@@ -713,7 +713,7 @@ LABEL_158:
               if ( v91 )
               {
                 edi173 = (int *)(4 * (_DWORD)v139 + *(_DWORD *)(*((_DWORD *)this + 74) + 400));
-                v92 = (int *)(*(int (__thiscall **)(char *, double *))(*(_DWORD *)this + 72))(this, &v141);
+                v92 = (int *)(*(int (__thiscall **)(char *, double *))(this->q012)(this, &v141);
                 DamageAnimClass::Constructor((#374 *)v91, *edi173, v92, 0);
               }
               --v144;
@@ -739,7 +739,7 @@ LABEL_158:
           v94 = (AnimClass *)__2_YAPAXI_Z(0x1C8u);
           if ( v94 )
           {
-            eax181 = (unsigned int *)(*(int (__thiscall **)(char *, double *))(*(_DWORD *)this + 72))(this, &var2C);
+            eax181 = (unsigned int *)(*(int (__thiscall **)(char *, double *))(this->q012)(this, &var2C);
             v95 = *eax181;
             v96 = eax181[1];
             v97 = eax181[2];
@@ -764,7 +764,7 @@ LABEL_158:
         while ( v87 );
       }
     }
-    Instance = *((_DWORD *)this + 43);
+    Instance = this->q0AC;
     if ( *(_BYTE *)(Instance + 660) )
     {
       v99 = *(_DWORD *)(Instance + 688);
@@ -1010,7 +1010,7 @@ int __thiscall Warhead_ApplyPostDamageEffects(int *this)
   int v102; // [esp+D0h] [ebp-10h]
   _BYTE v103[12]; // [esp+D4h] [ebp-Ch] BYREF
 
-  v2 = *(this + 43); /*0x46a322*/
+  v2 = this->q0AC; /*0x46a322*/
   v3 = *(_DWORD *)(v2 + 696); /*0x46a328*/
   if ( v3 >= 0 ) /*0x46a330*/
   {
@@ -1048,7 +1048,7 @@ int __thiscall Warhead_ApplyPostDamageEffects(int *this)
     if ( result != 6 ) /*0x46a406*/
     {
       v12 = *this; /*0x46a412*/
-      v13 = *(_DWORD *)(*(this + 43) + 692); /*0x46a414*/
+      v13 = *(_DWORD *)(this->q0AC + 692); /*0x46a414*/
       v99 = *(_DWORD *)(v13 + 160); /*0x46a425*/
       v14 = *(_DWORD *)(*(int (__thiscall **)(int *, int *))(v12 + 440))(this, &v83); /*0x46a434*/
       v15 = *(_DWORD *)(v13 + 180); /*0x46a43c*/

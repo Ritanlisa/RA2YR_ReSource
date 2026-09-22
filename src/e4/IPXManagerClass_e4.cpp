@@ -11,20 +11,20 @@ int __thiscall IPXManagerClass::_vt18(_DWORD *this, int a2, int a3, int a4)
   int v4; // eax
   int result; // eax
 
-  v4 = *(this + 19); /*0x540d80*/
+  v4 = this->q04C; /*0x540d80*/
   if ( v4 ) /*0x540d93*/
   {
     *(_DWORD *)(v4 + 40) = a2; /*0x540d95*/
-    *(_DWORD *)(*(this + 19) + 44) = a3; /*0x540d9b*/
-    *(_DWORD *)(*(this + 19) + 48) = a4; /*0x540da1*/
+    *(_DWORD *)(this->q04C + 44) = a3; /*0x540d9b*/
+    *(_DWORD *)(this->q04C + 48) = a4; /*0x540da1*/
   }
-  result = *(this + 20); /*0x540da4*/
+  result = this->q050; /*0x540da4*/
   if ( result ) /*0x540da9*/
   {
     *(_DWORD *)(result + 40) = a2; /*0x540dab*/
-    result = *(this + 20); /*0x540dae*/
+    result = this->q050; /*0x540dae*/
     *(_DWORD *)(result + 44) = a3; /*0x540db1*/
-    *(_DWORD *)(*(this + 20) + 48) = a4; /*0x540db7*/
+    *(_DWORD *)(this->q050 + 48) = a4; /*0x540db7*/
   }
   return result; /*0x540dba*/
 }
@@ -40,7 +40,7 @@ int __thiscall IPXManagerClass::_vt06(int *this, int a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = *(this + 17); /*0x541040*/
+  v2 = this->connCount; /*0x541040*/
   result = 0; /*0x541043*/
   if ( v2 <= 0 ) /*0x541049*/
     return -1; /*0x541061*/
@@ -63,22 +63,22 @@ int __thiscall IPXManagerClass::_vt19(_DWORD *this, int a2)
   int result; // eax
   _DWORD *v4; // esi
 
-  v2 = *(this + 17); /*0x541070*/
+  v2 = this->connCount; /*0x541070*/
   result = 0; /*0x541074*/
   if ( v2 <= 0 ) /*0x54107d*/
   {
 LABEL_5:
-    if ( a2 == *(this + 20) ) /*0x541091*/
+    if ( a2 == this->q050 ) /*0x541091*/
     {
       return -4; /*0x541095*/
     }
-    else if ( a2 == *(this + 19) ) /*0x5410a0*/
+    else if ( a2 == this->q04C ) /*0x5410a0*/
     {
       return -3; /*0x5410a4*/
     }
     else
     {
-      return (a2 != *(this + 18)) - 2; /*0x5410b6*/
+      return (a2 != this->q048) - 2; /*0x5410b6*/
     }
   }
   else

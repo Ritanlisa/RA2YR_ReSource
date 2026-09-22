@@ -801,8 +801,8 @@ _DWORD *__thiscall FoggedObjectClass::_vt24(_DWORD *this, _DWORD *a2)
 {
   int v3; // [esp+0h] [ebp-4h]
 
-  LOWORD(v3) = *(this + 13) / 256; /*0x4d28e0*/
-  HIWORD(v3) = *(this + 14) / 256; /*0x4d28f4*/
+  LOWORD(v3) = this->q034 / 256; /*0x4d28e0*/
+  HIWORD(v3) = this->q038 / 256; /*0x4d28f4*/
   *a2 = v3; /*0x4d2901*/
   return a2; /*0x4d2904*/
 }
@@ -831,7 +831,7 @@ char __thiscall FoggedObjectClass::ResizeArray(void *this, int a2, char *a3)
   if ( a2 ) /*0x4d2bce*/
   {
     v5 = a3; /*0x4d2bd4*/
-    *((_BYTE *)this + 12) = 0; /*0x4d2bd8*/
+    this->vtable4 = 0; /*0x4d2bd8*/
     if ( a3 ) /*0x4d2bdd*/
     {
       if ( a2 - 1 >= 0 ) /*0x4d2c1a*/
@@ -877,7 +877,7 @@ char __thiscall FoggedObjectClass::ResizeArray(void *this, int a2, char *a3)
         v5 = 0; /*0x4d2c11*/
       }
     }
-    *((_BYTE *)this + 12) = 1; /*0x4d2c33*/
+    this->vtable4 = 1; /*0x4d2c33*/
     if ( !v5 ) /*0x4d2c37*/
       return 0; /*0x4d2cc7*/
     if ( this->vtable1 ) /*0x4d2c3d*/
@@ -902,7 +902,7 @@ char __thiscall FoggedObjectClass::ResizeArray(void *this, int a2, char *a3)
         while ( v11 ); /*0x4d2c75*/
         v3 = a2; /*0x4d2c77*/
       }
-      if ( *((_BYTE *)this + 13) ) /*0x4d2c7d*/
+      if ( this->q034 ) /*0x4d2c7d*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x4d2c86*/
         this->vtable1 = 0; /*0x4d2c8e*/
@@ -910,11 +910,11 @@ char __thiscall FoggedObjectClass::ResizeArray(void *this, int a2, char *a3)
     }
     this->vtable1 = v5; /*0x4d2c99*/
     this->vtable2 = v3; /*0x4d2c9f*/
-    *((_BYTE *)this + 13) = a3 == 0; /*0x4d2ca2*/
+    this->q034 = a3 == 0; /*0x4d2ca2*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x4d2cab*/
+    (*(void (__thiscall **)(void *))(this->vtable4)(this); /*0x4d2cab*/
   }
   v15 = this->vtable2; /*0x4d2cae*/
   if ( v15 < this->uniqueId ) /*0x4d2cb6*/
@@ -933,11 +933,11 @@ int __thiscall FoggedObjectClass::_vt04(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = *(this + 4); /*0x4d2cd0*/
+  v2 = this->vtable2; /*0x4d2cd0*/
   result = 0; /*0x4d2cd5*/
   if ( v2 <= 0 ) /*0x4d2cdb*/
     return -1; /*0x4d2cfc*/
-  for ( i = (_DWORD *)*(this + 1); *i != *a2 || i[1] != a2[1]; i += 4 ) /*0x4d2ce1*/
+  for ( i = (_DWORD *)this->vtable2; *i != *a2 || i[1] != a2[1]; i += 4 ) /*0x4d2ce1*/
   {
     if ( ++result >= v2 ) /*0x4d2cfa*/
       return -1; /*0x4d2cfa*/
@@ -957,11 +957,11 @@ int __thiscall FoggedObjectClass_42_::sub_4E07B0(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = *(this + 4); /*0x4e07b0*/
+  v2 = this->Items; /*0x4e07b0*/
   result = 0; /*0x4e07b3*/
   if ( v2 <= 0 ) /*0x4e07b8*/
     return -1; /*0x4e07cf*/
-  for ( i = (_DWORD *)*(this + 1); *i != *a2; ++i ) /*0x4e07be*/
+  for ( i = (_DWORD *)this->Items; *i != *a2; ++i ) /*0x4e07be*/
   {
     if ( ++result >= v2 ) /*0x4e07cd*/
       return -1; /*0x4e07cd*/

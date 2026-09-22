@@ -107,8 +107,8 @@ char __thiscall FactoryClass::HasProgressChanged(_BYTE *this)
 {
   char result; // al
 
-  result = *(this + 93); /*0x4c9c60*/
-  *(this + 93) = 0; /*0x4c9c63*/
+  result = this->q174; /*0x4c9c60*/
+  this->q174 = 0; /*0x4c9c63*/
   return result; /*0x4c9c67*/
 }
 }
@@ -262,7 +262,7 @@ int __thiscall FactoryClass::GetBuildTimeFrames(_DWORD *this)
   int v3; // edx
   int result; // eax
 
-  v1 = (_DWORD *)*(this + 22); /*0x4c9fb0*/
+  v1 = (_DWORD *)this->q058; /*0x4c9fb0*/
   v2 = 0; /*0x4c9fb3*/
   if ( v1 ) /*0x4c9fb7*/
     v2 = HouseClass::CalcProductionSpeed(v1); /*0x4c9fbe*/
@@ -383,9 +383,9 @@ int __thiscall FactoryClass::Stat(#378 *this, int *a2)
 
   Debug::Log(); /*0x4ca43f*/
   Debug::Log(); /*0x4ca44d*/
-  (*(void (__thiscall **)(_DWORD))(**((_DWORD **)this + 22) + 44))(*((_DWORD *)this + 22)); /*0x4ca45a*/
+  (*(void (__thiscall **)(_DWORD))(**((_DWORD **)this + 22) + 44))(this->q058); /*0x4ca45a*/
   Debug::Log(); /*0x4ca463*/
-  (*(void (__thiscall **)(_DWORD))(**((_DWORD **)this + 22) + 64))(*((_DWORD *)this + 22)); /*0x4ca470*/
+  (*(void (__thiscall **)(_DWORD))(**((_DWORD **)this + 22) + 64))(this->q058); /*0x4ca470*/
   Debug::Log(); /*0x4ca479*/
   Debug::Log(); /*0x4ca489*/
   Debug::Log(); /*0x4ca499*/
@@ -399,11 +399,11 @@ int __thiscall FactoryClass::Stat(#378 *this, int *a2)
   v3 = AbstractClass::ProcessPower(this); /*0x4ca504*/
   LOBYTE(v3) = this->isSuspended; /*0x4ca509*/
   Power::FlagProcess(a2, v3); /*0x4ca50f*/
-  LOBYTE(v4) = *((_BYTE *)this + 93); /*0x4ca514*/
+  LOBYTE(v4) = this->q174; /*0x4ca514*/
   Power::FlagProcess(a2, v4); /*0x4ca51a*/
   Power::TimerProcess(this->balance); /*0x4ca525*/
   Power::TimerProcess(this->originalBalance); /*0x4ca530*/
-  v5 = *((_DWORD *)this + 22); /*0x4ca535*/
+  v5 = this->q058; /*0x4ca535*/
   if ( v5 ) /*0x4ca53a*/
   {
     v6 = (*(int (__stdcall **)(int))(*(_DWORD *)(v5 + 4) + 16))(v5 + 4); /*0x4ca543*/
@@ -426,8 +426,8 @@ int __thiscall FactoryClass::_vt10(_DWORD *this, int a2, int a3)
   int result; // eax
 
   result = a2; /*0x4ca580*/
-  if ( a2 == *(this + 22) ) /*0x4ca589*/
-    *(this + 22) = 0; /*0x4ca58b*/
+  if ( a2 == this->q058 ) /*0x4ca589*/
+    this->q058 = 0; /*0x4ca58b*/
   return result; /*0x4ca592*/
 }
 }
@@ -499,13 +499,13 @@ int __thiscall FactoryClass::CountType(int *this, IUnknown *aP1)
   IUnknown **v6; // esi
 
   v3 = 0; /*0x4ca679*/
-  v4 = *(this + 22); /*0x4ca67b*/
+  v4 = this->q058; /*0x4ca67b*/
   if ( v4 ) /*0x4ca680*/
     v3 = (*(int (__thiscall **)(int))(*(_DWORD *)v4 + 132))(v4) == (_DWORD)aP1; /*0x4ca68e*/
-  v5 = *(this + 20); /*0x4ca693*/
+  v5 = this->abstractFlags; /*0x4ca693*/
   if ( v5 > 0 ) /*0x4ca698*/
   {
-    v6 = (IUnknown **)*(this + 17); /*0x4ca69a*/
+    v6 = (IUnknown **)this->q011; /*0x4ca69a*/
     do /*0x4ca6a6*/
     {
       if ( *v6 == aP1 ) /*0x4ca69f*/
@@ -531,11 +531,11 @@ char __thiscall FactoryClass::IsQueued(int *this, int a2)
   int v3; // eax
   _DWORD *i; // ecx
 
-  v2 = *(this + 20); /*0x4ca6b0*/
+  v2 = this->abstractFlags; /*0x4ca6b0*/
   v3 = 0; /*0x4ca6b3*/
   if ( v2 <= 0 ) /*0x4ca6b8*/
     return 0; /*0x4ca6cd*/
-  for ( i = (_DWORD *)*(this + 17); a2 != *i; ++i ) /*0x4ca6ba*/
+  for ( i = (_DWORD *)this->q011; a2 != *i; ++i ) /*0x4ca6ba*/
   {
     if ( ++v3 >= v2 ) /*0x4ca6cb*/
       return 0; /*0x4ca6cb*/
@@ -558,9 +558,9 @@ FactoryClass *__thiscall FactoryClass::CopyTo(void **this, char a2)
   void **v7; // [esp+4h] [ebp-4h] BYREF
 
   *this = &FactoryClass::`vftable'; /*0x4ca776*/
-  *(this + 1) = &FactoryClass::`vftable'; /*0x4ca77c*/
-  *(this + 2) = &FactoryClass::`vftable'; /*0x4ca783*/
-  *(this + 3) = &vt_FactoryClass; /*0x4ca78a*/
+  this->vtable2 = &FactoryClass::`vftable'; /*0x4ca77c*/
+  this->vtable3 = &FactoryClass::`vftable'; /*0x4ca783*/
+  this->vtable4 = &vt_FactoryClass; /*0x4ca78a*/
   AbstractClass::AnnounceExpiredPointer(this, 1); /*0x4ca791*/
   v7 = this; /*0x4ca7a6*/
   v3 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xA83E30] + 16))(&MEMORY[0xA83E30], &v7); /*0x4ca7aa*/
@@ -586,15 +586,15 @@ FactoryClass *__thiscall FactoryClass::CopyTo(void **this, char a2)
     }
     while ( v4 < MEMORY[0xB0F730] ); /*0x4ca836*/
   }
-  v5 = *(this + 17); /*0x4ca838*/
-  *(this + 16) = &vt_VectorClass_TechnoTypeClass_const; /*0x4ca83b*/
-  if ( v5 && *((_BYTE *)this + 77) ) /*0x4ca846*/
+  v5 = this->q011; /*0x4ca838*/
+  this->uniqueId = &vt_VectorClass_TechnoTypeClass_const; /*0x4ca83b*/
+  if ( v5 && this->q134 ) /*0x4ca846*/
   {
     __3_YAXPAX_Z(v5); /*0x4ca84e*/
-    *(this + 17) = 0; /*0x4ca856*/
+    this->q011 = 0; /*0x4ca856*/
   }
-  *((_BYTE *)this + 77) = 0; /*0x4ca85f*/
-  *(this + 18) = 0; /*0x4ca863*/
+  this->q134 = 0; /*0x4ca85f*/
+  this->q012 = 0; /*0x4ca863*/
   AbstractClass::DTOR(this); /*0x4ca86a*/
   if ( (a2 & 1) != 0 ) /*0x4ca874*/
     __3_YAXPAX_Z(this); /*0x4ca877*/

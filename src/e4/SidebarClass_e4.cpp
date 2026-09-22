@@ -8,7 +8,7 @@ char SidebarClass::draw()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_4C9C50(_BYTE *this)
 {
-  return *(this + 92); /*0x4c9c53*/
+  return this->q05C; /*0x4c9c53*/
 }
 }
 
@@ -18,7 +18,7 @@ int SidebarClass::draw2()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_4CA170(_DWORD *this)
 {
-  return *(this + 26); /*0x4ca173*/
+  return this->q068; /*0x4ca173*/
 }
 }
 

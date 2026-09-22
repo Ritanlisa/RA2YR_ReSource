@@ -20,7 +20,7 @@ _DWORD *__thiscall sub_4C4EF0(_DWORD *this, char *Buffer)
 
   v9 = Buffer; /*0x4c4f09*/
   *this = 0; /*0x4c4f0a*/
-  *(this + 1) = 0; /*0x4c4f10*/
+  this->vtable2 = 0; /*0x4c4f10*/
   sscanf(v9, MEMORY[0x82085C], &Buffer, v10); /*0x4c4f17*/
   *this = Buffer; /*0x4c4f27*/
   ExitCellByName = Factory::FindExitCellByName(v10); /*0x4c4f29*/
@@ -31,20 +31,20 @@ _DWORD *__thiscall sub_4C4EF0(_DWORD *this, char *Buffer)
     {
       v8 = TypeClass::FindByName(v10); /*0x4c4f6f*/
       if ( v8 != -1 ) /*0x4c4f77*/
-        *(this + 1) = *((_DWORD *)MEMORY[0xA8B21C] + v8); /*0x4c4f82*/
+        this->vtable2 = *((_DWORD *)MEMORY[0xA8B21C] + v8); /*0x4c4f82*/
       return this; /*0x4c4f85*/
     }
     else
     {
       v7 = *((_DWORD *)g_UnitTypeCount2 + Index); /*0x4c4f5c*/
-      *(this + 1) = v7; /*0x4c4f61*/
+      this->vtable2 = v7; /*0x4c4f61*/
       return this; /*0x4c4f5f*/
     }
   }
   else
   {
     v4 = *((_DWORD *)MEMORY[0xA8E34C] + ExitCellByName); /*0x4c4f39*/
-    *(this + 1) = v4; /*0x4c4f3e*/
+    this->vtable2 = v4; /*0x4c4f3e*/
     return this; /*0x4c4f3c*/
   }
 }
@@ -63,13 +63,13 @@ _DWORD *__thiscall TaskForceClass::Construct(_DWORD *this, ObjectClass *aP1)
   int v5; // ecx
 
   AbstractTypeClass::Constructor((int)this, (AbstractClass *)aP1); /*0x6e7e8a*/
-  *(this + 38) = -1; /*0x6e7e8f*/
-  *(this + 39) = 0; /*0x6e7e99*/
-  *(this + 40) = 0; /*0x6e7ea3*/
+  this->q098 = -1; /*0x6e7e8f*/
+  this->q09C = 0; /*0x6e7e99*/
+  this->q0A0 = 0; /*0x6e7ea3*/
   *this = &TaskForceClass::`vftable'; /*0x6e7ead*/
-  *(this + 1) = &TaskForceClass::`vftable'; /*0x6e7eb3*/
-  *(this + 2) = &TaskForceClass::`vftable'; /*0x6e7eba*/
-  *(this + 3) = &vt_TaskForceClass; /*0x6e7ec1*/
+  this->vtable2 = &TaskForceClass::`vftable'; /*0x6e7eb3*/
+  this->vtable3 = &TaskForceClass::`vftable'; /*0x6e7eba*/
+  this->vtable4 = &vt_TaskForceClass; /*0x6e7ec1*/
   if ( *(int *)&HouseClass_Player.__pad_5568[22060] < *(int *)&HouseClass_Player.__pad_5568[22052] /*0x6e7f05*/
     || (HouseClass_Player.__pad_5568[22057] || !*(_DWORD *)&HouseClass_Player.__pad_5568[22052])
     && *(int *)&HouseClass_Player.__pad_5568[22064] > 0
@@ -184,9 +184,9 @@ TaskForceClass *__thiscall TaskForceClass::ExecuteAction(void **this, char a2)
   void **v5; // [esp+4h] [ebp-4h] BYREF
 
   *this = &TaskForceClass::`vftable'; /*0x6e87f6*/
-  *(this + 1) = &TaskForceClass::`vftable'; /*0x6e87fc*/
-  *(this + 2) = &TaskForceClass::`vftable'; /*0x6e8803*/
-  *(this + 3) = &vt_TaskForceClass; /*0x6e880a*/
+  this->vtable2 = &TaskForceClass::`vftable'; /*0x6e87fc*/
+  this->vtable3 = &TaskForceClass::`vftable'; /*0x6e8803*/
+  this->vtable4 = &vt_TaskForceClass; /*0x6e880a*/
   AbstractClass::AnnounceExpiredPointer(this, 1); /*0x6e8811*/
   v5 = this; /*0x6e8826*/
   v3 = (*(int (__thiscall **)(int *, void ***))(MEMORY[0xA8E8D0] + 16))(&MEMORY[0xA8E8D0], &v5); /*0x6e882a*/

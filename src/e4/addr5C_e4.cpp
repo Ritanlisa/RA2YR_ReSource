@@ -168,13 +168,13 @@ char __thiscall MPCooperative::_vt07(int *this, int a2)
   int v12; // [esp+10h] [ebp-4h] BYREF
 
   v3 = 0; /*0x5c17c3*/
-  v10 = *(this + 207); /*0x5c17c5*/
+  v10 = this->q33C; /*0x5c17c5*/
   v11 = 0; /*0x5c17cb*/
   Movie::GetSection((int)&MEMORY[0x89F518], v10, &v12); /*0x5c17cf*/
   v4 = v12; /*0x5c17d4*/
   if ( !v12 ) /*0x5c17da*/
     return 1; /*0x5c17e4*/
-  v6 = *(this + 16); /*0x5c17e7*/
+  v6 = this->q010; /*0x5c17e7*/
   if ( v6 ) /*0x5c17ec*/
   {
     if ( Movie::GetState(v6, &v11) ) /*0x5c17f3*/

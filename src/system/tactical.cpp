@@ -1739,7 +1739,7 @@ signed int __thiscall TacticalClass::DrawTerrainPartial(_DWORD *this, int *a2, i
     if ( a3[2] > 0 && a3[3] > 0 )
       TacticalClass::DrawTerrain((int)this, a3, a3);
   }
-  if ( (int)*(this + 56) > 0 && !a4 )
+  if ( (int)this->visibleCellCount > 0 && !a4 )
   {
     v28 = 0;
     v5 = this + 57;
@@ -1754,8 +1754,8 @@ signed int __thiscall TacticalClass::DrawTerrainPartial(_DWORD *this, int *a2, i
       v20 = v18[1];
       v21 = v18[2];
       v6 = Coord::To_ScreenRaw(&v17, &v19);
-      v7 = *(this + 45);
-      v8 = *v6 - *(this + 44);
+      v7 = this->q0B4;
+      v8 = *v6 - this->visibleArea;
       v9 = v6[1];
       v23[0] = v8 - 30;
       v23[3] = 30;
@@ -1772,7 +1772,7 @@ signed int __thiscall TacticalClass::DrawTerrainPartial(_DWORD *this, int *a2, i
       ++v5;
       ++v28;
     }
-    while ( v28 < *(this + 56) );
+    while ( v28 < this->visibleCellCount );
   }
   result = MEMORY[0xB0CE88];
   if ( MEMORY[0xB0CE88] )
@@ -2229,7 +2229,7 @@ int __thiscall TacticalClass::DrawBuildings(int *this)
                     v100[2] = v38;
                     Coord::To_Screen((_DWORD *)MEMORY[0x87F7E8][7887], v100, &v77);
                     v110 = *this;
-                    v39 = MEMORY[0x87F7E8][7663] - *(this + 1);
+                    v39 = MEMORY[0x87F7E8][7663] - this->q004;
                     v40 = 1000;
                     v77 += MEMORY[0x87F7E8][7662] - v110;
                     v41 = v39 + v78;
@@ -2296,7 +2296,7 @@ int __thiscall TacticalClass::DrawBuildings(int *this)
                   v105[1] = *(_DWORD *)(v4 + 56);
                   v105[2] = *(_DWORD *)(v4 + 60);
                   v60 = Coord::To_Cell(MEMORY[0x87F7E8], v105);
-                  v22 = MEMORY[0x87F7E8][7663] - *(this + 1);
+                  v22 = MEMORY[0x87F7E8][7663] - this->q004;
                   v23 = v18[5889];
                   v79 += MEMORY[0x87F7E8][7662] - *this;
                   v24 = v22 + v80;
@@ -2308,9 +2308,9 @@ int __thiscall TacticalClass::DrawBuildings(int *this)
                   v83[1] = v24;
                   v25 = v24 + *(__int16 *)(v66 + 4) / 2;
                   v88[0] = *this;
-                  v88[1] = *(this + 1);
-                  v88[2] = *(this + 2);
-                  v89 = *(this + 3);
+                  v88[1] = this->q004;
+                  v88[2] = this->__pad_002;
+                  v89 = this->q00C;
                   if ( v89 > v25 )
                     v89 = v25;
                   v73 = *((_DWORD *)v18 + 1356) + 144;
@@ -2445,7 +2445,7 @@ int __thiscall TacticalClass::DrawBuildings(int *this)
               *((_BYTE *)v6 + 286) = v62;
               break;
             case 0x1D:
-              v43 = *(this + 1);
+              v43 = this->q004;
               v44 = *this;
               v45 = *(_DWORD *)(MEMORY[0x87F7E8][7887] + 180);
               v90 = *(_DWORD *)(MEMORY[0x87F7E8][7887] + 176);
@@ -2500,7 +2500,7 @@ int __thiscall TacticalClass::DrawBuildings(int *this)
               v103[1] = v9[1];
               v103[2] = v9[2];
               Coord::To_Screen((_DWORD *)MEMORY[0x87F7E8][7887], v103, &v81);
-              v12 = MEMORY[0x87F7E8][7663] - *(this + 1);
+              v12 = MEMORY[0x87F7E8][7663] - this->q004;
               v13 = *v9;
               v81 += MEMORY[0x87F7E8][7662] - *this;
               v14 = v12 + v82;
@@ -6224,15 +6224,15 @@ char __thiscall TacticalClass_AddToDrawQueue(_DWORD *this, int a2, int a3, int a
   int v5; // edx
   int v6; // eax
 
-  v4 = *(this + 876);
+  v4 = this->floats;
   if ( v4 == 500 || a3 < -32 || a3 > MEMORY[0x886FA8] + 32 || a4 < -32 || a4 > MEMORY[0x886FAC] + 32 )
     return 0;
   MEMORY[0xB0CEC8][3 * v4] = a2;
-  v5 = a4 + *(this + 45);
-  v6 = 3 * *(this + 876);
-  MEMORY[0xB0CECC][v6] = *(this + 44) + a3;
+  v5 = a4 + this->q0B4;
+  v6 = 3 * this->floats;
+  MEMORY[0xB0CECC][v6] = this->visibleArea + a3;
   MEMORY[0xB0CED0][v6] = v5;
-  ++*(this + 876);
+  ++this->floats;
   return 1;
 }
 
@@ -6468,17 +6468,17 @@ int __thiscall sub_631E50(_DWORD *this, int a2)
   int result; // eax
   int v4; // edi
 
-  v2 = a2 * *(this + 5) + *(this + 4);
-  *(this + 4) = v2;
+  v2 = a2 * this->abstractFlags + this->uniqueId;
+  this->uniqueId = v2;
   if ( v2 > 0x2000 )
-    *(this + 4) = 0x2000;
-  result = *(this + 4) & 0xFFF;
-  if ( (*(this + 4) & 0x1000) != 0 )
+    this->uniqueId = 0x2000;
+  result = this->uniqueId & 0xFFF;
+  if ( (this->uniqueId & 0x1000) != 0 )
     result = 4096 - result;
-  v4 = result * *(this + 7);
-  *(this + 1) = (result * *(this + 6) + (4096 - result) * *(this + 9)) >> 12;
-  *(this + 2) = (v4 + (4096 - result) * *(this + 10)) >> 12;
-  *(this + 3) = (result * *(this + 8) + (4096 - result) * *(this + 11)) >> 12;
+  v4 = result * this->referenceCount;
+  this->q004 = (result * this->nextArrayIndex + (4096 - result) * this->field24) >> 12;
+  this->q008 = (v4 + (4096 - result) * this->field28) >> 12;
+  this->q00C = (result * this->NeedsSaveOrLink + (4096 - result) * this->TacticalClass_field_2C) >> 12;
   return result;
 }
 
@@ -6545,11 +6545,11 @@ char __thiscall sub_631EE0(_DWORD *this, int a2)
 {
   int v2; // eax
 
-  v2 = *(this + 14) - a2;
-  *(this + 14) = v2;
+  v2 = this->field38 - a2;
+  this->field38 = v2;
   if ( v2 > 0 )
     return 0;
-  *(this + 14) = 0;
+  this->field38 = 0;
   return 1;
 }
 
@@ -6637,7 +6637,7 @@ int __thiscall TacticalClass_MouseInput(_DWORD *this, _DWORD *a2, _DWORD *a3)
     {
       *(this + 1325) = v7;
       RadarClass::SetViewMode(4, 0);
-      *(this + 1326) = 0;
+      this->q14B8 = 0;
     }
   }
   if ( *(this + 1324) == 4 )

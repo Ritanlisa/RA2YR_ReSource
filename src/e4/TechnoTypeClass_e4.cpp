@@ -47,19 +47,19 @@ double __thiscall TechnoTypeClass::Dispatch(_DWORD *this, TechnoTypeClass *aP1)
   switch ( (*(int (__thiscall **)(TechnoTypeClass *))(*(_DWORD *)aP1->vtable0 + 44))(aP1) ) /*0x50be0f*/
   {
     case 3: /*0x50be0f*/
-      result = *(float *)(*(this + 13) + 284); /*0x50be37*/
+      result = *(float *)(this->q034 + 284); /*0x50be37*/
       break; /*0x50be3d*/
     case 7: /*0x50be0f*/
       if ( aP1[4].VoxelCaches[5] == 5 ) /*0x50be47*/
-        result = *(float *)(*(this + 13) + 292); /*0x50be4e*/
+        result = *(float *)(this->q034 + 292); /*0x50be4e*/
       else
-        result = *(float *)(*(this + 13) + 288); /*0x50be5c*/
+        result = *(float *)(this->q034 + 288); /*0x50be5c*/
       break; /*0x50be54*/
     case 16: /*0x50be0f*/
-      result = *(float *)(*(this + 13) + 276); /*0x50be1b*/
+      result = *(float *)(this->q034 + 276); /*0x50be1b*/
       break; /*0x50be21*/
     case 40: /*0x50be0f*/
-      result = *(float *)(*(this + 13) + 280); /*0x50be29*/
+      result = *(float *)(this->q034 + 280); /*0x50be29*/
       break; /*0x50be2f*/
     default:
       result = 1.0; /*0x50be65*/
@@ -80,19 +80,19 @@ double __thiscall TechnoTypeClass::GetThreatMultiplier(float *this, TechnoTypeCl
   switch ( (*(int (__thiscall **)(TechnoTypeClass *))(*(_DWORD *)aP1->vtable0 + 44))(aP1) ) /*0x50becf*/
   {
     case 3: /*0x50becf*/
-      result = *(this + 5350); /*0x50beec*/
+      result = this->q14E6; /*0x50beec*/
       break; /*0x50bef4*/
     case 7: /*0x50becf*/
       if ( aP1[4].VoxelCaches[5] == 5 ) /*0x50befe*/
-        result = *(this + 5352); /*0x50bf00*/
+        result = this->q14E8; /*0x50bf00*/
       else
-        result = *(this + 5351); /*0x50bf0b*/
+        result = this->q14E7; /*0x50bf0b*/
       break; /*0x50bf08*/
     case 16: /*0x50becf*/
-      result = *(this + 5348); /*0x50bed6*/
+      result = this->q14E4; /*0x50bed6*/
       break; /*0x50bede*/
     case 40: /*0x50becf*/
-      result = *(this + 5349); /*0x50bee1*/
+      result = this->q14E5; /*0x50bee1*/
       break; /*0x50bee9*/
     default:
       result = 1.0; /*0x50bf16*/
@@ -116,39 +116,39 @@ _DWORD *__thiscall TechnoTypeClass::LoadBase(_DWORD *this, ObjectClass *aP1)
 
   AbstractTypeClass::Constructor((int)this, (AbstractClass *)aP1); /*0x6f06ea*/
   *(this + 38) = -1; /*0x6f06f7*/
-  *(this + 39) = -1; /*0x6f06ff*/
-  *(this + 40) = 1; /*0x6f0705*/
-  *(this + 41) = 0; /*0x6f070b*/
-  *(this + 42) = 0; /*0x6f0723*/
-  *(this + 43) = 0; /*0x6f073b*/
-  *(this + 44) = 0; /*0x6f0753*/
-  *(this + 45) = 7; /*0x6f076b*/
-  *(this + 46) = -1; /*0x6f0775*/
-  *(this + 47) = 0; /*0x6f077b*/
-  *(this + 48) = 0; /*0x6f0781*/
-  *(this + 49) = 0; /*0x6f0787*/
+  this->Armor = -1; /*0x6f06ff*/
+  this->Strength = 1; /*0x6f0705*/
+  this->Image = 0; /*0x6f070b*/
+  this->ImageAllocated = 0; /*0x6f0723*/
+  this->AlphaImage = 0; /*0x6f073b*/
+  this->MainVoxel = 0; /*0x6f0753*/
+  this->TurretVoxel = 7; /*0x6f076b*/
+  this->q0B8 = -1; /*0x6f0775*/
+  this->ChargerTurrets = 0; /*0x6f077b*/
+  this->q0C0 = 0; /*0x6f0781*/
+  this->q0C4 = 0; /*0x6f0787*/
   *(this + 50) = -1; /*0x6f078d*/
-  *(this + 51) = 0; /*0x6f0793*/
-  *(this + 52) = 0; /*0x6f0799*/
+  this->DebrisMaximums = 0; /*0x6f0793*/
+  this->q034 = 0; /*0x6f0799*/
   *(this + 53) = -1; /*0x6f079f*/
-  *(this + 54) = -1; /*0x6f07a5*/
-  *(this + 55) = 0; /*0x6f07ab*/
-  *(this + 56) = 0; /*0x6f07b1*/
-  *(this + 57) = 0; /*0x6f07b7*/
-  *(this + 58) = 0; /*0x6f07bd*/
-  *(this + 59) = 9; /*0x6f07c3*/
-  *((_BYTE *)this + 240) = 1; /*0x6f07cd*/
-  *((_BYTE *)this + 241) = 0; /*0x6f07d3*/
-  *((_BYTE *)this + 242) = 0; /*0x6f07d9*/
+  this->unknown_double_360 = -1; /*0x6f07a5*/
+  this->Weight = 0; /*0x6f07ab*/
+  this->Size = 0; /*0x6f07b1*/
+  this->HoverAttack = 0; /*0x6f07b7*/
+  this->RollAngle = 0; /*0x6f07bd*/
+  this->q0EC = 9; /*0x6f07c3*/
+  this->unknown_3C0 = 1; /*0x6f07cd*/
+  this->q3C4 = 0; /*0x6f07d3*/
+  this->DeployTime = 0; /*0x6f07d9*/
   *((_BYTE *)this + 243) = 0; /*0x6f07df*/
-  *((_BYTE *)this + 244) = 0; /*0x6f07e5*/
-  *((_BYTE *)this + 245) = 1; /*0x6f07eb*/
-  *((_BYTE *)this + 246) = 0; /*0x6f07f1*/
-  *((_BYTE *)this + 247) = 0; /*0x6f07f7*/
+  this->FireAngle = 0; /*0x6f07e5*/
+  this->PipScale = 1; /*0x6f07eb*/
+  this->PipsDrawForAll = 0; /*0x6f07f1*/
+  this->LeptonMindControlOffset = 0; /*0x6f07f7*/
   *this = &TeamTypeClass::`vftable'; /*0x6f07fd*/
-  *(this + 1) = &TeamTypeClass::`vftable'; /*0x6f0803*/
-  *(this + 2) = &TeamTypeClass::`vftable'; /*0x6f080a*/
-  *(this + 3) = &vt_TeamTypeClass; /*0x6f0811*/
+  this->vtable2 = &TeamTypeClass::`vftable'; /*0x6f0803*/
+  this->vtable3 = &TeamTypeClass::`vftable'; /*0x6f080a*/
+  this->vtable4 = &vt_TeamTypeClass; /*0x6f0811*/
   v3 = *(TeamTypeClass **)&HouseClass_Player.__pad_5568[23036]; /*0x6f0818*/
   if ( *(int *)&HouseClass_Player.__pad_5568[23036] < *(int *)&HouseClass_Player.__pad_5568[23028] /*0x6f0857*/
     || (HouseClass_Player.__pad_5568[23033] || !*(_DWORD *)&HouseClass_Player.__pad_5568[23028])
@@ -221,25 +221,25 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
   this->WalkRate = 1; /*0x710b02*/
   this->IdleRate = 0; /*0x710b0e*/
   this->VeteranAbilities = 0; /*0x710b14*/
-  *((_DWORD *)this + 168) = 0; /*0x710b1c*/
-  *((_DWORD *)this + 169) = 0; /*0x710b28*/
-  *((_DWORD *)this + 170) = 0; /*0x710b2f*/
-  *((_WORD *)this + 342) = 0; /*0x710b36*/
+  this->ImageAllocated = 0; /*0x710b1c*/
+  this->q0A9 = 0; /*0x710b28*/
+  this->q0AA = 0; /*0x710b2f*/
+  this->VoiceEnter = 0; /*0x710b36*/
   this->EliteAbilities = 0; /*0x710b3d*/
   *(_DWORD *)(this + 690) = 0; /*0x710b43*/
   *(_DWORD *)(this + 694) = 0; /*0x710b4b*/
   *(_DWORD *)(this + 698) = 0; /*0x710b51*/
-  *((_WORD *)this + 351) = 0; /*0x710b57*/
+  this->VoiceHarvest = 0; /*0x710b57*/
   this->SpecialThreatValue = 0; /*0x710b5e*/
-  *((_DWORD *)this + 177) = 0; /*0x710b64*/
+  this->techLevel = 0; /*0x710b64*/
   this->MyEffectivenessCoefficient = 0; /*0x710b6a*/
-  *((_DWORD *)this + 179) = 0; /*0x710b70*/
+  this->speed = 0; /*0x710b70*/
   this->TargetEffectivenessCoefficient = 0; /*0x710b76*/
-  *((_DWORD *)this + 181) = 0; /*0x710b7c*/
+  this->threatPosed = 0; /*0x710b7c*/
   this->TargetSpecialThreatCoefficient = 0; /*0x710b82*/
-  *((_DWORD *)this + 183) = 0; /*0x710b88*/
+  this->cloakable = 0; /*0x710b88*/
   this->TargetStrengthCoefficient = 0; /*0x710b8e*/
-  *((_DWORD *)this + 185) = 0; /*0x710b94*/
+  this->q0B9 = 0; /*0x710b94*/
   this->TargetDistanceCoefficient = 0; /*0x710b9a*/
   *((_DWORD *)this + 187) = 0; /*0x710ba0*/
   this->ThreatAvoidanceCoefficient = 0; /*0x710ba6*/
@@ -248,7 +248,7 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
   this->unknown_double_300 = -755914244; /*0x710bbc*/
   *((_DWORD *)this + 193) = 1063281229; /*0x710bc6*/
   this->AccelerationFactor = -343597384; /*0x710bd0*/
-  *((_DWORD *)this + 195) = 1067366481; /*0x710bda*/
+  this->q0C3 = 1067366481; /*0x710bda*/
   this->CloakingSpeed = 7; /*0x710be4*/
   VoxelAnimTypeVector::Constructor(0, 0); /*0x710bee*/
   this->DebrisTypes.Count = 0; /*0x710bf8*/
@@ -259,28 +259,28 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
   this->DebrisMaximums.Count = 0; /*0x710c17*/
   this->DebrisMaximums = &vt_TypeList_int; /*0x710c1a*/
   this->Locomotor = 1247291207; /*0x710c2d*/
-  *((_DWORD *)this + 212) = 298948665; /*0x710c39*/
-  *((_DWORD *)this + 213) = -1610610249; /*0x710c42*/
-  *((_DWORD *)this + 214) = -777003740; /*0x710c4b*/
+  this->SuppressionThreshold = 298948665; /*0x710c39*/
+  this->JumpjetCrash = -1610610249; /*0x710c42*/
+  this->qD60 = -777003740; /*0x710c4b*/
   this->unknown_double_360 = 0; /*0x710c4e*/
-  *((_DWORD *)this + 217) = 0; /*0x710c54*/
+  this->q364 = 0; /*0x710c54*/
   this->unknown_double_368 = 0; /*0x710c5a*/
-  *((_DWORD *)this + 219) = 0; /*0x710c60*/
+  this->qDB0 = 0; /*0x710c60*/
   this->Weight = 0; /*0x710c6b*/
-  *((_DWORD *)this + 221) = 1072693248; /*0x710c71*/
+  this->q374 = 1072693248; /*0x710c71*/
   this->PhysicalSize = 0; /*0x710c77*/
   *((_DWORD *)this + 223) = 0x40000000; /*0x710c7d*/
   this->Size = 0; /*0x710c87*/
-  *((_DWORD *)this + 225) = 1072693248; /*0x710c8d*/
+  this->q384 = 1072693248; /*0x710c8d*/
   this->SizeLimit = 0; /*0x710c93*/
-  *((_DWORD *)this + 227) = 0; /*0x710c99*/
-  *(this + 912) = 0; /*0x710c9f*/
+  this->q38C = 0; /*0x710c99*/
+  this->HoverAttack = 0; /*0x710c9f*/
   this->VHPScan = 0; /*0x710ca5*/
   this->unknown_int_398 = 15; /*0x710cab*/
   this->RollAngle = 942502757; /*0x710cb5*/
   *((_DWORD *)this + 233) = 1071694162; /*0x710cbf*/
   this->PitchSpeed = 0; /*0x710cc9*/
-  *((_DWORD *)this + 235) = 1070596096; /*0x710ccf*/
+  this->q3AC = 1070596096; /*0x710ccf*/
   this->PitchAngle = 1256670343; /*0x710cd9*/
   *((_DWORD *)this + 237) = 1071011608; /*0x710ce3*/
   this->BuildLimit = 0x7FFFFFFF; /*0x710cf0*/
@@ -290,7 +290,7 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
   *((_DWORD *)this + 243) = 0; /*0x710d0c*/
   this->FireAngle = 8; /*0x710d12*/
   this->PipScale = 0; /*0x710d1c*/
-  *(this + 984) = 0; /*0x710d22*/
+  this->PipsDrawForAll = 0; /*0x710d22*/
   this->LeptonMindControlOffset = 70; /*0x710d28*/
   this->PixelSelectionBracketDelta = 0; /*0x710d33*/
   this->PipWrap = 0; /*0x710d40*/
@@ -301,7 +301,7 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
   this->DeploysInto = 0; /*0x710d61*/
   this->UndeploysInto = 0; /*0x710d67*/
   this->PowersUnit = 0; /*0x710d6e*/
-  *(this + 1040) = 0; /*0x710d7b*/
+  this->PoweredUnit = 0; /*0x710d7b*/
   VectorClass::Construct((_DWORD *)this + 261, 0, 0); /*0x710d81*/
   this->VoiceSelect.CapacityIncrement = 10; /*0x710d8e*/
   this->VoiceSelect.Count = 0; /*0x710d94*/
@@ -385,12 +385,12 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
   this->DebrisAnims.Count = 0; /*0x710fce*/
   this->DebrisAnims = &vt_TypeList_AnimTypeClass_const; /*0x710fd4*/
   this->Passengers = 0; /*0x710fde*/
-  *(this + 1508) = 0; /*0x710fe4*/
+  this->OpenTopped = 0; /*0x710fe4*/
   this->Sight = 0; /*0x710fea*/
-  *(this + 1516) = 0; /*0x710ff0*/
-  *(this + 1517) = 0; /*0x710ff6*/
-  *(this + 1518) = 0; /*0x710ffc*/
-  *(this + 1519) = 0; /*0x711002*/
+  this->ResourceGatherer = 0; /*0x710ff0*/
+  this->ResourceDestination = 0; /*0x710ff6*/
+  this->RevealToAll = 0; /*0x710ffc*/
+  this->Drainable = 0; /*0x711002*/
   this->SensorsSight = 0; /*0x711008*/
   this->DetectDisguiseRange = 0; /*0x71100e*/
   this->BombSight = 0; /*0x711014*/
@@ -425,60 +425,60 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
   this->Ammo = -1; /*0x7110ec*/
   this->IFVMode = 0; /*0x7110f2*/
   this->AirRangeBonus = 0; /*0x7110f8*/
-  *(this + 1680) = 0; /*0x7110fe*/
-  *(this + 1681) = 0; /*0x711104*/
-  *(this + 1682) = 0; /*0x71110a*/
-  *(this + 1683) = 0; /*0x711110*/
-  *(this + 1684) = 0; /*0x711116*/
-  *(this + 1685) = 0; /*0x71111c*/
+  this->BerserkFriendly = 0; /*0x7110fe*/
+  this->SprayAttack = 0; /*0x711104*/
+  this->Pushy = 0; /*0x71110a*/
+  this->Natural = 0; /*0x711110*/
+  this->Unnatural = 0; /*0x711116*/
+  this->CloseRange = 0; /*0x71111c*/
   this->Reload = 0; /*0x711122*/
   this->EmptyReload = -1; /*0x711128*/
   this->ReloadIncrement = 0; /*0x71112e*/
   this->RadialFireSegments = 0; /*0x711134*/
   this->DeployFireWeapon = 1; /*0x71113a*/
-  *(this + 1708) = 0; /*0x711144*/
-  *(this + 1709) = 0; /*0x71114a*/
-  *(this + 1710) = 1; /*0x711150*/
-  *(this + 1711) = 0; /*0x711157*/
-  *(this + 1712) = 0; /*0x71115d*/
-  *(this + 1713) = 0; /*0x711163*/
+  this->DeployFire = 0; /*0x711144*/
+  this->DeployToLand = 0; /*0x71114a*/
+  this->MobileFire = 1; /*0x711150*/
+  this->OpportunityFire = 0; /*0x711157*/
+  this->DistributedFire = 0; /*0x71115d*/
+  this->DamageReducesReadiness = 0; /*0x711163*/
   this->ReadinessReductionMultiplier = 0; /*0x711169*/
   this->UnloadingClass = 0; /*0x71116f*/
   this->DeployingAnim = 0; /*0x711175*/
-  *(this + 1728) = 0; /*0x71117b*/
-  *(this + 1729) = 0; /*0x711181*/
+  this->AttackFriendlies = 0; /*0x71117b*/
+  this->AttackCursorOnFriendlies = 0; /*0x711181*/
   this->UndeployDelay = -1; /*0x711187*/
-  *(this + 1736) = 0; /*0x71118d*/
+  this->PreventAttackMove = 0; /*0x71118d*/
   this->OwnerFlags = 0; /*0x711193*/
   this->AIBasePlanningSide = -1; /*0x71119e*/
-  *(this + 1748) = 0; /*0x7111a4*/
-  *(this + 1749) = 1; /*0x7111ac*/
+  this->StupidHunt = 0; /*0x7111a4*/
+  this->AllowedToStartInMultiplayer = 1; /*0x7111ac*/
   if ( &MEMORY[0x889F64] ) /*0x7111b9*/
   {
     strncpy(this + 1750, &MEMORY[0x889F64], 0x18u); /*0x7111c7*/
-    *(this + 1774) = 0; /*0x7111cf*/
+    this->q6EE = 0; /*0x7111cf*/
   }
   else
   {
-    *(this + 1750) = 0; /*0x7111bb*/
+    this->CameoFile = 0; /*0x7111bb*/
   }
   this->Cameo = 0; /*0x7111da*/
-  *(this + 1780) = 0; /*0x7111e2*/
+  this->CameoAllocated = 0; /*0x7111e2*/
   if ( &MEMORY[0x889F64] ) /*0x7111ee*/
   {
     strncpy(this + 1781, &MEMORY[0x889F64], 0x18u); /*0x7111fc*/
-    *(this + 1805) = 0; /*0x711204*/
+    this->q70D = 0; /*0x711204*/
   }
   else
   {
-    *(this + 1781) = 0; /*0x7111f0*/
+    this->AltCameoFile = 0; /*0x7111f0*/
   }
   this->AltCameo = 0; /*0x71120a*/
-  *(this + 1812) = 0; /*0x711210*/
+  this->AltCameoAllocated = 0; /*0x711210*/
   this->RotCount = 0; /*0x711216*/
   this->ROT = 0; /*0x71121c*/
   this->TurretOffset = 0; /*0x711222*/
-  *(this + 1828) = 1; /*0x711229*/
+  this->CanBeHidden = 1; /*0x711229*/
   this->Points2 = 0; /*0x711237*/
   AnimTypeVector::Constructor((_DWORD *)this + 459, 0, 0); /*0x71123d*/
   this->Explosion.CapacityIncrement = 10; /*0x71124a*/
@@ -504,156 +504,156 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
   this->DamageSmokeOffset = 0; /*0x7112df*/
   *((_DWORD *)this + 493) = 0; /*0x7112e5*/
   *((_DWORD *)this + 494) = 0; /*0x7112eb*/
-  *(this + 1980) = 0; /*0x7112f1*/
+  this->DamSmkOffScrnRel = 0; /*0x7112f1*/
   this->DestroySmokeOffset = 0; /*0x7112f7*/
-  *((_DWORD *)this + 497) = 0; /*0x7112fd*/
+  this->q7C4 = 0; /*0x7112fd*/
   *((_DWORD *)this + 498) = 0; /*0x711303*/
   this->RefinerySmokeOffsetOne = 0; /*0x711309*/
-  *((_DWORD *)this + 500) = 0; /*0x71130f*/
+  this->AmbientSound = 0; /*0x71130f*/
   *((_DWORD *)this + 501) = 0; /*0x711315*/
   this->RefinerySmokeOffsetTwo = 0; /*0x71131b*/
   *((_DWORD *)this + 503) = 0; /*0x711321*/
-  *((_DWORD *)this + 504) = 0; /*0x711327*/
+  this->ImageFile = 0; /*0x711327*/
   this->RefinerySmokeOffsetThree = 0; /*0x71132d*/
-  *((_DWORD *)this + 506) = 0; /*0x711333*/
-  *((_DWORD *)this + 507) = 0; /*0x711339*/
+  this->ArcticArtInUse = 0; /*0x711333*/
+  this->AlphaImageFile_0x19 = 0; /*0x711339*/
   this->RefinerySmokeOffsetFour = 0; /*0x71133f*/
-  *((_DWORD *)this + 509) = 0; /*0x711345*/
-  *((_DWORD *)this + 510) = 0; /*0x71134b*/
+  this->Crushable = 0; /*0x711345*/
+  this->Bombable = 0; /*0x71134b*/
   this->ShadowIndex = 0; /*0x711351*/
   this->Storage = 0; /*0x711357*/
-  *(this + 2052) = 0; /*0x71135d*/
-  *(this + 2053) = 0; /*0x711363*/
-  *(this + 2054) = 0; /*0x711369*/
+  this->TurretNotExportedOnGround = 0; /*0x71135d*/
+  this->Gunner = 0; /*0x711363*/
+  this->HasTurretTooltips = 0; /*0x711369*/
   this->TurretCount = 0; /*0x71136f*/
-  *(this + 2064) = 0; /*0x711375*/
-  *(this + 2704) = 0; /*0x71137b*/
-  *(this + 3212) = 0; /*0x711381*/
-  *(this + 3213) = 1; /*0x711387*/
-  *(this + 3214) = 1; /*0x71138e*/
-  *(this + 3215) = 0; /*0x711395*/
-  *(this + 3216) = 0; /*0x71139b*/
-  *(this + 3217) = 0; /*0x7113a1*/
-  *(this + 3218) = 0; /*0x7113a7*/
-  *(this + 3219) = 0; /*0x7113ad*/
-  *(this + 3220) = 0; /*0x7113b3*/
-  *(this + 3221) = 0; /*0x7113b9*/
-  *(this + 3222) = 0; /*0x7113bf*/
-  *(this + 3223) = 1; /*0x7113c5*/
-  *(this + 3224) = 0; /*0x7113cc*/
-  *(this + 3225) = 0; /*0x7113d2*/
-  *(this + 3226) = 0; /*0x7113d8*/
-  *(this + 3227) = 0; /*0x7113de*/
-  *(this + 3228) = 0; /*0x7113e4*/
-  *(this + 3229) = 0; /*0x7113ea*/
-  *(this + 3230) = 0; /*0x7113f0*/
-  *(this + 3231) = 0; /*0x7113f6*/
-  *(this + 3232) = 0; /*0x7113fc*/
-  *(this + 3233) = 0; /*0x711402*/
-  *(this + 3234) = 0; /*0x711412*/
+  this->IsChargeTurret = 0; /*0x711375*/
+  this->qA90 = 0; /*0x71137b*/
+  this->TypeImmune = 0; /*0x711381*/
+  this->MoveToShroud = 1; /*0x711387*/
+  this->Trainable = 1; /*0x71138e*/
+  this->DamageSparks = 0; /*0x711395*/
+  this->TargetLaser = 0; /*0x71139b*/
+  this->ImmuneToVeins = 0; /*0x7113a1*/
+  this->TiberiumHeal = 0; /*0x7113a7*/
+  this->CloakStop = 0; /*0x7113ad*/
+  this->IsTrain = 0; /*0x7113b3*/
+  this->IsDropship = 0; /*0x7113b9*/
+  this->ToProtect = 0; /*0x7113bf*/
+  this->Disableable = 1; /*0x7113c5*/
+  this->Unbuildable = 0; /*0x7113cc*/
+  this->DoubleOwned = 0; /*0x7113d2*/
+  this->Invisible = 0; /*0x7113d8*/
+  this->RadarVisible = 0; /*0x7113de*/
+  this->HasPrimary = 0; /*0x7113e4*/
+  this->Sensors = 0; /*0x7113ea*/
+  this->Nominal = 0; /*0x7113f0*/
+  this->DontScore = 0; /*0x7113f6*/
+  this->DamageSelf = 0; /*0x7113fc*/
+  this->Turret = 0; /*0x711402*/
+  this->TurretRecoil = 0; /*0x711412*/
   this->TurretAnimData = 2; /*0x711418*/
   *((_DWORD *)this + 810) = 1; /*0x71141e*/
   *((_DWORD *)this + 811) = 1; /*0x711424*/
   *((_DWORD *)this + 812) = 1; /*0x71142a*/
-  *(this + 3252) = 0; /*0x711430*/
+  this->unknown_bool_CB4 = 0; /*0x711430*/
   this->BarrelAnimData = 2; /*0x711436*/
   *((_DWORD *)this + 815) = 1; /*0x71143c*/
-  *((_DWORD *)this + 816) = 1; /*0x711442*/
+  this->DebrisMaximums = 1; /*0x711442*/
   *((_DWORD *)this + 817) = 1; /*0x711448*/
-  *(this + 3272) = 0; /*0x71144e*/
-  *(this + 3276) = 1; /*0x711454*/
-  *(this + 3277) = 0; /*0x71145a*/
-  *(this + 3278) = 0; /*0x711460*/
-  *(this + 3279) = 0; /*0x711466*/
-  *(this + 3280) = 0; /*0x71146c*/
-  *(this + 3281) = 0; /*0x711472*/
-  *(this + 3282) = 0; /*0x711478*/
-  *(this + 3283) = 0; /*0x71147e*/
-  *(this + 3284) = 0; /*0x711484*/
-  *(this + 3285) = 0; /*0x71148a*/
+  this->unknown_bool_CC8 = 0; /*0x71144e*/
+  this->qCCC = 1; /*0x711454*/
+  this->qCCD = 0; /*0x71145a*/
+  this->qCCE = 0; /*0x711460*/
+  this->q333C = 0; /*0x711466*/
+  this->q3340 = 0; /*0x71146c*/
+  this->Naval = 0; /*0x711472*/
+  this->Remapable = 0; /*0x711478*/
+  this->Cloakable = 0; /*0x71147e*/
+  this->qCD4 = 0; /*0x711484*/
+  this->qCD5 = 0; /*0x71148a*/
   *((_DWORD *)this + 822) = 0; /*0x711490*/
   *((_DWORD *)this + 835) = 0; /*0x711496*/
   *((_DWORD *)this + 836) = 0; /*0x71149c*/
-  *(this + 3348) = 0; /*0x7114a2*/
-  *(this + 3349) = 0; /*0x7114a8*/
+  this->qD14 = 0; /*0x7114a2*/
+  this->qD15 = 0; /*0x7114a8*/
   this->SlavesNumber = 0; /*0x7114ae*/
   this->SlaveRegenRate = 1065353216; /*0x7114b4*/
-  *(this + 3360) = 0; /*0x7114be*/
-  *(this + 3361) = 0; /*0x7114c4*/
-  *(this + 3362) = 0; /*0x7114ca*/
-  *(this + 3363) = 0; /*0x7114d0*/
-  *(this + 3364) = 0; /*0x7114d6*/
-  *(this + 3365) = 0; /*0x7114dc*/
-  *(this + 3366) = 0; /*0x7114e2*/
-  *(this + 3367) = 0; /*0x7114e8*/
-  *(this + 3368) = 0; /*0x7114ee*/
-  *(this + 3369) = 0; /*0x7114f4*/
-  *(this + 3370) = 0; /*0x7114fa*/
-  *(this + 3371) = 1; /*0x711500*/
-  *(this + 3372) = 0; /*0x711506*/
-  *(this + 3373) = 0; /*0x71150c*/
-  *(this + 3375) = 0; /*0x711512*/
-  *(this + 3376) = 0; /*0x711518*/
-  *(this + 3377) = 0; /*0x71151e*/
-  *(this + 3378) = 0; /*0x711524*/
-  *(this + 3379) = 1; /*0x71152a*/
-  *(this + 3380) = 1; /*0x711530*/
-  *(this + 3383) = 0; /*0x711536*/
-  *(this + 3385) = 0; /*0x71153c*/
-  *(this + 3386) = 1; /*0x711542*/
-  *(this + 3388) = 0; /*0x711548*/
-  *(this + 3389) = 0; /*0x71154e*/
-  *(this + 3390) = 0; /*0x711554*/
+  this->qD20 = 0; /*0x7114be*/
+  this->qD21 = 0; /*0x7114c4*/
+  this->qD22 = 0; /*0x7114ca*/
+  this->qD23 = 0; /*0x7114d0*/
+  this->qD24 = 0; /*0x7114d6*/
+  this->qD25 = 0; /*0x7114dc*/
+  this->qD26 = 0; /*0x7114e2*/
+  this->qD27 = 0; /*0x7114e8*/
+  this->qD28 = 0; /*0x7114ee*/
+  this->qD29 = 0; /*0x7114f4*/
+  this->qD2A = 0; /*0x7114fa*/
+  this->qD2B = 1; /*0x711500*/
+  this->qD2C = 0; /*0x711506*/
+  this->qD2D = 0; /*0x71150c*/
+  this->qD2F = 0; /*0x711512*/
+  this->Locomotor = 0; /*0x711518*/
+  this->qD31 = 0; /*0x71151e*/
+  this->qD32 = 0; /*0x711524*/
+  this->qD33 = 1; /*0x71152a*/
+  this->qD34 = 1; /*0x711530*/
+  this->qD37 = 0; /*0x711536*/
+  this->qD39 = 0; /*0x71153c*/
+  this->qD3A = 1; /*0x711542*/
+  this->qD3C = 0; /*0x711548*/
+  this->qD3D = 0; /*0x71154e*/
+  this->BalloonHover = 0; /*0x711554*/
   this->SuppressionThreshold = 0; /*0x71155a*/
   this->JumpjetTurnRate = 0; /*0x711560*/
   this->JumpjetSpeed = 0; /*0x711566*/
   this->JumpjetClimb = 0; /*0x71156c*/
   this->JumpjetCrash = -1; /*0x711572*/
-  *(this + 3412) = 0; /*0x711578*/
+  this->qD54 = 0; /*0x711578*/
   this->JumpjetAccel = 0; /*0x71157e*/
   this->JumpjetWobbles = 0; /*0x711584*/
-  *((_DWORD *)this + 856) = 0; /*0x71158a*/
+  this->qD60 = 0; /*0x71158a*/
   this->JumpjetDeviation = 0; /*0x711590*/
-  *(this + 3432) = 0; /*0x711596*/
-  *(this + 3433) = 0; /*0x71159c*/
-  *(this + 3434) = 0; /*0x7115a2*/
-  *((_DWORD *)this + 859) = 0; /*0x7115a8*/
-  *((_DWORD *)this + 860) = 4; /*0x7115ae*/
+  this->qD68 = 0; /*0x711596*/
+  this->qD69 = 0; /*0x71159c*/
+  this->qD6A = 0; /*0x7115a2*/
+  this->qD6C = 0; /*0x7115a8*/
+  this->q35C = 4; /*0x7115ae*/
   this->RequiredHouses = 14; /*0x7115b8*/
   this->ForbiddenHouses = 1084227584; /*0x7115c7*/
   this->SecretHouses = 1084227584; /*0x7115cd*/
-  *((_DWORD *)this + 864) = 500; /*0x7115d3*/
+  this->unknown_double_360 = 500; /*0x7115d3*/
   this->SecondSpawnOffset = 0x40000000; /*0x7115dd*/
   *((_DWORD *)this + 866) = 1041865114; /*0x7115e7*/
-  *(this + 3468) = 0; /*0x7115f1*/
-  *((_DWORD *)this + 868) = 40; /*0x7115f7*/
-  *(this + 3476) = 0; /*0x711601*/
-  *(this + 3477) = 0; /*0x711607*/
-  *(this + 3480) = 0; /*0x71160d*/
-  *(this + 3481) = 1; /*0x711613*/
-  *(this + 3482) = 1; /*0x71161a*/
-  *(this + 3483) = 0; /*0x711621*/
-  *(this + 3484) = 0; /*0x711627*/
-  *(this + 3485) = 0; /*0x71162d*/
+  this->qD8C = 0; /*0x7115f1*/
+  this->q364 = 40; /*0x7115f7*/
+  this->JumpJet = 0; /*0x711601*/
+  this->Crashable = 0; /*0x711607*/
+  this->q366 = 0; /*0x71160d*/
+  this->qD99 = 1; /*0x711613*/
+  this->qD9A = 1; /*0x71161a*/
+  this->qD9B = 0; /*0x711621*/
+  this->qD9C = 0; /*0x711627*/
+  this->qD9D = 0; /*0x71162d*/
   this->ZFudgeBridge = -1; /*0x711633*/
   this->PaletteFile = -1; /*0x711639*/
   *((_DWORD *)this + 874) = -1; /*0x71163f*/
-  *(this + 3500) = 0; /*0x711645*/
-  *(this + 3516) = 0; /*0x71164b*/
-  *(this + 3517) = 1; /*0x711651*/
-  *(this + 3518) = 0; /*0x711658*/
-  *(this + 3519) = 0; /*0x71165e*/
-  *((_DWORD *)this + 880) = 10; /*0x711664*/
+  this->qDAC = 0; /*0x711645*/
+  this->qDBC = 0; /*0x71164b*/
+  this->qDBD = 1; /*0x711651*/
+  this->qDBE = 0; /*0x711658*/
+  this->qDBF = 0; /*0x71165e*/
+  this->Weight = 10; /*0x711664*/
   this->Palette = 5; /*0x71166a*/
-  *((_DWORD *)this + 882) = 10; /*0x711674*/
-  *((_DWORD *)this + 883) = 0; /*0x71167a*/
+  this->qDC8 = 10; /*0x711674*/
+  this->qDCC = 0; /*0x71167a*/
   *((_DWORD *)this + 892) = 0; /*0x711680*/
   *(_DWORD *)this = &TechnoTypeClass::`vftable'; /*0x711686*/
   this->vtable1 = &TechnoTypeClass::`vftable'; /*0x71168c*/
   this->vtable2 = &TechnoTypeClass::`vftable'; /*0x711693*/
   this->vtable3 = &vt_TechnoTypeClass; /*0x71169a*/
-  *(this + 3536) = 0; /*0x7116a7*/
-  *(this + 564) = 1; /*0x7116ad*/
+  this->qDD0 = 0; /*0x7116a7*/
+  this->q234 = 1; /*0x7116ad*/
   (*(void (__thiscall **)(char *))(this->DebrisTypes + 12))(this + 788); /*0x7116b6*/
   (*(void (__thiscall **)(char *))(this->DebrisAnims + 12))(this + 1476); /*0x7116c5*/
   (*(void (__thiscall **)(char *))(this->DebrisMaximums + 12))(this + 816); /*0x7116d4*/
@@ -702,7 +702,7 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
     v12[2] = 0; /*0x711754*/
   }
   while ( v11 ); /*0x711757*/
-  *((_DWORD *)this + 876) = 0; /*0x711763*/
+  this->qDB0 = 0; /*0x711763*/
   v13 = this + 3316; /*0x711765*/
   *((_DWORD *)this + 877) = 0; /*0x71176b*/
   v14 = 6; /*0x71176e*/

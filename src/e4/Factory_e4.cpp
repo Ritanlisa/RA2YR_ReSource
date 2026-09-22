@@ -18,11 +18,11 @@ char __thiscall Factory::GetLinkedIndex(int *this, DynamicVector *aP1)
 
   if ( aP1 == (DynamicVector *)-1 ) /*0x663d68*/
     return -1; /*0x663d6a*/
-  v3 = *(this + 4); /*0x663d70*/
+  v3 = this->q004; /*0x663d70*/
   v4 = 0; /*0x663d73*/
   if ( v3 <= 0 ) /*0x663d79*/
     return -1; /*0x663d79*/
-  v5 = (char **)*(this + 1); /*0x663d7b*/
+  v5 = (char **)this->q004; /*0x663d7b*/
   for ( i = v5; aP1 != (DynamicVector *)**i; ++i ) /*0x663d7e*/
   {
     if ( ++v4 >= v3 ) /*0x663d8f*/

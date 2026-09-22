@@ -62,234 +62,234 @@ _DWORD *__thiscall TechnoClass::TechnoClass(_DWORD *this, AbstractClass *aP1)
   int v11; // eax
 
   RadioClass::Release(this); /*0x6f2b46*/
-  *(this + 60) = 0; /*0x6f2b52*/
-  *((_BYTE *)this + 244) = 0; /*0x6f2b58*/
-  *(this + 62) = 0; /*0x6f2b5e*/
-  *((_BYTE *)this + 252) = 0; /*0x6f2b64*/
+  this->q0F0 = 0; /*0x6f2b52*/
+  this->isUseless = 0; /*0x6f2b58*/
+  this->q0F8 = 0; /*0x6f2b5e*/
+  this->chronoWarpedByHouse = 0; /*0x6f2b64*/
   v3 = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6f2b6a*/
-  *(this + 66) = 0; /*0x6f2b6f*/
-  *(this + 64) = v3; /*0x6f2b75*/
-  *(this + 67) = 0; /*0x6f2b7b*/
-  *(this + 68) = 1; /*0x6f2b81*/
-  *(this + 69) = 0; /*0x6f2b87*/
-  *(this + 70) = 0; /*0x6f2b8d*/
-  *(this + 71) = 0; /*0x6f2b93*/
-  *(this + 72) = -100; /*0x6f2b9c*/
-  *(this + 73) = -1; /*0x6f2ba6*/
-  *(this + 74) = -1; /*0x6f2bac*/
-  *(this + 75) = 0; /*0x6f2bb2*/
-  *(this + 76) = 0; /*0x6f2bb8*/
-  *((_BYTE *)this + 308) = 0; /*0x6f2bbe*/
-  *(this + 78) = 0; /*0x6f2bc4*/
-  *(this + 79) = -1; /*0x6f2bca*/
-  *(this + 80) = 0; /*0x6f2bd0*/
-  *(this + 81) = 0; /*0x6f2bd6*/
-  *(this + 82) = 0; /*0x6f2be2*/
+  this->q108 = 0; /*0x6f2b6f*/
+  this->q100 = v3; /*0x6f2b75*/
+  this->turretChargeTimer = 0; /*0x6f2b7b*/
+  this->q110 = 1; /*0x6f2b81*/
+  this->secondaryTurretIndex = 0; /*0x6f2b87*/
+  this->q118 = 0; /*0x6f2b8d*/
+  this->q11C = 0; /*0x6f2b93*/
+  this->q120 = -100; /*0x6f2b9c*/
+  this->q124 = -1; /*0x6f2ba6*/
+  this->q128 = -1; /*0x6f2bac*/
+  this->behindAnim = 0; /*0x6f2bb2*/
+  this->deployAnim = 0; /*0x6f2bb8*/
+  this->inAirFlag = 0; /*0x6f2bbe*/
+  this->currentWeaponSlot = 0; /*0x6f2bc4*/
+  this->q13C = -1; /*0x6f2bca*/
+  this->currentRank = 0; /*0x6f2bd0*/
+  this->gattlingStage = 0; /*0x6f2bd6*/
+  this->gattlingValue = 0; /*0x6f2be2*/
   unknown_libname_35(this + 84); /*0x6f2be8*/
-  *(this + 86) = 0; /*0x6f2bf2*/
-  *(this + 87) = 1072693248; /*0x6f2bf8*/
-  *(this + 88) = 0; /*0x6f2bfe*/
-  *(this + 89) = 1072693248; /*0x6f2c04*/
-  *(this + 90) = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6f2c10*/
-  *(this + 92) = 0; /*0x6f2c16*/
+  this->alignmentPadding154 = 0; /*0x6f2bf2*/
+  this->armorMultiplier = 1072693248; /*0x6f2bf8*/
+  this->q160 = 0; /*0x6f2bfe*/
+  this->firepowerMultiplier = 1072693248; /*0x6f2c04*/
+  this->q168 = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6f2c10*/
+  this->q170 = 0; /*0x6f2c16*/
   v4 = *(IUnknown **)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6f2c1c*/
-  *(this + 95) = 0; /*0x6f2c22*/
-  *(this + 93) = v4; /*0x6f2c28*/
-  *(this + 96) = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6f2c33*/
-  *(this + 98) = 45; /*0x6f2c39*/
+  this->q17C = 0; /*0x6f2c22*/
+  this->radarFlashTimer = v4; /*0x6f2c28*/
+  this->targetingTimer = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6f2c33*/
+  this->q188 = 45; /*0x6f2c39*/
   v5 = *(IUnknown **)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6f2c43*/
-  *(this + 101) = 0; /*0x6f2c49*/
-  *(this + 99) = v5; /*0x6f2c4f*/
-  *(this + 102) = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6f2c5b*/
-  *(this + 104) = 0; /*0x6f2c61*/
-  *(this + 105) = 10; /*0x6f2c67*/
-  *(this + 106) = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6f2c76*/
-  *(this + 108) = 0; /*0x6f2c7c*/
+  this->q194 = 0; /*0x6f2c49*/
+  this->q18C = v5; /*0x6f2c4f*/
+  this->q198 = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6f2c5b*/
+  this->q1A0 = 0; /*0x6f2c61*/
+  this->q1A4 = 10; /*0x6f2c67*/
+  this->ironTintStage = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6f2c76*/
+  this->airstrikeTimer = 0; /*0x6f2c7c*/
   v6 = *(IUnknown **)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6f2c82*/
-  *(this + 111) = 0; /*0x6f2c88*/
-  *(this + 109) = v6; /*0x6f2c8e*/
-  *(this + 113) = 0; /*0x6f2c94*/
+  this->q1BC = 0; /*0x6f2c88*/
+  this->q1B4 = v6; /*0x6f2c8e*/
+  this->q1C4 = 0; /*0x6f2c94*/
   this->isDeactivated = 0; /*0x6f2c9a*/
-  *(this + 115) = 0; /*0x6f2ca0*/
-  *(this + 116) = 0; /*0x6f2ca6*/
-  *(this + 117) = 0; /*0x6f2cac*/
-  *((_BYTE *)this + 472) = 0; /*0x6f2cb2*/
-  *(this + 119) = 0; /*0x6f2cb8*/
+  this->drainTarget = 0; /*0x6f2ca0*/
+  this->drainingMe = 0; /*0x6f2ca6*/
+  this->drainAnim = 0; /*0x6f2cac*/
+  this->isDisguisedFlag = 0; /*0x6f2cb2*/
+  this->disguiseCreationFrame = 0; /*0x6f2cb8*/
   v7 = *(IUnknown **)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6f2cbe*/
-  *(this + 122) = 0; /*0x6f2cc4*/
-  *(this + 120) = v7; /*0x6f2cca*/
-  *(this + 123) = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6f2cd5*/
-  *(this + 125) = 0; /*0x6f2cdb*/
+  this->q1E8 = 0; /*0x6f2cc4*/
+  this->infantryBlinkTimer = v7; /*0x6f2cca*/
+  this->disguiseBlinkTimer = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6f2cd5*/
+  this->q07D = 0; /*0x6f2cdb*/
   this->isTargetedByChrono = 0; /*0x6f2ce1*/
-  *(this + 127) = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6f2ced*/
-  *(this + 129) = 0; /*0x6f2cf3*/
-  *(this + 130) = 0; /*0x6f2cf9*/
-  *(this + 131) = 0; /*0x6f2cff*/
-  *(this + 132) = 0; /*0x6f2d05*/
-  *(this + 133) = -1; /*0x6f2d0f*/
-  *(this + 134) = 0; /*0x6f2d15*/
-  *(this + 135) = aP1; /*0x6f2d1b*/
-  *(this + 136) = 0; /*0x6f2d21*/
-  *(this + 137) = 0; /*0x6f2d27*/
-  *((_BYTE *)this + 552) = 0; /*0x6f2d2d*/
-  *(this + 139) = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6f2d38*/
-  *(this + 141) = 0; /*0x6f2d3e*/
-  *(this + 142) = 0; /*0x6f2d44*/
-  *(this + 143) = 1; /*0x6f2d4a*/
+  this->reloadTimer = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6f2ced*/
+  this->q204 = 0; /*0x6f2cf3*/
+  this->currentBurstCount = 0; /*0x6f2cf9*/
+  this->currentBarrelIndex = 0; /*0x6f2cff*/
+  this->displayProductionTo = 0; /*0x6f2d05*/
+  this->controlGroup = -1; /*0x6f2d0f*/
+  this->focus = 0; /*0x6f2d15*/
+  this->owner = aP1; /*0x6f2d1b*/
+  this->cloakState = 0; /*0x6f2d21*/
+  this->cloakProgress = 0; /*0x6f2d27*/
+  this->q228 = 0; /*0x6f2d2d*/
+  this->q22C = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6f2d38*/
+  this->q234 = 0; /*0x6f2d3e*/
+  this->q238 = 0; /*0x6f2d44*/
+  this->warpFactor = 1; /*0x6f2d4a*/
   v8 = *(IUnknown **)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6f2d50*/
-  *(this + 146) = 0; /*0x6f2d56*/
-  *(this + 144) = v8; /*0x6f2d5c*/
-  *(this + 147) = 0; /*0x6f2d62*/
+  this->q092 = 0; /*0x6f2d56*/
+  this->q240 = v8; /*0x6f2d5c*/
+  this->q24C = 0; /*0x6f2d62*/
   this->isChronosphereImmune = 0; /*0x6f2d68*/
-  *(this + 149) = *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[6908]; /*0x6f2d79*/
-  *(this + 150) = *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[6912]; /*0x6f2d85*/
-  *(this + 151) = *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[6916]; /*0x6f2d93*/
-  *(this + 152) = 0; /*0x6f2d96*/
-  *(this + 153) = 0; /*0x6f2d9c*/
+  this->lastSightCoords = *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[6908]; /*0x6f2d79*/
+  this->q096 = *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[6912]; /*0x6f2d85*/
+  this->q097 = *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[6916]; /*0x6f2d93*/
+  this->lastSightRange = 0; /*0x6f2d96*/
+  this->lastSightHeight = 0; /*0x6f2d9c*/
   this->gapSuperCharged = 0; /*0x6f2da2*/
   this->isGeneratingGap = 0; /*0x6f2da8*/
-  *(this + 155) = 0; /*0x6f2dae*/
+  this->gapRadius = 0; /*0x6f2dae*/
   this->isBeingWarpedOut = 0; /*0x6f2db4*/
   this->isWarpingOut = 0; /*0x6f2dba*/
   this->isWarpEffectActive = 0; /*0x6f2dc0*/
-  *(this + 157) = 0; /*0x6f2dc6*/
-  *(this + 158) = 0; /*0x6f2dcc*/
+  this->temporalUsing = 0; /*0x6f2dc6*/
+  this->temporalTargetingMe = 0; /*0x6f2dcc*/
   this->isImmobilized = 0; /*0x6f2dd2*/
-  *(this + 160) = 0; /*0x6f2dd8*/
-  *(this + 161) = 0; /*0x6f2dde*/
-  *(this + 162) = *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[6908]; /*0x6f2dea*/
-  *(this + 163) = *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[6912]; /*0x6f2df1*/
+  this->owningHouseIndex0 = 0; /*0x6f2dd8*/
+  this->chronoLockRemaining = 0; /*0x6f2dde*/
+  this->chronoDestCoords = *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[6908]; /*0x6f2dea*/
+  this->q28C = *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[6912]; /*0x6f2df1*/
   v9 = *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[6916]; /*0x6f2df4*/
-  *(this + 185) = 0; /*0x6f2dfa*/
-  *(this + 186) = 0; /*0x6f2e00*/
-  *(this + 164) = v9; /*0x6f2e06*/
-  *(this + 165) = 0; /*0x6f2e09*/
+  this->bunkerLinkedUnit = 0; /*0x6f2dfa*/
+  this->pitchAngle = 0; /*0x6f2e00*/
+  this->q290 = v9; /*0x6f2e06*/
+  this->airstrike = 0; /*0x6f2e09*/
   this->isBerserk = 0; /*0x6f2e0f*/
-  *(this + 167) = 0; /*0x6f2e15*/
-  *(this + 168) = 0; /*0x6f2e1b*/
+  this->isBerserk_duration_left = 0; /*0x6f2e15*/
+  this->sprayOffsetIndex = 0; /*0x6f2e1b*/
   this->isUncrushable = 0; /*0x6f2e21*/
-  *(this + 170) = 0; /*0x6f2e27*/
-  *(this + 171) = 0; /*0x6f2e2d*/
-  *(this + 172) = 0; /*0x6f2e33*/
-  *(this + 173) = 0; /*0x6f2e39*/
-  *(this + 174) = 0; /*0x6f2e3f*/
-  *(this + 175) = 0; /*0x6f2e45*/
-  *(this + 176) = 0; /*0x6f2e4b*/
+  this->rockerLinkedUnit = 0; /*0x6f2e27*/
+  this->locomotorTarget = 0; /*0x6f2e2d*/
+  this->locomotorSource = 0; /*0x6f2e33*/
+  this->target = 0; /*0x6f2e39*/
+  this->lastTarget = 0; /*0x6f2e3f*/
+  this->captureManager = 0; /*0x6f2e45*/
+  this->mindControlledBy = 0; /*0x6f2e4b*/
   this->mindControlledBy_a_unit = 0; /*0x6f2e51*/
-  *(this + 178) = 0; /*0x6f2e57*/
-  *(this + 179) = 0; /*0x6f2e5d*/
-  *(this + 180) = 0; /*0x6f2e63*/
-  *(this + 181) = 0; /*0x6f2e69*/
-  *(this + 182) = 0; /*0x6f2e6f*/
-  *(this + 183) = 0; /*0x6f2e75*/
-  *(this + 184) = 0; /*0x6f2e7b*/
-  *(this + 187) = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6f2e86*/
-  *(this + 189) = 0; /*0x6f2e8c*/
-  *(this + 190) = 0; /*0x6f2e98*/
-  *(this + 191) = -1; /*0x6f2e9e*/
-  *(this + 192) = 0; /*0x6f2ea4*/
-  *(this + 201) = 0; /*0x6f2eaa*/
-  *(this + 202) = 0; /*0x6f2eb0*/
-  *(this + 203) = 0; /*0x6f2eb6*/
-  *(this + 204) = 0; /*0x6f2ebc*/
-  *(this + 205) = 0; /*0x6f2ec2*/
-  *(this + 206) = -1; /*0x6f2ec8*/
+  this->mindControlRingAnim = 0; /*0x6f2e57*/
+  this->mindControlledBy_house = 0; /*0x6f2e5d*/
+  this->spawnManager = 0; /*0x6f2e63*/
+  this->spawnOwner = 0; /*0x6f2e69*/
+  this->slaveManager = 0; /*0x6f2e6f*/
+  this->slaveOwner = 0; /*0x6f2e75*/
+  this->originalOwnerHouse = 0; /*0x6f2e7b*/
+  this->diskLaserTimer = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6f2e86*/
+  this->q2F4 = 0; /*0x6f2e8c*/
+  this->diskLaserChargeState = 0; /*0x6f2e98*/
+  this->ammo = -1; /*0x6f2e9e*/
+  this->unitValue = 0; /*0x6f2ea4*/
+  this->q324 = 0; /*0x6f2eaa*/
+  this->q328 = 0; /*0x6f2eb0*/
+  this->auxParticles1 = 0; /*0x6f2eb6*/
+  this->auxParticles2 = 0; /*0x6f2ebc*/
+  this->firingParticles = 0; /*0x6f2ec2*/
+  this->waveEffect = -1; /*0x6f2ec8*/
   Delegate::GetField(this + 207); /*0x6f2ece*/
   TechnoClass::checkCloakState((int)(this + 212)); /*0x6f2ed9*/
   FrameSnapshot::InitMax((_WORD *)this + 440, 3); /*0x6f2ee6*/
   FrameSnapshot::Init((_WORD *)this + 452); /*0x6f2ef1*/
   FrameSnapshot::Init((_WORD *)this + 464); /*0x6f2efc*/
-  *(this + 238) = 0; /*0x6f2f01*/
-  *(this + 239) = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6f2f0d*/
-  *(this + 241) = 0; /*0x6f2f13*/
+  this->q3B8 = 0; /*0x6f2f01*/
+  this->targetLaserTimer = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6f2f0d*/
+  this->qF10 = 0; /*0x6f2f13*/
   *((_WORD *)this + 485) = 0; /*0x6f2f1e*/
-  *(this + 243) = 0; /*0x6f2f25*/
-  *(this + 244) = 0; /*0x6f2f3d*/
-  *((_BYTE *)this + 980) = 0; /*0x6f2f55*/
-  *((_BYTE *)this + 981) = 0; /*0x6f2f5b*/
-  *(this + 246) = 2; /*0x6f2f61*/
-  *(this + 247) = 1; /*0x6f2f67*/
-  *(this + 248) = 1; /*0x6f2f6d*/
-  *(this + 249) = 1; /*0x6f2f73*/
-  *(this + 251) = 0; /*0x6f2f79*/
-  *(this + 252) = 0; /*0x6f2f7f*/
-  *(this + 254) = 2; /*0x6f2f85*/
-  *(this + 255) = 1; /*0x6f2f8b*/
-  *(this + 256) = 1; /*0x6f2f91*/
-  *(this + 257) = 1; /*0x6f2f97*/
-  *(this + 259) = 0; /*0x6f2f9d*/
-  *(this + 260) = 0; /*0x6f2fa3*/
-  *((_BYTE *)this + 1048) = 0; /*0x6f2fa9*/
-  *((_BYTE *)this + 1049) = 0; /*0x6f2faf*/
-  *((_BYTE *)this + 1050) = 0; /*0x6f2fb5*/
-  *((_BYTE *)this + 1051) = 0; /*0x6f2fbb*/
-  *((_BYTE *)this + 1052) = 0; /*0x6f2fc1*/
-  *((_BYTE *)this + 1053) = 0; /*0x6f2fc7*/
-  *((_BYTE *)this + 1054) = 0; /*0x6f2fcd*/
-  *((_BYTE *)this + 1055) = 0; /*0x6f2fd3*/
-  *((_BYTE *)this + 1056) = 0; /*0x6f2fd9*/
-  *((_BYTE *)this + 1057) = 1; /*0x6f2fdf*/
-  *((_BYTE *)this + 1058) = 1; /*0x6f2fe6*/
-  *((_BYTE *)this + 1059) = 0; /*0x6f2fed*/
-  *((_BYTE *)this + 1060) = 0; /*0x6f2ff3*/
-  *((_BYTE *)this + 1061) = 0; /*0x6f2ff9*/
-  *((_BYTE *)this + 1062) = 0; /*0x6f2fff*/
-  *((_BYTE *)this + 1063) = 0; /*0x6f3005*/
-  *(this + 266) = 0; /*0x6f300b*/
-  *(this + 267) = 0; /*0x6f3011*/
-  *((_BYTE *)this + 1072) = 0; /*0x6f3017*/
-  *((_BYTE *)this + 1073) = 0; /*0x6f301d*/
-  *((_BYTE *)this + 1074) = 0; /*0x6f3023*/
-  *(this + 269) = 0; /*0x6f3029*/
+  this->countedAsOwned = 0; /*0x6f2f25*/
+  this->isUseless = 0; /*0x6f2f3d*/
+  this->isALoaner = 0; /*0x6f2f55*/
+  this->q3D5 = 0; /*0x6f2f5b*/
+  this->q3D8 = 2; /*0x6f2f61*/
+  this->isTurretLocked = 1; /*0x6f2f67*/
+  this->isDiscoveredByComputer = 1; /*0x6f2f6d*/
+  this->sightRangeBonus = 1; /*0x6f2f73*/
+  this->manipulatedByUnit = 0; /*0x6f2f79*/
+  this->chronoWarpedByHouse = 0; /*0x6f2f7f*/
+  this->q3F8 = 2; /*0x6f2f85*/
+  this->q0FF = 1; /*0x6f2f8b*/
+  this->q100 = 1; /*0x6f2f91*/
+  this->q404 = 1; /*0x6f2f97*/
+  this->q40C = 0; /*0x6f2f9d*/
+  this->q410 = 0; /*0x6f2fa3*/
+  this->isTether = 0; /*0x6f2fa9*/
+  this->isAlternativeTether = 0; /*0x6f2faf*/
+  this->isOwnedByCurrentPlayer = 0; /*0x6f2fb5*/
+  this->isDiscoveredByCurrentPlayer = 0; /*0x6f2fbb*/
+  this->q41C = 0; /*0x6f2fc1*/
+  this->q41D = 0; /*0x6f2fc7*/
+  this->q41E = 0; /*0x6f2fcd*/
+  this->q41F = 0; /*0x6f2fd3*/
+  this->q420 = 0; /*0x6f2fd9*/
+  this->q421 = 1; /*0x6f2fdf*/
+  this->q422 = 1; /*0x6f2fe6*/
+  this->q423 = 0; /*0x6f2fed*/
+  this->q424 = 0; /*0x6f2ff3*/
+  this->q425 = 0; /*0x6f2ff9*/
+  this->q426 = 0; /*0x6f2fff*/
+  this->q427 = 0; /*0x6f3005*/
+  this->q428 = 0; /*0x6f300b*/
+  this->q42C = 0; /*0x6f3011*/
+  this->q430 = 0; /*0x6f3017*/
+  this->isMouseHovering = 0; /*0x6f301d*/
+  this->shouldBeReselectOnUnlimbo = 0; /*0x6f3023*/
+  this->previousTeam = 0; /*0x6f3029*/
   this->isCountedAsOwned_special = 0; /*0x6f302f*/
   this->isAbsorbed = 0; /*0x6f3035*/
   this->isGrindingInProgress = 0; /*0x6f303b*/
-  *(this + 271) = 0; /*0x6f3046*/
-  *(this + 273) = 0; /*0x6f3051*/
-  *(this + 274) = 0; /*0x6f3057*/
+  this->grindingAnimHandle = 0; /*0x6f3046*/
+  this->vecInt_Items = 0; /*0x6f3051*/
+  this->vecInt_Capacity = 0; /*0x6f3057*/
   this->currentTargetThreatValues.IsInitialized = 1; /*0x6f305d*/
   this->currentTargetThreatValues.IsAllocated = 0; /*0x6f3064*/
-  *(this + 272) = &vt_DynamicVectorClass_int; /*0x6f306a*/
-  *(this + 277) = 10; /*0x6f3074*/
-  *(this + 276) = 0; /*0x6f307a*/
-  *(this + 279) = 0; /*0x6f3080*/
-  *(this + 280) = 0; /*0x6f3086*/
+  this->currentTargetThreatValues = &vt_DynamicVectorClass_int; /*0x6f306a*/
+  this->q115 = 10; /*0x6f3074*/
+  this->secondaryTurretIndex = 0; /*0x6f307a*/
+  this->attackedTargets = 0; /*0x6f3080*/
+  this->audioController3 = 0; /*0x6f3086*/
   *((_BYTE *)this + 1124) = 1; /*0x6f308c*/
-  *((_BYTE *)this + 1125) = 0; /*0x6f3093*/
-  *(this + 278) = &vt_DynamicVectorClass_AbstractClass; /*0x6f3099*/
-  *(this + 283) = 10; /*0x6f309f*/
-  *(this + 282) = 0; /*0x6f30a5*/
-  *(this + 285) = 0; /*0x6f30ab*/
-  *(this + 286) = 0; /*0x6f30b1*/
-  *((_BYTE *)this + 1148) = 1; /*0x6f30b7*/
-  *((_BYTE *)this + 1149) = 0; /*0x6f30be*/
-  *(this + 284) = &vt_DynamicVectorClass_AbstractClass; /*0x6f30c4*/
-  *(this + 289) = 10; /*0x6f30ca*/
-  *(this + 288) = 0; /*0x6f30d0*/
-  *(this + 295) = 1; /*0x6f30d6*/
-  *(this + 296) = 0; /*0x6f30dc*/
-  *((_BYTE *)this + 1208) = 0; /*0x6f30e2*/
-  *(this + 303) = 0; /*0x6f30e8*/
+  this->vecAbs_IsAllocated = 0; /*0x6f3093*/
+  this->currentTargets = &vt_DynamicVectorClass_AbstractClass; /*0x6f3099*/
+  this->q11B = 10; /*0x6f309f*/
+  this->q11A = 0; /*0x6f30a5*/
+  this->audioLoopIndex3 = 0; /*0x6f30ab*/
+  this->audioVolume3 = 0; /*0x6f30b1*/
+  this->audioController4 = 1; /*0x6f30b7*/
+  this->q47D = 0; /*0x6f30be*/
+  this->q470 = &vt_DynamicVectorClass_AbstractClass; /*0x6f30c4*/
+  this->q121 = 10; /*0x6f30ca*/
+  this->q120 = 0; /*0x6f30d0*/
+  this->isTurretRotateSoundPlaying = 1; /*0x6f30d6*/
+  this->turretIsRotating = 0; /*0x6f30dc*/
+  this->isGattlingSoundPlaying = 0; /*0x6f30e2*/
+  this->unknown_4BC = 0; /*0x6f30e8*/
   this->isAudio5Active = 0; /*0x6f30ee*/
-  *(this + 310) = 0; /*0x6f30f4*/
+  this->unknown_4D8 = 0; /*0x6f30f4*/
   this->isVoiceOverride = 0; /*0x6f30fa*/
-  *(this + 319) = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6f3106*/
-  *(this + 320) = 0; /*0x6f310c*/
-  *(this + 321) = 0; /*0x6f3112*/
-  *(this + 324) = 0; /*0x6f3118*/
-  *(this + 325) = 0; /*0x6f311e*/
-  *(this + 326) = 0; /*0x6f3124*/
-  *(this + 327) = 0; /*0x6f312a*/
+  this->unknown_4FC = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6f3106*/
+  this->queueUpToEnter = 0; /*0x6f310c*/
+  this->empLockRemaining = 0; /*0x6f3112*/
+  this->firingRadBeam = 0; /*0x6f3118*/
+  this->planningToken = 0; /*0x6f311e*/
+  this->disguiseAsType = 0; /*0x6f3124*/
+  this->disguisedAsHouse = 0; /*0x6f312a*/
   *this = &TechnoClass::`vftable'; /*0x6f3130*/
-  *(this + 1) = &TechnoClass::`vftable'; /*0x6f3136*/
-  *(this + 2) = &vt_TechnoClass; /*0x6f313d*/
-  *(this + 3) = &off_7F4934; /*0x6f314a*/
+  this->vtable2 = &TechnoClass::`vftable'; /*0x6f3136*/
+  this->vtable3 = &vt_TechnoClass; /*0x6f313d*/
+  this->vtable4 = &off_7F4934; /*0x6f314a*/
   AudioController::Init(this + 290); /*0x6f3151*/
   AudioController::Init(this + 297); /*0x6f315c*/
   AudioController::Init(this + 304); /*0x6f3167*/
   AudioController::Init(this + 311); /*0x6f3172*/
-  *(this + 316) = -1; /*0x6f3177*/
-  *(this + 317) = -1; /*0x6f317d*/
+  this->queuedVoiceIndex = -1; /*0x6f3177*/
+  this->unknown_4F4 = -1; /*0x6f317d*/
   if ( *(int *)&MEMORY[0xA8D63C].__pad_14B0[412] < *(int *)&MEMORY[0xA8D63C].__pad_14B0[404] /*0x6f31b6*/
     || (MEMORY[0xA8D63C].__pad_14B0[409] || !*(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[404])
     && *(int *)&MEMORY[0xA8D63C].__pad_14B0[416] > 0
@@ -313,9 +313,9 @@ _DWORD *__thiscall TechnoClass::TechnoClass(_DWORD *this, AbstractClass *aP1)
     *(_DWORD *)(*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[10040] + 4 * v11) = this; /*0x6f3225*/
   }
   (unsigned char)this->abstractFlags |= 1u; /*0x6f3237*/
-  *(this + 83) = aP1; /*0x6f3241*/
+  this->ammoReloadTimer = aP1; /*0x6f3241*/
   memset(this + 193, 0, 0x20u); /*0x6f3247*/
-  *((_WORD *)this + 484) = Random::State(&MEMORY[0xA8B230]->random[1]); /*0x6f3259*/
+  this->q1E4 = Random::State(&MEMORY[0xA8B230]->random[1]); /*0x6f3259*/
   return this; /*0x6f3262*/
 }
 }
@@ -659,7 +659,7 @@ int __thiscall TechnoClass::RegisterKill(#377 *this)
   int v28; // [esp+14h] [ebp+4h]
 
   v27 = 0; /*0x702d46*/
-  v2 = (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 132))(this); /*0x702d50*/
+  v2 = (*(int (__thiscall **)(#377 *))(this->hasParachute)(this); /*0x702d50*/
   v3 = (*(int (__thiscall **)(int, _DWORD))(*(_DWORD *)v2 + 132))(v2, this->owner); /*0x702d6b*/
   if ( this->isAliveFlag ) /*0x702d6d*/
   {
@@ -676,7 +676,7 @@ int __thiscall TechnoClass::RegisterKill(#377 *this)
     if ( v5 && v28 ) /*0x702dac*/
       TeamClass::Update_0(v5, 4, (AbstractClass *)this, *(IUnknown **)&MEMORY[0xB077F8].__pad_579C[6844], 0, 0); /*0x702dbb*/
     if ( this->isAliveFlag /*0x702dd6*/
-      && (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 44))(this) != 1
+      && (*(int (__thiscall **)(#377 *))(this->fallRate)(this) != 1
       && this->isAliveFlag )
     {
       v6 = (void **)this->attachedTag; /*0x702de0*/
@@ -696,7 +696,7 @@ int __thiscall TechnoClass::RegisterKill(#377 *this)
       }
     }
   }
-  result = (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 132))(this); /*0x702e48*/
+  result = (*(int (__thiscall **)(#377 *))(this->hasParachute)(this); /*0x702e48*/
   if ( !*(_BYTE *)(result + 3231) )
   {
     if ( v28 )
@@ -752,7 +752,7 @@ int __thiscall TechnoClass::RegisterKill(#377 *this)
       *(_DWORD *)(this->owner + 21644) = (*(int (__thiscall **)(int))(*(_DWORD *)v28 + 56))(v28); /*0x703003*/
       *(_DWORD *)(*(_DWORD *)(v28 + 540) + 21736) += v3; /*0x70300f*/
     }
-    result = (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 44))(this) - 1; /*0x70301c*/
+    result = (*(int (__thiscall **)(#377 *))(this->fallRate)(this) - 1; /*0x70301c*/
     switch ( result ) /*0x70302e*/
     {
       case 0: /*0x70302e*/
@@ -760,37 +760,37 @@ int __thiscall TechnoClass::RegisterKill(#377 *this)
       case 1: /*0x70302e*/
         if ( !v28 ) /*0x7030d5*/
           goto LABEL_63; /*0x7030d5*/
-        if ( !*(_BYTE *)((*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 132))(this) + 3231) ) /*0x7030e5*/
+        if ( !*(_BYTE *)((*(int (__thiscall **)(#377 *))(this->hasParachute)(this) + 3231) ) /*0x7030e5*/
         {
           HouseClass::IncrementStat( /*0x703108*/
             (_DWORD *)(*(_DWORD *)(v28 + 540) + 9032),
-            *(_DWORD *)(*((_DWORD *)this + 433) + 3576));
+            *(_DWORD *)(this->q1B1 + 3576));
           v27 = 1; /*0x70310d*/
         }
 LABEL_55:
         if ( v28 ) /*0x703117*/
         {
-          if ( !v27 && !*(_BYTE *)((*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 132))(this) + 3231) ) /*0x70312f*/
+          if ( !v27 && !*(_BYTE *)((*(int (__thiscall **)(#377 *))(this->hasParachute)(this) + 3231) ) /*0x70312f*/
           {
             HouseClass::IncrementStat( /*0x703152*/
               (_DWORD *)(*(_DWORD *)(v28 + 540) + 11088),
-              *(_DWORD *)(*((_DWORD *)this + 432) + 3576));
+              *(_DWORD *)(this->airstrikeTimer + 3576));
             v27 = 1; /*0x703157*/
           }
 LABEL_59:
-          if ( v28 && !v27 && !*(_BYTE *)((*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 132))(this) + 3231) ) /*0x703175*/
+          if ( v28 && !v27 && !*(_BYTE *)((*(int (__thiscall **)(#377 *))(this->hasParachute)(this) + 3231) ) /*0x703175*/
             HouseClass::IncrementStat( /*0x703198*/
               (_DWORD *)(*(_DWORD *)(v28 + 540) + 13144),
-              *(_DWORD *)(*((_DWORD *)this + 433) + 3576));
+              *(_DWORD *)(this->q1B1 + 3576));
         }
 LABEL_63:
         ++*(_DWORD *)(this->owner + 21556); /*0x70319d*/
         if ( v28 ) /*0x7031b2*/
         {
-          if ( !*(_BYTE *)((*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 132))(this) + 3231) ) /*0x7031be*/
+          if ( !*(_BYTE *)((*(int (__thiscall **)(#377 *))(this->hasParachute)(this) + 3231) ) /*0x7031be*/
           {
             v18 = (_DWORD *)(*(_DWORD *)(v28 + 540) /*0x7031d5*/
-                           + 4 * (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 56))(this)
+                           + 4 * (*(int (__thiscall **)(#377 *))(this->attachedBomb)(this)
                            + 21476);
             ++*v18; /*0x7031dc*/
           }
@@ -801,18 +801,18 @@ LABEL_67:
           result = RadarClass::SetFlag(&MEMORY[0x87F7E8], 0); /*0x7031ec*/
         break; /*0x7031f3*/
       case 5: /*0x70302e*/
-        result = (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 132))(this); /*0x703039*/
+        result = (*(int (__thiscall **)(#377 *))(this->hasParachute)(this); /*0x703039*/
         if ( !*(_BYTE *)(result + 562) ) /*0x70303f*/
         {
           if ( *((_DWORD *)this + 335) != -1 ) /*0x703054*/
             ++*(_DWORD *)(this->owner + 21640); /*0x70305c*/
-          if ( v28 && !*(_BYTE *)((*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 132))(this) + 3231) ) /*0x703070*/
+          if ( v28 && !*(_BYTE *)((*(int (__thiscall **)(#377 *))(this->hasParachute)(this) + 3231) ) /*0x703070*/
           {
             HouseClass::IncrementStat( /*0x703093*/
               (_DWORD *)(*(_DWORD *)(v28 + 540) + 15200),
-              *(_DWORD *)(*((_DWORD *)this + 328) + 3576));
+              *(_DWORD *)(this->gattlingValue + 3576));
             v17 = (_DWORD *)(*(_DWORD *)(v28 + 540) /*0x7030a5*/
-                           + 4 * (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 56))(this)
+                           + 4 * (*(int (__thiscall **)(#377 *))(this->attachedBomb)(this)
                            + 21560);
             ++*v17; /*0x7030ac*/
           }

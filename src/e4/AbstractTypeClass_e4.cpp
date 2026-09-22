@@ -88,9 +88,9 @@ int __thiscall AbstractTypeClass_Dtor(_DWORD *this)
   _DWORD *v4; // [esp+4h] [ebp-4h] BYREF
 
   *this = &AbstractTypeClass::`vftable'; /*0x4109cd*/
-  *(this + 1) = &AbstractTypeClass::`vftable'; /*0x4109d3*/
-  *(this + 2) = &AbstractTypeClass::`vftable'; /*0x4109da*/
-  *(this + 3) = &vt_AbstractTypeClass; /*0x4109e1*/
+  this->vtable2 = &AbstractTypeClass::`vftable'; /*0x4109d3*/
+  this->vtable3 = &AbstractTypeClass::`vftable'; /*0x4109da*/
+  this->vtable4 = &vt_AbstractTypeClass; /*0x4109e1*/
   v4 = this; /*0x4109ef*/
   v2 = (*(int (__thiscall **)(int *, _DWORD **))(MEMORY[0xA8E968] + 16))(&MEMORY[0xA8E968], &v4); /*0x4109f3*/
   if ( v2 != -1 && v2 < MEMORY[0xA8E978] && v2 < --MEMORY[0xA8E978] ) /*0x410a0e*/

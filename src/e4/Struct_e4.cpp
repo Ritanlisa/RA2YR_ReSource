@@ -19,13 +19,13 @@ int __thiscall Struct::ClearAllMemberFlags(CommBufferClass *this)
   v1 = *(_DWORD *)&this->__pad_0[4]; /*0x48b2a0*/
   v2 = 0; /*0x48b2a7*/
   *(_DWORD *)&this->__pad_28[4] = 0; /*0x48b2ac*/
-  *((_DWORD *)this + 15) = 0; /*0x48b2af*/
+  this->q03C = 0; /*0x48b2af*/
   *(_DWORD *)this->__pad_14 = 0; /*0x48b2b2*/
   *(_DWORD *)&this->__pad_14[4] = 0; /*0x48b2b5*/
   *(_DWORD *)&this->__pad_14[8] = 0; /*0x48b2b8*/
   *(_DWORD *)&this->__pad_14[12] = 0; /*0x48b2bb*/
   *(_DWORD *)this->__pad_28 = 0; /*0x48b2be*/
-  *((_DWORD *)this + 14) = 0; /*0x48b2c1*/
+  this->q038 = 0; /*0x48b2c1*/
   if ( v1 > 0 ) /*0x48b2c4*/
   {
     v3 = 0; /*0x48b2c6*/
@@ -63,14 +63,14 @@ int __thiscall Struct::ClearAllMemberFlags(CommBufferClass *this)
       *(_DWORD *)(this->field_34 + result - 20) = 0; /*0x48b35f*/
       *(_DWORD *)(this->field_34 + result - 16) = 0; /*0x48b366*/
       *(_DWORD *)(this->field_34 + result - 8) = 0; /*0x48b36d*/
-      *(_DWORD *)(*((_DWORD *)this + 16) + 4 * v6 - 4) = 0; /*0x48b374*/
+      *(_DWORD *)(this->q010 + 4 * v6 - 4) = 0; /*0x48b374*/
     }
     while ( v6 < this->field_8 ); /*0x48b37d*/
   }
-  *((_DWORD *)this + 17) = 0; /*0x48b381*/
-  *((_DWORD *)this + 18) = 0; /*0x48b384*/
-  *((_DWORD *)this + 19) = 0; /*0x48b387*/
-  *((_DWORD *)this + 21) = 0; /*0x48b38a*/
+  this->q044 = 0; /*0x48b381*/
+  this->q048 = 0; /*0x48b384*/
+  this->q04C = 0; /*0x48b387*/
+  this->q054 = 0; /*0x48b38a*/
   return result; /*0x48b37f*/
 }
 }
@@ -81,18 +81,18 @@ int Struct::ZeroInitAndSetup()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall Struct_ZeroInitAndSetup(_DWORD *this)
 {
-  *(this + 13) = 0; /*0x48bf12*/
-  *(this + 14) = 0; /*0x48bf15*/
-  *(this + 15) = 0; /*0x48bf18*/
-  *(this + 16) = 0; /*0x48bf1b*/
-  *(this + 2) = 0; /*0x48bf1e*/
-  *(this + 3) = 0; /*0x48bf21*/
-  *(this + 4) = 0; /*0x48bf24*/
-  *(this + 5) = 0; /*0x48bf27*/
-  *(this + 6) = 0; /*0x48bf2a*/
-  *(this + 17) = -1; /*0x48bf30*/
-  *(this + 18) = -1; /*0x48bf33*/
-  return Struct::ClearAllMemberFlags(*(this + 1));
+  this->q034 = 0; /*0x48bf12*/
+  this->q038 = 0; /*0x48bf15*/
+  this->q03C = 0; /*0x48bf18*/
+  this->q040 = 0; /*0x48bf1b*/
+  this->q008 = 0; /*0x48bf1e*/
+  this->q00C = 0; /*0x48bf21*/
+  this->q010 = 0; /*0x48bf24*/
+  this->q014 = 0; /*0x48bf27*/
+  this->q018 = 0; /*0x48bf2a*/
+  this->q044 = -1; /*0x48bf30*/
+  this->q048 = -1; /*0x48bf33*/
+  return Struct::ClearAllMemberFlags(this->q004);
 }
 }
 
@@ -103,8 +103,8 @@ unsigned char * Struct::Zero3()
 _BYTE *__thiscall Struct::Zero3(_BYTE *this)
 {
   *this = 0; /*0x4b9bd4*/
-  *(this + 1) = 0; /*0x4b9bd6*/
-  *(this + 2) = 0; /*0x4b9bd9*/
+  this->q004 = 0; /*0x4b9bd6*/
+  this->q008 = 0; /*0x4b9bd9*/
   return this; /*0x4b9bdc*/
 }
 }

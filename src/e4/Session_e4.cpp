@@ -19,7 +19,7 @@ int __thiscall Session::RemoveTeam(_DWORD *this, MSShapeAnim *aP1)
   if ( aP1 ) /*0x5d1d87*/
   {
     v3 = this + 6; /*0x5d1d8c*/
-    result = (MSShapeAnim *)(*(int (__thiscall **)(_DWORD *, MSShapeAnim **))(*(this + 6) + 16))(this + 6, &aP1); /*0x5d1d96*/
+    result = (MSShapeAnim *)(*(int (__thiscall **)(_DWORD *, MSShapeAnim **))(this->q018 + 16))(this + 6, &aP1); /*0x5d1d96*/
     if ( result != (MSShapeAnim *)-1 ) /*0x5d1d9c*/
     {
       result = (MSShapeAnim *)(*(int (__thiscall **)(_DWORD *, MSShapeAnim **))(*v3 + 16))(v3, &aP1); /*0x5d1da7*/
@@ -265,8 +265,8 @@ int __thiscall Session_GetPlayerOption(_DWORD *this)
   int result; // eax
 
   result = -2; /*0x69b706*/
-  if ( *(this + 94) != -2 ) /*0x69b70d*/
-    return *(this + 93); /*0x69b70f*/
+  if ( this->q178 != -2 ) /*0x69b70d*/
+    return this->q174; /*0x69b70f*/
   return result; /*0x69b715*/
 }
 }
@@ -282,8 +282,8 @@ int __thiscall Session_GetPlayerColor(_DWORD *this)
   int result; // eax
 
   result = -2; /*0x69b726*/
-  if ( *(this + 88) != -2 ) /*0x69b72d*/
-    return *(this + 87); /*0x69b72f*/
+  if ( this->q160 != -2 ) /*0x69b72d*/
+    return this->q15C; /*0x69b72f*/
   return result; /*0x69b735*/
 }
 }

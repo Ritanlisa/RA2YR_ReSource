@@ -20,42 +20,42 @@ _DWORD *__thiscall TerrainTypeClass::Construct(
   char v11; // [esp+40h] [ebp-4h]
 
   ObjectTypeClass::ConstructFull((int)this, (AbstractClass *)aP4); /*0x5447ce*/
-  *(this + 165) = a2; /*0x5447d9*/
-  *(this + 166) = 0xFFFF; /*0x5447e4*/
-  *(this + 167) = 0xFFFF; /*0x5447ea*/
-  *(this + 168) = 0; /*0x5447f0*/
-  *(this + 170) = 0; /*0x5447f8*/
-  *(this + 171) = 0; /*0x5447fe*/
+  this->ArrayIndex = a2; /*0x5447d9*/
+  this->Foundation = 0xFFFF; /*0x5447e4*/
+  this->RadarColor = 0xFFFF; /*0x5447ea*/
+  this->AnimationRate = 0; /*0x5447f0*/
+  this->TemperateOccupationBits = 0; /*0x5447f8*/
+  this->SnowOccupationBits = 0; /*0x5447fe*/
   this->WaterBound = 1; /*0x544804*/
   this->SpawnsTiberium = 0; /*0x54480b*/
-  *(this + 169) = &vt_DynamicVectorClass_unsigned_short; /*0x544811*/
-  *(this + 174) = 10; /*0x54481b*/
-  *(this + 173) = 0; /*0x544825*/
+  this->AnimationProbability = &vt_DynamicVectorClass_unsigned_short; /*0x544811*/
+  this->q2B8 = 10; /*0x54481b*/
+  this->IsVeinhole = 0; /*0x544825*/
   *(this + 179) = 0; /*0x544830*/
-  *(this + 176) = -1; /*0x544836*/
+  this->MainVoxel = -1; /*0x544836*/
   *(this + 177) = -1; /*0x54483c*/
   *(this + 178) = -1; /*0x544842*/
-  *(this + 180) = 0; /*0x544848*/
+  this->TurretVoxel = 0; /*0x544848*/
   *(this + 181) = -1; /*0x544852*/
-  *(this + 175) = 0; /*0x544868*/
+  this->q2BC = 0; /*0x544868*/
   *(this + 182) = 0; /*0x54486e*/
   *(this + 183) = a3; /*0x544874*/
-  *((_BYTE *)this + 736) = 0; /*0x54487a*/
+  this->BarrelVoxel = 0; /*0x54487a*/
   *((_BYTE *)this + 737) = 0; /*0x544880*/
   *((_BYTE *)this + 738) = 1; /*0x544886*/
   *((_BYTE *)this + 739) = 0; /*0x54488d*/
-  *(this + 185) = 0; /*0x544893*/
+  this->q0B9 = 0; /*0x544893*/
   *(this + 186) = 0; /*0x544899*/
   *(this + 187) = a4; /*0x54489f*/
-  *(this + 188) = 1; /*0x5448a5*/
+  this->ChargerTurrets = 1; /*0x5448a5*/
   *((_BYTE *)this + 756) = 0; /*0x5448af*/
   *((_BYTE *)this + 773) = 1; /*0x5448b5*/
   *((_BYTE *)this + 774) = 0; /*0x5448bc*/
   *(this + 194) = 0; /*0x5448c2*/
   *this = &IsometricTileTypeClass::`vftable'; /*0x5448c8*/
-  *(this + 1) = &IsometricTileTypeClass::`vftable'; /*0x5448cf*/
-  *(this + 2) = &IsometricTileTypeClass::`vftable'; /*0x5448d6*/
-  *(this + 3) = &vt_IsometricTileTypeClass; /*0x5448dd*/
+  this->vtable2 = &IsometricTileTypeClass::`vftable'; /*0x5448cf*/
+  this->vtable3 = &IsometricTileTypeClass::`vftable'; /*0x5448d6*/
+  this->vtable4 = &vt_IsometricTileTypeClass; /*0x5448dd*/
   if ( *(int *)&MEMORY[0xB077F8].__pad_579C[9964] < *(int *)&MEMORY[0xB077F8].__pad_579C[9956] /*0x544917*/
     || (MEMORY[0xB077F8].__pad_579C[9961] || !*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[9956])
     && *(int *)&MEMORY[0xB077F8].__pad_579C[9968] > 0
@@ -91,7 +91,7 @@ _DWORD *__thiscall TerrainTypeClass::Construct(
   if ( Destination != (char *)(this + 25) ) /*0x5449b6*/
   {
     qmemcpy(this + 25, Destination, 0x30u); /*0x5449c1*/
-    *((_BYTE *)this + 148) = v11; /*0x5449c3*/
+    this->q094 = v11; /*0x5449c3*/
   }
   *((_BYTE *)this + 757) = 0; /*0x5449c5*/
   this->RadarInvisible = 1; /*0x5449cb*/
@@ -116,25 +116,25 @@ _DWORD *__thiscall TerrainTypeClass::TerrainTypeClass(_DWORD *this, ObjectClass 
   CCINIClass *v6; // edx
 
   ObjectTypeClass::ConstructFull((int)this, (AbstractClass *)aP1); /*0x71da89*/
-  *(this + 165) = -1; /*0x71da90*/
-  *(this + 166) = 0; /*0x71da9a*/
-  *((_BYTE *)this + 668) = 0; /*0x71daa5*/
-  *((_BYTE *)this + 669) = 0; /*0x71daab*/
-  *((_BYTE *)this + 670) = 0; /*0x71dab1*/
-  *(this + 170) = 7; /*0x71dab7*/
-  *(this + 171) = 7; /*0x71dabd*/
-  *(this + 168) = 0; /*0x71dac7*/
-  *(this + 169) = 0; /*0x71dacd*/
+  this->ArrayIndex = -1; /*0x71da90*/
+  this->Foundation = 0; /*0x71da9a*/
+  this->RadarColor = 0; /*0x71daa5*/
+  this->q29D = 0; /*0x71daab*/
+  this->q29E = 0; /*0x71dab1*/
+  this->TemperateOccupationBits = 7; /*0x71dab7*/
+  this->SnowOccupationBits = 7; /*0x71dabd*/
+  this->AnimationRate = 0; /*0x71dac7*/
+  this->AnimationProbability = 0; /*0x71dacd*/
   this->WaterBound = 0; /*0x71dad3*/
   this->SpawnsTiberium = 0; /*0x71dad9*/
   this->IsFlammable = 0; /*0x71dadf*/
   this->IsAnimated = 0; /*0x71dae5*/
   this->IsVeinhole = 0; /*0x71daeb*/
-  *(this + 174) = 0; /*0x71daf1*/
+  this->q2B8 = 0; /*0x71daf1*/
   *this = &TerrainTypeClass::`vftable'; /*0x71daf7*/
-  *(this + 1) = &TerrainTypeClass::`vftable'; /*0x71dafd*/
-  *(this + 2) = &TerrainTypeClass::`vftable'; /*0x71db03*/
-  *(this + 3) = &vt_TerrainTypeClass; /*0x71db0a*/
+  this->vtable2 = &TerrainTypeClass::`vftable'; /*0x71dafd*/
+  this->vtable3 = &TerrainTypeClass::`vftable'; /*0x71db03*/
+  this->vtable4 = &vt_TerrainTypeClass; /*0x71db0a*/
   AbstractClass::GenerateUniqueID((int)(this + 1)); /*0x71db11*/
   this->Selectable = 0; /*0x71db18*/
   this->IsLogic = 1; /*0x71db1e*/
@@ -173,9 +173,9 @@ LABEL_11:
         goto LABEL_11; /*0x71dba1*/
     }
   }
-  *(this + 165) = v5; /*0x71dba6*/
-  *(this + 40) = -1; /*0x71dbac*/
-  *(this + 39) = 6; /*0x71dbb6*/
+  this->ArrayIndex = v5; /*0x71dba6*/
+  this->Strength = -1; /*0x71dbac*/
+  this->Armor = 6; /*0x71dbb6*/
   return this; /*0x71dbc2*/
 }
 }
@@ -252,7 +252,7 @@ char __thiscall TerrainTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
     _makepath((char *)v23.headNode, 0, 0, (const char *)(this + 504), Ext); /*0x71dfad*/
     this->Image = SearchMIXFile((char *)v23.headNode, 0); /*0x71dfc0*/
   }
-  v9 = (char **)(*(int (__thiscall **)(int))(*(_DWORD *)this + 156))(this); /*0x71dfca*/
+  v9 = (char **)(*(int (__thiscall **)(int))(this->Armor)(this); /*0x71dfca*/
   if ( v9 ) /*0x71dfd2*/
   {
     PixelData = MixFileClass::GetPixelData(v9, (int)&v23, 0); /*0x71dfdd*/

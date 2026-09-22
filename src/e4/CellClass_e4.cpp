@@ -1711,9 +1711,9 @@ int __thiscall sub_65B510(int *this)
 {
   int v1; // esi
 
-  v1 = *(this + 27); /*0x65b511*/
+  v1 = this->CellClass_field_6C; /*0x65b511*/
   if ( v1 > 0 ) /*0x65b516*/
-    return *(this + 19) * *(this + 28) / v1; /*0x65b524*/
+    return this->CellClass_field_4C * this->rubble / v1; /*0x65b524*/
   else
     return 0; /*0x65b518*/
 }

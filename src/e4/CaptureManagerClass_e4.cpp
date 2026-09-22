@@ -631,7 +631,7 @@ void __thiscall CaptureManagerClass::DecideUnitFate(_DWORD *this, IUnknown *aP1)
   if ( *(_BYTE *)((*(int (__thiscall **)(IUnknown *))(aP1->field_0 + 132))(aP1) + 1508) ) /*0x472402*/
     CCINIClass::IterateNodes(aP1, 0); /*0x47240f*/
   v7 = aP1->field_21C; /*0x472417*/
-  v8 = *(_DWORD *)(*(this + 18) + 540); /*0x472422*/
+  v8 = *(_DWORD *)(this->overloadCount + 540); /*0x472422*/
   aP1a = v7 != v8; /*0x47242c*/
   if ( *(_BYTE *)(v7 + 492) ) /*0x472431*/
     return; /*0x472439*/
@@ -639,7 +639,7 @@ void __thiscall CaptureManagerClass::DecideUnitFate(_DWORD *this, IUnknown *aP1)
   if ( (*(int (__stdcall **)(int))(*(_DWORD *)(v8 + 36) + 24))(v8 + 36) >= *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] /*0x472459*/
                                                                                      + 3772) )
   {
-    if ( HouseClass::GetPowerRatio((int *)*(_DWORD *)(*(this + 18) + 540)) >= 1.0 ) /*0x472480*/
+    if ( HouseClass::GetPowerRatio((int *)*(_DWORD *)(this->overloadCount + 540)) >= 1.0 ) /*0x472480*/
     {
       v23 = (float)*(int *)&aP1->__pad_68[4]; /*0x47249e*/
       if ( v23 / (double)*(int *)((*(int (__thiscall **)(IUnknown *))(aP1->field_0 + 132))(aP1) + 160) >= *(float *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 3776) ) /*0x4724c3*/
@@ -664,7 +664,7 @@ LABEL_22:
     v12 = v21; /*0x472537*/
     (*(int (__thiscall **)(IUnknown *))(aP1->field_0 + 132))(aP1); /*0x47253b*/
     Debug::Log(); /*0x472563*/
-    v14 = *(this + 18); /*0x47256f*/
+    v14 = this->overloadCount; /*0x47256f*/
     if ( v14 ) /*0x472574*/
     {
       if ( (*(_BYTE *)(v14 + 20) & 4) != 0 ) /*0x47257a*/
@@ -686,7 +686,7 @@ LABEL_22:
     {
       if ( !aP1a )
       {
-        v17 = *(this + 18); /*0x4725bd*/
+        v17 = this->overloadCount; /*0x4725bd*/
         if ( v17 )
         {
           if ( (*(_BYTE *)(v17 + 20) & 4) != 0 )
@@ -756,16 +756,16 @@ char __thiscall CaptureManagerClass::NeedsToDrawLinks(_DWORD *this)
   int v7; // edx
   int v8; // ecx
 
-  v1 = *(this + 18); /*0x472640*/
+  v1 = this->overloadCount; /*0x472640*/
   if ( *(_BYTE *)(v1 + 131) ) /*0x472646*/
     return 1; /*0x472655*/
   v3 = *(_DWORD *)(v1 + 284); /*0x472656*/
   if ( v3 && *(_BYTE *)(v3 + 131) ) /*0x472660*/
     return 1; /*0x47266f*/
-  v4 = *(this + 13) - 1; /*0x472673*/
+  v4 = this->originalOwner - 1; /*0x472673*/
   if ( v4 >= 0 ) /*0x472674*/
   {
-    for ( i = *(this + 10) + 4 * v4; ; i -= 4 ) /*0x47267f*/
+    for ( i = this->controlNodeCount + 4 * v4; ; i -= 4 ) /*0x47267f*/
     {
       v6 = *(_DWORD *)i; /*0x472682*/
       if ( *(_BYTE *)(**(_DWORD **)i + 131) ) /*0x472686*/
@@ -987,11 +987,11 @@ int __thiscall CaptureManagerClass::_vt04(int *this, _DWORD *a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = *(this + 4); /*0x472d70*/
+  v2 = this->vtable2; /*0x472d70*/
   result = 0; /*0x472d73*/
   if ( v2 <= 0 ) /*0x472d78*/
     return -1; /*0x472d8f*/
-  for ( i = (_DWORD *)*(this + 1); *i != *a2; ++i ) /*0x472d7e*/
+  for ( i = (_DWORD *)this->vtable2; *i != *a2; ++i ) /*0x472d7e*/
   {
     if ( ++result >= v2 ) /*0x472d8d*/
       return -1; /*0x472d8d*/

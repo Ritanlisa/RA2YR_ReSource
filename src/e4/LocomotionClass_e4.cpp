@@ -195,13 +195,13 @@ unsigned int * LocomotionClass::Init()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall LocomotionClass_Init(_DWORD *this)
 {
-  *(this + 2) = 0; /*0x55a6c6*/
-  *(this + 3) = 0; /*0x55a6c9*/
+  this->Owner = 0; /*0x55a6c6*/
+  this->LinkedTo = 0; /*0x55a6c9*/
   this->Powered = 1; /*0x55a6cc*/
   this->Dirty = 1; /*0x55a6cf*/
-  *(this + 5) = 0; /*0x55a6d2*/
+  this->RefCount = 0; /*0x55a6d2*/
   *this = &LocomotionClass::`vftable'; /*0x55a6d5*/
-  *(this + 1) = &vt_LocomotionClass; /*0x55a6db*/
+  this->vtable2 = &vt_LocomotionClass; /*0x55a6db*/
   return this; /*0x55a6e2*/
 }
 }
@@ -213,8 +213,8 @@ void LocomotionClass::Construct()
 void __thiscall LocomotionClass_Constructor(_DWORD *this)
 {
   *this = &LocomotionClass::`vftable'; /*0x55a6f0*/
-  *(this + 1) = &vt_LocomotionClass; /*0x55a6f6*/
-  *(this + 3) = 0; /*0x55a6fd*/
+  this->vtable2 = &vt_LocomotionClass; /*0x55a6f6*/
+  this->LinkedTo = 0; /*0x55a6fd*/
 }
 }
 

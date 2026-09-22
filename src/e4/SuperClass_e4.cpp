@@ -426,10 +426,10 @@ char __thiscall SuperClass::Lose(_BYTE *this)
   _BYTE *v3; // [esp+0h] [ebp-4h] BYREF
 
   v3 = this; /*0x6cb7b0*/
-  if ( !*(this + 109) ) /*0x6cb7b1*/
+  if ( !this->Granted ) /*0x6cb7b1*/
     return 0; /*0x6cb80d*/
-  *(this + 111) = 0; /*0x6cb7ba*/
-  *(this + 109) = 0; /*0x6cb7bd*/
+  this->IsCharged = 0; /*0x6cb7ba*/
+  this->Granted = 0; /*0x6cb7bd*/
   v3 = this; /*0x6cb7ca*/
   v1 = (*(int (__thiscall **)(int *, _BYTE **))(MEMORY[0xA83D50] + 16))(&MEMORY[0xA83D50], &v3); /*0x6cb7d4*/
   if ( v1 != -1 && v1 < MEMORY[0xA83D60] && v1 < --MEMORY[0xA83D60] ) /*0x6cb7ef*/

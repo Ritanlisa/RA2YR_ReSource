@@ -13,7 +13,7 @@ int __thiscall sub_522D00(_DWORD *this)
 {
   int result; // eax
 
-  if ( *(this + 43) != 10 ) /*0x522d07*/
+  if ( this->q02B != 10 ) /*0x522d07*/
     return (*(int (__thiscall **)(_DWORD *, int, _DWORD))(*this + 488))(this, 10, 0); /*0x522d0f*/
   return result; /*0x522d15*/
 }
@@ -29,7 +29,7 @@ int SlaveManagerClass::VtableDispatch()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall sub_522D20(void *this)
 {
-  return (*(int (__thiscall **)(void *, int, _DWORD))(*(_DWORD *)this + 488))(this, 5, 0); /*0x522d2c*/
+  return (*(int (__thiscall **)(void *, int, _DWORD))(this->q7A0)(this, 5, 0); /*0x522d2c*/
 }
 }
 } // namespace game
@@ -284,9 +284,9 @@ char __thiscall SlaveManagerClass::SetOwner(_DWORD *this, TechnoClass *aP1)
   int v5; // ecx
   int i; // ecx
 
-  v3 = *(this + 9); /*0x6af588*/
+  v3 = this->master; /*0x6af588*/
   *(_DWORD *)(v3 + 728) = 0; /*0x6af58b*/
-  *(this + 9) = aP1; /*0x6af595*/
+  this->master = aP1; /*0x6af595*/
   v4 = *(_DWORD **)&aP1->mindControlledBy_a_unit; /*0x6af598*/
   if ( v4 ) /*0x6af5a0*/
   {
@@ -296,11 +296,11 @@ char __thiscall SlaveManagerClass::SetOwner(_DWORD *this, TechnoClass *aP1)
       LOBYTE(v3) = (*(int (__thiscall **)(int, int))(*(_DWORD *)v5 + 32))(v5, 1); /*0x6af5b9*/
   }
   *(_DWORD *)&aP1->mindControlledBy_a_unit = this; /*0x6af5bc*/
-  for ( i = *(this + 18) - 1; i >= 0; --i ) /*0x6af5c6*/
+  for ( i = this->q048 - 1; i >= 0; --i ) /*0x6af5c6*/
   {
-    v3 = **(_DWORD **)(*(this + 15) + 4 * i); /*0x6af5ce*/
+    v3 = **(_DWORD **)(this->slaveVectorCount + 4 * i); /*0x6af5ce*/
     if ( v3 ) /*0x6af5d2*/
-      *(_DWORD *)(v3 + 732) = *(this + 9); /*0x6af5d7*/
+      *(_DWORD *)(v3 + 732) = this->master; /*0x6af5d7*/
   }
   return v3; /*0x6af5e0*/
 }
@@ -322,8 +322,8 @@ char __thiscall SlaveManagerClass::_vt23(int *this)
   int v6; // [esp+Ch] [ebp-8h]
 
   v2 = (int *)MEMORY[0xA8ED84]; /*0x6af5f7*/
-  v3 = *(this + 20); /*0x6af5fd*/
-  v4 = *(this + 22); /*0x6af600*/
+  v3 = this->abstractFlags; /*0x6af5fd*/
+  v4 = this->SlaveManagerClass_field_58; /*0x6af600*/
   if ( v3 == -1 ) /*0x6af606*/
   {
 LABEL_4:
@@ -337,10 +337,10 @@ LABEL_4:
     goto LABEL_4; /*0x6af610*/
   }
 LABEL_5:
-  *(this + 20) = (int)MEMORY[0xA8ED84]; /*0x6af616*/
-  *(this + 21) = v6; /*0x6af622*/
-  *(this + 22) = 10; /*0x6af625*/
-  v4 = *(this + 9); /*0x6af628*/
+  this->abstractFlags = (int)MEMORY[0xA8ED84]; /*0x6af616*/
+  this->SlaveManagerClass_field_54 = v6; /*0x6af622*/
+  this->SlaveManagerClass_field_58 = 10; /*0x6af625*/
+  v4 = this->master; /*0x6af628*/
   if ( v4 ) /*0x6af62d*/
   {
     SlaveManagerClass::ProcessSlaves(this, v2, (int)this); /*0x6af631*/
@@ -755,10 +755,10 @@ int __thiscall SlaveManagerClass::LostSlave(_DWORD *this, ObjectClass *aP1)
   int v6; // ecx
   int v7; // [esp+10h] [ebp-8h]
 
-  result = *(this + 18) - 1; /*0x6b0a26*/
+  result = this->q048 - 1; /*0x6b0a26*/
   if ( result >= 0 ) /*0x6b0a2a*/
   {
-    v3 = *(this + 15); /*0x6b0a2c*/
+    v3 = this->slaveVectorCount; /*0x6b0a2c*/
     for ( i = (ObjectClass ***)(v3 + 4 * result); **i != aP1; --i ) /*0x6b0a33*/
     {
       if ( --result < 0 ) /*0x6b0a42*/
@@ -769,7 +769,7 @@ int __thiscall SlaveManagerClass::LostSlave(_DWORD *this, ObjectClass *aP1)
       *(_DWORD *)(*v5 + 732) = 0; /*0x6b0a56*/
     *v5 = 0; /*0x6b0a60*/
     v5[1] = 6; /*0x6b0a66*/
-    v6 = *(this + 12); /*0x6b0a73*/
+    v6 = this->slaveType; /*0x6b0a73*/
     result = (int)(v5 + 2); /*0x6b0a76*/
     *(_DWORD *)result = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6b0a79*/
     *(_DWORD *)(result + 4) = v7; /*0x6b0a7f*/
@@ -792,17 +792,17 @@ bool __thiscall SlaveManagerClass::ShouldWakeUpNow(_DWORD *this)
   _DWORD *v2; // ecx
   int v4; // [esp+Ch] [ebp-4h] BYREF
 
-  v2 = (_DWORD *)*(this + 9); /*0x6b1024*/
-  if ( !v2 || *(this + 23) ) /*0x6b102f*/
+  v2 = (_DWORD *)this->master; /*0x6b1024*/
+  if ( !v2 || this->SlaveManagerClass_field_5C ) /*0x6b102f*/
     return 0; /*0x6b102f*/
   if ( !*(_BYTE *)(v2[135] + 492) ) /*0x6b1040*/
     return 1; /*0x6b104e*/
   if ( *(_DWORD *)((*(int (__thiscall **)(_DWORD *))(*v2 + 444))(v2) + 236) == 5 ) /*0x6b105e*/
     return 1; /*0x6b1064*/
-  if ( *(this + 24) + *(_DWORD *)MEMORY[0x8871E0][1].? >= (int)MEMORY[0xA8ED84] ) /*0x6b107d*/
+  if ( this->SlaveManagerClass_field_60 + *(_DWORD *)MEMORY[0x8871E0][1].? >= (int)MEMORY[0xA8ED84] ) /*0x6b107d*/
     return 0; /*0x6b107d*/
-  v4 = *(_DWORD *)(*(int (__thiscall **)(_DWORD, int *, int, _DWORD))(*(_DWORD *)*(this + 9) + 824))( /*0x6b10ad*/
-                    *(this + 9),
+  v4 = *(_DWORD *)(*(int (__thiscall **)(_DWORD, int *, int, _DWORD))(*(_DWORD *)this->master + 824))( /*0x6b10ad*/
+                    this->master,
                     &v4,
                     MEMORY[0x8871E0][1].? / 256,
                     0);
@@ -953,7 +953,7 @@ __int64 __thiscall sub_6B1A70(__int16 *this)
 {
   double v1; // st7
 
-  v1 = Math::Sqrt((double)*this * (double)*this + (double)*(this + 1) * (double)*(this + 1)); /*0x6b1a9c*/
+  v1 = Math::Sqrt((double)*this * (double)*this + (double)this->vtable2 * (double)this->vtable2); /*0x6b1a9c*/
   return Math::RoundToInt(v1); /*0x6b1aa9*/
 }
 }

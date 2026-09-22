@@ -27,7 +27,7 @@ char __thiscall MSFont_18_::sub_5D55A0(void *this, int a2, _DWORD *a3)
   if ( a2 ) /*0x5d55ae*/
   {
     v5 = a3; /*0x5d55b4*/
-    *((_BYTE *)this + 12) = 0; /*0x5d55b8*/
+    this->q00C = 0; /*0x5d55b8*/
     if ( a3 ) /*0x5d55bd*/
     {
       v9 = a3; /*0x5d55f3*/
@@ -69,7 +69,7 @@ char __thiscall MSFont_18_::sub_5D55A0(void *this, int a2, _DWORD *a3)
         v5 = 0; /*0x5d55ec*/
       }
     }
-    *((_BYTE *)this + 12) = 1; /*0x5d5607*/
+    this->q00C = 1; /*0x5d5607*/
     if ( !v5 ) /*0x5d560b*/
       return 0; /*0x5d5694*/
     if ( this->MSFont_18_field_0x4 ) /*0x5d5611*/
@@ -90,7 +90,7 @@ char __thiscall MSFont_18_::sub_5D55A0(void *this, int a2, _DWORD *a3)
         while ( v12 < v11 ); /*0x5d5642*/
         v3 = a2; /*0x5d5644*/
       }
-      if ( *((_BYTE *)this + 13) ) /*0x5d564a*/
+      if ( this->IsAllocated ) /*0x5d564a*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x5d5653*/
         this->MSFont_18_field_0x4 = 0; /*0x5d565b*/
@@ -98,11 +98,11 @@ char __thiscall MSFont_18_::sub_5D55A0(void *this, int a2, _DWORD *a3)
     }
     this->MSFont_18_field_0x4 = v5; /*0x5d5666*/
     this->MSFont_18_field_0x8 = v3; /*0x5d566c*/
-    *((_BYTE *)this + 13) = a3 == 0; /*0x5d566f*/
+    this->IsAllocated = a3 == 0; /*0x5d566f*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x5d5678*/
+    (*(void (__thiscall **)(void *))(this->q00C)(this); /*0x5d5678*/
   }
   v15 = this->MSFont_18_field_0x8; /*0x5d567b*/
   if ( v15 < this->MSFont_18_field_0x10 ) /*0x5d5683*/

@@ -246,9 +246,9 @@ AirstrikeClass *__thiscall AirstrikeClass::CopyTo(_DWORD *this, char a2)
   _DWORD *v5; // [esp+4h] [ebp-4h] BYREF
 
   *this = &AirstrikeClass::`vftable'; /*0x41dd5d*/
-  *(this + 1) = &AirstrikeClass::`vftable'; /*0x41dd63*/
-  *(this + 2) = &AirstrikeClass::`vftable'; /*0x41dd6a*/
-  *(this + 3) = &vt_AirstrikeClass; /*0x41dd71*/
+  this->vtable2 = &AirstrikeClass::`vftable'; /*0x41dd63*/
+  this->vtable3 = &AirstrikeClass::`vftable'; /*0x41dd6a*/
+  this->vtable4 = &vt_AirstrikeClass; /*0x41dd71*/
   v5 = this; /*0x41dd7f*/
   v3 = (*(int (__thiscall **)(int *, _DWORD **))(MEMORY[0x889FB8] + 16))(&MEMORY[0x889FB8], &v5); /*0x41dd83*/
   if ( v3 != -1 && v3 < MEMORY[0x889FC8] && v3 < --MEMORY[0x889FC8] ) /*0x41dd9e*/

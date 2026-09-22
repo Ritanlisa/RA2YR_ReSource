@@ -77,8 +77,8 @@ int Cell::PosToIndex()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall Cell_PosToIndex(__int16 *this)
 {
-  return ((*this - *(this + 1) + MEMORY[0x87F8DC] - 1) >> 1) /*0x42b1e3*/
-       + MEMORY[0x87F8DC] * (*this - MEMORY[0x87F8DC] + *(this + 1) - 1);
+  return ((*this - this->q004 + MEMORY[0x87F8DC] - 1) >> 1) /*0x42b1e3*/
+       + MEMORY[0x87F8DC] * (*this - MEMORY[0x87F8DC] + this->q004 - 1);
 }
 }
 } // namespace gamemd
@@ -167,9 +167,9 @@ void __thiscall Cell::ApplyDamage(_DWORD *this, IUnknown *aP1, int a3, int a4, I
   int v21; // [esp+28h] [ebp-4h]
 
   if ( (_BYTE)aP4 ) /*0x48167e*/
-    v6 = (_DWORD *)*(this + 58); /*0x481680*/
+    v6 = (_DWORD *)this->q0E8; /*0x481680*/
   else
-    v6 = (_DWORD *)*(this + 57); /*0x481688*/
+    v6 = (_DWORD *)this->q0E4; /*0x481688*/
   v14 = 0; /*0x481692*/
   if ( !(_BYTE)a4 && v6 ) /*0x48169f*/
   {
@@ -189,9 +189,9 @@ void __thiscall Cell::ApplyDamage(_DWORD *this, IUnknown *aP1, int a3, int a4, I
   }
 LABEL_11:
   if ( (_BYTE)aP4 ) /*0x4816ce*/
-    v8 = *(this + 58); /*0x4816d0*/
+    v8 = this->q0E8; /*0x4816d0*/
   else
-    v8 = *(this + 57); /*0x4816d8*/
+    v8 = this->q0E4; /*0x4816d8*/
   v9 = 0; /*0x4816de*/
   v10 = 0; /*0x4816e0*/
   v11 = 10; /*0x4816e2*/
@@ -272,7 +272,7 @@ void *__thiscall Cell_GetNeighbourContent(_DWORD *this, unsigned int a2)
   result = this; /*0x481815*/
   if ( a2 < 8 ) /*0x48181a*/
   {
-    v4 = *(this + 9); /*0x481822*/
+    v4 = this->q009; /*0x481822*/
     v3 = HIWORD(v4) + HIWORD(MEMORY[0x89F688][a2 & 7]); /*0x481839*/
     LOWORD(a2) = v4 + LOWORD(MEMORY[0x89F688][a2 & 7]); /*0x481841*/
     HIWORD(a2) = v3; /*0x48184a*/
@@ -377,7 +377,7 @@ BOOL __thiscall Cell_IsValidHeight(int *this)
 {
   int v1; // eax
 
-  v1 = *(this + 14); /*0x485060*/
+  v1 = this->q038; /*0x485060*/
   return v1 >= dword_AA0738 && v1 < dword_AA0738 + 14; /*0x485079*/
 }
 }
@@ -392,7 +392,7 @@ bool __thiscall Cell_IsEmpty(_DWORD *this)
 {
   int v1; // eax
 
-  v1 = *(this + 14); /*0x486380*/
+  v1 = this->q038; /*0x486380*/
   return v1 == 0xFFFF || !v1; /*0x486390*/
 }
 }
@@ -407,7 +407,7 @@ bool __thiscall sub_4865D0(int *this)
 {
   int v1; // eax
 
-  v1 = *(this + 14); /*0x4865d0*/
+  v1 = this->q038; /*0x4865d0*/
   if ( v1 >= dword_ABAD28 && v1 < dword_ABAD28 + 42 ) /*0x4865e2*/
     return 1; /*0x4865e4*/
   return v1 >= dword_AA0738 && v1 < dword_AA0738 + 14 /*0x48663a*/
@@ -432,7 +432,7 @@ bool __thiscall Cell_IsInRange(int *this)
   result = 0; /*0x48676c*/
   if ( unk_AA0E28 != -1 ) /*0x486759*/
   {
-    v1 = *(this + 14); /*0x48675b*/
+    v1 = this->q038; /*0x48675b*/
     if ( v1 >= unk_AA0E28 && v1 < unk_AA0E28 + 16 ) /*0x486767*/
       return 1; /*0x486759*/
   }
@@ -454,7 +454,7 @@ bool __thiscall Cell_IsInRange2(int *this)
   result = 0; /*0x48678c*/
   if ( g_TerrainBridgeIndex != -1 ) /*0x486779*/
   {
-    v1 = *(this + 14); /*0x48677b*/
+    v1 = this->q038; /*0x48677b*/
     if ( v1 >= g_TerrainBridgeIndex && v1 < g_TerrainBridgeIndex + 16 ) /*0x486787*/
       return 1; /*0x486779*/
   }
@@ -472,7 +472,7 @@ bool __thiscall Cell_IsShore(int *this)
 {
   int v1; // eax
 
-  v1 = *(this + 14); /*0x4867b0*/
+  v1 = this->q038; /*0x4867b0*/
   return v1 == unk_AA0E18 || v1 >= unk_AA0748 && v1 < unk_AA0748 + 16; /*0x4867d0*/
 }
 }
@@ -535,7 +535,7 @@ BOOL Cell::HasOccupierBit(IUnknown * aP1)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 BOOL __thiscall Cell::HasOccupierBit(_DWORD *this, IUnknown *aP1)
 {
-  return ((1 << (char)aP1) & *(this + 30)) != 0; /*0x4870c8*/
+  return ((1 << (char)aP1) & this->q01E) != 0; /*0x4870c8*/
 }
 }
 } // namespace gamemd
@@ -680,8 +680,8 @@ __int64 __thiscall Cell_GetTraversability(double *this)
   double v1; // st7
 
   v1 = (double)*((int *)MEMORY[0x8871E0] + 1539); /*0x487cb5*/
-  if ( *(this + 30) < v1 ) /*0x487cc8*/
-    v1 = *(this + 30); /*0x487ccc*/
+  if ( this->q01E < v1 ) /*0x487cc8*/
+    v1 = this->q01E; /*0x487ccc*/
   return Math::RoundToInt(v1);
 }
 }
@@ -706,7 +706,7 @@ bool Cell::IsBridge2()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall Cell_IsBridge2(_DWORD *this)
 {
-  return *(this + 59) == 5; /*0x487dfa*/
+  return this->q03B == 5; /*0x487dfa*/
 }
 }
 } // namespace gamemd
@@ -736,7 +736,7 @@ bool __thiscall Cell_IsValidDestination(_BYTE *this, __int16 *a2)
     return 0; /*0x4dce93*/
   if ( !MEMORY[0xA8B238] ) /*0x4dcea7*/
   {
-    if ( *(this + 1050) ) /*0x4dcea9*/
+    if ( this->q41A ) /*0x4dcea9*/
     {
       v4 = (*a2 << 8) + 128; /*0x4dceca*/
       v15[1] = (a2[1] << 8) + 128; /*0x4dcecf*/
@@ -752,7 +752,7 @@ bool __thiscall Cell_IsValidDestination(_BYTE *this, __int16 *a2)
         return 0; /*0x4dcf19*/
     }
   }
-  v8 = (_DWORD *)(*(int (__thiscall **)(_BYTE *, _DWORD *, _DWORD))(*(_DWORD *)this + 76))(this, v16, 0); /*0x4dcf31*/
+  v8 = (_DWORD *)(*(int (__thiscall **)(_BYTE *, _DWORD *, _DWORD))(this->q130)(this, v16, 0); /*0x4dcf31*/
   LOWORD(v17) = *v8 / 256; /*0x4dcf4a*/
   v9 = *(_DWORD *)this; /*0x4dcf5b*/
   HIWORD(v17) = v8[1] / 256; /*0x4dcf60*/
@@ -781,7 +781,7 @@ bool Cell::Exists(MouseClass * aP1)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall Cell::Exists(_DWORD *this, MouseClass *aP1)
 {
-  return *(_DWORD *)(*(this + 79) + 4 * (SLOWORD(aP1->field_0) + (SHIWORD(aP1->field_0) << 9))) != 0; /*0x5657fd*/
+  return *(_DWORD *)(this->q13C + 4 * (SLOWORD(aP1->field_0) + (SHIWORD(aP1->field_0) << 9))) != 0; /*0x5657fd*/
 }
 }
 } // namespace gamemd
@@ -793,7 +793,7 @@ int Cell::CoordToIndex(IUnknown * aP1)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall Cell::CoordToIndex(_DWORD *this, IUnknown *aP1)
 {
-  return SLOWORD(aP1->field_0) + SHIWORD(aP1->field_0) * (*(this + 62) + *(this + 61) + 1); /*0x56d450*/
+  return SLOWORD(aP1->field_0) + SHIWORD(aP1->field_0) * (this->q0F8 + this->q0F4 + 1); /*0x56d450*/
 }
 }
 } // namespace gamemd
@@ -824,10 +824,10 @@ char __thiscall Cell::SetRadar(int *this, IUnknown *aP1)
   _DWORD v18[8]; // [esp+14h] [ebp-20h] BYREF
   IUnknown *aP1a; // [esp+38h] [ebp+4h]
 
-  v2 = SLOWORD(aP1->field_0) + SHIWORD(aP1->field_0) * (*(this + 62) + *(this + 61) + 1); /*0x56d484*/
+  v2 = SLOWORD(aP1->field_0) + SHIWORD(aP1->field_0) * (this->q0F8 + this->q0F4 + 1); /*0x56d484*/
   if ( v2 >= 0 ) /*0x56d486*/
   {
-    v3 = *(this + 27); /*0x56d48c*/
+    v3 = this->q06C; /*0x56d48c*/
     if ( v2 >= v3 ) /*0x56d491*/
       v2 = v3 - 1; /*0x56d493*/
   }
@@ -835,7 +835,7 @@ char __thiscall Cell::SetRadar(int *this, IUnknown *aP1)
   {
     v2 = 0; /*0x56d488*/
   }
-  v4 = *(this + 26); /*0x56d496*/
+  v4 = this->q068; /*0x56d496*/
   v18[2] = 1; /*0x56d499*/
   v18[6] = -1; /*0x56d4a1*/
   v5 = v4 + 4 * v2; /*0x56d4a9*/
@@ -862,7 +862,7 @@ char __thiscall Cell::SetRadar(int *this, IUnknown *aP1)
     }
     if ( !(v5 + 4 * *i) ) /*0x56d4fc*/
       return Terrain::ConnectivityGraph(&MEMORY[0x87F7E8]); /*0x56d4fc*/
-    v12 = *(this + 6); /*0x56d528*/
+    v12 = this->q018; /*0x56d528*/
     aP1a = 0; /*0x56d52c*/
     v13 = 0; /*0x56d534*/
     v14 = v18; /*0x56d536*/
@@ -1439,7 +1439,7 @@ int __thiscall Cell::GetTerrainMask(_DWORD *this, IUnknown *aP1, int a3)
   result = *((_DWORD *)CellData + 16); /*0x57b2df*/
   if ( result < 0 ) /*0x57b2e4*/
   {
-    v10 = *(this + 79); /*0x57b2f1*/
+    v10 = this->q13C; /*0x57b2f1*/
     v11 = (__int16)v5 + (SHIWORD(v5) << 9); /*0x57b2f7*/
     v12 = *(int **)(v10 + 4 * v11 - 2052); /*0x57b2f9*/
     v13 = (_DWORD *)(v10 + 4 * v11 - 2052); /*0x57b300*/
@@ -1504,7 +1504,7 @@ Cell * Cell::Clear()
 Cell *__thiscall Cell::Clear(_WORD *this)
 {
   *this = 0; /*0x5a9942*/
-  *(this + 1) = 0; /*0x5a9947*/
+  this->q004 = 0; /*0x5a9947*/
   this->Cell_field_0x4 = -1; /*0x5a994d*/
   return (Cell *)this; /*0x5a9954*/
 }
@@ -1528,15 +1528,15 @@ char __thiscall Cell_IsWalkable(int *this, _WORD *a2, char a3)
 
   v3 = 0; /*0x6b5f8b*/
   v9 = this; /*0x6b5f91*/
-  if ( *(this + 167) <= 0 ) /*0x6b5f95*/
+  if ( this->q29C <= 0 ) /*0x6b5f95*/
     return 1; /*0x6b6060*/
   while ( 1 ) /*0x6b5fa5*/
   {
     v5 = 0; /*0x6b5fa5*/
-    if ( *(this + 166) > 0 ) /*0x6b5fa9*/
+    if ( this->q298 > 0 ) /*0x6b5fa9*/
       break; /*0x6b5fa9*/
 LABEL_15:
-    if ( ++v3 >= *(this + 167) ) /*0x6b605a*/
+    if ( ++v3 >= this->q29C ) /*0x6b605a*/
       return 1; /*0x6b605a*/
   }
   while ( 1 ) /*0x6b5fbc*/

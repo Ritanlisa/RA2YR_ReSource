@@ -41,7 +41,7 @@ int __thiscall NetworkLobby::MessageList_Append(_DWORD *this, int a2, int a3, Ce
         ++i; /*0x5d423e*/
       if ( *((_BYTE *)this + 25) && *((_BYTE *)this + 26) ) /*0x5d424d*/
         ++i; /*0x5d4254*/
-      if ( i + 1 > *(this + 3) ) /*0x5d425b*/
+      if ( i + 1 > this->q00C ) /*0x5d425b*/
       {
         v10 = *this; /*0x5d425d*/
         *this = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)*this + 36))(*this); /*0x5d4266*/
@@ -76,7 +76,7 @@ int __thiscall NetworkLobby::MessageList_Append(_DWORD *this, int a2, int a3, Ce
     {
       v17 = a3; /*0x5d42f3*/
       BYTE1(v17) = BYTE1(a3) | 0x80; /*0x5d42fb*/
-      v18 = MessageListClass::clearMessages(v16, (int)(this + 10), *(this + 7), *(this + 8), a2, v17); /*0x5d430b*/
+      v18 = MessageListClass::clearMessages(v16, (int)(this + 10), *(this + 7), this->q008, a2, v17); /*0x5d430b*/
     }
     else
     {
@@ -101,9 +101,9 @@ int __thiscall NetworkLobby::MessageList_Append(_DWORD *this, int a2, int a3, Ce
     if ( *((_BYTE *)this + 26) ) /*0x5d4343*/
     {
       if ( *((_BYTE *)this + 25) ) /*0x5d434a*/
-        v21 = *(this + 2) + *(this + 5); /*0x5d4357*/
+        v21 = this->q008 + *(this + 5); /*0x5d4357*/
       else
-        v21 = *(this + 2); /*0x5d435b*/
+        v21 = this->q008; /*0x5d435b*/
       v22 = (int *)*this; /*0x5d435e*/
       if ( *this ) /*0x5d435e*/
       {
@@ -116,7 +116,7 @@ int __thiscall NetworkLobby::MessageList_Append(_DWORD *this, int a2, int a3, Ce
         }
         while ( v22 ); /*0x5d4373*/
       }
-      --*(this + 3); /*0x5d4375*/
+      --this->q00C; /*0x5d4375*/
     }
     return *(this + 9); /*0x5d4378*/
   }

@@ -11,7 +11,7 @@ int Power::Update(int * a2)
 int __thiscall Power_Update(_DWORD *this, int *a2)
 {
   AbstractClass::ProcessPower((int)this, a2); /*0x43a5d9*/
-  return Power::TimerProcess((int)MEMORY[0xA8ED84] - *(this + 12)); /*0x43a5f0*/
+  return Power::TimerProcess((int)MEMORY[0xA8ED84] - this->q00C); /*0x43a5f0*/
 }
 }
 } // namespace gamemd
@@ -274,8 +274,8 @@ _DWORD *__thiscall Power_UpdateAll(_DWORD *this)
   v50 = v54; /*0x67ceca*/
   *this = v53; /*0x67cece*/
   v51 = v55; /*0x67ced0*/
-  *(this + 1) = v50; /*0x67ced5*/
-  *(this + 2) = v51; /*0x67cedb*/
+  this->q004 = v50; /*0x67ced5*/
+  this->q008 = v51; /*0x67cedb*/
   return this; /*0x67ced4*/
 }
 }

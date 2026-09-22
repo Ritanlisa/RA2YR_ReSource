@@ -14,23 +14,23 @@ _DWORD *__thiscall ScoreScreen::LoadScoreFont(_DWORD *this, ScoreFontClass *aP1)
   _BYTE v7[12]; // [esp+60h] [ebp-14h] BYREF
   int v8; // [esp+6Ch] [ebp-8h]
 
-  *(this + 1) = 0; /*0x690a19*/
-  *(this + 2) = 0; /*0x690a1c*/
-  *(this + 3) = 0; /*0x690a1f*/
-  *(this + 5) = 0; /*0x690a22*/
+  this->q004 = 0; /*0x690a19*/
+  this->q008 = 0; /*0x690a1c*/
+  this->q00C = 0; /*0x690a1f*/
+  this->q014 = 0; /*0x690a22*/
   *this = &vt_ScoreFontClass; /*0x690a25*/
   ScoreScreen::LoadAudio(); /*0x690a2b*/
   v3 = (IUnknown *)++*(_DWORD *)&stru_B05488.__pad_FC[8]; /*0x690a3b*/
   LOBYTE(v3) = 0; /*0x690a42*/
   *this = &vt_ScoreFullFontClass; /*0x690a44*/
-  *((_BYTE *)this + 16) = 0; /*0x690a4a*/
+  this->q010 = 0; /*0x690a4a*/
   v4 = SearchMIXFile((char *)&stru_830620.field_44, v3); /*0x690a4d*/
-  *(this + 3) = v4; /*0x690a54*/
+  this->q00C = v4; /*0x690a54*/
   if ( !v4 ) /*0x690a57*/
   {
     CCFileClass::Construct(v6, (char *)&stru_830620.field_44); /*0x690a62*/
-    *(this + 3) = CCFileClass::ReadEntireFile(v6); /*0x690a74*/
-    *((_BYTE *)this + 16) = 1; /*0x690a77*/
+    this->q00C = CCFileClass::ReadEntireFile(v6); /*0x690a74*/
+    this->q010 = 1; /*0x690a77*/
     CCFileClass::Reset(v6); /*0x690a7b*/
     Debug::Log(); /*0x690a85*/
     v6[0] = &vt_CCFileClass; /*0x690a91*/
@@ -39,9 +39,9 @@ _DWORD *__thiscall ScoreScreen::LoadScoreFont(_DWORD *this, ScoreFontClass *aP1)
     v6[0] = &off_7E1668; /*0x690aa6*/
     BufferIOFileClass::Dtor(v6); /*0x690aae*/
   }
-  *(this + 1) = 11; /*0x690ab7*/
-  *(this + 5) = aP1; /*0x690abe*/
-  *(this + 2) = 21; /*0x690ac1*/
+  this->q004 = 11; /*0x690ab7*/
+  this->q014 = aP1; /*0x690abe*/
+  this->q008 = 21; /*0x690ac1*/
   return this; /*0x690aca*/
 }
 }
@@ -57,22 +57,22 @@ _DWORD *__thiscall sub_690AE0(_DWORD *this, int a2)
   _BYTE v6[12]; // [esp+60h] [ebp-14h] BYREF
   int v7; // [esp+6Ch] [ebp-8h]
 
-  *(this + 1) = 0; /*0x690ae9*/
-  *(this + 2) = 0; /*0x690aec*/
-  *(this + 3) = 0; /*0x690aef*/
-  *(this + 5) = 0; /*0x690af2*/
+  this->q004 = 0; /*0x690ae9*/
+  this->q008 = 0; /*0x690aec*/
+  this->q00C = 0; /*0x690aef*/
+  this->q014 = 0; /*0x690af2*/
   *this = &vt_ScoreFontClass; /*0x690af5*/
   ScoreScreen::LoadAudio(); /*0x690afb*/
   ++MEMORY[0xB0558C]; /*0x690b0c*/
   *this = &vt_ScoreBigFontClass; /*0x690b14*/
-  *((_BYTE *)this + 16) = 0; /*0x690b1a*/
+  this->q010 = 0; /*0x690b1a*/
   v3 = SearchMIXFile(MEMORY[0x83E6DC], 0); /*0x690b1d*/
-  *(this + 3) = v3; /*0x690b24*/
+  this->q00C = v3; /*0x690b24*/
   if ( !v3 ) /*0x690b27*/
   {
     CCFileClass::Construct(v5, MEMORY[0x83E6DC]); /*0x690b32*/
-    *(this + 3) = CCFileClass::ReadEntireFile(v5); /*0x690b44*/
-    *((_BYTE *)this + 16) = 1; /*0x690b47*/
+    this->q00C = CCFileClass::ReadEntireFile(v5); /*0x690b44*/
+    this->q010 = 1; /*0x690b47*/
     CCFileClass::Reset(v5); /*0x690b4b*/
     Debug::Log(); /*0x690b55*/
     v5[0] = &vt_CCFileClass; /*0x690b61*/
@@ -81,9 +81,9 @@ _DWORD *__thiscall sub_690AE0(_DWORD *this, int a2)
     v5[0] = &off_7E1668; /*0x690b76*/
     BufferIOFileClass::Dtor(v5); /*0x690b7e*/
   }
-  *(this + 1) = 20; /*0x690b87*/
-  *(this + 5) = a2; /*0x690b8e*/
-  *(this + 2) = 35; /*0x690b91*/
+  this->q004 = 20; /*0x690b87*/
+  this->q014 = a2; /*0x690b8e*/
+  this->q008 = 35; /*0x690b91*/
   return this; /*0x690b9a*/
 }
 }
@@ -94,11 +94,11 @@ unsigned int * ScoreScreen::Constructor(ScoreAnimClass * aP1, int a3, int a4)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall ScoreScreen::Constructor(_DWORD *this, ScoreAnimClass *aP1, int a3, int a4)
 {
-  *(this + 2) = a3; /*0x690f3b*/
-  *(this + 1) = aP1; /*0x690f41*/
-  *(this + 3) = Timer::GetTicks(); /*0x690f4d*/
-  *(this + 5) = 0; /*0x690f50*/
-  *(this + 6) = a4; /*0x690f57*/
+  this->q008 = a3; /*0x690f3b*/
+  this->q004 = aP1; /*0x690f41*/
+  this->q00C = Timer::GetTicks(); /*0x690f4d*/
+  this->q014 = 0; /*0x690f50*/
+  this->q018 = a4; /*0x690f57*/
   *this = &vt_ScoreAnimClass; /*0x690f5a*/
   return this; /*0x690f62*/
 }

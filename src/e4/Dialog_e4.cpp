@@ -228,7 +228,7 @@ int Dialog::GetMode3()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall Dialog_GetMode3(_BYTE *this)
 {
-  return *(this + 60) != 0 ? 3 : -2;
+  return this->q03C != 0 ? 3 : -2;
 }
 }
 } // namespace gamemd
@@ -312,7 +312,7 @@ int __thiscall Dialog::RunModemDialing(int *this, ObjectClass *aP1, int a3, char
     g_ClipboardBuffer,
     PumpEventLoop);
   *((_BYTE *)&g_MatrixTransformState + 9524) = 0; /*0x5f2a57*/
-  v11 = *(this + 9); /*0x5f2a5e*/
+  v11 = this->q009; /*0x5f2a5e*/
   Debug::Log(); /*0x5f2a66*/
   while ( 1 ) /*0x5f2a6e*/
   {
@@ -2146,7 +2146,7 @@ LONG __thiscall Dialog_Resize(char *this)
       if ( *(_DWORD *)this == 4 ) /*0x62142c*/
       {
         result = MEMORY[0xAC1B04]; /*0x62142e*/
-        v4 = (HWND)*((_DWORD *)this + 5); /*0x621433*/
+        v4 = (HWND)this->q005; /*0x621433*/
         v5 = v4; /*0x621438*/
         if ( MEMORY[0xAC1B04] ) /*0x62143c*/
         {
@@ -2162,7 +2162,7 @@ LONG __thiscall Dialog_Resize(char *this)
             result += 4; /*0x621480*/
             if ( result ) /*0x621485*/
             {
-              *(_DWORD *)(result + 232) = *((_DWORD *)this + 4); /*0x621491*/
+              *(_DWORD *)(result + 232) = this->q010; /*0x621491*/
               InvalidateRect(v4, (const RECT *)(this + 28), 0); /*0x621497*/
               return UpdateWindow(v4); /*0x62149e*/
             }
@@ -2579,9 +2579,9 @@ char __thiscall sub_624930(_DWORD *this, _DWORD *a2, _DWORD *a3)
 {
   _DWORD *v4; // eax
 
-  if ( !*(this + 1) ) /*0x624934*/
+  if ( !this->q010 ) /*0x624934*/
     return 0; /*0x62493c*/
-  v4 = *(_DWORD **)(*this + 4 * (((int (__thiscall *)(_DWORD *))*(this + 6))(a2) & ((1 << *(this + 3)) - 1))); /*0x62495a*/
+  v4 = *(_DWORD **)(*this + 4 * (((int (__thiscall *)(_DWORD *))this->q006)(a2) & ((1 << this->q00C) - 1))); /*0x62495a*/
   if ( !v4 ) /*0x62495f*/
     return 0; /*0x624962*/
   while ( *v4 != *a2 ) /*0x62496c*/
@@ -2616,16 +2616,16 @@ void __thiscall sub_624BE0(_DWORD *this)
   int v12; // eax
   _DWORD *v13; // [esp+4h] [ebp-4h]
 
-  if ( *((_BYTE *)this + 20) != 1 ) /*0x624be8*/
+  if ( this->q005 != 1 ) /*0x624be8*/
   {
-    v2 = *(this + 2); /*0x624bf0*/
+    v2 = this->q008; /*0x624bf0*/
     v3 = (_DWORD *)*this; /*0x624bf3*/
-    v4 = *(this + 3) + 1; /*0x624bfc*/
-    *(this + 2) = 2 * v2; /*0x624bfd*/
+    v4 = this->q00C + 1; /*0x624bfc*/
+    this->q008 = 2 * v2; /*0x624bfd*/
     v13 = v3; /*0x624c00*/
-    *(this + 3) = v4; /*0x624c08*/
+    this->q00C = v4; /*0x624c08*/
     v5 = __2_YAPAXI_Z(8 * v2); /*0x624c13*/
-    v6 = 4 * *(this + 2); /*0x624c18*/
+    v6 = 4 * this->q008; /*0x624c18*/
     *this = v5; /*0x624c1f*/
     memset(v5, 0, v6); /*0x624c24*/
     if ( v2 > 0 ) /*0x624c2f*/
@@ -2639,7 +2639,7 @@ void __thiscall sub_624BE0(_DWORD *this)
         {
           do /*0x624c61*/
           {
-            v10 = ((int (__thiscall *)(int))*(this + 6))(v9) & ((1 << *(this + 3)) - 1); /*0x624c4b*/
+            v10 = ((int (__thiscall *)(int))this->q006)(v9) & ((1 << this->q00C) - 1); /*0x624c4b*/
             v11 = *(_DWORD *)(*this + 4 * v10); /*0x624c4f*/
             *(_DWORD *)(*this + 4 * v10) = v9; /*0x624c55*/
             v12 = *(_DWORD *)(v9 + 8); /*0x624c57*/
@@ -2708,11 +2708,11 @@ char __thiscall Dialog::BindGadgetData(_DWORD *this, IUnknown *aP1, IUnknown *aP
   int *Blocka; // [esp+2Ch] [ebp+8h]
   void *Blockb; // [esp+2Ch] [ebp+8h]
 
-  v4 = (IUnknown *)*(this + 1); /*0x624cab*/
+  v4 = (IUnknown *)this->q010; /*0x624cab*/
   if ( !v4 ) /*0x624cb0*/
     return 0; /*0x624cb5*/
-  *(float *)&v39 = (double)(unsigned int)&v4[-1].__tail_1602E[1] / (double)(int)*(this + 2); /*0x624ce0*/
-  v6 = ((int (__thiscall *)(IUnknown *))*(this + 6))(aP1) & ((1 << *(this + 3)) - 1); /*0x624cf5*/
+  *(float *)&v39 = (double)(unsigned int)&v4[-1].__tail_1602E[1] / (double)(int)this->q008; /*0x624ce0*/
+  v6 = ((int (__thiscall *)(IUnknown *))this->q006)(aP1) & ((1 << this->q00C) - 1); /*0x624cf5*/
   v38 = v6; /*0x624cf7*/
   v7 = *(IUnknown **)(*this + 4 * v6); /*0x624cfb*/
   v36 = v7; /*0x624d00*/
@@ -2767,19 +2767,19 @@ char __thiscall Dialog::BindGadgetData(_DWORD *this, IUnknown *aP1, IUnknown *aP
     *(_DWORD *)(*this + 4 * v6) = CCINIClass_field_4C; /*0x624e0d*/
     v19 = *(float *)&v39 < *((double *)this + 4); /*0x624e13*/
     v20 = *(float *)&v39 == *((double *)this + 4); /*0x624e13*/
-    --*(this + 1); /*0x624e17*/
+    --this->q010; /*0x624e17*/
     if ( v19 || v20 ) /*0x624e1c*/
     {
-      v21 = *(this + 2); /*0x624e25*/
-      if ( v21 > *(this + 12) && *((_BYTE *)this + 20) != 1 ) /*0x624e37*/
+      v21 = this->q008; /*0x624e25*/
+      if ( v21 > this->q00C && this->q005 != 1 ) /*0x624e37*/
       {
         v22 = (int *)*this; /*0x624e40*/
         Blocka = (int *)*this; /*0x624e45*/
-        v23 = *(this + 3) - 1; /*0x624e4b*/
-        *(this + 2) = v21 >> 1; /*0x624e4c*/
-        *(this + 3) = v23; /*0x624e56*/
+        v23 = this->q00C - 1; /*0x624e4b*/
+        this->q008 = v21 >> 1; /*0x624e4c*/
+        this->q00C = v23; /*0x624e56*/
         v24 = (void *)__2_YAPAXI_Z(4 * (v21 >> 1)); /*0x624e62*/
-        v25 = 4 * *(this + 2); /*0x624e67*/
+        v25 = 4 * this->q008; /*0x624e67*/
         *this = v24; /*0x624e6e*/
         memset(v24, 0, v25); /*0x624e74*/
         if ( (int)v21 > 0 ) /*0x624e7f*/
@@ -2793,7 +2793,7 @@ char __thiscall Dialog::BindGadgetData(_DWORD *this, IUnknown *aP1, IUnknown *aP
             {
               do /*0x624eb8*/
               {
-                v29 = ((int (__thiscall *)(int))*(this + 6))(v28) & ((1 << *(this + 3)) - 1); /*0x624e9b*/
+                v29 = ((int (__thiscall *)(int))this->q006)(v28) & ((1 << this->q00C) - 1); /*0x624e9b*/
                 v30 = *(_DWORD *)(*this + 4 * v29); /*0x624ea0*/
                 *(_DWORD *)(*this + 4 * v29) = v28; /*0x624ea6*/
                 v31 = *(_DWORD *)(v28 + 516); /*0x624ea8*/
@@ -2845,7 +2845,7 @@ char __thiscall Dialog::BindGadgetData(_DWORD *this, IUnknown *aP1, IUnknown *aP
         v32 = aP1b; /*0x624f6b*/
       }
       *(_DWORD *)&v7->__pad_1D8[44] = *(_DWORD *)&v32->__pad_1D8[44]; /*0x624f75*/
-      --*(this + 1); /*0x624f81*/
+      --this->q010; /*0x624f81*/
       if ( v32 ) /*0x624f84*/
       {
         Dialog::CleanupTree((int)&v32->field_4); /*0x624f89*/

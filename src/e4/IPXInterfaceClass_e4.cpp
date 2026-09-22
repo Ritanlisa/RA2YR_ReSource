@@ -10,9 +10,9 @@ _DWORD *__thiscall IPXInterfaceClass_Constructor(_DWORD *this)
 {
   IPXInterfaceClass::bindSocket(); /*0x7b0d93*/
   *this = &vt_IPXInterfaceClass; /*0x7b0da4*/
-  *(this + 64703) = -1; /*0x7b0dad*/
-  *(this + 64704) = -1; /*0x7b0db3*/
-  *((_WORD *)this + 129410) = -1; /*0x7b0db8*/
+  this->qFCBF = -1; /*0x7b0dad*/
+  this->qFCC0 = -1; /*0x7b0db3*/
+  this->q1F982 = -1; /*0x7b0db8*/
   *(_DWORD *)((char *)this + 258822) = -1; /*0x7b0dc2*/
   *((_WORD *)this + 129413) = -1; /*0x7b0dc8*/
   return this; /*0x7b0dce*/
@@ -78,7 +78,7 @@ int __thiscall IPXInterfaceClass::initSocket(_DWORD *this, IUnknown *aP1, Color 
     v8 = *(_DWORD *)&v14[4]; /*0x7b0f19*/
     v9 = *(_WORD *)&v14[12]; /*0x7b0f1d*/
     *(int *)((char *)&aP2->Color_field_00 + 2) = *(int *)&v14[4]; /*0x7b0f23*/
-    *(this + 64703) = v8; /*0x7b0f26*/
+    this->qFCBF = v8; /*0x7b0f26*/
     *(Color *)((char *)aP2 + 6) = *(Color *)&v14[8]; /*0x7b0f33*/
     HIWORD(aP2[2].Color_field_00) = v9; /*0x7b0f35*/
     closesocket((Color *)((char *)aP2 + 6)); /*0x7b0f39*/
@@ -126,22 +126,22 @@ int __thiscall IPXInterfaceClass::SendPacket(u_short *this, ObjectClass *aP1, in
       if ( HIWORD(fromlen) ) /*0x7b140c*/
       {
 LABEL_6:
-        (*(void (__thiscall **)(u_short *, _DWORD))(*(_DWORD *)this + 36))(this, *((_DWORD *)this + 64539)); /*0x7b1411*/
+        (*(void (__thiscall **)(u_short *, _DWORD))(*(_DWORD *)this + 36))(this, this->q3F06C); /*0x7b1411*/
         return 0; /*0x7b1429*/
       }
-      if ( *((_DWORD *)this + 12) ) /*0x7b142c*/
+      if ( this->LocalNode ) /*0x7b142c*/
       {
         while ( 1 ) /*0x7b1446*/
         {
-          v25 = *(this + 129414); /*0x7b1446*/
+          v25 = this->q1F986; /*0x7b1446*/
           v7 = (CCINIClass *)**((_DWORD **)this + 9); /*0x7b1447*/
           to.sa_family = 6; /*0x7b1449*/
           *(_WORD *)&to.sa_data[10] = htons(v25); /*0x7b1453*/
           if ( LOBYTE(v7->sectionHead[1]) ) /*0x7b1458*/
           {
-            *(_DWORD *)to.sa_data = *((_DWORD *)this + 64703); /*0x7b146b*/
-            *(_DWORD *)&to.sa_data[4] = *((_DWORD *)this + 64704); /*0x7b1471*/
-            *(_WORD *)&to.sa_data[8] = *(this + 129410); /*0x7b1479*/
+            *(_DWORD *)to.sa_data = this->qFCBF; /*0x7b146b*/
+            *(_DWORD *)&to.sa_data[4] = this->qFCC0; /*0x7b1471*/
+            *(_WORD *)&to.sa_data[8] = this->q1F982; /*0x7b1479*/
           }
           else
           {
@@ -150,18 +150,18 @@ LABEL_6:
             *(_DWORD *)&to.sa_data[4] = v27; /*0x7b14a2*/
             *(_WORD *)&to.sa_data[8] = v28; /*0x7b14a6*/
           }
-          if ( sendto(*((_DWORD *)this + 64539), (const char *)&v7->sectionCount, v7->sectionHead[0] + 4, 0, &to, 14) == -1 /*0x7b14da*/
+          if ( sendto(this->q3F06C, (const char *)&v7->sectionCount, v7->sectionHead[0] + 4, 0, &to, 14) == -1 /*0x7b14da*/
             && WSAGetLastError() != 10035 )
           {
             break; /*0x7b14da*/
           }
-          v8 = *((_DWORD *)this + 12); /*0x7b14e0*/
+          v8 = this->LocalNode; /*0x7b14e0*/
           if ( v8 > 0 ) /*0x7b14e5*/
           {
             v9 = v8 - 1; /*0x7b14e7*/
             v10 = 0; /*0x7b14ea*/
-            for ( *((_DWORD *)this + 12) = v9; /*0x7b14f1*/
-                  v10 < *((_DWORD *)this + 12);
+            for ( this->LocalNode = v9; /*0x7b14f1*/
+                  v10 < this->LocalNode;
                   *(_DWORD *)(*((_DWORD *)this + 9) + 4 * v10 - 4) = *(_DWORD *)(*((_DWORD *)this + 9) + 4 * v10) )
             {
               ++v10; /*0x7b14f6*/
@@ -174,9 +174,9 @@ LABEL_6:
           else
           {
             BYTE1(v7->sectionHead[1]) = 0; /*0x7b1517*/
-            --*((_DWORD *)this + 64536); /*0x7b1522*/
+            --this->qFC18; /*0x7b1522*/
           }
-          if ( !*((_DWORD *)this + 12) ) /*0x7b1528*/
+          if ( !this->LocalNode ) /*0x7b1528*/
             return 0; /*0x7b153c*/
         }
         goto LABEL_6; /*0x7b14da*/
@@ -186,10 +186,10 @@ LABEL_6:
   }
   if ( HIWORD(fromlen) ) /*0x7b153f*/
   {
-    (*(void (__thiscall **)(u_short *, _DWORD))(*(_DWORD *)this + 36))(this, *((_DWORD *)this + 64539)); /*0x7b1550*/
+    (*(void (__thiscall **)(u_short *, _DWORD))(*(_DWORD *)this + 36))(this, this->q3F06C); /*0x7b1550*/
     return 0; /*0x7b155c*/
   }
-  v11 = *((_DWORD *)this + 64539); /*0x7b1577*/
+  v11 = this->q3F06C; /*0x7b1577*/
   fromlen = 14; /*0x7b157d*/
   v12 = recvfrom(v11, (char *)this + 258164, 640, 0, &to, (int *)&fromlen); /*0x7b1586*/
   v26 = v12; /*0x7b158e*/
@@ -197,7 +197,7 @@ LABEL_6:
   {
     if ( WSAGetLastError() != 10035 ) /*0x7b159e*/
     {
-      (*(void (__thiscall **)(u_short *, _DWORD))(*(_DWORD *)this + 36))(this, *((_DWORD *)this + 64539)); /*0x7b15b0*/
+      (*(void (__thiscall **)(u_short *, _DWORD))(*(_DWORD *)this + 36))(this, this->q3F06C); /*0x7b15b0*/
       return 0; /*0x7b15bc*/
     }
     return 0; /*0x7b159e*/
@@ -207,7 +207,7 @@ LABEL_6:
   v27 = *(_DWORD *)&to.sa_data[4]; /*0x7b15d4*/
   a3 = *(_DWORD *)to.sa_data; /*0x7b15d8*/
   v28 = *(_WORD *)&to.sa_data[8]; /*0x7b15e6*/
-  if ( *(_DWORD *)to.sa_data == *((_DWORD *)this + 64703) ) /*0x7b15ef*/
+  if ( *(_DWORD *)to.sa_data == this->qFCBF ) /*0x7b15ef*/
   {
     v13 = 3; /*0x7b15f1*/
     v14 = this + 129411; /*0x7b15f6*/
@@ -231,13 +231,13 @@ LABEL_6:
     return 0; /*0x7b1717*/
   v18 = (CCINIClass *)IPXInterfaceClass::processPacket(this); /*0x7b1633*/
   v18->sectionHead[0] = v26 - 4; /*0x7b1646*/
-  v18->sectionCount = *((_DWORD *)this + 64541); /*0x7b1651*/
+  v18->sectionCount = this->qFC1D; /*0x7b1651*/
   qmemcpy(v18->__pad_20, this + 129084, v26 - 4); /*0x7b1657*/
   if ( (*(unsigned __int8 (__thiscall **)(u_short *, CCINIClass *))(*(_DWORD *)this + 88))(this, v18) ) /*0x7b1665*/
   {
     NetworkID::Assign(v18, (IPXManagerClass *)&a3, (int)&v27, 0); /*0x7b16d0*/
-    v19 = *((_DWORD *)this + 4); /*0x7b16d5*/
-    v20 = *((_DWORD *)this + 6); /*0x7b16d8*/
+    v19 = this->Initialized; /*0x7b16d5*/
+    v20 = this->BoundSocket; /*0x7b16d8*/
     v21 = this + 4; /*0x7b16db*/
     if ( v20 < v19 /*0x7b16fe*/
       || (*((_BYTE *)v21 + 13) || !v19)
@@ -261,7 +261,7 @@ LABEL_6:
   else
   {
     BYTE1(v18->sectionHead[1]) = 0; /*0x7b16a5*/
-    --*((_DWORD *)this + 64536); /*0x7b16b1*/
+    --this->qFC18; /*0x7b16b1*/
   }
   return 0; /*0x7b13e4*/
 }
@@ -273,7 +273,7 @@ int IPXInterfaceClass::GetLocalAddress(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall IPXInterfaceClass::_vt20(_DWORD *this, int a2)
 {
-  *(this + 64702) = a2; /*0x7b1764*/
+  this->q3F2F8 = a2; /*0x7b1764*/
   return a2; /*0x7b176a*/
 }
 }
@@ -288,30 +288,30 @@ char *__thiscall sub_7B19C0(char *this)
   int v3; // edx
 
   this->LocalNode = 0; /*0x7b19d2*/
-  *((_DWORD *)this + 4) = 0; /*0x7b19d5*/
-  *(this + 20) = 1; /*0x7b19d8*/
-  *(this + 21) = 0; /*0x7b19db*/
+  this->Initialized = 0; /*0x7b19d5*/
+  this->q014 = 1; /*0x7b19d8*/
+  this->q015 = 0; /*0x7b19db*/
   this->LocalNetwork = &vt_DynamicVectorClass_WinsockInterfaceClass_WinsockBufferType; /*0x7b19de*/
   *((_DWORD *)this + 7) = 10; /*0x7b19e1*/
-  *((_DWORD *)this + 6) = 0; /*0x7b19e4*/
+  this->BoundSocket = 0; /*0x7b19e4*/
   *((_DWORD *)this + 9) = 0; /*0x7b19e7*/
   *((_DWORD *)this + 10) = 0; /*0x7b19ea*/
-  *(this + 44) = 1; /*0x7b19ed*/
-  *(this + 45) = 0; /*0x7b19f0*/
-  *((_DWORD *)this + 8) = &vt_DynamicVectorClass_WinsockInterfaceClass_WinsockBufferType; /*0x7b19f3*/
-  *((_DWORD *)this + 13) = 10; /*0x7b19f6*/
-  *((_DWORD *)this + 12) = 0; /*0x7b19f9*/
+  this->q02C = 1; /*0x7b19ed*/
+  this->q02D = 0; /*0x7b19f0*/
+  this->LocalNetwork = &vt_DynamicVectorClass_WinsockInterfaceClass_WinsockBufferType; /*0x7b19f3*/
+  this->IsAllocated = 10; /*0x7b19f6*/
+  this->LocalNode = 0; /*0x7b19f9*/
   *((_DWORD *)this + 19) = 10; /*0x7b19fc*/
   *((_DWORD *)this + 15) = 0; /*0x7b1a02*/
-  *((_DWORD *)this + 16) = 0; /*0x7b1a05*/
-  *(this + 68) = 1; /*0x7b1a08*/
-  *(this + 69) = 0; /*0x7b1a0b*/
+  this->Count = 0; /*0x7b1a05*/
+  this->q044 = 1; /*0x7b1a08*/
+  this->q045 = 0; /*0x7b1a0b*/
   *((_DWORD *)this + 14) = &vt_DynamicVectorClass_WinsockInterfaceClass_WinsockBufferType; /*0x7b1a0e*/
-  *((_DWORD *)this + 18) = 0; /*0x7b1a11*/
-  *((_DWORD *)this + 64539) = -1; /*0x7b1a14*/
-  *((_DWORD *)this + 64540) = -1; /*0x7b1a1a*/
+  this->tail_12 = 0; /*0x7b1a11*/
+  this->q3F06C = -1; /*0x7b1a14*/
+  this->q3F070 = -1; /*0x7b1a1a*/
   *(_DWORD *)this = &vt_WinsockInterfaceClass; /*0x7b1a20*/
-  *(this + 258152) = 0; /*0x7b1a26*/
+  this->q3F068 = 0; /*0x7b1a26*/
   v2 = this + 102; /*0x7b1a2c*/
   v3 = 128; /*0x7b1a2f*/
   do /*0x7b1a6f*/
@@ -330,12 +330,12 @@ char *__thiscall sub_7B19C0(char *this)
     --v3; /*0x7b1a6e*/
   }
   while ( v3 ); /*0x7b1a6f*/
-  *((_DWORD *)this + 64535) = 0; /*0x7b1a76*/
-  *((_DWORD *)this + 64536) = 0; /*0x7b1a7c*/
-  *((_DWORD *)this + 64537) = 0; /*0x7b1a82*/
-  *((_DWORD *)this + 64532) = 0; /*0x7b1a88*/
-  *((_DWORD *)this + 64533) = 0; /*0x7b1a8e*/
-  *((_DWORD *)this + 1) = 576; /*0x7b1a94*/
+  this->q3F05C = 0; /*0x7b1a76*/
+  this->qFC18 = 0; /*0x7b1a7c*/
+  this->qFC19 = 0; /*0x7b1a82*/
+  this->q3F050 = 0; /*0x7b1a88*/
+  this->qFC15 = 0; /*0x7b1a8e*/
+  this->Initialized = 576; /*0x7b1a94*/
   Debug::Log(); /*0x7b1a9b*/
   return this; /*0x7b1aa5*/
 }
@@ -349,16 +349,16 @@ int __thiscall IPXInterfaceClass::_vt01(SOCKET *this)
 {
   int result; // eax
 
-  if ( *(this + 64539) != -1 ) /*0x7b1b8c*/
+  if ( this->q3F06C != -1 ) /*0x7b1b8c*/
   {
-    closesocket(*(this + 64539)); /*0x7b1b8f*/
-    *(this + 64539) = -1; /*0x7b1b94*/
+    closesocket(this->q3F06C); /*0x7b1b8f*/
+    this->q3F06C = -1; /*0x7b1b94*/
   }
-  result = *(this + 64540); /*0x7b1b9e*/
+  result = this->q3F070; /*0x7b1b9e*/
   if ( result != -1 ) /*0x7b1ba7*/
   {
-    result = closesocket(*(this + 64540)); /*0x7b1baa*/
-    *(this + 64540) = -1; /*0x7b1baf*/
+    result = closesocket(this->q3F070); /*0x7b1baa*/
+    this->q3F070 = -1; /*0x7b1baf*/
   }
   return result; /*0x7b1bb9*/
 }
@@ -375,13 +375,13 @@ char __thiscall IPXInterfaceClass::_vt07(SOCKET *this)
   u_int v5; // eax
 
   v2 = (*(int (__thiscall **)(SOCKET *, int))(*this + 56))(this, -1); /*0x7b1bc9*/
-  if ( WSAAsyncSelect(*(this + 64539), g_hWnd, v2, 3) != -1 ) /*0x7b1be3*/
+  if ( WSAAsyncSelect(this->q3F06C, g_hWnd, v2, 3) != -1 ) /*0x7b1be3*/
   {
-    v4 = *(this + 64540); /*0x7b1bfc*/
+    v4 = this->q3F070; /*0x7b1bfc*/
     if ( v4 == -1 ) /*0x7b1c05*/
       return 1; /*0x7b1c05*/
     v5 = (*(int (__thiscall **)(SOCKET *, int))(*this + 56))(this, v4); /*0x7b1c0e*/
-    if ( WSAAsyncSelect(*(this + 64540), g_hWnd, v5, 3) != -1 ) /*0x7b1c27*/
+    if ( WSAAsyncSelect(this->q3F070, g_hWnd, v5, 3) != -1 ) /*0x7b1c27*/
       return 1; /*0x7b1c40*/
   }
   WSAGetLastError(); /*0x7b1be5*/
@@ -442,7 +442,7 @@ _BYTE *__thiscall sub_7B2240(_DWORD *this)
   int v3; // esi
 
   result = 0; /*0x7b2249*/
-  if ( *(this + 64535) == 128 ) /*0x7b2253*/
+  if ( this->q3F05C == 128 ) /*0x7b2253*/
   {
     result = __2_YAPAXI_Z(0x2A0u); /*0x7b225a*/
     result[22] = 1; /*0x7b2264*/
@@ -453,10 +453,10 @@ _BYTE *__thiscall sub_7B2240(_DWORD *this)
     v2 = 0; /*0x7b226c*/
     while ( 1 ) /*0x7b226e*/
     {
-      v3 = *(this + 64532); /*0x7b226e*/
-      *(this + 64532) = v3 + 1; /*0x7b227a*/
+      v3 = this->q3F050; /*0x7b226e*/
+      this->q3F050 = v3 + 1; /*0x7b227a*/
       if ( v3 + 1 > 127 ) /*0x7b2280*/
-        *(this + 64532) = 0; /*0x7b2282*/
+        this->q3F050 = 0; /*0x7b2282*/
       if ( !*((_BYTE *)this + 672 * v3 + 101) ) /*0x7b2297*/
         break; /*0x7b2297*/
       if ( ++v2 >= 128 ) /*0x7b22a4*/
@@ -464,7 +464,7 @@ _BYTE *__thiscall sub_7B2240(_DWORD *this)
     }
     result = this + 168 * v3 + 20; /*0x7b22b9*/
     *((_BYTE *)this + 672 * v3 + 101) = 1; /*0x7b22bd*/
-    ++*(this + 64535); /*0x7b22c8*/
+    ++this->q3F05C; /*0x7b22c8*/
   }
   if ( result ) /*0x7b22d0*/
   {
@@ -496,7 +496,7 @@ __int16 __thiscall IPXInterfaceClass::Connect(int this, const void *a1, unsigned
   v5 = (UDPInterfaceClass *)AudioQueue::AllocBuffer((_DWORD *)this, (WinsockInterfaceClass *)aP3); /*0x7b24f4*/
   qmemcpy(&v5[4], a1, a3); /*0x7b2505*/
   v5[2].Socket = a3; /*0x7b250e*/
-  (*(void (__thiscall **)(int, UDPInterfaceClass *))(*(_DWORD *)this + 84))(this, v5); /*0x7b2516*/
+  (*(void (__thiscall **)(int, UDPInterfaceClass *))(this->q015)(this, v5); /*0x7b2516*/
   v5[2].Initialized = 1; /*0x7b251d*/
   if ( (_BYTE)aP3 ) /*0x7b2523*/
   {
@@ -547,38 +547,38 @@ char __thiscall IPXInterfaceClass::sub_7B2A20(void *this, int a2, _DWORD *a3)
 
   if ( a2 ) /*0x7b2a2c*/
   {
-    *((_BYTE *)this + 12) = 0; /*0x7b2a32*/
+    this->LocalNode = 0; /*0x7b2a32*/
     if ( a3 ) /*0x7b2a38*/
       v4 = a3; /*0x7b2a4e*/
     else
       v4 = __2_YAPAXI_Z(4 * a2); /*0x7b2a4a*/
-    *((_BYTE *)this + 12) = 1; /*0x7b2a52*/
+    this->LocalNode = 1; /*0x7b2a52*/
     if ( !v4 ) /*0x7b2a56*/
       return 0; /*0x7b2aca*/
-    if ( *((_DWORD *)this + 1) ) /*0x7b2a58*/
+    if ( this->Initialized ) /*0x7b2a58*/
     {
       v5 = this->LocalNetwork; /*0x7b2a5f*/
       if ( a2 < v5 ) /*0x7b2a64*/
         v5 = a2; /*0x7b2a66*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x7b2a6c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Initialized + 4 * i - 4) ) /*0x7b2a6c*/
         ++i; /*0x7b2a71*/
-      if ( *((_BYTE *)this + 13) ) /*0x7b2a7e*/
+      if ( this->IsAllocated ) /*0x7b2a7e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x7b2a89*/
-        *((_DWORD *)this + 1) = 0; /*0x7b2a91*/
+        this->Initialized = 0; /*0x7b2a91*/
       }
     }
-    *((_DWORD *)this + 1) = v4; /*0x7b2a9a*/
+    this->Initialized = v4; /*0x7b2a9a*/
     this->LocalNetwork = a2; /*0x7b2aa2*/
-    *((_BYTE *)this + 13) = a3 == 0; /*0x7b2aa5*/
+    this->IsAllocated = a3 == 0; /*0x7b2aa5*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x7b2aae*/
+    (*(void (__thiscall **)(void *))(this->LocalNode)(this); /*0x7b2aae*/
   }
   v7 = this->LocalNetwork; /*0x7b2ab1*/
-  if ( v7 < *((_DWORD *)this + 4) ) /*0x7b2ab9*/
-    *((_DWORD *)this + 4) = v7; /*0x7b2abb*/
+  if ( v7 < this->Initialized ) /*0x7b2ab9*/
+    this->Initialized = v7; /*0x7b2abb*/
   return 1; /*0x7b2abe*/
 }
 }

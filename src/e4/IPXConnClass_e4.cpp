@@ -36,16 +36,16 @@ void *__thiscall IPXConnClass::constructor(
   *(_DWORD *)this = &vt_IPXConnClass; /*0x53f46b*/
   if ( a5 ) /*0x53f473*/
   {
-    *((_DWORD *)this + 19) = *a5; /*0x53f479*/
-    *((_DWORD *)this + 20) = a5[1]; /*0x53f47e*/
+    this->q04C = *a5; /*0x53f479*/
+    this->PacketsReceived = a5[1]; /*0x53f47e*/
     *((_DWORD *)this + 21) = a5[2]; /*0x53f484*/
   }
-  *((_DWORD *)this + 25) = a7; /*0x53f494*/
+  this->q064 = a7; /*0x53f494*/
   wcscpy((wchar_t *)this + 52, Source); /*0x53f497*/
   Network::CopyAddress((_DWORD *)this + 19, &aP8, (int)&v13); /*0x53f4ab*/
   v10 = (IPXConnClass *)v13; /*0x53f4b0*/
   v11 = v14; /*0x53f4b4*/
-  *((_DWORD *)this + 24) = 0; /*0x53f4bc*/
+  this->Socket = 0; /*0x53f4bc*/
   *((_DWORD *)this + 22) = v10; /*0x53f4c4*/
   *((_WORD *)this + 46) = v11; /*0x53f4c6*/
   return this; /*0x53f4c3*/

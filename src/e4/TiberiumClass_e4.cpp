@@ -148,42 +148,42 @@ _DWORD *__thiscall TiberiumClass::TiberiumClass(_DWORD *this, ObjectClass *aP1)
   int v5; // eax
 
   AbstractTypeClass::Constructor((int)this, (AbstractClass *)aP1); /*0x7216ca*/
-  *(this + 40) = -1717986918; /*0x7216dc*/
-  *(this + 44) = -1717986918; /*0x7216e7*/
-  *(this + 38) = -1; /*0x7216f1*/
-  *(this + 39) = 0; /*0x7216fb*/
-  *(this + 41) = 1069128089; /*0x721701*/
-  *(this + 42) = 0; /*0x721707*/
-  *(this + 45) = 1069128089; /*0x72170d*/
-  *(this + 46) = 0; /*0x721713*/
-  *(this + 47) = 0; /*0x721719*/
-  *(this + 48) = 0; /*0x72171f*/
+  this->owningHouseIndex = -1717986918; /*0x7216dc*/
+  this->Spread = -1717986918; /*0x7216e7*/
+  this->isInLogic = -1; /*0x7216f1*/
+  this->location = 0; /*0x7216fb*/
+  this->q0A4 = 1069128089; /*0x721701*/
+  this->lineTrailer = 0; /*0x721707*/
+  this->SpreadPercentage = 1069128089; /*0x72170d*/
+  this->q0B8 = 0; /*0x721713*/
+  this->Growth = 0; /*0x721719*/
+  this->GrowthPercentage = 0; /*0x72171f*/
   AnimTypeVector::Constructor(this + 49, 0, 0); /*0x721725*/
-  *(this + 54) = 10; /*0x72172a*/
-  *(this + 53) = 0; /*0x721731*/
-  *(this + 49) = &vt_TypeList_AnimTypeClass_const; /*0x721734*/
-  *(this + 56) = 0; /*0x72173a*/
-  *(this + 57) = 0; /*0x721740*/
-  *(this + 58) = 0; /*0x721746*/
-  *(this + 59) = 0; /*0x72174c*/
-  *(this + 60) = 0; /*0x721752*/
-  *(this + 61) = 0; /*0x721758*/
-  *(this + 62) = 0; /*0x72175e*/
-  *(this + 63) = 0; /*0x721764*/
-  *(this + 64) = *(_DWORD *)&HouseClass_Player.__pad_5568[23248]; /*0x721770*/
-  *(this + 66) = 0; /*0x721776*/
-  *(this + 67) = 0; /*0x72177c*/
-  *(this + 68) = 0; /*0x721782*/
-  *(this + 69) = 0; /*0x721788*/
-  *(this + 70) = 0; /*0x72178e*/
+  this->Image = 10; /*0x72172a*/
+  this->Debris = 0; /*0x721731*/
+  this->q0C4 = &vt_TypeList_AnimTypeClass_const; /*0x721734*/
+  this->NumImages = 0; /*0x72173a*/
+  this->q0E4 = 0; /*0x721740*/
+  this->q0E8 = 0; /*0x721746*/
+  this->TiberiumClass_field_EC = 0; /*0x72174c*/
+  this->TiberiumClass_field_F0 = 0; /*0x721752*/
+  this->q0F4 = 0; /*0x721758*/
+  this->q0F8 = 0; /*0x72175e*/
+  this->q0FC = 0; /*0x721764*/
+  this->q100 = *(_DWORD *)&HouseClass_Player.__pad_5568[23248]; /*0x721770*/
+  this->q108 = 0; /*0x721776*/
+  this->q10C = 0; /*0x72177c*/
+  this->q110 = 0; /*0x721782*/
+  this->q114 = 0; /*0x721788*/
+  this->TiberiumClass_field_118 = 0; /*0x72178e*/
   v3 = *(IUnknown **)&HouseClass_Player.__pad_5568[23248]; /*0x721794*/
-  *(this + 73) = 0; /*0x72179a*/
-  *(this + 71) = v3; /*0x7217a0*/
+  this->q124 = 0; /*0x72179a*/
+  this->GrowthTimer = v3; /*0x7217a0*/
   *this = &TiberiumClass::`vftable'; /*0x7217a6*/
-  *(this + 1) = &TiberiumClass::`vftable'; /*0x7217ac*/
-  *(this + 2) = &TiberiumClass::`vftable'; /*0x7217b3*/
-  *(this + 3) = &vt_TiberiumClass; /*0x7217ba*/
-  *(this + 38) = *(_DWORD *)&stru_B05488.__pad_579C[18644]; /*0x7217c6*/
+  this->vtable2 = &TiberiumClass::`vftable'; /*0x7217ac*/
+  this->vtable3 = &TiberiumClass::`vftable'; /*0x7217b3*/
+  this->vtable4 = &vt_TiberiumClass; /*0x7217ba*/
+  this->isInLogic = *(_DWORD *)&stru_B05488.__pad_579C[18644]; /*0x7217c6*/
   if ( *(int *)&stru_B05488.__pad_579C[18644] < *(int *)&stru_B05488.__pad_579C[18636] /*0x7217fe*/
     || (stru_B05488.__pad_579C[18641] || !*(_DWORD *)&stru_B05488.__pad_579C[18636])
     && *(int *)&stru_B05488.__pad_579C[18648] > 0
@@ -195,7 +195,7 @@ _DWORD *__thiscall TiberiumClass::TiberiumClass(_DWORD *this, ObjectClass *aP1)
     v4 = (*(_DWORD *)&stru_B05488.__pad_579C[18644])++; /*0x72180b*/
     *(_DWORD *)(*(_DWORD *)&stru_B05488.__pad_579C[18632] + 4 * v4) = this; /*0x72181a*/
   }
-  (*(void (__thiscall **)(_DWORD *))(*(this + 49) + 12))(this + 49); /*0x721821*/
+  (*(void (__thiscall **)(_DWORD *))(this->q0C4 + 12))(this + 49); /*0x721821*/
   if ( *(int *)&stru_B05488.__pad_579C[19036] < *(int *)&stru_B05488.__pad_579C[19028] /*0x721857*/
     || (stru_B05488.__pad_579C[19033] || !*(_DWORD *)&stru_B05488.__pad_579C[19028])
     && *(int *)&stru_B05488.__pad_579C[19040] > 0

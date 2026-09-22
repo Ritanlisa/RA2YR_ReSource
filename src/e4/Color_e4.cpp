@@ -19,8 +19,8 @@ int __thiscall Color_ConvertToRGB(unsigned __int8 *this, int a2)
   int v11; // [esp+28h] [ebp-8h]
   unsigned int v12; // [esp+2Ch] [ebp-4h]
 
-  v2 = *(this + 2); /*0x51744b*/
-  v3 = *(this + 1); /*0x517453*/
+  v2 = this->q008; /*0x51744b*/
+  v3 = this->q004; /*0x517453*/
   v4 = 3 * *this; /*0x51745c*/
   v10[2] = v2; /*0x51745f*/
   v4 *= 2; /*0x517463*/
@@ -52,18 +52,18 @@ _BYTE *__thiscall sub_661020(_BYTE *this, int a2, int a3, float a4)
 
   v4 = 1.0 - a4; /*0x661028*/
   *this = Math::RoundToInt(v4); /*0x66109d*/
-  *(this + 1) = Math::RoundToInt(v4); /*0x661105*/
+  this->q004 = Math::RoundToInt(v4); /*0x661105*/
   v6 = v4 * (double)*(unsigned __int8 *)(a2 + 2) + (double)*(unsigned __int8 *)(a3 + 2) * a4; /*0x661124*/
   if ( v6 > 255.0 || v6 >= 0.0 ) /*0x661142*/
   {
     if ( v6 > 255.0 ) /*0x661169*/
       v6 = 255.0; /*0x66116d*/
-    *(this + 2) = Math::RoundToInt(v6); /*0x661178*/
+    this->q008 = Math::RoundToInt(v6); /*0x661178*/
     return this; /*0x66117b*/
   }
   else
   {
-    *(this + 2) = Math::RoundToInt(0.0); /*0x661151*/
+    this->q008 = Math::RoundToInt(0.0); /*0x661151*/
     return this; /*0x661154*/
   }
 }
@@ -100,18 +100,18 @@ _BYTE *__thiscall Color_ScaleRGB(_BYTE *this, unsigned __int8 *a2, float a3)
   {
     v5 = 0.0; /*0x66121f*/
   }
-  *(this + 1) = Math::RoundToInt(v5); /*0x661245*/
+  this->q004 = Math::RoundToInt(v5); /*0x661245*/
   v6 = (double)a2[2] * a3; /*0x661253*/
   if ( v6 > 255.0 || v6 >= 0.0 ) /*0x661273*/
   {
     if ( v6 > 255.0 ) /*0x661299*/
       v6 = 255.0; /*0x66129d*/
-    *(this + 2) = Math::RoundToInt(v6); /*0x6612a8*/
+    this->q008 = Math::RoundToInt(v6); /*0x6612a8*/
     return this; /*0x6612ab*/
   }
   else
   {
-    *(this + 2) = Math::RoundToInt(0.0); /*0x661282*/
+    this->q008 = Math::RoundToInt(0.0); /*0x661282*/
     return this; /*0x661285*/
   }
 }
@@ -128,13 +128,13 @@ unsigned __int8 __thiscall Color::Lerp(unsigned __int8 *this, ObjectClass *aP1, 
   unsigned __int8 v5; // bl
   unsigned __int8 result; // al
 
-  v3 = *(this + 1); /*0x6612f2*/
+  v3 = this->q004; /*0x6612f2*/
   *this += (unsigned __int8)aP1 * (*a2 - *this) / 256; /*0x6612f5*/
   v4 = v3 + (unsigned __int8)aP1 * (a2[1] - v3) / 256; /*0x661315*/
-  v5 = *(this + 2); /*0x661317*/
-  *(this + 1) = v4; /*0x66131a*/
+  v5 = this->q008; /*0x661317*/
+  this->q004 = v4; /*0x66131a*/
   result = v5 + (unsigned __int8)aP1 * (a2[2] - v5) / 256; /*0x66133d*/
-  *(this + 2) = result; /*0x661340*/
+  this->q008 = result; /*0x661340*/
   return result; /*0x66132a*/
 }
 }
@@ -155,8 +155,8 @@ _DWORD *__thiscall Color::RGBFromFloat(_DWORD *this, IUnknown *aP1, float a3)
   v8 = Math::RoundToInt(v3); /*0x75f582*/
   v6 = Math::RoundToInt(v3); /*0x75f591*/
   *this = v5; /*0x75f59e*/
-  *(this + 1) = v8; /*0x75f5a0*/
-  *(this + 2) = v6; /*0x75f5a3*/
+  this->q004 = v8; /*0x75f5a0*/
+  this->q008 = v6; /*0x75f5a3*/
   return this; /*0x75f5ac*/
 }
 }

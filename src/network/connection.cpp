@@ -34,9 +34,9 @@ void __thiscall ConnectionClass::queueSendPacket(#487 *this, #473 *a2, int a3, i
   signed int v11; // [esp+20h] [ebp+10h]
   __int16 v12; // [esp+24h] [ebp+14h]
 
-  v5 = *((_DWORD *)this + 1);
-  v6 = *((_DWORD *)this + 10);
-  if ( v6 == v5 || a3 > *((_DWORD *)this + 3) )
+  v5 = this->PlayerIndex;
+  v6 = this->q028;
+  if ( v6 == v5 || a3 > this->LastPacketTime )
   {
     Debug::Log();
   }
@@ -45,7 +45,7 @@ void __thiscall ConnectionClass::queueSendPacket(#487 *this, #473 *a2, int a3, i
     v7 = 0;
     if ( v5 > 0 )
     {
-      for ( i = (_BYTE *)*((_DWORD *)this + 9); (*i & 1) != 0; i += 36 )
+      for ( i = (_BYTE *)this->q009; (*i & 1) != 0; i += 36 )
       {
         if ( ++v7 >= v5 )
           return;
@@ -53,28 +53,28 @@ void __thiscall ConnectionClass::queueSendPacket(#487 *this, #473 *a2, int a3, i
       if ( v7 != -1 )
       {
         v9 = 36 * v7;
-        *(_DWORD *)(*((_DWORD *)this + 9) + v9) = *(_DWORD *)(*((_DWORD *)this + 9) + 36 * v7) | 1;
-        *(_DWORD *)(36 * v7 + *((_DWORD *)this + 9)) &= ~2u;
-        *(_DWORD *)(36 * v7 + *((_DWORD *)this + 9)) &= ~4u;
-        *(_DWORD *)(v9 + *((_DWORD *)this + 9) + 4) = 0;
-        *(_DWORD *)(v9 + *((_DWORD *)this + 9) + 8) = 0;
-        *(_DWORD *)(v9 + *((_DWORD *)this + 9) + 12) = 0;
-        *(_DWORD *)(v9 + *((_DWORD *)this + 9) + 16) = a3;
-        *(_WORD *)(v9 + *((_DWORD *)this + 9) + 32) = v12;
-        qmemcpy(*(void **)(36 * v7 + *((_DWORD *)this + 9) + 20), a2, a3);
-        if ( a4 && v11 > 0 && v11 <= *((_DWORD *)this + 4) )
+        *(_DWORD *)(this->q009 + v9) = *(_DWORD *)(this->q009 + 36 * v7) | 1;
+        *(_DWORD *)(36 * v7 + this->q009) &= ~2u;
+        *(_DWORD *)(36 * v7 + this->q009) &= ~4u;
+        *(_DWORD *)(v9 + this->q009 + 4) = 0;
+        *(_DWORD *)(v9 + this->q009 + 8) = 0;
+        *(_DWORD *)(v9 + this->q009 + 12) = 0;
+        *(_DWORD *)(v9 + this->q009 + 16) = a3;
+        *(_WORD *)(v9 + this->q009 + 32) = v12;
+        qmemcpy(*(void **)(36 * v7 + this->q009 + 20), a2, a3);
+        if ( a4 && v11 > 0 && v11 <= this->PlayerIndex )
         {
-          qmemcpy(*(void **)(v9 + *((_DWORD *)this + 9) + 28), (const void *)a4, v11);
-          *(_DWORD *)(v9 + *((_DWORD *)this + 9) + 24) = v11;
+          qmemcpy(*(void **)(v9 + this->q009 + 28), (const void *)a4, v11);
+          *(_DWORD *)(v9 + this->q009 + 24) = v11;
         }
         else
         {
-          *(_DWORD *)(v9 + *((_DWORD *)this + 9) + 24) = 0;
+          *(_DWORD *)(v9 + this->q009 + 24) = 0;
         }
-        *(_DWORD *)(*((_DWORD *)this + 12) + 4 * *((_DWORD *)this + 10)) = v7;
-        v10 = *((_DWORD *)this + 10) + 1;
-        ++*((_DWORD *)this + 11);
-        *((_DWORD *)this + 10) = v10;
+        *(_DWORD *)(this->LastPacketTime + 4 * this->q028) = v7;
+        v10 = this->q028 + 1;
+        ++this->q02C;
+        this->q028 = v10;
       }
     }
   }
@@ -282,7 +282,7 @@ int __thiscall ConnectionClass::_vt08(_DWORD *this)
   int v5; // eax
 
   v2 = 0;
-  v3 = (_DWORD *)*(this + 1);
+  v3 = (_DWORD *)this->PlayerIndex;
   if ( (int)v3[14] > 0 )
   {
     do
@@ -291,10 +291,10 @@ int __thiscall ConnectionClass::_vt08(_DWORD *this)
       if ( (*(_BYTE *)TileType & 2) != 0 )
       {
         v5 = *(_DWORD *)(TileType + 12);
-        if ( *(_BYTE *)(v5 + 2) == 1 || *(_DWORD *)(v5 + 4) < *(this + 17) )
-          PacketQueue::ReleaseEntry((_DWORD *)*(this + 1), 0, 0, v2--, 0, 0);
+        if ( *(_BYTE *)(v5 + 2) == 1 || *(_DWORD *)(v5 + 4) < this->q011 )
+          PacketQueue::ReleaseEntry((_DWORD *)this->PlayerIndex, 0, 0, v2--, 0, 0);
       }
-      v3 = (_DWORD *)*(this + 1);
+      v3 = (_DWORD *)this->PlayerIndex;
       ++v2;
     }
     while ( v2 < v3[14] );

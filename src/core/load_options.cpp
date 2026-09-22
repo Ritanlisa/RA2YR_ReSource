@@ -104,9 +104,9 @@ void __thiscall LoadOptions_Cleanup(_DWORD *this)
   void *v5; // eax
 
   v2 = 0;
-  for ( *this = &LoadOptionsClass::`vftable'; v2 < *(this + 12); ++v2 )
-    __3_YAXPAX_Z(*(void **)(*(this + 9) + 4 * v2));
-  v3 = *(this + 8);
+  for ( *this = &LoadOptionsClass::`vftable'; v2 < this->capacity; ++v2 )
+    __3_YAXPAX_Z(*(void **)(this->q009 + 4 * v2));
+  v3 = this->is_active;
   v4 = this + 8;
   (*(void (__thiscall **)(_DWORD *))(v3 + 12))(v4);
   v5 = (void *)v4[1];
@@ -190,8 +190,8 @@ int LoadOptions::Run() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __thiscall LoadOptions::Run(const char **this)
 {
-  *(this + 1) = (const char *)1; /*0x5587f0*/
-  *(this + 3) = 0; /*0x5587f7*/
+  this->Items = (const char *)1; /*0x5587f0*/
+  this->q00C = 0; /*0x5587f7*/
   return SaveLoadDialog::DlgProc(this);
 }
 }
@@ -382,30 +382,30 @@ char __thiscall LoadOptions::CopyItems(void *this, int a2, _DWORD *a3)
 
   if ( a2 )
   {
-    *((_BYTE *)this + 12) = 0;
+    this->q00C = 0;
     if ( a3 )
       v4 = a3;
     else
       v4 = (_DWORD *)__2_YAPAXI_Z(4 * a2);
-    *((_BYTE *)this + 12) = 1;
+    this->q00C = 1;
     if ( v4 )
     {
-      if ( *((_DWORD *)this + 1) )
+      if ( this->Items )
       {
-        v6 = *((_DWORD *)this + 2);
+        v6 = this->Capacity;
         if ( a2 < v6 )
           v6 = a2;
-        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) )
+        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) )
           ++i;
-        if ( *((_BYTE *)this + 13) )
+        if ( this->IsAllocated )
         {
           __3_YAXPAX_Z(*((void **)this + 1));
-          *((_DWORD *)this + 1) = 0;
+          this->Items = 0;
         }
       }
-      *((_DWORD *)this + 1) = v4;
-      *((_DWORD *)this + 2) = a2;
-      *((_BYTE *)this + 13) = a3 == 0;
+      this->Items = v4;
+      this->Capacity = a2;
+      this->IsAllocated = a3 == 0;
       return 1;
     }
     else
@@ -415,7 +415,7 @@ char __thiscall LoadOptions::CopyItems(void *this, int a2, _DWORD *a3)
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this);
+    (*(void (__thiscall **)(void *))(this->q00C)(this);
     return 1;
   }
 }

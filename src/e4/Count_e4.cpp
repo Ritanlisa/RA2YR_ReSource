@@ -12,10 +12,10 @@ int __thiscall Audio_DecrementRefCounts(_DWORD *this)
   int result; // eax
   int v3; // edx
 
-  v1 = *(this + 7) - 1; /*0x408e73*/
-  *(this + 7) = v1; /*0x408e76*/
+  v1 = this->q01C - 1; /*0x408e73*/
+  this->q01C = v1; /*0x408e76*/
   if ( v1 < 0 ) /*0x408e79*/
-    *(this + 7) = 0; /*0x408e7b*/
+    this->q01C = 0; /*0x408e7b*/
   result = *this; /*0x408e82*/
   v3 = *(_DWORD *)(*this + 152) - 1; /*0x408e8a*/
   *(_DWORD *)(*this + 152) = v3; /*0x408e8d*/
@@ -120,7 +120,7 @@ int __thiscall Queue_GetCount(_DWORD *this)
 {
   int v1; // eax
 
-  v1 = *(this + 14); /*0x5f1ea0*/
+  v1 = this->q038; /*0x5f1ea0*/
   if ( v1 ) /*0x5f1ea5*/
     return *(_DWORD *)(*(_DWORD *)(v1 + 4) + 40); /*0x5f1eaa*/
   else
@@ -134,7 +134,7 @@ int Count::Get()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall Count_Get(_DWORD *this)
 {
-  return *(this + 1); /*0x76f083*/
+  return this->q004; /*0x76f083*/
 }
 }
 
@@ -144,7 +144,7 @@ unsigned int * Count::Release()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall Count::_vt02(_DWORD *this)
 {
-  ++*(this + 2); /*0x76f162*/
+  ++this->q008; /*0x76f162*/
   return this; /*0x76f165*/
 }
 }
@@ -155,7 +155,7 @@ unsigned int * Count::ddtor()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall Count::_vt03(_DWORD *this)
 {
-  --*(this + 2); /*0x76f172*/
+  --this->q008; /*0x76f172*/
   return this; /*0x76f175*/
 }
 }

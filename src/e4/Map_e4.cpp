@@ -1601,10 +1601,10 @@ char __thiscall Map_WorldDominationTour_20_::_vt02(_BYTE *this, int a2, _DWORD *
   v3 = a2; /*0x769e33*/
   if ( !a2 ) /*0x769e3d*/
   {
-    (*(void (__thiscall **)(_BYTE *))(*(_DWORD *)this + 12))(this); /*0x769f3d*/
+    (*(void (__thiscall **)(_BYTE *))(this->q00C)(this); /*0x769f3d*/
     return 1; /*0x769f43*/
   }
-  *(this + 12) = 0; /*0x769e47*/
+  this->q00C = 0; /*0x769e47*/
   if ( a3 ) /*0x769e4d*/
   {
     *a3 = a2; /*0x769e93*/
@@ -1650,7 +1650,7 @@ char __thiscall Map_WorldDominationTour_20_::_vt02(_BYTE *this, int a2, _DWORD *
   }
   v8 = v6; /*0x769ebd*/
 LABEL_14:
-  *(this + 12) = 1; /*0x769ebf*/
+  this->q00C = 1; /*0x769ebf*/
   if ( !v8 ) /*0x769ec5*/
     return 0; /*0x769eca*/
   if ( this->Map_WorldDominationTour_20_field_0x4 ) /*0x769ed1*/
@@ -1659,7 +1659,7 @@ LABEL_14:
       v3 = this->Map_WorldDominationTour_20_field_0x8; /*0x769edf*/
     for ( i = 0; i < v3; ++i ) /*0x769ee5*/
       ComPtr::Set(&v8[2 * i], *(_DWORD *)(this->Map_WorldDominationTour_20_field_0x4 + 8 * i + 4)); /*0x769ef2*/
-    if ( *(this + 13) ) /*0x769efc*/
+    if ( this->IsAllocated ) /*0x769efc*/
     {
       v12 = (void (__thiscall ***)(_DWORD, int))this->Map_WorldDominationTour_20_field_0x4; /*0x769f03*/
       if ( v12 ) /*0x769f08*/
@@ -1670,7 +1670,7 @@ LABEL_14:
   }
   this->Map_WorldDominationTour_20_field_0x4 = v8; /*0x769f26*/
   this->Map_WorldDominationTour_20_field_0x8 = v3; /*0x769f29*/
-  *(this + 13) = a3 == 0; /*0x769f2c*/
+  this->IsAllocated = a3 == 0; /*0x769f2c*/
   return 1; /*0x769ec7*/
 }
 }
@@ -1746,7 +1746,7 @@ char __thiscall Map_WorldDominationTour_43_::_vt02(void *this, int a2, char *a3)
   if ( a2 ) /*0x76a3fe*/
   {
     v5 = a3; /*0x76a404*/
-    *((_BYTE *)this + 12) = 0; /*0x76a408*/
+    this->q00C = 0; /*0x76a408*/
     if ( a3 ) /*0x76a40d*/
     {
       if ( a2 - 1 >= 0 ) /*0x76a449*/
@@ -1790,7 +1790,7 @@ char __thiscall Map_WorldDominationTour_43_::_vt02(void *this, int a2, char *a3)
         v5 = 0; /*0x76a440*/
       }
     }
-    *((_BYTE *)this + 12) = 1; /*0x76a45f*/
+    this->q00C = 1; /*0x76a45f*/
     if ( v5 ) /*0x76a463*/
     {
       if ( this->Map_WorldDominationTour_43_field_0x4 ) /*0x76a46e*/
@@ -1814,7 +1814,7 @@ char __thiscall Map_WorldDominationTour_43_::_vt02(void *this, int a2, char *a3)
           while ( v12 ); /*0x76a4a0*/
           v3 = a2; /*0x76a4a2*/
         }
-        if ( *((_BYTE *)this + 13) ) /*0x76a4a8*/
+        if ( this->IsAllocated ) /*0x76a4a8*/
         {
           __3_YAXPAX_Z(*((void **)this + 1)); /*0x76a4b1*/
           this->Map_WorldDominationTour_43_field_0x4 = 0; /*0x76a4b9*/
@@ -1822,7 +1822,7 @@ char __thiscall Map_WorldDominationTour_43_::_vt02(void *this, int a2, char *a3)
       }
       this->Map_WorldDominationTour_43_field_0x4 = v5; /*0x76a4c4*/
       this->Map_WorldDominationTour_43_field_0x8 = v3; /*0x76a4ca*/
-      *((_BYTE *)this + 13) = a3 == 0; /*0x76a4cd*/
+      this->IsAllocated = a3 == 0; /*0x76a4cd*/
       return 1; /*0x76a4d3*/
     }
     else
@@ -1832,7 +1832,7 @@ char __thiscall Map_WorldDominationTour_43_::_vt02(void *this, int a2, char *a3)
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x76a4dd*/
+    (*(void (__thiscall **)(void *))(this->q00C)(this); /*0x76a4dd*/
     return 1; /*0x76a4e3*/
   }
 }
@@ -2577,7 +2577,7 @@ int Map_WorldDominationTour_28::Seek(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall Map_WorldDominationTour_28_::_vt06(_DWORD *this, int a2)
 {
-  return *(_DWORD *)(*(this + 1) + 4 * a2); /*0x769d2a*/
+  return *(_DWORD *)(this->q004 + 4 * a2); /*0x769d2a*/
 }
 }
 } // namespace gamemd
@@ -2591,7 +2591,7 @@ _DWORD *__thiscall Map_WorldDominationTour_43_::_vt06(_DWORD *this, _DWORD *a2, 
 {
   _DWORD *v3; // edx
 
-  v3 = (_DWORD *)(*(this + 1) + 12 * a3); /*0x769d3b*/
+  v3 = (_DWORD *)(this->q004 + 12 * a3); /*0x769d3b*/
   *a2 = *v3; /*0x769d46*/
   a2[1] = v3[1]; /*0x769d4b*/
   a2[2] = v3[2]; /*0x769d52*/

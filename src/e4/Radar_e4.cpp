@@ -18,7 +18,7 @@ int __thiscall sub_431090(_DWORD *this, int a2, int a3, int a4)
   int v10; // [esp+18h] [ebp-18h]
   _DWORD *v11; // [esp+1Ch] [ebp-14h]
 
-  if ( *(this + 24) ) /*0x431099*/
+  if ( this->q060 ) /*0x431099*/
   {
     v4 = (_DWORD **)this; /*0x4310ab*/
     v10 = 0; /*0x4310ad*/
@@ -156,7 +156,7 @@ bool __thiscall sub_5090F0(unsigned int *this)
   unsigned int v1; // eax
   int v2; // eax
 
-  v1 = *(this + 131); /*0x5090f0*/
+  v1 = this->q20C; /*0x5090f0*/
   if ( v1 >= 0xC ) /*0x5090f8*/
     return 0; /*0x50912a*/
   v2 = *(this + v1 + 132); /*0x5090ff*/
@@ -1303,7 +1303,7 @@ int *__thiscall sub_58ABD0(int *this, int *a2)
   {
     (*(void (__thiscall **)(int *))(*this + 12))(this); /*0x58abe0*/
     v3 = a2[2]; /*0x58abe3*/
-    *(this + 2) = v3; /*0x58abea*/
+    this->__pad_002 = v3; /*0x58abea*/
     if ( v3 ) /*0x58abed*/
     {
       v4 = (char *)__2_YAPAXI_Z(8 * v3); /*0x58abf7*/
@@ -1327,34 +1327,34 @@ int *__thiscall sub_58ABD0(int *this, int *a2)
       {
         v4 = 0; /*0x58ac1a*/
       }
-      *(this + 1) = (int)v4; /*0x58ac1e*/
+      this->q004 = (int)v4; /*0x58ac1e*/
       if ( v4 ) /*0x58ac21*/
       {
-        v7 = *(this + 2); /*0x58ac23*/
+        v7 = this->__pad_002; /*0x58ac23*/
         v8 = 0; /*0x58ac26*/
-        *((_BYTE *)this + 13) = 1; /*0x58ac2a*/
+        this->q034 = 1; /*0x58ac2a*/
         if ( v7 > 0 ) /*0x58ac2e*/
         {
           do /*0x58ac4a*/
           {
             v9 = a2[1]; /*0x58ac30*/
-            v10 = *(this + 1); /*0x58ac33*/
+            v10 = this->q004; /*0x58ac33*/
             *(_DWORD *)(v10 + 8 * v8) = *(_DWORD *)(v9 + 8 * v8); /*0x58ac39*/
             *(_DWORD *)(v10 + 8 * v8 + 4) = *(_DWORD *)(v9 + 8 * v8 + 4); /*0x58ac40*/
             ++v8; /*0x58ac47*/
           }
-          while ( v8 < *(this + 2) ); /*0x58ac4a*/
+          while ( v8 < this->__pad_002 ); /*0x58ac4a*/
         }
       }
     }
     else
     {
-      *(this + 1) = 0; /*0x58ac4e*/
-      *((_BYTE *)this + 13) = 0; /*0x58ac51*/
+      this->q004 = 0; /*0x58ac4e*/
+      this->q034 = 0; /*0x58ac51*/
     }
   }
-  *(this + 4) = a2[4]; /*0x58ac58*/
-  *(this + 5) = a2[5]; /*0x58ac5e*/
+  this->q004 = a2[4]; /*0x58ac58*/
+  this->q014 = a2[5]; /*0x58ac5e*/
   return this; /*0x58ac57*/
 }
 }
@@ -1367,7 +1367,7 @@ int Radar::PixelIndex()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall Radar_PixelIndex(_DWORD *this)
 {
-  return *(this + 1) + 251 * *(this + 2); /*0x6558c4*/
+  return this->q004 + 251 * this->q008; /*0x6558c4*/
 }
 }
 } // namespace gamemd

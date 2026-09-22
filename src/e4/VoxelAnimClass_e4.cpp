@@ -93,7 +93,7 @@ int __thiscall VoxelAnimClass::CleanupMembers(#374 *this)
   *(_DWORD *)this = &VoxelAnimClass::`vftable'; /*0x7499f6*/
   this->VoxelAnimClass_field_0x4 = &VoxelAnimClass::`vftable'; /*0x7499fc*/
   this->VoxelAnimClass_field_0x8 = &VoxelAnimClass::`vftable'; /*0x749a03*/
-  *((_DWORD *)this + 3) = &vt_VoxelAnimClass; /*0x749a0a*/
+  this->vtable4 = &vt_VoxelAnimClass; /*0x749a0a*/
   AbstractClass::AnnounceExpiredPointer((void **)this, 1); /*0x749a11*/
   v6 = (VoxelAnimClass *)this; /*0x749a26*/
   v2 = (*(int (__thiscall **)(int *, VoxelAnimClass **))(MEMORY[0x887388] + 16))(&MEMORY[0x887388], &v6); /*0x749a2a*/
@@ -179,20 +179,20 @@ char __thiscall VoxelAnimClass::_vt69(int *this, int *a2, _DWORD *a3)
   float v39[12]; // [esp+80h] [ebp-30h] BYREF
 
   if ( (*(_DWORD *)MEMORY[0xA8B230] & 0x1000) == 0 /*0x749bb6*/
-    || (v25 = *(this + 39), v26 = *(this + 40), v27 = *(this + 41), LOBYTE(v4) = Game::Stub3((int)&v25), !(_BYTE)v4) )
+    || (v25 = this->q027, v26 = this->q028, v27 = this->q029, LOBYTE(v4) = Game::Stub3((int)&v25), !(_BYTE)v4) )
   {
     v5 = a2[1]; /*0x749bcb*/
     v34 = *a2; /*0x749bd0*/
     v35 = v5; /*0x749bd4*/
-    v30 = *(this + 39); /*0x749bda*/
-    v31 = *(this + 40); /*0x749beb*/
-    GroundHeight = *(this + 41); /*0x749bf2*/
+    v30 = this->q027; /*0x749bda*/
+    v31 = this->q028; /*0x749beb*/
+    GroundHeight = this->q029; /*0x749bf2*/
     GroundHeight = Cell::GetGroundHeight(&v30); /*0x749c05*/
     if ( (*((_DWORD *)Coord::To_Cell(&MEMORY[0x87F7E8], &v30) + 80) & 0x100) == 0 ) /*0x749c1b*/
       goto LABEL_6; /*0x749c1b*/
-    v25 = *(this + 39); /*0x749c1f*/
-    v26 = *(this + 40); /*0x749c26*/
-    if ( *(this + 41) >= MEMORY[0xB1D1BC] + GroundHeight ) /*0x749c38*/
+    v25 = this->q027; /*0x749c1f*/
+    v26 = this->q028; /*0x749c26*/
+    if ( this->q029 >= MEMORY[0xB1D1BC] + GroundHeight ) /*0x749c38*/
     {
       v33 = MEMORY[0xB1D1BC] + GroundHeight; /*0x749c3e*/
       v27 = MEMORY[0xB1D1BC] + GroundHeight + 1; /*0x749c4a*/
@@ -206,10 +206,10 @@ LABEL_6:
       v33 = GroundHeight; /*0x749c62*/
       Coord::To_Screen(MEMORY[0x887324], &v30, v36); /*0x749c76*/
     }
-    LOBYTE(v4) = *((_BYTE *)this + 316); /*0x749c7b*/
+    LOBYTE(v4) = this->q13C; /*0x749c7b*/
     if ( !(_BYTE)v4 ) /*0x749c83*/
     {
-      v4 = *(this + 65); /*0x749c89*/
+      v4 = this->q104; /*0x749c89*/
       v6 = *(_DWORD **)(v4 + 176); /*0x749c8f*/
       if ( v6 ) /*0x749c97*/
       {
@@ -217,7 +217,7 @@ LABEL_6:
         Viewport::Clear(); /*0x749cbe*/
         globalHelper_053F90( /*0x749ce8*/
           v6,
-          *(_DWORD *)(*(this + 65) + 664),
+          *(_DWORD *)(this->q104 + 664),
           0,
           MEMORY[0x887430],
           v38,
@@ -236,24 +236,24 @@ LABEL_6:
         globalHelper_053C80(v6, 0, 0, v38, (float *)&MEMORY[0x887470]); /*0x749da3*/
         Viewport::Clear(); /*0x749da8*/
         v8 = MultiplyMatrix3x4(v39, MEMORY[0x887430], v38); /*0x749dbe*/
-        TransformVoxelVertex(v6, *(_DWORD *)(*(this + 65) + 664), 0, v8); /*0x749dd4*/
+        TransformVoxelVertex(v6, *(_DWORD *)(this->q104 + 664), 0, v8); /*0x749dd4*/
         InitializeAudioOcclusion(v37, &v29, &v28); /*0x749de6*/
         v9 = 10240; /*0x749df1*/
-        if ( *(_BYTE *)(*(this + 65) + 661) ) /*0x749df6*/
+        if ( *(_BYTE *)(this->q104 + 661) ) /*0x749df6*/
           v9 = 10244; /*0x749e00*/
-        v10 = *(this + 41); /*0x749e0b*/
-        v11 = *(this + 40); /*0x749e11*/
-        v25 = *(this + 39); /*0x749e17*/
+        v10 = this->q029; /*0x749e0b*/
+        v11 = this->q028; /*0x749e11*/
+        v25 = this->q027; /*0x749e17*/
         v27 = v10; /*0x749e1f*/
         v26 = v11; /*0x749e29*/
         v12 = (__int16 *)Coord::To_Cell(&MEMORY[0x87F7E8], &v25); /*0x749e2d*/
-        v13 = *(this + 67); /*0x749e32*/
+        v13 = this->q043; /*0x749e32*/
         v14 = v12[133]; /*0x749e38*/
         if ( v13 ) /*0x749e41*/
         {
           v15 = *(_DWORD **)(*((_DWORD *)MEMORY[0xB054D4] + *(_DWORD *)(v13 + 90196)) + 780); /*0x749e52*/
         }
-        else if ( *(_BYTE *)(*(this + 65) + 768) ) /*0x749e60*/
+        else if ( *(_BYTE *)(this->q104 + 768) ) /*0x749e60*/
         {
           v15 = (_DWORD *)MEMORY[0x87F6BC]; /*0x749e6a*/
         }
@@ -367,7 +367,7 @@ int VoxelAnimClass::LoadFrame()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall VoxelAnimClass::_vt34(_DWORD *this)
 {
-  return *(this + 65); /*0x74ab36*/
+  return this->q104; /*0x74ab36*/
 }
 }
 } // namespace gamemd

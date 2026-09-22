@@ -754,7 +754,7 @@ int sub_633AB0()
 // doubtful name
 char __thiscall sub_633AB0(_BYTE *this)
 {
-  return *(this + 12); /*0x633ab3*/
+  return this->vtable4; /*0x633ab3*/
 }
 }
 } // namespace gamemd

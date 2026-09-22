@@ -50,9 +50,9 @@ Iostream_init *__thiscall BombClass::GetCurrentFrame(_DWORD *this)
 {
   int v2; // ecx
 
-  if ( *(this + 12) == 1 ) /*0x438a04*/
+  if ( this->audioController == 1 ) /*0x438a04*/
     return (Iostream_init *)12; /*0x438a06*/
-  v2 = 2 * (((int)MEMORY[0xA8ED84] - *(this + 13)) / (MEMORY[0x8871E0]->?[1] / 6)); /*0x438a4c*/
+  v2 = 2 * (((int)MEMORY[0xA8ED84] - this->q034) / (MEMORY[0x8871E0]->?[1] / 6)); /*0x438a4c*/
   if ( (int)MEMORY[0xA8ED84] % (2 * MEMORY[0x8871E0]->?[3]) >= MEMORY[0x8871E0]->?[3] ) /*0x438a53*/
     ++v2; /*0x438a55*/
   if ( v2 < 12 ) /*0x438a59*/

@@ -14,16 +14,16 @@ IsometricTileClass *__thiscall IsometricTileClass::IsometricTileClass(
   int v4; // eax
 
   ObjectClass::ctor(this); /*0x543786*/
-  *(this + 43) = *(IsometricTileClass *)(*(_DWORD *)&HouseClass_Player.__pad_5568[23160] + 4 * (_DWORD)aP1); /*0x54379c*/
+  this->q02B = *(IsometricTileClass *)(*(_DWORD *)&HouseClass_Player.__pad_5568[23160] + 4 * (_DWORD)aP1); /*0x54379c*/
   *this = (IsometricTileClass)&IsometricTileClass::`vftable'; /*0x5437a2*/
-  *((_DWORD *)this + 1) = &IsometricTileClass::`vftable'; /*0x5437a8*/
-  *((_DWORD *)this + 2) = &IsometricTileClass::`vftable'; /*0x5437af*/
-  *((_DWORD *)this + 3) = &vt_IsometricTileClass; /*0x5437b6*/
+  this->vtable2 = &IsometricTileClass::`vftable'; /*0x5437a8*/
+  this->vtable3 = &IsometricTileClass::`vftable'; /*0x5437af*/
+  this->vtable4 = &vt_IsometricTileClass; /*0x5437b6*/
   if ( *(_WORD *)aP2->__tail_0 != unk_AA06D0 || *(_WORD *)&aP2->__tail_0[2] != unk_AA06D2 ) /*0x5437d4*/
   {
-    *((_BYTE *)this + 129) = 0; /*0x543805*/
+    this->q081 = 0; /*0x543805*/
     ObjectClass::SetPosition((#374 *)this); /*0x54380c*/
-    (*(void (__thiscall **)(IsometricTileClass *, int))(*(_DWORD *)this + 292))(this, 1); /*0x543818*/
+    (*(void (__thiscall **)(IsometricTileClass *, int))(this->q124)(this, 1); /*0x543818*/
   }
   if ( *(int *)&stru_87C374.__pad_14B0[7996] < *(int *)&stru_87C374.__pad_14B0[7988] /*0x543855*/
     || (stru_87C374.__pad_14B0[7993] || !*(_DWORD *)&stru_87C374.__pad_14B0[7988])

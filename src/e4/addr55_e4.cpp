@@ -26,8 +26,8 @@ void __thiscall sub_550080(ObjectClass **this)
   int v7; // eax
   _DWORD v8[4]; // [esp+4h] [ebp-10h] BYREF
 
-  v2 = (int)*(this + 2); /*0x550086*/
-  v3 = (int)*(this + 4); /*0x550089*/
+  v2 = (int)this->vtable3; /*0x550086*/
+  v3 = (int)this->vtable2; /*0x550089*/
   if ( v2 == -1 ) /*0x55008f*/
   {
 LABEL_4:
@@ -41,24 +41,24 @@ LABEL_4:
     goto LABEL_4; /*0x55009d*/
   }
 LABEL_5:
-  v4 = (int)*(this + 5); /*0x5500a3*/
+  v4 = (int)this->abstractFlags; /*0x5500a3*/
   if ( v4 ) /*0x5500a8*/
   {
-    v5 = (ObjectClass *)((char *)*this + (_DWORD)*(this + 6)); /*0x5500af*/
-    *((_BYTE *)this + 4) = 1; /*0x5500b1*/
+    v5 = (ObjectClass *)((char *)*this + (_DWORD)this->nextArrayIndex); /*0x5500af*/
+    this->vtable2 = 1; /*0x5500b1*/
     *this = v5; /*0x5500b5*/
     v6 = v8[2]; /*0x5500bd*/
-    *(this + 2) = (ObjectClass *)MEMORY[0xA8ED84]; /*0x5500c1*/
-    *(this + 3) = (ObjectClass *)v6; /*0x5500c4*/
-    *(this + 4) = (ObjectClass *)v4; /*0x5500c7*/
+    this->vtable3 = (ObjectClass *)MEMORY[0xA8ED84]; /*0x5500c1*/
+    this->vtable4 = (ObjectClass *)v6; /*0x5500c4*/
+    this->vtable2 = (ObjectClass *)v4; /*0x5500c7*/
     goto LABEL_8; /*0x5500ca*/
   }
 LABEL_7:
-  *((_BYTE *)this + 4) = 0; /*0x5500cc*/
+  this->vtable2 = 0; /*0x5500cc*/
 LABEL_8:
   if ( (unsigned char)this->customSound_controller ) /*0x5500d0*/
-    *((_BYTE *)this + 81) = *((_BYTE *)this + 81) == 0; /*0x5500df*/
-  if ( (int)*this >= (int)*(this + 19) && this ) /*0x5500ed*/
+    this->q144 = this->q144 == 0; /*0x5500df*/
+  if ( (int)*this >= (int)this->q04C && this ) /*0x5500ed*/
   {
     v8[0] = this; /*0x5500fe*/
     v7 = (*(int (__thiscall **)(int *, _DWORD *))(dword_ABC878 + 16))(&dword_ABC878, v8); /*0x550102*/
@@ -1314,7 +1314,7 @@ char __thiscall CheckListClass::vt_19_(_DWORD *this, char a2, int a3, _DWORD *a4
   if ( a4 == this + 70 ) /*0x557b4f*/
   {
     v6 = *this; /*0x557b53*/
-    v7 = (*(int (__thiscall **)(_DWORD *))(*(this + 70) + 144))(this + 70); /*0x557b55*/
+    v7 = (*(int (__thiscall **)(_DWORD *))(this->q118 + 144))(this + 70); /*0x557b55*/
     return (*(int (__thiscall **)(_DWORD *, int))(v6 + 192))(this, v7); /*0x557b5e*/
   }
   return result; /*0x557b64*/

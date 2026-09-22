@@ -1057,35 +1057,35 @@ char __thiscall DSurface_Unlock(int *this)
 
   if ( MEMORY[0x89F978] || MEMORY[0xA8ED80] )
   {
-    v2 = *(this + 7);
+    v2 = this->q01C;
     if ( v2 )
     {
-      if ( (*(int (__stdcall **)(_DWORD))(*(_DWORD *)v2 + 96))(*(this + 7)) == -2005532222
-        && !(*(int (__stdcall **)(_DWORD))(*(_DWORD *)*(this + 7) + 108))(*(this + 7))
-        && !(*(int (__stdcall **)(_DWORD))(*(_DWORD *)*(this + 7) + 96))(*(this + 7)) )
+      if ( (*(int (__stdcall **)(_DWORD))(*(_DWORD *)v2 + 96))(this->q01C) == -2005532222
+        && !(*(int (__stdcall **)(_DWORD))(*(_DWORD *)this->q01C + 108))(this->q01C)
+        && !(*(int (__stdcall **)(_DWORD))(*(_DWORD *)this->q01C + 96))(this->q01C) )
       {
-        v3 = *(this + 3);
+        v3 = this->q00C;
         if ( v3 > 0 )
         {
           v4 = *this;
-          *(this + 3) = 0;
+          this->q00C = 0;
           (*(void (__thiscall **)(int *, _DWORD, _DWORD))(v4 + 92))(this, 0, 0);
-          ++*(this + 3);
+          ++this->q00C;
           (*(void (__thiscall **)(int *))(*this + 96))(this);
-          *(this + 3) = v3;
+          this->q00C = v3;
         }
       }
     }
   }
-  v5 = *(this + 3);
+  v5 = this->q00C;
   if ( v5 <= 0 )
     return 0;
   v6 = v5 - 1;
-  *(this + 3) = v6;
+  this->q00C = v6;
   if ( !v6 )
   {
-    (*(void (__stdcall **)(_DWORD, _DWORD))(*(_DWORD *)*(this + 7) + 128))(*(this + 7), *(this + 5));
-    *(this + 5) = 0;
+    (*(void (__stdcall **)(_DWORD, _DWORD))(*(_DWORD *)this->q01C + 128))(this->q01C, this->q014);
+    this->q014 = 0;
   }
   return 1;
 }
@@ -1184,14 +1184,14 @@ char __thiscall DSurface_CanLock(_DWORD *this, int a2, int a3)
   int v4; // eax
   _DWORD v6[27]; // [esp+4h] [ebp-6Ch] BYREF
 
-  if ( !*(this + 3) )
+  if ( !this->q00C )
   {
     memset(v6, 0, sizeof(v6));
-    v4 = *(this + 7);
+    v4 = this->q01C;
     v6[0] = 108;
     if ( (*(int (__stdcall **)(int, _DWORD, _DWORD *, _DWORD, _DWORD))(*(_DWORD *)v4 + 100))(v4, 0, v6, 0, 0) )
       return 0;
-    (*(void (__stdcall **)(_DWORD, _DWORD))(*(_DWORD *)*(this + 7) + 128))(*(this + 7), v6[9]);
+    (*(void (__stdcall **)(_DWORD, _DWORD))(*(_DWORD *)this->q01C + 128))(this->q01C, v6[9]);
   }
   return 1;
 }

@@ -227,7 +227,7 @@ int __thiscall BuildingClass::AssignDestination_SyncLog(#377 *this)
 
   if ( this->currentMission != 19 ) /*0x455d5a*/
   {
-    if ( (*(unsigned __int8 (__thiscall **)(#377 *))(*(_DWORD *)this + 644))(this) /*0x455d73*/
+    if ( (*(unsigned __int8 (__thiscall **)(#377 *))(this->q284)(this) /*0x455d73*/
       || *(_BYTE *)(this->Type + 5817) )
     {
       TechnoClass::SetFocus(this, aP1); /*0x455d80*/
@@ -400,8 +400,8 @@ char __thiscall BuildingClass_AnimController(int *this)
   int v11; // edx
   _DWORD v12[4]; // [esp+Ch] [ebp-10h] BYREF
 
-  Value = ProgressTimer::GetValue((_WORD *)(*(this + 10) + 904), v12); /*0x629736*/
-  v3 = *(this + 18); /*0x62973b*/
+  Value = ProgressTimer::GetValue((_WORD *)(this->owningHouseIndex + 904), v12); /*0x629736*/
+  v3 = this->q012; /*0x62973b*/
   v4 = *Value; /*0x62973e*/
   if ( v3 < 0 ) /*0x629742*/
     goto LABEL_6; /*0x629742*/
@@ -418,16 +418,16 @@ LABEL_6:
     v5 = 160; /*0x62975e*/
   v6 = 4; /*0x629763*/
 LABEL_8:
-  v7 = *(this + 20) + 1; /*0x629768*/
-  *(this + 20) = v7; /*0x62976e*/
+  v7 = this->abstractFlags + 1; /*0x629768*/
+  this->abstractFlags = v7; /*0x62976e*/
   if ( v7 >= v6 ) /*0x629773*/
   {
-    v8 = *(this + 19); /*0x629775*/
-    *(this + 20) = 0; /*0x629778*/
-    *(this + 19) = ++v8; /*0x629782*/
+    v8 = this->q04C; /*0x629775*/
+    this->abstractFlags = 0; /*0x629778*/
+    this->q04C = ++v8; /*0x629782*/
     if ( v8 >= 10 ) /*0x629788*/
       return 1; /*0x629792*/
-    v10 = (_DWORD *)*(this + 17); /*0x629793*/
+    v10 = (_DWORD *)this->q011; /*0x629793*/
     if ( v10 ) /*0x629798*/
     {
       v10[45] = MEMORY[0xA8ED84]; /*0x6297af*/
@@ -435,7 +435,7 @@ LABEL_8:
       v10[48] = 128; /*0x6297b7*/
       v10[46] = v11; /*0x6297bf*/
       v10[47] = 128; /*0x6297c5*/
-      *(_DWORD *)(*(this + 17) + 172) = v5 + *(this + 19) + 10 * ((((v4 >> 12) + 1) >> 1) & 7); /*0x6297d7*/
+      *(_DWORD *)(this->q011 + 172) = v5 + this->q04C + 10 * ((((v4 >> 12) + 1) >> 1) & 7); /*0x6297d7*/
     }
   }
   return 0; /*0x62978a*/
@@ -589,10 +589,10 @@ char __thiscall sub_712130(_DWORD *this)
   int v2; // ecx
   char result; // al
 
-  v1 = *(this + 550); /*0x712130*/
+  v1 = this->q898; /*0x712130*/
   if ( !v1 ) /*0x712138*/
     return 0; /*0x712138*/
-  v2 = *(this + 557); /*0x71213a*/
+  v2 = this->q8B4; /*0x71213a*/
   result = 1; /*0x712140*/
   if ( v1 != v2 && *(int *)(v1 + 156) <= 1 && (!v2 || *(int *)(v2 + 156) <= 1) ) /*0x71215f*/
     return 0; /*0x712161*/

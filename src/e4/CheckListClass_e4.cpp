@@ -98,7 +98,7 @@ int CheckListClass::COMStub()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CheckListClass::_vt37(_DWORD *this)
 {
-  return *(this + 17); /*0x4886b3*/
+  return this->q044; /*0x4886b3*/
 }
 }
 

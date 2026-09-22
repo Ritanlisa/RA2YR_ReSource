@@ -39,7 +39,7 @@ int CaptureManagerClass__vt_06_(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall CaptureManagerClass::vt_06_(_DWORD *this, int a2)
 {
-  return *(_DWORD *)(*(this + 1) + 4 * a2); /*0x472ada*/
+  return *(_DWORD *)(this->Items + 4 * a2); /*0x472ada*/
 }
 }
 } // namespace gamemd

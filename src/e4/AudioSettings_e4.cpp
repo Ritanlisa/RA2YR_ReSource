@@ -20,7 +20,7 @@ void AudioSettings::SetFlag68(char a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall sub_5FA470(_BYTE *this, char a2)
 {
-  *(this + 68) = a2; /*0x5fa474*/
+  this->q044 = a2; /*0x5fa474*/
   byte_A83D20 = a2; /*0x5fa477*/
   Debug::Log(); /*0x5fa493*/
 }

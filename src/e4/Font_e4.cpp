@@ -12,7 +12,7 @@ int __thiscall Font::GetGlyphDataForChar(_DWORD *this, AbstractClass *aP1)
   int result; // eax
   int v4; // edx
 
-  v2 = (AbstractClass *)*(this + 1); /*0x4346c0*/
+  v2 = (AbstractClass *)this->Font_field_04; /*0x4346c0*/
   result = 0; /*0x4346c3*/
   if ( v2 ) /*0x4346c7*/
   {

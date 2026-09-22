@@ -107,7 +107,7 @@ bool __thiscall AITriggerTypeClass::OwnerHouseOwns(_DWORD *this, _DWORD *a2, int
   v9 = 0; /*0x41ee9a*/
   if ( !a2 ) /*0x41ee9f*/
     return v9; /*0x41efcb*/
-  v4 = *(this + 54); /*0x41eea6*/
+  v4 = this->q036; /*0x41eea6*/
   if ( v4 ) /*0x41eeae*/
   {
     v5 = (*(int (__thiscall **)(int))(*(_DWORD *)v4 + 64))(v4); /*0x41eec1*/
@@ -136,25 +136,25 @@ LABEL_8:
   {
     v7 = 0; /*0x41ef39*/
   }
-  switch ( *(this + 58) ) /*0x41ef4b*/
+  switch ( this->q0E8 ) /*0x41ef4b*/
   {
     case 0: /*0x41ef4b*/
-      result = v7 < *(this + 57); /*0x41ef60*/
+      result = v7 < this->q0E4; /*0x41ef60*/
       break; /*0x41ef65*/
     case 1: /*0x41ef4b*/
-      result = v7 <= *(this + 57); /*0x41ef76*/
+      result = v7 <= this->q0E4; /*0x41ef76*/
       break; /*0x41ef7b*/
     case 2: /*0x41ef4b*/
-      result = v7 == *(this + 57); /*0x41ef8c*/
+      result = v7 == this->q0E4; /*0x41ef8c*/
       break; /*0x41ef91*/
     case 3: /*0x41ef4b*/
-      result = v7 >= *(this + 57); /*0x41efa2*/
+      result = v7 >= this->q0E4; /*0x41efa2*/
       break; /*0x41efa7*/
     case 4: /*0x41ef4b*/
-      result = v7 > *(this + 57); /*0x41efb8*/
+      result = v7 > this->q0E4; /*0x41efb8*/
       break; /*0x41efbd*/
     case 5: /*0x41ef4b*/
-      return v7 != *(this + 57); /*0x41efc6*/
+      return v7 != this->q0E4; /*0x41efc6*/
     default:
       return v9;
   }
@@ -264,25 +264,25 @@ bool __thiscall AITriggerTypeClass::HouseCredits(_DWORD *this, int a2, int a3)
   if ( !a3 ) /*0x41f23c*/
     return v3; /*0x41f2bd*/
   v5 = (*(int (__stdcall **)(int))(*(_DWORD *)(a3 + 36) + 24))(a3 + 36); /*0x41f245*/
-  switch ( *(this + 58) ) /*0x41f253*/
+  switch ( this->q0E8 ) /*0x41f253*/
   {
     case 0: /*0x41f253*/
-      result = v5 < *(this + 57); /*0x41f266*/
+      result = v5 < this->q0E4; /*0x41f266*/
       break; /*0x41f269*/
     case 1: /*0x41f253*/
-      result = v5 <= *(this + 57); /*0x41f278*/
+      result = v5 <= this->q0E4; /*0x41f278*/
       break; /*0x41f27b*/
     case 2: /*0x41f253*/
-      result = v5 == *(this + 57); /*0x41f28a*/
+      result = v5 == this->q0E4; /*0x41f28a*/
       break; /*0x41f28d*/
     case 3: /*0x41f253*/
-      result = v5 >= *(this + 57); /*0x41f29c*/
+      result = v5 >= this->q0E4; /*0x41f29c*/
       break; /*0x41f29f*/
     case 4: /*0x41f253*/
-      result = v5 > *(this + 57); /*0x41f2ae*/
+      result = v5 > this->q0E4; /*0x41f2ae*/
       break; /*0x41f2b1*/
     case 5: /*0x41f253*/
-      return v5 != *(this + 57); /*0x41f2ba*/
+      return v5 != this->q0E4; /*0x41f2ba*/
     default:
       return v3;
   }

@@ -112,7 +112,7 @@ _DWORD *__thiscall Coord::ToCell(_DWORD *this, IUnknown *aP1)
   int v3; // [esp+0h] [ebp-4h]
 
   LOWORD(v3) = *this / 256; /*0x413a3f*/
-  HIWORD(v3) = *(this + 1) / 256; /*0x413a53*/
+  HIWORD(v3) = this->q004 / 256; /*0x413a53*/
   aP1->field_0 = v3; /*0x413a60*/
   return &aP1->field_0; /*0x413a63*/
 }
@@ -127,8 +127,8 @@ IUnknown * Coord::Subtract(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3)
 IUnknown *__thiscall Coord::Subtract(_DWORD *this, IUnknown *aP1, IUnknown *aP2, IUnknown *aP3)
 {
   *this = aP1; /*0x41c23a*/
-  *(this + 1) = aP2; /*0x41c240*/
-  *(this + 2) = aP3; /*0x41c243*/
+  this->q004 = aP2; /*0x41c240*/
+  this->q008 = aP3; /*0x41c243*/
   return (IUnknown *)this; /*0x41c246*/
 }
 }
@@ -145,8 +145,8 @@ double __thiscall Coord::Length(int *this)
 
   result = Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64( /*0x41c3a4*/
                                          (double)*this * (double)*this
-                                       + (double)*(this + 1) * (double)*(this + 1)
-                                       + (double)*(this + 2) * (double)*(this + 2)));
+                                       + (double)this->q004 * (double)this->q004
+                                       + (double)this->__pad_002 * (double)this->__pad_002));
   Math::RoundToInt(result); /*0x41c3ac*/
   return result; /*0x41c3a9*/
 }
@@ -164,9 +164,9 @@ _DWORD *__thiscall Coord::GetCoords(float *this, int *outCoords)
   int v4; // ebx
   int v5; // eax
 
-  v3 = Math::RoundToInt(*(this + 6)); /*0x4399b0*/
-  v4 = Math::RoundToInt(*(this + 7)); /*0x4399ba*/
-  v5 = Math::RoundToInt(*(this + 8)); /*0x4399bc*/
+  v3 = Math::RoundToInt(this->q006); /*0x4399b0*/
+  v4 = Math::RoundToInt(this->q007); /*0x4399ba*/
+  v5 = Math::RoundToInt(this->q008); /*0x4399bc*/
   *outCoords = v3; /*0x4399c7*/
   outCoords[1] = v4; /*0x4399cb*/
   outCoords[2] = v5; /*0x4399cf*/
@@ -183,8 +183,8 @@ float * Coord::Scale(IUnknown * aP1)
 float *__thiscall Coord::Scale(float *this, IUnknown *aP1)
 {
   *this = *(float *)&aP1 * *this; /*0x43a0d8*/
-  *(this + 1) = *(float *)&aP1 * *(this + 1); /*0x43a0e1*/
-  *(this + 2) = *(float *)&aP1 * *(this + 2); /*0x43a0eb*/
+  this->q004 = *(float *)&aP1 * this->q004; /*0x43a0e1*/
+  this->__pad_002 = *(float *)&aP1 * this->__pad_002; /*0x43a0eb*/
   return this; /*0x43a0ee*/
 }
 }
@@ -204,9 +204,9 @@ void *__thiscall Coord::To_Cell(_DWORD *this, IUnknown *aP1)
 
   v2 = aP1->field_4 / 256; /*0x56574f*/
   v3 = aP1->field_0 / 256 + (v2 << 9); /*0x56575a*/
-  if ( v3 >= 0 && v3 < *(this + 80) ) /*0x565764*/
+  if ( v3 >= 0 && v3 < this->q050 ) /*0x565764*/
   {
-    v4 = *(void **)(*(this + 79) + 4 * v3); /*0x56576c*/
+    v4 = *(void **)(this->q13C + 4 * v3); /*0x56576c*/
     if ( v4 ) /*0x565771*/
       return v4; /*0x565774*/
   }
@@ -225,7 +225,7 @@ BOOL Coord::Compare2D(unsigned short * a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 BOOL __thiscall Coord_Compare2D(_WORD *this, _WORD *a2)
 {
-  return *this != *a2 || *(this + 1) != a2[1]; /*0x5ac388*/
+  return *this != *a2 || this->q004 != a2[1]; /*0x5ac388*/
 }
 }
 } // namespace gamemd
@@ -315,8 +315,8 @@ int *__thiscall Coord_Divide(_DWORD *this, int *a2, int a3)
 
   if ( a3 ) /*0x710708*/
   {
-    v4 = *(this + 1) / a3; /*0x71072f*/
-    v5 = *(this + 2) / a3; /*0x710735*/
+    v4 = this->q004 / a3; /*0x71072f*/
+    v5 = this->q008 / a3; /*0x710735*/
     *a2 = *this / a3; /*0x71073d*/
     a2[1] = v4; /*0x71073f*/
     a2[2] = v5; /*0x710745*/

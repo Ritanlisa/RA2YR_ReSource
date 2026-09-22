@@ -20,7 +20,7 @@ int __thiscall BlitTransLucent25AlphaZReadWrite_ushort::sub_496130(
         int a11,
         int a12)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(*(_DWORD *)this + 4))( /*0x496167*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(this->q004)( /*0x496167*/
            this,
            a2,
            a3,

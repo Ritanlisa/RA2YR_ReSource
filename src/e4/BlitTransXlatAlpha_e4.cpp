@@ -184,7 +184,7 @@ int __thiscall BlitTransXlatAlpha_ushort::_vt01(
   v11 = (261 * (a8 <= 0 ? 0 : a8)) >> 11;
   if ( v11 > 254 ) /*0x493e18*/
     v11 = 254; /*0x493e1a*/
-  result = *(this + 2) + (v11 << 9); /*0x493e25*/
+  result = this->q008 + (v11 << 9); /*0x493e25*/
   if ( a4 > 0 ) /*0x493e2d*/
   {
     v14 = MEMORY[0x87E8A4]; /*0x493e35*/
@@ -194,7 +194,7 @@ int __thiscall BlitTransXlatAlpha_ushort::_vt01(
       v16 = *a3++; /*0x493e43*/
       if ( v16 ) /*0x493e4c*/
       {
-        *a2 = *(_WORD *)(*(this + 1) + 2 * (v16 | *(unsigned __int16 *)(result + 2 * *a7))); /*0x493e6c*/
+        *a2 = *(_WORD *)(this->q004 + 2 * (v16 | *(unsigned __int16 *)(result + 2 * *a7))); /*0x493e6c*/
         v14 = MEMORY[0x87E8A4]; /*0x493e6f*/
       }
       ++a7; /*0x493e78*/
@@ -235,7 +235,7 @@ int __thiscall BlitTransXlatAlpha_ushort::BlitRect(
         int a9,
         int a10)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x493efa*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x493efa*/
            this,
            a2,
            a3,
@@ -265,7 +265,7 @@ int __thiscall BlitTransXlatAlpha_ushort::_vt04(
         int a8,
         int a9)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x493f2a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x493f2a*/
            this,
            a2,
            a3,

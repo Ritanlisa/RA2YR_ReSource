@@ -50,19 +50,19 @@ _DWORD *__thiscall TemporalClass::TemporalClass(_DWORD *this, TechnoClass *aP1)
   int v5; // [esp+Ch] [ebp-8h]
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x71a4e7*/
-  *(this + 11) = *(_DWORD *)&HouseClass_Player.__pad_5568[23248]; /*0x71a4fb*/
-  *(this + 13) = 0; /*0x71a4fe*/
+  this->q02C = *(_DWORD *)&HouseClass_Player.__pad_5568[23248]; /*0x71a4fb*/
+  this->TemporalClass_field_34 = 0; /*0x71a4fe*/
   *this = &TemporalClass::`vftable'; /*0x71a501*/
-  *(this + 1) = &TemporalClass::`vftable'; /*0x71a507*/
-  *(this + 2) = &TemporalClass::`vftable'; /*0x71a50e*/
-  *(this + 3) = &vt_TemporalClass; /*0x71a515*/
-  *(this + 9) = aP1; /*0x71a51c*/
-  *(this + 10) = 0; /*0x71a51f*/
-  *(this + 11) = *(_DWORD *)&HouseClass_Player.__pad_5568[23248]; /*0x71a529*/
-  *(this + 12) = v5; /*0x71a52c*/
-  *(this + 13) = 0; /*0x71a52f*/
-  *(this + 16) = 0; /*0x71a532*/
-  *(this + 17) = 0; /*0x71a535*/
+  this->vtable2 = &TemporalClass::`vftable'; /*0x71a507*/
+  this->vtable3 = &TemporalClass::`vftable'; /*0x71a50e*/
+  this->vtable4 = &vt_TemporalClass; /*0x71a515*/
+  this->creationFrame = aP1; /*0x71a51c*/
+  this->q028 = 0; /*0x71a51f*/
+  this->q02C = *(_DWORD *)&HouseClass_Player.__pad_5568[23248]; /*0x71a529*/
+  this->TemporalClass_field_30 = v5; /*0x71a52c*/
+  this->TemporalClass_field_34 = 0; /*0x71a52f*/
+  this->uniqueId = 0; /*0x71a532*/
+  this->q044 = 0; /*0x71a535*/
   if ( *(int *)&stru_B05488.__pad_579C[16460] < *(int *)&stru_B05488.__pad_579C[16452] /*0x71a569*/
     || (stru_B05488.__pad_579C[16457] || !*(_DWORD *)&stru_B05488.__pad_579C[16452])
     && *(int *)&stru_B05488.__pad_579C[16464] > 0
@@ -74,10 +74,10 @@ _DWORD *__thiscall TemporalClass::TemporalClass(_DWORD *this, TechnoClass *aP1)
     v3 = (*(_DWORD *)&stru_B05488.__pad_579C[16460])++; /*0x71a576*/
     *(_DWORD *)(*(_DWORD *)&stru_B05488.__pad_579C[16448] + 4 * v3) = this; /*0x71a585*/
   }
-  *(this + 18) = 0; /*0x71a588*/
-  *(this + 19) = 0; /*0x71a58b*/
-  *(this + 14) = 0; /*0x71a58e*/
-  *(this + 15) = 0; /*0x71a591*/
+  this->q048 = 0; /*0x71a588*/
+  this->q04C = 0; /*0x71a58b*/
+  this->q038 = 0; /*0x71a58e*/
+  this->q03C = 0; /*0x71a591*/
   return this; /*0x71a596*/
 }
 }
@@ -136,16 +136,16 @@ void **__thiscall TemporalClass::_vt23(int *this)
   _BYTE v43[12]; // [esp+2Ch] [ebp-18h] BYREF
   _BYTE v44[12]; // [esp+38h] [ebp-Ch] BYREF
 
-  v2 = (_DWORD *)*(this + 10); /*0x71a76b*/
-  if ( v2 && (int *)v2[158] == this && *(this + 16) )
+  v2 = (_DWORD *)this->q028; /*0x71a76b*/
+  if ( v2 && (int *)v2[158] == this && this->uniqueId )
   {
     v2[158] = 0; /*0x71a77f*/
-    *(_BYTE *)(*(this + 10) + 624) = 0; /*0x71a78a*/
+    *(_BYTE *)(this->q028 + 624) = 0; /*0x71a78a*/
     return (void **)TagClass::Unlink(this); /*0x71a790*/
   }
   else
   {
-    v4 = *(this + 9); /*0x71a79d*/
+    v4 = this->creationFrame; /*0x71a79d*/
     if ( !v4 ) /*0x71a7a2*/
       goto LABEL_10; /*0x71a7a2*/
     if ( !*(_BYTE *)(v4 + 130) ) /*0x71a7a8*/
@@ -153,7 +153,7 @@ void **__thiscall TemporalClass::_vt23(int *this)
     if ( !v2 ) /*0x71a7b6*/
       goto LABEL_10; /*0x71a7b6*/
     v5 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, _BYTE *))(*v2 + 72))(v2, v43); /*0x71a7c9*/
-    v6 = (_DWORD *)(*(int (__thiscall **)(_DWORD, _BYTE *))(*(_DWORD *)*(this + 9) + 72))(*(this + 9), v44); /*0x71a7d2*/
+    v6 = (_DWORD *)(*(int (__thiscall **)(_DWORD, _BYTE *))(*(_DWORD *)this->creationFrame + 72))(this->creationFrame, v44); /*0x71a7d2*/
     v7 = v5[1]; /*0x71a7d9*/
     v8 = *v6 - *v5; /*0x71a7dc*/
     v9 = v6[1]; /*0x71a7de*/
@@ -170,27 +170,27 @@ void **__thiscall TemporalClass::_vt23(int *this)
     else
     {
 LABEL_10:
-      v13 = (int **)*(this + 17); /*0x71a84e*/
+      v13 = (int **)this->q011; /*0x71a84e*/
       WarpPerStep = 0; /*0x71a851*/
       if ( v13 ) /*0x71a855*/
         WarpPerStep = TemporalClass::GetWarpPerStep(v13, 1); /*0x71a85e*/
-      v15 = (int *)*(this + 9); /*0x71a860*/
+      v15 = (int *)this->creationFrame; /*0x71a860*/
       v16 = *v15; /*0x71a864*/
       v17 = (*(int (__thiscall **)(int *, _DWORD))(*v15 + 740))(v15, 0); /*0x71a866*/
-      v18 = (*(int (__thiscall **)(_DWORD, int))(v16 + 1016))(*(this + 9), v17); /*0x71a870*/
-      v19 = *(this + 18); /*0x71a878*/
+      v18 = (*(int (__thiscall **)(_DWORD, int))(v16 + 1016))(this->creationFrame, v17); /*0x71a870*/
+      v19 = this->q012; /*0x71a878*/
       v20 = *(_DWORD *)(*(_DWORD *)v18 + 164); /*0x71a87b*/
-      *(this + 19) = v20; /*0x71a881*/
+      this->q04C = v20; /*0x71a881*/
       result = (void **)(v19 - (WarpPerStep + v20)); /*0x71a888*/
-      *(this + 18) = (int)result; /*0x71a88a*/
+      this->q012 = (int)result; /*0x71a88a*/
       if ( (int)result <= 0 )
       {
-        if ( *(this + 10) ) /*0x71a895*/
+        if ( this->q028 ) /*0x71a895*/
         {
           result = (void **)__2_YAPAXI_Z(0x1C8u); /*0x71a8c2*/
           if ( result ) /*0x71a8cc*/
           {
-            v22 = (int *)(*(this + 10) + 156); /*0x71a8d2*/
+            v22 = (int *)(this->q028 + 156); /*0x71a8d2*/
             v40 = *v22; /*0x71a8e3*/
             v41 = v22[1]; /*0x71a8ea*/
             v42 = v22[2]; /*0x71a8f6*/
@@ -199,35 +199,35 @@ LABEL_10:
         }
         else
         {
-          v21 = *(this + 9); /*0x71a89a*/
-          *(this + 10) = 0; /*0x71a89d*/
-          *(this + 17) = 0; /*0x71a8a2*/
-          *(this + 16) = 0; /*0x71a8a5*/
-          *(this + 15) = 0; /*0x71a8a8*/
-          *(this + 14) = 0; /*0x71a8ab*/
+          v21 = this->creationFrame; /*0x71a89a*/
+          this->q028 = 0; /*0x71a89d*/
+          this->q011 = 0; /*0x71a8a2*/
+          this->uniqueId = 0; /*0x71a8a5*/
+          this->q03C = 0; /*0x71a8a8*/
+          this->q038 = 0; /*0x71a8ab*/
           if ( v21 ) /*0x71a8ae*/
             result = (void **)(*(int (__thiscall **)(int, _DWORD, int))(*(_DWORD *)v21 + 1156))(v21, 0, 1); /*0x71a8b5*/
         }
-        if ( *(this + 10) )
+        if ( this->q028 )
         {
-          if ( *(_BYTE *)((*(int (__thiscall **)(_DWORD))(*(_DWORD *)*(this + 9) + 132))(*(this + 9)) + 3214) ) /*0x71a922*/
+          if ( *(_BYTE *)((*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->creationFrame + 132))(this->creationFrame) + 3214) ) /*0x71a922*/
           {
-            v23 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)*(this + 10) + 132))(*(this + 10)); /*0x71a938*/
-            v24 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)*(this + 9) + 132))(*(this + 9)); /*0x71a944*/
-            v39 = *(_DWORD *)(*(this + 10) + 540); /*0x71a94f*/
+            v23 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->q028 + 132))(this->q028); /*0x71a938*/
+            v24 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->creationFrame + 132))(this->creationFrame); /*0x71a944*/
+            v39 = *(_DWORD *)(this->q028 + 540); /*0x71a94f*/
             v25 = (*(int (__thiscall **)(int))(*(_DWORD *)v23 + 132))(v23); /*0x71a952*/
             v26 = (*(int (__thiscall **)(int, _DWORD, int))(*(_DWORD *)v24 + 132))( /*0x71a968*/
                     v24,
-                    *(_DWORD *)(*(this + 9) + 540),
+                    *(_DWORD *)(this->creationFrame + 540),
                     v25);
-            VeterancyStruct::Accumulate((float *)(*(this + 9) + 336), v26, v39); /*0x71a978*/
+            VeterancyStruct::Accumulate((float *)(this->creationFrame + 336), v26, v39); /*0x71a978*/
           }
-          if ( (*(int (__thiscall **)(_DWORD))(*(_DWORD *)*(this + 10) + 44))(*(this + 10)) == 6 )
+          if ( (*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->q028 + 44))(this->q028) == 6 )
           {
-            v27 = (_DWORD *)*(this + 10); /*0x71a98e*/
+            v27 = (_DWORD *)this->q028; /*0x71a98e*/
             if ( v27 ) /*0x71a993*/
             {
-              if ( (*(int (__thiscall **)(_DWORD))(*v27 + 1032))(*(this + 10)) > 0 ) /*0x71a9a2*/
+              if ( (*(int (__thiscall **)(_DWORD))(*v27 + 1032))(this->q028) > 0 ) /*0x71a9a2*/
                 BuildingClass::AnimateUnloadUnits(v27, 0); /*0x71a9a7*/
               if ( !MEMORY[0xA8E7AC] && v27[70] ) /*0x71a9b4*/
               {
@@ -240,55 +240,55 @@ LABEL_10:
                 while ( v27[70] ); /*0x71a9d6*/
               }
             }
-            v29 = *(this + 15); /*0x71a9de*/
+            v29 = this->q03C; /*0x71a9de*/
             if ( v29 ) /*0x71a9e3*/
             {
               SuperClass::SetOnHold(v29, 0); /*0x71a9e6*/
-              *(this + 15) = 0; /*0x71a9eb*/
+              this->q03C = 0; /*0x71a9eb*/
             }
-            v30 = (_DWORD *)*(this + 10); /*0x71a9ee*/
+            v30 = (_DWORD *)this->q028; /*0x71a9ee*/
             if ( v30[185] )
             {
               if ( v30 )
-                v31 = (*(int (__thiscall **)(_DWORD))(*v30 + 44))(*(this + 10)) == 6 ? v30 : 0;
+                v31 = (*(int (__thiscall **)(_DWORD))(*v30 + 44))(this->q028) == 6 ? v30 : 0;
               else
                 v31 = 0; /*0x71a9fd*/
               BuildingClass::RemoveLimpet(v31); /*0x71aa15*/
             }
-            v32 = *(_DWORD **)(*(this + 10) + 728); /*0x71aa1d*/
+            v32 = *(_DWORD **)(this->q028 + 728); /*0x71aa1d*/
             if ( v32 ) /*0x71aa25*/
-              TechnoClass::MutateAll(v32, *(this + 9), 0); /*0x71aa2c*/
-            (*(void (__thiscall **)(_DWORD, _DWORD))(*(_DWORD *)*(this + 10) + 952))(*(this + 10), *(this + 9)); /*0x71aa3a*/
-            (*(void (__thiscall **)(_DWORD, _DWORD))(*(_DWORD *)*(this + 10) + 224))(*(this + 10), *(this + 9)); /*0x71aa49*/
-            result = (void **)(*(int (__thiscall **)(_DWORD))(*(_DWORD *)*(this + 10) + 248))(*(this + 10)); /*0x71aa54*/
+              TechnoClass::MutateAll(v32, this->creationFrame, 0); /*0x71aa2c*/
+            (*(void (__thiscall **)(_DWORD, _DWORD))(*(_DWORD *)this->q028 + 952))(this->q028, this->creationFrame); /*0x71aa3a*/
+            (*(void (__thiscall **)(_DWORD, _DWORD))(*(_DWORD *)this->q028 + 224))(this->q028, this->creationFrame); /*0x71aa49*/
+            result = (void **)(*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->q028 + 248))(this->q028); /*0x71aa54*/
             *(_BYTE *)(v27[135] + 508) = 1; /*0x71aa60*/
           }
           else
           {
-            v33 = *(this + 10); /*0x71aa69*/
+            v33 = this->q028; /*0x71aa69*/
             v34 = *(_DWORD *)(v33 + 740); /*0x71aa6c*/
             if ( v34 )
             {
               v35 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)v34 + 44))(*(_DWORD *)(v33 + 740)) == 6 ? (int *)v34 : 0;
               BuildingClass::UpdateDamageAnim(v35); /*0x71aa90*/
             }
-            v36 = *(_DWORD **)(*(this + 10) + 728); /*0x71aa98*/
+            v36 = *(_DWORD **)(this->q028 + 728); /*0x71aa98*/
             if ( v36 ) /*0x71aaa0*/
-              TechnoClass::MutateAll(v36, *(this + 9), 0); /*0x71aaa7*/
-            (*(void (__thiscall **)(_DWORD, _DWORD))(*(_DWORD *)*(this + 10) + 952))(*(this + 10), *(this + 9)); /*0x71aab5*/
-            (*(void (__thiscall **)(_DWORD, _DWORD))(*(_DWORD *)*(this + 10) + 224))(*(this + 10), *(this + 9)); /*0x71aac4*/
-            result = (void **)(*(int (__thiscall **)(_DWORD))(*(_DWORD *)*(this + 10) + 248))(*(this + 10)); /*0x71aacf*/
+              TechnoClass::MutateAll(v36, this->creationFrame, 0); /*0x71aaa7*/
+            (*(void (__thiscall **)(_DWORD, _DWORD))(*(_DWORD *)this->q028 + 952))(this->q028, this->creationFrame); /*0x71aab5*/
+            (*(void (__thiscall **)(_DWORD, _DWORD))(*(_DWORD *)this->q028 + 224))(this->q028, this->creationFrame); /*0x71aac4*/
+            result = (void **)(*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->q028 + 248))(this->q028); /*0x71aacf*/
           }
-          v37 = *(this + 9); /*0x71aad5*/
+          v37 = this->creationFrame; /*0x71aad5*/
           if ( v37 ) /*0x71aada*/
             result = (void **)(*(int (__thiscall **)(int, _DWORD, int))(*(_DWORD *)v37 + 1156))(v37, 0, 1); /*0x71aae1*/
         }
-        v38 = *(this + 9); /*0x71aae7*/
-        *(this + 10) = 0; /*0x71aaea*/
-        *(this + 17) = 0; /*0x71aaef*/
-        *(this + 16) = 0; /*0x71aaf2*/
-        *(this + 15) = 0; /*0x71aaf5*/
-        *(this + 14) = 0; /*0x71aaf8*/
+        v38 = this->creationFrame; /*0x71aae7*/
+        this->q028 = 0; /*0x71aaea*/
+        this->q011 = 0; /*0x71aaef*/
+        this->uniqueId = 0; /*0x71aaf2*/
+        this->q03C = 0; /*0x71aaf5*/
+        this->q038 = 0; /*0x71aaf8*/
         if ( v38 ) /*0x71aafb*/
           return (void **)(*(int (__thiscall **)(int, _DWORD, int))(*(_DWORD *)v38 + 1156))(v38, 0, 1); /*0x71ab02*/
       }
@@ -315,13 +315,13 @@ int __thiscall TemporalClass::GetWarpPerStep(int **this, int a2)
   int *v7; // eax
 
   WarpPerStep = 0; /*0x71ab14*/
-  if ( *(this + 17) && a2 <= 50 ) /*0x71ab25*/
+  if ( this->q011 && a2 <= 50 ) /*0x71ab25*/
     WarpPerStep = TemporalClass::GetWarpPerStep(a2 + 1); /*0x71ab2e*/
-  v4 = *(this + 9); /*0x71ab30*/
+  v4 = this->creationFrame; /*0x71ab30*/
   v5 = *v4; /*0x71ab35*/
   v6 = (*(int (__thiscall **)(int *, _DWORD))(*v4 + 740))(v4, 0); /*0x71ab37*/
-  v7 = *(int **)(*(_DWORD *)(*(int (__thiscall **)(_DWORD, int))(v5 + 1016))(*(this + 9), v6) + 164); /*0x71ab4a*/
-  *(this + 19) = v7; /*0x71ab50*/
+  v7 = *(int **)(*(_DWORD *)(*(int (__thiscall **)(_DWORD, int))(v5 + 1016))(this->creationFrame, v6) + 164); /*0x71ab4a*/
+  this->q04C = v7; /*0x71ab50*/
   return (int)v7 + WarpPerStep; /*0x71ab49*/
 }
 }
@@ -340,9 +340,9 @@ TemporalClass *__thiscall TemporalClass::ProcessEvent(_DWORD *this, char a2)
   _DWORD *v5; // [esp+4h] [ebp-4h] BYREF
 
   *this = &TemporalClass::`vftable'; /*0x71b1bd*/
-  *(this + 1) = &TemporalClass::`vftable'; /*0x71b1c3*/
-  *(this + 2) = &TemporalClass::`vftable'; /*0x71b1ca*/
-  *(this + 3) = &vt_TemporalClass; /*0x71b1d1*/
+  this->vtable2 = &TemporalClass::`vftable'; /*0x71b1c3*/
+  this->vtable3 = &TemporalClass::`vftable'; /*0x71b1ca*/
+  this->vtable4 = &vt_TemporalClass; /*0x71b1d1*/
   v5 = this; /*0x71b1df*/
   v3 = (*(int (__thiscall **)(int *, _DWORD **))(MEMORY[0xB0EC60] + 16))(&MEMORY[0xB0EC60], &v5); /*0x71b1e3*/
   if ( v3 != -1 && v3 < MEMORY[0xB0EC70] && v3 < --MEMORY[0xB0EC70] ) /*0x71b1fe*/

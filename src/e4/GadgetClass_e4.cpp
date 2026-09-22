@@ -19,19 +19,19 @@ ControlClass *__thiscall GadgetClass::Construct(
   GadgetClass *result; // eax
 
   result = (GadgetClass *)this; /*0x4e12f4*/
-  *(this + 4) = aP2; /*0x4e12fb*/
-  *(this + 3) = aP1; /*0x4e1302*/
-  *(this + 6) = aP4; /*0x4e1309*/
-  *(this + 5) = aP3; /*0x4e1312*/
-  *(this + 1) = 0; /*0x4e1319*/
-  *(this + 2) = 0; /*0x4e131c*/
-  *((_BYTE *)this + 28) = 0; /*0x4e131f*/
-  *((_BYTE *)this + 30) = 0; /*0x4e1322*/
-  *((_BYTE *)this + 29) = (_BYTE)aP6; /*0x4e1327*/
-  *(this + 8) = aP5; /*0x4e132a*/
+  this->Height = aP2; /*0x4e12fb*/
+  this->Width = aP1; /*0x4e1302*/
+  this->ID = aP4; /*0x4e1309*/
+  this->Visible = aP3; /*0x4e1312*/
+  this->X = 0; /*0x4e1319*/
+  this->Y = 0; /*0x4e131c*/
+  this->q070 = 0; /*0x4e131f*/
+  this->q01E = 0; /*0x4e1322*/
+  this->q01D = (_BYTE)aP6; /*0x4e1327*/
+  this->q020 = aP5; /*0x4e132a*/
   *this = &vt_GadgetClass; /*0x4e132d*/
   if ( (_BYTE)aP6 ) /*0x4e1334*/
-    *(this + 8) = (unsigned int)aP5 | 5; /*0x4e1339*/
+    this->q020 = (unsigned int)aP5 | 5; /*0x4e1339*/
   return (ControlClass *)result; /*0x4e1333*/
 }
 }
@@ -51,9 +51,9 @@ int __thiscall GadgetClass_Dtor(_DWORD *this)
   v1 = MEMORY[0x8B3E90]; /*0x4e1396*/
   if ( this == (_DWORD *)MEMORY[0x8B3E90] ) /*0x4e139f*/
   {
-    v2 = *(this + 8); /*0x4e13a1*/
+    v2 = this->q020; /*0x4e13a1*/
     BYTE1(v2) &= ~1u; /*0x4e13a4*/
-    *(this + 8) = v2; /*0x4e13a7*/
+    this->q020 = v2; /*0x4e13a7*/
     v1 = 0; /*0x4e13aa*/
     MEMORY[0x8B3E90] = 0; /*0x4e13ac*/
   }
@@ -104,7 +104,7 @@ int __thiscall GadgetClass::DrawBuildingPlacement(int this, ControlClass *aP1)
     {
       v7 = i + *(_DWORD *)(this + 368); /*0x5579ad*/
       if ( *(_DWORD *)(this + 68) > v7 ) /*0x5579b1*/
-        (*(void (__thiscall **)(int, int, int, int, int, bool))(*(_DWORD *)this + 200))( /*0x5579e0*/
+        (*(void (__thiscall **)(int, int, int, int, int, bool))(this->q0C8)( /*0x5579e0*/
           this,
           v7,
           this->Width + 1,
@@ -299,10 +299,10 @@ void __thiscall GadgetClass::SetTooltip(void **this, CCINIClass *aP1)
   size_t v3; // eax
   void *v4; // eax
 
-  if ( *(this + 10) ) /*0x623564*/
+  if ( this->q028 ) /*0x623564*/
   {
-    __3_YAXPAX_Z(*(this + 10)); /*0x62356c*/
-    *(this + 10) = 0; /*0x623574*/
+    __3_YAXPAX_Z(this->q028); /*0x62356c*/
+    this->q028 = 0; /*0x623574*/
   }
   if ( aP1 ) /*0x623581*/
   {
@@ -310,7 +310,7 @@ void __thiscall GadgetClass::SetTooltip(void **this, CCINIClass *aP1)
     {
       v3 = wcslen((const wchar_t *)aP1); /*0x62358a*/
       v4 = (void *)__2_YAPAXI_Z(2 * v3 + 2); /*0x623594*/
-      *(this + 10) = v4; /*0x62359b*/
+      this->q028 = v4; /*0x62359b*/
       wcscpy((wchar_t *)v4, (const wchar_t *)aP1); /*0x62359e*/
     }
   }
@@ -328,7 +328,7 @@ int __thiscall GadgetClass_Show(_BYTE *this)
   int v1; // eax
 
   v1 = *(_DWORD *)this; /*0x723ea0*/
-  *(this + 45) = 1; /*0x723ea2*/
+  this->q0B4 = 1; /*0x723ea2*/
   return (*(int (**)(void))(v1 + 72))();
 }
 }

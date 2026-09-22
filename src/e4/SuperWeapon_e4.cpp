@@ -9,7 +9,7 @@ char SuperWeapon::GetField10()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall sub_6CC2A0(_DWORD *this)
 {
-  return *(_BYTE *)(*(this + 10) + 230); /*0x6cc2a9*/
+  return *(_BYTE *)(this->q028 + 230); /*0x6cc2a9*/
 }
 }
 } // namespace gamemd

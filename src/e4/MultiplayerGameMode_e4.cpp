@@ -8,20 +8,20 @@ unsigned int * MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass(int 
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall VectorClass_Constructor_MultiplayerGameMode(_DWORD *this, int a2, int a3)
 {
-  *(this + 1) = 0; /*0x5d89fb*/
-  *(this + 2) = a2; /*0x5d89fe*/
-  *((_BYTE *)this + 12) = 1; /*0x5d8a01*/
-  *((_BYTE *)this + 13) = 0; /*0x5d8a05*/
+  this->q004 = 0; /*0x5d89fb*/
+  this->q008 = a2; /*0x5d89fe*/
+  this->q030 = 1; /*0x5d8a01*/
+  this->q034 = 0; /*0x5d8a05*/
   *this = &vt_VectorClass_MultiplayerGameMode; /*0x5d8a08*/
   if ( a2 ) /*0x5d8a0e*/
   {
     if ( a3 ) /*0x5d8a16*/
     {
-      *(this + 1) = a3; /*0x5d8a18*/
+      this->q004 = a3; /*0x5d8a18*/
       return this; /*0x5d8a1e*/
     }
-    *(this + 1) = __2_YAPAXI_Z(4 * a2); /*0x5d8a2d*/
-    *((_BYTE *)this + 13) = 1; /*0x5d8a30*/
+    this->q004 = __2_YAPAXI_Z(4 * a2); /*0x5d8a2d*/
+    this->q034 = 1; /*0x5d8a30*/
   }
   return this; /*0x5d8a1d*/
 }

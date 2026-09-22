@@ -1161,9 +1161,9 @@ int __thiscall nullsub_0_2(RAMFileClass *this, int a2)
 {
   if ( !this->field_8 || (*(unsigned __int8 (__thiscall **)(RAMFileClass *))(*(_DWORD *)this->__pad_0 + 24))(this) ) /*0x65c35c*/
     return 0; /*0x65c391*/
-  *((_DWORD *)this + 5) = 0; /*0x65c367*/
-  *((_DWORD *)this + 6) = a2; /*0x65c36e*/
-  *((_BYTE *)this + 28) = 1; /*0x65c374*/
+  this->q014 = 0; /*0x65c367*/
+  this->q018 = a2; /*0x65c36e*/
+  this->q01C = 1; /*0x65c374*/
   if ( a2 == 2 ) /*0x65c378*/
     this->field_10 = 0; /*0x65c37a*/
   return (*(unsigned __int8 (__thiscall **)(RAMFileClass *))(*(_DWORD *)this->__pad_0 + 24))(this); /*0x65c38d*/
@@ -1192,18 +1192,18 @@ size_t __thiscall nullsub_0_3(RAMFileClass *this, void *a1, signed int Size)
   v5 = 0; /*0x65c3bf*/
   if ( (*(unsigned __int8 (__thiscall **)(RAMFileClass *))(*(_DWORD *)this->__pad_0 + 24))(this) ) /*0x65c3c1*/
   {
-    if ( (*((_BYTE *)this + 24) & 1) != 0 ) /*0x65c3d9*/
+    if ( (this->q018 & 1) != 0 ) /*0x65c3d9*/
       goto LABEL_7; /*0x65c3d9*/
     return 0; /*0x65c418*/
   }
   (*(void (__thiscall **)(RAMFileClass *, int))(*(_DWORD *)this->__pad_0 + 28))(this, 1); /*0x65c3ce*/
   v5 = 1; /*0x65c3d1*/
 LABEL_7:
-  v6 = *((_DWORD *)this + 5); /*0x65c3db*/
+  v6 = this->q014; /*0x65c3db*/
   if ( Size >= this->field_10 - v6 ) /*0x65c3e5*/
     v4 = this->field_10 - v6; /*0x65c3e7*/
   memcpy(a1, (const void *)(this->field_8 + v6), v4); /*0x65c3f1*/
-  *((_DWORD *)this + 5) += v4; /*0x65c400*/
+  this->q014 += v4; /*0x65c400*/
   if ( v5 ) /*0x65c403*/
     (*(void (__thiscall **)(RAMFileClass *))(*(_DWORD *)this->__pad_0 + 52))(this); /*0x65c409*/
   return v4; /*0x65c40e*/
@@ -1224,10 +1224,10 @@ int __thiscall nullsub_0_4(RAMFileClass *this, int a2, int a3)
   int result; // eax
 
   if ( !this->field_8 || !(*(unsigned __int8 (__thiscall **)(RAMFileClass *))(*(_DWORD *)this->__pad_0 + 24))(this) ) /*0x65c42c*/
-    return *((_DWORD *)this + 5); /*0x65c494*/
+    return this->q014; /*0x65c494*/
   v4 = this->field_10; /*0x65c436*/
   v5 = v4; /*0x65c43b*/
-  if ( (*((_BYTE *)this + 24) & 2) != 0 ) /*0x65c43d*/
+  if ( (this->q018 & 2) != 0 ) /*0x65c43d*/
     v5 = this->field_C; /*0x65c43f*/
   switch ( a3 ) /*0x65c449*/
   {
@@ -1235,19 +1235,19 @@ int __thiscall nullsub_0_4(RAMFileClass *this, int a2, int a3)
       v6 = a2; /*0x65c469*/
       goto LABEL_11; /*0x65c469*/
     case 1: /*0x65c449*/
-      *((_DWORD *)this + 5) += a2; /*0x65c463*/
+      this->q014 += a2; /*0x65c463*/
       break;
     case 2: /*0x65c449*/
       v6 = v5 + a2; /*0x65c455*/
 LABEL_11:
-      *((_DWORD *)this + 5) = v6; /*0x65c46d*/
+      this->q014 = v6; /*0x65c46d*/
       break;
   }
   if ( *((int *)this + 5) < 0 ) /*0x65c475*/
-    *((_DWORD *)this + 5) = 0; /*0x65c477*/
-  if ( *((_DWORD *)this + 5) > v5 ) /*0x65c481*/
-    *((_DWORD *)this + 5) = v5; /*0x65c483*/
-  result = *((_DWORD *)this + 5); /*0x65c486*/
+    this->q014 = 0; /*0x65c477*/
+  if ( this->q014 > v5 ) /*0x65c481*/
+    this->q014 = v5; /*0x65c483*/
+  result = this->q014; /*0x65c486*/
   if ( result > v4 ) /*0x65c48b*/
     this->field_10 = result; /*0x65c48d*/
   return result; /*0x65c490*/
@@ -1278,7 +1278,7 @@ void *__thiscall nullsub_0_10(RAMFileClass *this, char a2)
 
   v3 = *((_BYTE *)this + 29); /*0x65c5a3*/
   *(_DWORD *)this->__pad_0 = &vt_RAMFileClass; /*0x65c5a6*/
-  *((_BYTE *)this + 28) = 0; /*0x65c5ae*/
+  this->q01C = 0; /*0x65c5ae*/
   if ( v3 ) /*0x65c5b2*/
   {
     __3_YAXPAX_Z((void *)this->field_8); /*0x65c5b8*/

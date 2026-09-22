@@ -10133,10 +10133,10 @@ _DWORD *__thiscall sub_7DCE0E(_com_error *this, int a2)
 {
   int v3; // eax
 
-  *(this + 1) = *(_com_error *)(a2 + 4); /*0x7dce18*/
+  this->q004 = *(_com_error *)(a2 + 4); /*0x7dce18*/
   v3 = *(_DWORD *)(a2 + 8); /*0x7dce1b*/
-  *((_DWORD *)this + 3) = 0; /*0x7dce1e*/
-  *((_DWORD *)this + 2) = v3; /*0x7dce22*/
+  this->q00C = 0; /*0x7dce1e*/
+  this->q008 = v3; /*0x7dce22*/
   this->vfptr = &off_7FA498; /*0x7dce27*/
   if ( v3 ) /*0x7dce2d*/
     (*(void (__stdcall **)(int))(*(_DWORD *)v3 + 4))(v3); /*0x7dce32*/
@@ -10155,11 +10155,11 @@ HLOCAL __thiscall sub_7DCE3B(_com_error *this)
   HLOCAL result; // eax
   void *v3; // esi
 
-  result = (HLOCAL)*((_DWORD *)this + 2); /*0x7dce3e*/
+  result = (HLOCAL)this->q008; /*0x7dce3e*/
   this->vfptr = &off_7FA498; /*0x7dce41*/
   if ( result ) /*0x7dce49*/
     result = (HLOCAL)(*(int (__stdcall **)(HLOCAL))(*(_DWORD *)result + 8))(result); /*0x7dce4e*/
-  v3 = (void *)*((_DWORD *)this + 3); /*0x7dce51*/
+  v3 = (void *)this->q00C; /*0x7dce51*/
   if ( v3 ) /*0x7dce56*/
     return LocalFree(v3); /*0x7dce59*/
   return result; /*0x7dce5f*/

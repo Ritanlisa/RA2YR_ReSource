@@ -8,7 +8,7 @@ int StreamClass::WriteBytes(unsigned short a2, char a3, int a4, int a5, int a6)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall StreamClass_WriteBytes(_DWORD **this, unsigned __int16 a2, char a3, int a4, int a5, int a6)
 {
-  return (*(int (__thiscall **)(_DWORD, char *, _DWORD))(**(this + 5) + 20))(*(this + 5), &a3, a2); /*0x411328*/
+  return (*(int (__thiscall **)(_DWORD, char *, _DWORD))(*this->q014 + 20))(this->q014, &a3, a2); /*0x411328*/
 }
 }
 

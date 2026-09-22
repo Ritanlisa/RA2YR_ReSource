@@ -13,10 +13,10 @@ bool __thiscall LayerClass::CoordinatesLegal(_DWORD *this, IUnknown *aP1)
   int v3; // esi
   int v4; // eax
 
-  v2 = *(this + 61); /*0x568304*/
+  v2 = this->q0F4; /*0x568304*/
   v3 = SLOWORD(aP1->field_0); /*0x56830c*/
   v4 = SHIWORD(aP1->field_0); /*0x56830f*/
-  return v4 + v3 > v2 && v3 - v4 < v2 && v4 - v3 < v2 && v4 + v3 <= v2 + 2 * *(this + 62); /*0x568337*/
+  return v4 + v3 > v2 && v3 - v4 < v2 && v4 - v3 < v2 && v4 + v3 <= v2 + 2 * this->q0F8; /*0x568337*/
 }
 }
 } // namespace gamemd
@@ -552,18 +552,18 @@ LABEL_8:
         v6 = *(__int16 *)(v4 + 38); /*0x577e7a*/
         if ( v5 != 7 ) /*0x577e81*/
           break; /*0x577e81*/
-        if ( v6 != *(this + 61) + 5 ) /*0x577e8e*/
+        if ( v6 != this->q0F4 + 5 ) /*0x577e8e*/
           goto LABEL_21; /*0x577e8e*/
 LABEL_24:
         v4 = LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]); /*0x577ee9*/
         if ( !v4 ) /*0x577ef5*/
           goto LABEL_25; /*0x577ef5*/
       }
-      if ( v5 == 13 && v6 == *(this + 61) + 11 ) /*0x577ea2*/
+      if ( v5 == 13 && v6 == this->q0F4 + 11 ) /*0x577ea2*/
         goto LABEL_24; /*0x577ea2*/
 LABEL_21:
-      v7 = *(this + 62); /*0x577ea4*/
-      if ( v5 == v7 + 13 && v6 == *(this + 61) + v7 - 15 ) /*0x577ebd*/
+      v7 = this->q0F8; /*0x577ea4*/
+      if ( v5 == v7 + 13 && v6 == this->q0F4 + v7 - 15 ) /*0x577ebd*/
         goto LABEL_24; /*0x577ebd*/
 LABEL_23:
       *(_DWORD *)(v4 + 304) = 0; /*0x577ebf*/
@@ -599,38 +599,38 @@ int __thiscall LCW_ReadBit(_DWORD *this)
   int v9; // edx
   int v10; // eax
 
-  v1 = *(this + 69); /*0x578290*/
-  v2 = *(this + 70); /*0x578297*/
+  v1 = this->q114; /*0x578290*/
+  v2 = this->q118; /*0x578297*/
   if ( v1 ) /*0x5782a0*/
   {
-    v3 = *(this + 68) - 1; /*0x5782af*/
-    ++*(this + 67); /*0x5782b1*/
-    *(this + 69) = v1 - 1; /*0x5782b7*/
-    *(this + 68) = v3; /*0x5782c3*/
-    *(this + 70) = v2 - 2044; /*0x5782c9*/
+    v3 = this->q110 - 1; /*0x5782af*/
+    ++this->q10C; /*0x5782b1*/
+    this->q114 = v1 - 1; /*0x5782b7*/
+    this->q110 = v3; /*0x5782c3*/
+    this->q118 = v2 - 2044; /*0x5782c9*/
     return *(_DWORD *)v2; /*0x5782cf*/
   }
   else
   {
-    v5 = *(this + 68); /*0x5782d5*/
-    v6 = *(this + 67); /*0x5782db*/
-    v7 = *(this + 61); /*0x5782e1*/
-    *(this + 67) = v5; /*0x5782e8*/
-    *(this + 68) = v6; /*0x5782f2*/
+    v5 = this->q110; /*0x5782d5*/
+    v6 = this->q10C; /*0x5782db*/
+    v7 = this->q0F4; /*0x5782e1*/
+    this->q10C = v5; /*0x5782e8*/
+    this->q110 = v6; /*0x5782f2*/
     if ( (((_BYTE)v5 - (_BYTE)v7 + (_BYTE)v6 - 1) & 1) != 0 ) /*0x5782ff*/
     {
       v8 = v7 - 1; /*0x578302*/
-      *(this + 68) = v6 + 1; /*0x578303*/
+      this->q110 = v6 + 1; /*0x578303*/
     }
     else
     {
       v8 = v7 - 2; /*0x57830c*/
-      *(this + 67) = v5 + 1; /*0x57830f*/
+      this->q10C = v5 + 1; /*0x57830f*/
     }
-    v9 = *(this + 67); /*0x57831b*/
-    v10 = *(this + 68) << 9; /*0x578321*/
-    *(this + 69) = v8; /*0x578324*/
-    *(this + 70) = *(this + 79) + 4 * (v9 + v10); /*0x578337*/
+    v9 = this->q10C; /*0x57831b*/
+    v10 = this->q110 << 9; /*0x578321*/
+    this->q114 = v8; /*0x578324*/
+    this->q118 = this->q13C + 4 * (v9 + v10); /*0x578337*/
     return *(_DWORD *)v2; /*0x57833d*/
   }
 }
@@ -647,12 +647,12 @@ int __thiscall LCW_InitBitReader(_DWORD *this)
   int v1; // eax
   int result; // eax
 
-  v1 = *(this + 61); /*0x578350*/
-  *(this + 67) = 1; /*0x578356*/
-  *(this + 68) = v1; /*0x578360*/
-  *(this + 69) = v1 - 1; /*0x578369*/
-  result = (v1 << 11) + *(this + 79) + 4; /*0x578378*/
-  *(this + 70) = result; /*0x57837c*/
+  v1 = this->q0F4; /*0x578350*/
+  this->q10C = 1; /*0x578356*/
+  this->q110 = v1; /*0x578360*/
+  this->q114 = v1 - 1; /*0x578369*/
+  result = (v1 << 11) + this->q13C + 4; /*0x578378*/
+  this->q118 = result; /*0x57837c*/
   return result; /*0x578382*/
 }
 }
@@ -686,15 +686,15 @@ bool __thiscall LayerClass::IsWithinUsableArea(_DWORD *this, IUnknown *aP1, Tech
       v7 = g_CellClassArray; /*0x57849d*/
     }
     v3 = *((char *)v7 + 283); /*0x5784a8*/
-    if ( *((_BYTE *)v7 + 284) && v4 + v5 < v3 + *(this + 61) + 2 * *(this + 64) + 4 ) /*0x5784ca*/
+    if ( *((_BYTE *)v7 + 284) && v4 + v5 < v3 + this->q0F4 + 2 * this->q100 + 4 ) /*0x5784ca*/
       ++v3; /*0x5784cc*/
   }
-  v8 = *(this + 61); /*0x5784d3*/
+  v8 = this->q0F4; /*0x5784d3*/
   result = 0; /*0x578531*/
-  if ( v4 + v5 > v3 + v8 + 2 * *(this + 64) && v4 + v5 <= v3 + v8 + 2 * (*(this + 64) + *(this + 66)) + 2 ) /*0x5784fe*/
+  if ( v4 + v5 > v3 + v8 + 2 * this->q100 && v4 + v5 <= v3 + v8 + 2 * (this->q100 + this->q108) + 2 ) /*0x5784fe*/
   {
-    v9 = *(this + 63); /*0x578500*/
-    if ( v5 - v4 < 2 * (v9 + *(this + 65)) - v8 && v4 - v5 < v8 - 2 * v9 ) /*0x578523*/
+    v9 = this->q0FC; /*0x578500*/
+    if ( v5 - v4 < 2 * (v9 + this->q104) - v8 && v4 - v5 < v8 - 2 * v9 ) /*0x578523*/
       return 1; /*0x5784e3*/
   }
   return result; /*0x578525*/

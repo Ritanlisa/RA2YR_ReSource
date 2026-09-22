@@ -8,7 +8,7 @@ unsigned int * TauntCommandClass::Construct(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall TauntCommandClass_Constructor(_DWORD *this, int a2)
 {
-  *(this + 1) = a2; /*0x536296*/
+  this->TauntCommandClass_field_00 = a2; /*0x536296*/
   *this = &vt_TauntCommandClass; /*0x536299*/
   return this; /*0x53629f*/
 }
@@ -23,7 +23,7 @@ ObjectClass *__thiscall TauntCommandClass::AddRef(_DWORD *this)
   sprintf( /*0x5362be*/
     &HouseClass_Player.__pad_5568[25344],
     (ObjectClass *)&stru_8271A0.customSound_controller[2],
-    (INIClass *)*(this + 1));
+    (INIClass *)this->TauntCommandClass_field_00);
   return (ObjectClass *)&HouseClass_Player.__pad_5568[25344]; /*0x5362cb*/
 }
 }
@@ -37,7 +37,7 @@ wchar_t *__thiscall TauntCommandClass::_vt02(const wchar_t **this)
   wchar_t *StringCSF; // eax
   const wchar_t *v3; // [esp-4h] [ebp-4h]
 
-  v3 = *(this + 1); /*0x5362d5*/
+  v3 = this->TauntCommandClass_field_00; /*0x5362d5*/
   StringCSF = GetStringCSF(MEMORY[0x827204], 0, g_Str_File_Init_CPP, 6400); /*0x5362e5*/
   swprintf(&MEMORY[0xA8F654], (const size_t)StringCSF, v3); /*0x5362f0*/
   return &MEMORY[0xA8F654]; /*0x5362fd*/

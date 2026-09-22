@@ -28,19 +28,19 @@ _DWORD *__thiscall BSurface_Constructor(_DWORD *this, int a2, int a3, int a4, in
   v6 = a2; /*0x410ce5*/
   v7 = a4; /*0x410ce9*/
   v8 = a5; /*0x410cef*/
-  *(this + 11) = a5; /*0x410cf3*/
+  this->q00B = a5; /*0x410cf3*/
   *this = v6; /*0x410cf8*/
   v9 = a3; /*0x410cfa*/
-  *(this + 10) = v7; /*0x410cfe*/
-  *(this + 1) = v9; /*0x410d01*/
-  *(this + 2) = v7; /*0x410d04*/
-  *(this + 3) = v8; /*0x410d07*/
-  *(this + 8) = 2 * v7 * v8; /*0x410d0f*/
+  this->q00A = v7; /*0x410cfe*/
+  this->Width = v9; /*0x410d01*/
+  this->Height = v7; /*0x410d04*/
+  this->LockCount = v8; /*0x410d07*/
+  this->Height = 2 * v7 * v8; /*0x410d0f*/
   v10 = __2_YAPAXI_Z(0x20u); /*0x410d17*/
   if ( v10 ) /*0x410d20*/
   {
-    v11 = *(this + 10); /*0x410d22*/
-    v12 = *(this + 11); /*0x410d25*/
+    v11 = this->q00A; /*0x410d22*/
+    v12 = this->q00B; /*0x410d25*/
     v10[1] = v11; /*0x410d28*/
     v10[2] = v12; /*0x410d30*/
     v10[3] = 0; /*0x410d38*/
@@ -54,22 +54,22 @@ _DWORD *__thiscall BSurface_Constructor(_DWORD *this, int a2, int a3, int a4, in
   {
     v13 = 0; /*0x410d57*/
   }
-  v14 = *(this + 10); /*0x410d5c*/
-  a5 = *(this + 11); /*0x410d5f*/
-  *(this + 5) = v13; /*0x410d63*/
+  v14 = this->q00A; /*0x410d5c*/
+  a5 = this->q00B; /*0x410d5f*/
+  this->Buffer = v13; /*0x410d63*/
   a2 = 0; /*0x410d66*/
   a3 = 0; /*0x410d6a*/
   a4 = v14; /*0x410d6e*/
   (*(void (__thiscall **)(_DWORD *, int *, int))(*v13 + 20))(v13, &a2, 127); /*0x410d7b*/
-  v15 = (*(int (__thiscall **)(_DWORD, _DWORD, _DWORD))(*(_DWORD *)*(this + 5) + 92))(*(this + 5), 0, 0); /*0x410d89*/
-  v16 = *(this + 11); /*0x410d8c*/
-  *(this + 6) = v15; /*0x410d8f*/
-  v17 = *(this + 10) * v16; /*0x410d92*/
-  *(this + 4) = 0; /*0x410d96*/
-  *(this + 9) = 0x8000; /*0x410d99*/
+  v15 = (*(int (__thiscall **)(_DWORD, _DWORD, _DWORD))(*(_DWORD *)this->Buffer + 92))(this->Buffer, 0, 0); /*0x410d89*/
+  v16 = this->q00B; /*0x410d8c*/
+  this->q006 = v15; /*0x410d8f*/
+  v17 = this->q00A * v16; /*0x410d92*/
+  this->BytesPerPixel = 0; /*0x410d96*/
+  this->q009 = 0x8000; /*0x410d99*/
   v18 = v15 + 2 * v17; /*0x410da0*/
-  v19 = *(this + 5); /*0x410da3*/
-  *(this + 7) = v18; /*0x410da6*/
+  v19 = this->Buffer; /*0x410da3*/
+  this->q007 = v18; /*0x410da6*/
   (*(void (__thiscall **)(int))(*(_DWORD *)v19 + 96))(v19); /*0x410dab*/
   return this; /*0x410db0*/
 }
@@ -239,19 +239,19 @@ _DWORD *__thiscall BSurface_ConstructorEx(_DWORD *this, int a2, int a3, int a4, 
   v6 = a2; /*0x7bc975*/
   v7 = a4; /*0x7bc979*/
   v8 = a5; /*0x7bc97f*/
-  *(this + 11) = a5; /*0x7bc983*/
+  this->q00B = a5; /*0x7bc983*/
   *this = v6; /*0x7bc988*/
   v9 = a3; /*0x7bc98a*/
-  *(this + 10) = v7; /*0x7bc98e*/
-  *(this + 1) = v9; /*0x7bc991*/
-  *(this + 2) = v7; /*0x7bc994*/
-  *(this + 3) = v8; /*0x7bc997*/
-  *(this + 8) = 2 * v7 * v8; /*0x7bc99f*/
+  this->q00A = v7; /*0x7bc98e*/
+  this->Width = v9; /*0x7bc991*/
+  this->Height = v7; /*0x7bc994*/
+  this->LockCount = v8; /*0x7bc997*/
+  this->Height = 2 * v7 * v8; /*0x7bc99f*/
   v10 = __2_YAPAXI_Z(0x20u); /*0x7bc9a7*/
   if ( v10 ) /*0x7bc9b0*/
   {
-    v11 = *(this + 10); /*0x7bc9b2*/
-    v12 = *(this + 11); /*0x7bc9b5*/
+    v11 = this->q00A; /*0x7bc9b2*/
+    v12 = this->q00B; /*0x7bc9b5*/
     v10[1] = v11; /*0x7bc9b8*/
     v10[2] = v12; /*0x7bc9c0*/
     v10[3] = 0; /*0x7bc9c8*/
@@ -265,22 +265,22 @@ _DWORD *__thiscall BSurface_ConstructorEx(_DWORD *this, int a2, int a3, int a4, 
   {
     v13 = 0; /*0x7bc9e7*/
   }
-  v14 = *(this + 10); /*0x7bc9ec*/
-  a5 = *(this + 11); /*0x7bc9ef*/
-  *(this + 5) = v13; /*0x7bc9f3*/
+  v14 = this->q00A; /*0x7bc9ec*/
+  a5 = this->q00B; /*0x7bc9ef*/
+  this->Buffer = v13; /*0x7bc9f3*/
   a2 = 0; /*0x7bc9f6*/
   a3 = 0; /*0x7bc9fa*/
   a4 = v14; /*0x7bc9fe*/
   (*(void (__thiscall **)(_DWORD *, int *, int))(*v13 + 20))(v13, &a2, 0xFFFF); /*0x7bca0e*/
-  v15 = (*(int (__thiscall **)(_DWORD, _DWORD, _DWORD))(*(_DWORD *)*(this + 5) + 92))(*(this + 5), 0, 0); /*0x7bca1c*/
-  v16 = *(this + 11); /*0x7bca1f*/
-  *(this + 6) = v15; /*0x7bca22*/
-  v17 = *(this + 10) * v16; /*0x7bca25*/
-  *(this + 4) = 0; /*0x7bca29*/
-  *(this + 9) = 0x8000; /*0x7bca2c*/
+  v15 = (*(int (__thiscall **)(_DWORD, _DWORD, _DWORD))(*(_DWORD *)this->Buffer + 92))(this->Buffer, 0, 0); /*0x7bca1c*/
+  v16 = this->q00B; /*0x7bca1f*/
+  this->q006 = v15; /*0x7bca22*/
+  v17 = this->q00A * v16; /*0x7bca25*/
+  this->BytesPerPixel = 0; /*0x7bca29*/
+  this->q009 = 0x8000; /*0x7bca2c*/
   v18 = v15 + 2 * v17; /*0x7bca33*/
-  v19 = *(this + 5); /*0x7bca36*/
-  *(this + 7) = v18; /*0x7bca39*/
+  v19 = this->Buffer; /*0x7bca36*/
+  this->q007 = v18; /*0x7bca39*/
   (*(void (__thiscall **)(int))(*(_DWORD *)v19 + 96))(v19); /*0x7bca3e*/
   return this; /*0x7bca43*/
 }

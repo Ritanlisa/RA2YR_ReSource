@@ -96,12 +96,12 @@ char __thiscall InfantryClass::ProcessDeployAction(_DWORD *this, int a2, char a3
 
   v4 = a2;
   if ( a2 == -1
-    || !*(_DWORD *)(*(_DWORD *)(*(this + 432) + 3644) + 36 * a2 + 4)
-    || *(this + 433) == 33 && *((_BYTE *)this + 141) )
+    || !*(_DWORD *)(*(_DWORD *)(this->Type + 3644) + 36 * a2 + 4)
+    || this->SequenceAnim == 33 && this->slaveManager )
   {
     return 0;
   }
-  if ( *(this + 183)
+  if ( this->isPlayingDamageSound
     && *(_DWORD *)((*(int (__thiscall **)(_DWORD *))(*this + 132))(this) + 2048)
     && ((double (__thiscall *)(_DWORD *))*(_DWORD *)(*this + 692))(this) == 1.0
     && v4 == 3 )
@@ -109,15 +109,15 @@ char __thiscall InfantryClass::ProcessDeployAction(_DWORD *this, int a2, char a3
     v4 = 39;
     goto LABEL_12;
   }
-  if ( v4 == 5 && !*(_BYTE *)(*(this + 432) + 3773) )
+  if ( v4 == 5 && !*(_BYTE *)(this->Type + 3773) )
     return 0;
 LABEL_12:
-  if ( *(_DWORD *)(*(this + 432) + 1460) == 3 )
+  if ( *(_DWORD *)(this->Type + 1460) == 3 )
   {
     v6 = (__int16 *)(*(int (__thiscall **)(_DWORD *, int *))(*this + 440))(this, &a2);
     v7 = *((_DWORD *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], v6) + 59);
     v8 = 1;
-    if ( (v7 == 6 || v7 == 2) && !*((_BYTE *)this + 140) )
+    if ( (v7 == 6 || v7 == 2) && !this->q230 )
     {
       v8 = 0;
       switch ( v4 )
@@ -148,94 +148,94 @@ LABEL_12:
           break;
       }
     }
-    v9 = *(this + 442);
+    v9 = this->waterState;
     if ( v9 || v8 != 1 )
     {
       if ( v9 == 1 && !v8 )
       {
-        v24 = *(this + 39);
-        v25 = *(this + 40);
-        v11 = *(this + 432);
-        v26 = *(this + 41);
+        v24 = this->location;
+        v25 = this->q0A0;
+        v11 = this->Type;
+        v26 = this->q0A4;
         StartAudioControllerAt(*(_DWORD *)(v11 + 3748), (int)&v24, 0);
       }
     }
     else
     {
-      v24 = *(this + 39);
-      v25 = *(this + 40);
-      v10 = *(this + 432);
-      v26 = *(this + 41);
+      v24 = this->location;
+      v25 = this->q0A0;
+      v10 = this->Type;
+      v26 = this->q0A4;
       StartAudioControllerAt(*(_DWORD *)(v10 + 3752), (int)&v24, 0);
     }
-    *(this + 442) = v8;
+    this->waterState = v8;
   }
   if ( !(*(unsigned __int8 (__thiscall **)(_DWORD *))(*this + 84))(this)
-    || *((_BYTE *)this + 140)
-    || *(int *)(*(_DWORD *)(*(this + 432) + 3644) + 828) <= 0
+    || this->q230
+    || *(int *)(*(_DWORD *)(this->Type + 3644) + 828) <= 0
     || v4 )
   {
-    if ( v4 == 3 && (int)*(this + 437) >= 200 )
+    if ( v4 == 3 && (int)this->PanicDurationLeft >= 200 )
       v4 = 37;
   }
   else
   {
     v4 = 23;
   }
-  v12 = *(this + 433);
+  v12 = this->SequenceAnim;
   if ( v4 == v12 || v12 != -1 && !a3 && !byte_7EAF7C[4 * v12] )
     return 0;
   if ( v4 == 27 )
   {
     if ( *(_DWORD *)((*(int (__thiscall **)(_DWORD *))(*this + 132))(this) + 1388) != -1 )
     {
-      v24 = *(this + 39);
-      v25 = *(this + 40);
+      v24 = this->location;
+      v25 = this->q0A0;
       v13 = *this;
-      v26 = *(this + 41);
+      v26 = this->q0A4;
       v14 = *(_DWORD *)((*(int (__thiscall **)(_DWORD *))(v13 + 132))(this) + 1388);
       StartAudioControllerAt(v14, (int)&v24, 0);
     }
   }
   else if ( v4 == 31 && *(_DWORD *)((*(int (__thiscall **)(_DWORD *))(*this + 132))(this) + 1392) != -1 )
   {
-    v24 = *(this + 39);
+    v24 = this->location;
     v15 = *this;
-    v25 = *(this + 40);
-    v26 = *(this + 41);
+    v25 = this->q0A0;
+    v26 = this->q0A4;
     v16 = *(_DWORD *)((*(int (__thiscall **)(_DWORD *))(v15 + 132))(this) + 1392);
     StartAudioControllerAt(v16, (int)&v24, 0);
   }
-  *(this + 433) = v4;
+  this->SequenceAnim = v4;
   if ( v4 == 9 || v4 == 10 || v4 == 18 || v4 == 19 || v4 == 23 || v4 == 32 )
   {
     ProductionTimeMult = Rules::GetProductionTimeMult((int *)MEMORY[0xA8EB60], (unsigned __int8)byte_7EAF7F[4 * v4]);
     v18 = (char *)(this + 64);
-    *(this + 64) = MEMORY[0xA8ED84];
+    this->radioCommand = MEMORY[0xA8ED84];
     v19 = v25;
   }
   else
   {
     ProductionTimeMult = (char *)(unsigned __int8)byte_7EAF7F[4 * v4];
     v18 = (char *)(this + 64);
-    *(this + 64) = MEMORY[0xA8ED84];
+    this->radioCommand = MEMORY[0xA8ED84];
     v19 = v25;
   }
   *((_DWORD *)v18 + 1) = v19;
   *((_DWORD *)v18 + 2) = ProductionTimeMult;
-  *(this + 67) = ProductionTimeMult;
+  this->q10C = ProductionTimeMult;
   if ( a4 )
   {
-    v20 = *(_DWORD *)(*(_DWORD *)(*(this + 432) + 3644) + 36 * v4 + 4);
+    v20 = *(_DWORD *)(*(_DWORD *)(this->Type + 3644) + 36 * v4 + 4);
     if ( v20 <= 1 )
       v20 = 1;
-    *(this + 62) = Random::Range((_DWORD *)MEMORY[0xA8B230] + 134, 0, v20 - 1);
+    this->radioContact = Random::Range((_DWORD *)MEMORY[0xA8B230] + 134, 0, v20 - 1);
   }
   else
   {
-    *(this + 62) = 0;
+    this->radioContact = 0;
   }
-  if ( !*(this + 27) )
+  if ( !this->health )
     (*(void (__thiscall **)(_DWORD *))(*this + 1280))(this);
   v21 = v4 - 5;
   if ( v21 )
@@ -243,13 +243,13 @@ LABEL_12:
     v22 = v21 - 2;
     if ( !v22 || v22 == 20 )
     {
-      *((_BYTE *)this + 1755) = 0;
+      this->Crawling = 0;
       return 1;
     }
   }
   else
   {
-    *((_BYTE *)this + 1755) = 1;
+    this->Crawling = 1;
   }
   return 1;
 }
@@ -658,60 +658,60 @@ char __thiscall sub_5200B0(int *this)
   int v4; // eax
   int v5; // eax
 
-  if ( *(this + 437) > 0 )
+  if ( this->q1B5 > 0 )
   {
-    if ( !*(_BYTE *)(*(this + 432) + 3772) )
-      --*(this + 437);
-    if ( !*(this + 437) && !*(this + 191) && (*(unsigned __int8 (__thiscall **)(int *))(*this + 684))(this) )
-      *(this + 191) = *(_DWORD *)(*(this + 432) + 1668);
-    v2 = *(this + 437);
-    if ( *((_BYTE *)this + 1755) )
+    if ( !*(_BYTE *)(this->animation + 3772) )
+      --this->q1B5;
+    if ( !this->q1B5 && !this->q0BF && (*(unsigned __int8 (__thiscall **)(int *))(*this + 684))(this) )
+      this->q0BF = *(_DWORD *)(this->animation + 1668);
+    v2 = this->q1B5;
+    if ( this->Crawling )
     {
       if ( v2 < 50 )
       {
-        v3 = *(this + 433);
+        v3 = this->q1B1;
         if ( v3 != 27 && v3 != 28 && v3 != 29 && v3 != 30 )
           (*(void (__thiscall **)(int *, int, _DWORD, _DWORD))(*this + 1368))(this, 7, 0, 0);
       }
     }
     else if ( v2 >= 50 )
     {
-      v4 = *(this + 433);
+      v4 = this->q1B1;
       if ( v4 != 27 && v4 != 28 && v4 != 29 && v4 != 30 )
       {
-        if ( !(unsigned __int8)House::IsCurrentPlayer((#375 *)*(this + 135)) )
+        if ( !(unsigned __int8)House::IsCurrentPlayer((#375 *)this->owner) )
           goto LABEL_42;
-        if ( !*(this + 361) )
+        if ( !this->q169 )
         {
-          if ( !*(this + 413) )
+          if ( !this->Locomotor )
             WinAPI::Wrapper(-2147467261);
-          if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)*(this + 413) + 16))(*(this + 413)) )
+          if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)this->Locomotor + 16))(this->Locomotor) )
           {
 LABEL_42:
-            if ( !*(_BYTE *)(*(this + 432) + 3775) )
+            if ( !*(_BYTE *)(this->animation + 3775) )
               (*(void (__thiscall **)(int *, int, _DWORD, _DWORD))(*this + 1368))(this, 5, 0, 0);
           }
         }
       }
     }
   }
-  LOBYTE(v5) = *(_BYTE *)(*(this + 432) + 3775);
+  LOBYTE(v5) = *(_BYTE *)(this->animation + 3775);
   if ( (_BYTE)v5 )
   {
-    if ( *(this + 437) > 50 )
+    if ( this->q1B5 > 50 )
     {
-      v5 = *(this + 433);
+      v5 = this->q1B1;
       if ( v5 != 27 && v5 != 28 && v5 != 29 && v5 != 30 )
       {
-        LOBYTE(v5) = *((_BYTE *)this + 141);
+        LOBYTE(v5) = this->isFallingDown;
         if ( !(_BYTE)v5 )
         {
-          if ( !*(this + 413) )
+          if ( !this->Locomotor )
             WinAPI::Wrapper(-2147467261);
-          LOBYTE(v5) = (*(int (__stdcall **)(_DWORD))(*(_DWORD *)*(this + 413) + 16))(*(this + 413));
+          LOBYTE(v5) = (*(int (__stdcall **)(_DWORD))(*(_DWORD *)this->Locomotor + 16))(this->Locomotor);
           if ( !(_BYTE)v5 )
           {
-            v5 = *(this + 361);
+            v5 = this->q169;
             if ( !v5 )
               LOBYTE(v5) = (*(int (__thiscall **)(int *, int *, int, _DWORD))(*this + 372))(
                              this,
@@ -3586,7 +3586,7 @@ void *__thiscall InfantryClass_FindNearbyCell(_DWORD *this, int a2)
 
   v2 = a2;
   v22 = this;
-  if ( a2 && (!*(this + 373) || !(unsigned __int8)TechnoClass::IsWaypointHidden()) )
+  if ( a2 && (!this->FootClass_field_5D4 || !(unsigned __int8)TechnoClass::IsWaypointHidden()) )
   {
     if ( !(*(unsigned __int8 (__thiscall **)(_DWORD *, int))(*this + 1360))(this, a2)
       || (v4 = (_DWORD *)(*(int (__thiscall **)(int, double *, _DWORD))(*(_DWORD *)a2 + 76))(a2, &v25, 0),
@@ -5259,7 +5259,7 @@ char __thiscall InfantryClass::CalcFacingToTarget(_BYTE *this, int *a2)
     v14 = Coord::To_Cell(MEMORY[0x87F7E8], &v32);
     if ( !(*(int (__thiscall **)(_BYTE *, void *, int, int, _DWORD, int))(v13 + 428))(this, v14, -1, -1, 0, 1) )
     {
-      v15 = (int *)(*(int (__thiscall **)(_BYTE *, int *))(*(_DWORD *)this + 72))(this, v39);
+      v15 = (int *)(*(int (__thiscall **)(_BYTE *, int *))(this->q048)(this, v39);
       Int64::Equal(v15, a2);
       v16 = Math::CalcAngle((double)v15[1] - (double)a2[1], (double)*a2 - (double)*v15);
       v17 = Math::RoundToInt((v16 - 1.570796326794897) * -10430.06004058427);
@@ -5283,16 +5283,16 @@ char __thiscall InfantryClass::CalcFacingToTarget(_BYTE *this, int *a2)
   }
   if ( *a2 == dword_A8ED54[299] && a2[1] == dword_A8ED54[300] && a2[2] == dword_A8ED54[301]
     || !FootClass::Destru_vt319(this, a2)
-    || !*(this + 144) )
+    || !this->isAliveFlag )
   {
     return 0;
   }
-  v35 = *((_DWORD *)this + 39);
+  v35 = this->q027;
   v24 = *(_DWORD *)this;
-  v36 = *((_DWORD *)this + 40);
-  v37 = *((_DWORD *)this + 41);
+  v36 = this->owningHouseIndex;
+  v37 = this->q029;
   (*(void (__thiscall **)(_BYTE *, int *))(v24 + 244))(this, &v35);
-  (*(void (__thiscall **)(_BYTE *, int *))(*(_DWORD *)this + 240))(this, a2);
+  (*(void (__thiscall **)(_BYTE *, int *))(this->flashing)(this, a2);
   return 1;
 }
 
@@ -5642,7 +5642,7 @@ int __thiscall InfantryClass::EvaluateTarget(int this, int a2, int a3, int a4, i
   }
   if ( a4 - *(char *)(a2 + 283) > 4 )
     return 0;
-  result = (*(int (__thiscall **)(int, int, int, int *, bool *, int))(*(_DWORD *)this + 432))(
+  result = (*(int (__thiscall **)(int, int, int, int *, bool *, int))(this->animation)(
              this,
              a2,
              a3,
@@ -5662,7 +5662,7 @@ int __thiscall InfantryClass::EvaluateTarget(int this, int a2, int a3, int a4, i
     if ( *(_BYTE *)(this + 981)
       && !MEMORY[0xA8E7AC]
       && !Type::CheckAmbiguity(&MEMORY[0x87F7E8], a2, 1)
-      && !(*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)this + 800))(this) )
+      && !(*(unsigned __int8 (__thiscall **)(int))(this->isOnCarryall)(this) )
     {
       return 7;
     }
@@ -5675,9 +5675,9 @@ int __thiscall InfantryClass::EvaluateTarget(int this, int a2, int a3, int a4, i
         return 7;
       if ( *(_BYTE *)(v20 + 680) && *(unsigned __int8 *)(a2 + 286) >> 4 != *(_DWORD *)(v20 + 672) )
       {
-        if ( !(*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)this + 684))(this) )
+        if ( !(*(unsigned __int8 (__thiscall **)(int))(this->unloadTimer)(this) )
           return 7;
-        v21 = (_DWORD *)(*(int (__thiscall **)(int, _DWORD))(*(_DWORD *)this + 1016))(this, 0);
+        v21 = (_DWORD *)(*(int (__thiscall **)(int, _DWORD))(this->q3F8)(this, 0);
         if ( !(unsigned __int8)InfantryClass::startPanic(*v21) )
           return 7;
         v19 = 5 - HouseClass::IsAllied(*(_DWORD **)(this + 540), *(_DWORD *)(a2 + 80));
@@ -5715,14 +5715,14 @@ int __thiscall InfantryClass::EvaluateTarget(int this, int a2, int a3, int a4, i
           else
           {
             if ( !(*(unsigned __int8 (__thiscall **)(_DWORD *))(*v23 + 468))(v23)
-              && ((*(int (__thiscall **)(int))(*(_DWORD *)this + 388))(this) == 7
-               || (*(int (__thiscall **)(int))(*(_DWORD *)this + 388))(this) == 8
-               || (*(int (__thiscall **)(int))(*(_DWORD *)this + 388))(this) == 9
-               || (*(int (__thiscall **)(int))(*(_DWORD *)this + 388))(this) == 17
+              && ((*(int (__thiscall **)(int))(this->q610)(this) == 7
+               || (*(int (__thiscall **)(int))(this->q610)(this) == 8
+               || (*(int (__thiscall **)(int))(this->q610)(this) == 9
+               || (*(int (__thiscall **)(int))(this->q610)(this) == 17
                && *(_BYTE *)(*(_DWORD *)(this + 1728) + 3778)
-               || ((*(int (__thiscall **)(int))(*(_DWORD *)this + 388))(this) == 11
-                || (*(int (__thiscall **)(int))(*(_DWORD *)this + 388))(this) == 25
-                || (*(int (__thiscall **)(int))(*(_DWORD *)this + 388))(this) == 5)
+               || ((*(int (__thiscall **)(int))(this->q610)(this) == 11
+                || (*(int (__thiscall **)(int))(this->q610)(this) == 25
+                || (*(int (__thiscall **)(int))(this->q610)(this) == 5)
                && *(_BYTE *)(*(_DWORD *)(this + 1728) + 3779)) )
             {
               if ( v23 == *(_DWORD **)(this + 1444)
@@ -5759,7 +5759,7 @@ int __thiscall InfantryClass::EvaluateTarget(int this, int a2, int a3, int a4, i
                 }
               }
             }
-            if ( (*(int (__thiscall **)(int))(*(_DWORD *)this + 388))(this) == 11 )
+            if ( (*(int (__thiscall **)(int))(this->q610)(this) == 11 )
             {
               v33 = *(_DWORD **)(this + 536);
               if ( v33 == v23 && (*(int (__thiscall **)(_DWORD *))(*v33 + 44))(v33) == 1 )
@@ -5775,7 +5775,7 @@ int __thiscall InfantryClass::EvaluateTarget(int this, int a2, int a3, int a4, i
             if ( (*(int (__thiscall **)(_DWORD *))(*v23 + 44))(v23) != 6 )
             {
 LABEL_96:
-              if ( (*(int (__thiscall **)(int))(*(_DWORD *)this + 388))(this) == 7
+              if ( (*(int (__thiscall **)(int))(this->q610)(this) == 7
                 && v23 == *(_DWORD **)(this + 1444)
                 && *(_BYTE *)(this + 1048) )
               {
@@ -5872,7 +5872,7 @@ LABEL_128:
                     }
                     else
                     {
-                      if ( !(*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)this + 684))(this) )
+                      if ( !(*(unsigned __int8 (__thiscall **)(int))(this->unloadTimer)(this) )
                         return 7;
                       if ( v19 < 5 )
                         v19 = 5;
@@ -6838,7 +6838,7 @@ int __thiscall InfantryClass::SelectAutoTarget(int this, unsigned int a2, __int6
     if ( v4 )
     {
       v5 = (_DWORD *)(*(int (__thiscall **)(int, _BYTE *))(*(_DWORD *)v4 + 72))(v4, v19);
-      v6 = (_DWORD *)(*(int (__thiscall **)(int, _DWORD *))(*(_DWORD *)this + 72))(this, v20);
+      v6 = (_DWORD *)(*(int (__thiscall **)(int, _DWORD *))(this->q048)(this, v20);
       v17 = v6[1] - v5[1];
       v18 = v6[2] - v5[2];
       v7 = Math::Sqrt((double)(*v6 - *v5) * (double)(*v6 - *v5) + (double)v18 * (double)v18 + (double)v17 * (double)v17);
@@ -6863,7 +6863,7 @@ int __thiscall InfantryClass::SelectAutoTarget(int this, unsigned int a2, __int6
       }
     }
   }
-  if ( (*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)this + 684))(this) )
+  if ( (*(unsigned __int8 (__thiscall **)(int))(this->unloadTimer)(this) )
     goto LABEL_21;
   v11 = *(_DWORD *)(this + 1728);
   v12 = *(_BYTE *)(v11 + 3782);
@@ -6879,21 +6879,21 @@ LABEL_20:
 LABEL_21:
   if ( (v9 & 0x1B978) == 0 )
   {
-    if ( *(_DWORD *)(*(int (__thiscall **)(int, _DWORD))(*(_DWORD *)this + 1016))(this, 0) )
+    if ( *(_DWORD *)(*(int (__thiscall **)(int, _DWORD))(this->q3F8)(this, 0) )
     {
-      v13 = (_DWORD **)(*(int (__thiscall **)(int, _DWORD))(*(_DWORD *)this + 1016))(this, 0);
+      v13 = (_DWORD **)(*(int (__thiscall **)(int, _DWORD))(this->q3F8)(this, 0);
       LOBYTE(v14) = Building::GetRenderType(*v13);
       v9 |= v14;
     }
-    if ( *(_DWORD *)(*(int (__thiscall **)(int, int))(*(_DWORD *)this + 1016))(this, 1) )
+    if ( *(_DWORD *)(*(int (__thiscall **)(int, int))(this->q3F8)(this, 1) )
     {
-      v15 = (_DWORD **)(*(int (__thiscall **)(int, int))(*(_DWORD *)this + 1016))(this, 1);
+      v15 = (_DWORD **)(*(int (__thiscall **)(int, int))(this->q3F8)(this, 1);
       LOBYTE(v16) = Building::GetRenderType(*v15);
       v9 |= v16;
     }
   }
-  if ( (*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)this + 684))(this)
-    && *(_BYTE *)(*(_DWORD *)(*(_DWORD *)(*(int (__thiscall **)(int, _DWORD))(*(_DWORD *)this + 1016))(this, 0) + 172)
+  if ( (*(unsigned __int8 (__thiscall **)(int))(this->unloadTimer)(this)
+    && *(_BYTE *)(*(_DWORD *)(*(_DWORD *)(*(int (__thiscall **)(int, _DWORD))(this->q3F8)(this, 0) + 172)
                 + 329) )
   {
     v9 &= 0xFFFFFF4B;

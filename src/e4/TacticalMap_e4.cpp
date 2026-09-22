@@ -111,8 +111,8 @@ int __thiscall sub_4F4480(_DWORD *this)
   v1 = MEMORY[0x887314]; /*0x4f4489*/
   MEMORY[0x887314] = MEMORY[0x88731C]; /*0x4f4492*/
   (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)MEMORY[0x887640] + 64))(MEMORY[0x887640], MEMORY[0x88731C], 0); /*0x4f44a2*/
-  v3 = *(this + 3); /*0x4f44a5*/
-  *(this + 3) = 0; /*0x4f44a8*/
+  v3 = this->TacticalMap_field_0C; /*0x4f44a5*/
+  this->TacticalMap_field_0C = 0; /*0x4f44a8*/
   LOBYTE(v6) = v3 != 0; /*0x4f44b7*/
   v7 = v3 == 2; /*0x4f44be*/
   if ( !(unsigned __int8)UI_Helper() ) /*0x4f44c2*/
@@ -152,14 +152,14 @@ void TacticalMap::MultiplyByScalar(ObjectClass * aP1)
 void __thiscall TacticalMap::MultiplyByScalar(float *this, ObjectClass *aP1)
 {
   *this = *(float *)&aP1 * *this; /*0x5aea16*/
-  *(this + 4) = *(float *)&aP1 * *(this + 4); /*0x5aea1f*/
-  *(this + 8) = *(float *)&aP1 * *(this + 8); /*0x5aea29*/
-  *(this + 1) = *(float *)&aP1 * *(this + 1); /*0x5aea33*/
-  *(this + 5) = *(float *)&aP1 * *(this + 5); /*0x5aea3d*/
-  *(this + 9) = *(float *)&aP1 * *(this + 9); /*0x5aea47*/
-  *(this + 2) = *(float *)&aP1 * *(this + 2); /*0x5aea51*/
-  *(this + 6) = *(float *)&aP1 * *(this + 6); /*0x5aea5b*/
-  *(this + 10) = *(float *)&aP1 * *(this + 10); /*0x5aea65*/
+  this->TacticalMap_field_04 = *(float *)&aP1 * this->TacticalMap_field_04; /*0x5aea1f*/
+  this->TacticalMap_field_08 = *(float *)&aP1 * this->TacticalMap_field_08; /*0x5aea29*/
+  this->TacticalMap_field_04 = *(float *)&aP1 * this->TacticalMap_field_04; /*0x5aea33*/
+  this->TacticalMap_field_14 = *(float *)&aP1 * this->TacticalMap_field_14; /*0x5aea3d*/
+  this->q024 = *(float *)&aP1 * this->q024; /*0x5aea47*/
+  this->TacticalMap_field_08 = *(float *)&aP1 * this->TacticalMap_field_08; /*0x5aea51*/
+  this->m_TintFactor = *(float *)&aP1 * this->m_TintFactor; /*0x5aea5b*/
+  this->q028 = *(float *)&aP1 * this->q028; /*0x5aea65*/
 }
 }
 
@@ -186,15 +186,15 @@ char __thiscall sub_5D49A0(_DWORD *this)
   if ( result ) /*0x5d49b9*/
   {
     (*(void (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 12))(MEMORY[0x887640]); /*0x5d49c8*/
-    (*(void (__thiscall **)(_DWORD, int))(*(_DWORD *)*(this + 9) + 108))(*(this + 9), 1); /*0x5d49d2*/
+    (*(void (__thiscall **)(_DWORD, int))(*(_DWORD *)this->q024 + 108))(this->q024, 1); /*0x5d49d2*/
     TextRenderer::GetInstance(); /*0x5d49db*/
-    v3 = Text::MeasureWidth(*(_DWORD *)(*(this + 9) + 48), 0); /*0x5d49f8*/
+    v3 = Text::MeasureWidth(*(_DWORD *)(this->q024 + 48), 0); /*0x5d49f8*/
     if ( *((_WORD *)this + 348) /*0x5d4a1b*/
-      && *(this + 172) - *(this + 173) < *(this + 4) - 1
-      && (*(unsigned __int8 (__thiscall **)(_DWORD))(*(_DWORD *)*(this + 9) + 88))(*(this + 9)) )
+      && *(this + 172) - *(this + 173) < this->TacticalMap_field_10 - 1
+      && (*(unsigned __int8 (__thiscall **)(_DWORD))(*(_DWORD *)this->q024 + 88))(this->q024) )
     {
       LOWORD(v9) = *((_WORD *)this + 348); /*0x5d4a29*/
-      v4 = (_DWORD *)*(this + 9); /*0x5d4a2e*/
+      v4 = (_DWORD *)this->q024; /*0x5d4a2e*/
       v5 = v4[3]; /*0x5d4a31*/
       v10[1] = v4[4]; /*0x5d4a39*/
       v10[0] = v3 + v5; /*0x5d4a3d*/
@@ -400,7 +400,7 @@ int __thiscall TacticalMap::RenderCell(_DWORD *this, char arg0, AbstractClass *a
       }
     }
   }
-  result = *(this + 56); /*0x6d2d03*/
+  result = this->q038; /*0x6d2d03*/
   if ( result > 0 && !arg0 ) /*0x6d2d17*/
   {
     v17 = 0; /*0x6d2d1d*/
@@ -412,12 +412,12 @@ int __thiscall TacticalMap::RenderCell(_DWORD *this, char arg0, AbstractClass *a
       v26 = *(_DWORD *)&Coords->__pad_0[4]; /*0x6d2d47*/
       v27 = 0; /*0x6d2d59*/
       v20 = Coord::To_ScreenRaw((int *)aP1.__pad_0, &v25); /*0x6d2d61*/
-      v21 = v20[1] - *(this + 45); /*0x6d2d81*/
-      v28 = (ObjectClass *)(*v20 - *(this + 44) + *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[8532] - 30); /*0x6d2d8d*/
+      v21 = v20[1] - this->q0B4; /*0x6d2d81*/
+      v28 = (ObjectClass *)(*v20 - this->q0B0 + *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[8532] - 30); /*0x6d2d8d*/
       v29 = *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[8536] + v21 - 15; /*0x6d2d9c*/
       if ( g_hWnd ) /*0x6d2da0*/
         DSurface::Process(*(_DWORD *)v18->__pad_0, (IUnknown *)&v28, (int *)a2); /*0x6d2db1*/
-      result = *(this + 56); /*0x6d2db6*/
+      result = this->q038; /*0x6d2db6*/
       ++v17; /*0x6d2dbc*/
       v18 = (ObjectClass *)((char *)v18 + 4); /*0x6d2dbd*/
     }
@@ -875,12 +875,12 @@ int __thiscall sub_6DA180(int *this)
   int v9; // edi
   _DWORD v10[4]; // [esp+0h] [ebp-10h] BYREF
 
-  if ( *(this + 868) || (result = *(this + 869)) != 0 ) /*0x6da195*/
+  if ( this->qD90 || (result = this->qD94) != 0 ) /*0x6da195*/
   {
-    v2 = *(this + 868); /*0x6da19b*/
-    v3 = *(this + 870); /*0x6da1a1*/
-    v4 = *(this + 869); /*0x6da1a9*/
-    v5 = *(this + 871); /*0x6da1af*/
+    v2 = this->qD90; /*0x6da19b*/
+    v3 = this->qD98; /*0x6da1a1*/
+    v4 = this->qD94; /*0x6da1a9*/
+    v5 = this->qD9C; /*0x6da1af*/
     if ( v3 < v2 ) /*0x6da1b8*/
     {
       v6 = v2; /*0x6da1ba*/

@@ -9,7 +9,7 @@ unsigned int * VectorCursor::Release()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall VectorCursor::_vt02(_DWORD *this)
 {
-  ++*(this + 2); /*0x76f182*/
+  ++this->q008; /*0x76f182*/
   return this; /*0x76f185*/
 }
 }
@@ -20,7 +20,7 @@ unsigned int * VectorCursor::ddtor()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall VectorCursor::_vt03(_DWORD *this)
 {
-  --*(this + 2); /*0x76f192*/
+  --this->q008; /*0x76f192*/
   return this; /*0x76f195*/
 }
 }

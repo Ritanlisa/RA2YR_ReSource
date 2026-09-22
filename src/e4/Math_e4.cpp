@@ -28,7 +28,7 @@ void Math::Hypotenuse2D()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall Math_Hypotenuse2D(double *this)
 {
-  Math::Sqrt(*this * *this + *(this + 1) * *(this + 1)); /*0x41c369*/
+  Math::Sqrt(*this * *this + this->q004 * this->q004); /*0x41c369*/
 }
 }
 } // namespace gamemd
@@ -205,19 +205,19 @@ float *__thiscall Math_BuildRotationMatrix(float *this, float *a2, float a3)
   v7 = *a2 * *a2; /*0x5ae787*/
   *this = (1.0 - v7) * v16 + v7; /*0x5ae797*/
   v8 = 1.0 - v16; /*0x5ae7a1*/
-  *(this + 1) = *a2 * a2[1] * v8 - v5 * a2[2]; /*0x5ae7b3*/
+  this->q004 = *a2 * a2[1] * v8 - v5 * a2[2]; /*0x5ae7b3*/
   v9 = a2[2] * *a2 * v8; /*0x5ae7bb*/
   v10 = v5 * a2[1]; /*0x5ae7bf*/
-  *(this + 3) = 0.0; /*0x5ae7c2*/
-  *(this + 2) = v9 + v10; /*0x5ae7c7*/
-  *(this + 4) = *a2 * a2[1] * v8 + v5 * a2[2]; /*0x5ae7d8*/
+  this->q00C = 0.0; /*0x5ae7c2*/
+  this->q008 = v9 + v10; /*0x5ae7c7*/
+  this->q004 = *a2 * a2[1] * v8 + v5 * a2[2]; /*0x5ae7d8*/
   v11 = a2[1] * a2[1]; /*0x5ae7e0*/
-  *(this + 5) = (1.0 - v11) * v16 + v11; /*0x5ae7f0*/
+  this->q005 = (1.0 - v11) * v16 + v11; /*0x5ae7f0*/
   v12 = a2[2] * a2[1] * v8; /*0x5ae7fb*/
   v13 = v5 * *a2; /*0x5ae7ff*/
-  *(this + 7) = 0.0; /*0x5ae801*/
-  *(this + 6) = v12 - v13; /*0x5ae806*/
-  *(this + 8) = a2[2] * *a2 * v8 - v5 * a2[1]; /*0x5ae817*/
+  this->q007 = 0.0; /*0x5ae801*/
+  this->q006 = v12 - v13; /*0x5ae806*/
+  this->q008 = a2[2] * *a2 * v8 - v5 * a2[1]; /*0x5ae817*/
   *(this + 9) = a2[2] * a2[1] * v8 + v5 * *a2; /*0x5ae82b*/
   v14 = a2[2] * a2[2]; /*0x5ae835*/
   *(this + 11) = 0.0; /*0x5ae83f*/

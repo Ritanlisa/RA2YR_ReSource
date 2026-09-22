@@ -15,9 +15,9 @@ char *__thiscall TagTypeClass::Construct(char *this, ObjectClass *aP1)
   char v7; // [esp+38h] [ebp-4h]
 
   AbstractTypeClass::Constructor((int)this, (AbstractClass *)aP1); /*0x6e5b6c*/
-  *((_DWORD *)this + 38) = -1; /*0x6e5b78*/
-  *((_DWORD *)this + 39) = 0; /*0x6e5b82*/
-  *((_DWORD *)this + 40) = 0; /*0x6e5b88*/
+  this->q098 = -1; /*0x6e5b78*/
+  this->q09C = 0; /*0x6e5b82*/
+  this->persistence = 0; /*0x6e5b88*/
   *(_DWORD *)this = &TagTypeClass::`vftable'; /*0x6e5b8e*/
   this->vtable1 = &TagTypeClass::`vftable'; /*0x6e5b95*/
   this->vtable2 = &TagTypeClass::`vftable'; /*0x6e5b9c*/
@@ -34,9 +34,9 @@ char *__thiscall TagTypeClass::Construct(char *this, ObjectClass *aP1)
   if ( Destination != this + 100 ) /*0x6e5bd0*/
   {
     qmemcpy(this + 100, Destination, 0x30u); /*0x6e5bdc*/
-    *(this + 148) = v7; /*0x6e5bde*/
+    this->q094 = v7; /*0x6e5bde*/
   }
-  *((_DWORD *)this + 38) = *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[6140]; /*0x6e5be6*/
+  this->q098 = *(_DWORD *)&MEMORY[0xB077F8].__pad_579C[6140]; /*0x6e5be6*/
   if ( *(int *)&MEMORY[0xB077F8].__pad_579C[6140] < *(int *)&MEMORY[0xB077F8].__pad_579C[6132] /*0x6e5c1e*/
     || (MEMORY[0xB077F8].__pad_579C[6137] || !*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[6132])
     && *(int *)&MEMORY[0xB077F8].__pad_579C[6144] > 0
@@ -155,11 +155,11 @@ int __thiscall TagTypeClass::_vt10(_DWORD *this, int a2, int a3)
 {
   int result; // eax
 
-  result = *(this + 40); /*0x6e5e50*/
+  result = this->q0A0; /*0x6e5e50*/
   if ( result == a2 ) /*0x6e5e5c*/
   {
     result = *(_DWORD *)(result + 168); /*0x6e5e5e*/
-    *(this + 40) = result; /*0x6e5e64*/
+    this->q0A0 = result; /*0x6e5e64*/
   }
   return result; /*0x6e5e6a*/
 }
@@ -284,7 +284,7 @@ int TagTypeClass::GetAuxField()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall TagTypeClass::_vt16(_DWORD *this)
 {
-  return *(this + 38); /*0x6e64b6*/
+  return this->q098; /*0x6e64b6*/
 }
 }
 } // namespace gamemd

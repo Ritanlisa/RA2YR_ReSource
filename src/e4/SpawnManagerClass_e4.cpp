@@ -226,8 +226,8 @@ int __thiscall SpawnManagerClass::SetTarget(_DWORD *this, int a2)
   int result; // eax
 
   result = a2; /*0x6b7b90*/
-  if ( a2 != *(this + 26) ) /*0x6b7b99*/
-    *(this + 27) = a2; /*0x6b7b9b*/
+  if ( a2 != this->SpawnManagerClass_field_68 ) /*0x6b7b99*/
+    this->SpawnManagerClass_field_6C = a2; /*0x6b7b9b*/
   return result; /*0x6b7b9e*/
 }
 }
@@ -246,11 +246,11 @@ int __thiscall SpawnManagerClass::CountAliveSpawns(int *this)
   int result; // eax
   int v3; // ecx
 
-  v1 = *(this + 18); /*0x6b7d30*/
+  v1 = this->q012; /*0x6b7d30*/
   result = 0; /*0x6b7d33*/
   if ( v1 > 0 ) /*0x6b7d37*/
   {
-    v3 = *(this + 15); /*0x6b7d39*/
+    v3 = this->spawnVectorCount; /*0x6b7d39*/
     do /*0x6b7d4a*/
     {
       if ( *(_DWORD *)(*(_DWORD *)v3 + 4) != 7 ) /*0x6b7d43*/
@@ -279,11 +279,11 @@ int __thiscall SpawnManagerClass::CountDockedSpawns(int *this)
   int v3; // edx
   int v4; // ecx
 
-  v1 = *(this + 18); /*0x6b7d51*/
+  v1 = this->q012; /*0x6b7d51*/
   result = 0; /*0x6b7d54*/
   if ( v1 > 0 ) /*0x6b7d58*/
   {
-    v3 = *(this + 15); /*0x6b7d5a*/
+    v3 = this->spawnVectorCount; /*0x6b7d5a*/
     do /*0x6b7d70*/
     {
       v4 = *(_DWORD *)(*(_DWORD *)v3 + 4); /*0x6b7d5f*/

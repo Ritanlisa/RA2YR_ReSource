@@ -49,7 +49,7 @@ int __thiscall ObjectClass::Remove(#374 *this)
   int v3; // eax
   #374 *v4; // [esp+4h] [ebp-4h] BYREF
 
-  LOBYTE(result) = *((_BYTE *)this + 131);
+  LOBYTE(result) = this->isSelected;
   if ( (_BYTE)result )
   {
     v4 = this;
@@ -64,7 +64,7 @@ int __thiscall ObjectClass::Remove(#374 *this)
         ++v3;
       }
     }
-    *((_BYTE *)this + 131) = 0;
+    this->isSelected = 0;
     result = MapClass::GetScrollMode((int)MEMORY[0x87F7E8]);
     if ( (#374 *)result == this )
       LOBYTE(result) = MapClass::SetScrollMode((int)MEMORY[0x87F7E8], 0);
@@ -84,14 +84,14 @@ int __thiscall ObjectClass::Destroy(#374 *this)
   int v2; // ecx
   int result; // eax
 
-  v2 = *((_DWORD *)this + 14);
+  v2 = this->attachedBomb;
   if ( v2 )
     ObjectClass::CleanupAudioAndRefs(v2);
-  if ( this && (*((_BYTE *)this + 20) & 1) != 0 )
+  if ( this && (this->abstractFlags & 1) != 0 )
     TechnoClass::CleanupAll(this, 0);
   AbstractClass::AnnounceExpiredPointer((void **)this, 1);
-  (*(void (__thiscall **)(#374 *))(*(_DWORD *)this + 212))(this);
-  *((_BYTE *)this + 144) = 0;
+  (*(void (__thiscall **)(#374 *))(this->q0D4)(this);
+  this->isAliveFlag = 0;
   result = MEMORY[0xB0F6A0];
   if ( MEMORY[0xB0F6A8] < MEMORY[0xB0F6A0]
     || (MEMORY[0xB0F6A5] || !MEMORY[0xB0F6A0])

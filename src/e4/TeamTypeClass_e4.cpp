@@ -197,7 +197,7 @@ int __thiscall sub_6EF5F0(_DWORD *this, int a2)
 {
   int result; // eax
 
-  for ( result = *(this + 21); result; result = *(_DWORD *)(result + 1496) ) /*0x6ef5f5*/
+  for ( result = this->q054; result; result = *(_DWORD *)(result + 1496) ) /*0x6ef5f5*/
     *(_DWORD *)(result + 240) = a2; /*0x6ef5fb*/
   return result; /*0x6ef60b*/
 }
@@ -243,15 +243,15 @@ int __thiscall TeamTypeClass::_vt10(_DWORD *this, int a2, int a3)
   int v4; // ecx
 
   result = a2; /*0x6f1030*/
-  if ( *(this + 52) == a2 ) /*0x6f103f*/
-    *(this + 52) = 0; /*0x6f1041*/
-  if ( *(this + 49) == a2 ) /*0x6f104d*/
-    *(this + 49) = 0; /*0x6f104f*/
-  if ( *(this + 57) == a2 ) /*0x6f105b*/
-    *(this + 57) = 0; /*0x6f105d*/
-  if ( *(this + 56) == a2 ) /*0x6f1069*/
-    *(this + 56) = 0; /*0x6f106b*/
-  v4 = *(this + 56); /*0x6f1071*/
+  if ( this->q0D0 == a2 ) /*0x6f103f*/
+    this->q0D0 = 0; /*0x6f1041*/
+  if ( this->q0C4 == a2 ) /*0x6f104d*/
+    this->q0C4 = 0; /*0x6f104f*/
+  if ( this->q0E4 == a2 ) /*0x6f105b*/
+    this->q0E4 = 0; /*0x6f105d*/
+  if ( this->q0E0 == a2 ) /*0x6f1069*/
+    this->q0E0 = 0; /*0x6f106b*/
+  v4 = this->q0E0; /*0x6f1071*/
   if ( v4 ) /*0x6f1079*/
     return (*(int (__thiscall **)(int, int, int))(*(_DWORD *)v4 + 40))(v4, a2, a3); /*0x6f1083*/
   return result; /*0x6f1086*/
@@ -739,10 +739,10 @@ int __thiscall TeamTypeClass::GetGroup(_DWORD *this)
   int result; // eax
   int v2; // ecx
 
-  result = *(this + 39); /*0x6f1870*/
+  result = this->q09C; /*0x6f1870*/
   if ( result == -1 ) /*0x6f1879*/
   {
-    v2 = *(this + 57); /*0x6f1880*/
+    v2 = this->q0E4; /*0x6f1880*/
     if ( v2 ) /*0x6f1888*/
       return *(_DWORD *)(v2 + 152); /*0x6f188a*/
   }
@@ -763,7 +763,7 @@ _DWORD *__thiscall TeamTypeClass::GetTransportWaypoint(int *this, _DWORD *a2)
   int *v5; // [esp+0h] [ebp-4h] BYREF
 
   v5 = this; /*0x6f18e0*/
-  v2 = *(this + 54); /*0x6f18e1*/
+  v2 = this->q0D8; /*0x6f18e1*/
   if ( v2 == -1 ) /*0x6f18ea*/
   {
     *a2 = MEMORY[0xB0E9C8]; /*0x6f18f6*/
@@ -922,7 +922,7 @@ int TeamTypeClass::GetAuxField()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall TeamTypeClass::_vt16(_DWORD *this)
 {
-  return *(this + 38); /*0x6f20c6*/
+  return this->q098; /*0x6f20c6*/
 }
 }
 } // namespace gamemd
@@ -983,7 +983,7 @@ char __thiscall TeamTypeClass_28_::_vt02(void *this, int a2, int *a3)
   if ( a2 ) /*0x6f22fc*/
   {
     v4 = a3; /*0x6f2302*/
-    *((_BYTE *)this + 12) = 0; /*0x6f2306*/
+    this->q00C = 0; /*0x6f2306*/
     if ( a3 ) /*0x6f230c*/
     {
       *a3 = a2; /*0x6f2347*/
@@ -1026,7 +1026,7 @@ char __thiscall TeamTypeClass_28_::_vt02(void *this, int a2, int *a3)
         v6 = 0; /*0x6f2340*/
       }
     }
-    *((_BYTE *)this + 12) = 1; /*0x6f2362*/
+    this->q00C = 1; /*0x6f2362*/
     if ( v6 ) /*0x6f2366*/
     {
       if ( this->TeamTypeClass_28_field_0x4 ) /*0x6f2371*/
@@ -1047,7 +1047,7 @@ char __thiscall TeamTypeClass_28_::_vt02(void *this, int a2, int *a3)
           while ( v13 < v12 ); /*0x6f239d*/
           v4 = a3; /*0x6f239f*/
         }
-        if ( *((_BYTE *)this + 13) ) /*0x6f23a3*/
+        if ( this->IsAllocated ) /*0x6f23a3*/
         {
           v15 = this->TeamTypeClass_28_field_0x4; /*0x6f23aa*/
           if ( v15 ) /*0x6f23af*/
@@ -1057,7 +1057,7 @@ char __thiscall TeamTypeClass_28_::_vt02(void *this, int a2, int *a3)
       }
       this->TeamTypeClass_28_field_0x4 = v6; /*0x6f23ca*/
       this->TeamTypeClass_28_field_0x8 = a2; /*0x6f23d2*/
-      *((_BYTE *)this + 13) = v4 == 0; /*0x6f23d5*/
+      this->IsAllocated = v4 == 0; /*0x6f23d5*/
       return 1; /*0x6f23db*/
     }
     else
@@ -1067,7 +1067,7 @@ char __thiscall TeamTypeClass_28_::_vt02(void *this, int a2, int *a3)
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x6f23e5*/
+    (*(void (__thiscall **)(void *))(this->q00C)(this); /*0x6f23e5*/
     return 1; /*0x6f23eb*/
   }
 }
@@ -1098,7 +1098,7 @@ char __thiscall TeamTypeClass_28_::sub_6F24B0(void *this, int a2, int *a3)
   if ( a2 ) /*0x6f24bc*/
   {
     v4 = a3; /*0x6f24c2*/
-    *((_BYTE *)this + 12) = 0; /*0x6f24c6*/
+    this->q00C = 0; /*0x6f24c6*/
     if ( a3 ) /*0x6f24cc*/
     {
       *a3 = a2; /*0x6f2507*/
@@ -1141,7 +1141,7 @@ char __thiscall TeamTypeClass_28_::sub_6F24B0(void *this, int a2, int *a3)
         v6 = 0; /*0x6f2500*/
       }
     }
-    *((_BYTE *)this + 12) = 1; /*0x6f2523*/
+    this->q00C = 1; /*0x6f2523*/
     if ( !v6 ) /*0x6f2527*/
       return 0; /*0x6f25c7*/
     if ( this->TeamTypeClass_28_field_0x4 ) /*0x6f252d*/
@@ -1162,7 +1162,7 @@ char __thiscall TeamTypeClass_28_::sub_6F24B0(void *this, int a2, int *a3)
         while ( v12 < v11 ); /*0x6f2559*/
         v4 = a3; /*0x6f255b*/
       }
-      if ( *((_BYTE *)this + 13) ) /*0x6f255f*/
+      if ( this->IsAllocated ) /*0x6f255f*/
       {
         v14 = this->TeamTypeClass_28_field_0x4; /*0x6f2566*/
         if ( v14 ) /*0x6f256b*/
@@ -1177,11 +1177,11 @@ char __thiscall TeamTypeClass_28_::sub_6F24B0(void *this, int a2, int *a3)
     }
     this->TeamTypeClass_28_field_0x4 = v6; /*0x6f2597*/
     this->TeamTypeClass_28_field_0x8 = a2; /*0x6f259f*/
-    *((_BYTE *)this + 13) = v4 == 0; /*0x6f25a2*/
+    this->IsAllocated = v4 == 0; /*0x6f25a2*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x6f25ab*/
+    (*(void (__thiscall **)(void *))(this->q00C)(this); /*0x6f25ab*/
   }
   v16 = this->TeamTypeClass_28_field_0x8; /*0x6f25ae*/
   if ( v16 < this->TeamTypeClass_28_field_0x10 ) /*0x6f25b6*/

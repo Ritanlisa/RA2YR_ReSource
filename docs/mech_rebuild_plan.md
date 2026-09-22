@@ -580,3 +580,14 @@ this-relative 访问**，参数型 receiver（`a1->X`）架构上不产事件。
 - **纪律重申**：rename_symbol 对已翻译 def 行会剥类限定符（IsTechInfiltrated
   事故第二例）——限定名改名后必须复查 def 行与 hpp；gap2/e4 生成文件
   是 latin-1 写盘，Edit 工具前必须 Read 刷新。
+
+### G29.3 Step 4 合同订正（2026-09-21，用户裁决：pending 块必须就地成员化）
+
+用户裁决：**Step 4 的覆盖面 = 树内全部 IDA 反编译文本，包括 pending 块**——CSP 已能机械推导成员名，让第 6 步的 LLM 逐函数考古偏移是纯浪费；completed 件已过门控无需 Step 4，pending→completed 本就是 Step 6。此前 raw_decomp 镜像单足方案放错了位置。
+
+**执行**：新第四段生成器 `tools/csp_export/rewrite_pending_blocks.py`（canon_regen 四段闭环）：
+- 与 rewrite_member_refs 同一成员表/重写核心；this-class 解析 = 树内 def 行 `Cls::Name` 优先 → addr 回退链（type_map this → manifest cls）。
+- 就地改写 pending 块体（INSIDE_MARKER 与 `// 0xADDR`/`/*0xADDR*/` 锚全保留），无类可解析的块保持原样（机械边界）。
+- **结果：1,108 块 / 8,745 处就地转换**（main 180 块中 95 块 1,315 处；gap2 360/113/1,994；e4 3,360/900/5,436）。
+- 逐字快照顾虑不成立：验证器 IDA 侧读快照/ida_cache（未动），不读树内块；replace_body 整块替换；get_context 快照优先回显 IDA 真值。
+- 验证：pending 块计数 3,919 不变；287 文件 8,349+/8,349- 纯平衡替换；Mission_Attack 块实测 `this->missionStatus`/`this->q2B4` 落地；replace_body dry 定位同一 span；verify PASS 无影响。

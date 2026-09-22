@@ -124,7 +124,7 @@ int __thiscall WinModemClass::ReadBytes(void (**this)(), WinModemClass *aP1, Win
 
   if ( !WinModemClass::ReadSerial((int)this) ) /*0x774b37*/
     return 0; /*0x774ba9*/
-  v4 = (char *)*(this + 22) - (char *)*(this + 21); /*0x774b46*/
+  v4 = (char *)this->q016 - (char *)this->q015; /*0x774b46*/
   v5 = (WinModemClass *)(v4 + (v4 < 0 ? 0x2000 : 0));
   if ( (int)v5 > (int)aP2 ) /*0x774b56*/
     v5 = aP2; /*0x774b58*/
@@ -133,16 +133,16 @@ int __thiscall WinModemClass::ReadBytes(void (**this)(), WinModemClass *aP1, Win
   v7 = v5; /*0x774b63*/
   do /*0x774b96*/
   {
-    v8 = *(this + 25); /*0x774b65*/
+    v8 = this->Member100; /*0x774b65*/
     if ( v8 ) /*0x774b6a*/
     {
-      if ( *((_BYTE *)*(this + 9) + (_DWORD)*(this + 21)) != 13 ) /*0x774b78*/
+      if ( *((_BYTE *)this->q024 + (_DWORD)this->q015) != 13 ) /*0x774b78*/
         v8(); /*0x774b7a*/
     }
     aP1 = (WinModemClass *)((char *)aP1 + 1); /*0x774b82*/
-    HIBYTE(aP1[-1].WinModemClass_field_0x38) = *((_BYTE *)*(this + 9) + (_DWORD)*(this + 21)); /*0x774b86*/
+    HIBYTE(aP1[-1].WinModemClass_field_0x38) = *((_BYTE *)this->q024 + (_DWORD)this->q015); /*0x774b86*/
     v7 = (WinModemClass *)((char *)v7 - 1); /*0x774b92*/
-    *(this + 21) = (void (*)())(((unsigned __int16)*(this + 21) + 1) & 0x1FFF); /*0x774b93*/
+    this->q015 = (void (*)())(((unsigned __int16)this->q015 + 1) & 0x1FFF); /*0x774b93*/
   }
   while ( v7 ); /*0x774b96*/
   return (int)v5->__pad_0; /*0x774b99*/
@@ -452,7 +452,7 @@ LABEL_16:
     }
 LABEL_21:
     memset(Str, 0, sizeof(Str)); /*0x7752cf*/
-    (*(void (__thiscall **)(int, int, char *, int, int))(*(_DWORD *)this + 20))(this, v11, Str, 80, a8); /*0x7752e6*/
+    (*(void (__thiscall **)(int, int, char *, int, int))(this->q014)(this, v11, Str, 80, a8); /*0x7752e6*/
     if ( !strcmp(Str, &g_INI_Key_Lighting.__pad_20[4]) ) /*0x77531d*/
       return 3; /*0x775437*/
     if ( strstr(Str, MEMORY[0x81FD14]) ) /*0x77532d*/
@@ -507,7 +507,7 @@ int WinModemClass::HangUp(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall WinModemClass::_vt09(_DWORD *this, int a2)
 {
-  *(this + 26) = a2; /*0x7754b4*/
+  this->q068 = a2; /*0x7754b4*/
   return a2; /*0x7754b7*/
 }
 }
@@ -525,40 +525,40 @@ int __thiscall WinModemClass::LogCommErrors(_DWORD *this, NullModemClass *aP1, c
     if ( ((unsigned __int8)aP1 & 8) != 0 ) /*0x7754e3*/
     {
       Debug::Log(); /*0x7754ea*/
-      result = *(this + 1) + 1; /*0x7754f5*/
-      *(this + 1) = result; /*0x7754f6*/
+      result = this->q004 + 1; /*0x7754f5*/
+      this->q004 = result; /*0x7754f6*/
     }
     if ( ((unsigned __int8)aP1 & 0x10) != 0 ) /*0x7754fc*/
       Debug::Log(); /*0x775503*/
     if ( (BYTE1(aP1) & 4) != 0 ) /*0x77550e*/
     {
       Debug::Log(); /*0x775515*/
-      result = *(this + 2) + 1; /*0x775520*/
-      *(this + 2) = result; /*0x775521*/
+      result = this->q008 + 1; /*0x775520*/
+      this->q008 = result; /*0x775521*/
     }
     if ( ((unsigned __int8)aP1 & 2) != 0 ) /*0x775527*/
     {
       Debug::Log(); /*0x77552e*/
-      result = *(this + 3) + 1; /*0x775539*/
-      *(this + 3) = result; /*0x77553a*/
+      result = this->q00C + 1; /*0x775539*/
+      this->q00C = result; /*0x77553a*/
     }
     if ( ((unsigned __int8)aP1 & 1) != 0 ) /*0x775540*/
     {
       Debug::Log(); /*0x775547*/
-      result = *(this + 4) + 1; /*0x775552*/
-      *(this + 4) = result; /*0x775553*/
+      result = this->q010 + 1; /*0x775552*/
+      this->q010 = result; /*0x775553*/
     }
     if ( ((unsigned __int8)aP1 & 4) != 0 ) /*0x775559*/
     {
       Debug::Log(); /*0x775560*/
-      result = *(this + 5) + 1; /*0x77556b*/
-      *(this + 5) = result; /*0x77556c*/
+      result = this->q014 + 1; /*0x77556b*/
+      this->q014 = result; /*0x77556c*/
     }
     if ( (BYTE1(aP1) & 1) != 0 ) /*0x775572*/
     {
       Debug::Log(); /*0x775579*/
-      result = *(this + 6) + 1; /*0x775584*/
-      *(this + 6) = result; /*0x775585*/
+      result = this->q018 + 1; /*0x775584*/
+      this->q018 = result; /*0x775585*/
     }
   }
   if ( (a3 & 1) != 0 ) /*0x77558f*/

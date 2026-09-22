@@ -14,7 +14,7 @@ IUnknown *__thiscall CellStruct::Add(_WORD *this, IUnknown *aP1, IUnknown *aP2)
   IUnknown *aP2a; // [esp+8h] [ebp+8h]
 
   v3 = *this + LOWORD(aP2->field_0); /*0x42d51f*/
-  HIWORD(aP2a) = *(this + 1) + HIWORD(aP2->field_0); /*0x42d522*/
+  HIWORD(aP2a) = this->q004 + HIWORD(aP2->field_0); /*0x42d522*/
   LOWORD(aP2a) = v3; /*0x42d52b*/
   aP1->field_0 = (int)aP2a; /*0x42d534*/
   return aP1; /*0x42d536*/
@@ -33,7 +33,7 @@ _DWORD *__thiscall CellStruct::Copy(int *this, IUnknown *aP1)
   int v4; // ecx
 
   v3 = (AbstractClass *)*this; /*0x437f34*/
-  v4 = *(this + 1); /*0x437f36*/
+  v4 = this->q004; /*0x437f36*/
   aP1->field_0 = (int)v3; /*0x437f39*/
   aP1->field_4 = v4; /*0x437f3b*/
   return &aP1->field_0; /*0x437f3e*/
@@ -48,7 +48,7 @@ BOOL CellStruct::Equals(unsigned short * a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 BOOL __thiscall CellStruct_Equals(_WORD *this, _WORD *a2)
 {
-  return *this == *a2 && *(this + 1) == a2[1]; /*0x50e48b*/
+  return *this == *a2 && this->q004 == a2[1]; /*0x50e48b*/
 }
 }
 } // namespace gamemd
@@ -65,7 +65,7 @@ IUnknown *__thiscall CellStruct::Sub(__int16 *this, IUnknown *aP1, IUnknown *aP2
   IUnknown *aP2a; // [esp+8h] [ebp+8h]
 
   v3 = *this; /*0x588c60*/
-  v4 = *(this + 1) - HIWORD(aP2->field_0); /*0x588c6e*/
+  v4 = this->q004 - HIWORD(aP2->field_0); /*0x588c6e*/
   LOWORD(aP2a) = v3 - LOWORD(aP2->field_0); /*0x588c76*/
   HIWORD(aP2a) = v4; /*0x588c7b*/
   aP1->field_0 = (int)aP2a; /*0x588c84*/

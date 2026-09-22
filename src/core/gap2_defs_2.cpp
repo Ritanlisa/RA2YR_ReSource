@@ -560,7 +560,7 @@ void __thiscall Player_RandomAssign(_DWORD *this)
       if ( v4 == -2 ) /*0x69b904*/
       {
         *(_DWORD *)(v3 + 79) = -1; /*0x69b90d*/
-        v5 = *(this + 1); /*0x69b910*/
+        v5 = this->q004; /*0x69b910*/
         if ( v5 ) /*0x69b915*/
           *(_DWORD *)(v3 + 75) = (*(int (__thiscall **)(int))(*(_DWORD *)v5 + 108))(v5); /*0x69b91c*/
         else
@@ -587,7 +587,7 @@ void __thiscall Player_RandomAssign(_DWORD *this)
   {
     if ( *v7 == -2 ) /*0x69b9e4*/
     {
-      v8 = *(this + 1); /*0x69b9ea*/
+      v8 = this->q004; /*0x69b9ea*/
       if ( v8 ) /*0x69b9ef*/
         v9 = (*(int (__thiscall **)(int))(*(_DWORD *)v8 + 112))(v8); /*0x69b9f3*/
       else

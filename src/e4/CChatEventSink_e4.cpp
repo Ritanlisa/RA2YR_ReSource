@@ -405,7 +405,7 @@ char __thiscall sub_7AD930(int *this)
   int v8; // [esp+8h] [ebp-4h]
 
   v2 = *this; /*0x7ad935*/
-  v3 = *(this + 1); /*0x7ad938*/
+  v3 = this->q004; /*0x7ad938*/
   if ( 3 * v2 > v3 ) /*0x7ad940*/
     return 0; /*0x7ad943*/
   v5 = v3 / 2; /*0x7ad94f*/
@@ -414,13 +414,13 @@ char __thiscall sub_7AD930(int *this)
   if ( v5 >= v3 ) /*0x7ad95d*/
     return 0; /*0x7ad960*/
   v6 = __2_YAPAXI_Z(268 * v5); /*0x7ad974*/
-  v7 = (const void *)*(this + 2); /*0x7ad979*/
+  v7 = (const void *)this->q008; /*0x7ad979*/
   v8 = (int)v6; /*0x7ad981*/
   if ( v7 ) /*0x7ad985*/
     qmemcpy(v6, v7, 268 * *this); /*0x7ad99f*/
-  __3_YAXPAX_Z((void *)*(this + 2)); /*0x7ad9ad*/
-  *(this + 2) = v8; /*0x7ad9b9*/
-  *(this + 1) = v5; /*0x7ad9bc*/
+  __3_YAXPAX_Z((void *)this->q008); /*0x7ad9ad*/
+  this->q008 = v8; /*0x7ad9b9*/
+  this->q004 = v5; /*0x7ad9bc*/
   return 1; /*0x7ad942*/
 }
 }
@@ -438,7 +438,7 @@ char __thiscall sub_7AED40(int *this)
   int v7; // [esp+4h] [ebp-4h]
 
   v2 = *this; /*0x7aed44*/
-  if ( *this < *(this + 1) ) /*0x7aed4b*/
+  if ( *this < this->q004 ) /*0x7aed4b*/
     return 0; /*0x7aed4d*/
   v4 = 2 * v2; /*0x7aed53*/
   if ( 2 * v2 < 10 ) /*0x7aed5b*/
@@ -446,12 +446,12 @@ char __thiscall sub_7AED40(int *this)
   v5 = __2_YAPAXI_Z(248 * v4); /*0x7aed72*/
   memset(v5, 0, 4 * ((unsigned int)(248 * v4) >> 2)); /*0x7aed7d*/
   v7 = (int)v5; /*0x7aed87*/
-  v6 = (const void *)*(this + 2); /*0x7aed8d*/
+  v6 = (const void *)this->q008; /*0x7aed8d*/
   if ( v6 ) /*0x7aed92*/
     qmemcpy(v5, v6, 248 * *this); /*0x7aeda7*/
-  __3_YAXPAX_Z((void *)*(this + 2)); /*0x7aedb4*/
-  *(this + 1) = v4; /*0x7aedc0*/
-  *(this + 2) = v7; /*0x7aedc3*/
+  __3_YAXPAX_Z((void *)this->q008); /*0x7aedb4*/
+  this->q004 = v4; /*0x7aedc0*/
+  this->q008 = v7; /*0x7aedc3*/
   return 1; /*0x7aed4f*/
 }
 }
@@ -464,7 +464,7 @@ char __thiscall sub_7AEE90(int *this, _DWORD *a2, int a3)
 {
   if ( a3 < 0 || a3 >= *this ) /*0x7aee9a*/
     return 0; /*0x7aeead*/
-  *a2 = *(_DWORD *)(*(this + 2) + 4 * a3); /*0x7aeea6*/
+  *a2 = *(_DWORD *)(this->q008 + 4 * a3); /*0x7aeea6*/
   return 1; /*0x7aeeaa*/
 }
 }

@@ -1386,12 +1386,12 @@ int __thiscall sub_7BC580(int *this, ObjectClass *aP1, double a3)
   int v3; // edx
   int v5; // [esp+8h] [ebp-4h]
 
-  if ( (double)(*this + *(this + 2)) > *(double *)&aP1 ) /*0x7bc5a3*/
+  if ( (double)(*this + this->vtable3) > *(double *)&aP1 ) /*0x7bc5a3*/
     v3 = (double)*this > *(double *)&aP1; /*0x7bc5bb*/
   else
     v3 = 2; /*0x7bc5a5*/
-  v5 = *(this + 1); /*0x7bc5c8*/
-  if ( (double)(v5 + *(this + 3)) <= *(double *)((char *)&a3 + 4) ) /*0x7bc5dd*/
+  v5 = this->vtable2; /*0x7bc5c8*/
+  if ( (double)(v5 + this->vtable4) <= *(double *)((char *)&a3 + 4) ) /*0x7bc5dd*/
     return v3 | 4; /*0x7bc5e2*/
   if ( (double)v5 > *(double *)((char *)&a3 + 4) ) /*0x7bc5f7*/
     return v3 | 8; /*0x7bc5f9*/

@@ -8,7 +8,7 @@ int GameOption::GetField()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall GameOption::GetField(_DWORD **this)
 {
-  return **(this + 99); /*0x69acc8*/
+  return *this->q18C; /*0x69acc8*/
 }
 }
 
@@ -46,7 +46,7 @@ char *__thiscall GameOption::SetDigest(char *this, CCINIClass *aP1)
   if ( aP1 ) /*0x69ad89*/
   {
     result = strncpy(this + 348, aP1->__pad_0, 0x20u); /*0x69ad95*/
-    *(this + 379) = 0; /*0x69ad9d*/
+    this->q17B = 0; /*0x69ad9d*/
   }
   else
   {

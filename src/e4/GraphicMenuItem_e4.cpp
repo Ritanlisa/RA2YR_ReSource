@@ -10,7 +10,7 @@ void __thiscall GraphicMenuItem_Destructor(void ***this)
 {
   void **v1; // esi
 
-  v1 = *(this + 3); /*0x4f3a71*/
+  v1 = this->q00C; /*0x4f3a71*/
   *this = &vt_GraphicMenuItem; /*0x4f3a76*/
   if ( v1 ) /*0x4f3a7c*/
   {

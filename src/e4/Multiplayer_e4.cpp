@@ -200,30 +200,30 @@ _DWORD *__thiscall Multiplayer::CopyDataArray(_DWORD *this, ObjectClass *aP1)
     return this; /*0x68c2bb*/
   (*(void (__thiscall **)(_DWORD *))(*this + 12))(this); /*0x68c2bf*/
   v3 = *(_DWORD *)&aP1->__pad_0[8]; /*0x68c2c2*/
-  *(this + 2) = v3; /*0x68c2c7*/
+  this->q002 = v3; /*0x68c2c7*/
   if ( !v3 ) /*0x68c2ca*/
   {
-    *(this + 1) = 0; /*0x68c319*/
+    this->q001 = 0; /*0x68c319*/
     *((_BYTE *)this + 13) = 0; /*0x68c320*/
     return this; /*0x68c324*/
   }
   v4 = __2_YAPAXI_Z(4 * v3); /*0x68c2d4*/
   if ( !v4 ) /*0x68c2de*/
     v4 = 0; /*0x68c2e7*/
-  *(this + 1) = v4; /*0x68c2eb*/
+  this->q001 = v4; /*0x68c2eb*/
   if ( !v4 ) /*0x68c2ee*/
     return this; /*0x68c2ee*/
-  v5 = *(this + 2); /*0x68c2f0*/
+  v5 = this->q002; /*0x68c2f0*/
   v6 = 0; /*0x68c2f3*/
   *((_BYTE *)this + 13) = 1; /*0x68c2f7*/
   if ( v5 <= 0 ) /*0x68c2fb*/
     return this; /*0x68c2fb*/
   do /*0x68c30f*/
   {
-    *(_DWORD *)(*(this + 1) + 4 * v6) = *(_DWORD *)(*(_DWORD *)&aP1->__pad_0[4] + 4 * v6); /*0x68c306*/
+    *(_DWORD *)(this->q001 + 4 * v6) = *(_DWORD *)(*(_DWORD *)&aP1->__pad_0[4] + 4 * v6); /*0x68c306*/
     ++v6; /*0x68c30c*/
   }
-  while ( v6 < *(this + 2) ); /*0x68c30f*/
+  while ( v6 < this->q002 ); /*0x68c30f*/
   return this; /*0x68c313*/
 }
 }
@@ -256,7 +256,7 @@ void __thiscall Multiplayer_ShowProgress(_DWORD *this, int a2)
     v12 = (double)v11; /*0x69aed6*/
     if ( Progress::GetWeighted(0) * 100.0 < v12 ) /*0x69aef1*/
       Network::UpdateLatencyDisplay(0, v12, NAN); /*0x69af0a*/
-    if ( *(this + 2579) != 1 ) /*0x69af16*/
+    if ( this->qA13 != 1 ) /*0x69af16*/
     {
       Ticks = Timer::GetTicks(); /*0x69af26*/
       switch ( *this ) /*0x69af3e*/

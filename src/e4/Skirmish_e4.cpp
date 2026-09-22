@@ -176,11 +176,11 @@ int __thiscall Skirmish::ReadSettings(HWND *this, HWND hDlg)
   HWND hDlge; // [esp+18h] [ebp+4h]
   HWND hDlgf; // [esp+18h] [ebp+4h]
 
-  v18 = *(this + 15); /*0x596c8a*/
+  v18 = this->q03C; /*0x596c8a*/
   hDlga = GetDlgItem(hDlg, 1029); /*0x596ca2*/
   v4 = SendMessageA(hDlga, 0x147u, 0, 0); /*0x596ca6*/
   v5 = (HWND)SendMessageA(hDlga, 0x150u, v4, 0); /*0x596cb3*/
-  *(this + 15) = v5; /*0x596cb9*/
+  this->q03C = v5; /*0x596cb9*/
   if ( v18 != v5 ) /*0x596cbe*/
     byte_ABE2D8 = 1; /*0x596cc0*/
   v19 = *(this + 14); /*0x596cd0*/
@@ -225,7 +225,7 @@ int __thiscall Skirmish::ReadSettings(HWND *this, HWND hDlg)
   {
     byte_ABE2D8 = 1; /*0x596df0*/
   }
-  Skirmish::RandomizeSettings(this, (ObjectClass *)*(this + 15)); /*0x596e08*/
+  Skirmish::RandomizeSettings(this, (ObjectClass *)this->q03C); /*0x596e08*/
   v16 = g_Map_TiberiumConfig; /*0x596e0d*/
   if ( g_Map_TiberiumConfig ) /*0x596e15*/
   {

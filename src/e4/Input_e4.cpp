@@ -13,7 +13,7 @@ char __thiscall Input_OffsetToDirection(_DWORD *this)
   double v3; // st7
   int v4; // eax
 
-  v1 = (unsigned __int8)*(this + 1); /*0x4810aa*/
+  v1 = (unsigned __int8)this->q004; /*0x4810aa*/
   v2 = (unsigned __int8)*this; /*0x4810b0*/
   v3 = Math::Sqrt((double)(v2 - 128) * (double)(v2 - 128) + (double)(v1 - 128) * (double)(v1 - 128)); /*0x4810e0*/
   if ( (int)Math::RoundToInt(v3) >= 60 ) /*0x4810f0*/

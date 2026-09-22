@@ -603,39 +603,39 @@ char __thiscall ProcessDeployAction(TechnoClass **this)
   _BYTE v33[8]; // [esp+44h] [ebp-10h] BYREF
   SlaveManagerClass *v34; // [esp+4Ch] [ebp-8h]
 
-  v2 = (SlaveManagerClass *)*(this + 23); /*0x6afd67*/
+  v2 = (SlaveManagerClass *)this->q017; /*0x6afd67*/
   switch ( (unsigned int)v2 )
   {
     case 0u:
-      v3 = *(this + 9); /*0x6afd7a*/
+      v3 = this->objectTypeFlags; /*0x6afd7a*/
       if ( v3 ) /*0x6afd7f*/
       {
-        v2 = (SlaveManagerClass *)(*(int (__thiscall **)(_DWORD))(*(_DWORD *)v3->__pad_0 + 44))(*(this + 9)); /*0x6afd89*/
+        v2 = (SlaveManagerClass *)(*(int (__thiscall **)(_DWORD))(*(_DWORD *)v3->__pad_0 + 44))(this->objectTypeFlags); /*0x6afd89*/
         if ( v2 == (SlaveManagerClass *)6 ) /*0x6afd8f*/
         {
           currentMission = v3->currentMission; /*0x6afd95*/
           if ( currentMission != 19 && currentMission != 18 ) /*0x6afda7*/
           {
-            *(this + 23) = (TechnoClass *)5; /*0x6afdad*/
-            *(this + 24) = (TechnoClass *)0x7FFFFFFF; /*0x6afdb4*/
+            this->q017 = (TechnoClass *)5; /*0x6afdad*/
+            this->nextArrayIndex = (TechnoClass *)0x7FFFFFFF; /*0x6afdb4*/
           }
         }
       }
       break; /*0x6afdc0*/
     case 1u:
-      v5 = *(this + 9); /*0x6afdc1*/
+      v5 = this->objectTypeFlags; /*0x6afdc1*/
       if ( v5 /*0x6afddc*/
-        && (*(int (__thiscall **)(_DWORD))(*(_DWORD *)v5->__pad_0 + 44))(*(this + 9)) == 1
+        && (*(int (__thiscall **)(_DWORD))(*(_DWORD *)v5->__pad_0 + 44))(this->objectTypeFlags) == 1
         && (v2 = *(SlaveManagerClass **)&v5[1].hasParachute) != 0 )
       {
-        *(this + 23) = (TechnoClass *)2; /*0x6afdde*/
-        *(this + 24) = (TechnoClass *)0x7FFFFFFF; /*0x6afde5*/
+        this->q017 = (TechnoClass *)2; /*0x6afdde*/
+        this->nextArrayIndex = (TechnoClass *)0x7FFFFFFF; /*0x6afde5*/
       }
       else
       {
-        v2 = *(SlaveManagerClass **)(*(int (__thiscall **)(_DWORD, int *, int, int))(*(_DWORD *)(*(this + 9))->__pad_0 /*0x6afe1c*/
+        v2 = *(SlaveManagerClass **)(*(int (__thiscall **)(_DWORD, int *, int, int))(*(_DWORD *)(this->objectTypeFlags)->__pad_0 /*0x6afe1c*/
                                                                                    + 824))(
-                                      *(this + 9),
+                                      this->objectTypeFlags,
                                       &v29,
                                       *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 6024) / 256,
                                       1);
@@ -647,27 +647,27 @@ char __thiscall ProcessDeployAction(TechnoClass **this)
               v27 = v2,
               v2 == *(SlaveManagerClass **)&MEMORY[0xB077F8].__pad_14B0[10512]) )
         {
-          *(this + 23) = 0; /*0x6afe67*/
-          *(this + 24) = *(TechnoClass **)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6afe74*/
+          this->q017 = 0; /*0x6afe67*/
+          this->nextArrayIndex = *(TechnoClass **)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6afe74*/
         }
         else
         {
-          v6 = *(_DWORD *)(*(this + 9))->__pad_0; /*0x6afe87*/
+          v6 = *(_DWORD *)(this->objectTypeFlags)->__pad_0; /*0x6afe87*/
           v7 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v27); /*0x6afe8e*/
-          (*(void (__thiscall **)(_DWORD, void *, int))(v6 + 1152))(*(this + 9), v7, 1); /*0x6afe97*/
-          LOBYTE(v2) = (*(int (__thiscall **)(_DWORD, int, _DWORD))(*(_DWORD *)(*(this + 9))->__pad_0 + 488))( /*0x6afea6*/
-                         *(this + 9),
+          (*(void (__thiscall **)(_DWORD, void *, int))(v6 + 1152))(this->objectTypeFlags, v7, 1); /*0x6afe97*/
+          LOBYTE(v2) = (*(int (__thiscall **)(_DWORD, int, _DWORD))(*(_DWORD *)(this->objectTypeFlags)->__pad_0 + 488))( /*0x6afea6*/
+                         this->objectTypeFlags,
                          2,
                          0);
-          *(this + 23) = (TechnoClass *)2; /*0x6afeac*/
-          *(this + 24) = (TechnoClass *)0x7FFFFFFF; /*0x6afeb3*/
+          this->q017 = (TechnoClass *)2; /*0x6afeac*/
+          this->nextArrayIndex = (TechnoClass *)0x7FFFFFFF; /*0x6afeb3*/
         }
       }
       break; /*0x6afdf1*/
     case 2u:
-      v8 = *(this + 9); /*0x6afec0*/
+      v8 = this->objectTypeFlags; /*0x6afec0*/
       if ( v8 /*0x6afed1*/
-        && (v2 = (SlaveManagerClass *)(*(int (__thiscall **)(_DWORD))(*(_DWORD *)v8->__pad_0 + 44))(*(this + 9)),
+        && (v2 = (SlaveManagerClass *)(*(int (__thiscall **)(_DWORD))(*(_DWORD *)v8->__pad_0 + 44))(this->objectTypeFlags),
             v2 == (SlaveManagerClass *)1) )
       {
         v2 = *(SlaveManagerClass **)&v8[1].hasParachute; /*0x6afee9*/
@@ -676,93 +676,93 @@ char __thiscall ProcessDeployAction(TechnoClass **this)
           LOBYTE(v2) = TechnoClass::Deploy((int *)v8->__pad_0); /*0x6afef9*/
           if ( (_BYTE)v2 ) /*0x6aff00*/
           {
-            *(this + 23) = (TechnoClass *)4; /*0x6aff02*/
-            *(this + 24) = (TechnoClass *)0x7FFFFFFF; /*0x6aff09*/
+            this->q017 = (TechnoClass *)4; /*0x6aff02*/
+            this->nextArrayIndex = (TechnoClass *)0x7FFFFFFF; /*0x6aff09*/
           }
           else
           {
             v9 = *(IUnknown **)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6aff16*/
-            *(this + 23) = (TechnoClass *)3; /*0x6aff23*/
-            *(this + 20) = (TechnoClass *)v9; /*0x6aff2a*/
+            this->q017 = (TechnoClass *)3; /*0x6aff23*/
+            this->abstractFlags = (TechnoClass *)v9; /*0x6aff2a*/
             v2 = v34; /*0x6aff2c*/
-            *(this + 24) = (TechnoClass *)0x7FFFFFFF; /*0x6aff30*/
-            *(this + 21) = (TechnoClass *)v2; /*0x6aff38*/
-            *(this + 22) = (TechnoClass *)30; /*0x6aff3c*/
+            this->nextArrayIndex = (TechnoClass *)0x7FFFFFFF; /*0x6aff30*/
+            this->q054 = (TechnoClass *)v2; /*0x6aff38*/
+            this->q058 = (TechnoClass *)30; /*0x6aff3c*/
           }
         }
       }
       else
       {
-        *(this + 23) = 0; /*0x6afed3*/
-        *(this + 24) = *(TechnoClass **)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6afee0*/
+        this->q017 = 0; /*0x6afed3*/
+        this->nextArrayIndex = *(TechnoClass **)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6afee0*/
       }
       break; /*0x6afee8*/
     case 3u:
-      v10 = *(this + 9); /*0x6aff43*/
-      if ( v10 && (*(int (__thiscall **)(_DWORD))(*(_DWORD *)v10->__pad_0 + 44))(*(this + 9)) == 1 ) /*0x6aff54*/
+      v10 = this->objectTypeFlags; /*0x6aff43*/
+      if ( v10 && (*(int (__thiscall **)(_DWORD))(*(_DWORD *)v10->__pad_0 + 44))(this->objectTypeFlags) == 1 ) /*0x6aff54*/
       {
         LOBYTE(v2) = TechnoClass::Deploy((int *)v10->__pad_0); /*0x6aff6d*/
         if ( !(_BYTE)v2 ) /*0x6aff74*/
           goto LABEL_53; /*0x6aff74*/
-        *(this + 23) = (TechnoClass *)4; /*0x6aff7a*/
-        *(this + 24) = (TechnoClass *)0x7FFFFFFF; /*0x6aff81*/
+        this->q017 = (TechnoClass *)4; /*0x6aff7a*/
+        this->nextArrayIndex = (TechnoClass *)0x7FFFFFFF; /*0x6aff81*/
       }
       else
       {
-        *(this + 23) = 0; /*0x6aff56*/
+        this->q017 = 0; /*0x6aff56*/
         LOBYTE(v2) = MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6aff5d*/
-        *(this + 24) = *(TechnoClass **)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6aff62*/
+        this->nextArrayIndex = *(TechnoClass **)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6aff62*/
       }
       break; /*0x6aff6a*/
     case 4u:
-      v2 = (SlaveManagerClass *)(*(int (__thiscall **)(_DWORD))(*(_DWORD *)(*(this + 9))->__pad_0 + 44))(*(this + 9)); /*0x6aff93*/
+      v2 = (SlaveManagerClass *)(*(int (__thiscall **)(_DWORD))(*(_DWORD *)(this->objectTypeFlags)->__pad_0 + 44))(this->objectTypeFlags); /*0x6aff93*/
       if ( v2 == (SlaveManagerClass *)6
-        && ((v11 = *(this + 9)) != 0
-          ? (v2 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)v11->__pad_0 + 44))(*(this + 9)) == 6
+        && ((v11 = this->objectTypeFlags) != 0
+          ? (v2 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)v11->__pad_0 + 44))(this->objectTypeFlags) == 6
                 ? (SlaveManagerClass *)v11
                 : 0)
           : (v2 = 0),
             v2[13].NeedsSaveOrLink) )
       {
-        *(this + 23) = (TechnoClass *)5; /*0x6affc2*/
-        *(this + 24) = (TechnoClass *)0x7FFFFFFF; /*0x6affc9*/
+        this->q017 = (TechnoClass *)5; /*0x6affc2*/
+        this->nextArrayIndex = (TechnoClass *)0x7FFFFFFF; /*0x6affc9*/
       }
       else
       {
-        v12 = *(this + 9); /*0x6affd6*/
+        v12 = this->objectTypeFlags; /*0x6affd6*/
         if ( v12 )
         {
           v2 = (SlaveManagerClass *)(*(int (__thiscall **)(TechnoClass *))(*(_DWORD *)v12->__pad_0 + 44))(v12); /*0x6affe3*/
           if ( v2 == (SlaveManagerClass *)1 )
           {
-            v13 = *(this + 9); /*0x6affef*/
+            v13 = this->objectTypeFlags; /*0x6affef*/
             v2 = v13
-               ? ((*(int (__thiscall **)(_DWORD))(*(_DWORD *)v13->__pad_0 + 44))(*(this + 9)) == 1
+               ? ((*(int (__thiscall **)(_DWORD))(*(_DWORD *)v13->__pad_0 + 44))(this->objectTypeFlags) == 1
                 ? (SlaveManagerClass *)v13
                 : 0)
                : 0;
-            if ( !v2[16].__pad_48[4] && (*(this + 9))->currentMission == 5 ) /*0x6b0022*/
+            if ( !v2[16].__pad_48[4] && (this->objectTypeFlags)->currentMission == 5 ) /*0x6b0022*/
             {
-              *(this + 23) = (TechnoClass *)2; /*0x6b0028*/
-              *(this + 24) = (TechnoClass *)0x7FFFFFFF; /*0x6b002f*/
+              this->q017 = (TechnoClass *)2; /*0x6b0028*/
+              this->nextArrayIndex = (TechnoClass *)0x7FFFFFFF; /*0x6b002f*/
             }
           }
         }
       }
       break; /*0x6affd5*/
     case 5u:
-      v14 = *(this + 9); /*0x6b003c*/
+      v14 = this->objectTypeFlags; /*0x6b003c*/
       if ( v14 && (*(int (__thiscall **)(TechnoClass *))(*(_DWORD *)v14->__pad_0 + 44))(v14) == 1 ) /*0x6b004b*/
       {
-        *(this + 23) = 0; /*0x6b004d*/
+        this->q017 = 0; /*0x6b004d*/
         LOBYTE(v2) = MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6b0054*/
-        *(this + 24) = *(TechnoClass **)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6b0059*/
+        this->nextArrayIndex = *(TechnoClass **)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6b0059*/
       }
       else
       {
-        v2 = *(SlaveManagerClass **)(*(int (__thiscall **)(_DWORD, int *, int, _DWORD))(*(_DWORD *)(*(this + 9))->__pad_0 /*0x6b008d*/
+        v2 = *(SlaveManagerClass **)(*(int (__thiscall **)(_DWORD, int *, int, _DWORD))(*(_DWORD *)(this->objectTypeFlags)->__pad_0 /*0x6b008d*/
                                                                                       + 824))(
-                                      *(this + 9),
+                                      this->objectTypeFlags,
                                       &v29,
                                       *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 6016) / 256,
                                       0);
@@ -770,9 +770,9 @@ char __thiscall ProcessDeployAction(TechnoClass **this)
         if ( (_WORD)v2 == *(_WORD *)&MEMORY[0xB077F8].__pad_14B0[10512] /*0x6b00ac*/
           && v28[1] == *(_WORD *)&MEMORY[0xB077F8].__pad_14B0[10514] )
         {
-          v27 = *(SlaveManagerClass **)(*(int (__thiscall **)(_DWORD, int *, int, int))(*(_DWORD *)(*(this + 9))->__pad_0 /*0x6b00e7*/
+          v27 = *(SlaveManagerClass **)(*(int (__thiscall **)(_DWORD, int *, int, int))(*(_DWORD *)(this->objectTypeFlags)->__pad_0 /*0x6b00e7*/
                                                                                       + 824))(
-                                         *(this + 9),
+                                         this->objectTypeFlags,
                                          &v29,
                                          *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 6024) / 256,
                                          1);
@@ -782,8 +782,8 @@ char __thiscall ProcessDeployAction(TechnoClass **this)
           v29 = SLOWORD(v15->field_0); /*0x6b011b*/
           v17 = Math::Sqrt((double)v29 * (double)v29 + (double)v16 * (double)v16); /*0x6b0134*/
           v18 = Math::RoundToInt(v17); /*0x6b0144*/
-          v19 = (__int16 *)(*(int (__thiscall **)(_DWORD, _BYTE *))(*(_DWORD *)(*(this + 9))->__pad_0 + 440))( /*0x6b014d*/
-                             *(this + 9),
+          v19 = (__int16 *)(*(int (__thiscall **)(_DWORD, _BYTE *))(*(_DWORD *)(this->objectTypeFlags)->__pad_0 + 440))( /*0x6b014d*/
+                             this->objectTypeFlags,
                              v33);
           v20 = CellStruct::Sub(v19, (IUnknown *)&v32, (IUnknown *)&v27); /*0x6b015f*/
           v21 = SLOWORD(v20->field_0); /*0x6b0168*/
@@ -795,29 +795,29 @@ char __thiscall ProcessDeployAction(TechnoClass **this)
           v2 = (SlaveManagerClass *)(v18 + *(_DWORD *)(*(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 6028) / 256); /*0x6b01bb*/
           if ( (int)v2 < v24 ) /*0x6b01bf*/
           {
-            (*(this + 9))->isVoiceOverride = 1; /*0x6b01c4*/
-            v25 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)(*(this + 9))->__pad_0 + 444))(*(this + 9)); /*0x6b01d0*/
-            TechnoClass::SetFocus(*(this + 9), v25); /*0x6b01da*/
-            LOBYTE(v2) = (*(int (__thiscall **)(_DWORD, int, _DWORD))(*(_DWORD *)(*(this + 9))->__pad_0 + 488))( /*0x6b01e8*/
-                           *(this + 9),
+            (this->objectTypeFlags)->isVoiceOverride = 1; /*0x6b01c4*/
+            v25 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)(this->objectTypeFlags)->__pad_0 + 444))(this->objectTypeFlags); /*0x6b01d0*/
+            TechnoClass::SetFocus(this->objectTypeFlags, v25); /*0x6b01da*/
+            LOBYTE(v2) = (*(int (__thiscall **)(_DWORD, int, _DWORD))(*(_DWORD *)(this->objectTypeFlags)->__pad_0 + 488))( /*0x6b01e8*/
+                           this->objectTypeFlags,
                            19,
                            0);
-            *(this + 23) = (TechnoClass *)6; /*0x6b01ee*/
-            *(this + 24) = (TechnoClass *)0x7FFFFFFF; /*0x6b01f5*/
+            this->q017 = (TechnoClass *)6; /*0x6b01ee*/
+            this->nextArrayIndex = (TechnoClass *)0x7FFFFFFF; /*0x6b01f5*/
           }
         }
-        if ( *(this + 23) != (TechnoClass *)6 ) /*0x6b0200*/
+        if ( this->q017 != (TechnoClass *)6 ) /*0x6b0200*/
           LOBYTE(v2) = FactoryClass::PlaceExitUnits(this); /*0x6b0204*/
       }
       break; /*0x6b0061*/
     case 6u:
-      v2 = (SlaveManagerClass *)(*(int (__thiscall **)(_DWORD))(*(_DWORD *)(*(this + 9))->__pad_0 + 44))(*(this + 9)); /*0x6b0214*/
+      v2 = (SlaveManagerClass *)(*(int (__thiscall **)(_DWORD))(*(_DWORD *)(this->objectTypeFlags)->__pad_0 + 44))(this->objectTypeFlags); /*0x6b0214*/
       if ( v2 == (SlaveManagerClass *)1 ) /*0x6b021a*/
       {
         LOBYTE(v2) = (unsigned __int8)Event_Process_6B0490(this); /*0x6b021e*/
 LABEL_53:
-        *(this + 23) = (TechnoClass *)1; /*0x6b0223*/
-        *(this + 24) = (TechnoClass *)0x7FFFFFFF; /*0x6b022a*/
+        this->q017 = (TechnoClass *)1; /*0x6b0223*/
+        this->nextArrayIndex = (TechnoClass *)0x7FFFFFFF; /*0x6b022a*/
       }
       break; /*0x6b022a*/
     default:

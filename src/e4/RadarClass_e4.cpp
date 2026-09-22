@@ -35,24 +35,24 @@ int __thiscall RadarClass_Destructor(_DWORD *this)
     *((_DWORD *)v2 + 2) = 0; /*0x652c50*/
   }
   while ( v3 ); /*0x652c53*/
-  v5 = (void *)*(this + 1176); /*0x652c55*/
-  *(this + 1175) = &vt_VectorClass_Point2D; /*0x652c5b*/
+  v5 = (void *)this->q1260; /*0x652c55*/
+  this->q125C = &vt_VectorClass_Point2D; /*0x652c5b*/
   if ( v5 && *((_BYTE *)this + 4713) ) /*0x652c69*/
   {
     __3_YAXPAX_Z(v5); /*0x652c72*/
-    *(this + 1176) = 0; /*0x652c7a*/
+    this->q1260 = 0; /*0x652c7a*/
   }
   *((_BYTE *)this + 4713) = 0; /*0x652c80*/
-  *(this + 1177) = 0; /*0x652c86*/
-  v6 = (void *)*(this + 1162); /*0x652c8c*/
-  *(this + 1161) = &vt_VectorClass_Cell; /*0x652c92*/
+  this->q1264 = 0; /*0x652c86*/
+  v6 = (void *)this->q1228; /*0x652c8c*/
+  this->q1224 = &vt_VectorClass_Cell; /*0x652c92*/
   if ( v6 && *((_BYTE *)this + 4657) ) /*0x652ca0*/
   {
     __3_YAXPAX_Z(v6); /*0x652ca9*/
-    *(this + 1162) = 0; /*0x652cb1*/
+    this->q1228 = 0; /*0x652cb1*/
   }
   *((_BYTE *)this + 4657) = 0; /*0x652cb9*/
-  *(this + 1163) = 0; /*0x652cbf*/
+  this->q122C = 0; /*0x652cbf*/
   return MapClass::Destruct(this); /*0x652cca*/
 }
 }

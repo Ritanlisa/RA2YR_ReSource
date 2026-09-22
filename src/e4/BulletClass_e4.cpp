@@ -76,9 +76,9 @@ int __thiscall BulletClass::Dtor(#374 *this)
   *(_DWORD *)this = &BulletClass::`vftable'; /*0x466566*/
   this->BulletClass_field_0x4 = &BulletClass::`vftable'; /*0x46656c*/
   this->BulletClass_field_0x8 = &BulletClass::`vftable'; /*0x466573*/
-  *((_DWORD *)this + 3) = &vt_BulletClass; /*0x46657a*/
+  this->vtable4 = &vt_BulletClass; /*0x46657a*/
   AbstractClass::AnnounceExpiredPointer((void **)this, 1); /*0x466581*/
-  if ( *((_BYTE *)this + 344) ) /*0x466586*/
+  if ( this->q158 ) /*0x466586*/
   {
     v5 = this; /*0x4665a0*/
     v2 = (*(int (__thiscall **)(int *, #374 **))(MEMORY[0xB0F5B8] + 16))(&MEMORY[0xB0F5B8], &v5); /*0x4665a4*/

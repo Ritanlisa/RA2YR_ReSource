@@ -9,17 +9,17 @@ int Matrix3x4::Identity()
 int __thiscall Matrix3x4_Identity(_DWORD *this)
 {
   *this = 1065353216; /*0x5ae867*/
-  *(this + 1) = 0; /*0x5ae869*/
-  *(this + 2) = 0; /*0x5ae86c*/
-  *(this + 3) = 0; /*0x5ae86f*/
-  *(this + 4) = 0; /*0x5ae872*/
-  *(this + 5) = 1065353216; /*0x5ae875*/
-  *(this + 6) = 0; /*0x5ae878*/
-  *(this + 7) = 0; /*0x5ae87b*/
-  *(this + 8) = 0; /*0x5ae87e*/
-  *(this + 9) = 0; /*0x5ae881*/
-  *(this + 10) = 1065353216; /*0x5ae884*/
-  *(this + 11) = 0; /*0x5ae887*/
+  this->q004 = 0; /*0x5ae869*/
+  this->q008 = 0; /*0x5ae86c*/
+  this->q00C = 0; /*0x5ae86f*/
+  this->q010 = 0; /*0x5ae872*/
+  this->q014 = 1065353216; /*0x5ae875*/
+  this->q018 = 0; /*0x5ae878*/
+  this->q01C = 0; /*0x5ae87b*/
+  this->q020 = 0; /*0x5ae87e*/
+  this->q024 = 0; /*0x5ae881*/
+  this->q028 = 1065353216; /*0x5ae884*/
+  this->q02C = 0; /*0x5ae887*/
   return 0; /*0x5ae88a*/
 }
 }
@@ -30,9 +30,9 @@ void Matrix3x4::Translate(ParticleSystemClass * aP1)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __thiscall Matrix3x4::Translate(float *this, ParticleSystemClass *aP1)
 {
-  *(this + 3) = *(float *)&aP1 * *this + *(this + 3); /*0x5ae989*/
-  *(this + 7) = *(float *)&aP1 * *(this + 4) + *(this + 7); /*0x5ae996*/
-  *(this + 11) = *(float *)&aP1 * *(this + 8) + *(this + 11); /*0x5ae9a3*/
+  this->q00C = *(float *)&aP1 * *this + this->q00C; /*0x5ae989*/
+  this->q01C = *(float *)&aP1 * this->q004 + this->q01C; /*0x5ae996*/
+  this->q02C = *(float *)&aP1 * this->q008 + this->q02C; /*0x5ae9a3*/
 }
 }
 

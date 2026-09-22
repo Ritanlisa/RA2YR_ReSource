@@ -10,7 +10,7 @@ char File::IsReady(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall File_IsReady(_BYTE *this, int a2)
 {
-  if ( *(this + 41) ) /*0x431f10*/
+  if ( this->__pad_029 ) /*0x431f10*/
     return 1; /*0x431f17*/
   else
     return FileClass::Open(0); /*0x431f1e*/
@@ -230,8 +230,8 @@ unsigned int * File::LoadFileHVA(ObjectClass * aP1)
 _DWORD *__thiscall File::LoadFileHVA(_DWORD *this, ObjectClass *aP1)
 {
   *(_BYTE *)this = 0; /*0x5bd575*/
-  *(this + 1) = 0; /*0x5bd577*/
-  *(this + 2) = 0; /*0x5bd57a*/
+  this->q004 = 0; /*0x5bd577*/
+  this->q008 = 0; /*0x5bd57a*/
   *(this + 3) = 0; /*0x5bd57d*/
   if ( !File::ParseFileHVA((int)this, (int)aP1) ) /*0x5bd585*/
     *(_BYTE *)this = 1; /*0x5bd58e*/
@@ -355,11 +355,11 @@ u_short *__thiscall File::LoadPaletteData(u_short *this, ObjectClass *aP1)
   *this = *(_WORD *)aP1->__pad_0; /*0x625b05*/
   *this = ntohs(v3); /*0x625b11*/
   v4 = *(_WORD *)&aP1->__pad_0[2]; /*0x625b17*/
-  *(this + 1) = v4; /*0x625b1a*/
+  this->q004 = v4; /*0x625b1a*/
   v5 = &aP1->__pad_0[4]; /*0x625b1f*/
-  *(this + 1) = ntohs(v4); /*0x625b27*/
+  this->q004 = ntohs(v4); /*0x625b27*/
   v6 = *this; /*0x625b2d*/
-  *((_DWORD *)this + 1) = 0; /*0x625b30*/
+  this->q004 = 0; /*0x625b30*/
   v15 = v6 - 4; /*0x625b3c*/
   if ( v15 <= 0 ) /*0x625b40*/
     return this; /*0x625bf4*/
@@ -380,8 +380,8 @@ u_short *__thiscall File::LoadPaletteData(u_short *this, ObjectClass *aP1)
     v15 += -8 - v13 - v11; /*0x625bcc*/
     File::Dispatch((int)v9); /*0x625bd0*/
     result = this; /*0x625bd5*/
-    *(_DWORD *)&v9->__pad_0[12] = *((_DWORD *)this + 1); /*0x625bde*/
-    *((_DWORD *)this + 1) = v9; /*0x625be1*/
+    *(_DWORD *)&v9->__pad_0[12] = this->q004; /*0x625bde*/
+    this->q004 = v9; /*0x625be1*/
     if ( v15 <= 0 ) /*0x625be4*/
       break; /*0x625be4*/
     v5 = (char *)aP1a; /*0x625b4a*/
@@ -400,7 +400,7 @@ bool __thiscall sub_625DB0(_DWORD *this, char *Str1, _BYTE *a3)
 {
   int v3; // esi
 
-  v3 = *(this + 1); /*0x625db1*/
+  v3 = this->q004; /*0x625db1*/
   if ( !v3 ) /*0x625db7*/
     return 0; /*0x625dd4*/
   while ( strncmp(Str1, (const char *)v3, 4u) ) /*0x625dcb*/
@@ -641,13 +641,13 @@ WDTState *__thiscall File::LoadWDT(char *this, ObjectClass *aP1)
   int v19; // [esp+28h] [ebp-4h] BYREF
   WDTState *aP1a; // [esp+30h] [ebp+4h]
 
-  *((_DWORD *)this + 1) = 0; /*0x76ac9b*/
+  this->q004 = 0; /*0x76ac9b*/
   *((_DWORD *)this + 12) = 0; /*0x76ac9e*/
   *((_DWORD *)this + 13) = 0; /*0x76aca1*/
   *(this + 56) = 1; /*0x76aca4*/
   *(this + 57) = 0; /*0x76aca8*/
   *((_DWORD *)this + 11) = &vt_DynamicVectorClass_rc_ptr_WDTTerritory; /*0x76acab*/
-  *((_DWORD *)this + 16) = 10; /*0x76acb2*/
+  this->q004 = 10; /*0x76acb2*/
   *((_DWORD *)this + 15) = 0; /*0x76acb9*/
   *(_DWORD *)this = &vt_WDTState; /*0x76acbe*/
   v3 = (u_short *)__2_YAPAXI_Z(0xCu); /*0x76acc4*/
@@ -662,13 +662,13 @@ WDTState *__thiscall File::LoadWDT(char *this, ObjectClass *aP1)
   v15 = 0; /*0x76acfe*/
   v17 = 0; /*0x76ad02*/
   v19 = 0; /*0x76ad06*/
-  *((_DWORD *)this + 2) = 0; /*0x76ad0a*/
+  this->__pad_002 = 0; /*0x76ad0a*/
   *((_DWORD *)this + 3) = 0; /*0x76ad0d*/
-  *((_DWORD *)this + 4) = 0; /*0x76ad10*/
+  this->q004 = 0; /*0x76ad10*/
   *(this + 20) = 0; /*0x76ad13*/
   *((_DWORD *)this + 6) = 0; /*0x76ad16*/
   *((_DWORD *)this + 7) = 0; /*0x76ad19*/
-  *((_DWORD *)this + 8) = 0; /*0x76ad1b*/
+  this->q008 = 0; /*0x76ad1b*/
   *((_DWORD *)this + 9) = 0; /*0x76ad1e*/
   *((_DWORD *)this + 10) = 0; /*0x76ad21*/
   *((_DWORD *)this + 17) = 0; /*0x76ad24*/
@@ -704,13 +704,13 @@ LABEL_25:
     if ( !*(this + 72) ) /*0x76adbd*/
       HashTable::FindChunk(PaletteData, aMpvc, 0, (CCINIClass *)&v12); /*0x76adcf*/
     HashTable::FindChunk(PaletteData, aHsvc, 0, (CCINIClass *)&v13); /*0x76ade1*/
-    *((_DWORD *)this + 2) = __2_YAPAXI_Z((size_t)Size); /*0x76adf0*/
+    this->__pad_002 = __2_YAPAXI_Z((size_t)Size); /*0x76adf0*/
     eax12 = __2_YAPAXI_Z((size_t)v15); /*0x76adf8*/
     v7 = (IUnknown *)v17; /*0x76adfd*/
     *((_DWORD *)this + 3) = eax12; /*0x76ae01*/
     eax12a = __2_YAPAXI_Z((size_t)v7); /*0x76ae05*/
     v9 = v13; /*0x76ae0a*/
-    *((_DWORD *)this + 4) = eax12a; /*0x76ae0e*/
+    this->q004 = eax12a; /*0x76ae0e*/
     Block = (IUnknown *)__2_YAPAXI_Z((size_t)v9); /*0x76ae17*/
     aP1a = 0; /*0x76ae23*/
     if ( !*(this + 72) ) /*0x76ae1b*/
@@ -736,7 +736,7 @@ LABEL_25:
     v10 = (CCINIClass *)Block; /*0x76af41*/
     HashTable::FindChunk(PaletteData, aHsvc, Block, (CCINIClass *)&v13); /*0x76af52*/
     if ( *(this + 72) ) /*0x76af57*/
-      *((_DWORD *)this + 8) = 30; /*0x76af6f*/
+      this->q008 = 30; /*0x76af6f*/
     else
       ParseWDTTerritories((int)this, aP1a, (int)v12); /*0x76af68*/
     File::LoadWDTDecompress((size_t *)this, v10, (int)v13); /*0x76af7e*/
@@ -772,11 +772,11 @@ char __thiscall File::LoadWDTDecompress(size_t *this, CCINIClass *aP1, int a3)
   int v16; // [esp+Ch] [ebp+8h]
 
   v4 = *(this + 9); /*0x76b0a7*/
-  if ( 4 * a3 < v4 * *(this + 8) ) /*0x76b0b5*/
+  if ( 4 * a3 < v4 * this->q008 ) /*0x76b0b5*/
     return 0; /*0x76b0ba*/
   *(this + 17) = __2_YAPAXI_Z(4 * v4); /*0x76b0c7*/
   for ( i = 0; i < *(this + 9); ++i ) /*0x76b0ca*/
-    *(_DWORD *)(*(this + 17) + 4 * i) = __2_YAPAXI_Z(*(this + 8)); /*0x76b0e5*/
+    *(_DWORD *)(*(this + 17) + 4 * i) = __2_YAPAXI_Z(this->q008); /*0x76b0e5*/
   v7 = 0; /*0x76b0f3*/
   v8 = 0; /*0x76b0f5*/
   v9 = 0; /*0x76b0f7*/
@@ -786,7 +786,7 @@ char __thiscall File::LoadWDTDecompress(size_t *this, CCINIClass *aP1, int a3)
     while ( 1 ) /*0x76b10a*/
     {
       v10 = 0; /*0x76b10a*/
-      if ( *(this + 8) ) /*0x76b107*/
+      if ( this->q008 ) /*0x76b107*/
         break; /*0x76b107*/
 LABEL_18:
       if ( v8 ) /*0x76b15e*/
@@ -827,7 +827,7 @@ LABEL_15:
         ++v7; /*0x76b14f*/
         v16 = 0; /*0x76b150*/
       }
-      if ( ++v10 >= *(this + 8) ) /*0x76b15a*/
+      if ( ++v10 >= this->q008 ) /*0x76b15a*/
         goto LABEL_18; /*0x76b15a*/
     }
     LOBYTE(v15) = (unsigned __int8)aP1->__pad_0[v7] >> 2; /*0x76b12b*/

@@ -58,9 +58,9 @@ NeuronClass *__thiscall NeuronClass::Reset(_DWORD *this, char a2)
   _DWORD *v6; // [esp+4h] [ebp-4h] BYREF
 
   *this = &NeuronClass::`vftable'; /*0x43a9cd*/
-  *(this + 1) = &NeuronClass::`vftable'; /*0x43a9d3*/
-  *(this + 2) = &NeuronClass::`vftable'; /*0x43a9da*/
-  *(this + 3) = &vt_NeuronClass; /*0x43a9e1*/
+  this->vtable2 = &NeuronClass::`vftable'; /*0x43a9d3*/
+  this->vtable3 = &NeuronClass::`vftable'; /*0x43a9da*/
+  this->vtable4 = &vt_NeuronClass; /*0x43a9e1*/
   v6 = this; /*0x43a9ef*/
   v3 = (*(int (__thiscall **)(int *, _DWORD **))(MEMORY[0xB0F670] + 16))(&MEMORY[0xB0F670], &v6); /*0x43a9f3*/
   if ( v3 != -1 && v3 < MEMORY[0xB0F680] && v3 < --MEMORY[0xB0F680] ) /*0x43aa0e*/

@@ -12,7 +12,7 @@ char __thiscall Socket::ConfigureBuffers(SOCKET *this, AnimClass *aP1)
 
   v2 = aP1; /*0x7b2631*/
   if ( aP1 == (AnimClass *)-1 ) /*0x7b2638*/
-    v2 = (AnimClass *)*(this + 64539); /*0x7b263a*/
+    v2 = (AnimClass *)this->q3F06C; /*0x7b263a*/
   if ( setsockopt((SOCKET)v2, 0xFFFF, 4098, MEMORY[0x84DDA0], 4) == -1 ) /*0x7b265a*/
     WSAGetLastError(); /*0x7b265c*/
   Debug::Log(); /*0x7b2667*/

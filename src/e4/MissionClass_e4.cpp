@@ -35,7 +35,7 @@ char __thiscall MissionClass::LoadFromINI(int *this, _DWORD *a2)
     v4 = MEMORY[0x817474]; /*0x5b37a0*/
   else
     v4 = off_816CAC[*this]; /*0x5b37a7*/
-  *((_BYTE *)this + 4) = INIClass::ReadBool_Overwrite( /*0x5b37bf*/
+  this->vtable2 = INIClass::ReadBool_Overwrite( /*0x5b37bf*/
                            (int)a2,
                            (unsigned __int8 *)v4,
                            (unsigned __int8 *)MEMORY[0x82C2B8],
@@ -44,34 +44,34 @@ char __thiscall MissionClass::LoadFromINI(int *this, _DWORD *a2)
     v5 = MEMORY[0x817474]; /*0x5b37c9*/
   else
     v5 = off_816CAC[*this]; /*0x5b37d0*/
-  *((_BYTE *)this + 5) = INIClass::ReadBool_Overwrite( /*0x5b37e8*/
+  this->abstractFlags = INIClass::ReadBool_Overwrite( /*0x5b37e8*/
                            (int)a2,
                            (unsigned __int8 *)v5,
                            (unsigned __int8 *)MEMORY[0x82C2B0],
-                           *((_BYTE *)this + 5));
+                           this->abstractFlags);
   if ( *this == -1 ) /*0x5b37f0*/
     v6 = MEMORY[0x817474]; /*0x5b37f2*/
   else
     v6 = off_816CAC[*this]; /*0x5b37f9*/
-  *((_BYTE *)this + 6) = INIClass::ReadBool_Overwrite( /*0x5b3811*/
+  this->nextArrayIndex = INIClass::ReadBool_Overwrite( /*0x5b3811*/
                            (int)a2,
                            (unsigned __int8 *)v6,
                            (unsigned __int8 *)MEMORY[0x82C2A4],
-                           *((_BYTE *)this + 6));
+                           this->nextArrayIndex);
   if ( *this == -1 ) /*0x5b3819*/
     v7 = MEMORY[0x817474]; /*0x5b381b*/
   else
     v7 = off_816CAC[*this]; /*0x5b3822*/
-  *((_BYTE *)this + 7) = INIClass::ReadBool_Overwrite( /*0x5b383a*/
+  this->referenceCount = INIClass::ReadBool_Overwrite( /*0x5b383a*/
                            (int)a2,
                            (unsigned __int8 *)v7,
                            (unsigned __int8 *)MEMORY[0x82C298],
-                           *((_BYTE *)this + 7));
+                           this->referenceCount);
   if ( *this == -1 ) /*0x5b3842*/
     v8 = MEMORY[0x817474]; /*0x5b3844*/
   else
     v8 = off_816CAC[*this]; /*0x5b384b*/
-  *((_BYTE *)this + 8) = INIClass::ReadBool_Overwrite( /*0x5b3863*/
+  this->vtable3 = INIClass::ReadBool_Overwrite( /*0x5b3863*/
                            (int)a2,
                            (unsigned __int8 *)v8,
                            (unsigned __int8 *)MEMORY[0x82C28C],
@@ -80,11 +80,11 @@ char __thiscall MissionClass::LoadFromINI(int *this, _DWORD *a2)
     v9 = MEMORY[0x817474]; /*0x5b386d*/
   else
     v9 = off_816CAC[*this]; /*0x5b3874*/
-  *((_BYTE *)this + 9) = INIClass::ReadBool_Overwrite( /*0x5b388c*/
+  this->objectTypeFlags = INIClass::ReadBool_Overwrite( /*0x5b388c*/
                            (int)a2,
                            (unsigned __int8 *)v9,
                            (unsigned __int8 *)stru_82C284,
-                           *((_BYTE *)this + 9));
+                           this->objectTypeFlags);
   if ( *this == -1 ) /*0x5b3894*/
     v10 = MEMORY[0x817474]; /*0x5b3896*/
   else
@@ -104,9 +104,9 @@ char __thiscall MissionClass::LoadFromINI(int *this, _DWORD *a2)
   *((double *)this + 3) = v14; /*0x5b38e2*/
   if ( v14 == 0.0 ) /*0x5b38f0*/
   {
-    v15 = *(this + 5); /*0x5b38f5*/
-    *(this + 6) = *(this + 4); /*0x5b38f8*/
-    *(this + 7) = v15; /*0x5b38fb*/
+    v15 = this->abstractFlags; /*0x5b38f5*/
+    this->nextArrayIndex = this->vtable2; /*0x5b38f8*/
+    this->referenceCount = v15; /*0x5b38fb*/
   }
   return 1; /*0x5b38fe*/
 }

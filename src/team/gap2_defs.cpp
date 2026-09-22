@@ -1269,12 +1269,12 @@ _DWORD *__thiscall ScriptTypeClass::Constructor(_DWORD *this, ObjectClass *aP1)
   CCINIClass *v6; // edx
 
   AbstractTypeClass::Constructor((int)this, (AbstractClass *)aP1); /*0x6916b8*/
-  *(this + 39) = 0; /*0x6916bd*/
-  *(this + 40) = 0; /*0x6916c7*/
+  this->q09C = 0; /*0x6916bd*/
+  this->q0A0 = 0; /*0x6916c7*/
   *this = &ScriptTypeClass::`vftable'; /*0x6916d1*/
-  *(this + 1) = &ScriptTypeClass::`vftable'; /*0x6916d7*/
-  *(this + 2) = &ScriptTypeClass::`vftable'; /*0x6916de*/
-  *(this + 3) = &vt_ScriptTypeClass; /*0x6916e5*/
+  this->vtable2 = &ScriptTypeClass::`vftable'; /*0x6916d7*/
+  this->vtable3 = &ScriptTypeClass::`vftable'; /*0x6916de*/
+  this->vtable4 = &vt_ScriptTypeClass; /*0x6916e5*/
   v3 = dword_8B41D8; /*0x6916ec*/
   if ( dword_8B41D8 < dword_8B41D0 /*0x69172e*/
     || (unk_8B41D5 || !dword_8B41D0)
@@ -1307,7 +1307,7 @@ LABEL_11:
         goto LABEL_11; /*0x69175e*/
     }
   }
-  *(this + 38) = v5; /*0x691763*/
+  this->q098 = v5; /*0x691763*/
   return this; /*0x69176b*/
 }
 } }
@@ -1409,7 +1409,7 @@ void __thiscall ScriptTypeClass::_vt10(int *this, int a2, int a3)
     {
       v4 = -1; /*0x691e51*/
       v5 = 0; /*0x691e54*/
-      if ( *(this + 40) > 0 ) /*0x691e58*/
+      if ( this->isGlobal > 0 ) /*0x691e58*/
       {
         v6 = MEMORY[0xA8ECB0]; /*0x691e5a*/
         v7 = this + 42; /*0x691e60*/
@@ -1448,7 +1448,7 @@ LABEL_18:
           ++v5; /*0x691eab*/
           v7 += 2; /*0x691eb2*/
         }
-        while ( v5 < *(this + 40) ); /*0x691e66*/
+        while ( v5 < this->isGlobal ); /*0x691e66*/
       }
     }
   }
@@ -2256,12 +2256,12 @@ void __thiscall TeamClass::SelectBestMember(_DWORD *this, ScriptClass *aP1, int 
   v3 = this; /*0x6ee5c9*/
   if ( (_BYTE)a3 ) /*0x6ee5d3*/
   {
-    if ( *(this + 15) ) /*0x6ee5d9*/
+    if ( this->queuedFocus ) /*0x6ee5d9*/
       goto LABEL_22; /*0x6ee5de*/
-    v4 = (_DWORD *)*(this + 21); /*0x6ee5e4*/
+    v4 = (_DWORD *)this->firstUnit; /*0x6ee5e4*/
     if ( v4 ) /*0x6ee5e9*/
     {
-      v5 = (_DWORD *)*(this + 21); /*0x6ee5f9*/
+      v5 = (_DWORD *)this->firstUnit; /*0x6ee5f9*/
       a3 = -1; /*0x6ee5fb*/
       v6 = (unsigned __int16)HIWORD(*(_DWORD *)&aP1->__pad_0[4]); /*0x6ee613*/
       aP1 = (ScriptClass *)*((_DWORD *)g_TriggerTypeCount + (unsigned __int16)*(_DWORD *)&aP1->__pad_0[4]); /*0x6ee61b*/

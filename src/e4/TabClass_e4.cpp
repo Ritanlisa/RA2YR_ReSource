@@ -9,11 +9,11 @@ unsigned int * TabClass::initStripClass()
 _DWORD *__thiscall sub_4A2350(_DWORD *this)
 {
   *this = 0; /*0x4a2354*/
-  *(this + 1) = 0; /*0x4a2356*/
-  *((_BYTE *)this + 8) = 0; /*0x4a2359*/
-  *((_BYTE *)this + 9) = 0; /*0x4a235c*/
-  *((_BYTE *)this + 10) = 0; /*0x4a235f*/
-  *(this + 3) = 0; /*0x4a2362*/
+  this->q004 = 0; /*0x4a2356*/
+  this->q020 = 0; /*0x4a2359*/
+  this->q024 = 0; /*0x4a235c*/
+  this->q028 = 0; /*0x4a235f*/
+  this->q00C = 0; /*0x4a2362*/
   return this; /*0x4a2365*/
 }
 }

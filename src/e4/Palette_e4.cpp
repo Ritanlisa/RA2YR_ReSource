@@ -10,8 +10,8 @@ unsigned char * Palette_6BitTo16Bit(char a2, char a3, char a4)
 _BYTE *__thiscall Palette_6BitTo16Bit(_BYTE *this, char a2, char a3, char a4)
 {
   *this = a2; /*0x4355ba*/
-  *(this + 1) = a3; /*0x4355c0*/
-  *(this + 2) = a4; /*0x4355c3*/
+  this->q004 = a3; /*0x4355c0*/
+  this->q008 = a4; /*0x4355c3*/
   return this; /*0x4355c6*/
 }
 }

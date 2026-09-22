@@ -18,7 +18,7 @@ int __thiscall sub_4391C0(int *this, int *a2)
   int v8; // [esp+40h] [ebp-4h] BYREF
 
   v3 = *a2; /*0x4391cc*/
-  v8 = *(this + 4); /*0x4391d9*/
+  v8 = this->q004; /*0x4391d9*/
   result = (*(int (__stdcall **)(int *, int *, int, _DWORD))(v3 + 16))(a2, &v8, 4, 0); /*0x4391dd*/
   if ( result >= 0 ) /*0x4391e2*/
   {
@@ -27,13 +27,13 @@ int __thiscall sub_4391C0(int *this, int *a2)
     {
 LABEL_5:
       v6 = *a2; /*0x43920c*/
-      v8 = *(this + 10); /*0x43921b*/
+      v8 = this->q00A; /*0x43921b*/
       result = (*(int (__stdcall **)(int *, int *, int, _DWORD))(v6 + 16))(a2, &v8, 4, 0); /*0x43921f*/
       if ( result >= 0 ) /*0x439224*/
       {
         for ( i = 0; i < v8; ++i ) /*0x43922e*/
         {
-          result = (*(int (__stdcall **)(int *, int, int, _DWORD))(*a2 + 16))(a2, *(this + 7) + 4 * i, 4, 0); /*0x43923e*/
+          result = (*(int (__stdcall **)(int *, int, int, _DWORD))(*a2 + 16))(a2, this->q007 + 4 * i, 4, 0); /*0x43923e*/
           if ( result < 0 ) /*0x439243*/
             break; /*0x439243*/
         }
@@ -43,7 +43,7 @@ LABEL_5:
     {
       while ( 1 ) /*0x4391fc*/
       {
-        result = (*(int (__stdcall **)(int *, int, int, _DWORD))(*a2 + 16))(a2, *(this + 1) + 4 * v5, 4, 0); /*0x4391fc*/
+        result = (*(int (__stdcall **)(int *, int, int, _DWORD))(*a2 + 16))(a2, this->q001 + 4 * v5, 4, 0); /*0x4391fc*/
         if ( result < 0 ) /*0x439201*/
           break; /*0x439201*/
         if ( ++v5 >= v8 ) /*0x43920a*/
@@ -69,13 +69,13 @@ int __thiscall sub_54E750(_DWORD *this, int *a2)
   int v6; // [esp+20h] [ebp-4h] BYREF
 
   v3 = *a2; /*0x54e75c*/
-  v6 = *(this + 7); /*0x54e769*/
+  v6 = this->q007; /*0x54e769*/
   result = (*(int (__stdcall **)(int *, int *, int, _DWORD))(v3 + 16))(a2, &v6, 4, 0); /*0x54e76d*/
   if ( result >= 0 ) /*0x54e772*/
   {
     for ( i = 0; i < v6; ++i ) /*0x54e77c*/
     {
-      result = (*(int (__stdcall **)(int *, _DWORD, int, _DWORD))(*a2 + 16))(a2, *(_DWORD *)(*(this + 4) + 4 * i), 8, 0); /*0x54e78c*/
+      result = (*(int (__stdcall **)(int *, _DWORD, int, _DWORD))(*a2 + 16))(a2, *(_DWORD *)(this->q004 + 4 * i), 8, 0); /*0x54e78c*/
       if ( result < 0 ) /*0x54e791*/
         break; /*0x54e791*/
     }

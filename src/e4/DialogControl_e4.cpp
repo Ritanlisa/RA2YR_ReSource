@@ -12,7 +12,7 @@ int __thiscall DialogControl_Hide(_BYTE *this)
 
   v1 = *(_DWORD *)this; /*0x4e1450*/
   *(this + 30) = 0; /*0x4e1452*/
-  *(this + 28) = 1; /*0x4e1456*/
+  this->q01C = 1; /*0x4e1456*/
   return (*(int (**)(void))(v1 + 84))();
 }
 }
@@ -24,7 +24,7 @@ int DialogControl::Show()
 int __thiscall DialogControl_Show(_BYTE *this)
 {
   *(this + 30) = 1; /*0x4e1462*/
-  *(this + 28) = 1; /*0x4e1465*/
+  this->q01C = 1; /*0x4e1465*/
   return (*(int (__thiscall **)(_BYTE *))(*(_DWORD *)this + 84))(this);
 }
 }
@@ -49,17 +49,17 @@ _DWORD *__thiscall DialogControl::Constructor(_DWORD *this)
   int v3; // eax
 
   memset(this, 0, 0x200u); /*0x62334d*/
-  *(this + 26) = 11; /*0x62334f*/
-  *(this + 25) = aP0; /*0x62335d*/
+  this->q01A = 11; /*0x62334f*/
+  this->q019 = aP0; /*0x62335d*/
   v2 = __2_YAPAXI_Z(4u); /*0x623360*/
   if ( v2 ) /*0x62336c*/
     v3 = unknown_libname_74(v2); /*0x623370*/
   else
     v3 = 0; /*0x623377*/
-  *(this + 15) = v3; /*0x623379*/
-  *(this + 16) = 0; /*0x62337c*/
-  *(this + 23) = 0; /*0x62337f*/
-  *(this + 36) = -1; /*0x623382*/
+  this->q00F = v3; /*0x623379*/
+  this->q004 = 0; /*0x62337c*/
+  this->q017 = 0; /*0x62337f*/
+  this->q024 = -1; /*0x623382*/
   return this; /*0x62338e*/
 }
 }
