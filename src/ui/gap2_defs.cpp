@@ -438,7 +438,7 @@ namespace gamemd { int DropListClass::ScrollDown(int a1) {
 namespace gamemd { void* DropListClass::QueryInterface(int a2) {
 {
     *(void**)this = &vt_DropListClass;
-    ListClass::Destruct(this + 44);
+    this->q02C.Destruct();
     ShapeButtonClass::Destructor((int)(this + 20));
     DropListClass::Constructor(this);
     if ( (a2 & 1) != 0 )
@@ -466,7 +466,7 @@ namespace gamemd { int DropListClass::SelectItem(void* a1, int a2) {
       v4 = wcslen(String);
       v5 = *this;
       this->q03C = v4;
-      return (*(int (__thiscall **)(int *))(v5 + 72))(this);
+      return this->MarkDirty();
 }
 } }
 // 0x4C3110
@@ -501,14 +501,14 @@ namespace gamemd { int DropListClass::GetCount(int a1, void* a2, int a3) {
       if ( (a2 & 1) != 0 )
       {
         v6 = a2 & 0xFFFFFFFE;
-        (*(void (__thiscall **)(_DWORD *))(*this + 80))(this);
-        (*(void (__thiscall **)(_DWORD *))(*this + 72))(this);
+        this->Close();
+        this->MarkDirty();
       }
-      if ( (v6 & 0x100) == 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *))(*this + 88))(this) )
+      if ( (v6 & 0x100) == 0 || !this->IsPrimaryInstance() )
         return CellClass::Draw((int)this, v6, aP2, 0);
       if ( *(_DWORD *)aP2->__pad_0 == 27 )
       {
-        (*(void (__thiscall **)(_DWORD *))(*this + 84))(this);
+        this->AddItem();
         return CellClass::Draw((int)this, 0, aP2, 0);
       }
       v7 = (unsigned __int8)Keyboard::MapKey((int)g_BinkMoviePlayer, *(_DWORD *)aP2->__pad_0);
@@ -517,7 +517,7 @@ namespace gamemd { int DropListClass::GetCount(int a1, void* a2, int a3) {
       {
         BYTE1(v8) &= ~0x10u;
         *(_DWORD *)aP2->__pad_0 = v8;
-        if ( (v6 & 0x44) != 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, int))(*this + 152))(this, v7) )
+        if ( (v6 & 0x44) != 0 || !this->SetItemText(v7) )
           return CellClass::Draw((int)this, v6, aP2, 0);
       }
       else if ( (*(_DWORD *)aP2->__pad_0 & 0x1000) == 0 && v7 >= 32 || v8 == 13 || v8 == 8 )
@@ -526,7 +526,7 @@ namespace gamemd { int DropListClass::GetCount(int a1, void* a2, int a3) {
           return CellClass::Draw((int)this, v6, aP2, 0);
         v9 = *this;
         v10 = Keyboard::MapKey((int)g_BinkMoviePlayer, v8);
-        if ( !(*(unsigned __int8 (__thiscall **)(_DWORD *, _DWORD))(v9 + 152))(this, v10) )
+        if ( !this->SetItemText(v10) )
           return CellClass::Draw((int)this, v6, aP2, 0);
       }
       BYTE1(v6) &= ~1u;
@@ -578,7 +578,7 @@ namespace gamemd { void* DropListClass::GetItemText(void* a1) {
       _BYTE v24[4];
       _BYTE v25[12];
 
-      v3 = (*(int (__thiscall **)(_DWORD *))(*this + 88))(this);
+      v3 = this->IsPrimaryInstance();
       v4 = this->q010;
       v22 = this->q00C + 1;
       v5 = this->q014 - 2;
@@ -591,7 +591,7 @@ namespace gamemd { void* DropListClass::GetItemText(void* a1) {
       v7 = (*(int (__thiscall **)(int))(*(_DWORD *)g_DSurface_Hidden_2 + 120))(g_DSurface_Hidden_2);
       FillRectangle(v23, (int)String, g_DSurface_Hidden_2, v7, (int)v25, (int)&v22, v16, 0, v18, v19);
       TextRenderer::GetInstance();
-      result = (_DWORD *)(*(int (__thiscall **)(_DWORD *))(*this + 88))(this);
+      result = (_DWORD *)this->IsPrimaryInstance();
       if ( (_BYTE)result )
       {
         result = (_DWORD *)wcslen(String);
@@ -1194,7 +1194,7 @@ namespace gamemd { int CheckListClass::OnKeyDown(int a1) {
       if ( v4 == this->q170 )
         return 0;
       this->q170 = v4;
-      (*(void (__thiscall **)(_DWORD *))(*this + 72))(this);
+      this->AddItem_1();
       if ( this->IsReadOnly )
         (*(void (__thiscall **)(_DWORD *, _DWORD))(this->subList3 + 140))(this + 70, this->q170);
       return 1;
@@ -1345,7 +1345,7 @@ namespace gamemd { int CheckListClass::ScrollDown(int a1) {
       int v2;
 
       v2 = this->q16C;
-      (*(void (__thiscall **)(_DWORD *, int))(*this + 184))(this, v2 + a2);
+      this->SetFocus(v2 + a2);
       return v2;
 }
 } }
@@ -2828,7 +2828,7 @@ namespace gamemd { int SidebarClass::addToList(void* a1) {
         if ( !this->q00D && v3 )
           return 0;
         v4 = this->q014;
-        if ( v4 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*this + 8))(this, v3 + v4, 0) )
+        if ( v4 <= 0 || !this->Release(v3 + v4, 0) )
           return 0;
       }
       v6 = this->q010;
@@ -6575,7 +6575,7 @@ namespace gamemd { int SliderClass::OnClick(int a1) {
       if ( v3 <= 1 )
         v3 = 1;
       this->q048 = v3;
-      (*(void (__thiscall **)(int *))(*this + 72))(this);
+      this->MarkDirty();
       if ( this->q02E )
         v4 = this->q014;
       else
@@ -6693,9 +6693,9 @@ namespace gamemd { int SliderClass::OnRelease(int a1) {
       v2 = this->q034;
       v3 = *this;
       if ( a2 )
-        return (*(int (__stdcall **)(int))(v3 + 140))(v2 - 1);
+        return this->Draw(v2 - 1);
       else
-        return (*(int (__stdcall **)(int))(v3 + 140))(v2 + 1);
+        return this->Draw(v2 + 1);
 }
 } }
 // 0x6B2070
@@ -6766,10 +6766,10 @@ namespace gamemd { int SliderClass::SetRange(int a1, int a2, int a3) {
       if ( (a2 & 4) != 0 )
       {
         if ( a4 == this->q03C )
-          (*(void (__thiscall **)(_DWORD *, _DWORD))(*this + 176))(this, 0);
+          this->OnRelease(0);
         v4 = this->q040;
         if ( a4 == v4 )
-          LOBYTE(v4) = (*(int (__thiscall **)(_DWORD *, int))(*this + 176))(this, 1);
+          LOBYTE(v4) = this->OnRelease(1);
       }
       return v4;
 }
@@ -8029,11 +8029,11 @@ namespace gamemd { int WWMouseClass::loadCursorImages() {
       int (__thiscall ***v5)(_DWORD, int); // ecx
 
       *this = &WWMouseClass::`vftable';
-      if ( ((int (__stdcall *)(int, int))WaitForSingleObject)(dword_A8ED54[238853], 10000) == 258 )
+      if ( WaitForSingleObject(dword_A8ED54[238853], 10000) == 258 )
         Debug::Log();
       if ( (_DWORD *)dword_A8ED54[238852] == this )
         dword_A8ED54[238852] = 0;
-      result = ((int (__stdcall *)(int))ReleaseMutex)(dword_A8ED54[238853]);
+      result = ReleaseMutex(dword_A8ED54[238853]);
       v3 = (int (__thiscall ***)(_DWORD, int))this->q044;
       if ( v3 )
       {
@@ -8854,7 +8854,7 @@ namespace gamemd { int WWMouseClass::UpdateCursorMovement() {
           v4 = *this;
           x = Point.x;
           y = Point.y;
-          (*(void (__thiscall **)(LONG *, LONG *, LONG *))(v4 + 68))(this, &x, &y);
+          this->processFrame(&x, &y);
           v5 = y;
           this->q01C = x;
           this->XY1 = v5;
@@ -8869,8 +8869,8 @@ namespace gamemd { int WWMouseClass::UpdateCursorMovement() {
             Debug::Log();
           if ( v8 != this->q014 || v7 != this->q018 || v9 )
           {
-            if ( (*(unsigned __int8 (__thiscall **)(LONG *))(*this + 28))(this)
-              && !(*(unsigned __int8 (__thiscall **)(LONG *))(*this + 8))(this)
+            if ( this->checkCapture()
+              && !this->drawCursor()
               && g_NetworkPlayerBuffer[5956] )
             {
               if ( WaitForSingleObject(hMutex, 0x2710u) == 258 )
@@ -8881,8 +8881,8 @@ namespace gamemd { int WWMouseClass::UpdateCursorMovement() {
             v10 = *this;
             this->q014 = v8;
             this->q018 = v7;
-            if ( (*(unsigned __int8 (__thiscall **)(LONG *))(v10 + 28))(this)
-              && !(*(unsigned __int8 (__thiscall **)(LONG *))(*this + 8))(this)
+            if ( this->checkCapture()
+              && !this->drawCursor()
               && g_NetworkPlayerBuffer[5956] )
             {
               if ( WaitForSingleObject(hMutex, 0x2710u) == 258 )

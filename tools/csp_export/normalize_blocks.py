@@ -292,6 +292,34 @@ def normalize(body, cls, addr):
     body = R_DEREF.sub(lambda m: rw(m, False), body)
     body = R_INDEX.sub(lambda m: rw(m, True), body)
 
+    # ---- bare `this + OFF` and cast forms -> member name ----
+    if cls:
+        def _member_ref(off):
+            info = (mtab.get(cls) or {}).get('members', {}).get(str(off))
+            if not info or not info.get('name'):
+                return None
+            name = info['name']
+            t = (info.get('type') or '').strip()
+            if '*' in t or '[' in t:
+                return 'this->%s' % name
+            return '&this->%s' % name
+        def _sub_bare(m):
+            off = int(m.group(1), 0)
+            r = _member_ref(off)
+            return r if r else m.group(0)
+        def _sub_cast(m):
+            off = int(m.group(1), 0)
+            r = _member_ref(off)
+            return r if r else m.group(0)
+        # bare `this + OFF` (not preceded by *, not inside call parens)
+        body = re.sub(r'(?<!\*)\bthis\s*\+\s*(0x[0-9A-Fa-f]+|\d+)(?!\s*\))',
+                      _sub_bare, body)
+        # (_BYTE *)(this + OFF) / (_DWORD *)(this + OFF) / (char *)(this + OFF)
+        body = re.sub(
+            r'\(\s*(?:_BYTE|_DWORD|_WORD|char|unsigned int|int)\s*\*\s*\)\s*'
+            r'\(\s*this\s*\+\s*(0x[0-9A-Fa-f]+|\d+)\s*\)',
+            _sub_cast, body)
+
     # ---- virtual calls + load/call merge (segment-level, multi-line safe)
     body, vt_n = rewrite_partial(body)
     stats['vt_partial'] += vt_n

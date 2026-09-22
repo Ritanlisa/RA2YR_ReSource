@@ -106,9 +106,9 @@ namespace ra2 { namespace game { int ObjectClass::Cleanup() {
     int *v9;
     v2 = this->Type;
     v3 = this + 54;
-    AudioMixer::Init(this + 54);
+    this->AudioMixer_36.Init();
     EndFrameAudioMixer(v3, this + 4);
-    ObjectClass::ClearFlags2(this + 4);
+    this->vtable1.ClearFlags2();
     v4 = (int *)this->isAliveFlag;
     if ( v4 )
   {
@@ -233,7 +233,7 @@ namespace ra2 { namespace game { int AudioController::CleanupStream() {
       LOBYTE(v2) = v2 & 0xFA;
       this->q0A4 = v2;
       this->q0A8 = 0;
-      AudioMixer::Init(this + 4);
+      this->q004.Init();
       v3 = (int (__thiscall *)(int *))this->q0B8;
       if ( v3 )
         return v3(this);
@@ -254,7 +254,7 @@ namespace ra2 { namespace game { int AudioController::Init() {
 // 0x408520
 namespace ra2 { namespace game { int AudioController::GetOffset() {
 {
-    return Queue::GetNext(this + 2);
+    return this->Queue_2.GetNext();
 }
 } } }
 // 0x40DD20
@@ -3689,14 +3689,14 @@ namespace ra2 { namespace game { void* FootClass::Construct(int a1) {
       this->FootClass_field_57C = 0;
       this->FootClass_field_580 = 0;
       this->FootClass_field_584 = 1072693248;
-      AbstractClassVector::Construct(this + 354, 0, 0);
+      this->AbstractClassVector_162.Construct(0, 0);
       *(this + 354) = &vt_DynamicVectorClass_AbstractClass;
       this->q59C = 10;
       this->q598 = 0;
       this->FootClass_field_5A0 = 0;
       this->Archive = 0;
       this->FootClass_field_5A8 = 0;
-      AbstractClassVector::Construct(this + 363, 0, 0);
+      this->AbstractClassVector_16B.Construct(0, 0);
       *(this + 363) = &vt_DynamicVectorClass_AbstractClass;
       this->q5C0 = 10;
       this->q5BC = 0;
@@ -3758,7 +3758,7 @@ namespace ra2 { namespace game { void* FootClass::Construct(int a1) {
       *(this + 2) = &FootClass::`vftable';
       *(this + 3) = &vt_FootClass;
       this->pathDirections = -1;
-      AudioController::Init(this + 337);
+      this->AudioController_151.Init();
       if ( *(int *)&g_CellDirectionOffsets[83776] < *(int *)&g_CellDirectionOffsets[83768]
         || (g_CellDirectionOffsets[83773] || !*(_DWORD *)&g_CellDirectionOffsets[83768])
         && *(int *)&g_CellDirectionOffsets[83780] > 0
@@ -3921,7 +3921,7 @@ namespace ra2 { namespace game { int ObjectClass::DispatchEvent(int a1, int a2, 
         || (v6 & 0x100) != 0
         || v6 && (unsigned int)(a4 - this->vtable3) < this->abstractFlags && (unsigned int)(a5 - this->uniqueId) < this->nextArrayIndex )
       {
-        return (*(int (__thiscall **)(_DWORD *, int, int, int))(*this + 124))(this, v6, a2, a6);
+        return this->IsAboveScreenMargin(v6, a2, a6);
       }
       else
       {
@@ -6411,7 +6411,7 @@ namespace ra2 { namespace game { int ObjectClass::CheckFlagD0(int a1) {
     result = aP1;
     this->customSound = aP1;
     if ( aP1 == (IUnknown *)-1 )
-    return AudioFile::Stop(this + 20);
+    return this->abstractFlags.Stop();
     return (int)result;
 }
 } } }
@@ -6562,7 +6562,7 @@ char __thiscall ObjectClass::FinalizeCellPlacement(#374 *this, int a2)
     return 0;
   v94 = *(_DWORD *)(*(int (__thiscall **)(#374 *, int *))(*(_DWORD *)this + 440))(this, &a2);
   v4 = (__int16 *)CellCoord::To_CellObj(DataGlobal_87F7E8, (__int16 *)&v94);
-  v6 = *((_DWORD *)this + 43);
+  v6 = this->q0AC;
   v7 = (int)v4;
   v101 = (int)v4;
   v8 = *(_DWORD *)(v6 + 660);
@@ -9381,7 +9381,7 @@ namespace ra2 { namespace game { int TechnoClass::DrawTargetLine() {
       v2 = this->target;
       if ( v2 )
       {
-        v3 = (_DWORD *)(*(int (__thiscall **)(int *, int *, _DWORD))(*this + 768))(this, v24, 0);
+        v3 = (_DWORD *)this->GetTurretOffset(v24, 0);
         v26[0] = *v3;
         v26[1] = v3[1];
         v26[2] = v3[2];
@@ -9534,16 +9534,16 @@ namespace ra2 { namespace game { int TechnoClass::GetDrawHeight() {
       _BYTE *v62;
       _BYTE *v63;
 
-      v2 = (*(int (__thiscall **)(int *))(*this + 464))(this);
+      v2 = this->GetMember41();
       v3 = ZCoordToScreenY(v2);
       v4 = *this;
       v5 = -v3;
       v42 = -v3;
-      v41 = *(_DWORD *)(*(int (__thiscall **)(int *, _BYTE **))(v4 + 440))(this, &v52);
+      v41 = *(_DWORD *)this->GetCellCoords_Alt(&v52);
       v6 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v41);
       v7 = *this;
       v46 = v6;
-      if ( (*(int (__thiscall **)(int *))(v7 + 44))(this) == 1 )
+      if ( this->getAltitude() == 1 )
       {
         if ( this->isTether )
         {
@@ -9556,7 +9556,7 @@ namespace ra2 { namespace game { int TechnoClass::GetDrawHeight() {
         }
         if ( *(_BYTE *)(this->q6C4 + 3598) )
         {
-          v10 = (_DWORD *)(*(int (__thiscall **)(int *))(*this + 444))(this);
+          v10 = (_DWORD *)this->GetCellCoords();
           v11 = Cell::IsBridge(v10);
           if ( v11 )
           {
@@ -9983,11 +9983,11 @@ namespace ra2 { namespace game { int TechnoClass::CleanupAll(int a1) {
 
       for ( result = (TechnoClass *)this->q118; result; result = (TechnoClass *)this->q118 )
       {
-        DB = CCINIClass::GetDB(this + 69);
+        DB = this->CCINIClass_45.GetDB();
         ecx2 = *(_DWORD *)(DB + 1492);
         if ( ecx2 )
           TeamClass::LiberateMember_Start(ecx2, (IUnknown *)DB, 0xFFFFFFFF, 0);
-        v5 = (ObjectClass *)LinkedList::Pop(this + 69);
+        v5 = (ObjectClass *)this->CCINIClass_45.Pop();
         v6 = v5;
         if ( v5 )
         {
@@ -10017,19 +10017,19 @@ namespace ra2 { namespace game { bool FootClass::CanEnterBuilding() {
       bool result;
 
       result = 0;
-      if ( !(*(unsigned __int8 (__thiscall **)(int *))(*this + 476))(this)
+      if ( !this->HasSubObject()
         && !this->slaveOwner
-        && *(_BYTE *)((*(int (__thiscall **)(int *))(*this + 132))(this) + 3481)
-        && ((*(int (__thiscall **)(int *))(*this + 44))(this) != 6
+        && *(_BYTE *)(this->Vt34Thunk() + 3481)
+        && (this->getAltitude() != 6
          || !*(_BYTE *)(this->FootClass_field_520 + 5499)
-         || (*(int (__thiscall **)(int *))(*this + 1032))(this)) )
+         || this->StubReturnFalse9()) )
       {
         v2 = this->captureManager;
         v3 = v2 && CaptureManagerClass::CannotControlAnyMore(v2);
-        if ( (!(*(unsigned __int8 (__thiscall **)(int *))(*this + 816))(this)
+        if ( (!this->vt_entry_1FC()
            || !(unsigned __int8)House::IsCurrentPlayer((#375 *)this->owner))
           && !v3
-          && (*(unsigned __int8 (__thiscall **)(int *))(*this + 684))(this) )
+          && this->HasActiveParam() )
         {
           return 1;
         }
@@ -11076,7 +11076,7 @@ namespace ra2 { namespace game { int ObjectClass::ComputeValue() {
       int v2;
       int result;
 
-      v2 = (*(int (__thiscall **)(_DWORD *))(*this + 172))(this);
+      v2 = this->GetCoordsThunk2();
       result = Math::RoundToInt((double)(v2 / (this->q0A0 / *((_DWORD *)g_RulesClass_Instance + 1459))) * *((double *)g_RulesClass_Instance + 730));
       if ( result <= 1 )
         return 1;
@@ -11095,7 +11095,7 @@ namespace ra2 { namespace game { int ObjectClass::GetModeSpecificValue() {
           result = this->q684;
           break;
         case 2:
-          result = (*(int (__thiscall **)(int *))(*this + 44))(this) != 16 ? 5 : 3;
+          result = this->getAltitude() != 16 ? 5 : 3;
           break;
         case 3:
           result = this->q5E0;
@@ -11923,8 +11923,8 @@ namespace ra2 { namespace game { int ObjectClass::Initialize() {
       this->q0B4 = 0;
       this->q0BC = 0;
       this->q0C4 = 0;
-      Int4::Set((_DWORD *)(this + 224), 0, 0, 0, 1065353216);
-      Int4::Set((_DWORD *)(this + 240), 0, 0, 0, 1065353216);
+      Int4::Set(&this->q0E0, 0, 0, 0, 1065353216);
+      Int4::Set(&this->q0F0, 0, 0, 0, 1065353216);
       this->q100 = -1;
       this->q104 = 0;
       this->q108 = 0;
@@ -11936,9 +11936,9 @@ namespace ra2 { namespace game { int ObjectClass::Initialize() {
       this->vtable2 = &VoxelAnimClass::`vftable';
       this->vtable3 = &VoxelAnimClass::`vftable';
       this->vtable4 = &vt_VoxelAnimClass;
-      AbstractClass::GenerateUniqueID(this + 4);
-      AudioController::Init((_DWORD *)(this + 276));
-      AudioController::Init((_DWORD *)(this + 296));
+      this->vtable1.GenerateUniqueID();
+      AudioController::Init(this->q114);
+      AudioController::Init(&this->q128);
       if ( DataGlobal_887398 < DataGlobal_887390
         || (DataGlobal_887395 || !DataGlobal_887390)
         && DataGlobal_88739C > 0

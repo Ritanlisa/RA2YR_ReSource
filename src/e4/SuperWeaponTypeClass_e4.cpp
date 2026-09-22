@@ -756,7 +756,7 @@ int SuperWeaponTypeClass::SuperWeaponTypeClass(ObjectClass * aP1)
     this->vtable1 = (unsigned int)vt_SuperWeaponTypeClass;
     this->vtable2 = (unsigned int)vt_SuperWeaponTypeClass;
     this->vtable3 = &vt_SuperWeaponTypeClass;
-    AbstractClass::GenerateUniqueID(this + 4);
+    this->WeaponType.GenerateUniqueID();
     this->ArrayIndex = *(int *)&g_NetworkPlayerBuffer[3332];
     if ( *(int *)&g_NetworkPlayerBuffer[3332] < *(int *)&g_NetworkPlayerBuffer[3324] || (g_NetworkPlayerBuffer[3329] || !*(int *)&g_NetworkPlayerBuffer[3324]) && *(int *)&g_NetworkPlayerBuffer[3336] > 0 && (*(unsigned char (__thiscall **)(char *, int, int))(*(int *)&g_NetworkPlayerBuffer[3316] + 8))( &g_NetworkPlayerBuffer[3316], *(int *)&g_NetworkPlayerBuffer[3324] + *(int *)&g_NetworkPlayerBuffer[3336], 0) )
   {

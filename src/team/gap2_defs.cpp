@@ -1106,7 +1106,7 @@ namespace gamemd { int CampaignClass::ReleaseSubobjectsAndDestruct() {
         (**v4)(v4, 1);
         this->q0AC = 0;
       }
-      return SessionClass::Destruct(this + 20);
+      return this->abstractFlags.Destruct();
 }
 } }
 // 0x5CF760

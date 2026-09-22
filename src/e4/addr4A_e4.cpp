@@ -2726,7 +2726,7 @@ namespace gamemd {
 int E4Recv_4A2030::sub_4A2030(Pipe * aP1, int aP2)
 {
 {
-    Checksummer::Add_Buffer(this + 3, (unsigned char *)aP1, (IUnknown *)aP2);
+    this->Checksummer_3.Add_Buffer((unsigned char *)aP1, (IUnknown *)aP2);
     return (int)Delegate::Dispatch(this, aP1, (Pipe *)aP2);
 }
 }
@@ -2741,7 +2741,7 @@ int E4Recv_4A20B0::sub_4A20B0(Straw * aP1, int aP2)
     if ( !aP1 || aP2 < 1 )
     return 0;
     v4 = (IUnknown *)Delegate::Invoke(this, (int)aP1, (Straw *)aP2);
-    Checksummer::Add_Buffer(this + 3, (unsigned char *)aP1, v4);
+    this->Checksummer_3.Add_Buffer((unsigned char *)aP1, v4);
     return (int)v4;
 }
 }

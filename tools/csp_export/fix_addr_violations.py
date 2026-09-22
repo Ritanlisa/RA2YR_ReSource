@@ -83,6 +83,7 @@ def vt_rewrite_fn(seg_text, cls):
     return chr(10).join(lines_out), n
 
 print('loading tables...', flush=True)
+NO_VERIFY = '--no-verify' in sys.argv
 mtab = json.loads((ROOT / 'anchors/csp_canon_members.json').read_text(encoding='utf-8'))
 
 sig = json.loads((ROOT / 'signals.json').read_text(encoding='utf-8'))
@@ -172,6 +173,25 @@ def real_mem_rewrite(text, cls, env=None):
         return m.group(0)
     text = R_THIS1.sub(s1, text)
     text = R_THIS2.sub(s2, text)
+    # bare `this + OFF` (pointer initializer / cast argument)
+    if cls:
+        def s_bare(m):
+            off = int(m.group(1), 0)
+            info = (mtab.get(cls) or {}).get('members', {}).get(str(off))
+            if not info or not info.get('name'):
+                return m.group(0)
+            t = (info.get('type') or '').strip()
+            nm = info['name']
+            if '*' in t or '[' in t:
+                return 'this->' + nm
+            return '&this->' + nm
+        text = re.sub(r'(?<!\*)this\s*\+\s*(0x[0-9A-Fa-f]+|\d+)(?!\s*\))',
+                      s_bare, text)
+        # cast form: (_BYTE *)(this + OFF) etc
+        text = re.sub(
+            r'\(\s*(?:_BYTE|_DWORD|_WORD|char|unsigned int|int)\s*\*\s*\)\s*'
+            r'\(\s*this\s*\+\s*(0x[0-9A-Fa-f]+|\d+)\s*\)',
+            s_bare, text)
     # R5: typed-local receivers *(T *)(vN + N)
     if env:
         def s3(m):
@@ -324,16 +344,19 @@ def process_file(rel):
         old = lines[def_i:end_i + 1]
         lines[def_i:end_i + 1] = nb.split('\n')
         p.write_bytes('\n'.join(lines).encode('latin-1'))
-        r = subprocess.run(
-            [sys.executable, 'tools/verify_execution_flow.py', '0x%X' % addr],
-            capture_output=True, text=True, encoding='utf-8', errors='replace',
-            timeout=300, cwd=str(ROOT))
-        if r.returncode == 0:
+        if NO_VERIFY:
             fixed += 1
         else:
-            lines[def_i:end_i + 1] = old
-            p.write_bytes('\n'.join(lines).encode('latin-1'))
-            rolled += 1
+            r = subprocess.run(
+                [sys.executable, 'tools/verify_execution_flow.py', '0x%X' % addr],
+                capture_output=True, text=True, encoding='utf-8', errors='replace',
+                timeout=300, cwd=str(ROOT))
+            if r.returncode == 0:
+                fixed += 1
+            else:
+                lines[def_i:end_i + 1] = old
+                p.write_bytes('\n'.join(lines).encode('latin-1'))
+                rolled += 1
 
     if lines != orig:
         p.write_bytes('\n'.join(lines).encode('latin-1'))

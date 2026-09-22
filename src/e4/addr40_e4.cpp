@@ -3124,7 +3124,7 @@ void E4Recv_402EF0::sub_402EF0()
     int *i;
     int v4;
     int v5;
-    Next = (int *)AudioQueue::GetNext(this + 62);
+    Next = (int *)this->AudioQueue_3E.GetNext();
     for ( i = Next; Next; i = Next )
   {
     Next = (int *)AudioQueue::GetNextAlt(Next);

@@ -17369,11 +17369,11 @@ namespace gamemd { void* Gap2Recv_63B050::Team_Load_63B050() {
     void *result;
     result = 0;
     if ( this->M18 )
-    return BuildingLoadQueue::GetNext(this + 14);
+    return this->BuildingLoadQueue_E.GetNext();
     if ( this->M28 )
-    return BuildingLoadQueue::GetNext(this + 24);
+    return this->BuildingLoadQueue_18.GetNext();
     if ( this->M23 )
-    return BuildingLoadQueue::GetNext(this + 19);
+    return this->BuildingLoadQueue_13.GetNext();
     return result;
 }
 

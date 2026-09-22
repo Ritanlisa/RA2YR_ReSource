@@ -1231,7 +1231,7 @@ void AudioStream::Destructor()
 {
     void (__thiscall *v2)(int *);
     (*(void (**)(void))(*(this + 53) + 40))();
-    if ( (*(char *)(this + 41) & 5) != 0 )
+    if ( (this->q029 & 5) != 0 )
     (*(void (__thiscall **)(int *))(*(this + 53) + 16))(this);
     (*(void (__thiscall **)(int *))(*(this + 53) + 44))(this);
     v2 = (void (__thiscall *)(int *))*(this + 47);

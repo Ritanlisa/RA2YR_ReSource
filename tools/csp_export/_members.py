@@ -51,10 +51,16 @@ def ensure_member(cls, off, c1):
     """Return the usable member NAME for (cls, off) typed c1, registering or
     correcting the registry as needed. Returns None when cls is unknown."""
     mt, ml, sg = _load()
+    if ml is None:
+        ml = {}
+    if sg is None:
+        sg = {}
     key = '%s+0x%X' % (cls, off)
-    members = ml.get(cls)
+    members = (ml or {}).get(cls)
     if members is None:
-        return None  # unknown class: nothing to attach the member to
+        members = {}
+        if isinstance(ml, dict):
+            ml[cls] = members
     ent = members.get(str(off))
     if ent and ent.get('name'):
         name = ent['name']
@@ -75,7 +81,7 @@ def ensure_member(cls, off, c1):
     mt[key] = {'name': name, 'type': c1, 'size': 4,
                'confidence': 'ANCHORED',
                'evidence': 'static-sub callsite (G29.15)'}
-    mbn = sg.setdefault('_member_by_name', {})
+    mbn = (sg or {}).setdefault('_member_by_name', {})
     cls_mbn = mbn.setdefault(cls, {})
     cls_mbn[name] = off
     _dirty = True

@@ -1006,7 +1006,7 @@ namespace gamemd { int TacticalClass::initTacticalMap(void* a1, void* a2) {
         }
         else
         {
-          v4 = (*(int (__thiscall **)(int *))(*this + 156))(this);
+          v4 = this->vt_slot_156();
           *a2 = v4;
           if ( v4 )
           {
@@ -1071,7 +1071,7 @@ LABEL_8:
 namespace gamemd { void* CCFileClass::Construct(void* a1) {
 {
       BufferIOFile::Init(this);
-      Buffer::Init(this + 22, 0, 0);
+      this->FileTimeDateHi.Init(0, 0);
       this->q064 = 0;
       *this = &CCFileClass::`vftable';
       this->q068 = 0;
@@ -1085,7 +1085,7 @@ namespace gamemd { void* CCFileClass::Construct2(void* a1) {
       char *v3;
 
       BufferIOFile::Init(this);
-      Buffer::Init(this + 22, 0, 0);
+      this->FileTimeDateHi.Init(0, 0);
       this->q064 = 0;
       *this = &vt_CCFileClass;
       this->q068 = 0;
@@ -1126,8 +1126,8 @@ namespace gamemd { int CCFileClass::Read() {
       size_t v7;
 
       v4 = 0;
-      if ( !(*(unsigned __int8 (__thiscall **)(_DWORD *))(*this + 24))(this) )
-        v4 = (*(int (__thiscall **)(_DWORD *, int))(*this + 28))(this, 1) != 0;
+      if ( !this->Destru_vt06() )
+        v4 = this->Load_1(1) != 0;
       v5 = this->FileBuffer;
       if ( v5 )
       {
@@ -1142,7 +1142,7 @@ namespace gamemd { int CCFileClass::Read() {
         }
         if ( v4 )
         {
-          (*(void (__thiscall **)(_DWORD *))(*this + 52))(this);
+          this->Reset_8();
           return v7;
         }
       }
@@ -1150,7 +1150,7 @@ namespace gamemd { int CCFileClass::Read() {
       {
         v7 = FileClass::BufferedReader((int)this, (BufferIOFileClass *)aP1, Size);
         if ( v4 )
-          (*(void (__thiscall **)(_DWORD *))(*this + 52))(this);
+          this->Reset_8();
       }
       return v7;
 }
@@ -1198,7 +1198,7 @@ namespace gamemd { int CCFileClass::GetSize() {
         return BufferIOFileClass::SetSize(this);
       v3 = *this;
       v4 = 0;
-      (*(void (__thiscall **)(int *))(v3 + 4))(this);
+      this->GetMember06();
       LookupFileInfoCache(0, 0, &v4);
       return v4;
 }
@@ -1222,7 +1222,7 @@ namespace gamemd { int FileClass::Load(int a1) {
       int v11;
       int v12;
 
-      (*(void (__thiscall **)(int *))(*this + 52))(this);
+      this->vt_slot_52();
       if ( ((unsigned __int8)aP1 & 2) != 0 || File::IsReady(this, 0) )
         return FileClass::OpenFileBufferIO(this, aP1);
       v3 = *this;
@@ -1230,27 +1230,27 @@ namespace gamemd { int FileClass::Load(int a1) {
       v10 = 0;
       Size = 0;
       v12 = 0;
-      v4 = (const char *)(*(int (__thiscall **)(int *))(v3 + 4))(this);
+      v4 = (const char *)this->vt_slot_4();
       if ( !LookupFileInfoCache(v4, &v10, &v11, &v12, &Size) )
         return FileClass::OpenFileBufferIO(this, aP1);
       if ( v10 || !v11 )
       {
         if ( this != (int *)-88 )
-          Buffer::Init(this + 22, v10, (AbstractClass *)Size);
+          this->Buffer_16.Init(v10, (AbstractClass *)Size);
         this->q064 = 0;
         return 1;
       }
-      else if ( (*(int (__thiscall **)(int *, _DWORD, int))(*this + 32))(this, *(_DWORD *)(v11 + 12), 1) )
+      else if ( this->vt_slot_32(*(_DWORD *)(v11 + 12), 1) )
       {
-        eax7a = (const char *)(*(int (__thiscall **)(int *))(*this + 4))(this);
+        eax7a = (const char *)this->vt_slot_4();
         v5 = (CCINIClass *)_strdup(eax7a);
         v7 = *this;
         this->q054 = 1;
-        (*(void (__thiscall **)(int *, CCINIClass *))(v7 + 8))(this, v5);
+        this->vt_slot_8(v5);
         this->q054 = 0;
         FileClass::GetFileSizeOp(this, 0, (CCFileClass *)0xFFFFFFFF);
         FileClass::GetFileSizeOp(this, v12, (CCFileClass *)Size);
-        (*(void (__thiscall **)(int *, _DWORD, _DWORD))(*this + 40))(this, 0, 0);
+        this->vt_slot_40(0, 0);
         free(v5);
         return 1;
       }
@@ -2364,7 +2364,7 @@ namespace gamemd { void* INIClass::writeSection(void* a1) {
 
       if ( this == a2 )
         return this;
-      (*(void (__thiscall **)(_DWORD *))(*this + 12))(this);
+      this->vt_slot_12();
       v3 = a2[2];
       this->q008 = v3;
       if ( !v3 )
@@ -2654,7 +2654,7 @@ namespace gamemd { void* CellClass::Construct() {
       *(this + 3) = &CellClass::`vftable';
       memset(this + 31, 0, 0x30u);
       memset(this + 43, 0, 0x30u);
-      AbstractClass::GenerateUniqueID(this + 1);
+      this->AbstractClass_1.GenerateUniqueID();
       this->occupationFlags = 0;
       this->altOccupationFlags = 0;
       return this;
@@ -9368,25 +9368,25 @@ namespace gamemd { int TacticalClass::DispatchMode(int a1) {
         this->q11AC = -1;
         v4 = Mouse::SetBounds((int)this, 0);
         LOBYTE(v4) = DataGlobal_87F8E4[21600];
-        return (*(int (__thiscall **)(int *, _DWORD, int))(*this + 72))(this, 0, v4);
+        return this->vt_slot_72(0, v4);
       }
       else if ( this->q11B0 )
       {
         BuildingClass::TogglePower2(this, 0);
         LOBYTE(v6) = DataGlobal_87F8E4[21600];
-        return (*(int (__thiscall **)(int *, _DWORD, int))(*this + 72))(this, 0, v6);
+        return this->vt_slot_72(0, v6);
       }
       else if ( this->q11B1 )
       {
         BuildingClass::TogglePower(this, 0);
         LOBYTE(v7) = DataGlobal_87F8E4[21600];
-        return (*(int (__thiscall **)(int *, _DWORD, int))(*this + 72))(this, 0, v7);
+        return this->vt_slot_72(0, v7);
       }
       else if ( this->q11B2 )
       {
         TacticalClass::SetObserverMode(this, 0);
         LOBYTE(v8) = DataGlobal_87F8E4[21600];
-        return (*(int (__thiscall **)(int *, _DWORD, int))(*this + 72))(this, 0, v8);
+        return this->vt_slot_72(0, v8);
       }
       else
       {
@@ -9397,7 +9397,7 @@ namespace gamemd { int TacticalClass::DispatchMode(int a1) {
           {
             v11 = TacticalClass::SetDisplayMode(this, 0, 0);
             LOBYTE(v11) = DataGlobal_87F8E4[21600];
-            return (*(int (__thiscall **)(int *, _DWORD, _DWORD *))(*this + 72))(this, 0, v11);
+            return this->vt_slot_72(0, v11);
           }
           else
           {
@@ -9406,7 +9406,7 @@ namespace gamemd { int TacticalClass::DispatchMode(int a1) {
             else
               v12 = MapClass::UnselectAll_ClearLimboLaunchers();
             LOBYTE(v12) = DataGlobal_87F8E4[21600];
-            return (*(int (__thiscall **)(int *, _DWORD, int))(*this + 72))(this, 0, v12);
+            return this->vt_slot_72(0, v12);
           }
         }
         else
@@ -9414,7 +9414,7 @@ namespace gamemd { int TacticalClass::DispatchMode(int a1) {
           v10 = *this;
           this->q11B8 = -1;
           LOBYTE(v9) = DataGlobal_87F8E4[21600];
-          return (*(int (__thiscall **)(int *, _DWORD, int))(v10 + 72))(this, 0, v9);
+          return this->vt_slot_72(0, v9);
         }
       }
 }
@@ -10049,9 +10049,9 @@ namespace gamemd { void ScenarioClass::LoadMapData(void* a1) {
       v47.CCINIClass_field_4C = v3[2];
       v4 = *this;
       v47.unknown50 = v3[3];
-      (*(void (__thiscall **)(int *))(v4 + 96))(this);
+      this->vt_slot_96();
       v5 = 0;
-      (*(void (__thiscall **)(int *, char *, int, _DWORD, int))(*this + 112))(this, &v47[68], 1, 0, 1);
+      this->vt_slot_112(&v47[68], 1, 0, 1);
       Int_Overwrite = (char *)INIClass::ReadInt_Overwrite(
                                 (int)aP1,
                                 (unsigned __int8 *)&g_INI_Key_CellTags.headNode[2],
@@ -10085,7 +10085,7 @@ namespace gamemd { void ScenarioClass::LoadMapData(void* a1) {
                                     (INIClass *)&g_INI_Key_CellTags.headNode[2],
                                     (unsigned __int8 *)&g_INI_Key_Theater,
                                     0);
-      (*(void (__thiscall **)(int *, int))(*this + 24))(this, g_ScenarioClass_Instance->theater);
+      this->vt_slot_24(g_ScenarioClass_Instance->theater);
       Multiplayer::ShowProgress(&g_GameMode_Current, 63);
       Event::Dispatch();
       v9 = g_ScenarioClass_Instance->random[0];
@@ -10724,10 +10724,10 @@ namespace gamemd { int INIClass::ClearSection(int a1, void* a2) {
       v9 = (CCINIClass *)Checksummer::Add_Buffer(&v25, (unsigned __int8 *)v3, (IUnknown *)strlen(v3->__pad_0));
       v10 = this + 40;
       aP1 = (INIClass *)v9;
-      if ( !HashTable::BinarySearch(this + 40, (ObjectClass *)&aP1) )
+      if ( !this->q028.BinarySearch((ObjectClass *)&aP1) )
         return 1;
       v23 = (INIClass *)v9;
-      v11 = HashTable::BinarySearch(this + 40, (ObjectClass *)&v23)
+      v11 = this->q028.BinarySearch((ObjectClass *)&v23)
           ? (int *)(this->q038 + 4)
           : (int *)&DataGlobal_B7882C;
       esi13 = *v11;
@@ -17307,7 +17307,7 @@ namespace gamemd { int CellClass::CreateBuildingCrater(void* a1) {
           if ( ++v2 >= 256 )
             return 0;
         }
-        return CellClass::Cleanup(this + 8 * v2 + 172);
+        return this->bridgeOwnerCell.Cleanup(this + 8 * v2 + 172);
       }
       else
       {
@@ -29424,7 +29424,7 @@ namespace gamemd { void* RadarClass::Construct() {
       this->q121C = 0;
       this->q1218 = v3;
       this->q1220 = 0;
-      VectorClass::CellConstructor(this + 1161, 0, 0);
+      this->VectorClass_489.CellConstructor(0, 0);
       *(this + 1161) = &vt_DynamicVectorClass_Cell;
       this->q1238 = 10;
       this->q1234 = 0;
@@ -29528,7 +29528,7 @@ namespace gamemd { void* RadarClass::Construct() {
       }
       this->q1258 = v9;
       this->q1270 = 500;
-      AudioController::Init(this + 1328);
+      this->AudioController_530.Init();
       return this;
 }
 } }
@@ -30634,7 +30634,7 @@ namespace gamemd { void* RadarClass::Destru_vt04(int a2) {
     void *v6;
     void *v7;
     *(void**)this = &vt_RadarClass;
-    AudioFileClass::Release(this + 1328);
+    this->AudioController_530.Release();
     TacticalClass::FreeResources((int)this);
     v3 = this + 1314;
     v4 = 22;
@@ -30928,7 +30928,7 @@ namespace gamemd { void FileClass::GetFileSizeOp(int a1, int a2) {
         }
         v6 = *this;
         this->q010 = this->q010 <= 0 ? 0 : this->q010;
-        if ( (*(unsigned __int8 (__thiscall **)(int *))(v6 + 24))(this) )
+        if ( this->vt_slot_24() )
           FileClass::Seek(this, 0, 0);
       }
       else

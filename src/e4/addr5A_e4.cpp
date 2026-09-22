@@ -4518,7 +4518,7 @@ DWORD E4Recv_5AE530::sub_5AE530(ObjectClass * aP1, ObjectClass * aP2)
     DWORD result;
     int v5;
     v3 = (ObjectClass *)this;
-    String::Reassign(this + 50, (AbstractClass *)aP1);
+    this->String_32.Reassign((AbstractClass *)aP1);
     result = Timer::GetTicks();
     v3 = (ObjectClass *)((char *)(v3) + 204);
     *(int *)v3->__pad_0 = result;

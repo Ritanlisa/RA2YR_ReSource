@@ -370,8 +370,8 @@ namespace gamemd { void* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, v
       this->q12C = 0;
       this->q134 = 0;
       this->q13C = 0;
-      Int4::Set(this + 86, 0, 0, 0, 1065353216);
-      Int4::Set(this + 90, 0, 0, 0, 1065353216);
+      this->Int4_56.Set(0, 0, 0, 1065353216);
+      this->Int4_5A.Set(0, 0, 0, 1065353216);
       this->q188 = 0;
       this->q178 = 0;
       this->q179 = 0;
@@ -397,8 +397,8 @@ namespace gamemd { void* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, v
       this->q00C = &off_7E3328;
       this->PaletteName = 0;
       AbstractClass::GenerateUniqueID((int)(this + 1));
-      AudioController::Init(this + 104);
-      AudioController::Init(this + 109);
+      this->AudioController_68.Init();
+      this->AudioController_6D.Init();
       if ( DataGlobal_87F7E8[539764] < DataGlobal_87F7E8[539762]
         || (BYTE1(DataGlobal_87F7E8[539763]) || !DataGlobal_87F7E8[539762])
         && DataGlobal_87F7E8[539765] > 0
@@ -457,7 +457,7 @@ namespace gamemd { void* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, v
         v26 = (int)this->q0C8;
         if ( *(_BYTE *)(v26 + 881) || this->q120 )
         {
-          this->Animation = (void *)(*(_DWORD *)(v26 + 700) - 1);
+          this->Animation = (void *)(v26->q2BC - 1);
           this->q0C4 = (void *)-(int)this->q0C4;
         }
         v27 = (int)this->q0C8;
@@ -504,17 +504,7 @@ namespace gamemd { void* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, v
             }
             v36 = (int)this->q0C8;
             v63 = v34;
-            AnimClass::InitRotation(
-              this + 74,
-              &v61,
-              *(_DWORD *)(v36 + 784),
-              *(_DWORD *)(v36 + 788),
-              1610612736,
-              1073112678,
-              0,
-              0,
-              &v58,
-              0.0);
+            this->AnimClass_4A.InitRotation(&v61, *(_DWORD *)(v36 + 784), *(_DWORD *)(v36 + 788), 1610612736, 1073112678, 0, 0, &v58, 0.0);
           }
           else
           {
@@ -549,17 +539,7 @@ namespace gamemd { void* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, v
             v66 = v56;
             *(float *)&v64 = v47;
             v65 = v46;
-            AnimClass::InitRotation(
-              this + 74,
-              &v61,
-              *(_DWORD *)(v45 + 784),
-              *(_DWORD *)(v45 + 788),
-              1610612736,
-              1073112678,
-              0,
-              0,
-              &v64,
-              0.0);
+            this->AnimClass_4A.InitRotation(&v61, *(_DWORD *)(v45 + 784), *(_DWORD *)(v45 + 788), 1610612736, 1073112678, 0, 0, &v64, 0.0);
           }
         }
         else
@@ -625,206 +605,6 @@ namespace gamemd { void* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, v
       }
 }
 } }
-      int *v6;
-      _DWORD *Coords;
-      _DWORD *v8;
-      _DWORD *v9;
-      _DWORD *v10;
-      int v11;
-      int v12;
-      int v13;
-      int v14;
-      int v15;
-      int v16;
-      _DWORD *v17;
-      int v19;
-      int v20;
-      int v21;
-      int v22;
-      char v23[12];
-      int v24[3];
-      char v25[12];
-      _DWORD v26[3];
-
-      v2 = (float *)(this + 296);
-      v3 = JumpjetLocomotionClass::Update2(this + 296);
-      v4 = this->q0C8;
-      v22 = v3;
-      if ( *(_BYTE *)(v4 + 854) )
-        v2[11] = v2[11] + *((double *)v2 + 1);
-      if ( v3 == 1 )
-      {
-        if ( *(_DWORD *)(this->q0C8 + 768) )
-        {
-          v5 = (void **)__2_YAPAXI_Z(0x1C8u);
-          if ( v5 )
-          {
-            v6 = (int *)this->vt18(v23);
-            AnimClass::ctor(v5, *(void **)(this->q0C8 + 768), v6, 0, 1, (void *)0x600, 0, 0);
-          }
-        }
-        Coords = Coord::GetCoords(v2, v24);
-        v8 = (_DWORD *)*((_DWORD *)Coord::To_Cell(&DataGlobal_87F7E8, Coords) + 57);
-        if ( v8 )
-        {
-          do
-          {
-            v9 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, char *))(*v8 + 72))(v8, v25);
-            v10 = Coord::GetCoords((float *)this + 74, v26);
-            v11 = this->q0C8;
-            v12 = abs32(v10[1] - v9[1]) + abs32(*v10 - *v9);
-            if ( v12 <= *(_DWORD *)(v11 + 820) )
-            {
-              v13 = Math::RoundToInt(*(double *)(v11 + 680));
-              v14 = *v8;
-              v20 = v13;
-              v19 = *(_DWORD *)(v11 + 816);
-              v21 = v14;
-              v15 = ZCoordToScreenY(v12);
-              (*(void (__thiscall **)(_DWORD *, int *, int, int, _DWORD, _DWORD, _DWORD, _DWORD))(v21 + 364))(
-                v8,
-                &v20,
-                v15,
-                v19,
-                0,
-                0,
-                0,
-                0);
-            }
-            v8 = (_DWORD *)v8[12];
-          }
-          while ( v8 );
-          v3 = v22;
-        }
-      }
-      else if ( v3 == 2 )
-      {
-        this->vt62();
-      }
-      v16 = *(_DWORD *)this;
-      v17 = Coord::GetCoords((float *)this + 74, v26);
-      (*(void (__thiscall **)(char *, _DWORD *))(v16 + 436))(this, v17);
-      return v3;
-}
-} }
-
-// 0x425150
-namespace gamemd { int AnimClass::ClearTargetReferences(int a1, int a2) {
-{
-      ParticleSystemClass *result;
-      int v5;
-      int v6;
-      int v7;
-
-      Object::Unlink((#374 *)this);
-      result = (ParticleSystemClass *)this->q0CC;
-      if ( result == a2 && a2 )
-      {
-        RemoveTarget((IUnknown *)this);
-        (*(void (__thiscall **)(_DWORD, int *))(*(_DWORD *)this->q0CC + 96))(this->q0CC, this);
-        v5 = *this;
-        this->q0CC = 0;
-        this->q19B = 1;
-        result = (ParticleSystemClass *)(*(int (__thiscall **)(int *, _DWORD))(v5 + 292))(this, 0);
-      }
-      if ( (ParticleSystemClass *)this->q0C8 == a2 )
-        this->q0C8 = 0;
-      if ( (ParticleSystemClass *)this->q17C == a2 )
-      {
-        v6 = *this;
-        this->q17C = 0;
-        result = (ParticleSystemClass *)(*(int (__thiscall **)(int *))(v6 + 248))(this);
-      }
-      if ( (ParticleSystemClass *)this->q180 == a2 )
-      {
-        v7 = *this;
-        this->q17C = 0;
-        return (ParticleSystemClass *)(*(int (__thiscall **)(int *))(v7 + 248))(this);
-      }
-      return result;
-}
-} }
-
-// 0x425280
-namespace gamemd { int AnimClass::SaveLoad_Prefix(int a1, int a2) {
-{
-      ObjectClass *Register;
-      int fallRate;
-      int v6;
-      int v7;
-
-      Register = (ObjectClass *)BuildingClass::SaveLoad_Register((#374 *)this);
-      if ( (int)Register >= 0 )
-      {
-        if ( aP1 )
-        {
-          ObjectClass::Init(aP1, (AbstractClass *)&aP1a);
-          __4type_info_AAEAAV0_ABV0__Z(&aP1[1].__pad_0[8], (int)&aP1a);
-          *(_DWORD *)aP1->__pad_0 = &AnimClass::`vftable';
-          *(_DWORD *)&aP1->__pad_0[4] = &AnimClass::`vftable';
-          *(_DWORD *)&aP1->__pad_0[8] = &vt_AnimClass;
-          *(_DWORD *)&aP1->__pad_0[12] = &off_7E3328;
-        }
-        AudioController::Init(&aP1[2].ambientSoundController[3]);
-        AudioController::Init(&aP1[2].customSound_controller[3]);
-        ObjectPtr::RegisterForTracking(
-          (SwizzleManagerClass *)&stru_B05488[27784],
-          (MouseClass *)&aP1[1].referenceCount);
-        ObjectPtr::RegisterForTracking(
-          (SwizzleManagerClass *)&stru_B05488[27784],
-          (MouseClass *)&aP1[1].NeedsSaveOrLink);
-        ObjectPtr::RegisterForTracking(
-          (SwizzleManagerClass *)&stru_B05488[27784],
-          (MouseClass *)&aP1[2].objectTypeFlags);
-        ObjectPtr::RegisterForTracking(
-          (SwizzleManagerClass *)&stru_B05488[27784],
-          (MouseClass *)&aP1[2].owningHouseIndex);
-        fallRate = aP1[1].fallRate;
-        if ( fallRate <= -1 )
-        {
-          if ( LOBYTE(aP1[1].nextObject) )
-          {
-            v6 = FileExtension::MapHandler((ObjectClass *)((char *)aP1 + 220));
-            if ( v6 )
-            {
-              v7 = (*(int (__thiscall **)(int, _DWORD))(*(_DWORD *)v6 + 24))(v6, 0);
-              if ( v7 )
-              {
-                aP1[1].owningHouseIndex = *(_DWORD *)(v7 + 780);
-                return (int)Register->__pad_0;
-              }
-            }
-          }
-          aP1[1].owningHouseIndex = 0;
-        }
-        else if ( fallRate < *(int *)stru_B05488[88] )
-        {
-          aP1[1].owningHouseIndex = *(_DWORD *)(*(_DWORD *)(stru_B05488.field_4C + 4 * fallRate) + 780);
-          return (int)Register->__pad_0;
-        }
-      }
-      return (int)Register->__pad_0;
-}
-} }
-
-// 0x425410
-namespace gamemd { int AnimClass::ProcessPower(void* a1) {
-{
-      int v3;
-      int v4;
-      int v5;
-      int v6;
-      int v7;
-      int v8;
-      int v9;
-      int v10;
-
-      HouseClass::ProcessPower((#374 *)this);
-      v3 = this->q0CC;
-      if ( v3 )
-      {
-        v4 = (*(int (__stdcall **)(int))(*(_DWORD *)(v3 + 4) + 16))(v3 + 4);
-        Power::TimerProcess(v4);
       }
       Power::TimerProcess(this->q0D0);
       Power::TimerProcess(this->ZAdjust);
@@ -1743,7 +1523,7 @@ LABEL_184:
             }
             v120 = *(this + 43);
             if ( *(int *)(v120 + 732) > 0 || *(_BYTE *)(v120 + 672) )
-              v121 = BulletClass::CheckProximityDetonation(this + 46, &v161);
+              v121 = this->BulletClass_2E.CheckProximityDetonation(&v161);
             else
               v121 = 0;
             v122 = *(this + 44);
@@ -4774,7 +4554,7 @@ LABEL_184:
             }
             v120 = *(this + 43);
             if ( *(int *)(v120 + 732) > 0 || *(_BYTE *)(v120 + 672) )
-              v121 = BulletClass::CheckProximityDetonation(this + 46, &v161);
+              v121 = this->BulletClass_2E.CheckProximityDetonation(&v161);
             else
               v121 = 0;
             v122 = *(this + 44);
@@ -7720,7 +7500,7 @@ namespace gamemd { int BulletClass::ProcessObstacle(void* a1, void* a2) {
       v37[1] = this->q09C;
       v37[2] = this->q0A0;
       v38 = this->q0A4;
-      BulletClass::InitDetonationTimer(this + 46, &v37[1], &a1, v28, 0x7FFFFFFF);
+      this->BulletClass_2E.InitDetonationTimer(&v37[1], &a1, v28, 0x7FFFFFFF);
       if ( *(int *)(this->Type + 732) > 0 )
       {
         if ( *((double *)this + 29) == 0.0 && *((double *)this + 30) == 0.0 && *((double *)this + 31) == 0.0 )
@@ -11795,7 +11575,7 @@ namespace gamemd { int ParticleClass::Construct(int a1, void* a2, float a3, int 
       this->vtable2 = &ParticleClass::`vftable';
       this->vtable3 = &ParticleClass::`vftable';
       this->vtable4 = &vt_ParticleClass;
-      AbstractClass::GenerateUniqueID(this + 4);
+      this->AbstractClass_4.GenerateUniqueID();
       if ( *(int *)&HouseClass_Player[140] < *(int *)&HouseClass_Player[132]
         || (HouseClass_Player[137] || !*(_DWORD *)&HouseClass_Player[132])
         && *(int *)&HouseClass_Player[144] > 0
@@ -12255,7 +12035,7 @@ namespace gamemd { int ParticleSystemClass::Constructor(int a1, void* a2, int a3
       this->vtable2 = &ParticleSystemClass::`vftable';
       this->vtable3 = &vt_ParticleSystemClass;
       this->IsInitialized = &off_7EFB70;
-      AbstractClass::GenerateUniqueID(this + 4);
+      this->AbstractClass_4.GenerateUniqueID();
       if ( g_GameCleanupState < DataGlobal_A80210
         || (DataGlobal_A80215 || !DataGlobal_A80210)
         && DataGlobal_A8021C > 0

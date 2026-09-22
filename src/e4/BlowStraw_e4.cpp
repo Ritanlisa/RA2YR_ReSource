@@ -150,7 +150,7 @@ LABEL_6:
       }
     }
   }
-  ((CountdownTimer *)((char *)this + 5447)).UpdateDisplay(0); /*0x6d099d*/
+  this->CountdownTimer_1547.UpdateDisplay(); /*0x6d099d*/
   return SidebarClass::UpdateStrips((char *)this, aP1, a2); /*0x6d09af*/
 }
 } // namespace gamemd
