@@ -119,6 +119,37 @@
     g31_prep 未建（改为 g30_prep 执行结果节承载）
 ```
 
+## G30 核验轮三期：缺口 E 全项处理（2026-09-22，净增 +1 → completed 12,693）
+
+- **E① q204@516/reloadTimer 重叠——已清偿**：q204@516(byte) 为真
+  （IsDeployed 0x6EF9E0 读 `(_DWORD*)this+129`）；重叠源 = q202@514
+  （csp 填充 int，跨 514-517，同时压 reloadTimer@508 尾与 q204 头）→
+  已从 ml+mbn 删除（树内零引用）。WaveClass::Constructor 的 q204 为
+  别类同名字段，无涉。
+- **E② 1732 双义——已裁决**：232 处访问，Aircraft 侧 cast
+  AircraftTypeClass* 作 Type、Unit 侧推断 UnitTypeClass* → 格 join =
+  TechnoTypeClass*，即 techno 的 Type 指针 → member_set
+  `type`@1732 (原 q6C4)。
+- **E③ occupant@36——正名落地（附新证据）**：家族 11 类
+  （ObjectClass+Techno/Foot/Unit/Infantry/Aircraft/Building+ParticleSystem/
+  Terrain/BuildingLight/Tube）ml+mbn 正名 objectTypeFlags→occupant
+  （Mission/Radio 非 Object 派生、@36 语义未证，保留旧名）。
+  22 个已完成引用函数批验 21 PASS（0x401B00 经因果隔离实验证实为
+  既有失败，与正名无关）。新证据：字段呈多义形态（指针 cast/清 0/
+  SetMember09/==54 比较/queue 链）——occupant 仅覆盖指针侧语义。
+- **E④ 0x464AC0——已闭环**：binary 铁证 = BuildingTypeClass 主表
+  0x7E4570 槽 42(vt+168)（姊妹类共享基实现 0x716150）；addRef 误名废；
+  PlaceAnywhere 字段 YRpp 权威已锚 @5891；翻译
+  `PlaceAnywhere || ValidatePath(...)` verify PASS → completed。
+  ValidatePath(0x716150) 签名扩 3 参，其假 stub `return true` 被
+  trivial-stub-mismatch 守卫正确拦截转 pending（记账后续真翻）。
+- **E⑤ SelectWeapon/三大件——前置全就位，尾包 #157**：target 参数
+  已在 C++ 声明（G28 遗留半成品）；7 个虚槽锚二进制直读入
+  vtable_offsets（GetOwningHouse:132/CanTargetHouse:744/SelectWeaponSlot:
+  1016 等）；issue #157 记载剩余路径（WeaponStruct/HouseClass 成员面
+  扩展 + wildcard-advisory 路线）。
+- 收尾：12 件回归全 PASS；normalize 自检 18 全 PASS；reconcile=0。
+
 ## G30 核验轮补充修复（2026-09-22 复查）
 
 ### 核验轮二期：超时根治 + #152/#153/#154 全闭环（净增 +5 → completed 12,692）

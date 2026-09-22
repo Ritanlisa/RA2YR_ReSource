@@ -398,7 +398,7 @@ public:
     // (AnimClass::ctor result / building anim-slot array entries), not buildings.
     int GetCursorAction();  // 0x449440
     void UpdateThreatBounds();  // 0x70F6E0
-    bool ValidatePath();  // 0x716150
+    bool ValidatePath(void *a1, unsigned short *a2, int a3);  // 0x716150
     void SetSlot(int slot);  // 0x717890
     // wrapper: delegates to BuildingClass::SetSlot at 0x717890
     uint32_t GetField184() const;

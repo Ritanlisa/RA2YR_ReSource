@@ -415,7 +415,7 @@ public:
     //
     // ObjectClass fields start at +0x24:
 
-    uint32_t        objectTypeFlags;            // +0x24, init from A8E374
+    uint32_t        occupant;            // +0x24, init from A8E374
     uint32_t        owningHouseIndex;           // +0x28, init from A8E374
     int32_t         fallRate;                   // +0x2C, init = 0
     ObjectClass*    nextObject;                 // +0x30, init = 0

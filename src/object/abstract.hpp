@@ -114,7 +114,7 @@ public:
 
     // --- IPersistStream (vtable[0]) ---
     virtual HRESULT __stdcall QueryInterface(const IID& iid, void** ppv) override;  // 0x410260
-    virtual ULONG   __stdcall AddRef() override;  // 0x464AC0
+    virtual ULONG   __stdcall AddRef() override;  // 0x410300
     virtual ULONG   __stdcall Release() override;  // 0x4E0360
     // wrapper: delegates to AbstractClassVector::Release at 0x4E0360
     virtual HRESULT __stdcall GetClassID(CLSID* class_id) override;

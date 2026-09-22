@@ -109,13 +109,9 @@ int AbstractClass_COMStub_137()
 
 // 0x464AC0
 namespace gamemd {
-bool AbstractClass::addRef(unsigned short * a2, int a3)
+bool BuildingTypeClass::CanPlacePath(unsigned short *a2, int a3)
 {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall AbstractClass::sub_464AC0(int this, _WORD *a2, int a3)
-{
-  return *(_BYTE *)(this + 5891) || BuildingClass::ValidatePath((int *)this, a2, a3); /*0x464aca*/
-}
+    return this->PlaceAnywhere || BuildingClass::ValidatePath(this, a2, a3);
 }
 } // namespace gamemd
 

@@ -23379,7 +23379,10 @@ retn    4
 }
 
 // 0x716150
-bool BuildingClass::ValidatePath() { return true; }
+bool BuildingClass::ValidatePath(void *a1, unsigned short *a2, int a3)
+{
+    return true;
+}
 
 // IDA 0x717890: set production slot
 // 0x717890

@@ -5,7 +5,6 @@ namespace gamemd {
 struct AbstractClass {
     void* vfptr;  // minimal E2 declaration
     void Initialize(TechnoClass * aP1, TechnoClass * aP2);  // 0x438E70
-    bool addRef(unsigned short * a2, int a3);  // 0x464AC0
     unsigned int * checkVisibility(char a2);  // 0x5D7FD0
     unsigned int * updateVisibilityState(char a2);  // 0x5D8030
     unsigned int * processFogReveal(char a2);  // 0x5D8050
