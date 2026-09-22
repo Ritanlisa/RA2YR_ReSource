@@ -23,7 +23,6 @@ void *__thiscall IPXConnClass::constructor(
   __int16 v11; // dx
   IPXGlobalConnClass *v13; // [esp+8h] [ebp-8h] BYREF
   __int16 v14; // [esp+Ch] [ebp-4h]
-
   IPXConnClass::initConnection( /*0x53f458*/
     this,
     (IPXConnClass *)aP1,

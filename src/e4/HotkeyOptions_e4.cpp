@@ -8,43 +8,13 @@
 int HotkeyOptions::DlgProc(int hWnd, unsigned int a2, unsigned int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall HotkeyOptions::DlgProc(int hWnd, unsigned int a2, unsigned int a3, int a4)
+void HotkeyOptions::DlgProc(int hWnd, unsigned int a2, unsigned int a3, int a4)
 {
   int result; // eax
-  int v5; // edi
-  int v6; // eax
-  int v7; // edi
-  int v8; // ebx
-  int v9; // eax
-  int v10; // eax
-  int v11; // ebx
-  char v12; // dl
-  void *v13; // ecx
-  char v14; // al
   __int16 v15; // bx
-  int v16; // eax
-  int v17; // eax
   HWND (__stdcall *v18)(HWND, int); // edi
-  int v19; // ebx
-  int v20; // ebx
-  int v21; // edi
   const #72 *v22; // eax
-  int v23; // eax
-  int v24; // eax
-  int v25; // eax
-  int v26; // eax
-  int v27; // edi
-  int v28; // eax
-  int v29; // eax
   __int16 v30; // ax
-  int v31; // edi
-  int v32; // eax
-  _DWORD *v33; // edx
-  int v34; // esi
-  _DWORD *v35; // ebx
-  int v36; // ecx
-  int v37; // ecx
-  _DWORD *v38; // ebx
   int v39; // esi
   int *v40; // eax
   _DWORD *v41; // esi
@@ -269,24 +239,24 @@ LABEL_127:
     if ( a2 == 1124 ) /*0x5fb38a*/
     {
       v18 = GetDlgItem; /*0x5fb4ec*/
-      v19 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1223); /*0x5fb502*/
+      int v19 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1223); /*0x5fb502*/
       if ( ((int (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(v19, 327, 0, 0) != dword_832D8C ) /*0x5fb514*/
       {
         dword_832D8C = ((int (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(v19, 327, 0, 0); /*0x5fb52d*/
         ((void (__stdcall *)(int, int, int, _BYTE *))SendMessageA)(v19, 1203, 64, lParam); /*0x5fb53b*/
-        v20 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1224); /*0x5fb547*/
+        int v20 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1224); /*0x5fb547*/
         ((void (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(v20, 388, 0, 0); /*0x5fb551*/
         v75 = 0; /*0x5fb55a*/
         if ( dword_87F5D8[36] > 0 ) /*0x5fb562*/
         {
           do /*0x5fb5bf*/
           {
-            v21 = *(_DWORD *)(dword_87F5D8[33] + 4 * v75); /*0x5fb575*/
+            int v21 = *(_DWORD *)(dword_87F5D8[33] + 4 * v75); /*0x5fb575*/
             v22 = (const #72 *)(*(int (__thiscall **)(int))(*(_DWORD *)v21 + 12))(v21); /*0x5fb57d*/
             if ( !_wcsicmp(v22, (const #72 *)lParam) ) /*0x5fb581*/
             {
-              v23 = (*(int (__thiscall **)(int))(*(_DWORD *)v21 + 8))(v21); /*0x5fb591*/
-              v24 = ((int (__stdcall *)(int, int, _DWORD, int))SendMessageA)(v20, 1229, 0, v23); /*0x5fb59d*/
+              int v23 = (*(int (__thiscall **)(int))(*(_DWORD *)v21 + 8))(v21); /*0x5fb591*/
+              int v24 = ((int (__stdcall *)(int, int, _DWORD, int))SendMessageA)(v20, 1229, 0, v23); /*0x5fb59d*/
               if ( v24 != -1 ) /*0x5fb5a2*/
                 ((void (__stdcall *)(int, int, int, int))SendMessageA)(v20, 410, v24, v21); /*0x5fb5ac*/
             }
@@ -295,11 +265,11 @@ LABEL_127:
           while ( v75 < dword_87F5D8[36] ); /*0x5fb5bf*/
           v18 = GetDlgItem; /*0x5fb5c1*/
         }
-        v25 = ((int (__stdcall *)(int, int))v18)(hWnd, 1227); /*0x5fb5cd*/
+        int v25 = ((int (__stdcall *)(int, int))v18)(hWnd, 1227); /*0x5fb5cd*/
         ((void (__stdcall *)(int, int, _DWORD, _DWORD *))SendMessageA)(v25, 1202, 0, &DataGlobal_87F7E8[8147]); /*0x5fb5dc*/
-        v26 = ((int (__stdcall *)(int, int))v18)(hWnd, 1596); /*0x5fb5e4*/
+        int v26 = ((int (__stdcall *)(int, int))v18)(hWnd, 1596); /*0x5fb5e4*/
         ((void (__stdcall *)(int, int, _DWORD, _DWORD *))SendMessageA)(v26, 1202, 0, &DataGlobal_87F7E8[8147]); /*0x5fb5f3*/
-        v27 = ((int (__stdcall *)(int, int))v18)(hWnd, 1595); /*0x5fb602*/
+        int v27 = ((int (__stdcall *)(int, int))v18)(hWnd, 1595); /*0x5fb602*/
         ((void (__stdcall *)(int, int, _DWORD, _DWORD *))SendMessageA)(v27, 1202, 0, &DataGlobal_87F7E8[8147]); /*0x5fb60c*/
         ((void (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(v27, 390, 0, 0); /*0x5fb618*/
         ((void (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(hWnd, 1125, 0, 0); /*0x5fb624*/
@@ -309,21 +279,21 @@ LABEL_127:
     }
     if ( a2 == 1125 ) /*0x5fb391*/
     {
-      v5 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1224); /*0x5fb3ab*/
-      v6 = ((int (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(v5, 392, 0, 0); /*0x5fb3b5*/
+      int v5 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1224); /*0x5fb3ab*/
+      int v6 = ((int (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(v5, 392, 0, 0); /*0x5fb3b5*/
       if ( v6 != -1 ) /*0x5fb3ba*/
       {
-        v7 = ((int (__stdcall *)(int, int, int, _DWORD))SendMessageA)(v5, 409, v6, 0); /*0x5fb3d1*/
-        v8 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1227); /*0x5fb3d9*/
-        v9 = (*(int (__thiscall **)(int))(*(_DWORD *)v7 + 16))(v7); /*0x5fb3df*/
+        int v7 = ((int (__stdcall *)(int, int, int, _DWORD))SendMessageA)(v5, 409, v6, 0); /*0x5fb3d1*/
+        int v8 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1227); /*0x5fb3d9*/
+        int v9 = (*(int (__thiscall **)(int))(*(_DWORD *)v7 + 16))(v7); /*0x5fb3df*/
         ((void (__stdcall *)(int, int, _DWORD, int))SendMessageA)(v8, 1202, 0, v9); /*0x5fb3eb*/
-        v10 = dword_87F5D8[43]; /*0x5fb3ed*/
-        v11 = 0; /*0x5fb3f2*/
+        int v10 = dword_87F5D8[43]; /*0x5fb3ed*/
+        int v11 = 0; /*0x5fb3f2*/
         LOWORD(v74) = 0; /*0x5fb3f6*/
         if ( dword_87F5D8[43] > 0 ) /*0x5fb3fa*/
         {
-          v12 = dword_87F5D8[45]; /*0x5fb3fc*/
-          v13 = (void *)dword_87F5D8[42]; /*0x5fb402*/
+          char v12 = dword_87F5D8[45]; /*0x5fb3fc*/
+          void * v13 = (void *)dword_87F5D8[42]; /*0x5fb402*/
           while ( 1 ) /*0x5fb408*/
           {
             if ( !v12 ) /*0x5fb40a*/
@@ -344,7 +314,7 @@ LABEL_127:
         }
 LABEL_16:
         LODWORD(v78) = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1596); /*0x5fb44e*/
-        v14 = 0; /*0x5fb464*/
+        char v14 = 0; /*0x5fb464*/
         if ( (v74 & 0x400) != 0 ) /*0x5fb469*/
           v14 = 4; /*0x5fb46b*/
         if ( (v74 & 0x200) != 0 ) /*0x5fb473*/
@@ -357,9 +327,9 @@ LABEL_16:
         LOBYTE(v15) = v74; /*0x5fb490*/
         FormatHotkeyDisplayString(v15, (#72 *)lParam); /*0x5fb494*/
         ((void (__stdcall *)(_DWORD, int, _DWORD, _BYTE *))SendMessageA)(v78, 1202, 0, lParam); /*0x5fb4ad*/
-        v16 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1229); /*0x5fb4b5*/
+        int v16 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1229); /*0x5fb4b5*/
         ((void (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(v16, 1025, 0, 0); /*0x5fb4c1*/
-        v17 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1595); /*0x5fb4c9*/
+        int v17 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1595); /*0x5fb4c9*/
         ((void (__stdcall *)(int, int, _DWORD, _DWORD *))SendMessageA)(v17, 1202, 0, &DataGlobal_87F7E8[8147]); /*0x5fb4d8*/
         return 1; /*0x5fb4e9*/
       }
@@ -450,7 +420,7 @@ LABEL_16:
     else if ( (unsigned __int16)a3 == 1224 && HIWORD(a3) == 1 ) /*0x5fb669*/
     {
       ((void (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(hWnd, 1125, 0, 0); /*0x5fb679*/
-      v28 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1229); /*0x5fb685*/
+      int v28 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1229); /*0x5fb685*/
       if ( v28 ) /*0x5fb68d*/
       {
         ((void (__stdcall *)(int))SetFocus)(v28); /*0x5fb694*/
@@ -461,10 +431,10 @@ LABEL_16:
   }
   if ( HIWORD(a3) != 768 ) /*0x5fb707*/
     return 1; /*0x5fbed7*/
-  v29 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1597); /*0x5fb713*/
+  int v29 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1597); /*0x5fb713*/
   ((void (__stdcall *)(int, int, _DWORD, _DWORD *))SendMessageA)(v29, 1202, 0, &DataGlobal_87F7E8[8147]); /*0x5fb72c*/
   v30 = ((int (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(a4, 1026, 0, 0); /*0x5fb738*/
-  v31 = (unsigned __int8)v30; /*0x5fb740*/
+  int v31 = (unsigned __int8)v30; /*0x5fb740*/
   if ( (v30 & 0x400) != 0 ) /*0x5fb749*/
     v31 = (unsigned __int8)v30 | 0x400; /*0x5fb74b*/
   if ( (v30 & 0x200) != 0 ) /*0x5fb754*/
@@ -473,10 +443,10 @@ LABEL_16:
     v31 |= 0x100u; /*0x5fb761*/
   if ( (v30 & 0x800) != 0 ) /*0x5fb76a*/
     v31 = 0; /*0x5fb76c*/
-  v32 = dword_87F5D8[43]; /*0x5fb76e*/
+  int v32 = dword_87F5D8[43]; /*0x5fb76e*/
   if ( !dword_87F5D8[43] ) /*0x5fb775*/
     goto LABEL_81; /*0x5fb775*/
-  v33 = (_DWORD *)dword_87F5D8[46]; /*0x5fb77b*/
+  _DWORD * v33 = (_DWORD *)dword_87F5D8[46]; /*0x5fb77b*/
   if ( !dword_87F5D8[46] || *(_DWORD *)dword_87F5D8[46] != v31 ) /*0x5fb787*/
   {
     if ( !LOBYTE(dword_87F5D8[45]) ) /*0x5fb795*/
@@ -485,13 +455,13 @@ LABEL_16:
       dword_87F5D8[46] = 0; /*0x5fb7ae*/
       LOBYTE(dword_87F5D8[45]) = 1; /*0x5fb7b8*/
     }
-    v34 = dword_87F5D8[43]; /*0x5fb7bf*/
-    v35 = (_DWORD *)dword_87F5D8[42]; /*0x5fb7c5*/
+    int v34 = dword_87F5D8[43]; /*0x5fb7bf*/
+    _DWORD * v35 = (_DWORD *)dword_87F5D8[42]; /*0x5fb7c5*/
     if ( dword_87F5D8[43] <= 0 ) /*0x5fb7cd*/
       goto LABEL_81; /*0x5fb7cd*/
     while ( 1 ) /*0x5fb7da*/
     {
-      v36 = v35[2 * (v34 / 2)]; /*0x5fb7da*/
+      int v36 = v35[2 * (v34 / 2)]; /*0x5fb7da*/
       v33 = &v35[2 * (v34 / 2)]; /*0x5fb7dd*/
       if ( v36 <= v31 ) /*0x5fb7e2*/
       {
@@ -528,8 +498,8 @@ LABEL_85:
     dword_87F5D8[46] = 0; /*0x5fb841*/
     LOBYTE(dword_87F5D8[45]) = 1; /*0x5fb84b*/
   }
-  v37 = dword_87F5D8[43]; /*0x5fb852*/
-  v38 = (_DWORD *)dword_87F5D8[42]; /*0x5fb858*/
+  int v37 = dword_87F5D8[43]; /*0x5fb852*/
+  _DWORD * v38 = (_DWORD *)dword_87F5D8[42]; /*0x5fb858*/
   if ( dword_87F5D8[43] <= 0 ) /*0x5fb860*/
     goto LABEL_79; /*0x5fb860*/
   while ( 1 ) /*0x5fb869*/
@@ -574,14 +544,12 @@ int sub_5FC120(int a1, int a2, int * a3)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall sub_5FC120(int a1, int a2, int *a3)
 {
-  int v3; // esi
-  int v4; // ebx
   int v5; // edi
 
-  v3 = a2; /*0x5fc125*/
+  int v3 = a2; /*0x5fc125*/
   if ( a2 <= 0 ) /*0x5fc127*/
     return 0; /*0x5fc159*/
-  v4 = *a3; /*0x5fc12d*/
+  int v4 = *a3; /*0x5fc12d*/
   while ( 1 ) /*0x5fc136*/
   {
     v5 = *(_DWORD *)(a1 + 8 * (v3 / 2)); /*0x5fc136*/

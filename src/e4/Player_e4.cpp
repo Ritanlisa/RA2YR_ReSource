@@ -7,16 +7,13 @@
 void Player::BuildListString()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall Player::BuildListString(wchar_t *this)
+void Player::BuildListString()
 {
   SessionClass *v2; // edi
   ReferenceCounted *v3; // esi
   wchar_t **v4; // eax
   CampaignScore *v5; // eax
   wchar_t *v6; // [esp+Ch] [ebp-Ch] BYREF
-  char *a1; // [esp+10h] [ebp-8h] BYREF
-  void *v8; // [esp+14h] [ebp-4h] BYREF
-
   *this = 0; /*0x5e8dc8*/
   v2 = (SessionClass *)&HouseClass_Player[40260]; /*0x5e8dcd*/
   do /*0x5e8e89*/
@@ -32,8 +29,9 @@ void __thiscall Player::BuildListString(wchar_t *this)
       || v3 == (ReferenceCounted *)*(&g_MatrixTransformState + 2278)
       || v3 == (ReferenceCounted *)*(&g_MatrixTransformState + 2279) )
     {
+  char *a1; // [esp+10h] [ebp-8h] BYREF
       GetPlayerTypeString(&a1, (wchar_t *)v3); /*0x5e8e2b*/
-      v4 = CharStringToWide((ObjectClass *)&v8, (const char **)&a1); /*0x5e8e38*/
+      void * v8 = CharStringToWide((ObjectClass *)&v8, (const char **)&a1); /*0x5e8e38*/
       WideString::Reassign_Alt((void **)&v6, (const wchar_t **)v4); /*0x5e8e42*/
       DeleteAndZero::Alt(&v8); /*0x5e8e4b*/
       DeleteAndZero((int)&a1); /*0x5e8e54*/

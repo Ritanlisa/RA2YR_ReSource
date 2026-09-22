@@ -10,10 +10,9 @@
 int Skirmish::FillPlayerNames()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Skirmish_FillPlayerNames(HWND this)
+void Skirmish_FillPlayerNames(HWND this)
 {
   int result; // eax
-  int v2; // ebx
   HWND v3; // esi
   LPARAM v4; // edi
   LRESULT v5; // ebx
@@ -23,6 +22,7 @@ int __thiscall Skirmish_FillPlayerNames(HWND this)
   result = 0; /*0x46f60b*/
   for ( i = 0; i < 8; ++i ) /*0x46f613*/
   {
+  int v2; // ebx
     if ( result ) /*0x46f619*/
     {
       if ( result != 1 ) /*0x46f625*/
@@ -58,28 +58,19 @@ LABEL_9:
 void Skirmish::SetupAllSpawnLocations()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall Skirmish::SetupAllSpawnLocations(HWND this)
+void Skirmish::SetupAllSpawnLocations(HWND this)
 {
-  int v1; // ebp
   int ResourceIDCSF; // eax
   SessionClass *v4; // esi
-  int v5; // edi
   int PlayerColor; // eax
-  char *v7; // ebx
-  int *v8; // edi
-  int v9; // eax
   SessionClass *v10; // esi
-  int v11; // ebp
-  int v12; // eax
-  int v14; // [esp+14h] [ebp-4h]
-
-  v1 = g_NetworkPlayerCount; /*0x46f8f5*/
-  v14 = g_NetworkPlayerCount; /*0x46f906*/
+  int v1 = g_NetworkPlayerCount; /*0x46f8f5*/
+  int v14 = g_NetworkPlayerCount; /*0x46f906*/
   if ( g_NetworkPlayerCount != -1 ) /*0x46f90a*/
   {
     ResourceIDCSF = GetResourceIDCSF((void *)g_NetworkPlayerCount); /*0x46f90e*/
     v4 = (SessionClass *)*(&g_NetworkPlayerName + v1); /*0x46f913*/
-    v5 = ResourceIDCSF; /*0x46f91a*/
+    int v5 = ResourceIDCSF; /*0x46f91a*/
     if ( Player::IsObserver(v4) ) /*0x46f91e*/
     {
       PlayerColor = g_CampaignConfig[v1]; /*0x46f927*/
@@ -106,15 +97,16 @@ void __thiscall Skirmish::SetupAllSpawnLocations(HWND this)
     }
     SetupSkirmishSpawnLocations(this, v5, PlayerColor); /*0x46f978*/
   }
-  v7 = 0; /*0x46f97d*/
-  v8 = g_CampaignConfig; /*0x46f97f*/
+  char * v7 = 0; /*0x46f97d*/
+  int * v8 = g_CampaignConfig; /*0x46f97f*/
   do /*0x46fa03*/
   {
     if ( v7 != (char *)v1 ) /*0x46f986*/
     {
-      v9 = GetResourceIDCSF(v7); /*0x46f98a*/
+  int v12; // eax
+      int v9 = GetResourceIDCSF(v7); /*0x46f98a*/
       v10 = (SessionClass *)v8[2549]; /*0x46f98f*/
-      v11 = v9; /*0x46f995*/
+      int v11 = v9; /*0x46f995*/
       if ( Player::IsObserver(v10) ) /*0x46f999*/
       {
         v12 = *v8; /*0x46f9a2*/
@@ -153,7 +145,7 @@ void __thiscall Skirmish::SetupAllSpawnLocations(HWND this)
 int Skirmish::ReadSettings(HWND hDlg)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Skirmish::ReadSettings(HWND *this, HWND hDlg)
+void Skirmish::ReadSettings(HWND hDlg)
 {
   LRESULT v4; // eax
   HWND v5; // eax
@@ -246,10 +238,8 @@ int __thiscall Skirmish::ReadSettings(HWND *this, HWND hDlg)
 int Skirmish::RandomizeSettings(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Skirmish::RandomizeSettings(_DWORD *this, ObjectClass *aP1)
+void Skirmish::RandomizeSettings(ObjectClass *aP1)
 {
-  int v3; // eax
-  int v4; // esi
   int result; // eax
 
   *(this + 19) = Random::Range( /*0x597282*/
@@ -274,8 +264,8 @@ int __thiscall Skirmish::RandomizeSettings(_DWORD *this, ObjectClass *aP1)
                    *(&dword_82B094 + (_DWORD)aP1));
   *(this + 21) = 20 * *(this + 16); /*0x59730b*/
   *(this + 22) = Random::Range(&DataGlobal_87F8E4[29348], 0, (IUnknown *)0x64); /*0x597313*/
-  v3 = *(_DWORD *)(dword_ABE260 + 4 * (_DWORD)aP1); /*0x597322*/
-  v4 = *(_DWORD *)(dword_ABE27C + 4 * (_DWORD)aP1); /*0x597325*/
+  int v3 = *(_DWORD *)(dword_ABE260 + 4 * (_DWORD)aP1); /*0x597322*/
+  int v4 = *(_DWORD *)(dword_ABE27C + 4 * (_DWORD)aP1); /*0x597325*/
   if ( v3 >= 0 ) /*0x59732a*/
   {
     if ( v3 > 100 ) /*0x597333*/
@@ -307,44 +297,16 @@ int __thiscall Skirmish::RandomizeSettings(_DWORD *this, ObjectClass *aP1)
 int Skirmish::RenderPreview(SkirmishDialog * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Skirmish::RenderPreview(_DWORD *this, SkirmishDialog *aP1)
+void Skirmish::RenderPreview(SkirmishDialog *aP1)
 {
   int result; // eax
   HWND DlgItem; // eax
-  int v5; // ecx
-  int *v6; // eax
-  int v7; // ecx
-  int v8; // esi
-  int v9; // eax
-  int v10; // ecx
-  int v11; // esi
-  int v12; // esi
-  int v13; // eax
   int BuildingAnimByName; // eax
   ScenarioClass *v15; // ecx
-  int v16; // ebp
-  int v17; // esi
-  int v18; // edi
-  int v19; // edx
-  int v20; // ebx
-  int *v21; // eax
-  _DWORD *v22; // eax
-  int v23; // [esp+24h] [ebp-80h] BYREF
-  int v24[2]; // [esp+28h] [ebp-7Ch] BYREF
   ConvertClass *v25; // [esp+30h] [ebp-74h]
-  _DWORD v26[4]; // [esp+34h] [ebp-70h] BYREF
-  int v27[4]; // [esp+44h] [ebp-60h] BYREF
   LONG left; // [esp+54h] [ebp-50h] BYREF
   LONG top; // [esp+58h] [ebp-4Ch]
-  int v30; // [esp+5Ch] [ebp-48h]
-  int v31; // [esp+60h] [ebp-44h]
-  int v32; // [esp+64h] [ebp-40h]
-  int v33; // [esp+68h] [ebp-3Ch]
-  int v34; // [esp+6Ch] [ebp-38h] BYREF
-  int v35; // [esp+70h] [ebp-34h]
   struct tagRECT Rect; // [esp+74h] [ebp-30h] BYREF
-  char v37[16]; // [esp+84h] [ebp-20h] BYREF
-  char v38[16]; // [esp+94h] [ebp-10h] BYREF
 
   result = ValidateRect((HWND)aP1, 0); /*0x640726*/
   if ( *this ) /*0x64072c*/
@@ -353,37 +315,41 @@ int __thiscall Skirmish::RenderPreview(_DWORD *this, SkirmishDialog *aP1)
     ScreenDialogToClient(DlgItem, &Rect); /*0x640749*/
     left = Rect.left; /*0x64075a*/
     top = Rect.top; /*0x640764*/
-    v5 = *this; /*0x64076a*/
-    v31 = Rect.bottom - Rect.top; /*0x64076c*/
-    v30 = Rect.right - Rect.left; /*0x640770*/
-    v6 = (int *)(*(int (__thiscall **)(int, _DWORD *))(*(_DWORD *)v5 + 120))(v5, v26); /*0x64077b*/
+    int v5 = *this; /*0x64076a*/
+    int v31 = Rect.bottom - Rect.top; /*0x64076c*/
+    int v30 = Rect.right - Rect.left; /*0x640770*/
+  _DWORD v26[4]; // [esp+34h] [ebp-70h] BYREF
+    int * v6 = (int *)(*(int (__thiscall **)(int, _DWORD *))(*(_DWORD *)v5 + 120))(v5, v26); /*0x64077b*/
+  int v27[4]; // [esp+44h] [ebp-60h] BYREF
     v27[0] = *v6; /*0x640784*/
     v27[1] = v6[1]; /*0x64078f*/
-    v7 = v6[2]; /*0x640793*/
-    v8 = v6[3]; /*0x640796*/
+    int v7 = v6[2]; /*0x640793*/
+    int v8 = v6[3]; /*0x640796*/
+  int v24[2]; // [esp+28h] [ebp-7Ch] BYREF
     v24[0] = 1000 * v31 / v8; /*0x6407a8*/
-    v9 = 1000 * v30 / v7; /*0x6407ba*/
+    int v9 = 1000 * v30 / v7; /*0x6407ba*/
     if ( v24[0] < v9 ) /*0x6407c2*/
       v9 = 1000 * v31 / v8; /*0x6407c4*/
-    v10 = v9 * v7; /*0x6407c6*/
+    int v10 = v9 * v7; /*0x6407c6*/
     v24[0] = v9; /*0x6407c9*/
-    v11 = v9 * v8; /*0x6407d4*/
+    int v11 = v9 * v8; /*0x6407d4*/
     v25 = (ConvertClass *)(v10 / 2000); /*0x6407e7*/
-    v32 = left + v30 / 2 - v10 / 2000; /*0x6407fc*/
-    v33 = top + v31 / 2 - v11 / 2000; /*0x640822*/
-    v34 = v10 / 1000; /*0x640842*/
-    v35 = v11 / 1000; /*0x640856*/
+    int v32 = left + v30 / 2 - v10 / 2000; /*0x6407fc*/
+    int v33 = top + v31 / 2 - v11 / 2000; /*0x640822*/
+    int v34 = v10 / 1000; /*0x640842*/
+    int v35 = v11 / 1000; /*0x640856*/
     (*(void (__thiscall **)(_DWORD, LONG *, _DWORD))(**(_DWORD **)&DataGlobal_87F8E4[31276] + 20))( /*0x64085d*/
       *(_DWORD *)&DataGlobal_87F8E4[31276],
       &left,
       0);
-    v12 = **(_DWORD **)&DataGlobal_87F8E4[31276]; /*0x64086c*/
-    v13 = (*(int (__thiscall **)(_DWORD, int *, _DWORD, _DWORD))(*(_DWORD *)*this + 120))(*this, v27, 0, 0); /*0x640875*/
+    int v12 = **(_DWORD **)&DataGlobal_87F8E4[31276]; /*0x64086c*/
+    int v13 = (*(int (__thiscall **)(_DWORD, int *, _DWORD, _DWORD))(*(_DWORD *)*this + 120))(*this, v27, 0, 0); /*0x640875*/
     (*(void (__thiscall **)(_DWORD, int *, _DWORD, int))(v12 + 8))( /*0x640887*/
       *(_DWORD *)&DataGlobal_87F8E4[31276],
       &v34,
       *this,
       v13);
+  int v23; // [esp+24h] [ebp-80h] BYREF
     HIBYTE(v23) = 0; /*0x640896*/
     if ( (*(_BYTE *)(&g_MatrixTransformState + 6176) & 1) == 0 ) /*0x64089b*/
     {
@@ -393,22 +359,24 @@ int __thiscall Skirmish::RenderPreview(_DWORD *this, SkirmishDialog *aP1)
     v25 = VtableStub_72E280(); /*0x6408c3*/
     BuildingAnimByName = FindBuildingAnimByName(stru_820524, 1); /*0x6408c7*/
     v15 = g_ScenarioClass_Instance; /*0x6408cc*/
-    v16 = BuildingAnimByName; /*0x6408d2*/
+    int v16 = BuildingAnimByName; /*0x6408d2*/
     result = g_ScenarioClass_Instance->numberStartingPoints; /*0x6408d4*/
     if ( result > 0 && result <= 8 ) /*0x6408e5*/
     {
-      v17 = 0; /*0x6408eb*/
+      int v17 = 0; /*0x6408eb*/
       do /*0x640a29*/
       {
-        v18 = v32 + v34 * (1000 * (v15->startingPoints[2 * v17] - v15->startX) / v15->width) / 1000; /*0x640944*/
-        v19 = v33 + v35 * (1000 * (v15->startingPoints[2 * v17 + 1] - v15->startY) / v15->height) / 1000; /*0x64097a*/
-        v20 = v19; /*0x64097e*/
+        int v18 = v32 + v34 * (1000 * (v15->startingPoints[2 * v17] - v15->startX) / v15->width) / 1000; /*0x640944*/
+        int v19 = v33 + v35 * (1000 * (v15->startingPoints[2 * v17 + 1] - v15->startY) / v15->height) / 1000; /*0x64097a*/
+        int v20 = v19; /*0x64097e*/
         if ( *(&g_MatrixTransformState + 6172) ) /*0x640980*/
         {
           v24[0] = v18 - 9; /*0x640994*/
           v24[1] = v19 - 6; /*0x6409a3*/
+  int *v21; // eax
           v21 = (int *)(*(int (__thiscall **)(_DWORD, char *))(**(_DWORD **)&DataGlobal_87F8E4[31276] + 120))( /*0x6409b6*/
                          *(_DWORD *)&DataGlobal_87F8E4[31276],
+  char v37[16]; // [esp+84h] [ebp-20h] BYREF
                          v37);
           DrawToSurfaceSHP( /*0x6409d2*/
             *(int *)&DataGlobal_87F8E4[31276],
@@ -431,8 +399,10 @@ int __thiscall Skirmish::RenderPreview(_DWORD *this, SkirmishDialog *aP1)
         ++v17; /*0x6409e3*/
         v26[0] = v18 - 2; /*0x6409ef*/
         v26[1] = v20 - 6; /*0x6409f3*/
+  _DWORD *v22; // eax
         v22 = (_DWORD *)(*(int (__thiscall **)(_DWORD, char *))(**(_DWORD **)&DataGlobal_87F8E4[31276] + 120))( /*0x640a01*/
                           *(_DWORD *)&DataGlobal_87F8E4[31276],
+  char v38[16]; // [esp+94h] [ebp-10h] BYREF
                           v38);
         result = (int)TextRenderer::DrawText( /*0x640a15*/
                         v27,
@@ -458,27 +428,24 @@ HWND Skirmish::EnableSpawnButtons()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 HWND __thiscall Skirmish::EnableSpawnButtons(HWND this)
 {
-  HWND v1; // ebp
+  Skirmish *v1; // ebp
   HWND result; // eax
-  char *v3; // edi
-  int v4; // esi
   LRESULT v5; // eax
   SkirmishDialog *v6; // esi
-  char v7; // [esp+7h] [ebp-1h]
-
   v1 = this; /*0x6acd62*/
   if ( !this ) /*0x6acd66*/
     v1 = (HWND)Dialog::FindByHandle((void *)0x102); /*0x6acd72*/
-  v7 = 0; /*0x6acd79*/
+  char v7 = 0; /*0x6acd79*/
   if ( g_GameStateFlags ) /*0x6acd80*/
     v7 = *(_BYTE *)(g_GameStateFlags + 60); /*0x6acd85*/
   result = GetDlgItem(v1, 1901); /*0x6acd8f*/
   if ( result )
   {
     EnableWindow(result, v7 != 0); /*0x6acdac*/
-    v3 = 0; /*0x6acdbb*/
+    char * v3 = 0; /*0x6acdbb*/
     do
     {
+  int v4; // esi
       if ( v3 )
       {
         if ( v3 == (char *)1 )
@@ -536,17 +503,13 @@ HWND __thiscall Skirmish::EnableSpawnButtons(HWND this)
 int Skirmish::Setup_DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall Skirmish_Setup_DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, int a4)
+void Skirmish_Setup_DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, int a4)
 {
   int result; // eax
   HWND DlgItem; // eax
   int DlgCtrlID; // eax
-  int v7; // esi
-  int v8; // eax
   wchar_t *v9; // eax
-  int v10; // eax
   wchar_t *v11; // eax
-  int v12; // eax
   wchar_t *v13; // eax
   LRESULT v14; // eax
   LRESULT v15; // eax
@@ -554,7 +517,6 @@ int __stdcall Skirmish_Setup_DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
   wchar_t *v17; // eax
   wchar_t *v18; // eax
   wchar_t *v19; // eax
-
   result = BaseDialogProc(hDlg, a2, a3, a4); /*0x6ae40a*/
   if ( !result ) /*0x6ae411*/
   {
@@ -566,7 +528,7 @@ int __stdcall Skirmish_Setup_DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
       if ( *(_DWORD *)a4 && *(_DWORD *)(a4 + 4) != -1 ) /*0x6ae4ce*/
       {
         DlgCtrlID = GetDlgCtrlID(*(HWND *)a4); /*0x6ae4d5*/
-        v7 = DlgCtrlID; /*0x6ae4db*/
+        int v7 = DlgCtrlID; /*0x6ae4db*/
         if ( DlgCtrlID == 1291 /*0x6ae52b*/
           || DlgCtrlID == 1294
           || DlgCtrlID == 1302
@@ -604,14 +566,14 @@ int __stdcall Skirmish_Setup_DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
         {
           if ( StartCombo::IDToIndex(v7) != -1 ) /*0x6ae547*/
           {
-            v10 = GetComboBoxSelectedRaw(hDlg, v7, *(_DWORD *)(a4 + 4)); /*0x6ae589*/
+            int v10 = GetComboBoxSelectedRaw(hDlg, v7, *(_DWORD *)(a4 + 4)); /*0x6ae589*/
             v11 = (wchar_t *)GameSetup::GetColorTooltip(v10); /*0x6ae590*/
             WideString::Assign_Alt(v11); /*0x6ae598*/
             return 1; /*0x6ae5a6*/
           }
           if ( Dialog::SideIDToIndex(v7) != -1 ) /*0x6ae553*/
           {
-            v8 = SetComboBoxSelection(hDlg, v7, *(_DWORD *)(a4 + 4)); /*0x6ae561*/
+            int v8 = SetComboBoxSelection(hDlg, v7, *(_DWORD *)(a4 + 4)); /*0x6ae561*/
             v9 = (wchar_t *)sub_4E4F30(v8); /*0x6ae568*/
             WideString::Assign_Alt(v9); /*0x6ae570*/
             return 1; /*0x6ae57e*/
@@ -619,7 +581,7 @@ int __stdcall Skirmish_Setup_DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
         }
         else
         {
-          v12 = GetComboBoxSelected(hDlg, v7, *(_DWORD *)(a4 + 4)); /*0x6ae5b1*/
+          int v12 = GetComboBoxSelected(hDlg, v7, *(_DWORD *)(a4 + 4)); /*0x6ae5b1*/
           if ( v12 != -1 ) /*0x6ae5b9*/
           {
             v13 = (wchar_t *)SideClass::GetName(v12); /*0x6ae5c1*/
@@ -661,13 +623,11 @@ int __stdcall Skirmish_Setup_DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
 int Skirmish::SetupGame(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Skirmish::SetupGame(SkirmishDialog *this, int a2)
+void Skirmish::SetupGame(int a2)
 {
   HWND DlgItem; // eax
   HWND v4; // esi
-  char *v5; // eax
   int i; // edi
-  int v7; // eax
   HWND v8; // esi
   wchar_t *StringCSF; // eax
   LRESULT v10; // eax
@@ -678,23 +638,15 @@ int __thiscall Skirmish::SetupGame(SkirmishDialog *this, int a2)
   wchar_t *v15; // eax
   LRESULT v16; // eax
   SkirmishDialog *v17; // esi
-  int v18; // esi
-  int v19; // eax
-  int v20; // eax
   WPARAM v21; // edi
   SkirmishDialog *ResourceID2CSF; // esi
   SkirmishDialog *ResourceIDCSF; // edi
   HWND v24; // edi
-  int v25; // eax
   ObjectClass *v26; // ecx
   ObjectClass *v27; // esi
   CCINIClass *v28; // ecx
-  int v29; // eax
-  int v30; // ecx
   int PlayerCountMap; // edi
-  int v32; // ecx
   int j; // edi
-  int v34; // eax
   HWND (__stdcall *v35)(HWND, int); // edi
   HWND v36; // eax
   ObjectClass *v38; // esi
@@ -711,7 +663,6 @@ int __thiscall Skirmish::SetupGame(SkirmishDialog *this, int a2)
   ObjectClass *v49; // eax
   int hWnda; // [esp+Ch] [ebp-14h]
   HWND hWndb; // [esp+Ch] [ebp-14h]
-  int *v52; // [esp+10h] [ebp-10h]
   SkirmishDialog *v53; // [esp+14h] [ebp-Ch]
   int nIDDlgItem; // [esp+18h] [ebp-8h]
   HWND nIDDlgItemb; // [esp+18h] [ebp-8h]
@@ -727,12 +678,13 @@ int __thiscall Skirmish::SetupGame(SkirmishDialog *this, int a2)
   if ( DlgItem ) /*0x6ae708*/
   {
     SendMessageA(DlgItem, 0xC5u, 0x13u, 0); /*0x6ae714*/
-    v5 = CharToWideString(&HouseClass_Player[30260]); /*0x6ae71b*/
+    char * v5 = CharToWideString(&HouseClass_Player[30260]); /*0x6ae71b*/
     SendMessageA(v4, 0x4B2u, 0, (LPARAM)v5); /*0x6ae729*/
     SendMessageA(v4, 0x4D1u, 1u, 0); /*0x6ae735*/
   }
   for ( i = 0; i < 7; ++i )
   {
+  int v7; // eax
     if ( i )
     {
       switch ( i )
@@ -789,10 +741,11 @@ int __thiscall Skirmish::SetupGame(SkirmishDialog *this, int a2)
   FillLobbyFactionComboBox((HWND)this, 0); /*0x6ae8b1*/
   SetupLobbyPlayerSlotDialog((HWND)this, 0); /*0x6ae8ba*/
   v53 = 0; /*0x6ae8bf*/
-  v52 = (int *)&HouseClass_Player[30372]; /*0x6ae8c7*/
+  int * v52 = (int *)&HouseClass_Player[30372]; /*0x6ae8c7*/
   v17 = 0; /*0x6ae8cf*/
   do
   {
+  int v18; // esi
     if ( v17 )
     {
       if ( v17 == (SkirmishDialog *)1 )
@@ -824,7 +777,7 @@ int __thiscall Skirmish::SetupGame(SkirmishDialog *this, int a2)
     {
       v18 = 1291; /*0x6ae8d7*/
     }
-    v19 = *(v52 - 1); /*0x6ae931*/
+    int v19 = *(v52 - 1); /*0x6ae931*/
     switch ( v19 ) /*0x6ae937*/
     {
       case 1: /*0x6ae937*/
@@ -837,7 +790,7 @@ int __thiscall Skirmish::SetupGame(SkirmishDialog *this, int a2)
         hWnda = 1; /*0x6ae957*/
         break;
       default:
-        v20 = -(v19 != 6); /*0x6ae966*/
+        int v20 = -(v19 != 6); /*0x6ae966*/
         LOBYTE(v20) = v20 & 0xFD; /*0x6ae968*/
         hWnda = v20 + 2; /*0x6ae96d*/
         break;
@@ -884,6 +837,7 @@ LABEL_44:
   }
   while ( (int)&v53->__pad_0[1] < 8 );
   if ( *(int *)&HouseClass_Player[30328] <= 0 /*0x6aeadb*/
+  int v25; // eax
     || (v25 = MultiplayerGameMode::ListGet(),
         v26 = *(ObjectClass **)&HouseClass_Player[30328],
         *(int *)&HouseClass_Player[30328] > v25) )
@@ -913,7 +867,7 @@ LABEL_44:
                           + 4 * *(_DWORD *)&HouseClass_Player[29960]);
   if ( !MapPreview::Check(v27->__pad_0, nIDDlgItema) ) /*0x6aeb62*/
   {
-    v29 = (*(int (__thiscall **)(ObjectClass *))(*(_DWORD *)v27->__pad_0 + 68))(v27); /*0x6aeb6f*/
+    int v29 = (*(int (__thiscall **)(ObjectClass *))(*(_DWORD *)v27->__pad_0 + 68))(v27); /*0x6aeb6f*/
     if ( v29 == -1 ) /*0x6aeb75*/
     {
       First = (ObjectClass *)MultiplayerGameMode::GetFirst(); /*0x6aeb7f*/
@@ -921,7 +875,7 @@ LABEL_44:
       *(_DWORD *)&HouseClass_Player[29956] = First->owningHouseIndex; /*0x6aeb8c*/
       v29 = (*(int (__thiscall **)(ObjectClass *))(*(_DWORD *)First->__pad_0 + 68))(First); /*0x6aeb96*/
     }
-    v30 = *(_DWORD *)(*(_DWORD *)&HouseClass_Player[31616] + 4 * v29); /*0x6aeb9f*/
+    int v30 = *(_DWORD *)(*(_DWORD *)&HouseClass_Player[31616] + 4 * v29); /*0x6aeb9f*/
     *(_DWORD *)&HouseClass_Player[30332] = v29; /*0x6aeba2*/
     nIDDlgItema = v30; /*0x6aeba7*/
     *(_DWORD *)&HouseClass_Player[29960] = v29; /*0x6aebab*/
@@ -931,6 +885,7 @@ LABEL_44:
   *(_DWORD *)&HouseClass_Player[29936] = v27; /*0x6aebdd*/
   PlayerCountMap = ReadPlayerCountMap(*(int *)&HouseClass_Player[29960]); /*0x6aebee*/
   if ( !(*(unsigned __int8 (__thiscall **)(_DWORD))(**(_DWORD **)&HouseClass_Player[29936] + 4))(*(_DWORD *)&HouseClass_Player[29936]) /*0x6aec07*/
+  int v32; // ecx
     || (v32 = *(_DWORD *)(*(_DWORD *)&HouseClass_Player[29924] + 4580), v32 > PlayerCountMap) )
   {
     v32 = PlayerCountMap; /*0x6aec09*/
@@ -942,7 +897,7 @@ LABEL_44:
   {
     for ( j = 1; j < 8; ++j ) /*0x6aec2b*/
     {
-      v34 = GetResourceID4CSF((void *)j); /*0x6aec32*/
+      int v34 = GetResourceID4CSF((void *)j); /*0x6aec32*/
       if ( *(_DWORD *)&HouseClass_Player[29936] /*0x6aec41*/
         && *(_BYTE *)(*(_DWORD *)&HouseClass_Player[29936] + 60) )
       {
@@ -1045,7 +1000,6 @@ int Skirmish_Setup_6ADDF0_Setup(HWND hDlg, int a2, int nIDDlgItem)
 int __fastcall Skirmish_Setup_6ADDF0_Setup(HWND hDlg, int a2, int nIDDlgItem)
 {
   int result; // eax
-  char *v5; // esi
   HWND ResourceIDHardcodedCSF; // [esp+4h] [ebp-1Ch]
   HWND DlgItem; // [esp+4h] [ebp-1Ch]
   HWND ResourceIDCSF; // [esp+8h] [ebp-18h]
@@ -1057,14 +1011,13 @@ int __fastcall Skirmish_Setup_6ADDF0_Setup(HWND hDlg, int a2, int nIDDlgItem)
   HWND ResourceID4CSF; // [esp+14h] [ebp-Ch]
   HWND v15; // [esp+14h] [ebp-Ch]
   HWND hWnd; // [esp+18h] [ebp-8h]
-  int v17; // [esp+1Ch] [ebp-4h]
   int nIDDlgItema; // [esp+24h] [ebp+4h]
 
   result = a2 + nIDDlgItem; /*0x6adf08*/
-  v17 = a2 + nIDDlgItem; /*0x6adf0e*/
+  int v17 = a2 + nIDDlgItem; /*0x6adf0e*/
   if ( a2 < a2 + nIDDlgItem )
   {
-    v5 = (char *)(a2 - 1); /*0x6adf27*/
+    char * v5 = (char *)(a2 - 1); /*0x6adf27*/
     do
     {
       if ( v5 )

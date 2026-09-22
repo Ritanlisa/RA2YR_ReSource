@@ -9,7 +9,7 @@ namespace game {
 unsigned int IRTTITypeInfo::GetOffset()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall IRTTITypeInfo::GetOffset(Concurrency::details::SchedulerBase *this)
+void IRTTITypeInfo::GetOffset(Concurrency::details::SchedulerBase *this)
 {
   return this->q0C8; /*0x71d156*/
 }

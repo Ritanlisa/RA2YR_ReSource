@@ -11,34 +11,29 @@ int sub_679CC0()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int sub_679CC0()
 {
-  void *v1[3]; // [esp+4h] [ebp-C4h] BYREF
-  _DWORD v2[10]; // [esp+10h] [ebp-B8h] BYREF
-  char v3; // [esp+38h] [ebp-90h]
-  int v4; // [esp+3Ch] [ebp-8Ch]
-  int v5; // [esp+40h] [ebp-88h]
-  char v6; // [esp+44h] [ebp-84h]
-  _DWORD v7[22]; // [esp+5Ch] [ebp-6Ch] BYREF
-  _BYTE v8[12]; // [esp+B4h] [ebp-14h] BYREF
-  int v9; // [esp+C0h] [ebp-8h]
 
   if ( !byte_B053B8 ) /*0x679cd0*/
   {
+  void *v1[3]; // [esp+4h] [ebp-C4h] BYREF
     v1[1] = 0; /*0x679cda*/
     v1[2] = 0; /*0x679cde*/
+  _DWORD v2[10]; // [esp+10h] [ebp-B8h] BYREF
     GenericList::Constructor(v2); /*0x679ce2*/
     v2[0] = &vt_List_INIClass_INISection; /*0x679ceb*/
     memset(&v2[7], 0, 12); /*0x679cf8*/
-    v3 = 0; /*0x679d04*/
-    v4 = 0; /*0x679d08*/
-    v5 = 0; /*0x679d0c*/
-    v6 = 0; /*0x679d10*/
+    char v3 = 0; /*0x679d04*/
+    int v4 = 0; /*0x679d08*/
+    int v5 = 0; /*0x679d0c*/
+    char v6 = 0; /*0x679d10*/
     v1[0] = &CCINIClass_Vtable; /*0x679d14*/
+  _DWORD v7[22]; // [esp+5Ch] [ebp-6Ch] BYREF
     CCFileClass::Construct(v7, aCoopcampmdIni); /*0x679d1c*/
     if ( CCINIClass::Load(v1, (int)v7, 0, 0) ) /*0x679d2c*/
       dword_B053B4 = Hash::ComputeHashSHA1((int)v1); /*0x679d3e*/
     byte_B053B8 = 1; /*0x679d4a*/
     v7[0] = &vt_CCFileClass; /*0x679d51*/
-    v9 = 0; /*0x679d59*/
+    int v9 = 0; /*0x679d59*/
+  _BYTE v8[12]; // [esp+B4h] [ebp-14h] BYREF
     Vector::Clear((int)v8); /*0x679d60*/
     v7[0] = &off_7E1668; /*0x679d69*/
     BufferIOFileClass::Dtor(v7); /*0x679d71*/
@@ -63,27 +58,18 @@ int __fastcall ReadINIClassBuildingTypeList(
 {
   char *i; // eax
   INIClass *v7; // edi
-  int v8; // eax
   VectorClass *v9; // ecx
-  void *v10; // eax
-  bool v11; // zf
-  int v13; // eax
-  int v14; // eax
   VectorClass *v15; // ecx
-  int v16; // eax
   VectorClass *v17; // [esp+Ch] [ebp-9Ch] BYREF
   void *Block; // [esp+10h] [ebp-98h]
-  int v19; // [esp+14h] [ebp-94h]
-  char v20; // [esp+19h] [ebp-8Fh]
-  int v21; // [esp+1Ch] [ebp-8Ch]
-  int v22; // [esp+20h] [ebp-88h]
   INIClass String[2]; // [esp+28h] [ebp-80h] BYREF
 
   if ( INIClass::GetString(edx0, (INIClass *)aP2, a3, (INIClass *)&stru_87C374[56304], String, 128) ) /*0x67b57c*/
   {
+  char v20; // [esp+19h] [ebp-8Fh]
     VectorClass::BuildingTypeConstructor(&v17, 0, 0); /*0x67b591*/
-    v22 = 10; /*0x67b59a*/
-    v21 = 0; /*0x67b5a8*/
+    int v22 = 10; /*0x67b59a*/
+    int v21 = 0; /*0x67b5a8*/
     v17 = (VectorClass *)&vt_TypeList_BuildingTypeClass_const; /*0x67b5ac*/
     for ( i = strtok(String[0].__pad_0, (ObjectClass *)&stru_817F40.nextObject); /*0x67b5be*/
           i;
@@ -93,12 +79,13 @@ int __fastcall ReadINIClassBuildingTypeList(
         break; /*0x67b5c2*/
       v7 = (INIClass *)BuildingTypeClass::FindOrCreate(i); /*0x67b5cb*/
       if ( v7 /*0x67b5fb*/
+  int v19; // [esp+14h] [ebp-94h]
         && (v21 < v19
          || (v20 || !v19)
          && v22 > 0
          && ((unsigned __int8 (__thiscall *)(VectorClass **, int, _DWORD))v17->Capacity)(&v17, v22 + v19, 0)) )
       {
-        v8 = v21++; /*0x67b606*/
+        int v8 = v21++; /*0x67b606*/
         *((_DWORD *)Block + v8) = v7; /*0x67b611*/
       }
     }
@@ -112,8 +99,8 @@ int __fastcall ReadINIClassBuildingTypeList(
     v17 = (VectorClass *)&vt_VectorClass_BuildingTypeClass_const; /*0x67b64b*/
     v9 = (VectorClass *)v22; /*0x67b657*/
     aP0->sectionHead[0] = v21; /*0x67b65b*/
-    v10 = Block; /*0x67b65e*/
-    v11 = Block == 0; /*0x67b662*/
+    void * v10 = Block; /*0x67b65e*/
+    bool v11 = Block == 0; /*0x67b662*/
     aP0->sectionHead[1] = (int)v9; /*0x67b664*/
     if ( !v11 && v20 ) /*0x67b671*/
     {
@@ -131,16 +118,16 @@ int __fastcall ReadINIClassBuildingTypeList(
     if ( aP0 != (INIClass *)a4 ) /*0x67b6ac*/
     {
       DynamicVectorClass::Destroy((int)aP0); /*0x67b6b0*/
-      v13 = a4[2]; /*0x67b6b6*/
+      int v13 = a4[2]; /*0x67b6b6*/
       aP0->headNode[1] = v13; /*0x67b6bb*/
       if ( v13 ) /*0x67b6be*/
       {
-        v14 = __2_YAPAXI_Z(4 * v13); /*0x67b6c8*/
+        int v14 = __2_YAPAXI_Z(4 * v13); /*0x67b6c8*/
         aP0->headNode[0] = v14; /*0x67b6d2*/
         if ( v14 ) /*0x67b6d5*/
         {
           v15 = (VectorClass *)aP0->headNode[1]; /*0x67b6d7*/
-          v16 = 0; /*0x67b6da*/
+          int v16 = 0; /*0x67b6da*/
           BYTE1(aP0->headNode[2]) = 1; /*0x67b6de*/
           if ( (int)v15 > 0 ) /*0x67b6e2*/
           {
@@ -182,27 +169,18 @@ InfantryTypeClass *__fastcall ReadINIClassInfantryTypeList(
 {
   ObjectClass *i; // eax
   INIClass *v7; // edi
-  int v8; // eax
   VectorClass *v9; // ecx
-  void *v10; // eax
-  bool v11; // zf
-  int v13; // eax
-  int v14; // eax
   VectorClass *v15; // ecx
-  int v16; // eax
   VectorClass *v17; // [esp+Ch] [ebp-9Ch] BYREF
   void *Block; // [esp+10h] [ebp-98h]
-  int v19; // [esp+14h] [ebp-94h]
-  char v20; // [esp+19h] [ebp-8Fh]
-  int v21; // [esp+1Ch] [ebp-8Ch]
-  int v22; // [esp+20h] [ebp-88h]
   INIClass String[2]; // [esp+28h] [ebp-80h] BYREF
 
   if ( INIClass::GetString(edx0, aP1, a3, (INIClass *)&stru_87C374[56304], String, 128) ) /*0x67bb3c*/
   {
+  char v20; // [esp+19h] [ebp-8Fh]
     InfantryTypeVector::Construct2(&v17, 0, 0); /*0x67bb51*/
-    v22 = 10; /*0x67bb5a*/
-    v21 = 0; /*0x67bb68*/
+    int v22 = 10; /*0x67bb5a*/
+    int v21 = 0; /*0x67bb68*/
     v17 = (VectorClass *)&vt_TypeList_InfantryTypeClass_const; /*0x67bb6c*/
     for ( i = (ObjectClass *)strtok(String[0].__pad_0, (ObjectClass *)&stru_817F40.nextObject); /*0x67bb7e*/
           i;
@@ -212,12 +190,13 @@ InfantryTypeClass *__fastcall ReadINIClassInfantryTypeList(
         break; /*0x67bb82*/
       v7 = (INIClass *)KeywordType::FindOrCreate2(i); /*0x67bb8b*/
       if ( v7 /*0x67bbbb*/
+  int v19; // [esp+14h] [ebp-94h]
         && (v21 < v19
          || (v20 || !v19)
          && v22 > 0
          && ((unsigned __int8 (__thiscall *)(VectorClass **, int, _DWORD))v17->Capacity)(&v17, v22 + v19, 0)) )
       {
-        v8 = v21++; /*0x67bbc6*/
+        int v8 = v21++; /*0x67bbc6*/
         *((_DWORD *)Block + v8) = v7; /*0x67bbd1*/
       }
     }
@@ -231,8 +210,8 @@ InfantryTypeClass *__fastcall ReadINIClassInfantryTypeList(
     v17 = (VectorClass *)&vt_VectorClass_InfantryTypeClass_const; /*0x67bc0b*/
     v9 = (VectorClass *)v22; /*0x67bc17*/
     aP0->sectionHead[0] = v21; /*0x67bc1b*/
-    v10 = Block; /*0x67bc1e*/
-    v11 = Block == 0; /*0x67bc22*/
+    void * v10 = Block; /*0x67bc1e*/
+    bool v11 = Block == 0; /*0x67bc22*/
     aP0->sectionHead[1] = (int)v9; /*0x67bc24*/
     if ( !v11 && v20 ) /*0x67bc31*/
     {
@@ -250,16 +229,16 @@ InfantryTypeClass *__fastcall ReadINIClassInfantryTypeList(
     if ( aP0 != (INIClass *)a4 ) /*0x67bc6c*/
     {
       Vector::Cleanup((int)aP0); /*0x67bc70*/
-      v13 = a4[2]; /*0x67bc76*/
+      int v13 = a4[2]; /*0x67bc76*/
       aP0->headNode[1] = v13; /*0x67bc7b*/
       if ( v13 ) /*0x67bc7e*/
       {
-        v14 = __2_YAPAXI_Z(4 * v13); /*0x67bc88*/
+        int v14 = __2_YAPAXI_Z(4 * v13); /*0x67bc88*/
         aP0->headNode[0] = v14; /*0x67bc92*/
         if ( v14 ) /*0x67bc95*/
         {
           v15 = (VectorClass *)aP0->headNode[1]; /*0x67bc97*/
-          v16 = 0; /*0x67bc9a*/
+          int v16 = 0; /*0x67bc9a*/
           BYTE1(aP0->headNode[2]) = 1; /*0x67bc9e*/
           if ( (int)v15 > 0 ) /*0x67bca2*/
           {

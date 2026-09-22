@@ -20,9 +20,7 @@ unsigned __int16 *__thiscall RLEBlitTransZRemapXlatAlpha_ushort::AddRef(
         int a11)
 {
   unsigned __int16 *result; // eax
-  int v14; // edx
   RLEBlitTransZRemapXlatAlpha_ushort *v15; // edx
-  int v17; // edx
   int v18; // ebx
   unsigned __int8 v19; // dl
   unsigned __int8 v20; // dl
@@ -32,8 +30,8 @@ unsigned __int16 *__thiscall RLEBlitTransZRemapXlatAlpha_ushort::AddRef(
   unsigned __int8 *a2a; // [esp+1Ch] [ebp+8h]
 
   result = a7; /*0x497a2c*/
-  a2a = **(unsigned __int8 ***)(this + 4); /*0x497a30*/
-  v14 = (261 * (a9 <= 0 ? 0 : a9)) >> 11;
+  a2a = *this->q004; /*0x497a30*/
+  int v14 = (261 * (a9 <= 0 ? 0 : a9)) >> 11;
   if ( v14 > 254 ) /*0x497a51*/
     v14 = 254; /*0x497a53*/
   v23 = this->RLEBlitTransZRemapXlatAlpha_ushort_field_0x0C + (v14 << 9); /*0x497a60*/
@@ -48,11 +46,10 @@ unsigned __int16 *__thiscall RLEBlitTransZRemapXlatAlpha_ushort::AddRef(
     {
       if ( *a2++ ) /*0x497a6c*/
         v15 = (RLEBlitTransZRemapXlatAlpha_ushort *)((char *)v15 - 1); /*0x497a7e*/
-      else
-        v15 = (RLEBlitTransZRemapXlatAlpha_ushort *)((char *)v15 - *a2++); /*0x497a79*/
+      RLEBlitTransZRemapXlatAlpha_ushort *v15 = (RLEBlitTransZRemapXlatAlpha_ushort *)((char *)v15 - *a2++); /*0x497a79*/
     }
     while ( (int)v15 > 0 ); /*0x497a81*/
-    v17 = -(int)v15; /*0x497a91*/
+    int v17 = -(int)v15; /*0x497a91*/
     v18 = a4 - v17; /*0x497a93*/
     arg0 += 2 * v17; /*0x497a95*/
     result = &a7[v17]; /*0x497a98*/
@@ -89,19 +86,7 @@ unsigned __int16 *__thiscall RLEBlitTransZRemapXlatAlpha_ushort::AddRef(
 int RLEBlitTransZRemapXlatAlpha_ushort::Release(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall RLEBlitTransZRemapXlatAlpha_ushort::_vt02(
-        void *this,
-        int a2,
-        int a3,
-        int a4,
-        int a5,
-        int a6,
-        int a7,
-        int a8,
-        int a9,
-        int a10,
-        int a11,
-        int a12)
+void RLEBlitTransZRemapXlatAlpha_ushort::_vt02(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
 {
   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(this->q004)( /*0x497b77*/
            this,

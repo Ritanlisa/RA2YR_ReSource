@@ -34,20 +34,16 @@ int VocClass_Play(int a1, int a2, float a3, int a4)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall VocClass_Play(int a1, int a2, float a3, int a4)
 {
-  int v5; // ebx
-  int v6; // esi
-  int v7; // eax
-  unsigned int v8; // edi
 
   if ( !VocClass_VoicesEnabled ) /*0x75092c*/
     return 0; /*0x75092e*/
-  v5 = 0; /*0x750935*/
+  int v5 = 0; /*0x750935*/
   if ( a1 >= 0 && a1 < g_VocPlayState ) /*0x750943*/
     v5 = **((_DWORD **)g_VocAudioConfig + a1); /*0x75094d*/
-  v6 = 0; /*0x750953*/
+  int v6 = 0; /*0x750953*/
   if ( a4 ) /*0x750957*/
   {
-    v7 = AudioSource::Get(a4); /*0x75095b*/
+    int v7 = AudioSource::Get(a4); /*0x75095b*/
     v6 = v7; /*0x750960*/
     if ( v7 ) /*0x750964*/
     {
@@ -60,7 +56,7 @@ int __fastcall VocClass_Play(int a1, int a2, float a3, int a4)
   }
   if ( v5 ) /*0x75097d*/
   {
-    v8 = Math::RoundToInt(a3 * 16384.0); /*0x75098e*/
+    unsigned int v8 = Math::RoundToInt(a3 * 16384.0); /*0x75098e*/
     if ( v8 >= 0x4000 ) /*0x750996*/
       v8 = 0x4000; /*0x750998*/
     if ( v6 || (v6 = AudioPool::ProcessQueue(v5)) != 0 ) /*0x7509ac*/
@@ -83,39 +79,22 @@ double ComputeAudioPosition(AudioMixer * aP0, unsigned int * a1, int a3)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 double __fastcall ComputeAudioPosition(AudioMixer *aP0, _DWORD *a1, int a3)
 {
-  float *v4; // edi
   __int16 v6; // ax
-  char v7; // bl
-  int v8; // ecx
-  int v9; // eax
-  double v11; // st7
-  double v12; // st7
-  double v13; // st6
-  double v14; // st7
-  double v15; // st7
-  float v16; // [esp+10h] [ebp-24h]
-  float v17; // [esp+14h] [ebp-20h]
-  float v18; // [esp+18h] [ebp-1Ch]
-  float v19; // [esp+1Ch] [ebp-18h]
-  float v20; // [esp+20h] [ebp-14h]
-  float v21; // [esp+20h] [ebp-14h]
-  float v22; // [esp+24h] [ebp-10h]
-  _DWORD v23[2]; // [esp+2Ch] [ebp-8h] BYREF
 
-  v4 = (float *)a3; /*0x750ac9*/
+  float * v4 = (float *)a3; /*0x750ac9*/
   *a1 = 0; /*0x750acd*/
-  v18 = 0.0; /*0x750ade*/
-  v20 = (double)*(int *)&stru_87C374[44084] * 0.5; /*0x750aec*/
-  v22 = (double)*(int *)&stru_87C374[44088] * 0.5; /*0x750afc*/
-  v19 = v20 + v20; /*0x750b06*/
+  float v18 = 0.0; /*0x750ade*/
+  float v20 = (double)*(int *)&stru_87C374[44084] * 0.5; /*0x750aec*/
+  float v22 = (double)*(int *)&stru_87C374[44088] * 0.5; /*0x750afc*/
+  float v19 = v20 + v20; /*0x750b06*/
   a3 = 60 * sub_405130(v4); /*0x750b1a*/
-  v17 = (float)a3; /*0x750b22*/
+  float v17 = (float)a3; /*0x750b22*/
   v6 = sub_405160(v4); /*0x750b26*/
-  v7 = v6; /*0x750b2b*/
+  char v7 = v6; /*0x750b2b*/
   if ( (v6 & 0x800) == 0 ) /*0x750b30*/
     goto LABEL_7; /*0x750b30*/
-  v8 = aP0->AudioMixer_field_00 / 256; /*0x750b4b*/
-  v9 = aP0->AudioMixer_field_04 / 256; /*0x750b4e*/
+  int v8 = aP0->AudioMixer_field_00 / 256; /*0x750b4b*/
+  int v9 = aP0->AudioMixer_field_04 / 256; /*0x750b4e*/
   LOWORD(a3) = v8; /*0x750b58*/
   HIWORD(a3) = v9; /*0x750b5d*/
   if ( (_WORD)v8 == *(_WORD *)stru_B1D188[392] && (_WORD)v9 == *(_WORD *)&stru_B1D188[394] ) /*0x750b73*/
@@ -123,14 +102,15 @@ double __fastcall ComputeAudioPosition(AudioMixer *aP0, _DWORD *a1, int a3)
   if ( (*((_BYTE *)CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&a3) + 300) & 0x18) == 0 ) /*0x750b9b*/
     return 0.0; /*0x750b9d*/
 LABEL_7:
+  _DWORD v23[2]; // [esp+2Ch] [ebp-8h] BYREF
   Coord::To_Screen(*(_DWORD **)&stru_87C374[44976], aP0, (IUnknown *)v23); /*0x750bb9*/
-  v11 = (double)v23[0] - v20; /*0x750bc2*/
-  v16 = v11; /*0x750bc6*/
+  double v11 = (double)v23[0] - v20; /*0x750bc2*/
+  float v16 = v11; /*0x750bc6*/
   *(float *)&a3 = (float)(int)abs32(Math::RoundToInt(v11)); /*0x750bdc*/
-  v12 = (double)(int)abs32(Math::RoundToInt((double)v23[1] - v22)); /*0x750bf6*/
+  double v12 = (double)(int)abs32(Math::RoundToInt((double)v23[1] - v22)); /*0x750bf6*/
   if ( (v7 & 0x40) == 0 ) /*0x750bfd*/
   {
-    v13 = *(float *)&a3 - v20; /*0x750c03*/
+    double v13 = *(float *)&a3 - v20; /*0x750c03*/
     *(float *)&a3 = v13; /*0x750c07*/
     v12 = v12 - v22; /*0x750c11*/
     if ( v13 < 0.0 ) /*0x750c1e*/
@@ -138,11 +118,11 @@ LABEL_7:
     if ( v12 < 0.0 ) /*0x750c33*/
       v12 = 0.0; /*0x750c37*/
   }
-  v21 = v12 + v12; /*0x750c3f*/
+  float v21 = v12 + v12; /*0x750c3f*/
   if ( *(float *)&a3 < (double)v17 && v21 < (double)v17 && v17 > 0.0 ) /*0x750c70*/
   {
     if ( *(float *)&a3 <= (double)v21 ) /*0x750c7f*/
-      v14 = v21; /*0x750c87*/
+      double v14 = v21; /*0x750c87*/
     else
       v14 = *(float *)&a3; /*0x750c81*/
     v18 = (v17 - v14) / v17; /*0x750c95*/
@@ -151,7 +131,7 @@ LABEL_7:
     v18 = sub_405140(v4); /*0x750cb9*/
   if ( v18 < 0.05 ) /*0x750ccc*/
     return 0.0; /*0x750cce*/
-  v15 = -v19; /*0x750ce2*/
+  double v15 = -v19; /*0x750ce2*/
   if ( v16 >= v15 ) /*0x750cef*/
   {
     if ( v16 > (double)v19 ) /*0x750d06*/
@@ -175,24 +155,18 @@ int * StartAudioController(AudioMixer * ecx0, int ** a2)
 int *__fastcall StartAudioController(AudioMixer *ecx0, int **a2)
 {
   int *result; // eax
-  int *v5; // esi
   AudioMixer *eax2; // eax
   AudioMixer *v6; // edi
-  double v8; // st7
-  int *v9; // eax
-  unsigned int v10; // eax
-  float v11; // [esp+8h] [ebp-8h]
-  unsigned int a1; // [esp+Ch] [ebp-4h] BYREF
-
   result = 0; /*0x750d43*/
   if ( !a2 ) /*0x750d4d*/
     return result; /*0x750d4d*/
-  v5 = AudioSource::Get(a2); /*0x750d5e*/
+  int * v5 = AudioSource::Get(a2); /*0x750d5e*/
   eax2 = (AudioMixer *)VocClass::Check((int)a2); /*0x750d60*/
   v6 = eax2; /*0x750d65*/
   if ( !eax2 ) /*0x750d69*/
     goto LABEL_15; /*0x750d69*/
-  v8 = ComputeAudioPosition(ecx0, &a1, (int)eax2); /*0x750d76*/
+  unsigned int a1; // [esp+Ch] [ebp-4h] BYREF
+  double v8 = ComputeAudioPosition(ecx0, &a1, (int)eax2); /*0x750d76*/
   if ( v8 <= 0.0 ) /*0x750d8a*/
   {
     if ( v5 ) /*0x750e01*/
@@ -206,7 +180,7 @@ int *__fastcall StartAudioController(AudioMixer *ecx0, int **a2)
   {
     if ( AudioMixer::SetVolume((int)v6) && stru_830620[89740] ) /*0x750da2*/
     {
-      v9 = AudioPool::ProcessQueue(v6); /*0x750da6*/
+      int * v9 = AudioPool::ProcessQueue(v6); /*0x750da6*/
       v5 = v9; /*0x750dab*/
       if ( !v9 ) /*0x750daf*/
         goto LABEL_15; /*0x750daf*/
@@ -219,8 +193,8 @@ LABEL_15:
     return v5; /*0x750e16*/
   }
 LABEL_10:
-  v11 = v8; /*0x750dbc*/
-  v10 = Math::RoundToInt(v11 * 16384.0); /*0x750dc6*/
+  float v11 = v8; /*0x750dbc*/
+  unsigned int v10 = Math::RoundToInt(v11 * 16384.0); /*0x750dc6*/
   if ( v10 >= 0x4000 ) /*0x750dd0*/
     v10 = 0x4000; /*0x750dd2*/
   AudioMixer::PlayBuffer(v5, v10); /*0x750ddb*/
@@ -239,7 +213,6 @@ char sub_751DD0(LPCSTR lpRootPathName, UINT * a2)
 char __fastcall sub_751DD0(LPCSTR lpRootPathName, UINT *a2)
 {
   DWORD v5; // eax
-  bool v6; // zf
   DWORD SectorsPerCluster; // [esp+Ch] [ebp-18h] BYREF
   DWORD BytesPerSector; // [esp+10h] [ebp-14h] BYREF
   DWORD NumberOfFreeClusters; // [esp+14h] [ebp-10h] BYREF
@@ -257,7 +230,7 @@ char __fastcall sub_751DD0(LPCSTR lpRootPathName, UINT *a2)
           &TotalNumberOfClusters) )
     goto LABEL_2; /*0x751e0b*/
   v5 = BytesPerSector * SectorsPerCluster; /*0x751e2c*/
-  v6 = NumberOfFreeClusters == 0; /*0x751e36*/
+  bool v6 = NumberOfFreeClusters == 0; /*0x751e36*/
   a2[34] = NumberOfFreeClusters * BytesPerSector * SectorsPerCluster; /*0x751e38*/
   if ( !v6 ) /*0x751e3e*/
     return 0; /*0x751e42*/
@@ -288,17 +261,14 @@ void ThemeManager_Update(int a1, int a2, int a3)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __fastcall ThemeManager_Update(int a1, int a2, int a3)
 {
-  int v3; // ebp
-  int v4; // ebx
   int i; // esi
-  int v6; // eax
 
-  v3 = a2; /*0x752487*/
+  int v3 = a2; /*0x752487*/
   if ( g_InfantryDrawState ) /*0x75248b*/
   {
     if ( a1 >= 0 && a1 < g_InfantrySelectState && !DataGlobal_B1D3D8 ) /*0x7524ac*/
     {
-      v4 = *((_DWORD *)g_InfantryRenderPool + a1); /*0x7524b7*/
+      int v4 = *((_DWORD *)g_InfantryRenderPool + a1); /*0x7524b7*/
       if ( v4 != DataGlobal_B1D4C4 ) /*0x7524c1*/
       {
         if ( a2 == -1 ) /*0x7524ca*/
@@ -323,7 +293,7 @@ void __fastcall ThemeManager_Update(int a1, int a2, int a3)
           ThemeClass::ClearQueues(); /*0x75254b*/
           DataGlobal_B1D4D0 = 0; /*0x752552*/
         }
-        v6 = AudioQueue::FindByData(v4); /*0x75255e*/
+        int v6 = AudioQueue::FindByData(v4); /*0x75255e*/
         if ( !v6 || *(_DWORD *)(v6 + 24) != v3 ) /*0x75256a*/
           Audio_Load(a3); /*0x752575*/
         UpdateThemes(); /*0x75257a*/
@@ -341,19 +311,6 @@ void ThemeClass_Update()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void ThemeClass_Update()
 {
-  unsigned __int64 v0; // rdi
-  unsigned __int64 v1; // rax
-  int v2; // eax
-  _DWORD *v3; // esi
-  int v4; // eax
-  char *v5; // edi
-  int v6; // eax
-  int v7; // ebp
-  const char *v8; // edi
-  _BYTE v9[16]; // [esp+0h] [ebp-118h] BYREF
-  int v10; // [esp+10h] [ebp-108h]
-  int v11; // [esp+14h] [ebp-104h]
-  char v12[5]; // [esp+18h] [ebp-100h] BYREF
 
   if ( DataGlobal_A8ED64 ) /*0x752773*/
     return; /*0x752773*/
@@ -363,7 +320,8 @@ void ThemeClass_Update()
     return; /*0x75278e*/
   if ( Audio::IsSoundPlaying() ) /*0x752794*/
     return; /*0x752794*/
-  v0 = DataGlobal_B1D4D0 + ThemeClass::GetValue(g_InfantryDrawState); /*0x7527b4*/
+  unsigned __int64 v0 = DataGlobal_B1D4D0 + ThemeClass::GetValue(g_InfantryDrawState); /*0x7527b4*/
+  unsigned __int64 v1; // rax
   LODWORD(v1) = Audio::Callback(); /*0x7527be*/
   if ( v1 <= v0 || DataGlobal_B1D428 ) /*0x7527dc*/
     return; /*0x7527dc*/
@@ -372,10 +330,10 @@ void ThemeClass_Update()
     *(_DWORD *)(DataGlobal_B1D4C4 + 80) = 2; /*0x7527eb*/
     DataGlobal_B1D4C4 = 0; /*0x7527f2*/
   }
-  v11 = 0; /*0x7527fd*/
-  v10 = 0; /*0x752801*/
-  v2 = AudioQueue::GetNext(&DataGlobal_B1D3C8); /*0x752805*/
-  v3 = (_DWORD *)v2; /*0x75280a*/
+  int v11 = 0; /*0x7527fd*/
+  int v10 = 0; /*0x752801*/
+  int v2 = AudioQueue::GetNext(&DataGlobal_B1D3C8); /*0x752805*/
+  _DWORD * v3 = (_DWORD *)v2; /*0x75280a*/
   if ( v2 ) /*0x75280e*/
   {
     LinkedList::Init(v2); /*0x752812*/
@@ -383,7 +341,7 @@ void ThemeClass_Update()
       goto LABEL_22; /*0x75281e*/
     goto LABEL_11; /*0x75281e*/
   }
-  v4 = AudioQueue::GetNext(&DataGlobal_B1D3F0); /*0x75283a*/
+  int v4 = AudioQueue::GetNext(&DataGlobal_B1D3F0); /*0x75283a*/
   v3 = (_DWORD *)v4; /*0x75283f*/
   if ( !v4 ) /*0x752843*/
   {
@@ -394,7 +352,8 @@ void ThemeClass_Update()
     }
     else
     {
-      v5 = (char *)&DataGlobal_B1D474; /*0x752878*/
+  int v6; // eax
+      char * v5 = (char *)&DataGlobal_B1D474; /*0x752878*/
       while ( 1 ) /*0x75287f*/
       {
         v6 = AudioQueue::GetNext(v5); /*0x75287f*/
@@ -419,7 +378,8 @@ LABEL_11:
 LABEL_22:
   if ( v3 ) /*0x7528a9*/
   {
-    v7 = v3[3]; /*0x7528af*/
+    int v7 = v3[3]; /*0x7528af*/
+  _BYTE v9[16]; // [esp+0h] [ebp-118h] BYREF
     if ( v9 != (_BYTE *)-20 ) /*0x7528b8*/
       v11 = v3[6]; /*0x7528bd*/
     if ( v9 != (_BYTE *)-16 ) /*0x7528c7*/
@@ -427,6 +387,7 @@ LABEL_22:
     __3_YAXPAX_Z(v3); /*0x7528d1*/
     if ( v7 ) /*0x7528db*/
     {
+  const char *v8; // edi
       *(_DWORD *)(v7 + 80) = 2; /*0x7528e1*/
       if ( DataGlobal_B1D4C8 ) /*0x7528ef*/
       {
@@ -438,6 +399,7 @@ LABEL_22:
       {
         v8 = (const char *)(v7 + 62); /*0x7528f1*/
       }
+  char v12[5]; // [esp+18h] [ebp-100h] BYREF
       strcpy(v12, v8); /*0x75291d*/
       strcat(v12, g_Str_File__WAV); /*0x752949*/
       if ( ThreadAudioMixerMain(g_InfantryDrawState, 1) ) /*0x75295c*/
@@ -488,24 +450,21 @@ int TauntClass_Play(int a1)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall TauntClass_Play(int a1)
 {
-  char v1; // al
   int result; // eax
-  const char *v3; // [esp-8h] [ebp-1Ch]
-  int v4; // [esp-4h] [ebp-18h]
   char Buffer[20]; // [esp+0h] [ebp-14h] BYREF
 
   if ( !DataGlobal_B1D4D8 ) /*0x752b7a*/
     return 0; /*0x752b7a*/
   if ( DataGlobal_B1D480 ) /*0x752b87*/
     return 0; /*0x752b87*/
-  v1 = a1 & 0xF; /*0x752b8f*/
+  char v1 = a1 & 0xF; /*0x752b8f*/
   if ( (a1 & 0xF) == 0 || (a1 & 0xFu) > 8 ) /*0x752b9b*/
     return 0; /*0x752c63*/
   switch ( (a1 >> 4) & 0xF ) /*0x752bb0*/
   {
     case 0: /*0x752bb0*/
-      v4 = v1; /*0x752bba*/
-      v3 = aTauntsTauam02i; /*0x752bbb*/
+      int v4 = v1; /*0x752bba*/
+      const char * v3 = aTauntsTauam02i; /*0x752bbb*/
       goto LABEL_16; /*0x752bc0*/
     case 1: /*0x752bb0*/
       sprintf(Buffer, "taunts\\tauko%02i.wav", v1); /*0x752bd0*/
@@ -554,9 +513,8 @@ namespace gamemd {
 int E4Recv_752CB0::sub_752CB0(const char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_752CB0(int this, const char *a2)
+void sub_752CB0(int this, const char *a2)
 {
-  int v3; // eax
 
   this->M40 = 1065353216; /*0x752cbe*/
   strcpy((char *)this, a2); /*0x752cd4*/
@@ -574,7 +532,7 @@ int __thiscall sub_752CB0(int this, const char *a2)
          DataGlobal_B1D4A8 + DataGlobal_B1D4B4,
          0) )
   {
-    v3 = g_InfantrySelectState++; /*0x752d3b*/
+    int v3 = g_InfantrySelectState++; /*0x752d3b*/
     *((_DWORD *)g_InfantryRenderPool + v3) = this; /*0x752d4a*/
   }
   return this; /*0x752d4d*/
@@ -587,21 +545,15 @@ namespace gamemd {
 char CCINIClass::InitFromINIEVA()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall InitFromINIEVA(CCINIClass *this)
+void InitFromINIEVA(CCINIClass *this)
 {
   CCINIClass *v1; // edi
   unsigned int KeyCount; // eax
-  int v3; // ebp
   CCINIClass *v4; // esi
   unsigned __int8 *StringByIndex; // eax
-  int v6; // esi
-  int v7; // ebp
-  int v8; // eax
-  int v9; // ecx
   CCINIClass *v11; // [esp+0h] [ebp-E4h] BYREF
   CCINIClass *i; // [esp+10h] [ebp-D4h]
   CCINIClass *aP1; // [esp+14h] [ebp-D0h]
-  unsigned int v14; // [esp+18h] [ebp-CCh]
   INIClass Destination[3]; // [esp+1Ch] [ebp-C8h] BYREF
 
   v1 = this; /*0x75300a*/
@@ -610,9 +562,9 @@ char __thiscall InitFromINIEVA(CCINIClass *this)
   if ( (_BYTE)KeyCount ) /*0x753023*/
   {
     KeyCount = INIClass::GetKeyCount(v1->__pad_0, &g_INI_Key_DialogList); /*0x753030*/
-    v3 = KeyCount; /*0x753035*/
+    int v3 = KeyCount; /*0x753035*/
     v4 = 0; /*0x753037*/
-    v14 = KeyCount; /*0x75303b*/
+    unsigned int v14 = KeyCount; /*0x75303b*/
     for ( i = 0; (int)v4 < v3; i = v4 ) /*0x753043*/
     {
       StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex( /*0x753060*/
@@ -628,9 +580,10 @@ char __thiscall InitFromINIEVA(CCINIClass *this)
                    200);
       if ( KeyCount ) /*0x753074*/
       {
+  int v9; // ecx
         if ( &v11 == (CCINIClass **)-28 ) /*0x753080*/
           goto LABEL_10; /*0x753080*/
-        v6 = 0; /*0x753087*/
+        int v6 = 0; /*0x753087*/
         if ( *(int *)&g_OverlayTypeConfig[89272] <= 0 ) /*0x75308b*/
           goto LABEL_10; /*0x75308b*/
         while ( _strcmpi(Destination[0].__pad_0, *(char **)(*(_DWORD *)&g_OverlayTypeConfig[89260] + 4 * v6)) ) /*0x7530a6*/
@@ -641,7 +594,7 @@ char __thiscall InitFromINIEVA(CCINIClass *this)
         if ( v6 == -1 ) /*0x7530b7*/
         {
 LABEL_10:
-          v7 = __2_YAPAXI_Z(0x54u); /*0x7530bd*/
+          int v7 = __2_YAPAXI_Z(0x54u); /*0x7530bd*/
           if ( v7 ) /*0x7530cb*/
           {
             *(_DWORD *)(v7 + 40) = 1065353216; /*0x7530da*/
@@ -661,7 +614,7 @@ LABEL_10:
                    *(_DWORD *)&g_OverlayTypeConfig[89264] + *(_DWORD *)&g_OverlayTypeConfig[89276],
                    0) )
             {
-              v8 = (*(_DWORD *)&g_OverlayTypeConfig[89272])++; /*0x753153*/
+              int v8 = (*(_DWORD *)&g_OverlayTypeConfig[89272])++; /*0x753153*/
               *(_DWORD *)(*(_DWORD *)&g_OverlayTypeConfig[89260] + 4 * v8) = v7; /*0x753162*/
             }
             v1 = aP1; /*0x753165*/
@@ -693,14 +646,11 @@ namespace gamemd {
 int E4Recv_7531A0::EVA_LoadINI()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall EVA_LoadINI(void *this)
+void EVA_LoadINI(void *this)
 {
   int result; // eax
-  void *v2; // esi
-  int v3; // eax
-  void *v4; // [esp+0h] [ebp-4h] BYREF
 
-  v4 = this; /*0x7531a0*/
+  E4Recv_7531A0 *v4 = this; /*0x7531a0*/
   if ( DataGlobal_B1D4C4 ) /*0x7531a8*/
   {
     *(_DWORD *)(DataGlobal_B1D4C4 + 80) = 2; /*0x7531aa*/
@@ -711,11 +661,11 @@ int __thiscall EVA_LoadINI(void *this)
   ThemeClass::ClearQueues(v4); /*0x7531ca*/
   for ( result = g_InfantrySelectState; g_InfantrySelectState > 0; result = g_InfantrySelectState ) /*0x7531d6*/
   {
-    v2 = *(void **)g_InfantryRenderPool; /*0x7531de*/
+    void * v2 = *(void **)g_InfantryRenderPool; /*0x7531de*/
     if ( *(_DWORD *)g_InfantryRenderPool ) /*0x7531de*/
     {
       v4 = *(void **)g_InfantryRenderPool; /*0x7531f4*/
-      v3 = (*(int (__thiscall **)(int *, void **))(DataGlobal_B1D4A0 + 16))(&DataGlobal_B1D4A0, &v4); /*0x7531f8*/
+      int v3 = (*(int (__thiscall **)(int *, void **))(DataGlobal_B1D4A0 + 16))(&DataGlobal_B1D4A0, &v4); /*0x7531f8*/
       if ( v3 != -1 && v3 < g_InfantrySelectState && v3 < --g_InfantrySelectState ) /*0x753213*/
       {
         do /*0x75322b*/
@@ -756,46 +706,34 @@ int TransformVoxelVertex(unsigned int * a1, SomeVoxelCache * a2, SomeVoxelCache 
 int __fastcall TransformVoxelVertex(_DWORD *a1, SomeVoxelCache *a2, SomeVoxelCache *aP2, float *a4)
 {
   int Info; // eax
-  float *v7; // esi
-  _DWORD *v8; // ecx
-  int v9; // ebp
-  int v10; // edx
-  int v11; // edx
-  float *v12; // edi
-  float *v13; // ebx
-  float *v14; // eax
-  int v15; // edx
-  int v17; // [esp+10h] [ebp-Ch] BYREF
-  int v18; // [esp+14h] [ebp-8h]
-  int v19; // [esp+18h] [ebp-4h]
   float *aP2a; // [esp+20h] [ebp+4h]
 
   Info = VoxelSection::GetInfo(a1, a2, aP2); /*0x754101*/
-  v18 = 1176256512; /*0x75411b*/
-  v19 = 1176256512; /*0x754123*/
-  v7 = (float *)(136 * DataGlobal_B2D820 + 11721048); /*0x75412b*/
-  v17 = -971227136; /*0x754136*/
-  v8 = (_DWORD *)(136 * DataGlobal_B2D820 + 11721064); /*0x75413e*/
+  int v18 = 1176256512; /*0x75411b*/
+  int v19 = 1176256512; /*0x754123*/
+  float * v7 = (float *)(136 * DataGlobal_B2D820 + 11721048); /*0x75412b*/
+  int v17 = -971227136; /*0x754136*/
+  _DWORD * v8 = (_DWORD *)(136 * DataGlobal_B2D820 + 11721064); /*0x75413e*/
   *((_DWORD *)v7 + 2) = aP2; /*0x754141*/
-  v9 = 0; /*0x754144*/
+  int v9 = 0; /*0x754144*/
   *v8 = 1176256512; /*0x754149*/
-  v10 = v18; /*0x75414b*/
+  int v10 = v18; /*0x75414b*/
   v18 = -971227136; /*0x75414f*/
   *((_DWORD *)v7 + 1) = a2; /*0x754157*/
   v8[1] = v10; /*0x75415a*/
-  v11 = v19; /*0x75415d*/
+  int v11 = v19; /*0x75415d*/
   v19 = -971227136; /*0x754161*/
   *(_DWORD *)v7 = a1; /*0x754169*/
   v8[2] = v11; /*0x75416b*/
-  v12 = v7 + 11; /*0x754175*/
+  float * v12 = v7 + 11; /*0x754175*/
   aP2a = (float *)(Info + 64); /*0x754178*/
   *((_DWORD *)v7 + 7) = v17; /*0x75417c*/
   *((_DWORD *)v7 + 8) = v18; /*0x754182*/
   *((_DWORD *)v7 + 9) = v19; /*0x754189*/
   do /*0x754238*/
   {
-    v13 = v12 - 1; /*0x754199*/
-    v14 = TransformMatrix3x4Point((float *)&v17, a4, aP2a); /*0x75419c*/
+    float * v13 = v12 - 1; /*0x754199*/
+    float * v14 = TransformMatrix3x4Point((float *)&v17, a4, aP2a); /*0x75419c*/
     *(v12 - 1) = *v14; /*0x7541a5*/
     *v12 = v14[1]; /*0x7541aa*/
     v12[1] = v14[2]; /*0x7541b0*/
@@ -810,7 +748,7 @@ int __fastcall TransformVoxelVertex(_DWORD *a1, SomeVoxelCache *a2, SomeVoxelCac
       v7[8] = *v12; /*0x7541fa*/
     if ( v12[1] < (double)v7[6] ) /*0x754208*/
     {
-      v15 = *((_DWORD *)v12 + 1); /*0x75420a*/
+      int v15 = *((_DWORD *)v12 + 1); /*0x75420a*/
       *((_DWORD *)v7 + 3) = v9; /*0x75420d*/
       *((_DWORD *)v7 + 6) = v15; /*0x754210*/
     }
@@ -845,42 +783,14 @@ int InitializeAudioOcclusion(IUnknown * aP0, unsigned int * a1, unsigned int * a
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall InitializeAudioOcclusion(IUnknown *aP0, _DWORD *a1, _DWORD *a2)
 {
-  int v3; // edi
   _DWORD **v5; // esi
-  int v6; // ebp
-  char *v7; // ecx
-  char *v8; // eax
-  int v9; // edx
-  int v10; // ecx
-  int v11; // eax
-  char *v12; // edi
-  char *v13; // ecx
-  int v14; // ebp
-  int v15; // edx
   _DWORD ***v16; // esi
-  int v17; // edi
-  int v18; // esi
-  char *v19; // edi
-  int v20; // eax
-  int v21; // ecx
-  double v22; // st7
-  int v23; // eax
-  int v24; // edx
-  int v25; // esi
-  int v26; // esi
-  int v27; // eax
-  double v28; // st7
-  int v29; // esi
   int result; // eax
-  int v31; // [esp+10h] [ebp-14h]
-  float v33; // [esp+18h] [ebp-Ch] BYREF
-  float v34; // [esp+1Ch] [ebp-8h]
-  float v35; // [esp+20h] [ebp-4h]
 
-  v3 = 0; /*0x75430e*/
-  v33 = (*(float *)&stru_B1D188[66648] + *(float *)&stru_B1D188[67520]) * 0.5; /*0x754318*/
-  v34 = (*(float *)&stru_B1D188[66652] + *(float *)&stru_B1D188[67524]) * 0.5; /*0x75432e*/
-  v35 = (*(float *)&stru_B1D188[66656] + *(float *)&stru_B1D188[67528]) * 0.5; /*0x754344*/
+  int v3 = 0; /*0x75430e*/
+  float v33 = (*(float *)&stru_B1D188[66648] + *(float *)&stru_B1D188[67520]) * 0.5; /*0x754318*/
+  float v34 = (*(float *)&stru_B1D188[66652] + *(float *)&stru_B1D188[67524]) * 0.5; /*0x75432e*/
+  float v35 = (*(float *)&stru_B1D188[66656] + *(float *)&stru_B1D188[67528]) * 0.5; /*0x754344*/
   if ( *(int *)&stru_B1D188[76264] > 0 ) /*0x754348*/
   {
     v5 = (_DWORD **)&unk_B3FF78; /*0x75434a*/
@@ -892,12 +802,12 @@ int __fastcall InitializeAudioOcclusion(IUnknown *aP0, _DWORD *a1, _DWORD *a2)
     }
     while ( v3 < *(int *)&stru_B1D188[76264] ); /*0x754367*/
   }
-  v6 = *(_DWORD *)&stru_B1D188[67224]; /*0x754369*/
+  int v6 = *(_DWORD *)&stru_B1D188[67224]; /*0x754369*/
   if ( *(int *)&stru_B1D188[67224] > 0 ) /*0x754371*/
   {
-    v7 = &stru_B1D188[77040]; /*0x754373*/
-    v8 = &stru_B1D188[67536]; /*0x754378*/
-    v9 = *(_DWORD *)&stru_B1D188[67224]; /*0x75437d*/
+    char * v7 = &stru_B1D188[77040]; /*0x754373*/
+    char * v8 = &stru_B1D188[67536]; /*0x754378*/
+    int v9 = *(_DWORD *)&stru_B1D188[67224]; /*0x75437d*/
     do /*0x75438a*/
     {
       *(_DWORD *)v7 = v8; /*0x75437f*/
@@ -907,21 +817,21 @@ int __fastcall InitializeAudioOcclusion(IUnknown *aP0, _DWORD *a1, _DWORD *a2)
     }
     while ( v9 ); /*0x75438a*/
   }
-  v10 = v6 - 1; /*0x75438c*/
+  int v10 = v6 - 1; /*0x75438c*/
   if ( v6 - 1 > 0 ) /*0x754391*/
   {
-    v11 = 1; /*0x754393*/
-    v12 = &stru_B1D188[77040]; /*0x754398*/
-    v31 = 1; /*0x75439d*/
+    int v11 = 1; /*0x754393*/
+    char * v12 = &stru_B1D188[77040]; /*0x754398*/
+    int v31 = 1; /*0x75439d*/
     do /*0x7543df*/
     {
       if ( v11 < v6 ) /*0x7543a3*/
       {
-        v13 = v12 + 4; /*0x7543a5*/
-        v14 = v6 - v11; /*0x7543a8*/
+        char * v13 = v12 + 4; /*0x7543a5*/
+        int v14 = v6 - v11; /*0x7543a8*/
         do /*0x7543c3*/
         {
-          v15 = *(_DWORD *)v12; /*0x7543aa*/
+          int v15 = *(_DWORD *)v12; /*0x7543aa*/
           if ( *(float *)(*(_DWORD *)v12 + 36) > (double)*(float *)(*(_DWORD *)v13 + 36) ) /*0x7543b9*/
           {
             *(_DWORD *)v12 = *(_DWORD *)v13; /*0x7543bb*/
@@ -946,7 +856,7 @@ int __fastcall InitializeAudioOcclusion(IUnknown *aP0, _DWORD *a1, _DWORD *a2)
     if ( v10 >= 0 ) /*0x7543ec*/
     {
       v16 = (_DWORD ***)(4 * v10 + 11730552); /*0x7543ee*/
-      v17 = v10 + 1; /*0x7543f5*/
+      int v17 = v10 + 1; /*0x7543f5*/
       do /*0x75440b*/
       {
         Voxel::ProcessColor(**v16, *v16, &v33); /*0x754402*/
@@ -958,10 +868,10 @@ int __fastcall InitializeAudioOcclusion(IUnknown *aP0, _DWORD *a1, _DWORD *a2)
   }
   else
   {
-    v18 = 0; /*0x75440f*/
+    int v18 = 0; /*0x75440f*/
     if ( v6 > 0 ) /*0x754413*/
     {
-      v19 = &stru_B1D188[77040]; /*0x754415*/
+      char * v19 = &stru_B1D188[77040]; /*0x754415*/
       do /*0x754434*/
       {
         Voxel::ProcessColor(**(_DWORD ***)v19, *(_DWORD **)v19, &v33); /*0x754424*/
@@ -972,15 +882,15 @@ int __fastcall InitializeAudioOcclusion(IUnknown *aP0, _DWORD *a1, _DWORD *a2)
     }
   }
   aP0->field_8 = Math::RoundToInt(*(float *)&stru_B1D188[67520] - *(float *)&stru_B1D188[66648]); /*0x754447*/
-  v20 = Math::RoundToInt(*(float *)&stru_B1D188[67524] - *(float *)&stru_B1D188[66652]); /*0x754456*/
-  v21 = aP0->field_8; /*0x75445b*/
+  int v20 = Math::RoundToInt(*(float *)&stru_B1D188[67524] - *(float *)&stru_B1D188[66652]); /*0x754456*/
+  int v21 = aP0->field_8; /*0x75445b*/
   aP0->field_C = v20; /*0x75445e*/
-  v22 = v33; /*0x754467*/
-  v23 = aP0->field_C; /*0x754476*/
+  double v22 = v33; /*0x754467*/
+  int v23 = aP0->field_C; /*0x754476*/
   aP0->field_0 = 128 - v21 / 2; /*0x754478*/
-  v24 = 128 - v23 / 2; /*0x754487*/
+  int v24 = 128 - v23 / 2; /*0x754487*/
   aP0->field_C = v23 + 8; /*0x754489*/
-  v25 = aP0->field_0; /*0x75448c*/
+  int v25 = aP0->field_0; /*0x75448c*/
   aP0->field_4 = v24; /*0x75448e*/
   aP0->field_8 = v21 + 8; /*0x75449c*/
   aP0->field_0 = v25 - 4; /*0x75449f*/
@@ -989,11 +899,11 @@ int __fastcall InitializeAudioOcclusion(IUnknown *aP0, _DWORD *a1, _DWORD *a2)
   *(_DWORD *)&stru_B1D188[76252] = aP0->field_4; /*0x7544af*/
   *(_DWORD *)&stru_B1D188[76256] = aP0->field_8; /*0x7544b8*/
   *(_DWORD *)&stru_B1D188[76260] = aP0->field_C; /*0x7544c1*/
-  v26 = aP0->field_8 / 2; /*0x7544cf*/
-  v27 = Math::RoundToInt(v22); /*0x7544d1*/
-  v28 = v34; /*0x7544dc*/
+  int v26 = aP0->field_8 / 2; /*0x7544cf*/
+  int v27 = Math::RoundToInt(v22); /*0x7544d1*/
+  double v28 = v34; /*0x7544dc*/
   *a1 = v27 - v26; /*0x7544e0*/
-  v29 = aP0->field_C / 2; /*0x7544ea*/
+  int v29 = aP0->field_C / 2; /*0x7544ea*/
   result = Math::RoundToInt(v28) - v29; /*0x7544f5*/
   *a2 = result; /*0x7544fa*/
   return result; /*0x7544f7*/
@@ -1008,43 +918,23 @@ int RenderVoxels()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __usercall Voxel_Render@<al>(int *a1@<ebx>, int a2@<ebp>, int a3@<edi>, int *a4)
 {
-  int *v4; // ecx
-  unsigned int v5; // esi
-  _WORD *v6; // eax
   __int16 v7; // dx
   char result; // al
-  int *v9; // eax
-  int *v10; // edx
-  int *v11; // eax
-  _BYTE *v12; // esi
   unsigned __int8 *v13; // esi
   unsigned __int8 v14; // al
-  int v15; // eax
-  char *v16; // esi
-  int v17; // edx
-  int v18; // eax
-  bool v19; // zf
-  unsigned int v20; // edx
-  unsigned int v21; // edx
-  int *v22; // [esp+Ch] [ebp-30h]
-  char v23; // [esp+10h] [ebp-2Ch]
-  int v24; // [esp+14h] [ebp-28h]
-  unsigned int v25; // [esp+18h] [ebp-24h]
-  unsigned int v26; // [esp+1Ch] [ebp-20h]
   __int16 v27; // [esp+20h] [ebp-1Ch]
   __int16 v28; // [esp+24h] [ebp-18h]
   __int16 v29; // [esp+28h] [ebp-14h]
   __int16 v30; // [esp+2Ch] [ebp-10h]
   __int16 v31; // [esp+30h] [ebp-Ch]
   __int16 v32; // [esp+34h] [ebp-8h]
-  int v33; // [esp+38h] [ebp-4h]
 
-  v4 = a4; /*0x757120*/
+  int * v4 = a4; /*0x757120*/
   g_VoxelOffsetTable[0] = 0; /*0x757127*/
-  v5 = 1; /*0x757141*/
+  unsigned int v5 = 1; /*0x757141*/
   if ( *((_BYTE *)a4 + 50) > 1u ) /*0x757146*/
   {
-    v6 = (_WORD *)(g_VoxelOffsetTable + 2); /*0x757148*/
+    _WORD * v6 = (_WORD *)(g_VoxelOffsetTable + 2); /*0x757148*/
     do /*0x75716f*/
     {
       v7 = *(v6 - 1); /*0x75714d*/
@@ -1059,31 +949,34 @@ char __usercall Voxel_Render@<al>(int *a1@<ebx>, int a2@<ebp>, int a3@<edi>, int
   LOWORD(a2) = *((_WORD *)a4 + 13); /*0x757179*/
   LOWORD(a4) = *((_WORD *)a4 + 14); /*0x75717d*/
   result = *((_BYTE *)v4 + 49); /*0x757182*/
-  v26 = 0; /*0x757185*/
+  unsigned int v26 = 0; /*0x757185*/
   if ( result ) /*0x75718f*/
   {
+  unsigned int v21; // edx
     do /*0x757347*/
     {
+  int *v9; // eax
       HIWORD(v9) = HIWORD(a4); /*0x757196*/
       v32 = (__int16)a4; /*0x75719d*/
-      v33 = v4[3]; /*0x7571a6*/
+      int v33 = v4[3]; /*0x7571a6*/
       v30 = a3; /*0x7571aa*/
       v31 = a2; /*0x7571ae*/
-      v25 = 0; /*0x7571b2*/
+      unsigned int v25 = 0; /*0x7571b2*/
       if ( *((_BYTE *)v4 + 48) ) /*0x7571a1*/
       {
+  unsigned int v20; // edx
         do /*0x757306*/
         {
           v29 = (__int16)a4; /*0x7571c7*/
-          v10 = (int *)*v4; /*0x7571cb*/
+          int * v10 = (int *)*v4; /*0x7571cb*/
           v27 = a3; /*0x7571cd*/
           v28 = a2; /*0x7571d1*/
-          v11 = *(int **)(*v4 + 4 * v4[3]); /*0x7571d5*/
+          int * v11 = *(int **)(*v4 + 4 * v4[3]); /*0x7571d5*/
           if ( v11 != (int *)-1 ) /*0x7571db*/
           {
-            v12 = (char *)v11 + v4[2]; /*0x7571e4*/
+            _BYTE * v12 = (char *)v11 + v4[2]; /*0x7571e4*/
             v11 = (int *)*((unsigned __int8 *)v4 + 50); /*0x7571e8*/
-            v22 = v11; /*0x7571ed*/
+            int * v22 = v11; /*0x7571ed*/
             if ( *((_BYTE *)v4 + 50) ) /*0x7571e8*/
             {
               do /*0x7572c6*/
@@ -1098,19 +991,20 @@ char __usercall Voxel_Render@<al>(int *a1@<ebx>, int a2@<ebp>, int a3@<edi>, int
                 a2 += (int)a1; /*0x757222*/
                 a1 = (int *)((char *)a4 + (_DWORD)v10); /*0x757228*/
                 v10 = (int *)((char *)v22 - v14); /*0x75722e*/
-                v15 = *v13; /*0x757232*/
-                v16 = (char *)(v13 + 1); /*0x757234*/
+                int v15 = *v13; /*0x757232*/
+                char * v16 = (char *)(v13 + 1); /*0x757234*/
                 a4 = a1; /*0x757237*/
                 v22 = v10; /*0x75723b*/
                 if ( v15 ) /*0x75723f*/
                 {
-                  v24 = v15; /*0x757243*/
+  bool v19; // zf
+                  int v24 = v15; /*0x757243*/
                   v22 = (int *)((char *)v10 - v15); /*0x757247*/
                   do /*0x7572bd*/
                   {
-                    v23 = *v16; /*0x75724f*/
-                    v17 = BYTE1(a3); /*0x757260*/
-                    v18 = v17 | a2 & 0xFF00; /*0x757263*/
+                    char v23 = *v16; /*0x75724f*/
+                    int v17 = BYTE1(a3); /*0x757260*/
+                    int v18 = v17 | a2 & 0xFF00; /*0x757263*/
                     v16 += 2; /*0x757276*/
                     if ( (unsigned __int16)((unsigned __int16)a4 >> 8) > (unsigned __int8)DataGlobal_B1D5E0[v18] ) /*0x75727c*/
                     {
@@ -1169,41 +1063,24 @@ int ProcessVoxelDepthSamples()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __usercall ProcessVoxelDepthSamples@<al>(unsigned int a1@<ebx>, int a2@<ebp>, int a3@<edi>, unsigned int a4)
 {
-  unsigned int v4; // ecx
-  unsigned int v5; // esi
-  _WORD *v6; // eax
   __int16 v7; // di
   char result; // al
-  unsigned int v9; // eax
-  unsigned int v10; // edx
-  unsigned int v11; // eax
   unsigned __int8 *v12; // esi
-  int v13; // eax
   unsigned __int8 *v14; // esi
-  int v15; // edx
-  int v16; // eax
-  bool v17; // zf
-  unsigned int v18; // edx
-  unsigned int v19; // [esp+10h] [ebp-30h]
-  char v20; // [esp+14h] [ebp-2Ch]
   unsigned __int8 v21; // [esp+14h] [ebp-2Ch]
-  int v22; // [esp+18h] [ebp-28h]
-  unsigned int v23; // [esp+1Ch] [ebp-24h]
-  unsigned int v24; // [esp+20h] [ebp-20h]
   __int16 v25; // [esp+24h] [ebp-1Ch]
   __int16 v26; // [esp+28h] [ebp-18h]
   __int16 v27; // [esp+2Ch] [ebp-14h]
   __int16 v28; // [esp+30h] [ebp-10h]
   __int16 v29; // [esp+34h] [ebp-Ch]
   __int16 v30; // [esp+38h] [ebp-8h]
-  int v31; // [esp+3Ch] [ebp-4h]
 
-  v4 = a4; /*0x757360*/
+  unsigned int v4 = a4; /*0x757360*/
   g_VoxelOffsetTable[0] = 0; /*0x757369*/
-  v5 = 1; /*0x757380*/
+  unsigned int v5 = 1; /*0x757380*/
   if ( *(_BYTE *)(a4 + 50) > 1u ) /*0x757385*/
   {
-    v6 = (_WORD *)(g_VoxelOffsetTable + 2); /*0x757387*/
+    _WORD * v6 = (_WORD *)(g_VoxelOffsetTable + 2); /*0x757387*/
     do /*0x7573ae*/
     {
       v7 = *(_WORD *)(a4 + 42) + *(v6 - 1); /*0x757392*/
@@ -1219,47 +1096,50 @@ char __usercall ProcessVoxelDepthSamples@<al>(unsigned int a1@<ebx>, int a2@<ebp
   LOWORD(a2) = *(_WORD *)(a4 + 26); /*0x7573b8*/
   LOWORD(a4) = *(_WORD *)(a4 + 28); /*0x7573bc*/
   result = *(_BYTE *)(v4 + 49); /*0x7573c1*/
-  v24 = 0; /*0x7573c4*/
+  unsigned int v24 = 0; /*0x7573c4*/
   if ( result ) /*0x7573ca*/
   {
+  unsigned int v18; // edx
     do /*0x757585*/
     {
       v28 = a3; /*0x7573d7*/
-      v31 = *(_DWORD *)(v4 + 12); /*0x7573db*/
+      int v31 = *(_DWORD *)(v4 + 12); /*0x7573db*/
+  unsigned int v9; // eax
       HIWORD(v9) = HIWORD(a4); /*0x7573df*/
       v30 = a4; /*0x7573e3*/
       v29 = a2; /*0x7573ec*/
-      v23 = 0; /*0x7573f0*/
+      unsigned int v23 = 0; /*0x7573f0*/
       if ( *(_BYTE *)(v4 + 48) ) /*0x7573e7*/
       {
         do /*0x757544*/
         {
           v27 = a4; /*0x757401*/
-          v10 = *(_DWORD *)(v4 + 4); /*0x757405*/
+          unsigned int v10 = *(_DWORD *)(v4 + 4); /*0x757405*/
           v25 = a3; /*0x757408*/
           v26 = a2; /*0x75740c*/
-          v11 = *(_DWORD *)(v10 + 4 * *(_DWORD *)(v4 + 12)); /*0x757410*/
+          unsigned int v11 = *(_DWORD *)(v10 + 4 * *(_DWORD *)(v4 + 12)); /*0x757410*/
           if ( v11 != -1 ) /*0x757416*/
           {
             v12 = (unsigned __int8 *)(v11 + *(_DWORD *)(v4 + 8)); /*0x75741f*/
             v11 = *(unsigned __int8 *)(v4 + 50); /*0x757423*/
-            v19 = v11; /*0x757428*/
+            unsigned int v19 = v11; /*0x757428*/
             if ( *(_BYTE *)(v4 + 50) ) /*0x757423*/
             {
+  bool v17; // zf
               do /*0x757504*/
               {
-                v13 = *v12; /*0x757434*/
+                int v13 = *v12; /*0x757434*/
                 v14 = v12 - 1; /*0x757436*/
                 if ( v13 ) /*0x757439*/
                 {
-                  v22 = v13; /*0x757443*/
+                  int v22 = v13; /*0x757443*/
                   v19 -= v13; /*0x757449*/
                   do /*0x7574bf*/
                   {
-                    v20 = *(v14 - 1); /*0x757453*/
+                    char v20 = *(v14 - 1); /*0x757453*/
                     v14 -= 2; /*0x757464*/
-                    v15 = BYTE1(a3); /*0x757465*/
-                    v16 = v15 | a2 & 0xFF00; /*0x757468*/
+                    int v15 = BYTE1(a3); /*0x757465*/
+                    int v16 = v15 | a2 & 0xFF00; /*0x757468*/
                     if ( (unsigned __int16)BYTE1(a4) > (unsigned __int8)DataGlobal_B1D5E0[v16] ) /*0x75747e*/
                     {
                       DataGlobal_B1D5E0[v16] = BYTE1(a4); /*0x757484*/
@@ -1328,43 +1208,28 @@ int ProcessVoxelColorScanline()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __usercall ProcessVoxelColorScanline@<al>(unsigned int a1@<edx>, int a2@<ebx>, int a3@<ebp>, int a4@<edi>, int a5)
 {
-  unsigned int v6; // esi
-  _WORD *v7; // eax
   __int16 v8; // dx
-  unsigned int v9; // eax
-  int v10; // eax
   unsigned __int8 *v11; // esi
   unsigned __int8 v12; // al
   unsigned __int8 *v13; // esi
-  int v14; // eax
   unsigned __int8 *v15; // esi
-  int v16; // eax
   unsigned __int16 v17; // dx
   unsigned __int8 v18; // bl
   unsigned __int8 *v19; // esi
   unsigned __int8 v20; // bp
-  bool v21; // zf
-  unsigned int v22; // eax
   unsigned __int8 v24; // [esp+10h] [ebp-34h]
-  unsigned int v25; // [esp+14h] [ebp-30h]
-  int v26; // [esp+18h] [ebp-2Ch]
-  int v27; // [esp+1Ch] [ebp-28h]
-  unsigned int v28; // [esp+20h] [ebp-24h]
-  unsigned int v29; // [esp+24h] [ebp-20h]
   __int16 v30; // [esp+28h] [ebp-1Ch]
   __int16 v31; // [esp+2Ch] [ebp-18h]
   __int16 v32; // [esp+30h] [ebp-14h]
   __int16 v33; // [esp+34h] [ebp-10h]
   __int16 v34; // [esp+38h] [ebp-Ch]
   __int16 v35; // [esp+3Ch] [ebp-8h]
-  int v36; // [esp+40h] [ebp-4h]
-  int v37; // [esp+48h] [ebp+4h]
 
   g_VoxelOffsetTable[0] = 0; /*0x757987*/
-  v6 = 1; /*0x7579a1*/
+  unsigned int v6 = 1; /*0x7579a1*/
   if ( *(_BYTE *)(a5 + 50) > 1u ) /*0x7579a6*/
   {
-    v7 = (_WORD *)(g_VoxelOffsetTable + 2); /*0x7579a8*/
+    _WORD * v7 = (_WORD *)(g_VoxelOffsetTable + 2); /*0x7579a8*/
     do /*0x7579cf*/
     {
       v8 = *(v7 - 1); /*0x7579ad*/
@@ -1376,32 +1241,34 @@ char __usercall ProcessVoxelColorScanline@<al>(unsigned int a1@<edx>, int a2@<eb
     }
     while ( v6 < a1 ); /*0x7579cf*/
   }
+  unsigned int v9; // eax
   LOBYTE(v9) = *(_BYTE *)(a5 + 49); /*0x7579d1*/
   LOWORD(a4) = *(_WORD *)(a5 + 24); /*0x7579d4*/
   LOWORD(a3) = *(_WORD *)(a5 + 26); /*0x7579d8*/
   LOWORD(a1) = *(_WORD *)(a5 + 28); /*0x7579dc*/
-  v29 = 0; /*0x7579e2*/
+  unsigned int v29 = 0; /*0x7579e2*/
   if ( (_BYTE)v9 ) /*0x7579ea*/
   {
     do /*0x757bd7*/
     {
       v33 = a4; /*0x7579f4*/
-      v36 = *(_DWORD *)(a5 + 12); /*0x7579f8*/
+      int v36 = *(_DWORD *)(a5 + 12); /*0x7579f8*/
       v34 = a3; /*0x757a01*/
       v35 = a1; /*0x757a05*/
-      v28 = 0; /*0x757a09*/
+      unsigned int v28 = 0; /*0x757a09*/
       if ( *(_BYTE *)(a5 + 48) ) /*0x7579fc*/
       {
+  unsigned int v22; // eax
         do /*0x757b9a*/
         {
           v30 = a4; /*0x757a1c*/
           v31 = a3; /*0x757a20*/
-          v10 = *(_DWORD *)(*(_DWORD *)a5 + 4 * *(_DWORD *)(a5 + 12)); /*0x757a24*/
+          int v10 = *(_DWORD *)(*(_DWORD *)a5 + 4 * *(_DWORD *)(a5 + 12)); /*0x757a24*/
           v32 = a1; /*0x757a27*/
           if ( v10 != -1 ) /*0x757a2e*/
           {
             v11 = (unsigned __int8 *)(v10 + *(_DWORD *)(a5 + 8)); /*0x757a37*/
-            v37 = *(unsigned __int8 *)(a5 + 50); /*0x757a40*/
+            int v37 = *(unsigned __int8 *)(a5 + 50); /*0x757a40*/
             if ( *(_BYTE *)(a5 + 50) ) /*0x757a3b*/
             {
               do /*0x757b5e*/
@@ -1415,19 +1282,20 @@ char __usercall ProcessVoxelColorScanline@<al>(unsigned int a1@<edx>, int a2@<eb
                 LOWORD(a2) = *(_WORD *)(a5 + 46) * v12; /*0x757a74*/
                 a1 += a2; /*0x757a79*/
                 a2 = v37 - v12; /*0x757a7f*/
-                v14 = *v13; /*0x757a83*/
+                int v14 = *v13; /*0x757a83*/
                 v15 = v13 + 1; /*0x757a85*/
-                v26 = a3; /*0x757a88*/
-                v25 = a1; /*0x757a8c*/
+                int v26 = a3; /*0x757a88*/
+                unsigned int v25 = a1; /*0x757a8c*/
                 v37 = a2; /*0x757a90*/
                 if ( v14 ) /*0x757a94*/
                 {
-                  v27 = v14; /*0x757a9c*/
+  bool v21; // zf
+                  int v27 = v14; /*0x757a9c*/
                   v37 = a2 - v14; /*0x757aa0*/
                   do /*0x757b51*/
                   {
                     a2 = BYTE1(a4); /*0x757ab3*/
-                    v16 = a2 | a3 & 0xFF00; /*0x757ab6*/
+                    int v16 = a2 | a3 & 0xFF00; /*0x757ab6*/
                     v17 = BYTE1(a1); /*0x757ab8*/
                     if ( v17 <= (unsigned __int8)DataGlobal_B1D5E0[v16] ) /*0x757ac7*/
                     {
@@ -1496,42 +1364,23 @@ int VoxelDrawScanline()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __usercall VoxelDrawScanline@<al>(unsigned int a1@<ebx>, int a2@<ebp>, int a3@<edi>, int a4)
 {
-  unsigned int v5; // esi
-  _WORD *v6; // eax
   __int16 v7; // di
-  int v8; // eax
-  int v9; // edx
-  int v10; // eax
   unsigned __int8 *v11; // esi
-  int v12; // eax
   unsigned __int8 *v13; // esi
-  int v14; // eax
-  int v15; // ebx
-  int v16; // ebp
-  bool v17; // zf
-  unsigned int v18; // edx
-  bool v19; // cf
-  unsigned int v21; // [esp+10h] [ebp-38h]
   unsigned __int8 v22; // [esp+14h] [ebp-34h]
-  int v23; // [esp+18h] [ebp-30h]
   unsigned __int8 v24; // [esp+1Ch] [ebp-2Ch]
-  int v25; // [esp+20h] [ebp-28h]
-  unsigned int v26; // [esp+24h] [ebp-24h]
-  int v27; // [esp+28h] [ebp-20h]
   __int16 v28; // [esp+2Ch] [ebp-1Ch]
   __int16 v29; // [esp+30h] [ebp-18h]
   __int16 v30; // [esp+34h] [ebp-14h]
   __int16 v31; // [esp+38h] [ebp-10h]
   __int16 v32; // [esp+3Ch] [ebp-Ch]
   __int16 v33; // [esp+40h] [ebp-8h]
-  int v34; // [esp+44h] [ebp-4h]
-  int v35; // [esp+4Ch] [ebp+4h]
 
   g_VoxelOffsetTable[0] = 0; /*0x757bf9*/
-  v5 = 1; /*0x757c10*/
+  unsigned int v5 = 1; /*0x757c10*/
   if ( *(_BYTE *)(a4 + 50) > 1u ) /*0x757c15*/
   {
-    v6 = (_WORD *)(g_VoxelOffsetTable + 2); /*0x757c17*/
+    _WORD * v6 = (_WORD *)(g_VoxelOffsetTable + 2); /*0x757c17*/
     do /*0x757c3e*/
     {
       v7 = *(_WORD *)(a4 + 42) + *(v6 - 1); /*0x757c22*/
@@ -1543,49 +1392,53 @@ char __usercall VoxelDrawScanline@<al>(unsigned int a1@<ebx>, int a2@<ebp>, int 
     }
     while ( v5 < a1 ); /*0x757c3e*/
   }
+  int v8; // eax
   LOBYTE(v8) = *(_BYTE *)(a4 + 49); /*0x757c40*/
   LOWORD(a1) = *(_WORD *)(a4 + 26); /*0x757c43*/
   LOWORD(a2) = *(_WORD *)(a4 + 28); /*0x757c47*/
   LOWORD(a3) = *(_WORD *)(a4 + 24); /*0x757c4b*/
-  v21 = a1; /*0x757c51*/
-  v35 = a2; /*0x757c55*/
-  v27 = 0; /*0x757c59*/
+  unsigned int v21 = a1; /*0x757c51*/
+  int v35 = a2; /*0x757c55*/
+  int v27 = 0; /*0x757c59*/
   if ( (_BYTE)v8 ) /*0x757c5d*/
   {
+  bool v19; // cf
     do /*0x757e5d*/
     {
       v31 = a3; /*0x757c6a*/
-      v34 = *(_DWORD *)(a4 + 12); /*0x757c6e*/
+      int v34 = *(_DWORD *)(a4 + 12); /*0x757c6e*/
       v32 = a1; /*0x757c77*/
       v33 = a2; /*0x757c7b*/
-      v26 = 0; /*0x757c7f*/
+      unsigned int v26 = 0; /*0x757c7f*/
       if ( *(_BYTE *)(a4 + 48) ) /*0x757c72*/
       {
+  unsigned int v18; // edx
         do /*0x757e18*/
         {
-          v9 = *(_DWORD *)(a4 + 12); /*0x757c89*/
+          int v9 = *(_DWORD *)(a4 + 12); /*0x757c89*/
           v28 = a3; /*0x757c8f*/
           v29 = a1; /*0x757c93*/
-          v10 = *(_DWORD *)(*(_DWORD *)(a4 + 4) + 4 * v9); /*0x757c97*/
+          int v10 = *(_DWORD *)(*(_DWORD *)(a4 + 4) + 4 * v9); /*0x757c97*/
           v30 = a2; /*0x757c9a*/
           if ( v10 != -1 ) /*0x757ca1*/
           {
             v11 = (unsigned __int8 *)(v10 + *(_DWORD *)(a4 + 8)); /*0x757caa*/
-            v23 = *(unsigned __int8 *)(a4 + 50); /*0x757cb3*/
+            int v23 = *(unsigned __int8 *)(a4 + 50); /*0x757cb3*/
             if ( *(_BYTE *)(a4 + 50) ) /*0x757cae*/
             {
+  bool v17; // zf
               do /*0x757dd4*/
               {
-                v12 = *v11; /*0x757cbf*/
+                int v12 = *v11; /*0x757cbf*/
                 v13 = v11 - 1; /*0x757cc1*/
                 if ( v12 ) /*0x757cc4*/
                 {
-                  v25 = v12; /*0x757cce*/
+                  int v25 = v12; /*0x757cce*/
                   v23 -= v12; /*0x757cd4*/
                   do /*0x757d89*/
                   {
                     v9 = BYTE1(a3); /*0x757ce7*/
-                    v14 = v9 | a1 & 0xFF00; /*0x757cea*/
+                    int v14 = v9 | a1 & 0xFF00; /*0x757cea*/
                     LOWORD(v9) = BYTE1(a2); /*0x757cef*/
                     if ( (unsigned __int16)BYTE1(a2) <= (unsigned __int8)DataGlobal_B1D5E0[v14] ) /*0x757cfe*/
                     {
@@ -1595,8 +1448,8 @@ char __usercall VoxelDrawScanline@<al>(unsigned int a1@<ebx>, int a2@<ebp>, int 
                     {
                       v24 = *v13; /*0x757d03*/
                       v13 -= 2; /*0x757d11*/
-                      v15 = (unsigned __int8)g_VoxelShadeTable[v24] << 8; /*0x757d31*/
-                      v16 = v13[1]; /*0x757d34*/
+                      int v15 = (unsigned __int8)g_VoxelShadeTable[v24] << 8; /*0x757d31*/
+                      int v16 = v13[1]; /*0x757d34*/
                       DataGlobal_B1D5E0[v14] = v9; /*0x757d3a*/
                       DataGlobal_B1D5E1[v14] = v9; /*0x757d40*/
                       LOBYTE(v15) = g_VoxelColorPalette[v15 + v16]; /*0x757d46*/
@@ -1669,43 +1522,23 @@ int ProcessVoxelColorSamples()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __usercall ProcessVoxelColorSamples@<al>(int *a1@<ebx>, int a2@<ebp>, int a3@<edi>, int *a4)
 {
-  int *v4; // ecx
-  unsigned int v5; // esi
-  _WORD *v6; // eax
   __int16 v7; // dx
   char result; // al
-  int *v9; // eax
-  int *v10; // edx
-  int *v11; // eax
-  _BYTE *v12; // esi
   unsigned __int8 *v13; // esi
   unsigned __int8 v14; // al
-  int v15; // eax
-  char *v16; // esi
-  int v17; // edx
-  int v18; // eax
-  bool v19; // zf
-  unsigned int v20; // edx
-  unsigned int v21; // edx
-  int *v22; // [esp+Ch] [ebp-30h]
-  char v23; // [esp+10h] [ebp-2Ch]
-  int v24; // [esp+14h] [ebp-28h]
-  unsigned int v25; // [esp+18h] [ebp-24h]
-  unsigned int v26; // [esp+1Ch] [ebp-20h]
   __int16 v27; // [esp+20h] [ebp-1Ch]
   __int16 v28; // [esp+24h] [ebp-18h]
   __int16 v29; // [esp+28h] [ebp-14h]
   __int16 v30; // [esp+2Ch] [ebp-10h]
   __int16 v31; // [esp+30h] [ebp-Ch]
   __int16 v32; // [esp+34h] [ebp-8h]
-  int v33; // [esp+38h] [ebp-4h]
 
-  v4 = a4; /*0x7581f0*/
+  int * v4 = a4; /*0x7581f0*/
   g_VoxelOffsetTable[0] = 0; /*0x7581f7*/
-  v5 = 1; /*0x758211*/
+  unsigned int v5 = 1; /*0x758211*/
   if ( *((_BYTE *)a4 + 50) > 1u ) /*0x758216*/
   {
-    v6 = (_WORD *)(g_VoxelOffsetTable + 2); /*0x758218*/
+    _WORD * v6 = (_WORD *)(g_VoxelOffsetTable + 2); /*0x758218*/
     do /*0x75823f*/
     {
       v7 = *(v6 - 1); /*0x75821d*/
@@ -1720,31 +1553,34 @@ char __usercall ProcessVoxelColorSamples@<al>(int *a1@<ebx>, int a2@<ebp>, int a
   LOWORD(a2) = *((_WORD *)a4 + 13); /*0x758249*/
   LOWORD(a4) = *((_WORD *)a4 + 14); /*0x75824d*/
   result = *((_BYTE *)v4 + 49); /*0x758252*/
-  v26 = 0; /*0x758255*/
+  unsigned int v26 = 0; /*0x758255*/
   if ( result ) /*0x75825f*/
   {
+  unsigned int v21; // edx
     do /*0x758415*/
     {
+  int *v9; // eax
       HIWORD(v9) = HIWORD(a4); /*0x758266*/
       v32 = (__int16)a4; /*0x75826d*/
-      v33 = v4[3]; /*0x758276*/
+      int v33 = v4[3]; /*0x758276*/
       v30 = a3; /*0x75827a*/
       v31 = a2; /*0x75827e*/
-      v25 = 0; /*0x758282*/
+      unsigned int v25 = 0; /*0x758282*/
       if ( *((_BYTE *)v4 + 48) ) /*0x758271*/
       {
+  unsigned int v20; // edx
         do /*0x7583d4*/
         {
           v29 = (__int16)a4; /*0x758297*/
-          v10 = (int *)*v4; /*0x75829b*/
+          int * v10 = (int *)*v4; /*0x75829b*/
           v27 = a3; /*0x75829d*/
           v28 = a2; /*0x7582a1*/
-          v11 = *(int **)(*v4 + 4 * v4[3]); /*0x7582a5*/
+          int * v11 = *(int **)(*v4 + 4 * v4[3]); /*0x7582a5*/
           if ( v11 != (int *)-1 ) /*0x7582ab*/
           {
-            v12 = (char *)v11 + v4[2]; /*0x7582b4*/
+            _BYTE * v12 = (char *)v11 + v4[2]; /*0x7582b4*/
             v11 = (int *)*((unsigned __int8 *)v4 + 50); /*0x7582b8*/
-            v22 = v11; /*0x7582bd*/
+            int * v22 = v11; /*0x7582bd*/
             if ( *((_BYTE *)v4 + 50) ) /*0x7582b8*/
             {
               do /*0x758394*/
@@ -1759,19 +1595,20 @@ char __usercall ProcessVoxelColorSamples@<al>(int *a1@<ebx>, int a2@<ebp>, int a
                 a2 += (int)a1; /*0x7582f2*/
                 a1 = (int *)((char *)a4 + (_DWORD)v10); /*0x7582f8*/
                 v10 = (int *)((char *)v22 - v14); /*0x7582fe*/
-                v15 = *v13; /*0x758302*/
-                v16 = (char *)(v13 + 1); /*0x758304*/
+                int v15 = *v13; /*0x758302*/
+                char * v16 = (char *)(v13 + 1); /*0x758304*/
                 a4 = a1; /*0x758307*/
                 v22 = v10; /*0x75830b*/
                 if ( v15 ) /*0x75830f*/
                 {
-                  v24 = v15; /*0x758313*/
+  bool v19; // zf
+                  int v24 = v15; /*0x758313*/
                   v22 = (int *)((char *)v10 - v15); /*0x758317*/
                   do /*0x75838b*/
                   {
-                    v23 = *v16; /*0x75831f*/
-                    v17 = BYTE1(a3); /*0x758330*/
-                    v18 = v17 | a2 & 0xFF00; /*0x758333*/
+                    char v23 = *v16; /*0x75831f*/
+                    int v17 = BYTE1(a3); /*0x758330*/
+                    int v18 = v17 | a2 & 0xFF00; /*0x758333*/
                     ++v16; /*0x758346*/
                     if ( (unsigned __int16)((unsigned __int16)a4 >> 8) > (unsigned __int8)DataGlobal_B1D5E0[v18] ) /*0x75834a*/
                     {
@@ -1830,41 +1667,22 @@ int ProcessVoxelScanSamples()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __usercall ProcessVoxelScanSamples@<al>(unsigned int a1@<ebx>, int a2@<ebp>, int a3@<edi>, unsigned int a4)
 {
-  unsigned int v4; // ecx
-  unsigned int v5; // esi
-  _WORD *v6; // eax
   __int16 v7; // di
   char result; // al
-  unsigned int v9; // eax
-  unsigned int v10; // edx
-  unsigned int v11; // eax
-  char *v12; // esi
-  int v13; // eax
-  char *v14; // esi
-  int v15; // edx
-  int v16; // eax
-  bool v17; // zf
-  unsigned int v18; // edx
-  unsigned int v19; // [esp+10h] [ebp-30h]
-  char v20; // [esp+14h] [ebp-2Ch]
   unsigned __int8 v21; // [esp+14h] [ebp-2Ch]
-  int v22; // [esp+18h] [ebp-28h]
-  unsigned int v23; // [esp+1Ch] [ebp-24h]
-  unsigned int v24; // [esp+20h] [ebp-20h]
   __int16 v25; // [esp+24h] [ebp-1Ch]
   __int16 v26; // [esp+28h] [ebp-18h]
   __int16 v27; // [esp+2Ch] [ebp-14h]
   __int16 v28; // [esp+30h] [ebp-10h]
   __int16 v29; // [esp+34h] [ebp-Ch]
   __int16 v30; // [esp+38h] [ebp-8h]
-  int v31; // [esp+3Ch] [ebp-4h]
 
-  v4 = a4; /*0x758430*/
+  unsigned int v4 = a4; /*0x758430*/
   g_VoxelOffsetTable[0] = 0; /*0x758439*/
-  v5 = 1; /*0x758450*/
+  unsigned int v5 = 1; /*0x758450*/
   if ( *(_BYTE *)(a4 + 50) > 1u ) /*0x758455*/
   {
-    v6 = (_WORD *)(g_VoxelOffsetTable + 2); /*0x758457*/
+    _WORD * v6 = (_WORD *)(g_VoxelOffsetTable + 2); /*0x758457*/
     do /*0x75847e*/
     {
       v7 = *(_WORD *)(a4 + 42) + *(v6 - 1); /*0x758462*/
@@ -1880,46 +1698,49 @@ char __usercall ProcessVoxelScanSamples@<al>(unsigned int a1@<ebx>, int a2@<ebp>
   LOWORD(a2) = *(_WORD *)(a4 + 26); /*0x758488*/
   LOWORD(a4) = *(_WORD *)(a4 + 28); /*0x75848c*/
   result = *(_BYTE *)(v4 + 49); /*0x758491*/
-  v24 = 0; /*0x758494*/
+  unsigned int v24 = 0; /*0x758494*/
   if ( result ) /*0x75849a*/
   {
+  unsigned int v18; // edx
     do /*0x758653*/
     {
       v28 = a3; /*0x7584a7*/
-      v31 = *(_DWORD *)(v4 + 12); /*0x7584ab*/
+      int v31 = *(_DWORD *)(v4 + 12); /*0x7584ab*/
+  unsigned int v9; // eax
       HIWORD(v9) = HIWORD(a4); /*0x7584af*/
       v30 = a4; /*0x7584b3*/
       v29 = a2; /*0x7584bc*/
-      v23 = 0; /*0x7584c0*/
+      unsigned int v23 = 0; /*0x7584c0*/
       if ( *(_BYTE *)(v4 + 48) ) /*0x7584b7*/
       {
         do /*0x758612*/
         {
           v27 = a4; /*0x7584d1*/
-          v10 = *(_DWORD *)(v4 + 4); /*0x7584d5*/
+          unsigned int v10 = *(_DWORD *)(v4 + 4); /*0x7584d5*/
           v25 = a3; /*0x7584d8*/
           v26 = a2; /*0x7584dc*/
-          v11 = *(_DWORD *)(v10 + 4 * *(_DWORD *)(v4 + 12)); /*0x7584e0*/
+          unsigned int v11 = *(_DWORD *)(v10 + 4 * *(_DWORD *)(v4 + 12)); /*0x7584e0*/
           if ( v11 != -1 ) /*0x7584e6*/
           {
-            v12 = (char *)(v11 + *(_DWORD *)(v4 + 8)); /*0x7584ef*/
+            char * v12 = (char *)(v11 + *(_DWORD *)(v4 + 8)); /*0x7584ef*/
             v11 = *(unsigned __int8 *)(v4 + 50); /*0x7584f3*/
-            v19 = v11; /*0x7584f8*/
+            unsigned int v19 = v11; /*0x7584f8*/
             if ( *(_BYTE *)(v4 + 50) ) /*0x7584f3*/
             {
+  bool v17; // zf
               do /*0x7585d2*/
               {
-                v13 = (unsigned __int8)*v12; /*0x758504*/
-                v14 = v12 - 1; /*0x758506*/
+                int v13 = (unsigned __int8)*v12; /*0x758504*/
+                char * v14 = v12 - 1; /*0x758506*/
                 if ( v13 ) /*0x758509*/
                 {
-                  v22 = v13; /*0x758513*/
+                  int v22 = v13; /*0x758513*/
                   v19 -= v13; /*0x758519*/
                   do /*0x75858d*/
                   {
-                    v20 = *v14; /*0x758521*/
-                    v15 = BYTE1(a3); /*0x758532*/
-                    v16 = v15 | a2 & 0xFF00; /*0x758535*/
+                    char v20 = *v14; /*0x758521*/
+                    int v15 = BYTE1(a3); /*0x758532*/
+                    int v16 = v15 | a2 & 0xFF00; /*0x758535*/
                     --v14; /*0x758548*/
                     if ( (unsigned __int16)BYTE1(a4) > (unsigned __int8)DataGlobal_B1D5E0[v16] ) /*0x75854c*/
                     {
@@ -1987,25 +1808,20 @@ namespace gamemd {
 int E4Recv_758AD0::sub_758AD0(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_758AD0(_DWORD *this, int *a2)
+void sub_758AD0(_DWORD *this, int *a2)
 {
-  int v3; // ebx
-  int v4; // eax
-  int v5; // edx
-  int v6; // ecx
-  int v7; // edx
-  _DWORD v9[4]; // [esp+Ch] [ebp-10h] BYREF
 
-  v3 = 0; /*0x758ae2*/
+  int v3 = 0; /*0x758ae2*/
   if ( !(*(int (__thiscall **)(int *, int))(*a2 + 28))(a2, 2) ) /*0x758ae4*/
     goto LABEL_5; /*0x758ae4*/
-  v4 = *(this + 2); /*0x758aed*/
-  v5 = *(this + 1); /*0x758af0*/
+  int v4 = *(this + 2); /*0x758aed*/
+  int v5 = *(this + 1); /*0x758af0*/
+  _DWORD v9[4]; // [esp+Ch] [ebp-10h] BYREF
   v9[0] = *this; /*0x758af3*/
-  v6 = *(this + 3); /*0x758af7*/
+  int v6 = *(this + 3); /*0x758af7*/
   v9[2] = v4; /*0x758afa*/
   v9[1] = v5; /*0x758afe*/
-  v7 = *a2; /*0x758b02*/
+  int v7 = *a2; /*0x758b02*/
   v9[3] = v6; /*0x758b08*/
   if ( (*(int (__thiscall **)(int *, _DWORD *, int))(v7 + 48))(a2, v9, 16) != 16 /*0x758b4a*/
     || (*(int (__thiscall **)(int *, _DWORD, int))(*a2 + 48))(a2, *(this + 4), 768) != 768
@@ -2044,7 +1860,7 @@ namespace gamemd {
 void sub_7591C0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl sub_7591C0()
+void sub_7591C0()
 {
   dword_B45B58 = (int)&vt_VectorClass_MovieHandle; /*0x7591c8*/
   if ( AsyncIO_Instance && byte_B45B65 ) /*0x7591dc*/
@@ -2075,16 +1891,9 @@ namespace gamemd {
 BOOL E4Recv_75A120::sub_75A120(int a2, int * a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall sub_75A120(int this, int a2, int *a3, int a4)
+void sub_75A120(int this, int a2, int *a3, int a4)
 {
   BOOL result; // eax
-  bool v6; // zf
-  int v7; // eax
-  int v8; // esi
-  int v9; // esi
-  int v10; // esi
-  int v11; // eax
-  int v12; // [esp-Ch] [ebp-10h]
 
   result = 1; /*0x75a127*/
   switch ( a2 ) /*0x75a136*/
@@ -2097,9 +1906,9 @@ BOOL __thiscall sub_75A120(int this, int a2, int *a3, int a4)
       a3 = 0; /*0x75a147*/
       if ( !LookupFileInfoCache((const char *)(this + 113), 0, &a3, &a2, 0) ) /*0x75a15e*/
         goto LABEL_5; /*0x75a15e*/
-      v6 = (*(int (__thiscall **)(int, int, int))(this->M4 + 32))(this + 4, a3[3], 1) == 0; /*0x75a17c*/
-      v7 = this->M4; /*0x75a17e*/
-      v12 = a2; /*0x75a180*/
+      bool v6 = (*(int (__thiscall **)(int, int, int))(this->M4 + 32))(this + 4, a3[3], 1) == 0; /*0x75a17c*/
+      int v7 = this->M4; /*0x75a17e*/
+      int v12 = a2; /*0x75a180*/
       *(_BYTE *)(this + 112) = !v6; /*0x75a186*/
       result = (*(int (__thiscall **)(int, int, int))(v7 + 40))(this + 4, v12, 1) == 0; /*0x75a191*/
       break; /*0x75a193*/
@@ -2108,7 +1917,7 @@ BOOL __thiscall sub_75A120(int this, int a2, int *a3, int a4)
       *(_BYTE *)(this + 112) = 0; /*0x75a278*/
       return 0; /*0x75a276*/
     case 5: /*0x75a136*/
-      v8 = a4; /*0x75a1a0*/
+      int v8 = a4; /*0x75a1a0*/
       return (*(int (__thiscall **)(int, int *, int))(this->M4 + 36))(this + 4, a3, a4) != v8; /*0x75a1b3*/
     case 6: /*0x75a136*/
 LABEL_5:
@@ -2120,7 +1929,7 @@ LABEL_5:
     case 8: /*0x75a136*/
       if ( a4 <= 0 ) /*0x75a1e1*/
       {
-        v10 = this + 4; /*0x75a21c*/
+        int v10 = this + 4; /*0x75a21c*/
         result = (*(int (__thiscall **)(int, int, int *))(this->M4 + 40))(this + 4, a4, a3) == 0; /*0x75a22a*/
         if ( !result ) /*0x75a22b*/
         {
@@ -2131,14 +1940,14 @@ LABEL_5:
       }
       else
       {
-        v9 = this + 4; /*0x75a1ea*/
+        int v9 = this + 4; /*0x75a1ea*/
         result = (*(int (__thiscall **)(int, int, int *))(this->M4 + 40))(this + 4, a4 - 1, a3) == 0; /*0x75a1f9*/
         if ( !result ) /*0x75a1fa*/
           result = (*(int (__thiscall **)(int, int *, int))(*(_DWORD *)v9 + 36))(v9, &a4, 1) != 1; /*0x75a210*/
       }
       break; /*0x75a212*/
     case 9: /*0x75a136*/
-      v11 = (*(int (__thiscall **)(int))(this->M4 + 44))(this + 4); /*0x75a25e*/
+      int v11 = (*(int (__thiscall **)(int))(this->M4 + 44))(this + 4); /*0x75a25e*/
       *a3 = v11; /*0x75a265*/
 LABEL_14:
       result = 0; /*0x75a267*/
@@ -2191,13 +2000,12 @@ namespace gamemd {
 int sub_75A350(int a1, int a2, unsigned char * a3, unsigned int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __cdecl sub_75A350(int a1, int a2, _BYTE *a3, unsigned int a4)
+int sub_75A350(int a1, int a2, _BYTE *a3, unsigned int a4)
 {
-  int v4; // ebx
   int i; // eax
   int result; // eax
 
-  v4 = *(_DWORD *)(a1 + 172); /*0x75a359*/
+  int v4 = *(_DWORD *)(a1 + 172); /*0x75a359*/
   switch ( a2 ) /*0x75a367*/
   {
     case 2: /*0x75a367*/
@@ -2249,23 +2057,14 @@ int sub_75F230(unsigned int * a1, unsigned int * a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall sub_75F230(_DWORD *a1, _DWORD *a2)
 {
-  int v2; // esi
-  int v3; // edi
-  double v4; // st7
-  double v5; // st6
-  int v6; // eax
-  int v8; // eax
-  int v9; // eax
-  int v10; // eax
-  double v11; // [esp+10h] [ebp-8h]
 
-  v2 = *a2 - *a1; /*0x75f239*/
-  v3 = a1[1] - a2[1]; /*0x75f246*/
-  v11 = Math::SinCos(0.3926990816987241); /*0x75f25a*/
-  v4 = v11 / Math::ArcTan2(0.3926990816987241); /*0x75f26d*/
+  int v2 = *a2 - *a1; /*0x75f239*/
+  int v3 = a1[1] - a2[1]; /*0x75f246*/
+  double v11 = Math::SinCos(0.3926990816987241); /*0x75f25a*/
+  double v4 = v11 / Math::ArcTan2(0.3926990816987241); /*0x75f26d*/
   if ( !v2 ) /*0x75f276*/
     goto LABEL_11; /*0x75f276*/
-  v5 = (double)v3 / (double)v2; /*0x75f280*/
+  double v5 = (double)v3 / (double)v2; /*0x75f280*/
   if ( v5 >= 1.0 / v4 ) /*0x75f299*/
   {
     if ( v5 >= v4 ) /*0x75f2ba*/
@@ -2273,25 +2072,25 @@ int __fastcall sub_75F230(_DWORD *a1, _DWORD *a2)
   }
   else if ( v5 >= v4 ) /*0x75f29e*/
   {
-    v6 = (v2 <= 0) - 1; /*0x75f2a8*/
+    int v6 = (v2 <= 0) - 1; /*0x75f2a8*/
     LOBYTE(v6) = v6 & 0xFC; /*0x75f2ac*/
     return v6 + 5; /*0x75f2b6*/
   }
   if ( v5 >= -v4 ) /*0x75f2c9*/
   {
-    v8 = (v2 <= 0) - 1; /*0x75f2d3*/
+    int v8 = (v2 <= 0) - 1; /*0x75f2d3*/
     LOBYTE(v8) = v8 & 0xFC; /*0x75f2d7*/
     return v8 + 6; /*0x75f2e1*/
   }
 LABEL_8:
   if ( v5 < -v4 && v5 >= -1.0 / v4 ) /*0x75f304*/
   {
-    v9 = (v2 <= 0) - 1; /*0x75f30e*/
+    int v9 = (v2 <= 0) - 1; /*0x75f30e*/
     LOBYTE(v9) = v9 & 0xFC; /*0x75f310*/
     return v9 + 7; /*0x75f318*/
   }
 LABEL_11:
-  v10 = (v3 <= 0) - 1; /*0x75f31d*/
+  int v10 = (v3 <= 0) - 1; /*0x75f31d*/
   LOBYTE(v10) = v10 & 0xFC; /*0x75f326*/
   return v10 + 4; /*0x75f2b3*/
 }
@@ -3138,12 +2937,9 @@ char *__userpurge sub_753BF0@<eax>(
         char a7,
         char a8)
 {
-  _WORD *v8; // esi
   char *result; // eax
-  int v10; // ebx
-  int v11; // ebp
 
-  v8 = &DataGlobal_B2D5EC; /*0x753bf6*/
+  _WORD * v8 = &DataGlobal_B2D5EC; /*0x753bf6*/
   result = (char *)&DataGlobal_B2FB79; /*0x753bfd*/
   do /*0x753c4a*/
   {
@@ -3152,8 +2948,8 @@ char *__userpurge sub_753BF0@<eax>(
     ++v8; /*0x753c0e*/
     LOWORD(a4) = (unsigned __int8)a3; /*0x753c11*/
     LOWORD(a3) = (unsigned __int8)((unsigned __int8)*(result - 2) >> a7); /*0x753c24*/
-    v10 = a3 << a8; /*0x753c28*/
-    v11 = v10 | (a4 << a1); /*0x753c2e*/
+    int v10 = a3 << a8; /*0x753c28*/
+    int v11 = v10 | (a4 << a1); /*0x753c2e*/
     LOWORD(v10) = (unsigned __int8)((unsigned __int8)*(result - 3) >> a5); /*0x753c39*/
     a3 = v10 << a6; /*0x753c3d*/
     a4 = a3 | v11; /*0x753c3f*/

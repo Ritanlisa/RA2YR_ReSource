@@ -14,15 +14,12 @@ int __fastcall LightningStorm::Start(int a1, int a2, int a3, #375 *a4)
 {
   int result; // eax
   __int16 v7; // si
-  int v8; // esi
-  int v9; // ecx
-  int v10; // esi
   wchar_t *StringCSF; // eax
-  int v12; // [esp+Ch] [ebp-4h]
 
   result = a3; /*0x539eb1*/
   if ( a3 == unk_A9F9F8 ) /*0x539ec3*/
   {
+  int v12; // [esp+Ch] [ebp-4h]
     for ( ; !LayerClass::CoordinatesLegal(&DataGlobal_87F7E8, (__int16 *)&a3); a3 = v12 ) /*0x539edd*/
     {
       v7 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, g_AircraftTrackerState); /*0x539f04*/
@@ -45,7 +42,7 @@ int __fastcall LightningStorm::Start(int a1, int a2, int a3, #375 *a4)
     else
     {
       CreateTriggerClassIfFarEnough(13, a2, result); /*0x539f89*/
-      v8 = 0; /*0x539f99*/
+      int v8 = 0; /*0x539f99*/
       unk_827FC4 = a1; /*0x539f9b*/
       unk_827FC0 = (int)g_CurrentFrame; /*0x539fa3*/
       for ( unk_A9FAB4 = 1; v8 < HouseClass_Count; ++v8 ) /*0x539fb0*/
@@ -53,7 +50,7 @@ int __fastcall LightningStorm::Start(int a1, int a2, int a3, #375 *a4)
         if ( !unk_A9FACC /*0x539fc5*/
           || !(unsigned __int8)HouseClass::IsAlliedWith(unk_A9FACC, *(#375 **)&HouseClass_Array->__pad_0[4 * v8]) )
         {
-          v9 = *(_DWORD *)&HouseClass_Array->__pad_0[4 * v8]; /*0x539fd3*/
+          int v9 = *(_DWORD *)&HouseClass_Array->__pad_0[4 * v8]; /*0x539fd3*/
           if ( !*(_BYTE *)(v9 + 501) && !MuteSWLaunches ) /*0x539fe7*/
             HouseClass::CreateRadarOutage(v9, a1); /*0x539fea*/
         }
@@ -63,7 +60,7 @@ int __fastcall LightningStorm::Start(int a1, int a2, int a3, #375 *a4)
       ScenarioClass::UpdateLighting(); /*0x53a009*/
       if ( LOBYTE(g_RulesClass_Instance[1].?) ) /*0x53a014*/
       {
-        v10 = 3; /*0x53a023*/
+        int v10 = 3; /*0x53a023*/
         if ( HouseClass_Player ) /*0x53a02a*/
           v10 = *((_DWORD *)HouseClass_Player + 22549); /*0x53a02c*/
         PlayVocClass(g_RulesClass_Instance->?[3], 0x2000, 1.0, 0); /*0x53a044*/
@@ -83,7 +80,7 @@ namespace gamemd {
 char LightningStorm::IsActive()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char LightningStorm_IsActive()
+void LightningStorm_IsActive()
 {
   return unk_A9FAB4; /*0x53a105*/
 }
@@ -95,11 +92,8 @@ namespace gamemd {
 int LightningStorm::Strike(IUnknown * aP0)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall LightningStorm::Strike(IUnknown *aP0)
+void LightningStorm::Strike(IUnknown *aP0)
 {
-  _DWORD *v1; // esi
-  int v2; // eax
-  int v3; // ecx
   int result; // eax
   CoordStruct *v5; // esi
   void **v6; // eax
@@ -107,8 +101,9 @@ int __stdcall LightningStorm::Strike(IUnknown *aP0)
   AnimClass *v8; // eax
   CoordStruct aP2; // [esp+4h] [ebp-Ch] BYREF
 
-  v1 = CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&aP0); /*0x53a159*/
-  v2 = (*(int (__thiscall **)(_DWORD))(***(_DWORD ***)(*(_DWORD *)&stru_87C374[44652] + 732) + 156))(**(_DWORD **)(*(_DWORD *)&stru_87C374[44652] + 732)); /*0x53a165*/
+  _DWORD * v1 = CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&aP0); /*0x53a159*/
+  int v2 = (*(int (__thiscall **)(_DWORD))(***(_DWORD ***)(*(_DWORD *)&stru_87C374[44652] + 732) + 156))(**(_DWORD **)(*(_DWORD *)&stru_87C374[44652] + 732)); /*0x53a165*/
+  int v3; // ecx
   v3 = ((v1[80] & 0x100) != 0 ? unk_A9FA84 : 0)
      + Coord::ScaleToScreenY((void *)(*(__int16 *)(v2 + 4) / 2))
      + unk_A9FA90 * *((char *)v1 + 283);
@@ -162,47 +157,31 @@ namespace gamemd {
 char LightningStorm::Strike2(int a1, int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall LightningStorm::Strike2(int a1, int a2, int a3)
+void LightningStorm::Strike2(int a1, int a2, int a3)
 {
-  _DWORD *v3; // esi
   int *Coords; // eax
-  int v5; // ecx
-  int v6; // edx
-  void *v7; // edi
   void **v8; // eax
   void **v9; // edi
-  int v10; // eax
   void **v11; // eax
   RulesClass *v12; // eax
-  unsigned int v13; // eax
   int Climb; // ebp
   void *WarheadVersusMultiplier; // ebx
   void **v16; // edi
-  void *v17; // eax
-  _DWORD *v18; // ebx
   int ClosestObjectCell; // eax
-  int v20; // edi
   void **v21; // edi
   void **v22; // esi
-  int v23; // eax
-  char v25; // [esp+12h] [ebp-2Eh]
-  char v26; // [esp+13h] [ebp-2Dh]
-  int v27; // [esp+14h] [ebp-2Ch]
-  int v28; // [esp+18h] [ebp-28h]
-  int v29; // [esp+1Ch] [ebp-24h] BYREF
-  int v30; // [esp+20h] [ebp-20h]
-  int v31; // [esp+28h] [ebp-18h] BYREF
-  int v32; // [esp+2Ch] [ebp-14h]
   void **v33; // [esp+30h] [ebp-10h]
-  int v34[3]; // [esp+34h] [ebp-Ch] BYREF
 
-  v3 = Coord::To_Cell(&DataGlobal_87F7E8, &a1); /*0x53a31a*/
+  _DWORD * v3 = Coord::To_Cell(&DataGlobal_87F7E8, &a1); /*0x53a31a*/
+  int v29; // [esp+1Ch] [ebp-24h] BYREF
   Coords = CellClass::GetCoords(v3, &v29); /*0x53a31f*/
-  v5 = Coords[1]; /*0x53a328*/
-  v6 = Coords[2]; /*0x53a32b*/
+  int v5 = Coords[1]; /*0x53a328*/
+  int v6 = Coords[2]; /*0x53a32b*/
+  int v34[3]; // [esp+34h] [ebp-Ch] BYREF
   v34[0] = *Coords; /*0x53a32e*/
   v34[1] = v5; /*0x53a337*/
   v34[2] = v6; /*0x53a33b*/
+  void *v7; // edi
   v7 = *(void **)(g_RulesClass_Instance->? /*0x53a363*/
                 + 4 * ((unsigned int)Random::State((_DWORD *)g_ScenarioClass_Instance + 134) % g_RulesClass_Instance->?));
   v8 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x53a366*/
@@ -215,21 +194,21 @@ char __stdcall LightningStorm::Strike2(int a1, int a2, int a3)
     && unk_A9FA2C > 0
     && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(unk_A9FA18 + 8))(&unk_A9FA18, unk_A9FA2C + unk_A9FA20, 0) )
   {
-    v10 = unk_A9FA28++; /*0x53a3d5*/
+    int v10 = unk_A9FA28++; /*0x53a3d5*/
     *((_DWORD *)unk_A9FA1C + v10) = v9; /*0x53a3e4*/
   }
-  v27 = v3[9]; /*0x53a40f*/
-  v28 = *((char *)v3 + 283); /*0x53a413*/
+  int v27 = v3[9]; /*0x53a40f*/
+  int v28 = *((char *)v3 + 283); /*0x53a413*/
   v11 = (void **)(v28 * unk_A9FA90 + ((v3[80] & 0x100) != 0 ? unk_A9FA84 : 0));
-  v31 = ((__int16)v27 << 8) + 128; /*0x53a43d*/
-  v32 = (SHIWORD(v27) << 8) + 128; /*0x53a441*/
+  int v31 = ((__int16)v27 << 8) + 128; /*0x53a43d*/
+  int v32 = (SHIWORD(v27) << 8) + 128; /*0x53a441*/
   v33 = v11; /*0x53a445*/
   if ( v31 != unk_A9FA30 || __PAIR64__((unsigned int)v11, (SHIWORD(v27) << 8) + 128) != qword_A9FA34 ) /*0x53a451*/
   {
     v12 = g_RulesClass_Instance; /*0x53a45f*/
     if ( g_RulesClass_Instance->? > 0 ) /*0x53a46c*/
     {
-      v13 = Random::State((_DWORD *)g_ScenarioClass_Instance + 134); /*0x53a47a*/
+      unsigned int v13 = Random::State((_DWORD *)g_ScenarioClass_Instance + 134); /*0x53a47a*/
       StartAudioControllerAt(*(_DWORD *)(g_RulesClass_Instance->?[1] + 4 * (v13 % g_RulesClass_Instance->?)), (int)&v31, 0); /*0x53a49e*/
       v12 = g_RulesClass_Instance; /*0x53a4a3*/
     }
@@ -238,16 +217,17 @@ char __stdcall LightningStorm::Strike2(int a1, int a2, int a3)
     v16 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x53a4d3*/
     if ( v16 ) /*0x53a4da*/
     {
-      v17 = (void *)Return::HRESULT_Fail(v31, v32, (int)v33); /*0x53a4f7*/
+      void * v17 = (void *)Return::HRESULT_Fail(v31, v32, (int)v33); /*0x53a4f7*/
       AnimClass::ctor(v16, WarheadVersusMultiplier, &v31, 0, 1, (void *)0x2600, v17, 0); /*0x53a50e*/
     }
-    v25 = 0; /*0x53a515*/
-    v18 = Cell::IsBridge(v3); /*0x53a51f*/
+    char v25 = 0; /*0x53a515*/
+    _DWORD * v18 = Cell::IsBridge(v3); /*0x53a51f*/
     v29 = 0; /*0x53a524*/
-    v30 = 0; /*0x53a528*/
+    int v30 = 0; /*0x53a528*/
     ClosestObjectCell = Object::FindClosestObjectCell(v3, &v29, 0, 0); /*0x53a538*/
-    v20 = ClosestObjectCell; /*0x53a53d*/
+    int v20 = ClosestObjectCell; /*0x53a53d*/
     if ( !ClosestObjectCell /*0x53a552*/
+  char v26; // [esp+13h] [ebp-2Dh]
       || (v26 = 1, (*(int (__thiscall **)(int))(*(_DWORD *)ClosestObjectCell + 44))(ClosestObjectCell) != 15) )
     {
       v26 = 0; /*0x53a554*/
@@ -292,7 +272,7 @@ char __stdcall LightningStorm::Strike2(int a1, int a2, int a3)
             v22 = v11; /*0x53a641*/
             if ( v11 ) /*0x53a648*/
             {
-              v23 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, g_RulesClass_Instance->ExecutePlanSound - 1); /*0x53a665*/
+              int v23 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, g_RulesClass_Instance->ExecutePlanSound - 1); /*0x53a665*/
               LOBYTE(v11) = (unsigned __int8)AnimClass::ctor( /*0x53a68b*/
                                                v22,
                                                *(void **)(g_RulesClass_Instance->DefaultChronoSound + 4 * v23),

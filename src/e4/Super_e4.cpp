@@ -8,7 +8,7 @@ namespace gamemd {
 int Super::GetDefaultTimer()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Super_GetDefaultTimer(_DWORD *this)
+void Super_GetDefaultTimer(_DWORD *this)
 {
   int result; // eax
 

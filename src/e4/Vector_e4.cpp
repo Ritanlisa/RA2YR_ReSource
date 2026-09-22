@@ -9,7 +9,7 @@ namespace gamemd {
 double Math_Vector2D_Magnitude()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-double __thiscall Math_Vector2D_Magnitude(int *this)
+void Math_Vector2D_Magnitude(int *this)
 {
   double result; // st7
 
@@ -25,11 +25,11 @@ namespace gamemd {
 void Vector::Cleanup()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall Vector_Cleanup(int this)
+void Vector_Cleanup(int this)
 {
   if ( this->Vector_field_0x4 && *(_BYTE *)(this + 13) ) /*0x512d3d*/
   {
-    __3_YAXPAX_Z(*(void **)(this + 4)); /*0x512d43*/
+    __3_YAXPAX_Z(this->q004); /*0x512d43*/
     this->Vector_field_0x4 = 0; /*0x512d4b*/
   }
   *(_BYTE *)(this + 13) = 0; /*0x512d4e*/
@@ -43,11 +43,11 @@ namespace gamemd {
 void Vector::Destructor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall Vector_Destructor(int this)
+void Vector_Destructor(int this)
 {
   if ( this->Vector_field_0x4 && *(_BYTE *)(this + 13) ) /*0x51310d*/
   {
-    __3_YAXPAX_Z(*(void **)(this + 4)); /*0x513113*/
+    __3_YAXPAX_Z(this->q004); /*0x513113*/
     this->Vector_field_0x4 = 0; /*0x51311b*/
   }
   *(_BYTE *)(this + 13) = 0; /*0x51311e*/
@@ -61,7 +61,7 @@ namespace gamemd {
 void Vector::MatrixMulVectorMath(float a2, float a3, float a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall Math_MatrixMulVector(float *this, float a2, float a3, float a4)
+void Math_MatrixMulVector(float *this, float a2, float a3, float a4)
 {
   this->IsInitialized = a3 * this->q004 + a4 * this->q008 + a2 * *this + this->IsInitialized; /*0x5ae8ab*/
   this->q007 = a2 * this->q004 + a3 * this->CapacityIncrement + a4 * this->q006 + this->q007; /*0x5ae8ca*/
@@ -75,11 +75,11 @@ namespace gamemd {
 void Vector::Cleanup2()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall Vector_Cleanup2(int this)
+void Vector_Cleanup2(int this)
 {
   if ( this->Vector_field_0x4 && *(_BYTE *)(this + 13) ) /*0x67abed*/
   {
-    __3_YAXPAX_Z(*(void **)(this + 4)); /*0x67abf3*/
+    __3_YAXPAX_Z(this->q004); /*0x67abf3*/
     this->Vector_field_0x4 = 0; /*0x67abfb*/
   }
   *(_BYTE *)(this + 13) = 0; /*0x67abfe*/

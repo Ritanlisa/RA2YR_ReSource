@@ -10,7 +10,7 @@ namespace gamemd {
 int Power::Update(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Power_Update(_DWORD *this, int *a2)
+void Power_Update(_DWORD *this, int *a2)
 {
   AbstractClass::ProcessPower((int)this, a2); /*0x43a5d9*/
   return Power::TimerProcess((int)g_CurrentFrame - this->q00C); /*0x43a5f0*/
@@ -73,15 +73,10 @@ _DWORD *__thiscall Power_UpdateAll(_DWORD *this)
   int i36; // esi
   int i37; // esi
   int i38; // esi
-  int v50; // eax
-  int v51; // edx
-  int v53; // [esp+C0h] [ebp-Ch] BYREF
-  int v54; // [esp+C4h] [ebp-8h]
-  int v55; // [esp+C8h] [ebp-4h]
 
-  v53 = 0; /*0x67c6f2*/
-  v54 = 0; /*0x67c6fa*/
-  v55 = 0; /*0x67c702*/
+  int v53 = 0; /*0x67c6f2*/
+  int v54 = 0; /*0x67c6fa*/
+  int v55 = 0; /*0x67c702*/
   Power::ComputeHousePowerChecksum(&v53); /*0x67c70a*/
   for ( i = 0; i < g_SuperWeaponTypeArray; ++i ) /*0x67c718*/
     (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)g_SuperWeaponTypeCount + i) + 52))( /*0x67c72a*/
@@ -273,9 +268,9 @@ _DWORD *__thiscall Power_UpdateAll(_DWORD *this)
     Power::TimerProcess(*((_DWORD *)HouseClass_Player + 12)); /*0x67cea0*/
   Power::TimerProcess((int)g_CurrentFrame); /*0x67ceb0*/
   Power::TimerProcess((int)g_SelectionManager); /*0x67cebf*/
-  v50 = v54; /*0x67ceca*/
+  int v50 = v54; /*0x67ceca*/
   *this = v53; /*0x67cece*/
-  v51 = v55; /*0x67ced0*/
+  int v51 = v55; /*0x67ced0*/
   this->q004 = v50; /*0x67ced5*/
   this->q008 = v51; /*0x67cedb*/
   return this; /*0x67ced4*/
@@ -288,29 +283,8 @@ namespace gamemd {
 int Power::ComputeHousePowerChecksum(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ComputeHousePowerChecksum(int this, unsigned int *a2)
+void ComputeHousePowerChecksum(int this, unsigned int *a2)
 {
-  int v3; // ecx
-  int v4; // edx
-  int v5; // edx
-  int v6; // ecx
-  int v7; // edx
-  int v8; // eax
-  int v9; // ecx
-  int v10; // edx
-  int v11; // eax
-  int v12; // ecx
-  int v13; // eax
-  int v14; // edx
-  int v15; // eax
-  int v16; // edx
-  int v17; // eax
-  int v18; // edx
-  int v19; // eax
-  int v20; // edx
-  int v21; // eax
-  int v22; // ebx
-  int v23; // edx
 
   Checksum::AddString(a2, (unsigned __int8 *)(this + 5050)); /*0x68b952*/
   Power::TimerProcess(*(_DWORD *)(this + 5172)); /*0x68b960*/
@@ -324,31 +298,38 @@ int __thiscall ComputeHousePowerChecksum(int this, unsigned int *a2)
   Power::TimerProcess(*(_DWORD *)(this + 7300)); /*0x68b9d0*/
   Power::TimerProcess(*(_DWORD *)(this + 7280)); /*0x68b9de*/
   Checksummer::Add_double(*(_DWORD *)(this + 7288), *(_DWORD *)(this + 7292)); /*0x68b9f3*/
+  int v3; // ecx
   LOBYTE(v3) = *(_BYTE *)(this + 13500); /*0x68b9f8*/
   Power::FlagProcess((int *)a2, v3); /*0x68ba01*/
+  int v4; // edx
   LOBYTE(v4) = *(_BYTE *)(this + 13485); /*0x68ba06*/
   Power::FlagProcess((int *)a2, v4); /*0x68ba0f*/
   Power::TimerProcess(*(_DWORD *)(this + 7296) / 100); /*0x68ba2e*/
   Power::TimerProcess(*(_DWORD *)(this + 13472)); /*0x68ba3c*/
+  int v5; // edx
   LOBYTE(v5) = *(_BYTE *)(this + 13484); /*0x68ba41*/
   Power::FlagProcess((int *)a2, v5); /*0x68ba4a*/
   Power::TimerProcess(*(_DWORD *)(this + 13516)); /*0x68ba58*/
+  int v6; // ecx
   LOBYTE(v6) = *(_BYTE *)(this + 13486); /*0x68ba5d*/
   Power::FlagProcess((int *)a2, v6); /*0x68ba66*/
+  int v7; // edx
   LOBYTE(v7) = *(_BYTE *)(this + 13487); /*0x68ba6b*/
-  v8 = Power::FlagProcess((int *)a2, v7); /*0x68ba74*/
+  int v8 = Power::FlagProcess((int *)a2, v7); /*0x68ba74*/
   LOBYTE(v8) = *(_BYTE *)(this + 13488); /*0x68ba79*/
   Power::FlagProcess((int *)a2, v8); /*0x68ba82*/
+  int v9; // ecx
   LOBYTE(v9) = *(_BYTE *)(this + 13490); /*0x68ba87*/
   Power::FlagProcess((int *)a2, v9); /*0x68ba90*/
+  int v10; // edx
   LOBYTE(v10) = *(_BYTE *)(this + 13492); /*0x68ba95*/
-  v11 = Power::FlagProcess((int *)a2, v10); /*0x68ba9e*/
+  int v11 = Power::FlagProcess((int *)a2, v10); /*0x68ba9e*/
   LOBYTE(v11) = *(_BYTE *)(this + 13489); /*0x68baa3*/
   Power::FlagProcess((int *)a2, v11); /*0x68baac*/
   Power::TimerProcess(*(_DWORD *)(this + 7300)); /*0x68baba*/
   Power::TimerProcess(*(_DWORD *)(this + 13520)); /*0x68bac8*/
-  v12 = *(_DWORD *)(this + 4584); /*0x68bacd*/
-  v13 = *(_DWORD *)(this + 4592); /*0x68bad3*/
+  int v12 = *(_DWORD *)(this + 4584); /*0x68bacd*/
+  int v13 = *(_DWORD *)(this + 4592); /*0x68bad3*/
   if ( v12 != -1 ) /*0x68badc*/
   {
     if ( (int)g_CurrentFrame - v12 >= v13 ) /*0x68bae8*/
@@ -357,8 +338,8 @@ int __thiscall ComputeHousePowerChecksum(int this, unsigned int *a2)
       v13 -= (int)g_CurrentFrame - v12; /*0x68baea*/
   }
   Power::TimerProcess(v13); /*0x68baf3*/
-  v14 = *(_DWORD *)(this + 4632); /*0x68baf8*/
-  v15 = *(_DWORD *)(this + 4640); /*0x68bafe*/
+  int v14 = *(_DWORD *)(this + 4632); /*0x68baf8*/
+  int v15 = *(_DWORD *)(this + 4640); /*0x68bafe*/
   if ( v14 != -1 ) /*0x68bb07*/
   {
     if ( (int)g_CurrentFrame - v14 >= v15 ) /*0x68bb13*/
@@ -367,8 +348,8 @@ int __thiscall ComputeHousePowerChecksum(int this, unsigned int *a2)
       v15 -= (int)g_CurrentFrame - v14; /*0x68bb15*/
   }
   Power::TimerProcess(v15); /*0x68bb1e*/
-  v16 = *(_DWORD *)(this + 4644); /*0x68bb23*/
-  v17 = *(_DWORD *)(this + 4652); /*0x68bb29*/
+  int v16 = *(_DWORD *)(this + 4644); /*0x68bb23*/
+  int v17 = *(_DWORD *)(this + 4652); /*0x68bb29*/
   if ( v16 != -1 ) /*0x68bb32*/
   {
     if ( (int)g_CurrentFrame - v16 >= v17 ) /*0x68bb3e*/
@@ -377,8 +358,8 @@ int __thiscall ComputeHousePowerChecksum(int this, unsigned int *a2)
       v17 -= (int)g_CurrentFrame - v16; /*0x68bb40*/
   }
   Power::TimerProcess(v17); /*0x68bb49*/
-  v18 = *(_DWORD *)(this + 4656); /*0x68bb4e*/
-  v19 = *(_DWORD *)(this + 4664); /*0x68bb54*/
+  int v18 = *(_DWORD *)(this + 4656); /*0x68bb4e*/
+  int v19 = *(_DWORD *)(this + 4664); /*0x68bb54*/
   if ( v18 != -1 ) /*0x68bb5d*/
   {
     if ( (int)g_CurrentFrame - v18 >= v19 ) /*0x68bb69*/
@@ -387,8 +368,8 @@ int __thiscall ComputeHousePowerChecksum(int this, unsigned int *a2)
       v19 -= (int)g_CurrentFrame - v18; /*0x68bb6b*/
   }
   Power::TimerProcess(v19); /*0x68bb74*/
-  v20 = *(_DWORD *)(this + 4668); /*0x68bb79*/
-  v21 = *(_DWORD *)(this + 4676); /*0x68bb7f*/
+  int v20 = *(_DWORD *)(this + 4668); /*0x68bb79*/
+  int v21 = *(_DWORD *)(this + 4676); /*0x68bb7f*/
   if ( v20 != -1 ) /*0x68bb88*/
   {
     if ( (int)g_CurrentFrame - v20 >= v21 ) /*0x68bb94*/
@@ -397,7 +378,7 @@ int __thiscall ComputeHousePowerChecksum(int this, unsigned int *a2)
       v21 -= (int)g_CurrentFrame - v20; /*0x68bb96*/
   }
   Power::TimerProcess(v21); /*0x68bb9f*/
-  v22 = *(_DWORD *)(this + 1564); /*0x68bbaa*/
+  int v22 = *(_DWORD *)(this + 1564); /*0x68bbaa*/
   if ( *(_DWORD *)(this + 1556) != -1 ) /*0x68bbb3*/
     v22 += Timer::GetTicks() - *(_DWORD *)(this + 1556); /*0x68bbc6*/
   Power::TimerProcess(v22); /*0x68bbcb*/
@@ -406,6 +387,7 @@ int __thiscall ComputeHousePowerChecksum(int this, unsigned int *a2)
   Power::TimerProcess(*(_DWORD *)(this + 4696)); /*0x68bbf5*/
   Power::TimerProcess(*(_DWORD *)(this + 13632)); /*0x68bc03*/
   Power::TimerProcess(*(_DWORD *)(this + 13636)); /*0x68bc11*/
+  int v23; // edx
   LOBYTE(v23) = *(_BYTE *)(this + 13476); /*0x68bc16*/
   Power::FlagProcess((int *)a2, v23); /*0x68bc1f*/
   Power::TimerProcess(*(_DWORD *)(this + 13640)); /*0x68bc2d*/

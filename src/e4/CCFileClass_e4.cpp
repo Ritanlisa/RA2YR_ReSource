@@ -7,10 +7,9 @@
 char CCFileClass::Close()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall CCFileClass_Close(_BYTE *this)
+void CCFileClass_Close(_BYTE *this)
 {
   char result; // al
-  int v3; // eax
 
   if ( !this->q029 ) /*0x4325c3*/
     return ((int (*)(void))FileClass::CloseHandle)(); /*0x432607*/
@@ -20,7 +19,7 @@ char __thiscall CCFileClass_Close(_BYTE *this)
   {
     if ( this->MixFileIndex ) /*0x4325d6*/
     {
-      v3 = *(_DWORD *)this; /*0x4325dd*/
+      int v3 = *(_DWORD *)this; /*0x4325dd*/
       this->q029 = 0; /*0x4325e1*/
       result = (*(int (__thiscall **)(_BYTE *))(v3 + 52))(this); /*0x4325e5*/
       this->q029 = 1; /*0x4325e8*/
@@ -40,7 +39,7 @@ char __thiscall CCFileClass_Close(_BYTE *this)
 int CCFileClass::Destruct()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall CCFileClass_Destructor(_DWORD *this)
+void CCFileClass_Destructor(_DWORD *this)
 {
   *this = &vt_CCFileClass; /*0x535a76*/
   this->q064 = 0; /*0x535a7c*/
@@ -54,13 +53,11 @@ int __thiscall CCFileClass_Destructor(_DWORD *this)
 int CCFileClass::GetFileSize()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall CCFileClass_GetFileSize(int *this)
+void CCFileClass_GetFileSize(int *this)
 {
   DWORD FileSize; // edi
   int result; // eax
-  int v4; // ebx
   DWORD LastError; // eax
-  int v6; // [esp-8h] [ebp-10h]
 
   FileSize = 0; /*0x65d0d4*/
   result = this->FilePointer; /*0x65d0d6*/
@@ -71,8 +68,8 @@ int __thiscall CCFileClass_GetFileSize(int *this)
       FileSize = GetFileSize((HANDLE)this->FileTimeDateLo, 0); /*0x65d0f2*/
       if ( FileSize == -1 ) /*0x65d0f7*/
       {
-        v4 = *this; /*0x65d0fd*/
-        v6 = this->FileNameAllocated; /*0x65d0ff*/
+        int v4 = *this; /*0x65d0fd*/
+        int v6 = this->FileNameAllocated; /*0x65d0ff*/
         LastError = GetLastError(); /*0x65d102*/
         (*(void (__thiscall **)(int *, DWORD, _DWORD, int))(v4 + 64))(this, LastError, 0, v6); /*0x65d10b*/
         result = -1 - this->Handle; /*0x65d113*/
@@ -98,34 +95,24 @@ void CCFileClass::ProcessStream(unsigned int a1)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __fastcall sub_69E320(unsigned int a1)
 {
-  _DWORD *v1; // edi
-  void *v3; // esi
-  int v4; // eax
-  int v5; // eax
-  void *v6; // esi
-  _BYTE *v7; // ebp
-  void *v8; // ecx
-  _DWORD *v9; // edi
-  int v10; // eax
-  int v11; // eax
 
-  v1 = DataGlobal_B077B0; /*0x69e324*/
+  _DWORD * v1 = DataGlobal_B077B0; /*0x69e324*/
   if ( DataGlobal_B077B0 ) /*0x69e330*/
   {
     do /*0x69e3a1*/
     {
       if ( v1[8] <= a1 && *(_WORD *)v1 == 0xFFFF && *((_BYTE *)v1 + 16) ) /*0x69e33d*/
       {
-        v3 = (void *)v1[3]; /*0x69e342*/
+        void * v3 = (void *)v1[3]; /*0x69e342*/
         if ( v3 ) /*0x69e347*/
         {
           if ( *(_WORD *)v3 == 0xFFFF ) /*0x69e34d*/
           {
             BTree::DeleteSubtree((_DWORD *)v1[3]); /*0x69e351*/
-            v4 = *((_DWORD *)v3 + 6); /*0x69e356*/
+            int v4 = *((_DWORD *)v3 + 6); /*0x69e356*/
             if ( v4 ) /*0x69e35b*/
               *(_DWORD *)(v4 + 28) = *((_DWORD *)v3 + 7); /*0x69e360*/
-            v5 = *((_DWORD *)v3 + 7); /*0x69e363*/
+            int v5 = *((_DWORD *)v3 + 7); /*0x69e363*/
             if ( v5 ) /*0x69e368*/
               *(_DWORD *)(v5 + 24) = *((_DWORD *)v3 + 6); /*0x69e36d*/
             else
@@ -145,25 +132,25 @@ void __fastcall sub_69E320(unsigned int a1)
     }
     while ( v1 ); /*0x69e3a1*/
   }
-  v6 = DataGlobal_B077B4; /*0x69e3a3*/
+  void * v6 = DataGlobal_B077B4; /*0x69e3a3*/
   if ( DataGlobal_B077B4 ) /*0x69e3ab*/
   {
     if ( *(_WORD *)DataGlobal_B077B4 == 0xFFFF ) /*0x69e3b1*/
     {
-      v7 = (char *)DataGlobal_B077B4 + 16; /*0x69e3b6*/
+      _BYTE * v7 = (char *)DataGlobal_B077B4 + 16; /*0x69e3b6*/
       if ( *((_BYTE *)DataGlobal_B077B4 + 16) ) /*0x69e3b3*/
       {
-        v8 = (void *)*((_DWORD *)DataGlobal_B077B4 + 3); /*0x69e3bd*/
-        v9 = (char *)DataGlobal_B077B4 + 12; /*0x69e3c0*/
+        void * v8 = (void *)*((_DWORD *)DataGlobal_B077B4 + 3); /*0x69e3bd*/
+        _DWORD * v9 = (char *)DataGlobal_B077B4 + 12; /*0x69e3c0*/
         if ( v8 ) /*0x69e3c5*/
           MixFileClass::CacheNode_Dtor(v8, 1); /*0x69e3c9*/
         *v9 = 0; /*0x69e3ce*/
         *v7 = 0; /*0x69e3d0*/
       }
-      v10 = *((_DWORD *)v6 + 6); /*0x69e3d3*/
+      int v10 = *((_DWORD *)v6 + 6); /*0x69e3d3*/
       if ( v10 ) /*0x69e3d8*/
         *(_DWORD *)(v10 + 28) = *((_DWORD *)v6 + 7); /*0x69e3dd*/
-      v11 = *((_DWORD *)v6 + 7); /*0x69e3e0*/
+      int v11 = *((_DWORD *)v6 + 7); /*0x69e3e0*/
       if ( v11 ) /*0x69e3e5*/
         *(_DWORD *)(v11 + 24) = *((_DWORD *)v6 + 6); /*0x69e3ea*/
       else

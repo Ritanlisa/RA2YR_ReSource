@@ -10,13 +10,11 @@ namespace gamemd {
 int NetworkClass::ExecutePlanningModeCmd()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_639FD0(char *this)
+void sub_639FD0(char *this)
 {
-  char v1; // al
   wchar_t *StringCSF; // eax
   wchar_t *v3; // eax
-
-  v1 = *this; /*0x639fd0*/
+  char v1 = *this; /*0x639fd0*/
   if ( *this == 9 ) /*0x639fd4*/
   {
     if ( !g_PlanningModeActive ) /*0x639fdd*/
@@ -54,19 +52,16 @@ namespace gamemd {
 int NetworkClass::RecordEvent()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall NetworkClass::RecordEvent(#377 *this)
+void NetworkClass::RecordEvent(#377 *this)
 {
   _BYTE *WaypointCoords; // eax
   int result; // eax
-  char *v3; // edi
-  _BYTE v4[8]; // [esp+8h] [ebp-78h] BYREF
-  char v5[108]; // [esp+10h] [ebp-70h] BYREF
   __int16 v6; // [esp+7Ch] [ebp-4h]
-  char v7; // [esp+7Eh] [ebp-2h]
   unsigned __int8 v8; // [esp+84h] [ebp+4h]
-
+  _BYTE v4[8]; // [esp+8h] [ebp-78h] BYREF
   WaypointCoords = ScriptAction::GetWaypointCoords(v4, (IUnknown *)this); /*0x6ffe0a*/
   EventClass::Add( /*0x6ffe34*/
+  char v5[108]; // [esp+10h] [ebp-70h] BYREF
     v5,
     *(AbstractClass **)&HouseClass_Player->__pad_28[8],
     v8,
@@ -81,11 +76,11 @@ int __thiscall NetworkClass::RecordEvent(#377 *this)
   {
     if ( Networking_LastEventIndex < 128 ) /*0x6ffe5f*/
     {
-      v3 = &g_NetworkPacketIndex[111 * Networking_NextPacketIndex]; /*0x6ffe75*/
+      char * v3 = &g_NetworkPacketIndex[111 * Networking_NextPacketIndex]; /*0x6ffe75*/
       qmemcpy(v3, v5, 0x6Cu); /*0x6ffe7c*/
       v3 += 108; /*0x6ffe7c*/
       *(_WORD *)v3 = v6; /*0x6ffe7e*/
-      v3[2] = v7; /*0x6ffe80*/
+      char v7 = v7; /*0x6ffe80*/
       g_CrateSystemState[Networking_NextPacketIndex] = timeGetTime(); /*0x6ffe8d*/
       Networking_NextPacketIndex = ((_BYTE)Networking_NextPacketIndex + 1) & 0x7F; /*0x6ffe9d*/
       result = ++Networking_LastEventIndex; /*0x6ffea7*/

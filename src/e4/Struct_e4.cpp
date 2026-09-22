@@ -6,18 +6,12 @@
 int Struct::ClearAllMemberFlags()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Struct::ClearAllMemberFlags(CommBufferClass *this)
+void Struct::ClearAllMemberFlags()
 {
-  int v1; // eax
-  int v2; // esi
-  int v3; // eax
-  _DWORD *v4; // edi
   int result; // eax
-  int v6; // esi
-  _DWORD *v7; // edi
 
-  v1 = *(_DWORD *)&this->__pad_0[4]; /*0x48b2a0*/
-  v2 = 0; /*0x48b2a7*/
+  int v1 = *(_DWORD *)&this->__pad_0[4]; /*0x48b2a0*/
+  int v2 = 0; /*0x48b2a7*/
   *(_DWORD *)&this->__pad_28[4] = 0; /*0x48b2ac*/
   this->q03C = 0; /*0x48b2af*/
   *(_DWORD *)this->__pad_14 = 0; /*0x48b2b2*/
@@ -28,12 +22,12 @@ int __thiscall Struct::ClearAllMemberFlags(CommBufferClass *this)
   this->q038 = 0; /*0x48b2c1*/
   if ( v1 > 0 ) /*0x48b2c4*/
   {
-    v3 = 0; /*0x48b2c6*/
+    int v3 = 0; /*0x48b2c6*/
     do /*0x48b327*/
     {
       *(_DWORD *)(v3 + this->field_24) &= ~1u; /*0x48b2d2*/
       *(_DWORD *)(v3 + this->field_24) &= ~2u; /*0x48b2de*/
-      v4 = (_DWORD *)(v3 + this->field_24); /*0x48b2e3*/
+      _DWORD * v4 = (_DWORD *)(v3 + this->field_24); /*0x48b2e3*/
       v3 += 36; /*0x48b2e5*/
       ++v2; /*0x48b2ed*/
       *v4 &= ~4u; /*0x48b2ee*/
@@ -48,7 +42,7 @@ int __thiscall Struct::ClearAllMemberFlags(CommBufferClass *this)
     while ( v2 < *(_DWORD *)&this->__pad_0[4] ); /*0x48b327*/
   }
   result = this->field_8; /*0x48b329*/
-  v6 = 0; /*0x48b32c*/
+  int v6 = 0; /*0x48b32c*/
   if ( result > 0 ) /*0x48b330*/
   {
     result = 0; /*0x48b332*/
@@ -56,7 +50,7 @@ int __thiscall Struct::ClearAllMemberFlags(CommBufferClass *this)
     {
       *(_DWORD *)(result + this->field_34) &= ~1u; /*0x48b33e*/
       *(_DWORD *)(result + this->field_34) &= ~2u; /*0x48b34a*/
-      v7 = (_DWORD *)(result + this->field_34); /*0x48b34f*/
+      _DWORD * v7 = (_DWORD *)(result + this->field_34); /*0x48b34f*/
       result += 24; /*0x48b351*/
       ++v6; /*0x48b359*/
       *v7 &= ~4u; /*0x48b35a*/
@@ -79,7 +73,7 @@ int __thiscall Struct::ClearAllMemberFlags(CommBufferClass *this)
 int Struct::ZeroInitAndSetup()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Struct_ZeroInitAndSetup(_DWORD *this)
+void Struct_ZeroInitAndSetup(_DWORD *this)
 {
   this->q034 = 0; /*0x48bf12*/
   this->q038 = 0; /*0x48bf15*/
@@ -124,7 +118,7 @@ int Struct::ZeroInitAndSetup_0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // attributes: thunk
-int __thiscall Struct::ZeroInitAndSetup_0(_DWORD *this)
+void Struct::ZeroInitAndSetup_0()
 {
   return Struct::ZeroInitAndSetup(this);
 }
@@ -136,7 +130,7 @@ int Struct::ZeroInitAndSetup_0_0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // attributes: thunk
-int __thiscall Struct::ZeroInitAndSetup_0_0(NullModemConnClass *this)
+void Struct::ZeroInitAndSetup_0_0()
 {
   return Struct::ZeroInitAndSetup(this);
 }

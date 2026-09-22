@@ -8,11 +8,10 @@ void VoxClass::FindAndPlay(void * this, int a2, int a3)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __fastcall VoxClass::FindAndPlay(void *this, int a2, int a3)
 {
-  int v5; // esi
 
   if ( this ) /*0x752708*/
   {
-    v5 = 0; /*0x752710*/
+    int v5 = 0; /*0x752710*/
     if ( *(int *)&stru_B1D188[808] <= 0 ) /*0x752714*/
     {
 LABEL_5:

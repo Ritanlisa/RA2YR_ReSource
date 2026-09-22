@@ -11,18 +11,16 @@ namespace gamemd {
 char Territory_WorldDominationTour_8::AddRef(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall Territory_WorldDominationTour_8_::_vt01(int this, char a2)
+void Territory_WorldDominationTour_8_::_vt01(int this, char a2)
 {
   DWORD Ticks; // eax
-  _DWORD *v3; // esi
   DWORD *v4; // esi
   DWORD v6; // [esp+4h] [ebp-8h]
-
   LOBYTE(Ticks) = a2; /*0x7718a0*/
   this->q00C = a2; /*0x7718a9*/
   if ( !a2 ) /*0x7718ac*/
   {
-    v3 = *(_DWORD **)(this + 28); /*0x7718af*/
+    _DWORD * v3 = this->q01C; /*0x7718af*/
     if ( (int)v3[244] > 0 ) /*0x7718ba*/
     {
       StopThemeClass(1); /*0x7718be*/
@@ -47,12 +45,11 @@ signed int Territory_WorldDominationTour_8::Release()
 signed int __thiscall Territory_WorldDominationTour_8_::_vt02(signed int *this)
 {
   signed int result; // eax
-  signed int v3; // edi
 
   result = this->q004; /*0x771903*/
   if ( result != -1 ) /*0x771909*/
   {
-    v3 = *(this + 6); /*0x77190c*/
+    signed int v3 = *(this + 6); /*0x77190c*/
     result = Timer::GetTicks() - this->q004; /*0x77191c*/
     if ( result >= v3 ) /*0x771921*/
     {
@@ -84,7 +81,7 @@ namespace gamemd {
 char Territory_WorldDominationTour_8::Read(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall Territory_WorldDominationTour_8_::_vt04(int *this, int a2, int a3)
+void Territory_WorldDominationTour_8_::_vt04(int a2, int a3)
 {
   AudioQueue::Update(this->q01C); /*0x771973*/
   return 0; /*0x77197a*/
@@ -97,7 +94,7 @@ namespace gamemd {
 void Territory_WorldDominationTour_8::Write(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall Territory_WorldDominationTour_8_::_vt05(int *this, int a2, int a3)
+void Territory_WorldDominationTour_8_::_vt05(int a2, int a3)
 {
   AudioQueue::Update(this->q01C); /*0x771983*/
 }
@@ -109,7 +106,7 @@ namespace gamemd {
 void Territory_WorldDominationTour_8::Close(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall Territory_WorldDominationTour_8_::_vt08(int *this, int a2)
+void Territory_WorldDominationTour_8_::_vt08(int a2)
 {
   AudioQueue::Update(this->q01C); /*0x7719d3*/
 }

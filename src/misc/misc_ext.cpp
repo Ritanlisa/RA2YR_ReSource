@@ -2438,7 +2438,7 @@ void OreManagerClass::AssignMinerToRefinery()
 void OwnerDrawControl::InitVtable()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall OwnerDrawControl::InitVtable(DialogControl_OwnerDraw *this)
+void OwnerDrawControl::InitVtable()
 {
   this->vfptr = &OwnerDraw::DialogControl::`vftable'; /*0x624130*/
 }
@@ -2597,7 +2597,7 @@ void ReinforcementClass::CreateObject()
 void ResultNode::Init()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall ResultNode::Init(CCINIClass *this)
+void ResultNode::Init()
 {
   __3_YAXPAX_Z((void *)this->headNode[1]); /*0x4cb897*/
   this->headNode[1] = 0; /*0x4cb89f*/

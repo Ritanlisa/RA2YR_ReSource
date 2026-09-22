@@ -12,41 +12,16 @@ int TriggerTypeClass::ReadINI(unsigned int * a0, TechnoClass * aP1, TechnoClass 
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall TriggerTypeClass::ReadINI(_DWORD *a0, TechnoClass *aP1, TechnoClass *aP2, int a4, TechnoClass *aP4)
 {
-  int v7; // eax
   TechnoClass *v8; // ebp
   IUnknown *v9; // eax
   IUnknown *v10; // edi
-  int v11; // eax
-  int v12; // edi
-  int v13; // eax
-  int v14; // eax
-  int v15; // eax
-  int v16; // eax
-  int v17; // eax
-  int v18; // eax
-  int v19; // eax
-  int v20; // ecx
-  int v21; // eax
-  _BYTE *v22; // eax
-  bool v23; // bl
   TechnoClass *v24; // eax
   TechnoClass *v25; // edi
   TechnoClass *v26; // eax
-  int v27; // edx
-  int v28; // edx
-  int v29; // eax
   SlaveManagerClass *v30; // edx
   HouseClass *v31; // eax
-  char v32; // al
-  int v33; // edi
   int *location; // ebp
-  int v35; // edx
-  int v36; // eax
   TechnoClass *v37; // [esp+8h] [ebp-24h]
-  int v38; // [esp+1Ch] [ebp-10h]
-  int v39; // [esp+20h] [ebp-Ch] BYREF
-  int v40; // [esp+24h] [ebp-8h]
-
   if ( !aP2 || a0[183] ) /*0x6fc0c5*/
     return 5; /*0x6fc0c5*/
   if ( (*(unsigned __int8 (__thiscall **)(_DWORD *))(*a0 + 472))(a0) ) /*0x6fc0d5*/
@@ -63,7 +38,7 @@ int __fastcall TriggerTypeClass::ReadINI(_DWORD *a0, TechnoClass *aP1, TechnoCla
   }
   if ( (*(unsigned __int8 (__thiscall **)(_DWORD *))(*a0 + 476))(a0) ) /*0x6fc14f*/
   {
-    v7 = a0[157]; /*0x6fc159*/
+    int v7 = a0[157]; /*0x6fc159*/
     if ( v7 ) /*0x6fc161*/
     {
       if ( aP2 == *(TechnoClass **)(v7 + 40) ) /*0x6fc166*/
@@ -71,7 +46,7 @@ int __fastcall TriggerTypeClass::ReadINI(_DWORD *a0, TechnoClass *aP1, TechnoCla
     }
   }
   v8 = (aP2->abstractFlags & 1) != 0 ? aP2 : 0;
-  v9 = (IUnknown *)(*(int (__thiscall **)(TechnoClass *, int *))(*(_DWORD *)aP2->__pad_0 + 72))(aP2, &v39); /*0x6fc18e*/
+  IUnknown *v39 = (IUnknown *)(*(int (__thiscall **)(TechnoClass *, int *))(*(_DWORD *)aP2->__pad_0 + 72))(aP2, &v39); /*0x6fc18e*/
   v10 = (IUnknown *)Coord::To_Cell(&stru_87C374[13428], v9); /*0x6fc19e*/
   if ( a0 ) /*0x6fc1a0*/
   {
@@ -111,12 +86,12 @@ int __fastcall TriggerTypeClass::ReadINI(_DWORD *a0, TechnoClass *aP1, TechnoCla
   {
     if ( (*(int (__thiscall **)(_DWORD *))(*a0 + 44))(a0) != 1 ) /*0x6fc2f8*/
       return 6; /*0x6fc2f8*/
-    v11 = a0[433]; /*0x6fc2fe*/
+    int v11 = a0[433]; /*0x6fc2fe*/
     if ( !*(_BYTE *)(v11 + 3609) && !*(_BYTE *)(v11 + 3608) ) /*0x6fc30e*/
       return 6; /*0x6fc30e*/
   }
-  v12 = *(_DWORD *)(*(int (__thiscall **)(_DWORD *, int))(*a0 + 1016))(a0, a4); /*0x6fc32b*/
-  v38 = v12; /*0x6fc32f*/
+  int v12 = *(_DWORD *)(*(int (__thiscall **)(_DWORD *, int))(*a0 + 1016))(a0, a4); /*0x6fc32b*/
+  int v38 = v12; /*0x6fc32f*/
   if ( !v12 || *(_BYTE *)(v12 + 335) && HouseClass::IonSensitivesShouldBeOffline() ) /*0x6fc349*/
     return 6; /*0x6fc350*/
   if ( *(_BYTE *)(v12 + 322) ) /*0x6fc356*/
@@ -140,12 +115,12 @@ LABEL_52:
   {
     if ( (*(int (__thiscall **)(_DWORD *))(*a0 + 44))(a0) == 1 )
     {
-      v13 = (*(int (__thiscall **)(_DWORD *))(*a0 + 44))(a0); /*0x6fc3d9*/
+      int v13 = (*(int (__thiscall **)(_DWORD *))(*a0 + 44))(a0); /*0x6fc3d9*/
       if ( TechnoClass::HasDeployFlags(v13 == 1 ? a0 : 0) )
         return 5; /*0x6fc3e7*/
     }
   }
-  v14 = *(_DWORD *)(v12 + 172); /*0x6fc3f4*/
+  int v14 = *(_DWORD *)(v12 + 172); /*0x6fc3f4*/
   if ( v14 ) /*0x6fc3fc*/
   {
     if ( *(_BYTE *)(v14 + 365) /*0x6fc417*/
@@ -155,7 +130,7 @@ LABEL_52:
       return 5; /*0x6fc417*/
     }
   }
-  v15 = *(_DWORD *)(v12 + 172); /*0x6fc425*/
+  int v15 = *(_DWORD *)(v12 + 172); /*0x6fc425*/
   if ( v15 )
   {
     if ( *(_BYTE *)(v15 + 365) && v8 && v8->spawnManager ) /*0x6fc43d*/
@@ -164,13 +139,13 @@ LABEL_52:
     {
       if ( (*(int (__thiscall **)(TechnoClass *))(*(_DWORD *)aP2->__pad_0 + 44))(aP2) == 1 )
       {
-        v16 = (*(int (__thiscall **)(TechnoClass *))(*(_DWORD *)aP2->__pad_0 + 44))(aP2); /*0x6fc469*/
+        int v16 = (*(int (__thiscall **)(TechnoClass *))(*(_DWORD *)aP2->__pad_0 + 44))(aP2); /*0x6fc469*/
         if ( TechnoClass::HasDeployFlags(v16 == 1 ? aP2 : 0) )
           return 5; /*0x6fc477*/
       }
     }
   }
-  v17 = *(_DWORD *)(v12 + 172); /*0x6fc484*/
+  int v17 = *(_DWORD *)(v12 + 172); /*0x6fc484*/
   if ( v17
     && *(_BYTE *)(v17 + 347)
     && (aP2->abstractFlags & 4) != 0
@@ -182,7 +157,7 @@ LABEL_52:
     if ( (*(unsigned __int8 (__stdcall **)(TechnoClass *))(*(_DWORD *)v37->__pad_0 + 128))(v37) ) /*0x6fc4dd*/
       return 5; /*0x6fc4dd*/
   }
-  v18 = *(_DWORD *)(v12 + 172); /*0x6fc4ef*/
+  int v18 = *(_DWORD *)(v12 + 172); /*0x6fc4ef*/
   if ( v18 )
   {
     if ( *(_BYTE *)(v18 + 347)
@@ -198,7 +173,7 @@ LABEL_52:
       return 5; /*0x6fc546*/
     }
   }
-  v19 = *(_DWORD *)(v12 + 172); /*0x6fc54c*/
+  int v19 = *(_DWORD *)(v12 + 172); /*0x6fc54c*/
   if ( v19 ) /*0x6fc554*/
   {
     if ( *(_BYTE *)(v19 + 347) /*0x6fc56f*/
@@ -212,7 +187,7 @@ LABEL_52:
   {
     if ( !*(_BYTE *)(v12 + 323) ) /*0x6fc587*/
       return 5; /*0x6fc587*/
-    v20 = a0[71]; /*0x6fc599*/
+    int v20 = a0[71]; /*0x6fc599*/
     if ( v20 ) /*0x6fc5a1*/
     {
       if ( (*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)v20 + 468))(v20) ) /*0x6fc5a5*/
@@ -221,7 +196,7 @@ LABEL_52:
   }
   if ( *((_BYTE *)a0 + 130) ) /*0x6fc5b3*/
   {
-    v21 = a0[71]; /*0x6fc5bd*/
+    int v21 = a0[71]; /*0x6fc5bd*/
     if ( v21 ) /*0x6fc5c5*/
     {
       if ( *(_DWORD *)(v21 + 284) ) /*0x6fc5c7*/
@@ -253,7 +228,7 @@ LABEL_98:
   {
     return 5; /*0x6fc683*/
   }
-  v22 = *(_BYTE **)(*(int (__thiscall **)(_DWORD *, bool))(*a0 + 1016))(a0, a4 == 0); /*0x6fc69f*/
+  _BYTE * v22 = *(_BYTE **)(*(int (__thiscall **)(_DWORD *, bool))(*a0 + 1016))(a0, a4 == 0); /*0x6fc69f*/
   if ( v22 && (v22[297] && a0[193] || v22[301] && a0[197] || v22[298] && a0[194] || v22[304] && a0[201]) ) /*0x6fc6f7*/
     return 6; /*0x6fc6ff*/
   if ( (*(unsigned __int8 (__thiscall **)(TechnoClass *))(*(_DWORD *)aP2->__pad_0 + 84))(aP2)
@@ -269,6 +244,7 @@ LABEL_98:
   }
   if ( v8 )
   {
+  bool v23; // bl
     v23 = *(_DWORD *)((*(int (__thiscall **)(TechnoClass *))(*(_DWORD *)v8->__pad_0 + 444))(v8) + 236) == 2 /*0x6fc796*/
        || *(_DWORD *)((*(int (__thiscall **)(TechnoClass *))(*(_DWORD *)v8->__pad_0 + 444))(v8) + 236) == 6;
     if ( (*(unsigned __int8 (__thiscall **)(TechnoClass *))(*(_DWORD *)v8->__pad_0 + 84))(v8) ) /*0x6fc79d*/
@@ -324,8 +300,11 @@ LABEL_139:
   if ( a4 /*0x6fc93a*/
     || !a0
     || (*(int (__thiscall **)(_DWORD *))(*a0 + 44))(a0) != 1
+  int v27; // edx
     || (v27 = a0[238] % *(_DWORD *)(v38 + 156), v27 >= 2)
+  int v28; // edx
     || (v28 = *(_DWORD *)(a0[433] + 4 * v27 + 3648), v28 == -1)
+  int v29; // eax
     || (v29 = a0[432], v29 == -1) )
   {
     v30 = (SlaveManagerClass *)a0[187]; /*0x6fc94f*/
@@ -365,7 +344,7 @@ LABEL_164:
   {
     return 5; /*0x6fcac2*/
   }
-  v32 = *(_BYTE *)(*(_DWORD *)(v38 + 172) + 345); /*0x6fcacb*/
+  char v32 = *(_BYTE *)(*(_DWORD *)(v38 + 172) + 345); /*0x6fcacb*/
   if ( v32 && (v25->abstractFlags & 4) != 0 && *(int *)&HouseClass_Player[45112] < v25[1].radarFlashTimer[0] ) /*0x6fcae9*/
     return 5; /*0x6fcaf7*/
   if ( !v8 ) /*0x6fcafc*/
@@ -374,7 +353,7 @@ LABEL_164:
     return 5; /*0x6fcb21*/
   if ( *(_BYTE *)(*(_DWORD *)(v38 + 172) + 341) && !CaptureManagerClass::CanCapture(a0[175], v8) ) /*0x6fcb3b*/
     return 5; /*0x6fcb50*/
-  v33 = *(_DWORD *)(v38 + 172); /*0x6fcb56*/
+  int v33 = *(_DWORD *)(v38 + 172); /*0x6fcb56*/
   if ( *(double *)(v33 /*0x6fcb7c*/
                  + 8 * *(_DWORD *)((*(int (__thiscall **)(TechnoClass *))(*(_DWORD *)v8->__pad_0 + 132))(v8) + 156)
                  + 160) == 0.0 )
@@ -397,10 +376,10 @@ LABEL_164:
   }
   location = v8->location; /*0x6fcc63*/
   v39 = a0[39]; /*0x6fcc6b*/
-  v35 = a0[40]; /*0x6fcc72*/
+  int v35 = a0[40]; /*0x6fcc72*/
   v39 = *location; /*0x6fcc75*/
-  v40 = v35; /*0x6fcc79*/
-  v36 = a0[41]; /*0x6fcc80*/
+  int v40 = v35; /*0x6fcc79*/
+  int v36 = a0[41]; /*0x6fcc80*/
   v40 = location[1]; /*0x6fcc83*/
   if ( *(_BYTE *)(*(_DWORD *)(v38 + 172) + 345) ) /*0x6fcc90*/
   {

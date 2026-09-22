@@ -9,12 +9,9 @@ long long Isometric::InitTables(IUnknown * aP1)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 __int64 __thiscall Isometric::InitTables(int this, IUnknown *aP1)
 {
-  char v2; // al
   __int64 result; // rax
-  int v5; // ecx
-  double v6; // st7
 
-  v2 = DataGlobal_89E770; /*0x47b3a9*/
+  char v2 = DataGlobal_89E770; /*0x47b3a9*/
   if ( (DataGlobal_89E770 & 1) == 0 ) /*0x47b3b3*/
   {
     v2 = DataGlobal_89E770 | 1; /*0x47b3bb*/
@@ -192,7 +189,8 @@ __int64 __thiscall Isometric::InitTables(int this, IUnknown *aP1)
   result = Math::RoundToInt((double)(DataGlobal_89E7C0 * *(char *)(this + 283)) + 0.5); /*0x47bab0*/
   if ( *(_BYTE *)(this + 284) ) /*0x47bab5*/
   {
-    v5 = 40 * (*(unsigned __int8 *)(this + 284) - 1); /*0x47baec*/
+    int v5 = 40 * (*(unsigned __int8 *)(this + 284) - 1); /*0x47baec*/
+  double v6; // st7
     v6 = (double)(unsigned __int8)aP1->field_4 * *(double *)(v5 + 8505608) * DataGlobal_89E740 /*0x47bb17*/
        + (double)(unsigned __int8)aP1->field_0 * *(double *)(v5 + 8505600) * DataGlobal_89E740
        + *(double *)(v5 + 8505616)

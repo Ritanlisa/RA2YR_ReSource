@@ -6,7 +6,7 @@
 int Menu::Reset()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_4C6140(int this)
+void sub_4C6140(int this)
 {
   *(_DWORD *)(this + 52) = 0; /*0x4c614c*/
   *(_DWORD *)(this + 56) = 0; /*0x4c614f*/

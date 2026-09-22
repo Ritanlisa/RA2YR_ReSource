@@ -7,14 +7,13 @@
 char AsyncIO::Shutdown()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char AsyncIO_Shutdown()
+void AsyncIO_Shutdown()
 {
-  int v0; // esi
   _DWORD *i; // eax
   void (__thiscall ***v2)(_DWORD, int); // ecx
   char result; // al
 
-  v0 = 0; /*0x5bf459*/
+  int v0 = 0; /*0x5bf459*/
   for ( i = AsyncIO_Instance; v0 < g_AsyncIOState; ++v0 ) /*0x5bf462*/
   {
     v2 = (void (__thiscall ***)(_DWORD, int))i[v0]; /*0x5bf464*/
@@ -51,24 +50,20 @@ char AsyncIO_Shutdown()
 BOOL AsyncIO::WaitCompletion()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall AsyncIO_WaitCompletion(int this)
+void AsyncIO_WaitCompletion(int this)
 {
-  char v2; // al
-  int v3; // esi
-  signed int v4; // eax
   DWORD NumberOfBytesTransferred; // [esp+4h] [ebp-1Ch] BYREF
   DWORD Ticks; // [esp+8h] [ebp-18h]
-  int v8; // [esp+Ch] [ebp-14h]
-  int v9; // [esp+10h] [ebp-10h]
-  int v10; // [esp+18h] [ebp-8h]
 
   Ticks = Timer::GetTicks(); /*0x774bcf*/
-  v2 = *(_BYTE *)(this + 81); /*0x774bd3*/
-  v9 = 0; /*0x774bd8*/
+  char v2 = *(_BYTE *)(this + 81); /*0x774bd3*/
+  int v9 = 0; /*0x774bd8*/
   if ( v2 ) /*0x774be0*/
   {
+  int v3; // esi
     Ticks = Timer::GetTicks(); /*0x774bf4*/
-    v8 = v10; /*0x774c01*/
+  int v10; // [esp+18h] [ebp-8h]
+    int v8 = v10; /*0x774c01*/
     v9 = 300; /*0x774c05*/
     do /*0x774c4d*/
     {
@@ -80,7 +75,7 @@ BOOL __thiscall AsyncIO_WaitCompletion(int this)
       v3 = v9; /*0x774c2f*/
       if ( Ticks != -1 ) /*0x774c36*/
       {
-        v4 = Timer::GetTicks() - Ticks; /*0x774c41*/
+        signed int v4 = Timer::GetTicks() - Ticks; /*0x774c41*/
         if ( v4 >= v3 ) /*0x774c47*/
           break; /*0x774c47*/
         v3 -= v4; /*0x774c49*/

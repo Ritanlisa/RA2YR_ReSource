@@ -8,10 +8,8 @@
 int NeuronClass::NeuronClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall NeuronClass::NeuronClass(int this)
+N NeuronClass::NeuronClass(int this)
 {
-  int v2; // eax
-  int v3; // eax
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x43a353*/
   this->q024 = 0; /*0x43a358*/
@@ -30,7 +28,7 @@ int __thiscall NeuronClass::NeuronClass(int this)
          DataGlobal_B0F5E0 + DataGlobal_B0F5EC,
          0) )
   {
-    v2 = DataGlobal_B0F5E8++; /*0x43a3d2*/
+    int v2 = DataGlobal_B0F5E8++; /*0x43a3d2*/
     *((_DWORD *)DataGlobal_B0F5DC + v2) = this; /*0x43a3e1*/
   }
   if ( g_AnimManager < g_AnimTypePool /*0x43a41b*/
@@ -41,7 +39,7 @@ int __thiscall NeuronClass::NeuronClass(int this)
          g_AnimTypePool + g_AnimManagerConfig,
          0) )
   {
-    v3 = g_AnimManager++; /*0x43a428*/
+    int v3 = g_AnimManager++; /*0x43a428*/
     *((_DWORD *)g_AnimPoolCount + v3) = this; /*0x43a437*/
   }
   return this; /*0x43a43c*/
@@ -54,16 +52,13 @@ NeuronClass * NeuronClass::Reset(char a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 NeuronClass *__thiscall NeuronClass::Reset(_DWORD *this, char a2)
 {
-  int v3; // eax
-  int v4; // eax
-  _DWORD *v6; // [esp+4h] [ebp-4h] BYREF
 
   *this = &NeuronClass::`vftable'; /*0x43a9cd*/
   this->vtable2 = &NeuronClass::`vftable'; /*0x43a9d3*/
   this->vtable3 = &NeuronClass::`vftable'; /*0x43a9da*/
   this->vtable4 = &vt_NeuronClass; /*0x43a9e1*/
-  v6 = this; /*0x43a9ef*/
-  v3 = (*(int (__thiscall **)(int *, _DWORD **))(g_AnimPoolManager + 16))(&g_AnimPoolManager, &v6); /*0x43a9f3*/
+  NeuronClass *v6 = this; /*0x43a9ef*/
+  int v3 = (*(int (__thiscall **)(int *, _DWORD **))(g_AnimPoolManager + 16))(&g_AnimPoolManager, &v6); /*0x43a9f3*/
   if ( v3 != -1 && v3 < g_AnimManager && v3 < --g_AnimManager ) /*0x43aa0e*/
   {
     do /*0x43aa26*/
@@ -74,7 +69,7 @@ NeuronClass *__thiscall NeuronClass::Reset(_DWORD *this, char a2)
     while ( v3 < g_AnimManager ); /*0x43aa26*/
   }
   v6 = this; /*0x43aa38*/
-  v4 = (*(int (__thiscall **)(int *, _DWORD **))(DataGlobal_B0F5D8 + 16))(&DataGlobal_B0F5D8, &v6); /*0x43aa3c*/
+  int v4 = (*(int (__thiscall **)(int *, _DWORD **))(DataGlobal_B0F5D8 + 16))(&DataGlobal_B0F5D8, &v6); /*0x43aa3c*/
   if ( v4 != -1 && v4 < DataGlobal_B0F5E8 && v4 < --DataGlobal_B0F5E8 ) /*0x43aa57*/
   {
     do /*0x43aa6f*/

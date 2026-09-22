@@ -16,16 +16,14 @@ BulletTypeClass * ObjectTypeClass::FindOrCreate()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 BulletTypeClass *__thiscall ObjectTypeClass::FindOrCreate(ObjectClass *this)
 {
-  int v2; // esi
-  _BYTE *v3; // eax
 
   if ( !_strcmpi(&stru_817460.sectionHead[1], this) || !_strcmpi(g_Str_none, this) ) /*0x46c7ac*/
     return 0; /*0x46c80f*/
-  v2 = 0; /*0x46c7bd*/
+  int v2 = 0; /*0x46c7bd*/
   if ( (int)g_BulletTypeInitState <= 0 ) /*0x46c7c1*/
   {
 LABEL_6:
-    v3 = (_BYTE *)__2_YAPAXI_Z(0x2F8u); /*0x46c7e6*/
+    _BYTE * v3 = (_BYTE *)__2_YAPAXI_Z(0x2F8u); /*0x46c7e6*/
     if ( v3 ) /*0x46c7f5*/
       return (BulletTypeClass *)BulletTypeClass::Construct(v3, this); /*0x46c801*/
     return 0; /*0x46c7f5*/
@@ -43,14 +41,12 @@ LABEL_6:
 int ObjectTypeClass::loadTypeMember_473980()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ObjectTypeClass::loadTypeMember_473980(void *this)
+void ObjectTypeClass::loadTypeMember_473980()
 {
-  int v2; // edi
   ObjectClass *v3; // esi
-
   if ( !this ) /*0x473987*/
     return -1; /*0x4739bd*/
-  v2 = 0; /*0x473989*/
+  int v2 = 0; /*0x473989*/
   v3 = (ObjectClass *)off_81B7C8; /*0x47398b*/
   while ( _strcmpi(*(const void **)&v3->__pad_0[4], this) && _strcmpi(*(const void **)v3->__pad_0, this) ) /*0x4739af*/
   {
@@ -67,13 +63,8 @@ int __thiscall ObjectTypeClass::loadTypeMember_473980(void *this)
 int ObjectTypeClass::loadTypeMember_5474940(CCINIClass * aP1, unsigned char * a2, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ObjectTypeClass::loadTypeMember_5474940(
-        unsigned __int8 ***this,
-        CCINIClass *aP1,
-        unsigned __int8 *a2,
-        int a4)
+void ObjectTypeClass::loadTypeMember_5474940(unsigned __int8 ***this, CCINIClass *aP1, unsigned __int8 *a2, int a4)
 {
-  int v4; // edi
   ObjectClass *v5; // esi
   char Destination[32]; // [esp+8h] [ebp-20h] BYREF
 
@@ -85,7 +76,7 @@ int __thiscall ObjectTypeClass::loadTypeMember_5474940(
               (INIClass *)Destination,
               32) <= 0 )
     return a4; /*0x4749a4*/
-  v4 = 0; /*0x474964*/
+  int v4 = 0; /*0x474964*/
   v5 = (ObjectClass *)&off_81B9B0; /*0x474966*/
   while ( _strcmpi(Destination, *(char **)v5->__pad_0) ) /*0x47497d*/
   {
@@ -102,7 +93,7 @@ int __thiscall ObjectTypeClass::loadTypeMember_5474940(
 int ObjectTypeClass::ReadInt(unsigned char * a2, unsigned char * a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_474F50(unsigned __int8 ***this, unsigned __int8 *a2, unsigned __int8 *a3, int a4)
+void sub_474F50(unsigned __int8 ***this, unsigned __int8 *a2, unsigned __int8 *a3, int a4)
 {
   char *v4; // eax
   char v6; // [esp+0h] [ebp-3Ch] BYREF
@@ -126,18 +117,12 @@ int __thiscall sub_474F50(unsigned __int8 ***this, unsigned __int8 *a2, unsigned
 int ObjectTypeClass::ConstructFull(AbstractClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ObjectTypeClass::ConstructFull(int this, AbstractClass *aP1)
+void ObjectTypeClass::ConstructFull(int this, AbstractClass *aP1)
 {
-  _DWORD *v3; // eax
-  int v4; // ecx
-  _DWORD *v5; // eax
-  int v6; // ecx
-  int v7; // eax
   char Destination[24]; // [esp+8h] [ebp-1Ch] BYREF
   char v10; // [esp+20h] [ebp-4h]
-
   AbstractTypeClass::Constructor(this, aP1); /*0x5f709c*/
-  v3 = (_DWORD *)(this + 200); /*0x5f70a3*/
+  _DWORD * v3 = (_DWORD *)(this + 200); /*0x5f70a3*/
   this->q098 = 0; /*0x5f70a9*/
   this->q264 = 0; /*0x5f70af*/
   this->q268 = 0; /*0x5f70b5*/
@@ -152,7 +137,7 @@ int __thiscall ObjectTypeClass::ConstructFull(int this, AbstractClass *aP1)
   this->ChargerTurrets = 0; /*0x5f70eb*/
   this->q0C0 = 0; /*0x5f70f1*/
   this->q0C4 = 0; /*0x5f70f7*/
-  v4 = 18; /*0x5f70fd*/
+  int v4 = 18; /*0x5f70fd*/
   do /*0x5f710b*/
   {
     *v3 = 0; /*0x5f7102*/
@@ -161,8 +146,8 @@ int __thiscall ObjectTypeClass::ConstructFull(int this, AbstractClass *aP1)
     --v4; /*0x5f710a*/
   }
   while ( v4 ); /*0x5f710b*/
-  v5 = (_DWORD *)(this + 344); /*0x5f710d*/
-  v6 = 18; /*0x5f7113*/
+  _DWORD * v5 = (_DWORD *)(this + 344); /*0x5f710d*/
+  int v6 = 18; /*0x5f7113*/
   do /*0x5f7121*/
   {
     *v5 = 0; /*0x5f7118*/
@@ -246,7 +231,7 @@ int __thiscall ObjectTypeClass::ConstructFull(int this, AbstractClass *aP1)
          (char *)*(&g_MatrixTransformState + 2436) + (_DWORD)*(&g_MatrixTransformState + 2439),
          0) )
   {
-    v7 = (int)*(&g_MatrixTransformState + 2438); /*0x5f72fb*/
+    int v7 = (int)*(&g_MatrixTransformState + 2438); /*0x5f72fb*/
     *(&g_MatrixTransformState + 2438) = (CoordStruct *)((char *)*(&g_MatrixTransformState + 2438) + 1); /*0x5f72fe*/
     *(&(*(&g_MatrixTransformState + 2435))->X + v7) = this; /*0x5f730a*/
   }
@@ -260,15 +245,11 @@ unsigned int * ObjectTypeClass::Construct(ObjectTypeClass * aP1)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall ObjectTypeClass::Construct(_DWORD *this, ObjectTypeClass *aP1)
 {
-  _DWORD *v3; // eax
-  int v4; // edx
-  _DWORD *v5; // eax
-  int v6; // edx
 
   AbstractTypeClass::Init((int)this, (AbstractTypeClass *)aP1); /*0x5f7328*/
-  v3 = this + 50; /*0x5f732f*/
+  _DWORD * v3 = this + 50; /*0x5f732f*/
   this->Image = 0; /*0x5f7335*/
-  v4 = 18; /*0x5f733b*/
+  int v4 = 18; /*0x5f733b*/
   do /*0x5f7349*/
   {
     *v3 = 0; /*0x5f7340*/
@@ -277,8 +258,8 @@ _DWORD *__thiscall ObjectTypeClass::Construct(_DWORD *this, ObjectTypeClass *aP1
     --v4; /*0x5f7348*/
   }
   while ( v4 ); /*0x5f7349*/
-  v5 = this + 86; /*0x5f734b*/
-  v6 = 18; /*0x5f7351*/
+  _DWORD * v5 = this + 86; /*0x5f734b*/
+  int v6 = 18; /*0x5f7351*/
   do /*0x5f735f*/
   {
     *v5 = 0; /*0x5f7356*/
@@ -319,21 +300,15 @@ _DWORD *__thiscall ObjectTypeClass::Construct(_DWORD *this, ObjectTypeClass *aP1
 int ObjectTypeClass::Destruct()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ObjectTypeClass::Destruct(int this)
+void ObjectTypeClass::Destruct(int this)
 {
-  int v2; // eax
-  int *v3; // edi
-  int v4; // ebx
-  int *v5; // edi
-  int v6; // ebx
-  int v8; // [esp+Ch] [ebp-4h] BYREF
-
+  ObjectTypeClass *v8; // [esp+Ch] [ebp-4h] BYREF
   *(_DWORD *)this = &ObjectTypeClass::`vftable'; /*0x5f740b*/
   this->vtable1 = &ObjectTypeClass::`vftable'; /*0x5f7411*/
   this->vtable2 = &ObjectTypeClass::`vftable'; /*0x5f7418*/
   this->vtable3 = &vt_ObjectTypeClass; /*0x5f741f*/
   v8 = this; /*0x5f7431*/
-  v2 = (*(int (__thiscall **)(int *, int *))(DataGlobal_AC1418 + 16))(&DataGlobal_AC1418, &v8); /*0x5f7435*/
+  int v2 = (*(int (__thiscall **)(int *, int *))(DataGlobal_AC1418 + 16))(&DataGlobal_AC1418, &v8); /*0x5f7435*/
   if ( v2 != -1 && v2 < DataGlobal_AC1428 && v2 < --DataGlobal_AC1428 ) /*0x5f7450*/
   {
     do /*0x5f7468*/
@@ -345,37 +320,37 @@ int __thiscall ObjectTypeClass::Destruct(int this)
   }
   if ( this->ImageAllocated && this->Image ) /*0x5f7476*/
   {
-    __3_YAXPAX_Z(*(void **)(this + 164)); /*0x5f7481*/
+    __3_YAXPAX_Z(this->Image); /*0x5f7481*/
     this->Image = 0; /*0x5f7489*/
     this->ImageAllocated = 0; /*0x5f748f*/
   }
   ObjectTypeClass::CleanupWeapons((char *)this); /*0x5f7497*/
-  __3_YAXPAX_Z(*(void **)(this + 640)); /*0x5f74a3*/
+  __3_YAXPAX_Z(this->q280); /*0x5f74a3*/
   this->q280 = 0; /*0x5f74a8*/
   this->q284 = 0; /*0x5f74ae*/
   this->q288 = 0; /*0x5f74b4*/
   this->q28C = 0; /*0x5f74ba*/
   this->q290 = 0; /*0x5f74c0*/
-  __3_YAXPAX_Z(*(void **)(this + 620)); /*0x5f74cd*/
+  __3_YAXPAX_Z(this->q26C); /*0x5f74cd*/
   this->q26C = 0; /*0x5f74d2*/
   this->q270 = 0; /*0x5f74d8*/
   this->q274 = 0; /*0x5f74de*/
   this->q278 = 0; /*0x5f74e4*/
   this->q27C = 0; /*0x5f74ea*/
-  __3_YAXPAX_Z(*(void **)(this + 600)); /*0x5f74f7*/
+  __3_YAXPAX_Z(this->q258); /*0x5f74f7*/
   this->q258 = 0; /*0x5f74fc*/
   this->q25C = 0; /*0x5f7502*/
   this->q260 = 0; /*0x5f7508*/
   this->q264 = 0; /*0x5f750e*/
   this->q268 = 0; /*0x5f7514*/
-  __3_YAXPAX_Z(*(void **)(this + 580)); /*0x5f7521*/
+  __3_YAXPAX_Z(this->VoxelCaches_4); /*0x5f7521*/
   this->VoxelCaches = 0; /*0x5f7526*/
   this->q248 = 0; /*0x5f752c*/
   this->q24C = 0; /*0x5f7532*/
   this->q094 = 0; /*0x5f7538*/
   this->q254 = 0; /*0x5f753e*/
-  v3 = (int *)(this + 488); /*0x5f7547*/
-  v4 = 18; /*0x5f754d*/
+  int * v3 = (int *)(this + 488); /*0x5f7547*/
+  int v4 = 18; /*0x5f754d*/
   do /*0x5f755d*/
   {
     v3 -= 2; /*0x5f7552*/
@@ -383,8 +358,8 @@ int __thiscall ObjectTypeClass::Destruct(int this)
     --v4; /*0x5f755c*/
   }
   while ( v4 ); /*0x5f755d*/
-  v5 = (int *)(this + 344); /*0x5f755f*/
-  v6 = 18; /*0x5f7565*/
+  int * v5 = (int *)(this + 344); /*0x5f755f*/
+  int v6 = 18; /*0x5f7565*/
   do /*0x5f7575*/
   {
     v5 -= 2; /*0x5f756a*/
@@ -405,43 +380,19 @@ void ObjectTypeClass::UnloadPipsSHP()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void ObjectTypeClass::UnloadPipsSHP()
 {
-  int v0; // eax
-  void *v1; // ebp
-  int v2; // edx
-  int v3; // eax
-  char *v4; // esi
-  int v5; // edi
-  int v6; // eax
-  void *v7; // ebp
-  int v8; // edx
-  int v9; // eax
-  char *v10; // esi
-  int v11; // edi
-  int v12; // eax
-  void *v13; // ebp
-  int v14; // edx
-  int v15; // eax
-  char *v16; // esi
-  int v17; // edi
-  int v18; // eax
-  void *v19; // ebp
-  int v20; // edx
-  int v21; // eax
-  char *v22; // esi
-  int v23; // edi
 
   if ( DataGlobal_AC1488 ) /*0x5f77fd*/
   {
     if ( FileSystem_PIPBRD_SHP ) /*0x5f7807*/
     {
-      v0 = *(_DWORD *)(FileSystem_PIPBRD_SHP - 4); /*0x5f7809*/
-      v1 = (void *)(FileSystem_PIPBRD_SHP - 4); /*0x5f780c*/
-      v2 = 9 * v0; /*0x5f780f*/
-      v3 = v0 - 1; /*0x5f7812*/
-      v4 = (char *)(FileSystem_PIPBRD_SHP + 4 * v2); /*0x5f7813*/
+      int v0 = *(_DWORD *)(FileSystem_PIPBRD_SHP - 4); /*0x5f7809*/
+      void * v1 = (void *)(FileSystem_PIPBRD_SHP - 4); /*0x5f780c*/
+      int v2 = 9 * v0; /*0x5f780f*/
+      int v3 = v0 - 1; /*0x5f7812*/
+      char * v4 = (char *)(FileSystem_PIPBRD_SHP + 4 * v2); /*0x5f7813*/
       if ( v3 >= 0 ) /*0x5f7816*/
       {
-        v5 = v3 + 1; /*0x5f7818*/
+        int v5 = v3 + 1; /*0x5f7818*/
         do /*0x5f7826*/
         {
           v4 -= 36; /*0x5f781b*/
@@ -458,14 +409,14 @@ void ObjectTypeClass::UnloadPipsSHP()
   {
     if ( FileSystem_PIPS_SHP ) /*0x5f7847*/
     {
-      v6 = *(_DWORD *)(FileSystem_PIPS_SHP - 4); /*0x5f7849*/
-      v7 = (void *)(FileSystem_PIPS_SHP - 4); /*0x5f784c*/
-      v8 = 9 * v6; /*0x5f784f*/
-      v9 = v6 - 1; /*0x5f7852*/
-      v10 = (char *)(FileSystem_PIPS_SHP + 4 * v8); /*0x5f7853*/
+      int v6 = *(_DWORD *)(FileSystem_PIPS_SHP - 4); /*0x5f7849*/
+      void * v7 = (void *)(FileSystem_PIPS_SHP - 4); /*0x5f784c*/
+      int v8 = 9 * v6; /*0x5f784f*/
+      int v9 = v6 - 1; /*0x5f7852*/
+      char * v10 = (char *)(FileSystem_PIPS_SHP + 4 * v8); /*0x5f7853*/
       if ( v9 >= 0 ) /*0x5f7856*/
       {
-        v11 = v9 + 1; /*0x5f7858*/
+        int v11 = v9 + 1; /*0x5f7858*/
         do /*0x5f7866*/
         {
           v10 -= 36; /*0x5f785b*/
@@ -482,14 +433,14 @@ void ObjectTypeClass::UnloadPipsSHP()
   {
     if ( FileSystem_PIPS2_SHP ) /*0x5f7887*/
     {
-      v12 = *(_DWORD *)(FileSystem_PIPS2_SHP - 4); /*0x5f7889*/
-      v13 = (void *)(FileSystem_PIPS2_SHP - 4); /*0x5f788c*/
-      v14 = 9 * v12; /*0x5f788f*/
-      v15 = v12 - 1; /*0x5f7892*/
-      v16 = (char *)(FileSystem_PIPS2_SHP + 4 * v14); /*0x5f7893*/
+      int v12 = *(_DWORD *)(FileSystem_PIPS2_SHP - 4); /*0x5f7889*/
+      void * v13 = (void *)(FileSystem_PIPS2_SHP - 4); /*0x5f788c*/
+      int v14 = 9 * v12; /*0x5f788f*/
+      int v15 = v12 - 1; /*0x5f7892*/
+      char * v16 = (char *)(FileSystem_PIPS2_SHP + 4 * v14); /*0x5f7893*/
       if ( v15 >= 0 ) /*0x5f7896*/
       {
-        v17 = v15 + 1; /*0x5f7898*/
+        int v17 = v15 + 1; /*0x5f7898*/
         do /*0x5f78a6*/
         {
           v16 -= 36; /*0x5f789b*/
@@ -506,14 +457,14 @@ void ObjectTypeClass::UnloadPipsSHP()
   {
     if ( FileSystem_TALKBUBL_SHP ) /*0x5f78c7*/
     {
-      v18 = *(_DWORD *)(FileSystem_TALKBUBL_SHP - 4); /*0x5f78c9*/
-      v19 = (void *)(FileSystem_TALKBUBL_SHP - 4); /*0x5f78cc*/
-      v20 = 9 * v18; /*0x5f78cf*/
-      v21 = v18 - 1; /*0x5f78d2*/
-      v22 = (char *)(FileSystem_TALKBUBL_SHP + 4 * v20); /*0x5f78d3*/
+      int v18 = *(_DWORD *)(FileSystem_TALKBUBL_SHP - 4); /*0x5f78c9*/
+      void * v19 = (void *)(FileSystem_TALKBUBL_SHP - 4); /*0x5f78cc*/
+      int v20 = 9 * v18; /*0x5f78cf*/
+      int v21 = v18 - 1; /*0x5f78d2*/
+      char * v22 = (char *)(FileSystem_TALKBUBL_SHP + 4 * v20); /*0x5f78d3*/
       if ( v21 >= 0 ) /*0x5f78d6*/
       {
-        v23 = v21 + 1; /*0x5f78d8*/
+        int v23 = v21 + 1; /*0x5f78d8*/
         do /*0x5f78e6*/
         {
           v22 -= 36; /*0x5f78db*/
@@ -533,14 +484,8 @@ void ObjectTypeClass::UnloadPipsSHP()
 int ObjectTypeClass::Load2DArt()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ObjectTypeClass::Load2DArt(char *this)
+void ObjectTypeClass::Load2DArt()
 {
-  char *v2; // edi
-  int v3; // esi
-  char v4; // al
-  char v5; // dl
-  int v6; // edx
-  int v7; // eax
   char v8; // dl
   int v9; // eax
   int result; // eax
@@ -555,7 +500,7 @@ int __thiscall ObjectTypeClass::Load2DArt(char *this)
   {
     if ( !this->q212 ) /*0x5f90a0*/
     {
-      v2 = this + 504; /*0x5f90ab*/
+      char * v2 = this + 504; /*0x5f90ab*/
       sprintf(Buffer, DataGlobal_832AE8, this + 504); /*0x5f90bf*/
       if ( Buffer ) /*0x5f90d0*/
       {
@@ -585,11 +530,11 @@ int __thiscall ObjectTypeClass::Load2DArt(char *this)
   }
   else if ( this->q237 ) /*0x5f9173*/
   {
-    v3 = *((_DWORD *)g_ScenarioClass_Instance + 1174); /*0x5f9183*/
+    int v3 = *((_DWORD *)g_ScenarioClass_Instance + 1174); /*0x5f9183*/
     if ( v3 != -1 ) /*0x5f918c*/
     {
-      v4 = Source; /*0x5f918e*/
-      v5 = v15; /*0x5f9198*/
+      char v4 = Source; /*0x5f918e*/
+      char v5 = v15; /*0x5f9198*/
       if ( Source >= 65 && Source <= 90 ) /*0x5f919e*/
         v4 = Source + 32; /*0x5f91a0*/
       if ( v15 >= 65 && v15 <= 90 ) /*0x5f91aa*/
@@ -599,8 +544,8 @@ int __thiscall ObjectTypeClass::Load2DArt(char *this)
     }
   }
   if ( this->ImageAllocated && this->Image ) /*0x5f91eb*/
-    __3_YAXPAX_Z(*((void **)this + 41)); /*0x5f91f6*/
-  v6 = *(_DWORD *)this; /*0x5f91fe*/
+    __3_YAXPAX_Z(this->Image); /*0x5f91f6*/
+  int v6 = *(_DWORD *)this; /*0x5f91fe*/
   this->Image = 0; /*0x5f9203*/
   this->ImageAllocated = 0; /*0x5f920d*/
   if ( (*(int (__thiscall **)(char *))(v6 + 44))(this) == 21 /*0x5f9227*/
@@ -617,7 +562,7 @@ int __thiscall ObjectTypeClass::Load2DArt(char *this)
   if ( (*(int (__thiscall **)(char *))(this->ChargerBarrels_0x12)(this) != 30 /*0x5f9241*/
     && (*(int (__thiscall **)(char *))(this->ChargerBarrels_0x12)(this) != 37 )
   {
-    v7 = SearchMIXFile(&Source, 0); /*0x5f9249*/
+    int v7 = SearchMIXFile(&Source, 0); /*0x5f9249*/
     this->Image = v7; /*0x5f9250*/
     if ( !v7 ) /*0x5f9256*/
     {
@@ -649,38 +594,14 @@ LABEL_41:
 char ObjectTypeClass::LoadFromINI(CCINIClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall ObjectTypeClass::LoadFromINI(char *this, CCINIClass *aP1)
+void ObjectTypeClass::LoadFromINI(CCINIClass *aP1)
 {
-  int v3; // edi
   int Index; // eax
-  int v5; // edi
-  int v6; // eax
-  char v7; // cl
   char Bool_Overwrite; // al
-  char v9; // al
-  char v10; // cl
-  char v11; // al
-  char v12; // al
-  char v13; // cl
-  char v14; // al
   int Int_Overwrite; // eax
-  char v16; // cl
-  char v17; // al
   int Coord; // eax
-  char v19; // cl
-  char v20; // al
-  int v21; // eax
-  int v22; // eax
-  char v23; // cl
-  char v24; // al
-  char v25; // al
-  char v27; // [esp-Ch] [ebp-1B8h]
-  char v28; // [esp-Ch] [ebp-1B8h]
   CCINIClass *v29; // [esp-Ch] [ebp-1B8h]
-  char v30; // [esp-Ch] [ebp-1B8h]
-  char v31; // [esp-Ch] [ebp-1B8h]
   CCINIClass *v32; // [esp-Ch] [ebp-1B8h]
-  char v33; // [esp-Ch] [ebp-1B8h]
   CCINIClass v34; // [esp+8h] [ebp-1A4h] BYREF
   char Buffer[260]; // [esp+A8h] [ebp-104h] BYREF
 
@@ -703,7 +624,7 @@ char __thiscall ObjectTypeClass::LoadFromINI(char *this, CCINIClass *aP1)
     (INIClass *)v34.headNode,
     (INIClass *)(this + 531),
     25);
-  v3 = this->CrushSound; /*0x5f938b*/
+  int v3 = this->CrushSound; /*0x5f938b*/
   if ( INIClass::GetString( /*0x5f93a8*/
          (unsigned __int8 ***)aP1,
          (INIClass *)(this + 36),
@@ -717,7 +638,7 @@ char __thiscall ObjectTypeClass::LoadFromINI(char *this, CCINIClass *aP1)
       v3 = Index; /*0x5f93bf*/
   }
   this->CrushSound = v3; /*0x5f93d5*/
-  v5 = this->AmbientSound; /*0x5f93db*/
+  int v5 = this->AmbientSound; /*0x5f93db*/
   if ( !INIClass::GetString( /*0x5f93f9*/
           (unsigned __int8 ***)aP1,
           (INIClass *)(this + 36),
@@ -725,50 +646,55 @@ char __thiscall ObjectTypeClass::LoadFromINI(char *this, CCINIClass *aP1)
           (INIClass *)&DataGlobal_87F8E4[42624],
           (INIClass *)v34[32],
           128)
+  int v6; // eax
     || (v6 = VocClass::FindIndex(v34[32]), v6 == -1) )
   {
     v6 = v5; /*0x5f93fb*/
   }
-  v7 = this->q22D; /*0x5f93fd*/
+  char v7 = this->q22D; /*0x5f93fd*/
   this->AmbientSound = v6; /*0x5f9403*/
   Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x5f9412*/
                      (int)aP1,
                      (unsigned __int8 *)this + 36,
                      (CCINIClass *)&stru_830620[9656],
                      v7);
-  v27 = this->q22E; /*0x5f941f*/
+  char v27 = this->q22E; /*0x5f941f*/
   this->q22D = Bool_Overwrite; /*0x5f9426*/
   this->q22E = INIClass::ReadBool_Overwrite( /*0x5f9431*/
                     (int)aP1,
                     (unsigned __int8 *)this + 36,
                     (CCINIClass *)&stru_830620[9644],
                     v27);
+  char v9; // al
   v9 = INIClass::ReadBool_Overwrite( /*0x5f9446*/
          (int)aP1,
          (unsigned __int8 *)this + 36,
          (CCINIClass *)&stru_830620[9632],
          this->q7A0);
-  v10 = this->q211; /*0x5f944b*/
+  char v10 = this->q211; /*0x5f944b*/
   this->q7A0 = v9; /*0x5f9451*/
+  char v11; // al
   v11 = INIClass::ReadBool_Overwrite( /*0x5f9460*/
           (int)aP1,
           (unsigned __int8 *)this + 36,
           (CCINIClass *)&stru_830620[9612],
           v10);
-  v28 = this->q22F; /*0x5f946d*/
+  char v28 = this->q22F; /*0x5f946d*/
   this->q211 = v11; /*0x5f9474*/
   this->q22F = INIClass::ReadBool_Overwrite( /*0x5f947f*/
                     (int)aP1,
                     (unsigned __int8 *)this + 36,
                     (CCINIClass *)&stru_830620[9596],
                     v28);
+  char v12; // al
   v12 = INIClass::ReadBool_Overwrite( /*0x5f9494*/
           (int)aP1,
           (unsigned __int8 *)this + 36,
           (CCINIClass *)&stru_830620[9584],
           this->q230);
-  v13 = this->q231; /*0x5f9499*/
+  char v13 = this->q231; /*0x5f9499*/
   this->q230 = v12; /*0x5f949f*/
+  char v14; // al
   v14 = INIClass::ReadBool_Overwrite( /*0x5f94ae*/
           (int)aP1,
           (unsigned __int8 *)this + 36,
@@ -785,15 +711,16 @@ char __thiscall ObjectTypeClass::LoadFromINI(char *this, CCINIClass *aP1)
                     (int)aP1,
                     (unsigned __int8 *)this + 36,
                     (CCINIClass *)&stru_830620[9560],
-                    *((INIClass **)this + 40));
-  v16 = this->q233; /*0x5f94e7*/
+                    this->Strength);
+  char v16 = this->q233; /*0x5f94e7*/
   this->Strength = Int_Overwrite; /*0x5f94ed*/
+  char v17; // al
   v17 = INIClass::ReadBool_Overwrite( /*0x5f94fc*/
           (int)aP1,
           (unsigned __int8 *)this + 36,
           (CCINIClass *)&stru_830620[9552],
           v16);
-  v30 = this->q232; /*0x5f9509*/
+  char v30 = this->q232; /*0x5f9509*/
   this->q233 = v17; /*0x5f9510*/
   this->q232 = INIClass::ReadBool_Overwrite( /*0x5f951b*/
                     (int)aP1,
@@ -811,21 +738,23 @@ char __thiscall ObjectTypeClass::LoadFromINI(char *this, CCINIClass *aP1)
             (INIClass *)(this + 36),
             (Color *)&stru_830620[9504],
             (Color *)this + 38);
-  v19 = this->q239; /*0x5f9557*/
+  char v19 = this->q239; /*0x5f9557*/
   this->q04C = *(_WORD *)Coord; /*0x5f955d*/
   this->q268 = *(_BYTE *)(Coord + 2); /*0x5f956c*/
+  char v20; // al
   v20 = INIClass::ReadBool_Overwrite( /*0x5f956f*/
           (int)aP1,
           (unsigned __int8 *)this + 36,
           (CCINIClass *)&stru_830620[9484],
           v19);
-  v31 = this->q23A; /*0x5f9580*/
+  char v31 = this->q23A; /*0x5f9580*/
   this->q239 = v20; /*0x5f958c*/
   this->q23A = INIClass::ReadBool_Overwrite( /*0x5f959d*/
                     (int)&DataGlobal_87F8E4[30876],
                     (unsigned __int8 *)this + 504,
                     (CCINIClass *)&stru_830620[9468],
                     v31);
+  int v21; // eax
   v21 = INIClass::GetCoord( /*0x5f95b4*/
           (unsigned __int8 ***)&DataGlobal_87F8E4[30876],
           &v34,
@@ -835,25 +764,28 @@ char __thiscall ObjectTypeClass::LoadFromINI(char *this, CCINIClass *aP1)
   this->q23B = *(_WORD *)v21; /*0x5f95bc*/
   v32 = (CCINIClass *)this->LineTrailColorDecrement; /*0x5f95cd*/
   this->q23D = *(_BYTE *)(v21 + 2); /*0x5f95d4*/
+  int v22; // eax
   v22 = INIClass::ReadInt_Overwrite( /*0x5f95d7*/
           (int)&DataGlobal_87F8E4[30876],
           (unsigned __int8 *)this + 504,
           (CCINIClass *)&stru_830620[9428],
           (INIClass *)v32);
-  v23 = this->q22C; /*0x5f95dc*/
+  char v23 = this->q22C; /*0x5f95dc*/
   this->LineTrailColorDecrement = v22; /*0x5f95e2*/
+  char v24; // al
   v24 = INIClass::ReadBool_Overwrite( /*0x5f95f4*/
           (int)&DataGlobal_87F8E4[30876],
           (unsigned __int8 *)this + 504,
           &unk_818658,
           v23);
-  v33 = this->q237; /*0x5f9604*/
+  char v33 = this->q237; /*0x5f9604*/
   this->q22C = v24; /*0x5f960b*/
   this->q237 = INIClass::ReadBool_Overwrite( /*0x5f9616*/
                     (int)&DataGlobal_87F8E4[30876],
                     (unsigned __int8 *)this + 504,
                     &unk_81864C,
                     v33);
+  char v25; // al
   v25 = INIClass::ReadBool_Overwrite( /*0x5f962e*/
           (int)&DataGlobal_87F8E4[30876],
           (unsigned __int8 *)this + 504,
@@ -875,7 +807,7 @@ char __thiscall ObjectTypeClass::LoadFromINI(char *this, CCINIClass *aP1)
 void ObjectTypeClass::SetRTTI71()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall ObjectTypeClass_SetRTTI71(_BYTE *this)
+void ObjectTypeClass_SetRTTI71(_BYTE *this)
 {
   this->vtable2 = 71; /*0x5f9710*/
 }
@@ -885,17 +817,12 @@ void __thiscall ObjectTypeClass_SetRTTI71(_BYTE *this)
 int ObjectTypeClass::LoadCleanup(IUnknown * aP0, ObjectTypeClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall ObjectTypeClass::LoadCleanup(IUnknown *aP0, ObjectTypeClass *aP1)
+void ObjectTypeClass::LoadCleanup(IUnknown *aP0, ObjectTypeClass *aP1)
 {
-  void *v2; // ebp
   void **v3; // ebp
-  void *v4; // ebp
   void **v5; // ebp
-  void *v6; // ebp
   void **v7; // ebp
   int result; // eax
-  char *v9; // eax
-  int v10; // ecx
   IUnknown *v11; // edx
   char Buffer[260]; // [esp+10h] [ebp-104h] BYREF
 
@@ -908,7 +835,7 @@ int __stdcall ObjectTypeClass::LoadCleanup(IUnknown *aP0, ObjectTypeClass *aP1)
   ObjectTypeClass::FreeLoaderBuffer((int)&aP0->__pad_220[56]); /*0x5f975c*/
   ObjectTypeClass::FreeLoaderBuffer((int)&aP0->__pad_220[76]); /*0x5f9767*/
   ObjectTypeClass::FreeLoaderBuffer((int)&aP0->__pad_220[96]); /*0x5f9772*/
-  v2 = *(void **)&aP0->__pad_A8[8]; /*0x5f9777*/
+  void * v2 = *(void **)&aP0->__pad_A8[8]; /*0x5f9777*/
   if ( v2 ) /*0x5f977f*/
   {
     WaveClass::Destroy(*(_DWORD *)&aP0->__pad_A8[8]); /*0x5f9783*/
@@ -921,7 +848,7 @@ int __stdcall ObjectTypeClass::LoadCleanup(IUnknown *aP0, ObjectTypeClass *aP1)
     String::Release(v3); /*0x5f97a3*/
     __3_YAXPAX_Z(v3); /*0x5f97a9*/
   }
-  v4 = *(void **)&aP0->__pad_A8[16]; /*0x5f97b1*/
+  void * v4 = *(void **)&aP0->__pad_A8[16]; /*0x5f97b1*/
   *(_DWORD *)&aP0->__pad_A8[12] = 0; /*0x5f97b7*/
   if ( v4 ) /*0x5f97bf*/
   {
@@ -935,7 +862,7 @@ int __stdcall ObjectTypeClass::LoadCleanup(IUnknown *aP0, ObjectTypeClass *aP1)
     String::Release(v5); /*0x5f97e3*/
     __3_YAXPAX_Z(v5); /*0x5f97e9*/
   }
-  v6 = *(void **)&aP0->__pad_A8[24]; /*0x5f97f1*/
+  void * v6 = *(void **)&aP0->__pad_A8[24]; /*0x5f97f1*/
   *(_DWORD *)&aP0->__pad_A8[20] = 0; /*0x5f97f7*/
   if ( v6 ) /*0x5f97ff*/
   {
@@ -995,8 +922,8 @@ int __stdcall ObjectTypeClass::LoadCleanup(IUnknown *aP0, ObjectTypeClass *aP1)
     *(_DWORD *)&aP0->__pad_A8[20] = 0; /*0x5f98d2*/
     *(_DWORD *)&aP0->__pad_A8[24] = 0; /*0x5f98d8*/
     *(_DWORD *)&aP0->__pad_A8[28] = 0; /*0x5f98de*/
-    v9 = &aP0->__pad_A8[36]; /*0x5f98e4*/
-    v10 = 18; /*0x5f98ea*/
+    char * v9 = &aP0->__pad_A8[36]; /*0x5f98e4*/
+    int v10 = 18; /*0x5f98ea*/
     do /*0x5f9904*/
     {
       *((_DWORD *)v9 - 1) = 0; /*0x5f98ef*/
@@ -1023,7 +950,7 @@ int __stdcall ObjectTypeClass::LoadCleanup(IUnknown *aP0, ObjectTypeClass *aP1)
 int ObjectTypeClass::SelectArtOrAlt()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ObjectTypeClass_SelectArtOrAlt(_DWORD *this)
+void ObjectTypeClass_SelectArtOrAlt(_DWORD *this)
 {
   #375 *v1; // eax
   int result; // eax
@@ -1062,15 +989,12 @@ int __thiscall ObjectTypeClass_SelectArtOrAlt(_DWORD *this)
 char ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char *** a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 ***a2)
+void ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 ***a2)
 {
-  int v3; // ecx
-  int v4; // ebp
   WeaponTypeClass *v5; // edi
   WeaponTypeClass *v6; // eax
   char Bool_Overwrite; // al
   double Double_Overwrite; // st7
-  double v9; // st7
   INIClass *v10; // ecx
   _DWORD *GUID_Overwrite; // eax
   INIClass *v12; // edx
@@ -1083,13 +1007,9 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
   int Int_Overwrite; // eax
   CCINIClass *v11; // eax
   ObjectClass *i; // eax
-  int v22; // edx
-  int v23; // eax
   INIClass *inited; // eax
-  int v25; // eax
   AbstractClass *j; // eax
   int edx29; // edx
-  int v28; // eax
   char al29; // al
   CCINIClass *v21; // edi
   WeaponTypeClass *eax33; // eax
@@ -1112,142 +1032,46 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
   INIClass *v39; // eax
   int eax56c; // eax
   INIClass *v41; // eax
-  int v51; // eax
   INIClass *v43; // eax
-  int v53; // eax
   INIClass *v45; // eax
-  int v55; // eax
   INIClass *v47; // eax
-  int v57; // eax
   CCINIClass *v49; // edi
   CCINIClass *Index; // eax
-  int v60; // edi
-  int v61; // eax
-  int v62; // edi
-  int v63; // eax
-  int v64; // edi
-  int v65; // eax
-  int v66; // edi
-  int v67; // eax
-  int v68; // edi
-  int v69; // eax
-  int v70; // edi
-  int v71; // eax
-  int v72; // edi
-  int v73; // eax
-  int v74; // edi
-  int v75; // eax
-  int v76; // edi
-  int v77; // eax
-  int v78; // edi
-  int v79; // eax
-  int v80; // edi
-  int v81; // eax
-  int v82; // edi
-  int v83; // eax
   int TypeMember_54749E0; // eax
   char *k; // eax
-  int v86; // edx
-  int v87; // eax
   BuildingTypeClass *v88; // edi
   BuildingTypeClass *v89; // eax
   UnitTypeClass *v90; // edi
   UnitTypeClass *Alt; // eax
   UnitTypeClass *v92; // edi
   UnitTypeClass *eax110; // eax
-  char v94; // al
   char al112a; // al
-  char v96; // cl
   char al112b; // al
-  int v98; // edi
-  int v99; // eax
-  int v100; // edi
-  int v101; // eax
   CCINIClass *v93; // edi
   CCINIClass *v103; // eax
   INIClass *v95; // eax
-  int v105; // eax
   INIClass *v97; // eax
-  int v107; // eax
-  int v108; // edx
-  void *v109; // eax
-  int v110; // edi
-  int v111; // eax
-  int v112; // edi
-  int v113; // eax
-  int v114; // edi
-  int v115; // eax
-  int v116; // edi
-  int v117; // eax
-  int v118; // edi
-  int v119; // eax
-  int v120; // edi
-  int v121; // eax
-  int v122; // edi
-  int v123; // eax
-  int v124; // edi
-  int v125; // eax
-  int v126; // edi
-  int v127; // eax
-  int v128; // edi
-  int v129; // eax
-  int v130; // edi
-  int v131; // eax
-  int v132; // edi
-  int v133; // eax
-  int v134; // edi
-  int v135; // eax
-  int v136; // edi
-  int v137; // eax
-  int v138; // edi
-  int v139; // eax
-  int v140; // edi
-  int v141; // eax
-  int v142; // edi
-  int v143; // eax
-  int v144; // edi
-  int v145; // eax
   AbstractClass *m; // eax
-  int v147; // ecx
-  int v148; // edx
-  void *v149; // eax
   AbstractClass *n; // eax
-  int v151; // ecx
-  int v152; // edx
-  void *v153; // eax
   ParticleSystemTypeClass *v154; // edi
   ParticleSystemTypeClass *v155; // eax
   ParticleSystemTypeClass *v156; // edi
   ParticleSystemTypeClass *v157; // eax
   int *Coord2; // eax
-  int v159; // ecx
-  int v160; // edx
-  int v161; // eax
   ObjectClass *ii; // eax
-  int v163; // ecx
-  int v164; // edx
-  void *v165; // eax
   ObjectClass *jj; // eax
-  int v167; // ecx
-  int v168; // edx
-  void *v169; // eax
   int *eax231; // eax
   int edx231; // edx
-  char v172; // al
   int *eax231a; // eax
   int *eax231b; // eax
-  int *v175; // eax
-  int *v176; // eax
   int *eax231e; // eax
   INIClass **v178; // edi
   CCINIClass *v170; // ecx
   INIClass *v171; // eax
-  int v181; // eax
   CCINIClass *v173; // eax
   INIClass *v174; // eax
-  int v184; // eax
   CCINIClass *v177; // edi
-  void *v186; // eax
+  CCINIClass *v186; // eax
   int v187; // eax
   int eax246; // eax
   int v189; // edx
@@ -1480,8 +1304,9 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
   INIClass String[2]; // [esp+E4h] [ebp-2A0h] BYREF
   INIClass aP4; // [esp+164h] [ebp-220h] BYREF
 
-  v4 = v3;
+  int v3 = v3;
   INIClass::ResetSection(aP0);
+  int v4; // ebp
   if ( !ObjectTypeClass::LoadFromINI((char *)v4, aP0) )
     return 0;
   *(_DWORD *)(v4 + 1540) = INIClass::ReadInt_Overwrite(
@@ -1588,6 +1413,7 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
   if ( Double_Overwrite != -1.0 )
     *(double *)(v4 + 944) = Double_Overwrite * 0.0174532925199433;
   *(_DWORD *)&aP3[8] = -1074790400;
+  double v9; // st7
   v9 = INIClass::ReadDouble_Overwrite(
          (int)aP0,
          (INIClass *)(v4 + 36),
@@ -1729,8 +1555,8 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
     TypeList::CopyVoxelAnim(aP2.sectionHead, (VectorClass *)(v4 + 788));
   }
   VectorClass::CopyAssign((_DWORD *)(v4 + 788), (VectorClass *)aP2.sectionHead);
-  v22 = *(_DWORD *)aP2[32];
-  v23 = *(_DWORD *)&aP2[36];
+  int v22 = *(_DWORD *)aP2[32];
+  int v23 = *(_DWORD *)&aP2[36];
   *(_DWORD *)(v4 + 812) = *(_DWORD *)&aP2[40];
   *(_DWORD *)(v4 + 804) = v22;
   *(_DWORD *)(v4 + 808) = v23;
@@ -1753,7 +1579,7 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
                       *(int *)&aP3[4],
                       *(int *)&aP3[8]);
   TypeList::Copy((_DWORD *)(v4 + 816), (_DWORD *)aP2.headNode[2]);
-  v25 = aP2.headNode[2];
+  int v25 = aP2.headNode[2];
   *(_DWORD *)(v4 + 832) = *(_DWORD *)(aP2.headNode[2] + 16);
   *(_DWORD *)(v4 + 836) = *(_DWORD *)(v25 + 20);
   *(_DWORD *)(v4 + 840) = *(_DWORD *)(v25 + 24);
@@ -1789,7 +1615,7 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
   }
   VectorClass::CopyDefault((_DWORD *)(v4 + 1476), (VectorClass *)aP2.sectionHead);
   edx29 = *(_DWORD *)&aP2[36];
-  v28 = *(_DWORD *)&aP2[40];
+  int v28 = *(_DWORD *)&aP2[40];
   *(_DWORD *)(v4 + 1492) = *(_DWORD *)aP2[32];
   *(_DWORD *)(v4 + 1496) = edx29;
   *(_DWORD *)(v4 + 1500) = v28;
@@ -2061,7 +1887,7 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
                              *(int *)&aP3[4],
                              *(int *)&aP3[8]);
   TypeList::Copy((_DWORD *)(v4 + 1156), *(_DWORD **)aP2[0]);
-  v51 = *(_DWORD *)aP2[0];
+  int v51 = *(_DWORD *)aP2[0];
   *(_DWORD *)(v4 + 1172) = *(_DWORD *)(*(_DWORD *)aP2[0] + 16);
   *(_DWORD *)(v4 + 1176) = *(_DWORD *)(v51 + 20);
   *(_DWORD *)(v4 + 1180) = *(_DWORD *)(v51 + 24);
@@ -2084,7 +1910,7 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
                              *(int *)&aP3[4],
                              *(int *)&aP3[8]);
   TypeList::Copy((_DWORD *)(v4 + 1184), *(_DWORD **)aP2[0]);
-  v53 = *(_DWORD *)aP2[0];
+  int v53 = *(_DWORD *)aP2[0];
   *(_DWORD *)(v4 + 1200) = *(_DWORD *)(*(_DWORD *)aP2[0] + 16);
   *(_DWORD *)(v4 + 1204) = *(_DWORD *)(v53 + 20);
   *(_DWORD *)(v4 + 1208) = *(_DWORD *)(v53 + 24);
@@ -2107,7 +1933,7 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
                              *(int *)&aP3[4],
                              *(int *)&aP3[8]);
   TypeList::Copy((_DWORD *)(v4 + 1212), *(_DWORD **)aP2[0]);
-  v55 = *(_DWORD *)aP2[0];
+  int v55 = *(_DWORD *)aP2[0];
   *(_DWORD *)(v4 + 1228) = *(_DWORD *)(*(_DWORD *)aP2[0] + 16);
   *(_DWORD *)(v4 + 1232) = *(_DWORD *)(v55 + 20);
   *(_DWORD *)(v4 + 1236) = *(_DWORD *)(v55 + 24);
@@ -2130,7 +1956,7 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
                              *(int *)&aP3[4],
                              *(int *)&aP3[8]);
   TypeList::Copy((_DWORD *)(v4 + 1240), *(_DWORD **)aP2[0]);
-  v57 = *(_DWORD *)aP2[0];
+  int v57 = *(_DWORD *)aP2[0];
   *(_DWORD *)(v4 + 1256) = *(_DWORD *)(*(_DWORD *)aP2[0] + 16);
   *(_DWORD *)(v4 + 1260) = *(_DWORD *)(v57 + 20);
   *(_DWORD *)(v4 + 1264) = *(_DWORD *)(v57 + 24);
@@ -2154,7 +1980,7 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
   *(_DWORD *)aP3 = &stru_87C374[56304];
   *(_DWORD *)&v412.IsInitialized = &stru_830620[80916];
   *(_DWORD *)(v4 + 1324) = v49;
-  v60 = *(_DWORD *)(v4 + 1328);
+  int v60 = *(_DWORD *)(v4 + 1328);
   if ( !INIClass::GetString(
           (unsigned __int8 ***)aP0,
           (INIClass *)(v4 + 36),
@@ -2162,6 +1988,7 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
           *(INIClass **)aP3,
           *(INIClass **)&aP3[4],
           *(int *)&aP3[8])
+  int v61; // eax
     || (v61 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v61 == -1) )
   {
     v61 = v60;
@@ -2171,7 +1998,7 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
   *(_DWORD *)aP3 = &stru_87C374[56304];
   *(_DWORD *)&v412.IsInitialized = &stru_830620[80904];
   *(_DWORD *)(v4 + 1328) = v61;
-  v62 = *(_DWORD *)(v4 + 1332);
+  int v62 = *(_DWORD *)(v4 + 1332);
   if ( !INIClass::GetString(
           (unsigned __int8 ***)aP0,
           (INIClass *)(v4 + 36),
@@ -2179,12 +2006,13 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
           *(INIClass **)aP3,
           *(INIClass **)&aP3[4],
           *(int *)&aP3[8])
+  int v63; // eax
     || (v63 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v63 == -1) )
   {
     v63 = v62;
   }
   *(_DWORD *)(v4 + 1332) = v63;
-  v64 = *(_DWORD *)(v4 + 1336);
+  int v64 = *(_DWORD *)(v4 + 1336);
   if ( !INIClass::GetString(
           (unsigned __int8 ***)aP0,
           (INIClass *)(v4 + 36),
@@ -2192,6 +2020,7 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
           (INIClass *)&stru_87C374[56304],
           (INIClass *)&aP2.CCINIClass_field_4C,
           128)
+  int v65; // eax
     || (v65 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v65 == -1) )
   {
     v65 = v64;
@@ -2201,7 +2030,7 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
   *(_DWORD *)aP3 = &stru_87C374[56304];
   *(_DWORD *)&v412.IsInitialized = &stru_830620[41908];
   *(_DWORD *)(v4 + 1336) = v65;
-  v66 = *(_DWORD *)(v4 + 1340);
+  int v66 = *(_DWORD *)(v4 + 1340);
   if ( !INIClass::GetString(
           (unsigned __int8 ***)aP0,
           (INIClass *)(v4 + 36),
@@ -2209,6 +2038,7 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
           *(INIClass **)aP3,
           *(INIClass **)&aP3[4],
           *(int *)&aP3[8])
+  int v67; // eax
     || (v67 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v67 == -1) )
   {
     v67 = v66;
@@ -2218,7 +2048,7 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
   *(_DWORD *)aP3 = &stru_87C374[56304];
   *(_DWORD *)&v412.IsInitialized = &stru_830620[41892];
   *(_DWORD *)(v4 + 1340) = v67;
-  v68 = *(_DWORD *)(v4 + 1344);
+  int v68 = *(_DWORD *)(v4 + 1344);
   if ( !INIClass::GetString(
           (unsigned __int8 ***)aP0,
           (INIClass *)(v4 + 36),
@@ -2226,12 +2056,13 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
           *(INIClass **)aP3,
           *(INIClass **)&aP3[4],
           *(int *)&aP3[8])
+  int v69; // eax
     || (v69 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v69 == -1) )
   {
     v69 = v68;
   }
   *(_DWORD *)(v4 + 1344) = v69;
-  v70 = *(_DWORD *)(v4 + 1348);
+  int v70 = *(_DWORD *)(v4 + 1348);
   if ( !INIClass::GetString(
           (unsigned __int8 ***)aP0,
           (INIClass *)(v4 + 36),
@@ -2239,6 +2070,7 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
           (INIClass *)&stru_87C374[56304],
           (INIClass *)&aP2.CCINIClass_field_4C,
           128)
+  int v71; // eax
     || (v71 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v71 == -1) )
   {
     v71 = v70;
@@ -2248,7 +2080,7 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
   *(_DWORD *)aP3 = &stru_87C374[56304];
   *(_DWORD *)&v412.IsInitialized = &stru_830620[41876];
   *(_DWORD *)(v4 + 1348) = v71;
-  v72 = *(_DWORD *)(v4 + 1352);
+  int v72 = *(_DWORD *)(v4 + 1352);
   if ( !INIClass::GetString(
           (unsigned __int8 ***)aP0,
           (INIClass *)(v4 + 36),
@@ -2256,6 +2088,7 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
           *(INIClass **)aP3,
           *(INIClass **)&aP3[4],
           *(int *)&aP3[8])
+  int v73; // eax
     || (v73 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v73 == -1) )
   {
     v73 = v72;
@@ -2265,7 +2098,7 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
   *(_DWORD *)aP3 = &stru_87C374[56304];
   *(_DWORD *)&v412.IsInitialized = &stru_830620[80860];
   *(_DWORD *)(v4 + 1352) = v73;
-  v74 = *(_DWORD *)(v4 + 1356);
+  int v74 = *(_DWORD *)(v4 + 1356);
   if ( !INIClass::GetString(
           (unsigned __int8 ***)aP0,
           (INIClass *)(v4 + 36),
@@ -2273,12 +2106,13 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
           *(INIClass **)aP3,
           *(INIClass **)&aP3[4],
           *(int *)&aP3[8])
+  int v75; // eax
     || (v75 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v75 == -1) )
   {
     v75 = v74;
   }
   *(_DWORD *)(v4 + 1356) = v75;
-  v76 = *(_DWORD *)(v4 + 1360);
+  int v76 = *(_DWORD *)(v4 + 1360);
   if ( !INIClass::GetString(
           (unsigned __int8 ***)aP0,
           (INIClass *)(v4 + 36),
@@ -2286,6 +2120,7 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
           (INIClass *)&stru_87C374[56304],
           (INIClass *)&aP2.CCINIClass_field_4C,
           128)
+  int v77; // eax
     || (v77 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v77 == -1) )
   {
     v77 = v76;
@@ -2295,7 +2130,7 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
   *(_DWORD *)aP3 = &stru_87C374[56304];
   *(_DWORD *)&v412.IsInitialized = &stru_830620[80828];
   *(_DWORD *)(v4 + 1360) = v77;
-  v78 = *(_DWORD *)(v4 + 1364);
+  int v78 = *(_DWORD *)(v4 + 1364);
   if ( !INIClass::GetString(
           (unsigned __int8 ***)aP0,
           (INIClass *)(v4 + 36),
@@ -2303,6 +2138,7 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
           *(INIClass **)aP3,
           *(INIClass **)&aP3[4],
           *(int *)&aP3[8])
+  int v79; // eax
     || (v79 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v79 == -1) )
   {
     v79 = v78;
@@ -2312,7 +2148,7 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
   *(_DWORD *)aP3 = &stru_87C374[56304];
   *(_DWORD *)&v412.IsInitialized = &stru_830620[80816];
   *(_DWORD *)(v4 + 1364) = v79;
-  v80 = *(_DWORD *)(v4 + 1368);
+  int v80 = *(_DWORD *)(v4 + 1368);
   if ( !INIClass::GetString(
           (unsigned __int8 ***)aP0,
           (INIClass *)(v4 + 36),
@@ -2320,12 +2156,13 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
           *(INIClass **)aP3,
           *(INIClass **)&aP3[4],
           *(int *)&aP3[8])
+  int v81; // eax
     || (v81 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v81 == -1) )
   {
     v81 = v80;
   }
   *(_DWORD *)(v4 + 1368) = v81;
-  v82 = *(_DWORD *)(v4 + 1372);
+  int v82 = *(_DWORD *)(v4 + 1372);
   if ( !INIClass::GetString(
           (unsigned __int8 ***)aP0,
           (INIClass *)(v4 + 36),
@@ -2333,6 +2170,7 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
           (INIClass *)&stru_87C374[56304],
           (INIClass *)&aP2.CCINIClass_field_4C,
           128)
+  int v83; // eax
     || (v83 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v83 == -1) )
   {
     v83 = v82;
@@ -2393,8 +2231,8 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
     TypeList::BuildingTypeCopy(aP2.sectionHead, (VectorClass *)(v4 + 1000));
   }
   VectorClass::CopyBuilding((_DWORD *)(v4 + 1000), (VectorClass *)aP2.sectionHead);
-  v86 = *(_DWORD *)aP2[32];
-  v87 = *(_DWORD *)&aP2[36];
+  int v86 = *(_DWORD *)aP2[32];
+  int v87 = *(_DWORD *)&aP2[36];
   *(_DWORD *)(v4 + 1024) = *(_DWORD *)&aP2[40];
   *(_DWORD *)(v4 + 1016) = v86;
   *(_DWORD *)(v4 + 1020) = v87;
@@ -2462,6 +2300,7 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
                             (unsigned __int8 *)(v4 + 36),
                             (CCINIClass *)&stru_830620[80680],
                             *(_BYTE *)(v4 + 3366));
+  char v94; // al
   v94 = INIClass::ReadBool_Overwrite(
           (int)aP0,
           (unsigned __int8 *)(v4 + 36),
@@ -2481,14 +2320,14 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
              (unsigned __int8 *)(v4 + 36),
              (CCINIClass *)&stru_830620[80632],
              *(_BYTE *)(v4 + 3362));
-  v96 = *(_BYTE *)(v4 + 3233);
+  char v96 = *(_BYTE *)(v4 + 3233);
   *(_BYTE *)(v4 + 3362) = al112a;
   al112b = INIClass::ReadBool_Overwrite(
              (int)aP0,
              (unsigned __int8 *)(v4 + 36),
              (CCINIClass *)&stru_830620[80624],
              v96);
-  v98 = *(_DWORD *)(v4 + 1376);
+  int v98 = *(_DWORD *)(v4 + 1376);
   *(_DWORD *)&aP3[8] = 128;
   *(_DWORD *)&aP3[4] = &aP2.CCINIClass_field_4C;
   *(_DWORD *)aP3 = &stru_87C374[56304];
@@ -2502,11 +2341,12 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
           *(INIClass **)aP3,
           *(INIClass **)&aP3[4],
           *(int *)&aP3[8])
+  int v99; // eax
     || (v99 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v99 == -1) )
   {
     v99 = v98;
   }
-  v100 = *(_DWORD *)(v4 + 1380);
+  int v100 = *(_DWORD *)(v4 + 1380);
   *(_DWORD *)(v4 + 1376) = v99;
   if ( !INIClass::GetString(
           (unsigned __int8 ***)aP0,
@@ -2515,6 +2355,7 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
           (INIClass *)&stru_87C374[56304],
           (INIClass *)&aP2.CCINIClass_field_4C,
           128)
+  int v101; // eax
     || (v101 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v101 == -1) )
   {
     v101 = v100;
@@ -2555,7 +2396,7 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
                              *(int *)&aP3[4],
                              *(int *)&aP3[8]);
   TypeList::Copy((_DWORD *)(v4 + 1268), *(_DWORD **)aP2[0]);
-  v105 = *(_DWORD *)aP2[0];
+  int v105 = *(_DWORD *)aP2[0];
   *(_DWORD *)(v4 + 1284) = *(_DWORD *)(*(_DWORD *)aP2[0] + 16);
   *(_DWORD *)(v4 + 1288) = *(_DWORD *)(v105 + 20);
   *(_DWORD *)(v4 + 1292) = *(_DWORD *)(v105 + 24);
@@ -2579,16 +2420,16 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
                              *(int *)&aP3[4],
                              *(int *)&aP3[8]);
   TypeList::Copy((_DWORD *)(v4 + 1296), *(_DWORD **)aP2[0]);
-  v107 = *(_DWORD *)aP2[0];
+  int v107 = *(_DWORD *)aP2[0];
   *(_DWORD *)(v4 + 1312) = *(_DWORD *)(*(_DWORD *)aP2[0] + 16);
   *(_DWORD *)(v4 + 1316) = *(_DWORD *)(v107 + 20);
-  v108 = *(_DWORD *)(v107 + 24);
-  v109 = (void *)aP2.sectionHead[1];
+  int v108 = *(_DWORD *)(v107 + 24);
+  void * v109 = (void *)aP2.sectionHead[1];
   *(_DWORD *)(v4 + 1320) = v108;
   aP2.sectionHead[0] = (int)&vt_VectorClass_int;
   if ( v109 && BYTE1(aP2.sectionCount) )
     __3_YAXPAX_Z(v109);
-  v110 = *(_DWORD *)(v4 + 1388);
+  int v110 = *(_DWORD *)(v4 + 1388);
   if ( !INIClass::GetString(
           (unsigned __int8 ***)aP0,
           (INIClass *)(v4 + 36),
@@ -2596,11 +2437,12 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
           (INIClass *)&stru_87C374[56304],
           (INIClass *)&aP2.CCINIClass_field_4C,
           128)
+  int v111; // eax
     || (v111 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v111 == -1) )
   {
     v111 = v110;
   }
-  v112 = *(_DWORD *)(v4 + 1392);
+  int v112 = *(_DWORD *)(v4 + 1392);
   *(_DWORD *)&aP3[8] = 128;
   *(_DWORD *)&aP3[4] = &aP2.CCINIClass_field_4C;
   *(_DWORD *)aP3 = &stru_87C374[56304];
@@ -2614,11 +2456,12 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
           *(INIClass **)aP3,
           *(INIClass **)&aP3[4],
           *(int *)&aP3[8])
+  int v113; // eax
     || (v113 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v113 == -1) )
   {
     v113 = v112;
   }
-  v114 = *(_DWORD *)(v4 + 1396);
+  int v114 = *(_DWORD *)(v4 + 1396);
   *(_DWORD *)&aP3[8] = 128;
   *(_DWORD *)&aP3[4] = &aP2.CCINIClass_field_4C;
   *(_DWORD *)aP3 = &stru_87C374[56304];
@@ -2632,11 +2475,12 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
           *(INIClass **)aP3,
           *(INIClass **)&aP3[4],
           *(int *)&aP3[8])
+  int v115; // eax
     || (v115 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v115 == -1) )
   {
     v115 = v114;
   }
-  v116 = *(_DWORD *)(v4 + 1400);
+  int v116 = *(_DWORD *)(v4 + 1400);
   *(_DWORD *)(v4 + 1396) = v115;
   if ( !INIClass::GetString(
           (unsigned __int8 ***)aP0,
@@ -2645,11 +2489,12 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
           (INIClass *)&stru_87C374[56304],
           (INIClass *)&aP2.CCINIClass_field_4C,
           128)
+  int v117; // eax
     || (v117 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v117 == -1) )
   {
     v117 = v116;
   }
-  v118 = *(_DWORD *)(v4 + 1404);
+  int v118 = *(_DWORD *)(v4 + 1404);
   *(_DWORD *)&aP3[8] = 128;
   *(_DWORD *)&aP3[4] = &aP2.CCINIClass_field_4C;
   *(_DWORD *)aP3 = &stru_87C374[56304];
@@ -2663,11 +2508,12 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
           *(INIClass **)aP3,
           *(INIClass **)&aP3[4],
           *(int *)&aP3[8])
+  int v119; // eax
     || (v119 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v119 == -1) )
   {
     v119 = v118;
   }
-  v120 = *(_DWORD *)(v4 + 1408);
+  int v120 = *(_DWORD *)(v4 + 1408);
   *(_DWORD *)&aP3[8] = 128;
   *(_DWORD *)&aP3[4] = &aP2.CCINIClass_field_4C;
   *(_DWORD *)aP3 = &stru_87C374[56304];
@@ -2681,11 +2527,12 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
           *(INIClass **)aP3,
           *(INIClass **)&aP3[4],
           *(int *)&aP3[8])
+  int v121; // eax
     || (v121 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v121 == -1) )
   {
     v121 = v120;
   }
-  v122 = *(_DWORD *)(v4 + 1412);
+  int v122 = *(_DWORD *)(v4 + 1412);
   *(_DWORD *)(v4 + 1408) = v121;
   if ( !INIClass::GetString(
           (unsigned __int8 ***)aP0,
@@ -2694,11 +2541,12 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
           (INIClass *)&stru_87C374[56304],
           (INIClass *)&aP2.CCINIClass_field_4C,
           128)
+  int v123; // eax
     || (v123 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v123 == -1) )
   {
     v123 = v122;
   }
-  v124 = *(_DWORD *)(v4 + 1416);
+  int v124 = *(_DWORD *)(v4 + 1416);
   *(_DWORD *)&aP3[8] = 128;
   *(_DWORD *)&aP3[4] = &aP2.CCINIClass_field_4C;
   *(_DWORD *)aP3 = &stru_87C374[56304];
@@ -2712,11 +2560,12 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
           *(INIClass **)aP3,
           *(INIClass **)&aP3[4],
           *(int *)&aP3[8])
+  int v125; // eax
     || (v125 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v125 == -1) )
   {
     v125 = v124;
   }
-  v126 = *(_DWORD *)(v4 + 1420);
+  int v126 = *(_DWORD *)(v4 + 1420);
   *(_DWORD *)&aP3[8] = 128;
   *(_DWORD *)&aP3[4] = &aP2.CCINIClass_field_4C;
   *(_DWORD *)aP3 = &stru_87C374[56304];
@@ -2730,11 +2579,12 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
           *(INIClass **)aP3,
           *(INIClass **)&aP3[4],
           *(int *)&aP3[8])
+  int v127; // eax
     || (v127 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v127 == -1) )
   {
     v127 = v126;
   }
-  v128 = *(_DWORD *)(v4 + 1424);
+  int v128 = *(_DWORD *)(v4 + 1424);
   *(_DWORD *)(v4 + 1420) = v127;
   if ( !INIClass::GetString(
           (unsigned __int8 ***)aP0,
@@ -2743,11 +2593,12 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
           (INIClass *)&stru_87C374[56304],
           (INIClass *)&aP2.CCINIClass_field_4C,
           128)
+  int v129; // eax
     || (v129 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v129 == -1) )
   {
     v129 = v128;
   }
-  v130 = *(_DWORD *)(v4 + 1428);
+  int v130 = *(_DWORD *)(v4 + 1428);
   *(_DWORD *)&aP3[8] = 128;
   *(_DWORD *)&aP3[4] = &aP2.CCINIClass_field_4C;
   *(_DWORD *)aP3 = &stru_87C374[56304];
@@ -2761,11 +2612,12 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
           *(INIClass **)aP3,
           *(INIClass **)&aP3[4],
           *(int *)&aP3[8])
+  int v131; // eax
     || (v131 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v131 == -1) )
   {
     v131 = v130;
   }
-  v132 = *(_DWORD *)(v4 + 1432);
+  int v132 = *(_DWORD *)(v4 + 1432);
   *(_DWORD *)&aP3[8] = 128;
   *(_DWORD *)&aP3[4] = &aP2.CCINIClass_field_4C;
   *(_DWORD *)aP3 = &stru_87C374[56304];
@@ -2779,11 +2631,12 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
           *(INIClass **)aP3,
           *(INIClass **)&aP3[4],
           *(int *)&aP3[8])
+  int v133; // eax
     || (v133 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v133 == -1) )
   {
     v133 = v132;
   }
-  v134 = *(_DWORD *)(v4 + 1436);
+  int v134 = *(_DWORD *)(v4 + 1436);
   *(_DWORD *)(v4 + 1432) = v133;
   if ( !INIClass::GetString(
           (unsigned __int8 ***)aP0,
@@ -2792,11 +2645,12 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
           (INIClass *)&stru_87C374[56304],
           (INIClass *)&aP2.CCINIClass_field_4C,
           128)
+  int v135; // eax
     || (v135 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v135 == -1) )
   {
     v135 = v134;
   }
-  v136 = *(_DWORD *)(v4 + 1440);
+  int v136 = *(_DWORD *)(v4 + 1440);
   *(_DWORD *)&aP3[8] = 128;
   *(_DWORD *)&aP3[4] = &aP2.CCINIClass_field_4C;
   *(_DWORD *)aP3 = &stru_87C374[56304];
@@ -2810,11 +2664,12 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
           *(INIClass **)aP3,
           *(INIClass **)&aP3[4],
           *(int *)&aP3[8])
+  int v137; // eax
     || (v137 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v137 == -1) )
   {
     v137 = v136;
   }
-  v138 = *(_DWORD *)(v4 + 1444);
+  int v138 = *(_DWORD *)(v4 + 1444);
   *(_DWORD *)&aP3[8] = 128;
   *(_DWORD *)&aP3[4] = &aP2.CCINIClass_field_4C;
   *(_DWORD *)aP3 = &stru_87C374[56304];
@@ -2828,11 +2683,12 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
           *(INIClass **)aP3,
           *(INIClass **)&aP3[4],
           *(int *)&aP3[8])
+  int v139; // eax
     || (v139 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v139 == -1) )
   {
     v139 = v138;
   }
-  v140 = *(_DWORD *)(v4 + 1448);
+  int v140 = *(_DWORD *)(v4 + 1448);
   *(_DWORD *)(v4 + 1444) = v139;
   if ( !INIClass::GetString(
           (unsigned __int8 ***)aP0,
@@ -2841,11 +2697,12 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
           (INIClass *)&stru_87C374[56304],
           (INIClass *)&aP2.CCINIClass_field_4C,
           128)
+  int v141; // eax
     || (v141 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v141 == -1) )
   {
     v141 = v140;
   }
-  v142 = *(_DWORD *)(v4 + 1452);
+  int v142 = *(_DWORD *)(v4 + 1452);
   *(_DWORD *)&aP3[8] = 128;
   *(_DWORD *)&aP3[4] = &aP2.CCINIClass_field_4C;
   *(_DWORD *)aP3 = &stru_87C374[56304];
@@ -2859,11 +2716,12 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
           *(INIClass **)aP3,
           *(INIClass **)&aP3[4],
           *(int *)&aP3[8])
+  int v143; // eax
     || (v143 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v143 == -1) )
   {
     v143 = v142;
   }
-  v144 = *(_DWORD *)(v4 + 1456);
+  int v144 = *(_DWORD *)(v4 + 1456);
   *(_DWORD *)&aP3[8] = 128;
   *(_DWORD *)&aP3[4] = &aP2.CCINIClass_field_4C;
   *(_DWORD *)aP3 = &stru_87C374[56304];
@@ -2877,6 +2735,7 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
           *(INIClass **)aP3,
           *(INIClass **)&aP3[4],
           *(int *)&aP3[8])
+  int v145; // eax
     || (v145 = VocClass::FindIndex(&aP2.CCINIClass_field_4C), v145 == -1) )
   {
     v145 = v144;
@@ -2911,10 +2770,10 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
     TypeList::AnimTypeCopy(aP2.sectionHead, (VectorClass *)(v4 + 1836));
   }
   VectorClass::CopyDefault((_DWORD *)(v4 + 1836), (VectorClass *)aP2.sectionHead);
-  v147 = *(_DWORD *)&aP2[36];
-  v148 = *(_DWORD *)&aP2[40];
+  int v147 = *(_DWORD *)&aP2[36];
+  int v148 = *(_DWORD *)&aP2[40];
   *(_DWORD *)(v4 + 1852) = *(_DWORD *)aP2[32];
-  v149 = (void *)aP2.sectionHead[1];
+  void * v149 = (void *)aP2.sectionHead[1];
   *(_DWORD *)(v4 + 1856) = v147;
   *(_DWORD *)(v4 + 1860) = v148;
   aP2.sectionHead[0] = (int)&vt_VectorClass_AnimTypeClass_const;
@@ -2949,10 +2808,10 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
     TypeList::AnimTypeCopy(aP2.sectionHead, (VectorClass *)(v4 + 1864));
   }
   VectorClass::CopyDefault((_DWORD *)(v4 + 1864), (VectorClass *)aP2.sectionHead);
-  v151 = *(_DWORD *)&aP2[36];
-  v152 = *(_DWORD *)&aP2[40];
+  int v151 = *(_DWORD *)&aP2[36];
+  int v152 = *(_DWORD *)&aP2[40];
   *(_DWORD *)(v4 + 1880) = *(_DWORD *)aP2[32];
-  v153 = (void *)aP2.sectionHead[1];
+  void * v153 = (void *)aP2.sectionHead[1];
   *(_DWORD *)(v4 + 1884) = v151;
   *(_DWORD *)(v4 + 1888) = v152;
   aP2.sectionHead[0] = (int)&vt_VectorClass_AnimTypeClass_const;
@@ -3005,14 +2864,14 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
              *(CCINIClass **)aP3,
              *(unsigned __int8 **)&aP3[4],
              *(int **)&aP3[8]);
-  v159 = *Coord2;
+  int v159 = *Coord2;
   *(_DWORD *)&aP3[8] = 128;
   *(_DWORD *)(v4 + 1896) = v159;
-  v160 = Coord2[1];
+  int v160 = Coord2[1];
   *(_DWORD *)&aP3[4] = &aP2.CCINIClass_field_4C;
   *(_DWORD *)(v4 + 1900) = v160;
   *(_DWORD *)aP3 = &stru_87C374[56304];
-  v161 = Coord2[2];
+  int v161 = Coord2[2];
   *(_DWORD *)&v412.IsInitialized = &stru_830620[80236];
   v412.Capacity = v4 + 36;
   *(_DWORD *)(v4 + 1904) = v161;
@@ -3045,10 +2904,10 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
     VectorClass::CopyParticle(aP2.sectionHead, (DynamicVector *)(v4 + 1912));
   }
   ObjectTypeClass::loadTypeMember_5717C00((_DWORD *)(v4 + 1912), aP2.sectionHead);
-  v163 = *(_DWORD *)aP2[32];
-  v164 = *(_DWORD *)&aP2[36];
+  int v163 = *(_DWORD *)aP2[32];
+  int v164 = *(_DWORD *)&aP2[36];
   *(_DWORD *)(v4 + 1936) = *(_DWORD *)&aP2[40];
-  v165 = (void *)aP2.sectionHead[1];
+  void * v165 = (void *)aP2.sectionHead[1];
   *(_DWORD *)(v4 + 1928) = v163;
   *(_DWORD *)(v4 + 1932) = v164;
   aP2.sectionHead[0] = (int)&vt_VectorClass_ParticleSystemTypeClass_const;
@@ -3083,10 +2942,10 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
     VectorClass::CopyParticle(aP2.sectionHead, (DynamicVector *)(v4 + 1940));
   }
   ObjectTypeClass::loadTypeMember_5717C00((_DWORD *)(v4 + 1940), aP2.sectionHead);
-  v167 = *(_DWORD *)aP2[32];
-  v168 = *(_DWORD *)&aP2[36];
+  int v167 = *(_DWORD *)aP2[32];
+  int v168 = *(_DWORD *)&aP2[36];
   *(_DWORD *)(v4 + 1964) = *(_DWORD *)&aP2[40];
-  v169 = (void *)aP2.sectionHead[1];
+  void * v169 = (void *)aP2.sectionHead[1];
   *(_DWORD *)(v4 + 1956) = v167;
   *(_DWORD *)(v4 + 1960) = v168;
   aP2.sectionHead[0] = (int)&vt_VectorClass_ParticleSystemTypeClass_const;
@@ -3105,7 +2964,7 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
   *(_DWORD *)&aP3[4] = &stru_830620[80172];
   *(_DWORD *)aP3 = v4 + 36;
   *(_DWORD *)(v4 + 1976) = edx231;
-  v172 = INIClass::ReadBool_Overwrite((int)aP0, *(unsigned __int8 **)aP3, *(CCINIClass **)&aP3[4], aP3[8]);
+  char v172 = INIClass::ReadBool_Overwrite((int)aP0, *(unsigned __int8 **)aP3, *(CCINIClass **)&aP3[4], aP3[8]);
   *(_DWORD *)&aP3[8] = v4 + 1984;
   *(_DWORD *)&aP3[4] = &stru_830620[80152];
   *(_DWORD *)aP3 = v4 + 36;
@@ -3129,6 +2988,7 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
   *(_DWORD *)(v4 + 1996) = *eax231b;
   *(_DWORD *)(v4 + 2000) = eax231b[1];
   *(_DWORD *)(v4 + 2004) = eax231b[2];
+  int *v175; // eax
   v175 = INIClass::GetCoord2(
            (unsigned __int8 ***)aP0,
            &aP2.unknown30,
@@ -3138,6 +2998,7 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
   *(_DWORD *)(v4 + 2008) = *v175;
   *(_DWORD *)(v4 + 2012) = v175[1];
   *(_DWORD *)(v4 + 2016) = v175[2];
+  int *v176; // eax
   v176 = INIClass::GetCoord2(
            (unsigned __int8 ***)aP0,
            &aP2.unknown30,
@@ -3277,7 +3138,7 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
                              (unsigned __int8 *)&stru_830620[79752],
                              v412);
   TypeList::Copy((_DWORD *)(v4 + 1592), *(_DWORD **)aP2[0]);
-  v181 = *(_DWORD *)aP2[0];
+  int v181 = *(_DWORD *)aP2[0];
   *(_DWORD *)(v4 + 1608) = *(_DWORD *)(*(_DWORD *)aP2[0] + 16);
   *(_DWORD *)(v4 + 1612) = *(_DWORD *)(v181 + 20);
   *(_DWORD *)(v4 + 1616) = *(_DWORD *)(v181 + 24);
@@ -3298,7 +3159,7 @@ char ObjectTypeClass::LoadExtras(CCINIClass *aP0, double _38C, unsigned __int8 *
                              (unsigned __int8 *)&stru_830620[79728],
                              v412);
   TypeList::Copy((_DWORD *)(v4 + 1620), *(_DWORD **)aP2[0]);
-  v184 = *(_DWORD *)aP2[0];
+  int v184 = *(_DWORD *)aP2[0];
   *(_DWORD *)(v4 + 1636) = *(_DWORD *)(*(_DWORD *)aP2[0] + 16);
   *(_DWORD *)(v4 + 1640) = *(_DWORD *)(v184 + 20);
   *(_DWORD *)(v4 + 1644) = *(_DWORD *)(v184 + 24);
@@ -4987,65 +4848,48 @@ LABEL_286:
 int ObjectTypeClass::DeserializeArrays()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ObjectTypeClass::DeserializeArrays(#376 *this)
+void ObjectTypeClass::DeserializeArrays(#376 *this)
 {
   int result; // eax
-  int v2; // eax
-  int v3; // eax
-  int v4; // eax
-  int v5; // eax
-  int v6; // eax
-  int v7; // eax
-  int v8; // eax
-  int v9; // eax
-  int v10; // eax
-  int v11; // eax
-  int v12; // eax
-  int v13; // eax
-  int v14; // eax
-  int v15; // eax
-  int v16; // eax
-  int v17; // eax
-  int v18; // eax
-  _DWORD *v19; // [esp+Ch] [ebp+4h]
-  int *v20; // [esp+10h] [ebp+8h]
 
+  int *v20; // [esp+10h] [ebp+8h]
+  _DWORD *v19; // [esp+Ch] [ebp+4h]
   result = COMObject::GetSizeMaxWrapper((int)v19, v20); /*0x7170ac*/
   if ( result >= 0 ) /*0x7170b3*/
   {
-    v2 = 4 * v19[265] + 4 + *v20; /*0x7170c8*/
+    int v2 = 4 * v19[265] + 4 + *v20; /*0x7170c8*/
     *v20 = v2; /*0x7170ca*/
-    v3 = v2 + 4 * v19[272] + 4; /*0x7170d2*/
+    int v3 = v2 + 4 * v19[272] + 4; /*0x7170d2*/
     *v20 = v3; /*0x7170d6*/
-    v4 = v3 + 4 * v19[279] + 4; /*0x7170de*/
+    int v4 = v3 + 4 * v19[279] + 4; /*0x7170de*/
     *v20 = v4; /*0x7170e2*/
-    v5 = v4 + 4 * v19[286] + 4; /*0x7170ea*/
+    int v5 = v4 + 4 * v19[286] + 4; /*0x7170ea*/
     *v20 = v5; /*0x7170ee*/
-    v6 = v5 + 4 * v19[293] + 4; /*0x7170f6*/
+    int v6 = v5 + 4 * v19[293] + 4; /*0x7170f6*/
     *v20 = v6; /*0x7170fa*/
-    v7 = v6 + 4 * v19[300] + 4; /*0x717102*/
+    int v7 = v6 + 4 * v19[300] + 4; /*0x717102*/
     *v20 = v7; /*0x717106*/
-    v8 = v7 + 4 * v19[307] + 4; /*0x71710e*/
+    int v8 = v7 + 4 * v19[307] + 4; /*0x71710e*/
     *v20 = v8; /*0x717112*/
-    v9 = v8 + 4 * v19[314] + 4; /*0x71711a*/
+    int v9 = v8 + 4 * v19[314] + 4; /*0x71711a*/
     *v20 = v9; /*0x71711e*/
-    v10 = v9 + 4 * v19[321] + 4; /*0x717126*/
+    int v10 = v9 + 4 * v19[321] + 4; /*0x717126*/
     *v20 = v10; /*0x71712a*/
-    v11 = v10 + 4 * v19[328] + 4; /*0x717132*/
+    int v11 = v10 + 4 * v19[328] + 4; /*0x717132*/
     *v20 = v11; /*0x717136*/
-    v12 = v11 + 4 * v19[463] + 4; /*0x71713e*/
+    int v12 = v11 + 4 * v19[463] + 4; /*0x71713e*/
     *v20 = v12; /*0x717142*/
-    v13 = v12 + 4 * v19[470] + 4; /*0x71714a*/
+    int v13 = v12 + 4 * v19[470] + 4; /*0x71714a*/
     *v20 = v13; /*0x71714e*/
-    v14 = v13 + 4 * v19[201] + 4; /*0x717156*/
+    int v14 = v13 + 4 * v19[201] + 4; /*0x717156*/
     *v20 = v14; /*0x71715a*/
-    v15 = v14 + 4 * v19[373] + 4; /*0x717162*/
+    int v15 = v14 + 4 * v19[373] + 4; /*0x717162*/
     *v20 = v15; /*0x717166*/
-    v16 = v15 + 4 * v19[254] + 4; /*0x71716e*/
+    int v16 = v15 + 4 * v19[254] + 4; /*0x71716e*/
     *v20 = v16; /*0x717172*/
-    v17 = v16 + 4 * v19[208] + 4; /*0x71717a*/
+    int v17 = v16 + 4 * v19[208] + 4; /*0x71717a*/
     *v20 = v17; /*0x71717e*/
-    v18 = v17 + 4 * v19[482] + 4; /*0x717186*/
+    int v18 = v17 + 4 * v19[482] + 4; /*0x717186*/
     *v20 = v18; /*0x71718a*/
     *v20 = v18 + 4 * v19[489] + 4; /*0x717196*/
     return 0; /*0x717198*/
@@ -5058,13 +4902,12 @@ int __thiscall ObjectTypeClass::DeserializeArrays(#376 *this)
 char ObjectTypeClass::loadTypeMember_5717820()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_717820(int this)
+void sub_717820(int this)
 {
-  int v2; // eax
-  const char *v3; // ecx
 
+  int v2; // eax
   LOBYTE(v2) = *(_BYTE *)(this + 3536); /*0x717823*/
-  v3 = (const char *)(this + 3536); /*0x717829*/
+  const char * v3 = (const char *)(this + 3536); /*0x717829*/
   if ( (_BYTE)v2 ) /*0x717831*/
   {
     v2 = FileExtension::MapHandler(v3); /*0x717833*/
@@ -5080,15 +4923,11 @@ unsigned int * ObjectTypeClass::loadTypeMember_5717C00(unsigned int * a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_717C00(_DWORD *this, _DWORD *a2)
 {
-  int v3; // eax
-  void *v4; // eax
-  int v5; // ecx
-  int v6; // eax
 
   if ( this == a2 ) /*0x717c0a*/
     return this; /*0x717c0a*/
   (*(void (__thiscall **)(_DWORD *))(*this + 12))(this); /*0x717c0e*/
-  v3 = a2[2]; /*0x717c11*/
+  int v3 = a2[2]; /*0x717c11*/
   this->vtable3 = v3; /*0x717c16*/
   if ( !v3 ) /*0x717c19*/
   {
@@ -5096,12 +4935,12 @@ _DWORD *__thiscall sub_717C00(_DWORD *this, _DWORD *a2)
     *((_BYTE *)this + 13) = 0; /*0x717c61*/
     return this; /*0x717c65*/
   }
-  v4 = __2_YAPAXI_Z(4 * v3); /*0x717c23*/
+  void * v4 = __2_YAPAXI_Z(4 * v3); /*0x717c23*/
   this->vtable2 = v4; /*0x717c2b*/
   if ( !v4 ) /*0x717c30*/
     return this; /*0x717c30*/
-  v5 = this->vtable3; /*0x717c32*/
-  v6 = 0; /*0x717c35*/
+  int v5 = this->vtable3; /*0x717c32*/
+  int v6 = 0; /*0x717c35*/
   *((_BYTE *)this + 13) = 1; /*0x717c39*/
   if ( v5 <= 0 ) /*0x717c3d*/
     return this; /*0x717c3d*/

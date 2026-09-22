@@ -41,32 +41,28 @@ int sub_5C00E0()
 char __usercall sub_5C00E0@<al>(int a1@<ebx>, int a2@<ebp>, int a3@<edi>)
 {
   char result; // al
-  int v4; // edx
-  int v5; // ecx
-  int v6; // edi
-  int v7; // [esp+4h] [ebp-20h] BYREF
-  int v8; // [esp+8h] [ebp-1Ch]
-  int *v9; // [esp+Ch] [ebp-18h]
-  int v10; // [esp+10h] [ebp-14h]
   struct tagRECT Rect; // [esp+14h] [ebp-10h] BYREF
 
   result = g_BigIntPool; /*0x5c00e0*/
   if ( g_BigIntPool ) /*0x5c00ea*/
   {
     (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)DSurface_Alternate + 24))(DSurface_Alternate, 0); /*0x5c00fa*/
+  int *v9; // [esp+Ch] [ebp-18h]
+  int v7; // [esp+4h] [ebp-20h] BYREF
+  int v8; // [esp+8h] [ebp-1Ch]
     Frame::Present(DSurface_Alternate, a1, a2, a3, 0, v7, v8, v9); /*0x5c0107*/
     result = TestBitArray(15); /*0x5c0111*/
     if ( !result ) /*0x5c0118*/
     {
       GetClientRect(g_hWnd, &Rect); /*0x5c0129*/
       ClientToScreen(g_hWnd, (LPPOINT)&Rect); /*0x5c013b*/
-      v4 = *(_DWORD *)(g_BigIntPool + 64); /*0x5c0156*/
-      v5 = Rect.top + *(_DWORD *)(g_BigIntPool + 56); /*0x5c0159*/
-      v6 = *(_DWORD *)(g_BigIntPool + 52); /*0x5c015b*/
+      int v4 = *(_DWORD *)(g_BigIntPool + 64); /*0x5c0156*/
+      int v5 = Rect.top + *(_DWORD *)(g_BigIntPool + 56); /*0x5c0159*/
+      int v6 = *(_DWORD *)(g_BigIntPool + 52); /*0x5c015b*/
       v9 = *(int **)(g_BigIntPool + 60); /*0x5c015e*/
       v8 = v5; /*0x5c0164*/
       v7 = Rect.left + v6; /*0x5c016e*/
-      v10 = v4; /*0x5c0172*/
+      int v10 = v4; /*0x5c0172*/
       return (*(int (__thiscall **)(int, int *, _DWORD, int, _DWORD, int))(*(_DWORD *)g_DSurface_Primary + 8))( /*0x5c0187*/
                g_DSurface_Primary,
                &v7,
@@ -88,7 +84,6 @@ unsigned int * Movie_Create(int a1, int a2, int * a3)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__fastcall Movie_Create(int a1, int a2, int *a3)
 {
-  int *v4; // eax
   int v5; // ebx
   int v6; // edx
   char *v7; // eax
@@ -105,7 +100,7 @@ _DWORD *__fastcall Movie_Create(int a1, int a2, int *a3)
 
   if ( !a2 || !(unsigned __int8)Render_Play(1) ) /*0x5c07ea*/
     return 0; /*0x5c07f1*/
-  v4 = a3; /*0x5c07f7*/
+  int * v4 = a3; /*0x5c07f7*/
   if ( a3 ) /*0x5c0800*/
   {
     v5 = *a3; /*0x5c0805*/
@@ -165,26 +160,22 @@ namespace gamemd {
 char MPCooperative___vt07(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall MPCooperative::_vt07(int *this, int a2)
+void MPCooperative::_vt07(int a2)
 {
-  char v3; // bl
-  int v4; // edx
-  int v6; // ecx
   int v7; // eax
   int v8; // esi
   int v9; // eax
   int v10; // [esp-8h] [ebp-1Ch]
   int v11; // [esp+Ch] [ebp-8h] BYREF
   int v12; // [esp+10h] [ebp-4h] BYREF
-
-  v3 = 0; /*0x5c17c3*/
+  char v3 = 0; /*0x5c17c3*/
   v10 = this->q33C; /*0x5c17c5*/
   v11 = 0; /*0x5c17cb*/
   Movie::GetSection((int)&g_DDrawSurfaceManager, v10, &v12); /*0x5c17cf*/
-  v4 = v12; /*0x5c17d4*/
+  int v4 = v12; /*0x5c17d4*/
   if ( !v12 ) /*0x5c17da*/
     return 1; /*0x5c17e4*/
-  v6 = this->q010; /*0x5c17e7*/
+  int v6 = this->q010; /*0x5c17e7*/
   if ( v6 ) /*0x5c17ec*/
   {
     if ( Movie::GetState(v6, &v11) ) /*0x5c17f3*/
@@ -237,14 +228,14 @@ namespace gamemd {
 BOOL E4Recv_5C60D0::ShowConfirmDialog()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall ShowConfirmDialog(_WORD *this)
+void ShowConfirmDialog(_WORD *this)
 {
   wchar_t *v3; // eax
   wchar_t *StringCSF; // [esp-Ch] [ebp-14h]
-  int v6; // [esp+0h] [ebp-8h]
 
   StringCSF = GetStringCSF(g_Str_TXT_CANCEL, 0, aDRa2mdpostMpla, 108); /*0x5c60fa*/
   v3 = GetStringCSF(g_Str_TXT_OK, 0, aDRa2mdpostMpla, 108); /*0x5c6102*/
+  int v6; // [esp+0h] [ebp-8h]
   return Dialog::ShowMessageBox((int)this, v3, (Movie *)StringCSF, 0, 0, v6) == 0; /*0x5c6116*/
 }
 }
@@ -257,8 +248,6 @@ char LCW_DecodeLength(int a1, unsigned char * a2, int a3)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __fastcall LCW_DecodeLength(int a1, _BYTE *a2, int a3)
 {
-  int v3; // eax
-  _BYTE *v4; // edx
   int v6; // edi
   unsigned __int8 *v7; // edx
   int v8; // ecx
@@ -269,8 +258,9 @@ char __fastcall LCW_DecodeLength(int a1, _BYTE *a2, int a3)
   _BYTE *v13; // ecx
   char v14; // dl
 
+  int v3; // eax
   LOBYTE(v3) = *a2; /*0x5c6370*/
-  v4 = a2 + 1; /*0x5c6374*/
+  _BYTE * v4 = a2 + 1; /*0x5c6374*/
   if ( (_BYTE)v3 != 2 ) /*0x5c637b*/
     return v3; /*0x5c637b*/
   if ( (char)*v4 < 0 ) /*0x5c6381*/
@@ -342,41 +332,33 @@ unsigned int __userpurge __spoils<ecx> sub_5C63F0@<eax>(
         int a4,
         int a5)
 {
-  _BYTE *v5; // edi
-  unsigned int v6; // esi
-  unsigned int v7; // ebp
-  int v8; // eax
-  int v9; // eax
-  int v10; // ecx
   unsigned int i; // ebp
-  unsigned int v12; // eax
-  char v13; // al
 
-  v5 = a2; /*0x5c63fa*/
-  v6 = 4 * a5; /*0x5c63fc*/
-  v7 = a1 - 4 * a5; /*0x5c6426*/
+  _BYTE * v5 = a2; /*0x5c63fa*/
+  unsigned int v6 = 4 * a5; /*0x5c63fc*/
+  unsigned int v7 = a1 - 4 * a5; /*0x5c6426*/
   if ( a1 != 4 * a5 ) /*0x5c6428*/
   {
     LOBYTE(a3) = (*(_DWORD *)(4 * a5 + a4 - 4) >= 0) - 1; /*0x5c642b*/
     BYTE1(a3) = a3; /*0x5c642d*/
-    v8 = a3 << 16; /*0x5c6435*/
+    int v8 = a3 << 16; /*0x5c6435*/
     LOWORD(v8) = a3; /*0x5c6438*/
     memset32(a2, v8, v7 >> 2); /*0x5c643f*/
     memset(&a2[4 * (v7 >> 2)], a3, v7 & 3); /*0x5c644a*/
     v5 = &a2[v7]; /*0x5c6450*/
   }
-  v9 = a1; /*0x5c6454*/
+  int v9 = a1; /*0x5c6454*/
   if ( a1 >= v6 ) /*0x5c6456*/
     v9 = 4 * a5; /*0x5c6458*/
-  v10 = v9 + a4; /*0x5c645e*/
+  int v10 = v9 + a4; /*0x5c645e*/
   for ( i = 0; ; ++i ) /*0x5c6460*/
   {
-    v12 = a1; /*0x5c6464*/
+    unsigned int v12 = a1; /*0x5c6464*/
     if ( a1 >= v6 ) /*0x5c6466*/
       v12 = 4 * a5; /*0x5c6468*/
     if ( i >= v12 ) /*0x5c646c*/
       break; /*0x5c646c*/
-    v13 = *(_BYTE *)--v10; /*0x5c646e*/
+    char v13 = *(_BYTE *)--v10; /*0x5c646e*/
     *v5++ = v13; /*0x5c6472*/
   }
   return a1; /*0x5c6478*/
@@ -391,42 +373,20 @@ void BitBuffer_RotateRight(unsigned int * a1, int a2, int a3)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __fastcall BitBuffer_RotateRight(_DWORD *a1, int a2, int a3)
 {
-  int v4; // ecx
-  _DWORD *v5; // eax
-  int v6; // esi
-  int v7; // edx
-  int *v9; // esi
-  char v10; // bp
-  int v11; // ecx
-  int v12; // eax
-  unsigned int v13; // eax
-  char v14; // cl
-  int v15; // ebp
-  int v16; // eax
-  int v17; // edi
-  int v18; // ebx
-  int v19; // ebx
-  unsigned int v20; // ebp
-  bool v21; // zf
-  int v22; // edx
   int i; // edx
-  int v24; // ecx
-  int v25; // [esp+10h] [ebp-8h]
-  int v26; // [esp+10h] [ebp-8h]
-  int v27; // [esp+1Ch] [ebp+4h]
 
-  v4 = 0; /*0x5c666b*/
+  int v4 = 0; /*0x5c666b*/
   if ( a2 ) /*0x5c666f*/
   {
     if ( a2 == 32 ) /*0x5c6674*/
     {
-      v5 = &a1[a3]; /*0x5c667a*/
+      _DWORD * v5 = &a1[a3]; /*0x5c667a*/
       if ( a3 ) /*0x5c6682*/
       {
-        v6 = a3; /*0x5c6684*/
+        int v6 = a3; /*0x5c6684*/
         do /*0x5c6692*/
         {
-          v7 = *--v5; /*0x5c6687*/
+          int v7 = *--v5; /*0x5c6687*/
           --v6; /*0x5c668d*/
           *v5 = v4; /*0x5c668e*/
           v4 = v7; /*0x5c6690*/
@@ -436,16 +396,17 @@ void __fastcall BitBuffer_RotateRight(_DWORD *a1, int a2, int a3)
     }
     else if ( a2 >= 32 ) /*0x5c669e*/
     {
-      v16 = a2 / 32; /*0x5c6715*/
-      v17 = a2 % 32; /*0x5c6724*/
-      v18 = a3; /*0x5c6725*/
+      int v16 = a2 / 32; /*0x5c6715*/
+      int v17 = a2 % 32; /*0x5c6724*/
+      int v18 = a3; /*0x5c6725*/
       if ( a2 / 32 < a3 - 1 ) /*0x5c672e*/
       {
-        v26 = a3 - 1 - v16; /*0x5c6739*/
+  bool v21; // zf
+        int v26 = a3 - 1 - v16; /*0x5c6739*/
         do /*0x5c675d*/
         {
-          v19 = a1[v16 + 1]; /*0x5c673d*/
-          v20 = a1[v16]; /*0x5c6741*/
+          int v19 = a1[v16 + 1]; /*0x5c673d*/
+          unsigned int v20 = a1[v16]; /*0x5c6741*/
           ++a1; /*0x5c6746*/
           v21 = v26 == 1; /*0x5c6755*/
           *(a1 - 1) = (v20 >> v17) | (v19 << (32 - v17)); /*0x5c6756*/
@@ -456,12 +417,12 @@ void __fastcall BitBuffer_RotateRight(_DWORD *a1, int a2, int a3)
       }
       if ( v16 < v18 ) /*0x5c6765*/
       {
-        v22 = a1[v16] >> v17; /*0x5c676c*/
+        int v22 = a1[v16] >> v17; /*0x5c676c*/
         *a1++ = v22; /*0x5c6771*/
       }
       for ( i = 0; ; ++i ) /*0x5c6774*/
       {
-        v24 = v16; /*0x5c6778*/
+        int v24 = v16; /*0x5c6778*/
         if ( v16 >= v18 ) /*0x5c677a*/
           v24 = v18; /*0x5c677c*/
         if ( i >= v24 ) /*0x5c6780*/
@@ -471,19 +432,19 @@ void __fastcall BitBuffer_RotateRight(_DWORD *a1, int a2, int a3)
     }
     else
     {
-      v27 = 0; /*0x5c66a4*/
-      v9 = &a1[a3]; /*0x5c66b6*/
-      v10 = 32 - a2; /*0x5c66b9*/
-      v11 = a3; /*0x5c66bb*/
-      v12 = a3 - 1; /*0x5c66c2*/
+      int v27 = 0; /*0x5c66a4*/
+      int * v9 = &a1[a3]; /*0x5c66b6*/
+      char v10 = 32 - a2; /*0x5c66b9*/
+      int v11 = a3; /*0x5c66bb*/
+      int v12 = a3 - 1; /*0x5c66c2*/
       if ( v11 ) /*0x5c66c5*/
       {
-        v25 = v12 + 1; /*0x5c66c8*/
+        int v25 = v12 + 1; /*0x5c66c8*/
         while ( 1 ) /*0x5c66d2*/
         {
-          v13 = *--v9; /*0x5c66d2*/
-          v14 = v10; /*0x5c66e8*/
-          v15 = v27; /*0x5c66ea*/
+          unsigned int v13 = *--v9; /*0x5c66d2*/
+          char v14 = v10; /*0x5c66e8*/
+          int v15 = v27; /*0x5c66ea*/
           v27 = ((1 << a2) - 1) & v13; /*0x5c66ee*/
           *v9 = (v15 << v14) | (v13 >> a2); /*0x5c66f6*/
           if ( !--v25 ) /*0x5c6701*/
@@ -504,40 +465,24 @@ void RotateBitBufferLeft(int * a0, int a2, Buffer * aP2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __fastcall RotateBitBufferLeft(int *a0, int a2, Buffer *aP2)
 {
-  char v3; // di
-  int *v4; // esi
-  int v5; // eax
   Buffer *v6; // edx
-  int v7; // ecx
   unsigned int j; // ebp
-  int v9; // edx
-  int v10; // eax
-  int v11; // eax
-  int v12; // edi
   Buffer *v13; // ebx
-  int *v14; // edx
-  int *v15; // ebx
-  int *v16; // ebp
-  bool v17; // zf
-  int v18; // esi
   int i; // esi
   Buffer *v20; // ecx
-  char v21; // [esp+10h] [ebp-4h]
-  char *v22; // [esp+10h] [ebp-4h]
-
-  v3 = a2; /*0x5c67a5*/
-  v4 = a0; /*0x5c67a7*/
+  char v3 = a2; /*0x5c67a5*/
+  int * v4 = a0; /*0x5c67a7*/
   if ( a2 ) /*0x5c67ab*/
   {
     if ( a2 == 32 ) /*0x5c67b0*/
     {
-      v5 = 0; /*0x5c67b6*/
+      int v5 = 0; /*0x5c67b6*/
       if ( aP2 ) /*0x5c67bd*/
       {
         v6 = aP2; /*0x5c67bf*/
         do /*0x5c67cc*/
         {
-          v7 = *v4; /*0x5c67c2*/
+          int v7 = *v4; /*0x5c67c2*/
           *v4++ = v5; /*0x5c67c4*/
           v6 = (Buffer *)((char *)v6 - 1); /*0x5c67c9*/
           v5 = v7; /*0x5c67ca*/
@@ -547,17 +492,18 @@ void __fastcall RotateBitBufferLeft(int *a0, int a2, Buffer *aP2)
     }
     else if ( a2 >= 32 ) /*0x5c67d6*/
     {
-      v11 = a2 / 32; /*0x5c6833*/
-      v12 = a2 % 32; /*0x5c6842*/
+      int v11 = a2 / 32; /*0x5c6833*/
+      int v12 = a2 % 32; /*0x5c6842*/
       v13 = aP2; /*0x5c6843*/
-      v14 = &a0[(_DWORD)aP2 - 1]; /*0x5c684a*/
+      int * v14 = &a0[(_DWORD)aP2 - 1]; /*0x5c684a*/
       if ( v11 < (int)&aP2[-1].Buffer_field_24 + 3 ) /*0x5c6850*/
       {
-        v22 = (char *)&aP2[-1].Buffer_field_24 - v11 + 3; /*0x5c685b*/
+  bool v17; // zf
+        char * v22 = (char *)&aP2[-1].Buffer_field_24 - v11 + 3; /*0x5c685b*/
         do /*0x5c6893*/
         {
-          v15 = &v14[-v11 - 1]; /*0x5c6868*/
-          v16 = v14--; /*0x5c686c*/
+          int * v15 = &v14[-v11 - 1]; /*0x5c6868*/
+          int * v16 = v14--; /*0x5c686c*/
           v17 = v22 == (char *)1; /*0x5c688b*/
           v14[1] = (v16[-v11] << v12) | ((unsigned int)*v15 >> (32 - v12)); /*0x5c688c*/
           --v22; /*0x5c688f*/
@@ -567,7 +513,7 @@ void __fastcall RotateBitBufferLeft(int *a0, int a2, Buffer *aP2)
       }
       if ( v11 < (int)v13 ) /*0x5c689b*/
       {
-        v18 = v14[-v11] << v12; /*0x5c68ac*/
+        int v18 = v14[-v11] << v12; /*0x5c68ac*/
         --v14; /*0x5c68ae*/
         v14[1] = v18; /*0x5c68b1*/
       }
@@ -583,11 +529,11 @@ void __fastcall RotateBitBufferLeft(int *a0, int a2, Buffer *aP2)
     }
     else
     {
-      v21 = 32 - a2; /*0x5c67e4*/
+      char v21 = 32 - a2; /*0x5c67e4*/
       for ( j = 0; aP2; aP2 = (Buffer *)((char *)aP2 - 1) ) /*0x5c67f7*/
       {
-        v9 = *v4++; /*0x5c6802*/
-        v10 = (j >> v21) | (v9 << v3); /*0x5c6811*/
+        int v9 = *v4++; /*0x5c6802*/
+        int v10 = (j >> v21) | (v9 << v3); /*0x5c6811*/
         j = ~(0xFFFFFFFF >> v3) & v9; /*0x5c6813*/
         *(v4 - 1) = v10; /*0x5c6815*/
       }
@@ -604,14 +550,10 @@ int BitArray_FindHighestBit(int a1, int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall BitArray_FindHighestBit(int a1, int a2)
 {
-  _DWORD *v2; // eax
-  int v3; // esi
   int result; // eax
-  int v6; // ecx
-  unsigned int v7; // edx
 
-  v2 = (_DWORD *)(a1 + 4 * a2 - 4); /*0x5c6960*/
-  v3 = a2; /*0x5c6965*/
+  _DWORD * v2 = (_DWORD *)(a1 + 4 * a2 - 4); /*0x5c6960*/
+  int v3 = a2; /*0x5c6965*/
   if ( !*v2 ) /*0x5c6967*/
   {
     while ( --v3 ) /*0x5c696c*/
@@ -624,8 +566,8 @@ int __fastcall BitArray_FindHighestBit(int a1, int a2)
 LABEL_4:
   if ( !v3 ) /*0x5c697b*/
     return 0; /*0x5c6980*/
-  v6 = *(_DWORD *)(a1 + 4 * v3 - 4); /*0x5c6981*/
-  v7 = 0x80000000; /*0x5c6987*/
+  int v6 = *(_DWORD *)(a1 + 4 * v3 - 4); /*0x5c6981*/
+  unsigned int v7 = 0x80000000; /*0x5c6987*/
   result = 32 * v3; /*0x5c698c*/
   if ( v6 >= 0 ) /*0x5c6991*/
   {
@@ -648,43 +590,19 @@ int Array_FillPattern(unsigned int * a1, char * a2, unsigned int * a3, int a4)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall Array_FillPattern(_DWORD *a1, char *a2, _DWORD *a3, int a4)
 {
-  int v4; // ebp
-  int v6; // edx
-  char *v7; // eax
-  int v8; // ecx
-  int v9; // esi
-  _DWORD *v11; // eax
-  int v12; // ecx
-  _DWORD *v14; // eax
-  int v15; // ecx
-  int v17; // esi
-  int v18; // eax
-  int v19; // ecx
-  unsigned int v20; // edx
-  int v21; // eax
-  unsigned int *v22; // esi
-  bool v23; // bl
-  unsigned int *v24; // edi
-  unsigned int v25; // eax
-  unsigned int v26; // ecx
-  bool v29; // [esp+14h] [ebp-14h]
-  _DWORD *v30; // [esp+18h] [ebp-10h]
-  int v31; // [esp+1Ch] [ebp-Ch]
-  int v32; // [esp+20h] [ebp-8h]
-  char *v33; // [esp+24h] [ebp-4h]
-  unsigned int v34; // [esp+2Ch] [ebp+4h]
 
-  v4 = a4; /*0x5c6bc5*/
-  v6 = a4; /*0x5c6bcf*/
+  int v4 = a4; /*0x5c6bc5*/
+  int v6 = a4; /*0x5c6bcf*/
   memset(a1, 0, 4 * ((unsigned int)(4 * a4) >> 2)); /*0x5c6be3*/
-  v33 = a2; /*0x5c6be7*/
+  char * v33 = a2; /*0x5c6be7*/
   *a1 = 0; /*0x5c6bf4*/
   if ( *(_DWORD *)a2 ) /*0x5c6bfa*/
     goto LABEL_10; /*0x5c6bfa*/
-  v7 = &a2[v6 * 4 - 4]; /*0x5c6c00*/
-  v8 = a4; /*0x5c6c04*/
+  char * v7 = &a2[v6 * 4 - 4]; /*0x5c6c00*/
+  int v8 = a4; /*0x5c6c04*/
   if ( !*(_DWORD *)v7 ) /*0x5c6c06*/
   {
+  int v9; // esi
     do /*0x5c6c16*/
     {
       if ( !--v8 ) /*0x5c6c0c*/
@@ -699,8 +617,8 @@ int __fastcall Array_FillPattern(_DWORD *a1, char *a2, _DWORD *a3, int a4)
 LABEL_10:
     if ( *a3 ) /*0x5c6c25*/
       goto LABEL_11; /*0x5c6c25*/
-    v11 = &a3[v6 - 1]; /*0x5c6c2e*/
-    v12 = a4; /*0x5c6c34*/
+    _DWORD * v11 = &a3[v6 - 1]; /*0x5c6c2e*/
+    int v12 = a4; /*0x5c6c34*/
     if ( !*v11 ) /*0x5c6c2a*/
     {
       do /*0x5c6c43*/
@@ -712,18 +630,20 @@ LABEL_10:
     }
     if ( v12 > 1 ) /*0x5c6c48*/
     {
+  unsigned int v34; // [esp+2Ch] [ebp+4h]
+  int v17; // esi
 LABEL_11:
-      v14 = &a3[v6 - 1]; /*0x5c6c4e*/
-      v15 = a4; /*0x5c6c52*/
+      _DWORD * v14 = &a3[v6 - 1]; /*0x5c6c4e*/
+      int v15 = a4; /*0x5c6c52*/
       if ( *v14 ) /*0x5c6c54*/
       {
 LABEL_14:
         if ( v15 ) /*0x5c6c68*/
         {
-          v18 = v15; /*0x5c6c72*/
-          v19 = a3[v15 - 1]; /*0x5c6c74*/
-          v20 = 0x80000000; /*0x5c6c78*/
-          v21 = 32 * v18; /*0x5c6c7d*/
+          int v18 = v15; /*0x5c6c72*/
+          int v19 = a3[v15 - 1]; /*0x5c6c74*/
+          unsigned int v20 = 0x80000000; /*0x5c6c78*/
+          int v21 = 32 * v18; /*0x5c6c7d*/
           if ( v19 >= 0 ) /*0x5c6c82*/
           {
             do /*0x5c6c89*/
@@ -754,24 +674,24 @@ LABEL_14:
 LABEL_21:
       if ( (v17 + 31) / 32 && v17 ) /*0x5c6cc6*/
       {
-        v32 = v17; /*0x5c6cd0*/
-        v30 = &a3[(v17 + 31) / 32 - 1]; /*0x5c6cd4*/
+        int v32 = v17; /*0x5c6cd0*/
+        _DWORD * v30 = &a3[(v17 + 31) / 32 - 1]; /*0x5c6cd4*/
         do /*0x5c6d7b*/
         {
           RotateBitBufferLeft(v4); /*0x5c6ce2*/
           if ( (v34 & *v30) != 0 ) /*0x5c6cf1*/
           {
-            v22 = a1; /*0x5c6cf3*/
-            v23 = 0; /*0x5c6cf7*/
-            v29 = 0; /*0x5c6cfb*/
-            v24 = a1; /*0x5c6cff*/
+            unsigned int * v22 = a1; /*0x5c6cf3*/
+            bool v23 = 0; /*0x5c6cf7*/
+            bool v29 = 0; /*0x5c6cfb*/
+            unsigned int * v24 = a1; /*0x5c6cff*/
             if ( v4 ) /*0x5c6d01*/
             {
-              v31 = a4; /*0x5c6d0d*/
+              int v31 = a4; /*0x5c6d0d*/
               do /*0x5c6d4d*/
               {
-                v25 = *v24 + *(unsigned int *)((char *)v22 + v33 - (char *)a1); /*0x5c6d1c*/
-                v26 = v25 + v29; /*0x5c6d24*/
+                unsigned int v25 = *v24 + *(unsigned int *)((char *)v22 + v33 - (char *)a1); /*0x5c6d1c*/
+                unsigned int v26 = v25 + v29; /*0x5c6d24*/
                 v23 = v25 < *v24 || v23 && !v26; /*0x5c6d36*/
                 *v22 = v26; /*0x5c6d3c*/
                 ++v24; /*0x5c6d3e*/
@@ -807,12 +727,6 @@ int MultiplyAddBigInteger(char * a1, unsigned short * a2, short a3, int a4)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall MultiplyAddBigInteger(char *a1, unsigned __int16 *a2, __int16 a3, int a4)
 {
-  int v4; // ebx
-  char *v5; // ebp
-  int *v6; // eax
-  int v7; // ecx
-  int v8; // edx
-  int v9; // ecx
   bool v10; // zf
   _DWORD *v11; // eax
   int v12; // ebx
@@ -847,8 +761,8 @@ int __fastcall MultiplyAddBigInteger(char *a1, unsigned __int16 *a2, __int16 a3,
   unsigned int v42; // eax
   _DWORD v44[64]; // [esp+18h] [ebp-100h] BYREF
 
-  v4 = a4; /*0x5c6dd7*/
-  v5 = a1; /*0x5c6ddf*/
+  int v4 = a4; /*0x5c6dd7*/
+  char * v5 = a1; /*0x5c6ddf*/
   if ( *(int *)&a2[2 * a4 - 2] >= 0 ) /*0x5c6df4*/
   {
     if ( a3 >= 0 ) /*0x5c6f1f*/
@@ -920,19 +834,19 @@ int __fastcall MultiplyAddBigInteger(char *a1, unsigned __int16 *a2, __int16 a3,
     return 0; /*0x5c6f7d*/
   }
   qmemcpy(v44, a2, 4 * ((unsigned int)(4 * a4) >> 2)); /*0x5c6e05*/
-  v6 = v44; /*0x5c6e09*/
+  int * v6 = v44; /*0x5c6e09*/
   if ( a4 > 0 ) /*0x5c6e14*/
   {
-    v7 = a4; /*0x5c6e16*/
+    int v7 = a4; /*0x5c6e16*/
     do /*0x5c6e23*/
     {
-      v8 = *v6++; /*0x5c6e18*/
+      int v8 = *v6++; /*0x5c6e18*/
       *(v6 - 1) = ~v8; /*0x5c6e1f*/
       --v7; /*0x5c6e22*/
     }
     while ( v7 ); /*0x5c6e23*/
   }
-  v9 = a4; /*0x5c6e29*/
+  int v9 = a4; /*0x5c6e29*/
   v10 = v44[0] == -1; /*0x5c6e2b*/
   v11 = v44; /*0x5c6e2c*/
   ++v44[0]; /*0x5c6e30*/
@@ -1014,8 +928,6 @@ short BigInt_ShiftAndScan(unsigned int * a1, int a2, int a3, int a4)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 __int16 __fastcall BigInt_ShiftAndScan(_DWORD *a1, int a2, int a3, int a4)
 {
-  _DWORD *v6; // eax
-  int v7; // ecx
   int v9; // esi
   int v10; // eax
   int v11; // ecx
@@ -1032,9 +944,9 @@ __int16 __fastcall BigInt_ShiftAndScan(_DWORD *a1, int a2, int a3, int a4)
   if ( !(_WORD)a3 ) /*0x5c71f5*/
     return 0; /*0x5c7201*/
   memset(a1, 0, 4 * ((unsigned int)(4 * a4) >> 2)); /*0x5c7220*/
-  v6 = (_DWORD *)(4 * a4 + a2 - 4); /*0x5c722d*/
+  _DWORD * v6 = (_DWORD *)(4 * a4 + a2 - 4); /*0x5c722d*/
   *a1 = 0; /*0x5c7231*/
-  v7 = a4; /*0x5c7238*/
+  int v7 = a4; /*0x5c7238*/
   if ( *v6 ) /*0x5c723a*/
   {
 LABEL_6:
@@ -1112,11 +1024,7 @@ int SubtractBigInteger(unsigned int * a1, unsigned int * a2, int a3, char * a4, 
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall SubtractBigInteger(_DWORD *a1, _DWORD *a2, int a3, char *a4, Buffer *aP2)
 {
-  char *v7; // eax
-  int v8; // edx
-  int v9; // esi
   Buffer *v11; // ecx
-  _DWORD *v12; // eax
   int v14; // esi
   Buffer *v15; // eax
   int v16; // ecx
@@ -1144,13 +1052,13 @@ int __fastcall SubtractBigInteger(_DWORD *a1, _DWORD *a2, int a3, char *a4, Buff
   int v38; // [esp+18h] [ebp-8h]
   int i; // [esp+1Ch] [ebp-4h]
   unsigned int v40; // [esp+24h] [ebp+4h]
-
   if ( !*(_DWORD *)a4 ) /*0x5c731c*/
   {
-    v7 = &a4[4 * (_DWORD)aP2 - 4]; /*0x5c732d*/
-    v8 = (int)aP2; /*0x5c7333*/
+    char * v7 = &a4[4 * (_DWORD)aP2 - 4]; /*0x5c732d*/
+    int v8 = (int)aP2; /*0x5c7333*/
     if ( !*(_DWORD *)v7 ) /*0x5c7329*/
     {
+  int v9; // esi
       do /*0x5c7342*/
       {
         if ( !--v8 ) /*0x5c7338*/
@@ -1168,7 +1076,7 @@ int __fastcall SubtractBigInteger(_DWORD *a1, _DWORD *a2, int a3, char *a4, Buff
   memset(a2, 0, 4 * ((unsigned int)(4 * (_DWORD)aP2) >> 2)); /*0x5c7381*/
   v11 = aP2; /*0x5c738e*/
   *a2 = 0; /*0x5c7392*/
-  v12 = (_DWORD *)(4 * (_DWORD)aP2 + a3 - 4); /*0x5c7398*/
+  _DWORD * v12 = (_DWORD *)(4 * (_DWORD)aP2 + a3 - 4); /*0x5c7398*/
   if ( *v12 ) /*0x5c739c*/
   {
 LABEL_10:
@@ -1292,11 +1200,6 @@ char SubtractBigIntegerWithSign(char * a1, int * a2, const void * a3, const void
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __fastcall SubtractBigIntegerWithSign(char *a1, int *a2, const void *a3, const void *a4, int a5)
 {
-  int v5; // ebp
-  int *v7; // eax
-  int v8; // ecx
-  int v9; // edx
-  int v10; // ecx
   bool v11; // zf
   _DWORD *v12; // eax
   int *v13; // eax
@@ -1329,26 +1232,26 @@ char __fastcall SubtractBigIntegerWithSign(char *a1, int *a2, const void *a3, co
   _DWORD v41[64]; // [esp+1Ch] [ebp-200h] BYREF
   _DWORD v42[64]; // [esp+11Ch] [ebp-100h] BYREF
 
-  v5 = a5; /*0x5c7528*/
+  int v5 = a5; /*0x5c7528*/
   v40 = a1; /*0x5c752f*/
   qmemcpy(v42, a3, 4 * ((unsigned int)(4 * a5) >> 2)); /*0x5c7553*/
   v38 = 0; /*0x5c7557*/
   qmemcpy(v41, a4, 4 * ((unsigned int)(4 * a5) >> 2)); /*0x5c7571*/
   if ( (int)v41[a5 + 63] < 0 ) /*0x5c7583*/
   {
-    v7 = v42; /*0x5c7587*/
+    int * v7 = v42; /*0x5c7587*/
     if ( a5 > 0 ) /*0x5c758e*/
     {
-      v8 = a5; /*0x5c7590*/
+      int v8 = a5; /*0x5c7590*/
       do /*0x5c759d*/
       {
-        v9 = *v7++; /*0x5c7592*/
+        int v9 = *v7++; /*0x5c7592*/
         *(v7 - 1) = ~v9; /*0x5c7599*/
         --v8; /*0x5c759c*/
       }
       while ( v8 ); /*0x5c759d*/
     }
-    v10 = a5; /*0x5c75a6*/
+    int v10 = a5; /*0x5c75a6*/
     v11 = v42[0] == -1; /*0x5c75a8*/
     v12 = v42; /*0x5c75a9*/
     ++v42[0]; /*0x5c75b0*/
@@ -1500,57 +1403,34 @@ int ModInverseBigInteger(char * a1, const void * a2, const void * a3, int a4)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall ModInverseBigInteger(char *a1, const void *a2, const void *a3, int a4)
 {
-  int v4; // ebp
-  int v5; // esi
-  int v6; // edi
-  int v7; // ebx
-  int v8; // edx
   char *j; // eax
-  int v10; // esi
-  int v11; // edi
-  char *v12; // ecx
-  char *v13; // edx
-  int v14; // edi
-  char *v15; // esi
   unsigned __int16 v16; // ax
-  int v17; // eax
-  int v18; // eax
-  _DWORD *v19; // ebx
-  unsigned int *v20; // edi
-  unsigned int *v21; // edx
-  unsigned int v22; // eax
-  unsigned int v23; // ecx
   int result; // eax
-  int v25; // [esp+10h] [ebp-714h]
-  bool v26; // [esp+10h] [ebp-714h]
   unsigned __int8 v27; // [esp+14h] [ebp-710h]
   int i; // [esp+18h] [ebp-70Ch]
-  unsigned int v29; // [esp+1Ch] [ebp-708h]
-  char *v30; // [esp+20h] [ebp-704h]
-  _DWORD v31[64]; // [esp+24h] [ebp-700h] BYREF
-  _DWORD v32[128]; // [esp+124h] [ebp-600h] BYREF
-  _DWORD v33[64]; // [esp+324h] [ebp-400h] BYREF
-  char v34[256]; // [esp+424h] [ebp-300h] BYREF
-  char v35[512]; // [esp+524h] [ebp-200h] BYREF
 
-  v4 = a4; /*0x5c7748*/
-  v30 = a1; /*0x5c774f*/
-  v29 = 4 * a4; /*0x5c776e*/
+  int v4 = a4; /*0x5c7748*/
+  char * v30 = a1; /*0x5c774f*/
+  unsigned int v29 = 4 * a4; /*0x5c776e*/
+  char v34[256]; // [esp+424h] [ebp-300h] BYREF
   qmemcpy(v34, a3, 4 * ((unsigned int)(4 * a4) >> 2)); /*0x5c7775*/
+  char v35[512]; // [esp+524h] [ebp-200h] BYREF
   qmemcpy(v35, a2, 4 * ((unsigned int)(4 * a4) >> 2)); /*0x5c7790*/
+  _DWORD v31[64]; // [esp+24h] [ebp-700h] BYREF
   memset(v31, 0, 4 * ((unsigned int)(4 * a4) >> 2)); /*0x5c77a2*/
-  v5 = 1; /*0x5c77a6*/
-  v25 = 1; /*0x5c77ae*/
+  int v5 = 1; /*0x5c77a6*/
+  int v25 = 1; /*0x5c77ae*/
   v31[0] = 0; /*0x5c77bf*/
+  _DWORD v32[128]; // [esp+124h] [ebp-600h] BYREF
   memset(v32, 0, 4 * ((unsigned int)(4 * a4) >> 2)); /*0x5c77ca*/
-  v6 = 0; /*0x5c77d3*/
+  int v6 = 0; /*0x5c77d3*/
   v32[0] = 1; /*0x5c77d5*/
   for ( i = 0; ; v6 = i ) /*0x5c77dc*/
   {
-    v7 = (v5 % 3) << 8; /*0x5c77ec*/
+    int v7 = (v5 % 3) << 8; /*0x5c77ec*/
     if ( !*(_DWORD *)&v34[v7] ) /*0x5c77ef*/
     {
-      v8 = a4; /*0x5c7805*/
+      int v8 = a4; /*0x5c7805*/
       for ( j = &v34[v7 - 4 + v29]; !*(_DWORD *)j; j -= 4 ) /*0x5c7807*/
       {
         if ( !--v8 ) /*0x5c7813*/
@@ -1559,23 +1439,24 @@ int __fastcall ModInverseBigInteger(char *a1, const void *a2, const void *a3, in
       if ( v8 <= 1 ) /*0x5c7820*/
         break; /*0x5c7820*/
     }
-    v10 = (v6 % 3) << 8; /*0x5c783f*/
-    v11 = ((v6 + 2) % 3) << 8; /*0x5c7853*/
+    int v10 = (v6 % 3) << 8; /*0x5c783f*/
+    int v11 = ((v6 + 2) % 3) << 8; /*0x5c7853*/
+  _DWORD v33[64]; // [esp+324h] [ebp-400h] BYREF
     SubtractBigInteger(&v34[v11], v33, (int)&v34[v10], &v34[v7], a4); /*0x5c785d*/
     FillArrayPattern(v30, (char *)v31 + v7, v33, a4); /*0x5c7875*/
-    v12 = (char *)v31 + v10; /*0x5c787e*/
+    char * v12 = (char *)v31 + v10; /*0x5c787e*/
     v27 = 0; /*0x5c7887*/
-    v13 = (char *)v31 + v11; /*0x5c788c*/
+    char * v13 = (char *)v31 + v11; /*0x5c788c*/
     if ( 2 * a4 ) /*0x5c7882*/
     {
-      v14 = 2 * a4; /*0x5c7894*/
-      v15 = (char *)(v30 - v12); /*0x5c7897*/
+      int v14 = 2 * a4; /*0x5c7894*/
+      char * v15 = (char *)(v30 - v12); /*0x5c7897*/
       do /*0x5c78c9*/
       {
         v13 += 2; /*0x5c789b*/
         v16 = *(_WORD *)&v12[(_DWORD)v15]; /*0x5c789e*/
         v12 += 2; /*0x5c78a2*/
-        v17 = *((unsigned __int16 *)v12 - 1) - v16 - v27; /*0x5c78b9*/
+        int v17 = *((unsigned __int16 *)v12 - 1) - v16 - v27; /*0x5c78b9*/
         *((_WORD *)v13 - 1) = v17; /*0x5c78bb*/
         --v14; /*0x5c78c4*/
         v27 = BYTE2(v17) & 1; /*0x5c78c5*/
@@ -1586,19 +1467,19 @@ int __fastcall ModInverseBigInteger(char *a1, const void *a2, const void *a3, in
     ++i; /*0x5c78d9*/
     v5 = v25; /*0x5c78dd*/
   }
-  v18 = (v5 - 1) % 3; /*0x5c78f1*/
+  int v18 = (v5 - 1) % 3; /*0x5c78f1*/
   if ( (int)v31[64 * v18 - 1 + a4] < 0 ) /*0x5c7902*/
   {
-    v19 = a3; /*0x5c7904*/
-    v20 = &v31[64 * v18]; /*0x5c7912*/
-    v26 = 0; /*0x5c7916*/
-    v21 = v20; /*0x5c791b*/
+    _DWORD * v19 = a3; /*0x5c7904*/
+    unsigned int * v20 = &v31[64 * v18]; /*0x5c7912*/
+    bool v26 = 0; /*0x5c7916*/
+    unsigned int * v21 = v20; /*0x5c791b*/
     if ( a4 ) /*0x5c791d*/
     {
       do /*0x5c7959*/
       {
-        v22 = *v20 + *v19; /*0x5c7927*/
-        v23 = v22 + v26; /*0x5c792f*/
+        unsigned int v22 = *v20 + *v19; /*0x5c7927*/
+        unsigned int v23 = v22 + v26; /*0x5c792f*/
         v26 = v22 < *v20 || v26 && !v23; /*0x5c7948*/
         *v21 = v23; /*0x5c794d*/
         ++v19; /*0x5c794f*/
@@ -1624,13 +1505,6 @@ int DivideBigInteger(unsigned int * a1, char * a2, int a3)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall DivideBigInteger(_DWORD *a1, char *a2, int a3)
 {
-  char *v4; // eax
-  int v5; // ecx
-  int v6; // edx
-  int v8; // ecx
-  int v9; // edx
-  int v10; // eax
-  int v11; // edx
   int v12; // esi
   int v13; // eax
   unsigned int v14; // edx
@@ -1654,10 +1528,11 @@ int __fastcall DivideBigInteger(_DWORD *a1, char *a2, int a3)
 
   if ( !*(_DWORD *)a2 ) /*0x5c799c*/
   {
-    v4 = &a2[4 * a3 - 4]; /*0x5c79b1*/
-    v5 = a3; /*0x5c79b7*/
+    char * v4 = &a2[4 * a3 - 4]; /*0x5c79b1*/
+    int v5 = a3; /*0x5c79b7*/
     if ( !*(_DWORD *)v4 ) /*0x5c79ad*/
     {
+  int v6; // edx
       do /*0x5c79c6*/
       {
         if ( !--v5 ) /*0x5c79bc*/
@@ -1674,9 +1549,9 @@ int __fastcall DivideBigInteger(_DWORD *a1, char *a2, int a3)
   v32[0] = 0; /*0x5c7a00*/
   memset(a1, 0, 4 * ((unsigned int)(4 * a3) >> 2)); /*0x5c7a0b*/
   *a1 = 0; /*0x5c7a18*/
-  v8 = a3; /*0x5c7a1e*/
-  v9 = *(_DWORD *)&a2[4 * a3 - 4]; /*0x5c7a20*/
-  v10 = (int)&a2[4 * a3 - 4]; /*0x5c7a24*/
+  int v8 = a3; /*0x5c7a1e*/
+  int v9 = *(_DWORD *)&a2[4 * a3 - 4]; /*0x5c7a20*/
+  int v10 = (int)&a2[4 * a3 - 4]; /*0x5c7a24*/
   v31 = (_DWORD *)v10; /*0x5c7a2a*/
   if ( v9 ) /*0x5c7a2e*/
   {
@@ -1704,7 +1579,7 @@ LABEL_10:
   {
     while ( --v8 ) /*0x5c7a30*/
     {
-      v11 = *(_DWORD *)(v10 - 4); /*0x5c7a33*/
+      int v11 = *(_DWORD *)(v10 - 4); /*0x5c7a33*/
       v10 -= 4; /*0x5c7a36*/
       if ( v11 ) /*0x5c7a3b*/
         goto LABEL_10; /*0x5c7a3b*/
@@ -1782,41 +1657,21 @@ char sub_5C7BA0(const char * a1, unsigned short * a2, int a3)
 char __fastcall sub_5C7BA0(const char *a1, unsigned __int16 *a2, int a3)
 {
   unsigned __int16 *v3; // ebp
-  const char *v4; // esi
   unsigned __int16 *v5; // eax
-  unsigned int v6; // kr04_4
-  int v7; // ebx
   unsigned __int8 *v8; // esi
-  unsigned int v9; // ebx
-  int v10; // eax
-  unsigned int v11; // edx
   unsigned __int16 *v12; // ecx
-  int v13; // esi
   unsigned __int16 v14; // ax
-  unsigned int v15; // eax
-  unsigned int *v16; // edi
-  unsigned int *v17; // edx
-  int v18; // ebp
-  unsigned int v19; // esi
-  unsigned int v20; // eax
-  int *v21; // eax
-  int v22; // ecx
-  int v23; // esi
-  int v24; // ecx
-  bool v25; // zf
-  bool v27; // [esp+Fh] [ebp-11h]
   __int16 v28; // [esp+10h] [ebp-10h]
-  bool v29; // [esp+14h] [ebp-Ch]
   unsigned __int8 *i; // [esp+18h] [ebp-8h]
 
   v3 = a2; /*0x5c7ba5*/
-  v4 = a1; /*0x5c7ba7*/
+  const char * v4 = a1; /*0x5c7ba7*/
   LOBYTE(v5) = 0; /*0x5c7bae*/
   memset(a2, 0, 4 * a3); /*0x5c7bb2*/
   *(_DWORD *)a2 = 0; /*0x5c7bba*/
   if ( a1 )
   {
-    v6 = strlen(a1) + 1; /*0x5c7bc8*/
+    unsigned int v6 = strlen(a1) + 1; /*0x5c7bc8*/
     if ( v6 != 1 )
     {
       switch ( toupper(v4[v6 - 2]) ) /*0x5c7bf1*/
@@ -1834,10 +1689,10 @@ char __fastcall sub_5C7BA0(const char *a1, unsigned __int16 *a2, int a3)
           v28 = 10; /*0x5c7c16*/
           break; /*0x5c7c16*/
       }
-      v27 = *v4 == 45; /*0x5c7c26*/
+      bool v27 = *v4 == 45; /*0x5c7c26*/
       if ( *v4 == 45 ) /*0x5c7c2a*/
         ++v4; /*0x5c7c2c*/
-      v7 = *(unsigned __int8 *)v4; /*0x5c7c30*/
+      int v7 = *(unsigned __int8 *)v4; /*0x5c7c30*/
       v8 = (unsigned __int8 *)(v4 + 1); /*0x5c7c32*/
       for ( i = v8; v7; i = v8 )
       {
@@ -1845,19 +1700,19 @@ char __fastcall sub_5C7BA0(const char *a1, unsigned __int16 *a2, int a3)
         {
           if ( !isxdigit((char)v7) ) /*0x5c7c4c*/
             break; /*0x5c7c4c*/
-          v9 = isdigit((char)v7) ? v7 - 48 : (unsigned __int8)(toupper((char)v7) - 65) + 10;
+          unsigned int v9 = isdigit((char)v7) ? v7 - 48 : (unsigned __int8)(toupper((char)v7) - 65) + 10;
           if ( v9 >= (unsigned __int16)v28 ) /*0x5c7c93*/
             break; /*0x5c7c93*/
-          v10 = a3; /*0x5c7c99*/
-          v11 = 0; /*0x5c7c9d*/
+          int v10 = a3; /*0x5c7c99*/
+          unsigned int v11 = 0; /*0x5c7c9d*/
           v12 = v3; /*0x5c7c9f*/
-          v13 = 2 * a3; /*0x5c7ca1*/
+          int v13 = 2 * a3; /*0x5c7ca1*/
           if ( 2 * a3 > 0 ) /*0x5c7ca6*/
           {
             do /*0x5c7cc2*/
             {
               v14 = *v12++; /*0x5c7cad*/
-              v15 = v11 + v28 * v14; /*0x5c7cb6*/
+              unsigned int v15 = v11 + v28 * v14; /*0x5c7cb6*/
               *(v12 - 1) = v15; /*0x5c7cb8*/
               --v13; /*0x5c7cbf*/
               v11 = HIWORD(v15); /*0x5c7cc0*/
@@ -1865,16 +1720,16 @@ char __fastcall sub_5C7BA0(const char *a1, unsigned __int16 *a2, int a3)
             while ( v13 ); /*0x5c7cc2*/
             v10 = a3; /*0x5c7cc4*/
           }
-          v29 = 0; /*0x5c7cca*/
-          v16 = (unsigned int *)v3; /*0x5c7ccf*/
-          v17 = (unsigned int *)v3; /*0x5c7cd1*/
+          bool v29 = 0; /*0x5c7cca*/
+          unsigned int * v16 = (unsigned int *)v3; /*0x5c7ccf*/
+          unsigned int * v17 = (unsigned int *)v3; /*0x5c7cd1*/
           if ( v10 ) /*0x5c7cd3*/
           {
-            v18 = v10; /*0x5c7cd5*/
+            int v18 = v10; /*0x5c7cd5*/
             do /*0x5c7d0e*/
             {
-              v19 = *v16 + v9; /*0x5c7ce2*/
-              v20 = v19 + v29; /*0x5c7ce5*/
+              unsigned int v19 = *v16 + v9; /*0x5c7ce2*/
+              unsigned int v20 = v19 + v29; /*0x5c7ce5*/
               v29 = v19 < *v16 || v29 && !v20; /*0x5c7cfe*/
               *v17 = v20; /*0x5c7d03*/
               v9 = 0; /*0x5c7d05*/
@@ -1892,20 +1747,20 @@ char __fastcall sub_5C7BA0(const char *a1, unsigned __int16 *a2, int a3)
       LOBYTE(v5) = v27; /*0x5c7d29*/
       if ( v27 ) /*0x5c7d30*/
       {
-        v21 = (int *)v3; /*0x5c7d36*/
+        int * v21 = (int *)v3; /*0x5c7d36*/
         if ( a3 > 0 ) /*0x5c7d3a*/
         {
-          v22 = a3; /*0x5c7d3c*/
+          int v22 = a3; /*0x5c7d3c*/
           do /*0x5c7d49*/
           {
-            v23 = *v21++; /*0x5c7d3e*/
+            int v23 = *v21++; /*0x5c7d3e*/
             *(v21 - 1) = ~v23; /*0x5c7d45*/
             --v22; /*0x5c7d48*/
           }
           while ( v22 ); /*0x5c7d49*/
         }
-        v24 = a3; /*0x5c7d4b*/
-        v25 = *(_DWORD *)v3 == -1; /*0x5c7d50*/
+        int v24 = a3; /*0x5c7d4b*/
+        bool v25 = *(_DWORD *)v3 == -1; /*0x5c7d50*/
         v5 = v3; /*0x5c7d51*/
         ++*(_DWORD *)v3; /*0x5c7d53*/
         for ( ; v25; v25 = (*(_DWORD *)v5)++ == -1 ) /*0x5c7d56*/
@@ -1929,57 +1784,18 @@ int ModBigIntExp(unsigned int * a0, AbstractClass * aP1, char * a2, char * a3, i
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall ModBigIntExp(_DWORD *a0, AbstractClass *aP1, char *a2, char *a3, int a5)
 {
-  int v5; // ebp
-  int v6; // edx
-  char *v7; // eax
-  int v8; // ecx
-  int v9; // esi
-  char *v10; // eax
-  int v11; // ecx
-  char *v13; // eax
-  int v14; // ecx
-  int v15; // edi
-  char *v16; // ebx
-  int v17; // ecx
-  char *v18; // edi
-  _DWORD *v19; // eax
-  int v20; // edi
-  bool v21; // cc
-  int v22; // ecx
-  char *v23; // eax
-  bool v24; // cc
-  unsigned int v25; // edi
-  char *v26; // eax
-  int v27; // esi
-  int v28; // ecx
-  unsigned int v29; // edi
-  int v30; // ecx
-  char *v31; // eax
-  int v32; // edx
-  int v33; // esi
-  int v34; // eax
-  int v35; // ecx
-  unsigned int v36; // edx
-  int v37; // eax
-  unsigned int v38; // ebx
-  _WORD *v39; // edx
-  char *v40; // ebp
-  unsigned int v41; // ebx
-  int v43; // [esp+14h] [ebp-110h]
-  int v45; // [esp+1Ch] [ebp-108h]
-  unsigned int v46; // [esp+20h] [ebp-104h]
-  char v47[256]; // [esp+24h] [ebp-100h] BYREF
 
-  v5 = a5; /*0x5c8508*/
-  v6 = 4 * a5; /*0x5c8516*/
+  int v5 = a5; /*0x5c8508*/
+  int v6 = 4 * a5; /*0x5c8516*/
   memset(a0, 0, 4 * ((unsigned int)(4 * a5) >> 2)); /*0x5c8529*/
   *a0 = 1; /*0x5c853d*/
   if ( !*(_DWORD *)a2 ) /*0x5c8543*/
   {
-    v7 = &a2[v6 - 4]; /*0x5c854c*/
-    v8 = a5; /*0x5c8552*/
+    char * v7 = &a2[v6 - 4]; /*0x5c854c*/
+    int v8 = a5; /*0x5c8552*/
     if ( !*(_DWORD *)v7 ) /*0x5c8548*/
     {
+  int v9; // esi
       do /*0x5c8561*/
       {
         if ( !--v8 ) /*0x5c8557*/
@@ -1993,9 +1809,10 @@ int __fastcall ModBigIntExp(_DWORD *a0, AbstractClass *aP1, char *a2, char *a3, 
     {
       if ( !*(_DWORD *)aP1->__pad_0 ) /*0x5c856c*/
       {
-        v10 = &aP1->__pad_0[v6 - 4]; /*0x5c8579*/
+        char * v10 = &aP1->__pad_0[v6 - 4]; /*0x5c8579*/
         if ( !*(_DWORD *)v10 ) /*0x5c8575*/
         {
+  int v11; // ecx
           do /*0x5c858c*/
           {
             if ( !--v5 ) /*0x5c8582*/
@@ -2013,10 +1830,11 @@ int __fastcall ModBigIntExp(_DWORD *a0, AbstractClass *aP1, char *a2, char *a3, 
   }
   if ( !*(_DWORD *)a3 ) /*0x5c85ae*/
   {
-    v13 = &a3[v6 - 4]; /*0x5c85b7*/
-    v14 = a5; /*0x5c85bd*/
+    char * v13 = &a3[v6 - 4]; /*0x5c85b7*/
+    int v14 = a5; /*0x5c85bd*/
     if ( !*(_DWORD *)v13 ) /*0x5c85b3*/
     {
+  int v15; // edi
       do /*0x5c85cc*/
       {
         if ( !--v14 ) /*0x5c85c2*/
@@ -2029,24 +1847,25 @@ int __fastcall ModBigIntExp(_DWORD *a0, AbstractClass *aP1, char *a2, char *a3, 
     if ( v14 <= 1 ) /*0x5c85d1*/
       return -2; /*0x5c85e2*/
   }
-  v16 = &a3[v6 - 4]; /*0x5c85e9*/
-  v17 = a5; /*0x5c85ed*/
-  v18 = &aP1->__pad_0[v6 - 4]; /*0x5c85ef*/
-  v19 = v16; /*0x5c85f3*/
+  char * v16 = &a3[v6 - 4]; /*0x5c85e9*/
+  int v17 = a5; /*0x5c85ed*/
+  char * v18 = &aP1->__pad_0[v6 - 4]; /*0x5c85ef*/
+  _DWORD * v19 = v16; /*0x5c85f3*/
   if ( *(_DWORD *)v18 < *(_DWORD *)v16 ) /*0x5c85f9*/
   {
+  int v33; // esi
 LABEL_23:
-    v22 = a5; /*0x5c860f*/
-    v23 = &a3[v6 - 4]; /*0x5c8620*/
+    int v22 = a5; /*0x5c860f*/
+    char * v23 = &a3[v6 - 4]; /*0x5c8620*/
     if ( *(_DWORD *)&a2[v6 - 4] >= *(_DWORD *)v16 ) /*0x5c8626*/
     {
-      v24 = *(_DWORD *)&a2[v6 - 4] <= *(_DWORD *)v16; /*0x5c862a*/
+      bool v24 = *(_DWORD *)&a2[v6 - 4] <= *(_DWORD *)v16; /*0x5c862a*/
       while ( v24 ) /*0x5c862d*/
       {
         v23 -= 4; /*0x5c862f*/
         if ( !--v22 ) /*0x5c8633*/
           break; /*0x5c8633*/
-        v25 = *(_DWORD *)&v23[a2 - a3]; /*0x5c8637*/
+        unsigned int v25 = *(_DWORD *)&v23[a2 - a3]; /*0x5c8637*/
         v24 = v25 <= *(_DWORD *)v23; /*0x5c863a*/
         if ( v25 < *(_DWORD *)v23 ) /*0x5c863c*/
           goto LABEL_31; /*0x5c863c*/
@@ -2054,11 +1873,12 @@ LABEL_23:
       return -4; /*0x5c8661*/
     }
 LABEL_31:
-    v26 = &a3[v6 - 4]; /*0x5c8664*/
-    v27 = a5; /*0x5c8666*/
-    v45 = a5; /*0x5c8668*/
+    char * v26 = &a3[v6 - 4]; /*0x5c8664*/
+    int v27 = a5; /*0x5c8666*/
+    int v45 = a5; /*0x5c8668*/
     if ( !*(_DWORD *)v16 ) /*0x5c866c*/
     {
+  int v28; // ecx
       do /*0x5c867c*/
       {
         if ( !--v27 ) /*0x5c8672*/
@@ -2071,19 +1891,19 @@ LABEL_31:
     }
     if ( ModBigIntExp_Helper(a3, v27) ) /*0x5c868b*/
       return -5; /*0x5c86a3*/
-    v29 = 4 * v27; /*0x5c86ad*/
-    v30 = v27; /*0x5c86b4*/
-    v46 = 4 * v27; /*0x5c86b6*/
-    v31 = &a2[4 * v27 - 4]; /*0x5c86be*/
+    unsigned int v29 = 4 * v27; /*0x5c86ad*/
+    int v30 = v27; /*0x5c86b4*/
+    unsigned int v46 = 4 * v27; /*0x5c86b6*/
+    char * v31 = &a2[4 * v27 - 4]; /*0x5c86be*/
     if ( *(_DWORD *)v31 ) /*0x5c86ba*/
     {
 LABEL_40:
       if ( v30 ) /*0x5c86d5*/
       {
-        v34 = v30; /*0x5c86db*/
-        v35 = *(_DWORD *)&a2[4 * v30 - 4]; /*0x5c86dd*/
-        v36 = 0x80000000; /*0x5c86e1*/
-        v37 = 32 * v34; /*0x5c86e6*/
+        int v34 = v30; /*0x5c86db*/
+        int v35 = *(_DWORD *)&a2[4 * v30 - 4]; /*0x5c86dd*/
+        unsigned int v36 = 0x80000000; /*0x5c86e1*/
+        int v37 = 32 * v34; /*0x5c86e6*/
         if ( v35 >= 0 ) /*0x5c86eb*/
         {
           do /*0x5c86f2*/
@@ -2101,7 +1921,7 @@ LABEL_40:
     {
       while ( --v30 ) /*0x5c86c6*/
       {
-        v32 = *((_DWORD *)v31 - 1); /*0x5c86c9*/
+        int v32 = *((_DWORD *)v31 - 1); /*0x5c86c9*/
         v31 -= 4; /*0x5c86cc*/
         if ( v32 ) /*0x5c86d1*/
           goto LABEL_40; /*0x5c86d1*/
@@ -2112,14 +1932,14 @@ LABEL_45:
     if ( (v33 + 31) / 32 ) /*0x5c86ff*/
     {
       if ( v33 ) /*0x5c870a*/
-        v38 = 1 << ((v33 - 1) % 32); /*0x5c8725*/
+        unsigned int v38 = 1 << ((v33 - 1) % 32); /*0x5c8725*/
       else
         v38 = 0; /*0x5c870c*/
-      v39 = a0; /*0x5c8727*/
-      v40 = &a2[4 * ((v33 + 31) / 32) - 4]; /*0x5c872d*/
-      v43 = v33 - 1; /*0x5c8734*/
+      _WORD * v39 = a0; /*0x5c8727*/
+      char * v40 = &a2[4 * ((v33 + 31) / 32) - 4]; /*0x5c872d*/
+      int v43 = v33 - 1; /*0x5c8734*/
       qmemcpy(a0, aP1, v29); /*0x5c8741*/
-      v41 = v38 >> 1; /*0x5c8748*/
+      unsigned int v41 = v38 >> 1; /*0x5c8748*/
       if ( !v41 ) /*0x5c874c*/
       {
         v41 = 0x80000000; /*0x5c874e*/
@@ -2129,6 +1949,7 @@ LABEL_45:
       {
         while ( 1 ) /*0x5c8776*/
         {
+  char v47[256]; // [esp+24h] [ebp-100h] BYREF
           ComputeModularInverse((int *)v47, v39, v45); /*0x5c8776*/
           if ( (v41 & *(_DWORD *)v40) != 0 ) /*0x5c877e*/
             ComputeModularInverse(a0, aP1, v45); /*0x5c878e*/
@@ -2161,8 +1982,8 @@ LABEL_45:
     }
     return 0; /*0x5c8863*/
   }
-  v20 = v18 - v16; /*0x5c85fb*/
-  v21 = *(_DWORD *)&v16[v20] <= *(_DWORD *)v16; /*0x5c85fd*/
+  int v20 = v18 - v16; /*0x5c85fb*/
+  bool v21 = *(_DWORD *)&v16[v20] <= *(_DWORD *)v16; /*0x5c85fd*/
   while ( v21 ) /*0x5c8600*/
   {
     --v19; /*0x5c8602*/
@@ -2184,26 +2005,18 @@ char sub_5C8980(char * a1, unsigned int edx0, int a3)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __fastcall sub_5C8980(char *a1, unsigned int edx0, int a3)
 {
-  char *v3; // edx
-  int v4; // ebx
-  char *v5; // eax
-  int v6; // esi
-  int v8; // ecx
-  _DWORD *v9; // eax
-  int v10; // ecx
   unsigned __int16 *i; // [esp+10h] [ebp-310h]
-  int v15; // [esp+14h] [ebp-30Ch]
-  char a2[256]; // [esp+20h] [ebp-300h] BYREF
   AbstractClass aP1; // [esp+120h] [ebp-200h] BYREF
-  _DWORD a0[64]; // [esp+220h] [ebp-100h] BYREF
 
-  v3 = a1; /*0x5c8993*/
-  v4 = a3; /*0x5c8996*/
+  char * v3 = a1; /*0x5c8993*/
+  int v4 = a3; /*0x5c8996*/
+  char a2[256]; // [esp+20h] [ebp-300h] BYREF
   qmemcpy(a2, a1, 4 * ((unsigned int)(4 * a3) >> 2)); /*0x5c89ab*/
-  v5 = a2; /*0x5c89b6*/
-  v6 = a3; /*0x5c89c0*/
+  char * v5 = a2; /*0x5c89b6*/
+  int v6 = a3; /*0x5c89c0*/
   if ( (*(_DWORD *)a2)-- == 0 ) /*0x5c89c3*/
   {
+  int v8; // ecx
     do /*0x5c89dc*/
     {
       v5 += 4; /*0x5c89cc*/
@@ -2214,18 +2027,19 @@ char __fastcall sub_5C8980(char *a1, unsigned int edx0, int a3)
     }
     while ( v8 == -1 ); /*0x5c89dc*/
   }
-  v15 = 0; /*0x5c89e2*/
+  int v15 = 0; /*0x5c89e2*/
   if ( !edx0 ) /*0x5c89ec*/
     return 1; /*0x5c8aa1*/
   for ( i = (unsigned __int16 *)&unk_82E174; ; ++i ) /*0x5c89f2*/
   {
     memset(&aP1, 0, v4 * 4); /*0x5c8a0a*/
     *(_DWORD *)aP1[0] = *i; /*0x5c8a25*/
+  _DWORD a0[64]; // [esp+220h] [ebp-100h] BYREF
     ModBigIntExp(a0, &aP1, a2, v3, a3); /*0x5c8a38*/
     if ( a0[0] != 1 ) /*0x5c8a45*/
       break; /*0x5c8a45*/
-    v9 = &a0[v4 - 1]; /*0x5c8a4e*/
-    v10 = a3; /*0x5c8a57*/
+    _DWORD * v9 = &a0[v4 - 1]; /*0x5c8a4e*/
+    int v10 = a3; /*0x5c8a57*/
     if ( !a0[a3 - 1] ) /*0x5c8a47*/
     {
       do /*0x5c8a66*/
@@ -2253,20 +2067,9 @@ char ValidateRSAKey(int a1, char * a2, int a3, int a4)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __fastcall ValidateRSAKey(int a1, char *a2, int a3, int a4)
 {
-  char *v4; // ecx
   unsigned __int16 v5; // si
-  _DWORD *v6; // edx
-  int v7; // edi
   unsigned __int16 v8; // ax
-  int v9; // eax
-  unsigned int v10; // ebx
-  _BYTE *v11; // ecx
-  int v12; // edi
-  int v13; // eax
-  int v14; // eax
   int HighestBitBitArray; // esi
-  _DWORD *v16; // eax
-  int v17; // ecx
   _DWORD *v19; // edi
   char *v20; // edx
   _DWORD *v21; // eax
@@ -2297,19 +2100,19 @@ char __fastcall ValidateRSAKey(int a1, char *a2, int a3, int a4)
 
   v40 = a1; /*0x5c8ac1*/
   v39 = a2; /*0x5c8ac9*/
-  v4 = a2; /*0x5c8ad0*/
+  char * v4 = a2; /*0x5c8ad0*/
   v34 = 0; /*0x5c8ad2*/
   v5 = 1; /*0x5c8ad9*/
-  v6 = v42; /*0x5c8ade*/
+  _DWORD * v6 = v42; /*0x5c8ade*/
   if ( 2 * a4 ) /*0x5c8acd*/
   {
-    v7 = 2 * a4; /*0x5c8ae7*/
+    int v7 = 2 * a4; /*0x5c8ae7*/
     do /*0x5c8b19*/
     {
       v8 = *(_WORD *)v4; /*0x5c8af2*/
       v4 += 2; /*0x5c8af5*/
       v6 = (_DWORD *)((char *)v6 + 2); /*0x5c8b04*/
-      v9 = v8 - v5 - v34; /*0x5c8b07*/
+      int v9 = v8 - v5 - v34; /*0x5c8b07*/
       v5 = 0; /*0x5c8b09*/
       *((_WORD *)v6 - 1) = v9; /*0x5c8b0b*/
       --v7; /*0x5c8b14*/
@@ -2317,7 +2120,7 @@ char __fastcall ValidateRSAKey(int a1, char *a2, int a3, int a4)
     }
     while ( v7 ); /*0x5c8b19*/
   }
-  v10 = 0; /*0x5c8b1d*/
+  unsigned int v10 = 0; /*0x5c8b1d*/
   v36 = 0; /*0x5c8b25*/
   if ( 32 * a4 ) /*0x5c8b22*/
   {
@@ -2340,15 +2143,15 @@ char __fastcall ValidateRSAKey(int a1, char *a2, int a3, int a4)
     memset(v44, 0, 4 * ((unsigned int)(4 * a4) >> 2)); /*0x5c8bac*/
     v37 = 0; /*0x5c8bb0*/
     *(_DWORD *)v44 = 2; /*0x5c8bbe*/
-    v11 = v45; /*0x5c8bce*/
+    _BYTE * v11 = v45; /*0x5c8bce*/
     if ( 2 * a4 ) /*0x5c8bc9*/
     {
-      v12 = 2 * a4; /*0x5c8bf7*/
+      int v12 = 2 * a4; /*0x5c8bf7*/
       do /*0x5c8c25*/
       {
-        v13 = *(unsigned __int16 *)&v11[(char *)v42 - v45] - *(unsigned __int16 *)&v11[v44 - v45]; /*0x5c8c06*/
+        int v13 = *(unsigned __int16 *)&v11[(char *)v42 - v45] - *(unsigned __int16 *)&v11[v44 - v45]; /*0x5c8c06*/
         v11 += 2; /*0x5c8c12*/
-        v14 = v13 - v37; /*0x5c8c15*/
+        int v14 = v13 - v37; /*0x5c8c15*/
         *((_WORD *)v11 - 1) = v14; /*0x5c8c17*/
         --v12; /*0x5c8c20*/
         v37 = BYTE2(v14) & 1; /*0x5c8c21*/
@@ -2364,8 +2167,8 @@ char __fastcall ValidateRSAKey(int a1, char *a2, int a3, int a4)
     ModBigIntExp(v41, v43, v46, v39, a4); /*0x5c8c9c*/
     if ( v41[0] == 1 ) /*0x5c8ca6*/
     {
-      v16 = &v41[a4 - 1]; /*0x5c8cac*/
-      v17 = a4; /*0x5c8cb2*/
+      _DWORD * v16 = &v41[a4 - 1]; /*0x5c8cac*/
+      int v17 = a4; /*0x5c8cb2*/
       if ( !*v16 ) /*0x5c8ca8*/
       {
         do /*0x5c8cc1*/
@@ -2462,13 +2265,6 @@ char sub_5C8E40(ObjectClass * aP0, int a2, int a3, ObjectClass * aP3, int a5)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __fastcall sub_5C8E40(ObjectClass *aP0, int a2, int a3, ObjectClass *aP3, int a5)
 {
-  int v5; // edi
-  _BYTE *v7; // ecx
-  int v8; // eax
-  int v9; // eax
-  char *v10; // eax
-  int v11; // ecx
-  int v12; // edx
   int v13; // ebp
   int *v14; // edx
   int v15; // eax
@@ -2497,25 +2293,25 @@ char __fastcall sub_5C8E40(ObjectClass *aP0, int a2, int a3, ObjectClass *aP3, i
   char *v40; // [esp+20h] [ebp-104h] BYREF
   _BYTE v41[256]; // [esp+24h] [ebp-100h] BYREF
 
-  v5 = a5; /*0x5c8e4a*/
+  int v5 = a5; /*0x5c8e4a*/
   v33 = 0; /*0x5c8e57*/
-  v7 = v41; /*0x5c8e5f*/
+  _BYTE * v7 = v41; /*0x5c8e5f*/
   if ( 2 * a5 ) /*0x5c8e63*/
   {
     v36 = 2 * a5; /*0x5c8e85*/
     do /*0x5c8ebc*/
     {
-      v8 = *(unsigned __int16 *)&v7[(char *)aP3 - v41] - *(unsigned __int16 *)&v7[a3 - (_DWORD)v41]; /*0x5c8e95*/
+      int v8 = *(unsigned __int16 *)&v7[(char *)aP3 - v41] - *(unsigned __int16 *)&v7[a3 - (_DWORD)v41]; /*0x5c8e95*/
       v7 += 2; /*0x5c8ea1*/
-      v9 = v8 - v33; /*0x5c8ea4*/
+      int v9 = v8 - v33; /*0x5c8ea4*/
       *((_WORD *)v7 - 1) = v9; /*0x5c8ea6*/
       v33 = BYTE2(v9) & 1; /*0x5c8eaf*/
       --v36; /*0x5c8eb8*/
     }
     while ( v36 ); /*0x5c8ebc*/
   }
-  v10 = &v41[4 * a5 - 4]; /*0x5c8ec2*/
-  v11 = a5; /*0x5c8ec8*/
+  char * v10 = &v41[4 * a5 - 4]; /*0x5c8ec2*/
+  int v11 = a5; /*0x5c8ec8*/
   v37 = v10; /*0x5c8eca*/
   if ( *(_DWORD *)v10 ) /*0x5c8ebe*/
   {
@@ -2545,7 +2341,7 @@ LABEL_7:
   {
     while ( --v11 ) /*0x5c8ed0*/
     {
-      v12 = *((_DWORD *)v10 - 1); /*0x5c8ed3*/
+      int v12 = *((_DWORD *)v10 - 1); /*0x5c8ed3*/
       v10 -= 4; /*0x5c8ed6*/
       if ( v12 ) /*0x5c8edb*/
         goto LABEL_7; /*0x5c8edb*/
@@ -2621,15 +2417,7 @@ char ModCryptoExp(char * a1, int edx0)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __fastcall ModCryptoExp(char *a1, int edx0)
 {
-  char *v2; // edi
-  __int64 v4; // rax
-  int v6; // esi
-  char *v7; // eax
-  int v8; // ecx
-  int v9; // esi
   unsigned __int16 v10; // bp
-  _WORD *v11; // edi
-  int v12; // esi
   char *v13; // ecx
   _WORD *v14; // esi
   int v15; // edx
@@ -2642,15 +2430,17 @@ char __fastcall ModCryptoExp(char *a1, int edx0)
   _DWORD a0[64]; // [esp+114h] [ebp-200h] BYREF
   AbstractClass aP1; // [esp+214h] [ebp-100h] BYREF
 
-  v2 = a1; /*0x5c902a*/
+  char * v2 = a1; /*0x5c902a*/
+  __int64 v4; // rax
   HIDWORD(v4) = *(_DWORD *)a1; /*0x5c9032*/
   if ( (*(_DWORD *)a1 & 1) == 0 ) /*0x5c9037*/
     return 0; /*0x5c9045*/
-  v6 = *(_DWORD *)&a1[4 * edx0 - 4]; /*0x5c9046*/
-  v7 = &a1[4 * edx0 - 4]; /*0x5c904a*/
-  v8 = edx0; /*0x5c9050*/
+  int v6 = *(_DWORD *)&a1[4 * edx0 - 4]; /*0x5c9046*/
+  char * v7 = &a1[4 * edx0 - 4]; /*0x5c904a*/
+  int v8 = edx0; /*0x5c9050*/
   if ( !v6 ) /*0x5c9052*/
   {
+  int v9; // esi
     do /*0x5c905f*/
     {
       if ( !--v8 ) /*0x5c9055*/
@@ -2716,8 +2506,8 @@ LABEL_17:
     return 0; /*0x5c90d6*/
   }
   v10 = *(_WORD *)v2; /*0x5c9074*/
-  v11 = &unk_82E174; /*0x5c9077*/
-  v12 = 3511; /*0x5c907c*/
+  _WORD * v11 = &unk_82E174; /*0x5c9077*/
+  int v12 = 3511; /*0x5c907c*/
   do /*0x5c90a6*/
   {
     v4 = v12; /*0x5c9083*/
@@ -2753,13 +2543,11 @@ namespace gamemd {
 int sub_5C9AE0(const void * a1, const void * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __cdecl sub_5C9AE0(const void *a1, const void *a2)
+int sub_5C9AE0(const void *a1, const void *a2)
 {
-  int v2; // eax
-  int v3; // ecx
 
-  v2 = *(_DWORD *)(*(_DWORD *)a1 + 96); /*0x5c9aec*/
-  v3 = *(_DWORD *)(*(_DWORD *)a2 + 96); /*0x5c9aef*/
+  int v2 = *(_DWORD *)(*(_DWORD *)a1 + 96); /*0x5c9aec*/
+  int v3 = *(_DWORD *)(*(_DWORD *)a2 + 96); /*0x5c9aef*/
   if ( v2 == v3 )
     return 0; /*0x5c9af6*/
   else
@@ -2775,68 +2563,48 @@ unsigned int * E4Recv_5CD690::sub_5CD690(int * a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_5CD690(int this, int *a2)
 {
-  int *v4; // edi
   wchar_t *v5; // eax
-  int v6; // eax
-  int v7; // edx
-  int v8; // eax
-  int v9; // ebp
-  int v10; // ecx
-  int v11; // edx
-  int v12; // eax
-  int v13; // ebx
-  int v14; // ebx
-  int v15; // ebx
-  int v16; // edx
-  int v17; // eax
-  int v18; // eax
   _DWORD *result; // eax
-  _DWORD *v20; // edi
   wchar_t *v21; // eax
-  int v22; // edx
-  _DWORD *v23; // [esp-8h] [ebp-3Ch]
-  int v24; // [esp+Ch] [ebp-28h]
-  int v25; // [esp+10h] [ebp-24h]
-  _DWORD v26[6]; // [esp+14h] [ebp-20h] BYREF
-  int v27; // [esp+2Ch] [ebp-8h]
-  int v28; // [esp+30h] [ebp-4h]
-  int v29; // [esp+38h] [ebp+4h]
 
   if ( a2[2] <= 0 || a2[3] <= 0 ) /*0x5cd6ac*/
   {
-    v20 = (_DWORD *)(this + 56); /*0x5cd81e*/
+    _DWORD * v20 = (_DWORD *)(this + 56); /*0x5cd81e*/
     v21 = WideString::GetOrEmpty((wchar_t **)(this + 28)); /*0x5cd825*/
     result = sub_5D30C0(*(size_t **)(this + 52), v21, (_DWORD *)(this + 56)); /*0x5cd82e*/
-    v22 = this->M8; /*0x5cd836*/
+    int v22 = this->M8; /*0x5cd836*/
     *v20 = this->M4; /*0x5cd839*/
     this->M60 = v22; /*0x5cd83b*/
   }
   else
   {
-    v4 = (int *)(this + 56); /*0x5cd6b2*/
-    v23 = (_DWORD *)(this + 56); /*0x5cd6b6*/
+  int v17; // eax
+  int v16; // edx
+    int * v4 = (int *)(this + 56); /*0x5cd6b2*/
+    _DWORD * v23 = (_DWORD *)(this + 56); /*0x5cd6b6*/
     v5 = WideString::GetOrEmpty((wchar_t **)(this + 28)); /*0x5cd6ba*/
     sub_5D30C0(*(size_t **)(this + 52), v5, v23); /*0x5cd6c3*/
-    v6 = this->M52; /*0x5cd6dc*/
+    int v6 = this->M52; /*0x5cd6dc*/
     this->M4 += (a2[2] - this->M64) / 2; /*0x5cd6df*/
-    v7 = a2[3] % *(_DWORD *)(v6 + 8) / 2 + this->M8; /*0x5cd706*/
-    v8 = this->M60; /*0x5cd70d*/
+    int v7 = a2[3] % *(_DWORD *)(v6 + 8) / 2 + this->M8; /*0x5cd706*/
+    int v8 = this->M60; /*0x5cd70d*/
     *v4 += this->M4; /*0x5cd710*/
     this->M8 = v7; /*0x5cd71a*/
     this->M60 = v7 + v8; /*0x5cd71d*/
+  _DWORD v26[6]; // [esp+14h] [ebp-20h] BYREF
     Rect::Set(v26, 0, 0, 0, 0); /*0x5cd720*/
-    v9 = *v4; /*0x5cd727*/
-    v10 = this->M60; /*0x5cd729*/
-    v11 = this->M64; /*0x5cd72c*/
-    v27 = v11; /*0x5cd72f*/
-    v28 = this->M68; /*0x5cd736*/
-    v29 = a2[2]; /*0x5cd73f*/
+    int v9 = *v4; /*0x5cd727*/
+    int v10 = this->M60; /*0x5cd729*/
+    int v11 = this->M64; /*0x5cd72c*/
+    int v27 = v11; /*0x5cd72f*/
+    int v28 = this->M68; /*0x5cd736*/
+    int v29 = a2[2]; /*0x5cd73f*/
     if ( a2[2] <= 0 ) /*0x5cd743*/
       goto LABEL_20; /*0x5cd743*/
-    v25 = a2[3]; /*0x5cd74e*/
+    int v25 = a2[3]; /*0x5cd74e*/
     if ( v25 <= 0 || *(int *)(this + 64) <= 0 || *(int *)(this + 68) <= 0 ) /*0x5cd768*/
       goto LABEL_20; /*0x5cd768*/
-    v12 = *a2; /*0x5cd76a*/
+    int v12 = *a2; /*0x5cd76a*/
     if ( v9 < *a2 ) /*0x5cd76e*/
     {
       v11 += v9 - v12; /*0x5cd772*/
@@ -2845,11 +2613,11 @@ _DWORD *__thiscall sub_5CD690(int this, int *a2)
     }
     if ( v11 < 1 ) /*0x5cd77d*/
       goto LABEL_20; /*0x5cd77d*/
-    v13 = a2[1]; /*0x5cd77f*/
-    v24 = v13; /*0x5cd784*/
+    int v13 = a2[1]; /*0x5cd77f*/
+    int v24 = v13; /*0x5cd784*/
     if ( v10 < v13 ) /*0x5cd788*/
     {
-      v14 = v10 - v13 + v28; /*0x5cd790*/
+      int v14 = v10 - v13 + v28; /*0x5cd790*/
       v10 = v24; /*0x5cd792*/
       v28 = v14; /*0x5cd796*/
     }
@@ -2859,7 +2627,7 @@ _DWORD *__thiscall sub_5CD690(int this, int *a2)
       v27 = v29 + v12 - v9; /*0x5cd7b5*/
     if ( v27 < 1 ) /*0x5cd7be*/
       goto LABEL_20; /*0x5cd7be*/
-    v15 = v28; /*0x5cd7c8*/
+    int v15 = v28; /*0x5cd7c8*/
     if ( v28 + v10 > v24 + v25 ) /*0x5cd7d3*/
       v15 = v24 + v25 - v10; /*0x5cd7d7*/
     if ( v15 < 1 ) /*0x5cd7dc*/
@@ -2876,7 +2644,7 @@ LABEL_20:
       v17 = v9; /*0x5cd7e2*/
     }
     *v4 = v17; /*0x5cd7f6*/
-    v18 = this->M52; /*0x5cd7f8*/
+    int v18 = this->M52; /*0x5cd7f8*/
     this->M60 = v10; /*0x5cd7fb*/
     this->M64 = v16; /*0x5cd7fe*/
     this->M68 = v15; /*0x5cd801*/
@@ -2896,19 +2664,6 @@ ObjectClass * WrapWideStringText(const wchar_t ** ecx0, int * a2, int a3)
 ObjectClass *__fastcall WrapWideStringText(const wchar_t **ecx0, int *a2, int a3)
 {
   ObjectClass *v3; // esi
-  int *v4; // ebp
-  int v6; // eax
-  int v7; // ebx
-  int v8; // ebp
-  int v9; // eax
-  int v10; // ebp
-  int v11; // eax
-  int v12; // edx
-  int v13; // ebp
-  int v14; // eax
-  int v15; // ebp
-  int v16; // eax
-  int v17; // edx
   wchar_t **v18; // eax
   wchar_t **v19; // eax
   wchar_t **v20; // eax
@@ -2921,35 +2676,31 @@ ObjectClass *__fastcall WrapWideStringText(const wchar_t **ecx0, int *a2, int a3
   size_t v28; // [esp-8h] [ebp-4Ch]
   ObjectClass *v30; // [esp+10h] [ebp-34h] BYREF
   wchar_t *v31; // [esp+14h] [ebp-30h] BYREF
-  void *v32; // [esp+18h] [ebp-2Ch] BYREF
   wchar_t *v33; // [esp+1Ch] [ebp-28h] BYREF
-  int v34; // [esp+20h] [ebp-24h]
   ObjectClass *v35; // [esp+24h] [ebp-20h]
-  int v36; // [esp+28h] [ebp-1Ch]
   ObjectClass *v37; // [esp+2Ch] [ebp-18h] BYREF
   wchar_t *v38; // [esp+30h] [ebp-14h] BYREF
   wchar_t *v39; // [esp+34h] [ebp-10h] BYREF
   wchar_t *v40; // [esp+38h] [ebp-Ch] BYREF
   wchar_t *a1; // [esp+3Ch] [ebp-8h] BYREF
   wchar_t *v42; // [esp+40h] [ebp-4h] BYREF
-  int v43; // [esp+48h] [ebp+4h]
-
   v3 = 0; /*0x5cd855*/
-  v4 = a2; /*0x5cd858*/
-  v34 = 0; /*0x5cd861*/
+  int * v4 = a2; /*0x5cd858*/
+  int v34 = 0; /*0x5cd861*/
   if ( String_Helper(ecx0, 0) ) /*0x5cd865*/
     return 0; /*0x5cd865*/
   if ( !v4 ) /*0x5cd874*/
     return 0; /*0x5cd874*/
-  v6 = v4[1]; /*0x5cd87a*/
+  int v6 = v4[1]; /*0x5cd87a*/
   if ( a3 <= v6 ) /*0x5cd883*/
     return 0; /*0x5cdb7c*/
-  v43 = a3 - v6; /*0x5cd891*/
+  int v43 = a3 - v6; /*0x5cd891*/
   if ( WideString::GetChar(ecx0, 0) ) /*0x5cd895*/
   {
     do /*0x5cdac6*/
     {
-      v7 = 0; /*0x5cd8a7*/
+  int v36; // [esp+28h] [ebp-1Ch]
+      int v7 = 0; /*0x5cd8a7*/
       v35 = v3; /*0x5cd8ab*/
       if ( v43 <= 0 ) /*0x5cd8af*/
         goto LABEL_12; /*0x5cd8af*/
@@ -2957,9 +2708,10 @@ ObjectClass *__fastcall WrapWideStringText(const wchar_t **ecx0, int *a2, int a3
            && WideString::GetChar(ecx0, v3) != 10
            && WideString::GetChar(ecx0, v3) != 64 )
       {
-        v8 = *v4; /*0x5cd8da*/
+        int v8 = *v4; /*0x5cd8da*/
         v26 = v3; /*0x5cd8df*/
         v3 = (ObjectClass *)((char *)v3 + 1); /*0x5cd8e2*/
+  int v9; // eax
         LOWORD(v9) = WideString::GetChar(ecx0, v26); /*0x5cd8e3*/
         v36 = v8; /*0x5cd8e8*/
         v4 = a2; /*0x5cd8ec*/
@@ -2976,10 +2728,11 @@ LABEL_12:
             break; /*0x5cd931*/
           if ( v3 == v35 ) /*0x5cd937*/
             goto LABEL_18; /*0x5cd937*/
-          v10 = *v4; /*0x5cd939*/
+          int v10 = *v4; /*0x5cd939*/
           v3 = (ObjectClass *)((char *)v3 - 1); /*0x5cd93c*/
+  int v11; // eax
           LOWORD(v11) = WideString::GetChar(ecx0, v3); /*0x5cd940*/
-          v12 = v10; /*0x5cd945*/
+          int v12 = v10; /*0x5cd945*/
           v4 = a2; /*0x5cd947*/
           v7 -= (*(int (__thiscall **)(int *, int))(v12 + 4))(a2, v11); /*0x5cd953*/
         }
@@ -2995,9 +2748,10 @@ LABEL_18:
              && WideString::GetChar(ecx0, v3) != 64
              && WideString::GetChar(ecx0, v3) != 45 )
         {
-          v13 = *v4; /*0x5cd9cd*/
+          int v13 = *v4; /*0x5cd9cd*/
           v27 = v3; /*0x5cd9d2*/
           v3 = (ObjectClass *)((char *)v3 + 1); /*0x5cd9d5*/
+  int v14; // eax
           LOWORD(v14) = WideString::GetChar(ecx0, v27); /*0x5cd9d6*/
           v36 = v13; /*0x5cd9db*/
           v4 = a2; /*0x5cd9df*/
@@ -3008,13 +2762,15 @@ LABEL_18:
         if ( v7 >= v43 ) /*0x5cdae6*/
         {
 LABEL_25:
-          v15 = *v4; /*0x5cd9f9*/
+          int v15 = *v4; /*0x5cd9f9*/
+  int v16; // eax
           LOWORD(v16) = WideString::GetChar(ecx0, v3); /*0x5cd9ff*/
-          v17 = v15; /*0x5cda04*/
+          int v17 = v15; /*0x5cda04*/
           v4 = a2; /*0x5cda06*/
           v7 -= (*(int (__thiscall **)(int *, int))(v17 + 4))(a2, v16); /*0x5cda14*/
           WideString::AssignFromPtr(&v33, ecx0); /*0x5cda17*/
           String::TruncateTo((void **)&v33, (size_t)v3); /*0x5cda21*/
+  void *v32; // [esp+18h] [ebp-2Ch] BYREF
           WideString::AssignFromPtr((wchar_t **)&v32, ecx0); /*0x5cda2b*/
           WideString::Erase((const wchar_t **)&v32, 0, (int)v3); /*0x5cda37*/
           v18 = WideString::Assign(&v42, (CampaignScore *)asc_830174); /*0x5cda4f*/
@@ -3067,30 +2823,15 @@ namespace gamemd {
 char E4Recv_5CE0C0::sub_5CE0C0(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_5CE0C0(int this, int a2, _DWORD *a3)
+void sub_5CE0C0(int this, int a2, _DWORD *a3)
 {
-  signed int v4; // edi
-  signed int v5; // eax
-  int v6; // edi
-  int v7; // eax
-  int v9; // ebx
   size_t v10; // ebp
-  int v11; // eax
-  int v12; // edi
-  int v13; // eax
-  int v14; // edx
-  int v15; // ecx
-  int v16; // eax
-  unsigned int v17; // edx
   size_t v18; // [esp+Ch] [ebp-20h]
   size_t v19; // [esp+Ch] [ebp-20h]
-  int v20; // [esp+24h] [ebp-8h]
-  int v21; // [esp+30h] [ebp+4h]
-
-  v4 = this->M24; /*0x5ce0cb*/
+  signed int v4 = this->M24; /*0x5ce0cb*/
   if ( this->M16 != -1 ) /*0x5ce0d1*/
   {
-    v5 = Timer::GetTicks() - this->M16; /*0x5ce0db*/
+    signed int v5 = Timer::GetTicks() - this->M16; /*0x5ce0db*/
     if ( v5 >= v4 ) /*0x5ce0e0*/
       goto LABEL_5; /*0x5ce0e0*/
     v4 -= v5; /*0x5ce0e2*/
@@ -3107,13 +2848,14 @@ LABEL_24:
 LABEL_5:
   if ( (unsigned char)this->M12 != 1 ) /*0x5ce0f6*/
     goto LABEL_24; /*0x5ce0f6*/
-  v6 = this->M44; /*0x5ce0fc*/
+  int v6 = this->M44; /*0x5ce0fc*/
   this->M16 = Timer::GetTicks(); /*0x5ce108*/
+  int v20; // [esp+24h] [ebp-8h]
   this->M20 = v20; /*0x5ce10f*/
   this->M24 = v6; /*0x5ce112*/
   if ( this->M32 >= (unsigned int)WideString::Length((const wchar_t **)(this + 28)) ) /*0x5ce122*/
   {
-    v7 = Math::RoundToInt(DataGlobal_A8EB98 * 64.0); /*0x5ce130*/
+    int v7 = Math::RoundToInt(DataGlobal_A8EB98 * 64.0); /*0x5ce130*/
     sub_406670(aBleep1, v7); /*0x5ce13c*/
     return 1; /*0x5ce149*/
   }
@@ -3125,15 +2867,17 @@ LABEL_5:
       this + 84,
       0,
       1);
-  v9 = this->M4; /*0x5ce179*/
+  int v9 = this->M4; /*0x5ce179*/
   if ( (unsigned char)this->M73 ) /*0x5ce176*/
     v9 += this->M76; /*0x5ce180*/
   v18 = this->M32; /*0x5ce18b*/
   v10 = v18 + 1; /*0x5ce18c*/
+  int v11; // eax
   LOWORD(v11) = WideString::GetChar((const wchar_t **)(this + 28), v18); /*0x5ce18d*/
-  v12 = v11; /*0x5ce192*/
+  int v12 = v11; /*0x5ce192*/
   if ( (_WORD)v11 != 10 ) /*0x5ce198*/
   {
+  int v13; // eax
     do /*0x5ce1d5*/
     {
       if ( !(_WORD)v12 ) /*0x5ce19d*/
@@ -3153,9 +2897,9 @@ LABEL_5:
     }
     while ( (_WORD)v13 != 10 ); /*0x5ce1d5*/
   }
-  v14 = this->M64; /*0x5ce1e0*/
-  v15 = *(_DWORD *)(this->M52 + 8); /*0x5ce1e3*/
-  v21 = this->M80; /*0x5ce1e6*/
+  int v14 = this->M64; /*0x5ce1e0*/
+  int v15 = *(_DWORD *)(this->M52 + 8); /*0x5ce1e3*/
+  int v21 = this->M80; /*0x5ce1e6*/
   *a3 = this->M56; /*0x5ce1ee*/
   a3[1] = v21; /*0x5ce1f4*/
   a3[2] = v14; /*0x5ce1f7*/
@@ -3169,7 +2913,7 @@ LABEL_5:
     this->M32 = v10; /*0x5ce217*/
     if ( (_WORD)v12 == 10 ) /*0x5ce21a*/
     {
-      v16 = Math::RoundToInt(DataGlobal_A8EB98 * 64.0); /*0x5ce228*/
+      int v16 = Math::RoundToInt(DataGlobal_A8EB98 * 64.0); /*0x5ce228*/
       sub_406670(aBleep1, v16); /*0x5ce234*/
       this->M80 += *(_DWORD *)(this->M52 + 8); /*0x5ce244*/
     }
@@ -3183,7 +2927,7 @@ LABEL_5:
   }
   if ( (unsigned char)this->M48 == 1 ) /*0x5ce26c*/
   {
-    v17 = this->M36 + 1; /*0x5ce271*/
+    unsigned int v17 = this->M36 + 1; /*0x5ce271*/
     this->M36 = v17; /*0x5ce274*/
     if ( v17 > 2 ) /*0x5ce27a*/
     {

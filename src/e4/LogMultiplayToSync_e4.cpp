@@ -21,41 +21,17 @@ void __usercall LogMultiplayToSync_MPDEBUG(CellStruct *a1@<ecx>, unsigned __int8
   char *ModuleInternalVersion; // eax
   CellStruct *v10; // eax
   char *Name; // eax
-  unsigned int v12; // eax
   int i; // edi
   CellStruct **v14; // eax
-  char *v15; // edi
   CellStruct *v16; // ebp
-  int *v17; // edi
   CellStruct **v18; // edi
-  int v19; // ebp
-  int v20; // ebp
-  int v21; // edi
-  bool v22; // cc
-  int v23; // eax
-  int v24; // ebp
-  int v25; // edi
-  int v26; // eax
-  int v27; // ebp
-  int v28; // edi
-  int v29; // eax
-  int v30; // ebp
-  int v31; // edi
   CellStruct *v33; // edi
   int *ebx60; // ebx
   CellStruct *v34; // ebp
-  char *v35; // edi
   __int16 v36; // ax
-  char *v37; // eax
-  char *v38; // eax
-  char v39; // al
   CellStruct *v40; // ebp
   ObjectClass *v41; // ebx
-  char *v42; // edi
   __int16 v43; // ax
-  char *v44; // eax
-  char *v45; // eax
-  char v46; // al
   int visibilityFlags; // eax
   unsigned __int8 *v48; // edi
   CellStruct *v49; // [esp-4h] [ebp-3B4h]
@@ -63,16 +39,10 @@ void __usercall LogMultiplayToSync_MPDEBUG(CellStruct *a1@<ecx>, unsigned __int8
   CellStruct *v51; // [esp+0h] [ebp-3B0h]
   CellStruct *v52; // [esp+0h] [ebp-3B0h]
   CellStruct *aP2; // [esp+Ch] [ebp-3A4h] BYREF
-  int v54; // [esp+10h] [ebp-3A0h]
   CellStruct *v55; // [esp+14h] [ebp-39Ch]
-  int v56; // [esp+18h] [ebp-398h] BYREF
-  int v57; // [esp+1Ch] [ebp-394h] BYREF
   ObjectClass *v58; // [esp+24h] [ebp-38Ch]
-  int v59; // [esp+28h] [ebp-388h] BYREF
   unsigned __int8 *v60; // [esp+2Ch] [ebp-384h]
-  char v61[128]; // [esp+30h] [ebp-380h] BYREF
   char Destination[128]; // [esp+B0h] [ebp-300h] BYREF
-  char v63[128]; // [esp+130h] [ebp-280h] BYREF
   char Buffer[512]; // [esp+1B0h] [ebp-200h] BYREF
 
   v60 = a2; /*0x651701*/
@@ -86,24 +56,29 @@ void __usercall LogMultiplayToSync_MPDEBUG(CellStruct *a1@<ecx>, unsigned __int8
   v7 = (MouseClass *)v6; /*0x65175a*/
   if ( v6 ) /*0x651761*/
   {
+  int v57; // [esp+1Ch] [ebp-394h] BYREF
+  bool v22; // cc
     fprintf((MouseClass *)v6, &stru_830620[34848], v51); /*0x651788*/
     ModuleVersion = GetModuleVersion(); /*0x651790*/
     fprintf(v7, &stru_830620[34832], (CellStruct *)ModuleVersion); /*0x65179c*/
     ModuleInternalVersion = GetModuleInternalVersion((int)&HouseClass_Player[44948]); /*0x6517a9*/
     fprintf(v7, &stru_830620[34808], (CellStruct *)ModuleInternalVersion); /*0x6517b5*/
+  char v61[128]; // [esp+30h] [ebp-380h] BYREF
     v61[0] = 0; /*0x6517c6*/
     Time::FormatDate(v61); /*0x6517cb*/
     String::CopyConstant(Destination); /*0x6517e1*/
+  char v63[128]; // [esp+130h] [ebp-280h] BYREF
     v10 = (CellStruct *)String::FormatDword(v63); /*0x6517f3*/
     fprintf(v7, (const char *const)stru_821F08.headNode, v10); /*0x6517ff*/
-    v59 = 5; /*0x65180f*/
+    int v59 = 5; /*0x65180f*/
+  int v56; // [esp+18h] [ebp-398h] BYREF
     HIBYTE(v56) = 0; /*0x65181b*/
     GetVersionString(&v59, (_BYTE *)&v56 + 3, 0, 0); /*0x651820*/
     Name = PlayerType::GetName(); /*0x65183d*/
     fprintf(v7, g_Str_Trace_CPU__s__MMX__s__Vendor_, (CellStruct *)Name); /*0x651849*/
     fprintf(v7, g_Str_Trace_Frames_, *(CellStruct **)&HouseClass_Player[45112]); /*0x65185b*/
     if ( g_FrameCounter_Samples ) /*0x65186b*/
-      v12 = g_FrameCounter_Total / (unsigned int)g_FrameCounter_Samples; /*0x651874*/
+      unsigned int v12 = g_FrameCounter_Total / (unsigned int)g_FrameCounter_Samples; /*0x651874*/
     else
       v12 = 0; /*0x651878*/
     fprintf(v7, g_Str_Trace_Average_FPS_, (CellStruct *)v12); /*0x651881*/
@@ -130,7 +105,7 @@ void __usercall LogMultiplayToSync_MPDEBUG(CellStruct *a1@<ecx>, unsigned __int8
       }
     }
     v49 = a3; /*0x65194f*/
-    v15 = &HouseClass_Player[30840]; /*0x651950*/
+    char * v15 = &HouseClass_Player[30840]; /*0x651950*/
     do /*0x651a2e*/
     {
       if ( *(v15 - 80) ) /*0x651955*/
@@ -150,7 +125,7 @@ void __usercall LogMultiplayToSync_MPDEBUG(CellStruct *a1@<ecx>, unsigned __int8
     }
     while ( (int)v15 < (int)&HouseClass_Player[31672] ); /*0x651a2e*/
     v16 = 0; /*0x651a34*/
-    v17 = dword_B04474; /*0x651a36*/
+    int * v17 = dword_B04474; /*0x651a36*/
     do /*0x651a68*/
     {
       if ( v16 == v55 ) /*0x651a3f*/
@@ -163,7 +138,7 @@ void __usercall LogMultiplayToSync_MPDEBUG(CellStruct *a1@<ecx>, unsigned __int8
     while ( (int)v17 < (int)&dword_B04874 ); /*0x651a68*/
     v55 = 0; /*0x651a6a*/
     v18 = (CellStruct **)&v4->ambientSoundController[2]; /*0x651a72*/
-    v19 = 8; /*0x651a75*/
+    int v19 = 8; /*0x651a75*/
     do /*0x651aaa*/
     {
       if ( *v18 != (CellStruct *)-1 ) /*0x651a7f*/
@@ -176,7 +151,7 @@ void __usercall LogMultiplayToSync_MPDEBUG(CellStruct *a1@<ecx>, unsigned __int8
     }
     while ( v19 ); /*0x651aaa*/
     v57 = v4[4].customSound_controller[0]; /*0x651ab8*/
-    v54 = 0; /*0x651abc*/
+    int v54 = 0; /*0x651abc*/
     if ( (int)v55 > 0 ) /*0x651ac4*/
     {
       aP2 = (CellStruct *)&v4->__pad_0[12]; /*0x651acd*/
@@ -185,10 +160,10 @@ void __usercall LogMultiplayToSync_MPDEBUG(CellStruct *a1@<ecx>, unsigned __int8
         if ( *(_DWORD *)&aP2->__pad_34[4] != -1 ) /*0x651ad9*/
         {
           fprintf(v7, &stru_830620[35552], aP2); /*0x651ae4*/
-          v20 = 0; /*0x651af2*/
+          int v20 = 0; /*0x651af2*/
           if ( v4[4].ambientSoundController[1] > 0 ) /*0x651af6*/
           {
-            v21 = v57 + 64; /*0x651afc*/
+            int v21 = v57 + 64; /*0x651afc*/
             do /*0x651b4f*/
             {
               if ( *(char *)(v21 - 32) == v54 ) /*0x651b07*/
@@ -204,7 +179,7 @@ void __usercall LogMultiplayToSync_MPDEBUG(CellStruct *a1@<ecx>, unsigned __int8
       }
       while ( v22 ); /*0x651b6b*/
     }
-    v23 = v4[4].ambientSoundController[1]; /*0x651b71*/
+    int v23 = v4[4].ambientSoundController[1]; /*0x651b71*/
     v54 = 0; /*0x651b77*/
     v57 += 104 * v23; /*0x651b92*/
     if ( (int)v55 > 0 ) /*0x651b96*/
@@ -215,10 +190,10 @@ void __usercall LogMultiplayToSync_MPDEBUG(CellStruct *a1@<ecx>, unsigned __int8
         if ( *(_DWORD *)&aP2->__pad_34[4] != -1 ) /*0x651bab*/
         {
           fprintf(v7, &stru_830620[35412], aP2); /*0x651bba*/
-          v24 = 0; /*0x651bc8*/
+          int v24 = 0; /*0x651bc8*/
           if ( v4[4].ambientSoundController[2] > 0 ) /*0x651bcc*/
           {
-            v25 = v57 + 92; /*0x651bd2*/
+            int v25 = v57 + 92; /*0x651bd2*/
             do /*0x651c34*/
             {
               if ( *(char *)(v25 - 60) == v54 ) /*0x651bdd*/
@@ -234,7 +209,7 @@ void __usercall LogMultiplayToSync_MPDEBUG(CellStruct *a1@<ecx>, unsigned __int8
       }
       while ( v22 ); /*0x651c50*/
     }
-    v26 = v4[4].ambientSoundController[2]; /*0x651c56*/
+    int v26 = v4[4].ambientSoundController[2]; /*0x651c56*/
     v54 = 0; /*0x651c60*/
     v57 += 104 * v26; /*0x651c77*/
     if ( (int)v55 > 0 ) /*0x651c7b*/
@@ -245,10 +220,10 @@ void __usercall LogMultiplayToSync_MPDEBUG(CellStruct *a1@<ecx>, unsigned __int8
         if ( *(_DWORD *)&aP2->__pad_34[4] != -1 ) /*0x651c90*/
         {
           fprintf(v7, &stru_830620[35232], aP2); /*0x651c9b*/
-          v27 = 0; /*0x651ca9*/
+          int v27 = 0; /*0x651ca9*/
           if ( v4[4].ambientSoundController[3] > 0 ) /*0x651cad*/
           {
-            v28 = v57 + 64; /*0x651cb3*/
+            int v28 = v57 + 64; /*0x651cb3*/
             do /*0x651d01*/
             {
               if ( *(char *)(v28 - 32) == v54 ) /*0x651cbe*/
@@ -264,7 +239,7 @@ void __usercall LogMultiplayToSync_MPDEBUG(CellStruct *a1@<ecx>, unsigned __int8
       }
       while ( v22 ); /*0x651d1d*/
     }
-    v29 = v4[4].ambientSoundController[3]; /*0x651d23*/
+    int v29 = v4[4].ambientSoundController[3]; /*0x651d23*/
     v54 = 0; /*0x651d2d*/
     v57 += 104 * v29; /*0x651d44*/
     if ( (int)v55 > 0 ) /*0x651d48*/
@@ -275,10 +250,10 @@ void __usercall LogMultiplayToSync_MPDEBUG(CellStruct *a1@<ecx>, unsigned __int8
         if ( *(_DWORD *)&aP2->__pad_34[4] != -1 ) /*0x651d5d*/
         {
           fprintf(v7, &stru_830620[35096], aP2); /*0x651d68*/
-          v30 = 0; /*0x651d76*/
+          int v30 = 0; /*0x651d76*/
           if ( v4[4].ambientSoundController[4] > 0 ) /*0x651d7a*/
           {
-            v31 = v57 + 36; /*0x651d80*/
+            int v31 = v57 + 36; /*0x651d80*/
             do /*0x651dc6*/
             {
               if ( *(char *)(v31 - 4) == v54 ) /*0x651d8b*/
@@ -306,20 +281,20 @@ void __usercall LogMultiplayToSync_MPDEBUG(CellStruct *a1@<ecx>, unsigned __int8
         aP2 = 0; /*0x651e13*/
         do /*0x651ec5*/
         {
-          v35 = (char *)aP2 + ebx60[5]; /*0x651e1e*/
+          char * v35 = (char *)aP2 + ebx60[5]; /*0x651e1e*/
           fprintf(v7, &stru_830620[33956], v34); /*0x651e2a*/
           v36 = *((_WORD *)v35 + 18); /*0x651e2f*/
           if ( v36 == 43 || v36 == 19 ) /*0x651e40*/
           {
-            v38 = AbstractType::FindName((void *)v36); /*0x651e68*/
+            char * v38 = AbstractType::FindName((void *)v36); /*0x651e68*/
             fprintf(v7, &stru_830620[33920], (CellStruct *)v38); /*0x651e74*/
           }
           else
           {
-            v37 = AbstractType::FindName((void *)v36); /*0x651e4d*/
+            char * v37 = AbstractType::FindName((void *)v36); /*0x651e4d*/
             fprintf(v7, &stru_830620[33936], (CellStruct *)v37); /*0x651e59*/
           }
-          v39 = v35[32]; /*0x651e7c*/
+          char v39 = v35[32]; /*0x651e7c*/
           if ( v39 == -1 ) /*0x651e81*/
             fprintf(v7, &stru_830620[35016], v49); /*0x651ead*/
           else
@@ -344,20 +319,20 @@ void __usercall LogMultiplayToSync_MPDEBUG(CellStruct *a1@<ecx>, unsigned __int8
       do /*0x651fb7*/
       {
         v41 = v58; /*0x651f04*/
-        v42 = (char *)aP2 + *(_DWORD *)&v58[4].needsRedraw; /*0x651f0c*/
+        char * v42 = (char *)aP2 + *(_DWORD *)&v58[4].needsRedraw; /*0x651f0c*/
         fprintf(v7, &stru_830620[33956], v40); /*0x651f1c*/
         v43 = *((_WORD *)v42 + 18); /*0x651f21*/
         if ( v43 == 43 || v43 == 19 ) /*0x651f32*/
         {
-          v45 = AbstractType::FindName((void *)v43); /*0x651f5a*/
+          char * v45 = AbstractType::FindName((void *)v43); /*0x651f5a*/
           fprintf(v7, &stru_830620[33920], (CellStruct *)v45); /*0x651f66*/
         }
         else
         {
-          v44 = AbstractType::FindName((void *)v43); /*0x651f3f*/
+          char * v44 = AbstractType::FindName((void *)v43); /*0x651f3f*/
           fprintf(v7, &stru_830620[33936], (CellStruct *)v44); /*0x651f4b*/
         }
-        v46 = v42[32]; /*0x651f6e*/
+        char v46 = v42[32]; /*0x651f6e*/
         if ( v46 == -1 ) /*0x651f73*/
           fprintf(v7, &stru_830620[35016], v50); /*0x651f9b*/
         else

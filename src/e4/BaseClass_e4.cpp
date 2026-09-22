@@ -8,30 +8,10 @@ namespace gamemd {
 int BaseClass::LoadBaseNodeClass(VectorClass * aP0, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall BaseClass::LoadBaseNodeClass(VectorClass *aP0, int a2)
+void BaseClass::LoadBaseNodeClass(VectorClass *aP0, int a2)
 {
-  int v2; // edi
-  int v3; // ecx
-  int v4; // ebp
-  char *v5; // ecx
-  int v6; // eax
-  int v7; // eax
-  int v8; // edx
-  _DWORD *v9; // eax
-  int v10; // ebp
-  int v11; // ecx
-  int v12; // eax
-  int v13; // eax
-  _DWORD *v14; // edx
-  int v15; // ebp
-  int v16; // ecx
-  int v17; // eax
-  int v18; // eax
-  int v19; // edx
-  int v21; // [esp+88h] [ebp-14h] BYREF
-  _DWORD v22[4]; // [esp+8Ch] [ebp-10h] BYREF
 
-  v2 = a2; /*0x42ee3a*/
+  int v2 = a2; /*0x42ee3a*/
   if ( (*(int (__stdcall **)(int, VectorClass *, int, _DWORD))(*(_DWORD *)a2 + 12))(a2, aP0, 120, 0) >= 0 ) /*0x42ee4b*/
   {
     if ( aP0 ) /*0x42ee53*/
@@ -44,23 +24,24 @@ int __stdcall BaseClass::LoadBaseNodeClass(VectorClass *aP0, int a2)
       DynamicVector::Constructor_Cell(&aP0[3].Capacity, 0, 0); /*0x42ee8a*/
       aP0->vtable0 = &vt_BaseClass; /*0x42ee8f*/
     }
-    v3 = *(_DWORD *)v2; /*0x42ee96*/
+    int v3 = *(_DWORD *)v2; /*0x42ee96*/
     a2 = 0; /*0x42eea2*/
     if ( (*(int (__stdcall **)(int, int *, int, _DWORD))(v3 + 12))(v2, &a2, 4, 0) >= 0 ) /*0x42eeaf*/
     {
-      v4 = 0; /*0x42eeb9*/
+      int v4 = 0; /*0x42eeb9*/
       if ( a2 <= 0 ) /*0x42eebd*/
       {
 LABEL_14:
         if ( (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v2 + 12))(v2, &a2, 4, 0) >= 0 ) /*0x42ef4f*/
         {
-          v10 = 0; /*0x42ef59*/
+  int v21; // [esp+88h] [ebp-14h] BYREF
+          int v10 = 0; /*0x42ef59*/
           if ( a2 <= 0 ) /*0x42ef5d*/
           {
 LABEL_24:
             if ( (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v2 + 12))(v2, &a2, 4, 0) >= 0 ) /*0x42efd6*/
             {
-              v15 = 0; /*0x42efdc*/
+              int v15 = 0; /*0x42efdc*/
               if ( a2 <= 0 ) /*0x42efe0*/
               {
 LABEL_34:
@@ -72,17 +53,18 @@ LABEL_34:
               {
                 while ( (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v2 + 12))(v2, &v21, 4, 0) >= 0 ) /*0x42eff3*/
                 {
-                  v16 = (int)aP0[4].vtable0; /*0x42eff9*/
+                  int v16 = (int)aP0[4].vtable0; /*0x42eff9*/
                   if ( aP0[4].Capacity < v16 /*0x42f021*/
                     || (BYTE1(aP0[4].Items) || !v16)
+  int v17; // eax
                     && (v17 = *(_DWORD *)&aP0[4].IsInitialized, v17 > 0)
                     && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(aP0[3].Capacity + 8))(
                          &aP0[3].Capacity,
                          v16 + v17,
                          0) )
                   {
-                    v18 = aP0[4].Capacity; /*0x42f028*/
-                    v19 = *(_DWORD *)&aP0[3].IsInitialized; /*0x42f02b*/
+                    int v18 = aP0[4].Capacity; /*0x42f028*/
+                    int v19 = *(_DWORD *)&aP0[3].IsInitialized; /*0x42f02b*/
                     aP0[4].Capacity = v18 + 1; /*0x42f031*/
                     *(_DWORD *)(v19 + 4 * v18) = v21; /*0x42f038*/
                   }
@@ -96,17 +78,18 @@ LABEL_34:
           {
             while ( (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v2 + 12))(v2, &v21, 4, 0) >= 0 ) /*0x42ef70*/
             {
-              v11 = aP0[2].Capacity; /*0x42ef7a*/
+              int v11 = aP0[2].Capacity; /*0x42ef7a*/
               if ( (int)aP0[3].vtable0 < v11 /*0x42efa2*/
                 || (aP0[2].IsAllocated || !v11)
+  int v12; // eax
                 && (v12 = (int)aP0[3].Items, v12 > 0)
                 && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))aP0[2].vtable0 + 2))(
                      aP0 + 2,
                      v11 + v12,
                      0) )
               {
-                v13 = (int)aP0[3].vtable0; /*0x42efa9*/
-                v14 = aP0[2].Items; /*0x42efac*/
+                int v13 = (int)aP0[3].vtable0; /*0x42efa9*/
+                _DWORD * v14 = aP0[2].Items; /*0x42efac*/
                 aP0[3].vtable0 = (void *)(v13 + 1); /*0x42efb2*/
                 v14[v13] = v21; /*0x42efb9*/
               }
@@ -118,18 +101,20 @@ LABEL_34:
       }
       else
       {
+  _DWORD v22[4]; // [esp+8Ch] [ebp-10h] BYREF
         while ( (*(int (__stdcall **)(int, _DWORD *, int, _DWORD))(*(_DWORD *)v2 + 12))(v2, v22, 16, 0) >= 0 ) /*0x42eed0*/
         {
-          v5 = *(char **)&aP0->IsInitialized; /*0x42eeda*/
+          char * v5 = *(char **)&aP0->IsInitialized; /*0x42eeda*/
           if ( (int)aP0[1].Items < (int)v5 /*0x42ef02*/
             || (BYTE1(aP0[1].vtable0) || !v5)
+  int v6; // eax
             && (v6 = aP0[1].Capacity, v6 > 0)
             && (*((unsigned __int8 (__thiscall **)(void **, char *, _DWORD))aP0->Items + 2))(&aP0->Items, &v5[v6], 0) )
           {
-            v7 = (int)aP0[1].Items; /*0x42ef09*/
-            v8 = v22[0]; /*0x42ef0c*/
+            int v7 = (int)aP0[1].Items; /*0x42ef09*/
+            int v8 = v22[0]; /*0x42ef0c*/
             aP0[1].Items = (void *)(v7 + 1); /*0x42ef13*/
-            v9 = (_DWORD *)(aP0->Capacity + 16 * v7); /*0x42ef1c*/
+            _DWORD * v9 = (_DWORD *)(aP0->Capacity + 16 * v7); /*0x42ef1c*/
             *v9 = v8; /*0x42ef1e*/
             v9[1] = v22[1]; /*0x42ef24*/
             v9[2] = v22[2]; /*0x42ef2b*/
@@ -151,43 +136,35 @@ namespace gamemd {
 int BaseClass::LoadArrayFields(unsigned int * a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall BaseClass::sub_42F070(_DWORD *a1, int a2)
+void BaseClass::sub_42F070(_DWORD *a1, int a2)
 {
-  int v2; // esi
-  int v3; // edx
-  int v4; // ebp
-  int v5; // ebx
-  int v6; // ecx
-  int v7; // ebx
-  int v8; // ecx
   int result; // eax
-  int v10; // ebx
 
-  v2 = a2; /*0x42f073*/
+  int v2 = a2; /*0x42f073*/
   if ( (*(int (__stdcall **)(int, _DWORD *, int, _DWORD))(*(_DWORD *)a2 + 16))(a2, a1, 120, 0) >= 0 ) /*0x42f089*/
   {
-    v3 = *(_DWORD *)v2; /*0x42f092*/
+    int v3 = *(_DWORD *)v2; /*0x42f092*/
     a2 = a1[5]; /*0x42f09e*/
     if ( (*(int (__stdcall **)(int, int *, int, _DWORD))(v3 + 16))(v2, &a2, 4, 0) >= 0 ) /*0x42f0a7*/
     {
-      v4 = 0; /*0x42f0b1*/
+      int v4 = 0; /*0x42f0b1*/
       if ( a2 <= 0 ) /*0x42f0b5*/
       {
 LABEL_7:
-        v6 = *(_DWORD *)v2; /*0x42f0dd*/
+        int v6 = *(_DWORD *)v2; /*0x42f0dd*/
         a2 = a1[12]; /*0x42f0ec*/
         if ( (*(int (__stdcall **)(int, int *, int, _DWORD))(v6 + 16))(v2, &a2, 4, 0) >= 0 ) /*0x42f0f5*/
         {
-          v7 = 0; /*0x42f0fb*/
+          int v7 = 0; /*0x42f0fb*/
           if ( a2 <= 0 ) /*0x42f0ff*/
           {
 LABEL_11:
-            v8 = *(_DWORD *)v2; /*0x42f11f*/
+            int v8 = *(_DWORD *)v2; /*0x42f11f*/
             a2 = a1[18]; /*0x42f12e*/
             result = (*(int (__stdcall **)(int, int *, int, _DWORD))(v8 + 16))(v2, &a2, 4, 0); /*0x42f132*/
             if ( result >= 0 ) /*0x42f137*/
             {
-              v10 = 0; /*0x42f13d*/
+              int v10 = 0; /*0x42f13d*/
               if ( a2 <= 0 ) /*0x42f141*/
                 return result; /*0x42f141*/
               while ( 1 ) /*0x42f151*/
@@ -212,7 +189,7 @@ LABEL_11:
       }
       else
       {
-        v5 = 0; /*0x42f0b7*/
+        int v5 = 0; /*0x42f0b7*/
         while ( (*(int (__stdcall **)(int, int, int, _DWORD))(*(_DWORD *)v2 + 16))(v2, v5 + a1[2], 16, 0) >= 0 ) /*0x42f0cb*/
         {
           ++v4; /*0x42f0d5*/

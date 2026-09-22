@@ -8,39 +8,27 @@ namespace gamemd {
 int Mission::ExecuteTechnoMissionAction()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall TechnoClass_MissionAction(_DWORD *this)
+int TechnoClass_MissionAction(_DWORD *this)
 {
-  int v2; // eax
-  int v3; // ecx
   void **v4; // ebp
-  unsigned int v5; // edx
-  char *v6; // eax
-  void *v7; // edi
-  int v8; // edx
-  int *v9; // eax
-  int v10; // eax
-  int v11; // eax
-  int v12; // eax
-  int v13; // ebx
-  int v14; // edi
   int result; // eax
-  int *v16; // ebp
-  int v17; // ecx
   __int16 v18; // [esp+14h] [ebp-1Ch] BYREF
   _DWORD v19[3]; // [esp+18h] [ebp-18h] BYREF
   char v20; // [esp+24h] [ebp-Ch] BYREF
-
-  v2 = *(this + 433); /*0x520ae9*/
+  int v2 = *(this + 433); /*0x520ae9*/
   if ( v2 == -1 || *(this + 62) >= *(_DWORD *)(*(_DWORD *)(*(this + 432) + 3644) + 36 * v2 + 4) ) /*0x520b0d*/
   {
     switch ( v2 ) /*0x520b27*/
     {
+  int v8; // edx
+  void *v7; // edi
+  char *v6; // eax
       case 11: /*0x520b27*/
       case 12: /*0x520b27*/
       case 13: /*0x520b27*/
       case 14: /*0x520b27*/
       case 15: /*0x520b27*/
-        v3 = *(this + 432); /*0x520bc6*/
+        int v3 = *(this + 432); /*0x520bc6*/
         if ( *(this + 62) < *(_DWORD *)(*(_DWORD *)(v3 + 3644) + 36 * v2 + 4) ) /*0x520bdf*/
           break; /*0x520bdf*/
         if ( *(int *)(v3 + 3680) > 0 ) /*0x520bed*/
@@ -48,7 +36,7 @@ int __thiscall TechnoClass_MissionAction(_DWORD *this)
           v4 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x520bf9*/
           if ( !v4 ) /*0x520c00*/
             goto LABEL_20; /*0x520c00*/
-          v5 = (unsigned int)Random::State((_DWORD *)g_ScenarioClass_Instance + 134) % *(_DWORD *)(*(this + 432) + 3680); /*0x520c2d*/
+          unsigned int v5 = (unsigned int)Random::State((_DWORD *)g_ScenarioClass_Instance + 134) % *(_DWORD *)(*(this + 432) + 3680); /*0x520c2d*/
           v6 = (char *)v19; /*0x520c37*/
           v7 = *(void **)(*(_DWORD *)(*(this + 432) + 3668) + 4 * v5); /*0x520c3b*/
           v8 = *this; /*0x520c3e*/
@@ -66,7 +54,7 @@ int __thiscall TechnoClass_MissionAction(_DWORD *this)
             v8 = *this; /*0x520c94*/
             v6 = &v20; /*0x520c96*/
 LABEL_19:
-            v9 = (int *)(*(int (__thiscall **)(_DWORD *, char *))(v8 + 72))(this, v6); /*0x520c9a*/
+            int * v9 = (int *)(*(int (__thiscall **)(_DWORD *, char *))(v8 + 72))(this, v6); /*0x520c9a*/
             AnimClass::ctor(v4, v7, v9, 0, 1, (void *)0x600, 0, 0); /*0x520ca4*/
           }
         }
@@ -103,7 +91,7 @@ LABEL_20:
       default:
         if ( v2 != -1 ) /*0x520ce9*/
         {
-          v10 = *(_DWORD *)(*(_DWORD *)(*(this + 432) + 3644) + 36 * v2 + 12); /*0x520cfa*/
+          int v10 = *(_DWORD *)(*(_DWORD *)(*(this + 432) + 3644) + 36 * v2 + 12); /*0x520cfa*/
           if ( v10 != -1 ) /*0x520d01*/
           {
             v18 = (_WORD)v10 << 13; /*0x520d11*/
@@ -122,7 +110,7 @@ LABEL_20:
         }
         else
         {
-          v11 = *(this + 433); /*0x520d7e*/
+          int v11 = *(this + 433); /*0x520d7e*/
           if ( v11 != 40 && v11 != 41 || !*(this + 165) || !*(this + 173) ) /*0x520d98*/
             goto LABEL_44; /*0x520d98*/
           if ( !*(this + 413) ) /*0x520da2*/
@@ -138,7 +126,7 @@ LABEL_20:
           else
           {
 LABEL_44:
-            v12 = *(this + 433); /*0x520e02*/
+            int v12 = *(this + 433); /*0x520e02*/
             if ( v12 == 27 || v12 == 28 || v12 == 29 || v12 == 30 ) /*0x520e1a*/
             {
               (*(void (__thiscall **)(_DWORD *, int, int, _DWORD))(*this + 1368))(this, 28, 1, 0); /*0x520e24*/
@@ -159,17 +147,17 @@ LABEL_51:
   }
   if ( *(this + 433) == 33 && !*((_BYTE *)this + 141) ) /*0x520e5b*/
     (*(void (__thiscall **)(_DWORD *, _DWORD, int, _DWORD))(*this + 1368))(this, 0, 1, 0); /*0x520e6f*/
-  v13 = 0; /*0x520e81*/
-  v14 = *(_DWORD *)(*(this + 432) + 3644) + 36 * *(this + 433); /*0x520e8c*/
+  int v13 = 0; /*0x520e81*/
+  int v14 = *(_DWORD *)(*(this + 432) + 3644) + 36 * *(this + 433); /*0x520e8c*/
   result = *(_DWORD *)(v14 + 16); /*0x520e8f*/
   if ( result > 0 ) /*0x520e95*/
   {
-    v16 = (int *)(v14 + 24); /*0x520e97*/
+    int * v16 = (int *)(v14 + 24); /*0x520e97*/
     do /*0x520ef2*/
     {
       if ( *((_BYTE *)this + 252) ) /*0x520e9a*/
       {
-        v17 = *(_DWORD *)(v14 + 4); /*0x520eaa*/
+        int v17 = *(_DWORD *)(v14 + 4); /*0x520eaa*/
         if ( v17 <= 1 ) /*0x520eac*/
           v17 = 1; /*0x520eae*/
         if ( *(this + 62) % v17 == *(v16 - 1) ) /*0x520ebf*/
@@ -196,23 +184,9 @@ namespace gamemd {
 char Mission::ProcessUnitMissionAI()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall ProcessUnitMissionAI(_DWORD *this)
+char ProcessUnitMissionAI(_DWORD *this)
 {
-  int v2; // eax
-  int v3; // edx
-  int v4; // ecx
-  _DWORD *v5; // eax
-  int v6; // esi
-  int v7; // eax
-  _DWORD *v8; // eax
-  int v9; // eax
-  int v10; // edx
-  char v11; // al
   int (__stdcall ***v12)(_DWORD, void *, int *); // eax
-  int v13; // esi
-  int v14; // eax
-  int v15; // edi
-  bool v16; // bl
   int v17; // eax
   int v19; // [esp+4Ch] [ebp-30h]
   int v20; // [esp+58h] [ebp-24h]
@@ -228,8 +202,8 @@ char __thiscall ProcessUnitMissionAI(_DWORD *this)
       WinAPI::Wrapper(-2147467261); /*0x520f64*/
     if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)*(this + 413) + 16))(*(this + 413)) ) /*0x520f72*/
     {
-      v2 = *(this + 361); /*0x520f79*/
-      v3 = *this; /*0x520f7f*/
+      int v2 = *(this + 361); /*0x520f79*/
+      int v3 = *this; /*0x520f7f*/
       if ( v2 ) /*0x520f86*/
       {
         (*(void (__thiscall **)(_DWORD *, int, int))(v3 + 1152))(this, v2, 1); /*0x520f97*/
@@ -241,16 +215,18 @@ char __thiscall ProcessUnitMissionAI(_DWORD *this)
       }
     }
   }
-  v4 = *(this + 361); /*0x520faf*/
+  int v4 = *(this + 361); /*0x520faf*/
   if ( v4 ) /*0x520fb7*/
   {
-    v5 = (_DWORD *)(*(int (__thiscall **)(int, _BYTE *, _DWORD *))(*(_DWORD *)v4 + 76))(v4, v25, this); /*0x520fc5*/
+    _DWORD * v5 = (_DWORD *)(*(int (__thiscall **)(int, _BYTE *, _DWORD *))(*(_DWORD *)v4 + 76))(v4, v25, this); /*0x520fc5*/
     LOWORD(v22) = *v5 / 256; /*0x520fd8*/
     HIWORD(v22) = v5[1] / 256; /*0x520fec*/
     LOBYTE(v5) = *((_BYTE *)this + 1756); /*0x520ff1*/
     v23 = v22; /*0x520ffd*/
     if ( !(_BYTE)v5 /*0x521022*/
+  int v6; // esi
       || (v6 = *this,
+  int v7; // eax
           v7 = (*(int (__thiscall **)(_DWORD *, int, int, _DWORD, int))(*this + 452))(this, -1, -1, 0, 1),
           (*(int (__thiscall **)(_DWORD *, int))(v6 + 428))(this, v7) != 7) )
     {
@@ -263,15 +239,15 @@ char __thiscall ProcessUnitMissionAI(_DWORD *this)
         {
           if ( *((_BYTE *)this + 981) ) /*0x52106c*/
           {
-            v8 = (_DWORD *)(*(int (__thiscall **)(_DWORD *))(*this + 76))(this); /*0x521086*/
+            _DWORD * v8 = (_DWORD *)(*(int (__thiscall **)(_DWORD *))(*this + 76))(this); /*0x521086*/
             LOWORD(v20) = *v8 / 256; /*0x521099*/
             HIWORD(v20) = v8[1] / 256; /*0x5210af*/
-            v9 = *this; /*0x5210b8*/
+            int v9 = *this; /*0x5210b8*/
             v22 = v20; /*0x5210bb*/
             v19 = (*(int (__thiscall **)(_DWORD *))(v9 + 800))(this); /*0x5210c9*/
-            v10 = *((_DWORD *)CellCoord::To_CellObj(&DataGlobal_87F7E8, &v21) + 80) >> 8; /*0x5210de*/
+            int v10 = *((_DWORD *)CellCoord::To_CellObj(&DataGlobal_87F7E8, &v21) + 80) >> 8; /*0x5210de*/
             LOBYTE(v10) = v10 & 1; /*0x5210e1*/
-            v11 = (*(int (__thiscall **)(_DWORD *, _DWORD, int, int))(*this + 188))(this, 0, v10, v19); /*0x5210e9*/
+            char v11 = (*(int (__thiscall **)(_DWORD *, _DWORD, int, int))(*this + 188))(this, 0, v10, v19); /*0x5210e9*/
             if ( !MapSeed::CheckTileMatch( /*0x521133*/
                     &DataGlobal_87F7E8,
                     (__int16 *)&v24,
@@ -294,16 +270,17 @@ char __thiscall ProcessUnitMissionAI(_DWORD *this)
     WinAPI::Wrapper(-2147467261); /*0x521153*/
   if ( (*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)*(this + 413) + 168))(*(this + 413)) ) /*0x521161*/
   {
+  int v14; // eax
     if ( !*(_BYTE *)(*(this + 432) + 3476) ) /*0x521175*/
       goto LABEL_55; /*0x521175*/
     v12 = (int (__stdcall ***)(_DWORD, void *, int *))*(this + 413); /*0x521183*/
     v22 = 0; /*0x52118d*/
     if ( !v12 ) /*0x521195*/
       goto LABEL_33; /*0x521195*/
-    v13 = (**v12)(v12, &unk_818858, &v24); /*0x5211a6*/
+    int v13 = (**v12)(v12, &unk_818858, &v24); /*0x5211a6*/
     if ( v13 >= 0 ) /*0x5211aa*/
     {
-      v15 = v24; /*0x5211b9*/
+      int v15 = v24; /*0x5211b9*/
       ComPtr::Release_Alt(&v22); /*0x5211c1*/
       v14 = v15; /*0x5211c6*/
     }
@@ -319,7 +296,7 @@ char __thiscall ProcessUnitMissionAI(_DWORD *this)
 LABEL_33:
       WinAPI::Wrapper(-2147467261); /*0x5211eb*/
     (*(void (__stdcall **)(int, _BYTE *))(*(_DWORD *)v14 + 12))(v14, v25); /*0x5211fc*/
-    v16 = memcmp(v25, &g_CLSID_JumpjetLocomotion, 0x10u) == 0; /*0x521215*/
+    bool v16 = memcmp(v25, &g_CLSID_JumpjetLocomotion, 0x10u) == 0; /*0x521215*/
     if ( v22 ) /*0x52121a*/
       (*(void (__stdcall **)(int))(*(_DWORD *)v22 + 8))(v22); /*0x52121f*/
     if ( v16 ) /*0x521226*/
@@ -370,11 +347,10 @@ namespace gamemd {
 int Mission::SetAndCall(IUnknown * aP1, IUnknown * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Mission::SetAndCall(int *this, IUnknown *aP1, IUnknown *aP2)
+void Mission::SetAndCall(IUnknown *aP1, IUnknown *aP2)
 {
-  int v3; // edx
 
-  v3 = *this; /*0x5bda84*/
+  int v3 = *this; /*0x5bda84*/
   this->q5564 = (int)aP1; /*0x5bda8d*/
   return (*(int (__stdcall **)(IUnknown *, IUnknown *))(v3 + 76))(aP1, aP2); /*0x5bda96*/
 }
@@ -386,19 +362,11 @@ namespace gamemd {
 char Mission::AssignTeamMemberMissions(ScriptClass * aP1, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall Mission::AssignTeamMemberMissions(int this, ScriptClass *aP1, int a3)
+char Mission::AssignTeamMemberMissions(int this, ScriptClass *aP1, int a3)
 {
   ScriptClass *v3; // eax
   ScriptClass *v4; // ebx
   ObjectClass *i; // esi
-  int v7; // eax
-  int v8; // ebp
-  int v9; // eax
-  int v10; // ebp
-  _DWORD *v11; // eax
-  _DWORD *v12; // eax
-  int v13; // ebp
-  void *v14; // eax
   AbstractClass v16; // [esp+1Ch] [ebp-28h] BYREF
   ScriptClass *aP1a; // [esp+48h] [ebp+4h]
 
@@ -411,9 +379,9 @@ char __thiscall Mission::AssignTeamMemberMissions(int this, ScriptClass *aP1, in
     {
       if ( i->health && (*(_DWORD *)&HouseClass_Player[43616] || !i->inLimbo) && !BYTE1(i[9].visibilityFlags) ) /*0x6ed831*/
       {
-        v7 = *SessionClass::GetEntry(*(_DWORD **)(this + 40), (IUnknown *)&v16[12]); /*0x6ed848*/
+        int v7 = *SessionClass::GetEntry(*(_DWORD **)(this + 40), (IUnknown *)&v16[12]); /*0x6ed848*/
         if ( v7 == 54 || v7 == 53 ) /*0x6ed852*/
-          v8 = *(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 5920); /*0x6ed867*/
+          int v8 = *(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 5920); /*0x6ed867*/
         else
           v8 = *(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 5916); /*0x6ed85a*/
         if ( ObjectClass::DistanceTo(i, *(AbstractClass **)(this + 52)) <= v8 ) /*0x6ed87a*/
@@ -447,8 +415,10 @@ char __thiscall Mission::AssignTeamMemberMissions(int this, ScriptClass *aP1, in
               if ( !v3 )
               {
                 if ( i[8].ambientSoundController[2]
+  int v9; // eax
                   || ((v9 = *SessionClass::GetEntry(*(_DWORD **)(this + 40), (IUnknown *)&v16.abstractFlags), v9 == 54)
                    || v9 == 53
+  int v10; // ebp
                     ? (v10 = *(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 5920))
                     : (v10 = *(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 5916)),
                       ObjectClass::DistanceTo(i, *(AbstractClass **)(this + 52)) <= 2 * v10 || v4 == (ScriptClass *)11) )
@@ -489,16 +459,17 @@ char __thiscall Mission::AssignTeamMemberMissions(int this, ScriptClass *aP1, in
                     *(_DWORD *)(this + 52),
                     1);
                   (*(void (__thiscall **)(ObjectClass *, int, _DWORD))(*(_DWORD *)i->__pad_0 + 488))(i, 2, 0); /*0x6ed998*/
+  _DWORD *v11; // eax
                   v11 = (_DWORD *)(*(int (__thiscall **)(_DWORD, int *))(**(_DWORD **)(this + 52) + 72))( /*0x6ed9a8*/
                                     *(_DWORD *)(this + 52),
                                     &v16.referenceCount);
                   LOWORD(aP1a) = *v11 / 256; /*0x6ed9bb*/
                   HIWORD(aP1a) = v11[1] / 256; /*0x6ed9d7*/
                   *(_DWORD *)v16[0] = aP1a; /*0x6ed9e4*/
-                  v12 = globalHelper_0DA020(&v16[8], &v16); /*0x6ed9e8*/
-                  v13 = *(_DWORD *)i->__pad_0; /*0x6ed9ef*/
+                  _DWORD * v12 = globalHelper_0DA020(&v16[8], &v16); /*0x6ed9e8*/
+                  int v13 = *(_DWORD *)i->__pad_0; /*0x6ed9ef*/
                   *(_DWORD *)&v16[4] = *v12; /*0x6ed9fd*/
-                  v14 = CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&v16[4]); /*0x6eda01*/
+                  void * v14 = CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&v16[4]); /*0x6eda01*/
                   LOBYTE(v3) = (*(int (__thiscall **)(ObjectClass *, void *, int))(v13 + 1152))(i, v14, 1); /*0x6eda09*/
                 }
               }
@@ -518,16 +489,13 @@ namespace gamemd {
 int Mission::GetMissionDelay()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_70F770(_DWORD *this)
+int sub_70F770(_DWORD *this)
 {
-  int v1; // edx
   int result; // eax
-  _DWORD *v3; // esi
-  int v4; // [esp+8h] [ebp-8h]
 
-  v1 = this->q180; /*0x70f770*/
+  int v1 = this->q180; /*0x70f770*/
   result = this->q188; /*0x70f779*/
-  v3 = this + 96; /*0x70f783*/
+  _DWORD * v3 = this + 96; /*0x70f783*/
   if ( v1 != -1 ) /*0x70f789*/
   {
     if ( (int)g_CurrentFrame - v1 >= result ) /*0x70f795*/
@@ -541,7 +509,7 @@ int __thiscall sub_70F770(_DWORD *this)
     {
       result = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 4, 8); /*0x70f7b6*/
       *v3 = g_CurrentFrame; /*0x70f7c1*/
-      v3[1] = v4; /*0x70f7c7*/
+      int v4 = v4; /*0x70f7c7*/
       v3[2] = result; /*0x70f7ca*/
     }
   }

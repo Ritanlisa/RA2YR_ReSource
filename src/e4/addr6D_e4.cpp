@@ -25,14 +25,13 @@ int sub_6D1130()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int sub_6D1130()
 {
-  void *v0; // esi
 
   DataGlobal_B0CCD4 = 240; /*0x6d1149*/
   DataGlobal_B0CD00 = g_SidebarConfig; /*0x6d1153*/
   DataGlobal_B0CCDD = 0; /*0x6d1158*/
   DataGlobal_B0CCE0 = 0; /*0x6d115e*/
   DataGlobal_B0CCD0 = 5; /*0x6d1164*/
-  v0 = DataGlobal_B0FA90; /*0x6d116c*/
+  void * v0 = DataGlobal_B0FA90; /*0x6d116c*/
   Rect_Point::Set(DataGlobal_B0CCB0, *(_DWORD *)DataGlobal_B0FC60, *((_DWORD *)DataGlobal_B0FC60 + 1)); /*0x6d118a*/
   ShapeButton::SetShape((int)DataGlobal_B0CCB0, (int)v0, 0, 0); /*0x6d1197*/
   DataGlobal_B0CC64 = 241; /*0x6d11a7*/
@@ -53,30 +52,21 @@ unsigned int * sub_6D6BB0(unsigned short * a1)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__stdcall sub_6D6BB0(_WORD *a1)
 {
-  _WORD *v1; // edi
   __int16 v2; // ax
-  int v3; // esi
   _DWORD *result; // eax
-  int v5; // ecx
   __int16 v6; // cx
-  int v7; // esi
-  int v8; // ecx
   __int16 v9; // ax
-  int v10; // esi
-  int v11; // ecx
   __int16 v12; // cx
-  int v13; // esi
-  int v14; // ecx
 
-  v1 = a1; /*0x6d6bb2*/
+  _WORD * v1 = a1; /*0x6d6bb2*/
   v2 = *a1 + 2; /*0x6d6bbd*/
   HIWORD(a1) = a1[1]; /*0x6d6bc1*/
   LOWORD(a1) = v2; /*0x6d6bc6*/
-  v3 = 0; /*0x6d6bd3*/
+  int v3 = 0; /*0x6d6bd3*/
   while ( 1 ) /*0x6d6bdf*/
   {
     result = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&a1); /*0x6d6bdf*/
-    v5 = result[80]; /*0x6d6be4*/
+    int v5 = result[80]; /*0x6d6be4*/
     if ( (v5 & 0x80u) != 0 && result[17] && (v5 & 0x800) != 0 ) /*0x6d6bf9*/
       break; /*0x6d6bf9*/
     ++HIWORD(a1); /*0x6d6bff*/
@@ -85,11 +75,11 @@ _DWORD *__stdcall sub_6D6BB0(_WORD *a1)
       v6 = *v1 + 1; /*0x6d6c11*/
       HIWORD(a1) = v1[1]; /*0x6d6c13*/
       LOWORD(a1) = v6; /*0x6d6c18*/
-      v7 = 0; /*0x6d6c25*/
+      int v7 = 0; /*0x6d6c25*/
       while ( 1 ) /*0x6d6c31*/
       {
         result = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&a1); /*0x6d6c31*/
-        v8 = result[80]; /*0x6d6c36*/
+        int v8 = result[80]; /*0x6d6c36*/
         if ( (v8 & 0x80u) != 0 && result[17] && (v8 & 0x800) != 0 ) /*0x6d6c4b*/
           break; /*0x6d6c4b*/
         ++HIWORD(a1); /*0x6d6c51*/
@@ -98,11 +88,11 @@ _DWORD *__stdcall sub_6D6BB0(_WORD *a1)
           v9 = v1[1] + 2; /*0x6d6c63*/
           LOWORD(a1) = *v1; /*0x6d6c67*/
           HIWORD(a1) = v9; /*0x6d6c6c*/
-          v10 = 0; /*0x6d6c79*/
+          int v10 = 0; /*0x6d6c79*/
           while ( 1 ) /*0x6d6c85*/
           {
             result = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&a1); /*0x6d6c85*/
-            v11 = result[80]; /*0x6d6c8a*/
+            int v11 = result[80]; /*0x6d6c8a*/
             if ( (v11 & 0x80u) != 0 && result[17] && (v11 & 0x800) == 0 ) /*0x6d6c9f*/
               break; /*0x6d6c9f*/
             LOWORD(a1) = (_WORD)a1 + 1; /*0x6d6ca1*/
@@ -111,11 +101,11 @@ _DWORD *__stdcall sub_6D6BB0(_WORD *a1)
               v12 = v1[1] + 1; /*0x6d6cb3*/
               LOWORD(a1) = *v1; /*0x6d6cb5*/
               HIWORD(a1) = v12; /*0x6d6cba*/
-              v13 = 0; /*0x6d6cc7*/
+              int v13 = 0; /*0x6d6cc7*/
               while ( 1 ) /*0x6d6cd3*/
               {
                 result = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&a1); /*0x6d6cd3*/
-                v14 = result[80]; /*0x6d6cd8*/
+                int v14 = result[80]; /*0x6d6cd8*/
                 if ( (v14 & 0x80u) != 0 && result[17] && (v14 & 0x800) == 0 ) /*0x6d6ced*/
                   break; /*0x6d6ced*/
                 LOWORD(a1) = (_WORD)a1 + 1; /*0x6d6cef*/

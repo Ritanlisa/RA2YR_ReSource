@@ -7,7 +7,7 @@ namespace gamemd {
 char DialogClass::GetFlag()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall DialogClass_GetFlag(_BYTE *this)
+void DialogClass_GetFlag(_BYTE *this)
 {
   return this->q034; /*0x5d6353*/
 }
@@ -19,14 +19,12 @@ namespace gamemd {
 BOOL DialogClass::Reposition(SkirmishDialog * aP0, LPARAM a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __stdcall DialogClass::Reposition(SkirmishDialog *aP0, LPARAM a2)
+void DialogClass::Reposition(SkirmishDialog *aP0, LPARAM a2)
 {
   HWND WindowLongA; // eax
   LONG right; // edi
   HWND DialogParamA; // esi
   LONG bottom; // ebx
-  int v7; // [esp-Ch] [ebp-BCh]
-  int v8; // [esp-8h] [ebp-B8h]
   struct tagRECT Rect; // [esp+10h] [ebp-A0h] BYREF
   struct tagRECT v10; // [esp+20h] [ebp-90h] BYREF
   CHAR ClassName[128]; // [esp+30h] [ebp-80h] BYREF
@@ -59,8 +57,8 @@ BOOL __stdcall DialogClass::Reposition(SkirmishDialog *aP0, LPARAM a2)
     dwInitParam = (HWND)v10.right; /*0x775cc9*/
     dword_B72F58 = v10.bottom; /*0x775ccf*/
   }
-  v8 = dword_849DE4 * (Rect.bottom - Rect.top + 1) / bottom; /*0x775d19*/
-  v7 = dword_849DE0 * (Rect.right - Rect.left + 1) / right; /*0x775d1a*/
+  int v8 = dword_849DE4 * (Rect.bottom - Rect.top + 1) / bottom; /*0x775d19*/
+  int v7 = dword_849DE0 * (Rect.right - Rect.left + 1) / right; /*0x775d1a*/
   Rect.left = Rect.left * dword_849DE0 / right; /*0x775d2e*/
   Rect.right = v7 + Rect.left - 1; /*0x775d32*/
   Rect.top = Rect.top * dword_849DE4 / bottom; /*0x775d36*/

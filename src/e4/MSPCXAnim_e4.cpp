@@ -8,7 +8,7 @@
 char MSPCXAnim::Stub()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall MSPCXAnim::_vt07(_BYTE *this)
+void MSPCXAnim::_vt07()
 {
   return this->__pad_029; /*0x5ceab3*/
 }
@@ -19,19 +19,13 @@ namespace gamemd {
 char MSPCXAnim_42::AllocCopyData_8B(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall MSPCXAnim_42_::sub_5D09C0(void *this, int a2, _DWORD *a3)
+void MSPCXAnim_42_::sub_5D09C0(int a2, _DWORD *a3)
 {
-  _DWORD *v4; // ebx
-  _DWORD *v5; // eax
-  _DWORD *v6; // edi
-  int v7; // ecx
-  int v8; // eax
-  int v9; // edx
-  int v10; // eax
 
   if ( a2 ) /*0x5d09cc*/
   {
-    v4 = a3; /*0x5d09d2*/
+  _DWORD *v6; // edi
+    _DWORD * v4 = a3; /*0x5d09d2*/
     this->q00C = 0; /*0x5d09d6*/
     if ( a3 ) /*0x5d09dc*/
     {
@@ -39,7 +33,7 @@ char __thiscall MSPCXAnim_42_::sub_5D09C0(void *this, int a2, _DWORD *a3)
     }
     else
     {
-      v5 = __2_YAPAXI_Z(8 * a2); /*0x5d09e6*/
+      _DWORD * v5 = __2_YAPAXI_Z(8 * a2); /*0x5d09e6*/
       if ( v5 ) /*0x5d09f0*/
         v6 = v5; /*0x5d09f5*/
       else
@@ -50,15 +44,15 @@ char __thiscall MSPCXAnim_42_::sub_5D09C0(void *this, int a2, _DWORD *a3)
       return 0; /*0x5d0a90*/
     if ( this->MSPCXAnim_42_field_0x4 ) /*0x5d0a12*/
     {
-      v7 = this->MSPCXAnim_42_field_0x8; /*0x5d0a19*/
+      int v7 = this->MSPCXAnim_42_field_0x8; /*0x5d0a19*/
       if ( a2 < v7 ) /*0x5d0a1e*/
         v7 = a2; /*0x5d0a20*/
-      v8 = 0; /*0x5d0a22*/
+      int v8 = 0; /*0x5d0a22*/
       if ( v7 > 0 ) /*0x5d0a26*/
       {
         do /*0x5d0a3e*/
         {
-          v9 = this->MSPCXAnim_42_field_0x4; /*0x5d0a28*/
+          int v9 = this->MSPCXAnim_42_field_0x4; /*0x5d0a28*/
           ++v8; /*0x5d0a2b*/
           v6[2 * v8 - 2] = *(_DWORD *)(v9 + 8 * v8 - 8); /*0x5d0a32*/
           v6[2 * v8 - 1] = *(_DWORD *)(v9 + 8 * v8 - 4); /*0x5d0a3a*/
@@ -68,7 +62,7 @@ char __thiscall MSPCXAnim_42_::sub_5D09C0(void *this, int a2, _DWORD *a3)
       }
       if ( this->IsAllocated ) /*0x5d0a44*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x5d0a4f*/
+        __3_YAXPAX_Z(this->q004); /*0x5d0a4f*/
         this->MSPCXAnim_42_field_0x4 = 0; /*0x5d0a57*/
       }
     }
@@ -80,7 +74,7 @@ char __thiscall MSPCXAnim_42_::sub_5D09C0(void *this, int a2, _DWORD *a3)
   {
     (*(void (__thiscall **)(void *))(this->q00C)(this); /*0x5d0a74*/
   }
-  v10 = this->MSPCXAnim_42_field_0x8; /*0x5d0a77*/
+  int v10 = this->MSPCXAnim_42_field_0x8; /*0x5d0a77*/
   if ( v10 < this->MSPCXAnim_42_field_0x10 ) /*0x5d0a7f*/
     this->MSPCXAnim_42_field_0x10 = v10; /*0x5d0a81*/
   return 1; /*0x5d0a84*/

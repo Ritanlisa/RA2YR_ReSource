@@ -12,7 +12,7 @@ namespace gamemd {
 void String::AssignWideToChar(CampaignScore * aP1, CampaignScore * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall String::AssignWideToChar(char *this, CampaignScore *aP1, CampaignScore *aP2)
+void String::AssignWideToChar(CampaignScore *aP1, CampaignScore *aP2)
 {
   if ( aP1 ) /*0x49b76b*/
     strcpy(this, ToWideStringChar(aP1->__pad_0)); /*0x49b788*/
@@ -33,18 +33,15 @@ char * String::AllocAndCopy(RandomStruct * aP1, IUnknown * aP2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char *__thiscall String::AllocAndCopy(char *this, RandomStruct *aP1, IUnknown *aP2)
 {
-  char *v4; // eax
-  unsigned int v5; // edx
-  char *v6; // edi
 
   strncpy(this, (const char *)aP1, (IUnknown *)4); /*0x4cb5ed*/
   *((_WORD *)this + 2) = 2; /*0x4cb5f4*/
   *((_WORD *)this + 3) = 1; /*0x4cb5fa*/
-  v4 = (char *)__2_YAPAXI_Z(1u); /*0x4cb600*/
-  v5 = *((unsigned __int16 *)this + 3); /*0x4cb611*/
+  char * v4 = (char *)__2_YAPAXI_Z(1u); /*0x4cb600*/
+  unsigned int v5 = *((unsigned __int16 *)this + 3); /*0x4cb611*/
   *((_DWORD *)this + 2) = v4; /*0x4cb613*/
   qmemcpy(v4, &aP2, 4 * (v5 >> 2)); /*0x4cb619*/
-  v6 = &v4[4 * (v5 >> 2)]; /*0x4cb619*/
+  char * v6 = &v4[4 * (v5 >> 2)]; /*0x4cb619*/
   qmemcpy(v6, &aP2 + (v5 >> 2), v5 & 3); /*0x4cb625*/
   *((_DWORD *)this + 3) = 0; /*0x4cb628*/
   return this; /*0x4cb627*/
@@ -57,7 +54,7 @@ namespace gamemd {
 void String::Release()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall String_Release(void **this)
+void String_Release(void **this)
 {
   if ( *(this + 3) ) /*0x5bd5a3*/
     __3_YAXPAX_Z(*(this + 3)); /*0x5bd5ab*/
@@ -71,20 +68,16 @@ namespace gamemd {
 int String::SplitComma(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall String::SplitComma(int this, ObjectClass *aP1)
+void String::SplitComma(int this, ObjectClass *aP1)
 {
   ObjectClass *v3; // ebx
   ObjectClass *v4; // ebx
-  int v5; // eax
   ObjectClass *v6; // ebx
-  int v7; // eax
-  int v8; // eax
-  int v10; // [esp+Ch] [ebp-4h] BYREF
-
   String::Assign((char **)this, 0); /*0x5d0389*/
   *(_DWORD *)(this + 4) = 0; /*0x5d0392*/
   *(_DWORD *)(this + 8) = 0; /*0x5d0395*/
   *(_DWORD *)(this + 12) = 0; /*0x5d0398*/
+  int v10; // [esp+Ch] [ebp-4h] BYREF
   unknown_libname_73(&v10); /*0x5d039b*/
   v3 = (ObjectClass *)String::Tokenize((const char **)aP1, 0, &Delimiter, (ObjectClass *)&v10); /*0x5d03ba*/
   if ( String::Length((const char **)&v10) ) /*0x5d03bc*/
@@ -93,18 +86,21 @@ int __thiscall String::SplitComma(int this, ObjectClass *aP1)
   if ( String::Length((const char **)&v10) ) /*0x5d03e9*/
   {
     __1_Timevec_std__QAE_XZ((std::_Timevec *)&v10); /*0x5d03f6*/
+  int v5; // eax
     *(_DWORD *)(this + 4) = v5; /*0x5d03fb*/
   }
   v6 = (ObjectClass *)String::Tokenize((const char **)aP1, (int)v4, &Delimiter, (ObjectClass *)&v10); /*0x5d0414*/
   if ( String::Length((const char **)&v10) ) /*0x5d0416*/
   {
     __1_Timevec_std__QAE_XZ((std::_Timevec *)&v10); /*0x5d0423*/
+  int v7; // eax
     *(_DWORD *)(this + 8) = v7; /*0x5d0428*/
   }
   String::Tokenize((const char **)aP1, (int)v6, &Delimiter, (ObjectClass *)&v10); /*0x5d0438*/
   if ( String::Length((const char **)&v10) ) /*0x5d0441*/
   {
     __1_Timevec_std__QAE_XZ((std::_Timevec *)&v10); /*0x5d044e*/
+  int v8; // eax
     *(_DWORD *)(this + 12) = v8; /*0x5d0453*/
   }
   DeleteAndZero((void **)&v10); /*0x5d045a*/
@@ -120,17 +116,14 @@ int String::NormalizeNewlines()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int String_NormalizeNewlines()
 {
-  const char *v0; // esi
-  __int64 v1; // rax
-  char v2; // al
 
-  v0 = (const char *)DataGlobal_A8EA7C; /*0x5f3351*/
-  v1 = 0; /*0x5f335d*/
+  const char * v0 = (const char *)DataGlobal_A8EA7C; /*0x5f3351*/
+  __int64 v1 = 0; /*0x5f335d*/
   if ( strlen((const char *)DataGlobal_A8EA7C) ) /*0x5f3361*/
   {
     while ( 1 ) /*0x5f3368*/
     {
-      v2 = v0[HIDWORD(v1)]; /*0x5f3368*/
+      char v2 = v0[HIDWORD(v1)]; /*0x5f3368*/
       if ( v2 == 13 ) /*0x5f336d*/
         break; /*0x5f336d*/
       if ( v2 == 10 ) /*0x5f3377*/
@@ -159,11 +152,10 @@ namespace gamemd {
 int String::To_Waypoint()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall String::To_Waypoint(char *this)
+void String::To_Waypoint()
 {
-  int v2; // esi
 
-  v2 = -1; /*0x763694*/
+  int v2 = -1; /*0x763694*/
   if ( isalpha(*this) && (v2 = toupper(*this) - 65, isalpha(*(this + 1))) ) /*0x7636ba*/
     return toupper(*(this + 1)) + 26 * v2 - 39; /*0x7636db*/
   else
@@ -177,18 +169,16 @@ namespace gamemd {
 void String::TrimLeft(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall String::TrimLeft(const char **this, ObjectClass *aP1)
+void String::TrimLeft(const char **this, ObjectClass *aP1)
 {
   int i; // esi
-  signed int v4; // ecx
-  const char *v5; // eax
 
   for ( i = 0; ; ++i )
   {
-    v4 = *this ? strlen(*this) : 0;
+    signed int v4 = *this ? strlen(*this) : 0;
     if ( i >= v4 ) /*0x7b51f4*/
       break; /*0x7b51f4*/
-    v5 = *(const char **)aP1->__pad_0; /*0x7b51f6*/
+    const char * v5 = *(const char **)aP1->__pad_0; /*0x7b51f6*/
     if ( !*(_DWORD *)aP1->__pad_0 ) /*0x7b51f6*/
       v5 = &DataGlobal_87F8E4[42624]; /*0x7b51fd*/
     if ( !strchr(v5, (*this)[i]) ) /*0x7b5208*/
@@ -205,7 +195,7 @@ namespace gamemd {
 unsigned int String::Length()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall String_Length(const char **this)
+void String_Length(const char **this)
 {
   if ( *this ) /*0x7b54b1*/
     return strlen(*this); /*0x7b54c6*/
@@ -220,25 +210,13 @@ namespace gamemd {
 char String::Replace(char * SubStr, const char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall String_Replace(char **this, char *SubStr, const char *a3)
+void String_Replace(char **this, char *SubStr, const char *a3)
 {
   void **v3; // edi
-  char *v4; // ebx
-  const char *v5; // ebp
-  char *v6; // eax
   size_t v7; // eax
-  char *v8; // esi
   size_t v9; // edx
-  char *v10; // eax
-  const char *v11; // esi
-  char *v12; // ebp
-  unsigned int v13; // kr1C_4
   size_t v14; // edx
-  char *v15; // eax
-  const char *v16; // esi
-  unsigned int v17; // kr30_4
   size_t v18; // edx
-  char *v19; // eax
   const char *v20; // esi
   size_t v21; // ecx
   char *v22; // eax
@@ -246,27 +224,26 @@ char __thiscall String_Replace(char **this, char *SubStr, const char *a3)
   size_t Count; // [esp+14h] [ebp-8h]
   char *v27; // [esp+18h] [ebp-4h]
   char *v28; // [esp+24h] [ebp+8h]
-
   v3 = (void **)this; /*0x7b57a6*/
-  v4 = 0; /*0x7b57a8*/
-  v5 = *this; /*0x7b57ae*/
+  char * v4 = 0; /*0x7b57a8*/
+  const char * v5 = *this; /*0x7b57ae*/
   if ( !*this ) /*0x7b57ae*/
     v5 = &g_INI_DefaultBuffer; /*0x7b57b4*/
   if ( !v5 ) /*0x7b57bc*/
     goto LABEL_33; /*0x7b57bc*/
   while ( *v5 ) /*0x7b57c6*/
   {
-    v6 = strstr(v5, SubStr); /*0x7b57d2*/
+    char * v6 = strstr(v5, SubStr); /*0x7b57d2*/
     v27 = v6; /*0x7b57da*/
     if ( !v6 ) /*0x7b57e0*/
     {
-      v16 = v4; /*0x7b5924*/
-      v17 = strlen(v5) + 1; /*0x7b5926*/
+      const char * v16 = v4; /*0x7b5924*/
+      unsigned int v17 = strlen(v5) + 1; /*0x7b5926*/
       v28 = v4; /*0x7b592b*/
       v18 = v17; /*0x7b5931*/
       if ( v4 ) /*0x7b5934*/
         v18 = strlen(v4) + v17; /*0x7b5940*/
-      v19 = (char *)__2_YAPAXI_Z(v18); /*0x7b5943*/
+      char * v19 = (char *)__2_YAPAXI_Z(v18); /*0x7b5943*/
       v4 = v19; /*0x7b594b*/
       if ( v16 ) /*0x7b594f*/
         strcpy(v19, v16); /*0x7b5967*/
@@ -281,12 +258,12 @@ char __thiscall String_Replace(char **this, char *SubStr, const char *a3)
     Count = v7; /*0x7b57e8*/
     if ( v7 ) /*0x7b57ec*/
     {
-      v8 = v4; /*0x7b57ee*/
+      char * v8 = v4; /*0x7b57ee*/
       v9 = v7 + 1; /*0x7b57f0*/
       Block = v4; /*0x7b57f5*/
       if ( v4 ) /*0x7b57f9*/
         v9 = strlen(v4) + 1 + v7; /*0x7b5807*/
-      v10 = (char *)__2_YAPAXI_Z(v9); /*0x7b580a*/
+      char * v10 = (char *)__2_YAPAXI_Z(v9); /*0x7b580a*/
       v4 = v10; /*0x7b5812*/
       if ( v8 ) /*0x7b5816*/
       {
@@ -301,15 +278,15 @@ char __thiscall String_Replace(char **this, char *SubStr, const char *a3)
       if ( v8 ) /*0x7b5851*/
         __3_YAXPAX_Z(v8); /*0x7b5854*/
     }
-    v11 = a3; /*0x7b585c*/
+    const char * v11 = a3; /*0x7b585c*/
     if ( a3 ) /*0x7b5862*/
     {
-      v12 = v4; /*0x7b586f*/
-      v13 = strlen(a3) + 1; /*0x7b5871*/
+      char * v12 = v4; /*0x7b586f*/
+      unsigned int v13 = strlen(a3) + 1; /*0x7b5871*/
       v14 = v13; /*0x7b5878*/
       if ( v4 ) /*0x7b587b*/
         v14 = strlen(v4) + v13; /*0x7b5887*/
-      v15 = (char *)__2_YAPAXI_Z(v14); /*0x7b588a*/
+      char * v15 = (char *)__2_YAPAXI_Z(v14); /*0x7b588a*/
       v4 = v15; /*0x7b5892*/
       if ( v12 ) /*0x7b5896*/
       {
@@ -362,52 +339,42 @@ namespace gamemd {
 int String::Tokenize(int a2, ObjectClass * aP2, ObjectClass * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall String::Tokenize(const char **this, int a2, ObjectClass *aP2, ObjectClass *aP3)
+void String::Tokenize(const char **this, int a2, ObjectClass *aP2, ObjectClass *aP3)
 {
-  int v4; // esi
-  signed int v7; // ecx
-  signed int v8; // ecx
-  signed int v9; // ecx
-  char *v10; // ebp
-  const char *v11; // esi
   size_t v12; // ecx
-  _BYTE *v13; // eax
   ObjectClass *v14; // edi
   size_t v15; // esi
-  char *v16; // eax
   ObjectClass *v17; // ebp
   ObjectClass *v18; // esi
   size_t v19; // ecx
-  _BYTE *v20; // eax
-  int v21; // [esp+14h] [ebp+4h]
   char *Str; // [esp+18h] [ebp+8h]
 
-  v4 = a2; /*0x7b5f13*/
+  int v4 = a2; /*0x7b5f13*/
   if ( a2 < 0 ) /*0x7b5f1c*/
     return -1; /*0x7b5f21*/
   while ( 1 )
   {
-    v7 = *this ? strlen(*this) : 0;
+    signed int v7 = *this ? strlen(*this) : 0;
     if ( v4 >= v7 || !strchr(aP2->__pad_0, (*this)[v4]) ) /*0x7b5f4c*/
       break; /*0x7b5f4c*/
     ++v4; /*0x7b5f58*/
   }
   if ( *this ) /*0x7b5f5b*/
-    v8 = strlen(*this); /*0x7b5f6e*/
+    signed int v8 = strlen(*this); /*0x7b5f6e*/
   else
     v8 = 0; /*0x7b5f61*/
   if ( v4 >= v8 ) /*0x7b5f71*/
     return -1; /*0x7b5f76*/
-  v21 = v4; /*0x7b5f7d*/
+  int v21 = v4; /*0x7b5f7d*/
   while ( 1 )
   {
-    v9 = *this ? strlen(*this) : 0;
+    signed int v9 = *this ? strlen(*this) : 0;
     if ( v4 >= v9 || strchr(aP2->__pad_0, (*this)[v4]) ) /*0x7b5fa1*/
       break; /*0x7b5fa1*/
     ++v4; /*0x7b5fad*/
   }
-  v10 = (char *)(v4 - 1); /*0x7b5fb4*/
-  v11 = &(*this)[v21]; /*0x7b5fbd*/
+  char * v10 = (char *)(v4 - 1); /*0x7b5fb4*/
+  const char * v11 = &(*this)[v21]; /*0x7b5fbd*/
   Str = v10; /*0x7b5fbf*/
   if ( *(_DWORD *)aP3->__pad_0 ) /*0x7b5fc3*/
     __3_YAXPAX_Z(*(void **)aP3->__pad_0); /*0x7b5fca*/
@@ -416,7 +383,7 @@ int __thiscall String::Tokenize(const char **this, int a2, ObjectClass *aP2, Obj
     v12 = strlen(v11) + 1; /*0x7b5fe3*/
   else
     v12 = 1; /*0x7b5fe9*/
-  v13 = (_BYTE *)__2_YAPAXI_Z(v12); /*0x7b5fef*/
+  _BYTE * v13 = (_BYTE *)__2_YAPAXI_Z(v12); /*0x7b5fef*/
   *(_DWORD *)aP3->__pad_0 = v13; /*0x7b5ff7*/
   *v13 = 0; /*0x7b5ffb*/
   if ( v11 ) /*0x7b5ffe*/
@@ -425,7 +392,7 @@ int __thiscall String::Tokenize(const char **this, int a2, ObjectClass *aP2, Obj
   v15 = (size_t)&v10[-v21 + 1]; /*0x7b602e*/
   if ( *(_DWORD *)aP3->__pad_0 ) /*0x7b6023*/
     v14 = *(ObjectClass **)aP3->__pad_0; /*0x7b6033*/
-  v16 = (char *)__2_YAPAXI_Z((size_t)&v10[-v21 + 2]); /*0x7b6039*/
+  char * v16 = (char *)__2_YAPAXI_Z((size_t)&v10[-v21 + 2]); /*0x7b6039*/
   v17 = (ObjectClass *)v16; /*0x7b603e*/
   *v16 = 0; /*0x7b6045*/
   if ( v14 ) /*0x7b6049*/
@@ -441,7 +408,7 @@ int __thiscall String::Tokenize(const char **this, int a2, ObjectClass *aP2, Obj
     v19 = strlen(v18->__pad_0) + 1; /*0x7b6085*/
   else
     v19 = 1; /*0x7b608b*/
-  v20 = (_BYTE *)__2_YAPAXI_Z(v19); /*0x7b6091*/
+  _BYTE * v20 = (_BYTE *)__2_YAPAXI_Z(v19); /*0x7b6091*/
   *(_DWORD *)aP3->__pad_0 = v20; /*0x7b6099*/
   *v20 = 0; /*0x7b609d*/
   if ( v18 ) /*0x7b60a0*/
@@ -458,28 +425,20 @@ namespace gamemd {
 int String::Tokenize2(int a2, wchar_t * Str, void ** a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall String_Tokenize2(const wchar_t **this, int a2, wchar_t *Str, void **a4)
+void String_Tokenize2(const wchar_t **this, int a2, wchar_t *Str, void **a4)
 {
-  int v4; // esi
   const wchar_t *v7; // eax
   const wchar_t *v8; // eax
-  int v9; // ebp
   const wchar_t *v10; // eax
-  int v11; // ebx
   const wchar_t *v12; // esi
   size_t v13; // eax
-  _WORD *v14; // eax
-  int v15; // esi
   const wchar_t *v16; // ebp
   size_t v17; // esi
   wchar_t *v18; // eax
   wchar_t *v19; // ebx
   const wchar_t *v20; // esi
   size_t v21; // eax
-  _WORD *v22; // eax
-  int v23; // [esp+10h] [ebp+4h]
-
-  v4 = a2; /*0x7b7a62*/
+  int v4 = a2; /*0x7b7a62*/
   if ( a2 < 0 ) /*0x7b7a6b*/
     return -1; /*0x7b7a6f*/
   while ( 1 ) /*0x7b7a7a*/
@@ -496,7 +455,7 @@ int __thiscall String_Tokenize2(const wchar_t **this, int a2, wchar_t *Str, void
     v8 = (const wchar_t *)wcslen(*this); /*0x7b7aab*/
   if ( v4 >= (int)v8 ) /*0x7b7ab5*/
     return -1; /*0x7b7ab9*/
-  v9 = v4; /*0x7b7ac1*/
+  int v9 = v4; /*0x7b7ac1*/
   while ( 1 ) /*0x7b7ac3*/
   {
     v10 = *this; /*0x7b7ac3*/
@@ -506,8 +465,8 @@ int __thiscall String_Tokenize2(const wchar_t **this, int a2, wchar_t *Str, void
       break; /*0x7b7ade*/
     ++v4; /*0x7b7aea*/
   }
-  v11 = v4 - 1; /*0x7b7af3*/
-  v23 = v4 - 1; /*0x7b7af8*/
+  int v11 = v4 - 1; /*0x7b7af3*/
+  int v23 = v4 - 1; /*0x7b7af8*/
   v12 = &(*this)[v9]; /*0x7b7afe*/
   if ( *a4 ) /*0x7b7af6*/
     __3_YAXPAX_Z(*a4); /*0x7b7b04*/
@@ -516,12 +475,12 @@ int __thiscall String_Tokenize2(const wchar_t **this, int a2, wchar_t *Str, void
     v13 = wcslen(v12) + 1; /*0x7b7b1f*/
   else
     v13 = 1; /*0x7b7b22*/
-  v14 = __2_YAPAXI_Z(2 * v13); /*0x7b7b2b*/
+  _WORD * v14 = __2_YAPAXI_Z(2 * v13); /*0x7b7b2b*/
   *a4 = v14; /*0x7b7b33*/
   *v14 = 0; /*0x7b7b37*/
   if ( v12 ) /*0x7b7b3c*/
     wcscpy((wchar_t *)*a4, v12); /*0x7b7b42*/
-  v15 = v11 - v9; /*0x7b7b4e*/
+  int v15 = v11 - v9; /*0x7b7b4e*/
   v16 = &g_TypeClass_DefaultString; /*0x7b7b50*/
   v17 = v15 + 1; /*0x7b7b55*/
   if ( *a4 ) /*0x7b7b4a*/
@@ -542,7 +501,7 @@ int __thiscall String_Tokenize2(const wchar_t **this, int a2, wchar_t *Str, void
     v21 = wcslen(v20) + 1; /*0x7b7bb3*/
   else
     v21 = 1; /*0x7b7bb6*/
-  v22 = __2_YAPAXI_Z(2 * v21); /*0x7b7bbf*/
+  _WORD * v22 = __2_YAPAXI_Z(2 * v21); /*0x7b7bbf*/
   *a4 = v22; /*0x7b7bc7*/
   *v22 = 0; /*0x7b7bcb*/
   if ( v20 ) /*0x7b7bd0*/
@@ -559,15 +518,12 @@ namespace gamemd {
 unsigned int sub_7CCA34(unsigned char * a1, unsigned int a2, unsigned char * a3, int a4, void * a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __cdecl sub_7CCA34(unsigned __int8 *a1, unsigned int a2, unsigned __int8 *a3, int a4, void *a5)
+void sub_7CCA34(unsigned __int8 *a1, unsigned int a2, unsigned __int8 *a3, int a4, void *a5)
 {
-  void *v5; // eax
   unsigned __int8 *v6; // esi
   unsigned __int8 v7; // al
-  char *v8; // esi
   int v10; // [esp+Ch] [ebp-8h]
   unsigned int v11; // [esp+10h] [ebp-4h] BYREF
-
   v11 = a2; /*0x7cca44*/
   InterlockedIncrement(&CRTGlobal_B78BA4); /*0x7cca48*/
   if ( CRTGlobal_B78BA0 ) /*0x7cca5c*/
@@ -580,7 +536,7 @@ unsigned int __cdecl sub_7CCA34(unsigned __int8 *a1, unsigned int a2, unsigned _
   {
     v10 = 0; /*0x7cca72*/
   }
-  v5 = a5; /*0x7cca75*/
+  void * v5 = a5; /*0x7cca75*/
   if ( !a5 ) /*0x7cca7a*/
     v5 = off_87C1E0; /*0x7cca7c*/
   a5 = v5; /*0x7cca84*/
@@ -595,7 +551,7 @@ unsigned int __cdecl sub_7CCA34(unsigned __int8 *a1, unsigned int a2, unsigned _
       if ( v7 == 37 ) /*0x7cca94*/
       {
         CRTGlobal_B78BAC = 0; /*0x7ccac8*/
-        v8 = (char *)(v6 + 1); /*0x7ccacf*/
+        char * v8 = (char *)(v6 + 1); /*0x7ccacf*/
         if ( *v8 == 35 ) /*0x7ccad3*/
         {
           CRTGlobal_B78BAC = 1; /*0x7ccad5*/

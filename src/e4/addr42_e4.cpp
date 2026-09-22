@@ -44,33 +44,24 @@ unsigned int * CreateFractalNoise(CCINIClass * aP0)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__stdcall CreateFractalNoise(CCINIClass *aP0)
 {
-  int v1; // eax
   CCINIClass *v2; // ecx
-  int v3; // eax
-  _DWORD *v4; // ebp
-  int v5; // esi
-  int v6; // edi
-  _WORD *v7; // ebx
-  int v8; // edx
   __int16 v9; // cx
-  int v11; // eax
-
-  v1 = 0; /*0x420149*/
+  int v1 = 0; /*0x420149*/
   if ( *(int *)&stru_87C374[56604] <= 0 ) /*0x420152*/
   {
 LABEL_5:
-    v3 = __2_YAPAXI_Z(0x20008u); /*0x42016e*/
-    v4 = (_DWORD *)v3; /*0x420178*/
+    int v3 = __2_YAPAXI_Z(0x20008u); /*0x42016e*/
+    _DWORD * v4 = (_DWORD *)v3; /*0x420178*/
     if ( v3 ) /*0x42017f*/
     {
       *(_DWORD *)(v3 + 0x20000) = aP0; /*0x420181*/
-      v5 = 0; /*0x420187*/
+      int v5 = 0; /*0x420187*/
       *(_DWORD *)(v3 + 131076) = 0; /*0x420189*/
-      v6 = (int)&aP0[-1].unknown54 + 3; /*0x420193*/
-      v7 = (_WORD *)v3; /*0x420194*/
+      int v6 = (int)&aP0[-1].unknown54 + 3; /*0x420193*/
+      _WORD * v7 = (_WORD *)v3; /*0x420194*/
       do /*0x4201d3*/
       {
-        v8 = v6 * (v5 >> 8) * (unsigned __int8)v5 / 32258; /*0x4201ba*/
+        int v8 = v6 * (v5 >> 8) * (unsigned __int8)v5 / 32258; /*0x4201ba*/
         if ( v8 > v6 ) /*0x4201be*/
           LOBYTE(v8) = (_BYTE)aP0 - 1; /*0x4201c0*/
         LOBYTE(v9) = 0; /*0x4201c2*/
@@ -92,7 +83,7 @@ LABEL_5:
            *(_DWORD *)&stru_87C374[56596] + *(_DWORD *)&stru_87C374[56608],
            0) )
     {
-      v11 = (*(_DWORD *)&stru_87C374[56604])++; /*0x42023d*/
+      int v11 = (*(_DWORD *)&stru_87C374[56604])++; /*0x42023d*/
       *(_DWORD *)(*(_DWORD *)&stru_87C374[56592] + 4 * v11) = v4; /*0x42024c*/
     }
     ++v4[32769]; /*0x420258*/
@@ -123,142 +114,85 @@ int UpdateSpotlightsFoo(int * a1, int * a2)
 int __fastcall UpdateSpotlightsFoo(int *a1, int *a2)
 {
   int result; // eax
-  int *v3; // ebx
-  int v4; // edi
-  int v5; // ecx
-  int v6; // ecx
-  int *v7; // eax
-  int v8; // ecx
-  int v9; // edx
-  int v10; // eax
-  int *v11; // edx
-  int v12; // eax
-  int v13; // ebx
-  int v14; // ecx
-  int v15; // edx
-  int v16; // ebp
-  unsigned int v17; // esi
-  int v18; // edx
   int *FoundationSize; // edx
-  int v20; // eax
-  int v21; // edi
-  int v22; // ebx
-  int v23; // ecx
   int SubFile; // esi
-  _WORD *v25; // eax
-  _DWORD *v26; // edx
   unsigned __int8 *v27; // esi
-  char *v28; // ebp
-  int v29; // ecx
-  int v30; // edi
   unsigned __int8 v31; // cl
-  char v32; // cl
-  char *v33; // edx
-  int v34; // edi
   unsigned __int8 v35; // cl
-  char v36; // cl
-  int v37; // [esp+8h] [ebp-C8h]
-  int v38; // [esp+8h] [ebp-C8h]
-  int v39; // [esp+8h] [ebp-C8h]
-  int v40; // [esp+Ch] [ebp-C4h]
-  int v41; // [esp+10h] [ebp-C0h]
-  int v42; // [esp+14h] [ebp-BCh]
-  int v43; // [esp+18h] [ebp-B8h]
-  int v44; // [esp+1Ch] [ebp-B4h]
   unsigned __int8 v45; // [esp+20h] [ebp-B0h]
   unsigned __int8 v46; // [esp+20h] [ebp-B0h]
-  int v47; // [esp+24h] [ebp-ACh]
-  int v48; // [esp+28h] [ebp-A8h]
-  char *v49; // [esp+2Ch] [ebp-A4h]
-  unsigned int v50; // [esp+30h] [ebp-A0h] BYREF
-  int v51; // [esp+34h] [ebp-9Ch]
-  int v52; // [esp+38h] [ebp-98h]
-  int v53; // [esp+3Ch] [ebp-94h]
-  int *v54; // [esp+40h] [ebp-90h]
-  int v55; // [esp+44h] [ebp-8Ch]
-  int v56; // [esp+4Ch] [ebp-84h]
-  int v57; // [esp+50h] [ebp-80h]
-  int v58; // [esp+58h] [ebp-78h]
-  int *v59; // [esp+5Ch] [ebp-74h]
-  int v60; // [esp+60h] [ebp-70h]
   char **v61; // [esp+64h] [ebp-6Ch]
-  int v62; // [esp+68h] [ebp-68h] BYREF
-  int v63; // [esp+6Ch] [ebp-64h]
-  int v64; // [esp+70h] [ebp-60h]
-  int v65; // [esp+74h] [ebp-5Ch]
-  int v66; // [esp+7Ch] [ebp-54h]
-  int v67; // [esp+84h] [ebp-4Ch]
-  int v68[4]; // [esp+88h] [ebp-48h] BYREF
-  int v69; // [esp+98h] [ebp-38h]
-  int v70[4]; // [esp+A0h] [ebp-30h] BYREF
-  int v71[4]; // [esp+B0h] [ebp-20h] BYREF
-  int v72[4]; // [esp+C0h] [ebp-10h] BYREF
 
   result = g_AlphaShapeLimit; /*0x420f46*/
-  v3 = a1; /*0x420f4d*/
-  v4 = 0; /*0x420f4f*/
-  v54 = a2; /*0x420f51*/
-  v59 = a1; /*0x420f57*/
-  v44 = 0; /*0x420f5b*/
+  int * v3 = a1; /*0x420f4d*/
+  int v4 = 0; /*0x420f4f*/
+  int * v54 = a2; /*0x420f51*/
+  int * v59 = a1; /*0x420f57*/
+  int v44 = 0; /*0x420f5b*/
   if ( g_AlphaShapeLimit > 0 ) /*0x420f5f*/
   {
     while ( 1 ) /*0x420f72*/
     {
-      v5 = *((_DWORD *)DataGlobal_88A0F4 + v4); /*0x420f72*/
+      int v5 = *((_DWORD *)DataGlobal_88A0F4 + v4); /*0x420f72*/
       if ( !*(_BYTE *)(v5 + 60) ) /*0x420f75*/
       {
-        v50 = *(_DWORD *)(v5 + 40); /*0x420f8b*/
-        v51 = *(_DWORD *)(v5 + 44); /*0x420f92*/
-        v52 = *(_DWORD *)(v5 + 48); /*0x420f99*/
-        v53 = *(_DWORD *)(v5 + 52); /*0x420fa0*/
-        v6 = v51 - (unsigned int)g_TacticalClass_Instance[45].__tail_0; /*0x420fb6*/
+        unsigned int v50 = *(_DWORD *)(v5 + 40); /*0x420f8b*/
+        int v51 = *(_DWORD *)(v5 + 44); /*0x420f92*/
+        int v52 = *(_DWORD *)(v5 + 48); /*0x420f99*/
+        int v53 = *(_DWORD *)(v5 + 52); /*0x420fa0*/
+        int v6 = v51 - (unsigned int)g_TacticalClass_Instance[45].__tail_0; /*0x420fb6*/
         v50 = DSurface_ViewBounds + v50 - (unsigned int)g_TacticalClass_Instance[44].__tail_0; /*0x420fca*/
         v51 = g_Map_VisibleRect + v6; /*0x420fd2*/
-        v7 = ClipRectIntersection(v70, (int *)&v50, v54, 0, 0); /*0x420fe2*/
+  int v70[4]; // [esp+A0h] [ebp-30h] BYREF
+        int * v7 = ClipRectIntersection(v70, (int *)&v50, v54, 0, 0); /*0x420fe2*/
+  int v68[4]; // [esp+88h] [ebp-48h] BYREF
         v68[0] = *v7; /*0x420fe9*/
         v68[1] = v7[1]; /*0x420ff7*/
         v68[2] = v7[2]; /*0x421001*/
-        v8 = v3[1]; /*0x421008*/
-        v9 = v7[3]; /*0x42100b*/
-        v10 = *v3; /*0x42100e*/
+        int v8 = v3[1]; /*0x421008*/
+        int v9 = v7[3]; /*0x42100b*/
+        int v10 = *v3; /*0x42100e*/
         v68[3] = v9; /*0x421010*/
-        v63 = v8; /*0x42101b*/
-        v62 = v10; /*0x42102e*/
-        v64 = 60; /*0x421032*/
-        v65 = 30; /*0x42103d*/
-        v11 = ClipRectIntersection(v71, v68, &v62, 0, 0); /*0x42104d*/
-        v12 = *v11; /*0x42104f*/
-        v55 = *v11; /*0x421051*/
-        v13 = v11[1]; /*0x421055*/
-        v14 = v11[2]; /*0x421058*/
-        v15 = v11[3]; /*0x42105d*/
-        v56 = v14; /*0x421060*/
-        v57 = v15; /*0x421064*/
+        int v63 = v8; /*0x42101b*/
+        int v62 = v10; /*0x42102e*/
+        int v64 = 60; /*0x421032*/
+        int v65 = 30; /*0x42103d*/
+  int v71[4]; // [esp+B0h] [ebp-20h] BYREF
+        int * v11 = ClipRectIntersection(v71, v68, &v62, 0, 0); /*0x42104d*/
+        int v12 = *v11; /*0x42104f*/
+        int v55 = *v11; /*0x421051*/
+        int v13 = v11[1]; /*0x421055*/
+        int v14 = v11[2]; /*0x421058*/
+        int v15 = v11[3]; /*0x42105d*/
+        int v56 = v14; /*0x421060*/
+        int v57 = v15; /*0x421064*/
         if ( v14 > 0 && v15 > 0 ) /*0x421070*/
         {
-          v16 = v13 - v63; /*0x421082*/
-          v17 = v50; /*0x42108a*/
-          v69 = v12 - v62; /*0x42108e*/
-          v18 = *((_DWORD *)DataGlobal_88A0F4 + v4); /*0x421099*/
-          v58 = v51; /*0x42109c*/
+  int v42; // [esp+14h] [ebp-BCh]
+          int v16 = v13 - v63; /*0x421082*/
+          unsigned int v17 = v50; /*0x42108a*/
+          int v69 = v12 - v62; /*0x42108e*/
+          int v18 = *((_DWORD *)DataGlobal_88A0F4 + v4); /*0x421099*/
+          int v58 = v51; /*0x42109c*/
           v61 = *(char ***)(v18 + 56); /*0x4210ad*/
+  int v72[4]; // [esp+C0h] [ebp-10h] BYREF
           FoundationSize = Building::GetFoundationSize(v72, 0); /*0x4210b6*/
-          v41 = v13; /*0x4210b8*/
-          v20 = *FoundationSize; /*0x4210bc*/
-          v66 = FoundationSize[1]; /*0x4210c1*/
-          v21 = FoundationSize[2]; /*0x4210c8*/
-          v67 = FoundationSize[3]; /*0x4210ce*/
+          int v41 = v13; /*0x4210b8*/
+          int v20 = *FoundationSize; /*0x4210bc*/
+          int v66 = FoundationSize[1]; /*0x4210c1*/
+          int v21 = FoundationSize[2]; /*0x4210c8*/
+          int v67 = FoundationSize[3]; /*0x4210ce*/
           if ( v13 <= v58 + v66 ) /*0x4210dd*/
             v41 = v58 + v66; /*0x4210df*/
-          v60 = v41 - v58 - v66; /*0x4210fd*/
-          v37 = v57 + v13; /*0x421118*/
+          int v60 = v41 - v58 - v66; /*0x4210fd*/
+          int v37 = v57 + v13; /*0x421118*/
           if ( v57 + v13 >= v66 + v67 + v58 ) /*0x42111c*/
             v37 = v66 + v67 + v58; /*0x42111e*/
-          v40 = v55; /*0x42112b*/
+          int v40 = v55; /*0x42112b*/
           if ( v55 <= (int)(v17 + v20) ) /*0x42112f*/
             v40 = v17 + v20; /*0x421131*/
-          v22 = v40 - v17 - v20; /*0x421144*/
-          v23 = v55 + v56; /*0x42114e*/
+          int v22 = v40 - v17 - v20; /*0x421144*/
+          int v23 = v55 + v56; /*0x42114e*/
           if ( v55 + v56 >= (int)(v20 + v17 + v21) ) /*0x421156*/
           {
             v42 = v20 + v17 + v21; /*0x42115e*/
@@ -268,30 +202,30 @@ int __fastcall UpdateSpotlightsFoo(int *a1, int *a2)
           {
             v42 = v55 + v56; /*0x421158*/
           }
-          v47 = v40 + *((_DWORD *)g_VisibleSurfaceDescriptor + 10) - v23; /*0x421187*/
-          v43 = 60 - v56; /*0x421199*/
-          v48 = v40 + v21 - v23; /*0x4211a1*/
-          v49 = (char *)&unk_7E2B20 + 60 * v16 + v69; /*0x4211b0*/
+          int v47 = v40 + *((_DWORD *)g_VisibleSurfaceDescriptor + 10) - v23; /*0x421187*/
+          int v43 = 60 - v56; /*0x421199*/
+          int v48 = v40 + v21 - v23; /*0x4211a1*/
+          char * v49 = (char *)&unk_7E2B20 + 60 * v16 + v69; /*0x4211b0*/
           SubFile = MixFileClass::GetSubFile(v61, 0); /*0x4211c9*/
-          v25 = (_WORD *)StreamClass::ReadAndSeek((int)g_VisibleSurfaceDescriptor, v40, v41 - g_Map_VisibleRect); /*0x4211d3*/
-          v26 = g_VisibleSurfaceDescriptor; /*0x4211d8*/
+          _WORD * v25 = (_WORD *)StreamClass::ReadAndSeek((int)g_VisibleSurfaceDescriptor, v40, v41 - g_Map_VisibleRect); /*0x4211d3*/
+          _DWORD * v26 = g_VisibleSurfaceDescriptor; /*0x4211d8*/
           v27 = (unsigned __int8 *)(v22 + v60 * v21 + SubFile); /*0x4211ed*/
           if ( (unsigned int)&v25[(v37 - v41) * *((_DWORD *)g_VisibleSurfaceDescriptor + 10) + 2 + v42 + 0x7FFFFFFF * v40] < *((_DWORD *)g_VisibleSurfaceDescriptor + 7) ) /*0x421211*/
           {
             if ( v41 < v37 ) /*0x4212bb*/
             {
-              v33 = v49; /*0x4212c1*/
-              v39 = v37 - v41; /*0x4212c5*/
+              char * v33 = v49; /*0x4212c1*/
+              int v39 = v37 - v41; /*0x4212c5*/
               do /*0x421324*/
               {
                 if ( v40 < v42 ) /*0x4212cf*/
                 {
-                  v34 = v42 - v40; /*0x4212d3*/
+                  int v34 = v42 - v40; /*0x4212d3*/
                   do /*0x421306*/
                   {
                     v35 = *v27++; /*0x4212d5*/
                     v46 = v35; /*0x4212d8*/
-                    v36 = *v33++; /*0x4212dc*/
+                    char v36 = *v33++; /*0x4212dc*/
                     if ( v36 != 32 ) /*0x4212e2*/
                       *v25 = (unsigned __int8)DataGlobal_88A118[256 * v46 + (unsigned __int16)*v25]; /*0x4212ff*/
                     ++v25; /*0x421302*/
@@ -309,19 +243,19 @@ int __fastcall UpdateSpotlightsFoo(int *a1, int *a2)
           }
           else if ( v41 < v37 ) /*0x421221*/
           {
-            v28 = v49; /*0x42122b*/
-            v38 = v37 - v41; /*0x42122f*/
-            v29 = v40; /*0x421233*/
+            char * v28 = v49; /*0x42122b*/
+            int v38 = v37 - v41; /*0x42122f*/
+            int v29 = v40; /*0x421233*/
             do /*0x4212ad*/
             {
               if ( v29 < v42 ) /*0x421239*/
               {
-                v30 = v42 - v29; /*0x42123d*/
+                int v30 = v42 - v29; /*0x42123d*/
                 do /*0x421281*/
                 {
                   v31 = *v27++; /*0x42123f*/
                   v45 = v31; /*0x421242*/
-                  v32 = *v28++; /*0x421246*/
+                  char v32 = *v28++; /*0x421246*/
                   if ( v32 != 32 ) /*0x42124d*/
                   {
                     *v25 = (unsigned __int8)DataGlobal_88A118[256 * v45 + (unsigned __int16)*v25]; /*0x42126a*/
@@ -367,51 +301,39 @@ _DWORD *__fastcall ClipRectIntersection(IUnknown *aP0, IUnknown *aP1, IUnknown *
 {
   _DWORD *result; // eax
   AbstractClass *v6; // ebx
-  int v7; // edi
-  int v8; // esi
-  int v9; // ecx
-  char *v10; // ebp
-  int v11; // edx
-  int v12; // ebp
-  int v13; // ecx
-  int v14; // esi
-  int v15; // [esp+14h] [ebp-14h]
-  int v16; // [esp+20h] [ebp-8h]
-  int v17; // [esp+24h] [ebp-4h]
-
   result = &aP0->field_0; /*0x421b63*/
   v6 = (AbstractClass *)aP2->field_0; /*0x421b6f*/
-  v7 = aP2->field_4; /*0x421b71*/
-  v16 = aP2->field_8; /*0x421b77*/
-  v17 = aP2->field_C; /*0x421b7e*/
-  v8 = aP1->field_8; /*0x421b82*/
+  int v7 = aP2->field_4; /*0x421b71*/
+  int v16 = aP2->field_8; /*0x421b77*/
+  int v17 = aP2->field_C; /*0x421b7e*/
+  int v8 = aP1->field_8; /*0x421b82*/
   if ( v8 <= 0 ) /*0x421b87*/
     goto LABEL_23; /*0x421b87*/
-  v15 = aP1->field_C; /*0x421b92*/
+  int v15 = aP1->field_C; /*0x421b92*/
   if ( v15 <= 0 || aP2->field_8 <= 0 || aP2->field_C <= 0 ) /*0x421bac*/
     goto LABEL_23; /*0x421bac*/
-  v9 = aP1->field_0; /*0x421bb2*/
+  int v9 = aP1->field_0; /*0x421bb2*/
   if ( (int)v6 < aP1->field_0 ) /*0x421bb6*/
   {
-    v10 = &v6->__pad_0[v16 - v9]; /*0x421bbe*/
+    char * v10 = &v6->__pad_0[v16 - v9]; /*0x421bbe*/
     v6 = (AbstractClass *)aP1->field_0; /*0x421bc0*/
     v16 = (int)v10; /*0x421bc2*/
   }
   if ( v16 < 1 ) /*0x421bcb*/
     goto LABEL_23; /*0x421bcb*/
-  v11 = aP1->field_4; /*0x421bd1*/
+  int v11 = aP1->field_4; /*0x421bd1*/
   if ( v7 < v11 ) /*0x421bda*/
   {
-    v12 = v7 - v11 + v17; /*0x421be2*/
+    int v12 = v7 - v11 + v17; /*0x421be2*/
     v7 = v11; /*0x421be4*/
     v17 = v12; /*0x421be6*/
   }
   if ( v17 < 1 ) /*0x421bef*/
     goto LABEL_23; /*0x421bef*/
-  v13 = (int)&v6->__pad_0[v16] <= v9 + v8 ? v16 : v8 + v9 - (_DWORD)v6;
+  int v13 = (int)&v6->__pad_0[v16] <= v9 + v8 ? v16 : v8 + v9 - (_DWORD)v6;
   if ( v13 < 1 ) /*0x421c0b*/
     goto LABEL_23; /*0x421c0b*/
-  v14 = v17; /*0x421c17*/
+  int v14 = v17; /*0x421c17*/
   if ( v17 + v7 > v15 + v11 ) /*0x421c20*/
     v14 = v15 + v11 - v7; /*0x421c24*/
   if ( v14 < 1 ) /*0x421c29*/
@@ -444,23 +366,13 @@ int ProductionCompletionCallback()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // Production completion callback (543B). Handles audio, special building anims, unit creation.
-bool __thiscall ProductionCompletionCallback(BuildingClass_Full *this)
+void ProductionCompletionCallback(BuildingClass_Full *this)
 {
-  int v2; // eax
-  int v3; // eax
-  _DWORD *v4; // eax
   IUnknown *v5; // ebx
-  _DWORD *v6; // edi
   void **v7; // ebp
-  int *v8; // eax
-  int v9; // ecx
-  int v10; // edx
-  int v11; // eax
-  int v12; // eax
   AnimClass *v13; // eax
   int *p_Location_X; // esi
   __int16 *v15; // ebx
-  int v17; // [esp-8h] [ebp-38h]
   int v18; // [esp+Ch] [ebp-24h] BYREF
   int v19; // [esp+10h] [ebp-20h]
   int v20; // [esp+14h] [ebp-1Ch]
@@ -474,41 +386,43 @@ bool __thiscall ProductionCompletionCallback(BuildingClass_Full *this)
   }
   else
   {
-    v2 = (*(int (__thiscall **)(BuildingClass_Full *, int *))(*(_DWORD *)this->_pad_base + 72))(this, &v18); /*0x424d1a*/
+    int v2 = (*(int (__thiscall **)(BuildingClass_Full *, int *))(*(_DWORD *)this->_pad_base + 72))(this, &v18); /*0x424d1a*/
     StartAudioControllerAt(*(_DWORD *)(this->MissionTimer_StartTime + 760), v2, (int)&this->IronTintTimer_TimeLeft + 2); /*0x424d2b*/
   }
   AudioController::Stop(&this->_pad_1A4[18]); /*0x424d43*/
   if ( !*(_DWORD *)(this->MissionTimer_StartTime + 664) ) /*0x424d4e*/
     CreateUnitOnCompletion(this); /*0x424d5a*/
+  int v3; // eax
   LOBYTE(v3) = BYTE2(this->IronTintTimer_Padding); /*0x424d5f*/
   if ( !(_BYTE)v3 ) /*0x424d67*/
   {
     LOBYTE(v3) = *(_BYTE *)(this->MissionTimer_StartTime + 855); /*0x424d73*/
     if ( (_BYTE)v3 ) /*0x424d7b*/
     {
-      v4 = (_DWORD *)(*(int (__thiscall **)(BuildingClass_Full *, char *))(*(_DWORD *)this->_pad_base + 72))(this, v21); /*0x424d8a*/
+      _DWORD * v4 = (_DWORD *)(*(int (__thiscall **)(BuildingClass_Full *, char *))(*(_DWORD *)this->_pad_base + 72))(this, v21); /*0x424d8a*/
       v5 = (IUnknown *)Coord::To_Cell(&DataGlobal_87F7E8, v4); /*0x424d98*/
       v3 = BuildingClass::FindByCellHash(v5); /*0x424d9c*/
       if ( v3 != -1 ) /*0x424da4*/
       {
-        v6 = *(_DWORD **)&BuildingClass_InstanceArray->__pad_0[4 * v3]; /*0x424db3*/
+        _DWORD * v6 = *(_DWORD **)&BuildingClass_InstanceArray->__pad_0[4 * v3]; /*0x424db3*/
         CellClass::ReduceTiberium((int)v5, (unsigned __int8)v5->__pad_8C[146] + 1); /*0x424dc0*/
         if ( (int)v6[53] > 0 && !((int)abs32(Random::State((_DWORD *)g_ScenarioClass_Instance + 134)) % 3) ) /*0x424def*/
         {
           v7 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x424e04*/
           if ( v7 ) /*0x424e0b*/
           {
+  int *v8; // eax
             v8 = (int *)(*(int (__thiscall **)(BuildingClass_Full *, char *))(*(_DWORD *)this->_pad_base + 72))( /*0x424e16*/
                           this,
                           v22);
-            v9 = *v8; /*0x424e19*/
-            v10 = v8[1]; /*0x424e1b*/
-            v11 = v8[2]; /*0x424e1e*/
+            int v9 = *v8; /*0x424e19*/
+            int v10 = v8[1]; /*0x424e1b*/
+            int v11 = v8[2]; /*0x424e1e*/
             v18 = v9; /*0x424e21*/
             v20 = v11 + 10; /*0x424e2e*/
-            v17 = v6[53] - 1; /*0x424e3f*/
+            int v17 = v6[53] - 1; /*0x424e3f*/
             v19 = v10; /*0x424e42*/
-            v12 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, v17); /*0x424e46*/
+            int v12 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, v17); /*0x424e46*/
             v13 = AnimClass::ctor(v7, *(void **)(v6[50] + 4 * v12), &v18, 0, 1, (void *)0x600, 0, 0); /*0x424e69*/
           }
           else
@@ -547,38 +461,22 @@ int CreateUnitOnCompletion()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // Create unit at completion (583B). Calculates exit cell, foundation offsets, spawns unit.
-bool __thiscall CreateUnitOnCompletion(BuildingClass_Full *this)
+void CreateUnitOnCompletion(BuildingClass_Full *this)
 {
-  _DWORD *v2; // eax
-  void *v3; // eax
-  int v4; // edx
-  int v5; // ebp
   int MissionTimer_StartTime; // eax
-  int v7; // eax
-  int v8; // eax
-  int v9; // eax
   int i; // edi
-  int v11; // eax
-  int v12; // eax
-  _DWORD *v13; // eax
-  _DWORD *v14; // eax
-  _DWORD *v15; // eax
-  int v17; // [esp+10h] [ebp-20h]
-  int v18; // [esp+10h] [ebp-20h]
-  int v19; // [esp+14h] [ebp-1Ch] BYREF
-  int v20; // [esp+18h] [ebp-18h]
-  int v21; // [esp+1Ch] [ebp-14h]
-  _DWORD v22[4]; // [esp+20h] [ebp-10h] BYREF
 
-  v2 = (_DWORD *)(*(int (__thiscall **)(BuildingClass_Full *, _DWORD *))(*(_DWORD *)this->_pad_base + 72))(this, v22); /*0x424f12*/
+  _DWORD v22[4]; // [esp+20h] [ebp-10h] BYREF
+  _DWORD * v2 = (_DWORD *)(*(int (__thiscall **)(BuildingClass_Full *, _DWORD *))(*(_DWORD *)this->_pad_base + 72))(this, v22); /*0x424f12*/
+  int v17; // [esp+10h] [ebp-20h]
   LOWORD(v17) = *v2 / 256; /*0x424f25*/
   HIWORD(v17) = v2[1] / 256; /*0x424f3e*/
-  v19 = v17; /*0x424f4b*/
-  v3 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v19); /*0x424f50*/
-  v4 = *(_DWORD *)this->_pad_base; /*0x424f55*/
-  v5 = 30; /*0x424f57*/
-  v21 = (int)v3; /*0x424f5e*/
-  v18 = 30; /*0x424f62*/
+  int v19 = v17; /*0x424f4b*/
+  void * v3 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v19); /*0x424f50*/
+  int v4 = *(_DWORD *)this->_pad_base; /*0x424f55*/
+  int v5 = 30; /*0x424f57*/
+  int v21 = (int)v3; /*0x424f5e*/
+  int v18 = 30; /*0x424f62*/
   if ( (*(int (__thiscall **)(BuildingClass_Full *))(v4 + 108))(this) ) /*0x424f66*/
   {
     MissionTimer_StartTime = this->MissionTimer_StartTime; /*0x424f72*/
@@ -586,14 +484,14 @@ bool __thiscall CreateUnitOnCompletion(BuildingClass_Full *this)
       *(_DWORD *)(this->MissionTimer_StartTime + 668) = Building::GetFoundationSize( /*0x424f9c*/
                                                           v22,
                                                           *(_DWORD *)(MissionTimer_StartTime + 664))[2];
-    v7 = this->MissionTimer_StartTime; /*0x424fa2*/
+    int v7 = this->MissionTimer_StartTime; /*0x424fa2*/
     if ( *(_DWORD *)(v7 + 672) == -1 ) /*0x424fae*/
       *(_DWORD *)(this->MissionTimer_StartTime + 672) = Building::GetFoundationSize(v22, *(_DWORD *)(v7 + 664))[3]; /*0x424fcc*/
-    v8 = this->MissionTimer_StartTime; /*0x424fd2*/
+    int v8 = this->MissionTimer_StartTime; /*0x424fd2*/
     v5 = *(_DWORD *)(v8 + 668); /*0x424fd8*/
     v18 = *(_DWORD *)(v8 + 672); /*0x424fe4*/
   }
-  v9 = this->MissionTimer_StartTime; /*0x424fe8*/
+  int v9 = this->MissionTimer_StartTime; /*0x424fe8*/
   if ( *(_DWORD *)(v9 + 716) != -1 ) /*0x424ff4*/
   {
     for ( i = 0; i < *(_DWORD *)(v9 + 720); ++i ) /*0x425000*/
@@ -605,12 +503,13 @@ bool __thiscall CreateUnitOnCompletion(BuildingClass_Full *this)
       v9 = this->MissionTimer_StartTime; /*0x42503e*/
     }
   }
-  v11 = (*(int (__thiscall **)(BuildingClass_Full *))(*(_DWORD *)this->_pad_base + 456))(this); /*0x425051*/
+  int v11 = (*(int (__thiscall **)(BuildingClass_Full *))(*(_DWORD *)this->_pad_base + 456))(this); /*0x425051*/
   if ( v11 < 30 ) /*0x42505a*/
   {
-    v12 = this->MissionTimer_StartTime; /*0x425060*/
+    int v12 = this->MissionTimer_StartTime; /*0x425060*/
     if ( !*(_BYTE *)(v12 + 875) /*0x4250ab*/
       || *(_BYTE *)(v12 + 877)
+  int v20; // [esp+18h] [ebp-18h]
       && (v20 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 2147483646),
           (double)v20 * 4.656612877414201e-10 >= 0.5) )
     {
@@ -620,6 +519,7 @@ bool __thiscall CreateUnitOnCompletion(BuildingClass_Full *this)
         CellClass::ReduceTiberium(v21, 6); /*0x4250e7*/
         if ( *(_BYTE *)(this->MissionTimer_StartTime + 878) ) /*0x4250f2*/
         {
+  _DWORD *v14; // eax
           v14 = (_DWORD *)(*(int (__thiscall **)(BuildingClass_Full *, _DWORD *))(*(_DWORD *)this->_pad_base + 72))( /*0x42510c*/
                             this,
                             v22);
@@ -627,6 +527,7 @@ bool __thiscall CreateUnitOnCompletion(BuildingClass_Full *this)
         }
         else
         {
+  _DWORD *v15; // eax
           v15 = (_DWORD *)(*(int (__thiscall **)(BuildingClass_Full *, _DWORD *))(*(_DWORD *)this->_pad_base + 72))( /*0x425133*/
                             this,
                             v22);
@@ -636,6 +537,7 @@ bool __thiscall CreateUnitOnCompletion(BuildingClass_Full *this)
     }
     else
     {
+  _DWORD *v13; // eax
       v13 = (_DWORD *)(*(int (__thiscall **)(BuildingClass_Full *, _DWORD *))(*(_DWORD *)this->_pad_base + 72))( /*0x4250bd*/
                         this,
                         v22);
@@ -654,13 +556,11 @@ int sub_4251F0(int a1, short * a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall sub_4251F0(int a1, __int16 *a2)
 {
-  int v2; // ecx
-  int v3; // eax
   int result; // eax
-  _DWORD v5[3]; // [esp+0h] [ebp-Ch] BYREF
 
-  v2 = a2[1]; /*0x4251f6*/
-  v3 = (*a2 << 8) + 128; /*0x4251fd*/
+  int v2 = a2[1]; /*0x4251f6*/
+  int v3 = (*a2 << 8) + 128; /*0x4251fd*/
+  _DWORD v5[3]; // [esp+0h] [ebp-Ch] BYREF
   v5[2] = 0; /*0x425202*/
   v5[0] = v3; /*0x42520d*/
   v5[1] = (v2 << 8) + 128; /*0x42521e*/
@@ -678,24 +578,13 @@ namespace gamemd {
 bool E4Recv_425670::ConstructionPositionTracker()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall ConstructionPositionTracker(BuildingClass_Full *this)
+void ConstructionPositionTracker(BuildingClass_Full *this)
 {
-  int v2; // eax
   IUnknown *v3; // edi
   int *p_Location_X; // ebp
   int Location_X; // eax
   int Location_Y; // ecx
   IUnknown *v7; // eax
-  int *v8; // eax
-  int v9; // ebx
-  bool v10; // dl
-  int v11; // eax
-  int v12; // ebx
-  int v13; // eax
-  int v14; // edx
-  int v15; // eax
-  int v16; // edx
-  int v17; // eax
   int v18; // eax
   int v19; // edx
   int v20; // ebx
@@ -737,7 +626,7 @@ bool __thiscall ConstructionPositionTracker(BuildingClass_Full *this)
   if ( !this->ProductionBlocked ) /*0x425679*/
   {
     this->QueuedMission = *(_DWORD *)&g_NetworkPlayerBuffer[5960]; /*0x425690*/
-    v2 = v54; /*0x425692*/
+    int v2 = v54; /*0x425692*/
     this->MissionStartTime = 0; /*0x425696*/
     *(_DWORD *)&this->MissionQueued = v2; /*0x42569c*/
     this->MissionStatus = 0; /*0x42569f*/
@@ -821,15 +710,17 @@ bool __thiscall ConstructionPositionTracker(BuildingClass_Full *this)
     {
       if ( this->_pad_base[141] ) /*0x425743*/
         goto LABEL_41; /*0x42574b*/
-      v8 = Building::ComputePosition((int *)this->_pad_base, (AnimClass *)&v53); /*0x425758*/
-      v9 = *v8; /*0x42575d*/
+      int * v8 = Building::ComputePosition((int *)this->_pad_base, (AnimClass *)&v53); /*0x425758*/
+      int v9 = *v8; /*0x42575d*/
       v50 = *v8; /*0x425765*/
       v51 = v8[1]; /*0x42576c*/
       v52 = v8[2]; /*0x425773*/
+  bool v10; // dl
       v10 = (*((_DWORD *)Coord::To_Cell(&DataGlobal_87F7E8, (IUnknown *)&this->_pad_D8[52]) + 59) == 2 /*0x4257ab*/
           || *((_DWORD *)Coord::To_Cell(&DataGlobal_87F7E8, (IUnknown *)&this->_pad_D8[52]) + 59) == 6)
          && (*(int (__thiscall **)(BuildingClass_Full *))(*(_DWORD *)this->_pad_base + 456))(this) <= unk_89A1C0;
       if ( v9 == unk_89A178 && v51 == (_DWORD)qword_89A17C && v52 == HIDWORD(qword_89A17C) /*0x4257ec*/
+  int v11; // eax
         || (v11 = *(_DWORD *)&this->_pad_D8[64], v11 >= 7)
         || v10 )
       {
@@ -837,7 +728,7 @@ bool __thiscall ConstructionPositionTracker(BuildingClass_Full *this)
         *(_QWORD *)&this->_pad_D8[56] = qword_89A17C; /*0x425898*/
         this->ProductionBlocked = 1; /*0x4258a4*/
         this->QueuedMission = *(_DWORD *)&g_NetworkPlayerBuffer[5960]; /*0x4258bc*/
-        v17 = v54; /*0x4258be*/
+        int v17 = v54; /*0x4258be*/
         this->MissionStartTime = 1; /*0x4258c2*/
         *(_DWORD *)&this->MissionQueued = v17; /*0x4258c8*/
         this->MissionStatus = 1; /*0x4258cb*/
@@ -848,19 +739,19 @@ bool __thiscall ConstructionPositionTracker(BuildingClass_Full *this)
       *(_DWORD *)&this->_pad_D8[64] = v11 + 1; /*0x4257f5*/
       v53 = *p_Location_X; /*0x4257fd*/
       v54 = this->Location_Y; /*0x425804*/
-      v12 = this->Location_Z; /*0x425808*/
+      int v12 = this->Location_Z; /*0x425808*/
       *(_DWORD *)v49 = v3->field_0; /*0x42580f*/
       *(_QWORD *)&v49[4] = *(_QWORD *)&this->_pad_D8[56]; /*0x42581b*/
       if ( v12 > Cell::GetGroundHeight(v49) + 2 * unk_89A1C0 ) /*0x42583b*/
-        v13 = unk_89A1B4 + Cell::GetGroundHeight(v49); /*0x42585d*/
+        int v13 = unk_89A1B4 + Cell::GetGroundHeight(v49); /*0x42585d*/
       else
         v13 = Cell::GetGroundHeight(v49); /*0x425847*/
-      v14 = *(_DWORD *)this->_pad_base; /*0x425863*/
+      int v14 = *(_DWORD *)this->_pad_base; /*0x425863*/
       *(_DWORD *)&v49[8] = v13; /*0x425865*/
       (*(void (__thiscall **)(BuildingClass_Full *, _BYTE *))(v14 + 436))(this, v49); /*0x425870*/
-      v15 = v51; /*0x42587a*/
+      int v15 = v51; /*0x42587a*/
       v3->field_0 = v50; /*0x425880*/
-      v16 = v52; /*0x425882*/
+      int v16 = v52; /*0x425882*/
       *(_DWORD *)&this->_pad_D8[56] = v15; /*0x425886*/
       *(_DWORD *)&this->_pad_D8[60] = v16; /*0x425889*/
     }
@@ -940,30 +831,26 @@ namespace gamemd {
 int sub_4261D0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_4261D0()
+void sub_4261D0()
 {
   int result; // eax
   int i; // edi
-  _DWORD *v2; // esi
-  _DWORD *v3; // eax
-  int v4; // eax
-  int v5; // eax
-  _DWORD v6[3]; // [esp+4h] [ebp-Ch] BYREF
 
   result = g_AnimClassCount; /*0x4261d0*/
   for ( i = 0; i < g_AnimClassCount; ++i ) /*0x4261dd*/
   {
-    v2 = (_DWORD *)*((_DWORD *)g_AnimClassPool + i); /*0x4261e9*/
+    _DWORD * v2 = (_DWORD *)*((_DWORD *)g_AnimClassPool + i); /*0x4261e9*/
     if ( *(_BYTE *)(v2[50] + 864) ) /*0x4261f2*/
     {
+  _DWORD v6[3]; // [esp+4h] [ebp-Ch] BYREF
       v6[0] = v2[39]; /*0x426208*/
       v6[1] = v2[40]; /*0x426214*/
       v6[2] = v2[41]; /*0x426220*/
-      v3 = Coord::To_Cell(&DataGlobal_87F7E8, v6); /*0x426224*/
-      v4 = BuildingClass::FindByCellHash(v3); /*0x42622b*/
+      _DWORD * v3 = Coord::To_Cell(&DataGlobal_87F7E8, v6); /*0x426224*/
+      int v4 = BuildingClass::FindByCellHash(v3); /*0x42622b*/
       if ( v4 != -1 ) /*0x426233*/
       {
-        v5 = *(_DWORD *)&BuildingClass_InstanceArray->__pad_0[4 * v4]; /*0x42623b*/
+        int v5 = *(_DWORD *)&BuildingClass_InstanceArray->__pad_0[4 * v4]; /*0x42623b*/
         if ( v5 ) /*0x426240*/
           v2[53] = *(_DWORD *)(*((_DWORD *)BuildingTypeClass_AnimTable + *(_DWORD *)(v5 + 192)) + 780); /*0x426256*/
       }
@@ -982,15 +869,8 @@ int sub_4267F0()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __usercall sub_4267F0@<al>(int a1@<ecx>, int a2@<ebx>)
 {
-  int v3; // edx
-  _BYTE *v4; // ecx
-  char v5; // bl
-  int v6; // eax
-  int v7; // eax
-  _DWORD *v9; // edi
   unsigned __int16 v10; // ax
   unsigned __int16 v11; // cx
-  void *v12; // edi
   _UNKNOWN *retaddr; // [esp+24h] [ebp+0h]
 
   if ( !*(_BYTE *)(a1 + 136) && *(_DWORD *)(a1 + 132) ) /*0x426803*/
@@ -1006,17 +886,17 @@ char __usercall sub_4267F0@<al>(int a1@<ecx>, int a2@<ebx>)
     (*(void (__thiscall **)(_DWORD, int, int))(**(_DWORD **)(a1 + 132) + 36))(*(_DWORD *)(a1 + 132), a1 + 4, 128); /*0x426857*/
     (*(void (__thiscall **)(_DWORD, _DWORD, int))(**(_DWORD **)(a1 + 132) + 40))(*(_DWORD *)(a1 + 132), 0, 1); /*0x426866*/
     (*(void (__thiscall **)(_DWORD, int, int))(**(_DWORD **)(a1 + 132) + 36))(*(_DWORD *)(a1 + 132), a1 + 268, 1024); /*0x42687d*/
-    v3 = 0; /*0x426880*/
-    v4 = (_BYTE *)(a1 + 269); /*0x426882*/
+    int v3 = 0; /*0x426880*/
+    _BYTE * v4 = (_BYTE *)(a1 + 269); /*0x426882*/
     do /*0x4268c7*/
     {
-      v5 = *(v4 - 1); /*0x42688b*/
+      char v5 = *(v4 - 1); /*0x42688b*/
       LOBYTE(retaddr) = v4[1]; /*0x42688e*/
       BYTE1(retaddr) = *v4; /*0x426894*/
-      v6 = v3 % 256; /*0x4268a7*/
+      int v6 = v3 % 256; /*0x4268a7*/
       ++v3; /*0x4268ab*/
       v4 += 4; /*0x4268ac*/
-      v7 = v6 + a1 + 2 * v6 + 1292; /*0x4268b5*/
+      int v7 = v6 + a1 + 2 * v6 + 1292; /*0x4268b5*/
       *(_WORD *)v7 = (_WORD)retaddr; /*0x4268c1*/
       *(_BYTE *)(v7 + 2) = v5; /*0x4268c4*/
     }
@@ -1028,7 +908,7 @@ char __usercall sub_4267F0@<al>(int a1@<ecx>, int a2@<ebx>)
       (*(void (__thiscall **)(int))(*(_DWORD *)a1 + 8))(a1); /*0x4268fb*/
       return 0; /*0x426903*/
     }
-    v9 = __2_YAPAXI_Z(0x20u); /*0x42690b*/
+    _DWORD * v9 = __2_YAPAXI_Z(0x20u); /*0x42690b*/
     if ( v9 ) /*0x426912*/
     {
       v10 = *(_WORD *)(a1 + 160); /*0x426918*/
@@ -1046,7 +926,7 @@ char __usercall sub_4267F0@<al>(int a1@<ecx>, int a2@<ebx>)
       v9 = 0; /*0x426956*/
     }
     *(_DWORD *)(a1 + 3596) = v9; /*0x42695d*/
-    v12 = __2_YAPAXI_Z(0x10000u); /*0x42696b*/
+    void * v12 = __2_YAPAXI_Z(0x10000u); /*0x42696b*/
     *(_DWORD *)(a1 + 3600) = v12; /*0x426974*/
     memset(v12, 0, 0x10000u); /*0x42697a*/
   }
@@ -1060,30 +940,22 @@ namespace gamemd {
 int E4Recv_426ED0::sub_426ED0(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_426ED0(int this, int a2)
+void sub_426ED0(int this, int a2)
 {
-  int v3; // esi
-  int v4; // edx
   unsigned __int16 *i; // ecx
-  int v6; // eax
-  int v8; // ecx
-  int v9; // edx
   unsigned __int16 v10; // si
   unsigned __int16 v11; // cx
-  int v12; // edi
-  int v13; // ebx
-  int v14; // edx
   unsigned __int16 *v15; // ecx
   unsigned __int16 v16; // ax
-
   if ( a2 >= this->M204 ) /*0x426ee0*/
     return 0; /*0x426ee0*/
-  v3 = 0; /*0x426ee4*/
-  v4 = *(unsigned __int16 *)(this + 146); /*0x426ee6*/
+  int v3 = 0; /*0x426ee4*/
+  int v4 = *(unsigned __int16 *)(this + 146); /*0x426ee6*/
   if ( !(_WORD)v4 ) /*0x426eef*/
     return 0; /*0x426eef*/
   for ( i = (unsigned __int16 *)(this + 2060); ; i += 3 ) /*0x426ef1*/
   {
+  int v6; // eax
     HIWORD(v6) = 0; /*0x426ef7*/
     if ( *i <= a2 ) /*0x426efe*/
     {
@@ -1098,7 +970,7 @@ int __thiscall sub_426ED0(int this, int a2)
     return 0; /*0x426f14*/
   if ( (unsigned char)this->M136 && this->M3608 != v3 ) /*0x426f32*/
   {
-    v8 = this->M132; /*0x426f34*/
+    int v8 = this->M132; /*0x426f34*/
     this->M3608 = v3; /*0x426f3f*/
     (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)v8 + 40))(v8, (v3 << 16) + 2816, 0); /*0x426f50*/
     (*(void (__thiscall **)(_DWORD, _DWORD, int))(**(_DWORD **)(this + 132) + 36))( /*0x426f87*/
@@ -1106,12 +978,12 @@ int __thiscall sub_426ED0(int this, int a2)
       this->M3600,
       *(unsigned __int16 *)(this + 2 * (3 * v3 + 1032)) + 2 * *(unsigned __int16 *)(this + 6 * v3 + 2062) + 8);
   }
-  v9 = 3 * v3; /*0x426f8a*/
+  int v9 = 3 * v3; /*0x426f8a*/
   v10 = *(_WORD *)(this + 6 * v3 + 2060); /*0x426f8f*/
   v11 = *(_WORD *)(this + 2 * v9 + 2062); /*0x426f99*/
-  v12 = this->M3600; /*0x426fa4*/
-  v13 = a2 - v10; /*0x426faa*/
-  v14 = 2 * v11 + 8; /*0x426fac*/
+  int v12 = this->M3600; /*0x426fa4*/
+  int v13 = a2 - v10; /*0x426faa*/
+  int v14 = 2 * v11 + 8; /*0x426fac*/
   v15 = (unsigned __int16 *)(v12 + 8); /*0x426fb2*/
   if ( v13 > 0 ) /*0x426fb5*/
   {
@@ -1135,28 +1007,16 @@ char sub_4270D0(int a1, unsigned int a2, AnimFile * aP2, int arg4, char * a4, in
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __fastcall sub_4270D0(int a1, unsigned int a2, AnimFile *aP2, int arg4, char *a4, int a6)
 {
-  signed int v7; // ecx
   AnimFile *v8; // ebx
-  int v9; // ebp
-  char *v10; // esi
   char *i; // ebp
-  char v12; // al
-  unsigned int v13; // ecx
-  char *v14; // edi
-  unsigned int v15; // esi
-  int v16; // eax
-  char v17; // al
-  char *v18; // edi
-  int v19; // eax
-  char *v20; // edi
   AnimFile *aP2a; // [esp+14h] [ebp+4h]
 
   if ( !arg4 ) /*0x4270da*/
     return 1; /*0x4270e2*/
-  v7 = arg4 - 2; /*0x4270ed*/
+  signed int v7 = arg4 - 2; /*0x4270ed*/
   v8 = (AnimFile *)a4; /*0x4270f0*/
-  v9 = *(__int16 *)aP2->__pad_0; /*0x4270f2*/
-  v10 = &aP2->__pad_0[2]; /*0x4270f5*/
+  int v9 = *(__int16 *)aP2->__pad_0; /*0x4270f2*/
+  char * v10 = &aP2->__pad_0[2]; /*0x4270f5*/
   aP2a = (AnimFile *)a4; /*0x4270f8*/
   if ( arg4 == 2 ) /*0x4270fe*/
     return 1; /*0x427106*/
@@ -1170,6 +1030,7 @@ char __fastcall sub_4270D0(int a1, unsigned int a2, AnimFile *aP2, int arg4, cha
         {
           while ( 1 ) /*0x427171*/
           {
+  char v12; // al
             while ( 1 ) /*0x42714e*/
             {
               while ( 1 ) /*0x427148*/
@@ -1178,9 +1039,9 @@ char __fastcall sub_4270D0(int a1, unsigned int a2, AnimFile *aP2, int arg4, cha
                 if ( v12 <= 0 ) /*0x42714e*/
                   break; /*0x42714e*/
                 a2 = v12; /*0x427157*/
-                v13 = (unsigned int)v12 >> 2; /*0x42715b*/
+                unsigned int v13 = (unsigned int)v12 >> 2; /*0x42715b*/
                 qmemcpy(v8, i, 4 * v13); /*0x42715e*/
-                v14 = &v8->__pad_0[4 * v13]; /*0x42715e*/
+                char * v14 = &v8->__pad_0[4 * v13]; /*0x42715e*/
                 v8 = (AnimFile *)((char *)v8 + v12); /*0x427162*/
                 aP2a = v8; /*0x427167*/
                 qmemcpy(v14, &i[4 * v13], v12 & 3); /*0x42716b*/
@@ -1190,8 +1051,8 @@ char __fastcall sub_4270D0(int a1, unsigned int a2, AnimFile *aP2, int arg4, cha
                 break; /*0x427171*/
               LOBYTE(a2) = i[1]; /*0x42717e*/
               BYTE1(a2) = a2; /*0x427180*/
-              v15 = (unsigned __int8)*i; /*0x427188*/
-              v16 = a2 << 16; /*0x42718a*/
+              unsigned int v15 = (unsigned __int8)*i; /*0x427188*/
+              int v16 = a2 << 16; /*0x42718a*/
               LOWORD(v16) = a2; /*0x42718f*/
               memset32(v8, v16, v15 >> 2); /*0x427195*/
               i += 2; /*0x427199*/
@@ -1199,7 +1060,7 @@ char __fastcall sub_4270D0(int a1, unsigned int a2, AnimFile *aP2, int arg4, cha
               v8 = (AnimFile *)((char *)v8 + v15); /*0x4271a1*/
               aP2a = v8; /*0x4271a3*/
             }
-            v17 = v12 + 0x80; /*0x4271a9*/
+            char v17 = v12 + 0x80; /*0x4271a9*/
             if ( !v17 ) /*0x4271ab*/
               break; /*0x4271ab*/
             v8 = (AnimFile *)((char *)v8 + v17); /*0x42722e*/
@@ -1218,11 +1079,11 @@ LABEL_22:
         a2 -= 0x8000; /*0x4271c3*/
         if ( (int)a2 >= 0x4000 ) /*0x4271cf*/
         {
-          v18 = (char *)v8; /*0x4271d3*/
+          AnimFile *v18 = (char *)v8; /*0x4271d3*/
           a2 -= 0x4000; /*0x4271d8*/
           LOBYTE(v8) = *i; /*0x4271de*/
           BYTE1(v8) = *i++; /*0x4271e2*/
-          v19 = (_DWORD)v8 << 16; /*0x4271e9*/
+          int v19 = (_DWORD)v8 << 16; /*0x4271e9*/
           LOWORD(v19) = (_WORD)v8; /*0x4271ec*/
           v8 = aP2a; /*0x4271ef*/
           memset32(v18, v19, a2 >> 2); /*0x4271f6*/
@@ -1230,7 +1091,7 @@ LABEL_22:
           goto LABEL_22; /*0x4271fd*/
         }
         qmemcpy(v8, i, 4 * (a2 >> 2)); /*0x427215*/
-        v20 = &v8->__pad_0[4 * (a2 >> 2)]; /*0x427215*/
+        char * v20 = &v8->__pad_0[4 * (a2 >> 2)]; /*0x427215*/
         v8 = (AnimFile *)((char *)v8 + a2); /*0x427219*/
         aP2a = v8; /*0x42721e*/
         qmemcpy(v20, &i[4 * (a2 >> 2)], a2 & 3); /*0x427222*/
@@ -1259,17 +1120,14 @@ int BuildingTypeClass_LoadTheatreSHP(int a1)
 int __fastcall BuildingTypeClass_LoadTheatreSHP(int a1)
 {
   int result; // eax
-  int v3; // esi
-  char v4; // al
-  int v5; // eax
   int i; // [esp+8h] [ebp-204h]
   char Buffer[512]; // [esp+Ch] [ebp-200h] BYREF
 
   result = 0; /*0x427952*/
   for ( i = 0; i < DataGlobal_8B4160; ++i ) /*0x42795a*/
   {
-    v3 = *((_DWORD *)g_AnimTypeCount + result); /*0x427968*/
-    v4 = *(_BYTE *)(v3 + 556); /*0x427973*/
+    int v3 = *((_DWORD *)g_AnimTypeCount + result); /*0x427968*/
+    char v4 = *(_BYTE *)(v3 + 556); /*0x427973*/
     if ( *(_BYTE *)(v3 + 862) ) /*0x42796b*/
     {
       if ( v4 || *(_BYTE *)(v3 + 567) ) /*0x427a2a*/
@@ -1291,7 +1149,7 @@ int __fastcall BuildingTypeClass_LoadTheatreSHP(int a1)
       }
       *(_DWORD *)(v3 + 164) = 0; /*0x4279c1*/
       _makepath(Buffer, 0, 0, (const char *)(v3 + 36), (const char *)&off_7E1BC6 + 112 * a1); /*0x4279cc*/
-      v5 = SearchMIXFile(Buffer, 1); /*0x4279da*/
+      int v5 = SearchMIXFile(Buffer, 1); /*0x4279da*/
       *(_DWORD *)(v3 + 164) = v5; /*0x4279e1*/
       if ( !v5 ) /*0x4279e7*/
       {
@@ -1317,16 +1175,14 @@ AnimTypeClass * globalHelper_028F70(AbstractClass * Source, int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 AnimTypeClass *__fastcall globalHelper_028F70(AbstractClass *Source, int a2)
 {
-  int v4; // esi
-  _DWORD *v5; // eax
 
   if ( !_strcmpi(&stru_817460.sectionHead[1], Source) || !_strcmpi(g_Str_none, Source) ) /*0x428f8f*/
     return 0; /*0x428fec*/
-  v4 = 0; /*0x428f9e*/
+  int v4 = 0; /*0x428f9e*/
   if ( *(int *)(a2 + 16) <= 0 ) /*0x428fa2*/
   {
 LABEL_6:
-    v5 = (_DWORD *)__2_YAPAXI_Z(0x378u); /*0x428fc3*/
+    _DWORD * v5 = (_DWORD *)__2_YAPAXI_Z(0x378u); /*0x428fc3*/
     if ( v5 ) /*0x428fd2*/
       return (AnimTypeClass *)AnimTypeClass::Construct(v5, Source); /*0x428fdf*/
     return 0; /*0x428fd2*/
@@ -1348,15 +1204,9 @@ unsigned int * PathClass_WalkPath(unsigned int * a1, int * a2, int a3, int * a4)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__fastcall PathClass_WalkPath(_DWORD *a1, int *a2, int a3, int *a4)
 {
-  int v4; // eax
-  int v7; // edi
-  int v8; // ecx
-  int v9; // eax
-  int v11; // [esp+8h] [ebp-4h] BYREF
-  int v12; // [esp+14h] [ebp+8h]
 
-  v4 = *a2; /*0x429781*/
-  v11 = *a2; /*0x42978f*/
+  int v4 = *a2; /*0x429781*/
+  int v11 = *a2; /*0x42978f*/
   if ( a3 <= 0 ) /*0x429793*/
   {
     *a1 = v4; /*0x42981d*/
@@ -1364,13 +1214,13 @@ _DWORD *__fastcall PathClass_WalkPath(_DWORD *a1, int *a2, int a3, int *a4)
   }
   else
   {
-    v7 = a3; /*0x42979f*/
+    int v7 = a3; /*0x42979f*/
     do /*0x42980f*/
     {
-      v8 = *a4; /*0x4297a1*/
+      int v8 = *a4; /*0x4297a1*/
       if ( *a4 == 8 ) /*0x4297a6*/
       {
-        v9 = *((__int16 *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v11) + 139); /*0x4297b7*/
+        int v9 = *((__int16 *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v11) + 139); /*0x4297b7*/
         if ( v9 == -1 ) /*0x4297c1*/
           v4 = 0; /*0x4297db*/
         else
@@ -1378,6 +1228,7 @@ _DWORD *__fastcall PathClass_WalkPath(_DWORD *a1, int *a2, int a3, int *a4)
       }
       else
       {
+  int v12; // [esp+14h] [ebp+8h]
         LOWORD(v12) = v4 + LOWORD(Direction_X_Offsets[v8]); /*0x4297f9*/
         HIWORD(v12) = HIWORD(v11) + HIWORD(Direction_X_Offsets[v8]); /*0x4297fe*/
         v4 = v12; /*0x429803*/
@@ -1399,18 +1250,11 @@ namespace gamemd {
 void E4Recv_42A900::sub_42A900()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_42A900(int this)
+void sub_42A900(int this)
 {
   void **v2; // esi
   void **v3; // esi
-  void *v4; // eax
-  void *v5; // eax
-  void *v6; // eax
   void **v7; // esi
-  int v8; // ebp
-  int v9; // esi
-  int v10; // edi
-  void *v11; // eax
 
   v2 = *(void ***)(this + 20); /*0x42a907*/
   if ( v2 ) /*0x42a90c*/
@@ -1425,15 +1269,15 @@ void __thiscall sub_42A900(int this)
     __3_YAXPAX_Z(v3[2]); /*0x42a92e*/
     __3_YAXPAX_Z(v3); /*0x42a934*/
   }
-  v4 = *(void **)(this + 16); /*0x42a93c*/
+  void * v4 = *(void **)(this + 16); /*0x42a93c*/
   this->M104 = 0; /*0x42a93f*/
   if ( v4 ) /*0x42a944*/
     __3_YAXPAX_Z(v4); /*0x42a947*/
-  v5 = *(void **)(this + 12); /*0x42a94f*/
+  void * v5 = *(void **)(this + 12); /*0x42a94f*/
   this->M16 = 0; /*0x42a952*/
   if ( v5 ) /*0x42a957*/
     __3_YAXPAX_Z(v5); /*0x42a95a*/
-  v6 = *(void **)(this + 24); /*0x42a962*/
+  void * v6 = *(void **)(this + 24); /*0x42a962*/
   this->M12 = 0; /*0x42a965*/
   if ( v6 ) /*0x42a96a*/
   {
@@ -1456,7 +1300,7 @@ void __thiscall sub_42A900(int this)
     this->M32 = 0; /*0x42a9ae*/
   }
   v7 = (void **)(this + 76); /*0x42a9b2*/
-  v8 = 3; /*0x42a9b5*/
+  int v8 = 3; /*0x42a9b5*/
   do /*0x42a9f5*/
   {
     if ( *(v7 - 3) ) /*0x42a9ba*/
@@ -1479,11 +1323,11 @@ void __thiscall sub_42A900(int this)
   }
   while ( v8 ); /*0x42a9f5*/
   __3_YAXPAX_Z(*(void **)(this + 100)); /*0x42a9fb*/
-  v9 = this + 188; /*0x42aa03*/
-  v10 = 3; /*0x42aa09*/
+  int v9 = this + 188; /*0x42aa03*/
+  int v10 = 3; /*0x42aa09*/
   do /*0x42aa37*/
   {
-    v11 = *(void **)(v9 - 20); /*0x42aa0f*/
+    void * v11 = *(void **)(v9 - 20); /*0x42aa0f*/
     v9 -= 24; /*0x42aa12*/
     *(_DWORD *)v9 = &vt_VectorClass_unsigned_int; /*0x42aa17*/
     if ( v11 ) /*0x42aa1d*/
@@ -1510,28 +1354,15 @@ int * globalHelper_02AA90(int a1, DynamicVectorClass_uint * aP1)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int *__stdcall globalHelper_02AA90(int a1, DynamicVectorClass_uint *aP1)
 {
-  int v2; // esi
-  int v3; // eax
   DynamicVectorClass_uint *v4; // edx
-  _DWORD *v5; // ebp
   DynamicVectorClass_uint *v6; // ebx
-  int v7; // eax
-  int v8; // ecx
-  __int64 v9; // rax
-  int v10; // ecx
-  int v11; // esi
-  int v12; // eax
-  bool v13; // zf
-  int *v15; // [esp+0h] [ebp-Ch]
-  int v16; // [esp+4h] [ebp-8h]
-
   if ( (unk_89A300 & 1) == 0 ) /*0x42aa9a*/
   {
     unk_89A300 |= 1u; /*0x42aaa6*/
     atexit(nullsub_4); /*0x42aaac*/
   }
-  v2 = a1; /*0x42aab7*/
-  v3 = Math::RoundToInt(*(float *)(a1 + 8)); /*0x42aabf*/
+  int v2 = a1; /*0x42aab7*/
+  int v3 = Math::RoundToInt(*(float *)(a1 + 8)); /*0x42aabf*/
   v4 = aP1; /*0x42aac4*/
   unk_89A2DC = v3; /*0x42aac8*/
   unk_89A2E0 = *(_DWORD *)(a1 + 12); /*0x42aad7*/
@@ -1540,22 +1371,26 @@ int *__stdcall globalHelper_02AA90(int a1, DynamicVectorClass_uint *aP1)
   unk_89A2F2 = 0; /*0x42aae9*/
   unk_89A2E4 = aP1; /*0x42aaf0*/
   unk_89A2EC = &unk_89A324; /*0x42aaf6*/
-  v5 = *(_DWORD **)a1; /*0x42aafc*/
+  _DWORD * v5 = *(_DWORD **)a1; /*0x42aafc*/
   v6 = *(DynamicVectorClass_uint **)(*(_DWORD *)a1 + 8); /*0x42ab01*/
-  v7 = *(_DWORD *)(a1 + 12) - 2; /*0x42ab04*/
+  int v7 = *(_DWORD *)(a1 + 12) - 2; /*0x42ab04*/
   if ( v7 >= 0 ) /*0x42ab07*/
   {
-    v8 = &unk_89A324 - (_UNKNOWN *)aP1; /*0x42ab10*/
-    v15 = (int *)&aP1->__pad_0[4 * v7]; /*0x42ab13*/
-    v16 = v7 + 1; /*0x42ab1b*/
+  bool v13; // zf
+    int v8 = &unk_89A324 - (_UNKNOWN *)aP1; /*0x42ab10*/
+    int * v15 = (int *)&aP1->__pad_0[4 * v7]; /*0x42ab13*/
+    int v16 = v7 + 1; /*0x42ab1b*/
     do /*0x42aba7*/
     {
       if ( v6 ) /*0x42ab21*/
       {
+  int v12; // eax
         *(int *)((char *)v15 + v8) = (int)v6->field_4; /*0x42ab2a*/
-        v9 = *(__int16 *)(**(_DWORD **)v6->__pad_0 + 38) - *(__int16 *)(*(_DWORD *)*v5 + 38); /*0x42ab48*/
+        __int64 v9 = *(__int16 *)(**(_DWORD **)v6->__pad_0 + 38) - *(__int16 *)(*(_DWORD *)*v5 + 38); /*0x42ab48*/
         if ( (int)((HIDWORD(v9) ^ v9) - HIDWORD(v9)) > 1 /*0x42ab64*/
+  int v10; // ecx
           || (v10 = *(__int16 *)(**(_DWORD **)v6->__pad_0 + 36),
+  int v11; // esi
               v11 = *(__int16 *)(*(_DWORD *)*v5 + 36),
               (int)abs32(v10 - v11) > 1) )
         {
@@ -1594,45 +1429,34 @@ namespace gamemd {
 int sub_42B080(short * a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall sub_42B080(__int16 *a1, int a2)
+void sub_42B080(__int16 *a1, int a2)
 {
-  _WORD *v2; // ebx
-  int v3; // edi
-  int v4; // ebp
-  _DWORD *v5; // ecx
-  __int64 v6; // rax
-  int v7; // esi
-  bool v8; // zf
-  int v10; // [esp+10h] [ebp-18h]
   __int16 *v11; // [esp+14h] [ebp-14h]
-  int v12; // [esp+18h] [ebp-10h]
-  int v13; // [esp+1Ch] [ebp-Ch]
-  int v14; // [esp+20h] [ebp-8h]
-
-  v2 = a1; /*0x42b084*/
-  v3 = a2 * unk_89C2D8; /*0x42b0ab*/
-  v13 = (*a1 << 8) + 128; /*0x42b0b0*/
-  v14 = (a1[1] << 8) + 128; /*0x42b0b4*/
-  v10 = -2; /*0x42b0bc*/
+  _WORD * v2 = a1; /*0x42b084*/
+  int v3 = a2 * unk_89C2D8; /*0x42b0ab*/
+  int v13 = (*a1 << 8) + 128; /*0x42b0b0*/
+  int v14 = (a1[1] << 8) + 128; /*0x42b0b4*/
+  int v10 = -2; /*0x42b0bc*/
   while ( 2 ) /*0x42b0c4*/
   {
-    v4 = -2; /*0x42b0c4*/
-    v12 = -2; /*0x42b0c9*/
+    int v4 = -2; /*0x42b0c4*/
+    int v12 = -2; /*0x42b0c9*/
     do /*0x42b18f*/
     {
       LOWORD(v11) = v4 + *v2; /*0x42b0dc*/
       HIWORD(v11) = v10 + v2[1]; /*0x42b0e5*/
       a1 = v11; /*0x42b0f4*/
-      v5 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&a1); /*0x42b0fd*/
+      _DWORD * v5 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&a1); /*0x42b0fd*/
+  __int64 v6; // rax
       if ( (v5[80] & 0x100) != 0 && (v6 = *((char *)v5 + 283) - a2, (int)((HIDWORD(v6) ^ v6) - HIDWORD(v6)) > 2) ) /*0x42b11d*/
-        v7 = v5[58]; /*0x42b11f*/
+        int v7 = v5[58]; /*0x42b11f*/
       else
         v7 = v5[57]; /*0x42b127*/
       if ( v7 ) /*0x42b12f*/
       {
         while ( 1 ) /*0x42b137*/
         {
-          v8 = (*(_BYTE *)(v7 + 20) & 4) == 0; /*0x42b137*/
+          bool v8 = (*(_BYTE *)(v7 + 20) & 4) == 0; /*0x42b137*/
           LOBYTE(a1) = (*(_BYTE *)(v7 + 20) & 4) != 0; /*0x42b13a*/
           if ( !v8 ) /*0x42b13e*/
           {
@@ -1672,51 +1496,19 @@ namespace gamemd {
 int GeneratePathWaypoints(unsigned int * a1, int * a2, int a3, int a4, int a5, int ** a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall GeneratePathWaypoints(_DWORD *a1, int *a2, int a3, int a4, int a5, int **a6)
+void GeneratePathWaypoints(_DWORD *a1, int *a2, int a3, int a4, int a5, int **a6)
 {
-  int *v6; // ebp
-  int v7; // esi
-  int v8; // edx
-  int v9; // eax
-  int v10; // edi
-  int *v11; // eax
-  int *v12; // ebx
-  int v13; // ebp
-  int v14; // eax
-  int *v15; // eax
-  double v16; // st7
-  int v17; // eax
   __int16 v18; // ax
-  int v19; // ecx
   __int16 *v20; // ebp
   __int16 v21; // dx
   __int16 v22; // dx
   __int16 v23; // ax
-  int v24; // esi
-  _DWORD *v25; // edi
-  bool v26; // bl
   __int16 v27; // dx
   __int16 v28; // ax
-  int v29; // eax
-  int v30; // eax
   __int16 v31; // dx
-  int *v32; // eax
-  int *v33; // edi
-  int v34; // ebx
-  int *v36; // edx
-  int v37; // esi
   int **v38; // ebp
-  int *v39; // eax
-  int *v40; // edi
-  int v41; // ebx
-  int v42; // eax
   int **v43; // eax
   int **v44; // ebp
-  int *v45; // eax
-  int v46; // ebx
-  int *v47; // esi
-  int v48; // edi
-  int *v49; // [esp+14h] [ebp-34h] BYREF
   int *v50; // [esp+18h] [ebp-30h] BYREF
   int v51; // [esp+1Ch] [ebp-2Ch]
   int v52; // [esp+20h] [ebp-28h]
@@ -1728,13 +1520,12 @@ int __stdcall GeneratePathWaypoints(_DWORD *a1, int *a2, int a3, int a4, int a5,
   int TileDataCellClass; // [esp+38h] [ebp-10h] BYREF
   int v59; // [esp+3Ch] [ebp-Ch]
   double v60; // [esp+40h] [ebp-8h]
-
-  v6 = a2; /*0x42b425*/
-  v7 = a4; /*0x42b42a*/
-  v8 = *a2; /*0x42b42f*/
-  v9 = a2[a4]; /*0x42b432*/
+  int * v6 = a2; /*0x42b425*/
+  int v7 = a4; /*0x42b42a*/
+  int v8 = *a2; /*0x42b42f*/
+  int v9 = a2[a4]; /*0x42b432*/
   v59 = v8; /*0x42b436*/
-  v10 = (v8 + v9) >> 1; /*0x42b43d*/
+  int v10 = (v8 + v9) >> 1; /*0x42b43d*/
   v51 = v10; /*0x42b43f*/
   if ( v10 + 1 != v9 && v10 + 1 != v8 ) /*0x42b44c*/
   {
@@ -1744,13 +1535,13 @@ int __stdcall GeneratePathWaypoints(_DWORD *a1, int *a2, int a3, int a4, int a5,
   if ( v8 == 8 || v9 == 8 ) /*0x42b466*/
   {
     v44 = a6; /*0x42b7a8*/
-    v45 = *a6; /*0x42b7ac*/
-    v46 = a4 + a5; /*0x42b7af*/
+    int * v45 = *a6; /*0x42b7ac*/
+    int v46 = a4 + a5; /*0x42b7af*/
     a6 = (int **)*a6; /*0x42b7b4*/
     if ( a4 + a5 > 0 ) /*0x42b7b8*/
     {
-      v47 = a2; /*0x42b7ba*/
-      v48 = a4 + a5; /*0x42b7be*/
+      int * v47 = a2; /*0x42b7ba*/
+      int v48 = a4 + a5; /*0x42b7be*/
       do /*0x42b7da*/
       {
         v45 = (int *)*GetCellNeighborCoord(&a2, (__int16 *)&a6, *v47++); /*0x42b7d0*/
@@ -1762,8 +1553,8 @@ int __stdcall GeneratePathWaypoints(_DWORD *a1, int *a2, int a3, int a4, int a5,
     *v44 = v45; /*0x42b7dd*/
     return v46; /*0x42b7e1*/
   }
-  v11 = *a6; /*0x42b476*/
-  v49 = *a6; /*0x42b478*/
+  int * v11 = *a6; /*0x42b476*/
+  int * v49 = *a6; /*0x42b478*/
   if ( a4 < a5 ) /*0x42b47c*/
   {
     a5 = a4; /*0x42b47e*/
@@ -1771,14 +1562,15 @@ int __stdcall GeneratePathWaypoints(_DWORD *a1, int *a2, int a3, int a4, int a5,
   }
   if ( a5 < a4 ) /*0x42b48d*/
   {
+  int *v15; // eax
     v50 = v11; /*0x42b491*/
     if ( a4 - a5 <= 0 ) /*0x42b499*/
       goto LABEL_19; /*0x42b499*/
-    v12 = a2; /*0x42b49b*/
-    v13 = a4 - a5; /*0x42b49d*/
+    int * v12 = a2; /*0x42b49b*/
+    int v13 = a4 - a5; /*0x42b49d*/
     while ( *v12 == 8 ) /*0x42b4a4*/
     {
-      v14 = *((__int16 *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v50) + 139); /*0x42b4b5*/
+      int v14 = *((__int16 *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v50) + 139); /*0x42b4b5*/
       if ( v14 == -1 ) /*0x42b4bf*/
       {
         v15 = (int *)CellStruct::Set(&TileDataCellClass, 0, 0); /*0x42b4d7*/
@@ -1803,18 +1595,19 @@ LABEL_19:
     goto LABEL_16; /*0x42b4ef*/
   }
 LABEL_20:
-  v16 = LocomotionClass::GetSpeedMultiplier(a1); /*0x42b508*/
-  v17 = a1[135]; /*0x42b513*/
+  double v16 = LocomotionClass::GetSpeedMultiplier(a1); /*0x42b508*/
+  int v17 = a1[135]; /*0x42b513*/
   v60 = v16; /*0x42b519*/
   v57 = v17; /*0x42b51d*/
   if ( a5 <= 0 ) /*0x42b527*/
     goto LABEL_38; /*0x42b527*/
   v18 = (__int16)v49; /*0x42b52f*/
-  v19 = 2 * a5; /*0x42b536*/
+  int v19 = 2 * a5; /*0x42b536*/
   v53 = 2 * a5; /*0x42b538*/
   v20 = (__int16 *)(4 * (v10 & 7) + 9041544); /*0x42b53c*/
   while ( 1 ) /*0x42b549*/
   {
+  bool v26; // bl
     v21 = *v20; /*0x42b549*/
     v52 = v19; /*0x42b54d*/
     v22 = v18 + v21; /*0x42b551*/
@@ -1822,18 +1615,18 @@ LABEL_20:
     LOWORD(v54) = v22; /*0x42b55d*/
     HIWORD(v54) = v23; /*0x42b564*/
     v50 = v54; /*0x42b579*/
-    v24 = *(_DWORD *)(a3 + 4 * (v7 + a5 - v19)); /*0x42b581*/
-    v25 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v50); /*0x42b58f*/
+    int v24 = *(_DWORD *)(a3 + 4 * (v7 + a5 - v19)); /*0x42b581*/
+    _DWORD * v25 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v50); /*0x42b58f*/
     do /*0x42b655*/
     {
       if ( v52 <= 0 ) /*0x42b597*/
       {
-        v36 = a2; /*0x42b70b*/
-        v37 = a4 - a5; /*0x42b70f*/
+        int * v36 = a2; /*0x42b70b*/
+        int v37 = a4 - a5; /*0x42b70f*/
         if ( 2 * a5 > 0 ) /*0x42b719*/
           memset32(&a2[a4 - a5], v51, 2 * a5); /*0x42b71f*/
         v38 = a6; /*0x42b721*/
-        v39 = *a6; /*0x42b727*/
+        int * v39 = *a6; /*0x42b727*/
         a6 = (int **)*a6; /*0x42b72a*/
         if ( v37 <= 0 ) /*0x42b72e*/
         {
@@ -1841,11 +1634,11 @@ LABEL_53:
           *v38 = v39; /*0x42b795*/
           return v37; /*0x42b7a1*/
         }
-        v40 = v36; /*0x42b730*/
-        v41 = v37; /*0x42b732*/
+        int * v40 = v36; /*0x42b730*/
+        int v41 = v37; /*0x42b732*/
         while ( *v40 == 8 ) /*0x42b739*/
         {
-          v42 = *((__int16 *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&a6) + 139); /*0x42b74a*/
+          int v42 = *((__int16 *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&a6) + 139); /*0x42b74a*/
           if ( v42 == -1 ) /*0x42b754*/
           {
             v43 = (int **)CellStruct::Set(&a2, 0, 0); /*0x42b76c*/
@@ -1879,7 +1672,7 @@ LABEL_52:
       HIWORD(v55) = v28; /*0x42b61b*/
       v50 = v55; /*0x42b624*/
       v25 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v50); /*0x42b633*/
-      v29 = *((char *)v25 + 283); /*0x42b635*/
+      int v29 = *((char *)v25 + 283); /*0x42b635*/
       if ( v24 - v29 == 4 ) /*0x42b641*/
       {
         v24 = v29 + 4; /*0x42b649*/
@@ -1889,7 +1682,7 @@ LABEL_52:
       v24 = *((char *)v25 + 283); /*0x42b651*/
     }
     while ( !v26 ); /*0x42b655*/
-    v30 = v59 & 7; /*0x42b66e*/
+    int v30 = v59 & 7; /*0x42b66e*/
     v31 = HIWORD(v49) + HIWORD(Direction_X_Offsets[v30]); /*0x42b688*/
     LOWORD(v56) = LOWORD(Direction_X_Offsets[v30]) + (_WORD)v49; /*0x42b694*/
     HIWORD(v56) = v31; /*0x42b69d*/
@@ -1903,12 +1696,12 @@ LABEL_52:
   }
   v6 = a2; /*0x42b6bf*/
 LABEL_38:
-  v32 = *a6; /*0x42b6c3*/
+  int * v32 = *a6; /*0x42b6c3*/
   a2 = *a6; /*0x42b6cb*/
   if ( v7 > 0 ) /*0x42b6cf*/
   {
-    v33 = v6; /*0x42b6d1*/
-    v34 = v7; /*0x42b6d3*/
+    int * v33 = v6; /*0x42b6d1*/
+    int v34 = v7; /*0x42b6d3*/
     do /*0x42b6ef*/
     {
       v32 = (int *)*GetCellNeighborCoord(&a4, (__int16 *)&a2, *v33++); /*0x42b6e5*/
@@ -1930,39 +1723,24 @@ short sub_42BCA0(int a1, int a2, int a3, unsigned int * a4, int * a5)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 __int16 __stdcall sub_42BCA0(int a1, int a2, int a3, _DWORD *a4, int *a5)
 {
-  int v6; // edx
-  int v7; // esi
   __int16 v8; // cx
   __int16 v9; // bx
-  bool v10; // cc
-  int v11; // eax
   __int16 v12; // si
-  _WORD *v13; // eax
   __int16 v14; // bx
   __int16 v15; // bp
-  int v16; // ecx
-  int v17; // eax
   __int16 result; // ax
-  int v19; // edi
-  int v20; // [esp+10h] [ebp-18h]
-  int v21; // [esp+14h] [ebp-14h]
   __int16 v22; // [esp+18h] [ebp-10h]
   __int16 v23; // [esp+1Ah] [ebp-Eh]
-  int v24; // [esp+1Ch] [ebp-Ch]
-  int v25; // [esp+20h] [ebp-8h]
-  _DWORD *v26; // [esp+2Ch] [ebp+4h]
-  char v27; // [esp+30h] [ebp+8h]
-  int v28; // [esp+34h] [ebp+Ch]
 
-  v6 = *a5; /*0x42bcad*/
-  v7 = a3; /*0x42bcb0*/
+  int v6 = *a5; /*0x42bcad*/
+  int v7 = a3; /*0x42bcb0*/
   v8 = 0; /*0x42bcb4*/
   v9 = 0; /*0x42bcb6*/
-  v10 = a2 < a3; /*0x42bcb9*/
-  v25 = 0; /*0x42bcbc*/
-  v20 = a2; /*0x42bcc0*/
-  v21 = *a5; /*0x42bcc4*/
-  v27 = 0; /*0x42bcc8*/
+  bool v10 = a2 < a3; /*0x42bcb9*/
+  int v25 = 0; /*0x42bcbc*/
+  int v20 = a2; /*0x42bcc0*/
+  int v21 = *a5; /*0x42bcc4*/
+  char v27 = 0; /*0x42bcc8*/
   if ( v10 ) /*0x42bccc*/
   {
 LABEL_13:
@@ -1970,7 +1748,7 @@ LABEL_13:
     *a5 = v6; /*0x42bdc2*/
     return (__int16)a4; /*0x42bdc8*/
   }
-  v26 = (_DWORD *)(a1 + 4 * a2); /*0x42bcd9*/
+  _DWORD * v26 = (_DWORD *)(a1 + 4 * a2); /*0x42bcd9*/
   while ( *v26 == -2 ) /*0x42bce6*/
   {
     --v20; /*0x42bcf0*/
@@ -1979,18 +1757,19 @@ LABEL_12:
     if ( v20 < v7 ) /*0x42bdaf*/
       goto LABEL_13; /*0x42bdaf*/
   }
-  v11 = ((unsigned __int8)*v26 - 4) & 7; /*0x42bd05*/
+  int v11 = ((unsigned __int8)*v26 - 4) & 7; /*0x42bd05*/
   v12 = Direction_X_Offsets[v11]; /*0x42bd08*/
-  v13 = (_WORD *)(4 * v11 + 9041544); /*0x42bd10*/
+  _WORD * v13 = (_WORD *)(4 * v11 + 9041544); /*0x42bd10*/
   v22 = v8 + v12; /*0x42bd24*/
   v23 = v9 + v13[1]; /*0x42bd29*/
   v14 = HIWORD(v21) + v13[1]; /*0x42bd3a*/
   v15 = v6 + *v13; /*0x42bd3f*/
+  int v24; // [esp+1Ch] [ebp-Ch]
   LOWORD(v24) = v15; /*0x42bd42*/
   HIWORD(v24) = v14; /*0x42bd47*/
   HIWORD(v21) = v14; /*0x42bd53*/
-  v16 = abs16(v23); /*0x42bd5f*/
-  v17 = abs16(v22); /*0x42bd64*/
+  int v16 = abs16(v23); /*0x42bd5f*/
+  int v17 = abs16(v22); /*0x42bd64*/
   if ( v17 <= v16 ) /*0x42bd68*/
     v17 = v16; /*0x42bd6a*/
   if ( v17 <= v25 ) /*0x42bd70*/
@@ -2010,8 +1789,9 @@ LABEL_11:
     --v26; /*0x42bda7*/
     goto LABEL_12; /*0x42bda7*/
   }
-  v19 = ((((unsigned __int8)*v26 - 4) & 7) - 4) & 7; /*0x42bdd7*/
+  int v19 = ((((unsigned __int8)*v26 - 4) & 7) - 4) & 7; /*0x42bdd7*/
   *a4 = v20 + 1; /*0x42bdda*/
+  int v28; // [esp+34h] [ebp+Ch]
   LOWORD(v28) = v15 + LOWORD(Direction_X_Offsets[v19]); /*0x42bdf3*/
   result = v14 + HIWORD(Direction_X_Offsets[v19]); /*0x42bdfc*/
   HIWORD(v28) = result; /*0x42bdff*/
@@ -2026,17 +1806,9 @@ namespace gamemd {
 char WalkLineOfSight(char * a1, int a2, unsigned int * a3, short * a4, unsigned int * a5, int a6, char a7)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall WalkLineOfSight(char *a1, int a2, _DWORD *a3, __int16 *a4, _DWORD *a5, int a6, char a7)
+void WalkLineOfSight(char *a1, int a2, _DWORD *a3, __int16 *a4, _DWORD *a5, int a6, char a7)
 {
   __int16 v7; // dx
-  int v8; // esi
-  int v9; // eax
-  int v10; // ecx
-  int v11; // ecx
-  int v12; // edx
-  signed int v13; // ecx
-  signed int v14; // eax
-  _DWORD *v15; // ebx
   int v16; // ebp
   int v17; // esi
   bool v18; // cl
@@ -2060,30 +1832,29 @@ char __stdcall WalkLineOfSight(char *a1, int a2, _DWORD *a3, __int16 *a4, _DWORD
   int v37; // [esp+48h] [ebp-14h]
   int v38; // [esp+4Ch] [ebp-10h]
   double v39; // [esp+54h] [ebp-8h]
-
   v7 = a4[1]; /*0x42be2d*/
   v38 = 0; /*0x42be35*/
-  v8 = *a4; /*0x42be3d*/
-  v9 = v7; /*0x42be40*/
+  int v8 = *a4; /*0x42be3d*/
+  int v9 = v7; /*0x42be40*/
   if ( *a4 >= 0 )
-    v10 = v7 >= 0 ? 3 : 1;
+    int v10 = v7 >= 0 ? 3 : 1;
   else
     v10 = v7 >= 0 ? 5 : 7;
   v32 = v10; /*0x42be67*/
-  v11 = v7 + v8; /*0x42be6d*/
+  int v11 = v7 + v8; /*0x42be6d*/
   if ( v8 - v7 <= 0 )
-    v12 = v11 <= 0 ? 6 : 4;
+    int v12 = v11 <= 0 ? 6 : 4;
   else
     v12 = v11 <= 0 ? 0 : 2;
   v33 = v12; /*0x42be8f*/
-  v13 = abs32(v9); /*0x42be9a*/
-  v14 = abs16(*a4); /*0x42be9f*/
+  signed int v13 = abs32(v9); /*0x42be9a*/
+  signed int v14 = abs16(*a4); /*0x42be9f*/
   v29 = v14; /*0x42bea3*/
   if ( v14 >= v13 ) /*0x42bea7*/
     v29 = v13; /*0x42bea9*/
   if ( v14 <= v13 ) /*0x42beaf*/
     v14 = v13; /*0x42beb1*/
-  v15 = a5; /*0x42beb7*/
+  _DWORD * v15 = a5; /*0x42beb7*/
   v30 = v14 - v29; /*0x42bebf*/
   v39 = LocomotionClass::GetSpeedMultiplier(a5); /*0x42bec8*/
   v37 = v15[135]; /*0x42bedd*/
@@ -2189,37 +1960,22 @@ void * E4Recv_42C900::FindPathWithRetry(FootClass * aP1, short * a2, int aP4, in
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void *__thiscall FindPathWithRetry(int this, FootClass *aP1, __int16 *a2, int aP4, int a5, int a6, int aP3, int aP6)
 {
-  int v9; // esi
-  int v10; // edi
   IUnknown *ecx3; // ecx
   IUnknown *v12; // ebx
   IUnknown *v14; // eax
   IUnknown *v15; // eax
   int TileIndex; // eax
-  unsigned int v17; // ecx
   int (__stdcall ***v18)(_DWORD, void *, int *); // eax
-  int v19; // ebx
-  int v20; // eax
-  int v21; // ebx
   bool IsWithinUsableArea; // al
   void *result; // eax
-  int v24; // eax
-  signed int v25; // ecx
-  __int64 v26; // rax
-  int v27; // eax
-  char v28; // dl
-  int v29; // [esp+18h] [ebp-20h] BYREF
-  int v30; // [esp+1Ch] [ebp-1Ch] BYREF
-  void *v31; // [esp+20h] [ebp-18h]
   IUnknown *TileIndexMapClass; // [esp+24h] [ebp-14h]
-  _DWORD v33[4]; // [esp+28h] [ebp-10h] BYREF
   IUnknown *aP4a; // [esp+44h] [ebp+Ch]
   IUnknown *aP4b; // [esp+44h] [ebp+Ch]
 
   *(_BYTE *)(this + 56) = 1; /*0x42c909*/
   CellClass::ClearOccupancyGrid((_DWORD *)this); /*0x42c90d*/
-  v9 = this + 116; /*0x42c912*/
-  v10 = 3; /*0x42c915*/
+  int v9 = this + 116; /*0x42c912*/
+  int v10 = 3; /*0x42c915*/
   do /*0x42c925*/
   {
     (*(void (__thiscall **)(int))(*(_DWORD *)v9 + 12))(v9); /*0x42c91e*/
@@ -2228,12 +1984,11 @@ void *__thiscall FindPathWithRetry(int this, FootClass *aP1, __int16 *a2, int aP
   }
   while ( v10 ); /*0x42c925*/
   this->M60 = aP6; /*0x42c92f*/
-  v31 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)aP1->__pad_0); /*0x42c93d*/
+  void * v31 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)aP1->__pad_0); /*0x42c93d*/
   v12 = (IUnknown *)CellCoord::To_CellObj(&DataGlobal_87F7E8, a2); /*0x42c95b*/
   if ( aP3 == -1 ) /*0x42c95d*/
     v14 = *(IUnknown **)((*(int (__thiscall **)(int))(*(_DWORD *)aP4 + 132))(aP4) + 1460); /*0x42c96d*/
-  else
-    v14 = (IUnknown *)aP3; /*0x42c95f*/
+  IUnknown *v14 = (IUnknown *)aP3; /*0x42c95f*/
   LOBYTE(ecx3) = *(_BYTE *)(aP4 + 140); /*0x42c973*/
   TileIndexMapClass = (IUnknown *)MapClass::GetTileIndex(&DataGlobal_87F7E8, (IUnknown *)aP1, v14, ecx3); /*0x42c98d*/
   if ( aP3 == -1 ) /*0x42c991*/
@@ -2245,27 +2000,28 @@ void *__thiscall FindPathWithRetry(int this, FootClass *aP1, __int16 *a2, int aP
   TileIndex = MapClass::GetTileIndex(&DataGlobal_87F7E8, (IUnknown *)a2, (IUnknown *)aP6, v15); /*0x42c9d7*/
   aP4a = (IUnknown *)TileIndex; /*0x42c9e0*/
   LOBYTE(TileIndex) = *(_BYTE *)(aP4 + 140); /*0x42c9e4*/
-  v30 = *Pathfinding::CrossBridge(&aP6, (int)v31, TileIndex); /*0x42ca01*/
-  v17 = (unsigned int)v12->field_140 >> 8; /*0x42ca0b*/
+  int v30 = *Pathfinding::CrossBridge(&aP6, (int)v31, TileIndex); /*0x42ca01*/
+  unsigned int v17 = (unsigned int)v12->field_140 >> 8; /*0x42ca0b*/
   LOBYTE(v17) = v17 & 1; /*0x42ca0e*/
-  v29 = *Pathfinding::CrossBridge(&aP6, (int)v12, v17); /*0x42ca23*/
+  int v29 = *Pathfinding::CrossBridge(&aP6, (int)v12, v17); /*0x42ca23*/
   if ( aP3 == -1 ) /*0x42ca27*/
     aP3 = *(_DWORD *)((*(int (__thiscall **)(int))(*(_DWORD *)aP4 + 132))(aP4) + 1460); /*0x42ca3f*/
   if ( (*(int (__thiscall **)(int))(*(_DWORD *)aP4 + 44))(aP4) == 15 && *(_BYTE *)(*(_DWORD *)(aP4 + 1728) + 3476) ) /*0x42ca55*/
   {
     v18 = *(int (__stdcall ****)(_DWORD, void *, int *))(aP4 + 1652); /*0x42ca5f*/
-    v19 = 0; /*0x42ca65*/
+    int v19 = 0; /*0x42ca65*/
     aP3 = 7; /*0x42ca69*/
     if ( !v18 ) /*0x42ca71*/
       goto LABEL_18; /*0x42ca71*/
-    v20 = (**v18)(v18, &unk_818858, &aP6); /*0x42ca80*/
+    int v20 = (**v18)(v18, &unk_818858, &aP6); /*0x42ca80*/
     LOBYTE(v19) = v20 < 0; /*0x42ca88*/
-    v21 = aP6 & (v19 - 1); /*0x42ca8c*/
+    int v21 = aP6 & (v19 - 1); /*0x42ca8c*/
     if ( v20 < 0 && v20 != -2147467262 ) /*0x42ca97*/
       WinAPI::Wrapper(v20); /*0x42ca9a*/
     if ( !v21 ) /*0x42caa1*/
 LABEL_18:
       WinAPI::Wrapper(-2147467261); /*0x42caa8*/
+  _DWORD v33[4]; // [esp+28h] [ebp-10h] BYREF
     (*(void (__stdcall **)(int, _DWORD *))(*(_DWORD *)v21 + 12))(v21, v33); /*0x42cab5*/
     (*(void (__stdcall **)(int))(*(_DWORD *)v21 + 8))(v21); /*0x42cabf*/
   }
@@ -2298,7 +2054,7 @@ LABEL_18:
     return 0; /*0x42cb3f*/
   }
   aP4b = 0; /*0x42cb8f*/
-  v24 = -(a6 != -1); /*0x42cb9a*/
+  int v24 = -(a6 != -1); /*0x42cb9a*/
   LOBYTE(v24) = v24 & 0xFC; /*0x42cb9c*/
   TileIndexMapClass = (IUnknown *)(v24 + 5); /*0x42cba1*/
   while ( 1 ) /*0x42cba5*/
@@ -2316,9 +2072,9 @@ LABEL_18:
     v31 = result; /*0x42cc09*/
     if ( result || !(_BYTE)aP6 ) /*0x42cc19*/
       break; /*0x42cc19*/
-    v25 = abs32(*(__int16 *)&aP1->__pad_0[2] - a2[1]); /*0x42cc31*/
-    v26 = *(__int16 *)aP1->__pad_0 - *a2; /*0x42cc38*/
-    v27 = (HIDWORD(v26) ^ v26) - HIDWORD(v26); /*0x42cc3b*/
+    signed int v25 = abs32(*(__int16 *)&aP1->__pad_0[2] - a2[1]); /*0x42cc31*/
+    __int64 v26 = *(__int16 *)aP1->__pad_0 - *a2; /*0x42cc38*/
+    int v27 = (HIDWORD(v26) ^ v26) - HIDWORD(v26); /*0x42cc3b*/
     if ( v27 <= v25 ) /*0x42cc3f*/
       v27 = v25; /*0x42cc41*/
     if ( v27 > 1 ) /*0x42cc46*/
@@ -2326,7 +2082,7 @@ LABEL_18:
     aP4b = (IUnknown *)((char *)aP4b + 1); /*0x42cc75*/
     sub_42CCD0(this, aP4); /*0x42cc79*/
     CellClass::ClearOccupancyGrid((_DWORD *)this); /*0x42cc80*/
-    v28 = (unsigned char)this->M56; /*0x42cc85*/
+    char v28 = (unsigned char)this->M56; /*0x42cc85*/
     LOBYTE(aP6) = v28 != 0; /*0x42cc93*/
     if ( (int)aP4b >= (int)TileIndexMapClass /*0x42ccb3*/
       || v28
@@ -2350,45 +2106,28 @@ namespace gamemd {
 void E4Recv_42CCD0::sub_42CCD0(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_42CCD0(int this, int a2)
+void sub_42CCD0(int this, int a2)
 {
-  int v2; // ebx
-  int v3; // ebp
-  int *v4; // esi
+  E4Recv_42CCD0 *v2; // ebx
   unsigned __int16 v5; // di
   __int16 *v6; // ebx
-  void *v7; // eax
-  int v8; // eax
-  void *v9; // eax
-  int v10; // edx
-  unsigned int v11; // eax
-  unsigned int v12; // ecx
-  int v13; // edi
-  int v14; // eax
-  int v15; // edx
-  int v16; // eax
-  int v17; // edx
-  int v19; // [esp+14h] [ebp-24h]
-  int v20; // [esp+18h] [ebp-20h]
   unsigned int i; // [esp+1Ch] [ebp-1Ch]
   void **v22; // [esp+20h] [ebp-18h] BYREF
   void *Block; // [esp+24h] [ebp-14h]
-  int v24; // [esp+28h] [ebp-10h]
-  char v25; // [esp+2Dh] [ebp-Bh]
-  int v26; // [esp+30h] [ebp-8h]
-  int v27; // [esp+34h] [ebp-4h]
 
   v2 = this; /*0x42ccd4*/
-  v3 = 0; /*0x42ccf4*/
-  v4 = (int *)(this + 124); /*0x42ccf6*/
-  v20 = DataGlobal_87F858 + 10 * CellToTileIndexMap((int *)&DataGlobal_87F7E8, (__int16 *)(this + 112)); /*0x42ccfc*/
+  int v3 = 0; /*0x42ccf4*/
+  int * v4 = (int *)(this + 124); /*0x42ccf6*/
+  int v20 = DataGlobal_87F858 + 10 * CellToTileIndexMap((int *)&DataGlobal_87F7E8, (__int16 *)(this + 112)); /*0x42ccfc*/
   while ( 1 ) /*0x42cd12*/
   {
+  void *v9; // eax
     v5 = *(_WORD *)(v20 + 2 * v3); /*0x42cd12*/
     WordVector::Constructor(&v22, 0, 0); /*0x42cd16*/
     v22 = &vt_DynamicVectorClass_unsigned_short_7E3844; /*0x42cd1f*/
-    v27 = 10; /*0x42cd29*/
-    v26 = 0; /*0x42cd31*/
+    int v27 = 10; /*0x42cd29*/
+    int v26 = 0; /*0x42cd31*/
+  char v25; // [esp+2Dh] [ebp-Bh]
     if ( Block && v25 ) /*0x42cd41*/
     {
       __3_YAXPAX_Z(Block); /*0x42cd44*/
@@ -2396,11 +2135,11 @@ void __thiscall sub_42CCD0(int this, int a2)
     }
     v6 = (__int16 *)(v2 + 112); /*0x42cd5e*/
     v25 = 0; /*0x42cd68*/
-    v24 = 0; /*0x42cd6d*/
-    v7 = CellCoord::To_CellObj(&DataGlobal_87F7E8, v6); /*0x42cd75*/
+    int v24 = 0; /*0x42cd6d*/
+    void * v7 = CellCoord::To_CellObj(&DataGlobal_87F7E8, v6); /*0x42cd75*/
     if ( CheckMapReachability(&DataGlobal_87F7E8, (int)v7, v3, (int)&v22, a2) ) /*0x42cd80*/
     {
-      v8 = CellToTileIndexMap((int *)&DataGlobal_87F7E8, v6); /*0x42cd8f*/
+      int v8 = CellToTileIndexMap((int *)&DataGlobal_87F7E8, v6); /*0x42cd8f*/
       sub_42CF80((_BYTE *)this, *(unsigned __int16 *)(DataGlobal_87F858 + 10 * v8 + 2 * v3), v3); /*0x42cdac*/
       v9 = Block; /*0x42cdb1*/
       v22 = &vt_VectorClass_unsigned_short_7E3824; /*0x42cdb9*/
@@ -2409,14 +2148,14 @@ void __thiscall sub_42CCD0(int this, int a2)
     }
     else
     {
-      v10 = v26 - 1; /*0x42cddc*/
-      v19 = v26 - 1; /*0x42cde1*/
+      int v10 = v26 - 1; /*0x42cddc*/
+      int v19 = v26 - 1; /*0x42cde1*/
       if ( v26 - 1 >= 0 ) /*0x42cde5*/
       {
-        v11 = v5; /*0x42cde9*/
+        unsigned int v11 = v5; /*0x42cde9*/
         for ( i = v5; ; v11 = i ) /*0x42cdee*/
         {
-          v12 = *((unsigned __int16 *)Block + v10); /*0x42cdfe*/
+          unsigned int v12 = *((unsigned __int16 *)Block + v10); /*0x42cdfe*/
           if ( (unsigned __int16)v12 != v11 ) /*0x42ce04*/
           {
             if ( (unsigned __int16)v12 < v11 ) /*0x42ce06*/
@@ -2424,15 +2163,16 @@ void __thiscall sub_42CCD0(int this, int a2)
               v12 = v11; /*0x42ce0a*/
               v11 = *((unsigned __int16 *)Block + v10); /*0x42ce0c*/
             }
-            v13 = v12 | (v11 << 16); /*0x42ce16*/
-            v14 = *v4; /*0x42ce18*/
+            int v13 = v12 | (v11 << 16); /*0x42ce16*/
+            int v14 = *v4; /*0x42ce18*/
             if ( v4[2] < *v4 /*0x42ce3b*/
               || (*((_BYTE *)v4 + 5) || !v14)
+  int v15; // edx
               && (v15 = v4[3], v15 > 0)
               && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(*(v4 - 2) + 8))(v4 - 2, v14 + v15, 0) )
             {
-              v16 = v4[2]; /*0x42ce42*/
-              v17 = *(v4 - 1); /*0x42ce45*/
+              int v16 = v4[2]; /*0x42ce42*/
+              int v17 = *(v4 - 1); /*0x42ce45*/
               v4[2] = v16 + 1; /*0x42ce4b*/
               *(_DWORD *)(v17 + 4 * v16) = v13; /*0x42ce4e*/
             }
@@ -2468,42 +2208,18 @@ namespace gamemd {
 void E4Recv_42CF80::sub_42CF80(int a2, IUnknown * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_42CF80(_BYTE *this, int a2, IUnknown *aP2)
+void sub_42CF80(_BYTE *this, int a2, IUnknown *aP2)
 {
   IUnknown *v3; // esi
-  int v5; // edx
-  int v6; // eax
   unsigned __int16 *i; // ecx
-  int v8; // eax
-  int v9; // edi
-  int v10; // eax
-  int v11; // ecx
-  int v12; // eax
-  int v13; // ebx
-  int v14; // eax
-  int v15; // edx
-  int v16; // ecx
-  int v17; // esi
-  unsigned int v18; // eax
-  unsigned int v19; // ecx
-  unsigned int v20; // eax
-  unsigned int v21; // edx
-  int v22; // edi
-  int v23; // eax
-  int v24; // ecx
-  int v25; // eax
-  int v26; // edx
-  unsigned int v27; // [esp+10h] [ebp-14h]
-  int v28; // [esp+14h] [ebp-10h]
   int j; // [esp+18h] [ebp-Ch]
   unsigned int k; // [esp+1Ch] [ebp-8h]
-  int v31; // [esp+20h] [ebp-4h]
 
   v3 = aP2; /*0x42cf86*/
-  v5 = *((_DWORD *)this + (_DWORD)aP2 + 797); /*0x42cf8d*/
+  int v5 = *((_DWORD *)this + (_DWORD)aP2 + 797); /*0x42cf8d*/
   if ( v5 > 1 ) /*0x42cf97*/
   {
-    v6 = 0; /*0x42cfa7*/
+    int v6 = 0; /*0x42cfa7*/
     for ( i = (unsigned __int16 *)(this + 1000 * (_DWORD)aP2 + 188); *i != a2; ++i ) /*0x42cfba*/
     {
       if ( ++v6 >= v5 ) /*0x42cfd0*/
@@ -2518,22 +2234,23 @@ void __thiscall sub_42CF80(_BYTE *this, int a2, IUnknown *aP2)
     }
     else
     {
+  int v9; // edi
       if ( v6 == v5 - 1 ) /*0x42cffc*/
       {
-        v8 = v6 + 500 * (_DWORD)aP2; /*0x42d001*/
+        int v8 = v6 + 500 * (_DWORD)aP2; /*0x42d001*/
         LOWORD(v9) = *((_WORD *)this + v8 + 94); /*0x42d004*/
         LOWORD(aP2) = *((_WORD *)this + v8 + 93); /*0x42d014*/
       }
       else
       {
-        v10 = v6 + 500 * (_DWORD)aP2; /*0x42d01e*/
+        int v10 = v6 + 500 * (_DWORD)aP2; /*0x42d01e*/
         LOWORD(v9) = *((_WORD *)this + v10 + 95); /*0x42d029*/
         LOWORD(aP2) = *((_WORD *)this + v10 + 94); /*0x42d031*/
       }
       v9 = (unsigned __int16)v9; /*0x42d03a*/
-      v11 = (unsigned __int16)aP2; /*0x42d040*/
-      v12 = v9; /*0x42d046*/
-      v27 = (unsigned __int16)aP2; /*0x42d04a*/
+      int v11 = (unsigned __int16)aP2; /*0x42d040*/
+      int v12 = v9; /*0x42d046*/
+      unsigned int v27 = (unsigned __int16)aP2; /*0x42d04a*/
       if ( (unsigned __int16)aP2 != (unsigned __int16)v9 ) /*0x42d04e*/
       {
         if ( (unsigned __int16)aP2 < (unsigned int)(unsigned __int16)v9 ) /*0x42d050*/
@@ -2544,47 +2261,48 @@ void __thiscall sub_42CF80(_BYTE *this, int a2, IUnknown *aP2)
         a2 = v11 | (v12 << 16); /*0x42d060*/
         sub_42D830((_DWORD *)this + 6 * (_DWORD)v3 + 29, &a2); /*0x42d06d*/
       }
-      v13 = 24 * (_DWORD)v3; /*0x42d079*/
-      v14 = DataGlobal_87F878[6 * (_DWORD)v3]; /*0x42d082*/
-      v15 = v14 + 36 * (unsigned __int16)v9; /*0x42d088*/
-      v31 = v15; /*0x42d08e*/
+      int v13 = 24 * (_DWORD)v3; /*0x42d079*/
+      int v14 = DataGlobal_87F878[6 * (_DWORD)v3]; /*0x42d082*/
+      int v15 = v14 + 36 * (unsigned __int16)v9; /*0x42d088*/
+      int v31 = v15; /*0x42d08e*/
       a2 = v14 + 36 * v27; /*0x42d092*/
-      v16 = *(_DWORD *)(v15 + 16) - 1; /*0x42d099*/
+      int v16 = *(_DWORD *)(v15 + 16) - 1; /*0x42d099*/
       for ( j = v16; v16 >= 0; j = v16 ) /*0x42d09e*/
       {
         if ( *(_WORD *)(*(_DWORD *)(v15 + 4) + 8 * v16) != (_WORD)aP2 ) /*0x42d0b0*/
         {
-          v17 = *(_DWORD *)(a2 + 16) - 1; /*0x42d0bd*/
-          v28 = v17; /*0x42d0be*/
+          int v17 = *(_DWORD *)(a2 + 16) - 1; /*0x42d0bd*/
+          int v28 = v17; /*0x42d0be*/
           if ( v17 >= 0 ) /*0x42d0c2*/
           {
-            v18 = *(unsigned __int16 *)(*(_DWORD *)(v15 + 4) + 8 * v16); /*0x42d0c8*/
+            unsigned int v18 = *(unsigned __int16 *)(*(_DWORD *)(v15 + 4) + 8 * v16); /*0x42d0c8*/
             for ( k = v18; ; v18 = k ) /*0x42d0cd*/
             {
               if ( *(_DWORD *)(*(_DWORD *)(a2 + 4) + 8 * v17) == v18 ) /*0x42d0e1*/
               {
-                v19 = v18; /*0x42d0e3*/
-                v20 = v27; /*0x42d0e5*/
+                unsigned int v19 = v18; /*0x42d0e3*/
+                unsigned int v20 = v27; /*0x42d0e5*/
                 if ( v19 != v27 ) /*0x42d0eb*/
                 {
                   if ( v19 < v27 ) /*0x42d0ed*/
                   {
-                    v21 = v19; /*0x42d0ef*/
+                    unsigned int v21 = v19; /*0x42d0ef*/
                     v19 = v27; /*0x42d0f1*/
                     v20 = v21; /*0x42d0f3*/
                   }
-                  v22 = v19 | (v20 << 16); /*0x42d105*/
-                  v23 = *(_DWORD *)(this + v13 + 124); /*0x42d107*/
+                  int v22 = v19 | (v20 << 16); /*0x42d105*/
+                  int v23 = *(_DWORD *)(this + v13 + 124); /*0x42d107*/
                   if ( *(_DWORD *)(this + v13 + 132) < v23 /*0x42d129*/
                     || (*(this + v13 + 129) || !v23)
+  int v24; // ecx
                     && (v24 = *(_DWORD *)(this + v13 + 136), v24 > 0)
                     && (*(unsigned __int8 (__thiscall **)(_BYTE *, int, _DWORD))(*(_DWORD *)(this + v13 + 116) + 8))(
                          this + v13 + 116,
                          v23 + v24,
                          0) )
                   {
-                    v25 = *(_DWORD *)(this + v13 + 132); /*0x42d130*/
-                    v26 = *(_DWORD *)(this + v13 + 120); /*0x42d133*/
+                    int v25 = *(_DWORD *)(this + v13 + 132); /*0x42d130*/
+                    int v26 = *(_DWORD *)(this + v13 + 120); /*0x42d133*/
                     *(_DWORD *)(this + v13 + 132) = v25 + 1; /*0x42d139*/
                     *(_DWORD *)(v26 + 4 * v25) = v22; /*0x42d13c*/
                   }
@@ -2617,13 +2335,11 @@ unsigned int * Cell_GetNeighborCoord(unsigned int * a1, short * a2, int a3)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__fastcall Cell_GetNeighborCoord(_DWORD *a1, __int16 *a2, int a3)
 {
-  int v4; // eax
   __int16 v6; // ax
-  int v7; // [esp+8h] [ebp+4h]
 
   if ( a3 == 8 ) /*0x42d49a*/
   {
-    v4 = *((__int16 *)CellCoord::To_CellObj(&DataGlobal_87F7E8, a2) + 139); /*0x42d4a7*/
+    int v4 = *((__int16 *)CellCoord::To_CellObj(&DataGlobal_87F7E8, a2) + 139); /*0x42d4a7*/
     if ( v4 == -1 ) /*0x42d4b1*/
       *a1 = 0; /*0x42d4d7*/
     else
@@ -2633,6 +2349,7 @@ _DWORD *__fastcall Cell_GetNeighborCoord(_DWORD *a1, __int16 *a2, int a3)
   else
   {
     v6 = HIWORD(Direction_X_Offsets[a3]); /*0x42d4ea*/
+  int v7; // [esp+8h] [ebp+4h]
     LOWORD(v7) = LOWORD(Direction_X_Offsets[a3]) + *a2; /*0x42d4f6*/
     HIWORD(v7) = a2[1] + v6; /*0x42d4fb*/
     *a1 = v7; /*0x42d504*/
@@ -2649,23 +2366,19 @@ int sub_42E150()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __usercall sub_42E150@<eax>(int result@<eax>, _DWORD *a2@<ecx>)
 {
-  int v2; // edx
-  int v3; // eax
-  int v4; // edx
-  int v5; // ecx
-  _DWORD v6[4]; // [esp+0h] [ebp-10h] BYREF
 
-  v2 = a2[6]; /*0x42e150*/
+  int v2 = a2[6]; /*0x42e150*/
   if ( v2 ) /*0x42e158*/
   {
     if ( *(_DWORD *)(g_FileSystem_THEATER_PAL + 4) == 1 ) /*0x42e164*/
-      v3 = *(unsigned __int8 *)(*(_DWORD *)(g_FileSystem_THEATER_PAL + 372) + v2); /*0x42e172*/
+      int v3 = *(unsigned __int8 *)(*(_DWORD *)(g_FileSystem_THEATER_PAL + 372) + v2); /*0x42e172*/
     else
       v3 = *(unsigned __int16 *)(*(_DWORD *)(g_FileSystem_THEATER_PAL + 372) + 2 * v2); /*0x42e17f*/
+  _DWORD v6[4]; // [esp+0h] [ebp-10h] BYREF
     v6[0] = *a2; /*0x42e186*/
     v6[1] = a2[1]; /*0x42e18d*/
-    v4 = a2[2]; /*0x42e191*/
-    v5 = a2[3]; /*0x42e194*/
+    int v4 = a2[2]; /*0x42e191*/
+    int v5 = a2[3]; /*0x42e194*/
     v6[2] = v4; /*0x42e197*/
     v6[3] = v5; /*0x42e19b*/
     return (*(int (__thiscall **)(int, _DWORD *, int))(*(_DWORD *)g_DSurface_Hidden_2 + 88))(g_DSurface_Hidden_2, v6, v3); /*0x42e1ac*/
@@ -2682,19 +2395,8 @@ int EncodeBitmapRGB(Pipe * aP0, int edx0, unsigned char * a2, int a4)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall EncodeBitmapRGB(Pipe *aP0, int edx0, _BYTE *a2, int a4)
 {
-  int v4; // eax
   Pipe *v5; // ebp
-  _BYTE *v6; // ecx
-  char v7; // al
-  int v8; // edi
-  char v9; // al
-  char v10; // al
-  _BYTE *v11; // ecx
-  char *v12; // ecx
   char needsRedraw; // al
-  char *v14; // ecx
-  char v15; // al
-  int v17; // [esp+4h] [ebp-4h]
   unsigned int a2a; // [esp+Ch] [ebp+4h]
 
   if ( !aP0 ) /*0x42fd34*/
@@ -2703,19 +2405,20 @@ int __fastcall EncodeBitmapRGB(Pipe *aP0, int edx0, _BYTE *a2, int a4)
     return 0; /*0x42fd3c*/
   if ( !a2 ) /*0x42fd48*/
     return 0; /*0x42fd48*/
-  v4 = a4; /*0x42fd4e*/
+  int v4 = a4; /*0x42fd4e*/
   if ( !a4 ) /*0x42fd54*/
     return 0; /*0x42fe46*/
   v5 = aP0; /*0x42fd5c*/
-  v17 = 0; /*0x42fd61*/
-  v6 = a2; /*0x42fd69*/
+  int v17 = 0; /*0x42fd61*/
+  _BYTE * v6 = a2; /*0x42fd69*/
   if ( edx0 > 0 ) /*0x42fd6b*/
   {
+  int v8; // edi
     while ( 1 ) /*0x42fd71*/
     {
       if ( v4 < 4 ) /*0x42fd74*/
         goto LABEL_19; /*0x42fd74*/
-      v7 = v5->__pad_0[0]; /*0x42fd7a*/
+      char v7 = v5->__pad_0[0]; /*0x42fd7a*/
       v8 = 0; /*0x42fd7d*/
       v5 = (Pipe *)((char *)v5 + 1); /*0x42fd7f*/
       a2a = 0; /*0x42fd80*/
@@ -2723,29 +2426,29 @@ int __fastcall EncodeBitmapRGB(Pipe *aP0, int edx0, _BYTE *a2, int a4)
       BYTE2(a2a) = v7; /*0x42fd85*/
       if ( !edx0 ) /*0x42fd89*/
         break; /*0x42fd89*/
-      v9 = v5->__pad_0[0]; /*0x42fd8b*/
+      char v9 = v5->__pad_0[0]; /*0x42fd8b*/
       v5 = (Pipe *)((char *)v5 + 1); /*0x42fd8e*/
       --edx0; /*0x42fd8f*/
       BYTE1(a2a) = v9; /*0x42fd90*/
       if ( !edx0 ) /*0x42fd96*/
         goto LABEL_11; /*0x42fd96*/
-      v10 = v5->__pad_0[0]; /*0x42fd98*/
+      char v10 = v5->__pad_0[0]; /*0x42fd98*/
       v5 = (Pipe *)((char *)v5 + 1); /*0x42fd9b*/
       LOBYTE(a2a) = v10; /*0x42fd9c*/
       --edx0; /*0x42fda0*/
 LABEL_12:
-      v11 = v6 + 1; /*0x42fda9*/
+      _BYTE * v11 = v6 + 1; /*0x42fda9*/
       *(v11 - 1) = *((_BYTE *)stru_81898C.ambientSoundController + ((a2a >> 18) & 0x3F)); /*0x42fdbf*/
-      v12 = v11 + 1; /*0x42fdd0*/
+      char * v12 = v11 + 1; /*0x42fdd0*/
       *(v12 - 1) = *((_BYTE *)stru_81898C.ambientSoundController + ((a2a >> 12) & 0x3F)); /*0x42fdd7*/
       if ( v8 >= 2 ) /*0x42fdda*/
         needsRedraw = stru_81898C.needsRedraw; /*0x42fdf4*/
       else
         needsRedraw = *((_BYTE *)stru_81898C.ambientSoundController + ((a2a >> 6) & 0x3F)); /*0x42fdea*/
       *v12 = needsRedraw; /*0x42fdf6*/
-      v14 = v12 + 1; /*0x42fdf8*/
+      char * v14 = v12 + 1; /*0x42fdf8*/
       if ( v8 >= 1 ) /*0x42fdfc*/
-        v15 = stru_81898C.needsRedraw; /*0x42fe10*/
+        char v15 = stru_81898C.needsRedraw; /*0x42fe10*/
       else
         v15 = *((_BYTE *)stru_81898C.ambientSoundController + (a2a & 0x3F)); /*0x42fe06*/
       *v14 = v15; /*0x42fe16*/
@@ -2776,35 +2479,30 @@ int DecodeBitmapRGB(Pipe * aP0, BombClass * aP1, unsigned char * a2, int a4)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall DecodeBitmapRGB(Pipe *aP0, BombClass *aP1, _BYTE *a2, int a4)
 {
-  _BYTE *v4; // esi
-  int v5; // eax
   Pipe *v6; // ebp
-  int v7; // ebx
-  int v8; // edi
   unsigned __int8 v9; // cl
-  char v10; // cl
-  int v11; // ecx
-  unsigned int v12; // ebx
-  _BYTE *v13; // ecx
   _BYTE *a2a; // [esp+Ch] [ebp+4h]
-  char v16; // [esp+12h] [ebp+Ah]
 
   if ( aP0 ) /*0x42fe54*/
   {
     if ( aP1 ) /*0x42fe5c*/
     {
-      v4 = a2; /*0x42fe62*/
+      _BYTE * v4 = a2; /*0x42fe62*/
       if ( a2 ) /*0x42fe68*/
       {
-        v5 = a4; /*0x42fe6e*/
+        int v5 = a4; /*0x42fe6e*/
         if ( a4 ) /*0x42fe74*/
         {
+  char v10; // cl
+  int v8; // edi
+  int v7; // ebx
           a2a = 0; /*0x42fe7f*/
           v6 = aP0; /*0x42fe87*/
           if ( (int)aP1 <= 0 ) /*0x42fe89*/
             return (int)a2a; /*0x42fe89*/
           while ( 1 ) /*0x42fe8f*/
           {
+  char v16; // [esp+12h] [ebp+Ah]
             if ( v5 <= 0 ) /*0x42fe91*/
               return (int)a2a; /*0x42fe91*/
             v7 = 0; /*0x42fe97*/
@@ -2834,7 +2532,7 @@ LABEL_18:
 LABEL_20:
             *v4++ = v16; /*0x42ff14*/
             --v5; /*0x42ff1f*/
-            v13 = ++a2a; /*0x42ff20*/
+            _BYTE * v13 = ++a2a; /*0x42ff20*/
             if ( v5 > 0 ) /*0x42ff27*/
             {
               if ( v8 > 2 ) /*0x42ff2c*/
@@ -2856,8 +2554,8 @@ LABEL_20:
           switch ( v8 ) /*0x42fecf*/
           {
             case 0: /*0x42fecf*/
-              v11 = (v10 & 0x3F) << 18; /*0x42fed9*/
-              v12 = v7 & 0xFF03FFFF; /*0x42fedc*/
+              int v11 = (v10 & 0x3F) << 18; /*0x42fed9*/
+              unsigned int v12 = v7 & 0xFF03FFFF; /*0x42fedc*/
               goto LABEL_16; /*0x42fee2*/
             case 1: /*0x42fecf*/
               v11 = (v10 & 0x3F) << 12; /*0x42fee7*/

@@ -6,7 +6,7 @@
 int DialogQueue::PushEntry()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_5D4E70(void *this)
+void sub_5D4E70(void *this)
 {
   int result; // eax
 
@@ -31,12 +31,11 @@ int __thiscall sub_5D4E70(void *this)
 int DialogQueue::RemoveEntry()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall DialogQueue::RemoveEntry(void *this)
+void DialogQueue::RemoveEntry()
 {
   int result; // eax
-  void *v2; // [esp+0h] [ebp-4h] BYREF
 
-  v2 = this; /*0x5d4ed7*/
+  DialogQueue *v2 = this; /*0x5d4ed7*/
   result = (*(int (__thiscall **)(int *, void **))(DataGlobal_ABFC90 + 16))(&DataGlobal_ABFC90, &v2); /*0x5d4ee5*/
   if ( result != -1 && result < DataGlobal_ABFCA0 && result < --DataGlobal_ABFCA0 ) /*0x5d4f00*/
   {

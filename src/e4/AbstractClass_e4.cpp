@@ -14,18 +14,10 @@ namespace gamemd {
 void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall AbstractClass::Initialize(_DWORD *this, TechnoClass *aP1, TechnoClass *aP2)
+void AbstractClass::Initialize(TechnoClass *aP1, TechnoClass *aP2)
 {
   AbstractClass *v4; // eax
   AbstractClass *v5; // esi
-  int v6; // eax
-  int v7; // ecx
-  int v8; // eax
-  int v9; // ecx
-  int v10; // eax
-  int v11; // edx
-  _DWORD v12[3]; // [esp+Ch] [ebp-Ch] BYREF
-
   if ( aP1 /*0x438ea3*/
     && (*(int (__thiscall **)(TechnoClass *))(*(_DWORD *)aP1->__pad_0 + 44))(aP1) == 15
     && aP2
@@ -54,7 +46,7 @@ void __thiscall AbstractClass::Initialize(_DWORD *this, TechnoClass *aP1, Techno
              dword_89C670 + dword_89C67C,
              0) )
       {
-        v6 = dword_89C678++; /*0x438f44*/
+        int v6 = dword_89C678++; /*0x438f44*/
         *((_DWORD *)unk_89C66C + v6) = v5; /*0x438f53*/
       }
     }
@@ -66,18 +58,19 @@ void __thiscall AbstractClass::Initialize(_DWORD *this, TechnoClass *aP1, Techno
     *(_DWORD *)v5[1].__pad_0 = aP1; /*0x438f69*/
     *(_DWORD *)&v5[1].__pad_0[8] = aP2; /*0x438f6c*/
     v5[1].uniqueId = *(_DWORD *)&g_NetworkPlayerBuffer[5960]; /*0x438f75*/
-    v7 = v5[1].uniqueId + *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[30972] + 4048); /*0x438f87*/
+    int v7 = v5[1].uniqueId + *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[30972] + 4048); /*0x438f87*/
     *(_DWORD *)&v5[1].__pad_0[12] = 0; /*0x438f89*/
     v5[1].abstractFlags = v7; /*0x438f8c*/
     aP2->attachedBomb = v5; /*0x438f8f*/
-    v8 = this->vtable3; /*0x438f92*/
+    int v8 = this->vtable3; /*0x438f92*/
     if ( this->uniqueId < v8 /*0x438fb4*/
       || (this->q034 || !v8)
+  int v9; // ecx
       && (v9 = this->abstractFlags, v9 > 0)
       && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*this + 8))(this, v8 + v9, 0) )
     {
-      v10 = this->uniqueId; /*0x438fbb*/
-      v11 = this->vtable2; /*0x438fbe*/
+      int v10 = this->uniqueId; /*0x438fbb*/
+      int v11 = this->vtable2; /*0x438fbe*/
       this->uniqueId = v10 + 1; /*0x438fc4*/
       *(_DWORD *)(v11 + 4 * v10) = v5; /*0x438fc7*/
     }
@@ -86,6 +79,7 @@ void __thiscall AbstractClass::Initialize(_DWORD *this, TechnoClass *aP1, Techno
     {
       if ( (unsigned __int8)House::IsHumanPlayer((#375 *)aP1->focus) ) /*0x438fe6*/
       {
+  _DWORD v12[3]; // [esp+Ch] [ebp-Ch] BYREF
         v12[0] = aP2->location[0]; /*0x438ffc*/
         v12[1] = aP2->location[1]; /*0x439007*/
         v12[2] = aP2->location[2]; /*0x439013*/
@@ -129,43 +123,7 @@ int AbstractClass_RemoveObjectFromHouse()
 void ***__userpurge RemoveObjectFromHouse@<eax>(_DWORD *a1@<ecx>, int a2@<edi>, void **a3, void **a4, void **a5)
 {
   void **v5; // ebp
-  int v7; // eax
-  int v8; // ecx
-  int v9; // ecx
-  int v10; // edx
-  int v11; // eax
-  int v12; // edx
-  int v13; // eax
-  int v14; // ecx
-  int v15; // ecx
-  int v16; // eax
-  int v17; // eax
-  int v18; // edx
-  int v19; // eax
-  int v20; // ecx
-  int v21; // ecx
-  int v22; // eax
-  int v23; // eax
-  int v24; // edx
-  int v25; // eax
-  int v26; // ecx
-  int v27; // ecx
-  int v28; // eax
-  int v29; // eax
-  int v30; // edx
-  int v31; // eax
-  int v32; // edx
-  int v33; // eax
-  int v34; // ecx
-  int v35; // ecx
-  int v36; // eax
-  int v37; // eax
-  int v38; // edx
-  int v39; // eax
-  int v40; // ecx
-  int v41; // ecx
   void ***result; // eax
-  int v43; // ecx
 
   v5 = a3; /*0x4fb9b2*/
   if ( (void **)a1[5432] == a3 ) /*0x4fb9c1*/
@@ -173,13 +131,13 @@ void ***__userpurge RemoveObjectFromHouse@<eax>(_DWORD *a1@<ecx>, int a2@<edi>, 
   a3 = (void **)__RTDynamicCast(v5, 0, &AbstractClass `RTTI Type Descriptor', &TagClass `RTTI Type Descriptor', 0); /*0x4fb9e1*/
   if ( a3 ) /*0x4fb9e5*/
   {
-    v7 = (*(int (__thiscall **)(_DWORD *, void ***))(a1[14] + 16))(a1 + 14, &a3); /*0x4fb9f4*/
+    int v7 = (*(int (__thiscall **)(_DWORD *, void ***))(a1[14] + 16))(a1 + 14, &a3); /*0x4fb9f4*/
     if ( v7 != -1 ) /*0x4fb9fa*/
     {
-      v8 = a1[18]; /*0x4fb9fc*/
+      int v8 = a1[18]; /*0x4fb9fc*/
       if ( v7 < v8 ) /*0x4fba01*/
       {
-        v9 = v8 - 1; /*0x4fba03*/
+        int v9 = v8 - 1; /*0x4fba03*/
         for ( a1[18] = v9; v7 < a1[18]; *(_DWORD *)(a1[15] + 4 * v7 - 4) = *(_DWORD *)(a1[15] + 4 * v7) ) /*0x4fba09*/
           ++v7; /*0x4fba0e*/
       }
@@ -187,97 +145,97 @@ void ***__userpurge RemoveObjectFromHouse@<eax>(_DWORD *a1@<ecx>, int a2@<edi>, 
   }
   if ( (*((int (__thiscall **)(void **))*v5 + 11))(v5) == 6 && (_BYTE)a4 ) /*0x4fba32*/
   {
-    v10 = a1[20]; /*0x4fba38*/
+    int v10 = a1[20]; /*0x4fba38*/
     a4 = v5; /*0x4fba45*/
-    v11 = (*(int (__thiscall **)(_DWORD *, void ***, int))(v10 + 16))(a1 + 20, &a4, a2); /*0x4fba49*/
+    int v11 = (*(int (__thiscall **)(_DWORD *, void ***, int))(v10 + 16))(a1 + 20, &a4, a2); /*0x4fba49*/
     if ( v11 != -1 ) /*0x4fba4f*/
       Vector::RemoveAt(a1 + 20, v11); /*0x4fba54*/
-    v12 = a1[32]; /*0x4fba59*/
+    int v12 = a1[32]; /*0x4fba59*/
     a5 = v5; /*0x4fba6c*/
-    v13 = (*(int (__thiscall **)(_DWORD *, void ***))(v12 + 16))(a1 + 32, &a5); /*0x4fba70*/
+    int v13 = (*(int (__thiscall **)(_DWORD *, void ***))(v12 + 16))(a1 + 32, &a5); /*0x4fba70*/
     if ( v13 != -1 ) /*0x4fba76*/
     {
-      v14 = a1[36]; /*0x4fba78*/
+      int v14 = a1[36]; /*0x4fba78*/
       if ( v13 < v14 ) /*0x4fba7d*/
       {
-        v15 = v14 - 1; /*0x4fba7f*/
+        int v15 = v14 - 1; /*0x4fba7f*/
         for ( a1[36] = v15; v13 < a1[36]; *(_DWORD *)(a1[33] + 4 * v13 - 4) = *(_DWORD *)(a1[33] + 4 * v13) ) /*0x4fba85*/
           ++v13; /*0x4fba8a*/
       }
     }
-    v16 = a1[38]; /*0x4fba99*/
+    int v16 = a1[38]; /*0x4fba99*/
     a5 = v5; /*0x4fbaa9*/
-    v17 = (*(int (__thiscall **)(_DWORD *, void ***))(v16 + 16))(a1 + 38, &a5); /*0x4fbab0*/
+    int v17 = (*(int (__thiscall **)(_DWORD *, void ***))(v16 + 16))(a1 + 38, &a5); /*0x4fbab0*/
     if ( v17 != -1 ) /*0x4fbab6*/
       Vector::RemoveAt(a1 + 38, v17); /*0x4fbabb*/
-    v18 = a1[44]; /*0x4fbac0*/
+    int v18 = a1[44]; /*0x4fbac0*/
     a5 = v5; /*0x4fbad3*/
-    v19 = (*(int (__thiscall **)(_DWORD *, void ***))(v18 + 16))(a1 + 44, &a5); /*0x4fbad7*/
+    int v19 = (*(int (__thiscall **)(_DWORD *, void ***))(v18 + 16))(a1 + 44, &a5); /*0x4fbad7*/
     if ( v19 != -1 ) /*0x4fbadd*/
     {
-      v20 = a1[48]; /*0x4fbadf*/
+      int v20 = a1[48]; /*0x4fbadf*/
       if ( v19 < v20 ) /*0x4fbae4*/
       {
-        v21 = v20 - 1; /*0x4fbae6*/
+        int v21 = v20 - 1; /*0x4fbae6*/
         for ( a1[48] = v21; v19 < a1[48]; *(_DWORD *)(a1[45] + 4 * v19 - 4) = *(_DWORD *)(a1[45] + 4 * v19) ) /*0x4fbaec*/
           ++v19; /*0x4fbaf1*/
       }
     }
-    v22 = a1[50]; /*0x4fbb00*/
+    int v22 = a1[50]; /*0x4fbb00*/
     a5 = v5; /*0x4fbb10*/
-    v23 = (*(int (__thiscall **)(_DWORD *, void ***))(v22 + 16))(a1 + 50, &a5); /*0x4fbb17*/
+    int v23 = (*(int (__thiscall **)(_DWORD *, void ***))(v22 + 16))(a1 + 50, &a5); /*0x4fbb17*/
     if ( v23 != -1 ) /*0x4fbb1d*/
       Vector::RemoveAt(a1 + 50, v23); /*0x4fbb22*/
-    v24 = a1[56]; /*0x4fbb27*/
+    int v24 = a1[56]; /*0x4fbb27*/
     a5 = v5; /*0x4fbb3a*/
-    v25 = (*(int (__thiscall **)(_DWORD *, void ***))(v24 + 16))(a1 + 56, &a5); /*0x4fbb3e*/
+    int v25 = (*(int (__thiscall **)(_DWORD *, void ***))(v24 + 16))(a1 + 56, &a5); /*0x4fbb3e*/
     if ( v25 != -1 ) /*0x4fbb44*/
     {
-      v26 = a1[60]; /*0x4fbb46*/
+      int v26 = a1[60]; /*0x4fbb46*/
       if ( v25 < v26 ) /*0x4fbb4b*/
       {
-        v27 = v26 - 1; /*0x4fbb4d*/
+        int v27 = v26 - 1; /*0x4fbb4d*/
         for ( a1[60] = v27; v25 < a1[60]; *(_DWORD *)(a1[57] + 4 * v25 - 4) = *(_DWORD *)(a1[57] + 4 * v25) ) /*0x4fbb53*/
           ++v25; /*0x4fbb58*/
       }
     }
-    v28 = a1[62]; /*0x4fbb67*/
+    int v28 = a1[62]; /*0x4fbb67*/
     a5 = v5; /*0x4fbb77*/
-    v29 = (*(int (__thiscall **)(_DWORD *, void ***))(v28 + 16))(a1 + 62, &a5); /*0x4fbb7e*/
+    int v29 = (*(int (__thiscall **)(_DWORD *, void ***))(v28 + 16))(a1 + 62, &a5); /*0x4fbb7e*/
     if ( v29 != -1 ) /*0x4fbb84*/
       Vector::RemoveAt(a1 + 62, v29); /*0x4fbb89*/
-    v30 = a1[68]; /*0x4fbb8e*/
+    int v30 = a1[68]; /*0x4fbb8e*/
     a5 = v5; /*0x4fbba1*/
-    v31 = (*(int (__thiscall **)(_DWORD *, void ***))(v30 + 16))(a1 + 68, &a5); /*0x4fbba5*/
+    int v31 = (*(int (__thiscall **)(_DWORD *, void ***))(v30 + 16))(a1 + 68, &a5); /*0x4fbba5*/
     if ( v31 != -1 ) /*0x4fbbab*/
       Vector::RemoveAt(a1 + 68, v31); /*0x4fbbb0*/
-    v32 = a1[74]; /*0x4fbbb5*/
+    int v32 = a1[74]; /*0x4fbbb5*/
     a5 = v5; /*0x4fbbc8*/
-    v33 = (*(int (__thiscall **)(_DWORD *, void ***))(v32 + 16))(a1 + 74, &a5); /*0x4fbbcc*/
+    int v33 = (*(int (__thiscall **)(_DWORD *, void ***))(v32 + 16))(a1 + 74, &a5); /*0x4fbbcc*/
     if ( v33 != -1 ) /*0x4fbbd2*/
     {
-      v34 = a1[78]; /*0x4fbbd4*/
+      int v34 = a1[78]; /*0x4fbbd4*/
       if ( v33 < v34 ) /*0x4fbbd9*/
       {
-        v35 = v34 - 1; /*0x4fbbdb*/
+        int v35 = v34 - 1; /*0x4fbbdb*/
         for ( a1[78] = v35; v33 < a1[78]; *(_DWORD *)(a1[75] + 4 * v33 - 4) = *(_DWORD *)(a1[75] + 4 * v33) ) /*0x4fbbe1*/
           ++v33; /*0x4fbbe6*/
       }
     }
-    v36 = a1[80]; /*0x4fbbf5*/
+    int v36 = a1[80]; /*0x4fbbf5*/
     a5 = v5; /*0x4fbc05*/
-    v37 = (*(int (__thiscall **)(_DWORD *, void ***))(v36 + 16))(a1 + 80, &a5); /*0x4fbc0c*/
+    int v37 = (*(int (__thiscall **)(_DWORD *, void ***))(v36 + 16))(a1 + 80, &a5); /*0x4fbc0c*/
     if ( v37 != -1 ) /*0x4fbc12*/
       Vector::RemoveAt(a1 + 80, v37); /*0x4fbc17*/
-    v38 = a1[26]; /*0x4fbc1c*/
+    int v38 = a1[26]; /*0x4fbc1c*/
     a5 = v5; /*0x4fbc29*/
-    v39 = (*(int (__thiscall **)(_DWORD *, void ***))(v38 + 16))(a1 + 26, &a5); /*0x4fbc2d*/
+    int v39 = (*(int (__thiscall **)(_DWORD *, void ***))(v38 + 16))(a1 + 26, &a5); /*0x4fbc2d*/
     if ( v39 != -1 ) /*0x4fbc33*/
     {
-      v40 = a1[30]; /*0x4fbc35*/
+      int v40 = a1[30]; /*0x4fbc35*/
       if ( v39 < v40 ) /*0x4fbc3a*/
       {
-        v41 = v40 - 1; /*0x4fbc3c*/
+        int v41 = v40 - 1; /*0x4fbc3c*/
         for ( a1[30] = v41; v39 < a1[30]; *(_DWORD *)(a1[27] + 4 * v39 - 4) = *(_DWORD *)(a1[27] + 4 * v39) ) /*0x4fbc42*/
           ++v39; /*0x4fbc47*/
       }
@@ -285,7 +243,7 @@ void ***__userpurge RemoveObjectFromHouse@<eax>(_DWORD *a1@<ecx>, int a2@<edi>, 
     HouseClass::CalculateCostMultipliers(a1); /*0x4fbc58*/
   }
   result = (void ***)(a1 + 132); /*0x4fbc5d*/
-  v43 = 12; /*0x4fbc63*/
+  int v43 = 12; /*0x4fbc63*/
   do /*0x4fbc73*/
   {
     if ( *result == v5 ) /*0x4fbc6b*/
@@ -325,32 +283,28 @@ int AbstractClass_getPathDirection()
 char __usercall AbstractClass::sub_5C03D0@<al>(int a1@<ebx>, int a2@<ebp>, int a3@<edi>)
 {
   char result; // al
-  int v4; // edx
-  int v5; // ecx
-  int v6; // edi
-  int v7; // [esp+4h] [ebp-20h] BYREF
-  int v8; // [esp+8h] [ebp-1Ch]
-  int *v9; // [esp+Ch] [ebp-18h]
-  int v10; // [esp+10h] [ebp-14h]
   struct tagRECT Rect; // [esp+14h] [ebp-10h] BYREF
 
   result = g_BigIntPool; /*0x5c03d0*/
   if ( g_BigIntPool ) /*0x5c03da*/
   {
     (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)DSurface_Alternate + 24))(DSurface_Alternate, 0); /*0x5c03ea*/
+  int *v9; // [esp+Ch] [ebp-18h]
+  int v7; // [esp+4h] [ebp-20h] BYREF
+  int v8; // [esp+8h] [ebp-1Ch]
     Frame::Present(DSurface_Alternate, a1, a2, a3, 0, v7, v8, v9); /*0x5c03f7*/
     result = TestBitArray(15); /*0x5c0401*/
     if ( !result ) /*0x5c0408*/
     {
       GetClientRect(g_hWnd, &Rect); /*0x5c0419*/
       ClientToScreen(g_hWnd, (LPPOINT)&Rect); /*0x5c042b*/
-      v4 = *(_DWORD *)(g_BigIntPool + 64); /*0x5c0446*/
-      v5 = Rect.top + *(_DWORD *)(g_BigIntPool + 56); /*0x5c0449*/
-      v6 = *(_DWORD *)(g_BigIntPool + 52); /*0x5c044b*/
+      int v4 = *(_DWORD *)(g_BigIntPool + 64); /*0x5c0446*/
+      int v5 = Rect.top + *(_DWORD *)(g_BigIntPool + 56); /*0x5c0449*/
+      int v6 = *(_DWORD *)(g_BigIntPool + 52); /*0x5c044b*/
       v9 = *(int **)(g_BigIntPool + 60); /*0x5c044e*/
       v8 = v5; /*0x5c0454*/
       v7 = Rect.left + v6; /*0x5c045e*/
-      v10 = v4; /*0x5c0462*/
+      int v10 = v4; /*0x5c0462*/
       return (*(int (__thiscall **)(int, int *, _DWORD, int, _DWORD, int))(*(_DWORD *)g_DSurface_Primary + 8))( /*0x5c0477*/
                g_DSurface_Primary,
                &v7,
@@ -447,25 +401,20 @@ void AbstractClass::ClearTargetToMeClearManagerTarget(int a1)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __fastcall AbstractClass::ClearTargetToMeClearManagerTarget(int a1)
 {
-  int v2; // edi
   int i; // ebx
-  bool v4; // cl
-  _DWORD *v5; // esi
-  int v6; // eax
   int j; // ecx
-  int v8; // eax
 
   if ( a1 )
-    v2 = (*(_BYTE *)(a1 + 20) & 1) != 0 ? a1 : 0;
+    int v2 = (*(_BYTE *)(a1 + 20) & 1) != 0 ? a1 : 0;
   else
     v2 = 0; /*0x70d4a9*/
   for ( i = g_SidebarState - 1; i >= 0; --i ) /*0x70d4c6*/
   {
-    v4 = 1; /*0x70d4d2*/
-    v5 = (_DWORD *)*((_DWORD *)g_TechnoClass_Count + i); /*0x70d4d6*/
+    bool v4 = 1; /*0x70d4d2*/
+    _DWORD * v5 = (_DWORD *)*((_DWORD *)g_TechnoClass_Count + i); /*0x70d4d6*/
     if ( v2 ) /*0x70d4d9*/
     {
-      v6 = v5[165]; /*0x70d4db*/
+      int v6 = v5[165]; /*0x70d4db*/
       if ( v6 ) /*0x70d4e3*/
       {
         if ( *(_DWORD *)(v6 + 80) == a1 && *(int *)(v2 + 108) > 0 ) /*0x70d4ef*/
@@ -486,7 +435,7 @@ void __fastcall AbstractClass::ClearTargetToMeClearManagerTarget(int a1)
   }
   for ( j = g_HouseClass_AIProductionState - 1; j >= 0; --j ) /*0x70d560*/
   {
-    v8 = *((_DWORD *)g_TeamClassPool + j); /*0x70d567*/
+    int v8 = *((_DWORD *)g_TeamClassPool + j); /*0x70d567*/
     if ( *(_DWORD *)(v8 + 60) == a1 ) /*0x70d56d*/
       *(_DWORD *)(v8 + 60) = 0; /*0x70d56f*/
     if ( *(_DWORD *)(v8 + 64) == a1 ) /*0x70d575*/
@@ -503,8 +452,6 @@ void AbstractClass::AnnounceExpiredPointer(AbstractClass * aP0, AbstractClass * 
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __fastcall AbstractClass::AnnounceExpiredPointer(AbstractClass *aP0, AbstractClass *aP1)
 {
-  int v4; // ebx
-  int v5; // ebp
   int k; // ebp
   int i; // ebx
   int j; // ebx
@@ -517,8 +464,8 @@ void __fastcall AbstractClass::AnnounceExpiredPointer(AbstractClass *aP0, Abstra
   int ii; // ebx
   int i1; // ebx
 
-  v4 = (*(int (__thiscall **)(AbstractClass *))(*(_DWORD *)aP0->__pad_0 + 44))(aP0); /*0x7258de*/
-  v5 = 0; /*0x7258e9*/
+  int v4 = (*(int (__thiscall **)(AbstractClass *))(*(_DWORD *)aP0->__pad_0 + 44))(aP0); /*0x7258de*/
+  int v5 = 0; /*0x7258e9*/
   if ( *(AbstractClass **)&stru_87C374[17944] == aP0 ) /*0x7258e7*/
     *(_DWORD *)&stru_87C374[17944] = 0; /*0x7258eb*/
   if ( *(AbstractClass **)&stru_87C374[17948] == aP0 ) /*0x7258fb*/
@@ -1241,13 +1188,10 @@ int AbstractClass_queryInterface()
 _DWORD *__userpurge AbstractClass::sub_464A70@<eax>(int a1@<esi>, _DWORD *a2, int *a3)
 {
   int GroundHeight; // eax
-  int v5; // [esp+4h] [ebp-Ch] BYREF
-  int v6; // [esp+8h] [ebp-8h]
-  int v7; // [esp+Ch] [ebp-4h]
 
-  v5 = *a3; /*0x464a7a*/
-  v6 = a3[1]; /*0x464a8b*/
-  v7 = a3[2]; /*0x464a92*/
+  int v5 = *a3; /*0x464a7a*/
+  int v6 = a3[1]; /*0x464a8b*/
+  int v7 = a3[2]; /*0x464a92*/
   GroundHeight = Cell::GetGroundHeight(&v5); /*0x464a96*/
   *a2 = a1; /*0x464aa5*/
   a2[1] = v6; /*0x464aab*/

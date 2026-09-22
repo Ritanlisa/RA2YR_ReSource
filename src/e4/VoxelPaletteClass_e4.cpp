@@ -6,26 +6,21 @@
 int VoxelPaletteClass::ConvertFromFile(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_758A30(_DWORD *this, int a2)
+void sub_758A30(_DWORD *this, int a2)
 {
-  int v3; // ebx
-  int v4; // eax
-  int v5; // edx
-  int v6; // ecx
-  int v7; // eax
-  _DWORD v9[4]; // [esp+Ch] [ebp-10h] BYREF
 
-  v3 = 0; /*0x758a42*/
+  int v3 = 0; /*0x758a42*/
   if ( !(*(int (__thiscall **)(int, int))(*(_DWORD *)a2 + 28))(a2, 1) ) /*0x758a44*/
     goto LABEL_5; /*0x758a44*/
+  _DWORD v9[4]; // [esp+Ch] [ebp-10h] BYREF
   if ( (*(int (__thiscall **)(int, _DWORD *, int))(*(_DWORD *)a2 + 36))(a2, v9, 16) != 16 ) /*0x758a5c*/
     goto LABEL_5; /*0x758a5c*/
-  v4 = v9[2]; /*0x758a62*/
-  v5 = v9[1]; /*0x758a66*/
+  int v4 = v9[2]; /*0x758a62*/
+  int v5 = v9[1]; /*0x758a66*/
   *this = v9[0]; /*0x758a6a*/
-  v6 = v9[3]; /*0x758a6c*/
+  int v6 = v9[3]; /*0x758a6c*/
   this->q002 = v4; /*0x758a70*/
-  v7 = this->q004; /*0x758a73*/
+  int v7 = this->q004; /*0x758a73*/
   this->q004 = v5; /*0x758a76*/
   this->q003 = v6; /*0x758a79*/
   if ( (*(int (__thiscall **)(int, int, int))(*(_DWORD *)a2 + 36))(a2, v7, 768) != 768 /*0x758aaa*/

@@ -188,34 +188,15 @@ void NetworkManager::RemovePlayer() {}
 void NetworkOptions::DlgProc() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x560480
-int __stdcall NetworkOptions::DlgProc(int hWnd, int a2, int a3, int hCtl)
+void NetworkOptions::DlgProc(int hWnd, int a2, int a3, int hCtl)
 {
   int result; // eax
-  int v5; // edx
-  int v6; // edi
-  _DWORD *v7; // eax
-  _DWORD *v8; // eax
   int i; // ebx
   #72 *v10; // eax
-  int v11; // ebx
-  int v12; // edi
-  int v13; // ebx
-  int v14; // edi
-  int v15; // eax
-  int v16; // eax
   LRESULT (__stdcall *v17)(HWND, UINT, WPARAM, LPARAM); // esi
   __int16 v18; // dx
   #72 *v19; // eax
-  int v20; // eax
-  char *v21; // eax
-  int v22; // ecx
-  int v23; // edx
-  int v24; // edi
-  int *v25; // esi
   #72 *v26; // eax
-  int v27; // eax
-  int v28; // edx
-  int v29; // esi
   #72 *v30; // eax
   #72 *v31; // eax
   #72 *v32; // eax
@@ -224,36 +205,27 @@ int __stdcall NetworkOptions::DlgProc(int hWnd, int a2, int a3, int hCtl)
   #72 *v35; // [esp-10h] [ebp-120h]
   #72 *v36; // [esp-10h] [ebp-120h]
   #72 *v37; // [esp-10h] [ebp-120h]
-  char v38; // [esp+13h] [ebp-FDh]
-  int v39; // [esp+14h] [ebp-FCh]
   __int16 v40; // [esp+14h] [ebp-FCh]
-  int v41; // [esp+18h] [ebp-F8h] BYREF
-  int v42; // [esp+1Ch] [ebp-F4h]
-  int v43; // [esp+20h] [ebp-F0h]
-  int v44; // [esp+24h] [ebp-ECh]
-  _DWORD *v45; // [esp+28h] [ebp-E8h]
   __int128 v46; // [esp+2Ch] [ebp-E4h] BYREF
   const __int16 *v47; // [esp+3Ch] [ebp-D4h]
   const __int16 *v48; // [esp+40h] [ebp-D0h]
   const __int16 *v49; // [esp+44h] [ebp-CCh]
   const __int16 *v50; // [esp+48h] [ebp-C8h]
   const __int16 *v51; // [esp+4Ch] [ebp-C4h]
-  char v52[32]; // [esp+50h] [ebp-C0h] BYREF
   int lParam[16]; // [esp+70h] [ebp-A0h] BYREF
-  char v54[32]; // [esp+B0h] [ebp-60h] BYREF
   char Destination[32]; // [esp+D0h] [ebp-40h] BYREF
   char String[32]; // [esp+F0h] [ebp-20h] BYREF
 
   result = BaseDialogProc(hWnd, a2, a3, hCtl);
   if ( !result )
   {
-    v45 = (_DWORD *)((int (__stdcall *)(int, int))GetWindowLongA)(hWnd, 8);
+    _DWORD * v45 = (_DWORD *)((int (__stdcall *)(int, int))GetWindowLongA)(hWnd, 8);
     if ( a2 == 273 )
     {
       switch ( (unsigned __int16)a3 )
       {
         case 1u:
-          v16 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1489);
+          int v16 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1489);
           v17 = SendMessageA;
           ((void (__stdcall *)(int, int, int, __int128 *))SendMessageA)(v16, 1205, 16, &v46);
           if ( strlen((const char *)&v46) )
@@ -273,22 +245,23 @@ int __stdcall NetworkOptions::DlgProc(int hWnd, int a2, int a3, int hCtl)
           {
             v40 = -1;
           }
-          v20 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1491);
+          int v20 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1491);
+  char v52[32]; // [esp+50h] [ebp-C0h] BYREF
           ((void (__stdcall *)(int, int, int, char *))SendMessageA)(v20, 1205, 32, v52);
           strncpy(Destination, v52, 32);
           if ( strlen(v52) )
           {
-            v21 = strtok(v52, asc_826598);
-            v22 = -1;
-            v23 = -1;
-            v24 = -1;
-            v41 = -1;
-            v42 = -1;
-            v43 = -1;
-            v44 = -1;
+            char * v21 = strtok(v52, asc_826598);
+            int v22 = -1;
+            int v23 = -1;
+            int v24 = -1;
+            int v41 = -1;
+            int v42 = -1;
+            int v43 = -1;
+            int v44 = -1;
             if ( v21 )
             {
-              v25 = &v41;
+              int * v25 = &v41;
               do
               {
                 sscanf(v21, "%x", v25++);
@@ -312,15 +285,16 @@ int __stdcall NetworkOptions::DlgProc(int hWnd, int a2, int a3, int hCtl)
               return 0;
             }
           }
-          v27 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1492);
+          int v27 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1492);
           DataGlobal_87F7E8[539891] = ((int (__stdcall *)(int, int, _DWORD, _DWORD))v17)(v27, 327, 0, 0);
           HIWORD(DataGlobal_87F7E8[539888]) = v40;
           strcpy((char *)&DataGlobal_87F7E8[539892], Destination);
-          v28 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1495);
+          int v28 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1495);
+  char v54[32]; // [esp+B0h] [ebp-60h] BYREF
           memset(v54, 0, sizeof(v54));
           ((void (__stdcall *)(int, int, int, char *))SendMessageA)(v28, 1205, 8, v54);
           strncpy(String, v54, 32);
-          v29 = atoi(String);
+          int v29 = atoi(String);
           if ( v29 > 0xFFFF )
           {
             v47 = asc_82083C;
@@ -371,7 +345,7 @@ int __stdcall NetworkOptions::DlgProc(int hWnd, int a2, int a3, int hCtl)
         case 2u:
           break;
         case 0x5D4u:
-          v15 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1492);
+          int v15 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1492);
           dword_82A280 = ((int (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(v15, 327, 0, 0);
           return 0;
         default:
@@ -384,15 +358,18 @@ int __stdcall NetworkOptions::DlgProc(int hWnd, int a2, int a3, int hCtl)
     {
       if ( a2 == 1243 )
       {
+  int v5; // edx
         LOBYTE(v5) = a3 != 0;
         NavigateDialogTab(hCtl, v5);
         return 0;
       }
       return 0;
     }
-    v6 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1492);
-    v38 = 0;
+    int v6 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1492);
+    char v38 = 0;
     if ( DataGlobal_87F7E8[8080]
+  _DWORD *v7; // eax
+  _DWORD *v8; // eax
       || ((v7 = (_DWORD *)__2_YAPAXI_Z(258832)) == 0 ? (v8 = 0) : (v8 = IPXInterfaceClass::Construct(v7)),
           DataGlobal_87F7E8[8080] = v8,
           WinsockInterface::Init(v8),
@@ -400,7 +377,7 @@ int __stdcall NetworkOptions::DlgProc(int hWnd, int a2, int a3, int hCtl)
           DataGlobal_87F7E8[8080]) )
     {
       Debug::Log();
-      v39 = DataGlobal_87F7E8[8080];
+      int v39 = DataGlobal_87F7E8[8080];
       for ( i = 0; i < 20; ++i )
       {
         if ( NetworkOptions::ApplySettings(v39, i, (char *)lParam, 64) )
@@ -419,7 +396,7 @@ LABEL_20:
           v10 = GetStringCSF((#72 *)aTxtNoBoundNetC, 0, g_Str_File_MainOpt_cpp, 894);
           ((void (__stdcall *)(int, int, _DWORD, #72 *))SendMessageA)(v6, 1218, 0, v10);
         }
-        v11 = DataGlobal_87F7E8[539891];
+        int v11 = DataGlobal_87F7E8[539891];
         if ( DataGlobal_87F7E8[539891] < 0
           || v11 >= ((int (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(v6, 326, 0, 0) )
         {
@@ -428,14 +405,14 @@ LABEL_20:
         ((void (__stdcall *)(int, int, int, _DWORD))SendMessageA)(v6, 334, v11, 0);
         ((void (__stdcall *)(int, int, _DWORD, _DWORD))SendMessageA)(hWnd, 1124, 0, 0);
         dword_82A280 = -1;
-        v12 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1489);
+        int v12 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1489);
         if ( HIWORD(DataGlobal_87F7E8[539888]) != 0xFFFF )
         {
           sprintf((char *const)&v46, "%d", HIWORD(DataGlobal_87F7E8[539888]));
           ((void (__stdcall *)(int, int, _DWORD, __int128 *))SendMessageA)(v12, 1204, 0, &v46);
         }
         ((void (__stdcall *)(int, int, int, _DWORD))SendMessageA)(v12, 197, 5, 0);
-        v13 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1491);
+        int v13 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1491);
         if ( strlen((const char *)&DataGlobal_87F7E8[539892]) )
           ((void (__stdcall *)(int, int, _DWORD, _DWORD *))SendMessageA)(v13, 1204, 0, &DataGlobal_87F7E8[539892]);
         ((void (__stdcall *)(int, int, int, _DWORD))SendMessageA)(v13, 197, 11, 0);
@@ -445,7 +422,7 @@ LABEL_20:
           241,
           LOBYTE(DataGlobal_87F7E8[539238]) != 0,
           0);
-        v14 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1495);
+        int v14 = ((int (__stdcall *)(int, int))GetDlgItem)(hWnd, 1495);
         if ( v14 != -1 && DataGlobal_87F7E8[539291] )
         {
           sprintf((char *const)&v46, "%d", DataGlobal_87F7E8[539291]);

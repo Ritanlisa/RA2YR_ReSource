@@ -6,17 +6,16 @@
 int Font::GetGlyphDataForChar(AbstractClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Font::GetGlyphDataForChar(_DWORD *this, AbstractClass *aP1)
+void Font::GetGlyphDataForChar(AbstractClass *aP1)
 {
   AbstractClass *v2; // ecx
   int result; // eax
-  int v4; // edx
 
   v2 = (AbstractClass *)this->Font_field_04; /*0x4346c0*/
   result = 0; /*0x4346c3*/
   if ( v2 ) /*0x4346c7*/
   {
-    v4 = *(unsigned __int16 *)(v2->nextArrayIndex + 2 * (unsigned __int16)aP1); /*0x4346da*/
+    int v4 = *(unsigned __int16 *)(v2->nextArrayIndex + 2 * (unsigned __int16)aP1); /*0x4346da*/
     if ( (_WORD)v4 ) /*0x4346e2*/
       return v2->referenceCount + (v4 - 1) * v2->abstractFlags; /*0x4346eb*/
   }
@@ -28,29 +27,14 @@ int __thiscall Font::GetGlyphDataForChar(_DWORD *this, AbstractClass *aP1)
 char Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, int aP1a, AbstractClass * aP4, AbstractClass * aP5, AbstractClass * aP6, AbstractClass * aP7, AbstractClass * aP8, AbstractClass * aP9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall Font::Print(
-        AbstractClass *aP0,
-        AbstractClass *aP1,
-        AbstractClass *aP2,
-        int aP1a,
-        AbstractClass *aP4,
-        AbstractClass *aP5,
-        AbstractClass *aP6,
-        AbstractClass *aP7,
-        AbstractClass *aP8,
-        AbstractClass *aP9)
+void Font::Print(AbstractClass *aP0, AbstractClass *aP1, AbstractClass *aP2, int aP1a, AbstractClass *aP4, AbstractClass *aP5, AbstractClass *aP6, AbstractClass *aP7, AbstractClass *aP8, AbstractClass *aP9)
 {
-  int v10; // edi
   AbstractClass *v11; // ebp
   __int16 v12; // ax
-  int v13; // ebx
   ObjectClass *v14; // esi
   AbstractClass *v15; // edx
   AbstractClass *v16; // ecx
-  int v17; // eax
   AbstractClass *v18; // ecx
-  int v19; // edi
-  char *v20; // ebx
   ObjectClass *v21; // eax
   ObjectClass *v22; // eax
   AbstractClass *v23; // ecx
@@ -58,34 +42,25 @@ char __stdcall Font::Print(
   unsigned __int8 *GlyphDataForChar; // eax
   int eax28; // eax
   AbstractClass *v26; // ecx
-  int v28; // eax
   AbstractClass *edx41; // edx
   AbstractClass *v29; // ecx
-  int v31; // ebx
-  char *v32; // edi
   AbstractClass *ecx43; // ecx
   ObjectClass *v33; // eax
-  int v35; // eax
   AbstractClass *v36; // ecx
-  int v38; // eax
   AbstractClass *v39; // edx
-  char *v40; // ebx
-  char *v41; // edi
   AbstractClass *v42; // ecx
   AbstractClass *v43; // eax
   __int16 var30; // [esp+10h] [ebp-30h]
   AbstractClass *v44; // [esp+14h] [ebp-2Ch] BYREF
   AbstractClass *v45; // [esp+18h] [ebp-28h]
   AbstractClass *xLeft; // [esp+1Ch] [ebp-24h]
-  int v48; // [esp+20h] [ebp-20h]
   AbstractClass *v49; // [esp+24h] [ebp-1Ch]
   AbstractClass *v50; // [esp+28h] [ebp-18h]
-  int v51; // [esp+2Ch] [ebp-14h]
   unsigned __int8 v52[8]; // [esp+30h] [ebp-10h] BYREF
   unsigned __int8 v53[8]; // [esp+38h] [ebp-8h] BYREF
   __int16 aP5a; // [esp+58h] [ebp+18h]
 
-  v10 = 0; /*0x434cdb*/
+  int v10 = 0; /*0x434cdb*/
   if ( !aP0 ) /*0x434cdf*/
     return 0; /*0x434cdf*/
   v11 = aP2; /*0x434ce5*/
@@ -94,18 +69,20 @@ char __stdcall Font::Print(
   FontRenderer::InitContext(aP0, (int *)aP1->__pad_0); /*0x434cf8*/
   Field::Int_Set(aP0, (AbstractClass *)aP1a); /*0x434d04*/
   v12 = 0; /*0x434d0f*/
-  v13 = 0; /*0x434d11*/
+  int v13 = 0; /*0x434d11*/
   v14 = (ObjectClass *)*(unsigned __int16 *)aP0[1].__pad_0; /*0x434d13*/
   HIWORD(v15) = HIWORD(aP2); /*0x434d17*/
   v16 = 0; /*0x434d19*/
-  v48 = 0; /*0x434d1b*/
+  int v48 = 0; /*0x434d1b*/
   LOWORD(v15) = *(_WORD *)aP2->__pad_0; /*0x434d1f*/
-  v51 = 0; /*0x434d22*/
+  int v51 = 0; /*0x434d22*/
   v49 = 0; /*0x434d29*/
   v45 = 0; /*0x434d2d*/
   v50 = v15; /*0x434d31*/
   if ( (_WORD)v15 ) /*0x434d35*/
   {
+  char *v32; // edi
+  int v31; // ebx
 LABEL_4:
     switch ( (__int16)v50 ) /*0x434d59*/
     {
@@ -118,7 +95,7 @@ LABEL_4:
       case 13: /*0x434d59*/
         if ( v12 == 13 ) /*0x434d64*/
           goto LABEL_23; /*0x434d64*/
-        v17 = 0; /*0x434d6e*/
+        int v17 = 0; /*0x434d6e*/
         if ( (int)aP5 > v10 ) /*0x434d72*/
         {
           if ( ((unsigned __int8)aP7 & 1) != 0 ) /*0x434d7b*/
@@ -134,8 +111,8 @@ LABEL_4:
         if ( v11 >= aP2 ) /*0x434da1*/
           goto LABEL_20; /*0x434da1*/
         v18 = aP8; /*0x434da7*/
-        v19 = (char *)aP8 - (char *)v45 - 1; /*0x434db7*/
-        v20 = &aP9->__pad_0[(char *)v45 - (char *)aP8 + 1]; /*0x434dba*/
+        int v19 = (char *)aP8 - (char *)v45 - 1; /*0x434db7*/
+        char * v20 = &aP9->__pad_0[(char *)v45 - (char *)aP8 + 1]; /*0x434dba*/
         while ( 2 ) /*0x434dc4*/
         {
           ++v20; /*0x434dc4*/
@@ -215,7 +192,7 @@ LABEL_26:
           v10 -= eax28; /*0x434f6f*/
           aP2 = (AbstractClass *)((char *)aP2 - 2); /*0x434f78*/
         }
-        v28 = 0; /*0x434f80*/
+        int v28 = 0; /*0x434f80*/
         if ( (int)aP5 > v10 ) /*0x434f84*/
         {
           if ( ((unsigned __int8)aP7 & 1) != 0 ) /*0x434f8d*/
@@ -277,7 +254,7 @@ LABEL_50:
         v23 = aP0; /*0x435106*/
         v10 = 0; /*0x43510e*/
         v13 = 0; /*0x435110*/
-        v35 = aP0->referenceCount; /*0x435112*/
+        int v35 = aP0->referenceCount; /*0x435112*/
         v48 += v35; /*0x435117*/
         if ( aP6 && v48 >= (int)aP6 ) /*0x435127*/
         {
@@ -306,7 +283,7 @@ LABEL_55:
   else
   {
 LABEL_59:
-    v38 = 0; /*0x435167*/
+    int v38 = 0; /*0x435167*/
     if ( (int)aP5 > v10 ) /*0x43516f*/
     {
       if ( ((unsigned __int8)aP7 & 1) != 0 ) /*0x435178*/
@@ -322,8 +299,8 @@ LABEL_59:
     if ( v11 < aP2 ) /*0x43519e*/
     {
       v39 = aP8; /*0x4351a4*/
-      v40 = (char *)((char *)aP8 - (char *)v16 - 1); /*0x4351b2*/
-      v41 = &aP9->__pad_0[(char *)v16 - (char *)aP8 + 1]; /*0x4351b5*/
+      char * v40 = (char *)((char *)aP8 - (char *)v16 - 1); /*0x4351b2*/
+      char * v41 = &aP9->__pad_0[(char *)v16 - (char *)aP8 + 1]; /*0x4351b5*/
       while ( 1 ) /*0x4351b9*/
       {
         v42 = (AbstractClass *)&v16->__pad_0[1]; /*0x4351b9*/

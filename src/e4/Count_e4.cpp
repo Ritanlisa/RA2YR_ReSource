@@ -6,18 +6,16 @@
 int Count::DecrementRefCountsAudio()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Audio_DecrementRefCounts(_DWORD *this)
+void Audio_DecrementRefCounts(_DWORD *this)
 {
-  int v1; // eax
   int result; // eax
-  int v3; // edx
 
-  v1 = this->q01C - 1; /*0x408e73*/
+  int v1 = this->q01C - 1; /*0x408e73*/
   this->q01C = v1; /*0x408e76*/
   if ( v1 < 0 ) /*0x408e79*/
     this->q01C = 0; /*0x408e7b*/
   result = *this; /*0x408e82*/
-  v3 = *(_DWORD *)(*this + 152) - 1; /*0x408e8a*/
+  int v3 = *(_DWORD *)(*this + 152) - 1; /*0x408e8a*/
   *(_DWORD *)(*this + 152) = v3; /*0x408e8d*/
   if ( v3 < 0 ) /*0x408e93*/
   {
@@ -32,23 +30,19 @@ int __thiscall Audio_DecrementRefCounts(_DWORD *this)
 BOOL Count::SetupAllCountriesLobby()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall Lobby_SetupAllCountries(HWND this)
+void Lobby_SetupAllCountries(HWND this)
 {
-  void *v1; // ecx
   wchar_t **v2; // esi
   int ResourceID2; // ebp
   BOOL result; // eax
   wchar_t *v5; // ebx
-  int v6; // edi
   int PlayerSide; // esi
-  int *v8; // [esp+10h] [ebp-10h]
-  int v10; // [esp+18h] [ebp-8h]
   HWND hWnd; // [esp+1Ch] [ebp-4h]
 
-  v1 = 0; /*0x46f6da*/
+  void * v1 = 0; /*0x46f6da*/
   v2 = (wchar_t **)&g_NetworkPlayerName; /*0x46f6dc*/
-  v10 = 0; /*0x46f6e2*/
-  v8 = &g_NetworkPlayerName; /*0x46f6e6*/
+  int v10 = 0; /*0x46f6e2*/
+  int * v8 = &g_NetworkPlayerName; /*0x46f6e6*/
   do /*0x46f7ff*/
   {
     ResourceID2 = GetResourceID2CSF(v1); /*0x46f6ef*/
@@ -57,7 +51,7 @@ BOOL __thiscall Lobby_SetupAllCountries(HWND this)
     if ( result ) /*0x46f70c*/
     {
       v5 = *v2; /*0x46f718*/
-      v6 = -2; /*0x46f71c*/
+      int v6 = -2; /*0x46f71c*/
       if ( g_GameStateFlags && (g_GameMode_Current == 3 || g_GameMode_Current == 4) ) /*0x46f730*/
         v6 = (*(int (__thiscall **)(int))(*(_DWORD *)g_GameStateFlags + 40))(g_GameStateFlags); /*0x46f737*/
       if ( (unsigned __int8)Player::IsObserver(v5) ) /*0x46f73b*/
@@ -116,11 +110,10 @@ BOOL __thiscall Lobby_SetupAllCountries(HWND this)
 int Count::GetCountQueue()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Queue_GetCount(_DWORD *this)
+void Queue_GetCount(_DWORD *this)
 {
-  int v1; // eax
 
-  v1 = this->q038; /*0x5f1ea0*/
+  int v1 = this->q038; /*0x5f1ea0*/
   if ( v1 ) /*0x5f1ea5*/
     return *(_DWORD *)(*(_DWORD *)(v1 + 4) + 40); /*0x5f1eaa*/
   else
@@ -132,7 +125,7 @@ int __thiscall Queue_GetCount(_DWORD *this)
 int Count::Get()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Count_Get(_DWORD *this)
+void Count_Get(_DWORD *this)
 {
   return this->q004; /*0x76f083*/
 }

@@ -12,10 +12,8 @@ namespace gamemd {
 char DroppodLocomotionClass::ILoco_Process(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall DroppodLocomotionClass::ILoco_Process(int a1)
+void DroppodLocomotionClass::ILoco_Process(int a1)
 {
-  int *v2; // ecx
-  int v3; // esi
   double v4; // st7
   __int64 v5; // rax
   double v6; // st7
@@ -52,10 +50,10 @@ char __stdcall DroppodLocomotionClass::ILoco_Process(int a1)
   int v38[3]; // [esp+34h] [ebp-Ch] BYREF
   int VeteranCombat_high; // [esp+44h] [ebp+4h]
 
-  v2 = *(int **)(a1 + 8); /*0x4b5b7b*/
+  int * v2 = *(int **)(a1 + 8); /*0x4b5b7b*/
   v35 = v2[39]; /*0x4b5b88*/
   v36 = v2[40]; /*0x4b5b8f*/
-  v3 = v2[41]; /*0x4b5b93*/
+  int v3 = v2[41]; /*0x4b5b93*/
   v38[0] = v35; /*0x4b5b96*/
   v37 = v3; /*0x4b5b9a*/
   v38[1] = v36; /*0x4b5b9e*/

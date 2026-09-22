@@ -43,10 +43,9 @@ namespace gamemd {
 bool E4Recv_522100::sub_522100()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall sub_522100(_DWORD *this)
+void sub_522100(_DWORD *this)
 {
   int (__stdcall ***v2)(_DWORD, void *, int *); // eax
-  int v3; // esi
   int v4; // eax
   int v5; // edi
   bool v6; // bl
@@ -60,7 +59,7 @@ bool __thiscall sub_522100(_DWORD *this)
   v7 = 0; /*0x522124*/
   if ( !v2 ) /*0x52212c*/
     goto LABEL_11; /*0x52212c*/
-  v3 = (**v2)(v2, &unk_818858, &v8); /*0x52213d*/
+  int v3 = (**v2)(v2, &unk_818858, &v8); /*0x52213d*/
   if ( v3 >= 0 ) /*0x522141*/
   {
     v5 = v8; /*0x522150*/
@@ -94,14 +93,11 @@ int BinaryArraySearch(AbstractClass * aP0, int edx0, int * a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall BinaryArraySearch(AbstractClass *aP0, int edx0, int *a2)
 {
-  int v3; // esi
-  int v4; // ebx
   int v5; // edi
-
-  v3 = edx0; /*0x523445*/
+  int v3 = edx0; /*0x523445*/
   if ( edx0 <= 0 ) /*0x523447*/
     return 0; /*0x523479*/
-  v4 = *a2; /*0x52344d*/
+  int v4 = *a2; /*0x52344d*/
   while ( 1 ) /*0x523456*/
   {
     v5 = *(_DWORD *)&aP0->__pad_0[8 * (v3 / 2)]; /*0x523456*/
@@ -144,9 +140,7 @@ VectorClass *__fastcall GetINIClassIntList(
   char *i; // eax
   void *_751520; // eax
   CCINIClass *v14; // edi
-  int v15; // eax
   VectorClass *v16; // ecx
-  void *v17; // eax
   bool v18; // zf
   void *v19; // eax
   int v20; // ecx
@@ -177,7 +171,7 @@ VectorClass *__fastcall GetINIClassIntList(
           && v27 > 0
           && ((unsigned __int8 (__thiscall *)(VectorClass **, int, _DWORD))v22->Capacity)(&v22, v27 + v24, 0) )
         {
-          v15 = v26++; /*0x5254ed*/
+          int v15 = v26++; /*0x5254ed*/
           *((_DWORD *)Block + v15) = v14; /*0x5254f8*/
         }
       }
@@ -186,7 +180,7 @@ VectorClass *__fastcall GetINIClassIntList(
     *(_DWORD *)a1 = &vt_TypeList_int; /*0x52551e*/
     v16 = (VectorClass *)v27; /*0x525528*/
     *(_DWORD *)(a1 + 16) = v26; /*0x52552c*/
-    v17 = Block; /*0x52552f*/
+    void * v17 = Block; /*0x52552f*/
     v18 = Block == 0; /*0x525533*/
     *(_DWORD *)(a1 + 20) = v16; /*0x525535*/
     v22 = (VectorClass *)&vt_VectorClass_int; /*0x525538*/
@@ -231,35 +225,23 @@ namespace gamemd {
 int E4Recv_528220::sub_528220(unsigned char * a2, unsigned char * a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_528220(int this, unsigned __int8 *a2, unsigned __int8 *a3, int a4)
+void sub_528220(int this, unsigned __int8 *a2, unsigned __int8 *a3, int a4)
 {
   unsigned __int8 *v4; // ebp
   unsigned __int8 *v6; // edx
-  int v7; // esi
-  int v8; // eax
-  int v9; // ecx
-  int v10; // esi
-  _DWORD *v11; // ecx
   size_t v12; // eax
-  _DWORD *v13; // ecx
   size_t v14; // eax
-  int *v15; // esi
-  int v16; // edi
-  _DWORD *v17; // eax
   size_t v18; // eax
-  int *v19; // esi
-  int v21; // esi
-  const char *v22; // esi
-  unsigned int v23; // [esp+8h] [ebp-Ch] BYREF
-  int v24; // [esp+Ch] [ebp-8h]
-  int v25; // [esp+10h] [ebp-4h]
-
   v4 = a2; /*0x528227*/
   if ( a2 ) /*0x52822f*/
   {
     v6 = a3; /*0x528235*/
     if ( a3 ) /*0x52823b*/
     {
+  int v25; // [esp+10h] [ebp-4h]
+  int v24; // [esp+Ch] [ebp-8h]
+  unsigned int v23; // [esp+8h] [ebp-Ch] BYREF
+  int v7; // esi
       if ( a2 == *(unsigned __int8 **)(this + 4) ) /*0x528248*/
       {
         v7 = this->M8; /*0x52824e*/
@@ -269,19 +251,20 @@ LABEL_5:
           v23 = 0; /*0x528259*/
           v24 = 0; /*0x52825d*/
           v25 = 0; /*0x528261*/
-          v8 = Checksummer::Add_Buffer(&v23, v6, strlen((const char *)v6)); /*0x528277*/
-          v9 = *(_DWORD *)(v7 + 48); /*0x52827c*/
-          v10 = v7 + 44; /*0x52827f*/
+          int v8 = Checksummer::Add_Buffer(&v23, v6, strlen((const char *)v6)); /*0x528277*/
+          int v9 = *(_DWORD *)(v7 + 48); /*0x52827c*/
+          int v10 = v7 + 44; /*0x52827f*/
           a3 = (unsigned __int8 *)v8; /*0x528284*/
           if ( v9 ) /*0x528288*/
           {
-            v11 = *(_DWORD **)(v10 + 16); /*0x52828e*/
+            _DWORD * v11 = *(_DWORD **)(v10 + 16); /*0x52828e*/
             if ( v11 && *v11 == v8 ) /*0x528297*/
             {
+  int *v15; // esi
 LABEL_11:
               if ( *(_DWORD *)(v10 + 4) ) /*0x5282b4*/
               {
-                v13 = *(_DWORD **)(v10 + 16); /*0x5282bf*/
+                _DWORD * v13 = *(_DWORD **)(v10 + 16); /*0x5282bf*/
                 if ( v13 && *v13 == v8 ) /*0x5282c8*/
                   goto LABEL_16; /*0x5282c8*/
                 v14 = HashTable::BinarySearchAlt((char **)v10, (int *)&a3); /*0x5282d1*/
@@ -295,10 +278,10 @@ LABEL_16:
               }
               v15 = (int *)&unk_B78830; /*0x52838b*/
 LABEL_29:
-              v21 = *v15; /*0x528390*/
+              int v21 = *v15; /*0x528390*/
               if ( v21 ) /*0x528394*/
               {
-                v22 = *(const char **)(v21 + 16); /*0x528396*/
+                const char * v22 = *(const char **)(v21 + 16); /*0x528396*/
                 if ( v22 ) /*0x52839b*/
                   sscanf(v22, DataGlobal_825BD4, &a4); /*0x5283a8*/
               }
@@ -318,11 +301,11 @@ LABEL_29:
       v23 = 0; /*0x5282ec*/
       v24 = 0; /*0x5282f0*/
       v25 = 0; /*0x5282f4*/
-      v16 = Checksummer::Add_Buffer(&v23, a2, strlen((const char *)a2)); /*0x528312*/
+      int v16 = Checksummer::Add_Buffer(&v23, a2, strlen((const char *)a2)); /*0x528312*/
       a2 = (unsigned __int8 *)v16; /*0x528314*/
       if ( this->M44 ) /*0x528318*/
       {
-        v17 = *(_DWORD **)(this + 56); /*0x52831f*/
+        _DWORD * v17 = *(_DWORD **)(this + 56); /*0x52831f*/
         if ( !v17 || *v17 != v16 ) /*0x528328*/
         {
           v18 = SortedArray::BinarySearch((char **)(this + 40), (int *)&a2); /*0x528331*/
@@ -332,7 +315,7 @@ LABEL_29:
         }
         a2 = (unsigned __int8 *)v16; /*0x528341*/
         if ( HashTable::BinarySearch(this + 40, (int *)&a2) ) /*0x528348*/
-          v19 = (int *)(this->M56 + 4); /*0x528354*/
+          int * v19 = (int *)(this->M56 + 4); /*0x528354*/
         else
           v19 = (int *)&unk_B7882C; /*0x528359*/
         v7 = *v19; /*0x52835e*/
@@ -362,8 +345,6 @@ char ** E4Recv_529E70::sub_529E70(char ** a2, char * Source, char ** a4, char **
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char **__thiscall sub_529E70(_DWORD *this, char **a2, char *Source, char **a4, char **a5)
 {
-  char *v6; // edi
-  char *v7; // ebp
   int v8; // ebx
   unsigned int v9; // kr04_4
   unsigned int *v10; // eax
@@ -385,9 +366,9 @@ char **__thiscall sub_529E70(_DWORD *this, char **a2, char *Source, char **a4, c
   int v27[3]; // [esp+24h] [ebp-4Ch] BYREF
   char Destination[64]; // [esp+30h] [ebp-40h] BYREF
 
-  v6 = String::GetOrEmpty_Alt(a4); /*0x529e85*/
+  char * v6 = String::GetOrEmpty_Alt(a4); /*0x529e85*/
   a4 = (char **)v6; /*0x529e87*/
-  v7 = String::GetOrEmpty_Alt((char **)Source); /*0x529e90*/
+  char * v7 = String::GetOrEmpty_Alt((char **)Source); /*0x529e90*/
   Source = &g_INI_DefaultBuffer; /*0x529e98*/
   if ( &v22 == (int *)-48 || !v7 || !v6 ) /*0x529eb0*/
     goto LABEL_18; /*0x529eb0*/
@@ -461,7 +442,6 @@ float * E4Recv_52A110::sub_52A110(float * a2, unsigned char * a3, float a4, floa
 float *__thiscall sub_52A110(_DWORD *this, float *a2, unsigned __int8 *a3, float a4, float *a5)
 {
   unsigned __int8 *v6; // ebx
-  const char *v7; // edx
   int v8; // esi
   unsigned int v9; // kr04_4
   unsigned int *v10; // eax
@@ -486,7 +466,7 @@ float *__thiscall sub_52A110(_DWORD *this, float *a2, unsigned __int8 *a3, float
   v6 = a3; /*0x52a12d*/
   if ( *(float *)&a3 == 0.0 ) /*0x52a135*/
     goto LABEL_18; /*0x52a135*/
-  v7 = (const char *)LODWORD(a4); /*0x52a13b*/
+  const char * v7 = (const char *)LODWORD(a4); /*0x52a13b*/
   if ( a4 == 0.0 ) /*0x52a141*/
     goto LABEL_18; /*0x52a141*/
   if ( a3 == (unsigned __int8 *)*(this + 1) ) /*0x52a14a*/
@@ -565,8 +545,6 @@ float * E4Recv_52A2F0::sub_52A2F0(float * a2, float Source, char ** a4, float * 
 // [IDA decompile] original pseudocode - translation pending (final goal)
 float *__thiscall sub_52A2F0(_DWORD *this, float *a2, float Source, char **a4, float *a5)
 {
-  char *v6; // edi
-  char *v7; // ebp
   int v8; // ebx
   unsigned int v9; // kr04_4
   unsigned int *v10; // eax
@@ -588,9 +566,9 @@ float *__thiscall sub_52A2F0(_DWORD *this, float *a2, float Source, char **a4, f
   int v27[3]; // [esp+24h] [ebp-4Ch] BYREF
   char Destination[64]; // [esp+30h] [ebp-40h] BYREF
 
-  v6 = String::GetOrEmpty_Alt(a4); /*0x52a305*/
+  char * v6 = String::GetOrEmpty_Alt(a4); /*0x52a305*/
   a4 = (char **)v6; /*0x52a307*/
-  v7 = String::GetOrEmpty_Alt((char **)LODWORD(Source)); /*0x52a310*/
+  char * v7 = String::GetOrEmpty_Alt((char **)LODWORD(Source)); /*0x52a310*/
   Source = COERCE_FLOAT(&g_INI_DefaultBuffer); /*0x52a318*/
   if ( &v22 == (int *)-48 || !v7 || !v6 ) /*0x52a330*/
     goto LABEL_18; /*0x52a330*/
@@ -667,34 +645,24 @@ namespace gamemd {
 int E4Recv_52A4D0::sub_52A4D0(unsigned char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_52A4D0(int this, unsigned __int8 *a2)
+void sub_52A4D0(int this, unsigned __int8 *a2)
 {
-  int v3; // eax
   size_t v4; // ecx
-  unsigned int v5; // edi
-  _DWORD *v6; // eax
-  int v7; // edx
-  int v8; // ecx
-  int v9; // eax
   size_t v10; // eax
-  _DWORD *v11; // ecx
-  int v12; // ecx
-  int v13; // ebp
   int v14; // edi
   int v15; // edx
   unsigned int v17[3]; // [esp+Ch] [ebp-Ch] BYREF
   int v18; // [esp+1Ch] [ebp+4h]
-
   if ( !a2 ) /*0x52a4e0*/
     return 0; /*0x52a4e0*/
   memset(v17, 0, sizeof(v17)); /*0x52a4ed*/
-  v3 = Checksummer::Add_Buffer(v17, a2, strlen((const char *)a2)); /*0x52a504*/
+  int v3 = Checksummer::Add_Buffer(v17, a2, strlen((const char *)a2)); /*0x52a504*/
   v4 = this->M48; /*0x52a509*/
-  v5 = v3; /*0x52a50c*/
+  unsigned int v5 = v3; /*0x52a50c*/
   v18 = v3; /*0x52a510*/
   if ( !v4 ) /*0x52a514*/
     return 0; /*0x52a514*/
-  v6 = *(_DWORD **)(this + 60); /*0x52a51a*/
+  _DWORD * v6 = *(_DWORD **)(this + 60); /*0x52a51a*/
   if ( v6 && *v6 == v5 ) /*0x52a523*/
     goto LABEL_9; /*0x52a523*/
   if ( !(unsigned char)this->M56 ) /*0x52a525*/
@@ -703,10 +671,10 @@ int __thiscall sub_52A4D0(int this, unsigned __int8 *a2)
     this->M60 = 0; /*0x52a53e*/
     *(_BYTE *)(this + 56) = 1; /*0x52a541*/
   }
-  v7 = this->M48; /*0x52a545*/
-  v8 = this->M44; /*0x52a54d*/
+  int v7 = this->M48; /*0x52a545*/
+  int v8 = this->M44; /*0x52a54d*/
   v17[0] = v5; /*0x52a550*/
-  v9 = UI_Find(v8, v7, (int *)v17); /*0x52a554*/
+  int v9 = UI_Find(v8, v7, (int *)v17); /*0x52a554*/
   if ( !v9 ) /*0x52a55b*/
     return 0; /*0x52a5f8*/
   this->M60 = v9; /*0x52a561*/
@@ -714,7 +682,7 @@ LABEL_9:
   v10 = this->M48; /*0x52a564*/
   if ( !v10 ) /*0x52a56a*/
     return unk_B78830; /*0x52a56a*/
-  v11 = *(_DWORD **)(this + 60); /*0x52a56c*/
+  _DWORD * v11 = *(_DWORD **)(this + 60); /*0x52a56c*/
   if ( v11 && *v11 == v5 ) /*0x52a575*/
     return *(_DWORD *)(this->M60 + 4); /*0x52a5f3*/
   if ( !(unsigned char)this->M56 ) /*0x52a577*/
@@ -723,8 +691,8 @@ LABEL_9:
     this->M60 = 0; /*0x52a590*/
     *(_BYTE *)(this + 56) = 1; /*0x52a593*/
   }
-  v12 = this->M48; /*0x52a597*/
-  v13 = this->M44; /*0x52a59a*/
+  int v12 = this->M48; /*0x52a597*/
+  int v13 = this->M44; /*0x52a59a*/
   if ( v12 <= 0 ) /*0x52a59f*/
     return unk_B78830; /*0x52a59f*/
   while ( 1 ) /*0x52a5ac*/
@@ -759,7 +727,7 @@ namespace gamemd {
 char E4Recv_52A610::sub_52A610(void * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_52A610(char *this, void *a2)
+void sub_52A610(char *this, void *a2)
 {
   ObjectClass *v3; // eax
   ObjectClass *v4; // eax
@@ -779,7 +747,7 @@ namespace gamemd {
 int CompareFunc4Int(unsigned int * a1, unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __cdecl CompareFunc4Int(_DWORD *a1, _DWORD *a2)
+int CompareFunc4Int(_DWORD *a1, _DWORD *a2)
 {
   if ( *a1 == *a2 )
     return 0; /*0x52b730*/
@@ -794,13 +762,10 @@ namespace gamemd {
 int InitGame()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int InitGame()
+void InitGame()
 {
-  int v0; // eax
-  int v1; // ebx
   RulesClass *v3; // eax
   _BYTE *TextBufferEntry; // eax
-  _DWORD *v5; // eax
   IUnknown *v6; // edx
   AbstractClass *v7; // eax
   int i; // edi
@@ -809,30 +774,22 @@ int InitGame()
   IUnknown *v11; // edx
   AbstractClass *v12; // eax
   int j; // edi
-  char *v14; // esi
   ObjectClass *v13; // eax
   IUnknown *v16; // edx
   AbstractClass *eax23; // eax
   int k; // edi
-  char *v19; // esi
   ObjectClass *v17; // eax
-  int v21; // edi
-  char *v22; // esi
   ObjectClass *v20; // eax
   char *ecx26; // ecx
-  _DWORD *v25; // eax
   IUnknown *edx30; // edx
   AbstractClass *v27; // eax
   int m; // edi
   ConvertClass *v24; // eax
-  _BYTE *v30; // esi
   ObjectClass *v26; // eax
-  _DWORD *v32; // eax
   IUnknown *v33; // edx
   AbstractClass *eax35; // eax
   int n; // edi
   ConvertClass *v29; // eax
-  _BYTE *v37; // esi
   ObjectClass *v31; // eax
   _DWORD *eax37; // eax
   IUnknown *v40; // edx
@@ -846,7 +803,6 @@ int InitGame()
   AbstractClass *v48; // eax
   int jj; // edi
   ConvertClass *v39; // eax
-  _BYTE *v51; // esi
   ObjectClass *v41; // eax
   _DWORD *eax47; // eax
   IUnknown *v54; // edx
@@ -855,22 +811,11 @@ int InitGame()
   ConvertClass *v44; // eax
   _BYTE *GameDirectoryCD; // esi
   ObjectClass *v46; // eax
-  _DWORD *v60; // eax
   ObjectClass *v49; // eax
-  _DWORD *v62; // eax
-  char *v63; // ebp
   wchar_t *v64; // eax
   Tactical *v53; // ecx
-  int v66; // eax
-  void *v67; // ecx
   int mm; // esi
   int nn; // esi
-  unsigned __int64 v70; // rax
-  unsigned __int64 v71; // rax
-  int v72; // edx
-  char *v73; // ecx
-  _DWORD *v74; // eax
-  int v75; // edx
   wchar_t *v76; // [esp-10h] [ebp-2F50h]
   wchar_t *StringCSF; // [esp-Ch] [ebp-2F4Ch]
   int v78; // [esp+0h] [ebp-2F40h]
@@ -904,8 +849,8 @@ int InitGame()
   INIClass Source[160]; // [esp+740h] [ebp-2800h] BYREF
 
   Debug::Log();
-  v0 = __2_YAPAXI_Z(0x3740u);
-  v1 = 0;
+  int v0 = __2_YAPAXI_Z(0x3740u);
+  int v1 = 0;
   if ( !v0 )
   {
     *(_DWORD *)&HouseClass_Player[29924] = 0;
@@ -944,7 +889,7 @@ LABEL_3:
     Debug::Log_0();
     return -1;
   }
-  v5 = (_DWORD *)__2_YAPAXI_Z(4u);
+  _DWORD * v5 = (_DWORD *)__2_YAPAXI_Z(4u);
   if ( v5 )
     unk_89C4B8 = BitTextClass::LoadFont(v5);
   else
@@ -972,7 +917,7 @@ LABEL_3:
   memcpy(&stru_87C374[37900], v12, 0x300u);
   for ( j = 0; j < 256; ++j )
   {
-    v14 = &stru_87C374[22428][3 * (j % 256) + 15472];
+    char * v14 = &stru_87C374[22428][3 * (j % 256) + 15472];
     v13 = (ObjectClass *)Palette::SixBitTo16Bit(
                            v90,
                            4 * *v14,
@@ -990,7 +935,7 @@ LABEL_3:
   memcpy(&stru_87C374[36364], eax23, 0x300u);
   for ( k = 0; k < 256; ++k )
   {
-    v19 = &stru_87C374[22428][3 * (k % 256) + 13936];
+    char * v19 = &stru_87C374[22428][3 * (k % 256) + 13936];
     v17 = (ObjectClass *)Palette::SixBitTo16Bit(
                            v87,
                            4 * *v19,
@@ -1001,8 +946,8 @@ LABEL_3:
   }
   CCFileClass::Construct(Buffer, &g_Str_File_MOUSE_SHA[96]);
   VoxelPaletteClass::LoadFromFile(Buffer);
-  v21 = 0;
-  v22 = &stru_B1D188[76273];
+  int v21 = 0;
+  char * v22 = &stru_B1D188[76273];
   do
   {
     v20 = (ObjectClass *)Palette::SixBitTo16Bit(v85, *(v22 - 1), *v22, v22[1]);
@@ -1020,7 +965,7 @@ LABEL_3:
   dword_B43184 = 1;
   dword_B43180 = 0;
   Voxel::Projection_Setup();
-  v25 = (_DWORD *)__2_YAPAXI_Z(0x188u);
+  _DWORD * v25 = (_DWORD *)__2_YAPAXI_Z(0x188u);
   if ( v25 )
     *(_DWORD *)&stru_87C374[13124] = ConvertClass::Construct(
                                                  v25,
@@ -1038,7 +983,7 @@ LABEL_3:
   for ( m = 0; m < 256; ++m )
   {
     v24 = (ConvertClass *)(3 * (m % 256));
-    v30 = &a0[(_DWORD)v24];
+    _BYTE * v30 = &a0[(_DWORD)v24];
     v26 = (ObjectClass *)Palette::SixBitTo16Bit(
                            v82,
                            4 * a0[(_DWORD)v24],
@@ -1047,7 +992,7 @@ LABEL_3:
     *(_WORD *)v30 = *(_WORD *)v26->__pad_0;
     v30[2] = v26->__pad_0[2];
   }
-  v32 = (_DWORD *)__2_YAPAXI_Z(0x188u);
+  _DWORD * v32 = (_DWORD *)__2_YAPAXI_Z(0x188u);
   if ( v32 )
     *(_DWORD *)&stru_87C374[13132] = ConvertClass::Construct(
                                                  v32,
@@ -1064,7 +1009,7 @@ LABEL_3:
   for ( n = 0; n < 256; ++n )
   {
     v29 = (ConvertClass *)(3 * (n % 256));
-    v37 = &a0[(_DWORD)v29];
+    _BYTE * v37 = &a0[(_DWORD)v29];
     v31 = (ObjectClass *)Palette::SixBitTo16Bit(
                            v83,
                            4 * a0[(_DWORD)v29],
@@ -1116,7 +1061,7 @@ LABEL_3:
   for ( jj = 0; jj < 256; ++jj )
   {
     v39 = (ConvertClass *)(3 * (jj % 256));
-    v51 = &a0[(_DWORD)v39];
+    _BYTE * v51 = &a0[(_DWORD)v39];
     v41 = (ObjectClass *)Palette::SixBitTo16Bit(
                            v86,
                            4 * a0[(_DWORD)v39],
@@ -1151,7 +1096,7 @@ LABEL_3:
     *(_WORD *)GameDirectoryCD = *(_WORD *)v46->__pad_0;
     GameDirectoryCD[2] = v46->__pad_0[2];
   }
-  v60 = (_DWORD *)__2_YAPAXI_Z(0x188u);
+  _DWORD * v60 = (_DWORD *)__2_YAPAXI_Z(0x188u);
   if ( v60 )
     *(_DWORD *)&stru_87C374[13140] = ConvertClass::Construct(
                                                  v60,
@@ -1182,7 +1127,7 @@ LABEL_3:
   }
   if ( *(_DWORD *)&HouseClass_Player[47684] )
   {
-    v62 = (_DWORD *)__2_YAPAXI_Z(0x188u);
+    _DWORD * v62 = (_DWORD *)__2_YAPAXI_Z(0x188u);
     if ( v62 )
       *(_DWORD *)&HouseClass_Player[47692] = ConvertClass::Construct(
                                                           v62,
@@ -1240,7 +1185,7 @@ LABEL_68:
       Source[0].__pad_0[0] = 0;
       if ( *(int *)&HouseClass_Player[44036] > 0 )
       {
-        v63 = &HouseClass_Player[43932];
+        char * v63 = &HouseClass_Player[43932];
         while ( 1 )
         {
           sprintf(
@@ -1314,7 +1259,7 @@ LABEL_82:
     (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)&stru_87C374[44976] + 32))(
       *(_DWORD *)&stru_87C374[44976],
       1);
-  v66 = __2_YAPAXI_Z(0xE18u);
+  int v66 = __2_YAPAXI_Z(0xE18u);
   if ( !v66 )
   {
     *(_DWORD *)&stru_87C374[44976] = 0;
@@ -1381,6 +1326,7 @@ LABEL_109:
     CCFileClass::Destruct(&aP1);
     return -1;
   }
+  void *v67; // ecx
   LoadINIEVA(v67);
   InitFromINIEVA(&v99);
   Debug::Log();
@@ -1424,27 +1370,29 @@ LABEL_106:
     (*(void (__thiscall **)(_DWORD, _DWORD))(**((_DWORD **)g_TriggerTypeCount + nn) + 100))(
       *((_DWORD *)g_TriggerTypeCount + nn),
       *(_DWORD *)&stru_87C374[44244]);
+  unsigned __int64 v70; // rax
   LODWORD(v70) = Audio::Callback();
   if ( v70 < *(_QWORD *)&HouseClass_Player[47676] )
   {
     do
+  unsigned __int64 v71; // rax
       LODWORD(v71) = Audio::Callback();
     while ( v71 < *(_QWORD *)&HouseClass_Player[47676] );
   }
   PlayIntroSequence(0, -1, (int)&g_INI_Key_Grey);
-  v72 = *(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 5328);
+  int v72 = *(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 5328);
   off_822724 = &g_INI_Key_Grey;
   *(_DWORD *)&HouseClass_Player[30716] = v72;
   *(_DWORD *)&HouseClass_Player[38960] = 0;
   *(_DWORD *)&HouseClass_Player[38964] = 0;
   *(_DWORD *)&HouseClass_Player[38972] = 0;
-  v73 = &HouseClass_Player[38108];
+  char * v73 = &HouseClass_Player[38108];
   do
   {
     *((_WORD *)v73 - 22) = 0;
     *(_DWORD *)v73 = 0;
-    v74 = v73 + 4;
-    v75 = 4;
+    _DWORD * v74 = v73 + 4;
+    int v75 = 4;
     do
     {
       v74[4] = -1;
@@ -1496,17 +1444,14 @@ namespace gamemd {
 char InitRules()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char InitRules()
+void InitRules()
 {
   HANDLE FirstFileA; // ebp
   char *cAlternateFileName; // edi
   INIClass *v2; // eax
   INIClass *v3; // esi
-  int v4; // eax
-  int v5; // eax
   INIClass *v6; // eax
   INIClass *v7; // esi
-  int v8; // eax
   int v10; // eax
   INT_PTR v11; // eax
   int v12; // esi
@@ -1569,12 +1514,12 @@ char InitRules()
         && v21 > 0
         && (*(unsigned __int8 (__thiscall **)(LPARAM *, int, _DWORD))(dwInitParam + 8))(&dwInitParam, v21 + v18, 0) )
       {
-        v5 = v20++; /*0x52ced6*/
+        int v5 = v20++; /*0x52ced6*/
         *(_DWORD *)&Src->__pad_0[4 * v5] = v3; /*0x52cee1*/
       }
       goto LABEL_24; /*0x52cee1*/
     }
-    v4 = v20; /*0x52ce35*/
+    int v4 = v20; /*0x52ce35*/
     v15 = 1; /*0x52ce3f*/
     if ( v20 < v18 ) /*0x52ce44*/
       goto LABEL_15; /*0x52ce44*/
@@ -1615,7 +1560,7 @@ LABEL_27:
       v7 = 0; /*0x52cf68*/
     }
     CCINIClass::Load(v7, aP1, 0, 0); /*0x52cf73*/
-    v8 = v20; /*0x52cf78*/
+    int v8 = v20; /*0x52cf78*/
     if ( v20 < v18 ) /*0x52cf82*/
     {
 LABEL_36:
@@ -1772,17 +1717,16 @@ namespace gamemd {
 int sub_52D870(HWND hDlg, unsigned int a2, unsigned int a3, unsigned int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall sub_52D870(HWND hDlg, unsigned int a2, unsigned int a3, unsigned int a4)
+void sub_52D870(HWND hDlg, unsigned int a2, unsigned int a3, unsigned int a4)
 {
   HWND DlgItem; // esi
   int result; // eax
   _DWORD *WindowLongA; // eax
   LRESULT v7; // eax
   LRESULT v8; // eax
-  bool v9; // [esp+13h] [ebp-1h]
   HWND hDlga; // [esp+18h] [ebp+4h]
 
-  v9 = 0; /*0x52d87f*/
+  bool v9 = 0; /*0x52d87f*/
   DlgItem = GetDlgItem(hDlg, 1860); /*0x52d88a*/
   result = BaseDialogProc(hDlg, a2, a3, a4); /*0x52d89e*/
   if ( !result ) /*0x52d8a5*/
@@ -1849,17 +1793,11 @@ namespace gamemd {
 char MenuSelect()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char MenuSelect()
+void MenuSelect()
 {
   Movie *v0; // eax
-  int v1; // edx
-  _DWORD *v2; // eax
-  int v3; // ecx
-  int v4; // edx
-  int v5; // edx
   int j; // edi
   int i; // eax
-  int v8; // edx
   LONG esi12; // esi
   Movie *v9; // eax
   void (__thiscall ***v11)(_DWORD, int); // ecx
@@ -1871,55 +1809,30 @@ char MenuSelect()
   IUnknown *v17; // eax
   Movie *v18; // eax
   HWND Dialog; // eax
-  unsigned __int64 v20; // rax
   Frame *v21; // ecx
-  __int64 v22; // rax
-  unsigned __int64 v23; // rax
   _DWORD *Options; // eax
-  char v25; // bl
   int *p_visibilityFlags; // eax
-  char v27; // al
-  int *v28; // eax
-  char v29; // bl
-  int v30; // eax
   Movie *v31; // eax
-  int *v32; // eax
-  _DWORD *v33; // eax
   IPXInterfaceClass *v36; // eax
   wchar_t *v35; // eax
   Frame *ecx152; // ecx
-  int v37; // eax
-  int v38; // esi
   DWORD Ticks; // ecx
-  int v40; // esi
-  int v41; // edi
-  int v42; // esi
   char result; // al
-  int v44; // eax
   Movie *v49; // eax
-  int v46; // eax
-  int v47; // eax
-  int v48; // eax
   int eax203; // eax
   Frame *v50; // ecx
   Movie *v54; // [esp+6h] [ebp-120h]
-  char v52; // [esp+Ah] [ebp-11Ch]
-  char v53; // [esp+Eh] [ebp-118h]
   char var110_2; // [esp+18h] [ebp-10Eh]
-  char v55; // [esp+19h] [ebp-10Dh]
   LONG dwNewLong; // [esp+1Ah] [ebp-10Ch] BYREF
-  int v57; // [esp+1Eh] [ebp-108h]
   CampaignScore *v58; // [esp+22h] [ebp-104h]
   _DWORD (__stdcall **v59)(_DWORD); // [esp+26h] [ebp-100h]
-  int v60; // [esp+2Ah] [ebp-FCh]
-  _DWORD v61[14]; // [esp+32h] [ebp-F4h] BYREF
   LONG v62[23]; // [esp+6Ah] [ebp-BCh] BYREF
   LONG v63[24]; // [esp+C6h] [ebp-60h] BYREF
 
   v0 = (Movie *)StringList::Find(&g_BuildingTypeClass_Count, g_INI_Key_INTRO);
   ThemeClass::Play((int *)&g_BuildingTypeClass_Count, v0);
 LABEL_2:
-  v1 = *(_DWORD *)&HouseClass_Player[29924] + 4584;
+  int v1 = *(_DWORD *)&HouseClass_Player[29924] + 4584;
   HouseClass_Player[44116] = 1;
   HouseClass_Player.field_0 = 0;
   dword_8B41F8 = 0;
@@ -1930,17 +1843,18 @@ LABEL_2:
   Networking_NextPacketIndex = 0;
   *(_DWORD *)&HouseClass_Player[45112] = 0;
   *(_DWORD *)(*(_DWORD *)&HouseClass_Player[29924] + 4584) = 0;
-  v55 = 0;
+  char v55 = 0;
+  int v60; // [esp+2Ah] [ebp-FCh]
   *(_DWORD *)(v1 + 4) = v60;
   var110_2 = 1;
   *(_DWORD *)(v1 + 8) = 0;
-  v2 = (_DWORD *)(*(_DWORD *)&HouseClass_Player[29924] + 4584);
-  v3 = *(_DWORD *)(*(_DWORD *)&HouseClass_Player[29924] + 4584);
+  _DWORD * v2 = (_DWORD *)(*(_DWORD *)&HouseClass_Player[29924] + 4584);
+  int v3 = *(_DWORD *)(*(_DWORD *)&HouseClass_Player[29924] + 4584);
   if ( v3 != -1 )
   {
-    v4 = *(_DWORD *)(*(_DWORD *)&HouseClass_Player[29924] + 4592);
+    int v4 = *(_DWORD *)(*(_DWORD *)&HouseClass_Player[29924] + 4592);
     if ( *(_DWORD *)&HouseClass_Player[45112] - v3 >= v4 )
-      v5 = 0;
+      int v5 = 0;
     else
       v5 = v4 - (*(_DWORD *)&HouseClass_Player[45112] - v3);
     *(_DWORD *)(*(_DWORD *)&HouseClass_Player[29924] + 4592) = v5;
@@ -1965,7 +1879,7 @@ LABEL_2:
   *(_DWORD *)&HouseClass_Player[29840] = 0;
   for ( i = 0; i < 112; i += 28 )
   {
-    v8 = i + *(_DWORD *)&HouseClass_Player[38972];
+    int v8 = i + *(_DWORD *)&HouseClass_Player[38972];
     *(_DWORD *)&HouseClass_Player[21864][4 * v8 + 16264] = -1;
   }
   Mission::SetAndCall((int *)&stru_87C374[13428], 0, 0);
@@ -2114,15 +2028,15 @@ LABEL_40:
         goto LABEL_134;
       case 7:
         Theme::Stop(&g_BuildingTypeClass_Count, (ObjectClass *)1);
-        v40 = *(_DWORD *)&stru_87C374[45004];
+        int v40 = *(_DWORD *)&stru_87C374[45004];
         if ( *(_DWORD *)&stru_87C374[44996] != -1 )
           v40 += Timer::GetTicks() - *(_DWORD *)&stru_87C374[44996];
-        v41 = v40 + 3000;
+        int v41 = v40 + 3000;
         while ( Theme::IsPlaying((int)&g_BuildingTypeClass_Count) )
         {
           if ( !(unsigned __int8)Audio::IsPlaying() )
             break;
-          v42 = *(_DWORD *)&stru_87C374[45004];
+          int v42 = *(_DWORD *)&stru_87C374[45004];
           if ( *(_DWORD *)&stru_87C374[44996] != -1 )
             v42 += Timer::GetTicks() - *(_DWORD *)&stru_87C374[44996];
           if ( v41 <= v42 )
@@ -2136,6 +2050,7 @@ LABEL_40:
       case 8:
         if ( &stru_89E138 != (IUnknown *)-22440 )
           Menu::Reset((int)&stru_89E138[22440]);
+  int v57; // [esp+1Eh] [ebp-108h]
         LOBYTE(v57) = 0;
         dwNewLong = -1;
         if ( g_UnitTypeInitState || (Credits::Screen(), g_UnitTypeInitState) )
@@ -2161,6 +2076,7 @@ LABEL_40:
                 break;
               if ( *(_DWORD *)&stru_825BAC.isOnMap != -1 )
               {
+  unsigned __int64 v20; // rax
                 LODWORD(v20) = Audio::Callback();
                 if ( *(_QWORD *)&HouseClass_Player[47700] < v20 )
                 {
@@ -2179,10 +2095,12 @@ LABEL_40:
             }
             Dialog::Destroy((SkirmishDialog *)j);
           }
+  __int64 v22; // rax
           LODWORD(v22) = Audio::Callback();
           *(_QWORD *)&HouseClass_Player[47700] = v22 + 3000;
           while ( AudioSource::Get((int **)&HouseClass_Player[46516]) )
           {
+  unsigned __int64 v23; // rax
             LODWORD(v23) = Audio::Callback();
             if ( *(_QWORD *)&HouseClass_Player[47700] <= v23 )
               break;
@@ -2254,11 +2172,11 @@ LABEL_147:
         (*(void (__thiscall **)(_DWORD))(**(_DWORD **)&stru_87C374[45772] + 16))(*(_DWORD *)&stru_87C374[45772]);
         if ( *(_DWORD *)&HouseClass_Player[29932] == 4 )
         {
-          v37 = *(_DWORD *)&stru_87C374[44996];
+          int v37 = *(_DWORD *)&stru_87C374[44996];
           j = (int)&HouseClass_Player[42296];
           do
           {
-            v38 = *(_DWORD *)&stru_87C374[45004];
+            int v38 = *(_DWORD *)&stru_87C374[45004];
             if ( v37 != -1 )
             {
               Ticks = Timer::GetTicks();
@@ -2327,7 +2245,7 @@ LABEL_184:
                 &HouseClass_Player[38976],
                 &HouseClass_Player[44564],
                 184);
-              v44 = *(_DWORD *)&HouseClass_Player[44052];
+              int v44 = *(_DWORD *)&HouseClass_Player[44052];
               LOBYTE(v44) = HouseClass_Player[44052] & 0xFB;
               *(_DWORD *)&HouseClass_Player[44052] = v44;
               goto LABEL_189;
@@ -2336,7 +2254,7 @@ LABEL_184:
             LOBYTE(v49) = HouseClass_Player[39084] & 0xFE;
             *(_DWORD *)&HouseClass_Player[39084] = v49;
           }
-          v46 = *(_DWORD *)&HouseClass_Player[44052];
+          int v46 = *(_DWORD *)&HouseClass_Player[44052];
           LOBYTE(v46) = HouseClass_Player[44052] & 0xFB;
           *(_DWORD *)&HouseClass_Player[44052] = v46;
 LABEL_189:
@@ -2350,7 +2268,7 @@ LABEL_189:
             if ( *(_DWORD *)&HouseClass_Player[29932] == 3 )
             {
               if ( (unsigned int)(Network::GetLobbyStatus(&HouseClass_Player[44148]) + 2) >= 0xF )
-                v47 = Network::GetLobbyStatus(&HouseClass_Player[44148]) + 2;
+                int v47 = Network::GetLobbyStatus(&HouseClass_Player[44148]) + 2;
               else
                 v47 = 15;
               Network::SetConnectionParams(
@@ -2360,7 +2278,7 @@ LABEL_189:
                 600,
                 (CellStruct *)1);
               if ( (unsigned int)(Network::GetLobbyStatus(&HouseClass_Player[44148]) + 2) >= 0x3C )
-                v48 = Network::GetLobbyStatus(&HouseClass_Player[44148]) + 2;
+                int v48 = Network::GetLobbyStatus(&HouseClass_Player[44148]) + 2;
               else
                 v48 = 60;
               TacticalClass::SetCameraPosition(&HouseClass_Player[44148], v48, -1, 600);
@@ -2410,8 +2328,9 @@ LABEL_183:
         ++*(_DWORD *)&HouseClass_Player[43616];
         Credits::Screen();
         --*(_DWORD *)&HouseClass_Player[43616];
+  _DWORD v61[14]; // [esp+32h] [ebp-F4h] BYREF
         Options = LoadOptions::LoadOptions(v61);
-        v25 = LoadOptions::Run(Options);
+        char v25 = LoadOptions::Run(Options);
         LoadOptions::Cleanup(v61);
         if ( v25 )
         {
@@ -2437,6 +2356,8 @@ LABEL_134:
         goto LABEL_81;
       case 13:
         esi12 = 4;
+  char v52; // [esp+Ah] [ebp-11Ch]
+  char v53; // [esp+Eh] [ebp-118h]
         Movie::Play((CCINIClass *)1, 1, (CCINIClass *)1, 0, (char)v54, v52, v53);
         Screen::Capture(1, 0, 0, -1);
         goto LABEL_134;
@@ -2475,6 +2396,7 @@ LABEL_81:
         *(_DWORD *)&HouseClass_Player[40296] = 0;
         switch ( *(_DWORD *)&HouseClass_Player[29932] )
         {
+  char v27; // al
           case 0:
             goto LABEL_40;
           case 1:
@@ -2523,7 +2445,7 @@ LABEL_116:
               case 5:
                 goto LABEL_145;
               case 3:
-                v32 = &stru_825BAC.visibilityFlags;
+                int * v32 = &stru_825BAC.visibilityFlags;
                 do
                 {
                   if ( !*((_BYTE *)v32 + 12) )
@@ -2547,11 +2469,10 @@ LABEL_116:
                 *(_DWORD *)&HouseClass_Player[29952] = 2;
                 if ( *(_DWORD *)&stru_87C374[45748] )
                   goto LABEL_134;
-                v33 = (_DWORD *)__2_YAPAXI_Z(0x3F310u);
+                _DWORD * v33 = (_DWORD *)__2_YAPAXI_Z(0x3F310u);
                 if ( v33 )
                   v36 = (IPXInterfaceClass *)IPXInterfaceClass::Construct(v33);
-                else
-                  v36 = 0;
+                IPXInterfaceClass *v36 = 0;
                 *(_DWORD *)&stru_87C374[45748] = v36;
                 WinsockInterface::Init(v36);
                 Screen::Capture(1, 0, 0, -1);
@@ -2570,7 +2491,7 @@ LABEL_116:
             }
             break;
           case 4:
-            v28 = &stru_825BAC.visibilityFlags;
+            int * v28 = &stru_825BAC.visibilityFlags;
             do
             {
               if ( !*((_BYTE *)v28 + 12) )
@@ -2582,8 +2503,8 @@ LABEL_116:
             memset(&HouseClass_Player[40672], 0, 0x20u);
             j = 0;
             *(_WORD *)&HouseClass_Player[42332] = 0;
-            v29 = Network::Init();
-            v30 = RunWOLMainLoop(esi12 == 17);
+            char v29 = Network::Init();
+            int v30 = RunWOLMainLoop(esi12 == 17);
             esi12 = 16;
             HouseClass_Player[39106] = 0;
             switch ( v30 )
@@ -2895,7 +2816,7 @@ namespace gamemd {
 int Random_Init()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int Random_Init()
+void Random_Init()
 {
   DWORD TickCount; // eax
   int result; // eax

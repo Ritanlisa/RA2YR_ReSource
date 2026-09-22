@@ -8,31 +8,20 @@ namespace gamemd {
 char SwizzleManagerClass_19::Release(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall SwizzleManagerClass_19_::_vt02(void *this, int a2, _DWORD *a3)
+void SwizzleManagerClass_19_::_vt02(int a2, _DWORD *a3)
 {
-  int v3; // ebp
-  _DWORD *v5; // esi
-  _DWORD *v6; // eax
-  _DWORD *v7; // ecx
-  int v8; // edx
-  _DWORD *v9; // eax
-  int v10; // ecx
-  int v12; // edx
-  int v13; // ecx
-  int v14; // eax
-  _DWORD *v15; // ebx
 
-  v3 = a2; /*0x6cf5a2*/
+  int v3 = a2; /*0x6cf5a2*/
   if ( a2 ) /*0x6cf5ae*/
   {
-    v5 = a3; /*0x6cf5b4*/
+    _DWORD * v5 = a3; /*0x6cf5b4*/
     this->q00C = 0; /*0x6cf5b8*/
     if ( a3 ) /*0x6cf5bd*/
     {
-      v9 = a3; /*0x6cf5f3*/
+      _DWORD * v9 = a3; /*0x6cf5f3*/
       if ( a2 - 1 >= 0 ) /*0x6cf5f7*/
       {
-        v10 = a2; /*0x6cf5f9*/
+        int v10 = a2; /*0x6cf5f9*/
         do /*0x6cf603*/
         {
           *v9 = 0; /*0x6cf5fa*/
@@ -45,13 +34,13 @@ char __thiscall SwizzleManagerClass_19_::_vt02(void *this, int a2, _DWORD *a3)
     }
     else
     {
-      v6 = __2_YAPAXI_Z(8 * a2); /*0x6cf5c7*/
+      _DWORD * v6 = __2_YAPAXI_Z(8 * a2); /*0x6cf5c7*/
       if ( v6 ) /*0x6cf5d1*/
       {
-        v7 = v6; /*0x6cf5d6*/
+        _DWORD * v7 = v6; /*0x6cf5d6*/
         if ( a2 - 1 >= 0 ) /*0x6cf5da*/
         {
-          v8 = a2; /*0x6cf5dc*/
+          int v8 = a2; /*0x6cf5dc*/
           do /*0x6cf5e6*/
           {
             *v7 = 0; /*0x6cf5dd*/
@@ -73,16 +62,16 @@ char __thiscall SwizzleManagerClass_19_::_vt02(void *this, int a2, _DWORD *a3)
     {
       if ( this->SwizzleManagerClass_19_field_0x4 ) /*0x6cf616*/
       {
-        v12 = this->SwizzleManagerClass_19_field_0x8; /*0x6cf61b*/
+        int v12 = this->SwizzleManagerClass_19_field_0x8; /*0x6cf61b*/
         if ( a2 < v12 ) /*0x6cf620*/
           v12 = a2; /*0x6cf622*/
-        v13 = 0; /*0x6cf624*/
+        int v13 = 0; /*0x6cf624*/
         if ( v12 > 0 ) /*0x6cf628*/
         {
           do /*0x6cf647*/
           {
-            v14 = 2 * v13; /*0x6cf62d*/
-            v15 = (_DWORD *)(this->SwizzleManagerClass_19_field_0x4 + 8 * v13++); /*0x6cf636*/
+            int v14 = 2 * v13; /*0x6cf62d*/
+            _DWORD * v15 = (_DWORD *)(this->SwizzleManagerClass_19_field_0x4 + 8 * v13++); /*0x6cf636*/
             v5[v14] = *v15; /*0x6cf63d*/
             v5[v14 + 1] = v15[1]; /*0x6cf643*/
           }
@@ -91,7 +80,7 @@ char __thiscall SwizzleManagerClass_19_::_vt02(void *this, int a2, _DWORD *a3)
         }
         if ( this->IsAllocated ) /*0x6cf64f*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x6cf658*/
+          __3_YAXPAX_Z(this->q004); /*0x6cf658*/
           this->SwizzleManagerClass_19_field_0x4 = 0; /*0x6cf660*/
         }
       }
@@ -119,32 +108,20 @@ namespace gamemd {
 char SwizzleManagerClass_19::SetCapacity(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall SwizzleManagerClass_19_::sub_6CF720(void *this, int a2, _DWORD *a3)
+void SwizzleManagerClass_19_::sub_6CF720(int a2, _DWORD *a3)
 {
-  int v3; // ebp
-  _DWORD *v5; // edi
-  _DWORD *v6; // eax
-  _DWORD *v7; // ecx
-  int v8; // edx
-  _DWORD *v9; // eax
-  int v10; // ecx
-  int v11; // edx
-  int v12; // ecx
-  int v13; // eax
-  _DWORD *v14; // ebx
-  int v15; // eax
 
-  v3 = a2; /*0x6cf722*/
+  int v3 = a2; /*0x6cf722*/
   if ( a2 ) /*0x6cf72e*/
   {
-    v5 = a3; /*0x6cf734*/
+    _DWORD * v5 = a3; /*0x6cf734*/
     this->q00C = 0; /*0x6cf738*/
     if ( a3 ) /*0x6cf73d*/
     {
-      v9 = a3; /*0x6cf773*/
+      _DWORD * v9 = a3; /*0x6cf773*/
       if ( a2 - 1 >= 0 ) /*0x6cf777*/
       {
-        v10 = a2; /*0x6cf779*/
+        int v10 = a2; /*0x6cf779*/
         do /*0x6cf783*/
         {
           *v9 = 0; /*0x6cf77a*/
@@ -157,13 +134,13 @@ char __thiscall SwizzleManagerClass_19_::sub_6CF720(void *this, int a2, _DWORD *
     }
     else
     {
-      v6 = __2_YAPAXI_Z(8 * a2); /*0x6cf747*/
+      _DWORD * v6 = __2_YAPAXI_Z(8 * a2); /*0x6cf747*/
       if ( v6 ) /*0x6cf751*/
       {
-        v7 = v6; /*0x6cf756*/
+        _DWORD * v7 = v6; /*0x6cf756*/
         if ( a2 - 1 >= 0 ) /*0x6cf75a*/
         {
-          v8 = a2; /*0x6cf75c*/
+          int v8 = a2; /*0x6cf75c*/
           do /*0x6cf766*/
           {
             *v7 = 0; /*0x6cf75d*/
@@ -185,16 +162,16 @@ char __thiscall SwizzleManagerClass_19_::sub_6CF720(void *this, int a2, _DWORD *
       return 0; /*0x6cf814*/
     if ( this->SwizzleManagerClass_19_field_0x4 ) /*0x6cf791*/
     {
-      v11 = this->SwizzleManagerClass_19_field_0x8; /*0x6cf796*/
+      int v11 = this->SwizzleManagerClass_19_field_0x8; /*0x6cf796*/
       if ( a2 < v11 ) /*0x6cf79b*/
         v11 = a2; /*0x6cf79d*/
-      v12 = 0; /*0x6cf79f*/
+      int v12 = 0; /*0x6cf79f*/
       if ( v11 > 0 ) /*0x6cf7a3*/
       {
         do /*0x6cf7c2*/
         {
-          v13 = 2 * v12; /*0x6cf7a8*/
-          v14 = (_DWORD *)(this->SwizzleManagerClass_19_field_0x4 + 8 * v12++); /*0x6cf7b1*/
+          int v13 = 2 * v12; /*0x6cf7a8*/
+          _DWORD * v14 = (_DWORD *)(this->SwizzleManagerClass_19_field_0x4 + 8 * v12++); /*0x6cf7b1*/
           v5[v13] = *v14; /*0x6cf7b8*/
           v5[v13 + 1] = v14[1]; /*0x6cf7be*/
         }
@@ -203,7 +180,7 @@ char __thiscall SwizzleManagerClass_19_::sub_6CF720(void *this, int a2, _DWORD *
       }
       if ( this->IsAllocated ) /*0x6cf7ca*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x6cf7d3*/
+        __3_YAXPAX_Z(this->q004); /*0x6cf7d3*/
         this->SwizzleManagerClass_19_field_0x4 = 0; /*0x6cf7db*/
       }
     }
@@ -215,7 +192,7 @@ char __thiscall SwizzleManagerClass_19_::sub_6CF720(void *this, int a2, _DWORD *
   {
     (*(void (__thiscall **)(void *))(this->q00C)(this); /*0x6cf7f8*/
   }
-  v15 = this->SwizzleManagerClass_19_field_0x8; /*0x6cf7fb*/
+  int v15 = this->SwizzleManagerClass_19_field_0x8; /*0x6cf7fb*/
   if ( v15 < this->SwizzleManagerClass_19_field_0x10 ) /*0x6cf803*/
     this->SwizzleManagerClass_19_field_0x10 = v15; /*0x6cf805*/
   return 1; /*0x6cf808*/

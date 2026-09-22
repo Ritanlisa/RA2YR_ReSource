@@ -7,11 +7,10 @@
 int Control::DispatchClick(ControlClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Control::DispatchClick(_DWORD *this, ControlClass *aP1)
+void Control::DispatchClick(ControlClass *aP1)
 {
-  int v3; // ecx
 
-  v3 = *(this + 10); /*0x48e623*/
+  int v3 = *(this + 10); /*0x48e623*/
   if ( v3 ) /*0x48e628*/
     (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)v3 + 108))(v3, 0); /*0x48e62e*/
   return GadgetClass::ClearState(this, aP1); /*0x48e63d*/
@@ -22,16 +21,11 @@ int __thiscall Control::DispatchClick(_DWORD *this, ControlClass *aP1)
 char Control::RepositionControlsDialog()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall Control::RepositionControlsDialog(HWND this)
+void Control::RepositionControlsDialog(HWND this)
 {
   HWND Parent; // esi
-  int v3; // ebp
-  _DWORD *v4; // eax
-  void *v5; // esi
   int DlgCtrlID; // edi
   char result; // al
-  int v8; // ebx
-  _DWORD *v9; // eax
   int v10; // eax
   int X; // [esp+10h] [ebp-3Ch]
   int nWidth; // [esp+14h] [ebp-38h]
@@ -49,12 +43,12 @@ char __thiscall Control::RepositionControlsDialog(HWND this)
   GetWindowRect(this, &v18); /*0x60b97a*/
   X = v18.left - Rect.left; /*0x60b996*/
   nHeight = v18.bottom - v18.top; /*0x60b9a2*/
-  v3 = v18.top - Rect.top; /*0x60b9ab*/
+  int v3 = v18.top - Rect.top; /*0x60b9ab*/
   nWidth = v18.right - v18.left; /*0x60b9ad*/
   v14 = Parent; /*0x60b9b3*/
   if ( !g_DialogHashMap_Count ) /*0x60b9b7*/
     goto LABEL_5; /*0x60b9b7*/
-  v4 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Buckets(&v14) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x60b9d8*/
+  _DWORD * v4 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Buckets(&v14) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x60b9d8*/
   if ( !v4 ) /*0x60b9dd*/
     goto LABEL_5; /*0x60b9dd*/
   while ( (HWND)*v4 != v14 ) /*0x60b9e5*/
@@ -63,15 +57,15 @@ char __thiscall Control::RepositionControlsDialog(HWND this)
     if ( !v4 ) /*0x60b9f3*/
       goto LABEL_5; /*0x60b9f3*/
   }
-  v9 = v4 + 1; /*0x60bd04*/
+  _DWORD * v9 = v4 + 1; /*0x60bd04*/
   if ( v9 ) /*0x60bd09*/
-    v5 = (void *)v9[27]; /*0x60bd0f*/
+    void * v5 = (void *)v9[27]; /*0x60bd0f*/
   else
 LABEL_5:
     v5 = 0; /*0x60b9f5*/
   DlgCtrlID = GetDlgCtrlID(hWnda); /*0x60ba02*/
   result = nHeight; /*0x60ba0e*/
-  v8 = X; /*0x60ba12*/
+  int v8 = X; /*0x60ba12*/
   v14 = (HWND)v3; /*0x60ba16*/
   v16 = nWidth; /*0x60ba1a*/
   v17 = nHeight; /*0x60ba1e*/
@@ -318,17 +312,13 @@ LABEL_171:
 char Control::CheckControlTypeDialog()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall Dialog_CheckControlType(void *this)
+void Dialog_CheckControlType(void *this)
 {
-  _DWORD *v1; // eax
-  _DWORD *v3; // ecx
-  int v4; // eax
-  void *v5; // [esp+4h] [ebp-4h] BYREF
 
-  v5 = this; /*0x60c549*/
+  Control *v5 = this; /*0x60c549*/
   if ( !g_DialogHashMap_Count ) /*0x60c54d*/
     return 0; /*0x60c54d*/
-  v1 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Buckets(&v5) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x60c570*/
+  _DWORD * v1 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Buckets(&v5) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x60c570*/
   if ( !v1 ) /*0x60c575*/
     return 0; /*0x60c575*/
   while ( (void *)*v1 != v5 ) /*0x60c57d*/
@@ -337,10 +327,10 @@ char __thiscall Dialog_CheckControlType(void *this)
     if ( !v1 ) /*0x60c587*/
       return 0; /*0x60c58d*/
   }
-  v3 = v1 + 1; /*0x60c592*/
+  _DWORD * v3 = v1 + 1; /*0x60c592*/
   if ( v1 == (_DWORD *)-4 ) /*0x60c597*/
     return 0; /*0x60c599*/
-  v4 = v1[28]; /*0x60c59e*/
+  int v4 = v1[28]; /*0x60c59e*/
   if ( v4 != 268 /*0x60c7b0*/
     && v4 != 148
     && v4 != 182

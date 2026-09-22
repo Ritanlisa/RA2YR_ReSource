@@ -10,14 +10,9 @@ unsigned int * FoggedObject::DrawVector_Constructor(IUnknown * aP1, IUnknown * a
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall FoggedObject::DrawVector_Constructor(_DWORD *this, IUnknown *aP1, IUnknown *aP2)
 {
-  int v4; // ebx
-  int *v5; // eax
   IUnknown *v6; // ecx
-  int v8; // eax
-  int v9; // ecx
   IUnknown *v10; // edx
-
-  v4 = 0; /*0x4d2db9*/
+  int v4 = 0; /*0x4d2db9*/
   this->q004 = 0; /*0x4d2dbd*/
   *(this + 2) = aP1; /*0x4d2dc0*/
   *((_BYTE *)this + 12) = 1; /*0x4d2dc3*/
@@ -27,12 +22,12 @@ _DWORD *__thiscall FoggedObject::DrawVector_Constructor(_DWORD *this, IUnknown *
     return this; /*0x4d2e38*/
   if ( !aP2 ) /*0x4d2dd8*/
   {
-    v8 = __2_YAPAXI_Z(16 * (_DWORD)aP1); /*0x4d2e07*/
+    int v8 = __2_YAPAXI_Z(16 * (_DWORD)aP1); /*0x4d2e07*/
     if ( v8 ) /*0x4d2e11*/
     {
       if ( (int)&aP1[-1].__tail_1602E[1] >= 0 ) /*0x4d2e18*/
       {
-        v9 = v8 + 8; /*0x4d2e1a*/
+        int v9 = v8 + 8; /*0x4d2e1a*/
         v10 = aP1; /*0x4d2e1d*/
         do /*0x4d2e2d*/
         {
@@ -53,7 +48,7 @@ _DWORD *__thiscall FoggedObject::DrawVector_Constructor(_DWORD *this, IUnknown *
   }
   if ( (int)&aP1[-1].__tail_1602E[1] >= 0 ) /*0x4d2ddf*/
   {
-    v5 = &aP2->field_8; /*0x4d2de1*/
+    int * v5 = &aP2->field_8; /*0x4d2de1*/
     v6 = aP1; /*0x4d2de4*/
     do /*0x4d2df4*/
     {

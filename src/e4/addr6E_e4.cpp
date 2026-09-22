@@ -48,7 +48,7 @@ namespace gamemd {
 char E4Recv_6E0250::sub_6E0250(int a2, int a3, int a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_6E0250(_BYTE *this, int a2, int a3, int a4, int a5)
+void sub_6E0250(_BYTE *this, int a2, int a3, int a4, int a5)
 {
   *((_BYTE *)g_ScenarioClass_Instance + 13479) = *(this + 144); /*0x6e025c*/
   return 1; /*0x6e0264*/
@@ -61,7 +61,7 @@ namespace gamemd {
 char E4Recv_6E0270::sub_6E0270(int a2, int a3, int a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_6E0270(_BYTE *this, int a2, int a3, int a4, int a5)
+void sub_6E0270(_BYTE *this, int a2, int a3, int a4, int a5)
 {
   *((_BYTE *)g_ScenarioClass_Instance + 13478) = *(this + 144); /*0x6e027c*/
   return 1; /*0x6e0284*/
@@ -74,7 +74,7 @@ namespace gamemd {
 char E4Recv_6E0290::sub_6E0290(int a2, int a3, int a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_6E0290(_BYTE *this, int a2, int a3, int a4, int a5)
+void sub_6E0290(_BYTE *this, int a2, int a3, int a4, int a5)
 {
   *((_BYTE *)g_ScenarioClass_Instance + 13480) = *(this + 144); /*0x6e029c*/
   return 1; /*0x6e02a4*/
@@ -93,18 +93,17 @@ int globalHelper_0E2050()
 
 // 0x6E2790
 namespace gamemd {
-char E4Recv_6E2790::sub_6E2790(int a2, int a3, int a4, int a5)
+void E4Recv_6E2790::sub_6E2790(int a2, int a3, int a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_6E2790(int *this, int a2, int a3, int a4, int a5)
+void sub_6E2790(int *this, int a2, int a3, int a4, int a5)
 {
-  int v6; // [esp+0h] [ebp-14h] BYREF
-  int v7; // [esp+4h] [ebp-10h] BYREF
-  int v8[2]; // [esp+8h] [ebp-Ch] BYREF
   int GroundHeight; // [esp+10h] [ebp-4h]
 
-  v6 = *ScenarioClass::Get_Waypoint_Location((char *)g_ScenarioClass_Instance, &v7, *(this + 17)); /*0x6e27ab*/
+  int v7; // [esp+4h] [ebp-10h] BYREF
+  int v6 = *ScenarioClass::Get_Waypoint_Location((char *)g_ScenarioClass_Instance, &v7, *(this + 17)); /*0x6e27ab*/
   GroundHeight = 0; /*0x6e27af*/
+  int v8[2]; // [esp+8h] [ebp-Ch] BYREF
   v8[1] = (SHIWORD(v6) << 8) + 128; /*0x6e27d0*/
   v8[0] = ((__int16)v6 << 8) + 128; /*0x6e27da*/
   GroundHeight = Cell::GetGroundHeight(v8); /*0x6e27e3*/
@@ -130,23 +129,19 @@ int CreateHouseClass()
 
 // 0x6E3380
 namespace gamemd {
-char E4Recv_6E3380::sub_6E3380(int a2, int a3, int a4, int a5)
+void E4Recv_6E3380::sub_6E3380(int a2, int a3, int a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_6E3380(int *this, int a2, int a3, int a4, int a5)
+void sub_6E3380(int *this, int a2, int a3, int a4, int a5)
 {
-  _DWORD *v5; // eax
-  int v7; // [esp+0h] [ebp-10h] BYREF
-  int v8; // [esp+4h] [ebp-Ch] BYREF
-  int v9; // [esp+8h] [ebp-8h]
   int GroundHeight; // [esp+Ch] [ebp-4h]
 
-  v7 = *ScenarioClass::Get_Waypoint_Location((char *)g_ScenarioClass_Instance, &v7, this->q011); /*0x6e339b*/
+  int v7 = *ScenarioClass::Get_Waypoint_Location((char *)g_ScenarioClass_Instance, &v7, this->q011); /*0x6e339b*/
   GroundHeight = 0; /*0x6e339f*/
-  v9 = (SHIWORD(v7) << 8) + 128; /*0x6e33c0*/
-  v8 = ((__int16)v7 << 8) + 128; /*0x6e33ca*/
+  int v9 = (SHIWORD(v7) << 8) + 128; /*0x6e33c0*/
+  int v8 = ((__int16)v7 << 8) + 128; /*0x6e33ca*/
   GroundHeight = Cell::GetGroundHeight(&v8); /*0x6e33d5*/
-  v5 = __2_YAPAXI_Z(0x14u); /*0x6e33d9*/
+  _DWORD * v5 = __2_YAPAXI_Z(0x14u); /*0x6e33d9*/
   if ( v5 ) /*0x6e33e3*/
     ActionQueue::PushEntry(v5, v8, v9, GroundHeight); /*0x6e3400*/
   return 1; /*0x6e3407*/
@@ -159,17 +154,14 @@ namespace gamemd {
 char E4Recv_6E37F0::sub_6E37F0(int a2, int a3, int a4, ObjectClass * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_6E37F0(int this, int a2, int a3, int a4, ObjectClass *aP4)
+void sub_6E37F0(int this, int a2, int a3, int a4, ObjectClass *aP4)
 {
-  int v5; // edi
-  int v6; // ebx
-  int v7; // ecx
   char result; // al
 
-  v5 = *(_DWORD *)&HouseClass_Player[44484] - 1; /*0x6e37fa*/
+  int v5 = *(_DWORD *)&HouseClass_Player[44484] - 1; /*0x6e37fa*/
   if ( *(_DWORD *)&HouseClass_Player[44484] - 1 >= 0 ) /*0x6e3803*/
   {
-    v6 = *(_DWORD *)&HouseClass_Player[44472] + 4 * v5; /*0x6e380b*/
+    int v6 = *(_DWORD *)&HouseClass_Player[44472] + 4 * v5; /*0x6e380b*/
     while ( strcmp((const char *)(*(_DWORD *)v6 + 36), (const char *)(this + 84)) ) /*0x6e3845*/
     {
       --v5; /*0x6e3847*/
@@ -180,7 +172,7 @@ char __thiscall sub_6E37F0(int this, int a2, int a3, int a4, ObjectClass *aP4)
     *(_DWORD *)(*(_DWORD *)v6 + 1588) = this->M144; /*0x6e385b*/
   }
 LABEL_7:
-  v7 = (int)&HouseClass_Count[-1].__tail_1602E[1]; /*0x6e3861*/
+  int v7 = (int)&HouseClass_Count[-1].__tail_1602E[1]; /*0x6e3861*/
   for ( result = 1; v7 >= 0; *(_BYTE *)(*(_DWORD *)&HouseClass_Array->__pad_0[4 * v7 + 4] + 508) = 1 ) /*0x6e3870*/
     --v7; /*0x6e3878*/
   return result; /*0x6e3867*/
@@ -193,13 +185,11 @@ namespace gamemd {
 char sub_6E4090(int a1, int a2, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall sub_6E4090(int a1, int a2, int a3, int a4)
+void sub_6E4090(int a1, int a2, int a3, int a4)
 {
-  int v4; // edi
   int v5; // esi
   _DWORD *v6; // ecx
-
-  v4 = 0; /*0x6e409b*/
+  int v4 = 0; /*0x6e409b*/
   if ( g_BuildingProductionState <= 0 ) /*0x6e409f*/
     return 0; /*0x6e40e3*/
   while ( 1 ) /*0x6e40aa*/
@@ -238,16 +228,13 @@ int __fastcall sub_6EC250(int a1, int a2)
 {
   int result; // eax
   int i; // ebp
-  int v4; // esi
   int j; // eax
   wchar_t *v6; // edi
-  int v7; // eax
-  int v10; // [esp+10h] [ebp-8h]
 
   result = g_HouseClass_AIProductionState; /*0x6ec253*/
   for ( i = 0; i < g_HouseClass_AIProductionState; ++i ) /*0x6ec265*/
   {
-    v4 = *((_DWORD *)g_TeamClassPool + i); /*0x6ec275*/
+    int v4 = *((_DWORD *)g_TeamClassPool + i); /*0x6ec275*/
     if ( v4 && a2 == *(_DWORD *)(v4 + 44) && *(_DWORD *)(*(_DWORD *)(v4 + 36) + 180) < a1 ) /*0x6ec294*/
     {
       for ( j = *(_DWORD *)(v4 + 84); j; j = *(_DWORD *)(v4 + 84) ) /*0x6ec29b*/
@@ -255,9 +242,10 @@ int __fastcall sub_6EC250(int a1, int a2)
       *(_BYTE *)(v4 + 126) = 1; /*0x6ec2b0*/
       *(_BYTE *)(v4 + 125) = 1; /*0x6ec2b3*/
       v6 = g_CurrentFrame; /*0x6ec2bc*/
-      v7 = Math::RoundToInt(*(double *)&g_RulesClass_Instance[1].AITriggerFailureWeightDelta * 900.0); /*0x6ec2ce*/
+      int v7 = Math::RoundToInt(*(double *)&g_RulesClass_Instance[1].AITriggerFailureWeightDelta * 900.0); /*0x6ec2ce*/
       *(_BYTE *)(v4 + 131) = 1; /*0x6ec2da*/
       *(_DWORD *)(v4 + 100) = v6; /*0x6ec2e0*/
+  int v10; // [esp+10h] [ebp-8h]
       *(_DWORD *)(v4 + 104) = v10; /*0x6ec2e2*/
       *(_DWORD *)(v4 + 108) = v7; /*0x6ec2e5*/
     }
@@ -273,15 +261,13 @@ namespace gamemd {
 void E4Recv_6EDFD0::sub_6EDFD0(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_6EDFD0(int this, int a2, int a3)
+void sub_6EDFD0(int this, int a2, int a3)
 {
-  int v4; // esi
   char v5; // cl
   int v6; // [esp+8h] [ebp-4h] BYREF
-
   do /*0x6ee038*/
   {
-    v4 = this->M84; /*0x6edfd5*/
+    int v4 = this->M84; /*0x6edfd5*/
     v5 = 0; /*0x6edfd8*/
     if ( !v4 ) /*0x6edfdc*/
       break; /*0x6edfdc*/
@@ -318,59 +304,22 @@ unsigned int * DamageMapClassArea(int ecx0, void * a1, FootClass * aP2, int a4, 
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__fastcall DamageMapClassArea(int ecx0, void *a1, FootClass *aP2, int a4, char a5)
 {
-  int v5; // ecx
   _DWORD *result; // eax
-  _DWORD *v7; // esi
   HouseClass *v8; // eax
   FootClass *v9; // edi
-  int v10; // ecx
-  _DWORD *v11; // eax
   HouseClass *v12; // edx
-  _DWORD *v13; // eax
   HouseClass *v14; // edx
   int TileData; // eax
   int *location; // ecx
-  int v17; // edi
-  int v18; // ebx
-  int v19; // ecx
-  int v20; // edx
-  double v21; // st7
-  int *v22; // eax
-  int v23; // edi
-  int v24; // ebx
-  int v25; // ecx
-  int v26; // eax
-  int v27; // ecx
-  int v28; // edx
-  double v29; // st7
-  bool v30; // [esp+1Bh] [ebp-75h]
-  int v31; // [esp+1Ch] [ebp-74h]
-  int v32; // [esp+20h] [ebp-70h]
   MouseClass *v33; // [esp+24h] [ebp-6Ch]
-  int v34; // [esp+28h] [ebp-68h]
-  int v35; // [esp+2Ch] [ebp-64h]
-  _DWORD *v36; // [esp+30h] [ebp-60h]
-  _DWORD *v37; // [esp+34h] [ebp-5Ch]
   MouseClass *v40; // [esp+40h] [ebp-50h] BYREF
-  int v41; // [esp+44h] [ebp-4Ch] BYREF
-  int v42; // [esp+48h] [ebp-48h]
-  int v43; // [esp+4Ch] [ebp-44h]
-  int v44; // [esp+50h] [ebp-40h]
-  int v45; // [esp+54h] [ebp-3Ch]
-  int v46; // [esp+58h] [ebp-38h]
-  int v47; // [esp+5Ch] [ebp-34h]
-  int v48; // [esp+68h] [ebp-28h]
-  int v49; // [esp+74h] [ebp-1Ch]
-  char v50[12]; // [esp+78h] [ebp-18h] BYREF
-  char v51[12]; // [esp+84h] [ebp-Ch] BYREF
-
-  v5 = 0; /*0x6eebe4*/
-  v31 = -1; /*0x6eebe6*/
-  v32 = -1; /*0x6eebea*/
+  int v5 = 0; /*0x6eebe4*/
+  int v31 = -1; /*0x6eebe6*/
+  int v32 = -1; /*0x6eebea*/
   result = 0; /*0x6eebf5*/
-  v36 = 0; /*0x6eebfb*/
-  v37 = 0; /*0x6eebff*/
-  v35 = 0; /*0x6eec03*/
+  _DWORD * v36 = 0; /*0x6eebfb*/
+  _DWORD * v37 = 0; /*0x6eebff*/
+  int v35 = 0; /*0x6eec03*/
   if ( *(int *)&HouseClass_Player[44548] <= 0 ) /*0x6eec07*/
   {
 LABEL_22:
@@ -380,9 +329,9 @@ LABEL_22:
   }
   do /*0x6eee55*/
   {
-    v7 = *(_DWORD **)(*(_DWORD *)&HouseClass_Player[44536] + 4 * v5); /*0x6eec1a*/
+    _DWORD * v7 = *(_DWORD **)(*(_DWORD *)&HouseClass_Player[44536] + 4 * v5); /*0x6eec1a*/
     v8 = (HouseClass *)v7[135]; /*0x6eec1d*/
-    v30 = v8 == a1; /*0x6eec30*/
+    bool v30 = v8 == a1; /*0x6eec30*/
     if ( v7[328] != ecx0 ) /*0x6eec34*/
       goto LABEL_19; /*0x6eec34*/
     if ( v8 == a1 ) /*0x6eec3c*/
@@ -398,11 +347,12 @@ LABEL_22:
         goto LABEL_19; /*0x6eec62*/
       }
     }
-    v10 = -1; /*0x6eec70*/
+    int v10 = -1; /*0x6eec70*/
     switch ( a4 ) /*0x6eec7c*/
     {
       case 0: /*0x6eec7c*/
-        v11 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, char *))(*v7 + 72))(v7, v50); /*0x6eec8c*/
+  char v50[12]; // [esp+78h] [ebp-18h] BYREF
+        _DWORD * v11 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, char *))(*v7 + 72))(v7, v50); /*0x6eec8c*/
         LOWORD(v33) = *v11 / 256; /*0x6eec9f*/
         v12 = (HouseClass *)v9->focus; /*0x6eecb0*/
         HIWORD(v33) = v11[1] / 256; /*0x6eecb9*/
@@ -410,23 +360,26 @@ LABEL_22:
         v10 = 0x7FFFFFFF - CellClass::GetTileData((IUnknown *)&v40, (IUnknown *)v12); /*0x6eecdb*/
         break; /*0x6eecdd*/
       case 1: /*0x6eec7c*/
-        v13 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, char *))(*v7 + 72))(v7, v51); /*0x6eeceb*/
+  char v51[12]; // [esp+84h] [ebp-Ch] BYREF
+        _DWORD * v13 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, char *))(*v7 + 72))(v7, v51); /*0x6eeceb*/
+  int v34; // [esp+28h] [ebp-68h]
         LOWORD(v34) = *v13 / 256; /*0x6eecfe*/
         v14 = (HouseClass *)v9->focus; /*0x6eed0f*/
         HIWORD(v34) = v13[1] / 256; /*0x6eed18*/
-        v41 = v34; /*0x6eed25*/
+        int v41 = v34; /*0x6eed25*/
         TileData = CellClass::GetTileData((IUnknown *)&v41, (IUnknown *)v14); /*0x6eed30*/
         goto LABEL_13; /*0x6eed35*/
       case 2: /*0x6eec7c*/
         location = v9->location; /*0x6eed46*/
-        v17 = v9->location[0]; /*0x6eed4b*/
-        v18 = location[1]; /*0x6eed4d*/
-        v48 = location[2]; /*0x6eed53*/
-        v19 = v7[40]; /*0x6eed5d*/
-        v42 = v7[39] - v17; /*0x6eed60*/
-        v20 = v7[41]; /*0x6eed6a*/
-        v43 = v19 - v18; /*0x6eed6d*/
-        v44 = v20 - v48; /*0x6eed77*/
+        int v17 = v9->location[0]; /*0x6eed4b*/
+        int v18 = location[1]; /*0x6eed4d*/
+        int v48 = location[2]; /*0x6eed53*/
+        int v19 = v7[40]; /*0x6eed5d*/
+        int v42 = v7[39] - v17; /*0x6eed60*/
+        int v20 = v7[41]; /*0x6eed6a*/
+        int v43 = v19 - v18; /*0x6eed6d*/
+        int v44 = v20 - v48; /*0x6eed77*/
+  double v21; // st7
         v21 = Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64( /*0x6eed9c*/
                                             (double)v42 * (double)v42
                                           + (double)(v20 - v48) * (double)(v20 - v48)
@@ -434,17 +387,18 @@ LABEL_22:
         v10 = 0x7FFFFFFF - Math::RoundToInt(v21); /*0x6eedae*/
         break; /*0x6eedb0*/
       case 3: /*0x6eec7c*/
-        v22 = v9->location; /*0x6eedbe*/
-        v23 = v9->location[0]; /*0x6eedc3*/
-        v24 = v22[1]; /*0x6eedc5*/
-        v25 = v22[2]; /*0x6eedc8*/
-        v26 = v7[39]; /*0x6eedcb*/
-        v49 = v25; /*0x6eedcd*/
-        v27 = v7[40] - v24; /*0x6eedda*/
-        v45 = v26 - v23; /*0x6eeddc*/
-        v28 = v7[41]; /*0x6eede0*/
-        v46 = v27; /*0x6eede3*/
-        v47 = v28 - v49; /*0x6eeded*/
+        int * v22 = v9->location; /*0x6eedbe*/
+        int v23 = v9->location[0]; /*0x6eedc3*/
+        int v24 = v22[1]; /*0x6eedc5*/
+        int v25 = v22[2]; /*0x6eedc8*/
+        int v26 = v7[39]; /*0x6eedcb*/
+        int v49 = v25; /*0x6eedcd*/
+        int v27 = v7[40] - v24; /*0x6eedda*/
+        int v45 = v26 - v23; /*0x6eeddc*/
+        int v28 = v7[41]; /*0x6eede0*/
+        int v46 = v27; /*0x6eede3*/
+        int v47 = v28 - v49; /*0x6eeded*/
+  double v29; // st7
         v29 = Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64( /*0x6eee12*/
                                             (double)(v26 - v23) * (double)(v26 - v23)
                                           + (double)(v28 - v49) * (double)(v28 - v49)
@@ -483,33 +437,22 @@ namespace gamemd {
 void E4Recv_6EFC70::ProcessAISuperWeaponSelection(ScriptClass * aP1, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall ProcessAISuperWeaponSelection(int *this, ScriptClass *aP1, int a3)
+void ProcessAISuperWeaponSelection(int *this, ScriptClass *aP1, int a3)
 {
   TechnoClass *v3; // esi
-  int v4; // ebp
   TechnoClass *i; // ebx
-  int v6; // edi
   _DWORD *focus; // edi
-  int v8; // eax
-  int v9; // ecx
   int j; // edx
-  int v11; // esi
-  int *v12; // ebp
-  _DWORD *v13; // eax
-  int v14; // eax
-  int v15; // edx
-  int v16; // ecx
-  int *v17; // [esp+10h] [ebp-18h] BYREF
   int v18; // [esp+14h] [ebp-14h]
   int DefaultTimer; // [esp+18h] [ebp-10h]
   char v20[12]; // [esp+1Ch] [ebp-Ch] BYREF
 
   v3 = (TechnoClass *)*(this + 21); /*0x6efc76*/
-  v4 = -1; /*0x6efc79*/
-  v17 = this; /*0x6efc7f*/
+  int v4 = -1; /*0x6efc79*/
+  E4Recv_6EFC70 *v17 = this; /*0x6efc7f*/
   for ( i = v3; v3; v3 = *(TechnoClass **)&v3[1].missionQueued ) /*0x6efc85*/
   {
-    v6 = *(_DWORD *)((*(int (__thiscall **)(TechnoClass *))(*(_DWORD *)v3->__pad_0 + 132))(v3) + 1532); /*0x6efc91*/
+    int v6 = *(_DWORD *)((*(int (__thiscall **)(TechnoClass *))(*(_DWORD *)v3->__pad_0 + 132))(v3) + 1532); /*0x6efc91*/
     if ( TechnoClass::IsDeployed((int)v3) /*0x6efcba*/
       && (BYTE1(v3[1].firepowerMultiplier[1])
        || (*(int (__thiscall **)(TechnoClass *))(*(_DWORD *)v3->__pad_0 + 44))(v3) == 2)
@@ -525,8 +468,8 @@ void __thiscall ProcessAISuperWeaponSelection(int *this, ScriptClass *aP1, int a
     return; /*0x6efce0*/
   }
   focus = i->focus; /*0x6efce3*/
-  v8 = 0; /*0x6efce9*/
-  v9 = focus[153]; /*0x6efcf0*/
+  int v8 = 0; /*0x6efce9*/
+  int v9 = focus[153]; /*0x6efcf0*/
   if ( v9 <= 0 ) /*0x6efcf8*/
     goto LABEL_16; /*0x6efcf8*/
   for ( j = focus[150]; *(_DWORD *)(*(_DWORD *)(*(_DWORD *)j + 40) + 180) != 1; j += 4 ) /*0x6efd00*/
@@ -537,7 +480,7 @@ void __thiscall ProcessAISuperWeaponSelection(int *this, ScriptClass *aP1, int a
       return; /*0x6efd28*/
     }
   }
-  v11 = *(_DWORD *)(focus[150] + 4 * v8); /*0x6efd2b*/
+  int v11 = *(_DWORD *)(focus[150] + 4 * v8); /*0x6efd2b*/
   if ( !v11 ) /*0x6efd30*/
   {
 LABEL_16:
@@ -546,18 +489,18 @@ LABEL_16:
   }
   if ( *(_BYTE *)(v11 + 111) && HouseClass::GetPowerRatio(focus) >= 1.0 ) /*0x6efd5f*/
   {
-    v12 = v17; /*0x6efd61*/
-    v13 = (_DWORD *)(*(int (__thiscall **)(int, char *))(*(_DWORD *)v17[13] + 72))(v17[13], v20); /*0x6efd6f*/
+    E4Recv_6EFC70 *v12 = v17; /*0x6efd61*/
+    _DWORD * v13 = (_DWORD *)(*(int (__thiscall **)(int, char *))(*(_DWORD *)v17[13] + 72))(v17[13], v20); /*0x6efd6f*/
     LOWORD(v18) = *v13 / 256; /*0x6efd82*/
     HIWORD(v18) = v13[1] / 256; /*0x6efd9a*/
-    v14 = *(_DWORD *)(v11 + 40); /*0x6efda3*/
+    int v14 = *(_DWORD *)(v11 + 40); /*0x6efda3*/
     v17 = (int *)v18; /*0x6efda6*/
     SuperWeapon::FireSuperWeaponHouseClass(focus, *(AbstractClass **)(v14 + 180), (AbstractClass *)&v17); /*0x6efdb4*/
     *((_BYTE *)v12 + 128) = 1; /*0x6efdba*/
     return; /*0x6efdc6*/
   }
-  v15 = *(_DWORD *)(v11 + 48); /*0x6efdc9*/
-  v16 = *(_DWORD *)(v11 + 56); /*0x6efdcc*/
+  int v15 = *(_DWORD *)(v11 + 48); /*0x6efdc9*/
+  int v16 = *(_DWORD *)(v11 + 56); /*0x6efdcc*/
   if ( v15 == -1 ) /*0x6efdd2*/
     goto LABEL_23; /*0x6efdd2*/
   if ( *(_DWORD *)&g_NetworkPlayerBuffer[5960] - v15 < v16 ) /*0x6efddd*/

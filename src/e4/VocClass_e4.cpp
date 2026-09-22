@@ -7,21 +7,19 @@
 int VocClass::Release()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall VocClass_Cleanup(int this)
+void VocClass_Cleanup(int this)
 {
-  int v2; // ecx
   int result; // eax
-  int v4; // ebx
   _DWORD **v5; // edi
 
   if ( ((unsigned char)this->Volume & 1) == 0 ) /*0x4052f7*/
   {
-    v2 = this->pVoiceChannel; /*0x4052fd*/
+    int v2 = this->pVoiceChannel; /*0x4052fd*/
     if ( v2 && this == *(_DWORD *)(v2 + 192) ) /*0x405311*/
     {
       if ( ((unsigned char)this->Volume & 2) != 0 ) /*0x405317*/
         Voice::Stop(v2); /*0x405319*/
-      AudioStream::ReleaseChannel(*(_DWORD **)(this + 176)); /*0x405324*/
+      AudioStream::ReleaseChannel(this->pVoiceChannel); /*0x405324*/
       *(_DWORD *)(this->pVoiceChannel + 192) = 0; /*0x40532f*/
       *(_DWORD *)(this->pVoiceChannel + 188) = 0; /*0x40533b*/
       *(_DWORD *)(this->pVoiceChannel + 180) = 0; /*0x405347*/
@@ -32,7 +30,7 @@ int __thiscall VocClass_Cleanup(int this)
       this->pVoiceChannel = 0; /*0x40537d*/
     }
     result = this->ActiveBufferCount; /*0x405383*/
-    v4 = 0; /*0x405389*/
+    int v4 = 0; /*0x405389*/
     if ( result > 0 ) /*0x40538d*/
     {
       v5 = (_DWORD **)(this + 40); /*0x405390*/

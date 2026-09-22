@@ -19,29 +19,25 @@ char sub_5F0070()
 char sub_5F0070()
 {
   DWORD v0; // eax
-  int v1; // edi
-  int v2; // esi
-  _BYTE v4[108]; // [esp+8h] [ebp-70h] BYREF
   __int16 v5; // [esp+74h] [ebp-4h]
-  char v6; // [esp+76h] [ebp-2h]
-
   LOBYTE(v0) = g_NetworkEventPending; /*0x5f0073*/
+  _BYTE v4[108]; // [esp+8h] [ebp-70h] BYREF
   v4[0] = 0; /*0x5f007c*/
   if ( (g_NetworkEventPending & 2) == 0 ) /*0x5f0081*/
   {
     memset(v4, 0, sizeof(v4)); /*0x5f0094*/
     v5 = 0; /*0x5f0096*/
-    v6 = 0; /*0x5f0098*/
+    char v6 = 0; /*0x5f0098*/
     v4[0] = 19; /*0x5f00a5*/
     Stream::WriteBlock((int)&g_EventManager, (int)v4, 111, 0); /*0x5f00aa*/
     Stream::WriteBlock((int)&g_EventManager, (int)v4, 111, 0); /*0x5f00bd*/
-    v1 = g_PerformanceTickOffset; /*0x5f00c7*/
+    int v1 = g_PerformanceTickOffset; /*0x5f00c7*/
     if ( g_LastPerformanceTick != -1 ) /*0x5f00d0*/
       v1 += Timer::GetTicks() - g_LastPerformanceTick; /*0x5f00e2*/
     while ( 1 ) /*0x5f00e4*/
     {
       LOBYTE(v0) = g_LastPerformanceTick; /*0x5f00e4*/
-      v2 = g_PerformanceTickOffset; /*0x5f00e9*/
+      int v2 = g_PerformanceTickOffset; /*0x5f00e9*/
       if ( g_LastPerformanceTick != -1 ) /*0x5f00f2*/
       {
         v0 = Timer::GetTicks() - g_LastPerformanceTick; /*0x5f00fe*/
@@ -65,14 +61,9 @@ char HandlePlayerDisconnection(int a1, int a2)
 char __fastcall HandlePlayerDisconnection(int a1, int a2)
 {
   char result; // al
-  int v3; // edi
   wchar_t *StringCSF; // eax
   wchar_t *v5; // eax
-  int v6; // eax
-  int v7; // esi
-  int v8; // eax
   wchar_t *v9; // eax
-  int v10; // eax
   CampaignScore *v11; // [esp+0h] [ebp-A4h]
   wchar_t String[80]; // [esp+4h] [ebp-A0h] BYREF
 
@@ -80,7 +71,7 @@ char __fastcall HandlePlayerDisconnection(int a1, int a2)
   if ( *(_DWORD *)&HouseClass_Player[30720] != 1 ) /*0x5f018f*/
   {
     result = (char)HouseClass_Array; /*0x5f0195*/
-    v3 = *(_DWORD *)&HouseClass_Array->__pad_0[4 * a1]; /*0x5f019a*/
+    int v3 = *(_DWORD *)&HouseClass_Array->__pad_0[4 * a1]; /*0x5f019a*/
     if ( v3 ) /*0x5f019f*/
     {
       result = *(_BYTE *)(v3 + 492); /*0x5f01a5*/
@@ -106,7 +97,7 @@ char __fastcall HandlePlayerDisconnection(int a1, int a2)
         }
         if ( wcslen(String) ) /*0x5f0231*/
         {
-          v6 = Math::RoundToInt(*(double *)(*(_DWORD *)&stru_87C374[44652] + 5312) * 900.0); /*0x5f0250*/
+          int v6 = Math::RoundToInt(*(double *)(*(_DWORD *)&stru_87C374[44652] + 5312) * 900.0); /*0x5f0250*/
           MessageListClass::AddMessage( /*0x5f0273*/
             &HouseClass_Player[32532],
             0,
@@ -118,7 +109,7 @@ char __fastcall HandlePlayerDisconnection(int a1, int a2)
             0);
           MapClass::MarkForRedraw(&stru_87C374[13428], 0); /*0x5f027f*/
         }
-        v7 = 0; /*0x5f028b*/
+        int v7 = 0; /*0x5f028b*/
         if ( *(int *)&HouseClass_Player[40248] > 0 ) /*0x5f028f*/
         {
           while ( _wcsicmp( /*0x5f02b0*/
@@ -129,6 +120,7 @@ char __fastcall HandlePlayerDisconnection(int a1, int a2)
               goto LABEL_20; /*0x5f02ba*/
           }
           __3_YAXPAX_Z(*(void **)(*(_DWORD *)&HouseClass_Player[40236] + 4 * v7)); /*0x5f02c7*/
+  int v8; // eax
           v8 = (*(int (__thiscall **)(char *, int))(*(_DWORD *)&HouseClass_Player[40232] + 16))( /*0x5f02e3*/
                  &HouseClass_Player[40232],
                  *(_DWORD *)&HouseClass_Player[40236] + 4 * v7);
@@ -150,7 +142,7 @@ LABEL_20:
         {
           v9 = GetStringCSF((wchar_t *)&stru_830620[6272], 0, &stru_830620[6244], 6453); /*0x5f0342*/
           swprintf(String, (const size_t)&off_8240B4, v9, v11); /*0x5f0352*/
-          v10 = Math::RoundToInt(*(double *)(*(_DWORD *)&stru_87C374[44652] + 5312) * 900.0); /*0x5f036e*/
+          int v10 = Math::RoundToInt(*(double *)(*(_DWORD *)&stru_87C374[44652] + 5312) * 900.0); /*0x5f036e*/
           MessageListClass::AddMessage( /*0x5f0391*/
             &HouseClass_Player[32532],
             0,
@@ -177,13 +169,10 @@ int WaitModemConnection()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __userpurge WaitModemConnection@<eax>(int a1@<ecx>, int a2@<edi>, char a3)
 {
-  int v3; // ebp
   wchar_t *StringCSF; // eax
   ObjectClass *v5; // esi
-  char v6; // bl
   wchar_t *v7; // eax
   HWND MessageBox; // eax
-  int v9; // esi
   wchar_t *v10; // eax
   wchar_t *v11; // eax
   wchar_t *v12; // eax
@@ -198,7 +187,7 @@ int __userpurge WaitModemConnection@<eax>(int a1@<ecx>, int a2@<edi>, char a3)
   _BYTE Source[236]; // [esp+26h] [ebp-ECh] BYREF
 
   v18 = HIBYTE(a1); /*0x5f2cf2*/
-  v3 = 3; /*0x5f2cfb*/
+  int v3 = 3; /*0x5f2cfb*/
   if ( a3 == 1 ) /*0x5f2d00*/
     StringCSF = GetStringCSF( /*0x5f2d13*/
                   (wchar_t *)&stru_830620[9164],
@@ -213,7 +202,7 @@ int __userpurge WaitModemConnection@<eax>(int a1@<ecx>, int a2@<edi>, char a3)
                   1582);
   v5 = (ObjectClass *)StringCSF; /*0x5f2d30*/
   Debug::Log(); /*0x5f2d32*/
-  v6 = 1; /*0x5f2d41*/
+  char v6 = 1; /*0x5f2d41*/
   *((_BYTE *)&g_MatrixTransformState + 9524) = 0; /*0x5f2d52*/
   v7 = GetStringCSF(g_Str_TXT_CANCEL, 0, (CampaignScore *)&stru_830620[8464], 1589); /*0x5f2d59*/
   MessageBox = CreateMessageBox((LPARAM)v5, (LPARAM)v7, (LONG)(&g_MatrixTransformState + 2381)); /*0x5f2d62*/
@@ -226,7 +215,7 @@ int __userpurge WaitModemConnection@<eax>(int a1@<ecx>, int a2@<edi>, char a3)
     PumpEventLoop,
     a2);
   *((_BYTE *)&g_MatrixTransformState + 9524) = 0; /*0x5f2d8b*/
-  v9 = 3600; /*0x5f2d92*/
+  int v9 = 3600; /*0x5f2d92*/
   while ( 1 )
   {
     if ( Dialog::PumpMessages() == 1 || *((_BYTE *)&g_MatrixTransformState + 9524) ) /*0x5f2dab*/
@@ -365,15 +354,14 @@ namespace gamemd {
 int sub_5F33B0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_5F33B0()
+void* sub_5F33B0()
 {
   unsigned __int16 v0; // ax
-  int v1; // esi
 
   Event::Dispatch(); /*0x5f33b1*/
   MessageLoop(); /*0x5f33b6*/
   v0 = EventQueue::Process(g_BinkMoviePlayer); /*0x5f33c1*/
-  v1 = v0; /*0x5f33c9*/
+  int v1 = v0; /*0x5f33c9*/
   if ( !v0 )
     return g_NetworkTestFlag != 0 ? 0xFFFFFC18 : 0;
   Timer::PumpMessages((HWND *)g_BinkMoviePlayer); /*0x5f33d7*/
@@ -392,28 +380,15 @@ unsigned int * sub_5F66A0(unsigned int * a1, int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__fastcall sub_5F66A0(_DWORD *a1, int a2)
 {
-  int v2; // edi
-  int v3; // esi
-  int v4; // ebx
-  int v5; // ecx
-  int v6; // eax
-  int v7; // ebp
-  _DWORD *v8; // ebp
-  int *v9; // ebp
-  int v10; // edx
-  int v11; // edi
-  bool v12; // zf
-  _DWORD *v14; // [esp+10h] [ebp-28h]
-  int v15; // [esp+14h] [ebp-24h]
 
-  v2 = *(_DWORD *)(a2 + 16); /*0x5f66a7*/
-  v3 = 0; /*0x5f66ae*/
-  v4 = 0; /*0x5f66b0*/
-  v5 = 0; /*0x5f66b2*/
-  v6 = 0; /*0x5f66b4*/
+  int v2 = *(_DWORD *)(a2 + 16); /*0x5f66a7*/
+  int v3 = 0; /*0x5f66ae*/
+  int v4 = 0; /*0x5f66b0*/
+  int v5 = 0; /*0x5f66b2*/
+  int v6 = 0; /*0x5f66b4*/
   if ( v2 > 0 ) /*0x5f66bc*/
   {
-    v7 = *(_DWORD *)(a2 + 4); /*0x5f66c2*/
+    int v7 = *(_DWORD *)(a2 + 4); /*0x5f66c2*/
     v3 = *(_DWORD *)(*(_DWORD *)v7 + 156); /*0x5f66d0*/
     v4 = *(_DWORD *)(*(_DWORD *)v7 + 160); /*0x5f66d9*/
     if ( v2 - 1 < 0 ) /*0x5f66f5*/
@@ -422,15 +397,16 @@ _DWORD *__fastcall sub_5F66A0(_DWORD *a1, int a2)
     }
     else
     {
+  bool v12; // zf
       v5 = 0; /*0x5f66f7*/
-      v8 = (_DWORD *)(v7 + 4 * (v2 - 1)); /*0x5f66fb*/
-      v14 = v8; /*0x5f6700*/
-      v15 = *(_DWORD *)(a2 + 16); /*0x5f6704*/
+      _DWORD * v8 = (_DWORD *)(v7 + 4 * (v2 - 1)); /*0x5f66fb*/
+      _DWORD * v14 = v8; /*0x5f6700*/
+      int v15 = *(_DWORD *)(a2 + 16); /*0x5f6704*/
       do /*0x5f675e*/
       {
-        v9 = (int *)(*v8 + 156); /*0x5f6711*/
-        v10 = *v9; /*0x5f6713*/
-        v11 = v9[1]; /*0x5f6718*/
+        int * v9 = (int *)(*v8 + 156); /*0x5f6711*/
+        int v10 = *v9; /*0x5f6713*/
+        int v11 = v9[1]; /*0x5f6718*/
         if ( *v9 < v3 ) /*0x5f6722*/
         {
           v5 += v3 - v10; /*0x5f6726*/
@@ -470,7 +446,6 @@ char sub_5FBEF0()
 char sub_5FBEF0()
 {
   HWND Dialog; // esi
-  int v1; // ecx
   LONG dwNewLong; // [esp+4h] [ebp-4h] BYREF
 
   dwNewLong = -1; /*0x5fbefe*/
@@ -485,6 +460,7 @@ char sub_5FBEF0()
         dwNewLong = 2; /*0x5fbf37*/
       if ( !g_WTFMode ) /*0x5fbf46*/
       {
+  int v1; // ecx
         LOBYTE(v1) = 0; /*0x5fbf48*/
         ScreenSaver::Process(v1); /*0x5fbf4a*/
       }
@@ -503,39 +479,34 @@ int FindBuildingByTiberiumType(IUnknown * aP0)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall FindBuildingByTiberiumType(IUnknown *aP0)
 {
-  int v1; // eax
-  int v2; // ebx
   int **v3; // edi
-  int *v4; // eax
-  int v5; // edx
-  int v6; // esi
-  _BYTE v8[49]; // [esp-34h] [ebp-48h] BYREF
-  int v9; // [esp+10h] [ebp-4h]
 
   if ( aP0 == (IUnknown *)-1 ) /*0x5fdd28*/
     return -1; /*0x5fdd28*/
-  v1 = *(_DWORD *)(HouseClass_Player.field_38 + 4 * (_DWORD)aP0); /*0x5fdd33*/
-  v9 = v1; /*0x5fdd36*/
+  int v1 = *(_DWORD *)(HouseClass_Player.field_38 + 4 * (_DWORD)aP0); /*0x5fdd33*/
+  int v9 = v1; /*0x5fdd36*/
   if ( !*(_BYTE *)(v1 + 681) ) /*0x5fdd3a*/
     return -1; /*0x5fddd8*/
-  v2 = 0; /*0x5fdd4e*/
+  int v2 = 0; /*0x5fdd4e*/
   if ( *(int *)&stru_B05488[41072] <= 0 ) /*0x5fdd52*/
   {
 LABEL_11:
+  _BYTE v8[49]; // [esp-34h] [ebp-48h] BYREF
     qmemcpy(v8, (const void *)(v1 + 100), sizeof(v8)); /*0x5fdda4*/
     Debug::Log(); /*0x5fddb9*/
     return 0; /*0x5fddc1*/
   }
   else
   {
+  int *v4; // eax
     v3 = *(int ***)&stru_B05488[41060]; /*0x5fdd54*/
     while ( 1 ) /*0x5fdd5a*/
     {
       v4 = *v3; /*0x5fdd5a*/
-      v5 = *(_DWORD *)((*v3)[56] + 660); /*0x5fdd62*/
+      int v5 = *(_DWORD *)((*v3)[56] + 660); /*0x5fdd62*/
       if ( (int)aP0 >= v5 && (int)aP0 < v5 + v4[58] ) /*0x5fdd76*/
         break; /*0x5fdd76*/
-      v6 = v4[58]; /*0x5fdd78*/
+      int v6 = v4[58]; /*0x5fdd78*/
       if ( (int)aP0 >= v6 + v5 && (int)aP0 < v5 + v6 + v4[59] ) /*0x5fdd91*/
         break; /*0x5fdd91*/
       ++v2; /*0x5fdd98*/
@@ -559,31 +530,21 @@ void sub_5FDDF0()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void sub_5FDDF0()
 {
-  int v0; // esi
-  int v1; // eax
-  int v2; // ecx
-  int v3; // eax
   int i; // edi
-  _BYTE *v5; // esi
   void **v6; // [esp+Ch] [ebp-18h] BYREF
   void *Block; // [esp+10h] [ebp-14h]
-  int v8; // [esp+14h] [ebp-10h]
-  char v9; // [esp+18h] [ebp-Ch]
-  char v10; // [esp+19h] [ebp-Bh]
-  int v11; // [esp+1Ch] [ebp-8h]
-  int v12; // [esp+20h] [ebp-4h]
 
   LayerClass::CellIteratorReset(&DataGlobal_87F7E8); /*0x5fddfb*/
-  v0 = LayerClass::CellIteratorNext(&DataGlobal_87F7E8); /*0x5fde0a*/
-  v1 = 0; /*0x5fde0e*/
-  v2 = 1000; /*0x5fde10*/
+  int v0 = LayerClass::CellIteratorNext(&DataGlobal_87F7E8); /*0x5fde0a*/
+  int v1 = 0; /*0x5fde0e*/
+  int v2 = 1000; /*0x5fde10*/
   Block = 0; /*0x5fde17*/
-  v8 = 0; /*0x5fde1b*/
-  v9 = 1; /*0x5fde1f*/
-  v10 = 0; /*0x5fde24*/
+  int v8 = 0; /*0x5fde1b*/
+  char v9 = 1; /*0x5fde1f*/
+  char v10 = 0; /*0x5fde24*/
   v6 = &vt_DynamicVectorClass_CellClass; /*0x5fde28*/
-  v11 = 0; /*0x5fde30*/
-  v12 = 1000; /*0x5fde34*/
+  int v11 = 0; /*0x5fde30*/
+  int v12 = 1000; /*0x5fde34*/
   if ( v0 ) /*0x5fde38*/
   {
     while ( 1 ) /*0x5fde47*/
@@ -594,7 +555,7 @@ void sub_5FDDF0()
           && (v11 < v1
            || (v10 || !v1) && v2 > 0 && ((unsigned __int8 (__thiscall *)(void ***, int, _DWORD))v6[2])(&v6, v2 + v1, 0)) )
         {
-          v3 = v11++; /*0x5fde81*/
+          int v3 = v11++; /*0x5fde81*/
           *((_DWORD *)Block + v3) = v0; /*0x5fde8c*/
         }
         *(_DWORD *)(v0 + 68) = -1; /*0x5fde8f*/
@@ -609,7 +570,7 @@ void sub_5FDDF0()
   }
   for ( i = v11 - 1; i >= 0; --i ) /*0x5fdeb1*/
   {
-    v5 = (_BYTE *)*((_DWORD *)Block + i); /*0x5fdeb7*/
+    _BYTE * v5 = (_BYTE *)*((_DWORD *)Block + i); /*0x5fdeb7*/
     if ( BuildingClass::CheckAdjacentCells((int)v5) ) /*0x5fdebc*/
       BuildingClass::VisualizePlacement(v5); /*0x5fdec7*/
   }
@@ -631,21 +592,17 @@ int BuildingTypeClass_LoadSHPs(int a1)
 int __fastcall BuildingTypeClass_LoadSHPs(int a1)
 {
   int result; // eax
-  int v2; // ebp
-  int v4; // esi
-  char v5; // al
-  int v6; // eax
-  int v7; // eax
   char Buffer[512]; // [esp+Ch] [ebp-200h] BYREF
 
   result = g_ObjectTypeConfig; /*0x5fe620*/
-  v2 = 0; /*0x5fe62f*/
+  int v2 = 0; /*0x5fe62f*/
   if ( g_ObjectTypeConfig > 0 ) /*0x5fe636*/
   {
+  int v4; // esi
     while ( 1 ) /*0x5fe642*/
     {
       v4 = *((_DWORD *)g_BuildingTypeClass_Array + v2); /*0x5fe642*/
-      v5 = *(_BYTE *)(v4 + 556); /*0x5fe64d*/
+      char v5 = *(_BYTE *)(v4 + 556); /*0x5fe64d*/
       if ( *(_BYTE *)(v4 + 687) ) /*0x5fe645*/
       {
         if ( (v5 || *(_BYTE *)(v4 + 567)) && *(_DWORD *)(v4 + 164) && *(_BYTE *)(v4 + 168) ) /*0x5fe737*/
@@ -659,7 +616,7 @@ int __fastcall BuildingTypeClass_LoadSHPs(int a1)
       if ( !v5 ) /*0x5fe65b*/
         break; /*0x5fe65b*/
       _makepath(Buffer, 0, 0, (const char *)(v4 + 504), (const char *)&off_7E1BC6 + 112 * a1); /*0x5fe67e*/
-      v6 = SearchMIXFile(Buffer, 1); /*0x5fe68c*/
+      int v6 = SearchMIXFile(Buffer, 1); /*0x5fe68c*/
       *(_DWORD *)(v4 + 164) = v6; /*0x5fe693*/
       if ( !v6 ) /*0x5fe699*/
         goto LABEL_5; /*0x5fe699*/
@@ -672,7 +629,7 @@ LABEL_14:
       goto LABEL_14; /*0x5fe6be*/
     _makepath(Buffer, 0, 0, (const char *)(v4 + 504), Ext); /*0x5fe6dd*/
     TheaterObjectTypeClassSpecificID(Buffer, a1); /*0x5fe6eb*/
-    v7 = SearchMIXFile(Buffer, 1); /*0x5fe6f6*/
+    int v7 = SearchMIXFile(Buffer, 1); /*0x5fe6f6*/
     *(_DWORD *)(v4 + 164) = v7; /*0x5fe6fd*/
     if ( v7 ) /*0x5fe703*/
       goto LABEL_14; /*0x5fe703*/
@@ -694,20 +651,16 @@ void sub_5FF390()
 void sub_5FF390()
 {
   int i; // edi
-  _DWORD *v1; // esi
-  int v2; // eax
-  int v3; // eax
-  _DWORD *v4; // [esp+4h] [ebp-4h] BYREF
 
   for ( i = DataGlobal_AC1688 - 1; i >= 0; --i ) /*0x5ff39c*/
   {
-    v1 = (_DWORD *)*((_DWORD *)DataGlobal_AC167C + i); /*0x5ff3a5*/
-    v2 = v1[3] + 8; /*0x5ff3ae*/
+    _DWORD * v1 = (_DWORD *)*((_DWORD *)DataGlobal_AC167C + i); /*0x5ff3a5*/
+    int v2 = v1[3] + 8; /*0x5ff3ae*/
     v1[3] = v2; /*0x5ff3b0*/
     if ( v2 >= 80 && v1 ) /*0x5ff3ba*/
     {
-      v4 = v1; /*0x5ff3cb*/
-      v3 = (*(int (__thiscall **)(int *, _DWORD **))(DataGlobal_AC1678 + 16))(&DataGlobal_AC1678, &v4); /*0x5ff3cf*/
+      _DWORD * v4 = v1; /*0x5ff3cb*/
+      int v3 = (*(int (__thiscall **)(int *, _DWORD **))(DataGlobal_AC1678 + 16))(&DataGlobal_AC1678, &v4); /*0x5ff3cf*/
       if ( v3 != -1 && v3 < DataGlobal_AC1688 && v3 < --DataGlobal_AC1688 ) /*0x5ff3ea*/
       {
         do /*0x5ff402*/
@@ -731,25 +684,10 @@ char * GenerateRangeRingTextures()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char *GenerateRangeRingTextures()
 {
-  int v0; // ebx
-  int *v1; // ebp
-  _DWORD *v2; // eax
-  _DWORD *v3; // esi
-  int v4; // esi
-  int v5; // edi
-  int v6; // eax
   int j; // esi
-  int v8; // ecx
-  _DWORD *v9; // edi
-  int v10; // ebp
-  _DWORD *v11; // eax
-  _DWORD *v12; // esi
-  int v13; // eax
   int k; // esi
-  int v15; // ecx
   char *result; // eax
   unsigned __int16 v17; // cx
-  int v18; // [esp+2Eh] [ebp-54h] BYREF
   int i; // [esp+32h] [ebp-50h]
   int v20; // [esp+36h] [ebp-4Ch]
   int v21; // [esp+3Eh] [ebp-44h] BYREF
@@ -766,16 +704,16 @@ char *GenerateRangeRingTextures()
   int v32; // [esp+72h] [ebp-10h]
   _DWORD v33[3]; // [esp+76h] [ebp-Ch] BYREF
 
-  v0 = 0; /*0x5ff429*/
+  int v0 = 0; /*0x5ff429*/
   if ( !DataGlobal_AC1834 ) /*0x5ff430*/
   {
-    v1 = DataGlobal_AC1698; /*0x5ff43b*/
+    int * v1 = DataGlobal_AC1698; /*0x5ff43b*/
     for ( i = 1; i < 129; i += 2 ) /*0x5ff440*/
     {
       if ( !*v1 ) /*0x5ff444*/
       {
-        v2 = __2_YAPAXI_Z(0x20u); /*0x5ff44b*/
-        v3 = v2; /*0x5ff450*/
+        _DWORD * v2 = __2_YAPAXI_Z(0x20u); /*0x5ff44b*/
+        _DWORD * v3 = v2; /*0x5ff450*/
         if ( v2 ) /*0x5ff457*/
         {
           Surface::Construct(v2, 256, 128); /*0x5ff465*/
@@ -799,13 +737,13 @@ char *GenerateRangeRingTextures()
       Buffer::Init(v33, 0, 0x10000); /*0x5ff4c7*/
       v30[0] = (int)&BSurface_Vtable; /*0x5ff4d0*/
       XSurface::Fill(v30, 0); /*0x5ff4d9*/
-      v4 = i; /*0x5ff4de*/
+      int v4 = i; /*0x5ff4de*/
       if ( i > 0 ) /*0x5ff4e6*/
       {
-        v5 = 12; /*0x5ff4e8*/
+        int v5 = 12; /*0x5ff4e8*/
         do /*0x5ff52d*/
         {
-          v6 = v5; /*0x5ff4f3*/
+          int v6 = v5; /*0x5ff4f3*/
           if ( v5 > 255 ) /*0x5ff4f5*/
             v6 = 255; /*0x5ff4f7*/
           Draw::Ellipse(v30, 128, 128, v4, 0, 0, 255, 255, v6); /*0x5ff520*/
@@ -816,7 +754,7 @@ char *GenerateRangeRingTextures()
       }
       for ( j = 0; j < 128; ++j ) /*0x5ff534*/
       {
-        v8 = *v1; /*0x5ff536*/
+        int v8 = *v1; /*0x5ff536*/
         v23 = 2 * j; /*0x5ff53c*/
         v22 = 0; /*0x5ff551*/
         v24 = 255; /*0x5ff555*/
@@ -832,14 +770,14 @@ char *GenerateRangeRingTextures()
       v30[0] = (int)&Surface_Vtable; /*0x5ff593*/
     }
     i = 0; /*0x5ff5aa*/
-    v9 = &DataGlobal_AC1798; /*0x5ff5ae*/
-    v10 = 128; /*0x5ff5b3*/
+    _DWORD * v9 = &DataGlobal_AC1798; /*0x5ff5ae*/
+    int v10 = 128; /*0x5ff5b3*/
     do /*0x5ff721*/
     {
       if ( !*v9 ) /*0x5ff5b8*/
       {
-        v11 = __2_YAPAXI_Z(0x20u); /*0x5ff5be*/
-        v12 = v11; /*0x5ff5c3*/
+        _DWORD * v11 = __2_YAPAXI_Z(0x20u); /*0x5ff5be*/
+        _DWORD * v12 = v11; /*0x5ff5c3*/
         if ( v11 ) /*0x5ff5ca*/
         {
           Surface::Construct(v11, 256, 128); /*0x5ff5d8*/
@@ -864,7 +802,7 @@ char *GenerateRangeRingTextures()
       v30[0] = (int)&BSurface_Vtable; /*0x5ff649*/
       XSurface::Fill(v30, 0); /*0x5ff652*/
       v20 = 60 * g_RulesClass_Instance->BuildWeapons[0]; /*0x5ff684*/
-      v13 = Math::RoundToInt((double)v20 * -0.002790178571428571); /*0x5ff692*/
+      int v13 = Math::RoundToInt((double)v20 * -0.002790178571428571); /*0x5ff692*/
       Draw::Ellipse(v30, 128, 128, i - v13, 0, 0, 255, 255, v10); /*0x5ff6a9*/
       for ( k = 0; k < 128; ++k ) /*0x5ff6ae*/
       {
@@ -872,7 +810,7 @@ char *GenerateRangeRingTextures()
         v25 = 1; /*0x5ff6be*/
         v28 = 255; /*0x5ff6c9*/
         v24 = 255; /*0x5ff6cd*/
-        v15 = *v9; /*0x5ff6d1*/
+        int v15 = *v9; /*0x5ff6d1*/
         v26 = 0; /*0x5ff6db*/
         v27 = 2 * k; /*0x5ff6df*/
         v22 = 0; /*0x5ff6e3*/
@@ -890,6 +828,7 @@ char *GenerateRangeRingTextures()
   }
   DataGlobal_833588 = DDraw::GetStatus(); /*0x5ff73d*/
   v21 = 5; /*0x5ff742*/
+  int v18; // [esp+2Eh] [ebp-54h] BYREF
   HIBYTE(v18) = 0; /*0x5ff74a*/
   result = GetVersionString(&v21, (_BYTE *)&v18 + 3, 0, 0); /*0x5ff74e*/
   if ( HIBYTE(v18) && !DataGlobal_AC1838 ) /*0x5ff763*/

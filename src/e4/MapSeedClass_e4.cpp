@@ -13,47 +13,26 @@ __int16 __thiscall MapSeedClass::PlaceBuildingClusters(void *this, MapSeedClass 
 {
   MapSeedClass **v2; // eax
   MapSeedClass *v3; // ecx
-  int v4; // edx
-  int v5; // eax
-  int v6; // ebx
-  int v7; // eax
-  unsigned int v8; // eax
   __int16 v9; // ax
   __int16 uniqueId; // cx
   int i; // esi
-  unsigned int v12; // eax
-  int v13; // ebx
-  char v14; // bl
-  unsigned int v15; // eax
   int uniqueId_high; // ebx
   VectorClass *NeighbourContent; // esi
-  unsigned int v18; // eax
   __int16 a1[4]; // [esp+10h] [ebp-118h] BYREF
-  char v21; // [esp+1Ah] [ebp-10Eh]
-  char v22; // [esp+1Bh] [ebp-10Dh]
   ObjectClass v23; // [esp+1Ch] [ebp-10Ch] BYREF
-  int v24; // [esp+C8h] [ebp-60h]
-  int v25; // [esp+CCh] [ebp-5Ch]
-  int v26; // [esp+D0h] [ebp-58h]
-  _DWORD v27[4]; // [esp+D4h] [ebp-54h] BYREF
-  _DWORD v28[4]; // [esp+E4h] [ebp-44h] BYREF
-  _DWORD v29[4]; // [esp+F4h] [ebp-34h] BYREF
-  int v30[4]; // [esp+104h] [ebp-24h] BYREF
-  _DWORD v31[4]; // [esp+114h] [ebp-14h] BYREF
-  char v32[4]; // [esp+124h] [ebp-4h] BYREF
 
   v23.owningHouseIndex = (int)this; /*0x5a5b6a*/
   v2 = (MapSeedClass **)globalHelper_0A7640(&v23.spawnStatus, aP1); /*0x5a5b6e*/
   v3 = *v2; /*0x5a5b73*/
   v23.ambientSoundController[0] = (int)*v2; /*0x5a5b75*/
-  v4 = (int)v2[1]; /*0x5a5b79*/
+  int v4 = (int)v2[1]; /*0x5a5b79*/
   v23.ambientSoundController[1] = v4; /*0x5a5b7c*/
   v23.ambientSoundController[2] = (int)v2[2]; /*0x5a5b83*/
-  v5 = (int)v2[3]; /*0x5a5b87*/
+  int v5 = (int)v2[3]; /*0x5a5b87*/
   v23.ambientSoundController[3] = v5; /*0x5a5b8d*/
   if ( v5 > 5 ) /*0x5a5b91*/
   {
-    v6 = v5 - 2; /*0x5a5b9a*/
+    int v6 = v5 - 2; /*0x5a5b9a*/
     *(_WORD *)&v23[6] = v4 + 2; /*0x5a5b9d*/
     *(_WORD *)&v23[4] = (_WORD)v3; /*0x5a5ba9*/
     if ( v5 - 2 > 3 ) /*0x5a5bae*/
@@ -65,6 +44,7 @@ __int16 __thiscall MapSeedClass::PlaceBuildingClusters(void *this, MapSeedClass 
                                          (MapSeedClass *)&v23[4],
                                          (MapSeedClass *)v23.ambientSoundController,
                                          2);
+  int v7; // eax
         v7 = *globalHelper_0A7070( /*0x5a5bf0*/
                 (MapSeedClass *)&v23.objectTypeFlags,
                 (__int16 *)&v23[12],
@@ -75,6 +55,8 @@ __int16 __thiscall MapSeedClass::PlaceBuildingClusters(void *this, MapSeedClass 
           && (*(_WORD *)&v23[4] || *(_WORD *)&v23[6])
           && (__int16)v7 - *(__int16 *)&v23[4] >= 6 )
         {
+  unsigned int v12; // eax
+  unsigned int v8; // eax
           v23.customSound = *(__int16 *)&v23[14]; /*0x5a5c3b*/
           v23.customSound_controller[4] = *(__int16 *)&v23[12] - 4; /*0x5a5c4c*/
           *(_DWORD *)&v23.bombVisible = 4; /*0x5a5c53*/
@@ -157,13 +139,14 @@ LABEL_18:
   }
   if ( v23.ambientSoundController[2] > 8 ) /*0x5a5e0a*/
   {
-    v13 = v5 - 5; /*0x5a5e10*/
+    int v13 = v5 - 5; /*0x5a5e10*/
     *(_DWORD *)&v23[12] = v5 - 5; /*0x5a5e18*/
     *(_WORD *)&v23[4] = (_WORD)v3 + 5; /*0x5a5e1c*/
     *(_WORD *)&v23[6] = v4; /*0x5a5e21*/
     while ( v13 > 3 ) /*0x5a5e26*/
     {
       *(_DWORD *)a1 = *FindClearPlacementCell( /*0x5a5e4d*/
+  char v32[4]; // [esp+124h] [ebp-4h] BYREF
                          v32,
                          (MapSeedClass *)&v23[4],
                          (MapSeedClass *)v23.ambientSoundController,
@@ -174,17 +157,20 @@ LABEL_18:
         && ((LOWORD(v5) = *(_WORD *)&v23[6], *(_WORD *)&v23[4]) || *(_WORD *)&v23[6])
         && (LOWORD(v5) = *(_WORD *)&v23[6], SHIWORD(v5) - *(__int16 *)&v23[6] >= 6) )
       {
+  unsigned int v18; // eax
         LOWORD(v5) = a1[1]; /*0x5a5ea7*/
-        v22 = 0; /*0x5a5eac*/
-        v14 = 1; /*0x5a5eb4*/
-        v21 = 0; /*0x5a5eb6*/
+        char v22 = 0; /*0x5a5eac*/
+        char v14 = 1; /*0x5a5eb4*/
+        char v21 = 0; /*0x5a5eb6*/
         v23[11] = 0; /*0x5a5ebb*/
         if ( a1[1] < SHIWORD(v5) ) /*0x5a5ec0*/
         {
           while ( 1 ) /*0x5a5ec6*/
           {
+  unsigned int v15; // eax
             if ( v22 ) /*0x5a5ed1*/
             {
+  _DWORD v27[4]; // [esp+D4h] [ebp-54h] BYREF
               v27[0] = a1[0]; /*0x5a607e*/
               v27[1] = (__int16)v5; /*0x5a6085*/
               v27[2] = 3; /*0x5a609b*/
@@ -238,15 +224,16 @@ LABEL_18:
                     goto LABEL_73; /*0x5a63ec*/
                   }
                   v23.lineTrailer = (void *)a1[0]; /*0x5a61e9*/
-                  v24 = a1[1] + 3; /*0x5a61fd*/
-                  v25 = 3; /*0x5a6204*/
-                  v26 = 2; /*0x5a620b*/
+                  int v24 = a1[1] + 3; /*0x5a61fd*/
+                  int v25 = 3; /*0x5a6204*/
+                  int v26 = 2; /*0x5a620b*/
                   if ( IsAreaClearMap((MapClass *)&v23.lineTrailer, 0, 0) && uniqueId_high - a1[1] > 5 ) /*0x5a6229*/
                   {
                     v21 = 1; /*0x5a622b*/
                     v23[11] = 1; /*0x5a6230*/
                   }
                   PlaceMapSeedClassBuildings((ObjectClass *)&g_CellTileTypeCache->__pad_0[3], (ObjectClass *)a1, -1, -1); /*0x5a6246*/
+  _DWORD v29[4]; // [esp+F4h] [ebp-34h] BYREF
                   v29[0] = a1[0] - 1; /*0x5a6257*/
                   v29[1] = a1[1]; /*0x5a6267*/
                   v29[2] = 1; /*0x5a626e*/
@@ -258,6 +245,7 @@ LABEL_18:
                     *(_DWORD *)v23[0] = v23.nextObject; /*0x5a62ae*/
                     PlaceMapSeedClassBuildings((ObjectClass *)(unk_AA0E20 + 12), &v23, -1, -1); /*0x5a62b2*/
                   }
+  _DWORD v31[4]; // [esp+114h] [ebp-14h] BYREF
                   v31[0] = a1[0] + 3; /*0x5a62c4*/
                   v31[1] = a1[1]; /*0x5a62d4*/
                   v31[2] = 1; /*0x5a62db*/
@@ -298,6 +286,7 @@ LABEL_18:
               goto LABEL_38; /*0x5a6116*/
             }
             v23.lastLayer = 2; /*0x5a5ede*/
+  int v30[4]; // [esp+104h] [ebp-24h] BYREF
             v30[2] = 3; /*0x5a5ee7*/
             *(_DWORD *)&v23.isAliveFlag = 3; /*0x5a5eee*/
             v23.parachute = (void *)a1[0]; /*0x5a5f0a*/
@@ -309,6 +298,7 @@ LABEL_18:
               goto LABEL_73; /*0x5a5f2d*/
             if ( !v14 ) /*0x5a5f35*/
               goto LABEL_79; /*0x5a5f35*/
+  _DWORD v28[4]; // [esp+E4h] [ebp-44h] BYREF
             v28[0] = a1[0]; /*0x5a5f3b*/
             v28[1] = (__int16)v5 - 3; /*0x5a5f42*/
             v28[2] = 3; /*0x5a5f53*/
@@ -403,44 +393,32 @@ LABEL_73:
 char MapSeedClass::ValidateRectBounds()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_5A76E0(int *this)
+void sub_5A76E0(int *this)
 {
-  int v2; // ecx
-  int v3; // edi
-  int v4; // edx
-  int v5; // esi
-  int *v6; // eax
-  int v7; // edx
-  int v8; // esi
   __int16 v9; // dx
-  int *v10; // edi
-  int v12; // [esp+10h] [ebp-Ch] BYREF
-  int v13; // [esp+14h] [ebp-8h]
-  int v14; // [esp+18h] [ebp-4h]
-
-  v2 = *this; /*0x5a76ee*/
-  v3 = this->q004; /*0x5a76f0*/
-  v12 = (__int16)v3 + (__int16)v2; /*0x5a76fe*/
+  int v2 = *this; /*0x5a76ee*/
+  int v3 = this->q004; /*0x5a76f0*/
+  int v12 = (__int16)v3 + (__int16)v2; /*0x5a76fe*/
   if ( v12 > g_MapCellHeight_Value /*0x5a772a*/
     && (__int16)v2 - (__int16)v3 < g_MapCellHeight_Value
     && (__int16)v3 - (__int16)v2 < g_MapCellHeight_Value
     && v12 <= g_MapCellCount )
   {
-    v13 = this->q008 + v2 - 1; /*0x5a7737*/
+    int v13 = this->q008 + v2 - 1; /*0x5a7737*/
     v12 = (__int16)v3 + (__int16)v13; /*0x5a7746*/
     if ( v12 > g_MapCellHeight_Value /*0x5a7772*/
       && (__int16)v13 - (__int16)v3 < g_MapCellHeight_Value
       && (__int16)v3 - (__int16)v13 < g_MapCellHeight_Value
       && v12 <= g_MapCellCount )
     {
-      v14 = this->q00C + v3 - 1; /*0x5a7782*/
+      int v14 = this->q00C + v3 - 1; /*0x5a7782*/
       v12 = (__int16)v14 + (__int16)v2; /*0x5a778e*/
       if ( v12 > g_MapCellHeight_Value /*0x5a77ba*/
         && (__int16)v2 - (__int16)v14 < g_MapCellHeight_Value
         && (__int16)v14 - (__int16)v2 < g_MapCellHeight_Value
         && v12 <= g_MapCellCount )
       {
-        v4 = (__int16)v14; /*0x5a77c5*/
+        int v4 = (__int16)v14; /*0x5a77c5*/
         v14 = (__int16)v14 + (__int16)v13; /*0x5a77cf*/
         if ( v14 > g_MapCellHeight_Value /*0x5a77fa*/
           && (__int16)v13 - v4 < g_MapCellHeight_Value
@@ -450,7 +428,7 @@ char __thiscall sub_5A76E0(int *this)
           if ( __OFSUB__(v3, v3 + 3) ) /*0x5a7805*/
           {
 LABEL_24:
-            v8 = *this; /*0x5a785b*/
+            int v8 = *this; /*0x5a785b*/
             if ( *this >= *this + 3 ) /*0x5a7862*/
               return 1; /*0x5a78b9*/
             while ( 1 ) /*0x5a786b*/
@@ -458,7 +436,7 @@ LABEL_24:
               v9 = this->q004 + 3; /*0x5a786b*/
               LOWORD(v12) = v8; /*0x5a7874*/
               HIWORD(v12) = v9; /*0x5a7879*/
-              v10 = (int *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v12); /*0x5a7883*/
+              int * v10 = (int *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v12); /*0x5a7883*/
               if ( !CellClass::InBounds(v10) && !Cell::IsEmpty(v10) && !CellClass::InMapDataRange(v10) ) /*0x5a789d*/
                 break; /*0x5a789d*/
               if ( ++v8 >= *this + 3 ) /*0x5a78ae*/
@@ -467,6 +445,7 @@ LABEL_24:
           }
           else
           {
+  int v5; // esi
             while ( 1 ) /*0x5a7807*/
             {
               v5 = v2; /*0x5a7807*/
@@ -480,8 +459,8 @@ LABEL_23:
             {
               LOWORD(v12) = v5; /*0x5a7814*/
               HIWORD(v12) = v3; /*0x5a781f*/
-              v6 = (int *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v12); /*0x5a7824*/
-              v7 = v6[14]; /*0x5a7829*/
+              int * v6 = (int *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v12); /*0x5a7824*/
+              int v7 = v6[14]; /*0x5a7829*/
               if ( (v7 < g_CellTileTypeCache || v7 > g_CellTileTypeCache + 1) && !Value::InRange(v6) ) /*0x5a783d*/
                 break; /*0x5a783d*/
               v2 = *this; /*0x5a7846*/

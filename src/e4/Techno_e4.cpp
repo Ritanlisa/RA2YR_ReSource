@@ -9,7 +9,7 @@ namespace gamemd {
 int Techno::GetOwnerHouse()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Techno_GetOwnerHouse(int this)
+void Techno_GetOwnerHouse(int this)
 {
   int result; // eax
 

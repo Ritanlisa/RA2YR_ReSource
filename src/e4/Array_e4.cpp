@@ -8,12 +8,11 @@ namespace gamemd {
 int Array::GetClamped(CheckListClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Array::GetClamped(_DWORD *this, CheckListClass *aP1)
+void Array::GetClamped(CheckListClass *aP1)
 {
   int result; // eax
   CheckListClass *v3; // edx
   CheckListClass *v4; // eax
-
   result = this->q044; /*0x557ac0*/
   if ( result ) /*0x557ac5*/
   {
@@ -33,16 +32,14 @@ namespace gamemd {
 int Array::FindValue(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Array::FindValue(int *this, IUnknown *aP1)
+void Array::FindValue(IUnknown *aP1)
 {
-  int v2; // esi
   int result; // eax
-  int v4; // edx
   VectorClass *i; // ecx
 
-  v2 = this->q004; /*0x634292*/
+  int v2 = this->q004; /*0x634292*/
   result = -1; /*0x634295*/
-  v4 = 0; /*0x634298*/
+  int v4 = 0; /*0x634298*/
   if ( v2 > 0 ) /*0x63429d*/
   {
     for ( i = (VectorClass *)this->q004; **(IUnknown ***)i->vtable0 != aP1; i = (VectorClass *)((char *)i + 4) ) /*0x63429f*/
@@ -62,17 +59,14 @@ namespace gamemd {
 char Array::RemoveAt(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall Array_RemoveAt(_DWORD *this, int a2)
+void Array_RemoveAt(_DWORD *this, int a2)
 {
-  int v2; // edx
-  int v3; // eax
-  int v4; // edx
 
-  v2 = this->q010; /*0x63e590*/
-  v3 = a2; /*0x63e593*/
+  int v2 = this->q010; /*0x63e590*/
+  int v3 = a2; /*0x63e593*/
   if ( a2 >= v2 ) /*0x63e599*/
     return 0; /*0x63e5bc*/
-  v4 = v2 - 1; /*0x63e59b*/
+  int v4 = v2 - 1; /*0x63e59b*/
   this->q010 = v4; /*0x63e59e*/
   if ( a2 < v4 ) /*0x63e5a1*/
   {
@@ -93,7 +87,7 @@ namespace gamemd {
 int Array::Get(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Array_Get(_DWORD *this, int a2)
+void Array_Get(_DWORD *this, int a2)
 {
   return *(_DWORD *)(this->q0E4 + 4 * a2); /*0x65ad4d*/
 }
@@ -105,14 +99,12 @@ namespace gamemd {
 char Array::ContainsValue(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall Array::ContainsValue(int *this, IUnknown *aP1)
+void Array::ContainsValue(IUnknown *aP1)
 {
-  int v2; // esi
-  int v3; // edx
   IUnknown **i; // ecx
 
-  v2 = this->q0E8; /*0x65adf1*/
-  v3 = 0; /*0x65adf7*/
+  int v2 = this->q0E8; /*0x65adf1*/
+  int v3 = 0; /*0x65adf7*/
   if ( v2 <= 0 ) /*0x65adfc*/
     return 0; /*0x65ae1a*/
   for ( i = (IUnknown **)this->q0E4; *i && *i != aP1; ++i ) /*0x65adfe*/
@@ -130,15 +122,14 @@ namespace gamemd {
 int Array::Zero()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Array_Zero(_DWORD *this)
+void Array_Zero(_DWORD *this)
 {
   int result; // eax
-  _DWORD *v2; // edx
 
   result = 0; /*0x7490d6*/
   if ( (int)this->q800 > 0 ) /*0x7490da*/
   {
-    v2 = this; /*0x7490dd*/
+    Array *v2 = this; /*0x7490dd*/
     do /*0x7490f1*/
     {
       *v2 = 0; /*0x7490df*/
@@ -157,11 +148,10 @@ namespace gamemd {
 void Array::ByteSwap()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall Array_ByteSwap(u_long *this)
+void Array_ByteSwap(u_long *this)
 {
+  Array *v3; // esi
   signed int v2; // ebx
-  u_long *v3; // esi
-
   if ( this->q201 && (v2 = 0, (int)this->q800 > 0) ) /*0x749169*/
   {
     v3 = this; /*0x74916c*/
@@ -187,7 +177,7 @@ namespace gamemd {
 int Array::GetElement(CampaignScore * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Array::GetElement(_DWORD *this, CampaignScore *aP1)
+void Array::GetElement(CampaignScore *aP1)
 {
   if ( (int)aP1 < 0 || (int)aP1 >= this->q038 ) /*0x76398b*/
     return 0; /*0x763999*/
@@ -202,7 +192,7 @@ namespace gamemd {
 int Array::CleanupArrayWOL()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall WOL_CleanupArray(int *this)
+void WOL_CleanupArray(int *this)
 {
   int i; // edi
   int result; // eax
@@ -223,38 +213,28 @@ namespace gamemd {
 char Array::InsertElement(const void * a1, ObjectClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall Array::InsertElement(int *this, const void *a1, ObjectClass *aP2)
+void Array::InsertElement(const void *a1, ObjectClass *aP2)
 {
-  int v4; // esi
-  int v5; // ecx
-  int v6; // eax
-  int v7; // ebp
   CCINIClass *v8; // edx
   CCINIClass *v9; // esi
-  int v10; // eax
-  int v11; // ebp
   CCINIClass *v12; // edx
   CCINIClass *v13; // esi
-  void *v14; // edi
-  int v16; // [esp+Ch] [ebp-4h]
-  int v17; // [esp+Ch] [ebp-4h]
-
-  v4 = (int)aP2; /*0x7ad795*/
-  v5 = *this; /*0x7ad799*/
+  int v4 = (int)aP2; /*0x7ad795*/
+  int v5 = *this; /*0x7ad799*/
   if ( (int)aP2 > v5 ) /*0x7ad79e*/
   {
     aP2 = (ObjectClass *)v5; /*0x7ad7a0*/
     v4 = v5; /*0x7ad7a4*/
   }
-  v6 = this->q004; /*0x7ad7a6*/
+  int v6 = this->q004; /*0x7ad7a6*/
   if ( v4 >= v6 && v5 >= v6 ) /*0x7ad7b4*/
   {
-    v7 = 2 * v5; /*0x7ad7b6*/
+    int v7 = 2 * v5; /*0x7ad7b6*/
     if ( 2 * v5 < 10 ) /*0x7ad7bc*/
       v7 = 10; /*0x7ad7be*/
     v8 = (CCINIClass *)__2_YAPAXI_Z(268 * v7); /*0x7ad7d7*/
     memset(v8, 0, 4 * ((unsigned int)(268 * v7) >> 2)); /*0x7ad7e2*/
-    v16 = (int)v8; /*0x7ad7ec*/
+    int v16 = (int)v8; /*0x7ad7ec*/
     v9 = (CCINIClass *)this->q008; /*0x7ad7f2*/
     if ( v9 ) /*0x7ad7f7*/
       qmemcpy(v8, v9, 268 * *this); /*0x7ad80f*/
@@ -263,15 +243,15 @@ char __thiscall Array::InsertElement(int *this, const void *a1, ObjectClass *aP2
     this->q008 = v16; /*0x7ad82c*/
     this->q004 = v7; /*0x7ad82f*/
   }
-  v10 = *this; /*0x7ad832*/
+  int v10 = *this; /*0x7ad832*/
   if ( *this >= this->q004 ) /*0x7ad839*/
   {
-    v11 = 2 * v10; /*0x7ad83b*/
+    int v11 = 2 * v10; /*0x7ad83b*/
     if ( 2 * v10 < 10 ) /*0x7ad841*/
       v11 = 10; /*0x7ad843*/
     v12 = (CCINIClass *)__2_YAPAXI_Z(268 * v11); /*0x7ad85c*/
     memset(v12, 0, 4 * ((unsigned int)(268 * v11) >> 2)); /*0x7ad867*/
-    v17 = (int)v12; /*0x7ad871*/
+    int v17 = (int)v12; /*0x7ad871*/
     v13 = (CCINIClass *)this->q008; /*0x7ad877*/
     if ( v13 ) /*0x7ad87c*/
       qmemcpy(v12, v13, 268 * *this); /*0x7ad894*/
@@ -282,7 +262,7 @@ char __thiscall Array::InsertElement(int *this, const void *a1, ObjectClass *aP2
   }
   if ( v4 < *this ) /*0x7ad8bc*/
     memcpy((void *)(this->q008 + 268 * (v4 + 1)), (const void *)(this->q008 + 268 * v4), 268 * *this - 268 * v4); /*0x7ad8f2*/
-  v14 = (void *)(this->q008 + 268 * v4); /*0x7ad907*/
+  void * v14 = (void *)(this->q008 + 268 * v4); /*0x7ad907*/
   if ( v14 ) /*0x7ad90c*/
     qmemcpy(v14, a1, 0x10Cu); /*0x7ad917*/
   ++*this; /*0x7ad91e*/

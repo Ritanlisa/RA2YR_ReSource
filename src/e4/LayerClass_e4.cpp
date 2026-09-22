@@ -15,15 +15,12 @@ namespace gamemd {
 bool LayerClass::CoordinatesLegal(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall LayerClass::CoordinatesLegal(_DWORD *this, IUnknown *aP1)
+void LayerClass::CoordinatesLegal(IUnknown *aP1)
 {
-  int v2; // edx
-  int v3; // esi
-  int v4; // eax
 
-  v2 = this->q0F4; /*0x568304*/
-  v3 = SLOWORD(aP1->field_0); /*0x56830c*/
-  v4 = SHIWORD(aP1->field_0); /*0x56830f*/
+  int v2 = this->q0F4; /*0x568304*/
+  int v3 = SLOWORD(aP1->field_0); /*0x56830c*/
+  int v4 = SHIWORD(aP1->field_0); /*0x56830f*/
   return v4 + v3 > v2 && v3 - v4 < v2 && v4 - v3 < v2 && v4 + v3 <= v2 + 2 * this->q0F8; /*0x568337*/
 }
 }
@@ -56,103 +53,67 @@ _DWORD *__fastcall LayerClass::Pathfinding_Find(
   IUnknown *v17; // ebx
   Tactical *v18; // edx
   IUnknown *v19; // eax
-  unsigned int v20; // eax
-  _DWORD *v21; // eax
-  unsigned int v22; // eax
-  _DWORD *v23; // eax
-  int v24; // eax
-  int v25; // ebp
-  int v26; // edi
-  int v27; // ecx
-  unsigned int v28; // eax
   ObjectClass *v29; // eax
   ObjectClass *v30; // esi
-  __int64 v31; // rax
-  char *v32; // ecx
   __int16 v33; // ax
-  int v34; // esi
   TagClass **v35; // eax
   TagClass *v36; // ecx
-  unsigned int v37; // eax
   ObjectClass *v38; // eax
   ObjectClass *v39; // esi
-  __int64 v40; // rax
-  char *v41; // ecx
   __int16 v42; // ax
-  int v43; // esi
   TagClass **v44; // eax
-  int v45; // edi
-  char *v46; // ebp
-  unsigned int v47; // eax
   ObjectClass *v48; // eax
   ObjectClass *v49; // esi
-  __int64 v50; // rax
   __int16 v51; // ax
-  int v52; // esi
   TagClass **v53; // eax
-  unsigned int v54; // eax
   ObjectClass *v55; // eax
   ObjectClass *v56; // esi
-  __int64 v57; // rax
   __int16 v58; // ax
-  int v59; // esi
   TagClass **v60; // eax
-  _DWORD *v61; // ebx
-  char *v62; // esi
   unsigned __int16 v63; // di
   unsigned __int16 v64; // bp
   TagClass *v65; // eax
   IUnknown *v66; // edx
   IUnknown *v67; // ecx
   IUnknown *v69; // ebx
-  int v70; // edi
   TagClass **v71; // eax
   TagClass *v72; // esi
   BuildingTypeClass *v73; // eax
-  double v74; // st7
   TagClass *v75; // [esp+18h] [ebp-1DCh] BYREF
-  char v76; // [esp+1Fh] [ebp-1D5h]
-  int v77; // [esp+20h] [ebp-1D4h]
-  int v78; // [esp+24h] [ebp-1D0h]
   TagClass *v79; // [esp+28h] [ebp-1CCh]
   IUnknown *v80; // [esp+2Ch] [ebp-1C8h]
   IUnknown *v81; // [esp+30h] [ebp-1C4h]
   Tactical *i; // [esp+34h] [ebp-1C0h]
-  int v83; // [esp+38h] [ebp-1BCh]
   TagClass *v84; // [esp+3Ch] [ebp-1B8h]
   Tactical *v85; // [esp+40h] [ebp-1B4h]
-  char *v86; // [esp+44h] [ebp-1B0h]
   TagClass *v87; // [esp+48h] [ebp-1ACh]
   AbstractClass aP1a; // [esp+4Ch] [ebp-1A8h] BYREF
   AbstractClass v89; // [esp+70h] [ebp-184h] BYREF
   IUnknown *v90; // [esp+94h] [ebp-160h]
-  int v91[4]; // [esp+98h] [ebp-15Ch] BYREF
-  int v92[4]; // [esp+A8h] [ebp-14Ch] BYREF
-  int v93[4]; // [esp+B8h] [ebp-13Ch] BYREF
   AbstractClass aP0a; // [esp+C8h] [ebp-12Ch] BYREF
-  _DWORD v95[24]; // [esp+134h] [ebp-C0h] BYREF
-  _DWORD v96[24]; // [esp+194h] [ebp-60h] BYREF
 
   v17 = aP0; /*0x56dc27*/
   v18 = (Tactical *)SLOWORD(aP3->field_0); /*0x56dc33*/
   v19 = (IUnknown *)SHIWORD(aP3->field_0); /*0x56dc36*/
   v80 = aP0; /*0x56dc49*/
-  v77 = 0; /*0x56dc4d*/
+  int v77 = 0; /*0x56dc4d*/
   v85 = v18; /*0x56dc51*/
   v81 = v19; /*0x56dc55*/
-  v76 = 0; /*0x56dc59*/
+  char v76 = 0; /*0x56dc59*/
   if ( aP5 == (IUnknown *)0xFFFF ) /*0x56dc5e*/
     aP5 = (IUnknown *)-1; /*0x56dc60*/
-  v20 = (unsigned int)v18 + 512 * (_DWORD)v19; /*0x56dc6e*/
+  unsigned int v20 = (unsigned int)v18 + 512 * (_DWORD)v19; /*0x56dc6e*/
+  _DWORD *v21; // eax
   if ( v20 >= 0x40000 || (v21 = *(_DWORD **)(*(_DWORD *)&stru_87C374[13744] + 4 * v20)) == 0 ) /*0x56dc84*/
   {
     g_Map_GlobalCellIndex = (IUnknown *)aP3->field_0; /*0x56dc88*/
     v21 = g_CellClassArray; /*0x56dc8d*/
   }
-  v83 = *((char *)v21 + 283); /*0x56dc99*/
+  int v83 = *((char *)v21 + 283); /*0x56dc99*/
   if ( (_BYTE)aP7 ) /*0x56dca6*/
   {
-    v22 = SLOWORD(aP3->field_0) + (SHIWORD(aP3->field_0) << 9); /*0x56dcb2*/
+    unsigned int v22 = SLOWORD(aP3->field_0) + (SHIWORD(aP3->field_0) << 9); /*0x56dcb2*/
+  _DWORD *v23; // eax
     if ( v22 >= 0x40000 || (v23 = *(_DWORD **)(*(_DWORD *)&stru_87C374[13744] + 4 * v22)) == 0 ) /*0x56dcc2*/
     {
       v23 = g_CellClassArray; /*0x56dcc6*/
@@ -161,29 +122,29 @@ _DWORD *__fastcall LayerClass::Pathfinding_Find(
     if ( (v23[80] & 0x100) != 0 ) /*0x56dcda*/
       v83 += 4; /*0x56dcdc*/
   }
-  v24 = aP0->field_F8 + *(_DWORD *)&aP0->__pad_EC[8]; /*0x56dced*/
+  int v24 = aP0->field_F8 + *(_DWORD *)&aP0->__pad_EC[8]; /*0x56dced*/
   if ( v24 > 32 ) /*0x56dcf2*/
     v24 = 32; /*0x56dcf4*/
   i = (Tactical *)v24; /*0x56dcfb*/
-  v78 = 0; /*0x56dcff*/
+  int v78 = 0; /*0x56dcff*/
   if ( v24 <= 0 ) /*0x56dd03*/
     goto LABEL_123; /*0x56dd03*/
   do /*0x56e5ad*/
   {
-    v25 = v78; /*0x56dd09*/
-    v26 = -v78; /*0x56dd0f*/
+    int v25 = v78; /*0x56dd09*/
+    int v26 = -v78; /*0x56dd0f*/
     if ( -v78 <= v78 ) /*0x56dd13*/
     {
-      v86 = &aP0a[0][4 * v77 + 12]; /*0x56dd24*/
+      TagClass *v86 = &aP0a[0][4 * v77 + 12]; /*0x56dd24*/
       do /*0x56dd28*/
       {
         if ( (_BYTE)aP15 ) /*0x56dd31*/
           goto LABEL_36; /*0x56dd31*/
         LOWORD(v87) = (_WORD)v85 + v26; /*0x56dd44*/
-        v27 = (__int16)((_WORD)v81 - v25); /*0x56dd49*/
+        int v27 = (__int16)((_WORD)v81 - v25); /*0x56dd49*/
         HIWORD(v87) = (_WORD)v81 - v25; /*0x56dd4c*/
         v75 = v87; /*0x56dd5a*/
-        v28 = (__int16)((_WORD)v85 + v26) + (v27 << 9); /*0x56dd61*/
+        unsigned int v28 = (__int16)((_WORD)v85 + v26) + (v27 << 9); /*0x56dd61*/
         if ( v28 < 0x40000 ) /*0x56dd63*/
         {
           v29 = *(ObjectClass **)(*(_DWORD *)&stru_87C374[13744] + 4 * v28); /*0x56dd72*/
@@ -198,6 +159,7 @@ _DWORD *__fastcall LayerClass::Pathfinding_Find(
         g_Map_GlobalCellIndex = (IUnknown *)v87; /*0x56dd86*/
         v30 = (ObjectClass *)g_CellClassArray; /*0x56dd8c*/
 LABEL_23:
+  int v92[4]; // [esp+A8h] [ebp-14Ch] BYREF
         v92[1] = v27; /*0x56dd91*/
         v92[0] = (__int16)((_WORD)v85 + v26); /*0x56dd9f*/
         v92[2] = (int)aP8; /*0x56ddad*/
@@ -207,6 +169,7 @@ LABEL_23:
           if ( MapClass::CheckCellsBuildable((IUnknown *)&v75, aP8, aP9, aP4, aP5, aP6, -1, aP7, aP10) ) /*0x56de0e*/
           {
             if ( !(_BYTE)aP11 /*0x56de4c*/
+  __int64 v31; // rax
               || (v31 = v83 - 4 * (((unsigned int)v30[1].lastLayer >> 8) & 1) - SHIBYTE(v30[1].health),
                   (int)((HIDWORD(v31) ^ v31) - HIDWORD(v31)) < 2) )
             {
@@ -214,9 +177,9 @@ LABEL_23:
                 && ((_BYTE)aP13 || (v30[1].lastLayer & 0x100) == 0)
                 && (!a17 || MapClass::IsAreaFree(v17, v92, -1)) )
               {
-                v32 = v86; /*0x56deaa*/
+                char * v32 = v86; /*0x56deaa*/
                 v33 = (__int16)v75; /*0x56deae*/
-                v34 = v77; /*0x56deb2*/
+                int v34 = v77; /*0x56deb2*/
                 *(_DWORD *)v86 = v75; /*0x56deb6*/
                 v86 = v32 + 4; /*0x56debb*/
                 v77 = v34 + 1; /*0x56dec9*/
@@ -242,7 +205,7 @@ LABEL_36:
         *(_WORD *)&aP1a[8] = (_WORD)v85 + v26; /*0x56df5f*/
         v36 = (TagClass *)(__int16)((_WORD)v81 + v25); /*0x56df68*/
         v75 = *(TagClass **)&aP1a[8]; /*0x56df70*/
-        v37 = (__int16)((_WORD)v85 + v26) + ((_DWORD)v36 << 9); /*0x56df77*/
+        unsigned int v37 = (__int16)((_WORD)v85 + v26) + ((_DWORD)v36 << 9); /*0x56df77*/
         if ( v37 < 0x40000 ) /*0x56df79*/
         {
           v38 = *(ObjectClass **)(*(_DWORD *)&stru_87C374[13744] + 4 * v37); /*0x56df88*/
@@ -257,6 +220,7 @@ LABEL_36:
         g_Map_GlobalCellIndex = *(IUnknown **)&aP1a[8]; /*0x56df9c*/
         v39 = (ObjectClass *)g_CellClassArray; /*0x56dfa2*/
 LABEL_44:
+  int v91[4]; // [esp+98h] [ebp-15Ch] BYREF
         v91[1] = (int)v36; /*0x56dfa7*/
         v91[3] = (int)aP9; /*0x56dfbe*/
         v91[0] = (__int16)((_WORD)v85 + v26); /*0x56dfc8*/
@@ -266,6 +230,7 @@ LABEL_44:
           if ( MapClass::CheckCellsBuildable((IUnknown *)&v75, aP8, aP9, aP4, aP5, aP6, -1, aP7, aP10) ) /*0x56e024*/
           {
             if ( !(_BYTE)aP11 /*0x56e062*/
+  __int64 v40; // rax
               || (v40 = v83 - 4 * (((unsigned int)v39[1].lastLayer >> 8) & 1) - SHIBYTE(v39[1].health),
                   (int)((HIDWORD(v40) ^ v40) - HIDWORD(v40)) < 2) )
             {
@@ -273,9 +238,9 @@ LABEL_44:
                 && ((_BYTE)aP13 || (v39[1].lastLayer & 0x100) == 0)
                 && (!a17 || MapClass::IsAreaFree(v17, v91, -1)) )
               {
-                v41 = v86; /*0x56e0c0*/
+                TagClass *v41 = v86; /*0x56e0c0*/
                 v42 = (__int16)v75; /*0x56e0c4*/
-                v43 = v77; /*0x56e0c8*/
+                int v43 = v77; /*0x56e0c8*/
                 *(_DWORD *)v86 = v75; /*0x56e0cc*/
                 v86 = v41 + 4; /*0x56e0d1*/
                 v77 = v43 + 1; /*0x56e0df*/
@@ -299,10 +264,10 @@ LABEL_57:
       }
       while ( v26 <= v25 ); /*0x56dd28*/
     }
-    v45 = 1 - v25; /*0x56e160*/
+    int v45 = 1 - v25; /*0x56e160*/
     if ( 1 - v25 <= v25 - 1 ) /*0x56e16c*/
     {
-      v46 = &aP0a[0][4 * v77 + 12]; /*0x56e176*/
+      TagClass *v46 = &aP0a[0][4 * v77 + 12]; /*0x56e176*/
       do /*0x56e17d*/
       {
         if ( (_BYTE)aP15 ) /*0x56e186*/
@@ -310,7 +275,7 @@ LABEL_57:
         LOWORD(v84) = (_WORD)v85 - v78; /*0x56e19c*/
         HIWORD(v84) = v45 + (_WORD)v81; /*0x56e1a1*/
         v75 = v84; /*0x56e1b2*/
-        v47 = (__int16)((_WORD)v85 - v78) + ((__int16)(v45 + (_WORD)v81) << 9); /*0x56e1b9*/
+        unsigned int v47 = (__int16)((_WORD)v85 - v78) + ((__int16)(v45 + (_WORD)v81) << 9); /*0x56e1b9*/
         if ( v47 < 0x40000 ) /*0x56e1bb*/
         {
           v48 = *(ObjectClass **)(*(_DWORD *)&stru_87C374[13744] + 4 * v47); /*0x56e1ca*/
@@ -325,6 +290,7 @@ LABEL_57:
         g_Map_GlobalCellIndex = (IUnknown *)v84; /*0x56e1dd*/
         v49 = (ObjectClass *)g_CellClassArray; /*0x56e1e3*/
 LABEL_67:
+  int v93[4]; // [esp+B8h] [ebp-13Ch] BYREF
         v93[0] = (__int16)((_WORD)v85 - v78); /*0x56e1e8*/
         v93[1] = (__int16)(v45 + (_WORD)v81); /*0x56e1fd*/
         v93[2] = (int)aP8; /*0x56e209*/
@@ -334,6 +300,7 @@ LABEL_67:
           if ( MapClass::CheckCellsBuildable((IUnknown *)&v75, aP8, aP9, aP4, aP5, aP6, -1, aP7, aP10) ) /*0x56e265*/
           {
             if ( !(_BYTE)aP11 /*0x56e2a5*/
+  __int64 v50; // rax
               || (v50 = v83 - 4 * (((unsigned int)v49[1].lastLayer >> 8) & 1) - SHIBYTE(v49[1].health),
                   (int)((HIDWORD(v50) ^ v50) - HIDWORD(v50)) < 2) )
             {
@@ -342,7 +309,7 @@ LABEL_67:
                 && (!a17 || MapClass::IsAreaFree(v17, v93, -1)) )
               {
                 v51 = (__int16)v75; /*0x56e303*/
-                v52 = v77; /*0x56e307*/
+                int v52 = v77; /*0x56e307*/
                 *(_DWORD *)v46 = v75; /*0x56e312*/
                 v46 += 4; /*0x56e316*/
                 v77 = v52 + 1; /*0x56e31b*/
@@ -367,7 +334,7 @@ LABEL_80:
         HIWORD(v79) = v45 + (_WORD)v81; /*0x56e39c*/
         LOWORD(v79) = v78 + (_WORD)v85; /*0x56e3a6*/
         v75 = v79; /*0x56e3b4*/
-        v54 = (__int16)(v78 + (_WORD)v85) + ((__int16)(v45 + (_WORD)v81) << 9); /*0x56e3bb*/
+        unsigned int v54 = (__int16)(v78 + (_WORD)v85) + ((__int16)(v45 + (_WORD)v81) << 9); /*0x56e3bb*/
         if ( v54 < 0x40000 ) /*0x56e3bd*/
         {
           v55 = *(ObjectClass **)(*(_DWORD *)&stru_87C374[13744] + 4 * v54); /*0x56e3cc*/
@@ -391,6 +358,7 @@ LABEL_86:
           if ( MapClass::CheckCellsBuildable((IUnknown *)&v75, aP8, aP9, aP4, aP5, aP6, -1, aP7, aP10) ) /*0x56e467*/
           {
             if ( !(_BYTE)aP11 /*0x56e4a7*/
+  __int64 v57; // rax
               || (v57 = v83 - 4 * (((unsigned int)v56[1].lastLayer >> 8) & 1) - SHIBYTE(v56[1].health),
                   (int)((HIDWORD(v57) ^ v57) - HIDWORD(v57)) < 2) )
             {
@@ -399,7 +367,7 @@ LABEL_86:
                 && (!a17 || MapClass::IsAreaFree(v17, &v89.nextArrayIndex, -1)) )
               {
                 v58 = (__int16)v75; /*0x56e501*/
-                v59 = v77; /*0x56e505*/
+                int v59 = v77; /*0x56e505*/
                 *(_DWORD *)v46 = v75; /*0x56e510*/
                 v46 += 4; /*0x56e514*/
                 v77 = v59 + 1; /*0x56e519*/
@@ -436,8 +404,10 @@ LABEL_123:
   }
   v80 = 0; /*0x56e5c5*/
   v81 = 0; /*0x56e5c9*/
-  v61 = v96; /*0x56e5da*/
-  v62 = &aP0a[12]; /*0x56e5e1*/
+  _DWORD v96[24]; // [esp+194h] [ebp-60h] BYREF
+  _DWORD * v61 = v96; /*0x56e5da*/
+  char * v62 = &aP0a[12]; /*0x56e5e1*/
+  _DWORD v95[24]; // [esp+134h] [ebp-C0h] BYREF
   i = (Tactical *)v95; /*0x56e5e8*/
   v79 = (TagClass *)v77; /*0x56e5ec*/
   do /*0x56e67b*/
@@ -480,7 +450,7 @@ LABEL_123:
     v69 = v80; /*0x56e6f2*/
     if ( !v80 ) /*0x56e6f4*/
       v69 = v81; /*0x56e6f6*/
-    v70 = 0; /*0x56e6f8*/
+    int v70 = 0; /*0x56e6f8*/
     *(_DWORD *)aP1a[0] = 0; /*0x56e6fa*/
     *(_DWORD *)&aP1a[4] = 1090021888; /*0x56e704*/
     for ( i = (Tactical *)g_MapSeedState; v70 < (int)v69; ++v70 ) /*0x56e710*/
@@ -492,7 +462,7 @@ LABEL_123:
       v73 = (BuildingTypeClass *)((__int16)*v71 - SLOWORD(aP14->field_0)); /*0x56e73c*/
       v79 = (TagClass *)((_DWORD)v73 * (_DWORD)v73 /*0x56e751*/
                        + (SHIWORD(v72) - SHIWORD(aP14->field_0)) * (SHIWORD(v72) - SHIWORD(aP14->field_0)));
-      v74 = Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64((double)(int)v79)); /*0x56e75c*/
+      double v74 = Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64((double)(int)v79)); /*0x56e75c*/
       if ( v74 < *(double *)aP1a[0] ) /*0x56e76d*/
       {
         *(double *)aP1a[0] = v74; /*0x56e76f*/
@@ -514,11 +484,6 @@ void * LayerClass::Reveal(int a2)
 #375 *__thiscall LayerClass::Reveal(_DWORD *this, int a2)
 {
   #375 *result; // eax
-  int v4; // eax
-  int v5; // edx
-  int v6; // ecx
-  int v7; // esi
-  char v8; // [esp+10h] [ebp+4h]
 
   result = (#375 *)a2; /*0x577d90*/
   if ( a2 ) /*0x577da2*/
@@ -536,6 +501,7 @@ void * LayerClass::Reveal(int a2)
 LABEL_8:
   if ( g_GameMode_Current[0] != 3 && g_GameMode_Current[0] != 4 /*0x577df4*/
     || !g_GameStateFlags
+  char v8; // [esp+10h] [ebp+4h]
     || (v8 = 1, (*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)g_GameStateFlags + 4))(g_GameStateFlags)) )
   {
     v8 = 0; /*0x577dff*/
@@ -549,9 +515,11 @@ LABEL_8:
     DataGlobal_87F8F4 = 1; /*0x577e42*/
     DataGlobal_87F8FC = g_Cell_PositionLUT - 1; /*0x577e4b*/
     DataGlobal_87F900 = (g_Cell_PositionLUT << 11) + g_Shroud_CellArray + 4; /*0x577e5a*/
-    v4 = LayerClass::CellIteratorNext(&DataGlobal_87F7E8); /*0x577e60*/
+    int v4 = LayerClass::CellIteratorNext(&DataGlobal_87F7E8); /*0x577e60*/
     if ( v4 ) /*0x577e67*/
     {
+  int v6; // ecx
+  int v5; // edx
       while ( 1 ) /*0x577e6e*/
       {
         if ( !v8 ) /*0x577e74*/
@@ -570,7 +538,7 @@ LABEL_24:
       if ( v5 == 13 && v6 == this->q0F4 + 11 ) /*0x577ea2*/
         goto LABEL_24; /*0x577ea2*/
 LABEL_21:
-      v7 = this->q0F8; /*0x577ea4*/
+      int v7 = this->q0F8; /*0x577ea4*/
       if ( v5 == v7 + 13 && v6 == this->q0F4 + v7 - 15 ) /*0x577ebd*/
         goto LABEL_24; /*0x577ebd*/
 LABEL_23:
@@ -595,23 +563,14 @@ namespace gamemd {
 int LayerClass::CellIteratorNext()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall LCW_ReadBit(_DWORD *this)
+void LCW_ReadBit(_DWORD *this)
 {
-  int v1; // eax
-  int v2; // ebp
-  int v3; // edx
-  int v5; // edx
-  int v6; // eax
-  int v7; // esi
-  int v8; // esi
-  int v9; // edx
-  int v10; // eax
 
-  v1 = this->q114; /*0x578290*/
-  v2 = this->q118; /*0x578297*/
+  int v1 = this->q114; /*0x578290*/
+  int v2 = this->q118; /*0x578297*/
   if ( v1 ) /*0x5782a0*/
   {
-    v3 = this->q110 - 1; /*0x5782af*/
+    int v3 = this->q110 - 1; /*0x5782af*/
     ++this->q10C; /*0x5782b1*/
     this->q114 = v1 - 1; /*0x5782b7*/
     this->q110 = v3; /*0x5782c3*/
@@ -620,9 +579,10 @@ int __thiscall LCW_ReadBit(_DWORD *this)
   }
   else
   {
-    v5 = this->q110; /*0x5782d5*/
-    v6 = this->q10C; /*0x5782db*/
-    v7 = this->q0F4; /*0x5782e1*/
+  int v8; // esi
+    int v5 = this->q110; /*0x5782d5*/
+    int v6 = this->q10C; /*0x5782db*/
+    int v7 = this->q0F4; /*0x5782e1*/
     this->q10C = v5; /*0x5782e8*/
     this->q110 = v6; /*0x5782f2*/
     if ( (((_BYTE)v5 - (_BYTE)v7 + (_BYTE)v6 - 1) & 1) != 0 ) /*0x5782ff*/
@@ -635,8 +595,8 @@ int __thiscall LCW_ReadBit(_DWORD *this)
       v8 = v7 - 2; /*0x57830c*/
       this->q10C = v5 + 1; /*0x57830f*/
     }
-    v9 = this->q10C; /*0x57831b*/
-    v10 = this->q110 << 9; /*0x578321*/
+    int v9 = this->q10C; /*0x57831b*/
+    int v10 = this->q110 << 9; /*0x578321*/
     this->q114 = v8; /*0x578324*/
     this->q118 = this->q13C + 4 * (v9 + v10); /*0x578337*/
     return *(_DWORD *)v2; /*0x57833d*/
@@ -650,12 +610,11 @@ namespace gamemd {
 int LayerClass::CellIteratorReset()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall LCW_InitBitReader(_DWORD *this)
+void LCW_InitBitReader(_DWORD *this)
 {
-  int v1; // eax
   int result; // eax
 
-  v1 = this->q0F4; /*0x578350*/
+  int v1 = this->q0F4; /*0x578350*/
   this->q10C = 1; /*0x578356*/
   this->q110 = v1; /*0x578360*/
   this->q114 = v1 - 1; /*0x578369*/
@@ -671,23 +630,17 @@ namespace gamemd {
 bool LayerClass::IsWithinUsableArea(IUnknown * aP1, TechnoClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall LayerClass::IsWithinUsableArea(_DWORD *this, IUnknown *aP1, TechnoClass *aP2)
+void LayerClass::IsWithinUsableArea(IUnknown *aP1, TechnoClass *aP2)
 {
-  int v3; // esi
-  int v4; // edx
-  int v5; // edi
-  unsigned int v6; // eax
-  _DWORD *v7; // eax
-  int v8; // eax
-  int v9; // esi
   bool result; // al
 
-  v3 = 0; /*0x57846b*/
-  v4 = SHIWORD(aP1->field_0); /*0x57846d*/
-  v5 = SLOWORD(aP1->field_0); /*0x578472*/
+  int v3 = 0; /*0x57846b*/
+  int v4 = SHIWORD(aP1->field_0); /*0x57846d*/
+  int v5 = SLOWORD(aP1->field_0); /*0x578472*/
   if ( (_BYTE)aP2 ) /*0x578477*/
   {
-    v6 = v5 + (v4 << 9); /*0x57847e*/
+    unsigned int v6 = v5 + (v4 << 9); /*0x57847e*/
+  _DWORD *v7; // eax
     if ( v6 >= 0x40000 || (v7 = *(_DWORD **)(*(_DWORD *)&DataGlobal_87F8E4[64] + 4 * v6)) == 0 ) /*0x578494*/
     {
       g_Map_GlobalCellIndex = (IUnknown *)aP1->field_0; /*0x578498*/
@@ -697,11 +650,11 @@ bool __thiscall LayerClass::IsWithinUsableArea(_DWORD *this, IUnknown *aP1, Tech
     if ( *((_BYTE *)v7 + 284) && v4 + v5 < v3 + this->q0F4 + 2 * this->q100 + 4 ) /*0x5784ca*/
       ++v3; /*0x5784cc*/
   }
-  v8 = this->q0F4; /*0x5784d3*/
+  int v8 = this->q0F4; /*0x5784d3*/
   result = 0; /*0x578531*/
   if ( v4 + v5 > v3 + v8 + 2 * this->q100 && v4 + v5 <= v3 + v8 + 2 * (this->q100 + this->q108) + 2 ) /*0x5784fe*/
   {
-    v9 = this->q0FC; /*0x578500*/
+    int v9 = this->q0FC; /*0x578500*/
     if ( v5 - v4 < 2 * (v9 + this->q104) - v8 && v4 - v5 < v8 - 2 * v9 ) /*0x578523*/
       return 1; /*0x5784e3*/
   }
@@ -718,94 +671,15 @@ int LayerClass::DestroyCliff(int * a1, int a2, int a3)
 int __fastcall MapClass_DestroyTerrain(int *a1, int a2, int a3)
 {
   int result; // eax
-  int *v4; // ecx
-  int v5; // ebp
-  int v6; // edx
   __int16 v7; // di
-  _BYTE *v8; // esi
-  int v9; // edx
-  int *v10; // eax
-  int v11; // edx
-  int v12; // eax
-  int *v13; // edi
-  _DWORD *v14; // ebx
-  int v15; // eax
-  int v16; // esi
-  unsigned int v17; // eax
-  _DWORD *v18; // eax
   int i; // ebp
-  int v20; // eax
-  int v21; // esi
   int j; // ebp
-  int v23; // eax
-  int v24; // esi
-  unsigned int v25; // eax
-  _DWORD *v26; // eax
-  unsigned int v27; // eax
-  _DWORD *v28; // eax
-  unsigned int v29; // eax
-  _DWORD *v30; // eax
-  int v31; // ebx
-  int v32; // eax
-  int v33; // eax
   void **v34; // ebp
-  int v35; // edi
-  int v36; // eax
-  int v37; // edx
-  unsigned int v38; // esi
-  _DWORD *v39; // esi
-  int v40; // esi
-  void *v41; // eax
-  int *v42; // ecx
   __int16 v43; // di
-  int v44; // edx
-  _BYTE *v45; // esi
-  int v46; // edx
-  int *v47; // eax
-  int v48; // edx
-  int *v49; // eax
-  int v50; // edx
-  int *v51; // ebx
-  _DWORD *v52; // ebp
   int k; // edi
-  int v54; // eax
-  int v55; // esi
-  int v56; // eax
-  int v57; // ecx
-  unsigned int v58; // eax
-  _DWORD *v59; // eax
   int m; // edi
-  int v61; // eax
-  int v62; // esi
-  int v63; // eax
-  int v64; // ecx
   int n; // edi
-  int v66; // eax
-  int v67; // esi
-  unsigned int v68; // eax
-  _DWORD *v69; // eax
-  unsigned int v70; // eax
-  _DWORD *v71; // eax
-  int v72; // esi
-  int v73; // eax
-  bool v74; // sf
-  int v75; // eax
-  _DWORD *v76; // eax
-  int v77; // edx
-  int v78; // ebx
-  int v79; // eax
-  int v80; // eax
   void **v81; // ebp
-  int v82; // edi
-  int v83; // eax
-  int v84; // edx
-  unsigned int v85; // esi
-  _DWORD *v86; // esi
-  int v87; // esi
-  void *v88; // eax
-  int v89; // [esp+28h] [ebp-44h]
-  int v90; // [esp+28h] [ebp-44h]
-  int v91; // [esp+28h] [ebp-44h]
   int v92; // [esp+2Ch] [ebp-40h] BYREF
   int v93; // [esp+30h] [ebp-3Ch] BYREF
   int *v94; // [esp+34h] [ebp-38h]
@@ -826,14 +700,14 @@ int __fastcall MapClass_DestroyTerrain(int *a1, int a2, int a3)
   result = *(_DWORD *)(a3 + 56);
   if ( result == dword_ABC2C8 )
   {
-    v4 = (int *)*((_DWORD *)g_FrameCounter + dword_ABC2C8);
-    v5 = 0;
-    v6 = *v4;
+    int * v4 = (int *)*((_DWORD *)g_FrameCounter + dword_ABC2C8);
+    int v5 = 0;
+    int v6 = *v4;
     v7 = *(_WORD *)(a3 + 36) - *(unsigned __int8 *)(a3 + 282) % 6;
     HIWORD(v99) = *(unsigned __int8 *)(a3 + 282) / -6 + *(_WORD *)(a3 + 38);
     LOWORD(v99) = v7;
-    v8 = (_BYTE *)(*(int (__thiscall **)(int *, _DWORD))(v6 + 140))(v4, 0);
-    v89 = v7;
+    _BYTE * v8 = (_BYTE *)(*(int (__thiscall **)(int *, _DWORD))(v6 + 140))(v4, 0);
+    int v89 = v7;
     v95 = (v7 << 8) + 128;
     v104 = v95;
     v93 = SHIWORD(v99);
@@ -841,20 +715,22 @@ int __fastcall MapClass_DestroyTerrain(int *a1, int a2, int a3)
     v96 = (SHIWORD(v99) << 8) + 128;
     v105 = v96;
     (*(void (__thiscall **)(_BYTE *, int *))(*(_DWORD *)v8 + 436))(v8, &v104);
-    v9 = *(_DWORD *)v8;
+    int v9 = *(_DWORD *)v8;
     v8[129] = 0;
     v8[116] = 1;
     (*(void (__thiscall **)(_BYTE *, _DWORD))(v9 + 292))(v8, 0);
     if ( v8 )
       (*(void (__thiscall **)(_BYTE *, int))(*(_DWORD *)v8 + 32))(v8, 1);
+  int *v10; // eax
     v10 = (int *)(*(int (__thiscall **)(_DWORD, _DWORD))(**((_DWORD **)g_FrameCounter + g_TerrainTypeTable2) + 140))(
                    *((_DWORD *)g_FrameCounter + g_TerrainTypeTable2),
                    0);
     v104 = v95;
     v105 = v96;
-    v11 = *v10;
+    int v11 = *v10;
     v106 = 0;
     (*(void (__thiscall **)(int *, int *, _DWORD))(v11 + 216))(v10, &v104, 0);
+  int v12; // eax
     v12 = (*(int (__thiscall **)(_DWORD, _DWORD))(**((_DWORD **)g_FrameCounter + g_TerrainTypeTable2 + 1) + 140))(
             *((_DWORD *)g_FrameCounter + g_TerrainTypeTable2 + 1),
             0);
@@ -862,16 +738,16 @@ int __fastcall MapClass_DestroyTerrain(int *a1, int a2, int a3)
     v105 = (v93 << 8) + 128;
     v104 = ((__int16)(v99 + 3) << 8) + 128;
     (*(void (__thiscall **)(int, int *, _DWORD))(*(_DWORD *)v12 + 216))(v12, &v104, 0);
-    v13 = v94;
+    int * v13 = v94;
     Terrain::ConnectivityGraph(v94);
-    v14 = (_DWORD *)*((_DWORD *)g_FrameCounter + dword_ABC2C8);
+    _DWORD * v14 = (_DWORD *)*((_DWORD *)g_FrameCounter + dword_ABC2C8);
     v92 = (*(int (__thiscall **)(_DWORD *))(*v14 + 156))(v14);
     if ( (int)v14[186] > 0 )
     {
       do
       {
-        v15 = v14[185];
-        v16 = 0;
+        int v15 = v14[185];
+        int v16 = 0;
         if ( v15 > 0 )
         {
           HIWORD(v94) = v5 + HIWORD(v99);
@@ -882,7 +758,8 @@ int __fastcall MapClass_DestroyTerrain(int *a1, int a2, int a3)
             if ( *(_DWORD *)(v92 + 4 * (v16 + v5 * v15) + 16) && LayerClass::IsWithinUsableArea(v13, (__int16 *)&a3, 1) )
             {
               *(_WORD *)(v13[28] + 10 * CellToTileIndexMap(v13, (__int16 *)&a3)) = 0;
-              v17 = (__int16)a3 + (SHIWORD(a3) << 9);
+              unsigned int v17 = (__int16)a3 + (SHIWORD(a3) << 9);
+  _DWORD *v18; // eax
               if ( v17 >= 0x40000 || (v18 = *(_DWORD **)(g_Shroud_CellArray + 4 * v17)) == 0 )
               {
                 g_Map_GlobalCellIndex = a3;
@@ -901,8 +778,8 @@ int __fastcall MapClass_DestroyTerrain(int *a1, int a2, int a3)
     }
     for ( i = 0; i < v14[186]; ++i )
     {
-      v20 = v14[185];
-      v21 = 0;
+      int v20 = v14[185];
+      int v21 = 0;
       if ( v20 > 0 )
       {
         HIWORD(v94) = i + HIWORD(v99);
@@ -924,8 +801,8 @@ int __fastcall MapClass_DestroyTerrain(int *a1, int a2, int a3)
     }
     for ( j = 0; j < v14[186]; ++j )
     {
-      v23 = v14[185];
-      v24 = 0;
+      int v23 = v14[185];
+      int v24 = 0;
       if ( v23 > 0 )
       {
         HIWORD(v94) = j + HIWORD(v99);
@@ -935,7 +812,8 @@ int __fastcall MapClass_DestroyTerrain(int *a1, int a2, int a3)
           a3 = (int)v94;
           if ( *(_DWORD *)(v92 + 4 * (v24 + j * v23) + 16) && LayerClass::IsWithinUsableArea(v13, (__int16 *)&a3, 1) )
           {
-            v25 = (__int16)a3 + (SHIWORD(a3) << 9);
+            unsigned int v25 = (__int16)a3 + (SHIWORD(a3) << 9);
+  _DWORD *v26; // eax
             if ( v25 >= 0x40000 || (v26 = *(_DWORD **)(g_Shroud_CellArray + 4 * v25)) == 0 )
             {
               g_Map_GlobalCellIndex = a3;
@@ -950,8 +828,9 @@ int __fastcall MapClass_DestroyTerrain(int *a1, int a2, int a3)
         while ( v24 < v23 );
       }
     }
-    v27 = (v93 << 9) + v89;
+    unsigned int v27 = (v93 << 9) + v89;
     a3 = v27;
+  _DWORD *v28; // eax
     if ( v27 >= 0x40000 || (v28 = *(_DWORD **)(g_Shroud_CellArray + 4 * v27)) == 0 )
     {
       v28 = g_CellClassArray;
@@ -963,7 +842,8 @@ int __fastcall MapClass_DestroyTerrain(int *a1, int a2, int a3)
     Coord::To_Screen(g_TacticalClass_Instance, &v104, &v100);
     LOWORD(a3) = v99 + 5;
     HIWORD(a3) = HIWORD(v99) + 3;
-    v29 = (__int16)(v99 + 5) + ((__int16)(HIWORD(v99) + 3) << 9);
+    unsigned int v29 = (__int16)(v99 + 5) + ((__int16)(HIWORD(v99) + 3) << 9);
+  _DWORD *v30; // eax
     if ( v29 >= 0x40000 || (v30 = *(_DWORD **)(g_Shroud_CellArray + 4 * v29)) == 0 )
     {
       g_Map_GlobalCellIndex = a3;
@@ -985,7 +865,7 @@ int __fastcall MapClass_DestroyTerrain(int *a1, int a2, int a3)
       result = v89 + 5;
       do
       {
-        v31 = v89;
+        int v31 = v89;
         v93 = v89;
         if ( v89 < result )
         {
@@ -997,10 +877,10 @@ int __fastcall MapClass_DestroyTerrain(int *a1, int a2, int a3)
             v95 = 2;
             do
             {
-              v32 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 2);
+              int v32 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 2);
               if ( v32 )
               {
-                v33 = v32 - 1;
+                int v33 = v32 - 1;
                 if ( v33 )
                 {
                   if ( v33 == 1 )
@@ -1018,20 +898,21 @@ int __fastcall MapClass_DestroyTerrain(int *a1, int a2, int a3)
               v34 = (void **)__2_YAPAXI_Z(0x1C8u);
               if ( v34 )
               {
-                v35 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, -8, 8);
-                v36 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, -12, 12);
-                v37 = (__int16)v31;
-                v38 = (__int16)v31 + ((__int16)v92 << 9);
+                int v35 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, -8, 8);
+                int v36 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, -12, 12);
+                int v37 = (__int16)v31;
+                unsigned int v38 = (__int16)v31 + ((__int16)v92 << 9);
+  _DWORD *v39; // esi
                 if ( v38 >= 0x40000 || (v39 = *(_DWORD **)(g_Shroud_CellArray + 4 * v38), v31 = v93, !v39) )
                 {
                   g_Map_GlobalCellIndex = v96;
                   v39 = g_CellClassArray;
                 }
-                v40 = g_MapRenderState * *((char *)v39 + 283);
+                int v40 = g_MapRenderState * *((char *)v39 + 283);
                 v105 = v35 + ((__int16)v92 << 8) + 128;
                 v104 = (v37 << 8) + 128 + v36;
                 v106 = v40;
-                v41 = (void *)Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 2);
+                void * v41 = (void *)Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 2);
                 AnimClass::ctor(v34, (void *)a3, &v104, v41, 1, (void *)0x600, 0, 0);
               }
               --v95;
@@ -1049,12 +930,12 @@ int __fastcall MapClass_DestroyTerrain(int *a1, int a2, int a3)
   }
   else if ( result == dword_ABC2C8 + 1 )
   {
-    v42 = (int *)*((_DWORD *)g_FrameCounter + dword_ABC2C8 + 1);
+    int * v42 = (int *)*((_DWORD *)g_FrameCounter + dword_ABC2C8 + 1);
     v43 = *(_WORD *)(a3 + 38) - (*(_BYTE *)(a3 + 282) >> 2);
-    v44 = *v42;
+    int v44 = *v42;
     LOWORD(v99) = *(_WORD *)(a3 + 36) - (*(_BYTE *)(a3 + 282) & 3);
     HIWORD(v99) = v43;
-    v45 = (_BYTE *)(*(int (__thiscall **)(int *, _DWORD))(v44 + 140))(v42, 0);
+    _BYTE * v45 = (_BYTE *)(*(int (__thiscall **)(int *, _DWORD))(v44 + 140))(v42, 0);
     a3 = (__int16)v99;
     v95 = ((__int16)v99 << 8) + 128;
     v104 = v95;
@@ -1063,36 +944,38 @@ int __fastcall MapClass_DestroyTerrain(int *a1, int a2, int a3)
     v97 = (v43 << 8) + 128;
     v105 = v97;
     (*(void (__thiscall **)(_BYTE *, int *))(*(_DWORD *)v45 + 436))(v45, &v104);
-    v46 = *(_DWORD *)v45;
+    int v46 = *(_DWORD *)v45;
     v45[129] = 0;
     v45[116] = 1;
     (*(void (__thiscall **)(_BYTE *, _DWORD))(v46 + 292))(v45, 0);
     if ( v45 )
       (*(void (__thiscall **)(_BYTE *, int))(*(_DWORD *)v45 + 32))(v45, 1);
+  int *v47; // eax
     v47 = (int *)(*(int (__thiscall **)(_DWORD, _DWORD))(**((_DWORD **)g_FrameCounter + g_TerrainTypeTable2 + 3) + 140))(
                    *((_DWORD *)g_FrameCounter + g_TerrainTypeTable2 + 3),
                    0);
     v104 = v95;
     v105 = v97;
-    v48 = *v47;
+    int v48 = *v47;
     v106 = 0;
     (*(void (__thiscall **)(int *, int *, _DWORD))(v48 + 216))(v47, &v104, 0);
+  int *v49; // eax
     v49 = (int *)(*(int (__thiscall **)(_DWORD, _DWORD))(**((_DWORD **)g_FrameCounter + g_TerrainTypeTable2 + 2) + 140))(
                    *((_DWORD *)g_FrameCounter + g_TerrainTypeTable2 + 2),
                    0);
     v105 = ((__int16)(HIWORD(v99) + 3) << 8) + 128;
     v104 = (a3 << 8) + 128;
-    v50 = *v49;
+    int v50 = *v49;
     v106 = 0;
     (*(void (__thiscall **)(int *, int *, _DWORD))(v50 + 216))(v49, &v104, 0);
-    v51 = v94;
+    int * v51 = v94;
     Terrain::ConnectivityGraph(v94);
-    v52 = (_DWORD *)*((_DWORD *)g_FrameCounter + dword_ABC2C8 + 1);
-    v90 = (*(int (__thiscall **)(_DWORD *))(*v52 + 156))(v52);
+    _DWORD * v52 = (_DWORD *)*((_DWORD *)g_FrameCounter + dword_ABC2C8 + 1);
+    int v90 = (*(int (__thiscall **)(_DWORD *))(*v52 + 156))(v52);
     for ( k = 0; k < v52[186]; ++k )
     {
-      v54 = v52[185];
-      v55 = 0;
+      int v54 = v52[185];
+      int v55 = 0;
       if ( v54 > 0 )
       {
         HIWORD(v96) = k + HIWORD(v99);
@@ -1102,10 +985,10 @@ int __fastcall MapClass_DestroyTerrain(int *a1, int a2, int a3)
           v92 = v96;
           if ( *(_DWORD *)(v90 + 4 * (v55 + k * v54) + 16) && LayerClass::IsWithinUsableArea(v51, (__int16 *)&v92, 1) )
           {
-            v56 = Cell::CoordToIndex(v51, (__int16 *)&v92);
+            int v56 = Cell::CoordToIndex(v51, (__int16 *)&v92);
             if ( v56 >= 0 )
             {
-              v57 = v51[27];
+              int v57 = v51[27];
               if ( v56 >= v57 )
                 v56 = v57 - 1;
             }
@@ -1114,7 +997,8 @@ int __fastcall MapClass_DestroyTerrain(int *a1, int a2, int a3)
               v56 = 0;
             }
             *(_WORD *)(v51[28] + 10 * v56) = 0;
-            v58 = (__int16)v92 + (SHIWORD(v92) << 9);
+            unsigned int v58 = (__int16)v92 + (SHIWORD(v92) << 9);
+  _DWORD *v59; // eax
             if ( v58 >= 0x40000 || (v59 = *(_DWORD **)(g_Shroud_CellArray + 4 * v58)) == 0 )
             {
               g_Map_GlobalCellIndex = v92;
@@ -1130,8 +1014,8 @@ int __fastcall MapClass_DestroyTerrain(int *a1, int a2, int a3)
     }
     for ( m = 0; m < v52[186]; ++m )
     {
-      v61 = v52[185];
-      v62 = 0;
+      int v61 = v52[185];
+      int v62 = 0;
       if ( v61 > 0 )
       {
         HIWORD(v96) = m + HIWORD(v99);
@@ -1141,10 +1025,10 @@ int __fastcall MapClass_DestroyTerrain(int *a1, int a2, int a3)
           v93 = v96;
           if ( *(_DWORD *)(v90 + 4 * (v62 + m * v61) + 16) && LayerClass::IsWithinUsableArea(v51, (__int16 *)&v93, 1) )
           {
-            v63 = Cell::CoordToIndex(v51, (__int16 *)&v93);
+            int v63 = Cell::CoordToIndex(v51, (__int16 *)&v93);
             if ( v63 >= 0 )
             {
-              v64 = v51[27];
+              int v64 = v51[27];
               if ( v63 >= v64 )
                 v63 = v64 - 1;
             }
@@ -1163,8 +1047,8 @@ int __fastcall MapClass_DestroyTerrain(int *a1, int a2, int a3)
     }
     for ( n = 0; n < v52[186]; ++n )
     {
-      v66 = v52[185];
-      v67 = 0;
+      int v66 = v52[185];
+      int v67 = 0;
       if ( v66 > 0 )
       {
         HIWORD(v96) = n + HIWORD(v99);
@@ -1174,7 +1058,8 @@ int __fastcall MapClass_DestroyTerrain(int *a1, int a2, int a3)
           v92 = v96;
           if ( *(_DWORD *)(v90 + 4 * (v67 + n * v66) + 16) && LayerClass::IsWithinUsableArea(v51, (__int16 *)&v92, 1) )
           {
-            v68 = (__int16)v92 + (SHIWORD(v92) << 9);
+            unsigned int v68 = (__int16)v92 + (SHIWORD(v92) << 9);
+  _DWORD *v69; // eax
             if ( v68 >= 0x40000 || (v69 = *(_DWORD **)(g_Shroud_CellArray + 4 * v68)) == 0 )
             {
               g_Map_GlobalCellIndex = v92;
@@ -1189,7 +1074,8 @@ int __fastcall MapClass_DestroyTerrain(int *a1, int a2, int a3)
         while ( v67 < v66 );
       }
     }
-    v70 = a3 + (v98 << 9);
+    unsigned int v70 = a3 + (v98 << 9);
+  _DWORD *v71; // eax
     if ( v70 >= 0x40000 || (v71 = *(_DWORD **)(g_Shroud_CellArray + 4 * v70)) == 0 )
     {
       v71 = g_CellClassArray;
@@ -1199,12 +1085,13 @@ int __fastcall MapClass_DestroyTerrain(int *a1, int a2, int a3)
     v104 = v95;
     v105 = v97;
     Coord::To_Screen(g_TacticalClass_Instance, &v104, &v102);
-    v72 = (__int16)(v99 + 3);
-    v73 = (__int16)(HIWORD(v99) + 5) << 9;
-    v74 = v72 + v73 < 0;
-    v75 = v72 + v73;
+    int v72 = (__int16)(v99 + 3);
+    int v73 = (__int16)(HIWORD(v99) + 5) << 9;
+    bool v74 = v72 + v73 < 0;
+    int v75 = v72 + v73;
     LOWORD(v97) = v99 + 3;
     HIWORD(v97) = HIWORD(v99) + 5;
+  _DWORD *v76; // eax
     if ( v74 || v75 >= 0x40000 || (v76 = *(_DWORD **)(g_Shroud_CellArray + 4 * v75)) == 0 )
     {
       g_Map_GlobalCellIndex = v97;
@@ -1217,17 +1104,17 @@ int __fastcall MapClass_DestroyTerrain(int *a1, int a2, int a3)
     Cell::CreateCrater(v100 - 120, v103 - 60, v102 - v100 + 240, v101 - v103 + 120, 0);
     v95 = *((_DWORD *)g_AnimTypeCount + AnimTypeClass::FindIndex(aXgrymed1));
     v96 = *((_DWORD *)g_AnimTypeCount + AnimTypeClass::FindIndex(aXgrymed2));
-    v77 = *((_DWORD *)g_AnimTypeCount + AnimTypeClass::FindIndex(aXgrysml1));
+    int v77 = *((_DWORD *)g_AnimTypeCount + AnimTypeClass::FindIndex(aXgrysml1));
     result = v98;
     v99 = v77;
-    v91 = v98;
+    int v91 = v98;
     v94 = (int *)(v98 + 5);
     if ( !__OFSUB__(v98, v98 + 5) )
     {
       result = a3 + 3;
       do
       {
-        v78 = a3;
+        int v78 = a3;
         v93 = a3;
         if ( a3 < result )
         {
@@ -1239,10 +1126,10 @@ int __fastcall MapClass_DestroyTerrain(int *a1, int a2, int a3)
             v97 = 2;
             do
             {
-              v79 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 2);
+              int v79 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 2);
               if ( v79 )
               {
-                v80 = v79 - 1;
+                int v80 = v79 - 1;
                 if ( v80 )
                 {
                   if ( v80 == 1 )
@@ -1260,20 +1147,21 @@ int __fastcall MapClass_DestroyTerrain(int *a1, int a2, int a3)
               v81 = (void **)__2_YAPAXI_Z(0x1C8u);
               if ( v81 )
               {
-                v82 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, -8, 8);
-                v83 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, -12, 12);
-                v84 = (__int16)v78;
-                v85 = (__int16)v78 + ((__int16)v91 << 9);
+                int v82 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, -8, 8);
+                int v83 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, -12, 12);
+                int v84 = (__int16)v78;
+                unsigned int v85 = (__int16)v78 + ((__int16)v91 << 9);
+  _DWORD *v86; // esi
                 if ( v85 >= 0x40000 || (v86 = *(_DWORD **)(g_Shroud_CellArray + 4 * v85), v78 = v93, !v86) )
                 {
                   g_Map_GlobalCellIndex = v98;
                   v86 = g_CellClassArray;
                 }
-                v87 = g_MapRenderState * *((char *)v86 + 283);
+                int v87 = g_MapRenderState * *((char *)v86 + 283);
                 v105 = v82 + ((__int16)v91 << 8) + 128;
                 v104 = (v84 << 8) + 128 + v83;
                 v106 = v87;
-                v88 = (void *)Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 2);
+                void * v88 = (void *)Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 2);
                 AnimClass::ctor(v81, (void *)v92, &v104, v88, 1, (void *)0x600, 0, 0);
               }
               --v97;

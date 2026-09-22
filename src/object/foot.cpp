@@ -104,40 +104,7 @@ bool FootClass::MovementAI()
 char __fastcall FootClass_MovementAI(int a1)
 {
   char result; // al
-  _DWORD *v3; // eax
-  int v4; // eax
-  _DWORD *v5; // edi
-  int v6; // eax
-  int v7; // edx
-  int v8; // eax
-  int v9; // edx
-  int v10; // ecx
-  int v11; // eax
-  int v12; // edx
-  int v13; // eax
-  int v14; // edx
-  int v15; // eax
-  int v16; // ebp
-  int v17; // edi
-  int v18; // edx
-  int v19; // eax
-  char v20; // al
-  int v21; // edx
-  char v22; // al
-  int v23; // edx
-  int v24; // eax
-  char v25; // al
-  int v26; // edx
-  int v27; // edx
-  int v28; // edx
   int (__stdcall ***v29)(_DWORD, void *, int *); // eax
-  _DWORD *v30; // ebp
-  int v31; // edi
-  int v32; // eax
-  int v33; // eax
-  int v34; // esi
-  int v35; // [esp+54h] [ebp-30h]
-  int v36; // [esp+70h] [ebp-14h] BYREF
   int v37; // [esp+74h] [ebp-10h] BYREF
   int v38; // [esp+78h] [ebp-Ch] BYREF
   int v39; // [esp+7Ch] [ebp-8h]
@@ -153,15 +120,16 @@ char __fastcall FootClass_MovementAI(int a1)
     && !(*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)a1 + 84))(a1)
     && !*(_BYTE *)(a1 + 129) )
   {
-    v3 = (_DWORD *)(*(int (__thiscall **)(int, int *))(*(_DWORD *)a1 + 72))(a1, &v38);
+    _DWORD * v3 = (_DWORD *)(*(int (__thiscall **)(int, int *))(*(_DWORD *)a1 + 72))(a1, &v38);
+  int v36; // [esp+70h] [ebp-14h] BYREF
     LOWORD(v36) = *v3 / 256;
     HIWORD(v36) = v3[1] / 256;
     v37 = v36;
-    v4 = CellCoord::To_CellObj(&v37);
+    int v4 = CellCoord::To_CellObj(&v37);
     v36 = Cell::GetTraversability(v4);
     if ( v36 > 0 )
     {
-      v5 = g_RulesClass_Instance;
+      _DWORD * v5 = g_RulesClass_Instance;
       v36 = Math::RoundToInt((double)v36 * *((double *)g_RulesClass_Instance + 771));
       result = (*(int (__thiscall **)(int, int *, _DWORD, _DWORD, _DWORD, _DWORD, int, _DWORD))(*(_DWORD *)a1 + 364))(
                  a1,
@@ -180,7 +148,7 @@ char __fastcall FootClass_MovementAI(int a1)
   {
     if ( *(_BYTE *)((*(int (__thiscall **)(int))(*(_DWORD *)a1 + 132))(a1) + 3434) )
     {
-      v6 = (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 444))(a1);
+      int v6 = (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 444))(a1);
       if ( (unsigned __int8)Type::CheckAmbiguity(v6, 1) )
         *(_BYTE *)(a1 + 981) = 1;
     }
@@ -191,8 +159,8 @@ char __fastcall FootClass_MovementAI(int a1)
     && (*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)a1 + 84))(a1)
     && (unsigned __int8)HouseClass::IsAlliedWith(HouseClass_Player) )
   {
-    v7 = *(_DWORD *)(a1 + 1628);
-    v8 = *(_DWORD *)(a1 + 1636);
+    int v7 = *(_DWORD *)(a1 + 1628);
+    int v8 = *(_DWORD *)(a1 + 1636);
     if ( v7 != -1 )
     {
       if ( (int)g_CurrentFrame - v7 >= v8 )
@@ -202,7 +170,7 @@ LABEL_21:
         (*(void (__thiscall **)(int, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD))(*(_DWORD *)a1 + 1160))(a1, 0, 0, 0, 0, 0);
         if ( *(_DWORD *)(a1 + 612) == (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 456))(a1) )
         {
-          v12 = *(_DWORD *)(a1 + 160);
+          int v12 = *(_DWORD *)(a1 + 160);
           v38 = *(_DWORD *)(a1 + 156);
           v39 = v12;
           v40 = *(_DWORD *)(a1 + 164);
@@ -210,16 +178,16 @@ LABEL_21:
         }
         else
         {
-          v9 = *(_DWORD *)(a1 + 160);
+          int v9 = *(_DWORD *)(a1 + 160);
           v38 = *(_DWORD *)(a1 + 156);
-          v10 = *(_DWORD *)(a1 + 608);
-          v11 = *(_DWORD *)(a1 + 164);
+          int v10 = *(_DWORD *)(a1 + 608);
+          int v11 = *(_DWORD *)(a1 + 164);
           v39 = v9;
           v40 = v11;
           MapClass::RevealArea2(&v38, 0, v10 + 3, 0);
         }
-        v13 = (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 456))(a1);
-        v14 = v39;
+        int v13 = (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 456))(a1);
+        int v14 = v39;
         *(_DWORD *)(a1 + 612) = v13;
         *(_DWORD *)(a1 + 1628) = g_CurrentFrame;
         *(_DWORD *)(a1 + 1632) = v14;
@@ -237,11 +205,11 @@ LABEL_25:
     && (*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)a1 + 84))(a1)
     && *(_DWORD *)((*(int (__thiscall **)(int))(*(_DWORD *)a1 + 444))(a1) + 60) )
   {
-    v35 = *(_DWORD *)(*(int (__thiscall **)(int, int *))(*(_DWORD *)a1 + 440))(a1, &v37);
-    v15 = (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 444))(a1);
+    int v35 = *(_DWORD *)(*(int (__thiscall **)(int, int *))(*(_DWORD *)a1 + 440))(a1, &v37);
+    int v15 = (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 444))(a1);
     TeamClass::Update_0(*(void ***)(v15 + 60), 59, a1, v35, 0, 0);
   }
-  v16 = *(_DWORD *)(a1 + 1336);
+  int v16 = *(_DWORD *)(a1 + 1336);
   if ( !*(_DWORD *)(a1 + 1652)
     || *(_BYTE *)(a1 + 973)
     || *(_BYTE *)(a1 + 141)
@@ -256,7 +224,7 @@ LABEL_25:
   if ( *(_BYTE *)(a1 + 144) )
   {
     if ( a1 )
-      v17 = (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 44))(a1) == 1 ? a1 : 0;
+      int v17 = (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 44))(a1) == 1 ? a1 : 0;
     else
       v17 = 0;
     if ( !*(_DWORD *)(a1 + 1652) )
@@ -311,7 +279,7 @@ LABEL_67:
 LABEL_136:
       if ( *(_BYTE *)(a1 + 1340) )
       {
-        v19 = *(_DWORD *)(a1 + 1344);
+        int v19 = *(_DWORD *)(a1 + 1344);
         if ( !v19 || *(_BYTE *)(a1 + 141) || *(_BYTE *)(a1 + 1061) )
         {
           Mixer::ReleaseChannel(a1 + 1348);
@@ -330,7 +298,7 @@ LABEL_136:
       {
         AudioController::Stop(a1 + 1348);
         v38 = *(_DWORD *)(a1 + 156);
-        v18 = *(_DWORD *)a1;
+        int v18 = *(_DWORD *)a1;
         v39 = *(_DWORD *)(a1 + 160);
         v40 = *(_DWORD *)(a1 + 164);
         (*(int (__thiscall **)(int))(v18 + 132))(a1);
@@ -340,7 +308,7 @@ LABEL_136:
       }
       *(_DWORD *)(a1 + 1344) = 3;
     }
-    v20 = *(_BYTE *)(a1 + 141);
+    char v20 = *(_BYTE *)(a1 + 141);
     if ( v20 != *(_BYTE *)(a1 + 142) )
     {
       if ( v20
@@ -349,7 +317,7 @@ LABEL_136:
       {
         v38 = *(_DWORD *)(a1 + 156);
         v39 = *(_DWORD *)(a1 + 160);
-        v21 = *(_DWORD *)a1;
+        int v21 = *(_DWORD *)a1;
         v40 = *(_DWORD *)(a1 + 164);
         (*(void (__thiscall **)(int))(v21 + 132))(a1);
         StartAudioControllerAt(0);
@@ -360,7 +328,7 @@ LABEL_136:
         *(_BYTE *)(a1 + 142) = *(_BYTE *)(a1 + 141);
       }
     }
-    v22 = *(_BYTE *)(a1 + 973);
+    char v22 = *(_BYTE *)(a1 + 973);
     if ( v22 != *(_BYTE *)(a1 + 974) )
     {
       if ( v22 )
@@ -369,7 +337,7 @@ LABEL_136:
         {
           v38 = *(_DWORD *)(a1 + 156);
           v39 = *(_DWORD *)(a1 + 160);
-          v23 = *(_DWORD *)a1;
+          int v23 = *(_DWORD *)a1;
           v40 = *(_DWORD *)(a1 + 164);
           (*(void (__thiscall **)(int))(v23 + 132))(a1);
           StartAudioControllerAt(0);
@@ -388,7 +356,7 @@ LABEL_136:
         {
           v38 = *(_DWORD *)(a1 + 156);
           v39 = *(_DWORD *)(a1 + 160);
-          v24 = *(_DWORD *)a1;
+          int v24 = *(_DWORD *)a1;
           v40 = *(_DWORD *)(a1 + 164);
           (*(void (__thiscall **)(int))(v24 + 132))(a1);
           StartAudioControllerAt(a1 + 1348);
@@ -400,7 +368,7 @@ LABEL_136:
       }
       *(_BYTE *)(a1 + 974) = *(_BYTE *)(a1 + 973);
     }
-    v25 = *(_BYTE *)(a1 + 1061);
+    char v25 = *(_BYTE *)(a1 + 1061);
     if ( v25 != *(_BYTE *)(a1 + 1062) )
     {
       if ( v25 )
@@ -411,7 +379,7 @@ LABEL_136:
         {
           v38 = *(_DWORD *)(a1 + 156);
           v39 = *(_DWORD *)(a1 + 160);
-          v26 = *(_DWORD *)a1;
+          int v26 = *(_DWORD *)a1;
           v40 = *(_DWORD *)(a1 + 164);
           (*(void (__thiscall **)(int))(v26 + 132))(a1);
           StartAudioControllerAt(0);
@@ -419,7 +387,7 @@ LABEL_136:
         if ( *(_DWORD *)((*(int (__thiscall **)(int))(*(_DWORD *)a1 + 132))(a1) + 1348) != -1 )
         {
           v38 = *(_DWORD *)(a1 + 156);
-          v27 = *(_DWORD *)a1;
+          int v27 = *(_DWORD *)a1;
           v39 = *(_DWORD *)(a1 + 160);
           v40 = *(_DWORD *)(a1 + 164);
           (*(void (__thiscall **)(int))(v27 + 132))(a1);
@@ -443,18 +411,18 @@ LABEL_136:
       && (*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)a1 + 688))(a1)
       && !(*(int (__thiscall **)(int))(*(_DWORD *)a1 + 456))(a1) )
     {
-      v28 = *(_DWORD *)a1;
+      int v28 = *(_DWORD *)a1;
       v38 = 0;
       v39 = 0;
       v40 = 0;
       (*(void (__thiscall **)(int, int *, int, _DWORD))(v28 + 372))(a1, &v38, 1, 0);
     }
     v29 = *(int (__stdcall ****)(_DWORD, void *, int *))(a1 + 1652);
-    v30 = (_DWORD *)(a1 + 1652);
-    v31 = 0;
+    _DWORD * v30 = (_DWORD *)(a1 + 1652);
+    int v31 = 0;
     if ( v29 )
     {
-      v32 = (**v29)(v29, &unk_819088, &v37);
+      int v32 = (**v29)(v29, &unk_819088, &v37);
       v31 = v32 < 0 ? 0 : v37;
       if ( v32 < 0 && v32 != -2147467262 )
         WinAPI::Wrapper(v32);
@@ -466,12 +434,12 @@ LABEL_136:
         (*(void (__stdcall **)(int, int))(*(_DWORD *)v31 + 16))(v31, a1 + 1652);
       }
     }
-    v33 = *(_DWORD *)a1;
+    int v33 = *(_DWORD *)a1;
     *(_BYTE *)(a1 + 1716) = 0;
     result = (*(int (__thiscall **)(int))(v33 + 472))(a1);
     if ( !result )
       result = FootClass::ProcessEnterTransport(a1);
-    v34 = *(_DWORD *)(a1 + 1684);
+    int v34 = *(_DWORD *)(a1 + 1684);
     if ( v34 )
       result = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(v34 + 1692) + 92))(*(_DWORD *)(v34 + 1692));
     if ( v31 )

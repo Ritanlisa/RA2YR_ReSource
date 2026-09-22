@@ -11,8 +11,6 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__stdcall Pathfinding_ExpandNode(__int16 *a1, int a2)
 {
-  int v2; // edi
-  _DWORD *v3; // eax
   _DWORD *v4; // ebx
   int *v5; // eax
   int *v6; // esi
@@ -93,8 +91,8 @@ _DWORD *__stdcall Pathfinding_ExpandNode(__int16 *a1, int a2)
   __int64 v82; // [esp+48h] [ebp-18h] BYREF
   __int64 v83; // [esp+50h] [ebp-10h]
 
-  v2 = 10 * a2; /*0x5a536e*/
-  v3 = __2_YAPAXI_Z(80 * a2); /*0x5a5378*/
+  int v2 = 10 * a2; /*0x5a536e*/
+  _DWORD * v3 = __2_YAPAXI_Z(80 * a2); /*0x5a5378*/
   if ( v3 ) /*0x5a5384*/
   {
     v4 = v3; /*0x5a5389*/

@@ -12,9 +12,6 @@ void PsyDom::Fire()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void PsyDom::Fire()
 {
-  _DWORD *v0; // esi
-  void *v1; // eax
-  int *v2; // eax
   _DWORD *v3; // eax
   CoordStruct *v4; // esi
   void *v5; // eax
@@ -53,12 +50,11 @@ void PsyDom::Fire()
   int v38; // [esp+58h] [ebp-Ch]
   AnimClass *v39; // [esp+5Ch] [ebp-8h]
   int v40; // [esp+60h] [ebp-4h]
-
-  v0 = (_DWORD *)__2_YAPAXI_Z(0x14u); /*0x53b08e*/
+  _DWORD * v0 = (_DWORD *)__2_YAPAXI_Z(0x14u); /*0x53b08e*/
   if ( v0 ) /*0x53b097*/
   {
-    v1 = CellCoord::To_CellObj(&stru_87C374[13428], &word_A9FA48); /*0x53b0a3*/
-    v2 = (int *)(*(int (__thiscall **)(void *, CoordStruct *))(*(_DWORD *)v1 + 72))(v1, &v33); /*0x53b0b1*/
+    void * v1 = CellCoord::To_CellObj(&stru_87C374[13428], &word_A9FA48); /*0x53b0a3*/
+    int * v2 = (int *)(*(int (__thiscall **)(void *, CoordStruct *))(*(_DWORD *)v1 + 72))(v1, &v33); /*0x53b0b1*/
     v3 = ActionQueue::PushEntry(v0, *v2, v2[1], v2[2]); /*0x53b0cb*/
   }
   else

@@ -8,15 +8,13 @@
 char ThemeManager::ProcessCallback()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_4080F0(int this)
+void sub_4080F0(int this)
 {
-  int v2; // ebp
-  unsigned __int64 v3; // rax
-  unsigned __int64 v4; // kr00_8
 
-  v2 = Audio::Callback(); /*0x4080fa*/
+  int v2 = Audio::Callback(); /*0x4080fa*/
+  unsigned __int64 v3; // rax
   LODWORD(v3) = *(_DWORD *)(this + 20); /*0x4080fc*/
-  v4 = *(_QWORD *)(v3 + 32) + __PAIR64__(HIDWORD(v3), v2); /*0x408104*/
+  unsigned __int64 v4 = *(_QWORD *)(v3 + 32) + __PAIR64__(HIDWORD(v3), v2); /*0x408104*/
   while ( (*(_BYTE *)(this + 12) & 1) != 0 ) /*0x408107*/
   {
     LODWORD(v3) = *(_DWORD *)(this + 20); /*0x40810d*/
@@ -35,21 +33,17 @@ char __thiscall sub_4080F0(int this)
 void ThemeManager::Cleanup()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall ThemeManager::Cleanup(int this)
+void ThemeManager::Cleanup(int this)
 {
-  int v2; // eax
-  int v3; // ecx
-  int v4; // eax
-  _DWORD *v5; // ecx
 
   while ( this->q009 > 0 ) /*0x720778*/
   {
     __3_YAXPAX_Z(**(void ***)(this + 24)); /*0x720780*/
-    v2 = this->q009; /*0x720785*/
+    int v2 = this->q009; /*0x720785*/
     if ( v2 > 0 ) /*0x72078d*/
     {
-      v3 = v2 - 1; /*0x72078f*/
-      v4 = 0; /*0x720792*/
+      int v3 = v2 - 1; /*0x72078f*/
+      int v4 = 0; /*0x720792*/
       for ( this->q009 = v3; /*0x720799*/
             v4 < this->q009;
             *(_DWORD *)(*(_DWORD *)(this + 24) + 4 * v4 - 4) = *(_DWORD *)(*(_DWORD *)(this + 24) + 4 * v4) )
@@ -58,7 +52,7 @@ void __thiscall ThemeManager::Cleanup(int this)
       }
     }
   }
-  v5 = *(_DWORD **)(this + 44); /*0x7207b4*/
+  _DWORD * v5 = *(_DWORD **)(this + 44); /*0x7207b4*/
   if ( v5 ) /*0x7207b9*/
   {
     ThemeClass::RequestBuffer(v5); /*0x7207bb*/

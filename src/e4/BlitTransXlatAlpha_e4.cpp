@@ -8,20 +8,10 @@ namespace gamemd {
 int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25(
-        BlitTransLucent75ZReadWrite_G *this,
-        _WORD *a1,
-        _BYTE *a2,
-        int a4,
-        int argC,
-        _WORD *a5,
-        int a7,
-        int a8,
-        int a9)
+void BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25(_WORD *a1, _BYTE *a2, int a4, int argC, _WORD *a5, int a7, int a8, int a9)
 {
   int result; // eax
   TacticalMap *v11; // edx
-  _WORD *v13; // eax
   _WORD *a5a; // [esp+18h] [ebp+14h]
 
   result = a4; /*0x493930*/
@@ -40,7 +30,7 @@ int __thiscall BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25(
       }
       ++a1; /*0x4939a6*/
       ++a2; /*0x4939aa*/
-      v13 = a5 + 1; /*0x4939ae*/
+      _WORD * v13 = a5 + 1; /*0x4939ae*/
       if ( (unsigned int)(a5 + 1) >= v11->TacticalMap_field_1C ) /*0x4939b4*/
         v13 = (_WORD *)((char *)v13 - v11->TacticalMap_field_20); /*0x4939b6*/
       a5 = v13; /*0x4939b9*/
@@ -59,27 +49,16 @@ namespace gamemd {
 int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent50(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent50(
-        BlitTransLucent50ZReadWrite_G *this,
-        _WORD *a1,
-        _BYTE *a2,
-        int a4,
-        int argC,
-        _WORD *a5,
-        int a7,
-        int a8,
-        int a9)
+void BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent50(_WORD *a1, _BYTE *a2, int a4, int argC, _WORD *a5, int a7, int a8, int a9)
 {
   int result; // eax
-  int v12; // ebp
   TacticalMap *v14; // edi
-  _WORD *v15; // eax
   _WORD *a5a; // [esp+14h] [ebp+14h]
 
   result = a4; /*0x493a60*/
   if ( a4 > 0 ) /*0x493a6a*/
   {
-    v12 = argC; /*0x493a76*/
+    int v12 = argC; /*0x493a76*/
     v14 = *(TacticalMap **)&DataGlobal_87F8E4[32096]; /*0x493a80*/
     a5a = (_WORD *)a4; /*0x493a86*/
     do /*0x493aee*/
@@ -92,7 +71,7 @@ int __thiscall BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent50(
         *a5 = argC; /*0x493ac9*/
         v14 = *(TacticalMap **)&DataGlobal_87F8E4[32096]; /*0x493acc*/
       }
-      v15 = a5 + 1; /*0x493ad2*/
+      _WORD * v15 = a5 + 1; /*0x493ad2*/
       ++a2; /*0x493ad8*/
       ++a1; /*0x493ad9*/
       if ( (unsigned int)(a5 + 1) >= v14->TacticalMap_field_1C ) /*0x493ade*/
@@ -113,20 +92,10 @@ namespace gamemd {
 int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25_0(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25_0(
-        BlitTransLucent25ZReadWrite_G *this,
-        _WORD *a1,
-        _BYTE *a2,
-        int a4,
-        int argC,
-        _WORD *a5,
-        int a7,
-        int a8,
-        int a9)
+void BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25_0(_WORD *a1, _BYTE *a2, int a4, int argC, _WORD *a5, int a7, int a8, int a9)
 {
   int result; // eax
   TacticalMap *v11; // edx
-  _WORD *v13; // eax
   _WORD *a5a; // [esp+18h] [ebp+14h]
 
   result = a4; /*0x493b90*/
@@ -145,7 +114,7 @@ int __thiscall BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25_0(
       }
       ++a1; /*0x493c06*/
       ++a2; /*0x493c0a*/
-      v13 = a5 + 1; /*0x493c0e*/
+      _WORD * v13 = a5 + 1; /*0x493c0e*/
       if ( (unsigned int)(a5 + 1) >= v11->TacticalMap_field_1C ) /*0x493c14*/
         v13 = (_WORD *)((char *)v13 - v11->TacticalMap_field_20); /*0x493c16*/
       a5 = v13; /*0x493c19*/
@@ -164,31 +133,18 @@ namespace gamemd {
 int BlitTransXlatAlpha_ushort::AddRef(unsigned short * a2, unsigned char * a3, int a4, int a5, int a6, unsigned short * a7, int a8, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BlitTransXlatAlpha_ushort::_vt01(
-        _DWORD *this,
-        _WORD *a2,
-        unsigned __int8 *a3,
-        int a4,
-        int a5,
-        int a6,
-        unsigned __int16 *a7,
-        int a8,
-        int a9)
+void BlitTransXlatAlpha_ushort::_vt01(_WORD *a2, unsigned __int8 *a3, int a4, int a5, int a6, unsigned __int16 *a7, int a8, int a9)
 {
-  int v11; // eax
   int result; // eax
-  _DWORD *v14; // edi
   unsigned __int8 v16; // bl
-  int v17; // [esp+20h] [ebp+18h]
-
-  v11 = (261 * (a8 <= 0 ? 0 : a8)) >> 11;
+  int v11 = (261 * (a8 <= 0 ? 0 : a8)) >> 11;
   if ( v11 > 254 ) /*0x493e18*/
     v11 = 254; /*0x493e1a*/
   result = this->q008 + (v11 << 9); /*0x493e25*/
   if ( a4 > 0 ) /*0x493e2d*/
   {
-    v14 = g_VisibleSurfaceDescriptor; /*0x493e35*/
-    v17 = a4; /*0x493e3b*/
+    _DWORD * v14 = g_VisibleSurfaceDescriptor; /*0x493e35*/
+    int v17 = a4; /*0x493e3b*/
     do /*0x493e8e*/
     {
       v16 = *a3++; /*0x493e43*/
@@ -223,17 +179,7 @@ namespace gamemd {
 int BlitTransXlatAlpha_ushort::BlitRect(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BlitTransXlatAlpha_ushort::BlitRect(
-        void *this,
-        int a2,
-        int a3,
-        int a4,
-        int a5,
-        int a6,
-        int a7,
-        int a8,
-        int a9,
-        int a10)
+void BlitTransXlatAlpha_ushort::BlitRect(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x493efa*/
            this,
@@ -254,16 +200,7 @@ namespace gamemd {
 int BlitTransXlatAlpha_ushort::GetSize(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BlitTransXlatAlpha_ushort::_vt04(
-        void *this,
-        int a2,
-        int a3,
-        int a4,
-        int a5,
-        int a6,
-        int a7,
-        int a8,
-        int a9)
+void BlitTransXlatAlpha_ushort::_vt04(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x493f2a*/
            this,

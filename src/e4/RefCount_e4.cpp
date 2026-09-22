@@ -6,7 +6,7 @@
 int RefCount::Decrement()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall RefCount_Decrement(_DWORD *this)
+void RefCount_Decrement(_DWORD *this)
 {
   int result; // eax
 
@@ -22,18 +22,16 @@ int __thiscall RefCount_Decrement(_DWORD *this)
 int RefCount::Increment(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall RefCount_Increment(_DWORD *this, int a2)
+void RefCount_Increment(_DWORD *this, int a2)
 {
-  int v3; // edi
   int i; // eax
-  int v5; // ecx
 
-  v3 = this->q008; /*0x49fa09*/
+  int v3 = this->q008; /*0x49fa09*/
   if ( a2 < v3 ) /*0x49fa0e*/
   {
 LABEL_5:
     ++*(_DWORD *)(this->RefCount_field_04 + 4 * a2); /*0x49fa3d*/
-    v5 = this->RefCount_field_04; /*0x49fa4d*/
+    int v5 = this->RefCount_field_04; /*0x49fa4d*/
     ++this->RefCount_field_04; /*0x49fa51*/
     return *(_DWORD *)(v5 + 4 * a2); /*0x49fa59*/
   }

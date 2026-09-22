@@ -15,16 +15,12 @@ char * WinsockInterface::ProcessPacket(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char *__thiscall sub_770270(char *this, int a2)
 {
-  int v3; // ebp
   void **v4; // edi
-  int v5; // ebx
-  _DWORD *v6; // edi
-  int v7; // ebp
 
-  v3 = 6; /*0x77027a*/
+  int v3 = 6; /*0x77027a*/
   v4 = (void **)(this + 4); /*0x77027f*/
   *(_DWORD *)this = a2; /*0x770282*/
-  v5 = (int)(this + 8); /*0x770284*/
+  int v5 = (int)(this + 8); /*0x770284*/
   do /*0x7702b6*/
   {
     unknown_libname_73(v4); /*0x770289*/
@@ -35,8 +31,8 @@ char *__thiscall sub_770270(char *this, int a2)
     --v3; /*0x7702b5*/
   }
   while ( v3 ); /*0x7702b6*/
-  v6 = this + 892; /*0x7702b8*/
-  v7 = 2; /*0x7702be*/
+  _DWORD * v6 = this + 892; /*0x7702b8*/
+  int v7 = 2; /*0x7702be*/
   do /*0x7702e2*/
   {
     VectorClassUInt::Constructor(v6, 0, 0); /*0x7702c9*/
@@ -85,21 +81,16 @@ namespace gamemd {
 char WinsockInterface::Init()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall WinsockInterface_Init(_DWORD *this)
+void WinsockInterface_Init(_DWORD *this)
 {
   struct WSAData *v3; // eax
-  int v4; // edx
   struct WSAData *v5; // esi
-  int v6; // eax
   INT v7; // eax
-  int v8; // ebp
   const char **v9; // esi
   INT v10; // ebx
-  int v11; // eax
   struct WSAData *v12; // [esp+8h] [ebp-1008h]
   DWORD dwBufferLength; // [esp+Ch] [ebp-1004h] BYREF
   _BYTE ProtocolBuffer[24]; // [esp+10h] [ebp-1000h] BYREF
-  char v15; // [esp+28h] [ebp-FE8h] BYREF
 
   Debug::Log(DataGlobal_84E028); /*0x7b1df3*/
   if ( *((_BYTE *)this + 258152) ) /*0x7b1df8*/
@@ -115,14 +106,14 @@ char __thiscall WinsockInterface_Init(_DWORD *this)
       MessageBoxA(g_hWnd, DataGlobal_84DFD0, Caption, 0); /*0x7b1e48*/
     }
     v3 = (struct WSAData *)__2_YAPAXI_Z(0x590u); /*0x7b1e53*/
-    v4 = *this; /*0x7b1e58*/
+    int v4 = *this; /*0x7b1e58*/
     v5 = v3; /*0x7b1e5a*/
     v12 = v3; /*0x7b1e61*/
     *(this + 64539) = -1; /*0x7b1e65*/
     (*(void (__thiscall **)(_DWORD *))(v4 + 20))(this); /*0x7b1e6f*/
     (*(void (__thiscall **)(_DWORD *))(*this + 24))(this); /*0x7b1e76*/
     Debug::Log(DataGlobal_84DFB4); /*0x7b1e7e*/
-    v6 = WSAStartup(0x101u, v5); /*0x7b1e8c*/
+    int v6 = WSAStartup(0x101u, v5); /*0x7b1e8c*/
     if ( v6 ) /*0x7b1e93*/
     {
       Debug::Log(DataGlobal_84DF84, v6); /*0x7b1e9b*/
@@ -150,15 +141,15 @@ char __thiscall WinsockInterface_Init(_DWORD *this)
         }
         else
         {
-          v8 = 0x7FFFFFFF; /*0x7b1f2c*/
+          int v8 = 0x7FFFFFFF; /*0x7b1f2c*/
           if ( v7 > 0 ) /*0x7b1f31*/
           {
-            v9 = (const char **)&v15; /*0x7b1f34*/
+            char v15 = (const char **)&v15; /*0x7b1f34*/
             v10 = v7; /*0x7b1f38*/
             do /*0x7b1f63*/
             {
               Debug::Log(DataGlobal_84DF24, v9[1], *v9); /*0x7b1f46*/
-              v11 = (int)*v9; /*0x7b1f4b*/
+              int v11 = (int)*v9; /*0x7b1f4b*/
               if ( *v9 && v11 != -1 && v8 >= v11 ) /*0x7b1f5b*/
                 v8 = (int)*v9; /*0x7b1f5d*/
               v9 += 8; /*0x7b1f5f*/

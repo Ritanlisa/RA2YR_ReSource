@@ -44,7 +44,7 @@ int __fastcall FactoryClass_LookupType(int a1, int a2)
 double TechnoTypeClass::Dispatch(TechnoTypeClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-double __thiscall TechnoTypeClass::Dispatch(_DWORD *this, TechnoTypeClass *aP1)
+void TechnoTypeClass::Dispatch(TechnoTypeClass *aP1)
 {
   double result; // st7
 
@@ -77,7 +77,7 @@ double __thiscall TechnoTypeClass::Dispatch(_DWORD *this, TechnoTypeClass *aP1)
 double TechnoTypeClass::GetThreatMultiplier(TechnoTypeClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-double __thiscall TechnoTypeClass::GetThreatMultiplier(float *this, TechnoTypeClass *aP1)
+void TechnoTypeClass::GetThreatMultiplier(TechnoTypeClass *aP1)
 {
   double result; // st7
 
@@ -113,11 +113,7 @@ unsigned int * TechnoTypeClass::LoadBase(ObjectClass * aP1)
 _DWORD *__thiscall TechnoTypeClass::LoadBase(_DWORD *this, ObjectClass *aP1)
 {
   TeamTypeClass *v3; // ecx
-  char v4; // al
-  int v5; // eax
   CCINIClass *v6; // edx
-  int v7; // eax
-
   AbstractTypeClass::Constructor((int)this, (AbstractClass *)aP1); /*0x6f06ea*/
   *(this + 38) = -1; /*0x6f06f7*/
   this->Armor = -1; /*0x6f06ff*/
@@ -157,6 +153,7 @@ _DWORD *__thiscall TechnoTypeClass::LoadBase(_DWORD *this, ObjectClass *aP1)
   if ( *(int *)&HouseClass_Player[44900] < *(int *)&HouseClass_Player[44892] /*0x6f0857*/
     || (HouseClass_Player[44897] || !*(_DWORD *)&HouseClass_Player[44892])
     && *(int *)&HouseClass_Player[44904] > 0
+  char v4; // al
     && (v4 = (*(int (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&HouseClass_Player[44884] + 8))(
                &HouseClass_Player[44884],
                *(_DWORD *)&HouseClass_Player[44892] + *(_DWORD *)&HouseClass_Player[44904],
@@ -168,7 +165,7 @@ _DWORD *__thiscall TechnoTypeClass::LoadBase(_DWORD *this, ObjectClass *aP1)
     *(_DWORD *)(*(_DWORD *)&HouseClass_Player[44888] + 4 * (_DWORD)v3) = this; /*0x6f0868*/
     v3 = *(TeamTypeClass **)&HouseClass_Player[44900]; /*0x6f086b*/
   }
-  v5 = 0; /*0x6f0871*/
+  int v5 = 0; /*0x6f0871*/
   if ( (int)v3 <= 0 ) /*0x6f0875*/
   {
 LABEL_11:
@@ -194,7 +191,7 @@ LABEL_11:
          *(_DWORD *)&stru_B05488[41456] + *(_DWORD *)&stru_B05488[41468],
          0) )
   {
-    v7 = (*(_DWORD *)&stru_B05488[41464])++; /*0x6f08d2*/
+    int v7 = (*(_DWORD *)&stru_B05488[41464])++; /*0x6f08d2*/
     *(_DWORD *)(*(_DWORD *)&stru_B05488[41452] + 4 * v7) = this; /*0x6f08e1*/
   }
   return this; /*0x6f08e6*/
@@ -207,19 +204,6 @@ char * TechnoTypeClass::ReadINI(char * Source, int a3)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a3)
 {
-  _DWORD *v4; // eax
-  int v5; // ecx
-  _DWORD *v6; // edi
-  _DWORD *v7; // eax
-  int v8; // ecx
-  _DWORD *v9; // edi
-  _DWORD *v10; // eax
-  int v11; // ecx
-  _DWORD *v12; // edi
-  _DWORD *v13; // eax
-  int v14; // ecx
-  int v15; // eax
-  int v16; // eax
 
   ObjectTypeClass::ConstructFull((int)this, Source); /*0x710afb*/
   this->WalkRate = 1; /*0x710b02*/
@@ -662,12 +646,12 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
   (*(void (__thiscall **)(char *))(this->DebrisAnims + 12))(this + 1476); /*0x7116c5*/
   (*(void (__thiscall **)(char *))(this->DebrisMaximums + 12))(this + 816); /*0x7116d4*/
   (*(void (__thiscall **)(char *))(this->Dock + 12))(this + 1000); /*0x7116e3*/
-  v4 = this + 2216; /*0x7116e6*/
-  v5 = 18; /*0x7116ec*/
+  _DWORD * v4 = this + 2216; /*0x7116e6*/
+  int v5 = 18; /*0x7116ec*/
   do /*0x71170f*/
   {
     *(v4 - 4) = 0; /*0x7116f4*/
-    v6 = v4 - 3; /*0x7116f7*/
+    _DWORD * v6 = v4 - 3; /*0x7116f7*/
     *v4 = 0; /*0x7116f9*/
     v4[1] = 0; /*0x7116fd*/
     *v6 = 0; /*0x711700*/
@@ -678,12 +662,12 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
     *((_BYTE *)v4 - 20) = 0; /*0x71170c*/
   }
   while ( v5 ); /*0x71170f*/
-  v7 = this + 2724; /*0x711711*/
-  v8 = 18; /*0x711717*/
+  _DWORD * v7 = this + 2724; /*0x711711*/
+  int v8 = 18; /*0x711717*/
   do /*0x71173a*/
   {
     *(v7 - 4) = 0; /*0x71171f*/
-    v9 = v7 - 3; /*0x711722*/
+    _DWORD * v9 = v7 - 3; /*0x711722*/
     *v7 = 0; /*0x711724*/
     v7[1] = 0; /*0x711728*/
     *v9 = 0; /*0x71172b*/
@@ -694,11 +678,11 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
     *((_BYTE *)v7 - 20) = 0; /*0x711737*/
   }
   while ( v8 ); /*0x71173a*/
-  v10 = this + 2140; /*0x71173c*/
-  v11 = 5; /*0x711742*/
+  _DWORD * v10 = this + 2140; /*0x71173c*/
+  int v11 = 5; /*0x711742*/
   do /*0x711757*/
   {
-    v12 = v10; /*0x711747*/
+    _DWORD * v12 = v10; /*0x711747*/
     v10 += 3; /*0x71174b*/
     --v11; /*0x71174e*/
     *v12 = 0; /*0x71174f*/
@@ -707,9 +691,9 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
   }
   while ( v11 ); /*0x711757*/
   this->qDB0 = 0; /*0x711763*/
-  v13 = this + 3316; /*0x711765*/
+  _DWORD * v13 = this + 3316; /*0x711765*/
   *((_DWORD *)this + 877) = 0; /*0x71176b*/
-  v14 = 6; /*0x71176e*/
+  int v14 = 6; /*0x71176e*/
   *((_DWORD *)this + 878) = 0; /*0x711773*/
   do /*0x71177f*/
   {
@@ -727,7 +711,7 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
          g_AnimManagerConfig + g_AnimTypePool,
          0) )
   {
-    v15 = g_AnimManager++; /*0x7117d0*/
+    int v15 = g_AnimManager++; /*0x7117d0*/
     *((_DWORD *)g_AnimPoolCount + v15) = this; /*0x7117df*/
   }
   if ( DataGlobal_A8EB10 < DataGlobal_A8EB08 /*0x711816*/
@@ -738,7 +722,7 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
          DataGlobal_A8EB14 + DataGlobal_A8EB08,
          0) )
   {
-    v16 = DataGlobal_A8EB10++; /*0x711823*/
+    int v16 = DataGlobal_A8EB10++; /*0x711823*/
     *((_DWORD *)DataGlobal_A8EB04 + v16) = this; /*0x711832*/
   }
   return this; /*0x711837*/
@@ -749,12 +733,9 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
 int TechnoTypeClass::Construct(ObjectTypeClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall TechnoTypeClass::Construct(int this, ObjectTypeClass *aP1)
+void TechnoTypeClass::Construct(int this, ObjectTypeClass *aP1)
 {
-  int v3; // eax
-  int v4; // ecx
   CCINIClass *v5; // edx
-
   ObjectTypeClass::Construct((_DWORD *)this, aP1); /*0x71184b*/
   TechnoTypeClass::Constructor_0((_DWORD *)(this + 788), aP1); /*0x711859*/
   this->DebrisTypes = &vt_TypeList_VoxelAnimTypeClass_const; /*0x71185e*/
@@ -813,8 +794,8 @@ int __thiscall TechnoTypeClass::Construct(int this, ObjectTypeClass *aP1)
   this->vtable1 = &TechnoTypeClass::`vftable'; /*0x711a52*/
   this->vtable2 = &TechnoTypeClass::`vftable'; /*0x711a59*/
   this->vtable3 = &vt_TechnoTypeClass; /*0x711a60*/
-  v3 = *(_DWORD *)&g_NetworkPlayerBuffer[5332]; /*0x711a67*/
-  v4 = 0; /*0x711a6c*/
+  int v3 = *(_DWORD *)&g_NetworkPlayerBuffer[5332]; /*0x711a67*/
+  int v4 = 0; /*0x711a6c*/
   if ( *(int *)&g_NetworkPlayerBuffer[5332] <= 0 ) /*0x711a70*/
   {
 LABEL_5:
@@ -976,17 +957,15 @@ int TechnoTypeClass::DTOR()
 int TechnoTypeClass::ComputeValueSimple(float * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall TechnoTypeClass::ComputeValueSimple(TechnoTypeClass *this, float *a2)
+void TechnoTypeClass::ComputeValueSimple(float *a2)
 {
   float ThreatMultiplier; // [esp+8h] [ebp-8h]
-  float v5; // [esp+Ch] [ebp-4h]
-  float *v6; // [esp+14h] [ebp+4h]
 
   if ( !a2 ) /*0x711f0d*/
     return (*(int (__thiscall **)(TechnoTypeClass *))(*(_DWORD *)this->vtable0 + 172))(this); /*0x711f52*/
-  v5 = TechnoTypeClass::Dispatch(a2, this); /*0x711f17*/
+  float v5 = TechnoTypeClass::Dispatch(a2, this); /*0x711f17*/
   ThreatMultiplier = TechnoTypeClass::GetThreatMultiplier(a2, this); /*0x711f27*/
-  v6 = (float *)(*(int (__thiscall **)(TechnoTypeClass *))(*(_DWORD *)this->vtable0 + 172))(this); /*0x711f31*/
+  float * v6 = (float *)(*(int (__thiscall **)(TechnoTypeClass *))(*(_DWORD *)this->vtable0 + 172))(this); /*0x711f31*/
   return Math::RoundToInt((double)(int)v6 * ThreatMultiplier * v5); /*0x711f46*/
 }
 }
@@ -995,30 +974,26 @@ int __thiscall TechnoTypeClass::ComputeValueSimple(TechnoTypeClass *this, float 
 int TechnoTypeClass::ComputeValue(void * a2, float a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall TechnoTypeClass::ComputeValue(TechnoTypeClass *this, #375 *a2, float a3)
+void TechnoTypeClass::ComputeValue(#375 *a2, float a3)
 {
-  int v6; // esi
-  float v7; // [esp+8h] [ebp-8h]
   float ThreatMultiplier; // [esp+Ch] [ebp-4h]
   #375 *v9; // [esp+14h] [ebp+4h]
-  float v10; // [esp+18h] [ebp+8h]
-  int v11; // [esp+18h] [ebp+8h]
 
-  v7 = *(double *)(*(_DWORD *)&DataGlobal_87F8E4[30972] + 5944); /*0x711f76*/
+  float v7 = *(double *)(*(_DWORD *)&DataGlobal_87F8E4[30972] + 5944); /*0x711f76*/
   if ( LOBYTE(a3) ) /*0x711f7c*/
     v7 = 1.0; /*0x711f7e*/
   if ( a2 ) /*0x711f8c*/
   {
-    v10 = TechnoTypeClass::Dispatch(a2, this); /*0x711f9a*/
+    float v10 = TechnoTypeClass::Dispatch(a2, this); /*0x711f9a*/
     ThreatMultiplier = TechnoTypeClass::GetThreatMultiplier((float *)a2, this); /*0x711fac*/
     if ( this->Soylent ) /*0x711fa6*/
     {
-      return Math::RoundToInt((double)*((int *)this + 389) * v10); /*0x711fc0*/
+      return Math::RoundToInt((double)this->Soylent * v10); /*0x711fc0*/
     }
     else
     {
       v9 = (#375 *)(*(int (__thiscall **)(TechnoTypeClass *))(*(_DWORD *)this->vtable0 + 172))(this); /*0x711fd7*/
-      v6 = Math::RoundToInt((double)(int)v9 * ThreatMultiplier * v10); /*0x711fec*/
+      int v6 = Math::RoundToInt((double)(int)v9 * ThreatMultiplier * v10); /*0x711fec*/
       if ( (unsigned __int8)House::IsCurrentPlayer(a2) ) /*0x711ff4*/
         return Math::RoundToInt((double)v6 * v7); /*0x71200a*/
       return v6; /*0x71200c*/
@@ -1026,7 +1001,7 @@ int __thiscall TechnoTypeClass::ComputeValue(TechnoTypeClass *this, #375 *a2, fl
   }
   else
   {
-    v11 = (*(int (__thiscall **)(TechnoTypeClass *))(*(_DWORD *)this->vtable0 + 172))(this); /*0x712020*/
+    int v11 = (*(int (__thiscall **)(TechnoTypeClass *))(*(_DWORD *)this->vtable0 + 172))(this); /*0x712020*/
     return Math::RoundToInt((double)v11 * v7); /*0x71202c*/
   }
 }
@@ -1036,9 +1011,8 @@ int __thiscall TechnoTypeClass::ComputeValue(TechnoTypeClass *this, #375 *a2, fl
 int TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass *aP0, int aP1)
+void TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass *aP0, int aP1)
 {
-  char *v3; // ebp
   int result; // eax
   int j; // ebp
   int k; // ebx
@@ -1065,23 +1039,18 @@ int __stdcall TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass *aP0, int aP1)
   int i14; // esi
   int i15; // esi
   MouseClass *v29; // esi
-  int v30; // ebx
   MouseClass *v31; // esi
-  int v32; // ebx
   int i16; // esi
   int i17; // esi
   IUnknown *v35; // edx
   IUnknown *v36; // edx
-  int v37; // eax
   IUnknown *v38; // edx
   IUnknown *v39; // edx
-  int v40; // [esp+280h] [ebp-210h] BYREF
-  int v41; // [esp+284h] [ebp-20Ch] BYREF
   int i; // [esp+288h] [ebp-208h]
   ObjectClass Filename; // [esp+28Ch] [ebp-204h] BYREF
   char Buffer[260]; // [esp+38Ch] [ebp-104h] BYREF
 
-  v3 = &aP0[1].__pad_14D[7]; /*0x716307*/
+  char * v3 = &aP0[1].__pad_14D[7]; /*0x716307*/
   (*(void (__thiscall **)(char *))(*(_DWORD *)&aP0[1].__pad_14D[7] + 12))(&aP0[1].__pad_14D[7]); /*0x71630f*/
   (*(void (__thiscall **)(char *))(*(_DWORD *)&aP0[1].Name[28] + 12))(&aP0[1].Name[28]); /*0x716320*/
   (*(void (__thiscall **)(Armor *))(aP0[2].Armor + 12))(&aP0[2].Armor); /*0x71632f*/
@@ -1103,6 +1072,7 @@ int __stdcall TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass *aP0, int aP1)
   result = ObjectTypeClass::LoadCleanup((IUnknown *)aP0, (ObjectTypeClass *)aP1); /*0x71641c*/
   if ( result >= 0 ) /*0x716423*/
   {
+  int v41; // [esp+284h] [ebp-20Ch] BYREF
     ObjectPtr::RegisterForTracking( /*0x716435*/
       (SwizzleManagerClass *)&stru_B05488[27784],
       (MouseClass *)&aP0[1].__pad_14D[35]);
@@ -1139,6 +1109,7 @@ int __stdcall TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass *aP0, int aP1)
       (MouseClass *)&aP0[2].__pad_14D[71]);
     if ( aP0 != (ObjectTypeClass *)-1000 ) /*0x7164f7*/
       TypeList::BuildingTypeConstructor(v3); /*0x7164fb*/
+  int v40; // [esp+280h] [ebp-210h] BYREF
     (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)aP1 + 12))(aP1, &v40, 4, 0); /*0x71650c*/
     for ( i = 0; i < v40; ++i ) /*0x71651d*/
     {
@@ -1318,7 +1289,7 @@ int __stdcall TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass *aP0, int aP1)
         (SwizzleManagerClass *)&stru_B05488[27784],
         (MouseClass *)(aP0[2].Strength + 4 * i15));
     v29 = (MouseClass *)&aP0[3].ChargerTurrets[8]; /*0x716bc0*/
-    v30 = 18; /*0x716bc6*/
+    int v30 = 18; /*0x716bc6*/
     do /*0x716bda*/
     {
       ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488[27784], v29); /*0x716bd1*/
@@ -1327,7 +1298,7 @@ int __stdcall TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass *aP0, int aP1)
     }
     while ( v30 ); /*0x716bda*/
     v31 = (MouseClass *)&aP0[4].UINameLabel[7]; /*0x716bdc*/
-    v32 = 18; /*0x716be2*/
+    int v32 = 18; /*0x716be2*/
     do /*0x716bf6*/
     {
       ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488[27784], v31); /*0x716bed*/
@@ -1364,7 +1335,7 @@ int __stdcall TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass *aP0, int aP1)
     _makepath(Buffer, 0, 0, &Filename, Ext); /*0x716ced*/
     LOBYTE(v36) = 0; /*0x716cf5*/
     *(_DWORD *)&aP0[2].__pad_14D[123] = 0; /*0x716cfe*/
-    v37 = SearchMIXFile(Buffer, v36); /*0x716d04*/
+    int v37 = SearchMIXFile(Buffer, v36); /*0x716d04*/
     *(_DWORD *)&aP0[2].__pad_14D[123] = v37; /*0x716d0b*/
     if ( !v37 ) /*0x716d11*/
     {
@@ -1401,47 +1372,34 @@ int __stdcall TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass *aP0, int aP1)
 int TechnoTypeClass::SaveLoad_Prefix_0(void * a1, TechnoTypeClass * aP2, TechnoTypeClass * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall TechnoTypeClass::SaveLoad_Prefix_0(
-        TechnoTypeClass *this,
-        void *a1,
-        TechnoTypeClass *aP2,
-        TechnoTypeClass *aP3)
+void TechnoTypeClass::SaveLoad_Prefix_0(void *a1, TechnoTypeClass *aP2, TechnoTypeClass *aP3)
 {
-  int v4; // ebx
   int result; // eax
-  int v6; // edx
   int i; // ebx
-  int v8; // edx
   int j; // ebx
-  int v10; // edx
   int k; // ebx
-  int v12; // edx
   int m; // ebx
-  int v14; // edx
   int n; // ebx
-  int v16; // edx
   int ii; // ebx
-  int v18; // edx
   int jj; // ebx
-  int v20; // edx
   int kk; // ebx
-  int v22; // edx
   int mm; // ebx
-  int v24; // [esp+124h] [ebp+10h] BYREF
 
   result = AbstractClass::SaveLoad_PrefixWrapper((int)a1, (int)aP2, (int)aP3); /*0x716dd1*/
   if ( result >= 0 ) /*0x716dd8*/
   {
-    v6 = *(_DWORD *)aP2->vtable0; /*0x716de4*/
+    int v6 = *(_DWORD *)aP2->vtable0; /*0x716de4*/
     aP3 = (TechnoTypeClass *)*((_DWORD *)a1 + 254); /*0x716df1*/
+  int v4; // ebx
     (*(void (__stdcall **)(TechnoTypeClass *, TechnoTypeClass **, int, _DWORD, int))(v6 + 16))(aP2, &aP3, 4, 0, v4); /*0x716df5*/
+  int v24; // [esp+124h] [ebp+10h] BYREF
     for ( i = 0; i < v24; ++i ) /*0x716e00*/
       (*(void (__stdcall **)(TechnoTypeClass *, int, int, _DWORD))(*(_DWORD *)aP2->vtable0 + 16))( /*0x716e13*/
         aP2,
         *((_DWORD *)a1 + 251) + 4 * i,
         4,
         0);
-    v8 = *(_DWORD *)aP2->vtable0; /*0x716e23*/
+    int v8 = *(_DWORD *)aP2->vtable0; /*0x716e23*/
     v24 = *((_DWORD *)a1 + 201); /*0x716e2f*/
     (*(void (__stdcall **)(TechnoTypeClass *, int *, int, _DWORD))(v8 + 16))(aP2, &v24, 4, 0); /*0x716e33*/
     for ( j = 0; j < v24; ++j ) /*0x716e3e*/
@@ -1450,7 +1408,7 @@ int __thiscall TechnoTypeClass::SaveLoad_Prefix_0(
         *((_DWORD *)a1 + 198) + 4 * j,
         4,
         0);
-    v10 = *(_DWORD *)aP2->vtable0; /*0x716e61*/
+    int v10 = *(_DWORD *)aP2->vtable0; /*0x716e61*/
     v24 = *((_DWORD *)a1 + 373); /*0x716e6d*/
     (*(void (__stdcall **)(TechnoTypeClass *, int *, int, _DWORD))(v10 + 16))(aP2, &v24, 4, 0); /*0x716e71*/
     for ( k = 0; k < v24; ++k ) /*0x716e7c*/
@@ -1459,7 +1417,7 @@ int __thiscall TechnoTypeClass::SaveLoad_Prefix_0(
         *((_DWORD *)a1 + 370) + 4 * k,
         4,
         0);
-    v12 = *(_DWORD *)aP2->vtable0; /*0x716e9f*/
+    int v12 = *(_DWORD *)aP2->vtable0; /*0x716e9f*/
     v24 = *((_DWORD *)a1 + 265); /*0x716eab*/
     (*(void (__stdcall **)(TechnoTypeClass *, int *, int, _DWORD))(v12 + 16))(aP2, &v24, 4, 0); /*0x716eaf*/
     for ( m = 0; m < v24; ++m ) /*0x716eba*/
@@ -1468,7 +1426,7 @@ int __thiscall TechnoTypeClass::SaveLoad_Prefix_0(
         *((_DWORD *)a1 + 262) + 4 * m,
         4,
         0);
-    v14 = *(_DWORD *)aP2->vtable0; /*0x716edd*/
+    int v14 = *(_DWORD *)aP2->vtable0; /*0x716edd*/
     v24 = *((_DWORD *)a1 + 272); /*0x716ee9*/
     (*(void (__stdcall **)(TechnoTypeClass *, int *, int, _DWORD))(v14 + 16))(aP2, &v24, 4, 0); /*0x716eed*/
     for ( n = 0; n < v24; ++n ) /*0x716ef8*/
@@ -1477,7 +1435,7 @@ int __thiscall TechnoTypeClass::SaveLoad_Prefix_0(
         *((_DWORD *)a1 + 269) + 4 * n,
         4,
         0);
-    v16 = *(_DWORD *)aP2->vtable0; /*0x716f1b*/
+    int v16 = *(_DWORD *)aP2->vtable0; /*0x716f1b*/
     v24 = *((_DWORD *)a1 + 279); /*0x716f27*/
     (*(void (__stdcall **)(TechnoTypeClass *, int *, int, _DWORD))(v16 + 16))(aP2, &v24, 4, 0); /*0x716f2b*/
     for ( ii = 0; ii < v24; ++ii ) /*0x716f36*/
@@ -1486,7 +1444,7 @@ int __thiscall TechnoTypeClass::SaveLoad_Prefix_0(
         *((_DWORD *)a1 + 276) + 4 * ii,
         4,
         0);
-    v18 = *(_DWORD *)aP2->vtable0; /*0x716f59*/
+    int v18 = *(_DWORD *)aP2->vtable0; /*0x716f59*/
     v24 = *((_DWORD *)a1 + 286); /*0x716f65*/
     (*(void (__stdcall **)(TechnoTypeClass *, int *, int, _DWORD))(v18 + 16))(aP2, &v24, 4, 0); /*0x716f69*/
     for ( jj = 0; jj < v24; ++jj ) /*0x716f74*/
@@ -1495,7 +1453,7 @@ int __thiscall TechnoTypeClass::SaveLoad_Prefix_0(
         *((_DWORD *)a1 + 283) + 4 * jj,
         4,
         0);
-    v20 = *(_DWORD *)aP2->vtable0; /*0x716f97*/
+    int v20 = *(_DWORD *)aP2->vtable0; /*0x716f97*/
     v24 = *((_DWORD *)a1 + 293); /*0x716fa3*/
     (*(void (__stdcall **)(TechnoTypeClass *, int *, int, _DWORD))(v20 + 16))(aP2, &v24, 4, 0); /*0x716fa7*/
     for ( kk = 0; kk < v24; ++kk ) /*0x716fb2*/
@@ -1504,7 +1462,7 @@ int __thiscall TechnoTypeClass::SaveLoad_Prefix_0(
         *((_DWORD *)a1 + 290) + 4 * kk,
         4,
         0);
-    v22 = *(_DWORD *)aP2->vtable0; /*0x716fd5*/
+    int v22 = *(_DWORD *)aP2->vtable0; /*0x716fd5*/
     v24 = *((_DWORD *)a1 + 300); /*0x716fe1*/
     (*(void (__stdcall **)(TechnoTypeClass *, int *, int))(v22 + 16))(aP2, &v24, 4); /*0x716fe5*/
     for ( mm = 0; mm < (int)aP3; ++mm ) /*0x716ff0*/
@@ -1544,7 +1502,7 @@ int TechnoTypeClass::CanAttackMove_IgnoreWeapon_0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // attributes: thunk
-bool __thiscall TechnoTypeClass::CanAttackMove_IgnoreWeapon_0(int this)
+void* TechnoTypeClass::CanAttackMove_IgnoreWeapon_0(int this)
 {
   return TechnoTypeClass::CanAttackMove_IgnoreWeapon(this);
 }
@@ -1666,7 +1624,7 @@ int TechnoTypeClass::CanAttackMove_IgnoreWeapon_0_0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // attributes: thunk
-bool __thiscall TechnoTypeClass::CanAttackMove_IgnoreWeapon_0_0(int this)
+void* TechnoTypeClass::CanAttackMove_IgnoreWeapon_0_0(int this)
 {
   return TechnoTypeClass::CanAttackMove_IgnoreWeapon(this);
 }

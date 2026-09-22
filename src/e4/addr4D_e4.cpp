@@ -16,29 +16,18 @@ int DestructFoggedObjectClass(FoggedObjectClass * aP0)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall DestructFoggedObjectClass(FoggedObjectClass *aP0)
 {
-  int v2; // eax
-  int v3; // kr00_4
-  int v4; // edx
-  int v5; // esi
-  int v6; // eax
-  int v7; // eax
-  int v8; // ecx
   BuildingTypeClass *i; // eax
-  _DWORD *v10; // eax
-  _DWORD *v11; // eax
-  _DWORD *v12; // eax
-  _DWORD *v13; // ecx
   int edx15; // edx
   CCINIClass *v14; // eax
   int result; // eax
   __int16 v17[4]; // [esp+10h] [ebp-Ch] BYREF
-  int v18; // [esp+18h] [ebp-4h] BYREF
 
   *(_DWORD *)aP0->__pad_0 = &FoggedObjectClass::`vftable'; /*0x4d1663*/
   *(_DWORD *)&aP0->__pad_0[4] = &FoggedObjectClass::`vftable'; /*0x4d1669*/
   *(_DWORD *)&aP0->__pad_0[8] = &FoggedObjectClass::`vftable'; /*0x4d1670*/
   *(_DWORD *)&aP0->__pad_0[12] = &vt_FoggedObjectClass; /*0x4d1677*/
   *(_DWORD *)v17 = aP0; /*0x4d1684*/
+  int v2; // eax
   v2 = (*(int (__thiscall **)(char *, __int16 *))(*(_DWORD *)&stru_89E138[89048] + 16))( /*0x4d1688*/
          &stru_89E138[89048],
          v17);
@@ -53,12 +42,12 @@ int __fastcall DestructFoggedObjectClass(FoggedObjectClass *aP0)
       ++v2; /*0x4d16ab*/
     }
   }
-  v3 = *(_DWORD *)&aP0[1].__pad_0[8]; /*0x4d16d7*/
+  int v3 = *(_DWORD *)&aP0[1].__pad_0[8]; /*0x4d16d7*/
   v17[0] = *(_DWORD *)&aP0[1].__pad_0[4] / 256; /*0x4d16df*/
   v17[1] = v3 / 256; /*0x4d16e4*/
-  v18 = *(_DWORD *)v17; /*0x4d16f3*/
-  v4 = *(_DWORD *)&stru_89E138[88972]; /*0x4d170e*/
-  v5 = 74 * (v17[1] - ((v17[0] + v17[1]) << 9) - v17[0]) - *(_DWORD *)aP0[1].__pad_0 + 0x7FFFFFFF; /*0x4d1714*/
+  int v18 = *(_DWORD *)v17; /*0x4d16f3*/
+  int v4 = *(_DWORD *)&stru_89E138[88972]; /*0x4d170e*/
+  int v5 = 74 * (v17[1] - ((v17[0] + v17[1]) << 9) - v17[0]) - *(_DWORD *)aP0[1].__pad_0 + 0x7FFFFFFF; /*0x4d1714*/
   if ( *(_DWORD *)&stru_89E138[88972] ) /*0x4d171c*/
   {
     if ( !stru_89E138[88980] ) /*0x4d1728*/
@@ -73,18 +62,18 @@ int __fastcall DestructFoggedObjectClass(FoggedObjectClass *aP0)
       stru_89E138[88980] = 1; /*0x4d174d*/
     }
     *(_DWORD *)v17 = v5; /*0x4d175f*/
-    v6 = sub_4D2F00(*(int *)&stru_89E138[88968], v4, (int *)v17); /*0x4d1763*/
+    int v6 = sub_4D2F00(*(int *)&stru_89E138[88968], v4, (int *)v17); /*0x4d1763*/
     if ( v6 ) /*0x4d176a*/
     {
-      v7 = (v6 - *(_DWORD *)&stru_89E138[88968]) >> 3; /*0x4d1772*/
+      int v7 = (v6 - *(_DWORD *)&stru_89E138[88968]) >> 3; /*0x4d1772*/
       if ( v7 != -1 ) /*0x4d1778*/
       {
-        v8 = v7 + 1; /*0x4d177a*/
+        int v8 = v7 + 1; /*0x4d177a*/
         for ( i = *(BuildingTypeClass **)&stru_89E138[88972]; /*0x4d1784*/
               v8 < *(int *)&stru_89E138[88972];
               i = *(BuildingTypeClass **)&stru_89E138[88972] )
         {
-          v10 = (_DWORD *)(*(_DWORD *)&stru_89E138[88968] + 8 * v8++); /*0x4d178c*/
+          _DWORD * v10 = (_DWORD *)(*(_DWORD *)&stru_89E138[88968] + 8 * v8++); /*0x4d178c*/
           *(v10 - 2) = *v10; /*0x4d1792*/
           *(v10 - 1) = v10[1]; /*0x4d1798*/
         }
@@ -97,12 +86,12 @@ int __fastcall DestructFoggedObjectClass(FoggedObjectClass *aP0)
   }
   if ( *(_DWORD *)aP0[1].__pad_0 == 6 ) /*0x4d17d0*/
   {
-    v11 = CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&v18); /*0x4d17dc*/
-    v12 = Cell::IsBridge(v11); /*0x4d17e3*/
+    _DWORD * v11 = CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&v18); /*0x4d17dc*/
+    _DWORD * v12 = Cell::IsBridge(v11); /*0x4d17e3*/
     if ( v12 ) /*0x4d17ea*/
     {
       *((_BYTE *)v12 + 1767) = 0; /*0x4d17ec*/
-      v13 = v12 + 343; /*0x4d17f2*/
+      _DWORD * v13 = v12 + 343; /*0x4d17f2*/
       edx15 = 21; /*0x4d17f8*/
       do /*0x4d180d*/
       {
@@ -217,14 +206,12 @@ int sub_4D2F00(int a1, int a2, int * a3)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall sub_4D2F00(int a1, int a2, int *a3)
 {
-  int v3; // esi
-  int v4; // ebx
   int v5; // edi
 
-  v3 = a2; /*0x4d2f05*/
+  int v3 = a2; /*0x4d2f05*/
   if ( a2 <= 0 ) /*0x4d2f07*/
     return 0; /*0x4d2f39*/
-  v4 = *a3; /*0x4d2f0d*/
+  int v4 = *a3; /*0x4d2f0d*/
   while ( 1 ) /*0x4d2f16*/
   {
     v5 = *(_DWORD *)(a1 + 8 * (v3 / 2)); /*0x4d2f16*/
@@ -251,30 +238,26 @@ namespace gamemd {
 LPVOID E4Recv_4DB8A0::sub_4DB8A0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-LPVOID __thiscall sub_4DB8A0(_DWORD *this)
+void sub_4DB8A0(_DWORD *this)
 {
-  int v2; // ebx
-  int v3; // eax
-  int v4; // eax
   LPVOID v5; // esi
   LPVOID result; // eax
   LPVOID ppv; // [esp+20h] [ebp-8h] BYREF
-  int v8; // [esp+24h] [ebp-4h] BYREF
 
-  v2 = *(this + 413); /*0x4db8a7*/
+  int v2 = *(this + 413); /*0x4db8a7*/
   if ( v2 ) /*0x4db8af*/
     (*(void (__stdcall **)(_DWORD))(*(_DWORD *)v2 + 4))(*(this + 413)); /*0x4db8b4*/
   ppv = 0; /*0x4db8c4*/
-  v3 = CreateInstanceCOM(&ppv, (IID *)&g_CLSID_DriveLocomotion, 0, 7u); /*0x4db8cc*/
+  int v3 = CreateInstanceCOM(&ppv, (IID *)&g_CLSID_DriveLocomotion, 0, 7u); /*0x4db8cc*/
   if ( v3 < 0 && v3 != -2147467262 ) /*0x4db8da*/
     WinAPI::Wrapper(v3); /*0x4db8dd*/
   if ( !ppv ) /*0x4db8e8*/
     WinAPI::Wrapper(-2147467261); /*0x4db8ef*/
   (*(void (__stdcall **)(LPVOID, _DWORD *))(*(_DWORD *)ppv + 12))(ppv, this); /*0x4db8fc*/
-  v8 = 0; /*0x4db903*/
+  int v8 = 0; /*0x4db903*/
   if ( !ppv ) /*0x4db90d*/
     goto LABEL_13; /*0x4db90d*/
-  v4 = StreamClass::Set(&v8, &ppv); /*0x4db918*/
+  int v4 = StreamClass::Set(&v8, &ppv); /*0x4db918*/
   if ( v4 < 0 && v4 != -2147467262 ) /*0x4db926*/
     WinAPI::Wrapper(v4); /*0x4db929*/
   if ( !v8 ) /*0x4db934*/

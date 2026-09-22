@@ -12,10 +12,7 @@ char * SmudgeTypeClass::SmudgeTypeClass(ObjectClass * aP1)
 char *__thiscall SmudgeTypeClass::SmudgeTypeClass(char *this, ObjectClass *aP1)
 {
   SmudgeTypeClass *v3; // eax
-  bool v4; // zf
-  int v5; // ecx
   CCINIClass *v6; // edx
-
   ObjectTypeClass::ConstructFull((int)this, (AbstractClass *)aP1); /*0x6b5269*/
   this->ArrayIndex = -1; /*0x6b5277*/
   this->Width = 1; /*0x6b5281*/
@@ -36,6 +33,7 @@ char *__thiscall SmudgeTypeClass::SmudgeTypeClass(char *this, ObjectClass *aP1)
   if ( *(int *)&g_NetworkPlayerBuffer[5612] < *(int *)&g_NetworkPlayerBuffer[5604] /*0x6b5322*/
     || (g_NetworkPlayerBuffer[5609] || !*(_DWORD *)&g_NetworkPlayerBuffer[5604])
     && *(int *)&g_NetworkPlayerBuffer[5616] > 0
+  bool v4; // zf
     && (v4 = (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&g_NetworkPlayerBuffer[5596] + 8))(
                &g_NetworkPlayerBuffer[5596],
                *(_DWORD *)&g_NetworkPlayerBuffer[5604] + *(_DWORD *)&g_NetworkPlayerBuffer[5616],
@@ -47,7 +45,7 @@ char *__thiscall SmudgeTypeClass::SmudgeTypeClass(char *this, ObjectClass *aP1)
     *(_DWORD *)(*(_DWORD *)&g_NetworkPlayerBuffer[5600] + 4 * (_DWORD)v3) = this; /*0x6b5331*/
     v3 = *(SmudgeTypeClass **)&g_NetworkPlayerBuffer[5612]; /*0x6b5334*/
   }
-  v5 = 0; /*0x6b5339*/
+  int v5 = 0; /*0x6b5339*/
   if ( (int)v3 <= 0 ) /*0x6b533d*/
   {
 LABEL_11:
@@ -74,32 +72,24 @@ LABEL_11:
 void SmudgeTypeClass::vt_entry_A0(int * a2, int * a3, int a4, int a5, short * a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall SmudgeTypeClass::vt_entry_A0(_DWORD *this, int *a2, int *a3, int a4, int a5, __int16 *a6)
+void SmudgeTypeClass::vt_entry_A0(int *a2, int *a3, int a4, int a5, __int16 *a6)
 {
-  int v7; // ebx
-  int v8; // edx
-  int v9; // ecx
-  _DWORD *v10; // esi
-  int v11; // eax
-  int v12; // [esp-1Ch] [ebp-2Ch]
-  int v13; // [esp+8h] [ebp-8h] BYREF
-  int v14; // [esp+Ch] [ebp-4h]
 
-  v7 = (*(int (__thiscall **)(_DWORD *))(*this + 156))(this); /*0x6b55ff*/
+  int v7 = (*(int (__thiscall **)(_DWORD *))(*this + 156))(this); /*0x6b55ff*/
   if ( v7 ) /*0x6b5603*/
   {
-    v8 = a2[1]; /*0x6b5614*/
-    v13 = *a2; /*0x6b5619*/
-    v14 = v8; /*0x6b561d*/
+    int v8 = a2[1]; /*0x6b5614*/
+    int v13 = *a2; /*0x6b5619*/
+    int v14 = v8; /*0x6b561d*/
     if ( a4 ) /*0x6b5621*/
     {
-      v9 = this->Width; /*0x6b5623*/
+      int v9 = this->Width; /*0x6b5623*/
       v14 += -15 * (a4 / v9 + a4 % v9); /*0x6b5659*/
       v13 += 60 * (a4 / v9 - a4 % v9) / 2; /*0x6b5661*/
     }
-    v10 = CellCoord::To_CellObj(&DataGlobal_87F7E8, a6); /*0x6b5674*/
-    v12 = *((__int16 *)v10 + 134); /*0x6b568a*/
-    v11 = ZCoordToScreenY(a5); /*0x6b568c*/
+    _DWORD * v10 = CellCoord::To_CellObj(&DataGlobal_87F7E8, a6); /*0x6b5674*/
+    int v12 = *((__int16 *)v10 + 134); /*0x6b568a*/
+    int v11 = ZCoordToScreenY(a5); /*0x6b568c*/
     DrawToSurfaceSHP(g_DSurface_Hidden_2, v10[13], v7, 0, &v13, a3, 3584, 0, -1 - v11, 0, v12, 0, 0, 0, 0, 0); /*0x6b56b4*/
   }
 }
@@ -109,11 +99,9 @@ void __thiscall SmudgeTypeClass::vt_entry_A0(_DWORD *this, int *a2, int *a3, int
 char SmudgeTypeClass::GetSize(unsigned char *** aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall SmudgeTypeClass::GetSize(int this, unsigned __int8 ***aP1)
+void SmudgeTypeClass::GetSize(int this, unsigned __int8 ***aP1)
 {
   char Bool_Overwrite; // al
-  char v4; // cl
-  char v5; // al
   INIClass *v7; // [esp-8h] [ebp-210h]
   char Buffer[512]; // [esp+8h] [ebp-200h] BYREF
 
@@ -125,14 +113,15 @@ char __thiscall SmudgeTypeClass::GetSize(int this, unsigned __int8 ***aP1)
                      (unsigned __int8 *)(this + 36),
                      &unk_8185F4,
                      this->Crater);
-  v4 = this->Burn; /*0x6b5710*/
+  char v4 = this->Burn; /*0x6b5710*/
   this->Crater = Bool_Overwrite; /*0x6b5716*/
+  char v5; // al
   v5 = INIClass::ReadBool_Overwrite( /*0x6b5725*/
          (int)aP1,
          (unsigned __int8 *)(this + 36),
          (CCINIClass *)&stru_830620[64008],
          v4);
-  v7 = *(INIClass **)(this + 664); /*0x6b5732*/
+  v7 = this->Width; /*0x6b5732*/
   this->Burn = v5; /*0x6b5739*/
   this->Width = INIClass::ReadInt_Overwrite( /*0x6b5744*/
                               (int)aP1,
@@ -143,7 +132,7 @@ char __thiscall SmudgeTypeClass::GetSize(int this, unsigned __int8 ***aP1)
                               (int)aP1,
                               (unsigned __int8 *)(this + 36),
                               &g_INI_Key_Height,
-                              *(INIClass **)(this + 668));
+                              this->Height);
   if ( this->Theater ) /*0x6b5764*/
     _makepath(Buffer, 0, 0, (const char *)(this + 504), (const char *)&off_7E1BC6 + 112 * g_ScenarioClass_Instance->theater); /*0x6b57b4*/
   else

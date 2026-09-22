@@ -11,27 +11,14 @@ namespace gamemd {
 int BlowStraw_29::Seek(TabClass * aP1, unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BlowStraw_29_::Seek(int *this, TabClass *aP1, _DWORD *a2)
+void BlowStraw_29_::Seek(TabClass *aP1, _DWORD *a2)
 {
-  int v4; // edx
-  int v5; // eax
-  int v6; // eax
-  int v7; // edx
   ScrollClass *v8; // eax
-  int v9; // eax
-  int v10; // eax
-  unsigned int v11; // eax
-  char *v12; // eax
-  char *v13; // edi
   int i; // edi
   char *FontClassEntry; // eax
-  int v16; // edx
-  int v17; // eax
-  int v18; // eax
-  int v19; // eax
 
-  v4 = *(this + 5454); /*0x6d068b*/
-  v5 = *(this + 5456); /*0x6d0691*/
+  int v4 = *(this + 5454); /*0x6d068b*/
+  int v5 = *(this + 5456); /*0x6d0691*/
   if ( v4 != -1 ) /*0x6d069a*/
   {
     if ( *(_DWORD *)&g_NetworkPlayerBuffer[5960] - v4 >= v5 ) /*0x6d06a6*/
@@ -40,12 +27,12 @@ int __thiscall BlowStraw_29_::Seek(int *this, TabClass *aP1, _DWORD *a2)
   }
   if ( v5 == 1 ) /*0x6d06ac*/
   {
-    v6 = *this; /*0x6d06ae*/
+    int v6 = *this; /*0x6d06ae*/
     *((_BYTE *)this + 21829) = 1; /*0x6d06b4*/
     (*(void (__thiscall **)(int *, _DWORD))(v6 + 56))(this, 0); /*0x6d06ba*/
   }
 LABEL_6:
-  v7 = *(_DWORD *)(*(_DWORD *)&g_OverlayTypeConfig[33888] + 4); /*0x6d06bd*/
+  int v7 = *(_DWORD *)(*(_DWORD *)&g_OverlayTypeConfig[33888] + 4); /*0x6d06bd*/
   if ( *a2 >= **(_DWORD **)&g_OverlayTypeConfig[33888] /*0x6d06dd*/
     && *a2 < **(_DWORD **)&g_OverlayTypeConfig[33888] + *(_DWORD *)&DataGlobal_87F8E4[30404] )
   {
@@ -53,7 +40,7 @@ LABEL_6:
     if ( (int)v8 >= v7 && (int)v8 < v7 + 30 ) /*0x6d06f2*/
       Mouse::SetCursor((int)&DataGlobal_87F7E8, 0, 0); /*0x6d06fd*/
   }
-  v9 = aP1->field_0; /*0x6d0706*/
+  int v9 = aP1->field_0; /*0x6d0706*/
   if ( aP1->field_0 < 32982 || v9 >= 33007 ) /*0x6d0718*/
   {
     if ( v9 == 33008 ) /*0x6d0842*/
@@ -70,11 +57,11 @@ LABEL_6:
             HashTable::Remove(*(int **)&DataGlobal_87F8E4[31364], *((_DWORD *)FontClassEntry + 9)); /*0x6d089d*/
         }
         HashTable::Remove(*(int **)&DataGlobal_87F8E4[31364], 240); /*0x6d08b3*/
-        v16 = *this; /*0x6d08b8*/
+        int v16 = *this; /*0x6d08b8*/
         *((_BYTE *)this + 21828) = 0; /*0x6d08c1*/
         (*(void (__thiscall **)(int *, char *))(v16 + 48))(this, &g_OverlayTypeConfig[21576]); /*0x6d08c8*/
         PushCommandClass::Execute(&g_OverlayTypeConfig[21576], (int)&stru_830620[74264]); /*0x6d08d5*/
-        v17 = *this; /*0x6d08da*/
+        int v17 = *this; /*0x6d08da*/
         *((_BYTE *)this + 21829) = 1; /*0x6d08e0*/
         (*(void (__thiscall **)(int *, _DWORD))(v17 + 56))(this, 0); /*0x6d08e6*/
       }
@@ -90,7 +77,7 @@ LABEL_6:
           HashTable::Remove(*(int **)&DataGlobal_87F8E4[31364], 241); /*0x6d0940*/
           *((_BYTE *)this + 21828) = 1; /*0x6d0947*/
           CommandClass::BuildBar(this); /*0x6d094d*/
-          v18 = *this; /*0x6d0952*/
+          int v18 = *this; /*0x6d0952*/
           *((_BYTE *)this + 21829) = 1; /*0x6d0958*/
           (*(void (__thiscall **)(int *, _DWORD))(v18 + 56))(this, 0); /*0x6d095e*/
         }
@@ -99,7 +86,7 @@ LABEL_6:
     else if ( v9 >= 49366 && v9 < 49391 ) /*0x6d096f*/
     {
       BYTE1(v9) &= 0x3Fu; /*0x6d0977*/
-      v19 = v9 - 214; /*0x6d097a*/
+      int v19 = v9 - 214; /*0x6d097a*/
       if ( v19 >= *(int *)&g_OverlayTypeConfig[21544] && v19 <= *(int *)&g_OverlayTypeConfig[21808] ) /*0x6d0989*/
         SidebarClearReferences((char *)(v19 - *(_DWORD *)&g_OverlayTypeConfig[21544] + 1)); /*0x6d0990*/
     }
@@ -107,7 +94,7 @@ LABEL_6:
   else
   {
     BYTE1(v9) &= ~0x80u; /*0x6d0724*/
-    v10 = v9 - 214; /*0x6d0727*/
+    int v10 = v9 - 214; /*0x6d0727*/
     if ( v10 == *(_DWORD *)&g_OverlayTypeConfig[21804] ) /*0x6d072e*/
     {
       BlowStraw_29_Get(); /*0x6d0730*/
@@ -130,9 +117,9 @@ LABEL_6:
     }
     else if ( v10 == *(_DWORD *)&g_OverlayTypeConfig[21540] ) /*0x6d078a*/
     {
-      v11 = *(_DWORD *)&g_OverlayTypeConfig[5296][4 * *(_DWORD *)&g_OverlayTypeConfig[21540] + 16080]; /*0x6d078c*/
+      unsigned int v11 = *(_DWORD *)&g_OverlayTypeConfig[5296][4 * *(_DWORD *)&g_OverlayTypeConfig[21540] + 16080]; /*0x6d078c*/
       if ( v11 > 0x18 ) /*0x6d0795*/
-        v12 = 0; /*0x6d07a9*/
+        char * v12 = 0; /*0x6d07a9*/
       else
         v12 = &g_OverlayTypeConfig[5296][96 * v11 + 13592]; /*0x6d07a2*/
       if ( v12[45] ) /*0x6d07ab*/
@@ -151,7 +138,7 @@ LABEL_6:
     }
     else
     {
-      v13 = (char *)(v10 - *(_DWORD *)&g_OverlayTypeConfig[21544] + 1); /*0x6d07ef*/
+      char * v13 = (char *)(v10 - *(_DWORD *)&g_OverlayTypeConfig[21544] + 1); /*0x6d07ef*/
       if ( SidebarCountAvailableUnits(v13) ) /*0x6d07f3*/
       {
         if ( SidebarHasAvailableUnit(v13) ) /*0x6d0808*/
@@ -180,25 +167,20 @@ wchar_t *sub_731AF0()
 {
   wchar_t *result; // eax
   wchar_t *StringCSF; // eax
-  int v2; // ecx
   wchar_t *v3; // edi
-  int v4; // esi
-  _BYTE *v5; // ecx
   wchar_t *v6; // eax
-  int v7; // ecx
-
   result = g_SelectionManager; /*0x731af1*/
   if ( !g_SelectionManager ) /*0x731afa*/
   {
     StringCSF = GetStringCSF(g_Str_MSG_NothingSelected, 0, g_Str_File_UICmnds_cpp, 856); /*0x731b0d*/
-    v2 = 3; /*0x731b18*/
+    int v2 = 3; /*0x731b18*/
     if ( HouseClass_Player ) /*0x731b1f*/
       v2 = *((_DWORD *)HouseClass_Player + 22549); /*0x731b21*/
     result = (wchar_t *)MessageListClass::AddMessage(g_GameNetworkObject, 0, 0, StringCSF, v2, 16454, 240, 1); /*0x731b3e*/
     goto LABEL_5; /*0x731b3e*/
   }
   v3 = g_SelectionManager; /*0x731b4e*/
-  v4 = 0; /*0x731b50*/
+  int v4 = 0; /*0x731b50*/
   if ( (int)g_SelectionManager <= 0 ) /*0x731b54*/
   {
 LABEL_5:
@@ -208,7 +190,7 @@ LABEL_5:
   while ( 1 ) /*0x731b56*/
   {
     result = (wchar_t *)g_ObjectClass_CurrentCount; /*0x731b56*/
-    v5 = (_BYTE *)*((_DWORD *)g_ObjectClass_CurrentCount + v4); /*0x731b5b*/
+    _BYTE * v5 = (_BYTE *)*((_DWORD *)g_ObjectClass_CurrentCount + v4); /*0x731b5b*/
     if ( v5 ) /*0x731b60*/
     {
       if ( (v5[20] & 1) != 0 ) /*0x731b6c*/
@@ -225,7 +207,7 @@ LABEL_5:
     }
   }
   v6 = GetStringCSF(DataGlobal_845568, 0, g_Str_File_UICmnds_cpp, 862); /*0x731b9b*/
-  v7 = 3; /*0x731ba6*/
+  int v7 = 3; /*0x731ba6*/
   if ( HouseClass_Player ) /*0x731bad*/
     v7 = *((_DWORD *)HouseClass_Player + 22549); /*0x731baf*/
   return (wchar_t *)MessageListClass::AddMessage(g_GameNetworkObject, 0, 0, v6, v7, 16454, 240, 1); /*0x731b43*/

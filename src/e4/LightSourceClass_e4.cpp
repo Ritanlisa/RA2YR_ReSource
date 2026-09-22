@@ -18,7 +18,6 @@ _DWORD *__thiscall LightSourceClass::Construct(
         TintStruct *aP7,
         int a9)
 {
-  int v10; // eax
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x554763*/
   this->LightTint = a7; /*0x554774*/
@@ -43,7 +42,7 @@ _DWORD *__thiscall LightSourceClass::Construct(
          dword_ABCA18 + dword_ABCA24,
          0) )
   {
-    v10 = g_BridgeCellPool++; /*0x55480a*/
+    int v10 = g_BridgeCellPool++; /*0x55480a*/
     *(_DWORD *)&dword_ABCA14->__pad_0[4 * v10] = this; /*0x554819*/
   }
   return this; /*0x55481e*/
@@ -54,10 +53,8 @@ _DWORD *__thiscall LightSourceClass::Construct(
 int LightSourceClass::Constructor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_554830(int this)
+void sub_554830(int this)
 {
-  int v2; // edx
-  int v3; // eax
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x554833*/
   this->LightIntensity = 0; /*0x55483d*/
@@ -66,7 +63,7 @@ int __thiscall sub_554830(int this)
   this->LightTint.Blue = 0; /*0x554846*/
   this->Location = dword_ABCA00; /*0x55484f*/
   this->q03C = dword_ABCA04; /*0x554857*/
-  v2 = dword_ABCA08; /*0x55485a*/
+  int v2 = dword_ABCA08; /*0x55485a*/
   this->LightVisibility = 0; /*0x554860*/
   this->Activated = 0; /*0x554863*/
   this->uniqueId = v2; /*0x554866*/
@@ -82,7 +79,7 @@ int __thiscall sub_554830(int this)
          dword_ABCA18 + dword_ABCA24,
          0) )
   {
-    v3 = g_BridgeCellPool++; /*0x5548c3*/
+    int v3 = g_BridgeCellPool++; /*0x5548c3*/
     *((_DWORD *)dword_ABCA14 + v3) = this; /*0x5548d2*/
   }
   return this; /*0x5548d7*/

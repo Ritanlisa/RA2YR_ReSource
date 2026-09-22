@@ -6,26 +6,18 @@
 bool GUID::Compare(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall GUID_Compare(char *this, int a2)
+bool GUID_Compare(char *this, int a2)
 {
-  _WORD *v4; // edi
-  int v5; // ecx
-  _WORD *v6; // esi
-  bool v7; // zf
-  int v8; // ecx
-  _WORD *v9; // edi
-  _WORD *v10; // esi
-  bool v11; // zf
 
   if ( dword_828140 == 2 ) /*0x53ee7d*/
     return this->Data4 == *(_DWORD *)(a2 + 4) && *(_WORD *)this == *(_WORD *)a2; /*0x53ef1b*/
   if ( (*this || this->Data4 || this->Data3 || *(this + 3)) /*0x53eed8*/
     && (*(_BYTE *)a2 || *(_BYTE *)(a2 + 1) || *(_BYTE *)(a2 + 2) || *(_BYTE *)(a2 + 3)) )
   {
-    v8 = 3; /*0x53eef8*/
-    v9 = (_WORD *)(a2 + 4); /*0x53eefd*/
-    v10 = this + 4; /*0x53ef00*/
-    v11 = 1; /*0x53ef03*/
+    int v8 = 3; /*0x53eef8*/
+    _WORD * v9 = (_WORD *)(a2 + 4); /*0x53eefd*/
+    _WORD * v10 = this + 4; /*0x53ef00*/
+    bool v11 = 1; /*0x53ef03*/
     do /*0x53ef05*/
     {
       if ( !v8 ) /*0x53ef05*/
@@ -36,10 +28,10 @@ bool __thiscall GUID_Compare(char *this, int a2)
     while ( v11 ); /*0x53ef05*/
     return v11 && *(_DWORD *)this == *(_DWORD *)a2; /*0x53ef11*/
   }
-  v4 = (_WORD *)(a2 + 4); /*0x53eedf*/
-  v5 = 3; /*0x53eee2*/
-  v6 = this + 4; /*0x53eee7*/
-  v7 = 1; /*0x53eeea*/
+  _WORD * v4 = (_WORD *)(a2 + 4); /*0x53eedf*/
+  int v5 = 3; /*0x53eee2*/
+  _WORD * v6 = this + 4; /*0x53eee7*/
+  bool v7 = 1; /*0x53eeea*/
   do /*0x53eeec*/
   {
     if ( !v5 ) /*0x53eeec*/

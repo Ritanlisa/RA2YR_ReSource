@@ -25,10 +25,7 @@ LRESULT TabClass::DrawPower(HWND hDlg, void * a1, AbstractClass * aP2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 LRESULT __stdcall TabClass::DrawPower(HWND hDlg, void *a1, AbstractClass *aP2)
 {
-  int v3; // ebp
-  int v4; // edi
   int BuildingAnimByName; // eax
-  int v6; // eax
   LPARAM v7; // esi
   HWND DlgItem; // edi
   int ResourceIDHardcodedCSF; // eax
@@ -41,7 +38,6 @@ LRESULT __stdcall TabClass::DrawPower(HWND hDlg, void *a1, AbstractClass *aP2)
   IUnknown *v15; // edi
   const wchar_t *v17; // eax
   int *p_abstractFlags; // ebx
-  int v19; // ecx
   int edx22; // edx
   wchar_t *v20; // edi
   HWND v23; // eax
@@ -53,8 +49,8 @@ LRESULT __stdcall TabClass::DrawPower(HWND hDlg, void *a1, AbstractClass *aP2)
   int nIDDlgItem; // [esp+1Ch] [ebp-CCh]
   wchar_t lParam[100]; // [esp+20h] [ebp-C8h] BYREF
 
-  v3 = *(_DWORD *)&stru_830620[22428][4 * (_DWORD)a1 + 13408]; /*0x658346*/
-  v4 = *(_DWORD *)&stru_830620[22428][4 * (_DWORD)a1 + 13376]; /*0x65834f*/
+  int v3 = *(_DWORD *)&stru_830620[22428][4 * (_DWORD)a1 + 13408]; /*0x658346*/
+  int v4 = *(_DWORD *)&stru_830620[22428][4 * (_DWORD)a1 + 13376]; /*0x65834f*/
   nIDDlgItem = v3; /*0x658358*/
   lParam[0] = 0; /*0x65835c*/
   if ( aP2 && *(_BYTE *)(aP2[1].uniqueId + 421) ) /*0x65836c*/
@@ -72,7 +68,7 @@ LRESULT __stdcall TabClass::DrawPower(HWND hDlg, void *a1, AbstractClass *aP2)
     {
       BuildingAnimByName = *(_DWORD *)(stru_B05488.field_4C + 4 * aP2[2505].uniqueId); /*0x6583cf*/
     }
-    v6 = Color::ConvertToRGB((unsigned __int8 *)(BuildingAnimByName + 776), (int)&hWnd); /*0x6583dd*/
+    int v6 = Color::ConvertToRGB((unsigned __int8 *)(BuildingAnimByName + 776), (int)&hWnd); /*0x6583dd*/
     v27 = *(_WORD *)v6; /*0x6583e6*/
     v28 = *(_BYTE *)(v6 + 2); /*0x6583ee*/
     v7 = (unsigned __int8)v27 | ((HIBYTE(v27) | (v28 << 8)) << 8); /*0x65841f*/
@@ -121,7 +117,7 @@ LRESULT __stdcall TabClass::DrawPower(HWND hDlg, void *a1, AbstractClass *aP2)
     }
     v17 = 0; /*0x658586*/
     p_abstractFlags = &aP2[596].abstractFlags; /*0x658588*/
-    v19 = 20; /*0x65858e*/
+    int v19 = 20; /*0x65858e*/
     do /*0x6585a0*/
     {
       edx22 = *p_abstractFlags + p_abstractFlags[21]; /*0x658598*/

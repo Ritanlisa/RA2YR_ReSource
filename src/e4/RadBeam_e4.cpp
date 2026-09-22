@@ -10,11 +10,9 @@ double * RadBeam::Create()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 double *__thiscall RadBeam::Create(rc_ptr_base *this)
 {
-  _DWORD *v2; // eax
   double *inited; // edi
-  int v4; // eax
 
-  v2 = (_DWORD *)__2_YAPAXI_Z(0xC8u); /*0x65911a*/
+  _DWORD * v2 = (_DWORD *)__2_YAPAXI_Z(0xC8u); /*0x65911a*/
   if ( v2 ) /*0x659124*/
     inited = (double *)RadBeam::InitState(v2, this); /*0x65912e*/
   else
@@ -27,7 +25,7 @@ double *__thiscall RadBeam::Create(rc_ptr_base *this)
          DataGlobal_B04A68 + unk_B04A74,
          0) )
   {
-    v4 = DataGlobal_B04A70++; /*0x659177*/
+    int v4 = DataGlobal_B04A70++; /*0x659177*/
     *(_DWORD *)&DataGlobal_B04A64->__pad_0[4 * v4] = inited; /*0x659186*/
   }
   inited[3] = (double)(this != (rc_ptr_base *)1 ? 20 : 10);

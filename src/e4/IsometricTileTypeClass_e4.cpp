@@ -8,12 +8,8 @@
 int IsometricTileTypeClass::ProcessPower(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall IsometricTileTypeClass::ProcessPower(int this, int *a2)
+void IsometricTileTypeClass::ProcessPower(int this, int *a2)
 {
-  int v3; // eax
-  int v4; // eax
-  int v5; // edx
-  int v6; // eax
 
   AbstractTypeClass::ProcessPower((char *)this, a2); /*0x549b79*/
   Power::TimerProcess(this->q294); /*0x549b87*/
@@ -21,10 +17,10 @@ int __thiscall IsometricTileTypeClass::ProcessPower(int this, int *a2)
   Power::TimerProcess(*(_DWORD *)(this + 668)); /*0x549ba3*/
   Power::TimerProcess(this->q0A8); /*0x549bb1*/
   Power::TimerProcess(*(_DWORD *)(this + 692)); /*0x549bbf*/
-  v3 = this->q2BC; /*0x549bc4*/
+  int v3 = this->q2BC; /*0x549bc4*/
   if ( v3 ) /*0x549bcc*/
   {
-    v4 = (*(int (__stdcall **)(int))(*(_DWORD *)(v3 + 4) + 16))(v3 + 4); /*0x549bd5*/
+    int v4 = (*(int (__stdcall **)(int))(*(_DWORD *)(v3 + 4) + 16))(v3 + 4); /*0x549bd5*/
     Power::TimerProcess(v4); /*0x549bdb*/
   }
   Power::TimerProcess(this->q2C0); /*0x549be9*/
@@ -32,8 +28,9 @@ int __thiscall IsometricTileTypeClass::ProcessPower(int this, int *a2)
   Power::TimerProcess(*(_DWORD *)(this + 724)); /*0x549c05*/
   Power::TimerProcess(*(_DWORD *)(this + 728)); /*0x549c13*/
   Power::TimerProcess(*(_DWORD *)(this + 732)); /*0x549c21*/
+  int v5; // edx
   LOBYTE(v5) = *(_BYTE *)(this + 736); /*0x549c26*/
-  v6 = Power::FlagProcess(a2, v5); /*0x549c2f*/
+  int v6 = Power::FlagProcess(a2, v5); /*0x549c2f*/
   LOBYTE(v6) = *(_BYTE *)(this + 737); /*0x549c34*/
   Power::FlagProcess(a2, v6); /*0x549c3d*/
   Power::TimerProcess(this->q0B9); /*0x549c4b*/
@@ -47,7 +44,7 @@ int __thiscall IsometricTileTypeClass::ProcessPower(int this, int *a2)
 int IsometricTileTypeClass::LoadTypeData(int * a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall IsometricTileTypeClass::_vt05(int *a1, int a2)
+void IsometricTileTypeClass::_vt05(int *a1, int a2)
 {
   int i; // esi
   void (__thiscall ***v3)(_DWORD, int); // ecx
@@ -90,7 +87,7 @@ int __stdcall IsometricTileTypeClass::_vt05(int *a1, int a2)
 int IsometricTileTypeClass::GetTileIndex(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall IsometricTileTypeClass::_vt10(_DWORD *this, int a2, int a3)
+void IsometricTileTypeClass::_vt10(int a2, int a3)
 {
   int result; // eax
 
@@ -107,7 +104,7 @@ int __thiscall IsometricTileTypeClass::_vt10(_DWORD *this, int a2, int a3)
 int IsometricTileTypeClass::GetAuxField()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall IsometricTileTypeClass::_vt16(_DWORD *this)
+void IsometricTileTypeClass::_vt16()
 {
   return this->q294; /*0x54a166*/
 }

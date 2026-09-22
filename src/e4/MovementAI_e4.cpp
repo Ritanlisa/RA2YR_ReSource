@@ -6,13 +6,12 @@
 bool MovementAI::IsPathMovementAllowed()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall sub_487E00(_DWORD *this)
+void sub_487E00(_DWORD *this)
 {
-  _DWORD *v2; // esi
 
   if ( !g_WTFMode ) /*0x487e0b*/
     return this->MovementAI_field_10 != 0; /*0x487e0b*/
-  v2 = (_DWORD *)this->q039; /*0x487e0d*/
+  _DWORD * v2 = (_DWORD *)this->q039; /*0x487e0d*/
   if ( !v2 ) /*0x487e15*/
     return this->MovementAI_field_10 != 0; /*0x487e15*/
   while ( (*(int (__thiscall **)(_DWORD *))(*v2 + 44))(v2) != 6 ) /*0x487e21*/
@@ -29,19 +28,16 @@ bool __thiscall sub_487E00(_DWORD *this)
 bool MovementAI::IsProgressAtEnd()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall sub_4A5150(int this)
+void sub_4A5150(int this)
 {
-  int v1; // esi
-  int v2; // edx
-  int v3; // eax
 
   if ( !(unsigned char)this->MovementAI_field_18 ) /*0x4a5150*/
     return 1; /*0x4a5150*/
-  v1 = this->MovementAI_field_14; /*0x4a515b*/
+  int v1 = this->MovementAI_field_14; /*0x4a515b*/
   if ( !v1 ) /*0x4a5164*/
     return 1; /*0x4a5164*/
-  v2 = this->q008; /*0x4a5166*/
-  v3 = this->MovementAI_field_10; /*0x4a5169*/
+  int v2 = this->q008; /*0x4a5166*/
+  int v3 = this->MovementAI_field_10; /*0x4a5169*/
   if ( v2 != -1 ) /*0x4a516f*/
   {
     if ( (int)g_CurrentFrame - v2 >= v3 ) /*0x4a517b*/
@@ -57,7 +53,7 @@ bool __thiscall sub_4A5150(int this)
 char MovementAI::Check()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_4A5360(_BYTE *this)
+void sub_4A5360(_BYTE *this)
 {
   char result; // al
 

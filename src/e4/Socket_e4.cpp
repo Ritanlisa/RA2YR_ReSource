@@ -7,10 +7,9 @@
 char Socket::ConfigureBuffers(AnimClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall Socket::ConfigureBuffers(SOCKET *this, AnimClass *aP1)
+void Socket::ConfigureBuffers(AnimClass *aP1)
 {
   AnimClass *v2; // esi
-
   v2 = aP1; /*0x7b2631*/
   if ( aP1 == (AnimClass *)-1 ) /*0x7b2638*/
     v2 = (AnimClass *)this->q3F06C; /*0x7b263a*/

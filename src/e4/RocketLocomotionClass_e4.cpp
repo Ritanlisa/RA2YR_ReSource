@@ -7,7 +7,7 @@
 int RocketLocomotionClass::RocketLocomotionClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall RocketLocomotionClass::RocketLocomotionClass(int this)
+R RocketLocomotionClass::RocketLocomotionClass(int this)
 {
   wchar_t *v2; // ecx
 

@@ -7,18 +7,13 @@ namespace gamemd {
 int sub_682780(int a1, int a2, wchar_t * String)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall sub_682780(int a1, int a2, wchar_t *String)
+void sub_682780(int a1, int a2, wchar_t *String)
 {
-  int v3; // ecx
-  _DWORD *v4; // eax
   _UNKNOWN **v5; // ecx
-  int v6; // esi
   size_t v7; // eax
-  int v9; // [esp+30h] [ebp-4h] BYREF
-
-  v9 = 0; /*0x682786*/
-  v3 = 0; /*0x68278e*/
-  v4 = &DataGlobal_83D658; /*0x682790*/
+  int v9 = 0; /*0x682786*/
+  int v3 = 0; /*0x68278e*/
+  _DWORD * v4 = &DataGlobal_83D658; /*0x682790*/
   while ( *v4 != a2 ) /*0x682797*/
   {
     v4 += 2; /*0x682799*/
@@ -31,7 +26,7 @@ int __stdcall sub_682780(int a1, int a2, wchar_t *String)
   }
   v5 = (&DataGlobal_83D65C)[2 * v3]; /*0x6827db*/
 LABEL_5:
-  v6 = (*(int (__stdcall **)(int, _UNKNOWN **, int, _DWORD, _DWORD, int *))(*(_DWORD *)a1 + 12))(a1, v5, 18, 0, 0, &v9); /*0x6827a6*/
+  int v6 = (*(int (__stdcall **)(int, _UNKNOWN **, int, _DWORD, _DWORD, int *))(*(_DWORD *)a1 + 12))(a1, v5, 18, 0, 0, &v9); /*0x6827a6*/
   if ( v6 >= 0 ) /*0x6827c4*/
   {
     if ( !v9 ) /*0x6827e6*/
@@ -74,30 +69,26 @@ namespace gamemd {
 int sub_6829A0(int * a1, int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall sub_6829A0(int *a1, int a2, int a3)
+void sub_6829A0(int *a1, int a2, int a3)
 {
-  int v3; // eax
-  int v4; // esi
-  int v6; // [esp+2Ch] [ebp-1Ch] BYREF
-  _DWORD v7[2]; // [esp+30h] [ebp-18h] BYREF
   __int16 v8[4]; // [esp+38h] [ebp-10h] BYREF
-  int v9; // [esp+40h] [ebp-8h]
 
-  v6 = 0; /*0x6829ac*/
+  int v6 = 0; /*0x6829ac*/
   if ( (*(int (__stdcall **)(int *, void *, int, int *))(*a1 + 16))(a1, &unk_7F7D10, 18, &v6) >= 0 ) /*0x6829c4*/
     goto LABEL_7; /*0x6829c4*/
   if ( v6 ) /*0x6829cc*/
     (*(void (__stdcall **)(int))(*(_DWORD *)v6 + 8))(v6); /*0x6829d1*/
-  v3 = *a1; /*0x6829d4*/
+  int v3 = *a1; /*0x6829d4*/
   v6 = 0; /*0x6829ea*/
-  v4 = (*(int (__stdcall **)(int *, void *, _DWORD, _DWORD, int, int *))(v3 + 12))(a1, &unk_7F7D10, 0, 0, 4114, &v6); /*0x6829f5*/
+  int v4 = (*(int (__stdcall **)(int *, void *, _DWORD, _DWORD, int, int *))(v3 + 12))(a1, &unk_7F7D10, 0, 0, 4114, &v6); /*0x6829f5*/
   if ( v4 >= 0 ) /*0x6829f9*/
   {
 LABEL_7:
+  _DWORD v7[2]; // [esp+30h] [ebp-18h] BYREF
     v7[1] = a2; /*0x682a1a*/
     v7[0] = 1; /*0x682a24*/
     v8[0] = 31; /*0x682a2c*/
-    v9 = a3; /*0x682a33*/
+    int v9 = a3; /*0x682a33*/
     if ( !v6 ) /*0x682a37*/
       WinAPI::Wrapper(-2147467261); /*0x682a3e*/
     v4 = (*(int (__stdcall **)(int, int, _DWORD *, __int16 *, int))(*(_DWORD *)v6 + 16))(v6, 1, v7, v8, 2); /*0x682a5b*/

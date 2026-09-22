@@ -12,55 +12,29 @@
 int CChatEventSink::HandleChatChannelList(int a1, int a2, const char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall CComObject_CChatEventSink___ATL::vt_08_(int a1, int a2, const char *a3)
+void CComObject_CChatEventSink___ATL::vt_08_(int a1, int a2, const char *a3)
 {
-  signed int v3; // eax
-  signed int v4; // ebx
-  int v5; // ebp
-  const char *v6; // ebx
-  signed int v7; // eax
-  char *v8; // ebp
-  int v9; // edi
-  char *v10; // edx
-  int v11; // eax
-  int v12; // ebp
-  int v13; // eax
-  char *v14; // edx
-  int v15; // esi
-  int v16; // eax
-  int v17; // esi
-  int v18; // esi
   char **v19; // ecx
-  int v20; // esi
-  int v21; // eax
-  int v22; // esi
-  int v23; // esi
   char **v24; // ecx
-  _DWORD *v25; // esi
-  int v26; // esi
   HWND v27; // eax
   HWND v28; // eax
   HWND v29; // esi
   HWND DlgItem; // eax
-  void *v32; // [esp+68h] [ebp-330h] BYREF
-  int v33; // [esp+6Ch] [ebp-32Ch]
-  int v34; // [esp+70h] [ebp-328h] BYREF
-  int v35[2]; // [esp+74h] [ebp-324h] BYREF
   void *Block; // [esp+7Ch] [ebp-31Ch]
-  void *v37; // [esp+80h] [ebp-318h] BYREF
-  void *v38; // [esp+84h] [ebp-314h] BYREF
-  _DWORD v39[67]; // [esp+88h] [ebp-310h] BYREF
-  char v40[516]; // [esp+194h] [ebp-204h] BYREF
 
+  void *v32; // [esp+68h] [ebp-330h] BYREF
   unknown_libname_73(&v32); /*0x7aa87e*/
+  char v40[516]; // [esp+194h] [ebp-204h] BYREF
   memset(v40, 0, 513); /*0x7aa893*/
-  v33 = 0; /*0x7aa89b*/
+  int v33 = 0; /*0x7aa89b*/
+  int v35[2]; // [esp+74h] [ebp-324h] BYREF
   v35[0] = 0; /*0x7aa8a1*/
   v35[1] = 0; /*0x7aa8a5*/
   Block = 0; /*0x7aa8a9*/
   if ( !g_NetworkLobby_Init ) /*0x7aa8ad*/
   {
-    v34 = 0; /*0x7aa8c0*/
+  _DWORD v39[67]; // [esp+88h] [ebp-310h] BYREF
+    int v34 = 0; /*0x7aa8c0*/
     if ( a2 == 262459 ) /*0x7aa8ca*/
     {
       v34 = 41; /*0x7aa8cc*/
@@ -80,11 +54,11 @@ LABEL_103:
       {
         Debug::Log(); /*0x7aa91d*/
         memset(v39, 0, sizeof(v39)); /*0x7aa930*/
-        v3 = g_WOL_ChatState; /*0x7aa932*/
-        v4 = 0; /*0x7aa937*/
+        signed int v3 = g_WOL_ChatState; /*0x7aa932*/
+        signed int v4 = 0; /*0x7aa937*/
         if ( (int)g_WOL_ChatState > 0 ) /*0x7aa93b*/
         {
-          v5 = 0; /*0x7aa93d*/
+          int v5 = 0; /*0x7aa93d*/
           do /*0x7aa985*/
           {
             if ( v5 >= 0 && v4 < v3 ) /*0x7aa945*/
@@ -106,7 +80,7 @@ LABEL_103:
         g_WOL_AuthPool = 0; /*0x7aa910*/
       }
     }
-    v6 = a3; /*0x7aa98d*/
+    const char * v6 = a3; /*0x7aa98d*/
     if ( a3 ) /*0x7aa996*/
     {
       do /*0x7aae72*/
@@ -117,19 +91,19 @@ LABEL_103:
           {
             if ( *((_DWORD *)v6 + 10) != -1 ) /*0x7aa9cd*/
             {
-              v7 = g_WOL_ChatState; /*0x7aa9d3*/
-              v8 = 0; /*0x7aa9d8*/
-              v9 = 0; /*0x7aa9da*/
+              signed int v7 = g_WOL_ChatState; /*0x7aa9d3*/
+              char * v8 = 0; /*0x7aa9d8*/
+              int v9 = 0; /*0x7aa9da*/
               if ( (int)g_WOL_ChatState > 0 ) /*0x7aa9de*/
               {
-                v10 = (char *)g_WOL_ConnectionHandler; /*0x7aa9e4*/
+                char * v10 = (char *)g_WOL_ConnectionHandler; /*0x7aa9e4*/
                 while ( 1 ) /*0x7aa9ea*/
                 {
                   if ( v9 >= 0 && v9 < v7 ) /*0x7aa9f0*/
                     v8 = v10; /*0x7aa9f2*/
                   if ( v8 ) /*0x7aa9f6*/
                   {
-                    v11 = strcmp(v8 + 52, v6 + 52); /*0x7aaa04*/
+                    int v11 = strcmp(v8 + 52, v6 + 52); /*0x7aaa04*/
                     v6 = a3; /*0x7aaa27*/
                     if ( !v11 ) /*0x7aaa30*/
                       break; /*0x7aaa30*/
@@ -148,11 +122,11 @@ LABEL_103:
           else
           {
             Array::InsertElement((int *)&g_WOL_ChatState, v6, g_WOL_ChatState); /*0x7aaa74*/
-            v12 = 0; /*0x7aaa79*/
-            v13 = v35[0]; /*0x7aaa7b*/
+            int v12 = 0; /*0x7aaa79*/
+            int v13 = v35[0]; /*0x7aaa7b*/
             if ( v35[0] > 0 ) /*0x7aaa81*/
             {
-              v14 = (char *)Block; /*0x7aaa87*/
+              char * v14 = (char *)Block; /*0x7aaa87*/
               while ( 1 ) /*0x7aaa8b*/
               {
                 if ( v12 >= 0 && v12 < v13 ) /*0x7aaa91*/
@@ -167,7 +141,7 @@ LABEL_103:
                   goto LABEL_43; /*0x7aaae8*/
               }
               v6 = a3; /*0x7aaaec*/
-              v15 = v39[10]; /*0x7aaaf3*/
+              int v15 = v39[10]; /*0x7aaaf3*/
               Debug::Log(); /*0x7aab01*/
               *((_DWORD *)a3 + 10) = v15; /*0x7aab09*/
             }
@@ -177,13 +151,14 @@ LABEL_43:
             String::ToLower((const char **)&v32); /*0x7aab28*/
             if ( g_GameMode_Current[0] == 4 && g_GameOptionsFlags == 3 ) /*0x7aab41*/
             {
+  void *v37; // [esp+80h] [ebp-318h] BYREF
               unknown_libname_73(&v37); /*0x7aab4b*/
-              v16 = g_WOL_ChatPool; /*0x7aab50*/
-              v17 = 0; /*0x7aab55*/
+              int v16 = g_WOL_ChatPool; /*0x7aab50*/
+              int v17 = 0; /*0x7aab55*/
               if ( g_WOL_ChatPool <= 0 ) /*0x7aab59*/
               {
 LABEL_51:
-                v18 = 0; /*0x7aab96*/
+                int v18 = 0; /*0x7aab96*/
                 if ( v16 < 0 ) /*0x7aab9a*/
                   v18 = v16; /*0x7aab9c*/
                 if ( v18 >= dword_B777A4 ) /*0x7aaba4*/
@@ -227,7 +202,7 @@ LABEL_51:
               }
               DeleteAndZero(&v37); /*0x7aac1e*/
             }
-            v20 = *((_DWORD *)g_WOL_ConnectionPool + (dword_B76548(&v32) & ((1 << dword_B7653C) - 1))); /*0x7aac42*/
+            int v20 = *((_DWORD *)g_WOL_ConnectionPool + (dword_B76548(&v32) & ((1 << dword_B7653C) - 1))); /*0x7aac42*/
             if ( v20 ) /*0x7aac47*/
             {
               while ( !String::Compare((const char **)v20, (const char **)&v32) ) /*0x7aac57*/
@@ -240,13 +215,14 @@ LABEL_51:
             else
             {
 LABEL_66:
+  void *v38; // [esp+84h] [ebp-314h] BYREF
               unknown_libname_73(&v38); /*0x7aac64*/
-              v21 = g_WOL_LoginToken; /*0x7aac6d*/
-              v22 = 0; /*0x7aac72*/
+              int v21 = g_WOL_LoginToken; /*0x7aac6d*/
+              int v22 = 0; /*0x7aac72*/
               if ( g_WOL_LoginToken <= 0 ) /*0x7aac76*/
               {
 LABEL_72:
-                v23 = 0; /*0x7aacb3*/
+                int v23 = 0; /*0x7aacb3*/
                 if ( v21 < 0 ) /*0x7aacb7*/
                   v23 = v21; /*0x7aacb9*/
                 if ( v23 >= dword_B765FC ) /*0x7aacc1*/
@@ -290,7 +266,8 @@ LABEL_72:
               }
               DeleteAndZero(&v38); /*0x7aad3b*/
             }
-            v25 = (_DWORD *)g_WOL_HashTable; /*0x7aad40*/
+            _DWORD * v25 = (_DWORD *)g_WOL_HashTable; /*0x7aad40*/
+  int v26; // esi
             v26 = *(_DWORD *)(*v25 /*0x7aad5c*/
                             + 4 * ((*(int (__thiscall **)(void **))(g_WOL_HashTable + 24))(&v32) & ((1 << v25[3]) - 1)));
             if ( v26 ) /*0x7aad61*/
@@ -401,27 +378,21 @@ LABEL_104:
 char CChatEventSink::GrowBuffer()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_7AD930(int *this)
+void sub_7AD930(int *this)
 {
-  int v2; // eax
-  int v3; // ecx
-  int v5; // ebx
-  void *v6; // eax
-  const void *v7; // esi
-  int v8; // [esp+8h] [ebp-4h]
 
-  v2 = *this; /*0x7ad935*/
-  v3 = this->q004; /*0x7ad938*/
+  int v2 = *this; /*0x7ad935*/
+  TechnoTypeClass *v3 = this->q004; /*0x7ad938*/
   if ( 3 * v2 > v3 ) /*0x7ad940*/
     return 0; /*0x7ad943*/
-  v5 = v3 / 2; /*0x7ad94f*/
+  int v5 = v3 / 2; /*0x7ad94f*/
   if ( v3 / 2 < 10 ) /*0x7ad954*/
     v5 = 10; /*0x7ad956*/
   if ( v5 >= v3 ) /*0x7ad95d*/
     return 0; /*0x7ad960*/
-  v6 = __2_YAPAXI_Z(268 * v5); /*0x7ad974*/
-  v7 = (const void *)this->q008; /*0x7ad979*/
-  v8 = (int)v6; /*0x7ad981*/
+  void * v6 = __2_YAPAXI_Z(268 * v5); /*0x7ad974*/
+  const void * v7 = (const void *)this->q008; /*0x7ad979*/
+  int v8 = (int)v6; /*0x7ad981*/
   if ( v7 ) /*0x7ad985*/
     qmemcpy(v6, v7, 268 * *this); /*0x7ad99f*/
   __3_YAXPAX_Z((void *)this->q008); /*0x7ad9ad*/
@@ -435,24 +406,19 @@ char __thiscall sub_7AD930(int *this)
 char CChatEventSink::ProcessChatEvent()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_7AED40(int *this)
+void sub_7AED40(int *this)
 {
-  int v2; // eax
-  int v4; // ebp
-  void *v5; // edx
-  const void *v6; // esi
-  int v7; // [esp+4h] [ebp-4h]
 
-  v2 = *this; /*0x7aed44*/
+  int v2 = *this; /*0x7aed44*/
   if ( *this < this->q004 ) /*0x7aed4b*/
     return 0; /*0x7aed4d*/
-  v4 = 2 * v2; /*0x7aed53*/
+  int v4 = 2 * v2; /*0x7aed53*/
   if ( 2 * v2 < 10 ) /*0x7aed5b*/
     v4 = 10; /*0x7aed5d*/
-  v5 = __2_YAPAXI_Z(248 * v4); /*0x7aed72*/
+  void * v5 = __2_YAPAXI_Z(248 * v4); /*0x7aed72*/
   memset(v5, 0, 4 * ((unsigned int)(248 * v4) >> 2)); /*0x7aed7d*/
-  v7 = (int)v5; /*0x7aed87*/
-  v6 = (const void *)this->q008; /*0x7aed8d*/
+  int v7 = (int)v5; /*0x7aed87*/
+  const void * v6 = (const void *)this->q008; /*0x7aed8d*/
   if ( v6 ) /*0x7aed92*/
     qmemcpy(v5, v6, 248 * *this); /*0x7aeda7*/
   __3_YAXPAX_Z((void *)this->q008); /*0x7aedb4*/
@@ -466,7 +432,7 @@ char __thiscall sub_7AED40(int *this)
 char CChatEventSink::Check(unsigned int * a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_7AEE90(int *this, _DWORD *a2, int a3)
+void sub_7AEE90(int *this, _DWORD *a2, int a3)
 {
   if ( a3 < 0 || a3 >= *this ) /*0x7aee9a*/
     return 0; /*0x7aeead*/

@@ -12,63 +12,18 @@ namespace gamemd {
 char TEventClass::Execute(int a2, int a3, int a4, int * a5, int a6, int a7)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall TEventClass::Execute(_DWORD *this, int a2, int a3, int a4, int *a5, int a6, int a7)
+void TEventClass::Execute(int a2, int a3, int a4, int *a5, int a6, int a7)
 {
-  int v8; // ecx
-  int v9; // eax
-  int v10; // edi
-  const char *v11; // edx
-  char *v12; // ebp
-  int v13; // edi
-  int v14; // ebx
-  int v15; // ebp
-  int v16; // esi
-  int v18; // eax
-  int v19; // edi
-  const char *v20; // edx
-  char *v21; // ebp
-  int v22; // edi
-  int v23; // esi
-  int v24; // edx
-  int v25; // eax
-  int v26; // edx
-  int v27; // eax
-  void *v28; // ecx
-  int v29; // esi
-  int v30; // esi
   int *WorldCoords; // eax
-  int v32; // esi
-  int v33; // edi
-  int v34; // ebx
-  int *v35; // eax
-  int v36; // edx
-  int v37; // ecx
-  int v38; // eax
-  double v39; // st7
-  int v40; // esi
-  int v41; // edx
-  char *v42; // ecx
-  int v43; // eax
-  int v44; // esi
-  int v45; // edx
-  int *v46; // eax
-  int v47; // ecx
-  int v48; // eax
   int Owner; // esi
-  int v50; // eax
-  void *v51; // ecx
-  void *v52; // edi
-  int v53; // ebx
-  _DWORD v55[3]; // [esp+20h] [ebp-18h] BYREF
-  _BYTE v56[12]; // [esp+2Ch] [ebp-Ch] BYREF
 
-  v8 = this->TEventClass_field_2C; /*0x71e94d*/
+  int v8 = this->TEventClass_field_2C; /*0x71e94d*/
   switch ( v8 ) /*0x71e964*/
   {
     case 13: /*0x71e964*/
     case 51: /*0x71e964*/
-      v26 = *a5; /*0x71ec37*/
-      v27 = a5[2]; /*0x71ec39*/
+      int v26 = *a5; /*0x71ec37*/
+      int v27 = a5[2]; /*0x71ec39*/
       if ( *a5 == -1 ) /*0x71ec3f*/
         goto LABEL_44; /*0x71ec3f*/
       if ( (int)g_CurrentFrame - v26 < v27 ) /*0x71ec4b*/
@@ -82,8 +37,8 @@ LABEL_44:
     case 14: /*0x71e964*/
       if ( *((_DWORD *)g_ScenarioClass_Instance + 1146) == -1 ) /*0x71ebf6*/
         return 0; /*0x71ebf6*/
-      v24 = *((_DWORD *)g_ScenarioClass_Instance + 1146); /*0x71ebfc*/
-      v25 = *((_DWORD *)g_ScenarioClass_Instance + 1148); /*0x71ec02*/
+      int v24 = *((_DWORD *)g_ScenarioClass_Instance + 1146); /*0x71ebfc*/
+      int v25 = *((_DWORD *)g_ScenarioClass_Instance + 1148); /*0x71ec02*/
       if ( v24 == -1 ) /*0x71ec0b*/
         return !v25; /*0x71ec0b*/
       if ( (int)g_CurrentFrame - v24 >= v25 ) /*0x71ec17*/
@@ -109,13 +64,13 @@ LABEL_44:
     case 47: /*0x71e964*/
       return this->TEventClass_field_34 <= (int)g_CurrentFrame / 15; /*0x71eb50*/
     case 60: /*0x71e964*/
-      v9 = -1; /*0x71e971*/
-      v10 = DataGlobal_A8EB10 - 1; /*0x71e974*/
+      int v9 = -1; /*0x71e971*/
+      int v10 = DataGlobal_A8EB10 - 1; /*0x71e974*/
       a6 = -1; /*0x71e975*/
       if ( DataGlobal_A8EB10 - 1 < 0 ) /*0x71e97b*/
         goto LABEL_8; /*0x71e97b*/
-      v11 = (const char *)(this + 14); /*0x71e982*/
-      v12 = (char *)DataGlobal_A8EB04 + 4 * v10; /*0x71e985*/
+      const char * v11 = (const char *)(this + 14); /*0x71e982*/
+      char * v12 = (char *)DataGlobal_A8EB04 + 4 * v10; /*0x71e985*/
       while ( strcmp((const char *)(*(_DWORD *)v12 + 36), v11) ) /*0x71e9bb*/
       {
         --v10; /*0x71e9bd*/
@@ -132,10 +87,10 @@ LABEL_8:
         return 0; /*0x71e9d3*/
       if ( v9 < 0 ) /*0x71e9db*/
         return 0; /*0x71e9db*/
-      v13 = 0; /*0x71e9eb*/
-      v14 = *((_DWORD *)DataGlobal_A8EB04 + v9); /*0x71e9ed*/
-      v15 = this->TEventClass_field_34; /*0x71e9f5*/
-      v16 = g_SidebarState - 1; /*0x71e9f8*/
+      int v13 = 0; /*0x71e9eb*/
+      int v14 = *((_DWORD *)DataGlobal_A8EB04 + v9); /*0x71e9ed*/
+      DynamicVector *v15 = this->TEventClass_field_34; /*0x71e9f5*/
+      int v16 = g_SidebarState - 1; /*0x71e9f8*/
       if ( g_SidebarState - 1 < 0 ) /*0x71e9fd*/
         return 0; /*0x71e9fd*/
       while ( 1 ) /*0x71ea03*/
@@ -150,13 +105,13 @@ LABEL_8:
       }
       return 1; /*0x71ea1b*/
     case 61: /*0x71e964*/
-      v18 = -1; /*0x71ea36*/
-      v19 = DataGlobal_A8EB10 - 1; /*0x71ea39*/
+      int v18 = -1; /*0x71ea36*/
+      int v19 = DataGlobal_A8EB10 - 1; /*0x71ea39*/
       a6 = -1; /*0x71ea3a*/
       if ( DataGlobal_A8EB10 - 1 < 0 ) /*0x71ea40*/
         goto LABEL_22; /*0x71ea40*/
-      v20 = (const char *)(this + 14); /*0x71ea47*/
-      v21 = (char *)DataGlobal_A8EB04 + 4 * v19; /*0x71ea4a*/
+      const char * v20 = (const char *)(this + 14); /*0x71ea47*/
+      char * v21 = (char *)DataGlobal_A8EB04 + 4 * v19; /*0x71ea4a*/
       while ( strcmp((const char *)(*(_DWORD *)v21 + 36), v20) ) /*0x71ea80*/
       {
         --v19; /*0x71ea82*/
@@ -171,8 +126,8 @@ LABEL_8:
 LABEL_22:
       if ( v18 >= DataGlobal_A8EB10 || v18 < 0 ) /*0x71eaa0*/
         return 0; /*0x71eaa0*/
-      v22 = *((_DWORD *)DataGlobal_A8EB04 + v18); /*0x71eab2*/
-      v23 = g_SidebarState - 1; /*0x71eab5*/
+      int v22 = *((_DWORD *)DataGlobal_A8EB04 + v18); /*0x71eab2*/
+      int v23 = g_SidebarState - 1; /*0x71eab5*/
       if ( g_SidebarState - 1 < 0 ) /*0x71eaba*/
         return 1; /*0x71eaba*/
       while ( (*(int (__thiscall **)(_DWORD))(**((_DWORD **)g_TechnoClass_Count + v23) + 132))(*((_DWORD *)g_TechnoClass_Count /*0x71ead2*/
@@ -238,13 +193,14 @@ LABEL_22:
         case 59: /*0x71ecd6*/
           if ( a2 == v8 ) /*0x71f1bf*/
           {
-            v51 = (void *)this->TEventClass_field_34; /*0x71f1c1*/
+            void * v51 = (void *)this->TEventClass_field_34; /*0x71f1c1*/
             if ( v51 == (void *)-1 || HouseClass::FindOwner(v51) ) /*0x71f1c9*/
             {
               if ( a4 ) /*0x71f1d8*/
               {
-                v52 = (void *)this->TEventClass_field_34; /*0x71f1da*/
+                void * v52 = (void *)this->TEventClass_field_34; /*0x71f1da*/
                 if ( v52 == (void *)-1 /*0x71f1f5*/
+  int v53; // ebx
                   || (v53 = (*(int (__thiscall **)(int))(*(_DWORD *)a4 + 56))(a4),
                       v53 == *(_DWORD *)(HouseClass::FindOwner(v52) + 48)) )
                 {
@@ -261,14 +217,14 @@ LABEL_22:
           {
             if ( a4 ) /*0x71ecef*/
             {
-              v28 = (void *)this->TEventClass_field_34; /*0x71ecf5*/
+              void * v28 = (void *)this->TEventClass_field_34; /*0x71ecf5*/
               if ( v28 != (void *)-1 ) /*0x71ecfb*/
               {
                 if ( HouseClass::FindOwner(v28) ) /*0x71ed01*/
                 {
                   if ( (*(int (__thiscall **)(int, int))(*(_DWORD *)a4 + 208))(a4, 1) ) /*0x71ed14*/
                   {
-                    v29 = (*(int (__thiscall **)(int, int))(*(_DWORD *)a4 + 208))(a4, 1); /*0x71ed31*/
+                    int v29 = (*(int (__thiscall **)(int, int))(*(_DWORD *)a4 + 208))(a4, 1); /*0x71ed31*/
                     if ( *(_DWORD *)(v29 + 48) == *(_DWORD *)(HouseClass::FindOwner((void *)this->TEventClass_field_34) + 48) ) /*0x71ed40*/
                     {
                       *(_BYTE *)a6 = 1; /*0x71ed4d*/
@@ -285,7 +241,7 @@ LABEL_22:
           {
             if ( a4 ) /*0x71ed6c*/
             {
-              v30 = (*(int (__thiscall **)(int, int))(*(_DWORD *)a4 + 204))(a4, 1); /*0x71ed7c*/
+              int v30 = (*(int (__thiscall **)(int, int))(*(_DWORD *)a4 + 204))(a4, 1); /*0x71ed7c*/
               if ( (*(int (__thiscall **)(int))(*(_DWORD *)v30 + 44))(v30) == 16 /*0x71eda2*/
                 && this->TEventClass_field_34 != -1
                 && (*(int (__thiscall **)(int))(*(_DWORD *)v30 + 64))(v30) == this->TEventClass_field_34 )
@@ -299,17 +255,20 @@ LABEL_22:
         case 34: /*0x71ecd6*/
           if ( a2 == 34 ) /*0x71edc6*/
           {
+  _DWORD v55[3]; // [esp+20h] [ebp-18h] BYREF
             WorldCoords = Cell::GetWorldCoords((__int16 *)g_ScenarioClass_Instance, v55, this->TEventClass_field_34); /*0x71eddb*/
-            v32 = *WorldCoords; /*0x71ede0*/
-            v33 = WorldCoords[1]; /*0x71ede6*/
-            v34 = WorldCoords[2]; /*0x71edeb*/
-            v35 = (int *)(*(int (__thiscall **)(int, _BYTE *))(*(_DWORD *)a4 + 72))(a4, v56); /*0x71edf3*/
-            v36 = v35[1]; /*0x71edf6*/
-            v37 = *v35; /*0x71edf9*/
-            v38 = v35[2]; /*0x71edfb*/
+            int v32 = *WorldCoords; /*0x71ede0*/
+            int v33 = WorldCoords[1]; /*0x71ede6*/
+            int v34 = WorldCoords[2]; /*0x71edeb*/
+  _BYTE v56[12]; // [esp+2Ch] [ebp-Ch] BYREF
+            int * v35 = (int *)(*(int (__thiscall **)(int, _BYTE *))(*(_DWORD *)a4 + 72))(a4, v56); /*0x71edf3*/
+            int v36 = v35[1]; /*0x71edf6*/
+            int v37 = *v35; /*0x71edf9*/
+            int v38 = v35[2]; /*0x71edfb*/
             v55[1] = v36 - v33; /*0x71ee00*/
             v55[2] = v38 - v34; /*0x71ee0c*/
             v55[0] = v37 - v32; /*0x71ee14*/
+  double v39; // st7
             v39 = Math::Sqrt( /*0x71ee38*/
                     (double)(v37 - v32) * (double)(v37 - v32)
                   + (double)(v38 - v34) * (double)(v38 - v34)
@@ -322,6 +281,9 @@ LABEL_22:
         return 0; /*0x71ee7c*/
       if ( a3 ) /*0x71ee88*/
       {
+  char *v42; // ecx
+  int v41; // edx
+  int v40; // esi
         switch ( v8 ) /*0x71eea2*/
         {
           case 12: /*0x71eea2*/
@@ -339,14 +301,14 @@ LABEL_22:
           case 17: /*0x71eea2*/
             if ( *(int *)(a3 + 752) <= 0 ) /*0x71ef47*/
               goto LABEL_122; /*0x71ef47*/
-            v44 = *(_DWORD *)(a3 + 120); /*0x71ef4d*/
-            v45 = 0; /*0x71ef50*/
+            int v44 = *(_DWORD *)(a3 + 120); /*0x71ef4d*/
+            int v45 = 0; /*0x71ef50*/
             if ( v44 <= 0 ) /*0x71ef54*/
               goto LABEL_122; /*0x71ef54*/
-            v46 = *(int **)(a3 + 108); /*0x71ef5a*/
+            int * v46 = *(int **)(a3 + 108); /*0x71ef5a*/
             while ( 1 ) /*0x71ef5d*/
             {
-              v47 = *v46; /*0x71ef5d*/
+              int v47 = *v46; /*0x71ef5d*/
               if ( *v46 ) /*0x71ef5d*/
               {
                 if ( !*(_BYTE *)(v47 + 129) && *(_DWORD *)(*(_DWORD *)(v47 + 1312) + 3768) ) /*0x71ef73*/
@@ -362,7 +324,7 @@ LABEL_22:
               goto LABEL_122; /*0x71ef96*/
             return 0; /*0x71efa5*/
           case 19: /*0x71eea2*/
-            v48 = *(_DWORD *)(a3 + 620); /*0x71efeb*/
+            int v48 = *(_DWORD *)(a3 + 620); /*0x71efeb*/
             goto LABEL_112; /*0x71efeb*/
           case 20: /*0x71eea2*/
             if ( *(_DWORD *)(a3 + 628) != this->TEventClass_field_34 ) /*0x71f00e*/
@@ -407,7 +369,7 @@ LABEL_112:
         }
         while ( 1 ) /*0x71eebe*/
         {
-          v43 = *(_DWORD *)v42; /*0x71eebe*/
+          int v43 = *(_DWORD *)v42; /*0x71eebe*/
           if ( *(_DWORD *)(*(_DWORD *)v42 + 36) == this->TEventClass_field_30 && !*(_DWORD *)(v43 + 84) && *(_BYTE *)(v43 + 130) ) /*0x71eecc*/
             break; /*0x71eecc*/
           ++v41; /*0x71eed6*/
@@ -444,7 +406,7 @@ LABEL_122:
           case 0x1E: /*0x71f092*/
             return HouseClass::GetPowerRatio((int *)Owner) < 1.0; /*0x71f0ba*/
           case 0x37: /*0x71f092*/
-            v50 = *(_DWORD *)(Owner + 748); /*0x71f159*/
+            int v50 = *(_DWORD *)(Owner + 748); /*0x71f159*/
             return v50 <= 0; /*0x71f159*/
           case 0x38: /*0x71f092*/
             if ( *(_DWORD *)(Owner + 744) - *(_DWORD *)(Owner + 748) > 0 ) /*0x71f17f*/
@@ -468,17 +430,15 @@ namespace gamemd {
 int TEventClass::PrepareSaveToINI(const char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall TEventClass::PrepareSaveToINI(int *this, const char *a2)
+void TEventClass::PrepareSaveToINI(const char *a2)
 {
-  int v2; // edx
   int v3; // eax
   int v4; // esi
   const CHAR *v6; // [esp-10h] [ebp-18h]
   int v7; // [esp-Ch] [ebp-14h]
   int v8; // [esp-8h] [ebp-10h]
   int v9; // [esp-4h] [ebp-Ch]
-
-  v2 = this->TEventClass_field_2C; /*0x71f390*/
+  int v2 = this->TEventClass_field_2C; /*0x71f390*/
   switch ( v2 ) /*0x71f3a8*/
   {
     case 1: /*0x71f3a8*/
@@ -574,7 +534,7 @@ namespace gamemd {
 int TEventClass::CheckConditions(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall TEventClass::_vt10(_DWORD *this, int a2, int a3)
+void TEventClass::_vt10(int a2, int a3)
 {
   int result; // eax
 
@@ -598,9 +558,6 @@ TEventClass * TEventClass::Fire(char a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 TEventClass *__thiscall TEventClass::Fire(void **this, char a2)
 {
-  int v3; // eax
-  int v4; // eax
-  int v5; // eax
   void **v7; // [esp+8h] [ebp-4h] BYREF
 
   *this = &TEventClass::`vftable'; /*0x71fa86*/
@@ -609,7 +566,7 @@ TEventClass *__thiscall TEventClass::Fire(void **this, char a2)
   this->vtable4 = &vt_TEventClass; /*0x71fa9a*/
   AbstractClass::AnnounceExpiredPointer(this, 1); /*0x71faa1*/
   v7 = this; /*0x71fab6*/
-  v3 = (*(int (__thiscall **)(int *, void ***))(TActionClass_Array + 16))(&TActionClass_Array, &v7); /*0x71faba*/
+  int v3 = (*(int (__thiscall **)(int *, void ***))(TActionClass_Array + 16))(&TActionClass_Array, &v7); /*0x71faba*/
   if ( v3 != -1 && v3 < g_TActionClassState && v3 < --g_TActionClassState ) /*0x71fad5*/
   {
     do /*0x71faed*/
@@ -620,7 +577,7 @@ TEventClass *__thiscall TEventClass::Fire(void **this, char a2)
     while ( v3 < g_TActionClassState ); /*0x71faed*/
   }
   v7 = this; /*0x71faff*/
-  v4 = (*(int (__thiscall **)(int *, void ***))(g_AnimPoolManager + 16))(&g_AnimPoolManager, &v7); /*0x71fb03*/
+  int v4 = (*(int (__thiscall **)(int *, void ***))(g_AnimPoolManager + 16))(&g_AnimPoolManager, &v7); /*0x71fb03*/
   if ( v4 != -1 && v4 < g_AnimManager && v4 < --g_AnimManager ) /*0x71fb1e*/
   {
     do /*0x71fb36*/
@@ -631,7 +588,7 @@ TEventClass *__thiscall TEventClass::Fire(void **this, char a2)
     while ( v4 < g_AnimManager ); /*0x71fb36*/
   }
   v7 = this; /*0x71fb48*/
-  v5 = (*(int (__thiscall **)(int *, void ***))(DataGlobal_B0F1A0 + 16))(&DataGlobal_B0F1A0, &v7); /*0x71fb4c*/
+  int v5 = (*(int (__thiscall **)(int *, void ***))(DataGlobal_B0F1A0 + 16))(&DataGlobal_B0F1A0, &v7); /*0x71fb4c*/
   if ( v5 != -1 && v5 < DataGlobal_B0F1B0 && v5 < --DataGlobal_B0F1B0 ) /*0x71fb67*/
   {
     do /*0x71fb7f*/

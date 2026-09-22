@@ -17,13 +17,7 @@ long double __usercall CIpow_Helper@<st0>(
         int a6,
         int a7)
 {
-  int v7; // ecx
-  int v8; // ecx
-  int v9; // eax
-  char v10; // zf
   long double result; // st7
-  char v12; // cl
-  int v13; // ecx
   int v14; // ecx
   int v15; // eax
   unsigned __int8 v17; // cl
@@ -34,11 +28,11 @@ long double __usercall CIpow_Helper@<st0>(
   _BYTE v22[116]; // [esp+14h] [ebp-78h] BYREF
   int v23; // [esp+88h] [ebp-4h]
 
-  v7 = CW; /*0x7c8fd2*/
+  int v7 = CW; /*0x7c8fd2*/
   v23 = CW; /*0x7c8fd4*/
   if ( (_WORD)CW != 639 ) /*0x7c8fdf*/
     CW = _load_CW(v23); /*0x7c8fe1*/
-  v8 = v7 & 0x7FF00000; /*0x7c8fe6*/
+  int v8 = v7 & 0x7FF00000; /*0x7c8fe6*/
   if ( v8 == 2146435072 ) /*0x7c8ff6*/
   {
     if ( a6 | CW & 0xFFFFF ) /*0x7c90a0*/
@@ -46,7 +40,7 @@ long double __usercall CIpow_Helper@<st0>(
       _fload_withFB(0, &a4); /*0x7c906d*/
       if ( (a7 & 0x80000) != 0 ) /*0x7c9077*/
         goto LABEL_15; /*0x7c9077*/
-      v14 = v13 + 1; /*0x7c9079*/
+      int v13 = v13 + 1; /*0x7c9079*/
     }
     else
     {
@@ -79,7 +73,8 @@ LABEL_15:
     result = a3 + a2; /*0x7c907c*/
     goto LABEL_11; /*0x7c9083*/
   }
-  v9 = _fload_withFB(v8, &a4); /*0x7c8ffc*/
+  int v9 = _fload_withFB(v8, &a4); /*0x7c8ffc*/
+  char v10; // zf
   if ( v10 ) /*0x7c9001*/
   {
     v14 = 0; /*0x7c9095*/
@@ -91,6 +86,7 @@ LABEL_15:
     {
       result = __FYL2X__(a2, a3); /*0x7c901f*/
       _twoToTOS(); /*0x7c9021*/
+  char v12; // cl
       if ( v12 == 1 ) /*0x7c9029*/
         result = -result; /*0x7c902b*/
       if ( !CRTGlobal_B7819C ) /*0x7c9034*/

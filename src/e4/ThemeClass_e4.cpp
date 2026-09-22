@@ -9,7 +9,7 @@
 int ThemeClass::RequestBuffer()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ThemeClass_RequestBuffer(_DWORD *this)
+void ThemeClass_RequestBuffer(_DWORD *this)
 {
   return RequestBufferMixer((unsigned int *)(this->q014 + 16), 0);
 }
@@ -29,13 +29,11 @@ __int64 __thiscall sub_408140(_QWORD *this)
 char ThemeClass::ReadThemeEntry(unsigned char *** a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall ThemeClass::ReadThemeEntry(int this, unsigned __int8 ***a2)
+void ThemeClass::ReadThemeEntry(int this, unsigned __int8 ***a2)
 {
   CCINIClass *v3; // edi
   int Int_Overwrite; // eax
   char Bool_Overwrite; // al
-  int v6; // ecx
-  char v8; // [esp-Ch] [ebp-14h]
 
   INIClass::ResetSection(a2); /*0x72048a*/
   if ( !INIClass::BinarySearchSection((int)a2, (INIClass *)this) ) /*0x720492*/
@@ -56,7 +54,7 @@ char __thiscall ThemeClass::ReadThemeEntry(int this, unsigned __int8 ***a2)
                     (unsigned __int8 *)this,
                     (CCINIClass *)&stru_81B1A4.sectionHead[2],
                     *(INIClass **)(this + 640));
-  v8 = *(_BYTE *)(this + 648); /*0x72050e*/
+  char v8 = *(_BYTE *)(this + 648); /*0x72050e*/
   *(_DWORD *)(this + 640) = Int_Overwrite; /*0x720515*/
   *(_BYTE *)(this + 648) = INIClass::ReadBool_Overwrite( /*0x720520*/
                              (int)a2,
@@ -68,7 +66,7 @@ char __thiscall ThemeClass::ReadThemeEntry(int this, unsigned __int8 ***a2)
                      (unsigned __int8 *)this,
                      (CCINIClass *)&stru_830620[82208],
                      *(_BYTE *)(this + 649));
-  v6 = *(_DWORD *)(this + 652); /*0x72053a*/
+  int v6 = *(_DWORD *)(this + 652); /*0x72053a*/
   *(_BYTE *)(this + 649) = Bool_Overwrite; /*0x720540*/
   *(_DWORD *)(this + 652) = HouseTypeClass::loadCountryData( /*0x720554*/
                               a2,
@@ -92,28 +90,17 @@ void * ThemeClass::InitializeThemes(char * a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void *__thiscall sub_720590(int this, char *a2)
 {
-  char *v2; // edi
   int KeyCount; // ebp
-  int v5; // esi
   unsigned __int8 *StringByIndex; // eax
-  int v7; // esi
-  _DWORD *v8; // eax
-  char *v9; // ebp
-  int v10; // eax
-  int v11; // ecx
-  int v12; // eax
-  int v13; // edx
   void *result; // eax
   void *Enabled; // eax
-  int v16; // [esp+0h] [ebp-38h] BYREF
   int i; // [esp+10h] [ebp-28h]
-  int v18; // [esp+14h] [ebp-24h]
   char Destination[32]; // [esp+18h] [ebp-20h] BYREF
 
-  v2 = a2; /*0x720597*/
+  char * v2 = a2; /*0x720597*/
   KeyCount = INIClass::GetKeyCount(a2, (unsigned __int8 *)g_INI_Key_Themes); /*0x7205a9*/
-  v5 = 0; /*0x7205ab*/
-  v18 = KeyCount; /*0x7205af*/
+  int v5 = 0; /*0x7205ab*/
+  int v18 = KeyCount; /*0x7205af*/
   for ( i = 0; v5 < KeyCount; i = v5 ) /*0x7205b7*/
   {
     StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v2, (unsigned __int8 *)g_INI_Key_Themes, v5); /*0x7205d1*/
@@ -125,11 +112,13 @@ void *__thiscall sub_720590(int this, char *a2)
            Destination,
            32) )
     {
+  char *v9; // ebp
+  int v16; // [esp+0h] [ebp-38h] BYREF
       if ( &v16 == (int *)-24 ) /*0x7205f1*/
         goto LABEL_10; /*0x7205f1*/
       if ( !strlen(Destination) ) /*0x7205f7*/
         goto LABEL_10; /*0x7205f7*/
-      v7 = 0; /*0x720606*/
+      int v7 = 0; /*0x720606*/
       if ( this->q024 <= 0 ) /*0x72060a*/
         goto LABEL_10; /*0x72060a*/
       while ( _strcmpi(*(const void **)(*(_DWORD *)(this + 24) + 4 * v7), Destination) ) /*0x720622*/
@@ -140,7 +129,7 @@ void *__thiscall sub_720590(int this, char *a2)
       if ( v7 == -1 ) /*0x720631*/
       {
 LABEL_10:
-        v8 = __2_YAPAXI_Z(0x290u); /*0x720637*/
+        _DWORD * v8 = __2_YAPAXI_Z(0x290u); /*0x720637*/
         v9 = 0; /*0x720641*/
         if ( v8 ) /*0x720648*/
         {
@@ -156,14 +145,15 @@ LABEL_10:
           v9 = (char *)v8; /*0x720686*/
         }
         strcpy(v9, Destination); /*0x7206a0*/
-        v10 = *(_DWORD *)(this + 28); /*0x7206a9*/
+        int v10 = *(_DWORD *)(this + 28); /*0x7206a9*/
         if ( this->q024 < v10 /*0x7206d1*/
           || (*(_BYTE *)(this + 33) || !v10)
+  int v11; // ecx
           && (v11 = this->ThemeClass_field_28, v11 > 0)
           && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(this->q014 + 8))(this + 20, v10 + v11, 0) )
         {
-          v12 = this->q024; /*0x7206d8*/
-          v13 = *(_DWORD *)(this + 24); /*0x7206db*/
+          int v12 = this->q024; /*0x7206d8*/
+          int v13 = *(_DWORD *)(this + 24); /*0x7206db*/
           this->q024 = v12 + 1; /*0x7206e1*/
           *(_DWORD *)(v13 + 4 * v12) = v9; /*0x7206e4*/
         }
@@ -200,12 +190,11 @@ LABEL_10:
 int ThemeClass::ClearQueues()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __cdecl ThemeClass_ClearQueues()
+int ThemeClass_ClearQueues()
 {
   int result; // eax
   int i; // esi
   int j; // esi
-  int *v3; // edi
   int k; // esi
 
   result = DataGlobal_B1D4BC; /*0x752370*/
@@ -229,7 +218,7 @@ int __cdecl ThemeClass_ClearQueues()
       *(_DWORD *)(*(_DWORD *)(j + 12) + 80) = 2; /*0x7523fe*/
       __3_YAXPAX_Z((void *)j); /*0x752401*/
     }
-    v3 = (int *)DataGlobal_B1D450; /*0x752419*/
+    int * v3 = (int *)DataGlobal_B1D450; /*0x752419*/
     do /*0x752457*/
     {
       result = AudioQueue::GetNext(v3); /*0x752420*/

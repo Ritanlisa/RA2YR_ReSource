@@ -7,50 +7,16 @@
 char CommandClass::BuildBar()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall CommandClass_BuildBar(void *this)
+void CommandClass_BuildBar(void *this)
 {
-  int *v2; // esi
-  unsigned int v3; // eax
-  _DWORD *v4; // esi
-  int v5; // edx
-  int v6; // eax
-  int v7; // ecx
-  int v8; // edx
-  unsigned int v9; // eax
-  _DWORD *v10; // esi
-  int v11; // edx
-  int v12; // eax
-  int v13; // ecx
-  int v14; // edx
-  unsigned int v15; // eax
-  _DWORD *v16; // esi
-  int v17; // edx
-  int v18; // eax
-  int v19; // ecx
-  int v20; // edx
-  unsigned int v21; // eax
-  _DWORD *v22; // esi
-  int v23; // edx
-  int v24; // eax
-  int v25; // ecx
-  int v26; // edx
-  unsigned int v27; // eax
-  _DWORD *v28; // ecx
-  unsigned int v29; // eax
-  _DWORD *v30; // ecx
   char *Entry; // eax
-  char *v32; // eax
-  char *v33; // eax
-  char *v34; // eax
-  char *v35; // eax
   int v37; // [esp+8h] [ebp-1Ch] BYREF
   int v38; // [esp+Ch] [ebp-18h]
   int v39; // [esp+10h] [ebp-14h]
   int v40; // [esp+14h] [ebp-10h]
   int v41; // [esp+18h] [ebp-Ch]
   char *v42; // [esp+1Ch] [ebp-8h]
-
-  v2 = (int *)&DataGlobal_B0C1C0; /*0x6d1207*/
+  int * v2 = (int *)&DataGlobal_B0C1C0; /*0x6d1207*/
   do /*0x6d1224*/
   {
     (*(void (__thiscall **)(int *))(*v2 + 32))(v2); /*0x6d1210*/
@@ -59,19 +25,19 @@ char __thiscall CommandClass_BuildBar(void *this)
   }
   while ( (int)v2 < (int)&DataGlobal_B0CB20 ); /*0x6d1224*/
   (*(void (__thiscall **)(void *, _DWORD *))(this->q00C)(this, DataGlobal_B0CCB0); /*0x6d122f*/
-  v3 = g_ObjectTrackingPool[DataGlobal_B0CD24]; /*0x6d1238*/
+  unsigned int v3 = g_ObjectTrackingPool[DataGlobal_B0CD24]; /*0x6d1238*/
   if ( v3 <= 0x18 ) /*0x6d1241*/
   {
-    v4 = (_DWORD *)((char *)&DataGlobal_B0C1C0 + 96 * v3); /*0x6d124e*/
+    _DWORD * v4 = (_DWORD *)((char *)&DataGlobal_B0C1C0 + 96 * v3); /*0x6d124e*/
     if ( v4 ) /*0x6d1256*/
     {
       Struct::Zero25(&v37); /*0x6d125c*/
-      v5 = v4[3]; /*0x6d1264*/
-      v6 = v4[9]; /*0x6d1267*/
+      int v5 = v4[3]; /*0x6d1264*/
+      int v6 = v4[9]; /*0x6d1267*/
       v39 = v4[4]; /*0x6d126a*/
-      v7 = v4[6]; /*0x6d126e*/
+      int v7 = v4[6]; /*0x6d126e*/
       v38 = v5; /*0x6d1271*/
-      v8 = v4[5]; /*0x6d1275*/
+      int v8 = v4[5]; /*0x6d1275*/
       v41 = v7; /*0x6d1278*/
       v37 = v6; /*0x6d1283*/
       v42 = DataGlobal_8428DC; /*0x6d1287*/
@@ -80,19 +46,19 @@ char __thiscall CommandClass_BuildBar(void *this)
       CommandClass::AddAction(g_TacticalRender, (int)&v37); /*0x6d12a3*/
     }
   }
-  v9 = g_ObjectTrackingPool[DataGlobal_B0CB3C]; /*0x6d12ad*/
+  unsigned int v9 = g_ObjectTrackingPool[DataGlobal_B0CB3C]; /*0x6d12ad*/
   if ( v9 <= 0x18 ) /*0x6d12b6*/
   {
-    v10 = (_DWORD *)((char *)&DataGlobal_B0C1C0 + 96 * v9); /*0x6d12c3*/
+    _DWORD * v10 = (_DWORD *)((char *)&DataGlobal_B0C1C0 + 96 * v9); /*0x6d12c3*/
     if ( v10 ) /*0x6d12cb*/
     {
       Struct::Zero25(&v37); /*0x6d12d1*/
-      v11 = v10[4]; /*0x6d12d9*/
-      v12 = v10[9]; /*0x6d12dc*/
+      int v11 = v10[4]; /*0x6d12d9*/
+      int v12 = v10[9]; /*0x6d12dc*/
       v38 = v10[3]; /*0x6d12df*/
-      v13 = v10[5]; /*0x6d12e3*/
+      int v13 = v10[5]; /*0x6d12e3*/
       v39 = v11; /*0x6d12e6*/
-      v14 = v10[6]; /*0x6d12ea*/
+      int v14 = v10[6]; /*0x6d12ea*/
       v40 = v13; /*0x6d12ed*/
       v37 = v12; /*0x6d12f8*/
       v42 = DataGlobal_8428D0; /*0x6d12fc*/
@@ -101,19 +67,19 @@ char __thiscall CommandClass_BuildBar(void *this)
       CommandClass::AddAction(g_TacticalRender, (int)&v37); /*0x6d1318*/
     }
   }
-  v15 = g_ObjectTrackingPool[DataGlobal_B0C1B8]; /*0x6d1323*/
+  unsigned int v15 = g_ObjectTrackingPool[DataGlobal_B0C1B8]; /*0x6d1323*/
   if ( v15 <= 0x18 ) /*0x6d132c*/
   {
-    v16 = (_DWORD *)((char *)&DataGlobal_B0C1C0 + 96 * v15); /*0x6d1339*/
+    _DWORD * v16 = (_DWORD *)((char *)&DataGlobal_B0C1C0 + 96 * v15); /*0x6d1339*/
     if ( v16 ) /*0x6d1341*/
     {
       Struct::Zero25(&v37); /*0x6d1347*/
-      v17 = v16[3]; /*0x6d134f*/
-      v18 = v16[9]; /*0x6d1352*/
+      int v17 = v16[3]; /*0x6d134f*/
+      int v18 = v16[9]; /*0x6d1352*/
       v39 = v16[4]; /*0x6d1355*/
-      v19 = v16[6]; /*0x6d1359*/
+      int v19 = v16[6]; /*0x6d1359*/
       v38 = v17; /*0x6d135c*/
-      v20 = v16[5]; /*0x6d1360*/
+      int v20 = v16[5]; /*0x6d1360*/
       v41 = v19; /*0x6d1363*/
       v37 = v18; /*0x6d136e*/
       v42 = DataGlobal_8428C4; /*0x6d1372*/
@@ -122,19 +88,19 @@ char __thiscall CommandClass_BuildBar(void *this)
       CommandClass::AddAction(g_TacticalRender, (int)&v37); /*0x6d138e*/
     }
   }
-  v21 = g_ObjectTrackingPool[DataGlobal_B0CB20]; /*0x6d1398*/
+  unsigned int v21 = g_ObjectTrackingPool[DataGlobal_B0CB20]; /*0x6d1398*/
   if ( v21 <= 0x18 ) /*0x6d13a1*/
   {
-    v22 = (_DWORD *)((char *)&DataGlobal_B0C1C0 + 96 * v21); /*0x6d13ae*/
+    _DWORD * v22 = (_DWORD *)((char *)&DataGlobal_B0C1C0 + 96 * v21); /*0x6d13ae*/
     if ( v22 ) /*0x6d13b6*/
     {
       Struct::Zero25(&v37); /*0x6d13bc*/
-      v23 = v22[4]; /*0x6d13c4*/
-      v24 = v22[9]; /*0x6d13c7*/
+      int v23 = v22[4]; /*0x6d13c4*/
+      int v24 = v22[9]; /*0x6d13c7*/
       v38 = v22[3]; /*0x6d13ca*/
-      v25 = v22[5]; /*0x6d13ce*/
+      int v25 = v22[5]; /*0x6d13ce*/
       v39 = v23; /*0x6d13d1*/
-      v26 = v22[6]; /*0x6d13d5*/
+      int v26 = v22[6]; /*0x6d13d5*/
       v40 = v25; /*0x6d13d8*/
       v37 = v24; /*0x6d13e3*/
       v42 = DataGlobal_8428B8; /*0x6d13e7*/
@@ -143,27 +109,27 @@ char __thiscall CommandClass_BuildBar(void *this)
       CommandClass::AddAction(g_TacticalRender, (int)&v37); /*0x6d1403*/
     }
   }
-  v27 = g_ObjectTrackingPool[DataGlobal_B0CB68]; /*0x6d1410*/
+  unsigned int v27 = g_ObjectTrackingPool[DataGlobal_B0CB68]; /*0x6d1410*/
   if ( v27 > 0x18 ) /*0x6d1419*/
-    v28 = 0; /*0x6d142e*/
+    _DWORD * v28 = 0; /*0x6d142e*/
   else
     v28 = (_DWORD *)((char *)&DataGlobal_B0C1C0 + 96 * v27); /*0x6d1426*/
   PushCommandClass::Execute(v28, (int)DataGlobal_8428AC); /*0x6d1435*/
-  v29 = g_ObjectTrackingPool[DataGlobal_B0CC1C]; /*0x6d1440*/
+  unsigned int v29 = g_ObjectTrackingPool[DataGlobal_B0CC1C]; /*0x6d1440*/
   if ( v29 > 0x18 ) /*0x6d1449*/
-    v30 = 0; /*0x6d145e*/
+    _DWORD * v30 = 0; /*0x6d145e*/
   else
     v30 = (_DWORD *)((char *)&DataGlobal_B0C1C0 + 96 * v29); /*0x6d1456*/
   PushCommandClass::Execute(v30, (int)DataGlobal_842898); /*0x6d1465*/
   Entry = GetFontClassEntry(DataGlobal_B0CB6C); /*0x6d1470*/
   PushCommandClass::Execute(Entry, (int)DataGlobal_84288C); /*0x6d147c*/
-  v32 = GetFontClassEntry(DataGlobal_B0CC20); /*0x6d1487*/
+  char * v32 = GetFontClassEntry(DataGlobal_B0CC20); /*0x6d1487*/
   PushCommandClass::Execute(v32, (int)DataGlobal_842880); /*0x6d1493*/
-  v33 = GetFontClassEntry(DataGlobal_B0CC28); /*0x6d149e*/
+  char * v33 = GetFontClassEntry(DataGlobal_B0CC28); /*0x6d149e*/
   PushCommandClass::Execute(v33, (int)DataGlobal_842874); /*0x6d14aa*/
-  v34 = GetFontClassEntry(DataGlobal_B0CD28); /*0x6d14b5*/
+  char * v34 = GetFontClassEntry(DataGlobal_B0CD28); /*0x6d14b5*/
   PushCommandClass::Execute(v34, (int)DataGlobal_842868); /*0x6d14c1*/
-  v35 = GetFontClassEntry(DataGlobal_B0CB38); /*0x6d14cc*/
+  char * v35 = GetFontClassEntry(DataGlobal_B0CB38); /*0x6d14cc*/
   PushCommandClass::Execute(v35, (int)DataGlobal_842858); /*0x6d14d8*/
   return PushCommandClass::Execute(DataGlobal_B0CCB0, (int)DataGlobal_842848); /*0x6d14ec*/
 }
@@ -173,25 +139,14 @@ char __thiscall CommandClass_BuildBar(void *this)
 char CommandClass::AddAction(ToolTipManager * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall CommandClass::AddAction(int this, ToolTipManager *aP1)
+void CommandClass::AddAction(int this, ToolTipManager *aP1)
 {
   ToolTipManager *v2; // edi
   ObjectClass *v4; // esi
   size_t v5; // eax
-  int v7; // eax
-  _DWORD *v8; // ebp
-  int v9; // eax
-  int v10; // ecx
-  int v11; // eax
-  int v12; // edx
-  int v13; // eax
-  char *v14; // ebx
   AbstractClass *v15; // eax
   AbstractClass *v16; // edi
   int i; // eax
-  int v18; // ecx
-  char *v19; // ecx
-  int v20; // eax
 
   v2 = aP1; /*0x724584*/
   v4 = (ObjectClass *)(this + 588); /*0x72458c*/
@@ -207,8 +162,8 @@ char __thiscall CommandClass::AddAction(int this, ToolTipManager *aP1)
       return 0; /*0x7245ca*/
     }
   }
-  v7 = __2_YAPAXI_Z(0x1Cu); /*0x7245cf*/
-  v8 = (_DWORD *)v7; /*0x7245d4*/
+  int v7 = __2_YAPAXI_Z(0x1Cu); /*0x7245cf*/
+  _DWORD * v8 = (_DWORD *)v7; /*0x7245d4*/
   if ( v7 ) /*0x7245db*/
   {
     *(_DWORD *)v7 = *(_DWORD *)&v2->IsVisible; /*0x7245e6*/
@@ -218,23 +173,24 @@ char __thiscall CommandClass::AddAction(int this, ToolTipManager *aP1)
     *(_DWORD *)(v7 + 16) = v2->Duration; /*0x7245ff*/
     *(_DWORD *)(v7 + 20) = v2->DisplayTimer[0]; /*0x724605*/
     *(_BYTE *)(v7 + 24) = v2->DisplayTimer[1]; /*0x724611*/
-    v9 = *(_DWORD *)(this + 572); /*0x724614*/
+    int v9 = *(_DWORD *)(this + 572); /*0x724614*/
     if ( *(_DWORD *)(this + 580) < v9 /*0x724641*/
       || (*(_BYTE *)(this + 577) || !v9)
+  int v10; // ecx
       && (v10 = *(_DWORD *)(this + 584), v10 > 0)
       && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(this + 564) + 8))(this + 564, v9 + v10, 0) )
     {
-      v11 = *(_DWORD *)(this + 580); /*0x72464c*/
-      v12 = *(_DWORD *)(this + 568); /*0x72464f*/
+      int v11 = *(_DWORD *)(this + 580); /*0x72464c*/
+      int v12 = *(_DWORD *)(this + 568); /*0x72464f*/
       *(_DWORD *)(this + 580) = v11 + 1; /*0x724655*/
       *(_DWORD *)(v12 + 4 * v11) = v8; /*0x724658*/
-      v13 = *(_DWORD *)&v4->__pad_0[8]; /*0x72465e*/
+      int v13 = *(_DWORD *)&v4->__pad_0[8]; /*0x72465e*/
       if ( *(_DWORD *)&v4->__pad_0[4] + 1 <= v13 ) /*0x724664*/
       {
 LABEL_19:
         *(_DWORD *)(*(_DWORD *)v4->__pad_0 + 8 * *(_DWORD *)&v4->__pad_0[4]) = *v8; /*0x7246f4*/
         *(_DWORD *)(*(_DWORD *)v4->__pad_0 + 8 * *(_DWORD *)&v4->__pad_0[4] + 4) = v8; /*0x724704*/
-        v20 = *(_DWORD *)&v4->__pad_0[4] + 1; /*0x72470b*/
+        int v20 = *(_DWORD *)&v4->__pad_0[4] + 1; /*0x72470b*/
         v4->__pad_0[12] = 0; /*0x72470c*/
         *(_DWORD *)&v4->__pad_0[4] = v20; /*0x724710*/
         return 1; /*0x724710*/
@@ -249,12 +205,13 @@ LABEL_19:
       {
         aP1 = (ToolTipManager *)10; /*0x72466e*/
       }
-      v14 = &aP1->IsVisible + v13; /*0x72468a*/
+      char * v14 = &aP1->IsVisible + v13; /*0x72468a*/
       v15 = (AbstractClass *)__2_YAPAXI_Z(8 * ((_DWORD)aP1 + v13)); /*0x724695*/
       v16 = v15; /*0x72469a*/
       if ( v15 ) /*0x7246a1*/
       {
         Array::ForEach((int)v15, 8, (int)v14, (int (__thiscall *)(int))__0Iostream_init_QAE_XZ_6); /*0x7246ac*/
+  int v18; // ecx
         for ( i = 0; i < *(_DWORD *)&v4->__pad_0[4]; *(_DWORD *)&v16->__pad_0[8 * i - 4] = *(_DWORD *)(v18 + 8 * i - 4) ) /*0x7246b8*/
         {
           v18 = *(_DWORD *)v4->__pad_0; /*0x7246ba*/
@@ -262,7 +219,7 @@ LABEL_19:
           *(_DWORD *)&v16->__pad_0[8 * i - 8] = *(_DWORD *)(*(_DWORD *)v4->__pad_0 + 8 * i - 8); /*0x7246c1*/
         }
         __3_YAXPAX_Z(*(void **)v4->__pad_0); /*0x7246d7*/
-        v19 = &aP1->IsVisible + *(_DWORD *)&v4->__pad_0[8]; /*0x7246e6*/
+        char * v19 = &aP1->IsVisible + *(_DWORD *)&v4->__pad_0[8]; /*0x7246e6*/
         *(_DWORD *)v4->__pad_0 = v16; /*0x7246e8*/
         *(_DWORD *)&v4->__pad_0[8] = v19; /*0x7246ea*/
         v4->uniqueId = 0; /*0x7246ed*/

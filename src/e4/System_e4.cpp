@@ -35,7 +35,6 @@ _BYTE *__fastcall sub_52A9E0(unsigned __int8 *a1, unsigned int *a2, unsigned int
 {
   _BYTE *result; // eax
   unsigned __int8 v5; // bl
-  unsigned int v6; // esi
   unsigned __int8 v7; // bl
 
   *a2 = -1; /*0x52a9ec*/
@@ -43,7 +42,7 @@ _BYTE *__fastcall sub_52A9E0(unsigned __int8 *a1, unsigned int *a2, unsigned int
   *a3 = -1; /*0x52a9f4*/
   *a4 = -1; /*0x52a9fa*/
   v5 = *a1; /*0x52aa01*/
-  v6 = 0; /*0x52aa03*/
+  unsigned int v6 = 0; /*0x52aa03*/
   if ( *a1 ) /*0x52aa01*/
   {
     while ( 1 ) /*0x52aa09*/
@@ -90,14 +89,11 @@ int System_Search(ObjectClass * aP0, int edx0, int * a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall System_Search(ObjectClass *aP0, int edx0, int *a2)
 {
-  int v3; // esi
-  int v4; // ebx
   int v5; // edi
-
-  v3 = edx0; /*0x52b755*/
+  int v3 = edx0; /*0x52b755*/
   if ( edx0 <= 0 ) /*0x52b757*/
     return 0; /*0x52b789*/
-  v4 = *a2; /*0x52b75d*/
+  int v4 = *a2; /*0x52b75d*/
   while ( 1 ) /*0x52b766*/
   {
     v5 = *(_DWORD *)&aP0->__pad_0[8 * (v3 / 2)]; /*0x52b766*/
@@ -124,29 +120,19 @@ namespace gamemd {
 int sub_6269A0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_6269A0()
+void sub_6269A0()
 {
-  _DWORD *v0; // eax
-  _DWORD *v1; // eax
-  _DWORD *v2; // edi
-  _DWORD *v3; // eax
-  _DWORD *v4; // esi
-  _DWORD *v5; // eax
-  _DWORD *v6; // esi
-  int *v7; // eax
-  int v8; // esi
-  int v9; // edi
 
-  v0 = g_FileExtensionState; /*0x6269a0*/
+  _DWORD * v0 = g_FileExtensionState; /*0x6269a0*/
   if ( !g_FileExtensionState ) /*0x6269a9*/
   {
-    v1 = __2_YAPAXI_Z(0x10u); /*0x6269b1*/
-    v2 = v1; /*0x6269b6*/
+    _DWORD * v1 = __2_YAPAXI_Z(0x10u); /*0x6269b1*/
+    _DWORD * v2 = v1; /*0x6269b6*/
     if ( v1 ) /*0x6269bd*/
     {
       *v1 = -1; /*0x6269c5*/
-      v3 = __2_YAPAXI_Z(0x18u); /*0x6269cb*/
-      v4 = v3; /*0x6269d0*/
+      _DWORD * v3 = __2_YAPAXI_Z(0x18u); /*0x6269cb*/
+      _DWORD * v4 = v3; /*0x6269d0*/
       if ( v3 ) /*0x6269d7*/
       {
         StringVector::Construct(v3, 0, 0); /*0x6269df*/
@@ -159,8 +145,8 @@ int sub_6269A0()
         v4 = 0; /*0x6269fa*/
       }
       v2[1] = v4; /*0x6269fe*/
-      v5 = __2_YAPAXI_Z(0x18u); /*0x626a01*/
-      v6 = v5; /*0x626a06*/
+      _DWORD * v5 = __2_YAPAXI_Z(0x18u); /*0x626a01*/
+      _DWORD * v6 = v5; /*0x626a06*/
       if ( v5 ) /*0x626a0d*/
       {
         VectorClass::ConstructHSV(v5, 0, 0); /*0x626a15*/
@@ -173,7 +159,7 @@ int sub_6269A0()
         v6 = 0; /*0x626a30*/
       }
       v2[2] = v6; /*0x626a34*/
-      v7 = (int *)__2_YAPAXI_Z(0x10u); /*0x626a37*/
+      int * v7 = (int *)__2_YAPAXI_Z(0x10u); /*0x626a37*/
       if ( v7 ) /*0x626a41*/
         v2[3] = DynamicVectorArray::Constructor(v7, 10, 31, (int)HashStringMod31); /*0x626a53*/
       else
@@ -186,8 +172,8 @@ int sub_6269A0()
     }
     g_FileExtensionState = v0; /*0x626a65*/
   }
-  v8 = 0; /*0x626a6d*/
-  v9 = *(_DWORD *)(v0[1] + 16); /*0x626a6f*/
+  int v8 = 0; /*0x626a6d*/
+  int v9 = *(_DWORD *)(v0[1] + 16); /*0x626a6f*/
   if ( v9 > 0 ) /*0x626a74*/
   {
     do /*0x626a90*/
@@ -211,36 +197,16 @@ char sub_626AB0(const char * a1, int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __fastcall sub_626AB0(const char *a1, int a2)
 {
-  _DWORD *v2; // eax
-  _DWORD *v3; // ebp
-  _DWORD *v4; // eax
-  _DWORD *v5; // esi
-  _DWORD *v6; // eax
-  _DWORD *v7; // esi
-  int *v8; // eax
-  char *v9; // ebp
-  int v10; // esi
-  int v11; // eax
-  int v12; // ecx
-  int v13; // eax
-  int v14; // edx
-  int v15; // esi
-  int v16; // ecx
-  int v17; // eax
-  int v18; // eax
-  int v19; // ecx
-  int v20; // edx
-  int v21; // edx
 
   if ( !g_FileExtensionState ) /*0x626ac5*/
   {
-    v2 = __2_YAPAXI_Z(0x10u); /*0x626acd*/
-    v3 = v2; /*0x626ad2*/
+    _DWORD * v2 = __2_YAPAXI_Z(0x10u); /*0x626acd*/
+    _DWORD * v3 = v2; /*0x626ad2*/
     if ( v2 ) /*0x626ad9*/
     {
       *v2 = -1; /*0x626ae1*/
-      v4 = __2_YAPAXI_Z(0x18u); /*0x626ae8*/
-      v5 = v4; /*0x626aed*/
+      _DWORD * v4 = __2_YAPAXI_Z(0x18u); /*0x626ae8*/
+      _DWORD * v5 = v4; /*0x626aed*/
       if ( v4 ) /*0x626af9*/
       {
         StringVector::Construct(v4, 0, 0); /*0x626b01*/
@@ -253,8 +219,8 @@ char __fastcall sub_626AB0(const char *a1, int a2)
         v5 = 0; /*0x626b18*/
       }
       v3[1] = v5; /*0x626b1c*/
-      v6 = __2_YAPAXI_Z(0x18u); /*0x626b1f*/
-      v7 = v6; /*0x626b24*/
+      _DWORD * v6 = __2_YAPAXI_Z(0x18u); /*0x626b1f*/
+      _DWORD * v7 = v6; /*0x626b24*/
       if ( v6 ) /*0x626b2b*/
       {
         VectorClass::ConstructHSV(v6, 0, 0); /*0x626b33*/
@@ -267,7 +233,7 @@ char __fastcall sub_626AB0(const char *a1, int a2)
         v7 = 0; /*0x626b4a*/
       }
       v3[2] = v7; /*0x626b4e*/
-      v8 = (int *)__2_YAPAXI_Z(0x10u); /*0x626b51*/
+      int * v8 = (int *)__2_YAPAXI_Z(0x10u); /*0x626b51*/
       if ( v8 ) /*0x626b5b*/
         v3[3] = DynamicVectorArray::Constructor(v8, 10, 31, (int)HashStringMod31); /*0x626b6c*/
       else
@@ -279,33 +245,35 @@ char __fastcall sub_626AB0(const char *a1, int a2)
       g_FileExtensionState = 0; /*0x626b84*/
     }
   }
-  v9 = (char *)__2_YAPAXI_Z(0x100u); /*0x626b9c*/
+  char * v9 = (char *)__2_YAPAXI_Z(0x100u); /*0x626b9c*/
   strcpy(v9, a1); /*0x626bb5*/
-  v10 = *((_DWORD *)g_FileExtensionState + 1); /*0x626bc4*/
-  v11 = *(_DWORD *)(v10 + 8); /*0x626bc7*/
+  int v10 = *((_DWORD *)g_FileExtensionState + 1); /*0x626bc4*/
+  int v11 = *(_DWORD *)(v10 + 8); /*0x626bc7*/
   if ( *(_DWORD *)(v10 + 16) < v11 /*0x626bec*/
     || (*(_BYTE *)(v10 + 13) || !v11)
+  int v12; // ecx
     && (v12 = *(_DWORD *)(v10 + 20), v12 > 0)
     && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)v10 + 8))(v10, v11 + v12, 0) )
   {
-    v13 = *(_DWORD *)(v10 + 16); /*0x626bf3*/
-    v14 = *(_DWORD *)(v10 + 4); /*0x626bf6*/
+    int v13 = *(_DWORD *)(v10 + 16); /*0x626bf3*/
+    int v14 = *(_DWORD *)(v10 + 4); /*0x626bf6*/
     *(_DWORD *)(v10 + 16) = v13 + 1; /*0x626bfc*/
     *(_DWORD *)(v14 + 4 * v13) = v9; /*0x626bff*/
   }
-  v15 = *((_DWORD *)g_FileExtensionState + 2); /*0x626c07*/
-  v16 = *(_DWORD *)(v15 + 8); /*0x626c0a*/
+  int v15 = *((_DWORD *)g_FileExtensionState + 2); /*0x626c07*/
+  int v16 = *(_DWORD *)(v15 + 8); /*0x626c0a*/
   if ( *(_DWORD *)(v15 + 16) < v16 /*0x626c34*/
+  int v17; // eax
     || ((LOBYTE(v17) = *(_BYTE *)(v15 + 13), (_BYTE)v17) || !v16)
     && (v17 = *(_DWORD *)(v15 + 20), v17 > 0)
     && (LOBYTE(v17) = (*(int (__thiscall **)(int, int, _DWORD))(*(_DWORD *)v15 + 8))(v15, v16 + v17, 0), (_BYTE)v17) )
   {
-    v18 = *(_DWORD *)(v15 + 16); /*0x626c36*/
-    v19 = v18 + 1; /*0x626c39*/
-    v20 = 3 * v18; /*0x626c3c*/
+    int v18 = *(_DWORD *)(v15 + 16); /*0x626c36*/
+    int v19 = v18 + 1; /*0x626c39*/
+    int v20 = 3 * v18; /*0x626c3c*/
     v17 = *(_DWORD *)(v15 + 4); /*0x626c3f*/
     *(_DWORD *)(v15 + 16) = v19; /*0x626c42*/
-    v21 = v17 + v20; /*0x626c45*/
+    int v21 = v17 + v20; /*0x626c45*/
     *(_WORD *)v21 = *(_WORD *)a2; /*0x626c4e*/
     LOBYTE(v17) = *(_BYTE *)(a2 + 2); /*0x626c51*/
     *(_BYTE *)(v21 + 2) = v17; /*0x626c54*/
@@ -341,14 +309,11 @@ int sub_7A2EA0(int (__stdcall ***a1)(unsigned int, void *, int *) a1, int a2, in
 int __stdcall sub_7A2EA0(int (__stdcall ***a1)(_DWORD, void *, int *), int a2, int a3, int a4)
 {
   int (__stdcall **v4)(_DWORD, void *, int *); // ecx
-  int v5; // esi
-  int v7; // [esp+24h] [ebp-8h] BYREF
-  int v8; // [esp+28h] [ebp-4h] BYREF
 
   v4 = *a1; /*0x7a2ead*/
-  v8 = 0; /*0x7a2eb5*/
-  v7 = 0; /*0x7a2ebd*/
-  v5 = (*v4)(a1, &unk_7F7CD0, &v8); /*0x7a2ec7*/
+  int v8 = 0; /*0x7a2eb5*/
+  int v7 = 0; /*0x7a2ebd*/
+  int v5 = (*v4)(a1, &unk_7F7CD0, &v8); /*0x7a2ec7*/
   if ( v5 >= 0 ) /*0x7a2ecb*/
   {
     v5 = (*(int (__stdcall **)(int, int, int *))(*(_DWORD *)v8 + 16))(v8, a3, &v7); /*0x7a2ee1*/
@@ -375,7 +340,6 @@ int __fastcall System_Read_68C9C0(BlowStraw *aP0, ObjectClass *a1, ObjectClass *
   IUnknown *v7; // eax
   bool v8; // zf
   char *v9; // eax
-
   while ( 1 ) /*0x68c9d8*/
   {
     v6 = 0; /*0x68c9d8*/

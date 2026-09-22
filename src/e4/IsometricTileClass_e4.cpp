@@ -11,7 +11,6 @@ IsometricTileClass *__thiscall IsometricTileClass::IsometricTileClass(
         IsometricTileClass *aP1,
         IsometricTileClass *aP2)
 {
-  int v4; // eax
 
   ObjectClass::ctor(this); /*0x543786*/
   this->q02B = *(IsometricTileClass *)(*(_DWORD *)&HouseClass_Player[45024] + 4 * (_DWORD)aP1); /*0x54379c*/
@@ -33,7 +32,7 @@ IsometricTileClass *__thiscall IsometricTileClass::IsometricTileClass(
          *(_DWORD *)&stru_87C374[13284] + *(_DWORD *)&stru_87C374[13296],
          0) )
   {
-    v4 = (*(_DWORD *)&stru_87C374[13292])++; /*0x543862*/
+    int v4 = (*(_DWORD *)&stru_87C374[13292])++; /*0x543862*/
     *(_DWORD *)(*(_DWORD *)&stru_87C374[13280] + 4 * v4) = this; /*0x543871*/
   }
   return this; /*0x543876*/

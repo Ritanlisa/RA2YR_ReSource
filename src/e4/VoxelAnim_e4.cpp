@@ -14,9 +14,6 @@ char VoxelAnim::ComputeTransform(float * a1, float * a2, float a3, int a4)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __fastcall sub_7586F0(float *a1, float *a2, float a3, int a4)
 {
-  int v5; // esi
-  double v6; // st7
-  double v7; // st7
   float v8; // edx
   int v9; // ebx
   int v10; // edi
@@ -35,12 +32,12 @@ char __fastcall sub_7586F0(float *a1, float *a2, float a3, int a4)
   float v24; // [esp+38h] [ebp-4h]
   float v25; // [esp+44h] [ebp+8h]
 
-  v5 = dword_8469E0[a4]; /*0x758702*/
+  int v5 = dword_8469E0[a4]; /*0x758702*/
   v16 = *a1 + *a2; /*0x75870c*/
   v17 = a2[1] + a1[1]; /*0x758716*/
-  v6 = a2[2] + a1[2]; /*0x75871d*/
+  double v6 = a2[2] + a1[2]; /*0x75871d*/
   v18 = v6; /*0x758720*/
-  v7 = Math::Sqrt(v6 * v18 + v16 * v16 + v17 * v17); /*0x75873f*/
+  double v7 = Math::Sqrt(v6 * v18 + v16 * v16 + v17 * v17); /*0x75873f*/
   if ( v7 == 0.0 ) /*0x758752*/
   {
     v8 = v18; /*0x75878e*/
@@ -92,14 +89,8 @@ char __fastcall sub_7586F0(float *a1, float *a2, float a3, int a4)
 char VoxelAnim::Draw(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall VoxelAnim_Draw(int this, _DWORD *a2)
+void VoxelAnim_Draw(int this, _DWORD *a2)
 {
-  _DWORD *v3; // ebx
-  _DWORD *v4; // esi
-  _DWORD *v5; // ecx
-  int v6; // edx
-  int v7; // eax
-  _DWORD *v8; // edi
   int v9; // eax
   int v10; // eax
   int v11; // ecx
@@ -149,7 +140,7 @@ char __thiscall VoxelAnim_Draw(int this, _DWORD *a2)
   int *v55; // ecx
   int GroundHeight; // esi
   int v57; // edi
-  int v58; // ecx
+  BuildingClass *v58; // ecx
   int *v59; // eax
   _DWORD *v60; // ecx
   int v61; // edi
@@ -168,7 +159,7 @@ char __thiscall VoxelAnim_Draw(int this, _DWORD *a2)
   int v74; // eax
   int *v75; // ecx
   __int64 v76; // rax
-  int v77; // edx
+  BuildingClass *v77; // edx
   int *v78; // ecx
   __int64 v79; // rax
   int v80; // eax
@@ -196,7 +187,7 @@ char __thiscall VoxelAnim_Draw(int this, _DWORD *a2)
   int v102; // ecx
   double v103; // st7
   __int16 v104; // ax
-  int v105; // ecx
+  BuildingClass *v105; // ecx
   double *v106; // ecx
   int v107; // ecx
   _DWORD *v108; // esi
@@ -212,14 +203,14 @@ char __thiscall VoxelAnim_Draw(int this, _DWORD *a2)
   int v118; // esi
   int v119; // edi
   __int64 v120; // rax
-  int v121; // ecx
+  BuildingClass *v121; // ecx
   int v122; // eax
   int v123; // ecx
   int *v124; // eax
   int v125; // ecx
   double v126; // st7
   __int16 v127; // ax
-  int v128; // ecx
+  BuildingClass *v128; // ecx
   __int16 v129; // si
   _DWORD **v130; // eax
   int *v131; // ecx
@@ -253,8 +244,7 @@ char __thiscall VoxelAnim_Draw(int this, _DWORD *a2)
   int v160; // [esp+64h] [ebp-Ch] BYREF
   int v161; // [esp+68h] [ebp-8h]
   int v162; // [esp+6Ch] [ebp-4h]
-
-  v3 = (_DWORD *)(this + 40);
+  _DWORD * v3 = (_DWORD *)(this + 40);
   if ( this->q0A0 != g_AsyncMovieState
     || *(_DWORD *)(this + 44) != g_MovieFrameState1
     || this->q00C != g_MovieFrameState2 )
@@ -279,18 +269,18 @@ char __thiscall VoxelAnim_Draw(int this, _DWORD *a2)
         *(_DWORD *)(v115 + 1508) = -1;
       qmemcpy((void *)(this->q00C + 1504), (const void *)(this->q00C + 1508), 0x5Cu);
       *(_DWORD *)(this->q00C + 1596) = -1;
-      (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)(this + 12) + 436))(this->q00C, this + 40);
+      (*(void (__thiscall **)(_DWORD, int))(*this->q00C + 436))(this->q00C, this + 40);
       LOWORD(a2) = *v3 / 256;
       HIWORD(a2) = *(_DWORD *)(this + 44) / 256;
       *(_DWORD *)(this->q00C + 1368) = a2;
-      (*(void (__thiscall **)(_DWORD, _DWORD))(**(_DWORD **)(this + 12) + 460))(this->q00C, 0);
+      (*(void (__thiscall **)(_DWORD, _DWORD))(*this->q00C + 460))(this->q00C, 0);
       *(_BYTE *)(this->q00C + 1719) = 0;
       Voxel::DrawHelper(&g_AsyncMovieState);
-      v116 = *(_DWORD **)(this + 12);
+      v116 = this->q00C;
       if ( v116[376] == -1 )
         (*(void (__thiscall **)(_DWORD *, _DWORD, _DWORD))(*v116 + 1348))(v116, 0, 0);
-      (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)(this + 12) + 396))(this->q00C, 2);
-      v117 = *(_BYTE **)(this + 12);
+      (*(void (__thiscall **)(_DWORD, int))(*this->q00C + 396))(this->q00C, 2);
+      v117 = this->q00C;
       LOBYTE(v9) = v117[144];
       if ( (_BYTE)v9 )
       {
@@ -308,7 +298,7 @@ char __thiscall VoxelAnim_Draw(int this, _DWORD *a2)
                   a2 = (_DWORD *)(*(int (__thiscall **)(_BYTE *, int *, _DWORD))(*(_DWORD *)v117 + 76))(v117, &v160, 0),
                   (unsigned __int16)(*a2 / 256) == (_WORD)v118)
               && (unsigned __int16)(a2[1] / 256) == (_WORD)v119
-              && (v120 = *(_DWORD *)((*(int (__thiscall **)(_DWORD, int *, _DWORD))(**(_DWORD **)(this + 12) + 76))(
+              && (v120 = *(_DWORD *)((*(int (__thiscall **)(_DWORD, int *, _DWORD))(*this->q00C + 76))(
                                        this->q00C,
                                        &v160,
                                        0)
@@ -316,11 +306,11 @@ char __thiscall VoxelAnim_Draw(int this, _DWORD *a2)
                        - this->q090,
                   (int)((HIDWORD(v120) ^ v120) - HIDWORD(v120)) < 2 * DataGlobal_B45C28) )
             {
-              (*(void (__thiscall **)(_DWORD, _DWORD, int))(**(_DWORD **)(this + 12) + 1152))(
+              (*(void (__thiscall **)(_DWORD, _DWORD, int))(*this->q00C + 1152))(
                 this->q00C,
                 0,
                 1);
-              (*(void (__thiscall **)(_DWORD, _DWORD, _DWORD))(**(_DWORD **)(this + 12) + 1348))(
+              (*(void (__thiscall **)(_DWORD, _DWORD, _DWORD))(*this->q00C + 1348))(
                 this->q00C,
                 0,
                 0);
@@ -331,7 +321,7 @@ char __thiscall VoxelAnim_Draw(int this, _DWORD *a2)
               (*(void (__stdcall **)(int))(v121 + 72))(this + 4);
               *(_BYTE *)(this + 54) = 0;
             }
-            (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)(this + 12) + 292))(this->q00C, 1);
+            (*(void (__thiscall **)(_DWORD, int))(*this->q00C + 292))(this->q00C, 1);
             v9 = this->q00C;
             *(_BYTE *)(v9 + 1674) = 0;
           }
@@ -346,15 +336,15 @@ char __thiscall VoxelAnim_Draw(int this, _DWORD *a2)
       *(_BYTE *)(v9 + 1674) = 0;
       return v9;
     }
-    (*(void (__thiscall **)(_DWORD, _DWORD, int))(**(_DWORD **)(this + 12) + 1348))(
+    (*(void (__thiscall **)(_DWORD, _DWORD, int))(*this->q00C + 1348))(
       this->q00C,
       0,
       1072693248);
-    v122 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 12) + 1336))(this->q00C);
+    v122 = (*(int (__thiscall **)(_DWORD))(*this->q00C + 1336))(this->q00C);
     v123 = this->q00C;
     LODWORD(v153) = v122;
     *(_BYTE *)(v123 + 1719) = 0;
-    v124 = (int *)(*(int (__thiscall **)(_DWORD, int *))(**(_DWORD **)(this + 12) + 72))(this->q00C, &v160);
+    v124 = (int *)(*(int (__thiscall **)(_DWORD, int *))(*this->q00C + 72))(this->q00C, &v160);
     v125 = *v124;
     LODWORD(v155) = *v3;
     LODWORD(v154) = v125;
@@ -364,7 +354,7 @@ char __thiscall VoxelAnim_Draw(int this, _DWORD *a2)
     v129 = v127;
     LOWORD(v155) = v127;
     (*(void (__stdcall **)(int, _DWORD))(v128 + 76))(this + 4, LODWORD(v155));
-    v130 = (_DWORD **)(*(int (__thiscall **)(_DWORD, double *))(**(_DWORD **)(this + 12) + 440))(
+    v130 = (_DWORD **)(*(int (__thiscall **)(_DWORD, double *))(*this->q00C + 440))(
                         this->q00C,
                         &v155);
     v131 = (int *)(this->q00C + 156);
@@ -391,15 +381,15 @@ char __thiscall VoxelAnim_Draw(int this, _DWORD *a2)
       v141 = this->q00C;
       v142 = *(_BYTE *)(v141 + 116);
       *(_BYTE *)(v141 + 116) = 0;
-      (*(void (__thiscall **)(_DWORD, int *))(**(_DWORD **)(this + 12) + 436))(this->q00C, &v157);
-      (*(void (__thiscall **)(_DWORD, _DWORD))(**(_DWORD **)(this + 12) + 460))(this->q00C, 0);
+      (*(void (__thiscall **)(_DWORD, int *))(*this->q00C + 436))(this->q00C, &v157);
+      (*(void (__thiscall **)(_DWORD, _DWORD))(*this->q00C + 460))(this->q00C, 0);
       *(_BYTE *)(this->q00C + 116) = v142;
       v9 = this->q00C;
       *(_BYTE *)(v9 + 1674) = 0;
       return v9;
     }
-    (*(void (__thiscall **)(_DWORD, _DWORD))(**(_DWORD **)(this + 12) + 292))(this->q00C, 0);
-    (*(void (__thiscall **)(_DWORD, int *))(**(_DWORD **)(this + 12) + 436))(this->q00C, &v157);
+    (*(void (__thiscall **)(_DWORD, _DWORD))(*this->q00C + 292))(this->q00C, 0);
+    (*(void (__thiscall **)(_DWORD, int *))(*this->q00C + 436))(this->q00C, &v157);
     v137 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&a2);
     v138 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v152);
     if ( *((char *)v138 + 283) == *((char *)v137 + 283) - 4 )
@@ -411,8 +401,8 @@ char __thiscall VoxelAnim_Draw(int this, _DWORD *a2)
     if ( (v138[80] & 0x100) != 0 )
     {
 LABEL_122:
-      (*(void (__thiscall **)(_DWORD, _DWORD))(**(_DWORD **)(this + 12) + 460))(this->q00C, 0);
-      (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)(this + 12) + 292))(this->q00C, 1);
+      (*(void (__thiscall **)(_DWORD, _DWORD))(*this->q00C + 460))(this->q00C, 0);
+      (*(void (__thiscall **)(_DWORD, int))(*this->q00C + 292))(this->q00C, 1);
       v139 = (int *)(this->q00C + 156);
       v160 = *v139;
       v161 = v139[1];
@@ -426,12 +416,12 @@ LABEL_120:
       *(_BYTE *)(this->q00C + 140) = 0;
     goto LABEL_122;
   }
-  v4 = (_DWORD *)(this + 28);
+  _DWORD * v4 = (_DWORD *)(this + 28);
   if ( *(_DWORD *)(this + 28) == g_AsyncMovieState
     && this->matrices == g_MovieFrameState1
     && this->q090 == g_MovieFrameState2 )
   {
-    v106 = *(double **)(this + 12);
+    v106 = this->q00C;
     if ( v106[175] > 0.0 )
     {
       (*(void (__thiscall **)(double *, _DWORD, _DWORD))(*(_DWORD *)v106 + 1348))(v106, 0, 0);
@@ -444,13 +434,13 @@ LABEL_123:
     *(_BYTE *)(v9 + 1674) = 0;
     return v9;
   }
-  v5 = *(_DWORD **)(this + 12);
+  _DWORD * v5 = this->q00C;
   v152 = v5;
   if ( v5[376] != -1 )
     goto LABEL_32;
-  v6 = v5[400];
-  v7 = v5[402];
-  v8 = v5 + 400;
+  int v6 = v5[400];
+  int v7 = v5[402];
+  _DWORD * v8 = v5 + 400;
   if ( v6 == -1 )
     goto LABEL_11;
   if ( (int)g_CurrentFrame - v6 < v7 )
@@ -477,8 +467,8 @@ LABEL_11:
     *(_BYTE *)(this + 54) = 0;
     if ( (*(unsigned __int8 (__thiscall **)(int, int))(*(_DWORD *)v12 + 716))(v12, this + 28) )
     {
-      (*(void (__thiscall **)(_DWORD))(**(_DWORD **)(this + 12) + 1268))(this->q00C);
-      v13 = (_DWORD *)(*(int (__thiscall **)(_DWORD, int *))(**(_DWORD **)(this + 12) + 72))(
+      (*(void (__thiscall **)(_DWORD))(*this->q00C + 1268))(this->q00C);
+      v13 = (_DWORD *)(*(int (__thiscall **)(_DWORD, int *))(*this->q00C + 72))(
                         this->q00C,
                         &v160);
       v14 = Coord::Subtract(&v155, *v13 - *v4, v13[1] - this->matrices, v13[2] - this->q090);
@@ -486,7 +476,7 @@ LABEL_11:
       v158 = v14[1];
       v159 = v14[2];
       if ( (int)Coord::Length(&v157) >= *((_DWORD *)g_RulesClass_Instance + 1478)
-        || (v15 = *(_BYTE **)(this + 12), v15[1048]) )
+        || (v15 = this->q00C, v15[1048]) )
       {
         v16 = this->q00C;
         v17 = *(_DWORD *)(v16 + 1612);
@@ -502,12 +492,12 @@ LABEL_11:
           LOWORD(a2) = *v4 / 256;
           HIWORD(a2) = this->matrices / 256;
           LODWORD(v153) = a2;
-          v18 = *(_BYTE **)(this + 12);
+          v18 = this->q00C;
           if ( v18[981] )
           {
             v19 = (_DWORD *)(*(int (__thiscall **)(_BYTE *, int *, _DWORD))(*(_DWORD *)v18 + 76))(v18, &v160, 0);
             LOWORD(a2) = *v19 / 256;
-            v20 = *(_DWORD **)(this + 12);
+            v20 = this->q00C;
             HIWORD(a2) = v19[1] / 256;
             v21 = v20;
             LODWORD(v154) = a2;
@@ -519,7 +509,7 @@ LABEL_11:
             v23 = (*(int (__thiscall **)(_DWORD *))(*v21 + 188))(v21);
             v24 = (*(int (__thiscall **)(_DWORD *, int))(*v21 + 132))(v21, v23);
             if ( !(unsigned __int8)MapSeed::CheckTileMatch(&v154, &v153, *(_DWORD *)(v24 + 1460), 0, v146, v149) )
-              (*(void (__thiscall **)(_DWORD, _DWORD, int))(**(_DWORD **)(this + 12) + 1152))(
+              (*(void (__thiscall **)(_DWORD, _DWORD, int))(*this->q00C + 1152))(
                 this->q00C,
                 0,
                 1);
@@ -543,7 +533,7 @@ LABEL_11:
                                   &v160,
                                   this->q00C);
                 LOWORD(a2) = *v28 / 256;
-                v29 = *(_DWORD **)(this + 12);
+                v29 = this->q00C;
                 HIWORD(a2) = v28[1] / 256;
                 v30 = v29;
                 LODWORD(v155) = a2;
@@ -555,7 +545,7 @@ LABEL_11:
                 v32 = (*(int (__thiscall **)(_DWORD *))(*v30 + 188))(v30);
                 v33 = (*(int (__thiscall **)(_DWORD *, int))(*v30 + 132))(v30, v32);
                 if ( !(unsigned __int8)MapSeed::CheckTileMatch(&v155, &v154, *(_DWORD *)(v33 + 1460), v30, v147, v150) )
-                  (*(void (__thiscall **)(_DWORD, _DWORD))(**(_DWORD **)(this + 12) + 968))(this->q00C, 0);
+                  (*(void (__thiscall **)(_DWORD, _DWORD))(*this->q00C + 968))(this->q00C, 0);
               }
             }
           }
@@ -565,23 +555,23 @@ LABEL_11:
       {
         (*(void (__thiscall **)(_BYTE *, _DWORD, int))(*(_DWORD *)v15 + 1152))(v15, 0, 1);
       }
-      (*(void (__thiscall **)(_DWORD, _DWORD, _DWORD))(**(_DWORD **)(this + 12) + 1348))(this->q00C, 0, 0);
+      (*(void (__thiscall **)(_DWORD, _DWORD, _DWORD))(*this->q00C + 1348))(this->q00C, 0, 0);
       LOBYTE(v9) = (*(int (__stdcall **)(int))(this->num_sections + 72))(this + 4);
       return v9;
     }
 LABEL_37:
-    LOBYTE(v9) = (*(int (__thiscall **)(_DWORD, _DWORD, int))(**(_DWORD **)(this + 12) + 1152))(
+    LOBYTE(v9) = (*(int (__thiscall **)(_DWORD, _DWORD, int))(*this->q00C + 1152))(
                    this->q00C,
                    0,
                    1);
     return v9;
   }
   *(_DWORD *)(this->q00C + 1612) = 10;
-  LOBYTE(v9) = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 12) + 1272))(this->q00C);
+  LOBYTE(v9) = (*(int (__thiscall **)(_DWORD))(*this->q00C + 1272))(this->q00C);
   if ( (_BYTE)v9 )
     return v9;
 LABEL_32:
-  v34 = *(_DWORD **)(this + 12);
+  v34 = this->q00C;
   LODWORD(v153) = v34[376];
   if ( LODWORD(v153) == 8 )
   {
@@ -593,7 +583,7 @@ LABEL_32:
     a2 = (_DWORD *)v36;
     if ( v36 >= 0 && v36 < g_Tubes_Count )
     {
-      (*(void (__thiscall **)(_DWORD, _DWORD))(**(_DWORD **)(this + 12) + 292))(this->q00C, 0);
+      (*(void (__thiscall **)(_DWORD, _DWORD))(*this->q00C + 292))(this->q00C, 0);
       v37 = this->q00C;
       v155 = *(double *)(v37 + 156);
       v156 = *(_DWORD *)(v37 + 164);
@@ -622,7 +612,7 @@ LABEL_32:
       CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&a2);
       v46 = (_DWORD *)CellClass::GetCoords(&v160);
       v47 = *v46 - v44;
-      v48 = *(_DWORD **)(this + 12);
+      v48 = this->q00C;
       v49 = v46[1] - v45;
       v50 = v46[2];
       v51 = v48 + 39;
@@ -678,7 +668,7 @@ LABEL_32:
   v64 = this->q00C;
   if ( *(_BYTE *)(v64 + 140) != ((v63[80] >> 8) & 1) )
     *(_BYTE *)(v64 + 1675) = 1;
-  v65 = **(_DWORD **)(this + 12);
+  v65 = *this->q00C;
   v145 = ObjectClass::GetLandHeight(0, 1);
   v144 = LODWORD(v153);
   v66 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v152);
@@ -711,7 +701,7 @@ LABEL_32:
       }
       else
       {
-        v71 = (_DWORD *)(*(int (__thiscall **)(_DWORD, double *))(**(_DWORD **)(this + 12) + 72))(
+        v71 = (_DWORD *)(*(int (__thiscall **)(_DWORD, double *))(*this->q00C + 72))(
                           this->q00C,
                           &v155);
         v72 = *v71 - *(_DWORD *)(this + 28);
@@ -732,7 +722,7 @@ LABEL_32:
                            *((_DWORD *)Coord::To_Cell(&DataGlobal_87F7E8, &v157) + 59) == 10) )
         {
           if ( (v69[80] & 0x100) == 0
-            || (v78 = *(int **)(this + 12),
+            || (v78 = this->q00C,
                 LOBYTE(a2) = 1,
                 v78 += 39,
                 v157 = *v78,
@@ -751,11 +741,11 @@ LABEL_32:
           *(_DWORD *)(this + 44) = g_MovieFrameState1;
           this->q00C = g_MovieFrameState2;
           (*(void (__stdcall **)(int))(v77 + 72))(this + 4);
-          (*(void (__thiscall **)(_DWORD, _DWORD, _DWORD))(**(_DWORD **)(this + 12) + 1348))(
+          (*(void (__thiscall **)(_DWORD, _DWORD, _DWORD))(*this->q00C + 1348))(
             this->q00C,
             0,
             0);
-          (*(void (__thiscall **)(_DWORD, _DWORD, int))(**(_DWORD **)(this + 12) + 1152))(this->q00C, 0, 1);
+          (*(void (__thiscall **)(_DWORD, _DWORD, int))(*this->q00C + 1152))(this->q00C, 0, 1);
           v9 = this->q00C;
           *(_DWORD *)(v9 + 1504) = -1;
         }
@@ -822,11 +812,11 @@ LABEL_67:
       }
       else if ( (*(unsigned __int8 (__thiscall **)(int, int))(*(_DWORD *)v93 + 716))(v93, this + 28) )
       {
-        LOBYTE(v9) = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 12) + 1268))(this->q00C);
+        LOBYTE(v9) = (*(int (__thiscall **)(_DWORD))(*this->q00C + 1268))(this->q00C);
       }
       else
       {
-        LOBYTE(v9) = (*(int (__thiscall **)(_DWORD, _DWORD, int))(**(_DWORD **)(this + 12) + 1152))(
+        LOBYTE(v9) = (*(int (__thiscall **)(_DWORD, _DWORD, int))(*this->q00C + 1152))(
                        this->q00C,
                        0,
                        1);
@@ -851,7 +841,7 @@ LABEL_67:
           *(_DWORD *)(this->q00C + 1504) = -1;
           *v3 = g_AsyncMovieState;
           *(_DWORD *)(this + 44) = g_MovieFrameState1;
-          v95 = *(_DWORD **)(this + 12);
+          v95 = this->q00C;
           this->q00C = g_MovieFrameState2;
           v95 += 400;
           *v95 = g_CurrentFrame;
@@ -863,7 +853,7 @@ LABEL_67:
         if ( v94 )
         {
           if ( !(unsigned __int8)Object::IsAlliedWithObjectHouse(v94) )
-            (*(void (__thiscall **)(_DWORD, int, int, _DWORD))(**(_DWORD **)(this + 12) + 500))(
+            (*(void (__thiscall **)(_DWORD, int, int, _DWORD))(*this->q00C + 500))(
               this->q00C,
               1,
               v94,
@@ -874,7 +864,7 @@ LABEL_67:
                              + *((_DWORD *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v152) + 17))
                            + 680) )
         {
-          v96 = **(_DWORD **)(this + 12);
+          v96 = *this->q00C;
           v97 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v152);
           (*(void (__thiscall **)(_DWORD, int, void *, _DWORD))(v96 + 500))(this->q00C, 1, v97, 0);
         }
@@ -887,7 +877,7 @@ LABEL_67:
       else if ( v67 != 7 )
       {
         *(_DWORD *)(this->q00C + 1504) = -1;
-        (*(void (__thiscall **)(_DWORD, _DWORD, _DWORD))(**(_DWORD **)(this + 12) + 1348))(this->q00C, 0, 0);
+        (*(void (__thiscall **)(_DWORD, _DWORD, _DWORD))(*this->q00C + 1348))(this->q00C, 0, 0);
         (*(void (__stdcall **)(int))(this->num_sections + 72))(this + 4);
         *(_BYTE *)(this->q00C + 1674) = 0;
         v9 = this->q00C;
@@ -899,7 +889,7 @@ LABEL_67:
       {
         *(_DWORD *)(this->q00C + 1504) = -1;
         *v3 = g_AsyncMovieState;
-        v99 = *(_DWORD **)(this + 12);
+        v99 = this->q00C;
         *(_DWORD *)(this + 44) = g_MovieFrameState1;
         v99 += 400;
         this->q00C = g_MovieFrameState2;
@@ -912,7 +902,7 @@ LABEL_67:
   }
   else if ( (unsigned __int8)Voxel::DrawHelper(&v160) )
   {
-    v100 = *(_BYTE **)(this + 12);
+    v100 = this->q00C;
     *(_BYTE *)(this + 54) = 1;
     LOBYTE(v9) = v100[144];
     if ( (_BYTE)v9 )
@@ -926,7 +916,7 @@ LABEL_67:
       v105 = this->num_sections;
       LOWORD(a2) = v104;
       (*(void (__stdcall **)(int, _DWORD *))(v105 + 76))(this + 4, a2);
-      (*(void (__thiscall **)(_DWORD, _DWORD, int))(**(_DWORD **)(this + 12) + 1348))(
+      (*(void (__thiscall **)(_DWORD, _DWORD, int))(*this->q00C + 1348))(
         this->q00C,
         0,
         1072693248);
@@ -936,7 +926,7 @@ LABEL_67:
   }
   else
   {
-    (*(void (__thiscall **)(_DWORD, _DWORD, _DWORD))(**(_DWORD **)(this + 12) + 1348))(this->q00C, 0, 0);
+    (*(void (__thiscall **)(_DWORD, _DWORD, _DWORD))(*this->q00C + 1348))(this->q00C, 0, 0);
     v9 = this->q00C;
     *(_BYTE *)(v9 + 1674) = 0;
   }

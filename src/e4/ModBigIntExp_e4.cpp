@@ -9,11 +9,6 @@ int sub_5C7EC0(const void * a1, int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall sub_5C7EC0(const void *a1, int a2)
 {
-  int v2; // ebx
-  int v3; // edx
-  int *v4; // esi
-  int v5; // ecx
-  int *v6; // eax
   int v8; // eax
   int v9; // eax
   int v10; // ecx
@@ -35,12 +30,12 @@ int __fastcall sub_5C7EC0(const void *a1, int a2)
   unsigned int v29; // ecx
   unsigned int v30; // eax
 
-  v2 = a2; /*0x5c7ec1*/
-  v3 = a2; /*0x5c7ed5*/
+  int v2 = a2; /*0x5c7ec1*/
+  int v3 = a2; /*0x5c7ed5*/
   qmemcpy(&DataGlobal_ABF5B4, a1, v3 * 4); /*0x5c7eda*/
-  v4 = &DataGlobal_ABF5B0[v3]; /*0x5c7ee3*/
-  v5 = v2; /*0x5c7ee9*/
-  v6 = &DataGlobal_ABF5B0[v3]; /*0x5c7eeb*/
+  int * v4 = &DataGlobal_ABF5B0[v3]; /*0x5c7ee3*/
+  int v5 = v2; /*0x5c7ee9*/
+  int * v6 = &DataGlobal_ABF5B0[v3]; /*0x5c7eeb*/
   if ( !DataGlobal_ABF5B0[v3] ) /*0x5c7eed*/
   {
     while ( --v5 ) /*0x5c7ef2*/

@@ -9,11 +9,6 @@ int VoxelClass_RenderObject()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __userpurge VoxelClass::RenderObject@<eax>(_BYTE *a1@<ecx>, int a2, int a3, int a4, ConvertClass aP5)
 {
-  int v6; // eax
-  int v7; // ecx
-  int v8; // edi
-  int v9; // ebx
-  int v10; // eax
   int v11; // ecx
   int v12; // eax
   int v13; // eax
@@ -68,18 +63,18 @@ int __userpurge VoxelClass::RenderObject@<eax>(_BYTE *a1@<ecx>, int a2, int a3, 
   _DWORD v62[3]; // [esp+130h] [ebp-B4h] BYREF
   _BYTE v63[168]; // [esp+13Ch] [ebp-A8h] BYREF
 
-  v6 = (*(int (__thiscall **)(_BYTE *))(*(_DWORD *)a1 + 108))(a1); /*0x73c5ff*/
-  v7 = *((_DWORD *)a1 + 433); /*0x73c602*/
-  v8 = v6; /*0x73c608*/
+  int v6 = (*(int (__thiscall **)(_BYTE *))(*(_DWORD *)a1 + 108))(a1); /*0x73c5ff*/
+  int v7 = *((_DWORD *)a1 + 433); /*0x73c602*/
+  int v8 = v6; /*0x73c608*/
   v54 = v6; /*0x73c60a*/
   v45 = 1; /*0x73c60e*/
   if ( *(_DWORD *)(v7 + 3644) != 8 || (*(unsigned __int8 (__thiscall **)(_BYTE *))(*(_DWORD *)a1 + 196))(a1) ) /*0x73c621*/
-    v9 = 0; /*0x73c649*/
+    int v9 = 0; /*0x73c649*/
   else
     v9 = ((unsigned __int8)((unsigned int)((*ProgressTimer::GetValue((_WORD *)a1 + 452, (IUnknown *)&v53) >> 12) + 1) >> 1) /*0x73c644*/
         + 1)
        & 7;
-  v10 = *((_DWORD *)a1 + 432); /*0x73c64b*/
+  int v10 = *((_DWORD *)a1 + 432); /*0x73c64b*/
   if ( v10 >= 0 ) /*0x73c653*/
   {
     v11 = *((_DWORD *)a1 + 433); /*0x73c655*/

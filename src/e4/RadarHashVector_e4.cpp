@@ -6,32 +6,20 @@
 char RadarHashVector::ComputeHashIndex(int a2, char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall RadarHashVector::sub_658B10(void *this, int a2, char *a3)
+void RadarHashVector::sub_658B10(int a2, char *a3)
 {
-  int v3; // ebp
-  char *v5; // edi
-  char *v6; // eax
-  _DWORD *v7; // ecx
-  int v8; // edx
-  _DWORD *v9; // eax
-  int v10; // ecx
-  int v11; // ecx
-  int v12; // eax
-  _DWORD *v13; // edx
-  char *v14; // ebx
-  int v15; // eax
 
-  v3 = a2; /*0x658b12*/
+  int v3 = a2; /*0x658b12*/
   if ( a2 ) /*0x658b1e*/
   {
-    v5 = a3; /*0x658b24*/
+    char * v5 = a3; /*0x658b24*/
     this->q00C = 0; /*0x658b28*/
     if ( a3 ) /*0x658b2d*/
     {
       if ( a2 - 1 >= 0 ) /*0x658b67*/
       {
-        v9 = a3 + 4; /*0x658b69*/
-        v10 = a2; /*0x658b6c*/
+        _DWORD * v9 = a3 + 4; /*0x658b69*/
+        int v10 = a2; /*0x658b6c*/
         do /*0x658b79*/
         {
           *(v9 - 1) = 0; /*0x658b6d*/
@@ -45,13 +33,13 @@ char __thiscall RadarHashVector::sub_658B10(void *this, int a2, char *a3)
     }
     else
     {
-      v6 = (char *)__2_YAPAXI_Z(16 * a2); /*0x658b35*/
+      char * v6 = (char *)__2_YAPAXI_Z(16 * a2); /*0x658b35*/
       if ( v6 ) /*0x658b3f*/
       {
         if ( a2 - 1 >= 0 ) /*0x658b46*/
         {
-          v7 = v6 + 4; /*0x658b48*/
-          v8 = a2; /*0x658b4b*/
+          _DWORD * v7 = v6 + 4; /*0x658b48*/
+          int v8 = a2; /*0x658b4b*/
           do /*0x658b58*/
           {
             *(v7 - 1) = 0; /*0x658b4c*/
@@ -74,16 +62,16 @@ char __thiscall RadarHashVector::sub_658B10(void *this, int a2, char *a3)
       return 0; /*0x658c11*/
     if ( this->RadarHashVector_field_0x04 ) /*0x658b87*/
     {
-      v11 = this->RadarHashVector_field_0x08; /*0x658b8c*/
+      int v11 = this->RadarHashVector_field_0x08; /*0x658b8c*/
       if ( a2 < v11 ) /*0x658b91*/
         v11 = a2; /*0x658b93*/
       if ( v11 > 0 ) /*0x658b97*/
       {
-        v12 = 0; /*0x658b99*/
+        int v12 = 0; /*0x658b99*/
         do /*0x658bbf*/
         {
-          v13 = (_DWORD *)(this->RadarHashVector_field_0x04 + v12); /*0x658ba0*/
-          v14 = &v5[v12]; /*0x658ba2*/
+          _DWORD * v13 = (_DWORD *)(this->RadarHashVector_field_0x04 + v12); /*0x658ba0*/
+          char * v14 = &v5[v12]; /*0x658ba2*/
           v12 += 16; /*0x658ba5*/
           --v11; /*0x658ba8*/
           *(_DWORD *)v14 = *v13; /*0x658bab*/
@@ -96,7 +84,7 @@ char __thiscall RadarHashVector::sub_658B10(void *this, int a2, char *a3)
       }
       if ( this->IsAllocated ) /*0x658bc7*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x658bd0*/
+        __3_YAXPAX_Z(this->q004); /*0x658bd0*/
         this->RadarHashVector_field_0x04 = 0; /*0x658bd8*/
       }
     }
@@ -108,7 +96,7 @@ char __thiscall RadarHashVector::sub_658B10(void *this, int a2, char *a3)
   {
     (*(void (__thiscall **)(void *))(this->q00C)(this); /*0x658bf5*/
   }
-  v15 = this->RadarHashVector_field_0x08; /*0x658bf8*/
+  int v15 = this->RadarHashVector_field_0x08; /*0x658bf8*/
   if ( v15 < this->RadarHashVector_field_0x10 ) /*0x658c00*/
     this->RadarHashVector_field_0x10 = v15; /*0x658c02*/
   return 1; /*0x658c05*/
@@ -123,10 +111,7 @@ _DWORD *__thiscall RadarHashVector::Construct(_DWORD *this, MapClass *aP1, MapCl
 {
   void **v4; // eax
   MapClass *v5; // ecx
-  int v6; // eax
-  _DWORD *v7; // ecx
   MapClass *v8; // edx
-
   this->q004 = 0; /*0x658ded*/
   this->q008 = aP1; /*0x658df0*/
   this->q030 = 1; /*0x658df3*/
@@ -154,12 +139,12 @@ _DWORD *__thiscall RadarHashVector::Construct(_DWORD *this, MapClass *aP1, MapCl
     }
     else
     {
-      v6 = __2_YAPAXI_Z(16 * (_DWORD)aP1); /*0x658e2e*/
+      int v6 = __2_YAPAXI_Z(16 * (_DWORD)aP1); /*0x658e2e*/
       if ( v6 ) /*0x658e38*/
       {
         if ( (int)&aP1[-1].field_16C0 + 3 >= 0 ) /*0x658e3f*/
         {
-          v7 = (_DWORD *)(v6 + 4); /*0x658e41*/
+          _DWORD * v7 = (_DWORD *)(v6 + 4); /*0x658e41*/
           v8 = aP1; /*0x658e44*/
           do /*0x658e51*/
           {

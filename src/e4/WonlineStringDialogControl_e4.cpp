@@ -30,16 +30,14 @@ namespace gamemd {
 int WonlineStringDialogControl_28::QueryInterface(char * a1, unsigned int * a2, char ** a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall WonlineStringDialogControl_28_::_vt00(char *a1, _DWORD *a2, char **a3)
+void WonlineStringDialogControl_28_::_vt00(char *a1, _DWORD *a2, char **a3)
 {
   _UNKNOWN **v3; // esi
   int result; // eax
-  _DWORD *v5; // eax
   BOOL v6; // ebp
   int (__stdcall *v7)(char *, _DWORD *, char **, void *); // eax
   void *v8; // eax
   char *v9; // esi
-
   v3 = &off_7F7638; /*0x7ad69a*/
   if ( !a3 ) /*0x7ad69f*/
     return -2147467261; /*0x7ad6aa*/
@@ -52,7 +50,7 @@ int __stdcall WonlineStringDialogControl_28_::_vt00(char *a1, _DWORD *a2, char *
   }
   while ( 1 ) /*0x7ad6fd*/
   {
-    v5 = *v3; /*0x7ad6fd*/
+    _DWORD * v5 = *v3; /*0x7ad6fd*/
     v6 = *v3 == 0; /*0x7ad706*/
     if ( !*v3 || *v5 == *a2 && v5[1] == a2[1] && v5[2] == a2[2] && v5[3] == a2[3] ) /*0x7ad730*/
       break; /*0x7ad730*/

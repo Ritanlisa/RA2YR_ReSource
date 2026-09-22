@@ -6,21 +6,16 @@
 char TextBuffer::Init()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall TextBuffer_Init(_BYTE *this)
+void TextBuffer_Init(_BYTE *this)
 {
-  int v1; // edi
-  _DWORD *v2; // ebx
-  _BYTE *v3; // edx
-  _DWORD *v4; // eax
-  int v5; // esi
 
-  v1 = 0; /*0x5bcc93*/
-  v2 = this + 2000; /*0x5bcc95*/
+  int v1 = 0; /*0x5bcc93*/
+  _DWORD * v2 = this + 2000; /*0x5bcc95*/
   do /*0x5bccbe*/
   {
-    v3 = this + v1; /*0x5bcc9b*/
-    v4 = v2; /*0x5bcc9e*/
-    v5 = 80; /*0x5bcca0*/
+    _BYTE * v3 = this + v1; /*0x5bcc9b*/
+    _DWORD * v4 = v2; /*0x5bcc9e*/
+    int v5 = 80; /*0x5bcca0*/
     do /*0x5bccb5*/
     {
       *v3 = 32; /*0x5bcca5*/

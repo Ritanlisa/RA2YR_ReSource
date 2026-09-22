@@ -9,18 +9,13 @@ namespace gamemd {
 char ParticleSystemTypeClass::GetType(unsigned char *** aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall ParticleSystemTypeClass::GetType(int this, unsigned __int8 ***aP1)
+void ParticleSystemTypeClass::GetType(int this, unsigned __int8 ***aP1)
 {
-  int v3; // eax
-  char v4; // cl
   char Bool_Overwrite; // al
   int Int_Overwrite; // eax
   CCINIClass *v7; // ecx
-  int v8; // eax
-  double v9; // st7
   double Double_Overwrite; // st7
   CCINIClass *v11; // edx
-  bool v12; // zf
   int v13; // eax
   float *XYZFromINI; // eax
   double v15; // st7
@@ -55,11 +50,11 @@ char __thiscall ParticleSystemTypeClass::GetType(int this, unsigned __int8 ***aP
     (INIClass *)&DataGlobal_87F8E4[42624],
     (INIClass *)&var54.sectionHead[1],
     64);
-  v3 = BuildingTypeClass::FindOrCreateEx((char *)&var54.sectionHead[1]); /*0x644318*/
-  v4 = this->q298; /*0x64431d*/
+  int v3 = BuildingTypeClass::FindOrCreateEx((char *)&var54.sectionHead[1]); /*0x644318*/
+  char v4 = this->q298; /*0x64431d*/
   this->ParticleSystemTypeClass_field_0x294 = v3; /*0x644323*/
   Bool_Overwrite = INIClass::ReadBool_Overwrite((int)aP1, (unsigned __int8 *)(this + 36), &stru_8184C8, v4); /*0x644332*/
-  aP3_4 = *(INIClass **)(this + 668); /*0x64433f*/
+  aP3_4 = this->q29C; /*0x64433f*/
   this->q298 = Bool_Overwrite; /*0x644346*/
   this->ParticleSystemTypeClass_field_0x29C = INIClass::ReadInt_Overwrite( /*0x644351*/
                               (int)aP1,
@@ -70,15 +65,16 @@ char __thiscall ParticleSystemTypeClass::GetType(int this, unsigned __int8 ***aP
                     (int)aP1,
                     (unsigned __int8 *)(this + 36),
                     (CCINIClass *)&stru_830620[27256],
-                    *(INIClass **)(this + 676));
-  v7 = *(CCINIClass **)(this + 680); /*0x64436b*/
+                    this->q2A4);
+  v7 = this->q2A8; /*0x64436b*/
   this->ParticleSystemTypeClass_field_0x2A4 = Int_Overwrite; /*0x644371*/
+  int v8; // eax
   v8 = INIClass::ReadInt_Overwrite( /*0x644380*/
          (int)aP1,
          (unsigned __int8 *)(this + 36),
          (CCINIClass *)&stru_830620[27244],
          (INIClass *)v7);
-  v9 = this->q2A0; /*0x644385*/
+  double v9 = this->q2A0; /*0x644385*/
   this->ParticleSystemTypeClass_field_0x2A8 = v8; /*0x644390*/
   this->q2A0 = INIClass::ReadDouble_Overwrite( /*0x6443a4*/
                              (int)aP1,
@@ -95,7 +91,7 @@ char __thiscall ParticleSystemTypeClass::GetType(int this, unsigned __int8 ***aP
                        (INIClass *)(this + 36),
                        (unsigned __int8 *)&stru_830620[27196],
                        (INIClass *)COERCE_UNSIGNED_INT64(this->DamageDelay));
-  v11 = *(CCINIClass **)(this + 696); /*0x6443e2*/
+  v11 = this->q2B8; /*0x6443e2*/
   this->DamageDelay = Double_Overwrite; /*0x6443ea*/
   this->ParticleSystemTypeClass_field_0x2B8 = INIClass::ReadInt_Overwrite( /*0x6443fc*/
                               (int)aP1,
@@ -113,7 +109,7 @@ char __thiscall ParticleSystemTypeClass::GetType(int this, unsigned __int8 ***aP
   *(_DWORD *)var54[0] = &stru_830620[26816]; /*0x644423*/
   while ( 1 ) /*0x64443f*/
   {
-    v12 = _strcmpi((char *)&var54.sectionHead[1], **(char ***)var54[0]) == 0; /*0x64443f*/
+    bool v12 = _strcmpi((char *)&var54.sectionHead[1], **(char ***)var54[0]) == 0; /*0x64443f*/
     v13 = var54.headNode[0]; /*0x644441*/
     if ( v12 ) /*0x644445*/
       break; /*0x644445*/
@@ -134,50 +130,50 @@ char __thiscall ParticleSystemTypeClass::GetType(int this, unsigned __int8 ***aP
                  (float *)(this + 700));
   this->ParticleSystemTypeClass_field_2C0 = *XYZFromINI; /*0x644482*/
   this->StartScale = XYZFromINI[1]; /*0x64448b*/
-  aP3 = *(INIClass **)(this + 712); /*0x6444a1*/
+  aP3 = this->Beam; /*0x6444a1*/
   this->ParticleSystemTypeClass_field_2C8 = XYZFromINI[2]; /*0x6444aa*/
   v15 = INIClass::ReadDouble_Overwrite( /*0x6444b0*/
           (int)aP1,
           (INIClass *)(this + 36),
           (unsigned __int8 *)&stru_830620[27136],
           aP3);
-  v16 = *(INIClass **)(this + 720); /*0x6444bb*/
-  *(double *)(this + 712) = v15; /*0x6444c1*/
+  v16 = this->q2D0; /*0x6444bb*/
+  this->Beam = v15; /*0x6444c1*/
   v17 = INIClass::ReadDouble_Overwrite( /*0x6444d1*/
           (int)aP1,
           (INIClass *)(this + 36),
           (unsigned __int8 *)&stru_830620[27116],
           v16);
-  v18 = *(INIClass **)(this + 728); /*0x6444dc*/
-  *(double *)(this + 720) = v17; /*0x6444e2*/
+  v18 = this->q0B6; /*0x6444dc*/
+  this->q2D0 = v17; /*0x6444e2*/
   v19 = INIClass::ReadDouble_Overwrite( /*0x6444f2*/
           (int)aP1,
           (INIClass *)(this + 36),
           (unsigned __int8 *)&stru_830620[27100],
           v18);
-  v20 = *(INIClass **)(this + 736); /*0x6444fd*/
-  *(double *)(this + 728) = v19; /*0x644503*/
+  v20 = this->q0B8; /*0x6444fd*/
+  this->q0B6 = v19; /*0x644503*/
   v21 = INIClass::ReadDouble_Overwrite( /*0x644513*/
           (int)aP1,
           (INIClass *)(this + 36),
           (unsigned __int8 *)&stru_830620[27068],
           v20);
-  v22 = *(INIClass **)(this + 744); /*0x64451e*/
-  *(double *)(this + 736) = v21; /*0x644524*/
+  v22 = this->q2E8; /*0x64451e*/
+  this->q0B8 = v21; /*0x644524*/
   v23 = INIClass::ReadDouble_Overwrite( /*0x644534*/
           (int)aP1,
           (INIClass *)(this + 36),
           (unsigned __int8 *)&stru_830620[27036],
           v22);
-  v24 = *(INIClass **)(this + 752); /*0x64453f*/
-  *(double *)(this + 744) = v23; /*0x644545*/
+  v24 = this->q2F0; /*0x64453f*/
+  this->q2E8 = v23; /*0x644545*/
   v25 = INIClass::ReadDouble_Overwrite( /*0x644555*/
           (int)aP1,
           (INIClass *)(this + 36),
           (unsigned __int8 *)&stru_830620[27004],
           v24);
   v26 = *(_BYTE *)(this + 779); /*0x64455a*/
-  *(double *)(this + 752) = v25; /*0x644562*/
+  this->q2F0 = v25; /*0x644562*/
   *(_BYTE *)(this + 779) = INIClass::ReadBool_Overwrite( /*0x644574*/
                              (int)aP1,
                              (unsigned __int8 *)(this + 36),
@@ -189,7 +185,7 @@ char __thiscall ParticleSystemTypeClass::GetType(int this, unsigned __int8 ***aP
             (INIClass *)(this + 36),
             (Color *)&stru_830620[26984],
             (Color *)(this + 776));
-  v31 = *(Color **)(this + 768); /*0x644596*/
+  v31 = this->q300; /*0x644596*/
   this->q308 = *(_WORD *)Coord; /*0x64459c*/
   this->q30A = *(_BYTE *)(Coord + 2); /*0x6445af*/
   v29 = INIClass::ReadInt_Overwrite( /*0x6445b5*/
@@ -197,7 +193,7 @@ char __thiscall ParticleSystemTypeClass::GetType(int this, unsigned __int8 ***aP
           (unsigned __int8 *)(this + 36),
           (CCINIClass *)&stru_830620[26964],
           (INIClass *)v31);
-  aP3_4a = *(INIClass **)(this + 772); /*0x6445c2*/
+  aP3_4a = this->q304; /*0x6445c2*/
   this->ParticleSystemTypeClass_field_0x300 = v29; /*0x6445c9*/
   this->q304 = INIClass::ReadInt_Overwrite( /*0x6445d4*/
                               (int)aP1,
@@ -209,9 +205,9 @@ char __thiscall ParticleSystemTypeClass::GetType(int this, unsigned __int8 ***aP
           (unsigned __int8 *)(this + 36),
           (CCINIClass *)&stru_830620[26936],
           this->q0C3);
-  aP3a = *(INIClass **)(this + 760); /*0x6445fb*/
+  aP3a = this->q0BE; /*0x6445fb*/
   this->q0C3 = v30; /*0x644604*/
-  *(double *)(this + 760) = INIClass::ReadDouble_Overwrite( /*0x64460f*/
+  this->q0BE = INIClass::ReadDouble_Overwrite( /*0x64460f*/
                               (int)aP1,
                               (INIClass *)(this + 36),
                               (unsigned __int8 *)&stru_830620[26912],
@@ -226,12 +222,12 @@ namespace gamemd {
 int ParticleSystemTypeClass::PowerDrainUpdate(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ParticleSystemTypeClass::_vt13(int this, int *a2)
+void ParticleSystemTypeClass::_vt13(int this, int *a2)
 {
-  int v3; // ecx
 
   AbstractTypeClass::ProcessPower((char *)this, a2); /*0x644709*/
   Power::TimerProcess(this->ParticleSystemTypeClass_field_0x294); /*0x644717*/
+  int v3; // ecx
   LOBYTE(v3) = this->q298; /*0x64471c*/
   Power::FlagProcess(a2, v3); /*0x644725*/
   Power::TimerProcess(this->ParticleSystemTypeClass_field_0x29C); /*0x644733*/

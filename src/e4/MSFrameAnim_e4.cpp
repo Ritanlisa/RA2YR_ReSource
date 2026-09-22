@@ -24,30 +24,23 @@ namespace gamemd {
 char MSFrameAnim::setFrameRate(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall MSFrameAnim::sub_769FE0(_BYTE *this, int a2, _DWORD *a3)
+void MSFrameAnim::sub_769FE0(int a2, _DWORD *a3)
 {
-  int v3; // ebp
-  _DWORD *v5; // eax
-  _DWORD *v6; // ebx
-  _DWORD *v7; // esi
-  _DWORD *v8; // esi
-  int v9; // ebx
   int i; // esi
   void (__thiscall ***v11)(_DWORD, int); // ecx
-  int v12; // eax
-  int v14; // [esp+10h] [ebp-4h]
 
-  v3 = a2; /*0x769fe3*/
+  int v3 = a2; /*0x769fe3*/
   if ( a2 ) /*0x769fed*/
   {
+  _DWORD *v6; // ebx
     this->q00C = 0; /*0x769ff7*/
     if ( a3 ) /*0x769ffd*/
     {
       *a3 = a2; /*0x76a041*/
-      v8 = a3 + 1; /*0x76a043*/
+      _DWORD * v8 = a3 + 1; /*0x76a043*/
       if ( a2 - 1 >= 0 ) /*0x76a04f*/
       {
-        v9 = a2; /*0x76a051*/
+        int v9 = a2; /*0x76a051*/
         do /*0x76a065*/
         {
           ComPtr::Constructor(v8); /*0x76a056*/
@@ -62,15 +55,15 @@ char __thiscall MSFrameAnim::sub_769FE0(_BYTE *this, int a2, _DWORD *a3)
     }
     else
     {
-      v5 = __2_YAPAXI_Z(8 * a2 + 4); /*0x76a007*/
+      _DWORD * v5 = __2_YAPAXI_Z(8 * a2 + 4); /*0x76a007*/
       if ( v5 ) /*0x76a011*/
       {
         *v5 = a2; /*0x76a013*/
         v6 = v5 + 1; /*0x76a015*/
-        v7 = v5 + 1; /*0x76a01b*/
+        _DWORD * v7 = v5 + 1; /*0x76a01b*/
         if ( a2 - 1 >= 0 ) /*0x76a01f*/
         {
-          v14 = a2; /*0x76a022*/
+          int v14 = a2; /*0x76a022*/
           do /*0x76a039*/
           {
             MSFrameAnim::drawFrame(v7); /*0x76a028*/
@@ -111,7 +104,7 @@ char __thiscall MSFrameAnim::sub_769FE0(_BYTE *this, int a2, _DWORD *a3)
   {
     (*(void (__thiscall **)(_BYTE *))(this->q00C)(this); /*0x76a0d9*/
   }
-  v12 = this->MSFrameAnim_field_0x8; /*0x76a0dc*/
+  int v12 = this->MSFrameAnim_field_0x8; /*0x76a0dc*/
   if ( v12 < this->MSFrameAnim_field_0x10 ) /*0x76a0e4*/
     this->MSFrameAnim_field_0x10 = v12; /*0x76a0e6*/
   return 1; /*0x76a0e9*/

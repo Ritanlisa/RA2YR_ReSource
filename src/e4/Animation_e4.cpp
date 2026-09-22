@@ -8,37 +8,17 @@
 void Animation::UpdateBuildingAnimations()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall Animation::UpdateBuildingAnimations(int *this)
+void Animation::UpdateBuildingAnimations()
 {
-  bool v2; // zf
-  int v3; // eax
-  int v4; // ecx
-  _BYTE *v5; // eax
-  char v6; // cl
-  int v7; // eax
   IUnknown *v8; // ebp
   int i; // edi
   double HealthRatio; // st7
-  int v11; // edx
-  int v12; // ecx
-  _BYTE *v13; // eax
-  int v14; // ecx
-  _DWORD *v15; // ecx
-  int v16; // eax
-  int v17; // eax
-  int v18; // eax
-  int v19; // eax
-  int v20; // edi
-  int v21; // edx
-  int v22; // eax
-  int v23; // ecx
-  _BYTE *v24; // eax
   TechnoClass *v25; // ebp
   int j; // edi
 
-  v2 = (*(unsigned __int8 (__thiscall **)(int *))(*this + 848))(this) == 0; /*0x4549bd*/
-  v3 = this->q148; /*0x4549bf*/
-  v4 = *(_DWORD *)(v3 + 1036); /*0x4549c5*/
+  bool v2 = (*(unsigned __int8 (__thiscall **)(int *))(*this + 848))(this) == 0; /*0x4549bd*/
+  int v3 = this->q148; /*0x4549bf*/
+  int v4 = *(_DWORD *)(v3 + 1036); /*0x4549c5*/
   if ( !v2 ) /*0x4549cb*/
   {
     if ( v4 && !*((_BYTE *)this + 1634) ) /*0x4549d5*/
@@ -46,12 +26,12 @@ void __thiscall Animation::UpdateBuildingAnimations(int *this)
       *((_BYTE *)this + 1634) = 1; /*0x4549df*/
       TechnoClass::Find(this->q087, *(_DWORD *)(v3 + 1036)); /*0x4549f3*/
     }
-    v5 = (_BYTE *)this->q148; /*0x4549f8*/
+    _BYTE * v5 = (_BYTE *)this->q148; /*0x4549f8*/
     if ( v5[5831] ) /*0x4549fe*/
     {
       if ( *((char *)this + 1771) <= 0 ) /*0x454a10*/
       {
-        v6 = *((_BYTE *)this + 1772); /*0x454a12*/
+        char v6 = *((_BYTE *)this + 1772); /*0x454a12*/
         if ( v6 != v5[5895] ) /*0x454a20*/
         {
           *((_BYTE *)this + 1771) = 1; /*0x454a22*/
@@ -63,7 +43,7 @@ void __thiscall Animation::UpdateBuildingAnimations(int *this)
     }
     if ( v5[3281] && !*((_BYTE *)this + 617) ) /*0x454a4b*/
       (*(void (__thiscall **)(int *))(*this + 1044))(this); /*0x454a59*/
-    v7 = this->q148; /*0x454a5f*/
+    int v7 = this->q148; /*0x454a5f*/
     if ( *(_BYTE *)(v7 + 5491) && *(int *)(v7 + 3812) > 0 ) /*0x454a77*/
       BuildingClass::ProcessAnimationStates((int)this); /*0x454a7b*/
     if ( *(_BYTE *)(this->q148 + 5492) ) /*0x454a86*/
@@ -74,8 +54,10 @@ void __thiscall Animation::UpdateBuildingAnimations(int *this)
       {
         if ( *(_BYTE *)(i + this->q148 + 3983) ) /*0x454aa7*/
         {
+  _BYTE *v13; // eax
+  int v12; // ecx
           HealthRatio = BuildingClass::GetHealthRatio(this); /*0x454ab4*/
-          v11 = *(_DWORD *)&stru_87C374[44652]; /*0x454ab9*/
+          int v11 = *(_DWORD *)&stru_87C374[44652]; /*0x454ab9*/
           if ( HealthRatio > *(double *)(*(_DWORD *)&stru_87C374[44652] + 5888) ) /*0x454aca*/
           {
             v11 = this->q148; /*0x454ae0*/
@@ -100,16 +82,16 @@ void __thiscall Animation::UpdateBuildingAnimations(int *this)
   }
   if ( v4 && *((_BYTE *)this + 1634) ) /*0x454b1a*/
   {
-    v14 = this->q087; /*0x454b24*/
+    int v14 = this->q087; /*0x454b24*/
     *((_BYTE *)this + 1634) = 0; /*0x454b2a*/
     HouseClass::LostPoweredCenter(v14, *(_DWORD *)(v3 + 1036)); /*0x454b38*/
   }
-  v15 = (_DWORD *)this->q0AF; /*0x454b3d*/
+  _DWORD * v15 = (_DWORD *)this->q0AF; /*0x454b3d*/
   if ( v15 ) /*0x454b45*/
     CaptureManager::FreeAll(v15); /*0x454b47*/
   if ( this->q0AB ) /*0x454b4c*/
     TechnoClass::EjectPassengers(this, 1); /*0x454b5a*/
-  v16 = this->q148; /*0x454b5f*/
+  int v16 = this->q148; /*0x454b5f*/
   if ( *(_BYTE *)(v16 + 5831) && *((char *)this + 1771) >= 0 && *((_BYTE *)this + 1772) ) /*0x454b79*/
   {
     *((_BYTE *)this + 1771) = -1; /*0x454b83*/
@@ -122,24 +104,24 @@ void __thiscall Animation::UpdateBuildingAnimations(int *this)
       (*(void (__thiscall **)(int *))(*this + 1048))(this); /*0x454ba9*/
       if ( *((_BYTE *)this + 616) ) /*0x454baf*/
       {
-        v17 = this->q087; /*0x454bb9*/
+        int v17 = this->q087; /*0x454bb9*/
         *((_BYTE *)this + 616) = 0; /*0x454bbf*/
         *((_BYTE *)this + 1641) = 0; /*0x454bc6*/
         *(_BYTE *)(v17 + 22392) = 1; /*0x454bcd*/
-        v18 = *this; /*0x454bda*/
+        int v18 = *this; /*0x454bda*/
         this->q09B = *(char *)(this->q148 + 3282); /*0x454be5*/
         (*(void (__thiscall **)(int *))(v18 + 1044))(this); /*0x454beb*/
       }
     }
   }
-  v19 = this->q148; /*0x454bf1*/
+  int v19 = this->q148; /*0x454bf1*/
   if ( *(_BYTE *)(v19 + 5491) && *(int *)(v19 + 3812) > 0 ) /*0x454c09*/
     BuildingClass::UpdateAnimationSlots(this); /*0x454c0d*/
   if ( *(_BYTE *)(this->q148 + 5492) ) /*0x454c18*/
   {
-    v20 = this->q087; /*0x454c26*/
-    v21 = *(_DWORD *)(v20 + 676); /*0x454c2c*/
-    v22 = *(_DWORD *)(v20 + 684); /*0x454c32*/
+    int v20 = this->q087; /*0x454c26*/
+    int v21 = *(_DWORD *)(v20 + 676); /*0x454c2c*/
+    int v22 = *(_DWORD *)(v20 + 684); /*0x454c32*/
     if ( v21 != -1 ) /*0x454c3b*/
     {
       if ( *(_DWORD *)&HouseClass_Player[45112] - v21 >= v22 ) /*0x454c47*/
@@ -148,6 +130,8 @@ void __thiscall Animation::UpdateBuildingAnimations(int *this)
     }
     if ( v22 ) /*0x454c4d*/
     {
+  _BYTE *v24; // eax
+  int v23; // ecx
 LABEL_52:
       if ( BuildingClass::GetHealthRatio(this) > *(double *)(*(_DWORD *)&stru_87C374[44652] + 5888) ) /*0x454c71*/
       {
@@ -189,19 +173,16 @@ LABEL_51:
 double Animation::GetProgress()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-double __thiscall Animation::GetProgress(int this)
+void Animation::GetProgress(int this)
 {
-  int v1; // esi
-  int v3; // edx
-  int v4; // eax
 
   if ( !this->q018 ) /*0x4a52f0*/
     return 1.0; /*0x4a5352*/
-  v1 = this->q014; /*0x4a52fb*/
+  int v1 = this->q014; /*0x4a52fb*/
   if ( !v1 ) /*0x4a5304*/
     return 1.0; /*0x4a5310*/
-  v3 = this->q008; /*0x4a5311*/
-  v4 = this->q010; /*0x4a5314*/
+  int v3 = this->q008; /*0x4a5311*/
+  int v4 = this->q010; /*0x4a5314*/
   if ( v3 != -1 ) /*0x4a531a*/
   {
     if ( (int)g_CurrentFrame - v3 < v4 ) /*0x4a5326*/
@@ -216,7 +197,7 @@ double __thiscall Animation::GetProgress(int this)
 void Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall Animation::LoadSidebarAnimations(ObjectClass *this, _DWORD *a1, ObjectClass *aP2)
+void Animation::LoadSidebarAnimations(_DWORD *a1, ObjectClass *aP2)
 {
   ObjectClass *v3; // ebx
   ObjectClass *v4; // ebp
@@ -225,23 +206,17 @@ void __thiscall Animation::LoadSidebarAnimations(ObjectClass *this, _DWORD *a1, 
   Selection_WorldDominationTour *v7; // eax
   ObjectClass *i; // edi
   int owningHouseIndex; // ecx
-  int v10; // eax
   int attachedTag; // eax
   void *nextObject; // eax
   int objectTypeFlags; // edx
   Selection_WorldDominationTour *v14; // eax
   ObjectClass *j; // edi
-  int v16; // ecx
   ObjectClass *v17; // eax
   ObjectClass *v18; // ebx
-  int v19; // eax
-  int v20; // eax
-  int v21; // edx
-  ObjectClass *v22; // [esp+10h] [ebp-10h]
+  Animation *v22; // [esp+10h] [ebp-10h]
   void *v23; // [esp+14h] [ebp-Ch] BYREF
   ObjectClass *v24; // [esp+18h] [ebp-8h] BYREF
   int v25; // [esp+1Ch] [ebp-4h]
-
   v3 = aP2; /*0x770554*/
   v4 = (ObjectClass *)a1; /*0x770559*/
   v22 = this; /*0x77055f*/
@@ -280,7 +255,7 @@ void __thiscall Animation::LoadSidebarAnimations(ObjectClass *this, _DWORD *a1, 
   {
     __1_Timevec_std__QAE_XZ((std::_Timevec *)&aP2); /*0x77069d*/
     owningHouseIndex = v22[5].owningHouseIndex; /*0x7706a2*/
-    v25 = v10; /*0x7706a5*/
+    int v10 = v10; /*0x7706a5*/
     if ( (int)v22[5].nextObject >= owningHouseIndex ) /*0x7706ac*/
     {
       if ( !BYTE1(v22[5].fallRate) && owningHouseIndex ) /*0x7706b7*/
@@ -318,13 +293,13 @@ void __thiscall Animation::LoadSidebarAnimations(ObjectClass *this, _DWORD *a1, 
         j = (ObjectClass *)String::Tokenize((const char **)&a1, (int)j, &Delimiter, (ObjectClass *)&aP2) )
   {
     __1_Timevec_std__QAE_XZ((std::_Timevec *)&aP2); /*0x7707bc*/
-    v16 = v22[5].ambientSoundController[1]; /*0x7707c1*/
+    int v16 = v22[5].ambientSoundController[1]; /*0x7707c1*/
     v18 = v17; /*0x7707c4*/
     if ( v22[5].ambientSoundController[3] >= v16 ) /*0x7707c9*/
     {
       if ( !BYTE1(v22[5].ambientSoundController[2]) && v16 ) /*0x7707d4*/
         continue; /*0x7707d4*/
-      v19 = v22[5].ambientSoundController[4]; /*0x7707d6*/
+      int v19 = v22[5].ambientSoundController[4]; /*0x7707d6*/
       if ( v19 <= 0 /*0x7707e6*/
         || !(*((unsigned __int8 (__thiscall **)(void **, int, _DWORD))v22[5].attachedBomb + 2))(
               &v22[5].attachedBomb,
@@ -334,8 +309,8 @@ void __thiscall Animation::LoadSidebarAnimations(ObjectClass *this, _DWORD *a1, 
         continue; /*0x7707e6*/
       }
     }
-    v20 = v22[5].ambientSoundController[3]; /*0x7707ed*/
-    v21 = v22[5].ambientSoundController[0]; /*0x7707f0*/
+    int v20 = v22[5].ambientSoundController[3]; /*0x7707ed*/
+    int v21 = v22[5].ambientSoundController[0]; /*0x7707f0*/
     v22[5].ambientSoundController[3] = v20 + 1; /*0x7707f6*/
     *(_DWORD *)(v21 + 4 * v20) = v18; /*0x7707f9*/
   }

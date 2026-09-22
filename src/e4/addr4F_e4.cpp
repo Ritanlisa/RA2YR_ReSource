@@ -125,16 +125,14 @@ namespace gamemd {
 int sub_4F18B0(HWND hDlg, unsigned int a2, unsigned int a3, unsigned int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall sub_4F18B0(HWND hDlg, unsigned int a2, unsigned int a3, unsigned int a4)
+void sub_4F18B0(HWND hDlg, unsigned int a2, unsigned int a3, unsigned int a4)
 {
   int result; // eax
   HWND DlgItem; // ebp
   wchar_t *StringCSF; // eax
   HWND v7; // esi
-  int v8; // edi
   wchar_t *v9; // eax
   HouseClass *v10; // ecx
-  int v11; // edx
   wchar_t *v12; // eax
   _DWORD *WindowLongA; // eax
 
@@ -173,7 +171,7 @@ int __stdcall sub_4F18B0(HWND hDlg, unsigned int a2, unsigned int a3, unsigned i
       SendMessageA(DlgItem, 0x4B2u, 0, (LPARAM)StringCSF); /*0x4f1924*/
       DataGlobal_A8EE7C = 2; /*0x4f192c*/
       v7 = GetDlgItem(hDlg, 1810); /*0x4f1938*/
-      v8 = 0; /*0x4f193f*/
+      int v8 = 0; /*0x4f193f*/
       DataGlobal_A8EE80 = 0; /*0x4f1943*/
       if ( g_GameMode_Current[0] ) /*0x4f1949*/
       {
@@ -184,7 +182,7 @@ int __stdcall sub_4F18B0(HWND hDlg, unsigned int a2, unsigned int a3, unsigned i
         if ( HouseClass_Count <= 0 ) /*0x4f199a*/
           goto LABEL_18; /*0x4f199a*/
         v10 = HouseClass_Array; /*0x4f199c*/
-        v11 = HouseClass_Count; /*0x4f19a2*/
+        int v11 = HouseClass_Count; /*0x4f19a2*/
         do /*0x4f19bd*/
         {
           if ( *(_BYTE *)(*(_DWORD *)v10->__pad_0 + 492) && !*(_BYTE *)(*(_DWORD *)v10->__pad_0 + 501) ) /*0x4f19af*/
@@ -232,35 +230,18 @@ int LoadFromINIGraphicMenu()
 char **__usercall LoadFromINIGraphicMenu@<eax>(char **edx0@<edx>, ObjectClass *ecx0@<ecx>, int edi0@<edi>)
 {
   INIClass *v4; // eax
-  int v6; // eax
-  int v7; // ebp
   VectorClass *v8; // edi
-  bool v9; // bl
   _DWORD *Config; // esi
   CCFileClass *v11; // eax
-  char v12; // bl
-  _DWORD *v13; // eax
   CCFileClass *v14; // eax
-  char v15; // bl
-  _DWORD *v16; // eax
   ObjectClass *v17; // esi
-  char *v18; // eax
-  char v19; // bl
   int (__thiscall ***eax18)(_DWORD, int); // eax
   int eax21; // eax
-  int v22; // ecx
   SessionClass *v20; // eax
   ObjectClass *v21; // esi
-  bool v25; // bl
   int Int; // esi
-  int v27; // ebp
   ObjectClass *v28; // esi
-  bool v29; // bl
-  _DWORD *v30; // esi
-  char *v31; // ecx
-  int v32; // eax
   void *vtable0; // eax
-  _DWORD *v34; // edx
   ObjectClass *a2; // [esp+Ch] [ebp-B4h] BYREF
   ObjectClass *v33; // [esp+10h] [ebp-B0h] BYREF
   AbstractClass aP2_4; // [esp+14h] [ebp-ACh] BYREF
@@ -270,17 +251,16 @@ char **__usercall LoadFromINIGraphicMenu@<eax>(char **edx0@<edx>, ObjectClass *e
   _DWORD aP2_68[22]; // [esp+54h] [ebp-6Ch] BYREF
   _BYTE aP2_156[12]; // [esp+ACh] [ebp-14h] BYREF
   int aP2_168; // [esp+B8h] [ebp-8h]
-  int v45; // [esp+BCh] [ebp-4h]
   _UNKNOWN *retaddr; // [esp+C0h] [ebp+0h]
 
   *(_DWORD *)&aP2_4[12] = edx0; /*0x4f1caf*/
   *(_DWORD *)&aP2_4[8] = ecx0; /*0x4f1cb3*/
-  v45 = 0; /*0x4f1cb7*/
+  int v45 = 0; /*0x4f1cb7*/
   v4 = (INIClass *)String::GetOrEmpty_Alt(edx0); /*0x4f1cbe*/
   if ( !INIClass::BinarySearchSection((int)ecx0, v4) ) /*0x4f1cc6*/
     return 0; /*0x4f1cc6*/
-  v6 = __2_YAPAXI_Z(0x70u); /*0x4f1cdd*/
-  v7 = v6; /*0x4f1ce2*/
+  int v6 = __2_YAPAXI_Z(0x70u); /*0x4f1cdd*/
+  int v7 = v6; /*0x4f1ce2*/
   aP2_4.nextArrayIndex = v6; /*0x4f1ce9*/
   if ( !v6 ) /*0x4f1ced*/
     return 0; /*0x4f1cda*/
@@ -298,6 +278,7 @@ char **__usercall LoadFromINIGraphicMenu@<eax>(char **edx0@<edx>, ObjectClass *e
   unknown_libname_73(&aP2_4); /*0x4f1d42*/
   String::Assign((char **)&aP2_4[4], &stru_87C374[56304]); /*0x4f1d50*/
   String::Assign((char **)&a2, aBackground); /*0x4f1d5e*/
+  bool v9; // bl
   v9 = (int)INIClass::ReadString( /*0x4f1d86*/
               *(ObjectClass **)&aP2_4[8],
               *(ObjectClass **)&aP2_4[12],
@@ -315,7 +296,7 @@ char **__usercall LoadFromINIGraphicMenu@<eax>(char **edx0@<edx>, ObjectClass *e
   {
     String::Concat2((const char **)&aP2_4, (char **)&a2, aVqa); /*0x4f1dd6*/
     v11 = CCFileClass::Construct2(&aP2_64, (char **)&a2); /*0x4f1de4*/
-    v12 = (*(int (__thiscall **)(CCFileClass *, _DWORD, int))(*(_DWORD *)v11->__pad_0 + 20))(v11, 0, edi0); /*0x4f1df8*/
+    char v12 = (*(int (__thiscall **)(CCFileClass *, _DWORD, int))(*(_DWORD *)v11->__pad_0 + 20))(v11, 0, edi0); /*0x4f1df8*/
     aP2_68[0] = &vt_CCFileClass; /*0x4f1dfa*/
     aP2_168 = 0; /*0x4f1e02*/
     Vector::Clear((int)aP2_156); /*0x4f1e09*/
@@ -323,7 +304,7 @@ char **__usercall LoadFromINIGraphicMenu@<eax>(char **edx0@<edx>, ObjectClass *e
     BufferIOFileClass::Dtor(aP2_68); /*0x4f1e1a*/
     if ( v12 ) /*0x4f1e21*/
     {
-      v13 = (_DWORD *)__2_YAPAXI_Z(0x30u); /*0x4f1e25*/
+      _DWORD * v13 = (_DWORD *)__2_YAPAXI_Z(0x30u); /*0x4f1e25*/
       if ( v13 ) /*0x4f1e2f*/
       {
         Config = MSVQAnim::ConstructMSVQAnimHidden( /*0x4f1e4e*/
@@ -342,7 +323,7 @@ LABEL_18:
             PriorityQueue::Add((Selection_WorldDominationTour *)(v7 + 4), (MSAnim *)Config); /*0x4f1f81*/
           *(_DWORD *)(v7 + 84) = Config; /*0x4f1f86*/
           eax21 = (*(int (__thiscall **)(_DWORD *, int *))(*Config + 24))(Config, aP2_44); /*0x4f1f92*/
-          v22 = *(_DWORD *)eax21; /*0x4f1f95*/
+          int v22 = *(_DWORD *)eax21; /*0x4f1f95*/
           v20 = *(SessionClass **)(eax21 + 4); /*0x4f1f97*/
           aP2_4.referenceCount = v22; /*0x4f1f9a*/
           aP2_4.NeedsSaveOrLink = v20; /*0x4f1fa2*/
@@ -357,7 +338,7 @@ LABEL_18:
     }
     String::Concat2((const char **)&aP2_4[4], (char **)&aP2_4[8], aBik_0); /*0x4f1e66*/
     v14 = CCFileClass::Construct2(aP2_68, (char **)&aP2_4[8]); /*0x4f1e74*/
-    v15 = (*(int (__thiscall **)(CCFileClass *, _DWORD))(*(_DWORD *)v14->__pad_0 + 20))(v14, 0); /*0x4f1e89*/
+    char v15 = (*(int (__thiscall **)(CCFileClass *, _DWORD))(*(_DWORD *)v14->__pad_0 + 20))(v14, 0); /*0x4f1e89*/
     aP2_68[0] = &vt_CCFileClass; /*0x4f1e8b*/
     aP2_168 = 0; /*0x4f1e93*/
     Vector::Clear((int)aP2_156); /*0x4f1e9e*/
@@ -370,7 +351,7 @@ LABEL_18:
       aP2_44[1] = 0; /*0x4f1ecb*/
       aP2_44[2] = *(_DWORD *)&stru_89E138[8044]; /*0x4f1ecf*/
       aP2_56[0] = *(_DWORD *)&stru_89E138[8048]; /*0x4f1ed3*/
-      v16 = (_DWORD *)__2_YAPAXI_Z(0x3Cu); /*0x4f1ed7*/
+      _DWORD * v16 = (_DWORD *)__2_YAPAXI_Z(0x3Cu); /*0x4f1ed7*/
       if ( v16 ) /*0x4f1ee1*/
         Config = ArtConfig::loadConfig( /*0x4f1f01*/
                    v16,
@@ -383,10 +364,11 @@ LABEL_18:
     DeleteAndZero((void **)&aP2_4[8]); /*0x4f1f07*/
     if ( !Config ) /*0x4f1f0e*/
     {
+  char v19; // bl
       v17 = (ObjectClass *)__2_YAPAXI_Z(0x3Cu); /*0x4f1f17*/
       if ( v17 ) /*0x4f1f1e*/
       {
-        v18 = String::GetOrEmpty((char **)&aP2_4.abstractFlags); /*0x4f1f24*/
+        char * v18 = String::GetOrEmpty((char **)&aP2_4.abstractFlags); /*0x4f1f24*/
         String::Assign((char **)&aP2_4, v18); /*0x4f1f2e*/
         v19 = 1; /*0x4f1f33*/
         Config = UI_Load(v17, (const char **)&aP2_4, v7 + 28, 1); /*0x4f1f49*/
@@ -405,6 +387,7 @@ LABEL_22:
   String::Assign((char **)&a2, &stru_87C374[56304]); /*0x4f1fab*/
   String::Assign((char **)&v33, g_INI_Key_Theme); /*0x4f1fc2*/
   v21 = *(ObjectClass **)&aP2_4[12]; /*0x4f1fcf*/
+  bool v25; // bl
   v25 = (int)INIClass::ReadString( /*0x4f1fec*/
                *(ObjectClass **)&aP2_4[8],
                *(ObjectClass **)&aP2_4[12],
@@ -419,7 +402,7 @@ LABEL_22:
   Int = ((int (__stdcall *)(char **, char **, int))INIClass::ReadInt)((char **)v21, (char **)&v33, 100); /*0x4f202c*/
   aP2_4.abstractFlags = Int; /*0x4f2032*/
   DeleteAndZero((void **)&v33); /*0x4f2036*/
-  v27 = 0; /*0x4f203b*/
+  int v27 = 0; /*0x4f203b*/
   if ( Int >= 0 ) /*0x4f203f*/
   {
     do /*0x4f210e*/
@@ -431,6 +414,7 @@ LABEL_22:
       String::Assign((char **)&a2, &stru_87C374[56304]); /*0x4f2061*/
       String::Assign((char **)&v33, (const char *)aP2_56); /*0x4f206f*/
       v28 = *(ObjectClass **)&aP2_4[8]; /*0x4f207c*/
+  bool v29; // bl
       v29 = (int)INIClass::ReadString( /*0x4f2099*/
                    *(ObjectClass **)&aP2_4[8],
                    *(ObjectClass **)&aP2_4[12],
@@ -441,17 +425,18 @@ LABEL_22:
       DeleteAndZero((void **)&a2); /*0x4f20a5*/
       if ( v29 ) /*0x4f20ac*/
       {
-        v30 = sub_4F38B0((char **)&aP2_4, v28, (char *)(aP2_4.nextArrayIndex + 4), (char *)&aP2_4.referenceCount); /*0x4f20c6*/
+        _DWORD * v30 = sub_4F38B0((char **)&aP2_4, v28, (char *)(aP2_4.nextArrayIndex + 4), (char *)&aP2_4.referenceCount); /*0x4f20c6*/
         if ( v30 ) /*0x4f20ca*/
         {
-          v31 = (char *)v8->Capacity; /*0x4f20cc*/
+          char * v31 = (char *)v8->Capacity; /*0x4f20cc*/
           if ( (int)v8[1].vtable0 < (int)v31 /*0x4f20f1*/
             || (v8->IsAllocated || !v31)
+  int v32; // eax
             && (v32 = (int)v8[1].Items, v32 > 0)
             && (*((unsigned __int8 (__thiscall **)(VectorClass *, char *, _DWORD))v8->vtable0 + 2))(v8, &v31[v32], 0) )
           {
             vtable0 = v8[1].vtable0; /*0x4f20f8*/
-            v34 = v8->Items; /*0x4f20fb*/
+            _DWORD * v34 = v8->Items; /*0x4f20fb*/
             v8[1].vtable0 = (char *)vtable0 + 1; /*0x4f2101*/
             v34[(_DWORD)vtable0] = v30; /*0x4f2104*/
           }
@@ -473,34 +458,15 @@ namespace gamemd {
 int E4Recv_4F2300::ProcessGraphicMenu()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ProcessGraphicMenu(int this)
+void ProcessGraphicMenu(int this)
 {
-  char *v2; // eax
   int StringList; // eax
-  _BYTE *v4; // edi
-  int v5; // eax
-  int v6; // eax
-  int v7; // esi
   unsigned __int16 EventQueue; // ax
-  int v9; // esi
-  int v10; // ecx
-  _BYTE *v11; // esi
-  int v12; // ecx
-  _BYTE *v13; // esi
-  int v14; // ecx
-  char v16; // [esp+1Dh] [ebp-31h]
-  _DWORD v17[2]; // [esp+1Eh] [ebp-30h] BYREF
   void **v18; // [esp+26h] [ebp-28h] BYREF
-  int v19; // [esp+2Ah] [ebp-24h]
-  int v20; // [esp+2Eh] [ebp-20h]
   void **v21; // [esp+32h] [ebp-1Ch] BYREF
-  int v22; // [esp+36h] [ebp-18h]
-  int v23; // [esp+3Ah] [ebp-14h]
   void **v24; // [esp+3Eh] [ebp-10h] BYREF
-  int v25; // [esp+42h] [ebp-Ch]
-  int v26; // [esp+46h] [ebp-8h]
 
-  v2 = String::GetOrEmpty((char **)(this + 80)); /*0x4f230c*/
+  char * v2 = String::GetOrEmpty((char **)(this + 80)); /*0x4f230c*/
   StringList = StringList::Find(&g_BuildingTypeClass_Count, v2); /*0x4f2317*/
   ThemeClass::Play(&g_BuildingTypeClass_Count, StringList); /*0x4f2322*/
   (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)DSurface_Alternate + 24))(DSurface_Alternate, 0); /*0x4f2331*/
@@ -510,13 +476,13 @@ int __thiscall ProcessGraphicMenu(int this)
     g_DSurface_Hidden,
     0,
     1);
-  v16 = 0; /*0x4f235d*/
-  v4 = 0; /*0x4f2362*/
+  char v16 = 0; /*0x4f235d*/
+  _BYTE * v4 = 0; /*0x4f2362*/
   Timer::PumpMessages((HWND *)g_BinkMoviePlayer); /*0x4f2364*/
-  v5 = this->M84; /*0x4f2369*/
+  int v5 = this->M84; /*0x4f2369*/
   if ( v5 ) /*0x4f236e*/
     MSEngine::ProcessEvents((_DWORD *)(this + 4), v5, 300000); /*0x4f2379*/
-  v6 = (*(int (__thiscall **)(int, void ***))(*(_DWORD *)DSurface_Alternate + 120))(DSurface_Alternate, &v24); /*0x4f238e*/
+  int v6 = (*(int (__thiscall **)(int, void ***))(*(_DWORD *)DSurface_Alternate + 120))(DSurface_Alternate, &v24); /*0x4f238e*/
   Team::ReleaseAll((int *)(this + 4), v6); /*0x4f2394*/
   DSurface::Flip2(); /*0x4f239b*/
   do /*0x4f25fd*/
@@ -524,24 +490,26 @@ int __thiscall ProcessGraphicMenu(int this)
     (*(void (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 12))(g_WWMouseClass_Instance); /*0x4f23a8*/
     DDraw::HandleSuspend((_DWORD *)(this + 4)); /*0x4f23ad*/
     (*(void (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 16))(g_WWMouseClass_Instance); /*0x4f23ba*/
-    v7 = (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 48))(g_WWMouseClass_Instance); /*0x4f23ce*/
+    int v7 = (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 48))(g_WWMouseClass_Instance); /*0x4f23ce*/
+  _DWORD v17[2]; // [esp+1Eh] [ebp-30h] BYREF
     v17[0] = (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 44))(g_WWMouseClass_Instance); /*0x4f23db*/
     v17[1] = v7; /*0x4f23df*/
     if ( EventQueue::Process(g_BinkMoviePlayer) ) /*0x4f23e3*/
     {
+  _BYTE *v11; // esi
       EventQueue = EventQueue::Read(g_BinkMoviePlayer); /*0x4f23f7*/
-      v9 = EventQueue; /*0x4f23ff*/
+      int v9 = EventQueue; /*0x4f23ff*/
       if ( EventQueue == 1 || EventQueue == 13 ) /*0x4f2411*/
       {
         v11 = 0; /*0x4f24a7*/
-        v22 = this + 88; /*0x4f24a9*/
-        v23 = 0; /*0x4f24b1*/
+        int v22 = this + 88; /*0x4f24a9*/
+        int v23 = 0; /*0x4f24b1*/
         v21 = &vt_VectorCursor_GraphicMenuItem_DynamicVectorClass_GraphicMenuItem; /*0x4f24b5*/
         if ( Map::CanScroll(&v21) ) /*0x4f24bd*/
         {
           do /*0x4f24f6*/
           {
-            v12 = *(_DWORD *)(*(_DWORD *)(v22 + 4) + 4 * v23); /*0x4f24d2*/
+            int v12 = *(_DWORD *)(*(_DWORD *)(v22 + 4) + 4 * v23); /*0x4f24d2*/
             if ( (*(unsigned __int8 (__thiscall **)(int, _DWORD *))(*(_DWORD *)v12 + 8))(v12, v17) ) /*0x4f24dc*/
               break; /*0x4f24e1*/
             ((void (__thiscall *)(void ***))v21[2])(&v21); /*0x4f24eb*/
@@ -554,14 +522,14 @@ int __thiscall ProcessGraphicMenu(int this)
       }
       else
       {
-        v19 = this + 88; /*0x4f241e*/
-        v20 = 0; /*0x4f2422*/
+        int v19 = this + 88; /*0x4f241e*/
+        int v20 = 0; /*0x4f2422*/
         v18 = &vt_VectorCursor_GraphicMenuItem_DynamicVectorClass_GraphicMenuItem; /*0x4f242a*/
         if ( Map::CanScroll(&v18) ) /*0x4f2432*/
         {
           do /*0x4f2467*/
           {
-            v10 = *(_DWORD *)(*(_DWORD *)(v19 + 4) + 4 * v20); /*0x4f2448*/
+            int v10 = *(_DWORD *)(*(_DWORD *)(v19 + 4) + 4 * v20); /*0x4f2448*/
             if ( (*(unsigned __int8 (__thiscall **)(int, int))(*(_DWORD *)v10 + 4))(v10, v9) ) /*0x4f244d*/
               break; /*0x4f2452*/
             ((void (__thiscall *)(void ***))v18[2])(&v18); /*0x4f245c*/
@@ -588,15 +556,15 @@ int __thiscall ProcessGraphicMenu(int this)
     }
     else
     {
-      v13 = 0; /*0x4f2553*/
-      v25 = this + 88; /*0x4f2559*/
-      v26 = 0; /*0x4f255d*/
+      _BYTE * v13 = 0; /*0x4f2553*/
+      int v25 = this + 88; /*0x4f2559*/
+      int v26 = 0; /*0x4f255d*/
       v24 = &vt_VectorCursor_GraphicMenuItem_DynamicVectorClass_GraphicMenuItem; /*0x4f2561*/
       if ( Map::CanScroll(&v24) ) /*0x4f2569*/
       {
         do /*0x4f25a2*/
         {
-          v14 = *(_DWORD *)(*(_DWORD *)(v25 + 4) + 4 * v26); /*0x4f257e*/
+          int v14 = *(_DWORD *)(*(_DWORD *)(v25 + 4) + 4 * v26); /*0x4f257e*/
           if ( (*(unsigned __int8 (__thiscall **)(int, _DWORD *))(*(_DWORD *)v14 + 8))(v14, v17) ) /*0x4f2588*/
             break; /*0x4f258d*/
           ((void (__thiscall *)(void ***))v24[2])(&v24); /*0x4f2597*/
@@ -663,26 +631,18 @@ int *__userpurge ParseINIAnimGadgetDefinition@<eax>(
         CCINIClass aP3)
 {
   ReferenceCounted *IntINIClass; // ebx
-  int *v8; // ebp
   Selection_WorldDominationTour **CoordPair; // eax
   Selection_WorldDominationTour *v10; // ecx
   SessionClass *v11; // eax
   Selection_WorldDominationTour *v12; // ebx
-  int v13; // ecx
-  int v14; // edx
   int *Rect; // eax
   unsigned __int8 *v16; // eax
   GraphicMenuAnimItem *Int; // esi
-  int *v18; // eax
   GraphicMenuAnimItem aP5; // [esp+Ch] [ebp-38h] BYREF
-  char *a3; // [esp+24h] [ebp-20h] BYREF
   GraphicMenuAnimItem *aP1; // [esp+28h] [ebp-1Ch]
   Selection_WorldDominationTour *var18; // [esp+2Ch] [ebp-18h] BYREF
   ReferenceCounted *v24; // [esp+30h] [ebp-14h]
   int var18_8; // [esp+34h] [ebp-10h] BYREF
-  int v25; // [esp+38h] [ebp-Ch]
-  int v26; // [esp+3Ch] [ebp-8h]
-  int v27; // [esp+40h] [ebp-4h]
 
   String::Assign((char **)&aP5.GraphicMenuAnimItem_field_0x08, ValueName); /*0x4f2c83*/
   IntINIClass = (ReferenceCounted *)INIClass::ReadInt( /*0x4f2c97*/
@@ -695,6 +655,7 @@ int *__userpurge ParseINIAnimGadgetDefinition@<eax>(
   if ( IntINIClass == (ReferenceCounted *)-1 ) /*0x4f2ca9*/
     return 0; /*0x4f2cad*/
   unknown_libname_73(&aP5); /*0x4f2cba*/
+  char *a3; // [esp+24h] [ebp-20h] BYREF
   String::Assign(&a3, &stru_87C374[56304]); /*0x4f2cc8*/
   String::Assign((char **)&aP5.GraphicMenuAnimItem_field_0x08, g_INI_Key_Image[0]); /*0x4f2cd6*/
   INIClass::ReadString( /*0x4f2ced*/
@@ -720,7 +681,7 @@ int *__userpurge ParseINIAnimGadgetDefinition@<eax>(
     DeleteAndZero((int)&aP5.GraphicMenuAnimItem_field_0x08); /*0x4f2d6e*/
     if ( String::Length((const char **)&aP5.GraphicMenuAnimItem_field_0x04) ) /*0x4f2d77*/
     {
-      v8 = 0; /*0x4f2d9e*/
+      int * v8 = 0; /*0x4f2d9e*/
       var18 = 0; /*0x4f2da9*/
       v24 = 0; /*0x4f2dad*/
       String::Assign(&a3, (const char *)&stru_824238.sectionHead[1]); /*0x4f2db1*/
@@ -736,14 +697,14 @@ int *__userpurge ParseINIAnimGadgetDefinition@<eax>(
       v24 = (ReferenceCounted *)v11; /*0x4f2dda*/
       DeleteAndZero((int)&a3); /*0x4f2dde*/
       v12 = *(Selection_WorldDominationTour **)aP3[0]; /*0x4f2de3*/
-      v13 = **(_DWORD **)aP3[0]; /*0x4f2df4*/
+      int v13 = **(_DWORD **)aP3[0]; /*0x4f2df4*/
       var18_8 = 0; /*0x4f2df6*/
       var18 = (Selection_WorldDominationTour *)((char *)var18 + v13); /*0x4f2e00*/
-      v14 = *(_DWORD *)(*(_DWORD *)aP3[0] + 4); /*0x4f2e04*/
-      v25 = 0; /*0x4f2e09*/
+      int v14 = *(_DWORD *)(*(_DWORD *)aP3[0] + 4); /*0x4f2e04*/
+      int v25 = 0; /*0x4f2e09*/
       v24 = (ReferenceCounted *)((char *)v24 + v14); /*0x4f2e0d*/
-      v26 = 0; /*0x4f2e11*/
-      v27 = 0; /*0x4f2e15*/
+      int v26 = 0; /*0x4f2e11*/
+      int v27 = 0; /*0x4f2e15*/
       String::Assign((char **)&aP3, (const char *)&stru_824238.headNode[1]); /*0x4f2e19*/
       Rect = INIClass::GetRect( /*0x4f2e30*/
                (int)edx0,
@@ -763,7 +724,7 @@ int *__userpurge ParseINIAnimGadgetDefinition@<eax>(
       String::Assign((char **)&aP3, (const char *)&stru_81859C.headNode[1]); /*0x4f2e95*/
       Int = (GraphicMenuAnimItem *)INIClass::ReadInt(edx0, Source, (ReferenceCounted *)&aP3, (INIClass *)5); /*0x4f2ead*/
       DeleteAndZero((int)&aP3); /*0x4f2eaf*/
-      v18 = (int *)__2_YAPAXI_Z(0x28u); /*0x4f2eb6*/
+      int * v18 = (int *)__2_YAPAXI_Z(0x28u); /*0x4f2eb6*/
       if ( v18 ) /*0x4f2ec0*/
         v8 = sub_4F2F10( /*0x4f2eed*/
                v18,
@@ -800,27 +761,22 @@ namespace gamemd {
 int ParseINIGadgetDefinition(ObjectClass * aP0, ObjectClass * edx0, unsigned int * a2, ObjectClass a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int ParseINIGadgetDefinition(ObjectClass *aP0, ObjectClass *edx0, _DWORD *a2, ObjectClass a4)
+void ParseINIGadgetDefinition(ObjectClass *aP0, ObjectClass *edx0, _DWORD *a2, ObjectClass a4)
 {
   ObjectClass *v4; // edx
   ObjectClass *v5; // ecx
   ObjectClass *v6; // edi
   ObjectClass *v7; // esi
   ReferenceCounted *IntINIClass; // ebx
-  int v10; // ebp
   ObjectClass **CoordPair; // eax
   ObjectClass *ecx3; // ecx
   SessionClass *v11; // eax
   Selection_WorldDominationTour *v12; // ebx
-  int v15; // ecx
   int edx3; // edx
   ReferenceCounted *Rect; // eax
-  int v18; // eax
   ObjectClass *v16; // [esp+Ch] [ebp-44h] BYREF
   ReferenceCounted aP8; // [esp+10h] [ebp-40h] BYREF
-  char *a7; // [esp+14h] [ebp-3Ch] BYREF
   ReferenceCounted aP6; // [esp+18h] [ebp-38h] BYREF
-  char *a5; // [esp+1Ch] [ebp-34h] BYREF
   ObjectClass *v21; // [esp+20h] [ebp-30h] BYREF
   ObjectClass *v22; // [esp+24h] [ebp-2Ch]
   ObjectClass *v23; // [esp+28h] [ebp-28h] BYREF
@@ -830,7 +786,6 @@ int ParseINIGadgetDefinition(ObjectClass *aP0, ObjectClass *edx0, _DWORD *a2, Ob
   ReferenceCounted v30; // [esp+44h] [ebp-Ch]
   ReferenceCounted v31; // [esp+48h] [ebp-8h]
   ReferenceCounted v32; // [esp+4Ch] [ebp-4h]
-
   v6 = v5; /*0x4f3146*/
   v7 = v4; /*0x4f3148*/
   String::Assign((char **)&v21, ValueName); /*0x4f3153*/
@@ -839,7 +794,7 @@ int ParseINIGadgetDefinition(ObjectClass *aP0, ObjectClass *edx0, _DWORD *a2, Ob
   DeleteAndZero((int)&v21); /*0x4f3171*/
   if ( IntINIClass == (ReferenceCounted *)-1 ) /*0x4f3179*/
     return 0; /*0x4f317d*/
-  v10 = 0; /*0x4f3187*/
+  int v10 = 0; /*0x4f3187*/
   v23 = 0; /*0x4f3192*/
   v27 = 0; /*0x4f3196*/
   String::Assign((char **)&v21, (const char *)&stru_824238.sectionHead[1]); /*0x4f319a*/
@@ -850,7 +805,7 @@ int ParseINIGadgetDefinition(ObjectClass *aP0, ObjectClass *edx0, _DWORD *a2, Ob
   v27 = (ObjectClass *)v11; /*0x4f31c3*/
   DeleteAndZero((int)&v21); /*0x4f31c7*/
   v12 = (Selection_WorldDominationTour *)edx0; /*0x4f31cc*/
-  v15 = *(_DWORD *)edx0->__pad_0; /*0x4f31dd*/
+  int v15 = *(_DWORD *)edx0->__pad_0; /*0x4f31dd*/
   aP4 = 0; /*0x4f31df*/
   v23 = (ObjectClass *)((char *)v23 + v15); /*0x4f31e9*/
   edx3 = *(_DWORD *)&edx0->__pad_0[4]; /*0x4f31ed*/
@@ -867,8 +822,10 @@ int ParseINIGadgetDefinition(ObjectClass *aP0, ObjectClass *edx0, _DWORD *a2, Ob
   DeleteAndZero((int)&edx0); /*0x4f323d*/
   *(_DWORD *)&aP4 += v12->field_0; /*0x4f324e*/
   *(_DWORD *)&v30 += *(_DWORD *)v12->__pad_4; /*0x4f325b*/
+  char *a5; // [esp+1Ch] [ebp-34h] BYREF
   unknown_libname_73(&a5); /*0x4f325f*/
   unknown_libname_73(&aP6); /*0x4f3268*/
+  char *a7; // [esp+14h] [ebp-3Ch] BYREF
   unknown_libname_73(&a7); /*0x4f3271*/
   String::Assign((char **)&v21, &stru_87C374[56304]); /*0x4f327f*/
   String::Assign((char **)&edx0, g_INI_Key_Image[0]); /*0x4f328d*/
@@ -897,7 +854,7 @@ int ParseINIGadgetDefinition(ObjectClass *aP0, ObjectClass *edx0, _DWORD *a2, Ob
   INIClass::ReadString(v7, v6, (ObjectClass *)&edx0, (ReferenceCounted *)&v21, (int)&v16); /*0x4f33ca*/
   DeleteAndZero((int)&edx0); /*0x4f33d3*/
   DeleteAndZero((int)&v21); /*0x4f33dc*/
-  v18 = __2_YAPAXI_Z(0x38u); /*0x4f33e3*/
+  int v18 = __2_YAPAXI_Z(0x38u); /*0x4f33e3*/
   if ( v18 ) /*0x4f33ed*/
     v10 = sub_4F3460( /*0x4f3423*/
             v18,
@@ -925,7 +882,7 @@ namespace gamemd {
 int E4Recv_4F3460::sub_4F3460(int aP1, ReferenceCounted * aP2, unsigned int * a3, ReferenceCounted * aP4, const char ** a5, ReferenceCounted * aP6, const char ** a7, ReferenceCounted * aP8, const char ** a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_4F3460(
+void sub_4F3460(
         int this,
         int aP1,
         ReferenceCounted *aP2,
@@ -937,7 +894,6 @@ int __thiscall sub_4F3460(
         ReferenceCounted *aP8,
         const char **a9)
 {
-  char v10; // bl
   Selection_WorldDominationTour *v12; // edi
   ReferenceCounted *v13; // edx
   ReferenceCounted v14; // edx
@@ -954,8 +910,7 @@ int __thiscall sub_4F3460(
   ObjectClass *v25; // ebx
   _DWORD *v26; // eax
   MSAnim *v27; // eax
-
-  v10 = 0; /*0x4f3469*/
+  char v10 = 0; /*0x4f3469*/
   GraphicMenuItem::Constructor((_DWORD *)this, (GraphicMenuAnimItem *)aP1); /*0x4f3472*/
   v12 = (Selection_WorldDominationTour *)aP2; /*0x4f3477*/
   v13 = aP4; /*0x4f347b*/
@@ -1015,8 +970,7 @@ int __thiscall sub_4F3460(
     v26 = (_DWORD *)__2_YAPAXI_Z(0x3Cu); /*0x4f35b9*/
     if ( v26 ) /*0x4f35c3*/
       v27 = (MSAnim *)MSPCXAnim::Construct(v26, v25, (MSAnim *)&v12->__pad_4[20], v19, 1); /*0x4f35cf*/
-    else
-      v27 = 0; /*0x4f35d6*/
+    MSAnim *v27 = 0; /*0x4f35d6*/
     this->M44 = v27; /*0x4f35da*/
     if ( v27 ) /*0x4f35dd*/
     {
@@ -1040,18 +994,17 @@ int sub_4F38B0()
 
 // 0x4F3AB0
 namespace gamemd {
-int E4Recv_4F3AB0::sub_4F3AB0(int a2)
+void E4Recv_4F3AB0::sub_4F3AB0(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_4F3AB0(_BYTE *this, int a2)
+void sub_4F3AB0(_BYTE *this, int a2)
 {
   int result; // eax
-  int v3; // edx
 
   result = a2; /*0x4f3ab0*/
   if ( (_BYTE)a2 != *(this + 9) ) /*0x4f3ab9*/
   {
-    v3 = *(_DWORD *)this; /*0x4f3abb*/
+    int v3 = *(_DWORD *)this; /*0x4f3abb*/
     *(this + 9) = a2; /*0x4f3abe*/
     return (*(int (__stdcall **)(int))(v3 + 20))(a2); /*0x4f3ac1*/
   }
@@ -1069,26 +1022,23 @@ _DWORD *__fastcall sub_4F3B80(ObjectClass *a1, ObjectClass *edx0)
 {
   ReferenceCounted *v4; // eax
   ReferenceCounted *Int; // ebx
-  _DWORD *v7; // eax
-  _DWORD *v8; // esi
-  int v9; // [esp+Ch] [ebp-Ch] BYREF
-  char *a2; // [esp+10h] [ebp-8h] BYREF
-  char *a3; // [esp+14h] [ebp-4h] BYREF
 
-  v4 = (ReferenceCounted *)String::Assign(&a3, ValueName); /*0x4f3b95*/
+  ReferenceCounted *a3 = (ReferenceCounted *)String::Assign(&a3, ValueName); /*0x4f3b95*/
   Int = (ReferenceCounted *)INIClass::ReadInt(edx0, a1, v4, (INIClass *)0xFFFFFFFF); /*0x4f3ba7*/
   DeleteAndZero((int)&a3); /*0x4f3ba9*/
   if ( Int == (ReferenceCounted *)-1 ) /*0x4f3bb1*/
     return 0; /*0x4f3bb5*/
+  int v9; // [esp+Ch] [ebp-Ch] BYREF
   unknown_libname_73(&v9); /*0x4f3bc0*/
   String::Assign(&a3, &stru_87C374[56304]); /*0x4f3bce*/
+  char *a2; // [esp+10h] [ebp-8h] BYREF
   String::Assign(&a2, (const char *)&g_INI_Key_Type.INIClass_field_2C); /*0x4f3bdc*/
   INIClass::ReadString(edx0, a1, (ObjectClass *)&a2, (ReferenceCounted *)&a3, (int)&v9); /*0x4f3bf3*/
   DeleteAndZero((int)&a2); /*0x4f3bfc*/
   DeleteAndZero((int)&a3); /*0x4f3c05*/
-  v7 = (_DWORD *)__2_YAPAXI_Z(0x28u); /*0x4f3c0c*/
+  _DWORD * v7 = (_DWORD *)__2_YAPAXI_Z(0x28u); /*0x4f3c0c*/
   if ( v7 ) /*0x4f3c16*/
-    v8 = sub_4F3C40(v7, (int)Int, (const char **)&v9); /*0x4f3c25*/
+    _DWORD * v8 = sub_4F3C40(v7, (int)Int, (const char **)&v9); /*0x4f3c25*/
   else
     v8 = 0; /*0x4f3c29*/
   DeleteAndZero((int)&v9); /*0x4f3c2f*/
@@ -1102,18 +1052,14 @@ namespace gamemd {
 int E4Recv_4F3D40::sub_4F3D40()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_4F3D40(const char **this)
+void sub_4F3D40(const char **this)
 {
-  int v1; // ebx
-  unsigned int v2; // eax
-  int v3; // edi
   const char **v4; // esi
   int v5; // ebx
   int v7; // eax
   void *v8; // [esp+Ch] [ebp-8h] BYREF
   void *v9; // [esp+10h] [ebp-4h] BYREF
-
-  v1 = 0; /*0x4f3d4b*/
+  int v1 = 0; /*0x4f3d4b*/
   String::AssignFromPtr((char **)&v8, this); /*0x4f3d4d*/
   String::ToLower((const char **)&v8); /*0x4f3d56*/
   String::AssignFromPtr((char **)&v9, (const char **)&v8); /*0x4f3d64*/
@@ -1137,7 +1083,7 @@ int __thiscall sub_4F3D40(const char **this)
     BYTE1(v1) |= 1u; /*0x4f3e06*/
     String::Erase((const char **)&v8, 0, 6); /*0x4f3e09*/
   }
-  v2 = String::Length((const char **)&v8); /*0x4f3e12*/
+  unsigned int v2 = String::Length((const char **)&v8); /*0x4f3e12*/
   if ( v2 ) /*0x4f3e1a*/
   {
     if ( v2 == 1 ) /*0x4f3e1d*/
@@ -1146,7 +1092,7 @@ int __thiscall sub_4F3D40(const char **this)
     }
     else
     {
-      v3 = 1; /*0x4f3e1f*/
+      int v3 = 1; /*0x4f3e1f*/
       v4 = (const char **)&DataGlobal_824328; /*0x4f3e24*/
       while ( String::NotEquals((const char **)&v8, *v4) ) /*0x4f3e37*/
       {
@@ -1190,11 +1136,9 @@ _BYTE *__userpurge sub_4F4E53@<eax>(
         int a6,
         int a7)
 {
-  int v7; // edi
   __int16 v8; // cx
-  int v9; // edx
 
-  v7 = a2; /*0x4f4e5a*/
+  int v7 = a2; /*0x4f4e5a*/
   do /*0x4f4ea3*/
   {
     v8 = 0; /*0x4f4e5e*/
@@ -1204,7 +1148,7 @@ _BYTE *__userpurge sub_4F4E53@<eax>(
     LOWORD(a2) = result[1] & 0xF8; /*0x4f4e77*/
     result += 4; /*0x4f4e7e*/
     LOWORD(a3) = a3 & 0xF8; /*0x4f4e81*/
-    v9 = a3 | (32 * a2); /*0x4f4e88*/
+    int v9 = a3 | (32 * a2); /*0x4f4e88*/
     LOWORD(a3) = *(result - 1) >> 3; /*0x4f4e90*/
     a2 = a3 | (4 * v9); /*0x4f4e97*/
     a4 += 2; /*0x4f4e99*/
@@ -1222,9 +1166,8 @@ namespace gamemd {
 int E4Recv_4FA210::sub_4FA210(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_4FA210(void *this, int a2, int a3)
+void sub_4FA210(void *this, int a2, int a3)
 {
-  int v3; // eax
   bool v4; // zf
   int v5; // eax
   int v6; // ecx
@@ -1237,7 +1180,6 @@ int __thiscall sub_4FA210(void *this, int a2, int a3)
   char v14; // [esp+15h] [ebp-Fh]
   int v15; // [esp+18h] [ebp-Ch]
   int v16; // [esp+1Ch] [ebp-8h]
-
   AISelectTeamHouseClass((IUnknown *)&v11, (int)this, a3); /*0x4fa220*/
   *(_DWORD *)(a2 + 4) = 0; /*0x4fa231*/
   *(_DWORD *)(a2 + 8) = 0; /*0x4fa234*/
@@ -1247,7 +1189,7 @@ int __thiscall sub_4FA210(void *this, int a2, int a3)
   if ( (CCINIClass **)a2 != &v11 ) /*0x4fa244*/
   {
     VectorClass::ClearAndFree3(a2); /*0x4fa248*/
-    v3 = v13; /*0x4fa24e*/
+    int v3 = v13; /*0x4fa24e*/
     v4 = v13 == 0; /*0x4fa252*/
     *(_DWORD *)(a2 + 8) = v13; /*0x4fa254*/
     if ( v4 ) /*0x4fa257*/
@@ -1295,40 +1237,36 @@ namespace gamemd {
 int E4Recv_4FBD80::sub_4FBD80(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_4FBD80(_DWORD *this, int a2, int a3)
+void sub_4FBD80(_DWORD *this, int a2, int a3)
 {
-  int v3; // ecx
   int result; // eax
-  int v5; // ecx
-  int v6; // ecx
-  int v7; // ecx
 
   switch ( a2 ) /*0x4fbd92*/
   {
     case 1: /*0x4fbd92*/
     case 40: /*0x4fbd92*/
-      v5 = *(this + 5524); /*0x4fbdaf*/
+      int v5 = *(this + 5524); /*0x4fbdaf*/
       if ( v5 == -1 ) /*0x4fbdb8*/
         goto LABEL_10; /*0x4fbdb8*/
       result = *((_DWORD *)g_UnitTypeCount2 + v5); /*0x4fbdc0*/
       break; /*0x4fbdc3*/
     case 2: /*0x4fbd92*/
     case 3: /*0x4fbd92*/
-      v3 = *(this + 5526); /*0x4fbd99*/
+      int v3 = *(this + 5526); /*0x4fbd99*/
       if ( v3 == -1 ) /*0x4fbda2*/
         goto LABEL_10; /*0x4fbda2*/
       result = *((_DWORD *)g_AircraftTypeCount + v3); /*0x4fbda9*/
       break; /*0x4fbdac*/
     case 6: /*0x4fbd92*/
     case 7: /*0x4fbd92*/
-      v7 = *(this + 5523); /*0x4fbddc*/
+      int v7 = *(this + 5523); /*0x4fbddc*/
       if ( v7 == -1 ) /*0x4fbde5*/
         goto LABEL_10; /*0x4fbde5*/
       result = *((_DWORD *)g_TriggerTypeCount + v7); /*0x4fbded*/
       break; /*0x4fbdf0*/
     case 15: /*0x4fbd92*/
     case 16: /*0x4fbd92*/
-      v6 = *(this + 5525); /*0x4fbdc6*/
+      int v6 = *(this + 5525); /*0x4fbdc6*/
       if ( v6 == -1 ) /*0x4fbdcf*/
         goto LABEL_10; /*0x4fbdcf*/
       result = *((_DWORD *)Factory_ExitCellTable + v6); /*0x4fbdd6*/

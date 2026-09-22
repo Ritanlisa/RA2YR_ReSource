@@ -14,18 +14,14 @@ namespace gamemd {
 char Movie::SetupScreen(CCINIClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall Movie::SetupScreen(int this, CCINIClass *aP1)
+void Movie::SetupScreen(int this, CCINIClass *aP1)
 {
   CCINIClass *v3; // eax
   TechnoTypeClass *v4; // ecx
-  char *v5; // ebp
   CCINIClass *v6; // ecx
   int i; // edi
   CCINIClass *v8; // edx
-  int v9; // edi
   CCINIClass *v10; // ebx
-  int v12; // [esp+8h] [ebp-4h]
-
   if ( !DataGlobal_89F578 ) /*0x49cafc*/
     CampaignClass::LoadFromINI((int)&g_DDrawSurfaceManager); /*0x49cb03*/
   v3 = aP1; /*0x49cb08*/
@@ -34,8 +30,8 @@ char __thiscall Movie::SetupScreen(int this, CCINIClass *aP1)
   v4 = (TechnoTypeClass *)DataGlobal_89F570; /*0x49cb29*/
   this->q06C = 1; /*0x49cb2f*/
   this->Movie_field_0x38 = -1; /*0x49cb33*/
-  v5 = &v4->vtable0[76 * (_DWORD)aP1]; /*0x49cb3a*/
-  v6 = *(CCINIClass **)(this + 68); /*0x49cb3d*/
+  char * v5 = &v4->vtable0[76 * (_DWORD)aP1]; /*0x49cb3a*/
+  v6 = this->q044; /*0x49cb3d*/
   this->q048 = 0; /*0x49cb42*/
   *(_DWORD *)(this + 76) = 0; /*0x49cb45*/
   *(_DWORD *)(this + 80) = 0; /*0x49cb48*/
@@ -51,19 +47,19 @@ char __thiscall Movie::SetupScreen(int this, CCINIClass *aP1)
     {
       for ( i = 0; i < this->q010; ++i ) /*0x49cb72*/
       {
-        v8 = *(CCINIClass **)(this + 60); /*0x49cb74*/
+        v8 = this->q03C; /*0x49cb74*/
         if ( *(_DWORD *)&v8->__pad_0[4 * i] ) /*0x49cb77*/
           __3_YAXPAX_Z(*(void **)&v8->__pad_0[4 * i]); /*0x49cb7f*/
       }
-      __3_YAXPAX_Z(*(void **)(this + 60)); /*0x49cb93*/
+      __3_YAXPAX_Z(this->q03C); /*0x49cb93*/
     }
     this->q03C = 0; /*0x49cb9b*/
     this->q010 = 0; /*0x49cb9e*/
     this->q03C = __2_YAPAXI_Z(4 * v5[8]); /*0x49cbae*/
-    v9 = 0; /*0x49cbb7*/
+    int v9 = 0; /*0x49cbb7*/
     if ( v5[8] > 0 ) /*0x49cbbb*/
     {
-      v12 = 0; /*0x49cbbd*/
+      int v12 = 0; /*0x49cbbd*/
       do /*0x49cc26*/
       {
         v10 = (CCINIClass *)Random::Range(&g_ScenarioClass_Instance->random[1], 0, (IUnknown *)2); /*0x49cbde*/
@@ -91,7 +87,7 @@ namespace gamemd {
 char Movie::GetSection(CCINIClass * aP1, CCINIClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall Movie::GetSection(int this, CCINIClass *aP1, CCINIClass *aP2)
+void Movie::GetSection(int this, CCINIClass *aP1, CCINIClass *aP2)
 {
   if ( !*(_BYTE *)(this + 96) ) /*0x49e3b3*/
     CampaignClass::LoadFromINI(this); /*0x49e3ba*/
@@ -116,29 +112,22 @@ void Movie::Play(CCINIClass * aP0, int a2, CCINIClass * aP2, IUnknown * aP3, cha
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void Movie::Play(CCINIClass *aP0, int a2, CCINIClass *aP2, IUnknown *aP3, char a5, char a6, char a7)
 {
-  int v7; // edx
-  const char *v8; // ecx
-  char *v9; // eax
   Frame *v10; // ecx
   Frame *v11; // ecx
   int eax16a; // eax
   ObjectClass *VQMovie; // eax
   ObjectClass *v12; // esi
-  bool v15; // al
-  double v16; // st7
-  int v17; // eax
   Frame *v18; // ecx
   Frame *v19; // ecx
-  int v20; // [esp+10h] [ebp-140h]
   int fallRate; // [esp+14h] [ebp-13Ch]
-  _DWORD v22[13]; // [esp+1Ch] [ebp-134h] BYREF
   char Str[256]; // [esp+50h] [ebp-100h] BYREF
 
-  v20 = v7; /*0x5bed49*/
+  int v7 = v7; /*0x5bed49*/
+  const char *v8; // ecx
   if ( Render_Play(v8, Str, 1) && !*(_DWORD *)&HouseClass_Player[29932] ) /*0x5bed6a*/
   {
     Timer::PumpMessages(*(HWND **)&stru_87C374[13308]); /*0x5bed76*/
-    v9 = strrchr(Str, 46); /*0x5bed82*/
+    char * v9 = strrchr(Str, 46); /*0x5bed82*/
     if ( !v9 || _strcmpi(v9, aBik) ) /*0x5bed98*/
     {
       Timer::PumpMessages(*(HWND **)&stru_87C374[13308]); /*0x5bef0b*/
@@ -150,16 +139,16 @@ void Movie::Play(CCINIClass *aP0, int a2, CCINIClass *aP2, IUnknown *aP3, char a
         if ( MovieClass::GetWidth(*(_DWORD **)VQMovie->__pad_0) >= 320 /*0x5bef81*/
           || MovieClass::GetHeight(*(_DWORD **)v12->__pad_0) >= 200 )
         {
-          v15 = (_BYTE)a2 == 1 && HouseClass_Player[44616] == 1; /*0x5befba*/
+          bool v15 = (_BYTE)a2 == 1 && HouseClass_Player[44616] == 1; /*0x5befba*/
           if ( stru_89E138[11446] == 1 && v15 ) /*0x5befcb*/
           {
             fallRate = v12->fallRate; /*0x5befd7*/
             if ( fallRate < *(int *)&stru_87C374[44100] /*0x5befec*/
               && (int)v12->nextObject < *(int *)&stru_87C374[44104] )
             {
-              v16 = (double)*(int *)&stru_87C374[44100]; /*0x5befee*/
+              double v16 = (double)*(int *)&stru_87C374[44100]; /*0x5befee*/
               v12->ambientSoundController[0] = *(_DWORD *)&stru_87C374[44100]; /*0x5beff4*/
-              v17 = Math::RoundToInt(v16 / (double)fallRate); /*0x5bf001*/
+              int v17 = Math::RoundToInt(v16 / (double)fallRate); /*0x5bf001*/
               v12->attachedTag = 0; /*0x5bf008*/
               v12->ambientSoundController[1] = v17; /*0x5bf00b*/
               v12->attachedBomb = (void *)((*(_DWORD *)&stru_87C374[44104] - v17) / 2); /*0x5bf01d*/
@@ -186,6 +175,7 @@ void Movie::Play(CCINIClass *aP0, int a2, CCINIClass *aP2, IUnknown *aP3, char a
           }
           sub_406EA0(); /*0x5bf09f*/
           CreateDirectSoundBuffer(44100, 16, 2); /*0x5bf0b0*/
+  int v20; // [esp+10h] [ebp-140h]
           RenderMovieFrame((int)v12, 1, v20, 0); /*0x5bf0bf*/
           sub_40A850(); /*0x5bf0c4*/
           sub_406EC0(); /*0x5bf0c9*/
@@ -234,6 +224,7 @@ void Movie::Play(CCINIClass *aP0, int a2, CCINIClass *aP2, IUnknown *aP3, char a
         LOBYTE(v10) = 1; /*0x5beddb*/
         Frame::Present(v10, 0); /*0x5bedde*/
       }
+  _DWORD v22[13]; // [esp+1Ch] [ebp-134h] BYREF
       BinkMovie::Close(v22, Str); /*0x5bedec*/
       if ( (_BYTE)aP3 == 1 ) /*0x5bedf9*/
         LOBYTE(v22[0]) = 1; /*0x5bedfb*/
@@ -290,13 +281,12 @@ int Movie_PlayWrapper()
 
 // 0x7209D0
 namespace gamemd {
-char Movie::Update()
+void Movie::Update()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall Movie::Update(int this)
+void Movie::Update(int this)
 {
   int IsSoundEnabled; // eax
-  int v3; // ecx
 
   IsSoundEnabled = Audio::IsSoundEnabled(); /*0x7209d3*/
   if ( IsSoundEnabled ) /*0x7209da*/
@@ -310,7 +300,7 @@ char __thiscall Movie::Update(int this)
         IsSoundEnabled = this->Movie_field_0xC; /*0x7209fa*/
         if ( IsSoundEnabled > 0 ) /*0x7209ff*/
         {
-          v3 = *(_DWORD *)(this + 44); /*0x720a01*/
+          int v3 = *(_DWORD *)(this + 44); /*0x720a01*/
           if ( !v3 ) /*0x720a06*/
             goto LABEL_10; /*0x720a06*/
           if ( *(_BYTE *)(this + 17) && !AudioSample::IsBuffering(v3) ) /*0x720a0f*/
@@ -324,10 +314,10 @@ LABEL_10:
             {
               if ( IsSoundEnabled == -2 ) /*0x720a4b*/
               {
-                this->Movie_field_0x8 = Movie::SelectNextBuildableType(this, *(AnimClass **)(this + 4)); /*0x720a5e*/
+                this->Movie_field_0x8 = Movie::SelectNextBuildableType(this, this->m_Position); /*0x720a5e*/
                 Debug::Log(); /*0x720a61*/
               }
-              LOBYTE(IsSoundEnabled) = ThemeClass::Play((int *)this, *(Movie **)(this + 8)); /*0x720a6f*/
+              LOBYTE(IsSoundEnabled) = ThemeClass::Play((int *)this, this->m_Size); /*0x720a6f*/
               this->Movie_field_0x8 = -2; /*0x720a74*/
             }
           }
@@ -345,15 +335,11 @@ namespace gamemd {
 unsigned int Movie::SelectNextBuildableType(AnimClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall Movie::SelectNextBuildableType(int this, AnimClass *aP1)
+void Movie::SelectNextBuildableType(int this, AnimClass *aP1)
 {
   TechnoTypeClass *v2; // ebp
-  int v4; // edi
   TechnoTypeClass *v5; // eax
   TechnoTypeClass *v6; // ebx
-  bool v7; // zf
-  int v9; // edi
-
   v2 = (TechnoTypeClass *)aP1; /*0x720a81*/
   if ( ((int)aP1 <= -1 /*0x720aa7*/
      || *(_BYTE *)(*(_DWORD *)(this->q006 + 4 * (_DWORD)aP1) + 649)
@@ -364,7 +350,8 @@ unsigned int __thiscall Movie::SelectNextBuildableType(int this, AnimClass *aP1)
   }
   if ( this->q048 == 1 ) /*0x720aad*/
   {
-    v4 = 0; /*0x720ab0*/
+  bool v7; // zf
+    int v4 = 0; /*0x720ab0*/
     while ( 1 ) /*0x720abe*/
     {
       v5 = (TechnoTypeClass *)Random::Range( /*0x720abe*/
@@ -388,7 +375,7 @@ unsigned int __thiscall Movie::SelectNextBuildableType(int this, AnimClass *aP1)
   }
   else
   {
-    v9 = this->Movie_field_0x24 + 1; /*0x720af4*/
+    int v9 = this->Movie_field_0x24 + 1; /*0x720af4*/
     while ( 1 ) /*0x720af8*/
     {
       v2 = (TechnoTypeClass *)((char *)v2 + 1); /*0x720af8*/

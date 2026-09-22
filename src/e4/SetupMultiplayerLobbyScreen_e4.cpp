@@ -10,16 +10,12 @@ char SetupMultiplayerLobbyScreen_Setup(SkirmishDialog * hDlg, char * a2, int nID
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __fastcall SetupMultiplayerLobbyScreen_Setup(SkirmishDialog *hDlg, char *a2, int nIDDlgItem)
 {
-  char *v3; // ebx
-  int v4; // esi
-  int v6; // esi
   LRESULT v7; // eax
   CoordStruct *v8; // eax
   int v10; // [esp+Ch] [ebp-Ch]
   int v11; // [esp+10h] [ebp-8h]
-
-  v3 = a2; /*0x5ebec8*/
-  v4 = (int)&a2[nIDDlgItem]; /*0x5ebed0*/
+  char * v3 = a2; /*0x5ebec8*/
+  int v4 = (int)&a2[nIDDlgItem]; /*0x5ebed0*/
   v11 = (int)&a2[nIDDlgItem]; /*0x5ebedd*/
   if ( *(_DWORD *)&HouseClass_Player[29932] == 4 ) /*0x5ebee1*/
   {
@@ -36,6 +32,7 @@ char __fastcall SetupMultiplayerLobbyScreen_Setup(SkirmishDialog *hDlg, char *a2
   {
     do
     {
+  int v6; // esi
       if ( v3 )
       {
         if ( v3 == (char *)1 )

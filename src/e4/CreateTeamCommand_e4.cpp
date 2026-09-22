@@ -11,7 +11,7 @@ namespace gamemd {
 int CreateTeamCommand::vt02()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall CreateTeamCommand::vt02(void *this)
+void CreateTeamCommand::vt02()
 {
   return (*(int (__thiscall **)(void *))(this->q010)(this);
 }
@@ -25,13 +25,11 @@ unsigned int * CreateTeamCommand::performAction_148()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall CreateTeamCommand::performAction_148(View1CommandClass *this)
 {
-  int v1; // eax
   IUnknown *result; // eax
-  int v3; // [esp+0h] [ebp-10h] BYREF
-  int v4[2]; // [esp+4h] [ebp-Ch] BYREF
   int GroundHeight; // [esp+Ch] [ebp-4h]
 
-  v1 = (*((__int16 *)g_ScenarioClass_Instance + 6728) << 8) + 128; /*0x537378*/
+  int v1 = (*((__int16 *)g_ScenarioClass_Instance + 6728) << 8) + 128; /*0x537378*/
+  int v4[2]; // [esp+4h] [ebp-Ch] BYREF
   v4[0] = (*((__int16 *)g_ScenarioClass_Instance + 6727) << 8) + 128; /*0x53737d*/
   v4[1] = v1; /*0x537386*/
   GroundHeight = 0; /*0x53738a*/
@@ -41,6 +39,7 @@ _DWORD *__thiscall CreateTeamCommand::performAction_148(View1CommandClass *this)
   if ( g_RadarBlipManager ) /*0x5373b2*/
     return Tactical::MouseMove( /*0x5373c3*/
              (int)&DataGlobal_87F7E8,
+  int v3; // [esp+0h] [ebp-10h] BYREF
              (MouseClass *)&v3,
              (MouseClass *)&g_EventManager[2184]);
   return &result->field_0; /*0x5373c8*/
@@ -55,13 +54,11 @@ unsigned int * CreateTeamCommand::performAction_153()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall CreateTeamCommand::performAction_153(View2CommandClass *this)
 {
-  int v1; // eax
   IUnknown *result; // eax
-  int v3; // [esp+0h] [ebp-10h] BYREF
-  int v4[2]; // [esp+4h] [ebp-Ch] BYREF
   int GroundHeight; // [esp+Ch] [ebp-4h]
 
-  v1 = (*((__int16 *)g_ScenarioClass_Instance + 6730) << 8) + 128; /*0x537468*/
+  int v1 = (*((__int16 *)g_ScenarioClass_Instance + 6730) << 8) + 128; /*0x537468*/
+  int v4[2]; // [esp+4h] [ebp-Ch] BYREF
   v4[0] = (*((__int16 *)g_ScenarioClass_Instance + 6729) << 8) + 128; /*0x53746d*/
   v4[1] = v1; /*0x537476*/
   GroundHeight = 0; /*0x53747a*/
@@ -71,6 +68,7 @@ _DWORD *__thiscall CreateTeamCommand::performAction_153(View2CommandClass *this)
   if ( g_RadarBlipManager ) /*0x5374a2*/
     return Tactical::MouseMove( /*0x5374b3*/
              (int)&DataGlobal_87F7E8,
+  int v3; // [esp+0h] [ebp-10h] BYREF
              (MouseClass *)&v3,
              (MouseClass *)&g_EventManager[2184]);
   return &result->field_0; /*0x5374b8*/
@@ -85,13 +83,11 @@ unsigned int * CreateTeamCommand::performAction_158()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall CreateTeamCommand::performAction_158(View3CommandClass *this)
 {
-  int v1; // eax
   IUnknown *result; // eax
-  int v3; // [esp+0h] [ebp-10h] BYREF
-  int v4[2]; // [esp+4h] [ebp-Ch] BYREF
   int GroundHeight; // [esp+Ch] [ebp-4h]
 
-  v1 = (*((__int16 *)g_ScenarioClass_Instance + 6732) << 8) + 128; /*0x537558*/
+  int v1 = (*((__int16 *)g_ScenarioClass_Instance + 6732) << 8) + 128; /*0x537558*/
+  int v4[2]; // [esp+4h] [ebp-Ch] BYREF
   v4[0] = (*((__int16 *)g_ScenarioClass_Instance + 6731) << 8) + 128; /*0x53755d*/
   v4[1] = v1; /*0x537566*/
   GroundHeight = 0; /*0x53756a*/
@@ -101,6 +97,7 @@ _DWORD *__thiscall CreateTeamCommand::performAction_158(View3CommandClass *this)
   if ( g_RadarBlipManager ) /*0x537592*/
     return Tactical::MouseMove( /*0x5375a3*/
              (int)&DataGlobal_87F7E8,
+  int v3; // [esp+0h] [ebp-10h] BYREF
              (MouseClass *)&v3,
              (MouseClass *)&g_EventManager[2184]);
   return &result->field_0; /*0x5375a8*/
@@ -113,18 +110,15 @@ namespace gamemd {
 char CreateTeamCommand::performAction_241(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall CreateTeamCommand::sub_5386A0(void *this, int a2, _DWORD *a3)
+void CreateTeamCommand::sub_5386A0(int a2, _DWORD *a3)
 {
-  _DWORD *v4; // edi
-  int v5; // ecx
   int i; // eax
-  int v7; // eax
 
   if ( a2 ) /*0x5386ac*/
   {
     this->q00C = 0; /*0x5386b2*/
     if ( a3 ) /*0x5386b8*/
-      v4 = a3; /*0x5386ce*/
+      _DWORD * v4 = a3; /*0x5386ce*/
     else
       v4 = __2_YAPAXI_Z(4 * a2); /*0x5386ca*/
     this->q00C = 1; /*0x5386d2*/
@@ -132,14 +126,14 @@ char __thiscall CreateTeamCommand::sub_5386A0(void *this, int a2, _DWORD *a3)
       return 0; /*0x53874a*/
     if ( this->CreateTeamCommand_field_0x4 ) /*0x5386d8*/
     {
-      v5 = this->Capacity; /*0x5386df*/
+      AbstractClass *v5 = this->Capacity; /*0x5386df*/
       if ( a2 < v5 ) /*0x5386e4*/
         v5 = a2; /*0x5386e6*/
       for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->CreateTeamCommand_field_0x4 + 4 * i - 4) ) /*0x5386ec*/
         ++i; /*0x5386f1*/
       if ( this->IsAllocated ) /*0x5386fe*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x538709*/
+        __3_YAXPAX_Z(this->q004); /*0x538709*/
         this->CreateTeamCommand_field_0x4 = 0; /*0x538711*/
       }
     }
@@ -151,7 +145,7 @@ char __thiscall CreateTeamCommand::sub_5386A0(void *this, int a2, _DWORD *a3)
   {
     (*(void (__thiscall **)(void *))(this->q00C)(this); /*0x53872e*/
   }
-  v7 = this->Capacity; /*0x538731*/
+  AbstractClass *v7 = this->Capacity; /*0x538731*/
   if ( v7 < this->CreateTeamCommand_field_0x10 ) /*0x538739*/
     this->CreateTeamCommand_field_0x10 = v7; /*0x53873b*/
   return 1; /*0x53873e*/
@@ -166,21 +160,18 @@ rc_ptr_base * CreateTeamCommand::performAction_243(char a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 rc_ptr_base *__thiscall CreateTeamCommand::performAction_243(rc_ptr_base *this, char a2)
 {
-  int v3; // eax
   rc_ptr_base *v4; // ebp
   rc_ptr_base *v5; // esi
-  int v6; // eax
-  int v7; // edi
 
   if ( (a2 & 2) != 0 ) /*0x538a2b*/
   {
-    v3 = *((_DWORD *)this - 1); /*0x538a2d*/
+    int v3 = *((_DWORD *)this - 1); /*0x538a2d*/
     v4 = this - 1; /*0x538a31*/
     v5 = this + 2 * v3; /*0x538a34*/
-    v6 = v3 - 1; /*0x538a37*/
+    int v6 = v3 - 1; /*0x538a37*/
     if ( v6 >= 0 ) /*0x538a38*/
     {
-      v7 = v6 + 1; /*0x538a3b*/
+      int v7 = v6 + 1; /*0x538a3b*/
       do /*0x538a4f*/
       {
         v5 -= 2; /*0x538a3e*/
@@ -211,19 +202,15 @@ namespace gamemd {
 char CreateTeamCommand::performAction_245(char a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_6A6A00(_DWORD *this, char a2, int a3)
+void sub_6A6A00(_DWORD *this, char a2, int a3)
 {
-  int v3; // eax
-  _DWORD *v4; // esi
-  int v6; // eax
-  int v7; // eax
 
   if ( !DataGlobal_A8ED8C ) /*0x6a6a09*/
   {
-    v3 = a3; /*0x6a6a0f*/
+    int v3 = a3; /*0x6a6a0f*/
     if ( a3 == -1 ) /*0x6a6a16*/
       v3 = this->q539C; /*0x6a6a18*/
-    v4 = this + 997 * v3 + 1361; /*0x6a6a2b*/
+    _DWORD * v4 = this + 997 * v3 + 1361; /*0x6a6a2b*/
     if ( a2 ) /*0x6a6a38*/
     {
       if ( *(this + 997 * v3 + 1378) ) /*0x6a6a3a*/
@@ -234,10 +221,10 @@ char __thiscall sub_6A6A00(_DWORD *this, char a2, int a3)
       }
       return 0; /*0x6a6a3f*/
     }
-    v6 = 26; /*0x6a6a68*/
+    int v6 = 26; /*0x6a6a68*/
     if ( *((_DWORD *)g_ScenarioClass_Instance + 3374) ) /*0x6a6a60*/
       v6 = 18; /*0x6a6a6f*/
-    v7 = (g_DSurface_ViewBounds - g_SidebarBounds - v6 + g_DSurface_SidebarBounds - 7) / 50; /*0x6a6aa4*/
+    int v7 = (g_DSurface_ViewBounds - g_SidebarBounds - v6 + g_DSurface_SidebarBounds - 7) / 50; /*0x6a6aa4*/
     if ( HouseClass_Player == (#375 *)HouseClass_Observer ) /*0x6a6aae*/
     {
       if ( v4[17] + v7 / 2 < DataGlobal_884CF8 ) /*0x6a6ac2*/
@@ -261,20 +248,17 @@ namespace gamemd {
 void CreateTeamCommand::performAction_246()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_731060(char *this)
+void sub_731060(char *this)
 {
-  int v1; // ebx
   int i; // edi
-  int v4; // esi
-  int v5; // ecx
 
-  v1 = g_SidebarState; /*0x731061*/
+  int v1 = g_SidebarState; /*0x731061*/
   for ( i = 0; i < v1; ++i )
   {
-    v4 = *((_DWORD *)g_TechnoClass_Count + i); /*0x731077*/
+    int v4 = *((_DWORD *)g_TechnoClass_Count + i); /*0x731077*/
     if ( v4 )
     {
-      v5 = *(_DWORD *)(v4 + 540); /*0x731083*/
+      int v5 = *(_DWORD *)(v4 + 540); /*0x731083*/
       if ( g_GameMode_Current[0] ? House::IsHumanPlayer((#375 *)v5) : *(_BYTE *)(v5 + 493) )
       {
         if ( *(char **)(v4 + 532) == this - 1 ) /*0x7310a9*/
@@ -1524,7 +1508,7 @@ int CreateTeamCommand::performAction_104()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // attributes: thunk
-int __thiscall CreateTeamCommand::performAction_104(CenterBaseCommandClass *this)
+void CreateTeamCommand::performAction_104()
 {
   return TAction::CenterOnStartCoords(); /*0x536ea5*/
 }
@@ -3034,13 +3018,12 @@ unsigned int CreateTeamCommand::performAction_240(int a2)
 // 0x538750
 namespace gamemd {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall CreateTeamCommand::sub_538750(int *this, _DWORD *a2)
+void CreateTeamCommand::sub_538750(_DWORD *a2)
 {
-  int v2; // edx
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->Items; /*0x538750*/
+  int v2 = this->Items; /*0x538750*/
   result = 0; /*0x538753*/
   if ( v2 <= 0 ) /*0x538758*/
     return -1; /*0x53876f*/

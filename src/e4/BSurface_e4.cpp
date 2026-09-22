@@ -11,13 +11,6 @@ unsigned int * BSurface::Construct(int a2, int a3, int a4, int a5)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall BSurface_Constructor(_DWORD *this, int a2, int a3, int a4, int a5)
 {
-  int v6; // edi
-  int v7; // ecx
-  int v8; // eax
-  int v9; // edi
-  _DWORD *v10; // edi
-  int v11; // eax
-  int v12; // ecx
   _DWORD *v13; // ecx
   int v14; // eax
   int v15; // eax
@@ -26,22 +19,22 @@ _DWORD *__thiscall BSurface_Constructor(_DWORD *this, int a2, int a3, int a4, in
   int v18; // edx
   int v19; // ecx
 
-  v6 = a2; /*0x410ce5*/
-  v7 = a4; /*0x410ce9*/
-  v8 = a5; /*0x410cef*/
+  int v6 = a2; /*0x410ce5*/
+  int v7 = a4; /*0x410ce9*/
+  int v8 = a5; /*0x410cef*/
   this->q00B = a5; /*0x410cf3*/
   *this = v6; /*0x410cf8*/
-  v9 = a3; /*0x410cfa*/
+  int v9 = a3; /*0x410cfa*/
   this->q00A = v7; /*0x410cfe*/
   this->Width = v9; /*0x410d01*/
   this->Height = v7; /*0x410d04*/
   this->LockCount = v8; /*0x410d07*/
   this->Height = 2 * v7 * v8; /*0x410d0f*/
-  v10 = __2_YAPAXI_Z(0x20u); /*0x410d17*/
+  _DWORD * v10 = __2_YAPAXI_Z(0x20u); /*0x410d17*/
   if ( v10 ) /*0x410d20*/
   {
-    v11 = this->q00A; /*0x410d22*/
-    v12 = this->q00B; /*0x410d25*/
+    int v11 = this->q00A; /*0x410d22*/
+    int v12 = this->q00B; /*0x410d25*/
     v10[1] = v11; /*0x410d28*/
     v10[2] = v12; /*0x410d30*/
     v10[3] = 0; /*0x410d38*/
@@ -82,33 +75,15 @@ namespace gamemd {
 bool BSurface::CreateTripleBuffer()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall BSurface_CreateTripleBuffer(int this)
+void BSurface_CreateTripleBuffer(int this)
 {
-  int v2; // ecx
   void (__thiscall ***v3)(_DWORD, int); // ecx
-  int v4; // ecx
   void (__thiscall ***v5)(_DWORD, int); // ecx
-  int v6; // ecx
   void (__thiscall ***v7)(_DWORD, int); // ecx
-  _DWORD *v8; // edi
-  int v9; // eax
-  int v10; // ebx
-  int v11; // ebp
-  int v12; // eax
-  _DWORD *v13; // edi
-  int v14; // eax
-  int v15; // ebx
-  int v16; // ebp
-  int v17; // eax
-  _DWORD *v18; // edi
-  int v19; // eax
-  int v20; // ebx
-  int v21; // ebp
-  int v22; // eax
 
   if ( !this->Width ) /*0x7b8c66*/
     return 0; /*0x7b8e70*/
-  v2 = *(_DWORD *)(this + 68); /*0x7b8c6f*/
+  int v2 = *(_DWORD *)(this + 68); /*0x7b8c6f*/
   if ( v2 /*0x7b8c9a*/
     && (*(__int16 *)(this->Width + 2) > (*(int (__thiscall **)(int))(*(_DWORD *)v2 + 124))(v2)
      || *(__int16 *)(this->Width + 4) > (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 68) + 128))(*(_DWORD *)(this + 68))) )
@@ -118,7 +93,7 @@ bool __thiscall BSurface_CreateTripleBuffer(int this)
       (**v3)(v3, 1); /*0x7b8ca7*/
     *(_DWORD *)(this + 68) = 0; /*0x7b8ca9*/
   }
-  v4 = *(_DWORD *)(this + 88); /*0x7b8cac*/
+  int v4 = *(_DWORD *)(this + 88); /*0x7b8cac*/
   if ( v4 /*0x7b8cd7*/
     && (*(__int16 *)(this->Width + 2) > (*(int (__thiscall **)(int))(*(_DWORD *)v4 + 124))(v4)
      || *(__int16 *)(this->Width + 4) > (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 88) + 128))(*(_DWORD *)(this + 88))) )
@@ -128,7 +103,7 @@ bool __thiscall BSurface_CreateTripleBuffer(int this)
       (**v5)(v5, 1); /*0x7b8ce4*/
     *(_DWORD *)(this + 88) = 0; /*0x7b8ce6*/
   }
-  v6 = *(_DWORD *)(this + 108); /*0x7b8ce9*/
+  int v6 = *(_DWORD *)(this + 108); /*0x7b8ce9*/
   if ( v6 /*0x7b8d14*/
     && (*(__int16 *)(this->Width + 2) > (*(int (__thiscall **)(int))(*(_DWORD *)v6 + 124))(v6)
      || *(__int16 *)(this->Width + 4) > (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 108) + 128))(*(_DWORD *)(this + 108))) )
@@ -142,13 +117,13 @@ bool __thiscall BSurface_CreateTripleBuffer(int this)
   {
     if ( !*(_DWORD *)(this + 68) ) /*0x7b8d33*/
     {
-      v8 = __2_YAPAXI_Z(0x20u); /*0x7b8d3f*/
+      _DWORD * v8 = __2_YAPAXI_Z(0x20u); /*0x7b8d3f*/
       if ( v8 ) /*0x7b8d46*/
       {
-        v9 = this->Width; /*0x7b8d4b*/
-        v10 = *(__int16 *)(v9 + 4); /*0x7b8d50*/
-        v11 = *(__int16 *)(v9 + 2); /*0x7b8d54*/
-        v12 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 36) + 112))(this->q009); /*0x7b8d58*/
+        IUnknown *v9 = this->Width; /*0x7b8d4b*/
+        int v10 = v9->q004; /*0x7b8d50*/
+        int v11 = v9->q008; /*0x7b8d54*/
+        int v12 = (*(int (__thiscall **)(_DWORD))(*this->q009 + 112))(this->q009); /*0x7b8d58*/
         v8[4] = v12; /*0x7b8d5b*/
         v8[1] = v11; /*0x7b8d6a*/
         v8[2] = v10; /*0x7b8d6d*/
@@ -165,13 +140,13 @@ bool __thiscall BSurface_CreateTripleBuffer(int this)
     }
     if ( !*(_DWORD *)(this + 88) ) /*0x7b8d8f*/
     {
-      v13 = __2_YAPAXI_Z(0x20u); /*0x7b8d9d*/
+      _DWORD * v13 = __2_YAPAXI_Z(0x20u); /*0x7b8d9d*/
       if ( v13 ) /*0x7b8da4*/
       {
-        v14 = this->Width; /*0x7b8da6*/
-        v15 = *(__int16 *)(v14 + 4); /*0x7b8dac*/
-        v16 = *(__int16 *)(v14 + 2); /*0x7b8db0*/
-        v17 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 36) + 112))(this->q009); /*0x7b8db6*/
+        IUnknown *v14 = this->Width; /*0x7b8da6*/
+        int v15 = v14->q004; /*0x7b8dac*/
+        int v16 = v14->q008; /*0x7b8db0*/
+        int v17 = (*(int (__thiscall **)(_DWORD))(*this->q009 + 112))(this->q009); /*0x7b8db6*/
         v13[4] = v17; /*0x7b8db9*/
         v13[1] = v16; /*0x7b8dc8*/
         v13[2] = v15; /*0x7b8dcb*/
@@ -188,13 +163,13 @@ bool __thiscall BSurface_CreateTripleBuffer(int this)
     }
     if ( !*(_DWORD *)(this + 108) ) /*0x7b8ded*/
     {
-      v18 = __2_YAPAXI_Z(0x20u); /*0x7b8dfb*/
+      _DWORD * v18 = __2_YAPAXI_Z(0x20u); /*0x7b8dfb*/
       if ( v18 ) /*0x7b8e02*/
       {
-        v19 = this->Width; /*0x7b8e07*/
-        v20 = *(__int16 *)(v19 + 4); /*0x7b8e0c*/
-        v21 = *(__int16 *)(v19 + 2); /*0x7b8e10*/
-        v22 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 36) + 112))(this->q009); /*0x7b8e14*/
+        IUnknown *v19 = this->Width; /*0x7b8e07*/
+        int v20 = v19->q004; /*0x7b8e0c*/
+        int v21 = v19->q008; /*0x7b8e10*/
+        int v22 = (*(int (__thiscall **)(_DWORD))(*this->q009 + 112))(this->q009); /*0x7b8e14*/
         v18[4] = v22; /*0x7b8e17*/
         v18[1] = v21; /*0x7b8e26*/
         v18[2] = v20; /*0x7b8e29*/
@@ -222,13 +197,6 @@ unsigned int * BSurface::ConstructEx(int a2, int a3, int a4, int a5)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall BSurface_ConstructorEx(_DWORD *this, int a2, int a3, int a4, int a5)
 {
-  int v6; // edi
-  int v7; // ecx
-  int v8; // eax
-  int v9; // edi
-  _DWORD *v10; // edi
-  int v11; // eax
-  int v12; // ecx
   _DWORD *v13; // ecx
   int v14; // eax
   int v15; // eax
@@ -237,22 +205,22 @@ _DWORD *__thiscall BSurface_ConstructorEx(_DWORD *this, int a2, int a3, int a4, 
   int v18; // edx
   int v19; // ecx
 
-  v6 = a2; /*0x7bc975*/
-  v7 = a4; /*0x7bc979*/
-  v8 = a5; /*0x7bc97f*/
+  int v6 = a2; /*0x7bc975*/
+  int v7 = a4; /*0x7bc979*/
+  int v8 = a5; /*0x7bc97f*/
   this->q00B = a5; /*0x7bc983*/
   *this = v6; /*0x7bc988*/
-  v9 = a3; /*0x7bc98a*/
+  int v9 = a3; /*0x7bc98a*/
   this->q00A = v7; /*0x7bc98e*/
   this->Width = v9; /*0x7bc991*/
   this->Height = v7; /*0x7bc994*/
   this->LockCount = v8; /*0x7bc997*/
   this->Height = 2 * v7 * v8; /*0x7bc99f*/
-  v10 = __2_YAPAXI_Z(0x20u); /*0x7bc9a7*/
+  _DWORD * v10 = __2_YAPAXI_Z(0x20u); /*0x7bc9a7*/
   if ( v10 ) /*0x7bc9b0*/
   {
-    v11 = this->q00A; /*0x7bc9b2*/
-    v12 = this->q00B; /*0x7bc9b5*/
+    int v11 = this->q00A; /*0x7bc9b2*/
+    int v12 = this->q00B; /*0x7bc9b5*/
     v10[1] = v11; /*0x7bc9b8*/
     v10[2] = v12; /*0x7bc9c0*/
     v10[3] = 0; /*0x7bc9c8*/

@@ -11,26 +11,22 @@ unsigned int * Waypoint::FindByCell(IUnknown * aP1)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall Waypoint::FindByCell(char *this, IUnknown *aP1)
 {
-  signed int v2; // esi
   char *i; // ebx
-  int v4; // eax
   WaypointPathClass *v5; // eax
   _DWORD *v6; // ecx
   CampaignScore *v7; // edi
   _DWORD *Element; // esi
   signed int v10; // [esp+10h] [ebp-4h]
-
-  v2 = 0; /*0x5023b8*/
+  signed int v2 = 0; /*0x5023b8*/
   v10 = 0; /*0x5023bb*/
   for ( i = this + 528; ; i += 4 ) /*0x5023bf*/
   {
     if ( !*(_DWORD *)i ) /*0x5023c5*/
     {
-      v4 = __2_YAPAXI_Z(0x40u); /*0x5023cc*/
+      int v4 = __2_YAPAXI_Z(0x40u); /*0x5023cc*/
       if ( v4 ) /*0x5023d6*/
         v5 = (WaypointPathClass *)WaypointPathClass::Construct(v4, v2); /*0x5023db*/
-      else
-        v5 = 0; /*0x5023e2*/
+      WaypointPathClass *v5 = 0; /*0x5023e2*/
       *(_DWORD *)i = v5; /*0x5023e4*/
     }
     v6 = *(_DWORD **)i; /*0x5023e6*/
@@ -89,16 +85,13 @@ namespace gamemd {
 char Waypoint::FindCell(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall Waypoint_FindCell(int *this, _DWORD *a2)
+void Waypoint_FindCell(int *this, _DWORD *a2)
 {
-  int v3; // ecx
   _DWORD *i; // edi
-  int v6; // [esp+10h] [ebp-8h]
-  int *v7; // [esp+14h] [ebp-4h]
 
-  v3 = 0; /*0x763a59*/
-  v7 = this; /*0x763a5b*/
-  v6 = this->q038; /*0x763a64*/
+  int v3 = 0; /*0x763a59*/
+  Waypoint *v7 = this; /*0x763a5b*/
+  int v6 = this->q038; /*0x763a64*/
   if ( v6 <= 0 ) /*0x763a68*/
     return 0; /*0x763adc*/
   for ( i = (_DWORD *)this->q00B; /*0x763a6e*/

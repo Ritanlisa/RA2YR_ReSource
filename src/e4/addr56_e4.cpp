@@ -24,23 +24,17 @@ char ChangeVideoMode(ObjectClass * xRight, int yBottom)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __fastcall ChangeVideoMode(ObjectClass *xRight, int yBottom)
 {
-  _DWORD *v4; // eax
   IUnknown *v5; // edx
-  int v6; // eax
   LONG eax41; // eax
   ObjectClass *Viewport; // ecx
   ObjectClass *v8; // edx
   ObjectClass *v9; // eax
-  int v12; // eax
-  int v13; // ecx
-  _DWORD *v14; // eax
   IUnknown *v15; // edx
   int eax46; // eax
   MouseClass *i; // esi
   ObjectClass *v16; // [esp+4h] [ebp-78h]
   ObjectClass *WindowLongA; // [esp+8h] [ebp-74h]
   __int16 v20; // [esp+Ch] [ebp-70h]
-  char v21; // [esp+10h] [ebp-6Ch]
   __int16 v22; // [esp+14h] [ebp-68h]
   ObjectClass *aP3; // [esp+1Ch] [ebp-60h]
   int BitMask_Red; // [esp+20h] [ebp-5Ch]
@@ -145,11 +139,11 @@ LABEL_19:
     v9 = *(ObjectClass **)&Viewport->__pad_0[4]; /*0x560fbc*/
     rc.right = 168; /*0x560fbf*/
     v33[1] = v9; /*0x560fc3*/
-    v12 = *(_DWORD *)&Viewport->__pad_0[8]; /*0x560fcb*/
+    int v12 = *(_DWORD *)&Viewport->__pad_0[8]; /*0x560fcb*/
     v31[1] = 0; /*0x560fce*/
     v33[2] = v12; /*0x560fd2*/
     v31[2] = v12; /*0x560fd6*/
-    v13 = *(_DWORD *)&Viewport->__pad_0[12]; /*0x560fda*/
+    int v13 = *(_DWORD *)&Viewport->__pad_0[12]; /*0x560fda*/
     v32[2] = v12; /*0x560fdd*/
     v33[3] = v13; /*0x560fe1*/
     rc.bottom = *(_DWORD *)&stru_87C374[44104]; /*0x560feb*/
@@ -165,6 +159,7 @@ LABEL_19:
       0);
     *(_DWORD *)&stru_87C374[44960] = *(_DWORD *)&stru_87C374[44952]; /*0x56101e*/
     Debug::Log(); /*0x561024*/
+  char v21; // [esp+10h] [ebp-6Ch]
     sub_491100(aP0, BitMask_Green, BitMask_Red, aP3, v20, v21, v22); /*0x561046*/
     if ( *(_DWORD *)&stru_87C374[45772] ) /*0x561053*/
     {
@@ -172,7 +167,7 @@ LABEL_19:
     }
     else
     {
-      v14 = (_DWORD *)__2_YAPAXI_Z(0x98u); /*0x56105e*/
+      _DWORD * v14 = (_DWORD *)__2_YAPAXI_Z(0x98u); /*0x56105e*/
       if ( v14 ) /*0x561068*/
         *(_DWORD *)&stru_87C374[45772] = MouseClass::Construct( /*0x56107f*/
                                                       v14,
@@ -243,7 +238,7 @@ LABEL_19:
   Debug::Log(); /*0x560d23*/
   *(_DWORD *)&stru_87C374[44948] = DSurface::CreatePrimary(0); /*0x560d32*/
   Debug::Log(); /*0x560d3c*/
-  v4 = (_DWORD *)__2_YAPAXI_Z(0x98u); /*0x560d46*/
+  _DWORD * v4 = (_DWORD *)__2_YAPAXI_Z(0x98u); /*0x560d46*/
   if ( v4 ) /*0x560d50*/
     *(_DWORD *)&stru_87C374[45772] = MouseClass::Construct( /*0x560d67*/
                                                   v4,
@@ -252,7 +247,7 @@ LABEL_19:
   else
     *(_DWORD *)&stru_87C374[45772] = 0; /*0x560d6e*/
   LOBYTE(v5) = 0; /*0x560d74*/
-  v6 = SearchMIXFile(g_Str_File_MOUSE_SHA[0], v5); /*0x560d7b*/
+  int v6 = SearchMIXFile(g_Str_File_MOUSE_SHA[0], v5); /*0x560d7b*/
   if ( v6 ) /*0x560d82*/
   {
     BitShift_Red = 0; /*0x560d88*/
@@ -276,26 +271,23 @@ namespace gamemd {
 int VideoSettingsDialogProc(INIClass * aP0, unsigned int a2, WPARAM wParam, unsigned int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall VideoSettingsDialogProc(INIClass *aP0, unsigned int a2, WPARAM wParam, unsigned int a4)
+void VideoSettingsDialogProc(INIClass *aP0, unsigned int a2, WPARAM wParam, unsigned int a4)
 {
   int result; // eax
   _DWORD *WindowLongA; // esi
   HWND v6; // ebx
-  unsigned int *v7; // eax
   LPARAM v8; // esi
   INIClass **v9; // ebp
   INIClass *v10; // eax
   INIClass *v11; // ecx
   LRESULT v12; // eax
   HWND v13; // esi
-  bool v14; // al
   HWND DlgItem; // eax
   HWND v16; // eax
   LRESULT v17; // eax
   HWND v18; // eax
   char Buffer[64]; // [esp+Ch] [ebp-40h] BYREF
   int wParama; // [esp+58h] [ebp+Ch]
-  unsigned int v21; // [esp+5Ch] [ebp+10h]
 
   result = BaseDialogProc((SkirmishDialog *)aP0, a2, wParam, a4); /*0x56141c*/
   if ( result ) /*0x561423*/
@@ -351,14 +343,14 @@ int __stdcall VideoSettingsDialogProc(INIClass *aP0, unsigned int a2, WPARAM wPa
     return 0; /*0x561447*/
   v6 = GetDlgItem((HWND)aP0, 1497); /*0x561459*/
   if ( HouseClass_Player[44617] ) /*0x561464*/
-    v7 = sub_4A4900(0x280u, 0x1E0u, 0x1000u, 0x1000u, 16); /*0x561470*/
+    unsigned int * v7 = sub_4A4900(0x280u, 0x1E0u, 0x1000u, 0x1000u, 16); /*0x561470*/
   else
     v7 = sub_4A4900(0x280u, 0x1E0u, 0x400u, 0x300u, 16); /*0x561486*/
   v8 = 0; /*0x561491*/
   dword_ABCF5C = (CCINIClass *)v7; /*0x561495*/
   v9 = (INIClass **)v7; /*0x56149a*/
   wParama = -1; /*0x56149c*/
-  v21 = 0; /*0x5614a4*/
+  unsigned int v21 = 0; /*0x5614a4*/
   if ( v7 && *v7 ) /*0x5614ae*/
   {
     do /*0x561527*/
@@ -389,7 +381,7 @@ int __stdcall VideoSettingsDialogProc(INIClass *aP0, unsigned int a2, WPARAM wPa
   v13 = GetDlgItem((HWND)aP0, 1652); /*0x561567*/
   if ( !v13 ) /*0x56156b*/
     return 0; /*0x56156b*/
-  v14 = HouseClass_Player[44616] == 1 && stru_89E138[11446] == 1; /*0x561581*/
+  bool v14 = HouseClass_Player[44616] == 1 && stru_89E138[11446] == 1; /*0x561581*/
   SendMessageA(v13, 0xF1u, v14, 0); /*0x561597*/
   EnableWindow(v13, (unsigned __int8)stru_89E138[11446]); /*0x5615a3*/
   return 0; /*0x5615aa*/
@@ -402,76 +394,64 @@ namespace gamemd {
 int sub_568140(int * a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall sub_568140(int *a1, int a2)
+void sub_568140(int *a1, int a2)
 {
-  int v2; // esi
-  int v3; // edi
-  int v4; // ebx
-  int v5; // eax
-  int v6; // esi
-  int v7; // eax
-  int v8; // ecx
-  int v9; // edx
-  int v10; // edi
   int result; // eax
-  int v12; // esi
-  int v13; // ebp
-  unsigned int v14; // eax
-  _DWORD *v15; // ecx
-  _DWORD *v16; // ecx
-  _DWORD *v17; // ecx
-  _DWORD *v18; // eax
   __int16 v19; // [esp+14h] [ebp-8h]
   __int16 v20; // [esp+16h] [ebp-6h]
-  int v21; // [esp+20h] [ebp+4h]
-
-  v2 = *a1; /*0x56814a*/
-  v3 = a1[1]; /*0x56814c*/
-  v4 = a1[2]; /*0x56814f*/
-  v5 = ZCoordToScreenY(v4); /*0x568154*/
+  int v2 = *a1; /*0x56814a*/
+  int v3 = a1[1]; /*0x56814c*/
+  int v4 = a1[2]; /*0x56814f*/
+  int v5 = ZCoordToScreenY(v4); /*0x568154*/
+  int v6; // esi
   v6 = ((((unsigned int)(((unsigned __int64)(2004318071LL * v5) >> 32) - v5) >> 31) /*0x568173*/
        + ((int)(((unsigned __int64)(2004318071LL * v5) >> 32) - v5) >> 4)) << 8)
      + v2;
-  v7 = ZCoordToScreenY(v4); /*0x568175*/
-  v8 = a2; /*0x568185*/
+  int v7 = ZCoordToScreenY(v4); /*0x568175*/
+  int v8 = a2; /*0x568185*/
   v19 = v6 / 256; /*0x5681a6*/
-  v9 = -2 - a2; /*0x5681be*/
+  int v9 = -2 - a2; /*0x5681be*/
   v20 = (int)(((((unsigned int)(((unsigned __int64)(2004318071LL * v7) >> 32) - v7) >> 31) /*0x5681c0*/
               + ((int)(((unsigned __int64)(2004318071LL * v7) >> 32) - v7) >> 4)) << 8)
             + v3)
       / 256;
-  v10 = -2 - a2; /*0x5681c5*/
+  int v10 = -2 - a2; /*0x5681c5*/
   for ( result = a2 + 2; v10 < result; ++v10 ) /*0x5681d0*/
   {
     if ( v9 < result ) /*0x5681db*/
     {
-      v12 = v10 * v10; /*0x5681e6*/
-      v13 = (v8 + 1) * (v8 + 1); /*0x5681e9*/
+      int v12 = v10 * v10; /*0x5681e6*/
+      int v13 = (v8 + 1) * (v8 + 1); /*0x5681e9*/
       do /*0x5682e1*/
       {
         if ( v12 + v9 * v9 < v13 ) /*0x5681f9*/
         {
+  int v21; // [esp+20h] [ebp+4h]
           LOWORD(v21) = v10 + v19; /*0x56820c*/
           HIWORD(v21) = v9 + v20; /*0x568211*/
-          v14 = ((__int16)(v9 + v20) << 9) + (__int16)(v10 + v19); /*0x568223*/
+          unsigned int v14 = ((__int16)(v9 + v20) << 9) + (__int16)(v10 + v19); /*0x568223*/
+  _DWORD *v15; // ecx
           if ( v14 >= 0x40000 || (v15 = *(_DWORD **)(g_Shroud_CellArray + 4 * v14)) == 0 ) /*0x56823b*/
           {
             g_Map_GlobalCellIndex = v21; /*0x56823d*/
             v15 = g_CellClassArray; /*0x568243*/
           }
           v15[76] = 0; /*0x56824a*/
+  _DWORD *v16; // ecx
           if ( v14 >= 0x40000 || (v16 = *(_DWORD **)(g_Shroud_CellArray + 4 * v14)) == 0 ) /*0x568264*/
           {
             g_Map_GlobalCellIndex = v21; /*0x568266*/
             v16 = g_CellClassArray; /*0x56826c*/
           }
           v16[77] = 0; /*0x568273*/
+  _DWORD *v17; // ecx
           if ( v14 >= 0x40000 || (v17 = *(_DWORD **)(g_Shroud_CellArray + 4 * v14)) == 0 ) /*0x56828d*/
           {
             g_Map_GlobalCellIndex = v21; /*0x56828f*/
             v17 = g_CellClassArray; /*0x568295*/
           }
           v17[75] |= 0x10u; /*0x56829a*/
+  _DWORD *v18; // eax
           if ( v14 >= 0x40000 || (v18 = *(_DWORD **)(g_Shroud_CellArray + 4 * v14)) == 0 ) /*0x5682b7*/
           {
             g_Map_GlobalCellIndex = v21; /*0x5682b9*/
@@ -500,40 +480,27 @@ char * E4Recv_56AF40::sub_56AF40(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char *__thiscall sub_56AF40(int *this, int a2)
 {
-  int *v2; // esi
-  char *v3; // edi
-  int v4; // eax
-  int v5; // esi
-  int v6; // ebx
-  int v7; // ecx
-  char *v8; // edi
-  char *v9; // edi
-  char *v10; // edi
-  char *v11; // edi
-  int v12; // esi
-  int v15; // [esp+Ch] [ebp-30h] BYREF
   int Src; // [esp+10h] [ebp-2Ch] BYREF
-  int v17[10]; // [esp+14h] [ebp-28h] BYREF
-  int v18; // [esp+40h] [ebp+4h]
 
-  v2 = this; /*0x56af45*/
-  v3 = 0; /*0x56af47*/
+  E4Recv_56AF40 *v2 = this; /*0x56af45*/
+  char * v3 = 0; /*0x56af47*/
+  int v17[10]; // [esp+14h] [ebp-28h] BYREF
   LCWPipe::Constructor(v17, 0, 0x2000); /*0x56af57*/
   Pipe::SetDelegate(v17, a2); /*0x56af65*/
-  v4 = 0; /*0x56af70*/
-  v18 = 0; /*0x56af74*/
+  int v4 = 0; /*0x56af70*/
+  int v18 = 0; /*0x56af74*/
   if ( v2[80] > 0 ) /*0x56af78*/
   {
     do /*0x56b08b*/
     {
-      v5 = *(_DWORD *)(v2[79] + 4 * v4); /*0x56af88*/
+      int v5 = *(_DWORD *)(v2[79] + 4 * v4); /*0x56af88*/
       if ( v4 ) /*0x56af8b*/
       {
         if ( v5 ) /*0x56af93*/
         {
-          v6 = *(_DWORD *)(v5 + 36); /*0x56af99*/
+          int v6 = *(_DWORD *)(v5 + 36); /*0x56af99*/
           Src = v6; /*0x56afa0*/
-          v7 = *(this + 61); /*0x56afa9*/
+          int v7 = *(this + 61); /*0x56afa9*/
           Src = SHIWORD(v6) + (__int16)v6; /*0x56afb7*/
           if ( Src > v7 /*0x56afea*/
             && (__int16)v6 - SHIWORD(v6) < v7
@@ -546,9 +513,9 @@ char *__thiscall sub_56AF40(int *this, int a2)
               && (*(_DWORD *)(v5 + 56) != 0xFFFF || *(char *)(v5 + 283) > 0) )
             {
               Src = v6; /*0x56b035*/
-              v8 = &v3[(_DWORD)LCW::Compress((int)v17, (char *)&Src, 4)]; /*0x56b045*/
-              v9 = &v8[(_DWORD)LCW::Compress((int)v17, (char *)(v5 + 56), 4)]; /*0x56b059*/
-              v10 = &v9[(_DWORD)LCW::Compress((int)v17, (char *)(v5 + 282), 1)]; /*0x56b06d*/
+              char * v8 = &v3[(_DWORD)LCW::Compress((int)v17, (char *)&Src, 4)]; /*0x56b045*/
+              char * v9 = &v8[(_DWORD)LCW::Compress((int)v17, (char *)(v5 + 56), 4)]; /*0x56b059*/
+              char * v10 = &v9[(_DWORD)LCW::Compress((int)v17, (char *)(v5 + 282), 1)]; /*0x56b06d*/
               v3 = &v10[(_DWORD)LCW::Compress((int)v17, (char *)(v5 + 283), 1)]; /*0x56b074*/
             }
           }
@@ -560,9 +527,9 @@ char *__thiscall sub_56AF40(int *this, int a2)
     }
     while ( v4 < *(this + 80) ); /*0x56b08b*/
   }
-  v15 = g_MapSeedState; /*0x56b0a4*/
-  v11 = &v3[(_DWORD)LCW::Compress((int)v17, (char *)&v15, 4)]; /*0x56b0ad*/
-  v12 = 100; /*0x56b0af*/
+  int v15 = g_MapSeedState; /*0x56b0a4*/
+  char * v11 = &v3[(_DWORD)LCW::Compress((int)v17, (char *)&v15, 4)]; /*0x56b0ad*/
+  int v12 = 100; /*0x56b0af*/
   do /*0x56b0c7*/
   {
     v11 = &v11[(_DWORD)LCW::Compress((int)v17, (char *)&v15, 4)]; /*0x56b0c4*/
@@ -581,42 +548,29 @@ namespace gamemd {
 int E4Recv_56B250::sub_56B250(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_56B250(int *this, int a2)
+void sub_56B250(int *this, int a2)
 {
-  int *v2; // esi
-  int v3; // edi
-  int v4; // eax
-  int v5; // esi
-  int v6; // ebx
-  int v7; // ecx
-  int v8; // edi
-  int v9; // edi
-  int v10; // edi
-  int v11; // edi
-  int v12; // esi
   int Src; // [esp+Ch] [ebp-30h] BYREF
-  int v16; // [esp+10h] [ebp-2Ch] BYREF
-  int v17[10]; // [esp+14h] [ebp-28h] BYREF
-  int v18; // [esp+40h] [ebp+4h]
 
-  v2 = this; /*0x56b255*/
+  E4Recv_56B250 *v2 = this; /*0x56b255*/
+  int v17[10]; // [esp+14h] [ebp-28h] BYREF
   LZOPipe::Constructor(v17, 0, 0x2000); /*0x56b266*/
   Pipe::SetDelegate(v17, a2); /*0x56b274*/
-  v3 = 0; /*0x56b27f*/
-  v4 = 0; /*0x56b281*/
-  v18 = 0; /*0x56b285*/
+  int v3 = 0; /*0x56b27f*/
+  int v4 = 0; /*0x56b281*/
+  int v18 = 0; /*0x56b285*/
   if ( v2[80] > 0 ) /*0x56b289*/
   {
     do /*0x56b39c*/
     {
-      v5 = *(_DWORD *)(v2[79] + 4 * v4); /*0x56b299*/
+      int v5 = *(_DWORD *)(v2[79] + 4 * v4); /*0x56b299*/
       if ( v4 ) /*0x56b29c*/
       {
         if ( v5 ) /*0x56b2a4*/
         {
-          v6 = *(_DWORD *)(v5 + 36); /*0x56b2aa*/
+          int v6 = *(_DWORD *)(v5 + 36); /*0x56b2aa*/
           Src = v6; /*0x56b2b1*/
-          v7 = *(this + 61); /*0x56b2ba*/
+          int v7 = *(this + 61); /*0x56b2ba*/
           Src = SHIWORD(v6) + (__int16)v6; /*0x56b2c8*/
           if ( Src > v7 /*0x56b2fb*/
             && (__int16)v6 - SHIWORD(v6) < v7
@@ -629,9 +583,9 @@ int __thiscall sub_56B250(int *this, int a2)
               && (*(_DWORD *)(v5 + 56) != 0xFFFF || *(char *)(v5 + 283) > 0) )
             {
               Src = v6; /*0x56b346*/
-              v8 = Compression::Read((int)v17, (int)&Src, 4) + v3; /*0x56b356*/
-              v9 = Compression::Read((int)v17, v5 + 56, 4) + v8; /*0x56b36a*/
-              v10 = Compression::Read((int)v17, v5 + 282, 1) + v9; /*0x56b37e*/
+              int v8 = Compression::Read((int)v17, (int)&Src, 4) + v3; /*0x56b356*/
+              int v9 = Compression::Read((int)v17, v5 + 56, 4) + v8; /*0x56b36a*/
+              int v10 = Compression::Read((int)v17, v5 + 282, 1) + v9; /*0x56b37e*/
               v3 = Compression::Read((int)v17, v5 + 283, 1) + v10; /*0x56b385*/
             }
           }
@@ -643,9 +597,9 @@ int __thiscall sub_56B250(int *this, int a2)
     }
     while ( v4 < *(this + 80) ); /*0x56b39c*/
   }
-  v16 = g_MapSeedState; /*0x56b3b5*/
-  v11 = Compression::Read((int)v17, (int)&v16, 4) + v3; /*0x56b3c6*/
-  v12 = (*(int (__thiscall **)(int *))(v17[0] + 4))(v17); /*0x56b3cf*/
+  int v16 = g_MapSeedState; /*0x56b3b5*/
+  int v11 = Compression::Read((int)v17, (int)&v16, 4) + v3; /*0x56b3c6*/
+  int v12 = (*(int (__thiscall **)(int *))(v17[0] + 4))(v17); /*0x56b3cf*/
   LZOPipe::Destructor(v17); /*0x56b3d1*/
   return v12 + v11; /*0x56b3d9*/
 }

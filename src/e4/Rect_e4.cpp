@@ -6,23 +6,13 @@
 BOOL Rect::Union(IUnknown * aP0, const RECT * lprcSrc1, const RECT * lprcSrc2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __stdcall Rect::Union(IUnknown *aP0, const RECT *lprcSrc1, const RECT *lprcSrc2)
+void Rect::Union(IUnknown *aP0, const RECT *lprcSrc1, const RECT *lprcSrc2)
 {
-  int *v3; // edx
-  int *v4; // ecx
-  int *v5; // edi
-  int v7; // edi
-  int v8; // esi
-  int v9; // ebx
-  int v10; // ebp
-  int v11; // edx
-  int v12; // ecx
-  int v14; // [esp+Ch] [ebp-8h]
-  int *v15; // [esp+10h] [ebp-4h]
   LPRECT lprcDst; // [esp+18h] [ebp+4h]
 
-  v5 = v4; /*0x487f48*/
-  v15 = v4; /*0x487f4c*/
+  int * v4 = v4; /*0x487f48*/
+  int * v15 = v4; /*0x487f4c*/
+  int *v3; // edx
   if ( v3[2] <= 0 || v3[3] <= 0 ) /*0x487f5b*/
   {
     *v4 = aP0->field_0; /*0x488012*/
@@ -34,8 +24,10 @@ BOOL __stdcall Rect::Union(IUnknown *aP0, const RECT *lprcSrc1, const RECT *lprc
   else
   {
     lprcDst = (LPRECT)aP0->field_8; /*0x487f6a*/
+  int v14; // [esp+Ch] [ebp-8h]
     if ( (int)lprcDst <= 0 || (v14 = aP0->field_C, v14 <= 0) ) /*0x487f79*/
     {
+  int *v5; // edi
       *v5 = *v3; /*0x487ff0*/
       v5[1] = v3[1]; /*0x487ff5*/
       v5[2] = v3[2]; /*0x487ffb*/
@@ -44,17 +36,17 @@ BOOL __stdcall Rect::Union(IUnknown *aP0, const RECT *lprcSrc1, const RECT *lprc
     }
     else
     {
-      v7 = *v3; /*0x487f7b*/
-      v8 = aP0->field_0; /*0x487f7d*/
-      v9 = v3[1]; /*0x487f80*/
-      v10 = v3[2]; /*0x487f84*/
-      v11 = v3[3]; /*0x487f87*/
+      int v7 = *v3; /*0x487f7b*/
+      int v8 = aP0->field_0; /*0x487f7d*/
+      int v9 = v3[1]; /*0x487f80*/
+      int v10 = v3[2]; /*0x487f84*/
+      int v11 = v3[3]; /*0x487f87*/
       if ( v7 > aP0->field_0 ) /*0x487f8c*/
       {
         v10 += v7 - v8; /*0x487f90*/
         v7 = aP0->field_0; /*0x487f92*/
       }
-      v12 = aP0->field_4; /*0x487f94*/
+      int v12 = aP0->field_4; /*0x487f94*/
       if ( v9 > v12 ) /*0x487f9d*/
       {
         v11 += v9 - v12; /*0x487fa1*/

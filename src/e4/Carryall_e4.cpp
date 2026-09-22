@@ -12,37 +12,19 @@
 int Carryall::MissionStateMachine()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Carryall::MissionStateMachine(FootClass **this)
+void Carryall::MissionStateMachine(FootClass **this)
 {
   FootClass *v2; // ecx
   char *MissionControl; // eax
-  int v4; // esi
   TechnoClass *v6; // edi
-  _DWORD *v7; // eax
   FootClass *v8; // edi
   void *NearbyCell; // eax
-  int v10; // ecx
   FootClass *v11; // ecx
-  _DWORD *v12; // eax
   FootClass *v13; // ecx
   FootClass *v14; // ecx
   FootClass *v15; // ecx
-  int v16; // eax
-  int v17; // edi
-  int v18; // ecx
-  int v19; // eax
-  int v20; // ebx
-  int v21; // ecx
-  int v22; // edx
-  _DWORD *v23; // eax
   IUnknown *Building; // edi
   FootClass *v25; // eax
-  char v26; // [esp-4h] [ebp-48h]
-  _DWORD v27[3]; // [esp+14h] [ebp-30h] BYREF
-  _DWORD v28[3]; // [esp+20h] [ebp-24h] BYREF
-  _BYTE v29[20]; // [esp+2Ch] [ebp-18h] BYREF
-  int v30; // [esp+40h] [ebp-4h]
-
   switch ( (unsigned int)this->q0BC ) /*0x416d64*/
   {
     case 0u: /*0x416d64*/
@@ -64,7 +46,7 @@ LABEL_4:
         goto LABEL_18; /*0x416df7*/
       if ( (v6->abstractFlags & 1) != 0 ) /*0x416e0e*/
       {
-        v7 = (_DWORD *)(*(int (__thiscall **)(TechnoClass *))(*(_DWORD *)v6->__pad_0 + 60))(v6); /*0x416e15*/
+        _DWORD * v7 = (_DWORD *)(*(int (__thiscall **)(TechnoClass *))(*(_DWORD *)v6->__pad_0 + 60))(v6); /*0x416e15*/
         if ( !Object::IsAlliedWithObjectHouse(v7, (IUnknown *)this) ) /*0x416e1a*/
           goto LABEL_18; /*0x416e1a*/
       }
@@ -86,7 +68,7 @@ LABEL_18:
         v8 = *this; /*0x416ec9*/
         NearbyCell = InfantryClass::FindNearbyCell(this, (IUnknown *)this->q5A4); /*0x416ed6*/
         ((void (__thiscall *)(FootClass **, void *, int))v8->audioController4[1])(this, NearbyCell, 1); /*0x416ede*/
-        v10 = (int)this->q175; /*0x416ee4*/
+        int v10 = (int)this->q175; /*0x416ee4*/
         if ( v10 ) /*0x416eec*/
           TeamClass::SelectMember(v10, (AbstractClass *)this->q5A4); /*0x416ef5*/
         this->q0BC = (FootClass *)1; /*0x416eff*/
@@ -100,13 +82,14 @@ LABEL_18:
       }
 LABEL_5:
       MissionControl = MissionClass::GetMissionControl(this); /*0x416d9d*/
-      v4 = Math::RoundToInt(*((double *)MissionControl + 2) * 900.0); /*0x416dc2*/
+      int v4 = Math::RoundToInt(*((double *)MissionControl + 2) * 900.0); /*0x416dc2*/
       return v4 + Random::Range((_DWORD *)(*(_DWORD *)&HouseClass_Player[29924] + 536), 0, (IUnknown *)2);
     case 1u: /*0x416d64*/
       v11 = this->q5A4; /*0x416f29*/
       if ( v11 ) /*0x416f31*/
       {
-        v12 = (_DWORD *)(*(int (__thiscall **)(FootClass *, _BYTE *))(*(_DWORD *)v11->__pad_0 + 72))(v11, v29); /*0x416f54*/
+  _BYTE v29[20]; // [esp+2Ch] [ebp-18h] BYREF
+        _DWORD * v12 = (_DWORD *)(*(int (__thiscall **)(FootClass *, _BYTE *))(*(_DWORD *)v11->__pad_0 + 72))(v11, v29); /*0x416f54*/
         if ( !this->q19D ) /*0x416f5f*/
           WinAPI::Wrapper(-2147467261); /*0x416f6e*/
         (*(void (__stdcall **)(_DWORD, _DWORD, _DWORD, _DWORD))(*(_DWORD *)(this->q19D)->__pad_0 + 68))( /*0x416f89*/
@@ -148,11 +131,17 @@ LABEL_5:
       v15 = this->q5A4; /*0x417059*/
       if ( !v15 /*0x4170e9*/
         || (*(int (__thiscall **)(FootClass *))(*(_DWORD *)v15->__pad_0 + 44))(v15) != 1
+  int v16; // eax
         || (v16 = (int)this->q027,
+  int v17; // edi
             v17 = (int)this->q028,
+  int v30; // [esp+40h] [ebp-4h]
             v30 = (int)this->q029,
+  int v18; // ecx
             v18 = v16 / 256,
+  int v19; // eax
             v19 = (this->q5A4)->location[0],
+  int v20; // ebx
             v20 = (this->q5A4)->location[1],
             v30 = (this->q5A4)->location[2],
             (unsigned __int16)(v19 / 256) == (_WORD)v18)
@@ -196,16 +185,18 @@ LABEL_44:
       {
         Debug::Log(); /*0x4171cd*/
         (*(void (__thiscall **)(FootClass **, _DWORD))&(*this)->__pad_115[15])(this, 0); /*0x4171da*/
+  _DWORD v27[3]; // [esp+14h] [ebp-30h] BYREF
         v27[0] = this->q027; /*0x4171ea*/
         v27[1] = this->q028; /*0x4171f1*/
-        v21 = (int)this->q029; /*0x4171f7*/
+        int v21 = (int)this->q029; /*0x4171f7*/
+  _DWORD v28[3]; // [esp+20h] [ebp-24h] BYREF
         v28[0] = this->q027; /*0x4171fa*/
-        v22 = (int)this->q029; /*0x4171fe*/
+        int v22 = (int)this->q029; /*0x4171fe*/
         v27[2] = v21; /*0x417201*/
         v28[1] = this->q028; /*0x41720c*/
         v28[2] = v22; /*0x417216*/
-        v26 = BYTE1(*((_DWORD *)Coord::To_Cell(&stru_87C374[13428], (IUnknown *)v27) + 80)) & 1; /*0x41722f*/
-        v23 = Coord::To_Cell(&stru_87C374[13428], (IUnknown *)v28); /*0x417236*/
+        char v26 = BYTE1(*((_DWORD *)Coord::To_Cell(&stru_87C374[13428], (IUnknown *)v27) + 80)) & 1; /*0x41722f*/
+        _DWORD * v23 = Coord::To_Cell(&stru_87C374[13428], (IUnknown *)v28); /*0x417236*/
         Building = (IUnknown *)CellClass::FindBuilding(v23, v26); /*0x417242*/
         if ( Building /*0x417270*/
           && Building == (IUnknown *)Team::GetMember(this, 0)

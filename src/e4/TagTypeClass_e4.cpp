@@ -12,10 +12,8 @@ char * TagTypeClass::Construct(ObjectClass * aP1)
 char *__thiscall TagTypeClass::Construct(char *this, ObjectClass *aP1)
 {
   AbstractTypeClass *v3; // eax
-  int v4; // eax
   char Destination[48]; // [esp+8h] [ebp-34h] BYREF
   char v7; // [esp+38h] [ebp-4h]
-
   AbstractTypeClass::Constructor((int)this, (AbstractClass *)aP1); /*0x6e5b6c*/
   this->q098 = -1; /*0x6e5b78*/
   this->q09C = 0; /*0x6e5b82*/
@@ -58,7 +56,7 @@ char *__thiscall TagTypeClass::Construct(char *this, ObjectClass *aP1)
          *(_DWORD *)&g_OverlayTypeConfig[32384] + *(_DWORD *)&g_OverlayTypeConfig[32396],
          0) )
   {
-    v4 = (*(_DWORD *)&g_OverlayTypeConfig[32392])++; /*0x6e5c7e*/
+    int v4 = (*(_DWORD *)&g_OverlayTypeConfig[32392])++; /*0x6e5c7e*/
     *(_DWORD *)(*(_DWORD *)&g_OverlayTypeConfig[32380] + 4 * v4) = this; /*0x6e5c8d*/
   }
   return this; /*0x6e5c92*/
@@ -71,26 +69,19 @@ namespace gamemd {
 int TagTypeClass::CleanupMembers()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_6E5CA0(int this)
+void sub_6E5CA0(int this)
 {
-  _DWORD *v2; // ecx
-  _DWORD *v3; // esi
-  int v4; // esi
-  _DWORD *v5; // eax
-  _DWORD *v6; // ecx
-  int v7; // eax
-  int v8; // eax
-  int v10; // [esp+Ch] [ebp-4h] BYREF
-
+  TagTypeClass *v10; // [esp+Ch] [ebp-4h] BYREF
   *(_DWORD *)this = &TagTypeClass::`vftable'; /*0x6e5ca7*/
   this->vtable1 = &TagTypeClass::`vftable'; /*0x6e5cad*/
   this->vtable2 = &TagTypeClass::`vftable'; /*0x6e5cb4*/
   this->vtable3 = &vt_TagTypeClass; /*0x6e5cbb*/
   AbstractClass::AnnounceExpiredPointer((void **)this, 1); /*0x6e5cc2*/
-  v2 = *(_DWORD **)(this + 160); /*0x6e5cc7*/
+  _DWORD * v2 = this->q0A0; /*0x6e5cc7*/
   this->q0A0 = 0; /*0x6e5ccd*/
   if ( v2 ) /*0x6e5cd9*/
   {
+  _DWORD *v3; // esi
     do /*0x6e5cfa*/
     {
       v3 = (_DWORD *)v2[42]; /*0x6e5cdb*/
@@ -101,13 +92,13 @@ int __thiscall sub_6E5CA0(int this)
     }
     while ( v3 ); /*0x6e5cfa*/
   }
-  v4 = 0; /*0x6e5d01*/
+  int v4 = 0; /*0x6e5d01*/
   if ( g_GameObjectCleanup > 0 ) /*0x6e5d05*/
   {
-    v5 = g_TagClassCount; /*0x6e5d07*/
+    _DWORD * v5 = g_TagClassCount; /*0x6e5d07*/
     do /*0x6e5d2e*/
     {
-      v6 = (_DWORD *)v5[v4]; /*0x6e5d0c*/
+      _DWORD * v6 = (_DWORD *)v5[v4]; /*0x6e5d0c*/
       if ( v6[9] == this ) /*0x6e5d12*/
       {
         if ( v6 ) /*0x6e5d16*/
@@ -122,7 +113,7 @@ int __thiscall sub_6E5CA0(int this)
     while ( v4 < g_GameObjectCleanup ); /*0x6e5d2e*/
   }
   v10 = this; /*0x6e5d40*/
-  v7 = (*(int (__thiscall **)(int *, int *))(g_AnimPoolManager + 16))(&g_AnimPoolManager, &v10); /*0x6e5d44*/
+  int v7 = (*(int (__thiscall **)(int *, int *))(g_AnimPoolManager + 16))(&g_AnimPoolManager, &v10); /*0x6e5d44*/
   if ( v7 != -1 && v7 < g_AnimManager && v7 < --g_AnimManager ) /*0x6e5d5f*/
   {
     do /*0x6e5d77*/
@@ -133,7 +124,7 @@ int __thiscall sub_6E5CA0(int this)
     while ( v7 < g_AnimManager ); /*0x6e5d77*/
   }
   v10 = this; /*0x6e5d89*/
-  v8 = (*(int (__thiscall **)(int *, int *))(DataGlobal_B0E780 + 16))(&DataGlobal_B0E780, &v10); /*0x6e5d8d*/
+  int v8 = (*(int (__thiscall **)(int *, int *))(DataGlobal_B0E780 + 16))(&DataGlobal_B0E780, &v10); /*0x6e5d8d*/
   if ( v8 != -1 && v8 < g_MultiplayerCleanup && v8 < --g_MultiplayerCleanup ) /*0x6e5da8*/
   {
     do /*0x6e5dc0*/
@@ -153,7 +144,7 @@ namespace gamemd {
 int TagTypeClass::GetEvent(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall TagTypeClass::_vt10(_DWORD *this, int a2, int a3)
+void TagTypeClass::_vt10(int a2, int a3)
 {
   int result; // eax
 
@@ -173,10 +164,8 @@ namespace gamemd {
 char TagTypeClass::GetAction(unsigned char *** a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall TagTypeClass::_vt25(int this, unsigned __int8 ***a2)
+void TagTypeClass::_vt25(int this, unsigned __int8 ***a2)
 {
-  char *v3; // eax
-  char *v4; // eax
   char Destination[48]; // [esp+8h] [ebp-B4h] BYREF
   char v7; // [esp+38h] [ebp-84h]
   char String[128]; // [esp+3Ch] [ebp-80h] BYREF
@@ -192,7 +181,7 @@ char __thiscall TagTypeClass::_vt25(int this, unsigned __int8 ***a2)
     return 0; /*0x6e6151*/
   strtok(String, Delimiter); /*0x6e60cb*/
   this->q09C = atoi(String); /*0x6e60e1*/
-  v3 = strtok(0, Delimiter); /*0x6e60e7*/
+  char * v3 = strtok(0, Delimiter); /*0x6e60e7*/
   if ( v3 ) /*0x6e60f1*/
   {
     strncpy(Destination, v3, 0x30u); /*0x6e6101*/
@@ -207,7 +196,7 @@ char __thiscall TagTypeClass::_vt25(int this, unsigned __int8 ***a2)
     qmemcpy((void *)(this + 100), Destination, 0x30u); /*0x6e6123*/
     this->q094 = v7; /*0x6e6125*/
   }
-  v4 = strtok(0, Delimiter); /*0x6e612d*/
+  char * v4 = strtok(0, Delimiter); /*0x6e612d*/
   this->q0A0 = TagTypeClass::FindOrCreateTriggerType(v4); /*0x6e613d*/
   return 1; /*0x6e6143*/
 }
@@ -219,12 +208,11 @@ namespace gamemd {
 char TagTypeClass::GetParameter(char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall TagTypeClass::_vt26(int this, char *a2)
+void TagTypeClass::_vt26(int this, char *a2)
 {
-  int v3; // eax
   CHAR Source[128]; // [esp+4h] [ebp-80h] BYREF
 
-  v3 = this->q0A0; /*0x6e6169*/
+  int v3 = this->q0A0; /*0x6e6169*/
   if ( v3 ) /*0x6e6171*/
     wsprintfA(Source, DataGlobal_842CCC, this->q09C, (const char *)(this + 100), (const char *)(v3 + 36)); /*0x6e61b4*/
   else
@@ -242,16 +230,14 @@ char * TagTypeClass::FindOrCreate()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char *__thiscall TagTypeClass::FindOrCreate(ObjectClass *this)
 {
-  int v2; // esi
-  char *v3; // eax
 
   if ( !_strcmpi(&stru_817460.sectionHead[1], this) || !_strcmpi(g_Str_none, this) ) /*0x6e632c*/
     return 0; /*0x6e638f*/
-  v2 = 0; /*0x6e633d*/
+  int v2 = 0; /*0x6e633d*/
   if ( *(int *)&stru_B05488[37640] <= 0 ) /*0x6e6341*/
   {
 LABEL_6:
-    v3 = (char *)__2_YAPAXI_Z(0xA4u); /*0x6e6366*/
+    char * v3 = (char *)__2_YAPAXI_Z(0xA4u); /*0x6e6366*/
     if ( v3 ) /*0x6e6375*/
       return TagTypeClass::Construct(v3, this); /*0x6e6381*/
     return 0; /*0x6e6375*/
@@ -271,7 +257,7 @@ namespace gamemd {
 int TagTypeClass::PowerDrainUpdate(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall TagTypeClass::_vt13(int this, int *a2)
+void TagTypeClass::_vt13(int this, int *a2)
 {
   AbstractTypeClass::ProcessPower((char *)this, a2); /*0x6e63e9*/
   return Power::TimerProcess(this->q09C); /*0x6e63fc*/
@@ -284,7 +270,7 @@ namespace gamemd {
 int TagTypeClass::GetAuxField()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall TagTypeClass::_vt16(_DWORD *this)
+void TagTypeClass::_vt16()
 {
   return this->q098; /*0x6e64b6*/
 }
@@ -298,16 +284,14 @@ TriggerTypeClass * TagTypeClass::FindOrCreateTriggerType()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 TriggerTypeClass *__thiscall TagTypeClass::FindOrCreateTriggerType(ObjectClass *this)
 {
-  int v2; // esi
-  _DWORD *v3; // eax
 
   if ( !_strcmpi(&stru_817460.sectionHead[1], this) || !_strcmpi(g_Str_none, this) ) /*0x727abc*/
     return 0; /*0x727b1f*/
-  v2 = 0; /*0x727acd*/
+  int v2 = 0; /*0x727acd*/
   if ( dword_8B4188 <= 0 ) /*0x727ad1*/
   {
 LABEL_6:
-    v3 = (_DWORD *)__2_YAPAXI_Z(0xB4u); /*0x727af6*/
+    _DWORD * v3 = (_DWORD *)__2_YAPAXI_Z(0xB4u); /*0x727af6*/
     if ( v3 ) /*0x727b05*/
       return (TriggerTypeClass *)TriggerTypeClass::Construct(v3, this); /*0x727b11*/
     return 0; /*0x727b05*/

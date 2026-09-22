@@ -16,18 +16,16 @@
 int SessionClass::initLAN(int a2, wchar_t * Source, unsigned int * a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_540DC0(int this, int a2, wchar_t *Source, _DWORD *a4)
+void sub_540DC0(int this, int a2, wchar_t *Source, _DWORD *a4)
 {
-  void *v6; // eax
-  void *v7; // eax
-  int v8; // ecx
 
   if ( !(unsigned char)this->MPGameMode ) /*0x540dc3*/
     return 0; /*0x540dca*/
   if ( *(_DWORD *)(this + 68) == 7 ) /*0x540dd4*/
     return 0; /*0x540dd6*/
-  v6 = __2_YAPAXI_Z(0xB8u); /*0x540de1*/
+  void * v6 = __2_YAPAXI_Z(0xB8u); /*0x540de1*/
   if ( v6 ) /*0x540deb*/
+  void *v7; // eax
     v7 = IPXConnClass::constructor( /*0x540e0e*/
            v6,
            this->unknown_14,
@@ -41,7 +39,7 @@ int __thiscall sub_540DC0(int this, int a2, wchar_t *Source, _DWORD *a4)
   else
     v7 = 0; /*0x540e15*/
   *(_DWORD *)(this + 4 * *(_DWORD *)(this + 68) + 40) = v7; /*0x540e1a*/
-  v8 = *(_DWORD *)(this + 4 * *(_DWORD *)(this + 68) + 40); /*0x540e21*/
+  int v8 = *(_DWORD *)(this + 4 * *(_DWORD *)(this + 68) + 40); /*0x540e21*/
   if ( !v8 ) /*0x540e27*/
     return 0; /*0x540e29*/
   (*(void (__thiscall **)(int))(*(_DWORD *)v8 + 4))(v8); /*0x540e31*/
@@ -56,22 +54,18 @@ int __thiscall sub_540DC0(int this, int a2, wchar_t *Source, _DWORD *a4)
 int SessionClass::initInternet()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_540E70(int this)
+void sub_540E70(int this)
 {
   int result; // eax
-  void *v3; // ebp
-  int v4; // ebx
-  int v5; // edi
-  char *v6; // eax
 
   if ( !(unsigned char)this->MPGameMode ) /*0x540e73*/
     return 0; /*0x540e7a*/
-  v3 = __2_YAPAXI_Z(0xB8u); /*0x540e89*/
+  void * v3 = __2_YAPAXI_Z(0xB8u); /*0x540e89*/
   if ( v3 ) /*0x540e90*/
   {
-    v4 = Game_PlayerInfoArray; /*0x540e93*/
-    v5 = this->unknown_14; /*0x540e9a*/
-    v6 = CharToWideString(aMulticast); /*0x540ea4*/
+    int v4 = Game_PlayerInfoArray; /*0x540e93*/
+    int v5 = this->unknown_14; /*0x540e9a*/
+    char * v6 = CharToWideString(aMulticast); /*0x540ea4*/
     result = (int)IPXConnClass::constructor( /*0x540ebf*/
                     v3,
                     v5,
@@ -106,20 +100,18 @@ unsigned int * SessionClass::Load()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_552CC0(_DWORD *this)
 {
-  _DWORD *v2; // eax
   _DWORD *result; // eax
-  _DWORD *v4; // eax
   void *PlayerSide; // eax
-  int v6; // esi
-  char *v7; // ecx
 
   if ( this->SessionClass_field_08
+  _DWORD *v2; // eax
     || ((Debug::Log_0(DataGlobal_8298D0), (v2 = __2_YAPAXI_Z(0x28u)) == 0)
       ? (result = 0)
       : (result = MixFileClass::FromFile(v2, DataGlobal_8298C4, (int)DataGlobal_886980)),
         (this->SessionClass_field_08 = result) != 0) )
   {
     if ( this->MPGameMode
+  _DWORD *v4; // eax
       || ((v4 = __2_YAPAXI_Z(0x28u)) == 0
         ? (result = 0)
         : (result = MixFileClass::FromFile(v4, stru_8298B8, (int)DataGlobal_886980)),
@@ -132,14 +124,14 @@ _DWORD *__thiscall sub_552CC0(_DWORD *this)
       }
       else
       {
-        v6 = *((_DWORD *)g_ScenarioClass_Instance + 3374); /*0x72b3e8*/
+        int v6 = *((_DWORD *)g_ScenarioClass_Instance + 3374); /*0x72b3e8*/
         if ( !DataGlobal_B0FB80 ) /*0x72b3ea*/
           LoadPaletteSimple(DataGlobal_844BAC, &DataGlobal_B0FB7C, &DataGlobal_B0FB80); /*0x72b3fc*/
         if ( !DataGlobal_B0FB88 ) /*0x72b408*/
         {
           if ( v6 ) /*0x72b40c*/
           {
-            v7 = DataGlobal_844BB4[0]; /*0x72b420*/
+            char * v7 = DataGlobal_844BB4[0]; /*0x72b420*/
             if ( v6 != 1 ) /*0x72b433*/
               v7 = DataGlobal_844BB8; /*0x72b435*/
             LoadPaletteSimple(v7, &DataGlobal_B0FB84, &DataGlobal_B0FB88); /*0x72b43b*/
@@ -163,21 +155,16 @@ _DWORD *__thiscall sub_552CC0(_DWORD *this)
 bool SessionClass::LoadGameSession(ObjectClass * aP1, CellStruct * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall SessionClass::LoadGameSession(_DWORD *this, ObjectClass *aP1, CellStruct *aP2)
+void SessionClass::LoadGameSession(ObjectClass *aP1, CellStruct *aP2)
 {
-  int v4; // esi
-  char *v6; // edi
-  bool v7; // bl
-  int v8; // ebx
-  int v9; // ebp
   int v10; // ecx
   ObjectClass *v11; // esi
   ObjectClass *v12; // eax
   void *v13; // [esp+10h] [ebp-8h] BYREF
   void *v14; // [esp+14h] [ebp-4h] BYREF
-
   if ( !aP1 || String::Equals_Alt((const char **)aP2, 0) ) /*0x5adf37*/
     return 0; /*0x5adf3e*/
+  int v4; // esi
   v4 = *(_DWORD *)(*(_DWORD *)&g_CellDirectionOffsets[84628] /*0x5adf5b*/
                  + 4 * *(_DWORD *)(*((_DWORD *)g_SuperWeaponTypeCount + aP1[42].ambientSoundController[0]) + 188));
   if ( !v4 ) /*0x5adf60*/
@@ -187,9 +174,10 @@ bool __thiscall SessionClass::LoadGameSession(_DWORD *this, ObjectClass *aP1, Ce
   }
   Debug::Log(); /*0x5adf84*/
   String::Assign((char **)&v14, (const char *)(v4 + 36)); /*0x5adf91*/
-  v6 = (char *)(this + 20); /*0x5adf96*/
-  v7 = SessionClass::LoadMapSelection(v6, (char **)&v14) == 0; /*0x5adfab*/
+  char * v6 = (char *)(this + 20); /*0x5adf96*/
+  bool v7 = SessionClass::LoadMapSelection(v6, (char **)&v14) == 0; /*0x5adfab*/
   DeleteAndZero(&v14); /*0x5adfae*/
+  int v8; // ebx
   if ( v7 || (v8 = CampaignClass::Check(v6, *(_WORD *)&aP1[79].onBridge)) == 0 ) /*0x5adfea*/
   {
     SessionClass::Destruct(v6); /*0x5adfb9*/
@@ -197,7 +185,7 @@ bool __thiscall SessionClass::LoadGameSession(_DWORD *this, ObjectClass *aP1, Ce
     return 0; /*0x5adfd4*/
   }
   ScenarioClass::SetFileName(aP1->__pad_0, (ObjectClass *)&DataGlobal_87F8E4[42624]); /*0x5ae013*/
-  v9 = 0; /*0x5ae01b*/
+  int v9 = 0; /*0x5ae01b*/
   if ( *(int *)(v8 + 100) <= 0 ) /*0x5ae01f*/
     goto LABEL_17; /*0x5ae01f*/
   while ( 1 ) /*0x5ae025*/
@@ -235,60 +223,29 @@ LABEL_17:
 char SessionClass::LoadMapSelection(char ** a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall SessionClass::LoadMapSelection(char *this, char **a1)
+void SessionClass::LoadMapSelection(char **a1)
 {
-  char *v2; // ebp
-  char *v3; // esi
-  int v4; // edi
   char **v5; // eax
-  bool v6; // bl
   char **v7; // eax
   ObjectClass *v8; // esi
-  int v9; // ecx
-  int v10; // eax
-  int v11; // eax
-  int v12; // edx
-  bool v14; // bl
-  bool v15; // bl
   ObjectClass *v16; // esi
-  int v17; // eax
   ObjectClass *v18; // esi
-  int v19; // eax
   ObjectClass *v20; // esi
-  int v21; // eax
-  int v22; // eax
-  bool v23; // bl
-  int v24; // ebp
   char **v25; // eax
-  bool v26; // bl
-  int v27; // eax
   ObjectClass *v28; // edi
-  int v29; // ecx
-  char *v30; // esi
-  int v31; // eax
-  int v32; // eax
-  int v33; // edx
-  bool v34; // bl
   char **StringByIndex; // eax
-  bool v36; // bl
-  int v37; // eax
   ReferenceCounted *v38; // edi
-  int v39; // ecx
-  int v40; // eax
-  int v41; // eax
-  int v42; // edx
   ScoreScreen *a3; // [esp+18h] [ebp-C4h] BYREF
   ObjectClass *v44; // [esp+1Ch] [ebp-C0h] BYREF
   char *a2; // [esp+20h] [ebp-BCh] BYREF
   char *v46; // [esp+24h] [ebp-B8h] BYREF
-  char *v47; // [esp+28h] [ebp-B4h] BYREF
+  SessionClass *v47; // [esp+28h] [ebp-B4h] BYREF
   ObjectClass *v48; // [esp+2Ch] [ebp-B0h] BYREF
   ObjectClass v49; // [esp+30h] [ebp-ACh] BYREF
-
-  v2 = this; /*0x5ceef8*/
+  SessionClass *v2 = this; /*0x5ceef8*/
   v47 = this; /*0x5cef00*/
   CCFileClass::Construct3((int)&v49.ambientSoundController[1]); /*0x5cef04*/
-  v3 = 0; /*0x5cef09*/
+  char * v3 = 0; /*0x5cef09*/
   *(_DWORD *)&v49[4] = 0; /*0x5cef0f*/
   *(_DWORD *)&v49[8] = 0; /*0x5cef13*/
   GenericList::Constructor(&v49[12]); /*0x5cef17*/
@@ -306,12 +263,12 @@ char __thiscall SessionClass::LoadMapSelection(char *this, char **a1)
   (*(void (__thiscall **)(int *, int))(v49.ambientSoundController[1] + 28))(&v49.ambientSoundController[1], 1); /*0x5cef78*/
   if ( !FileStraw::Open(&v49, (int)&v49.ambientSoundController[1], 0) ) /*0x5cef85*/
     goto LABEL_17; /*0x5cef85*/
-  v4 = 1; /*0x5cef98*/
+  int v4 = 1; /*0x5cef98*/
   while ( 1 ) /*0x5cefa2*/
   {
     String::Assign((char **)&a3, 0); /*0x5cefa2*/
     v5 = FromStringInt(&a2, v4); /*0x5cefb7*/
-    v6 = INIClass::ReadString(&v49, a1, v5, (char **)&a3, (int)&v44) == 0; /*0x5cefd4*/
+    bool v6 = INIClass::ReadString(&v49, a1, v5, (char **)&a3, (int)&v44) == 0; /*0x5cefd4*/
     DeleteAndZero((void **)&a2); /*0x5cefd7*/
     DeleteAndZero((void **)&a3); /*0x5cefe0*/
     if ( v6 ) /*0x5cefe7*/
@@ -322,15 +279,16 @@ char __thiscall SessionClass::LoadMapSelection(char *this, char **a1)
     v8 = (ObjectClass *)MSChoiceClass::LoadFromINI(v7, &v49, (const char **)&v44); /*0x5cf00c*/
     if ( !v8 ) /*0x5cf010*/
       goto LABEL_17; /*0x5cf010*/
-    v9 = *((_DWORD *)v2 + 2); /*0x5cf012*/
-    if ( *((_DWORD *)v2 + 4) < v9 /*0x5cf038*/
+    int v9 = v2->SessionClass_field_08; /*0x5cf012*/
+    if ( v2->SessionClass_field_10 < v9 /*0x5cf038*/
       || (v2[13] || !v9)
-      && (v10 = *((_DWORD *)v2 + 5), v10 > 0)
+  int v10; // eax
+      && (v10 = v2->SessionClass_field_14, v10 > 0)
       && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)v2 + 8))(v2, v9 + v10, 0) )
     {
-      v11 = *((_DWORD *)v2 + 4); /*0x5cf03f*/
-      v12 = *((_DWORD *)v2 + 1); /*0x5cf042*/
-      *((_DWORD *)v2 + 4) = v11 + 1; /*0x5cf048*/
+      int v11 = v2->SessionClass_field_10; /*0x5cf03f*/
+      int v12 = v2->MPGameMode; /*0x5cf042*/
+      v2->SessionClass_field_10 = v11 + 1; /*0x5cf048*/
       *(_DWORD *)(v12 + 4 * v11) = v8; /*0x5cf04b*/
     }
     if ( ++v4 > 100 ) /*0x5cf052*/
@@ -340,18 +298,18 @@ char __thiscall SessionClass::LoadMapSelection(char *this, char **a1)
     }
     v3 = 0; /*0x5cf054*/
   }
-  if ( *((_DWORD *)v2 + 4) ) /*0x5cf073*/
+  if ( v2->SessionClass_field_10 ) /*0x5cf073*/
   {
     String::Assign(&a2, 0); /*0x5cf0e0*/
     String::Assign((char **)&a3, aAnims); /*0x5cf0ee*/
-    v14 = (int)INIClass::ReadString(&v49, a1, (char **)&a3, &a2, (int)&v46) > 0; /*0x5cf119*/
+    bool v14 = (int)INIClass::ReadString(&v49, a1, (char **)&a3, &a2, (int)&v46) > 0; /*0x5cf119*/
     DeleteAndZero((void **)&a3); /*0x5cf11c*/
     DeleteAndZero((void **)&a2); /*0x5cf125*/
     if ( v14 ) /*0x5cf12c*/
     {
       String::Assign((char **)&a3, 0); /*0x5cf137*/
       String::Assign(&a2, aTextrect); /*0x5cf145*/
-      v15 = (int)INIClass::ReadString(&v49, &v46, &a2, (char **)&a3, (int)&v44) > 0; /*0x5cf16d*/
+      bool v15 = (int)INIClass::ReadString(&v49, &v46, &a2, (char **)&a3, (int)&v44) > 0; /*0x5cf16d*/
       DeleteAndZero((void **)&a2); /*0x5cf170*/
       DeleteAndZero((void **)&a3); /*0x5cf179*/
       if ( v15 ) /*0x5cf180*/
@@ -361,66 +319,70 @@ char __thiscall SessionClass::LoadMapSelection(char *this, char **a1)
         if ( String::Length((const char **)&a3) ) /*0x5cf1a9*/
         {
           __1_Timevec_std__QAE_XZ((std::_Timevec *)&a3); /*0x5cf1b6*/
-          *((_DWORD *)v2 + 6) = v17; /*0x5cf1bb*/
+  int v17; // eax
+          v2->Config = v17; /*0x5cf1bb*/
         }
         v18 = (ObjectClass *)String::Tokenize((const char **)&v44, (int)v16, Delimiter, (void **)&a3); /*0x5cf1d6*/
         if ( String::Length((const char **)&a3) ) /*0x5cf1d8*/
         {
           __1_Timevec_std__QAE_XZ((std::_Timevec *)&a3); /*0x5cf1e5*/
-          *((_DWORD *)v2 + 7) = v19; /*0x5cf1ea*/
+  int v19; // eax
+          v2->q007 = v19; /*0x5cf1ea*/
         }
         v20 = (ObjectClass *)String::Tokenize((const char **)&v44, (int)v18, Delimiter, (void **)&a3); /*0x5cf205*/
         if ( String::Length((const char **)&a3) ) /*0x5cf207*/
         {
           __1_Timevec_std__QAE_XZ((std::_Timevec *)&a3); /*0x5cf214*/
-          *((_DWORD *)v2 + 8) = v21; /*0x5cf219*/
+  int v21; // eax
+          v2->SessionClass_field_08 = v21; /*0x5cf219*/
         }
         String::Tokenize((const char **)&v44, (int)v20, Delimiter, (void **)&a3); /*0x5cf22b*/
         if ( String::Length((const char **)&a3) ) /*0x5cf234*/
         {
           __1_Timevec_std__QAE_XZ((std::_Timevec *)&a3); /*0x5cf241*/
-          *((_DWORD *)v2 + 9) = v22; /*0x5cf246*/
+  int v22; // eax
+          v2->q024 = v22; /*0x5cf246*/
         }
         DeleteAndZero((void **)&a3); /*0x5cf24d*/
       }
       String::Assign((char **)&a3, 0); /*0x5cf259*/
       String::Assign(&a2, g_INI_Key_Palette); /*0x5cf267*/
-      v23 = (int)INIClass::ReadString(&v49, &v46, &a2, (char **)&a3, (int)&v44) > 0; /*0x5cf28f*/
+      bool v23 = (int)INIClass::ReadString(&v49, &v46, &a2, (char **)&a3, (int)&v44) > 0; /*0x5cf28f*/
       DeleteAndZero((void **)&a2); /*0x5cf292*/
       DeleteAndZero((void **)&a3); /*0x5cf29b*/
       if ( v23 ) /*0x5cf2a2*/
         String::Reassign((char **)v2 + 10, (const char **)&v44); /*0x5cf2ac*/
-      v24 = 1; /*0x5cf2b1*/
+      int v24 = 1; /*0x5cf2b1*/
       do /*0x5cf36a*/
       {
         String::Assign(&a2, 0); /*0x5cf2bc*/
         v25 = FromStringInt((char **)&a3, v24); /*0x5cf2d1*/
-        v26 = INIClass::ReadString(&v49, &v46, v25, &a2, (int)&v44) == 0; /*0x5cf2eb*/
+        bool v26 = INIClass::ReadString(&v49, &v46, v25, &a2, (int)&v44) == 0; /*0x5cf2eb*/
         DeleteAndZero((void **)&a3); /*0x5cf2ee*/
         DeleteAndZero((void **)&a2); /*0x5cf2f7*/
         if ( v26 ) /*0x5cf2fe*/
           break; /*0x5cf2fe*/
-        v27 = __2_YAPAXI_Z(0x10u); /*0x5cf306*/
+        int v27 = __2_YAPAXI_Z(0x10u); /*0x5cf306*/
         if ( !v27 ) /*0x5cf310*/
           goto LABEL_17; /*0x5cf310*/
         v28 = (ObjectClass *)String::SplitComma(v27, (const char **)&v44); /*0x5cf31e*/
         if ( !v28 ) /*0x5cf322*/
           goto LABEL_17; /*0x5cf322*/
-        v29 = *((_DWORD *)v47 + 13); /*0x5cf328*/
-        v30 = v47 + 44; /*0x5cf32e*/
+        int v29 = v47->IsAllocated; /*0x5cf328*/
+        char * v30 = v47 + 44; /*0x5cf32e*/
         if ( *((_DWORD *)v47 + 15) >= v29 ) /*0x5cf333*/
         {
           if ( !v47[57] && v29 ) /*0x5cf33e*/
             continue; /*0x5cf33e*/
-          v31 = *((_DWORD *)v47 + 16); /*0x5cf340*/
+          int v31 = v47->q040; /*0x5cf340*/
           if ( v31 <= 0 /*0x5cf350*/
             || !(*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)v30 + 8))(v47 + 44, v29 + v31, 0) )
           {
             continue; /*0x5cf350*/
           }
         }
-        v32 = *((_DWORD *)v30 + 4); /*0x5cf357*/
-        v33 = *((_DWORD *)v30 + 1); /*0x5cf35a*/
+        int v32 = *((_DWORD *)v30 + 4); /*0x5cf357*/
+        int v33 = *((_DWORD *)v30 + 1); /*0x5cf35a*/
         *((_DWORD *)v30 + 4) = v32 + 1; /*0x5cf360*/
         *(_DWORD *)(v33 + 4 * v32) = v28; /*0x5cf363*/
         ++v24; /*0x5cf366*/
@@ -434,7 +396,7 @@ char __thiscall SessionClass::LoadMapSelection(char *this, char **a1)
       unknown_libname_73(&a3); /*0x5cf3f4*/
       String::Assign(&a2, 0); /*0x5cf3fe*/
       String::Assign(&v47, aSounds); /*0x5cf40c*/
-      v34 = (int)INIClass::ReadString(&v49, a1, &v47, &a2, (int)&v46) > 0; /*0x5cf437*/
+      bool v34 = (int)INIClass::ReadString(&v49, a1, &v47, &a2, (int)&v46) > 0; /*0x5cf437*/
       DeleteAndZero((void **)&v47); /*0x5cf43a*/
       DeleteAndZero((void **)&a2); /*0x5cf443*/
       if ( v34 ) /*0x5cf44a*/
@@ -450,15 +412,14 @@ char __thiscall SessionClass::LoadMapSelection(char *this, char **a1)
             if ( String::NotEquals((const char **)&a3, 0) ) /*0x5cf497*/
             {
               String::Assign(&v47, 0); /*0x5cf4aa*/
-              v36 = (int)INIClass::ReadString(&v49, &v46, (char **)&a3, &v47, (int)&v44) > 0; /*0x5cf4d2*/
+              bool v36 = (int)INIClass::ReadString(&v49, &v46, (char **)&a3, &v47, (int)&v44) > 0; /*0x5cf4d2*/
               DeleteAndZero((void **)&v47); /*0x5cf4d5*/
               if ( v36 ) /*0x5cf4dc*/
               {
-                v37 = __2_YAPAXI_Z(0x10u); /*0x5cf4e4*/
+                int v37 = __2_YAPAXI_Z(0x10u); /*0x5cf4e4*/
                 if ( v37 ) /*0x5cf4ee*/
                   v38 = (ReferenceCounted *)Audio::ParseVolume(v37, (const char **)&a3, (const char **)&v44); /*0x5cf501*/
-                else
-                  v38 = 0; /*0x5cf505*/
+                ReferenceCounted *v38 = 0; /*0x5cf505*/
                 if ( String::Equals_Alt((const char **)v38, 0) ) /*0x5cf50b*/
                 {
                   if ( v38 ) /*0x5cf516*/
@@ -469,17 +430,18 @@ char __thiscall SessionClass::LoadMapSelection(char *this, char **a1)
                 }
                 else if ( v38 ) /*0x5cf52c*/
                 {
-                  v39 = *((_DWORD *)v2 + 19); /*0x5cf52e*/
+                  int v39 = v2->PlayerColor; /*0x5cf52e*/
                   if ( *((_DWORD *)v2 + 21) < v39 /*0x5cf556*/
                     || (v2[81] || !v39)
-                    && (v40 = *((_DWORD *)v2 + 22), v40 > 0)
+  int v40; // eax
+                    && (v40 = v2->q058, v40 > 0)
                     && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*((_DWORD *)v2 + 17) + 8))(
                          v2 + 68,
                          v39 + v40,
                          0) )
                   {
-                    v41 = *((_DWORD *)v2 + 21); /*0x5cf55d*/
-                    v42 = *((_DWORD *)v2 + 18); /*0x5cf560*/
+                    int v41 = *((_DWORD *)v2 + 21); /*0x5cf55d*/
+                    int v42 = *((_DWORD *)v2 + 18); /*0x5cf560*/
                     *((_DWORD *)v2 + 21) = v41 + 1; /*0x5cf566*/
                     *(_DWORD *)(v42 + 4 * v41) = v38; /*0x5cf569*/
                   }
@@ -524,22 +486,16 @@ LABEL_17:
 int SessionClass::Destruct()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall SessionClass_Destructor(_DWORD *this)
+void SessionClass_Destructor(_DWORD *this)
 {
   int i; // ebx
-  int v3; // eax
-  void *v4; // edi
   int j; // ebx
-  int v6; // eax
-  void *v7; // edi
   int k; // ebx
-  int v9; // eax
-  void *v10; // edi
 
   for ( i = 0; i < *(this + 21); ++i ) /*0x5cf5fc*/
   {
-    v3 = *(this + 18); /*0x5cf5fe*/
-    v4 = *(void **)(v3 + 4 * i); /*0x5cf601*/
+    int v3 = *(this + 18); /*0x5cf5fe*/
+    void * v4 = *(void **)(v3 + 4 * i); /*0x5cf601*/
     if ( v4 ) /*0x5cf606*/
     {
       DeleteAndZero(*(void ***)(v3 + 4 * i)); /*0x5cf60a*/
@@ -553,8 +509,8 @@ int __thiscall SessionClass_Destructor(_DWORD *this)
   this->q024 = 400; /*0x5cf63e*/
   for ( j = 0; j < *(this + 15); ++j ) /*0x5cf64c*/
   {
-    v6 = this->q030; /*0x5cf64e*/
-    v7 = *(void **)(v6 + 4 * j); /*0x5cf651*/
+    int v6 = this->q030; /*0x5cf64e*/
+    void * v7 = *(void **)(v6 + 4 * j); /*0x5cf651*/
     if ( v7 ) /*0x5cf656*/
     {
       DeleteAndZero(*(void ***)(v6 + 4 * j)); /*0x5cf65a*/
@@ -564,8 +520,8 @@ int __thiscall SessionClass_Destructor(_DWORD *this)
   (*(void (__thiscall **)(_DWORD *))(this->q02C + 12))(this + 11); /*0x5cf676*/
   for ( k = 0; k < this->SessionClass_field_10; ++k ) /*0x5cf680*/
   {
-    v9 = this->MPGameMode; /*0x5cf682*/
-    v10 = *(void **)(v9 + 4 * k); /*0x5cf685*/
+    int v9 = this->MPGameMode; /*0x5cf682*/
+    void * v10 = *(void **)(v9 + 4 * k); /*0x5cf685*/
     if ( v10 ) /*0x5cf68a*/
     {
       SessionClass::loadSettings(*(_DWORD *)(v9 + 4 * k)); /*0x5cf68e*/
@@ -580,19 +536,16 @@ int __thiscall SessionClass_Destructor(_DWORD *this)
 void SessionClass::loadSettings()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall SessionClass::loadSettings(int this)
+void SessionClass::loadSettings(int this)
 {
   int i; // ebp
   void **v3; // edi
   int j; // ebp
-  CCINIClass *v5; // ecx
+  CampaignClass *v5; // ecx
   SessionClass *v6; // edi
-  CCINIClass *v7; // eax
-  CCINIClass *v8; // eax
-  CCINIClass *v9; // eax
-  int v10; // ebx
-  int v11; // edi
-
+  CampaignClass *v7; // eax
+  CampaignClass *v8; // eax
+  AbstractClass *v9; // eax
   for ( i = 0; i < this->PlayerColor; ++i ) /*0x5d007f*/
   {
     v3 = *(void ***)(this->q040 + 4 * i); /*0x5d0084*/
@@ -604,7 +557,7 @@ void __thiscall SessionClass::loadSettings(int this)
   }
   for ( j = 0; j < *(_DWORD *)(this + 100); ++j ) /*0x5d00ab*/
   {
-    v5 = *(CCINIClass **)(this + 88); /*0x5d00ad*/
+    v5 = this->q058; /*0x5d00ad*/
     v6 = *(SessionClass **)&v5->__pad_0[4 * j]; /*0x5d00b0*/
     if ( v6 ) /*0x5d00b5*/
     {
@@ -612,7 +565,7 @@ void __thiscall SessionClass::loadSettings(int this)
       __3_YAXPAX_Z(v6); /*0x5d00bf*/
     }
   }
-  v7 = *(CCINIClass **)(this + 88); /*0x5d00cf*/
+  v7 = this->q058; /*0x5d00cf*/
   *(_DWORD *)(this + 84) = &vt_VectorClass_MapSelection; /*0x5d00d2*/
   if ( v7 && this->Side ) /*0x5d00dd*/
   {
@@ -621,7 +574,7 @@ void __thiscall SessionClass::loadSettings(int this)
   }
   this->Side = 0; /*0x5d00ee*/
   this->__pad_05C = 0; /*0x5d00f1*/
-  v8 = *(CCINIClass **)(this + 64); /*0x5d00f4*/
+  v8 = this->q040; /*0x5d00f4*/
   *(_DWORD *)(this + 60) = &vt_VectorClass_MSTextEntry; /*0x5d00f7*/
   if ( v8 && *(_BYTE *)(this + 73) ) /*0x5d0102*/
   {
@@ -630,7 +583,7 @@ void __thiscall SessionClass::loadSettings(int this)
   }
   *(_BYTE *)(this + 73) = 0; /*0x5d0113*/
   *(_DWORD *)(this + 68) = 0; /*0x5d0116*/
-  v9 = *(CCINIClass **)(this + 40); /*0x5d0119*/
+  v9 = this->q028; /*0x5d0119*/
   this->q024 = &vt_VectorClass_Point2D; /*0x5d011c*/
   if ( v9 && *(_BYTE *)(this + 49) ) /*0x5d0127*/
   {
@@ -640,8 +593,8 @@ void __thiscall SessionClass::loadSettings(int this)
   *(_BYTE *)(this + 49) = 0; /*0x5d013b*/
   this->Config.AICount = 0; /*0x5d013e*/
   DeleteAndZero(this + 32); /*0x5d0141*/
-  v10 = 2; /*0x5d0149*/
-  v11 = this + 32; /*0x5d014e*/
+  int v10 = 2; /*0x5d0149*/
+  int v11 = this + 32; /*0x5d014e*/
   do /*0x5d015c*/
   {
     v11 -= 4; /*0x5d0151*/
@@ -692,17 +645,16 @@ _DWORD *__thiscall sub_5D39D0(_DWORD *this)
 unsigned int SessionClass::initPlayers()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall sub_5E64C0(void *this)
+void sub_5E64C0(void *this)
 {
   int PlayerCountMap; // esi
-  int v3; // eax
 
   if ( this == (void *)-1 ) /*0x5e64c3*/
     return 8; /*0x5e64ca*/
   PlayerCountMap = ReadPlayerCountMap((int)this); /*0x5e64d7*/
   if ( g_GameStateFlags ) /*0x5e64db*/
   {
-    v3 = (*(int (__thiscall **)(int))(*(_DWORD *)g_GameStateFlags + 152))(g_GameStateFlags); /*0x5e64df*/
+    int v3 = (*(int (__thiscall **)(int))(*(_DWORD *)g_GameStateFlags + 152))(g_GameStateFlags); /*0x5e64df*/
     if ( v3 != -1 && v3 < PlayerCountMap ) /*0x5e64ec*/
       PlayerCountMap = v3; /*0x5e64ee*/
   }
@@ -721,33 +673,19 @@ unsigned int __thiscall sub_5E64C0(void *this)
 int SessionClass::BuildLobbyPlayerList()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_663B40(void *this)
+void sub_663B40(void *this)
 {
-  int v2; // ecx
-  int v3; // ecx
-  int v4; // eax
   int result; // eax
-  int v6; // ebx
-  char *v7; // edi
-  char *v8; // eax
-  int v9; // ebp
-  int v10; // ecx
-  int v11; // eax
-  int v12; // ecx
-  int v13; // eax
-  int v14; // edx
   int i; // [esp+8h] [ebp-14h]
-  int v16; // [esp+10h] [ebp-Ch] BYREF
-  int v17; // [esp+14h] [ebp-8h] BYREF
 
   while ( this->unknown_10 ) /*0x663b46*/
   {
-    __3_YAXPAX_Z(**((void ***)this + 1)); /*0x663b53*/
-    v2 = this->unknown_10; /*0x663b58*/
+    __3_YAXPAX_Z(*this->MPGameMode); /*0x663b53*/
+    int v2 = this->unknown_10; /*0x663b58*/
     if ( v2 > 0 ) /*0x663b60*/
     {
-      v3 = v2 - 1; /*0x663b62*/
-      v4 = 0; /*0x663b63*/
+      int v3 = v2 - 1; /*0x663b62*/
+      int v4 = 0; /*0x663b63*/
       for ( this->unknown_10 = v3; /*0x663b6a*/
             v4 < this->unknown_10;
             *(_DWORD *)(this->MPGameMode + 4 * v4 - 4) = *(_DWORD *)(this->MPGameMode + 4 * v4) )
@@ -759,17 +697,17 @@ int __thiscall sub_663B40(void *this)
   result = HouseClass_Count; /*0x663b85*/
   for ( i = 0; i < HouseClass_Count; ++i ) /*0x663b94*/
   {
-    v6 = *(_DWORD *)&HouseClass_Array->__pad_0[4 * i]; /*0x663ba6*/
+    int v6 = *(_DWORD *)&HouseClass_Array->__pad_0[4 * i]; /*0x663ba6*/
     if ( (unsigned __int8)House::IsCurrentPlayer((#375 *)v6) && !*(_BYTE *)(v6 + 502) ) /*0x663bbc*/
     {
-      v7 = (char *)__2_YAPAXI_Z(0x2Au); /*0x663bd8*/
+      char * v7 = (char *)__2_YAPAXI_Z(0x2Au); /*0x663bd8*/
       *v7 = i; /*0x663be2*/
-      v8 = ToWideStringChar((char *)(v6 + 90154)); /*0x663be4*/
+      char * v8 = ToWideStringChar((char *)(v6 + 90154)); /*0x663be4*/
       strncpy(v7 + 1, v8, 0x14u); /*0x663bee*/
-      v9 = 0; /*0x663bfb*/
+      int v9 = 0; /*0x663bfb*/
       if ( Game_PlayerCount > 0 ) /*0x663bff*/
       {
-        v10 = Game_PlayerInfoArray; /*0x663c01*/
+        int v10 = Game_PlayerInfoArray; /*0x663c01*/
         while ( *(_DWORD *)(*(_DWORD *)v10 + 111) != i ) /*0x663c12*/
         {
           ++v9; /*0x663c14*/
@@ -777,6 +715,8 @@ int __thiscall sub_663B40(void *this)
           if ( v9 >= Game_PlayerCount ) /*0x663c1a*/
             goto LABEL_15; /*0x663c1a*/
         }
+  int v17; // [esp+14h] [ebp-8h] BYREF
+  int v16; // [esp+10h] [ebp-Ch] BYREF
         Network::CopyAddress((_DWORD *)(*(_DWORD *)(Game_PlayerInfoArray + 4 * v9) + 40), &v16, (int)&v17); /*0x663c34*/
         *(_DWORD *)(v7 + 33) = v17; /*0x663c3d*/
         *(_WORD *)(v7 + 37) = *((_WORD *)&Network_PlayerPorts + v9); /*0x663c48*/
@@ -785,14 +725,15 @@ LABEL_15:
       v7[41] = 1; /*0x663c50*/
       v7[39] = DataGlobal_A8E2AC == *(_DWORD *)(v6 + 48); /*0x663c6a*/
       v7[40] = 1 << i; /*0x663c6d*/
-      v11 = this->unknown_08; /*0x663c70*/
+      int v11 = this->unknown_08; /*0x663c70*/
       if ( this->unknown_10 < v11 /*0x663c93*/
         || (this->IsAllocated || !v11)
+  int v12; // ecx
         && (v12 = this->unknown_14, v12 > 0)
         && (*(unsigned __int8 (__thiscall **)(void *, int, _DWORD))(this->SessionClass_field_08)(this, v11 + v12, 0) )
       {
-        v13 = this->unknown_10; /*0x663c9a*/
-        v14 = this->MPGameMode; /*0x663c9d*/
+        int v13 = this->unknown_10; /*0x663c9a*/
+        int v14 = this->MPGameMode; /*0x663c9d*/
         this->unknown_10 = v13 + 1; /*0x663ca3*/
         *(_DWORD *)(v14 + 4 * v13) = v7; /*0x663ca6*/
       }
@@ -809,10 +750,8 @@ unsigned int * SessionClass::GetEntry(IUnknown * aP1)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall SessionClass::GetEntry(_DWORD *this, IUnknown *aP1)
 {
-  int v2; // edx
-  int v4; // ecx
 
-  v2 = this->q02C; /*0x691500*/
+  int v2 = this->q02C; /*0x691500*/
   if ( v2 == -1 ) /*0x691506*/
   {
     aP1->field_0 = -1; /*0x691510*/
@@ -821,7 +760,7 @@ _DWORD *__thiscall SessionClass::GetEntry(_DWORD *this, IUnknown *aP1)
   }
   else
   {
-    v4 = this->q024; /*0x691518*/
+    int v4 = this->q024; /*0x691518*/
     aP1->field_0 = *(_DWORD *)(v4 + 8 * v2 + 164); /*0x691527*/
     aP1->field_4 = *(_DWORD *)(v4 + 8 * v2 + 168); /*0x691531*/
     return &aP1->field_0; /*0x69151b*/
@@ -833,7 +772,7 @@ _DWORD *__thiscall SessionClass::GetEntry(_DWORD *this, IUnknown *aP1)
 BOOL SessionClass::SetField()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall SessionClass::SetField(_DWORD *this)
+void SessionClass::SetField()
 {
   return this->q02C < *(_DWORD *)(this->q024 + 160); /*0x6915e0*/
 }
@@ -843,7 +782,7 @@ BOOL __thiscall SessionClass::SetField(_DWORD *this)
 int SessionClass::GetPlayerSide()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall SessionClass_GetPlayerSide(int this)
+void SessionClass_GetPlayerSide(int this)
 {
   int result; // eax
 
@@ -858,7 +797,7 @@ int __thiscall SessionClass_GetPlayerSide(int this)
 int SessionClass::GetPlayerColor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall SessionClass_GetPlayerColor(int this)
+void SessionClass_GetPlayerColor(int this)
 {
   int result; // eax
 
@@ -873,7 +812,7 @@ int __thiscall SessionClass_GetPlayerColor(int this)
 int SessionClass::GetOption()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall SessionClass_GetOption(int this)
+void SessionClass_GetOption(int this)
 {
   int result; // eax
 
@@ -888,7 +827,7 @@ int __thiscall SessionClass_GetOption(int this)
 int SessionClass::GetOption2()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall SessionClass_GetOption2(int this)
+void SessionClass_GetOption2(int this)
 {
   int result; // eax
 
@@ -903,7 +842,7 @@ int __thiscall SessionClass_GetOption2(int this)
 int SessionClass::SetPlayerOption(SkirmishDialog * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall SessionClass::SetPlayerOption(int this, SkirmishDialog *aP1)
+void SessionClass::SetPlayerOption(int this, SkirmishDialog *aP1)
 {
   SkirmishDialog *result; // eax
 
@@ -926,7 +865,7 @@ int __thiscall SessionClass::SetPlayerOption(int this, SkirmishDialog *aP1)
 int SessionClass::SetPlayerColor(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall SessionClass_SetPlayerColor(int this, int a2)
+void SessionClass_SetPlayerColor(int this, int a2)
 {
   int result; // eax
 
@@ -949,7 +888,7 @@ int __thiscall SessionClass_SetPlayerColor(int this, int a2)
 int SessionClass::SetOption(SessionClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall SessionClass::SetOption(int this, SessionClass *aP1)
+void SessionClass::SetOption(int this, SessionClass *aP1)
 {
   SessionClass *result; // eax
 
@@ -972,7 +911,7 @@ int __thiscall SessionClass::SetOption(int this, SessionClass *aP1)
 int SessionClass::SetOption2(SessionClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall SessionClass::SetOption2(int this, SessionClass *aP1)
+void SessionClass::SetOption2(int this, SessionClass *aP1)
 {
   SessionClass *result; // eax
 
@@ -997,23 +936,7 @@ char * SessionClass::SessionClass()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char *__thiscall sub_6970A0(char *this)
 {
-  _DWORD *v2; // eax
-  int v3; // ecx
-  _DWORD *v4; // eax
-  int v5; // ecx
-  _DWORD *v6; // eax
-  int v7; // ecx
-  _BYTE *v8; // edi
-  _BYTE *v9; // esi
-  int v10; // edi
   DWORD *v11; // esi
-  int v12; // edi
-  int v13; // eax
-  int v14; // edx
-  _DWORD *v15; // eax
-  int v16; // ecx
-  int v18; // [esp+10h] [ebp-4h]
-
   this->MPGameMode = 0; /*0x6970b8*/
   this->SkirmishPreferences = 0; /*0x6970bb*/
   this->SkirmishPreferences.idxScenario = 0; /*0x6970c1*/
@@ -1025,8 +948,8 @@ char *__thiscall sub_6970A0(char *this)
   this->q1A2 = 1; /*0x6970e5*/
   this->q1A3 = 1; /*0x6970eb*/
   this->q1A4 = 1; /*0x6970f1*/
-  v2 = this + 428; /*0x6970f7*/
-  v3 = 8; /*0x6970fd*/
+  _DWORD * v2 = this + 428; /*0x6970f7*/
+  int v3 = 8; /*0x6970fd*/
   do /*0x69710e*/
   {
     *(v2 - 1) = 0; /*0x697102*/
@@ -1046,8 +969,8 @@ char *__thiscall sub_6970A0(char *this)
   this->q21E = 1; /*0x69713c*/
   this->q21F = 1; /*0x697143*/
   this->q220 = 1; /*0x69714a*/
-  v4 = this + 552; /*0x697151*/
-  v5 = 8; /*0x697157*/
+  _DWORD * v4 = this + 552; /*0x697151*/
+  int v5 = 8; /*0x697157*/
   do /*0x697168*/
   {
     *(v4 - 1) = 0; /*0x69715c*/
@@ -1067,8 +990,8 @@ char *__thiscall sub_6970A0(char *this)
   this->q29A = 1; /*0x697196*/
   this->q29B = 1; /*0x69719d*/
   this->q29C = 1; /*0x6971a4*/
-  v6 = this + 676; /*0x6971ab*/
-  v7 = 8; /*0x6971b1*/
+  _DWORD * v6 = this + 676; /*0x6971ab*/
+  int v7 = 8; /*0x6971b1*/
   do /*0x6971c2*/
   {
     *(v6 - 1) = 0; /*0x6971b6*/
@@ -1078,8 +1001,8 @@ char *__thiscall sub_6970A0(char *this)
     --v7; /*0x6971c1*/
   }
   while ( v7 ); /*0x6971c2*/
-  v8 = this + 920; /*0x6971c4*/
-  v18 = 8; /*0x6971ca*/
+  _BYTE * v8 = this + 920; /*0x6971c4*/
+  int v18 = 8; /*0x6971ca*/
   do /*0x6971e5*/
   {
     Waypoint::InitInvalid(v8); /*0x6971d4*/
@@ -1152,8 +1075,8 @@ char *__thiscall sub_6970A0(char *this)
   Waypoint::InitInvalid(this + 10604); /*0x6973a0*/
   Waypoint::InitInvalid(this + 10616); /*0x6973ab*/
   Waypoint::InitInvalid(this + 10632); /*0x6973b6*/
-  v9 = this + 10644; /*0x6973bb*/
-  v10 = 8; /*0x6973c1*/
+  _BYTE * v9 = this + 10644; /*0x6973bb*/
+  int v10 = 8; /*0x6973c1*/
   do /*0x6973d1*/
   {
     Waypoint::InitInvalid(v9); /*0x6973c8*/
@@ -1162,7 +1085,7 @@ char *__thiscall sub_6970A0(char *this)
   }
   while ( v10 ); /*0x6973d1*/
   v11 = (DWORD *)(this + 12172); /*0x6973d3*/
-  v12 = 8; /*0x6973d9*/
+  int v12 = 8; /*0x6973d9*/
   do /*0x6973ef*/
   {
     *v11 = Timer::GetTicks(); /*0x6973e6*/
@@ -1247,8 +1170,8 @@ char *__thiscall sub_6970A0(char *this)
   *((_DWORD *)this + 197) = 0; /*0x6975cc*/
   *((_DWORD *)this + 199) = 5; /*0x6975df*/
   memset(this + 828, 0, 0x340u); /*0x6975e9*/
-  v13 = *((_DWORD *)this + 2031); /*0x6975eb*/
-  v14 = *((_DWORD *)this + 2261); /*0x6975f1*/
+  int v13 = *((_DWORD *)this + 2031); /*0x6975eb*/
+  int v14 = *((_DWORD *)this + 2261); /*0x6975f1*/
   LOBYTE(v13) = v13 & 0xFE; /*0x6975fd*/
   *((_DWORD *)this + 205) = 0; /*0x697604*/
   *((_DWORD *)this + 206) = 0; /*0x69760a*/
@@ -1286,7 +1209,7 @@ char *__thiscall sub_6970A0(char *this)
   *((_DWORD *)this + 3117) = 0; /*0x697728*/
   *((_DWORD *)this + 3118) = DataGlobal_B07740; /*0x69773a*/
   *((_DWORD *)this + 3119) = DataGlobal_B07744; /*0x697745*/
-  v15 = this + 132; /*0x69774e*/
+  _DWORD * v15 = this + 132; /*0x69774e*/
   this->LastNickSlot = DataGlobal_B07748; /*0x697754*/
   this->q30C8 = 0; /*0x697757*/
   *((_DWORD *)this + 3123) = 0; /*0x69775d*/
@@ -1294,7 +1217,7 @@ char *__thiscall sub_6970A0(char *this)
   *((_DWORD *)this + 3125) = 0; /*0x697769*/
   this->q2878 = 0; /*0x69776f*/
   *((_DWORD *)this + 15) = 0; /*0x697775*/
-  v16 = 8; /*0x697778*/
+  int v16 = 8; /*0x697778*/
   do /*0x69778e*/
   {
     *(v15 - 8) = -1; /*0x69777d*/
@@ -1316,30 +1239,21 @@ char *__thiscall sub_6970A0(char *this)
 int SessionClass::CreateConnections()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall SessionClass_CreateConnections(void *this)
+void SessionClass_CreateConnections(void *this)
 {
-  int v3; // esi
-  int v4; // eax
-  int v5; // ebp
   int i; // eax
-  int v7; // eax
-  int v8; // eax
-  int *v9; // ebp
-  int v10; // esi
   DWORD Ticks; // ecx
-  int v12; // [esp+10h] [ebp-18h] BYREF
-  int v13; // [esp+14h] [ebp-14h] BYREF
-  _BYTE v14[8]; // [esp+18h] [ebp-10h] BYREF
-  _BYTE v15[8]; // [esp+20h] [ebp-8h] BYREF
 
   Debug::Log(); /*0x697b7e*/
   if ( g_GameMode_Current[0] != 3 && g_GameMode_Current[0] != 4 ) /*0x697b93*/
     return 0; /*0x697b9e*/
-  v3 = 0; /*0x697ba7*/
-  if ( *((int *)this + 2579) > 0 ) /*0x697bab*/
+  int v3 = 0; /*0x697ba7*/
+  if ( this->qA13 > 0 ) /*0x697bab*/
   {
     do /*0x697bc5*/
     {
+  _BYTE v15[8]; // [esp+20h] [ebp-8h] BYREF
+  int v13; // [esp+14h] [ebp-14h] BYREF
       Debug::Log(); /*0x697bc5*/
       if ( _wcsicmp( /*0x697be7*/
              *(const wchar_t **)(this->StartSpots.Items + 4 * v3),
@@ -1356,10 +1270,10 @@ int __thiscall SessionClass_CreateConnections(void *this)
         NetworkID::Assign(&DataGlobal_A8DBA4, &v13, (int)v15, 0); /*0x697c4d*/
         Network::SetPlayerCoords(&DataGlobal_A8DBA4); /*0x697c5c*/
       }
-      v4 = *(_DWORD *)(this->StartSpots.Items + 4 * v3); /*0x697c67*/
+      int v4 = *(_DWORD *)(this->StartSpots.Items + 4 * v3); /*0x697c67*/
       *(_DWORD *)(*((_DWORD *)HouseClass_Array + *(_DWORD *)(v4 + 111)) + 516) = *(_DWORD *)(v4 + 123); /*0x697c7e*/
       Network::CopyAddress((_DWORD *)(*(_DWORD *)(Game_PlayerInfoArray + 4 * v3) + 40), &v13, (int)v15); /*0x697c94*/
-      v5 = 0; /*0x697c99*/
+      int v5 = 0; /*0x697c99*/
       for ( i = 0; i < 4; ++i ) /*0x697c9b*/
         v5 = (unsigned __int8)v15[i] | (v5 << 8); /*0x697ca8*/
       Debug::Log(); /*0x697cc7*/
@@ -1367,18 +1281,18 @@ int __thiscall SessionClass_CreateConnections(void *this)
       *(_BYTE *)(*((_DWORD *)HouseClass_Array + *(_DWORD *)(*(_DWORD *)(this->StartSpots.Items + 4 * v3) + 111)) + 520) = 0; /*0x697d00*/
       if ( v3 > 0 ) /*0x697d06*/
       {
-        v7 = *(_DWORD *)(this->StartSpots.Items + 4 * v3); /*0x697d0e*/
+        int v7 = *(_DWORD *)(this->StartSpots.Items + 4 * v3); /*0x697d0e*/
         SessionClass::initLAN(*(_DWORD *)(v7 + 111), (wchar_t *)v7, v7 + 40); /*0x697d1f*/
         *(_DWORD *)(*(_DWORD *)(this->StartSpots.Items + 4 * v3) + 115) = -1; /*0x697d2d*/
       }
     }
     while ( ++v3 < this->StartSpots.Count ); /*0x697bc5*/
   }
-  v8 = g_LastPerformanceTick; /*0x697d43*/
-  v9 = Network_LastPacketTime; /*0x697d48*/
+  int v8 = g_LastPerformanceTick; /*0x697d43*/
+  int * v9 = Network_LastPacketTime; /*0x697d48*/
   do /*0x697d79*/
   {
-    v10 = g_PerformanceTickOffset; /*0x697d4d*/
+    int v10 = g_PerformanceTickOffset; /*0x697d4d*/
     if ( v8 != -1 ) /*0x697d56*/
     {
       Ticks = Timer::GetTicks(); /*0x697d62*/
@@ -1392,7 +1306,8 @@ int __thiscall SessionClass_CreateConnections(void *this)
     goto LABEL_22; /*0x697d7e*/
   if ( !this->q3090 ) /*0x697d84*/
     goto LABEL_22; /*0x697d84*/
-  v12 = 0; /*0x697da0*/
+  int v12 = 0; /*0x697da0*/
+  _BYTE v14[8]; // [esp+18h] [ebp-10h] BYREF
   v14[0] = 0; /*0x697db0*/
   v14[1] = 0; /*0x697db4*/
   v14[2] = 0; /*0x697db8*/
@@ -1425,11 +1340,9 @@ LABEL_22:
 char SessionClass::IsValidHouse(void * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall SessionClass_IsValidHouse(int this, #375 *a2)
+void SessionClass_IsValidHouse(int this, #375 *a2)
 {
   #375 *v2; // edi
-  int v3; // eax
-  int v5; // ecx
   HouseClass *i; // edx
   #375 *v7; // eax
 
@@ -1438,13 +1351,13 @@ char __thiscall SessionClass_IsValidHouse(int this, #375 *a2)
     v2 = HouseClass_Player; /*0x697e7b*/
   if ( g_GameMode_Current[0] != 4 || !v2 ) /*0x697e8c*/
     goto LABEL_9; /*0x697e8c*/
-  v3 = this->q3074; /*0x697e8e*/
+  int v3 = this->q3074; /*0x697e8e*/
   if ( v3 != -1 ) /*0x697e97*/
     return *((_DWORD *)v2 + 12) == v3; /*0x697ea8*/
   if ( !_wcsicmp((const wchar_t *)v2 + 45077, (const wchar_t *)(this + 12320)) ) /*0x697eb9*/
     return 1; /*0x697ec7*/
 LABEL_9:
-  v5 = 0; /*0x697ed3*/
+  int v5 = 0; /*0x697ed3*/
   if ( HouseClass_Count <= 0 ) /*0x697ed7*/
     return 0; /*0x697efd*/
   for ( i = HouseClass_Array; ; i = (HouseClass *)((char *)i + 4) ) /*0x697ed9*/
@@ -1458,7 +1371,7 @@ LABEL_9:
     if ( ++v5 >= HouseClass_Count ) /*0x697efb*/
       return 0; /*0x697efb*/
   }
-  return v2 == v7; /*0x697ea0*/
+  return v2 = = v7; /*0x697ea0*/
 }
 }
 
@@ -1469,72 +1382,29 @@ char * SessionClass::LoadMissionList()
 char *__thiscall SessionClass_LoadMissionList(_DWORD *this)
 {
   wchar_t *Description; // esi
-  int v3; // eax
-  _DWORD *v4; // ebp
   int KeyCount; // ebx
-  int v6; // edi
   unsigned __int8 *StringByIndex; // eax
   wchar_t *v8; // eax
-  int v9; // ecx
-  int v10; // eax
-  int v11; // eax
-  int v12; // edx
   HANDLE FirstFileA; // ebx
   char *cAlternateFileName; // esi
-  int v15; // ebx
   int i; // edi
   unsigned __int8 *v17; // eax
   wchar_t *v18; // eax
   wchar_t *v19; // esi
-  int v20; // ecx
-  int v21; // eax
-  int v22; // eax
-  int v23; // edx
   HANDLE v24; // ebx
   char *cFileName; // esi
-  _DWORD *v26; // eax
-  _DWORD *v27; // edi
-  int v28; // eax
-  unsigned int v29; // kr0C_4
-  unsigned int v30; // ebx
-  int v31; // eax
-  int v32; // ecx
   unsigned __int8 *v33; // eax
   wchar_t *v34; // eax
   wchar_t *v35; // eax
   wchar_t *v36; // esi
-  int v37; // ecx
-  int v38; // eax
   size_t v39; // edi
   wchar_t *String; // eax
-  int v41; // ecx
-  int v42; // eax
-  int v43; // eax
-  int v44; // edx
-  char *v45; // esi
   wchar_t *v46; // eax
   wchar_t *v47; // esi
-  int v48; // ecx
-  int v49; // eax
-  int v50; // eax
-  int v51; // edx
   HANDLE hFindFile; // [esp+20h] [ebp-5C4h]
   HANDLE hFindFilea; // [esp+20h] [ebp-5C4h]
   HANDLE hFindFileb; // [esp+20h] [ebp-5C4h]
-  int v56; // [esp+24h] [ebp-5C0h] BYREF
   int j; // [esp+28h] [ebp-5BCh]
-  int v58; // [esp+2Ch] [ebp-5B8h] BYREF
-  int v59; // [esp+30h] [ebp-5B4h] BYREF
-  int v60[3]; // [esp+34h] [ebp-5B0h] BYREF
-  _DWORD v61[10]; // [esp+40h] [ebp-5A4h] BYREF
-  char v62; // [esp+68h] [ebp-57Ch]
-  int v63; // [esp+6Ch] [ebp-578h]
-  int v64; // [esp+70h] [ebp-574h]
-  int v65; // [esp+74h] [ebp-570h]
-  int v66; // [esp+78h] [ebp-56Ch]
-  _DWORD v67[22]; // [esp+7Ch] [ebp-568h] BYREF
-  char v68[12]; // [esp+D4h] [ebp-510h] BYREF
-  int v69; // [esp+E0h] [ebp-504h]
   char v70[64]; // [esp+E8h] [ebp-4FCh] BYREF
   char v71[32]; // [esp+128h] [ebp-4BCh] BYREF
   wchar_t Source[44]; // [esp+148h] [ebp-49Ch] BYREF
@@ -1545,24 +1415,27 @@ char *__thiscall SessionClass_LoadMissionList(_DWORD *this)
   char v77[256]; // [esp+4E4h] [ebp-100h] BYREF
 
   Description = 0; /*0x69998b*/
+  int v60[3]; // [esp+34h] [ebp-5B0h] BYREF
   v60[1] = 0; /*0x699992*/
   v60[2] = 0; /*0x699996*/
+  _DWORD v61[10]; // [esp+40h] [ebp-5A4h] BYREF
   GenericList::Constructor(v61); /*0x69999a*/
-  v3 = this->q1A4; /*0x69999f*/
-  v4 = this + 420; /*0x6999a5*/
+  int v3 = this->q1A4; /*0x69999f*/
+  _DWORD * v4 = this + 420; /*0x6999a5*/
   v61[0] = &vt_List_INIClass_INISection; /*0x6999ad*/
   memset(&v61[7], 0, 12); /*0x6999b5*/
-  v62 = 0; /*0x6999c1*/
-  v63 = 0; /*0x6999c6*/
-  v64 = 0; /*0x6999ca*/
+  char v62 = 0; /*0x6999c1*/
+  int v63 = 0; /*0x6999c6*/
+  int v64 = 0; /*0x6999ca*/
   v60[0] = (int)&vt_INIClass; /*0x6999ce*/
   (*(void (__thiscall **)(_DWORD *))(v3 + 12))(v4); /*0x6999d6*/
+  _DWORD v67[22]; // [esp+7Ch] [ebp-568h] BYREF
   CCFileClass::Construct(v67, DataGlobal_83F520); /*0x6999e2*/
   if ( CCFileClass::Open(v67, 0) ) /*0x6999ec*/
   {
     FileStraw::Open(v60, (int)v67, 0); /*0x699a03*/
     KeyCount = INIClass::GetKeyCount((char *)v60, (unsigned __int8 *)g_INI_Key_MultiMaps); /*0x699a16*/
-    v6 = 0; /*0x699a18*/
+    int v6 = 0; /*0x699a18*/
     if ( KeyCount > 0 ) /*0x699a1c*/
     {
       while ( 1 ) /*0x699a3f*/
@@ -1582,14 +1455,15 @@ char *__thiscall SessionClass_LoadMissionList(_DWORD *this)
           v8 = (wchar_t *)__2_YAPAXI_Z(0x1BCu); /*0x699a5c*/
           if ( v8 ) /*0x699a66*/
             Description = MapFile::LoadDescription(v8, (unsigned __int8 ***)v60, v70); /*0x699a7c*/
-          v9 = v4[2]; /*0x699a7e*/
+          int v9 = v4[2]; /*0x699a7e*/
           if ( v4[4] < v9 /*0x699aa4*/
             || (*((_BYTE *)v4 + 13) || !v9)
+  int v10; // eax
             && (v10 = v4[5], v10 > 0)
             && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*v4 + 8))(v4, v9 + v10, 0) )
           {
-            v11 = v4[4]; /*0x699aab*/
-            v12 = v4[1]; /*0x699aae*/
+            int v11 = v4[4]; /*0x699aab*/
+            int v12 = v4[1]; /*0x699aae*/
             v4[4] = v11 + 1; /*0x699ab4*/
             *(_DWORD *)(v12 + 4 * v11) = Description; /*0x699ab7*/
           }
@@ -1617,7 +1491,7 @@ char *__thiscall SessionClass_LoadMissionList(_DWORD *this)
         {
           FileClass::SetFileName(v67, cAlternateFileName); /*0x699b48*/
           FileStraw::Open(v60, (int)v67, 0); /*0x699b58*/
-          v15 = INIClass::GetKeyCount((char *)v60, (unsigned __int8 *)g_INI_Key_MultiMaps); /*0x699b6b*/
+          int v15 = INIClass::GetKeyCount((char *)v60, (unsigned __int8 *)g_INI_Key_MultiMaps); /*0x699b6b*/
           for ( i = 0; i < v15; ++i )
           {
             v17 = (unsigned __int8 *)INIClass::GetStringByIndex((char *)v60, (unsigned __int8 *)g_INI_Key_MultiMaps, i); /*0x699b90*/
@@ -1631,14 +1505,15 @@ char *__thiscall SessionClass_LoadMissionList(_DWORD *this)
             {
               v18 = (wchar_t *)__2_YAPAXI_Z(0x1BCu); /*0x699bad*/
               v19 = v18 ? MapFile::LoadDescription(v18, (unsigned __int8 ***)v60, v70) : 0;
-              v20 = v4[2]; /*0x699bd3*/
+              int v20 = v4[2]; /*0x699bd3*/
               if ( v4[4] < v20 /*0x699bf9*/
                 || (*((_BYTE *)v4 + 13) || !v20)
+  int v21; // eax
                 && (v21 = v4[5], v21 > 0)
                 && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*v4 + 8))(v4, v20 + v21, 0) )
               {
-                v22 = v4[4]; /*0x699c00*/
-                v23 = v4[1]; /*0x699c03*/
+                int v22 = v4[4]; /*0x699c00*/
+                int v23 = v4[1]; /*0x699c03*/
                 v4[4] = v22 + 1; /*0x699c09*/
                 *(_DWORD *)(v23 + 4 * v22) = v19; /*0x699c0c*/
               }
@@ -1655,7 +1530,7 @@ char *__thiscall SessionClass_LoadMissionList(_DWORD *this)
   CCFileClass::Reset(v67); /*0x699c4b*/
   v24 = FindFirstFileA(DataGlobal_83F504, &FindFileData); /*0x699c69*/
   hFindFilea = v24; /*0x699c70*/
-  v65 = dword_81C1D0; /*0x699c74*/
+  int v65 = dword_81C1D0; /*0x699c74*/
   SetSoundWarning(-2); /*0x699c78*/
   if ( v24 != (HANDLE)-1 ) /*0x699c80*/
   {
@@ -1668,10 +1543,10 @@ char *__thiscall SessionClass_LoadMissionList(_DWORD *this)
           cFileName = FindFileData.cFileName; /*0x699cb1*/
         if ( _strcmpi(cFileName, DataGlobal_83F4F4) ) /*0x699cbe*/
         {
-          v26 = __2_YAPAXI_Z(0x28u); /*0x699cd0*/
+          _DWORD * v26 = __2_YAPAXI_Z(0x28u); /*0x699cd0*/
           if ( v26 ) /*0x699cda*/
           {
-            v27 = MixFileClass::FromFile(v26, cFileName, (int)&DataGlobal_886980); /*0x699ced*/
+            _DWORD * v27 = MixFileClass::FromFile(v26, cFileName, (int)&DataGlobal_886980); /*0x699ced*/
             if ( v27 ) /*0x699cf1*/
             {
               if ( DataGlobal_884DD0 < DataGlobal_884DC8 /*0x699d2d*/
@@ -1682,11 +1557,11 @@ char *__thiscall SessionClass_LoadMissionList(_DWORD *this)
                      DataGlobal_884DC8 + DataGlobal_884DD4,
                      0) )
               {
-                v28 = DataGlobal_884DD0++; /*0x699d3a*/
+                int v28 = DataGlobal_884DD0++; /*0x699d3a*/
                 *((_DWORD *)DataGlobal_884DC4 + v28) = v27; /*0x699d49*/
               }
-              v29 = strlen(cFileName) + 1; /*0x699d53*/
-              v30 = v29 - 1; /*0x699d5f*/
+              unsigned int v29 = strlen(cFileName) + 1; /*0x699d53*/
+              unsigned int v30 = v29 - 1; /*0x699d5f*/
               strncpy(Destination, cFileName, v29 - 4); /*0x699d67*/
               *((_BYTE *)&v75[62] + v30 + 1) = 0; /*0x699d8f*/
               strcat(Destination, (const char *)&DataGlobal_83F4F0); /*0x699d9f*/
@@ -1695,9 +1570,9 @@ char *__thiscall SessionClass_LoadMissionList(_DWORD *this)
               if ( CCFileClass::Open(v67, 0) ) /*0x699dc7*/
               {
                 FileStraw::Open(v60, (int)v67, 0); /*0x699dde*/
-                v31 = INIClass::GetKeyCount((char *)v60, (unsigned __int8 *)g_INI_Key_MultiMaps); /*0x699dec*/
-                v32 = 0; /*0x699df1*/
-                v66 = v31; /*0x699df5*/
+                int v31 = INIClass::GetKeyCount((char *)v60, (unsigned __int8 *)g_INI_Key_MultiMaps); /*0x699dec*/
+                int v32 = 0; /*0x699df1*/
+                int v66 = v31; /*0x699df5*/
                 for ( j = 0; j < v66; ++j ) /*0x699dfd*/
                 {
                   v33 = (unsigned __int8 *)INIClass::GetStringByIndex( /*0x699e1c*/
@@ -1719,8 +1594,8 @@ char *__thiscall SessionClass_LoadMissionList(_DWORD *this)
                       v36 = v35; /*0x699e61*/
                       if ( v35 ) /*0x699e65*/
                       {
-                        v37 = *((_DWORD *)v35 + 97); /*0x699e6b*/
-                        v38 = *((_DWORD *)v35 + 96); /*0x699e71*/
+                        int v37 = *((_DWORD *)v35 + 97); /*0x699e6b*/
+                        int v38 = *((_DWORD *)v35 + 96); /*0x699e71*/
                         if ( v38 == v37 ) /*0x699e7b*/
                           swprintf(Buffer, (const size_t)&DataGlobal_83F4CC, (const wchar_t *const)0x28, v38, 41); /*0x699ea8*/
                         else
@@ -1739,14 +1614,15 @@ char *__thiscall SessionClass_LoadMissionList(_DWORD *this)
                           String = GetStringCSF(g_Str_MSG_NoDescription, 0, g_Str_File_Session_CPP, 2845); /*0x699f36*/
                           wcscpy(v36, String); /*0x699f3d*/
                         }
-                        v41 = v4[2]; /*0x699f45*/
+                        int v41 = v4[2]; /*0x699f45*/
                         if ( v4[4] < v41 /*0x699f6a*/
                           || (*((_BYTE *)v4 + 13) || !v41)
+  int v42; // eax
                           && (v42 = v4[5], v42 > 0)
                           && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*v4 + 8))(v4, v41 + v42, 0) )
                         {
-                          v43 = v4[4]; /*0x699f71*/
-                          v44 = v4[1]; /*0x699f74*/
+                          int v43 = v4[4]; /*0x699f71*/
+                          int v44 = v4[1]; /*0x699f74*/
                           v4[4] = v43 + 1; /*0x699f7a*/
                           *(_DWORD *)(v44 + 4 * v43) = v36; /*0x699f7d*/
                         }
@@ -1775,6 +1651,7 @@ char *__thiscall SessionClass_LoadMissionList(_DWORD *this)
   INIClass::ClearSection((int)v60, 0, 0); /*0x699fe7*/
   CCFileClass::Reset(v67); /*0x699ff0*/
   hFindFileb = FindFirstFileA(DataGlobal_83F490, &FindFileData); /*0x69a010*/
+  int v56; // [esp+24h] [ebp-5C0h] BYREF
   LOBYTE(v56) = 0; /*0x69a014*/
   if ( hFindFileb != (HANDLE)-1 ) /*0x69a019*/
   {
@@ -1782,7 +1659,7 @@ char *__thiscall SessionClass_LoadMissionList(_DWORD *this)
     {
       if ( (FindFileData.dwFileAttributes & 0x116) == 0 ) /*0x69a02f*/
       {
-        v45 = FindFileData.cAlternateFileName; /*0x69a041*/
+        char * v45 = FindFileData.cAlternateFileName; /*0x69a041*/
         if ( !strlen(FindFileData.cAlternateFileName) ) /*0x69a048*/
           v45 = FindFileData.cFileName; /*0x69a04f*/
         INIClass::GetString( /*0x69a073*/
@@ -1801,22 +1678,23 @@ char *__thiscall SessionClass_LoadMissionList(_DWORD *this)
           32);
         BulkCharToWide(v75, (unsigned __int8 *)v70, -1); /*0x69a0aa*/
         LOBYTE(v56) = INIClass::ReadBool_Overwrite(g_INI_Key_Basic, g_INI_Key_Official, 0); /*0x69a0c8*/
-        v59 = 2; /*0x69a0f0*/
-        v58 = 4; /*0x69a0f8*/
+        int v59 = 2; /*0x69a0f0*/
+        int v58 = 4; /*0x69a0f8*/
         ParseMapFileHeader(v45, v71, v77, (int)&v56, (int)&v59, (int)&v58); /*0x69a0fc*/
         v46 = (wchar_t *)__2_YAPAXI_Z(0x1BCu); /*0x69a106*/
         if ( v46 ) /*0x69a110*/
           v47 = SessionClass::ParseGameInfo(v46, v45, v75, v71, v56, v77, v59, v58); /*0x69a141*/
         else
           v47 = 0; /*0x69a145*/
-        v48 = v4[2]; /*0x69a147*/
+        int v48 = v4[2]; /*0x69a147*/
         if ( v4[4] < v48 /*0x69a16d*/
           || (*((_BYTE *)v4 + 13) || !v48)
+  int v49; // eax
           && (v49 = v4[5], v49 > 0)
           && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*v4 + 8))(v4, v48 + v49, 0) )
         {
-          v50 = v4[4]; /*0x69a174*/
-          v51 = v4[1]; /*0x69a177*/
+          int v50 = v4[4]; /*0x69a174*/
+          int v51 = v4[1]; /*0x69a177*/
           v4[4] = v50 + 1; /*0x69a17d*/
           *(_DWORD *)(v51 + 4 * v50) = v47; /*0x69a180*/
         }
@@ -1826,7 +1704,8 @@ char *__thiscall SessionClass_LoadMissionList(_DWORD *this)
     FindClose(hFindFileb); /*0x69a1a3*/
   }
   v67[0] = &vt_CCFileClass; /*0x69a1b2*/
-  v69 = 0; /*0x69a1ba*/
+  int v69 = 0; /*0x69a1ba*/
+  char v68[12]; // [esp+D4h] [ebp-510h] BYREF
   Vector::Clear((int)v68); /*0x69a1c1*/
   v67[0] = &off_7E1668; /*0x69a1ca*/
   BufferIOFileClass::Dtor(v67); /*0x69a1d2*/
@@ -1848,23 +1727,14 @@ wchar_t *__thiscall SessionClass::ParseGameInfo(
         CampaignScore *aP6,
         int a8)
 {
-  wchar_t *v8; // esi
+  SessionClass *v8; // esi
   VectorClass *v9; // ebx
   wchar_t *v10; // ebp
-  char *v11; // eax
   wchar_t *StringCSF; // eax
-  char v13; // cl
-  int v14; // eax
   void (__thiscall **v15)(VectorClass *); // edx
-  char *v16; // ecx
-  int v17; // eax
-  void *v18; // eax
-  _DWORD *v19; // edx
   ObjectClass *i; // edi
   CampaignScore *v21; // ecx
-  int v22; // eax
   ObjectClass *v23; // eax
-
   v8 = this; /*0x69a984*/
   v9 = (VectorClass *)(this + 196); /*0x69a989*/
   MapFile::Constructor((_DWORD *)this + 98, 0, 0); /*0x69a997*/
@@ -1873,8 +1743,8 @@ wchar_t *__thiscall SessionClass::ParseGameInfo(
   v9[1].vtable0 = 0; /*0x69a9b0*/
   v9->vtable0 = &vt_TypeList_enum_DiskID; /*0x69a9b7*/
   VectorClass::WstringConstructor((_DWORD *)v8 + 105, 0, 0); /*0x69a9bd*/
-  v11 = Source; /*0x69a9c2*/
-  *((_DWORD *)v8 + 105) = &vt_DynamicVectorClass_Wstring; /*0x69a9c6*/
+  char * v11 = Source; /*0x69a9c2*/
+  v8->q1A4 = &vt_DynamicVectorClass_Wstring; /*0x69a9c6*/
   *((_DWORD *)v8 + 110) = 10; /*0x69a9cf*/
   *((_DWORD *)v8 + 109) = 0; /*0x69a9d2*/
   if ( v11 ) /*0x69a9d9*/
@@ -1911,21 +1781,22 @@ wchar_t *__thiscall SessionClass::ParseGameInfo(
     strcpy((char *)v8 + 348, &stru_830620[60868]); /*0x69aa9d*/
     v8 = this; /*0x69aaa6*/
   }
-  v13 = (char)aP4; /*0x69aaae*/
-  v14 = a8; /*0x69aab2*/
-  *((_DWORD *)v8 + 96) = aP6; /*0x69aab6*/
+  char v13 = (char)aP4; /*0x69aaae*/
+  int v14 = a8; /*0x69aab2*/
+  v8->Color2 = aP6; /*0x69aab6*/
   v15 = (void (__thiscall **)(VectorClass *))v9->vtable0; /*0x69aabc*/
-  *((_BYTE *)v8 + 380) = v13; /*0x69aabe*/
-  *((_DWORD *)v8 + 97) = v14; /*0x69aac6*/
+  v8->Color = v13; /*0x69aabe*/
+  v8->Side = v14; /*0x69aac6*/
   v15[3](v9); /*0x69aacc*/
-  v16 = (char *)v9->Capacity; /*0x69aacf*/
+  char * v16 = (char *)v9->Capacity; /*0x69aacf*/
   if ( (int)v9[1].vtable0 < (int)v16 /*0x69aaf4*/
     || (v9->IsAllocated || !v16)
+  int v17; // eax
     && (v17 = (int)v9[1].Items, v17 > 0)
     && (*((unsigned __int8 (__thiscall **)(VectorClass *, char *, _DWORD))v9->vtable0 + 2))(v9, &v16[v17], 0) )
   {
-    v18 = v9[1].vtable0; /*0x69aafb*/
-    v19 = v9->Items; /*0x69aafe*/
+    void * v18 = v9[1].vtable0; /*0x69aafb*/
+    _DWORD * v19 = v9->Items; /*0x69aafe*/
     v9[1].vtable0 = (char *)v18 + 1; /*0x69ab04*/
     v19[(_DWORD)v18] = -2; /*0x69ab07*/
   }
@@ -1958,7 +1829,7 @@ wchar_t *__thiscall SessionClass::ParseGameInfo(
         {
           if ( !*((_BYTE *)v10 + 13) && v21 ) /*0x69abbb*/
             continue; /*0x69abbb*/
-          v22 = *((_DWORD *)v10 + 5); /*0x69abbd*/
+          int v22 = *((_DWORD *)v10 + 5); /*0x69abbd*/
           if ( v22 <= 0 /*0x69abce*/
             || !(*(unsigned __int8 (__thiscall **)(wchar_t *, char *, _DWORD))(*(_DWORD *)v10 + 8))(
                   v10,
@@ -1984,17 +1855,9 @@ wchar_t *__thiscall SessionClass::ParseGameInfo(
 int SessionClass::AssignColor(int a2, MPCooperative * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall SessionClass::AssignColor(_DWORD *this, int a2, MPCooperative *aP2)
+void SessionClass::AssignColor(int a2, MPCooperative *aP2)
 {
   int result; // eax
-  int v5; // edi
-  int v6; // edx
-  int *v7; // esi
-  int v8; // ecx
-  int v9; // ecx
-  int v10; // ecx
-  _DWORD *v11; // edx
-  int v12; // edx
 
   result = a2; /*0x69b7e0*/
   if ( a2 == -2 ) /*0x69b7ef*/
@@ -2007,13 +1870,13 @@ int __thiscall SessionClass::AssignColor(_DWORD *this, int a2, MPCooperative *aP
         result = Random::Range(&g_ScenarioClass_Instance->random[1], 0, (IUnknown *)7); /*0x69b80e*/
         if ( result == -2 ) /*0x69b815*/
           break; /*0x69b815*/
-        v5 = this->qA13; /*0x69b817*/
-        v6 = 0; /*0x69b81d*/
+        int v5 = this->qA13; /*0x69b817*/
+        int v6 = 0; /*0x69b81d*/
         if ( v5 <= 0 ) /*0x69b821*/
         {
 LABEL_12:
-          v10 = 0; /*0x69b849*/
-          v11 = this + 33; /*0x69b84b*/
+          int v10 = 0; /*0x69b849*/
+          _DWORD * v11 = this + 33; /*0x69b84b*/
           while ( *v11 != result ) /*0x69b853*/
           {
             ++v10; /*0x69b855*/
@@ -2024,12 +1887,12 @@ LABEL_12:
         }
         else
         {
-          v7 = (int *)this->WOLPreferences; /*0x69b823*/
+          int * v7 = (int *)this->WOLPreferences; /*0x69b823*/
           while ( 1 ) /*0x69b829*/
           {
-            v8 = *v7; /*0x69b829*/
+            int v8 = *v7; /*0x69b829*/
             if ( *(_DWORD *)(*v7 + 87) == -2 && *(_DWORD *)(v8 + 83) == -1 ) /*0x69b834*/
-              v9 = -2; /*0x69b836*/
+              int v9 = -2; /*0x69b836*/
             else
               v9 = *(_DWORD *)(v8 + 83); /*0x69b83a*/
             if ( v9 == result ) /*0x69b83f*/
@@ -2056,7 +1919,7 @@ LABEL_15:
     this->Color = a2; /*0x69b880*/
     this->Color2 = -1; /*0x69b886*/
   }
-  v12 = this->Color2; /*0x69b896*/
+  int v12 = this->Color2; /*0x69b896*/
   *(this + 87) = this->Color; /*0x69b89c*/
   this->SessionClass_field_160 = v12; /*0x69b8a2*/
   return result; /*0x69b8a8*/
@@ -2067,59 +1930,16 @@ LABEL_15:
 void SessionClass::SetupNetwork()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_69BD60(int this)
+void sub_69BD60(int this)
 {
-  int v1; // esi
   char **v3; // edi
-  char *v4; // ebx
-  char *v5; // eax
-  int v6; // eax
-  int v7; // edi
-  int v8; // ebx
-  int v9; // edx
-  int v10; // eax
-  int v11; // esi
-  int v12; // eax
-  _DWORD *v13; // esi
-  int v14; // eax
-  int v15; // esi
   int i; // eax
-  int v17; // ebx
-  _DWORD *v18; // edx
-  char *v19; // edi
   char **v20; // esi
-  char *v21; // eax
-  int v22; // edi
   char **v23; // esi
-  char *v24; // eax
   char **v25; // ecx
-  char *v26; // esi
-  char *v27; // eax
-  char *v28; // ecx
-  char *v29; // esi
-  char *v30; // eax
-  char *v31; // ecx
   char **v32; // esi
-  char *v33; // edi
-  char *v34; // ebx
-  char *v35; // eax
-  void *v36; // eax
-  int v37; // ecx
-  _WORD *v38; // edx
   __int16 v39; // ax
-  _DWORD *v40; // edx
-  int v41; // esi
-  int v42; // ebx
-  char *v43; // edi
-  char *v44; // eax
-  _DWORD *v45; // ecx
-  bool v46; // zf
-  int v47; // eax
   __int16 v48; // [esp-Ch] [ebp-70h]
-  int v49; // [esp+8h] [ebp-5Ch]
-  int v50; // [esp+8h] [ebp-5Ch]
-  int v51; // [esp+8h] [ebp-5Ch]
-  int v52; // [esp+Ch] [ebp-58h]
   _DWORD v53[2]; // [esp+10h] [ebp-54h] BYREF
   void *v54; // [esp+18h] [ebp-4Ch]
   int v55; // [esp+1Ch] [ebp-48h]
@@ -2135,8 +1955,7 @@ void __thiscall sub_69BD60(int this)
   char v65; // [esp+59h] [ebp-Bh]
   int v66; // [esp+5Ch] [ebp-8h]
   int v67; // [esp+60h] [ebp-4h]
-
-  v1 = 0; /*0x69bd65*/
+  int v1 = 0; /*0x69bd65*/
   v55 = 1; /*0x69bd6f*/
   AbstractClass::updateAnimationState(0, 0); /*0x69bd77*/
   v62 = &vt_DynamicVectorClass_NodeNameType; /*0x69bd81*/
@@ -2149,20 +1968,21 @@ void __thiscall sub_69BD60(int this)
     MPCooperative::updateScoreBoard(&v62); /*0x69bdb4*/
     return; /*0x69bdbe*/
   }
-  v52 = 0; /*0x69bdce*/
+  int v52 = 0; /*0x69bdce*/
   memset((void *)(this + 11816), 0, 0x120u); /*0x69bdd2*/
   this->q3018 = 1; /*0x69bdd4*/
   if ( this->qA13 > 0 ) /*0x69bde3*/
   {
     do /*0x69be9c*/
     {
+  int v6; // eax
       v53[0] = 0; /*0x69bde9*/
       v3 = (char **)&g_NetworkPlayerName; /*0x69bdf1*/
       while ( 1 ) /*0x69bdfb*/
       {
-        v4 = *v3; /*0x69bdfb*/
+        char * v4 = *v3; /*0x69bdfb*/
         v54 = ToWideStringChar(*(char **)(Game_PlayerInfoArray + 4 * v1)); /*0x69be07*/
-        v5 = ToWideStringChar(v4); /*0x69be0b*/
+        char * v5 = ToWideStringChar(v4); /*0x69be0b*/
         if ( !_strcmpi(v54, v5) ) /*0x69be16*/
           break; /*0x69be16*/
         ++v3; /*0x69be26*/
@@ -2188,18 +2008,18 @@ LABEL_10:
     }
     while ( v1 < this->StartSpots.Count ); /*0x69be9c*/
   }
-  v7 = this->StartSpots.Count; /*0x69bea2*/
+  int v7 = this->StartSpots.Count; /*0x69bea2*/
   v58 = 0; /*0x69beaa*/
   v59 = 0; /*0x69beb0*/
-  v49 = 0; /*0x69beb4*/
+  int v49 = 0; /*0x69beb4*/
   if ( v7 > 0 ) /*0x69beb8*/
   {
-    v8 = v64; /*0x69bebe*/
+    int v8 = v64; /*0x69bebe*/
     while ( 1 ) /*0x69bec2*/
     {
-      v9 = 0x7FFFFFFF; /*0x69bec2*/
-      v10 = 0; /*0x69bec7*/
-      v11 = 0x7FFFFFFF; /*0x69becb*/
+      int v9 = 0x7FFFFFFF; /*0x69bec2*/
+      int v10 = 0; /*0x69bec7*/
+      int v11 = 0x7FFFFFFF; /*0x69becb*/
       if ( v7 <= 0 ) /*0x69becd*/
         break; /*0x69becd*/
       do /*0x69bef2*/
@@ -2214,9 +2034,9 @@ LABEL_10:
       while ( v10 < v7 ); /*0x69bef2*/
       if ( v9 == 0x7FFFFFFF ) /*0x69befa*/
         break; /*0x69befa*/
-      v12 = this->StartSpots.Items; /*0x69befc*/
+      int v12 = this->StartSpots.Items; /*0x69befc*/
       *((_BYTE *)&v58 + v9) = 1; /*0x69bf02*/
-      v13 = (_DWORD *)(v12 + 4 * v9); /*0x69bf07*/
+      _DWORD * v13 = (_DWORD *)(v12 + 4 * v9); /*0x69bf07*/
       if ( v66 < v8 ) /*0x69bf10*/
         goto LABEL_24; /*0x69bf10*/
       if ( !v65 && v8 || v67 <= 0 ) /*0x69bf24*/
@@ -2224,7 +2044,7 @@ LABEL_10:
       if ( ((unsigned __int8 (__thiscall *)(void ***, int, _DWORD))v62[2])(&v62, v67 + v8, 0) ) /*0x69bf35*/
       {
 LABEL_24:
-        v14 = v66++; /*0x69bf44*/
+        int v14 = v66++; /*0x69bf44*/
         *((_DWORD *)Block + v14) = *v13; /*0x69bf4d*/
       }
       v8 = v64; /*0x69bf50*/
@@ -2235,16 +2055,16 @@ LABEL_26:
       break; /*0x69bf6d*/
     }
   }
-  v15 = 0; /*0x69bf73*/
+  int v15 = 0; /*0x69bf73*/
   v58 = 0; /*0x69bf77*/
-  v50 = 0; /*0x69bf7b*/
+  int v50 = 0; /*0x69bf7b*/
   v59 = 0; /*0x69bf7f*/
   for ( i = v66; v15 < i; v50 = v15 ) /*0x69bf89*/
   {
     if ( !*((_BYTE *)&v58 + v15) ) /*0x69bf8f*/
     {
-      v17 = 0; /*0x69bf9f*/
-      v18 = (_DWORD *)(*((_DWORD *)Block + v15) + 40); /*0x69bfa4*/
+      int v17 = 0; /*0x69bf9f*/
+      _DWORD * v18 = (_DWORD *)(*((_DWORD *)Block + v15) + 40); /*0x69bfa4*/
       v61[0] = *v18; /*0x69bfab*/
       v61[1] = v18[1]; /*0x69bfb2*/
       v61[2] = v18[2]; /*0x69bfb9*/
@@ -2256,11 +2076,11 @@ LABEL_26:
           if ( v17 != v15 && !*((_BYTE *)&v58 + v17) && NetworkID::Compare((int)v61, *((_DWORD *)Block + v17) + 40) ) /*0x69bff8*/
           {
             v54 = ToWideStringChar(*((char **)Block + v17)); /*0x69c011*/
-            v19 = 0; /*0x69c015*/
+            char * v19 = 0; /*0x69c015*/
             v20 = (char **)&g_NetworkPlayerName; /*0x69c017*/
             while ( 1 ) /*0x69c01e*/
             {
-              v21 = ToWideStringChar(*v20); /*0x69c01e*/
+              char * v21 = ToWideStringChar(*v20); /*0x69c01e*/
               if ( !_strcmpi(v54, v21) ) /*0x69c029*/
                 break; /*0x69c029*/
               ++v20; /*0x69c039*/
@@ -2274,11 +2094,11 @@ LABEL_26:
             v54 = v19; /*0x69c0f6*/
 LABEL_39:
             v56 = ToWideStringChar(*((char **)Block + v50)); /*0x69c04d*/
-            v22 = 0; /*0x69c061*/
+            int v22 = 0; /*0x69c061*/
             v23 = (char **)&g_NetworkPlayerName; /*0x69c063*/
             while ( 1 ) /*0x69c06a*/
             {
-              v24 = ToWideStringChar(*v23); /*0x69c06a*/
+              char * v24 = ToWideStringChar(*v23); /*0x69c06a*/
               if ( !_strcmpi(v56, v24) ) /*0x69c075*/
                 break; /*0x69c075*/
               ++v23; /*0x69c081*/
@@ -2298,22 +2118,22 @@ LABEL_39:
               ToWideStringChar(v25[v17]); /*0x69c0d9*/
             }
             Debug::Log(); /*0x69c0ec*/
-            v26 = ToWideStringChar(*((char **)Block + v50)); /*0x69c121*/
-            v27 = String::GetOrEmpty((char **)&g_WebBrowser); /*0x69c123*/
+            char * v26 = ToWideStringChar(*((char **)Block + v50)); /*0x69c121*/
+            char * v27 = String::GetOrEmpty((char **)&g_WebBrowser); /*0x69c123*/
             if ( !_strcmpi(v26, v27) ) /*0x69c12a*/
             {
               v56 = (void *)v53[0]; /*0x69c142*/
-              v28 = (char *)*((_DWORD *)Block + v17); /*0x69c146*/
+              char * v28 = (char *)*((_DWORD *)Block + v17); /*0x69c146*/
               ++v52; /*0x69c14d*/
               v53[0] += 36; /*0x69c151*/
               strcpy((char *)v56, ToWideStringChar(v28)); /*0x69c172*/
             }
-            v29 = ToWideStringChar(*((char **)Block + v17)); /*0x69c18c*/
-            v30 = String::GetOrEmpty((char **)&g_WebBrowser); /*0x69c18e*/
+            char * v29 = ToWideStringChar(*((char **)Block + v17)); /*0x69c18c*/
+            char * v30 = String::GetOrEmpty((char **)&g_WebBrowser); /*0x69c18e*/
             if ( !_strcmpi(v29, v30) ) /*0x69c195*/
             {
               v56 = (void *)v53[0]; /*0x69c1b1*/
-              v31 = (char *)*((_DWORD *)Block + v50); /*0x69c1b6*/
+              char * v31 = (char *)*((_DWORD *)Block + v50); /*0x69c1b6*/
               ++v52; /*0x69c1bc*/
               v53[0] += 36; /*0x69c1c0*/
               strcpy((char *)v56, ToWideStringChar(v31)); /*0x69c1e1*/
@@ -2330,15 +2150,16 @@ LABEL_39:
   }
   if ( this->q301C ) /*0x69c208*/
   {
+  void *v36; // eax
     Debug::Log(); /*0x69c21c*/
     Network::SetPort((_WORD *)(**(_DWORD **)(this + 10304) + 40), this->q301C); /*0x69c237*/
     v54 = 0; /*0x69c23c*/
     v32 = (char **)&g_NetworkPlayerName; /*0x69c244*/
     while ( 1 ) /*0x69c24e*/
     {
-      v33 = *v32; /*0x69c24e*/
-      v34 = ToWideStringChar(*(char **)Game_PlayerInfoArray); /*0x69c259*/
-      v35 = ToWideStringChar(v33); /*0x69c25b*/
+      char * v33 = *v32; /*0x69c24e*/
+      char * v34 = ToWideStringChar(*(char **)Game_PlayerInfoArray); /*0x69c259*/
+      char * v35 = ToWideStringChar(v33); /*0x69c25b*/
       if ( !_strcmpi(v34, v35) ) /*0x69c262*/
         break; /*0x69c262*/
       ++v32; /*0x69c276*/
@@ -2353,10 +2174,10 @@ LABEL_39:
 LABEL_58:
     Network::SetPort((_WORD *)(*(_DWORD *)(this + 4 * (_DWORD)v36 + 10328) + 40), this->q301C); /*0x69c288*/
   }
-  v37 = 0; /*0x69c2a5*/
+  int v37 = 0; /*0x69c2a5*/
   if ( this->qA13 > 0 ) /*0x69c2a9*/
   {
-    v38 = (_WORD *)(this + 12410); /*0x69c2ab*/
+    _WORD * v38 = (_WORD *)(this + 12410); /*0x69c2ab*/
     do /*0x69c2d7*/
     {
       v39 = *(_WORD *)(*(_DWORD *)(this->StartSpots.Items + 4 * v37) + 40); /*0x69c2ba*/
@@ -2368,33 +2189,34 @@ LABEL_58:
     }
     while ( v37 < this->StartSpots.Count ); /*0x69c2d7*/
   }
-  v40 = (_DWORD *)(**(_DWORD **)(this + 10304) + 40); /*0x69c2e1*/
+  _DWORD * v40 = (_DWORD *)(**(_DWORD **)(this + 10304) + 40); /*0x69c2e1*/
   v60[0] = *v40; /*0x69c2e6*/
   v60[1] = v40[1]; /*0x69c2f2*/
   v60[2] = v40[2]; /*0x69c2fd*/
   Network::CopyAddress_Small(&v57); /*0x69c301*/
-  v51 = 1; /*0x69c313*/
+  int v51 = 1; /*0x69c313*/
   if ( this->qA13 > 1 ) /*0x69c317*/
   {
-    v41 = 4; /*0x69c31d*/
+    int v41 = 4; /*0x69c31d*/
     do /*0x69c430*/
     {
       if ( NetworkID::Compare((int)v60, *(_DWORD *)(v41 + this->StartSpots.Items) + 40) ) /*0x69c333*/
       {
+  bool v46; // zf
         ToWideStringChar(*(char **)(v41 + this->StartSpots.Items)); /*0x69c349*/
         Debug::Log(); /*0x69c354*/
-        v42 = this + 10644; /*0x69c362*/
+        int v42 = this + 10644; /*0x69c362*/
         v54 = (void *)(this + 10328); /*0x69c368*/
         v55 = 8; /*0x69c36c*/
         do /*0x69c416*/
         {
-          v43 = *(char **)v54; /*0x69c381*/
+          char * v43 = *(char **)v54; /*0x69c381*/
           v56 = ToWideStringChar(*(char **)(v41 + this->StartSpots.Items)); /*0x69c38a*/
-          v44 = ToWideStringChar(v43); /*0x69c38e*/
+          char * v44 = ToWideStringChar(v43); /*0x69c38e*/
           if ( !_strcmpi(v56, v44) ) /*0x69c399*/
           {
             Network::CopyAddress_Small(v53); /*0x69c3ac*/
-            v45 = (_DWORD *)(*(_DWORD *)(v41 + this->StartSpots.Items) + 40); /*0x69c3be*/
+            _DWORD * v45 = (_DWORD *)(*(_DWORD *)(v41 + this->StartSpots.Items) + 40); /*0x69c3be*/
             NetworkID::Assign(v45, 0, (int)v53, *(_WORD *)v45); /*0x69c3c8*/
             ToWideStringChar(*(char **)(v41 + this->StartSpots.Items)); /*0x69c3d6*/
             Network::FormatAddress((unsigned __int16 *)(*(_DWORD *)(v41 + this->StartSpots.Items) + 40), 0); /*0x69c3eb*/
@@ -2414,7 +2236,7 @@ LABEL_58:
   }
   if ( g_NetworkInterface ) /*0x69c440*/
   {
-    v47 = (*(int (__thiscall **)(int))(*(_DWORD *)g_NetworkInterface + 112))(g_NetworkInterface); /*0x69c444*/
+    int v47 = (*(int (__thiscall **)(int))(*(_DWORD *)g_NetworkInterface + 112))(g_NetworkInterface); /*0x69c444*/
     LOWORD(v47) = *(_WORD *)(this + 12410); /*0x69c44d*/
     (*(void (__thiscall **)(int, int))(*(_DWORD *)g_NetworkInterface + 92))(g_NetworkInterface, v47); /*0x69c457*/
     (*(void (__thiscall **)(int))(*(_DWORD *)g_NetworkInterface + 28))(g_NetworkInterface); /*0x69c462*/
@@ -2434,48 +2256,31 @@ void SessionClass::BuildLaunchString()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void SessionClass_BuildLaunchString()
 {
-  int v0; // eax
-  int v1; // ecx
-  int v2; // ebp
-  int v3; // ebx
   wchar_t **v4; // edi
   wchar_t *v5; // esi
   wchar_t **v6; // esi
-  char *v7; // esi
   char **v8; // eax
   char **v9; // eax
   char **v10; // eax
   char **v11; // eax
-  int v12; // edi
-  char *v13; // eax
   char **v14; // [esp-14h] [ebp-A0h]
   char **v15; // [esp-Ch] [ebp-98h]
   char **v16; // [esp-4h] [ebp-90h]
   char **v17; // [esp+4h] [ebp-88h]
-  char *v18; // [esp+14h] [ebp-78h] BYREF
-  int v19; // [esp+18h] [ebp-74h]
-  int v20; // [esp+1Ch] [ebp-70h] BYREF
-  void *v21; // [esp+20h] [ebp-6Ch] BYREF
-  void *v22; // [esp+24h] [ebp-68h] BYREF
-  void *v23; // [esp+28h] [ebp-64h] BYREF
-  void *v24; // [esp+2Ch] [ebp-60h] BYREF
-  void *v25; // [esp+30h] [ebp-5Ch] BYREF
-  void *v26; // [esp+34h] [ebp-58h] BYREF
-  void *v27; // [esp+38h] [ebp-54h] BYREF
   char Buffer[80]; // [esp+3Ch] [ebp-50h] BYREF
 
-  v0 = SessionClass::initPlayers(g_GameRulesOptions); /*0x78f009*/
-  v1 = 1; /*0x78f014*/
+  int v0 = SessionClass::initPlayers(g_GameRulesOptions); /*0x78f009*/
+  int v1 = 1; /*0x78f014*/
   if ( g_MenuStateFlags == 1 ) /*0x78f01b*/
     ++v0; /*0x78f01d*/
-  v2 = 0; /*0x78f01f*/
-  v18 = 0; /*0x78f025*/
-  v19 = 0; /*0x78f029*/
+  int v2 = 0; /*0x78f01f*/
+  char * v18 = 0; /*0x78f025*/
+  int v19 = 0; /*0x78f029*/
   if ( v0 <= 1 ) /*0x78f02d*/
     goto LABEL_15; /*0x78f02d*/
-  v3 = v0 - 1; /*0x78f030*/
+  int v3 = v0 - 1; /*0x78f030*/
   v4 = (wchar_t **)&DataGlobal_A8DA94; /*0x78f033*/
-  v20 = v0; /*0x78f03b*/
+  int v20 = v0; /*0x78f03b*/
   do /*0x78f079*/
   {
     v5 = *v4; /*0x78f03f*/
@@ -2516,14 +2321,14 @@ LABEL_15:
   }
   if ( ppv ) /*0x78f0bb*/
   {
-    v7 = &v18[v2 + 1]; /*0x78f0ca*/
-    v17 = String::Assign((char **)&v27, String2); /*0x78f0df*/
-    v16 = FromStringInt((char **)&v26, (int)v7); /*0x78f0ec*/
-    v15 = String::Assign((char **)&v25, asc_84BA48); /*0x78f100*/
-    v14 = String::Assign((char **)&v24, g_WOL_IdleFlag); /*0x78f118*/
-    v8 = String::Assign((char **)&v23, aMode_0); /*0x78f11f*/
-    v9 = String::Concat((const char **)v8, (char **)&v22, v14); /*0x78f126*/
-    v10 = String::Concat((const char **)v9, (char **)&v21, v15); /*0x78f12d*/
+    char * v7 = &v18[v2 + 1]; /*0x78f0ca*/
+    void * v27 = String::Assign((char **)&v27, String2); /*0x78f0df*/
+    void * v26 = FromStringInt((char **)&v26, (int)v7); /*0x78f0ec*/
+    void * v25 = String::Assign((char **)&v25, asc_84BA48); /*0x78f100*/
+    void * v24 = String::Assign((char **)&v24, g_WOL_IdleFlag); /*0x78f118*/
+    void * v23 = String::Assign((char **)&v23, aMode_0); /*0x78f11f*/
+    void * v22 = String::Concat((const char **)v8, (char **)&v22, v14); /*0x78f126*/
+    void * v21 = String::Concat((const char **)v9, (char **)&v21, v15); /*0x78f12d*/
     v11 = String::Concat((const char **)v10, &v18, v16); /*0x78f134*/
     String::Concat((const char **)v11, (char **)&v20, v17); /*0x78f13b*/
     DeleteAndZero((void **)&v18); /*0x78f144*/
@@ -2534,8 +2339,8 @@ LABEL_15:
     DeleteAndZero(&v25); /*0x78f171*/
     DeleteAndZero(&v26); /*0x78f17a*/
     DeleteAndZero(&v27); /*0x78f183*/
-    v12 = *(_DWORD *)ppv; /*0x78f191*/
-    v13 = String::GetOrEmpty((char **)&v20); /*0x78f193*/
+    int v12 = *(_DWORD *)ppv; /*0x78f191*/
+    char * v13 = String::GetOrEmpty((char **)&v20); /*0x78f193*/
     (*(void (__stdcall **)(LPVOID, char *))(v12 + 156))(ppv, v13); /*0x78f1a0*/
     memset(Buffer, 0, sizeof(Buffer)); /*0x78f1b1*/
     GameConfig::BuildChecksum(Buffer); /*0x78f1b7*/

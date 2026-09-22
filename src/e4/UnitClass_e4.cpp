@@ -7,23 +7,21 @@ namespace gamemd {
 void UnitClass::ProcessIdleOrders()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall UnitClass_ProcessIdleOrders(_DWORD *this)
+void UnitClass_ProcessIdleOrders(_DWORD *this)
 {
   int i; // edi
-  int *v3; // eax
-  int v4; // eax
-  int v5; // [esp+Ch] [ebp-8h]
 
   for ( i = 0; i < this->q048; ++i ) /*0x6b7bbc*/
   {
-    v3 = *(int **)(this->ambientSoundController + 4 * i); /*0x6b7bc6*/
+    int * v3 = *(int **)(this->ambientSoundController + 4 * i); /*0x6b7bc6*/
     if ( v3[1] == 2 ) /*0x6b7bcd*/
     {
-      v4 = *v3; /*0x6b7bcf*/
+      int v4 = *v3; /*0x6b7bcf*/
       if ( *(_BYTE *)(*(_DWORD *)(v4 + 1732) + 3432) ) /*0x6b7bd7*/
       {
         UnitClass::GetExitCell(v4, this->bombVisible); /*0x6b7beb*/
         g_MissionQueueFrame = (int)g_CurrentFrame; /*0x6b7bfa*/
+  int v5; // [esp+Ch] [ebp-8h]
         g_MissionQueueParam = v5; /*0x6b7bff*/
         g_MissionQueueType = 2; /*0x6b7c05*/
         UnitClass::ClearTargetRef(**(_DWORD **)(this->ambientSoundController + 4 * i)); /*0x6b7c16*/

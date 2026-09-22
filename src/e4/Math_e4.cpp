@@ -26,7 +26,7 @@ namespace gamemd {
 void Math::Hypotenuse2D()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall Math_Hypotenuse2D(double *this)
+void Math_Hypotenuse2D(double *this)
 {
   Math::Sqrt(*this * *this + this->q004 * this->q004); /*0x41c369*/
 }
@@ -39,21 +39,18 @@ int Math_Sqrt()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // local variable allocation has failed, the output may be wrong!
-double __cdecl Math::Sqrt(AbstractClass *aP0)
+void Math::Sqrt(AbstractClass *aP0)
 {
-  double v1; // st7
-  unsigned int v3; // ecx
-  unsigned int v4; // eax
   AbstractClass *aP0a; // [esp+4h] [ebp+4h]
 
-  v1 = *(double *)&aP0; /*0x4cac40*/
+  double v1 = *(double *)&aP0; /*0x4cac40*/
   if ( *(double *)&aP0 == 0.0 ) /*0x4cac4f*/
     return 0.0; /*0x4cac53*/
   if ( *(double *)&aP0 <= 0.0 ) /*0x4cac65*/
     v1 = *(double *)&aP0 * -1.0; /*0x4cac67*/
   *(float *)&aP0a = v1; /*0x4cac6d*/
-  v3 = (unsigned int)&unk_7FFFFF & (unsigned int)aP0a; /*0x4cac77*/
-  v4 = ((unsigned int)aP0a >> 23) - 127; /*0x4cac80*/
+  unsigned int v3 = (unsigned int)&unk_7FFFFF & (unsigned int)aP0a; /*0x4cac77*/
+  unsigned int v4 = ((unsigned int)aP0a >> 23) - 127; /*0x4cac80*/
   if ( (v4 & 1) != 0 ) /*0x4cac85*/
     v3 |= (unsigned int)&unk_800000; /*0x4cac87*/
   return COERCE_FLOAT(((((__int16)v4 >> 1) + 127) << 23) + dword_8650BC[v3 >> 10]); /*0x4cac59*/
@@ -67,15 +64,12 @@ int Math_SinCos()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // local variable allocation has failed, the output may be wrong!
-double __cdecl Math::SinCos(IUnknown *aP0)
+void Math::SinCos(IUnknown *aP0)
 {
-  int v1; // eax
-  char v2; // cl
-  signed int v3; // eax
 
-  v1 = Math::RoundToInt(*(double *)&aP0 * flt_8223B0); /*0x4cacba*/
-  v2 = v1 & 1; /*0x4cacc4*/
-  v3 = (v1 / 2) & 0x80001FFF; /*0x4cacc9*/
+  int v1 = Math::RoundToInt(*(double *)&aP0 * flt_8223B0); /*0x4cacba*/
+  char v2 = v1 & 1; /*0x4cacc4*/
+  signed int v3 = (v1 / 2) & 0x80001FFF; /*0x4cacc9*/
   if ( v3 < 0 )
     v3 = (((_WORD)v3 - 1) | 0xFFFFE000) + 1 + ((int)((((_WORD)v3 - 1) | 0xFFFFE000) + 1) < 0 ? 0x2000 : 0);
   if ( v2 && v3 < 0x1FFF ) /*0x4cace7*/
@@ -91,18 +85,14 @@ int Math_ArcTan2()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // local variable allocation has failed, the output may be wrong!
-double __cdecl Math::ArcTan2(IUnknown *aP0)
+void Math::ArcTan2(IUnknown *aP0)
 {
-  int v1; // eax
-  char v2; // cl
-  signed int v3; // eax
-  int v4; // eax
 
-  v1 = Math::RoundToInt(*(double *)&aP0 * flt_8223B4); /*0x4cad0a*/
-  v2 = v1 & 1; /*0x4cad14*/
-  v3 = (v1 / 2) & 0x80001FFF; /*0x4cad19*/
+  int v1 = Math::RoundToInt(*(double *)&aP0 * flt_8223B4); /*0x4cad0a*/
+  char v2 = v1 & 1; /*0x4cad14*/
+  signed int v3 = (v1 / 2) & 0x80001FFF; /*0x4cad19*/
   if ( v3 >= 0 || (v3 = (((_WORD)v3 - 1) | 0xFFFFE000) + 1, v3 >= 0) ) /*0x4cad27*/
-    v4 = v3 + 2048; /*0x4cad30*/
+    int v4 = v3 + 2048; /*0x4cad30*/
   else
     v4 = v3 + 10240; /*0x4cad29*/
   if ( v2 && v4 < 10239 ) /*0x4cad3e*/
@@ -117,11 +107,10 @@ namespace gamemd {
 double Math::Sin(double a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-double __cdecl Math_Sin(double a1)
+void Math_Sin(double a1)
 {
-  signed int v1; // eax
 
-  v1 = Math::RoundToInt(a1 * 651.8986469044033) & 0x80000FFF; /*0x4cad5f*/
+  signed int v1 = Math::RoundToInt(a1 * 651.8986469044033) & 0x80000FFF; /*0x4cad5f*/
   if ( v1 < 0 )
     v1 = (((_WORD)v1 - 1) | 0xFFFFF000) + 1 + ((int)((((_WORD)v1 - 1) | 0xFFFFF000) + 1) < 0 ? 0x1000 : 0);
   return DataGlobal_85D0A4[v1]; /*0x4cad7b*/
@@ -135,19 +124,15 @@ int Math_CalcAngle()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // local variable allocation has failed, the output may be wrong!
-double __cdecl Math::CalcAngle(AbstractClass *aP0, double a2)
+void Math::CalcAngle(AbstractClass *aP0, double a2)
 {
-  double v3; // st7
-  char v4; // c3
   double result; // st7
-  int v6; // eax
-  float v7; // [esp+0h] [ebp-4h]
-  double v8; // [esp+10h] [ebp+Ch]
-  float v9; // [esp+10h] [ebp+Ch]
 
-  v7 = v8; /*0x4cae35*/
-  v9 = *(double *)&aP0; /*0x4cae3d*/
-  v3 = v9; /*0x4cae4b*/
+  double v8; // [esp+10h] [ebp+Ch]
+  float v7 = v8; /*0x4cae35*/
+  float v9 = *(double *)&aP0; /*0x4cae3d*/
+  double v3 = v9; /*0x4cae4b*/
+  char v4; // c3
   if ( v4 ) /*0x4cae54*/
   {
     if ( v3 == 0.0 ) /*0x4cae61*/
@@ -165,7 +150,7 @@ double __cdecl Math::CalcAngle(AbstractClass *aP0, double a2)
   }
   else
   {
-    v6 = abs32(Math::RoundToInt(v3 / v7 / flt_8650B8)); /*0x4cae9e*/
+    int v6 = abs32(Math::RoundToInt(v3 / v7 / flt_8650B8)); /*0x4cae9e*/
     if ( v6 >= 4097 ) /*0x4caea5*/
       result = 1.5707964; /*0x4caeb0*/
     else
@@ -187,39 +172,28 @@ float * Math::BuildRotationMatrix(float * a2, float a3)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 float *__thiscall Math_BuildRotationMatrix(float *this, float *a2, float a3)
 {
-  double v3; // kr00_8
-  double v5; // st7
-  double v7; // st6
-  double v8; // st6
-  double v9; // st5
-  double v10; // st4
-  double v11; // st5
-  double v12; // st5
-  double v13; // st4
-  double v14; // st7
-  float v16; // [esp+10h] [ebp+8h]
 
-  v3 = a3; /*0x5ae762*/
-  v16 = Math::ArcTan2(a3); /*0x5ae76f*/
-  v5 = Math::SinCos(v3); /*0x5ae775*/
-  v7 = *a2 * *a2; /*0x5ae787*/
+  double v3 = a3; /*0x5ae762*/
+  float v16 = Math::ArcTan2(a3); /*0x5ae76f*/
+  double v5 = Math::SinCos(v3); /*0x5ae775*/
+  double v7 = *a2 * *a2; /*0x5ae787*/
   *this = (1.0 - v7) * v16 + v7; /*0x5ae797*/
-  v8 = 1.0 - v16; /*0x5ae7a1*/
+  double v8 = 1.0 - v16; /*0x5ae7a1*/
   this->q004 = *a2 * a2[1] * v8 - v5 * a2[2]; /*0x5ae7b3*/
-  v9 = a2[2] * *a2 * v8; /*0x5ae7bb*/
-  v10 = v5 * a2[1]; /*0x5ae7bf*/
+  double v9 = a2[2] * *a2 * v8; /*0x5ae7bb*/
+  double v10 = v5 * a2[1]; /*0x5ae7bf*/
   this->q00C = 0.0; /*0x5ae7c2*/
   this->q008 = v9 + v10; /*0x5ae7c7*/
   this->q004 = *a2 * a2[1] * v8 + v5 * a2[2]; /*0x5ae7d8*/
-  v11 = a2[1] * a2[1]; /*0x5ae7e0*/
+  double v11 = a2[1] * a2[1]; /*0x5ae7e0*/
   this->q005 = (1.0 - v11) * v16 + v11; /*0x5ae7f0*/
-  v12 = a2[2] * a2[1] * v8; /*0x5ae7fb*/
-  v13 = v5 * *a2; /*0x5ae7ff*/
+  double v12 = a2[2] * a2[1] * v8; /*0x5ae7fb*/
+  double v13 = v5 * *a2; /*0x5ae7ff*/
   this->q007 = 0.0; /*0x5ae801*/
   this->q006 = v12 - v13; /*0x5ae806*/
   this->q008 = a2[2] * *a2 * v8 - v5 * a2[1]; /*0x5ae817*/
   *(this + 9) = a2[2] * a2[1] * v8 + v5 * *a2; /*0x5ae82b*/
-  v14 = a2[2] * a2[2]; /*0x5ae835*/
+  double v14 = a2[2] * a2[2]; /*0x5ae835*/
   *(this + 11) = 0.0; /*0x5ae83f*/
   *(this + 10) = (1.0 - v14) * v16 + v14; /*0x5ae84a*/
   return this; /*0x5ae851*/
@@ -232,18 +206,14 @@ namespace gamemd {
 int Math::DistSq2D(TechnoClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Math::DistSq2D(void *this, TechnoClass *aP1)
+void Math::DistSq2D(TechnoClass *aP1)
 {
-  int *v2; // edx
-  int v3; // eax
-  int v4; // ecx
-  _BYTE v6[8]; // [esp+4h] [ebp-Ch] BYREF
-  int v7; // [esp+Ch] [ebp-4h]
 
-  v2 = (int *)(*(int (__thiscall **)(void *, _BYTE *))(*(_DWORD *)this + 72))(this, v6); /*0x5f656e*/
-  v3 = *v2; /*0x5f6574*/
-  v4 = v2[1]; /*0x5f6576*/
-  v7 = v2[2]; /*0x5f657c*/
+  _BYTE v6[8]; // [esp+4h] [ebp-Ch] BYREF
+  int * v2 = (int *)(*(int (__thiscall **)(void *, _BYTE *))(*(_DWORD *)this + 72))(this, v6); /*0x5f656e*/
+  int v3 = *v2; /*0x5f6574*/
+  int v4 = v2[1]; /*0x5f6576*/
+  int v7 = v2[2]; /*0x5f657c*/
   return (v3 - *(_DWORD *)aP1->__pad_0) * (v3 - *(_DWORD *)aP1->__pad_0) /*0x5f658b*/
        + (v4 - *(_DWORD *)&aP1->__pad_0[4]) * (v4 - *(_DWORD *)&aP1->__pad_0[4]);
 }
@@ -257,48 +227,24 @@ unsigned int * Math::QuaternionSlerp(unsigned int * a1, float * a2, float * a3, 
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__fastcall sub_646590(_DWORD *a1, float *a2, float *a3, float a4)
 {
-  double v6; // st7
-  double v7; // st6
-  double v8; // st7
-  float *v9; // eax
-  int v10; // edx
-  double v11; // st6
-  double v12; // st5
-  double v13; // st7
-  float *v14; // eax
-  int v15; // edx
-  double v16; // st6
-  double v17; // st5
-  int v18; // eax
-  int v19; // edx
-  int v20; // eax
-  double v22; // [esp+18h] [ebp-28h]
-  double v23; // [esp+18h] [ebp-28h]
-  double v24; // [esp+20h] [ebp-20h]
-  double v25; // [esp+20h] [ebp-20h]
-  double v26; // [esp+28h] [ebp-18h]
-  int v27; // [esp+30h] [ebp-10h] BYREF
-  int v28; // [esp+34h] [ebp-Ch]
-  int v29; // [esp+38h] [ebp-8h]
-  int v30; // [esp+3Ch] [ebp-4h]
 
-  v6 = a2[3] * a3[3]; /*0x6465a6*/
-  v7 = a2[2] * a3[2]; /*0x6465ac*/
-  v27 = 0; /*0x6465af*/
-  v28 = 0; /*0x6465b7*/
-  v29 = 0; /*0x6465bf*/
-  v30 = 1065353216; /*0x6465c7*/
-  v22 = v6 + v7 + a2[1] * a3[1] + *a2 * *a3; /*0x6465df*/
+  double v6 = a2[3] * a3[3]; /*0x6465a6*/
+  double v7 = a2[2] * a3[2]; /*0x6465ac*/
+  int v27 = 0; /*0x6465af*/
+  int v28 = 0; /*0x6465b7*/
+  int v29 = 0; /*0x6465bf*/
+  int v30 = 1065353216; /*0x6465c7*/
+  double v22 = v6 + v7 + a2[1] * a3[1] + *a2 * *a3; /*0x6465df*/
   if ( v22 + 1.0 <= 0.00001 ) /*0x6465f4*/
   {
-    v25 = Math::SinCos((1.0 - a4) * 1.570796326794895); /*0x6466c1*/
-    v13 = Math::SinCos(a4 * 1.570796326794895); /*0x6466d1*/
-    v14 = a2; /*0x6466df*/
-    v15 = 4; /*0x6466e3*/
+    double v25 = Math::SinCos((1.0 - a4) * 1.570796326794895); /*0x6466c1*/
+    double v13 = Math::SinCos(a4 * 1.570796326794895); /*0x6466d1*/
+    float * v14 = a2; /*0x6466df*/
+    int v15 = 4; /*0x6466e3*/
     do /*0x6466fd*/
     {
-      v16 = *(float *)((char *)v14 + (char *)a3 - (char *)a2) * v13; /*0x6466eb*/
-      v17 = *v14++ * v25; /*0x6466ef*/
+      double v16 = *(float *)((char *)v14 + (char *)a3 - (char *)a2) * v13; /*0x6466eb*/
+      double v17 = *v14++ * v25; /*0x6466ef*/
       --v15; /*0x6466f6*/
       *(float *)((char *)v14 + (char *)&v27 - (char *)a2 - 4) = v16 + v17; /*0x6466f9*/
     }
@@ -306,6 +252,8 @@ _DWORD *__fastcall sub_646590(_DWORD *a1, float *a2, float *a3, float a4)
   }
   else
   {
+  double v24; // [esp+20h] [ebp-20h]
+  double v8; // st7
     if ( 1.0 - v22 <= 0.00001 ) /*0x64660f*/
     {
       v24 = 1.0 - a4; /*0x646678*/
@@ -313,27 +261,27 @@ _DWORD *__fastcall sub_646590(_DWORD *a1, float *a2, float *a3, float a4)
     }
     else
     {
-      v23 = Math::ArcTan2_Table(v22); /*0x646620*/
-      v26 = Math::SinCos(v23); /*0x646633*/
+      double v23 = Math::ArcTan2_Table(v22); /*0x646620*/
+      double v26 = Math::SinCos(v23); /*0x646633*/
       v24 = Math::SinCos((1.0 - a4) * v23) / v26; /*0x646653*/
       v8 = Math::SinCos(a4 * v23) / v26; /*0x646666*/
     }
-    v9 = a2; /*0x646685*/
-    v10 = 4; /*0x646689*/
+    float * v9 = a2; /*0x646685*/
+    int v10 = 4; /*0x646689*/
     do /*0x6466a3*/
     {
-      v11 = *(float *)((char *)v9 + (char *)a3 - (char *)a2) * v8; /*0x646691*/
-      v12 = *v9++ * v24; /*0x646695*/
+      double v11 = *(float *)((char *)v9 + (char *)a3 - (char *)a2) * v8; /*0x646691*/
+      double v12 = *v9++ * v24; /*0x646695*/
       --v10; /*0x64669c*/
       *(float *)((char *)v9 + (char *)&v27 - (char *)a2 - 4) = v11 + v12; /*0x64669f*/
     }
     while ( v10 ); /*0x6466a3*/
   }
-  v18 = v28; /*0x646703*/
+  int v18 = v28; /*0x646703*/
   *a1 = v27; /*0x64670b*/
-  v19 = v29; /*0x64670d*/
+  int v19 = v29; /*0x64670d*/
   a1[1] = v18; /*0x646713*/
-  v20 = v30; /*0x646716*/
+  int v20 = v30; /*0x646716*/
   a1[2] = v19; /*0x64671a*/
   a1[3] = v20; /*0x64671d*/
   return a1; /*0x646722*/

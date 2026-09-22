@@ -45,14 +45,9 @@ _DWORD *__thiscall sub_538B30(_DWORD *this, int a2, int a3)
 int RulesClass::RulesClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall RulesClass::Constructor(RulesClass *this)
+R RulesClass::Constructor()
 {
   int *BarrelDebris; // ebp
-  char *v3; // ecx
-  char *v4; // ebp
-  int v5; // edx
-  int v6; // eax
-  char *v7; // edi
 
   this->DetailMinFrameRateNormal = 15;
   this->DetailMinFrameRateMovie = 20;
@@ -1109,11 +1104,11 @@ int __thiscall RulesClass::Constructor(RulesClass *this)
   this->IceBreakingWeight = 0xFFFFFF;
   *((_DWORD *)this + 1561) = 0;
   *((_DWORD *)this + 1562) = 0;
-  v3 = (char *)this + 6260;
+  char * v3 = (char *)this + 6260;
   *((_DWORD *)this + 1563) = 50;
   this->q1870 = 0;
-  v4 = (char *)this + 6260;
-  v5 = 16;
+  char * v4 = (char *)this + 6260;
+  int v5 = 16;
   do
   {
     *v4 = 0;
@@ -1168,10 +1163,10 @@ int __thiscall RulesClass::Constructor(RulesClass *this)
   LODWORD(this->?) = 128;
   BYTE4(this->?) = 0;
   this->?[0] = 0;
-  v6 = 16;
+  int v6 = 16;
   do
   {
-    v7 = v3;
+    char * v7 = v3;
     v3 += 3;
     --v6;
     *(_WORD *)v7 = 0;
@@ -1719,17 +1714,13 @@ int result;
 int RulesClass::readAudioVisual()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_66D150(RulesClass *this)
+void sub_66D150(RulesClass *this)
 {
   int result; // eax
   int Int_Overwrite; // eax
-  int v4; // ecx
   double Double_Overwrite; // st7
-  unsigned int v6; // eax
-  unsigned int v7; // ecx
-  double v8; // [esp-8h] [ebp-10h]
-  int v9; // [esp+Ch] [ebp+4h]
 
+  int v9; // [esp+Ch] [ebp+4h]
   result = INIClass::BinarySearchSection(v9, (unsigned __int8 *)DataGlobal_839E70); /*0x66d160*/
   if ( result ) /*0x66d16c*/
   {
@@ -1738,8 +1729,9 @@ int __thiscall sub_66D150(RulesClass *this)
                       (unsigned __int8 *)DataGlobal_839E70,
                       (unsigned __int8 *)DataGlobal_83B370,
                       *((_DWORD *)this + 1550));
-    v4 = this->IceCrackingWeight; /*0x66d188*/
+    int v4 = this->IceCrackingWeight; /*0x66d188*/
     *((_DWORD *)this + 1550) = Int_Overwrite; /*0x66d18e*/
+  double v8; // [esp-8h] [ebp-10h]
     HIDWORD(v8) = this->LaserTargetColor; /*0x66d1a0*/
     LODWORD(v8) = v4; /*0x66d1a1*/
     Double_Overwrite = INIClass::ReadDouble_Overwrite( /*0x66d1aa*/
@@ -1747,10 +1739,10 @@ int __thiscall sub_66D150(RulesClass *this)
                          (unsigned __int8 *)DataGlobal_839E70,
                          (unsigned __int8 *)DataGlobal_83B358,
                          v8);
-    v6 = this->BerserkColor; /*0x66d1af*/
-    v7 = this->IronCurtainColor; /*0x66d1b5*/
-    *((double *)this + 776) = Double_Overwrite; /*0x66d1bb*/
-    *((double *)this + 777) = INIClass::ReadDouble_Overwrite( /*0x66d1d6*/
+    unsigned int v6 = this->BerserkColor; /*0x66d1af*/
+    unsigned int v7 = this->IronCurtainColor; /*0x66d1b5*/
+    this->qC20 = Double_Overwrite; /*0x66d1bb*/
+    this->q309 = INIClass::ReadDouble_Overwrite( /*0x66d1d6*/
                                 v9,
                                 (unsigned __int8 *)DataGlobal_839E70,
                                 (unsigned __int8 *)DataGlobal_83B344,
@@ -1769,27 +1761,17 @@ int __thiscall sub_66D150(RulesClass *this)
 int RulesClass::ReadPowerupsSection()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_673E80(RulesClass *this)
+void sub_673E80(RulesClass *this)
 {
   int result; // eax
-  int v2; // edi
-  double *v3; // ebp
-  char *v4; // eax
-  const char *v5; // esi
-  char *v6; // eax
-  char *v7; // esi
-  char *v8; // eax
-  char *v9; // esi
-  char *v10; // esi
-  double v11; // st7
   char String[128]; // [esp+0h] [ebp-80h] BYREF
   unsigned __int8 ***v13; // [esp+84h] [ebp+4h]
 
   result = INIClass::BinarySearchSection((int)v13, (unsigned __int8 *)DataGlobal_839D98); /*0x673e90*/
   if ( result ) /*0x673e9c*/
   {
-    v2 = 0; /*0x673ea5*/
-    v3 = DataGlobal_89EC28; /*0x673ea7*/
+    int v2 = 0; /*0x673ea5*/
+    double * v3 = DataGlobal_89EC28; /*0x673ea7*/
     do /*0x673fd7*/
     {
       result = INIClass::GetString( /*0x673ed0*/
@@ -1801,22 +1783,22 @@ int __thiscall sub_673E80(RulesClass *this)
                  128);
       if ( result ) /*0x673ed7*/
       {
-        v4 = strtok(String, Delimiter); /*0x673ee7*/
-        v5 = v4; /*0x673eec*/
+        char * v4 = strtok(String, Delimiter); /*0x673ee7*/
+        const char * v5 = v4; /*0x673eec*/
         if ( v4 ) /*0x673ef3*/
         {
           String::Trim(v4); /*0x673ef7*/
           dword_81DA8C[v2] = atoi(v5); /*0x673f05*/
         }
-        v6 = strtok(0, Delimiter); /*0x673f13*/
-        v7 = v6; /*0x673f18*/
+        char * v6 = strtok(0, Delimiter); /*0x673f13*/
+        char * v7 = v6; /*0x673f18*/
         if ( v6 ) /*0x673f1f*/
         {
           String::Trim(v6); /*0x673f23*/
           dword_81DAD8[v2] = GlobalArray::FindString(v7); /*0x673f2f*/
         }
-        v8 = strtok(0, Delimiter); /*0x673f3d*/
-        v9 = v8; /*0x673f42*/
+        char * v8 = strtok(0, Delimiter); /*0x673f3d*/
+        char * v9 = v8; /*0x673f42*/
         if ( v8 ) /*0x673f49*/
         {
           String::Trim(v8); /*0x673f4d*/
@@ -1831,9 +1813,10 @@ int __thiscall sub_673E80(RulesClass *this)
           }
         }
         result = (int)strtok(0, Delimiter); /*0x673f8c*/
-        v10 = (char *)result; /*0x673f91*/
+        char * v10 = (char *)result; /*0x673f91*/
         if ( result ) /*0x673f98*/
         {
+  double v11; // st7
           if ( strchr((const char *)result, 37) ) /*0x673f9d*/
           {
             v11 = atof(v10) * 0.01; /*0x673faf*/
@@ -1864,24 +1847,13 @@ int __thiscall sub_673E80(RulesClass *this)
 int RulesClass::readDifficulty()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_6743D0(RulesClass *this)
+void sub_6743D0(RulesClass *this)
 {
   int result; // eax
   int Int_Overwrite; // eax
-  int v4; // edx
   double Double_Overwrite; // st7
-  int v6; // edx
-  int v7; // eax
-  int v8; // ecx
-  int v9; // edx
-  double v10; // st7
-  int v11; // ecx
-  int v12; // edx
-  double v13; // st7
-  int v14; // ecx
-  double v15; // [esp-8h] [ebp-10h]
-  int v16; // [esp+Ch] [ebp+4h]
 
+  int v16; // [esp+Ch] [ebp+4h]
   result = INIClass::BinarySearchSection(v16, (unsigned __int8 *)DataGlobal_839D58); /*0x6743e0*/
   if ( result ) /*0x6743ec*/
   {
@@ -1895,8 +1867,9 @@ int __thiscall sub_6743D0(RulesClass *this)
                       (unsigned __int8 *)DataGlobal_839D58,
                       (unsigned __int8 *)g_INI_Key_Speed,
                       this->?[9]);
-    v4 = this->?[12]; /*0x67442c*/
+    int v4 = this->?[12]; /*0x67442c*/
     this->?[9] = Int_Overwrite; /*0x674432*/
+  double v15; // [esp-8h] [ebp-10h]
     HIDWORD(v15) = v4; /*0x674444*/
     LODWORD(v15) = this->?[11]; /*0x674445*/
     Double_Overwrite = INIClass::ReadDouble_Overwrite( /*0x67444e*/
@@ -1904,26 +1877,28 @@ int __thiscall sub_6743D0(RulesClass *this)
                          (unsigned __int8 *)DataGlobal_839D58,
                          (unsigned __int8 *)DataGlobal_83D54C,
                          v15);
-    v6 = this->?[13]; /*0x674453*/
+    int v6 = this->?[13]; /*0x674453*/
     *(double *)&this->?[11] = Double_Overwrite; /*0x67445b*/
-    v7 = INIClass::ReadInt_Overwrite(v16, (unsigned __int8 *)DataGlobal_839D58, (unsigned __int8 *)DataGlobal_83D53C, v6); /*0x67446d*/
-    v8 = this->?[2]; /*0x674472*/
-    v9 = this->?[1]; /*0x674478*/
+    int v7 = INIClass::ReadInt_Overwrite(v16, (unsigned __int8 *)DataGlobal_839D58, (unsigned __int8 *)DataGlobal_83D53C, v6); /*0x67446d*/
+    int v8 = this->?[2]; /*0x674472*/
+    int v9 = this->?[1]; /*0x674478*/
     this->?[13] = v7; /*0x67447e*/
+  double v10; // st7
     v10 = INIClass::ReadDouble_Overwrite( /*0x674493*/
             v16,
             (unsigned __int8 *)DataGlobal_839D58,
             (unsigned __int8 *)DataGlobal_81B140,
             COERCE_DOUBLE(__PAIR64__(v8, v9)));
-    v11 = this->?[4]; /*0x674498*/
-    v12 = this->?[3]; /*0x67449e*/
+    int v11 = this->?[4]; /*0x674498*/
+    int v12 = this->?[3]; /*0x67449e*/
     *(double *)&this->?[1] = v10; /*0x6744a4*/
+  double v13; // st7
     v13 = INIClass::ReadDouble_Overwrite( /*0x6744b9*/
             v16,
             (unsigned __int8 *)DataGlobal_839D58,
             (unsigned __int8 *)DataGlobal_83D528,
             COERCE_DOUBLE(__PAIR64__(v11, v12)));
-    v14 = this->?[5]; /*0x6744be*/
+    int v14 = this->?[5]; /*0x6744be*/
     *(double *)&this->?[3] = v13; /*0x6744c4*/
     result = INIClass::ReadInt_Overwrite( /*0x6744d9*/
                v16,
@@ -1945,21 +1920,19 @@ int __thiscall sub_6743D0(RulesClass *this)
 int RulesClass::ReadMovies()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_674550(RulesClass *this)
+void sub_674550(RulesClass *this)
 {
   int result; // eax
-  int v2; // ebp
   int i; // ebx
   unsigned __int8 *StringByIndex; // eax
-  char *v5; // esi
   char Source[32]; // [esp+4h] [ebp-20h] BYREF
-  char *v7; // [esp+28h] [ebp+4h]
 
+  char *v7; // [esp+28h] [ebp+4h]
   result = INIClass::BinarySearchSection((int)v7, (unsigned __int8 *)DataGlobal_839D50); /*0x674560*/
   if ( result ) /*0x67456c*/
   {
     result = INIClass::GetKeyCount(v7, (unsigned __int8 *)DataGlobal_839D50); /*0x67457d*/
-    v2 = result; /*0x674582*/
+    int v2 = result; /*0x674582*/
     for ( i = 0; i < v2; ++i ) /*0x674588*/
     {
       StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v7, (unsigned __int8 *)DataGlobal_839D50, i); /*0x6745a4*/
@@ -1975,7 +1948,7 @@ int __thiscall sub_674550(RulesClass *this)
         result = LookupNameIndex(Source); /*0x6745c0*/
         if ( result == -1 ) /*0x6745c8*/
         {
-          v5 = _strdup(Source); /*0x6745da*/
+          char * v5 = _strdup(Source); /*0x6745da*/
           result = DataGlobal_ABF398; /*0x6745dc*/
           if ( DataGlobal_ABF3A0 < DataGlobal_ABF398 /*0x674614*/
             || (DataGlobal_ABF39D || !DataGlobal_ABF398)
@@ -2006,11 +1979,10 @@ int __thiscall sub_674550(RulesClass *this)
 void RulesClass::readMaximums()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_679FA0(_DWORD *this)
+void sub_679FA0(_DWORD *this)
 {
-  void *v2; // eax
 
-  v2 = (void *)this->DetailMinFrameRateMovie; /*0x679fa6*/
+  void * v2 = (void *)this->DetailMinFrameRateMovie; /*0x679fa6*/
   *this = &vt_VectorClass_BuildingTypeClass_const; /*0x679fa9*/
   if ( v2 && this->SelfHealInfantryAmount ) /*0x679fb3*/
   {
@@ -2026,11 +1998,10 @@ void __thiscall sub_679FA0(_DWORD *this)
 void RulesClass::readInfantryTypes()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_679FD0(_DWORD *this)
+void sub_679FD0(_DWORD *this)
 {
-  void *v2; // eax
 
-  v2 = (void *)this->DetailMinFrameRateMovie; /*0x679fd6*/
+  void * v2 = (void *)this->DetailMinFrameRateMovie; /*0x679fd6*/
   *this = &vt_VectorClass_UnitTypeClass_const; /*0x679fd9*/
   if ( v2 && this->SelfHealInfantryAmount ) /*0x679fe3*/
   {
@@ -2046,11 +2017,10 @@ void __thiscall sub_679FD0(_DWORD *this)
 void RulesClass::readCountries()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_67A000(_DWORD *this)
+void sub_67A000(_DWORD *this)
 {
-  void *v2; // eax
 
-  v2 = (void *)this->DetailMinFrameRateMovie; /*0x67a006*/
+  void * v2 = (void *)this->DetailMinFrameRateMovie; /*0x67a006*/
   *this = &vt_VectorClass_AircraftTypeClass_const; /*0x67a009*/
   if ( v2 && this->SelfHealInfantryAmount ) /*0x67a013*/
   {
@@ -2066,11 +2036,10 @@ void __thiscall sub_67A000(_DWORD *this)
 void RulesClass::readVehicleTypes()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_67A060(_DWORD *this)
+void sub_67A060(_DWORD *this)
 {
-  void *v2; // eax
 
-  v2 = (void *)this->DetailMinFrameRateMovie; /*0x67a066*/
+  void * v2 = (void *)this->DetailMinFrameRateMovie; /*0x67a066*/
   *this = &vt_VectorClass_TerrainTypeClass_const; /*0x67a069*/
   if ( v2 && this->SelfHealInfantryAmount ) /*0x67a073*/
   {
@@ -2088,24 +2057,20 @@ int * RulesClass::readAircraftTypes(int * a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int *__thiscall sub_67A190(int *this, int *a2)
 {
-  int v3; // eax
-  void *v4; // eax
-  int v5; // ecx
-  int v6; // eax
 
   if ( this != a2 ) /*0x67a19a*/
   {
     (*(void (__thiscall **)(int *))(*this + 12))(this); /*0x67a19e*/
-    v3 = a2[2]; /*0x67a1a1*/
+    int v3 = a2[2]; /*0x67a1a1*/
     this->DetailBufferZoneWidth = v3; /*0x67a1a6*/
     if ( v3 ) /*0x67a1a9*/
     {
-      v4 = __2_YAPAXI_Z(4 * v3); /*0x67a1b3*/
+      void * v4 = __2_YAPAXI_Z(4 * v3); /*0x67a1b3*/
       this->DetailMinFrameRateMovie = (int)v4; /*0x67a1bb*/
       if ( v4 ) /*0x67a1c0*/
       {
-        v5 = this->DetailBufferZoneWidth; /*0x67a1c2*/
-        v6 = 0; /*0x67a1c5*/
+        int v5 = this->DetailBufferZoneWidth; /*0x67a1c2*/
+        int v6 = 0; /*0x67a1c5*/
         this->SelfHealInfantryAmount = 1; /*0x67a1c9*/
         if ( v5 > 0 ) /*0x67a1cd*/
         {
@@ -2137,24 +2102,20 @@ int * RulesClass::readSuperWeaponTypes(int * a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int *__thiscall sub_67A210(int *this, int *a2)
 {
-  int v3; // eax
-  void *v4; // eax
-  int v5; // ecx
-  int v6; // eax
 
   if ( this != a2 ) /*0x67a21a*/
   {
     (*(void (__thiscall **)(int *))(*this + 12))(this); /*0x67a21e*/
-    v3 = a2[2]; /*0x67a221*/
+    int v3 = a2[2]; /*0x67a221*/
     this->DetailBufferZoneWidth = v3; /*0x67a226*/
     if ( v3 ) /*0x67a229*/
     {
-      v4 = __2_YAPAXI_Z(4 * v3); /*0x67a233*/
+      void * v4 = __2_YAPAXI_Z(4 * v3); /*0x67a233*/
       this->DetailMinFrameRateMovie = (int)v4; /*0x67a23b*/
       if ( v4 ) /*0x67a240*/
       {
-        v5 = this->DetailBufferZoneWidth; /*0x67a242*/
-        v6 = 0; /*0x67a245*/
+        int v5 = this->DetailBufferZoneWidth; /*0x67a242*/
+        int v6 = 0; /*0x67a245*/
         this->SelfHealInfantryAmount = 1; /*0x67a249*/
         if ( v5 > 0 ) /*0x67a24d*/
         {
@@ -2186,24 +2147,20 @@ int * RulesClass::readBuildingTypes(int * a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int *__thiscall sub_67A310(int *this, int *a2)
 {
-  int v3; // eax
-  void *v4; // eax
-  int v5; // ecx
-  int v6; // eax
 
   if ( this != a2 ) /*0x67a31a*/
   {
     (*(void (__thiscall **)(int *))(*this + 12))(this); /*0x67a31e*/
-    v3 = a2[2]; /*0x67a321*/
+    int v3 = a2[2]; /*0x67a321*/
     this->DetailBufferZoneWidth = v3; /*0x67a326*/
     if ( v3 ) /*0x67a329*/
     {
-      v4 = __2_YAPAXI_Z(4 * v3); /*0x67a333*/
+      void * v4 = __2_YAPAXI_Z(4 * v3); /*0x67a333*/
       this->DetailMinFrameRateMovie = (int)v4; /*0x67a33b*/
       if ( v4 ) /*0x67a340*/
       {
-        v5 = this->DetailBufferZoneWidth; /*0x67a342*/
-        v6 = 0; /*0x67a345*/
+        int v5 = this->DetailBufferZoneWidth; /*0x67a342*/
+        int v6 = 0; /*0x67a345*/
         this->SelfHealInfantryAmount = 1; /*0x67a349*/
         if ( v5 > 0 ) /*0x67a34d*/
         {
@@ -2250,24 +2207,20 @@ _DWORD *__thiscall sub_67A8B0(_DWORD *this)
 char RulesClass::readAI(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_67B480(_DWORD *this, _DWORD *a2)
+void sub_67B480(_DWORD *this, _DWORD *a2)
 {
-  int v3; // ecx
-  int v4; // eax
-  int v6; // eax
-  int v7; // edx
 
-  v3 = this->DetailBufferZoneWidth; /*0x67b483*/
+  int v3 = this->DetailBufferZoneWidth; /*0x67b483*/
   if ( this->LargeVisceroid >= v3 ) /*0x67b48b*/
   {
     if ( !this->SelfHealInfantryAmount && v3 ) /*0x67b496*/
       return 0; /*0x67b496*/
-    v4 = this->SmallVisceroid; /*0x67b498*/
+    int v4 = this->SmallVisceroid; /*0x67b498*/
     if ( v4 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*this + 8))(this, v3 + v4, 0) ) /*0x67b4a8*/
       return 0; /*0x67b4af*/
   }
-  v6 = this->LargeVisceroid; /*0x67b4b5*/
-  v7 = this->DetailMinFrameRateMovie; /*0x67b4b8*/
+  int v6 = this->LargeVisceroid; /*0x67b4b5*/
+  int v7 = this->DetailMinFrameRateMovie; /*0x67b4b8*/
   this->LargeVisceroid = v6 + 1; /*0x67b4be*/
   *(_DWORD *)(v7 + 4 * v6) = *a2; /*0x67b4c8*/
   return 1; /*0x67b4b1*/
@@ -2287,27 +2240,18 @@ VectorClass *__fastcall RulesClass::LoadTypeList(
 {
   char *i; // eax
   INIClass *v7; // edi
-  int v8; // eax
   VectorClass *v9; // ecx
-  void *v10; // eax
-  bool v11; // zf
-  int v13; // eax
-  int v14; // eax
   VectorClass *v15; // ecx
-  int v16; // eax
   VectorClass *v17; // [esp+Ch] [ebp-9Ch] BYREF
   void *Block; // [esp+10h] [ebp-98h]
-  int v19; // [esp+14h] [ebp-94h]
-  char v20; // [esp+19h] [ebp-8Fh]
-  int v21; // [esp+1Ch] [ebp-8Ch]
-  int v22; // [esp+20h] [ebp-88h]
   INIClass String[2]; // [esp+28h] [ebp-80h] BYREF
 
   if ( INIClass::GetString(edx0, aP1, a2, (INIClass *)&DataGlobal_87F8E4[42624], String, 128) ) /*0x67bdfc*/
   {
+  char v20; // [esp+19h] [ebp-8Fh]
     RulesClass::readIQ(&v17, 0, 0); /*0x67be11*/
-    v22 = 10; /*0x67be1a*/
-    v21 = 0; /*0x67be28*/
+    int v22 = 10; /*0x67be1a*/
+    int v21 = 0; /*0x67be28*/
     v17 = (VectorClass *)&vt_TypeList_TerrainTypeClass_const; /*0x67be2c*/
     for ( i = strtok(String[0].__pad_0, Delimiter[0]); i; i = strtok(0, Delimiter[0]) ) /*0x67be3e*/
     {
@@ -2315,12 +2259,13 @@ VectorClass *__fastcall RulesClass::LoadTypeList(
         break; /*0x67be42*/
       v7 = (INIClass *)TerrainTypeClass::FindOrCreate(i); /*0x67be4b*/
       if ( v7 /*0x67be7b*/
+  int v19; // [esp+14h] [ebp-94h]
         && (v21 < v19
          || (v20 || !v19)
          && v22 > 0
          && ((unsigned __int8 (__thiscall *)(VectorClass **, int, _DWORD))v17->Capacity)(&v17, v22 + v19, 0)) )
       {
-        v8 = v21++; /*0x67be86*/
+        int v8 = v21++; /*0x67be86*/
         *((_DWORD *)Block + v8) = v7; /*0x67be91*/
       }
     }
@@ -2334,8 +2279,8 @@ VectorClass *__fastcall RulesClass::LoadTypeList(
     v17 = (VectorClass *)&vt_VectorClass_TerrainTypeClass_const; /*0x67becb*/
     v9 = (VectorClass *)v22; /*0x67bed7*/
     *(_DWORD *)(a1 + 16) = v21; /*0x67bedb*/
-    v10 = Block; /*0x67bede*/
-    v11 = Block == 0; /*0x67bee2*/
+    void * v10 = Block; /*0x67bede*/
+    bool v11 = Block == 0; /*0x67bee2*/
     *(_DWORD *)(a1 + 20) = v9; /*0x67bee4*/
     if ( !v11 && v20 ) /*0x67bef1*/
     {
@@ -2353,16 +2298,16 @@ VectorClass *__fastcall RulesClass::LoadTypeList(
     if ( (_DWORD *)a1 != a5 ) /*0x67bf2c*/
     {
       TypeList_cptr_TerrainTypeClass::TryFreeAndClear(a1); /*0x67bf30*/
-      v13 = a5[2]; /*0x67bf36*/
+      int v13 = a5[2]; /*0x67bf36*/
       *(_DWORD *)(a1 + 8) = v13; /*0x67bf3b*/
       if ( v13 ) /*0x67bf3e*/
       {
-        v14 = __2_YAPAXI_Z(4 * v13); /*0x67bf48*/
+        int v14 = __2_YAPAXI_Z(4 * v13); /*0x67bf48*/
         *(_DWORD *)(a1 + 4) = v14; /*0x67bf52*/
         if ( v14 ) /*0x67bf55*/
         {
           v15 = *(VectorClass **)(a1 + 8); /*0x67bf57*/
-          v16 = 0; /*0x67bf5a*/
+          int v16 = 0; /*0x67bf5a*/
           *(_BYTE *)(a1 + 13) = 1; /*0x67bf5e*/
           if ( (int)v15 > 0 ) /*0x67bf62*/
           {

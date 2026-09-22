@@ -11,19 +11,8 @@ namespace gamemd {
 char VoxelAnimType::LoadSection(const char * a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall VoxelAnimType_LoadSection(_DWORD *this, const char *a2, int a3)
+void VoxelAnimType_LoadSection(_DWORD *this, const char *a2, int a3)
 {
-  void *v4; // ebp
-  _BYTE *v5; // eax
-  void *v6; // ebp
-  char *v7; // eax
-  char v8; // cl
-  char v9; // al
-  int v10; // eax
-  void *v12; // ebp
-  void *v13; // ebp
-  char v14; // [esp+12h] [ebp-2DEh]
-  _DWORD v15[22]; // [esp+14h] [ebp-2DCh] BYREF
   _BYTE v16[12]; // [esp+6Ch] [ebp-284h] BYREF
   int v17; // [esp+78h] [ebp-278h]
   _DWORD v18[22]; // [esp+80h] [ebp-270h] BYREF
@@ -37,19 +26,20 @@ char __thiscall VoxelAnimType_LoadSection(_DWORD *this, const char *a2, int a3)
   else
     sprintf(Buffer, g_Str_Trace__sTUR, a2); /*0x5f7abe*/
   _makepath(Source, 0, 0, Buffer, g_Str_File__VXL); /*0x5f7afd*/
+  _DWORD v15[22]; // [esp+14h] [ebp-2DCh] BYREF
   CCFileClass::Construct(v15, Source); /*0x5f7b11*/
   if ( (unsigned __int8)CCFileClass::Open(0) ) /*0x5f7b1b*/
   {
-    v4 = (void *)*(this + 2 * a3 + 50); /*0x5f7b46*/
+    void * v4 = (void *)*(this + 2 * a3 + 50); /*0x5f7b46*/
     if ( v4 ) /*0x5f7b4f*/
     {
       WaveClass::Destroy(*(this + 2 * a3 + 50)); /*0x5f7b53*/
       __3_YAXPAX_Z(v4); /*0x5f7b59*/
       *(this + 2 * a3 + 50) = 0; /*0x5f7b61*/
     }
-    v14 = 0; /*0x5f7b6a*/
+    char v14 = 0; /*0x5f7b6a*/
     if ( __2_YAPAXI_Z(0x1Cu) ) /*0x5f7b6e*/
-      v5 = (_BYTE *)File::LoadFileVXL(v15, 0); /*0x5f7b82*/
+      _BYTE * v5 = (_BYTE *)File::LoadFileVXL(v15, 0); /*0x5f7b82*/
     else
       v5 = 0; /*0x5f7b89*/
     *(this + 2 * a3 + 50) = v5; /*0x5f7b8d*/
@@ -61,7 +51,7 @@ char __thiscall VoxelAnimType_LoadSection(_DWORD *this, const char *a2, int a3)
       sprintf(Buffer, g_Str_Trace__sTUR, a2); /*0x5f7bb8*/
     _makepath(Source, 0, 0, Buffer, g_Str_File__HVA); /*0x5f7bf7*/
     CCFileClass::Construct(v18, Source); /*0x5f7c0e*/
-    v6 = (void *)*(this + 2 * a3 + 51); /*0x5f7c13*/
+    void * v6 = (void *)*(this + 2 * a3 + 51); /*0x5f7c13*/
     if ( v6 ) /*0x5f7c1c*/
     {
       String::Release(*(this + 2 * a3 + 51)); /*0x5f7c20*/
@@ -69,15 +59,17 @@ char __thiscall VoxelAnimType_LoadSection(_DWORD *this, const char *a2, int a3)
       *(this + 2 * a3 + 51) = 0; /*0x5f7c2e*/
     }
     if ( __2_YAPAXI_Z(0x10u) ) /*0x5f7c3b*/
-      v7 = (char *)File::LoadFileHVA(v18); /*0x5f7c51*/
+      char * v7 = (char *)File::LoadFileHVA(v18); /*0x5f7c51*/
     else
       v7 = 0; /*0x5f7c58*/
     *(this + 2 * a3 + 51) = v7; /*0x5f7c5c*/
+  char v8; // cl
+  char v9; // al
     if ( !v7 || (v8 = *v7, v9 = 1, v8) ) /*0x5f7c6b*/
       v9 = 0; /*0x5f7c6d*/
     if ( v14 && v9 ) /*0x5f7c7d*/
     {
-      v10 = VoxelSection::GetInfo(0, 0); /*0x5f7c8c*/
+      int v10 = VoxelSection::GetInfo(0, 0); /*0x5f7c8c*/
       Matrix::Scale(*(float *)(v10 + 12)); /*0x5f7c9c*/
       v18[0] = &vt_CCFileClass; /*0x5f7cad*/
       v20 = 0; /*0x5f7cb4*/
@@ -91,14 +83,14 @@ char __thiscall VoxelAnimType_LoadSection(_DWORD *this, const char *a2, int a3)
       BufferIOFileClass::Dtor(v15); /*0x5f7cf1*/
       return 1; /*0x5f7d02*/
     }
-    v12 = (void *)*(this + 2 * a3 + 50); /*0x5f7d05*/
+    void * v12 = (void *)*(this + 2 * a3 + 50); /*0x5f7d05*/
     if ( v12 ) /*0x5f7d0e*/
     {
       WaveClass::Destroy(*(this + 2 * a3 + 50)); /*0x5f7d12*/
       __3_YAXPAX_Z(v12); /*0x5f7d18*/
       *(this + 2 * a3 + 50) = 0; /*0x5f7d20*/
     }
-    v13 = (void *)*(this + 2 * a3 + 51); /*0x5f7d27*/
+    void * v13 = (void *)*(this + 2 * a3 + 51); /*0x5f7d27*/
     if ( v13 ) /*0x5f7d30*/
     {
       String::Release(*(this + 2 * a3 + 51)); /*0x5f7d34*/
@@ -133,16 +125,8 @@ namespace gamemd {
 char VoxelAnimType::LoadBarrel(const char * a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall VoxelAnimType_LoadBarrel(_DWORD *this, const char *a2, int a3)
+void VoxelAnimType_LoadBarrel(_DWORD *this, const char *a2, int a3)
 {
-  _BYTE *v5; // eax
-  char v6; // bl
-  _BYTE *v7; // eax
-  int v8; // eax
-  void *v9; // ebp
-  void *v10; // esi
-  char v11; // [esp+13h] [ebp-2DDh]
-  _DWORD v12[22]; // [esp+14h] [ebp-2DCh] BYREF
   _BYTE v13[12]; // [esp+6Ch] [ebp-284h] BYREF
   int v14; // [esp+78h] [ebp-278h]
   _DWORD v15[22]; // [esp+80h] [ebp-270h] BYREF
@@ -156,12 +140,13 @@ char __thiscall VoxelAnimType_LoadBarrel(_DWORD *this, const char *a2, int a3)
   else
     sprintf(Buffer, g_Str_Trace__sBARL, a2); /*0x5f7dde*/
   _makepath(Source, 0, 0, Buffer, g_Str_File__VXL); /*0x5f7e1d*/
+  _DWORD v12[22]; // [esp+14h] [ebp-2DCh] BYREF
   CCFileClass::Construct(v12, Source); /*0x5f7e31*/
   if ( (unsigned __int8)CCFileClass::Open(0) ) /*0x5f7e3b*/
   {
-    v11 = 0; /*0x5f7e7b*/
+    char v11 = 0; /*0x5f7e7b*/
     if ( __2_YAPAXI_Z(0x1Cu) ) /*0x5f7e80*/
-      v5 = (_BYTE *)File::LoadFileVXL(v12, 0); /*0x5f7e94*/
+      _BYTE * v5 = (_BYTE *)File::LoadFileVXL(v12, 0); /*0x5f7e94*/
     else
       v5 = 0; /*0x5f7e9b*/
     *(this + 2 * a3 + 86) = v5; /*0x5f7e9f*/
@@ -173,9 +158,9 @@ char __thiscall VoxelAnimType_LoadBarrel(_DWORD *this, const char *a2, int a3)
       sprintf(Buffer, g_Str_Trace__sBARL, a2); /*0x5f7ec4*/
     _makepath(Source, 0, 0, Buffer, g_Str_File__HVA); /*0x5f7efc*/
     CCFileClass::Construct(v15, Source); /*0x5f7f13*/
-    v6 = 0; /*0x5f7f1a*/
+    char v6 = 0; /*0x5f7f1a*/
     if ( __2_YAPAXI_Z(0x10u) ) /*0x5f7f1c*/
-      v7 = (_BYTE *)File::LoadFileHVA(v15); /*0x5f7f32*/
+      _BYTE * v7 = (_BYTE *)File::LoadFileHVA(v15); /*0x5f7f32*/
     else
       v7 = 0; /*0x5f7f39*/
     *(this + 2 * a3 + 87) = v7; /*0x5f7f3d*/
@@ -183,7 +168,7 @@ char __thiscall VoxelAnimType_LoadBarrel(_DWORD *this, const char *a2, int a3)
       v6 = 1; /*0x5f7f4b*/
     if ( v11 && v6 ) /*0x5f7f5b*/
     {
-      v8 = VoxelSection::GetInfo(0, 0); /*0x5f7f6a*/
+      int v8 = VoxelSection::GetInfo(0, 0); /*0x5f7f6a*/
       Matrix::Scale(*(float *)(v8 + 12)); /*0x5f7f7a*/
       v15[0] = &vt_CCFileClass; /*0x5f7f8b*/
       v17 = 0; /*0x5f7f92*/
@@ -199,13 +184,13 @@ char __thiscall VoxelAnimType_LoadBarrel(_DWORD *this, const char *a2, int a3)
     }
     else
     {
-      v9 = (void *)*(this + 2 * a3 + 86); /*0x5f7fe3*/
+      void * v9 = (void *)*(this + 2 * a3 + 86); /*0x5f7fe3*/
       if ( v9 ) /*0x5f7fee*/
       {
         WaveClass::Destroy(*(this + 2 * a3 + 86)); /*0x5f7ff2*/
         __3_YAXPAX_Z(v9); /*0x5f7ff8*/
       }
-      v10 = (void *)*(this + 2 * a3 + 87); /*0x5f8000*/
+      void * v10 = (void *)*(this + 2 * a3 + 87); /*0x5f8000*/
       if ( v10 ) /*0x5f8009*/
       {
         String::Release(v10); /*0x5f800d*/
@@ -242,56 +227,24 @@ namespace gamemd {
 int VoxelAnimType::LoadAnim()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall VoxelAnimType::LoadAnim(char *this)
+void VoxelAnimType::LoadAnim()
 {
-  const char *v2; // ebp
   WaveClass *v3; // edi
-  _DWORD *v4; // eax
   _DWORD *FileVXL; // eax
   SomeVoxelCache *v6; // edi
-  _DWORD *v7; // eax
   _DWORD *FileHVA; // eax
   int Info; // eax
   WaveClass *v10; // edi
-  _DWORD *v11; // eax
-  _DWORD *v12; // eax
   SomeVoxelCache *v13; // edi
-  _DWORD *v14; // eax
-  _DWORD *v15; // eax
-  int v16; // eax
   WaveClass *v17; // edi
-  _DWORD *v18; // eax
-  _DWORD *v19; // eax
   SomeVoxelCache *v20; // edi
-  _DWORD *v21; // eax
-  _DWORD *v22; // eax
-  int v23; // eax
-  int v24; // ebp
-  int v25; // edi
   WaveClass *v26; // edi
-  _DWORD *v27; // eax
-  _DWORD *v28; // eax
   SomeVoxelCache *v29; // edi
-  _DWORD *v30; // eax
-  _DWORD *v31; // eax
-  int v32; // eax
-  int v33; // ebp
-  int v34; // edi
   WaveClass *v35; // edi
-  _DWORD *v36; // eax
-  _DWORD *v37; // eax
-  void *v38; // edi
-  _DWORD *v39; // eax
-  _DWORD *v40; // eax
-  int v41; // eax
   WaveClass *v42; // edi
   SomeVoxelCache *v43; // edi
   WaveClass *v44; // edi
   SomeVoxelCache *v45; // edi
-  int v46; // edi
-  int v47; // ebp
-  _DWORD *v48; // ecx
-  char v50; // [esp+13h] [ebp-349h]
   _DWORD v51[22]; // [esp+14h] [ebp-348h] BYREF
   _BYTE v52[12]; // [esp+6Ch] [ebp-2F0h] BYREF
   int v53; // [esp+78h] [ebp-2E4h]
@@ -304,8 +257,8 @@ int __thiscall VoxelAnimType::LoadAnim(char *this)
   int v60; // [esp+254h] [ebp-108h]
   char Filename[256]; // [esp+25Ch] [ebp-100h] BYREF
 
-  v2 = this + 504; /*0x5f811e*/
-  v50 = 0; /*0x5f8134*/
+  const char * v2 = this + 504; /*0x5f811e*/
+  char v50 = 0; /*0x5f8134*/
   _makepath(Buffer, 0, 0, this + 504, g_Str_File__VXL); /*0x5f8138*/
   CCFileClass::Construct(v58, Buffer); /*0x5f814f*/
   if ( CCFileClass::Open(v58, 0) ) /*0x5f815c*/
@@ -316,7 +269,7 @@ int __thiscall VoxelAnimType::LoadAnim(char *this)
       WaveClass::Destroy(*((_DWORD *)this + 44)); /*0x5f8175*/
       __3_YAXPAX_Z(v3); /*0x5f817b*/
     }
-    v4 = __2_YAPAXI_Z(0x1Cu); /*0x5f8185*/
+    _DWORD * v4 = __2_YAPAXI_Z(0x1Cu); /*0x5f8185*/
     if ( v4 ) /*0x5f818f*/
       FileVXL = File::LoadFileVXL(v4, (int)v58, 0); /*0x5f819c*/
     else
@@ -332,7 +285,7 @@ int __thiscall VoxelAnimType::LoadAnim(char *this)
       String::Release(*((void ***)this + 45)); /*0x5f81ed*/
       __3_YAXPAX_Z(v6); /*0x5f81f3*/
     }
-    v7 = __2_YAPAXI_Z(0x10u); /*0x5f81fd*/
+    _DWORD * v7 = __2_YAPAXI_Z(0x10u); /*0x5f81fd*/
     if ( v7 ) /*0x5f8207*/
       FileHVA = File::LoadFileHVA(v7, (int)v51); /*0x5f8210*/
     else
@@ -374,9 +327,9 @@ int __thiscall VoxelAnimType::LoadAnim(char *this)
           WaveClass::Destroy(*((_DWORD *)this + 46)); /*0x5f86f7*/
           __3_YAXPAX_Z(v26); /*0x5f86fd*/
         }
-        v27 = __2_YAPAXI_Z(0x1Cu); /*0x5f8707*/
+        _DWORD * v27 = __2_YAPAXI_Z(0x1Cu); /*0x5f8707*/
         if ( v27 ) /*0x5f8711*/
-          v28 = File::LoadFileVXL(v27, (int)v51, 0); /*0x5f871b*/
+          _DWORD * v28 = File::LoadFileVXL(v27, (int)v51, 0); /*0x5f871b*/
         else
           v28 = 0; /*0x5f8722*/
         *((_DWORD *)this + 46) = v28; /*0x5f8726*/
@@ -391,9 +344,9 @@ int __thiscall VoxelAnimType::LoadAnim(char *this)
           String::Release(*((void ***)this + 47)); /*0x5f8789*/
           __3_YAXPAX_Z(v29); /*0x5f878f*/
         }
-        v30 = __2_YAPAXI_Z(0x10u); /*0x5f8799*/
+        _DWORD * v30 = __2_YAPAXI_Z(0x10u); /*0x5f8799*/
         if ( v30 ) /*0x5f87a3*/
-          v31 = File::LoadFileHVA(v30, (int)v54); /*0x5f87af*/
+          _DWORD * v31 = File::LoadFileHVA(v30, (int)v54); /*0x5f87af*/
         else
           v31 = 0; /*0x5f87b6*/
         *((_DWORD *)this + 47) = v31; /*0x5f87ba*/
@@ -403,7 +356,7 @@ int __thiscall VoxelAnimType::LoadAnim(char *this)
         }
         else
         {
-          v32 = VoxelSection::GetInfo(*((_DWORD **)this + 46), 0, 0); /*0x5f87ce*/
+          int v32 = VoxelSection::GetInfo(*((_DWORD **)this + 46), 0, 0); /*0x5f87ce*/
           Matrix::Scale(*((unsigned int **)this + 47), *(float *)(v32 + 12)); /*0x5f87dd*/
         }
         v54[0] = &vt_CCFileClass; /*0x5f87f0*/
@@ -414,8 +367,8 @@ int __thiscall VoxelAnimType::LoadAnim(char *this)
       }
       goto LABEL_92; /*0x5f8819*/
     }
-    v24 = *((_DWORD *)this + 514); /*0x5f865f*/
-    v25 = 0; /*0x5f8665*/
+    int v24 = *((_DWORD *)this + 514); /*0x5f865f*/
+    int v25 = 0; /*0x5f8665*/
     if ( v24 > 0 ) /*0x5f8669*/
     {
       while ( VoxelAnimType::LoadSection(this, this + 504, v25) ) /*0x5f8680*/
@@ -441,9 +394,9 @@ int __thiscall VoxelAnimType::LoadAnim(char *this)
           WaveClass::Destroy(*((_DWORD *)this + 46)); /*0x5f8333*/
           __3_YAXPAX_Z(v10); /*0x5f8339*/
         }
-        v11 = __2_YAPAXI_Z(0x1Cu); /*0x5f8343*/
+        _DWORD * v11 = __2_YAPAXI_Z(0x1Cu); /*0x5f8343*/
         if ( v11 ) /*0x5f834d*/
-          v12 = File::LoadFileVXL(v11, (int)v51, 0); /*0x5f8357*/
+          _DWORD * v12 = File::LoadFileVXL(v11, (int)v51, 0); /*0x5f8357*/
         else
           v12 = 0; /*0x5f835e*/
         *((_DWORD *)this + 46) = v12; /*0x5f8362*/
@@ -458,9 +411,9 @@ int __thiscall VoxelAnimType::LoadAnim(char *this)
           String::Release(*((void ***)this + 47)); /*0x5f83c5*/
           __3_YAXPAX_Z(v13); /*0x5f83cb*/
         }
-        v14 = __2_YAPAXI_Z(0x10u); /*0x5f83d5*/
+        _DWORD * v14 = __2_YAPAXI_Z(0x10u); /*0x5f83d5*/
         if ( v14 ) /*0x5f83df*/
-          v15 = File::LoadFileHVA(v14, (int)v54); /*0x5f83eb*/
+          _DWORD * v15 = File::LoadFileHVA(v14, (int)v54); /*0x5f83eb*/
         else
           v15 = 0; /*0x5f83f2*/
         *((_DWORD *)this + 47) = v15; /*0x5f83f6*/
@@ -470,7 +423,7 @@ int __thiscall VoxelAnimType::LoadAnim(char *this)
         }
         else
         {
-          v16 = VoxelSection::GetInfo(*((_DWORD **)this + 46), 0, 0); /*0x5f840a*/
+          int v16 = VoxelSection::GetInfo(*((_DWORD **)this + 46), 0, 0); /*0x5f840a*/
           Matrix::Scale(*((unsigned int **)this + 47), *(float *)(v16 + 12)); /*0x5f8419*/
         }
         v54[0] = &vt_CCFileClass; /*0x5f842c*/
@@ -498,9 +451,9 @@ int __thiscall VoxelAnimType::LoadAnim(char *this)
           WaveClass::Destroy(*((_DWORD *)this + 46)); /*0x5f84f3*/
           __3_YAXPAX_Z(v17); /*0x5f84f9*/
         }
-        v18 = __2_YAPAXI_Z(0x1Cu); /*0x5f8503*/
+        _DWORD * v18 = __2_YAPAXI_Z(0x1Cu); /*0x5f8503*/
         if ( v18 ) /*0x5f850d*/
-          v19 = File::LoadFileVXL(v18, (int)v51, 0); /*0x5f8517*/
+          _DWORD * v19 = File::LoadFileVXL(v18, (int)v51, 0); /*0x5f8517*/
         else
           v19 = 0; /*0x5f851e*/
         *((_DWORD *)this + 46) = v19; /*0x5f8522*/
@@ -515,9 +468,9 @@ int __thiscall VoxelAnimType::LoadAnim(char *this)
           String::Release(*((void ***)this + 47)); /*0x5f8585*/
           __3_YAXPAX_Z(v20); /*0x5f858b*/
         }
-        v21 = __2_YAPAXI_Z(0x10u); /*0x5f8595*/
+        _DWORD * v21 = __2_YAPAXI_Z(0x10u); /*0x5f8595*/
         if ( v21 ) /*0x5f859f*/
-          v22 = File::LoadFileHVA(v21, (int)v54); /*0x5f85ab*/
+          _DWORD * v22 = File::LoadFileHVA(v21, (int)v54); /*0x5f85ab*/
         else
           v22 = 0; /*0x5f85b2*/
         *((_DWORD *)this + 47) = v22; /*0x5f85b6*/
@@ -527,7 +480,7 @@ int __thiscall VoxelAnimType::LoadAnim(char *this)
         }
         else
         {
-          v23 = VoxelSection::GetInfo(*((_DWORD **)this + 46), 0, 0); /*0x5f85ca*/
+          int v23 = VoxelSection::GetInfo(*((_DWORD **)this + 46), 0, 0); /*0x5f85ca*/
           Matrix::Scale(*((unsigned int **)this + 47), *(float *)(v23 + 12)); /*0x5f85d9*/
         }
         v54[0] = &vt_CCFileClass; /*0x5f85ec*/
@@ -551,8 +504,8 @@ LABEL_93:
       && HouseClass::HasPower(this)
       && !*(this + 3285) )
     {
-      v33 = *((_DWORD *)this + 514); /*0x5f887b*/
-      v34 = 0; /*0x5f8881*/
+      int v33 = *((_DWORD *)this + 514); /*0x5f887b*/
+      int v34 = 0; /*0x5f8881*/
       if ( v33 > 0 ) /*0x5f8885*/
       {
         while ( VoxelAnimType::LoadBarrel(this, this + 504, v34) ) /*0x5f889c*/
@@ -576,9 +529,9 @@ LABEL_93:
           WaveClass::Destroy(*((_DWORD *)this + 48)); /*0x5f8913*/
           __3_YAXPAX_Z(v35); /*0x5f8919*/
         }
-        v36 = __2_YAPAXI_Z(0x1Cu); /*0x5f8923*/
+        _DWORD * v36 = __2_YAPAXI_Z(0x1Cu); /*0x5f8923*/
         if ( v36 ) /*0x5f892d*/
-          v37 = File::LoadFileVXL(v36, (int)v51, 0); /*0x5f8937*/
+          _DWORD * v37 = File::LoadFileVXL(v36, (int)v51, 0); /*0x5f8937*/
         else
           v37 = 0; /*0x5f893e*/
         *((_DWORD *)this + 48) = v37; /*0x5f8942*/
@@ -587,15 +540,15 @@ LABEL_93:
         sprintf(Filename, g_Str_Trace__sBARL, this + 504); /*0x5f8961*/
         _makepath(Buffer, 0, 0, Filename, g_Str_File__HVA); /*0x5f897d*/
         CCFileClass::Construct(v54, Buffer); /*0x5f8994*/
-        v38 = (void *)*((_DWORD *)this + 49); /*0x5f8999*/
+        void * v38 = (void *)*((_DWORD *)this + 49); /*0x5f8999*/
         if ( v38 ) /*0x5f89a1*/
         {
           String::Release(*((void ***)this + 49)); /*0x5f89a5*/
           __3_YAXPAX_Z(v38); /*0x5f89ab*/
         }
-        v39 = __2_YAPAXI_Z(0x10u); /*0x5f89b5*/
+        _DWORD * v39 = __2_YAPAXI_Z(0x10u); /*0x5f89b5*/
         if ( v39 ) /*0x5f89bf*/
-          v40 = File::LoadFileHVA(v39, (int)v54); /*0x5f89cb*/
+          _DWORD * v40 = File::LoadFileHVA(v39, (int)v54); /*0x5f89cb*/
         else
           v40 = 0; /*0x5f89d2*/
         *((_DWORD *)this + 49) = v40; /*0x5f89d6*/
@@ -605,7 +558,7 @@ LABEL_93:
         }
         else
         {
-          v41 = VoxelSection::GetInfo(*((_DWORD **)this + 48), 0, 0); /*0x5f89ea*/
+          int v41 = VoxelSection::GetInfo(*((_DWORD **)this + 48), 0, 0); /*0x5f89ea*/
           Matrix::Scale(*((unsigned int **)this + 49), *(float *)(v41 + 12)); /*0x5f89f9*/
         }
         v54[0] = &vt_CCFileClass; /*0x5f8a0c*/
@@ -664,9 +617,9 @@ LABEL_123:
     }
     goto LABEL_146; /*0x5f8ad0*/
   }
-  v46 = 0; /*0x5f8b2d*/
-  v47 = *(unsigned __int8 *)(VoxelSection::GetInfo(*((_DWORD **)this + 44), 0, 0) + 160); /*0x5f8b35*/
-  v48 = (_DWORD *)*((_DWORD *)this + 44); /*0x5f8b37*/
+  int v46 = 0; /*0x5f8b2d*/
+  int v47 = *(unsigned __int8 *)(VoxelSection::GetInfo(*((_DWORD **)this + 44), 0, 0) + 160); /*0x5f8b35*/
+  _DWORD * v48 = (_DWORD *)*((_DWORD *)this + 44); /*0x5f8b37*/
   if ( (int)v48[1] > 0 ) /*0x5f8b40*/
   {
     do /*0x5f8bda*/

@@ -10,7 +10,7 @@
 void AudioSettings::SetFlag70(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_5FA440(_BYTE *this, char a2)
+void sub_5FA440(_BYTE *this, char a2)
 {
   *(this + 70) = a2; /*0x5fa444*/
   byte_A83D22 = a2; /*0x5fa447*/
@@ -22,7 +22,7 @@ void __thiscall sub_5FA440(_BYTE *this, char a2)
 void AudioSettings::SetFlag68(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_5FA470(_BYTE *this, char a2)
+void sub_5FA470(_BYTE *this, char a2)
 {
   this->q044 = a2; /*0x5fa474*/
   byte_A83D20 = a2; /*0x5fa477*/
@@ -34,7 +34,7 @@ void __thiscall sub_5FA470(_BYTE *this, char a2)
 int AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall sub_6B6300(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
+void sub_6B6300(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
 {
   int result; // eax
   BOOL IsSoundEnabled; // ebx
@@ -53,32 +53,20 @@ int __stdcall sub_6B6300(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
   HWND v18; // eax
   HWND v19; // ebx
   WPARAM v20; // edi
-  int v21; // ebp
-  int v22; // edi
   LRESULT v23; // eax
   LRESULT v24; // edi
-  int v25; // eax
   LRESULT v26; // eax
   HWND v27; // eax
   HWND v28; // esi
   LRESULT v29; // eax
   LRESULT v30; // esi
-  int v31; // eax
   LRESULT v32; // eax
   HWND v33; // eax
-  int v34; // eax
   HWND v35; // eax
   HWND v36; // eax
-  float v37; // [esp+0h] [ebp-F0h]
-  float v38; // [esp+0h] [ebp-F0h]
-  float v39; // [esp+0h] [ebp-F0h]
-  float v40; // [esp+0h] [ebp-F0h]
-  float v41; // [esp+0h] [ebp-F0h]
-  float v42; // [esp+0h] [ebp-F0h]
   BOOL bEnable; // [esp+18h] [ebp-D8h]
   WPARAM v44; // [esp+1Ch] [ebp-D4h]
   int Format; // [esp+20h] [ebp-D0h]
-  int v46; // [esp+24h] [ebp-CCh]
   wchar_t lParam[100]; // [esp+28h] [ebp-C8h] BYREF
 
   result = BaseDialogProc(hDlg, a2, a3, (unsigned int)hWnd); /*0x6b632c*/
@@ -92,19 +80,19 @@ int __stdcall sub_6B6300(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
       {
         if ( hWnd == GetDlgItem(hDlg, 1327) ) /*0x6b664c*/
         {
-          v37 = (double)SendMessageA(hWnd, 0x400u, 0, 0) * 0.1; /*0x6b6674*/
+          float v37 = (double)SendMessageA(hWnd, 0x400u, 0, 0) * 0.1; /*0x6b6674*/
           Options::SetScoreVolume((float *)g_GameModeOptions, v37, 1); /*0x6b6677*/
           return 0; /*0x6b6688*/
         }
         if ( hWnd == GetDlgItem(hDlg, 1330) ) /*0x6b6695*/
         {
-          v38 = (double)SendMessageA(hWnd, 0x400u, 0, 0) * 0.1; /*0x6b66bd*/
+          float v38 = (double)SendMessageA(hWnd, 0x400u, 0, 0) * 0.1; /*0x6b66bd*/
           Options::SetSoundVolume((float *)g_GameModeOptions, v38, 1); /*0x6b66c0*/
           return 0; /*0x6b66d1*/
         }
         if ( hWnd == GetDlgItem(hDlg, 1334) ) /*0x6b66de*/
         {
-          v39 = (double)SendMessageA(hWnd, 0x400u, 0, 0) * 0.1; /*0x6b670a*/
+          float v39 = (double)SendMessageA(hWnd, 0x400u, 0, 0) * 0.1; /*0x6b670a*/
           Options::SetVoiceVolume((float *)g_GameModeOptions, v39, 1); /*0x6b670d*/
           return 0; /*0x6b671e*/
         }
@@ -172,15 +160,15 @@ int __stdcall sub_6B6300(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
           Format = 1; /*0x6b651a*/
           v44 = 0; /*0x6b652a*/
           SendMessageA(v18, 0x184u, 0, 0); /*0x6b652e*/
-          v21 = 0; /*0x6b6535*/
+          int v21 = 0; /*0x6b6535*/
           if ( dword_A83D34 > 0 ) /*0x6b6539*/
           {
             do /*0x6b65ed*/
             {
               if ( RulesClass::IsTypeBuildable(&g_BuildingTypeClass_Count, v21) ) /*0x6b6545*/
               {
-                v22 = AudioSettings::ComputeTransform(v21); /*0x6b6563*/
-                v46 = AudioSettings::Check(v21); /*0x6b656f*/
+                int v22 = AudioSettings::ComputeTransform(v21); /*0x6b6563*/
+                int v46 = AudioSettings::Check(v21); /*0x6b656f*/
                 swprintf( /*0x6b65a1*/
                   lParam,
                   (const size_t)DataGlobal_840070,
@@ -193,7 +181,7 @@ int __stdcall sub_6B6300(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
                 if ( v23 != -1 ) /*0x6b65c2*/
                 {
                   SendMessageA(v19, 0x19Au, v23, v21); /*0x6b65cc*/
-                  v25 = dword_A83D14; /*0x6b65ce*/
+                  int v25 = dword_A83D14; /*0x6b65ce*/
                   if ( dword_A83D14 == -1 ) /*0x6b65d6*/
                     v25 = dword_A83D18; /*0x6b65d8*/
                   if ( v25 == v21 ) /*0x6b65df*/
@@ -240,7 +228,7 @@ int __stdcall sub_6B6300(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
             if ( v29 != -1 ) /*0x6b67e5*/
             {
               v30 = SendMessageA(v28, 0x199u, v29, 0); /*0x6b67f6*/
-              v31 = dword_A83D14; /*0x6b67f8*/
+              int v31 = dword_A83D14; /*0x6b67f8*/
               DataGlobal_A8EBA5 = 1; /*0x6b6800*/
               if ( dword_A83D14 == -1 ) /*0x6b6807*/
                 v31 = dword_A83D18; /*0x6b6809*/
@@ -282,11 +270,11 @@ int __stdcall sub_6B6300(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
   v33 = GetDlgItem(hDlg, 1327); /*0x6b68cf*/
   if ( v33 ) /*0x6b68d9*/
   {
-    v40 = (double)SendMessageA(v33, 0x400u, 0, 0) * 0.1; /*0x6b68fd*/
+    float v40 = (double)SendMessageA(v33, 0x400u, 0, 0) * 0.1; /*0x6b68fd*/
     Options::SetScoreVolume((float *)g_GameModeOptions, v40, 0); /*0x6b6900*/
     if ( DataGlobal_A8EBA0 == 0.0 ) /*0x6b6916*/
     {
-      v34 = dword_A83D14; /*0x6b6918*/
+      int v34 = dword_A83D14; /*0x6b6918*/
       if ( dword_A83D14 == -1 ) /*0x6b6920*/
         v34 = dword_A83D18; /*0x6b6922*/
       Theme::QueueSong((int)&g_BuildingTypeClass_Count, v34); /*0x6b692d*/
@@ -296,13 +284,13 @@ int __stdcall sub_6B6300(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
   v35 = GetDlgItem(hDlg, 1330); /*0x6b6944*/
   if ( v35 ) /*0x6b6948*/
   {
-    v41 = (double)SendMessageA(v35, 0x400u, 0, 0) * 0.1; /*0x6b696c*/
+    float v41 = (double)SendMessageA(v35, 0x400u, 0, 0) * 0.1; /*0x6b696c*/
     Options::SetSoundVolume((float *)g_GameModeOptions, v41, 0); /*0x6b696f*/
   }
   v36 = GetDlgItem(hDlg, 1334); /*0x6b697a*/
   if ( v36 ) /*0x6b697e*/
   {
-    v42 = (double)SendMessageA(v36, 0x400u, 0, 0) * 0.1; /*0x6b69a2*/
+    float v42 = (double)SendMessageA(v36, 0x400u, 0, 0) * 0.1; /*0x6b69a2*/
     Options::SetVoiceVolume((float *)g_GameModeOptions, v42, 0); /*0x6b69a5*/
   }
   *(_DWORD *)GetWindowLongA(hDlg, 8) = 1; /*0x6b69b5*/

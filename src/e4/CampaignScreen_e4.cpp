@@ -25,24 +25,18 @@ int __userpurge CampaignScreen::Init@<eax>(
   wchar_t *v12; // eax
   wchar_t *v13; // eax
   HWND v14; // eax
-  int v15; // ecx
-  int v16; // ebp
   wchar_t *v17; // eax
   HWND v18; // eax
-  int v19; // eax
   LPARAM v20; // ecx
   LPARAM v21; // ebp
   HWND v22; // eax
   HWND v23; // eax
-  int v24; // ecx
   HWND v25; // eax
   HWND v26; // eax
   HWND v27; // eax
   HWND v28; // eax
-  int v29; // ecx
   HWND v30; // eax
   HWND v31; // eax
-  int v32; // ecx
   HWND v33; // eax
   HWND v34; // eax
   HWND v35; // eax
@@ -53,18 +47,13 @@ int __userpurge CampaignScreen::Init@<eax>(
   HWND v40; // eax
   HWND v41; // eax
   HWND DlgItem; // eax
-  int v43; // [esp-Ch] [ebp-174h]
   const wchar_t *v44; // [esp-8h] [ebp-170h]
   wchar_t *v45; // [esp-8h] [ebp-170h]
   wchar_t *v46; // [esp-8h] [ebp-170h]
   wchar_t *v47; // [esp-8h] [ebp-170h]
   CampaignScore *v48[4]; // [esp-4h] [ebp-16Ch] BYREF
   int nIDDlgItem; // [esp+Ch] [ebp-15Ch]
-  int v50; // [esp+10h] [ebp-158h]
   LPARAM lParam; // [esp+14h] [ebp-154h]
-  int v52; // [esp+18h] [ebp-150h]
-  int v53; // [esp+1Ch] [ebp-14Ch]
-  char v54[4]; // [esp+24h] [ebp-144h] BYREF
   wchar_t Buffer[32]; // [esp+28h] [ebp-140h] BYREF
   wchar_t v56[32]; // [esp+68h] [ebp-100h] BYREF
   wchar_t v57[32]; // [esp+A8h] [ebp-C0h] BYREF
@@ -152,32 +141,35 @@ int __userpurge CampaignScreen::Init@<eax>(
     }
     v14 = GetDlgItem(hWnd, 1842); /*0x470f1c*/
     SendMessageA(v14, 0x4B2u, 0, (LPARAM)Buffer); /*0x470f2b*/
-    v15 = unk_89DFD4 / 60; /*0x470f46*/
+    int v15 = unk_89DFD4 / 60; /*0x470f46*/
     if ( v48 != (CampaignScore **)-44 ) /*0x470f4e*/
     {
       if ( v15 / 3600 > 99 ) /*0x470f6a*/
         v15 = 359999; /*0x470f6c*/
-      v16 = v15 / 3600; /*0x470f84*/
-      v43 = (720 * (4 * (v15 / -3600) - v15 / 3600) + v15) / 60; /*0x470fb9*/
+      int v16 = v15 / 3600; /*0x470f84*/
+      int v43 = (720 * (4 * (v15 / -3600) - v15 / 3600) + v15) / 60; /*0x470fb9*/
       v17 = GetStringCSF(g_Str_TXT_TIME_FORMAT_HOURS, 0, g_Str_File_CampScor_cpp, 1770); /*0x470fcc*/
       swprintf(Buffer, (const size_t)v17, (const wchar_t *const)v16, (CampaignScore *)v43); /*0x470fd7*/
     }
     v18 = GetDlgItem(hWnd, 1002); /*0x470fe5*/
     SendMessageA(v18, 0x4B2u, 0, (LPARAM)Buffer); /*0x470ff4*/
-    v50 = 0; /*0x470ffd*/
+    int v50 = 0; /*0x470ffd*/
     if ( (int)unk_89E020 <= 0 ) /*0x471005*/
       return 0; /*0x4713e4*/
     while ( 1 ) /*0x47102c*/
     {
+  int v19; // eax
       v19 = Color::ConvertToRGB( /*0x47102c*/
               (unsigned __int8 *)(*(_DWORD *)(stru_B05488.field_4C
                                             + 4 * *(_DWORD *)(*(_DWORD *)&stru_89DFE0[0][4 * v50] + 40))
                                 + 776),
+  char v54[4]; // [esp+24h] [ebp-144h] BYREF
               (int)v54);
+  int v53; // [esp+1Ch] [ebp-14Ch]
       LOWORD(v53) = *(_WORD *)v19; /*0x471034*/
       BYTE2(v53) = *(_BYTE *)(v19 + 2); /*0x47103c*/
       v20 = *(_DWORD *)&stru_89DFE0[0][4 * v50]; /*0x471067*/
-      v52 = 24 * v50; /*0x471071*/
+      int v52 = 24 * v50; /*0x471071*/
       v21 = (unsigned __int8)v53 | (*(unsigned __int16 *)((char *)&v53 + 1) << 8); /*0x471081*/
       nIDDlgItem = *(_DWORD *)&stru_81B1A4[72][24 * v50]; /*0x471085*/
       lParam = v20; /*0x471089*/
@@ -185,7 +177,7 @@ int __userpurge CampaignScreen::Init@<eax>(
       SendMessageA(v22, 0x4B2u, 0, lParam); /*0x47109c*/
       v23 = GetDlgItem(hWnd, nIDDlgItem); /*0x4710a4*/
       SendMessageA(v23, 0x498u, 0, v21); /*0x4710af*/
-      v24 = *(_DWORD *)&stru_89DFE0[0][4 * v50]; /*0x4710bf*/
+      int v24 = *(_DWORD *)&stru_89DFE0[0][4 * v50]; /*0x4710bf*/
       nIDDlgItem = *(_DWORD *)&stru_81B1A4[72][v52 + 4]; /*0x4710c6*/
       swprintf(v56, (const size_t)&g_Str_Fmt_PctD, *(const wchar_t *const *)(v24 + 64), v48[0]); /*0x4710d8*/
       v25 = GetDlgItem(hWnd, nIDDlgItem); /*0x4710e6*/
@@ -202,14 +194,14 @@ int __userpurge CampaignScreen::Init@<eax>(
       SendMessageA(v27, 0x4B2u, 0, (LPARAM)v58); /*0x471154*/
       v28 = GetDlgItem(hWnd, nIDDlgItem); /*0x47115c*/
       SendMessageA(v28, 0x498u, 0, v21); /*0x471167*/
-      v29 = *(_DWORD *)&stru_89DFE0[0][4 * v50]; /*0x471177*/
+      int v29 = *(_DWORD *)&stru_89DFE0[0][4 * v50]; /*0x471177*/
       nIDDlgItem = *(int *)((char *)&stru_81B1A4.unknown54 + v52); /*0x47117e*/
       swprintf(v57, (const size_t)&g_Str_Fmt_PctD, *(const wchar_t *const *)(v29 + 80), v48[0]); /*0x471193*/
       v30 = GetDlgItem(hWnd, nIDDlgItem); /*0x4711a1*/
       SendMessageA(v30, 0x4B2u, 0, (LPARAM)v57); /*0x4711b3*/
       v31 = GetDlgItem(hWnd, nIDDlgItem); /*0x4711bb*/
       SendMessageA(v31, 0x498u, 0, v21); /*0x4711c6*/
-      v32 = *(_DWORD *)&stru_89DFE0[0][4 * v50]; /*0x4711d6*/
+      int v32 = *(_DWORD *)&stru_89DFE0[0][4 * v50]; /*0x4711d6*/
       nIDDlgItem = *(_DWORD *)((char *)&unk_81B1FC + v52); /*0x4711dd*/
       swprintf(v59, (const size_t)&g_Str_Fmt_PctD, *(const wchar_t *const *)(v32 + 96), v48[0]); /*0x4711f2*/
       v33 = GetDlgItem(hWnd, nIDDlgItem); /*0x471200*/

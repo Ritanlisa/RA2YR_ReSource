@@ -17,7 +17,6 @@ void *__thiscall ConstructorWDTFlagOption_Create(
 {
   ObjectClass *v6; // edx
   ObjectClass *v8; // ecx
-
   v6 = aP5; /*0x767824*/
   v8 = (ObjectClass *)arg8; /*0x76782b*/
   *((_DWORD *)this + 2) = arg0; /*0x76782f*/

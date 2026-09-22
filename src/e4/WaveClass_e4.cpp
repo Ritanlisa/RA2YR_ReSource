@@ -8,21 +8,12 @@ namespace gamemd {
 int WaveClass::LoadWaveData(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall WaveClass::_vt05(#374 *this, int a2, int a3)
+void WaveClass::_vt05(#374 *this, int a2, int a3)
 {
-  int v3; // ebx
-  int v4; // edi
   int Register; // ebp
-  int v6; // eax
-  int v7; // ecx
-  int v8; // eax
-  int v9; // eax
-  int v10; // edx
-  int v11; // esi
-  int v13; // [esp+28h] [ebp-4h] BYREF
 
-  v3 = a3; /*0x75f652*/
-  v4 = a2; /*0x75f659*/
+  int v3 = a3; /*0x75f652*/
+  int v4 = a2; /*0x75f659*/
   Register = BuildingClass::SaveLoad_Register(this); /*0x75f664*/
   if ( Register >= 0 )
   {
@@ -44,12 +35,12 @@ int __thiscall WaveClass::_vt05(#374 *this, int a2, int a3)
     Register = (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v3 + 12))(v3, &a2, 4, 0); /*0x75f712*/
     if ( Register >= 0 ) /*0x75f716*/
     {
-      v6 = a2; /*0x75f71c*/
+      int v6 = a2; /*0x75f71c*/
       a3 = 0; /*0x75f720*/
       if ( a2 <= 0 ) /*0x75f726*/
       {
 LABEL_17:
-        v11 = 0; /*0x75f799*/
+        int v11 = 0; /*0x75f799*/
         if ( v6 > 0 ) /*0x75f79d*/
         {
           do /*0x75f7b8*/
@@ -61,17 +52,19 @@ LABEL_17:
       {
         while ( 1 ) /*0x75f737*/
         {
+  int v13; // [esp+28h] [ebp-4h] BYREF
           Register = (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v3 + 12))(v3, &v13, 4, 0); /*0x75f737*/
           if ( Register < 0 ) /*0x75f73b*/
             break; /*0x75f73b*/
-          v7 = *(_DWORD *)(v4 + 504); /*0x75f73d*/
+          int v7 = *(_DWORD *)(v4 + 504); /*0x75f73d*/
           if ( *(_DWORD *)(v4 + 512) < v7 /*0x75f76e*/
             || (*(_BYTE *)(v4 + 509) || !v7)
+  int v8; // eax
             && (v8 = *(_DWORD *)(v4 + 516), v8 > 0)
             && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(v4 + 496) + 8))(v4 + 496, v7 + v8, 0) )
           {
-            v9 = *(_DWORD *)(v4 + 512); /*0x75f775*/
-            v10 = *(_DWORD *)(v4 + 500); /*0x75f778*/
+            int v9 = *(_DWORD *)(v4 + 512); /*0x75f775*/
+            int v10 = *(_DWORD *)(v4 + 500); /*0x75f778*/
             *(_DWORD *)(v4 + 512) = v9 + 1; /*0x75f77e*/
             *(_DWORD *)(v10 + 4 * v9) = v13; /*0x75f785*/
           }

@@ -6,14 +6,12 @@
 size_t SortedArray::BinarySearch(CCINIClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-size_t __thiscall SortedArray::BinarySearch(char **this, CCINIClass *aP1)
+void SortedArray::BinarySearch(char **this, CCINIClass *aP1)
 {
   size_t result; // eax
   ObjectClass *v4; // edi
   ObjectClass *v5; // ebx
-  int v6; // ecx
   ObjectClass *v7; // esi
-
   result = (size_t)this->q004; /*0x52b623*/
   if ( result ) /*0x52b628*/
   {
@@ -25,7 +23,7 @@ size_t __thiscall SortedArray::BinarySearch(char **this, CCINIClass *aP1)
     }
     v4 = (ObjectClass *)*this; /*0x52b659*/
     v5 = *(ObjectClass **)aP1->__pad_0; /*0x52b65b*/
-    v6 = (int)this->q004; /*0x52b65d*/
+    int v6 = (int)this->q004; /*0x52b65d*/
     if ( v6 <= 0 ) /*0x52b662*/
       return 0; /*0x52b68e*/
     while ( 1 ) /*0x52b66b*/
@@ -54,9 +52,8 @@ size_t __thiscall SortedArray::BinarySearch(char **this, CCINIClass *aP1)
 char SortedArray::Append(DynamicVector * aP1, unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall SortedArray::Append(int this, DynamicVector *aP1, _DWORD *a2)
+void SortedArray::Append(int this, DynamicVector *aP1, _DWORD *a2)
 {
-  int v4; // eax
   int v5; // ebx
   int v6; // edi
   int i; // ecx
@@ -64,8 +61,7 @@ char __thiscall SortedArray::Append(int this, DynamicVector *aP1, _DWORD *a2)
   _DWORD *v9; // edx
   int v10; // eax
   int v11; // eax
-
-  v4 = this->SortedArray_field_0x08; /*0x5387da*/
+  int v4 = this->SortedArray_field_0x08; /*0x5387da*/
   if ( this->SortedArray_field_0x04 + 1 <= v4 ) /*0x5387e0*/
   {
 LABEL_9:
@@ -110,11 +106,9 @@ LABEL_9:
 char SortedArray::RemoveByKey(DynamicVector * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall SortedArray::RemoveByKey(int this, DynamicVector *aP1)
+void SortedArray::RemoveByKey(int this, DynamicVector *aP1)
 {
   size_t v3; // eax
-  int v4; // edi
-  _DWORD *v5; // ebp
   int v6; // edx
   char *v7; // ecx
   int v9; // ecx
@@ -124,7 +118,6 @@ char __thiscall SortedArray::RemoveByKey(int this, DynamicVector *aP1)
   ObjectClass *v13; // edi
   int v14; // eax
   int v15; // [esp+10h] [ebp-8h]
-
   v3 = this->SortedArray_field_0x04; /*0x5388a9*/
   if ( !v3 ) /*0x5388ae*/
     return 0; /*0x5388ae*/
@@ -134,8 +127,8 @@ char __thiscall SortedArray::RemoveByKey(int this, DynamicVector *aP1)
     this->SortedArray_field_0x10 = 0; /*0x5388ca*/
     this->q00C = 1; /*0x5388d1*/
   }
-  v4 = this->SortedArray_field_0x04; /*0x5388d9*/
-  v5 = *(_DWORD **)this; /*0x5388e0*/
+  int v4 = this->SortedArray_field_0x04; /*0x5388d9*/
+  _DWORD * v5 = *(_DWORD **)this; /*0x5388e0*/
   v15 = *(_DWORD *)aP1->__pad_0; /*0x5388e4*/
   if ( v4 <= 0 ) /*0x5388e8*/
     return 0; /*0x5388e8*/
@@ -181,20 +174,15 @@ LABEL_9:
 char SortedArray::FindPair(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall SortedArray_FindPair(int this, int *a2)
+void SortedArray_FindPair(int this, int *a2)
 {
   size_t v3; // ecx
-  _DWORD *v4; // eax
-  int v6; // ecx
-  int v7; // ebp
-  _DWORD *v8; // edi
   int v9; // esi
   char *v10; // edx
-
   v3 = this->SortedArray_field_0x04; /*0x538985*/
   if ( !v3 ) /*0x53898b*/
     return 0; /*0x53898b*/
-  v4 = *(_DWORD **)(this + 16); /*0x53898d*/
+  _DWORD * v4 = this->q010; /*0x53898d*/
   if ( v4 && *v4 == *a2 ) /*0x53899e*/
     return 1; /*0x5389a6*/
   if ( !(unsigned char)this->SortedArray_field_0x0C ) /*0x5389a9*/
@@ -203,9 +191,9 @@ char __thiscall SortedArray_FindPair(int this, int *a2)
     this->SortedArray_field_0x10 = 0; /*0x5389c3*/
     this->q00C = 1; /*0x5389ca*/
   }
-  v6 = this->SortedArray_field_0x04; /*0x5389ce*/
-  v7 = *a2; /*0x5389d1*/
-  v8 = *(_DWORD **)this; /*0x5389d3*/
+  int v6 = this->SortedArray_field_0x04; /*0x5389ce*/
+  int v7 = *a2; /*0x5389d1*/
+  _DWORD * v8 = *(_DWORD **)this; /*0x5389d3*/
   if ( v6 <= 0 ) /*0x5389d7*/
     return 0; /*0x5389d7*/
   while ( 1 ) /*0x5389e0*/

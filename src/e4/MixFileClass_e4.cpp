@@ -8,34 +8,24 @@ void MixFileClass::CleanupCache()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void sub_69E210()
 {
-  _DWORD *v0; // edi
-  void *v1; // esi
-  int v2; // eax
-  int v3; // eax
-  void *v4; // esi
-  _BYTE *v5; // ebp
-  void *v6; // ecx
-  _DWORD *v7; // edi
-  int v8; // eax
-  int v9; // eax
 
-  v0 = DataGlobal_B077B0; /*0x69e213*/
+  _DWORD * v0 = DataGlobal_B077B0; /*0x69e213*/
   if ( DataGlobal_B077B0 ) /*0x69e21d*/
   {
     do /*0x69e289*/
     {
       if ( *(_WORD *)v0 == 0xFFFF && *((_BYTE *)v0 + 16) ) /*0x69e225*/
       {
-        v1 = (void *)v0[3]; /*0x69e22a*/
+        void * v1 = (void *)v0[3]; /*0x69e22a*/
         if ( v1 ) /*0x69e22f*/
         {
           if ( *(_WORD *)v1 == 0xFFFF ) /*0x69e235*/
           {
             BTree::DeleteSubtree((_DWORD *)v0[3]); /*0x69e239*/
-            v2 = *((_DWORD *)v1 + 6); /*0x69e23e*/
+            int v2 = *((_DWORD *)v1 + 6); /*0x69e23e*/
             if ( v2 ) /*0x69e243*/
               *(_DWORD *)(v2 + 28) = *((_DWORD *)v1 + 7); /*0x69e248*/
-            v3 = *((_DWORD *)v1 + 7); /*0x69e24b*/
+            int v3 = *((_DWORD *)v1 + 7); /*0x69e24b*/
             if ( v3 ) /*0x69e250*/
               *(_DWORD *)(v3 + 24) = *((_DWORD *)v1 + 6); /*0x69e255*/
             else
@@ -55,25 +45,25 @@ void sub_69E210()
     }
     while ( v0 ); /*0x69e289*/
   }
-  v4 = DataGlobal_B077B4; /*0x69e28b*/
+  void * v4 = DataGlobal_B077B4; /*0x69e28b*/
   if ( DataGlobal_B077B4 ) /*0x69e293*/
   {
     if ( *(_WORD *)DataGlobal_B077B4 == 0xFFFF ) /*0x69e299*/
     {
-      v5 = (char *)DataGlobal_B077B4 + 16; /*0x69e29f*/
+      _BYTE * v5 = (char *)DataGlobal_B077B4 + 16; /*0x69e29f*/
       if ( *((_BYTE *)DataGlobal_B077B4 + 16) ) /*0x69e29b*/
       {
-        v6 = (void *)*((_DWORD *)DataGlobal_B077B4 + 3); /*0x69e2a6*/
-        v7 = (char *)DataGlobal_B077B4 + 12; /*0x69e2a9*/
+        void * v6 = (void *)*((_DWORD *)DataGlobal_B077B4 + 3); /*0x69e2a6*/
+        _DWORD * v7 = (char *)DataGlobal_B077B4 + 12; /*0x69e2a9*/
         if ( v6 ) /*0x69e2ae*/
           MixFileClass::CacheNode_Dtor(v6, 1); /*0x69e2b2*/
         *v7 = 0; /*0x69e2b7*/
         *v5 = 0; /*0x69e2b9*/
       }
-      v8 = *((_DWORD *)v4 + 6); /*0x69e2bc*/
+      int v8 = *((_DWORD *)v4 + 6); /*0x69e2bc*/
       if ( v8 ) /*0x69e2c2*/
         *(_DWORD *)(v8 + 28) = *((_DWORD *)v4 + 7); /*0x69e2c7*/
-      v9 = *((_DWORD *)v4 + 7); /*0x69e2ca*/
+      int v9 = *((_DWORD *)v4 + 7); /*0x69e2ca*/
       if ( v9 ) /*0x69e2cf*/
         *(_DWORD *)(v9 + 24) = *((_DWORD *)v4 + 6); /*0x69e2d4*/
       else

@@ -8,7 +8,7 @@
 char MapSeed::ValidateName(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall MapSeed::ValidateName(char *this, int a2)
+void MapSeed::ValidateName(int a2)
 {
   if ( a2 ) /*0x597736*/
     return (*(int (__stdcall **)(int, char *))(this->q008)(a2, this + 120); /*0x597740*/
@@ -21,13 +21,11 @@ char __thiscall MapSeed::ValidateName(char *this, int a2)
 bool MapSeed::IsCellInBounds()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall sub_5AC230(__int16 *this)
+void sub_5AC230(__int16 *this)
 {
-  int v1; // edx
-  int v2; // eax
 
-  v1 = *this; /*0x5ac230*/
-  v2 = this->q004; /*0x5ac233*/
+  int v1 = *this; /*0x5ac230*/
+  int v2 = this->q004; /*0x5ac233*/
   return v2 + v1 > g_MapCellHeight_Value /*0x5ac25f*/
       && v1 - v2 < g_MapCellHeight_Value
       && v2 - v1 < g_MapCellHeight_Value
@@ -39,21 +37,20 @@ bool __thiscall sub_5AC230(__int16 *this)
 char MapSeed::CheckName()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall MapSeed_CheckName(const char **this)
+void MapSeed_CheckName(const char **this)
 {
   char **v2; // eax
-  bool v3; // bl
-  int v5; // esi
   char **v6; // [esp-8h] [ebp-18h]
-  void *v7; // [esp+4h] [ebp-Ch] BYREF
-  void *v8; // [esp+8h] [ebp-8h] BYREF
-  void *v9; // [esp+Ch] [ebp-4h] BYREF
 
+  void *v7; // [esp+4h] [ebp-Ch] BYREF
   String::AssignFromPtr((char **)&v7, this); /*0x79c52b*/
   String::ToLower((const char **)&v7); /*0x79c534*/
   if ( !String::Length(this) /*0x79c5aa*/
+  void *v9; // [esp+Ch] [ebp-4h] BYREF
     || (v6 = String::ToLowerCopy((const char **)&g_WebBrowser, (char **)&v9),
+  void *v8; // [esp+8h] [ebp-8h] BYREF
         v2 = String::ToLowerCopy((const char **)&v7, (char **)&v8),
+  bool v3; // bl
         v3 = String::Compare((const char **)v2, (const char **)v6),
         DeleteAndZero(&v8),
         DeleteAndZero(&v9),
@@ -65,7 +62,7 @@ char __thiscall MapSeed_CheckName(const char **this)
   }
   else
   {
-    v5 = 0; /*0x79c5c8*/
+    int v5 = 0; /*0x79c5c8*/
     if ( g_WindowManager <= 0 ) /*0x79c5cc*/
     {
 LABEL_12:
@@ -98,25 +95,18 @@ LABEL_12:
 void MapSeed::InsertName()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall MapSeed::InsertName(const char **this)
+void MapSeed::InsertName(const char **this)
 {
-  int v2; // eax
-  int v3; // esi
   char **v4; // ecx
-  int v5; // eax
-  int v6; // esi
   char **v7; // ecx
-  int v8; // eax
-  int v9; // esi
   char **v10; // ecx
-  void *v11; // [esp+8h] [ebp-70h] BYREF
-  char v12[108]; // [esp+Ch] [ebp-6Ch] BYREF
 
   if ( MapSeed::CheckName(this) ) /*0x79c656*/
   {
+  void *v11; // [esp+8h] [ebp-70h] BYREF
     String::AssignFromPtr((char **)&v11, this); /*0x79c668*/
-    v2 = g_WindowManager; /*0x79c66d*/
-    v3 = g_WindowManager; /*0x79c672*/
+    int v2 = g_WindowManager; /*0x79c66d*/
+    int v3 = g_WindowManager; /*0x79c672*/
     if ( g_WindowManager >= dword_B73AAC ) /*0x79c67e*/
     {
       DynamicVector::EnsureCapacity(&g_WindowManager); /*0x79c685*/
@@ -139,8 +129,8 @@ void __thiscall MapSeed::InsertName(const char **this)
       v2 = g_WindowManager; /*0x79c6e9*/
     }
     g_WindowManager = v2 + 1; /*0x79c6ef*/
-    v5 = g_WOL_RequestManager; /*0x79c6f4*/
-    v6 = g_WOL_RequestManager; /*0x79c6f9*/
+    int v5 = g_WOL_RequestManager; /*0x79c6f4*/
+    int v6 = g_WOL_RequestManager; /*0x79c6f9*/
     if ( g_WOL_RequestManager >= dword_B76984 ) /*0x79c705*/
     {
       DynamicVector::EnsureCapacity(&g_WOL_RequestManager); /*0x79c70c*/
@@ -163,8 +153,8 @@ void __thiscall MapSeed::InsertName(const char **this)
       v5 = g_WOL_RequestManager; /*0x79c770*/
     }
     g_WOL_RequestManager = v5 + 1; /*0x79c776*/
-    v8 = g_WOL_BuddyList; /*0x79c77b*/
-    v9 = g_WOL_BuddyList; /*0x79c780*/
+    int v8 = g_WOL_BuddyList; /*0x79c77b*/
+    int v9 = g_WOL_BuddyList; /*0x79c780*/
     if ( g_WOL_BuddyList >= dword_B779B4 ) /*0x79c78c*/
     {
       DynamicVector::EnsureCapacity(&g_WOL_BuddyList); /*0x79c793*/
@@ -205,6 +195,7 @@ LABEL_33:
         DynamicArray::Remove(&g_WOL_RequestManager, 0); /*0x79c857*/
       }
       g_WOL_ParseState = time(0); /*0x79c864*/
+  char v12[108]; // [esp+Ch] [ebp-6Ch] BYREF
       memset(v12, 0, sizeof(v12)); /*0x79c874*/
       strcpy(&v12[36], String::GetOrEmpty((char **)&g_WOL_AuthObject)); /*0x79c8a1*/
       (*(void (__stdcall **)(LPVOID, char *))(*(_DWORD *)ppv + 96))(ppv, v12); /*0x79c8b3*/

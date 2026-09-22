@@ -23,26 +23,19 @@ void ConnectionClass::queueSendPacket(const uint8_t* data, int32_t length, int32
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x48b410
-void __thiscall ConnectionClass::queueSendPacket(#487 *this, #473 *a2, int a3, int a4)
+void ConnectionClass::queueSendPacket(#487 *this, #473 *a2, int a3, int a4)
 {
-  int v5; // eax
-  int v6; // esi
-  int v7; // ebx
   _BYTE *i; // edi
-  int v9; // eax
-  int v10; // ecx
-  signed int v11; // [esp+20h] [ebp+10h]
   __int16 v12; // [esp+24h] [ebp+14h]
-
-  v5 = this->PlayerIndex;
-  v6 = this->q028;
+  int v5 = this->PlayerIndex;
+  int v6 = this->q028;
   if ( v6 == v5 || a3 > this->LastPacketTime )
   {
     Debug::Log();
   }
   else
   {
-    v7 = 0;
+    int v7 = 0;
     if ( v5 > 0 )
     {
       for ( i = (_BYTE *)this->q009; (*i & 1) != 0; i += 36 )
@@ -52,7 +45,7 @@ void __thiscall ConnectionClass::queueSendPacket(#487 *this, #473 *a2, int a3, i
       }
       if ( v7 != -1 )
       {
-        v9 = 36 * v7;
+        int v9 = 36 * v7;
         *(_DWORD *)(this->q009 + v9) = *(_DWORD *)(this->q009 + 36 * v7) | 1;
         *(_DWORD *)(36 * v7 + this->q009) &= ~2u;
         *(_DWORD *)(36 * v7 + this->q009) &= ~4u;
@@ -62,6 +55,7 @@ void __thiscall ConnectionClass::queueSendPacket(#487 *this, #473 *a2, int a3, i
         *(_DWORD *)(v9 + this->q009 + 16) = a3;
         *(_WORD *)(v9 + this->q009 + 32) = v12;
         qmemcpy(*(void **)(36 * v7 + this->q009 + 20), a2, a3);
+  signed int v11; // [esp+20h] [ebp+10h]
         if ( a4 && v11 > 0 && v11 <= this->PlayerIndex )
         {
           qmemcpy(*(void **)(v9 + this->q009 + 28), (const void *)a4, v11);
@@ -72,7 +66,7 @@ void __thiscall ConnectionClass::queueSendPacket(#487 *this, #473 *a2, int a3, i
           *(_DWORD *)(v9 + this->q009 + 24) = 0;
         }
         *(_DWORD *)(this->LastPacketTime + 4 * this->q028) = v7;
-        v10 = this->q028 + 1;
+        int v10 = this->q028 + 1;
         ++this->q02C;
         this->q028 = v10;
       }
@@ -274,15 +268,12 @@ void ConnectionClass::serviceSendQueue()
 bool ConnectionClass::connect()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ConnectionClass::_vt08(_DWORD *this)
+void ConnectionClass::_vt08()
 {
-  int v2; // esi
-  _DWORD *v3; // ecx
   int TileType; // eax
-  int v5; // eax
 
-  v2 = 0;
-  v3 = (_DWORD *)this->PlayerIndex;
+  int v2 = 0;
+  _DWORD * v3 = (_DWORD *)this->PlayerIndex;
   if ( (int)v3[14] > 0 )
   {
     do
@@ -290,7 +281,7 @@ int __thiscall ConnectionClass::_vt08(_DWORD *this)
       TileType = Terrain::GetTileType(v3, v2);
       if ( (*(_BYTE *)TileType & 2) != 0 )
       {
-        v5 = *(_DWORD *)(TileType + 12);
+        int v5 = *(_DWORD *)(TileType + 12);
         if ( *(_BYTE *)(v5 + 2) == 1 || *(_DWORD *)(v5 + 4) < this->q011 )
           PacketQueue::ReleaseEntry((_DWORD *)this->PlayerIndex, 0, 0, v2--, 0, 0);
       }

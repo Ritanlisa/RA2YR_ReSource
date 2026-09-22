@@ -10,7 +10,7 @@ namespace gamemd {
 BOOL ParticleSystemClass::Draw()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall ParticleSystemClass::_vt17(int this)
+void ParticleSystemClass::_vt17(int this)
 {
   return this->q0F8 && !this->Owner; /*0x62fe79*/
 }
@@ -44,7 +44,7 @@ namespace gamemd {
 int ParticleSystemClass_16::Write(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ParticleSystemClass_16_::_vt06(_DWORD *this, int a2)
+void ParticleSystemClass_16_::_vt06(int a2)
 {
   return *(_DWORD *)(this->q004 + 4 * a2); /*0x4e87da*/
 }

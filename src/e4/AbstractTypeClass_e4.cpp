@@ -7,14 +7,12 @@
 int AbstractTypeClass::Constructor(AbstractClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall AbstractTypeClass::Constructor(int this, AbstractClass *aP1)
+void AbstractTypeClass::Constructor(int this, AbstractClass *aP1)
 {
   RandomStruct *v3; // ebx
-  int v4; // eax
   char Buffer[16]; // [esp+10h] [ebp-44h] BYREF
   char Destination[48]; // [esp+20h] [ebp-34h] BYREF
   char v8; // [esp+50h] [ebp-4h]
-
   AbstractClass::Constructor((AbstractClass *)this); /*0x410809*/
   v3 = (RandomStruct *)(this + 36); /*0x410812*/
   this->q024 = 0; /*0x410817*/
@@ -72,7 +70,7 @@ LABEL_9:
          *(_DWORD *)&HouseClass_Player[44068] + *(_DWORD *)&HouseClass_Player[44080],
          0) )
   {
-    v4 = (*(_DWORD *)&HouseClass_Player[44076])++; /*0x410936*/
+    int v4 = (*(_DWORD *)&HouseClass_Player[44076])++; /*0x410936*/
     *(_DWORD *)(*(_DWORD *)&HouseClass_Player[44064] + 4 * v4) = this; /*0x410945*/
   }
   return this; /*0x410948*/
@@ -83,17 +81,15 @@ LABEL_9:
 int AbstractTypeClass::Dtor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall AbstractTypeClass_Dtor(_DWORD *this)
+void AbstractTypeClass_Dtor(_DWORD *this)
 {
-  int v2; // eax
-  _DWORD *v4; // [esp+4h] [ebp-4h] BYREF
 
   *this = &AbstractTypeClass::`vftable'; /*0x4109cd*/
   this->vtable2 = &AbstractTypeClass::`vftable'; /*0x4109d3*/
   this->vtable3 = &AbstractTypeClass::`vftable'; /*0x4109da*/
   this->vtable4 = &vt_AbstractTypeClass; /*0x4109e1*/
-  v4 = this; /*0x4109ef*/
-  v2 = (*(int (__thiscall **)(int *, _DWORD **))(DataGlobal_A8E968 + 16))(&DataGlobal_A8E968, &v4); /*0x4109f3*/
+  AbstractTypeClass *v4 = this; /*0x4109ef*/
+  int v2 = (*(int (__thiscall **)(int *, _DWORD **))(DataGlobal_A8E968 + 16))(&DataGlobal_A8E968, &v4); /*0x4109f3*/
   if ( v2 != -1 && v2 < g_AbstractTypePool && v2 < --g_AbstractTypePool ) /*0x410a0e*/
   {
     do /*0x410a26*/
@@ -111,10 +107,9 @@ int __thiscall AbstractTypeClass_Dtor(_DWORD *this)
 char AbstractTypeClass::LoadFromINI(AbstractTypeClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall AbstractTypeClass::LoadFromINI(int this, AbstractTypeClass *aP1)
+void AbstractTypeClass::LoadFromINI(int this, AbstractTypeClass *aP1)
 {
   CCINIClass *v3; // edi
-  char *v4; // ebp
   char Destination[48]; // [esp+Ch] [ebp-434h] BYREF
   char v7; // [esp+3Ch] [ebp-404h]
   INIClass Source[16]; // [esp+40h] [ebp-400h] BYREF
@@ -144,7 +139,7 @@ char __thiscall AbstractTypeClass::LoadFromINI(int this, AbstractTypeClass *aP1)
     qmemcpy(v3, Destination, 0x30u); /*0x410add*/
     this->q094 = v7; /*0x410adf*/
   }
-  v4 = (char *)(this + 61); /*0x410aeb*/
+  char * v4 = (char *)(this + 61); /*0x410aeb*/
   INIClass::GetString( /*0x410afb*/
     (unsigned __int8 ***)aP1,
     (INIClass *)(this + 36),

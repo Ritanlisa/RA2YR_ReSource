@@ -14,26 +14,18 @@ VectorClass * Multiplayer::FindStartPositions()
 VectorClass *__thiscall Multiplayer::FindStartPositions(VectorClass *this)
 {
   IUnknown *v1; // esi
-  VectorClass *v2; // edi
+  Multiplayer *v2; // edi
   ScenarioClass *v3; // edx
-  int v4; // ebx
-  int v5; // eax
   char *waypoints; // ecx
-  int v7; // ebp
-  int v8; // ecx
-  int v9; // edi
   IUnknown *v10; // ebp
   unsigned int i; // esi
-  int v12; // edi
   IUnknown *v13; // eax
   __int16 v14; // si
   IUnknown *v15; // eax
   WinModemClass *v16; // eax
   IUnknown *v17; // edx
-  int v19; // [esp+10h] [ebp-30h] BYREF
   IUnknown *v20; // [esp+14h] [ebp-2Ch]
-  VectorClass *v21; // [esp+18h] [ebp-28h]
-  int v22; // [esp+1Ch] [ebp-24h]
+  Multiplayer *v21; // [esp+18h] [ebp-28h]
   int v23; // [esp+20h] [ebp-20h] BYREF
   int v24; // [esp+24h] [ebp-1Ch] BYREF
   void **v25; // [esp+28h] [ebp-18h] BYREF
@@ -42,17 +34,16 @@ VectorClass *__thiscall Multiplayer::FindStartPositions(VectorClass *this)
   char v28; // [esp+35h] [ebp-Bh]
   IUnknown *v29; // [esp+38h] [ebp-8h]
   int v30; // [esp+3Ch] [ebp-4h]
-
   v1 = 0; /*0x688387*/
   v2 = this; /*0x688389*/
   v21 = this; /*0x688391*/
   VectorClass::CellConstructor(&v25, 0, 0); /*0x688395*/
   v3 = *(ScenarioClass **)&HouseClass_Player[29924]; /*0x68839a*/
-  v4 = 10; /*0x6883a0*/
+  int v4 = 10; /*0x6883a0*/
   v25 = (void **)&vt_DynamicVectorClass_Cell; /*0x6883a5*/
   v30 = 10; /*0x6883ad*/
   v29 = 0; /*0x6883b1*/
-  v5 = 0; /*0x6883b5*/
+  int v5 = 0; /*0x6883b5*/
   waypoints = (char *)(*(_DWORD *)&HouseClass_Player[29924] + 1586); /*0x6883b7*/
   do /*0x6883e9*/
   {
@@ -65,11 +56,11 @@ VectorClass *__thiscall Multiplayer::FindStartPositions(VectorClass *this)
     waypoints += 4; /*0x6883e3*/
   }
   while ( v5 < 8 ); /*0x6883e9*/
-  v7 = 0; /*0x6883f0*/
+  int v7 = 0; /*0x6883f0*/
   if ( *(int *)&HouseClass_Player[40248] > 0 ) /*0x6883f4*/
   {
-    v8 = *(_DWORD *)&HouseClass_Player[40236]; /*0x6883f6*/
-    v9 = *(_DWORD *)&HouseClass_Player[40248]; /*0x6883fc*/
+    int v8 = *(_DWORD *)&HouseClass_Player[40236]; /*0x6883f6*/
+    int v9 = *(_DWORD *)&HouseClass_Player[40248]; /*0x6883fc*/
     do /*0x68840b*/
     {
       if ( *(_DWORD *)(*(_DWORD *)v8 + 107) == -1 ) /*0x688404*/
@@ -97,7 +88,7 @@ VectorClass *__thiscall Multiplayer::FindStartPositions(VectorClass *this)
   {
     if ( i > 0x2BD || *(_DWORD *)&v3->waypoints[4 * i] == dword_B05458 ) /*0x68845d*/
       continue; /*0x68845d*/
-    v12 = *(_DWORD *)&v3->waypoints[4 * i]; /*0x688478*/
+    int v12 = *(_DWORD *)&v3->waypoints[4 * i]; /*0x688478*/
     if ( (int)v29 < v27 ) /*0x688481*/
       goto LABEL_22; /*0x688481*/
     if ( !v28 && v27 || v4 <= 0 ) /*0x688491*/
@@ -128,13 +119,14 @@ LABEL_24:
                 (_DWORD *)(*(_DWORD *)&HouseClass_Player[29924] + 536),
                 0,
                 (IUnknown *)(*(_DWORD *)&stru_87C374[13732] - 10));
+  int v22; // [esp+1Ch] [ebp-24h]
         LOWORD(v22) = *(_WORD *)&stru_87C374[13720] /*0x688573*/
                     + Random::Range(
                         (_DWORD *)(*(_DWORD *)&HouseClass_Player[29924] + 536),
                         (IUnknown *)0xA,
                         (IUnknown *)(*(_DWORD *)&stru_87C374[13728] - 10));
         HIWORD(v22) = v14 + *(_WORD *)&stru_87C374[13724] + 10; /*0x688588*/
-        v19 = v22; /*0x688594*/
+        int v19 = v22; /*0x688594*/
         v23 = 0; /*0x6885ab*/
         v19 = *LayerClass::Pathfinding_Find( /*0x6885c3*/
                  (IUnknown *)&stru_87C374[13428],
@@ -196,15 +188,11 @@ unsigned int * Multiplayer::CopyDataArray(ObjectClass * aP1)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall Multiplayer::CopyDataArray(_DWORD *this, ObjectClass *aP1)
 {
-  int v3; // edi
-  int v4; // eax
-  int v5; // ecx
-  int v6; // eax
 
   if ( this == (_DWORD *)aP1 ) /*0x68c2bb*/
     return this; /*0x68c2bb*/
   (*(void (__thiscall **)(_DWORD *))(*this + 12))(this); /*0x68c2bf*/
-  v3 = *(_DWORD *)&aP1->__pad_0[8]; /*0x68c2c2*/
+  int v3 = *(_DWORD *)&aP1->__pad_0[8]; /*0x68c2c2*/
   this->q002 = v3; /*0x68c2c7*/
   if ( !v3 ) /*0x68c2ca*/
   {
@@ -212,14 +200,14 @@ _DWORD *__thiscall Multiplayer::CopyDataArray(_DWORD *this, ObjectClass *aP1)
     *((_BYTE *)this + 13) = 0; /*0x68c320*/
     return this; /*0x68c324*/
   }
-  v4 = __2_YAPAXI_Z(4 * v3); /*0x68c2d4*/
+  int v4 = __2_YAPAXI_Z(4 * v3); /*0x68c2d4*/
   if ( !v4 ) /*0x68c2de*/
     v4 = 0; /*0x68c2e7*/
   this->q001 = v4; /*0x68c2eb*/
   if ( !v4 ) /*0x68c2ee*/
     return this; /*0x68c2ee*/
-  v5 = this->q002; /*0x68c2f0*/
-  v6 = 0; /*0x68c2f3*/
+  int v5 = this->q002; /*0x68c2f0*/
+  int v6 = 0; /*0x68c2f3*/
   *((_BYTE *)this + 13) = 1; /*0x68c2f7*/
   if ( v5 <= 0 ) /*0x68c2fb*/
     return this; /*0x68c2fb*/
@@ -237,28 +225,17 @@ _DWORD *__thiscall Multiplayer::CopyDataArray(_DWORD *this, ObjectClass *aP1)
 void Multiplayer::ShowProgress(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall Multiplayer_ShowProgress(_DWORD *this, int a2)
+void Multiplayer_ShowProgress(_DWORD *this, int a2)
 {
-  double v3; // st7
   int i; // esi
-  int v5; // esi
-  int v6; // eax
-  double v7; // st7
-  int v8; // esi
-  int v9; // eax
   DWORD Ticks; // [esp+8h] [ebp-1DCh]
-  int v11; // [esp+14h] [ebp-1D0h]
-  double v12; // [esp+14h] [ebp-1D0h]
-  int v13[113]; // [esp+1Ch] [ebp-1C8h] BYREF
   __int16 v14; // [esp+1E0h] [ebp-4h]
-  char v15; // [esp+1E2h] [ebp-2h]
-
   if ( !ArmageddonMode ) /*0x69aea1*/
   {
-    v11 = a2; /*0x69aeb4*/
+    int v11 = a2; /*0x69aeb4*/
     if ( *((_BYTE *)g_ScenarioClass_Instance + 13501) ) /*0x69aeb8*/
       v11 = a2 / 2; /*0x69aec7*/
-    v12 = (double)v11; /*0x69aed6*/
+    double v12 = (double)v11; /*0x69aed6*/
     if ( Progress::GetWeighted(0) * 100.0 < v12 ) /*0x69aef1*/
       Network::UpdateLatencyDisplay(0, v12, NAN); /*0x69af0a*/
     if ( this->qA13 != 1 ) /*0x69af16*/
@@ -268,19 +245,20 @@ void __thiscall Multiplayer_ShowProgress(_DWORD *this, int a2)
       {
         case 1: /*0x69af3e*/
         case 2: /*0x69af3e*/
+  int v13[113]; // [esp+1Ch] [ebp-1C8h] BYREF
           memset(v13, 0, 250); /*0x69b099*/
           v13[0] = 108; /*0x69b0a2*/
-          v7 = Progress::GetWeighted(0); /*0x69b0aa*/
+          double v7 = Progress::GetWeighted(0); /*0x69b0aa*/
           *(int *)((char *)&v13[6] + 1) = Math::RoundToInt(v7 * 100.0); /*0x69b0c0*/
           LOBYTE(v13[6]) = g_EventDispatchState; /*0x69b0d5*/
           Stream::WriteBlock(v13, 250, 0); /*0x69b0d9*/
           Stream::ReadPacket(&g_EventManager); /*0x69b0e3*/
           while ( Count::GetCountQueue(&g_EventManager) > 5 ) /*0x69b0f5*/
           {
-            v8 = 240; /*0x69b101*/
+            int v8 = 240; /*0x69b101*/
             if ( Ticks != -1 ) /*0x69b107*/
             {
-              v9 = Timer::GetTicks() - Ticks; /*0x69b112*/
+              int v9 = Timer::GetTicks() - Ticks; /*0x69b112*/
               if ( v9 >= 240 ) /*0x69b118*/
                 goto LABEL_25; /*0x69b118*/
               v8 = 240 - v9; /*0x69b11a*/
@@ -296,9 +274,9 @@ void __thiscall Multiplayer_ShowProgress(_DWORD *this, int a2)
         case 4: /*0x69af3e*/
           memset(v13, 0, sizeof(v13)); /*0x69af52*/
           v14 = 0; /*0x69af54*/
-          v15 = 0; /*0x69af56*/
+          char v15 = 0; /*0x69af56*/
           v13[0] = 15; /*0x69af5c*/
-          v3 = Progress::GetWeighted(0); /*0x69af64*/
+          double v3 = Progress::GetWeighted(0); /*0x69af64*/
           *(int *)((char *)&v13[11] + 3) = Math::RoundToInt(v3 * 100.0); /*0x69af7a*/
           strcpy((char *)&v13[1], ToWideStringChar(*(char **)Game_PlayerInfoArray)); /*0x69af9e*/
           if ( (double)*(int *)((char *)&v13[11] + 3) >= 99.95 ) /*0x69afb6*/
@@ -316,10 +294,10 @@ void __thiscall Multiplayer_ShowProgress(_DWORD *this, int a2)
           Event::Dispatch(); /*0x69b015*/
           while ( Network::GetQueueCount(&g_NetworkManager) > 5 ) /*0x69b027*/
           {
-            v5 = 240; /*0x69b037*/
+            int v5 = 240; /*0x69b037*/
             if ( Ticks != -1 ) /*0x69b03d*/
             {
-              v6 = Timer::GetTicks() - Ticks; /*0x69b048*/
+              int v6 = Timer::GetTicks() - Ticks; /*0x69b048*/
               if ( v6 >= 240 ) /*0x69b04e*/
                 goto LABEL_25; /*0x69b04e*/
               v5 = 240 - v6; /*0x69b054*/

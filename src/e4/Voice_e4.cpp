@@ -27,12 +27,11 @@ int (__thiscall *__thiscall Voice_Stop(int this))(int)
 int Voice::DetachChannel()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Voice_DetachChannel(int this)
+void Voice_DetachChannel(int this)
 {
-  int v2; // ecx
   int result; // eax
 
-  v2 = this->q02C; /*0x404146*/
+  int v2 = this->q02C; /*0x404146*/
   if ( v2 && this == *(_DWORD *)(v2 + 192) ) /*0x404156*/
   {
     if ( (this->q006 & 2) != 0 ) /*0x40415c*/

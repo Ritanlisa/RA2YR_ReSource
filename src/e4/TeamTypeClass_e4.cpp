@@ -15,14 +15,10 @@ namespace gamemd {
 int TeamTypeClass::Construct()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall TeamTypeClass_Constructor(int this)
+void TeamTypeClass_Constructor(int this)
 {
   wchar_t *v2; // eax
-  int v3; // eax
   wchar_t *v4; // eax
-  int v5; // eax
-  int v7; // [esp+Ch] [ebp-8h]
-
   AbstractClass::Constructor((AbstractClass *)this); /*0x4c98b7*/
   this->TeamTypeClass_field_24 = 0; /*0x4c98be*/
   this->TeamTypeClass_field_28 = 0; /*0x4c98c1*/
@@ -60,12 +56,13 @@ int __thiscall TeamTypeClass_Constructor(int this)
          DataGlobal_A83E38 + DataGlobal_A83E44,
          0) )
   {
-    v3 = g_TeamTypeCapacity++; /*0x4c997a*/
+    int v3 = g_TeamTypeCapacity++; /*0x4c997a*/
     *((_DWORD *)g_TeamTypeCount + v3) = this; /*0x4c9989*/
   }
   v4 = g_CurrentFrame; /*0x4c998c*/
   this->TeamTypeClass_field_38 = 0; /*0x4c9996*/
   this->TeamTypeClass_field_2C = v4; /*0x4c9999*/
+  int v7; // [esp+Ch] [ebp-8h]
   this->TeamTypeClass_field_30 = v7; /*0x4c999f*/
   this->TeamTypeClass_field_34 = 0; /*0x4c99a2*/
   this->TeamTypeClass_field_24 = 0; /*0x4c99a5*/
@@ -77,7 +74,7 @@ int __thiscall TeamTypeClass_Constructor(int this)
          DataGlobal_B0F728 + DataGlobal_B0F734,
          0) )
   {
-    v5 = g_AlphaShapePool++; /*0x4c99e9*/
+    int v5 = g_AlphaShapePool++; /*0x4c99e9*/
     *((_DWORD *)DataGlobal_B0F724 + v5) = this; /*0x4c99f8*/
   }
   return this; /*0x4c99fd*/
@@ -92,17 +89,13 @@ INIClass * TeamTypeClass::CreateScriptType()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 INIClass *__thiscall TeamTypeClass::CreateScriptType(AbstractClass *this)
 {
-  int v2; // esi
   INIClass *v3; // eax
   INIClass *v4; // esi
-  int v5; // ecx
-  char v6; // al
-  int v7; // eax
   INIClass **v8; // edx
 
   if ( !_strcmpi(&stru_817460.sectionHead[1], this) || !_strcmpi(g_Str_none, this) ) /*0x691c20*/
     return 0; /*0x691c2a*/
-  v2 = 0; /*0x691c35*/
+  int v2 = 0; /*0x691c35*/
   if ( dword_8B41D8 <= 0 ) /*0x691c39*/
   {
 LABEL_6:
@@ -117,10 +110,11 @@ LABEL_6:
       v4->headNode[0] = (int)&ScriptTypeClass::`vftable'; /*0x691c9b*/
       v4->headNode[1] = (int)&ScriptTypeClass::`vftable'; /*0x691ca2*/
       v4->headNode[2] = (int)&vt_ScriptTypeClass; /*0x691ca9*/
-      v5 = dword_8B41D8; /*0x691cb0*/
+      int v5 = dword_8B41D8; /*0x691cb0*/
       if ( dword_8B41D8 < dword_8B41D0 /*0x691cf1*/
         || (unk_8B41D5 || !dword_8B41D0)
         && dword_8B41DC > 0
+  char v6; // al
         && (v6 = (*(int (__thiscall **)(_DWORD *, int, _DWORD))(dword_8B41C8 + 8))(
                    &dword_8B41C8,
                    dword_8B41D0 + dword_8B41DC,
@@ -132,7 +126,7 @@ LABEL_6:
         *((_DWORD *)unk_8B41CC + v5) = v4; /*0x691d02*/
         v5 = dword_8B41D8; /*0x691d05*/
       }
-      v7 = 0; /*0x691d0b*/
+      int v7 = 0; /*0x691d0b*/
       if ( v5 <= 0 ) /*0x691d0f*/
       {
 LABEL_17:
@@ -171,16 +165,14 @@ TaskForceClass * TeamTypeClass::FindOrCreateTaskForce()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 TaskForceClass *__thiscall TeamTypeClass::FindOrCreateTaskForce(ObjectClass *this)
 {
-  int v2; // esi
-  _DWORD *v3; // eax
 
   if ( !_strcmpi(&stru_817460.sectionHead[1], this) || !_strcmpi(g_Str_none, this) ) /*0x6e860c*/
     return 0; /*0x6e866f*/
-  v2 = 0; /*0x6e861d*/
+  int v2 = 0; /*0x6e861d*/
   if ( *(int *)&HouseClass_Player[43924] <= 0 ) /*0x6e8621*/
   {
 LABEL_6:
-    v3 = (_DWORD *)__2_YAPAXI_Z(0xD4u); /*0x6e8646*/
+    _DWORD * v3 = (_DWORD *)__2_YAPAXI_Z(0xD4u); /*0x6e8646*/
     if ( v3 ) /*0x6e8655*/
       return (TaskForceClass *)TaskForceClass::Construct(v3, this); /*0x6e8661*/
     return 0; /*0x6e8655*/
@@ -200,7 +192,7 @@ namespace gamemd {
 int TeamTypeClass::Check(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_6EF5F0(_DWORD *this, int a2)
+void sub_6EF5F0(_DWORD *this, int a2)
 {
   int result; // eax
 
@@ -216,16 +208,15 @@ namespace gamemd {
 int TeamTypeClass::DestroyAllInstances()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall TeamTypeClass::DestroyAllInstances(void *this)
+void TeamTypeClass::DestroyAllInstances()
 {
   int result; // eax
   int i; // esi
-  _DWORD *v4; // ecx
 
   result = g_HouseClass_AIProductionState; /*0x6f0a70*/
   for ( i = 0; i < g_HouseClass_AIProductionState; ++i ) /*0x6f0a7d*/
   {
-    v4 = (_DWORD *)*((_DWORD *)g_TeamClassPool + i); /*0x6f0a84*/
+    _DWORD * v4 = (_DWORD *)*((_DWORD *)g_TeamClassPool + i); /*0x6f0a84*/
     if ( this == (void *)v4[9] ) /*0x6f0a8a*/
     {
       if ( v4 ) /*0x6f0a8e*/
@@ -244,10 +235,9 @@ namespace gamemd {
 int TeamTypeClass::GetTeam(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall TeamTypeClass::_vt10(_DWORD *this, int a2, int a3)
+void TeamTypeClass::_vt10(int a2, int a3)
 {
   int result; // eax
-  int v4; // ecx
 
   result = a2; /*0x6f1030*/
   if ( this->q0D0 == a2 ) /*0x6f103f*/
@@ -258,7 +248,7 @@ int __thiscall TeamTypeClass::_vt10(_DWORD *this, int a2, int a3)
     this->q0E4 = 0; /*0x6f105d*/
   if ( this->q0E0 == a2 ) /*0x6f1069*/
     this->q0E0 = 0; /*0x6f106b*/
-  v4 = this->q0E0; /*0x6f1071*/
+  int v4 = this->q0E0; /*0x6f1071*/
   if ( v4 ) /*0x6f1079*/
     return (*(int (__thiscall **)(int, int, int))(*(_DWORD *)v4 + 40))(v4, a2, a3); /*0x6f1083*/
   return result; /*0x6f1086*/
@@ -271,32 +261,12 @@ namespace gamemd {
 char TeamTypeClass::LoadFromINI(unsigned char *** aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall TeamTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
+void TeamTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
 {
   CCINIClass *v3; // ecx
-  int v4; // eax
-  void *v5; // ebp
   int Int_Overwrite; // eax
   char Bool_Overwrite; // al
-  char v8; // cl
-  char v9; // al
-  char v10; // al
-  char v11; // cl
-  char v12; // al
-  char v13; // al
-  char v14; // cl
-  char v15; // al
-  char v16; // al
-  char v17; // cl
-  char v18; // al
-  char v19; // al
-  char v20; // cl
-  char v21; // al
-  int v22; // eax
   CCINIClass *v23; // ecx
-  int v24; // eax
-  int v25; // eax
-  char *v26; // ebp
   char *v27; // eax
   CCINIClass *v28; // ecx
   int v29; // eax
@@ -328,10 +298,11 @@ char __thiscall TeamTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
   INIClass::ResetSection(aP1); /*0x6f10a3*/
   if ( !AbstractTypeClass::LoadFromINI(this, (AbstractTypeClass *)aP1) ) /*0x6f10b2*/
     return 0; /*0x6f10b2*/
-  v3 = *(CCINIClass **)(this + 196); /*0x6f10b8*/
-  v4 = -1; /*0x6f10be*/
+  v3 = this->q0C4; /*0x6f10b8*/
+  int v4 = -1; /*0x6f10be*/
   if ( v3 ) /*0x6f10c3*/
     v4 = *(_DWORD *)(*(_DWORD *)&v3->needsSave_flag + 184); /*0x6f10c8*/
+  void *v5; // ebp
   v5 = (void *)SuperWeaponTypeClass::FindOrCreate( /*0x6f10e1*/
                  aP1,
                  (INIClass *)(this + 36),
@@ -351,8 +322,8 @@ char __thiscall TeamTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
                     (int)aP1,
                     (unsigned __int8 *)(this + 36),
                     (CCINIClass *)&stru_830620[76492],
-                    *(INIClass **)(this + 160));
-  v44 = *(CCINIClass **)(this + 192); /*0x6f1138*/
+                    this->q0A0);
+  v44 = this->q0C0; /*0x6f1138*/
   this->q0A0 = Int_Overwrite; /*0x6f113f*/
   this->q0C0 = INIClass::ReadInt_Overwrite( /*0x6f114a*/
                               (int)aP1,
@@ -364,8 +335,9 @@ char __thiscall TeamTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
                      (unsigned __int8 *)(this + 36),
                      (CCINIClass *)&stru_830620[76460],
                      this->q0A4);
-  v8 = *(_BYTE *)(this + 165); /*0x6f1164*/
+  char v8 = *(_BYTE *)(this + 165); /*0x6f1164*/
   this->q0A4 = Bool_Overwrite; /*0x6f116a*/
+  char v9; // al
   v9 = INIClass::ReadBool_Overwrite( /*0x6f1179*/
          (int)aP1,
          (unsigned __int8 *)(this + 36),
@@ -378,13 +350,15 @@ char __thiscall TeamTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
                              (unsigned __int8 *)(this + 36),
                              (CCINIClass *)&stru_830620[76440],
                              v45);
+  char v10; // al
   v10 = INIClass::ReadBool_Overwrite( /*0x6f11ad*/
           (int)aP1,
           (unsigned __int8 *)(this + 36),
           (CCINIClass *)&stru_830620[76428],
           *(_BYTE *)(this + 167));
-  v11 = this->q0A9; /*0x6f11b2*/
+  char v11 = this->q0A9; /*0x6f11b2*/
   *(_BYTE *)(this + 167) = v10; /*0x6f11b8*/
+  char v12; // al
   v12 = INIClass::ReadBool_Overwrite( /*0x6f11c7*/
           (int)aP1,
           (unsigned __int8 *)(this + 36),
@@ -397,13 +371,15 @@ char __thiscall TeamTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
                              (unsigned __int8 *)(this + 36),
                              (CCINIClass *)&stru_830620[76404],
                              v46);
+  char v13; // al
   v13 = INIClass::ReadBool_Overwrite( /*0x6f11fb*/
           (int)aP1,
           (unsigned __int8 *)(this + 36),
           (CCINIClass *)&stru_830620[76392],
           this->q0AB);
-  v14 = this->TeamTypeClass_field_2C; /*0x6f1200*/
+  char v14 = this->TeamTypeClass_field_2C; /*0x6f1200*/
   this->q0AB = v13; /*0x6f1206*/
+  char v15; // al
   v15 = INIClass::ReadBool_Overwrite( /*0x6f1215*/
           (int)aP1,
           (unsigned __int8 *)(this + 36),
@@ -416,13 +392,15 @@ char __thiscall TeamTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
                              (unsigned __int8 *)(this + 36),
                              (CCINIClass *)&stru_830620[76364],
                              v47);
+  char v16; // al
   v16 = INIClass::ReadBool_Overwrite( /*0x6f1249*/
           (int)aP1,
           (unsigned __int8 *)(this + 36),
           (CCINIClass *)&stru_830620[76352],
           this->q0A8);
-  v17 = this->q02B; /*0x6f124e*/
+  char v17 = this->q02B; /*0x6f124e*/
   this->q0A8 = v16; /*0x6f1254*/
+  char v18; // al
   v18 = INIClass::ReadBool_Overwrite( /*0x6f1263*/
           (int)aP1,
           (unsigned __int8 *)(this + 36),
@@ -435,13 +413,15 @@ char __thiscall TeamTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
                              (unsigned __int8 *)(this + 36),
                              (CCINIClass *)&stru_830620[76336],
                              v48);
+  char v19; // al
   v19 = INIClass::ReadBool_Overwrite( /*0x6f1297*/
           (int)aP1,
           (unsigned __int8 *)(this + 36),
           (CCINIClass *)&stru_830620[76320],
           *(_BYTE *)(this + 174));
-  v20 = *(_BYTE *)(this + 173); /*0x6f129c*/
+  char v20 = *(_BYTE *)(this + 173); /*0x6f129c*/
   *(_BYTE *)(this + 174) = v19; /*0x6f12a2*/
+  char v21; // al
   v21 = INIClass::ReadBool_Overwrite( /*0x6f12b1*/
           (int)aP1,
           (unsigned __int8 *)(this + 36),
@@ -454,22 +434,24 @@ char __thiscall TeamTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
                              (unsigned __int8 *)(this + 36),
                              (CCINIClass *)&stru_830620[76296],
                              v49);
+  int v22; // eax
   v22 = INIClass::ReadInt_Overwrite( /*0x6f12e5*/
           (int)aP1,
           (unsigned __int8 *)(this + 36),
           (CCINIClass *)&stru_830620[76284],
-          *(INIClass **)(this + 180));
-  v23 = *(CCINIClass **)(this + 184); /*0x6f12ea*/
+          this->q0B4);
+  v23 = this->q0B8; /*0x6f12ea*/
   this->q0B4 = v22; /*0x6f12f0*/
+  int v24; // eax
   v24 = INIClass::ReadInt_Overwrite( /*0x6f12ff*/
           (int)aP1,
           (unsigned __int8 *)(this + 36),
           (CCINIClass *)&stru_830620[76280],
           (INIClass *)v23);
-  v50 = *(CCINIClass **)(this + 204); /*0x6f130c*/
+  v50 = this->q0CC; /*0x6f130c*/
   this->q0B8 = v24; /*0x6f1313*/
-  v25 = INIClass::ReadInt_Overwrite((int)aP1, (unsigned __int8 *)(this + 36), aTechlevel, (INIClass *)v50); /*0x6f1319*/
-  v26 = *(char **)(this + 208); /*0x6f131e*/
+  int v25 = INIClass::ReadInt_Overwrite((int)aP1, (unsigned __int8 *)(this + 36), aTechlevel, (INIClass *)v50); /*0x6f1319*/
+  char * v26 = this->q0D0; /*0x6f131e*/
   this->q0CC = v25; /*0x6f1324*/
   if ( INIClass::GetString( /*0x6f1341*/
          aP1,
@@ -485,7 +467,7 @@ char __thiscall TeamTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
   {
     v27 = v26; /*0x6f1355*/
   }
-  v28 = *(CCINIClass **)(this + 156); /*0x6f1357*/
+  v28 = this->q09C; /*0x6f1357*/
   this->q0D0 = v27; /*0x6f135d*/
   v29 = INIClass::ReadInt_Overwrite( /*0x6f136c*/
           (int)aP1,
@@ -530,7 +512,7 @@ char __thiscall TeamTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
           (unsigned __int8 *)(this + 36),
           (CCINIClass *)&stru_830620[76172],
           v34);
-  v36 = *(CCINIClass **)(this + 212); /*0x6f140d*/
+  v36 = this->q0D4; /*0x6f140d*/
   *(_BYTE *)(this + 245) = v35; /*0x6f141a*/
   v37 = (INIClass *)Waypoint::To_String((int)v36); /*0x6f1420*/
   if ( (int)INIClass::GetString(aP1, (INIClass *)(this + 36), (unsigned __int8 *)&stru_817244, v37, &aP4, 64) > 0 ) /*0x6f1435*/
@@ -544,7 +526,7 @@ char __thiscall TeamTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
               &aP4,
               64) > 0 )
     this->q0D8 = String::To_Waypoint(aP4[0]); /*0x6f1473*/
-  v39 = *(INIClass **)(this + 224); /*0x6f1479*/
+  v39 = this->q0E0; /*0x6f1479*/
   if ( INIClass::GetString( /*0x6f1496*/
          aP1,
          (INIClass *)(this + 36),
@@ -559,7 +541,7 @@ char __thiscall TeamTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
   {
     ScriptType = v39; /*0x6f14aa*/
   }
-  v41 = *(TaskForceClass **)(this + 228); /*0x6f14ac*/
+  v41 = this->q0E4; /*0x6f14ac*/
   this->q0E0 = ScriptType; /*0x6f14c9*/
   if ( INIClass::GetString( /*0x6f14cf*/
          aP1,
@@ -599,10 +581,8 @@ namespace gamemd {
 char TeamTypeClass::GetMaxCount(CCINIClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall TeamTypeClass::GetMaxCount(int this, CCINIClass *aP1)
+void TeamTypeClass::GetMaxCount(int this, CCINIClass *aP1)
 {
-  int v3; // eax
-  int v4; // ebp
   INIClass *v5; // edi
   INIClass *v6; // eax
   INIClass *v7; // ecx
@@ -625,21 +605,17 @@ char __thiscall TeamTypeClass::GetMaxCount(int this, CCINIClass *aP1)
   INIClass *v24; // ecx
   INIClass *v25; // edx
   INIClass *v26; // eax
-  int v27; // eax
   INIClass *v28; // eax
   INIClass *v29; // eax
-  int v30; // eax
-  int v31; // esi
-
   if ( !AbstractTypeClass::WriteINI((char *)this, aP1) ) /*0x6f1559*/
     return 0; /*0x6f185b*/
-  v3 = this->q0C4; /*0x6f1566*/
-  v4 = -1; /*0x6f156d*/
+  int v3 = this->q0C4; /*0x6f1566*/
+  int v4 = -1; /*0x6f156d*/
   if ( v3 ) /*0x6f1573*/
   {
     v4 = *(_DWORD *)(*(_DWORD *)(v3 + 52) + 184); /*0x6f1578*/
   }
-  else if ( BuildingType::IsSpecialType(*(void **)(this + 200)) ) /*0x6f1586*/
+  else if ( BuildingType::IsSpecialType(this->q0C8) ) /*0x6f1586*/
   {
     v4 = this->q0C8; /*0x6f158f*/
   }
@@ -648,13 +624,13 @@ char __thiscall TeamTypeClass::GetMaxCount(int this, CCINIClass *aP1)
     aP1->__pad_0,
     (INIClass *)(this + 36),
     (CCINIClass *)&stru_830620[76492],
-    *(INIClass **)(this + 160),
+    this->q0A0,
     0);
   INIClass::SetInt( /*0x6f15bf*/
     aP1->__pad_0,
     (INIClass *)(this + 36),
     (CCINIClass *)&stru_830620[76472],
-    *(INIClass **)(this + 192),
+    this->q0C0,
     0);
   LOBYTE(v6) = this->q0A4; /*0x6f15c4*/
   INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &stru_830620[76460], v6); /*0x6f15d3*/
@@ -689,20 +665,20 @@ char __thiscall TeamTypeClass::GetMaxCount(int this, CCINIClass *aP1)
     aP1->__pad_0,
     (INIClass *)(this + 36),
     (CCINIClass *)&stru_830620[76284],
-    *(INIClass **)(this + 180),
+    this->q0B4,
     0);
   INIClass::SetInt( /*0x6f1711*/
     aP1->__pad_0,
     (INIClass *)(this + 36),
     (CCINIClass *)&stru_830620[76280],
-    *(INIClass **)(this + 184),
+    this->q0B8,
     0);
-  INIClass::SetInt(aP1->__pad_0, (INIClass *)(this + 36), aTechlevel, *(INIClass **)(this + 204), 0); /*0x6f1727*/
+  INIClass::SetInt(aP1->__pad_0, (INIClass *)(this + 36), aTechlevel, this->q0CC, 0); /*0x6f1727*/
   INIClass::SetInt( /*0x6f173d*/
     aP1->__pad_0,
     (INIClass *)(this + 36),
     (CCINIClass *)&stru_830620[75684],
-    *(INIClass **)(this + 156),
+    this->q09C,
     0);
   LOBYTE(v20) = *(_BYTE *)(this + 179); /*0x6f1742*/
   INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &stru_830620[76296], v20); /*0x6f1751*/
@@ -718,17 +694,17 @@ char __thiscall TeamTypeClass::GetMaxCount(int this, CCINIClass *aP1)
   INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &g_INI_Key_Height[68], v25); /*0x6f17b5*/
   LOBYTE(v26) = this->q0F7; /*0x6f17ba*/
   INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &stru_830620[76228], v26); /*0x6f17c9*/
-  v27 = this->q0D0; /*0x6f17ce*/
+  int v27 = this->q0D0; /*0x6f17ce*/
   if ( v27 ) /*0x6f17d6*/
     INIClass::SetString(aP1->__pad_0, (INIClass *)(this + 36), (INIClass *)unk_81728C, (INIClass *)(v27 + 36)); /*0x6f17e4*/
-  v28 = (INIClass *)Waypoint::To_String(*(CCINIClass **)(this + 212)); /*0x6f17ef*/
+  v28 = (INIClass *)Waypoint::To_String(this->q0D4); /*0x6f17ef*/
   INIClass::SetString(aP1->__pad_0, (INIClass *)(this + 36), &stru_817244, v28); /*0x6f17fd*/
-  v29 = (INIClass *)Waypoint::To_String(*(CCINIClass **)(this + 216)); /*0x6f1808*/
+  v29 = (INIClass *)Waypoint::To_String(this->q0D8); /*0x6f1808*/
   INIClass::SetString(aP1->__pad_0, (INIClass *)(this + 36), (INIClass *)&stru_830620[76152], v29); /*0x6f1816*/
-  v30 = this->q0E0; /*0x6f181b*/
+  int v30 = this->q0E0; /*0x6f181b*/
   if ( v30 ) /*0x6f1823*/
     INIClass::SetString(aP1->__pad_0, (INIClass *)(this + 36), &stru_817348, (INIClass *)(v30 + 36)); /*0x6f1831*/
-  v31 = this->q0E4; /*0x6f1836*/
+  int v31 = this->q0E4; /*0x6f1836*/
   if ( v31 ) /*0x6f183e*/
     INIClass::SetString(aP1->__pad_0, v5, &stru_8172FC, (INIClass *)(v31 + 36)); /*0x6f184c*/
   return 1; /*0x6f1853*/
@@ -741,15 +717,14 @@ namespace gamemd {
 int TeamTypeClass::GetGroup()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall TeamTypeClass::GetGroup(_DWORD *this)
+void TeamTypeClass::GetGroup()
 {
   int result; // eax
-  int v2; // ecx
 
   result = this->q09C; /*0x6f1870*/
   if ( result == -1 ) /*0x6f1879*/
   {
-    v2 = this->q0E4; /*0x6f1880*/
+    int v2 = this->q0E4; /*0x6f1880*/
     if ( v2 ) /*0x6f1888*/
       return *(_DWORD *)(v2 + 152); /*0x6f188a*/
   }
@@ -765,12 +740,9 @@ unsigned int * TeamTypeClass::GetTransportWaypoint(unsigned int * a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall TeamTypeClass::GetTransportWaypoint(int *this, _DWORD *a2)
 {
-  int v2; // eax
-  int v4; // ecx
-  int *v5; // [esp+0h] [ebp-4h] BYREF
 
-  v5 = this; /*0x6f18e0*/
-  v2 = this->q0D8; /*0x6f18e1*/
+  TeamTypeClass *v5 = this; /*0x6f18e0*/
+  int v2 = this->q0D8; /*0x6f18e1*/
   if ( v2 == -1 ) /*0x6f18ea*/
   {
     *a2 = DataGlobal_B0E9C8; /*0x6f18f6*/
@@ -778,7 +750,7 @@ _DWORD *__thiscall TeamTypeClass::GetTransportWaypoint(int *this, _DWORD *a2)
   }
   else
   {
-    v4 = *ScenarioClass::Get_Waypoint_Location((char *)g_ScenarioClass_Instance, &v5, v2); /*0x6f190d*/
+    int v4 = *ScenarioClass::Get_Waypoint_Location((char *)g_ScenarioClass_Instance, &v5, v2); /*0x6f190d*/
     *a2 = v4; /*0x6f1913*/
     return a2; /*0x6f190f*/
   }
@@ -791,71 +763,59 @@ namespace gamemd {
 int TeamTypeClass::PowerDrainUpdate(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall TeamTypeClass::_vt13(int this, int *a2)
+void TeamTypeClass::_vt13(int this, int *a2)
 {
-  int v3; // ecx
-  int v4; // edx
-  int v5; // eax
-  int v6; // ecx
-  int v7; // edx
-  int v8; // eax
-  int v9; // ecx
-  int v10; // edx
-  int v11; // eax
-  int v12; // ecx
-  int v13; // ecx
-  int v14; // eax
-  int v15; // eax
-  int v16; // eax
-  int v17; // eax
-  int v18; // eax
   int result; // eax
-  int v20; // eax
-  int v21; // esi
-  int v22; // eax
 
   AbstractTypeClass::ProcessPower((char *)this, a2); /*0x6f1c89*/
   Power::TimerProcess(this->q09C); /*0x6f1c97*/
+  int v3; // ecx
   LOBYTE(v3) = this->q0A8; /*0x6f1c9c*/
   Power::FlagProcess(a2, v3); /*0x6f1ca5*/
+  int v4; // edx
   LOBYTE(v4) = this->q0A9; /*0x6f1caa*/
-  v5 = Power::FlagProcess(a2, v4); /*0x6f1cb3*/
+  int v5 = Power::FlagProcess(a2, v4); /*0x6f1cb3*/
   LOBYTE(v5) = this->q0AA; /*0x6f1cb8*/
   Power::FlagProcess(a2, v5); /*0x6f1cc1*/
+  int v6; // ecx
   LOBYTE(v6) = this->q0AB; /*0x6f1cc6*/
   Power::FlagProcess(a2, v6); /*0x6f1ccf*/
+  int v7; // edx
   LOBYTE(v7) = this->q02B; /*0x6f1cd4*/
-  v8 = Power::FlagProcess(a2, v7); /*0x6f1cdd*/
+  int v8 = Power::FlagProcess(a2, v7); /*0x6f1cdd*/
   LOBYTE(v8) = *(_BYTE *)(this + 173); /*0x6f1ce2*/
   Power::FlagProcess(a2, v8); /*0x6f1ceb*/
+  int v9; // ecx
   LOBYTE(v9) = *(_BYTE *)(this + 174); /*0x6f1cf0*/
   Power::FlagProcess(a2, v9); /*0x6f1cf9*/
+  int v10; // edx
   LOBYTE(v10) = this->q0AF; /*0x6f1cfe*/
-  v11 = Power::FlagProcess(a2, v10); /*0x6f1d07*/
+  int v11 = Power::FlagProcess(a2, v10); /*0x6f1d07*/
   LOBYTE(v11) = this->TeamTypeClass_field_2C; /*0x6f1d0c*/
   Power::FlagProcess(a2, v11); /*0x6f1d15*/
+  int v12; // ecx
   LOBYTE(v12) = *(_BYTE *)(this + 177); /*0x6f1d1a*/
   Power::FlagProcess(a2, v12); /*0x6f1d23*/
   Power::TimerProcess(this->q0B4); /*0x6f1d31*/
   Power::TimerProcess(this->q0B8); /*0x6f1d3f*/
   Power::TimerProcess(this->q02F); /*0x6f1d4d*/
-  v13 = this->q0C4; /*0x6f1d52*/
+  int v13 = this->q0C4; /*0x6f1d52*/
   if ( v13 ) /*0x6f1d5a*/
   {
-    v14 = (*(int (__thiscall **)(int))(*(_DWORD *)v13 + 44))(v13); /*0x6f1d5e*/
+    int v14 = (*(int (__thiscall **)(int))(*(_DWORD *)v13 + 44))(v13); /*0x6f1d5e*/
     Power::TimerProcess(v14); /*0x6f1d64*/
   }
-  v15 = this->q0C4; /*0x6f1d69*/
+  int v15 = this->q0C4; /*0x6f1d69*/
   if ( v15 ) /*0x6f1d71*/
   {
-    v16 = (*(int (__stdcall **)(int))(*(_DWORD *)(v15 + 4) + 16))(v15 + 4); /*0x6f1d7a*/
+    int v16 = (*(int (__stdcall **)(int))(*(_DWORD *)(v15 + 4) + 16))(v15 + 4); /*0x6f1d7a*/
     Power::TimerProcess(v16); /*0x6f1d80*/
   }
   Power::TimerProcess(this->q0CC); /*0x6f1d8e*/
-  v17 = this->q0D0; /*0x6f1d93*/
+  int v17 = this->q0D0; /*0x6f1d93*/
   if ( v17 ) /*0x6f1d9b*/
   {
-    v18 = (*(int (__stdcall **)(int))(*(_DWORD *)(v17 + 4) + 16))(v17 + 4); /*0x6f1da4*/
+    int v18 = (*(int (__stdcall **)(int))(*(_DWORD *)(v17 + 4) + 16))(v17 + 4); /*0x6f1da4*/
     Power::TimerProcess(v18); /*0x6f1daa*/
   }
   Power::TimerProcess(this->q0D4); /*0x6f1db8*/
@@ -864,13 +824,13 @@ int __thiscall TeamTypeClass::_vt13(int this, int *a2)
   result = this->q0E0; /*0x6f1dd9*/
   if ( result ) /*0x6f1de1*/
   {
-    v20 = (*(int (__stdcall **)(int))(*(_DWORD *)(result + 4) + 16))(result + 4); /*0x6f1dea*/
+    int v20 = (*(int (__stdcall **)(int))(*(_DWORD *)(result + 4) + 16))(result + 4); /*0x6f1dea*/
     result = Power::TimerProcess(v20); /*0x6f1df0*/
   }
-  v21 = this->q0E4; /*0x6f1df5*/
+  int v21 = this->q0E4; /*0x6f1df5*/
   if ( v21 ) /*0x6f1dfd*/
   {
-    v22 = (*(int (__stdcall **)(int))(*(_DWORD *)(v21 + 4) + 16))(v21 + 4); /*0x6f1e06*/
+    int v22 = (*(int (__stdcall **)(int))(*(_DWORD *)(v21 + 4) + 16))(v21 + 4); /*0x6f1e06*/
     return Power::TimerProcess(v22); /*0x6f1e0c*/
   }
   return result; /*0x6f1e11*/
@@ -883,24 +843,21 @@ namespace gamemd {
 int TeamTypeClass::ProcessTaskForce()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall TeamTypeClass::ProcessTaskForce(int this)
+void TeamTypeClass::ProcessTaskForce(int this)
 {
-  int v2; // edi
   int result; // eax
-  int v4; // ebp
-  int v5; // eax
 
-  v2 = 0; /*0x6f1fa7*/
+  int v2 = 0; /*0x6f1fa7*/
   result = this->q0E4; /*0x6f1fa9*/
   this->q0F0 = 1; /*0x6f1faf*/
   *(_BYTE *)(this + 241) = 0; /*0x6f1fb6*/
   this->q0EC = 9; /*0x6f1fbc*/
   if ( *(int *)(result + 156) > 0 ) /*0x6f1fcc*/
   {
-    v4 = 168; /*0x6f1fcf*/
+    int v4 = 168; /*0x6f1fcf*/
     do /*0x6f201d*/
     {
-      v5 = *(_DWORD *)(result + v4); /*0x6f1fd4*/
+      int v5 = *(_DWORD *)(result + v4); /*0x6f1fd4*/
       if ( *(_BYTE *)(v5 + 3278) ) /*0x6f1fd7*/
       {
         if ( *(_DWORD *)(v5 + 1504) ) /*0x6f1fdf*/
@@ -927,7 +884,7 @@ namespace gamemd {
 int TeamTypeClass::GetAuxField()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall TeamTypeClass::_vt16(_DWORD *this)
+void TeamTypeClass::_vt16()
 {
   return this->q098; /*0x6f20c6*/
 }
@@ -973,23 +930,13 @@ namespace gamemd {
 char TeamTypeClass_28::Release(int a2, int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall TeamTypeClass_28_::_vt02(void *this, int a2, int *a3)
+void TeamTypeClass_28_::_vt02(int a2, int *a3)
 {
-  int *v4; // ebx
-  int *v5; // eax
-  _DWORD *v6; // edi
-  _DWORD *v7; // eax
-  int v8; // ecx
-  _DWORD *v9; // eax
-  int v10; // ecx
-  int v12; // ecx
-  int v13; // eax
-  int v14; // edx
-  int v15; // eax
 
   if ( a2 ) /*0x6f22fc*/
   {
-    v4 = a3; /*0x6f2302*/
+  _DWORD *v6; // edi
+    int * v4 = a3; /*0x6f2302*/
     this->q00C = 0; /*0x6f2306*/
     if ( a3 ) /*0x6f230c*/
     {
@@ -997,8 +944,8 @@ char __thiscall TeamTypeClass_28_::_vt02(void *this, int a2, int *a3)
       v6 = a3 + 1; /*0x6f234b*/
       if ( a2 - 1 >= 0 ) /*0x6f234e*/
       {
-        v9 = a3 + 2; /*0x6f2350*/
-        v10 = a2; /*0x6f2353*/
+        _DWORD * v9 = a3 + 2; /*0x6f2350*/
+        int v10 = a2; /*0x6f2353*/
         do /*0x6f235e*/
         {
           *v9 = 0; /*0x6f2354*/
@@ -1010,15 +957,15 @@ char __thiscall TeamTypeClass_28_::_vt02(void *this, int a2, int *a3)
     }
     else
     {
-      v5 = (int *)__2_YAPAXI_Z(8 * a2 + 4); /*0x6f2316*/
+      int * v5 = (int *)__2_YAPAXI_Z(8 * a2 + 4); /*0x6f2316*/
       if ( v5 ) /*0x6f2320*/
       {
         *v5 = a2; /*0x6f2325*/
         v6 = v5 + 1; /*0x6f2329*/
         if ( a2 - 1 >= 0 ) /*0x6f232c*/
         {
-          v7 = v5 + 2; /*0x6f232e*/
-          v8 = a2; /*0x6f2331*/
+          _DWORD * v7 = v5 + 2; /*0x6f232e*/
+          int v8 = a2; /*0x6f2331*/
           do /*0x6f233c*/
           {
             *v7 = 0; /*0x6f2332*/
@@ -1038,15 +985,15 @@ char __thiscall TeamTypeClass_28_::_vt02(void *this, int a2, int *a3)
     {
       if ( this->TeamTypeClass_28_field_0x4 ) /*0x6f2371*/
       {
-        v12 = this->TeamTypeClass_28_field_0x8; /*0x6f2378*/
+        int v12 = this->TeamTypeClass_28_field_0x8; /*0x6f2378*/
         if ( a2 < v12 ) /*0x6f237d*/
           v12 = a2; /*0x6f237f*/
-        v13 = 0; /*0x6f2381*/
+        int v13 = 0; /*0x6f2381*/
         if ( v12 > 0 ) /*0x6f2385*/
         {
           do /*0x6f239d*/
           {
-            v14 = this->TeamTypeClass_28_field_0x4; /*0x6f2387*/
+            int v14 = this->TeamTypeClass_28_field_0x4; /*0x6f2387*/
             ++v13; /*0x6f238a*/
             v6[2 * v13 - 2] = *(_DWORD *)(v14 + 8 * v13 - 8); /*0x6f2391*/
             v6[2 * v13 - 1] = *(_DWORD *)(v14 + 8 * v13 - 4); /*0x6f2399*/
@@ -1056,7 +1003,7 @@ char __thiscall TeamTypeClass_28_::_vt02(void *this, int a2, int *a3)
         }
         if ( this->IsAllocated ) /*0x6f23a3*/
         {
-          v15 = this->TeamTypeClass_28_field_0x4; /*0x6f23aa*/
+          int v15 = this->TeamTypeClass_28_field_0x4; /*0x6f23aa*/
           if ( v15 ) /*0x6f23af*/
             __3_YAXPAX_Z((void *)(v15 - 4)); /*0x6f23b9*/
           this->TeamTypeClass_28_field_0x4 = 0; /*0x6f23c1*/
@@ -1086,25 +1033,13 @@ namespace gamemd {
 char TeamTypeClass_28::SetCapacity(int a2, int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall TeamTypeClass_28_::sub_6F24B0(void *this, int a2, int *a3)
+void TeamTypeClass_28_::sub_6F24B0(int a2, int *a3)
 {
-  int *v4; // ebp
-  int *v5; // eax
-  _DWORD *v6; // edi
-  _DWORD *v7; // eax
-  int v8; // ecx
-  _DWORD *v9; // eax
-  int v10; // ecx
-  int v11; // ecx
-  int v12; // eax
-  int v13; // edx
-  int v14; // eax
-  void *v15; // ebp
-  int v16; // eax
 
   if ( a2 ) /*0x6f24bc*/
   {
-    v4 = a3; /*0x6f24c2*/
+  _DWORD *v6; // edi
+    int * v4 = a3; /*0x6f24c2*/
     this->q00C = 0; /*0x6f24c6*/
     if ( a3 ) /*0x6f24cc*/
     {
@@ -1112,8 +1047,8 @@ char __thiscall TeamTypeClass_28_::sub_6F24B0(void *this, int a2, int *a3)
       v6 = a3 + 1; /*0x6f250c*/
       if ( a2 - 1 >= 0 ) /*0x6f250f*/
       {
-        v9 = a3 + 2; /*0x6f2511*/
-        v10 = a2; /*0x6f2514*/
+        _DWORD * v9 = a3 + 2; /*0x6f2511*/
+        int v10 = a2; /*0x6f2514*/
         do /*0x6f251f*/
         {
           *v9 = 0; /*0x6f2515*/
@@ -1125,15 +1060,15 @@ char __thiscall TeamTypeClass_28_::sub_6F24B0(void *this, int a2, int *a3)
     }
     else
     {
-      v5 = (int *)__2_YAPAXI_Z(8 * a2 + 4); /*0x6f24d6*/
+      int * v5 = (int *)__2_YAPAXI_Z(8 * a2 + 4); /*0x6f24d6*/
       if ( v5 ) /*0x6f24e0*/
       {
         *v5 = a2; /*0x6f24e5*/
         v6 = v5 + 1; /*0x6f24e9*/
         if ( a2 - 1 >= 0 ) /*0x6f24ec*/
         {
-          v7 = v5 + 2; /*0x6f24ee*/
-          v8 = a2; /*0x6f24f1*/
+          _DWORD * v7 = v5 + 2; /*0x6f24ee*/
+          int v8 = a2; /*0x6f24f1*/
           do /*0x6f24fc*/
           {
             *v7 = 0; /*0x6f24f2*/
@@ -1153,15 +1088,15 @@ char __thiscall TeamTypeClass_28_::sub_6F24B0(void *this, int a2, int *a3)
       return 0; /*0x6f25c7*/
     if ( this->TeamTypeClass_28_field_0x4 ) /*0x6f252d*/
     {
-      v11 = this->TeamTypeClass_28_field_0x8; /*0x6f2534*/
+      int v11 = this->TeamTypeClass_28_field_0x8; /*0x6f2534*/
       if ( a2 < v11 ) /*0x6f2539*/
         v11 = a2; /*0x6f253b*/
-      v12 = 0; /*0x6f253d*/
+      int v12 = 0; /*0x6f253d*/
       if ( v11 > 0 ) /*0x6f2541*/
       {
         do /*0x6f2559*/
         {
-          v13 = this->TeamTypeClass_28_field_0x4; /*0x6f2543*/
+          int v13 = this->TeamTypeClass_28_field_0x4; /*0x6f2543*/
           ++v12; /*0x6f2546*/
           v6[2 * v12 - 2] = *(_DWORD *)(v13 + 8 * v12 - 8); /*0x6f254d*/
           v6[2 * v12 - 1] = *(_DWORD *)(v13 + 8 * v12 - 4); /*0x6f2555*/
@@ -1171,10 +1106,10 @@ char __thiscall TeamTypeClass_28_::sub_6F24B0(void *this, int a2, int *a3)
       }
       if ( this->IsAllocated ) /*0x6f255f*/
       {
-        v14 = this->TeamTypeClass_28_field_0x4; /*0x6f2566*/
+        int v14 = this->TeamTypeClass_28_field_0x4; /*0x6f2566*/
         if ( v14 ) /*0x6f256b*/
         {
-          v15 = (void *)(v14 - 4); /*0x6f2570*/
+          void * v15 = (void *)(v14 - 4); /*0x6f2570*/
           Array::ForEachReverse(v14, 8, *(_DWORD *)(v14 - 4), (int (__thiscall *)(int))nullsub_240); /*0x6f257c*/
           __3_YAXPAX_Z(v15); /*0x6f2582*/
           v4 = a3; /*0x6f2587*/
@@ -1190,7 +1125,7 @@ char __thiscall TeamTypeClass_28_::sub_6F24B0(void *this, int a2, int *a3)
   {
     (*(void (__thiscall **)(void *))(this->q00C)(this); /*0x6f25ab*/
   }
-  v16 = this->TeamTypeClass_28_field_0x8; /*0x6f25ae*/
+  int v16 = this->TeamTypeClass_28_field_0x8; /*0x6f25ae*/
   if ( v16 < this->TeamTypeClass_28_field_0x10 ) /*0x6f25b6*/
     this->TeamTypeClass_28_field_0x10 = v16; /*0x6f25b8*/
   return 1; /*0x6f25bb*/

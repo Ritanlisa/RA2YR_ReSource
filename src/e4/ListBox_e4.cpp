@@ -6,13 +6,11 @@
 unsigned int ListBox::EditSubclassProc(HWND hWnd, UINT Msg, WPARAM wParam, wchar_t * lParam)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __stdcall ListBox_EditSubclassProc(HWND hWnd, UINT Msg, WPARAM wParam, wchar_t *lParam)
+void ListBox_EditSubclassProc(HWND hWnd, UINT Msg, WPARAM wParam, wchar_t *lParam)
 {
   LRESULT (__stdcall *v4)(HWND, UINT, WPARAM, LPARAM); // esi
-  int v5; // eax
   LRESULT (__stdcall **v6)(HWND, UINT, WPARAM, LPARAM); // eax
   HWND *v7; // eax
-  _DWORD *v8; // edi
   LONG WindowLongA; // eax
   LONG v11; // ebx
   UINT v12; // ebp
@@ -20,31 +18,24 @@ unsigned int __stdcall ListBox_EditSubclassProc(HWND hWnd, UINT Msg, WPARAM wPar
   HWND Parent; // eax
   LONG v15; // ebx
   size_t v16; // esi
-  char *v17; // ebp
   unsigned __int16 v18; // ax
   HWND v19; // eax
   HWND v20; // esi
   HWND v21; // eax
   HWND NextDlgTabItem; // eax
-  int v23; // eax
   HWND v24; // eax
-  bool v25; // bl
   LONG left; // ecx
   LONG top; // eax
-  unsigned int v28; // eax
   HWND v29; // eax
   HWND v30; // eax
   const WCHAR *v31; // edi
   WPARAM v32; // edi
   const wchar_t *v33; // esi
-  const char *v34; // edi
   WPARAM v35; // [esp-8h] [ebp-1884h]
   HWND v36; // [esp-4h] [ebp-1880h]
-  int v37; // [esp-4h] [ebp-1880h]
   LRESULT (__stdcall *lpPrevWndFunc)(HWND, UINT, WPARAM, LPARAM); // [esp+10h] [ebp-186Ch]
   struct tagRECT v39; // [esp+14h] [ebp-1868h] BYREF
   HWND v40; // [esp+24h] [ebp-1858h] BYREF
-  int v41; // [esp+28h] [ebp-1854h] BYREF
   struct tagRECT v42; // [esp+2Ch] [ebp-1850h] BYREF
   struct tagRECT Rect; // [esp+3Ch] [ebp-1840h] BYREF
   struct tagRECT v44; // [esp+4Ch] [ebp-1830h] BYREF
@@ -56,7 +47,7 @@ unsigned int __stdcall ListBox_EditSubclassProc(HWND hWnd, UINT Msg, WPARAM wPar
   lpPrevWndFunc = 0; /*0x6141a7*/
   if ( g_DialogHashMap_Grow ) /*0x6141ab*/
   {
-    v5 = *((_DWORD *)g_DialogHashMap_Entries + (g_DialogHashMap_Insert(&hWnd) & ((1 << g_DialogHashMap_Insert) - 1))); /*0x6141cf*/
+    int v5 = *((_DWORD *)g_DialogHashMap_Entries + (g_DialogHashMap_Insert(&hWnd) & ((1 << g_DialogHashMap_Insert) - 1))); /*0x6141cf*/
     if ( v5 ) /*0x6141d4*/
     {
       while ( *(HWND *)v5 != hWnd ) /*0x6141df*/
@@ -86,7 +77,7 @@ LABEL_8:
     if ( !v7 ) /*0x614245*/
       return CallWindowProcA(v4, hWnd, Msg, wParam, (LPARAM)lParam); /*0x614245*/
   }
-  v8 = v7 + 1; /*0x61424d*/
+  _DWORD * v8 = v7 + 1; /*0x61424d*/
   if ( v7 == (HWND *)-4 ) /*0x614252*/
     return CallWindowProcA(v4, hWnd, Msg, wParam, (LPARAM)lParam); /*0x614285*/
   if ( GetFocus() == hWnd && !v8[61] ) /*0x614297*/
@@ -155,7 +146,7 @@ LABEL_70:
     }
     else
     {
-      v34 = (const char *)lParam; /*0x614977*/
+      const char * v34 = (const char *)lParam; /*0x614977*/
       CopyWideToChar(lParam, (char *)String, v13); /*0x614988*/
       v34[v13 - 1] = 0; /*0x614992*/
       return strlen(v34); /*0x61499f*/
@@ -175,7 +166,7 @@ LABEL_70:
     {
       if ( Msg == 1199 ) /*0x61455e*/
       {
-        v23 = v8[60]; /*0x614560*/
+        int v23 = v8[60]; /*0x614560*/
         v8[61] = 1; /*0x614566*/
         if ( v23 ) /*0x614572*/
         {
@@ -192,7 +183,7 @@ LABEL_70:
         ScreenDialogToClient(hWnd, &v42); /*0x6145d5*/
         v24 = GetParent(hWnd); /*0x6145e9*/
         GetClassNameA(v24, ClassName, 16); /*0x6145f0*/
-        v25 = strcmp(ClassName, g_INI_Key_ComboBox) == 0; /*0x61462e*/
+        bool v25 = strcmp(ClassName, g_INI_Key_ComboBox) == 0; /*0x61462e*/
         if ( v12 == 15 && GetUpdateRect(hWnd, &v39, 0) ) /*0x614645*/
         {
           left = v42.left; /*0x61464f*/
@@ -209,19 +200,19 @@ LABEL_70:
         }
         Rect.left = left; /*0x61468d*/
         Rect.right = v42.right - left + 1; /*0x61469a*/
-        v37 = v8[50]; /*0x6146a5*/
+        int v37 = v8[50]; /*0x6146a5*/
         Rect.bottom = v42.bottom - top + 1; /*0x6146ad*/
         Rect.top = top; /*0x6146b5*/
         SetupDialogRenderBuffer(&Rect.left, hWnd, v37); /*0x6146b9*/
         if ( !v25 ) /*0x6146c0*/
           DrawDialogGradient((int *)DSurface_Alternate, &Rect.left, 2, -1); /*0x6146d0*/
-        v41 = 0; /*0x6146eb*/
+        int v41 = 0; /*0x6146eb*/
         Memory_Helper_6149B0(hWnd, 5120, (int)&v41); /*0x6146f3*/
         v44.left = v42.left; /*0x614706*/
         v44.top = v42.top; /*0x614710*/
         v44.right = v42.right - v42.left + 1; /*0x614720*/
         v44.bottom = v42.bottom - v42.top + 1; /*0x614724*/
-        v28 = GetWindowLongA(hWnd, -16); /*0x614728*/
+        unsigned int v28 = GetWindowLongA(hWnd, -16); /*0x614728*/
         DrawTextRendererMultiline( /*0x614760*/
           (_DWORD *)DSurface_Alternate,
           &v44.left,
@@ -250,7 +241,7 @@ LABEL_70:
       if ( (WindowLongA & 4) != 0 ) /*0x614450*/
       {
         v16 = CallWindowProcA(lpPrevWndFunc, hWnd, 0xEu, 0, 0) + 3; /*0x614473*/
-        v17 = (char *)__2_YAPAXI_Z(v16); /*0x614486*/
+        char * v17 = (char *)__2_YAPAXI_Z(v16); /*0x614486*/
         CallWindowProcA(lpPrevWndFunc, hWnd, 0xDu, v16, (LPARAM)v17); /*0x61448e*/
         strcat(v17, String2); /*0x6144b3*/
         CallWindowProcA(lpPrevWndFunc, hWnd, 0xCu, 0, (LPARAM)v17); /*0x6144cb*/

@@ -11,11 +11,10 @@ namespace gamemd {
 char sub_77E110()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char sub_77E110()
+void sub_77E110()
 {
   int v0; // eax
   int v1; // esi
-
   if ( ppv ) /*0x77e117*/
   {
     (*(void (__stdcall **)(LPVOID, int))(*(_DWORD *)ppv + 124))(ppv, dword_B779BC); /*0x77e123*/
@@ -56,9 +55,7 @@ HWND sub_785EA0()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 HWND sub_785EA0()
 {
-  unsigned int v0; // eax
   unsigned int i; // ebx
-  int v2; // esi
   void **v3; // edi
   HWND result; // eax
   HANDLE *v5; // esi
@@ -68,15 +65,14 @@ HWND sub_785EA0()
   HWND v9; // eax
   HWND v10; // eax
   HWND Current; // eax
-  void *v12; // [esp+Ch] [ebp-4h] BYREF
 
   byte_B77DC0 = 1; /*0x785eac*/
   if ( g_GameMode_Current[0] == 4 && g_GameOptionsFlags == 3 ) /*0x785ec0*/
   {
-    v0 = g_WOL_MsgPool; /*0x785ec6*/
+    unsigned int v0 = g_WOL_MsgPool; /*0x785ec6*/
     for ( i = 0; i < g_WOL_MsgPool; v0 = g_WOL_MsgPool ) /*0x785ecf*/
     {
-      v2 = *((_DWORD *)g_WOL_MessageQueue + i); /*0x785ed6*/
+      int v2 = *((_DWORD *)g_WOL_MessageQueue + i); /*0x785ed6*/
       while ( v2 ) /*0x785edb*/
       {
         v3 = (void **)v2; /*0x785edd*/
@@ -109,6 +105,7 @@ HWND sub_785EA0()
     if ( !(*(int (__stdcall **)(LPVOID))(*(_DWORD *)ppv + 52))(ppv) ) /*0x785f7d*/
     {
       StringCSF = GetStringCSF(aTxtWolLoggingO, 0, g_Str_File_wonline_cpp, 9527); /*0x785f9a*/
+  void *v12; // [esp+Ch] [ebp-4h] BYREF
       WideString::Assign((wchar_t **)&v12, StringCSF); /*0x785fa4*/
       ShowUIMessage(32, (wchar_t **)&v12, 0); /*0x785fb4*/
       DeleteAndZero::Alt(&v12); /*0x785fbd*/
@@ -154,10 +151,6 @@ int RunWOLMainLoop_Read()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 BOOL __usercall sub_798DE0@<eax>(int a1@<ebx>, int a2@<ebp>)
 {
-  int v2; // esi
-  char *v3; // eax
-  int v4; // esi
-  char *v5; // eax
   BOOL v6; // esi
   int v8; // [esp+1Ch] [ebp-38h]
   int v9; // [esp+28h] [ebp-2Ch]
@@ -172,9 +165,9 @@ BOOL __usercall sub_798DE0@<eax>(int a1@<ebx>, int a2@<ebp>)
   Screen::Capture(1, 0, a1, a2); /*0x798dff*/
   if ( g_UIPointerTable && strlen(g_WOL_ConnectFlag) && String::Length((const char **)&g_WebBrowser) ) /*0x798e27*/
   {
-    v2 = *(_DWORD *)g_UIPointerTable; /*0x798e3f*/
+    int v2 = *(_DWORD *)g_UIPointerTable; /*0x798e3f*/
     v8 = g_NetworkRematchState & 0xFFFF00; /*0x798e49*/
-    v3 = String::GetOrEmpty((char **)&g_WebBrowser); /*0x798e4f*/
+    char * v3 = String::GetOrEmpty((char **)&g_WebBrowser); /*0x798e4f*/
     (*(void (__stdcall **)(LPVOID, char *, int, char *, int, int, _DWORD, _DWORD))(v2 + 20))( /*0x798e67*/
       g_UIPointerTable,
       g_WOL_ConnectFlag,
@@ -184,9 +177,9 @@ BOOL __usercall sub_798DE0@<eax>(int a1@<ebx>, int a2@<ebp>)
       -1,
       0,
       0);
-    v4 = *(_DWORD *)g_UIPointerTable; /*0x798e7c*/
+    int v4 = *(_DWORD *)g_UIPointerTable; /*0x798e7c*/
     v9 = g_NetworkRematchState & 0xFFFF00; /*0x798e7e*/
-    v5 = String::GetOrEmpty((char **)&g_WebBrowser); /*0x798e84*/
+    char * v5 = String::GetOrEmpty((char **)&g_WebBrowser); /*0x798e84*/
     (*(void (__stdcall **)(LPVOID, char *, int, char *, int))(v4 + 56))( /*0x798e9c*/
       g_UIPointerTable,
       g_WOL_ConnectFlag,

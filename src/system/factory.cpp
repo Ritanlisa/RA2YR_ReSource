@@ -26,33 +26,27 @@ void FactoryClass::calculateChecksum(void* checksum) const {}
 // 0x4c9ff0
 bool FactoryClass::AbandonProduction() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall BuildingClass_AbandonProduction(int this)
+void BuildingClass_AbandonProduction(int this)
 {
-  int v2; // ecx
-  int v3; // eax
-  int v4; // eax
-  int v5; // eax
-  int v6; // eax
   #72 *v7; // eax
   #375 *v8; // ecx
-  int v9; // ecx
-  int v11; // [esp+Ch] [ebp-8h]
 
-  v2 = this->q058;
+  int v2 = this->q058;
   if ( !v2 )
     return 0;
-  v3 = (*(int (__thiscall **)(int))(*(_DWORD *)v2 + 136))(v2);
+  int v3 = (*(int (__thiscall **)(int))(*(_DWORD *)v2 + 136))(v2);
   Debug::Log("Abandoning production of %s\n", (const char *)(v3 + 100));
-  v4 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 88) + 136))(this->q058);
-  v5 = (*(int (__thiscall **)(int, _DWORD))(*(_DWORD *)v4 + 132))(v4, *(_DWORD *)(this->q058 + 540));
-  HouseClass::AddPower(*(_DWORD **)(this + 108), v5 - this->balance);
-  v6 = this->specialItem;
+  int v4 = (*(int (__thiscall **)(_DWORD))(*this->q058 + 136))(this->q058);
+  int v5 = (*(int (__thiscall **)(int, _DWORD))(*(_DWORD *)v4 + 132))(v4, *(_DWORD *)(this->q058 + 540));
+  HouseClass::AddPower(this->owner, v5 - this->balance);
+  int v6 = this->specialItem;
   this->balance = 0;
   if ( v6 )
     this->specialItem = -1;
   v7 = g_CurrentFrame;
   this->queuedCapacity = 0;
   this->q02C = v7;
+  int v11; // [esp+Ch] [ebp-8h]
   this->queuedObjects = v11;
   this->queuedCount = 0;
   v8 = *(#375 **)(this + 108);
@@ -61,17 +55,17 @@ char __thiscall BuildingClass_AbandonProduction(int this)
   this->q174 = 1;
   if ( !(unsigned __int8)House::IsCurrentPlayer(v8) )
   {
-    if ( (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 88) + 44))(this->q058) == 15 )
+    if ( (*(int (__thiscall **)(_DWORD))(*this->q058 + 44))(this->q058) == 15 )
       *(_DWORD *)(this->owner + 22100) = -1;
-    if ( (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 88) + 44))(this->q058) == 1 )
+    if ( (*(int (__thiscall **)(_DWORD))(*this->q058 + 44))(this->q058) == 1 )
       *(_DWORD *)(this->owner + 22096) = -1;
-    if ( (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 88) + 44))(this->q058) == 2 )
+    if ( (*(int (__thiscall **)(_DWORD))(*this->q058 + 44))(this->q058) == 2 )
       *(_DWORD *)(this->owner + 22104) = -1;
-    if ( (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 88) + 44))(this->q058) == 6 )
+    if ( (*(int (__thiscall **)(_DWORD))(*this->q058 + 44))(this->q058) == 6 )
       *(_DWORD *)(this->owner + 22092) = -1;
   }
   ++g_IKnowWhatImDoing;
-  v9 = this->q058;
+  int v9 = this->q058;
   if ( v9 )
     (*(void (__thiscall **)(int, int))(*(_DWORD *)v9 + 32))(v9, 1);
   this->q058 = 0;

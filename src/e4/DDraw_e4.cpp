@@ -7,12 +7,11 @@
 int DDraw::ReleaseSurfaces()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall DDraw::ReleaseSurfaces(int *this)
+void DDraw::ReleaseSurfaces()
 {
-  int v2; // eax
   int result; // eax
 
-  v2 = *(this + 29); /*0x4a3373*/
+  int v2 = *(this + 29); /*0x4a3373*/
   if ( v2 ) /*0x4a3378*/
   {
     (*(void (__stdcall **)(int))(*(_DWORD *)v2 + 8))(v2); /*0x4a337d*/
@@ -32,7 +31,7 @@ int __thiscall DDraw::ReleaseSurfaces(int *this)
 void DDraw::Init()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_4A3640(_DWORD *this)
+void sub_4A3640(_DWORD *this)
 {
   this->q18000 = 0; /*0x4a3640*/
 }
@@ -115,7 +114,7 @@ LABEL_7:
 int DDraw::WaitForIdle()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int DDraw_WaitForIdle()
+void DDraw_WaitForIdle()
 {
   int result; // eax
 
@@ -130,36 +129,32 @@ int DDraw_WaitForIdle()
 int DDraw::CleanupSurfaces()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int DDraw_CleanupSurfaces()
+void DDraw_CleanupSurfaces()
 {
-  void *v0; // esi
-  void *v1; // esi
-  void *v2; // esi
-  void *v3; // esi
   int result; // eax
 
-  v0 = DataGlobal_8A0E10; /*0x4c19b1*/
+  void * v0 = DataGlobal_8A0E10; /*0x4c19b1*/
   if ( DataGlobal_8A0E10 ) /*0x4c19bc*/
   {
     DDraw::Init(DataGlobal_8A0E10); /*0x4c19c0*/
     __3_YAXPAX_Z(v0); /*0x4c19c6*/
     DataGlobal_8A0E10 = 0; /*0x4c19ce*/
   }
-  v1 = DataGlobal_8A0E0C; /*0x4c19d4*/
+  void * v1 = DataGlobal_8A0E0C; /*0x4c19d4*/
   if ( DataGlobal_8A0E0C ) /*0x4c19dc*/
   {
     DDraw::ReleaseSurfaces(DataGlobal_8A0E0C); /*0x4c19e0*/
     __3_YAXPAX_Z(v1); /*0x4c19e6*/
     DataGlobal_8A0E0C = 0; /*0x4c19ee*/
   }
-  v2 = DataGlobal_8A0E08; /*0x4c19f4*/
+  void * v2 = DataGlobal_8A0E08; /*0x4c19f4*/
   if ( DataGlobal_8A0E08 ) /*0x4c19fc*/
   {
     DDraw::ReleaseSurfaces(DataGlobal_8A0E08); /*0x4c1a00*/
     __3_YAXPAX_Z(v2); /*0x4c1a06*/
     DataGlobal_8A0E08 = 0; /*0x4c1a0e*/
   }
-  v3 = DataGlobal_8A0E04; /*0x4c1a14*/
+  void * v3 = DataGlobal_8A0E04; /*0x4c1a14*/
   if ( DataGlobal_8A0E04 ) /*0x4c1a1c*/
   {
     DDraw::ReleaseSurfaces(DataGlobal_8A0E04); /*0x4c1a20*/
@@ -195,21 +190,19 @@ int DDraw_CleanupSurfaces()
 char DDraw::HandleSuspend()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall DDraw_HandleSuspend(_DWORD *this)
+void DDraw_HandleSuspend(_DWORD *this)
 {
-  int v1; // eax
   int i; // edi
-  int v4; // ecx
   int j; // edi
-  int v6; // ecx
 
+  int v1; // eax
   LOBYTE(v1) = g_DDraw_Initialized; /*0x5d2530*/
   if ( g_DDraw_Initialized != 1 ) /*0x5d253b*/
   {
     Debug::Log(aMsenginePausin); /*0x5d2546*/
     for ( i = 0; i < *(this + 10); ++i ) /*0x5d2555*/
     {
-      v4 = *(_DWORD *)(*(this + 7) + 4 * i); /*0x5d255a*/
+      int v4 = *(_DWORD *)(*(this + 7) + 4 * i); /*0x5d255a*/
       (*(void (__thiscall **)(int))(*(_DWORD *)v4 + 8))(v4); /*0x5d255f*/
     }
     while ( !g_DDraw_Initialized ) /*0x5d2571*/
@@ -222,7 +215,7 @@ char __thiscall DDraw_HandleSuspend(_DWORD *this)
     v1 = *(this + 10); /*0x5d25a5*/
     for ( j = 0; j < v1; ++j ) /*0x5d25af*/
     {
-      v6 = *(_DWORD *)(*(this + 7) + 4 * j); /*0x5d25b4*/
+      int v6 = *(_DWORD *)(*(this + 7) + 4 * j); /*0x5d25b4*/
       (*(void (__thiscall **)(int))(*(_DWORD *)v6 + 12))(v6); /*0x5d25b9*/
       v1 = *(this + 10); /*0x5d25bc*/
     }

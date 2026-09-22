@@ -15,38 +15,23 @@ namespace gamemd {
 int Options::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall Options::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4)
+void Options::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4)
 {
   int result; // eax
-  unsigned int v5; // edi
   wchar_t *v6; // edi
   HWND DlgItem; // eax
   HWND v8; // esi
   wchar_t *StringCSF; // eax
-  unsigned int v10; // ebx
   _DWORD *WindowLongA; // ebp
   void (__stdcall *v12)(HWND, int); // edi
-  _DWORD *v13; // eax
-  int v14; // ebx
-  char *v15; // eax
-  _DWORD *v16; // eax
-  _DWORD *v17; // ecx
   const char **Options; // eax
   HWND eax48; // eax
   IUnknown *v19; // edi
-  char *v21; // eax
   HWND eax53; // eax
   AnimClass *v22; // esi
-  char *v24; // eax
   CampaignScore *v25; // [esp+0h] [ebp-624h]
   DWORD v26[3]; // [esp+14h] [ebp-610h] BYREF
   DWORD v27[3]; // [esp+20h] [ebp-604h] BYREF
-  _DWORD v28[14]; // [esp+2Ch] [ebp-5F8h] BYREF
-  _DWORD v29[14]; // [esp+64h] [ebp-5C0h] BYREF
-  _DWORD v30[14]; // [esp+9Ch] [ebp-588h] BYREF
-  char v31[112]; // [esp+D4h] [ebp-550h] BYREF
-  char v32[112]; // [esp+144h] [ebp-4E0h] BYREF
-  char v33[112]; // [esp+1B4h] [ebp-470h] BYREF
   CampaignScore Buffer[28]; // [esp+224h] [ebp-400h] BYREF
 
   result = BaseDialogProc((SkirmishDialog *)hDlg, a2, a3, (unsigned int)a4); /*0x4f11dc*/
@@ -65,7 +50,7 @@ int __stdcall Options::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND
       }
       if ( (_WORD)a3 == 5 ) /*0x4f1220*/
       {
-        v5 = HIWORD(a3); /*0x4f1232*/
+        unsigned int v5 = HIWORD(a3); /*0x4f1232*/
         if ( a4 == GetDlgItem(hDlg, 1321) ) /*0x4f1239*/
         {
           v6 = *(wchar_t **)&g_INI_Key_Grey[0][4 * v5 + 8]; /*0x4f123b*/
@@ -89,7 +74,7 @@ LABEL_11:
       }
       return 0; /*0x4f1253*/
     }
-    v10 = HIWORD(a3); /*0x4f12a8*/
+    unsigned int v10 = HIWORD(a3); /*0x4f12a8*/
     WindowLongA = (_DWORD *)GetWindowLongA(hDlg, 8); /*0x4f12b1*/
     if ( (HouseClass_Player[45228] & 1) == 0 ) /*0x4f12be*/
     {
@@ -106,6 +91,7 @@ LABEL_11:
     }
     if ( (unsigned __int16)a3 <= 0x521u ) /*0x4f1326*/
     {
+  _DWORD *v17; // ecx
       if ( (unsigned __int16)a3 == 1313 ) /*0x4f132c*/
       {
         if ( !v10 ) /*0x4f14dc*/
@@ -122,6 +108,7 @@ LABEL_11:
           return 0; /*0x4f1489*/
         v12 = (void (__stdcall *)(HWND, int))ShowWindow; /*0x4f148f*/
         ShowWindow(hDlg, 0); /*0x4f1497*/
+  _DWORD v30[14]; // [esp+9Ch] [ebp-588h] BYREF
         Options = (const char **)LoadOptions::LoadOptions(v30); /*0x4f14a0*/
         Options::PrepareSaveLoadDlg(Options); /*0x4f14a7*/
         v17 = v30; /*0x4f14ac*/
@@ -143,8 +130,9 @@ LABEL_11:
             return 0; /*0x4f1356*/
           v12 = (void (__stdcall *)(HWND, int))ShowWindow; /*0x4f135c*/
           ShowWindow(hDlg, 0); /*0x4f1364*/
-          v13 = LoadOptions::LoadOptions(v29); /*0x4f136a*/
-          v14 = (unsigned __int8)LoadOptions::Run(v13); /*0x4f137a*/
+  _DWORD v29[14]; // [esp+64h] [ebp-5C0h] BYREF
+          _DWORD * v13 = LoadOptions::LoadOptions(v29); /*0x4f136a*/
+          int v14 = (unsigned __int8)LoadOptions::Run(v13); /*0x4f137a*/
           LoadOptions::Cleanup(v29); /*0x4f137c*/
           if ( (_BYTE)v14 ) /*0x4f1383*/
           {
@@ -160,7 +148,8 @@ LABEL_39:
           return 0; /*0x4f13bf*/
         if ( *(_DWORD *)&HouseClass_Player[29932] && *(_DWORD *)&HouseClass_Player[29932] != 5 ) /*0x4f13d1*/
         {
-          v15 = EventClass::AddEvent(v31, *(_DWORD *)(HouseClass_Player.field_0 + 48), 0x1Du); /*0x4f13e5*/
+  char v31[112]; // [esp+D4h] [ebp-550h] BYREF
+          char * v15 = EventClass::AddEvent(v31, *(_DWORD *)(HouseClass_Player.field_0 + 48), 0x1Du); /*0x4f13e5*/
           OptionQueue::PushEntry(&Networking_LastEventIndex, (IUnknown *)v15); /*0x4f13f0*/
           *WindowLongA = 1311; /*0x4f13f6*/
           return 0; /*0x4f1408*/
@@ -179,7 +168,8 @@ LABEL_39:
             (const size_t)&off_8240B4,
             (const wchar_t *const)(*(_DWORD *)&HouseClass_Player[29924] + 5082),
             v25);
-        v16 = LoadOptions::LoadOptions(v28); /*0x4f1469*/
+  _DWORD v28[14]; // [esp+2Ch] [ebp-5F8h] BYREF
+        _DWORD * v16 = LoadOptions::LoadOptions(v28); /*0x4f1469*/
         ShowSaveLoadDialog((int)v16, Buffer); /*0x4f1470*/
         v17 = v28; /*0x4f1475*/
       }
@@ -220,7 +210,8 @@ LABEL_39:
             *(_DWORD *)&HouseClass_Player[45300] = v26[0]; /*0x4f15a4*/
             *(_DWORD *)&HouseClass_Player[45304] = v26[1]; /*0x4f15b0*/
             *(_DWORD *)&HouseClass_Player[45308] = v26[2]; /*0x4f15b6*/
-            v21 = EventClass::Add2(v33, *(AnimClass **)(HouseClass_Player.field_0 + 48), 0x24u, v19); /*0x4f15c6*/
+  char v33[112]; // [esp+1B4h] [ebp-470h] BYREF
+            char * v21 = EventClass::Add2(v33, *(AnimClass **)(HouseClass_Player.field_0 + 48), 0x24u, v19); /*0x4f15c6*/
             OptionQueue::PushEntry(&Networking_LastEventIndex, (IUnknown *)v21); /*0x4f15d1*/
             Debug::Log(); /*0x4f15dc*/
           }
@@ -238,7 +229,8 @@ LABEL_39:
             *(_DWORD *)&HouseClass_Player[45284] = v27[0]; /*0x4f164e*/
             *(_DWORD *)&HouseClass_Player[45288] = v27[1]; /*0x4f1658*/
             *(_DWORD *)&HouseClass_Player[45292] = v27[2]; /*0x4f165e*/
-            v24 = EventClass::Add2(v32, *(AnimClass **)(HouseClass_Player.field_0 + 48), 0xDu, (IUnknown *)v22); /*0x4f166f*/
+  char v32[112]; // [esp+144h] [ebp-4E0h] BYREF
+            char * v24 = EventClass::Add2(v32, *(AnimClass **)(HouseClass_Player.field_0 + 48), 0xDu, (IUnknown *)v22); /*0x4f166f*/
             OptionQueue::PushEntry(&Networking_LastEventIndex, (IUnknown *)v24); /*0x4f167a*/
             *WindowLongA = 1; /*0x4f1687*/
             return 0; /*0x4f1696*/
@@ -260,7 +252,7 @@ namespace gamemd {
 bool Options::PrepareSaveLoadDlg()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall sub_558840(const char **this)
+void sub_558840(const char **this)
 {
   this->q004 = (const char *)3; /*0x558840*/
   this->q00C = 0; /*0x558847*/
@@ -274,27 +266,21 @@ namespace gamemd {
 void Options::Screen_Save()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall Options::Screen_Save(HWND this)
+void Options::Screen_Save(HWND this)
 {
   HWND DlgItem; // eax
-  int v3; // eax
   HWND v4; // eax
   HWND v5; // eax
   HWND v6; // eax
   HWND v7; // eax
   HWND v8; // eax
   HWND v9; // eax
-  int v10; // eax
   HWND v11; // eax
   HWND v12; // eax
-  float v13; // [esp+0h] [ebp-18h]
-  float v14; // [esp+0h] [ebp-18h]
-  float v15; // [esp+0h] [ebp-18h]
-
   DlgItem = GetDlgItem(this, 1323); /*0x55fab2*/
   if ( DlgItem )
   {
-    v3 = SendMessageA(DlgItem, 0x400u, 0, 0) != 0 ? 2 : 0;
+    int v3 = SendMessageA(DlgItem, 0x400u, 0, 0) != 0 ? 2 : 0;
     if ( g_lParam != v3 ) /*0x55fad9*/
     {
       g_lParam = v3; /*0x55fae0*/
@@ -322,11 +308,11 @@ void __thiscall Options::Screen_Save(HWND this)
   v9 = GetDlgItem(this, 1327); /*0x55fba2*/
   if ( v9 ) /*0x55fba6*/
   {
-    v13 = (double)SendMessageA(v9, 0x400u, 0, 0) * 0.1; /*0x55fbca*/
+    float v13 = (double)SendMessageA(v9, 0x400u, 0, 0) * 0.1; /*0x55fbca*/
     Options::SetScoreVolume((float *)g_GameModeOptions, v13, 0); /*0x55fbcd*/
     if ( DataGlobal_A8EBA0 == 0.0 ) /*0x55fbe3*/
     {
-      v10 = dword_A83D14; /*0x55fbe5*/
+      int v10 = dword_A83D14; /*0x55fbe5*/
       if ( dword_A83D14 == -1 ) /*0x55fbed*/
         v10 = dword_A83D18; /*0x55fbef*/
       Theme::QueueSong((int)&g_BuildingTypeClass_Count, v10); /*0x55fbfa*/
@@ -336,13 +322,13 @@ void __thiscall Options::Screen_Save(HWND this)
   v11 = GetDlgItem(this, 1330); /*0x55fc11*/
   if ( v11 ) /*0x55fc15*/
   {
-    v14 = (double)SendMessageA(v11, 0x400u, 0, 0) * 0.1; /*0x55fc39*/
+    float v14 = (double)SendMessageA(v11, 0x400u, 0, 0) * 0.1; /*0x55fc39*/
     Options::SetSoundVolume((float *)g_GameModeOptions, v14, 0); /*0x55fc3c*/
   }
   v12 = GetDlgItem(this, 1334); /*0x55fc47*/
   if ( v12 ) /*0x55fc4b*/
   {
-    v15 = (double)SendMessageA(v12, 0x400u, 0, 0) * 0.1; /*0x55fc6f*/
+    float v15 = (double)SendMessageA(v12, 0x400u, 0, 0) * 0.1; /*0x55fc6f*/
     Options::SetVoiceVolume((float *)g_GameModeOptions, v15, 0); /*0x55fc72*/
   }
 }
@@ -358,15 +344,11 @@ char sub_55FC80()
 {
   HWND v0; // eax
   HWND v1; // esi
-  int v2; // ecx
   HWND v3; // eax
   HWND v4; // esi
-  int v5; // ecx
-  char v7; // [esp+13h] [ebp-9h]
   LONG dwNewLong; // [esp+14h] [ebp-8h] BYREF
   LONG v9; // [esp+18h] [ebp-4h] BYREF
-
-  v7 = g_WTFMode; /*0x55fc92*/
+  char v7 = g_WTFMode; /*0x55fc92*/
   g_WTFMode = 0; /*0x55fc96*/
   while ( 1 ) /*0x55fd14*/
   {
@@ -386,6 +368,7 @@ char sub_55FC80()
       {
         if ( (unsigned __int8)Dialog::PumpMessages() == 1 ) /*0x55fcec*/
           break; /*0x55fcec*/
+  int v2; // ecx
         LOBYTE(v2) = 0; /*0x55fcee*/
         ScreenSaver::Process(v2); /*0x55fcf0*/
       }
@@ -405,6 +388,7 @@ char sub_55FC80()
         {
           if ( (unsigned __int8)Dialog::PumpMessages() == 1 ) /*0x55fd71*/
             break; /*0x55fd71*/
+  int v5; // ecx
           LOBYTE(v5) = 0; /*0x55fd73*/
           ScreenSaver::Process(v5); /*0x55fd75*/
         }
@@ -427,24 +411,21 @@ namespace gamemd {
 int Options::DeleteAndZero()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_6244E0(int *this)
+void sub_6244E0(int *this)
 {
-  int v2; // ebx
-  int v3; // ebp
-  int v4; // esi
   int result; // eax
 
-  v2 = 0; /*0x6244e4*/
+  int v2 = 0; /*0x6244e4*/
   if ( *this <= 0 ) /*0x6244e9*/
   {
     *this = 0; /*0x62451b*/
   }
   else
   {
-    v3 = 0; /*0x6244ed*/
+    int v3 = 0; /*0x6244ed*/
     do /*0x62450e*/
     {
-      v4 = this->q008 + v3; /*0x6244f4*/
+      int v4 = this->q008 + v3; /*0x6244f4*/
       DeleteAndZero::Alt((void **)(v4 + 8)); /*0x6244f9*/
       DeleteAndZero::Alt((void **)(v4 + 4)); /*0x624501*/
       result = *this; /*0x624506*/
@@ -464,27 +445,21 @@ namespace gamemd {
 char Options::EnsureCapacity()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_6248A0(int *this)
+void sub_6248A0(int *this)
 {
-  int v2; // eax
-  int v3; // ecx
-  int v5; // ebx
-  void *v6; // eax
-  const void *v7; // esi
-  int v8; // [esp+8h] [ebp-4h]
 
-  v2 = *this; /*0x6248a5*/
-  v3 = this->q004; /*0x6248a8*/
+  int v2 = *this; /*0x6248a5*/
+  int v3 = this->q004; /*0x6248a8*/
   if ( 3 * v2 > v3 ) /*0x6248b0*/
     return 0; /*0x6248b3*/
-  v5 = v3 / 2; /*0x6248bf*/
+  int v5 = v3 / 2; /*0x6248bf*/
   if ( v3 / 2 < 10 ) /*0x6248c4*/
     v5 = 10; /*0x6248c6*/
   if ( v5 >= v3 ) /*0x6248cd*/
     return 0; /*0x6248d0*/
-  v6 = __2_YAPAXI_Z(24 * v5); /*0x6248dd*/
-  v7 = (const void *)this->q008; /*0x6248e2*/
-  v8 = (int)v6; /*0x6248ea*/
+  void * v6 = __2_YAPAXI_Z(24 * v5); /*0x6248dd*/
+  const void * v7 = (const void *)this->q008; /*0x6248e2*/
+  int v8 = (int)v6; /*0x6248ea*/
   if ( v7 ) /*0x6248ee*/
     qmemcpy(v6, v7, 24 * *this); /*0x624901*/
   __3_YAXPAX_Z((void *)this->q008); /*0x62490f*/
@@ -500,24 +475,20 @@ namespace gamemd {
 char Options::GrowBuffer()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_6253B0(int *this)
+void sub_6253B0(int *this)
 {
-  int v2; // eax
-  int v4; // esi
-  void *v5; // ebp
-  int v6; // [esp+4h] [ebp-4h]
 
-  v2 = *this; /*0x6253b4*/
+  int v2 = *this; /*0x6253b4*/
   if ( *this < this->q004 ) /*0x6253bb*/
     return 0; /*0x6253bd*/
-  v4 = 2 * v2; /*0x6253c4*/
-  v6 = 2 * v2; /*0x6253cb*/
+  int v4 = 2 * v2; /*0x6253c4*/
+  int v6 = 2 * v2; /*0x6253cb*/
   if ( 2 * v2 < 10 ) /*0x6253cf*/
   {
     v6 = 10; /*0x6253d1*/
     v4 = 10; /*0x6253d9*/
   }
-  v5 = __2_YAPAXI_Z(4 * v4); /*0x6253ec*/
+  void * v5 = __2_YAPAXI_Z(4 * v4); /*0x6253ec*/
   memset(v5, 0, 4 * ((unsigned int)(4 * v4) >> 2)); /*0x6253fa*/
   if ( this->q008 ) /*0x625403*/
   {
@@ -537,27 +508,21 @@ namespace gamemd {
 char Options::ReadOptionValue()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_6254D0(int *this)
+void sub_6254D0(int *this)
 {
-  int v2; // eax
-  int v3; // ecx
-  int v5; // ebx
-  void *v6; // eax
-  const void *v7; // esi
-  int v8; // [esp+8h] [ebp-4h]
 
-  v2 = *this; /*0x6254d5*/
-  v3 = this->q004; /*0x6254d8*/
+  int v2 = *this; /*0x6254d5*/
+  int v3 = this->q004; /*0x6254d8*/
   if ( 3 * v2 > v3 ) /*0x6254e0*/
     return 0; /*0x6254e3*/
-  v5 = v3 / 2; /*0x6254ef*/
+  int v5 = v3 / 2; /*0x6254ef*/
   if ( v3 / 2 < 10 ) /*0x6254f4*/
     v5 = 10; /*0x6254f6*/
   if ( v5 >= v3 ) /*0x6254fd*/
     return 0; /*0x625500*/
-  v6 = __2_YAPAXI_Z(20 * v5); /*0x62550d*/
-  v7 = (const void *)this->q008; /*0x625512*/
-  v8 = (int)v6; /*0x62551a*/
+  void * v6 = __2_YAPAXI_Z(20 * v5); /*0x62550d*/
+  const void * v7 = (const void *)this->q008; /*0x625512*/
+  int v8 = (int)v6; /*0x62551a*/
   if ( v7 ) /*0x62551e*/
     qmemcpy(v6, v7, 20 * *this); /*0x625531*/
   __3_YAXPAX_Z((void *)this->q008); /*0x62553f*/
@@ -576,9 +541,6 @@ void * Options::DestroyComposite(char a2)
 void *__thiscall Options::DestroyComposite(void *this, char a2)
 {
   _DWORD *i; // ecx
-  _DWORD *v4; // eax
-  _DWORD *v5; // edx
-  void *v6; // esi
 
   if ( *((_DWORD *)this + 11) ) /*0x625563*/
   {
@@ -587,8 +549,8 @@ void *__thiscall Options::DestroyComposite(void *this, char a2)
   }
   for ( i = (_DWORD *)*((_DWORD *)this + 14); i; i = (_DWORD *)*((_DWORD *)this + 14) ) /*0x62557f*/
   {
-    v4 = i; /*0x625581*/
-    v5 = 0; /*0x625583*/
+    _DWORD * v4 = i; /*0x625581*/
+    _DWORD * v5 = 0; /*0x625583*/
     while ( i != v4 ) /*0x62558b*/
     {
       v5 = v4; /*0x62558d*/
@@ -604,10 +566,10 @@ void *__thiscall Options::DestroyComposite(void *this, char a2)
 LABEL_12:
     ; /*0x6255b3*/
   }
-  v6 = (void *)this->q010; /*0x6255bb*/
+  void * v6 = (void *)this->q010; /*0x6255bb*/
   if ( v6 ) /*0x6255c0*/
   {
-    DeleteAndZero::Alt(*((void ***)this + 16)); /*0x6255c4*/
+    DeleteAndZero::Alt(this->q010); /*0x6255c4*/
     __3_YAXPAX_Z(v6); /*0x6255ca*/
   }
   if ( (a2 & 1) != 0 ) /*0x6255d9*/
@@ -626,28 +588,14 @@ int *__thiscall Options::RebuildDropdownList(int *this, ObjectClass *aP1)
 {
   ObjectClass *v2; // ebp
   SessionClass *v3; // edi
-  int v4; // ebx
   ReferenceCounted *v5; // esi
   ReferenceCounted v6; // eax
-  int v7; // ebp
-  int v8; // edi
-  int v9; // eax
-  int v10; // ebx
-  int v11; // ecx
-  int v12; // edi
   ReferenceCounted v13; // edi
   wchar_t **v14; // ecx
-  int v16; // [esp+10h] [ebp-20h]
-  int v18; // [esp+18h] [ebp-18h] BYREF
   CampaignScore *v19; // [esp+1Ch] [ebp-14h] BYREF
-  void *v20; // [esp+20h] [ebp-10h] BYREF
-  int v21; // [esp+24h] [ebp-Ch]
-  int v22; // [esp+28h] [ebp-8h]
-  int v23; // [esp+2Ch] [ebp-4h]
-
   v2 = aP1; /*0x6255f5*/
   v3 = (SessionClass *)this; /*0x6255fb*/
-  v4 = 0; /*0x625600*/
+  int v4 = 0; /*0x625600*/
   *this = *(_DWORD *)aP1->__pad_0; /*0x625602*/
   v5 = (ReferenceCounted *)(this + 2); /*0x625607*/
   this->q004 = *(_DWORD *)&aP1->__pad_0[4]; /*0x62560a*/
@@ -655,18 +603,19 @@ int *__thiscall Options::RebuildDropdownList(int *this, ObjectClass *aP1)
   this->q00C = 0; /*0x625617*/
   this->q004 = 0; /*0x62561a*/
   unknown_libname_74(&v19); /*0x62561d*/
+  void *v20; // [esp+20h] [ebp-10h] BYREF
   unknown_libname_74(&v20); /*0x625626*/
-  v18 = 0; /*0x62562e*/
-  v21 = -1; /*0x625632*/
-  v23 = -1; /*0x625636*/
+  int v18 = 0; /*0x62562e*/
+  int v21 = -1; /*0x625632*/
+  int v23 = -1; /*0x625636*/
   v6 = *v5; /*0x62563a*/
-  v22 = 0; /*0x62563c*/
+  int v22 = 0; /*0x62563c*/
   if ( *(int *)&v6 > 0 ) /*0x625642*/
   {
-    v7 = 0; /*0x625644*/
+    int v7 = 0; /*0x625644*/
     do /*0x625665*/
     {
-      v8 = *(_DWORD *)&v5[2] + v7; /*0x62564b*/
+      int v8 = *(_DWORD *)&v5[2] + v7; /*0x62564b*/
       DeleteAndZero::Alt((void **)(v8 + 8)); /*0x625650*/
       DeleteAndZero::Alt((void **)(v8 + 4)); /*0x625658*/
       ++v4; /*0x62565f*/
@@ -677,17 +626,17 @@ int *__thiscall Options::RebuildDropdownList(int *this, ObjectClass *aP1)
     v3 = (SessionClass *)this; /*0x62566b*/
   }
   *v5 = 0; /*0x62566f*/
-  v9 = *(_DWORD *)&v2->__pad_0[8]; /*0x625675*/
-  v10 = 0; /*0x625678*/
+  int v9 = *(_DWORD *)&v2->__pad_0[8]; /*0x625675*/
+  int v10 = 0; /*0x625678*/
   if ( v9 > 0 ) /*0x62567c*/
   {
-    v11 = 0; /*0x625682*/
-    v16 = 0; /*0x625684*/
+    int v11 = 0; /*0x625682*/
+    int v16 = 0; /*0x625684*/
     while ( 1 ) /*0x62568e*/
     {
       if ( v11 >= 0 && v10 < v9 ) /*0x625694*/
       {
-        v12 = v11 + v2->uniqueId; /*0x625699*/
+        int v12 = v11 + v2->uniqueId; /*0x625699*/
         v18 = *(_DWORD *)v12; /*0x6256a5*/
         WideString::Reassign_Alt((void **)&v19, (const wchar_t **)(v12 + 4)); /*0x6256a9*/
         WideString::Reassign_Alt(&v20, (const wchar_t **)(v12 + 8)); /*0x6256b6*/
@@ -731,24 +680,19 @@ namespace gamemd {
 char Options::SaveOptionValue()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_625A20(int *this)
+void sub_625A20(int *this)
 {
-  int v2; // eax
-  int v4; // ebp
-  void *v5; // edx
-  const void *v6; // esi
-  int v7; // [esp+4h] [ebp-4h]
 
-  v2 = *this; /*0x625a24*/
+  int v2 = *this; /*0x625a24*/
   if ( *this < this->q004 ) /*0x625a2b*/
     return 0; /*0x625a2d*/
-  v4 = 2 * v2; /*0x625a33*/
+  int v4 = 2 * v2; /*0x625a33*/
   if ( 2 * v2 < 10 ) /*0x625a3b*/
     v4 = 10; /*0x625a3d*/
-  v5 = __2_YAPAXI_Z(20 * v4); /*0x625a4f*/
+  void * v5 = __2_YAPAXI_Z(20 * v4); /*0x625a4f*/
   memset(v5, 0, 4 * ((unsigned int)(20 * v4) >> 2)); /*0x625a5a*/
-  v7 = (int)v5; /*0x625a64*/
-  v6 = (const void *)this->q008; /*0x625a6a*/
+  int v7 = (int)v5; /*0x625a64*/
+  const void * v6 = (const void *)this->q008; /*0x625a6a*/
   if ( v6 ) /*0x625a6f*/
     qmemcpy(v5, v6, 20 * *this); /*0x625a80*/
   __3_YAXPAX_Z((void *)this->q008); /*0x625a8d*/

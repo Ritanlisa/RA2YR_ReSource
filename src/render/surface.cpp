@@ -326,7 +326,7 @@ REVERSE(0x4C1A90, "DSurface::BlitWhole: Thin wrapper around Blit", "None")
 bool DSurface::BlitWhole(class Surface* src, bool option1, bool option2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall DSurface_BlitWhole(int a1, int a2, int a3)
+void DSurface_BlitWhole(int a1, int a2, int a3)
 {
   return XSurface::BlitWhole(a1, a2, a3);
 }
@@ -824,12 +824,11 @@ REVERSE(0x4BB5F0, "DSurface::FillRect: Fill rectangle with color", "None")
 bool DSurface::FillRect(const RectangleStruct& fill_rect, uint32_t color)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall DSurface_FillRect(int *this, int a2, int a3)
+void DSurface_FillRect(int *this, int a2, int a3)
 {
-  int v4; // eax
-  _BYTE v6[16]; // [esp+4h] [ebp-10h] BYREF
 
-  v4 = (*(int (__thiscall **)(int *, _BYTE *))(*this + 120))(this, v6);
+  _BYTE v6[16]; // [esp+4h] [ebp-10h] BYREF
+  int v4 = (*(int (__thiscall **)(int *, _BYTE *))(*this + 120))(this, v6);
   return DSurface::FillRectEx(this, v4, a2, a3);
 }
 
@@ -1047,27 +1046,22 @@ REVERSE(0x4BAF40, "DSurface::Unlock: Release DDraw surface lock", "None")
 bool DSurface::Unlock()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall DSurface_Unlock(int *this)
+void DSurface_Unlock(int *this)
 {
-  int v2; // eax
-  int v3; // edi
-  int v4; // edx
-  int v5; // eax
-  int v6; // eax
 
   if ( g_lpDirectDraw7 || g_DDraw_Initialized )
   {
-    v2 = this->q01C;
+    int v2 = this->q01C;
     if ( v2 )
     {
       if ( (*(int (__stdcall **)(_DWORD))(*(_DWORD *)v2 + 96))(this->q01C) == -2005532222
         && !(*(int (__stdcall **)(_DWORD))(*(_DWORD *)this->q01C + 108))(this->q01C)
         && !(*(int (__stdcall **)(_DWORD))(*(_DWORD *)this->q01C + 96))(this->q01C) )
       {
-        v3 = this->q00C;
+        int v3 = this->q00C;
         if ( v3 > 0 )
         {
-          v4 = *this;
+          int v4 = *this;
           this->q00C = 0;
           (*(void (__thiscall **)(int *, _DWORD, _DWORD))(v4 + 92))(this, 0, 0);
           ++this->q00C;
@@ -1077,10 +1071,10 @@ char __thiscall DSurface_Unlock(int *this)
       }
     }
   }
-  v5 = this->q00C;
+  int v5 = this->q00C;
   if ( v5 <= 0 )
     return 0;
-  v6 = v5 - 1;
+  int v6 = v5 - 1;
   this->q00C = v6;
   if ( !v6 )
   {
@@ -1179,15 +1173,14 @@ REVERSE(0x4BAEC0, "DSurface::CanLock: Test if surface can be locked", "None")
 bool DSurface::CanLock(uint32_t /*unk1*/, uint32_t /*unk2*/)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall DSurface_CanLock(_DWORD *this, int a2, int a3)
+void DSurface_CanLock(_DWORD *this, int a2, int a3)
 {
-  int v4; // eax
-  _DWORD v6[27]; // [esp+4h] [ebp-6Ch] BYREF
 
   if ( !this->q00C )
   {
+  _DWORD v6[27]; // [esp+4h] [ebp-6Ch] BYREF
     memset(v6, 0, sizeof(v6));
-    v4 = this->q01C;
+    int v4 = this->q01C;
     v6[0] = 108;
     if ( (*(int (__stdcall **)(int, _DWORD, _DWORD *, _DWORD, _DWORD))(*(_DWORD *)v4 + 100))(v4, 0, v6, 0, 0) )
       return 0;
@@ -1404,11 +1397,10 @@ REVERSE(0x7baeb0, "XSurface::SetPixel: pixel write", "None")
 bool XSurface::SetPixel(const Point2D& point, uint32_t color)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall XSurface_SetPixel(void *this, _DWORD *a2, __int16 a3)
+void XSurface_SetPixel(void *this, _DWORD *a2, __int16 a3)
 {
-  _WORD *v4; // edi
 
-  v4 = (_WORD *)(*(int (__thiscall **)(void *, _DWORD, _DWORD))(*(_DWORD *)this + 92))(this, *a2, a2[1]);
+  _WORD * v4 = (_WORD *)(*(int (__thiscall **)(void *, _DWORD, _DWORD))(*(_DWORD *)this + 92))(this, *a2, a2[1]);
   if ( !v4 )
     return 0;
   if ( (*(int (__thiscall **)(void *))(*(_DWORD *)this + 112))(this) == 2 )
@@ -1477,13 +1469,11 @@ REVERSE(0x7bae60, "XSurface::GetPixel: pixel read", "None")
 uint32_t XSurface::GetPixel(const Point2D& point)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall XSurface_GetPixel(void *this, _DWORD *a2)
+void XSurface_GetPixel(void *this, _DWORD *a2)
 {
-  int v3; // ebx
-  _WORD *v4; // edi
 
-  v3 = 0;
-  v4 = (_WORD *)(*(int (__thiscall **)(void *, _DWORD, _DWORD))(*(_DWORD *)this + 92))(this, *a2, a2[1]);
+  int v3 = 0;
+  _WORD * v4 = (_WORD *)(*(int (__thiscall **)(void *, _DWORD, _DWORD))(*(_DWORD *)this + 92))(this, *a2, a2[1]);
   if ( v4 )
   {
     if ( (*(int (__thiscall **)(void *))(*(_DWORD *)this + 112))(this) == 2 )
@@ -1554,23 +1544,20 @@ REVERSE(0x7baf90, "XSurface::PutPixel: pixel write + bounds", "Inject")
 bool XSurface::PutPixel(const Point2D& point, uint16_t color, const RectangleStruct& clip_rect)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall XSurface_PutPixel(void *this, _DWORD *a2, __int16 a3, _DWORD *a4)
+void XSurface_PutPixel(void *this, _DWORD *a2, __int16 a3, _DWORD *a4)
 {
-  int v5; // ecx
-  int v6; // edx
-  _WORD *v7; // esi
 
   if ( *a2 < *a4 )
     return 0;
   if ( *a2 >= *a4 + a4[2] )
     return 0;
-  v5 = a2[1];
-  v6 = a4[1];
+  int v5 = a2[1];
+  int v6 = a4[1];
   if ( v5 < v6 )
     return 0;
   if ( v5 >= v6 + a4[3] )
     return 0;
-  v7 = (_WORD *)(*(int (__thiscall **)(void *, _DWORD, _DWORD))(*(_DWORD *)this + 92))(this, *a2, a2[1]);
+  _WORD * v7 = (_WORD *)(*(int (__thiscall **)(void *, _DWORD, _DWORD))(*(_DWORD *)this + 92))(this, *a2, a2[1]);
   if ( !v7 )
     return 0;
   if ( (*(int (__thiscall **)(void *))(*(_DWORD *)this + 112))(this) == 2 )
@@ -1659,21 +1646,17 @@ REVERSE(0x7baf10, "XSurface::GetPixelAtCoords: pixel read + bounds", "Inject")
 uint16_t XSurface::GetPixelAtCoords(const Point2D& point, const RectangleStruct& clip_rect)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall XSurface_GetPixelAtCoords(void *this, _DWORD *a2, _DWORD *a3)
+void XSurface_GetPixelAtCoords(void *this, _DWORD *a2, _DWORD *a3)
 {
-  int v4; // ebx
-  int v5; // eax
-  int v6; // edx
-  _WORD *v7; // esi
 
-  v4 = 0;
+  int v4 = 0;
   if ( *a2 >= *a3 && *a2 < *a3 + a3[2] )
   {
-    v5 = a2[1];
-    v6 = a3[1];
+    int v5 = a2[1];
+    int v6 = a3[1];
     if ( v5 >= v6 && v5 < v6 + a3[3] )
     {
-      v7 = (_WORD *)(*(int (__thiscall **)(void *, _DWORD, _DWORD))(*(_DWORD *)this + 92))(this, *a2, a2[1]);
+      _WORD * v7 = (_WORD *)(*(int (__thiscall **)(void *, _DWORD, _DWORD))(*(_DWORD *)this + 92))(this, *a2, a2[1]);
       if ( v7 )
       {
         if ( (*(int (__thiscall **)(void *))(*(_DWORD *)this + 112))(this) == 2 )
@@ -2014,12 +1997,11 @@ bool XSurface::DrawLineEx(
 bool XSurface::DrawLine(const Point2D& start, const Point2D& end, uint32_t color)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall XSurface_DrawLine(void *this, _DWORD *a2, _DWORD *a3, __int16 a4)
+void XSurface_DrawLine(void *this, _DWORD *a2, _DWORD *a3, __int16 a4)
 {
-  int v5; // eax
-  _BYTE v7[16]; // [esp+4h] [ebp-10h] BYREF
 
-  v5 = (*(int (__thiscall **)(void *, _BYTE *))(*(_DWORD *)this + 120))(this, v7);
+  _BYTE v7[16]; // [esp+4h] [ebp-10h] BYREF
+  int v5 = (*(int (__thiscall **)(void *, _BYTE *))(*(_DWORD *)this + 120))(this, v7);
   return XSurface::DrawLineEx(this, v5, a2, a3, a4);
 }
 
@@ -2235,17 +2217,14 @@ REVERSE(0x7bbab0, "XSurface::Fill: fill surface", "None")
 bool XSurface::Fill(uint32_t color)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall XSurface_Fill(int *this, int a2)
+void XSurface_Fill(int *this, int a2)
 {
-  int v3; // edi
-  int v4; // eax
-  int v5; // eax
-  _BYTE v7[20]; // [esp+8h] [ebp-20h] BYREF
-  _BYTE v8[12]; // [esp+1Ch] [ebp-Ch] BYREF
 
-  v3 = *this;
-  v4 = (*(int (__thiscall **)(int *, _BYTE *, int))(*this + 120))(this, v7, a2);
-  v5 = (*(int (__thiscall **)(int *, _BYTE *, int))(*this + 120))(this, v8, v4);
+  int v3 = *this;
+  _BYTE v7[20]; // [esp+8h] [ebp-20h] BYREF
+  int v4 = (*(int (__thiscall **)(int *, _BYTE *, int))(*this + 120))(this, v7, a2);
+  _BYTE v8[12]; // [esp+1Ch] [ebp-Ch] BYREF
+  int v5 = (*(int (__thiscall **)(int *, _BYTE *, int))(*this + 120))(this, v8, v4);
   return (*(int (__thiscall **)(int *, int))(v3 + 16))(this, v5);
 }
 
@@ -2304,12 +2283,11 @@ bool XSurface::DrawRectEx(
 bool XSurface::DrawRect(const RectangleStruct& draw_rect, uint32_t color)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall XSurface_DrawRect(void *this, _DWORD *a2, int a3)
+void XSurface_DrawRect(void *this, _DWORD *a2, int a3)
 {
-  int v4; // eax
-  _BYTE v6[16]; // [esp+4h] [ebp-10h] BYREF
 
-  v4 = (*(int (__thiscall **)(void *, _BYTE *))(*(_DWORD *)this + 120))(this, v6);
+  _BYTE v6[16]; // [esp+4h] [ebp-10h] BYREF
+  int v4 = (*(int (__thiscall **)(void *, _BYTE *))(*(_DWORD *)this + 120))(this, v6);
   return XSurface::DrawRectEx(this, v4, a2, a3);
 }
 
@@ -2417,12 +2395,11 @@ REVERSE(0x7BB020, "XSurface::FillRect: rect fill wrapper", "None")
 bool XSurface::FillRect(const RectangleStruct& fill_rect, uint32_t color)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall XSurface_FillRect(void *this, _DWORD *a2, int a3)
+void XSurface_FillRect(void *this, _DWORD *a2, int a3)
 {
-  int *v4; // eax
-  _BYTE v6[16]; // [esp+4h] [ebp-10h] BYREF
 
-  v4 = (int *)(*(int (__thiscall **)(void *, _BYTE *))(*(_DWORD *)this + 120))(this, v6);
+  _BYTE v6[16]; // [esp+4h] [ebp-10h] BYREF
+  int * v4 = (int *)(*(int (__thiscall **)(void *, _BYTE *))(*(_DWORD *)this + 120))(this, v6);
   return XSurface::FillRectEx(this, a2, v4, a3);
 }
 
@@ -2587,40 +2564,26 @@ REVERSE(0x7BBAF0, "XSurface::BlitWhole: Blit wrapper with zero origins", "None")
 bool XSurface::BlitWhole(Surface* src, bool option1, bool option2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall XSurface_BlitWhole(int *this, int *a2, int a3, int a4)
+void XSurface_BlitWhole(int *this, int *a2, int a3, int a4)
 {
-  int *v5; // eax
-  int v6; // edx
-  int v7; // eax
-  int *v8; // eax
-  int v9; // edx
-  int v10; // eax
-  int v12; // [esp+Ch] [ebp-30h] BYREF
-  int v13; // [esp+10h] [ebp-2Ch]
-  int v14; // [esp+14h] [ebp-28h]
-  int v15; // [esp+18h] [ebp-24h]
-  int v16; // [esp+1Ch] [ebp-20h] BYREF
-  int v17; // [esp+20h] [ebp-1Ch]
-  int v18; // [esp+24h] [ebp-18h]
-  int v19; // [esp+28h] [ebp-14h]
-  _BYTE v20[16]; // [esp+2Ch] [ebp-10h] BYREF
 
-  v5 = (int *)(*(int (__thiscall **)(int *, _BYTE *))(*this + 120))(this, v20);
-  v16 = *v5;
-  v17 = v5[1];
-  v18 = v5[2];
-  v6 = *a2;
-  v7 = v5[3];
+  _BYTE v20[16]; // [esp+2Ch] [ebp-10h] BYREF
+  int * v5 = (int *)(*(int (__thiscall **)(int *, _BYTE *))(*this + 120))(this, v20);
+  int v16 = *v5;
+  int v17 = v5[1];
+  int v18 = v5[2];
+  int v6 = *a2;
+  int v7 = v5[3];
   v16 = 0;
-  v19 = v7;
+  int v19 = v7;
   v17 = 0;
-  v8 = (int *)(*(int (__thiscall **)(int *, _BYTE *))(v6 + 120))(a2, v20);
-  v12 = *v8;
-  v13 = v8[1];
-  v14 = v8[2];
-  v9 = v8[3];
-  v10 = *this;
-  v15 = v9;
+  int * v8 = (int *)(*(int (__thiscall **)(int *, _BYTE *))(v6 + 120))(a2, v20);
+  int v12 = *v8;
+  int v13 = v8[1];
+  int v14 = v8[2];
+  int v9 = v8[3];
+  int v10 = *this;
+  int v15 = v9;
   v12 = 0;
   v13 = 0;
   return (*(int (__thiscall **)(int *, int *, int *, int *, int, int))(v10 + 8))(this, &v16, a2, &v12, a3, a4);

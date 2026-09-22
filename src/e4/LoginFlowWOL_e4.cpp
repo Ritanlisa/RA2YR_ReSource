@@ -9,10 +9,8 @@ namespace gamemd {
 char sub_786EF0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char sub_786EF0()
+void sub_786EF0()
 {
-  const char *v1; // [esp-8h] [ebp-110h]
-  int v2; // [esp-4h] [ebp-10Ch]
   char Buffer[260]; // [esp+4h] [ebp-104h] BYREF
 
   if ( dword_B77DF8 == -2147221385 /*0x786f26*/
@@ -27,8 +25,8 @@ char sub_786EF0()
       switch ( dword_B77DF8 ) /*0x786f78*/
       {
         case -2147221390: /*0x786f78*/
-          v2 = dword_B77E50; /*0x786f99*/
-          v1 = aHttpApiregiste_1; /*0x786f9a*/
+          int v2 = dword_B77E50; /*0x786f99*/
+          const char * v1 = aHttpApiregiste_1; /*0x786f9a*/
           goto LABEL_16; /*0x786f9f*/
         case -2147221388: /*0x786f78*/
           sprintf(Buffer, DataGlobal_84B4C4, dword_B77E50); /*0x786fac*/

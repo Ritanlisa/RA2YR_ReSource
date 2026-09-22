@@ -9,24 +9,14 @@
 char LinkedList::LoadScenarioMixFiles(INIClass * aP0, int aP2, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char LinkedList::LoadScenarioMixFiles(INIClass *aP0, int aP2, int a3, int a4)
+void LinkedList::LoadScenarioMixFiles(INIClass *aP0, int aP2, int a3, int a4)
 {
   CD *v4; // ecx
   CD *v5; // esi
   IUnknown *v6; // eax
-  _DWORD *v8; // eax
-  _DWORD *v9; // eax
   INIClass *v10; // edi
-  _DWORD *v11; // eax
-  _DWORD *v12; // eax
-  _DWORD *v13; // eax
-  _DWORD *v14; // eax
   CCFileClass *v15; // eax
-  char v16; // bl
-  _DWORD *v17; // eax
-  _DWORD *v18; // eax
   CCFileClass *v19; // eax
-  char v20; // bl
   _DWORD *v21; // eax
   MixFileClass Buffer; // [esp+24h] [ebp-ACh] BYREF
   void **v23; // [esp+64h] [ebp-6Ch] BYREF
@@ -35,7 +25,6 @@ char LinkedList::LoadScenarioMixFiles(INIClass *aP0, int aP2, int a3, int a4)
   _BYTE v26[8]; // [esp+C0h] [ebp-10h] BYREF
   int v27; // [esp+C8h] [ebp-8h]
   int v28; // [esp+CCh] [ebp-4h]
-
   v5 = v4; /*0x479201*/
   Debug::Log(); /*0x479208*/
   if ( *(_DWORD *)&v5[1] == -1 ) /*0x479216*/
@@ -111,8 +100,9 @@ char LinkedList::LoadScenarioMixFiles(INIClass *aP0, int aP2, int a3, int a4)
   }
   if ( !Map_Load_751C30() ) /*0x479387*/
     return 1; /*0x47939b*/
-  v8 = (_DWORD *)__2_YAPAXI_Z(0x28u); /*0x4793a0*/
+  _DWORD * v8 = (_DWORD *)__2_YAPAXI_Z(0x28u); /*0x4793a0*/
   if ( v8 ) /*0x4793aa*/
+  _DWORD *v9; // eax
     v9 = MixFileClass::FromFile( /*0x4793b8*/
            v8,
            (MixFileClass *)stru_81C2C4.customSound_controller,
@@ -124,7 +114,7 @@ char LinkedList::LoadScenarioMixFiles(INIClass *aP0, int aP2, int a3, int a4)
   v10 = (INIClass *)&aP0->__pad_0[1]; /*0x4793d4*/
   sprintf(Buffer[0], (ObjectClass *)&stru_81C2C4.owningHouseIndex, (INIClass *)&aP0->__pad_0[1]); /*0x4793e7*/
   Debug::Log(); /*0x4793f6*/
-  v11 = (_DWORD *)__2_YAPAXI_Z(0x28u); /*0x4793fd*/
+  _DWORD * v11 = (_DWORD *)__2_YAPAXI_Z(0x28u); /*0x4793fd*/
   if ( v11 ) /*0x479407*/
     *(_DWORD *)&stru_87C374[35564] = MixFileClass::FromFile( /*0x47941a*/
                                                   v11,
@@ -134,7 +124,7 @@ char LinkedList::LoadScenarioMixFiles(INIClass *aP0, int aP2, int a3, int a4)
     *(_DWORD *)&stru_87C374[35564] = 0; /*0x479421*/
   sprintf(Buffer[0], &stru_81C2C4, v10); /*0x479432*/
   Debug::Log(); /*0x479441*/
-  v12 = (_DWORD *)__2_YAPAXI_Z(0x28u); /*0x479448*/
+  _DWORD * v12 = (_DWORD *)__2_YAPAXI_Z(0x28u); /*0x479448*/
   if ( !v12 ) /*0x479452*/
   {
     *(_DWORD *)&stru_87C374[35568] = 0; /*0x479489*/
@@ -146,7 +136,7 @@ LABEL_61:
   if ( !*(_DWORD *)&stru_87C374[35568] ) /*0x47946c*/
     goto LABEL_61; /*0x47946c*/
   Debug::Log(); /*0x479496*/
-  v13 = (_DWORD *)__2_YAPAXI_Z(0x28u); /*0x47949d*/
+  _DWORD * v13 = (_DWORD *)__2_YAPAXI_Z(0x28u); /*0x47949d*/
   if ( v13 ) /*0x4794a7*/
     *(_DWORD *)&stru_87C374[35428] = MixFileClass::FromFile( /*0x4794ba*/
                                                   v13,
@@ -155,7 +145,7 @@ LABEL_61:
   else
     *(_DWORD *)&stru_87C374[35428] = 0; /*0x4794c1*/
   Debug::Log(); /*0x4794cc*/
-  v14 = (_DWORD *)__2_YAPAXI_Z(0x28u); /*0x4794d3*/
+  _DWORD * v14 = (_DWORD *)__2_YAPAXI_Z(0x28u); /*0x4794d3*/
   if ( !v14 ) /*0x4794dd*/
   {
     *(_DWORD *)&stru_87C374[35432] = 0; /*0x479514*/
@@ -168,7 +158,7 @@ LABEL_61:
   if ( !*(_DWORD *)&stru_87C374[35432] ) /*0x4794f7*/
     goto LABEL_61; /*0x4794f7*/
   v15 = CCFileClass::Construct(&v23, (char *)&stru_81C200.ambientSoundController[4]); /*0x479526*/
-  v16 = (*(int (__thiscall **)(CCFileClass *, _DWORD))(*(_DWORD *)v15->__pad_0 + 20))(v15, 0); /*0x47953f*/
+  char v16 = (*(int (__thiscall **)(CCFileClass *, _DWORD))(*(_DWORD *)v15->__pad_0 + 20))(v15, 0); /*0x47953f*/
   v24[0] = &vt_CCFileClass; /*0x479541*/
   v28 = 0; /*0x479545*/
   Vector::Clear((int)v26); /*0x47954c*/
@@ -177,7 +167,7 @@ LABEL_61:
   if ( v16 ) /*0x47956a*/
   {
     Debug::Log(); /*0x47956c*/
-    v17 = (_DWORD *)__2_YAPAXI_Z(0x28u); /*0x479573*/
+    _DWORD * v17 = (_DWORD *)__2_YAPAXI_Z(0x28u); /*0x479573*/
     if ( v17 ) /*0x47957d*/
     {
       *(_DWORD *)&stru_87C374[9156] = MixFileClass::FromFile( /*0x479590*/
@@ -190,7 +180,7 @@ LABEL_61:
   else
   {
     Debug::Log(); /*0x479597*/
-    v18 = (_DWORD *)__2_YAPAXI_Z(0x28u); /*0x47959e*/
+    _DWORD * v18 = (_DWORD *)__2_YAPAXI_Z(0x28u); /*0x47959e*/
     if ( v18 ) /*0x4795a8*/
     {
       *(_DWORD *)&stru_87C374[9156] = MixFileClass::FromFile( /*0x4795bb*/
@@ -205,7 +195,7 @@ LABEL_58:
   Audio::LoadWAVFiles(&g_BuildingTypeClass_Count); /*0x4795c8*/
   sprintf((char *const)&Buffer.Previous, (ObjectClass *)&stru_81C200.uniqueId, (INIClass *)aP2); /*0x4795e4*/
   v19 = CCFileClass::Construct(v24, (char *)&Buffer.Previous); /*0x4795f5*/
-  v20 = (*(int (__thiscall **)(CCFileClass *, _DWORD))(*(_DWORD *)v19->__pad_0 + 20))(v19, 0); /*0x479609*/
+  char v20 = (*(int (__thiscall **)(CCFileClass *, _DWORD))(*(_DWORD *)v19->__pad_0 + 20))(v19, 0); /*0x479609*/
   v23 = &vt_CCFileClass; /*0x47960b*/
   v27 = 0; /*0x47960f*/
   Vector::Clear((int)v25); /*0x479616*/
@@ -255,10 +245,9 @@ unsigned int * LinkedList::FindPrev()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall LinkedList_FindPrev(_DWORD *this)
 {
-  _DWORD *v1; // edx
   _DWORD *result; // eax
 
-  v1 = this + 2; /*0x556643*/
+  _DWORD * v1 = this + 2; /*0x556643*/
   if ( !this->q008 ) /*0x556640*/
     return this; /*0x55665d*/
   do /*0x556651*/
@@ -277,12 +266,11 @@ _DWORD *__thiscall LinkedList_FindPrev(_DWORD *this)
 int LinkedList::InsertAfter(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall LinkedList_InsertAfter(_DWORD *this, int a2)
+void LinkedList_InsertAfter(_DWORD *this, int a2)
 {
-  int v3; // eax
 
   (*(void (__thiscall **)(_DWORD *))(*this + 36))(this); /*0x5566a5*/
-  v3 = *(_DWORD *)(a2 + 4); /*0x5566ac*/
+  int v3 = *(_DWORD *)(a2 + 4); /*0x5566ac*/
   *(_DWORD *)(a2 + 4) = this; /*0x5566af*/
   this->q008 = a2; /*0x5566b4*/
   this->Tail = v3; /*0x5566b7*/
@@ -298,10 +286,9 @@ unsigned int * LinkedList::Attach(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall LinkedList_Attach(_DWORD *this, int a2)
 {
-  int v3; // eax
 
   (*(void (__thiscall **)(_DWORD *))(*this + 36))(this); /*0x5566d5*/
-  v3 = (*(int (__thiscall **)(int))(*(_DWORD *)a2 + 24))(a2); /*0x5566de*/
+  int v3 = (*(int (__thiscall **)(int))(*(_DWORD *)a2 + 24))(a2); /*0x5566de*/
   *(_DWORD *)(v3 + 8) = this; /*0x5566e1*/
   this->Tail = v3; /*0x5566e4*/
   this->q008 = 0; /*0x5566e7*/
@@ -313,16 +300,14 @@ _DWORD *__thiscall LinkedList_Attach(_DWORD *this, int a2)
 int LinkedList::Append(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall LinkedList_Append(_DWORD *this, int a2)
+void LinkedList_Append(_DWORD *this, int a2)
 {
-  int v3; // eax
-  int v4; // eax
 
   (*(void (__thiscall **)(_DWORD *))(*this + 36))(this); /*0x556705*/
-  v3 = (*(int (__thiscall **)(int))(*(_DWORD *)a2 + 28))(a2); /*0x55670e*/
+  int v3 = (*(int (__thiscall **)(int))(*(_DWORD *)a2 + 28))(a2); /*0x55670e*/
   *(_DWORD *)(v3 + 4) = this; /*0x556711*/
   this->q008 = v3; /*0x556714*/
-  v4 = *this; /*0x556717*/
+  int v4 = *this; /*0x556717*/
   this->Tail = 0; /*0x55671b*/
   return (*(int (__thiscall **)(_DWORD *))(v4 + 24))(this); /*0x556725*/
 }
@@ -332,21 +317,17 @@ int __thiscall LinkedList_Append(_DWORD *this, int a2)
 int LinkedList::RemoveNode()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall LinkedList_RemoveNode(_DWORD *this)
+void LinkedList_RemoveNode(_DWORD *this)
 {
-  int v2; // edi
-  int v3; // eax
-  int v4; // edx
-  int v5; // edx
 
-  v2 = (*(int (__thiscall **)(_DWORD *))(*this + 24))(this); /*0x55673e*/
-  v3 = (*(int (__thiscall **)(_DWORD *))(*this + 28))(this); /*0x556740*/
-  v4 = this->q008; /*0x556743*/
+  int v2 = (*(int (__thiscall **)(_DWORD *))(*this + 24))(this); /*0x55673e*/
+  int v3 = (*(int (__thiscall **)(_DWORD *))(*this + 28))(this); /*0x556740*/
+  LinkClass *v4 = this->q008; /*0x556743*/
   if ( v4 ) /*0x55674a*/
-    *(_DWORD *)(v4 + 4) = this->Tail; /*0x55674f*/
-  v5 = this->Tail; /*0x556752*/
+    v4->m_Next = this->Tail; /*0x55674f*/
+  LinkClass *v5 = this->Tail; /*0x556752*/
   if ( v5 ) /*0x556757*/
-    *(_DWORD *)(v5 + 8) = this->q008; /*0x55675c*/
+    v5->m_Prev = this->q008; /*0x55675c*/
   this->q008 = 0; /*0x556761*/
   this->Tail = 0; /*0x556764*/
   if ( (_DWORD *)v2 != this ) /*0x556767*/
@@ -361,13 +342,11 @@ int __thiscall LinkedList_RemoveNode(_DWORD *this)
 void LinkedList::Remove(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall LinkedList_Remove(_DWORD *this, _DWORD *a2)
+void LinkedList_Remove(_DWORD *this, _DWORD *a2)
 {
-  _DWORD *v2; // eax
-  _DWORD *v3; // edx
 
-  v2 = (_DWORD *)this->q034; /*0x623460*/
-  v3 = 0; /*0x623463*/
+  _DWORD * v2 = (_DWORD *)this->q034; /*0x623460*/
+  _DWORD * v3 = 0; /*0x623463*/
   if ( v2 ) /*0x623468*/
   {
     while ( a2 != v2 ) /*0x623470*/
@@ -390,23 +369,21 @@ void __thiscall LinkedList_Remove(_DWORD *this, _DWORD *a2)
 void LinkedList::RelinkNode(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall LinkedList_RelinkNode(_DWORD *this, int a2)
+void LinkedList_RelinkNode(_DWORD *this, int a2)
 {
-  int v3; // ecx
-  int v4; // eax
 
   if ( *(this + 6) != a2 ) /*0x632d1b*/
   {
     if ( a2 ) /*0x632d1f*/
     {
-      v3 = *(_DWORD *)(a2 + 8); /*0x632d21*/
+      int v3 = *(_DWORD *)(a2 + 8); /*0x632d21*/
       if ( v3 ) /*0x632d26*/
       {
         (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)v3 + 12))(v3, 0); /*0x632d2c*/
         *(_DWORD *)(a2 + 8) = 0; /*0x632d2f*/
       }
     }
-    v4 = *(this + 6); /*0x632d36*/
+    int v4 = *(this + 6); /*0x632d36*/
     if ( v4 ) /*0x632d3b*/
       *(_DWORD *)(v4 + 8) = 0; /*0x632d3d*/
     *(this + 6) = a2; /*0x632d46*/
@@ -422,11 +399,10 @@ void __thiscall LinkedList_RelinkNode(_DWORD *this, int a2)
 char LinkedList::Contains(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall LinkedList::Contains(_DWORD *this, IUnknown *aP1)
+void LinkedList::Contains(IUnknown *aP1)
 {
-  int v2; // eax
 
-  v2 = this->q028; /*0x6e5380*/
+  int v2 = this->q028; /*0x6e5380*/
   if ( !v2 ) /*0x6e5385*/
     return 0; /*0x6e5396*/
   while ( (IUnknown *)v2 != aP1 ) /*0x6e538d*/

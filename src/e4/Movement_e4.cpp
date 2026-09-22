@@ -21,9 +21,6 @@ __int64 Movement::CalcVelocity(
         char a8,
         char a9)
 {
-  int v9; // edx
-  int *v10; // ecx
-  double v11; // st7
   int *v12; // ebx
   BuildingTypeClass *v13; // esi
   bool v14; // zf
@@ -91,22 +88,23 @@ __int64 Movement::CalcVelocity(
   _BYTE v76[12]; // [esp+4h] [ebp-A4h]
   BuildingTypeClass *v70; // [esp+Ch] [ebp-9Ch]
   BuildingTypeClass *v71; // [esp+20h] [ebp-88h] BYREF
-  double *v79; // [esp+24h] [ebp-84h] BYREF
+  BuildingTypeClass *v79; // [esp+24h] [ebp-84h] BYREF
   double v80[3]; // [esp+28h] [ebp-80h] BYREF
-  double *v81; // [esp+44h] [ebp-64h] BYREF
+  BuildingTypeClass *v81; // [esp+44h] [ebp-64h] BYREF
   double v82[2]; // [esp+48h] [ebp-60h] BYREF
   IUnknown *v83[2]; // [esp+58h] [ebp-50h] BYREF
   AbstractClass aP1; // [esp+60h] [ebp-48h] BYREF
   int v85; // [esp+84h] [ebp-24h]
   double v86[3]; // [esp+90h] [ebp-18h] BYREF
 
-  v12 = v10; /*0x5b2102*/
-  v13 = (BuildingTypeClass *)v9; /*0x5b2104*/
+  int * v10 = v10; /*0x5b2102*/
+  BuildingTypeClass *v9 = (BuildingTypeClass *)v9; /*0x5b2104*/
   v14 = aP0->field_0 == (_DWORD)*(&g_MatrixTransformState + 64); /*0x5b210e*/
   v81 = (double *)v9; /*0x5b2110*/
   if ( v14 && *(_QWORD *)&aP0->field_4 == *(_QWORD *)(&g_MatrixTransformState + 65) ) /*0x5b2124*/
   {
     Math::Hypotenuse2D((double *)v9); /*0x5b213c*/
+  double v11; // st7
     *(double *)&v75[4] = v11; /*0x5b214a*/
     *(_DWORD *)v75 = v13->abstractFlags; /*0x5b214d*/
     v15 = Math::CalcAngle((AbstractClass *)v13->uniqueId, *(double *)v75); /*0x5b214f*/
@@ -173,9 +171,9 @@ __int64 Movement::CalcVelocity(
                                       + *(double *)&v13->uniqueId * *(double *)&v13->uniqueId));
     return Math::RoundToInt(v31); /*0x5b234d*/
   }
-  v33 = *(double *)(v9 + 16); /*0x5b2352*/
+  v33 = v9->uniqueId; /*0x5b2352*/
   *(_QWORD *)&aP1.nextArrayIndex = *(_QWORD *)v9; /*0x5b2357*/
-  edx11 = *(_DWORD *)(v9 + 12); /*0x5b2369*/
+  edx11 = v9->vtable4; /*0x5b2369*/
   aP1.NeedsSaveOrLink = *(void **)&v13->vtable0[8]; /*0x5b236c*/
   v85 = edx11; /*0x5b2370*/
   v35 = Math::RoundToInt(v33); /*0x5b237d*/

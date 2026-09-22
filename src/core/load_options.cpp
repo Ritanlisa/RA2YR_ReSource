@@ -96,20 +96,16 @@ LoadOptions::~LoadOptions() {
 // 0x558790
 void LoadOptions::Cleanup() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall LoadOptions_Cleanup(_DWORD *this)
+void LoadOptions_Cleanup(_DWORD *this)
 {
-  int v2; // edi
-  int v3; // edx
-  _DWORD *v4; // esi
-  void *v5; // eax
 
-  v2 = 0;
+  int v2 = 0;
   for ( *this = &LoadOptionsClass::`vftable'; v2 < this->capacity; ++v2 )
     __3_YAXPAX_Z(*(void **)(this->q009 + 4 * v2));
-  v3 = this->is_active;
-  v4 = this + 8;
+  int v3 = this->is_active;
+  _DWORD * v4 = this + 8;
   (*(void (__thiscall **)(_DWORD *))(v3 + 12))(v4);
-  v5 = (void *)v4[1];
+  void * v5 = (void *)v4[1];
   *v4 = &VectorClass<FileEntryClass *>::`vftable';
   if ( v5 && *((_BYTE *)v4 + 13) )
   {
@@ -188,7 +184,7 @@ bool LoadOptions::DeleteSaveFile(const char* filename) {
 int LoadOptions::Run() {
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall LoadOptions::Run(const char **this)
+void LoadOptions::Run(const char **this)
 {
   this->Items = (const char *)1; /*0x5587f0*/
   this->q00C = 0; /*0x5587f7*/
@@ -374,17 +370,15 @@ bool LoadOptions::ReadEntry(FileEntryClass* dest, int a2) {
 bool LoadOptions::CopyItems(uint32_t new_size, FileEntryClass** out_buffer) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x55a1f0
-char __thiscall LoadOptions::CopyItems(void *this, int a2, _DWORD *a3)
+void LoadOptions::CopyItems(int a2, _DWORD *a3)
 {
-  _DWORD *v4; // edi
-  int v6; // ecx
   int i; // eax
 
   if ( a2 )
   {
     this->q00C = 0;
     if ( a3 )
-      v4 = a3;
+      _DWORD * v4 = a3;
     else
       v4 = (_DWORD *)__2_YAPAXI_Z(4 * a2);
     this->q00C = 1;
@@ -392,14 +386,14 @@ char __thiscall LoadOptions::CopyItems(void *this, int a2, _DWORD *a3)
     {
       if ( this->Items )
       {
-        v6 = this->Capacity;
+        int v6 = this->Capacity;
         if ( a2 < v6 )
           v6 = a2;
         for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) )
           ++i;
         if ( this->IsAllocated )
         {
-          __3_YAXPAX_Z(*((void **)this + 1));
+          __3_YAXPAX_Z(this->Items);
           this->Items = 0;
         }
       }
@@ -521,11 +515,11 @@ retn    8
 // 0x55a2a0
 void LoadOptions::ClearBuffer() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall LoadOptions::sub_55A2A0(int this)
+void LoadOptions::sub_55A2A0(int this)
 {
   if ( this->Items && this->IsAllocated ) /*0x55a2ad*/
   {
-    __3_YAXPAX_Z(*(void **)(this + 4)); /*0x55a2b3*/
+    __3_YAXPAX_Z(this->Items); /*0x55a2b3*/
     this->Items = 0; /*0x55a2bb*/
   }
   this->IsAllocated = 0; /*0x55a2be*/
@@ -536,19 +530,18 @@ void __thiscall LoadOptions::sub_55A2A0(int this)
 // 0x55a2d0
 int LoadOptions::FindItem(FileEntryClass* const* key) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall LoadOptions::sub_55A2D0(int this, _DWORD *a2)
+void LoadOptions::sub_55A2D0(int this, _DWORD *a2)
 {
   int result; // eax
-  int v3; // edx
   _DWORD *i; // ecx
 
   if ( !this->q00C ) /*0x55a2d0*/
     return 0; /*0x55a2d8*/
-  v3 = this->Capacity; /*0x55a2de*/
+  int v3 = this->Capacity; /*0x55a2de*/
   result = 0; /*0x55a2e1*/
   if ( v3 <= 0 ) /*0x55a2e5*/
     return -1; /*0x55a2fc*/
-  for ( i = *(_DWORD **)(this + 4); *i != *a2; ++i ) /*0x55a2eb*/
+  for ( i = this->Items; *i != *a2; ++i ) /*0x55a2eb*/
   {
     if ( ++result >= v3 ) /*0x55a2fa*/
       return -1; /*0x55a2fa*/

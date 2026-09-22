@@ -6,15 +6,13 @@
 int LCWPipe::Dtor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall LCWPipe_Destructor(int *this)
+void LCWPipe_Destructor(int *this)
 {
-  void *v2; // eax
-  void *v3; // ecx
 
-  v2 = (void *)this->q005; /*0x552063*/
+  void * v2 = (void *)this->q005; /*0x552063*/
   *this = (int)&vt_LCWPipe; /*0x552066*/
   __3_YAXPAX_Z(v2); /*0x55206d*/
-  v3 = (void *)this->q006; /*0x552072*/
+  void * v3 = (void *)this->q006; /*0x552072*/
   this->q005 = 0; /*0x552075*/
   __3_YAXPAX_Z(v3); /*0x55207d*/
   this->q006 = 0; /*0x552087*/

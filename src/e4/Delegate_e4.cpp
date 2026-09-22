@@ -8,7 +8,7 @@
 int Delegate::ProcessBitmapStream(char * Src, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Delegate::ProcessBitmapStream(Base64Pipe *this, char *Src, int a3)
+void Delegate::ProcessBitmapStream(char *Src, int a3)
 {
   AbstractClass *v3; // ebp
   int v5; // esi
@@ -55,8 +55,7 @@ int __thiscall Delegate::ProcessBitmapStream(Base64Pipe *this, char *Src, int a3
     {
       if ( this->field_C ) /*0x42de62*/
         v9 = (Pipe *)DecodeBitmapRGB(aP0, (BombClass *)v5, pad_14, Srca); /*0x42de88*/
-      else
-        v9 = (Pipe *)EncodeBitmapRGB(aP0, v5, pad_14, Srca); /*0x42de75*/
+      Pipe *v9 = (Pipe *)EncodeBitmapRGB(aP0, v5, pad_14, Srca); /*0x42de75*/
       v13 = Delegate::Dispatch(this, pad_14, v9); /*0x42de96*/
       this->field_10 = 0; /*0x42de9a*/
     }
@@ -65,8 +64,7 @@ int __thiscall Delegate::ProcessBitmapStream(Base64Pipe *this, char *Src, int a3
   {
     if ( this->field_C ) /*0x42dea7*/
       v10 = (Pipe *)DecodeBitmapRGB((Pipe *)v3, (BombClass *)v5, pad_14, Srca); /*0x42dec9*/
-    else
-      v10 = (Pipe *)EncodeBitmapRGB((Pipe *)v3, v5, pad_14, Srca); /*0x42deb8*/
+    Pipe *v10 = (Pipe *)EncodeBitmapRGB((Pipe *)v3, v5, pad_14, Srca); /*0x42deb8*/
     v3 = (AbstractClass *)((char *)v3 + v5); /*0x42ded2*/
     v13 = (Pipe *)((char *)v13 + (_DWORD)Delegate::Dispatch(this, pad_14, v10)); /*0x42dee5*/
   }
@@ -86,7 +84,6 @@ Pipe * Delegate::Dispatch(Pipe * aP1, Pipe * aP2)
 Pipe *__thiscall Delegate::Dispatch(_DWORD *this, Pipe *aP1, Pipe *aP2)
 {
   Pipe *v3; // ecx
-
   v3 = (Pipe *)this->m_count; /*0x631d10*/
   if ( v3 ) /*0x631d15*/
     return (*(Pipe *(__thiscall **)(Pipe *, Pipe *, Pipe *))(*(_DWORD *)v3->__pad_0 + 16))(v3, aP1, aP2); /*0x631d23*/
@@ -113,11 +110,10 @@ _DWORD *__thiscall Delegate::GetField(_DWORD *this)
 void Delegate::Set(AbstractTypeClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall Delegate::Set(_DWORD *this, AbstractTypeClass *aP1)
+void Delegate::Set(AbstractTypeClass *aP1)
 {
   Straw *v3; // ecx
   AbstractTypeClass *v4; // eax
-
   if ( (AbstractTypeClass *)this->m_count != aP1 ) /*0x6c989b*/
   {
     if ( aP1 ) /*0x6c989f*/
@@ -143,10 +139,9 @@ void __thiscall Delegate::Set(_DWORD *this, AbstractTypeClass *aP1)
 int Delegate::Invoke(int a2, Straw * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Delegate::Invoke(_DWORD *this, int a2, Straw *aP2)
+void Delegate::Invoke(int a2, Straw *aP2)
 {
   Straw *v3; // ecx
-
   v3 = (Straw *)this->m_count; /*0x6c98e0*/
   if ( v3 ) /*0x6c98e5*/
     return (*(int (__thiscall **)(Straw *, int, Straw *))(*(_DWORD *)v3->__pad_0 + 8))(v3, a2, aP2); /*0x6c98f3*/

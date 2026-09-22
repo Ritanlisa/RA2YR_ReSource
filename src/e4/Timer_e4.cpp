@@ -23,12 +23,10 @@ namespace gamemd {
 char Timer::StartDouble(double a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall Timer_StartDouble(_BYTE *this, double a2)
+void Timer_StartDouble(_BYTE *this, double a2)
 {
-  int v3; // eax
   wchar_t *v4; // ecx
-  int v6; // [esp+8h] [ebp-Ch]
-
+  int v3; // eax
   if ( *(this + 24) || (LOBYTE(v3) = *(this + 25), (_BYTE)v3) ) /*0x4a5252*/
   {
     *(this + 24) = 1; /*0x4a525e*/
@@ -37,6 +35,7 @@ char __thiscall Timer_StartDouble(_BYTE *this, double a2)
     v4 = g_CurrentFrame; /*0x4a5269*/
     *(this + 25) = 0; /*0x4a5272*/
     *((_DWORD *)this + 2) = v4; /*0x4a5276*/
+  int v6; // [esp+8h] [ebp-Ch]
     *((_DWORD *)this + 3) = v6; /*0x4a527c*/
     *((_DWORD *)this + 4) = v3; /*0x4a527f*/
     *((_DWORD *)this + 5) = v3; /*0x4a5282*/
@@ -65,15 +64,13 @@ namespace gamemd {
 int Timer::GetRemainingMs()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Timer_GetRemainingMs(signed int *this)
+void Timer_GetRemainingMs(signed int *this)
 {
-  signed int v1; // edi
-  signed int v2; // ecx
 
-  v1 = *(this + 2); /*0x4f1b26*/
+  signed int v1 = *(this + 2); /*0x4f1b26*/
   if ( *this == -1 ) /*0x4f1b2c*/
     return *(this + 2); /*0x4f1b4c*/
-  v2 = Timer::GetTicks() - *this; /*0x4f1b3a*/
+  signed int v2 = Timer::GetTicks() - *this; /*0x4f1b3a*/
   if ( v2 >= v1 ) /*0x4f1b3e*/
     return 0; /*0x4f1b48*/
   else
@@ -116,18 +113,16 @@ namespace gamemd {
 double Timer::GetHighPrecision()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-double __thiscall Timer_GetHighPrecision(double *this)
+void Timer_GetHighPrecision(double *this)
 {
-  unsigned int v2; // eax
-  unsigned int v4; // [esp+4h] [ebp-Ch] BYREF
-  __int64 v5; // [esp+8h] [ebp-8h]
 
   if ( dword_82C24C == -1 ) /*0x5b1e4e*/
     GetVersionString(&dword_82C24C, DataGlobal_ABEED4, 0, 0); /*0x5b1e5e*/
   if ( !*(_DWORD *)this && *((_DWORD *)this + 1) == 1072693248 || dword_82C24C <= 4 ) /*0x5b1e78*/
     return (double)timeGetTime(); /*0x5b1ecc*/
-  v2 = Timer::ReadTSC(&v4); /*0x5b1e7f*/
-  v5 = v4; /*0x5b1e9b*/
+  unsigned int v4; // [esp+4h] [ebp-Ch] BYREF
+  unsigned int v2 = Timer::ReadTSC(&v4); /*0x5b1e7f*/
+  __int64 v5 = v4; /*0x5b1e9b*/
   return ((double)v2 + (double)v4 * 4294967296.0) / *this; /*0x5b1eb5*/
 }
 }
@@ -138,11 +133,10 @@ namespace gamemd {
 int Timer::GetElapsed()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Timer_GetElapsed(_DWORD *this)
+void Timer_GetElapsed(_DWORD *this)
 {
-  int v1; // edi
 
-  v1 = *(this + 2); /*0x5f1396*/
+  int v1 = *(this + 2); /*0x5f1396*/
   if ( *this != -1 ) /*0x5f139c*/
     v1 += Timer::GetTicks() - *this; /*0x5f13a8*/
   return v1; /*0x5f13ac*/

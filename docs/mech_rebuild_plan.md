@@ -614,3 +614,13 @@ this-relative 访问**，参数型 receiver（`a1->X`）架构上不产事件。
 4. **e4 载体补全**：346 个 bucket 补 1,565 个类 include；生成 `_fwd_e4.hpp`（1,863 前置声明 + windows/STL 头）挂到全部 1,741 个 E2 头。
 5. **临时变量声明前置**：`lower_temp_decls.py`（Step4 第 6 段）——合并到首次赋值/插入首用行前，仅限同 brace 深度（结构安全）；首块 322 移动/76 深层跳过。
 6. **CSP 落实度（3,900 pending 块审计）**：sig=csp 锚定 24.1%（940）；typed this（type_map）474；块内成员偏移 17,020 中 canon 表可解 45.0%（7,662）——这是 CSP 层对翻译的当前真实供给率，缺口=csp_anchor 补锚通道的工作量度量。
+
+### G29.6 Step 4 收口：签名/类型/全量偏移/任意深度前置（2026-09-21，用户四连指令）
+
+1. **签名规范化**（normalize_blocks 第 7 段）：嵌套 IDA def 去 `__thiscall` + **去显式 this 参数** + CSP 返回类型（csp_canon 头 addr 键控）——**1,096 成员签名 + 1,459 自由签名规范化**。Mission_Attack 嵌套 def = `void AircraftClass::Mission_Attack()`（无 thiscall/无 this/canon 返回类型）。
+2. **块内类型环境**（确定性、零发明）：this → 类；aN 参数按位 ← type_map `paramK` 槽；`vN = (T*)…` cast 提示；`vN = R->M` ← 成员结果键（this/param0/eax/esi 四型）；`vN = vM` 传播。**4,681 个块内变量获得类型**。
+3. **指针+int 全量覆盖**：类型化接收者的 `*(T*)(R+N)`/`*((T*)R)+N` → `R->Member`（canon 表）；加上此前 this 形态大转换，块内 this/param/local 三类接收者全部机械化。
+4. **局部变量重类型 4,086 处**：`int v3;`/合并态 `int v3 = …;` → `Cls *v3 …`（CSP 类类型）。
+5. **任意深度声明前置**（lower_temp_decls 第 6 段升级，作用域安全=内层公共祖先块规则）：**292,336 处移动**（28,217 合并到首次赋值 + 264,119 插入首用点，423 文件，0 跳过）。工程教训：heredoc `\b` 会被转义层吃成退格符，含反斜杠的生成器一律用 Write 工具落地。
+6. 完整性：花括号不平衡文件数 = HEAD 同值 59（gap2 形态既有，零新增）；pending 3,919 不变；replace_body 定位正常；verify PASS。
+7. **canon_regen 七段闭环**：canon 表 → 成员引用改写 → 回填 → pending 块成员化 → 块规范化 → 声明前置 → addr+int/MEMORY 清零（verify 门控）。

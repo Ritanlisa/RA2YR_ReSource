@@ -8,27 +8,22 @@ namespace gamemd {
 char VeinholeMonsterClass_Update(MouseClass * aP0, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall VeinholeMonsterClass_Update(MouseClass *aP0, int a2)
+void VeinholeMonsterClass_Update(MouseClass *aP0, int a2)
 {
-  int v3; // edi
-  int v4; // eax
-  int v5; // edi
-  int v6; // ecx
-  int v7; // eax
   int v8; // ecx
   unsigned int v9; // eax
   _DWORD *v10; // eax
   ObjectClass *aP0a; // [esp+14h] [ebp+4h]
 
-  v3 = SHIWORD(aP0->field_0); /*0x5862d0*/
-  v4 = a2 + v3; /*0x5862d2*/
-  v5 = v3 - a2; /*0x5862d4*/
+  int v3 = SHIWORD(aP0->field_0); /*0x5862d0*/
+  int v4 = a2 + v3; /*0x5862d2*/
+  int v5 = v3 - a2; /*0x5862d4*/
   if ( v5 > v4 ) /*0x5862d8*/
     return 0; /*0x58633f*/
   while ( 1 ) /*0x5862e3*/
   {
-    v6 = SLOWORD(aP0->field_0); /*0x5862e3*/
-    v7 = a2 + v6; /*0x5862e5*/
+    int v6 = SLOWORD(aP0->field_0); /*0x5862e3*/
+    int v7 = a2 + v6; /*0x5862e5*/
     v8 = v6 - a2; /*0x5862e7*/
     if ( v8 <= v7 ) /*0x5862eb*/
       break; /*0x5862eb*/

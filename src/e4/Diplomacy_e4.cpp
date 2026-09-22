@@ -8,18 +8,15 @@
 int Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall Diplomacy_DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4)
+void Diplomacy_DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4)
 {
   int result; // eax
   int i; // ebx
   HWND DlgItem; // eax
   HWND v8; // eax
   HWND v9; // ebp
-  int v10; // eax
-  int v11; // eax
   int ResourceID_Hardcoded; // eax
   HWND v13; // ebp
-  bool v14; // cc
   HWND v15; // eax
   HWND v16; // eax
   HWND v17; // ebp
@@ -27,10 +24,6 @@ int __stdcall Diplomacy_DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWN
   wchar_t *v19; // eax
   HWND v20; // eax
   int DlgCtrlID; // eax
-  int *v22; // ecx
-  int *v23; // ecx
-  int v24; // edx
-  int *v25; // ecx
   int v26; // esi
   int *v27; // ecx
   int v28; // edx
@@ -46,7 +39,6 @@ int __stdcall Diplomacy_DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWN
   int v38; // [esp+2Ch] [ebp+8h]
   char v39; // [esp+30h] [ebp+Ch]
   char v40; // [esp+34h] [ebp+10h]
-
   result = BaseDialogProc(hDlg, a2, a3, (unsigned int)a4); /*0x657dbd*/
   if ( result ) /*0x657dc4*/
     return result; /*0x657dc4*/
@@ -60,6 +52,7 @@ int __stdcall Diplomacy_DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWN
     }
     if ( a2 == 1175 ) /*0x657de5*/
     {
+  bool v14; // cc
       for ( i = 0; i < 32; i += 4 ) /*0x657df1*/
       {
         DlgItem = GetDlgItem(hDlg, *(int *)((char *)&DataGlobal_8391FC + i)); /*0x657dfb*/
@@ -76,7 +69,7 @@ int __stdcall Diplomacy_DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWN
       {
         v9 = GetDlgItem(hDlg, DataGlobal_839240[v38]); /*0x657e6a*/
         hWnd = GetDlgItem(hDlg, DataGlobal_839260[v38]); /*0x657e84*/
-        v10 = v32; /*0x657e8b*/
+        int v10 = v32; /*0x657e8b*/
         v31 = v32; /*0x657e8d*/
         if ( v32 == *((_DWORD *)HouseClass_Player + 12) ) /*0x657e91*/
         {
@@ -84,6 +77,7 @@ int __stdcall Diplomacy_DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWN
           v10 = 0; /*0x657e9b*/
         }
         if ( v10 < v33 /*0x657ec1*/
+  int v11; // eax
           && (v11 = *(_DWORD *)&HouseClass_Array->__pad_0[4 * v10], (hDlga = (#375 *)v11) != 0)
           && *(_BYTE *)(*(_DWORD *)(v11 + 52) + 421) )
         {
@@ -199,12 +193,12 @@ int __stdcall Diplomacy_DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWN
     }
     return 0; /*0x6581b7*/
   }
-  v22 = &DataGlobal_83923C; /*0x6581e1*/
+  int * v22 = &DataGlobal_83923C; /*0x6581e1*/
   while ( *v22 != DlgCtrlID ) /*0x6581e8*/
   {
     if ( (int)++v22 >= (int)&DataGlobal_83925C ) /*0x6581f3*/
     {
-      v23 = &DataGlobal_83925C; /*0x6581f5*/
+      int * v23 = &DataGlobal_83925C; /*0x6581f5*/
       while ( *v23 != DlgCtrlID ) /*0x6581fc*/
       {
         if ( (int)++v23 >= (int)g_Str_File_OPTBTN_SHP ) /*0x658207*/
@@ -248,8 +242,8 @@ int __stdcall Diplomacy_DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWN
   }
   if ( HIWORD(a3) > 1u ) /*0x658214*/
     return 0; /*0x658214*/
-  v24 = 0; /*0x65821e*/
-  v25 = &DataGlobal_83923C; /*0x658220*/
+  int v24 = 0; /*0x65821e*/
+  int * v25 = &DataGlobal_83923C; /*0x658220*/
   while ( *v25 != DlgCtrlID ) /*0x658227*/
   {
     ++v25; /*0x658229*/

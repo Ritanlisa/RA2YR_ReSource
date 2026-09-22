@@ -8,10 +8,9 @@
 char MultiplayerSiege::Read()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char MultiplayerSiege::_vt04()
+void MultiplayerSiege::_vt04()
 {
   char result; // al
-  int v1; // ecx
 
   result = PlayerClass::AssignPlayerIndex(); /*0x5ca680*/
   if ( result ) /*0x5ca687*/
@@ -19,7 +18,7 @@ char MultiplayerSiege::_vt04()
     result = 1; /*0x5ca690*/
     if ( Game_PlayerCount > 0 ) /*0x5ca697*/
     {
-      v1 = 1; /*0x5ca6a1*/
+      int v1 = 1; /*0x5ca6a1*/
       for ( *(_DWORD *)(*(_DWORD *)Game_PlayerInfoArray + 107) = 1; /*0x5ca6ae*/
             v1 < Game_PlayerCount;
             *(_DWORD *)(*(_DWORD *)(Game_PlayerInfoArray + 4) + 107) = 2 )
@@ -36,26 +35,19 @@ char MultiplayerSiege::_vt04()
 char MultiplayerSiege::Write(void ** a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall MultiplayerSiege::_vt05(void **a1)
+void MultiplayerSiege::_vt05(void **a1)
 {
   char result; // al
-  char v2; // bl
-  int v3; // edi
-  int v4; // ecx
-  int v5; // edx
-  int v6; // eax
-  int v7; // eax
   wchar_t *StringCSF; // eax
   wchar_t *v9; // eax
   wchar_t *v10; // eax
   wchar_t *v11; // eax
-
   result = ScenarioClass::MissionStubReturnZero2((int)a1); /*0x5ca6d9*/
   if ( result ) /*0x5ca6e0*/
   {
-    v2 = 0; /*0x5ca6ef*/
-    v3 = 0; /*0x5ca6f1*/
-    v4 = 0; /*0x5ca6f3*/
+    char v2 = 0; /*0x5ca6ef*/
+    int v3 = 0; /*0x5ca6f1*/
+    int v4 = 0; /*0x5ca6f3*/
     if ( Game_PlayerCount <= 0 ) /*0x5ca6f7*/
     {
 LABEL_12:
@@ -65,13 +57,13 @@ LABEL_12:
     }
     else
     {
-      v5 = Game_PlayerInfoArray; /*0x5ca6f9*/
+      int v5 = Game_PlayerInfoArray; /*0x5ca6f9*/
       do /*0x5ca71e*/
       {
-        v6 = *(_DWORD *)(*(_DWORD *)v5 + 107); /*0x5ca701*/
+        int v6 = *(_DWORD *)(*(_DWORD *)v5 + 107); /*0x5ca701*/
         if ( v6 ) /*0x5ca707*/
         {
-          v7 = v6 - 1; /*0x5ca709*/
+          int v7 = v6 - 1; /*0x5ca709*/
           if ( v7 ) /*0x5ca70a*/
           {
             if ( v7 != 1 ) /*0x5ca70d*/
@@ -119,10 +111,8 @@ LABEL_12:
 char MultiplayerSiege::ProcessTurn(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall MultiplayerSiege::_vt33(void *this, char a2)
+void MultiplayerSiege::_vt33(char a2)
 {
-  int v3; // eax
-  int v4; // edx
   void *v5; // eax
   int v6; // eax
   _DWORD *v7; // ebx
@@ -134,13 +124,12 @@ char __thiscall MultiplayerSiege::_vt33(void *this, char a2)
   void **v14; // [esp+20h] [ebp-18h] BYREF
   void *Block; // [esp+24h] [ebp-14h]
   char v16; // [esp+2Dh] [ebp-Bh]
-
   Multiplayer::FindStartPositions(&v14); /*0x5ca811*/
-  v3 = 0; /*0x5ca81c*/
+  int v3 = 0; /*0x5ca81c*/
   memset(v13, 0, sizeof(v13)); /*0x5ca824*/
   if ( Game_PlayerCount > 0 ) /*0x5ca836*/
   {
-    v4 = Game_PlayerInfoArray; /*0x5ca838*/
+    int v4 = Game_PlayerInfoArray; /*0x5ca838*/
     do /*0x5ca848*/
     {
       if ( *(_DWORD *)(*(_DWORD *)v4 + 107) == 1 ) /*0x5ca840*/

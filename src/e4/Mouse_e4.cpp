@@ -10,17 +10,14 @@ namespace gamemd {
 int Mouse::SetBounds(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Mouse::SetBounds(int this, IUnknown *aP1)
+void Mouse::SetBounds(int this, IUnknown *aP1)
 {
   int result; // eax
   __int16 v4; // cx
   Tactical *v5; // esi
-  bool v6; // zf
-  int v7; // eax
   __int16 v8; // cx
   __int16 v9; // [esp+8h] [ebp-8h] BYREF
   __int16 v10; // [esp+Ah] [ebp-6h]
-
   result = *(_DWORD *)(this + 4476); /*0x4a8bf7*/
   if ( result ) /*0x4a8bff*/
   {
@@ -30,7 +27,7 @@ int __thiscall Mouse::SetBounds(int this, IUnknown *aP1)
     LOBYTE(result) = MapClass::SetCellFlagsAlongPath((__int16 **)this, (IUnknown *)&v9, 0); /*0x4a8c38*/
   }
   v5 = (Tactical *)aP1; /*0x4a8c3d*/
-  v6 = aP1 == 0; /*0x4a8c47*/
+  bool v6 = aP1 == 0; /*0x4a8c47*/
   *(_DWORD *)(this + 4472) = *(_DWORD *)&g_CellDirectionOffsets[3432]; /*0x4a8c49*/
   if ( v6 ) /*0x4a8c4f*/
   {
@@ -45,7 +42,7 @@ int __thiscall Mouse::SetBounds(int this, IUnknown *aP1)
     }
     qmemcpy(&g_CellDirectionOffsets[3468], v5, 0x1E0u); /*0x4a8c85*/
     *(_DWORD *)(this + 4476) = &g_CellDirectionOffsets[3468]; /*0x4a8c8f*/
-    v7 = *CoordList::GetBounds(&aP1, (__int16 *)&g_CellDirectionOffsets[3468]); /*0x4a8c9e*/
+    int v7 = *CoordList::GetBounds(&aP1, (__int16 *)&g_CellDirectionOffsets[3468]); /*0x4a8c9e*/
     v9 = v7 - 1; /*0x4a8ca6*/
     v10 = HIWORD(v7) - 1; /*0x4a8cab*/
     LOWORD(aP1) = (__int16)(1 - v7) / 2; /*0x4a8cc4*/
@@ -67,7 +64,7 @@ namespace gamemd {
 char Mouse::SetCursor(ObjectClass * aP1, ObjectClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall Mouse::SetCursor(int this, ObjectClass *aP1, ObjectClass *aP2)
+void Mouse::SetCursor(int this, ObjectClass *aP1, ObjectClass *aP2)
 {
   char v4; // bl
   MPCooperative *v6; // edi
@@ -79,7 +76,6 @@ char __thiscall Mouse::SetCursor(int this, ObjectClass *aP1, ObjectClass *aP2)
   int v12; // esi
   int v13; // [esp+10h] [ebp-Ch] BYREF
   CoordStruct *v14; // [esp+14h] [ebp-8h]
-
   if ( DataGlobal_82D034[7 * (_DWORD)aP1] == -1 ) /*0x5bdca6*/
   {
     v4 = 0; /*0x5bdca8*/
@@ -153,36 +149,30 @@ namespace gamemd {
 void Mouse::DrawCursor(IUnknown * aP1, WWMouseClass * aP2, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall Mouse::DrawCursor(_DWORD *this, IUnknown *aP1, WWMouseClass *aP2, int a4)
+void Mouse::DrawCursor(IUnknown *aP1, WWMouseClass *aP2, int a4)
 {
   char **v5; // ecx
-  int v6; // ebx
-  int v7; // ebp
   int SubFile; // eax
   IUnknown *v9; // ecx
-  _BYTE v11[16]; // [esp+1Ch] [ebp-30h] BYREF
   int (__thiscall **v12)(void *, char); // [esp+2Ch] [ebp-20h]
-  int v13; // [esp+30h] [ebp-1Ch]
-  int v14; // [esp+34h] [ebp-18h]
-  int v15; // [esp+38h] [ebp-14h]
-  int v16; // [esp+3Ch] [ebp-10h]
-  _DWORD v17[3]; // [esp+40h] [ebp-Ch] BYREF
 
   v5 = (char **)*(this + 1); /*0x7b93f9*/
   if ( v5 && aP1 && DataGlobal_87F6C8 ) /*0x7b9418*/
   {
-    v6 = *(this + 20); /*0x7b942e*/
-    v7 = *(this + 21); /*0x7b9431*/
+    int v6 = *(this + 20); /*0x7b942e*/
+    int v7 = *(this + 21); /*0x7b9431*/
     SubFile = MixFileClass::GetSubFile(v5, *(this + 2)); /*0x7b9440*/
-    v13 = v6; /*0x7b9447*/
-    v14 = v7; /*0x7b9454*/
-    v15 = 0; /*0x7b9458*/
-    v16 = 1; /*0x7b9468*/
+    int v13 = v6; /*0x7b9447*/
+    int v14 = v7; /*0x7b9454*/
+    int v15 = 0; /*0x7b9458*/
+    int v16 = 1; /*0x7b9468*/
+  _DWORD v17[3]; // [esp+40h] [ebp-Ch] BYREF
     Buffer::Init(v17, SubFile, (AbstractClass *)(v7 * v6)); /*0x7b9470*/
     v9 = aP1; /*0x7b9479*/
     v12 = &BSurface_Vtable; /*0x7b947d*/
     if ( aP1 != (IUnknown *)*(this + 9) ) /*0x7b9488*/
     {
+  _BYTE v11[16]; // [esp+1Ch] [ebp-30h] BYREF
       (*(void (__thiscall **)(IUnknown *, _BYTE *))(aP1->field_0 + 120))(aP1, v11); /*0x7b94f6*/
       v9 = aP1; /*0x7b9508*/
     }

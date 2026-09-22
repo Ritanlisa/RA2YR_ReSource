@@ -31,7 +31,7 @@ uint32_t Hash::ComputeHashSHA1(const void* data, uint32_t size)
 void Hash::InsertOrdered(void* table, const void* entry)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall Hash_InsertOrdered(void *this, int a2)
+void Hash_InsertOrdered(void *this, int a2)
 {
   if ( (*(unsigned __int8 (__thiscall **)(void *, int))(*(_DWORD *)this + 44))(this, a2) )
     return 0;
@@ -119,21 +119,19 @@ void SHA1::Init()
 void SHA1::Process(const void* data, uint32_t size)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall SHA1_Process(_DWORD *this, int a2, int a3)
+void SHA1_Process(_DWORD *this, int a2, int a3)
 {
   int result; // eax
-  int v5; // edi
-  int v6; // ebx
 
   *(_BYTE *)this = 0;
   SHA1::ProcessBlock(&a2, &a3);
   result = a3;
   if ( a3 )
   {
-    v5 = a2;
+    int v5 = a2;
     if ( a3 / 64 > 0 )
     {
-      v6 = a3 / 64;
+      int v6 = a3 / 64;
       do
       {
         SHA1::Transform(v5, this + 6);
@@ -215,11 +213,8 @@ retn    8
 void SHA1::Compute(uint8_t digest[20])
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall SHA1_Compute(_DWORD *this, char *a2)
+void SHA1_Compute(_DWORD *this, char *a2)
 {
-  int v3; // edx
-  int v4; // ebx
-  unsigned int v5; // ebx
   int v6; // edx
   unsigned __int16 v7; // cx
   unsigned int *v8; // ecx
@@ -230,10 +225,10 @@ int __thiscall SHA1_Compute(_DWORD *this, char *a2)
 
   if ( *(_BYTE *)this )
     qmemcpy(a2, this + 1, 0x14u);
-  v3 = this->q030;
-  v4 = this->q02C;
+  int v3 = this->q030;
+  int v4 = this->q02C;
   qmemcpy(v13, this + 13, sizeof(v13));
-  v5 = v3 + v4;
+  unsigned int v5 = v3 + v4;
   *((_BYTE *)v13 + v3) = 0x80;
   qmemcpy(v12, this + 6, sizeof(v12));
   if ( 64 - v3 >= 9 )
@@ -527,15 +522,12 @@ uint32_t CRC32::Compute(const void* data, uint32_t size)
 // 0x4a1fb0
 int __fastcall CRC32::Compute(unsigned __int8 *a1, int a2, int a3)
 {
-  int v4; // edx
-  unsigned int v5; // eax
-  int v6; // esi
 
-  v4 = a2 - 1;
-  v5 = ~a3;
+  int v4 = a2 - 1;
+  unsigned int v5 = ~a3;
   if ( a2 )
   {
-    v6 = v4 + 1;
+    int v6 = v4 + 1;
     do
     {
       v5 = CRC32_Table[*a1++ ^ (unsigned __int8)v5] ^ (v5 >> 8);

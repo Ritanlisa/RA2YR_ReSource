@@ -13,31 +13,18 @@ namespace gamemd {
 unsigned int VoxelAnimClass::ProcessFrame()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int sub_4CAF20()
+void sub_4CAF20()
 {
-  int v0; // esi
-  _DWORD *v1; // edx
-  int v2; // edi
-  double v3; // st7
-  double v4; // st7
-  unsigned int v5; // ecx
-  int v6; // eax
-  double v7; // st7
-  double v8; // st7
-  unsigned int v9; // ecx
-  int v10; // eax
   unsigned int result; // eax
-  float v12; // [esp+8h] [ebp-4h]
-  float v13; // [esp+8h] [ebp-4h]
-  float v14; // [esp+8h] [ebp-4h]
-  float v15; // [esp+8h] [ebp-4h]
 
-  v0 = 0; /*0x4caf23*/
-  v1 = &unk_86D0BC; /*0x4caf25*/
-  v2 = 0x2000; /*0x4caf2a*/
+  int v0 = 0; /*0x4caf23*/
+  _DWORD * v1 = &unk_86D0BC; /*0x4caf25*/
+  int v2 = 0x2000; /*0x4caf2a*/
   do /*0x4cb050*/
   {
-    v3 = COERCE_FLOAT((v0 | 0xFE000) << 10); /*0x4caf3d*/
+  double v8; // st7
+  double v4; // st7
+    double v3 = COERCE_FLOAT((v0 | 0xFE000) << 10); /*0x4caf3d*/
     if ( v3 == 0.0 ) /*0x4caf4c*/
     {
       v4 = 0.0; /*0x4caf50*/
@@ -46,16 +33,16 @@ unsigned int sub_4CAF20()
     {
       if ( v3 <= 0.0 ) /*0x4caf63*/
         v3 = v3 * -1.0; /*0x4caf65*/
-      v12 = v3; /*0x4caf6b*/
-      v5 = (unsigned int)&unk_7FFFFF & LODWORD(v12); /*0x4caf75*/
-      v6 = (LODWORD(v12) >> 23) - 127; /*0x4caf7e*/
+      float v12 = v3; /*0x4caf6b*/
+      unsigned int v5 = (unsigned int)&unk_7FFFFF & LODWORD(v12); /*0x4caf75*/
+      int v6 = (LODWORD(v12) >> 23) - 127; /*0x4caf7e*/
       if ( (v6 & 1) != 0 ) /*0x4caf83*/
         v5 |= (unsigned int)&unk_800000; /*0x4caf85*/
       v4 = COERCE_FLOAT(((((__int16)v6 >> 1) + 127) << 23) + dword_8650BC[v5 >> 10]); /*0x4cafa7*/
     }
-    v13 = v4; /*0x4cafab*/
+    float v13 = v4; /*0x4cafab*/
     *(v1 - 0x2000) = (unsigned int)&unk_7FFFFF & LODWORD(v13); /*0x4cafc7*/
-    v7 = COERCE_FLOAT((v0 | 0x100000) << 10); /*0x4cafcd*/
+    double v7 = COERCE_FLOAT((v0 | 0x100000) << 10); /*0x4cafcd*/
     if ( v7 == 0.0 ) /*0x4cafdc*/
     {
       v8 = 0.0; /*0x4cafe0*/
@@ -64,14 +51,14 @@ unsigned int sub_4CAF20()
     {
       if ( v7 <= 0.0 ) /*0x4caff3*/
         v7 = v7 * -1.0; /*0x4caff5*/
-      v14 = v7; /*0x4caffb*/
-      v9 = (unsigned int)&unk_7FFFFF & LODWORD(v14); /*0x4cb005*/
-      v10 = (LODWORD(v14) >> 23) - 127; /*0x4cb00e*/
+      float v14 = v7; /*0x4caffb*/
+      unsigned int v9 = (unsigned int)&unk_7FFFFF & LODWORD(v14); /*0x4cb005*/
+      int v10 = (LODWORD(v14) >> 23) - 127; /*0x4cb00e*/
       if ( (v10 & 1) != 0 ) /*0x4cb013*/
         v9 |= (unsigned int)&unk_800000; /*0x4cb015*/
       v8 = COERCE_FLOAT(((((__int16)v10 >> 1) + 127) << 23) + dword_8650BC[v9 >> 10]); /*0x4cb037*/
     }
-    v15 = v8; /*0x4cb03b*/
+    float v15 = v8; /*0x4cb03b*/
     ++v1; /*0x4cb043*/
     result = (unsigned int)&unk_7FFFFF & LODWORD(v15); /*0x4cb046*/
     ++v0; /*0x4cb04b*/
@@ -89,20 +76,16 @@ namespace gamemd {
 int VoxelAnimClass::CleanupMembers()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall VoxelAnimClass::CleanupMembers(#374 *this)
+void VoxelAnimClass::CleanupMembers(#374 *this)
 {
-  int v2; // eax
-  int v3; // ecx
-  int v4; // eax
   VoxelAnimClass *v6; // [esp+4h] [ebp-4h] BYREF
-
   *(_DWORD *)this = &VoxelAnimClass::`vftable'; /*0x7499f6*/
   this->VoxelAnimClass_field_0x4 = &VoxelAnimClass::`vftable'; /*0x7499fc*/
   this->VoxelAnimClass_field_0x8 = &VoxelAnimClass::`vftable'; /*0x749a03*/
   this->vtable4 = &vt_VoxelAnimClass; /*0x749a0a*/
   AbstractClass::AnnounceExpiredPointer((void **)this, 1); /*0x749a11*/
   v6 = (VoxelAnimClass *)this; /*0x749a26*/
-  v2 = (*(int (__thiscall **)(int *, VoxelAnimClass **))(VoxelAnimClass_Array + 16))(&VoxelAnimClass_Array, &v6); /*0x749a2a*/
+  int v2 = (*(int (__thiscall **)(int *, VoxelAnimClass **))(VoxelAnimClass_Array + 16))(&VoxelAnimClass_Array, &v6); /*0x749a2a*/
   if ( v2 != -1 && v2 < DataGlobal_887398 && v2 < --DataGlobal_887398 ) /*0x749a45*/
   {
     do /*0x749a5d*/
@@ -112,7 +95,7 @@ int __thiscall VoxelAnimClass::CleanupMembers(#374 *this)
     }
     while ( v2 < DataGlobal_887398 ); /*0x749a5d*/
   }
-  v3 = this->VoxelAnimClass_field_0x108; /*0x749a5f*/
+  int v3 = this->VoxelAnimClass_field_0x108; /*0x749a5f*/
   if ( v3 ) /*0x749a67*/
   {
     (*(void (__thiscall **)(int))(*(_DWORD *)v3 + 248))(v3); /*0x749a6b*/
@@ -125,7 +108,7 @@ int __thiscall VoxelAnimClass::CleanupMembers(#374 *this)
   AudioFileClass::Release((_DWORD *)this + 69); /*0x749aa9*/
   AudioFileClass::Release((_DWORD *)this + 74); /*0x749ab0*/
   v6 = (VoxelAnimClass *)this; /*0x749ac5*/
-  v4 = (*(int (__thiscall **)(int *, VoxelAnimClass **))(g_AnimPoolManager + 16))(&g_AnimPoolManager, &v6); /*0x749ac9*/
+  int v4 = (*(int (__thiscall **)(int *, VoxelAnimClass **))(g_AnimPoolManager + 16))(&g_AnimPoolManager, &v6); /*0x749ac9*/
   if ( v4 != -1 && v4 < g_AnimManager && v4 < --g_AnimManager ) /*0x749ae6*/
   {
     do /*0x749afe*/
@@ -146,52 +129,26 @@ namespace gamemd {
 char VoxelAnimClass::ProcessAnim(int * a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall VoxelAnimClass::_vt69(int *this, int *a2, _DWORD *a3)
+void VoxelAnimClass::_vt69(int *a2, _DWORD *a3)
 {
-  int v4; // eax
-  int v5; // edx
-  _DWORD *v6; // ebp
-  int *v7; // eax
-  float *v8; // eax
-  int v9; // edi
-  int v10; // ecx
-  int v11; // eax
   __int16 *v12; // eax
-  int v13; // ecx
-  int v14; // eax
-  _DWORD *v15; // esi
-  int v16; // eax
-  int v17; // eax
-  int *v18; // eax
   int *SHPFrame; // [esp-1Ch] [ebp-CCh]
-  int *v21; // [esp-1Ch] [ebp-CCh]
-  int v22; // [esp-18h] [ebp-C8h]
-  int v23; // [esp-18h] [ebp-C8h]
-  int v24; // [esp-10h] [ebp-C0h]
+  int GroundHeight; // [esp+28h] [ebp-88h]
+
+  if ( (*(_DWORD *)g_ScenarioClass_Instance & 0x1000) == 0 /*0x749bb6*/
+  int v4; // eax
   int v25; // [esp+Ch] [ebp-A4h] BYREF
   int v26; // [esp+10h] [ebp-A0h]
   int v27; // [esp+14h] [ebp-9Ch]
-  int v28; // [esp+18h] [ebp-98h] BYREF
-  int v29; // [esp+1Ch] [ebp-94h] BYREF
-  int v30; // [esp+20h] [ebp-90h] BYREF
-  int v31; // [esp+24h] [ebp-8Ch]
-  int GroundHeight; // [esp+28h] [ebp-88h]
-  int v33; // [esp+2Ch] [ebp-84h]
-  int v34; // [esp+30h] [ebp-80h]
-  int v35; // [esp+34h] [ebp-7Ch]
-  int v36[2]; // [esp+38h] [ebp-78h] BYREF
-  int v37[4]; // [esp+40h] [ebp-70h] BYREF
-  float v38[12]; // [esp+50h] [ebp-60h] BYREF
-  float v39[12]; // [esp+80h] [ebp-30h] BYREF
-
-  if ( (*(_DWORD *)g_ScenarioClass_Instance & 0x1000) == 0 /*0x749bb6*/
     || (v25 = this->q027, v26 = this->q028, v27 = this->q029, LOBYTE(v4) = Game::Stub3((int)&v25), !(_BYTE)v4) )
   {
-    v5 = a2[1]; /*0x749bcb*/
-    v34 = *a2; /*0x749bd0*/
-    v35 = v5; /*0x749bd4*/
-    v30 = this->q027; /*0x749bda*/
-    v31 = this->q028; /*0x749beb*/
+  int v36[2]; // [esp+38h] [ebp-78h] BYREF
+  int v33; // [esp+2Ch] [ebp-84h]
+    int v5 = a2[1]; /*0x749bcb*/
+    int v34 = *a2; /*0x749bd0*/
+    int v35 = v5; /*0x749bd4*/
+    int v30 = this->q027; /*0x749bda*/
+    int v31 = this->q028; /*0x749beb*/
     GroundHeight = this->q029; /*0x749bf2*/
     GroundHeight = Cell::GetGroundHeight(&v30); /*0x749c05*/
     if ( (*((_DWORD *)Coord::To_Cell(&DataGlobal_87F7E8, &v30) + 80) & 0x100) == 0 ) /*0x749c1b*/
@@ -216,9 +173,12 @@ LABEL_6:
     if ( !(_BYTE)v4 ) /*0x749c83*/
     {
       v4 = this->q104; /*0x749c89*/
-      v6 = *(_DWORD **)(v4 + 176); /*0x749c8f*/
+      _DWORD * v6 = *(_DWORD **)(v4 + 176); /*0x749c8f*/
       if ( v6 ) /*0x749c97*/
       {
+  _DWORD *v15; // esi
+  float v38[12]; // [esp+50h] [ebp-60h] BYREF
+  float v39[12]; // [esp+80h] [ebp-30h] BYREF
         qmemcpy(v38, VoxelAnimClass::QuaternionToMatrix((float *)this + 44, v39), sizeof(v38)); /*0x749cbc*/
         Viewport::Clear(); /*0x749cbe*/
         globalHelper_053F90( /*0x749ce8*/
@@ -231,30 +191,33 @@ LABEL_6:
           0,
           0,
           0);
+  int v28; // [esp+18h] [ebp-98h] BYREF
+  int v29; // [esp+1Ch] [ebp-94h] BYREF
+  int v37[4]; // [esp+40h] [ebp-70h] BYREF
         InitializeAudioOcclusion(v37, &v29, &v28); /*0x749cfa*/
         v25 = v36[0] + v29; /*0x749d15*/
         v26 = v28 + v36[1]; /*0x749d26*/
-        v22 = -4 - ZCoordToScreenY(v33); /*0x749d36*/
+        int v22 = -4 - ZCoordToScreenY(v33); /*0x749d36*/
         SHPFrame = (int *)BuildingClass::GetSHPFrame((_DWORD *)DataGlobal_87F6B4, 8193); /*0x749d4e*/
-        v7 = Miles::DriverGet(); /*0x749d5c*/
+        int * v7 = Miles::DriverGet(); /*0x749d5c*/
         BlitterDrawSHP((int *)g_DSurface_Hidden_2, DataGlobal_87F6B4, v7, v37, &v25, a3, 0, SHPFrame, v22, 0, 1000, 0, 0); /*0x749d6e*/
         qmemcpy(v38, VoxelAnimClass::QuaternionToMatrix((float *)this + 44, v39), sizeof(v38)); /*0x749d95*/
         globalHelper_053C80(v6, 0, 0, v38, (float *)&DataGlobal_887470); /*0x749da3*/
         Viewport::Clear(); /*0x749da8*/
-        v8 = MultiplyMatrix3x4(v39, DataGlobal_887430, v38); /*0x749dbe*/
+        float * v8 = MultiplyMatrix3x4(v39, DataGlobal_887430, v38); /*0x749dbe*/
         TransformVoxelVertex(v6, *(_DWORD *)(this->q104 + 664), 0, v8); /*0x749dd4*/
         InitializeAudioOcclusion(v37, &v29, &v28); /*0x749de6*/
-        v9 = 10240; /*0x749df1*/
+        int v9 = 10240; /*0x749df1*/
         if ( *(_BYTE *)(this->q104 + 661) ) /*0x749df6*/
           v9 = 10244; /*0x749e00*/
-        v10 = this->q029; /*0x749e0b*/
-        v11 = this->q028; /*0x749e11*/
+        int v10 = this->q029; /*0x749e0b*/
+        int v11 = this->q028; /*0x749e11*/
         v25 = this->q027; /*0x749e17*/
         v27 = v10; /*0x749e1f*/
         v26 = v11; /*0x749e29*/
         v12 = (__int16 *)Coord::To_Cell(&DataGlobal_87F7E8, &v25); /*0x749e2d*/
-        v13 = this->q043; /*0x749e32*/
-        v14 = v12[133]; /*0x749e38*/
+        int v13 = this->q043; /*0x749e32*/
+        int v14 = v12[133]; /*0x749e38*/
         if ( v13 ) /*0x749e41*/
         {
           v15 = *(_DWORD **)(*((_DWORD *)BuildingTypeClass_AnimTable + *(_DWORD *)(v13 + 90196)) + 780); /*0x749e52*/
@@ -269,13 +232,13 @@ LABEL_6:
           v14 = 1000; /*0x749e78*/
         }
         v25 = v29 + v34; /*0x749e8b*/
-        v24 = v14; /*0x749e97*/
-        v16 = *this; /*0x749e98*/
+        int v24 = v14; /*0x749e97*/
+        int v16 = *this; /*0x749e98*/
         v26 = v28 + v35; /*0x749ea0*/
-        v17 = (*(int (__thiscall **)(int *))(v16 + 464))(this); /*0x749ea4*/
-        v23 = -2 - ZCoordToScreenY(v17); /*0x749eb8*/
-        v21 = (int *)BuildingClass::GetSHPFrame(v15, v9); /*0x749ec8*/
-        v18 = Miles::DriverGet(); /*0x749ed6*/
+        int v17 = (*(int (__thiscall **)(int *))(v16 + 464))(this); /*0x749ea4*/
+        int v23 = -2 - ZCoordToScreenY(v17); /*0x749eb8*/
+        int * v21 = (int *)BuildingClass::GetSHPFrame(v15, v9); /*0x749ec8*/
+        int * v18 = Miles::DriverGet(); /*0x749ed6*/
         LOBYTE(v4) = BlitterDrawSHP((int *)g_DSurface_Hidden_2, (int)v15, v18, v37, &v25, a3, 0, v21, v23, 0, v24, 0, 0); /*0x749ee4*/
       }
     }
@@ -296,10 +259,10 @@ int VoxelAnimClass_Update()
 
 // 0x74A970
 namespace gamemd {
-int VoxelAnimClass::SaveLoad_Prefix(ObjectClass * aP1, int aP1a)
+void VoxelAnimClass::SaveLoad_Prefix(ObjectClass * aP1, int aP1a)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall VoxelAnimClass::SaveLoad_Prefix(void *this, ObjectClass *aP1, int aP1a)
+void VoxelAnimClass::SaveLoad_Prefix(ObjectClass *aP1, int aP1a)
 {
   ObjectClass *Register; // edi
 
@@ -336,29 +299,24 @@ namespace gamemd {
 int VoxelAnimClass::GetFrameCount(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall VoxelAnimClass::_vt13(int this, int *a2)
+void VoxelAnimClass::_vt13(int this, int *a2)
 {
-  int v3; // eax
-  int v4; // eax
-  int v5; // eax
-  int v6; // eax
-  int v7; // edx
-  int v8; // eax
 
   HouseClass::ProcessPower((#374 *)this); /*0x74aa39*/
   Power::TimerProcess(this->VoxelAnimClass_field_0x100); /*0x74aa47*/
-  v3 = (*(int (__stdcall **)(int))(*(_DWORD *)(this->VoxelAnimClass_field_0x104 + 4) + 16))(this->VoxelAnimClass_field_0x104 + 4); /*0x74aa58*/
+  int v3 = (*(int (__stdcall **)(int))(*(_DWORD *)(this->VoxelAnimClass_field_0x104 + 4) + 16))(this->VoxelAnimClass_field_0x104 + 4); /*0x74aa58*/
   Power::TimerProcess(v3); /*0x74aa5e*/
-  v4 = this->VoxelAnimClass_field_0x108; /*0x74aa63*/
+  int v4 = this->VoxelAnimClass_field_0x108; /*0x74aa63*/
   if ( v4 ) /*0x74aa6b*/
   {
-    v5 = (*(int (__stdcall **)(int))(*(_DWORD *)(v4 + 4) + 16))(v4 + 4); /*0x74aa74*/
+    int v5 = (*(int (__stdcall **)(int))(*(_DWORD *)(v4 + 4) + 16))(v4 + 4); /*0x74aa74*/
     Power::TimerProcess(v5); /*0x74aa7a*/
   }
-  v6 = (*(int (__stdcall **)(int))(*(_DWORD *)(this->VoxelAnimClass_field_0x10C + 4) + 16))(this->VoxelAnimClass_field_0x10C + 4); /*0x74aa8b*/
+  int v6 = (*(int (__stdcall **)(int))(*(_DWORD *)(this->VoxelAnimClass_field_0x10C + 4) + 16))(this->VoxelAnimClass_field_0x10C + 4); /*0x74aa8b*/
   Power::TimerProcess(v6); /*0x74aa91*/
+  int v7; // edx
   LOBYTE(v7) = this->q110; /*0x74aa96*/
-  v8 = Power::FlagProcess(a2, v7); /*0x74aa9f*/
+  int v8 = Power::FlagProcess(a2, v7); /*0x74aa9f*/
   LOBYTE(v8) = this->q13C; /*0x74aaa4*/
   Power::FlagProcess(a2, v8); /*0x74aaad*/
   return Power::TimerProcess(this->VoxelAnimClass_field_0x140); /*0x74aac0*/
@@ -371,7 +329,7 @@ namespace gamemd {
 int VoxelAnimClass::LoadFrame()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall VoxelAnimClass::_vt34(_DWORD *this)
+void VoxelAnimClass::_vt34()
 {
   return this->q104; /*0x74ab36*/
 }
@@ -383,7 +341,7 @@ namespace gamemd {
 int VoxelAnimClass::Reset()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_75AA90(int this)
+void sub_75AA90(int this)
 {
   LocomotionClass::Init((_DWORD *)this); /*0x75aa93*/
   this->VoxelAnimClass_field_0x1C = g_AsyncMovieState; /*0x75aaa1*/
@@ -409,9 +367,8 @@ namespace gamemd {
 int VoxelAnimClass::Constructor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_75EBE0(int this)
+void sub_75EBE0(int this)
 {
-  int v2; // eax
 
   ObjectClass::ctor((_DWORD *)this); /*0x75ebe4*/
   this->q12C = 1; /*0x75ebeb*/
@@ -452,7 +409,7 @@ int __thiscall sub_75EBE0(int this)
          DataGlobal_A8EC40 + DataGlobal_A8EC4C,
          0) )
   {
-    v2 = DataGlobal_A8EC48++; /*0x75ed08*/
+    int v2 = DataGlobal_A8EC48++; /*0x75ed08*/
     *((_DWORD *)DataGlobal_A8EC3C + v2) = this; /*0x75ed17*/
   }
   if ( !byte_B725CC ) /*0x75ed20*/

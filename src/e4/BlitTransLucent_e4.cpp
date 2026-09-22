@@ -6,19 +6,7 @@
 int BlitTransLucent25AlphaZReadWrite_ushort::CallBlit0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BlitTransLucent25AlphaZReadWrite_ushort::sub_496130(
-        void *this,
-        int a2,
-        int a3,
-        int a4,
-        int a5,
-        int a6,
-        int a7,
-        int a8,
-        int a9,
-        int a10,
-        int a11,
-        int a12)
+void BlitTransLucent25AlphaZReadWrite_ushort::sub_496130(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
 {
   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(this->q004)( /*0x496167*/
            this,
@@ -52,13 +40,11 @@ _WORD *__thiscall BlitTransLucent25AlphaZReadWrite_ushort::Blit_RLE_Lucent50(
         int a10,
         int a11)
 {
-  int v11; // edx
   _WORD *result; // eax
-  int v16; // edx
   int v17; // edi
   unsigned __int8 v19; // dl
 
-  v11 = a5; /*0x496250*/
+  int v11 = a5; /*0x496250*/
   result = a1; /*0x496254*/
   if ( a5 <= 0 ) /*0x496263*/
   {
@@ -74,7 +60,7 @@ _WORD *__thiscall BlitTransLucent25AlphaZReadWrite_ushort::Blit_RLE_Lucent50(
         v11 -= *a2++; /*0x496270*/
     }
     while ( v11 > 0 ); /*0x496278*/
-    v16 = -v11; /*0x49627e*/
+    int v16 = -v11; /*0x49627e*/
     v17 = a4 - v16; /*0x496280*/
     result = &a1[v16]; /*0x496282*/
   }

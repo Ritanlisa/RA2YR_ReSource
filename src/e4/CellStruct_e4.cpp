@@ -30,10 +30,8 @@ unsigned int * CellStruct::Copy(IUnknown * aP1)
 _DWORD *__thiscall CellStruct::Copy(int *this, IUnknown *aP1)
 {
   AbstractClass *v3; // edx
-  int v4; // ecx
-
   v3 = (AbstractClass *)*this; /*0x437f34*/
-  v4 = this->q004; /*0x437f36*/
+  int v4 = this->q004; /*0x437f36*/
   aP1->field_0 = (int)v3; /*0x437f39*/
   aP1->field_4 = v4; /*0x437f3b*/
   return &aP1->field_0; /*0x437f3e*/
@@ -46,7 +44,7 @@ namespace gamemd {
 BOOL CellStruct::Equals(unsigned short * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall CellStruct_Equals(_WORD *this, _WORD *a2)
+BOOL CellStruct_Equals(_WORD *this, _WORD *a2)
 {
   return *this == *a2 && this->q004 == a2[1]; /*0x50e48b*/
 }

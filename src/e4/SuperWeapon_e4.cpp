@@ -7,7 +7,7 @@ namespace gamemd {
 char SuperWeapon::GetField10()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_6CC2A0(_DWORD *this)
+void sub_6CC2A0(_DWORD *this)
 {
   return *(_BYTE *)(this->q028 + 230); /*0x6cc2a9*/
 }

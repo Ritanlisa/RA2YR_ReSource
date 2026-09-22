@@ -9,13 +9,10 @@
 int AircraftTypeClass::AircraftTypeClass(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall AircraftTypeClass::AircraftTypeClass(int this, ObjectClass *aP1)
+A AircraftTypeClass::AircraftTypeClass(int this, ObjectClass *aP1)
 {
   AircraftTypeClass *v3; // eax
-  bool v4; // zf
-  int v5; // ecx
   CCINIClass *v6; // edx
-
   TechnoTypeClass::ReadINI((char *)this, aP1->__pad_0, 4); /*0x41c8bb*/
   this->ArrayIndex = -1; /*0x41c8c6*/
   this->Carryall = 0; /*0x41c8d0*/
@@ -35,6 +32,7 @@ int __thiscall AircraftTypeClass::AircraftTypeClass(int this, ObjectClass *aP1)
   if ( (int)g_TypeClass_FindCache < DataGlobal_A8B220 /*0x41c95d*/
     || (DataGlobal_A8B225 || !DataGlobal_A8B220)
     && DataGlobal_A8B22C > 0
+  bool v4; // zf
     && (v4 = ((unsigned __int8 (__thiscall *)(DynamicVector **, int, _DWORD))AircraftTypeClass_Array->field_8)(
                &AircraftTypeClass_Array,
                DataGlobal_A8B220 + DataGlobal_A8B22C,
@@ -46,7 +44,7 @@ int __thiscall AircraftTypeClass::AircraftTypeClass(int this, ObjectClass *aP1)
     *(_DWORD *)&g_AircraftTypeCount->__pad_0[4 * (_DWORD)v3] = this; /*0x41c96c*/
     v3 = g_TypeClass_FindCache; /*0x41c96f*/
   }
-  v5 = 0; /*0x41c974*/
+  int v5 = 0; /*0x41c974*/
   if ( (int)v3 <= 0 ) /*0x41c978*/
   {
 LABEL_11:
@@ -87,10 +85,6 @@ int AircraftTypeClass_LoadTypeData()
 char __userpurge AircraftTypeClass::vt_25_@<al>(int a1@<ecx>, double a2@<st0>, unsigned __int8 ***a3)
 {
   char Bool_Overwrite; // al
-  char v5; // cl
-  char v6; // al
-  char v7; // al
-  char v8; // al
   int v9; // eax
   char v10; // al
   char v11; // cl
@@ -105,16 +99,16 @@ char __userpurge AircraftTypeClass::vt_25_@<al>(int a1@<ecx>, double a2@<st0>, u
   if ( !ObjectTypeClass::LoadExtras(a1, a2, a3) ) /*0x41cc3b*/
     return 0; /*0x41cd98*/
   Bool_Overwrite = INIClass::ReadBool_Overwrite(a1 + 36, unk_81804C, *(_BYTE *)(a1 + 3594)); /*0x41cc5c*/
-  v5 = *(_BYTE *)(a1 + 3597); /*0x41cc61*/
+  char v5 = *(_BYTE *)(a1 + 3597); /*0x41cc61*/
   *(_BYTE *)(a1 + 3594) = Bool_Overwrite; /*0x41cc67*/
-  v6 = INIClass::ReadBool_Overwrite(a1 + 36, unk_81803C, v5); /*0x41cc76*/
+  char v6 = INIClass::ReadBool_Overwrite(a1 + 36, unk_81803C, v5); /*0x41cc76*/
   v13 = *(_BYTE *)(a1 + 3598); /*0x41cc83*/
   *(_BYTE *)(a1 + 3597) = v6; /*0x41cc8a*/
   *(_BYTE *)(a1 + 3598) = INIClass::ReadBool_Overwrite(a1 + 36, unk_818034, v13); /*0x41cc95*/
-  v7 = INIClass::ReadBool_Overwrite(a1 + 36, unk_818028, *(_BYTE *)(a1 + 3580)); /*0x41ccaa*/
+  char v7 = INIClass::ReadBool_Overwrite(a1 + 36, unk_818028, *(_BYTE *)(a1 + 3580)); /*0x41ccaa*/
   v14 = *(_BYTE *)(a1 + 3592); /*0x41ccbb*/
   *(_BYTE *)(a1 + 3580) = v7; /*0x41ccc7*/
-  v8 = INIClass::ReadBool_Overwrite(a1 + 504, unk_818020, v14); /*0x41cccd*/
+  char v8 = INIClass::ReadBool_Overwrite(a1 + 504, unk_818020, v14); /*0x41cccd*/
   v15 = *(_BYTE *)(a1 + 3593); /*0x41ccdd*/
   *(_BYTE *)(a1 + 3592) = v8; /*0x41cce4*/
   *(_BYTE *)(a1 + 3593) = INIClass::ReadBool_Overwrite(a1 + 504, unk_818014, v15); /*0x41ccf9*/

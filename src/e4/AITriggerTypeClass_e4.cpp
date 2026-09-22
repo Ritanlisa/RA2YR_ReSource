@@ -12,20 +12,13 @@
 bool AITriggerTypeClass::CivilianHouseOwns(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall AITriggerTypeClass::CivilianHouseOwns(_DWORD *this, int a2, int a3)
+void AITriggerTypeClass::CivilianHouseOwns(int a2, int a3)
 {
-  _DWORD *v3; // edi
-  int v4; // esi
   bool result; // al
-  _DWORD *v6; // ebx
-  int v7; // esi
-  int v8; // ebp
-  int v9; // edi
   int v10; // eax
   char v11; // [esp+Fh] [ebp-5h]
-
-  v3 = this; /*0x41ec9b*/
-  v4 = 0; /*0x41ec9d*/
+  AITriggerTypeClass *v3 = this; /*0x41ec9b*/
+  int v4 = 0; /*0x41ec9d*/
   v11 = 0; /*0x41eca5*/
   if ( HouseClass_Count <= 0 ) /*0x41ecaa*/
     return v11; /*0x41ecaa*/
@@ -34,14 +27,14 @@ bool __thiscall AITriggerTypeClass::CivilianHouseOwns(_DWORD *this, int a2, int 
     if ( ++v4 >= HouseClass_Count ) /*0x41ecd6*/
       return 0; /*0x41ece2*/
   }
-  v6 = *(_DWORD **)&HouseClass_Array->__pad_0[4 * v4]; /*0x41ece5*/
+  _DWORD * v6 = *(_DWORD **)&HouseClass_Array->__pad_0[4 * v4]; /*0x41ece5*/
   if ( !v6 ) /*0x41ecea*/
     return v11; /*0x41ee23*/
-  v7 = v3[54]; /*0x41ecf0*/
+  int v7 = v3[54]; /*0x41ecf0*/
   if ( v7 ) /*0x41ecf8*/
   {
-    v8 = (*(int (__thiscall **)(int))(*(_DWORD *)v7 + 64))(v7); /*0x41ed0a*/
-    v9 = 0; /*0x41ed0c*/
+    int v8 = (*(int (__thiscall **)(int))(*(_DWORD *)v7 + 64))(v7); /*0x41ed0a*/
+    int v9 = 0; /*0x41ed0c*/
     switch ( (*(int (__thiscall **)(int))(*(_DWORD *)v7 + 44))(v7) ) /*0x41ed21*/
     {
       case 3: /*0x41ed21*/
@@ -100,23 +93,19 @@ LABEL_12:
 bool AITriggerTypeClass::OwnerHouseOwns(unsigned int * a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall AITriggerTypeClass::OwnerHouseOwns(_DWORD *this, _DWORD *a2, int a3)
+void AITriggerTypeClass::OwnerHouseOwns(_DWORD *a2, int a3)
 {
-  int v4; // esi
-  int v5; // ebp
-  int v6; // edi
   int v7; // eax
   bool result; // al
   char v9; // [esp+7h] [ebp-1h]
-
   v9 = 0; /*0x41ee9a*/
   if ( !a2 ) /*0x41ee9f*/
     return v9; /*0x41efcb*/
-  v4 = this->q036; /*0x41eea6*/
+  int v4 = this->q036; /*0x41eea6*/
   if ( v4 ) /*0x41eeae*/
   {
-    v5 = (*(int (__thiscall **)(int))(*(_DWORD *)v4 + 64))(v4); /*0x41eec1*/
-    v6 = 0; /*0x41eec3*/
+    int v5 = (*(int (__thiscall **)(int))(*(_DWORD *)v4 + 64))(v4); /*0x41eec1*/
+    int v6 = 0; /*0x41eec3*/
     switch ( (*(int (__thiscall **)(int))(*(_DWORD *)v4 + 44))(v4) ) /*0x41eed8*/
     {
       case 3: /*0x41eed8*/
@@ -171,20 +160,14 @@ LABEL_8:
 bool AITriggerTypeClass::IronCurtainCharged(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool __stdcall AITriggerTypeClass::IronCurtainCharged(int a1, int a2)
+void AITriggerTypeClass::IronCurtainCharged(int a1, int a2)
 {
-  int v2; // edx
-  int v3; // eax
   int i; // ecx
-  int v6; // eax
-  int v7; // esi
-  int v8; // ecx
   int v9; // [esp+8h] [ebp+4h]
-
   if ( !a1 ) /*0x41f0d9*/
     return 0; /*0x41f0d9*/
-  v2 = *(_DWORD *)(a1 + 612); /*0x41f0db*/
-  v3 = 0; /*0x41f0e1*/
+  int v2 = *(_DWORD *)(a1 + 612); /*0x41f0db*/
+  int v3 = 0; /*0x41f0e1*/
   if ( v2 <= 0 ) /*0x41f0e5*/
     return 0; /*0x41f0e5*/
   for ( i = *(_DWORD *)(a1 + 600); *(_DWORD *)(*(_DWORD *)(*(_DWORD *)i + 40) + 180) != 1; i += 4 ) /*0x41f0ed*/
@@ -192,11 +175,11 @@ bool __stdcall AITriggerTypeClass::IronCurtainCharged(int a1, int a2)
     if ( ++v3 >= v2 ) /*0x41f103*/
       return 0; /*0x41f103*/
   }
-  v6 = *(_DWORD *)(*(_DWORD *)(a1 + 600) + 4 * v3); /*0x41f10d*/
+  int v6 = *(_DWORD *)(*(_DWORD *)(a1 + 600) + 4 * v3); /*0x41f10d*/
   if ( !v6 || !*(_BYTE *)(v6 + 109) ) /*0x41f114*/
     return 0; /*0x41f119*/
-  v7 = *(_DWORD *)(v6 + 48); /*0x41f11b*/
-  v8 = *(_DWORD *)(v6 + 56); /*0x41f11e*/
+  int v7 = *(_DWORD *)(v6 + 48); /*0x41f11b*/
+  int v8 = *(_DWORD *)(v6 + 56); /*0x41f11e*/
   if ( v7 == -1 ) /*0x41f124*/
     goto LABEL_12; /*0x41f124*/
   if ( (int)g_CurrentFrame - v7 < v8 ) /*0x41f130*/
@@ -215,20 +198,14 @@ LABEL_12:
 bool AITriggerTypeClass::ChronoSphereCharged(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool __stdcall AITriggerTypeClass::ChronoSphereCharged(int a1, int a2)
+void AITriggerTypeClass::ChronoSphereCharged(int a1, int a2)
 {
-  int v2; // edx
-  int v3; // eax
   int i; // ecx
-  int v6; // eax
-  int v7; // esi
-  int v8; // ecx
   int v9; // [esp+8h] [ebp+4h]
-
   if ( !a1 ) /*0x41f189*/
     return 0; /*0x41f189*/
-  v2 = *(_DWORD *)(a1 + 612); /*0x41f18b*/
-  v3 = 0; /*0x41f191*/
+  int v2 = *(_DWORD *)(a1 + 612); /*0x41f18b*/
+  int v3 = 0; /*0x41f191*/
   if ( v2 <= 0 ) /*0x41f195*/
     return 0; /*0x41f195*/
   for ( i = *(_DWORD *)(a1 + 600); *(_DWORD *)(*(_DWORD *)(*(_DWORD *)i + 40) + 180) != 3; i += 4 ) /*0x41f19d*/
@@ -236,11 +213,11 @@ bool __stdcall AITriggerTypeClass::ChronoSphereCharged(int a1, int a2)
     if ( ++v3 >= v2 ) /*0x41f1b3*/
       return 0; /*0x41f1b3*/
   }
-  v6 = *(_DWORD *)(*(_DWORD *)(a1 + 600) + 4 * v3); /*0x41f1bd*/
+  int v6 = *(_DWORD *)(*(_DWORD *)(a1 + 600) + 4 * v3); /*0x41f1bd*/
   if ( !v6 || !*(_BYTE *)(v6 + 109) ) /*0x41f1c4*/
     return 0; /*0x41f1c9*/
-  v7 = *(_DWORD *)(v6 + 48); /*0x41f1cb*/
-  v8 = *(_DWORD *)(v6 + 56); /*0x41f1ce*/
+  int v7 = *(_DWORD *)(v6 + 48); /*0x41f1cb*/
+  int v8 = *(_DWORD *)(v6 + 56); /*0x41f1ce*/
   if ( v7 == -1 ) /*0x41f1d4*/
     goto LABEL_12; /*0x41f1d4*/
   if ( (int)g_CurrentFrame - v7 < v8 ) /*0x41f1e0*/
@@ -259,16 +236,14 @@ LABEL_12:
 bool AITriggerTypeClass::HouseCredits(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall AITriggerTypeClass::HouseCredits(_DWORD *this, int a2, int a3)
+void AITriggerTypeClass::HouseCredits(int a2, int a3)
 {
-  char v3; // bl
-  int v5; // eax
   bool result; // al
 
-  v3 = 0; /*0x41f235*/
+  char v3 = 0; /*0x41f235*/
   if ( !a3 ) /*0x41f23c*/
     return v3; /*0x41f2bd*/
-  v5 = (*(int (__stdcall **)(int))(*(_DWORD *)(a3 + 36) + 24))(a3 + 36); /*0x41f245*/
+  int v5 = (*(int (__stdcall **)(int))(*(_DWORD *)(a3 + 36) + 24))(a3 + 36); /*0x41f245*/
   switch ( this->q0E8 ) /*0x41f253*/
   {
     case 0: /*0x41f253*/
@@ -299,15 +274,8 @@ bool __thiscall AITriggerTypeClass::HouseCredits(_DWORD *this, int a2, int a3)
 char AITriggerTypeClass::LoadFromINI(unsigned char *** a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall AITriggerTypeClass::vt_25_(int this, unsigned __int8 ***a2)
+void AITriggerTypeClass::vt_25_(int this, unsigned __int8 ***a2)
 {
-  char *v3; // eax
-  char *v4; // eax
-  char *v5; // eax
-  int v6; // eax
-  char *v7; // eax
-  char *v8; // eax
-  int v9; // esi
   int ExitCellByName; // eax
   int Index; // eax
   _DWORD *v12; // edx
@@ -355,7 +323,7 @@ char __thiscall AITriggerTypeClass::vt_25_(int this, unsigned __int8 ***a2)
           String,
           512) )
     return 0; /*0x41f5b9*/
-  v3 = strtok(String, Delimiter); /*0x41f5d3*/
+  char * v3 = strtok(String, Delimiter); /*0x41f5d3*/
   if ( !v3 ) /*0x41f5df*/
     return 0; /*0x41f5df*/
   strncpy(Destination, v3, 0x30u); /*0x41f5ed*/
@@ -365,7 +333,7 @@ char __thiscall AITriggerTypeClass::vt_25_(int this, unsigned __int8 ***a2)
     qmemcpy((void *)(this + 100), Destination, 0x30u); /*0x41f60d*/
     this->q094 = v46; /*0x41f60f*/
   }
-  v4 = strtok(0, Delimiter); /*0x41f616*/
+  char * v4 = strtok(0, Delimiter); /*0x41f616*/
   if ( !v4 ) /*0x41f620*/
     return 0; /*0x41f620*/
   strncpy(v42, v4, 0x18u); /*0x41f62e*/
@@ -374,7 +342,7 @@ char __thiscall AITriggerTypeClass::vt_25_(int this, unsigned __int8 ***a2)
   this->q0DC = 0; /*0x41f643*/
   if ( _strcmpi(v42, off_818114) ) /*0x41f655*/
     this->q0DC = TeamTypeClass::FindByName(v42); /*0x41f66a*/
-  v5 = strtok(0, Delimiter); /*0x41f676*/
+  char * v5 = strtok(0, Delimiter); /*0x41f676*/
   if ( !v5 ) /*0x41f680*/
     return 0; /*0x41f680*/
   strncpy(v42, v5, 0x18u); /*0x41f68e*/
@@ -386,7 +354,7 @@ char __thiscall AITriggerTypeClass::vt_25_(int this, unsigned __int8 ***a2)
   {
     if ( _strcmpi(v42, off_818114) ) /*0x41f6e2*/
     {
-      v6 = SuperWeaponTypeClass::FindByName(v42); /*0x41f6f2*/
+      int v6 = SuperWeaponTypeClass::FindByName(v42); /*0x41f6f2*/
       this->q0A8 = v6; /*0x41f6fa*/
       if ( v6 != -1 ) /*0x41f700*/
         this->q0A0 = 1; /*0x41f702*/
@@ -399,17 +367,17 @@ char __thiscall AITriggerTypeClass::vt_25_(int this, unsigned __int8 ***a2)
   if ( !strtok(0, Delimiter) ) /*0x41f712*/
     return 0; /*0x41f712*/
   this->q0B0 = 0; /*0x41f728*/
-  v7 = strtok(0, Delimiter); /*0x41f72e*/
+  char * v7 = strtok(0, Delimiter); /*0x41f72e*/
   if ( !v7 ) /*0x41f738*/
     return 0; /*0x41f738*/
   this->q098 = atoi(v7); /*0x41f74a*/
-  v8 = strtok(0, Delimiter); /*0x41f750*/
+  char * v8 = strtok(0, Delimiter); /*0x41f750*/
   if ( !v8 ) /*0x41f75a*/
     return 0; /*0x41f75a*/
   strncpy(v42, v8, 0x18u); /*0x41f768*/
   v43 = 0; /*0x41f774*/
   String::Trim(v42); /*0x41f778*/
-  v9 = 0; /*0x41f781*/
+  int v9 = 0; /*0x41f781*/
   ExitCellByName = Factory::FindExitCellByName(v42); /*0x41f783*/
   if ( ExitCellByName != -1 ) /*0x41f78b*/
   {
@@ -480,21 +448,21 @@ LABEL_26:
   {
     v22 = atof(v21); /*0x41f893*/
     v41 = (unsigned int)Math::RoundToInt(v22); /*0x41f8a0*/
-    *(double *)(this + 184) = (double)v41; /*0x41f8ac*/
+    this->q0B8 = (double)v41; /*0x41f8ac*/
   }
   v23 = strtok(0, Delimiter); /*0x41f8b8*/
   if ( v23 ) /*0x41f8c2*/
   {
     v24 = atof(v23); /*0x41f8c5*/
     v41 = (unsigned int)Math::RoundToInt(v24); /*0x41f8d2*/
-    *(double *)(this + 192) = (double)v41; /*0x41f8de*/
+    this->q0C0 = (double)v41; /*0x41f8de*/
   }
   v25 = strtok(0, Delimiter); /*0x41f8ea*/
   if ( v25 ) /*0x41f8f4*/
   {
     v26 = atof(v25); /*0x41f8f7*/
     v41 = (unsigned int)Math::RoundToInt(v26); /*0x41f904*/
-    *(double *)(this + 200) = (double)v41; /*0x41f910*/
+    this->q0C8 = (double)v41; /*0x41f910*/
   }
   v27 = strtok(0, Delimiter); /*0x41f91c*/
   if ( v27 ) /*0x41f926*/
@@ -554,29 +522,26 @@ LABEL_26:
 int AITriggerTypeClass::RegisterSuccess()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall AITriggerTypeClass::RegisterSuccess(int this)
+void AITriggerTypeClass::RegisterSuccess(int this)
 {
-  int v1; // edx
-  double v2; // st7
-  double v3; // st7
   int result; // eax
 
-  v1 = this->q108; /*0x41fd61*/
-  v2 = 0.0; /*0x41fd67*/
+  int v1 = this->q108; /*0x41fd61*/
+  double v2 = 0.0; /*0x41fd67*/
   if ( v1 > 0 ) /*0x41fd73*/
   {
     v2 = (double)this->q108 * ((double)this->q104 / (double)this->q108 - 0.5); /*0x41fd89*/
     if ( v2 < 0.0 ) /*0x41fd96*/
       v2 = 0.0; /*0x41fd9a*/
   }
-  v3 = v2 + *(double *)&g_RulesClass_Instance->AITriggerSuccessWeightDelta + *(double *)(this + 184); /*0x41fdb1*/
-  *(double *)(this + 184) = v3; /*0x41fdb3*/
-  if ( v3 < *(double *)(this + 192) ) /*0x41fdc4*/
+  double v3 = v2 + *(double *)&g_RulesClass_Instance->AITriggerSuccessWeightDelta + this->q0B8; /*0x41fdb1*/
+  this->q0B8 = v3; /*0x41fdb3*/
+  if ( v3 < this->q0C0 ) /*0x41fdc4*/
   {
     this->q0B8 = this->q0C0; /*0x41fdcc*/
     this->q0BC = this->q0C4; /*0x41fdd8*/
   }
-  if ( *(double *)(this + 184) > *(double *)(this + 200) ) /*0x41fdef*/
+  if ( this->q0B8 > this->q0C8 ) /*0x41fdef*/
   {
     this->q0B8 = this->q0C8; /*0x41fdf7*/
     this->q0BC = this->q0CC; /*0x41fe03*/
@@ -592,20 +557,12 @@ int __thiscall AITriggerTypeClass::RegisterSuccess(int this)
 int AITriggerTypeClass::RegisterFailure()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall AITriggerTypeClass::RegisterFailure(int this)
+void AITriggerTypeClass::RegisterFailure(int this)
 {
-  int v1; // edx
-  double v2; // st7
-  double v3; // st7
   int result; // eax
   __int16 v5; // fps
-  double v6; // st7
-  bool v7; // c0
-  char v8; // c2
-  bool v9; // c3
-
-  v1 = this->q108; /*0x41fe21*/
-  v2 = 0.0; /*0x41fe28*/
+  int v1 = this->q108; /*0x41fe21*/
+  double v2 = 0.0; /*0x41fe28*/
   if ( v1 > 0 ) /*0x41fe3a*/
   {
     v2 = (double)v1 /*0x41fe56*/
@@ -614,20 +571,20 @@ int __thiscall AITriggerTypeClass::RegisterFailure(int this)
     if ( v2 > 0.0 ) /*0x41fe63*/
       v2 = 0.0; /*0x41fe67*/
   }
-  v3 = v2 + *(double *)&g_RulesClass_Instance->AITriggerFailureWeightDelta + *(double *)(this + 184); /*0x41fe7a*/
-  *(double *)(this + 184) = v3; /*0x41fe7c*/
-  if ( v3 < *(double *)(this + 192) ) /*0x41fe8d*/
+  double v3 = v2 + *(double *)&g_RulesClass_Instance->AITriggerFailureWeightDelta + this->q0B8; /*0x41fe7a*/
+  this->q0B8 = v3; /*0x41fe7c*/
+  if ( v3 < this->q0C0 ) /*0x41fe8d*/
   {
     this->q0B8 = this->q0C0; /*0x41fe95*/
     result = this->q0C4; /*0x41fe9b*/
     this->q0BC = result; /*0x41fea1*/
   }
-  v6 = *(double *)(this + 184); /*0x41fea7*/
-  v7 = v6 < *(double *)(this + 200); /*0x41fead*/
-  v8 = 0; /*0x41fead*/
-  v9 = v6 == *(double *)(this + 200); /*0x41fead*/
+  double v6 = this->q0B8; /*0x41fea7*/
+  bool v7 = v6 < this->q0C8; /*0x41fead*/
+  char v8 = 0; /*0x41fead*/
+  bool v9 = v6 == this->q0C8; /*0x41fead*/
   LOWORD(result) = v5; /*0x41feb3*/
-  if ( v6 > *(double *)(this + 200) ) /*0x41feb8*/
+  if ( v6 > this->q0C8 ) /*0x41feb8*/
   {
     this->q0B8 = this->q0C8; /*0x41fec0*/
     result = this->q0CC; /*0x41fec6*/

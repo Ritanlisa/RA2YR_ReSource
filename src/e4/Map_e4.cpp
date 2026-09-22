@@ -55,7 +55,7 @@ namespace gamemd {
 int sub_539760()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_539760()
+void sub_539760()
 {
   word_A9FA48 = unk_A9F9F8; /*0x539766*/
   unk_A9F9CC = unk_A9F9F8; /*0x53976b*/
@@ -112,47 +112,36 @@ int sub_5558E0(int * a1, int * a2, int * a3, int * a4, int * a5)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall sub_5558E0(int *a1, int *a2, int *a3, int *a4, int *a5)
 {
-  int v8; // eax
-  int v9; // eax
-  int v10; // eax
-  int v11; // eax
-  int v12; // ecx
-  double v13; // st7
-  int v14; // eax
-  int v15; // eax
-  int v16; // eax
   int result; // eax
-  int v19; // [esp+18h] [ebp+4h]
-  int v20; // [esp+1Ch] [ebp+8h]
 
   *a3 = *a3 <= 0 ? 0 : *a3;
   *a4 = *a4 <= 0 ? 0 : *a4;
   *a5 = *a5 <= 0 ? 0 : *a5;
-  v8 = *a3; /*0x555921*/
+  int v8 = *a3; /*0x555921*/
   if ( *a3 >= 2000 ) /*0x555928*/
     v8 = 2000; /*0x55592a*/
   *a3 = v8; /*0x55592f*/
-  v9 = *a4; /*0x555931*/
+  int v9 = *a4; /*0x555931*/
   if ( *a4 >= 2000 ) /*0x555938*/
     v9 = 2000; /*0x55593a*/
   *a4 = v9; /*0x55593f*/
-  v10 = *a5; /*0x555941*/
+  int v10 = *a5; /*0x555941*/
   if ( *a5 >= 2000 ) /*0x555948*/
     v10 = 2000; /*0x55594a*/
   *a5 = v10; /*0x55594f*/
   *a1 = 0x10000; /*0x555951*/
-  v11 = *a3; /*0x555958*/
-  v19 = *a3; /*0x55595f*/
+  int v11 = *a3; /*0x555958*/
+  int v19 = *a3; /*0x55595f*/
   if ( *a3 != 1000 || *a4 != v11 || *a5 != v11 ) /*0x55596b*/
   {
-    v12 = *a4; /*0x555971*/
-    v20 = *a4; /*0x555975*/
+    int v12 = *a4; /*0x555971*/
+    int v20 = *a4; /*0x555975*/
     if ( *a4 > v11 ) /*0x555979*/
       goto LABEL_15; /*0x555979*/
     if ( v11 >= *a5 ) /*0x55597d*/
     {
-      v13 = (double)v19 * 65536.0 * 0.001; /*0x555989*/
-      v14 = Math::RoundToInt(v13); /*0x555991*/
+      double v13 = (double)v19 * 65536.0 * 0.001; /*0x555989*/
+      int v14 = Math::RoundToInt(v13); /*0x555991*/
       *a1 = v14; /*0x555999*/
       if ( v14 >= 66 ) /*0x55599c*/
       {
@@ -170,7 +159,7 @@ LABEL_21:
 LABEL_15:
       if ( v12 >= *a5 ) /*0x5559d7*/
       {
-        v15 = Math::RoundToInt((double)v20 * 65536.0 * 0.001); /*0x5559e9*/
+        int v15 = Math::RoundToInt((double)v20 * 65536.0 * 0.001); /*0x5559e9*/
         *a1 = v15; /*0x5559f1*/
         if ( v15 >= 66 ) /*0x5559f4*/
         {
@@ -188,7 +177,7 @@ LABEL_17:
         goto LABEL_22; /*0x555a19*/
       }
     }
-    v16 = Math::RoundToInt((double)*a5 * 65536.0 * 0.001); /*0x555a58*/
+    int v16 = Math::RoundToInt((double)*a5 * 65536.0 * 0.001); /*0x555a58*/
     *a1 = v16; /*0x555a60*/
     if ( v16 >= 66 ) /*0x555a63*/
     {
@@ -216,15 +205,9 @@ char sub_5A1E50(short * a1, int a2, int a3, int a4)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __fastcall sub_5A1E50(__int16 *a1, int a2, int a3, int a4)
 {
-  int v4; // edx
-  int v5; // eax
-  int v6; // ecx
   __int16 v7; // si
   __int16 v8; // bx
   __int16 v9; // si
-  int v10; // edi
-  int v11; // eax
-  int v13; // [esp+10h] [ebp-20h]
   int v14; // [esp+14h] [ebp-1Ch]
   int v15; // [esp+18h] [ebp-18h]
   int v17; // [esp+20h] [ebp-10h]
@@ -234,14 +217,14 @@ char __fastcall sub_5A1E50(__int16 *a1, int a2, int a3, int a4)
 
   v19 = *a1; /*0x5a1e5e*/
   v20 = a1[2]; /*0x5a1e63*/
-  v4 = *((_DWORD *)a1 + 3); /*0x5a1e68*/
-  v5 = 0; /*0x5a1e6c*/
-  v13 = 0; /*0x5a1e73*/
+  int v4 = *((_DWORD *)a1 + 3); /*0x5a1e68*/
+  int v5 = 0; /*0x5a1e6c*/
+  int v13 = 0; /*0x5a1e73*/
   v15 = 0; /*0x5a1e77*/
   v18 = v4; /*0x5a1e7b*/
   if ( v4 <= 0 ) /*0x5a1e7f*/
     return 0; /*0x5a1f41*/
-  v6 = *((_DWORD *)a1 + 2); /*0x5a1e85*/
+  int v6 = *((_DWORD *)a1 + 2); /*0x5a1e85*/
   v17 = v6; /*0x5a1e88*/
   while ( 1 ) /*0x5a1e8c*/
   {
@@ -258,13 +241,13 @@ LABEL_16:
   while ( 1 )
   {
     v9 = v19 + v7; /*0x5a1ea5*/
-    v10 = v9 + v8; /*0x5a1eb3*/
+    int v10 = v9 + v8; /*0x5a1eb3*/
     if ( v10 > g_MapCellHeight_Value
       && v9 - v8 < g_MapCellHeight_Value
       && v8 - v9 < g_MapCellHeight_Value
       && v10 <= g_MapCellCount )
     {
-      v11 = g_MapTileArray ? *((_DWORD *)g_MapTileArray + 20 * v9 + 20 * unk_89C2DC * v8 + 14) : -1;
+      int v11 = g_MapTileArray ? *((_DWORD *)g_MapTileArray + 20 * v9 + 20 * unk_89C2DC * v8 + 14) : -1;
       if ( v11 == a2 && ++v13 >= a4 ) /*0x5a1f15*/
         return 1; /*0x5a1f41*/
     }
@@ -286,23 +269,21 @@ namespace gamemd {
 int E4Recv_5ADD10::Map_Delete()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Map_Delete(int this)
+void Map_Delete(int this)
 {
-  bool v3; // bl
   wchar_t *v4; // eax
   wchar_t *StringCSF; // [esp-10h] [ebp-F8h]
-  int v7; // [esp+0h] [ebp-E8h]
-  _DWORD v8[20]; // [esp+Ch] [ebp-DCh] BYREF
-  char v9[120]; // [esp+5Ch] [ebp-8Ch] BYREF
-  int v10[5]; // [esp+D4h] [ebp-14h] BYREF
 
+  _DWORD v8[20]; // [esp+Ch] [ebp-DCh] BYREF
   MSEngine::Construct(v8); /*0x5add1e*/
+  char v9[120]; // [esp+5Ch] [ebp-8Ch] BYREF
   Map_Delete_5CEDD0(v9); /*0x5add27*/
+  int v10[5]; // [esp+D4h] [ebp-14h] BYREF
   unknown_libname_73(v10); /*0x5add33*/
   v10[1] = Timer::GetTicks(); /*0x5add48*/
   v10[3] = 0; /*0x5add50*/
   v8[0] = &vt_MapSelect; /*0x5add5b*/
-  v3 = ScenarioClass::Load(v8, (ObjectClass *)this) == 0; /*0x5add71*/
+  bool v3 = ScenarioClass::Load(v8, (ObjectClass *)this) == 0; /*0x5add71*/
   DeleteAndZero((int)v10); /*0x5add74*/
   MSEngine::Destructor((int)v9); /*0x5add7d*/
   MSEngine::Destruct(v8); /*0x5add86*/
@@ -310,6 +291,7 @@ int __thiscall Map_Delete(int this)
   {
     StringCSF = GetStringCSF(g_Str_TXT_OK, 0, &stru_82C090.onBridge, 134); /*0x5addba*/
     v4 = GetStringCSF((wchar_t *)&stru_82C090.spawnStatus, 0, &stru_82C090.onBridge, 134); /*0x5addc5*/
+  int v7; // [esp+0h] [ebp-E8h]
     Dialog::ShowMessageBox((int)v4, StringCSF, 0, 0, 0, v7); /*0x5addcf*/
     return 0; /*0x5addd4*/
   }
@@ -327,20 +309,16 @@ namespace gamemd {
 int sub_682150(int a1, int a2, LPSTR lpMultiByteStr)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall sub_682150(int a1, int a2, LPSTR lpMultiByteStr)
+void sub_682150(int a1, int a2, LPSTR lpMultiByteStr)
 {
-  int v3; // ecx
-  _DWORD *v4; // eax
   _UNKNOWN **v5; // ecx
-  int v6; // esi
   WCHAR *i; // edi
-  int v9; // [esp+28h] [ebp-104h] BYREF
   WCHAR WideCharStr[128]; // [esp+2Ch] [ebp-100h] BYREF
 
-  v9 = 0; /*0x682167*/
+  int v9 = 0; /*0x682167*/
   *lpMultiByteStr = 0; /*0x68216f*/
-  v3 = 0; /*0x682172*/
-  v4 = &DataGlobal_83D658; /*0x682174*/
+  int v3 = 0; /*0x682172*/
+  _DWORD * v4 = &DataGlobal_83D658; /*0x682174*/
   while ( *v4 != a2 ) /*0x68217b*/
   {
     v4 += 2; /*0x68217d*/
@@ -353,7 +331,7 @@ int __stdcall sub_682150(int a1, int a2, LPSTR lpMultiByteStr)
   }
   v5 = (&DataGlobal_83D65C)[2 * v3]; /*0x6821c5*/
 LABEL_5:
-  v6 = (*(int (__stdcall **)(int, _UNKNOWN **, _DWORD, int, _DWORD, int *))(*(_DWORD *)a1 + 16))(a1, v5, 0, 16, 0, &v9); /*0x68218a*/
+  int v6 = (*(int (__stdcall **)(int, _UNKNOWN **, _DWORD, int, _DWORD, int *))(*(_DWORD *)a1 + 16))(a1, v5, 0, 16, 0, &v9); /*0x68218a*/
   if ( v6 >= 0 ) /*0x6821a7*/
   {
     for ( i = WideCharStr; ; ++i ) /*0x6821ce*/
@@ -387,41 +365,29 @@ void sub_68C050()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void sub_68C050()
 {
-  int v0; // edi
   int WarRatio_high; // ecx
-  int v2; // ecx
-  int v3; // esi
-  int v4; // eax
-  int v5; // eax
-  int v6; // esi
-  int v7; // eax
-  int v8; // ecx
   int HelipadRatio; // edx
-  int v10; // eax
-  int v11; // edx
   int AirstripRatio_high; // ecx
   void **v13; // [esp+8h] [ebp-18h] BYREF
   void *Block; // [esp+Ch] [ebp-14h]
-  int v15; // [esp+10h] [ebp-10h]
-  char v16; // [esp+15h] [ebp-Bh]
-  int v17; // [esp+18h] [ebp-8h]
-  int v18; // [esp+1Ch] [ebp-4h]
 
-  v0 = 0; /*0x68c059*/
+  int v0 = 0; /*0x68c059*/
   if ( unk_8B41F0 > 0 ) /*0x68c05d*/
   {
     WarRatio_high = HIDWORD(g_RulesClass_Instance->?); /*0x68c069*/
     if ( WarRatio_high > 0 && WarRatio_high >= unk_8B41F0 ) /*0x68c079*/
     {
+  char v16; // [esp+15h] [ebp-Bh]
       VectorClass::Construct(&v13, 0, 0); /*0x68c086*/
-      v2 = 10; /*0x68c091*/
+      int v2 = 10; /*0x68c091*/
       v13 = &vt_DynamicVectorClass_int; /*0x68c096*/
-      v18 = 10; /*0x68c09e*/
-      v17 = 0; /*0x68c0a2*/
-      v3 = 0; /*0x68c0ac*/
+      int v18 = 10; /*0x68c09e*/
+      int v17 = 0; /*0x68c0a2*/
+      int v3 = 0; /*0x68c0ac*/
       if ( SHIDWORD(g_RulesClass_Instance->?) > 0 ) /*0x68c0b0*/
       {
-        v4 = v15; /*0x68c0b2*/
+  int v15; // [esp+10h] [ebp-10h]
+        int v4 = v15; /*0x68c0b2*/
         while ( 1 ) /*0x68c0bc*/
         {
           if ( v17 < v4 ) /*0x68c0c0*/
@@ -436,22 +402,22 @@ LABEL_14:
         if ( ((unsigned __int8 (__thiscall *)(void ***, int, _DWORD))v13[2])(&v13, v2 + v4, 0) ) /*0x68c0df*/
         {
 LABEL_12:
-          v5 = v17++; /*0x68c0e6*/
+          int v5 = v17++; /*0x68c0e6*/
           *((_DWORD *)Block + v5) = v3; /*0x68c0f5*/
         }
         v4 = v15; /*0x68c0f8*/
         goto LABEL_14; /*0x68c0f8*/
       }
 LABEL_15:
-      v6 = 0; /*0x68c10b*/
+      int v6 = 0; /*0x68c10b*/
       if ( unk_8B41F0 > 0 ) /*0x68c114*/
       {
         while ( 1 ) /*0x68c12f*/
         {
-          v7 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, v17 - 1); /*0x68c12f*/
+          int v7 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, v17 - 1); /*0x68c12f*/
           if ( v7 < v17 ) /*0x68c13a*/
           {
-            v8 = v7; /*0x68c13d*/
+            int v8 = v7; /*0x68c13d*/
             if ( v7 < --v17 ) /*0x68c145*/
             {
               do /*0x68c159*/
@@ -465,8 +431,8 @@ LABEL_15:
           HelipadRatio = g_RulesClass_Instance->?; /*0x68c164*/
           if ( v7 + 1 <= HelipadRatio ) /*0x68c16c*/
             break; /*0x68c16c*/
-          v10 = v7 - HelipadRatio; /*0x68c16e*/
-          v11 = *(_DWORD *)g_RulesClass_Instance->?; /*0x68c170*/
+          int v10 = v7 - HelipadRatio; /*0x68c16e*/
+          int v11 = *(_DWORD *)g_RulesClass_Instance->?; /*0x68c170*/
           if ( v10 + 1 <= v11 ) /*0x68c17b*/
           {
             v0 = *(_DWORD *)(LODWORD(g_RulesClass_Instance->?) + 4 * v10); /*0x68c19a*/
@@ -507,11 +473,9 @@ namespace gamemd {
 char sub_55CF10()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char sub_55CF10()
+void sub_55CF10()
 {
   char result; // al
-  int v1; // esi
-  int v2; // eax
   DWORD Ticks; // [esp+0h] [ebp-Ch]
 
   Debug::Log(); /*0x55cf18*/
@@ -527,13 +491,13 @@ char sub_55CF10()
         if ( DataGlobal_A8EA0C ) /*0x55cf4c*/
         {
           NetworkEventQueueClass::WaitForResponse((int)&g_NetworkEventQueue); /*0x55cf53*/
-          v1 = 480; /*0x55cf61*/
+          int v1 = 480; /*0x55cf61*/
           Ticks = Timer::GetTicks(); /*0x55cf66*/
           while ( 1 ) /*0x55cf74*/
           {
             if ( Ticks != -1 ) /*0x55cf79*/
             {
-              v2 = Timer::GetTicks() - Ticks; /*0x55cf84*/
+              int v2 = Timer::GetTicks() - Ticks; /*0x55cf84*/
               if ( v2 >= 480 ) /*0x55cf8a*/
                 break; /*0x55cf8a*/
               v1 = 480 - v2; /*0x55cf8c*/
@@ -564,42 +528,27 @@ namespace gamemd {
 int sub_5C98A0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_5C98A0()
+void sub_5C98A0()
 {
-  int v0; // ecx
   int result; // eax
-  int v2; // edi
   size_t v3; // ebp
-  int v4; // esi
-  int v5; // eax
-  int *v6; // ecx
-  int v7; // edx
-  int v8; // ebp
-  int *v9; // ecx
-  int v10; // edx
-  int v11; // ebp
   int Count; // ebp
-  int v13; // ebp
-  int v14; // ebp
-  int v15; // eax
-  int v16; // edi
   int i; // [esp+0h] [ebp-8h]
-  int v18; // [esp+4h] [ebp-4h]
 
-  v0 = HouseClass_Count; /*0x5c98a3*/
+  int v0 = HouseClass_Count; /*0x5c98a3*/
   result = 0; /*0x5c98a9*/
   g_CampaignScoreFlags = 0; /*0x5c98ad*/
-  v18 = HouseClass_Count; /*0x5c98b2*/
+  int v18 = HouseClass_Count; /*0x5c98b2*/
   for ( i = 0; result < v0; i = result ) /*0x5c98ba*/
   {
-    v2 = *(_DWORD *)&HouseClass_Array->__pad_0[4 * result]; /*0x5c98ca*/
+    int v2 = *(_DWORD *)&HouseClass_Array->__pad_0[4 * result]; /*0x5c98ca*/
     if ( v2 && *(_BYTE *)(*(_DWORD *)(v2 + 52) + 422) != 1 && v2 != HouseClass_Observer ) /*0x5c98eb*/
     {
       v3 = g_CampaignScoreFlags++; /*0x5c98f6*/
-      v4 = 28 * v3; /*0x5c990e*/
+      int v4 = 28 * v3; /*0x5c990e*/
       DataGlobal_A8D228[28 * v3] = 0; /*0x5c9917*/
       wcscpy((wchar_t *)&DataGlobal_A8D1FC + 56 * v3, (const wchar_t *)(v2 + 90154)); /*0x5c9922*/
-      v5 = 0; /*0x5c9927*/
+      int v5 = 0; /*0x5c9927*/
       DataGlobal_A8D22C[28 * v3] = 0; /*0x5c992c*/
       DataGlobal_A8D23C[28 * v3] = 0; /*0x5c9932*/
       DataGlobal_A8D24C[28 * v3] = 0; /*0x5c9938*/
@@ -610,20 +559,20 @@ int sub_5C98A0()
         ++DataGlobal_A8D228[28 * v3]; /*0x5c9961*/
         DataGlobal_A8D584 = v3; /*0x5c9967*/
       }
-      v6 = (int *)(v2 + 21476); /*0x5c996d*/
-      v7 = 20; /*0x5c9973*/
+      int * v6 = (int *)(v2 + 21476); /*0x5c996d*/
+      int v7 = 20; /*0x5c9973*/
       do /*0x5c9980*/
       {
-        v8 = *v6++; /*0x5c9978*/
+        int v8 = *v6++; /*0x5c9978*/
         v5 += v8; /*0x5c997d*/
         --v7; /*0x5c997f*/
       }
       while ( v7 ); /*0x5c9980*/
-      v9 = (int *)(v2 + 21560); /*0x5c9982*/
-      v10 = 20; /*0x5c9988*/
+      int * v9 = (int *)(v2 + 21560); /*0x5c9982*/
+      int v10 = 20; /*0x5c9988*/
       do /*0x5c9995*/
       {
-        v11 = *v9++; /*0x5c998d*/
+        int v11 = *v9++; /*0x5c998d*/
         v5 += v11; /*0x5c9992*/
         --v10; /*0x5c9994*/
       }
@@ -631,15 +580,15 @@ int sub_5C98A0()
       DataGlobal_A8D23C[v4] = v5; /*0x5c9997*/
       DataGlobal_A8D22C[v4] = *(_DWORD *)(v2 + 21556) + *(_DWORD *)(v2 + 21640); /*0x5c99b1*/
       Count = VectorClass::GetCount((_DWORD *)(v2 + 21920)); /*0x5c99c2*/
-      v13 = VectorClass::GetCount((_DWORD *)(v2 + 21940)) + Count; /*0x5c99cf*/
-      v14 = VectorClass::GetCount((_DWORD *)(v2 + 21960)) + v13; /*0x5c99dc*/
+      int v13 = VectorClass::GetCount((_DWORD *)(v2 + 21940)) + Count; /*0x5c99cf*/
+      int v14 = VectorClass::GetCount((_DWORD *)(v2 + 21960)) + v13; /*0x5c99dc*/
       DataGlobal_A8D24C[v4] = v14 + VectorClass::GetCount((_DWORD *)(v2 + 21980)); /*0x5c99e5*/
-      v15 = *(_DWORD *)(v2 + 21736); /*0x5c99eb*/
+      int v15 = *(_DWORD *)(v2 + 21736); /*0x5c99eb*/
       if ( v15 > 0 ) /*0x5c99f3*/
         DataGlobal_A8D25C[v4] += v15; /*0x5c99f5*/
       if ( !*(_BYTE *)(v2 + 501) ) /*0x5c99fb*/
       {
-        v16 = DataGlobal_A8D25C[v4]; /*0x5c9a05*/
+        int v16 = DataGlobal_A8D25C[v4]; /*0x5c9a05*/
         DataGlobal_A8D25C[v4] = v16 + v16 / 2 + Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, v16 / 2, v16); /*0x5c9a2a*/
       }
       Debug::Log(); /*0x5c9a6e*/
@@ -661,21 +610,19 @@ char Map_Handle_5EC880(HWND hDlg, int a2, char a3, char a4)
 char __fastcall Map_Handle_5EC880(HWND hDlg, int a2, char a3, char a4)
 {
   HWND v4; // ebx
-  int v5; // edi
-  int v6; // esi
   LRESULT v7; // eax
   LRESULT v8; // eax
   wchar_t *v9; // esi
   char v10; // bl
   int v12; // [esp+10h] [ebp-8h]
-
   v4 = hDlg; /*0x5ec88a*/
   v12 = a2; /*0x5ec890*/
   if ( !g_MPCooperativeState ) /*0x5ec898*/
     v12 = a2 + 1; /*0x5ec89d*/
-  v5 = 0; /*0x5ec8a7*/
+  int v5 = 0; /*0x5ec8a7*/
   while ( 1 )
   {
+  int v6; // esi
     if ( v5 )
     {
       switch ( v5 )
@@ -754,16 +701,15 @@ char sub_6ACCA0(int a1)
 char __fastcall sub_6ACCA0(int a1)
 {
   HWND v1; // ebp
-  int v2; // edi
-  int v3; // esi
   LRESULT v4; // eax
 
   v1 = DataGlobal_B0B59C; /*0x6acca2*/
   if ( a1 >= 8 ) /*0x6accad*/
     return 0; /*0x6acd54*/
-  v2 = a1 - 1; /*0x6accb9*/
+  int v2 = a1 - 1; /*0x6accb9*/
   while ( 1 )
   {
+  int v3; // esi
     if ( v2 )
     {
       switch ( v2 )
@@ -805,11 +751,8 @@ namespace gamemd {
 char Map_Helper_584030(IUnknown * aP0)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall Map_Helper_584030(IUnknown *aP0)
+void Map_Helper_584030(IUnknown *aP0)
 {
-  int v2; // eax
-  int v3; // ebp
-  int v4; // edi
   int v5; // esi
   unsigned int v6; // eax
   _DWORD *v7; // eax
@@ -817,9 +760,9 @@ char __stdcall Map_Helper_584030(IUnknown *aP0)
   int v10; // [esp+10h] [ebp-4h]
   ObjectClass *aP0a; // [esp+18h] [ebp+4h]
 
-  v2 = aP0->field_C; /*0x584038*/
-  v3 = aP0->field_8; /*0x58403b*/
-  v4 = 0; /*0x58403f*/
+  int v2 = aP0->field_C; /*0x584038*/
+  int v3 = aP0->field_8; /*0x58403b*/
+  int v4 = 0; /*0x58403f*/
   v10 = v2; /*0x584043*/
   if ( v2 <= 0 ) /*0x584047*/
     return 1; /*0x5840ac*/
@@ -861,16 +804,10 @@ int Map_Helper_59BAB0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // local variable allocation has failed, the output may be wrong!
-char __stdcall Map_Helper_59BAB0(__int16 *a0, MapResourceClass *aP1, char a3, double a4, MapResourceClass *aP4)
+void Map_Helper_59BAB0(__int16 *a0, MapResourceClass *aP1, char a3, double a4, MapResourceClass *aP4)
 {
   MapResourceClass v5; // esi
-  int v7; // edx
-  double v8; // st7
-  double v9; // st6
-  int v10; // eax
-  int v11; // edx
   MapResourceClass v12; // eax
-
   v5 = *aP1; /*0x59babb*/
   if ( *aP1 == dword_ABE2F0 /*0x59bae5*/
     && *(_DWORD *)&aP1[1] == dword_ABE2F4
@@ -881,9 +818,11 @@ char __stdcall Map_Helper_59BAB0(__int16 *a0, MapResourceClass *aP1, char a3, do
   }
   if ( a3 ) /*0x59baf4*/
   {
-    v7 = a0[1]; /*0x59bb00*/
+    int v7 = a0[1]; /*0x59bb00*/
+  double v8; // st7
     v8 = (double)(*a0 - 2 * *(_DWORD *)&v5 - v7 + *(_DWORD *)&stru_87C374[13672] - 1) * 0.5 /*0x59bb3f*/
        - (double)(int)aP1[2] * 0.5;
+  double v9; // st6
     v9 = (double)(*a0 - 2 * *(_DWORD *)&aP1[1] - *(_DWORD *)&stru_87C374[13672] + v7 - 1) * 0.5 /*0x59bb54*/
        - (double)(int)aP1[3] * 0.5;
     if ( v9 * v9 * *(double *)&aP4 + v8 * v8 * a4 < 1.0 ) /*0x59bb77*/
@@ -891,8 +830,8 @@ char __stdcall Map_Helper_59BAB0(__int16 *a0, MapResourceClass *aP1, char a3, do
   }
   else
   {
-    v10 = *a0; /*0x59bb87*/
-    v11 = a0[1]; /*0x59bb8a*/
+    int v10 = *a0; /*0x59bb87*/
+    int v11 = a0[1]; /*0x59bb8a*/
     if ( v10 >= *(_DWORD *)&v5 && v10 < *(_DWORD *)&v5 + *(_DWORD *)&aP1[2] ) /*0x59bb99*/
     {
       v12 = aP1[1]; /*0x59bb9b*/
@@ -912,33 +851,20 @@ char sub_5A7D00(int a1, unsigned short * a2, char a3, char a4)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __fastcall sub_5A7D00(int a1, _WORD *a2, char a3, char a4)
 {
-  _DWORD *v4; // esi
-  int v6; // edx
-  int v7; // ebx
-  int v8; // esi
-  int v9; // ebp
   __int16 v10; // cx
-  int v11; // eax
-  int v12; // ecx
-  int *v13; // edi
-  int v14; // esi
-  _DWORD *v16; // [esp+10h] [ebp-14h]
-  int v17; // [esp+14h] [ebp-10h] BYREF
-  int v18; // [esp+18h] [ebp-Ch]
-  _WORD *v19; // [esp+1Ch] [ebp-8h]
-  int v20; // [esp+20h] [ebp-4h]
 
-  v4 = (_DWORD *)*((_DWORD *)g_FrameCounter + a1); /*0x5a7d0b*/
-  v6 = *v4; /*0x5a7d13*/
-  v19 = a2; /*0x5a7d15*/
-  v16 = v4; /*0x5a7d19*/
-  v20 = (*(int (__thiscall **)(_DWORD *))(v6 + 156))(v4); /*0x5a7d25*/
+  _DWORD * v4 = (_DWORD *)*((_DWORD *)g_FrameCounter + a1); /*0x5a7d0b*/
+  int v6 = *v4; /*0x5a7d13*/
+  _WORD * v19 = a2; /*0x5a7d15*/
+  _DWORD * v16 = v4; /*0x5a7d19*/
+  int v20 = (*(int (__thiscall **)(_DWORD *))(v6 + 156))(v4); /*0x5a7d25*/
   if ( v20 ) /*0x5a7d29*/
   {
-    v7 = 0; /*0x5a7d35*/
+    int v7 = 0; /*0x5a7d35*/
     if ( (int)v4[186] > 0 ) /*0x5a7d39*/
     {
-      v8 = g_MapCellHeight_Value; /*0x5a7d3f*/
+  int v9; // ebp
+      int v8 = g_MapCellHeight_Value; /*0x5a7d3f*/
       while ( 1 ) /*0x5a7d49*/
       {
         v9 = 0; /*0x5a7d49*/
@@ -951,11 +877,12 @@ LABEL_17:
       while ( 1 ) /*0x5a7d5f*/
       {
         v10 = a2[1] + v7; /*0x5a7d5f*/
+  int v18; // [esp+18h] [ebp-Ch]
         LOWORD(v18) = v9 + *a2; /*0x5a7d66*/
         HIWORD(v18) = v10; /*0x5a7d6b*/
-        v17 = v18; /*0x5a7d74*/
-        v11 = v10; /*0x5a7d7b*/
-        v12 = v10 + (__int16)v18; /*0x5a7d7e*/
+        int v17 = v18; /*0x5a7d74*/
+        int v11 = v10; /*0x5a7d7b*/
+        int v12 = v10 + (__int16)v18; /*0x5a7d7e*/
         if ( v12 <= v8 || (__int16)v18 - v11 >= v8 || v11 - (__int16)v18 >= v8 || v12 > g_MapCellCount ) /*0x5a7da5*/
         {
           if ( a4 ) /*0x5a7e6d*/
@@ -963,8 +890,8 @@ LABEL_17:
         }
         else
         {
-          v13 = (int *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v17); /*0x5a7dba*/
-          v14 = *(_DWORD *)(v20 + 4 * (v9 + v7 * v16[185]) + 16); /*0x5a7dcf*/
+          int * v13 = (int *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v17); /*0x5a7dba*/
+          int v14 = *(_DWORD *)(v20 + 4 * (v9 + v7 * v16[185]) + 16); /*0x5a7dcf*/
           if ( v14 /*0x5a7e27*/
             && (!Cell::IsEmpty(v13) && !sub_4863A0(v13)
              || *((unsigned __int8 *)v13 + 284) != *(char *)(v14 + 42)
@@ -992,76 +919,43 @@ int sub_6B4240(int a1, int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall sub_6B4240(int a1, int a2)
 {
-  int v2; // esi
-  int v3; // edi
-  int v4; // ecx
-  int v5; // ebx
-  char v6; // dl
-  int v7; // ecx
-  int v8; // esi
-  int v9; // edi
-  char v10; // dl
-  char v11; // dl
-  char v12; // al
-  int v13; // esi
-  int v14; // edi
-  int *v15; // eax
-  int v16; // edx
   int result; // eax
-  int v18; // ecx
-  _BYTE *v19; // edx
-  int v20; // ecx
-  _BYTE *v21; // esi
-  int *v22; // edx
-  int v23; // ecx
-  _BYTE *v24; // edi
-  int *v25; // edx
-  int v26; // [esp+10h] [ebp-38h]
-  _DWORD v28[5]; // [esp+18h] [ebp-30h] BYREF
-  _BYTE v29[4]; // [esp+2Ch] [ebp-1Ch] BYREF
-  int v30; // [esp+30h] [ebp-18h]
-  char v31; // [esp+34h] [ebp-14h]
-  char v32; // [esp+35h] [ebp-13h]
-  int v33; // [esp+38h] [ebp-10h]
-  char v34; // [esp+3Ch] [ebp-Ch]
-  char v35; // [esp+3Dh] [ebp-Bh]
-  int v36; // [esp+40h] [ebp-8h]
-  char v37; // [esp+44h] [ebp-4h]
-  char v38; // [esp+45h] [ebp-3h]
 
-  v26 = *(_DWORD *)(a1 + 36); /*0x6b4250*/
-  v2 = (__int16)v26 - dword_8759A8; /*0x6b4267*/
-  v3 = SHIWORD(v26) - dword_8759AC; /*0x6b4269*/
-  v4 = v3 * dword_8759A4 + v2; /*0x6b4275*/
-  v5 = *((_DWORD *)g_SlaveManagerPool + 2 * v4); /*0x6b4284*/
+  int v26 = *(_DWORD *)(a1 + 36); /*0x6b4250*/
+  int v2 = (__int16)v26 - dword_8759A8; /*0x6b4267*/
+  int v3 = SHIWORD(v26) - dword_8759AC; /*0x6b4269*/
+  int v4 = v3 * dword_8759A4 + v2; /*0x6b4275*/
+  int v5 = *((_DWORD *)g_SlaveManagerPool + 2 * v4); /*0x6b4284*/
+  _BYTE v29[4]; // [esp+2Ch] [ebp-1Ch] BYREF
   v29[0] = *((_BYTE *)g_SlaveManagerPool + 8 * v4 + 4); /*0x6b4287*/
   v29[1] = *((_BYTE *)g_SlaveManagerPool + 8 * v4 + 5); /*0x6b428f*/
-  v30 = *((_DWORD *)g_SlaveManagerPool + 2 * v4 + 2); /*0x6b4297*/
-  v6 = *((_BYTE *)g_SlaveManagerPool + 8 * v4 + 12); /*0x6b429b*/
+  int v30 = *((_DWORD *)g_SlaveManagerPool + 2 * v4 + 2); /*0x6b4297*/
+  char v6 = *((_BYTE *)g_SlaveManagerPool + 8 * v4 + 12); /*0x6b429b*/
   LOBYTE(v4) = *((_BYTE *)g_SlaveManagerPool + 8 * v4 + 13); /*0x6b429f*/
-  v31 = v6; /*0x6b42a3*/
-  v32 = v4; /*0x6b42a7*/
-  v7 = dword_8759A4 * (v3 + 1) + v2; /*0x6b42ab*/
+  char v31 = v6; /*0x6b42a3*/
+  char v32 = v4; /*0x6b42a7*/
+  int v7 = dword_8759A4 * (v3 + 1) + v2; /*0x6b42ab*/
+  _DWORD v28[5]; // [esp+18h] [ebp-30h] BYREF
   v28[4] = v5; /*0x6b42ae*/
   v28[0] = v5; /*0x6b42b2*/
-  v8 = *((_DWORD *)g_SlaveManagerPool + 2 * v7 + 2); /*0x6b42ba*/
-  v9 = *((_DWORD *)g_SlaveManagerPool + 2 * v7); /*0x6b42be*/
-  v34 = *((_BYTE *)g_SlaveManagerPool + 8 * v7 + 12); /*0x6b42c1*/
-  v10 = *((_BYTE *)g_SlaveManagerPool + 8 * v7 + 13); /*0x6b42c5*/
-  v33 = v8; /*0x6b42c9*/
-  v35 = v10; /*0x6b42cd*/
-  v11 = *((_BYTE *)g_SlaveManagerPool + 8 * v7 + 4); /*0x6b42d1*/
-  v12 = *((_BYTE *)g_SlaveManagerPool + 8 * v7 + 5); /*0x6b42d5*/
-  v36 = v9; /*0x6b42dd*/
-  v37 = v11; /*0x6b42e1*/
-  v38 = v12; /*0x6b42e5*/
+  int v8 = *((_DWORD *)g_SlaveManagerPool + 2 * v7 + 2); /*0x6b42ba*/
+  int v9 = *((_DWORD *)g_SlaveManagerPool + 2 * v7); /*0x6b42be*/
+  char v34 = *((_BYTE *)g_SlaveManagerPool + 8 * v7 + 12); /*0x6b42c1*/
+  char v10 = *((_BYTE *)g_SlaveManagerPool + 8 * v7 + 13); /*0x6b42c5*/
+  int v33 = v8; /*0x6b42c9*/
+  char v35 = v10; /*0x6b42cd*/
+  char v11 = *((_BYTE *)g_SlaveManagerPool + 8 * v7 + 4); /*0x6b42d1*/
+  char v12 = *((_BYTE *)g_SlaveManagerPool + 8 * v7 + 5); /*0x6b42d5*/
+  int v36 = v9; /*0x6b42dd*/
+  char v37 = v11; /*0x6b42e1*/
+  char v38 = v12; /*0x6b42e5*/
   v28[2] = v8; /*0x6b42e9*/
   v28[3] = v9; /*0x6b42ed*/
   v28[1] = v30; /*0x6b42f1*/
-  v13 = 1000; /*0x6b42f5*/
-  v14 = -1; /*0x6b42fa*/
-  v15 = v28; /*0x6b42fd*/
-  v16 = 4; /*0x6b4301*/
+  int v13 = 1000; /*0x6b42f5*/
+  int v14 = -1; /*0x6b42fa*/
+  int * v15 = v28; /*0x6b42fd*/
+  int v16 = 4; /*0x6b4301*/
   do /*0x6b4318*/
   {
     if ( *v15 < v13 ) /*0x6b430a*/
@@ -1075,8 +969,8 @@ int __fastcall sub_6B4240(int a1, int a2)
   result = 0; /*0x6b431a*/
   if ( v14 == v13 ) /*0x6b431e*/
   {
-    v18 = 0; /*0x6b4320*/
-    v19 = v29; /*0x6b4322*/
+    int v18 = 0; /*0x6b4320*/
+    _BYTE * v19 = v29; /*0x6b4322*/
     do /*0x6b433b*/
     {
       if ( !*v19 ) /*0x6b4326*/
@@ -1088,9 +982,9 @@ int __fastcall sub_6B4240(int a1, int a2)
   }
   else if ( a2 <= 0 ) /*0x6b434b*/
   {
-    v23 = 0; /*0x6b437d*/
-    v24 = v29; /*0x6b437f*/
-    v25 = v28; /*0x6b4383*/
+    int v23 = 0; /*0x6b437d*/
+    _BYTE * v24 = v29; /*0x6b437f*/
+    int * v25 = v28; /*0x6b4383*/
     do /*0x6b43a3*/
     {
       if ( *v25 > v13 && !*v24 ) /*0x6b438b*/
@@ -1103,9 +997,9 @@ int __fastcall sub_6B4240(int a1, int a2)
   }
   else
   {
-    v20 = 0; /*0x6b434d*/
-    v21 = v29; /*0x6b434f*/
-    v22 = v28; /*0x6b4353*/
+    int v20 = 0; /*0x6b434d*/
+    _BYTE * v21 = v29; /*0x6b434f*/
+    int * v22 = v28; /*0x6b4353*/
     do /*0x6b4373*/
     {
       if ( *v22 < v14 && !*v21 ) /*0x6b435b*/
@@ -1134,7 +1028,6 @@ char sub_751C30()
   DWORD TotalNumberOfClusters; // [esp+1Ch] [ebp-1C4h] BYREF
   DWORD MaximumComponentLength[2]; // [esp+20h] [ebp-1C0h] BYREF
   DWORD FileSystemFlags; // [esp+28h] [ebp-1B8h] BYREF
-  char v7[176]; // [esp+2Ch] [ebp-1B4h] BYREF
   CHAR Buffer[260]; // [esp+DCh] [ebp-104h] BYREF
 
   if ( !GetLogicalDriveStringsA(0x104u, Buffer) ) /*0x751c47*/
@@ -1142,6 +1035,7 @@ char sub_751C30()
   if ( strlen(Buffer) ) /*0x751c71*/
   {
     *(_DWORD *)Buffer = 23598; /*0x751c88*/
+  char v7[176]; // [esp+2Ch] [ebp-1B4h] BYREF
     memset(&v7[32], 0, 0x90u); /*0x751ca0*/
     *(_DWORD *)&v7[32] = GetDriveTypeA(Buffer); /*0x751cac*/
     GetDiskFreeSpaceA(Buffer, &SectorsPerCluster, &BytesPerSector, &NumberOfFreeClusters, &TotalNumberOfClusters); /*0x751cbd*/
@@ -1173,37 +1067,33 @@ namespace gamemd {
 char sub_63AB60(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall sub_63AB60(int a1, int a2)
+void sub_63AB60(int a1, int a2)
 {
-  int v3; // ebx
   _DWORD *Coords; // eax
-  _DWORD *v5; // eax
-  int v6; // eax
-  int v7; // eax
-  int v8; // [esp+4h] [ebp-34h] BYREF
-  _DWORD v9[3]; // [esp+Ch] [ebp-2Ch] BYREF
-  _DWORD v10[4]; // [esp+18h] [ebp-20h] BYREF
-  _DWORD v11[4]; // [esp+28h] [ebp-10h] BYREF
 
   if ( !DataGlobal_AC4CF4 ) /*0x63ab6b*/
     return 0; /*0x63ab73*/
   if ( DataGlobal_AC4CB0 ) /*0x63ab7d*/
     return 0; /*0x63ab85*/
-  v3 = g_ScriptState; /*0x63ab8e*/
+  int v3 = g_ScriptState; /*0x63ab8e*/
   if ( !g_ScriptPool ) /*0x63ab98*/
     goto LABEL_11; /*0x63ab98*/
+  _DWORD v10[4]; // [esp+18h] [ebp-20h] BYREF
   Coords = ScriptAction::GetCoords((_DWORD **)g_ScriptPool, v10); /*0x63aba3*/
+  _DWORD v9[3]; // [esp+Ch] [ebp-2Ch] BYREF
   v9[0] = *Coords; /*0x63abaa*/
   v9[1] = Coords[1]; /*0x63abb5*/
   v9[2] = Coords[2]; /*0x63abc0*/
-  v5 = ToCoordPixel(&v8, v9); /*0x63abc4*/
+  int v8; // [esp+4h] [ebp-34h] BYREF
+  _DWORD * v5 = ToCoordPixel(&v8, v9); /*0x63abc4*/
+  _DWORD v11[4]; // [esp+28h] [ebp-10h] BYREF
   Rect::Set(v11, *v5 - 4, v5[1] - 4, 8, 8); /*0x63abe0*/
   v10[0] = v11[0]; /*0x63abf9*/
-  v6 = v11[1] - 4; /*0x63ac00*/
+  int v6 = v11[1] - 4; /*0x63ac00*/
   if ( a1 < v11[0] - 4 ) /*0x63ac0b*/
     goto LABEL_11; /*0x63ac0b*/
   if ( a1 < v11[2] + 8 + v11[0] - 4 && a2 >= v6 && a2 < v11[3] + 8 + v6 ) /*0x63ac1f*/
-    v7 = g_ScriptPool; /*0x63ac21*/
+    int v7 = g_ScriptPool; /*0x63ac21*/
   else
 LABEL_11:
     v7 = 0; /*0x63ac28*/
@@ -1232,34 +1122,19 @@ void Map_Process_76FD40(int a1, ObjectClass * aP1, int a3, int _54, int * a4, in
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void Map_Process_76FD40(int a1, ObjectClass *aP1, int a3, int _54, int *a4, int a6)
 {
-  int v6; // ecx
-  int v7; // esi
-  int v8; // ecx
-  int v9; // ebp
-  int *v10; // eax
-  int v11; // edi
-  int v12; // ebx
-  _DWORD *v13; // eax
-  int v14; // ecx
-  int v15; // esi
-  int v16; // edx
-  int v17; // eax
-  int v18; // esi
-  int v19; // [esp+Ch] [ebp-38h]
-  int v20; // [esp+10h] [ebp-34h]
-  int v21; // [esp+14h] [ebp-30h] BYREF
-  int v22; // [esp+18h] [ebp-2Ch]
-  int v23; // [esp+1Ch] [ebp-28h]
-  int v24; // [esp+20h] [ebp-24h]
-  _DWORD v25[2]; // [esp+24h] [ebp-20h] BYREF
-  int v26; // [esp+2Ch] [ebp-18h]
-  char v27[12]; // [esp+38h] [ebp-Ch] BYREF
 
-  v7 = v6; /*0x76fd44*/
-  v8 = *(_DWORD *)(v6 + 36); /*0x76fd46*/
+  int v6 = v6; /*0x76fd44*/
+  int v8 = *(_DWORD *)(v6 + 36); /*0x76fd46*/
   if ( v8 ) /*0x76fd4b*/
   {
-    v9 = -1; /*0x76fd57*/
+  int v20; // [esp+10h] [ebp-34h]
+  int v19; // [esp+Ch] [ebp-38h]
+  int v18; // esi
+  int v17; // eax
+  int v16; // edx
+  int v14; // ecx
+  int v7; // esi
+    int v9 = -1; /*0x76fd57*/
     switch ( a1 ) /*0x76fd5c*/
     {
       case 1: /*0x76fd5c*/
@@ -1272,11 +1147,12 @@ void Map_Process_76FD40(int a1, ObjectClass *aP1, int a3, int _54, int *a4, int 
         v9 = 1; /*0x76fd64*/
         break;
     }
-    v10 = (int *)(*(int (__thiscall **)(int, _DWORD *))(*(_DWORD *)v8 + 24))(v8, v25); /*0x76fd7e*/
-    v11 = *v10; /*0x76fd81*/
-    v12 = v10[1]; /*0x76fd85*/
-    v21 = v10[2]; /*0x76fd8b*/
-    v22 = v10[3]; /*0x76fd92*/
+  _DWORD v25[2]; // [esp+24h] [ebp-20h] BYREF
+    int * v10 = (int *)(*(int (__thiscall **)(int, _DWORD *))(*(_DWORD *)v8 + 24))(v8, v25); /*0x76fd7e*/
+    int v11 = *v10; /*0x76fd81*/
+    int v12 = v10[1]; /*0x76fd85*/
+    int v21 = v10[2]; /*0x76fd8b*/
+    int v22 = v10[3]; /*0x76fd92*/
     if ( v9 < 0 ) /*0x76fd96*/
     {
       (*(void (__thiscall **)(_DWORD, _DWORD))(**(_DWORD **)(v7 + 36) + 4))(*(_DWORD *)(v7 + 36), 0); /*0x76fdbc*/
@@ -1287,7 +1163,8 @@ void Map_Process_76FD40(int a1, ObjectClass *aP1, int a3, int _54, int *a4, int 
       (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)(v7 + 36) + 4))(*(_DWORD *)(v7 + 36), 1); /*0x76fda8*/
       Map_Process_5CC690(*(_DWORD **)(v7 + 36)); /*0x76fdae*/
     }
-    v13 = (_DWORD *)(*(int (__thiscall **)(_DWORD, char *))(**(_DWORD **)(v7 + 36) + 24))(*(_DWORD *)(v7 + 36), v27); /*0x76fdcb*/
+  char v27[12]; // [esp+38h] [ebp-Ch] BYREF
+    _DWORD * v13 = (_DWORD *)(*(int (__thiscall **)(_DWORD, char *))(**(_DWORD **)(v7 + 36) + 24))(*(_DWORD *)(v7 + 36), v27); /*0x76fdcb*/
     v25[0] = *v13; /*0x76fdd2*/
     v25[1] = v13[1]; /*0x76fdd9*/
     if ( (int)v13[2] <= 0 || (int)v13[3] <= 0 ) /*0x76fde9*/
@@ -1307,10 +1184,10 @@ void Map_Process_76FD40(int a1, ObjectClass *aP1, int a3, int _54, int *a4, int 
     else
     {
       v14 = *v13; /*0x76fdfb*/
-      v15 = v13[2]; /*0x76fdfd*/
+      int v15 = v13[2]; /*0x76fdfd*/
       v16 = v13[1]; /*0x76fe00*/
       v17 = v13[3]; /*0x76fe03*/
-      v26 = v15; /*0x76fe08*/
+      int v26 = v15; /*0x76fe08*/
       if ( v14 > v11 ) /*0x76fe0c*/
       {
         v15 += v14 - v11; /*0x76fe10*/
@@ -1330,9 +1207,9 @@ void Map_Process_76FD40(int a1, ObjectClass *aP1, int a3, int _54, int *a4, int 
         v17 = v12 - v16 + v20 + 1; /*0x76fe4d*/
     }
     v21 = v14; /*0x76fe6c*/
-    v23 = v18; /*0x76fe70*/
+    int v23 = v18; /*0x76fe70*/
     v22 = v16; /*0x76fe7f*/
-    v24 = v17; /*0x76fe83*/
+    int v24 = v17; /*0x76fe83*/
     Team::ReleaseAll((int *)aP1->__pad_0, (ObjectClass *)&v21); /*0x76fe87*/
     DSurface::Flip2(); /*0x76fe8e*/
     GameClass::FrameLoop((int *)aP1->__pad_0, 1); /*0x76fe97*/
@@ -1346,19 +1223,15 @@ namespace gamemd {
 int sub_682240(int a1, int a2, unsigned short * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall sub_682240(int a1, int a2, _WORD *a3)
+void sub_682240(int a1, int a2, _WORD *a3)
 {
-  _WORD *v3; // edi
-  int v4; // ecx
-  _DWORD *v5; // eax
   _UNKNOWN **v6; // ecx
-  int v7; // esi
 
-  v3 = a3; /*0x682246*/
+  _WORD * v3 = a3; /*0x682246*/
   a3 = 0; /*0x68224a*/
-  v4 = 0; /*0x682252*/
+  int v4 = 0; /*0x682252*/
   *v3 = 0; /*0x682254*/
-  v5 = &DataGlobal_83D658; /*0x682259*/
+  _DWORD * v5 = &DataGlobal_83D658; /*0x682259*/
   while ( *v5 != a2 ) /*0x682260*/
   {
     v5 += 2; /*0x682262*/
@@ -1371,6 +1244,7 @@ int __stdcall sub_682240(int a1, int a2, _WORD *a3)
   }
   v6 = (&DataGlobal_83D65C)[2 * v4]; /*0x6822a0*/
 LABEL_5:
+  int v7; // esi
   v7 = (*(int (__stdcall **)(int, _UNKNOWN **, _DWORD, int, _DWORD, _WORD **))(*(_DWORD *)a1 + 16))( /*0x68226f*/
          a1,
          v6,
@@ -1409,19 +1283,15 @@ namespace gamemd {
 int sub_6824B0(int a1, int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall sub_6824B0(int a1, int a2, _DWORD *a3)
+void sub_6824B0(int a1, int a2, _DWORD *a3)
 {
-  _DWORD *v3; // edi
-  int v4; // ecx
-  _DWORD *v5; // eax
   _UNKNOWN **v6; // ecx
-  int v7; // esi
 
-  v3 = a3; /*0x6824b6*/
+  _DWORD * v3 = a3; /*0x6824b6*/
   a3 = 0; /*0x6824ba*/
-  v4 = 0; /*0x6824c2*/
+  int v4 = 0; /*0x6824c2*/
   *v3 = 0; /*0x6824c4*/
-  v5 = &DataGlobal_83D658; /*0x6824ca*/
+  _DWORD * v5 = &DataGlobal_83D658; /*0x6824ca*/
   while ( *v5 != a2 ) /*0x6824d1*/
   {
     v5 += 2; /*0x6824d3*/
@@ -1434,6 +1304,7 @@ int __stdcall sub_6824B0(int a1, int a2, _DWORD *a3)
   }
   v6 = (&DataGlobal_83D65C)[2 * v4]; /*0x682511*/
 LABEL_5:
+  int v7; // esi
   v7 = (*(int (__stdcall **)(int, _UNKNOWN **, _DWORD, int, _DWORD, _DWORD **))(*(_DWORD *)a1 + 16))( /*0x6824e0*/
          a1,
          v6,
@@ -1474,18 +1345,13 @@ void sub_5549A0()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void sub_5549A0()
 {
-  int v0; // edx
-  _DWORD *v1; // esi
-  bool v2; // zf
-  int v3; // eax
-  bool v4; // zf
-  int v5; // eax
 
-  v0 = g_BridgeCellPool; /*0x5549a0*/
+  int v0 = g_BridgeCellPool; /*0x5549a0*/
   byte_829AE4 = 0; /*0x5549a6*/
   if ( g_BridgeCellPool ) /*0x5549af*/
   {
-    v1 = dword_ABCA14; /*0x5549b2*/
+  bool v2; // zf
+    _DWORD * v1 = dword_ABCA14; /*0x5549b2*/
     do /*0x5549fc*/
     {
       if ( *v1 ) /*0x5549b8*/
@@ -1498,7 +1364,7 @@ void sub_5549A0()
       if ( v0 > 0 ) /*0x5549d3*/
       {
         --v0; /*0x5549d5*/
-        v3 = 0; /*0x5549d6*/
+        int v3 = 0; /*0x5549d6*/
         v2 = v0 == 0; /*0x5549d8*/
         g_BridgeCellPool = v0; /*0x5549da*/
         if ( v0 > 0 ) /*0x5549e0*/
@@ -1519,13 +1385,14 @@ void sub_5549A0()
   }
   if ( dword_ABCA50 ) /*0x554a06*/
   {
+  bool v4; // zf
     do /*0x554a4a*/
     {
       __3_YAXPAX_Z(*(void **)dword_ABCA44); /*0x554a11*/
       v4 = dword_ABCA50 == 0; /*0x554a1f*/
       if ( dword_ABCA50 > 0 ) /*0x554a21*/
       {
-        v5 = 0; /*0x554a24*/
+        int v5 = 0; /*0x554a24*/
         v4 = dword_ABCA50-- == 1; /*0x554a26*/
         if ( dword_ABCA50 > 0 ) /*0x554a2e*/
         {
@@ -1568,25 +1435,20 @@ void sub_6DA980()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void sub_6DA980()
 {
-  int v0; // ecx
-  int v1; // edx
-  int v2; // eax
-  char *v3; // esi
-  char *v4; // edi
 
-  v0 = g_CraterCreationState; /*0x6da980*/
+  int v0 = g_CraterCreationState; /*0x6da980*/
   while ( g_CraterCreationState > 0 ) /*0x6da988*/
   {
-    v1 = 0; /*0x6da98f*/
+    int v1 = 0; /*0x6da98f*/
     g_CraterCreationState = v0 - 1; /*0x6da993*/
     if ( v0 - 1 <= 0 ) /*0x6da999*/
       break; /*0x6da999*/
-    v2 = 0; /*0x6da99b*/
+    int v2 = 0; /*0x6da99b*/
     do /*0x6da9bd*/
     {
       ++v1; /*0x6da9a3*/
-      v3 = (char *)g_CraterPool + v2 + 20; /*0x6da9a4*/
-      v4 = (char *)g_CraterPool + v2; /*0x6da9a8*/
+      char * v3 = (char *)g_CraterPool + v2 + 20; /*0x6da9a4*/
+      char * v4 = (char *)g_CraterPool + v2; /*0x6da9a8*/
       v2 += 20; /*0x6da9b0*/
       qmemcpy(v4, v3, 0x14u); /*0x6da9b3*/
       v0 = g_CraterCreationState; /*0x6da9b5*/
@@ -1602,10 +1464,8 @@ namespace gamemd {
 char Map_WorldDominationTour_20::Release(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall Map_WorldDominationTour_20_::_vt02(_BYTE *this, int a2, _DWORD *a3)
+void Map_WorldDominationTour_20_::_vt02(int a2, _DWORD *a3)
 {
-  int v3; // ebp
-  _DWORD *v5; // eax
   _DWORD *v6; // esi
   int v7; // ebx
   _DWORD *v8; // ebx
@@ -1613,8 +1473,7 @@ char __thiscall Map_WorldDominationTour_20_::_vt02(_BYTE *this, int a2, _DWORD *
   int i; // esi
   void (__thiscall ***v12)(_DWORD, int); // ecx
   _DWORD *v13; // [esp+10h] [ebp-4h]
-
-  v3 = a2; /*0x769e33*/
+  int v3 = a2; /*0x769e33*/
   if ( !a2 ) /*0x769e3d*/
   {
     (*(void (__thiscall **)(_BYTE *))(this->q00C)(this); /*0x769f3d*/
@@ -1641,7 +1500,7 @@ char __thiscall Map_WorldDominationTour_20_::_vt02(_BYTE *this, int a2, _DWORD *
   }
   else
   {
-    v5 = __2_YAPAXI_Z(8 * a2 + 4); /*0x769e57*/
+    _DWORD * v5 = __2_YAPAXI_Z(8 * a2 + 4); /*0x769e57*/
     if ( !v5 ) /*0x769e61*/
     {
       v8 = 0; /*0x769e8f*/
@@ -1699,21 +1558,18 @@ rc_ptr_base * Map_WorldDominationTour_20::Constructor_0(char a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 rc_ptr_base *__thiscall Map_WorldDominationTour_20_::Constructor_0(rc_ptr_base *this, char a2)
 {
-  int v3; // eax
   rc_ptr_base *v4; // ebp
   rc_ptr_base *v5; // esi
-  int v6; // eax
-  int v7; // edi
 
   if ( (a2 & 2) != 0 ) /*0x76a61b*/
   {
-    v3 = *((_DWORD *)this - 1); /*0x76a61d*/
+    int v3 = *((_DWORD *)this - 1); /*0x76a61d*/
     v4 = this - 1; /*0x76a621*/
     v5 = this + 2 * v3; /*0x76a624*/
-    v6 = v3 - 1; /*0x76a627*/
+    int v6 = v3 - 1; /*0x76a627*/
     if ( v6 >= 0 ) /*0x76a628*/
     {
-      v7 = v6 + 1; /*0x76a62b*/
+      int v7 = v6 + 1; /*0x76a62b*/
       do /*0x76a63f*/
       {
         v5 -= 2; /*0x76a62e*/
@@ -1744,31 +1600,20 @@ namespace gamemd {
 char Map_WorldDominationTour_43::Release(int a2, char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall Map_WorldDominationTour_43_::_vt02(void *this, int a2, char *a3)
+void Map_WorldDominationTour_43_::_vt02(int a2, char *a3)
 {
-  int v3; // ebp
-  char *v5; // edi
-  char *v6; // eax
-  _DWORD *v7; // ecx
-  int v8; // edx
-  _DWORD *v9; // eax
-  int v10; // ecx
-  int v12; // ecx
-  int v13; // eax
-  _DWORD *v14; // edx
-  char *v15; // ebx
 
-  v3 = a2; /*0x76a3f2*/
+  int v3 = a2; /*0x76a3f2*/
   if ( a2 ) /*0x76a3fe*/
   {
-    v5 = a3; /*0x76a404*/
+    char * v5 = a3; /*0x76a404*/
     this->q00C = 0; /*0x76a408*/
     if ( a3 ) /*0x76a40d*/
     {
       if ( a2 - 1 >= 0 ) /*0x76a449*/
       {
-        v9 = a3 + 8; /*0x76a44b*/
-        v10 = a2; /*0x76a44e*/
+        _DWORD * v9 = a3 + 8; /*0x76a44b*/
+        int v10 = a2; /*0x76a44e*/
         do /*0x76a45b*/
         {
           *(v9 - 2) = 0; /*0x76a44f*/
@@ -1782,13 +1627,13 @@ char __thiscall Map_WorldDominationTour_43_::_vt02(void *this, int a2, char *a3)
     }
     else
     {
-      v6 = (char *)__2_YAPAXI_Z(12 * a2); /*0x76a417*/
+      char * v6 = (char *)__2_YAPAXI_Z(12 * a2); /*0x76a417*/
       if ( v6 ) /*0x76a421*/
       {
         if ( a2 - 1 >= 0 ) /*0x76a428*/
         {
-          v7 = v6 + 8; /*0x76a42a*/
-          v8 = a2; /*0x76a42d*/
+          _DWORD * v7 = v6 + 8; /*0x76a42a*/
+          int v8 = a2; /*0x76a42d*/
           do /*0x76a43a*/
           {
             *(v7 - 2) = 0; /*0x76a42e*/
@@ -1811,16 +1656,16 @@ char __thiscall Map_WorldDominationTour_43_::_vt02(void *this, int a2, char *a3)
     {
       if ( this->Map_WorldDominationTour_43_field_0x4 ) /*0x76a46e*/
       {
-        v12 = this->Map_WorldDominationTour_43_field_0x8; /*0x76a473*/
+        int v12 = this->Map_WorldDominationTour_43_field_0x8; /*0x76a473*/
         if ( a2 < v12 ) /*0x76a478*/
           v12 = a2; /*0x76a47a*/
         if ( v12 > 0 ) /*0x76a47e*/
         {
-          v13 = 0; /*0x76a480*/
+          int v13 = 0; /*0x76a480*/
           do /*0x76a4a0*/
           {
-            v14 = (_DWORD *)(this->Map_WorldDominationTour_43_field_0x4 + v13); /*0x76a487*/
-            v15 = &v5[v13]; /*0x76a489*/
+            _DWORD * v14 = (_DWORD *)(this->Map_WorldDominationTour_43_field_0x4 + v13); /*0x76a487*/
+            char * v15 = &v5[v13]; /*0x76a489*/
             v13 += 12; /*0x76a48c*/
             --v12; /*0x76a48f*/
             *(_DWORD *)v15 = *v14; /*0x76a492*/
@@ -1832,7 +1677,7 @@ char __thiscall Map_WorldDominationTour_43_::_vt02(void *this, int a2, char *a3)
         }
         if ( this->IsAllocated ) /*0x76a4a8*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x76a4b1*/
+          __3_YAXPAX_Z(this->q004); /*0x76a4b1*/
           this->Map_WorldDominationTour_43_field_0x4 = 0; /*0x76a4b9*/
         }
       }
@@ -2591,7 +2436,7 @@ namespace gamemd {
 int Map_WorldDominationTour_28::Seek(int a2)
  {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Map_WorldDominationTour_28_::_vt06(_DWORD *this, int a2)
+void Map_WorldDominationTour_28_::_vt06(int a2)
 {
   return *(_DWORD *)(this->q004 + 4 * a2); /*0x769d2a*/
 }
@@ -2605,9 +2450,8 @@ unsigned int * Map_WorldDominationTour_43::Seek(unsigned int * a2, int a3)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall Map_WorldDominationTour_43_::_vt06(_DWORD *this, _DWORD *a2, int a3)
 {
-  _DWORD *v3; // edx
 
-  v3 = (_DWORD *)(this->q004 + 12 * a3); /*0x769d3b*/
+  _DWORD * v3 = (_DWORD *)(this->q004 + 12 * a3); /*0x769d3b*/
   *a2 = *v3; /*0x769d46*/
   a2[1] = v3[1]; /*0x769d4b*/
   a2[2] = v3[2]; /*0x769d52*/
@@ -2621,7 +2465,7 @@ namespace gamemd {
 BOOL Map_WorldDominationTour_38::AddRef()
  {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall Map_WorldDominationTour_38_::_vt01(_DWORD *this)
+void Map_WorldDominationTour_38_::_vt01()
 {
   return *(this + 2) < *(_DWORD *)(*(this + 1) + 8); /*0x769d6d*/
 }

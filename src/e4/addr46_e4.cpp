@@ -27,25 +27,18 @@ bool sub_46D650()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool sub_46D650()
 {
-  bool v0; // bl
   HWND v1; // eax
   HWND DlgItem; // eax
-  int v3; // ebp
   LPARAM *v4; // esi
-  int v5; // ecx
-  int v6; // edi
-  int v7; // edi
-  int v8; // edi
   LPARAM v9; // eax
   LPARAM v10; // eax
   LPARAM v11; // eax
   LPARAM v12; // eax
   LPARAM v13; // eax
-
   if ( Network_EventType != 50 ) /*0x46d65b*/
     return 0; /*0x46d80a*/
   Debug::Log(); /*0x46d666*/
-  v0 = DataGlobal_A8EB68 != (char)DataGlobal_A8D667; /*0x46d67f*/
+  bool v0 = DataGlobal_A8EB68 != (char)DataGlobal_A8D667; /*0x46d67f*/
   DataGlobal_A8EB68 = (char)DataGlobal_A8D667; /*0x46d686*/
   v1 = (HWND)Dialog::FindByHandle((void *)0xBC6); /*0x46d68b*/
   if ( v1 ) /*0x46d692*/
@@ -54,22 +47,22 @@ bool sub_46D650()
     if ( DlgItem ) /*0x46d6a2*/
       PostMessageA(DlgItem, 0x405u, 1u, DataGlobal_A8EB68); /*0x46d6b3*/
   }
-  v3 = 0; /*0x46d6bc*/
+  int v3 = 0; /*0x46d6bc*/
   v4 = &g_NetworkPlayerName; /*0x46d6be*/
   do /*0x46d7fd*/
   {
-    v5 = *v4; /*0x46d6c3*/
+    int v5 = *v4; /*0x46d6c3*/
     if ( *v4 && v5 != g_HouseClass_ObserverFlags && v5 != g_Lobby_PlayerCount ) /*0x46d6d7*/
     {
-      v6 = *(v4 - 266); /*0x46d6d9*/
+      int v6 = *(v4 - 266); /*0x46d6d9*/
       if ( SessionClass::GetOption(v5) != v6 ) /*0x46d6e6*/
         v0 = 1; /*0x46d6e8*/
       SessionClass::SetOption(*v4, v6); /*0x46d6ed*/
-      v7 = *(v4 - 258); /*0x46d6f4*/
+      int v7 = *(v4 - 258); /*0x46d6f4*/
       if ( SessionClass::GetPlayerSide(*v4) != v7 ) /*0x46d701*/
         v0 = 1; /*0x46d703*/
       SessionClass::SetPlayerOption(*v4, v7); /*0x46d708*/
-      v8 = *(v4 - 250); /*0x46d70f*/
+      int v8 = *(v4 - 250); /*0x46d70f*/
       if ( SessionClass::GetPlayerColor(*v4) != v8 ) /*0x46d71c*/
         v0 = 1; /*0x46d71e*/
       SessionClass::SetPlayerColor(*v4, v8); /*0x46d723*/
@@ -114,22 +107,17 @@ namespace gamemd {
 char sub_46D8B0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char sub_46D8B0()
+void sub_46D8B0()
 {
-  char v0; // bl
-  int v1; // edi
   const wchar_t **v2; // esi
-  char *v3; // eax
-  int v5; // esi
   int PlayerSide; // eax
-  int v7; // [esp-4h] [ebp-10h]
 
-  v0 = 0; /*0x46d8b3*/
-  v1 = 0; /*0x46d8b5*/
+  char v0 = 0; /*0x46d8b3*/
+  int v1 = 0; /*0x46d8b5*/
   v2 = (const wchar_t **)&g_NetworkPlayerName; /*0x46d8b7*/
   while ( 1 ) /*0x46d8c1*/
   {
-    v3 = CharToWideString(g_NetworkPlayerBuffer); /*0x46d8c1*/
+    char * v3 = CharToWideString(g_NetworkPlayerBuffer); /*0x46d8c1*/
     if ( !wcscmp((const wchar_t *)v3, *v2) ) /*0x46d8ca*/
       break; /*0x46d8ca*/
     ++v2; /*0x46d8d6*/
@@ -151,11 +139,11 @@ char sub_46D8B0()
     }
     else if ( g_GameStateFlags ) /*0x46d92f*/
     {
-      v5 = *(_DWORD *)g_GameStateFlags; /*0x46d938*/
+      int v5 = *(_DWORD *)g_GameStateFlags; /*0x46d938*/
       PlayerSide = SessionClass::GetPlayerSide(*(&g_NetworkPlayerName + v1)); /*0x46d93a*/
       if ( !(*(unsigned __int8 (__thiscall **)(int, int))(v5 + 28))(g_GameStateFlags, PlayerSide) ) /*0x46d946*/
       {
-        v7 = (*(int (__thiscall **)(int))(*(_DWORD *)g_GameStateFlags + 40))(g_GameStateFlags); /*0x46d958*/
+        int v7 = (*(int (__thiscall **)(int))(*(_DWORD *)g_GameStateFlags + 40))(g_GameStateFlags); /*0x46d958*/
         SessionClass::SetPlayerOption(*(&g_NetworkPlayerName + v1), v7); /*0x46d960*/
       }
     }
@@ -200,41 +188,26 @@ void sub_46DA70()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void sub_46DA70()
 {
-  int v0; // ebx
-  int v1; // esi
-  int v2; // edi
   size_t v3; // ebp
-  int v4; // esi
-  int v5; // eax
-  int *v6; // ecx
-  int v7; // edx
-  int v8; // ebp
-  int *v9; // ecx
-  int v10; // edx
-  int v11; // ebp
   int Count; // ebp
-  int v13; // ebp
-  int v14; // ebp
-  int v15; // edi
   int i; // [esp+8h] [ebp-8h]
-  int v17; // [esp+Ch] [ebp-4h]
 
-  v0 = HouseClass_Count; /*0x46da74*/
-  v1 = 0; /*0x46da7b*/
+  int v0 = HouseClass_Count; /*0x46da74*/
+  int v1 = 0; /*0x46da7b*/
   g_CampaignScoreFlags = 0; /*0x46da7f*/
-  v17 = HouseClass_Count; /*0x46da85*/
+  int v17 = HouseClass_Count; /*0x46da85*/
   for ( i = 0; v1 < v0; i = v1 ) /*0x46da8d*/
   {
-    v2 = *(_DWORD *)&HouseClass_Array->__pad_0[4 * v1]; /*0x46da9a*/
+    int v2 = *(_DWORD *)&HouseClass_Array->__pad_0[4 * v1]; /*0x46da9a*/
     if ( v2 /*0x46dab7*/
       && *(_BYTE *)(*(_DWORD *)(v2 + 52) + 422) != 1
       && (unsigned __int8)House::IsCurrentPlayer(*(#375 **)&HouseClass_Array->__pad_0[4 * v1]) )
     {
       v3 = g_CampaignScoreFlags++; /*0x46dacf*/
-      v4 = 28 * v3; /*0x46dae1*/
+      int v4 = 28 * v3; /*0x46dae1*/
       DataGlobal_A8D228[28 * v3] = 0; /*0x46daea*/
       wcscpy((wchar_t *)&DataGlobal_A8D1FC + 56 * v3, (const wchar_t *)(v2 + 90154)); /*0x46daf5*/
-      v5 = 0; /*0x46dafa*/
+      int v5 = 0; /*0x46dafa*/
       DataGlobal_A8D22C[28 * v3] = 0; /*0x46daff*/
       DataGlobal_A8D23C[28 * v3] = 0; /*0x46db05*/
       DataGlobal_A8D24C[28 * v3] = 0; /*0x46db0b*/
@@ -245,20 +218,20 @@ void sub_46DA70()
         ++DataGlobal_A8D228[28 * v3]; /*0x46db34*/
         DataGlobal_A8D584 = v3; /*0x46db3a*/
       }
-      v6 = (int *)(v2 + 21476); /*0x46db40*/
-      v7 = 20; /*0x46db46*/
+      int * v6 = (int *)(v2 + 21476); /*0x46db40*/
+      int v7 = 20; /*0x46db46*/
       do /*0x46db53*/
       {
-        v8 = *v6++; /*0x46db4b*/
+        int v8 = *v6++; /*0x46db4b*/
         v5 += v8; /*0x46db50*/
         --v7; /*0x46db52*/
       }
       while ( v7 ); /*0x46db53*/
-      v9 = (int *)(v2 + 21560); /*0x46db55*/
-      v10 = 20; /*0x46db5b*/
+      int * v9 = (int *)(v2 + 21560); /*0x46db55*/
+      int v10 = 20; /*0x46db5b*/
       do /*0x46db68*/
       {
-        v11 = *v9++; /*0x46db60*/
+        int v11 = *v9++; /*0x46db60*/
         v5 += v11; /*0x46db65*/
         --v10; /*0x46db67*/
       }
@@ -266,13 +239,13 @@ void sub_46DA70()
       DataGlobal_A8D23C[v4] = v5; /*0x46db6a*/
       DataGlobal_A8D22C[v4] = *(_DWORD *)(v2 + 21640) + *(_DWORD *)(v2 + 21556); /*0x46db84*/
       Count = VectorClass::GetCount((_DWORD *)(v2 + 21840)); /*0x46db95*/
-      v13 = VectorClass::GetCount((_DWORD *)(v2 + 21860)) + Count; /*0x46dba2*/
-      v14 = VectorClass::GetCount((_DWORD *)(v2 + 21880)) + v13; /*0x46dbaf*/
+      int v13 = VectorClass::GetCount((_DWORD *)(v2 + 21860)) + Count; /*0x46dba2*/
+      int v14 = VectorClass::GetCount((_DWORD *)(v2 + 21880)) + v13; /*0x46dbaf*/
       DataGlobal_A8D24C[v4] = *(_DWORD *)(v2 + 21640) /*0x46dbc8*/
                            + VectorClass::GetCount((_DWORD *)(v2 + 21900))
                            + v14
                            + *(_DWORD *)(v2 + 21556);
-      v15 = *(_DWORD *)(v2 + 21736); /*0x46dbce*/
+      int v15 = *(_DWORD *)(v2 + 21736); /*0x46dbce*/
       if ( v15 > 0 ) /*0x46dbd6*/
         DataGlobal_A8D25C[v4] += v15; /*0x46dbd8*/
       Debug::Log(); /*0x46dc1c*/
@@ -294,7 +267,6 @@ BOOL __fastcall sub_46DCC0(HWND hDlg, bool a2)
 {
   int i; // edi
   BOOL result; // eax
-  int v5; // eax
   HWND DlgItem; // eax
   int ResourceID2CSF; // eax
   HWND v8; // eax
@@ -309,7 +281,7 @@ BOOL __fastcall sub_46DCC0(HWND hDlg, bool a2)
     if ( result && i != g_NetworkPlayerCount )
     {
       if ( i )
-        v5 = i != 1 ? -1 : 1042;
+        int v5 = i != 1 ? -1 : 1042;
       else
         v5 = 1041; /*0x46dcef*/
       DlgItem = GetDlgItem(hDlg, v5); /*0x46dd09*/
@@ -337,7 +309,6 @@ HWND EnableGameModeControls(HWND hDlg, bool a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 HWND __fastcall EnableGameModeControls(HWND hDlg, bool a2)
 {
-  int v4; // eax
   HWND DlgItem; // eax
   int ResourceID2CSF; // eax
   HWND v7; // eax
@@ -349,7 +320,7 @@ HWND __fastcall EnableGameModeControls(HWND hDlg, bool a2)
   HWND v13; // edi
 
   if ( *(_DWORD *)&g_NetworkPlayerBuffer[1104] )
-    v4 = *(_DWORD *)&g_NetworkPlayerBuffer[1104] != 1 ? -1 : 1042;
+    int v4 = *(_DWORD *)&g_NetworkPlayerBuffer[1104] != 1 ? -1 : 1042;
   else
     v4 = 1041; /*0x46dd81*/
   DlgItem = GetDlgItem(hDlg, v4); /*0x46dd9f*/

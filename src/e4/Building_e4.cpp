@@ -12,23 +12,9 @@ int * Building::ComputePosition(AnimClass * aP1)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int *__thiscall Building::ComputePosition(int *this, AnimClass *aP1)
 {
-  int *v2; // ecx
-  int v3; // esi
-  int v4; // eax
-  int v5; // ecx
-  int v6; // eax
-  int v7; // esi
   BuildingTypeClass *v8; // edi
-  int v9; // eax
-  int v10; // edx
-  int v11; // eax
-  int v12; // ebx
   VectorClass *v13; // eax
   VectorClass *v14; // esi
-  double v15; // st7
-  int v16; // eax
-  int v17; // eax
-  int v18; // ecx
   __int16 v19; // dx
   __int16 v20; // di
   __int16 v21; // di
@@ -50,30 +36,29 @@ int *__thiscall Building::ComputePosition(int *this, AnimClass *aP1)
   char *v39; // [esp+3Ch] [ebp-Ch]
   int v40; // [esp+40h] [ebp-8h]
   int v41; // [esp+44h] [ebp-4h]
-
-  v2 = this + 39; /*0x425d1d*/
-  v3 = v2[1]; /*0x425d29*/
-  v4 = (unsigned __int8)(*v2 >> 31) + *v2; /*0x425d32*/
+  int * v2 = this + 39; /*0x425d1d*/
+  int v3 = v2[1]; /*0x425d29*/
+  int v4 = (unsigned __int8)(*v2 >> 31) + *v2; /*0x425d32*/
   v36 = 10000; /*0x425d34*/
   v41 = v2[2]; /*0x425d3f*/
-  v5 = v4; /*0x425d43*/
-  v6 = v3; /*0x425d45*/
+  int v5 = v4; /*0x425d43*/
+  int v6 = v3; /*0x425d45*/
   v5 >>= 8; /*0x425d47*/
-  v7 = (__int16)v5; /*0x425d4b*/
+  int v7 = (__int16)v5; /*0x425d4b*/
   LOWORD(v38) = v5; /*0x425d54*/
   v8 = (BuildingTypeClass *)((__int16)v5 - 5); /*0x425d61*/
-  v9 = v6 / 256; /*0x425d67*/
+  int v9 = v6 / 256; /*0x425d67*/
   HIWORD(v38) = v9; /*0x425d6c*/
   v32 = (IUnknown *)dword_89A150; /*0x425d71*/
   v31 = (__int16)v5; /*0x425d75*/
   if ( (int)v8 < (__int16)v5 + 5 ) /*0x425d79*/
   {
-    v10 = (__int16)v9; /*0x425d7f*/
+    int v10 = (__int16)v9; /*0x425d7f*/
     v30 = (__int16)v9; /*0x425d82*/
-    v11 = (__int16)v9 + 5; /*0x425d86*/
+    int v11 = (__int16)v9 + 5; /*0x425d86*/
     do /*0x425ec0*/
     {
-      v12 = v10 - 5; /*0x425d89*/
+      int v12 = v10 - 5; /*0x425d89*/
       if ( v10 - 5 < v11 ) /*0x425d8e*/
       {
         do /*0x425eb2*/
@@ -91,6 +76,7 @@ int *__thiscall Building::ComputePosition(int *this, AnimClass *aP1)
               && (*((_DWORD *)Cell::GetNeighbourContent(v13, 6u) + 80) & 0x100) == 0
               && (*((_DWORD *)Cell::GetNeighbourContent(v14, 0) + 80) & 0x100) == 0 )
             {
+  int v16; // eax
               if ( v14[2].Items == v38 ) /*0x425e27*/
               {
                 v16 = 0; /*0x425e77*/
@@ -99,7 +85,7 @@ int *__thiscall Building::ComputePosition(int *this, AnimClass *aP1)
               {
                 v40 = v12 - v30; /*0x425e44*/
                 v39 = (char *)v8 - v31; /*0x425e48*/
-                v15 = ((double (__cdecl *)(double))Math::Sqrt)((double)((int)v8 - v31) * (double)((int)v8 - v31) + (double)(v12 - v30) * (double)(v12 - v30)); /*0x425e68*/
+                double v15 = ((double (__cdecl *)(double))Math::Sqrt)((double)((int)v8 - v31) * (double)((int)v8 - v31) + (double)(v12 - v30) * (double)(v12 - v30)); /*0x425e68*/
                 v16 = Math::RoundToInt(v15); /*0x425e70*/
               }
               if ( (int)v8 > v31 || v12 > v30 ) /*0x425e83*/
@@ -125,8 +111,8 @@ int *__thiscall Building::ComputePosition(int *this, AnimClass *aP1)
     while ( (int)v8 < v7 + 5 ); /*0x425ec0*/
     if ( v32 != (IUnknown *)dword_89A150 ) /*0x425ed6*/
     {
-      v17 = (__int16)v32 - v7; /*0x425eeb*/
-      v18 = SHIWORD(v32) - v10; /*0x425eed*/
+      int v17 = (__int16)v32 - v7; /*0x425eeb*/
+      int v18 = SHIWORD(v32) - v10; /*0x425eed*/
       v19 = 0; /*0x425ef1*/
       if ( v17 >= 0 ) /*0x425ef5*/
         v20 = v17 > 0; /*0x425efe*/
@@ -209,11 +195,10 @@ namespace gamemd {
 int Building::GetNthOfType()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Building_GetNthOfType(int this)
+void Building_GetNthOfType(int this)
 {
-  int v2; // eax
 
-  v2 = FindBuildingByTiberiumType(*(_DWORD *)(this + 68)); /*0x485026*/
+  int v2 = FindBuildingByTiberiumType(*(_DWORD *)(this + 68)); /*0x485026*/
   if ( v2 == -1 ) /*0x48502e*/
     return 0; /*0x485030*/
   else
@@ -227,12 +212,11 @@ namespace gamemd {
 char Building::GetRenderType()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall Building_GetRenderType(_DWORD *this)
+void Building_GetRenderType(_DWORD *this)
 {
-  int v1; // ecx
   char result; // al
 
-  v1 = this->q0A0; /*0x772a90*/
+  int v1 = this->q0A0; /*0x772a90*/
   result = 0; /*0x772a96*/
   if ( *(_BYTE *)(v1 + 676) ) /*0x772a98*/
     result = 4; /*0x772aa2*/

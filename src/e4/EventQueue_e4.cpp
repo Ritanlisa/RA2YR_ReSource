@@ -8,11 +8,10 @@ short EventQueue::Process()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 __int16 __thiscall EventQueue_Process(_DWORD *this)
 {
-  int v2; // eax
 
   if ( (this->q318 + 1) % 256 != this->q314 ) /*0x54f01e*/
     MessageLoop(); /*0x54f020*/
-  v2 = this->q314; /*0x54f025*/
+  int v2 = this->q314; /*0x54f025*/
   if ( v2 == this->q318 ) /*0x54f033*/
     return 0; /*0x54f035*/
   else
@@ -100,9 +99,8 @@ short EventQueue::Check()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 __int16 __thiscall sub_54F650(_DWORD *this)
 {
-  int v1; // eax
 
-  v1 = this->q314; /*0x54f650*/
+  int v1 = this->q314; /*0x54f650*/
   if ( v1 == this->q318 ) /*0x54f65e*/
     return 0; /*0x54f669*/
   else

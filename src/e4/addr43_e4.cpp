@@ -34,23 +34,16 @@ namespace gamemd {
 bool E4Recv_431BC0::sub_431BC0(int a2, size_t a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall sub_431BC0(size_t *this, int a2, size_t a3)
+void sub_431BC0(size_t *this, int a2, size_t a3)
 {
-  int v5; // edi
-  signed int v6; // eax
-  int v7; // edi
-  bool v8; // zf
   size_t v9; // eax
-  signed int v10; // [esp+24h] [ebp+4h]
-  int v11; // [esp+28h] [ebp+8h]
-
   if ( *(this + 12) ) /*0x431bc8*/
     return !a2 && !a3; /*0x431bdb*/
   if ( (*(unsigned __int8 (__thiscall **)(size_t *, _DWORD))(*this + 20))(this, 0) ) /*0x431bef*/
     *(this + 18) = (*(int (__thiscall **)(size_t *))(*this + 44))(this); /*0x431bfd*/
   else
     *(this + 18) = 0; /*0x431c02*/
-  v5 = a2; /*0x431c05*/
+  int v5 = a2; /*0x431c05*/
   if ( a2 ) /*0x431c0f*/
   {
     if ( a2 < 1024 ) /*0x431c17*/
@@ -81,7 +74,7 @@ LABEL_14:
     (*(void (__thiscall **)(size_t *, int, _DWORD, _DWORD))(*this + 64))(this, 12, 0, 0); /*0x431d7d*/
     return 0; /*0x431d7d*/
   }
-  v6 = *(this + 18); /*0x431c6d*/
+  signed int v6 = *(this + 18); /*0x431c6d*/
   *((_BYTE *)this + 36) = 1; /*0x431c75*/
   *((_BYTE *)this + 38) = 0; /*0x431c79*/
   *(this + 14) = 0; /*0x431c7c*/
@@ -92,12 +85,12 @@ LABEL_14:
   *(this + 20) = 0; /*0x431c8b*/
   if ( v6 ) /*0x431c8e*/
   {
-    v7 = 0; /*0x431c97*/
-    v11 = 0; /*0x431c9b*/
-    v10 = v6; /*0x431c9f*/
+    int v7 = 0; /*0x431c97*/
+    int v11 = 0; /*0x431c9b*/
+    signed int v10 = v6; /*0x431c9f*/
     if ( v6 > (int)*(this + 13) ) /*0x431ca3*/
       v10 = *(this + 13); /*0x431ca5*/
-    v8 = (*(unsigned __int8 (__thiscall **)(size_t *))(*this + 24))(this) == 0; /*0x431cb0*/
+    bool v8 = (*(unsigned __int8 (__thiscall **)(size_t *))(*this + 24))(this) == 0; /*0x431cb0*/
     v9 = *this; /*0x431cb2*/
     if ( v8 ) /*0x431cb6*/
     {
@@ -169,97 +162,46 @@ char __fastcall BlitterCopySHP(
   int Height; // edx
   XSurface *v16; // edx
   int LockCount; // eax
-  int v18; // ebp
-  int v19; // eax
-  int v20; // edx
-  int v21; // ebx
   char result; // al
-  int v23; // eax
-  int v24; // edx
   unsigned __int8 v25; // di
   MouseClass *v26; // ebp
-  int v27; // edi
-  int v28; // edi
-  int v29; // ecx
   XSurface *v30; // edi
-  int v31; // eax
-  int v32; // esi
-  int v33; // esi
-  int v34; // eax
-  int v35; // edx
   XSurface *v36; // esi
-  int v37; // ecx
-  int v38; // edx
-  int v39; // eax
-  int v40; // edx
-  int v41; // eax
-  int v42; // esi
-  int v43; // edx
-  unsigned int v44; // ecx
-  unsigned int v45; // eax
-  int v46; // eax
-  int v47; // ecx
   XSurface *v48; // ebx
   XSurface **v49; // esi
-  unsigned int v50; // edi
-  unsigned int v51; // eax
-  int v52; // eax
-  unsigned int v53; // eax
-  int v54; // eax
-  int v55; // ecx
   XSurface **v56; // esi
-  unsigned int v57; // edi
-  unsigned int v58; // eax
-  int v59; // eax
-  unsigned int v60; // eax
-  unsigned int v61; // [esp+20h] [ebp-4Ch]
-  int a7; // [esp+24h] [ebp-48h] BYREF
   unsigned int SamplePosition; // [esp+28h] [ebp-44h]
-  int v64; // [esp+2Ch] [ebp-40h]
-  int v65; // [esp+30h] [ebp-3Ch]
-  int v66; // [esp+34h] [ebp-38h]
-  int v67; // [esp+38h] [ebp-34h]
-  int v68; // [esp+3Ch] [ebp-30h]
   XSurface *v69; // [esp+40h] [ebp-2Ch]
-  int v70; // [esp+44h] [ebp-28h]
-  int v71; // [esp+48h] [ebp-24h]
-  int v72; // [esp+4Ch] [ebp-20h] BYREF
-  int v73; // [esp+50h] [ebp-1Ch]
-  int v74; // [esp+54h] [ebp-18h]
-  int v75; // [esp+58h] [ebp-14h]
-  _DWORD v76[2]; // [esp+5Ch] [ebp-10h] BYREF
-  int v77; // [esp+64h] [ebp-8h]
-  int v78; // [esp+68h] [ebp-4h]
-
   v12 = aP5; /*0x4373b3*/
+  _DWORD v76[2]; // [esp+5Ch] [ebp-10h] BYREF
   v76[0] = *(_DWORD *)aP5->__pad_0; /*0x4373c1*/
   v69 = aP0; /*0x4373c5*/
   Width = aP5->Width; /*0x4373c9*/
   LOBYTE(aP5) = 0; /*0x4373cc*/
   v76[1] = Width; /*0x4373d1*/
-  a7 = 0; /*0x4373d5*/
+  int a7 = 0; /*0x4373d5*/
   Height = v12->Height; /*0x4373d9*/
   SamplePosition = 0; /*0x4373dc*/
-  v77 = Height; /*0x4373e0*/
+  int v77 = Height; /*0x4373e0*/
   v16 = aP2; /*0x4373e4*/
   LockCount = v12->LockCount; /*0x4373e8*/
   aP2 = 0; /*0x4373eb*/
-  v78 = LockCount; /*0x4373ef*/
-  v72 = *(_DWORD *)v16->__pad_0; /*0x4373f5*/
-  v61 = 0; /*0x4373f9*/
-  v18 = 0; /*0x437400*/
-  v73 = v16->Width; /*0x437402*/
-  v65 = 0; /*0x437406*/
-  v19 = v16->Height; /*0x43740a*/
-  v66 = 0; /*0x43740d*/
-  v74 = v19; /*0x437411*/
-  v20 = v16->LockCount; /*0x437419*/
-  v64 = 0; /*0x43741c*/
-  v75 = v20; /*0x437423*/
-  v67 = 0; /*0x437427*/
-  v68 = 0; /*0x43742b*/
+  int v78 = LockCount; /*0x4373ef*/
+  int v72 = *(_DWORD *)v16->__pad_0; /*0x4373f5*/
+  unsigned int v61 = 0; /*0x4373f9*/
+  int v18 = 0; /*0x437400*/
+  int v73 = v16->Width; /*0x437402*/
+  int v65 = 0; /*0x437406*/
+  int v19 = v16->Height; /*0x43740a*/
+  int v66 = 0; /*0x43740d*/
+  int v74 = v19; /*0x437411*/
+  int v20 = v16->LockCount; /*0x437419*/
+  int v64 = 0; /*0x43741c*/
+  int v75 = v20; /*0x437423*/
+  int v67 = 0; /*0x437427*/
+  int v68 = 0; /*0x43742b*/
   aP8 = (XSurface *)(24 * (_DWORD)aP8 + 8484624); /*0x43743a*/
-  v21 = 0; /*0x43745f*/
+  int v21 = 0; /*0x43745f*/
   result = CalcSurfaceBlitRects( /*0x437461*/
              (int)aP0,
              (int *)aP1->__pad_0,
@@ -272,10 +214,12 @@ char __fastcall BlitterCopySHP(
              (int *)&aP2);
   if ( result ) /*0x437468*/
   {
+  int v71; // [esp+48h] [ebp-24h]
+  int v70; // [esp+44h] [ebp-28h]
     if ( *(_DWORD *)&stru_87C374[9520] ) /*0x43747c*/
     {
-      v23 = *(_DWORD *)aP1->__pad_0; /*0x437485*/
-      v24 = *(_DWORD *)(*(_DWORD *)&stru_87C374[9520] + 4); /*0x43748d*/
+      int v23 = *(_DWORD *)aP1->__pad_0; /*0x437485*/
+      int v24 = *(_DWORD *)(*(_DWORD *)&stru_87C374[9520] + 4); /*0x43748d*/
       v71 = v73 + aP1->Width; /*0x437490*/
       v25 = v71 - v24; /*0x437494*/
       v70 = v72 + v23; /*0x43749a*/
@@ -288,14 +232,14 @@ char __fastcall BlitterCopySHP(
     if ( *(_DWORD *)&stru_87C374[45776] ) /*0x4374c3*/
     {
       v26 = (MouseClass *)(v72 + *(_DWORD *)aP1->__pad_0); /*0x4374d6*/
-      v27 = *(_DWORD *)(*(_DWORD *)&stru_87C374[45776] + 4); /*0x4374d8*/
+      int v27 = *(_DWORD *)(*(_DWORD *)&stru_87C374[45776] + 4); /*0x4374d8*/
       v71 = v73 + aP1->Width; /*0x4374dd*/
       SamplePosition = Audio::GetSamplePosition(*(int *)&stru_87C374[45776], v26, (MouseClass *)(v71 - v27)); /*0x4374ea*/
       v64 = 0; /*0x4374f2*/
-      v28 = aP8->LockCount; /*0x4374fa*/
+      int v28 = aP8->LockCount; /*0x4374fa*/
       v67 = aP8->Height; /*0x437502*/
       v68 = v28; /*0x437509*/
-      v29 = v28 / v67; /*0x43750d*/
+      int v29 = v28 / v67; /*0x43750d*/
       if ( LOBYTE(aP8[1].Width) ) /*0x437513*/
       {
         v18 = aP8->Width /*0x437545*/
@@ -325,16 +269,17 @@ char __fastcall BlitterCopySHP(
       }
     }
     v30 = v69; /*0x4375a7*/
-    v31 = (*(int (__thiscall **)(XSurface *))(*(_DWORD *)v69->__pad_0 + 112))(v69); /*0x4375af*/
-    v32 = v74 * v31; /*0x4375b6*/
+    int v31 = (*(int (__thiscall **)(XSurface *))(*(_DWORD *)v69->__pad_0 + 112))(v69); /*0x4375af*/
+    int v32 = v74 * v31; /*0x4375b6*/
     if ( v32 == (*(int (__thiscall **)(XSurface *))(*(_DWORD *)v30->__pad_0 + 116))(v30) /*0x4375d8*/
+  int v33; // esi
       && (v33 = (*(int (__thiscall **)(XSurface *))(*(_DWORD *)v30->__pad_0 + 116))(v30),
           v33 == (*(int (__thiscall **)(XSurface *))(*(_DWORD *)aP3->__pad_0 + 116))(aP3)) )
     {
-      v34 = v78 * v77; /*0x4375e2*/
+      int v34 = v78 * v77; /*0x4375e2*/
       if ( v78 * v77 >= v75 * v74 ) /*0x4375ee*/
         v34 = v75 * v74; /*0x4375f0*/
-      v35 = *(_DWORD *)aP6->__pad_0; /*0x4375fc*/
+      int v35 = *(_DWORD *)aP6->__pad_0; /*0x4375fc*/
       if ( (_BYTE)aP5 ) /*0x4375fe*/
         (*(void (__stdcall **)(int, XSurface *, int, _DWORD, _DWORD, _DWORD, int))(v35 + 12))( /*0x437616*/
           a7,
@@ -357,9 +302,11 @@ char __fastcall BlitterCopySHP(
     }
     else
     {
+  int v43; // edx
+  int v42; // esi
       v36 = aP3; /*0x43763e*/
       aP7 = (XSurface *)(*(int (__thiscall **)(XSurface *))(*(_DWORD *)aP3->__pad_0 + 116))(aP3); /*0x437649*/
-      v37 = (*(int (__thiscall **)(XSurface *))(*(_DWORD *)v30->__pad_0 + 116))(v30); /*0x437654*/
+      int v37 = (*(int (__thiscall **)(XSurface *))(*(_DWORD *)v30->__pad_0 + 116))(v30); /*0x437654*/
       a4 = v37; /*0x43765d*/
       if ( *(_DWORD *)&stru_87C374[45776] ) /*0x437661*/
         v65 = *(_DWORD *)(*(_DWORD *)&stru_87C374[45776] + 40); /*0x437666*/
@@ -369,19 +316,19 @@ char __fastcall BlitterCopySHP(
       {
         a4 = -v37; /*0x437690*/
         aP7 = (XSurface *)-(int)aP7; /*0x43769c*/
-        v38 = *(_DWORD *)v36->__pad_0; /*0x4376a0*/
+        int v38 = *(_DWORD *)v36->__pad_0; /*0x4376a0*/
         v66 = -v66; /*0x4376a4*/
         v65 = -v65; /*0x4376aa*/
-        v39 = (*(int (__thiscall **)(XSurface *))(v38 + 116))(v36); /*0x4376ae*/
-        v40 = *(_DWORD *)v30->__pad_0; /*0x4376b5*/
+        int v39 = (*(int (__thiscall **)(XSurface *))(v38 + 116))(v36); /*0x4376ae*/
+        int v40 = *(_DWORD *)v30->__pad_0; /*0x4376b5*/
         aP2 = (XSurface *)((char *)aP2 + (v78 - 1) * v39); /*0x4376c1*/
-        v41 = (*(int (__thiscall **)(XSurface *))(v40 + 116))(v30); /*0x4376c7*/
+        int v41 = (*(int (__thiscall **)(XSurface *))(v40 + 116))(v30); /*0x4376c7*/
         v42 = v78; /*0x4376d3*/
         v43 = (v75 - 1) * v41 + a7; /*0x4376da*/
         a7 = v43; /*0x4376e3*/
         if ( *(_DWORD *)&stru_87C374[45776] ) /*0x4376e7*/
         {
-          v44 = SamplePosition + 2 * (v78 + 0x7FFFFFFF * *(_DWORD *)(*(_DWORD *)&stru_87C374[45776] + 40)); /*0x4376fb*/
+          unsigned int v44 = SamplePosition + 2 * (v78 + 0x7FFFFFFF * *(_DWORD *)(*(_DWORD *)&stru_87C374[45776] + 40)); /*0x4376fb*/
           if ( v44 >= *(_DWORD *)(*(_DWORD *)&stru_87C374[45776] + 28) ) /*0x437703*/
             v44 -= *(_DWORD *)(*(_DWORD *)&stru_87C374[45776] + 32); /*0x437705*/
           SamplePosition = v44; /*0x43770d*/
@@ -389,7 +336,7 @@ char __fastcall BlitterCopySHP(
         }
         if ( *(_DWORD *)&stru_87C374[9520] ) /*0x43771d*/
         {
-          v45 = v61 + 2 * (v78 + 0x7FFFFFFF * *(_DWORD *)(*(_DWORD *)&stru_87C374[9520] + 40)); /*0x437731*/
+          unsigned int v45 = v61 + 2 * (v78 + 0x7FFFFFFF * *(_DWORD *)(*(_DWORD *)&stru_87C374[9520] + 40)); /*0x437731*/
           if ( v45 >= *(_DWORD *)(*(_DWORD *)&stru_87C374[9520] + 28) ) /*0x437739*/
             v45 -= *(_DWORD *)(*(_DWORD *)&stru_87C374[9520] + 32); /*0x43773b*/
           v61 = v45; /*0x43773e*/
@@ -406,13 +353,14 @@ char __fastcall BlitterCopySHP(
       {
         if ( v42 > 0 ) /*0x437764*/
         {
-          v46 = a10; /*0x43776a*/
-          v47 = a11; /*0x43776e*/
+          int v46 = a10; /*0x43776a*/
+          int v47 = a11; /*0x43776e*/
           v48 = aP2; /*0x437775*/
           v70 = v42; /*0x437779*/
           v49 = (XSurface **)aP6; /*0x43777d*/
           while ( 1 ) /*0x43778e*/
           {
+  unsigned int v50; // edi
             if ( (_WORD)v47 ) /*0x437791*/
             {
               aP6 = *v49; /*0x43779a*/
@@ -447,11 +395,11 @@ char __fastcall BlitterCopySHP(
             aP2 = (XSurface *)((char *)aP2 + (_DWORD)aP7); /*0x4377f7*/
             if ( *(_DWORD *)&stru_87C374[45776] ) /*0x4377fb*/
             {
-              v51 = v50 + 2 * v65; /*0x437801*/
+              unsigned int v51 = v50 + 2 * v65; /*0x437801*/
               if ( v51 < *(_DWORD *)(*(_DWORD *)&stru_87C374[45776] + 24) ) /*0x437809*/
                 v51 += *(_DWORD *)(*(_DWORD *)&stru_87C374[45776] + 32); /*0x43780b*/
               SamplePosition = v51; /*0x437812*/
-              v52 = v67 + v64; /*0x43781a*/
+              int v52 = v67 + v64; /*0x43781a*/
               v64 += v67; /*0x437822*/
               if ( v64 >= v68 ) /*0x437826*/
               {
@@ -461,7 +409,7 @@ char __fastcall BlitterCopySHP(
             }
             if ( *(_DWORD *)&stru_87C374[9520] ) /*0x43783d*/
             {
-              v53 = v61 + 2 * v66; /*0x437847*/
+              unsigned int v53 = v61 + 2 * v66; /*0x437847*/
               if ( v53 < *(_DWORD *)(*(_DWORD *)&stru_87C374[9520] + 24) ) /*0x43784f*/
                 v53 += *(_DWORD *)(*(_DWORD *)&stru_87C374[9520] + 32); /*0x437851*/
               v61 = v53; /*0x437854*/
@@ -475,12 +423,13 @@ char __fastcall BlitterCopySHP(
       }
       else if ( v42 > 0 ) /*0x43786e*/
       {
-        v54 = a10; /*0x437874*/
-        v55 = a11; /*0x437878*/
+        int v54 = a10; /*0x437874*/
+        int v55 = a11; /*0x437878*/
         v70 = v42; /*0x43787f*/
         v56 = (XSurface **)aP6; /*0x437883*/
         while ( 1 ) /*0x437894*/
         {
+  unsigned int v57; // edi
           if ( (_WORD)v55 ) /*0x437897*/
           {
             aP6 = *v56; /*0x4378a1*/
@@ -517,11 +466,11 @@ char __fastcall BlitterCopySHP(
           aP2 = (XSurface *)((char *)aP2 + (_DWORD)aP7); /*0x437902*/
           if ( *(_DWORD *)&stru_87C374[45776] ) /*0x43790e*/
           {
-            v58 = v57 + 2 * v65; /*0x437914*/
+            unsigned int v58 = v57 + 2 * v65; /*0x437914*/
             if ( v58 >= *(_DWORD *)(*(_DWORD *)&stru_87C374[45776] + 28) ) /*0x43791c*/
               v58 -= *(_DWORD *)(*(_DWORD *)&stru_87C374[45776] + 32); /*0x43791e*/
             SamplePosition = v58; /*0x437925*/
-            v59 = v67 + v64; /*0x43792d*/
+            int v59 = v67 + v64; /*0x43792d*/
             v64 += v67; /*0x437935*/
             if ( v64 >= v68 ) /*0x437939*/
             {
@@ -531,7 +480,7 @@ char __fastcall BlitterCopySHP(
           }
           if ( *(_DWORD *)&stru_87C374[9520] ) /*0x437950*/
           {
-            v60 = v61 + 2 * v66; /*0x43795a*/
+            unsigned int v60 = v61 + 2 * v66; /*0x43795a*/
             if ( v60 >= *(_DWORD *)(*(_DWORD *)&stru_87C374[9520] + 28) ) /*0x437962*/
               v60 -= *(_DWORD *)(*(_DWORD *)&stru_87C374[9520] + 32); /*0x437964*/
             v61 = v60; /*0x437967*/
@@ -575,90 +524,62 @@ bool __fastcall BlitterRLEBlitSHP(
         int a14,
         int a15)
 {
-  int v16; // edx
-  int v17; // esi
-  int v18; // ebp
-  int v19; // ebx
   bool result; // al
-  _DWORD *v21; // eax
-  _DWORD *v22; // eax
   MouseClass *v23; // edx
-  int v24; // esi
   MouseClass *v25; // esi
-  int v26; // ecx
-  int v27; // eax
-  int *v28; // ebp
-  int v29; // eax
-  int v30; // ecx
   MouseClass *v31; // ebp
   MouseClass *v32; // edi
   unsigned __int16 *v33; // edi
-  int v34; // eax
   IUnknown *v35; // ebp
   int LockCount; // eax
-  int v37; // edx
-  unsigned int v38; // eax
-  char *v39; // eax
-  unsigned int v40; // eax
   AbstractClass *v41; // [esp+24h] [ebp-80h]
-  char *v42; // [esp+38h] [ebp-6Ch]
   unsigned int SamplePosition; // [esp+3Ch] [ebp-68h]
-  unsigned int v44; // [esp+40h] [ebp-64h]
-  int v46; // [esp+48h] [ebp-5Ch]
-  char *v47; // [esp+4Ch] [ebp-58h]
-  int v48; // [esp+50h] [ebp-54h]
-  int v49; // [esp+54h] [ebp-50h]
-  int v50; // [esp+58h] [ebp-4Ch]
-  int v51; // [esp+5Ch] [ebp-48h]
-  int v52; // [esp+60h] [ebp-44h]
-  char v53[8]; // [esp+64h] [ebp-40h] BYREF
   AbstractClass aP1; // [esp+6Ch] [ebp-38h] BYREF
-  int v55; // [esp+90h] [ebp-14h]
   XSurface v56; // [esp+94h] [ebp-10h] BYREF
   int aP2b; // [esp+A8h] [ebp+4h]
   TechnoClass *aP2a; // [esp+A8h] [ebp+4h]
   _DWORD *a4a; // [esp+B0h] [ebp+Ch]
   int *a5a; // [esp+B4h] [ebp+10h]
-  int v61; // [esp+BCh] [ebp+18h]
-  int v62; // [esp+C0h] [ebp+1Ch]
 
-  v16 = a5[1]; /*0x437a23*/
+  int v16 = a5[1]; /*0x437a23*/
   *(_DWORD *)v56[0] = *a5; /*0x437a26*/
   v56.Width = v16; /*0x437a2a*/
-  v17 = 0; /*0x437a2e*/
+  int v17 = 0; /*0x437a2e*/
   SamplePosition = 0; /*0x437a33*/
   v56.Height = a5[2]; /*0x437a37*/
-  v44 = 0; /*0x437a3b*/
+  unsigned int v44 = 0; /*0x437a3b*/
   v56.LockCount = a5[3]; /*0x437a49*/
-  v42 = 0; /*0x437a4d*/
-  v49 = 0; /*0x437a53*/
+  char * v42 = 0; /*0x437a4d*/
+  int v49 = 0; /*0x437a53*/
   aP1.nextArrayIndex = *(_DWORD *)aP2->__pad_0; /*0x437a57*/
-  v51 = 0; /*0x437a5b*/
+  int v51 = 0; /*0x437a5b*/
   a5a = 0; /*0x437a62*/
   aP1.referenceCount = *(_DWORD *)&aP2->__pad_0[4]; /*0x437a69*/
-  v46 = 0; /*0x437a6d*/
-  v47 = 0; /*0x437a74*/
+  int v46 = 0; /*0x437a6d*/
+  char * v47 = 0; /*0x437a74*/
   aP1.NeedsSaveOrLink = *(void **)&aP2->__pad_0[8]; /*0x437a78*/
-  v55 = *(_DWORD *)&aP2->__pad_0[12]; /*0x437a8d*/
-  v18 = 24 * a9 + 8484624; /*0x437a9c*/
-  v50 = 0; /*0x437aa7*/
-  v19 = 0; /*0x437aab*/
-  v52 = v18; /*0x437aad*/
+  int v55 = *(_DWORD *)&aP2->__pad_0[12]; /*0x437a8d*/
+  int v18 = 24 * a9 + 8484624; /*0x437a9c*/
+  int v50 = 0; /*0x437aa7*/
+  int v19 = 0; /*0x437aab*/
+  int v52 = v18; /*0x437aad*/
   result = IntersectSurfaceRects((IUnknown *)&aP1.nextArrayIndex, (int)a1, &v56, (int)a4); /*0x437ab1*/
   if ( !result ) /*0x437ab8*/
     return result; /*0x437ab8*/
-  v62 = *(_DWORD *)v56[0] - *a4; /*0x437ad6*/
-  v48 = v56.Width - a4[1]; /*0x437ae7*/
+  int v62 = *(_DWORD *)v56[0] - *a4; /*0x437ad6*/
+  int v48 = v56.Width - a4[1]; /*0x437ae7*/
+  char v53[8]; // [esp+64h] [ebp-40h] BYREF
   v41 = (AbstractClass *)CellStruct::Copy(&aP1.nextArrayIndex, (IUnknown *)v53); /*0x437afd*/
-  v21 = CellStruct::Copy(a1, (IUnknown *)&aP1[8]); /*0x437b02*/
-  v22 = Coord2D::Add(v21, &aP1, v41); /*0x437b09*/
+  _DWORD * v21 = CellStruct::Copy(a1, (IUnknown *)&aP1[8]); /*0x437b02*/
+  _DWORD * v22 = Coord2D::Add(v21, &aP1, v41); /*0x437b09*/
   a4a = (_DWORD *)(*(int (__thiscall **)(IUnknown *, _DWORD, _DWORD))(aP0->field_0 + 92))(aP0, *v22, v22[1]); /*0x437b28*/
   if ( !a4a ) /*0x437b2f*/
     return 0; /*0x437b3a*/
   if ( *(_DWORD *)&stru_87C374[45776] ) /*0x437b45*/
   {
+  int v27; // eax
     v23 = (MouseClass *)(*a1 + aP1.nextArrayIndex); /*0x437b5c*/
-    v24 = *(_DWORD *)(*(_DWORD *)&stru_87C374[45776] + 4); /*0x437b5e*/
+    int v24 = *(_DWORD *)(*(_DWORD *)&stru_87C374[45776] + 4); /*0x437b5e*/
     *(_DWORD *)&aP1[12] = aP1.referenceCount + a1[1]; /*0x437b61*/
     v25 = (MouseClass *)(*(_DWORD *)&aP1[12] - v24); /*0x437b67*/
     SamplePosition = Audio::GetSamplePosition(*(int *)&stru_87C374[45776], v23, v25); /*0x437b73*/
@@ -666,7 +587,7 @@ bool __fastcall BlitterRLEBlitSHP(
     a5a = 0; /*0x437b80*/
     v47 = *(char **)(v18 + 12); /*0x437b91*/
     v49 = *(_DWORD *)(*(_DWORD *)&stru_87C374[45776] + 40); /*0x437b95*/
-    v26 = (int)v47 / v46; /*0x437b9e*/
+    int v26 = (int)v47 / v46; /*0x437b9e*/
     if ( *(_BYTE *)(v18 + 20) ) /*0x437ba0*/
     {
       v27 = a12; /*0x437bcd*/
@@ -676,10 +597,10 @@ bool __fastcall BlitterRLEBlitSHP(
       if ( a12 ) /*0x437bd9*/
       {
 LABEL_7:
-        v28 = (int *)(*(int (__thiscall **)(int, char *))(*(_DWORD *)v27 + 120))(v27, &aP1[8]); /*0x437bdf*/
-        v29 = *v28; /*0x437bed*/
+        int * v28 = (int *)(*(int (__thiscall **)(int, char *))(*(_DWORD *)v27 + 120))(v27, &aP1[8]); /*0x437bdf*/
+        int v29 = *v28; /*0x437bed*/
         v50 = v28[2]; /*0x437bf6*/
-        v30 = a14 + v28[1]; /*0x437c0d*/
+        int v30 = a14 + v28[1]; /*0x437c0d*/
         aP1.abstractFlags = v28[3]; /*0x437c16*/
         v42 = (char *)(*(int (__thiscall **)(int, char *, int))(*(_DWORD *)a12 + 92))( /*0x437c30*/
                         a12,
@@ -723,7 +644,7 @@ LABEL_12:
   v33 = (unsigned __int16 *)(*(int (__thiscall **)(IUnknown *, _DWORD, _DWORD))(aP3->field_0 + 92))(aP3, 0, 0); /*0x437d36*/
   if ( v33 ) /*0x437d3a*/
   {
-    v34 = v48; /*0x437d51*/
+    int v34 = v48; /*0x437d51*/
     if ( v48 > 0 ) /*0x437d57*/
     {
       do /*0x437d64*/
@@ -735,7 +656,7 @@ LABEL_12:
       while ( v34 ); /*0x437d64*/
     }
     v35 = aP0; /*0x437d66*/
-    v61 = (*(int (__thiscall **)(IUnknown *))(aP0->field_0 + 116))(aP0); /*0x437d76*/
+    int v61 = (*(int (__thiscall **)(IUnknown *))(aP0->field_0 + 116))(aP0); /*0x437d76*/
     LockCount = v56.LockCount; /*0x437d7d*/
     if ( v56.LockCount >= v55 ) /*0x437d83*/
       LockCount = v55; /*0x437d85*/
@@ -744,7 +665,7 @@ LABEL_12:
       aP2a = (TechnoClass *)LockCount; /*0x437d96*/
       do /*0x437eda*/
       {
-        v37 = *(_DWORD *)aP6->__pad_0; /*0x437da4*/
+        int v37 = *(_DWORD *)aP6->__pad_0; /*0x437da4*/
         if ( (_WORD)a15 ) /*0x437daa*/
           (*(void (__thiscall **)(TechnoClass *, _DWORD *, unsigned __int16 *, int, int, int, unsigned int, unsigned int, TechnoClass *, int, char *, int))(v37 + 8))( /*0x437de4*/
             aP6,
@@ -777,7 +698,7 @@ LABEL_12:
         v33 = (unsigned __int16 *)((char *)v33 + *v33); /*0x437e48*/
         if ( *(_DWORD *)&stru_87C374[45776] ) /*0x437e4c*/
         {
-          v38 = SamplePosition + 2 * v49; /*0x437e56*/
+          unsigned int v38 = SamplePosition + 2 * v49; /*0x437e56*/
           if ( v38 >= *(_DWORD *)(*(_DWORD *)&stru_87C374[45776] + 28) ) /*0x437e5e*/
             v38 -= *(_DWORD *)(*(_DWORD *)&stru_87C374[45776] + 32); /*0x437e60*/
           SamplePosition = v38; /*0x437e63*/
@@ -787,7 +708,7 @@ LABEL_12:
           }
           else
           {
-            v39 = (char *)a5a + v46; /*0x437e8d*/
+            char * v39 = (char *)a5a + v46; /*0x437e8d*/
             a5a = (int *)((char *)a5a + v46); /*0x437e95*/
             if ( (int)a5a >= (int)v47 ) /*0x437e9c*/
             {
@@ -795,7 +716,7 @@ LABEL_12:
               a5a = (int *)(v39 - v47); /*0x437ea7*/
             }
           }
-          v40 = v44 + 2 * v51; /*0x437eb6*/
+          unsigned int v40 = v44 + 2 * v51; /*0x437eb6*/
           if ( v40 >= *(_DWORD *)(*(_DWORD *)&stru_87C374[9520] + 28) ) /*0x437ec2*/
             v40 -= *(_DWORD *)(*(_DWORD *)&stru_87C374[9520] + 32); /*0x437ec4*/
           v44 = v40; /*0x437ec7*/
@@ -852,21 +773,17 @@ namespace gamemd {
 void BrainClass::sub_43A600()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_43A600(BrainClass *this)
+void sub_43A600(BrainClass *this)
 {
-  int v2; // esi
-  int v3; // ebp
-  int v4; // ecx
-  void *v5; // eax
 
-  v2 = 0; /*0x43a608*/
+  int v2 = 0; /*0x43a608*/
   this->vfptr = &vt_BrainClass; /*0x43a60a*/
-  v3 = *((_DWORD *)this + 5); /*0x43a610*/
+  int v3 = *((_DWORD *)this + 5); /*0x43a610*/
   if ( v3 > 0 ) /*0x43a615*/
   {
     do /*0x43a632*/
     {
-      v4 = *(_DWORD *)(*((_DWORD *)this + 2) + 4 * v2); /*0x43a61a*/
+      int v4 = *(_DWORD *)(*((_DWORD *)this + 2) + 4 * v2); /*0x43a61a*/
       if ( v4 ) /*0x43a61f*/
         (*(void (__thiscall **)(int, int))(*(_DWORD *)v4 + 32))(v4, 1); /*0x43a625*/
       ++v2; /*0x43a62b*/
@@ -875,7 +792,7 @@ void __thiscall sub_43A600(BrainClass *this)
     while ( v2 < v3 ); /*0x43a632*/
   }
   (*(void (__thiscall **)(BrainClass *))(*((_DWORD *)this + 1) + 12))(this + 1); /*0x43a63c*/
-  v5 = (void *)*((_DWORD *)this + 2); /*0x43a63f*/
+  void * v5 = (void *)*((_DWORD *)this + 2); /*0x43a63f*/
   *((_DWORD *)this + 1) = &vt_VectorClass_NeuronClass; /*0x43a642*/
   if ( v5 && *((_BYTE *)this + 17) ) /*0x43a64c*/
   {
@@ -895,19 +812,15 @@ unsigned int * BrainClass::sub_43AA90(char a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_43AA90(BrainClass *this, char a2)
 {
-  int v3; // esi
-  int v4; // ebp
-  int v5; // ecx
-  void *v6; // eax
 
-  v3 = 0; /*0x43aa95*/
+  int v3 = 0; /*0x43aa95*/
   this->vfptr = &vt_BrainClass; /*0x43aa97*/
-  v4 = *((_DWORD *)this + 5); /*0x43aa9d*/
+  int v4 = *((_DWORD *)this + 5); /*0x43aa9d*/
   if ( v4 > 0 ) /*0x43aaa2*/
   {
     do /*0x43aac3*/
     {
-      v5 = *(_DWORD *)(*((_DWORD *)this + 2) + 4 * v3); /*0x43aaa7*/
+      int v5 = *(_DWORD *)(*((_DWORD *)this + 2) + 4 * v3); /*0x43aaa7*/
       if ( v5 ) /*0x43aaac*/
         (*(void (__thiscall **)(int, int))(*(_DWORD *)v5 + 32))(v5, 1); /*0x43aab2*/
       ++v3; /*0x43aab8*/
@@ -916,7 +829,7 @@ _DWORD *__thiscall sub_43AA90(BrainClass *this, char a2)
     while ( v3 < v4 ); /*0x43aac3*/
   }
   (*(void (__thiscall **)(BrainClass *))(*((_DWORD *)this + 1) + 12))(this + 1); /*0x43aacd*/
-  v6 = (void *)*((_DWORD *)this + 2); /*0x43aad0*/
+  void * v6 = (void *)*((_DWORD *)this + 2); /*0x43aad0*/
   *((_DWORD *)this + 1) = &vt_VectorClass_NeuronClass; /*0x43aad3*/
   if ( v6 && *((_BYTE *)this + 17) ) /*0x43aadd*/
   {

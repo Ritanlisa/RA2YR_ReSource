@@ -26,18 +26,15 @@ _DWORD *__thiscall IPXInterfaceClass_Constructor(_DWORD *this)
 int IPXInterfaceClass::initSocket(IUnknown * aP1, Color * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall IPXInterfaceClass::initSocket(_DWORD *this, IUnknown *aP1, Color *aP2)
+void IPXInterfaceClass::initSocket(IUnknown *aP1, Color *aP2)
 {
   SOCKET v4; // esi
   Color *v6; // ecx
   Color *v7; // ecx
-  int v8; // eax
   __int16 v9; // dx
   char optval[4]; // [esp+Ch] [ebp-34h] BYREF
   int optlen; // [esp+10h] [ebp-30h] BYREF
-  int v12; // [esp+14h] [ebp-2Ch] BYREF
   struct sockaddr name; // [esp+18h] [ebp-28h] BYREF
-  char v14[24]; // [esp+28h] [ebp-18h] BYREF
 
   v4 = socket(6, 2, 1000); /*0x7b0de6*/
   if ( v4 == -1 ) /*0x7b0deb*/
@@ -66,9 +63,10 @@ int __thiscall IPXInterfaceClass::initSocket(_DWORD *this, IUnknown *aP1, Color 
   {
     return 0; /*0x7b0e91*/
   }
+  char v14[24]; // [esp+28h] [ebp-18h] BYREF
   memset(v14, 0, sizeof(v14)); /*0x7b0ec2*/
   *(_DWORD *)v14 = aP1; /*0x7b0ed9*/
-  v12 = 24; /*0x7b0edd*/
+  int v12 = 24; /*0x7b0edd*/
   if ( getsockopt(v4, 1000, 16391, v14, &v12) == -1 ) /*0x7b0eee*/
   {
     WSAGetLastError(); /*0x7b0ef0*/
@@ -78,7 +76,7 @@ int __thiscall IPXInterfaceClass::initSocket(_DWORD *this, IUnknown *aP1, Color 
   }
   else
   {
-    v8 = *(_DWORD *)&v14[4]; /*0x7b0f19*/
+    int v8 = *(_DWORD *)&v14[4]; /*0x7b0f19*/
     v9 = *(_WORD *)&v14[12]; /*0x7b0f1d*/
     *(int *)((char *)&aP2->Color_field_00 + 2) = *(int *)&v14[4]; /*0x7b0f23*/
     this->qFCBF = v8; /*0x7b0f26*/
@@ -94,28 +92,15 @@ int __thiscall IPXInterfaceClass::initSocket(_DWORD *this, IUnknown *aP1, Color 
 int IPXInterfaceClass::SendPacket(ObjectClass * aP1, int a3, int a4, unsigned int fromlen)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall IPXInterfaceClass::SendPacket(u_short *this, ObjectClass *aP1, int a3, int a4, unsigned int fromlen)
+void IPXInterfaceClass::SendPacket(ObjectClass *aP1, int a3, int a4, unsigned int fromlen)
 {
   CCINIClass *v7; // esi
-  int v8; // eax
-  int v9; // ecx
-  int v10; // eax
   SOCKET v11; // eax
-  int v12; // eax
-  int v13; // ecx
   u_short *v14; // edi
-  int *v15; // esi
-  bool v16; // zf
-  int v17; // esi
   CCINIClass *v18; // ebx
-  int v19; // eax
-  int v20; // ecx
   u_short *v21; // ebp
-  int v22; // ecx
-  int v23; // eax
   ObjectClass *v24; // edx
   u_short v25; // [esp-4h] [ebp-30h]
-  int v26; // [esp+10h] [ebp-1Ch]
   int v27; // [esp+14h] [ebp-18h] BYREF
   __int16 v28; // [esp+18h] [ebp-14h]
   struct sockaddr to; // [esp+1Ch] [ebp-10h] BYREF
@@ -158,11 +143,11 @@ LABEL_6:
           {
             break; /*0x7b14da*/
           }
-          v8 = this->LocalNode; /*0x7b14e0*/
+          int v8 = this->LocalNode; /*0x7b14e0*/
           if ( v8 > 0 ) /*0x7b14e5*/
           {
-            v9 = v8 - 1; /*0x7b14e7*/
-            v10 = 0; /*0x7b14ea*/
+            int v9 = v8 - 1; /*0x7b14e7*/
+            int v10 = 0; /*0x7b14ea*/
             for ( this->LocalNode = v9; /*0x7b14f1*/
                   v10 < this->LocalNode;
                   *(_DWORD *)(*((_DWORD *)this + 9) + 4 * v10 - 4) = *(_DWORD *)(*((_DWORD *)this + 9) + 4 * v10) )
@@ -194,8 +179,8 @@ LABEL_6:
   }
   v11 = this->q3F06C; /*0x7b1577*/
   fromlen = 14; /*0x7b157d*/
-  v12 = recvfrom(v11, (char *)this + 258164, 640, 0, &to, (int *)&fromlen); /*0x7b1586*/
-  v26 = v12; /*0x7b158e*/
+  int v12 = recvfrom(v11, (char *)this + 258164, 640, 0, &to, (int *)&fromlen); /*0x7b1586*/
+  int v26 = v12; /*0x7b158e*/
   if ( v12 == -1 ) /*0x7b1592*/
   {
     if ( WSAGetLastError() != 10035 ) /*0x7b159e*/
@@ -212,10 +197,10 @@ LABEL_6:
   v28 = *(_WORD *)&to.sa_data[8]; /*0x7b15e6*/
   if ( *(_DWORD *)to.sa_data == this->qFCBF ) /*0x7b15ef*/
   {
-    v13 = 3; /*0x7b15f1*/
+    int v13 = 3; /*0x7b15f1*/
     v14 = this + 129411; /*0x7b15f6*/
-    v15 = &v27; /*0x7b15fc*/
-    v16 = 1; /*0x7b1600*/
+    int * v15 = &v27; /*0x7b15fc*/
+    bool v16 = 1; /*0x7b1600*/
     do /*0x7b1602*/
     {
       if ( !v13 ) /*0x7b1602*/
@@ -229,7 +214,7 @@ LABEL_6:
     if ( v16 ) /*0x7b1605*/
       return 0; /*0x7b1605*/
   }
-  v17 = Network_Process_7B2730(); /*0x7b1610*/
+  int v17 = Network_Process_7B2730(); /*0x7b1610*/
   if ( v17 > 0 && Random::Range(&DataGlobal_87F8E4[29348], 0, (IUnknown *)0x63) <= v17 ) /*0x7b1626*/
     return 0; /*0x7b1717*/
   v18 = (CCINIClass *)IPXInterfaceClass::processPacket(this); /*0x7b1633*/
@@ -239,15 +224,16 @@ LABEL_6:
   if ( (*(unsigned __int8 (__thiscall **)(u_short *, CCINIClass *))(*(_DWORD *)this + 88))(this, v18) ) /*0x7b1665*/
   {
     NetworkID::Assign(v18, (IPXManagerClass *)&a3, (int)&v27, 0); /*0x7b16d0*/
-    v19 = this->Initialized; /*0x7b16d5*/
-    v20 = this->BoundSocket; /*0x7b16d8*/
+    int v19 = this->Initialized; /*0x7b16d5*/
+    int v20 = this->BoundSocket; /*0x7b16d8*/
     v21 = this + 4; /*0x7b16db*/
     if ( v20 < v19 /*0x7b16fe*/
       || (*((_BYTE *)v21 + 13) || !v19)
+  int v22; // ecx
       && (v22 = *((_DWORD *)v21 + 5), v22 > 0)
       && (*(unsigned __int8 (__thiscall **)(u_short *, int, _DWORD))(*(_DWORD *)v21 + 8))(v21, v19 + v22, 0) )
     {
-      v23 = *((_DWORD *)v21 + 4); /*0x7b1705*/
+      int v23 = *((_DWORD *)v21 + 4); /*0x7b1705*/
       v24 = (ObjectClass *)*((_DWORD *)v21 + 1); /*0x7b1708*/
       *((_DWORD *)v21 + 4) = v23 + 1; /*0x7b170e*/
       *(_DWORD *)&v24->__pad_0[4 * v23] = v18; /*0x7b1711*/
@@ -274,7 +260,7 @@ LABEL_6:
 int IPXInterfaceClass::GetLocalAddress(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall IPXInterfaceClass::_vt20(_DWORD *this, int a2)
+void IPXInterfaceClass::_vt20(int a2)
 {
   this->q3F2F8 = a2; /*0x7b1764*/
   return a2; /*0x7b176a*/
@@ -287,8 +273,6 @@ char * IPXInterfaceClass::bindSocket()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char *__thiscall sub_7B19C0(char *this)
 {
-  _BYTE *v2; // eax
-  int v3; // edx
 
   this->LocalNode = 0; /*0x7b19d2*/
   this->Initialized = 0; /*0x7b19d5*/
@@ -315,8 +299,8 @@ char *__thiscall sub_7B19C0(char *this)
   this->q3F070 = -1; /*0x7b1a1a*/
   *(_DWORD *)this = &vt_WinsockInterfaceClass; /*0x7b1a20*/
   this->q3F068 = 0; /*0x7b1a26*/
-  v2 = this + 102; /*0x7b1a2c*/
-  v3 = 128; /*0x7b1a2f*/
+  _BYTE * v2 = this + 102; /*0x7b1a2c*/
+  int v3 = 128; /*0x7b1a2f*/
   do /*0x7b1a6f*/
   {
     *(v2 - 1) = 0; /*0x7b1a34*/
@@ -348,7 +332,7 @@ char *__thiscall sub_7B19C0(char *this)
 int IPXInterfaceClass::AddRef()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall IPXInterfaceClass::_vt01(SOCKET *this)
+void IPXInterfaceClass::_vt01()
 {
   int result; // eax
 
@@ -371,16 +355,14 @@ int __thiscall IPXInterfaceClass::_vt01(SOCKET *this)
 char IPXInterfaceClass::Receive()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall IPXInterfaceClass::_vt07(SOCKET *this)
+void IPXInterfaceClass::_vt07()
 {
   u_int v2; // eax
-  int v4; // eax
   u_int v5; // eax
-
   v2 = (*(int (__thiscall **)(SOCKET *, int))(*this + 56))(this, -1); /*0x7b1bc9*/
   if ( WSAAsyncSelect(this->q3F06C, g_hWnd, v2, 3) != -1 ) /*0x7b1be3*/
   {
-    v4 = this->q3F070; /*0x7b1bfc*/
+    int v4 = this->q3F070; /*0x7b1bfc*/
     if ( v4 == -1 ) /*0x7b1c05*/
       return 1; /*0x7b1c05*/
     v5 = (*(int (__thiscall **)(SOCKET *, int))(*this + 56))(this, v4); /*0x7b1c0e*/
@@ -397,30 +379,26 @@ char __thiscall IPXInterfaceClass::_vt07(SOCKET *this)
 void IPXInterfaceClass::Disconnect()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall IPXInterfaceClass::_vt05(int this)
+void IPXInterfaceClass::_vt05(int this)
 {
-  int v2; // eax
-  int v3; // eax
-  int v4; // ecx
-  int v5; // eax
 
   while ( this->BoundSocket ) /*0x7b1ca6*/
   {
-    v2 = **(_DWORD **)(this + 12); /*0x7b1cae*/
+    int v2 = *this->LocalNode; /*0x7b1cae*/
     if ( *(_BYTE *)(v2 + 22) ) /*0x7b1cb0*/
     {
-      __3_YAXPAX_Z(**(void ***)(this + 12)); /*0x7b1cb6*/
+      __3_YAXPAX_Z(*this->LocalNode); /*0x7b1cb6*/
     }
     else
     {
       *(_BYTE *)(v2 + 21) = 0; /*0x7b1cc0*/
       --this->q3F05C; /*0x7b1cca*/
     }
-    v3 = this->BoundSocket; /*0x7b1cd0*/
+    int v3 = this->BoundSocket; /*0x7b1cd0*/
     if ( v3 > 0 ) /*0x7b1cd5*/
     {
-      v4 = v3 - 1; /*0x7b1cd7*/
-      v5 = 0; /*0x7b1cda*/
+      int v4 = v3 - 1; /*0x7b1cd7*/
+      int v5 = 0; /*0x7b1cda*/
       for ( this->BoundSocket = v4; /*0x7b1ce1*/
             v5 < this->BoundSocket;
             *(_DWORD *)(this->LocalNode + 4 * v5 - 4) = *(_DWORD *)(this->LocalNode + 4 * v5) )
@@ -441,8 +419,6 @@ unsigned char * IPXInterfaceClass::processPacket()
 _BYTE *__thiscall sub_7B2240(_DWORD *this)
 {
   _BYTE *result; // eax
-  int v2; // edi
-  int v3; // esi
 
   result = 0; /*0x7b2249*/
   if ( this->q3F05C == 128 ) /*0x7b2253*/
@@ -453,7 +429,8 @@ _BYTE *__thiscall sub_7B2240(_DWORD *this)
   }
   else
   {
-    v2 = 0; /*0x7b226c*/
+  int v3; // esi
+    int v2 = 0; /*0x7b226c*/
     while ( 1 ) /*0x7b226e*/
     {
       v3 = this->q3F050; /*0x7b226e*/
@@ -485,17 +462,12 @@ short IPXInterfaceClass::Connect(const void * a1, unsigned int a3, UDPInterfaceC
 __int16 __thiscall IPXInterfaceClass::Connect(int this, const void *a1, unsigned int a3, UDPInterfaceClass *aP3)
 {
   UDPInterfaceClass *v5; // ebx
-  int v6; // ecx
-  int v7; // eax
-  int v8; // eax
-  int v9; // edx
   int v10; // eax
   int v11; // ecx
   int v12; // eax
   int v13; // eax
   int v14; // edx
   UINT v15; // eax
-
   v5 = (UDPInterfaceClass *)AudioQueue::AllocBuffer((_DWORD *)this, (WinsockInterfaceClass *)aP3); /*0x7b24f4*/
   qmemcpy(&v5[4], a1, a3); /*0x7b2505*/
   v5[2].Socket = a3; /*0x7b250e*/
@@ -503,14 +475,15 @@ __int16 __thiscall IPXInterfaceClass::Connect(int this, const void *a1, unsigned
   v5[2].Initialized = 1; /*0x7b251d*/
   if ( (_BYTE)aP3 ) /*0x7b2523*/
   {
-    v6 = this->Count; /*0x7b2525*/
+    int v6 = this->Count; /*0x7b2525*/
     if ( this->tail_12 < v6 /*0x7b254d*/
       || (this->q045 || !v6)
+  int v7; // eax
       && (v7 = *(_DWORD *)(this + 76), v7 > 0)
       && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(this + 56) + 8))(this + 56, v6 + v7, 0) )
     {
-      v8 = this->tail_12; /*0x7b2554*/
-      v9 = *(_DWORD *)(this + 60); /*0x7b2557*/
+      int v8 = this->tail_12; /*0x7b2554*/
+      int v9 = *(_DWORD *)(this + 60); /*0x7b2557*/
       this->tail_12 = v8 + 1; /*0x7b255d*/
       *(_DWORD *)(v9 + 4 * v8) = v5; /*0x7b2560*/
     }
@@ -541,18 +514,15 @@ __int16 __thiscall IPXInterfaceClass::Connect(int this, const void *a1, unsigned
 char IPXInterfaceClass::getSocketState(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall IPXInterfaceClass::sub_7B2A20(void *this, int a2, _DWORD *a3)
+void IPXInterfaceClass::sub_7B2A20(int a2, _DWORD *a3)
 {
-  _DWORD *v4; // edi
-  int v5; // ecx
   int i; // eax
-  int v7; // eax
 
   if ( a2 ) /*0x7b2a2c*/
   {
     this->LocalNode = 0; /*0x7b2a32*/
     if ( a3 ) /*0x7b2a38*/
-      v4 = a3; /*0x7b2a4e*/
+      _DWORD * v4 = a3; /*0x7b2a4e*/
     else
       v4 = __2_YAPAXI_Z(4 * a2); /*0x7b2a4a*/
     this->LocalNode = 1; /*0x7b2a52*/
@@ -560,14 +530,14 @@ char __thiscall IPXInterfaceClass::sub_7B2A20(void *this, int a2, _DWORD *a3)
       return 0; /*0x7b2aca*/
     if ( this->Initialized ) /*0x7b2a58*/
     {
-      v5 = this->LocalNetwork; /*0x7b2a5f*/
+      AbstractClass *v5 = this->LocalNetwork; /*0x7b2a5f*/
       if ( a2 < v5 ) /*0x7b2a64*/
         v5 = a2; /*0x7b2a66*/
       for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Initialized + 4 * i - 4) ) /*0x7b2a6c*/
         ++i; /*0x7b2a71*/
       if ( this->IsAllocated ) /*0x7b2a7e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x7b2a89*/
+        __3_YAXPAX_Z(this->Initialized); /*0x7b2a89*/
         this->Initialized = 0; /*0x7b2a91*/
       }
     }
@@ -579,7 +549,7 @@ char __thiscall IPXInterfaceClass::sub_7B2A20(void *this, int a2, _DWORD *a3)
   {
     (*(void (__thiscall **)(void *))(this->LocalNode)(this); /*0x7b2aae*/
   }
-  v7 = this->LocalNetwork; /*0x7b2ab1*/
+  AbstractClass *v7 = this->LocalNetwork; /*0x7b2ab1*/
   if ( v7 < this->Initialized ) /*0x7b2ab9*/
     this->Initialized = v7; /*0x7b2abb*/
   return 1; /*0x7b2abe*/

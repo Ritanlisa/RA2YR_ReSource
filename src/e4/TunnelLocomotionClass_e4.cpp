@@ -7,24 +7,12 @@
 void TunnelLocomotionClass::ProcessFormationPosition(unsigned int * a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __stdcall TunnelLocomotionClass::ProcessFormationPosition(_DWORD *a1)
+void TunnelLocomotionClass::ProcessFormationPosition(_DWORD *a1)
 {
-  _DWORD *v2; // esi
-  int v3; // eax
-  int v4; // edx
-  double v5; // st7
   int TileIndexMapClass; // eax
-  int v7; // eax
-  int v8; // [esp+14h] [ebp-20h] BYREF
   __int16 v9[2]; // [esp+18h] [ebp-1Ch] BYREF
   __int16 v10[2]; // [esp+1Ch] [ebp-18h] BYREF
-  _BYTE v11[4]; // [esp+20h] [ebp-14h] BYREF
-  int v12; // [esp+24h] [ebp-10h] BYREF
-  int v13; // [esp+28h] [ebp-Ch] BYREF
-  int v14; // [esp+2Ch] [ebp-8h]
-  int v15; // [esp+30h] [ebp-4h]
   unsigned __int16 v16; // [esp+3Ah] [ebp+6h]
-
   switch ( a1[5] ) /*0x728c17*/
   {
     case 1: /*0x728c17*/
@@ -43,21 +31,24 @@ LABEL_11:
       a1[8] = DataGlobal_B0F918; /*0x728df9*/
       break; /*0x728df9*/
     case 4: /*0x728c17*/
-      v2 = a1 + 6; /*0x728c29*/
-      v3 = *(_DWORD *)(a1[2] + 156); /*0x728c31*/
-      v4 = *(_DWORD *)(a1[2] + 164); /*0x728c38*/
-      v14 = *(_DWORD *)(a1[2] + 160) - a1[7]; /*0x728c3b*/
-      v15 = v4; /*0x728c43*/
-      v13 = v3 - a1[6]; /*0x728c4b*/
-      v5 = Math::Sqrt((double)v13 * (double)v13 + (double)v14 * (double)v14); /*0x728c64*/
+      _DWORD * v2 = a1 + 6; /*0x728c29*/
+      int v3 = *(_DWORD *)(a1[2] + 156); /*0x728c31*/
+      int v4 = *(_DWORD *)(a1[2] + 164); /*0x728c38*/
+      int v14 = *(_DWORD *)(a1[2] + 160) - a1[7]; /*0x728c3b*/
+      int v15 = v4; /*0x728c43*/
+      int v13 = v3 - a1[6]; /*0x728c4b*/
+      double v5 = Math::Sqrt((double)v13 * (double)v13 + (double)v14 * (double)v14); /*0x728c64*/
       if ( (double)(int)Math::RoundToInt(v5) > DataGlobal_B0F8F8 ) /*0x728c84*/
       {
-        v8 = *(_DWORD *)(*(int (__thiscall **)(_DWORD, _BYTE *))(*(_DWORD *)a1[2] + 440))(a1[2], v11); /*0x728c9e*/
+  _BYTE v11[4]; // [esp+20h] [ebp-14h] BYREF
+        int v8 = *(_DWORD *)(*(int (__thiscall **)(_DWORD, _BYTE *))(*(_DWORD *)a1[2] + 440))(a1[2], v11); /*0x728c9e*/
         v9[0] = 0; /*0x728cc4*/
         v9[1] = 0; /*0x728cc9*/
         TileIndexMapClass = MapClass::GetTileIndex(&DataGlobal_87F7E8, (__int16 *)&v8, 0, 0); /*0x728cce*/
+  int v7; // eax
         v7 = *LayerClass::Pathfinding_Find( /*0x728cea*/
                 &DataGlobal_87F7E8,
+  int v12; // [esp+24h] [ebp-10h] BYREF
                 (int)&v12,
                 &v12,
                 (__int16 *)&v8,

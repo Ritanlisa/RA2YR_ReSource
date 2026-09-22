@@ -8,7 +8,7 @@ namespace gamemd {
 bool GameMode::IsValid(unsigned int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall GameMode_IsValid(_BYTE *this, unsigned int a2)
+void GameMode_IsValid(_BYTE *this, unsigned int a2)
 {
   return (!*(this + 63) || a2 != -2) && a2 < 4; /*0x5d5df2*/
 }
@@ -20,36 +20,10 @@ namespace gamemd {
 unsigned int GameMode::ReadFlagsFromINI(CCINIClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned int __thiscall GameMode::ReadFlagsFromINI(int *this, CCINIClass *aP1)
+unsigned int GameMode::ReadFlagsFromINI(CCINIClass *aP1)
 {
   char Bool_Overwrite; // al
-  int v4; // edx
-  int v5; // eax
-  char v6; // al
-  int v7; // ecx
-  int v8; // eax
-  char v9; // al
-  int v10; // ecx
-  int v11; // eax
-  unsigned int v12; // eax
-  unsigned int v13; // eax
   unsigned int result; // eax
-  unsigned int v15; // eax
-  char v16; // al
-  int v17; // ecx
-  int v18; // eax
-  char v19; // al
-  int v20; // ecx
-  int v21; // eax
-  char v22; // al
-  int v23; // ecx
-  int v24; // eax
-  char v25; // al
-  int v26; // ecx
-  int v27; // eax
-  unsigned int v28; // eax
-  char v29; // al
-  int v30; // ecx
 
   INIClass::ResetSection(aP1); /*0x6b8caa*/
   Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x6b8cc5*/
@@ -57,28 +31,31 @@ unsigned int __thiscall GameMode::ReadFlagsFromINI(int *this, CCINIClass *aP1)
                      *(unsigned __int8 **)&stru_830620[64428],
                      (CCINIClass *)&stru_830620[42764],
                      (*this & 0x4000) != 0);
-  v4 = *this; /*0x6b8cca*/
+  int v4 = *this; /*0x6b8cca*/
   BYTE1(v4) = BYTE1(*this) & 0xBF; /*0x6b8cd2*/
-  v5 = v4 | ((Bool_Overwrite & 1) << 14); /*0x6b8cd7*/
+  int v5 = v4 | ((Bool_Overwrite & 1) << 14); /*0x6b8cd7*/
   *this = v5; /*0x6b8cd9*/
+  char v6; // al
   v6 = INIClass::ReadBool_Overwrite( /*0x6b8cec*/
          (int)aP1,
          *(unsigned __int8 **)&stru_830620[64428],
          (CCINIClass *)&stru_830620[64540],
          BYTE1(v5) & 1);
-  v7 = *this; /*0x6b8cf1*/
+  int v7 = *this; /*0x6b8cf1*/
   BYTE1(v7) = BYTE1(*this) & 0xFE; /*0x6b8cf9*/
-  v8 = v7 | ((v6 & 1) << 8); /*0x6b8cfc*/
+  int v8 = v7 | ((v6 & 1) << 8); /*0x6b8cfc*/
   *this = v8; /*0x6b8d00*/
+  char v9; // al
   v9 = INIClass::ReadBool_Overwrite( /*0x6b8d14*/
          (int)aP1,
          *(unsigned __int8 **)&stru_830620[64428],
          (CCINIClass *)&stru_830620[64524],
          (v8 & 0x200) != 0);
-  v10 = *this; /*0x6b8d19*/
+  int v10 = *this; /*0x6b8d19*/
   BYTE1(v10) = BYTE1(*this) & 0xFD; /*0x6b8d21*/
-  v11 = v10 | ((v9 & 1) << 9); /*0x6b8d24*/
+  int v11 = v10 | ((v9 & 1) << 9); /*0x6b8d24*/
   *this = v11; /*0x6b8d28*/
+  unsigned int v12; // eax
   v12 = *this & 0xFFFDFFFF /*0x6b8d4f*/
       | ((INIClass::ReadBool_Overwrite(
             (int)aP1,
@@ -87,6 +64,7 @@ unsigned int __thiscall GameMode::ReadFlagsFromINI(int *this, CCINIClass *aP1)
             (v11 & 0x20000) != 0)
         & 1) << 17);
   *this = v12; /*0x6b8d53*/
+  unsigned int v13; // eax
   v13 = *this & 0xFFFEFFFF /*0x6b8d7a*/
       | ((INIClass::ReadBool_Overwrite(
             (int)aP1,
@@ -105,6 +83,7 @@ unsigned int __thiscall GameMode::ReadFlagsFromINI(int *this, CCINIClass *aP1)
   *this = result; /*0x6b8da7*/
   if ( !g_GameMode_Current || g_NetworkPlayerBuffer[5935] ) /*0x6b8dbb*/
   {
+  unsigned int v15; // eax
     v15 = *this & 0xFFFFFFBF /*0x6b8de5*/
         | ((INIClass::ReadBool_Overwrite(
               (int)aP1,
@@ -113,42 +92,47 @@ unsigned int __thiscall GameMode::ReadFlagsFromINI(int *this, CCINIClass *aP1)
               (result & 0x40) != 0)
           & 1) << 6);
     *this = v15; /*0x6b8de9*/
+  char v16; // al
     v16 = INIClass::ReadBool_Overwrite( /*0x6b8dfd*/
             (int)aP1,
             *(unsigned __int8 **)&stru_830620[64428],
             (CCINIClass *)&stru_830620[64572],
             (v15 & 0x80) != 0);
-    v17 = *this; /*0x6b8e02*/
+    int v17 = *this; /*0x6b8e02*/
     LOBYTE(v17) = *this & 0x7F; /*0x6b8e0a*/
-    v18 = v17 | ((v16 & 1) << 7); /*0x6b8e0d*/
+    int v18 = v17 | ((v16 & 1) << 7); /*0x6b8e0d*/
     *this = v18; /*0x6b8e11*/
+  char v19; // al
     v19 = INIClass::ReadBool_Overwrite( /*0x6b8e25*/
             (int)aP1,
             *(unsigned __int8 **)&stru_830620[64428],
             (CCINIClass *)&stru_830620[64552],
             (v18 & 0x8000) != 0);
-    v20 = *this; /*0x6b8e2a*/
+    int v20 = *this; /*0x6b8e2a*/
     BYTE1(v20) = BYTE1(*this) & 0x7F; /*0x6b8e32*/
-    v21 = v20 | ((v19 & 1) << 15); /*0x6b8e35*/
+    int v21 = v20 | ((v19 & 1) << 15); /*0x6b8e35*/
     *this = v21; /*0x6b8e39*/
+  char v22; // al
     v22 = INIClass::ReadBool_Overwrite( /*0x6b8e4d*/
             (int)aP1,
             *(unsigned __int8 **)&stru_830620[64428],
             (CCINIClass *)&stru_830620[64508],
             (v21 & 0x400) != 0);
-    v23 = *this; /*0x6b8e52*/
+    int v23 = *this; /*0x6b8e52*/
     BYTE1(v23) = BYTE1(*this) & 0xFB; /*0x6b8e5a*/
-    v24 = v23 | ((v22 & 1) << 10); /*0x6b8e5d*/
+    int v24 = v23 | ((v22 & 1) << 10); /*0x6b8e5d*/
     *this = v24; /*0x6b8e61*/
+  char v25; // al
     v25 = INIClass::ReadBool_Overwrite( /*0x6b8e75*/
             (int)aP1,
             *(unsigned __int8 **)&stru_830620[64428],
             (CCINIClass *)&stru_830620[51544],
             (v24 & 0x1000) != 0);
-    v26 = *this; /*0x6b8e7a*/
+    int v26 = *this; /*0x6b8e7a*/
     BYTE1(v26) = BYTE1(*this) & 0xEF; /*0x6b8e82*/
-    v27 = v26 | ((v25 & 1) << 12); /*0x6b8e85*/
+    int v27 = v26 | ((v25 & 1) << 12); /*0x6b8e85*/
     *this = v27; /*0x6b8e89*/
+  unsigned int v28; // eax
     v28 = *this & 0xFFFFFFDF /*0x6b8ead*/
         | (32
          * (INIClass::ReadBool_Overwrite(
@@ -158,12 +142,13 @@ unsigned int __thiscall GameMode::ReadFlagsFromINI(int *this, CCINIClass *aP1)
               (v27 & 0x20) != 0)
           & 1));
     *this = v28; /*0x6b8eb1*/
+  char v29; // al
     v29 = INIClass::ReadBool_Overwrite( /*0x6b8ec5*/
             (int)aP1,
             *(unsigned __int8 **)&stru_830620[64428],
             (CCINIClass *)&stru_830620[64492],
             (v28 & 0x800) != 0);
-    v30 = *this; /*0x6b8eca*/
+    int v30 = *this; /*0x6b8eca*/
     BYTE1(v30) = BYTE1(*this) & 0xF7; /*0x6b8ed2*/
     result = v30 | ((v29 & 1) << 11); /*0x6b8ed5*/
     *this = result; /*0x6b8ed7*/

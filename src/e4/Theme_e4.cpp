@@ -8,11 +8,9 @@
 char Theme::QueueSong(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall Theme::QueueSong(int this, IUnknown *aP1)
+void Theme::QueueSong(int this, IUnknown *aP1)
 {
   int IsSoundEnabled; // eax
-  int v4; // ecx
-  _DWORD *v5; // ecx
 
   LOBYTE(IsSoundEnabled) = g_NetworkPlayerBuffer[5688]; /*0x720b20*/
   if ( g_NetworkPlayerBuffer[5688] ) /*0x720b2a*/
@@ -25,18 +23,18 @@ char __thiscall Theme::QueueSong(int this, IUnknown *aP1)
       {
         LOBYTE(IsSoundEnabled) = (_BYTE)aP1; /*0x720b3e*/
         this->q002 = aP1; /*0x720b45*/
-        if ( aP1 != (IUnknown *)-1 && aP1 != (IUnknown *)-2 && aP1 != *(IUnknown **)(this + 4) ) /*0x720b52*/
+        if ( aP1 != (IUnknown *)-1 && aP1 != (IUnknown *)-2 && aP1 != this->q001 ) /*0x720b52*/
         {
           Debug::Log(); /*0x720b5a*/
-          v4 = this->audioSample; /*0x720b5f*/
+          int v4 = this->audioSample; /*0x720b5f*/
           if ( v4 ) /*0x720b67*/
           {
             if ( *(_BYTE *)(this + 17) && !AudioSample::IsBuffering(v4) ) /*0x720b70*/
-              Audio::Release(*(_DWORD **)(this + 44)); /*0x720b7c*/
-            LOBYTE(IsSoundEnabled) = Audio::IsSoundPlaying(*(_DWORD **)(this + 44)) != 0; /*0x720b8b*/
+              Audio::Release(this->audioSample); /*0x720b7c*/
+            LOBYTE(IsSoundEnabled) = Audio::IsSoundPlaying(this->audioSample) != 0; /*0x720b8b*/
             if ( (_BYTE)IsSoundEnabled == 1 ) /*0x720b90*/
             {
-              v5 = *(_DWORD **)(this + 44); /*0x720b92*/
+              _DWORD * v5 = this->audioSample; /*0x720b92*/
               if ( v5 ) /*0x720b97*/
                 LOBYTE(IsSoundEnabled) = ThemeClass::RequestBuffer(v5); /*0x720b99*/
               *(_BYTE *)(this + 17) = 1; /*0x720b9e*/
@@ -54,12 +52,9 @@ char __thiscall Theme::QueueSong(int this, IUnknown *aP1)
 char Theme::Stop(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall Theme::Stop(_DWORD *this, ObjectClass *aP1)
+void Theme::Stop(ObjectClass *aP1)
 {
   int IsSoundEnabled; // eax
-  int v4; // ecx
-  _DWORD *v5; // ecx
-  _DWORD *v6; // ecx
 
   LOBYTE(IsSoundEnabled) = g_NetworkPlayerBuffer[5688]; /*0x720ea0*/
   if ( g_NetworkPlayerBuffer[5688] ) /*0x720eaa*/
@@ -72,7 +67,7 @@ char __thiscall Theme::Stop(_DWORD *this, ObjectClass *aP1)
       {
         if ( !(_BYTE)aP1 ) /*0x720ed9*/
           goto LABEL_14; /*0x720ed9*/
-        v4 = this->audioSample; /*0x720edb*/
+        int v4 = this->audioSample; /*0x720edb*/
         if ( !v4 ) /*0x720ee0*/
           goto LABEL_14; /*0x720ee0*/
         if ( *((_BYTE *)this + 17) && !AudioSample::IsBuffering(v4) ) /*0x720ee9*/
@@ -80,7 +75,7 @@ char __thiscall Theme::Stop(_DWORD *this, ObjectClass *aP1)
         if ( Audio::IsSoundPlaying((_DWORD *)this->audioSample) != 0 ) /*0x720f04*/
         {
           Debug::Log(); /*0x720f14*/
-          v5 = (_DWORD *)this->audioSample; /*0x720f19*/
+          _DWORD * v5 = (_DWORD *)this->audioSample; /*0x720f19*/
           if ( v5 ) /*0x720f21*/
             LOBYTE(IsSoundEnabled) = ThemeClass::RequestBuffer(v5); /*0x720f23*/
           *((_BYTE *)this + 17) = 1; /*0x720f28*/
@@ -89,7 +84,7 @@ char __thiscall Theme::Stop(_DWORD *this, ObjectClass *aP1)
         {
 LABEL_14:
           Debug::Log(); /*0x720f37*/
-          v6 = (_DWORD *)this->audioSample; /*0x720f3c*/
+          _DWORD * v6 = (_DWORD *)this->audioSample; /*0x720f3c*/
           if ( v6 ) /*0x720f44*/
             Audio::Release(v6); /*0x720f46*/
         }
@@ -107,15 +102,15 @@ LABEL_14:
 bool Theme::IsPlaying()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall Theme_IsPlaying(int this)
+void Theme_IsPlaying(int this)
 {
   if ( !this->audioSample ) /*0x720fd3*/
     return 0; /*0x721002*/
   if ( *(_BYTE *)(this + 17) ) /*0x720fda*/
   {
     if ( !AudioSample::IsBuffering() ) /*0x720fe1*/
-      Audio::Release(*(_DWORD **)(this + 44)); /*0x720fed*/
+      Audio::Release(this->audioSample); /*0x720fed*/
   }
-  return Audio::IsSoundPlaying(*(_DWORD **)(this + 44)) != 0; /*0x720ffe*/
+  return Audio::IsSoundPlaying(this->audioSample) != 0; /*0x720ffe*/
 }
 }

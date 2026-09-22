@@ -24,44 +24,17 @@ namespace gamemd {
 char JumpjetLocomotionClass_Process(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall JumpjetLocomotionClass_Process(int a1)
+void JumpjetLocomotionClass_Process(int a1)
 {
-  int v1; // esi
-  int v2; // edi
-  int v3; // eax
-  int v4; // ecx
-  int v5; // ecx
-  int v6; // ecx
-  int *v7; // edx
-  int v8; // eax
-  int v9; // ecx
-  int v10; // edx
-  int v11; // ecx
-  _DWORD *v12; // ecx
-  _WORD *v13; // ebp
-  _WORD *v14; // eax
-  _DWORD *v15; // ecx
-  _DWORD *v17; // ecx
-  _BYTE *v18; // ecx
   void **v19; // eax
-  int *v20; // ecx
-  int v21; // ecx
-  _BYTE *v22; // eax
-  int v23; // eax
-  int v24; // ecx
-  _DWORD *v25; // eax
-  _BYTE *v26; // ecx
-  _DWORD *v27; // ecx
-  int v28; // eax
   char v29; // [esp-4h] [ebp-24h]
   int v30; // [esp+10h] [ebp-10h] BYREF
   int v31; // [esp+14h] [ebp-Ch]
   int v32; // [esp+18h] [ebp-8h]
-
-  v1 = a1; /*0x4b0506*/
-  v2 = a1 - 4; /*0x4b0518*/
-  v3 = *(unsigned __int8 *)((*(int (__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 8) + 444))(*(_DWORD *)(a1 + 8)) + 284); /*0x4b0521*/
-  v4 = *(_DWORD *)(v2 + 28); /*0x4b0523*/
+  int v1 = a1; /*0x4b0506*/
+  int v2 = a1 - 4; /*0x4b0518*/
+  int v3 = *(unsigned __int8 *)((*(int (__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 8) + 444))(*(_DWORD *)(a1 + 8)) + 284); /*0x4b0521*/
+  int v4 = *(_DWORD *)(v2 + 28); /*0x4b0523*/
   if ( v3 != v4 ) /*0x4b0528*/
   {
     *(_DWORD *)(v2 + 32) = v4; /*0x4b052a*/
@@ -74,11 +47,15 @@ char __stdcall JumpjetLocomotionClass_Process(int a1)
   }
   if ( *(_DWORD *)(v1 + 84) == -1 || !*(_BYTE *)(v1 + 95) ) /*0x4b056a*/
   {
-    v11 = *(_DWORD *)(*(_DWORD *)(v1 + 8) + 1444); /*0x4b066f*/
+  _DWORD *v15; // ecx
+    int v11 = *(_DWORD *)(*(_DWORD *)(v1 + 8) + 1444); /*0x4b066f*/
     if ( v11 /*0x4b06ad*/
       && (*(int (__thiscall **)(int))(*(_DWORD *)v11 + 44))(v11) == 11
+  _DWORD *v12; // ecx
       && (v12 = *(_DWORD **)(v1 + 8),
+  _WORD *v13; // ebp
           v13 = (_WORD *)(v12[361] + 36),
+  _WORD *v14; // eax
           v14 = (_WORD *)(*(int (__thiscall **)(_DWORD *, int *))(*v12 + 440))(v12, &a1),
           *v14 == *v13)
       && v14[1] == v13[1] )
@@ -89,7 +66,7 @@ char __stdcall JumpjetLocomotionClass_Process(int a1)
     }
     else
     {
-      v17 = *(_DWORD **)(v1 + 8); /*0x4b06d5*/
+      _DWORD * v17 = *(_DWORD **)(v1 + 8); /*0x4b06d5*/
       if ( v17[43] != 5 /*0x4b0732*/
         || *(_BYTE *)(v1 + 95)
         || *(_DWORD *)(v1 + 48) == g_DDraw_ClipRect && *(_QWORD *)(v1 + 52) == DataGlobal_8A0794
@@ -106,7 +83,7 @@ char __stdcall JumpjetLocomotionClass_Process(int a1)
         {
           *(_BYTE *)(v1 + 94) = 0; /*0x4b089b*/
           (*(void (__thiscall **)(_DWORD, _DWORD))(**(_DWORD **)(v1 + 8) + 396))(*(_DWORD *)(v1 + 8), 0); /*0x4b08a4*/
-          v22 = *(_BYTE **)(v1 + 8); /*0x4b08aa*/
+          _BYTE * v22 = *(_BYTE **)(v1 + 8); /*0x4b08aa*/
           if ( !v22[144] || v22[129] || v22[141] ) /*0x4b08bd*/
             return 0; /*0x4b08ce*/
         }
@@ -118,7 +95,7 @@ char __stdcall JumpjetLocomotionClass_Process(int a1)
         }
         if ( !(*(unsigned __int8 (__stdcall **)(int))(*(_DWORD *)v1 + 16))(v1) ) /*0x4b0906*/
         {
-          v23 = *(_DWORD *)(v1 + 8); /*0x4b0911*/
+          int v23 = *(_DWORD *)(v1 + 8); /*0x4b0911*/
           if ( *(_DWORD *)(v23 + 1504) == -1 ) /*0x4b091b*/
           {
             if ( *(_BYTE *)(v23 + 973) ) /*0x4b0921*/
@@ -134,9 +111,10 @@ char __stdcall JumpjetLocomotionClass_Process(int a1)
             }
             else
             {
-              v24 = *(_DWORD *)(v23 + 1444); /*0x4b0971*/
+              int v24 = *(_DWORD *)(v23 + 1444); /*0x4b0971*/
               if ( v24 ) /*0x4b0979*/
               {
+  _DWORD *v25; // eax
                 v25 = (_DWORD *)(*(int (__thiscall **)(int, int *, _DWORD))(*(_DWORD *)v24 + 76))( /*0x4b0987*/
                                   v24,
                                   &v30,
@@ -147,7 +125,7 @@ char __stdcall JumpjetLocomotionClass_Process(int a1)
             goto LABEL_39; /*0x4b096c*/
           }
         }
-        v26 = *(_BYTE **)(v1 + 8); /*0x4b09ab*/
+        _BYTE * v26 = *(_BYTE **)(v1 + 8); /*0x4b09ab*/
         if ( v26[981] /*0x4b09e2*/
           && (*(int (__thiscall **)(_BYTE *))(*(_DWORD *)v26 + 388))(v26) != 7
           && (*(unsigned __int8 (__stdcall **)(int))(*(_DWORD *)v1 + 16))(v1)
@@ -161,7 +139,7 @@ char __stdcall JumpjetLocomotionClass_Process(int a1)
             *(_QWORD *)(v2 + 68) = DataGlobal_8A0794; /*0x4b0a1a*/
             *(_BYTE *)(v2 + 99) = 0; /*0x4b0a26*/
           }
-          v27 = *(_DWORD **)(v2 + 12); /*0x4b0a29*/
+          _DWORD * v27 = *(_DWORD **)(v2 + 12); /*0x4b0a29*/
           if ( v27[358] ) /*0x4b0a2c*/
           {
             FootClass::ClearPathIndex(v27); /*0x4b0a44*/
@@ -207,22 +185,23 @@ LABEL_27:
     && ((*(int (__thiscall **)(_DWORD))(**(_DWORD **)(v1 + 8) + 44))(*(_DWORD *)(v1 + 8)) != 1
      || !*(_BYTE *)(*(_DWORD *)(v1 + 8) + 1745)) )
   {
-    v5 = *(_DWORD *)(v1 + 8); /*0x4b05d0*/
+    int v5 = *(_DWORD *)(v1 + 8); /*0x4b05d0*/
     LOBYTE(a1) = 0; /*0x4b05d3*/
     if ( (*(int (__thiscall **)(int))(*(_DWORD *)v5 + 44))(v5) == 1 ) /*0x4b05df*/
     {
-      v6 = *(_DWORD *)(*(_DWORD *)(v1 + 8) + 1444); /*0x4b05e4*/
+      int v6 = *(_DWORD *)(*(_DWORD *)(v1 + 8) + 1444); /*0x4b05e4*/
       if ( v6 ) /*0x4b05ec*/
       {
         if ( (*(int (__thiscall **)(int))(*(_DWORD *)v6 + 44))(v6) == 15 ) /*0x4b05f6*/
         {
+  int *v7; // edx
           v7 = (int *)(*(int (__thiscall **)(_DWORD, int *, _DWORD))(**(_DWORD **)(*(_DWORD *)(v1 + 8) + 1444) + 76))( /*0x4b060f*/
                         *(_DWORD *)(*(_DWORD *)(v1 + 8) + 1444),
                         &v30,
                         *(_DWORD *)(v1 + 8));
-          v8 = *v7; /*0x4b0611*/
-          v9 = v7[1]; /*0x4b0615*/
-          v10 = v7[2]; /*0x4b0618*/
+          int v8 = *v7; /*0x4b0611*/
+          int v9 = v7[1]; /*0x4b0615*/
+          int v10 = v7[2]; /*0x4b0618*/
           if ( v8 != *(_DWORD *)(v1 + 48) || v9 != *(_DWORD *)(v1 + 52) || v10 != *(_DWORD *)(v1 + 56) ) /*0x4b0625*/
             (*(void (__stdcall **)(int, int, int, int))(*(_DWORD *)v1 + 68))(v1, v8, v9, v10); /*0x4b0638*/
         }
@@ -234,7 +213,7 @@ LABEL_27:
     v29 = 1; /*0x4b0665*/
 LABEL_87:
     JumpjetLocomotion::ProcessCollision(v1 - 4, v29); /*0x4b0aa8*/
-    v28 = *(_DWORD *)(v1 + 8); /*0x4b0aaf*/
+    int v28 = *(_DWORD *)(v1 + 8); /*0x4b0aaf*/
     if ( !v28 || !*(_BYTE *)(v28 + 144) ) /*0x4b0ab6*/
       return 0; /*0x4b0ac5*/
   }
@@ -243,7 +222,7 @@ LABEL_39:
   {
     if ( !((int)g_CurrentFrame % 10) ) /*0x4b07a8*/
     {
-      v18 = *(_BYTE **)(v1 + 8); /*0x4b07ae*/
+      _BYTE * v18 = *(_BYTE **)(v1 + 8); /*0x4b07ae*/
       if ( !v18[140] && *(_DWORD *)((*(int (__thiscall **)(_BYTE *))(*(_DWORD *)v18 + 444))(v18) + 236) == 2 ) /*0x4b07c8*/
       {
         if ( g_RulesClass_Instance->InfantryBrute ) /*0x4b07cf*/
@@ -251,7 +230,7 @@ LABEL_39:
           v19 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x4b07dc*/
           if ( v19 ) /*0x4b07e6*/
           {
-            v20 = (int *)(*(_DWORD *)(v1 + 8) + 156); /*0x4b07ec*/
+            int * v20 = (int *)(*(_DWORD *)(v1 + 8) + 156); /*0x4b07ec*/
             v30 = *v20; /*0x4b07fd*/
             v31 = v20[1]; /*0x4b0804*/
             v32 = v20[2]; /*0x4b0810*/
@@ -266,7 +245,7 @@ LABEL_39:
     && *(_QWORD *)(v1 + 56) == __PAIR64__(g_DDraw_ClipRect, HIDWORD(DataGlobal_8A0794))
     && *(_QWORD *)(v1 + 64) == DataGlobal_8A0794 )
   {
-    v21 = *(_DWORD *)(v1 + 8); /*0x4b085d*/
+    int v21 = *(_DWORD *)(v1 + 8); /*0x4b085d*/
     if ( *(_DWORD *)(v21 + 1504) == -1 && *(double *)(v21 + 1400) > 0.0 ) /*0x4b087a*/
       (*(void (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)v21 + 1348))(v21, 0, 0); /*0x4b0880*/
   }
@@ -280,15 +259,13 @@ namespace gamemd {
 char E4Recv_4B69E0::sub_4B69E0(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_4B69E0(int *this, int a2)
+void sub_4B69E0(int *this, int a2)
 {
-  int v2; // edx
   int v3; // esi
   int v4; // eax
-
   if ( *(this + 4) >= 5 ) /*0x4b69f1*/
     return 0; /*0x4b69f1*/
-  v2 = *((_DWORD *)g_ScenarioClass_Instance + 3385); /*0x4b6a01*/
+  int v2 = *((_DWORD *)g_ScenarioClass_Instance + 3385); /*0x4b6a01*/
   if ( v2 ) /*0x4b6a09*/
   {
     v4 = 0; /*0x4b6a10*/
@@ -329,24 +306,16 @@ namespace gamemd {
 char E4Recv_4B6AB0::sub_4B6AB0(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_4B6AB0(int *this, int a2)
+void sub_4B6AB0(int *this, int a2)
 {
-  int v3; // eax
-  int v4; // edx
-  int v5; // eax
-  int v6; // ecx
-  int v7; // eax
-  int v8; // ecx
-  int *v9; // eax
-  int v10; // eax
 
-  v3 = *(this + 4); /*0x4b6ab4*/
+  int v3 = *(this + 4); /*0x4b6ab4*/
   if ( v3 <= 0 || a2 < 0 || a2 >= v3 ) /*0x4b6acd*/
     return 0; /*0x4b6b72*/
-  v4 = *((_DWORD *)g_ScenarioClass_Instance + 3385); /*0x4b6adb*/
+  int v4 = *((_DWORD *)g_ScenarioClass_Instance + 3385); /*0x4b6adb*/
   if ( v4 ) /*0x4b6ae3*/
   {
-    v5 = 0; /*0x4b6ae5*/
+    int v5 = 0; /*0x4b6ae5*/
     if ( v4 > 0 ) /*0x4b6ae9*/
     {
       while ( *(_DWORD *)(*((_DWORD *)g_ScenarioClass_Instance + 3382) + 4 * v5) != *(this + a2 + 5) /*0x4b6b05*/
@@ -360,13 +329,13 @@ char __thiscall sub_4B6AB0(int *this, int a2)
     }
   }
 LABEL_12:
-  v6 = *(this + 10) - (*(int (__thiscall **)(_DWORD))(*(_DWORD *)*(this + a2 + 5) + 172))(*(this + a2 + 5)); /*0x4b6b24*/
-  v7 = *(this + 4) - 1; /*0x4b6b3c*/
+  int v6 = *(this + 10) - (*(int (__thiscall **)(_DWORD))(*(_DWORD *)*(this + a2 + 5) + 172))(*(this + a2 + 5)); /*0x4b6b24*/
+  int v7 = *(this + 4) - 1; /*0x4b6b3c*/
   *(this + 10) = v6; /*0x4b6b3d*/
-  v8 = a2; /*0x4b6b42*/
+  int v8 = a2; /*0x4b6b42*/
   if ( a2 < v7 ) /*0x4b6b44*/
   {
-    v9 = this + a2 + 5; /*0x4b6b46*/
+    int * v9 = this + a2 + 5; /*0x4b6b46*/
     do /*0x4b6b57*/
     {
       ++v8; /*0x4b6b4b*/
@@ -375,7 +344,7 @@ LABEL_12:
     }
     while ( v8 < *(this + 4) - 1 ); /*0x4b6b57*/
   }
-  v10 = *(this + 4) - 1; /*0x4b6b5d*/
+  int v10 = *(this + 4) - 1; /*0x4b6b5d*/
   *(this + 4) = v10; /*0x4b6b5f*/
   *(this + v10 + 5) = 0; /*0x4b6b62*/
   return 1; /*0x4b6b6a*/
@@ -388,12 +357,11 @@ namespace gamemd {
 int E4Recv_4B6BF0::sub_4B6BF0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_4B6BF0(void *this)
+void sub_4B6BF0(void *this)
 {
-  int v1; // edx
   int result; // eax
 
-  v1 = *((_DWORD *)g_ScenarioClass_Instance + 3385); /*0x4b6bf9*/
+  int v1 = *((_DWORD *)g_ScenarioClass_Instance + 3385); /*0x4b6bf9*/
   if ( !v1 ) /*0x4b6c01*/
     return -1; /*0x4b6c01*/
   result = 0; /*0x4b6c03*/
@@ -419,9 +387,7 @@ char __fastcall DisplayBuildingInfoPanel(CampaignScore **a1, _DWORD *a2, wchar_t
 {
   CampaignScore *v6; // eax
   CampaignScore *v7; // edi
-  int v8; // edi
   CampaignScore *v9; // ebx
-  int v10; // eax
   IUnknown *v11; // eax
   AbstractClass *v12; // eax
   char result; // al
@@ -429,30 +395,15 @@ char __fastcall DisplayBuildingInfoPanel(CampaignScore **a1, _DWORD *a2, wchar_t
   int AudioEntry; // eax
   int *p_nextArrayIndex; // ecx
   CampaignScore *BuildingAnimByName; // esi
-  _DWORD *v18; // eax
-  _DWORD *v19; // eax
-  _DWORD *v20; // eax
-  _DWORD *v21; // eax
-  int v22; // [esp-10h] [ebp-174h]
-  int v23; // [esp-Ch] [ebp-170h]
   ObjectClass *v24; // [esp-Ch] [ebp-170h]
-  int v25; // [esp-8h] [ebp-16Ch]
   ObjectClass *v26; // [esp-8h] [ebp-16Ch]
-  int v27; // [esp-8h] [ebp-16Ch]
   ObjectClass *v28; // [esp-4h] [ebp-168h]
-  int v29; // [esp-4h] [ebp-168h]
-  int v30; // [esp-4h] [ebp-168h]
   CampaignScore *v31; // [esp+0h] [ebp-164h]
   CampaignScore *v32; // [esp+0h] [ebp-164h]
   CampaignScore *v33; // [esp+0h] [ebp-164h]
   CampaignScore *v34; // [esp+0h] [ebp-164h]
   ObjectClass *v35; // [esp+0h] [ebp-164h]
-  int v36; // [esp+0h] [ebp-164h]
-  int v37; // [esp+0h] [ebp-164h]
   CampaignScore *v38; // [esp+4h] [ebp-160h]
-  int v39; // [esp+4h] [ebp-160h]
-  int v40; // [esp+8h] [ebp-15Ch]
-  int v41; // [esp+10h] [ebp-154h] BYREF
   ObjectClass aP5; // [esp+14h] [ebp-150h] BYREF
   wchar_t v43; // [esp+D8h] [ebp-8Ch] BYREF
   size_t v44[14]; // [esp+DCh] [ebp-88h] BYREF
@@ -465,11 +416,12 @@ char __fastcall DisplayBuildingInfoPanel(CampaignScore **a1, _DWORD *a2, wchar_t
   aP5.objectTypeFlags = 190; /*0x4b98be*/
   aP5.owningHouseIndex = 80; /*0x4b98c2*/
   v7 = (CampaignScore *)((int (__thiscall *)(CampaignScore **))v6[3].CampaignScore_field_0x14)(a1); /*0x4b98d2*/
+  int v8; // edi
   v8 = ((*(int (__thiscall **)(_DWORD))(**(_DWORD **)&stru_87C374[44952] + 128))(*(_DWORD *)&stru_87C374[44952]) /*0x4b98e7*/
       - (int)v7)
      / 2;
   v9 = (CampaignScore *)((int (__thiscall *)(CampaignScore **))(*a1)[3].CampaignScore_field_0x10)(a1); /*0x4b98f2*/
-  v10 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)&stru_87C374[44952] + 124))(*(_DWORD *)&stru_87C374[44952]); /*0x4b98f6*/
+  int v10 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)&stru_87C374[44952] + 124))(*(_DWORD *)&stru_87C374[44952]); /*0x4b98f6*/
   aP5.nextArrayIndex = 300; /*0x4b9903*/
   *(_DWORD *)&aP5[4] = (v10 - (int)v9) / 2; /*0x4b9909*/
   aP5.abstractFlags = 450; /*0x4b9912*/
@@ -483,7 +435,7 @@ char __fastcall DisplayBuildingInfoPanel(CampaignScore **a1, _DWORD *a2, wchar_t
   aP5.nextObject = *(void **)&v12->__pad_0[4]; /*0x4b994b*/
   aP5.attachedTag = *(void **)&v12->__pad_0[8]; /*0x4b9958*/
   aP5.attachedBomb = *(void **)&v12->__pad_0[12]; /*0x4b9963*/
-  v41 = 0; /*0x4b9967*/
+  int v41 = 0; /*0x4b9967*/
   *(_DWORD *)aP5[0] = 0; /*0x4b996b*/
   BuildingClass::GetSHPFrame(a2, 0); /*0x4b996f*/
   result = BlitterDrawSHP(*(IUnknown **)&stru_87C374[44952]); /*0x4b998e*/
@@ -527,6 +479,7 @@ char __fastcall DisplayBuildingInfoPanel(CampaignScore **a1, _DWORD *a2, wchar_t
     BuildingAnimByName = (CampaignScore *)FindBuildingAnimByName((AbstractClass *)p_nextArrayIndex, 1); /*0x4b9a87*/
     *(_DWORD *)aP5[0] = *(_DWORD *)&aP5[8] + 300; /*0x4b9a97*/
     v41 = *(_DWORD *)&aP5[4] + 450; /*0x4b9aa8*/
+  _DWORD *v18; // eax
     v18 = (_DWORD *)(*(int (__thiscall **)(_DWORD, int *, int *, CampaignScore *, _DWORD))(**(_DWORD **)&stru_87C374[44952] /*0x4b9ab3*/
                                                                                          + 120))(
                       *(_DWORD *)&stru_87C374[44952],
@@ -542,9 +495,11 @@ char __fastcall DisplayBuildingInfoPanel(CampaignScore **a1, _DWORD *a2, wchar_t
       70,
       v35,
       (int)v38,
+  int v40; // [esp+8h] [ebp-15Ch]
       v40);
     *(_DWORD *)&aP5[12] = aP5.abstractFlags + 315; /*0x4b9ae0*/
     *(_DWORD *)&aP5[8] = aP5.uniqueId + 450; /*0x4b9af8*/
+  _DWORD *v19; // eax
     v19 = (_DWORD *)(*(int (__thiscall **)(_DWORD, int *, char *, CampaignScore *, _DWORD, int))(**(_DWORD **)&stru_87C374[44952] /*0x4b9b03*/
                                                                                                + 120))(
                       *(_DWORD *)&stru_87C374[44952],
@@ -558,12 +513,16 @@ char __fastcall DisplayBuildingInfoPanel(CampaignScore **a1, _DWORD *a2, wchar_t
       (size_t)&aP5.visibilityFlags,
       *(IUnknown **)&stru_87C374[44952],
       v19,
+  int v25; // [esp-8h] [ebp-16Ch]
       v25,
       v28,
+  int v36; // [esp+0h] [ebp-164h]
       v36,
+  int v39; // [esp+4h] [ebp-160h]
       v39);
     *(_DWORD *)&aP5[8] = aP5.uniqueId + 330; /*0x4b9b30*/
     *(_DWORD *)&aP5[4] = *(_DWORD *)&aP5[12] + 450; /*0x4b9b48*/
+  _DWORD *v20; // eax
     v20 = (_DWORD *)(*(int (__thiscall **)(_DWORD, int *, char *, CampaignScore *, _DWORD, int))(**(_DWORD **)&stru_87C374[44952] /*0x4b9b53*/
                                                                                                + 120))(
                       *(_DWORD *)&stru_87C374[44952],
@@ -577,12 +536,16 @@ char __fastcall DisplayBuildingInfoPanel(CampaignScore **a1, _DWORD *a2, wchar_t
       (size_t)v44,
       *(IUnknown **)&stru_87C374[44952],
       v20,
+  int v23; // [esp-Ch] [ebp-170h]
       v23,
       v26,
+  int v29; // [esp-4h] [ebp-168h]
       v29,
+  int v37; // [esp+0h] [ebp-164h]
       v37);
     *(_DWORD *)&aP5[4] = *(_DWORD *)&aP5[12] + 345; /*0x4b9b87*/
     *(_DWORD *)aP5[0] = *(_DWORD *)&aP5[8] + 450; /*0x4b9b98*/
+  _DWORD *v21; // eax
     v21 = (_DWORD *)(*(int (__thiscall **)(_DWORD, int *, ObjectClass *, CampaignScore *, _DWORD, int))(**(_DWORD **)&stru_87C374[44952] + 120))( /*0x4b9ba3*/
                       *(_DWORD *)&stru_87C374[44952],
                       &aP5.ambientSoundController[1],
@@ -595,9 +558,12 @@ char __fastcall DisplayBuildingInfoPanel(CampaignScore **a1, _DWORD *a2, wchar_t
                               (size_t)&aP5.ambientSoundController[4],
                               *(IUnknown **)&stru_87C374[44952],
                               v21,
+  int v22; // [esp-10h] [ebp-174h]
                               v22,
                               v24,
+  int v27; // [esp-8h] [ebp-16Ch]
                               v27,
+  int v30; // [esp-4h] [ebp-168h]
                               v30);
   }
   return result; /*0x4b9bbf*/
@@ -612,18 +578,12 @@ int Color_BlendPack(unsigned char * a1, int a2, int a3, int a4)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall Color_BlendPack(unsigned __int8 *a1, int a2, int a3, int a4)
 {
-  int v4; // esi
-  int v5; // edx
-  int v6; // eax
-  int v7; // ecx
-  int v8; // edi
-  bool v9; // cc
 
-  v4 = a2 + *a1; /*0x4be9dc*/
-  v5 = a3 + a1[1]; /*0x4be9ec*/
-  v6 = a4 + a1[2]; /*0x4be9ee*/
-  v7 = 0; /*0x4be9f0*/
-  v8 = 0; /*0x4be9f2*/
+  int v4 = a2 + *a1; /*0x4be9dc*/
+  int v5 = a3 + a1[1]; /*0x4be9ec*/
+  int v6 = a4 + a1[2]; /*0x4be9ee*/
+  int v7 = 0; /*0x4be9f0*/
+  int v8 = 0; /*0x4be9f2*/
   if ( v4 >= 255 ) /*0x4be9fa*/
   {
     v8 = 1; /*0x4be9fc*/
@@ -647,7 +607,7 @@ int __fastcall Color_BlendPack(unsigned __int8 *a1, int a2, int a3, int a4)
     v4 += v7; /*0x4bea3e*/
   if ( v5 < 255 ) /*0x4bea46*/
     v5 += v7; /*0x4bea48*/
-  v9 = v6 <= 255; /*0x4bea4a*/
+  bool v9 = v6 <= 255; /*0x4bea4a*/
   if ( v6 < 255 ) /*0x4bea4f*/
   {
     v6 += v7; /*0x4bea51*/

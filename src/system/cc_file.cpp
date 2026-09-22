@@ -28,7 +28,7 @@ REVERSE(0x473c50, "CCFileClass::Open: IDA verified", "None")
 bool CCFileClass::Open(const char* pFileName)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_473C50(_DWORD *this, int a2)
+void sub_473C50(_DWORD *this, int a2)
 {
   if ( this->q068 == 1 )
     return 1;
@@ -144,11 +144,10 @@ REVERSE(0x473ce0, "CCFileClass::Reset: IDA verified", "None")
 void CCFileClass::Reset()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall CCFileClass_Reset(_DWORD *this)
+void CCFileClass_Reset(_DWORD *this)
 {
-  _DWORD *v2; // ecx
 
-  v2 = this + 22;
+  _DWORD * v2 = this + 22;
   if ( v2 )
     Buffer::Init(v2, 0, 0);
   this->q064 = 0;

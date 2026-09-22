@@ -6,24 +6,20 @@
 char InfantryTypeVector::Add(InfantryTypeClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall InfantryTypeVector::Add(_DWORD *this, InfantryTypeClass *aP1)
+void InfantryTypeVector::Add(InfantryTypeClass *aP1)
 {
-  int v3; // ecx
-  int v4; // eax
-  int v6; // eax
-  int v7; // edx
 
-  v3 = this->q008; /*0x512f23*/
+  int v3 = this->q008; /*0x512f23*/
   if ( this->q010 >= v3 ) /*0x512f2b*/
   {
     if ( !*((_BYTE *)this + 13) && v3 ) /*0x512f36*/
       return 0; /*0x512f36*/
-    v4 = this->q014; /*0x512f38*/
+    int v4 = this->q014; /*0x512f38*/
     if ( v4 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*this + 8))(this, v3 + v4, 0) ) /*0x512f48*/
       return 0; /*0x512f4f*/
   }
-  v6 = this->q010; /*0x512f55*/
-  v7 = this->q004; /*0x512f58*/
+  int v6 = this->q010; /*0x512f55*/
+  int v7 = this->q004; /*0x512f58*/
   this->q010 = v6 + 1; /*0x512f5e*/
   *(_DWORD *)(v7 + 4 * v6) = *(_DWORD *)aP1->vtable0; /*0x512f68*/
   return 1; /*0x512f51*/

@@ -12,36 +12,31 @@ namespace gamemd {
 char E4Recv_501750::sub_501750(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_501750(_DWORD *this, int a2)
+void sub_501750(_DWORD *this, int a2)
 {
   char result; // al
-  int v4; // eax
-  char v5; // bl
-  int v6; // [esp+5Ch] [ebp-28h] BYREF
-  int v7; // [esp+60h] [ebp-24h] BYREF
-  int v8; // [esp+64h] [ebp-20h] BYREF
-  int v9; // [esp+68h] [ebp-1Ch] BYREF
-  _DWORD v10[2]; // [esp+6Ch] [ebp-18h] BYREF
-  _BYTE v11[16]; // [esp+74h] [ebp-10h] BYREF
-  char v12; // [esp+88h] [ebp+4h]
 
   result = g_WTFMode; /*0x501750*/
   if ( g_WTFMode ) /*0x50175f*/
   {
-    v4 = *(this + 5353); /*0x501765*/
-    v5 = v4 < *(this + 5354); /*0x501777*/
+    int v4 = *(this + 5353); /*0x501765*/
+    char v5 = v4 < *(this + 5354); /*0x501777*/
     *(this + 5353) = a2 + v4; /*0x50177e*/
     House_Notify(); /*0x501784*/
     result = *(this + 5353) < *(this + 5354); /*0x50179d*/
-    v12 = result; /*0x5017a2*/
+    char v12 = result; /*0x5017a2*/
     if ( !g_IKnowWhatImDoing && v5 != result ) /*0x5017ae*/
     {
+  int v9; // [esp+68h] [ebp-1Ch] BYREF
       (*(void (__stdcall **)(_DWORD *, void *, int *))*this)(this, &unk_7F7CD0, &v9); /*0x5017c1*/
+  int v8; // [esp+64h] [ebp-20h] BYREF
       (*(void (__stdcall **)(int, int *))(*(_DWORD *)v9 + 12))(v9, &v8); /*0x5017cf*/
+  int v6; // [esp+5Ch] [ebp-28h] BYREF
       if ( (*(int (__stdcall **)(int, int, int *, _DWORD))(*(_DWORD *)v8 + 12))(v8, 1, &v6, 0) >= 0 ) /*0x5017e7*/
       {
         while ( 1 ) /*0x5017f7*/
         {
+  _BYTE v11[16]; // [esp+74h] [ebp-10h] BYREF
           (*(void (__stdcall **)(int, _BYTE *))(*(_DWORD *)v6 + 12))(v6, v11); /*0x5017f9*/
           if ( !memcmp(v11, &dword_7E9550, 0x10u) ) /*0x501810*/
             break; /*0x501810*/
@@ -49,7 +44,9 @@ char __thiscall sub_501750(_DWORD *this, int a2)
           if ( (*(int (__stdcall **)(int, int, int *, _DWORD))(*(_DWORD *)v8 + 12))(v8, 1, &v6, 0) < 0 ) /*0x50182f*/
             goto LABEL_14; /*0x50182f*/
         }
+  int v7; // [esp+60h] [ebp-24h] BYREF
         (*(void (__stdcall **)(int, int *))(*(_DWORD *)v6 + 28))(v6, &v7); /*0x50183b*/
+  _DWORD v10[2]; // [esp+6Ch] [ebp-18h] BYREF
         while ( (*(int (__stdcall **)(int, int, _DWORD *, _DWORD))(*(_DWORD *)v7 + 12))(v7, 1, v10, 0) >= 0 ) /*0x501853*/
         {
           if ( v12 ) /*0x50185f*/
@@ -78,45 +75,36 @@ int UpdateHouseClassAnger(IUnknown * aP0, HouseClass * aP1, int a3, int a4)
 int __fastcall UpdateHouseClassAnger(IUnknown *aP0, HouseClass *aP1, int a3, int a4)
 {
   int result; // eax
-  int v5; // ebx
-  int v6; // edx
-  int v7; // ecx
-  int v8; // ebp
-  int v9; // ecx
-  int *v10; // edi
-  int v11; // edx
-  int v12; // ecx
-  int v13; // [esp+14h] [ebp+4h]
-  int v14; // [esp+18h] [ebp+8h]
 
   result = (int)aP0; /*0x504790*/
-  v5 = 0; /*0x504793*/
-  v6 = 0; /*0x50479c*/
+  int v5 = 0; /*0x504793*/
+  int v6 = 0; /*0x50479c*/
   if ( *(int *)&aP0->__pad_5554[192] > 0 ) /*0x5047a2*/
   {
     do /*0x5047c8*/
     {
-      v7 = *(_DWORD *)(result + 22024); /*0x5047ac*/
-      v8 = *(_DWORD *)(v7 + 8 * v6); /*0x5047b2*/
-      v9 = v7 + 8 * v6; /*0x5047b5*/
+      int v7 = *(_DWORD *)(result + 22024); /*0x5047ac*/
+      int v8 = *(_DWORD *)(v7 + 8 * v6); /*0x5047b2*/
+      int v9 = v7 + 8 * v6; /*0x5047b5*/
       if ( v8 == a4 ) /*0x5047ba*/
         *(_DWORD *)(v9 + 4) += a3; /*0x5047bc*/
       ++v6; /*0x5047c5*/
     }
     while ( v6 < *(_DWORD *)(result + 22036) ); /*0x5047c8*/
   }
-  v13 = 0; /*0x5047d0*/
+  int v13 = 0; /*0x5047d0*/
   if ( *(int *)(result + 22036) <= 0 ) /*0x5047d6*/
     goto LABEL_18; /*0x5047d6*/
-  v10 = *(int **)(result + 22024); /*0x5047d8*/
-  v14 = *(_DWORD *)(result + 22036); /*0x5047de*/
+  int * v10 = *(int **)(result + 22024); /*0x5047d8*/
+  int v14 = *(_DWORD *)(result + 22036); /*0x5047de*/
   do /*0x504832*/
   {
-    v11 = *v10; /*0x5047e5*/
+    int v11 = *v10; /*0x5047e5*/
     if ( v10[1] > v5 && !*(_BYTE *)(v11 + 501) ) /*0x5047eb*/
     {
       if ( !v11 /*0x50481e*/
         || v11 != result
+  int v12; // ecx
         && (v12 = *(_DWORD *)(v11 + 48), v12 != *(_DWORD *)(result + 48))
         && (v12 == -1 || ((1 << v12) & *(_DWORD *)(result + 22408)) == 0) )
       {

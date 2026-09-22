@@ -7,14 +7,13 @@ namespace gamemd {
 int ColorScheme::Destructor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ColorScheme_Destructor(int this)
+void ColorScheme_Destructor(int this)
 {
   void (__thiscall ***v2)(_DWORD, int); // ecx
   int result; // eax
-  int v4; // [esp+4h] [ebp-4h] BYREF
-
+  ColorScheme *v4; // [esp+4h] [ebp-4h] BYREF
   if ( this->q304 ) /*0x68c8d4*/
-    free(*(void **)(this + 772)); /*0x68c8df*/
+    free(this->q304); /*0x68c8df*/
   v2 = *(void (__thiscall ****)(_DWORD, int))(this + 780); /*0x68c8e7*/
   this->q304 = 0; /*0x68c8ed*/
   if ( v2 ) /*0x68c8f9*/

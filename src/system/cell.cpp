@@ -196,14 +196,12 @@ ObjectClass* CellClass::FindObjectOfType(AbstractType type, bool alt) const
 void CellClass::Draw(const Point2D* screen_pos, const RectangleStruct* bounds) const
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall CellClass_Draw(int this, int a2, _DWORD *a3, int a4)
+void CellClass_Draw(int this, int a2, _DWORD *a3, int a4)
 {
-  int v5; // eax
-  int v6; // ecx
 
   if ( a2 )
   {
-    v5 = this->smudgeTypeIndex;
+    ControlClass *v5 = this->smudgeTypeIndex;
     if ( v5 )
     {
       BYTE1(v5) |= 0x80u;
@@ -219,7 +217,7 @@ int __thiscall CellClass_Draw(int this, int a2, _DWORD *a3, int a4)
       *a3 = 0;
     }
   }
-  v6 = this->attached1;
+  int v6 = this->attached1;
   if ( v6 )
     (*(void (__thiscall **)(int, int, _DWORD *, int))(*(_DWORD *)v6 + 76))(v6, a2, a3, this);
   return COMObject::ActivateThunk(a2, a3, 0);
@@ -284,22 +282,12 @@ retn    0Ch
 void CellClass::DrawDispatch(const Point2D* screen_pos, const RectangleStruct* bounds) const
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall CellClass_DrawDispatch(int *this, unsigned int a2, _DWORD *a3, int a4)
+void CellClass_DrawDispatch(int *this, unsigned int a2, _DWORD *a3, int a4)
 {
-  unsigned int v6; // ebx
-  int v7; // ebp
-  int v8; // eax
-  int v9; // edi
-  int v10; // eax
-  int v11; // eax
-  int v12; // eax
-  int v13; // eax
-  int v14; // edi
-  int v15; // eax
 
   if ( !*((_BYTE *)this + 45) )
     return 0;
-  v6 = a2;
+  unsigned int v6 = a2;
   (*(void (__thiscall **)(int *, unsigned int))(*this + 120))(this, a2);
   if ( (a2 & 1) == 0 && ((a2 & 2) == 0 || (int *)DataGlobal_8B3E88 != this) )
   {
@@ -308,22 +296,26 @@ int __thiscall CellClass_DrawDispatch(int *this, unsigned int a2, _DWORD *a3, in
   }
   if ( (a2 & 1) != 0 )
   {
-    v7 = (*(int (__thiscall **)(int *, _DWORD))(*this + 164))(this, this->attached3);
+    int v7 = (*(int (__thiscall **)(int *, _DWORD))(*this + 164))(this, this->attached3);
+  int v8; // eax
     v8 = *((_BYTE *)this + 46)
        ? (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 44))(g_WWMouseClass_Instance)
        : (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 48))(g_WWMouseClass_Instance);
+  int v9; // edi
     if ( v8 <= v7 || (v9 = v8 - v7, v8 - v7 >= (*(int (__thiscall **)(int *))(*this + 152))(this)) )
       this->q038 = 0;
     else
       this->q038 = v9;
+  int v10; // eax
     v10 = *((_BYTE *)this + 46)
         ? (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 44))(g_WWMouseClass_Instance)
         : (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 48))(g_WWMouseClass_Instance);
     if ( (*(int (__thiscall **)(int *, int))(*this + 160))(this, v10 - this->q038) < this->attached3 )
     {
+  int v12; // eax
       do
       {
-        v11 = this->q038;
+        int v11 = this->q038;
         if ( v11 <= 0 )
           break;
         this->q038 = v11 - 1;
@@ -335,11 +327,11 @@ int __thiscall CellClass_DrawDispatch(int *this, unsigned int a2, _DWORD *a3, in
     }
   }
   if ( *((_BYTE *)this + 46) )
-    v13 = (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 44))(g_WWMouseClass_Instance);
+    int v13 = (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 44))(g_WWMouseClass_Instance);
   else
     v13 = (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 48))(g_WWMouseClass_Instance);
-  v14 = *this;
-  v15 = (*(int (__thiscall **)(int *, int))(*this + 160))(this, v13 - this->q038);
+  int v14 = *this;
+  int v15 = (*(int (__thiscall **)(int *, int))(*this + 160))(this, v13 - this->q038);
   if ( (*(int (__thiscall **)(int *, int))(v14 + 140))(this, v15) )
     return CellClass::Draw((int)this, v6, a3, 0);
   CellClass::Draw((int)this, 0, a3, 0);
@@ -543,12 +535,10 @@ retn    0Ch
 void CellClass::DrawWithFlags(const Point2D* screen_pos, const RectangleStruct* bounds, int flags) const
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall CellClass_DrawWithFlags(_DWORD *this, int a2, _DWORD *a3, int a4)
+void CellClass_DrawWithFlags(_DWORD *this, int a2, _DWORD *a3, int a4)
 {
-  int v4; // ebx
-  int v7; // eax
 
-  v4 = a2;
+  int v4 = a2;
   if ( (a2 & 4) != 0 )
   {
     *a3 = 0;
@@ -577,6 +567,7 @@ int __thiscall CellClass_DrawWithFlags(_DWORD *this, int a2, _DWORD *a3, int a4)
   }
   else
   {
+  int v7; // eax
     v7 = this->q170
        + ((*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 48))(g_WWMouseClass_Instance) - this->lightConvert - 1)
        / this->CellClass_field_4C;
@@ -742,19 +733,8 @@ void CellClass::RegisterForRedraw()
 _BYTE *__thiscall CellClass_RegisterForRedraw(int this, __int16 *a2)
 {
   _BYTE *result; // eax
-  int v4; // eax
-  _DWORD *v5; // edi
-  unsigned int v6; // ebx
-  unsigned int v7; // ecx
-  unsigned int v8; // edx
-  int v9; // ebx
-  int v10; // ebp
-  unsigned int v11; // eax
-  unsigned int v12; // [esp+8h] [ebp-8h]
-  int v13; // [esp+Ch] [ebp-4h]
-  float v14; // [esp+14h] [ebp+4h]
 
-  v13 = Cell::PosToIndex(a2);
+  int v13 = Cell::PosToIndex(a2);
   result = CellCoord::To_CellObj(&DataGlobal_87F7E8, a2);
   if ( result[286] < 0xBu )
   {
@@ -767,22 +747,22 @@ _BYTE *__thiscall CellClass_RegisterForRedraw(int this, __int16 *a2)
                                                                                              (_DWORD *)g_ScenarioClass_Instance
                                                                                            + 134))
                                                                                   % 50);
-    v4 = this->CellClass_field_10C;
-    v5 = *(_DWORD **)(this + 272);
-    v6 = this->unknown118 + 8 * v4;
+    int v4 = this->CellClass_field_10C;
+    CampaignClass *v5 = this->unknown110;
+    unsigned int v6 = this->unknown118 + 8 * v4;
     this->CellClass_field_10C = v4 + 1;
-    v7 = *v5 + 1;
-    v14 = *(float *)(v6 + 4);
-    v12 = v6;
-    v8 = v7 >> 1;
+    unsigned int v7 = *v5 + 1;
+    float v14 = *(float *)(v6 + 4);
+    unsigned int v12 = v6;
+    unsigned int v8 = v7 >> 1;
     if ( v7 < v5[1] )
     {
       if ( v7 > 1 )
       {
         do
         {
-          v9 = v5[2];
-          v10 = *(_DWORD *)(v9 + 4 * v8);
+          int v9 = v5[2];
+          int v10 = *(_DWORD *)(v9 + 4 * v8);
           if ( *(float *)(v10 + 4) <= (double)v14 )
             break;
           *(_DWORD *)(v9 + 4 * v7) = v10;
@@ -793,14 +773,14 @@ _BYTE *__thiscall CellClass_RegisterForRedraw(int this, __int16 *a2)
         v6 = v12;
       }
       *(_DWORD *)(v5[2] + 4 * v7) = v6;
-      v11 = v5[3];
+      unsigned int v11 = v5[3];
       ++*v5;
       if ( v6 > v11 )
         v5[3] = v6;
       if ( v6 < v5[4] )
         v5[4] = v6;
     }
-    result = *(_BYTE **)(this + 276);
+    result = this->unknown114;
     result[v13] = 1;
   }
   return result;

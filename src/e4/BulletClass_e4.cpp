@@ -8,9 +8,8 @@ namespace gamemd {
 int BulletClass::BulletClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_466380(int this)
+B sub_466380(int this)
 {
-  int v2; // eax
 
   ObjectClass::ctor((_DWORD *)this); /*0x466384*/
   this->BulletClass_field_0xAC = 0; /*0x466391*/
@@ -55,7 +54,7 @@ int __thiscall sub_466380(int this)
          DataGlobal_A8ED48 + dword_A8ED54,
          0) )
   {
-    v2 = DataGlobal_A8ED50++; /*0x4664a8*/
+    int v2 = DataGlobal_A8ED50++; /*0x4664a8*/
     *((_DWORD *)DataGlobal_A8ED44 + v2) = this; /*0x4664b7*/
   }
   return this; /*0x4664bc*/
@@ -68,10 +67,8 @@ namespace gamemd {
 int BulletClass::Dtor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BulletClass::Dtor(#374 *this)
+void BulletClass::Dtor(#374 *this)
 {
-  int v2; // eax
-  int v3; // eax
   #374 *v5; // [esp+4h] [ebp-4h] BYREF
 
   *(_DWORD *)this = &BulletClass::`vftable'; /*0x466566*/
@@ -82,7 +79,7 @@ int __thiscall BulletClass::Dtor(#374 *this)
   if ( this->q158 ) /*0x466586*/
   {
     v5 = this; /*0x4665a0*/
-    v2 = (*(int (__thiscall **)(int *, #374 **))(g_BuildingInstanceCount + 16))(&g_BuildingInstanceCount, &v5); /*0x4665a4*/
+    int v2 = (*(int (__thiscall **)(int *, #374 **))(g_BuildingInstanceCount + 16))(&g_BuildingInstanceCount, &v5); /*0x4665a4*/
     if ( v2 != -1 && v2 < g_BuildingTypeInstanceCount && v2 < --g_BuildingTypeInstanceCount ) /*0x4665bf*/
     {
       do /*0x4665d7*/
@@ -99,7 +96,7 @@ int __thiscall BulletClass::Dtor(#374 *this)
   this->BulletClass_field_0xB0 = 0; /*0x4665f3*/
   this->BulletClass_field_0x154 = 0; /*0x4665fd*/
   v5 = this; /*0x466617*/
-  v3 = (*(int (__thiscall **)(int *, #374 **))(BulletClass_Array + 16))(&BulletClass_Array, &v5); /*0x46661b*/
+  int v3 = (*(int (__thiscall **)(int *, #374 **))(BulletClass_Array + 16))(&BulletClass_Array, &v5); /*0x46661b*/
   if ( v3 != -1 && v3 < DataGlobal_A8ED50 && v3 < --DataGlobal_A8ED50 ) /*0x466636*/
   {
     do /*0x46664e*/

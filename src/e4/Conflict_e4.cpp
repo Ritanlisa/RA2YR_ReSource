@@ -10,10 +10,8 @@ namespace gamemd {
 char Conflict_WorldDominationTour_12::Release(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall Conflict_WorldDominationTour_12_::_vt02(_BYTE *this, int a2, _DWORD *a3)
+void Conflict_WorldDominationTour_12_::_vt02(int a2, _DWORD *a3)
 {
-  int v3; // ebp
-  _DWORD *v5; // eax
   _DWORD *v6; // esi
   int v7; // ebx
   _DWORD *v8; // ebx
@@ -21,8 +19,7 @@ char __thiscall Conflict_WorldDominationTour_12_::_vt02(_BYTE *this, int a2, _DW
   int i; // esi
   void (__thiscall ***v12)(_DWORD, int); // ecx
   _DWORD *v13; // [esp+10h] [ebp-4h]
-
-  v3 = a2; /*0x766c13*/
+  int v3 = a2; /*0x766c13*/
   if ( !a2 ) /*0x766c1d*/
   {
     (*(void (__thiscall **)(_BYTE *))(this->q00C)(this); /*0x766d1d*/
@@ -49,7 +46,7 @@ char __thiscall Conflict_WorldDominationTour_12_::_vt02(_BYTE *this, int a2, _DW
   }
   else
   {
-    v5 = __2_YAPAXI_Z(8 * a2 + 4); /*0x766c37*/
+    _DWORD * v5 = __2_YAPAXI_Z(8 * a2 + 4); /*0x766c37*/
     if ( !v5 ) /*0x766c41*/
     {
       v8 = 0; /*0x766c6f*/
@@ -105,30 +102,23 @@ namespace gamemd {
 char Conflict_WorldDominationTour_12::Constructor_1(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall Conflict_WorldDominationTour_12_::sub_766DC0(_BYTE *this, int a2, _DWORD *a3)
+void Conflict_WorldDominationTour_12_::sub_766DC0(int a2, _DWORD *a3)
 {
-  int v3; // ebp
-  _DWORD *v5; // eax
-  _DWORD *v6; // ebx
-  _DWORD *v7; // esi
-  _DWORD *v8; // esi
-  int v9; // ebx
   int i; // esi
   void (__thiscall ***v11)(_DWORD, int); // ecx
-  int v12; // eax
-  int v14; // [esp+10h] [ebp-4h]
 
-  v3 = a2; /*0x766dc3*/
+  int v3 = a2; /*0x766dc3*/
   if ( a2 ) /*0x766dcd*/
   {
+  _DWORD *v6; // ebx
     this->q00C = 0; /*0x766dd7*/
     if ( a3 ) /*0x766ddd*/
     {
       *a3 = a2; /*0x766e21*/
-      v8 = a3 + 1; /*0x766e23*/
+      _DWORD * v8 = a3 + 1; /*0x766e23*/
       if ( a2 - 1 >= 0 ) /*0x766e2f*/
       {
-        v9 = a2; /*0x766e31*/
+        int v9 = a2; /*0x766e31*/
         do /*0x766e45*/
         {
           ComPtr::Constructor(v8); /*0x766e36*/
@@ -143,15 +133,15 @@ char __thiscall Conflict_WorldDominationTour_12_::sub_766DC0(_BYTE *this, int a2
     }
     else
     {
-      v5 = __2_YAPAXI_Z(8 * a2 + 4); /*0x766de7*/
+      _DWORD * v5 = __2_YAPAXI_Z(8 * a2 + 4); /*0x766de7*/
       if ( v5 ) /*0x766df1*/
       {
         *v5 = a2; /*0x766df3*/
         v6 = v5 + 1; /*0x766df5*/
-        v7 = v5 + 1; /*0x766dfb*/
+        _DWORD * v7 = v5 + 1; /*0x766dfb*/
         if ( a2 - 1 >= 0 ) /*0x766dff*/
         {
-          v14 = a2; /*0x766e02*/
+          int v14 = a2; /*0x766e02*/
           do /*0x766e19*/
           {
             Conflict_WorldDominationTour_12::Constructor_3(v7); /*0x766e08*/
@@ -192,7 +182,7 @@ char __thiscall Conflict_WorldDominationTour_12_::sub_766DC0(_BYTE *this, int a2
   {
     (*(void (__thiscall **)(_BYTE *))(this->q00C)(this); /*0x766eb9*/
   }
-  v12 = this->Conflict_WorldDominationTour_12_field_0x8; /*0x766ebc*/
+  int v12 = this->Conflict_WorldDominationTour_12_field_0x8; /*0x766ebc*/
   if ( v12 < this->Conflict_WorldDominationTour_12_field_0x10 ) /*0x766ec4*/
     this->Conflict_WorldDominationTour_12_field_0x10 = v12; /*0x766ec6*/
   return 1; /*0x766ec9*/
@@ -205,7 +195,7 @@ namespace gamemd {
 int Conflict_WorldDominationTour_12_::ReleaseBuffer()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Conflict_WorldDominationTour_12_::sub_766800(int this)
+void Conflict_WorldDominationTour_12_::sub_766800(int this)
 {
   int (__thiscall ***v2)(_DWORD, int); // ecx
   int result; // eax
@@ -229,7 +219,7 @@ namespace gamemd {
 BOOL Conflict_WorldDominationTour_26::AddRef()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall Conflict_WorldDominationTour_26_::_vt01(_DWORD *this)
+void Conflict_WorldDominationTour_26_::_vt01()
 {
   return *(this + 2) < *(_DWORD *)(*(this + 1) + 16); /*0x76692d*/
 }

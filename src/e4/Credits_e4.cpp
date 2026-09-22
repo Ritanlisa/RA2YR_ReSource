@@ -11,21 +11,14 @@ char sub_52CB90()
 {
   HANDLE FirstFileA; // esi
   char *cAlternateFileName; // ebp
-  _DWORD *v2; // eax
-  _DWORD *v3; // esi
-  _DWORD *v4; // edi
   char result; // al
-  _DWORD *v6; // eax
-  _DWORD *v7; // esi
-  _DWORD *v8; // edi
-  char v9; // [esp+Fh] [ebp-1B1h]
   HANDLE v10; // [esp+10h] [ebp-1B0h]
   _DWORD v11[22]; // [esp+14h] [ebp-1ACh] BYREF
   _BYTE v12[12]; // [esp+6Ch] [ebp-154h] BYREF
   int v13; // [esp+78h] [ebp-148h]
   struct _WIN32_FIND_DATAA FindFileData; // [esp+80h] [ebp-140h] BYREF
 
-  v9 = 0; /*0x52cba5*/
+  char v9 = 0; /*0x52cba5*/
   FirstFileA = FindFirstFileA(DataGlobal_8261A8, &FindFileData); /*0x52cbaf*/
   v10 = FirstFileA; /*0x52cbb4*/
   if ( FirstFileA == (HANDLE)-1 ) /*0x52cbb8*/
@@ -38,11 +31,11 @@ char sub_52CB90()
       if ( !strlen(FindFileData.cAlternateFileName) ) /*0x52cbe3*/
         cAlternateFileName = FindFileData.cFileName; /*0x52cbea*/
       CCFileClass::Construct(v11, cAlternateFileName); /*0x52cbf6*/
-      v2 = __2_YAPAXI_Z(0x58u); /*0x52cbfd*/
-      v3 = v2; /*0x52cc02*/
+      _DWORD * v2 = __2_YAPAXI_Z(0x58u); /*0x52cbfd*/
+      _DWORD * v3 = v2; /*0x52cc02*/
       if ( v2 ) /*0x52cc09*/
       {
-        v4 = v2 + 3; /*0x52cc0b*/
+        _DWORD * v4 = v2 + 3; /*0x52cc0b*/
         v2[1] = 0; /*0x52cc0e*/
         v2[2] = 0; /*0x52cc13*/
         GenericList::Constructor(v2 + 3); /*0x52cc16*/
@@ -81,11 +74,11 @@ char sub_52CB90()
   {
 LABEL_15:
     CCFileClass::Construct(v11, DataGlobal_826198); /*0x52ccd6*/
-    v6 = __2_YAPAXI_Z(0x58u); /*0x52ccdd*/
-    v7 = v6; /*0x52cce2*/
+    _DWORD * v6 = __2_YAPAXI_Z(0x58u); /*0x52ccdd*/
+    _DWORD * v7 = v6; /*0x52cce2*/
     if ( v6 ) /*0x52cce9*/
     {
-      v8 = v6 + 3; /*0x52cceb*/
+      _DWORD * v8 = v6 + 3; /*0x52cceb*/
       v6[1] = 0; /*0x52ccee*/
       v6[2] = 0; /*0x52ccf3*/
       GenericList::Constructor(v6 + 3); /*0x52ccf6*/

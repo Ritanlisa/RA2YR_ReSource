@@ -10,9 +10,8 @@ unsigned int * CoordStruct::Set2(IUnknown * aP1, AbstractClass * aP2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall CoordStruct::Set2(_DWORD *this, IUnknown *aP1, AbstractClass *aP2)
 {
-  int v4; // edx
 
-  v4 = SLOWORD(aP1->field_0) << 8; /*0x642756*/
+  int v4 = SLOWORD(aP1->field_0) << 8; /*0x642756*/
   *(this + 1) = (SHIWORD(aP1->field_0) << 8) + 128; /*0x642759*/
   *(this + 2) = aP2; /*0x642766*/
   *this = v4 + 128; /*0x642769*/

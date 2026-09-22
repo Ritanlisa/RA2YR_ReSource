@@ -7,7 +7,7 @@
 int NullModemClass::COMStub()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall NullModemClass::_vt04(_DWORD *this)
+void NullModemClass::_vt04()
 {
   return this->linkOpen; /*0x5f1953*/
 }
@@ -17,7 +17,7 @@ int __thiscall NullModemClass::_vt04(_DWORD *this)
 int NullModemClass::Flush(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall NullModemClass::_vt11(int *this, int a2)
+void NullModemClass::_vt11(int a2)
 {
   int result; // eax
 
@@ -32,13 +32,13 @@ int __thiscall NullModemClass::_vt11(int *this, int a2)
 int NullModemClass::Release(int a2, int a3, int a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall NullModemClass::_vt02(int this, int a2, int a3, int a4, int a5)
+void NullModemClass::_vt02(int this, int a2, int a3, int a4, int a5)
 {
   int result; // eax
 
   if ( !this->linkOpen ) /*0x5f3563*/
     return 0; /*0x5f356a*/
-  result = (*(int (__thiscall **)(_DWORD, int, int, int, _DWORD))(**(_DWORD **)(this + 56) + 8))( /*0x5f3586*/
+  result = (*(int (__thiscall **)(_DWORD, int, int, int, _DWORD))(*this->linkObject + 8))( /*0x5f3586*/
              this->linkObject,
              a2,
              a3,
@@ -63,11 +63,10 @@ int NullModemClass::ddtor(int a2, int a3, int a4)
 int NullModemClass::Receive()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall NullModemClass::_vt07(_DWORD *this)
+void NullModemClass::_vt07()
 {
-  int v1; // eax
 
-  v1 = this->linkObject; /*0x5f35d0*/
+  int v1 = this->linkObject; /*0x5f35d0*/
   if ( v1 ) /*0x5f35d5*/
     return *(_DWORD *)(*(_DWORD *)(v1 + 4) + 40); /*0x5f35da*/
   else
@@ -79,11 +78,10 @@ int __thiscall NullModemClass::_vt07(_DWORD *this)
 int NullModemClass::CheckStatus()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall NullModemClass::_vt08(_DWORD *this)
+void NullModemClass::_vt08()
 {
-  int v1; // eax
 
-  v1 = this->linkObject; /*0x5f35f0*/
+  int v1 = this->linkObject; /*0x5f35f0*/
   if ( v1 ) /*0x5f35f5*/
     return *(_DWORD *)(*(_DWORD *)(v1 + 4) + 56); /*0x5f35fa*/
   else
@@ -95,11 +93,10 @@ int __thiscall NullModemClass::_vt08(_DWORD *this)
 int NullModemClass::GetAddress(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall NullModemClass::_vt09(_DWORD *this, int a2)
+void NullModemClass::_vt09(int a2)
 {
-  int v2; // eax
 
-  v2 = this->linkObject; /*0x5f3610*/
+  int v2 = this->linkObject; /*0x5f3610*/
   if ( v2 ) /*0x5f3615*/
     return *(_DWORD *)(*(_DWORD *)(v2 + 4) + 40); /*0x5f361a*/
   else
@@ -111,11 +108,10 @@ int __thiscall NullModemClass::_vt09(_DWORD *this, int a2)
 int NullModemClass::SetAddress(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall NullModemClass::_vt10(_DWORD *this, int a2)
+void NullModemClass::_vt10(int a2)
 {
-  int v2; // eax
 
-  v2 = this->linkObject; /*0x5f3630*/
+  int v2 = this->linkObject; /*0x5f3630*/
   if ( v2 ) /*0x5f3635*/
     return *(_DWORD *)(*(_DWORD *)(v2 + 4) + 56); /*0x5f363a*/
   else
@@ -167,29 +163,26 @@ LABEL_10:
 char NullModemClass::sendData()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall NullModemClass::sendData(int this)
+void NullModemClass::sendData(int this)
 {
-  void *v2; // ecx
   NullModemClass *v4; // edx
   DWORD cbInQue; // eax
   DWORD cbOutQue; // ecx
-  bool v7; // zf
-  void *v8; // [esp-8h] [ebp-44h]
   DWORD Errors; // [esp+Ch] [ebp-30h] BYREF
   DWORD EvtMask; // [esp+10h] [ebp-2Ch] BYREF
   struct _COMSTAT Stat; // [esp+14h] [ebp-28h] BYREF
   struct _DCB DCB; // [esp+20h] [ebp-1Ch] BYREF
 
   Debug::Log(); /*0x77467d*/
-  PurgeComm(*(HANDLE *)(this + 92), 0xFu); /*0x77468b*/
-  ResetEvent(*(HANDLE *)(this + 56)); /*0x77469b*/
+  PurgeComm(this->q05C, 0xFu); /*0x77468b*/
+  ResetEvent(this->linkObject); /*0x77469b*/
   ResetEvent(*(HANDLE *)(this + 76)); /*0x7746a1*/
-  v8 = *(void **)(this + 92); /*0x7746ad*/
+  void * v8 = this->q05C; /*0x7746ad*/
   this->q050 = 0; /*0x7746ae*/
   *(_BYTE *)(this + 81) = 0; /*0x7746b1*/
   if ( GetCommState(v8, &DCB) ) /*0x7746b4*/
   {
-    v2 = *(void **)(this + 92); /*0x7746c2*/
+    void * v2 = this->q05C; /*0x7746c2*/
     DCB.BaudRate = 9600; /*0x7746d7*/
     DCB.Parity = 0; /*0x7746df*/
     DCB.ByteSize = 8; /*0x7746e3*/
@@ -205,20 +198,20 @@ char __thiscall NullModemClass::sendData(int this)
   {
     Debug::Log(); /*0x774717*/
   }
-  GetCommMask(*(HANDLE *)(this + 92), &EvtMask); /*0x774728*/
+  GetCommMask(this->q05C, &EvtMask); /*0x774728*/
   (*(void (__thiscall **)(int, int))(this->PacketsSent)(this, 1); /*0x774734*/
   (*(void (__thiscall **)(int))(this->LastPacketTime)(this); /*0x77473b*/
-  if ( !EscapeCommFunction(*(HANDLE *)(this + 92), 3u) ) /*0x774744*/
+  if ( !EscapeCommFunction(this->q05C, 3u) ) /*0x774744*/
   {
     GetLastError(); /*0x77474f*/
     Debug::Log(); /*0x77475b*/
   }
-  if ( ClearCommError(*(HANDLE *)(this + 92), &Errors, &Stat) ) /*0x774771*/
+  if ( ClearCommError(this->q05C, &Errors, &Stat) ) /*0x774771*/
   {
     v4 = (NullModemClass *)Errors; /*0x77477b*/
     cbInQue = Stat.cbInQue; /*0x77477f*/
     cbOutQue = Stat.cbOutQue; /*0x774783*/
-    v7 = Errors == 0; /*0x774787*/
+    bool v7 = Errors == 0; /*0x774787*/
     this->q01C = Stat.cbInQue; /*0x774789*/
     this->q020 = cbOutQue; /*0x77478c*/
     if ( !v7 ) /*0x77478f*/
@@ -232,36 +225,34 @@ char __thiscall NullModemClass::sendData(int this)
 int NullModemClass::receiveData()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall NullModemClass::receiveData(int this)
+void NullModemClass::receiveData(int this)
 {
   NullModemClass *v2; // edx
   DWORD cbInQue; // eax
   DWORD cbOutQue; // ecx
-  bool v5; // zf
-  void *v7; // [esp-8h] [ebp-24h]
   DWORD Errors; // [esp+Ch] [ebp-10h] BYREF
   struct _COMSTAT Stat; // [esp+10h] [ebp-Ch] BYREF
 
   Debug::Log(); /*0x7747cd*/
-  PurgeComm(*(HANDLE *)(this + 92), 0xFu); /*0x7747db*/
-  ResetEvent(*(HANDLE *)(this + 56)); /*0x7747eb*/
+  PurgeComm(this->q05C, 0xFu); /*0x7747db*/
+  ResetEvent(this->linkObject); /*0x7747eb*/
   ResetEvent(*(HANDLE *)(this + 76)); /*0x7747f1*/
-  v7 = *(void **)(this + 92); /*0x7747ff*/
+  void * v7 = this->q05C; /*0x7747ff*/
   this->q050 = 0; /*0x774800*/
   *(_BYTE *)(this + 81) = 0; /*0x774803*/
   if ( !SetCommState(v7, (LPDCB)(this + 8300)) ) /*0x774806*/
     Debug::Log(); /*0x774816*/
-  if ( !EscapeCommFunction(*(HANDLE *)(this + 92), 3u) ) /*0x774824*/
+  if ( !EscapeCommFunction(this->q05C, 3u) ) /*0x774824*/
   {
     GetLastError(); /*0x77482f*/
     Debug::Log(); /*0x77483b*/
   }
-  if ( ClearCommError(*(HANDLE *)(this + 92), &Errors, &Stat) ) /*0x774851*/
+  if ( ClearCommError(this->q05C, &Errors, &Stat) ) /*0x774851*/
   {
     v2 = (NullModemClass *)Errors; /*0x77485b*/
     cbInQue = Stat.cbInQue; /*0x77485f*/
     cbOutQue = Stat.cbOutQue; /*0x774863*/
-    v5 = Errors == 0; /*0x774867*/
+    bool v5 = Errors == 0; /*0x774867*/
     this->q01C = Stat.cbInQue; /*0x774869*/
     this->q020 = cbOutQue; /*0x77486c*/
     if ( !v5 ) /*0x77486f*/
@@ -275,7 +266,7 @@ int __thiscall NullModemClass::receiveData(int this)
 int NullModemClass::GetMember23()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall NullModemClass_GetMember23(_DWORD *this)
+void NullModemClass_GetMember23(_DWORD *this)
 {
   return this->q05C; /*0x7754c3*/
 }

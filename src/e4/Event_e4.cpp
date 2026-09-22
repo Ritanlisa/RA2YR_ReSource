@@ -19,13 +19,9 @@ namespace gamemd {
 char Event::Dispatch()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char Event::Dispatch()
+void Event::Dispatch()
 {
   CellStruct *v0; // eax
-  _BYTE v2[4]; // [esp+10h] [ebp-100h] BYREF
-  _DWORD v3[6]; // [esp+14h] [ebp-FCh] BYREF
-  _BYTE v4[228]; // [esp+2Ch] [ebp-E4h]
-
   UpdateAudioVideo(); /*0x48d08c*/
   if ( g_AsyncIOState > 0 && *(_DWORD *)AsyncIO_Instance ) /*0x48d09f*/
     (*(void (__thiscall **)(_DWORD))(**(_DWORD **)AsyncIO_Instance + 8))(*(_DWORD *)AsyncIO_Instance); /*0x48d0a7*/
@@ -46,10 +42,13 @@ char Event::Dispatch()
 LABEL_11:
     Stream::ReadPacket((int)&g_EventManager); /*0x48d0e0*/
     if ( *((_BYTE *)g_ScenarioClass_Instance + 13720) /*0x48d10f*/
+  _DWORD v3[6]; // [esp+14h] [ebp-FCh] BYREF
+  _BYTE v2[4]; // [esp+10h] [ebp-100h] BYREF
       && ObjectTypeClass::CreateInstance((int)&g_EventManager, (int)v3, (int)v2) > 0 )
     {
       do /*0x48d15f*/
       {
+  _BYTE v4[228]; // [esp+2Ch] [ebp-E4h]
         if ( v3[0] == 108 && v4[0] != g_EventDispatchState ) /*0x48d129*/
           Network::UpdateLatencyDisplay((int)g_UIManager, 1, (double)*(int *)&v4[1], NAN); /*0x48d144*/
       }
@@ -115,18 +114,15 @@ namespace gamemd {
 char sub_5E95E0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char sub_5E95E0()
+void sub_5E95E0()
 {
-  int v0; // edx
   LPARAM *v1; // ecx
   LPARAM v2; // eax
   unsigned __int8 v4; // [esp+0h] [ebp-Ch]
-  int v5; // [esp+4h] [ebp-8h]
-
-  v5 = DataGlobal_A8B548; /*0x5e95f0*/
+  int v5 = DataGlobal_A8B548; /*0x5e95f0*/
   if ( DataGlobal_A8B548 >= DataGlobal_A8BB0C ) /*0x5e95f4*/
     v5 = DataGlobal_A8BB0C; /*0x5e95f6*/
-  v0 = 0; /*0x5e9618*/
+  int v0 = 0; /*0x5e9618*/
   v1 = &g_NetworkPlayerName; /*0x5e961a*/
   while ( 1 ) /*0x5e961f*/
   {
@@ -166,28 +162,19 @@ namespace gamemd {
 char sub_796960()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char sub_796960()
+void sub_796960()
 {
-  int v0; // eax
-  int v1; // esi
-  char *v2; // eax
-  int v3; // eax
-  char *v4; // edx
-  char *v5; // eax
-  _BYTE v7[12]; // [esp+8h] [ebp-240h] BYREF
-  _DWORD v8[27]; // [esp+14h] [ebp-234h] BYREF
-  int v9[113]; // [esp+80h] [ebp-1C8h] BYREF
   __int16 v10; // [esp+244h] [ebp-4h]
-  char v11; // [esp+246h] [ebp-2h]
-
+  int v0; // eax
   LOBYTE(v0) = g_GameMode_Current[0]; /*0x796960*/
   if ( g_GameMode_Current[0] == 4 ) /*0x796970*/
     return v0; /*0x796970*/
+  _BYTE v7[12]; // [esp+8h] [ebp-240h] BYREF
   Waypoint::InitInvalid(v7); /*0x79697a*/
   v0 = g_WOL_State; /*0x79697f*/
   if ( (int)g_WOL_State < 2 ) /*0x796987*/
     return v0; /*0x796987*/
-  v1 = 0; /*0x79698d*/
+  int v1 = 0; /*0x79698d*/
   if ( (int)g_WOL_State <= 0 ) /*0x796996*/
     goto LABEL_10; /*0x796996*/
   while ( 1 ) /*0x7969a3*/
@@ -200,6 +187,7 @@ char sub_796960()
       goto LABEL_10; /*0x7969b8*/
   }
   if ( !&g_IsMultiplayerSession /*0x7969df*/
+  char *v2; // eax
     || (v2 = String::GetOrEmpty_Alt((char **)&g_WebBrowser), (v0 = _strcmpi(byte_B777D4, v2)) != 0) )
   {
     v0 = g_WOL_State; /*0x7969e5*/
@@ -207,6 +195,7 @@ LABEL_10:
     if ( !g_NetworkLobbyState && g_WOL_ProcessIdle ) /*0x796a00*/
     {
       if ( v0 > 0 ) /*0x796a0a*/
+  _DWORD v8[27]; // [esp+14h] [ebp-234h] BYREF
         qmemcpy(v8, g_WOL_ConnectionFlags, sizeof(v8)); /*0x796a1b*/
       v8[8] = 0; /*0x796a21*/
       Network::SyncPlayerList(); /*0x796a29*/
@@ -214,15 +203,16 @@ LABEL_10:
       Network::SetConnectionParams(g_NetworkManager, 50, -1, 5000, 1); /*0x796a42*/
       Network::FormatAddress((unsigned __int16 *)&g_NetworkRematchObject, 0); /*0x796a4e*/
       Debug::Log(); /*0x796a59*/
+  int v9[113]; // [esp+80h] [ebp-1C8h] BYREF
       memset(v9, 0, sizeof(v9)); /*0x796a6f*/
       v10 = 0; /*0x796a79*/
-      v11 = 0; /*0x796a7b*/
+      char v11 = 0; /*0x796a7b*/
       v9[0] = 13; /*0x796a7c*/
       CopyWideToChar(&v9[1], *(char **)Game_PlayerInfoArray, -1); /*0x796a90*/
-      v3 = 0; /*0x796a9b*/
+      int v3 = 0; /*0x796a9b*/
       if ( (int)g_WOL_State > 0 ) /*0x796a9f*/
       {
-        v4 = (char *)g_WOL_ConnectionFlags; /*0x796aa1*/
+        char * v4 = (char *)g_WOL_ConnectionFlags; /*0x796aa1*/
         while ( 1 ) /*0x796aa7*/
         {
           if ( v3 >= 0 && v3 < (int)g_WOL_State ) /*0x796aad*/
@@ -236,7 +226,7 @@ LABEL_10:
         }
         if ( &g_IsMultiplayerSession ) /*0x796ae4*/
         {
-          v5 = CharToWideString(byte_B777D4); /*0x796aeb*/
+          char * v5 = CharToWideString(byte_B777D4); /*0x796aeb*/
           Network::SendToPlayer((int)g_NetworkManager, (int)v9, 455, 1, (wchar_t *)v5); /*0x796b04*/
         }
       }
@@ -257,21 +247,11 @@ int sub_7A0F40()
 int sub_7A0F40()
 {
   int result; // eax
-  signed int v1; // ebp
-  int v2; // ebx
-  unsigned int v3; // edx
-  char *v4; // edi
-  char *v5; // edi
-  char *v6; // esi
-  char v7; // cl
-  int v8; // edx
-  int v9; // [esp+Ch] [ebp-1F4h] BYREF
-  signed int v10; // [esp+10h] [ebp-1F0h]
-  _DWORD v11[27]; // [esp+14h] [ebp-1ECh] BYREF
   char Source[256]; // [esp+80h] [ebp-180h] BYREF
   char Buffer[128]; // [esp+180h] [ebp-80h] BYREF
 
-  v10 = g_WOL_State; /*0x7a0f58*/
+  signed int v10 = g_WOL_State; /*0x7a0f58*/
+  _DWORD v11[27]; // [esp+14h] [ebp-1ECh] BYREF
   memset(v11, 0, sizeof(v11)); /*0x7a0f5c*/
   Source[0] = 80; /*0x7a0f60*/
   Source[2] = 0; /*0x7a0f67*/
@@ -279,23 +259,24 @@ int sub_7A0F40()
   result = g_NetworkLobbyState; /*0x7a0f70*/
   if ( !g_NetworkLobbyState ) /*0x7a0f77*/
   {
-    v1 = 0; /*0x7a0f7e*/
+    signed int v1 = 0; /*0x7a0f7e*/
     if ( (int)g_WOL_State > 0 ) /*0x7a0f82*/
     {
-      v2 = 0; /*0x7a0f8a*/
+      int v2 = 0; /*0x7a0f8a*/
       do /*0x7a102a*/
       {
         if ( v2 >= 0 && v1 < (int)g_WOL_State ) /*0x7a0f96*/
           qmemcpy(v11, (char *)g_WOL_ConnectionFlags + v2, sizeof(v11)); /*0x7a0faa*/
+  int v9; // [esp+Ch] [ebp-1F4h] BYREF
         (*(void (__stdcall **)(LPVOID, _DWORD, int *))(*(_DWORD *)g_UIPointerTable + 32))(g_UIPointerTable, v11[6], &v9); /*0x7a0fbe*/
         sprintf(Buffer, stru_84D24C, (const char *)&v11[9], v9); /*0x7a0fd8*/
-        v3 = strlen(Buffer) + 1; /*0x7a0ffd*/
-        v4 = &Source[strlen(Source)]; /*0x7a1006*/
+        unsigned int v3 = strlen(Buffer) + 1; /*0x7a0ffd*/
+        char * v4 = &Source[strlen(Source)]; /*0x7a1006*/
         qmemcpy(v4, Buffer, 4 * (v3 >> 2)); /*0x7a100a*/
-        v6 = &Buffer[4 * (v3 >> 2)]; /*0x7a100a*/
-        v5 = &v4[4 * (v3 >> 2)]; /*0x7a100a*/
-        v7 = v3; /*0x7a100c*/
-        v8 = v9; /*0x7a100e*/
+        char * v6 = &Buffer[4 * (v3 >> 2)]; /*0x7a100a*/
+        char * v5 = &v4[4 * (v3 >> 2)]; /*0x7a100a*/
+        char v7 = v3; /*0x7a100c*/
+        int v8 = v9; /*0x7a100e*/
         qmemcpy(v5, v6, v7 & 3); /*0x7a1015*/
         SetGameOptionsPing((const char *)&v11[9], v8); /*0x7a101b*/
         ++v1; /*0x7a1024*/
@@ -316,7 +297,7 @@ namespace gamemd {
 char sub_786270()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char sub_786270()
+void sub_786270()
 {
   HKEY phkResult; // [esp+4h] [ebp-110h] BYREF
   BYTE Data[4]; // [esp+8h] [ebp-10Ch] BYREF
@@ -359,24 +340,20 @@ namespace gamemd {
 int sub_7C5F3D()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_7C5F3D()
+void sub_7C5F3D()
 {
-  unsigned int v0; // kr00_4
-  unsigned int v1; // kr04_4
-  unsigned int v2; // kr08_4
-  char v19; // [esp+6h] [ebp-2h]
 
   DataGlobal_84E864 = 0; /*0x7c5f46*/
-  v0 = __readeflags(); /*0x7c5f51*/
+  unsigned int v0 = __readeflags(); /*0x7c5f51*/
   __writeeflags(v0 ^ 0x40000); /*0x7c5f5b*/
-  v1 = __readeflags(); /*0x7c5f5c*/
-  v19 = 3; /*0x7c5f60*/
+  unsigned int v1 = __readeflags(); /*0x7c5f5c*/
+  char v19 = 3; /*0x7c5f60*/
   if ( v0 != v1 ) /*0x7c5f5e*/
   {
     __writeeflags(v0); /*0x7c5f67*/
     v19 = 4; /*0x7c5f68*/
     __writeeflags(v0 ^ 0x200000); /*0x7c5f74*/
-    v2 = __readeflags(); /*0x7c5f75*/
+    unsigned int v2 = __readeflags(); /*0x7c5f75*/
     if ( v0 != v2 ) /*0x7c5f77*/
     {
       _EAX = 0; /*0x7c5f7f*/

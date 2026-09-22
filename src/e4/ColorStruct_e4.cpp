@@ -6,11 +6,10 @@
 int ColorStruct::SetRGB(unsigned char a2, unsigned char a3, unsigned char a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ColorStruct_SetRGB(_DWORD *this, unsigned __int8 a2, unsigned __int8 a3, unsigned __int8 a4)
+int ColorStruct_SetRGB(_DWORD *this, unsigned __int8 a2, unsigned __int8 a3, unsigned __int8 a4)
 {
-  unsigned int v4; // eax
 
-  v4 = a4 | ((a3 | ((a2 | 0xFFFFFF00) << 8)) << 8); /*0x4a35c5*/
+  unsigned int v4 = a4 | ((a3 | ((a2 | 0xFFFFFF00) << 8)) << 8); /*0x4a35c5*/
   this->q050 = v4; /*0x4a35c7*/
   this->q030 = v4; /*0x4a35ca*/
   this->q010 = v4; /*0x4a35cd*/

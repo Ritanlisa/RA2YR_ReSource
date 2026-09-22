@@ -9,13 +9,10 @@ int DropListClass_OnKeyUp()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 wchar_t *__userpurge DropListClass::_vt43@<eax>(int a1@<ecx>, int a2@<ebx>, unsigned int a3)
 {
-  int *v4; // esi
   wchar_t *result; // eax
-  int v6; // ebx
-  int v7; // eax
   const wchar_t *v8; // eax
 
-  v4 = (int *)(a1 + 176); /*0x4b503a*/
+  int * v4 = (int *)(a1 + 176); /*0x4b503a*/
   result = (wchar_t *)(*(int (__thiscall **)(int))(*(_DWORD *)(a1 + 176) + 148))(a1 + 176); /*0x4b5042*/
   if ( a3 >= (unsigned int)result ) /*0x4b504e*/
   {
@@ -24,8 +21,8 @@ wchar_t *__userpurge DropListClass::_vt43@<eax>(int a1@<ecx>, int a2@<ebx>, unsi
   else
   {
     (*(void (__thiscall **)(int *, unsigned int, int))(*v4 + 184))(v4, a3, a2); /*0x4b5056*/
-    v6 = *v4; /*0x4b505e*/
-    v7 = (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 164))(a1); /*0x4b5062*/
+    int v6 = *v4; /*0x4b505e*/
+    int v7 = (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 164))(a1); /*0x4b5062*/
     v8 = (const wchar_t *)(*(int (__thiscall **)(int *, int))(v6 + 160))(v4, v7); /*0x4b506b*/
     return wcscpy(*(wchar_t **)(a1 + 52), v8); /*0x4b5076*/
   }
@@ -38,7 +35,7 @@ wchar_t *__userpurge DropListClass::_vt43@<eax>(int a1@<ecx>, int a2@<ebx>, unsi
 int DropListClass::COMStub()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall DropListClass::_vt35(_DWORD *this)
+void DropListClass::_vt35()
 {
   return this->q034; /*0x4b55a3*/
 }

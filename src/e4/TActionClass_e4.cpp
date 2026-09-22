@@ -17,7 +17,7 @@ namespace gamemd {
 char TActionClass::executeBuildAction()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_4FCDC0(int this)
+void sub_4FCDC0(int this)
 {
   char result; // al
 
@@ -43,16 +43,15 @@ namespace gamemd {
 int TActionClass::executeMoveAction(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_50D2D0(_DWORD *this, int a2)
+void sub_50D2D0(_DWORD *this, int a2)
 {
   int i; // ebx
   int result; // eax
-  _DWORD *v5; // esi
 
   for ( i = this->q01E - 1; i >= 0; --i ) /*0x50d2d8*/
   {
     result = this->q1B0; /*0x50d2e0*/
-    v5 = *(_DWORD **)(result + 4 * i); /*0x50d2e3*/
+    _DWORD * v5 = *(_DWORD **)(result + 4 * i); /*0x50d2e3*/
     if ( v5[184] == a2 ) /*0x50d2ec*/
     {
       (*(void (__thiscall **)(_DWORD *, int, _DWORD))(*v5 + 980))(v5, a2, 0); /*0x50d2f5*/
@@ -71,7 +70,7 @@ namespace gamemd {
 int TActionClass::executeGuardAction(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_50DA00(_DWORD *this, int a2)
+void sub_50DA00(_DWORD *this, int a2)
 {
   this->q54F0 = a2; /*0x50da04*/
   return a2; /*0x50da0a*/
@@ -84,7 +83,7 @@ namespace gamemd {
 int TActionClass::executeHuntAction(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_50DA20(_DWORD *this, int a2)
+void sub_50DA20(_DWORD *this, int a2)
 {
   this->q54F4 = a2; /*0x50da24*/
   this->q54FC = g_CurrentFrame; /*0x50da30*/
@@ -98,7 +97,7 @@ namespace gamemd {
 int TActionClass::executeDeployAction(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_50DFE0(_DWORD *this, int a2)
+void sub_50DFE0(_DWORD *this, int a2)
 {
   this->q5494 = a2; /*0x50dfe4*/
   return a2; /*0x50dfea*/
@@ -111,63 +110,47 @@ namespace gamemd {
 int sub_567F70(int * a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall sub_567F70(int *a1, int a2)
+void sub_567F70(int *a1, int a2)
 {
-  int v2; // esi
-  int v3; // edi
-  int v4; // ebx
-  int v5; // eax
-  int v6; // esi
-  int v7; // eax
-  int v8; // ecx
-  int v9; // edx
-  int v10; // ebx
   int result; // eax
-  int v12; // esi
-  int v13; // eax
-  int v14; // ebp
-  unsigned int v15; // eax
-  _DWORD *v16; // ecx
-  _DWORD *v17; // ecx
-  _DWORD *v18; // ecx
-  _DWORD *v19; // eax
   __int16 v20; // [esp+14h] [ebp-8h]
   __int16 v21; // [esp+16h] [ebp-6h]
-  int v22; // [esp+20h] [ebp+4h]
-
-  v2 = *a1; /*0x567f7a*/
-  v3 = a1[1]; /*0x567f7c*/
-  v4 = a1[2]; /*0x567f7f*/
-  v5 = ZCoordToScreenY(v4); /*0x567f84*/
+  int v2 = *a1; /*0x567f7a*/
+  int v3 = a1[1]; /*0x567f7c*/
+  int v4 = a1[2]; /*0x567f7f*/
+  int v5 = ZCoordToScreenY(v4); /*0x567f84*/
+  int v6; // esi
   v6 = ((((unsigned int)(((unsigned __int64)(2004318071LL * v5) >> 32) - v5) >> 31) /*0x567fa3*/
        + ((int)(((unsigned __int64)(2004318071LL * v5) >> 32) - v5) >> 4)) << 8)
      + v2;
-  v7 = ZCoordToScreenY(v4); /*0x567fa5*/
-  v8 = a2; /*0x567fb5*/
+  int v7 = ZCoordToScreenY(v4); /*0x567fa5*/
+  int v8 = a2; /*0x567fb5*/
   v20 = v6 / 256; /*0x567fd6*/
-  v9 = -2 - a2; /*0x567fee*/
+  int v9 = -2 - a2; /*0x567fee*/
   v21 = (int)(((((unsigned int)(((unsigned __int64)(2004318071LL * v7) >> 32) - v7) >> 31) /*0x567ff0*/
               + ((int)(((unsigned __int64)(2004318071LL * v7) >> 32) - v7) >> 4)) << 8)
             + v3)
       / 256;
-  v10 = -2 - a2; /*0x567ff5*/
+  int v10 = -2 - a2; /*0x567ff5*/
   result = a2 + 2; /*0x567ff7*/
   if ( -2 - a2 < a2 + 2 ) /*0x568000*/
   {
-    v12 = g_Shroud_CellArray; /*0x568006*/
+    int v12 = g_Shroud_CellArray; /*0x568006*/
     do /*0x568130*/
     {
       if ( v9 < result ) /*0x56800f*/
       {
-        v13 = v10 * v10; /*0x56801a*/
-        v14 = (v8 + 1) * (v8 + 1); /*0x56801d*/
+        int v13 = v10 * v10; /*0x56801a*/
+        int v14 = (v8 + 1) * (v8 + 1); /*0x56801d*/
         while ( 1 ) /*0x56802a*/
         {
           if ( v13 + v9 * v9 < v14 ) /*0x568033*/
           {
+  int v22; // [esp+20h] [ebp+4h]
             HIWORD(v22) = v9 + v21; /*0x568045*/
             LOWORD(v22) = v10 + v20; /*0x56804a*/
-            v15 = ((__int16)(v9 + v21) << 9) + (__int16)(v10 + v20); /*0x56805c*/
+            unsigned int v15 = ((__int16)(v9 + v21) << 9) + (__int16)(v10 + v20); /*0x56805c*/
+  _DWORD *v16; // ecx
             if ( v15 >= 0x40000 || (v16 = *(_DWORD **)(v12 + 4 * v15)) == 0 ) /*0x56806e*/
             {
               g_Map_GlobalCellIndex = v22; /*0x568070*/
@@ -175,18 +158,21 @@ int __stdcall sub_567F70(int *a1, int a2)
             }
             if ( !v16[76] ) /*0x56807b*/
             {
+  _DWORD *v17; // ecx
               if ( v15 >= 0x40000 || (v17 = *(_DWORD **)(v12 + 4 * v15)) == 0 ) /*0x568098*/
               {
                 g_Map_GlobalCellIndex = v22; /*0x56809a*/
                 v17 = g_CellClassArray; /*0x5680a0*/
               }
               v17[76] = 1; /*0x5680a7*/
+  _DWORD *v18; // ecx
               if ( v15 >= 0x40000 || (v18 = *(_DWORD **)(g_Shroud_CellArray + 4 * v15)) == 0 ) /*0x5680c5*/
               {
                 g_Map_GlobalCellIndex = v22; /*0x5680c7*/
                 v18 = g_CellClassArray; /*0x5680cd*/
               }
               v18[75] &= ~8u; /*0x5680dd*/
+  _DWORD *v19; // eax
               if ( v15 >= 0x40000 || (v19 = *(_DWORD **)(g_Shroud_CellArray + 4 * v15)) == 0 ) /*0x5680f7*/
               {
                 g_Map_GlobalCellIndex = v22; /*0x5680f9*/
@@ -219,12 +205,10 @@ namespace gamemd {
 int TActionClass::executeRepairAction(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_577C90(_DWORD *this, int a2)
+void sub_577C90(_DWORD *this, int a2)
 {
   int result; // eax
-  int v4; // eax
   int *i; // esi
-  int v6; // eax
 
   result = a2; /*0x577c90*/
   if ( a2 ) /*0x577c99*/
@@ -239,7 +223,7 @@ int __thiscall sub_577C90(_DWORD *this, int a2)
 LABEL_7:
     Debug::Log(); /*0x577cc4*/
   HouseClass::ResetObjectOrders(0, 0); /*0x577cd1*/
-  v4 = this->q0F4; /*0x577ce0*/
+  int v4 = this->q0F4; /*0x577ce0*/
   this->q10C = 1; /*0x577ce6*/
   this->q110 = v4; /*0x577cf0*/
   this->q045 = v4 - 1; /*0x577cf9*/
@@ -249,7 +233,7 @@ LABEL_7:
     DisplayClass::AdvanceFrameCounter(i); /*0x577d21*/
     if ( i[76] >= 0 ) /*0x577d2e*/
     {
-      v6 = i[80]; /*0x577d36*/
+      int v6 = i[80]; /*0x577d36*/
       LOBYTE(v6) = v6 & 0xFC; /*0x577d3f*/
       i[75] &= 0xFFFFFFE7; /*0x577d41*/
       i[80] = v6; /*0x577d47*/
@@ -268,13 +252,12 @@ namespace gamemd {
 int TActionClass::executeSellAction()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_578850(_DWORD *this)
+void sub_578850(_DWORD *this)
 {
   int result; // eax
-  int v2; // edx
 
   result = this->q100; /*0x578850*/
-  v2 = this->q0FC; /*0x578856*/
+  int v2 = this->q0FC; /*0x578856*/
   this->q11C = v2 + result + 1; /*0x578861*/
   this->q120 = result + this->q0F4 - v2; /*0x578871*/
   return result; /*0x578877*/
@@ -290,16 +273,14 @@ unsigned int * TActionClass::executeHarvestAction(int a2, MouseClass * aP2)
 _DWORD *__thiscall TActionClass::executeHarvestAction(_DWORD *this, int a2, MouseClass *aP2)
 {
   InfantryTypeClass *result; // eax
-  int v5; // esi
   CCINIClass *v6; // edx
   int v7; // eax
   int v8; // edx
   int v9; // eax
   _DWORD *v10; // edx
   _DWORD *v11; // ecx
-
   result = *(InfantryTypeClass **)&g_NetworkPlayerBuffer[3356]; /*0x6ac5f0*/
-  v5 = 0; /*0x6ac5f9*/
+  int v5 = 0; /*0x6ac5f9*/
   if ( *(int *)&g_NetworkPlayerBuffer[3356] <= 0 ) /*0x6ac601*/
   {
 LABEL_5:
@@ -405,22 +386,13 @@ namespace gamemd {
 char TActionClass::ConvertHouseUnits(int a2, int _14, unsigned int * a3, IUnknown * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall TActionClass::ConvertHouseUnits(_DWORD *this, int a2, int _14, _DWORD *a3, IUnknown *aP4)
+void TActionClass::ConvertHouseUnits(int a2, int _14, _DWORD *a3, IUnknown *aP4)
 {
-  void *v5; // esi
-  char v6; // bl
   int Field11; // eax
-  int v8; // ebp
-  int v10; // eax
   int i; // edi
-  _DWORD *v12; // esi
-  int v13; // esi
-  int v14; // edi
   Animation *v15; // esi
-  int v16; // eax
-
-  v5 = (void *)this->Value; /*0x6e0b63*/
-  v6 = 0; /*0x6e0b6d*/
+  void * v5 = (void *)this->Value; /*0x6e0b63*/
+  char v6 = 0; /*0x6e0b6d*/
   if ( !a3 ) /*0x6e0b71*/
     return 0; /*0x6e0b71*/
   if ( v5 == (void *)8997 ) /*0x6e0b79*/
@@ -436,16 +408,17 @@ char __thiscall TActionClass::ConvertHouseUnits(_DWORD *this, int a2, int _14, _
     else
       Field11 = HouseClass::FindOwner(v5); /*0x6e0b9b*/
   }
-  v8 = Field11; /*0x6e0ba0*/
+  int v8 = Field11; /*0x6e0ba0*/
   if ( !Field11 ) /*0x6e0ba4*/
     return 0; /*0x6e0ba4*/
-  v10 = *(_DWORD *)&g_NetworkPlayerBuffer[5708]; /*0x6e0bae*/
+  int v10 = *(_DWORD *)&g_NetworkPlayerBuffer[5708]; /*0x6e0bae*/
   for ( i = 0; i < *(int *)&g_NetworkPlayerBuffer[5708]; ++i ) /*0x6e0bb8*/
   {
-    v12 = *(_DWORD **)(*(_DWORD *)&g_NetworkPlayerBuffer[5696] + 4 * i); /*0x6e0bbf*/
+    _DWORD * v12 = *(_DWORD **)(*(_DWORD *)&g_NetworkPlayerBuffer[5696] + 4 * i); /*0x6e0bbf*/
     if ( v12[135] == a2 /*0x6e0bf4*/
       && (!v12
        || (*(int (__thiscall **)(_DWORD))(*v12 + 44))(*(_DWORD *)(*(_DWORD *)&g_NetworkPlayerBuffer[5696] + 4 * i)) != 6
+  int v13; // esi
        || (v13 = v12[328]) == 0
        || !*(_BYTE *)(v13 + 5491) && !*(_BYTE *)(v13 + 5492)) )
     {
@@ -458,7 +431,7 @@ char __thiscall TActionClass::ConvertHouseUnits(_DWORD *this, int a2, int _14, _
     }
     v10 = *(_DWORD *)&g_NetworkPlayerBuffer[5708]; /*0x6e0c13*/
   }
-  v14 = 0; /*0x6e0c1d*/
+  int v14 = 0; /*0x6e0c1d*/
   if ( v10 > 0 ) /*0x6e0c21*/
   {
     do /*0x6e0c89*/
@@ -471,7 +444,7 @@ char __thiscall TActionClass::ConvertHouseUnits(_DWORD *this, int a2, int _14, _
           if ( (*(int (__thiscall **)(_DWORD))(*(_DWORD *)v15 + 44))(*(_DWORD *)(*(_DWORD *)&g_NetworkPlayerBuffer[5696] /*0x6e0c45*/
                                                                                + 4 * v14)) == 6 )
           {
-            v16 = *(_DWORD *)&v15[1312]; /*0x6e0c47*/
+            int v16 = *(_DWORD *)&v15[1312]; /*0x6e0c47*/
             if ( v16 ) /*0x6e0c4f*/
             {
               if ( *(_BYTE *)(v16 + 5491) || *(_BYTE *)(v16 + 5492) ) /*0x6e0c5b*/
@@ -503,14 +476,13 @@ namespace gamemd {
 char TActionClass::executeRetreatAction(AbstractClass * aP1, int a3, int a4, AbstractClass * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall TActionClass::executeRetreatAction(int *this, AbstractClass *aP1, int a3, int a4, AbstractClass *aP4)
+void TActionClass::executeRetreatAction(AbstractClass *aP1, int a3, int a4, AbstractClass *aP4)
 {
   void **v5; // eax
-  int v7; // [esp+0h] [ebp-14h] BYREF
-  int v8; // [esp+4h] [ebp-10h] BYREF
   CoordStruct aP2; // [esp+8h] [ebp-Ch] BYREF
 
-  v7 = *ScenarioClass::Get_Waypoint_Location((char *)g_ScenarioClass_Instance, &v8, this->q011); /*0x6e1cdb*/
+  int v8; // [esp+4h] [ebp-10h] BYREF
+  int v7 = *ScenarioClass::Get_Waypoint_Location((char *)g_ScenarioClass_Instance, &v8, this->q011); /*0x6e1cdb*/
   aP2.Z = 0; /*0x6e1cdf*/
   aP2.Y = (SHIWORD(v7) << 8) + 128; /*0x6e1d00*/
   aP2.X = ((__int16)v7 << 8) + 128; /*0x6e1d0a*/
@@ -543,14 +515,13 @@ namespace gamemd {
 char TActionClass::executeEscortAction(int a2, int a3, int a4, IUnknown * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall TActionClass::executeEscortAction(int *this, int a2, int a3, int a4, IUnknown *aP4)
+void TActionClass::executeEscortAction(int a2, int a3, int a4, IUnknown *aP4)
 {
   void **v6; // eax
-  int v8; // [esp+4h] [ebp-14h] BYREF
-  int v9; // [esp+8h] [ebp-10h] BYREF
   CoordStruct aP2; // [esp+Ch] [ebp-Ch] BYREF
 
-  v8 = *ScenarioClass::Get_Waypoint_Location((char *)g_ScenarioClass_Instance, &v9, this->q011); /*0x6e22ae*/
+  int v9; // [esp+8h] [ebp-10h] BYREF
+  int v8 = *ScenarioClass::Get_Waypoint_Location((char *)g_ScenarioClass_Instance, &v9, this->q011); /*0x6e22ae*/
   aP2.Z = 0; /*0x6e22b2*/
   aP2.Y = (SHIWORD(v8) << 8) + 128; /*0x6e22d3*/
   aP2.X = ((__int16)v8 << 8) + 128; /*0x6e22dd*/
@@ -583,20 +554,14 @@ namespace gamemd {
 char TActionClass::CreateWeaponImpactAtWaypoint(int a2, int a3, int a4, IUnknown * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall TActionClass::CreateWeaponImpactAtWaypoint(int *this, int a2, int a3, int a4, IUnknown *aP4)
+void TActionClass::CreateWeaponImpactAtWaypoint(int a2, int a3, int a4, IUnknown *aP4)
 {
-  int v6; // edi
-  int v7; // esi
-  int v8; // ebx
-  _DWORD *v9; // eax
   CoordStruct *WarheadVersusMultiplier; // esi
   void **v11; // ebp
-  void *v12; // eax
-  int v14; // [esp+10h] [ebp-14h] BYREF
-  int v15; // [esp+14h] [ebp-10h] BYREF
   CoordStruct aP2; // [esp+18h] [ebp-Ch] BYREF
 
-  v14 = *ScenarioClass::Get_Waypoint_Location((char *)g_ScenarioClass_Instance, &v15, this->q011); /*0x6e23b1*/
+  int v15; // [esp+14h] [ebp-10h] BYREF
+  int v14 = *ScenarioClass::Get_Waypoint_Location((char *)g_ScenarioClass_Instance, &v15, this->q011); /*0x6e23b1*/
   aP2.Z = 0; /*0x6e23b5*/
   aP2.Y = (SHIWORD(v14) << 8) + 128; /*0x6e23d6*/
   aP2.X = ((__int16)v14 << 8) + 128; /*0x6e23e0*/
@@ -606,17 +571,17 @@ char __thiscall TActionClass::CreateWeaponImpactAtWaypoint(int *this, int a2, in
   {
     aP2.Z += *(_DWORD *)&g_OverlayTypeConfig[28380]; /*0x6e242d*/
   }
-  v6 = this->idxArray; /*0x6e2431*/
-  v7 = *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[31880] + 4 * v6); /*0x6e2440*/
-  v8 = *(_DWORD *)(v7 + 164); /*0x6e2449*/
-  v9 = Coord::To_Cell(&DataGlobal_87F7E8, (IUnknown *)&aP2); /*0x6e244f*/
+  int v6 = this->idxArray; /*0x6e2431*/
+  int v7 = *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[31880] + 4 * v6); /*0x6e2440*/
+  int v8 = *(_DWORD *)(v7 + 164); /*0x6e2449*/
+  _DWORD * v9 = Coord::To_Cell(&DataGlobal_87F7E8, (IUnknown *)&aP2); /*0x6e244f*/
   WarheadVersusMultiplier = (CoordStruct *)GetWarheadVersusMultiplier(v8, *(_DWORD *)(v7 + 172), v9[59], &aP2); /*0x6e246d*/
   if ( WarheadVersusMultiplier ) /*0x6e2471*/
   {
     v11 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x6e247d*/
     if ( v11 ) /*0x6e2484*/
     {
-      v12 = (void *)Return::HRESULT_Fail(aP2.X, aP2.Y, aP2.Z); /*0x6e24a1*/
+      void * v12 = (void *)Return::HRESULT_Fail(aP2.X, aP2.Y, aP2.Z); /*0x6e24a1*/
       AnimClass::ctor(v11, WarheadVersusMultiplier, &aP2, 0, (CoordStruct *)1, (void *)0x2600, v12, 0); /*0x6e24b8*/
     }
   }
@@ -645,49 +610,38 @@ namespace gamemd {
 char TActionClass::SpawnMeteorShower(AbstractClass * aP1, int a3, int a4, AbstractClass * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall TActionClass::SpawnMeteorShower(int *this, AbstractClass *aP1, int a3, int a4, AbstractClass *aP4)
+void TActionClass::SpawnMeteorShower(AbstractClass *aP1, int a3, int a4, AbstractClass *aP4)
 {
-  int v6; // esi
   int String; // ebp
-  int v8; // edi
-  int *v9; // esi
-  int v10; // ebx
-  int v11; // eax
   AnimClass *v12; // esi
-  bool v13; // zf
-  signed int v14; // eax
-  int v15; // eax
-  int v17; // [esp+Ch] [ebp-24h] BYREF
-  int v18; // [esp+10h] [ebp-20h]
-  int v19; // [esp+14h] [ebp-1Ch] BYREF
-  int v20; // [esp+18h] [ebp-18h] BYREF
-  int v21; // [esp+1Ch] [ebp-14h]
   int GroundHeight; // [esp+20h] [ebp-10h]
   CoordStruct aP2; // [esp+24h] [ebp-Ch] BYREF
 
-  v17 = *ScenarioClass::Get_Waypoint_Location((char *)g_ScenarioClass_Instance, &v19, this->q011); /*0x6e2c60*/
+  int v19; // [esp+14h] [ebp-1Ch] BYREF
+  int v17 = *ScenarioClass::Get_Waypoint_Location((char *)g_ScenarioClass_Instance, &v19, this->q011); /*0x6e2c60*/
   GroundHeight = 0; /*0x6e2c64*/
-  v21 = (SHIWORD(v17) << 8) + 128; /*0x6e2c85*/
-  v20 = ((__int16)v17 << 8) + 128; /*0x6e2c8f*/
+  int v21 = (SHIWORD(v17) << 8) + 128; /*0x6e2c85*/
+  int v20 = ((__int16)v17 << 8) + 128; /*0x6e2c8f*/
   GroundHeight = Cell::GetGroundHeight(&v20); /*0x6e2c98*/
   if ( (*((_DWORD *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v17) + 80) & 0x100) != 0 /*0x6e2cce*/
     || (*((_DWORD *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v17) + 80) & 0x400) != 0 )
   {
     GroundHeight += *(_DWORD *)&g_OverlayTypeConfig[28380]; /*0x6e2cdc*/
   }
+  int v6; // esi
   v6 = *(_DWORD *)&stru_830620[22428][4 * this->idxArray + 52544] /*0x6e2d0a*/
      + (int)abs32(Random::State(&g_ScenarioClass_Instance->random[1])) % 3;
   String = GlobalArray::FindString(&stru_830620[75264]); /*0x6e2d1b*/
   v19 = GlobalArray::FindString(&stru_830620[75252]); /*0x6e2d22*/
-  v8 = 70 * v6; /*0x6e2d32*/
+  int v8 = 70 * v6; /*0x6e2d32*/
   if ( v6 <= 0 ) /*0x6e2d36*/
     return 1; /*0x6e2e0e*/
-  v18 = v6; /*0x6e2d3d*/
+  int v18 = v6; /*0x6e2d3d*/
   do /*0x6e2dfa*/
   {
-    v9 = &g_ScenarioClass_Instance->random[1]; /*0x6e2d46*/
-    v10 = Random::State(&g_ScenarioClass_Instance->random[1]) % v8; /*0x6e2d58*/
-    v11 = Random::State(v9); /*0x6e2d5a*/
+    int * v9 = &g_ScenarioClass_Instance->random[1]; /*0x6e2d46*/
+    int v10 = Random::State(&g_ScenarioClass_Instance->random[1]) % v8; /*0x6e2d58*/
+    int v11 = Random::State(v9); /*0x6e2d5a*/
     aP2.X = v10 + v20; /*0x6e2d6d*/
     aP2.Z = GroundHeight; /*0x6e2d77*/
     aP2.Y = v11 % v8 + v21; /*0x6e2d7f*/
@@ -695,11 +649,11 @@ char __thiscall TActionClass::SpawnMeteorShower(int *this, AbstractClass *aP1, i
     v12 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x6e2d9c*/
     if ( v12 ) /*0x6e2da3*/
     {
-      v14 = abs32(Random::State(&g_ScenarioClass_Instance->random[1])) & 0x80000001; /*0x6e2dba*/
-      v13 = v14 == 0; /*0x6e2dba*/
+      signed int v14 = abs32(Random::State(&g_ScenarioClass_Instance->random[1])) & 0x80000001; /*0x6e2dba*/
+      bool v13 = v14 == 0; /*0x6e2dba*/
       if ( v14 < 0 ) /*0x6e2dbf*/
         v13 = (((_BYTE)v14 - 1) | 0xFFFFFFFE) == -1; /*0x6e2dc5*/
-      v15 = String; /*0x6e2dc6*/
+      int v15 = String; /*0x6e2dc6*/
       if ( v13 ) /*0x6e2dc8*/
         v15 = v19; /*0x6e2dca*/
       AnimClass::ctor( /*0x6e2dec*/
@@ -725,29 +679,21 @@ namespace gamemd {
 char TActionClass::executeParadropAction(int a2, int a3, int a4, IUnknown * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall TActionClass::executeParadropAction(int *this, int a2, int a3, int a4, IUnknown *aP4)
+void TActionClass::executeParadropAction(int a2, int a3, int a4, IUnknown *aP4)
 {
-  void *v5; // eax
-  int *v6; // eax
-  int v7; // esi
-  int v8; // edi
-  int v9; // ebx
   void **v10; // eax
   MouseClass *v11; // edi
-  int v12; // ebx
   __int16 v13; // cx
   _DWORD *i; // esi
-  int v16; // [esp+Ch] [ebp-18h] BYREF
-  int v17; // [esp+10h] [ebp-14h] BYREF
-  int v18; // [esp+14h] [ebp-10h] BYREF
   CoordStruct aP2; // [esp+18h] [ebp-Ch] BYREF
 
-  v16 = *ScenarioClass::Get_Waypoint_Location(*(char **)&HouseClass_Player[29924], &v17, this->q011); /*0x6e3706*/
-  v5 = CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&v16); /*0x6e370a*/
-  v6 = (int *)(*(int (__thiscall **)(void *, CoordStruct *))(*(_DWORD *)v5 + 72))(v5, &aP2); /*0x6e3718*/
-  v7 = *v6; /*0x6e371b*/
-  v8 = v6[1]; /*0x6e3722*/
-  v9 = v6[2]; /*0x6e3725*/
+  int v17; // [esp+10h] [ebp-14h] BYREF
+  int v16 = *ScenarioClass::Get_Waypoint_Location(*(char **)&HouseClass_Player[29924], &v17, this->q011); /*0x6e3706*/
+  void * v5 = CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&v16); /*0x6e370a*/
+  int * v6 = (int *)(*(int (__thiscall **)(void *, CoordStruct *))(*(_DWORD *)v5 + 72))(v5, &aP2); /*0x6e3718*/
+  int v7 = *v6; /*0x6e371b*/
+  int v8 = v6[1]; /*0x6e3722*/
+  int v9 = v6[2]; /*0x6e3725*/
   v10 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x6e3728*/
   if ( v10 ) /*0x6e3732*/
   {
@@ -765,13 +711,13 @@ char __thiscall TActionClass::executeParadropAction(int *this, int a2, int a3, i
       0);
   }
   v11 = (MouseClass *)dword_ABD490; /*0x6e3772*/
-  v12 = 9; /*0x6e3777*/
+  int v12 = 9; /*0x6e3777*/
   do /*0x6e37da*/
   {
     v13 = HIWORD(v11->field_0); /*0x6e377e*/
     LOWORD(v17) = LOWORD(v11->field_0) + v16; /*0x6e378a*/
     HIWORD(v17) = HIWORD(v16) + v13; /*0x6e378f*/
-    v18 = v17; /*0x6e37a2*/
+    int v18 = v17; /*0x6e37a2*/
     for ( i = (_DWORD *)*((_DWORD *)CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&v18) + 57); /*0x6e37b3*/
           i;
           i = (_DWORD *)i[12] )
@@ -796,19 +742,15 @@ namespace gamemd {
 char TActionClass::executeGeneticMutatorAction(int a2, int a3, int a4, IUnknown * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall TActionClass::executeGeneticMutatorAction(int *this, int a2, int a3, int a4, IUnknown *aP4)
+void TActionClass::executeGeneticMutatorAction(int a2, int a3, int a4, IUnknown *aP4)
 {
-  int v5; // eax
-  int v6; // edi
-  const char *v7; // ebx
-  int v8; // ebp
 
-  v5 = -1; /*0x6e415d*/
-  v6 = *(_DWORD *)&g_NetworkPlayerBuffer[5332] - 1; /*0x6e4160*/
+  int v5 = -1; /*0x6e415d*/
+  int v6 = *(_DWORD *)&g_NetworkPlayerBuffer[5332] - 1; /*0x6e4160*/
   if ( *(_DWORD *)&g_NetworkPlayerBuffer[5332] - 1 >= 0 ) /*0x6e416b*/
   {
-    v7 = (const char *)(this + 21); /*0x6e4172*/
-    v8 = *(_DWORD *)&g_NetworkPlayerBuffer[5320] + 4 * v6; /*0x6e4175*/
+    const char * v7 = (const char *)(this + 21); /*0x6e4172*/
+    int v8 = *(_DWORD *)&g_NetworkPlayerBuffer[5320] + 4 * v6; /*0x6e4175*/
     while ( strcmp((const char *)(*(_DWORD *)v8 + 36), v7) ) /*0x6e41ab*/
     {
       --v6; /*0x6e41ad*/
@@ -838,19 +780,17 @@ namespace gamemd {
 char TActionClass::executeIronCurtainAction(int a2, int a3, int a4, IUnknown * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall TActionClass::executeIronCurtainAction(int *this, int a2, int a3, int a4, IUnknown *aP4)
+void TActionClass::executeIronCurtainAction(int a2, int a3, int a4, IUnknown *aP4)
 {
-  int v5; // eax
-  int v6; // eax
 
   if ( !a2 ) /*0x6e42d6*/
     return 0; /*0x6e42d6*/
-  v5 = this->idxArray; /*0x6e42d8*/
+  int v5 = this->idxArray; /*0x6e42d8*/
   if ( v5 < 0 ) /*0x6e42e0*/
     return 0; /*0x6e42e0*/
   if ( v5 > *(_DWORD *)(a2 + 612) ) /*0x6e42ec*/
     return 0; /*0x6e42ec*/
-  v6 = *(_DWORD *)(*(_DWORD *)(a2 + 600) + 4 * v5); /*0x6e42f4*/
+  int v6 = *(_DWORD *)(*(_DWORD *)(a2 + 600) + 4 * v5); /*0x6e42f4*/
   if ( !*(_BYTE *)(v6 + 109) || (unsigned int)this->q012 > 0x64 ) /*0x6e4303*/
     return 0; /*0x6e4317*/
   SuperClass::SetCharge(v6, this->q012); /*0x6e430d*/
@@ -864,13 +804,12 @@ namespace gamemd {
 char TActionClass::executeNukeAction(int a2, int a3, int a4, IUnknown * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall TActionClass::executeNukeAction(int *this, int a2, int a3, int a4, IUnknown *aP4)
+void TActionClass::executeNukeAction(int a2, int a3, int a4, IUnknown *aP4)
 {
-  int v5; // eax
 
   if ( !a2 ) /*0x6e4326*/
     return 0; /*0x6e4326*/
-  v5 = this->idxArray; /*0x6e4328*/
+  int v5 = this->idxArray; /*0x6e4328*/
   if ( v5 < 0 || v5 > *(_DWORD *)(a2 + 612) ) /*0x6e433c*/
     return 0; /*0x6e4355*/
   SuperClass::SetRechargeTime(*(_DWORD **)(*(_DWORD *)(a2 + 600) + 4 * v5), this->q012); /*0x6e434b*/
@@ -884,14 +823,8 @@ namespace gamemd {
 int TActionClass::TActionClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall TActionClass::TActionClass(int this)
+T TActionClass::TActionClass(int this)
 {
-  int v2; // ecx
-  char v3; // al
-  int v4; // eax
-  _DWORD *v5; // edx
-  int v6; // eax
-  int v7; // eax
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x71e6a4*/
   this->idxArray = -1; /*0x71e6ab*/
@@ -904,10 +837,11 @@ int __thiscall TActionClass::TActionClass(int this)
   this->vtable1 = &TEventClass::`vftable'; /*0x71e6c7*/
   this->vtable2 = &TEventClass::`vftable'; /*0x71e6ce*/
   this->vtable3 = &vt_TEventClass; /*0x71e6d5*/
-  v2 = DataGlobal_B0F1B0; /*0x71e6dc*/
+  int v2 = DataGlobal_B0F1B0; /*0x71e6dc*/
   if ( DataGlobal_B0F1B0 < DataGlobal_B0F1A8 /*0x71e71a*/
     || (DataGlobal_B0F1AD || !DataGlobal_B0F1A8)
     && DataGlobal_B0F1B4 > 0
+  char v3; // al
     && (v3 = (*(int (__thiscall **)(int *, int, _DWORD))(DataGlobal_B0F1A0 + 8))(
                &DataGlobal_B0F1A0,
                DataGlobal_B0F1A8 + DataGlobal_B0F1B4,
@@ -919,7 +853,7 @@ int __thiscall TActionClass::TActionClass(int this)
     *((_DWORD *)DataGlobal_B0F1A4 + v2) = this; /*0x71e72b*/
     v2 = DataGlobal_B0F1B0; /*0x71e72e*/
   }
-  v4 = 0; /*0x71e734*/
+  int v4 = 0; /*0x71e734*/
   if ( v2 <= 0 ) /*0x71e738*/
   {
 LABEL_11:
@@ -927,7 +861,7 @@ LABEL_11:
   }
   else
   {
-    v5 = DataGlobal_B0F1A4; /*0x71e73a*/
+    _DWORD * v5 = DataGlobal_B0F1A4; /*0x71e73a*/
     while ( *v5 != this ) /*0x71e742*/
     {
       ++v4; /*0x71e744*/
@@ -945,7 +879,7 @@ LABEL_11:
          DataGlobal_B0F660 + DataGlobal_B0F66C,
          0) )
   {
-    v6 = g_TActionClassState++; /*0x71e793*/
+    int v6 = g_TActionClassState++; /*0x71e793*/
     *((_DWORD *)DataGlobal_B0F65C + v6) = this; /*0x71e7a2*/
   }
   if ( g_AnimManager < g_AnimTypePool /*0x71e7d9*/
@@ -956,7 +890,7 @@ LABEL_11:
          g_AnimTypePool + g_AnimManagerConfig,
          0) )
   {
-    v7 = g_AnimManager++; /*0x71e7e6*/
+    int v7 = g_AnimManager++; /*0x71e7e6*/
     *((_DWORD *)g_AnimPoolCount + v7) = this; /*0x71e7f5*/
   }
   this->TActionClass_field_34 = 0; /*0x71e7f8*/

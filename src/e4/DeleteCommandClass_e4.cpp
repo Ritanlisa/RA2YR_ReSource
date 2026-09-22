@@ -9,7 +9,7 @@ int DeleteCommandClass_Undo()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // attributes: thunk
-char __stdcall DeleteCommandClass::_vt08(int a1)
+void DeleteCommandClass::_vt08(int a1)
 {
   return UI_Delete(); /*0x537f95*/
 }

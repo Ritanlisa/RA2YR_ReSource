@@ -9,14 +9,13 @@ int sub_53AB70()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int sub_53AB70()
 {
-  char *v0; // edx
-  int v2; // [esp+Ch] [ebp-8h]
 
-  v0 = (char *)g_ScenarioClass_Instance + 4680; /*0x53ab7b*/
+  char * v0 = (char *)g_ScenarioClass_Instance + 4680; /*0x53ab7b*/
   unk_A9FABC = 1; /*0x53ab81*/
   unk_827FCC = 30; /*0x53ab8b*/
   unk_827FC8 = (int)g_CurrentFrame; /*0x53ab95*/
   *((_DWORD *)g_ScenarioClass_Instance + 1170) = g_CurrentFrame; /*0x53ab9a*/
+  int v2; // [esp+Ch] [ebp-8h]
   *((_DWORD *)v0 + 1) = v2; /*0x53aba8*/
   *((_DWORD *)v0 + 2) = 1; /*0x53abad*/
   *((_DWORD *)g_ScenarioClass_Instance + 3404) = *((_DWORD *)g_ScenarioClass_Instance + 3416); /*0x53abbd*/

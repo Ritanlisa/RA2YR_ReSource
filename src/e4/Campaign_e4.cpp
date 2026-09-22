@@ -12,10 +12,8 @@ namespace gamemd {
 char Campaign_WorldDominationTour_16::Release(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall Campaign_WorldDominationTour_16_::_vt02(_BYTE *this, int a2, _DWORD *a3)
+void Campaign_WorldDominationTour_16_::_vt02(int a2, _DWORD *a3)
 {
-  int v3; // ebp
-  _DWORD *v5; // eax
   _DWORD *v6; // esi
   int v7; // ebx
   _DWORD *v8; // ebx
@@ -23,8 +21,7 @@ char __thiscall Campaign_WorldDominationTour_16_::_vt02(_BYTE *this, int a2, _DW
   int i; // esi
   void (__thiscall ***v12)(_DWORD, int); // ecx
   _DWORD *v13; // [esp+10h] [ebp-4h]
-
-  v3 = a2; /*0x765843*/
+  int v3 = a2; /*0x765843*/
   if ( !a2 ) /*0x76584d*/
   {
     (*(void (__thiscall **)(_BYTE *))(this->q00C)(this); /*0x76594d*/
@@ -51,7 +48,7 @@ char __thiscall Campaign_WorldDominationTour_16_::_vt02(_BYTE *this, int a2, _DW
   }
   else
   {
-    v5 = __2_YAPAXI_Z(8 * a2 + 4); /*0x765867*/
+    _DWORD * v5 = __2_YAPAXI_Z(8 * a2 + 4); /*0x765867*/
     if ( !v5 ) /*0x765871*/
     {
       v8 = 0; /*0x76589f*/
@@ -107,7 +104,7 @@ namespace gamemd {
 BOOL Campaign_WorldDominationTour_24::AddRef()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall Campaign_WorldDominationTour_24_::_vt01(_DWORD *this)
+void Campaign_WorldDominationTour_24_::_vt01()
 {
   return *(this + 2) < *(_DWORD *)(*(this + 1) + 16); /*0x76570d*/
 }

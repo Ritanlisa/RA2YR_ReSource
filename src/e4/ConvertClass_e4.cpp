@@ -15,31 +15,13 @@ _DWORD *__thiscall ConvertClass::Construct(
         ConvertClass *aP5)
 {
   ObjectClass *v7; // eax
-  int v8; // edi
-  bool v9; // cc
-  _BYTE *v10; // eax
-  int v11; // eax
   __int16 v12; // cx
-  int v13; // eax
-  int v14; // eax
-  _BYTE *v15; // edi
-  int v16; // eax
-  _BYTE *v17; // edi
   int i; // ebp
   int j; // ebp
-  int v20; // eax
   unsigned __int8 v21; // cl
-  int v22; // eax
-  int v23; // ecx
-  int v24; // eax
-  int v25; // edi
-  int v26; // eax
   ConvertClass *v28; // [esp+Ch] [ebp-14h] BYREF
   __int16 v29; // [esp+10h] [ebp-10h] BYREF
-  char v30; // [esp+12h] [ebp-Eh]
   LightConvertClass *v31; // [esp+14h] [ebp-Ch]
-  int v32; // [esp+1Ah] [ebp-6h]
-
   this->q004 = (*(int (__thiscall **)(ConvertClass *))(*(_DWORD *)aP3->__pad_0 + 112))(aP3); /*0x48e753*/
   this->q008 = 0; /*0x48e756*/
   this->q00C = 0; /*0x48e759*/
@@ -113,8 +95,8 @@ _DWORD *__thiscall ConvertClass::Construct(
   this->q11C = 0; /*0x48e89a*/
   this->q120 = 0; /*0x48e8a0*/
   v7 = aP4; /*0x48e8a6*/
-  v8 = 1; /*0x48e8aa*/
-  v9 = (int)aP4 < 1; /*0x48e8af*/
+  int v8 = 1; /*0x48e8aa*/
+  bool v9 = (int)aP4 < 1; /*0x48e8af*/
   this->q124 = 0; /*0x48e8b1*/
   this->q128 = 0; /*0x48e8b7*/
   this->q12C = 0; /*0x48e8bd*/
@@ -143,11 +125,13 @@ _DWORD *__thiscall ConvertClass::Construct(
     this->q16C = 1; /*0x48e943*/
   if ( this->q004 == 1 ) /*0x48e94f*/
   {
-    v10 = (_BYTE *)__2_YAPAXI_Z(0x100u); /*0x48e95a*/
+  char v30; // [esp+12h] [ebp-Eh]
+    _BYTE * v10 = (_BYTE *)__2_YAPAXI_Z(0x100u); /*0x48e95a*/
     this->q178 = v10; /*0x48e95f*/
     *v10 = 0; /*0x48e968*/
     do /*0x48e9df*/
     {
+  int v11; // eax
       v11 = ComputeColorSaturation( /*0x48e98b*/
               (unsigned int)aP1 + 2 * (v8 % 256) + v8 % 256,
               (int)&aP1->__pad_0[2 * (v8 % 256)],
@@ -156,22 +140,22 @@ _DWORD *__thiscall ConvertClass::Construct(
       LOBYTE(v11) = *(_BYTE *)(v11 + 2); /*0x48e993*/
       v29 = v12; /*0x48e996*/
       v30 = (unsigned __int8)v11 >> 1; /*0x48e9a5*/
-      v13 = Color::ConvertToRGB((unsigned __int8 *)&v29, (int)&v28); /*0x48e9ae*/
+      int v13 = Color::ConvertToRGB((unsigned __int8 *)&v29, (int)&v28); /*0x48e9ae*/
       LOWORD(aP3) = *(_WORD *)v13; /*0x48e9b6*/
       BYTE2(aP3) = *(_BYTE *)(v13 + 2); /*0x48e9c5*/
       ++v8; /*0x48e9d4*/
       *(_BYTE *)(this->q178 + v8 - 1) = Palette::FindClosestColor(aP1->__pad_0, (int)&aP3); /*0x48e9db*/
     }
     while ( v8 < 256 ); /*0x48e9df*/
-    v14 = __2_YAPAXI_Z(this->q16C << 8); /*0x48e9eb*/
+    int v14 = __2_YAPAXI_Z(this->q16C << 8); /*0x48e9eb*/
     this->q170 = v14; /*0x48e9f0*/
-    v15 = (_BYTE *)v14; /*0x48e9f6*/
-    v16 = this->q16C; /*0x48e9f8*/
+    _BYTE * v15 = (_BYTE *)v14; /*0x48e9f6*/
+    int v16 = this->q16C; /*0x48e9f8*/
     this->q174 = &v15[256 * ((v16 - 1) >> 1)]; /*0x48ea10*/
     if ( v16 == 1 ) /*0x48ea16*/
     {
       *v15 = 0; /*0x48ea18*/
-      v17 = v15 + 1; /*0x48ea1a*/
+      _BYTE * v17 = v15 + 1; /*0x48ea1a*/
       for ( i = 1; i < 256; ++i ) /*0x48ea1b*/
         *v17++ = Palette::FindClosestColor((char *)a3, (int)&aP1->__pad_0[2 * (i % 256) + i % 256]); /*0x48ea40*/
     }
@@ -180,18 +164,20 @@ _DWORD *__thiscall ConvertClass::Construct(
       v31 = 0; /*0x48ea53*/
       if ( v16 - 1 >= 0 ) /*0x48ea57*/
       {
+  int v23; // ecx
         do /*0x48eb0a*/
         {
           *v15++ = 0; /*0x48ea5d*/
           for ( j = 1; j < 256; ++j ) /*0x48ea60*/
           {
-            v20 = ComputeColorSaturation((unsigned int)aP1 + 2 * (j % 256) + j % 256, (int)aP1, (int)&aP4); /*0x48ea85*/
+            int v20 = ComputeColorSaturation((unsigned int)aP1 + 2 * (j % 256) + j % 256, (int)aP1, (int)&aP4); /*0x48ea85*/
             v21 = *(_BYTE *)(v20 + 2); /*0x48ea8f*/
             v29 = *(_WORD *)v20; /*0x48ea92*/
+  int v32; // [esp+1Ah] [ebp-6h]
             LOBYTE(v32) = v21; /*0x48ea97*/
             v30 = v21; /*0x48eaa4*/
             v30 = 2 * (int)v31 * v21 / (this->q16C - 1); /*0x48eac2*/
-            v22 = Color::ConvertToRGB((unsigned __int8 *)&v29, (int)&v28); /*0x48eac6*/
+            int v22 = Color::ConvertToRGB((unsigned __int8 *)&v29, (int)&v28); /*0x48eac6*/
             LOWORD(aP3) = *(_WORD *)v22; /*0x48eace*/
             BYTE2(aP3) = *(_BYTE *)(v22 + 2); /*0x48eadf*/
             *v15++ = Palette::FindClosestColor((char *)a3, (int)&aP3); /*0x48eae8*/
@@ -205,8 +191,8 @@ _DWORD *__thiscall ConvertClass::Construct(
   }
   else
   {
-    v24 = __2_YAPAXI_Z(this->q16C << 9); /*0x48eb1c*/
-    v25 = this->q16C; /*0x48eb21*/
+    int v24 = __2_YAPAXI_Z(this->q16C << 9); /*0x48eb1c*/
+    int v25 = this->q16C; /*0x48eb21*/
     this->q170 = v24; /*0x48eb2a*/
     this->q174 = v24 + ((v25 - 1) >> 1 << 9); /*0x48eb3a*/
     if ( !(_BYTE)aP5 ) /*0x48eb46*/
@@ -224,7 +210,7 @@ _DWORD *__thiscall ConvertClass::Construct(
          *(_DWORD *)&stru_89E138[3028] + *(_DWORD *)&stru_89E138[3016],
          0) )
   {
-    v26 = (*(_DWORD *)&stru_89E138[3024])++; /*0x48ebc4*/
+    int v26 = (*(_DWORD *)&stru_89E138[3024])++; /*0x48ebc4*/
     *(_DWORD *)(*(_DWORD *)&stru_89E138[3012] + 4 * v26) = this; /*0x48ebd3*/
   }
   return this; /*0x48ebd8*/

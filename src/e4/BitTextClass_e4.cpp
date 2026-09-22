@@ -7,7 +7,7 @@
 int BitTextClass::ParseFontData(char * Source)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_433880(int this, char *Source)
+void sub_433880(int this, char *Source)
 {
   struct tagRECT *v3; // ebp
   _DWORD *Font; // eax

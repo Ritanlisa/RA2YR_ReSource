@@ -13,28 +13,23 @@ int __fastcall CCINIClass::ReadTypeList(char *a1, CCINIClass *a2)
   int result; // eax
   CCINIClass *v5; // ebp
   CCINIClass *StringByIndex; // esi
-  _DWORD *v7; // esi
-  int v8; // edi
-  _DWORD *v9; // eax
   CCINIClass *v10; // ebp
   CCINIClass *v11; // edi
-  int v12; // esi
-  int v13; // esi
-  int v14; // [esp+10h] [ebp-8h]
   int i; // [esp+10h] [ebp-8h]
 
   v2 = a2; /*0x41f2ec*/
   result = INIClass::GetKeyCount(a1, (INIClass *)aAitriggertypes); /*0x41f2f5*/
   v5 = 0; /*0x41f2fa*/
-  v14 = result; /*0x41f2fe*/
+  int v14 = result; /*0x41f2fe*/
   while ( (int)v5 < v14 ) /*0x41f302*/
   {
+  _DWORD *v7; // esi
     StringByIndex = (CCINIClass *)INIClass::GetStringByIndex(a1, (CCINIClass *)aAitriggertypes, v5); /*0x41f317*/
     if ( _strcmpi((char *)&stru_817460.sectionHead[1], StringByIndex->__pad_0) ) /*0x41f31f*/
     {
       if ( _strcmpi(g_Str_none, StringByIndex->__pad_0) ) /*0x41f335*/
       {
-        v8 = 0; /*0x41f34a*/
+        int v8 = 0; /*0x41f34a*/
         if ( (int)g_AnimTypeInitQueue > 0 ) /*0x41f34e*/
         {
           while ( _strcmpi((char *)(*(_DWORD *)&DataGlobal_A8B204->__pad_0[4 * v8] + 36), StringByIndex->__pad_0) ) /*0x41f368*/
@@ -46,7 +41,7 @@ int __fastcall CCINIClass::ReadTypeList(char *a1, CCINIClass *a2)
           goto LABEL_11; /*0x41f434*/
         }
 LABEL_9:
-        v9 = (_DWORD *)__2_YAPAXI_Z(0x110u); /*0x41f378*/
+        _DWORD * v9 = (_DWORD *)__2_YAPAXI_Z(0x110u); /*0x41f378*/
         if ( v9 ) /*0x41f387*/
         {
           v7 = AnimTypeClass::Construct2(v9, StringByIndex->__pad_0); /*0x41f391*/
@@ -79,7 +74,7 @@ LABEL_13:
     for ( i = result; (int)v10 < i; v10 = (CCINIClass *)((char *)v10 + 1) ) /*0x41f3e4*/
     {
       v11 = (CCINIClass *)INIClass::GetStringByIndex(a1, (CCINIClass *)aAitriggertypes_0, v10); /*0x41f3f9*/
-      v12 = 0; /*0x41f400*/
+      int v12 = 0; /*0x41f400*/
       if ( (int)g_AnimTypeInitQueue > 0 ) /*0x41f404*/
       {
         while ( _strcmpi((char *)(*(_DWORD *)&DataGlobal_A8B204->__pad_0[4 * v12] + 36), v11->__pad_0) ) /*0x41f41d*/
@@ -87,7 +82,7 @@ LABEL_13:
           if ( ++v12 >= (int)g_AnimTypeInitQueue ) /*0x41f427*/
             goto LABEL_28; /*0x41f427*/
         }
-        v13 = *(_DWORD *)&DataGlobal_A8B204->__pad_0[4 * v12]; /*0x41f43f*/
+        int v13 = *(_DWORD *)&DataGlobal_A8B204->__pad_0[4 * v12]; /*0x41f43f*/
         if ( v13 ) /*0x41f444*/
           *(_BYTE *)(v13 + 164) = INIClass::ReadBool_Overwrite((int)a1, (unsigned __int8 *)aAitriggertypes_0, v11, 0) /*0x41f46c*/
                                || g_GameMode_Current;
@@ -106,7 +101,7 @@ namespace gamemd {
 int CCINIClass::GetDB()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall CCINIClass_GetDB(_DWORD *this)
+void CCINIClass_GetDB(_DWORD *this)
 {
   return this->q004; /*0x473453*/
 }
@@ -118,15 +113,12 @@ namespace gamemd {
 int CCINIClass::Load(MultiplayerGameMode * aP1, char a3, char aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall CCINIClass::Load(_BYTE *this, MultiplayerGameMode *aP1, char a3, char aP2)
+void CCINIClass::Load(MultiplayerGameMode *aP1, char a3, char aP2)
 {
   CCINIClass *v5; // ebp
   int Base64Data; // eax
   CCINIClass *v7; // esi
-  bool v8; // zf
   CCINIClass v10; // [esp+Ch] [ebp-A8h] BYREF
-  int v11[5]; // [esp+A0h] [ebp-14h] BYREF
-
   v10.headNode[0] = 0; /*0x474213*/
   v10.headNode[1] = 0; /*0x474217*/
   v10.headNode[2] = (int)aP1; /*0x47421b*/
@@ -136,6 +128,7 @@ int __thiscall CCINIClass::Load(_BYTE *this, MultiplayerGameMode *aP1, char a3, 
   this->ownsFile = 0; /*0x474232*/
   if ( !v5 || !a3 ) /*0x474244*/
     goto LABEL_7; /*0x474244*/
+  int v11[5]; // [esp+A0h] [ebp-14h] BYREF
   Base64Data = INIClass::GetBase64Data(this, g_INI_Key_Digest[0], (int)v11, 0x14u); /*0x47425b*/
   if ( !Base64Data ) /*0x474262*/
   {
@@ -158,7 +151,7 @@ int __thiscall CCINIClass::Load(_BYTE *this, MultiplayerGameMode *aP1, char a3, 
   SHA1::ComputeThunk(&v10.sectionHead[1], (ObjectClass *)(this + 65)); /*0x4742da*/
   this->ownsFile = 1; /*0x4742e3*/
   Pipe::Dtor(&v10.sectionHead[1]); /*0x4742e7*/
-  v8 = memcmp(v11, this + 65, 0x14u) == 0; /*0x4742fa*/
+  bool v8 = memcmp(v11, this + 65, 0x14u) == 0; /*0x4742fa*/
   v7 = (CCINIClass *)2; /*0x4742fd*/
   if ( v8 ) /*0x474302*/
 LABEL_7:
@@ -178,16 +171,10 @@ unsigned int * CCINIClass::CCINIClass()
 _DWORD *__thiscall CCINIClass::Constructor(_DWORD *this)
 {
   _DWORD *result; // eax
-  _DWORD *v2; // esi
-  _DWORD *v3; // ecx
-  int v4; // ebx
-  int v5; // edi
-  int v6; // edi
-  int v7; // edi
 
   result = this; /*0x535b30*/
-  v2 = this + 4; /*0x535b36*/
-  v3 = this + 7; /*0x535b39*/
+  _DWORD * v2 = this + 4; /*0x535b36*/
+  _DWORD * v3 = this + 7; /*0x535b39*/
   result[1] = 0; /*0x535b3c*/
   result[2] = 0; /*0x535b3f*/
   v2[1] = 0; /*0x535b42*/
@@ -199,10 +186,10 @@ _DWORD *__thiscall CCINIClass::Constructor(_DWORD *this)
   result[3] = &vt_GenericList; /*0x535b5d*/
   if ( v3 ) /*0x535b64*/
   {
-    v4 = v3[1]; /*0x535b66*/
+    int v4 = v3[1]; /*0x535b66*/
     if ( v4 ) /*0x535b6b*/
     {
-      v5 = v3[2]; /*0x535b6d*/
+      int v5 = v3[2]; /*0x535b6d*/
       if ( v5 ) /*0x535b72*/
       {
         *(_DWORD *)(v5 + 4) = v4; /*0x535b74*/
@@ -212,10 +199,10 @@ _DWORD *__thiscall CCINIClass::Constructor(_DWORD *this)
       }
     }
   }
-  v6 = v2[1]; /*0x535b86*/
+  int v6 = v2[1]; /*0x535b86*/
   v3[2] = v2; /*0x535b89*/
   v3[1] = v6; /*0x535b8c*/
-  v7 = v2[1]; /*0x535b8f*/
+  int v7 = v2[1]; /*0x535b8f*/
   if ( v7 ) /*0x535b94*/
     *(_DWORD *)(v7 + 8) = v3; /*0x535b96*/
   v2[1] = v3; /*0x535b99*/
@@ -223,10 +210,10 @@ _DWORD *__thiscall CCINIClass::Constructor(_DWORD *this)
   result[10] = 0; /*0x535ba4*/
   result[11] = 0; /*0x535ba7*/
   result[12] = 0; /*0x535baa*/
-  *((_BYTE *)result + 52) = 0; /*0x535bad*/
+  result->q034 = 0; /*0x535bad*/
   result[14] = 0; /*0x535bb0*/
   result[15] = 0; /*0x535bb4*/
-  *((_BYTE *)result + 64) = 0; /*0x535bb7*/
+  result->ownsFile = 0; /*0x535bb7*/
   *result = &CCINIClass_Vtable; /*0x535bba*/
   return result; /*0x535ba3*/
 }

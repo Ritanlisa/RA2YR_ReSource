@@ -9,15 +9,13 @@ namespace gamemd {
 BOOL TimerClass::Active()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall TimerClass_Active(int this)
+void TimerClass_Active(int this)
 {
-  int v1; // edx
-  int v2; // eax
 
   if ( *(__int16 *)(this + 20) <= 0 ) /*0x4c9485*/
     return 0; /*0x4c9485*/
-  v1 = this->TimerClass_field_0x8; /*0x4c9487*/
-  v2 = this->TimerClass_field_0x10; /*0x4c948a*/
+  int v1 = this->TimerClass_field_0x8; /*0x4c9487*/
+  int v2 = this->TimerClass_field_0x10; /*0x4c948a*/
   if ( v1 != -1 ) /*0x4c9490*/
   {
     if ( (int)g_CurrentFrame - v1 >= v2 ) /*0x4c949c*/
@@ -53,14 +51,12 @@ char *__thiscall TimerClass::Construct(
         int a16,
         int a17)
 {
-  char *v18; // ecx
   IUnknown *v19; // ecx
-  int v20; // eax
 
   *(_DWORD *)this = 0; /*0x54fe6a*/
   this->q004 = 0; /*0x54fe6c*/
   this->TimerClass_field_0x8 = *(_DWORD *)&g_NetworkPlayerBuffer[5960]; /*0x54fe75*/
-  v18 = this + 36; /*0x54fe78*/
+  char * v18 = this + 36; /*0x54fe78*/
   this->TimerClass_field_0x10 = 0; /*0x54fe7b*/
   *(_DWORD *)v18 = a2; /*0x54fe83*/
   *((_DWORD *)this + 5) = 0; /*0x54fe89*/
@@ -110,7 +106,7 @@ char *__thiscall TimerClass::Construct(
          dword_ABC880 + dword_ABC88C,
          0) )
   {
-    v20 = g_TimerPool++; /*0x54ff92*/
+    int v20 = g_TimerPool++; /*0x54ff92*/
     *((_DWORD *)dword_ABC87C + v20) = this; /*0x54ffa1*/
   }
   return this; /*0x54ffa6*/
@@ -126,12 +122,11 @@ signed int TimerClass::GetRemaining()
 signed int __thiscall TimerClass_GetRemaining(signed int *this)
 {
   signed int result; // eax
-  signed int v3; // edi
 
   result = this->q004; /*0x5cead3*/
   if ( result != -1 ) /*0x5cead9*/
   {
-    v3 = *(this + 6); /*0x5ceadc*/
+    signed int v3 = *(this + 6); /*0x5ceadc*/
     result = Timer::GetTicks() - this->q004; /*0x5ceaec*/
     if ( result >= v3 ) /*0x5ceaf1*/
     {
@@ -154,7 +149,7 @@ namespace gamemd {
 void TimerClass::StartIfIdle()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall TimerClass_StartIfIdle(_DWORD *this)
+void TimerClass_StartIfIdle(_DWORD *this)
 {
   if ( this->q010 == -1 ) /*0x5ceb27*/
     this->q010 = Timer::GetTicks(); /*0x5ceb31*/

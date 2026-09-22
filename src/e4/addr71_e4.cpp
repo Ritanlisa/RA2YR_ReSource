@@ -18,7 +18,7 @@ namespace gamemd {
 int sub_710860(unsigned int * a1, unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __cdecl sub_710860(_DWORD *a1, _DWORD *a2)
+int sub_710860(_DWORD *a1, _DWORD *a2)
 {
   if ( *a1 == *a2 )
     return 0; /*0x710870*/
@@ -33,15 +33,9 @@ namespace gamemd {
 char E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall ProcessUnitDeploymentAtCell(int **this, int a2, int a3, int a4)
+void ProcessUnitDeploymentAtCell(int **this, int a2, int a3, int a4)
 {
   _DWORD *i; // edi
-  bool v6; // bl
-  int v7; // eax
-  _DWORD *v8; // eax
-  _DWORD *v9; // ecx
-  int v10; // ecx
-  _DWORD *v11; // ecx
   _DWORD *v12; // eax
   int *v13; // ecx
   int v14; // edi
@@ -53,7 +47,6 @@ char __thiscall ProcessUnitDeploymentAtCell(int **this, int a2, int a3, int a4)
   int v20; // ecx
   char v22; // [esp+31h] [ebp-5h]
   int v23; // [esp+32h] [ebp-4h] BYREF
-
   for ( i = (_DWORD *)*((_DWORD *)Coord::To_Cell(&DataGlobal_87F7E8, &a2) + 57); i; i = (_DWORD *)i[12] ) /*0x7187bf*/
   {
     if ( (*(unsigned __int8 (__thiscall **)(_DWORD *))(*i + 352))(i) ) /*0x7187c5*/
@@ -77,13 +70,13 @@ char __thiscall ProcessUnitDeploymentAtCell(int **this, int a2, int a3, int a4)
   {
     v22 = 1; /*0x71885f*/
   }
-  v6 = 0; /*0x718867*/
+  bool v6 = 0; /*0x718867*/
   if ( *(_DWORD *)((*(int (__thiscall **)(_DWORD))(**(this + 3) + 132))(*(this + 3)) + 1660) == 3 ) /*0x718878*/
   {
     v6 = 1; /*0x71887d*/
     if ( *(_BYTE *)((*(int (__thiscall **)(_DWORD))(**(this + 3) + 132))(*(this + 3)) + 1040) ) /*0x718887*/
     {
-      v7 = (*(int (__thiscall **)(_DWORD))(**(this + 3) + 132))(*(this + 3)); /*0x718896*/
+      int v7 = (*(int (__thiscall **)(_DWORD))(**(this + 3) + 132))(*(this + 3)); /*0x718896*/
       v6 = (unsigned __int8)HouseClass::GainedPoweredCenter(v7) != 0; /*0x7188af*/
     }
   }
@@ -144,17 +137,17 @@ char __thiscall ProcessUnitDeploymentAtCell(int **this, int a2, int a3, int a4)
   {
     *((_BYTE *)*(this + 3) + 973) = 1; /*0x71896b*/
     (*(void (__thiscall **)(_DWORD))(**(this + 3) + 928))(*(this + 3)); /*0x718977*/
-    v8 = *(this + 3); /*0x71897d*/
-    v9 = (_DWORD *)v8[182]; /*0x718980*/
+    _DWORD * v8 = *(this + 3); /*0x71897d*/
+    _DWORD * v9 = (_DWORD *)v8[182]; /*0x718980*/
     if ( v9 ) /*0x718988*/
     {
       TechnoClass::MutateAll(v9, v8[266], v8[267]); /*0x718998*/
-      v10 = (*(this + 3))[182]; /*0x7189a0*/
+      int v10 = (*(this + 3))[182]; /*0x7189a0*/
       if ( v10 ) /*0x7189a8*/
         (*(void (__thiscall **)(int, int))(*(_DWORD *)v10 + 32))(v10, 1); /*0x7189ae*/
       (*(this + 3))[182] = 0; /*0x7189b4*/
     }
-    v11 = *(this + 3); /*0x7189be*/
+    _DWORD * v11 = *(this + 3); /*0x7189be*/
     if ( v11[266] ) /*0x7189c1*/
     {
       LOBYTE(v12) = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v11 + 224))(v11, v11[266]); /*0x7189ce*/
@@ -178,12 +171,8 @@ int InitializeCellSpreadTables()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int InitializeCellSpreadTables()
 {
-  int v0; // eax
-  int v1; // edx
-  int v2; // ecx
-  int v4; // [esp+4h] [ebp-4h] BYREF
 
-  v4 = 0; /*0x71d582*/
+  int v4 = 0; /*0x71d582*/
   DataGlobal_B0EDC0 = 0; /*0x71d5a2*/
   DataGlobal_B0EDC4 = *(_DWORD *)CellStruct::Set(&v4, 0x7FFF, 0x7FFF); /*0x71d5b3*/
   memset(&DataGlobal_B0EDC8, 0, 0x20u); /*0x71d5c9*/
@@ -202,7 +191,7 @@ int InitializeCellSpreadTables()
   DataGlobal_B0EE3C = *(_DWORD *)CellStruct::Set(&v4, 1, 0); /*0x71d6cb*/
   DataGlobal_B0EE40 = *(_DWORD *)CellStruct::Set(&v4, 0, 1); /*0x71d6d9*/
   DataGlobal_B0EE44 = *(_DWORD *)CellStruct::Set(&v4, 1, 1); /*0x71d6fa*/
-  v0 = *(_DWORD *)CellStruct::Set(&v4, 0x7FFF, 0x7FFF); /*0x71d705*/
+  int v0 = *(_DWORD *)CellStruct::Set(&v4, 0x7FFF, 0x7FFF); /*0x71d705*/
   DataGlobal_B0EE4C = 0; /*0x71d709*/
   DataGlobal_B0EE50 = 0; /*0x71d714*/
   DataGlobal_B0EE54 = 0; /*0x71d71c*/
@@ -216,7 +205,7 @@ int InitializeCellSpreadTables()
   DataGlobal_B0EE6C = *(_DWORD *)CellStruct::Set(&v4, 1, 1); /*0x71d794*/
   DataGlobal_B0EE70 = *(_DWORD *)CellStruct::Set(&v4, 0, 2); /*0x71d7a9*/
   DataGlobal_B0EE74 = *(_DWORD *)CellStruct::Set(&v4, 1, 2); /*0x71d7ba*/
-  v1 = *(_DWORD *)CellStruct::Set(&v4, 0x7FFF, 0x7FFF); /*0x71d7ce*/
+  int v1 = *(_DWORD *)CellStruct::Set(&v4, 0x7FFF, 0x7FFF); /*0x71d7ce*/
   DataGlobal_B0EE7C = 0; /*0x71d7d2*/
   DataGlobal_B0EE78 = v1; /*0x71d7d7*/
   DataGlobal_B0EE80 = 0; /*0x71d7dd*/
@@ -228,7 +217,7 @@ int InitializeCellSpreadTables()
   DataGlobal_B0EE94 = *(_DWORD *)CellStruct::Set(&v4, 0, 1); /*0x71d849*/
   DataGlobal_B0EE98 = *(_DWORD *)CellStruct::Set(&v4, 1, 1); /*0x71d864*/
   DataGlobal_B0EE9C = *(_DWORD *)CellStruct::Set(&v4, 2, 1); /*0x71d87f*/
-  v2 = *(_DWORD *)CellStruct::Set(&v4, 0x7FFF, 0x7FFF); /*0x71d889*/
+  int v2 = *(_DWORD *)CellStruct::Set(&v4, 0x7FFF, 0x7FFF); /*0x71d889*/
   DataGlobal_B0EEA4 = 0; /*0x71d88d*/
   DataGlobal_B0EEA8 = 0; /*0x71d89a*/
   DataGlobal_B0EEA0 = v2; /*0x71d8a7*/
@@ -269,16 +258,12 @@ int __fastcall ObjectTypeClass_LoadTheaterSHP(int a1)
 {
   int result; // eax
   int i; // edi
-  int v4; // esi
-  _DWORD v5[22]; // [esp+Ch] [ebp-26Ch] BYREF
-  _BYTE v6[12]; // [esp+64h] [ebp-214h] BYREF
-  int v7; // [esp+70h] [ebp-208h]
   char Buffer[512]; // [esp+78h] [ebp-200h] BYREF
 
   result = g_RulesClassInitState; /*0x71dca0*/
   for ( i = 0; i < g_RulesClassInitState; ++i ) /*0x71dcb6*/
   {
-    v4 = *((_DWORD *)DataGlobal_A8E31C + i); /*0x71dcc2*/
+    int v4 = *((_DWORD *)DataGlobal_A8E31C + i); /*0x71dcc2*/
     if ( *(_BYTE *)(v4 + 556) ) /*0x71dcc5*/
     {
       _makepath(Buffer, 0, 0, (const char *)(v4 + 36), (const char *)&off_7E1BC6 + 112 * a1); /*0x71dcef*/
@@ -289,10 +274,12 @@ int __fastcall ObjectTypeClass_LoadTheaterSHP(int a1)
       }
       *(_DWORD *)(v4 + 164) = 0; /*0x71dd18*/
       *(_BYTE *)(v4 + 168) = 0; /*0x71dd23*/
+  _DWORD v5[22]; // [esp+Ch] [ebp-26Ch] BYREF
       CCFileClass::Construct(v5, Buffer); /*0x71dd29*/
       *(_DWORD *)(v4 + 164) = CCFileClass::ReadEntireFile(v5); /*0x71dd3b*/
       v5[0] = &vt_CCFileClass; /*0x71dd41*/
-      v7 = 0; /*0x71dd49*/
+      int v7 = 0; /*0x71dd49*/
+  _BYTE v6[12]; // [esp+64h] [ebp-214h] BYREF
       Vector::Clear((int)v6); /*0x71dd4d*/
       v5[0] = &off_7E1668; /*0x71dd56*/
       BufferIOFileClass::Dtor(v5); /*0x71dd5e*/

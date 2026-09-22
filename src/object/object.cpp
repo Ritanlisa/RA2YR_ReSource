@@ -44,17 +44,16 @@ bool ObjectClass::Remove()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x5f44a0
-int __thiscall ObjectClass::Remove(#374 *this)
+int ObjectClass::Remove(#374 *this)
 {
   int result; // eax
-  int v3; // eax
   #374 *v4; // [esp+4h] [ebp-4h] BYREF
 
   LOBYTE(result) = this->isSelected;
   if ( (_BYTE)result )
   {
     v4 = this;
-    v3 = (*(int (__thiscall **)(_DWORD *, #374 **))(DataGlobal_87F7E8[539956] + 16))(&DataGlobal_87F7E8[539956], &v4);
+    int v3 = (*(int (__thiscall **)(_DWORD *, #374 **))(DataGlobal_87F7E8[539956] + 16))(&DataGlobal_87F7E8[539956], &v4);
     if ( v3 != -1 && v3 < DataGlobal_87F7E8[539960] )
     {
       --DataGlobal_87F7E8[539960];
@@ -80,12 +79,11 @@ void ObjectClass::Destroy()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x5f65f0
-int __thiscall ObjectClass::Destroy(#374 *this)
+void ObjectClass::Destroy(#374 *this)
 {
-  int v2; // ecx
   int result; // eax
 
-  v2 = this->attachedBomb;
+  BombClass *v2 = this->attachedBomb;
   if ( v2 )
     ObjectClass::CleanupAudioAndRefs(v2);
   if ( this && (this->abstractFlags & 1) != 0 )

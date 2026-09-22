@@ -13,9 +13,7 @@ void DialogSkirmishFunc_UpdateMultiEngineer(SkirmishDialog * hWnd, int nIDDlgIte
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __fastcall DialogSkirmishFunc_UpdateMultiEngineer(SkirmishDialog *hWnd, int nIDDlgItem, int a3, int a4)
 {
-  int v6; // edi
   HWND DlgItem; // eax
-  int v8; // esi
   LRESULT v9; // eax
   CampaignScore *v10; // eax
   wchar_t *StringCSF; // eax
@@ -24,8 +22,6 @@ void __fastcall DialogSkirmishFunc_UpdateMultiEngineer(SkirmishDialog *hWnd, int
   wchar_t *v14; // eax
   wchar_t *v15; // eax
   HWND v16; // eax
-  int v17; // edi
-  int v18; // esi
   LRESULT v19; // eax
   int ResourceID4CSF; // eax
   wchar_t *ComboBoxSelectedRaw2; // esi
@@ -37,26 +33,16 @@ void __fastcall DialogSkirmishFunc_UpdateMultiEngineer(SkirmishDialog *hWnd, int
   HWND v27; // eax
   HWND v28; // eax
   LRESULT ComboBoxSelected; // eax
-  int v30; // eax
-  int v31; // esi
-  int v32; // edi
   int ResourceID2CSF; // ebx
   LRESULT v34; // eax
   LRESULT v35; // eax
-  char *v36; // edi
-  int v37; // esi
-  int v38; // ebx
   LRESULT v39; // eax
   LRESULT v40; // esi
   LRESULT v41; // ebx
   LRESULT ComboBoxSelectedRaw; // eax
-  int v43; // edx
   LRESULT v44; // esi
   LRESULT v45; // edi
   LRESULT v46; // ebx
-  int v47; // eax
-  int v48; // esi
-  char *v49; // eax
   ObjectClass *v50; // eax
   HWND v51; // eax
   HWND v52; // eax
@@ -69,19 +55,12 @@ void __fastcall DialogSkirmishFunc_UpdateMultiEngineer(SkirmishDialog *hWnd, int
   ObjectClass *v59; // esi
   CCINIClass *v60; // ebx
   ObjectClass *v61; // esi
-  _DWORD *v62; // eax
   ObjectClass *v63; // eax
   int PlayerCountMap; // edi
-  int v65; // ecx
-  int v66; // eax
   ObjectClass *v67; // esi
-  _DWORD *v68; // eax
   ObjectClass *v69; // eax
-  int v70; // eax
   wchar_t *v71; // [esp-10h] [ebp-270h]
   CampaignScore *v72; // [esp+0h] [ebp-260h]
-  int v73; // [esp+0h] [ebp-260h]
-  int v74; // [esp+0h] [ebp-260h]
   int _0c; // [esp+0h] [ebp-260h]
   VectorClass *Format; // [esp+10h] [ebp-250h]
   VectorClass *Formata; // [esp+10h] [ebp-250h]
@@ -131,7 +110,7 @@ void __fastcall DialogSkirmishFunc_UpdateMultiEngineer(SkirmishDialog *hWnd, int
       {
         case 1697:
 LABEL_151:
-          v70 = CountryCombo::IDToIndex((void *)nIDDlgItem);
+          int v70 = CountryCombo::IDToIndex((void *)nIDDlgItem);
           sub_4E3690((HWND)hWnd, v70);
           break;
         case 1450:
@@ -157,11 +136,10 @@ LABEL_151:
                 ComPtr::Dtor(*(&g_MatrixTransformState + 2257));
                 __3_YAXPAX_Z(v61);
               }
-              v62 = (_DWORD *)__2_YAPAXI_Z(4u);
+              _DWORD * v62 = (_DWORD *)__2_YAPAXI_Z(4u);
               if ( v62 )
                 v63 = (ObjectClass *)unknown_libname_27(v62);
-              else
-                v63 = 0;
+              ObjectClass *v63 = 0;
               *(&g_MatrixTransformState + 2257) = (CoordStruct *)v63;
               Surface::LoadToSurfaceSHP((char **)v63, stru_829ABC[0]);
               if ( !(*(&g_MatrixTransformState + 2257))->X )
@@ -179,6 +157,7 @@ LABEL_151:
           {
             PlayerCountMap = ReadPlayerCountMap(*(int *)&HouseClass_Player[29960]);
             if ( !(*(unsigned __int8 (__thiscall **)(_DWORD))(**(_DWORD **)&HouseClass_Player[29936] + 4))(*(_DWORD *)&HouseClass_Player[29936])
+  int v65; // ecx
               || (v65 = *(_DWORD *)(*(_DWORD *)&HouseClass_Player[29924] + 4580), v65 > PlayerCountMap) )
             {
               v65 = PlayerCountMap;
@@ -190,7 +169,7 @@ LABEL_151:
             ShowWindow((HWND)hWnd, 5);
             if ( LoadScenarioClassByIndex(*(int *)&HouseClass_Player[29960]) )
             {
-              v66 = MultiplayerGameMode::Find(*(void **)&HouseClass_Player[29956]);
+              int v66 = MultiplayerGameMode::Find(*(void **)&HouseClass_Player[29956]);
               SetDialogPlayerName((HWND)hWnd, v66);
               Dialog::ShowPlayerName((HWND)hWnd);
               Skirmish::EnableSpawnButtons(0);
@@ -202,11 +181,10 @@ LABEL_151:
                 {
                   ComPtr::Dtor(*(&g_MatrixTransformState + 2257));
                   __3_YAXPAX_Z(v67);
-                  v68 = (_DWORD *)__2_YAPAXI_Z(4u);
+                  _DWORD * v68 = (_DWORD *)__2_YAPAXI_Z(4u);
                   if ( v68 )
                     v69 = (ObjectClass *)unknown_libname_27(v68);
-                  else
-                    v69 = 0;
+                  ObjectClass *v69 = 0;
                   *(&g_MatrixTransformState + 2257) = (CoordStruct *)v69;
                   Surface::LoadToSurfaceSHP((char **)v69, stru_829ABC[0]);
                   v67 = (ObjectClass *)*(&g_MatrixTransformState + 2257);
@@ -229,9 +207,10 @@ LABEL_151:
           break;
         case 1472:
         case 1559:
-          v6 = 0;
+          int v6 = 0;
           if ( !a4 )
           {
+  int v31; // esi
             if ( nIDDlgItem == 1559 )
             {
               DlgItem = GetDlgItem((HWND)hWnd, 1559);
@@ -241,6 +220,7 @@ LABEL_151:
             v75 = 0;
             do
             {
+  int v8; // esi
               if ( v6 )
               {
                 switch ( v6 )
@@ -289,6 +269,7 @@ LABEL_151:
                 swprintf(Destination, (const size_t)StringCSF, (const wchar_t *const)Format, v72);
                 v86 = &stru_82083C;
                 v12 = GetStringCSF(g_Str_TXT_OK, 0, (CampaignScore *)&stru_830620[63020], 1080);
+  int v73; // [esp+0h] [ebp-260h]
                 Dialog::ShowMessageBox((int)Destination, v12, 0, 0, 0, v73);
                 v13 = GetDlgItem((HWND)hWnd, 1559);
                 EnableWindow(v13, 1);
@@ -304,6 +285,7 @@ LABEL_151:
                 swprintf(Destination, (const size_t)v14, (const wchar_t *const)Format, v72);
                 v85 = &stru_82083C;
                 v15 = GetStringCSF(g_Str_TXT_OK, 0, (CampaignScore *)&stru_830620[63020], 1088);
+  int v74; // [esp+0h] [ebp-260h]
                 Dialog::ShowMessageBox((int)Destination, v15, 0, 0, 0, v74);
                 v16 = GetDlgItem((HWND)hWnd, 1559);
                 EnableWindow(v16, 1);
@@ -311,9 +293,10 @@ LABEL_151:
               }
               if ( GetComboBoxSelectedRaw2((HWND)hWnd, 1901, 0xFFFFFFFF) >= 0 )
               {
-                v17 = 0;
+                int v17 = 0;
                 while ( 1 )
                 {
+  int v18; // esi
                   if ( v17 )
                   {
                     switch ( v17 )
@@ -393,9 +376,10 @@ LABEL_151:
             CopyWideToChar(&HouseClass_Player[30260], lParam, -1);
             ComboBoxSelected = GetComboBoxSelected((ReferenceCounted *)hWnd, 1697, 0xFFFFFFFF);
             SessionClass::AssignSide(&HouseClass_Player[29932], ComboBoxSelected, (MPCooperative *)1);
-            v30 = 0;
+            int v30 = 0;
             do
             {
+  int v32; // edi
               v31 = v30 + 1;
               if ( v30 )
               {
@@ -459,10 +443,12 @@ LABEL_151:
               v30 = v31;
             }
             while ( v31 < 7 );
-            v36 = 0;
+            char * v36 = 0;
             Formatb = (VectorClass *)&HouseClass_Player[30372];
             do
             {
+  int v43; // edx
+  int v37; // esi
               if ( v36 )
               {
                 if ( v36 == (char *)1 )
@@ -494,7 +480,7 @@ LABEL_151:
               {
                 v37 = 1291;
               }
-              v38 = GetResourceID2CSF(++v36);
+              int v38 = GetResourceID2CSF(++v36);
               nIDDlgItema = (VectorClass *)GetResourceIDCSF(v36);
               v39 = SendDlgItemMessageA((HWND)hWnd, v37, 0x147u, 0, 0);
               v40 = SendDlgItemMessageA((HWND)hWnd, v37, 0x150u, v39, 0);
@@ -527,12 +513,12 @@ LABEL_151:
             SessionClass::AssignColor(&HouseClass_Player[29932], v44, (MPCooperative *)1);
             *(_DWORD *)&HouseClass_Player[30288] = v45;
             *(_DWORD *)&HouseClass_Player[30296] = v46;
-            v47 = __2_YAPAXI_Z(0x85u);
-            v48 = v47;
+            int v47 = __2_YAPAXI_Z(0x85u);
+            int v48 = v47;
             if ( v47 )
             {
               Waypoint::InitInvalid((_BYTE *)(v47 + 40));
-              v49 = CharToWideString(&HouseClass_Player[30260]);
+              char * v49 = CharToWideString(&HouseClass_Player[30260]);
               wcscpy((wchar_t *)v48, (const wchar_t *)v49);
               *(_DWORD *)(v48 + 75) = *(_DWORD *)&HouseClass_Player[30304];
               *(_DWORD *)(v48 + 83) = *(_DWORD *)&HouseClass_Player[30280];

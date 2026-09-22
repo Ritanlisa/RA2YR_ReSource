@@ -41,7 +41,7 @@ namespace game {
 int RadioClass::ProcessCmd()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall RadioClass::ProcessCmd(#374 *this)
+void RadioClass::ProcessCmd(#374 *this)
 {
   if ( !this->inLimbo ) /*0x65aa83*/
     (*(void (__thiscall **)(#374 *, int))(this->q0A0)(this, 3); /*0x65aa91*/
@@ -57,24 +57,22 @@ namespace game {
 int RadioClass::PowerDrainUpdate(AbstractClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall RadioClass::PowerDrainUpdate(int *this, AbstractClass *aP1)
+void RadioClass::PowerDrainUpdate(AbstractClass *aP1)
 {
   BaseClass *result; // eax
   int i; // edi
-  int v5; // eax
-  int v6; // ecx
 
   AbstractClass::COMStub_13((int)this, aP1); /*0x65ab1a*/
   Power::TimerProcess(aP1); /*0x65ab28*/
   result = (BaseClass *)this->q03A; /*0x65ab2d*/
   for ( i = 0; i < (int)result; ++i ) /*0x65ab37*/
   {
-    v5 = *(_DWORD *)(this->q0E4 + 4 * i); /*0x65ab3f*/
+    int v5 = *(_DWORD *)(this->q0E4 + 4 * i); /*0x65ab3f*/
     if ( v5 ) /*0x65ab44*/
     {
       (*(void (__stdcall **)(int))(*(_DWORD *)(v5 + 4) + 16))(v5 + 4); /*0x65ab4d*/
       Power::TimerProcess(aP1); /*0x65ab53*/
-      v6 = *(_DWORD *)(this->q0E4 + 4 * i); /*0x65ab5e*/
+      int v6 = *(_DWORD *)(this->q0E4 + 4 * i); /*0x65ab5e*/
       (*(void (__thiscall **)(int))(*(_DWORD *)v6 + 44))(v6); /*0x65ab63*/
       Power::TimerProcess(aP1); /*0x65ab69*/
     }
@@ -92,16 +90,13 @@ namespace game {
 int RadioClass::LoadState(ObjectClass * aP1, ObjectClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall RadioClass::LoadState(void *this, ObjectClass *aP1, ObjectClass *aP2)
+void RadioClass::LoadState(ObjectClass *aP1, ObjectClass *aP2)
 {
   ObjectClass *v3; // ebp
   ObjectClass *v4; // edi
   int result; // eax
   void **p_attachedTag; // esi
-  int v7; // esi
   ObjectClass *v8; // eax
-  int v9; // esi
-
   v3 = aP1; /*0x65ab81*/
   v4 = aP2; /*0x65ab87*/
   result = BuildingClass::SaveLoad_Register((#374 *)this); /*0x65ab8d*/
@@ -124,12 +119,12 @@ int __thiscall RadioClass::LoadState(void *this, ObjectClass *aP1, ObjectClass *
     if ( result >= 0 ) /*0x65abd1*/
     {
       (*((void (__thiscall **)(void **, ObjectClass *, _DWORD))*p_attachedTag + 2))(&v3[1].attachedTag, aP2, 0); /*0x65abde*/
-      v7 = 0; /*0x65abe1*/
+      int v7 = 0; /*0x65abe1*/
       v8 = aP2; /*0x65abe3*/
       if ( (int)aP2 <= 0 ) /*0x65abe9*/
       {
 LABEL_8:
-        v9 = 0; /*0x65ac14*/
+        int v9 = 0; /*0x65ac14*/
         if ( (int)v8 > 0 ) /*0x65ac18*/
         {
           do /*0x65ac33*/
@@ -169,15 +164,14 @@ namespace game {
 int RadioClass::FindLinkIndex(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall RadioClass::FindLinkIndex(int *this, int a2)
+void RadioClass::FindLinkIndex(int a2)
 {
-  int v2; // edx
   int result; // eax
   _DWORD *i; // ecx
 
   if ( !a2 ) /*0x65ad97*/
     return -1; /*0x65ad97*/
-  v2 = this->q03A; /*0x65ad99*/
+  int v2 = this->q03A; /*0x65ad99*/
   result = 0; /*0x65ad9f*/
   if ( v2 <= 0 ) /*0x65ada3*/
     return -1; /*0x65adb7*/
@@ -198,14 +192,12 @@ namespace game {
 char RadioClass::HasFreeLink()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall RadioClass::HasFreeLink(int *this)
+void RadioClass::HasFreeLink()
 {
-  int v1; // edx
-  int v2; // eax
   _DWORD *i; // ecx
 
-  v1 = this->q03A; /*0x65adc0*/
-  v2 = 0; /*0x65adc6*/
+  int v1 = this->q03A; /*0x65adc0*/
+  int v2 = 0; /*0x65adc6*/
   if ( v1 <= 0 ) /*0x65adca*/
     return 0; /*0x65addf*/
   for ( i = (_DWORD *)this->q0E4; *i; ++i ) /*0x65adcc*/
@@ -225,16 +217,14 @@ namespace game {
 void RadioClass::SetLinkCount(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall RadioClass::SetLinkCount(_DWORD *this, int a2)
+void RadioClass::SetLinkCount(int a2)
 {
-  int v3; // ebx
-  int v4; // eax
 
-  v3 = this->q0E8; /*0x65ae69*/
+  int v3 = this->q0E8; /*0x65ae69*/
   if ( a2 > v3 ) /*0x65ae71*/
   {
     (*(void (__thiscall **)(_DWORD *, int, _DWORD))(this->radioLinks + 8))(this + 56, a2, 0); /*0x65ae82*/
-    v4 = v3; /*0x65ae87*/
+    int v4 = v3; /*0x65ae87*/
     do /*0x65ae9c*/
     {
       ++v4; /*0x65ae91*/

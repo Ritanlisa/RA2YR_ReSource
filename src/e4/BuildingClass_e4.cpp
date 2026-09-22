@@ -9,57 +9,27 @@ namespace gamemd {
 int BuildingClass::LoadFromStream()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BuildingClass::LoadFromStream(#377 *this)
+void BuildingClass::LoadFromStream(#377 *this)
 {
-  int v1; // edi
-  int v2; // esi
   size_t v3; // eax
-  int v4; // ebx
-  int v5; // eax
-  signed int v6; // ecx
   size_t i; // eax
-  _DWORD *v8; // eax
-  int v9; // ebp
   int result; // eax
-  int v11; // esi
-  int v12; // eax
-  int v13; // eax
-  int v14; // ecx
-  int v15; // eax
-  int v16; // eax
-  int v17; // edx
-  int v18; // esi
-  int v19; // eax
-  int v20; // ebx
-  int v21; // ecx
-  int v22; // eax
-  int v23; // eax
-  int v24; // edx
-  int v25; // esi
-  int *v26; // esi
-  int v27; // ebp
-  int *v28; // esi
-  int v29; // ebp
-  int *v30; // esi
-  int v31; // ebp
-  int v32; // [esp+58h] [ebp-4h]
-  int v33; // [esp+60h] [ebp+4h] BYREF
-  int v34; // [esp+64h] [ebp+8h] BYREF
 
-  v1 = v33; /*0x453e25*/
-  v2 = v33 + 4; /*0x453e2c*/
+  int v33; // [esp+60h] [ebp+4h] BYREF
+  int v1 = v33; /*0x453e25*/
+  int v2 = v33 + 4; /*0x453e2c*/
   v33 = (*(int (__stdcall **)(int))(*(_DWORD *)(v33 + 4) + 16))(v33 + 4); /*0x453e3d*/
   v3 = BuildingTypeClass::Dequeue((char **)&g_BuildingLoadQueue_Array, &v33); /*0x453e41*/
-  v4 = 0; /*0x453e46*/
+  int v4 = 0; /*0x453e46*/
   if ( v3 ) /*0x453e4a*/
   {
-    v5 = (int)(v3 - (_DWORD)g_BuildingLoadQueue_Array) >> 3; /*0x453e52*/
+    int v5 = (int)(v3 - (_DWORD)g_BuildingLoadQueue_Array) >> 3; /*0x453e52*/
     if ( v5 != -1 ) /*0x453e58*/
     {
-      v6 = v5 + 1; /*0x453e5a*/
+      signed int v6 = v5 + 1; /*0x453e5a*/
       for ( i = g_BuildingLoadQueue_Count; v6 < (int)g_BuildingLoadQueue_Count; i = g_BuildingLoadQueue_Count ) /*0x453e64*/
       {
-        v8 = (_DWORD *)((char *)g_BuildingLoadQueue_Array + 8 * v6++); /*0x453e6c*/
+        _DWORD * v8 = (_DWORD *)((char *)g_BuildingLoadQueue_Array + 8 * v6++); /*0x453e6c*/
         *(v8 - 2) = *v8; /*0x453e72*/
         *(v8 - 1) = v8[1]; /*0x453e78*/
       }
@@ -69,15 +39,16 @@ int __thiscall BuildingClass::LoadFromStream(#377 *this)
       g_BuildingLoadQueue_Active = 0; /*0x453ea7*/
     }
   }
-  v9 = v34; /*0x453ead*/
+  int v34; // [esp+64h] [ebp+8h] BYREF
+  int v9 = v34; /*0x453ead*/
   result = BuildingClass::AllocAndCtor(v1, v34); /*0x453eb3*/
-  v32 = result; /*0x453eba*/
+  int v32 = result; /*0x453eba*/
   if ( result >= 0 ) /*0x453ebe*/
   {
     if ( v1 ) /*0x453ec6*/
       BuildingClass::ctor((_DWORD *)v1, (int)&v33); /*0x453ecf*/
-    v11 = (*(int (__stdcall **)(int))(*(_DWORD *)v2 + 16))(v2); /*0x453ee0*/
-    v12 = g_BuildingLoadQueue_Capacity; /*0x453ee2*/
+    int v11 = (*(int (__stdcall **)(int))(*(_DWORD *)v2 + 16))(v2); /*0x453ee0*/
+    int v12 = g_BuildingLoadQueue_Capacity; /*0x453ee2*/
     if ( (int)(g_BuildingLoadQueue_Count + 1) <= g_BuildingLoadQueue_Capacity ) /*0x453eea*/
       goto LABEL_13; /*0x453eea*/
     if ( !g_BuildingLoadQueue_Capacity ) /*0x453eee*/
@@ -102,11 +73,11 @@ LABEL_13:
     result = (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v9 + 12))(v9, &v34, 4, 0); /*0x453fcd*/
     if ( result >= 0 ) /*0x453fd2*/
     {
-      v13 = v34; /*0x453fd8*/
+      int v13 = v34; /*0x453fd8*/
       if ( v34 <= 0 ) /*0x453fde*/
       {
 LABEL_24:
-        v18 = 0; /*0x45404c*/
+        int v18 = 0; /*0x45404c*/
         if ( v13 > 0 ) /*0x454050*/
         {
           do /*0x45406b*/
@@ -116,36 +87,36 @@ LABEL_24:
         result = (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v9 + 12))(v9, &v34, 4, 0); /*0x45407a*/
         if ( result >= 0 ) /*0x45407f*/
         {
-          v19 = v34; /*0x454085*/
-          v20 = 0; /*0x454089*/
+          int v19 = v34; /*0x454085*/
+          int v20 = 0; /*0x454089*/
           if ( v34 <= 0 ) /*0x45408d*/
           {
 LABEL_36:
-            v25 = 0; /*0x4540fb*/
+            int v25 = 0; /*0x4540fb*/
             if ( v19 > 0 ) /*0x4540ff*/
             {
               do /*0x45411a*/
                 ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(*(_DWORD *)(v1 + 1672) + 4 * v25++)); /*0x454110*/
               while ( v25 < v34 ); /*0x45411a*/
             }
-            v26 = (int *)(v1 + 1372); /*0x45411c*/
-            v27 = 21; /*0x454122*/
+            int * v26 = (int *)(v1 + 1372); /*0x45411c*/
+            int v27 = 21; /*0x454122*/
             do /*0x454136*/
             {
               ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v26++); /*0x45412d*/
               --v27; /*0x454135*/
             }
             while ( v27 ); /*0x454136*/
-            v28 = (int *)(v1 + 1516); /*0x454138*/
-            v29 = 3; /*0x45413e*/
+            int * v28 = (int *)(v1 + 1516); /*0x454138*/
+            int v29 = 3; /*0x45413e*/
             do /*0x454152*/
             {
               ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v28++); /*0x454149*/
               --v29; /*0x454151*/
             }
             while ( v29 ); /*0x454152*/
-            v30 = (int *)(v1 + 1480); /*0x454154*/
-            v31 = 8; /*0x45415a*/
+            int * v30 = (int *)(v1 + 1480); /*0x454154*/
+            int v31 = 8; /*0x45415a*/
             do /*0x45416e*/
             {
               ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v30++); /*0x454165*/
@@ -162,17 +133,18 @@ LABEL_36:
               result = (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v9 + 12))(v9, &v33, 4, 0); /*0x45409c*/
               if ( result < 0 ) /*0x4540a1*/
                 break; /*0x4540a1*/
-              v21 = *(_DWORD *)(v1 + 1676); /*0x4540a7*/
+              int v21 = *(_DWORD *)(v1 + 1676); /*0x4540a7*/
               if ( *(_DWORD *)(v1 + 1684) < v21 /*0x4540d8*/
                 || (*(_BYTE *)(v1 + 1681) || !v21)
+  int v22; // eax
                 && (v22 = *(_DWORD *)(v1 + 1688), v22 > 0)
                 && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(v1 + 1668) + 8))(
                      v1 + 1668,
                      v21 + v22,
                      0) )
               {
-                v23 = *(_DWORD *)(v1 + 1684); /*0x4540df*/
-                v24 = *(_DWORD *)(v1 + 1672); /*0x4540e2*/
+                int v23 = *(_DWORD *)(v1 + 1684); /*0x4540df*/
+                int v24 = *(_DWORD *)(v1 + 1672); /*0x4540e2*/
                 *(_DWORD *)(v1 + 1684) = v23 + 1; /*0x4540e8*/
                 *(_DWORD *)(v24 + 4 * v23) = v33; /*0x4540ef*/
               }
@@ -190,17 +162,18 @@ LABEL_36:
           result = (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v9 + 12))(v9, &v33, 4, 0); /*0x453fed*/
           if ( result < 0 ) /*0x453ff2*/
             break; /*0x453ff2*/
-          v14 = *(_DWORD *)(v1 + 1652); /*0x453ff8*/
+          int v14 = *(_DWORD *)(v1 + 1652); /*0x453ff8*/
           if ( *(_DWORD *)(v1 + 1660) < v14 /*0x454029*/
             || (*(_BYTE *)(v1 + 1657) || !v14)
+  int v15; // eax
             && (v15 = *(_DWORD *)(v1 + 1664), v15 > 0)
             && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(v1 + 1644) + 8))(
                  v1 + 1644,
                  v14 + v15,
                  0) )
           {
-            v16 = *(_DWORD *)(v1 + 1660); /*0x454030*/
-            v17 = *(_DWORD *)(v1 + 1648); /*0x454033*/
+            int v16 = *(_DWORD *)(v1 + 1660); /*0x454030*/
+            int v17 = *(_DWORD *)(v1 + 1648); /*0x454033*/
             *(_DWORD *)(v1 + 1660) = v16 + 1; /*0x454039*/
             *(_DWORD *)(v17 + 4 * v16) = v33; /*0x454040*/
           }
@@ -221,11 +194,10 @@ namespace gamemd {
 int BuildingClass::AssignDestination_SyncLog()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BuildingClass::AssignDestination_SyncLog(#377 *this)
+void BuildingClass::AssignDestination_SyncLog(#377 *this)
 {
   int result; // eax
   IUnknown *aP1; // [esp+8h] [ebp+4h]
-  int v4; // [esp+Ch] [ebp+8h]
 
   if ( this->currentMission != 19 ) /*0x455d5a*/
   {
@@ -234,6 +206,7 @@ int __thiscall BuildingClass::AssignDestination_SyncLog(#377 *this)
     {
       TechnoClass::SetFocus(this, aP1); /*0x455d80*/
     }
+  int v4; // [esp+Ch] [ebp+8h]
     IPersistStream::Stub((BuildingTypeClass *)aP1, v4); /*0x455d8d*/
   }
   return result; /*0x455d93*/
@@ -248,38 +221,26 @@ char BuildingClass::FindClosestForRepair(unsigned int * a1)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __fastcall BuildingClass_FindClosestForRepair(_DWORD *a1)
 {
-  int v2; // ebp
-  _DWORD *v3; // ebx
-  _DWORD *v4; // edi
-  _DWORD *v5; // eax
-  double v6; // st7
-  int v7; // edi
-  int v8; // eax
-  _DWORD *v10; // ecx
-  int v11; // [esp+24h] [ebp-2Ch]
-  _DWORD *v12; // [esp+28h] [ebp-28h]
-  int v13; // [esp+30h] [ebp-20h]
-  int v14; // [esp+34h] [ebp-1Ch]
-  char v15[12]; // [esp+38h] [ebp-18h] BYREF
-  char v16[12]; // [esp+44h] [ebp-Ch] BYREF
 
-  v12 = 0; /*0x4dfcbf*/
-  v11 = 0x7FFFFFFF; /*0x4dfccd*/
-  v2 = *(_DWORD *)(a1[135] + 240) - 1; /*0x4dfcdb*/
+  _DWORD * v12 = 0; /*0x4dfcbf*/
+  int v11 = 0x7FFFFFFF; /*0x4dfccd*/
+  int v2 = *(_DWORD *)(a1[135] + 240) - 1; /*0x4dfcdb*/
   if ( v2 < 0 ) /*0x4dfcdc*/
     goto LABEL_10; /*0x4dfcdc*/
   do
   {
-    v3 = *(_DWORD **)(*(_DWORD *)(a1[135] + 228) + 4 * v2); /*0x4dfcf3*/
-    v4 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, char *))(*v3 + 72))(v3, v15); /*0x4dfcff*/
-    v5 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, char *))(*a1 + 72))(a1, v16); /*0x4dfd08*/
-    v13 = v5[1] - v4[1]; /*0x4dfd28*/
-    v14 = v5[2] - v4[2]; /*0x4dfd2c*/
-    v6 = Math::Sqrt((double)(*v5 - *v4) * (double)(*v5 - *v4) + (double)v13 * (double)v13 + (double)v14 * (double)v14); /*0x4dfd55*/
-    v7 = Math::RoundToInt(v6); /*0x4dfd62*/
+    _DWORD * v3 = *(_DWORD **)(*(_DWORD *)(a1[135] + 228) + 4 * v2); /*0x4dfcf3*/
+  char v15[12]; // [esp+38h] [ebp-18h] BYREF
+    _DWORD * v4 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, char *))(*v3 + 72))(v3, v15); /*0x4dfcff*/
+  char v16[12]; // [esp+44h] [ebp-Ch] BYREF
+    _DWORD * v5 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, char *))(*a1 + 72))(a1, v16); /*0x4dfd08*/
+    int v13 = v5[1] - v4[1]; /*0x4dfd28*/
+    int v14 = v5[2] - v4[2]; /*0x4dfd2c*/
+    double v6 = Math::Sqrt((double)(*v5 - *v4) * (double)(*v5 - *v4) + (double)v13 * (double)v13 + (double)v14 * (double)v14); /*0x4dfd55*/
+    int v7 = Math::RoundToInt(v6); /*0x4dfd62*/
     if ( v7 < v11 )
     {
-      v8 = a1 ? ((*(int (__thiscall **)(_DWORD *))(*a1 + 44))(a1) == 15 ? (unsigned int)a1 : 0) : 0;
+      int v8 = a1 ? ((*(int (__thiscall **)(_DWORD *))(*a1 + 44))(a1) == 15 ? (unsigned int)a1 : 0) : 0;
       if ( BuildingClass::CanRepair(v3, v8) ) /*0x4dfd89*/
       {
         v11 = v7; /*0x4dfd92*/
@@ -291,7 +252,7 @@ char __fastcall BuildingClass_FindClosestForRepair(_DWORD *a1)
   while ( v2 >= 0 );
   if ( v12 ) /*0x4dfda7*/
   {
-    v10 = (_DWORD *)a1[361]; /*0x4dfdba*/
+    _DWORD * v10 = (_DWORD *)a1[361]; /*0x4dfdba*/
     *((_BYTE *)a1 + 1680) = 1; /*0x4dfdc0*/
     if ( v10 != v12 || a1[43] != 8 ) /*0x4dfdd2*/
     {
@@ -317,43 +278,30 @@ char BuildingClass::FindClosestForRepair2(int a1)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __fastcall BuildingClass_FindClosestForRepair2(int a1)
 {
-  int v1; // eax
-  int v3; // ebp
-  _DWORD *v4; // ebx
-  int v5; // eax
-  _DWORD *v6; // edi
-  _DWORD *v7; // eax
-  double v8; // st7
-  int v9; // eax
-  _DWORD *v11; // ecx
-  int v12; // [esp+24h] [ebp-2Ch]
-  _DWORD *v13; // [esp+28h] [ebp-28h]
-  int v14; // [esp+30h] [ebp-20h]
-  int v15; // [esp+34h] [ebp-1Ch]
-  char v16[12]; // [esp+38h] [ebp-18h] BYREF
-  char v17[12]; // [esp+44h] [ebp-Ch] BYREF
 
-  v1 = g_BuildingProductionState - 1; /*0x4dfe0f*/
-  v13 = 0; /*0x4dfe17*/
-  v3 = 0x7FFFFFFF; /*0x4dfe1f*/
-  v12 = g_BuildingProductionState - 1; /*0x4dfe24*/
+  int v1 = g_BuildingProductionState - 1; /*0x4dfe0f*/
+  _DWORD * v13 = 0; /*0x4dfe17*/
+  int v3 = 0x7FFFFFFF; /*0x4dfe1f*/
+  int v12 = g_BuildingProductionState - 1; /*0x4dfe24*/
   if ( g_BuildingProductionState - 1 < 0 ) /*0x4dfe28*/
     goto LABEL_10; /*0x4dfe28*/
   do
   {
-    v4 = (_DWORD *)*((_DWORD *)g_BuildingClass_InstanceCount + v1); /*0x4dfe36*/
+    _DWORD * v4 = (_DWORD *)*((_DWORD *)g_BuildingClass_InstanceCount + v1); /*0x4dfe36*/
     if ( a1 )
-      v5 = (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 44))(a1) == 15 ? a1 : 0;
+      int v5 = (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 44))(a1) == 15 ? a1 : 0;
     else
       v5 = 0; /*0x4dfe3b*/
     if ( BuildingClass::CanRepair(v4, v5) ) /*0x4dfe54*/
     {
-      v6 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, char *))(*v4 + 72))(v4, v16); /*0x4dfe6b*/
-      v7 = (_DWORD *)(*(int (__thiscall **)(int, char *))(*(_DWORD *)a1 + 72))(a1, v17); /*0x4dfe74*/
-      v14 = v7[1] - v6[1]; /*0x4dfe92*/
-      v15 = v7[2] - v6[2]; /*0x4dfe9c*/
-      v8 = Math::Sqrt((double)(*v7 - *v6) * (double)(*v7 - *v6) + (double)v15 * (double)v15 + (double)v14 * (double)v14); /*0x4dfec1*/
-      v9 = Math::RoundToInt(v8); /*0x4dfec9*/
+  char v16[12]; // [esp+38h] [ebp-18h] BYREF
+      _DWORD * v6 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, char *))(*v4 + 72))(v4, v16); /*0x4dfe6b*/
+  char v17[12]; // [esp+44h] [ebp-Ch] BYREF
+      _DWORD * v7 = (_DWORD *)(*(int (__thiscall **)(int, char *))(*(_DWORD *)a1 + 72))(a1, v17); /*0x4dfe74*/
+      int v14 = v7[1] - v6[1]; /*0x4dfe92*/
+      int v15 = v7[2] - v6[2]; /*0x4dfe9c*/
+      double v8 = Math::Sqrt((double)(*v7 - *v6) * (double)(*v7 - *v6) + (double)v15 * (double)v15 + (double)v14 * (double)v14); /*0x4dfec1*/
+      int v9 = Math::RoundToInt(v8); /*0x4dfec9*/
       if ( v9 < v3 ) /*0x4dfed0*/
       {
         v3 = v9; /*0x4dfed2*/
@@ -365,7 +313,7 @@ char __fastcall BuildingClass_FindClosestForRepair2(int a1)
   while ( v12 >= 0 );
   if ( v13 ) /*0x4dfeed*/
   {
-    v11 = *(_DWORD **)(a1 + 1444); /*0x4dff00*/
+    _DWORD * v11 = *(_DWORD **)(a1 + 1444); /*0x4dff00*/
     *(_BYTE *)(a1 + 1681) = 1; /*0x4dff06*/
     if ( v11 != v13 || *(_DWORD *)(a1 + 172) != 8 ) /*0x4dff18*/
     {
@@ -389,11 +337,9 @@ namespace gamemd {
 char BuildingClass::AnimController()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall BuildingClass_AnimController(int *this)
+void BuildingClass_AnimController(int *this)
 {
   unsigned int *Value; // eax
-  int v3; // ecx
-  unsigned int v4; // eax
   int v5; // ebx
   int v6; // ecx
   int v7; // edx
@@ -403,8 +349,8 @@ char __thiscall BuildingClass_AnimController(int *this)
   _DWORD v12[4]; // [esp+Ch] [ebp-10h] BYREF
 
   Value = ProgressTimer::GetValue((_WORD *)(this->owningHouseIndex + 904), v12); /*0x629736*/
-  v3 = this->q012; /*0x62973b*/
-  v4 = *Value; /*0x62973e*/
+  int v3 = this->q012; /*0x62973b*/
+  unsigned int v4 = *Value; /*0x62973e*/
   if ( v3 < 0 ) /*0x629742*/
     goto LABEL_6; /*0x629742*/
   if ( v3 <= 1 ) /*0x629747*/
@@ -450,20 +396,18 @@ namespace gamemd {
 int BuildingClass::AllocAndCtor(BuildingClass * aP0, int aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall BuildingClass::AllocAndCtor(BuildingClass *aP0, int aP2)
+void BuildingClass::AllocAndCtor(BuildingClass *aP0, int aP2)
 {
-  void *v2; // ecx
   int result; // eax
   MouseClass *v3; // edi
-  int v5; // ebp
-
+  void *v2; // ecx
   result = RadioClass::LoadState(v2, (ObjectClass *)aP0, (ObjectClass *)aP2); /*0x70bf5c*/
   if ( result >= 0 ) /*0x70bf65*/
   {
     aP0->planningToken = 0; /*0x70bf79*/
     ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488[27784], (MouseClass *)&aP0->focus); /*0x70bf7f*/
     v3 = (MouseClass *)&aP0->diskLaserTimer[1]; /*0x70bf84*/
-    v5 = 8; /*0x70bf8a*/
+    int v5 = 8; /*0x70bf8a*/
     do /*0x70bf9e*/
     {
       ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488[27784], v3); /*0x70bf95*/
@@ -585,16 +529,14 @@ namespace gamemd {
 char BuildingClass::processCapture()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_712130(_DWORD *this)
+void sub_712130(_DWORD *this)
 {
-  int v1; // edx
-  int v2; // ecx
   char result; // al
 
-  v1 = this->q898; /*0x712130*/
+  int v1 = this->q898; /*0x712130*/
   if ( !v1 ) /*0x712138*/
     return 0; /*0x712138*/
-  v2 = this->q8B4; /*0x71213a*/
+  int v2 = this->q8B4; /*0x71213a*/
   result = 1; /*0x712140*/
   if ( v1 != v2 && *(int *)(v1 + 156) <= 1 && (!v2 || *(int *)(v2 + 156) <= 1) ) /*0x71215f*/
     return 0; /*0x712161*/
@@ -614,20 +556,16 @@ int BuildingClass_ProcessSell()
 
 // 0x451690
 namespace gamemd {
-char BuildingClass::ClearSuperWeaponAnim()
+void BuildingClass::ClearSuperWeaponAnim()
 {
 {
     char result;
-    int v3;
-    bool v4;
-    int v5;
-    char v6;
     result = this->UpgradeLevel;
     if ( result )
   {
-    v3 = result;
-    v4 = 0;
-    v5 = *(int *)(this + 4 * result + 1512);
+    int v3 = result;
+    bool v4 = 0;
+    int v5 = *(int *)(this + 4 * result + 1512);
     if ( v5 && (v4 = *(int *)(v5 + 5872) != -1, *(char *)(v5 + 3233)) )
     {
     BuildingClass::ClearAnims((int *)this, (TechnoClass *)9);
@@ -643,7 +581,7 @@ char BuildingClass::ClearSuperWeaponAnim()
     else
     {
     BuildingClass::ClearAnims((int *)this, (TechnoClass *)(v3 - 1));
-    v6 = this->UpgradeLevel - 1;
+    char v6 = this->UpgradeLevel - 1;
     this->UpgradeLevel = v6;
     *(int *)(this + 4 * v6 + 1516) = 0;
     if ( v4 )

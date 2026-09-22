@@ -8,11 +8,9 @@
 int LocomotionClass::Initialize()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_4AF540(int this)
+void sub_4AF540(int this)
 {
   wchar_t *v2; // ecx
-  int v3; // ecx
-
   LocomotionClass::Init((_DWORD *)this); /*0x4af543*/
   *(_DWORD *)(this + 28) = 0; /*0x4af54d*/
   this->Owner = 0; /*0x4af550*/
@@ -24,7 +22,7 @@ int __thiscall sub_4AF540(int this)
   *(_QWORD *)(this + 56) = DataGlobal_8A0794; /*0x4af570*/
   this->Powered = g_DDraw_ClipRect; /*0x4af585*/
   this->Dirty = DataGlobal_8A0794; /*0x4af58e*/
-  v3 = HIDWORD(DataGlobal_8A0794); /*0x4af591*/
+  int v3 = HIDWORD(DataGlobal_8A0794); /*0x4af591*/
   this->RefCount = 0; /*0x4af597*/
   *(_DWORD *)(this + 76) = 0; /*0x4af59a*/
   this->q012 = v3; /*0x4af59d*/
@@ -53,12 +51,11 @@ wchar_t *sub_4C54A0()
 {
   wchar_t *result; // eax
   int i; // esi
-  _DWORD *v2; // ecx
 
   result = (wchar_t *)DataGlobal_8A3880; /*0x4c54a0*/
   for ( i = DataGlobal_8A3880 - 1; i >= 0; --i ) /*0x4c54ab*/
   {
-    v2 = (_DWORD *)*((_DWORD *)DataGlobal_8A3874 + i); /*0x4c54b3*/
+    _DWORD * v2 = (_DWORD *)*((_DWORD *)DataGlobal_8A3874 + i); /*0x4c54b3*/
     result = g_CurrentFrame; /*0x4c54be*/
     if ( (int)g_CurrentFrame >= v2[11] + v2[12] ) /*0x4c54c5*/
     {
@@ -74,22 +71,22 @@ wchar_t *sub_4C54A0()
 char LocomotionClass::CheckBridgeBlock()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall LocomotionClass::CheckBridgeBlock(int this)
+void LocomotionClass::CheckBridgeBlock(int this)
 {
-  int v2; // eax
-  _DWORD *v3; // edi
-  _DWORD *v4; // eax
-  _DWORD *v5; // eax
 
-  if ( (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 12) + 388))(this->LinkedTo) == 7 /*0x4cfa8e*/
+  if ( (*(int (__thiscall **)(_DWORD))(*this->LinkedTo + 388))(this->LinkedTo) == 7 /*0x4cfa8e*/
+  int v2; // eax
     || (LOBYTE(v2) = BuildingClass::GetType_Thunk(), !(_BYTE)v2) )
   {
-    v2 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 12) + 44))(this->LinkedTo); /*0x4cfa95*/
+    v2 = (*(int (__thiscall **)(_DWORD))(*this->LinkedTo + 44))(this->LinkedTo); /*0x4cfa95*/
     if ( v2 == 2 /*0x4cfacc*/
-      && (v3 = *(_DWORD **)(this + 12), v2 = v3[433], *(_BYTE *)(v2 + 3597))
+  _DWORD *v3; // edi
+      && (v3 = this->LinkedTo, v2 = v3[433], *(_BYTE *)(v2 + 3597))
+  _DWORD *v4; // eax
       && (v4 = (_DWORD *)(*(int (__thiscall **)(_DWORD))(*v3 + 444))(this->LinkedTo),
+  _DWORD *v5; // eax
           v5 = Cell::IsBridge(v4),
-          LOBYTE(v2) = Array::Contains(*(int **)(this + 12), (int)v5),
+          LOBYTE(v2) = Array::Contains(this->LinkedTo, (int)v5),
           !(_BYTE)v2) )
     {
       LOBYTE(v2) = (*(int (__thiscall **)(_DWORD *, _DWORD, int))(*v3 + 1156))(v3, 0, 1); /*0x4cfad6*/
@@ -110,11 +107,10 @@ char __thiscall LocomotionClass::CheckBridgeBlock(int this)
 double LocomotionClass::GetSpeedMultiplier()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-double __thiscall LocomotionClass::GetSpeedMultiplier(int this)
+void LocomotionClass::GetSpeedMultiplier(int this)
 {
-  int v1; // eax
 
-  v1 = this->q5D4; /*0x4dc760*/
+  int v1 = this->q5D4; /*0x4dc760*/
   if ( v1 && *(_BYTE *)(*(_DWORD *)(v1 + 36) + 242) ) /*0x4dc76d*/
     return 1.0; /*0x4dc777*/
   else
@@ -126,7 +122,7 @@ double __thiscall LocomotionClass::GetSpeedMultiplier(int this)
 int LocomotionClass::ProcessData()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_513C20(int this)
+void sub_513C20(int this)
 {
   LocomotionClass::Init((_DWORD *)this); /*0x513c24*/
   *(_DWORD *)(this + 24) = g_ScoreDisplayState1; /*0x513c34*/
@@ -157,15 +153,13 @@ int __thiscall sub_513C20(int this)
 int LocomotionClass::Update()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_54AC40(int this)
+void sub_54AC40(int this)
 {
-  int v2; // ecx
-  int v4; // [esp+Ch] [ebp-4h] BYREF
 
   LocomotionClass::Init((_DWORD *)this); /*0x54ac46*/
   this->Powered = dword_ABC5A8; /*0x54ac59*/
   this->Dirty = dword_ABC5AC; /*0x54ac61*/
-  v2 = dword_ABC5B0; /*0x54ac64*/
+  int v2 = dword_ABC5B0; /*0x54ac64*/
   *(_BYTE *)(this + 76) = 0; /*0x54ac6a*/
   this->RefCount = 0; /*0x54ac6d*/
   this->q012 = v2; /*0x54ac70*/
@@ -183,6 +177,7 @@ int __thiscall sub_54AC40(int this)
   *(_DWORD *)this = &JumpjetLocomotionClass::`vftable'; /*0x54acc3*/
   this->vtable2 = &JumpjetLocomotionClass::`vftable'; /*0x54acc9*/
   *(_DWORD *)(this + 24) = &vt_JumpjetLocomotionClass; /*0x54acd0*/
+  int v4; // [esp+Ch] [ebp-4h] BYREF
   LOWORD(v4) = 0x4000; /*0x54acd7*/
   FacingClass::Update((char *)(this + 84), &v4); /*0x54acdc*/
   LOWORD(v4) = 0x4000; /*0x54ace8*/
@@ -212,7 +207,7 @@ _DWORD *__thiscall LocomotionClass_Init(_DWORD *this)
 void LocomotionClass::Construct()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall LocomotionClass_Constructor(_DWORD *this)
+void LocomotionClass_Constructor(_DWORD *this)
 {
   *this = &LocomotionClass::`vftable'; /*0x55a6f0*/
   this->vtable2 = &vt_LocomotionClass; /*0x55a6f6*/

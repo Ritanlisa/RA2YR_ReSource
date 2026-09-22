@@ -9,13 +9,8 @@ namespace gamemd {
 char WaypointClass::FindOrAddPath(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_502160(unsigned int *this, _DWORD *a2)
+void sub_502160(unsigned int *this, _DWORD *a2)
 {
-  int *v2; // ebp
-  int v3; // ebx
-  signed int v4; // esi
-  void *v5; // eax
-  int v6; // eax
   _DWORD *v7; // ecx
   int v8; // edi
   int *Element; // eax
@@ -27,19 +22,18 @@ char __thiscall sub_502160(unsigned int *this, _DWORD *a2)
   int v15; // eax
   signed int v16; // [esp+10h] [ebp-Ch]
   __int16 v18; // [esp+1Ah] [ebp-2h]
-
-  v2 = (int *)(this + 132); /*0x502171*/
-  v3 = *a2 / 256; /*0x50218e*/
-  v4 = 0; /*0x502194*/
+  int * v2 = (int *)(this + 132); /*0x502171*/
+  int v3 = *a2 / 256; /*0x50218e*/
+  signed int v4 = 0; /*0x502194*/
   v18 = a2[1] / 256; /*0x502196*/
   v16 = 0; /*0x50219b*/
   while ( 1 ) /*0x50219f*/
   {
     if ( !*v2 ) /*0x50219f*/
     {
-      v5 = __2_YAPAXI_Z(0x40u); /*0x5021a7*/
+      void * v5 = __2_YAPAXI_Z(0x40u); /*0x5021a7*/
       if ( v5 ) /*0x5021b1*/
-        v6 = WaypointPathClass::Construct((int)v5, v4); /*0x5021b6*/
+        int v6 = WaypointPathClass::Construct((int)v5, v4); /*0x5021b6*/
       else
         v6 = 0; /*0x5021bd*/
       *v2 = v6; /*0x5021bf*/

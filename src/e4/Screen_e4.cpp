@@ -12,23 +12,18 @@ int Screen_Capture()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __usercall sub_52FEC0@<al>(char a1@<dl>, int a2@<ecx>, int a3@<ebx>, int a4@<ebp>)
 {
-  int v4; // edi
-  int v5; // ebx
-  int v6; // ebp
-  _DWORD *v7; // eax
-  _DWORD *v8; // esi
   char result; // al
   int retaddr; // [esp+26h] [ebp+0h]
 
-  v4 = a2; /*0x52fec5*/
+  int v4 = a2; /*0x52fec5*/
   if ( !a2 ) /*0x52fecf*/
     v4 = g_DSurface_Hidden; /*0x52fed1*/
   (*(void (__thiscall **)(int, _DWORD, int, int))(*(_DWORD *)v4 + 24))(v4, 0, a4, a3); /*0x52fede*/
-  v5 = (*(int (__thiscall **)(int))(*(_DWORD *)v4 + 124))(v4); /*0x52fee8*/
-  v6 = (*(int (__thiscall **)(int))(*(_DWORD *)v4 + 128))(v4); /*0x52fef4*/
+  int v5 = (*(int (__thiscall **)(int))(*(_DWORD *)v4 + 124))(v4); /*0x52fee8*/
+  int v6 = (*(int (__thiscall **)(int))(*(_DWORD *)v4 + 128))(v4); /*0x52fef4*/
   retaddr = v5; /*0x52ff00*/
-  v7 = __2_YAPAXI_Z(0x20u); /*0x52ff08*/
-  v8 = v7; /*0x52ff0d*/
+  _DWORD * v7 = __2_YAPAXI_Z(0x20u); /*0x52ff08*/
+  _DWORD * v8 = v7; /*0x52ff0d*/
   if ( v7 ) /*0x52ff14*/
   {
     v7[2] = v6; /*0x52ff16*/
@@ -59,22 +54,9 @@ char __usercall sub_52FEC0@<al>(char a1@<dl>, int a2@<ecx>, int a3@<ebx>, int a4
 int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Screen::TransitionRender(int *this, AnimClass *aP1, AnimClass *aP2, int a4)
+void Screen::TransitionRender(AnimClass *aP1, AnimClass *aP2, int a4)
 {
-  int v5; // ecx
-  int v6; // edi
-  int v7; // ebp
-  int v8; // ecx
-  int v9; // eax
-  int v10; // eax
-  int v11; // ecx
-  int v12; // ecx
-  int v13; // ecx
-  int v14; // ecx
-  int v15; // ecx
-  int v16; // ecx
   CampaignScore *v17; // ebx
-  int v18; // eax
   int v19; // ecx
   int v20; // edx
   int v21; // eax
@@ -141,9 +123,9 @@ int __thiscall Screen::TransitionRender(int *this, AnimClass *aP1, AnimClass *aP
   wchar_t v83[64]; // [esp+224h] [ebp-100h] BYREF
   wchar_t v84[64]; // [esp+2A4h] [ebp-80h] BYREF
 
-  v5 = (int)aP2; /*0x68f07a*/
-  v6 = *this + a4; /*0x68f085*/
-  v7 = this->q001 + 244; /*0x68f08a*/
+  int v5 = (int)aP2; /*0x68f07a*/
+  int v6 = *this + a4; /*0x68f085*/
+  int v7 = this->q001 + 244; /*0x68f08a*/
   v73 = 0; /*0x68f092*/
   v74 = 0; /*0x68f096*/
   v75 = 0; /*0x68f09a*/
@@ -160,9 +142,9 @@ int __thiscall Screen::TransitionRender(int *this, AnimClass *aP1, AnimClass *aP
     v5 = 1; /*0x68f0be*/
     v65 = 1; /*0x68f0c3*/
   }
-  v8 = 140 * (int)aP1 / v5; /*0x68f0e0*/
+  int v8 = 140 * (int)aP1 / v5; /*0x68f0e0*/
   v66 = v8; /*0x68f0eb*/
-  v9 = 140 * (int)aP2 / v65; /*0x68f0f6*/
+  int v9 = 140 * (int)aP2 / v65; /*0x68f0f6*/
   v64 = v9; /*0x68f0ff*/
   if ( v65 < 20 ) /*0x68f103*/
   {
@@ -177,8 +159,8 @@ int __thiscall Screen::TransitionRender(int *this, AnimClass *aP1, AnimClass *aP
   if ( !v65 ) /*0x68f134*/
     v65 = 1; /*0x68f136*/
   v63 = v8; /*0x68f140*/
-  v10 = v7 - v8; /*0x68f144*/
-  v11 = this->q008; /*0x68f146*/
+  int v10 = v7 - v8; /*0x68f144*/
+  int v11 = this->q008; /*0x68f146*/
   v77 = v10; /*0x68f149*/
   v61 = v10; /*0x68f14d*/
   v60 = (wchar_t *)v6; /*0x68f15a*/
@@ -188,7 +170,7 @@ int __thiscall Screen::TransitionRender(int *this, AnimClass *aP1, AnimClass *aP
   (*(void (__thiscall **)(int, wchar_t **, int *, int))(*(_DWORD *)v11 + 28))(v11, &v60, &v58, 25); /*0x68f17b*/
   v63 = v66; /*0x68f189*/
   v60 = (wchar_t *)(v6 + 4); /*0x68f18d*/
-  v12 = this->q008; /*0x68f191*/
+  int v12 = this->q008; /*0x68f191*/
   v61 = v77; /*0x68f19b*/
   var24C = 7; /*0x68f19f*/
   LOWORD(v58) = -18947; /*0x68f1a7*/
@@ -196,7 +178,7 @@ int __thiscall Screen::TransitionRender(int *this, AnimClass *aP1, AnimClass *aP
   (*(void (__thiscall **)(int, wchar_t **, int *, int))(*(_DWORD *)v12 + 28))(v12, &v60, &v58, 50); /*0x68f1bc*/
   v63 = v66; /*0x68f1ca*/
   v60 = (wchar_t *)(v6 + 11); /*0x68f1ce*/
-  v13 = this->q008; /*0x68f1d2*/
+  int v13 = this->q008; /*0x68f1d2*/
   v61 = v77; /*0x68f1dc*/
   var24C = 4; /*0x68f1e0*/
   LOWORD(v58) = -18947; /*0x68f1e8*/
@@ -205,7 +187,7 @@ int __thiscall Screen::TransitionRender(int *this, AnimClass *aP1, AnimClass *aP
   v62 = (wchar_t *)(v6 + 132); /*0x68f20a*/
   v60 = (wchar_t *)(v6 + 132); /*0x68f20e*/
   v63 = v64; /*0x68f214*/
-  v14 = this->q008; /*0x68f21a*/
+  int v14 = this->q008; /*0x68f21a*/
   v78 = v7 - v64; /*0x68f21d*/
   v61 = v7 - v64; /*0x68f221*/
   var24C = 4; /*0x68f22c*/
@@ -215,21 +197,21 @@ int __thiscall Screen::TransitionRender(int *this, AnimClass *aP1, AnimClass *aP
   v60 = (wchar_t *)(v6 + 136); /*0x68f255*/
   v61 = v78; /*0x68f259*/
   var24C = 7; /*0x68f25d*/
-  v15 = this->q008; /*0x68f269*/
+  int v15 = this->q008; /*0x68f269*/
   v63 = v64; /*0x68f26c*/
   LOWORD(v58) = 7418; /*0x68f277*/
   BYTE2(v58) = 28; /*0x68f280*/
   (*(void (__thiscall **)(int, wchar_t **, int *, int))(*(_DWORD *)v15 + 28))(v15, &v60, &v58, 50); /*0x68f28b*/
   v63 = v64; /*0x68f29c*/
   v60 = (wchar_t *)(v6 + 143); /*0x68f2a0*/
-  v16 = this->q008; /*0x68f2a4*/
+  int v16 = this->q008; /*0x68f2a4*/
   v61 = v78; /*0x68f2ae*/
   var24C = 4; /*0x68f2b2*/
   LOWORD(v58) = 7418; /*0x68f2ba*/
   BYTE2(v58) = 28; /*0x68f2c3*/
   (*(void (__thiscall **)(int, wchar_t **, int *, int))(*(_DWORD *)v16 + 28))(v16, &v60, &v58, 25); /*0x68f2ce*/
   v17 = (CampaignScore *)aP1; /*0x68f2d8*/
-  v18 = 1; /*0x68f2df*/
+  int v18 = 1; /*0x68f2df*/
   v68 = 1; /*0x68f2e7*/
   v79 = aP2; /*0x68f2eb*/
   v80 = aP1; /*0x68f2ef*/
@@ -484,18 +466,10 @@ int __thiscall Screen::TransitionRender(int *this, AnimClass *aP1, AnimClass *aP
 int Screen::TransitionLoop(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Screen::TransitionLoop(MPCooperative *this, int a2)
+void Screen::TransitionLoop(int a2)
 {
-  int v3; // eax
-  int v4; // ecx
-  int v5; // eax
-  int v6; // esi
   int i; // esi
-  int v8; // ecx
   int j; // esi
-  int v10; // ecx
-  int v11; // esi
-  int v12; // eax
   int result; // eax
   bool v14; // cc
   DWORD Ticks; // [esp+24h] [ebp-48h]
@@ -508,11 +482,12 @@ int __thiscall Screen::TransitionLoop(MPCooperative *this, int a2)
   v16 = 1; /*0x69017c*/
   do
   {
+  int v11; // esi
     Screen::CleanupTransitionObjects(this); /*0x690189*/
     GetClientRect(g_hWnd, &Rect); /*0x69019a*/
     ClientToScreen(g_hWnd, (LPPOINT)&Rect); /*0x6901ab*/
-    v3 = *(_DWORD *)this->field_0; /*0x6901b1*/
-    v4 = *(_DWORD *)&this->?[3]; /*0x6901c4*/
+    int v3 = *(_DWORD *)this->field_0; /*0x6901b1*/
+    int v4 = *(_DWORD *)&this->?[3]; /*0x6901c4*/
     v17[0] = *(_DWORD *)this->field_0 + Rect.left; /*0x6901c7*/
     v17[1] = v4 + Rect.top; /*0x6901d7*/
     v17[2] = 640; /*0x6901db*/
@@ -542,13 +517,15 @@ int __thiscall Screen::TransitionLoop(MPCooperative *this, int a2)
       if ( !g_EventManager[784] )
       {
         if ( Ticks == -1
+  int v5; // eax
+  int v6; // esi
           || ((v5 = Timer::GetTicks() - Ticks, v5 >= v16) ? (v6 = 0) : (v6 = v16 - v5),
               v16 = v6,
               g_EventManager[784] != 1) )
         {
           for ( i = 0; i < (int)this->field_2C; ++i ) /*0x690292*/
           {
-            v8 = *(_DWORD *)(*(_DWORD *)&this->__pad_18[8] + 4 * i); /*0x690297*/
+            int v8 = *(_DWORD *)(*(_DWORD *)&this->__pad_18[8] + 4 * i); /*0x690297*/
             (*(void (__thiscall **)(int))(*(_DWORD *)v8 + 4))(v8); /*0x69029c*/
           }
           while ( !g_EventManager[784] ) /*0x6902ae*/
@@ -558,7 +535,7 @@ int __thiscall Screen::TransitionLoop(MPCooperative *this, int a2)
           }
           for ( j = 0; j < (int)this->field_2C; ++j ) /*0x6902cc*/
           {
-            v10 = *(_DWORD *)(*(_DWORD *)&this->__pad_18[8] + 4 * j); /*0x6902d1*/
+            int v10 = *(_DWORD *)(*(_DWORD *)&this->__pad_18[8] + 4 * j); /*0x6902d1*/
             (*(void (__thiscall **)(int))(*(_DWORD *)v10 + 8))(v10); /*0x6902d6*/
           }
         }
@@ -568,7 +545,7 @@ int __thiscall Screen::TransitionLoop(MPCooperative *this, int a2)
       v11 = v16; /*0x6902fc*/
       if ( Ticks != -1 ) /*0x690302*/
       {
-        v12 = Timer::GetTicks() - Ticks; /*0x69030d*/
+        int v12 = Timer::GetTicks() - Ticks; /*0x69030d*/
         if ( v12 >= v16 ) /*0x690313*/
           break; /*0x690313*/
         v11 = v16 - v12; /*0x690315*/

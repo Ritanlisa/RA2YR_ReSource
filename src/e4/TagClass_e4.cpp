@@ -23,14 +23,10 @@ void __fastcall TagClass::Destructor(void **a1, AbstractClass *a2)
   TriggerClass *v10; // eax
   _DWORD *buildingType; // eax
   int Owner; // eax
-  int v14; // ecx
   _DWORD *eax35; // eax
   TriggerClass *v15; // esi
   int eax37; // eax
   AbstractClass *v17; // eax
-  int v19; // eax
-  int v20; // eax
-  int v21; // eax
   AbstractClass *v22; // edx
   _DWORD v23[4]; // [esp+10h] [ebp-10h] BYREF
 
@@ -125,7 +121,7 @@ LABEL_22:
               if ( buildingType[41] && TagClass::HasValidHouse(a1[9]) ) /*0x6e5080*/
               {
                 Owner = HouseClass::FindOwner(*(void **)(*(_DWORD *)(*((_DWORD *)a1[10] + 9) + 164) + 184)); /*0x6e509b*/
-                v14 = *(_DWORD *)(Owner + 636); /*0x6e50a0*/
+                int v14 = *(_DWORD *)(Owner + 636); /*0x6e50a0*/
                 if ( v14 ) /*0x6e50a8*/
                   *(_DWORD *)(Owner + 636) = v14 - 1; /*0x6e50ab*/
                 eax35 = (_DWORD *)(Owner + 664); /*0x6e50b7*/
@@ -165,6 +161,7 @@ LABEL_45:
     while ( v15 ); /*0x6e50d9*/
   }
   v23[0] = a1; /*0x6e5134*/
+  int v19; // eax
   v19 = (*(int (__thiscall **)(char *, _DWORD *))(*(_DWORD *)&stru_B05488[41448] + 16))( /*0x6e5147*/
           &stru_B05488[41448],
           v23);
@@ -180,6 +177,7 @@ LABEL_45:
     }
   }
   v23[0] = a1; /*0x6e518c*/
+  int v20; // eax
   v20 = (*(int (__thiscall **)(char *, _DWORD *))(*(_DWORD *)&stru_B05488[41600] + 16))( /*0x6e5190*/
           &stru_B05488[41600],
           v23);
@@ -195,6 +193,7 @@ LABEL_45:
     }
   }
   v23[0] = a1; /*0x6e51d5*/
+  int v21; // eax
   v21 = (*(int (__thiscall **)(char *, _DWORD *))(*(_DWORD *)&stru_B05488[37528] + 16))( /*0x6e51d9*/
           &stru_B05488[37528],
           v23);
@@ -221,11 +220,10 @@ namespace gamemd {
 char TagClass::HasValidHouse()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall TagClass::HasValidHouse(_DWORD *this)
+void TagClass::HasValidHouse()
 {
-  _DWORD *v1; // esi
 
-  v1 = (_DWORD *)this->q0A0; /*0x6e6221*/
+  _DWORD * v1 = (_DWORD *)this->q0A0; /*0x6e6221*/
   if ( !v1 ) /*0x6e6229*/
     return 0; /*0x6e6240*/
   while ( !HouseClass::FindType15(v1) ) /*0x6e6234*/
@@ -244,15 +242,13 @@ namespace gamemd {
 int TagClass::Unlink()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall TagClass_Unlink(int *this)
+void TagClass_Unlink(int *this)
 {
-  int v2; // eax
   int result; // eax
-  int v4; // ecx
 
   *(_BYTE *)(this->firstTrigger + 624) = 0; /*0x71ade9*/
   *(_DWORD *)(this->firstTrigger + 632) = 0; /*0x71adf2*/
-  v2 = this->q011; /*0x71adf8*/
+  int v2 = this->q011; /*0x71adf8*/
   this->firstTrigger = 0; /*0x71adfd*/
   if ( v2 ) /*0x71ae00*/
   {
@@ -267,7 +263,7 @@ int __thiscall TagClass_Unlink(int *this)
       *(_DWORD *)(result + 68) = 0; /*0x71ae1e*/
     result = TagClass::Unlink(this->uniqueId); /*0x71ae24*/
   }
-  v4 = this->buildingType; /*0x71ae29*/
+  int v4 = this->buildingType; /*0x71ae29*/
   this->q011 = 0; /*0x71ae2c*/
   this->uniqueId = 0; /*0x71ae31*/
   this->q03C = 0; /*0x71ae34*/

@@ -12,22 +12,12 @@ namespace gamemd {
 char Tiberium::ProcessGrowth(int a2, MapResourceClass * aP2, char _140)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall Tiberium::ProcessGrowth(int *this, int a2, MapResourceClass *aP2, char _140)
+void Tiberium::ProcessGrowth(int a2, MapResourceClass *aP2, char _140)
 {
-  bool v4; // zf
-  unsigned int v5; // edi
-  unsigned int v6; // eax
   __int16 v7; // si
-  unsigned int v8; // edi
-  unsigned int v9; // eax
-  double v10; // st7
   __int16 v11; // di
   __int16 v12; // bx
   MapResourceClass v13; // ebx
-  double v14; // st7
-  int v15; // esi
-  double v16; // st7
-  unsigned int v17; // esi
   unsigned int v18; // eax
   double v19; // st6
   MapResourceClass *v20; // ebx
@@ -90,7 +80,7 @@ char __thiscall Tiberium::ProcessGrowth(int *this, int a2, MapResourceClass *aP2
   char v78; // [esp+27h] [ebp-109h]
   unsigned int v79; // [esp+28h] [ebp-108h]
   double v80; // [esp+30h] [ebp-100h]
-  _DWORD *v81; // [esp+3Ch] [ebp-F4h]
+  Tiberium *v81; // [esp+3Ch] [ebp-F4h]
   double v82; // [esp+40h] [ebp-F0h]
   int v83; // [esp+4Ch] [ebp-E4h]
   int v84; // [esp+50h] [ebp-E0h] BYREF
@@ -124,9 +114,8 @@ char __thiscall Tiberium::ProcessGrowth(int *this, int a2, MapResourceClass *aP2
   double v112; // [esp+120h] [ebp-10h]
   double v113; // [esp+128h] [ebp-8h]
   char v114; // [esp+144h] [ebp+14h]
-
   v78 = v114;
-  v4 = *(_WORD *)a2 == 0;
+  bool v4 = *(_WORD *)a2 == 0;
   v81 = this;
   inited = 1;
   v83 = 0;
@@ -137,6 +126,9 @@ char __thiscall Tiberium::ProcessGrowth(int *this, int a2, MapResourceClass *aP2
   }
   else
   {
+  double v14; // st7
+  unsigned int v9; // eax
+  unsigned int v6; // eax
     *(_WORD *)&v94.__tail_0[2] = g_Cell_PositionLUT;
     LOWORD(v84) = g_CellPositionOffset;
     HIWORD(v84) = g_CellPositionOffset;
@@ -150,7 +142,7 @@ char __thiscall Tiberium::ProcessGrowth(int *this, int a2, MapResourceClass *aP2
       LODWORD(v85) = Math::RoundToInt((double)*(__int64 *)&v77 * 9.31322574832319e-10);
     }
     while ( LODWORD(v85) > 3 );
-    v5 = g_Cell_PositionLUT - 1;
+    unsigned int v5 = g_Cell_PositionLUT - 1;
     *(_QWORD *)&v77 = (unsigned int)g_Cell_PositionLUT;
     v92 = (double)(unsigned int)g_Cell_PositionLUT;
     do
@@ -160,7 +152,7 @@ char __thiscall Tiberium::ProcessGrowth(int *this, int a2, MapResourceClass *aP2
       v7 = v6;
     }
     while ( v6 > v5 );
-    v8 = g_CellPositionOffset - 1;
+    unsigned int v8 = g_CellPositionOffset - 1;
     *(_QWORD *)&v77 = (unsigned int)g_CellPositionOffset;
     v92 = (double)(unsigned int)g_CellPositionOffset;
     do
@@ -171,7 +163,7 @@ char __thiscall Tiberium::ProcessGrowth(int *this, int a2, MapResourceClass *aP2
     while ( v9 > v8 );
     HIWORD(v84) = -v7;
     LOWORD(v76) = v7 + 1;
-    v10 = 5.497787143782138 - (double)SLODWORD(v85) * 1.570796326794897;
+    double v10 = 5.497787143782138 - (double)SLODWORD(v85) * 1.570796326794897;
     v93 = 0.5235987755982988;
     HIWORD(v76) = *(_WORD *)&v94.__tail_0[2] - v7;
     aP3[0] = (MapResourceClass)v76;
@@ -206,7 +198,7 @@ char __thiscall Tiberium::ProcessGrowth(int *this, int a2, MapResourceClass *aP2
     while ( v14 > v95 );
     v97 = v14;
   }
-  v15 = a4[1] + a4[0];
+  int v15 = a4[1] + a4[0];
   if ( v15 <= g_MapCellHeight_Value
     || a4[0] - a4[1] >= g_MapCellHeight_Value
     || a4[1] - a4[0] >= g_MapCellHeight_Value
@@ -215,10 +207,10 @@ char __thiscall Tiberium::ProcessGrowth(int *this, int a2, MapResourceClass *aP2
     return 0;
   }
   v76 = 0;
-  v16 = (double)(int)v81[19] * 0.07000000000000001;
+  double v16 = (double)(int)v81[19] * 0.07000000000000001;
   if ( v16 < 1.0 )
     v16 = 1.0;
-  v17 = Math::RoundToInt(v16);
+  unsigned int v17 = Math::RoundToInt(v16);
   *(_QWORD *)&v77 = v17;
   v92 = (double)v17;
   do
@@ -613,36 +605,12 @@ namespace gamemd {
 char Tiberium::CalculateSpread(MouseClass * aP1, MapResourceClass * aP2, short * a3, int a5, MouseClass * aP5, MapResourceClass * aP6, double * a7)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall Tiberium::CalculateSpread(
-        _DWORD *this,
-        MouseClass *aP1,
-        MapResourceClass *aP2,
-        __int16 *a3,
-        int a5,
-        MouseClass *aP5,
-        MapResourceClass *aP6,
-        double *a7)
+void Tiberium::CalculateSpread(MouseClass *aP1, MapResourceClass *aP2, __int16 *a3, int a5, MouseClass *aP5, MapResourceClass *aP6, double *a7)
 {
-  int v8; // ecx
-  int v9; // edi
-  int v10; // esi
   MouseClass *v11; // eax
-  int v12; // edx
-  int v13; // ebp
-  int v14; // ebp
-  int v15; // edx
   MouseClass *v16; // eax
-  int v17; // ebp
-  int v18; // edx
-  int v19; // ebp
-  int v20; // eax
-  int v21; // edx
   MapResourceClass v22; // edx
-  int v23; // eax
-  int v24; // ebp
-  int v25; // ebp
   __int16 v26; // dx
-  int v27; // edi
   int v28; // eax
   int v29; // esi
   int v30; // ebx
@@ -668,7 +636,7 @@ char __thiscall Tiberium::CalculateSpread(
   __int16 v51; // si
   __int16 v52; // si
   char v53; // bl
-  _DWORD *v54; // edi
+  Tiberium *v54; // edi
   __int16 v55; // ax
   int v56; // edi
   MouseClass *v57; // ecx
@@ -682,7 +650,7 @@ char __thiscall Tiberium::CalculateSpread(
   int v65; // ebx
   MouseClass *v66; // edi
   IUnknown *v67; // eax
-  _DWORD *v68; // esi
+  Tiberium *v68; // esi
   _DWORD *v69; // eax
   __int16 v70; // dx
   int m; // esi
@@ -696,10 +664,10 @@ char __thiscall Tiberium::CalculateSpread(
   _BYTE *v79; // eax
   int v80; // esi
   int v81; // edi
-  _DWORD *v82; // ebp
+  Tiberium *v82; // ebp
   int v83; // ebx
   char v84; // di
-  _DWORD *v85; // ebx
+  Tiberium *v85; // ebx
   __int16 v86; // si
   MouseClass *v87; // ebp
   int v88; // esi
@@ -712,7 +680,7 @@ char __thiscall Tiberium::CalculateSpread(
   int v95; // ebx
   int v96; // ebp
   char v97; // bl
-  _DWORD *v98; // ebp
+  Tiberium *v98; // ebp
   int v99; // edi
   __int16 v100; // si
   IUnknown *v101; // edx
@@ -738,7 +706,7 @@ char __thiscall Tiberium::CalculateSpread(
   MouseClass *v121; // [esp+34h] [ebp-F4h] BYREF
   char inited; // [esp+3Bh] [ebp-EDh]
   __int16 a4[2]; // [esp+3Ch] [ebp-ECh] BYREF
-  _DWORD *v124; // [esp+40h] [ebp-E8h]
+  Tiberium *v124; // [esp+40h] [ebp-E8h]
   __int16 v125; // [esp+48h] [ebp-E0h]
   __int16 v126; // [esp+4Ah] [ebp-DEh]
   MouseClass *v127; // [esp+50h] [ebp-D8h]
@@ -791,12 +759,11 @@ char __thiscall Tiberium::CalculateSpread(
   int v174; // [esp+11Ch] [ebp-Ch] BYREF
   int v175; // [esp+120h] [ebp-8h] BYREF
   int v176; // [esp+124h] [ebp-4h] BYREF
-
   v124 = this;
   LOBYTE(aP5->field_0) = 0;
-  v8 = 0;
-  v9 = 0;
-  v10 = 0;
+  int v8 = 0;
+  int v9 = 0;
+  int v10 = 0;
   LODWORD(v140) = 0;
   v131 = 0;
   v132 = 0;
@@ -814,8 +781,8 @@ char __thiscall Tiberium::CalculateSpread(
   {
     case 0:
       v11 = (MouseClass *)*(__int16 *)aP2->__tail_0;
-      v12 = *(__int16 *)&aP2->__tail_0[2];
-      v13 = *a3 - (_DWORD)v11;
+      int v12 = *(__int16 *)&aP2->__tail_0[2];
+      int v13 = *a3 - (_DWORD)v11;
       v8 = v12 - 12;
       v12 -= 4;
       v9 = v13 + 5;
@@ -825,12 +792,12 @@ char __thiscall Tiberium::CalculateSpread(
       v130 = 8;
       v129 = v13 + 1;
       aP3 = 0;
-      v14 = 512 - v12;
+      int v14 = 512 - v12;
       v132 = v12;
       v136 = v12;
       a4[0] = (__int16)v11;
       a4[1] = v12;
-      v15 = *(_DWORD *)a4;
+      int v15 = *(_DWORD *)a4;
       v10 = 12;
       v131 = v11;
       v127 = v11;
@@ -840,9 +807,9 @@ char __thiscall Tiberium::CalculateSpread(
       goto LABEL_6;
     case 2:
       v9 = 12;
-      v19 = *(__int16 *)aP2->__tail_0;
-      v20 = *(__int16 *)&aP2->__tail_0[2];
-      v21 = a3[1] - v20;
+      int v19 = *(__int16 *)aP2->__tail_0;
+      int v20 = *(__int16 *)&aP2->__tail_0[2];
+      int v21 = a3[1] - v20;
       LODWORD(v140) = v19 + 1;
       v8 = v20 - 2;
       v10 = v21 + 5;
@@ -864,8 +831,8 @@ char __thiscall Tiberium::CalculateSpread(
     case 4:
       v10 = 12;
       v16 = (MouseClass *)*a3;
-      v17 = a3[1];
-      v18 = *(__int16 *)aP2->__tail_0 - (_DWORD)v16;
+      int v17 = a3[1];
+      int v18 = *(__int16 *)aP2->__tail_0 - (_DWORD)v16;
       v8 = v17 + 1;
       LODWORD(v140) = (char *)v16 - 2;
       v9 = v18 + 5;
@@ -887,8 +854,8 @@ char __thiscall Tiberium::CalculateSpread(
     case 6:
       v9 = 12;
       v22 = (MapResourceClass)*a3;
-      v23 = a3[1];
-      v24 = *(__int16 *)&aP2->__tail_0[2] - v23;
+      int v23 = a3[1];
+      int v24 = *(__int16 *)&aP2->__tail_0[2] - v23;
       v120 = (MouseClass *)(*(_DWORD *)&v22 - 12);
       LODWORD(v140) = *(_DWORD *)&v22 - 12;
       v10 = v24 + 5;
@@ -898,7 +865,7 @@ char __thiscall Tiberium::CalculateSpread(
       v127 = v120;
       v130 = v24 + 1;
       v129 = 8;
-      v25 = 512 - *(_DWORD *)&v22;
+      int v25 = 512 - *(_DWORD *)&v22;
       v136 = 0;
       v131 = (MouseClass *)v22;
       aP3 = v22;
@@ -925,7 +892,7 @@ LABEL_6:
   }
   else
   {
-    v27 = v140 + v9;
+    int v27 = v140 + v9;
     v28 = g_MapCellHeight_Value;
     v120 = (MouseClass *)v27;
     do

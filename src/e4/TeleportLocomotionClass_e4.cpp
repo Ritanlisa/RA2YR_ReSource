@@ -6,7 +6,7 @@
 int TeleportLocomotionClass::TeleportLocomotionClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall TeleportLocomotionClass::TeleportLocomotionClass(int this)
+T TeleportLocomotionClass::TeleportLocomotionClass(int this)
 {
   wchar_t *v2; // ecx
 

@@ -8,10 +8,8 @@
 bool WinModemClass::ReadSerial()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall WinModemClass::ReadSerial(int this)
+void WinModemClass::ReadSerial(int this)
 {
-  char v2; // al
-  void *v3; // edx
   DWORD v4; // ecx
   DWORD v5; // eax
   int cbInQue; // edi
@@ -27,11 +25,11 @@ bool __thiscall WinModemClass::ReadSerial(int this)
   DWORD Errors; // [esp+18h] [ebp-10h] BYREF
   struct _COMSTAT Stat; // [esp+1Ch] [ebp-Ch] BYREF
 
-  v2 = this->q014; /*0x77498b*/
+  char v2 = this->q014; /*0x77498b*/
   v16 = 0; /*0x77498e*/
   if ( v2 ) /*0x774994*/
   {
-    v3 = *(void **)(this + 92); /*0x774996*/
+    void * v3 = this->q05C; /*0x774996*/
     NumberOfBytesTransferred = 0; /*0x7749a4*/
     if ( GetOverlappedResult(v3, (LPOVERLAPPED)(this + 40), &NumberOfBytesTransferred, 0) ) /*0x7749a8*/
     {
@@ -56,9 +54,9 @@ bool __thiscall WinModemClass::ReadSerial(int this)
       Debug::Log(); /*0x774a09*/
     }
   }
-  ResetEvent(*(HANDLE *)(this + 56)); /*0x774a15*/
+  ResetEvent(this->q038); /*0x774a15*/
   cbInQue = 1; /*0x774a29*/
-  if ( ClearCommError(*(HANDLE *)(this + 92), &Errors, &Stat) ) /*0x774a2e*/
+  if ( ClearCommError(this->q05C, &Errors, &Stat) ) /*0x774a2e*/
   {
     v8 = (NullModemClass *)Errors; /*0x774a38*/
     cbInQue = Stat.cbInQue; /*0x774a3c*/
@@ -83,7 +81,7 @@ bool __thiscall WinModemClass::ReadSerial(int this)
   }
   while ( 1 ) /*0x774a86*/
   {
-    v11 = *(void **)(this + 92); /*0x774a86*/
+    v11 = this->q05C; /*0x774a86*/
     NumberOfBytesTransferred = 0; /*0x774a95*/
     v12 = ReadFile(v11, (LPVOID)(this + 108), cbInQue, &NumberOfBytesTransferred, (LPOVERLAPPED)(this + 40)); /*0x774a99*/
     v13 = v12; /*0x774aa1*/
@@ -119,14 +117,13 @@ int WinModemClass::ReadBytes(void (**this)() a1, WinModemClass * aP1, WinModemCl
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __thiscall WinModemClass::ReadBytes(void (**this)(), WinModemClass *aP1, WinModemClass *aP2)
 {
-  int v4; // ebx
   WinModemClass *v5; // ebx
   WinModemClass *v7; // ebp
   void (*v8)(void); // eax
 
   if ( !WinModemClass::ReadSerial((int)this) ) /*0x774b37*/
     return 0; /*0x774ba9*/
-  v4 = (char *)this->q016 - (char *)this->q015; /*0x774b46*/
+  int v4 = (char *)this->q016 - (char *)this->q015; /*0x774b46*/
   v5 = (WinModemClass *)(v4 + (v4 < 0 ? 0x2000 : 0));
   if ( (int)v5 > (int)aP2 ) /*0x774b56*/
     v5 = aP2; /*0x774b58*/
@@ -155,13 +152,13 @@ int __thiscall WinModemClass::ReadBytes(void (**this)(), WinModemClass *aP1, Win
 int WinModemClass::WriteSerial(LPCVOID lpBuffer, WinModemClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall WinModemClass::WriteSerial(int this, LPCVOID lpBuffer, WinModemClass *aP2)
+void WinModemClass::WriteSerial(int this, LPCVOID lpBuffer, WinModemClass *aP2)
 {
   int result; // eax
   DWORD NumberOfBytesWritten; // [esp+4h] [ebp-4h] BYREF
 
   AsyncIO::WaitCompletion(this); /*0x774c74*/
-  result = WriteFile(*(HANDLE *)(this + 92), lpBuffer, (DWORD)aP2, &NumberOfBytesWritten, (LPOVERLAPPED)(this + 60)); /*0x774c90*/
+  result = WriteFile(this->q05C, lpBuffer, (DWORD)aP2, &NumberOfBytesWritten, (LPOVERLAPPED)(this + 60)); /*0x774c90*/
   if ( !result ) /*0x774c98*/
   {
     result = GetLastError(); /*0x774c9a*/
@@ -178,27 +175,20 @@ int __thiscall WinModemClass::WriteSerial(int this, LPCVOID lpBuffer, WinModemCl
 int WinModemClass::LoadTypeData(int a2, char * Str, int a4, WinModemClass * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall WinModemClass::LoadTypeData(WinModemClass *this, int a2, char *Str, int a4, WinModemClass *aP4)
+void WinModemClass::LoadTypeData(int a2, char *Str, int a4, WinModemClass *aP4)
 {
   WinModemClass *v5; // esi
-  int v6; // ebx
   WinModemClass *v7; // edi
   int (*WinModemClass_field_0x2C)(void); // eax
   int result; // eax
   int Bytes; // eax
-  int v11; // esi
-  int v12; // eax
   WinModemClass *v13; // esi
-  int v14; // eax
   AbstractClass *v15; // esi
-  char *v16; // eax
-  int v17; // eax
   DWORD v19; // [esp+14h] [ebp-30h]
   DWORD Ticks; // [esp+20h] [ebp-24h]
   WinModemClass *v21; // [esp+28h] [ebp-1Ch]
-
   v5 = this; /*0x774cd6*/
-  v6 = 0; /*0x774ce6*/
+  int v6 = 0; /*0x774ce6*/
   Timer::GetTicks(); /*0x774ce1*/
   Timer::GetTicks(); /*0x774cf4*/
   memset(Str, 0, a4); /*0x774d0e*/
@@ -228,10 +218,10 @@ LABEL_2:
       Ticks = Timer::GetTicks(); /*0x774db1*/
       v21 = v7; /*0x774dc3*/
     }
-    v11 = a2; /*0x774dcb*/
+    int v11 = a2; /*0x774dcb*/
     if ( v19 != -1 ) /*0x774dd2*/
     {
-      v12 = Timer::GetTicks() - v19; /*0x774ddd*/
+      int v12 = Timer::GetTicks() - v19; /*0x774ddd*/
       if ( v12 >= a2 ) /*0x774de3*/
         goto LABEL_20; /*0x774de3*/
       v11 = a2 - v12; /*0x774de5*/
@@ -245,7 +235,7 @@ LABEL_2:
       v13 = v21; /*0x774e0d*/
       if ( Ticks != -1 ) /*0x774e14*/
       {
-        v14 = Timer::GetTicks() - Ticks; /*0x774e1f*/
+        int v14 = Timer::GetTicks() - Ticks; /*0x774e1f*/
         if ( v14 >= (int)v21 ) /*0x774e25*/
           goto LABEL_20; /*0x774e25*/
         v13 = (WinModemClass *)((char *)v21 - v14); /*0x774e27*/
@@ -265,7 +255,7 @@ LABEL_20:
         if ( *Str == 13 || *Str == 10 ) /*0x774e83*/
         {
           v15 = (AbstractClass *)strchr(Str, 13); /*0x774e90*/
-          v16 = strchr(Str, 10); /*0x774e92*/
+          char * v16 = strchr(Str, 10); /*0x774e92*/
           if ( !v15 || v16 && v16 < (char *)v15 ) /*0x774ea4*/
             v15 = (AbstractClass *)strchr(Str, 10); /*0x774eb1*/
           if ( v15 ) /*0x774eb5*/
@@ -291,7 +281,7 @@ LABEL_38:
         result = a2; /*0x774f11*/
         if ( v19 != -1 ) /*0x774f1a*/
         {
-          v17 = Timer::GetTicks() - v19; /*0x774f25*/
+          int v17 = Timer::GetTicks() - v19; /*0x774f25*/
           if ( v17 < a2 ) /*0x774f2b*/
             return a2 - v17; /*0x774f38*/
           return 0; /*0x774f3b*/
@@ -308,9 +298,8 @@ LABEL_38:
 BOOL WinModemClass::SaveToINI(const char * NumberOfBytesWritten)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall WinModemClass::_vt06(int this, const char *NumberOfBytesWritten)
+void WinModemClass::_vt06(int this, const char *NumberOfBytesWritten)
 {
-  unsigned int v3; // kr18_4
   char Buffer[80]; // [esp+10h] [ebp-50h] BYREF
 
   Debug::Log(); /*0x774f5e*/
@@ -330,9 +319,9 @@ BOOL __thiscall WinModemClass::_vt06(int this, const char *NumberOfBytesWritten)
   Debug::Log(); /*0x775047*/
   strcat(Buffer, (const char *)&DataGlobal_8327A0); /*0x775071*/
   Debug::Log(); /*0x775084*/
-  v3 = strlen(Buffer) + 1; /*0x775095*/
+  unsigned int v3 = strlen(Buffer) + 1; /*0x775095*/
   AsyncIO::WaitCompletion(this); /*0x77509e*/
-  if ( !WriteFile(*(HANDLE *)(this + 92), Buffer, v3 - 1, (LPDWORD)&NumberOfBytesWritten, (LPOVERLAPPED)(this + 60)) ) /*0x7750b6*/
+  if ( !WriteFile(this->q05C, Buffer, v3 - 1, (LPDWORD)&NumberOfBytesWritten, (LPOVERLAPPED)(this + 60)) ) /*0x7750b6*/
   {
     if ( GetLastError() == 997 ) /*0x7750cb*/
     {
@@ -349,34 +338,15 @@ BOOL __thiscall WinModemClass::_vt06(int this, const char *NumberOfBytesWritten)
 int WinModemClass::Dial(const char * a2, unsigned char a3, char * Destination, signed int Count, int a6, int a7, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall WinModemClass::Dial(
-        int this,
-        const char *a2,
-        unsigned __int8 a3,
-        char *Destination,
-        signed int Count,
-        int a6,
-        int a7,
-        int a8)
+void WinModemClass::Dial(int this, const char *a2, unsigned __int8 a3, char *Destination, signed int Count, int a6, int a7, int a8)
 {
-  unsigned int v9; // kr0C_4
   ObjectClass *v10; // ecx
-  int v11; // edx
-  int v12; // esi
   DWORD v13; // eax
-  signed int v14; // eax
-  int v15; // esi
-  int v16; // esi
   DWORD v17; // eax
-  signed int v18; // eax
-  int v19; // esi
-  signed int v20; // esi
-  signed int v21; // eax
   size_t v22; // eax
   size_t v24; // eax
   int i; // [esp+10h] [ebp-108h] BYREF
   ObjectClass *Ticks; // [esp+14h] [ebp-104h]
-  int v27; // [esp+1Ch] [ebp-FCh]
   DWORD v28; // [esp+20h] [ebp-F8h] BYREF
   DWORD NumberOfBytesWritten; // [esp+24h] [ebp-F4h] BYREF
   char Str[80]; // [esp+28h] [ebp-F0h] BYREF
@@ -391,11 +361,13 @@ int __thiscall WinModemClass::Dial(
   WinModemClass::ReadBytes((void (**)())this, &aP1, (WinModemClass *)0x50); /*0x7751a6*/
   for ( i = 0; i < a7; ++i ) /*0x7751bc*/
   {
+  int v19; // esi
+  int v15; // esi
     Ticks = (ObjectClass *)Timer::GetTicks(); /*0x7751d1*/
-    v9 = strlen(Buffer) + 1; /*0x7751de*/
-    v27 = a6; /*0x7751ea*/
+    unsigned int v9 = strlen(Buffer) + 1; /*0x7751de*/
+    int v27 = a6; /*0x7751ea*/
     AsyncIO::WaitCompletion(this); /*0x7751f2*/
-    if ( !WriteFile(*(HANDLE *)(this + 92), Buffer, v9 - 1, &NumberOfBytesWritten, (LPOVERLAPPED)(this + 60)) ) /*0x77520d*/
+    if ( !WriteFile(this->q05C, Buffer, v9 - 1, &NumberOfBytesWritten, (LPOVERLAPPED)(this + 60)) ) /*0x77520d*/
     {
       if ( GetLastError() == 997 ) /*0x77521e*/
         *(_BYTE *)(this + 81) = 1; /*0x775220*/
@@ -404,8 +376,8 @@ int __thiscall WinModemClass::Dial(
     }
     AsyncIO::WaitCompletion(this); /*0x775237*/
     v10 = Ticks; /*0x77523c*/
-    v11 = v27; /*0x775240*/
-    v12 = v27; /*0x775247*/
+    int v11 = v27; /*0x775240*/
+    int v12 = v27; /*0x775247*/
     if ( Ticks == (ObjectClass *)-1 ) /*0x775249*/
     {
       v15 = v27; /*0x77526a*/
@@ -414,7 +386,7 @@ int __thiscall WinModemClass::Dial(
     {
       v13 = Timer::GetTicks(); /*0x77524f*/
       v10 = Ticks; /*0x775254*/
-      v14 = v13 - (_DWORD)Ticks; /*0x775258*/
+      signed int v14 = v13 - (_DWORD)Ticks; /*0x775258*/
       if ( v14 >= v12 ) /*0x77525c*/
         return 0; /*0x77525c*/
       v11 = v27; /*0x775262*/
@@ -422,7 +394,7 @@ int __thiscall WinModemClass::Dial(
     }
     if ( v15 <= 0 ) /*0x77526e*/
       return 0; /*0x77526e*/
-    v16 = v11; /*0x775277*/
+    int v16 = v11; /*0x775277*/
     if ( v10 == (ObjectClass *)-1 ) /*0x775279*/
     {
       v19 = v11; /*0x775296*/
@@ -431,7 +403,7 @@ int __thiscall WinModemClass::Dial(
     {
       v17 = Timer::GetTicks(); /*0x77527f*/
       v10 = Ticks; /*0x775284*/
-      v18 = v17 - (_DWORD)Ticks; /*0x775288*/
+      signed int v18 = v17 - (_DWORD)Ticks; /*0x775288*/
       if ( v18 >= v16 ) /*0x77528c*/
         goto LABEL_16; /*0x77528c*/
       v11 = v27; /*0x77528e*/
@@ -443,10 +415,10 @@ LABEL_16:
       v11 = 1; /*0x77529d*/
       goto LABEL_21; /*0x7752a2*/
     }
-    v20 = v11; /*0x7752a7*/
+    signed int v20 = v11; /*0x7752a7*/
     if ( v10 != (ObjectClass *)-1 ) /*0x7752a9*/
     {
-      v21 = Timer::GetTicks() - (_DWORD)Ticks; /*0x7752b4*/
+      signed int v21 = Timer::GetTicks() - (_DWORD)Ticks; /*0x7752b4*/
       if ( v21 >= v20 ) /*0x7752ba*/
         v11 = 0; /*0x7752c2*/
       else
@@ -481,7 +453,7 @@ LABEL_21:
     strncpy(Destination, Str, v22); /*0x7753af*/
     Sleep(0x64u); /*0x7753bf*/
     AsyncIO::WaitCompletion(this); /*0x7753c3*/
-    if ( !WriteFile(*(HANDLE *)(this + 92), &stru_830620[8576], 1u, &v28, (LPOVERLAPPED)(this + 60)) ) /*0x7753dc*/
+    if ( !WriteFile(this->q05C, &stru_830620[8576], 1u, &v28, (LPOVERLAPPED)(this + 60)) ) /*0x7753dc*/
     {
       if ( GetLastError() == 997 ) /*0x7753ed*/
         *(_BYTE *)(this + 81) = 1; /*0x7753ef*/
@@ -507,7 +479,7 @@ int WinModemClass::ddtor(int a2)
 int WinModemClass::HangUp(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall WinModemClass::_vt09(_DWORD *this, int a2)
+void WinModemClass::_vt09(int a2)
 {
   this->q068 = a2; /*0x7754b4*/
   return a2; /*0x7754b7*/
@@ -518,7 +490,7 @@ int __thiscall WinModemClass::_vt09(_DWORD *this, int a2)
 int WinModemClass::LogCommErrors(NullModemClass * aP1, char a3, int a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall WinModemClass::LogCommErrors(_DWORD *this, NullModemClass *aP1, char a3, int a4, int a5)
+void WinModemClass::LogCommErrors(NullModemClass *aP1, char a3, int a4, int a5)
 {
   int result; // eax
 

@@ -12,13 +12,12 @@ HWND sub_777420()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 HWND sub_777420()
 {
-  int v0; // ecx
-  void *v1; // ecx
   HWND result; // eax
   HWND Current; // eax
   HWND v4; // eax
 
   Debug::Log(); /*0x777425*/
+  int v0; // ecx
   sub_407040(v0); /*0x77742d*/
   Debug::Log(); /*0x77744b*/
   if ( g_WWMouseClass_Instance && byte_B73560 == 1 && !ArmageddonMode ) /*0x77746d*/
@@ -62,6 +61,7 @@ HWND sub_777420()
   }
   MapClass::MarkForRedraw(&DataGlobal_87F7E8, 2); /*0x77757c*/
   InvalidateRect(g_hWnd, 0, 0); /*0x77758c*/
+  void *v1; // ecx
   LOBYTE(v1) = 0; /*0x777592*/
   AsyncIO::Read(v1); /*0x777594*/
   result = Dialog::GetCurrent(); /*0x777599*/
@@ -82,7 +82,7 @@ namespace gamemd {
 int sub_5C09A0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_5C09A0()
+void sub_5C09A0()
 {
   int result; // eax
 

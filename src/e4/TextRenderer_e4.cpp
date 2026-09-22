@@ -142,40 +142,22 @@ namespace gamemd {
 char TextRenderer::MeasureBuilding(int a2, ProgressScreenClass * aP2, ProgressScreenClass * aP3, ProgressScreenClass * aP4, char a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall TextRenderer::MeasureBuilding(
-        ProgressScreenClass *this,
-        int a2,
-        ProgressScreenClass *aP2,
-        ProgressScreenClass *aP3,
-        ProgressScreenClass *aP4,
-        char a6)
+void TextRenderer::MeasureBuilding(int a2, ProgressScreenClass *aP2, ProgressScreenClass *aP3, ProgressScreenClass *aP4, char a6)
 {
   _DWORD *FoundationSize; // eax
-  int v8; // ebx
   int Default; // edi
-  int *v10; // ebp
-  int v11; // eax
-  int v12; // ebp
-  int v13; // edi
   int *Viewport; // eax
-  int v15; // kr04_4
-  int v16; // eax
   AbstractClass *Instance; // [esp+4h] [ebp-3Ch]
-  int v19; // [esp+8h] [ebp-38h]
-  int v20; // [esp+Ch] [ebp-34h]
-  int v21; // [esp+18h] [ebp-28h]
-  int v22[7]; // [esp+20h] [ebp-20h] BYREF
   __int16 v23; // [esp+3Eh] [ebp-2h]
-  int v24; // [esp+44h] [ebp+4h]
-
   if ( a2 == -1 && aP2 == (ProgressScreenClass *)-1 ) /*0x642c9a*/
   {
-    v20 = *((char *)this + 97); /*0x642cb1*/
+    int v20 = *((char *)this + 97); /*0x642cb1*/
+  int v22[7]; // [esp+20h] [ebp-20h] BYREF
     FoundationSize = Building::GetFoundationSize(v22, 0); /*0x642cb5*/
-    v8 = 0; /*0x642cbc*/
+    int v8 = 0; /*0x642cbc*/
     Default = 0; /*0x642cc2*/
-    v21 = FoundationSize[2]; /*0x642cce*/
-    v19 = FoundationSize[3] + 6; /*0x642cd8*/
+    int v21 = FoundationSize[2]; /*0x642cce*/
+    int v19 = FoundationSize[3] + 6; /*0x642cd8*/
     if ( (_BYTE)aP4 ) /*0x642ce2*/
     {
       Default = BuildingType::FindDefault(0); /*0x642ceb*/
@@ -186,8 +168,8 @@ char __thiscall TextRenderer::MeasureBuilding(
       }
     }
     Instance = TextRenderer::GetInstance(); /*0x642d10*/
-    v10 = v22; /*0x642d14*/
-    v24 = 15; /*0x642d18*/
+    int * v10 = v22; /*0x642d14*/
+    int v24 = 15; /*0x642d18*/
     do /*0x642d3d*/
     {
       *(_WORD *)v10 = *(_WORD *)CharToWideString(g_Str_W); /*0x642d2d*/
@@ -196,18 +178,18 @@ char __thiscall TextRenderer::MeasureBuilding(
     }
     while ( v24 ); /*0x642d3d*/
     v23 = 0; /*0x642d4c*/
-    v11 = Text::MeasureWidth((int)v22, 0); /*0x642d53*/
+    int v11 = Text::MeasureWidth((int)v22, 0); /*0x642d53*/
     if ( v19 > Default ) /*0x642d6b*/
       Default = v19; /*0x642d6d*/
     if ( Default <= Instance->referenceCount ) /*0x642d71*/
       Default = Instance->referenceCount; /*0x642d73*/
-    v12 = v8 + v11 + v21 + 36; /*0x642d79*/
-    v13 = Default + 4; /*0x642d7c*/
+    int v12 = v8 + v11 + v21 + 36; /*0x642d79*/
+    int v13 = Default + 4; /*0x642d7c*/
     if ( v20 > 1 ) /*0x642d82*/
       v13 *= v20; /*0x642d87*/
     Viewport = Display::GetViewport(v22); /*0x642d8d*/
-    v15 = Viewport[2] - v12; /*0x642dac*/
-    v16 = Viewport[3] - v13; /*0x642db0*/
+    int v15 = Viewport[2] - v12; /*0x642dac*/
+    int v16 = Viewport[3] - v13; /*0x642db0*/
     *((_DWORD *)this + 26) = v15 / 2; /*0x642dbb*/
     *((_DWORD *)this + 27) = v16 / 2; /*0x642dbe*/
   }
@@ -232,35 +214,26 @@ int * TextRenderer::MeasureBuilding2()
 int *__thiscall TextRenderer::MeasureBuilding2(ProgressScreenClass *this)
 {
   _DWORD *FoundationSize; // eax
-  int v2; // ebp
-  int v3; // edi
   int Default; // eax
-  int v5; // esi
   AbstractClass *Instance; // ebx
   CampaignScore *v10; // esi
-  int v8; // eax
   int referenceCount; // ebx
   int *result; // eax
-  int v11; // edi
-  int v12; // [esp+10h] [ebp-34h]
   CampaignScore *v16; // [esp+1Ch] [ebp-28h]
-  _DWORD v14[7]; // [esp+24h] [ebp-20h] BYREF
   __int16 v15; // [esp+42h] [ebp-2h]
   _DWORD *arg0; // [esp+48h] [ebp+4h]
-  int *v17; // [esp+4Ch] [ebp+8h]
-  int v18; // [esp+50h] [ebp+Ch]
-  char v19; // [esp+54h] [ebp+10h]
-  int v20; // [esp+54h] [ebp+10h]
 
+  _DWORD v14[7]; // [esp+24h] [ebp-20h] BYREF
   FoundationSize = Building::GetFoundationSize(v14, 0); /*0x642f01*/
-  v2 = 0; /*0x642f08*/
-  v3 = 0; /*0x642f0e*/
+  int v2 = 0; /*0x642f08*/
+  int v3 = 0; /*0x642f0e*/
   v16 = (CampaignScore *)FoundationSize[2]; /*0x642f1a*/
-  v12 = FoundationSize[3] + 6; /*0x642f24*/
+  int v12 = FoundationSize[3] + 6; /*0x642f24*/
+  char v19; // [esp+54h] [ebp+10h]
   if ( v19 ) /*0x642f2e*/
   {
     Default = BuildingType::FindDefault(0); /*0x642f32*/
-    v5 = Default; /*0x642f37*/
+    int v5 = Default; /*0x642f37*/
     if ( Default ) /*0x642f3b*/
     {
       v2 = (*(int (__thiscall **)(int))(*(_DWORD *)Default + 124))(Default); /*0x642f44*/
@@ -269,7 +242,7 @@ int *__thiscall TextRenderer::MeasureBuilding2(ProgressScreenClass *this)
   }
   Instance = TextRenderer::GetInstance(); /*0x642f5c*/
   v10 = (CampaignScore *)v14; /*0x642f5e*/
-  v20 = 15; /*0x642f62*/
+  int v20 = 15; /*0x642f62*/
   do /*0x642f86*/
   {
     *(_WORD *)v10->__pad_0 = *(_WORD *)CharToWideString(g_Str_W); /*0x642f7b*/
@@ -278,19 +251,21 @@ int *__thiscall TextRenderer::MeasureBuilding2(ProgressScreenClass *this)
   }
   while ( v20 ); /*0x642f86*/
   v15 = 0; /*0x642f91*/
-  v8 = Text::MeasureWidth((int)v14, 0); /*0x642f98*/
+  int v8 = Text::MeasureWidth((int)v14, 0); /*0x642f98*/
   referenceCount = Instance->referenceCount; /*0x642fa1*/
   *arg0 = (char *)&v16->CampaignScore_field_0x18 + v2 + v8 + 2; /*0x642fb4*/
   if ( v12 > v3 ) /*0x642fb6*/
     v3 = v12; /*0x642fb8*/
+  int *v17; // [esp+4Ch] [ebp+8h]
   result = v17; /*0x642fba*/
   *v17 = v3; /*0x642fc0*/
   if ( v3 <= referenceCount ) /*0x642fc2*/
     v3 = referenceCount; /*0x642fc4*/
   *v17 = v3; /*0x642fc6*/
   *arg0 += 10; /*0x642fd1*/
-  v11 = *v17 + 4; /*0x642fd5*/
+  int v11 = *v17 + 4; /*0x642fd5*/
   *v17 = v11; /*0x642fdb*/
+  int v18; // [esp+50h] [ebp+Ch]
   if ( v18 > 1 ) /*0x642fe3*/
     *v17 = v18 * v11; /*0x642fe8*/
   return result; /*0x642fdf*/

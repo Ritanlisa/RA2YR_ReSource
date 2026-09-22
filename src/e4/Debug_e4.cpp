@@ -8,18 +8,13 @@ namespace gamemd {
 char Debug::ScrollText(CellStruct * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall Debug::ScrollText(int this, CellStruct *aP1)
+void Debug::ScrollText(int this, CellStruct *aP1)
 {
   char result; // al
-  int v4; // eax
   IUnknown *v5; // ebp
   IUnknown *v6; // edx
   IUnknown *v7; // edi
   IUnknown *v8; // ebx
-  char *v9; // eax
-  int v10; // eax
-  _DWORD *v11; // [esp+4h] [ebp-10h]
-  char *v12; // [esp+8h] [ebp-Ch]
   IUnknown *aP2; // [esp+Ch] [ebp-8h]
   char *i; // [esp+10h] [ebp-4h]
   char aP1a; // [esp+18h] [ebp+4h]
@@ -27,7 +22,7 @@ char __thiscall Debug::ScrollText(int this, CellStruct *aP1)
   result = *((_BYTE *)&(&g_MatrixTransformState)[22] + 10); /*0x5bd0d0*/
   if ( *((_BYTE *)&(&g_MatrixTransformState)[22] + 10) ) /*0x5bd0dd*/
   {
-    v4 = *(_DWORD *)(this + 10020); /*0x5bd0ef*/
+    int v4 = *(_DWORD *)(this + 10020); /*0x5bd0ef*/
     v5 = (IUnknown *)(*(_DWORD *)(this + 10012) + v4); /*0x5bd108*/
     aP2 = (IUnknown *)(*(_DWORD *)(this + 10016) + *(_DWORD *)(this + 10024)); /*0x5bd10e*/
     v6 = (IUnknown *)(v4 + *(_DWORD *)(this + 10028)); /*0x5bd112*/
@@ -38,9 +33,9 @@ char __thiscall Debug::ScrollText(int this, CellStruct *aP1)
     v8 = v5; /*0x5bd131*/
     if ( (int)v5 < (int)v7 ) /*0x5bd133*/
     {
-      v12 = (char *)aP2 + 20 * (_DWORD)v5 + 5 * (_DWORD)v5 + this; /*0x5bd148*/
-      v9 = (char *)((char *)aP1 - (char *)v5); /*0x5bd15c*/
-      v11 = (_DWORD *)(this + 4 * (_DWORD)&aP2->__pad_1D8[20 * (_DWORD)v5 + 28 + 5 * (_DWORD)v5]); /*0x5bd15e*/
+      char * v12 = (char *)aP2 + 20 * (_DWORD)v5 + 5 * (_DWORD)v5 + this; /*0x5bd148*/
+      char * v9 = (char *)((char *)aP1 - (char *)v5); /*0x5bd15c*/
+      _DWORD * v11 = (_DWORD *)(this + 4 * (_DWORD)&aP2->__pad_1D8[20 * (_DWORD)v5 + 28 + 5 * (_DWORD)v5]); /*0x5bd15e*/
       for ( i = (char *)((char *)aP1 - (char *)v5); ; v9 = i ) /*0x5bd162*/
       {
         aP1a = *((_BYTE *)&v8->field_0 + (_DWORD)v9); /*0x5bd16f*/
@@ -48,7 +43,7 @@ char __thiscall Debug::ScrollText(int this, CellStruct *aP1)
         *v11 = *(_DWORD *)(this + 10000); /*0x5bd18f*/
         if ( aP1a == 10 ) /*0x5bd197*/
         {
-          v10 = *(_DWORD *)(this + 10016); /*0x5bd199*/
+          int v10 = *(_DWORD *)(this + 10016); /*0x5bd199*/
           *(_DWORD *)(this + 10012) = 0; /*0x5bd19f*/
           *(_DWORD *)(this + 10016) = v10 + 1; /*0x5bd1aa*/
         }
@@ -75,13 +70,12 @@ namespace gamemd {
 int Debug::AccumFlags()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Debug_AccumFlags(_DWORD *this)
+void Debug_AccumFlags(_DWORD *this)
 {
-  int v1; // esi
   int i; // edi
-  int v3; // eax
 
-  v1 = this->q0A0; /*0x6e61f1*/
+  int v1 = this->q0A0; /*0x6e61f1*/
+  int v3; // eax
   for ( i = 0; v1; i |= v3 ) /*0x6e61fc*/
   {
     v3 = TriggerTypeClass::GetFlags(v1); /*0x6e6200*/

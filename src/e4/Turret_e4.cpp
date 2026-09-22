@@ -9,38 +9,14 @@
 char Turret::LoadVoxelTurretAndBarrel()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall LoadVoxelTurretAndBarrel(void *this)
+void LoadVoxelTurretAndBarrel(void *this)
 {
-  int v2; // eax
-  void *v3; // edi
-  _DWORD *v4; // eax
   _DWORD *File; // eax
-  void *v6; // edi
-  _DWORD *v7; // eax
-  _DWORD *v8; // eax
-  _DWORD *v9; // ecx
   int Info; // eax
-  void *v11; // edi
-  _DWORD *v12; // eax
-  _DWORD *v13; // eax
-  void *v14; // edi
-  _DWORD *v15; // eax
-  _DWORD *v16; // eax
-  _DWORD *v17; // ecx
-  int v18; // eax
-  _DWORD v20[22]; // [esp+8h] [ebp-348h] BYREF
-  _BYTE v21[12]; // [esp+60h] [ebp-2F0h] BYREF
-  int v22; // [esp+6Ch] [ebp-2E4h]
-  _DWORD v23[22]; // [esp+74h] [ebp-2DCh] BYREF
-  _BYTE v24[12]; // [esp+CCh] [ebp-284h] BYREF
-  int v25; // [esp+D8h] [ebp-278h]
-  _DWORD v26[22]; // [esp+E0h] [ebp-270h] BYREF
-  _BYTE v27[12]; // [esp+138h] [ebp-218h] BYREF
-  int v28; // [esp+144h] [ebp-20Ch]
   char Buffer[256]; // [esp+14Ch] [ebp-204h] BYREF
   char Source[260]; // [esp+24Ch] [ebp-104h] BYREF
 
-  v2 = (*(int (__thiscall **)(void *))(*(_DWORD *)this + 44))(this); /*0x5f8cec*/
+  int v2 = (*(int (__thiscall **)(void *))(*(_DWORD *)this + 44))(this); /*0x5f8cec*/
   if ( v2 == 40 ) /*0x5f8cf2*/
   {
     v2 = (*(int (__thiscall **)(void *))(*(_DWORD *)this + 156))(this); /*0x5f8cfc*/
@@ -49,18 +25,22 @@ char __thiscall LoadVoxelTurretAndBarrel(void *this)
       LOBYTE(v2) = *((_BYTE *)this + 3233); /*0x5f8d0a*/
       if ( (_BYTE)v2 ) /*0x5f8d14*/
       {
+  int v22; // [esp+6Ch] [ebp-2E4h]
+  _BYTE v21[12]; // [esp+60h] [ebp-2F0h] BYREF
+  _DWORD v20[22]; // [esp+8h] [ebp-348h] BYREF
         sprintf(Buffer, g_Str_Trace__sTUR, (const char *)this + 504); /*0x5f8d30*/
         _makepath(Source, 0, 0, Buffer, g_Str_File__VXL); /*0x5f8d4c*/
+  _DWORD v26[22]; // [esp+E0h] [ebp-270h] BYREF
         CCFileClass::Construct(v26, Source); /*0x5f8d63*/
         if ( CCFileClass::Open(v26, 0) ) /*0x5f8d70*/
         {
-          v3 = (void *)*((_DWORD *)this + 46); /*0x5f8d7d*/
+          void * v3 = (void *)*((_DWORD *)this + 46); /*0x5f8d7d*/
           if ( v3 ) /*0x5f8d85*/
           {
             WaveClass::Destroy(*((_DWORD *)this + 46)); /*0x5f8d89*/
             __3_YAXPAX_Z(v3); /*0x5f8d8f*/
           }
-          v4 = __2_YAPAXI_Z(0x1Cu); /*0x5f8d99*/
+          _DWORD * v4 = __2_YAPAXI_Z(0x1Cu); /*0x5f8d99*/
           if ( v4 ) /*0x5f8da3*/
             File = File::LoadFileVXL(v4, (int)v26, 0); /*0x5f8db0*/
           else
@@ -71,18 +51,18 @@ char __thiscall LoadVoxelTurretAndBarrel(void *this)
             sprintf(Buffer, g_Str_Trace__sTUR, (const char *)this + 504); /*0x5f8ddd*/
             _makepath(Source, 0, 0, Buffer, g_Str_File__HVA); /*0x5f8df9*/
             CCFileClass::Construct(v20, Source); /*0x5f8e0d*/
-            v6 = (void *)*((_DWORD *)this + 47); /*0x5f8e12*/
+            void * v6 = (void *)*((_DWORD *)this + 47); /*0x5f8e12*/
             if ( v6 ) /*0x5f8e1a*/
             {
               String::Release(*((void ***)this + 47)); /*0x5f8e1e*/
               __3_YAXPAX_Z(v6); /*0x5f8e24*/
             }
-            v7 = __2_YAPAXI_Z(0x10u); /*0x5f8e2e*/
+            _DWORD * v7 = __2_YAPAXI_Z(0x10u); /*0x5f8e2e*/
             if ( v7 ) /*0x5f8e38*/
-              v8 = File::LoadFileHVA(v7, (int)v20); /*0x5f8e41*/
+              _DWORD * v8 = File::LoadFileHVA(v7, (int)v20); /*0x5f8e41*/
             else
               v8 = 0; /*0x5f8e48*/
-            v9 = (_DWORD *)*((_DWORD *)this + 46); /*0x5f8e4a*/
+            _DWORD * v9 = (_DWORD *)*((_DWORD *)this + 46); /*0x5f8e4a*/
             *((_DWORD *)this + 47) = v8; /*0x5f8e52*/
             Info = VoxelSection::GetInfo(v9, 0, 0); /*0x5f8e58*/
             Matrix::Scale(*((unsigned int **)this + 47), *(float *)(Info + 12)); /*0x5f8e67*/
@@ -95,18 +75,19 @@ char __thiscall LoadVoxelTurretAndBarrel(void *this)
         }
         sprintf(Buffer, g_Str_Trace__sBARL, (const char *)this + 504); /*0x5f8ea0*/
         _makepath(Source, 0, 0, Buffer, g_Str_File__VXL); /*0x5f8ebc*/
+  _DWORD v23[22]; // [esp+74h] [ebp-2DCh] BYREF
         CCFileClass::Construct(v23, Source); /*0x5f8ed0*/
         if ( CCFileClass::Open(v23, 0) ) /*0x5f8edd*/
         {
-          v11 = (void *)*((_DWORD *)this + 48); /*0x5f8eea*/
+          void * v11 = (void *)*((_DWORD *)this + 48); /*0x5f8eea*/
           if ( v11 ) /*0x5f8ef2*/
           {
             WaveClass::Destroy(*((_DWORD *)this + 48)); /*0x5f8ef6*/
             __3_YAXPAX_Z(v11); /*0x5f8efc*/
           }
-          v12 = __2_YAPAXI_Z(0x1Cu); /*0x5f8f06*/
+          _DWORD * v12 = __2_YAPAXI_Z(0x1Cu); /*0x5f8f06*/
           if ( v12 ) /*0x5f8f10*/
-            v13 = File::LoadFileVXL(v12, (int)v23, 0); /*0x5f8f1a*/
+            _DWORD * v13 = File::LoadFileVXL(v12, (int)v23, 0); /*0x5f8f1a*/
           else
             v13 = 0; /*0x5f8f21*/
           *((_DWORD *)this + 48) = v13; /*0x5f8f25*/
@@ -115,20 +96,20 @@ char __thiscall LoadVoxelTurretAndBarrel(void *this)
             sprintf(Buffer, g_Str_Trace__sBARL, (const char *)this + 504); /*0x5f8f47*/
             _makepath(Source, 0, 0, Buffer, g_Str_File__HVA); /*0x5f8f63*/
             CCFileClass::Construct(v20, Source); /*0x5f8f77*/
-            v14 = (void *)*((_DWORD *)this + 49); /*0x5f8f7c*/
+            void * v14 = (void *)*((_DWORD *)this + 49); /*0x5f8f7c*/
             if ( v14 ) /*0x5f8f84*/
             {
               String::Release(*((void ***)this + 49)); /*0x5f8f88*/
               __3_YAXPAX_Z(v14); /*0x5f8f8e*/
             }
-            v15 = __2_YAPAXI_Z(0x10u); /*0x5f8f98*/
+            _DWORD * v15 = __2_YAPAXI_Z(0x10u); /*0x5f8f98*/
             if ( v15 ) /*0x5f8fa2*/
-              v16 = File::LoadFileHVA(v15, (int)v20); /*0x5f8fab*/
+              _DWORD * v16 = File::LoadFileHVA(v15, (int)v20); /*0x5f8fab*/
             else
               v16 = 0; /*0x5f8fb2*/
-            v17 = (_DWORD *)*((_DWORD *)this + 48); /*0x5f8fb4*/
+            _DWORD * v17 = (_DWORD *)*((_DWORD *)this + 48); /*0x5f8fb4*/
             *((_DWORD *)this + 49) = v16; /*0x5f8fbc*/
-            v18 = VoxelSection::GetInfo(v17, 0, 0); /*0x5f8fc2*/
+            int v18 = VoxelSection::GetInfo(v17, 0, 0); /*0x5f8fc2*/
             Matrix::Scale(*((unsigned int **)this + 49), *(float *)(v18 + 12)); /*0x5f8fd1*/
             v20[0] = &vt_CCFileClass; /*0x5f8fda*/
             v22 = 0; /*0x5f8fe2*/
@@ -138,12 +119,14 @@ char __thiscall LoadVoxelTurretAndBarrel(void *this)
           }
         }
         v23[0] = &vt_CCFileClass; /*0x5f9008*/
-        v25 = 0; /*0x5f900c*/
+        int v25 = 0; /*0x5f900c*/
+  _BYTE v24[12]; // [esp+CCh] [ebp-284h] BYREF
         Vector::Clear((int)v24); /*0x5f9013*/
         v23[0] = &off_7E1668; /*0x5f9021*/
         BufferIOFileClass::Dtor(v23); /*0x5f9025*/
         v26[0] = &vt_CCFileClass; /*0x5f9031*/
-        v28 = 0; /*0x5f9038*/
+        int v28 = 0; /*0x5f9038*/
+  _BYTE v27[12]; // [esp+138h] [ebp-218h] BYREF
         Vector::Clear((int)v27); /*0x5f903f*/
         v26[0] = &off_7E1668; /*0x5f904b*/
         LOBYTE(v2) = BufferIOFileClass::Dtor(v26); /*0x5f9052*/

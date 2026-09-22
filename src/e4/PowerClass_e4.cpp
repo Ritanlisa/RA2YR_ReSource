@@ -8,7 +8,7 @@ int PowerClass_Stub()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // attributes: thunk
-int __thiscall PowerClass::Stub(int *this)
+void PowerClass::Stub()
 {
   return RadarClass::Destru_vt05(this);
 }

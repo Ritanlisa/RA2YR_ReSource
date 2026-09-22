@@ -59,7 +59,7 @@ int MPBattleClass::vt_entry_18()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // attributes: thunk
-bool __thiscall MPBattleClass::vt_entry_18(std::codecvt_base *this)
+void MPBattleClass::vt_entry_18(std::codecvt_base *this)
 {
   return ScenarioClass::createStartingForces(this);
 }

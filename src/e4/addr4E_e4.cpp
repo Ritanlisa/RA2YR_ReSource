@@ -19,13 +19,6 @@ unsigned int * E4Recv_4E0A00::sub_4E0A00(int a2, unsigned int * a3)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_4E0A00(_DWORD *this, int a2, _DWORD *a3)
 {
-  _DWORD *v4; // eax
-  int v5; // ecx
-  _DWORD *v6; // eax
-  _DWORD *v7; // edx
-  _DWORD *v8; // eax
-  int v9; // ecx
-  _DWORD *v10; // eax
 
   *(this + 1) = 0; /*0x4e0a0a*/
   *(this + 2) = a2; /*0x4e0a11*/
@@ -39,8 +32,8 @@ _DWORD *__thiscall sub_4E0A00(_DWORD *this, int a2, _DWORD *a3)
       *a3 = a2; /*0x4e0a2f*/
       if ( a2 - 1 >= 0 ) /*0x4e0a36*/
       {
-        v4 = a3 + 2; /*0x4e0a38*/
-        v5 = a2; /*0x4e0a3b*/
+        _DWORD * v4 = a3 + 2; /*0x4e0a38*/
+        int v5 = a2; /*0x4e0a3b*/
         do /*0x4e0a46*/
         {
           *v4 = 0; /*0x4e0a3c*/
@@ -53,15 +46,16 @@ _DWORD *__thiscall sub_4E0A00(_DWORD *this, int a2, _DWORD *a3)
     }
     else
     {
-      v6 = __2_YAPAXI_Z(8 * a2 + 4); /*0x4e0a55*/
+  _DWORD *v10; // eax
+      _DWORD * v6 = __2_YAPAXI_Z(8 * a2 + 4); /*0x4e0a55*/
       if ( v6 ) /*0x4e0a5f*/
       {
         *v6 = a2; /*0x4e0a64*/
-        v7 = v6 + 1; /*0x4e0a68*/
+        _DWORD * v7 = v6 + 1; /*0x4e0a68*/
         if ( a2 - 1 >= 0 ) /*0x4e0a6b*/
         {
-          v8 = v6 + 2; /*0x4e0a6d*/
-          v9 = a2; /*0x4e0a70*/
+          _DWORD * v8 = v6 + 2; /*0x4e0a6d*/
+          int v9 = a2; /*0x4e0a70*/
           do /*0x4e0a7b*/
           {
             *v8 = 0; /*0x4e0a71*/
@@ -93,7 +87,7 @@ namespace gamemd {
 int GameOptionsDlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall GameOptionsDlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
+void GameOptionsDlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
 {
   int result; // eax
   HWND DlgItem; // eax
@@ -116,12 +110,10 @@ int __stdcall GameOptionsDlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HW
   BOOL IsSoundEnabled; // eax
   HWND v23; // eax
   HWND v24; // esi
-  unsigned int v25; // edi
   wchar_t *v26; // edi
   HWND v27; // eax
   HWND v28; // esi
   wchar_t *String; // eax
-  unsigned int v30; // ebx
   _DWORD *WindowLongA; // eax
   HWND hWnda; // [esp+20h] [ebp+10h]
 
@@ -130,7 +122,7 @@ int __stdcall GameOptionsDlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HW
   {
     if ( a2 == 273 ) /*0x4e200d*/
     {
-      v30 = HIWORD(a3); /*0x4e233f*/
+      unsigned int v30 = HIWORD(a3); /*0x4e233f*/
       WindowLongA = (_DWORD *)GetWindowLongA(hDlg, 8); /*0x4e2342*/
       switch ( (unsigned __int16)a3 ) /*0x4e2354*/
       {
@@ -248,7 +240,7 @@ int __stdcall GameOptionsDlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HW
     }
     if ( (_WORD)a3 == 5 ) /*0x4e227c*/
     {
-      v25 = HIWORD(a3); /*0x4e228e*/
+      unsigned int v25 = HIWORD(a3); /*0x4e228e*/
       if ( hWnd == GetDlgItem(hDlg, 1321) ) /*0x4e2295*/
       {
         v26 = (&DataGlobal_822730)[v25]; /*0x4e2297*/
@@ -752,17 +744,14 @@ bool __fastcall FillComboBoxFactions(HWND hDlg, int nIDDlgItem)
   HWND DlgItem; // esi
   wchar_t *StringCSF; // eax
   LRESULT v5; // ebx
-  int *v6; // ebx
   LRESULT v7; // ebp
   bool result; // al
-  bool v9; // [esp+12h] [ebp-Eh]
-  bool v10; // [esp+13h] [ebp-Dh]
   int v11; // [esp+14h] [ebp-Ch]
   LPARAM lParam; // [esp+18h] [ebp-8h]
   WPARAM wParam; // [esp+1Ch] [ebp-4h]
 
   DlgItem = GetDlgItem(hDlg, nIDDlgItem); /*0x4e45b1*/
-  v10 = !ShowWindow(DlgItem, 0); /*0x4e45ce*/
+  bool v10 = !ShowWindow(DlgItem, 0); /*0x4e45ce*/
   SendMessageA(DlgItem, 0x14Bu, 0, 0); /*0x4e45d3*/
   SendMessageA(DlgItem, 0x4DDu, 0, 1); /*0x4e45df*/
   SendMessageA(DlgItem, 0x4DEu, 0, 9); /*0x4e45eb*/
@@ -797,12 +786,12 @@ bool __fastcall FillComboBoxFactions(HWND hDlg, int nIDDlgItem)
       v11 = nIDDlgItem != 1320 ? -1 : 7;
       break;
   }
-  v6 = DataGlobal_8B4040; /*0x4e46bd*/
+  int * v6 = DataGlobal_8B4040; /*0x4e46bd*/
   wParam = 0; /*0x4e46c2*/
   lParam = 0; /*0x4e46c6*/
   do /*0x4e472c*/
   {
-    v9 = *v6 == v11; /*0x4e46d7*/
+    bool v9 = *v6 == v11; /*0x4e46d7*/
     if ( *v6 == v11 || *v6 == -1 ) /*0x4e46e0*/
     {
       v7 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)aAb); /*0x4e46f1*/
@@ -832,11 +821,10 @@ int SkirmishDialog_MapPlayerToControl(HWND a1, int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall SkirmishDialog_MapPlayerToControl(HWND a1, int a2)
 {
-  int v2; // edi
   int v3; // eax
   int v4; // edx
 
-  v2 = DataGlobal_A8B3B4; /*0x4e48e7*/
+  int v2 = DataGlobal_A8B3B4; /*0x4e48e7*/
   if ( DataGlobal_A8B3B8 == -2 ) /*0x4e48f0*/
     v2 = -2; /*0x4e48f2*/
   if ( a2 )
@@ -1195,17 +1183,14 @@ bool __fastcall FillComboBoxAllianceSlots(HWND hDlg, int nIDDlgItem)
   HWND DlgItem; // esi
   wchar_t *StringCSF; // eax
   LRESULT v5; // eax
-  int *v6; // ebp
   LRESULT v7; // ebx
   bool result; // al
-  bool v9; // [esp+12h] [ebp-Eh]
-  bool v10; // [esp+13h] [ebp-Dh]
   int v11; // [esp+14h] [ebp-Ch]
   LPARAM lParam; // [esp+18h] [ebp-8h]
   WPARAM wParam; // [esp+1Ch] [ebp-4h]
 
   DlgItem = GetDlgItem(hDlg, nIDDlgItem); /*0x4e50d3*/
-  v10 = !ShowWindow(DlgItem, 0); /*0x4e50ed*/
+  bool v10 = !ShowWindow(DlgItem, 0); /*0x4e50ed*/
   SendMessageA(DlgItem, 0x14Bu, 0, 0); /*0x4e50f2*/
   SendMessageA(DlgItem, 0x4DDu, 0, 1); /*0x4e50fd*/
   SendMessageA(DlgItem, 0x4DEu, 0, 9); /*0x4e5108*/
@@ -1241,10 +1226,10 @@ bool __fastcall FillComboBoxAllianceSlots(HWND hDlg, int nIDDlgItem)
   }
   wParam = 0; /*0x4e51c6*/
   lParam = 0; /*0x4e51ca*/
-  v6 = DataGlobal_8B3F38; /*0x4e51ce*/
+  int * v6 = DataGlobal_8B3F38; /*0x4e51ce*/
   do /*0x4e5228*/
   {
-    v9 = *v6 == v11; /*0x4e51e1*/
+    bool v9 = *v6 == v11; /*0x4e51e1*/
     if ( *v6 == v11 || *v6 == -1 ) /*0x4e51ea*/
     {
       v7 = SendMessageA(DlgItem, 0x4C2u, 0, *(v6 - 2)); /*0x4e51fa*/
@@ -1273,11 +1258,10 @@ int Lobby_FillFactionComboBox(HWND a1, int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall Lobby_FillFactionComboBox(HWND a1, int a2)
 {
-  int v2; // edi
   int v3; // eax
   int v4; // edx
 
-  v2 = -2; /*0x4e53d4*/
+  int v2 = -2; /*0x4e53d4*/
   if ( a2 )
   {
     switch ( a2 )
@@ -1634,7 +1618,6 @@ bool FillLobbyPlayerSlot(HWND hDlg, int nIDDlgItem)
 bool __fastcall FillLobbyPlayerSlot(HWND hDlg, int nIDDlgItem)
 {
   HWND DlgItem; // esi
-  int v3; // eax
   wchar_t *StringCSF; // eax
   LRESULT v5; // eax
   LPARAM v6; // ebx
@@ -1642,10 +1625,9 @@ bool __fastcall FillLobbyPlayerSlot(HWND hDlg, int nIDDlgItem)
   LRESULT v8; // eax
   HWND v9; // eax
   bool result; // al
-  bool v11; // [esp+Bh] [ebp-5h]
 
   DlgItem = GetDlgItem(hDlg, nIDDlgItem); /*0x4e5b71*/
-  v11 = !ShowWindow(DlgItem, 0); /*0x4e5b8e*/
+  bool v11 = !ShowWindow(DlgItem, 0); /*0x4e5b8e*/
   SendMessageA(DlgItem, 0x14Bu, 0, 0); /*0x4e5b93*/
   SendMessageA(DlgItem, 0x4DDu, 0, 1); /*0x4e5b9f*/
   SendMessageA(DlgItem, 0x4DEu, 0, 9); /*0x4e5bab*/
@@ -1659,7 +1641,7 @@ bool __fastcall FillLobbyPlayerSlot(HWND hDlg, int nIDDlgItem)
   }
   else
   {
-    v3 = Skirmish_Setup(); /*0x4e5bbc*/
+    int v3 = Skirmish_Setup(); /*0x4e5bbc*/
     if ( v3 && (*(int (__thiscall **)(int))(*(_DWORD *)v3 + 44))(v3) < 0 ) /*0x4e5bce*/
     {
       StringCSF = GetStringCSF(aGuiNoneassymbo, 0, g_Str_File_GDlgSupp_cpp, 1119); /*0x4e5bd5*/
@@ -1704,11 +1686,10 @@ bool Lobby_SetupPlayerSlotDialog(HWND a1, int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 bool __fastcall Lobby_SetupPlayerSlotDialog(HWND a1, int a2)
 {
-  int v2; // edi
   int v3; // eax
   int v4; // edx
 
-  v2 = -1; /*0x4e5e22*/
+  int v2 = -1; /*0x4e5e22*/
   if ( a2 )
   {
     switch ( a2 )
@@ -1760,15 +1741,13 @@ bool __fastcall SetupLobbyPlayerSlots(SessionClass *aP0, int nIDDlgItem, int a3)
 {
   WPARAM v5; // ebp
   LRESULT v6; // ebx
-  int v7; // esi
   HWND DlgItem; // eax
   bool result; // al
-  bool v10; // [esp+13h] [ebp-9h]
   HWND hWnd; // [esp+14h] [ebp-8h]
   LRESULT v12; // [esp+18h] [ebp-4h]
 
   hWnd = GetDlgItem((HWND)aP0, nIDDlgItem); /*0x4e5ee6*/
-  v10 = !ShowWindow(hWnd, 0); /*0x4e5efd*/
+  bool v10 = !ShowWindow(hWnd, 0); /*0x4e5efd*/
   v5 = 0; /*0x4e5f08*/
   v12 = SendDlgItemMessageA((HWND)aP0, nIDDlgItem, 0x146u, 0, 0); /*0x4e5f0c*/
   if ( v12 > 0 )
@@ -1784,6 +1763,7 @@ bool __fastcall SetupLobbyPlayerSlots(SessionClass *aP0, int nIDDlgItem, int a3)
     SendDlgItemMessageA((HWND)aP0, nIDDlgItem, 0x14Eu, v5, 0); /*0x4e5f46*/
     if ( v6 != -2 )
     {
+  int v7; // esi
       switch ( nIDDlgItem )
       {
         case 1901:
@@ -1875,7 +1855,7 @@ namespace gamemd {
 void sub_4E6D20()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl sub_4E6D20()
+void sub_4E6D20()
 {
   HouseClass_Array_0 = (int)&vt_VectorClass_HouseClass; /*0x4e6d28*/
   if ( HouseClass_Array && byte_A80235 ) /*0x4e6d3c*/
@@ -1913,7 +1893,7 @@ namespace gamemd {
 void sub_4E74A0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl sub_4E74A0()
+void sub_4E74A0()
 {
   UnitTypeClass_Array = (int)&vt_VectorClass_UnitTypeClass; /*0x4e74a8*/
   if ( g_UnitTypeCount2 && byte_A83CED ) /*0x4e74bc*/
@@ -1951,7 +1931,7 @@ namespace gamemd {
 void sub_4E7620()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __cdecl sub_4E7620()
+void sub_4E7620()
 {
   BulletTypeClass_Array = (int)&vt_VectorClass_BulletTypeClass; /*0x4e7628*/
   if ( dword_A83C84 && byte_A83C8D ) /*0x4e763c*/
@@ -1973,10 +1953,9 @@ char * sub_4E7EA0()
 char *sub_4E7EA0()
 {
   char *result; // eax
-  int v1; // ecx
 
   result = g_NetworkPacketIndex; /*0x4e7ea0*/
-  v1 = 128; /*0x4e7ea5*/
+  int v1 = 128; /*0x4e7ea5*/
   do /*0x4e7eb2*/
   {
     *result = 0; /*0x4e7eac*/
@@ -1998,7 +1977,7 @@ int unknown_libname_18()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // Microsoft VisualC 2-14/net runtime
-void __thiscall unknown_libname_18(ConnManClass *this)
+void unknown_libname_18(ConnManClass *this)
 {
   void **v1; // edi
 
@@ -2037,17 +2016,15 @@ namespace gamemd {
 char HouseClass__vt_02_(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall HouseClass::vt_02_(void *this, int a2, _DWORD *a3)
+void HouseClass::vt_02_(int a2, _DWORD *a3)
 {
-  _DWORD *v4; // edi
-  int v6; // ecx
   int i; // eax
 
   if ( a2 ) /*0x4e924c*/
   {
     this->IsInitialized = 0; /*0x4e9256*/
     if ( a3 ) /*0x4e925c*/
-      v4 = a3; /*0x4e9272*/
+      _DWORD * v4 = a3; /*0x4e9272*/
     else
       v4 = __2_YAPAXI_Z(4 * a2); /*0x4e926e*/
     this->IsInitialized = 1; /*0x4e9276*/
@@ -2055,14 +2032,14 @@ char __thiscall HouseClass::vt_02_(void *this, int a2, _DWORD *a3)
     {
       if ( this->vtable1 ) /*0x4e9285*/
       {
-        v6 = this->vtable2; /*0x4e928c*/
+        int v6 = this->vtable2; /*0x4e928c*/
         if ( a2 < v6 ) /*0x4e9291*/
           v6 = a2; /*0x4e9293*/
         for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->vtable1 + 4 * i - 4) ) /*0x4e9299*/
           ++i; /*0x4e929e*/
         if ( this->IsAllocated ) /*0x4e92ab*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4e92b6*/
+          __3_YAXPAX_Z(this->Items); /*0x4e92b6*/
           this->vtable1 = 0; /*0x4e92be*/
         }
       }
@@ -2090,17 +2067,15 @@ namespace gamemd {
 char ParticleSystemClass__vt_02_(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall ParticleSystemClass::vt_02_(void *this, int a2, _DWORD *a3)
+void ParticleSystemClass::vt_02_(int a2, _DWORD *a3)
 {
-  _DWORD *v4; // edi
-  int v6; // ecx
   int i; // eax
 
   if ( a2 ) /*0x4e9e2c*/
   {
     this->IsInitialized = 0; /*0x4e9e36*/
     if ( a3 ) /*0x4e9e3c*/
-      v4 = a3; /*0x4e9e52*/
+      _DWORD * v4 = a3; /*0x4e9e52*/
     else
       v4 = __2_YAPAXI_Z(4 * a2); /*0x4e9e4e*/
     this->IsInitialized = 1; /*0x4e9e56*/
@@ -2108,7 +2083,7 @@ char __thiscall ParticleSystemClass::vt_02_(void *this, int a2, _DWORD *a3)
     {
       if ( this->vtable1 ) /*0x4e9e65*/
       {
-        v6 = this->vtable2; /*0x4e9e6c*/
+        int v6 = this->vtable2; /*0x4e9e6c*/
         if ( a2 < v6 ) /*0x4e9e71*/
           v6 = a2; /*0x4e9e73*/
         for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->vtable1 + 4 * i - 4) ) /*0x4e9e79*/
@@ -2143,7 +2118,7 @@ namespace gamemd {
 void ParticleSystemClass__vt_03_()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall ParticleSystemClass::vt_03_(int this)
+void ParticleSystemClass::vt_03_(int this)
 {
   if ( this->vtable1 && *(_BYTE *)(this + 13) ) /*0x4e9edd*/
   {

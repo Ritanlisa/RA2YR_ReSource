@@ -155,28 +155,22 @@
 int VectorClass::RemoveObjectById()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall VectorClass_RemoveObjectById(int this)
+void VectorClass_RemoveObjectById(int this)
 {
-  int v2; // esi
-  int v3; // eax
-  int v4; // eax
-  int v5; // ecx
-  int v6; // ecx
-  int v7; // [esp+4h] [ebp-4h] BYREF
-
+  VectorClass *v7; // [esp+4h] [ebp-4h] BYREF
   v7 = this; /*0x4137a0*/
   if ( !this->q2590 ) /*0x4137a1*/
     return 0; /*0x4137ab*/
-  v2 = this + 9600; /*0x4137b6*/
-  v3 = this->q960; /*0x4137c3*/
-  v7 = **(_DWORD **)(this + 9604); /*0x4137c7*/
-  v4 = (*(int (__thiscall **)(int, int *))(v3 + 16))(this + 9600, &v7); /*0x4137cb*/
+  int v2 = this + 9600; /*0x4137b6*/
+  int v3 = this->q960; /*0x4137c3*/
+  v7 = *this->q2584; /*0x4137c7*/
+  int v4 = (*(int (__thiscall **)(int, int *))(v3 + 16))(this + 9600, &v7); /*0x4137cb*/
   if ( v4 != -1 ) /*0x4137d1*/
   {
-    v5 = *(_DWORD *)(v2 + 16); /*0x4137d3*/
+    int v5 = *(_DWORD *)(v2 + 16); /*0x4137d3*/
     if ( v4 < v5 ) /*0x4137d8*/
     {
-      v6 = v5 - 1; /*0x4137da*/
+      int v6 = v5 - 1; /*0x4137da*/
       for ( *(_DWORD *)(v2 + 16) = v6; /*0x4137e0*/
             v4 < *(_DWORD *)(v2 + 16);
             *(_DWORD *)(*(_DWORD *)(v2 + 4) + 4 * v4 - 4) = *(_DWORD *)(*(_DWORD *)(v2 + 4) + 4 * v4) )
@@ -193,44 +187,30 @@ int __thiscall VectorClass_RemoveObjectById(int this)
 int VectorClass::RemoveElement()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall VectorClass::RemoveElement(#377 *this)
+void VectorClass::RemoveElement(#377 *this)
 {
-  int *v1; // edi
-  int v4; // eax
-  int v5; // ecx
-  int v6; // eax
-  int *v7; // ebx
-  _DWORD *v8; // eax
-  int v9; // ebx
-  void *v10; // eax
-  int v11; // edx
-  int v12; // ebx
-  int v13; // eax
   int **v14; // ecx
-  int v15; // ebp
-  void *v16; // eax
-  int v17; // [esp+14h] [ebp+4h]
   int v18; // [esp+18h] [ebp+8h]
   int *v19; // [esp+1Ch] [ebp+Ch]
-
-  v1 = v19; /*0x65a974*/
+  int * v1 = v19; /*0x65a974*/
   if ( !v19 ) /*0x65a97c*/
   {
     v1 = (int *)**((_DWORD **)this + 57); /*0x65a984*/
     if ( !v1 ) /*0x65a988*/
       return 0; /*0x65a990*/
   }
+  int v17; // [esp+14h] [ebp+4h]
   if ( v17 == 3 ) /*0x65a99a*/
   {
-    v4 = *((_DWORD *)this + 58); /*0x65a99c*/
-    v5 = 0; /*0x65a9a2*/
+    int v4 = *((_DWORD *)this + 58); /*0x65a99c*/
+    int v5 = 0; /*0x65a9a2*/
     if ( v4 > 0 ) /*0x65a9a6*/
     {
       do /*0x65a9c7*/
       {
-        v6 = *((_DWORD *)this + 57); /*0x65a9a8*/
-        v7 = *(int **)(v6 + 4 * v5); /*0x65a9ae*/
-        v8 = (_DWORD *)(v6 + 4 * v5); /*0x65a9b1*/
+        int v6 = *((_DWORD *)this + 57); /*0x65a9a8*/
+        int * v7 = *(int **)(v6 + 4 * v5); /*0x65a9ae*/
+        _DWORD * v8 = (_DWORD *)(v6 + 4 * v5); /*0x65a9b1*/
         if ( v7 == v1 ) /*0x65a9b6*/
           *v8 = 0; /*0x65a9b8*/
         ++v5; /*0x65a9c4*/
@@ -242,13 +222,13 @@ int __thiscall VectorClass::RemoveElement(#377 *this)
   if ( v17 != 2 ) /*0x65a9eb*/
   {
 LABEL_9:
-    v9 = *v1; /*0x65a9c9*/
-    v10 = AbstractClass::IsTechnoType(this); /*0x65a9d3*/
+    int v9 = *v1; /*0x65a9c9*/
+    void * v10 = AbstractClass::IsTechnoType(this); /*0x65a9d3*/
     return (*(int (__thiscall **)(int *, void *, int, int))(v9 + 404))(v1, v10, v17, v18); /*0x65a9e5*/
   }
-  v11 = *((_DWORD *)this + 58); /*0x65a9ed*/
-  v12 = -1; /*0x65a9f3*/
-  v13 = 0; /*0x65a9f6*/
+  int v11 = *((_DWORD *)this + 58); /*0x65a9ed*/
+  int v12 = -1; /*0x65a9f3*/
+  int v13 = 0; /*0x65a9f6*/
   if ( v11 > 0 ) /*0x65a9fa*/
   {
     v14 = (int **)*((_DWORD *)this + 57); /*0x65a9fc*/
@@ -271,8 +251,8 @@ LABEL_9:
   (*(void (__thiscall **)(#377 *, int, _DWORD))(*(_DWORD *)this + 632))(this, 3, **((_DWORD **)this + 57)); /*0x65aa1f*/
   v12 = 0; /*0x65aa34*/
 LABEL_20:
-  v15 = *v1; /*0x65aa36*/
-  v16 = AbstractClass::IsTechnoType(this); /*0x65aa41*/
+  int v15 = *v1; /*0x65aa36*/
+  void * v16 = AbstractClass::IsTechnoType(this); /*0x65aa41*/
   if ( (*(int (__thiscall **)(int *, void *, int, int))(v15 + 404))(v1, v16, 2, v18) == 1 ) /*0x65aa52*/
   {
     *(_DWORD *)(*((_DWORD *)this + 57) + 4 * v12) = v1; /*0x65aa5a*/
@@ -286,11 +266,10 @@ LABEL_20:
 int VectorClass::GetAtChecked(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall VectorClass::GetAtChecked(int *this, IUnknown *aP1)
+void VectorClass::GetAtChecked(IUnknown *aP1)
 {
-  int v3; // eax
 
-  v3 = (*(int (__thiscall **)(int *, IUnknown *))(this->q028 + 20))(this + 10, aP1) + 1; /*0x763bb4*/
+  int v3 = (*(int (__thiscall **)(int *, IUnknown *))(this->q028 + 20))(this + 10, aP1) + 1; /*0x763bb4*/
   if ( this->q024 != -1 && v3 == this->tail_E ) /*0x763bbd*/
     v3 = this->q024; /*0x763bbf*/
   if ( v3 < 0 || v3 >= this->tail_E ) /*0x763bc8*/
@@ -305,15 +284,13 @@ namespace gamemd {
 char VectorClass_Cell::Release(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall VectorClass_Cell::_vt02(void *this, int a2, _DWORD *a3)
+void VectorClass_Cell::_vt02(int a2, _DWORD *a3)
 {
-  _DWORD *v4; // eax
-  _DWORD *v5; // edi
-  int v7; // ecx
   int i; // eax
 
   if ( a2 ) /*0x42f6fc*/
   {
+  _DWORD *v5; // edi
     this->IsInitialized = 0; /*0x42f706*/
     if ( a3 ) /*0x42f70c*/
     {
@@ -321,7 +298,7 @@ char __thiscall VectorClass_Cell::_vt02(void *this, int a2, _DWORD *a3)
     }
     else
     {
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x42f716*/
+      _DWORD * v4 = __2_YAPAXI_Z(4 * a2); /*0x42f716*/
       if ( v4 ) /*0x42f720*/
         v5 = v4; /*0x42f725*/
       else
@@ -332,14 +309,14 @@ char __thiscall VectorClass_Cell::_vt02(void *this, int a2, _DWORD *a3)
     {
       if ( this->Items ) /*0x42f74b*/
       {
-        v7 = this->Capacity; /*0x42f752*/
+        int v7 = this->Capacity; /*0x42f752*/
         if ( a2 < v7 ) /*0x42f757*/
           v7 = a2; /*0x42f759*/
         for ( i = 0; i < v7; v5[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x42f75f*/
           ++i; /*0x42f764*/
         if ( this->IsAllocated ) /*0x42f771*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x42f77c*/
+          __3_YAXPAX_Z(this->Items); /*0x42f77c*/
           this->Items = 0; /*0x42f784*/
         }
       }
@@ -367,26 +344,13 @@ namespace gamemd {
 char VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::Release(int a2, int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::_vt02(
-        void *this,
-        int a2,
-        int *a3)
+void VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::_vt02(int a2, int *a3)
 {
-  int *v4; // ebx
-  int *v5; // eax
-  _DWORD *v6; // edi
-  _DWORD *v7; // eax
-  int v8; // ecx
-  _DWORD *v9; // eax
-  int v10; // ecx
-  int v12; // ecx
-  int v13; // eax
-  int v14; // edx
-  int v15; // eax
 
   if ( a2 ) /*0x4e084c*/
   {
-    v4 = a3; /*0x4e0852*/
+  _DWORD *v6; // edi
+    int * v4 = a3; /*0x4e0852*/
     this->IsInitialized = 0; /*0x4e0856*/
     if ( a3 ) /*0x4e085c*/
     {
@@ -394,8 +358,8 @@ char __thiscall VectorClass_DistributionObject_ptr_CellClass___DiscreteDistribut
       v6 = a3 + 1; /*0x4e089b*/
       if ( a2 - 1 >= 0 ) /*0x4e089e*/
       {
-        v9 = a3 + 2; /*0x4e08a0*/
-        v10 = a2; /*0x4e08a3*/
+        _DWORD * v9 = a3 + 2; /*0x4e08a0*/
+        int v10 = a2; /*0x4e08a3*/
         do /*0x4e08ae*/
         {
           *v9 = 0; /*0x4e08a4*/
@@ -407,15 +371,15 @@ char __thiscall VectorClass_DistributionObject_ptr_CellClass___DiscreteDistribut
     }
     else
     {
-      v5 = (int *)__2_YAPAXI_Z(8 * a2 + 4); /*0x4e0866*/
+      int * v5 = (int *)__2_YAPAXI_Z(8 * a2 + 4); /*0x4e0866*/
       if ( v5 ) /*0x4e0870*/
       {
         *v5 = a2; /*0x4e0875*/
         v6 = v5 + 1; /*0x4e0879*/
         if ( a2 - 1 >= 0 ) /*0x4e087c*/
         {
-          v7 = v5 + 2; /*0x4e087e*/
-          v8 = a2; /*0x4e0881*/
+          _DWORD * v7 = v5 + 2; /*0x4e087e*/
+          int v8 = a2; /*0x4e0881*/
           do /*0x4e088c*/
           {
             *v7 = 0; /*0x4e0882*/
@@ -435,15 +399,15 @@ char __thiscall VectorClass_DistributionObject_ptr_CellClass___DiscreteDistribut
     {
       if ( this->Items ) /*0x4e08c1*/
       {
-        v12 = this->Capacity; /*0x4e08c8*/
+        int v12 = this->Capacity; /*0x4e08c8*/
         if ( a2 < v12 ) /*0x4e08cd*/
           v12 = a2; /*0x4e08cf*/
-        v13 = 0; /*0x4e08d1*/
+        int v13 = 0; /*0x4e08d1*/
         if ( v12 > 0 ) /*0x4e08d5*/
         {
           do /*0x4e08ed*/
           {
-            v14 = this->Items; /*0x4e08d7*/
+            int v14 = this->Items; /*0x4e08d7*/
             ++v13; /*0x4e08da*/
             v6[2 * v13 - 2] = *(_DWORD *)(v14 + 8 * v13 - 8); /*0x4e08e1*/
             v6[2 * v13 - 1] = *(_DWORD *)(v14 + 8 * v13 - 4); /*0x4e08e9*/
@@ -453,7 +417,7 @@ char __thiscall VectorClass_DistributionObject_ptr_CellClass___DiscreteDistribut
         }
         if ( this->IsAllocated ) /*0x4e08f3*/
         {
-          v15 = this->Items; /*0x4e08fa*/
+          int v15 = this->Items; /*0x4e08fa*/
           if ( v15 ) /*0x4e08ff*/
             __3_YAXPAX_Z((void *)(v15 - 4)); /*0x4e0909*/
           this->Items = 0; /*0x4e0911*/
@@ -483,28 +447,13 @@ namespace gamemd {
 char VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::SetCapacity(int a2, int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::sub_4E0B10(
-        void *this,
-        int a2,
-        int *a3)
+void VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::sub_4E0B10(int a2, int *a3)
 {
-  int *v4; // ebp
-  int *v5; // eax
-  _DWORD *v6; // edi
-  _DWORD *v7; // eax
-  int v8; // ecx
-  _DWORD *v9; // eax
-  int v10; // ecx
-  int v11; // ecx
-  int v12; // eax
-  int v13; // edx
-  int v14; // eax
-  void *v15; // ebp
-  int v16; // eax
 
   if ( a2 ) /*0x4e0b1c*/
   {
-    v4 = a3; /*0x4e0b22*/
+  _DWORD *v6; // edi
+    int * v4 = a3; /*0x4e0b22*/
     this->IsInitialized = 0; /*0x4e0b26*/
     if ( a3 ) /*0x4e0b2c*/
     {
@@ -512,8 +461,8 @@ char __thiscall VectorClass_DistributionObject_ptr_CellClass___DiscreteDistribut
       v6 = a3 + 1; /*0x4e0b6c*/
       if ( a2 - 1 >= 0 ) /*0x4e0b6f*/
       {
-        v9 = a3 + 2; /*0x4e0b71*/
-        v10 = a2; /*0x4e0b74*/
+        _DWORD * v9 = a3 + 2; /*0x4e0b71*/
+        int v10 = a2; /*0x4e0b74*/
         do /*0x4e0b7f*/
         {
           *v9 = 0; /*0x4e0b75*/
@@ -525,15 +474,15 @@ char __thiscall VectorClass_DistributionObject_ptr_CellClass___DiscreteDistribut
     }
     else
     {
-      v5 = (int *)__2_YAPAXI_Z(8 * a2 + 4); /*0x4e0b36*/
+      int * v5 = (int *)__2_YAPAXI_Z(8 * a2 + 4); /*0x4e0b36*/
       if ( v5 ) /*0x4e0b40*/
       {
         *v5 = a2; /*0x4e0b45*/
         v6 = v5 + 1; /*0x4e0b49*/
         if ( a2 - 1 >= 0 ) /*0x4e0b4c*/
         {
-          v7 = v5 + 2; /*0x4e0b4e*/
-          v8 = a2; /*0x4e0b51*/
+          _DWORD * v7 = v5 + 2; /*0x4e0b4e*/
+          int v8 = a2; /*0x4e0b51*/
           do /*0x4e0b5c*/
           {
             *v7 = 0; /*0x4e0b52*/
@@ -553,15 +502,15 @@ char __thiscall VectorClass_DistributionObject_ptr_CellClass___DiscreteDistribut
       return 0; /*0x4e0c27*/
     if ( this->Items ) /*0x4e0b8d*/
     {
-      v11 = this->Capacity; /*0x4e0b94*/
+      AbstractClass *v11 = this->Capacity; /*0x4e0b94*/
       if ( a2 < v11 ) /*0x4e0b99*/
         v11 = a2; /*0x4e0b9b*/
-      v12 = 0; /*0x4e0b9d*/
+      int v12 = 0; /*0x4e0b9d*/
       if ( v11 > 0 ) /*0x4e0ba1*/
       {
         do /*0x4e0bb9*/
         {
-          v13 = this->Items; /*0x4e0ba3*/
+          AbstractClass *v13 = this->Items; /*0x4e0ba3*/
           ++v12; /*0x4e0ba6*/
           v6[2 * v12 - 2] = *(_DWORD *)(v13 + 8 * v12 - 8); /*0x4e0bad*/
           v6[2 * v12 - 1] = *(_DWORD *)(v13 + 8 * v12 - 4); /*0x4e0bb5*/
@@ -571,10 +520,10 @@ char __thiscall VectorClass_DistributionObject_ptr_CellClass___DiscreteDistribut
       }
       if ( this->IsAllocated ) /*0x4e0bbf*/
       {
-        v14 = this->Items; /*0x4e0bc6*/
+        AbstractClass *v14 = this->Items; /*0x4e0bc6*/
         if ( v14 ) /*0x4e0bcb*/
         {
-          v15 = (void *)(v14 - 4); /*0x4e0bd0*/
+          void * v15 = (void *)(v14 - 4); /*0x4e0bd0*/
           Array::ForEachReverse(v14, 8, *(_DWORD *)(v14 - 4), (int (__thiscall *)(int))nullsub_138); /*0x4e0bdc*/
           __3_YAXPAX_Z(v15); /*0x4e0be2*/
           v4 = a3; /*0x4e0be7*/
@@ -590,7 +539,7 @@ char __thiscall VectorClass_DistributionObject_ptr_CellClass___DiscreteDistribut
   {
     (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x4e0c0b*/
   }
-  v16 = this->Capacity; /*0x4e0c0e*/
+  AbstractClass *v16 = this->Capacity; /*0x4e0c0e*/
   if ( v16 < this->Count ) /*0x4e0c16*/
     this->Count = v16; /*0x4e0c18*/
   return 1; /*0x4e0c1b*/
@@ -626,18 +575,15 @@ namespace gamemd {
 char VectorClass_Ptr::ResizeAndCopy(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall MapClass::sub_5AD010(void *this, int a2, _DWORD *a3)
+void MapClass::sub_5AD010(int a2, _DWORD *a3)
 {
-  _DWORD *v4; // edi
-  int v5; // ecx
   int i; // eax
-  int v7; // eax
 
   if ( a2 ) /*0x5ad01c*/
   {
     *((_BYTE *)this + 12) = 0; /*0x5ad022*/
     if ( a3 ) /*0x5ad028*/
-      v4 = a3; /*0x5ad03e*/
+      _DWORD * v4 = a3; /*0x5ad03e*/
     else
       v4 = __2_YAPAXI_Z(4 * a2); /*0x5ad03a*/
     *((_BYTE *)this + 12) = 1; /*0x5ad042*/
@@ -645,7 +591,7 @@ char __thiscall MapClass::sub_5AD010(void *this, int a2, _DWORD *a3)
       return 0; /*0x5ad0ba*/
     if ( *((_DWORD *)this + 1) ) /*0x5ad048*/
     {
-      v5 = *((_DWORD *)this + 2); /*0x5ad04f*/
+      int v5 = *((_DWORD *)this + 2); /*0x5ad04f*/
       if ( a2 < v5 ) /*0x5ad054*/
         v5 = a2; /*0x5ad056*/
       for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x5ad05c*/
@@ -664,7 +610,7 @@ char __thiscall MapClass::sub_5AD010(void *this, int a2, _DWORD *a3)
   {
     (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x5ad09e*/
   }
-  v7 = *((_DWORD *)this + 2); /*0x5ad0a1*/
+  int v7 = *((_DWORD *)this + 2); /*0x5ad0a1*/
   if ( v7 < *((_DWORD *)this + 4) ) /*0x5ad0a9*/
     *((_DWORD *)this + 4) = v7; /*0x5ad0ab*/
   return 1; /*0x5ad0ae*/
@@ -681,15 +627,10 @@ _DWORD *__thiscall VectorClass_ptr_BuildChoiceClass_int_ouseClass::Constructor(
         _DWORD *this,
         EnumConnectionPointsClass *aP1)
 {
-  _DWORD *v3; // esi
   int EnumConnectionPointsClass_field_0x08; // eax
-  int v5; // eax
-  int v6; // ecx
-  int v7; // eax
   int i; // esi
-  int v10; // [esp-4h] [ebp-14h]
 
-  v3 = this + 3; /*0x4a0c2c*/
+  _DWORD * v3 = this + 3; /*0x4a0c2c*/
   this->Items = 0; /*0x4a0c2f*/
   this->Capacity = 0; /*0x4a0c32*/
   this->Count = 0; /*0x4a0c37*/
@@ -704,12 +645,12 @@ _DWORD *__thiscall VectorClass_ptr_BuildChoiceClass_int_ouseClass::Constructor(
     v3[2] = EnumConnectionPointsClass_field_0x08; /*0x4a0c59*/
     if ( EnumConnectionPointsClass_field_0x08 ) /*0x4a0c5c*/
     {
-      v5 = __2_YAPAXI_Z(4 * EnumConnectionPointsClass_field_0x08); /*0x4a0c62*/
+      int v5 = __2_YAPAXI_Z(4 * EnumConnectionPointsClass_field_0x08); /*0x4a0c62*/
       v3[1] = v5; /*0x4a0c6c*/
       if ( v5 ) /*0x4a0c6f*/
       {
-        v6 = v3[2]; /*0x4a0c71*/
-        v7 = 0; /*0x4a0c74*/
+        int v6 = v3[2]; /*0x4a0c71*/
+        int v7 = 0; /*0x4a0c74*/
         *((_BYTE *)v3 + 13) = 1; /*0x4a0c78*/
         if ( v6 > 0 ) /*0x4a0c7c*/
         {
@@ -734,7 +675,7 @@ _DWORD *__thiscall VectorClass_ptr_BuildChoiceClass_int_ouseClass::Constructor(
   *this = &vt_EnumConnectionPointsClass; /*0x4a0cac*/
   for ( i = 0; i < this->q070; ++i ) /*0x4a0cb9*/
   {
-    v10 = *(_DWORD *)(this->Count + 4 * i); /*0x4a0cc1*/
+    int v10 = *(_DWORD *)(this->Count + 4 * i); /*0x4a0cc1*/
     (*(void (__stdcall **)(int))(*(_DWORD *)v10 + 4))(v10); /*0x4a0cc4*/
   }
   return this; /*0x4a0cd1*/
@@ -747,19 +688,16 @@ namespace gamemd {
 int VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F6A20(int a1, int a2)
+void VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F6A20(int a1, int a2)
 {
-  int v2; // edi
-  int v3; // esi
-  _DWORD *v4; // ecx
 
-  v2 = 0; /*0x4f6a27*/
-  v3 = 0; /*0x4f6a29*/
+  int v2 = 0; /*0x4f6a27*/
+  int v3 = 0; /*0x4f6a29*/
   if ( g_SidebarState <= 0 ) /*0x4f6a2d*/
     return 0; /*0x4f6a71*/
   do /*0x4f6a66*/
   {
-    v4 = (_DWORD *)*((_DWORD *)g_TechnoClass_Count + v3); /*0x4f6a42*/
+    _DWORD * v4 = (_DWORD *)*((_DWORD *)g_TechnoClass_Count + v3); /*0x4f6a42*/
     if ( v4[135] == a1 - 36 && *(_DWORD *)((*(int (__thiscall **)(_DWORD *))(*v4 + 132))(v4) + 956) == a2 ) /*0x4f6a5b*/
       ++v2; /*0x4f6a5d*/
     ++v3; /*0x4f6a63*/
@@ -775,19 +713,16 @@ namespace gamemd {
 int VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_0(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F6A80(int a1, int a2)
+void VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F6A80(int a1, int a2)
 {
-  int v2; // edi
-  int v3; // esi
-  _DWORD *v4; // ecx
 
-  v2 = 0; /*0x4f6a87*/
-  v3 = 0; /*0x4f6a89*/
+  int v2 = 0; /*0x4f6a87*/
+  int v3 = 0; /*0x4f6a89*/
   if ( g_SidebarState <= 0 ) /*0x4f6a8d*/
     return 0; /*0x4f6ad1*/
   do /*0x4f6ac6*/
   {
-    v4 = (_DWORD *)*((_DWORD *)g_TechnoClass_Count + v3); /*0x4f6aa2*/
+    _DWORD * v4 = (_DWORD *)*((_DWORD *)g_TechnoClass_Count + v3); /*0x4f6aa2*/
     if ( v4[135] == a1 - 40 && *(_DWORD *)((*(int (__thiscall **)(_DWORD *))(*v4 + 132))(v4) + 956) == a2 ) /*0x4f6abb*/
       ++v2; /*0x4f6abd*/
     ++v3; /*0x4f6ac3*/
@@ -803,21 +738,17 @@ namespace gamemd {
 int VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_1(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F6AE0(int a1, int a2)
+void VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F6AE0(int a1, int a2)
 {
-  int v2; // ebp
-  int v3; // edi
-  _DWORD *v4; // esi
-  _DWORD *v5; // eax
 
-  v2 = 0; /*0x4f6ae7*/
-  v3 = 0; /*0x4f6ae9*/
+  int v2 = 0; /*0x4f6ae7*/
+  int v3 = 0; /*0x4f6ae9*/
   if ( g_SidebarState <= 0 ) /*0x4f6aed*/
     return 0; /*0x4f6b44*/
   do /*0x4f6b39*/
   {
-    v4 = (_DWORD *)*((_DWORD *)g_TechnoClass_Count + v3); /*0x4f6afe*/
-    v5 = (_DWORD *)(*(int (__thiscall **)(_DWORD *))(*v4 + 132))(v4); /*0x4f6b05*/
+    _DWORD * v4 = (_DWORD *)*((_DWORD *)g_TechnoClass_Count + v3); /*0x4f6afe*/
+    _DWORD * v5 = (_DWORD *)(*(int (__thiscall **)(_DWORD *))(*v4 + 132))(v4); /*0x4f6b05*/
     if ( v4[135] == a1 - 36 && v5[239] == a2 ) /*0x4f6b1f*/
       v2 += v5[412] + v5[413]; /*0x4f6b2f*/
     ++v3; /*0x4f6b36*/
@@ -833,21 +764,17 @@ namespace gamemd {
 int VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_2(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F6B50(int a1, int a2)
+void VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F6B50(int a1, int a2)
 {
-  int v2; // ebp
-  int v3; // edi
-  _DWORD *v4; // esi
-  _DWORD *v5; // eax
 
-  v2 = 0; /*0x4f6b57*/
-  v3 = 0; /*0x4f6b59*/
+  int v2 = 0; /*0x4f6b57*/
+  int v3 = 0; /*0x4f6b59*/
   if ( g_SidebarState <= 0 ) /*0x4f6b5d*/
     return 0; /*0x4f6bb4*/
   do /*0x4f6ba9*/
   {
-    v4 = (_DWORD *)*((_DWORD *)g_TechnoClass_Count + v3); /*0x4f6b6e*/
-    v5 = (_DWORD *)(*(int (__thiscall **)(_DWORD *))(*v4 + 132))(v4); /*0x4f6b75*/
+    _DWORD * v4 = (_DWORD *)*((_DWORD *)g_TechnoClass_Count + v3); /*0x4f6b6e*/
+    _DWORD * v5 = (_DWORD *)(*(int (__thiscall **)(_DWORD *))(*v4 + 132))(v4); /*0x4f6b75*/
     if ( v4[135] == a1 - 40 && v5[239] == a2 ) /*0x4f6b8f*/
       v2 += v5[412] + v5[413]; /*0x4f6b9f*/
     ++v3; /*0x4f6ba6*/
@@ -865,8 +792,6 @@ unsigned int * VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_3(int
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__stdcall VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F6BC0(int a1, _DWORD *a2)
 {
-  int v2; // kr08_4
-  int v3; // eax
   int v4; // eax
   void *v5; // eax
   int *v6; // edx
@@ -882,9 +807,9 @@ _DWORD *__stdcall VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F6BC0(int
   int v17; // [esp+18h] [ebp-10h]
   _BYTE v18[12]; // [esp+1Ch] [ebp-Ch] BYREF
 
-  v2 = g_ControlGroupState; /*0x4f6bcf*/
+  int v2 = g_ControlGroupState; /*0x4f6bcf*/
   if ( *(_DWORD *)(a1 + 21616) == g_ControlGroupState ) /*0x4f6bdd*/
-    v3 = *(_DWORD *)(a1 + 21612); /*0x4f6be8*/
+    int v3 = *(_DWORD *)(a1 + 21612); /*0x4f6be8*/
   else
     v3 = *(_DWORD *)(a1 + 21616); /*0x4f6bf0*/
   v13 = v3; /*0x4f6bfd*/
@@ -936,8 +861,6 @@ unsigned int * VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_4(int
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__stdcall VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F6D10(int a1, _DWORD *a2)
 {
-  int v2; // kr08_4
-  int v3; // eax
   int v4; // eax
   void *v5; // eax
   int *v6; // edx
@@ -953,9 +876,9 @@ _DWORD *__stdcall VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_4F6D10(int
   int v17; // [esp+18h] [ebp-10h]
   _BYTE v18[12]; // [esp+1Ch] [ebp-Ch] BYREF
 
-  v2 = g_ControlGroupState; /*0x4f6d1f*/
+  int v2 = g_ControlGroupState; /*0x4f6d1f*/
   if ( *(_DWORD *)(a1 + 21612) == g_ControlGroupState ) /*0x4f6d2d*/
-    v3 = *(_DWORD *)(a1 + 21608); /*0x4f6d38*/
+    int v3 = *(_DWORD *)(a1 + 21608); /*0x4f6d38*/
   else
     v3 = *(_DWORD *)(a1 + 21612); /*0x4f6d40*/
   v13 = v3; /*0x4f6d4d*/
@@ -1005,16 +928,10 @@ namespace gamemd {
 int VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_5(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_501400(int a1)
+void VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_501400(int a1)
 {
-  int v1; // edi
-  int *v2; // esi
-  int v3; // eax
-  int v4; // edx
-  int v5; // ecx
-  int v7; // [esp+8h] [ebp-4h] BYREF
 
-  v1 = g_SidebarState - 1; /*0x501409*/
+  int v1 = g_SidebarState - 1; /*0x501409*/
   if ( g_SidebarState - 1 < 0 ) /*0x50140e*/
   {
     *(_BYTE *)(a1 + 549) = 1; /*0x501532*/
@@ -1024,16 +941,16 @@ int __stdcall VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_501400(int a1)
   {
     do /*0x50150f*/
     {
-      v2 = (int *)*((_DWORD *)g_TechnoClass_Count + v1); /*0x501423*/
+      int * v2 = (int *)*((_DWORD *)g_TechnoClass_Count + v1); /*0x501423*/
       if ( a1 - 36 == v2[135] && *((_BYTE *)v2 + 116) && !*((_BYTE *)v2 + 129) ) /*0x50143d*/
       {
         if ( *((_BYTE *)v2 + 708) /*0x50146d*/
           && *(_BYTE *)((*(int (__thiscall **)(_DWORD))(*v2 + 132))(*((_DWORD *)g_TechnoClass_Count + v1)) + 562)
           && !*(_BYTE *)(a1 + 456) )
         {
-          v3 = (*(int (__thiscall **)(int *))(*v2 + 132))(v2); /*0x50147b*/
-          v4 = *v2; /*0x501487*/
-          v7 = *(_DWORD *)(v3 + 160); /*0x501489*/
+          int v3 = (*(int (__thiscall **)(int *))(*v2 + 132))(v2); /*0x50147b*/
+          int v4 = *v2; /*0x501487*/
+          int v7 = *(_DWORD *)(v3 + 160); /*0x501489*/
           (*(void (__thiscall **)(int *, int *, _DWORD, int, _DWORD, int, int, _DWORD))(v4 + 364))( /*0x5014aa*/
             v2,
             &v7,
@@ -1048,7 +965,7 @@ int __stdcall VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_501400(int a1)
         {
           if ( (v2[5] & 4) != 0 ) /*0x5014c3*/
           {
-            v5 = v2[373]; /*0x5014c5*/
+            int v5 = v2[373]; /*0x5014c5*/
             if ( v5 ) /*0x5014cd*/
               TeamClass::LiberateMember_Start(v5, (int)v2, 0xFFFFFFFF, 0); /*0x5014d4*/
             (*(void (__thiscall **)(int *, int, _DWORD))(*v2 + 488))(v2, 15, 0); /*0x5014e1*/
@@ -1075,17 +992,15 @@ namespace gamemd {
 char VectorClass_ptr_BuildChoiceClass_int_ouseClass::Release(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall VectorClass_ptr_BuildChoiceClass_int_ouseClass::_vt02(void *this, int a2, _DWORD *a3)
+void VectorClass_ptr_BuildChoiceClass_int_ouseClass::_vt02(int a2, _DWORD *a3)
 {
-  _DWORD *v4; // edi
-  int v6; // ecx
   int i; // eax
 
   if ( a2 ) /*0x50f52c*/
   {
     this->IsInitialized = 0; /*0x50f536*/
     if ( a3 ) /*0x50f53c*/
-      v4 = a3; /*0x50f552*/
+      _DWORD * v4 = a3; /*0x50f552*/
     else
       v4 = __2_YAPAXI_Z(4 * a2); /*0x50f54e*/
     this->IsInitialized = 1; /*0x50f556*/
@@ -1093,14 +1008,14 @@ char __thiscall VectorClass_ptr_BuildChoiceClass_int_ouseClass::_vt02(void *this
     {
       if ( this->Items ) /*0x50f565*/
       {
-        v6 = this->Capacity; /*0x50f56c*/
+        int v6 = this->Capacity; /*0x50f56c*/
         if ( a2 < v6 ) /*0x50f571*/
           v6 = a2; /*0x50f573*/
         for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x50f579*/
           ++i; /*0x50f57e*/
         if ( this->IsAllocated ) /*0x50f58b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x50f596*/
+          __3_YAXPAX_Z(this->Items); /*0x50f596*/
           this->Items = 0; /*0x50f59e*/
         }
       }
@@ -1128,18 +1043,15 @@ namespace gamemd {
 char VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_6(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_50F660(void *this, int a2, _DWORD *a3)
+void VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_50F660(int a2, _DWORD *a3)
 {
-  _DWORD *v4; // edi
-  int v5; // ecx
   int i; // eax
-  int v7; // eax
 
   if ( a2 ) /*0x50f66c*/
   {
     this->IsInitialized = 0; /*0x50f672*/
     if ( a3 ) /*0x50f678*/
-      v4 = a3; /*0x50f68e*/
+      _DWORD * v4 = a3; /*0x50f68e*/
     else
       v4 = __2_YAPAXI_Z(4 * a2); /*0x50f68a*/
     this->IsInitialized = 1; /*0x50f692*/
@@ -1147,14 +1059,14 @@ char __thiscall VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_50F660(void 
       return 0; /*0x50f70a*/
     if ( this->Items ) /*0x50f698*/
     {
-      v5 = this->Capacity; /*0x50f69f*/
+      int v5 = this->Capacity; /*0x50f69f*/
       if ( a2 < v5 ) /*0x50f6a4*/
         v5 = a2; /*0x50f6a6*/
       for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x50f6ac*/
         ++i; /*0x50f6b1*/
       if ( this->IsAllocated ) /*0x50f6be*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x50f6c9*/
+        __3_YAXPAX_Z(this->Items); /*0x50f6c9*/
         this->Items = 0; /*0x50f6d1*/
       }
     }
@@ -1166,7 +1078,7 @@ char __thiscall VectorClass_ptr_BuildChoiceClass_int_ouseClass::sub_50F660(void 
   {
     (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x50f6ee*/
   }
-  v7 = this->Capacity; /*0x50f6f1*/
+  int v7 = this->Capacity; /*0x50f6f1*/
   if ( v7 < this->Count ) /*0x50f6f9*/
     this->Count = v7; /*0x50f6fb*/
   return 1; /*0x50f6fe*/
@@ -1179,25 +1091,21 @@ namespace gamemd {
 char VectorClass_ptr_ColorScheme::SetCapacity_0(CCINIClass * aP1, unsigned char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall VectorClass_ptr_ColorScheme::SetCapacity_0(void *this, CCINIClass *aP1, _BYTE *a2)
+void VectorClass_ptr_ColorScheme::SetCapacity_0(CCINIClass *aP1, _BYTE *a2)
 {
   CCINIClass *v3; // edi
-  _BYTE *v5; // esi
   AbstractClass *v6; // ebx
   AbstractClass *v7; // esi
   CCINIClass *v8; // ebx
   CCINIClass *v10; // eax
-  int v11; // ebx
   AbstractClass *v12; // edi
-  int v13; // esi
   CCINIClass *v14; // [esp+10h] [ebp-8h]
   AbstractClass *v15; // [esp+10h] [ebp-8h]
   CCINIClass *v16; // [esp+14h] [ebp-4h]
-
   v3 = aP1; /*0x6288f7*/
   if ( aP1 ) /*0x6288ff*/
   {
-    v5 = a2; /*0x628905*/
+    _BYTE * v5 = a2; /*0x628905*/
     this->IsInitialized = 0; /*0x628909*/
     if ( a2 ) /*0x62890f*/
     {
@@ -1248,12 +1156,12 @@ char __thiscall VectorClass_ptr_ColorScheme::SetCapacity_0(void *this, CCINIClas
           v10 = aP1; /*0x6289a8*/
         if ( (int)v10 > 0 ) /*0x6289ac*/
         {
-          v11 = 0; /*0x6289ae*/
+          int v11 = 0; /*0x6289ae*/
           v12 = v15; /*0x6289b0*/
           v16 = v10; /*0x6289b2*/
           do /*0x6289e4*/
           {
-            v13 = v11 + this->Items; /*0x6289bb*/
+            int v13 = v11 + this->Items; /*0x6289bb*/
             String::CopyChecked(v12->__pad_0, (const char *)v13); /*0x6289be*/
             *(_DWORD *)&v12[7].__pad_0[4] = *(_DWORD *)(v13 + 256); /*0x6289cd*/
             v11 += 260; /*0x6289d3*/
@@ -1265,7 +1173,7 @@ char __thiscall VectorClass_ptr_ColorScheme::SetCapacity_0(void *this, CCINIClas
         }
         if ( this->IsAllocated ) /*0x6289ea*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x6289f5*/
+          __3_YAXPAX_Z(this->Items); /*0x6289f5*/
           this->Items = 0; /*0x6289fd*/
         }
       }
@@ -1295,19 +1203,17 @@ ConvertClass * VectorClass_ptr_ConvertClass::Constructor_ConvertClass(char a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 ConvertClass *__thiscall VectorClass_ptr_ConvertClass::Constructor_ConvertClass(void **this, char a2)
 {
-  void *v3; // ecx
-  int v4; // eax
   void **v6; // [esp+4h] [ebp-4h] BYREF
 
   *this = &vt_ConvertClass; /*0x491214*/
   COMClass::RegisterAll(this); /*0x49121a*/
   __3_YAXPAX_Z(*(this + 92)); /*0x491226*/
-  v3 = *(this + 94); /*0x49122b*/
+  void * v3 = *(this + 94); /*0x49122b*/
   *(this + 92) = 0; /*0x491231*/
   __3_YAXPAX_Z(v3); /*0x49123c*/
   *(this + 94) = 0; /*0x491244*/
   v6 = this; /*0x49125d*/
-  v4 = (*(int (__thiscall **)(int *, void ***))(DataGlobal_89ECF8 + 16))(&DataGlobal_89ECF8, &v6); /*0x491261*/
+  int v4 = (*(int (__thiscall **)(int *, void ***))(DataGlobal_89ECF8 + 16))(&DataGlobal_89ECF8, &v6); /*0x491261*/
   if ( v4 != -1 && v4 < DataGlobal_89ED08 && v4 < --DataGlobal_89ED08 ) /*0x49127c*/
   {
     do /*0x491294*/
@@ -1329,7 +1235,7 @@ namespace gamemd {
 void VectorClass_ptr_ConvertClass::MarkDirty()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall MarkDirty(_BYTE *this)
+void MarkDirty(_BYTE *this)
 {
   this->q01C = 1; /*0x4e1960*/
 }
@@ -1341,17 +1247,15 @@ namespace gamemd {
 char VectorClass_ptr_PlanningBranchClass::Release(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall VectorClass_ptr_PlanningBranchClass::_vt02(void *this, int a2, _DWORD *a3)
+void VectorClass_ptr_PlanningBranchClass::_vt02(int a2, _DWORD *a3)
 {
-  _DWORD *v4; // edi
-  int v6; // ecx
   int i; // eax
 
   if ( a2 ) /*0x63e09c*/
   {
     this->IsInitialized = 0; /*0x63e0a6*/
     if ( a3 ) /*0x63e0ac*/
-      v4 = a3; /*0x63e0c2*/
+      _DWORD * v4 = a3; /*0x63e0c2*/
     else
       v4 = __2_YAPAXI_Z(4 * a2); /*0x63e0be*/
     this->IsInitialized = 1; /*0x63e0c6*/
@@ -1359,14 +1263,14 @@ char __thiscall VectorClass_ptr_PlanningBranchClass::_vt02(void *this, int a2, _
     {
       if ( this->Items ) /*0x63e0d5*/
       {
-        v6 = this->Capacity; /*0x63e0dc*/
+        int v6 = this->Capacity; /*0x63e0dc*/
         if ( a2 < v6 ) /*0x63e0e1*/
           v6 = a2; /*0x63e0e3*/
         for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x63e0e9*/
           ++i; /*0x63e0ee*/
         if ( this->IsAllocated ) /*0x63e0fb*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x63e106*/
+          __3_YAXPAX_Z(this->Items); /*0x63e106*/
           this->Items = 0; /*0x63e10e*/
         }
       }
@@ -1394,10 +1298,8 @@ namespace gamemd {
 char VectorClass_rc_ptr_WDTTerritory::Release(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall VectorClass_rc_ptr_WDTTerritory::_vt02(_BYTE *this, int a2, _DWORD *a3)
+void VectorClass_rc_ptr_WDTTerritory::_vt02(int a2, _DWORD *a3)
 {
-  int v3; // ebp
-  _DWORD *v5; // eax
   _DWORD *v6; // esi
   int v7; // ebx
   _DWORD *v8; // ebx
@@ -1405,8 +1307,7 @@ char __thiscall VectorClass_rc_ptr_WDTTerritory::_vt02(_BYTE *this, int a2, _DWO
   int i; // esi
   void (__thiscall ***v12)(_DWORD, int); // ecx
   _DWORD *v13; // [esp+10h] [ebp-4h]
-
-  v3 = a2; /*0x76b8c3*/
+  int v3 = a2; /*0x76b8c3*/
   if ( !a2 ) /*0x76b8cd*/
   {
     (*(void (__thiscall **)(_BYTE *))(this->IsInitialized)(this); /*0x76b9cd*/
@@ -1433,7 +1334,7 @@ char __thiscall VectorClass_rc_ptr_WDTTerritory::_vt02(_BYTE *this, int a2, _DWO
   }
   else
   {
-    v5 = __2_YAPAXI_Z(8 * a2 + 4); /*0x76b8e7*/
+    _DWORD * v5 = __2_YAPAXI_Z(8 * a2 + 4); /*0x76b8e7*/
     if ( !v5 ) /*0x76b8f1*/
     {
       v8 = 0; /*0x76b91f*/
@@ -1489,18 +1390,15 @@ namespace gamemd {
 char VectorClass_Scenario::ResizeAndCopy(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall ScenarioClass::sub_5D8470(void *this, int a2, _DWORD *a3)
+void ScenarioClass::sub_5D8470(int a2, _DWORD *a3)
 {
-  _DWORD *v4; // edi
-  int v5; // ecx
   int i; // eax
-  int v7; // eax
 
   if ( a2 ) /*0x5d847c*/
   {
     *((_BYTE *)this + 12) = 0; /*0x5d8482*/
     if ( a3 ) /*0x5d8488*/
-      v4 = a3; /*0x5d849e*/
+      _DWORD * v4 = a3; /*0x5d849e*/
     else
       v4 = __2_YAPAXI_Z(4 * a2); /*0x5d849a*/
     *((_BYTE *)this + 12) = 1; /*0x5d84a2*/
@@ -1508,7 +1406,7 @@ char __thiscall ScenarioClass::sub_5D8470(void *this, int a2, _DWORD *a3)
       return 0; /*0x5d851a*/
     if ( *((_DWORD *)this + 1) ) /*0x5d84a8*/
     {
-      v5 = *((_DWORD *)this + 2); /*0x5d84af*/
+      int v5 = *((_DWORD *)this + 2); /*0x5d84af*/
       if ( a2 < v5 ) /*0x5d84b4*/
         v5 = a2; /*0x5d84b6*/
       for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x5d84bc*/
@@ -1527,7 +1425,7 @@ char __thiscall ScenarioClass::sub_5D8470(void *this, int a2, _DWORD *a3)
   {
     (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x5d84fe*/
   }
-  v7 = *((_DWORD *)this + 2); /*0x5d8501*/
+  int v7 = *((_DWORD *)this + 2); /*0x5d8501*/
   if ( v7 < *((_DWORD *)this + 4) ) /*0x5d8509*/
     *((_DWORD *)this + 4) = v7; /*0x5d850b*/
   return 1; /*0x5d850e*/
@@ -1540,18 +1438,15 @@ namespace gamemd {
 char VectorClass_Scenario2::ResizeAndCopy(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall ScenarioClass::sub_5D8730(void *this, int a2, _DWORD *a3)
+void ScenarioClass::sub_5D8730(int a2, _DWORD *a3)
 {
-  _DWORD *v4; // edi
-  int v5; // ecx
   int i; // eax
-  int v7; // eax
 
   if ( a2 ) /*0x5d873c*/
   {
     *((_BYTE *)this + 12) = 0; /*0x5d8742*/
     if ( a3 ) /*0x5d8748*/
-      v4 = a3; /*0x5d875e*/
+      _DWORD * v4 = a3; /*0x5d875e*/
     else
       v4 = __2_YAPAXI_Z(4 * a2); /*0x5d875a*/
     *((_BYTE *)this + 12) = 1; /*0x5d8762*/
@@ -1559,7 +1454,7 @@ char __thiscall ScenarioClass::sub_5D8730(void *this, int a2, _DWORD *a3)
       return 0; /*0x5d87da*/
     if ( *((_DWORD *)this + 1) ) /*0x5d8768*/
     {
-      v5 = *((_DWORD *)this + 2); /*0x5d876f*/
+      int v5 = *((_DWORD *)this + 2); /*0x5d876f*/
       if ( a2 < v5 ) /*0x5d8774*/
         v5 = a2; /*0x5d8776*/
       for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x5d877c*/
@@ -1578,7 +1473,7 @@ char __thiscall ScenarioClass::sub_5D8730(void *this, int a2, _DWORD *a3)
   {
     (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x5d87be*/
   }
-  v7 = *((_DWORD *)this + 2); /*0x5d87c1*/
+  int v7 = *((_DWORD *)this + 2); /*0x5d87c1*/
   if ( v7 < *((_DWORD *)this + 4) ) /*0x5d87c9*/
     *((_DWORD *)this + 4) = v7; /*0x5d87cb*/
   return 1; /*0x5d87ce*/
@@ -1591,17 +1486,15 @@ namespace gamemd {
 char VectorClass_Scenario3::ResizeAndCopy(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall ScenarioClass::sub_5D8590(void *this, int a2, _DWORD *a3)
+void ScenarioClass::sub_5D8590(int a2, _DWORD *a3)
 {
-  _DWORD *v4; // edi
-  int v6; // ecx
   int i; // eax
 
   if ( a2 ) /*0x5d859c*/
   {
     *((_BYTE *)this + 12) = 0; /*0x5d85a6*/
     if ( a3 ) /*0x5d85ac*/
-      v4 = a3; /*0x5d85c2*/
+      _DWORD * v4 = a3; /*0x5d85c2*/
     else
       v4 = __2_YAPAXI_Z(4 * a2); /*0x5d85be*/
     *((_BYTE *)this + 12) = 1; /*0x5d85c6*/
@@ -1609,7 +1502,7 @@ char __thiscall ScenarioClass::sub_5D8590(void *this, int a2, _DWORD *a3)
     {
       if ( *((_DWORD *)this + 1) ) /*0x5d85d5*/
       {
-        v6 = *((_DWORD *)this + 2); /*0x5d85dc*/
+        int v6 = *((_DWORD *)this + 2); /*0x5d85dc*/
         if ( a2 < v6 ) /*0x5d85e1*/
           v6 = a2; /*0x5d85e3*/
         for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x5d85e9*/
@@ -1644,18 +1537,15 @@ namespace gamemd {
 char VectorClass_SuperPtr::ResizeAndCopy(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall VectorClass_ptr_SuperClass::sub_4E9840(void *this, int a2, _DWORD *a3)
+void VectorClass_ptr_SuperClass::sub_4E9840(int a2, _DWORD *a3)
 {
-  _DWORD *v4; // edi
-  int v5; // ecx
   int i; // eax
-  int v7; // eax
 
   if ( a2 ) /*0x4e984c*/
   {
     *((_BYTE *)this + 12) = 0; /*0x4e9852*/
     if ( a3 ) /*0x4e9858*/
-      v4 = a3; /*0x4e986e*/
+      _DWORD * v4 = a3; /*0x4e986e*/
     else
       v4 = __2_YAPAXI_Z(4 * a2); /*0x4e986a*/
     *((_BYTE *)this + 12) = 1; /*0x4e9872*/
@@ -1663,7 +1553,7 @@ char __thiscall VectorClass_ptr_SuperClass::sub_4E9840(void *this, int a2, _DWOR
       return 0; /*0x4e98ea*/
     if ( *((_DWORD *)this + 1) ) /*0x4e9878*/
     {
-      v5 = *((_DWORD *)this + 2); /*0x4e987f*/
+      int v5 = *((_DWORD *)this + 2); /*0x4e987f*/
       if ( a2 < v5 ) /*0x4e9884*/
         v5 = a2; /*0x4e9886*/
       for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x4e988c*/
@@ -1682,7 +1572,7 @@ char __thiscall VectorClass_ptr_SuperClass::sub_4E9840(void *this, int a2, _DWOR
   {
     (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x4e98ce*/
   }
-  v7 = *((_DWORD *)this + 2); /*0x4e98d1*/
+  int v7 = *((_DWORD *)this + 2); /*0x4e98d1*/
   if ( v7 < *((_DWORD *)this + 4) ) /*0x4e98d9*/
     *((_DWORD *)this + 4) = v7; /*0x4e98db*/
   return 1; /*0x4e98de*/
@@ -1695,10 +1585,9 @@ namespace gamemd {
 char VectorClass_UDirtyAreaStruct::SetCapacity(CCINIClass * aP1, char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall VectorClass_UDirtyAreaStruct::SetCapacity(void *this, CCINIClass *aP1, char *a2)
+void VectorClass_UDirtyAreaStruct::SetCapacity(CCINIClass *aP1, char *a2)
 {
   CCINIClass *v3; // edi
-  char *v5; // esi
   CCINIClass *v6; // ebx
   char *v7; // ebx
   CCINIClass *v8; // ebx
@@ -1708,14 +1597,13 @@ char __thiscall VectorClass_UDirtyAreaStruct::SetCapacity(void *this, CCINIClass
   const void *v12; // esi
   int v13; // eax
   char *v15; // [esp+10h] [ebp-4h]
-
   v3 = aP1; /*0x6dc855*/
   if ( !aP1 ) /*0x6dc85d*/
   {
     (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x6dc94a*/
     goto LABEL_26; /*0x6dc94a*/
   }
-  v5 = a2; /*0x6dc863*/
+  char * v5 = a2; /*0x6dc863*/
   this->IsInitialized = 0; /*0x6dc867*/
   if ( a2 ) /*0x6dc86d*/
   {
@@ -1781,7 +1669,7 @@ LABEL_14:
     }
     if ( this->IsAllocated ) /*0x6dc915*/
     {
-      __3_YAXPAX_Z(*((void **)this + 1)); /*0x6dc920*/
+      __3_YAXPAX_Z(this->Items); /*0x6dc920*/
       this->Items = 0; /*0x6dc928*/
     }
   }
@@ -1802,26 +1690,21 @@ namespace gamemd {
 char VectorClass_UUndoInfoStruct::Release(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall VectorClass_UUndoInfoStruct::_vt02(void *this, int a2, _DWORD *a3)
+void VectorClass_UUndoInfoStruct::_vt02(int a2, _DWORD *a3)
 {
-  int v3; // ebp
-  _DWORD *v5; // eax
-  _DWORD *v6; // ecx
-  int v7; // edx
   _DWORD *v8; // edi
   int v9; // ecx
   int v11; // ecx
   int v12; // eax
   _DWORD *v13; // ebx
   _DWORD *v14; // edx
-
-  v3 = a2; /*0x6b44a2*/
+  int v3 = a2; /*0x6b44a2*/
   if ( !a2 ) /*0x6b44ae*/
   {
     (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x6b4591*/
     return 1; /*0x6b4597*/
   }
-  v5 = a3; /*0x6b44b4*/
+  _DWORD * v5 = a3; /*0x6b44b4*/
   this->IsInitialized = 0; /*0x6b44b8*/
   if ( a3 ) /*0x6b44bd*/
   {
@@ -1848,10 +1731,10 @@ char __thiscall VectorClass_UUndoInfoStruct::_vt02(void *this, int a2, _DWORD *a
       v8 = 0; /*0x6b44ef*/
       goto LABEL_14; /*0x6b44f1*/
     }
-    v6 = v5; /*0x6b44d6*/
+    _DWORD * v6 = v5; /*0x6b44d6*/
     if ( a2 - 1 >= 0 ) /*0x6b44da*/
     {
-      v7 = a2; /*0x6b44de*/
+      int v7 = a2; /*0x6b44de*/
       do /*0x6b44eb*/
       {
         *v6 = 0; /*0x6b44df*/
@@ -1891,7 +1774,7 @@ LABEL_14:
     }
     if ( this->IsAllocated ) /*0x6b455c*/
     {
-      __3_YAXPAX_Z(*((void **)this + 1)); /*0x6b4565*/
+      __3_YAXPAX_Z(this->Items); /*0x6b4565*/
       this->Items = 0; /*0x6b456d*/
     }
   }
@@ -1908,27 +1791,22 @@ namespace gamemd {
 char VectorClass_UUndoInfoStruct::SetCapacity(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall VectorClass_UUndoInfoStruct::sub_6B4650(void *this, int a2, _DWORD *a3)
+void VectorClass_UUndoInfoStruct::sub_6B4650(int a2, _DWORD *a3)
 {
-  int v3; // ebp
-  _DWORD *v5; // eax
-  _DWORD *v6; // ecx
-  int v7; // edx
   _DWORD *v8; // edi
   int v9; // ecx
-  int v10; // ecx
+  AbstractClass *v10; // ecx
   int v11; // eax
   _DWORD *v12; // ebx
   _DWORD *v13; // edx
-  int v14; // eax
-
-  v3 = a2; /*0x6b4652*/
+  AbstractClass *v14; // eax
+  int v3 = a2; /*0x6b4652*/
   if ( !a2 ) /*0x6b465e*/
   {
     (*(void (__thiscall **)(void *))(this->IsInitialized)(this); /*0x6b4731*/
     goto LABEL_26; /*0x6b4731*/
   }
-  v5 = a3; /*0x6b4664*/
+  _DWORD * v5 = a3; /*0x6b4664*/
   this->IsInitialized = 0; /*0x6b4668*/
   if ( a3 ) /*0x6b466d*/
   {
@@ -1951,10 +1829,10 @@ char __thiscall VectorClass_UUndoInfoStruct::sub_6B4650(void *this, int a2, _DWO
   v5 = __2_YAPAXI_Z(12 * a2); /*0x6b4677*/
   if ( v5 ) /*0x6b4681*/
   {
-    v6 = v5; /*0x6b4686*/
+    _DWORD * v6 = v5; /*0x6b4686*/
     if ( a2 - 1 >= 0 ) /*0x6b468a*/
     {
-      v7 = a2; /*0x6b468e*/
+      int v7 = a2; /*0x6b468e*/
       do /*0x6b469b*/
       {
         *v6 = 0; /*0x6b468f*/
@@ -1997,7 +1875,7 @@ LABEL_14:
     }
     if ( this->IsAllocated ) /*0x6b4703*/
     {
-      __3_YAXPAX_Z(*((void **)this + 1)); /*0x6b470c*/
+      __3_YAXPAX_Z(this->Items); /*0x6b470c*/
       this->Items = 0; /*0x6b4714*/
     }
   }
@@ -9440,17 +9318,14 @@ namespace gamemd {
 int VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass_GetSize()
  {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::_vt04(
-        int this,
-        _DWORD *a2)
+void VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::_vt04(int this, _DWORD *a2)
 {
   int result; // eax
-  int v3; // edx
   _DWORD *i; // ecx
 
   if ( !*(_BYTE *)(this + 12) ) /*0x4e0990*/
     return 0; /*0x4e099e*/
-  v3 = *(_DWORD *)(this + 8); /*0x4e09a4*/
+  int v3 = *(_DWORD *)(this + 8); /*0x4e09a4*/
   result = 0; /*0x4e09a7*/
   if ( v3 <= 0 ) /*0x4e09ab*/
     return -1; /*0x4e09cc*/

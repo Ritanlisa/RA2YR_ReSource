@@ -12,22 +12,16 @@
 void IPXGlobalConnClass::ReceivePacket(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall IPXGlobalConnClass::_vt17(int this, int a2)
+void IPXGlobalConnClass::_vt17(int this, int a2)
 {
-  int v2; // esi
-  _DWORD *v3; // ecx
+  IPXGlobalConnClass *v2; // esi
   int i; // ebp
   int TileType; // edi
-  int v6; // eax
-  int v7; // ebx
   DWORD Ticks; // edx
-  int v9; // eax
-  int v10; // ecx
-  _DWORD *v11; // edx
 
   v2 = this; /*0x540113*/
   Debug::Log(); /*0x540132*/
-  v3 = *(_DWORD **)(v2 + 4); /*0x540137*/
+  _DWORD * v3 = v2->q004; /*0x540137*/
   for ( i = 0; i < v3[14]; ++i ) /*0x540144*/
   {
     TileType = Terrain::GetTileType(v3, i); /*0x540158*/
@@ -35,8 +29,8 @@ void __thiscall IPXGlobalConnClass::_vt17(int this, int a2)
     if ( TileType ) /*0x540164*/
     {
       Debug::Log(); /*0x540170*/
-      v6 = g_LastPerformanceTick; /*0x540175*/
-      v7 = g_PerformanceTickOffset; /*0x540186*/
+      int v6 = g_LastPerformanceTick; /*0x540175*/
+      int v7 = g_PerformanceTickOffset; /*0x540186*/
       if ( g_LastPerformanceTick != -1 ) /*0x540188*/
       {
         Ticks = Timer::GetTicks(); /*0x54019a*/
@@ -54,11 +48,11 @@ void __thiscall IPXGlobalConnClass::_vt17(int this, int a2)
         if ( v6 != -1 ) /*0x5401b9*/
           Timer::GetTicks(); /*0x5401c0*/
         Debug::Log(); /*0x5401eb*/
-        v9 = 0; /*0x5401fa*/
-        v10 = this->q035; /*0x5401ff*/
+        int v9 = 0; /*0x5401fa*/
+        int v10 = this->q035; /*0x5401ff*/
         if ( v10 > 0 ) /*0x540207*/
         {
-          v11 = *(_DWORD **)(this + 208); /*0x54020f*/
+          _DWORD * v11 = this->q0D0; /*0x54020f*/
           while ( *v11 != *(_DWORD *)(*(_DWORD *)(TileType + 12) + 4) ) /*0x540213*/
           {
             ++v9; /*0x540215*/
@@ -69,11 +63,11 @@ void __thiscall IPXGlobalConnClass::_vt17(int this, int a2)
           *(_DWORD *)(this->q0D0 + 4 * v9) = -1; /*0x54021f*/
         }
 LABEL_14:
-        PacketQueue::ReleaseEntry(*(_DWORD **)(this + 4), 0, 0, i--, 0, 0); /*0x540226*/
+        PacketQueue::ReleaseEntry(this->q004, 0, 0, i--, 0, 0); /*0x540226*/
       }
       v2 = this; /*0x540277*/
     }
-    v3 = *(_DWORD **)(v2 + 4); /*0x54027b*/
+    v3 = v2->q004; /*0x54027b*/
   }
   Debug::Log(); /*0x540296*/
 }
@@ -83,16 +77,8 @@ LABEL_14:
 int IPXGlobalConnClass::SetAddress(int a2, int arg4, int * a3, IPXGlobalConnClass * aP4, int a6, int aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall IPXGlobalConnClass::SetAddress(
-        _BYTE *this,
-        int a2,
-        int arg4,
-        int *a3,
-        IPXGlobalConnClass *aP4,
-        int a6,
-        int aP3)
+void IPXGlobalConnClass::SetAddress(int a2, int arg4, int *a3, IPXGlobalConnClass *aP4, int a6, int aP3)
 {
-  _BYTE *v7; // ebp
   int v8; // esi
   int v9; // ebp
   int v10; // edi
@@ -106,8 +92,7 @@ int __thiscall IPXGlobalConnClass::SetAddress(
   int v19; // [esp+24h] [ebp-10h]
   IPXManagerClass v20; // [esp+28h] [ebp-Ch] BYREF
   int v21; // [esp+30h] [ebp-4h]
-
-  v7 = this; /*0x5403f4*/
+  IPXGlobalConnClass *v7 = this; /*0x5403f4*/
   aP1_4 = this; /*0x5403fc*/
   Waypoint::InitInvalid(&v18); /*0x540400*/
   v18.Socket = *a3; /*0x540413*/

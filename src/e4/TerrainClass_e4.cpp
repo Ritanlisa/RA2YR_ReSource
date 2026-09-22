@@ -31,31 +31,11 @@ char __userpurge TerrainClass::ProcessUpdate@<al>(
 {
   char result; // al
   _UNKNOWN **v9; // ecx
-  int v10; // ebp
-  _DWORD *v11; // eax
-  _DWORD *v12; // eax
-  int v13; // esi
-  char v14; // bl
   int n; // edi
-  int v16; // esi
-  _DWORD *v17; // ecx
-  int v18; // edi
-  int v19; // esi
-  int v20; // edi
-  int v21; // esi
   int ebx47; // ebx
-  _DWORD *v23; // edi
   IUnknown *v22; // ecx
-  int v25; // edi
   int *WorldCoords; // eax
-  int v27; // edi
-  int *v28; // eax
-  int v29; // edi
-  int *v30; // eax
-  char v31; // bl
   int j; // edi
-  int v33; // esi
-  _DWORD *v34; // ecx
   char bl75; // bl
   int k; // edi
   BuildingClass *v35; // esi
@@ -63,80 +43,31 @@ char __userpurge TerrainClass::ProcessUpdate@<al>(
   char bl85; // bl
   int m; // edi
   BuildingClass *v39; // esi
-  _DWORD *v42; // ecx
-  int v43; // eax
   wchar_t *v44; // esi
-  int v45; // eax
   unsigned int PlayerColorScheme; // edi
   wchar_t *StringCSF; // eax
   HouseClass *v48; // eax
-  int v49; // esi
   IUnknown *eax105; // eax
-  int v51; // esi
   IUnknown *v50; // ecx
-  int v53; // eax
   IUnknown *v52; // edi
   int i; // eax
   TerrainTypeClass *v54; // esi
-  int v57; // eax
-  int v58; // eax
-  int v59; // edx
-  int v60; // eax
   int ecx134; // ecx
-  int v62; // ecx
   ScenarioClass *v61; // eax
-  char *v64; // esi
-  int v65; // edi
-  int v66; // ebp
   AbstractClass *v67; // ebx
-  int v68; // eax
-  _DWORD *v69; // eax
   CellStruct **v70; // eax
-  _DWORD *v71; // eax
   IUnknown *Status; // eax
   int Owner; // eax
-  int v74; // eax
-  int v75; // eax
-  int v76; // esi
-  void *v77; // esi
-  int v78; // esi
-  int v79; // ecx
-  int v80; // edx
-  int v81; // eax
   CellStruct **v82; // eax
-  int v83; // eax
-  char v84; // bl
-  int v85; // edi
   _DWORD *ecx213; // ecx
-  int v87; // edi
-  int v88; // ecx
-  int v89; // ebx
-  int v90; // edi
   CCINIClass *v86; // eax
-  int v92; // ecx
-  int v93; // edi
-  int v94; // ecx
-  int v95; // edi
-  int v96; // ecx
   IUnknown **Waypoint_Location; // eax
-  int v98; // edx
-  int v99; // eax
-  int v100; // eax
   CellStruct **v101; // eax
-  int v102; // eax
-  int v103; // edi
-  _BYTE *v104; // esi
-  _WORD *v105; // eax
   IUnknown **v106; // eax
-  void *v107; // ecx
-  void *v108; // ecx
   int FirstInstance; // eax
-  int v110; // edx
-  int v111; // eax
   _DWORD *ecx293; // ecx
   int edx294; // edx
   IUnknown **v114; // eax
-  char v115; // bl
   int v116; // edi
   int v117; // esi
   _DWORD *v118; // ecx
@@ -165,7 +96,7 @@ char __userpurge TerrainClass::ProcessUpdate@<al>(
 
   result = 1;
   v9 = a4;
-  v10 = 0;
+  int v10 = 0;
   if ( a4 && !*((_BYTE *)a4 + 144) )
     v9 = 0;
   switch ( *(_DWORD *)(a1 + 44) )
@@ -192,32 +123,32 @@ LABEL_162:
       return 1;
     case 4:
       ++*(_DWORD *)&HouseClass_Player[43616];
-      v76 = *(_DWORD *)(a1 + 48);
+      int v76 = *(_DWORD *)(a1 + 48);
       if ( v76 )
         TeamClass::CreateOneOf(v76, 0);
       --*(_DWORD *)&HouseClass_Player[43616];
       return 1;
     case 5:
-      v77 = *(void **)(a1 + 48);
+      void * v77 = *(void **)(a1 + 48);
       if ( !v77 )
         return 1;
       TeamTypeClass::DestroyAllInstances(v77);
       return 1;
     case 6:
-      v81 = ObjectClass::FindOwner(a5, *(AnimClass **)(a1 + 144));
+      int v81 = ObjectClass::FindOwner(a5, *(AnimClass **)(a1 + 144));
       if ( !v81 )
         return 0;
       (*(void (__stdcall **)(int))(*(_DWORD *)(v81 + 36) + 56))(v81 + 36);
       return 1;
     case 7:
-      v78 = *(_DWORD *)(a1 + 48);
+      int v78 = *(_DWORD *)(a1 + 48);
       if ( !v78 )
         return 0;
       return DeployScriptActionPlane(v78, -1);
     case 8:
       return TActionClass::executeRetreatAction((int *)a1, aP1, (int)v9, (int)a5, aP4);
     case 9:
-      v74 = ObjectClass::FindOwner(a5, *(AnimClass **)(a1 + 144));
+      int v74 = ObjectClass::FindOwner(a5, *(AnimClass **)(a1 + 144));
       if ( !v74 )
         return 0;
       *(_DWORD *)(v74 + 592) = 4;
@@ -232,10 +163,10 @@ LABEL_162:
       LoadingScreen::FreeResources3();
       return 1;
     case 0xB:
-      v43 = *(_DWORD *)(*(_DWORD *)&HouseClass_Player[29924] + 13496);
+      int v43 = *(_DWORD *)(*(_DWORD *)&HouseClass_Player[29924] + 13496);
       v44 = *(_BYTE *)(a1 + 109) != 0 ? (wchar_t *)(a1 + 109) : 0;
       if ( v43 )
-        v45 = v43 != 1 ? 5 : 1;
+        int v45 = v43 != 1 ? 5 : 1;
       else
         v45 = 2;
       PlayerColorScheme = SessionClass::GetPlayerColorScheme((ObjectClass *)v45);
@@ -256,12 +187,12 @@ LABEL_162:
     case 0xC:
       if ( !*(_DWORD *)(a1 + 80) )
         return 1;
-      v87 = *(_DWORD *)&HouseClass_Player[44460] - 1;
+      int v87 = *(_DWORD *)&HouseClass_Player[44460] - 1;
       if ( *(_DWORD *)&HouseClass_Player[44460] - 1 < 0 )
         return 1;
       do
       {
-        v88 = *(_DWORD *)(*(_DWORD *)&HouseClass_Player[44448] + 4 * v87);
+        int v88 = *(_DWORD *)(*(_DWORD *)&HouseClass_Player[44448] + 4 * v87);
         if ( *(_DWORD *)(v88 + 36) == *(_DWORD *)(a1 + 80) )
           TeamClass::AddToBuildQueue((_BYTE *)v88);
         --v87;
@@ -269,7 +200,7 @@ LABEL_162:
       while ( v87 >= 0 );
       return 1;
     case 0xD:
-      v75 = ObjectClass::FindOwner(a5, *(AnimClass **)(a1 + 144));
+      int v75 = ObjectClass::FindOwner(a5, *(AnimClass **)(a1 + 144));
       if ( !v75 )
         return 0;
       *(_BYTE *)(v75 + 495) = 1;
@@ -305,12 +236,12 @@ LABEL_162:
     case 0x16:
       if ( !*(_DWORD *)(a1 + 80) )
         return 1;
-      v93 = 0;
+      int v93 = 0;
       if ( *(int *)&HouseClass_Player[44460] <= 0 )
         return 1;
       do
       {
-        v94 = *(_DWORD *)(*(_DWORD *)&HouseClass_Player[44448] + 4 * v93);
+        int v94 = *(_DWORD *)(*(_DWORD *)&HouseClass_Player[44448] + 4 * v93);
         if ( *(_DWORD *)(v94 + 36) == *(_DWORD *)(a1 + 80) )
           BuildingClass::ExecuteTriggers(v94, 0, *(TriggerClass **)&stru_B05488[37368]);
         ++v93;
@@ -333,9 +264,9 @@ LABEL_162:
       ObjectClass::PreDraw(&stru_87C374[13428]);
       return 1;
     case 0x19:
-      v57 = CDTimerClass::TimeRemaining((int *)(*(_DWORD *)&HouseClass_Player[29924] + 4584));
+      int v57 = CDTimerClass::TimeRemaining((int *)(*(_DWORD *)&HouseClass_Player[29924] + 4584));
       Timer::Start(&v131, (DynamicVector *)(15 * *(_DWORD *)(a1 + 144) + v57));
-      v58 = *(_DWORD *)&HouseClass_Player[29924] + 4584;
+      int v58 = *(_DWORD *)&HouseClass_Player[29924] + 4584;
       *(_DWORD *)(*(_DWORD *)&HouseClass_Player[29924] + 4584) = v131;
       *(_DWORD *)(v58 + 4) = v132;
       *(_DWORD *)(v58 + 8) = v133;
@@ -344,7 +275,7 @@ LABEL_162:
     case 0x1A:
       if ( CDTimerClass::TimeRemaining((int *)(*(_DWORD *)&HouseClass_Player[29924] + 4584)) > 15 * *(_DWORD *)(a1 + 144) )
       {
-        v60 = CDTimerClass::TimeRemaining((int *)(*(_DWORD *)&HouseClass_Player[29924] + 4584));
+        int v60 = CDTimerClass::TimeRemaining((int *)(*(_DWORD *)&HouseClass_Player[29924] + 4584));
         Timer::Start(&v113, (DynamicVector *)(v60 - 15 * *(_DWORD *)(a1 + 144)));
         ecx134 = *(_DWORD *)&HouseClass_Player[29924] + 4584;
         *(_DWORD *)(*(_DWORD *)&HouseClass_Player[29924] + 4584) = v113;
@@ -355,7 +286,7 @@ LABEL_162:
       else
       {
         Timer::Start(&v131, 0);
-        v59 = *(_DWORD *)&HouseClass_Player[29924] + 4584;
+        int v59 = *(_DWORD *)&HouseClass_Player[29924] + 4584;
         *(_DWORD *)(*(_DWORD *)&HouseClass_Player[29924] + 4584) = v131;
         *(_DWORD *)(v59 + 4) = v132;
         *(_DWORD *)(v59 + 8) = v133;
@@ -364,7 +295,7 @@ LABEL_162:
       return 1;
     case 0x1B:
       Timer::Start(&v131, (DynamicVector *)(15 * *(_DWORD *)(a1 + 144)));
-      v62 = *(_DWORD *)&HouseClass_Player[29924] + 4584;
+      int v62 = *(_DWORD *)&HouseClass_Player[29924] + 4584;
       *(_DWORD *)(*(_DWORD *)&HouseClass_Player[29924] + 4584) = v131;
       *(_DWORD *)(v62 + 4) = v132;
       *(_DWORD *)(v62 + 8) = v133;
@@ -395,7 +326,7 @@ LABEL_162:
       if ( aP1[2].nextArrayIndex > 0 )
       {
         v50 = *(IUnknown **)(**(_DWORD **)&aP1[2].__pad_0[12] + 156);
-        v53 = *(_DWORD *)(**(_DWORD **)&aP1[2].__pad_0[12] + 160);
+        int v53 = *(_DWORD *)(**(_DWORD **)&aP1[2].__pad_0[12] + 160);
         v133 = *(_DWORD *)(**(_DWORD **)&aP1[2].__pad_0[12] + 164);
         v52 = *(IUnknown **)CellStruct::Set(&v130, (int)v50 / 256, v53 / 256);
         HouseClass::SetMapSeed(aP1, v52);
@@ -436,7 +367,7 @@ LABEL_157:
       return TActionClass::ConvertHouseUnits((_DWORD *)a1, (int)aP1, (int)v9, a5, (IUnknown *)aP4);
     case 0x25:
       v48 = (HouseClass *)ObjectClass::FindOwner(a5, *(AnimClass **)(a1 + 144));
-      v49 = (int)v48;
+      int v49 = (int)v48;
       if ( !v48 )
         return 0;
       HouseClass::HandleAlliance((int)aP1, v48, 0);
@@ -444,7 +375,7 @@ LABEL_157:
       return 1;
     case 0x26:
       eax105 = (IUnknown *)ObjectClass::FindOwner(a5, *(AnimClass **)(a1 + 144));
-      v51 = (int)eax105;
+      int v51 = (int)eax105;
       if ( !eax105 )
         return 0;
       HouseClass::SetAlliance((int)aP1, eax105, 0);
@@ -515,7 +446,7 @@ LABEL_157:
         *(AbstractClass **)(a1 + 144));
       return 1;
     case 0x31:
-      v83 = *(_DWORD *)&stru_87C374[44652] + 1360;
+      int v83 = *(_DWORD *)&stru_87C374[44652] + 1360;
       *(_DWORD *)(*(_DWORD *)&stru_87C374[44976] + 192) = *(_DWORD *)(*(_DWORD *)&stru_87C374[44652]
                                                                                + 1360);
       *(_DWORD *)(*(_DWORD *)&stru_87C374[44976] + 196) = *(_DWORD *)(v83 + 4);
@@ -540,12 +471,12 @@ LABEL_157:
       TActionClass::executeRepairAction(&stru_87C374[13428], (int)aP1);
       return 1;
     case 0x34:
-      v84 = 0;
+      char v84 = 0;
       if ( *(int *)&HouseClass_Player[44548] > 0 )
       {
         do
         {
-          v85 = *(_DWORD *)(*(_DWORD *)&HouseClass_Player[44536] + 4 * v10);
+          int v85 = *(_DWORD *)(*(_DWORD *)&HouseClass_Player[44536] + 4 * v10);
           if ( *(int *)(v85 + 108) > 0 )
           {
             if ( *(_BYTE *)(v85 + 144) )
@@ -583,12 +514,12 @@ LABEL_157:
     case 0x36:
       if ( !*(_DWORD *)(a1 + 80) )
         return 1;
-      v95 = 0;
+      int v95 = 0;
       if ( *(int *)&HouseClass_Player[44460] <= 0 )
         return 1;
       do
       {
-        v96 = *(_DWORD *)(*(_DWORD *)&HouseClass_Player[44448] + 4 * v95);
+        int v96 = *(_DWORD *)(*(_DWORD *)&HouseClass_Player[44448] + 4 * v95);
         if ( *(_DWORD *)(v96 + 36) == *(_DWORD *)(a1 + 80) )
           TActionClass::executeDetonateAction((_BYTE *)v96);
         ++v95;
@@ -600,6 +531,7 @@ LABEL_157:
                                          *(char **)&HouseClass_Player[29924],
                                          &v130,
                                          *(_DWORD *)(a1 + 68));
+  int v98; // edx
       CreateTriggerClassIfFarEnough(*(IUnknown **)(a1 + 144), v98, *Waypoint_Location);
       return 1;
     case 0x38:
@@ -618,17 +550,17 @@ LABEL_157:
       MapClass::TriggerEVA((IUnknown *)&v112);
       return 1;
     case 0x3C:
-      v31 = 0;
+      char v31 = 0;
       for ( j = 0; j < *(int *)&HouseClass_Player[44548]; ++j )
       {
-        v33 = *(_DWORD *)(*(_DWORD *)&HouseClass_Player[44536] + 4 * j);
+        int v33 = *(_DWORD *)(*(_DWORD *)&HouseClass_Player[44536] + 4 * j);
         if ( *(_BYTE *)(v33 + 144) )
         {
           if ( *(_BYTE *)(v33 + 116) )
           {
             if ( !*(_BYTE *)(v33 + 129) )
             {
-              v34 = *(_DWORD **)(v33 + 52);
+              _DWORD * v34 = *(_DWORD **)(v33 + 52);
               if ( v34 )
               {
                 if ( LinkedList::Contains(v34, a5) )
@@ -678,7 +610,7 @@ LABEL_157:
           {
             if ( !v39->inLimbo )
             {
-              v42 = v39->attachedTag;
+              _DWORD * v42 = v39->attachedTag;
               if ( v42 )
               {
                 if ( LinkedList::Contains(v42, a5) && !v39->HasPower )
@@ -695,18 +627,18 @@ LABEL_157:
     case 0x3F:
       return PlayWaypointEffect((int *)a1, (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
     case 0x40:
-      v25 = *(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 4008);
+      int v25 = *(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 4008);
       WorldCoords = Cell::GetWorldCoords(*(__int16 **)&HouseClass_Player[29924], &v131, *(_DWORD *)(a1 + 144));
       CreateSmokeEffectAt(50, v25, *WorldCoords, WorldCoords[1], WorldCoords[2], 0, 0);
       return 1;
     case 0x41:
-      v27 = *(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 4008);
-      v28 = Cell::GetWorldCoords(*(__int16 **)&HouseClass_Player[29924], &v131, *(_DWORD *)(a1 + 144));
+      int v27 = *(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 4008);
+      int * v28 = Cell::GetWorldCoords(*(__int16 **)&HouseClass_Player[29924], &v131, *(_DWORD *)(a1 + 144));
       CreateSmokeEffectAt(100, v27, *v28, v28[1], v28[2], 0, 0);
       return 1;
     case 0x42:
-      v29 = *(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 4008);
-      v30 = Cell::GetWorldCoords(*(__int16 **)&HouseClass_Player[29924], &v131, *(_DWORD *)(a1 + 144));
+      int v29 = *(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 4008);
+      int * v30 = Cell::GetWorldCoords(*(__int16 **)&HouseClass_Player[29924], &v131, *(_DWORD *)(a1 + 144));
       CreateSmokeEffectAt(300, v29, *v30, v30[1], v30[2], 0, 0);
       return 1;
     case 0x43:
@@ -724,8 +656,8 @@ LABEL_60:
     case 0x46:
       if ( !*(_DWORD *)(a1 + 76) )
         return 1;
-      v89 = *(_DWORD *)&stru_B05488[37544];
-      v90 = 0;
+      int v89 = *(_DWORD *)&stru_B05488[37544];
+      int v90 = 0;
       if ( *(int *)&stru_B05488[37544] <= 0 )
         return 1;
       v86 = *(CCINIClass **)&stru_B05488[37532];
@@ -733,7 +665,7 @@ LABEL_60:
       {
         if ( *(_DWORD *)(*(_DWORD *)&v86->__pad_0[4 * v90] + 36) == *(_DWORD *)(a1 + 76) )
         {
-          v92 = *(_DWORD *)&v86->__pad_0[4 * v90];
+          int v92 = *(_DWORD *)&v86->__pad_0[4 * v90];
           if ( v92 )
           {
             (*(void (__thiscall **)(int, int))(*(_DWORD *)v92 + 32))(v92, 1);
@@ -759,13 +691,13 @@ LABEL_60:
                                                                                       + 13608);
       return 1;
     case 0x4A:
-      v99 = ObjectClass::FindOwner(a5, *(AnimClass **)(a1 + 144));
+      int v99 = ObjectClass::FindOwner(a5, *(AnimClass **)(a1 + 144));
       if ( !v99 )
         return 0;
       *(_BYTE *)(v99 + 498) = 1;
       return 1;
     case 0x4B:
-      v100 = ObjectClass::FindOwner(a5, *(AnimClass **)(a1 + 144));
+      int v100 = ObjectClass::FindOwner(a5, *(AnimClass **)(a1 + 144));
       if ( !v100 )
         return 0;
       *(_BYTE *)(v100 + 498) = 0;
@@ -791,22 +723,22 @@ LABEL_60:
       aP1[614].uniqueId = *(_DWORD *)(a1 + 144);
       return 1;
     case 0x50:
-      v79 = *(_DWORD *)(a1 + 48);
+      int v79 = *(_DWORD *)(a1 + 48);
       if ( !v79 )
         return 0;
-      v80 = *(_DWORD *)(a1 + 68);
+      int v80 = *(_DWORD *)(a1 + 68);
       if ( v80 == -1 )
         return 0;
       return DeployScriptActionPlane(v79, v80);
     case 0x51:
       return globalHelper_0E01C0((int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
     case 0x52:
-      v18 = 0;
+      int v18 = 0;
       if ( *(int *)&stru_89E138[89240] <= 0 )
         return 1;
       do
       {
-        v19 = *(_DWORD *)(*(_DWORD *)&stru_89E138[89228] + 4 * v18);
+        int v19 = *(_DWORD *)(*(_DWORD *)&stru_89E138[89228] + 4 * v18);
         if ( !(*(int (__thiscall **)(int))(*(_DWORD *)v19 + 388))(v19)
           && *(int *)(v19 + 108) > 0
           && *(_BYTE *)(v19 + 144)
@@ -821,12 +753,12 @@ LABEL_60:
       while ( v18 < *(int *)&stru_89E138[89240] );
       return 1;
     case 0x53:
-      v20 = 0;
+      int v20 = 0;
       if ( *(int *)&stru_89E138[89240] <= 0 )
         return 1;
       do
       {
-        v21 = *(_DWORD *)(*(_DWORD *)&stru_89E138[89228] + 4 * v20);
+        int v21 = *(_DWORD *)(*(_DWORD *)&stru_89E138[89228] + 4 * v20);
         if ( (*(int (__thiscall **)(int))(*(_DWORD *)v21 + 388))(v21) == 23
           && *(int *)(v21 + 108) > 0
           && *(_BYTE *)(v21 + 144)
@@ -846,7 +778,7 @@ LABEL_60:
         return 1;
       do
       {
-        v23 = *(_DWORD **)(*(_DWORD *)&HouseClass_Player[44848] + 4 * ebx47);
+        _DWORD * v23 = *(_DWORD **)(*(_DWORD *)&HouseClass_Player[44848] + 4 * ebx47);
         if ( v23[133] == *(_DWORD *)(a1 + 144)
           && (!(*(int (__thiscall **)(_DWORD))(*v23 + 388))(*(_DWORD *)(*(_DWORD *)&HouseClass_Player[44848]
                                                                       + 4 * ebx47))
@@ -882,7 +814,7 @@ LABEL_60:
       GroundHeight = v101[2];
       CoordStruct::Set2(&v131, (IUnknown *)&v112, 0);
       GroundHeight = (CellStruct *)Cell::GetGroundHeight((IUnknown *)&v131);
-      v102 = __2_YAPAXI_Z(0x100u);
+      int v102 = __2_YAPAXI_Z(0x100u);
       if ( !v102 )
         return 1;
       ParticleSystemClass::Constructor(
@@ -895,7 +827,7 @@ LABEL_60:
         0);
       return 1;
     case 0x59:
-      v103 = 0;
+      int v103 = 0;
       v112 = (IUnknown *)*ScenarioClass::Get_Waypoint_Location(
                             *(char **)&HouseClass_Player[29924],
                             &v130,
@@ -904,10 +836,10 @@ LABEL_60:
         return 1;
       do
       {
-        v104 = *(_BYTE **)&dword_A8020C->__pad_0[4 * v103];
+        _BYTE * v104 = *(_BYTE **)&dword_A8020C->__pad_0[4 * v103];
         if ( v104[144] )
         {
-          v105 = (_WORD *)(*(int (__thiscall **)(_BYTE *, char *))(*(_DWORD *)v104 + 440))(v104, v134);
+          _WORD * v105 = (_WORD *)(*(int (__thiscall **)(_BYTE *, char *))(*(_DWORD *)v104 + 440))(v104, v134);
           if ( CellStruct::Equals(v105, &v112) )
             (*(void (__thiscall **)(_BYTE *))(*(_DWORD *)v104 + 248))(v104);
         }
@@ -923,17 +855,17 @@ LABEL_60:
       LightningStorm::Strike(*v106);
       return 1;
     case 0x5B:
-      v14 = 0;
+      char v14 = 0;
       for ( n = 0; n < *(int *)&HouseClass_Player[172]; ++n )
       {
-        v16 = *(_DWORD *)(*(_DWORD *)&HouseClass_Player[160] + 4 * n);
+        int v16 = *(_DWORD *)(*(_DWORD *)&HouseClass_Player[160] + 4 * n);
         if ( *(_BYTE *)(v16 + 144) )
         {
           if ( *(_BYTE *)(v16 + 116) )
           {
             if ( !*(_BYTE *)(v16 + 129) )
             {
-              v17 = *(_DWORD **)(v16 + 52);
+              _DWORD * v17 = *(_DWORD **)(v16 + 52);
               if ( v17 )
               {
                 if ( LinkedList::Contains(v17, a5) )
@@ -948,6 +880,7 @@ LABEL_60:
       }
       return v14;
     case 0x5E:
+  _DWORD *v11; // eax
       v11 = ScenarioClass::Get_Waypoint_Location(
               *(char **)&HouseClass_Player[29924],
               &v130,
@@ -961,7 +894,7 @@ LABEL_60:
       v128 = (CellStruct *)v132;
       GroundHeight = (CellStruct *)v133;
       GroundHeight = (CellStruct *)Cell::GetGroundHeight((IUnknown *)&v113);
-      v12 = (_DWORD *)__2_YAPAXI_Z(0x14u);
+      _DWORD * v12 = (_DWORD *)__2_YAPAXI_Z(0x14u);
       if ( !v12 )
         return 1;
       ActionQueue::PushEntry(v12, (int)v113, (int)v128, (int)GroundHeight);
@@ -976,8 +909,8 @@ LABEL_60:
       return 1;
     case 0x62:
       Array::ForEach(aP0, 4, (IUnknown *)0x64, (int (__thiscall *)(int))__0Iostream_init_QAE_XZ_2);
-      v65 = 0;
-      v66 = 0;
+      int v65 = 0;
+      int v66 = 0;
       v67 = aP0;
       do
       {
@@ -995,8 +928,8 @@ LABEL_60:
         ++v66;
       }
       while ( v66 < 702 );
-      v68 = Random::Range((_DWORD *)(*(_DWORD *)&HouseClass_Player[29924] + 536), 0, (IUnknown *)(v65 - 1));
-      v69 = CoordStruct::Set2(&v131, (IUnknown *)((char *)aP0 + 4 * v68), 0);
+      int v68 = Random::Range((_DWORD *)(*(_DWORD *)&HouseClass_Player[29924] + 536), 0, (IUnknown *)(v65 - 1));
+      _DWORD * v69 = CoordStruct::Set2(&v131, (IUnknown *)((char *)aP0 + 4 * v68), 0);
       PlayAudioAt2(*(IUnknown **)(a1 + 144), v69, 0);
       return 1;
     case 0x63:
@@ -1007,7 +940,7 @@ LABEL_60:
       v113 = *v70;
       v128 = v70[1];
       GroundHeight = v70[2];
-      v71 = ScriptAction::ReadParameter(&v113);
+      _DWORD * v71 = ScriptAction::ReadParameter(&v113);
       if ( v71 )
         ObjectClass::CheckFlagD0(v71, *(IUnknown **)(a1 + 144));
       else
@@ -1030,7 +963,7 @@ LABEL_60:
       GroundHeight = (CellStruct *)Cell::GetGroundHeight((IUnknown *)&v113);
       if ( (*((_DWORD *)CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&v112) + 80) & 0x100) != 0 )
         GroundHeight = (CellStruct *)((char *)GroundHeight + *(_DWORD *)&stru_B05488[37452]);
-      v13 = *Coord::ToCell(&v113, (IUnknown *)&v130);
+      int v13 = *Coord::ToCell(&v113, (IUnknown *)&v130);
       if ( LightningStorm::IsActive() )
         return 0;
       LightningStorm::Start(
@@ -1040,7 +973,7 @@ LABEL_60:
         (#375 *)aP1);
       return 1;
     case 0x67:
-      v64 = *(_BYTE *)(a1 + 109) != 0 ? (char *)(a1 + 109) : 0;
+      char * v64 = *(_BYTE *)(a1 + 109) != 0 ? (char *)(a1 + 109) : 0;
       ScriptAction::CopyStringField(Destination, v64);
       if ( v64 )
       {
@@ -1063,13 +996,13 @@ LABEL_60:
       ObjectClass::PreDraw(&stru_87C374[13428]);
       return 1;
     case 0x68:
-      v107 = *(void **)(a1 + 48);
+      void * v107 = *(void **)(a1 + 48);
       if ( !v107 )
         return 1;
       TeamTypeClass::FlashAllInstances(v107, *(AnimClass **)(a1 + 144));
       return 1;
     case 0x69:
-      v108 = *(void **)(a1 + 48);
+      void * v108 = *(void **)(a1 + 48);
       if ( v108 )
       {
         FirstInstance = TeamTypeClass::FindFirstInstance(v108);
@@ -1087,7 +1020,7 @@ LABEL_60:
       v112 = (IUnknown *)(*(_DWORD *)&HouseClass_Player[44484] - 1);
       if ( *(_DWORD *)&HouseClass_Player[44484] - 1 < 0 )
         goto LABEL_290;
-      v110 = *(_DWORD *)&HouseClass_Player[44472] + 4 * (*(_DWORD *)&HouseClass_Player[44484] - 1);
+      int v110 = *(_DWORD *)&HouseClass_Player[44472] + 4 * (*(_DWORD *)&HouseClass_Player[44484] - 1);
       while ( strcmp((const char *)(*(_DWORD *)v110 + 36), (const char *)(a1 + 84)) )
       {
         v110 -= 4;
@@ -1097,7 +1030,7 @@ LABEL_60:
       }
       *(_DWORD *)(*(_DWORD *)v110 + 1588) = *(_DWORD *)(a1 + 144);
 LABEL_290:
-      v111 = (int)&HouseClass_Count[-1].__tail_1602E[1];
+      int v111 = (int)&HouseClass_Count[-1].__tail_1602E[1];
       if ( (int)&HouseClass_Count[-1].__tail_1602E[1] < 0 )
         return 1;
       do
@@ -1127,7 +1060,7 @@ LABEL_290:
       SetScenarioClassTimer(*(_DWORD *)(a1 + 144));
       return 1;
     case 0x6F:
-      v115 = 0;
+      char v115 = 0;
       v116 = 0;
       if ( *(int *)&HouseClass_Player[44548] <= 0 )
         return v115;
@@ -1258,29 +1191,17 @@ namespace gamemd {
 int TerrainClass::LoadFromStream(unsigned int * a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall TerrainClass::LoadFromStream(_DWORD *a1, int a2)
+void TerrainClass::LoadFromStream(_DWORD *a1, int a2)
 {
-  _DWORD *v2; // ebp
-  _DWORD *v3; // esi
-  int v4; // eax
   #374 *v5; // ecx
-  int v6; // edx
-  int v7; // edi
-  int v8; // eax
-  int v9; // eax
-  signed int v10; // ecx
   size_t i; // eax
-  _DWORD *v12; // eax
   int Register; // edi
-  int v14; // esi
-  int v15; // eax
-  int v17; // [esp+Ch] [ebp-8h] BYREF
 
-  v2 = a1; /*0x71cda4*/
-  v3 = a1 + 1; /*0x71cdad*/
-  v4 = (*(int (__stdcall **)(_DWORD *))(a1[1] + 16))(a1 + 1); /*0x71cdb1*/
-  v6 = g_BuildingLoadQueue_Count; /*0x71cdb4*/
-  v7 = v4; /*0x71cdba*/
+  _DWORD * v2 = a1; /*0x71cda4*/
+  _DWORD * v3 = a1 + 1; /*0x71cdad*/
+  int v4 = (*(int (__stdcall **)(_DWORD *))(a1[1] + 16))(a1 + 1); /*0x71cdb1*/
+  int v6 = g_BuildingLoadQueue_Count; /*0x71cdb4*/
+  int v7 = v4; /*0x71cdba*/
   if ( g_BuildingLoadQueue_Count ) /*0x71cdbe*/
   {
     if ( !g_BuildingLoadQueue_Dirty ) /*0x71cdcb*/
@@ -1290,17 +1211,17 @@ int __stdcall TerrainClass::LoadFromStream(_DWORD *a1, int a2)
       g_BuildingLoadQueue_Active = 0; /*0x71cdea*/
       g_BuildingLoadQueue_Dirty = 1; /*0x71cdf4*/
     }
-    v17 = v7; /*0x71ce06*/
-    v8 = BinaryArraySearch((int)g_BuildingLoadQueue_Array, v6, &v17); /*0x71ce0a*/
+    int v17 = v7; /*0x71ce06*/
+    int v8 = BinaryArraySearch((int)g_BuildingLoadQueue_Array, v6, &v17); /*0x71ce0a*/
     if ( v8 ) /*0x71ce11*/
     {
-      v9 = (v8 - (int)g_BuildingLoadQueue_Array) >> 3; /*0x71ce19*/
+      int v9 = (v8 - (int)g_BuildingLoadQueue_Array) >> 3; /*0x71ce19*/
       if ( v9 != -1 ) /*0x71ce1f*/
       {
-        v10 = v9 + 1; /*0x71ce21*/
+        signed int v10 = v9 + 1; /*0x71ce21*/
         for ( i = g_BuildingLoadQueue_Count; v10 < (int)g_BuildingLoadQueue_Count; i = g_BuildingLoadQueue_Count ) /*0x71ce2b*/
         {
-          v12 = (_DWORD *)((char *)g_BuildingLoadQueue_Array + 8 * v10++); /*0x71ce33*/
+          _DWORD * v12 = (_DWORD *)((char *)g_BuildingLoadQueue_Array + 8 * v10++); /*0x71ce33*/
           *(v12 - 2) = *v12; /*0x71ce39*/
           *(v12 - 1) = v12[1]; /*0x71ce3f*/
         }
@@ -1323,8 +1244,8 @@ int __stdcall TerrainClass::LoadFromStream(_DWORD *a1, int a2)
       v2[2] = &TerrainClass::`vftable'; /*0x71cea5*/
       v2[3] = &vt_TerrainClass; /*0x71ceac*/
     }
-    v14 = (*(int (__stdcall **)(_DWORD *))(*v3 + 16))(v3); /*0x71cebf*/
-    v15 = g_BuildingLoadQueue_Capacity; /*0x71cec1*/
+    int v14 = (*(int (__stdcall **)(_DWORD *))(*v3 + 16))(v3); /*0x71cebf*/
+    int v15 = g_BuildingLoadQueue_Capacity; /*0x71cec1*/
     if ( (int)(g_BuildingLoadQueue_Count + 1) <= g_BuildingLoadQueue_Capacity ) /*0x71cec9*/
       goto LABEL_16; /*0x71cec9*/
     if ( !g_BuildingLoadQueue_Capacity ) /*0x71cecd*/
@@ -1349,19 +1270,13 @@ namespace gamemd {
 char TerrainClass::ProcessSpawnAnim(unsigned int * a1, AbstractClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall TerrainClass::ProcessSpawnAnim(int this, _DWORD *a1, AbstractClass *aP2)
+void TerrainClass::ProcessSpawnAnim(int this, _DWORD *a1, AbstractClass *aP2)
 {
   IUnknown *v3; // ebp
   IUnknown *v4; // edi
   IUnknown *v5; // ebx
   IUnknown *i; // esi
-  int v7; // ecx
   __int16 v8; // ax
-  _BYTE *v9; // eax
-  _DWORD *v10; // eax
-  int v11; // edi
-  char v14[12]; // [esp+8h] [ebp-Ch] BYREF
-
   v3 = (IUnknown *)a1; /*0x71d008*/
   if ( !(unsigned __int8)ObjectClass::Deploy((#374 *)this) ) /*0x71d012*/
     return 0; /*0x71d13e*/
@@ -1369,17 +1284,18 @@ char __thiscall TerrainClass::ProcessSpawnAnim(int this, _DWORD *a1, AbstractCla
   v5 = (IUnknown *)(v3->field_4 / 256); /*0x71d041*/
   for ( i = 0; (int)i < 8; i = (IUnknown *)((char *)i + 1) ) /*0x71d044*/
   {
-    v7 = (unsigned __int8)i & 7; /*0x71d048*/
+    int v7 = (unsigned __int8)i & 7; /*0x71d048*/
     v8 = *((_WORD *)&DataGlobal_89F68A + 2 * v7); /*0x71d05d*/
     LOWORD(aP2) = (_WORD)v4 + *((_WORD *)&Direction_X_Offsets.field_0 + 2 * v7); /*0x71d061*/
     HIWORD(aP2) = (_WORD)v5 + v8; /*0x71d06d*/
     a1 = aP2->__pad_0; /*0x71d076*/
-    v9 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&a1); /*0x71d080*/
+    _BYTE * v9 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&a1); /*0x71d080*/
     ++v9[290]; /*0x71d091*/
   }
-  v10 = (_DWORD *)(*(int (__stdcall **)(char *))(this->Animation)(v14); /*0x71d0ab*/
+  char v14[12]; // [esp+8h] [ebp-Ch] BYREF
+  _DWORD * v10 = (_DWORD *)(*(int (__stdcall **)(char *))(this->Animation)(v14); /*0x71d0ab*/
   Coord::To_Screen(*(_DWORD **)&DataGlobal_87F8E4[31296], v10, (IUnknown *)(this + 216)); /*0x71d0b8*/
-  v11 = *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[31296] + 180) + this->q0DC; /*0x71d0d6*/
+  int v11 = *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[31296] + 180) + this->q0DC; /*0x71d0d6*/
   this->q0D8 += *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[31296] + 176); /*0x71d0dd*/
   this->q0DC = v11; /*0x71d0df*/
   if ( *((_DWORD *)Coord::To_Cell(&DataGlobal_87F7E8, v3) + 17) != -1 ) /*0x71d0ef*/

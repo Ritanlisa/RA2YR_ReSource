@@ -6,18 +6,13 @@
 bool Type::CheckAmbiguity(int a2, char a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall Type_CheckAmbiguity(_DWORD *this, int a2, char a3)
+void Type_CheckAmbiguity(_DWORD *this, int a2, char a3)
 {
-  int v3; // edx
-  int v4; // esi
-  int v5; // edi
-  int v6; // eax
-  int v7; // esi
   bool result; // al
 
-  v3 = *(__int16 *)(a2 + 38); /*0x57854a*/
-  v4 = 0; /*0x57854f*/
-  v5 = *(__int16 *)(a2 + 36); /*0x578552*/
+  int v3 = *(__int16 *)(a2 + 38); /*0x57854a*/
+  int v4 = 0; /*0x57854f*/
+  int v5 = *(__int16 *)(a2 + 36); /*0x578552*/
   if ( a3 ) /*0x578558*/
   {
     v4 = *(char *)(a2 + 283); /*0x578560*/
@@ -27,11 +22,11 @@ bool __thiscall Type_CheckAmbiguity(_DWORD *this, int a2, char a3)
         ++v4; /*0x578584*/
     }
   }
-  v6 = this->q0F4; /*0x57858b*/
+  int v6 = this->q0F4; /*0x57858b*/
   result = 0; /*0x5785e9*/
   if ( v3 + v5 > v4 + v6 + 2 * this->q100 && v3 + v5 <= v4 + v6 + 2 * (this->q100 + this->q108) + 2 ) /*0x5785b6*/
   {
-    v7 = this->q0FC; /*0x5785b8*/
+    int v7 = this->q0FC; /*0x5785b8*/
     if ( v5 - v3 < 2 * (v7 + this->q104) - v6 && v3 - v5 < v6 - 2 * v7 ) /*0x5785db*/
       return 1; /*0x57859b*/
   }

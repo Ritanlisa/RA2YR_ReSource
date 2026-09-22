@@ -1490,7 +1490,9 @@ def tool_canon_regen(async_mode=False):
         return {"ok": True, "job_id": jid, "note": "poll with job_status"}
     stages = []
     for script in ("gen_cpp_canon.py", "rewrite_member_refs.py",
-                   "backfill_completed.py", "rewrite_pending_blocks.py"):
+                   "backfill_completed.py", "rewrite_pending_blocks.py",
+                   "normalize_blocks.py", "lower_temp_decls.py",
+                   "fix_addr_violations.py"):
         proc = subprocess.run(
             [sys.executable, str(CSP_EXPORT / script)],
             capture_output=True, text=True, encoding="utf-8",
@@ -2380,7 +2382,7 @@ TOOLS = [
                      "properties": {"target": {"type": "string"}},
                      "required": ["target"]}},
     {"name": "canon_regen",
-     "description": "改名/补锚后重生成机械地基：gen_cpp_canon -> rewrite_member_refs -> backfill_completed -> rewrite_pending_blocks（树内 pending 块就地成员化，Step 4 合同）四段顺序执行（确定性、可重跑），返回逐段摘要。",
+     "description": "改名/补锚后重生成机械地基：canon 表 -> 成员引用改写 -> 回填 -> pending 块成员化 -> 块规范化(签名/类型/偏移) -> 声明前置 -> addr+int/MEMORY 清零，七段顺序执行（确定性、可重跑），返回逐段摘要。",
      "inputSchema": {"type": "object", "properties": {}, "required": []}},
     {"name": "csp_anchor",
      "description": "对未锚定函数地址跑 CSP 增量求解器（tools.type_infer.incremental），返回逐地址锚定状态。补 downgrade/no-cls 签名缺口的主通道。",

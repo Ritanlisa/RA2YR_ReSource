@@ -9,9 +9,8 @@ namespace gamemd {
 int CampaignClass::CampaignClass(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall CampaignClass::CampaignClass(int this, ObjectClass *aP1)
+C CampaignClass::CampaignClass(int this, ObjectClass *aP1)
 {
-  int v3; // eax
 
   AbstractTypeClass::Constructor(this, (AbstractClass *)aP1); /*0x46cb68*/
   *(_DWORD *)this = &CampaignClass::`vftable'; /*0x46cb70*/
@@ -28,7 +27,7 @@ int __thiscall CampaignClass::CampaignClass(int this, ObjectClass *aP1)
          dword_A83D00 + dword_A83D0C,
          0) )
   {
-    v3 = g_UnitTypeInitState++; /*0x46cbd9*/
+    int v3 = g_UnitTypeInitState++; /*0x46cbd9*/
     *(_DWORD *)&g_CampaignTypeArray->__pad_0[4 * v3] = this; /*0x46cbe8*/
   }
   this->q09C = 0; /*0x46cbf7*/
@@ -43,14 +42,12 @@ namespace gamemd {
 int CampaignClass::LoadFromINIList()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall CampaignClass::LoadFromINIList(char *this)
+void CampaignClass::LoadFromINIList()
 {
   int result; // eax
   CCINIClass *v3; // ebp
   unsigned __int8 *StringByIndex; // eax
-  int v5; // esi
   INIClass *v6; // esi
-  int v7; // eax
   int i; // [esp+8h] [ebp-24h]
   _BYTE Source[32]; // [esp+Ch] [ebp-20h] BYREF
 
@@ -66,7 +63,7 @@ int __thiscall CampaignClass::LoadFromINIList(char *this)
       (INIClass *)&DataGlobal_87F8E4[42624],
       (INIClass *)Source,
       32);
-    v5 = 0; /*0x46ce5f*/
+    int v5 = 0; /*0x46ce5f*/
     if ( g_UnitTypeInitState <= 0 ) /*0x46ce63*/
       goto LABEL_7; /*0x46ce63*/
     while ( _strcmpi((char *)(*(_DWORD *)&g_CampaignTypeArray->__pad_0[4 * v5] + 36), Source) ) /*0x46ce81*/
@@ -95,7 +92,7 @@ LABEL_7:
                dword_A83D00 + dword_A83D0C,
                0) )
         {
-          v7 = g_UnitTypeInitState++; /*0x46cf25*/
+          int v7 = g_UnitTypeInitState++; /*0x46cf25*/
           *(_DWORD *)&g_CampaignTypeArray->__pad_0[4 * v7] = v6; /*0x46cf34*/
         }
         LOBYTE(v6[2].sectionCount) = 0; /*0x46cf43*/
@@ -122,75 +119,50 @@ namespace gamemd {
 char CampaignClass::SaveProgress()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall CampaignClass_SaveProgress(char *this)
+void CampaignClass_SaveProgress(char *this)
 {
-  char *v2; // ebx
-  int v3; // esi
-  int v5; // esi
-  char *v6; // edi
-  int v7; // esi
-  int v8; // eax
-  char v9; // al
   unsigned __int8 v10; // al
-  char v11; // al
-  char v12; // al
-  char *v13; // edi
-  int v14; // esi
   char i; // al
-  int v16; // esi
-  int v17; // eax
-  char v18; // al
   int j; // esi
-  int v20; // ecx
   void *PlayerSide; // eax
   int PlayerColor; // eax
-  int v23; // esi
-  _DWORD *v24; // eax
-  void *v25; // eax
-  int v26; // eax
-  int v27; // [esp+10h] [ebp-1B8h]
-  void *v28[3]; // [esp+14h] [ebp-1B4h] BYREF
-  int v29[7]; // [esp+20h] [ebp-1A8h] BYREF
-  _DWORD v30[6]; // [esp+3Ch] [ebp-18Ch] BYREF
-  char v31; // [esp+54h] [ebp-174h]
   char Block[100]; // [esp+6Ch] [ebp-15Ch] BYREF
-  _DWORD v33[22]; // [esp+D0h] [ebp-F8h] BYREF
-  char v34[12]; // [esp+128h] [ebp-A0h] BYREF
-  int v35; // [esp+134h] [ebp-94h]
-  _DWORD v36[22]; // [esp+13Ch] [ebp-8Ch] BYREF
-  char v37[12]; // [esp+194h] [ebp-34h] BYREF
-  int v38; // [esp+1A0h] [ebp-28h]
   char Buffer[32]; // [esp+1A8h] [ebp-20h] BYREF
 
   if ( !this->q06C ) /*0x49c5ac*/
     return 0; /*0x49c5ac*/
   if ( !*this ) /*0x49c5b7*/
     return 0; /*0x49c5b7*/
-  v2 = this + 28; /*0x49c5c4*/
+  char * v2 = this + 28; /*0x49c5c4*/
   if ( !this->referenceCount ) /*0x49c5c1*/
     return 0; /*0x49c5c1*/
-  v3 = this->alignmentPadding_3; /*0x49c5d4*/
+  int v3 = this->alignmentPadding_3; /*0x49c5d4*/
   if ( !DataGlobal_89F578 ) /*0x49c5d9*/
     CampaignClass::LoadFromINI((int)&g_DDrawSurfaceManager); /*0x49c5e0*/
   if ( v3 < 0 || v3 >= DataGlobal_89F574 ) /*0x49c5f5*/
     return 0; /*0x49cae5*/
-  v27 = DataGlobal_89F570 + 76 * v3; /*0x49c60d*/
+  int v27 = DataGlobal_89F570 + 76 * v3; /*0x49c60d*/
   if ( this->uniqueId == this->q038 ) /*0x49c616*/
     return 1; /*0x49c61b*/
+  _DWORD v36[22]; // [esp+13Ch] [ebp-8Ch] BYREF
   CCFileClass::Construct(v36, g_Str_File_coopsave_ini); /*0x49c631*/
+  void *v28[3]; // [esp+14h] [ebp-1B4h] BYREF
   v28[1] = 0; /*0x49c63a*/
   v28[2] = 0; /*0x49c63e*/
+  int v29[7]; // [esp+20h] [ebp-1A8h] BYREF
   INISectionList::Constructor(v29); /*0x49c642*/
+  _DWORD v30[6]; // [esp+3Ch] [ebp-18Ch] BYREF
   Node::Init(v30); /*0x49c64b*/
   v30[5] = 0; /*0x49c65e*/
-  v31 = 0; /*0x49c662*/
+  char v31 = 0; /*0x49c662*/
   v28[0] = &CCINIClass_Vtable; /*0x49c667*/
   CCINIClass::Load(v28, (int)v36, 0, 0); /*0x49c66f*/
   CCFileClass::Reset(v36); /*0x49c67b*/
-  v5 = 0; /*0x49c683*/
-  v6 = this; /*0x49c687*/
+  int v5 = 0; /*0x49c683*/
+  CampaignClass *v6 = this; /*0x49c687*/
   if ( *this )
   {
+  char v12; // al
     do
     {
       if ( v5 >= 1021 ) /*0x49c695*/
@@ -202,10 +174,10 @@ char __thiscall CampaignClass_SaveProgress(char *this)
       else
       {
         g_IsWindowed[v5] = 61; /*0x49c6a7*/
-        v7 = v5 + 1; /*0x49c6ae*/
-        v8 = *v6 >> 4; /*0x49c6b2*/
+        int v7 = v5 + 1; /*0x49c6ae*/
+        int v8 = *v6 >> 4; /*0x49c6b2*/
         if ( (unsigned int)v8 >= 0x10 )
-          v9 = 0; /*0x49c6c9*/
+          char v9 = 0; /*0x49c6c9*/
         else
           v9 = v8 >= 10 ? v8 + 55 : v8 + 48;
         g_IsWindowed[v7] = v9; /*0x49c6cb*/
@@ -217,7 +189,7 @@ char __thiscall CampaignClass_SaveProgress(char *this)
         }
         else
         {
-          v11 = (*v6 & 0xFu) >= 0xA ? v10 + 55 : v10 + 48;
+          char v11 = (*v6 & 0xFu) >= 0xA ? v10 + 55 : v10 + 48;
           g_IsWindowed[v5] = v11; /*0x49c6e5*/
         }
       }
@@ -229,8 +201,8 @@ char __thiscall CampaignClass_SaveProgress(char *this)
   }
   g_IsWindowed[v5] = 0; /*0x49c720*/
   strcpy(Block, g_IsWindowed); /*0x49c73a*/
-  v13 = this + 28; /*0x49c743*/
-  v14 = 0; /*0x49c745*/
+  char * v13 = this + 28; /*0x49c743*/
+  int v14 = 0; /*0x49c745*/
   for ( i = *v2; i; ++v13 )
   {
     if ( v14 >= 1021 ) /*0x49c753*/
@@ -242,10 +214,10 @@ char __thiscall CampaignClass_SaveProgress(char *this)
     else
     {
       g_IsWindowed[v14] = 61; /*0x49c765*/
-      v16 = v14 + 1; /*0x49c76c*/
-      v17 = *v13 >> 4; /*0x49c770*/
+      int v16 = v14 + 1; /*0x49c76c*/
+      int v17 = *v13 >> 4; /*0x49c770*/
       if ( (unsigned int)v17 >= 0x10 )
-        v18 = 0; /*0x49c787*/
+        char v18 = 0; /*0x49c787*/
       else
         v18 = v17 >= 10 ? v17 + 55 : v17 + 48;
       g_IsWindowed[v16] = v18; /*0x49c789*/
@@ -257,6 +229,7 @@ char __thiscall CampaignClass_SaveProgress(char *this)
   }
   g_IsWindowed[v14] = 0; /*0x49c7bd*/
   strcat(Block, g_IsWindowed); /*0x49c7df*/
+  _DWORD v33[22]; // [esp+D0h] [ebp-F8h] BYREF
   CCFileClass::Construct3((int)v33); /*0x49c7ef*/
   (*(void (__thiscall **)(_DWORD *, char *))(v33[0] + 8))(v33, g_Str_File_coopsave_ini); /*0x49c807*/
   (*(void (__thiscall **)(_DWORD *, int))(v33[0] + 28))(v33, 2); /*0x49c81a*/
@@ -269,7 +242,7 @@ char __thiscall CampaignClass_SaveProgress(char *this)
   {
     sprintf(Buffer, g_Str_Trace_Map_d, j + 1); /*0x49c87d*/
   }
-  v20 = Game_PlayerCount; /*0x49c8ac*/
+  int v20 = Game_PlayerCount; /*0x49c8ac*/
   if ( Game_PlayerCount ) /*0x49c8b4*/
   {
     PlayerSide = (void *)SessionClass::GetPlayerSide(*(_DWORD *)Game_PlayerInfoArray); /*0x49c8be*/
@@ -278,10 +251,10 @@ char __thiscall CampaignClass_SaveProgress(char *this)
     INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, unk_81F174, PlayerColor, 0); /*0x49c8f5*/
     v20 = Game_PlayerCount; /*0x49c8fa*/
   }
-  v23 = 1; /*0x49c900*/
+  int v23 = 1; /*0x49c900*/
   if ( v20 > 1 ) /*0x49c907*/
   {
-    v24 = &DataGlobal_A8B2A0; /*0x49c909*/
+    _DWORD * v24 = &DataGlobal_A8B2A0; /*0x49c909*/
     while ( *v24 != -1 ) /*0x49c911*/
     {
       ++v23; /*0x49c913*/
@@ -289,9 +262,9 @@ char __thiscall CampaignClass_SaveProgress(char *this)
       if ( v23 >= v20 ) /*0x49c919*/
         goto LABEL_47; /*0x49c919*/
     }
-    v25 = (void *)SessionClass::GetPlayerSide(*(_DWORD *)(Game_PlayerInfoArray + 4 * v23)); /*0x49c925*/
+    void * v25 = (void *)SessionClass::GetPlayerSide(*(_DWORD *)(Game_PlayerInfoArray + 4 * v23)); /*0x49c925*/
     INIClass::SetHouseName((char *)v28, (unsigned __int8 *)Block, unk_81F16C, v25); /*0x49c939*/
-    v26 = SessionClass::GetPlayerColor(*(_DWORD *)(Game_PlayerInfoArray + 4 * v23)); /*0x49c949*/
+    int v26 = SessionClass::GetPlayerColor(*(_DWORD *)(Game_PlayerInfoArray + 4 * v23)); /*0x49c949*/
     INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, unk_81F164, v26, 0); /*0x49c95d*/
   }
 LABEL_47:
@@ -307,13 +280,15 @@ LABEL_47:
   INIClass::WriteDigest(v28, (int)v33, 0); /*0x49ca51*/
   CCFileClass::Reset(v33); /*0x49ca5d*/
   v33[0] = &vt_CCFileClass; /*0x49ca67*/
-  v35 = 0; /*0x49ca77*/
+  int v35 = 0; /*0x49ca77*/
+  char v34[12]; // [esp+128h] [ebp-A0h] BYREF
   Vector::Clear((int)v34); /*0x49ca7e*/
   v33[0] = &off_7E1668; /*0x49ca8f*/
   BufferIOFileClass::Dtor(v33); /*0x49ca96*/
   HashTable::DestroyHashTableINIClass(v28); /*0x49ca9f*/
   v36[0] = &vt_CCFileClass; /*0x49caab*/
-  v38 = 0; /*0x49cab2*/
+  int v38 = 0; /*0x49cab2*/
+  char v37[12]; // [esp+194h] [ebp-34h] BYREF
   Vector::Clear((int)v37); /*0x49cab9*/
   v36[0] = &off_7E1668; /*0x49cac5*/
   BufferIOFileClass::Dtor(v36); /*0x49cacc*/

@@ -19,39 +19,29 @@ CheckListClass *__userpurge CheckListClass::OnClick@<eax>(
         int a8)
 {
   CheckListClass *result; // eax
-  int v10; // edi
   wchar_t *Type; // ebx
-  int v12; // ecx
-  int v13; // eax
-  int v14; // eax
-  int v15; // eax
-  int v16; // [esp-20h] [ebp-114h]
   size_t v17; // [esp-10h] [ebp-104h]
-  int v18; // [esp-10h] [ebp-104h]
-  _DWORD v19[4]; // [esp+4h] [ebp-F0h] BYREF
-  int v20[2]; // [esp+14h] [ebp-E0h] BYREF
-  _BYTE v21[16]; // [esp+1Ch] [ebp-D8h] BYREF
-  _WORD v22[100]; // [esp+2Ch] [ebp-C8h] BYREF
-
   result = (CheckListClass *)(*(int (__thiscall **)(_DWORD *))(*a1 + 148))(a1); /*0x48852b*/
   if ( (int)aP1 < (int)result )
   {
     result = (CheckListClass *)Array::GetClamped(a1, aP1); /*0x488543*/
     if ( result )
     {
+  _DWORD v19[4]; // [esp+4h] [ebp-F0h] BYREF
+  _WORD v22[100]; // [esp+2Ch] [ebp-C8h] BYREF
       memset(&v22[1], 0, 198); /*0x488560*/
       v17 = *(_DWORD *)result->__pad_0; /*0x48856b*/
       v22[0] = LOBYTE(result->CheckListClass_field_0x04) != 0 ? 3 : 32;
       v22[1] = 32; /*0x48857e*/
       swprintf(&v22[2], v17, a2, a3); /*0x488585*/
-      v10 = a1[11]; /*0x48858a*/
+      int v10 = a1[11]; /*0x48858a*/
       Type = (wchar_t *)BuildingAnim::GetType(); /*0x48859c*/
       if ( a8 ) /*0x4885a7*/
       {
         v10 |= 0x2000u; /*0x4885b4*/
-        v12 = *(_DWORD *)(*(_DWORD *)(stru_B05488.field_4C + 4 * (_DWORD)Type) + 796); /*0x4885bd*/
+        int v12 = *(_DWORD *)(*(_DWORD *)(stru_B05488.field_4C + 4 * (_DWORD)Type) + 796); /*0x4885bd*/
         if ( *(_DWORD *)(*(_DWORD *)&stru_87C374[13136] + 4) == 1 ) /*0x4885c9*/
-          v13 = *(unsigned __int8 *)(*(_DWORD *)(*(_DWORD *)&stru_87C374[13136] + 372) + v12); /*0x4885d6*/
+          int v13 = *(unsigned __int8 *)(*(_DWORD *)(*(_DWORD *)&stru_87C374[13136] + 372) + v12); /*0x4885d6*/
         else
           v13 = *(unsigned __int16 *)(*(_DWORD *)(*(_DWORD *)&stru_87C374[13136] + 372) + 2 * v12); /*0x4885e2*/
         v19[0] = a5; /*0x4885f4*/
@@ -67,13 +57,16 @@ CheckListClass *__userpurge CheckListClass::OnClick@<eax>(
       {
         v10 |= 0x1000u; /*0x488622*/
       }
-      v14 = a1[12]; /*0x48862f*/
+      int v14 = a1[12]; /*0x48862f*/
+  int v20[2]; // [esp+14h] [ebp-E0h] BYREF
       v20[0] = a5; /*0x488639*/
-      v18 = v14; /*0x488643*/
+      int v18 = v14; /*0x488643*/
       v20[1] = a6; /*0x488644*/
-      v16 = *(_DWORD *)(stru_B05488.field_4C + 4 * (_DWORD)Type); /*0x488659*/
+      int v16 = *(_DWORD *)(stru_B05488.field_4C + 4 * (_DWORD)Type); /*0x488659*/
+  int v15; // eax
       v15 = (*(int (__thiscall **)(_DWORD, _BYTE *))(**(_DWORD **)&stru_87C374[44960] + 120))( /*0x488662*/
               *(_DWORD *)&stru_87C374[44960],
+  _BYTE v21[16]; // [esp+1Ch] [ebp-D8h] BYREF
               v21);
       return (CheckListClass *)FillRectangle( /*0x488675*/
                                  (IUnknown *)v19,
@@ -97,7 +90,7 @@ CheckListClass *__userpurge CheckListClass::OnClick@<eax>(
 int CheckListClass::COMStub()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall CheckListClass::_vt37(_DWORD *this)
+void CheckListClass::_vt37()
 {
   return this->q044; /*0x4886b3*/
 }

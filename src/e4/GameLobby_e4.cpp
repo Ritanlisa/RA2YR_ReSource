@@ -10,13 +10,13 @@ char GameLobby_Setup(HWND hDlg, void * a2)
 char __fastcall GameLobby_Setup(HWND hDlg, void *a2)
 {
   int i; // esi
-  int v4; // eax
   HWND DlgItem; // eax
   int v6; // eax
   HWND v7; // eax
 
   for ( i = 0; i < 8; ++i )
   {
+  int v4; // eax
     if ( i )
     {
       switch ( i )

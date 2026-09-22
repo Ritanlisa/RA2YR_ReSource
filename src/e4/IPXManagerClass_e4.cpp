@@ -6,12 +6,11 @@
 int IPXManagerClass::sendPacket(int a2, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall IPXManagerClass::_vt18(_DWORD *this, int a2, int a3, int a4)
+void IPXManagerClass::_vt18(int a2, int a3, int a4)
 {
-  int v4; // eax
   int result; // eax
 
-  v4 = this->q04C; /*0x540d80*/
+  int v4 = this->q04C; /*0x540d80*/
   if ( v4 ) /*0x540d93*/
   {
     *(_DWORD *)(v4 + 40) = a2; /*0x540d95*/
@@ -34,13 +33,12 @@ int __thiscall IPXManagerClass::_vt18(_DWORD *this, int a2, int a3, int a4)
 int IPXManagerClass::send(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall IPXManagerClass::_vt06(int *this, int a2)
+void IPXManagerClass::_vt06(int a2)
 {
-  int v2; // edx
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = this->connCount; /*0x541040*/
+  int v2 = this->connCount; /*0x541040*/
   result = 0; /*0x541043*/
   if ( v2 <= 0 ) /*0x541049*/
     return -1; /*0x541061*/
@@ -57,13 +55,11 @@ int __thiscall IPXManagerClass::_vt06(int *this, int a2)
 int IPXManagerClass::receivePacket(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall IPXManagerClass::_vt19(_DWORD *this, int a2)
+void IPXManagerClass::_vt19(int a2)
 {
-  int v2; // edx
   int result; // eax
-  _DWORD *v4; // esi
 
-  v2 = this->connCount; /*0x541070*/
+  int v2 = this->connCount; /*0x541070*/
   result = 0; /*0x541074*/
   if ( v2 <= 0 ) /*0x54107d*/
   {
@@ -83,7 +79,7 @@ LABEL_5:
   }
   else
   {
-    v4 = this + 10; /*0x54107f*/
+    _DWORD * v4 = this + 10; /*0x54107f*/
     while ( *v4 != a2 ) /*0x541084*/
     {
       ++result; /*0x541086*/

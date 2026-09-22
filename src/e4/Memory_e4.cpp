@@ -29,17 +29,11 @@ size_t Memory_Helper_6149B0(HWND hWnd, WCHAR * a2, int cchWideChar, size_t * a4)
 size_t __fastcall Memory_Helper_6149B0(HWND hWnd, WCHAR *a2, int cchWideChar, size_t *a4)
 {
   LRESULT (__stdcall *v4)(HWND, UINT, WPARAM, LPARAM); // ebx
-  int v5; // eax
-  int v6; // eax
   LRESULT (__stdcall **v7)(HWND, UINT, WPARAM, LPARAM); // eax
   size_t v8; // esi
   const wchar_t *v9; // ebx
-  signed int v10; // ebp
-  void *v11; // ebx
-  int v12; // esi
   LPWSTR v13; // edx
   WCHAR *v14; // ecx
-  signed int v15; // edi
   WCHAR v16; // ax
   const wchar_t *v17; // esi
   WCHAR *v19; // [esp-8h] [ebp-428h]
@@ -54,9 +48,9 @@ size_t __fastcall Memory_Helper_6149B0(HWND hWnd, WCHAR *a2, int cchWideChar, si
   hWnda = hWnd; /*0x6149c7*/
   if ( g_DialogHashMap_Grow ) /*0x6149cb*/
   {
-    v5 = g_DialogHashMap_Insert(&hWnda); /*0x6149d1*/
+    int v5 = g_DialogHashMap_Insert(&hWnda); /*0x6149d1*/
     hWnd = hWnda; /*0x6149e4*/
-    v6 = *((_DWORD *)g_DialogHashMap_Entries + (v5 & ((1 << g_DialogHashMap_Insert) - 1))); /*0x6149f0*/
+    int v6 = *((_DWORD *)g_DialogHashMap_Entries + (v5 & ((1 << g_DialogHashMap_Insert) - 1))); /*0x6149f0*/
     if ( v6 ) /*0x6149f5*/
     {
       while ( *(HWND *)v6 != hWnda ) /*0x6149f9*/
@@ -84,15 +78,15 @@ LABEL_8:
     *a4 = _mbsnccnt((const unsigned __int8 *)lParam, v8); /*0x614a8a*/
   if ( cchWideChar > 0 ) /*0x614a8e*/
     v9[cchWideChar - 1] = 0; /*0x614a90*/
-  v10 = wcslen(v9); /*0x614a9d*/
-  v11 = __2_YAPAXI_Z(2 * v10 + 6); /*0x614aab*/
+  signed int v10 = wcslen(v9); /*0x614a9d*/
+  void * v11 = __2_YAPAXI_Z(2 * v10 + 6); /*0x614aab*/
   memset(v11, 0, 2 * v10 + 6); /*0x614ab9*/
-  v12 = 0; /*0x614abd*/
+  int v12 = 0; /*0x614abd*/
   if ( v10 > 0 ) /*0x614ac6*/
   {
     v13 = lpWideCharStr; /*0x614ac8*/
     v14 = (WCHAR *)v11; /*0x614acc*/
-    v15 = v10; /*0x614ace*/
+    signed int v15 = v10; /*0x614ace*/
     do /*0x614aea*/
     {
       v16 = *v13; /*0x614ad0*/

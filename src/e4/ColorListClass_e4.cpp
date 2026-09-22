@@ -6,11 +6,10 @@
 int ColorListClass::SetColor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ColorListClass::_vt39(_DWORD *this)
+void ColorListClass::_vt39()
 {
-  int v1; // eax
 
-  v1 = this->q16C; /*0x557ae0*/
+  int v1 = this->q16C; /*0x557ae0*/
   if ( this->q044 > v1 ) /*0x557aeb*/
     return *(_DWORD *)(this->q038 + 4 * v1); /*0x557af3*/
   else
@@ -22,10 +21,9 @@ int __thiscall ColorListClass::_vt39(_DWORD *this)
 int ColorListClass::Clear(unsigned int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ColorListClass::_vt46(int *this, unsigned int a2)
+void ColorListClass::_vt46(unsigned int a2)
 {
   int result; // eax
-  int v4; // ecx
 
   result = a2; /*0x557f40*/
   if ( a2 >= this->q044 ) /*0x557f4a*/
@@ -38,7 +36,7 @@ int __thiscall ColorListClass::_vt46(int *this, unsigned int a2)
     (*(void (__thiscall **)(int *))(*this + 72))(this); /*0x557f56*/
     if ( this->q05B < this->q170 ) /*0x557f67*/
       (*(void (__thiscall **)(int *, _DWORD))(*this + 192))(this, this->q05B); /*0x557f6e*/
-    v4 = this->q014; /*0x557f74*/
+    int v4 = this->q014; /*0x557f74*/
     result = this->q05B; /*0x557f7d*/
     if ( result >= v4 + this->q170 ) /*0x557f87*/
       return (*(int (__thiscall **)(int *, int))(*this + 192))(this, result - v4 + 1); /*0x557f91*/
@@ -51,13 +49,12 @@ int __thiscall ColorListClass::_vt46(int *this, unsigned int a2)
 void ColorListClass::RemoveColor(wchar_t * String2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall ColorListClass::_vt45(_DWORD *this, wchar_t *String2)
+void ColorListClass::_vt45(wchar_t *String2)
 {
-  int v3; // esi
 
   if ( String2 && (int)this->q044 > 0 ) /*0x558022*/
   {
-    v3 = 0; /*0x558024*/
+    int v3 = 0; /*0x558024*/
     while ( _wcsicmp(*(const wchar_t **)(this->q038 + 4 * v3), String2) ) /*0x55803c*/
     {
       if ( ++v3 >= this->q044 ) /*0x558044*/

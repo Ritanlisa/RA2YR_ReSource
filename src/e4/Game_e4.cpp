@@ -19,19 +19,17 @@ namespace gamemd {
 void Game::initScenario()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_430980(void **this)
+void sub_430980(void **this)
 {
   void **v2; // esi
-  int v3; // ebx
-  int v4; // edi
 
   if ( this->q180 ) /*0x430983*/
   {
     v2 = this; /*0x43098d*/
-    v3 = 8; /*0x43098f*/
+    int v3 = 8; /*0x43098f*/
     do /*0x4309b5*/
     {
-      v4 = 3; /*0x430994*/
+      int v4 = 3; /*0x430994*/
       do /*0x4309b2*/
       {
         if ( *v2 ) /*0x430999*/
@@ -61,21 +59,12 @@ int Game_SendCampaignOptions()
 {
   int result; // eax
   int i; // esi
-  int v2; // ecx
   int Option; // eax
-  int v4; // ecx
   int PlayerSide; // eax
-  int v6; // ecx
-  char *v7; // eax
-  int v8; // ecx
-  int v9; // edx
-  int v10; // eax
-  int v11; // eax
   wchar_t **v12; // esi
-  int v13; // [esp+8h] [ebp-1C8h] BYREF
-  char v14[452]; // [esp+Ch] [ebp-1C4h] BYREF
 
-  v13 = 50; /*0x46d4bc*/
+  int v13 = 50; /*0x46d4bc*/
+  char v14[452]; // [esp+Ch] [ebp-1C4h] BYREF
   strcpy(v14, g_GameSetupBuffer); /*0x46d4cd*/
   result = Settings::CheckString(); /*0x46d4d6*/
   if ( (_BYTE)result )
@@ -84,7 +73,7 @@ int Game_SendCampaignOptions()
     v14[43] = DataGlobal_A8EB68; /*0x46d4f6*/
     for ( i = 0; i < 8; ++i )
     {
-      v2 = *(&g_NetworkPlayerName + i); /*0x46d4fc*/
+      int v2 = *(&g_NetworkPlayerName + i); /*0x46d4fc*/
       if ( !v2 || v2 == g_HouseClass_ObserverFlags || v2 == g_Lobby_PlayerCount ) /*0x46d515*/
       {
         *(_DWORD *)&v14[4 * i + 44] = -1; /*0x46d542*/
@@ -94,14 +83,14 @@ int Game_SendCampaignOptions()
       else
       {
         Option = SessionClass::GetOption(v2); /*0x46d517*/
-        v4 = *(&g_NetworkPlayerName + i); /*0x46d51c*/
+        int v4 = *(&g_NetworkPlayerName + i); /*0x46d51c*/
         *(_DWORD *)&v14[4 * i + 44] = Option; /*0x46d523*/
         PlayerSide = SessionClass::GetPlayerSide(v4); /*0x46d527*/
-        v6 = *(&g_NetworkPlayerName + i); /*0x46d52c*/
+        int v6 = *(&g_NetworkPlayerName + i); /*0x46d52c*/
         *(_DWORD *)&v14[4 * i + 76] = PlayerSide; /*0x46d533*/
         *(_DWORD *)&v14[4 * i + 108] = SessionClass::GetPlayerColor(v6); /*0x46d53c*/
       }
-      v7 = ToWideStringChar((char *)*(&g_NetworkPlayerName + i)); /*0x46d561*/
+      char * v7 = ToWideStringChar((char *)*(&g_NetworkPlayerName + i)); /*0x46d561*/
       Debug::Log(
         "Player %i %s: Start %i, Country %i, Color %i\n",
         i,
@@ -109,14 +98,14 @@ int Game_SendCampaignOptions()
         *(_DWORD *)&v14[4 * i + 44],
         *(_DWORD *)&v14[4 * i + 76],
         *(_DWORD *)&v14[4 * i + 108]);
-      v8 = g_CampaignConfig[i]; /*0x46d588*/
-      v9 = DataGlobal_A8B27C[i]; /*0x46d58f*/
+      int v8 = g_CampaignConfig[i]; /*0x46d588*/
+      int v9 = DataGlobal_A8B27C[i]; /*0x46d58f*/
       *(_DWORD *)&v14[4 * i + 140] = g_CampaignPlayerArray[i]; /*0x46d596*/
-      v10 = g_CampaignSideIndex[i]; /*0x46d59d*/
+      int v10 = g_CampaignSideIndex[i]; /*0x46d59d*/
       *(_DWORD *)&v14[4 * i + 172] = v8; /*0x46d5a4*/
       *(_DWORD *)&v14[4 * i + 204] = v9; /*0x46d5ab*/
       *(_DWORD *)&v14[4 * i + 236] = v10; /*0x46d5b2*/
-      v11 = g_CampaignFactionSlot[i]; /*0x46d5b9*/
+      int v11 = g_CampaignFactionSlot[i]; /*0x46d5b9*/
       *(_DWORD *)&v14[4 * i + 268] = v11; /*0x46d5c0*/
       result = Debug::Log(
                  "AI %i: Difficulty %i, Country %i, Color %i, Start %i, Ally %i\n",
@@ -153,11 +142,9 @@ namespace gamemd {
 int Game::DestroyAllObjects()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_534450()
+void sub_534450()
 {
   size_t i; // eax
-  int v1; // ecx
-  void *v2; // esi
 
   ++g_IKnowWhatImDoing; /*0x53445f*/
   DataGlobal_B0F6A8 = 0; /*0x534465*/
@@ -171,7 +158,7 @@ int sub_534450()
       g_BuildingLoadQueue_Active = 0; /*0x53449c*/
       g_BuildingLoadQueue_Dirty = 1; /*0x5344a2*/
     }
-    v1 = *((_DWORD *)g_BuildingLoadQueue_Array + 1); /*0x5344af*/
+    int v1 = *((_DWORD *)g_BuildingLoadQueue_Array + 1); /*0x5344af*/
     if ( v1 ) /*0x5344b4*/
       (*(void (__thiscall **)(int, int))(*(_DWORD *)v1 + 32))(v1, 1); /*0x5344ba*/
   }
@@ -325,7 +312,7 @@ int sub_534450()
   ProcessExpiredPointers(); /*0x534892*/
   while ( DataGlobal_AC1688 ) /*0x53489d*/
   {
-    v2 = *(void **)DataGlobal_AC167C; /*0x5348a5*/
+    void * v2 = *(void **)DataGlobal_AC167C; /*0x5348a5*/
     if ( *(_DWORD *)DataGlobal_AC167C ) /*0x5348a5*/
     {
       BuildingLightQueue::RemoveEntry(*(_DWORD *)DataGlobal_AC167C); /*0x5348ad*/
@@ -376,29 +363,13 @@ namespace gamemd {
 int Game::MakeScreenshot(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall Game::MakeScreenshot(int a1)
+void Game::MakeScreenshot(int a1)
 {
   int result; // eax
-  int v2; // eax
-  int v3; // eax
-  int v4; // esi
-  int v5; // eax
-  int v6; // esi
-  _DWORD *v7; // eax
-  char v8; // bl
   struct tagPOINT Point; // [esp+4h] [ebp-198h] BYREF
   struct tagPOINT v10; // [esp+Ch] [ebp-190h] BYREF
-  int v11; // [esp+14h] [ebp-188h]
-  int v12; // [esp+18h] [ebp-184h]
   struct tagRECT Rect; // [esp+1Ch] [ebp-180h] BYREF
   struct tagPOINT v14; // [esp+2Ch] [ebp-170h] BYREF
-  _DWORD v15[4]; // [esp+34h] [ebp-168h] BYREF
-  int v16[22]; // [esp+44h] [ebp-158h] BYREF
-  _BYTE v17[12]; // [esp+9Ch] [ebp-100h] BYREF
-  int v18; // [esp+A8h] [ebp-F4h]
-  _DWORD v19[22]; // [esp+B0h] [ebp-ECh] BYREF
-  _BYTE v20[12]; // [esp+108h] [ebp-94h] BYREF
-  int v21; // [esp+114h] [ebp-88h]
   char Buffer[128]; // [esp+11Ch] [ebp-80h] BYREF
 
   result = GetClientRect(g_hWnd, &Rect); /*0x537bd3*/
@@ -413,18 +384,20 @@ int __stdcall Game::MakeScreenshot(int a1)
       result = ClientToScreen(g_hWnd, &v14); /*0x537c28*/
       if ( result ) /*0x537c2c*/
       {
+  char v8; // bl
         v10 = Point; /*0x537c3e*/
-        v12 = Rect.bottom + 1; /*0x537c4c*/
-        v11 = Rect.right + 1; /*0x537c56*/
-        v2 = (*(int (__thiscall **)(int))(*(_DWORD *)g_DSurface_Hidden + 124))(g_DSurface_Hidden); /*0x537c5c*/
+        int v12 = Rect.bottom + 1; /*0x537c4c*/
+        int v11 = Rect.right + 1; /*0x537c56*/
+        int v2 = (*(int (__thiscall **)(int))(*(_DWORD *)g_DSurface_Hidden + 124))(g_DSurface_Hidden); /*0x537c5c*/
         if ( v11 >= v2 ) /*0x537c63*/
           v11 = (*(int (__thiscall **)(int))(*(_DWORD *)g_DSurface_Hidden + 124))(g_DSurface_Hidden); /*0x537c70*/
-        v3 = (*(int (__thiscall **)(int))(*(_DWORD *)g_DSurface_Hidden + 128))(g_DSurface_Hidden); /*0x537c7c*/
+        int v3 = (*(int (__thiscall **)(int))(*(_DWORD *)g_DSurface_Hidden + 128))(g_DSurface_Hidden); /*0x537c7c*/
         if ( v12 >= v3 ) /*0x537c86*/
           v12 = (*(int (__thiscall **)(int))(*(_DWORD *)g_DSurface_Hidden + 128))(g_DSurface_Hidden); /*0x537c96*/
         (*(void (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 12))(g_WWMouseClass_Instance); /*0x537ca4*/
-        v4 = (*(int (__thiscall **)(int))(*(_DWORD *)g_DSurface_Hidden + 124))(g_DSurface_Hidden); /*0x537cb8*/
-        v5 = (*(int (__thiscall **)(int))(*(_DWORD *)g_DSurface_Hidden + 128))(g_DSurface_Hidden); /*0x537cbc*/
+        int v4 = (*(int (__thiscall **)(int))(*(_DWORD *)g_DSurface_Hidden + 124))(g_DSurface_Hidden); /*0x537cb8*/
+        int v5 = (*(int (__thiscall **)(int))(*(_DWORD *)g_DSurface_Hidden + 128))(g_DSurface_Hidden); /*0x537cbc*/
+  _DWORD v15[4]; // [esp+34h] [ebp-168h] BYREF
         v15[0] = 0; /*0x537cd8*/
         v15[1] = 0; /*0x537cdd*/
         v15[2] = v4; /*0x537ce1*/
@@ -437,23 +410,27 @@ int __stdcall Game::MakeScreenshot(int a1)
           0,
           1);
         (*(void (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 16))(g_WWMouseClass_Instance); /*0x537cfb*/
-        v6 = -1; /*0x537cfe*/
+        int v6 = -1; /*0x537cfe*/
         do /*0x537d6d*/
         {
           sprintf(Buffer, stru_827A48, ++v6); /*0x537d10*/
-          v7 = CCFileClass::Construct(v19, Buffer); /*0x537d27*/
+  _DWORD v19[22]; // [esp+B0h] [ebp-ECh] BYREF
+          _DWORD * v7 = CCFileClass::Construct(v19, Buffer); /*0x537d27*/
           v8 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v7 + 20))(v7, 0); /*0x537d3b*/
           v19[0] = &vt_CCFileClass; /*0x537d3d*/
-          v21 = 0; /*0x537d48*/
+          int v21 = 0; /*0x537d48*/
+  _BYTE v20[12]; // [esp+108h] [ebp-94h] BYREF
           Vector::Clear((int)v20); /*0x537d4f*/
           v19[0] = &off_7E1668; /*0x537d5b*/
           BufferIOFileClass::Dtor(v19); /*0x537d66*/
         }
         while ( v8 ); /*0x537d6d*/
+  int v16[22]; // [esp+44h] [ebp-158h] BYREF
         CCFileClass::Construct(v16, Buffer); /*0x537d7b*/
         CompressScreenshot(v16, (int *)g_DSurface_Hidden, &FileSystem_TEMPERAT_PAL); /*0x537d8f*/
         v16[0] = (int)&vt_CCFileClass; /*0x537d9b*/
-        v18 = 0; /*0x537da3*/
+        int v18 = 0; /*0x537da3*/
+  _BYTE v17[12]; // [esp+9Ch] [ebp-100h] BYREF
         Vector::Clear((int)v17); /*0x537daa*/
         v16[0] = (int)&off_7E1668; /*0x537db3*/
         return BufferIOFileClass::Dtor(v16); /*0x537dbb*/
@@ -470,29 +447,17 @@ namespace gamemd {
 char Game::StartModemMultiplayer(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall StartModemMultiplayerGame(int this, char a2)
+void StartModemMultiplayerGame(int this, char a2)
 {
-  _BYTE *v4; // eax
-  _BYTE *v5; // esi
-  int v6; // eax
-  char *v7; // eax
-  char *v8; // esi
-  int v9; // eax
   wchar_t *StringCSF; // eax
   HWND MessageBox; // eax
   HWND v12; // ebp
-  int v13; // edi
-  int v14; // esi
-  int v15; // esi
-  int v16; // ecx
-  int v17; // edx
-
   if ( a2 == 1 ) /*0x5b709b*/
     return 0; /*0x5b709f*/
   Game::processStartup(this); /*0x5b70a7*/
   g_ScenarioLoadFlags = 0; /*0x5b70b1*/
-  v4 = __2_YAPAXI_Z(0x85u); /*0x5b70bb*/
-  v5 = v4; /*0x5b70c0*/
+  _BYTE * v4 = __2_YAPAXI_Z(0x85u); /*0x5b70bb*/
+  _BYTE * v5 = v4; /*0x5b70c0*/
   if ( v4 ) /*0x5b70ca*/
   {
     Waypoint::InitInvalid(v4 + 40); /*0x5b70d3*/
@@ -508,13 +473,13 @@ char __thiscall StartModemMultiplayerGame(int this, char a2)
            DataGlobal_A8DA7C + DataGlobal_A8DA88,
            0) )
     {
-      v6 = Game_PlayerCount++; /*0x5b713d*/
+      int v6 = Game_PlayerCount++; /*0x5b713d*/
       *(_DWORD *)(Game_PlayerInfoArray + 4 * v6) = v5; /*0x5b714c*/
     }
     ++g_ScenarioLoadFlags; /*0x5b714f*/
   }
-  v7 = (char *)__2_YAPAXI_Z(0x85u); /*0x5b715a*/
-  v8 = v7; /*0x5b715f*/
+  char * v7 = (char *)__2_YAPAXI_Z(0x85u); /*0x5b715a*/
+  char * v8 = v7; /*0x5b715f*/
   if ( v7 ) /*0x5b7166*/
   {
     Waypoint::InitInvalid(v7 + 40); /*0x5b716f*/
@@ -530,7 +495,7 @@ char __thiscall StartModemMultiplayerGame(int this, char a2)
            DataGlobal_A8DA7C + DataGlobal_A8DA88,
            0) )
     {
-      v9 = Game_PlayerCount++; /*0x5b71d4*/
+      int v9 = Game_PlayerCount++; /*0x5b71d4*/
       *(_DWORD *)(Game_PlayerInfoArray + 4 * v9) = v8; /*0x5b71e3*/
     }
     ++g_ScenarioLoadFlags; /*0x5b71e6*/
@@ -542,20 +507,20 @@ char __thiscall StartModemMultiplayerGame(int this, char a2)
   v12 = MessageBox; /*0x5b721f*/
   if ( MessageBox ) /*0x5b7223*/
     Dialog::Show(MessageBox); /*0x5b7227*/
-  v13 = g_PerformanceTickOffset; /*0x5b7231*/
+  int v13 = g_PerformanceTickOffset; /*0x5b7231*/
   if ( g_LastPerformanceTick != -1 ) /*0x5b7239*/
     v13 += Timer::GetTicks() - g_LastPerformanceTick; /*0x5b724b*/
   while ( 1 ) /*0x5b7252*/
   {
     if ( !Count::GetCountQueue(&g_EventManager) ) /*0x5b7252*/
       goto LABEL_31; /*0x5b7252*/
-    v14 = g_PerformanceTickOffset; /*0x5b7260*/
+    int v14 = g_PerformanceTickOffset; /*0x5b7260*/
     if ( g_LastPerformanceTick != -1 ) /*0x5b7268*/
       v14 += Timer::GetTicks() - g_LastPerformanceTick; /*0x5b727a*/
     if ( (unsigned int)(v14 - v13) >= 0x708 ) /*0x5b7284*/
     {
 LABEL_31:
-      v15 = g_PerformanceTickOffset; /*0x5b728b*/
+      int v15 = g_PerformanceTickOffset; /*0x5b728b*/
       if ( g_LastPerformanceTick != -1 ) /*0x5b7293*/
         v15 += Timer::GetTicks() - g_LastPerformanceTick; /*0x5b72a5*/
       if ( (unsigned int)(v15 - v13) >= 0x3C ) /*0x5b72ac*/
@@ -571,9 +536,9 @@ LABEL_31:
   g_NetworkQuitFlag = 0; /*0x5b72e4*/
   *((_DWORD *)g_ScenarioClass_Instance + 1173) = g_GameRulesOptions; /*0x5b72eb*/
   g_ScenarioLoadFlags = Game_PlayerCount; /*0x5b730b*/
-  v16 = g_IntroMovieObject; /*0x5b7311*/
+  int v16 = g_IntroMovieObject; /*0x5b7311*/
   BYTE1(v16) = BYTE1(g_IntroMovieObject) & 0x77; /*0x5b7319*/
-  v17 = v16 | ((HarvesterTruce & 1 | (16 * (BridgeDestruction & 1))) << 11); /*0x5b731f*/
+  int v17 = v16 | ((HarvesterTruce & 1 | (16 * (BridgeDestruction & 1))) << 11); /*0x5b731f*/
   LOBYTE(v17) = g_IntroMovieObject | 0xC0; /*0x5b7326*/
   g_CurrentFrame = 0; /*0x5b7329*/
   g_GameTypeFlags = 2; /*0x5b7333*/
@@ -589,42 +554,31 @@ namespace gamemd {
 int Game::BuildGameSetupPacket()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BuildGameSetupPacket(int this)
+void BuildGameSetupPacket(int this)
 {
   HWND DlgItem; // eax
-  int v3; // edx
-  int v4; // ecx
-  int v5; // eax
-  int v6; // eax
-  int v7; // eax
-  char v8; // dl
-  unsigned int v9; // eax
-  _DWORD v11[62]; // [esp+8h] [ebp-168h] BYREF
   __int16 v12; // [esp+100h] [ebp-70h]
-  int v13[22]; // [esp+104h] [ebp-6Ch] BYREF
-  _BYTE v14[12]; // [esp+15Ch] [ebp-14h] BYREF
-  int v15; // [esp+168h] [ebp-8h]
-
   Debug::Log(); /*0x5ba66f*/
   DlgItem = GetDlgItem(*(HWND *)this, 1); /*0x5ba67e*/
   EnableWindow(DlgItem, 0); /*0x5ba685*/
-  v3 = this->q160; /*0x5ba696*/
+  int v3 = this->q160; /*0x5ba696*/
+  _DWORD v11[62]; // [esp+8h] [ebp-168h] BYREF
   memset(v11, 0, sizeof(v11)); /*0x5ba699*/
-  v4 = *(_DWORD *)(this + 84); /*0x5ba69b*/
+  int v4 = *(_DWORD *)(this + 84); /*0x5ba69b*/
   v12 = 0; /*0x5ba69e*/
-  v5 = *(_DWORD *)(this + 92); /*0x5ba6a0*/
+  int v5 = *(_DWORD *)(this + 92); /*0x5ba6a0*/
   v11[0] = 101; /*0x5ba6a3*/
   *(_DWORD *)((char *)&v11[33] + 2) = v4; /*0x5ba6ab*/
   v11[53] = v3; /*0x5ba6b2*/
   v11[52] = v5; /*0x5ba6b9*/
   v11[54] = GameOptions::GetEntry(); /*0x5ba6ca*/
   *(_DWORD *)((char *)&v11[7] + 2) = NetworkBuffer::GetField2(&g_CoordScatterManager); /*0x5ba6db*/
-  v6 = NetworkBuffer::GetField3(&g_CoordScatterManager); /*0x5ba6df*/
+  int v6 = NetworkBuffer::GetField3(&g_CoordScatterManager); /*0x5ba6df*/
   *(_DWORD *)((char *)&v11[36] + 2) = g_MenuRandomSeed; /*0x5ba6f0*/
   *(_DWORD *)((char *)&v11[37] + 2) = g_IntroMovieObject; /*0x5ba6fd*/
   *(_DWORD *)((char *)&v11[8] + 2) = v6; /*0x5ba70a*/
   BYTE2(v11[40]) = g_Rules_EngineerCount; /*0x5ba71b*/
-  v7 = *(_DWORD *)((char *)&v11[35] + 2); /*0x5ba739*/
+  int v7 = *(_DWORD *)((char *)&v11[35] + 2); /*0x5ba739*/
   LOBYTE(v7) = BYTE2(v11[35]) & 0xF; /*0x5ba744*/
   *(_DWORD *)((char *)&v11[35] + 2) = v7 /*0x5ba750*/
                                     | (16
@@ -633,12 +587,12 @@ int __thiscall BuildGameSetupPacket(int this)
                                        * (SWAllowed & 1
                                         | (2 * (g_Rules_ShortGame & 1 | (2 * (MultiEngineer & 1))))))));
   LOBYTE(v11[6]) = g_EventDispatchState; /*0x5ba75d*/
-  v8 = g_TauntCommandState; /*0x5ba776*/
+  char v8 = g_TauntCommandState; /*0x5ba776*/
   strcpy((char *)&v11[1], g_GameSetupBuffer); /*0x5ba77f*/
   BYTE1(v11[7]) = v8; /*0x5ba793*/
   *(_DWORD *)((char *)&v11[6] + 1) = g_CommandExecState; /*0x5ba797*/
   *(_DWORD *)((char *)&v11[31] + 2) = g_Rules_Bases; /*0x5ba79b*/
-  v9 = *(_DWORD *)((char *)&v11[32] + 2) & 0xFFFFFFFE | Bases & 1; /*0x5ba7bd*/
+  unsigned int v9 = *(_DWORD *)((char *)&v11[32] + 2) & 0xFFFFFFFE | Bases & 1; /*0x5ba7bd*/
   LOBYTE(v9) = BYTE2(v11[32]) & 0xF8 | Bases & 1; /*0x5ba7cc*/
   *(_DWORD *)((char *)&v11[32] + 2) = v9 | (2 * (BridgeDestruction & 1 | (2 * (Crates & 1)))); /*0x5ba7f7*/
   LOBYTE(v11[35]) = g_Rules_AlliesAllowed; /*0x5ba819*/
@@ -649,6 +603,7 @@ int __thiscall BuildGameSetupPacket(int this)
   BYTE2(v11[34]) = g_RulesInitConfig; /*0x5ba842*/
   HIBYTE(v11[34]) = g_Rules_MultiEngineer; /*0x5ba84e*/
   wcscpy((wchar_t *)&v11[9] + 1, *(const wchar_t **)(g_MultiplayerGameState + 4 * g_GameRulesOptions)); /*0x5ba85e*/
+  int v13[22]; // [esp+104h] [ebp-6Ch] BYREF
   CCFileClass::Construct(v13, (char *)(*(_DWORD *)(g_MultiplayerGameState + 4 * g_GameRulesOptions) + 88)); /*0x5ba87f*/
   *(_DWORD *)((char *)&v11[39] + 2) = CCFileClass::GetSize(v13); /*0x5ba896*/
   strncpy((char *)&v11[40] + 3, (const char *)(*(_DWORD *)(g_MultiplayerGameState + 4 * g_GameRulesOptions) + 88), 0xDu); /*0x5ba8b3*/
@@ -657,7 +612,8 @@ int __thiscall BuildGameSetupPacket(int this)
                                     | (16 * (*(_BYTE *)(*(_DWORD *)(g_MultiplayerGameState + 4 * g_GameRulesOptions) + 380) & 1));
   Stream::WriteBlock((int)&g_EventManager, (int)v11, 250, 1); /*0x5ba91d*/
   v13[0] = (int)&vt_CCFileClass; /*0x5ba929*/
-  v15 = 0; /*0x5ba934*/
+  int v15 = 0; /*0x5ba934*/
+  _BYTE v14[12]; // [esp+15Ch] [ebp-14h] BYREF
   Vector::Clear((int)v14); /*0x5ba93f*/
   v13[0] = (int)&off_7E1668; /*0x5ba94b*/
   return BufferIOFileClass::Dtor(v13); /*0x5ba95b*/
@@ -670,7 +626,7 @@ namespace gamemd {
 int Game::GetMultiplayerScoreScreenBar()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Game::GetMultiplayerScoreScreenBar(void *this)
+void Game::GetMultiplayerScoreScreenBar()
 {
   int playerSideIndex; // eax
 
@@ -757,9 +713,8 @@ namespace gamemd {
 void Game::BuildGameSettingsPacket()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall Game::BuildGameSettingsPacket(char *this)
+void Game::BuildGameSettingsPacket()
 {
-  char *v1; // ebp
   char v2; // bl
   char **v3; // eax
   int v4; // ebx
@@ -770,10 +725,9 @@ void __thiscall Game::BuildGameSettingsPacket(char *this)
   int v9; // [esp+14h] [ebp-14h] BYREF
   int v10; // [esp+18h] [ebp-10h] BYREF
   int Option; // [esp+1Ch] [ebp-Ch] BYREF
-  char *v12; // [esp+20h] [ebp-8h]
+  Game *v12; // [esp+20h] [ebp-8h]
   int v13; // [esp+24h] [ebp-4h]
-
-  v1 = this; /*0x5dbb6a*/
+  Game *v1 = this; /*0x5dbb6a*/
   v12 = this; /*0x5dbb70*/
   v13 = 0; /*0x5dbb74*/
   if ( &HouseClass_Player == (MouseClass *)-30166 ) /*0x5dbb7c*/
@@ -850,32 +804,19 @@ namespace gamemd {
 unsigned char Game::ManageGameSpeed()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned __int8 __thiscall ManageGameSpeed(int this)
+void ManageGameSpeed(int this)
 {
-  _BYTE *v2; // ecx
-  char v3; // al
-  bool v4; // bl
-  int v5; // edi
-  int *v6; // eax
-  int v7; // ecx
-  int v8; // ecx
-  char v9; // al
-  int v10; // eax
-  _DWORD *v11; // eax
-  int v12; // edx
-  _DWORD *v13; // eax
   unsigned __int8 result; // al
-  bool v15; // zf
   char v16; // [esp+12h] [ebp-1Eh]
   unsigned __int8 v17; // [esp+13h] [ebp-1Dh]
   _BYTE *v18; // [esp+14h] [ebp-1Ch] BYREF
   int v19[2]; // [esp+18h] [ebp-18h] BYREF
   _BYTE v20[16]; // [esp+20h] [ebp-10h] BYREF
 
-  v2 = 0; /*0x6579ef*/
-  v3 = *(_BYTE *)(this + 5309); /*0x6579f1*/
+  _BYTE * v2 = 0; /*0x6579ef*/
+  char v3 = *(_BYTE *)(this + 5309); /*0x6579f1*/
   v18 = 0; /*0x6579f7*/
-  v4 = g_AsyncIOState > 0; /*0x6579fd*/
+  bool v4 = g_AsyncIOState > 0; /*0x6579fd*/
   v17 = 0; /*0x657a02*/
   if ( !v3 && g_AsyncIOState > 0 ) /*0x657a0a*/
   {
@@ -884,12 +825,12 @@ unsigned __int8 __thiscall ManageGameSpeed(int this)
   }
   if ( *(_BYTE *)(this + 5338) == 1 && !*(_BYTE *)(this + 5309) ) /*0x657a22*/
   {
-    v5 = VtableStub::72F510(); /*0x657a35*/
+    int v5 = VtableStub::72F510(); /*0x657a35*/
     v19[0] = *(_DWORD *)(this + 4580); /*0x657a4d*/
     v19[1] = *(_DWORD *)(this + 4588); /*0x657a5f*/
-    v6 = (int *)(*(int (__thiscall **)(int, _BYTE *))(*(_DWORD *)DSurface_Sidebar + 120))(DSurface_Sidebar, v20); /*0x657a6a*/
+    int * v6 = (int *)(*(int (__thiscall **)(int, _BYTE *))(*(_DWORD *)DSurface_Sidebar + 120))(DSurface_Sidebar, v20); /*0x657a6a*/
     DrawToSurfaceSHP(DSurface_Sidebar, v5, DataGlobal_B04A38, 0x20u, v19, v6, 0, 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x657a84*/
-    v7 = *(_DWORD *)(this + 4588); /*0x657a95*/
+    int v7 = *(_DWORD *)(this + 4588); /*0x657a95*/
     *(_DWORD *)(this + 4620) = *(_DWORD *)(this + 4580); /*0x657aab*/
     *(_DWORD *)(this + 4624) = v7; /*0x657aae*/
     *(_DWORD *)(this + 4628) = 168; /*0x657ab1*/
@@ -908,7 +849,7 @@ unsigned __int8 __thiscall ManageGameSpeed(int this)
 LABEL_13:
     if ( v2 ) /*0x657b40*/
     {
-      v10 = (*(int (__thiscall **)(int *, _BYTE **))(dword_B45B58 + 16))(&dword_B45B58, &v18); /*0x657b52*/
+      int v10 = (*(int (__thiscall **)(int *, _BYTE **))(dword_B45B58 + 16))(&dword_B45B58, &v18); /*0x657b52*/
       if ( v10 != -1 && v10 < g_AsyncIOState && v10 < --g_AsyncIOState ) /*0x657b6d*/
       {
         do /*0x657b85*/
@@ -926,7 +867,7 @@ LABEL_13:
     {
       Debug::Log(); /*0x657ba9*/
       Mixer::ReleaseChannel((int **)(this + 5312)); /*0x657bb9*/
-      v11 = (_DWORD *)PlayVocClass(g_RulesClass_Instance->?[1], 0x2000, 1.0, 0); /*0x657bd8*/
+      _DWORD * v11 = (_DWORD *)PlayVocClass(g_RulesClass_Instance->?[1], 0x2000, 1.0, 0); /*0x657bd8*/
       SetAudioSource(this + 5312, v11, 0); /*0x657be1*/
       *(_DWORD *)(this + 5292) = 4; /*0x657be6*/
       *(_DWORD *)(this + 5372) = 25; /*0x657bf0*/
@@ -935,13 +876,13 @@ LABEL_13:
   }
   if ( (*(unsigned __int8 (__thiscall **)(_BYTE *))(*(_DWORD *)v2 + 4))(v2) == 1 ) /*0x657af3*/
   {
-    v8 = *(_DWORD *)(this + 4588); /*0x657b01*/
+    int v8 = *(_DWORD *)(this + 4588); /*0x657b01*/
     *(_DWORD *)(this + 4620) = *(_DWORD *)(this + 4580); /*0x657b12*/
     *(_DWORD *)(this + 4624) = v8; /*0x657b15*/
     *(_DWORD *)(this + 4628) = 168; /*0x657b18*/
     *(_DWORD *)(this + 4632) = 110; /*0x657b1b*/
   }
-  v9 = (*(int (__thiscall **)(_BYTE *))(*(_DWORD *)v18 + 20))(v18); /*0x657b24*/
+  char v9 = (*(int (__thiscall **)(_BYTE *))(*(_DWORD *)v18 + 20))(v18); /*0x657b24*/
   v2 = v18; /*0x657b27*/
   v16 = v9; /*0x657b2d*/
   v17 = v18[4]; /*0x657b34*/
@@ -952,19 +893,19 @@ LABEL_22:
   if ( !v4 ) /*0x657c03*/
   {
     Debug::Log(); /*0x657c0a*/
-    v12 = *(_DWORD *)(this + 5300); /*0x657c0f*/
+    int v12 = *(_DWORD *)(this + 5300); /*0x657c0f*/
     *(_DWORD *)(this + 5292) = 5; /*0x657c1a*/
     RadarClass::SetViewMode(this, v12, 0); /*0x657c27*/
     Game_Process(); /*0x657c2c*/
     v17 = 0; /*0x657c37*/
     Mixer::ReleaseChannel((int **)(this + 5312)); /*0x657c3d*/
-    v13 = (_DWORD *)PlayVocClass(g_RulesClass_Instance->?[2], 0x2000, 1.0, 0); /*0x657c5b*/
+    _DWORD * v13 = (_DWORD *)PlayVocClass(g_RulesClass_Instance->?[2], 0x2000, 1.0, 0); /*0x657c5b*/
     SetAudioSource(this + 5312, v13, 0); /*0x657c64*/
     RadarClass::SetGlobal((void *)g_RulesClass_Instance->DetailMinFrameRateNormal); /*0x657c71*/
     *(_BYTE *)(this + 5337) = 1; /*0x657c76*/
   }
   result = v17; /*0x657c81*/
-  v15 = *(_BYTE *)(this + 5308) == v17; /*0x657c90*/
+  bool v15 = *(_BYTE *)(this + 5308) == v17; /*0x657c90*/
   *(_BYTE *)(this + 5309) = v16 == 0; /*0x657c92*/
   if ( !v15 ) /*0x657c98*/
   {
@@ -1016,21 +957,18 @@ namespace gamemd {
 char Game::LoadSaved()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall Game::LoadSaved(AnimClass *this)
+void Game::LoadSaved()
 {
   int COM; // eax
   int *p_ppstgOpen; // ecx
-  int v5; // eax
   IStorage *ppstgOpen; // [esp+3Ch] [ebp-508h] BYREF
-  int v7; // [esp+40h] [ebp-504h] BYREF
   IStorage *v8; // [esp+44h] [ebp-500h] BYREF
-  int v9; // [esp+48h] [ebp-4FCh] BYREF
   LPSTREAM pStm; // [esp+4Ch] [ebp-4F8h] BYREF
   WCHAR WideCharStr[64]; // [esp+50h] [ebp-4F4h] BYREF
   WCHAR pwcsName[64]; // [esp+D0h] [ebp-474h] BYREF
-  _DWORD v13[253]; // [esp+150h] [ebp-3F4h] BYREF
 
   Debug::Log(); /*0x67e452*/
+  _DWORD v13[253]; // [esp+150h] [ebp-3F4h] BYREF
   GameState::Reset(v13); /*0x67e461*/
   ppstgOpen = 0; /*0x67e47a*/
   MultiByteToWideChar(0, 0, this->field_0, -1, WideCharStr, 64); /*0x67e47e*/
@@ -1059,12 +997,12 @@ LABEL_6:
     ComPtr::ReleaseSimple(p_ppstgOpen); /*0x67e535*/
     return 0; /*0x67e546*/
   }
-  v9 = 0; /*0x67e54b*/
+  int v9 = 0; /*0x67e54b*/
   if ( !v8 ) /*0x67e551*/
     WinAPI::Wrapper(-2147467261); /*0x67e558*/
   if ( v8->lpVtbl->OpenStream(v8, (const OLECHAR *)&DataGlobal_83D5A8, 0, 16, 0, (IStream **)&v9) >= 0 ) /*0x67e577*/
   {
-    v7 = 0; /*0x67e5a6*/
+    int v7 = 0; /*0x67e5a6*/
     Game::readIniSettings(&v7); /*0x67e5aa*/
     if ( CoCreateInstance(&stru_7E9540, 0, 7u, &riid, (LPVOID *)&ppstgOpen) >= 0 ) /*0x67e5c9*/
     {
@@ -1078,7 +1016,7 @@ LABEL_6:
     pStm = 0; /*0x67e618*/
     if ( v7 ) /*0x67e620*/
     {
-      v5 = Game::validateScenario(&pStm, &v7); /*0x67e62b*/
+      int v5 = Game::validateScenario(&pStm, &v7); /*0x67e62b*/
       if ( v5 < 0 && v5 != -2147467262 ) /*0x67e639*/
         WinAPI::Wrapper(v5); /*0x67e63c*/
     }
@@ -1127,21 +1065,13 @@ namespace gamemd {
 int Game::SerializeGameSaveState()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall SerializeGameSaveState(void *this)
+void SerializeGameSaveState(void *this)
 {
   int result; // eax
-  int v3; // edi
   wchar_t *v4; // eax
   int i; // edi
-  int v6; // edi
-  int v7; // eax
   int j; // edi
-  int v9; // edi
-  int v10; // eax
   int k; // edi
-  int v12; // eax
-  int v13; // [esp+B8h] [ebp-8h] BYREF
-  int v14; // [esp+BCh] [ebp-4h] BYREF
 
   result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(this->q003)(this, &DataGlobal_A8ED78, 4, 0); /*0x67f9d3*/
   if ( result >= 0 )
@@ -1158,10 +1088,12 @@ int __thiscall SerializeGameSaveState(void *this)
                  0);
       if ( result >= 0 )
       {
+  int v13; // [esp+B8h] [ebp-8h] BYREF
         result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(this->q003)(this, &v13, 4, 0); /*0x67fa36*/
         if ( result >= 0 )
         {
-          v3 = 0; /*0x67fa45*/
+  int v14; // [esp+BCh] [ebp-4h] BYREF
+          int v3 = 0; /*0x67fa45*/
           if ( v13 <= 0 )
           {
 LABEL_14:
@@ -1178,7 +1110,7 @@ LABEL_14:
               result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(this->q003)(this, &v13, 4, 0); /*0x67fb1a*/
               if ( result >= 0 )
               {
-                v6 = 0; /*0x67fb29*/
+                int v6 = 0; /*0x67fb29*/
                 if ( v13 <= 0 )
                 {
 LABEL_27:
@@ -1187,7 +1119,7 @@ LABEL_27:
                   result = (*(int (__stdcall **)(void *, int *, int, _DWORD))(this->q003)(this, &v13, 4, 0); /*0x67fbdd*/
                   if ( result >= 0 )
                   {
-                    v9 = 0; /*0x67fbec*/
+                    int v9 = 0; /*0x67fbec*/
                     if ( v13 <= 0 )
                     {
 LABEL_39:
@@ -1228,6 +1160,7 @@ LABEL_39:
                                          0);
                               if ( result >= 0 )
                               {
+  int v12; // eax
                                 v12 = (*(int (__stdcall **)(void *, int *, int, _DWORD))(this->q003)( /*0x67fd04*/
                                         this,
                                         &DataGlobal_B07784,
@@ -1259,7 +1192,7 @@ LABEL_39:
                                unk_8B41B0 + unk_8B41BC,
                                0) )
                         {
-                          v10 = dword_8B41B8++; /*0x67fc52*/
+                          int v10 = dword_8B41B8++; /*0x67fc52*/
                           *((_DWORD *)unk_8B41AC + v10) = v14; /*0x67fc5f*/
                         }
                         if ( ++v9 >= v13 ) /*0x67fc69*/
@@ -1283,7 +1216,7 @@ LABEL_39:
                            DataGlobal_8B40D0 + DataGlobal_8B40DC,
                            0) )
                     {
-                      v7 = g_ScenarioUpdateState++; /*0x67fb90*/
+                      int v7 = g_ScenarioUpdateState++; /*0x67fb90*/
                       *((_DWORD *)DataGlobal_8B40CC + v7) = v14; /*0x67fb9d*/
                     }
                     if ( ++v6 >= v13 ) /*0x67fba7*/
@@ -1330,18 +1263,15 @@ namespace gamemd {
 int Game::validateScenario(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_680F70(_DWORD *this, _DWORD *a2)
+void sub_680F70(_DWORD *this, _DWORD *a2)
 {
-  int v3; // edi
-  _DWORD *v5; // ebx
-  int v6; // eax
 
   if ( *a2 ) /*0x680f78*/
   {
-    v3 = (**(int (__stdcall ***)(_DWORD, void *, _DWORD **))*a2)(*a2, &unk_81FC50, &a2); /*0x680f8d*/
+    int v3 = (**(int (__stdcall ***)(_DWORD, void *, _DWORD **))*a2)(*a2, &unk_81FC50, &a2); /*0x680f8d*/
     if ( v3 >= 0 ) /*0x680f91*/
     {
-      v5 = a2; /*0x680faf*/
+      _DWORD * v5 = a2; /*0x680faf*/
       if ( *this ) /*0x680fac*/
         (*(void (__stdcall **)(_DWORD))(*(_DWORD *)*this + 8))(*this); /*0x680fba*/
       *this = v5; /*0x680fbd*/
@@ -1357,7 +1287,7 @@ int __thiscall sub_680F70(_DWORD *this, _DWORD *a2)
   }
   else
   {
-    v6 = *this; /*0x680fc7*/
+    int v6 = *this; /*0x680fc7*/
     if ( *this ) /*0x680fc7*/
     {
       *this = 0; /*0x680fcd*/
@@ -1374,9 +1304,8 @@ namespace gamemd {
 int sub_685120()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_685120()
+void sub_685120()
 {
-  int v0; // ecx
 
   BulletTypeClass::ReadArmor(); /*0x685121*/
   nullsub_158(); /*0x685126*/
@@ -1387,7 +1316,7 @@ int sub_685120()
   if ( DataGlobal_B0EA80 != -1 ) /*0x685176*/
   {
     if ( (int)g_CurrentFrame - DataGlobal_B0EA80 >= DataGlobal_B0EA88 ) /*0x685189*/
-      v0 = 0; /*0x68518f*/
+      int v0 = 0; /*0x68518f*/
     else
       v0 = DataGlobal_B0EA88 - ((_DWORD)g_CurrentFrame - DataGlobal_B0EA80); /*0x68518b*/
     DataGlobal_B0EA88 = v0; /*0x685191*/
@@ -1464,21 +1393,21 @@ char __userpurge Game::DumpMultiplayerGameInfo@<al>(int this@<ecx>, CellStruct *
   for ( n = 0; n < 6; ++n ) /*0x698dff*/
     fprintf(v4, &stru_830620[60684], (CellStruct *)(unsigned __int8)v18[n]); /*0x698e0e*/
   fprintf(v4, &stru_830620[60664], v16); /*0x698e22*/
-  fprintf(v4, &stru_830620[60648], *(CellStruct **)(this + 792)); /*0x698e34*/
-  fprintf(v4, &stru_830620[60632], *(CellStruct **)(this + 1664)); /*0x698e46*/
-  fprintf(v4, &stru_830620[60616], *(CellStruct **)(this + 380)); /*0x698e58*/
-  fprintf(v4, &stru_830620[60600], *(CellStruct **)(this + 348)); /*0x698e6a*/
-  fprintf(v4, &stru_830620[60588], *(CellStruct **)(this + 372)); /*0x698e7c*/
-  fprintf(v4, &stru_830620[60568], *(CellStruct **)(this + 788)); /*0x698e91*/
-  fprintf(v4, &stru_830620[60548], (CellStruct *)*(unsigned __int8 *)(this + 32)); /*0x698ea2*/
-  fprintf(v4, &stru_830620[60524], *(CellStruct **)(this + 36)); /*0x698eb1*/
-  fprintf(v4, &stru_830620[60492], (CellStruct *)*(unsigned __int8 *)(this + 40)); /*0x698ec2*/
+  fprintf(v4, &stru_830620[60648], this->q318); /*0x698e34*/
+  fprintf(v4, &stru_830620[60632], this->q680); /*0x698e46*/
+  fprintf(v4, &stru_830620[60616], this->q17C); /*0x698e58*/
+  fprintf(v4, &stru_830620[60600], this->q15C); /*0x698e6a*/
+  fprintf(v4, &stru_830620[60588], this->q174); /*0x698e7c*/
+  fprintf(v4, &stru_830620[60568], this->q314); /*0x698e91*/
+  fprintf(v4, &stru_830620[60548], (CellStruct *)this->q008); /*0x698ea2*/
+  fprintf(v4, &stru_830620[60524], this->q024); /*0x698eb1*/
+  fprintf(v4, &stru_830620[60492], (CellStruct *)this->q028); /*0x698ec2*/
   fprintf(v4, &stru_830620[60468], (CellStruct *)*(unsigned __int8 *)(this + 41)); /*0x698ed3*/
   fprintf(v4, &stru_830620[60444], (CellStruct *)*(unsigned __int8 *)(this + 53)); /*0x698ee4*/
-  fprintf(v4, &stru_830620[60420], *(CellStruct **)(this + 56)); /*0x698ef6*/
-  fprintf(v4, &stru_830620[60396], *(CellStruct **)(this + 60)); /*0x698f05*/
-  fprintf(v4, &stru_830620[60368], *(CellStruct **)(this + 64)); /*0x698f14*/
-  fprintf(v4, &stru_830620[60352], *(CellStruct **)(this + 768)); /*0x698f26*/
+  fprintf(v4, &stru_830620[60420], this->q038); /*0x698ef6*/
+  fprintf(v4, &stru_830620[60396], this->q03C); /*0x698f05*/
+  fprintf(v4, &stru_830620[60368], this->q040); /*0x698f14*/
+  fprintf(v4, &stru_830620[60352], this->q300); /*0x698f26*/
   if ( *(_DWORD *)&HouseClass_Player[29932] == 3 ) /*0x698f36*/
   {
     fprintf(v4, &stru_830620[60340], v17); /*0x698f3e*/
@@ -1501,9 +1430,8 @@ namespace gamemd {
 void Game::EncodeGameSetupState()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall Game::EncodeGameSetupState(char *this)
+void Game::EncodeGameSetupState()
 {
-  char *v1; // ebp
   char v2; // bl
   char **v3; // eax
   int v4; // ebx
@@ -1526,11 +1454,11 @@ void __thiscall Game::EncodeGameSetupState(char *this)
   int PlayerColor; // [esp+38h] [ebp-20h]
   int PlayerSide; // [esp+3Ch] [ebp-1Ch]
   int v23; // [esp+40h] [ebp-18h]
-  char *v24; // [esp+44h] [ebp-14h]
+  Game *v24; // [esp+44h] [ebp-14h]
   int a1; // [esp+48h] [ebp-10h] BYREF
   _DWORD v26[3]; // [esp+4Ch] [ebp-Ch] BYREF
 
-  v1 = this; /*0x77e43a*/
+  Game *v1 = this; /*0x77e43a*/
   v24 = this; /*0x77e440*/
   v26[2] = 0; /*0x77e444*/
   if ( &HouseClass_Player == (MouseClass *)-30166 ) /*0x77e44c*/
@@ -1623,22 +1551,16 @@ namespace gamemd {
 char Game::ProcessIdle()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall Game::ProcessIdle(CreateGameDialogControl *this)
+void Game::ProcessIdle()
 {
-  int v1; // ebx
-  int v2; // ebp
-  signed int v3; // ebx
-  int v4; // esi
   IUnknown *v5; // eax
   wchar_t *StringCSF; // eax
   int i; // esi
   int ebp30; // ebp
   int esi30; // esi
-  char *v10; // edx
   CCINIClass *v8; // eax
   ObjectClass *v9; // esi
   int k; // esi
-  int v14; // ebx
   int esi56; // esi
   int ebp62; // ebp
   AbstractClass *eax65; // eax
@@ -1647,23 +1569,22 @@ char __thiscall Game::ProcessIdle(CreateGameDialogControl *this)
   AbstractClass *v17; // edx
   CCINIClass *v18; // eax
   ObjectClass *v19; // esi
-  signed int v23; // eax
   int ebp107; // ebp
   ObjectClass *v24; // eax
   int X; // esi
-  char *v27; // eax
   void *j; // [esp+24h] [ebp-A0h] BYREF
   ObjectClass *Block; // [esp+28h] [ebp-9Ch] BYREF
   const char *m; // [esp+2Ch] [ebp-98h] BYREF
-  bool v32; // [esp+33h] [ebp-91h]
   char *v33; // [esp+34h] [ebp-90h] BYREF
   int v34; // [esp+38h] [ebp-8Ch] BYREF
   MSG Msg; // [esp+3Ch] [ebp-88h] BYREF
   struct in_addr Buffer[27]; // [esp+58h] [ebp-6Ch] BYREF
 
+  int v1; // ebx
+  int v2; // ebp
   ScreenSaver::Process(0, v1, v2); /*0x77f90c*/
-  v3 = 0; /*0x77f916*/
-  v4 = 0; /*0x77f918*/
+  signed int v3 = 0; /*0x77f916*/
+  int v4 = 0; /*0x77f918*/
   ++*(_DWORD *)&g_NetworkPlayerBuffer[77300]; /*0x77f925*/
   if ( GameLoopMessagePump(&Msg, 0, 0, 0, 1u) ) /*0x77f92a*/
   {
@@ -1735,7 +1656,7 @@ char __thiscall Game::ProcessIdle(CreateGameDialogControl *this)
         String::Reassign(&v33, (AbstractClass *)((char *)dword_B777A8 + 4 * esi30)); /*0x77fb67*/
         DynamicArray::Remove(&g_WOL_ChatPool, esi30); /*0x77fb72*/
       }
-      v10 = String::GetOrEmpty(&v33); /*0x77fb80*/
+      char * v10 = String::GetOrEmpty(&v33); /*0x77fb80*/
       if ( strlen(v10) > 9 ) /*0x77fb91*/
         v10[9] = 0; /*0x77fb93*/
       strcpy((char *)(ebp30 + 36), v10); /*0x77fbb1*/
@@ -1780,7 +1701,7 @@ char __thiscall Game::ProcessIdle(CreateGameDialogControl *this)
     {
       if ( g_WOL_LoginToken <= 0 ) /*0x77fcd1*/
         break; /*0x77fcd1*/
-      v14 = __2_YAPAXI_Z(0x6Cu); /*0x77fcde*/
+      int v14 = __2_YAPAXI_Z(0x6Cu); /*0x77fcde*/
       memset((void *)v14, 0, 0x6Cu); /*0x77fce9*/
       v34 = v14; /*0x77fcf2*/
       unknown_libname_73(&v33); /*0x77fcf6*/
@@ -1881,7 +1802,7 @@ char __thiscall Game::ProcessIdle(CreateGameDialogControl *this)
     String::ToLowerCopy((const char **)&g_WebBrowser, (char **)&m); /*0x77ffe9*/
     if ( g_GameOptionsFlags != 3 && g_GameOptionsFlags != 1 && g_GameOptionsFlags != 2 ) /*0x780008*/
     {
-      v23 = g_WOL_State; /*0x78000e*/
+      signed int v23 = g_WOL_State; /*0x78000e*/
       if ( (int)g_WOL_State > 0 ) /*0x780015*/
       {
         ebp107 = 0; /*0x78001b*/
@@ -1891,12 +1812,12 @@ char __thiscall Game::ProcessIdle(CreateGameDialogControl *this)
             qmemcpy(Buffer, &g_WOL_ConnectionFlags[ebp107], sizeof(Buffer)); /*0x780037*/
           String::Assign((char **)&j, (const char *)&Buffer[9]); /*0x780042*/
           v24 = (ObjectClass *)String::ToLowerCopy((const char **)&j, (char **)&v34); /*0x780050*/
-          v32 = String::Compare(&m, (const char **)v24); /*0x780063*/
+          bool v32 = String::Compare(&m, (const char **)v24); /*0x780063*/
           DeleteAndZero((void **)&v34); /*0x780067*/
           if ( !v32 && Buffer[6].S_un.S_addr ) /*0x78007a*/
           {
             X = (*(&g_MatrixTransformState + 2264))->X; /*0x78008c*/
-            v27 = ntoainet(Buffer[6]); /*0x78008f*/
+            char * v27 = ntoainet(Buffer[6]); /*0x78008f*/
             (*(void (__stdcall **)(_DWORD, char *, int, ObjectClass **))(X + 24))( /*0x78009b*/
               *(&g_MatrixTransformState + 2264),
               v27,
@@ -1935,14 +1856,9 @@ void __fastcall Game_Setup(CCINIClass *aP0, CCINIClass *aP1, char *Buffera, char
 {
   Color *v5; // edi
   Color *v6; // esi
-  int v7; // edi
   SessionClass *v8; // esi
-  char *v9; // eax
-  int v10; // eax
-  int v11; // [esp+10h] [ebp-10h] BYREF
   IPXManagerClass aP1a; // [esp+14h] [ebp-Ch] BYREF
   __int16 v13; // [esp+1Ch] [ebp-4h]
-
   if ( aP0 ) /*0x7a223d*/
   {
     if ( aP1 ) /*0x7a2245*/
@@ -1955,15 +1871,15 @@ void __fastcall Game_Setup(CCINIClass *aP0, CCINIClass *aP1, char *Buffera, char
         {
           Buffera = 0; /*0x7a2267*/
           a3 = 0; /*0x7a2272*/
-          v11 = 0; /*0x7a2276*/
+          int v11 = 0; /*0x7a2276*/
           sscanf(aP1->__pad_0, (const char *const)&stru_825BAC.objectTypeFlags, &Buffera); /*0x7a227a*/
           sscanf((const char *const)v5, (const char *const)&stru_825BAC.objectTypeFlags, &a3); /*0x7a228a*/
           sscanf((const char *const)v6, (const char *const)&stru_825BAC.objectTypeFlags, &v11); /*0x7a229a*/
-          v7 = 0; /*0x7a22a2*/
+          int v7 = 0; /*0x7a22a2*/
           v8 = (SessionClass *)&HouseClass_Player[40260]; /*0x7a22a4*/
           while ( 1 ) /*0x7a22ab*/
           {
-            v9 = ToWideStringChar((IUnknown *)v8->GameMode[0]); /*0x7a22ab*/
+            char * v9 = ToWideStringChar((IUnknown *)v8->GameMode[0]); /*0x7a22ab*/
             if ( !_strcmpi(aP0, v9) ) /*0x7a22b2*/
               break; /*0x7a22b2*/
             v8 = (SessionClass *)((char *)v8 + 4); /*0x7a22be*/
@@ -1975,7 +1891,7 @@ void __fastcall Game_Setup(CCINIClass *aP0, CCINIClass *aP1, char *Buffera, char
           v13 = 0; /*0x7a22e2*/
           aP1a.Socket = 0; /*0x7a22fc*/
           NetworkID::Assign((_DWORD *)(12 * v7 + 11066316), &aP1a, (int)&aP1a.Initialized, 0); /*0x7a2300*/
-          v10 = v11; /*0x7a2309*/
+          int v10 = v11; /*0x7a2309*/
           *(_DWORD *)&HouseClass_Player[21864][4 * v7 + 18808] = a3; /*0x7a230d*/
           *(_DWORD *)&HouseClass_Player[21864][4 * v7 + 20348] = v10; /*0x7a2314*/
         }
@@ -1991,55 +1907,35 @@ namespace gamemd {
 char Game::SetupWOLTournament()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall SetupWOLTournamentGame(const char *this)
+void SetupWOLTournamentGame(const char *this)
 {
-  char *v1; // esi
-  char *v2; // eax
-  int v3; // edi
-  char *v4; // eax
-  int v5; // ebx
-  char *v6; // ebp
-  char *v7; // eax
-  char *v8; // esi
-  char *v9; // eax
-  int v10; // edi
-  char *v11; // eax
-  int v12; // ebx
-  char *v13; // ebp
-  char *v14; // eax
   HWND v15; // eax
-  char v16; // bl
-  int v17; // esi
-  char *v18; // eax
-  char *v19; // ebp
   wchar_t *v20; // eax
   wchar_t *v21; // edi
-  int v22; // eax
   char result; // al
-  char *v24; // [esp+10h] [ebp-104h] BYREF
   char String[256]; // [esp+14h] [ebp-100h] BYREF
 
   strcpy(String, this); /*0x7a2359*/
-  v1 = strtok(String, stru_84D68C); /*0x7a2373*/
-  v2 = strtok(0, Delimiter); /*0x7a2375*/
-  v3 = atol(v2); /*0x7a2387*/
-  v4 = strtok(0, Delimiter); /*0x7a2389*/
-  v5 = atol(v4); /*0x7a239b*/
-  v6 = strtok(0, Delimiter); /*0x7a23a9*/
-  v24 = strtok(0, Delimiter); /*0x7a23b7*/
-  v7 = strtok(0, Delimiter); /*0x7a23bb*/
+  char * v1 = strtok(String, stru_84D68C); /*0x7a2373*/
+  char * v2 = strtok(0, Delimiter); /*0x7a2375*/
+  int v3 = atol(v2); /*0x7a2387*/
+  char * v4 = strtok(0, Delimiter); /*0x7a2389*/
+  int v5 = atol(v4); /*0x7a239b*/
+  char * v6 = strtok(0, Delimiter); /*0x7a23a9*/
+  char * v24 = strtok(0, Delimiter); /*0x7a23b7*/
+  char * v7 = strtok(0, Delimiter); /*0x7a23bb*/
   Game_Setup(v1, v6, v24, v7); /*0x7a23cd*/
   String::Assign(&v24, v1); /*0x7a23d7*/
   SetupLobbyPlayerSlot((const char **)&v24, v3, v5, -2, -2); /*0x7a23e7*/
   DeleteAndZero((void **)&v24); /*0x7a23f0*/
-  v8 = strtok(0, Delimiter); /*0x7a2408*/
-  v9 = strtok(0, Delimiter); /*0x7a240a*/
-  v10 = atol(v9); /*0x7a241c*/
-  v11 = strtok(0, Delimiter); /*0x7a241e*/
-  v12 = atol(v11); /*0x7a2429*/
-  v13 = strtok(0, Delimiter); /*0x7a243e*/
+  char * v8 = strtok(0, Delimiter); /*0x7a2408*/
+  char * v9 = strtok(0, Delimiter); /*0x7a240a*/
+  int v10 = atol(v9); /*0x7a241c*/
+  char * v11 = strtok(0, Delimiter); /*0x7a241e*/
+  int v12 = atol(v11); /*0x7a2429*/
+  char * v13 = strtok(0, Delimiter); /*0x7a243e*/
   v24 = strtok(0, Delimiter); /*0x7a244c*/
-  v14 = strtok(0, Delimiter); /*0x7a2450*/
+  char * v14 = strtok(0, Delimiter); /*0x7a2450*/
   Game_Setup(v8, v13, v24, v14); /*0x7a2462*/
   String::Assign(&v24, v8); /*0x7a246c*/
   SetupLobbyPlayerSlot((const char **)&v24, v10, v12, -2, -2); /*0x7a247c*/
@@ -2050,8 +1946,8 @@ char __thiscall SetupWOLTournamentGame(const char *this)
   v15 = (HWND)Dialog::FindByHandle((void *)0x11F); /*0x7a24c8*/
   GenerateRandomMapAndMinimap(v15, (char (*)())GameLoop::Thunk); /*0x7a24d4*/
   MapSeed::ValidateName(aRandmapSed); /*0x7a24e3*/
-  v16 = 0; /*0x7a24ed*/
-  v17 = 0; /*0x7a24ef*/
+  char v16 = 0; /*0x7a24ed*/
+  int v17 = 0; /*0x7a24ef*/
   if ( g_MultiplayerOptions > 0 ) /*0x7a24f3*/
   {
     while ( !IsRandMap::Sed(*(_DWORD *)(g_MultiplayerGameState + 4 * v17)) ) /*0x7a2504*/
@@ -2062,8 +1958,8 @@ char __thiscall SetupWOLTournamentGame(const char *this)
     v16 = 1; /*0x7a2512*/
   }
 LABEL_6:
-  v18 = GameConfig::ComputeCRC(); /*0x7a2514*/
-  v19 = v18; /*0x7a251b*/
+  char * v18 = GameConfig::ComputeCRC(); /*0x7a2514*/
+  char * v19 = v18; /*0x7a251b*/
   if ( v16 ) /*0x7a251d*/
   {
     GameOption::SetDigest(v18); /*0x7a25b6*/
@@ -2084,7 +1980,7 @@ LABEL_6:
            DataGlobal_A8B8DC + DataGlobal_A8B8D0,
            0) )
     {
-      v22 = g_MultiplayerOptions++; /*0x7a2598*/
+      int v22 = g_MultiplayerOptions++; /*0x7a2598*/
       *(_DWORD *)(g_MultiplayerGameState + 4 * v22) = v21; /*0x7a25a7*/
     }
   }

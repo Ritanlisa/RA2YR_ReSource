@@ -32,42 +32,34 @@ int Color_ComputeSaturation(unsigned int a1, int a2, int a3)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall Color_ComputeSaturation(unsigned int a1, int a2, int a3)
 {
-  int v3; // edi
-  int v4; // eax
-  int v5; // ebp
-  int v6; // ebx
-  unsigned int v7; // esi
-  unsigned int v8; // eax
-  unsigned int v9; // ecx
-  int v10; // ecx
-  int v12; // [esp+10h] [ebp-14h]
-  int v13; // [esp+14h] [ebp-10h]
   __int16 v14; // [esp+1Ch] [ebp-8h]
-  int v15; // [esp+20h] [ebp-4h]
 
-  v3 = *(unsigned __int8 *)a1; /*0x6613ad*/
-  v4 = *(unsigned __int8 *)(a1 + 2); /*0x6613b4*/
-  v5 = *(unsigned __int8 *)(a1 + 1); /*0x6613b7*/
+  int v3 = *(unsigned __int8 *)a1; /*0x6613ad*/
+  int v4 = *(unsigned __int8 *)(a1 + 2); /*0x6613b4*/
+  int v5 = *(unsigned __int8 *)(a1 + 1); /*0x6613b7*/
   LOBYTE(a1) = 0; /*0x6613b9*/
-  v13 = v4; /*0x6613bd*/
-  v6 = v3; /*0x6613c1*/
+  int v13 = v4; /*0x6613bd*/
+  int v6 = v3; /*0x6613c1*/
   if ( v3 <= v5 ) /*0x6613c3*/
     v6 = v5; /*0x6613c5*/
   if ( v4 > v6 ) /*0x6613c9*/
     v6 = v4; /*0x6613cb*/
-  v12 = v3; /*0x6613cf*/
+  int v12 = v3; /*0x6613cf*/
   if ( v3 >= v5 ) /*0x6613d3*/
     v12 = v5; /*0x6613d5*/
   if ( v4 < v12 ) /*0x6613dd*/
     v12 = v4; /*0x6613df*/
+  int v15; // [esp+20h] [ebp-4h]
   LOBYTE(v15) = 0; /*0x6613e5*/
   if ( v6 ) /*0x6613e9*/
   {
-    v7 = v6 - v12; /*0x6613f5*/
+    unsigned int v7 = v6 - v12; /*0x6613f5*/
     v15 = 255 * (v6 - v12) / v6; /*0x661403*/
     if ( v15 ) /*0x661407*/
     {
-      v8 = (255 * v6 - 255 * v4) / v7; /*0x66144f*/
+  int v10; // ecx
+  unsigned int v9; // ecx
+      unsigned int v8 = (255 * v6 - 255 * v4) / v7; /*0x66144f*/
       if ( v6 == v3 ) /*0x661453*/
       {
         if ( v12 == v5 ) /*0x661459*/
@@ -120,24 +112,20 @@ unsigned char * sub_6615D0(char * a1, unsigned char * a2, int a3)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _BYTE *__stdcall sub_6615D0(char *a1, _BYTE *a2, int a3)
 {
-  int v4; // ebx
-  _BYTE *v5; // edi
-  char v6; // al
-  unsigned int v7; // eax
-  _BYTE *v9; // [esp+8h] [ebp-4h]
 
-  v4 = a3; /*0x6615d6*/
-  v5 = a2; /*0x6615db*/
-  v9 = a2; /*0x6615e1*/
+  int v4 = a3; /*0x6615d6*/
+  _BYTE * v5 = a2; /*0x6615db*/
+  _BYTE * v9 = a2; /*0x6615e1*/
   if ( a3 > 0 ) /*0x6615e5*/
   {
+  char v6; // al
     while ( 1 ) /*0x6615e9*/
     {
       v6 = *a1++; /*0x6615e9*/
       --v4; /*0x6615ec*/
       if ( v6 ) /*0x6615ef*/
         break; /*0x6615ef*/
-      v7 = (unsigned __int8)*a1++; /*0x6615f3*/
+      unsigned int v7 = (unsigned __int8)*a1++; /*0x6615f3*/
       --v4; /*0x6615f8*/
       if ( v7 ) /*0x6615fb*/
       {
@@ -164,26 +152,21 @@ unsigned char * sub_661640(unsigned short * a1, unsigned char * a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _BYTE *__stdcall sub_661640(unsigned __int16 *a1, _BYTE *a2)
 {
-  _BYTE *v2; // edi
-  int v3; // edx
-  char *v4; // esi
-  char v5; // al
-  unsigned int v6; // ebx
-  _BYTE *v8; // [esp+Ch] [ebp+4h]
 
-  v2 = a2; /*0x66164b*/
-  v3 = *a1 - 2; /*0x66164f*/
-  v4 = (char *)(a1 + 1); /*0x661652*/
-  v8 = a2; /*0x661657*/
+  _BYTE * v2 = a2; /*0x66164b*/
+  int v3 = *a1 - 2; /*0x66164f*/
+  char * v4 = (char *)(a1 + 1); /*0x661652*/
+  _BYTE * v8 = a2; /*0x661657*/
   if ( v3 > 0 ) /*0x66165b*/
   {
+  char v5; // al
     while ( 1 ) /*0x66165f*/
     {
       v5 = *v4++; /*0x66165f*/
       --v3; /*0x661662*/
       if ( v5 ) /*0x661665*/
         break; /*0x661665*/
-      v6 = (unsigned __int8)*v4++; /*0x661669*/
+      unsigned int v6 = (unsigned __int8)*v4++; /*0x661669*/
       --v3; /*0x66166c*/
       if ( v6 ) /*0x66166f*/
       {
@@ -208,10 +191,9 @@ namespace gamemd {
 char UpdateBullets(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall UpdateBullets(int a1)
+void UpdateBullets(int a1)
 {
   ObjectClass *v1; // ecx
-  int v2; // edx
   ObjectClass *v3; // eax
   int v4; // edi
   int v5; // eax
@@ -343,7 +325,7 @@ char __stdcall UpdateBullets(int a1)
   CoordStruct aP2; // [esp+B4h] [ebp-Ch] BYREF
 
   v1 = *(ObjectClass **)(a1 + 8);
-  v2 = *(_DWORD *)&v1[10].__pad_0[12];
+  int v2 = *(_DWORD *)&v1[10].__pad_0[12];
   if ( v2 == *(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 1248) )
   {
     v3 = (ObjectClass *)(*(_DWORD *)&stru_87C374[44652] + 1200);
@@ -855,24 +837,17 @@ namespace gamemd {
 bool E4Recv_663DB0::LaunchMultiplayerHost(unsigned char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall LaunchMultiplayerHost(int this, unsigned __int8 *a2)
+void LaunchMultiplayerHost(int this, unsigned __int8 *a2)
 {
   unsigned __int8 *v4; // eax
-  int *v5; // esi
   unsigned __int8 v6; // dl
   unsigned __int8 v7; // al
-  int *v8; // eax
-  int v9; // esi
-  int v10; // edi
-  int v11; // eax
   unsigned __int8 v12; // [esp+4h] [ebp-584h] BYREF
   unsigned __int8 v13; // [esp+5h] [ebp-583h]
   unsigned __int8 v14; // [esp+6h] [ebp-582h]
   unsigned __int8 v15; // [esp+7h] [ebp-581h]
-  int v16; // [esp+8h] [ebp-580h]
   DWORD TicksTimer; // [esp+10h] [ebp-578h]
   int v18; // [esp+14h] [ebp-574h]
-  int v19; // [esp+18h] [ebp-570h]
   int v20; // [esp+1Ch] [ebp-56Ch] BYREF
   char v21[2]; // [esp+22h] [ebp-566h] BYREF
   char v22[4]; // [esp+24h] [ebp-564h] BYREF
@@ -883,7 +858,7 @@ bool __thiscall LaunchMultiplayerHost(int this, unsigned __int8 *a2)
   char v27[1024]; // [esp+188h] [ebp-400h] BYREF
 
   TicksTimer = Timer::GetTicks(); /*0x663dc6*/
-  v19 = 0; /*0x663dca*/
+  int v19 = 0; /*0x663dca*/
   Waypoint::InitInvalid(v23); /*0x663dd2*/
   Debug::Log(); /*0x663ddc*/
   GetStartupInfoA(&StartupInfo); /*0x663de9*/
@@ -904,7 +879,7 @@ bool __thiscall LaunchMultiplayerHost(int this, unsigned __int8 *a2)
     NetworkID::Assign(&DataGlobal_A8DBB0, &v20, (int)&v12, 0); /*0x663f62*/
     Network::SetPort(&DataGlobal_A8DBB0, *(_WORD *)(*(_DWORD *)Game_PlayerInfoArray + 40)); /*0x663f78*/
     LOWORD(DataGlobal_A8DBBC) = *(_WORD *)(*(_DWORD *)Game_PlayerInfoArray + 40); /*0x663f88*/
-    v8 = (int *)(*(_DWORD *)Game_PlayerInfoArray + 40); /*0x663f91*/
+    int * v8 = (int *)(*(_DWORD *)Game_PlayerInfoArray + 40); /*0x663f91*/
     DataGlobal_A8DBA4 = *v8; /*0x663f96*/
     DataGlobal_A8DBA8 = v8[1]; /*0x663f9f*/
     DataGlobal_A8DBAC = v8[2]; /*0x663fa8*/
@@ -916,7 +891,7 @@ bool __thiscall LaunchMultiplayerHost(int this, unsigned __int8 *a2)
     sprintf(CommandLine, g_Str_Trace_mphmd_exe__d__d__d__d, *v4, v4[1], v4[2], v4[3]); /*0x663e54*/
     goto LABEL_11; /*0x663e5c*/
   }
-  v5 = (int *)(*(_DWORD *)Game_PlayerInfoArray + 40); /*0x663e69*/
+  int * v5 = (int *)(*(_DWORD *)Game_PlayerInfoArray + 40); /*0x663e69*/
   if ( *(_DWORD *)Game_PlayerInfoArray != -40 ) /*0x663e6c*/
   {
     Network::CopyAddress(v5, &v20, (int)&v12); /*0x663e7e*/
@@ -935,16 +910,16 @@ LABEL_11:
     this->M28 = ProcessInformation.hProcess; /*0x664029*/
     Debug::Log(); /*0x66402c*/
     SetFocus(g_hWnd); /*0x66403b*/
-    v9 = 1800; /*0x66404e*/
+    int v9 = 1800; /*0x66404e*/
     TicksTimer = Timer::GetTicks(); /*0x664053*/
-    v18 = v16; /*0x664057*/
+    int v16 = v16; /*0x664057*/
     v19 = 1800; /*0x66405b*/
-    v10 = 0; /*0x66405f*/
+    int v10 = 0; /*0x66405f*/
     while ( 1 ) /*0x664067*/
     {
       if ( TicksTimer != -1 ) /*0x66406c*/
       {
-        v11 = Timer::GetTicks() - TicksTimer; /*0x664077*/
+        int v11 = Timer::GetTicks() - TicksTimer; /*0x664077*/
         if ( v11 >= v9 ) /*0x66407d*/
           return v10 != 0; /*0x66407d*/
         v9 -= v11; /*0x66407f*/
@@ -978,13 +953,12 @@ namespace gamemd {
 char E4Recv_664750::sub_664750(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_664750(unsigned __int8 *this, char a2)
+void sub_664750(unsigned __int8 *this, char a2)
 {
-  int v2; // eax
-  _BYTE v4[340]; // [esp+4h] [ebp-154h] BYREF
 
+  _BYTE v4[340]; // [esp+4h] [ebp-154h] BYREF
   memset(v4, 0, 338); /*0x664764*/
-  v2 = *(this + 24); /*0x66476c*/
+  int v2 = *(this + 24); /*0x66476c*/
   if ( (_BYTE)v2 ) /*0x664772*/
   {
     v4[0] = 6; /*0x664780*/

@@ -30,7 +30,7 @@ namespace gamemd {
 void VectorCursor_uint_DynamicVectorClass_uint____13::Remove()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall VectorCursor_uint_DynamicVectorClass_uint____13_::_vt07(_DWORD *this)
+void VectorCursor_uint_DynamicVectorClass_uint____13_::_vt07()
 {
   *(this + 3) = 2; /*0x4f42d0*/
 }
@@ -42,15 +42,13 @@ namespace gamemd {
 void VectorCursor_uint_DynamicVectorClass_uint____13::Count(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall VectorCursor_uint_DynamicVectorClass_uint____13_::_vt10(int *this, int a2, int a3)
+void VectorCursor_uint_DynamicVectorClass_uint____13_::_vt10(int a2, int a3)
 {
-  int v3; // eax
-  int v4; // edx
-  int v5; // eax
 
   if ( ((unsigned __int8)g_CurrentFrame & 1) == 0 ) /*0x4f4bb7*/
   {
-    v3 = *(this + 1); /*0x4f4bb9*/
+  int v4; // edx
+    int v3 = *(this + 1); /*0x4f4bb9*/
     if ( v3 >= 0 ) /*0x4f4bbe*/
     {
       if ( v3 <= 0 ) /*0x4f4bc5*/
@@ -63,7 +61,7 @@ void __thiscall VectorCursor_uint_DynamicVectorClass_uint____13_::_vt10(int *thi
     }
     *(this + 1) = v4 - v3; /*0x4f4bce*/
 LABEL_7:
-    v5 = *(this + 2); /*0x4f4bd1*/
+    int v5 = *(this + 2); /*0x4f4bd1*/
     if ( v5 >= 0 ) /*0x4f4bd6*/
     {
       if ( v5 > 0 ) /*0x4f4be3*/

@@ -8,7 +8,7 @@ namespace gamemd {
 int Connection::GetSpeed()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Connection_GetSpeed(int this)
+void Connection_GetSpeed(int this)
 {
   if ( (unsigned char)this->Connection_field_0x4 && *(_BYTE *)(this + 5) ) /*0x5422f7*/
     return *(_DWORD *)(*(_DWORD *)(this->Connection_field_0x48 + 4) + 56); /*0x542304*/
@@ -23,7 +23,7 @@ namespace gamemd {
 int Connection::Close()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Connection_Close(_DWORD *this)
+void Connection_Close(_DWORD *this)
 {
   int result; // eax
 

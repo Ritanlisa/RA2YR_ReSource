@@ -6,39 +6,28 @@
 int Shroud::ProcessCellVisibility(MouseClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Shroud::ProcessCellVisibility(_DWORD *this, MouseClass *aP1)
+void Shroud::ProcessCellVisibility(MouseClass *aP1)
 {
-  int v3; // edx
-  int v4; // ecx
   __int16 v5; // di
   __int16 v6; // ax
-  int v7; // ecx
   int result; // eax
-  int v9; // edi
-  int v10; // eax
-  int v11; // ebp
-  int v12; // eax
-  int v13; // ecx
-  int v14; // edx
-  int v15; // edi
-  int v16; // eax
 
   ShroudClass::UpdateVisibility(this, aP1); /*0x65449d*/
-  v3 = *(this + 63); /*0x6544a2*/
-  v4 = *(this + 64); /*0x6544a8*/
+  int v3 = *(this + 63); /*0x6544a2*/
+  int v4 = *(this + 64); /*0x6544a8*/
   *(this + 1322) = 0; /*0x6544b3*/
   *(this + 1320) = 10000; /*0x6544bd*/
   *(this + 1319) = 10000; /*0x6544c3*/
   v5 = v3 + v4 + 1; /*0x6544cf*/
   v6 = v4 + *(this + 61) - v3; /*0x6544da*/
-  v7 = *(this + 65); /*0x6544dc*/
+  int v7 = *(this + 65); /*0x6544dc*/
   *(this + 1321) = 0; /*0x6544e7*/
   *(this + 1318) = -1; /*0x6544f4*/
   *(this + 1317) = (__int16)(v7 - 1 + v5) - (__int16)(1 - v7 + v6); /*0x654533*/
   *(this + 1316) = v6 - v5; /*0x65453e*/
   LayerClass::CellIteratorReset(&DataGlobal_87F7E8); /*0x654544*/
   result = LayerClass::CellIteratorNext(this); /*0x65454b*/
-  v9 = result; /*0x654550*/
+  int v9 = result; /*0x654550*/
   if ( result ) /*0x654554*/
   {
     while ( 1 ) /*0x654567*/
@@ -54,12 +43,12 @@ LABEL_17:
     }
     if ( *(this + 1318) == -1 ) /*0x65457f*/
       *(this + 1318) = *(__int16 *)(v9 + 36) + *(__int16 *)(v9 + 38); /*0x65458b*/
-    v10 = *(this + 1316); /*0x654594*/
-    v11 = *(this + 1318); /*0x65459a*/
+    int v10 = *(this + 1316); /*0x654594*/
+    int v11 = *(this + 1318); /*0x65459a*/
     aP1 = *(MouseClass **)(v9 + 36); /*0x6545a0*/
-    v12 = (__int16)aP1 + v10 - SHIWORD(aP1); /*0x6545b0*/
-    v13 = (__int16)aP1 + SHIWORD(aP1) - v11; /*0x6545b2*/
-    v14 = 2; /*0x6545b7*/
+    int v12 = (__int16)aP1 + v10 - SHIWORD(aP1); /*0x6545b0*/
+    int v13 = (__int16)aP1 + SHIWORD(aP1) - v11; /*0x6545b2*/
+    int v14 = 2; /*0x6545b7*/
     if ( v12 == -1 ) /*0x6545bc*/
     {
       v12 = 0; /*0x6545be*/
@@ -67,7 +56,7 @@ LABEL_17:
     else if ( v12 != 2 * *(this + 65) - 1 ) /*0x6545ce*/
     {
 LABEL_9:
-      v15 = *(this + 1319); /*0x6545d5*/
+      int v15 = *(this + 1319); /*0x6545d5*/
       if ( v12 >= v15 ) /*0x6545dd*/
       {
         if ( v14 + v12 > v15 + *(this + 1321) ) /*0x6545f4*/
@@ -77,7 +66,7 @@ LABEL_9:
       {
         *(this + 1319) = v12; /*0x6545df*/
       }
-      v16 = *(this + 1320); /*0x654600*/
+      int v16 = *(this + 1320); /*0x654600*/
       if ( v13 >= v16 ) /*0x654608*/
       {
         if ( v13 + 1 > *(this + 1322) + v16 ) /*0x654621*/

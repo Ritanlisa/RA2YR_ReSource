@@ -82,27 +82,18 @@ unsigned __int8 __fastcall WinMain_Create(ObjectClass *aP0, HWND a2, char a3)
   CoordStruct **v3; // edi
   ObjectClass *v4; // eax
   ObjectClass *v5; // esi
-  int v6; // edi
   int *p_health; // ebp
-  char *v8; // ecx
-  int *v9; // eax
-  int v10; // edx
   CoordStruct **v11; // ebx
   CoordStruct *v12; // ecx
-  int v13; // edi
   int p_Z; // ebp
-  _BYTE *v15; // edx
-  _DWORD *v16; // eax
-  int v17; // esi
   unsigned __int8 result; // al
   CoordStruct **v19; // [esp+10h] [ebp-4h]
-  char *v20; // [esp+18h] [ebp+4h]
 
   v3 = &g_MatrixTransformState + 214; /*0x5bc18b*/
   *(&g_MatrixTransformState + 264) = (CoordStruct *)aP0; /*0x5bc190*/
   *(&g_MatrixTransformState + 265) = (CoordStruct *)a2; /*0x5bc196*/
   *((_BYTE *)&(&g_MatrixTransformState)[22] + 8) = a3; /*0x5bc19c*/
-  v20 = 0; /*0x5bc1a1*/
+  char * v20 = 0; /*0x5bc1a1*/
   v19 = &g_MatrixTransformState + 214; /*0x5bc1a5*/
   do /*0x5bc24f*/
   {
@@ -117,13 +108,13 @@ unsigned __int8 __fastcall WinMain_Create(ObjectClass *aP0, HWND a2, char a3)
       v4[58].nextObject = 0; /*0x5bc1d8*/
       v4[58].attachedTag = (void *)80; /*0x5bc1de*/
       v4[58].attachedBomb = (void *)25; /*0x5bc1e8*/
-      v6 = 0; /*0x5bc1f2*/
+      int v6 = 0; /*0x5bc1f2*/
       p_health = &v4[11].health; /*0x5bc1f4*/
       do /*0x5bc219*/
       {
-        v8 = &v5->__pad_0[v6]; /*0x5bc1fa*/
-        v9 = p_health; /*0x5bc1fd*/
-        v10 = 80; /*0x5bc1ff*/
+        char * v8 = &v5->__pad_0[v6]; /*0x5bc1fa*/
+        int * v9 = p_health; /*0x5bc1fd*/
+        int v10 = 80; /*0x5bc1ff*/
         do /*0x5bc210*/
         {
           *v8 = 32; /*0x5bc204*/
@@ -155,13 +146,13 @@ unsigned __int8 __fastcall WinMain_Create(ObjectClass *aP0, HWND a2, char a3)
   do /*0x5bc2b2*/
   {
     v12 = *v11; /*0x5bc266*/
-    v13 = 0; /*0x5bc268*/
+    int v13 = 0; /*0x5bc268*/
     p_Z = (int)&(*v11)[166].Z; /*0x5bc26a*/
     do /*0x5bc293*/
     {
-      v15 = (char *)v12 + v13; /*0x5bc270*/
-      v16 = (_DWORD *)p_Z; /*0x5bc273*/
-      v17 = 80; /*0x5bc275*/
+      _BYTE * v15 = (char *)v12 + v13; /*0x5bc270*/
+      _DWORD * v16 = (_DWORD *)p_Z; /*0x5bc273*/
+      int v17 = 80; /*0x5bc275*/
       do /*0x5bc28a*/
       {
         *v15 = 32; /*0x5bc27a*/
@@ -202,22 +193,20 @@ unsigned __int8 __fastcall WinMain_Create(ObjectClass *aP0, HWND a2, char a3)
 int WinMain::Constructor_VectorClass_Wstring_()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_69A1F0(_DWORD *this)
+void sub_69A1F0(_DWORD *this)
 {
   int i; // ebp
-  int v3; // esi
-  void *v4; // eax
   int j; // esi
   int k; // esi
 
   for ( i = 0; i < this->q1A8; ++i ) /*0x69a200*/
   {
-    v3 = *(_DWORD *)(this->q1A5 + 4 * i); /*0x69a208*/
+    int v3 = *(_DWORD *)(this->q1A5 + 4 * i); /*0x69a208*/
     if ( v3 ) /*0x69a20d*/
     {
       *(_DWORD *)(v3 + 420) = &vt_VectorClass_Wstring; /*0x69a215*/
       VectorClass_Wstring::ddtor(v3 + 420); /*0x69a21b*/
-      v4 = *(void **)(v3 + 396); /*0x69a220*/
+      void * v4 = *(void **)(v3 + 396); /*0x69a220*/
       *(_DWORD *)(v3 + 392) = &vt_VectorClass_enum_DiskID; /*0x69a226*/
       if ( v4 && *(_BYTE *)(v3 + 405) ) /*0x69a234*/
       {
@@ -254,7 +243,6 @@ _DWORD *WinMain_ShutdownCleanup()
   void **v3; // ecx
   int k; // esi
   _DWORD *result; // eax
-  _DWORD *v6; // esi
 
   for ( i = (void **)unk_B1CF8C; unk_B1CF8C; i = (void **)unk_B1CF8C ) /*0x734d3b*/
   {
@@ -298,6 +286,7 @@ _DWORD *WinMain_ShutdownCleanup()
   result = unk_B1CF88; /*0x734dfd*/
   if ( unk_B1CF88 ) /*0x734e04*/
   {
+  _DWORD *v6; // esi
     do /*0x734e15*/
     {
       v6 = (_DWORD *)*result; /*0x734e06*/
@@ -317,7 +306,7 @@ namespace gamemd {
 char sub_5D7E50()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char sub_5D7E50()
+void sub_5D7E50()
 {
   int i; // ebp
   char result; // al

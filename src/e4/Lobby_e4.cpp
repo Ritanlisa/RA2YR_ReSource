@@ -9,15 +9,14 @@
 int Lobby::InvalidatePlayerSlots()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Lobby_InvalidatePlayerSlots(HWND this)
+void Lobby_InvalidatePlayerSlots(HWND this)
 {
   int i; // esi
-  int v3; // edx
-  int v4; // eax
   int result; // eax
 
   for ( i = 0; i < 8; ++i )
   {
+  int v3; // edx
     if ( i )
     {
       switch ( i )
@@ -50,6 +49,7 @@ int __thiscall Lobby_InvalidatePlayerSlots(HWND this)
       v3 = 1901; /*0x4e5d6a*/
     }
     if ( (g_GameMode_Current == 3 || g_GameMode_Current == 4) /*0x4e5df2*/
+  int v4; // eax
       && ((v4 = *(&g_NetworkPlayerName + i), v4 == g_Lobby_MaxPlayers) || *(_DWORD *)(v4 + 107) == -1) )
     {
       result = InitComboBoxNone(this, v3); /*0x4e5dff*/
@@ -67,7 +67,7 @@ int __thiscall Lobby_InvalidatePlayerSlots(HWND this)
 void Lobby::UpdatePlayerLabels()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall Lobby_UpdatePlayerLabels(HWND this)
+void Lobby_UpdatePlayerLabels(HWND this)
 {
   int v1; // esi
   int v2; // eax
@@ -75,7 +75,7 @@ void __thiscall Lobby_UpdatePlayerLabels(HWND this)
   int v4; // eax
   int v5; // eax
   int v6; // ebp
-  HWND v7; // ebx
+  Lobby *v7; // ebx
   HWND DlgItem; // esi
   wchar_t *v9; // ebx
   wchar_t *v10; // ebp
@@ -377,17 +377,13 @@ LABEL_111:
 void Lobby::SetupPlayerWidgets()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall Lobby::SetupPlayerWidgets(HWND this)
+void Lobby::SetupPlayerWidgets(HWND this)
 {
   INIClass *v1; // esi
-  int v3; // ebp
-  int v4; // ebx
   int ResourceID4CSF; // eax
-  int v6; // esi
   HWND DlgItem; // ebp
   HWND v8; // ebx
   HWND v9; // edi
-  bool v10; // [esp+Bh] [ebp-19h]
   HWND ResourceIDCSF; // [esp+Ch] [ebp-18h]
   HWND v12; // [esp+Ch] [ebp-18h]
   int nIDDlgItem; // [esp+10h] [ebp-14h]
@@ -395,7 +391,6 @@ void __thiscall Lobby::SetupPlayerWidgets(HWND this)
   HWND ResourceID2CSF; // [esp+14h] [ebp-10h]
   HWND v16; // [esp+14h] [ebp-10h]
   int ResourceID3CSF; // [esp+18h] [ebp-Ch]
-  int v18; // [esp+1Ch] [ebp-8h]
   HWND hWnd; // [esp+20h] [ebp-4h]
 
   v1 = (INIClass *)g_MPCooperativeState; /*0x5eba04*/
@@ -405,6 +400,8 @@ void __thiscall Lobby::SetupPlayerWidgets(HWND this)
       v1 = (INIClass *)DataGlobal_A8BB0C; /*0x5eba17*/
     if ( (int)v1 < 8 ) /*0x5eba20*/
     {
+  int v4; // ebx
+  int v3; // ebp
       if ( v1 ) /*0x5eba2a*/
       {
         if ( v1 == (INIClass *)1 ) /*0x5eba3b*/
@@ -458,8 +455,9 @@ void __thiscall Lobby::SetupPlayerWidgets(HWND this)
       ResourceID2CSF = (HWND)GetResourceID2CSF(v1); /*0x5ebad4*/
       ResourceID3CSF = GetResourceID3CSF(v1); /*0x5ebadf*/
       ResourceID4CSF = GetResourceID4CSF(v1); /*0x5ebae3*/
-      v6 = *(&g_NetworkPlayerName + (_DWORD)v1); /*0x5ebae8*/
-      v18 = ResourceID4CSF; /*0x5ebaef*/
+      int v6 = *(&g_NetworkPlayerName + (_DWORD)v1); /*0x5ebae8*/
+      int v18 = ResourceID4CSF; /*0x5ebaef*/
+  bool v10; // [esp+Bh] [ebp-19h]
       v10 = v6 == g_Lobby_MaxPlayers /*0x5ebb24*/
          || v6
          && v6 != g_HouseClass_ObserverFlags
@@ -503,17 +501,12 @@ void __thiscall Lobby::SetupPlayerWidgets(HWND this)
 int Lobby::BuildPlayerList()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int Lobby_BuildPlayerList()
+void Lobby_BuildPlayerList()
 {
   wchar_t **v0; // esi
   wchar_t *v1; // edi
   char **v2; // eax
   const char **v3; // eax
-  char *v4; // eax
-  void *v6; // [esp+8h] [ebp-110h] BYREF
-  void *v7; // [esp+Ch] [ebp-10Ch] BYREF
-  void *v8; // [esp+10h] [ebp-108h] BYREF
-  void *v9; // [esp+14h] [ebp-104h] BYREF
   char Destination[256]; // [esp+18h] [ebp-100h] BYREF
 
   strcpy(Destination, asc_84A480); /*0x77dbb5*/
@@ -521,22 +514,24 @@ int Lobby_BuildPlayerList()
   do /*0x77dc6e*/
   {
     v1 = *v0; /*0x77dbc3*/
+  void *v6; // [esp+8h] [ebp-110h] BYREF
     unknown_libname_73(&v6); /*0x77dbc9*/
     if ( IsKnownPointer(v1) ) /*0x77dbd0*/
     {
+  void *v7; // [esp+Ch] [ebp-10Ch] BYREF
       WideString::Assign((wchar_t **)&v7, v1); /*0x77dbde*/
-      v2 = ToWideStringCharAlt((char **)&v8, (const wchar_t **)&v7); /*0x77dbeb*/
+      void * v8 = ToWideStringCharAlt((char **)&v8, (const wchar_t **)&v7); /*0x77dbeb*/
       String::Reassign((char **)&v6, (const char **)v2); /*0x77dbf5*/
       DeleteAndZero(&v8); /*0x77dbfe*/
       DeleteAndZero::Alt(&v7); /*0x77dc07*/
     }
     else
     {
-      v3 = (const char **)GetPlayerTypeString(&v9, v1); /*0x77dc14*/
+      void * v9 = (const char **)GetPlayerTypeString(&v9, v1); /*0x77dc14*/
       String::Reassign((char **)&v6, v3); /*0x77dc1e*/
       DeleteAndZero(&v9); /*0x77dc27*/
     }
-    v4 = String::GetOrEmpty((char **)&v6); /*0x77dc35*/
+    char * v4 = String::GetOrEmpty((char **)&v6); /*0x77dc35*/
     strncat(Destination, v4, 0x100u); /*0x77dc40*/
     strncat(Destination, Delimiter, 0x100u); /*0x77dc54*/
     DeleteAndZero(&v6); /*0x77dc60*/

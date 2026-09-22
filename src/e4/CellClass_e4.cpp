@@ -11,7 +11,7 @@ namespace gamemd {
 BOOL CellClass::EnsureFileLoaded()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall sub_544C80(int this)
+void sub_544C80(int this)
 {
   if ( !this->q0A4 && *(_BYTE *)(this + 756) ) /*0x544c8d*/
     MapClass::LoadFileData(this); /*0x544c97*/
@@ -25,12 +25,10 @@ namespace gamemd {
 char CellClass::UpdateVariant3(IUnknown * aP0, IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall CellClass::UpdateVariant3(IUnknown *aP0, IUnknown *aP1)
+void CellClass::UpdateVariant3(IUnknown *aP0, IUnknown *aP1)
 {
   IUnknown *v2; // edi
   ObjectClass *v3; // ecx
-  unsigned int v4; // eax
-  _DWORD *v5; // eax
   _DWORD *v6; // esi
   unsigned __int8 v7; // al
   int v8; // edx
@@ -62,7 +60,8 @@ char __stdcall CellClass::UpdateVariant3(IUnknown *aP0, IUnknown *aP1)
   v3 = (ObjectClass *)CellStruct::Add(aP0, (IUnknown *)&aP1, (IUnknown *)(4 * ((unsigned __int8)aP1 & 7) + 9041544))->field_0; /*0x56ef77*/
   aP1 = (IUnknown *)v3; /*0x56ef79*/
   *(_DWORD *)v32 = v3; /*0x56ef7d*/
-  v4 = (__int16)v3 + (SHIWORD(v3) << 9); /*0x56ef8c*/
+  unsigned int v4 = (__int16)v3 + (SHIWORD(v3) << 9); /*0x56ef8c*/
+  _DWORD *v5; // eax
   if ( v4 < 0x40000 && (v5 = *(_DWORD **)(*(_DWORD *)&stru_87C374[13744] + 4 * v4)) != 0 ) /*0x56efa2*/
   {
     v6 = v5; /*0x56efa4*/
@@ -206,12 +205,10 @@ namespace gamemd {
 char CellClass::UpdateVariant4(IUnknown * aP0, IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall CellClass::UpdateVariant4(IUnknown *aP0, IUnknown *aP1)
+void CellClass::UpdateVariant4(IUnknown *aP0, IUnknown *aP1)
 {
   IUnknown *v2; // edi
   ObjectClass *v3; // ecx
-  unsigned int v4; // eax
-  _DWORD *v5; // eax
   _DWORD *v6; // esi
   unsigned __int8 v7; // al
   int v8; // edx
@@ -243,7 +240,8 @@ char __stdcall CellClass::UpdateVariant4(IUnknown *aP0, IUnknown *aP1)
   v3 = (ObjectClass *)CellStruct::Add(aP0, (IUnknown *)&aP1, (IUnknown *)(4 * ((unsigned __int8)aP1 & 7) + 9041544))->field_0; /*0x56f317*/
   aP1 = (IUnknown *)v3; /*0x56f319*/
   *(_DWORD *)v32 = v3; /*0x56f31d*/
-  v4 = (__int16)v3 + (SHIWORD(v3) << 9); /*0x56f32c*/
+  unsigned int v4 = (__int16)v3 + (SHIWORD(v3) << 9); /*0x56f32c*/
+  _DWORD *v5; // eax
   if ( v4 < 0x40000 && (v5 = *(_DWORD **)(*(_DWORD *)&stru_87C374[13744] + 4 * v4)) != 0 ) /*0x56f342*/
   {
     v6 = v5; /*0x56f344*/
@@ -387,12 +385,10 @@ namespace gamemd {
 char CellClass::UpdateTerrain(IUnknown * aP0, IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall CellClass::UpdateTerrain(IUnknown *aP0, IUnknown *aP1)
+void CellClass::UpdateTerrain(IUnknown *aP0, IUnknown *aP1)
 {
   IUnknown *v2; // edi
   ObjectClass *v3; // ecx
-  unsigned int v4; // eax
-  _DWORD *v5; // eax
   _DWORD *v6; // esi
   unsigned __int8 v7; // al
   int v8; // edx
@@ -423,7 +419,8 @@ char __stdcall CellClass::UpdateTerrain(IUnknown *aP0, IUnknown *aP1)
   v3 = (ObjectClass *)CellStruct::Add(aP0, (IUnknown *)&aP1, (IUnknown *)(4 * ((unsigned __int8)aP1 & 7) + 9041544))->field_0; /*0x56f8d7*/
   aP1 = (IUnknown *)v3; /*0x56f8d9*/
   *(_DWORD *)v31 = v3; /*0x56f8dd*/
-  v4 = (__int16)v3 + (SHIWORD(v3) << 9); /*0x56f8ec*/
+  unsigned int v4 = (__int16)v3 + (SHIWORD(v3) << 9); /*0x56f8ec*/
+  _DWORD *v5; // eax
   if ( v4 < 0x40000 && (v5 = *(_DWORD **)(*(_DWORD *)&stru_87C374[13744] + 4 * v4)) != 0 ) /*0x56f902*/
   {
     v6 = v5; /*0x56f904*/
@@ -574,12 +571,10 @@ namespace gamemd {
 char CellClass::UpdateTileVariant2(IUnknown * aP0, IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall CellClass::UpdateTileVariant2(IUnknown *aP0, IUnknown *aP1)
+void CellClass::UpdateTileVariant2(IUnknown *aP0, IUnknown *aP1)
 {
   IUnknown *v2; // edi
   ObjectClass *v3; // ecx
-  unsigned int v4; // eax
-  _DWORD *v5; // eax
   _DWORD *v6; // esi
   unsigned __int8 v7; // al
   int v8; // edx
@@ -610,7 +605,8 @@ char __stdcall CellClass::UpdateTileVariant2(IUnknown *aP0, IUnknown *aP1)
   v3 = (ObjectClass *)CellStruct::Add(aP0, (IUnknown *)&aP1, (IUnknown *)(4 * ((unsigned __int8)aP1 & 7) + 9041544))->field_0; /*0x56fca7*/
   aP1 = (IUnknown *)v3; /*0x56fca9*/
   *(_DWORD *)v31 = v3; /*0x56fcad*/
-  v4 = (__int16)v3 + (SHIWORD(v3) << 9); /*0x56fcbc*/
+  unsigned int v4 = (__int16)v3 + (SHIWORD(v3) << 9); /*0x56fcbc*/
+  _DWORD *v5; // eax
   if ( v4 < 0x40000 && (v5 = *(_DWORD **)(*(_DWORD *)&stru_87C374[13744] + 4 * v4)) != 0 ) /*0x56fcd2*/
   {
     v6 = v5; /*0x56fcd4*/
@@ -761,12 +757,10 @@ namespace gamemd {
 char CellClass::UpdateVariant7(IUnknown * aP0, IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall CellClass::UpdateVariant7(IUnknown *aP0, IUnknown *aP1)
+void CellClass::UpdateVariant7(IUnknown *aP0, IUnknown *aP1)
 {
   IUnknown *v2; // edi
   ObjectClass *v3; // ecx
-  unsigned int v4; // eax
-  _DWORD *v5; // eax
   _DWORD *v6; // esi
   unsigned __int8 v7; // al
   int v8; // edx
@@ -798,7 +792,8 @@ char __stdcall CellClass::UpdateVariant7(IUnknown *aP0, IUnknown *aP1)
   v3 = (ObjectClass *)CellStruct::Add(aP0, (IUnknown *)&aP1, (IUnknown *)(4 * ((unsigned __int8)aP1 & 7) + 9041544))->field_0; /*0x572467*/
   aP1 = (IUnknown *)v3; /*0x572469*/
   *(_DWORD *)v32 = v3; /*0x57246d*/
-  v4 = (__int16)v3 + (SHIWORD(v3) << 9); /*0x57247c*/
+  unsigned int v4 = (__int16)v3 + (SHIWORD(v3) << 9); /*0x57247c*/
+  _DWORD *v5; // eax
   if ( v4 < 0x40000 && (v5 = *(_DWORD **)(*(_DWORD *)&stru_87C374[13744] + 4 * v4)) != 0 ) /*0x572492*/
   {
     v6 = v5; /*0x572494*/
@@ -942,12 +937,10 @@ namespace gamemd {
 char CellClass::UpdateVariant8(IUnknown * aP0, IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall CellClass::UpdateVariant8(IUnknown *aP0, IUnknown *aP1)
+void CellClass::UpdateVariant8(IUnknown *aP0, IUnknown *aP1)
 {
   IUnknown *v2; // edi
   ObjectClass *v3; // ecx
-  unsigned int v4; // eax
-  _DWORD *v5; // eax
   _DWORD *v6; // esi
   unsigned __int8 v7; // al
   int v8; // edx
@@ -979,7 +972,8 @@ char __stdcall CellClass::UpdateVariant8(IUnknown *aP0, IUnknown *aP1)
   v3 = (ObjectClass *)CellStruct::Add(aP0, (IUnknown *)&aP1, (IUnknown *)(4 * ((unsigned __int8)aP1 & 7) + 9041544))->field_0; /*0x572807*/
   aP1 = (IUnknown *)v3; /*0x572809*/
   *(_DWORD *)v32 = v3; /*0x57280d*/
-  v4 = (__int16)v3 + (SHIWORD(v3) << 9); /*0x57281c*/
+  unsigned int v4 = (__int16)v3 + (SHIWORD(v3) << 9); /*0x57281c*/
+  _DWORD *v5; // eax
   if ( v4 < 0x40000 && (v5 = *(_DWORD **)(*(_DWORD *)&stru_87C374[13744] + 4 * v4)) != 0 ) /*0x572832*/
   {
     v6 = v5; /*0x572834*/
@@ -1123,12 +1117,10 @@ namespace gamemd {
 char CellClass::UpdateVariant5(IUnknown * aP0, IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall CellClass::UpdateVariant5(IUnknown *aP0, IUnknown *aP1)
+void CellClass::UpdateVariant5(IUnknown *aP0, IUnknown *aP1)
 {
   IUnknown *v2; // edi
   ObjectClass *v3; // ecx
-  unsigned int v4; // eax
-  _DWORD *v5; // eax
   _DWORD *v6; // esi
   unsigned __int8 v7; // al
   int v8; // edx
@@ -1159,7 +1151,8 @@ char __stdcall CellClass::UpdateVariant5(IUnknown *aP0, IUnknown *aP1)
   v3 = (ObjectClass *)CellStruct::Add(aP0, (IUnknown *)&aP1, (IUnknown *)(4 * ((unsigned __int8)aP1 & 7) + 9041544))->field_0; /*0x572dc7*/
   aP1 = (IUnknown *)v3; /*0x572dc9*/
   *(_DWORD *)v31 = v3; /*0x572dcd*/
-  v4 = (__int16)v3 + (SHIWORD(v3) << 9); /*0x572ddc*/
+  unsigned int v4 = (__int16)v3 + (SHIWORD(v3) << 9); /*0x572ddc*/
+  _DWORD *v5; // eax
   if ( v4 < 0x40000 && (v5 = *(_DWORD **)(*(_DWORD *)&stru_87C374[13744] + 4 * v4)) != 0 ) /*0x572df2*/
   {
     v6 = v5; /*0x572df4*/
@@ -1310,12 +1303,10 @@ namespace gamemd {
 char CellClass::UpdateVariant6(IUnknown * aP0, IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall CellClass::UpdateVariant6(IUnknown *aP0, IUnknown *aP1)
+void CellClass::UpdateVariant6(IUnknown *aP0, IUnknown *aP1)
 {
   IUnknown *v2; // edi
   ObjectClass *v3; // ecx
-  unsigned int v4; // eax
-  _DWORD *v5; // eax
   _DWORD *v6; // esi
   unsigned __int8 v7; // al
   int v8; // edx
@@ -1346,7 +1337,8 @@ char __stdcall CellClass::UpdateVariant6(IUnknown *aP0, IUnknown *aP1)
   v3 = (ObjectClass *)CellStruct::Add(aP0, (IUnknown *)&aP1, (IUnknown *)(4 * ((unsigned __int8)aP1 & 7) + 9041544))->field_0; /*0x573197*/
   aP1 = (IUnknown *)v3; /*0x573199*/
   *(_DWORD *)v31 = v3; /*0x57319d*/
-  v4 = (__int16)v3 + (SHIWORD(v3) << 9); /*0x5731ac*/
+  unsigned int v4 = (__int16)v3 + (SHIWORD(v3) << 9); /*0x5731ac*/
+  _DWORD *v5; // eax
   if ( v4 < 0x40000 && (v5 = *(_DWORD **)(*(_DWORD *)&stru_87C374[13744] + 4 * v4)) != 0 ) /*0x5731c2*/
   {
     v6 = v5; /*0x5731c4*/
@@ -1497,9 +1489,8 @@ namespace gamemd {
 char CellClass::CheckTilePassable2(IUnknown * aP0)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall CellClass::CheckTilePassable2(IUnknown *aP0)
+void CellClass::CheckTilePassable2(IUnknown *aP0)
 {
-  int *v1; // ecx
   __int16 *v2; // esi
   int *v3; // edi
   unsigned int v4; // eax
@@ -1518,9 +1509,8 @@ char __stdcall CellClass::CheckTilePassable2(IUnknown *aP0)
   int v18; // eax
   int v19; // [esp+8h] [ebp-8h] BYREF
   int v20; // [esp+Ch] [ebp-4h] BYREF
-
   v2 = (__int16 *)aP0; /*0x57baa4*/
-  v3 = v1; /*0x57baa9*/
+  int * v1 = v1; /*0x57baa9*/
   v4 = SLOWORD(aP0->field_0) + (SHIWORD(aP0->field_0) << 9); /*0x57bab5*/
   if ( v4 >= 0x40000 || (v5 = *(_DWORD **)(*(_DWORD *)&stru_87C374[13744] + 4 * v4)) == 0 ) /*0x57bacb*/
   {
@@ -1604,9 +1594,8 @@ namespace gamemd {
 char CellClass::CheckTilePassable(IUnknown * aP0)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall CellClass::CheckTilePassable(IUnknown *aP0)
+void CellClass::CheckTilePassable(IUnknown *aP0)
 {
-  int *v1; // ecx
   __int16 *v2; // esi
   int *v3; // edi
   unsigned int v4; // eax
@@ -1625,9 +1614,8 @@ char __stdcall CellClass::CheckTilePassable(IUnknown *aP0)
   int v18; // eax
   int v19; // [esp+8h] [ebp-8h] BYREF
   int v20; // [esp+Ch] [ebp-4h] BYREF
-
   v2 = (__int16 *)aP0; /*0x57ccf4*/
-  v3 = v1; /*0x57ccf9*/
+  int * v1 = v1; /*0x57ccf9*/
   v4 = SLOWORD(aP0->field_0) + (SHIWORD(aP0->field_0) << 9); /*0x57cd05*/
   if ( v4 >= 0x40000 || (v5 = *(_DWORD **)(*(_DWORD *)&stru_87C374[13744] + 4 * v4)) == 0 ) /*0x57cd1b*/
   {
@@ -1711,11 +1699,10 @@ namespace gamemd {
 int CellClass::GetOccupiedRatio()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_65B510(int *this)
+void sub_65B510(int *this)
 {
-  int v1; // esi
 
-  v1 = this->CellClass_field_6C; /*0x65b511*/
+  int v1 = this->CellClass_field_6C; /*0x65b511*/
   if ( v1 > 0 ) /*0x65b516*/
     return this->CellClass_field_4C * this->rubble / v1; /*0x65b524*/
   else

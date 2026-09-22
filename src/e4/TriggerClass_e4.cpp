@@ -10,28 +10,22 @@ char TriggerClass::FindByEventType(char a1)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __fastcall sub_610950(char a1)
 {
-  _DWORD *v2; // esi
-  int v3; // eax
-  int v4; // ecx
-  int v5; // ecx
-  int v6; // esi
   size_t v7; // eax
   __int128 v8; // [esp+28h] [ebp-20h] BYREF
-  _DWORD v9[2]; // [esp+38h] [ebp-10h] BYREF
-  __int64 v10; // [esp+40h] [ebp-8h]
 
   if ( !DataGlobal_AC1DCC ) /*0x61095d*/
     return 0; /*0x61095f*/
   if ( a1 ) /*0x61096a*/
   {
+  int v5; // ecx
     if ( DataGlobal_AC1CC8 ) /*0x610978*/
       (**(void (__thiscall ***)(int, int))DataGlobal_AC1CC8)(DataGlobal_AC1CC8, 1); /*0x61097e*/
     DataGlobal_AC1CC8 = 0; /*0x610982*/
-    v2 = __2_YAPAXI_Z(0x20u); /*0x61098d*/
+    _DWORD * v2 = __2_YAPAXI_Z(0x20u); /*0x61098d*/
     if ( v2 ) /*0x610994*/
     {
-      v4 = HIDWORD(DataGlobal_AC1CB8); /*0x61099b*/
-      v3 = DWORD2(DataGlobal_AC1CB8); /*0x61099b*/
+      int v4 = HIDWORD(DataGlobal_AC1CB8); /*0x61099b*/
+      int v3 = DWORD2(DataGlobal_AC1CB8); /*0x61099b*/
       v2[1] = DWORD2(DataGlobal_AC1CB8); /*0x6109a1*/
       v2[2] = v4; /*0x6109a9*/
       v2[3] = 0; /*0x6109b1*/
@@ -46,9 +40,10 @@ char __fastcall sub_610950(char a1)
       v5 = 0; /*0x6109d0*/
     }
     DataGlobal_AC1CC8 = v5; /*0x6109ef*/
+  _DWORD v9[2]; // [esp+38h] [ebp-10h] BYREF
     v9[0] = 0; /*0x6109f5*/
     v9[1] = 0; /*0x6109f9*/
-    v10 = *((_QWORD *)&DataGlobal_AC1CB8 + 1); /*0x6109fd*/
+    __int64 v10 = *((_QWORD *)&DataGlobal_AC1CB8 + 1); /*0x6109fd*/
     (*(void (__thiscall **)(int, _DWORD *, int, __int128 *, _DWORD, int))(*(_DWORD *)v5 + 8))( /*0x610a08*/
       v5,
       v9,
@@ -60,7 +55,7 @@ char __fastcall sub_610950(char a1)
   v8 = DataGlobal_AC1CB8; /*0x610a25*/
   DataGlobal_AC1DD0 = 0; /*0x610a32*/
   if ( DataGlobal_AC48B0 == -1 ) /*0x610a40*/
-    v6 = -1; /*0x610a42*/
+    int v6 = -1; /*0x610a42*/
   else
     v6 = ((int)(unsigned __int8)DataGlobal_AC48B0 >> g_BitShift_Green_0 << g_DDraw_BlueMask) /*0x610a8d*/
        | (BYTE1(DataGlobal_AC48B0) >> g_BitMask_Blue << g_BitMask_Green)
@@ -86,7 +81,7 @@ namespace gamemd {
 int TriggerClass::GetValue()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_71FA30(_DWORD *this)
+void sub_71FA30(_DWORD *this)
 {
   return this->q054; /*0x71fa33*/
 }
@@ -98,26 +93,23 @@ namespace gamemd {
 char TriggerClass::RegisterEvent(TriggerClass * aP1, TechnoClass * aP2, char a4, char a5, int a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall TriggerClass::RegisterEvent(int this, TriggerClass *aP1, TechnoClass *aP2, char a4, char a5, int a6)
+void TriggerClass::RegisterEvent(int this, TriggerClass *aP1, TechnoClass *aP2, char a4, char a5, int a6)
 {
-  char v7; // bl
-  _DWORD *v8; // edi
   int Owner; // eax
-  int v11; // [esp-10h] [ebp-18h]
-  char v12; // [esp+7h] [ebp-1h]
 
   if ( !this->enabled || this->destroyed ) /*0x7264cf*/
     return 0; /*0x7265b4*/
-  v12 = 1; /*0x7264e2*/
+  char v12 = 1; /*0x7264e2*/
   if ( a4 ) /*0x7264e7*/
     goto LABEL_16; /*0x7264e7*/
-  v7 = 0; /*0x7264f0*/
-  v8 = *(_DWORD **)(this->buildingType + 172); /*0x7264f2*/
+  char v7 = 0; /*0x7264f0*/
+  _DWORD * v8 = *(_DWORD **)(this->buildingType + 172); /*0x7264f2*/
   if ( !v8 ) /*0x7264fa*/
     goto LABEL_16; /*0x7264fa*/
   do /*0x72658b*/
   {
     if ( (this->occuredEvents & (1 << v7)) != 0 /*0x726540*/
+  int v11; // [esp-10h] [ebp-18h]
       || (v11 = a6,
           Owner = HouseClass::FindOwner(*(void **)(*(_DWORD *)(this->buildingType + 164) + 180)),
           TEventClass::Execute(v8, (int)aP1, Owner, (int)aP2, (int *)(this + 52), (int)&a5, v11)) )

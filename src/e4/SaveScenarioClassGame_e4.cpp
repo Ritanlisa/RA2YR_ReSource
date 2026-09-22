@@ -12,11 +12,7 @@ char SaveScenarioClassGame_AdjustMPSaveFileName(LPCCH lpMultiByteStr, wchar_t * 
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __fastcall SaveScenarioClassGame_AdjustMPSaveFileName(LPCCH lpMultiByteStr, wchar_t *Source, int a3)
 {
-  int v6; // eax
-  char v7; // bl
   IStorage *ppstgOpen; // [esp+50h] [ebp-490h] BYREF
-  int v9; // [esp+54h] [ebp-48Ch] BYREF
-  int v10; // [esp+58h] [ebp-488h] BYREF
   LPSTREAM pStm; // [esp+5Ch] [ebp-484h] BYREF
   LPVOID ppv; // [esp+60h] [ebp-480h] BYREF
   FILETIME FileTime; // [esp+64h] [ebp-47Ch] BYREF
@@ -47,7 +43,7 @@ char __fastcall SaveScenarioClassGame_AdjustMPSaveFileName(LPCCH lpMultiByteStr,
   Map_Save_681200(v15, &FileTime); /*0x67d033*/
   Map_Save_681240(v15, &FileTime); /*0x67d044*/
   GameOptions::SaveLoad((int)v15, (int *)ppstgOpen); /*0x67d055*/
-  v10 = 0; /*0x67d05a*/
+  int v10 = 0; /*0x67d05a*/
   if ( !ppstgOpen ) /*0x67d064*/
     WinAPI::Wrapper(-2147467261); /*0x67d06b*/
   if ( ppstgOpen->lpVtbl->CreateStream(ppstgOpen, (const OLECHAR *)&DataGlobal_83D5A8, 4114, 0, 0, (IStream **)&v10) < 0 ) /*0x67d08d*/
@@ -62,7 +58,7 @@ LABEL_9:
     }
     return 0; /*0x67d0a3*/
   }
-  v9 = 0; /*0x67d0c2*/
+  int v9 = 0; /*0x67d0c2*/
   Game::readIniSettings(&v9); /*0x67d0c6*/
   if ( CoCreateInstance(&stru_7E9540, 0, 7u, &riid, &ppv) >= 0 ) /*0x67d0e5*/
   {
@@ -86,11 +82,11 @@ LABEL_9:
   pStm = 0; /*0x67d182*/
   if ( v9 ) /*0x67d188*/
   {
-    v6 = Game::validateScenario(&pStm, &v9); /*0x67d193*/
+    int v6 = Game::validateScenario(&pStm, &v9); /*0x67d193*/
     if ( v6 < 0 && v6 != -2147467262 ) /*0x67d1a1*/
       WinAPI::Wrapper(v6); /*0x67d1a4*/
   }
-  v7 = SaveGame::Start(pStm); /*0x67d1b4*/
+  char v7 = SaveGame::Start(pStm); /*0x67d1b4*/
   if ( !v9 ) /*0x67d1bc*/
     WinAPI::Wrapper(-2147467261); /*0x67d1c3*/
   if ( (*(int (__stdcall **)(int, _DWORD))(*(_DWORD *)v9 + 16))(v9, 0) < 0 ) /*0x67d1d5*/

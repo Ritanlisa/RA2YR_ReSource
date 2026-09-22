@@ -12,11 +12,9 @@
 int InfantryTypeClass::Constructor(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall InfantryTypeClass::Constructor(int this, ObjectClass *aP1)
+void InfantryTypeClass::Constructor(int this, ObjectClass *aP1)
 {
   InfantryTypeClass *v3; // eax
-  bool v4; // zf
-  int v5; // ecx
   CCINIClass *v6; // edx
   int i; // eax
 
@@ -75,6 +73,7 @@ int __thiscall InfantryTypeClass::Constructor(int this, ObjectClass *aP1)
   if ( *(int *)&g_NetworkPlayerBuffer[3356] < *(int *)&g_NetworkPlayerBuffer[3348] /*0x523845*/
     || (g_NetworkPlayerBuffer[3353] || !*(_DWORD *)&g_NetworkPlayerBuffer[3348])
     && *(int *)&g_NetworkPlayerBuffer[3360] > 0
+  bool v4; // zf
     && (v4 = (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&g_NetworkPlayerBuffer[3340] + 8))(
                &g_NetworkPlayerBuffer[3340],
                *(_DWORD *)&g_NetworkPlayerBuffer[3348] + *(_DWORD *)&g_NetworkPlayerBuffer[3360],
@@ -86,7 +85,7 @@ int __thiscall InfantryTypeClass::Constructor(int this, ObjectClass *aP1)
     *(_DWORD *)(*(_DWORD *)&g_NetworkPlayerBuffer[3344] + 4 * (_DWORD)v3) = this; /*0x523854*/
     v3 = *(InfantryTypeClass **)&g_NetworkPlayerBuffer[3356]; /*0x523857*/
   }
-  v5 = 0; /*0x52385c*/
+  int v5 = 0; /*0x52385c*/
   if ( (int)v3 <= 0 ) /*0x523860*/
   {
 LABEL_11:
@@ -165,35 +164,28 @@ _DWORD *__thiscall InfantryTypeClass::Constructor_523980(_DWORD *this, ObjectTyp
 char InfantryTypeClass::CreateInfantry(short * a2, AbstractClass * ppv)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall InfantryTypeClass::CreateInfantry(AbstractClass *this, __int16 *a2, AbstractClass *ppv)
+void InfantryTypeClass::CreateInfantry(__int16 *a2, AbstractClass *ppv)
 {
-  int v4; // eax
   InfantryClass *v5; // esi
-  int v6; // eax
-  _DWORD *v7; // eax
-  int *v8; // eax
-  int v9; // ecx
-  int v10; // edx
-  _DWORD v12[3]; // [esp+4h] [ebp-24h] BYREF
-  _DWORD v13[3]; // [esp+10h] [ebp-18h] BYREF
-  int a1[3]; // [esp+1Ch] [ebp-Ch] BYREF
-
-  v4 = __2_YAPAXI_Z(0x6F0u); /*0x523b4b*/
+  int v4 = __2_YAPAXI_Z(0x6F0u); /*0x523b4b*/
   if ( v4 ) /*0x523b55*/
   {
     v5 = (InfantryClass *)InfantryClass::Construct(v4, this, ppv); /*0x523b68*/
     if ( v5 ) /*0x523b6c*/
     {
-      v6 = a2[1] << 8; /*0x523b85*/
+      int v6 = a2[1] << 8; /*0x523b85*/
+  _DWORD v12[3]; // [esp+4h] [ebp-24h] BYREF
       v12[0] = (*a2 << 8) + 128; /*0x523b93*/
       v12[1] = v6 + 128; /*0x523b9b*/
       v12[2] = 0; /*0x523bb1*/
-      v7 = Coord::To_Cell(&stru_87C374[13428], (IUnknown *)v12); /*0x523bb9*/
-      v8 = ObjectPlacement::CalcPosition(v7, a1, (IUnknown *)v12, 0, 0, 0); /*0x523bc0*/
+      _DWORD * v7 = Coord::To_Cell(&stru_87C374[13428], (IUnknown *)v12); /*0x523bb9*/
+  int a1[3]; // [esp+1Ch] [ebp-Ch] BYREF
+      int * v8 = ObjectPlacement::CalcPosition(v7, a1, (IUnknown *)v12, 0, 0, 0); /*0x523bc0*/
+  _DWORD v13[3]; // [esp+10h] [ebp-18h] BYREF
       v13[0] = *v8; /*0x523bcf*/
-      v9 = v8[1]; /*0x523bd5*/
+      int v9 = v8[1]; /*0x523bd5*/
       v13[1] = v9; /*0x523bd9*/
-      v10 = v8[2]; /*0x523bdd*/
+      int v10 = v8[2]; /*0x523bdd*/
       v13[2] = v10; /*0x523be0*/
       if ( v13[0] != *(_DWORD *)&HouseClass_Player[46388] /*0x523bf4*/
         || v9 != *(_DWORD *)&HouseClass_Player[46392]
@@ -212,7 +204,7 @@ char __thiscall InfantryTypeClass::CreateInfantry(AbstractClass *this, __int16 *
 char InfantryTypeClass::LoadFromINI(unsigned char *** a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall InfantryTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
+void InfantryTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
 {
   int PipIdx; // eax
   WeaponTypeClass *v5; // ebx
@@ -223,55 +215,30 @@ char __thiscall InfantryTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
   VectorClass *v10; // eax
   AbstractClass *i; // eax
   VectorClass *v12; // ecx
-  int v13; // edx
   AbstractClass *j; // eax
   char Bool_Overwrite; // al
-  int v16; // ebx
   int Index; // eax
-  int v18; // ebx
-  int v19; // eax
-  char v20; // al
-  char v21; // cl
-  char v22; // al
-  char v23; // al
-  char v24; // cl
-  char v25; // al
   int Int_Overwrite; // eax
-  char v27; // cl
-  char v28; // al
-  char v29; // al
-  char v30; // cl
-  char v31; // al
-  char v32; // al
-  char v33; // cl
-  char v34; // al
-  char v35; // al
-  char v36; // cl
-  char v37; // al
-  char v38; // al
-  int v39; // eax
   CCINIClass *v40; // ecx
-  int v41; // eax
   void **v43[2]; // [esp-1Ch] [ebp-E8h] BYREF
   INIClass *v44; // [esp-14h] [ebp-E0h]
   VectorClass *v45; // [esp-10h] [ebp-DCh]
   CCINIClass *v46; // [esp-Ch] [ebp-D8h]
   CCINIClass *p_unknown30; // [esp-8h] [ebp-D4h]
-  int v48; // [esp-4h] [ebp-D0h]
-  double v49; // [esp+0h] [ebp-CCh]
   unsigned __int8 ***v50; // [esp+8h] [ebp-C4h]
   VectorClass *INIClassIntList; // [esp+10h] [ebp-BCh] BYREF
   VectorClass v52; // [esp+14h] [ebp-B8h] BYREF
   DynamicVector aP1; // [esp+30h] [ebp-9Ch] BYREF
 
   INIClass::ResetSection(a2); /*0x5240b5*/
-  v48 = (int)a2; /*0x5240ba*/
+  int v48 = (int)a2; /*0x5240ba*/
   this->DamageSparks = 0; /*0x5240bd*/
+  double v49; // [esp+0h] [ebp-CCh]
   if ( !ObjectTypeClass::LoadExtras((CCINIClass *)v48, v49, v50) ) /*0x5240c4*/
     return 0; /*0x524751*/
-  this->Pip = INIClass::GetPipIdx(a2, (CCINIClass *)(this + 36), aPip, *(BaseClass **)(this + 3580)); /*0x5240e8*/
-  PipIdx = INIClass::GetPipIdx(a2, (CCINIClass *)(this + 36), &unk_825A60, *(BaseClass **)(this + 3584)); /*0x5240fd*/
-  v5 = *(WeaponTypeClass **)(this + 3588); /*0x524102*/
+  this->Pip = INIClass::GetPipIdx(a2, (CCINIClass *)(this + 36), aPip, this->qDFC); /*0x5240e8*/
+  PipIdx = INIClass::GetPipIdx(a2, (CCINIClass *)(this + 36), &unk_825A60, this->qE00); /*0x5240fd*/
+  v5 = this->qE04; /*0x524102*/
   v48 = 128; /*0x52410c*/
   p_unknown30 = (CCINIClass *)&aP1.field_1C; /*0x524111*/
   v46 = (CCINIClass *)&stru_87C374[56304]; /*0x524112*/
@@ -282,7 +249,7 @@ char __thiscall InfantryTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
     v6 = InfantryTypeClass::Find((ObjectClass *)&aP1.field_1C); /*0x524132*/
   else
     v6 = v5; /*0x524139*/
-  v7 = *(WeaponTypeClass **)(this + 3616); /*0x52413b*/
+  v7 = this->EliteOccupyWeapon; /*0x52413b*/
   this->OccupyWeapon = v6; /*0x524141*/
   if ( INIClass::GetString( /*0x52415e*/
          a2,
@@ -352,7 +319,7 @@ char __thiscall InfantryTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
   }
   VectorClass::CopyDefault((_DWORD *)(this + 3664), (VectorClass *)&aP1); /*0x5242a6*/
   v12 = *(VectorClass **)aP1[20]; /*0x5242af*/
-  v13 = *(_DWORD *)&aP1[24]; /*0x5242b3*/
+  int v13 = *(_DWORD *)&aP1[24]; /*0x5242b3*/
   this->DeadBodies.Count = aP1.field_10; /*0x5242b7*/
   this->DeadBodies.CapacityIncrement = v12; /*0x5242ba*/
   this->DeadBodies.unknown_18 = v13; /*0x5242bd*/
@@ -402,7 +369,7 @@ char __thiscall InfantryTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
   this->NotHuman = INIClass::ReadBool_Overwrite((int)a2, (unsigned __int8 *)v46, p_unknown30, v48); /*0x5243d7*/
   if ( this->Cyborg ) /*0x5243dd*/
     this->DamageSparks = 1; /*0x5243e7*/
-  v16 = this->EnterWaterSound; /*0x5243ee*/
+  int v16 = this->EnterWaterSound; /*0x5243ee*/
   if ( !INIClass::GetString( /*0x524420*/
           a2,
           (INIClass *)(this + 36),
@@ -414,7 +381,7 @@ char __thiscall InfantryTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
   {
     Index = v16; /*0x524422*/
   }
-  v18 = this->LeaveWaterSound; /*0x524424*/
+  int v18 = this->LeaveWaterSound; /*0x524424*/
   v48 = 128; /*0x52442e*/
   p_unknown30 = (CCINIClass *)&aP1.field_1C; /*0x524433*/
   v46 = (CCINIClass *)&stru_87C374[56304]; /*0x524434*/
@@ -422,6 +389,7 @@ char __thiscall InfantryTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
   v44 = (INIClass *)(this + 36); /*0x52443e*/
   this->EnterWaterSound = Index; /*0x524441*/
   if ( !INIClass::GetString(a2, v44, (unsigned __int8 *)v45, (INIClass *)v46, (INIClass *)p_unknown30, v48) /*0x52445c*/
+  int v19; // eax
     || (v19 = VocClass::FindIndex(&aP1.field_1C), v19 == -1) )
   {
     v19 = v18; /*0x52445e*/
@@ -431,19 +399,19 @@ char __thiscall InfantryTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
   v46 = (CCINIClass *)(this + 36); /*0x52446e*/
   this->LeaveWaterSound = v19; /*0x52446f*/
   this->Fearless = INIClass::ReadBool_Overwrite((int)a2, (unsigned __int8 *)v46, p_unknown30, v48); /*0x52447a*/
-  v20 = INIClass::ReadBool_Overwrite((int)a2, (unsigned __int8 *)(this + 36), &unk_8259C8, this->Fraidycat); /*0x52448f*/
-  v21 = this->Infiltrate; /*0x524494*/
+  char v20 = INIClass::ReadBool_Overwrite((int)a2, (unsigned __int8 *)(this + 36), &unk_8259C8, this->Fraidycat); /*0x52448f*/
+  char v21 = this->Infiltrate; /*0x524494*/
   this->Fraidycat = v20; /*0x52449a*/
-  v22 = INIClass::ReadBool_Overwrite((int)a2, (unsigned __int8 *)(this + 36), &unk_8259BC, v21); /*0x5244a9*/
+  char v22 = INIClass::ReadBool_Overwrite((int)a2, (unsigned __int8 *)(this + 36), &unk_8259BC, v21); /*0x5244a9*/
   LOBYTE(v48) = this->Ivan; /*0x5244b6*/
   p_unknown30 = &unk_8259B4; /*0x5244b7*/
   v46 = (CCINIClass *)(this + 36); /*0x5244bc*/
   this->Infiltrate = v22; /*0x5244bd*/
   this->Ivan = INIClass::ReadBool_Overwrite((int)a2, (unsigned __int8 *)v46, p_unknown30, v48); /*0x5244c8*/
-  v23 = INIClass::ReadBool_Overwrite((int)a2, (unsigned __int8 *)(this + 36), &unk_8259A8, this->Occupier); /*0x5244dd*/
-  v24 = this->Assaulter; /*0x5244e2*/
+  char v23 = INIClass::ReadBool_Overwrite((int)a2, (unsigned __int8 *)(this + 36), &unk_8259A8, this->Occupier); /*0x5244dd*/
+  char v24 = this->Assaulter; /*0x5244e2*/
   this->Occupier = v23; /*0x5244e8*/
-  v25 = INIClass::ReadBool_Overwrite((int)a2, (unsigned __int8 *)(this + 36), &unk_82599C, v24); /*0x5244f7*/
+  char v25 = INIClass::ReadBool_Overwrite((int)a2, (unsigned __int8 *)(this + 36), &unk_82599C, v24); /*0x5244f7*/
   v48 = this->DirectionDistance; /*0x524504*/
   p_unknown30 = &unk_825988; /*0x524505*/
   v46 = (CCINIClass *)(this + 36); /*0x52450a*/
@@ -453,31 +421,33 @@ char __thiscall InfantryTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
                     (int)a2,
                     (unsigned __int8 *)(this + 36),
                     &unk_82597C,
-                    *(INIClass **)(this + 3768));
-  v27 = this->C4; /*0x524530*/
+                    this->HarvestRate);
+  char v27 = this->C4; /*0x524530*/
   this->HarvestRate = Int_Overwrite; /*0x524536*/
-  v28 = INIClass::ReadBool_Overwrite((int)a2, (unsigned __int8 *)(this + 36), &unk_825978, v27); /*0x524545*/
+  char v28 = INIClass::ReadBool_Overwrite((int)a2, (unsigned __int8 *)(this + 36), &unk_825978, v27); /*0x524545*/
   LOBYTE(v48) = this->Civilian; /*0x524552*/
   p_unknown30 = (CCINIClass *)&g_INI_Key_Easy.unknown30; /*0x524553*/
   v46 = (CCINIClass *)(this + 36); /*0x524558*/
   this->C4 = v28; /*0x524559*/
   this->Civilian = INIClass::ReadBool_Overwrite((int)a2, (unsigned __int8 *)v46, p_unknown30, v48); /*0x524564*/
-  v29 = INIClass::ReadBool_Overwrite((int)a2, (unsigned __int8 *)(this + 36), &unk_82596C, this->Engineer); /*0x524579*/
-  v30 = this->TiberiumProof; /*0x52457e*/
+  char v29 = INIClass::ReadBool_Overwrite((int)a2, (unsigned __int8 *)(this + 36), &unk_82596C, this->Engineer); /*0x524579*/
+  char v30 = this->TiberiumProof; /*0x52457e*/
   this->Engineer = v29; /*0x524584*/
-  v31 = INIClass::ReadBool_Overwrite((int)a2, (unsigned __int8 *)(this + 36), &unk_82595C, v30); /*0x524593*/
+  char v31 = INIClass::ReadBool_Overwrite((int)a2, (unsigned __int8 *)(this + 36), &unk_82595C, v30); /*0x524593*/
   LOBYTE(v48) = this->Agent; /*0x5245a0*/
   p_unknown30 = (CCINIClass *)&stru_8258AC.lineTrailer; /*0x5245a1*/
   v46 = (CCINIClass *)(this + 36); /*0x5245a6*/
   this->TiberiumProof = v31; /*0x5245a7*/
   this->Agent = INIClass::ReadBool_Overwrite((int)a2, (unsigned __int8 *)v46, p_unknown30, v48); /*0x5245b2*/
+  char v32; // al
   v32 = INIClass::ReadBool_Overwrite( /*0x5245c7*/
           (int)a2,
           (unsigned __int8 *)(this + 36),
           (CCINIClass *)&stru_8258AC.location[1],
           this->Thief);
-  v33 = this->VehicleThief; /*0x5245cc*/
+  char v33 = this->VehicleThief; /*0x5245cc*/
   this->Thief = v32; /*0x5245d2*/
+  char v34; // al
   v34 = INIClass::ReadBool_Overwrite( /*0x5245e1*/
           (int)a2,
           (unsigned __int8 *)(this + 36),
@@ -488,13 +458,15 @@ char __thiscall InfantryTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
   v46 = (CCINIClass *)(this + 36); /*0x5245f4*/
   this->VehicleThief = v34; /*0x5245f5*/
   this->Doggie = INIClass::ReadBool_Overwrite((int)a2, (unsigned __int8 *)v46, p_unknown30, v48); /*0x524600*/
+  char v35; // al
   v35 = INIClass::ReadBool_Overwrite( /*0x524615*/
           (int)a2,
           (unsigned __int8 *)(this + 36),
           (CCINIClass *)&stru_8258AC.visibilityFlags,
           this->Deployer);
-  v36 = this->DeployedCrushable; /*0x52461a*/
+  char v36 = this->DeployedCrushable; /*0x52461a*/
   this->Deployer = v35; /*0x524620*/
+  char v37; // al
   v37 = INIClass::ReadBool_Overwrite( /*0x52462f*/
           (int)a2,
           (unsigned __int8 *)(this + 36),
@@ -516,6 +488,7 @@ char __thiscall InfantryTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
     this->Infiltrate = 1; /*0x524689*/
   if ( this->Agent ) /*0x524690*/
     this->Infiltrate = 1; /*0x52469a*/
+  char v38; // al
   v38 = INIClass::ReadBool_Overwrite( /*0x5246b9*/
           (int)&stru_87C374[44556],
           (unsigned __int8 *)(this + 504),
@@ -530,13 +503,15 @@ char __thiscall InfantryTypeClass::LoadFromINI(int this, unsigned __int8 ***a2)
                                (unsigned __int8 *)v46,
                                p_unknown30,
                                (INIClass *)v48);
+  int v39; // eax
   v39 = INIClass::ReadInt_Overwrite( /*0x5246f3*/
           (int)&stru_87C374[44556],
           (unsigned __int8 *)(this + 504),
           &stru_8257B8,
-          *(INIClass **)(this + 3652));
-  v40 = *(CCINIClass **)(this + 3656); /*0x5246f8*/
+          this->qE44);
+  v40 = this->qE48; /*0x5246f8*/
   this->FireProne = v39; /*0x5246fe*/
+  int v41; // eax
   v41 = INIClass::ReadInt_Overwrite( /*0x524710*/
           (int)&stru_87C374[44556],
           (unsigned __int8 *)(this + 504),
@@ -563,27 +538,22 @@ int InfantryTypeClass_LoadTypeData()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __userpurge InfantryTypeClass::_vt05@<eax>(int a1@<ebp>, int a2, int a3, int a4)
 {
-  _DWORD *v4; // edi
-  int v5; // ebx
-  int v6; // esi
   int result; // eax
   int i; // ebx
   int j; // ebx
   int k; // ebx
   int m; // ebx
-  void *v12; // eax
-  int v13; // [esp+70h] [ebp-4h]
 
-  v4 = (_DWORD *)a2; /*0x524964*/
-  v5 = 0; /*0x524968*/
+  _DWORD * v4 = (_DWORD *)a2; /*0x524964*/
+  int v5 = 0; /*0x524968*/
   if ( *(_DWORD *)(a2 + 3644) ) /*0x52496a*/
   {
     __3_YAXPAX_Z(*(void **)(a2 + 3644)); /*0x524975*/
     v4[911] = 0; /*0x52497d*/
   }
-  v6 = a3; /*0x524983*/
+  int v6 = a3; /*0x524983*/
   result = TechnoTypeClass::SaveLoad_Prefix((int)v4, a3); /*0x524989*/
-  v13 = result; /*0x524990*/
+  int v13 = result; /*0x524990*/
   if ( result >= 0 ) /*0x524994*/
   {
     if ( v4 ) /*0x52499c*/
@@ -632,7 +602,7 @@ int __userpurge InfantryTypeClass::_vt05@<eax>(int a1@<ebp>, int a2, int a3, int
     }
     for ( m = 0; m < v4[927]; ++m ) /*0x524aef*/
       ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v4[924] + 4 * m)); /*0x524b00*/
-    v12 = __2_YAPAXI_Z(0x5E8u); /*0x524b15*/
+    void * v12 = __2_YAPAXI_Z(0x5E8u); /*0x524b15*/
     v4[911] = v12; /*0x524b1d*/
     (*(void (__stdcall **)(int, void *, int, _DWORD))(*(_DWORD *)v6 + 12))(v6, v12, 1512, 0); /*0x524b2e*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v4 + 897); /*0x524b3d*/
@@ -652,29 +622,25 @@ int InfantryTypeClass_SaveLoad_Prefix()
 int __userpurge InfantryTypeClass::SaveLoad_Prefix@<eax>(int a1@<ebx>, _DWORD *a2, int *a3, int a4, int a5)
 {
   int result; // eax
-  int v6; // ebp
-  int v7; // edx
   int i; // ebx
-  int v9; // edx
   int j; // ebx
-  int v11; // edx
   int k; // ebx
 
   result = TechnoTypeClass::SaveLoad_Prefix_0(a2, a3, a4); /*0x524b72*/
-  v6 = result; /*0x524b77*/
+  int v6 = result; /*0x524b77*/
   if ( result >= 0 ) /*0x524b7b*/
   {
-    v7 = *a3; /*0x524b87*/
+    int v7 = *a3; /*0x524b87*/
     a4 = a2[934]; /*0x524b94*/
     (*(void (__stdcall **)(int *, int *, int, _DWORD, int))(v7 + 16))(a3, &a4, 4, 0, a1); /*0x524b98*/
     for ( i = 0; i < a5; ++i ) /*0x524ba3*/
       (*(void (__stdcall **)(int *, int, int, _DWORD))(*a3 + 16))(a3, a2[931] + 4 * i, 4, 0); /*0x524bb6*/
-    v9 = *a3; /*0x524bc6*/
+    int v9 = *a3; /*0x524bc6*/
     a5 = a2[920]; /*0x524bd2*/
     (*(void (__stdcall **)(int *, int *, int, _DWORD))(v9 + 16))(a3, &a5, 4, 0); /*0x524bd6*/
     for ( j = 0; j < a5; ++j ) /*0x524be1*/
       (*(void (__stdcall **)(int *, int, int, _DWORD))(*a3 + 16))(a3, a2[917] + 4 * j, 4, 0); /*0x524bf4*/
-    v11 = *a3; /*0x524c04*/
+    int v11 = *a3; /*0x524c04*/
     a5 = a2[927]; /*0x524c10*/
     (*(void (__stdcall **)(int *, int *, int, _DWORD))(v11 + 16))(a3, &a5, 4, 0); /*0x524c14*/
     for ( k = 0; k < a5; ++k ) /*0x524c1f*/
@@ -746,15 +712,11 @@ unsigned int * InfantryTypeClass::CopyDataArray(DynamicVector * aP1)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall InfantryTypeClass::CopyDataArray(_DWORD *this, DynamicVector *aP1)
 {
-  int v3; // eax
-  int v4; // eax
-  int v5; // ecx
-  int v6; // eax
 
   if ( this == (_DWORD *)aP1 ) /*0x524f2a*/
     goto LABEL_8; /*0x524f2a*/
   (*(void (__thiscall **)(_DWORD *))(*this + 12))(this); /*0x524f2e*/
-  v3 = aP1->field_8; /*0x524f31*/
+  int v3 = aP1->field_8; /*0x524f31*/
   this->vtable3 = v3; /*0x524f36*/
   if ( !v3 ) /*0x524f39*/
   {
@@ -765,12 +727,12 @@ LABEL_8:
     this->abstractFlags = *(_DWORD *)aP1->__pad_14; /*0x524f9a*/
     return this; /*0x524f9d*/
   }
-  v4 = __2_YAPAXI_Z(4 * v3); /*0x524f43*/
+  int v4 = __2_YAPAXI_Z(4 * v3); /*0x524f43*/
   this->vtable2 = v4; /*0x524f4b*/
   if ( !v4 ) /*0x524f50*/
     goto LABEL_8; /*0x524f50*/
-  v5 = this->vtable3; /*0x524f52*/
-  v6 = 0; /*0x524f55*/
+  int v5 = this->vtable3; /*0x524f52*/
+  int v6 = 0; /*0x524f55*/
   this->q034 = 1; /*0x524f59*/
   if ( v5 <= 0 ) /*0x524f5d*/
     goto LABEL_8; /*0x524f5d*/
@@ -792,16 +754,14 @@ WeaponTypeClass * InfantryTypeClass::Find()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 WeaponTypeClass *__thiscall InfantryTypeClass::Find(ObjectClass *this)
 {
-  int v2; // esi
-  _DWORD *v3; // eax
 
   if ( !_strcmpi(&stru_817460.sectionHead[1], this) || !_strcmpi(g_Str_none, this) ) /*0x772fbc*/
     return 0; /*0x77301f*/
-  v2 = 0; /*0x772fcd*/
+  int v2 = 0; /*0x772fcd*/
   if ( *(int *)&stru_87C374[45572] <= 0 ) /*0x772fd1*/
   {
 LABEL_6:
-    v3 = (_DWORD *)__2_YAPAXI_Z(0x160u); /*0x772ff6*/
+    _DWORD * v3 = (_DWORD *)__2_YAPAXI_Z(0x160u); /*0x772ff6*/
     if ( v3 ) /*0x773005*/
       return (WeaponTypeClass *)WeaponTypeClass::Constructor(v3, this); /*0x773011*/
     return 0; /*0x773005*/

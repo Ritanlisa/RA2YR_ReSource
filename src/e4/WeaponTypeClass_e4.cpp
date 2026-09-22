@@ -11,16 +11,14 @@ HouseTypeClass * WeaponTypeClass::Create()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 HouseTypeClass *__thiscall WeaponTypeClass::Create(AbstractClass *this)
 {
-  int v2; // esi
-  _BYTE *v3; // eax
 
   if ( !_strcmpi(&stru_817460.sectionHead[1], this) || !_strcmpi(g_Str_none, this) ) /*0x51269c*/
     return 0; /*0x5126ff*/
-  v2 = 0; /*0x5126ad*/
+  int v2 = 0; /*0x5126ad*/
   if ( g_SuperWeaponTypeArray <= 0 ) /*0x5126b1*/
   {
 LABEL_6:
-    v3 = (_BYTE *)__2_YAPAXI_Z(0x1B0u); /*0x5126d6*/
+    _BYTE * v3 = (_BYTE *)__2_YAPAXI_Z(0x1B0u); /*0x5126d6*/
     if ( v3 ) /*0x5126e5*/
       return (HouseTypeClass *)SuperWeaponTypeClass::Construct(v3, this); /*0x5126f1*/
     return 0; /*0x5126e5*/
@@ -38,18 +36,16 @@ LABEL_6:
 int WeaponTypeClass::Process()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall WeaponTypeClass::Process(ObjectClass *this)
+void WeaponTypeClass::Process()
 {
-  int v2; // esi
-  int v3; // eax
 
   if ( !_strcmpi(&stru_817460.sectionHead[1], this) || !_strcmpi(g_Str_none, this) ) /*0x6cef0c*/
     return 0; /*0x6cef6f*/
-  v2 = 0; /*0x6cef1d*/
+  int v2 = 0; /*0x6cef1d*/
   if ( *(int *)&HouseClass_Player[42484] <= 0 ) /*0x6cef21*/
   {
 LABEL_6:
-    v3 = __2_YAPAXI_Z(0x100u); /*0x6cef46*/
+    int v3 = __2_YAPAXI_Z(0x100u); /*0x6cef46*/
     if ( v3 ) /*0x6cef55*/
       return SuperWeaponTypeClass::SuperWeaponTypeClass(v3, this); /*0x6cef61*/
     return 0; /*0x6cef55*/
@@ -70,7 +66,6 @@ unsigned int * WeaponTypeClass::Constructor(ObjectClass * aP1)
 _DWORD *__thiscall WeaponTypeClass::Constructor(_DWORD *this, ObjectClass *aP1)
 {
   WeaponTypeClass *v3; // eax
-
   AbstractTypeClass::Constructor((int)this, (AbstractClass *)aP1); /*0x771c7a*/
   this->AmbientDamage = 0; /*0x771c87*/
   this->Burst = 1; /*0x771c8d*/
@@ -162,14 +157,9 @@ _DWORD *__thiscall WeaponTypeClass::Constructor(_DWORD *this, ObjectClass *aP1)
 int WeaponTypeClass::Destructor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_771F50(int this)
+void sub_771F50(int this)
 {
-  int v2; // eax
-  void *v3; // eax
-  void *v4; // eax
-  void *v5; // eax
-  int v7; // [esp+8h] [ebp-4h] BYREF
-
+  WeaponTypeClass *v7; // [esp+8h] [ebp-4h] BYREF
   *(_DWORD *)this = &WeaponTypeClass::`vftable'; /*0x771f57*/
   this->vtable1 = &WeaponTypeClass::`vftable'; /*0x771f5d*/
   this->vtable2 = &WeaponTypeClass::`vftable'; /*0x771f64*/
@@ -178,7 +168,7 @@ int __thiscall sub_771F50(int this)
   this->Projectile = 0; /*0x771f7d*/
   this->Warhead = 0; /*0x771f83*/
   v7 = this; /*0x771f95*/
-  v2 = (*(int (__thiscall **)(WeaponTypeClass **, int *))&WeaponTypeClass_Array->__pad_0[16])(&WeaponTypeClass_Array, &v7); /*0x771f99*/
+  int v2 = (*(int (__thiscall **)(WeaponTypeClass **, int *))&WeaponTypeClass_Array->__pad_0[16])(&WeaponTypeClass_Array, &v7); /*0x771f99*/
   if ( v2 != -1 && v2 < g_WeaponTypePool && v2 < --g_WeaponTypePool ) /*0x771fb4*/
   {
     do /*0x771fcc*/
@@ -188,7 +178,7 @@ int __thiscall sub_771F50(int this)
     }
     while ( v2 < g_WeaponTypePool ); /*0x771fcc*/
   }
-  v3 = *(void **)(this + 248); /*0x771fce*/
+  void * v3 = this->Suicide; /*0x771fce*/
   this->Anim = &vt_VectorClass_AnimTypeClass_const; /*0x771fd4*/
   if ( v3 && this->Anim.IsAllocated ) /*0x771fe2*/
   {
@@ -197,7 +187,7 @@ int __thiscall sub_771F50(int this)
   }
   this->Anim.IsAllocated = 0; /*0x771ff9*/
   this->Anim.Capacity = 0; /*0x771fff*/
-  v4 = *(void **)(this + 220); /*0x772005*/
+  void * v4 = this->q0DC; /*0x772005*/
   this->DownReport = &vt_VectorClass_int; /*0x77200b*/
   if ( v4 && this->DownReport.IsAllocated ) /*0x772019*/
   {
@@ -206,7 +196,7 @@ int __thiscall sub_771F50(int this)
   }
   this->DownReport.IsAllocated = 0; /*0x772030*/
   this->DownReport.Capacity = 0; /*0x772036*/
-  v5 = *(void **)(this + 192); /*0x77203c*/
+  void * v5 = this->Anim; /*0x77203c*/
   this->Report = &vt_VectorClass_int; /*0x772042*/
   if ( v5 && this->Report.IsAllocated ) /*0x772050*/
   {
@@ -223,56 +213,40 @@ int __thiscall sub_771F50(int this)
 int WeaponTypeClass::ProcessPower(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall WeaponTypeClass::ProcessPower(int this, int *a2)
+void WeaponTypeClass::ProcessPower(int this, int *a2)
 {
-  int v3; // ecx
-  int v4; // edx
-  int v5; // eax
-  int v6; // ecx
-  int v7; // edx
-  int v8; // eax
-  int v9; // eax
-  int v10; // eax
-  int v11; // eax
-  int v12; // eax
-  int v13; // edx
-  int v14; // eax
-  int v15; // ecx
-  int v16; // edx
-  int v17; // eax
-  int v18; // ecx
-  int v19; // edx
-  int v20; // eax
-  int v21; // ecx
-  int v22; // edx
 
   AbstractTypeClass::ProcessPower((char *)this, a2); /*0x772ae9*/
   Power::TimerProcess(this->AmbientDamage); /*0x772af7*/
+  int v3; // ecx
   LOBYTE(v3) = this->IsSonic; /*0x772afc*/
   Power::FlagProcess(a2, v3); /*0x772b05*/
+  int v4; // edx
   LOBYTE(v4) = this->TurboBoost; /*0x772b0a*/
-  v5 = Power::FlagProcess(a2, v4); /*0x772b13*/
+  int v5 = Power::FlagProcess(a2, v4); /*0x772b13*/
   LOBYTE(v5) = this->Supress; /*0x772b18*/
   Power::FlagProcess(a2, v5); /*0x772b21*/
+  int v6; // ecx
   LOBYTE(v6) = this->Camera; /*0x772b26*/
   Power::FlagProcess(a2, v6); /*0x772b2f*/
+  int v7; // edx
   LOBYTE(v7) = this->IsLaser; /*0x772b34*/
-  v8 = Power::FlagProcess(a2, v7); /*0x772b3d*/
+  int v8 = Power::FlagProcess(a2, v7); /*0x772b3d*/
   LOBYTE(v8) = this->IsHouseColor; /*0x772b42*/
   Power::FlagProcess(a2, v8); /*0x772b4b*/
   Power::TimerProcess(this->Burst); /*0x772b59*/
-  v9 = this->Projectile; /*0x772b5e*/
+  int v9 = this->Projectile; /*0x772b5e*/
   if ( v9 ) /*0x772b66*/
   {
-    v10 = (*(int (__stdcall **)(int))(*(_DWORD *)(v9 + 4) + 16))(v9 + 4); /*0x772b6f*/
+    int v10 = (*(int (__stdcall **)(int))(*(_DWORD *)(v9 + 4) + 16))(v9 + 4); /*0x772b6f*/
     Power::TimerProcess(v10); /*0x772b75*/
   }
   Power::TimerProcess(this->Damage); /*0x772b83*/
   Power::TimerProcess(this->Speed); /*0x772b91*/
-  v11 = this->Warhead; /*0x772b96*/
+  int v11 = this->Warhead; /*0x772b96*/
   if ( v11 ) /*0x772b9e*/
   {
-    v12 = (*(int (__stdcall **)(int))(*(_DWORD *)(v11 + 4) + 16))(v11 + 4); /*0x772ba7*/
+    int v12 = (*(int (__stdcall **)(int))(*(_DWORD *)(v11 + 4) + 16))(v11 + 4); /*0x772ba7*/
     Power::TimerProcess(v12); /*0x772bad*/
   }
   Power::TimerProcess(this->ROF); /*0x772bbb*/
@@ -280,24 +254,31 @@ int __thiscall WeaponTypeClass::ProcessPower(int this, int *a2)
   Power::TimerProcess(this->Report.Count); /*0x772bd7*/
   Power::TimerProcess(this->DownReport.Count); /*0x772be5*/
   Power::TimerProcess(this->Anim.Count); /*0x772bf3*/
+  int v13; // edx
   LOBYTE(v13) = this->UseFireParticles; /*0x772bf8*/
-  v14 = Power::FlagProcess(a2, v13); /*0x772c01*/
+  int v14 = Power::FlagProcess(a2, v13); /*0x772c01*/
   LOBYTE(v14) = this->Lobber; /*0x772c06*/
   Power::FlagProcess(a2, v14); /*0x772c0f*/
+  int v15; // ecx
   LOBYTE(v15) = this->LaserDuration; /*0x772c14*/
   Power::FinalizeDrain(a2, v15); /*0x772c1d*/
+  int v16; // edx
   LOBYTE(v16) = this->IsBigLaser; /*0x772c22*/
-  v17 = Power::FlagProcess(a2, v16); /*0x772c2b*/
+  int v17 = Power::FlagProcess(a2, v16); /*0x772c2b*/
   LOBYTE(v17) = this->IsRailgun; /*0x772c30*/
   Power::FlagProcess(a2, v17); /*0x772c39*/
+  int v18; // ecx
   LOBYTE(v18) = this->Charges; /*0x772c3e*/
   Power::FlagProcess(a2, v18); /*0x772c47*/
+  int v19; // edx
   LOBYTE(v19) = this->Bright; /*0x772c4c*/
-  v20 = Power::FlagProcess(a2, v19); /*0x772c55*/
+  int v20 = Power::FlagProcess(a2, v19); /*0x772c55*/
   LOBYTE(v20) = this->UseSparkParticles; /*0x772c5a*/
   Power::FlagProcess(a2, v20); /*0x772c63*/
+  int v21; // ecx
   LOBYTE(v21) = this->OmniFire; /*0x772c68*/
   Power::FlagProcess(a2, v21); /*0x772c71*/
+  int v22; // edx
   LOBYTE(v22) = this->DistributedWeaponFire; /*0x772c76*/
   return Power::FlagProcess(a2, v22); /*0x772c84*/
 }
@@ -310,20 +291,17 @@ int WeaponTypeClass_SaveLoad_Prefix()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __userpurge WeaponTypeClass::SaveLoad_Prefix@<eax>(int a1@<ebx>, int *a2, int a3, int a4)
 {
-  int *v4; // edi
-  _DWORD *v5; // ebp
-  int v6; // esi
   int result; // eax
   int i; // ebx
   int j; // ebx
   int k; // ebx
   int m; // esi
 
-  v4 = a2; /*0x772cd3*/
-  v5 = a2 + 47; /*0x772cdd*/
+  int * v4 = a2; /*0x772cd3*/
+  _DWORD * v5 = a2 + 47; /*0x772cdd*/
   (*(void (__thiscall **)(int *))(a2[47] + 12))(a2 + 47); /*0x772ce5*/
   (*(void (__thiscall **)(int *))(v4[54] + 12))(v4 + 54); /*0x772cf4*/
-  v6 = a3; /*0x772cf7*/
+  int v6 = a3; /*0x772cf7*/
   result = AbstractClass::SaveLoad_Prefix_0(v4, a3); /*0x772cfd*/
   if ( result >= 0 ) /*0x772d04*/
   {
@@ -382,27 +360,24 @@ int WeaponTypeClass_SaveLoad_Prefix_0()
 int __userpurge WeaponTypeClass::SaveLoad_Prefix_0@<eax>(int a1@<ebx>, int *a2, int *a3, int a4, int a5)
 {
   int result; // eax
-  int v6; // edx
   int i; // ebx
-  int v8; // edx
   int j; // ebx
-  int v10; // edx
   int k; // ebx
 
   result = AbstractClass::SaveLoad_Prefix(a2, a3, a4); /*0x772ec1*/
   if ( result >= 0 ) /*0x772ec8*/
   {
-    v6 = *a3; /*0x772ed4*/
+    int v6 = *a3; /*0x772ed4*/
     a4 = a2[65]; /*0x772ee1*/
     (*(void (__stdcall **)(int *, int *, int, _DWORD, int))(v6 + 16))(a3, &a4, 4, 0, a1); /*0x772ee5*/
     for ( i = 0; i < a5; ++i ) /*0x772ef0*/
       (*(void (__stdcall **)(int *, int, int, _DWORD))(*a3 + 16))(a3, a2[62] + 4 * i, 4, 0); /*0x772f03*/
-    v8 = *a3; /*0x772f13*/
+    int v8 = *a3; /*0x772f13*/
     a5 = a2[51]; /*0x772f1f*/
     (*(void (__stdcall **)(int *, int *, int, _DWORD))(v8 + 16))(a3, &a5, 4, 0); /*0x772f23*/
     for ( j = 0; j < a5; ++j ) /*0x772f2e*/
       (*(void (__stdcall **)(int *, int, int, _DWORD))(*a3 + 16))(a3, a2[48] + 4 * j, 4, 0); /*0x772f41*/
-    v10 = *a3; /*0x772f51*/
+    int v10 = *a3; /*0x772f51*/
     a5 = a2[58]; /*0x772f5d*/
     (*(void (__stdcall **)(int *, int *, int))(v10 + 16))(a3, &a5, 4); /*0x772f61*/
     for ( k = 0; k < a4; ++k ) /*0x772f6c*/

@@ -12,30 +12,13 @@ char * GameSettings::Read()
 char *__thiscall GameSettings::Read(unsigned __int16 *this)
 {
   int Int_Overwrite; // eax
-  int v3; // eax
-  int v4; // eax
-  int v5; // eax
   CCINIClass *v6; // ecx
   char Bool_Overwrite; // al
-  bool v8; // al
-  char v9; // al
-  double v10; // st7
   double Double_Overwrite; // st7
-  int v12; // eax
-  double v13; // st7
-  int v14; // eax
-  int v15; // eax
-  double v16; // st7
-  int v17; // eax
   IUnknown *v18; // eax
-  char v19; // al
-  char v20; // al
   CCINIClass *v21; // eax
-  bool v22; // zf
   wchar_t *v23; // eax
   wchar_t *v24; // eax
-  int v25; // eax
-  int v26; // eax
   unsigned __int16 v27; // ax
   IUnknown *v28; // ecx
   wchar_t **v30; // [esp-4h] [ebp-1ACh]
@@ -61,6 +44,7 @@ char *__thiscall GameSettings::Read(unsigned __int16 *this)
   *((_DWORD *)this + 1) = Int_Overwrite; /*0x5fa68c*/
   *((_DWORD *)this + 1) = Int_Overwrite <= 0 ? 0 : Int_Overwrite;
   Debug::Log(); /*0x5fa6a0*/
+  int v3; // eax
   v3 = INIClass::ReadInt_Overwrite( /*0x5fa6bb*/
          (int)&stru_87C374[44364],
          (unsigned __int8 *)&g_INI_Key_Options,
@@ -90,6 +74,7 @@ char *__thiscall GameSettings::Read(unsigned __int16 *this)
                             (CCINIClass *)&stru_830620[11296],
                             *((_BYTE *)this + 20));
   Debug::Log(); /*0x5fa771*/
+  int v4; // eax
   v4 = INIClass::ReadInt_Overwrite( /*0x5fa78c*/
          (int)&stru_87C374[44364],
          (unsigned __int8 *)&g_INI_Key_Options,
@@ -127,11 +112,12 @@ char *__thiscall GameSettings::Read(unsigned __int16 *this)
                             (CCINIClass *)&stru_830620[11112],
                             *((_BYTE *)this + 32));
   Debug::Log(); /*0x5fa8a2*/
+  int v5; // eax
   v5 = INIClass::ReadInt_Overwrite( /*0x5fa8bd*/
          (int)&stru_87C374[44364],
          (unsigned __int8 *)&stru_830620[11072],
          (CCINIClass *)&stru_830620[11080],
-         *((INIClass **)this + 9));
+         this->q024);
   v6 = (CCINIClass *)*((_DWORD *)this + 10); /*0x5fa8c2*/
   this->q024 = v5; /*0x5fa8c5*/
   *((_DWORD *)this + 10) = INIClass::ReadInt_Overwrite( /*0x5fa8e7*/
@@ -146,7 +132,7 @@ char *__thiscall GameSettings::Read(unsigned __int16 *this)
                      (CCINIClass *)&stru_830620[11016],
                      *((_BYTE *)this + 52));
   *((_BYTE *)this + 52) = Bool_Overwrite; /*0x5fa90c*/
-  v8 = Bool_Overwrite == 1 && stru_89E138[11446] == 1; /*0x5fa919*/
+  bool v8 = Bool_Overwrite == 1 && stru_89E138[11446] == 1; /*0x5fa919*/
   *((_BYTE *)this + 52) = v8; /*0x5fa91f*/
   Debug::Log(); /*0x5fa936*/
   *((_BYTE *)this + 53) = INIClass::ReadBool_Overwrite( /*0x5fa956*/
@@ -160,12 +146,13 @@ char *__thiscall GameSettings::Read(unsigned __int16 *this)
                                           (unsigned __int8 *)&stru_830620[11072],
                                           (CCINIClass *)&stru_830620[10940],
                                           HouseClass_Player[45079]);
+  char v9; // al
   v9 = INIClass::ReadBool_Overwrite( /*0x5fa9a8*/
          (int)&stru_87C374[44364],
          (unsigned __int8 *)&stru_830620[11072],
          (CCINIClass *)&stru_830620[10920],
          *((_BYTE *)this + 54));
-  v10 = *((float *)this + 14); /*0x5fa9ad*/
+  double v10 = *((float *)this + 14); /*0x5fa9ad*/
   *((_BYTE *)this + 54) = v9; /*0x5fa9b8*/
   Double_Overwrite = INIClass::ReadDouble_Overwrite( /*0x5fa9c8*/
                        (int)&stru_87C374[44364],
@@ -175,9 +162,10 @@ char *__thiscall GameSettings::Read(unsigned __int16 *this)
   if ( Double_Overwrite >= 1.0 ) /*0x5fa9d8*/
     Double_Overwrite = 1.0; /*0x5fa9dc*/
   *((float *)this + 14) = Double_Overwrite; /*0x5fa9e2*/
-  v12 = Math::RoundToInt(Double_Overwrite * 16384.0); /*0x5fa9eb*/
+  int v12 = Math::RoundToInt(Double_Overwrite * 16384.0); /*0x5fa9eb*/
   EndBufferMixer(*(int **)&stru_87C374[9172], v12); /*0x5fa9f8*/
   Debug::Log(); /*0x5faa0b*/
+  double v13; // st7
   v13 = INIClass::ReadDouble_Overwrite( /*0x5faa28*/
           (int)&stru_87C374[44364],
           (INIClass *)&stru_830620[10900],
@@ -186,11 +174,12 @@ char *__thiscall GameSettings::Read(unsigned __int16 *this)
   if ( v13 >= 1.0 ) /*0x5faa38*/
     v13 = 1.0; /*0x5faa3c*/
   *((float *)this + 15) = v13; /*0x5faa42*/
-  v14 = Math::RoundToInt(v13 * 255.0); /*0x5faa4b*/
+  int v14 = Math::RoundToInt(v13 * 255.0); /*0x5faa4b*/
   ThemeClass::GetField(v14); /*0x5faa52*/
-  v15 = Math::RoundToInt(*((float *)this + 15) * 16384.0); /*0x5faa60*/
+  int v15 = Math::RoundToInt(*((float *)this + 15) * 16384.0); /*0x5faa60*/
   EndBufferMixer(*(int **)&stru_87C374[9164], v15); /*0x5faa6d*/
   Debug::Log(); /*0x5faa80*/
+  double v16; // st7
   v16 = INIClass::ReadDouble_Overwrite( /*0x5faa9d*/
           (int)&stru_87C374[44364],
           (INIClass *)&stru_830620[10900],
@@ -199,11 +188,12 @@ char *__thiscall GameSettings::Read(unsigned __int16 *this)
   if ( v16 >= 1.0 ) /*0x5faaad*/
     v16 = 1.0; /*0x5faab1*/
   *((float *)this + 16) = v16; /*0x5faab7*/
-  v17 = Math::RoundToInt(v16 * 16384.0); /*0x5faac0*/
+  int v17 = Math::RoundToInt(v16 * 16384.0); /*0x5faac0*/
   EndBufferMixer(*(int **)&stru_87C374[9168], v17); /*0x5faacd*/
   v18 = (IUnknown *)Math::RoundToInt(*((float *)this + 16) * 255.0); /*0x5faadb*/
   GameSettings::SetScoreVolume(&g_BuildingTypeClass_Count, v18); /*0x5faae6*/
   Debug::Log(); /*0x5faaf9*/
+  char v19; // al
   v19 = INIClass::ReadBool_Overwrite( /*0x5fab14*/
           (int)&stru_87C374[44364],
           (unsigned __int8 *)&stru_830620[10900],
@@ -212,6 +202,7 @@ char *__thiscall GameSettings::Read(unsigned __int16 *this)
   *((_BYTE *)this + 68) = v19; /*0x5fab19*/
   byte_A83D20 = v19; /*0x5fab1c*/
   Debug::Log(); /*0x5fab38*/
+  char v20; // al
   v20 = INIClass::ReadBool_Overwrite( /*0x5fab53*/
           (int)&stru_87C374[44364],
           (unsigned __int8 *)&stru_830620[10900],
@@ -239,7 +230,7 @@ char *__thiscall GameSettings::Read(unsigned __int16 *this)
     v21 = String; /*0x5fabce*/
     do /*0x5fabe8*/
     {
-      v22 = *(_WORD *)v21->__pad_0 == 0xFFFF; /*0x5fabd8*/
+      bool v22 = *(_WORD *)v21->__pad_0 == 0xFFFF; /*0x5fabd8*/
       *(_WORD *)v21->__pad_0 = ~*(_WORD *)v21->__pad_0; /*0x5fabdb*/
       if ( v22 ) /*0x5fabde*/
         *(_WORD *)v21->__pad_0 = -1; /*0x5fabe0*/
@@ -255,10 +246,10 @@ char *__thiscall GameSettings::Read(unsigned __int16 *this)
         *((_DWORD *)this + 20) = wcstol((BlowStraw *)v24, 0, 10) - 1; /*0x5fac33*/
     }
   }
-  v25 = *((_DWORD *)this + 19); /*0x5fac36*/
+  int v25 = *((_DWORD *)this + 19); /*0x5fac36*/
   if ( v25 < -1 || v25 >= 8 ) /*0x5fac40*/
     *((_DWORD *)this + 19) = -1; /*0x5fac42*/
-  v26 = *((_DWORD *)this + 20); /*0x5fac45*/
+  int v26 = *((_DWORD *)this + 20); /*0x5fac45*/
   if ( v26 < -1 || v26 >= 8 ) /*0x5fac4f*/
     *((_DWORD *)this + 20) = -1; /*0x5fac51*/
   this->q024 = INIClass::ReadInt_Overwrite( /*0x5fac6f*/
@@ -301,17 +292,9 @@ char * GameSettings::ParseNetworkAddress()
 char *__thiscall sub_5FB050(const char *this)
 {
   unsigned __int16 v2; // ax
-  const char *v3; // esi
   char *result; // eax
   size_t v5; // kr04_4
-  char *v6; // edx
-  int v7; // esi
-  int *v8; // eax
-  char v9; // [esp+8h] [ebp-1Ch] BYREF
-  int v10; // [esp+Ch] [ebp-18h] BYREF
-  int v11; // [esp+10h] [ebp-14h] BYREF
   __int16 v12; // [esp+14h] [ebp-10h]
-  _DWORD v13[3]; // [esp+18h] [ebp-Ch] BYREF
 
   v2 = this->q025; /*0x5fb057*/
   if ( v2 == 0xFFFF ) /*0x5fb05f*/
@@ -322,19 +305,21 @@ char *__thiscall sub_5FB050(const char *this)
   {
     Network::GetField(g_NetworkManager, v2 + 0x4000); /*0x5fb079*/
   }
-  v3 = this + 88; /*0x5fb07e*/
+  const char * v3 = this + 88; /*0x5fb07e*/
   result = 0; /*0x5fb086*/
   v5 = strlen(v3) + 1; /*0x5fb088*/
   if ( v5 != 1 ) /*0x5fb08d*/
   {
-    v6 = (char *)__2_YAPAXI_Z(v5); /*0x5fb09a*/
+    char * v6 = (char *)__2_YAPAXI_Z(v5); /*0x5fb09a*/
     strcpy(v6, v3); /*0x5fb0b8*/
-    v7 = 0; /*0x5fb0c1*/
+    int v7 = 0; /*0x5fb0c1*/
     result = strtok(v6, stru_826598); /*0x5fb0c3*/
     if ( result ) /*0x5fb0cd*/
     {
+  int v10; // [esp+Ch] [ebp-18h] BYREF
       do /*0x5fb10f*/
       {
+  char v9; // [esp+8h] [ebp-1Ch] BYREF
         sscanf(result, DataGlobal_825BD4, &v9); /*0x5fb0de*/
         *((_BYTE *)&v10 + v7++) = v9; /*0x5fb0ef*/
         result = strtok(0, stru_826598); /*0x5fb105*/
@@ -342,10 +327,11 @@ char *__thiscall sub_5FB050(const char *this)
       while ( result ); /*0x5fb10f*/
       if ( v7 >= 4 ) /*0x5fb114*/
       {
-        v11 = -1; /*0x5fb11a*/
+        int v11 = -1; /*0x5fb11a*/
         v12 = -1; /*0x5fb126*/
         DataGlobal_A8D5FC = 1; /*0x5fb131*/
-        v8 = NetworkAddress::Assign(v13, &v10, (int)&v11, 0); /*0x5fb13b*/
+  _DWORD v13[3]; // [esp+18h] [ebp-Ch] BYREF
+        int * v8 = NetworkAddress::Assign(v13, &v10, (int)&v11, 0); /*0x5fb13b*/
         DataGlobal_A8D600 = *v8; /*0x5fb142*/
         DataGlobal_A8D604 = v8[1]; /*0x5fb14b*/
         result = (char *)v8[2]; /*0x5fb151*/
@@ -361,7 +347,7 @@ char *__thiscall sub_5FB050(const char *this)
 void GameSettings::SetScoreVolume(int volume)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall GameSettings::SetScoreVolume(GameSettings *this, int volume)
+void GameSettings::SetScoreVolume(int volume)
 {
   MouseClass *result; // eax
 

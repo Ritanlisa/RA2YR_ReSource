@@ -12,20 +12,11 @@ namespace game {
 int SpawnManagerClass::SpawnManagerClass(TechnoClass * aP1, int a3, int a4, int a5, int a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall SpawnManagerClass::SpawnManagerClass(int this, TechnoClass *aP1, int a3, int a4, int a5, int a6)
+S SpawnManagerClass::SpawnManagerClass(int this, TechnoClass *aP1, int a3, int a4, int a5, int a6)
 {
   IUnknown *v7; // eax
-  int *v8; // ebp
   IUnknown *v9; // eax
-  int v10; // ebx
-  int v11; // eax
-  int v12; // eax
   HouseClass *v13; // ecx
-  int v14; // eax
-  int v15; // ecx
-  int v16; // eax
-  int v17; // edx
-  int v18; // eax
   int v20; // [esp+14h] [ebp-8h]
   TechnoClass *aP1a; // [esp+20h] [ebp+4h]
 
@@ -50,19 +41,19 @@ int __thiscall SpawnManagerClass::SpawnManagerClass(int this, TechnoClass *aP1, 
   this->SpawnManagerClass_field_34 = a6; /*0x6b6d10*/
   for ( aP1a = 0; (int)aP1a < this->spawnType; aP1a = (TechnoClass *)((char *)aP1a + 1) ) /*0x6b6d17*/
   {
-    v8 = (int *)__2_YAPAXI_Z(0x18u); /*0x6b6d24*/
+    int * v8 = (int *)__2_YAPAXI_Z(0x18u); /*0x6b6d24*/
     if ( !v8 ) /*0x6b6d2b*/
       break; /*0x6b6d2b*/
     v9 = *(IUnknown **)&g_NetworkPlayerBuffer[5960]; /*0x6b6d31*/
     v8[4] = 0; /*0x6b6d36*/
     v8[2] = (int)v9; /*0x6b6d39*/
-    v10 = **(_DWORD **)(this + 40); /*0x6b6d44*/
-    v11 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 36) + 60))(this->owner); /*0x6b6d46*/
-    v12 = (*(int (__thiscall **)(_DWORD, int))(v10 + 140))(this->spawnOwner, v11); /*0x6b6d4d*/
+    int v10 = *this->spawnOwner; /*0x6b6d44*/
+    int v11 = (*(int (__thiscall **)(_DWORD))(*this->owner + 60))(this->owner); /*0x6b6d46*/
+    int v12 = (*(int (__thiscall **)(_DWORD, int))(v10 + 140))(this->spawnOwner, v11); /*0x6b6d4d*/
     *v8 = v12; /*0x6b6d55*/
     if ( v12 ) /*0x6b6d5a*/
     {
-      v13 = *(HouseClass **)(this + 40); /*0x6b6d66*/
+      v13 = this->spawnOwner; /*0x6b6d66*/
       v8[5] = v13 == *(HouseClass **)(*(_DWORD *)&DataGlobal_87F8E4[30972] + 1248) /*0x6b6d86*/
            || v13 == *(HouseClass **)(*(_DWORD *)&DataGlobal_87F8E4[30972] + 1300)
            || v13 == *(HouseClass **)(*(_DWORD *)&DataGlobal_87F8E4[30972] + 1352);
@@ -72,14 +63,15 @@ int __thiscall SpawnManagerClass::SpawnManagerClass(int this, TechnoClass *aP1, 
       v8[2] = *(_DWORD *)&g_NetworkPlayerBuffer[5960]; /*0x6b6db1*/
       v8[3] = v20; /*0x6b6db4*/
       v8[4] = 0; /*0x6b6db7*/
-      v14 = this->spawnVectorCapacity; /*0x6b6dba*/
+      int v14 = this->spawnVectorCapacity; /*0x6b6dba*/
       if ( this->q048 < v14 /*0x6b6dda*/
         || (*(_BYTE *)(this + 69) || !v14)
+  int v15; // ecx
         && (v15 = this->q04C, v15 > 0)
         && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(this->spawns + 8))(this + 56, v14 + v15, 0) )
       {
-        v16 = this->q048; /*0x6b6de1*/
-        v17 = this->spawnVectorCount; /*0x6b6de4*/
+        int v16 = this->q048; /*0x6b6de1*/
+        int v17 = this->spawnVectorCount; /*0x6b6de4*/
         this->q048 = v16 + 1; /*0x6b6dea*/
         *(_DWORD *)(v17 + 4 * v16) = v8; /*0x6b6ded*/
       }
@@ -102,7 +94,7 @@ int __thiscall SpawnManagerClass::SpawnManagerClass(int this, TechnoClass *aP1, 
          *(_DWORD *)&g_OverlayTypeConfig[16528] + *(_DWORD *)&g_OverlayTypeConfig[16540],
          0) )
   {
-    v18 = (*(_DWORD *)&g_OverlayTypeConfig[16536])++; /*0x6b6e76*/
+    int v18 = (*(_DWORD *)&g_OverlayTypeConfig[16536])++; /*0x6b6e76*/
     *(_DWORD *)(*(_DWORD *)&g_OverlayTypeConfig[16524] + 4 * v18) = this; /*0x6b6e85*/
   }
   return this; /*0x6b6e8a*/
@@ -117,10 +109,8 @@ namespace game {
 int SpawnManagerClass::Constructor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_6B6EA0(int this)
+void sub_6B6EA0(int this)
 {
-  int v2; // eax
-  int v4; // [esp+10h] [ebp-8h]
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x6b6ea8*/
   SpawnControlVector::Constructor((_DWORD *)(this + 56), 0, 0); /*0x6b6eb6*/
@@ -139,6 +129,7 @@ int __thiscall sub_6B6EA0(int this)
   this->spawnOwner = 0; /*0x6b6f04*/
   this->spawnType = 0; /*0x6b6f07*/
   this->q050 = g_CurrentFrame; /*0x6b6f11*/
+  int v4; // [esp+10h] [ebp-8h]
   this->SpawnManagerClass_field_54 = v4; /*0x6b6f14*/
   this->SpawnManagerClass_field_58 = 0; /*0x6b6f17*/
   this->SpawnManagerClass_field_68 = 0; /*0x6b6f1a*/
@@ -155,7 +146,7 @@ int __thiscall sub_6B6EA0(int this)
          DataGlobal_B0B888 + DataGlobal_B0B894,
          0) )
   {
-    v2 = DataGlobal_B0B890++; /*0x6b6f76*/
+    int v2 = DataGlobal_B0B890++; /*0x6b6f76*/
     *((_DWORD *)DataGlobal_B0B884 + v2) = this; /*0x6b6f85*/
   }
   return this; /*0x6b6f8a*/
@@ -170,14 +161,10 @@ namespace game {
 void SpawnManagerClass::Constructor_SpawnManagerClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_6B7010(int this)
+void sub_6B7010(int this)
 {
   int i; // esi
-  int v3; // ebp
-  int v4; // eax
-  void *v5; // eax
-  int v6; // [esp+8h] [ebp-4h] BYREF
-
+  SpawnManagerClass *v6; // [esp+8h] [ebp-4h] BYREF
   *(_DWORD *)this = &SpawnManagerClass::`vftable'; /*0x6b7015*/
   this->vtable1 = &SpawnManagerClass::`vftable'; /*0x6b701b*/
   this->vtable2 = &SpawnManagerClass::`vftable'; /*0x6b7022*/
@@ -189,11 +176,11 @@ void __thiscall sub_6B7010(int this)
     if ( *(_DWORD *)(this->spawnVectorCount + 4 * i) ) /*0x6b7047*/
       __3_YAXPAX_Z(*(void **)(this->spawnVectorCount + 4 * i)); /*0x6b704f*/
   }
-  v3 = this->spawnVectorCapacity; /*0x6b7063*/
+  int v3 = this->spawnVectorCapacity; /*0x6b7063*/
   (*(void (__thiscall **)(int))(this->spawns + 12))(this + 56); /*0x6b7066*/
   (*(void (__thiscall **)(int, int, _DWORD))(this->spawns + 8))(this + 56, v3, 0); /*0x6b7070*/
   v6 = this; /*0x6b7083*/
-  v4 = (*(int (__thiscall **)(int *, int *))(SpawnManagerClass_Array + 16))(&SpawnManagerClass_Array, &v6); /*0x6b7087*/
+  int v4 = (*(int (__thiscall **)(int *, int *))(SpawnManagerClass_Array + 16))(&SpawnManagerClass_Array, &v6); /*0x6b7087*/
   if ( v4 != -1 && v4 < DataGlobal_B0B890 && v4 < --DataGlobal_B0B890 ) /*0x6b70a3*/
   {
     do /*0x6b70bb*/
@@ -203,7 +190,7 @@ void __thiscall sub_6B7010(int this)
     }
     while ( v4 < DataGlobal_B0B890 ); /*0x6b70bb*/
   }
-  v5 = *(void **)(this + 60); /*0x6b70bd*/
+  void * v5 = this->spawnVectorCount; /*0x6b70bd*/
   this->spawns = &vt_VectorClass_SpawnManagerClass_SpawnControl; /*0x6b70c0*/
   if ( v5 && *(_BYTE *)(this + 69) ) /*0x6b70ca*/
   {
@@ -224,7 +211,7 @@ namespace game {
 int SpawnManagerClass::SetTarget(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall SpawnManagerClass::SetTarget(_DWORD *this, int a2)
+void SpawnManagerClass::SetTarget(int a2)
 {
   int result; // eax
 
@@ -243,17 +230,15 @@ namespace game {
 int SpawnManagerClass::CountAliveSpawns()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall SpawnManagerClass::CountAliveSpawns(int *this)
+void SpawnManagerClass::CountAliveSpawns()
 {
-  int v1; // edx
   int result; // eax
-  int v3; // ecx
 
-  v1 = this->q012; /*0x6b7d30*/
+  int v1 = this->q012; /*0x6b7d30*/
   result = 0; /*0x6b7d33*/
   if ( v1 > 0 ) /*0x6b7d37*/
   {
-    v3 = this->spawnVectorCount; /*0x6b7d39*/
+    int v3 = this->spawnVectorCount; /*0x6b7d39*/
     do /*0x6b7d4a*/
     {
       if ( *(_DWORD *)(*(_DWORD *)v3 + 4) != 7 ) /*0x6b7d43*/
@@ -275,21 +260,18 @@ namespace game {
 int SpawnManagerClass::CountDockedSpawns()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall SpawnManagerClass::CountDockedSpawns(int *this)
+void SpawnManagerClass::CountDockedSpawns()
 {
-  int v1; // esi
   int result; // eax
-  int v3; // edx
-  int v4; // ecx
 
-  v1 = this->q012; /*0x6b7d51*/
+  int v1 = this->q012; /*0x6b7d51*/
   result = 0; /*0x6b7d54*/
   if ( v1 > 0 ) /*0x6b7d58*/
   {
-    v3 = this->spawnVectorCount; /*0x6b7d5a*/
+    int v3 = this->spawnVectorCount; /*0x6b7d5a*/
     do /*0x6b7d70*/
     {
-      v4 = *(_DWORD *)(*(_DWORD *)v3 + 4); /*0x6b7d5f*/
+      int v4 = *(_DWORD *)(*(_DWORD *)v3 + 4); /*0x6b7d5f*/
       if ( v4 == 6 || !v4 ) /*0x6b7d69*/
         ++result; /*0x6b7d6b*/
       v3 += 4; /*0x6b7d6c*/
@@ -309,37 +291,26 @@ namespace game {
 int SpawnManagerClass::PowerDrainUpdate(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall SpawnManagerClass::_vt13(int this, int a2)
+void SpawnManagerClass::_vt13(int this, int a2)
 {
-  int v3; // eax
-  int v4; // eax
-  int v5; // eax
-  int v6; // eax
-  int v7; // edx
-  int v8; // eax
-  int v9; // edx
-  int v10; // eax
   int result; // eax
-  int v12; // eax
-  int v13; // esi
-  int v14; // eax
 
   AbstractClass::ProcessPower((#378 *)this); /*0x6b7de9*/
   Power::TimerProcess(this->SpawnManagerClass_field_70); /*0x6b7df4*/
-  v3 = this->SpawnManagerClass_field_6C; /*0x6b7df9*/
+  int v3 = this->SpawnManagerClass_field_6C; /*0x6b7df9*/
   if ( v3 ) /*0x6b7dfe*/
   {
-    v4 = (*(int (__stdcall **)(int))(*(_DWORD *)(v3 + 4) + 16))(v3 + 4); /*0x6b7e07*/
+    int v4 = (*(int (__stdcall **)(int))(*(_DWORD *)(v3 + 4) + 16))(v3 + 4); /*0x6b7e07*/
     Power::TimerProcess(v4); /*0x6b7e0d*/
   }
-  v5 = this->SpawnManagerClass_field_68; /*0x6b7e12*/
+  int v5 = this->SpawnManagerClass_field_68; /*0x6b7e12*/
   if ( v5 ) /*0x6b7e17*/
   {
-    v6 = (*(int (__stdcall **)(int))(*(_DWORD *)(v5 + 4) + 16))(v5 + 4); /*0x6b7e20*/
+    int v6 = (*(int (__stdcall **)(int))(*(_DWORD *)(v5 + 4) + 16))(v5 + 4); /*0x6b7e20*/
     Power::TimerProcess(v6); /*0x6b7e26*/
   }
-  v7 = this->SpawnManagerClass_field_5C; /*0x6b7e2b*/
-  v8 = this->SpawnManagerClass_field_64; /*0x6b7e2e*/
+  int v7 = this->SpawnManagerClass_field_5C; /*0x6b7e2b*/
+  int v8 = this->SpawnManagerClass_field_64; /*0x6b7e2e*/
   if ( v7 != -1 ) /*0x6b7e34*/
   {
     if ( (int)g_CurrentFrame - v7 >= v8 ) /*0x6b7e40*/
@@ -348,8 +319,8 @@ int __thiscall SpawnManagerClass::_vt13(int this, int a2)
       v8 -= (int)g_CurrentFrame - v7; /*0x6b7e42*/
   }
   Power::TimerProcess(v8); /*0x6b7e4b*/
-  v9 = this->q050; /*0x6b7e50*/
-  v10 = this->SpawnManagerClass_field_58; /*0x6b7e53*/
+  IUnknown *v9 = this->q050; /*0x6b7e50*/
+  int v10 = this->SpawnManagerClass_field_58; /*0x6b7e53*/
   if ( v9 != -1 ) /*0x6b7e59*/
   {
     if ( (int)g_CurrentFrame - v9 >= v10 ) /*0x6b7e65*/
@@ -363,13 +334,13 @@ int __thiscall SpawnManagerClass::_vt13(int this, int a2)
   result = this->spawnOwner; /*0x6b7e8b*/
   if ( result ) /*0x6b7e90*/
   {
-    v12 = (*(int (__stdcall **)(int))(*(_DWORD *)(result + 4) + 16))(result + 4); /*0x6b7e99*/
+    int v12 = (*(int (__stdcall **)(int))(result->vtable2 + 16))(result + 4); /*0x6b7e99*/
     result = Power::TimerProcess(v12); /*0x6b7e9f*/
   }
-  v13 = this->owner; /*0x6b7ea4*/
+  TechnoClass *v13 = this->owner; /*0x6b7ea4*/
   if ( v13 ) /*0x6b7ea9*/
   {
-    v14 = (*(int (__stdcall **)(int))(*(_DWORD *)(v13 + 4) + 16))(v13 + 4); /*0x6b7eb2*/
+    int v14 = (*(int (__stdcall **)(int))(v13->vtable2 + 16))(v13 + 4); /*0x6b7eb2*/
     return Power::TimerProcess(v14); /*0x6b7eb8*/
   }
   return result; /*0x6b7ebd*/
@@ -384,22 +355,17 @@ namespace game {
 int SpawnManagerClass::LoadFromStream(int aP1, AbstractClass * aP1_4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall SpawnManagerClass::LoadFromStream(int aP1, AbstractClass *aP1_4)
+void SpawnManagerClass::LoadFromStream(int aP1, AbstractClass *aP1_4)
 {
   AbstractClass *v2; // ebx
   AbstractClass *v3; // esi
   int Prefix_0; // ebp
   DynamicVector *v5; // edi
   VectorClass *v6; // esi
-  int v7; // eax
   DynamicVector *v8; // eax
   IUnknown *v9; // ecx
   int referenceCount; // ecx
-  int v11; // eax
-  int v12; // eax
   int nextArrayIndex; // edx
-  int v14; // esi
-  int v16; // [esp+28h] [ebp-4h] BYREF
 
   v2 = (AbstractClass *)aP1; /*0x6b7f12*/
   v3 = aP1_4; /*0x6b7f18*/
@@ -419,6 +385,7 @@ int __stdcall SpawnManagerClass::LoadFromStream(int aP1, AbstractClass *aP1_4)
       *(_DWORD *)&v2->__pad_0[8] = &SpawnManagerClass::`vftable'; /*0x6b7f6c*/
       *(_DWORD *)&v2->__pad_0[12] = &vt_SpawnManagerClass; /*0x6b7f73*/
     }
+  int v16; // [esp+28h] [ebp-4h] BYREF
     Prefix_0 = (*(int (__stdcall **)(AbstractClass *, int *, int, _DWORD))(*(_DWORD *)v3->__pad_0 + 12))(v3, &v16, 4, 0); /*0x6b7f88*/
     if ( Prefix_0 >= 0 ) /*0x6b7f8c*/
     {
@@ -430,12 +397,12 @@ int __stdcall SpawnManagerClass::LoadFromStream(int aP1, AbstractClass *aP1_4)
         *(_DWORD *)&v2[2].__pad_0[4] = 10; /*0x6b7fa8*/
         *(_DWORD *)v2[2].__pad_0 = 0; /*0x6b7faf*/
       }
-      v7 = v16; /*0x6b7fb2*/
+      int v7 = v16; /*0x6b7fb2*/
       aP1 = 0; /*0x6b7fb6*/
       if ( v16 <= 0 ) /*0x6b7fbc*/
       {
 LABEL_20:
-        v14 = 0; /*0x6b804d*/
+        int v14 = 0; /*0x6b804d*/
         if ( v7 > 0 ) /*0x6b8051*/
         {
           do /*0x6b8069*/
@@ -475,13 +442,14 @@ LABEL_20:
           referenceCount = v2[1].referenceCount; /*0x6b7ffb*/
           if ( *(_DWORD *)v2[2].__pad_0 < referenceCount /*0x6b8020*/
             || (BYTE1(v2[1].NeedsSaveOrLink) || !referenceCount)
+  int v11; // eax
             && (v11 = *(_DWORD *)&v2[2].__pad_0[4], v11 > 0)
             && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(*(_DWORD *)v6->vtable0 + 8))(
                  &v2[1].abstractFlags,
                  referenceCount + v11,
                  0) )
           {
-            v12 = *(_DWORD *)v2[2].__pad_0; /*0x6b8027*/
+            int v12 = *(_DWORD *)v2[2].__pad_0; /*0x6b8027*/
             nextArrayIndex = v2[1].nextArrayIndex; /*0x6b802a*/
             *(_DWORD *)v2[2].__pad_0 = v12 + 1; /*0x6b8030*/
             *(_DWORD *)(nextArrayIndex + 4 * v12) = v5; /*0x6b8033*/

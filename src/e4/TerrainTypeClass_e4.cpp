@@ -19,8 +19,6 @@ _DWORD *__thiscall TerrainTypeClass::Construct(
         MapClass *aP4,
         char a6)
 {
-  int v7; // eax
-  int v8; // eax
   char Destination[48]; // [esp+10h] [ebp-34h] BYREF
   char v11; // [esp+40h] [ebp-4h]
 
@@ -69,7 +67,7 @@ _DWORD *__thiscall TerrainTypeClass::Construct(
          *(_DWORD *)&g_OverlayTypeConfig[32384] + *(_DWORD *)&g_OverlayTypeConfig[32396],
          0) )
   {
-    v7 = (*(_DWORD *)&g_OverlayTypeConfig[32392])++; /*0x544924*/
+    int v7 = (*(_DWORD *)&g_OverlayTypeConfig[32392])++; /*0x544924*/
     *(_DWORD *)(*(_DWORD *)&g_OverlayTypeConfig[32380] + 4 * v7) = this; /*0x544933*/
   }
   if ( !a6 /*0x544970*/
@@ -81,7 +79,7 @@ _DWORD *__thiscall TerrainTypeClass::Construct(
           *(_DWORD *)&g_NetworkPlayerBuffer[5876] + *(_DWORD *)&g_NetworkPlayerBuffer[5888],
           0)) )
   {
-    v8 = (*(_DWORD *)&g_NetworkPlayerBuffer[5884])++; /*0x54497d*/
+    int v8 = (*(_DWORD *)&g_NetworkPlayerBuffer[5884])++; /*0x54497d*/
     *(_DWORD *)(*(_DWORD *)&g_NetworkPlayerBuffer[5872] + 4 * v8) = this; /*0x54498c*/
   }
   if ( aP4 ) /*0x544991*/
@@ -116,10 +114,7 @@ unsigned int * TerrainTypeClass::TerrainTypeClass(ObjectClass * aP1)
 _DWORD *__thiscall TerrainTypeClass::TerrainTypeClass(_DWORD *this, ObjectClass *aP1)
 {
   TerrainTypeClass *v3; // eax
-  bool v4; // zf
-  int v5; // ecx
   CCINIClass *v6; // edx
-
   ObjectTypeClass::ConstructFull((int)this, (AbstractClass *)aP1); /*0x71da89*/
   this->ArrayIndex = -1; /*0x71da90*/
   this->Foundation = 0; /*0x71da9a*/
@@ -150,6 +145,7 @@ _DWORD *__thiscall TerrainTypeClass::TerrainTypeClass(_DWORD *this, ObjectClass 
   if ( *(int *)&HouseClass_Player[42460] < *(int *)&HouseClass_Player[42452] /*0x71db74*/
     || (HouseClass_Player[42457] || !*(_DWORD *)&HouseClass_Player[42452])
     && *(int *)&HouseClass_Player[42464] > 0
+  bool v4; // zf
     && (v4 = (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&HouseClass_Player[42444] + 8))(
                &HouseClass_Player[42444],
                *(_DWORD *)&HouseClass_Player[42452] + *(_DWORD *)&HouseClass_Player[42464],
@@ -161,7 +157,7 @@ _DWORD *__thiscall TerrainTypeClass::TerrainTypeClass(_DWORD *this, ObjectClass 
     *(_DWORD *)(*(_DWORD *)&HouseClass_Player[42448] + 4 * (_DWORD)v3) = this; /*0x71db83*/
     v3 = *(TerrainTypeClass **)&HouseClass_Player[42460]; /*0x71db86*/
   }
-  v5 = 0; /*0x71db8b*/
+  int v5 = 0; /*0x71db8b*/
   if ( (int)v3 <= 0 ) /*0x71db8f*/
   {
 LABEL_11:
@@ -189,29 +185,20 @@ LABEL_11:
 char TerrainTypeClass::LoadFromINI(unsigned char *** aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall TerrainTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
+void TerrainTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
 {
   char Bool_Overwrite; // al
-  char v4; // al
-  char v5; // cl
-  char v6; // al
   Color *v7; // eax
-  int v8; // ecx
   char **v9; // eax
   int PixelData; // eax
   int Coord; // eax
-  char v12; // cl
-  char v13; // al
   int Int_Overwrite; // eax
-  double aP3; // st7
   double Double_Overwrite; // st7
   CCINIClass *v16; // eax
-  int v18; // eax
   INIClass *v19; // ecx
   char aP3_4; // [esp+4h] [ebp-218h]
   INIClass *aP3_4a; // [esp+4h] [ebp-218h]
   CCINIClass v23; // [esp+18h] [ebp-204h] BYREF
-
   INIClass::ResetSection(aP1); /*0x71deb3*/
   if ( !ObjectTypeClass::LoadFromINI((char *)this, (CCINIClass *)aP1) ) /*0x71debb*/
     return 0; /*0x71e0b5*/
@@ -228,9 +215,10 @@ char __thiscall TerrainTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
     this->IsLogic = 0; /*0x71df05*/
     this->LegalTarget = 1; /*0x71df0c*/
   }
-  v4 = INIClass::ReadBool_Overwrite((int)aP1, (unsigned __int8 *)(this + 36), &stru_81AE4C, this->WaterBound); /*0x71df22*/
-  v5 = this->SpawnsTiberium; /*0x71df27*/
+  char v4 = INIClass::ReadBool_Overwrite((int)aP1, (unsigned __int8 *)(this + 36), &stru_81AE4C, this->WaterBound); /*0x71df22*/
+  char v5 = this->SpawnsTiberium; /*0x71df27*/
   this->WaterBound = v4; /*0x71df2d*/
+  char v6; // al
   v6 = INIClass::ReadBool_Overwrite( /*0x71df3c*/
          (int)aP1,
          (unsigned __int8 *)(this + 36),
@@ -248,7 +236,7 @@ char __thiscall TerrainTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
                   (unsigned __int8 *)(this + 504),
                   (unsigned __int8 *)g_INI_Key_Foundation,
                   this->Foundation);
-  v8 = 5 * (_DWORD)v7; /*0x71df7e*/
+  int v8 = 5 * (_DWORD)v7; /*0x71df7e*/
   this->Foundation = v7; /*0x71df81*/
   LOBYTE(v7) = this->Theater; /*0x71df87*/
   this->FoundationData = 8 * v8 + 11595200; /*0x71df96*/
@@ -270,36 +258,38 @@ char __thiscall TerrainTypeClass::LoadFromINI(int this, unsigned __int8 ***aP1)
             (INIClass *)(this + 36),
             (Color *)&stru_830620[12040],
             (Color *)(this + 668));
-  v12 = this->IsAnimated; /*0x71e014*/
+  char v12 = this->IsAnimated; /*0x71e014*/
   this->RadarColor = *(_WORD *)Coord; /*0x71e01a*/
   this->q29E = *(_BYTE *)(Coord + 2); /*0x71e02a*/
+  char v13; // al
   v13 = INIClass::ReadBool_Overwrite( /*0x71e02d*/
           (int)aP1,
           (unsigned __int8 *)(this + 36),
           (CCINIClass *)&stru_830620[81980],
           v12);
-  aP3_4a = *(INIClass **)(this + 672); /*0x71e03a*/
+  aP3_4a = this->AnimationRate; /*0x71e03a*/
   this->IsAnimated = v13; /*0x71e041*/
   Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x71e047*/
                     (int)aP1,
                     (unsigned __int8 *)(this + 36),
                     (CCINIClass *)&stru_830620[81964],
                     aP3_4a);
-  aP3 = this->AnimationProbability; /*0x71e04c*/
+  double aP3 = this->AnimationProbability; /*0x71e04c*/
   this->AnimationRate = Int_Overwrite; /*0x71e057*/
   Double_Overwrite = INIClass::ReadDouble_Overwrite( /*0x71e066*/
                        (int)aP1,
                        (INIClass *)(this + 36),
                        (unsigned __int8 *)&stru_830620[81940],
                        (INIClass *)LODWORD(aP3));
-  v16 = *(CCINIClass **)(this + 680); /*0x71e06b*/
+  v16 = this->TemperateOccupationBits; /*0x71e06b*/
   this->AnimationProbability = Double_Overwrite; /*0x71e073*/
+  int v18; // eax
   v18 = INIClass::ReadInt_Overwrite( /*0x71e080*/
           (int)aP1,
           (unsigned __int8 *)(this + 36),
           (CCINIClass *)&stru_830620[81916],
           (INIClass *)v16);
-  v19 = *(INIClass **)(this + 684); /*0x71e085*/
+  v19 = this->SnowOccupationBits; /*0x71e085*/
   this->TemperateOccupationBits = v18; /*0x71e08b*/
   this->SnowOccupationBits = INIClass::ReadInt_Overwrite( /*0x71e0a0*/
                               (int)aP1,
@@ -316,16 +306,14 @@ TerrainTypeClass * TerrainTypeClass::FindOrCreate()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 TerrainTypeClass *__thiscall TerrainTypeClass::FindOrCreate(ObjectClass *this)
 {
-  int v2; // esi
-  _DWORD *v3; // eax
 
   if ( !_strcmpi(&stru_817460.sectionHead[1], this) || !_strcmpi(g_Str_none, this) ) /*0x71e2bc*/
     return 0; /*0x71e31f*/
-  v2 = 0; /*0x71e2cd*/
+  int v2 = 0; /*0x71e2cd*/
   if ( *(int *)&HouseClass_Player[42460] <= 0 ) /*0x71e2d1*/
   {
 LABEL_6:
-    v3 = (_DWORD *)__2_YAPAXI_Z(0x2BCu); /*0x71e2f6*/
+    _DWORD * v3 = (_DWORD *)__2_YAPAXI_Z(0x2BCu); /*0x71e2f6*/
     if ( v3 ) /*0x71e305*/
       return (TerrainTypeClass *)TerrainTypeClass::TerrainTypeClass(v3, this); /*0x71e311*/
     return 0; /*0x71e305*/

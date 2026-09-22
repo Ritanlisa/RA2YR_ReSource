@@ -9,10 +9,8 @@ namespace game {
 int AirstrikeClass::SpawnAircraft(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_41D860(int this, int *a2)
+void sub_41D860(int this, int *a2)
 {
-  int v3; // eax
-  int v4; // ebp
   int v5; // ebx
   _DWORD *v7; // eax
   void *v8; // eax
@@ -27,12 +25,11 @@ int __thiscall sub_41D860(int this, int *a2)
   int v17; // [esp+14h] [ebp-10h]
   _DWORD v18[3]; // [esp+18h] [ebp-Ch] BYREF
   int v19; // [esp+28h] [ebp+4h]
-
-  v3 = this->AirstrikeClass_field_54; /*0x41d869*/
+  int v3 = this->AirstrikeClass_field_54; /*0x41d869*/
   this->AirstrikeClass_field_3C = 1; /*0x41d86c*/
   this->AirstrikeClass_field_3D = 1; /*0x41d870*/
   *(_DWORD *)(this + 52) = 0; /*0x41d874*/
-  v4 = *(_DWORD *)(v3 + 3576); /*0x41d881*/
+  int v4 = *(_DWORD *)(v3 + 3576); /*0x41d881*/
   v17 = *(_DWORD *)(*(_DWORD *)g_RulesClass_Instance->? + 3576); /*0x41d895*/
   if ( VeterancyStruct::IsElite((float *)(this->owner + 336)) ) /*0x41d8a2*/
   {
@@ -50,7 +47,7 @@ int __thiscall sub_41D860(int this, int *a2)
   v8 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v16); /*0x41d907*/
   v15 = v17; /*0x41d916*/
   v14 = (int)v8; /*0x41d919*/
-  v9 = (unsigned int *)(*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 76) + 60))(this->owner); /*0x41d91f*/
+  v9 = (unsigned int *)(*(int (__thiscall **)(_DWORD))(*this->owner + 60))(this->owner); /*0x41d91f*/
   result = PlaceAircraftOnMap(v9, v4, v5, 1, v14, 0, v15, 0, this); /*0x41d926*/
   this->q02C = result; /*0x41d92d*/
   this->EliteAirstrikeTeamTypeIndex = result; /*0x41d930*/
@@ -103,24 +100,19 @@ namespace game {
 char AirstrikeClass::ReassignTarget(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_41DA20(int this, int a2)
+void sub_41DA20(int this, int a2)
 {
-  int v3; // ecx
-  int v4; // eax
-  int v5; // ecx
-  int v6; // esi
-  _DWORD *v7; // edi
   int v8; // eax
   _DWORD *v9; // esi
   int v10; // eax
   int v11; // eax
   int *v12; // esi
   int v13; // edi
-
-  v3 = this->AirstrikeClass_field_5C; /*0x41da26*/
+  int v3 = this->AirstrikeClass_field_5C; /*0x41da26*/
+  int v4; // eax
   if ( v3 && (v4 = *(_DWORD *)(v3 + 1496)) != 0 )
   {
-    v5 = *(_DWORD *)(v3 + 764); /*0x41da37*/
+    int v5 = *(_DWORD *)(v3 + 764); /*0x41da37*/
     while ( *(_DWORD *)(v4 + 764) == v5 ) /*0x41da43*/
     {
       v4 = *(_DWORD *)(v4 + 1496); /*0x41da45*/
@@ -132,9 +124,9 @@ char __thiscall sub_41DA20(int this, int a2)
   else
   {
 LABEL_6:
-    v6 = this->AirstrikeClass_field_50; /*0x41da4f*/
+    int v6 = this->AirstrikeClass_field_50; /*0x41da4f*/
     if ( v6 )
-      v7 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)v6 + 44))(this->AirstrikeClass_field_50) == 6 ? (_DWORD *)v6 : 0;
+      _DWORD * v7 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)v6 + 44))(this->AirstrikeClass_field_50) == 6 ? (_DWORD *)v6 : 0;
     else
       v7 = 0; /*0x41da56*/
     if ( a2 )
@@ -157,7 +149,7 @@ LABEL_6:
       (*(void (__thiscall **)(_DWORD *, int))(*v9 + 292))(v9, 2); /*0x41dae6*/
     }
     v8 = this->EliteAirstrikeTeamTypeIndex; /*0x41daec*/
-    v12 = *(int **)(this + 92); /*0x41daef*/
+    v12 = this->AirstrikeClass_field_5C; /*0x41daef*/
     v13 = 0; /*0x41daf2*/
     for ( this->AirstrikeClass_field_50 = a2; v13 < v8; ++v13 ) /*0x41daf9*/
     {
@@ -186,14 +178,12 @@ namespace game {
 int AirstrikeClass::RemoveAircraft(AudioController * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall AirstrikeClass::RemoveAircraft(int this, AudioController *aP1)
+void AirstrikeClass::RemoveAircraft(int this, AudioController *aP1)
 {
   int result; // eax
-  int v3; // edi
   IUnknown *v4; // edx
-
   result = this->AirstrikeClass_field_5C; /*0x41dc80*/
-  v3 = 0; /*0x41dc8c*/
+  int v3 = 0; /*0x41dc8c*/
   if ( (AudioController *)result == aP1 ) /*0x41dc90*/
   {
     this->AirstrikeClass_field_5C = *(_DWORD *)&aP1[7].__pad_94[4]; /*0x41dc98*/
@@ -243,15 +233,13 @@ AirstrikeClass * AirstrikeClass::CopyTo(char a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 AirstrikeClass *__thiscall AirstrikeClass::CopyTo(_DWORD *this, char a2)
 {
-  int v3; // eax
-  _DWORD *v5; // [esp+4h] [ebp-4h] BYREF
 
   *this = &AirstrikeClass::`vftable'; /*0x41dd5d*/
   this->vtable2 = &AirstrikeClass::`vftable'; /*0x41dd63*/
   this->vtable3 = &AirstrikeClass::`vftable'; /*0x41dd6a*/
   this->vtable4 = &vt_AirstrikeClass; /*0x41dd71*/
-  v5 = this; /*0x41dd7f*/
-  v3 = (*(int (__thiscall **)(int *, _DWORD **))(DataGlobal_889FB8 + 16))(&DataGlobal_889FB8, &v5); /*0x41dd83*/
+  AirstrikeClass *v5 = this; /*0x41dd7f*/
+  int v3 = (*(int (__thiscall **)(int *, _DWORD **))(DataGlobal_889FB8 + 16))(&DataGlobal_889FB8, &v5); /*0x41dd83*/
   if ( v3 != -1 && v3 < DataGlobal_889FC8 && v3 < --DataGlobal_889FC8 ) /*0x41dd9e*/
   {
     do /*0x41ddb6*/
@@ -276,23 +264,19 @@ namespace game {
 char AirstrikeClass::UpdateAll()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char sub_420E90()
+void sub_420E90()
 {
-  _DWORD *v0; // eax
-  int v1; // esi
-  int v2; // ecx
-  int v3; // edx
-  int v4; // esi
-  _BYTE *v5; // edx
 
+  _DWORD *v0; // eax
   LOBYTE(v0) = unk_89A134; /*0x420e90*/
   if ( !unk_89A134 ) /*0x420e98*/
   {
+  int v3; // edx
     unk_89A134 = 1; /*0x420e9a*/
-    v1 = 0; /*0x420ea1*/
+    int v1 = 0; /*0x420ea1*/
     while ( 1 ) /*0x420ec6*/
     {
-      v2 = v1 % 256 * (v1 / 256); /*0x420ec6*/
+      int v2 = v1 % 256 * (v1 / 256); /*0x420ec6*/
       v0 = (_DWORD *)((unsigned int)((unsigned __int64)(2164392969LL * v2) >> 32) >> 31); /*0x420ed6*/
       v3 = v2 / 127; /*0x420ed9*/
       if ( v2 / 127 > 255 ) /*0x420ee1*/
@@ -315,13 +299,13 @@ LABEL_8:
     goto LABEL_8; /*0x420ef3*/
   }
 LABEL_9:
-  v4 = g_AlphaShapeLimit - 1; /*0x420f07*/
+  int v4 = g_AlphaShapeLimit - 1; /*0x420f07*/
   if ( g_AlphaShapeLimit - 1 >= 0 ) /*0x420f12*/
   {
     v0 = DataGlobal_88A0F4; /*0x420f14*/
     do /*0x420f36*/
     {
-      v5 = (_BYTE *)v0[v4]; /*0x420f19*/
+      _BYTE * v5 = (_BYTE *)v0[v4]; /*0x420f19*/
       if ( v5[60] && v5 ) /*0x420f27*/
       {
         (*(void (__stdcall **)(int))(*(_DWORD *)v5 + 32))(1); /*0x420f2d*/

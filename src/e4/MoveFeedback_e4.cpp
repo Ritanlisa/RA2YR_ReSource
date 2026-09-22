@@ -8,9 +8,8 @@
 char MoveFeedback::ProcessCommand()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall MoveFeedback_Process(void *this)
+void MoveFeedback_Process(void *this)
 {
-  char v1; // bl
   int Height; // eax
   _DWORD *v3; // esi
   int v4; // ebp
@@ -26,8 +25,7 @@ char __thiscall MoveFeedback_Process(void *this)
   int v14; // ecx
   char v16; // [esp+13h] [ebp-9h]
   int v18; // [esp+18h] [ebp-4h] BYREF
-
-  v1 = g_MoveFeedback; /*0x7327d9*/
+  char v1 = g_MoveFeedback; /*0x7327d9*/
   v16 = g_MoveFeedback; /*0x7327e8*/
   g_MoveFeedback = 0; /*0x7327ec*/
   if ( DataGlobal_B0FE64 ) /*0x7327f5*/

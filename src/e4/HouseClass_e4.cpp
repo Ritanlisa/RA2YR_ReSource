@@ -20,9 +20,9 @@ void **__fastcall HouseClass::PsiWarn(InfantryClass *aP0, int a2, int arg0, void
   void **v7; // eax
   AnimClass *v9; // esi
   CoordStruct aP2; // [esp+Ch] [ebp-18h] BYREF
-  _BYTE v11[12]; // [esp+18h] [ebp-Ch] BYREF
 
   v6 = *(CoordStruct **)(*(_DWORD *)&stru_89E138[90140] + 4 * AnimTypeClass::FindIndex(a3)); /*0x43b5fb*/
+  _BYTE v11[12]; // [esp+18h] [ebp-Ch] BYREF
   aP2 = *(CoordStruct *)(*(int (__thiscall **)(int, _BYTE *))(*(_DWORD *)a2 + 72))(a2, v11); /*0x43b60a*/
   v7 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x43b621*/
   if ( v7 ) /*0x43b62b*/
@@ -42,12 +42,11 @@ namespace gamemd {
 int HouseClass::GetRepairStepAmount()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_459840(_DWORD *this)
+void sub_459840(_DWORD *this)
 {
-  _DWORD *v1; // edx
   int result; // eax
 
-  v1 = (_DWORD *)this->q520; /*0x459840*/
+  _DWORD * v1 = (_DWORD *)this->q520; /*0x459840*/
   result = v1[937]; /*0x459846*/
   if ( !result ) /*0x45984e*/
   {
@@ -69,16 +68,14 @@ namespace gamemd {
 void HouseClass::ResetObjectOrders(char a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __stdcall HouseClass_ResetObjectOrders(char a1, int a2)
+void HouseClass_ResetObjectOrders(char a1, int a2)
 {
-  int v2; // ebx
-  int v3; // edi
-  int v4; // esi
 
-  v2 = g_SidebarState; /*0x4adee1*/
-  v3 = 0; /*0x4adee8*/
+  int v2 = g_SidebarState; /*0x4adee1*/
+  int v3 = 0; /*0x4adee8*/
   if ( g_SidebarState > 0 ) /*0x4adeec*/
   {
+  int v4; // esi
     while ( 1 ) /*0x4adefd*/
     {
       v4 = *((_DWORD *)g_TechnoClass_Count + v3); /*0x4adefd*/
@@ -122,7 +119,7 @@ namespace gamemd {
 int HouseClass::RevealShroudForAllies(char a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall HouseClass_RevealShroudForAllies(char a1, int a2)
+void HouseClass_RevealShroudForAllies(char a1, int a2)
 {
   int result; // eax
   int i; // ebp
@@ -221,10 +218,9 @@ namespace gamemd {
 int HouseClass::IsAlliedWith(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall HouseClass::IsAlliedWith(void *this, IUnknown *aP1)
+void HouseClass::IsAlliedWith(IUnknown *aP1)
 {
   IUnknown *result; // eax
-  int v3; // ecx
 
   result = (IUnknown *)this; /*0x4f9a50*/
   if ( !aP1 ) /*0x4f9a58*/
@@ -234,7 +230,7 @@ int __thiscall HouseClass::IsAlliedWith(void *this, IUnknown *aP1)
     LOBYTE(result) = 1; /*0x4f9a5e*/
     return (int)result; /*0x4f9a60*/
   }
-  v3 = *(_DWORD *)&aP1->__pad_28[8]; /*0x4f9a63*/
+  int v3 = *(_DWORD *)&aP1->__pad_28[8]; /*0x4f9a63*/
   if ( v3 == *(_DWORD *)&result->__pad_28[8] ) /*0x4f9a6b*/
   {
     LOBYTE(result) = 1; /*0x4f9a6d*/
@@ -255,35 +251,32 @@ namespace gamemd {
 char HouseClass::IsCellOccupied(IUnknown * aP1, char a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall HouseClass::IsCellOccupied(int this, IUnknown *aP1, char a3)
+void HouseClass::IsCellOccupied(int this, IUnknown *aP1, char a3)
 {
-  char v4; // bl
-  _DWORD *v6; // eax
-  _DWORD *v7; // eax
   IUnknown *v9; // [esp+Ch] [ebp-10h] BYREF
-  _BYTE v10[12]; // [esp+10h] [ebp-Ch] BYREF
   IUnknown *aP1a; // [esp+20h] [ebp+4h]
 
-  v4 = 0; /*0x4fbe49*/
+  char v4 = 0; /*0x4fbe49*/
   if ( !aP1 ) /*0x4fbe50*/
     return 0; /*0x4fbf50*/
   if ( (*(int (__thiscall **)(IUnknown *))(aP1->field_0 + 44))(aP1) == 1 ) /*0x4fbe60*/
   {
     v4 = HouseClass::ClearPrimaryFactory(aP1); /*0x4fbe69*/
-    if ( !v4 || *(IUnknown **)(this + 21468) != aP1 ) /*0x4fbe79*/
+    if ( !v4 || this->ourFlagCoords != aP1 ) /*0x4fbe79*/
       goto LABEL_10; /*0x4fbe79*/
   }
   else
   {
-    v6 = (_DWORD *)(*(int (__thiscall **)(IUnknown *, _BYTE *))(aP1->field_0 + 72))(aP1, v10); /*0x4fbe8a*/
+  _BYTE v10[12]; // [esp+10h] [ebp-Ch] BYREF
+    _DWORD * v6 = (_DWORD *)(*(int (__thiscall **)(IUnknown *, _BYTE *))(aP1->field_0 + 72))(aP1, v10); /*0x4fbe8a*/
     LOWORD(aP1a) = *v6 / 256; /*0x4fbe9d*/
     HIWORD(aP1a) = v6[1] / 256; /*0x4fbeb5*/
     v9 = aP1a; /*0x4fbebe*/
     if ( !LayerClass::CoordinatesLegal(&DataGlobal_87F7E8, (IUnknown *)&v9) ) /*0x4fbec8*/
       goto LABEL_10; /*0x4fbec8*/
-    v7 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v9); /*0x4fbedb*/
+    _DWORD * v7 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v9); /*0x4fbedb*/
     v4 = HouseClass::checkAutoProduction(v7); /*0x4fbee7*/
-    if ( !v4 || *(IUnknown **)(this + 21468) != aP1 ) /*0x4fbef3*/
+    if ( !v4 || this->ourFlagCoords != aP1 ) /*0x4fbef3*/
       goto LABEL_10; /*0x4fbef3*/
   }
   this->ourFlagCoords = 0; /*0x4fbef5*/
@@ -305,21 +298,16 @@ namespace gamemd {
 char HouseClass::DestroyAllBuildings()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall HouseClass::DestroyAllBuildings(void *this)
+void HouseClass::DestroyAllBuildings()
 {
   int PriorityTarget; // eax
-  int v2; // ebx
-  int v3; // edi
-  int v5; // esi
-  int v6; // ecx
-  int v8; // [esp+Ch] [ebp-4h] BYREF
 
   LOBYTE(PriorityTarget) = g_SidebarState; /*0x4fc791*/
-  v2 = 0; /*0x4fc799*/
-  v3 = 0; /*0x4fc79b*/
+  int v2 = 0; /*0x4fc799*/
+  int v3 = 0; /*0x4fc79b*/
   while ( v2 < g_SidebarState ) /*0x4fc7a1*/
   {
-    v5 = *((_DWORD *)g_TechnoClass_Count + v2); /*0x4fc7a9*/
+    int v5 = *((_DWORD *)g_TechnoClass_Count + v2); /*0x4fc7a9*/
     PriorityTarget = ObjectClass::GetPriorityTarget((_DWORD *)v5); /*0x4fc7ae*/
     if ( (void *)PriorityTarget != this /*0x4fc7cf*/
       || (PriorityTarget = (*(int (__thiscall **)(int))(*(_DWORD *)v5 + 44))(v5), PriorityTarget != 6)
@@ -330,8 +318,8 @@ char __thiscall HouseClass::DestroyAllBuildings(void *this)
     }
     else
     {
-      v8 = *(_DWORD *)(v5 + 108); /*0x4fc7d4*/
-      v6 = *(_DWORD *)(v5 + 632); /*0x4fc7d8*/
+      int v8 = *(_DWORD *)(v5 + 108); /*0x4fc7d4*/
+      int v6 = *(_DWORD *)(v5 + 632); /*0x4fc7d8*/
       if ( v6 ) /*0x4fc7e0*/
         TriggerClass::UnlinkTags(v6); /*0x4fc7e2*/
       LOBYTE(PriorityTarget) = (*(int (__thiscall **)(int, int *, _DWORD, int, _DWORD, int, int, _DWORD))(*(_DWORD *)v5 + 364))( /*0x4fc806*/
@@ -356,21 +344,16 @@ namespace gamemd {
 char HouseClass::DestroyAllNonBuildingsNonNaval()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall HouseClass::DestroyAllNonBuildingsNonNaval(void *this)
+void HouseClass::DestroyAllNonBuildingsNonNaval()
 {
   int PriorityTarget; // eax
-  int v2; // ebx
-  int v3; // edi
-  int v5; // esi
-  int v6; // ecx
-  int v8; // [esp+Ch] [ebp-4h] BYREF
 
   LOBYTE(PriorityTarget) = g_SidebarState; /*0x4fc821*/
-  v2 = 0; /*0x4fc829*/
-  v3 = 0; /*0x4fc82b*/
+  int v2 = 0; /*0x4fc829*/
+  int v3 = 0; /*0x4fc82b*/
   while ( v2 < g_SidebarState ) /*0x4fc831*/
   {
-    v5 = *((_DWORD *)g_TechnoClass_Count + v2); /*0x4fc83d*/
+    int v5 = *((_DWORD *)g_TechnoClass_Count + v2); /*0x4fc83d*/
     PriorityTarget = ObjectClass::GetPriorityTarget((_DWORD *)v5); /*0x4fc842*/
     if ( (void *)PriorityTarget != this /*0x4fc877*/
       || (PriorityTarget = (*(int (__thiscall **)(int))(*(_DWORD *)v5 + 44))(v5), PriorityTarget == 6)
@@ -382,8 +365,8 @@ char __thiscall HouseClass::DestroyAllNonBuildingsNonNaval(void *this)
     }
     else
     {
-      v8 = *(_DWORD *)(v5 + 108); /*0x4fc87c*/
-      v6 = *(_DWORD *)(v5 + 632); /*0x4fc880*/
+      int v8 = *(_DWORD *)(v5 + 108); /*0x4fc87c*/
+      int v6 = *(_DWORD *)(v5 + 632); /*0x4fc880*/
       if ( v6 ) /*0x4fc888*/
         TriggerClass::UnlinkTags(v6); /*0x4fc88a*/
       LOBYTE(PriorityTarget) = (*(int (__thiscall **)(int, int *, _DWORD, int, _DWORD, int, int, _DWORD))(*(_DWORD *)v5 + 364))( /*0x4fc8ae*/
@@ -408,21 +391,16 @@ namespace gamemd {
 char HouseClass::DestroyAllNonBuildingsNaval()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall HouseClass::DestroyAllNonBuildingsNaval(void *this)
+void HouseClass::DestroyAllNonBuildingsNaval()
 {
   int PriorityTarget; // eax
-  int v2; // ebx
-  int v3; // edi
-  int v5; // esi
-  int v6; // ecx
-  int v8; // [esp+Ch] [ebp-4h] BYREF
 
   LOBYTE(PriorityTarget) = g_SidebarState; /*0x4fc8d1*/
-  v2 = 0; /*0x4fc8d9*/
-  v3 = 0; /*0x4fc8db*/
+  int v2 = 0; /*0x4fc8d9*/
+  int v3 = 0; /*0x4fc8db*/
   while ( v2 < g_SidebarState ) /*0x4fc8e1*/
   {
-    v5 = *((_DWORD *)g_TechnoClass_Count + v2); /*0x4fc8ed*/
+    int v5 = *((_DWORD *)g_TechnoClass_Count + v2); /*0x4fc8ed*/
     PriorityTarget = ObjectClass::GetPriorityTarget((_DWORD *)v5); /*0x4fc8f2*/
     if ( (void *)PriorityTarget != this /*0x4fc927*/
       || (PriorityTarget = (*(int (__thiscall **)(int))(*(_DWORD *)v5 + 44))(v5), PriorityTarget == 6)
@@ -434,8 +412,8 @@ char __thiscall HouseClass::DestroyAllNonBuildingsNaval(void *this)
     }
     else
     {
-      v8 = *(_DWORD *)(v5 + 108); /*0x4fc92c*/
-      v6 = *(_DWORD *)(v5 + 632); /*0x4fc930*/
+      int v8 = *(_DWORD *)(v5 + 108); /*0x4fc92c*/
+      int v6 = *(_DWORD *)(v5 + 632); /*0x4fc930*/
       if ( v6 ) /*0x4fc938*/
         TriggerClass::UnlinkTags(v6); /*0x4fc93a*/
       LOBYTE(PriorityTarget) = (*(int (__thiscall **)(int, int *, _DWORD, int, _DWORD, int, int, _DWORD))(*(_DWORD *)v5 + 364))( /*0x4fc95e*/
@@ -460,16 +438,11 @@ namespace gamemd {
 bool HouseClass::CanAlly(HouseClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall HouseClass::CanAlly(int this, HouseClass *aP1)
+void HouseClass::CanAlly(int this, HouseClass *aP1)
 {
   int relatedTagsCount; // ecx
-  int v5; // edi
-  int v6; // ebp
   HouseClass *v7; // edx
   IUnknown *v8; // ebx
-  int v9; // eax
-  int v10; // eax
-
   if ( aP1 ) /*0x50154a*/
   {
     if ( aP1 == (HouseClass *)this ) /*0x50154e*/
@@ -490,21 +463,22 @@ bool __thiscall HouseClass::CanAlly(int this, HouseClass *aP1)
     return 1; /*0x5015ab*/
   if ( this->defeated ) /*0x5015b1*/
     return 0; /*0x5015bc*/
-  v5 = 0; /*0x5015c8*/
-  v6 = 0; /*0x5015ca*/
+  int v5 = 0; /*0x5015c8*/
+  int v6 = 0; /*0x5015ca*/
   if ( (int)HouseClass_Count > 0 ) /*0x5015ce*/
   {
     v7 = HouseClass_Array; /*0x5015d0*/
     v8 = HouseClass_Count; /*0x5015d7*/
     do /*0x50162c*/
     {
-      v9 = *(_DWORD *)v7->__pad_0; /*0x5015d9*/
+      int v9 = *(_DWORD *)v7->__pad_0; /*0x5015d9*/
       if ( !*(_BYTE *)(*(_DWORD *)v7->__pad_0 + 501) && !*(_BYTE *)(*(_DWORD *)(v9 + 52) + 422) ) /*0x5015e8*/
       {
         ++v5; /*0x5015f1*/
         if ( v9 ) /*0x5015f4*/
         {
           if ( v9 == this /*0x501625*/
+  int v10; // eax
             || (v10 = *(_DWORD *)(v9 + 48), v10 == this->relatedTagsCount)
             || v10 != -1 && ((1 << v10) & this->HouseClass_field_timer_D) != 0 )
           {
@@ -527,18 +501,14 @@ namespace gamemd {
 char HouseClass::CanDetect()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char HouseClass_CanDetect()
+void HouseClass_CanDetect()
 {
-  _BYTE *v0; // eax
-  char v1; // bl
-  int v2; // ecx
   int i; // ebp
-  _BYTE *v4; // esi
   int j; // edi
-  char v6; // cl
 
+  _BYTE *v0; // eax
   LOBYTE(v0) = (_BYTE)g_RulesClass_Instance; /*0x501640*/
-  v1 = *((_BYTE *)g_RulesClass_Instance + 5301); /*0x50164d*/
+  char v1 = *((_BYTE *)g_RulesClass_Instance + 5301); /*0x50164d*/
   if ( g_GameStateFlags /*0x501662*/
     && (LOBYTE(v0) = (*(int (__thiscall **)(int))(*(_DWORD *)g_GameStateFlags + 4))(g_GameStateFlags), (_BYTE)v0)
     || v1 )
@@ -546,10 +516,10 @@ char HouseClass_CanDetect()
     LOBYTE(v0) = (_BYTE)g_ScenarioClass_Instance; /*0x501668*/
     if ( !*((_BYTE *)g_ScenarioClass_Instance + 4576) ) /*0x50166d*/
     {
-      v2 = HouseClass_Count; /*0x50167b*/
+      int v2 = HouseClass_Count; /*0x50167b*/
       for ( i = 0; i < v2; ++i ) /*0x501685*/
       {
-        v4 = (_BYTE *)*((_DWORD *)HouseClass_Array + i); /*0x501695*/
+        _BYTE * v4 = (_BYTE *)*((_DWORD *)HouseClass_Array + i); /*0x501695*/
         if ( v4 ) /*0x50169a*/
         {
           LOBYTE(v0) = v4[501]; /*0x5016a0*/
@@ -567,7 +537,7 @@ char HouseClass_CanDetect()
                 v0 = (_BYTE *)*((_DWORD *)HouseClass_Array + j); /*0x5016ec*/
                 if ( v0 && !v0[501] ) /*0x5016f3*/
                 {
-                  v6 = v0[492]; /*0x501705*/
+                  char v6 = v0[492]; /*0x501705*/
                   if ( !g_GameMode_Current ) /*0x50170b*/
                     v6 = v6 || v0[493]; /*0x50171f*/
                   if ( v6 ) /*0x501728*/
@@ -595,120 +565,12 @@ HRESULT HouseClass::SaveLoad_Prefix(int a1, LPSTREAM pStm)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 HRESULT __stdcall HouseClass::SaveLoad_Prefix(int a1, LPSTREAM pStm)
 {
-  int v2; // esi
   int i; // edi
   int j; // edi
-  int v5; // ecx
-  int v6; // eax
-  int v7; // ecx
-  int v8; // eax
   LPSTREAM v9; // edi
   HRESULT result; // eax
-  int *v11; // ebp
-  int v12; // ebx
-  int *v13; // ebp
-  int v14; // ebx
-  int v15; // ecx
-  bool v16; // zf
-  int v17; // edx
-  int v18; // ecx
-  int v19; // eax
-  int v20; // eax
-  int v21; // edx
-  int v22; // eax
-  int v23; // eax
-  int v24; // ecx
-  int v25; // eax
-  int v26; // eax
-  int v27; // edx
-  int v28; // eax
-  int v29; // eax
-  int v30; // ecx
-  int v31; // eax
-  int v32; // eax
-  int v33; // edx
   int k; // ebp
-  int v35; // edx
-  int v36; // edx
-  int v37; // ecx
-  int v38; // eax
-  int v39; // eax
-  int v40; // edx
-  int v41; // eax
   int m; // ebp
-  int v43; // eax
-  int v44; // eax
-  int v45; // ecx
-  int v46; // eax
-  int v47; // eax
-  int v48; // edx
-  int v49; // eax
-  int v50; // eax
-  int v51; // ecx
-  int v52; // eax
-  int v53; // eax
-  int v54; // edx
-  int v55; // eax
-  int v56; // eax
-  int v57; // ecx
-  int v58; // eax
-  int v59; // eax
-  int v60; // edx
-  int v61; // eax
-  int v62; // eax
-  int v63; // ecx
-  int v64; // eax
-  int v65; // eax
-  int v66; // edx
-  int v67; // eax
-  int v68; // eax
-  int v69; // ecx
-  int v70; // eax
-  int v71; // eax
-  int v72; // edx
-  int v73; // eax
-  int v74; // eax
-  int v75; // ecx
-  int v76; // eax
-  int v77; // eax
-  int v78; // edx
-  int v79; // eax
-  int v80; // eax
-  int v81; // ecx
-  int v82; // eax
-  int v83; // eax
-  int v84; // edx
-  int v85; // eax
-  int v86; // eax
-  int v87; // ecx
-  int v88; // eax
-  int v89; // eax
-  int v90; // edx
-  int v91; // eax
-  int v92; // eax
-  int v93; // ecx
-  int v94; // eax
-  int v95; // eax
-  int v96; // edx
-  int v97; // eax
-  int v98; // eax
-  int v99; // ecx
-  int v100; // eax
-  int v101; // eax
-  int v102; // edx
-  int v103; // eax
-  int v104; // eax
-  int v105; // ecx
-  int v106; // eax
-  int v107; // eax
-  int v108; // edx
-  int v109; // eax
-  _WORD *v110; // ebp
-  int v111; // eax
-  int v112; // ecx
-  int v113; // eax
-  int v114; // eax
-  int v115; // edx
   int n; // ebp
   int ii; // ebp
   int jj; // ebp
@@ -723,15 +585,8 @@ HRESULT __stdcall HouseClass::SaveLoad_Prefix(int a1, LPSTREAM pStm)
   int i6; // ebp
   int i7; // ebp
   int i8; // ebp
-  int v130; // eax
-  int v131; // [esp+2A4h] [ebp-24h]
-  int v132; // [esp+2A4h] [ebp-24h]
-  int v133; // [esp+2B8h] [ebp-10h] BYREF
-  int v134; // [esp+2BCh] [ebp-Ch] BYREF
-  int v135; // [esp+2C0h] [ebp-8h]
-  int v136; // [esp+2C4h] [ebp-4h] BYREF
 
-  v2 = a1;
+  int v2 = a1;
   (*(void (__thiscall **)(int))(*(_DWORD *)(a1 + 80) + 12))(a1 + 80);
   (*(void (__thiscall **)(int))(*(_DWORD *)(v2 + 104) + 12))(v2 + 104);
   (*(void (__thiscall **)(int))(*(_DWORD *)(v2 + 128) + 12))(v2 + 128);
@@ -748,11 +603,11 @@ HRESULT __stdcall HouseClass::SaveLoad_Prefix(int a1, LPSTREAM pStm)
   (*(void (__thiscall **)(int))(*(_DWORD *)(v2 + 364) + 12))(v2 + 364);
   for ( j = 0; j < *(_DWORD *)(v2 + 90228); *(_DWORD *)(*(_DWORD *)(v2 + 90216) + 4 * j - 4) = 0 )
   {
-    v131 = *(_DWORD *)(*(_DWORD *)(v2 + 90216) + 4 * j);
+    int v131 = *(_DWORD *)(*(_DWORD *)(v2 + 90216) + 4 * j);
     if ( (*(int (__stdcall **)(int))(*(_DWORD *)v131 + 8))(v131) )
     {
       do
-        v132 = *(_DWORD *)(*(_DWORD *)(v2 + 90216) + 4 * j);
+        int v132 = *(_DWORD *)(*(_DWORD *)(v2 + 90216) + 4 * j);
       while ( (*(int (__stdcall **)(int))(*(_DWORD *)v132 + 8))(v132) );
     }
     ++j;
@@ -760,14 +615,14 @@ HRESULT __stdcall HouseClass::SaveLoad_Prefix(int a1, LPSTREAM pStm)
   (*(void (__thiscall **)(int))(*(_DWORD *)(v2 + 90212) + 12))(v2 + 90212);
   while ( *(_DWORD *)(v2 + 612) )
   {
-    v5 = **(_DWORD **)(v2 + 600);
+    int v5 = **(_DWORD **)(v2 + 600);
     if ( v5 )
       (*(void (__thiscall **)(int, int))(*(_DWORD *)v5 + 32))(v5, 1);
-    v6 = *(_DWORD *)(v2 + 612);
+    int v6 = *(_DWORD *)(v2 + 612);
     if ( v6 > 0 )
     {
-      v7 = v6 - 1;
-      v8 = 0;
+      int v7 = v6 - 1;
+      int v8 = 0;
       for ( *(_DWORD *)(v2 + 612) = v7;
             v8 < *(_DWORD *)(v2 + 612);
             *(_DWORD *)(*(_DWORD *)(v2 + 600) + 4 * v8 - 4) = *(_DWORD *)(*(_DWORD *)(v2 + 600) + 4 * v8) )
@@ -806,16 +661,16 @@ HRESULT __stdcall HouseClass::SaveLoad_Prefix(int a1, LPSTREAM pStm)
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v2 + 21448));
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v2 + 21452));
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v2 + 21728));
-    v11 = (int *)(v2 + 528);
-    v12 = 12;
+    int * v11 = (int *)(v2 + 528);
+    int v12 = 12;
     do
     {
       ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v11++);
       --v12;
     }
     while ( v12 );
-    v13 = (int *)(v2 + 22128);
-    v14 = 3;
+    int * v13 = (int *)(v2 + 22128);
+    int v14 = 3;
     do
     {
       HouseClass::RegisterForSwizzleTracking(v13);
@@ -823,16 +678,16 @@ HRESULT __stdcall HouseClass::SaveLoad_Prefix(int a1, LPSTREAM pStm)
       --v14;
     }
     while ( v14 );
-    v15 = *(_DWORD *)v9->__pad_0;
-    v133 = 0;
+    int v15 = *(_DWORD *)v9->__pad_0;
+    int v133 = 0;
     result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v15 + 12))(v9, &v133, 4, 0);
     if ( result >= 0 )
     {
-      v16 = v133-- == 0;
+      bool v16 = v133-- == 0;
       if ( v16 )
       {
 LABEL_31:
-        v22 = *(_DWORD *)v9->__pad_0;
+        int v22 = *(_DWORD *)v9->__pad_0;
         v133 = 0;
         result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v22 + 12))(v9, &v133, 4, 0);
         if ( result >= 0 )
@@ -841,18 +696,20 @@ LABEL_31:
           if ( v16 )
           {
 LABEL_41:
-            v28 = *(_DWORD *)v9->__pad_0;
+            int v28 = *(_DWORD *)v9->__pad_0;
             v133 = 0;
             result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v28 + 12))(v9, &v133, 4, 0);
             if ( result >= 0 )
             {
+  int v135; // [esp+2C0h] [ebp-8h]
+  int v134; // [esp+2BCh] [ebp-Ch] BYREF
               v16 = v133-- == 0;
               if ( v16 )
               {
 LABEL_51:
                 for ( k = 0; k < *(_DWORD *)(v2 + 22036); ++k )
                   ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(*(_DWORD *)(v2 + 22024) + 8 * k));
-                v35 = *(_DWORD *)v9->__pad_0;
+                int v35 = *(_DWORD *)v9->__pad_0;
                 v133 = 0;
                 result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v35 + 12))(v9, &v133, 4, 0);
                 if ( result >= 0 )
@@ -861,7 +718,7 @@ LABEL_51:
                   if ( v16 )
                   {
 LABEL_63:
-                    v41 = *(_DWORD *)(v2 + 22060);
+                    int v41 = *(_DWORD *)(v2 + 22060);
                     for ( m = 0; m < v41; ++m )
                     {
                       ObjectPtr::RegisterForTracking(
@@ -869,7 +726,7 @@ LABEL_63:
                         (int *)(*(_DWORD *)(v2 + 22048) + 8 * v41 - 8));
                       v41 = *(_DWORD *)(v2 + 22060);
                     }
-                    v43 = *(_DWORD *)v9->__pad_0;
+                    int v43 = *(_DWORD *)v9->__pad_0;
                     v133 = 0;
                     result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v43 + 12))(v9, &v133, 4, 0);
                     if ( result >= 0 )
@@ -878,7 +735,7 @@ LABEL_63:
                       if ( v16 )
                       {
 LABEL_75:
-                        v49 = *(_DWORD *)v9->__pad_0;
+                        int v49 = *(_DWORD *)v9->__pad_0;
                         v133 = 0;
                         result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v49 + 12))(v9, &v133, 4, 0);
                         if ( result >= 0 )
@@ -887,7 +744,7 @@ LABEL_75:
                           if ( v16 )
                           {
 LABEL_85:
-                            v55 = *(_DWORD *)v9->__pad_0;
+                            int v55 = *(_DWORD *)v9->__pad_0;
                             v133 = 0;
                             result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v55 + 12))(v9, &v133, 4, 0);
                             if ( result >= 0 )
@@ -896,7 +753,7 @@ LABEL_85:
                               if ( v16 )
                               {
 LABEL_95:
-                                v61 = *(_DWORD *)v9->__pad_0;
+                                int v61 = *(_DWORD *)v9->__pad_0;
                                 v133 = 0;
                                 result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v61 + 12))(
                                            v9,
@@ -909,7 +766,7 @@ LABEL_95:
                                   if ( v16 )
                                   {
 LABEL_105:
-                                    v67 = *(_DWORD *)v9->__pad_0;
+                                    int v67 = *(_DWORD *)v9->__pad_0;
                                     v133 = 0;
                                     result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v67 + 12))(
                                                v9,
@@ -922,7 +779,7 @@ LABEL_105:
                                       if ( v16 )
                                       {
 LABEL_115:
-                                        v73 = *(_DWORD *)v9->__pad_0;
+                                        int v73 = *(_DWORD *)v9->__pad_0;
                                         v133 = 0;
                                         result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v73 + 12))(
                                                    v9,
@@ -935,7 +792,7 @@ LABEL_115:
                                           if ( v16 )
                                           {
 LABEL_125:
-                                            v79 = *(_DWORD *)v9->__pad_0;
+                                            int v79 = *(_DWORD *)v9->__pad_0;
                                             v133 = 0;
                                             result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v79 + 12))(
                                                        v9,
@@ -948,7 +805,7 @@ LABEL_125:
                                               if ( v16 )
                                               {
 LABEL_135:
-                                                v85 = *(_DWORD *)v9->__pad_0;
+                                                int v85 = *(_DWORD *)v9->__pad_0;
                                                 v133 = 0;
                                                 result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v85 + 12))(
                                                            v9,
@@ -961,7 +818,7 @@ LABEL_135:
                                                   if ( v16 )
                                                   {
 LABEL_145:
-                                                    v91 = *(_DWORD *)v9->__pad_0;
+                                                    int v91 = *(_DWORD *)v9->__pad_0;
                                                     v133 = 0;
                                                     result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v91 + 12))(
                                                                v9,
@@ -974,7 +831,7 @@ LABEL_145:
                                                       if ( v16 )
                                                       {
 LABEL_155:
-                                                        v97 = *(_DWORD *)v9->__pad_0;
+                                                        int v97 = *(_DWORD *)v9->__pad_0;
                                                         v133 = 0;
                                                         result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v97 + 12))(
                                                                    v9,
@@ -987,7 +844,7 @@ LABEL_155:
                                                           if ( v16 )
                                                           {
 LABEL_165:
-                                                            v103 = *(_DWORD *)v9->__pad_0;
+                                                            int v103 = *(_DWORD *)v9->__pad_0;
                                                             v133 = 0;
                                                             result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v103 + 12))(
                                                                        v9,
@@ -1000,7 +857,7 @@ LABEL_165:
                                                               if ( v16 )
                                                               {
 LABEL_175:
-                                                                v109 = *(_DWORD *)v9->__pad_0;
+                                                                int v109 = *(_DWORD *)v9->__pad_0;
                                                                 v133 = 0;
                                                                 result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v109 + 12))(
                                                                            v9,
@@ -1069,8 +926,8 @@ LABEL_187:
                                                                       ObjectPtr::RegisterForTracking(
                                                                         (int)&SwizzleManagerClass_Instance,
                                                                         *(int **)(*(_DWORD *)(v2 + 368) + 4 * i8));
-                                                                    v130 = *(_DWORD *)v9->__pad_0;
-                                                                    v136 = 0;
+                                                                    int v130 = *(_DWORD *)v9->__pad_0;
+                                                                    int v136 = 0;
                                                                     result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v130 + 12))(
                                                                                v9,
                                                                                &v136,
@@ -1089,8 +946,8 @@ LABEL_187:
                                                                   {
                                                                     while ( 1 )
                                                                     {
-                                                                      v110 = __2_YAPAXI_Z(8u);
-                                                                      v111 = *(_DWORD *)v9->__pad_0;
+                                                                      _WORD * v110 = __2_YAPAXI_Z(8u);
+                                                                      int v111 = *(_DWORD *)v9->__pad_0;
                                                                       v134 = 0;
                                                                       result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v111 + 12))(
                                                                                  v9,
@@ -1116,17 +973,18 @@ LABEL_187:
                                                                       *(_DWORD *)v110 = v134;
                                                                       v110[2] = a1;
                                                                       v110[3] = (_WORD)pStm;
-                                                                      v112 = *(_DWORD *)(v2 + 372);
+                                                                      int v112 = *(_DWORD *)(v2 + 372);
                                                                       if ( *(_DWORD *)(v2 + 380) < v112
                                                                         || (*(_BYTE *)(v2 + 377) || !v112)
+  int v113; // eax
                                                                         && (v113 = *(_DWORD *)(v2 + 384), v113 > 0)
                                                                         && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(v2 + 364) + 8))(
                                                                              v2 + 364,
                                                                              v113 + v112,
                                                                              0) )
                                                                       {
-                                                                        v114 = *(_DWORD *)(v2 + 380);
-                                                                        v115 = *(_DWORD *)(v2 + 368);
+                                                                        int v114 = *(_DWORD *)(v2 + 380);
+                                                                        int v115 = *(_DWORD *)(v2 + 368);
                                                                         *(_DWORD *)(v2 + 380) = v114 + 1;
                                                                         *(_DWORD *)(v115 + 4 * v114) = v110;
                                                                       }
@@ -1141,7 +999,7 @@ LABEL_187:
                                                               {
                                                                 while ( 1 )
                                                                 {
-                                                                  v104 = *(_DWORD *)v9->__pad_0;
+                                                                  int v104 = *(_DWORD *)v9->__pad_0;
                                                                   a1 = 0;
                                                                   result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v104 + 12))(
                                                                              v9,
@@ -1150,17 +1008,18 @@ LABEL_187:
                                                                              0);
                                                                   if ( result < 0 )
                                                                     break;
-                                                                  v105 = *(_DWORD *)(v2 + 328);
+                                                                  int v105 = *(_DWORD *)(v2 + 328);
                                                                   if ( *(_DWORD *)(v2 + 336) < v105
                                                                     || (*(_BYTE *)(v2 + 333) || !v105)
+  int v106; // eax
                                                                     && (v106 = *(_DWORD *)(v2 + 340), v106 > 0)
                                                                     && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(v2 + 320) + 8))(
                                                                          v2 + 320,
                                                                          v106 + v105,
                                                                          0) )
                                                                   {
-                                                                    v107 = *(_DWORD *)(v2 + 336);
-                                                                    v108 = *(_DWORD *)(v2 + 324);
+                                                                    int v107 = *(_DWORD *)(v2 + 336);
+                                                                    int v108 = *(_DWORD *)(v2 + 324);
                                                                     *(_DWORD *)(v2 + 336) = v107 + 1;
                                                                     *(_DWORD *)(v108 + 4 * v107) = a1;
                                                                   }
@@ -1175,7 +1034,7 @@ LABEL_187:
                                                           {
                                                             while ( 1 )
                                                             {
-                                                              v98 = *(_DWORD *)v9->__pad_0;
+                                                              int v98 = *(_DWORD *)v9->__pad_0;
                                                               a1 = 0;
                                                               result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v98 + 12))(
                                                                          v9,
@@ -1184,17 +1043,18 @@ LABEL_187:
                                                                          0);
                                                               if ( result < 0 )
                                                                 break;
-                                                              v99 = *(_DWORD *)(v2 + 304);
+                                                              int v99 = *(_DWORD *)(v2 + 304);
                                                               if ( *(_DWORD *)(v2 + 312) < v99
                                                                 || (*(_BYTE *)(v2 + 309) || !v99)
+  int v100; // eax
                                                                 && (v100 = *(_DWORD *)(v2 + 316), v100 > 0)
                                                                 && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(v2 + 296) + 8))(
                                                                      v2 + 296,
                                                                      v100 + v99,
                                                                      0) )
                                                               {
-                                                                v101 = *(_DWORD *)(v2 + 312);
-                                                                v102 = *(_DWORD *)(v2 + 300);
+                                                                int v101 = *(_DWORD *)(v2 + 312);
+                                                                int v102 = *(_DWORD *)(v2 + 300);
                                                                 *(_DWORD *)(v2 + 312) = v101 + 1;
                                                                 *(_DWORD *)(v102 + 4 * v101) = a1;
                                                               }
@@ -1209,7 +1069,7 @@ LABEL_187:
                                                       {
                                                         while ( 1 )
                                                         {
-                                                          v92 = *(_DWORD *)v9->__pad_0;
+                                                          int v92 = *(_DWORD *)v9->__pad_0;
                                                           a1 = 0;
                                                           result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v92 + 12))(
                                                                      v9,
@@ -1218,17 +1078,18 @@ LABEL_187:
                                                                      0);
                                                           if ( result < 0 )
                                                             break;
-                                                          v93 = *(_DWORD *)(v2 + 280);
+                                                          int v93 = *(_DWORD *)(v2 + 280);
                                                           if ( *(_DWORD *)(v2 + 288) < v93
                                                             || (*(_BYTE *)(v2 + 285) || !v93)
+  int v94; // eax
                                                             && (v94 = *(_DWORD *)(v2 + 292), v94 > 0)
                                                             && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(v2 + 272) + 8))(
                                                                  v2 + 272,
                                                                  v94 + v93,
                                                                  0) )
                                                           {
-                                                            v95 = *(_DWORD *)(v2 + 288);
-                                                            v96 = *(_DWORD *)(v2 + 276);
+                                                            int v95 = *(_DWORD *)(v2 + 288);
+                                                            int v96 = *(_DWORD *)(v2 + 276);
                                                             *(_DWORD *)(v2 + 288) = v95 + 1;
                                                             *(_DWORD *)(v96 + 4 * v95) = a1;
                                                           }
@@ -1243,7 +1104,7 @@ LABEL_187:
                                                   {
                                                     while ( 1 )
                                                     {
-                                                      v86 = *(_DWORD *)v9->__pad_0;
+                                                      int v86 = *(_DWORD *)v9->__pad_0;
                                                       a1 = 0;
                                                       result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v86 + 12))(
                                                                  v9,
@@ -1252,17 +1113,18 @@ LABEL_187:
                                                                  0);
                                                       if ( result < 0 )
                                                         break;
-                                                      v87 = *(_DWORD *)(v2 + 256);
+                                                      int v87 = *(_DWORD *)(v2 + 256);
                                                       if ( *(_DWORD *)(v2 + 264) < v87
                                                         || (*(_BYTE *)(v2 + 261) || !v87)
+  int v88; // eax
                                                         && (v88 = *(_DWORD *)(v2 + 268), v88 > 0)
                                                         && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(v2 + 248) + 8))(
                                                              v2 + 248,
                                                              v88 + v87,
                                                              0) )
                                                       {
-                                                        v89 = *(_DWORD *)(v2 + 264);
-                                                        v90 = *(_DWORD *)(v2 + 252);
+                                                        int v89 = *(_DWORD *)(v2 + 264);
+                                                        int v90 = *(_DWORD *)(v2 + 252);
                                                         *(_DWORD *)(v2 + 264) = v89 + 1;
                                                         *(_DWORD *)(v90 + 4 * v89) = a1;
                                                       }
@@ -1277,7 +1139,7 @@ LABEL_187:
                                               {
                                                 while ( 1 )
                                                 {
-                                                  v80 = *(_DWORD *)v9->__pad_0;
+                                                  int v80 = *(_DWORD *)v9->__pad_0;
                                                   a1 = 0;
                                                   result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v80 + 12))(
                                                              v9,
@@ -1286,17 +1148,18 @@ LABEL_187:
                                                              0);
                                                   if ( result < 0 )
                                                     break;
-                                                  v81 = *(_DWORD *)(v2 + 232);
+                                                  int v81 = *(_DWORD *)(v2 + 232);
                                                   if ( *(_DWORD *)(v2 + 240) < v81
                                                     || (*(_BYTE *)(v2 + 237) || !v81)
+  int v82; // eax
                                                     && (v82 = *(_DWORD *)(v2 + 244), v82 > 0)
                                                     && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(v2 + 224) + 8))(
                                                          v2 + 224,
                                                          v82 + v81,
                                                          0) )
                                                   {
-                                                    v83 = *(_DWORD *)(v2 + 240);
-                                                    v84 = *(_DWORD *)(v2 + 228);
+                                                    int v83 = *(_DWORD *)(v2 + 240);
+                                                    int v84 = *(_DWORD *)(v2 + 228);
                                                     *(_DWORD *)(v2 + 240) = v83 + 1;
                                                     *(_DWORD *)(v84 + 4 * v83) = a1;
                                                   }
@@ -1311,7 +1174,7 @@ LABEL_187:
                                           {
                                             while ( 1 )
                                             {
-                                              v74 = *(_DWORD *)v9->__pad_0;
+                                              int v74 = *(_DWORD *)v9->__pad_0;
                                               a1 = 0;
                                               result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v74 + 12))(
                                                          v9,
@@ -1320,17 +1183,18 @@ LABEL_187:
                                                          0);
                                               if ( result < 0 )
                                                 break;
-                                              v75 = *(_DWORD *)(v2 + 208);
+                                              int v75 = *(_DWORD *)(v2 + 208);
                                               if ( *(_DWORD *)(v2 + 216) < v75
                                                 || (*(_BYTE *)(v2 + 213) || !v75)
+  int v76; // eax
                                                 && (v76 = *(_DWORD *)(v2 + 220), v76 > 0)
                                                 && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(v2 + 200) + 8))(
                                                      v2 + 200,
                                                      v76 + v75,
                                                      0) )
                                               {
-                                                v77 = *(_DWORD *)(v2 + 216);
-                                                v78 = *(_DWORD *)(v2 + 204);
+                                                int v77 = *(_DWORD *)(v2 + 216);
+                                                int v78 = *(_DWORD *)(v2 + 204);
                                                 *(_DWORD *)(v2 + 216) = v77 + 1;
                                                 *(_DWORD *)(v78 + 4 * v77) = a1;
                                               }
@@ -1345,7 +1209,7 @@ LABEL_187:
                                       {
                                         while ( 1 )
                                         {
-                                          v68 = *(_DWORD *)v9->__pad_0;
+                                          int v68 = *(_DWORD *)v9->__pad_0;
                                           a1 = 0;
                                           result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v68 + 12))(
                                                      v9,
@@ -1354,17 +1218,18 @@ LABEL_187:
                                                      0);
                                           if ( result < 0 )
                                             break;
-                                          v69 = *(_DWORD *)(v2 + 184);
+                                          int v69 = *(_DWORD *)(v2 + 184);
                                           if ( *(_DWORD *)(v2 + 192) < v69
                                             || (*(_BYTE *)(v2 + 189) || !v69)
+  int v70; // eax
                                             && (v70 = *(_DWORD *)(v2 + 196), v70 > 0)
                                             && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(v2 + 176) + 8))(
                                                  v2 + 176,
                                                  v70 + v69,
                                                  0) )
                                           {
-                                            v71 = *(_DWORD *)(v2 + 192);
-                                            v72 = *(_DWORD *)(v2 + 180);
+                                            int v71 = *(_DWORD *)(v2 + 192);
+                                            int v72 = *(_DWORD *)(v2 + 180);
                                             *(_DWORD *)(v2 + 192) = v71 + 1;
                                             *(_DWORD *)(v72 + 4 * v71) = a1;
                                           }
@@ -1379,7 +1244,7 @@ LABEL_187:
                                   {
                                     while ( 1 )
                                     {
-                                      v62 = *(_DWORD *)v9->__pad_0;
+                                      int v62 = *(_DWORD *)v9->__pad_0;
                                       a1 = 0;
                                       result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v62 + 12))(
                                                  v9,
@@ -1388,9 +1253,10 @@ LABEL_187:
                                                  0);
                                       if ( result < 0 )
                                         break;
-                                      v63 = *(_DWORD *)(v2 + 160);
+                                      int v63 = *(_DWORD *)(v2 + 160);
                                       if ( *(_DWORD *)(v2 + 168) < v63
                                         || (*(_BYTE *)(v2 + 165) || !v63)
+  int v64; // eax
                                         && (v64 = *(_DWORD *)(v2 + 172), v64 > 0)
                                         && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(v2 + 152)
                                                                                                + 8))(
@@ -1398,8 +1264,8 @@ LABEL_187:
                                              v64 + v63,
                                              0) )
                                       {
-                                        v65 = *(_DWORD *)(v2 + 168);
-                                        v66 = *(_DWORD *)(v2 + 156);
+                                        int v65 = *(_DWORD *)(v2 + 168);
+                                        int v66 = *(_DWORD *)(v2 + 156);
                                         *(_DWORD *)(v2 + 168) = v65 + 1;
                                         *(_DWORD *)(v66 + 4 * v65) = a1;
                                       }
@@ -1414,7 +1280,7 @@ LABEL_187:
                               {
                                 while ( 1 )
                                 {
-                                  v56 = *(_DWORD *)v9->__pad_0;
+                                  int v56 = *(_DWORD *)v9->__pad_0;
                                   a1 = 0;
                                   result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v56 + 12))(
                                              v9,
@@ -1423,17 +1289,18 @@ LABEL_187:
                                              0);
                                   if ( result < 0 )
                                     break;
-                                  v57 = *(_DWORD *)(v2 + 136);
+                                  int v57 = *(_DWORD *)(v2 + 136);
                                   if ( *(_DWORD *)(v2 + 144) < v57
                                     || (*(_BYTE *)(v2 + 141) || !v57)
+  int v58; // eax
                                     && (v58 = *(_DWORD *)(v2 + 148), v58 > 0)
                                     && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(v2 + 128) + 8))(
                                          v2 + 128,
                                          v58 + v57,
                                          0) )
                                   {
-                                    v59 = *(_DWORD *)(v2 + 144);
-                                    v60 = *(_DWORD *)(v2 + 132);
+                                    int v59 = *(_DWORD *)(v2 + 144);
+                                    int v60 = *(_DWORD *)(v2 + 132);
                                     *(_DWORD *)(v2 + 144) = v59 + 1;
                                     *(_DWORD *)(v60 + 4 * v59) = a1;
                                   }
@@ -1448,22 +1315,23 @@ LABEL_187:
                           {
                             while ( 1 )
                             {
-                              v50 = *(_DWORD *)v9->__pad_0;
+                              int v50 = *(_DWORD *)v9->__pad_0;
                               a1 = 0;
                               result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v50 + 12))(v9, &a1, 4, 0);
                               if ( result < 0 )
                                 break;
-                              v51 = *(_DWORD *)(v2 + 112);
+                              int v51 = *(_DWORD *)(v2 + 112);
                               if ( *(_DWORD *)(v2 + 120) < v51
                                 || (*(_BYTE *)(v2 + 117) || !v51)
+  int v52; // eax
                                 && (v52 = *(_DWORD *)(v2 + 124), v52 > 0)
                                 && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(v2 + 104) + 8))(
                                      v2 + 104,
                                      v52 + v51,
                                      0) )
                               {
-                                v53 = *(_DWORD *)(v2 + 120);
-                                v54 = *(_DWORD *)(v2 + 108);
+                                int v53 = *(_DWORD *)(v2 + 120);
+                                int v54 = *(_DWORD *)(v2 + 108);
                                 *(_DWORD *)(v2 + 120) = v53 + 1;
                                 *(_DWORD *)(v54 + 4 * v53) = a1;
                               }
@@ -1478,22 +1346,23 @@ LABEL_187:
                       {
                         while ( 1 )
                         {
-                          v44 = *(_DWORD *)v9->__pad_0;
+                          int v44 = *(_DWORD *)v9->__pad_0;
                           a1 = 0;
                           result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v44 + 12))(v9, &a1, 4, 0);
                           if ( result < 0 )
                             break;
-                          v45 = *(_DWORD *)(v2 + 88);
+                          int v45 = *(_DWORD *)(v2 + 88);
                           if ( *(_DWORD *)(v2 + 96) < v45
                             || (*(_BYTE *)(v2 + 93) || !v45)
+  int v46; // eax
                             && (v46 = *(_DWORD *)(v2 + 100), v46 > 0)
                             && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(v2 + 80) + 8))(
                                  v2 + 80,
                                  v46 + v45,
                                  0) )
                           {
-                            v47 = *(_DWORD *)(v2 + 96);
-                            v48 = *(_DWORD *)(v2 + 84);
+                            int v47 = *(_DWORD *)(v2 + 96);
+                            int v48 = *(_DWORD *)(v2 + 84);
                             *(_DWORD *)(v2 + 96) = v47 + 1;
                             *(_DWORD *)(v48 + 4 * v47) = a1;
                           }
@@ -1508,23 +1377,24 @@ LABEL_187:
                   {
                     while ( 1 )
                     {
-                      v36 = *(_DWORD *)v9->__pad_0;
+                      int v36 = *(_DWORD *)v9->__pad_0;
                       v134 = 0;
                       LOBYTE(v135) = 0;
                       result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v36 + 12))(v9, &v134, 8, 0);
                       if ( result < 0 )
                         break;
-                      v37 = *(_DWORD *)(v2 + 22052);
+                      int v37 = *(_DWORD *)(v2 + 22052);
                       if ( *(_DWORD *)(v2 + 22060) < v37
                         || (*(_BYTE *)(v2 + 22057) || !v37)
+  int v38; // eax
                         && (v38 = *(_DWORD *)(v2 + 22064), v38 > 0)
                         && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(v2 + 22044) + 8))(
                              v2 + 22044,
                              v37 + v38,
                              0) )
                       {
-                        v39 = *(_DWORD *)(v2 + 22060);
-                        v40 = *(_DWORD *)(v2 + 22048);
+                        int v39 = *(_DWORD *)(v2 + 22060);
+                        int v40 = *(_DWORD *)(v2 + 22048);
                         *(_DWORD *)(v2 + 22060) = v39 + 1;
                         *(_DWORD *)(v40 + 8 * v39) = v134;
                         *(_DWORD *)(v40 + 8 * v39 + 4) = v135;
@@ -1540,23 +1410,24 @@ LABEL_187:
               {
                 while ( 1 )
                 {
-                  v29 = *(_DWORD *)v9->__pad_0;
+                  int v29 = *(_DWORD *)v9->__pad_0;
                   v134 = 0;
                   v135 = 0;
                   result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v29 + 12))(v9, &v134, 8, 0);
                   if ( result < 0 )
                     break;
-                  v30 = *(_DWORD *)(v2 + 22028);
+                  int v30 = *(_DWORD *)(v2 + 22028);
                   if ( *(_DWORD *)(v2 + 22036) < v30
                     || (*(_BYTE *)(v2 + 22033) || !v30)
+  int v31; // eax
                     && (v31 = *(_DWORD *)(v2 + 22040), v31 > 0)
                     && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(v2 + 22020) + 8))(
                          v2 + 22020,
                          v30 + v31,
                          0) )
                   {
-                    v32 = *(_DWORD *)(v2 + 22036);
-                    v33 = *(_DWORD *)(v2 + 22024);
+                    int v32 = *(_DWORD *)(v2 + 22036);
+                    int v33 = *(_DWORD *)(v2 + 22024);
                     *(_DWORD *)(v2 + 22036) = v32 + 1;
                     *(_DWORD *)(v33 + 8 * v32) = v134;
                     *(_DWORD *)(v33 + 8 * v32 + 4) = v135;
@@ -1572,22 +1443,23 @@ LABEL_187:
           {
             while ( 1 )
             {
-              v23 = *(_DWORD *)v9->__pad_0;
+              int v23 = *(_DWORD *)v9->__pad_0;
               a1 = 0;
               result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v23 + 12))(v9, &a1, 4, 0);
               if ( result < 0 )
                 break;
-              v24 = *(_DWORD *)(v2 + 64);
+              int v24 = *(_DWORD *)(v2 + 64);
               if ( *(_DWORD *)(v2 + 72) < v24
                 || (*(_BYTE *)(v2 + 69) || !v24)
+  int v25; // eax
                 && (v25 = *(_DWORD *)(v2 + 76), v25 > 0)
                 && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(v2 + 56) + 8))(
                      v2 + 56,
                      v24 + v25,
                      0) )
               {
-                v26 = *(_DWORD *)(v2 + 72);
-                v27 = *(_DWORD *)(v2 + 60);
+                int v26 = *(_DWORD *)(v2 + 72);
+                int v27 = *(_DWORD *)(v2 + 60);
                 *(_DWORD *)(v2 + 72) = v26 + 1;
                 *(_DWORD *)(v27 + 4 * v26) = a1;
               }
@@ -1602,19 +1474,20 @@ LABEL_187:
       {
         while ( 1 )
         {
-          v17 = *(_DWORD *)v9->__pad_0;
+          int v17 = *(_DWORD *)v9->__pad_0;
           a1 = 0;
           result = (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(v17 + 12))(v9, &a1, 4, 0);
           if ( result < 0 )
             break;
-          v18 = *(_DWORD *)(v2 + 604);
+          int v18 = *(_DWORD *)(v2 + 604);
           if ( *(_DWORD *)(v2 + 612) < v18
             || (*(_BYTE *)(v2 + 609) || !v18)
+  int v19; // eax
             && (v19 = *(_DWORD *)(v2 + 616), v19 > 0)
             && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(v2 + 596) + 8))(v2 + 596, v18 + v19, 0) )
           {
-            v20 = *(_DWORD *)(v2 + 612);
-            v21 = *(_DWORD *)(v2 + 600);
+            int v20 = *(_DWORD *)(v2 + 612);
+            int v21 = *(_DWORD *)(v2 + 600);
             *(_DWORD *)(v2 + 612) = v20 + 1;
             *(_DWORD *)(v21 + 4 * v20) = a1;
           }
@@ -1636,25 +1509,19 @@ namespace gamemd {
 char HouseClass::PrerequisitesForTechnoTypeAreListed(int a1, VectorClass * aP1, TechnoTypeClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall HouseClass::PrerequisitesForTechnoTypeAreListed(int a1, VectorClass *aP1, TechnoTypeClass *aP2)
+void HouseClass::PrerequisitesForTechnoTypeAreListed(int a1, VectorClass *aP1, TechnoTypeClass *aP2)
 {
-  int v3; // eax
-  int v4; // ecx
-  int v5; // edx
   _DWORD *j; // eax
-  int *v7; // esi
-  int v8; // ebx
-  int v9; // eax
-  int v10; // ecx
-  _DWORD *v11; // edx
   int i; // [esp+10h] [ebp-4h]
 
   for ( i = 0; i < *(_DWORD *)(a1 + 1608); ++i ) /*0x505379*/
   {
-    v3 = *(_DWORD *)(*(_DWORD *)(a1 + 1596) + 4 * i); /*0x505395*/
+    int v3 = *(_DWORD *)(*(_DWORD *)(a1 + 1596) + 4 * i); /*0x505395*/
     if ( v3 < 0 ) /*0x50539a*/
     {
-      v7 = 0; /*0x5053cb*/
+  int v10; // ecx
+  int v9; // eax
+      int * v7 = 0; /*0x5053cb*/
       switch ( v3 ) /*0x5053d2*/
       {
         case -6: /*0x5053d2*/
@@ -1678,7 +1545,7 @@ char __stdcall HouseClass::PrerequisitesForTechnoTypeAreListed(int a1, VectorCla
         default:
           break;
       }
-      v8 = 0; /*0x505429*/
+      int v8 = 0; /*0x505429*/
       if ( v7[4] <= 0 ) /*0x505430*/
         return 0; /*0x50547c*/
       while ( 1 ) /*0x505437*/
@@ -1691,7 +1558,7 @@ LABEL_20:
         if ( ++v8 >= v7[4] ) /*0x505455*/
           return 0; /*0x505455*/
       }
-      v11 = *(_DWORD **)&aP1->?[3]; /*0x505440*/
+      _DWORD * v11 = *(_DWORD **)&aP1->?[3]; /*0x505440*/
       while ( *v11 != v9 ) /*0x505445*/
       {
         ++v10; /*0x505447*/
@@ -1702,10 +1569,10 @@ LABEL_20:
     }
     else
     {
-      v4 = 0; /*0x50539c*/
+      int v4 = 0; /*0x50539c*/
       if ( (int)aP2 <= 0 ) /*0x5053a0*/
         return 0; /*0x5053a0*/
-      v5 = *((_DWORD *)g_TriggerTypeCount + v3); /*0x5053ac*/
+      int v5 = *((_DWORD *)g_TriggerTypeCount + v3); /*0x5053ac*/
       for ( j = *(_DWORD **)&aP1->?[3]; *j != v5; ++j ) /*0x5053af*/
       {
         if ( ++v4 >= (int)aP2 ) /*0x5053c0*/
@@ -1781,35 +1648,23 @@ namespace gamemd {
 char HouseClass::UpdatePower()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall HouseClass::UpdatePower(int this)
+void HouseClass::UpdatePower(int this)
 {
-  int v2; // ecx
-  int v3; // eax
-  int v4; // ebp
-  int v5; // edi
-  int v6; // edx
-  int v7; // eax
-  int v8; // ecx
-  int v9; // eax
-  int v10; // eax
-  char v12; // [esp+Bh] [ebp-Dh]
-  int v13; // [esp+10h] [ebp-8h]
-  bool v14; // [esp+14h] [ebp-4h]
 
-  v2 = this->powerOutput; /*0x508c39*/
-  v3 = this->powerDrain; /*0x508c3f*/
-  v14 = v2 < v3 && v3 && (!v2 || (double)v2 / (double)this->powerDrain < 1.0); /*0x508c75*/
+  int v2 = this->powerOutput; /*0x508c39*/
+  int v3 = this->powerDrain; /*0x508c3f*/
+  bool v14 = v2 < v3 && v3 && (!v2 || (double)v2 / (double)this->powerDrain < 1.0); /*0x508c75*/
   this->q5778 = 0; /*0x508c79*/
   this->powerOutput = 0; /*0x508c7f*/
   this->powerDrain = 0; /*0x508c85*/
-  v4 = 0; /*0x508c8f*/
-  v12 = 0; /*0x508c93*/
-  v13 = this->bunkersCount; /*0x508c97*/
+  int v4 = 0; /*0x508c8f*/
+  char v12 = 0; /*0x508c93*/
+  int v13 = this->bunkersCount; /*0x508c97*/
   if ( v13 > 0 ) /*0x508c9b*/
   {
     do /*0x508ca5*/
     {
-      v5 = *(_DWORD *)(this->absorbersCount + 4 * v4); /*0x508ca5*/
+      int v5 = *(_DWORD *)(this->absorbersCount + 4 * v4); /*0x508ca5*/
       if ( v5 && !*(_BYTE *)(v5 + 129) && *(_BYTE *)(v5 + 116) ) /*0x508cb8*/
       {
         if ( g_GameMode_Current[0] ) /*0x508cc5*/
@@ -1835,8 +1690,8 @@ LABEL_21:
     while ( v4 < v13 ); /*0x508ca5*/
   }
   *(_BYTE *)(this + 22395) = v12; /*0x508d45*/
-  v6 = this->powerBlackoutTimer; /*0x508d50*/
-  v7 = this->q0AB; /*0x508d56*/
+  int v6 = this->powerBlackoutTimer; /*0x508d50*/
+  int v7 = this->q0AB; /*0x508d56*/
   if ( v6 != -1 ) /*0x508d5f*/
   {
     if ( (int)g_CurrentFrame - v6 >= v7 ) /*0x508d6b*/
@@ -1855,9 +1710,9 @@ LABEL_26:
 LABEL_28:
   nullsub_5(this); /*0x508d7f*/
   HouseClass::UpdateTeamProductionSpeed((void *)this); /*0x508d88*/
-  v8 = this->powerOutput; /*0x508d8d*/
-  v9 = this->powerDrain; /*0x508d93*/
-  v10 = v8 < v9 && v9 && (!v8 || (double)this->powerOutput / (double)this->powerDrain < 1.0); /*0x508dc9*/
+  int v8 = this->powerOutput; /*0x508d8d*/
+  int v9 = this->powerDrain; /*0x508d93*/
+  int v10 = v8 < v9 && v9 && (!v8 || (double)this->powerOutput / (double)this->powerDrain < 1.0); /*0x508dc9*/
   if ( v14 != v10 ) /*0x508dd7*/
     LOBYTE(v10) = SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(this); /*0x508ddb*/
   *(_BYTE *)(this + 22393) = 1; /*0x508de0*/
@@ -1874,22 +1729,14 @@ void * HouseClass::CanTogglePower()
 #375 *__thiscall sub_508DF0(int this)
 {
   #375 *result; // eax
-  int v2; // eax
-  int v3; // esi
-  int v4; // edx
-  int v5; // eax
-  int v6; // edi
-  int v7; // edx
-  _DWORD *v8; // esi
-  int v9; // eax
-  int v10; // [esp+0h] [ebp-Ch]
 
   *(_BYTE *)(this + 22393) = 0; /*0x508df0*/
   result = HouseClass_Player; /*0x508df7*/
   if ( (#375 *)this == HouseClass_Player ) /*0x508e01*/
   {
-    v2 = this->q2B8; /*0x508e07*/
-    v3 = this->radarBlackoutTimer; /*0x508e10*/
+    int v2 = this->q2B8; /*0x508e07*/
+    int v3 = this->radarBlackoutTimer; /*0x508e10*/
+  int v10; // [esp+0h] [ebp-Ch]
     LOBYTE(v10) = 0; /*0x508e1a*/
     if ( v3 != -1 ) /*0x508e1f*/
     {
@@ -1908,15 +1755,16 @@ LABEL_30:
 LABEL_6:
     if ( *((_BYTE *)g_ScenarioClass_Instance + 13476) ) /*0x508e3c*/
       goto LABEL_29; /*0x508e3c*/
-    v4 = this->powerOutput; /*0x508e4a*/
-    v5 = this->powerDrain; /*0x508e50*/
+    int v4 = this->powerOutput; /*0x508e4a*/
+    int v5 = this->powerDrain; /*0x508e50*/
     if ( v4 >= v5 || !v5 || v4 && (double)this->powerOutput / (double)this->powerDrain >= 1.0 ) /*0x508e81*/
     {
-      v6 = this->bunkersCount; /*0x508e87*/
-      v7 = 0; /*0x508e8a*/
+      int v6 = this->bunkersCount; /*0x508e87*/
+      int v7 = 0; /*0x508e8a*/
       if ( v6 > 0 ) /*0x508e8e*/
       {
-        v8 = *(_DWORD **)(this + 108); /*0x508e94*/
+  int v9; // eax
+        _DWORD * v8 = this->absorbersCount; /*0x508e94*/
         while ( 1 ) /*0x508e9d*/
         {
           v9 = *v8; /*0x508e9d*/
@@ -1955,21 +1803,15 @@ namespace gamemd {
 char HouseClass::UpdateAITryFireSW()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall HouseClass::UpdateAITryFireSW(int this)
+void HouseClass::UpdateAITryFireSW(int this)
 {
-  int v2; // eax
   int i; // edi
-  int v4; // eax
-  bool v5; // zf
   CellStruct *v6; // eax
   CellStruct **v7; // eax
   CellStruct *v8; // eax
   AbstractClass *v9; // eax
   CellStruct *v11; // [esp+8h] [ebp-10h] BYREF
-  int v12; // [esp+Ch] [ebp-Ch] BYREF
-  int v13; // [esp+10h] [ebp-8h] BYREF
-  int v14; // [esp+14h] [ebp-4h] BYREF
-
+  int v2; // eax
   LOBYTE(v2) = this->currentPlayer; /*0x5098fe*/
   if ( !g_GameMode_Current ) /*0x509904*/
     LOBYTE(v2) = (_BYTE)v2 || this->playerControl; /*0x509918*/
@@ -1978,13 +1820,14 @@ char __thiscall HouseClass::UpdateAITryFireSW(int this)
     v2 = this->lastBuiltInfantryType; /*0x509922*/
     for ( i = 0; i < v2; ++i )
     {
-      v4 = *(_DWORD *)(this->supersCount + 4 * i); /*0x509939*/
+      int v4 = *(_DWORD *)(this->supersCount + 4 * i); /*0x509939*/
       if ( v4 && *(_BYTE *)(v4 + 111) )
       {
         switch ( *(_DWORD *)(*(_DWORD *)(v4 + 40) + 180) )
         {
+  bool v5; // zf
           case 0:
-            v12 = *(_DWORD *)(this->supersCount + 4 * i); /*0x509968*/
+            int v12 = *(_DWORD *)(this->supersCount + 4 * i); /*0x509968*/
             if ( this->enemyHouseIndex != -1 )
             {
               v5 = (unsigned short)this->preferredTargetCell == *(_WORD *)&g_NetworkPlayerBuffer[6492]; /*0x509980*/
@@ -1992,16 +1835,18 @@ char __thiscall HouseClass::UpdateAITryFireSW(int this)
               if ( v5 && this->q54F2 == *(_WORD *)&g_NetworkPlayerBuffer[6494] )
               {
                 v7 = (CellStruct **)(this->preferredTargetType == 1
+  int v13; // [esp+10h] [ebp-8h] BYREF
                                    ? HouseClass::FindSWBuilding((_DWORD *)this, (HouseClass *)&v13)
                                    : HouseClass::FindSWTarget(
                                        (void *)this,
+  int v14; // [esp+14h] [ebp-4h] BYREF
                                        (HouseClass *)&v14,
-                                       *(HouseClass **)(this + 21740)));
+                                       this->preferredTargetType));
                 v6 = *v7; /*0x5099cb*/
               }
               else
               {
-                v6 = *(CellStruct **)(this + 21744); /*0x50999d*/
+                v6 = this->preferredTargetCell; /*0x50999d*/
               }
               v11 = v6; /*0x5099d4*/
               if ( v6 != *(CellStruct **)&g_NetworkPlayerBuffer[6492] ) /*0x5099d8*/
@@ -2029,14 +1874,14 @@ char __thiscall HouseClass::UpdateAITryFireSW(int this)
             v11 = *(CellStruct **)&g_NetworkPlayerBuffer[6492]; /*0x509a56*/
             if ( !v5 || *(_WORD *)(this + 21754) != *(_WORD *)&g_NetworkPlayerBuffer[6494] ) /*0x509a63*/
             {
-              v8 = *(CellStruct **)(this + 21752); /*0x509a65*/
+              v8 = this->preferredDefensiveCell2; /*0x509a65*/
               goto LABEL_32; /*0x509a6b*/
             }
             if ( ((unsigned short)this->preferredDefensiveCell != *(_WORD *)&g_NetworkPlayerBuffer[6492] /*0x509a99*/
                || *(_WORD *)(this + 21750) != *(_WORD *)&g_NetworkPlayerBuffer[6494])
               && *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[30972] + 3808) + this->preferredDefensiveCellStartTime > *(int *)&g_NetworkPlayerBuffer[5960] )
             {
-              v8 = *(CellStruct **)(this + 21748); /*0x509a9b*/
+              v8 = this->preferredDefensiveCell; /*0x509a9b*/
 LABEL_32:
               v11 = v8; /*0x509aa1*/
               if ( v8 != *(CellStruct **)&g_NetworkPlayerBuffer[6492] ) /*0x509aa8*/
@@ -2067,14 +1912,13 @@ namespace gamemd {
 int HouseClass::CreatePowerOutage(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall HouseClass::CreatePowerOutage(int this, int a2)
+void HouseClass::CreatePowerOutage(int this, int a2)
 {
   wchar_t *v2; // eax
-  int v4; // [esp+8h] [ebp-8h]
-
   v2 = g_CurrentFrame; /*0x50bc90*/
   this->q5778 = 1; /*0x50bc9c*/
   this->powerBlackoutTimer = v2; /*0x50bcaa*/
+  int v4; // [esp+8h] [ebp-8h]
   this->q2A8 = v4; /*0x50bcb4*/
   this->q0AB = a2; /*0x50bcb7*/
   return v4; /*0x50bcba*/
@@ -2087,14 +1931,13 @@ namespace gamemd {
 int HouseClass::CreateRadarOutage(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall HouseClass::CreateRadarOutage(int this, int a2)
+void HouseClass::CreateRadarOutage(int this, int a2)
 {
   wchar_t *v2; // eax
-  int v4; // [esp+8h] [ebp-8h]
-
   v2 = g_CurrentFrame; /*0x50bcd0*/
   *(_BYTE *)(this + 22393) = 1; /*0x50bcdc*/
   this->radarBlackoutTimer = v2; /*0x50bcea*/
+  int v4; // [esp+8h] [ebp-8h]
   *(_DWORD *)(this + 692) = v4; /*0x50bcf4*/
   this->q2B8 = a2; /*0x50bcf7*/
   return v4; /*0x50bcfa*/
@@ -2115,34 +1958,25 @@ int __usercall HouseClass::RespawnStartingBuildings@<eax>(
 {
   int result; // eax
   __int16 *v6; // edi
-  int v7; // esi
   __int16 *v8; // ebx
-  _DWORD *v9; // eax
-  int *v10; // eax
-  int v11; // ecx
-  int v12; // edx
-  int v13; // edi
-  int v14; // esi
-  void *v15; // eax
-  _DWORD *v16; // eax
   int i; // [esp+10h] [ebp-20h]
-  int v21[3]; // [esp+14h] [ebp-1Ch] BYREF
-  _DWORD v22[4]; // [esp+20h] [ebp-10h] BYREF
   _UNKNOWN *retaddr; // [esp+30h] [ebp+0h] BYREF
 
   result = *(_DWORD *)(a1 + 380) - 1; /*0x50d32c*/
   for ( i = result; i >= 0; --i )
   {
     v6 = *(__int16 **)(*(_DWORD *)(a1 + 368) + 4 * result); /*0x50d340*/
-    v7 = *(_DWORD *)v6; /*0x50d343*/
+    int v7 = *(_DWORD *)v6; /*0x50d343*/
     if ( (*(int (__thiscall **)(_DWORD))(**(_DWORD **)v6 + 44))(*(_DWORD *)v6) == 7 )
     {
       v8 = v6 + 2; /*0x50d355*/
-      v9 = CellCoord::To_CellObj(&DataGlobal_87F7E8, v6 + 2); /*0x50d35e*/
-      v10 = Cell::IsBridge(v9); /*0x50d365*/
+      _DWORD * v9 = CellCoord::To_CellObj(&DataGlobal_87F7E8, v6 + 2); /*0x50d35e*/
+      int * v10 = Cell::IsBridge(v9); /*0x50d365*/
+  int v11; // ecx
       if ( v10 && (v11 = v10[328], v11 == v7) && v10[135] == a1 )
       {
-        v12 = *v10; /*0x50d386*/
+        int v12 = *v10; /*0x50d386*/
+  int v21[3]; // [esp+14h] [ebp-1Ch] BYREF
         v21[0] = -*(_DWORD *)(v11 + 160); /*0x50d38a*/
         (*(void (__thiscall **)(int *, int *, _DWORD, int, _DWORD, _DWORD, _DWORD, _DWORD))(v12 + 364))( /*0x50d3ac*/
           v10,
@@ -2156,15 +1990,16 @@ int __usercall HouseClass::RespawnStartingBuildings@<eax>(
       }
       else
       {
-        v13 = (*(int (__thiscall **)(int, int, _DWORD *, int, _UNKNOWN **))(*(_DWORD *)v7 + 140))(v7, a1, a3, a4, a2); /*0x50d3bf*/
+        int v13 = (*(int (__thiscall **)(int, int, _DWORD *, int, _UNKNOWN **))(*(_DWORD *)v7 + 140))(v7, a1, a3, a4, a2); /*0x50d3bf*/
         if ( v13 )
-          v14 = (*(int (__thiscall **)(int))(*(_DWORD *)v13 + 44))(v13) == 6 ? v13 : 0;
+          int v14 = (*(int (__thiscall **)(int))(*(_DWORD *)v13 + 44))(v13) == 6 ? v13 : 0;
         else
           v14 = 0; /*0x50d3c5*/
-        v15 = CellCoord::To_CellObj(&DataGlobal_87F7E8, v8); /*0x50d3e3*/
+        void * v15 = CellCoord::To_CellObj(&DataGlobal_87F7E8, v8); /*0x50d3e3*/
         a2 = &retaddr; /*0x50d3ee*/
-        v16 = (_DWORD *)(*(int (__thiscall **)(void *))(*(_DWORD *)v15 + 72))(v15); /*0x50d3f1*/
+        _DWORD * v16 = (_DWORD *)(*(int (__thiscall **)(void *))(*(_DWORD *)v15 + 72))(v15); /*0x50d3f1*/
         a4 = 0; /*0x50d3f6*/
+  _DWORD v22[4]; // [esp+20h] [ebp-10h] BYREF
         v22[0] = *v16; /*0x50d3f8*/
         v22[1] = v16[1]; /*0x50d3ff*/
         a3 = v22; /*0x50d40a*/
@@ -2185,50 +2020,40 @@ namespace gamemd {
 int HouseClass::RespawnStartingForces(TechnoClass * aP0, _UNKNOWN ** a1, unsigned int * a2, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int HouseClass::RespawnStartingForces(TechnoClass *aP0, _UNKNOWN **a1, _DWORD *a2, int a4)
+void HouseClass::RespawnStartingForces(TechnoClass *aP0, _UNKNOWN **a1, _DWORD *a2, int a4)
 {
-  int v4; // ecx
   _UNKNOWN **v5; // ebp
-  _DWORD *v6; // edi
-  int v7; // esi
   HouseClass *v8; // ebx
   int result; // eax
-  int v10; // edi
   __int16 *v11; // ebp
-  int v12; // esi
-  int v13; // eax
-  void *v14; // eax
-  _DWORD *v15; // eax
-  _DWORD *v16; // [esp+0h] [ebp-2Ch]
-  int v17; // [esp+4h] [ebp-28h]
   _UNKNOWN **v18; // [esp+8h] [ebp-24h]
-  int v19; // [esp+10h] [ebp-1Ch]
-  _DWORD v20[4]; // [esp+1Ch] [ebp-10h] BYREF
   _UNKNOWN *retaddr; // [esp+2Ch] [ebp+0h] BYREF
 
-  v8 = (HouseClass *)v4; /*0x50d444*/
-  result = *(_DWORD *)(v4 + 380) - 1; /*0x50d44c*/
-  v19 = result; /*0x50d44d*/
+  HouseClass *v4 = (HouseClass *)v4; /*0x50d444*/
+  result = v4->q17C - 1; /*0x50d44c*/
+  int v19 = result; /*0x50d44d*/
   if ( result >= 0 )
   {
     v18 = v5; /*0x50d457*/
-    v17 = v7; /*0x50d458*/
-    v16 = v6; /*0x50d459*/
+    int v7 = v7; /*0x50d458*/
+    _DWORD * v6 = v6; /*0x50d459*/
     while ( 1 )
     {
-      v10 = 0; /*0x50d466*/
+      int v10 = 0; /*0x50d466*/
       v11 = *(__int16 **)(*(_DWORD *)&v8->__pad_13C[52] + 4 * result); /*0x50d468*/
-      v12 = *(_DWORD *)v11; /*0x50d46b*/
+      int v12 = *(_DWORD *)v11; /*0x50d46b*/
       switch ( (*(int (__thiscall **)(_DWORD, _DWORD *, int, _UNKNOWN **))(**(_DWORD **)v11 + 44))(
                  *(_DWORD *)v11,
+  _DWORD *v16; // [esp+0h] [ebp-2Ch]
                  v16,
+  int v17; // [esp+4h] [ebp-28h]
                  v17,
                  v18) )
       {
         case 3:
         case 7:
         case 40:
-          v13 = (*(int (__thiscall **)(int, HouseClass *))(*(_DWORD *)v12 + 140))(v12, v8); /*0x50d491*/
+          int v13 = (*(int (__thiscall **)(int, HouseClass *))(*(_DWORD *)v12 + 140))(v12, v8); /*0x50d491*/
           if ( v13 ) /*0x50d499*/
             goto LABEL_9; /*0x50d499*/
           v10 = 0; /*0x50d49b*/
@@ -2244,10 +2069,11 @@ LABEL_9:
         default:
           break;
       }
-      v14 = CellCoord::To_CellObj(&stru_87C374[13428], v11 + 2); /*0x50d4c0*/
+      void * v14 = CellCoord::To_CellObj(&stru_87C374[13428], v11 + 2); /*0x50d4c0*/
       v18 = &retaddr; /*0x50d4d4*/
-      v15 = (_DWORD *)(*(int (__thiscall **)(void *))(*(_DWORD *)v14 + 72))(v14); /*0x50d4d7*/
+      _DWORD * v15 = (_DWORD *)(*(int (__thiscall **)(void *))(*(_DWORD *)v14 + 72))(v14); /*0x50d4d7*/
       v17 = 0; /*0x50d4dc*/
+  _DWORD v20[4]; // [esp+1Ch] [ebp-10h] BYREF
       v20[0] = *v15; /*0x50d4de*/
       v20[1] = v15[1]; /*0x50d4e5*/
       v16 = v20; /*0x50d4f0*/
@@ -2270,7 +2096,7 @@ namespace gamemd {
 int HouseClass::GetInfSelfHealStep()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall HouseClass::GetInfSelfHealStep(_DWORD *this)
+void HouseClass::GetInfSelfHealStep()
 {
   return this->q059 * g_RulesClass_Instance->SelfHealInfantryAmount; /*0x50d9ef*/
 }
@@ -2282,7 +2108,7 @@ namespace gamemd {
 int HouseClass::GetUnitSelfHealStep()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall HouseClass::GetUnitSelfHealStep(_DWORD *this)
+void HouseClass::GetUnitSelfHealStep()
 {
   return this->q05A * g_RulesClass_Instance->SelfHealUnitAmount; /*0x50d9ff*/
 }
@@ -2294,26 +2120,22 @@ namespace gamemd {
 void HouseClass::LostPoweredCenter(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall HouseClass::LostPoweredCenter(int this, int a2)
+void HouseClass::LostPoweredCenter(int this, int a2)
 {
-  int v3; // eax
-  char v4; // bl
-  int v5; // edi
-  int v6; // esi
 
-  v3 = this->poweredUnitCenters - 1; /*0x50e0eb*/
+  int v3 = this->poweredUnitCenters - 1; /*0x50e0eb*/
   this->poweredUnitCenters = v3; /*0x50e0ec*/
   if ( !v3 ) /*0x50e0f2*/
   {
     if ( a2 ) /*0x50e0fe*/
     {
-      v4 = 0; /*0x50e109*/
-      v5 = g_SidebarState - 1; /*0x50e10b*/
+      char v4 = 0; /*0x50e109*/
+      int v5 = g_SidebarState - 1; /*0x50e10b*/
       if ( g_SidebarState - 1 >= 0 ) /*0x50e110*/
       {
         do /*0x50e14c*/
         {
-          v6 = *((_DWORD *)g_TechnoClass_Count + v5); /*0x50e11d*/
+          int v6 = *((_DWORD *)g_TechnoClass_Count + v5); /*0x50e11d*/
           if ( *(_DWORD *)(v6 + 540) == this /*0x50e138*/
             && (*(int (__thiscall **)(_DWORD))(*(_DWORD *)v6 + 132))(*((_DWORD *)g_TechnoClass_Count + v5)) == a2
             && !*(_BYTE *)(v6 + 129) )
@@ -2351,12 +2173,11 @@ namespace gamemd {
 int HouseClass::GetCameoTypeIndex(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall HouseClass::GetCameoTypeIndex(void *this, int a2)
+void HouseClass::GetCameoTypeIndex(int a2)
 {
-  _DWORD *v2; // eax
-  int v3; // ecx
 
-  v2 = (_DWORD *)(*(int (__thiscall **)(void *))(this->secretLabsCount)(this); /*0x5471b2*/
+  _DWORD * v2 = (_DWORD *)(*(int (__thiscall **)(void *))(this->secretLabsCount)(this); /*0x5471b2*/
+  int v3; // ecx
   if ( v2 && (v3 = v2[a2 % (*v2 * v2[1]) + 4]) != 0 ) /*0x5471d3*/
     return *(char *)(v3 + 42); /*0x5471d5*/
   else
@@ -2370,73 +2191,49 @@ namespace gamemd {
 char HouseClass::AIDecision(ObjectClass * aP0, int * a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall HouseClass::AIDecision(ObjectClass *aP0, int *a1)
+void HouseClass::AIDecision(ObjectClass *aP0, int *a1)
 {
-  int v2; // ebp
-  int v3; // edx
   _DWORD *attachedTag; // eax
-  int v5; // ebx
   CCINIClass *v6; // edi
-  int v7; // esi
-  int v8; // eax
-  int v9; // edx
-  _DWORD *v10; // ecx
-  int v11; // eax
-  int v12; // edi
   CCINIClass *v13; // eax
-  int v14; // esi
-  int v15; // eax
-  int v16; // esi
-  int v18; // ebp
-  int v19; // ecx
-  int v20; // eax
-  _DWORD *v21; // edx
-  int v22; // esi
   IUnknown *v23; // eax
   ObjectClass *v24; // edi
   ObjectClass *CurrentOption; // eax
-  int *v26; // esi
-  int v27; // eax
-  int v28; // [esp+10h] [ebp-38h]
-  int v29; // [esp+14h] [ebp-34h] BYREF
   void **v30; // [esp+18h] [ebp-30h] BYREF
   void *Block; // [esp+1Ch] [ebp-2Ch]
   CCINIClass *v32; // [esp+20h] [ebp-28h]
   CCINIClass *v33; // [esp+24h] [ebp-24h]
-  int v34; // [esp+28h] [ebp-20h]
-  int v35; // [esp+2Ch] [ebp-1Ch]
   void **v36; // [esp+30h] [ebp-18h] BYREF
   void *v37; // [esp+34h] [ebp-14h]
   AbstractClass *v38; // [esp+38h] [ebp-10h]
   char v39; // [esp+3Dh] [ebp-Bh]
   int v40; // [esp+40h] [ebp-8h]
   int v41; // [esp+44h] [ebp-4h]
-
-  v2 = 0; /*0x5d70fb*/
+  int v2 = 0; /*0x5d70fb*/
   if ( *a1 <= 0 ) /*0x5d7101*/
     return 1; /*0x5d7492*/
-  v28 = *a1; /*0x5d710d*/
+  int v28 = *a1; /*0x5d710d*/
   UnitTypeVector::Construct2(&v36, 0, 0); /*0x5d7111*/
   v36 = &vt_DynamicVectorClass_UnitTypeClass; /*0x5d711c*/
   v41 = 10; /*0x5d7124*/
   v40 = 0; /*0x5d712c*/
   InfantryTypeVector::ConstructFromData(&v30, 0, 0); /*0x5d7130*/
-  v3 = 10; /*0x5d7139*/
+  int v3 = 10; /*0x5d7139*/
   v30 = &vt_DynamicVectorClass_InfantryTypeClass; /*0x5d713e*/
-  v35 = 10; /*0x5d7146*/
+  int v35 = 10; /*0x5d7146*/
   attachedTag = aP0->attachedTag; /*0x5d714a*/
-  v34 = 0; /*0x5d714d*/
-  v5 = 1 << attachedTag[45]; /*0x5d7161*/
+  int v34 = 0; /*0x5d714d*/
+  int v5 = 1 << attachedTag[45]; /*0x5d7161*/
   if ( (int)g_CrateCount <= 0 ) /*0x5d7165*/
     goto LABEL_20; /*0x5d7165*/
   v6 = (CCINIClass *)v38; /*0x5d716b*/
   do /*0x5d7210*/
   {
-    v7 = *(_DWORD *)&g_UnitTypeCount2->__pad_0[4 * v2]; /*0x5d7175*/
+    int v7 = *(_DWORD *)&g_UnitTypeCount2->__pad_0[4 * v2]; /*0x5d7175*/
     if ( *(_BYTE *)(v7 + 1749) && (v5 & *(_DWORD *)(v7 + 1740)) != 0 && *(_DWORD *)(v7 + 1588) <= aP0[2].visibilityFlags ) /*0x5d719e*/
     {
-      v8 = 0; /*0x5d71a6*/
-      v9 = *(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 2864); /*0x5d71a8*/
+      int v8 = 0; /*0x5d71a6*/
+      int v9 = *(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 2864); /*0x5d71a8*/
       if ( v9 <= 0 ) /*0x5d71b0*/
       {
 LABEL_11:
@@ -2447,7 +2244,7 @@ LABEL_11:
           if ( ((unsigned __int8 (__thiscall *)(void ***, char *, _DWORD))v36[2])(&v36, &v6->__pad_0[v41], 0) ) /*0x5d71eb*/
           {
 LABEL_16:
-            v11 = v40++; /*0x5d71f2*/
+            int v11 = v40++; /*0x5d71f2*/
             *((_DWORD *)v37 + v11) = v7; /*0x5d7201*/
           }
           v6 = (CCINIClass *)v38; /*0x5d7204*/
@@ -2455,7 +2252,7 @@ LABEL_16:
       }
       else
       {
-        v10 = *(_DWORD **)(*(_DWORD *)&stru_87C374[44652] + 2852); /*0x5d71b2*/
+        _DWORD * v10 = *(_DWORD **)(*(_DWORD *)&stru_87C374[44652] + 2852); /*0x5d71b2*/
         while ( *v10 != v7 ) /*0x5d71ba*/
         {
           ++v8; /*0x5d71bc*/
@@ -2470,9 +2267,10 @@ LABEL_16:
   while ( v2 < (int)g_CrateCount ); /*0x5d7210*/
   v3 = v35; /*0x5d7216*/
 LABEL_20:
-  v12 = 0; /*0x5d721a*/
+  int v12 = 0; /*0x5d721a*/
   if ( *(int *)&HouseClass_Player[42508] > 0 ) /*0x5d7223*/
   {
+  int v14; // esi
     v13 = v32; /*0x5d7229*/
     while ( 1 ) /*0x5d7239*/
     {
@@ -2494,22 +2292,25 @@ LABEL_33:
     if ( ((unsigned __int8 (__thiscall *)(void ***, char *, _DWORD))v30[2])(&v30, &v13->__pad_0[v3], 0) ) /*0x5d7283*/
     {
 LABEL_31:
-      v15 = v34++; /*0x5d728a*/
+      int v15 = v34++; /*0x5d728a*/
       *((_DWORD *)Block + v15) = v14; /*0x5d7299*/
     }
     v13 = v32; /*0x5d729c*/
     goto LABEL_33; /*0x5d729c*/
   }
 LABEL_34:
-  v16 = v40; /*0x5d72ab*/
+  int v16 = v40; /*0x5d72ab*/
   if ( v40 || v34 ) /*0x5d72b9*/
   {
-    v18 = 20; /*0x5d731a*/
-    v19 = *a1; /*0x5d731f*/
+    int v18 = 20; /*0x5d731a*/
+    int v19 = *a1; /*0x5d731f*/
     if ( *a1 > 0 ) /*0x5d7323*/
     {
       while ( v18 > 0 ) /*0x5d7331*/
       {
+  int *v26; // esi
+  _DWORD *v21; // edx
+  int v20; // eax
         if ( v19 > v28 / 3 && v16 ) /*0x5d734d*/
         {
           v20 = Random::Range( /*0x5d735f*/
@@ -2526,7 +2327,7 @@ LABEL_34:
                   (IUnknown *)(v34 - 1));
           v21 = Block; /*0x5d7383*/
         }
-        v22 = v21[v20]; /*0x5d7387*/
+        int v22 = v21[v20]; /*0x5d7387*/
         v23 = (IUnknown *)(*(int (__thiscall **)(int, ObjectClass *))(*(_DWORD *)v22 + 140))(v22, aP0); /*0x5d7393*/
         v24 = (ObjectClass *)__RTDynamicCast( /*0x5d73b4*/
                                v23,
@@ -2534,10 +2335,11 @@ LABEL_34:
                                &ObjectClass `RTTI Type Descriptor',
                                &TechnoClass `RTTI Type Descriptor',
                                0);
+  int v29; // [esp+14h] [ebp-34h] BYREF
         CurrentOption = HouseClass::GetCurrentOption(aP0, (IUnknown *)&v29); /*0x5d73bb*/
         if ( FindInfantryDeployPosition((int *)v24->__pad_0, (RadarClass *)CurrentOption, 4) ) /*0x5d73c4*/
         {
-          v27 = (*(int (__thiscall **)(int))(*(_DWORD *)v22 + 172))(v22); /*0x5d73e5*/
+          int v27 = (*(int (__thiscall **)(int))(*(_DWORD *)v22 + 172))(v22); /*0x5d73e5*/
           v26 = a1; /*0x5d73eb*/
           *a1 -= v27; /*0x5d73f3*/
           if ( (**(_DWORD **)&HouseClass_Player[29924] & 0x200) != 0 ) /*0x5d7400*/
@@ -2597,35 +2399,27 @@ namespace gamemd {
 char HouseClass::InitAlliances()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char HouseClass_InitAlliances()
+void HouseClass_InitAlliances()
 {
-  int v0; // edx
-  _DWORD *v1; // eax
-  int v2; // edi
-  int v3; // ebp
-  int v4; // ebx
-  int v5; // ecx
-  int v6; // esi
-  int v8; // [esp+0h] [ebp-4h]
 
-  v0 = HouseClass_Count; /*0x5d74a1*/
+  int v0 = HouseClass_Count; /*0x5d74a1*/
   if ( HouseClass_Count <= 0 ) /*0x5d74a9*/
     return 1; /*0x5d754a*/
-  v1 = HouseClass_Array; /*0x5d74af*/
-  v2 = 1; /*0x5d74b8*/
-  v3 = 0; /*0x5d74bd*/
-  v8 = 1; /*0x5d74bf*/
+  _DWORD * v1 = HouseClass_Array; /*0x5d74af*/
+  int v2 = 1; /*0x5d74b8*/
+  int v3 = 0; /*0x5d74bd*/
+  int v8 = 1; /*0x5d74bf*/
   do /*0x5d7540*/
   {
-    v4 = v1[v3]; /*0x5d74c3*/
+    int v4 = v1[v3]; /*0x5d74c3*/
     if ( !*(_BYTE *)(*(_DWORD *)(v4 + 52) + 422) ) /*0x5d74c9*/
     {
-      v5 = *(_DWORD *)(v4 + 90204); /*0x5d74d4*/
+      int v5 = *(_DWORD *)(v4 + 90204); /*0x5d74d4*/
       if ( v5 != -2 && v5 != -1 && v2 < v0 ) /*0x5d74e6*/
       {
         do /*0x5d752d*/
         {
-          v6 = v1[v2]; /*0x5d74e8*/
+          int v6 = v1[v2]; /*0x5d74e8*/
           if ( !*(_BYTE *)(*(_DWORD *)(v6 + 52) + 422) && *(_DWORD *)(v1[v3] + 90204) == *(_DWORD *)(v6 + 90204) ) /*0x5d7509*/
           {
             HouseClass::HandleAlliance(v4, v6, 0); /*0x5d7510*/
@@ -2656,19 +2450,8 @@ void HouseClass::FindStartPositions()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void sub_5EE9D0()
 {
-  int v0; // eax
-  _DWORD *v1; // ecx
-  int v2; // eax
   int i; // edi
-  int v4; // esi
-  char v5; // bl
-  int v6; // edx
-  int v7; // eax
-  _DWORD *v8; // ecx
   int *started; // eax
-  int v10; // edi
-  int v11; // esi
-  int *v12; // eax
   int v13; // [esp+0h] [ebp-34h] BYREF
   int v14; // [esp+4h] [ebp-30h] BYREF
   int v15; // [esp+8h] [ebp-2Ch] BYREF
@@ -2676,23 +2459,22 @@ void sub_5EE9D0()
   void **v17; // [esp+1Ch] [ebp-18h] BYREF
   void *Block; // [esp+20h] [ebp-14h]
   char v19; // [esp+29h] [ebp-Bh]
-
   Multiplayer::FindStartPositions(&v17); /*0x5ee9d9*/
-  v0 = 0; /*0x5ee9e4*/
-  v1 = (char *)g_ScenarioClass_Instance + 4480; /*0x5ee9e6*/
+  int v0 = 0; /*0x5ee9e4*/
+  _DWORD * v1 = (char *)g_ScenarioClass_Instance + 4480; /*0x5ee9e6*/
   do /*0x5eea04*/
     v16[v0++] = *v1++ != -1; /*0x5ee9f1*/
   while ( v0 < 16 ); /*0x5eea04*/
-  v2 = HouseClass_Count; /*0x5eea06*/
+  int v2 = HouseClass_Count; /*0x5eea06*/
   for ( i = 0; i < HouseClass_Count; ++i ) /*0x5eea11*/
   {
-    v4 = *(_DWORD *)&HouseClass_Array->__pad_0[4 * i]; /*0x5eea1f*/
+    int v4 = *(_DWORD *)&HouseClass_Array->__pad_0[4 * i]; /*0x5eea1f*/
     if ( !*(_BYTE *)(*(_DWORD *)(v4 + 52) + 422) && *(_BYTE *)(v4 + 492) ) /*0x5eea33*/
     {
-      v5 = 0; /*0x5eea47*/
-      v6 = -1; /*0x5eea49*/
-      v7 = 0; /*0x5eea4c*/
-      v8 = (char *)g_ScenarioClass_Instance + 4480; /*0x5eea4e*/
+      char v5 = 0; /*0x5eea47*/
+      int v6 = -1; /*0x5eea49*/
+      int v7 = 0; /*0x5eea4c*/
+      _DWORD * v8 = (char *)g_ScenarioClass_Instance + 4480; /*0x5eea4e*/
       do /*0x5eea63*/
       {
         if ( *v8 == i ) /*0x5eea56*/
@@ -2720,16 +2502,16 @@ void sub_5EE9D0()
     }
     v2 = HouseClass_Count; /*0x5eeadb*/
   }
-  v10 = 0; /*0x5eeaeb*/
+  int v10 = 0; /*0x5eeaeb*/
   if ( v2 > 0 ) /*0x5eeaef*/
   {
     do /*0x5eeb7e*/
     {
-      v11 = *(_DWORD *)&HouseClass_Array->__pad_0[4 * v10]; /*0x5eeafb*/
+      int v11 = *(_DWORD *)&HouseClass_Array->__pad_0[4 * v10]; /*0x5eeafb*/
       if ( !*(_BYTE *)(*(_DWORD *)(v11 + 52) + 422) && !*(_BYTE *)(v11 + 492) ) /*0x5eeb0b*/
       {
         Debug::Log(); /*0x5eeb1f*/
-        v12 = AssignRandomMapStartPositions(&v15, v10, (int)&v17, (int)v16, 0); /*0x5eeb39*/
+        int * v12 = AssignRandomMapStartPositions(&v15, v10, (int)&v17, (int)v16, 0); /*0x5eeb39*/
         HouseClass::SetMapSeed((_DWORD *)v11, *v12); /*0x5eeb43*/
         HouseClass::GetCurrentOption((_DWORD *)v11, &v14); /*0x5eeb4f*/
         HouseClass::GetCurrentOption((_DWORD *)v11, &v13); /*0x5eeb60*/
@@ -2754,7 +2536,7 @@ namespace gamemd {
 char HouseClass::SetPrimaryFactory(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_740DF0(_DWORD *this, int a2)
+void sub_740DF0(_DWORD *this, int a2)
 {
   if ( a2 == -1 || this->q6CC != -1 ) /*0x740e00*/
     return 0; /*0x740e17*/

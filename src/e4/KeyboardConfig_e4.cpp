@@ -8,29 +8,23 @@
 char KeyboardConfig::LoadINI()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char KeyboardConfig_LoadINI()
+void KeyboardConfig_LoadINI()
 {
-  int v0; // esi
   const char *StringByIndex; // ebp
-  int v2; // edi
-  int v3; // esi
-  int v4; // eax
   int i; // [esp+4h] [ebp-CCh]
   int Int_Overwrite; // [esp+8h] [ebp-C8h]
-  void *v8[16]; // [esp+Ch] [ebp-C4h] BYREF
-  char v9; // [esp+4Ch] [ebp-84h]
-  _DWORD v10[22]; // [esp+64h] [ebp-6Ch] BYREF
   _BYTE v11[12]; // [esp+BCh] [ebp-14h] BYREF
   int v12; // [esp+C8h] [ebp-8h]
-
+  void *v8[16]; // [esp+Ch] [ebp-C4h] BYREF
   INIClass::INIClass(v8); /*0x533d2b*/
-  v9 = 0; /*0x533d3b*/
+  char v9 = 0; /*0x533d3b*/
   v8[0] = &CCINIClass_Vtable; /*0x533d3f*/
+  _DWORD v10[22]; // [esp+64h] [ebp-6Ch] BYREF
   CCFileClass::Construct(v10, DataGlobal_827B88); /*0x533d47*/
   if ( CCINIClass::Load(v8, (int)v10, 0, 0) ) /*0x533d57*/
   {
     __3_YAXPAX_Z(Base); /*0x533d6c*/
-    v0 = 0; /*0x533d74*/
+    int v0 = 0; /*0x533d74*/
     Base = 0; /*0x533d7a*/
     NumOfElements = 0; /*0x533d85*/
     DataGlobal_87F688 = 0; /*0x533d8b*/
@@ -39,7 +33,7 @@ char KeyboardConfig_LoadINI()
     for ( i = 0; i < INIClass::GetKeyCount((char *)v8, (unsigned __int8 *)g_INI_Key_Hotkey); v0 = i ) /*0x533da8*/
     {
       StringByIndex = (const char *)INIClass::GetStringByIndex((char *)v8, (unsigned __int8 *)g_INI_Key_Hotkey, v0); /*0x533dbf*/
-      v2 = 0; /*0x533dd1*/
+      int v2 = 0; /*0x533dd1*/
       Int_Overwrite = INIClass::ReadInt_Overwrite(g_INI_Key_Hotkey, StringByIndex, 0); /*0x533dd3*/
       if ( g_CommandClassVector_State > 0 ) /*0x533dde*/
       {
@@ -50,10 +44,10 @@ char KeyboardConfig_LoadINI()
           if ( ++v2 >= g_CommandClassVector_State ) /*0x533e29*/
             goto LABEL_14; /*0x533e29*/
         }
-        v3 = *((_DWORD *)g_CommandClass_Capacity + v2); /*0x533e32*/
+        int v3 = *((_DWORD *)g_CommandClass_Capacity + v2); /*0x533e32*/
         if ( v3 && Int_Overwrite ) /*0x533e3f*/
         {
-          v4 = DataGlobal_87F688; /*0x533e47*/
+          int v4 = DataGlobal_87F688; /*0x533e47*/
           if ( (int)(NumOfElements + 1) <= DataGlobal_87F688 ) /*0x533e4f*/
             goto LABEL_13; /*0x533e4f*/
           if ( !DataGlobal_87F688 ) /*0x533e53*/
@@ -97,19 +91,17 @@ LABEL_14:
 char KeyboardConfig::ReleaseBuffer(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_538B80(int this, int a2)
+void sub_538B80(int this, int a2)
 {
-  char *v3; // edi
   int i; // ecx
-  int v5; // eax
-  _DWORD *v6; // edx
-  int v7; // eax
 
   if ( a2 < 0 ) /*0x538b8c*/
     return 0; /*0x538b8c*/
-  v3 = (char *)__2_YAPAXI_Z(8 * (a2 + *(_DWORD *)(this + 8))); /*0x538ba0*/
+  char * v3 = (char *)__2_YAPAXI_Z(8 * (a2 + *(_DWORD *)(this + 8))); /*0x538ba0*/
   if ( !v3 ) /*0x538ba7*/
     return 0; /*0x538c00*/
+  int v5; // eax
+  _DWORD *v6; // edx
   for ( i = 0; i < *(_DWORD *)(this + 4); *(_DWORD *)&v3[v5 + 4] = v6[1] ) /*0x538bb5*/
   {
     v5 = 8 * i; /*0x538bb9*/
@@ -117,7 +109,7 @@ char __thiscall sub_538B80(int this, int a2)
     *(_DWORD *)&v3[v5] = *v6; /*0x538bc7*/
   }
   __3_YAXPAX_Z(*(void **)this); /*0x538bdb*/
-  v7 = a2 + *(_DWORD *)(this + 8); /*0x538be6*/
+  int v7 = a2 + *(_DWORD *)(this + 8); /*0x538be6*/
   *(_DWORD *)this = v3; /*0x538be8*/
   *(_DWORD *)(this + 8) = v7; /*0x538bea*/
   *(_DWORD *)(this + 16) = 0; /*0x538bed*/

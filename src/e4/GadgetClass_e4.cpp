@@ -42,16 +42,14 @@ namespace gamemd {
 int GadgetClass::Dtor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall GadgetClass_Dtor(_DWORD *this)
+void GadgetClass_Dtor(_DWORD *this)
 {
-  int v1; // eax
-  int v2; // eax
 
   *this = &vt_GadgetClass; /*0x4e1390*/
-  v1 = DataGlobal_8B3E90; /*0x4e1396*/
+  int v1 = DataGlobal_8B3E90; /*0x4e1396*/
   if ( this == (_DWORD *)DataGlobal_8B3E90 ) /*0x4e139f*/
   {
-    v2 = this->q020; /*0x4e13a1*/
+    int v2 = this->q020; /*0x4e13a1*/
     BYTE1(v2) &= ~1u; /*0x4e13a4*/
     this->q020 = v2; /*0x4e13a7*/
     v1 = 0; /*0x4e13aa*/
@@ -73,14 +71,9 @@ namespace gamemd {
 int GadgetClass::DrawBuildingPlacement(ControlClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall GadgetClass::DrawBuildingPlacement(int this, ControlClass *aP1)
+void GadgetClass::DrawBuildingPlacement(int this, ControlClass *aP1)
 {
-  int v3; // ecx
-  int v4; // eax
-  int v5; // edx
   int i; // edi
-  int v7; // eax
-  int v9[4]; // [esp+10h] [ebp-10h] BYREF
 
   if ( !GadgetClass::ClearState((_BYTE *)this, aP1) ) /*0x55792e*/
     return 0; /*0x557a0b*/
@@ -90,10 +83,11 @@ int __thiscall GadgetClass::DrawBuildingPlacement(int this, ControlClass *aP1)
     this->Height,
     this->Visible,
     this->ID);
-  v3 = this->Visible; /*0x55796b*/
-  v4 = this->Height; /*0x55796e*/
+  int v3 = this->Visible; /*0x55796b*/
+  int v4 = this->Height; /*0x55796e*/
+  int v9[4]; // [esp+10h] [ebp-10h] BYREF
   v9[0] = this->Width; /*0x557971*/
-  v5 = this->ID; /*0x557975*/
+  int v5 = this->ID; /*0x557975*/
   v9[2] = v3; /*0x557978*/
   v9[3] = v5; /*0x55797c*/
   v9[1] = v4; /*0x55798b*/
@@ -102,7 +96,7 @@ int __thiscall GadgetClass::DrawBuildingPlacement(int this, ControlClass *aP1)
   {
     for ( i = 0; i < this->q050; ++i ) /*0x5579a2*/
     {
-      v7 = i + this->q170; /*0x5579ad*/
+      int v7 = i + this->q170; /*0x5579ad*/
       if ( this->q044 > v7 ) /*0x5579b1*/
         (*(void (__thiscall **)(int, int, int, int, int, bool))(this->q0C8)( /*0x5579e0*/
           this,
@@ -124,30 +118,21 @@ namespace gamemd {
 BOOL GadgetClass::FindByWindow(HWND hWnd, LPARAM a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __stdcall GadgetClass_FindByWindow(HWND hWnd, LPARAM a2)
+void GadgetClass_FindByWindow(HWND hWnd, LPARAM a2)
 {
   HWND Parent; // edi
-  _DWORD *v3; // esi
   HWND *v4; // eax
   HWND *v5; // eax
-  int v6; // esi
   int DlgCtrlID; // eax
-  int v8; // eax
-  _DWORD *v9; // eax
-  int v10; // eax
-  bool v11; // al
-  int v12; // eax
   HWND v14; // [esp+Ch] [ebp-94h] BYREF
-  _DWORD *v15; // [esp+10h] [ebp-90h]
-  int v16; // [esp+14h] [ebp-8Ch] BYREF
   HWND v17; // [esp+18h] [ebp-88h] BYREF
   HWND v18; // [esp+1Ch] [ebp-84h] BYREF
   CHAR ClassName[128]; // [esp+20h] [ebp-80h] BYREF
 
   Parent = GetParent(hWnd); /*0x60aac7*/
-  v3 = 0; /*0x60aace*/
+  _DWORD * v3 = 0; /*0x60aace*/
   v14 = hWnd; /*0x60aad0*/
-  v15 = 0; /*0x60aad6*/
+  _DWORD * v15 = 0; /*0x60aad6*/
   if ( g_DialogHashMap_Count ) /*0x60aada*/
   {
     v4 = (HWND *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Buckets(&v14) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x60aafb*/
@@ -166,6 +151,9 @@ BOOL __stdcall GadgetClass_FindByWindow(HWND hWnd, LPARAM a2)
 LABEL_7:
   if ( v3 ) /*0x60ab23*/
   {
+  int v12; // eax
+  bool v11; // al
+  int v8; // eax
     v14 = Parent; /*0x60ab2e*/
     if ( !g_DialogHashMap_Count ) /*0x60ab34*/
       goto LABEL_12; /*0x60ab34*/
@@ -178,9 +166,9 @@ LABEL_7:
       if ( !v5 ) /*0x60ab66*/
         goto LABEL_12; /*0x60ab66*/
     }
-    v9 = v5 + 1; /*0x60acaf*/
+    _DWORD * v9 = v5 + 1; /*0x60acaf*/
     if ( v9 ) /*0x60acb4*/
-      v6 = v9[27]; /*0x60acba*/
+      int v6 = v9[27]; /*0x60acba*/
     else
 LABEL_12:
       v6 = 0; /*0x60ab68*/
@@ -234,7 +222,7 @@ LABEL_12:
     HashTable::Get(&g_DialogHashMap_Base, &v18, &v14); /*0x60ad2e*/
     if ( !v14 ) /*0x60ad39*/
       goto LABEL_86; /*0x60ad39*/
-    v10 = *((_DWORD *)v14 + 27); /*0x60ad3f*/
+    int v10 = *((_DWORD *)v14 + 27); /*0x60ad3f*/
     if ( v10 != 269 /*0x60adc9*/
       && v10 != 217
       && v10 != 240
@@ -262,6 +250,7 @@ LABEL_12:
     GetClassNameA(hWnd, ClassName, 128); /*0x60ade8*/
     if ( !strcmp(ClassName, g_INI_Key_Edit) || !strcmp(ClassName, g_INI_Key_NewEdit) ) /*0x60ae37*/
       goto LABEL_85; /*0x60ae5c*/
+  int v16; // [esp+14h] [ebp-8Ch] BYREF
     if ( !strcmp(ClassName, g_INI_Key_ListBox) && (v16 = 0, HashTable::Get(&g_DialogHashMap_Base, &v17, &v16)) ) /*0x60aeab*/
     {
       v11 = *(_DWORD *)(v16 + 104) == 1; /*0x60aebc*/
@@ -294,11 +283,9 @@ namespace gamemd {
 void GadgetClass::SetTooltip(CCINIClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall GadgetClass::SetTooltip(void **this, CCINIClass *aP1)
+void GadgetClass::SetTooltip(void **this, CCINIClass *aP1)
 {
   size_t v3; // eax
-  void *v4; // eax
-
   if ( this->q028 ) /*0x623564*/
   {
     __3_YAXPAX_Z(this->q028); /*0x62356c*/
@@ -309,7 +296,7 @@ void __thiscall GadgetClass::SetTooltip(void **this, CCINIClass *aP1)
     if ( *(_WORD *)aP1->__pad_0 ) /*0x623583*/
     {
       v3 = wcslen((const wchar_t *)aP1); /*0x62358a*/
-      v4 = (void *)__2_YAPAXI_Z(2 * v3 + 2); /*0x623594*/
+      void * v4 = (void *)__2_YAPAXI_Z(2 * v3 + 2); /*0x623594*/
       this->q028 = v4; /*0x62359b*/
       wcscpy((wchar_t *)v4, (const wchar_t *)aP1); /*0x62359e*/
     }
@@ -323,11 +310,10 @@ namespace gamemd {
 int GadgetClass::Show()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall GadgetClass_Show(_BYTE *this)
+void GadgetClass_Show(_BYTE *this)
 {
-  int v1; // eax
 
-  v1 = *(_DWORD *)this; /*0x723ea0*/
+  int v1 = *(_DWORD *)this; /*0x723ea0*/
   this->q0B4 = 1; /*0x723ea2*/
   return (*(int (**)(void))(v1 + 72))();
 }

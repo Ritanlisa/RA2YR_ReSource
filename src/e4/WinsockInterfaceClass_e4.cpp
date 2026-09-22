@@ -7,14 +7,10 @@
 void WinsockInterfaceClass::WinsockInterfaceClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall WinsockInterfaceClass_Destructor(int this)
+W WinsockInterfaceClass_Destructor(int this)
 {
-  char v2; // al
-  void *v3; // eax
-  void *v4; // eax
-  void *v5; // eax
 
-  v2 = this->q3F068; /*0x7b1ab6*/
+  char v2 = this->q3F068; /*0x7b1ab6*/
   *(_DWORD *)this = &vt_WinsockInterfaceClass; /*0x7b1abc*/
   if ( v2 ) /*0x7b1ac4*/
   {
@@ -23,7 +19,7 @@ void __thiscall WinsockInterfaceClass_Destructor(int this)
     WSACleanup(); /*0x7b1ad3*/
     this->q3F068 = 0; /*0x7b1ad8*/
   }
-  v3 = *(void **)(this + 60); /*0x7b1ade*/
+  void * v3 = this->q03C; /*0x7b1ade*/
   *(_DWORD *)(this + 56) = &vt_VectorClass_WinsockInterfaceClass_WinsockBufferType; /*0x7b1ae1*/
   if ( v3 && this->q045 ) /*0x7b1aec*/
   {
@@ -32,7 +28,7 @@ void __thiscall WinsockInterfaceClass_Destructor(int this)
   }
   this->q045 = 0; /*0x7b1afd*/
   this->q040 = 0; /*0x7b1b00*/
-  v4 = *(void **)(this + 36); /*0x7b1b03*/
+  CampaignClass *v4 = this->q024; /*0x7b1b03*/
   this->LocalAddress = &vt_VectorClass_WinsockInterfaceClass_WinsockBufferType; /*0x7b1b06*/
   if ( v4 && this->q02D ) /*0x7b1b11*/
   {
@@ -41,7 +37,7 @@ void __thiscall WinsockInterfaceClass_Destructor(int this)
   }
   this->q02D = 0; /*0x7b1b22*/
   this->q028 = 0; /*0x7b1b25*/
-  v5 = *(void **)(this + 12); /*0x7b1b28*/
+  void * v5 = this->q00C; /*0x7b1b28*/
   this->LocalAddress = &vt_VectorClass_WinsockInterfaceClass_WinsockBufferType; /*0x7b1b2b*/
   if ( v5 && this->q015 ) /*0x7b1b36*/
   {

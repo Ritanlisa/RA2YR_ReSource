@@ -7,22 +7,17 @@ namespace gamemd {
 int RadarClass::Destruct()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall RadarClass_Destructor(_DWORD *this)
+void RadarClass_Destructor(_DWORD *this)
 {
-  char *v2; // esi
-  int v3; // ebp
-  void *v4; // eax
-  void *v5; // eax
-  void *v6; // eax
 
   *this = &vt_RadarClass; /*0x652c0c*/
   AudioFileClass::Release(this + 1328); /*0x652c12*/
   TacticalClass::FreeResources(this); /*0x652c19*/
-  v2 = (char *)(this + 1314); /*0x652c1e*/
-  v3 = 22; /*0x652c24*/
+  char * v2 = (char *)(this + 1314); /*0x652c1e*/
+  int v3 = 22; /*0x652c24*/
   do /*0x652c53*/
   {
-    v4 = (void *)*((_DWORD *)v2 - 5); /*0x652c2b*/
+    void * v4 = (void *)*((_DWORD *)v2 - 5); /*0x652c2b*/
     v2 -= 24; /*0x652c2e*/
     *(_DWORD *)v2 = &vt_VectorClass_Point2D; /*0x652c33*/
     if ( v4 && v2[13] ) /*0x652c3b*/
@@ -35,7 +30,7 @@ int __thiscall RadarClass_Destructor(_DWORD *this)
     *((_DWORD *)v2 + 2) = 0; /*0x652c50*/
   }
   while ( v3 ); /*0x652c53*/
-  v5 = (void *)this->q1260; /*0x652c55*/
+  void * v5 = (void *)this->q1260; /*0x652c55*/
   this->q125C = &vt_VectorClass_Point2D; /*0x652c5b*/
   if ( v5 && *((_BYTE *)this + 4713) ) /*0x652c69*/
   {
@@ -44,7 +39,7 @@ int __thiscall RadarClass_Destructor(_DWORD *this)
   }
   *((_BYTE *)this + 4713) = 0; /*0x652c80*/
   this->q1264 = 0; /*0x652c86*/
-  v6 = (void *)this->q1228; /*0x652c8c*/
+  void * v6 = (void *)this->q1228; /*0x652c8c*/
   this->q1224 = &vt_VectorClass_Cell; /*0x652c92*/
   if ( v6 && *((_BYTE *)this + 4657) ) /*0x652ca0*/
   {
@@ -68,24 +63,16 @@ char __usercall RadarClass::RecreateSurface@<al>(int a1@<ecx>, int a2@<ebx>)
   CCINIClass *v3; // eax
   RadarClass *v4; // edi
   void (__thiscall ***v5)(_DWORD, int); // ecx
-  int v6; // eax
-  int v7; // ecx
-  int v8; // eax
   CCINIClass *v9; // edx
-  int v10; // ebx
-  int v11; // edi
   void (__thiscall ***v12)(_DWORD, int); // ecx
   DSurface *v13; // ebx
-  int v14; // edi
   IUnknown *v15; // eax
-  char *v16; // eax
   DSurface *v18; // [esp-Ch] [ebp-2Ch]
-  _DWORD v19[4]; // [esp+10h] [ebp-10h] BYREF
-
   v3 = *(CCINIClass **)(a1 + 5284); /*0x65465a*/
   v4 = (RadarClass *)(a1 + 5276); /*0x654660*/
   if ( (int)v3 > 0 && *(int *)(a1 + 5288) > 0 ) /*0x654671*/
   {
+  char *v16; // eax
     v5 = *(void (__thiscall ****)(_DWORD, int))(a1 + 4640); /*0x654677*/
     *(_DWORD *)(a1 + 5280) = 0; /*0x65467d*/
     v4->field_0 = 0; /*0x654685*/
@@ -104,18 +91,19 @@ char __usercall RadarClass::RecreateSurface@<al>(int a1@<ecx>, int a2@<ebx>)
       __3_YAXPAX_Z(*(void **)(a1 + 4724)); /*0x6546b9*/
       *(_DWORD *)(a1 + 4724) = 0; /*0x6546c1*/
     }
+  _DWORD v19[4]; // [esp+10h] [ebp-10h] BYREF
     GenerateImageThumbnail((float *)a1, (RadarClass *)v19, v4, v4, (RadarClass *)1); /*0x6546d3*/
-    v6 = (*(int (__thiscall **)(_DWORD, int))(**(_DWORD **)(a1 + 4640) + 124))(*(_DWORD *)(a1 + 4640), a2); /*0x6546e0*/
-    v7 = *(_DWORD *)(a1 + 4640); /*0x6546e3*/
+    int v6 = (*(int (__thiscall **)(_DWORD, int))(**(_DWORD **)(a1 + 4640) + 124))(*(_DWORD *)(a1 + 4640), a2); /*0x6546e0*/
+    int v7 = *(_DWORD *)(a1 + 4640); /*0x6546e3*/
     *(_DWORD *)(a1 + 5284) = v6; /*0x6546e9*/
-    v8 = (*(int (__thiscall **)(int))(*(_DWORD *)v7 + 128))(v7); /*0x6546f1*/
+    int v8 = (*(int (__thiscall **)(int))(*(_DWORD *)v7 + 128))(v7); /*0x6546f1*/
     v9 = *(CCINIClass **)(a1 + 5284); /*0x6546f7*/
-    v10 = *(_DWORD *)(a1 + 4592); /*0x6546fd*/
+    int v10 = *(_DWORD *)(a1 + 4592); /*0x6546fd*/
     *(_DWORD *)(a1 + 5288) = v8; /*0x65470b*/
     v4->field_0 = v10; /*0x654711*/
     if ( (int)v9 < 140 ) /*0x654713*/
       v4->field_0 = v10 + (140 - (int)v9) / 2; /*0x654723*/
-    v11 = *(_DWORD *)(a1 + 4596); /*0x654725*/
+    int v11 = *(_DWORD *)(a1 + 4596); /*0x654725*/
     *(_DWORD *)(a1 + 5280) = v11; /*0x65472e*/
     if ( v8 < 108 ) /*0x654734*/
       *(_DWORD *)(a1 + 5280) = v11 + (108 - v8) / 2; /*0x654744*/
@@ -129,7 +117,7 @@ char __usercall RadarClass::RecreateSurface@<al>(int a1@<ecx>, int a2@<ebx>)
     if ( v13 ) /*0x65476e*/
     {
       v19[0] = *(_DWORD *)(a1 + 4640); /*0x65477d*/
-      v14 = v19[0]; /*0x654777*/
+      int v14 = v19[0]; /*0x654777*/
       v18 = (DSurface *)(*(int (__thiscall **)(_DWORD))(*(_DWORD *)v19[0] + 128))(v19[0]); /*0x654789*/
       v15 = (IUnknown *)(*(int (__thiscall **)(int))(*(_DWORD *)v14 + 124))(v14); /*0x65478e*/
       v16 = DSurface::Construct((char *)v13, v15, v18, (ObjectClass *)1, 0); /*0x654794*/
@@ -152,14 +140,8 @@ namespace gamemd {
 bool RadarClass::GetBlip(int a1, int a2, int a3, ObjectClass * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool __stdcall RadarClass::GetBlip(int a1, int a2, int a3, ObjectClass *aP3)
+void RadarClass::GetBlip(int a1, int a2, int a3, ObjectClass *aP3)
 {
-  int v7; // edx
-  bool v9; // al
-  int v10; // eax
-  int v11; // ecx
-  int v12; // edx
-  int v13; // esi
   const wchar_t *v14; // eax
   const wchar_t *v15; // ecx
   int v16; // edi
@@ -187,22 +169,22 @@ bool __stdcall RadarClass::GetBlip(int a1, int a2, int a3, ObjectClass *aP3)
   char aP3a; // [esp+2Ch] [ebp+10h]
 
   v33 = TechnoTypeClass::GetByTypeAndIndex(a1, a2); /*0x6a8444*/
-  v7 = TechnoTypeClass::GetByTypeAndIndex(a3, (int)aP3); /*0x6a844d*/
+  int v7 = TechnoTypeClass::GetByTypeAndIndex(a3, (int)aP3); /*0x6a844d*/
   v34 = v7; /*0x6a8451*/
   if ( !a3 ) /*0x6a8455*/
     return 1; /*0x6a8460*/
   if ( a1 == 31 || a1 == 57 || (v35 = 0, a1 == 32) ) /*0x6a8475*/
     v35 = 1; /*0x6a8477*/
-  v9 = a3 == 31 || a3 == 57 || a3 == 32; /*0x6a848f*/
+  bool v9 = a3 == 31 || a3 == 57 || a3 == 32; /*0x6a848f*/
   v36 = v9; /*0x6a8495*/
   if ( v35 ) /*0x6a849b*/
   {
     if ( v9 ) /*0x6a849f*/
     {
-      v10 = *(_DWORD *)(*(_DWORD *)&HouseClass_Player[42472] + 4 * a2); /*0x6a84ab*/
-      v11 = *(_DWORD *)(*(_DWORD *)&HouseClass_Player[42472] + 4 * (_DWORD)aP3); /*0x6a84ae*/
-      v12 = *(_DWORD *)(v10 + 176); /*0x6a84b1*/
-      v13 = *(_DWORD *)(v11 + 176); /*0x6a84b7*/
+      int v10 = *(_DWORD *)(*(_DWORD *)&HouseClass_Player[42472] + 4 * a2); /*0x6a84ab*/
+      int v11 = *(_DWORD *)(*(_DWORD *)&HouseClass_Player[42472] + 4 * (_DWORD)aP3); /*0x6a84ae*/
+      int v12 = *(_DWORD *)(v10 + 176); /*0x6a84b1*/
+      int v13 = *(_DWORD *)(v11 + 176); /*0x6a84b7*/
       if ( v12 < v13 ) /*0x6a84bf*/
         return 1; /*0x6a84ca*/
       if ( v12 > v13 ) /*0x6a84cd*/

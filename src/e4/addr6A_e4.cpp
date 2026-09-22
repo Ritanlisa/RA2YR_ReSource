@@ -21,26 +21,21 @@ namespace gamemd {
 char E4Recv_6A6AF0::sub_6A6AF0(ObjectClass * aP1, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_6A6AF0(_DWORD *this, ObjectClass *aP1, int a3)
+void sub_6A6AF0(_DWORD *this, ObjectClass *aP1, int a3)
 {
-  int v3; // eax
-  _DWORD *v4; // ecx
-  int v5; // eax
-  int v6; // ecx
   _DWORD *v7; // eax
   int v8; // edx
   int v9; // eax
   int v10; // esi
   int v12; // [esp+0h] [ebp-8h]
   _DWORD *v14; // [esp+10h] [ebp+8h]
-
-  v3 = a3; /*0x6a6af3*/
+  int v3 = a3; /*0x6a6af3*/
   if ( a3 == -1 ) /*0x6a6afe*/
     v3 = *(this + 5351); /*0x6a6b00*/
-  v4 = this + 997 * v3 + 1361; /*0x6a6b19*/
-  v5 = 26; /*0x6a6b20*/
+  _DWORD * v4 = this + 997 * v3 + 1361; /*0x6a6b19*/
+  int v5 = 26; /*0x6a6b20*/
   v14 = v4; /*0x6a6b25*/
-  v6 = *(_DWORD *)(*(_DWORD *)&HouseClass_Player[29924] + 13496); /*0x6a6b29*/
+  int v6 = *(_DWORD *)(*(_DWORD *)&HouseClass_Player[29924] + 13496); /*0x6a6b29*/
   if ( v6 ) /*0x6a6b31*/
     v5 = 18; /*0x6a6b33*/
   v12 = (*(_DWORD *)&stru_87C374[44072] /*0x6a6b77*/
@@ -91,22 +86,18 @@ namespace gamemd {
 int E4Recv_6A74A0::sub_6A74A0(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_6A74A0(_DWORD *this, int a2)
+void sub_6A74A0(_DWORD *this, int a2)
 {
-  int v3; // edi
-  int v4; // eax
-  int v5; // esi
-  int v6; // ebp
 
   *(this + 5351) = a2; /*0x6a74b6*/
   GadgetClass::Show((_BYTE *)&DataGlobal_B07C48 + 96 * a2); /*0x6a74bc*/
-  v3 = (int)(this + 997 * *(this + 5351) + 1361); /*0x6a74d4*/
+  int v3 = (int)(this + 997 * *(this + 5351) + 1361); /*0x6a74d4*/
   *((_BYTE *)this + 3988 * *(this + 5351) + 5472) = 1; /*0x6a74db*/
-  v4 = 26; /*0x6a74ed*/
+  int v4 = 26; /*0x6a74ed*/
   if ( *((_DWORD *)g_ScenarioClass_Instance + 3374) ) /*0x6a74e5*/
     v4 = 18; /*0x6a74f4*/
-  v5 = 0; /*0x6a7507*/
-  v6 = 2 * ((g_DSurface_ViewBounds - g_SidebarBounds - v4 + g_DSurface_SidebarBounds - 7) / 50); /*0x6a7527*/
+  int v5 = 0; /*0x6a7507*/
+  int v6 = 2 * ((g_DSurface_ViewBounds - g_SidebarBounds - v4 + g_DSurface_SidebarBounds - 7) / 50); /*0x6a7527*/
   if ( v6 > 0 ) /*0x6a752b*/
   {
     do /*0x6a7570*/
@@ -128,19 +119,16 @@ namespace gamemd {
 char E4Recv_6A87F0::sub_6A87F0(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_6A87F0(int this, int a2, int a3)
+void sub_6A87F0(int this, int a2, int a3)
 {
-  int v4; // edx
-  int v5; // ecx
-  _DWORD *v6; // eax
 
-  v4 = this->M84; /*0x6a87f5*/
+  int v4 = this->M84; /*0x6a87f5*/
   if ( v4 > 75 ) /*0x6a87fb*/
     return 0; /*0x6a8857*/
-  v5 = 0; /*0x6a8805*/
+  int v5 = 0; /*0x6a8805*/
   if ( v4 > 0 ) /*0x6a8809*/
   {
-    v6 = (_DWORD *)(this + 88); /*0x6a880b*/
+    _DWORD * v6 = (_DWORD *)(this + 88); /*0x6a880b*/
     while ( v6[1] != a2 || *v6 != a3 ) /*0x6a8815*/
     {
       ++v5; /*0x6a8817*/
@@ -166,21 +154,14 @@ namespace gamemd {
 char E4Recv_6A89E0::sub_6A89E0(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_6A89E0(_DWORD *this, char a2)
+void sub_6A89E0(_DWORD *this, char a2)
 {
-  int v2; // eax
-  int v3; // ecx
-  int v5; // eax
-  int v6; // eax
-  int v7; // kr04_4
-  _DWORD *v8; // eax
-  int v10; // [esp+4h] [ebp-4h]
 
-  v10 = *((_DWORD *)g_ScenarioClass_Instance + 3374); /*0x6a89f2*/
-  v2 = 26; /*0x6a89f8*/
+  int v10 = *((_DWORD *)g_ScenarioClass_Instance + 3374); /*0x6a89f2*/
+  int v2 = 26; /*0x6a89f8*/
   if ( v10 ) /*0x6a89fd*/
     v2 = 18; /*0x6a89ff*/
-  v3 = (g_DSurface_ViewBounds - g_SidebarBounds - v2 + g_DSurface_SidebarBounds - 7) / 50; /*0x6a8a43*/
+  int v3 = (g_DSurface_ViewBounds - g_SidebarBounds - v2 + g_DSurface_SidebarBounds - 7) / 50; /*0x6a8a43*/
   if ( HouseClass_Player == (#375 *)HouseClass_Observer ) /*0x6a8a45*/
     v3 = 1; /*0x6a8a47*/
   if ( a2 ) /*0x6a8a52*/
@@ -197,13 +178,14 @@ char __thiscall sub_6A89E0(_DWORD *this, char a2)
   }
   else
   {
-    v5 = 26; /*0x6a8a85*/
+  E4Recv_6A89E0 *v8; // eax
+    int v5 = 26; /*0x6a8a85*/
     if ( v10 ) /*0x6a8a8a*/
       v5 = 18; /*0x6a8a8c*/
-    v6 = (g_DSurface_ViewBounds - g_SidebarBounds - v5 + g_DSurface_SidebarBounds - 7) / 50; /*0x6a8aaa*/
+    int v6 = (g_DSurface_ViewBounds - g_SidebarBounds - v5 + g_DSurface_SidebarBounds - 7) / 50; /*0x6a8aaa*/
     if ( HouseClass_Player == (#375 *)HouseClass_Observer ) /*0x6a8aac*/
     {
-      v7 = v6; /*0x6a8ab7*/
+      int v7 = v6; /*0x6a8ab7*/
       v8 = this; /*0x6a8ab9*/
       if ( *(this + 17) + v7 / 2 >= DataGlobal_884CF8 ) /*0x6a8ac4*/
         return 0; /*0x6a8acf*/
@@ -226,22 +208,17 @@ namespace gamemd {
 char E4Recv_6A93F0::sub_6A93F0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_6A93F0(int this)
+void sub_6A93F0(int this)
 {
-  int v2; // eax
-  int v3; // esi
-  int v4; // ecx
-  unsigned int v5; // eax
-  int v6; // ebp
 
   *(_BYTE *)(this + 28) = 1; /*0x6a93f8*/
-  v2 = 26; /*0x6a9408*/
+  int v2 = 26; /*0x6a9408*/
   if ( *((_DWORD *)g_ScenarioClass_Instance + 3374) ) /*0x6a9400*/
     v2 = 18; /*0x6a940f*/
-  v3 = 0; /*0x6a942f*/
-  v4 = g_DSurface_ViewBounds - g_SidebarBounds - v2 + g_DSurface_SidebarBounds - 7; /*0x6a9431*/
-  v5 = (unsigned int)((unsigned __int64)(1374389535LL * v4) >> 32) >> 31; /*0x6a943c*/
-  v6 = 2 * (v4 / 50); /*0x6a9443*/
+  int v3 = 0; /*0x6a942f*/
+  int v4 = g_DSurface_ViewBounds - g_SidebarBounds - v2 + g_DSurface_SidebarBounds - 7; /*0x6a9431*/
+  unsigned int v5 = (unsigned int)((unsigned __int64)(1374389535LL * v4) >> 32) >> 31; /*0x6a943c*/
+  int v6 = 2 * (v4 / 50); /*0x6a9443*/
   if ( v6 > 0 ) /*0x6a9447*/
   {
     do /*0x6a9494*/
@@ -263,7 +240,7 @@ namespace gamemd {
 void __inc_tmpoff()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __inc_tmpoff()
+void* __inc_tmpoff()
 {
   ++DataGlobal_0000051D; /*0x6acbae*/
 }
@@ -383,11 +360,8 @@ void HideSkirmishSpawnLocations(HWND hDlg, int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void __fastcall HideSkirmishSpawnLocations(HWND hDlg, int a2)
 {
-  int v3; // esi
-  int v4; // esi
   LRESULT v5; // ebp
   WPARAM v6; // ebx
-  char *v7; // esi
   int nIDDlgItem; // [esp+10h] [ebp-18h]
   int nIDDlgItema; // [esp+10h] [ebp-18h]
   HWND nIDDlgItemb; // [esp+10h] [ebp-18h]
@@ -404,9 +378,10 @@ void __fastcall HideSkirmishSpawnLocations(HWND hDlg, int a2)
 
   if ( a2 < 8 )
   {
-    v3 = a2 - 1; /*0x6ae096*/
+    int v3 = a2 - 1; /*0x6ae096*/
     for ( nIDDlgItem = a2 - 1; ; v3 = nIDDlgItem )
     {
+  int v4; // esi
       if ( v3 )
       {
         switch ( v3 )
@@ -453,7 +428,7 @@ LABEL_22:
     }
     if ( a2 < 8 )
     {
-      v7 = (char *)(a2 - 1); /*0x6ae177*/
+      char * v7 = (char *)(a2 - 1); /*0x6ae177*/
       do
       {
         if ( v7 )
@@ -522,8 +497,6 @@ bool __usercall Skirmish_Setup_Screen@<al>(int a1@<ebx>, int a2@<ebp>)
   int i; // esi
   HWND v3; // esi
   LONG j; // eax
-  int v5; // ecx
-  void *v6; // esi
   LONG dwNewLong; // [esp+4h] [ebp-4h] BYREF
 
   dwNewLong = -1; /*0x6ae2ce*/
@@ -546,13 +519,14 @@ bool __usercall Skirmish_Setup_Screen@<al>(int a1@<ebx>, int a2@<ebp>)
         break; /*0x6ae35e*/
       if ( Dialog::PumpMessages() == 1 ) /*0x6ae367*/
         break; /*0x6ae367*/
+  int v5; // ecx
       LOBYTE(v5) = 0; /*0x6ae369*/
       ScreenSaver::Process(v5); /*0x6ae36b*/
     }
     Dialog::Destroy(v3); /*0x6ae37d*/
     DataGlobal_B0B59C = 0; /*0x6ae382*/
   }
-  v6 = g_UIControlState; /*0x6ae38c*/
+  void * v6 = g_UIControlState; /*0x6ae38c*/
   if ( g_UIControlState ) /*0x6ae394*/
   {
     ComPtr::Dtor(g_UIControlState); /*0x6ae398*/
@@ -574,14 +548,12 @@ namespace game {
 char TechnoClass::ProcessDeployAction()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall ProcessDeployAction(TechnoClass **this)
+void ProcessDeployAction(TechnoClass **this)
 {
   SlaveManagerClass *v2; // eax
   TechnoClass *v3; // edi
   int currentMission; // edi
   TechnoClass *v5; // edi
-  int v6; // edi
-  void *v7; // eax
   TechnoClass *v8; // edi
   IUnknown *v9; // eax
   TechnoClass *v10; // edi
@@ -590,28 +562,17 @@ char __thiscall ProcessDeployAction(TechnoClass **this)
   TechnoClass *v13; // edi
   TechnoClass *v14; // ecx
   IUnknown *v15; // eax
-  int v16; // edx
-  double v17; // st7
   __int16 v18; // di
   __int16 *v19; // eax
   IUnknown *v20; // eax
-  int v21; // edx
-  double v22; // st7
-  double v23; // st7
   __int16 v24; // cx
-  int v25; // eax
   SlaveManagerClass *v27; // [esp+2Ch] [ebp-28h] BYREF
   __int16 v28[2]; // [esp+30h] [ebp-24h] BYREF
-  int v29; // [esp+34h] [ebp-20h] BYREF
-  int v30; // [esp+38h] [ebp-1Ch] BYREF
-  int v31; // [esp+3Ch] [ebp-18h] BYREF
-  int v32; // [esp+40h] [ebp-14h] BYREF
-  _BYTE v33[8]; // [esp+44h] [ebp-10h] BYREF
   SlaveManagerClass *v34; // [esp+4Ch] [ebp-8h]
-
   v2 = (SlaveManagerClass *)this->q017; /*0x6afd67*/
   switch ( (unsigned int)v2 )
   {
+  int v29; // [esp+34h] [ebp-20h] BYREF
     case 0u:
       v3 = this->objectTypeFlags; /*0x6afd7a*/
       if ( v3 ) /*0x6afd7f*/
@@ -649,6 +610,7 @@ char __thiscall ProcessDeployAction(TechnoClass **this)
         v27 = v2; /*0x6afe29*/
         if ( (_WORD)v2 == *(_WORD *)&g_OverlayTypeConfig[15808] /*0x6afe57*/
           && v28[1] == *(_WORD *)&g_OverlayTypeConfig[15810]
+  int v30; // [esp+38h] [ebp-1Ch] BYREF
           || (v2 = (SlaveManagerClass *)*BuildingClass::FindPlacementCells2(this, (SlaveManagerClass *)&v30, v2),
               v27 = v2,
               v2 == *(SlaveManagerClass **)&g_OverlayTypeConfig[15808]) )
@@ -658,8 +620,8 @@ char __thiscall ProcessDeployAction(TechnoClass **this)
         }
         else
         {
-          v6 = *(_DWORD *)(this->objectTypeFlags)->__pad_0; /*0x6afe87*/
-          v7 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v27); /*0x6afe8e*/
+          int v6 = *(_DWORD *)(this->objectTypeFlags)->__pad_0; /*0x6afe87*/
+          void * v7 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v27); /*0x6afe8e*/
           (*(void (__thiscall **)(_DWORD, void *, int))(v6 + 1152))(this->objectTypeFlags, v7, 1); /*0x6afe97*/
           LOBYTE(v2) = (*(int (__thiscall **)(_DWORD, int, _DWORD))(*(_DWORD *)(this->objectTypeFlags)->__pad_0 + 488))( /*0x6afea6*/
                          this->objectTypeFlags,
@@ -782,27 +744,29 @@ char __thiscall ProcessDeployAction(TechnoClass **this)
                                          &v29,
                                          *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[30972] + 6024) / 256,
                                          1);
+  int v31; // [esp+3Ch] [ebp-18h] BYREF
           *(_DWORD *)v28 = *BuildingClass::FindPlacementCells2(this, (SlaveManagerClass *)&v31, v27); /*0x6b0100*/
-          v15 = CellStruct::Sub(v28, (IUnknown *)&v32, (IUnknown *)&v27); /*0x6b0104*/
-          v16 = SHIWORD(v15->field_0); /*0x6b0109*/
+          int v32 = CellStruct::Sub(v28, (IUnknown *)&v32, (IUnknown *)&v27); /*0x6b0104*/
+          int v16 = SHIWORD(v15->field_0); /*0x6b0109*/
           v29 = SLOWORD(v15->field_0); /*0x6b011b*/
-          v17 = Math::Sqrt((double)v29 * (double)v29 + (double)v16 * (double)v16); /*0x6b0134*/
+          double v17 = Math::Sqrt((double)v29 * (double)v29 + (double)v16 * (double)v16); /*0x6b0134*/
           v18 = Math::RoundToInt(v17); /*0x6b0144*/
           v19 = (__int16 *)(*(int (__thiscall **)(_DWORD, _BYTE *))(*(_DWORD *)(this->objectTypeFlags)->__pad_0 + 440))( /*0x6b014d*/
                              this->objectTypeFlags,
+  _BYTE v33[8]; // [esp+44h] [ebp-10h] BYREF
                              v33);
           v20 = CellStruct::Sub(v19, (IUnknown *)&v32, (IUnknown *)&v27); /*0x6b015f*/
-          v21 = SLOWORD(v20->field_0); /*0x6b0168*/
+          int v21 = SLOWORD(v20->field_0); /*0x6b0168*/
           v29 = SHIWORD(v20->field_0); /*0x6b016b*/
-          v22 = (double)v29; /*0x6b0172*/
+          double v22 = (double)v29; /*0x6b0172*/
           v29 = v21; /*0x6b0176*/
-          v23 = Math::Sqrt((double)v21 * (double)v21 + v22 * v22); /*0x6b018f*/
+          double v23 = Math::Sqrt((double)v21 * (double)v21 + v22 * v22); /*0x6b018f*/
           v24 = Math::RoundToInt(v23); /*0x6b01b8*/
           v2 = (SlaveManagerClass *)(v18 + *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[30972] + 6028) / 256); /*0x6b01bb*/
           if ( (int)v2 < v24 ) /*0x6b01bf*/
           {
             (this->objectTypeFlags)->isVoiceOverride = 1; /*0x6b01c4*/
-            v25 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)(this->objectTypeFlags)->__pad_0 + 444))(this->objectTypeFlags); /*0x6b01d0*/
+            int v25 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)(this->objectTypeFlags)->__pad_0 + 444))(this->objectTypeFlags); /*0x6b01d0*/
             TechnoClass::SetFocus(this->objectTypeFlags, v25); /*0x6b01da*/
             LOBYTE(v2) = (*(int (__thiscall **)(_DWORD, int, _DWORD))(*(_DWORD *)(this->objectTypeFlags)->__pad_0 + 488))( /*0x6b01e8*/
                            this->objectTypeFlags,

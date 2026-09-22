@@ -6,7 +6,7 @@
 BOOL LoadScreen::IsActive()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall LoadScreen::IsActive(ProgressScreenClass *this)
+void LoadScreen::IsActive()
 {
   return this->q064 != 0; /*0x643e6a*/
 }

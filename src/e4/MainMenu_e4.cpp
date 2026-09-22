@@ -13,13 +13,8 @@ LONG __usercall MainMenu_Screen@<eax>(int a1@<ebx>, int a2@<ebp>)
 {
   HWND v2; // esi
   HWND DlgItem; // esi
-  int v4; // ecx
-  int v5; // eax
   unsigned __int16 v6; // ax
-  int v7; // esi
-  int v8; // esi
   const char **v9; // edi
-  _BYTE v11[2]; // [esp+6h] [ebp-1Eh] BYREF
   LONG dwNewLong; // [esp+8h] [ebp-1Ch] BYREF
   HWND hWnd; // [esp+Ch] [ebp-18h]
   struct _SYSTEMTIME SystemTime; // [esp+10h] [ebp-14h] BYREF
@@ -38,11 +33,11 @@ LONG __usercall MainMenu_Screen@<eax>(int a1@<ebx>, int a2@<ebp>)
     if ( DlgItem ) /*0x531d35*/
     {
       if ( g_DDraw_Active > 800 ) /*0x531d41*/
-        v4 = (g_DDraw_Active - 800) / 2; /*0x531d51*/
+        int v4 = (g_DDraw_Active - 800) / 2; /*0x531d51*/
       else
         v4 = 0; /*0x531d43*/
       if ( DataGlobal_8A00A8 > 600 ) /*0x531d5d*/
-        v5 = (DataGlobal_8A00A8 - 600) / 2; /*0x531d6b*/
+        int v5 = (DataGlobal_8A00A8 - 600) / 2; /*0x531d6b*/
       else
         v5 = 0; /*0x531d5f*/
       SetWindowPos(DlgItem, 0, v4, v5, -1, -1, 0xDu); /*0x531d78*/
@@ -75,17 +70,18 @@ LONG __usercall MainMenu_Screen@<eax>(int a1@<ebx>, int a2@<ebp>)
           }
           else
           {
+  _BYTE v11[2]; // [esp+6h] [ebp-1Eh] BYREF
             v11[0] = a1; /*0x531e3d*/
             v11[1] = 0; /*0x531e42*/
             Debug::Log_0(v11); /*0x531e47*/
-            v7 = strlen(Str); /*0x531e5e*/
+            int v7 = strlen(Str); /*0x531e5e*/
             if ( v7 >= 31 ) /*0x531e63*/
             {
               v7 = 0; /*0x531e65*/
               Str[0] = 0; /*0x531e67*/
             }
             Str[v7] = toupper((char)a1); /*0x531e77*/
-            v8 = 0; /*0x531e7d*/
+            int v8 = 0; /*0x531e7d*/
             v9 = (const char **)DataGlobal_825C2C; /*0x531e7f*/
             while ( !strstr(Str, *v9) ) /*0x531e96*/
             {
@@ -125,15 +121,13 @@ LABEL_27:
 int MainMenu::DlgProc(HWND hWnd, int a2, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall MainMenu_DlgProc(HWND hWnd, int a2, int a3, int a4)
+void MainMenu_DlgProc(HWND hWnd, int a2, int a3, int a4)
 {
   int result; // eax
   _DWORD *WindowLongA; // eax
   HWND v6; // esi
-  int v7; // eax
   const wchar_t *v8; // eax
   HWND DlgItem; // eax
-  int v10; // [esp-4h] [ebp-110h]
   wchar_t lParam[128]; // [esp+Ch] [ebp-100h] BYREF
 
   result = BaseDialogProc(hWnd, a3, a4); /*0x531f88*/
@@ -181,8 +175,8 @@ int __stdcall MainMenu_DlgProc(HWND hWnd, int a2, int a3, int a4)
         break;
       case 1175: /*0x531fa1*/
         v6 = GetDlgItem(hWnd, 1821); /*0x531fcc*/
-        v7 = GetModuleInternalVersion(&g_CoordScatterManager); /*0x531fce*/
-        v10 = CharToWideString(v7); /*0x531fda*/
+        int v7 = GetModuleInternalVersion(&g_CoordScatterManager); /*0x531fce*/
+        int v10 = CharToWideString(v7); /*0x531fda*/
         v8 = (const wchar_t *)GetStringCSF(DataGlobal_82696C, (int)g_Str_File_Init_CPP, 5975); /*0x531fec*/
         swprintf(lParam, (const size_t)&DataGlobal_826960, v8, v10); /*0x531ffc*/
         SendMessageA(v6, 0x4B2u, 0, (LPARAM)lParam); /*0x532011*/

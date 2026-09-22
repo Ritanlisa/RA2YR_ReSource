@@ -6,7 +6,7 @@
 int GameOption::GetField()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall GameOption::GetField(_DWORD **this)
+void GameOption::GetField(_DWORD **this)
 {
   return *this->q18C; /*0x69acc8*/
 }

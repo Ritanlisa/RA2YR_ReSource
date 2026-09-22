@@ -12,40 +12,17 @@ namespace gamemd {
 char TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a7, char a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall TiberiumClass_Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a7, char a8)
+void TiberiumClass_Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a7, char a8)
 {
-  _DWORD *v8; // eax
-  _DWORD *v9; // esi
-  _DWORD *v10; // ecx
-  char v11; // dl
-  _WORD *v12; // eax
-  _WORD *v13; // edx
   __int16 v14; // cx
-  int v15; // eax
-  int v16; // edx
-  char *v17; // esi
-  int v18; // edi
-  bool v19; // bl
-  int *v20; // eax
-  int *v21; // ebp
-  int v22; // ecx
-  int v23; // eax
-  int v24; // eax
-  int v25; // edx
-  int v26; // edx
-  _DWORD *v28; // [esp+10h] [ebp-1Ch]
-  _DWORD *v29; // [esp+14h] [ebp-18h]
-  int v30; // [esp+18h] [ebp-14h] BYREF
-  int v31; // [esp+1Ch] [ebp-10h]
-  int v32; // [esp+20h] [ebp-Ch]
-  int v33; // [esp+24h] [ebp-8h]
   int i; // [esp+28h] [ebp-4h]
 
-  v28 = (_DWORD *)RandomMap::CellListAlloc(a1); /*0x5a0171*/
+  _DWORD * v28 = (_DWORD *)RandomMap::CellListAlloc(a1); /*0x5a0171*/
   for ( i = 0; i < a2; ++i ) /*0x5a0181*/
   {
-    v8 = __2_YAPAXI_Z(0x18u); /*0x5a0189*/
-    v9 = v8; /*0x5a018e*/
+  _DWORD *v29; // [esp+14h] [ebp-18h]
+    _DWORD * v8 = __2_YAPAXI_Z(0x18u); /*0x5a0189*/
+    _DWORD * v9 = v8; /*0x5a018e*/
     if ( v8 ) /*0x5a0195*/
     {
       VectorClass::CellConstructor(v8, 0, 0); /*0x5a019b*/
@@ -58,26 +35,27 @@ char __stdcall TiberiumClass_Spread(int a1, int a2, int a3, int a4, int a5, int 
     {
       v29 = 0; /*0x5a01b6*/
     }
-    v10 = v28; /*0x5a01ba*/
-    v31 = 0; /*0x5a01be*/
+    _DWORD * v10 = v28; /*0x5a01ba*/
+    int v31 = 0; /*0x5a01be*/
     v29[5] = 3 * v28[4]; /*0x5a01cc*/
     if ( (int)v28[4] > 0 ) /*0x5a01d4*/
     {
       while ( 2 ) /*0x5a01da*/
       {
-        v11 = 0; /*0x5a01da*/
-        v33 = 0; /*0x5a01dc*/
+        char v11 = 0; /*0x5a01da*/
+        int v33 = 0; /*0x5a01dc*/
         while ( 1 ) /*0x5a01f3*/
         {
-          v12 = (_WORD *)(v10[1] + 4 * v31); /*0x5a01f3*/
-          v13 = (_WORD *)(4 * (v11 & 7) + 9041544); /*0x5a01fe*/
+          _WORD * v12 = (_WORD *)(v10[1] + 4 * v31); /*0x5a01f3*/
+          _WORD * v13 = (_WORD *)(4 * (v11 & 7) + 9041544); /*0x5a01fe*/
           v14 = *v13 + *v12; /*0x5a0205*/
           LOWORD(v13) = v12[1] + v13[1]; /*0x5a020c*/
+  int v32; // [esp+20h] [ebp-Ch]
           LOWORD(v32) = v14; /*0x5a0210*/
           HIWORD(v32) = (_WORD)v13; /*0x5a0215*/
-          v30 = v32; /*0x5a021e*/
-          v15 = (__int16)v13; /*0x5a0225*/
-          v16 = (__int16)v13 + v14; /*0x5a0228*/
+          int v30 = v32; /*0x5a021e*/
+          int v15 = (__int16)v13; /*0x5a0225*/
+          int v16 = (__int16)v13 + v14; /*0x5a0228*/
           if ( v16 > g_MapCellHeight_Value /*0x5a0285*/
             && v14 - v15 < g_MapCellHeight_Value
             && v15 - v14 < g_MapCellHeight_Value
@@ -87,21 +65,22 @@ char __stdcall TiberiumClass_Spread(int a1, int a2, int a3, int a4, int a5, int 
             && v15 >= a4
             && v15 < a6 + a4 )
           {
-            v17 = (char *)g_MapTileArray + 80 * v14 + 80 * unk_89C2DC * v15; /*0x5a02a4*/
-            v18 = *((_DWORD *)v17 + 14); /*0x5a02a8*/
-            v19 = a7 && v18 == a1 - 1; /*0x5a02b6*/
-            v20 = (int *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v30); /*0x5a02c6*/
-            v21 = v20; /*0x5a02cd*/
+            char * v17 = (char *)g_MapTileArray + 80 * v14 + 80 * unk_89C2DC * v15; /*0x5a02a4*/
+            int v18 = *((_DWORD *)v17 + 14); /*0x5a02a8*/
+            bool v19 = a7 && v18 == a1 - 1; /*0x5a02b6*/
+            int * v20 = (int *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v30); /*0x5a02c6*/
+            int * v21 = v20; /*0x5a02cd*/
             if ( (!v18 || v19) && (Cell::IsEmpty(v20) || v19 && Cell::IsGroundTypeRange(v21)) ) /*0x5a02e6*/
             {
-              v22 = v29[2]; /*0x5a02ff*/
+              int v22 = v29[2]; /*0x5a02ff*/
               if ( v29[4] < v22 /*0x5a0324*/
                 || (*((_BYTE *)v29 + 13) || !v22)
+  int v23; // eax
                 && (v23 = v29[5], v23 > 0)
                 && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*v29 + 8))(v29, v22 + v23, 0) )
               {
-                v24 = v29[4]; /*0x5a032b*/
-                v25 = v29[1]; /*0x5a032e*/
+                int v24 = v29[4]; /*0x5a032b*/
+                int v25 = v29[1]; /*0x5a032e*/
                 v29[4] = v24 + 1; /*0x5a0334*/
                 *(_DWORD *)(v25 + 4 * v24) = v30; /*0x5a033b*/
               }
@@ -124,7 +103,7 @@ char __stdcall TiberiumClass_Spread(int a1, int a2, int a3, int a4, int a5, int 
           v10 = v28; /*0x5a01e2*/
         }
         v10 = v28; /*0x5a0383*/
-        v26 = v28[4]; /*0x5a038c*/
+        int v26 = v28[4]; /*0x5a038c*/
         if ( ++v31 < v26 ) /*0x5a0395*/
           continue; /*0x5a0395*/
         break;
@@ -149,8 +128,6 @@ unsigned int * TiberiumClass::TiberiumClass(ObjectClass * aP1)
 _DWORD *__thiscall TiberiumClass::TiberiumClass(_DWORD *this, ObjectClass *aP1)
 {
   IUnknown *v3; // edx
-  int v4; // eax
-  int v5; // eax
 
   AbstractTypeClass::Constructor((int)this, (AbstractClass *)aP1); /*0x7216ca*/
   this->owningHouseIndex = -1717986918; /*0x7216dc*/
@@ -197,7 +174,7 @@ _DWORD *__thiscall TiberiumClass::TiberiumClass(_DWORD *this, ObjectClass *aP1)
          *(_DWORD *)&stru_B05488[41064] + *(_DWORD *)&stru_B05488[41076],
          0) )
   {
-    v4 = (*(_DWORD *)&stru_B05488[41072])++; /*0x72180b*/
+    int v4 = (*(_DWORD *)&stru_B05488[41072])++; /*0x72180b*/
     *(_DWORD *)(*(_DWORD *)&stru_B05488[41060] + 4 * v4) = this; /*0x72181a*/
   }
   (*(void (__thiscall **)(_DWORD *))(this->q0C4 + 12))(this + 49); /*0x721821*/
@@ -209,7 +186,7 @@ _DWORD *__thiscall TiberiumClass::TiberiumClass(_DWORD *this, ObjectClass *aP1)
          *(_DWORD *)&stru_B05488[41456] + *(_DWORD *)&stru_B05488[41468],
          0) )
   {
-    v5 = (*(_DWORD *)&stru_B05488[41464])++; /*0x721864*/
+    int v5 = (*(_DWORD *)&stru_B05488[41464])++; /*0x721864*/
     *(_DWORD *)(*(_DWORD *)&stru_B05488[41452] + 4 * v5) = this; /*0x721873*/
   }
   return this; /*0x721878*/
@@ -222,17 +199,14 @@ namespace gamemd {
 char TiberiumClass::LoadFromINI(unsigned char *** aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall TiberiumClass::LoadFromINI(int this, unsigned __int8 ***aP1)
+void TiberiumClass::LoadFromINI(int this, unsigned __int8 ***aP1)
 {
   int Int_Overwrite; // eax
   double Double_Overwrite; // st7
   CCINIClass *v5; // eax
   int eax2a; // eax
-  double v8; // st7
   CCINIClass *v7; // eax
-  int v10; // eax
   INIClass *v11; // ecx
-  int v12; // eax
   AbstractClass *i; // eax
   int ecx10; // ecx
   VectorClass *v13; // edx
@@ -257,39 +231,41 @@ char __thiscall TiberiumClass::LoadFromINI(int this, unsigned __int8 ***aP1)
                     (int)aP1,
                     (unsigned __int8 *)(this + 36),
                     (CCINIClass *)&stru_830620[82692],
-                    *(INIClass **)(this + 156));
-  _FFFFFFF4 = *(INIClass **)(this + 160); /*0x721a9d*/
+                    this->location);
+  _FFFFFFF4 = this->owningHouseIndex; /*0x721a9d*/
   this->location = Int_Overwrite; /*0x721aa6*/
   Double_Overwrite = INIClass::ReadDouble_Overwrite( /*0x721aac*/
                        (int)aP1,
                        (INIClass *)(this + 36),
                        (unsigned __int8 *)&stru_830620[82672],
                        _FFFFFFF4);
-  v5 = *(CCINIClass **)(this + 168); /*0x721ab1*/
-  *(double *)(this + 160) = Double_Overwrite; /*0x721ab9*/
+  v5 = this->lineTrailer; /*0x721ab1*/
+  this->owningHouseIndex = Double_Overwrite; /*0x721ab9*/
   eax2a = INIClass::ReadInt_Overwrite( /*0x721ac6*/
             (int)aP1,
             (unsigned __int8 *)(this + 36),
             (CCINIClass *)&stru_830620[82664],
             (INIClass *)v5);
-  v19 = *(INIClass **)(this + 176); /*0x721ad8*/
+  v19 = this->Spread; /*0x721ad8*/
   this->lineTrailer = eax2a; /*0x721ae1*/
+  double v8; // st7
   v8 = INIClass::ReadDouble_Overwrite( /*0x721ae7*/
          (int)aP1,
          (INIClass *)(this + 36),
          (unsigned __int8 *)&stru_830620[82644],
          v19);
-  v7 = *(CCINIClass **)(this + 184); /*0x721aec*/
-  *(double *)(this + 176) = v8; /*0x721af4*/
+  v7 = this->q0B8; /*0x721aec*/
+  this->Spread = v8; /*0x721af4*/
+  int v10; // eax
   v10 = INIClass::ReadInt_Overwrite( /*0x721b01*/
           (int)aP1,
           (unsigned __int8 *)(this + 36),
           (CCINIClass *)&stru_830620[82636],
           (INIClass *)v7);
-  v11 = *(INIClass **)(this + 188); /*0x721b06*/
+  v11 = this->Growth; /*0x721b06*/
   this->q0B8 = v10; /*0x721b0c*/
-  v12 = INIClass::ReadInt_Overwrite((int)aP1, (unsigned __int8 *)(this + 36), &stru_81938C, v11); /*0x721b1b*/
-  v18 = *(DynamicVector **)(this + 192); /*0x721b28*/
+  int v12 = INIClass::ReadInt_Overwrite((int)aP1, (unsigned __int8 *)(this + 36), &stru_81938C, v11); /*0x721b1b*/
+  v18 = this->GrowthPercentage; /*0x721b28*/
   this->Growth = v12; /*0x721b2f*/
   this->GrowthPercentage = BuildingTypeClass::FindAnimByName( /*0x721b3a*/
                               aP1,
@@ -373,24 +349,17 @@ namespace gamemd {
 int TiberiumClass::SaveLoad_Prefix(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall TiberiumClass::SaveLoad_Prefix(int a1, int a2)
+void TiberiumClass::SaveLoad_Prefix(int a1, int a2)
 {
-  int v2; // esi
-  int v3; // ebp
-  _DWORD *v4; // eax
   int i; // ecx
   void **v6; // ecx
-  _DWORD *v7; // eax
   int j; // ecx
   void **v9; // ecx
-  int v10; // eax
-  int v11; // ebx
   int result; // eax
-  int v13; // edi
 
-  v2 = a1; /*0x721e83*/
-  v3 = 0; /*0x721e87*/
-  v4 = *(_DWORD **)(a1 + 244); /*0x721e8a*/
+  int v2 = a1; /*0x721e83*/
+  int v3 = 0; /*0x721e87*/
+  _DWORD * v4 = *(_DWORD **)(a1 + 244); /*0x721e8a*/
   if ( v4 ) /*0x721e92*/
   {
     for ( i = 0; i <= *v4; *(_DWORD *)(v4[2] + 4 * i - 4) = 0 ) /*0x721e9a*/
@@ -411,7 +380,7 @@ int __stdcall TiberiumClass::SaveLoad_Prefix(int a1, int a2)
     __3_YAXPAX_Z(*(void **)(v2 + 248)); /*0x721ee7*/
     *(_DWORD *)(v2 + 248) = 0; /*0x721eef*/
   }
-  v7 = *(_DWORD **)(v2 + 272); /*0x721ef5*/
+  _DWORD * v7 = *(_DWORD **)(v2 + 272); /*0x721ef5*/
   *(_DWORD *)(v2 + 240) = 0; /*0x721efb*/
   if ( v7 ) /*0x721f03*/
   {
@@ -433,10 +402,10 @@ int __stdcall TiberiumClass::SaveLoad_Prefix(int a1, int a2)
     __3_YAXPAX_Z(*(void **)(v2 + 276)); /*0x721f58*/
     *(_DWORD *)(v2 + 276) = 0; /*0x721f60*/
   }
-  v10 = *(_DWORD *)(v2 + 196); /*0x721f66*/
+  int v10 = *(_DWORD *)(v2 + 196); /*0x721f66*/
   *(_DWORD *)(v2 + 268) = 0; /*0x721f74*/
   (*(void (__thiscall **)(int))(v10 + 12))(v2 + 196); /*0x721f7a*/
-  v11 = a2; /*0x721f7d*/
+  int v11 = a2; /*0x721f7d*/
   result = AbstractClass::SaveLoad_Prefix_0((_DWORD *)v2, a2); /*0x721f83*/
   if ( result >= 0 ) /*0x721f8a*/
   {
@@ -468,7 +437,7 @@ int __stdcall TiberiumClass::SaveLoad_Prefix(int a1, int a2)
       while ( v3 < a1 ); /*0x722037*/
       result = 0; /*0x722039*/
     }
-    v13 = 0; /*0x722041*/
+    int v13 = 0; /*0x722041*/
     if ( *(int *)(v2 + 212) > 0 ) /*0x722045*/
     {
       do /*0x722064*/

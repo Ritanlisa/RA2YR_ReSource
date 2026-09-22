@@ -8,14 +8,8 @@
 int XSurface::DrawDashedLine(int * a1, int * a2, XSurface * aP3, int a5, int a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall XSurface::DrawDashedLine(void *this, int *a1, int *a2, XSurface *aP3, int a5, int a6)
+void XSurface::DrawDashedLine(int *a1, int *a2, XSurface *aP3, int a5, int a6)
 {
-  int v7; // ebx
-  int v8; // edi
-  int v9; // ebp
-  bool v10; // cc
-  signed int v11; // esi
-  signed int v12; // eax
   int v13; // esi
   _WORD *v14; // eax
   int v15; // edi
@@ -45,12 +39,11 @@ int __thiscall XSurface::DrawDashedLine(void *this, int *a1, int *a2, XSurface *
   int a1a; // [esp+24h] [ebp+4h]
   int *a2a; // [esp+28h] [ebp+8h]
   _BYTE *v43; // [esp+34h] [ebp+14h]
-
-  v7 = *a1; /*0x7ba8cd*/
+  int v7 = *a1; /*0x7ba8cd*/
   v40 = a1[1]; /*0x7ba8cf*/
-  v8 = *a2; /*0x7ba8dc*/
-  v9 = a2[1]; /*0x7ba8de*/
-  v10 = *a1 <= *a2; /*0x7ba8e1*/
+  int v8 = *a2; /*0x7ba8dc*/
+  int v9 = a2[1]; /*0x7ba8de*/
+  bool v10 = *a1 <= *a2; /*0x7ba8e1*/
   a1a = 1; /*0x7ba8e3*/
   if ( v10 ) /*0x7ba8eb*/
   {
@@ -62,8 +55,8 @@ int __thiscall XSurface::DrawDashedLine(void *this, int *a1, int *a2, XSurface *
     v8 = *a1; /*0x7ba8ef*/
     v9 = a1[1]; /*0x7ba8f3*/
     v40 = a2[1]; /*0x7ba8f8*/
-    v11 = abs32(*a2 - *a1); /*0x7ba907*/
-    v12 = abs32(v40 - v9) + 1; /*0x7ba90e*/
+    signed int v11 = abs32(*a2 - *a1); /*0x7ba907*/
+    signed int v12 = abs32(v40 - v9) + 1; /*0x7ba90e*/
     if ( v11 < v12 ) /*0x7ba911*/
       v11 = v12; /*0x7ba913*/
     v13 = (a6 + v11) % 16; /*0x7ba927*/
@@ -208,63 +201,33 @@ char XSurface::WalkLine(int a2, unsigned int * a3, unsigned int * a4, void (__th
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __thiscall XSurface_WalkLine(_DWORD *this, int a2, _DWORD *a3, _DWORD *a4, void (__thiscall *a5)(int *))
 {
-  int v5; // eax
-  int v6; // eax
-  int *v7; // eax
-  int v8; // ecx
-  int v9; // eax
   char result; // al
-  int v11; // ecx
-  int v12; // edi
-  int v13; // esi
-  int v14; // ebp
-  int v15; // edi
-  int v16; // ebp
-  int v17; // ebx
-  int v18; // edi
-  int v19; // ebx
-  int v20; // esi
-  int v21; // eax
-  int v22; // esi
   int i; // ebx
-  int v24; // esi
-  int v25; // edi
-  int v26; // [esp+4h] [ebp-44h] BYREF
-  int v27; // [esp+8h] [ebp-40h]
-  _DWORD *v28; // [esp+14h] [ebp-34h]
-  int v29; // [esp+18h] [ebp-30h]
-  int v30; // [esp+1Ch] [ebp-2Ch]
-  int v31; // [esp+20h] [ebp-28h]
-  int v32; // [esp+24h] [ebp-24h]
-  int v33; // [esp+28h] [ebp-20h] BYREF
-  int v34; // [esp+2Ch] [ebp-1Ch]
-  int v35; // [esp+38h] [ebp-10h] BYREF
-  int v36; // [esp+3Ch] [ebp-Ch]
-  int v37; // [esp+40h] [ebp-8h]
-  int v38; // [esp+44h] [ebp-4h]
-  int v39; // [esp+4Ch] [ebp+4h]
-  int v40; // [esp+50h] [ebp+8h]
-  int v41; // [esp+54h] [ebp+Ch]
 
-  v5 = *this; /*0x7bab93*/
-  v28 = this; /*0x7bab9b*/
-  v6 = (*(int (__stdcall **)(int *))(v5 + 120))(&v33); /*0x7bab9f*/
-  v7 = (int *)ClipRectIntersection(v6, 0, 0); /*0x7babaf*/
-  v35 = *v7; /*0x7babb6*/
-  v36 = v7[1]; /*0x7babbd*/
-  v37 = v7[2]; /*0x7babc4*/
-  v38 = v7[3]; /*0x7babcf*/
-  v8 = v36 + a3[1]; /*0x7babda*/
-  v29 = v35 + *a3; /*0x7babdc*/
-  v30 = v8; /*0x7babe0*/
-  v9 = v35 + *a4; /*0x7babef*/
-  v32 = v36 + a4[1]; /*0x7babf1*/
-  v31 = v9; /*0x7bac02*/
+  int v5 = *this; /*0x7bab93*/
+  XSurface *v28 = this; /*0x7bab9b*/
+  int v33; // [esp+28h] [ebp-20h] BYREF
+  int v6 = (*(int (__stdcall **)(int *))(v5 + 120))(&v33); /*0x7bab9f*/
+  int * v7 = (int *)ClipRectIntersection(v6, 0, 0); /*0x7babaf*/
+  int v35 = *v7; /*0x7babb6*/
+  int v36 = v7[1]; /*0x7babbd*/
+  int v37 = v7[2]; /*0x7babc4*/
+  int v38 = v7[3]; /*0x7babcf*/
+  int v8 = v36 + a3[1]; /*0x7babda*/
+  int v29 = v35 + *a3; /*0x7babdc*/
+  int v30 = v8; /*0x7babe0*/
+  int v9 = v35 + *a4; /*0x7babef*/
+  int v32 = v36 + a4[1]; /*0x7babf1*/
+  int v31 = v9; /*0x7bac02*/
   result = ClipLine(&v35); /*0x7bac06*/
   if ( result ) /*0x7bac0d*/
   {
-    v11 = v29; /*0x7bac16*/
-    v12 = v31; /*0x7bac1d*/
+  int v27; // [esp+8h] [ebp-40h]
+  int v26; // [esp+4h] [ebp-44h] BYREF
+  int v14; // ebp
+  int v13; // esi
+    int v11 = v29; /*0x7bac16*/
+    int v12 = v31; /*0x7bac1d*/
     if ( v29 <= v31 ) /*0x7bac23*/
     {
       v14 = v30; /*0x7bac45*/
@@ -283,8 +246,8 @@ char __thiscall XSurface_WalkLine(_DWORD *this, int a2, _DWORD *a3, _DWORD *a4, 
     }
     if ( v14 == v13 ) /*0x7bac4f*/
     {
-      v15 = v12 - v11; /*0x7bac51*/
-      v16 = 0; /*0x7bac53*/
+      int v15 = v12 - v11; /*0x7bac51*/
+      int v16 = 0; /*0x7bac53*/
       if ( v15 >= 0 ) /*0x7bac58*/
       {
         while ( 1 ) /*0x7bac73*/
@@ -301,10 +264,10 @@ char __thiscall XSurface_WalkLine(_DWORD *this, int a2, _DWORD *a3, _DWORD *a4, 
     }
     else if ( v11 == v12 ) /*0x7bac89*/
     {
-      v17 = abs32(v14 - v13); /*0x7bac94*/
+      int v17 = abs32(v14 - v13); /*0x7bac94*/
       if ( v14 <= v13 ) /*0x7bac98*/
         v13 = v14; /*0x7bac9a*/
-      v18 = 0; /*0x7bac9c*/
+      int v18 = 0; /*0x7bac9c*/
       if ( v17 >= 0 ) /*0x7baca0*/
       {
         while ( 1 ) /*0x7bacb0*/
@@ -320,21 +283,22 @@ char __thiscall XSurface_WalkLine(_DWORD *this, int a2, _DWORD *a3, _DWORD *a4, 
     }
     else
     {
-      v39 = v11; /*0x7baccd*/
-      v19 = v12 - v11; /*0x7bacd1*/
-      v20 = v13 - v14; /*0x7bacd3*/
-      v41 = 1; /*0x7bacd7*/
+  int v34; // [esp+2Ch] [ebp-1Ch]
+      int v39 = v11; /*0x7baccd*/
+      int v19 = v12 - v11; /*0x7bacd1*/
+      int v20 = v13 - v14; /*0x7bacd3*/
+      int v41 = 1; /*0x7bacd7*/
       if ( v20 < 0 ) /*0x7bacdf*/
         v41 = -1; /*0x7bace1*/
-      v21 = abs32(v20); /*0x7bacec*/
-      v40 = 2 * v19; /*0x7bacf3*/
+      int v21 = abs32(v20); /*0x7bacec*/
+      int v40 = 2 * v19; /*0x7bacf3*/
       v26 = 2 * v21; /*0x7bacfa*/
       if ( v19 <= v21 ) /*0x7bacfe*/
       {
-        v24 = v40 - v21; /*0x7bad39*/
+        int v24 = v40 - v21; /*0x7bad39*/
         if ( v21 >= 0 ) /*0x7bad3d*/
         {
-          v25 = v21 + 1; /*0x7bad43*/
+          int v25 = v21 + 1; /*0x7bad43*/
           do /*0x7bad78*/
           {
             v33 = v39; /*0x7bad4e*/
@@ -354,7 +318,7 @@ char __thiscall XSurface_WalkLine(_DWORD *this, int a2, _DWORD *a3, _DWORD *a4, 
       }
       else
       {
-        v22 = 2 * v21 - v19; /*0x7bad00*/
+        int v22 = 2 * v21 - v19; /*0x7bad00*/
         for ( i = v11; i <= v12; ++i ) /*0x7bad06*/
         {
           v33 = i; /*0x7bad0c*/
@@ -380,57 +344,22 @@ char __thiscall XSurface_WalkLine(_DWORD *this, int a2, _DWORD *a3, _DWORD *a4, 
 char XSurface::FillRectEx(XSurface * aP1, int * a2, XSurface * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall XSurface::FillRectEx(void *this, XSurface *aP1, int *a2, XSurface *aP3)
+void XSurface::FillRectEx(XSurface *aP1, int *a2, XSurface *aP3)
 {
   XSurface *v4; // edi
-  int v5; // eax
-  int *v6; // eax
-  int *v7; // eax
-  int v8; // ecx
-  int v9; // edx
   int Width; // ebx
-  unsigned int v11; // ecx
   AbstractClass *v12; // edx
   AbstractClass *v13; // eax
-  int *v14; // eax
-  int v15; // ebx
   XSurface *v16; // eax
-  _DWORD *v17; // eax
-  int v18; // esi
-  int v19; // edx
-  char v20; // dl
-  int v21; // eax
-  unsigned int v22; // ecx
-  _WORD *v24; // edi
   int i; // ecx
   XSurface *v26; // eax
-  int v27; // ebx
-  char v28; // dl
   __int16 v29; // bx
-  int v30; // edx
-  signed int v31; // ecx
   XSurface *v32; // edi
   XSurface *v33; // eax
-  char v34; // dl
   __int16 v35; // bx
-  int v36; // edx
-  signed int v37; // ecx
-  char *v38; // edi
-  _WORD *v39; // eax
-  bool v40; // zf
   XSurface *v41; // [esp-4h] [ebp-7Ch]
   XSurface *v42; // [esp-4h] [ebp-7Ch]
-  int v43[4]; // [esp+Ch] [ebp-6Ch] BYREF
-  _DWORD v44[4]; // [esp+1Ch] [ebp-5Ch] BYREF
-  int v45[4]; // [esp+2Ch] [ebp-4Ch] BYREF
-  int v46[4]; // [esp+3Ch] [ebp-3Ch] BYREF
-  int v47[2]; // [esp+4Ch] [ebp-2Ch] BYREF
-  unsigned int v48; // [esp+54h] [ebp-24h]
   XSurface *v49; // [esp+58h] [ebp-20h]
-  int v50; // [esp+5Ch] [ebp-1Ch] BYREF
-  int v51; // [esp+64h] [ebp-14h] BYREF
-  unsigned int v52; // [esp+68h] [ebp-10h]
-  char *v53; // [esp+6Ch] [ebp-Ch]
   signed int v54; // [esp+70h] [ebp-8h]
   XSurface *v55; // [esp+74h] [ebp-4h]
   XSurface *aP1a; // [esp+80h] [ebp+8h]
@@ -440,35 +369,41 @@ char __thiscall XSurface::FillRectEx(void *this, XSurface *aP1, int *a2, XSurfac
   XSurface *aP3b; // [esp+88h] [ebp+10h]
 
   v4 = (XSurface *)this; /*0x7bb05c*/
-  v5 = a2[2]; /*0x7bb05e*/
+  int v5 = a2[2]; /*0x7bb05e*/
   v55 = (XSurface *)this; /*0x7bb061*/
   if ( v5 <= 0 ) /*0x7bb066*/
     return 0; /*0x7bb066*/
   if ( a2[3] <= 0 ) /*0x7bb071*/
     return 0; /*0x7bb071*/
-  v6 = (int *)(*(int (__thiscall **)(void *, int *))(*(_DWORD *)this + 120))(this, v45); /*0x7bb07f*/
-  v7 = ClipRectIntersection(&v50, (int *)aP1->__pad_0, v6, 0, 0); /*0x7bb08f*/
+  int v45[4]; // [esp+2Ch] [ebp-4Ch] BYREF
+  int * v6 = (int *)(*(int (__thiscall **)(void *, int *))(*(_DWORD *)this + 120))(this, v45); /*0x7bb07f*/
+  int v50; // [esp+5Ch] [ebp-1Ch] BYREF
+  int * v7 = ClipRectIntersection(&v50, (int *)aP1->__pad_0, v6, 0, 0); /*0x7bb08f*/
+  int v46[4]; // [esp+3Ch] [ebp-3Ch] BYREF
   v46[0] = *v7; /*0x7bb096*/
   v46[1] = v7[1]; /*0x7bb09c*/
-  v8 = *a2; /*0x7bb09f*/
+  int v8 = *a2; /*0x7bb09f*/
   v46[2] = v7[2]; /*0x7bb0a4*/
-  v9 = a2[1]; /*0x7bb0a7*/
+  int v9 = a2[1]; /*0x7bb0a7*/
   v46[3] = v7[3]; /*0x7bb0ad*/
   Width = aP1->Width; /*0x7bb0b2*/
-  v51 = v8 + *(_DWORD *)aP1->__pad_0; /*0x7bb0b7*/
-  v11 = v9 + Width; /*0x7bb0bd*/
+  int v51 = v8 + *(_DWORD *)aP1->__pad_0; /*0x7bb0b7*/
+  unsigned int v11 = v9 + Width; /*0x7bb0bd*/
   v12 = (AbstractClass *)a2[2]; /*0x7bb0c0*/
-  v52 = v11; /*0x7bb0c3*/
+  unsigned int v52 = v11; /*0x7bb0c3*/
+  _DWORD v44[4]; // [esp+1Ch] [ebp-5Ch] BYREF
   v13 = Rect::Construct(v44, (IUnknown *)&v51, v12, (AbstractClass *)a2[3]); /*0x7bb0cf*/
   v45[0] = *(_DWORD *)v13->__pad_0; /*0x7bb0d8*/
   v45[1] = *(_DWORD *)&v13->__pad_0[4]; /*0x7bb0e0*/
   v45[2] = *(_DWORD *)&v13->__pad_0[8]; /*0x7bb0e6*/
   v45[3] = *(_DWORD *)&v13->__pad_0[12]; /*0x7bb0f2*/
-  v14 = ClipRectIntersection(v43, v46, v45, 0, 0); /*0x7bb0f9*/
+  int v43[4]; // [esp+Ch] [ebp-6Ch] BYREF
+  int * v14 = ClipRectIntersection(v43, v46, v45, 0, 0); /*0x7bb0f9*/
+  int v47[2]; // [esp+4Ch] [ebp-2Ch] BYREF
   v47[0] = *v14; /*0x7bb100*/
   v47[1] = v14[1]; /*0x7bb106*/
-  v15 = v14[2]; /*0x7bb109*/
-  v48 = v15; /*0x7bb10c*/
+  int v15 = v14[2]; /*0x7bb109*/
+  unsigned int v48 = v15; /*0x7bb10c*/
   v16 = (XSurface *)v14[3]; /*0x7bb10f*/
   v49 = v16; /*0x7bb114*/
   if ( v15 <= 0 ) /*0x7bb117*/
@@ -477,9 +412,9 @@ char __thiscall XSurface::FillRectEx(void *this, XSurface *aP1, int *a2, XSurfac
     return 0; /*0x7bb11f*/
   aP1a = v16; /*0x7bb125*/
   a2a = (int *)(*(int (__thiscall **)(XSurface *))(*(_DWORD *)v4->__pad_0 + 116))(v4); /*0x7bb132*/
-  v17 = CellStruct::Copy(v47, (IUnknown *)&v51); /*0x7bb139*/
-  v18 = (*(int (__thiscall **)(XSurface *, _DWORD, _DWORD))(*(_DWORD *)v4->__pad_0 + 92))(v4, *v17, v17[1]); /*0x7bb154*/
-  v53 = (char *)v18; /*0x7bb158*/
+  _DWORD * v17 = CellStruct::Copy(v47, (IUnknown *)&v51); /*0x7bb139*/
+  int v18 = (*(int (__thiscall **)(XSurface *, _DWORD, _DWORD))(*(_DWORD *)v4->__pad_0 + 92))(v4, *v17, v17[1]); /*0x7bb154*/
+  char * v53 = (char *)v18; /*0x7bb158*/
   if ( !v18 ) /*0x7bb15b*/
     return 0; /*0x7bb333*/
   if ( (*(int (__thiscall **)(XSurface *))(*(_DWORD *)v4->__pad_0 + 112))(v4) == 1 ) /*0x7bb16b*/
@@ -490,11 +425,11 @@ char __thiscall XSurface::FillRectEx(void *this, XSurface *aP1, int *a2, XSurfac
       do /*0x7bb1b2*/
       {
         LOBYTE(v15) = (_BYTE)aP3; /*0x7bb185*/
-        v20 = v48; /*0x7bb187*/
+        char v20 = v48; /*0x7bb187*/
         BYTE1(v15) = (_BYTE)aP3; /*0x7bb189*/
-        v21 = v15 << 16; /*0x7bb18f*/
+        int v21 = v15 << 16; /*0x7bb18f*/
         LOWORD(v21) = v15; /*0x7bb192*/
-        v22 = v48 >> 2; /*0x7bb195*/
+        unsigned int v22 = v48 >> 2; /*0x7bb195*/
         memset32((void *)v18, v21, v48 >> 2); /*0x7bb198*/
         memset((void *)(v18 + 4 * v22), (char)aP3, v20 & 3); /*0x7bb19f*/
         v18 += (int)a2a; /*0x7bb1aa*/
@@ -512,18 +447,18 @@ LABEL_9:
     {
       if ( v15 > 1 ) /*0x7bb22f*/
       {
-        v27 = v15 - 1; /*0x7bb262*/
-        v28 = v27; /*0x7bb263*/
+        int v27 = v15 - 1; /*0x7bb262*/
+        char v28 = v27; /*0x7bb263*/
         v54 = v27 >> 1; /*0x7bb267*/
         v29 = (__int16)aP3; /*0x7bb26a*/
-        v30 = v28 & 1; /*0x7bb26f*/
+        int v30 = v28 & 1; /*0x7bb26f*/
         v53 = (char *)((unsigned int)aP3 | ((_DWORD)aP3 << 16)); /*0x7bb277*/
         aP3a = aP1a; /*0x7bb285*/
         do /*0x7bb2b8*/
         {
           *(_WORD *)v18 = v29; /*0x7bb28b*/
           v41 = v4; /*0x7bb291*/
-          v31 = v54; /*0x7bb292*/
+          signed int v31 = v54; /*0x7bb292*/
           v32 = (XSurface *)(v18 + 2); /*0x7bb295*/
           if ( v54 > 0 ) /*0x7bb29b*/
           {
@@ -553,11 +488,12 @@ LABEL_9:
     {
       do /*0x7bb218*/
       {
+  int v19; // edx
         LOWORD(v19) = (_WORD)aP3; /*0x7bb1f3*/
         v19 <<= 16; /*0x7bb1f8*/
         LOWORD(v19) = (_WORD)aP3; /*0x7bb1fb*/
         memset32((void *)v18, v19, (unsigned int)v15 >> 1); /*0x7bb202*/
-        v24 = (_WORD *)(v18 + 4 * ((unsigned int)v15 >> 1)); /*0x7bb202*/
+        _WORD * v24 = (_WORD *)(v18 + 4 * ((unsigned int)v15 >> 1)); /*0x7bb202*/
         for ( i = v15 & 1; i; --i ) /*0x7bb204*/
           *v24++ = (_WORD)aP3; /*0x7bb206*/
         v4 = v55; /*0x7bb209*/
@@ -569,23 +505,24 @@ LABEL_9:
   }
   else
   {
-    v34 = v15; /*0x7bb2cf*/
+  bool v40; // zf
+    char v34 = v15; /*0x7bb2cf*/
     v54 = v15 >> 1; /*0x7bb2d3*/
     v35 = (__int16)aP3; /*0x7bb2d6*/
-    v36 = v34 & 1; /*0x7bb2db*/
+    int v36 = v34 & 1; /*0x7bb2db*/
     v52 = (unsigned int)aP3 | ((_DWORD)aP3 << 16); /*0x7bb2e3*/
     aP3b = aP1a; /*0x7bb2ed*/
     do /*0x7bb31a*/
     {
       v42 = v4; /*0x7bb2f0*/
-      v37 = v54; /*0x7bb2f1*/
-      v38 = v53; /*0x7bb2f4*/
+      signed int v37 = v54; /*0x7bb2f1*/
+      char * v38 = v53; /*0x7bb2f4*/
       if ( v54 > 0 ) /*0x7bb2fa*/
       {
         memset32(v53, v52, v54); /*0x7bb2ff*/
         v38 += 4 * v37; /*0x7bb2ff*/
       }
-      v39 = v38; /*0x7bb301*/
+      _WORD * v39 = v38; /*0x7bb301*/
       v4 = v42; /*0x7bb303*/
       if ( v36 ) /*0x7bb306*/
         *v39 = v35; /*0x7bb308*/
@@ -606,7 +543,7 @@ LABEL_9:
 int XSurface::DrawEllipseOutline(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall XSurface_DrawEllipseOutline(
+void XSurface_DrawEllipseOutline(
         int *this,
         int a2,
         int a3,
@@ -618,21 +555,6 @@ int __thiscall XSurface_DrawEllipseOutline(
         int a9,
         int a10)
 {
-  int v12; // eax
-  int v13; // eax
-  int v14; // eax
-  int v15; // eax
-  int v17; // ecx
-  int v18; // ebp
-  int v19; // edi
-  int v20; // eax
-  int v21; // ecx
-  int v22; // ecx
-  int v23; // edx
-  int v24; // ecx
-  int v25; // eax
-  int v26; // eax
-  int v27; // ecx
   int v28; // ebp
   int v29; // eax
   int v30; // eax
@@ -669,44 +591,44 @@ int __thiscall XSurface_DrawEllipseOutline(
   int v63; // [esp+70h] [ebp+10h]
   _WORD *v64; // [esp+70h] [ebp+10h]
   _WORD *v65; // [esp+70h] [ebp+10h]
-
   v54 = (*(int (__fastcall **)(int *))(*this + 116))(this) >> 1; /*0x7bb374*/
-  v12 = a3 + a5; /*0x7bb378*/
+  int v12 = a3 + a5; /*0x7bb378*/
   v63 = a3 + a5; /*0x7bb37d*/
   if ( a2 >= a6 && a2 < a6 + a8 && v12 >= a7 && v12 < a9 + a7 ) /*0x7bb39d*/
   {
     v58 = v12; /*0x7bb3a3*/
-    v13 = *this; /*0x7bb3a7*/
+    int v13 = *this; /*0x7bb3a7*/
     v57 = a2; /*0x7bb3b1*/
     (*(void (__thiscall **)(int *, int *, int))(v13 + 36))(this, &v57, a10); /*0x7bb3b5*/
   }
-  v14 = a3 - a5; /*0x7bb3bc*/
+  int v14 = a3 - a5; /*0x7bb3bc*/
   v51 = a3 - a5; /*0x7bb3c0*/
   if ( a2 >= a6 && a2 < a6 + a8 && v14 >= a7 && v14 < a9 + a7 ) /*0x7bb3e0*/
   {
     v58 = a3 - a5; /*0x7bb3e6*/
-    v15 = *this; /*0x7bb3ea*/
+    int v15 = *this; /*0x7bb3ea*/
     v57 = a2; /*0x7bb3f4*/
     (*(void (__thiscall **)(int *, int *, int))(v15 + 36))(this, &v57, a10); /*0x7bb3f8*/
   }
   v53 = a5 * a5; /*0x7bb409*/
-  v17 = a5 * a4 * a4; /*0x7bb40f*/
+  int v17 = a5 * a4 * a4; /*0x7bb40f*/
   v56 = a4 * a4; /*0x7bb412*/
   v58 = a5; /*0x7bb416*/
   v48 = 0; /*0x7bb41d*/
   v46 = 2 * v17; /*0x7bb425*/
-  v18 = a4 * a4 / 4 - v17; /*0x7bb438*/
-  v19 = (*(int (__thiscall **)(int *, _DWORD, _DWORD))(*this + 92))(this, 0, 0); /*0x7bb449*/
+  int v18 = a4 * a4 / 4 - v17; /*0x7bb438*/
+  int v19 = (*(int (__thiscall **)(int *, _DWORD, _DWORD))(*this + 92))(this, 0, 0); /*0x7bb449*/
   v50 = a2; /*0x7bb44f*/
-  v20 = v54 * v63; /*0x7bb453*/
+  int v20 = v54 * v63; /*0x7bb453*/
   v64 = (_WORD *)(v19 + 2 * (v54 * v63 + a2)); /*0x7bb45c*/
-  v21 = v54 * v51; /*0x7bb464*/
+  int v21 = v54 * v51; /*0x7bb464*/
   v52 = a2; /*0x7bb467*/
   v61 = (_WORD *)(v19 + 2 * (a2 + v21)); /*0x7bb478*/
   v42 = v61; /*0x7bb47f*/
   v44 = (_WORD *)(v19 + 2 * (a2 + v20)); /*0x7bb483*/
   while ( 1 ) /*0x7bb491*/
   {
+  int v22; // ecx
     v18 += v53 + v48; /*0x7bb491*/
     if ( v18 < 0 ) /*0x7bb493*/
     {
@@ -732,29 +654,29 @@ int __thiscall XSurface_DrawEllipseOutline(
     --v44; /*0x7bb531*/
     if ( v48 >= v22 ) /*0x7bb535*/
       break; /*0x7bb535*/
-    v23 = a6; /*0x7bb543*/
+    int v23 = a6; /*0x7bb543*/
     v60 = v58 + a3; /*0x7bb54d*/
     if ( v52 >= a6 && v52 < a6 + a8 && v60 >= a7 && v60 < a9 + a7 ) /*0x7bb577*/
       *v64 = a10; /*0x7bb582*/
-    v24 = a3 - v58; /*0x7bb58d*/
+    int v24 = a3 - v58; /*0x7bb58d*/
     if ( v50 >= a6 ) /*0x7bb595*/
     {
       if ( v50 < a6 + a8 && v24 >= a7 && v24 < a9 + a7 ) /*0x7bb5b5*/
         *v61 = a10; /*0x7bb5c0*/
       v23 = a6; /*0x7bb5c3*/
     }
-    v25 = a3 - v58; /*0x7bb5cf*/
+    int v25 = a3 - v58; /*0x7bb5cf*/
     if ( v52 >= v23 ) /*0x7bb5d7*/
     {
       if ( v52 < v23 + a8 && v25 >= a7 && v25 < a9 + a7 ) /*0x7bb5f7*/
         *v42 = a10; /*0x7bb602*/
       v23 = a6; /*0x7bb605*/
     }
-    v26 = a3 + v58; /*0x7bb611*/
+    int v26 = a3 + v58; /*0x7bb611*/
     if ( v50 >= v23 && v50 < a6 + a8 && v26 >= a7 && v26 < a9 + a7 ) /*0x7bb64b*/
       *v44 = a10; /*0x7bb65a*/
   }
-  v27 = a6; /*0x7bb662*/
+  int v27 = a6; /*0x7bb662*/
   if ( a2 + a4 < a6 ) /*0x7bb66f*/
   {
     v28 = a3; /*0x7bb7bd*/
@@ -849,20 +771,17 @@ int __thiscall XSurface_DrawEllipseOutline(
 char XSurface::BlitPart(void ** a2, XSurface * a3, void ** arg8, void ** a4, int a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall XSurface::BlitPart(XSurface *this, void **a2, XSurface *a3, void **arg8, void **a4, int a6)
+void XSurface::BlitPart(void **a2, XSurface *a3, void **arg8, void **a4, int a6)
 {
   XSurface *v6; // edi
-  int v8; // ebx
-  int v9; // eax
-  int v10; // edx
   XSurface aP2; // [esp+Ch] [ebp-40h] BYREF
   XSurface aP1; // [esp+1Ch] [ebp-30h] BYREF
-  _BYTE v14[16]; // [esp+2Ch] [ebp-20h] BYREF
-  _BYTE v15[16]; // [esp+3Ch] [ebp-10h] BYREF
 
   v6 = a3; /*0x7bbb96*/
-  v8 = (*(int (__thiscall **)(XSurface *, _BYTE *))(*(_DWORD *)a3->__pad_0 + 120))(a3, v14); /*0x7bbbaa*/
-  v9 = (*(int (__thiscall **)(XSurface *, _BYTE *))(*(_DWORD *)this->__pad_0 + 120))(this, v15); /*0x7bbbb3*/
+  _BYTE v14[16]; // [esp+2Ch] [ebp-20h] BYREF
+  int v8 = (*(int (__thiscall **)(XSurface *, _BYTE *))(*(_DWORD *)a3->__pad_0 + 120))(a3, v14); /*0x7bbbaa*/
+  _BYTE v15[16]; // [esp+3Ch] [ebp-10h] BYREF
+  int v9 = (*(int (__thiscall **)(XSurface *, _BYTE *))(*(_DWORD *)this->__pad_0 + 120))(this, v15); /*0x7bbbb3*/
   *(_DWORD *)aP1[0] = *a2; /*0x7bbbbd*/
   aP1.Width = (int)a2[1]; /*0x7bbbc4*/
   aP1.Height = (int)a2[2]; /*0x7bbbcb*/
@@ -873,7 +792,7 @@ char __thiscall XSurface::BlitPart(XSurface *this, void **a2, XSurface *a3, void
   aP2.LockCount = (int)arg8[3]; /*0x7bbbf6*/
   if ( !IntersectSurfaceRects((IUnknown *)&aP1, v9, &aP2, v8) ) /*0x7bbc00*/
     return 0; /*0x7bbcda*/
-  v10 = *(_DWORD *)this->__pad_0; /*0x7bbc11*/
+  int v10 = *(_DWORD *)this->__pad_0; /*0x7bbc11*/
   if ( (_BYTE)a4 ) /*0x7bbc17*/
   {
     if ( (*(int (__thiscall **)(XSurface *))(v10 + 112))(this) == 1 ) /*0x7bbc1f*/
@@ -904,15 +823,7 @@ char __thiscall XSurface::BlitPart(XSurface *this, void **a2, XSurface *a3, void
 char XSurface::Blit(int a2, void ** a3, XSurface * arg8, int a5, unsigned int * a6, void ** a4, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall XSurface::Blit(
-        XSurface *this,
-        int a2,
-        void **a3,
-        XSurface *arg8,
-        int a5,
-        _DWORD *a6,
-        void **a4,
-        int a8)
+void XSurface::Blit(int a2, void **a3, XSurface *arg8, int a5, _DWORD *a6, void **a4, int a8)
 {
   XSurface aP2; // [esp+4h] [ebp-20h] BYREF
   XSurface aP1; // [esp+14h] [ebp-10h] BYREF

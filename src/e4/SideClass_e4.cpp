@@ -9,7 +9,7 @@ namespace gamemd {
 char SideClass::LoadAllFromINI(CCINIClass * aP0)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall SideClass::LoadAllFromINI(CCINIClass *aP0)
+void SideClass::LoadAllFromINI(CCINIClass *aP0)
 {
   int i; // edi
   int j; // edi
@@ -29,8 +29,6 @@ char __stdcall SideClass::LoadAllFromINI(CCINIClass *aP0)
   int i6; // edi
   int i7; // edi
   int i8; // edi
-  int v19; // ebx
-  int *v20; // edi
 
   for ( i = 0; i < g_SuperWeaponTypeArray; ++i ) /*0x679a20*/
     (*(void (__thiscall **)(_DWORD, CCINIClass *))(**((_DWORD **)g_SuperWeaponTypeCount + i) + 100))( /*0x679a2d*/
@@ -110,8 +108,8 @@ char __stdcall SideClass::LoadAllFromINI(CCINIClass *aP0)
                                                  + 100))(
       *(_DWORD *)(*(_DWORD *)&HouseClass_Player[44512] + 4 * i8),
       aP0);
-  v19 = 0; /*0x679c92*/
-  v20 = (int *)&HouseClass_Player[42588]; /*0x679c94*/
+  int v19 = 0; /*0x679c92*/
+  int * v20 = (int *)&HouseClass_Player[42588]; /*0x679c94*/
   do /*0x679cad*/
   {
     *v20 = v19; /*0x679c9c*/
@@ -132,7 +130,6 @@ unsigned int * SideClass::Construct(CCINIClass * aP1)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall SideClass::Construct(_DWORD *this, CCINIClass *aP1)
 {
-  int v3; // eax
 
   AbstractTypeClass::Constructor((int)this, (AbstractClass *)aP1); /*0x6a4559*/
   this->houseTypesCount = 0; /*0x6a4563*/
@@ -155,7 +152,7 @@ _DWORD *__thiscall SideClass::Construct(_DWORD *this, CCINIClass *aP1)
          *(_DWORD *)&stru_89E138[90096] + *(_DWORD *)&stru_89E138[90108],
          0) )
   {
-    v3 = (*(_DWORD *)stru_89E138[90104])++; /*0x6a45f7*/
+    int v3 = (*(_DWORD *)stru_89E138[90104])++; /*0x6a45f7*/
     *(_DWORD *)(*(_DWORD *)&stru_89E138[90092] + 4 * v3) = this; /*0x6a4606*/
   }
   return this; /*0x6a460b*/
@@ -168,7 +165,7 @@ namespace gamemd {
 int SideClass::GetCountry(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall SideClass::_vt13(int this, int *a2)
+void SideClass::_vt13(int this, int *a2)
 {
   AbstractTypeClass::ProcessPower((char *)this, a2); /*0x6a4719*/
   return Power::TimerProcess(this->q0A8); /*0x6a472c*/
@@ -181,17 +178,15 @@ namespace gamemd {
 int SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall SideClass::SaveLoad_Prefix(_DWORD *a0, AbstractTypeClass *aP1)
+void SideClass::SaveLoad_Prefix(_DWORD *a0, AbstractTypeClass *aP1)
 {
   AbstractTypeClass *v2; // esi
   AbstractClass *v3; // edi
   int result; // eax
   AbstractTypeClass *v5; // esi
   int i; // ebp
-  int v7; // eax
   int abstractFlags; // ecx
   int uniqueId; // eax
-  int v10; // edx
 
   v2 = (AbstractTypeClass *)a0; /*0x6a4782*/
   v3 = (AbstractClass *)aP1; /*0x6a4787*/
@@ -232,7 +227,7 @@ int __stdcall SideClass::SaveLoad_Prefix(_DWORD *a0, AbstractTypeClass *aP1)
     for ( i = 0; i < (int)aP1; ++i ) /*0x6a4833*/
     {
       (*(void (__stdcall **)(AbstractClass *, _DWORD **, int, _DWORD))(*(_DWORD *)v3->__pad_0 + 12))(v3, &a0, 4, 0); /*0x6a4840*/
-      v7 = *(_DWORD *)&v5->__pad_0[8]; /*0x6a4843*/
+      int v7 = *(_DWORD *)&v5->__pad_0[8]; /*0x6a4843*/
       if ( v5->uniqueId >= v7 ) /*0x6a484b*/
       {
         if ( !v5->__pad_0[13] && v7 ) /*0x6a4854*/
@@ -248,7 +243,7 @@ int __stdcall SideClass::SaveLoad_Prefix(_DWORD *a0, AbstractTypeClass *aP1)
         }
       }
       uniqueId = v5->uniqueId; /*0x6a486c*/
-      v10 = *(_DWORD *)&v5->__pad_0[4]; /*0x6a486f*/
+      int v10 = *(_DWORD *)&v5->__pad_0[4]; /*0x6a486f*/
       v5->uniqueId = uniqueId + 1; /*0x6a4875*/
       *(_DWORD *)(v10 + 4 * uniqueId) = a0; /*0x6a487c*/
     }
@@ -266,8 +261,6 @@ SideClass * SideClass::Init(char a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 SideClass *__thiscall SideClass::Init(void **this, char a2)
 {
-  int v3; // eax
-  void *v4; // eax
   void **v6; // [esp+4h] [ebp-4h] BYREF
 
   *this = &SideClass::`vftable'; /*0x6a4936*/
@@ -276,7 +269,7 @@ SideClass *__thiscall SideClass::Init(void **this, char a2)
   this->vtable4 = &vt_SideClass; /*0x6a494a*/
   AbstractClass::AnnounceExpiredPointer(this, 1); /*0x6a4951*/
   v6 = this; /*0x6a4966*/
-  v3 = (*(int (__thiscall **)(int *, void ***))(DataGlobal_8B4120 + 16))(&DataGlobal_8B4120, &v6); /*0x6a496a*/
+  int v3 = (*(int (__thiscall **)(int *, void ***))(DataGlobal_8B4120 + 16))(&DataGlobal_8B4120, &v6); /*0x6a496a*/
   if ( v3 != -1 && v3 < g_ObjectTypeList && v3 < --g_ObjectTypeList ) /*0x6a4985*/
   {
     do /*0x6a499d*/
@@ -286,7 +279,7 @@ SideClass *__thiscall SideClass::Init(void **this, char a2)
     }
     while ( v3 < g_ObjectTypeList ); /*0x6a499d*/
   }
-  v4 = this->houseTypesCount; /*0x6a499f*/
+  void * v4 = this->houseTypesCount; /*0x6a499f*/
   this->houseTypes = &vt_VectorClass_int; /*0x6a49a5*/
   if ( v4 && *((_BYTE *)this + 165) ) /*0x6a49b3*/
   {

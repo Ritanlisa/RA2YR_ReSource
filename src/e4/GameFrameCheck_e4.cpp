@@ -15,14 +15,9 @@ int sub_6863E0()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int sub_6863E0()
 {
-  _DWORD *v0; // esi
   DWORD Ticks; // eax
-  int v2; // ecx
   DWORD v3; // eax
-  int v4; // esi
-  int v5; // eax
   DWORD v7; // [esp+0h] [ebp-18h]
-
   MouseClass::LoadCursors(); /*0x6863e3*/
   if ( g_CreditsScreenBounds != xRight && g_CreditsScreenConfig != yBottom ) /*0x686404*/
   {
@@ -33,11 +28,11 @@ int sub_6863E0()
   DataGlobal_A8E378 = 0; /*0x686433*/
   if ( g_TacticalRender ) /*0x68643a*/
     Tooltip::Enable((void *)g_TacticalRender, 0); /*0x68643e*/
-  v0 = (char *)g_ScenarioClass_Instance + 1556; /*0x686450*/
+  _DWORD * v0 = (char *)g_ScenarioClass_Instance + 1556; /*0x686450*/
   if ( *((_DWORD *)g_ScenarioClass_Instance + 389) != -1 ) /*0x686459*/
   {
     Ticks = Timer::GetTicks(); /*0x68645e*/
-    v2 = v0[2]; /*0x686465*/
+    int v2 = v0[2]; /*0x686465*/
     v3 = Ticks - *v0; /*0x686468*/
     *v0 = -1; /*0x68646a*/
     v0[2] = v3 + v2; /*0x686472*/
@@ -56,10 +51,10 @@ int sub_6863E0()
   GameResult::CalcScore((int)&DataGlobal_8A38E0); /*0x686506*/
   while ( 1 ) /*0x68650f*/
   {
-    v4 = 60; /*0x68650f*/
+    int v4 = 60; /*0x68650f*/
     if ( v7 != -1 ) /*0x686516*/
     {
-      v5 = Timer::GetTicks() - v7; /*0x686521*/
+      int v5 = Timer::GetTicks() - v7; /*0x686521*/
       if ( v5 >= 60 ) /*0x686527*/
         break; /*0x686527*/
       v4 = 60 - v5; /*0x686529*/
@@ -81,24 +76,19 @@ namespace gamemd {
 char sub_686570()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char sub_686570()
+void sub_686570()
 {
-  _DWORD *v0; // esi
   DWORD Ticks; // eax
-  int v2; // ecx
   DWORD v3; // eax
-  int v4; // esi
-  int v5; // edi
-  int v6; // esi
   char result; // al
 
-  v0 = (char *)g_ScenarioClass_Instance + 1556; /*0x686579*/
+  _DWORD * v0 = (char *)g_ScenarioClass_Instance + 1556; /*0x686579*/
   g_BounceClassInit = 0; /*0x68657f*/
   DataGlobal_A8E378 = 0; /*0x686585*/
   if ( *((_DWORD *)g_ScenarioClass_Instance + 389) != -1 ) /*0x68658e*/
   {
     Ticks = Timer::GetTicks(); /*0x686593*/
-    v2 = v0[2]; /*0x68659a*/
+    int v2 = v0[2]; /*0x68659a*/
     v3 = Ticks - *v0; /*0x68659d*/
     *v0 = -1; /*0x68659f*/
     v0[2] = v3 + v2; /*0x6865a7*/
@@ -113,13 +103,13 @@ char sub_686570()
   Audio::GetFlag((unsigned int *)g_MixerState); /*0x686605*/
   VoxClass::FindAndPlay(DataGlobal_83DB34, -1); /*0x686616*/
   Audio::WaitForCallback(g_MixerState); /*0x686621*/
-  v4 = g_PerformanceTickOffset; /*0x68662b*/
+  int v4 = g_PerformanceTickOffset; /*0x68662b*/
   if ( g_LastPerformanceTick != -1 ) /*0x686634*/
     v4 += Timer::GetTicks() - g_LastPerformanceTick; /*0x686646*/
-  v5 = v4 + 300; /*0x686649*/
+  int v5 = v4 + 300; /*0x686649*/
   while ( (unsigned __int8)Audio::IsPlaying() ) /*0x68664f*/
   {
-    v6 = g_PerformanceTickOffset; /*0x68665d*/
+    int v6 = g_PerformanceTickOffset; /*0x68665d*/
     if ( g_LastPerformanceTick != -1 ) /*0x686666*/
       v6 += Timer::GetTicks() - g_LastPerformanceTick; /*0x686678*/
     if ( v5 <= v6 ) /*0x68667c*/

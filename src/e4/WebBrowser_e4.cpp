@@ -11,12 +11,10 @@ namespace gamemd {
 char WebBrowser::LoadURLFromRegistry(const char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall WebBrowser::LoadURLFromRegistry(int this, const char *a2)
+void WebBrowser::LoadURLFromRegistry(int this, const char *a2)
 {
   LSTATUS v3; // esi
   LSTATUS v4; // esi
-  char *v5; // edx
-  int v6; // eax
   HKEY phkResult; // [esp+10h] [ebp-558h] BYREF
   DWORD cbData; // [esp+14h] [ebp-554h] BYREF
   DWORD Type; // [esp+18h] [ebp-550h] BYREF
@@ -46,18 +44,18 @@ char __thiscall WebBrowser::LoadURLFromRegistry(int this, const char *a2)
   RegCloseKey(phkResult); /*0x77375b*/
   if ( v4 ) /*0x773763*/
     return 0; /*0x773763*/
-  v5 = strrchr((const char *)v12, 92); /*0x773775*/
+  char * v5 = strrchr((const char *)v12, 92); /*0x773775*/
   if ( !v5 || strlen((const char *)v12) > v5 - (char *)v12 + 1 ) /*0x773795*/
     strcat((char *)v12, asc_815E74); /*0x7737bc*/
   mbstowcs(Destination, (const char *)v12, 0x104u); /*0x7737d7*/
   wcscat(Destination, stru_84962C); /*0x7737e9*/
-  if ( (*(int (__stdcall **)(_DWORD, wchar_t *, _DWORD, _DWORD))(**(_DWORD **)(this + 8) + 64))( /*0x773808*/
+  if ( (*(int (__stdcall **)(_DWORD, wchar_t *, _DWORD, _DWORD))(*this->q008 + 64))( /*0x773808*/
          this->WebBrowser_field_0x8,
          Destination,
          0,
          0) < 0 )
     return 0; /*0x773849*/
-  v6 = this->WebBrowser_field_0x8; /*0x77380a*/
+  int v6 = this->WebBrowser_field_0x8; /*0x77380a*/
   if ( v6 ) /*0x77380f*/
   {
     (*(void (__stdcall **)(_DWORD))(*(_DWORD *)v6 + 28))(this->WebBrowser_field_0x8); /*0x773814*/
@@ -75,23 +73,13 @@ HWND WebBrowser::ShowDialog()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 HWND __thiscall WebBrowser_ShowDialog(const char *this)
 {
-  const char *v1; // ebp
   HWND result; // eax
   HWND v3; // edi
-  int v4; // edx
-  _DWORD *v5; // eax
-  int v6; // esi
-  _DWORD *v7; // ebp
   LONG dwNewLong; // [esp+1Ch] [ebp-28h] BYREF
-  const char *v9; // [esp+20h] [ebp-24h]
   struct tagRECT Rect; // [esp+24h] [ebp-20h] BYREF
-  int v11; // [esp+34h] [ebp-10h] BYREF
-  int v12; // [esp+38h] [ebp-Ch]
-  int v13; // [esp+3Ch] [ebp-8h]
-  int v14; // [esp+40h] [ebp-4h]
 
-  v1 = this; /*0x773e94*/
-  v9 = this; /*0x773e99*/
+  const char * v1 = this; /*0x773e94*/
+  const char * v9 = this; /*0x773e99*/
   if ( !this || !strlen(this) ) /*0x773eaa*/
     return (HWND)Debug::Log(aDowebpagedialo); /*0x774060*/
   Debug::Log("Creating WebBrowser Dialog for %s.\n", v1); /*0x773ebb*/
@@ -101,19 +89,20 @@ HWND __thiscall WebBrowser_ShowDialog(const char *this)
   {
     dwNewLong = 0; /*0x773ee7*/
     SetWindowLongA(result, 8, (LONG)&dwNewLong); /*0x773eef*/
+  int v4; // edx
     LOBYTE(v4) = 1; /*0x773ef5*/
     SetDialogActiveFlag(v3, v4); /*0x773ef9*/
     Dialog::Show(v3); /*0x773f00*/
     GetClientRect(v3, &Rect); /*0x773f0b*/
-    v11 = Rect.left + (Rect.right - Rect.left - 800) / 2; /*0x773f30*/
-    v13 = v11 + 800; /*0x773f39*/
-    v12 = Rect.top + (Rect.bottom - Rect.top - 600) / 2; /*0x773f4f*/
-    v14 = v12 + 600; /*0x773f58*/
-    v5 = __2_YAPAXI_Z(0x414u); /*0x773f5c*/
-    v6 = (int)v5; /*0x773f61*/
+    int v11 = Rect.left + (Rect.right - Rect.left - 800) / 2; /*0x773f30*/
+    int v13 = v11 + 800; /*0x773f39*/
+    int v12 = Rect.top + (Rect.bottom - Rect.top - 600) / 2; /*0x773f4f*/
+    int v14 = v12 + 600; /*0x773f58*/
+    _DWORD * v5 = __2_YAPAXI_Z(0x414u); /*0x773f5c*/
+    int v6 = (int)v5; /*0x773f61*/
     if ( v5 ) /*0x773f68*/
     {
-      v7 = v5 + 2; /*0x773f6e*/
+      _DWORD * v7 = v5 + 2; /*0x773f6e*/
       v5[1] = 1; /*0x773f71*/
       v5[2] = 0; /*0x773f7d*/
       *((_BYTE *)v5 + 1036) = 0; /*0x773f84*/
@@ -158,10 +147,8 @@ namespace gamemd {
 int WebBrowser::GoForward()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall WebBrowser::GoForward(WebBrowser *this)
+void WebBrowser::GoForward()
 {
-  void *v2; // eax
-  char v4; // [esp+10h] [ebp+4h]
 
   *(_DWORD *)this->__pad_0 = &vt_WebBrowser; /*0x7740a8*/
   Debug::Log(); /*0x7740ae*/
@@ -171,9 +158,10 @@ int __thiscall WebBrowser::GoForward(WebBrowser *this)
     (*(void (__stdcall **)(void *, WebBrowser *))(*(_DWORD *)this->field_8 + 24))(this->field_8, this); /*0x7740d1*/
     (*(void (__stdcall **)(void *))(*(_DWORD *)this->field_8 + 16))(this->field_8); /*0x7740da*/
   }
-  v2 = this->field_8; /*0x7740dd*/
+  void * v2 = this->field_8; /*0x7740dd*/
   if ( v2 ) /*0x7740e2*/
     (*(void (__stdcall **)(void *))(*(_DWORD *)v2 + 8))(this->field_8); /*0x7740e7*/
+  char v4; // [esp+10h] [ebp+4h]
   if ( (v4 & 1) != 0 ) /*0x7740ef*/
     __3_YAXPAX_Z(this); /*0x7740f2*/
   return (int)this->__pad_0; /*0x7740fc*/

@@ -8,15 +8,7 @@ namespace gamemd {
 int Particle::Init(AbstractClass * aP1, TechnoClass * aP2, IUnknown * aP3, TechnoClass * aP4, InfantryClass * aP5, int a7, AbstractClass * aP7)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Particle::Init(
-        int this,
-        AbstractClass *aP1,
-        TechnoClass *aP2,
-        IUnknown *aP3,
-        TechnoClass *aP4,
-        InfantryClass *aP5,
-        int a7,
-        AbstractClass *aP7)
+void Particle::Init(int this, AbstractClass *aP1, TechnoClass *aP2, IUnknown *aP3, TechnoClass *aP4, InfantryClass *aP5, int a7, AbstractClass *aP7)
 {
   AbstractClass *result; // eax
 

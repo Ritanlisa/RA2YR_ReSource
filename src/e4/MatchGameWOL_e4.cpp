@@ -13,23 +13,12 @@ void sub_7A19E0()
 {
   wchar_t *StringCSF; // eax
   int i; // esi
-  char *v2; // eax
-  signed int v3; // eax
-  char *v4; // ebx
-  int v5; // esi
-  int v6; // edi
-  char *v7; // eax
   wchar_t *v8; // eax
   wchar_t *v9; // eax
-  int v10; // [esp+0h] [ebp-80h]
-  void *v11; // [esp+0h] [ebp-80h]
-  void *v12; // [esp+Ch] [ebp-74h] BYREF
-  int v13; // [esp+10h] [ebp-70h] BYREF
-  _DWORD v14[27]; // [esp+14h] [ebp-6Ch] BYREF
-
-  v10 = dword_B76AC4; /*0x7a19f1*/
+  int v10 = dword_B76AC4; /*0x7a19f1*/
   StringCSF = GetStringCSF(aWolMatchfoundw, 0, g_Str_File_wonline_cpp, 28774); /*0x7a19fc*/
   Dialog::ShowMessage(12648447, (size_t)StringCSF, v10); /*0x7a1a07*/
+  void *v12; // [esp+Ch] [ebp-74h] BYREF
   String::ToLowerCopy((const char **)&dword_B76AC4, (char **)&v12); /*0x7a1a19*/
   if ( dword_B77D84 ) /*0x7a1a25*/
   {
@@ -39,11 +28,12 @@ void sub_7A19E0()
         break; /*0x7a1a5b*/
     }
   }
-  v2 = String::GetOrEmpty((char **)&dword_B76AC4); /*0x7a1a6a*/
+  char * v2 = String::GetOrEmpty((char **)&dword_B76AC4); /*0x7a1a6a*/
+  int v13; // [esp+10h] [ebp-70h] BYREF
   String::Assign((char **)&v13, v2); /*0x7a1a74*/
-  v3 = g_WOL_State; /*0x7a1a79*/
-  v4 = 0; /*0x7a1a7e*/
-  v5 = 0; /*0x7a1a80*/
+  signed int v3 = g_WOL_State; /*0x7a1a79*/
+  char * v4 = 0; /*0x7a1a7e*/
+  int v5 = 0; /*0x7a1a80*/
   if ( (int)g_WOL_State <= 0 ) /*0x7a1a84*/
   {
 LABEL_12:
@@ -51,12 +41,12 @@ LABEL_12:
   }
   else
   {
-    v6 = 0; /*0x7a1a86*/
+    int v6 = 0; /*0x7a1a86*/
     while ( 1 ) /*0x7a1a88*/
     {
       if ( v6 >= 0 && v5 < v3 ) /*0x7a1a8e*/
         v4 = (char *)g_WOL_ConnectionFlags + v6; /*0x7a1a96*/
-      v7 = String::GetOrEmpty_Alt((char **)&v13); /*0x7a1aa1*/
+      char * v7 = String::GetOrEmpty_Alt((char **)&v13); /*0x7a1aa1*/
       if ( !_strcmpi(v7, v4 + 36) ) /*0x7a1aa7*/
         break; /*0x7a1aa7*/
       v3 = g_WOL_State; /*0x7a1ab3*/
@@ -73,6 +63,7 @@ LABEL_12:
   }
   else
   {
+  _DWORD v14[27]; // [esp+14h] [ebp-6Ch] BYREF
     memset(v14, 0, sizeof(v14)); /*0x7a1ae9*/
     if ( v5 >= 0 && v5 < (int)g_WOL_State ) /*0x7a1af3*/
       qmemcpy(v14, (char *)g_WOL_ConnectionFlags + 108 * v5, sizeof(v14)); /*0x7a1b0d*/
@@ -82,7 +73,7 @@ LABEL_12:
       (*(void (__stdcall **)(LPVOID, _DWORD, int *))(*(_DWORD *)g_UIPointerTable + 32))(g_UIPointerTable, v14[6], &v13); /*0x7a1b34*/
       if ( v13 != -1 ) /*0x7a1b3e*/
       {
-        v11 = (void *)v13; /*0x7a1b40*/
+        void * v11 = (void *)v13; /*0x7a1b40*/
         v9 = GetStringCSF(aWolMatchoppone, 0, g_Str_File_wonline_cpp, 28800); /*0x7a1b52*/
         Dialog::ShowMessage(12648447, (size_t)v9, v11); /*0x7a1b5d*/
         DeleteAndZero(&v12); /*0x7a1b69*/

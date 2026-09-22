@@ -8,20 +8,17 @@ namespace gamemd {
 int WideString::WordWrap(wchar_t * a0, CampaignScore * aP1, int a3, CampaignScore * aP3, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall WideString::WordWrap(wchar_t *a0, CampaignScore *aP1, int a3, CampaignScore *aP3, int a5)
+void WideString::WordWrap(wchar_t *a0, CampaignScore *aP1, int a3, CampaignScore *aP3, int a5)
 {
   CampaignScore *v6; // ebp
-  signed int v7; // eax
-  int v8; // ecx
   int v9; // ebx
   char *v10; // esi
   char *v11; // edx
-
   if ( a3 <= 0 ) /*0x5d4b27*/
     return 0; /*0x5d4b2c*/
   v6 = aP1; /*0x5d4b31*/
-  v7 = wcslen((const wchar_t *)aP1); /*0x5d4b37*/
-  v8 = (int)aP3; /*0x5d4b3c*/
+  signed int v7 = wcslen((const wchar_t *)aP1); /*0x5d4b37*/
+  int v8 = (int)aP3; /*0x5d4b3c*/
   if ( (int)aP3 > v7 ) /*0x5d4b49*/
     v8 = v7; /*0x5d4b4b*/
   if ( a5 ) /*0x5d4b53*/
@@ -76,7 +73,7 @@ namespace gamemd {
 char WideString::Replace(CampaignScore * aP1, wchar_t * String)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall WideString::Replace(void **this, CampaignScore *aP1, wchar_t *String)
+void WideString::Replace(void **this, CampaignScore *aP1, wchar_t *String)
 {
   GameSetup *v3; // ebx
   const wchar_t *v4; // edi
@@ -93,10 +90,8 @@ char __thiscall WideString::Replace(void **this, CampaignScore *aP1, wchar_t *St
   CCINIClass *v15; // eax
   CampaignScore *v16; // edi
   size_t v17; // eax
-  _WORD *v18; // eax
   size_t v20; // [esp+Ch] [ebp-Ch]
   wchar_t *v22; // [esp+14h] [ebp-4h]
-
   v3 = (GameSetup *)this; /*0x7b73f4*/
   v4 = (const wchar_t *)*this; /*0x7b73f8*/
   v5 = 0; /*0x7b73fa*/
@@ -184,7 +179,7 @@ LABEL_35:
     v17 = wcslen((const wchar_t *)v16) + 1; /*0x7b75b6*/
   else
     v17 = 1; /*0x7b75b9*/
-  v18 = (_WORD *)__2_YAPAXI_Z(2 * v17); /*0x7b75c1*/
+  _WORD * v18 = (_WORD *)__2_YAPAXI_Z(2 * v17); /*0x7b75c1*/
   *(_DWORD *)v3->__pad_0 = v18; /*0x7b75c9*/
   *v18 = 0; /*0x7b75cd*/
   if ( v16 ) /*0x7b75d2*/

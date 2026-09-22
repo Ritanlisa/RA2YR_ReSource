@@ -6,7 +6,7 @@
 int LightConvertClass::SelectRLEBlitter(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall LightConvertClass::SelectRLEBlitter(_DWORD *this, IUnknown *aP1)
+void LightConvertClass::SelectRLEBlitter(IUnknown *aP1)
 {
   if ( !this->q008 ) /*0x490e53*/
     ConvertClass::InitTables((int)this); /*0x490e5a*/

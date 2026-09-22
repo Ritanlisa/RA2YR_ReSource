@@ -9,31 +9,20 @@ namespace gamemd {
 char FilePipe_38::Release(int a2, char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall FilePipe_38_::_vt02(void *this, int a2, char *a3)
+void FilePipe_38_::_vt02(int a2, char *a3)
 {
-  int v3; // ebp
-  char *v5; // edi
-  char *v6; // eax
-  _BYTE *v7; // ecx
-  int v8; // edx
-  _BYTE *v9; // eax
-  int v10; // ecx
-  int v12; // ecx
-  int v13; // eax
-  int v14; // edx
-  char *v15; // ebx
 
-  v3 = a2; /*0x478342*/
+  int v3 = a2; /*0x478342*/
   if ( a2 ) /*0x47834e*/
   {
-    v5 = a3; /*0x478354*/
+    char * v5 = a3; /*0x478354*/
     this->q00C = 0; /*0x478358*/
     if ( a3 ) /*0x47835d*/
     {
       if ( a2 - 1 >= 0 ) /*0x478396*/
       {
-        v9 = a3 + 2; /*0x478398*/
-        v10 = a2; /*0x47839b*/
+        _BYTE * v9 = a3 + 2; /*0x478398*/
+        int v10 = a2; /*0x47839b*/
         do /*0x4783a8*/
         {
           *(v9 - 2) = 0; /*0x47839c*/
@@ -47,13 +36,13 @@ char __thiscall FilePipe_38_::_vt02(void *this, int a2, char *a3)
     }
     else
     {
-      v6 = (char *)__2_YAPAXI_Z(3 * a2); /*0x478364*/
+      char * v6 = (char *)__2_YAPAXI_Z(3 * a2); /*0x478364*/
       if ( v6 ) /*0x47836e*/
       {
         if ( a2 - 1 >= 0 ) /*0x478375*/
         {
-          v7 = v6 + 2; /*0x478377*/
-          v8 = a2; /*0x47837a*/
+          _BYTE * v7 = v6 + 2; /*0x478377*/
+          int v8 = a2; /*0x47837a*/
           do /*0x478387*/
           {
             *(v7 - 2) = 0; /*0x47837b*/
@@ -76,16 +65,16 @@ char __thiscall FilePipe_38_::_vt02(void *this, int a2, char *a3)
     {
       if ( this->q001 ) /*0x4783bb*/
       {
-        v12 = this->FilePipe_38_field_0x8; /*0x4783c0*/
+        int v12 = this->FilePipe_38_field_0x8; /*0x4783c0*/
         if ( a2 < v12 ) /*0x4783c5*/
           v12 = a2; /*0x4783c7*/
         if ( v12 > 0 ) /*0x4783cb*/
         {
-          v13 = 0; /*0x4783cd*/
+          int v13 = 0; /*0x4783cd*/
           do /*0x4783e9*/
           {
-            v14 = this->q001 + v13; /*0x4783d4*/
-            v15 = &v5[v13]; /*0x4783d6*/
+            int v14 = this->q001 + v13; /*0x4783d4*/
+            char * v15 = &v5[v13]; /*0x4783d6*/
             v13 += 3; /*0x4783d9*/
             --v12; /*0x4783dc*/
             *(_WORD *)v15 = *(_WORD *)v14; /*0x4783e0*/
@@ -96,7 +85,7 @@ char __thiscall FilePipe_38_::_vt02(void *this, int a2, char *a3)
         }
         if ( this->IsAllocated ) /*0x4783f1*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4783fa*/
+          __3_YAXPAX_Z(this->q001); /*0x4783fa*/
           this->q001 = 0; /*0x478402*/
         }
       }

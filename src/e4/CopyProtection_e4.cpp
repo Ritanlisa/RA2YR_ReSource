@@ -10,11 +10,10 @@ bool CopyProtection::CheckLauncher()
 bool CopyProtection_CheckLauncher()
 {
   HANDLE MutexA; // esi
-  bool v1; // bl
 
   Debug::Log(aCopyprotection_0); /*0x49f5c8*/
   MutexA = CreateMutexA(0, 0, unk_81F3E0); /*0x49f5df*/
-  v1 = GetLastError() == 183; /*0x49f5ec*/
+  bool v1 = GetLastError() == 183; /*0x49f5ec*/
   if ( MutexA ) /*0x49f5f5*/
     CloseHandle(MutexA); /*0x49f5f8*/
   Debug::Log(unk_81F3D0, v1); /*0x49f60d*/

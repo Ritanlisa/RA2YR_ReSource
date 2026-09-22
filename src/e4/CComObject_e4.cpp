@@ -17,36 +17,15 @@ namespace gamemd {
 int CComObject_CChatEventSink___ATL::DispatchConnectionPairs()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_7937B0(char *this)
+void sub_7937B0(char *this)
 {
-  int v1; // edi
-  _DWORD *v2; // ebx
   wchar_t **v3; // esi
-  int v4; // eax
-  int *v5; // esi
-  int v6; // ebx
-  int v7; // edi
-  int v8; // ebp
-  int v9; // esi
-  int v10; // eax
-  int v11; // ebp
-  _DWORD *v12; // edi
-  int v13; // ebx
-  int *v14; // edi
-  char *v15; // esi
-  int v16; // eax
-  int v17; // edx
-  int v19; // [esp+10h] [ebp-30h]
-  int v20; // [esp+10h] [ebp-30h]
   int i; // [esp+14h] [ebp-2Ch]
-  int v22; // [esp+14h] [ebp-2Ch]
-  int v23; // [esp+18h] [ebp-28h]
-  _DWORD *v24; // [esp+18h] [ebp-28h]
-  _DWORD v26[8]; // [esp+20h] [ebp-20h] BYREF
 
+  _DWORD v26[8]; // [esp+20h] [ebp-20h] BYREF
   memset(v26, 0, sizeof(v26)); /*0x7937c6*/
-  v1 = 0; /*0x7937c8*/
-  v2 = v26; /*0x7937ca*/
+  int v1 = 0; /*0x7937c8*/
+  _DWORD * v2 = v26; /*0x7937ca*/
   v3 = (wchar_t **)&g_NetworkPlayerName; /*0x7937ce*/
   do /*0x7937ed*/
   {
@@ -56,19 +35,19 @@ int __thiscall sub_7937B0(char *this)
     ++v1; /*0x7937e6*/
   }
   while ( (int)v3 < (int)&g_PlayerNameListEnd ); /*0x7937ed*/
-  v4 = Game_PlayerCount; /*0x7937ef*/
+  int v4 = Game_PlayerCount; /*0x7937ef*/
   for ( i = 0; i < v4; ++i ) /*0x7937fe*/
   {
-    v19 = 0; /*0x793803*/
+    int v19 = 0; /*0x793803*/
     if ( v4 - 1 > 0 ) /*0x79380d*/
     {
-      v5 = &v26[1]; /*0x79380f*/
+      int * v5 = &v26[1]; /*0x79380f*/
       do /*0x793865*/
       {
-        v6 = *v5; /*0x793813*/
-        v7 = *(v5 - 1); /*0x793815*/
-        v8 = DataGlobal_A8DC2C[v7]; /*0x793824*/
-        v23 = Network_Connect(DataGlobal_A8DC2C[*v5]); /*0x793839*/
+        int v6 = *v5; /*0x793813*/
+        int v7 = *(v5 - 1); /*0x793815*/
+        int v8 = DataGlobal_A8DC2C[v7]; /*0x793824*/
+        int v23 = Network_Connect(DataGlobal_A8DC2C[*v5]); /*0x793839*/
         if ( Network_Connect(v8) < v23 ) /*0x793848*/
         {
           *(v5 - 1) = v6; /*0x79384a*/
@@ -82,26 +61,27 @@ int __thiscall sub_7937B0(char *this)
     }
   }
   Debug::Log(); /*0x793897*/
-  v9 = 0; /*0x79389c*/
-  v20 = 0; /*0x7938a3*/
+  int v9 = 0; /*0x79389c*/
+  int v20 = 0; /*0x7938a3*/
   Debug::Log(); /*0x7938a7*/
-  v10 = Game_PlayerCount; /*0x7938ac*/
+  int v10 = Game_PlayerCount; /*0x7938ac*/
   if ( Game_PlayerCount > 0 ) /*0x7938b6*/
   {
-    v11 = 1; /*0x7938b8*/
-    v12 = v26; /*0x7938bd*/
-    v22 = 1; /*0x7938c1*/
-    v24 = v26; /*0x7938c5*/
+    int v11 = 1; /*0x7938b8*/
+    _DWORD * v12 = v26; /*0x7938bd*/
+    int v22 = 1; /*0x7938c1*/
+    _DWORD * v24 = v26; /*0x7938c5*/
     do /*0x793923*/
     {
       if ( v11 < v10 ) /*0x7938cb*/
       {
-        v13 = *v12; /*0x7938d1*/
-        v14 = v12 + 1; /*0x7938d3*/
-        v15 = this + 8 * v9; /*0x7938d6*/
+  int v17; // edx
+        int v13 = *v12; /*0x7938d1*/
+        int * v14 = v12 + 1; /*0x7938d3*/
+        char * v15 = this + 8 * v9; /*0x7938d6*/
         do /*0x793906*/
         {
-          v16 = *v14; /*0x7938d9*/
+          int v16 = *v14; /*0x7938d9*/
           *(_DWORD *)v15 = v13; /*0x7938db*/
           *((_DWORD *)v15 + 1) = v16; /*0x7938e4*/
           Debug::Log(); /*0x7938e7*/
@@ -134,31 +114,11 @@ namespace gamemd {
 int CComObject_CChatEventSink___ATL::DispatchStub_32(int a1, int a2, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall CComObject_CChatEventSink___ATL::vt_32_(int a1, int a2, int a3, int a4)
+void CComObject_CChatEventSink___ATL::vt_32_(int a1, int a2, int a3, int a4)
 {
-  int v4; // ebp
-  signed int v5; // ecx
-  signed int v6; // eax
-  char *v7; // edx
-  signed int v8; // eax
-  int v9; // ebx
-  char *v10; // eax
-  char *v11; // esi
-  void *v12; // ebp
-  char v13; // dl
   size_t v14; // ecx
-  char v15; // dl
-  bool v16; // cc
-  int v17; // esi
-  signed int v19; // [esp+1Ch] [ebp-E8h]
-  void *v20; // [esp+20h] [ebp-E4h] BYREF
-  int v21; // [esp+24h] [ebp-E0h]
-  char *v22; // [esp+28h] [ebp-DCh]
-  _DWORD v23[27]; // [esp+2Ch] [ebp-D8h] BYREF
-  _BYTE v24[108]; // [esp+98h] [ebp-6Ch] BYREF
-
   --dword_B77DDC; /*0x7a4ed2*/
-  v4 = 0; /*0x7a4ed9*/
+  int v4 = 0; /*0x7a4ed9*/
   if ( dword_B77DE0 ) /*0x7a4edf*/
   {
     dword_B77DE0 = 0; /*0x7a4ee8*/
@@ -171,26 +131,29 @@ int __stdcall CComObject_CChatEventSink___ATL::vt_32_(int a1, int a2, int a3, in
   {
     return 0; /*0x7a4f38*/
   }
-  v5 = g_WOL_State; /*0x7a4f3e*/
-  v6 = 0; /*0x7a4f44*/
-  v19 = 0; /*0x7a4f48*/
+  signed int v5 = g_WOL_State; /*0x7a4f3e*/
+  signed int v6 = 0; /*0x7a4f44*/
+  signed int v19 = 0; /*0x7a4f48*/
   if ( (int)g_WOL_State > 0 ) /*0x7a4f4c*/
   {
-    v21 = 0; /*0x7a4f53*/
+  _DWORD v23[27]; // [esp+2Ch] [ebp-D8h] BYREF
+  char v15; // dl
+    int v21 = 0; /*0x7a4f53*/
     while ( 1 ) /*0x7a4f57*/
     {
-      v7 = 0; /*0x7a4f57*/
+      char * v7 = 0; /*0x7a4f57*/
       if ( v4 >= 0 && v6 < v5 ) /*0x7a4f5f*/
         v7 = (char *)g_WOL_ConnectionFlags + v4; /*0x7a4f66*/
       if ( *((_DWORD *)v7 + 5) != a3 ) /*0x7a4f75*/
         goto LABEL_38; /*0x7a4f75*/
-      v22 = v7 + 87; /*0x7a4f90*/
+      char * v22 = v7 + 87; /*0x7a4f90*/
       strcpy(v7 + 87, (const char *)(a4 + 401)); /*0x7a4fa8*/
       strcpy(v7 + 46, (const char *)(a4 + 360)); /*0x7a4fcb*/
+  _BYTE v24[108]; // [esp+98h] [ebp-6Ch] BYREF
       memset(v24, 0, sizeof(v24)); /*0x7a4ff0*/
       if ( v4 >= 0 && v19 < (int)g_WOL_State ) /*0x7a4ff8*/
         qmemcpy(v24, (char *)g_WOL_ConnectionFlags + v4, sizeof(v24)); /*0x7a5009*/
-      v8 = v19; /*0x7a500b*/
+      signed int v8 = v19; /*0x7a500b*/
       qmemcpy(v23, v24, sizeof(v23)); /*0x7a501f*/
       v23[8] = 0; /*0x7a5023*/
       if ( g_WOL_State ) /*0x7a502b*/
@@ -206,17 +169,17 @@ int __stdcall CComObject_CChatEventSink___ATL::vt_32_(int a1, int a2, int a3, in
         --g_WOL_State; /*0x7a5075*/
         if ( (int)(3 * g_WOL_State) <= g_WOL_StateFlags ) /*0x7a507f*/
         {
-          v9 = g_WOL_StateFlags / 2; /*0x7a5088*/
+          int v9 = g_WOL_StateFlags / 2; /*0x7a5088*/
           if ( g_WOL_StateFlags / 2 < 10 ) /*0x7a508d*/
             v9 = 10; /*0x7a508f*/
           if ( v9 < g_WOL_StateFlags ) /*0x7a5096*/
           {
-            v10 = (char *)__2_YAPAXI_Z(108 * v9); /*0x7a50a2*/
-            v11 = (char *)g_WOL_ConnectionFlags; /*0x7a50a7*/
-            v12 = v10; /*0x7a50b2*/
+            char * v10 = (char *)__2_YAPAXI_Z(108 * v9); /*0x7a50a2*/
+            char * v11 = (char *)g_WOL_ConnectionFlags; /*0x7a50a7*/
+            void * v12 = v10; /*0x7a50b2*/
             if ( g_WOL_ConnectionFlags ) /*0x7a50b4*/
             {
-              v13 = 108 * g_WOL_State; /*0x7a50c6*/
+              char v13 = 108 * g_WOL_State; /*0x7a50c6*/
               v14 = (108 * g_WOL_State) >> 2; /*0x7a50c8*/
               qmemcpy(v10, g_WOL_ConnectionFlags, 4 * v14); /*0x7a50cb*/
               qmemcpy(&v10[4 * v14], &v11[4 * v14], v13 & 3); /*0x7a50d2*/
@@ -253,7 +216,7 @@ LABEL_38:
       v5 = g_WOL_State; /*0x7a5154*/
       v6 = v19 + 1; /*0x7a515e*/
       v4 += 108; /*0x7a515f*/
-      v16 = ++v19 < (int)g_WOL_State; /*0x7a5162*/
+      bool v16 = ++v19 < (int)g_WOL_State; /*0x7a5162*/
       v21 = v4; /*0x7a5168*/
       if ( !v16 ) /*0x7a516c*/
         goto LABEL_39; /*0x7a516c*/
@@ -264,9 +227,10 @@ LABEL_37:
     goto LABEL_38; /*0x7a514f*/
   }
 LABEL_39:
+  void *v20; // [esp+20h] [ebp-E4h] BYREF
   String::Assign((char **)&v20, (const char *)(a4 + 401)); /*0x7a5173*/
   String::ToLower((const char **)&v20); /*0x7a518e*/
-  v17 = *((_DWORD *)g_WOL_ListParser + (dword_B768D8(&v20) & ((1 << dword_B768CC) - 1))); /*0x7a51b2*/
+  int v17 = *((_DWORD *)g_WOL_ListParser + (dword_B768D8(&v20) & ((1 << dword_B768CC) - 1))); /*0x7a51b2*/
   if ( v17 ) /*0x7a51b7*/
   {
     while ( !String::Compare((const char **)v17, (const char **)&v20) ) /*0x7a51c7*/
@@ -302,17 +266,11 @@ namespace gamemd {
 int CComObject_CChatEventSink___ATL::GetTypeInfo(int a1, int a2, const char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall CComObject_CChatEventSink___ATL::_vt06(int a1, int a2, const char *a3)
+void CComObject_CChatEventSink___ATL::_vt06(int a1, int a2, const char *a3)
 {
   wchar_t *StringCSF; // eax
   wchar_t *v4; // eax
-  char *v6; // ebp
   char *i; // eax
-  int v8; // esi
-  int v9; // [esp+24h] [ebp-50h] BYREF
-  int v10; // [esp+28h] [ebp-4Ch] BYREF
-  _BYTE v11[4]; // [esp+2Ch] [ebp-48h] BYREF
-  _BYTE v12[4]; // [esp+30h] [ebp-44h] BYREF
   char Buffer[64]; // [esp+34h] [ebp-40h] BYREF
 
   dword_B77DF8 = a2; /*0x7a5299*/
@@ -373,19 +331,23 @@ LABEL_20:
   if ( !dword_B77EA4 ) /*0x7a5442*/
   {
     (*(void (__stdcall **)(LPVOID, int *))(*(_DWORD *)ppv + 132))(ppv, &a2); /*0x7a5457*/
-    v6 = (char *)__2_YAPAXI_Z(strlen((const char *)a2) + 32); /*0x7a5477*/
+    char * v6 = (char *)__2_YAPAXI_Z(strlen((const char *)a2) + 32); /*0x7a5477*/
     strcpy(v6, (const char *)a2); /*0x7a5493*/
     strcat(v6, DataGlobal_84AC20); /*0x7a54bb*/
     for ( i = strtok(v6, Delimiter); i; i = strtok(0, Delimiter) ) /*0x7a54ce*/
     {
-      v8 = atol(i); /*0x7a54dd*/
+      int v8 = atol(i); /*0x7a54dd*/
       (*(void (__stdcall **)(LPVOID, int, int, int *, int *, _BYTE *, _BYTE *))(*(_DWORD *)ppv + 92))( /*0x7a54ff*/
         ppv,
         v8,
         dword_84A1C0,
+  int v10; // [esp+28h] [ebp-4Ch] BYREF
         &v10,
+  int v9; // [esp+24h] [ebp-50h] BYREF
         &v9,
+  _BYTE v12[4]; // [esp+30h] [ebp-44h] BYREF
         v12,
+  _BYTE v11[4]; // [esp+2Ch] [ebp-48h] BYREF
         v11);
       sprintf(Buffer, DataGlobal_84AC14, v8); /*0x7a550d*/
       ChatEvent::ProcessStrings((int)g_DialogHashTable, Buffer, v10, v9, 2); /*0x7a552b*/
@@ -413,19 +375,16 @@ namespace gamemd {
 int CComObject_CChatEventSink___ATL::FireEvent(int a1, int a2, unsigned char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall CComObject_CChatEventSink___ATL::vt_09_(int a1, int a2, _BYTE *a3)
+void CComObject_CChatEventSink___ATL::vt_09_(int a1, int a2, _BYTE *a3)
 {
   wchar_t *v3; // eax
   HWND v4; // eax
   HWND v5; // eax
   HWND v6; // eax
   wchar_t *String; // eax
-  char *v9; // edi
-  int v10; // eax
   HWND v11; // eax
   HWND Current; // eax
   HWND DlgItem; // eax
-  char *v14; // [esp-10h] [ebp-60h]
   char Buffer[80]; // [esp+0h] [ebp-50h] BYREF
 
   if ( a2 >= 0 ) /*0x7a5699*/
@@ -433,8 +392,8 @@ int __stdcall CComObject_CChatEventSink___ATL::vt_09_(int a1, int a2, _BYTE *a3)
     if ( *(_DWORD *)a3 ) /*0x7a572c*/
     {
       memset(DataGlobal_B76E40, 0, 0x940u); /*0x7a576f*/
-      v9 = String::GetOrEmpty((char **)&g_WebBrowser); /*0x7a577b*/
-      v10 = g_CommandExecState; /*0x7a5788*/
+      char * v9 = String::GetOrEmpty((char **)&g_WebBrowser); /*0x7a577b*/
+      int v10 = g_CommandExecState; /*0x7a5788*/
       strcpy(DataGlobal_B76E40, v9); /*0x7a5799*/
       DataGlobal_B76E58[0] = v10; /*0x7a57a8*/
       DataGlobal_B76E5C = 0; /*0x7a57ad*/
@@ -443,7 +402,7 @@ int __stdcall CComObject_CChatEventSink___ATL::vt_09_(int a1, int a2, _BYTE *a3)
     }
     else
     {
-      v14 = CharToWideString(a3 + 52); /*0x7a573a*/
+      char * v14 = CharToWideString(a3 + 52); /*0x7a573a*/
       String = GetStringCSF(aTxtCreatedChan, 0, g_Str_File_wonline_cpp, 5835); /*0x7a574c*/
       Dialog::ShowMessage(-1, (size_t)String, v14); /*0x7a5759*/
     }
@@ -501,51 +460,39 @@ namespace gamemd {
 int CComObject_CChatEventSink___ATL::DispatchStub_23(int a1, int a2, int a3, int a4, wchar_t * a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall CComObject_CChatEventSink___ATL::vt_23_(int a1, int a2, int a3, int a4, wchar_t *a5)
+void CComObject_CChatEventSink___ATL::vt_23_(int a1, int a2, int a3, int a4, wchar_t *a5)
 {
-  int v5; // esi
-  signed int v7; // ebp
-  int v8; // ebx
-  int v9; // edi
   HWND v10; // eax
   HWND v11; // eax
-  char *v12; // edi
-  int v13; // eax
-  int v14; // eax
-  char *v15; // edx
-  char v16; // [esp+7h] [ebp-8Dh]
-  void *v17; // [esp+8h] [ebp-8Ch] BYREF
-  void *v18; // [esp+Ch] [ebp-88h] BYREF
-  int v19; // [esp+10h] [ebp-84h]
-  int v20; // [esp+14h] [ebp-80h]
   size_t v21; // [esp+18h] [ebp-7Ch]
-  int v22; // [esp+20h] [ebp-74h]
-  char v23[108]; // [esp+28h] [ebp-6Ch] BYREF
-
-  v5 = g_WOL_State; /*0x7a7b67*/
-  v16 = 1; /*0x7a7b71*/
+  int v5 = g_WOL_State; /*0x7a7b67*/
+  char v16 = 1; /*0x7a7b71*/
   v21 = g_WOL_State; /*0x7a7b76*/
-  v20 = 0; /*0x7a7b7a*/
+  int v20 = 0; /*0x7a7b7a*/
   dword_B76478 = Timer::GetTicks(); /*0x7a7b87*/
+  int v22; // [esp+20h] [ebp-74h]
   dword_B7647C = v22; /*0x7a7b90*/
   dword_B76480 = 0; /*0x7a7b9e*/
   if ( byte_B77E27 ) /*0x7a7ba4*/
     return 0; /*0x7a7ba6*/
   dword_B77DCC = 1; /*0x7a7bbe*/
-  v19 = a4; /*0x7a7bc8*/
+  int v19 = a4; /*0x7a7bc8*/
   if ( a4 ) /*0x7a7bcc*/
   {
+  void *v18; // [esp+Ch] [ebp-88h] BYREF
     while ( 1 ) /*0x7a7be3*/
     {
+  void *v17; // [esp+8h] [ebp-8Ch] BYREF
       ++v20; /*0x7a7be3*/
       String::Assign((char **)&v18, (const char *)(v19 + 36)); /*0x7a7be7*/
       String::ToLower((const char **)&v18); /*0x7a7bf0*/
-      v7 = 0; /*0x7a7bf5*/
+      signed int v7 = 0; /*0x7a7bf5*/
       if ( v5 <= 0 ) /*0x7a7bf9*/
         break; /*0x7a7bf9*/
-      v8 = 0; /*0x7a7bff*/
+      int v8 = 0; /*0x7a7bff*/
       while ( 1 ) /*0x7a7c01*/
       {
+  char v23[108]; // [esp+28h] [ebp-6Ch] BYREF
         if ( v8 >= 0 && v7 < (int)g_WOL_State ) /*0x7a7c0b*/
         {
           qmemcpy(v23, (char *)g_WOL_ConnectionFlags + v8, sizeof(v23)); /*0x7a7c1f*/
@@ -565,7 +512,7 @@ int __stdcall CComObject_CChatEventSink___ATL::vt_23_(int a1, int a2, int a3, in
       if ( v7 >= v5 ) /*0x7a7c68*/
         break; /*0x7a7c68*/
       v19 = *(_DWORD *)(v19 + 32); /*0x7a7c75*/
-      v9 = v19; /*0x7a7c72*/
+      int v9 = v19; /*0x7a7c72*/
       DeleteAndZero(&v18); /*0x7a7c79*/
       if ( !v9 ) /*0x7a7c80*/
         goto LABEL_16; /*0x7a7c80*/
@@ -590,8 +537,8 @@ LABEL_16:
     *(_DWORD *)dword_B779C4 = dword_B76B24; /*0x7a7d31*/
     if ( g_GameMode_Current[0] == 4 && (dword_B76B30 & 0x100) != 0 ) /*0x7a7d47*/
       *(_DWORD *)dword_B779C4 = 2; /*0x7a7d49*/
-    v12 = String::GetOrEmpty((char **)&g_WebBrowser); /*0x7a7d59*/
-    v13 = g_WOL_State; /*0x7a7d66*/
+    char * v12 = String::GetOrEmpty((char **)&g_WebBrowser); /*0x7a7d59*/
+    int v13 = g_WOL_State; /*0x7a7d66*/
     strcpy(byte_B77830, v12); /*0x7a7d77*/
     if ( v13 > 0 && g_WOL_ConnectionFlags ) /*0x7a7d8b*/
       strcpy(byte_B779E0, (const char *)g_WOL_ConnectionFlags + 36); /*0x7a7da7*/
@@ -604,10 +551,10 @@ LABEL_16:
     Network::SyncPlayerList(); /*0x7a7df8*/
     g_NetworkLobbyState = 2; /*0x7a7e03*/
     Debug::Log(); /*0x7a7e0f*/
-    v14 = 0; /*0x7a7e1d*/
+    int v14 = 0; /*0x7a7e1d*/
     if ( (int)g_WOL_State > 0 ) /*0x7a7e21*/
     {
-      v15 = (char *)g_WOL_ConnectionFlags; /*0x7a7e23*/
+      char * v15 = (char *)g_WOL_ConnectionFlags; /*0x7a7e23*/
       while ( 1 ) /*0x7a7e29*/
       {
         if ( v14 >= 0 && v14 < (int)g_WOL_State ) /*0x7a7e2f*/
@@ -642,29 +589,17 @@ namespace gamemd {
 int CComObject_CChatEventSink___ATL::DispatchStub_22(int a1, int a2, int a3, int a4, char * Source)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall CComObject_CChatEventSink___ATL::_vt22(int a1, int a2, int a3, int a4, char *Source)
+void CComObject_CChatEventSink___ATL::_vt22(int a1, int a2, int a3, int a4, char *Source)
 {
-  char *v5; // esi
-  bool v6; // bl
   char *Flagged; // esi
-  char *v8; // eax
   wchar_t *v9; // eax
   wchar_t *v10; // eax
-  int v11; // esi
   HWND Current; // ebp
-  void *v14; // eax
-  int v15; // edx
-  bool v16; // bl
   HWND DlgItem; // eax
   HWND v18; // eax
   HWND v19; // eax
   HWND v20; // eax
-  char v21; // [esp+7h] [ebp-B9h]
-  void *v22; // [esp+8h] [ebp-B8h] BYREF
-  int v23; // [esp+Ch] [ebp-B4h]
-  char v24; // [esp+13h] [ebp-ADh]
   int Buffer[16]; // [esp+14h] [ebp-ACh] BYREF
-  _BYTE v26[108]; // [esp+54h] [ebp-6Ch] BYREF
 
   if ( (byte_B78600 & 1) == 0 ) /*0x7a7ead*/
   {
@@ -674,8 +609,8 @@ int __stdcall CComObject_CChatEventSink___ATL::_vt22(int a1, int a2, int a3, int
   }
   if ( a2 < 0 ) /*0x7a7ee3*/
     return 0; /*0x7a7ee3*/
-  v5 = _strdup(Source); /*0x7a7ef6*/
-  v6 = SetupNetworkLobbyDialog(v5, (void *)(a4 + 36)); /*0x7a7f0d*/
+  char * v5 = _strdup(Source); /*0x7a7ef6*/
+  bool v6 = SetupNetworkLobbyDialog(v5, (void *)(a4 + 36)); /*0x7a7f0d*/
   free(v5); /*0x7a7f0f*/
   if ( g_NetworkLobby_Init ) /*0x7a7f1e*/
     return 0; /*0x7a7f1e*/
@@ -685,20 +620,21 @@ int __stdcall CComObject_CChatEventSink___ATL::_vt22(int a1, int a2, int a3, int
     return 0; /*0x7a7f35*/
   if ( *Source == 87 ) /*0x7a7f3d*/
     return 0; /*0x7a7f3d*/
-  v21 = 0; /*0x7a7f43*/
+  char v21 = 0; /*0x7a7f43*/
   Flagged = GameSettings::FindFlagged(); /*0x7a7f4d*/
   if ( Flagged ) /*0x7a7f51*/
   {
-    v8 = String::GetOrEmpty_Alt((char **)&g_WebBrowser); /*0x7a7f58*/
+    char * v8 = String::GetOrEmpty_Alt((char **)&g_WebBrowser); /*0x7a7f58*/
     if ( !_strcmpi(Flagged + 36, v8) ) /*0x7a7f62*/
       return 0; /*0x7a7f6c*/
   }
   if ( g_GameOptionsFlags == 3 || g_GameOptionsFlags == 1 || g_GameOptionsFlags == 2 ) /*0x7a7f84*/
   {
+  void *v22; // [esp+8h] [ebp-B8h] BYREF
     CharStringToWide((wchar_t **)&v22, (const char **)&g_WebBrowser); /*0x7a7f93*/
     v9 = WideString::GetOrEmpty((wchar_t **)&v22); /*0x7a7f9c*/
     v10 = Player::FindByName(v9); /*0x7a7fa3*/
-    v11 = (int)v10; /*0x7a7fa8*/
+    int v11 = (int)v10; /*0x7a7fa8*/
     if ( v10 /*0x7a7fed*/
       && SessionClass::GetPlayerSide((int)v10) >= 0
       && SessionClass::GetPlayerColor(v11) >= 0
@@ -714,6 +650,7 @@ int __stdcall CComObject_CChatEventSink___ATL::_vt22(int a1, int a2, int a3, int
   Current = Dialog::GetCurrent(); /*0x7a801c*/
   if ( !g_UIControlState ) /*0x7a8025*/
   {
+  int v23; // [esp+Ch] [ebp-B4h]
     if ( v6 ) /*0x7a802d*/
     {
       v21 = 1; /*0x7a8033*/
@@ -723,7 +660,7 @@ int __stdcall CComObject_CChatEventSink___ATL::_vt22(int a1, int a2, int a3, int
     }
     if ( (int)(Timer::GetTicks() - dword_B78608) > 900 ) /*0x7a806e*/
     {
-      v14 = g_UIControlState; /*0x7a8070*/
+      void * v14 = g_UIControlState; /*0x7a8070*/
       if ( (!g_UIControlState || !*(_DWORD *)g_UIControlState) && !byte_B77E2C ) /*0x7a8085*/
       {
         if ( !Destination /*0x7a80a8*/
@@ -742,15 +679,18 @@ int __stdcall CComObject_CChatEventSink___ATL::_vt22(int a1, int a2, int a3, int
     }
     if ( !IsRandMap::Sed2((int)g_GameMode_Current) ) /*0x7a80e2*/
     {
+  int v15; // edx
       LOBYTE(v15) = g_MultiplayerSetupState; /*0x7a80ef*/
       if ( !FindAndValidateMap(&Destination, g_MultiplayerConfigState, &g_MultiplayerFlags, v15, 0) /*0x7a813d*/
         || (RawFileClass::Construct(Buffer, (int)&Destination),
+  bool v16; // bl
             v16 = FileClass::Open(Buffer, 0) != 0,
             RawFileClass::Dtor(Buffer),
             v16) )
       {
         if ( g_GameMode_Current[0] == 4 ) /*0x7a814c*/
         {
+  char v24; // [esp+13h] [ebp-ADh]
           if ( dword_B76B24 || (v24 = BYTE1(dword_B76B30) & 1, (dword_B76B30 & 0x100) != 0) ) /*0x7a8165*/
           {
             if ( *(_DWORD *)(*(_DWORD *)Game_PlayerInfoArray + 119) ) /*0x7a816f*/
@@ -777,6 +717,7 @@ int __stdcall CComObject_CChatEventSink___ATL::_vt22(int a1, int a2, int a3, int
     {
       sprintf((char *const)Buffer, DataGlobal_84AE48, &Destination); /*0x7a81cf*/
       if ( (int)g_WOL_State > 0 ) /*0x7a81de*/
+  _BYTE v26[108]; // [esp+54h] [ebp-6Ch] BYREF
         qmemcpy(v26, g_WOL_ConnectionFlags, sizeof(v26)); /*0x7a81ef*/
       (*(void (__stdcall **)(LPVOID, _BYTE *, int *))(*(_DWORD *)ppv + 56))(ppv, v26, Buffer); /*0x7a8203*/
       Debug::Log(); /*0x7a820b*/
@@ -799,15 +740,9 @@ namespace gamemd {
 int CComObject_CChatEventSink___ATL::DispatchStub_16(int a1, int a2, int a3, const char * a4, char * String1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall CComObject_CChatEventSink___ATL::_vt16(int a1, int a2, int a3, const char *a4, char *String1)
+void CComObject_CChatEventSink___ATL::_vt16(int a1, int a2, int a3, const char *a4, char *String1)
 {
-  const char *v6; // edi
-  const char *v7; // esi
-  bool v8; // bl
-  int v9; // edi
-  const void *v10; // esi
   wchar_t *v11; // eax
-
   if ( !g_NetworkLobby_Init && a2 >= 0 ) /*0x7a8db5*/
   {
     if ( g_GameOptionsFlags == 3 || g_GameOptionsFlags == 1 || g_GameOptionsFlags == 2 ) /*0x7a8dcd*/
@@ -820,9 +755,10 @@ int __stdcall CComObject_CChatEventSink___ATL::_vt16(int a1, int a2, int a3, con
     }
     else
     {
-      v6 = String1; /*0x7a8dee*/
+  bool v8; // bl
+      const char * v6 = String1; /*0x7a8dee*/
       String::Assign(&String1, String1); /*0x7a8df8*/
-      v7 = a4; /*0x7a8dfd*/
+      const char * v7 = a4; /*0x7a8dfd*/
       if ( a4 ) /*0x7a8e03*/
       {
         if ( (*a4 & 1) != 0 ) /*0x7a8e0c*/
@@ -852,10 +788,10 @@ int __stdcall CComObject_CChatEventSink___ATL::_vt16(int a1, int a2, int a3, con
         String::Assign(&String1, v6); /*0x7a8e5e*/
         CharStringToWide((wchar_t **)&a2, (const char **)&String1); /*0x7a8e6b*/
         DeleteAndZero((void **)&String1); /*0x7a8e74*/
-        v9 = 61680; /*0x7a8e7b*/
+        int v9 = 61680; /*0x7a8e7b*/
         if ( (*v7 & 1) != 0 ) /*0x7a8e83*/
           v9 = 16776960; /*0x7a8e85*/
-        v10 = v7 + 36; /*0x7a8e8b*/
+        const void * v10 = v7 + 36; /*0x7a8e8b*/
         if ( _strcmpi(g_GameSetupBuffer, v10) ) /*0x7a8e94*/
         {
           v11 = WideString::GetOrEmpty((wchar_t **)&a2); /*0x7a8ea4*/
@@ -875,27 +811,21 @@ namespace gamemd {
 int CComObject_CChatEventSink___ATL::DispatchStub_40(int a1, int a2, int a3, const char * a4, wchar_t * String)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall CComObject_CChatEventSink___ATL::_vt40(int a1, int a2, int a3, const char *a4, wchar_t *String)
+void CComObject_CChatEventSink___ATL::_vt40(int a1, int a2, int a3, const char *a4, wchar_t *String)
 {
-  const char *v6; // esi
-  bool v7; // zf
-  int v8; // eax
-  int v9; // edi
-  const void *v10; // esi
   wchar_t *v11; // eax
-
   if ( g_NetworkLobby_Init ) /*0x7a8ed8*/
     return 0; /*0x7a8eda*/
   if ( a2 < 0 ) /*0x7a8ee6*/
     return 0; /*0x7a8ee8*/
   WideString::Assign((wchar_t **)&a2, String); /*0x7a8ef7*/
-  v6 = a4; /*0x7a8efc*/
+  const char * v6 = a4; /*0x7a8efc*/
   if ( a4 ) /*0x7a8f02*/
   {
     if ( (*a4 & 1) != 0 || Dialog::FindByHandle((void *)0xC2) || Dialog::FindByHandle((void *)0xC9) ) /*0x7a8f1c*/
       goto LABEL_21; /*0x7a8f1c*/
-    v7 = WideString::IsASCII((const wchar_t **)&a2) == 0; /*0x7a8f2e*/
-    v8 = dword_B779C0; /*0x7a8f30*/
+    bool v7 = WideString::IsASCII((const wchar_t **)&a2) == 0; /*0x7a8f2e*/
+    int v8 = dword_B779C0; /*0x7a8f30*/
     if ( v7 ) /*0x7a8f35*/
       v8 = dword_B779DC; /*0x7a8f37*/
     if ( v8 ) /*0x7a8f43*/
@@ -903,10 +833,10 @@ int __stdcall CComObject_CChatEventSink___ATL::_vt40(int a1, int a2, int a3, con
 LABEL_21:
       if ( IsBuddyOrIgnoreWOL(v6) ) /*0x7a8f56*/
       {
-        v9 = 61680; /*0x7a8f71*/
+        int v9 = 61680; /*0x7a8f71*/
         if ( (*v6 & 1) != 0 ) /*0x7a8f79*/
           v9 = 16776960; /*0x7a8f7b*/
-        v10 = v6 + 36; /*0x7a8f81*/
+        const void * v10 = v6 + 36; /*0x7a8f81*/
         if ( _strcmpi(g_GameSetupBuffer, v10) ) /*0x7a8f8a*/
         {
           v11 = WideString::GetOrEmpty((wchar_t **)&a2); /*0x7a8f9a*/
@@ -932,30 +862,24 @@ int CComObject_CChatEventSink___ATL_DispatchStub_17()
 
 // 0x7A9110
 namespace gamemd {
-int CComObject_CChatEventSink___ATL::DispatchStub_41(int a1, int a2, const char * a3, wchar_t * String)
+void CComObject_CChatEventSink___ATL::DispatchStub_41(int a1, int a2, const char * a3, wchar_t * String)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall CComObject_CChatEventSink___ATL::_vt41(int a1, int a2, const char *a3, wchar_t *String)
+void CComObject_CChatEventSink___ATL::_vt41(int a1, int a2, const char *a3, wchar_t *String)
 {
-  const char *v5; // esi
-  bool v6; // zf
-  int v7; // eax
-  int v8; // edi
-  const void *v9; // esi
   wchar_t *v10; // eax
-
   if ( g_NetworkLobby_Init ) /*0x7a9118*/
     return 0; /*0x7a911a*/
   if ( a2 < 0 ) /*0x7a9126*/
     return 0; /*0x7a9128*/
   WideString::Assign((wchar_t **)&a2, String); /*0x7a9137*/
-  v5 = a3; /*0x7a913c*/
+  const char * v5 = a3; /*0x7a913c*/
   if ( a3 ) /*0x7a9142*/
   {
     if ( (*a3 & 1) != 0 || Dialog::FindByHandle((void *)0xC2) || Dialog::FindByHandle((void *)0xC9) ) /*0x7a915c*/
       goto LABEL_21; /*0x7a915c*/
-    v6 = WideString::IsASCII((const wchar_t **)&a2) == 0; /*0x7a916e*/
-    v7 = dword_B779C0; /*0x7a9170*/
+    bool v6 = WideString::IsASCII((const wchar_t **)&a2) == 0; /*0x7a916e*/
+    int v7 = dword_B779C0; /*0x7a9170*/
     if ( v6 ) /*0x7a9175*/
       v7 = dword_B779DC; /*0x7a9177*/
     if ( v7 ) /*0x7a9183*/
@@ -963,10 +887,10 @@ int __stdcall CComObject_CChatEventSink___ATL::_vt41(int a1, int a2, const char 
 LABEL_21:
       if ( IsBuddyOrIgnoreWOL(v5) ) /*0x7a9196*/
       {
-        v8 = 16744576; /*0x7a91b1*/
+        int v8 = 16744576; /*0x7a91b1*/
         if ( (*v5 & 1) != 0 ) /*0x7a91b9*/
           v8 = 16776960; /*0x7a91bb*/
-        v9 = v5 + 36; /*0x7a91c1*/
+        const void * v9 = v5 + 36; /*0x7a91c1*/
         if ( _strcmpi(g_GameSetupBuffer, v9) ) /*0x7a91ca*/
         {
           v10 = WideString::GetOrEmpty((wchar_t **)&a2); /*0x7a91da*/
@@ -986,14 +910,10 @@ namespace gamemd {
 int CComObject_CChatEventSink___ATL::DispatchStub_28(int a1, int a2, const char * a3, const char * a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall CComObject_CChatEventSink___ATL::_vt28(int a1, int a2, const char *a3, const char *a4)
+void CComObject_CChatEventSink___ATL::_vt28(int a1, int a2, const char *a3, const char *a4)
 {
-  bool v5; // zf
-  int v6; // eax
-  char v7; // al
   wchar_t *v8; // eax
   int Type; // esi
-  int v10; // eax
   wchar_t *StringCSF; // eax
   wchar_t *v12; // eax
   HWND Current; // esi
@@ -1004,25 +924,22 @@ int __stdcall CComObject_CChatEventSink___ATL::_vt28(int a1, int a2, const char 
   HWND DlgItem; // eax
   char **ChatCommand; // ebx
   HWND v20; // esi
-  char *v21; // eax
-  int v22; // esi
   wchar_t *v23; // eax
-  int v24; // [esp-Ch] [ebp-22Ch]
-  void *v25; // [esp+Ch] [ebp-214h] BYREF
-  void *v26[4]; // [esp+10h] [ebp-210h] BYREF
   wchar_t Buffer[256]; // [esp+20h] [ebp-200h] BYREF
 
   if ( a2 < 0 ) /*0x7a920d*/
     return 0; /*0x7a920f*/
+  void *v26[4]; // [esp+10h] [ebp-210h] BYREF
   String::Assign((char **)v26, a4); /*0x7a9227*/
+  void *v25; // [esp+Ch] [ebp-214h] BYREF
   CharStringToWide((wchar_t **)&v25, (const char **)v26); /*0x7a9234*/
   DeleteAndZero(v26); /*0x7a923d*/
   if ( !a3 ) /*0x7a924b*/
     goto LABEL_12; /*0x7a924b*/
   if ( (*a3 & 1) == 0 && !Dialog::FindByHandle((void *)0xC2) && !Dialog::FindByHandle((void *)0xC9) ) /*0x7a9266*/
   {
-    v5 = WideString::IsASCII((const wchar_t **)&v25) == 0; /*0x7a9278*/
-    v6 = dword_B779C0; /*0x7a927a*/
+    bool v5 = WideString::IsASCII((const wchar_t **)&v25) == 0; /*0x7a9278*/
+    int v6 = dword_B779C0; /*0x7a927a*/
     if ( v5 ) /*0x7a927f*/
       v6 = dword_B779DC; /*0x7a9281*/
     if ( !v6 ) /*0x7a928d*/
@@ -1030,16 +947,16 @@ int __stdcall CComObject_CChatEventSink___ATL::_vt28(int a1, int a2, const char 
   }
   if ( IsBuddyOrIgnoreWOL(a3) ) /*0x7a92a6*/
   {
-    v7 = g_NetworkLobby_Init; /*0x7a92d7*/
+    char v7 = g_NetworkLobby_Init; /*0x7a92d7*/
     strcpy(byte_B77E30, a3 + 36); /*0x7a92e8*/
     if ( v7 ) /*0x7a92f3*/
     {
       v8 = WideString::GetOrEmpty((wchar_t **)&v25); /*0x7a92fd*/
       swprintf(Buffer, (const size_t)g_Str_Trace___hs_, (const wchar_t *const)a3 + 18, v8); /*0x7a930e*/
       Type = BuildingAnim::GetType(); /*0x7a9321*/
-      v10 = Math::RoundToInt(*(double *)&g_RulesClass_Instance[1].__pad_A0 * 900.0); /*0x7a9331*/
+      int v10 = Math::RoundToInt(*(double *)&g_RulesClass_Instance[1].__pad_A0 * 900.0); /*0x7a9331*/
       MessageListClass::AddMessage(g_GameNetworkObject, 0, 0, Buffer, Type, 22, v10, 0); /*0x7a9348*/
-      v24 = Math::RoundToInt(*(double *)&g_RulesClass_Instance[1].__pad_A0 * 900.0); /*0x7a9365*/
+      int v24 = Math::RoundToInt(*(double *)&g_RulesClass_Instance[1].__pad_A0 * 900.0); /*0x7a9365*/
       StringCSF = GetStringCSF(aTxtHowToReply, 0, g_Str_File_wonline_cpp, 8066); /*0x7a937a*/
       MessageListClass::AddMessage(g_GameNetworkObject, 0, 0, StringCSF, Type, 22, v24, 0); /*0x7a9389*/
       MapClass::MarkForRedraw(&DataGlobal_87F7E8, 0); /*0x7a9395*/
@@ -1086,13 +1003,13 @@ LABEL_22:
       DlgItem = GetDlgItem(Current, 1343); /*0x7a94b5*/
       ChatCommand = ExtractChatCommand((char **)v26, DlgItem); /*0x7a94c8*/
       v20 = GetDlgItem(Current, 1816); /*0x7a94ce*/
-      v21 = String::GetOrEmpty_Alt(ChatCommand); /*0x7a94d0*/
+      char * v21 = String::GetOrEmpty_Alt(ChatCommand); /*0x7a94d0*/
       SendMessageA(v20, 0x4B4u, 0, (LPARAM)v21); /*0x7a94de*/
       DeleteAndZero(v26); /*0x7a94e8*/
     }
     if ( byte_B77E40 ) /*0x7a94f4*/
     {
-      v22 = *(_DWORD *)ppv; /*0x7a9500*/
+      int v22 = *(_DWORD *)ppv; /*0x7a9500*/
       v23 = WideString::GetOrEmpty((wchar_t **)&dword_B76230); /*0x7a9502*/
       (*(void (__stdcall **)(LPVOID, const char *, wchar_t *))(v22 + 236))(ppv, a3, v23); /*0x7a9510*/
     }
@@ -1115,9 +1032,8 @@ namespace gamemd {
 int CComObject_CChatEventSink___ATL::DispatchStub_44(int a1, int a2, int a3, wchar_t * String)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall CComObject_CChatEventSink___ATL::_vt44(int a1, int a2, int a3, wchar_t *String)
+void CComObject_CChatEventSink___ATL::_vt44(int a1, int a2, int a3, wchar_t *String)
 {
-  int v5; // edi
   bool v6; // bl
   bool v7; // zf
   int v8; // eax
@@ -1136,7 +1052,7 @@ int __stdcall CComObject_CChatEventSink___ATL::_vt44(int a1, int a2, int a3, wch
   if ( a2 < 0 ) /*0x7a955f*/
     return 0; /*0x7a9563*/
   WideString::Assign((wchar_t **)&v18, String); /*0x7a957b*/
-  v5 = a3; /*0x7a9580*/
+  int v5 = a3; /*0x7a9580*/
   if ( a3 ) /*0x7a9589*/
   {
     if ( (*(_BYTE *)a3 & 1) != 0 ) /*0x7a9592*/
@@ -1228,17 +1144,15 @@ namespace gamemd {
 int CComObject_CChatEventSink___ATL::DispatchStub_27(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall CComObject_CChatEventSink___ATL::DispatchStub_27(int a1, int a2)
+void CComObject_CChatEventSink___ATL::DispatchStub_27(int a1, int a2)
 {
   wchar_t *StringCSF; // eax
   HWND Current; // eax
   HWND v5; // esi
   int Type; // esi
-  int v7; // eax
   wchar_t *v8; // [esp-4h] [ebp-10Ch]
   wchar_t *v9; // [esp-4h] [ebp-10Ch]
   ObjectClass v10; // [esp+0h] [ebp-108h] BYREF
-
   if ( !a2 ) /*0x7a980e*/
   {
     StringCSF = GetStringCSF(aTxtPagesent, 0, (CampaignScore *)g_Str_File_wonline_cpp, 8189); /*0x7a9821*/
@@ -1290,7 +1204,7 @@ LABEL_19:
     if ( SessionClass::GetGameSpeed(&HouseClass_Player[29932]) ) /*0x7a9920*/
     {
       Type = BuildingAnim::GetType(); /*0x7a9934*/
-      v7 = Math::RoundToInt(*(double *)(*(_DWORD *)&stru_87C374[44652] + 5312) * 900.0); /*0x7a9944*/
+      int v7 = Math::RoundToInt(*(double *)(*(_DWORD *)&stru_87C374[44652] + 5312) * 900.0); /*0x7a9944*/
       MessageListClass::AddMessage( /*0x7a995b*/
         &HouseClass_Player[32532],
         0,
@@ -1320,7 +1234,6 @@ int __userpurge CComObject_CChatEventSink___ATL::DispatchStub_19@<eax>(
 {
   wchar_t *StringCSF; // eax
   CampaignScore *Type; // esi
-  int v7; // eax
   wchar_t *v8; // eax
   wchar_t Buffer[256]; // [esp+0h] [ebp-200h] BYREF
 
@@ -1344,7 +1257,7 @@ int __userpurge CComObject_CChatEventSink___ATL::DispatchStub_19@<eax>(
                       8460);
         swprintf(Buffer, (const size_t)StringCSF, a1, a2); /*0x7aa754*/
         Type = (CampaignScore *)BuildingAnim::GetType(); /*0x7aa761*/
-        v7 = Math::RoundToInt(*(double *)(*(_DWORD *)&stru_87C374[44652] + 5312) * 900.0); /*0x7aa776*/
+        int v7 = Math::RoundToInt(*(double *)(*(_DWORD *)&stru_87C374[44652] + 5312) * 900.0); /*0x7aa776*/
         MessageListClass::AddMessage( /*0x7aa78d*/
           &HouseClass_Player[32532],
           0,
@@ -1393,39 +1306,28 @@ namespace gamemd {
 int CComObject_CChatEventSink___ATL::DispatchStub_30(int a1, int a2, void * a3, int a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall CComObject_CChatEventSink___ATL::_vt30(int a1, int a2, void *a3, int a4, int a5)
+void CComObject_CChatEventSink___ATL::_vt30(int a1, int a2, void *a3, int a4, int a5)
 {
-  signed int v5; // eax
-  signed int v6; // ebp
-  int v7; // ebx
   size_t v8; // eax
-  int v9; // ebx
-  char *v10; // eax
-  char *v11; // esi
-  void *v12; // ebp
-  char v13; // dl
   size_t v14; // ecx
-  char v15; // dl
-  int v17; // [esp+0h] [ebp-E0h]
-  signed int v18; // [esp+4h] [ebp-DCh]
-  _DWORD v19[27]; // [esp+8h] [ebp-D8h] BYREF
-  _DWORD v20[27]; // [esp+74h] [ebp-6Ch] BYREF
-
   if ( a2 ) /*0x7ab44c*/
     return 0; /*0x7ab65d*/
-  v5 = g_WOL_State; /*0x7ab452*/
-  v6 = 0; /*0x7ab458*/
-  v18 = 0; /*0x7ab45c*/
+  signed int v5 = g_WOL_State; /*0x7ab452*/
+  signed int v6 = 0; /*0x7ab458*/
+  signed int v18 = 0; /*0x7ab45c*/
   if ( (int)g_WOL_State > 0 ) /*0x7ab460*/
   {
-    v7 = 0; /*0x7ab467*/
-    v17 = 0; /*0x7ab46b*/
+  _DWORD v19[27]; // [esp+8h] [ebp-D8h] BYREF
+  char v15; // dl
+    int v7 = 0; /*0x7ab467*/
+    int v17 = 0; /*0x7ab46b*/
     while ( 1 ) /*0x7ab46f*/
     {
       if ( v7 < 0 ) /*0x7ab471*/
         goto LABEL_30; /*0x7ab471*/
       if ( v6 >= v5 ) /*0x7ab479*/
         goto LABEL_30; /*0x7ab479*/
+  _DWORD v20[27]; // [esp+74h] [ebp-6Ch] BYREF
       qmemcpy(v20, (char *)g_WOL_ConnectionFlags + v7, sizeof(v20)); /*0x7ab49a*/
       if ( _strcmpi(&v20[9], a3) ) /*0x7ab4a5*/
         goto LABEL_30; /*0x7ab4af*/
@@ -1442,17 +1344,17 @@ int __stdcall CComObject_CChatEventSink___ATL::_vt30(int a1, int a2, void *a3, i
         --g_WOL_State; /*0x7ab52f*/
         if ( (int)(3 * g_WOL_State) <= g_WOL_StateFlags ) /*0x7ab539*/
         {
-          v9 = g_WOL_StateFlags / 2; /*0x7ab542*/
+          int v9 = g_WOL_StateFlags / 2; /*0x7ab542*/
           if ( g_WOL_StateFlags / 2 < 10 ) /*0x7ab547*/
             v9 = 10; /*0x7ab549*/
           if ( v9 < g_WOL_StateFlags ) /*0x7ab550*/
           {
-            v10 = (char *)__2_YAPAXI_Z(108 * v9); /*0x7ab55c*/
-            v11 = (char *)g_WOL_ConnectionFlags; /*0x7ab561*/
-            v12 = v10; /*0x7ab56c*/
+            char * v10 = (char *)__2_YAPAXI_Z(108 * v9); /*0x7ab55c*/
+            char * v11 = (char *)g_WOL_ConnectionFlags; /*0x7ab561*/
+            void * v12 = v10; /*0x7ab56c*/
             if ( g_WOL_ConnectionFlags ) /*0x7ab56e*/
             {
-              v13 = 108 * g_WOL_State; /*0x7ab580*/
+              char v13 = 108 * g_WOL_State; /*0x7ab580*/
               v14 = (108 * g_WOL_State) >> 2; /*0x7ab582*/
               qmemcpy(v10, g_WOL_ConnectionFlags, 4 * v14); /*0x7ab585*/
               qmemcpy(&v10[4 * v14], &v11[4 * v14], v13 & 3); /*0x7ab58c*/
@@ -1514,25 +1416,15 @@ namespace gamemd {
 int CComObject_CChatEventSink___ATL::DispatchStub_24(int a1, int a2, int a3, int a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall CComObject_CChatEventSink___ATL::_vt24(int a1, int a2, int a3, int a4, int a5)
+void CComObject_CChatEventSink___ATL::_vt24(int a1, int a2, int a3, int a4, int a5)
 {
-  char *v6; // ebx
-  int v7; // ecx
-  int v8; // eax
-  int v9; // ecx
   wchar_t *v10; // eax
   wchar_t *v11; // eax
   HWND v12; // eax
   wchar_t *v13; // eax
   wchar_t *StringCSF; // eax
-  char *v15; // [esp-18h] [ebp-81Ch]
-  char *v16; // [esp-14h] [ebp-818h]
-  char *v17; // [esp-14h] [ebp-818h]
   wchar_t *v18; // [esp-10h] [ebp-814h]
-  char *v19; // [esp-10h] [ebp-814h]
   HWND DlgItem; // [esp-10h] [ebp-814h]
-  char *v21; // [esp-10h] [ebp-814h]
-  void *v22; // [esp+0h] [ebp-804h] BYREF
   wchar_t Buffer[1024]; // [esp+4h] [ebp-800h] BYREF
 
   if ( g_NetworkLobby_Init ) /*0x7ab67d*/
@@ -1540,12 +1432,12 @@ int __stdcall CComObject_CChatEventSink___ATL::_vt24(int a1, int a2, int a3, int
   if ( a2 < 0 ) /*0x7ab693*/
     return 0; /*0x7ab695*/
   memset(byte_B785C0, 0, sizeof(byte_B785C0)); /*0x7ab6af*/
-  v6 = (char *)(a3 + 52); /*0x7ab6c5*/
+  char * v6 = (char *)(a3 + 52); /*0x7ab6c5*/
   if ( !_strnicmp((const char *)(a3 + 52), g_Str_Lob_41_, strlen(g_Str_Lob_41_)) ) /*0x7ab6cf*/
   {
-    v7 = atol((const char *)(strlen(g_Str_Lob_41_) + a3 + 52)); /*0x7ab6f2*/
-    v8 = v7 / 8; /*0x7ab6fd*/
-    v9 = v7 % 8; /*0x7ab70c*/
+    int v7 = atol((const char *)(strlen(g_Str_Lob_41_) + a3 + 52)); /*0x7ab6f2*/
+    int v8 = v7 / 8; /*0x7ab6fd*/
+    int v9 = v7 % 8; /*0x7ab70c*/
     if ( v8 ) /*0x7ab70f*/
       sprintf(byte_B785C0, stru_84B120, (const char *)(&dword_B73E1C)[v9], v8 + 1); /*0x7ab72f*/
     else
@@ -1559,15 +1451,16 @@ int __stdcall CComObject_CChatEventSink___ATL::_vt24(int a1, int a2, int a3, int
   {
     if ( !NetworkLobby::CheckMinPlayers() ) /*0x7ab860*/
     {
-      v21 = CharToWideString((_BYTE *)(a5 + 36)); /*0x7ab878*/
-      v17 = CharToWideString(v6); /*0x7ab880*/
-      v15 = CharToWideString((_BYTE *)(a4 + 36)); /*0x7ab889*/
+      char * v21 = CharToWideString((_BYTE *)(a5 + 36)); /*0x7ab878*/
+      char * v17 = CharToWideString(v6); /*0x7ab880*/
+      char * v15 = CharToWideString((_BYTE *)(a4 + 36)); /*0x7ab889*/
       StringCSF = GetStringCSF(aTxtUserKicked, 0, g_Str_File_wonline_cpp, 8940); /*0x7ab89b*/
       Dialog::ShowMessage(-1, (size_t)StringCSF, v15, v17, v21); /*0x7ab8a8*/
     }
   }
   else
   {
+  void *v22; // [esp+0h] [ebp-804h] BYREF
     unknown_libname_74(&v22); /*0x7ab762*/
     if ( g_WOL_ProcessIdle && Event_Helper() ) /*0x7ab770*/
     {
@@ -1577,8 +1470,8 @@ int __stdcall CComObject_CChatEventSink___ATL::_vt24(int a1, int a2, int a3, int
     else
     {
       memset(Buffer, 0, sizeof(Buffer)); /*0x7ab79d*/
-      v19 = CharToWideString((_BYTE *)(a5 + 36)); /*0x7ab7ae*/
-      v16 = CharToWideString(v6); /*0x7ab7b6*/
+      char * v19 = CharToWideString((_BYTE *)(a5 + 36)); /*0x7ab7ae*/
+      char * v16 = CharToWideString(v6); /*0x7ab7b6*/
       v10 = GetStringCSF(aTxtYoureKicked, 0, g_Str_File_wonline_cpp, 8916); /*0x7ab7c8*/
       swprintf(Buffer, (const size_t)v10, (const wchar_t *const)v16, v19); /*0x7ab7d3*/
       WideString::Assign_Alt(&v22, Buffer); /*0x7ab7e4*/
@@ -1615,31 +1508,17 @@ namespace gamemd {
 int CComObject_CChatEventSink___ATL::DispatchStub_33(int a1, int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall CComObject_CChatEventSink___ATL::_vt33(int a1, int a2, int a3)
+void CComObject_CChatEventSink___ATL::_vt33(int a1, int a2, int a3)
 {
-  int v4; // ebp
-  char *v5; // edi
   char **v6; // eax
   char **v7; // esi
-  int v8; // eax
-  char *v9; // ecx
-  char *v10; // eax
   _DWORD *PlayerProfile; // eax
-  char v12; // [esp+7h] [ebp-2Dh]
-  int v13; // [esp+8h] [ebp-2Ch] BYREF
   void **v14; // [esp+Ch] [ebp-28h] BYREF
-  int v15; // [esp+10h] [ebp-24h]
-  int v16; // [esp+14h] [ebp-20h] BYREF
-  char v17; // [esp+18h] [ebp-1Ch]
-  __int64 v18; // [esp+1Ch] [ebp-18h]
-  int v19; // [esp+24h] [ebp-10h]
-  int v20; // [esp+28h] [ebp-Ch]
-  _DWORD v21[2]; // [esp+2Ch] [ebp-8h] BYREF
 
-  v12 = 0; /*0x7ab8ec*/
+  char v12 = 0; /*0x7ab8ec*/
   if ( a2 >= 0 ) /*0x7ab8f0*/
   {
-    v4 = a3; /*0x7ab909*/
+    int v4 = a3; /*0x7ab909*/
     if ( a3 ) /*0x7ab90f*/
     {
       do /*0x7abac8*/
@@ -1647,8 +1526,9 @@ int __stdcall CComObject_CChatEventSink___ATL::_vt33(int a1, int a2, int a3)
         unknown_libname_73(&a2); /*0x7ab91b*/
         String::Assign_Bool((void **)&a2, (const char *)(v4 + 36)); /*0x7ab928*/
         String::ToLower((const char **)&a2); /*0x7ab931*/
+  int v13; // [esp+8h] [ebp-2Ch] BYREF
         HashTable::Lookup(&g_WOL_ConnectionPool, (const char **)&a2, &v13); /*0x7ab945*/
-        v5 = *(char **)(v4 + 100); /*0x7ab94a*/
+        char * v5 = *(char **)(v4 + 100); /*0x7ab94a*/
         v6 = (char **)__2_YAPAXI_Z(0xCu); /*0x7ab94f*/
         v7 = v6; /*0x7ab954*/
         if ( v6 ) /*0x7ab95b*/
@@ -1658,26 +1538,27 @@ int __stdcall CComObject_CChatEventSink___ATL::_vt33(int a1, int a2, int a3)
         String::Reassign(v7, (const char **)&a2); /*0x7ab96f*/
         v7[1] = v5; /*0x7ab978*/
         v7[2] = 0; /*0x7ab981*/
-        v8 = CComObject_CChatEventSink___ATL::Check((int)&g_WOL_ConnectionPool, (int)&a2); /*0x7ab984*/
-        v9 = (char *)*((_DWORD *)g_WOL_ConnectionPool + v8); /*0x7ab98f*/
+        int v8 = CComObject_CChatEventSink___ATL::Check((int)&g_WOL_ConnectionPool, (int)&a2); /*0x7ab984*/
+        char * v9 = (char *)*((_DWORD *)g_WOL_ConnectionPool + v8); /*0x7ab98f*/
         *((_DWORD *)g_WOL_ConnectionPool + v8) = v7; /*0x7ab992*/
         if ( v9 ) /*0x7ab997*/
           v7[2] = v9; /*0x7ab999*/
-        v19 = dword_B76538; /*0x7ab9b0*/
-        v20 = 0; /*0x7ab9b8*/
-        v18 = (unsigned int)++dword_B76534; /*0x7ab9ac*/
+        int v19 = dword_B76538; /*0x7ab9b0*/
+        int v20 = 0; /*0x7ab9b8*/
+        __int64 v18 = (unsigned int)++dword_B76534; /*0x7ab9ac*/
         if ( (double)(unsigned int)dword_B76534 / (double)dword_B76538 >= dbl_B76558 ) /*0x7ab9d0*/
           HashTable::Grow(&g_WOL_ConnectionPool); /*0x7ab9d7*/
-        v10 = String::GetOrEmpty((char **)&g_WebBrowser); /*0x7ab9e1*/
+        char * v10 = String::GetOrEmpty((char **)&g_WebBrowser); /*0x7ab9e1*/
         if ( !_strcmpi((const void *)(a3 + 36), v10) ) /*0x7ab9ef*/
         {
-          v16 = 0; /*0x7aba03*/
-          v17 = 0; /*0x7aba07*/
+          int v16 = 0; /*0x7aba03*/
+          char v17 = 0; /*0x7aba07*/
           ReadRegistryOptionsWOL(&v16); /*0x7aba0b*/
           ComPtr::Constructor(&v14); /*0x7aba14*/
           v14 = &vt_rc_ptr_PlayerProfile; /*0x7aba22*/
           if ( Flag::IsNot2(&v16) ) /*0x7aba26*/
           {
+  _DWORD v21[2]; // [esp+2Ch] [ebp-8h] BYREF
             PlayerProfile = LoadPlayerProfile(v21, (const char **)&g_WebBrowser); /*0x7aba38*/
             ComPtr::Set(&v14, PlayerProfile[1]); /*0x7aba45*/
             v21[0] = &vt_rc_ptr_PlayerProfile; /*0x7aba4e*/
@@ -1687,6 +1568,7 @@ int __stdcall CComObject_CChatEventSink___ATL::_vt33(int a1, int a2, int a3)
           {
             ComPtr::Set(&v14, dword_B75E4C); /*0x7aba64*/
           }
+  int v15; // [esp+10h] [ebp-24h]
           GadgetClass::TrackState(v15, *(_DWORD *)(a3 + 100), 2); /*0x7aba77*/
           if ( Flag::IsNot2(&v16) ) /*0x7aba80*/
             SaveProfileWOL(v15, (const char **)&g_WebBrowser); /*0x7aba92*/
@@ -1718,28 +1600,19 @@ namespace gamemd {
 int CComObject_CChatEventSink___ATL::DispatchStub_35(int a1, int a2, char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall CComObject_CChatEventSink___ATL::_vt35(int a1, int a2, char *a3)
+void CComObject_CChatEventSink___ATL::_vt35(int a1, int a2, char *a3)
 {
-  int v3; // esi
-  int v4; // esi
-  int v5; // edi
-  int v6; // ecx
-  int v7; // edi
-  double v8; // st7
-  int v9; // esi
   char **v10; // eax
   char **v11; // esi
-  int v12; // edx
-  char *v13; // eax
-  void *v15; // [esp+0h] [ebp-4Ch] BYREF
   __int64 v16; // [esp+4h] [ebp-48h]
   char v17[64]; // [esp+Ch] [ebp-40h] BYREF
 
+  void *v15; // [esp+0h] [ebp-4Ch] BYREF
   unknown_libname_73(&v15); /*0x7abafa*/
   strcpy(v17, g_GameSetupBuffer); /*0x7abb1c*/
   String::Assign_Bool(&v15, v17); /*0x7abb2e*/
   String::ToLower((const char **)&v15); /*0x7abb37*/
-  v3 = *((_DWORD *)g_WOL_ConnectionPool + (dword_B76548(&v15) & ((1 << dword_B7653C) - 1))); /*0x7abb5d*/
+  int v3 = *((_DWORD *)g_WOL_ConnectionPool + (dword_B76548(&v15) & ((1 << dword_B7653C) - 1))); /*0x7abb5d*/
   if ( v3 ) /*0x7abb62*/
   {
     while ( !String::Compare((const char **)v3, (const char **)&v15) ) /*0x7abb76*/
@@ -1752,17 +1625,17 @@ int __stdcall CComObject_CChatEventSink___ATL::_vt35(int a1, int a2, char *a3)
     {
       v16 = (unsigned int)(dword_B76534 - 1); /*0x7abb98*/
       *(float *)&v16 = (double)v16 / (double)dword_B76538; /*0x7abbb4*/
-      v4 = dword_B76548(&v15) & ((1 << dword_B7653C) - 1); /*0x7abbcc*/
-      v5 = *((_DWORD *)g_WOL_ConnectionPool + v4); /*0x7abbd3*/
+      int v4 = dword_B76548(&v15) & ((1 << dword_B7653C) - 1); /*0x7abbcc*/
+      int v5 = *((_DWORD *)g_WOL_ConnectionPool + v4); /*0x7abbd3*/
       if ( v5 ) /*0x7abbd8*/
       {
         if ( String::Compare((const char **)v5, (const char **)&v15) ) /*0x7abbe5*/
         {
-          v6 = *((_DWORD *)g_WOL_ConnectionPool + v4); /*0x7abbf4*/
-          v7 = *(_DWORD *)(v6 + 8); /*0x7abbf9*/
+          int v6 = *((_DWORD *)g_WOL_ConnectionPool + v4); /*0x7abbf4*/
+          int v7 = *(_DWORD *)(v6 + 8); /*0x7abbf9*/
           if ( v6 ) /*0x7abbfc*/
             ScalarDtor::DeleteAndZero((void **)v6, 1); /*0x7abc00*/
-          v8 = *(float *)&v16; /*0x7abc0a*/
+          double v8 = *(float *)&v16; /*0x7abc0a*/
           *((_DWORD *)g_WOL_ConnectionPool + v4) = v7; /*0x7abc0e*/
           --dword_B76534; /*0x7abc1d*/
           if ( v8 <= dbl_B76550 ) /*0x7abc27*/
@@ -1771,7 +1644,7 @@ LABEL_18:
         }
         else
         {
-          v9 = *(_DWORD *)(v5 + 8); /*0x7abc2b*/
+          int v9 = *(_DWORD *)(v5 + 8); /*0x7abc2b*/
           if ( v9 ) /*0x7abc30*/
           {
             while ( !String::Compare((const char **)v9, (const char **)&v15) ) /*0x7abc40*/
@@ -1802,8 +1675,8 @@ LABEL_19:
   String::Reassign(v11, (const char **)&v15); /*0x7abcaa*/
   v11[2] = 0; /*0x7abcaf*/
   v11[1] = a3; /*0x7abcb6*/
-  v12 = dword_B76548(&v15) & ((1 << dword_B7653C) - 1); /*0x7abcd7*/
-  v13 = (char *)*((_DWORD *)g_WOL_ConnectionPool + v12); /*0x7abcd9*/
+  int v12 = dword_B76548(&v15) & ((1 << dword_B7653C) - 1); /*0x7abcd7*/
+  char * v13 = (char *)*((_DWORD *)g_WOL_ConnectionPool + v12); /*0x7abcd9*/
   *((_DWORD *)g_WOL_ConnectionPool + v12) = v11; /*0x7abcdc*/
   if ( v13 ) /*0x7abce1*/
     v11[2] = v13; /*0x7abce3*/
@@ -1822,22 +1695,10 @@ namespace gamemd {
 int CComObject_CChatEventSink___ATL::DispatchStub_34(int a1, int a2, float a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall CComObject_CChatEventSink___ATL::_vt34(int a1, int a2, float a3)
+void CComObject_CChatEventSink___ATL::_vt34(int a1, int a2, float a3)
 {
-  float v3; // esi
-  float v4; // ebp
-  int v5; // esi
-  int v6; // esi
-  int v7; // edi
-  int v8; // ecx
-  int v9; // edi
-  double v10; // st7
-  int v11; // esi
-  char *v12; // edi
   char **v13; // eax
   char **v14; // esi
-  int v15; // edx
-  char *v16; // eax
 
   if ( a2 < 0 ) /*0x7abd4c*/
   {
@@ -1846,15 +1707,15 @@ int __stdcall CComObject_CChatEventSink___ATL::_vt34(int a1, int a2, float a3)
   }
   else
   {
-    v3 = a3; /*0x7abd54*/
-    v4 = a3; /*0x7abd5c*/
+    float v3 = a3; /*0x7abd54*/
+    float v4 = a3; /*0x7abd5c*/
     unknown_libname_73(&a2); /*0x7abd5e*/
     if ( v3 != 0.0 ) /*0x7abd65*/
     {
       do /*0x7abd74*/
       {
         String::Assign_Bool((void **)&a2, (const char *)(LODWORD(v4) + 36)); /*0x7abd74*/
-        v5 = *((_DWORD *)g_WOL_MessageQueue + (dword_B76698(&a2) & ((1 << dword_B7668C) - 1))); /*0x7abd98*/
+        int v5 = *((_DWORD *)g_WOL_MessageQueue + (dword_B76698(&a2) & ((1 << dword_B7668C) - 1))); /*0x7abd98*/
         if ( !v5 ) /*0x7abd9d*/
           goto LABEL_21; /*0x7abd9d*/
         while ( !String::Compare((const char **)v5, (const char **)&a2) ) /*0x7abdb1*/
@@ -1866,17 +1727,17 @@ int __stdcall CComObject_CChatEventSink___ATL::_vt34(int a1, int a2, float a3)
         if ( !g_WOL_MessageConfig ) /*0x7abdc6*/
           goto LABEL_21; /*0x7abdc6*/
         a3 = (double)(unsigned int)(g_WOL_MessageConfig - 1) / (double)g_WOL_MsgPool; /*0x7abdef*/
-        v6 = dword_B76698(&a2) & ((1 << dword_B7668C) - 1); /*0x7abe07*/
-        v7 = *((_DWORD *)g_WOL_MessageQueue + v6); /*0x7abe0e*/
+        int v6 = dword_B76698(&a2) & ((1 << dword_B7668C) - 1); /*0x7abe07*/
+        int v7 = *((_DWORD *)g_WOL_MessageQueue + v6); /*0x7abe0e*/
         if ( !v7 ) /*0x7abe13*/
           goto LABEL_21; /*0x7abe13*/
         if ( String::Compare((const char **)v7, (const char **)&a2) ) /*0x7abe20*/
         {
-          v8 = *((_DWORD *)g_WOL_MessageQueue + v6); /*0x7abe2f*/
-          v9 = *(_DWORD *)(v8 + 8); /*0x7abe34*/
+          int v8 = *((_DWORD *)g_WOL_MessageQueue + v6); /*0x7abe2f*/
+          int v9 = *(_DWORD *)(v8 + 8); /*0x7abe34*/
           if ( v8 ) /*0x7abe37*/
             ScalarDtor::DeleteAndZero((void **)v8, 1); /*0x7abe3b*/
-          v10 = a3; /*0x7abe45*/
+          double v10 = a3; /*0x7abe45*/
           *((_DWORD *)g_WOL_MessageQueue + v6) = v9; /*0x7abe49*/
           --g_WOL_MessageConfig; /*0x7abe58*/
           if ( v10 > dbl_B766A0 ) /*0x7abe62*/
@@ -1884,7 +1745,7 @@ int __stdcall CComObject_CChatEventSink___ATL::_vt34(int a1, int a2, float a3)
         }
         else
         {
-          v11 = *(_DWORD *)(v7 + 8); /*0x7abe66*/
+          int v11 = *(_DWORD *)(v7 + 8); /*0x7abe66*/
           if ( v11 ) /*0x7abe6b*/
           {
             while ( !String::Compare((const char **)v11, (const char **)&a2) ) /*0x7abe7b*/
@@ -1904,7 +1765,7 @@ LABEL_19:
         }
         HashMap::Shrink(&g_WOL_MessageQueue); /*0x7abebe*/
 LABEL_21:
-        v12 = *(char **)(LODWORD(v4) + 104); /*0x7abec3*/
+        char * v12 = *(char **)(LODWORD(v4) + 104); /*0x7abec3*/
         v13 = (char **)__2_YAPAXI_Z(0xCu); /*0x7abec8*/
         v14 = v13; /*0x7abecd*/
         if ( v13 ) /*0x7abed4*/
@@ -1914,8 +1775,8 @@ LABEL_21:
         String::Reassign(v14, (const char **)&a2); /*0x7abee8*/
         v14[1] = v12; /*0x7abef1*/
         v14[2] = 0; /*0x7abef4*/
-        v15 = dword_B76698(&a2) & ((1 << dword_B7668C) - 1); /*0x7abf11*/
-        v16 = (char *)*((_DWORD *)g_WOL_MessageQueue + v15); /*0x7abf13*/
+        int v15 = dword_B76698(&a2) & ((1 << dword_B7668C) - 1); /*0x7abf11*/
+        char * v16 = (char *)*((_DWORD *)g_WOL_MessageQueue + v15); /*0x7abf13*/
         *((_DWORD *)g_WOL_MessageQueue + v15) = v14; /*0x7abf16*/
         if ( v16 ) /*0x7abf1b*/
           v14[2] = v16; /*0x7abf1d*/
@@ -1938,34 +1799,24 @@ namespace gamemd {
 int CComObject_CChatEventSink___ATL::DispatchStub_36(int a1, int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall CComObject_CChatEventSink___ATL::_vt36(int a1, int a2, int a3)
+void CComObject_CChatEventSink___ATL::_vt36(int a1, int a2, int a3)
 {
-  int v3; // ebp
-  int v4; // esi
-  int v5; // esi
-  int v6; // edi
-  int v7; // ecx
-  int v8; // edi
-  int v9; // esi
   char **v10; // eax
   char **v11; // esi
-  int v12; // edx
-  char *v13; // eax
-  char v15[64]; // [esp+Ch] [ebp-40h] BYREF
-  float v16; // [esp+54h] [ebp+8h]
 
   if ( a2 ) /*0x7abfac*/
   {
     Debug::Log(); /*0x7ac208*/
     return 0; /*0x7ac210*/
   }
-  v3 = a3; /*0x7abfb3*/
+  int v3 = a3; /*0x7abfb3*/
   g_CommandExecState = a3; /*0x7abfbd*/
   unknown_libname_73(&a3); /*0x7abfc3*/
+  char v15[64]; // [esp+Ch] [ebp-40h] BYREF
   strcpy(v15, g_GameSetupBuffer); /*0x7abfe5*/
   String::Assign_Bool((void **)&a3, v15); /*0x7abff7*/
   String::ToLower((const char **)&a3); /*0x7ac000*/
-  v4 = *((_DWORD *)g_WOL_MessageQueue + (dword_B76698(&a3) & ((1 << dword_B7668C) - 1))); /*0x7ac024*/
+  int v4 = *((_DWORD *)g_WOL_MessageQueue + (dword_B76698(&a3) & ((1 << dword_B7668C) - 1))); /*0x7ac024*/
   if ( v4 ) /*0x7ac029*/
   {
     while ( !String::Compare((const char **)v4, (const char **)&a3) ) /*0x7ac03d*/
@@ -1976,15 +1827,15 @@ int __stdcall CComObject_CChatEventSink___ATL::_vt36(int a1, int a2, int a3)
     }
     if ( g_WOL_MessageConfig ) /*0x7ac052*/
     {
-      v16 = (double)(unsigned int)(g_WOL_MessageConfig - 1) / (double)g_WOL_MsgPool; /*0x7ac07b*/
-      v5 = dword_B76698(&a3) & ((1 << dword_B7668C) - 1); /*0x7ac093*/
-      v6 = *((_DWORD *)g_WOL_MessageQueue + v5); /*0x7ac09a*/
+      float v16 = (double)(unsigned int)(g_WOL_MessageConfig - 1) / (double)g_WOL_MsgPool; /*0x7ac07b*/
+      int v5 = dword_B76698(&a3) & ((1 << dword_B7668C) - 1); /*0x7ac093*/
+      int v6 = *((_DWORD *)g_WOL_MessageQueue + v5); /*0x7ac09a*/
       if ( v6 ) /*0x7ac09f*/
       {
         if ( String::Compare((const char **)v6, (const char **)&a3) ) /*0x7ac0ac*/
         {
-          v7 = *((_DWORD *)g_WOL_MessageQueue + v5); /*0x7ac0bb*/
-          v8 = *(_DWORD *)(v7 + 8); /*0x7ac0c0*/
+          int v7 = *((_DWORD *)g_WOL_MessageQueue + v5); /*0x7ac0bb*/
+          int v8 = *(_DWORD *)(v7 + 8); /*0x7ac0c0*/
           if ( v7 ) /*0x7ac0c3*/
             ScalarDtor::DeleteAndZero((void **)v7, 1); /*0x7ac0c7*/
           *((_DWORD *)g_WOL_MessageQueue + v5) = v8; /*0x7ac0d5*/
@@ -1994,7 +1845,7 @@ int __stdcall CComObject_CChatEventSink___ATL::_vt36(int a1, int a2, int a3)
         }
         else
         {
-          v9 = *(_DWORD *)(v6 + 8); /*0x7ac0f2*/
+          int v9 = *(_DWORD *)(v6 + 8); /*0x7ac0f2*/
           if ( v9 ) /*0x7ac0f7*/
           {
             while ( !String::Compare((const char **)v9, (const char **)&a3) ) /*0x7ac107*/
@@ -2026,8 +1877,8 @@ LABEL_20:
   String::Reassign(v11, (const char **)&a3); /*0x7ac171*/
   v11[1] = (char *)v3; /*0x7ac17a*/
   v11[2] = 0; /*0x7ac17d*/
-  v12 = dword_B76698(&a3) & ((1 << dword_B7668C) - 1); /*0x7ac19a*/
-  v13 = (char *)*((_DWORD *)g_WOL_MessageQueue + v12); /*0x7ac19c*/
+  int v12 = dword_B76698(&a3) & ((1 << dword_B7668C) - 1); /*0x7ac19a*/
+  char * v13 = (char *)*((_DWORD *)g_WOL_MessageQueue + v12); /*0x7ac19c*/
   *((_DWORD *)g_WOL_MessageQueue + v12) = v11; /*0x7ac19f*/
   if ( v13 ) /*0x7ac1a4*/
     v11[2] = v13; /*0x7ac1a6*/
@@ -2044,11 +1895,8 @@ namespace gamemd {
 int CComObject_CChatEventSink___ATL::DispatchStub_37(int a1, int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall CComObject_CChatEventSink___ATL::vt_37_(int a1, int a2, int a3)
+void CComObject_CChatEventSink___ATL::vt_37_(int a1, int a2, int a3)
 {
-  int v3; // ebx
-  int v4; // eax
-  int v5; // esi
   char **v6; // ecx
   HWND v7; // eax
   HWND Current; // eax
@@ -2056,11 +1904,9 @@ int __stdcall CComObject_CChatEventSink___ATL::vt_37_(int a1, int a2, int a3)
   HWND v10; // eax
   HWND v11; // esi
   HWND v12; // eax
-  char v14[108]; // [esp+8h] [ebp-6Ch] BYREF
-
   if ( a2 >= 0 ) /*0x7ac22b*/
   {
-    v3 = a3; /*0x7ac23b*/
+    int v3 = a3; /*0x7ac23b*/
     if ( a3 ) /*0x7ac23d*/
     {
       while ( 1 ) /*0x7ac24e*/
@@ -2077,8 +1923,8 @@ LABEL_20:
       String::AssignFromPtr((char **)&a2, (const char **)&a3); /*0x7ac276*/
       StringVector::Insert(&g_WindowManager, (const char **)&a2, g_WindowManager); /*0x7ac28f*/
       StringVector::Insert(&g_WOL_RequestManager, (const char **)&a2, g_WOL_RequestManager); /*0x7ac2a8*/
-      v4 = g_WOL_BuddyList; /*0x7ac2ad*/
-      v5 = g_WOL_BuddyList; /*0x7ac2b2*/
+      int v4 = g_WOL_BuddyList; /*0x7ac2ad*/
+      int v5 = g_WOL_BuddyList; /*0x7ac2b2*/
       if ( g_WOL_BuddyList >= dword_B779B4 ) /*0x7ac2be*/
       {
         DynamicVector::EnsureCapacity(&g_WOL_BuddyList); /*0x7ac2c5*/
@@ -2116,6 +1962,7 @@ LABEL_19:
         if ( DynamicStringArray::Get(&g_WOL_RequestManager, (char **)&g_WOL_AuthObject, 0) ) /*0x7ac37f*/
           DynamicArray::Remove(&g_WOL_RequestManager, 0); /*0x7ac38f*/
         g_WOL_ParseState = time(0); /*0x7ac39b*/
+  char v14[108]; // [esp+8h] [ebp-6Ch] BYREF
         memset(v14, 0, sizeof(v14)); /*0x7ac3ab*/
         strcpy(&v14[36], String::GetOrEmpty((char **)&g_WOL_AuthObject)); /*0x7ac3d8*/
         (*(void (__stdcall **)(LPVOID, char *))(*(_DWORD *)ppv + 96))(ppv, v14); /*0x7ac3ea*/
@@ -2179,11 +2026,10 @@ namespace gamemd {
 int CComObject_CChatEventSink___ATL::QueryInterface()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall CComObject_CChatEventSink___ATL::QueryInterface(CComObject_VCChatEventSink___ATL *this)
+void CComObject_CChatEventSink___ATL::QueryInterface()
 {
   _UNKNOWN **v1; // esi
   int result; // eax
-  _DWORD *v3; // eax
   BOOL v4; // ebp
   int (__stdcall *v5)(char *, _DWORD *, char **, void *); // eax
   void *v6; // eax
@@ -2204,7 +2050,7 @@ int __thiscall CComObject_CChatEventSink___ATL::QueryInterface(CComObject_VCChat
   }
   while ( 1 ) /*0x7ac76d*/
   {
-    v3 = *v1; /*0x7ac76d*/
+    _DWORD * v3 = *v1; /*0x7ac76d*/
     v4 = *v1 == 0; /*0x7ac776*/
     if ( !*v1 || *v3 == *v9 && v3[1] == v9[1] && v3[2] == v9[2] && v3[3] == v9[3] ) /*0x7ac7a0*/
       break; /*0x7ac7a0*/
@@ -2235,7 +2081,7 @@ namespace gamemd {
 int CComObject_CChatEventSink___ATL::Check(TechnoTypeClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall CComObject_CChatEventSink___ATL::Check(int this, TechnoTypeClass *aP1)
+void CComObject_CChatEventSink___ATL::Check(int this, TechnoTypeClass *aP1)
 {
   return (*(int (__thiscall **)(TechnoTypeClass *))(this + 24))(aP1) & ((1 << *(_DWORD *)(this + 12)) - 1); /*0x7ae5c4*/
 }

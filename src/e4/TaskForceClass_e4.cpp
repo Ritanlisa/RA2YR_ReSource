@@ -14,16 +14,12 @@ unsigned int * TaskForceClass::ParseUnitCountAndType(char * Buffer)
 _DWORD *__thiscall sub_4C4EF0(_DWORD *this, char *Buffer)
 {
   int ExitCellByName; // eax
-  int v4; // edx
   int Index; // eax
-  int v7; // edx
-  int v8; // eax
-  const char *v9; // [esp-10h] [ebp-54h]
-  _BYTE v10[64]; // [esp+4h] [ebp-40h] BYREF
 
-  v9 = Buffer; /*0x4c4f09*/
+  const char * v9 = Buffer; /*0x4c4f09*/
   *this = 0; /*0x4c4f0a*/
   this->vtable2 = 0; /*0x4c4f10*/
+  _BYTE v10[64]; // [esp+4h] [ebp-40h] BYREF
   sscanf(v9, DataGlobal_82085C, &Buffer, v10); /*0x4c4f17*/
   *this = Buffer; /*0x4c4f27*/
   ExitCellByName = Factory::FindExitCellByName(v10); /*0x4c4f29*/
@@ -32,21 +28,21 @@ _DWORD *__thiscall sub_4C4EF0(_DWORD *this, char *Buffer)
     Index = BuildingTypeClass::FindIndex(v10); /*0x4c4f4c*/
     if ( Index == -1 ) /*0x4c4f54*/
     {
-      v8 = TypeClass::FindByName(v10); /*0x4c4f6f*/
+      int v8 = TypeClass::FindByName(v10); /*0x4c4f6f*/
       if ( v8 != -1 ) /*0x4c4f77*/
         this->vtable2 = *((_DWORD *)g_AircraftTypeCount + v8); /*0x4c4f82*/
       return this; /*0x4c4f85*/
     }
     else
     {
-      v7 = *((_DWORD *)g_UnitTypeCount2 + Index); /*0x4c4f5c*/
+      int v7 = *((_DWORD *)g_UnitTypeCount2 + Index); /*0x4c4f5c*/
       this->vtable2 = v7; /*0x4c4f61*/
       return this; /*0x4c4f5f*/
     }
   }
   else
   {
-    v4 = *((_DWORD *)Factory_ExitCellTable + ExitCellByName); /*0x4c4f39*/
+    int v4 = *((_DWORD *)Factory_ExitCellTable + ExitCellByName); /*0x4c4f39*/
     this->vtable2 = v4; /*0x4c4f3e*/
     return this; /*0x4c4f3c*/
   }
@@ -63,8 +59,6 @@ _DWORD *__thiscall TaskForceClass::Construct(_DWORD *this, ObjectClass *aP1)
 {
   TaskForceClass *v3; // eax
   ObjectTypeClass *v4; // eax
-  int v5; // ecx
-
   AbstractTypeClass::Constructor((int)this, (AbstractClass *)aP1); /*0x6e7e8a*/
   this->q098 = -1; /*0x6e7e8f*/
   this->q09C = 0; /*0x6e7e99*/
@@ -85,7 +79,7 @@ _DWORD *__thiscall TaskForceClass::Construct(_DWORD *this, ObjectClass *aP1)
     *(_DWORD *)(*(_DWORD *)&HouseClass_Player[43912] + 4 * (_DWORD)v3) = this; /*0x6e7f21*/
   }
   v4 = (ObjectTypeClass *)(this + 41); /*0x6e7f28*/
-  v5 = 6; /*0x6e7f2a*/
+  int v5 = 6; /*0x6e7f2a*/
   do /*0x6e7f38*/
   {
     *(_DWORD *)v4->__pad_0 = 0; /*0x6e7f2f*/
@@ -110,10 +104,7 @@ CCINIClass *__fastcall TaskForceClass::LoadFromINI(char *a1, int a2)
   CCINIClass *v5; // esi
   CCINIClass *v6; // ebx
   unsigned __int8 *StringByIndex; // eax
-  int v8; // esi
-  _DWORD *v9; // eax
   TaskForceClass *v10; // esi
-  int v11; // eax
   CCINIClass *v12; // [esp+10h] [ebp-1Ch]
   char Source[24]; // [esp+14h] [ebp-18h] BYREF
 
@@ -145,7 +136,7 @@ LABEL_13:
     }
     if ( !_strcmpi((char *)&stru_817460.sectionHead[1], Source) || !_strcmpi(g_Str_none, Source) ) /*0x6e8293*/
       goto LABEL_11; /*0x6e8293*/
-    v8 = 0; /*0x6e82a4*/
+    int v8 = 0; /*0x6e82a4*/
     if ( *(int *)&g_NetworkPlayerBuffer[4772] > 0 ) /*0x6e82a8*/
     {
       while ( _strcmpi((char *)(*(_DWORD *)(*(_DWORD *)&g_NetworkPlayerBuffer[4760] + 4 * v8) + 36), Source) ) /*0x6e82c6*/
@@ -157,14 +148,14 @@ LABEL_13:
       goto LABEL_12; /*0x6e82fc*/
     }
 LABEL_8:
-    v9 = (_DWORD *)__2_YAPAXI_Z(0xD4u); /*0x6e82d7*/
+    _DWORD * v9 = (_DWORD *)__2_YAPAXI_Z(0xD4u); /*0x6e82d7*/
     if ( v9 ) /*0x6e82e1*/
       v10 = (TaskForceClass *)TaskForceClass::Construct(v9, Source); /*0x6e82ef*/
     else
 LABEL_11:
       v10 = 0; /*0x6e82fe*/
 LABEL_12:
-    v11 = sub_412610(Source); /*0x6e8300*/
+    int v11 = sub_412610(Source); /*0x6e8300*/
     SwizzleManagerClass::Here_I_Am((int)&g_OverlayTypeConfig[18712], v11, (int)v10); /*0x6e8310*/
     result = (CCINIClass *)(*(int (__thiscall **)(TaskForceClass *, char *))(*(_DWORD *)v10->__pad_0 + 100))(v10, a1); /*0x6e831a*/
     *(_DWORD *)v10->__pad_A0 = a2; /*0x6e831d*/
@@ -183,7 +174,6 @@ TaskForceClass * TaskForceClass::ExecuteAction(char a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 TaskForceClass *__thiscall TaskForceClass::ExecuteAction(void **this, char a2)
 {
-  int v3; // eax
   void **v5; // [esp+4h] [ebp-4h] BYREF
 
   *this = &TaskForceClass::`vftable'; /*0x6e87f6*/
@@ -192,7 +182,7 @@ TaskForceClass *__thiscall TaskForceClass::ExecuteAction(void **this, char a2)
   this->vtable4 = &vt_TaskForceClass; /*0x6e880a*/
   AbstractClass::AnnounceExpiredPointer(this, 1); /*0x6e8811*/
   v5 = this; /*0x6e8826*/
-  v3 = (*(int (__thiscall **)(int *, void ***))(DataGlobal_A8E8D0 + 16))(&DataGlobal_A8E8D0, &v5); /*0x6e882a*/
+  int v3 = (*(int (__thiscall **)(int *, void ***))(DataGlobal_A8E8D0 + 16))(&DataGlobal_A8E8D0, &v5); /*0x6e882a*/
   if ( v3 != -1 && v3 < g_MultiplayerLogFlags && v3 < --g_MultiplayerLogFlags ) /*0x6e8845*/
   {
     do /*0x6e885d*/

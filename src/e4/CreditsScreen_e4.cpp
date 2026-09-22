@@ -7,7 +7,7 @@
 int CreditsScreen::DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall CreditsScreen_DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
+void CreditsScreen_DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 {
   int result; // eax
   _DWORD *WindowLongA; // eax
@@ -15,14 +15,7 @@ int __stdcall CreditsScreen_DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned
   wchar_t *String; // eax
   char *ModuleVersion; // eax
   char *ModuleInternalVersion; // eax
-  const char *v10; // eax
-  const char *v11; // eax
-  const char *v12; // [esp-8h] [ebp-29Ch]
-  char v13; // [esp+Fh] [ebp-285h] BYREF
-  int v14; // [esp+10h] [ebp-284h] BYREF
   char Buffer[256]; // [esp+14h] [ebp-280h] BYREF
-  char v16[128]; // [esp+114h] [ebp-180h] BYREF
-  char v17[128]; // [esp+194h] [ebp-100h] BYREF
   char Destination[128]; // [esp+214h] [ebp-80h] BYREF
 
   result = BaseDialogProc(hWnd, a2, a3, a4); /*0x531a28*/
@@ -46,21 +39,23 @@ int __stdcall CreditsScreen_DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned
   ModuleInternalVersion = GetModuleInternalVersion((int)&g_CoordScatterManager); /*0x531ab7*/
   sprintf(Buffer, DataGlobal_826940, ModuleInternalVersion); /*0x531ac7*/
   SendMessageA(DlgItem, 0x4C8u, 0, (LPARAM)Buffer); /*0x531adc*/
+  char v16[128]; // [esp+114h] [ebp-180h] BYREF
   v16[0] = 0; /*0x531aea*/
   Time::FormatDate(v16); /*0x531af2*/
-  v12 = (const char *)String::CopyConstant(Destination); /*0x531b10*/
-  v10 = (const char *)String::FormatDword(v17); /*0x531b1d*/
+  const char * v12 = (const char *)String::CopyConstant(Destination); /*0x531b10*/
+  char v17[128]; // [esp+194h] [ebp-100h] BYREF
+  const char * v10 = (const char *)String::FormatDword(v17); /*0x531b1d*/
   sprintf(Buffer, DataGlobal_826920, v10, v12, v16); /*0x531b2d*/
   SendMessageA(DlgItem, 0x4C8u, 0, (LPARAM)Buffer); /*0x531b42*/
-  v14 = 5; /*0x531b51*/
-  v13 = 0; /*0x531b59*/
+  int v14 = 5; /*0x531b51*/
+  char v13 = 0; /*0x531b59*/
   SendMessageA(DlgItem, 0x4C8u, 0, (LPARAM)&DataGlobal_A8F314); /*0x531b5e*/
   SendMessageA(DlgItem, 0x4C8u, 0, (LPARAM)&DataGlobal_A8F4A0); /*0x531b6d*/
   SendMessageA(DlgItem, 0x4C8u, 0, (LPARAM)&DataGlobal_A8F420); /*0x531b7c*/
   SendMessageA(DlgItem, 0x4C8u, 0, (LPARAM)&DataGlobal_A8F520); /*0x531b8b*/
   SendMessageA(DlgItem, 0x4C8u, 0, (LPARAM)&DataGlobal_A8F394); /*0x531b9a*/
   GetVersionString(&v14, &v13, 0, 0); /*0x531ba8*/
-  v11 = (const char *)&stru_821F08; /*0x531bb3*/
+  const char * v11 = (const char *)&stru_821F08; /*0x531bb3*/
   if ( !v13 ) /*0x531bb8*/
     v11 = g_INI_Key_No; /*0x531bba*/
   sprintf(Buffer, stru_82690C, v11, Source); /*0x531bcf*/

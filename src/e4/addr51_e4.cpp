@@ -13,7 +13,7 @@ namespace gamemd {
 int globalHelper_0108F0(unsigned int * a1, unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __cdecl globalHelper_0108F0(_DWORD *a1, _DWORD *a2)
+int globalHelper_0108F0(_DWORD *a1, _DWORD *a2)
 {
   if ( *a1 == *a2 )
     return 0; /*0x510900*/
@@ -28,7 +28,7 @@ namespace gamemd {
 unsigned char E4Recv_517360::sub_517360(unsigned char a2, unsigned char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-unsigned __int8 __thiscall sub_517360(unsigned __int8 *this, unsigned __int8 a2, unsigned __int8 *a3)
+void sub_517360(unsigned __int8 *this, unsigned __int8 a2, unsigned __int8 *a3)
 {
   unsigned __int8 v3; // bl
   unsigned __int8 v4; // al
@@ -52,19 +52,16 @@ namespace gamemd {
 int E4Recv_5173F0::sub_5173F0(unsigned char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_5173F0(unsigned __int8 *this, unsigned __int8 *a2)
+void sub_5173F0(unsigned __int8 *this, unsigned __int8 *a2)
 {
-  int v2; // esi
-  int v3; // edx
-  int v4; // eax
 
-  v2 = *this - *a2; /*0x517400*/
+  int v2 = *this - *a2; /*0x517400*/
   if ( v2 < 0 ) /*0x517402*/
     v2 = *a2 - *this; /*0x517404*/
-  v3 = *(this + 1) - a2[1]; /*0x517410*/
+  int v3 = *(this + 1) - a2[1]; /*0x517410*/
   if ( v3 < 0 ) /*0x517412*/
     v3 = a2[1] - *(this + 1); /*0x517414*/
-  v4 = *(this + 2) - a2[2]; /*0x517422*/
+  int v4 = *(this + 2) - a2[2]; /*0x517422*/
   if ( v4 < 0 ) /*0x517424*/
     v4 = a2[2] - *(this + 2); /*0x517426*/
   return v2 * v2 + v3 * v3 + v4 * v4; /*0x517437*/
@@ -80,33 +77,8 @@ int SaveInfantryToINI()
 int __usercall SaveInfantryToINI@<eax>(int a1@<ecx>, int a2@<edi>, int a3@<esi>)
 {
   int result; // eax
-  int v4; // esi
-  unsigned int v5; // edi
-  int v6; // ebp
-  const char *v7; // ebx
-  int v8; // edx
-  int v9; // eax
-  int v10; // eax
-  int v11; // eax
   double HealthRatio; // st7
-  int v13; // eax
-  int v14; // [esp-34h] [ebp-F0h]
-  int v15; // [esp-30h] [ebp-ECh]
-  int v16; // [esp-2Ch] [ebp-E8h]
-  const char *v17; // [esp-28h] [ebp-E4h]
-  int v18; // [esp-24h] [ebp-E0h]
-  char *v19; // [esp-20h] [ebp-DCh]
-  const char *v20; // [esp-20h] [ebp-DCh]
-  int v21; // [esp-1Ch] [ebp-D8h]
-  int v22; // [esp-18h] [ebp-D4h]
-  int v23; // [esp-14h] [ebp-D0h]
-  int v24; // [esp-14h] [ebp-D0h]
-  int v25; // [esp-10h] [ebp-CCh]
-  int v26; // [esp-Ch] [ebp-C8h]
   int i; // [esp+8h] [ebp-B4h]
-  char *v30; // [esp+14h] [ebp-A8h]
-  _DWORD v31[3]; // [esp+20h] [ebp-9Ch] BYREF
-  int v32; // [esp+2Ch] [ebp-90h] BYREF
   char Buffer[12]; // [esp+30h] [ebp-8Ch] BYREF
   char Source[128]; // [esp+3Ch] [ebp-80h] BYREF
 
@@ -114,39 +86,44 @@ int __usercall SaveInfantryToINI@<eax>(int a1@<ecx>, int a2@<edi>, int a3@<esi>)
   result = 0; /*0x51ff0d*/
   for ( i = 0; result < g_BuildingClass_Count; i = result ) /*0x51ff15*/
   {
-    v4 = *((_DWORD *)g_InfantryClassLimit + result); /*0x51ff25*/
+    int v4 = *((_DWORD *)g_InfantryClassLimit + result); /*0x51ff25*/
     if ( !*(_BYTE *)(v4 + 129) ) /*0x51ff28*/
     {
       sprintf(Buffer, g_Str_Trace__d, result); /*0x51ff41*/
       if ( (*(int (__thiscall **)(int, int, int))(*(_DWORD *)v4 + 388))(v4, a2, a3) == -1 ) /*0x51ff71*/
-        v30 = *(char **)(v4 + 180); /*0x51ff79*/
+        char * v30 = *(char **)(v4 + 180); /*0x51ff79*/
       else
         v30 = (char *)(*(int (__thiscall **)(int))(*(_DWORD *)v4 + 388))(v4); /*0x51ff89*/
-      v5 = *ProgressTimer::GetValue((_WORD *)(v4 + 904), &v32); /*0x51ff9d*/
-      v6 = *(_DWORD *)(v4 + 540); /*0x51ffab*/
-      v7 = (const char *)(*(_DWORD *)(v4 + 1728) + 36); /*0x51ffb3*/
+  int v32; // [esp+2Ch] [ebp-90h] BYREF
+      unsigned int v5 = *ProgressTimer::GetValue((_WORD *)(v4 + 904), &v32); /*0x51ff9d*/
+      int v6 = *(_DWORD *)(v4 + 540); /*0x51ffab*/
+      const char * v7 = (const char *)(*(_DWORD *)(v4 + 1728) + 36); /*0x51ffb3*/
+  _DWORD v31[3]; // [esp+20h] [ebp-9Ch] BYREF
       v31[0] = *(_DWORD *)(v4 + 156); /*0x51ffb6*/
-      v8 = *(unsigned __int8 *)(v4 + 1058); /*0x51ffbf*/
+      int v8 = *(unsigned __int8 *)(v4 + 1058); /*0x51ffbf*/
       v31[1] = *(_DWORD *)(v4 + 160); /*0x51ffc5*/
-      v9 = *(unsigned __int8 *)(v4 + 1057); /*0x51ffce*/
+      int v9 = *(unsigned __int8 *)(v4 + 1057); /*0x51ffce*/
       v31[2] = *(_DWORD *)(v4 + 164); /*0x51ffd4*/
       a3 = v8; /*0x51ffe0*/
       a2 = v9; /*0x51ffe7*/
-      v23 = FootClass::GetField(v4 + 336, *(_DWORD *)(v4 + 532), *(unsigned __int8 *)(v4 + 140)); /*0x52000b*/
-      v19 = FromNameIndex((int)v30); /*0x52001b*/
+      int v23 = FootClass::GetField(v4 + 336, *(_DWORD *)(v4 + 532), *(unsigned __int8 *)(v4 + 140)); /*0x52000b*/
+      char * v19 = FromNameIndex((int)v30); /*0x52001b*/
+  int v10; // eax
       LOBYTE(v10) = Input::OffsetToDirection(v31); /*0x52001c*/
+  int v11; // eax
       v11 = (*(int (__thiscall **)(int, char *, int, char *, _DWORD))(*(_DWORD *)v4 + 440))( /*0x52002b*/
               v4,
               Buffer,
               v10,
               v19,
               (unsigned __int8)(((v5 >> 7) + 1) >> 1));
+  int v14; // [esp-34h] [ebp-F0h]
       v14 = *(__int16 *)(*(int (__thiscall **)(int, char *, _DWORD))(*(_DWORD *)v4 + 440))( /*0x520048*/
                           v4,
                           Buffer,
                           *(__int16 *)(v11 + 2));
       HealthRatio = BuildingClass::GetHealthRatio((int *)v4); /*0x52004b*/
-      v13 = Math::RoundToInt(HealthRatio * 256.0); /*0x520056*/
+      int v13 = Math::RoundToInt(HealthRatio * 256.0); /*0x520056*/
       sprintf( /*0x520068*/
         Source,
         stru_825584,
@@ -154,15 +131,25 @@ int __usercall SaveInfantryToINI@<eax>(int a1@<ecx>, int a2@<edi>, int a3@<esi>)
         v7,
         v13,
         v14,
+  int v15; // [esp-30h] [ebp-ECh]
         v15,
+  int v16; // [esp-2Ch] [ebp-E8h]
         v16,
+  const char *v17; // [esp-28h] [ebp-E4h]
         v17,
+  int v18; // [esp-24h] [ebp-E0h]
         v18,
+  const char *v20; // [esp-20h] [ebp-DCh]
         v20,
+  int v21; // [esp-1Ch] [ebp-D8h]
         v21,
+  int v22; // [esp-18h] [ebp-D4h]
         v22,
+  int v24; // [esp-14h] [ebp-D0h]
         v24,
+  int v25; // [esp-10h] [ebp-CCh]
         v25,
+  int v26; // [esp-Ch] [ebp-C8h]
         v26);
       INIClass::SetString(v30, (unsigned __int8 *)g_INI_Key_Infantry, Buffer, Source); /*0x520085*/
       result = i; /*0x52008a*/

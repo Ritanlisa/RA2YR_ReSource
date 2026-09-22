@@ -11,7 +11,7 @@ namespace gamemd {
 int Sidebar::StartSidebarProduction(void * a1, BuildingTypeClass * aP2, HouseClass * aP3, char a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Sidebar::StartSidebarProduction(int this, void *a1, BuildingTypeClass *aP2, HouseClass *aP3, char a5)
+void Sidebar::StartSidebarProduction(int this, void *a1, BuildingTypeClass *aP2, HouseClass *aP3, char a5)
 {
   IUnknown *v6; // ebx
   int v7; // esi
@@ -32,7 +32,6 @@ int __thiscall Sidebar::StartSidebarProduction(int this, void *a1, BuildingTypeC
   int v22; // [esp+24h] [ebp-10h]
   char *v23; // [esp+28h] [ebp-Ch]
   char v24; // [esp+2Ch] [ebp-8h]
-
   if ( (int)aP2 >= 0 ) /*0x4fa35f*/
   {
     v6 = (IUnknown *)a1; /*0x4fa36d*/
@@ -252,7 +251,7 @@ namespace gamemd {
 char Sidebar::Dispatch(IUnknown * aP1, char a3, int a4, char a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall Sidebar::Dispatch(_BYTE *this, IUnknown *aP1, char a3, int a4, char a5)
+void Sidebar::Dispatch(IUnknown *aP1, char a3, int a4, char a5)
 {
   char result; // al
 
@@ -301,13 +300,12 @@ namespace gamemd {
 int Sidebar::ScrollSidebarSkipGame()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Sidebar::ScrollSidebarSkipGame(const char *this)
+void Sidebar::ScrollSidebarSkipGame(const char *this)
 {
   int result; // eax
-  int v2; // edi
 
   result = g_CommandClassVector_State; /*0x533f50*/
-  v2 = 0; /*0x533f59*/
+  int v2 = 0; /*0x533f59*/
   if ( g_CommandClassVector_State > 0 ) /*0x533f5f*/
   {
     while ( strcmp( /*0x533f9f*/
@@ -332,32 +330,22 @@ namespace gamemd {
 void Sidebar::CancelSidebarProductionQueue()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall Sidebar::CancelSidebarProductionQueue(int *this)
+void Sidebar::CancelSidebarProductionQueue()
 {
-  int v2; // ebx
   int i; // ebp
   VectorClass *v4; // edi
   int Value; // eax
-  void *v6; // eax
-  int v7; // eax
-  int v8; // ecx
-  unsigned int v9; // edi
-  _DWORD *v10; // edi
-  int v11; // eax
-  int v12; // ebx
   int j; // ebp
   BuildingClass *LeaderIndexTeamClass; // eax
-  void *v15; // eax
   void *Blocka; // [esp+14h] [ebp-8h] BYREF
-  _DWORD *v17; // [esp+18h] [ebp-4h] BYREF
 
-  v2 = this->q014; /*0x636319*/
+  int v2 = this->q014; /*0x636319*/
   for ( i = 0; i < v2; ++i ) /*0x636327*/
   {
     v4 = *(VectorClass **)(this->q008 + 4 * i); /*0x63632c*/
     Value = Array::FindValue((int *)v4, (IUnknown *)*this); /*0x636334*/
     if ( Value == -1 ) /*0x63633c*/
-      v6 = 0; /*0x63633e*/
+      void * v6 = 0; /*0x63633e*/
     else
       v6 = (void *)*((_DWORD *)v4->Items + Value); /*0x636345*/
     Blocka = v6; /*0x63634a*/
@@ -365,7 +353,7 @@ void __thiscall Sidebar::CancelSidebarProductionQueue(int *this)
     {
       FactoryClass::FinishProduction((int)v4, (int)v6); /*0x636353*/
       __3_YAXPAX_Z(*((void **)Blocka + 1)); /*0x636360*/
-      v7 = (*((int (__thiscall **)(VectorClass *, void **))v4->vtable0 + 4))(v4, &Blocka); /*0x636371*/
+      int v7 = (*((int (__thiscall **)(VectorClass *, void **))v4->vtable0 + 4))(v4, &Blocka); /*0x636371*/
       if ( v7 != -1 ) /*0x636377*/
         Vector4::EraseAt_Copy(v4, (CCINIClass *)v7); /*0x63637c*/
       __3_YAXPAX_Z(Blocka); /*0x636386*/
@@ -376,14 +364,14 @@ void __thiscall Sidebar::CancelSidebarProductionQueue(int *this)
   if ( v2 ) /*0x6363ad*/
   {
     Blocka = (void *)*this; /*0x6363b1*/
-    v8 = *((_DWORD *)Blocka + 135); /*0x6363b5*/
-    v9 = *(_DWORD *)(v8 + 48); /*0x6363bb*/
+    int v8 = *((_DWORD *)Blocka + 135); /*0x6363b5*/
+    unsigned int v9 = *(_DWORD *)(v8 + 48); /*0x6363bb*/
     if ( (unsigned __int8)House::IsHumanPlayer((#375 *)v8) && HouseClass_Player.field_0 ) /*0x6363ce*/
       v9 = *(_DWORD *)(HouseClass_Player.field_0 + 48); /*0x6363d0*/
     DecFactoryClassCounter(v9); /*0x6363d5*/
     VectorClass::EraseAt((int *)&g_MatrixTransformState + 6028, (IUnknown *)&Blocka); /*0x6363e4*/
   }
-  v10 = this + 1; /*0x6363ec*/
+  _DWORD * v10 = this + 1; /*0x6363ec*/
   (*(void (__thiscall **)(int *))(this->q004 + 12))(this + 1); /*0x6363f1*/
   *((_BYTE *)this + 152) = 0; /*0x6363f7*/
   *(this + 35) = -1; /*0x636400*/
@@ -398,18 +386,19 @@ void __thiscall Sidebar::CancelSidebarProductionQueue(int *this)
     Blocka = this; /*0x636437*/
     if ( !*((_BYTE *)&(&g_MatrixTransformState)[506] + 5) ) /*0x63643d*/
     {
+  int v11; // eax
       v11 = ((int (__thiscall *)(CoordStruct **, void **))(*(&g_MatrixTransformState + 6042))[1].Y)( /*0x63644f*/
               &g_MatrixTransformState + 6042,
               &Blocka);
       if ( v11 != -1 ) /*0x636454*/
         Sidebar::RemoveItem(&g_MatrixTransformState + 6042, v11); /*0x63645c*/
     }
-    v12 = this->q014; /*0x636461*/
+    int v12 = this->q014; /*0x636461*/
     for ( j = 0; j < v12; ++j ) /*0x63646f*/
       TeamClass::DestroyAllMembers(*(_DWORD **)(this->q008 + 4 * j), (TechnoClass *)*this); /*0x63647a*/
     if ( v12 ) /*0x63648a*/
     {
-      v17 = (_DWORD *)*this; /*0x63648e*/
+      _DWORD * v17 = (_DWORD *)*this; /*0x63648e*/
       LeaderIndexTeamClass = (BuildingClass *)TeamClass::GetLeaderIndex(v17); /*0x636492*/
       DecFactoryClassCounter((unsigned int)LeaderIndexTeamClass); /*0x636499*/
       VectorClass::EraseAt((int *)&g_MatrixTransformState + 6028, (IUnknown *)&v17); /*0x6364a8*/
@@ -420,7 +409,7 @@ void __thiscall Sidebar::CancelSidebarProductionQueue(int *this)
     this->q024 = -1; /*0x6364c4*/
     *(this + 37) = -1; /*0x6364ca*/
     *((_BYTE *)this + 153) = 0; /*0x6364d0*/
-    v15 = (void *)this->q008; /*0x6364d7*/
+    void * v15 = (void *)this->q008; /*0x6364d7*/
     *v10 = &vt_VectorClass_PlanningNodeClass; /*0x6364de*/
     if ( v15 ) /*0x6364e4*/
     {
@@ -443,17 +432,14 @@ namespace gamemd {
 char Sidebar::RemoveItem(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_63F040(_DWORD *this, int a2)
+void sub_63F040(_DWORD *this, int a2)
 {
-  int v2; // edx
-  int v3; // eax
-  int v4; // edx
 
-  v2 = this->q010; /*0x63f040*/
-  v3 = a2; /*0x63f043*/
+  int v2 = this->q010; /*0x63f040*/
+  int v3 = a2; /*0x63f043*/
   if ( a2 >= v2 ) /*0x63f049*/
     return 0; /*0x63f06c*/
-  v4 = v2 - 1; /*0x63f04b*/
+  int v4 = v2 - 1; /*0x63f04b*/
   this->q010 = v4; /*0x63f04e*/
   if ( a2 < v4 ) /*0x63f051*/
   {
@@ -474,45 +460,32 @@ namespace gamemd {
 int Sidebar::Render(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Sidebar_Render(int this, char a2)
+void Sidebar_Render(int this, char a2)
 {
-  int v3; // ebx
-  int v4; // esi
-  int *v5; // eax
-  int v6; // edi
-  int v7; // ecx
-  int v8; // edx
-  int v9; // edi
-  int v10; // eax
-  int v11; // edi
-  int v12; // eax
-  int v13; // eax
-  int v14; // eax
-  int v16; // [esp+4h] [ebp-20h] BYREF
-  int v17; // [esp+8h] [ebp-1Ch]
-  int v18[4]; // [esp+14h] [ebp-10h] BYREF
 
   if ( (a2 || *(_BYTE *)(this + 5388)) && DataGlobal_884B8D ) /*0x63fb43*/
   {
+  int v17; // [esp+8h] [ebp-1Ch]
     *(_BYTE *)(this + 5388) = 0; /*0x63fb49*/
     g_TooltipActive = 1; /*0x63fb55*/
     if ( *((_DWORD *)g_ScenarioClass_Instance + 3374) ) /*0x63fb5d*/
-      v3 = 0; /*0x63fb70*/
+      int v3 = 0; /*0x63fb70*/
     else
       v3 = 5; /*0x63fb69*/
-    v16 = *((_DWORD *)g_ScenarioClass_Instance + 3374); /*0x63fb78*/
-    v4 = g_DSurface_SidebarBounds + 69; /*0x63fb80*/
-    v5 = (int *)(*(int (__thiscall **)(int, int *))(*(_DWORD *)DSurface_Sidebar + 120))(DSurface_Sidebar, &v16); /*0x63fb8c*/
-    v6 = *(_DWORD *)(this + 5424); /*0x63fb91*/
+    int v16 = *((_DWORD *)g_ScenarioClass_Instance + 3374); /*0x63fb78*/
+    int v4 = g_DSurface_SidebarBounds + 69; /*0x63fb80*/
+    int * v5 = (int *)(*(int (__thiscall **)(int, int *))(*(_DWORD *)DSurface_Sidebar + 120))(DSurface_Sidebar, &v16); /*0x63fb8c*/
+    int v6 = *(_DWORD *)(this + 5424); /*0x63fb91*/
+  int v18[4]; // [esp+14h] [ebp-10h] BYREF
     v18[0] = *v5; /*0x63fb97*/
     v18[1] = v5[1]; /*0x63fb9e*/
     v18[2] = v5[2]; /*0x63fba5*/
     v18[3] = v5[3]; /*0x63fbb1*/
-    v7 = *(_DWORD *)(this + 5428); /*0x63fbc6*/
-    v8 = *(_DWORD *)(this + 5420); /*0x63fbce*/
+    int v7 = *(_DWORD *)(this + 5428); /*0x63fbc6*/
+    int v8 = *(_DWORD *)(this + 5420); /*0x63fbce*/
     if ( (DataGlobal_B0B504 + 3) / 3 - v7 - v6 - v8 > 0 ) /*0x63fbdc*/
     {
-      v9 = (DataGlobal_B0B504 + 3) / 3 - v7 - v6 - v8; /*0x63fbde*/
+      int v9 = (DataGlobal_B0B504 + 3) / 3 - v7 - v6 - v8; /*0x63fbde*/
       do /*0x63fc24*/
       {
         v16 = v3; /*0x63fc13*/
@@ -539,8 +512,8 @@ int __thiscall Sidebar_Render(int this, char a2)
       }
       while ( v9 ); /*0x63fc24*/
     }
-    v10 = *(_DWORD *)(this + 5404); /*0x63fc26*/
-    v11 = 0; /*0x63fc2c*/
+    int v10 = *(_DWORD *)(this + 5404); /*0x63fc26*/
+    int v11 = 0; /*0x63fc2c*/
     if ( v10 > 0 && (v10 & 1) == 0 ) /*0x63fc3e*/
     {
       v16 = v3; /*0x63fc75*/
@@ -565,7 +538,7 @@ int __thiscall Sidebar_Render(int this, char a2)
       v4 += 3; /*0x63fc82*/
       v11 = 1; /*0x63fc85*/
     }
-    v12 = *(_DWORD *)(this + 5420); /*0x63fc8a*/
+    int v12 = *(_DWORD *)(this + 5420); /*0x63fc8a*/
     if ( v12 > 0 ) /*0x63fc92*/
     {
       if ( v11 < v12 ) /*0x63fc96*/
@@ -598,7 +571,7 @@ int __thiscall Sidebar_Render(int this, char a2)
       }
       v11 = 0; /*0x63fce6*/
     }
-    v13 = *(_DWORD *)(this + 5424); /*0x63fce8*/
+    int v13 = *(_DWORD *)(this + 5424); /*0x63fce8*/
     if ( v13 > 0 ) /*0x63fcf0*/
     {
       if ( v11 < v13 ) /*0x63fcf4*/
@@ -631,7 +604,7 @@ int __thiscall Sidebar_Render(int this, char a2)
       }
       v11 = 0; /*0x63fd44*/
     }
-    v14 = *(_DWORD *)(this + 5428); /*0x63fd46*/
+    int v14 = *(_DWORD *)(this + 5428); /*0x63fd46*/
     if ( v14 > 0 && v11 < v14 ) /*0x63fd52*/
     {
       do /*0x63fda0*/
@@ -671,12 +644,12 @@ namespace gamemd {
 int Sidebar::ActivateTab(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Sidebar::ActivateTab(int this, IUnknown *aP1)
+void Sidebar::ActivateTab(int this, IUnknown *aP1)
 {
   IUnknown *result; // eax
 
   result = aP1; /*0x6a60a0*/
-  if ( aP1 == *(IUnknown **)(this + 21404) ) /*0x6a60ac*/
+  if ( aP1 == this->q539C ) /*0x6a60ac*/
   {
     this->__pad_53A6 = 1; /*0x6a60b8*/
     *(_BYTE *)(this + 3988 * (_DWORD)aP1 + 5504) = 1; /*0x6a60c6*/
@@ -692,14 +665,8 @@ namespace gamemd {
 void Sidebar::FlushSidebarTooltip(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall FlushSidebarTooltip(_BYTE *this, char a2)
+void FlushSidebarTooltip(_BYTE *this, char a2)
 {
-  int v3; // esi
-  int v4; // ebp
-  int v5; // edi
-  int v6; // eax
-  int v7; // eax
-  int v8; // esi
   struct tagPOINT Point; // [esp+1Ch] [ebp-38h] BYREF
   int v10; // [esp+24h] [ebp-30h] BYREF
   LONG y; // [esp+28h] [ebp-2Ch]
@@ -755,14 +722,14 @@ LABEL_13:
           1);
         *(this + 21416) = 0; /*0x6a7315*/
       }
-      v3 = DataGlobal_886F98; /*0x6a7332*/
+      int v3 = DataGlobal_886F98; /*0x6a7332*/
       v17 = g_DSurface_ViewBounds; /*0x6a733e*/
       v14 = 0; /*0x6a7348*/
-      v4 = g_DSurface_SidebarBounds + Point.y; /*0x6a734e*/
+      int v4 = g_DSurface_SidebarBounds + Point.y; /*0x6a734e*/
       v15 = g_DSurface_SidebarBounds; /*0x6a7357*/
       v16 = DataGlobal_886F98; /*0x6a735b*/
-      v5 = (DataGlobal_A8EB7C != 0 ? g_Map_VisibleRectOffset : 0) + Point.x;
-      v6 = (*(int (__thiscall **)(int))(*(_DWORD *)DSurface_Sidebar + 128))(DSurface_Sidebar); /*0x6a7363*/
+      int v5 = (DataGlobal_A8EB7C != 0 ? g_Map_VisibleRectOffset : 0) + Point.x;
+      int v6 = (*(int (__thiscall **)(int))(*(_DWORD *)DSurface_Sidebar + 128))(DSurface_Sidebar); /*0x6a7363*/
       v10 = v5; /*0x6a7386*/
       y = v4; /*0x6a738a*/
       v12 = v3; /*0x6a738e*/
@@ -777,11 +744,11 @@ LABEL_13:
     }
     else if ( g_TooltipActive )
     {
-      v7 = (*(int (__thiscall **)(int, int *))(*(_DWORD *)DSurface_Sidebar + 120))(DSurface_Sidebar, &v10); /*0x6a73be*/
+      int v7 = (*(int (__thiscall **)(int, int *))(*(_DWORD *)DSurface_Sidebar + 120))(DSurface_Sidebar, &v10); /*0x6a73be*/
       v14 = 0; /*0x6a73dd*/
       v15 = 0; /*0x6a73e5*/
       v16 = *(_DWORD *)(v7 + 8); /*0x6a73ec*/
-      v8 = *(_DWORD *)(v7 + 12); /*0x6a73f0*/
+      int v8 = *(_DWORD *)(v7 + 12); /*0x6a73f0*/
       y = Point.y; /*0x6a73fd*/
       v10 = Point.x + (DataGlobal_A8EB7C != 0 ? g_Map_VisibleRectOffset : 0);
       v17 = v8; /*0x6a741b*/
@@ -847,65 +814,22 @@ int Sidebar_UpdateProductionDisplay()
 char __userpurge Sidebar::UpdateProductionDisplay@<al>(int a1@<ecx>, CampaignScore *a2@<edi>, char a3)
 {
   char result; // al
-  int v5; // eax
   IUnknown *v6; // ebx
   IUnknown *v7; // ebp
-  int v8; // eax
-  int v9; // edi
-  _DWORD *v10; // edx
-  int v11; // eax
-  int v12; // eax
-  int v13; // edx
-  int v14; // ebp
-  int v15; // esi
-  char v16; // bl
-  int v17; // ebp
-  int v18; // eax
-  int v19; // eax
-  int v20; // edx
-  int v21; // ecx
-  int *v22; // eax
   IUnknown *v23; // ebx
   char ShouldDisableCameo; // al
   int Member09; // eax
-  _DWORD *v26; // ecx
-  int v27; // ecx
-  _DWORD *v28; // edi
-  int v29; // eax
-  int v30; // ecx
-  unsigned int v31; // edi
-  int v32; // eax
-  int v33; // edx
   IUnknown *v34; // eax
-  int v35; // edi
-  int v36; // eax
   int eax73; // eax
   CampaignScore *v37; // ebx
-  int v39; // ecx
   _DWORD *TextBoundingRect; // eax
-  _DWORD *v41; // eax
   wchar_t *StringCSF; // ebp
-  _DWORD *v43; // eax
-  _DWORD *v44; // eax
-  int v45; // ebp
-  int v46; // ebx
-  int v47; // edi
-  int v48; // esi
-  int v49; // eax
-  int v50; // eax
   int eax100; // eax
   ConvertClass *v51; // eax
-  int v53; // edx
-  int v54; // edx
-  int v55; // eax
   int eax108; // eax
   ConvertClass *v56; // esi
   int updated; // eax
-  int v59; // edx
-  int v60; // edx
-  int v61; // ecx
   ObjectClass *v62; // esi
-  int v63; // eax
   wchar_t *v64; // eax
   wchar_t *v65; // eax
   wchar_t *v66; // eax
@@ -916,60 +840,46 @@ char __userpurge Sidebar::UpdateProductionDisplay@<al>(int a1@<ecx>, CampaignSco
   CampaignScore *v71; // [esp-2h] [ebp-48Ch]
   CampaignScore *v72; // [esp-2h] [ebp-48Ch]
   __int16 v73; // [esp+10h] [ebp-47Ah]
-  bool v74; // [esp+10h] [ebp-47Ah]
-  char v75; // [esp+11h] [ebp-479h]
   bool IsCliffWall; // [esp+12h] [ebp-478h]
-  char v77; // [esp+13h] [ebp-477h]
-  char v78; // [esp+14h] [ebp-476h]
-  char v79; // [esp+15h] [ebp-475h]
-  int *v80; // [esp+16h] [ebp-474h]
   int *BuildLimit; // [esp+16h] [ebp-474h]
-  int v82; // [esp+1Ah] [ebp-470h] BYREF
-  int v83; // [esp+1Eh] [ebp-46Ch]
-  int v84; // [esp+22h] [ebp-468h]
-  int v85; // [esp+26h] [ebp-464h]
-  int v86; // [esp+2Ah] [ebp-460h]
-  int *v87; // [esp+2Eh] [ebp-45Ch]
   IUnknown *aP1; // [esp+32h] [ebp-458h]
   int ProductionState; // [esp+36h] [ebp-454h]
-  int v90; // [esp+3Ah] [ebp-450h]
   size_t BufferCount; // [esp+3Eh] [ebp-44Ch]
-  int v92; // [esp+42h] [ebp-448h]
   ConvertClass *aP2; // [esp+46h] [ebp-444h]
-  int v94; // [esp+4Ah] [ebp-440h]
   int i; // [esp+4Eh] [ebp-43Ch]
   ConvertClass aP3; // [esp+52h] [ebp-438h] BYREF
-  int v97[4]; // [esp+1DAh] [ebp-2B0h] BYREF
   wchar_t v98[20]; // [esp+1EAh] [ebp-2A0h] BYREF
   wchar_t v99[20]; // [esp+212h] [ebp-278h] BYREF
   wchar_t Format[20]; // [esp+23Ah] [ebp-250h] BYREF
   wchar_t v101[20]; // [esp+262h] [ebp-228h] BYREF
   CampaignScore Buffer[14]; // [esp+28Ah] [ebp-200h] BYREF
 
-  v84 = a1;
+  int v84 = a1;
   result = *(_BYTE *)(a1 + 28);
   if ( result )
   {
     if ( *(_BYTE *)(a1 + 60) || (result = a3) != 0 )
     {
+  int v86; // [esp+2Ah] [ebp-460h]
+  int v82; // [esp+1Ah] [ebp-470h] BYREF
       v70 = a2;
       *(_BYTE *)(a1 + 60) = 0;
       stru_B05488[24720] = 1;
       *(_DWORD *)aP3[0] = 0;
       *(_DWORD *)&aP3.field_2[2] = 0;
       *(_DWORD *)&aP3[8] = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)&stru_87C374[44940] + 124))(*(_DWORD *)&stru_87C374[44940]);
-      v5 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)&stru_87C374[44940] + 128))(*(_DWORD *)&stru_87C374[44940]);
+      int v5 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)&stru_87C374[44940] + 128))(*(_DWORD *)&stru_87C374[44940]);
       v6 = (IUnknown *)HouseClass_Player.field_0;
       v7 = (IUnknown *)*(&g_MatrixTransformState + 2274);
       *(_DWORD *)&aP3[12] = v5;
-      v8 = 0;
-      v79 = 0;
+      int v8 = 0;
+      char v79 = 0;
       if ( (CoordStruct *)HouseClass_Player.field_0 == *(&g_MatrixTransformState + 2274) )
         v8 = *(_DWORD *)(a1 + 84);
-      v9 = *(_DWORD *)(a1 + 84);
+      int v9 = *(_DWORD *)(a1 + 84);
       if ( v8 < v9 )
       {
-        v10 = (_DWORD *)(a1 + 4 * (v8 + 4 * (3 * v8 + 6) + 2));
+        _DWORD * v10 = (_DWORD *)(a1 + 4 * (v8 + 4 * (3 * v8 + 6) + 2));
         while ( *v10 != 1 && *v10 != 2 )
         {
           ++v8;
@@ -980,10 +890,11 @@ char __userpurge Sidebar::UpdateProductionDisplay@<al>(int a1@<ecx>, CampaignSco
         v79 = 1;
       }
 LABEL_13:
-      v11 = 26;
+      int v11 = 26;
       if ( *(_DWORD *)(*(_DWORD *)&HouseClass_Player[29924] + 13496) )
         v11 = 18;
-      v85 = 0;
+      int v85 = 0;
+  int v12; // eax
       v12 = (*(_BYTE *)(a1 + 63) != 0)
           + (*(_DWORD *)&stru_87C374[44072]
            - *(_DWORD *)&stru_B05488[24688]
@@ -991,7 +902,7 @@ LABEL_13:
            + *(_DWORD *)&stru_87C374[44064]
            - 7)
           / 50;
-      v92 = v12;
+      int v92 = v12;
       if ( (CoordStruct *)HouseClass_Player.field_0 != *(&g_MatrixTransformState + 2274) )
       {
         if ( v12 > 0 )
@@ -1000,29 +911,29 @@ LABEL_13:
           {
             for ( i = 0; i < 2; ++i )
             {
-              v78 = a3;
-              v13 = *(_DWORD *)(v84 + 68);
+              char v78 = a3;
+              int v13 = *(_DWORD *)(v84 + 68);
               ProductionState = 0;
               aP2 = 0;
               v86 = 0;
               BufferCount = 0;
-              v14 = *(_DWORD *)(v84 + 32);
-              v90 = i + 2 * (v13 + v85);
-              v15 = v14 + i * *(_DWORD *)&stru_B05488[24692] - *(_DWORD *)&stru_87C374[44060];
-              v16 = 0;
+              int v14 = *(_DWORD *)(v84 + 32);
+              int v90 = i + 2 * (v13 + v85);
+              int v15 = v14 + i * *(_DWORD *)&stru_B05488[24692] - *(_DWORD *)&stru_87C374[44060];
+              char v16 = 0;
               v73 = 0;
-              v17 = v85 * *(_DWORD *)&stru_B05488[24696] + *(_DWORD *)(v84 + 36) + 1;
-              v18 = *(_DWORD *)(v84 + 56);
+              int v17 = v85 * *(_DWORD *)&stru_B05488[24696] + *(_DWORD *)(v84 + 36) + 1;
+              int v18 = *(_DWORD *)(v84 + 56);
               IsCliffWall = 0;
-              v94 = v17;
-              v19 = 56 * (i + 2 * v85 + 60 * v18) + 11566720;
+              int v94 = v17;
+              int v19 = 56 * (i + 2 * v85 + 60 * v18) + 11566720;
               if ( *(_BYTE *)(v84 + 63) )
               {
                 v17 += *(_DWORD *)(v84 + 76) - *(_DWORD *)&stru_B05488[24696];
                 v94 = v17;
               }
-              v20 = *(_DWORD *)(v84 + 84);
-              v80 = 0;
+              int v20 = *(_DWORD *)(v84 + 84);
+              int * v80 = 0;
               aP1 = 0;
               if ( v90 >= v20 )
               {
@@ -1032,13 +943,13 @@ LABEL_13:
               {
                 if ( !*(_BYTE *)(v19 + 52) || (HIBYTE(v73) = 1, HouseClass_Player[45136]) )
                   HIBYTE(v73) = 0;
-                v21 = *(_DWORD *)(v84 + 52 * v90 + 92);
-                v22 = (int *)(v84 + 52 * v90);
-                v87 = v22;
+                int v21 = *(_DWORD *)(v84 + 52 * v90 + 92);
+                int * v22 = (int *)(v84 + 52 * v90);
+                int * v87 = v22;
                 if ( v21 == 31 )
                 {
-                  v31 = v22[22];
-                  v32 = *(_DWORD *)(*(_DWORD *)&HouseClass_Player[42472] + 4 * v31);
+                  unsigned int v31 = v22[22];
+                  int v32 = *(_DWORD *)(*(_DWORD *)&HouseClass_Player[42472] + 4 * v31);
                   v80 = *(int **)(v32 + 96);
                   if ( v31 >= *(_DWORD *)&HouseClass_Player[42484] )
                     aP2 = 0;
@@ -1061,8 +972,9 @@ LABEL_13:
                   aP1 = v23;
                   if ( v23 )
                   {
+  int v27; // ecx
                     v80 = (int *)v23->field_60;
-                    v77 = 0;
+                    char v77 = 0;
                     if ( (*(int (__thiscall **)(IUnknown *))(v23->field_0 + 44))(v23) == 7 && v79
                       || !(*(int (__thiscall **)(IUnknown *, int, int, int, int))(v23->field_0 + 148))(
                             v23,
@@ -1071,6 +983,7 @@ LABEL_13:
                             1,
                             HouseClass_Player.field_0)
                       || (v86 = TechnoTypeClass::GetByTypeAndIndex(v87[23], v87[22]),
+  bool v74; // [esp+10h] [ebp-47Ah]
                           v74 = HouseClass::CanBuild(HouseClass_Player.field_0, (IUnknown *)v86, 0, 0) == -1,
                           ShouldDisableCameo = HouseClass::ShouldDisableCameo(HouseClass_Player.field_0, v86),
                           v74)
@@ -1084,7 +997,7 @@ LABEL_13:
                     {
                       v16 = v77;
                       LOBYTE(v73) = 0;
-                      v28 = (_DWORD *)(v84 + 4 * (v90 + 4 * (3 * v90 + 6) + 2));
+                      _DWORD * v28 = (_DWORD *)(v84 + 4 * (v90 + 4 * (3 * v90 + 6) + 2));
                       switch ( *v28 )
                       {
                         case 0:
@@ -1100,13 +1013,13 @@ LABEL_13:
                           v27 = v87[27];
                           goto LABEL_43;
                         case 2:
-                          v29 = 0;
+                          int v29 = 0;
                           LOBYTE(v73) = 1;
                           IsCliffWall = 0;
                           v16 = 1;
                           if ( *v28 == 1 )
                           {
-                            v30 = v87[27];
+                            int v30 = v87[27];
                             if ( v30 > 0 )
                               v29 = v30 / 2;
                           }
@@ -1128,7 +1041,7 @@ LABEL_13:
                     else
                       v78 = 1;
                     Member09 = 0;
-                    v26 = (_DWORD *)v87[25];
+                    _DWORD * v26 = (_DWORD *)v87[25];
                     if ( v26 )
                       Member09 = ObjectClass::GetMember09(v26);
                     if ( *(_DWORD *)(v84 + 4 * (v90 + 4 * (3 * v90 + 6) + 2)) == 1 )
@@ -1180,7 +1093,7 @@ LABEL_59:
                   *(_DWORD *)&aP3[160] = 60;
                   *(_DWORD *)&aP3[164] = 48;
                   BYTE2(v82) = stru_B05488[42390];
-                  v33 = **(_DWORD **)&stru_87C374[44940];
+                  int v33 = **(_DWORD **)&stru_87C374[44940];
                   LOWORD(v82) = *(_WORD *)&stru_B05488[42388];
                   (*(void (__thiscall **)(_DWORD, char *, char *, int))(v33 + 84))(
                     *(_DWORD *)&stru_87C374[44940],
@@ -1241,8 +1154,9 @@ LABEL_59:
                   *(_DWORD *)&aP3[136] = v15;
                   UI_Update_6AC480((int)v80, (int *)&aP3[136], &aP3, 60);
                 }
-                v75 = 0;
+                char v75 = 0;
                 v34 = aP1;
+  int v35; // edi
                 v35 = ((unsigned __int8)stru_B05488[42388] >> stru_89E138[11420] << stru_89E138[11416])
                     | ((unsigned __int8)stru_B05488[42389] >> stru_89E138[11436] << stru_89E138[11432])
                     | ((unsigned __int8)stru_B05488[42390] >> stru_89E138[11428] << stru_89E138[11424]);
@@ -1250,7 +1164,7 @@ LABEL_59:
                 {
                   LOBYTE(v34) = aP1->__pad_BC0[270];
                   v69 = v34;
-                  v36 = (*(int (__thiscall **)(IUnknown *))(aP1->field_0 + 44))(aP1);
+                  int v36 = (*(int (__thiscall **)(IUnknown *))(aP1->field_0 + 44))(aP1);
                   BuildLimit = (int *)HouseClass::GetBuildLimit(HouseClass_Player.field_0, v36, v69, 0);
                   if ( BuildLimit )
                   {
@@ -1258,6 +1172,7 @@ LABEL_59:
                     v37 = (CampaignScore *)eax73;
                     if ( eax73 > 1
                       || eax73 > 0
+  int v39; // ecx
                       && ((v39 = BuildLimit[22]) == 0
                        || (*(int (__thiscall **)(int))(*(_DWORD *)v39 + 132))(v39)
                        && (IUnknown *)(*(int (__thiscall **)(int))(*(_DWORD *)BuildLimit[22] + 132))(BuildLimit[22]) != aP1) )
@@ -1295,6 +1210,7 @@ LABEL_59:
                   {
                     *(_DWORD *)&aP3[108] = v17 + 1;
                     *(_DWORD *)&aP3[104] = v15 + 30;
+  _DWORD *v41; // eax
                     v41 = GetTextBoundingRect(
                             &aP3.field_178,
                             (CampaignScore *)BufferCount,
@@ -1357,7 +1273,8 @@ LABEL_59:
                       {
                         *(_DWORD *)&aP3[24] = v15 + 2;
                         *(_DWORD *)&aP3[28] = v94 + 1;
-                        v43 = GetTextBoundingRect(v97, (CampaignScore *)StringCSF, v15 + 2, v94 + 1, 66, 2, 1);
+  int v97[4]; // [esp+1DAh] [ebp-2B0h] BYREF
+                        _DWORD * v43 = GetTextBoundingRect(v97, (CampaignScore *)StringCSF, v15 + 2, v94 + 1, 66, 2, 1);
                         *(_DWORD *)&aP3[72] = *v43;
                         *(_DWORD *)&aP3[76] = v43[1];
                         *(_DWORD *)&aP3[80] = v43[2];
@@ -1382,6 +1299,7 @@ LABEL_59:
                       {
                         *(_DWORD *)&aP3[32] = v15 + 30;
                         *(_DWORD *)&aP3[36] = v94 + 1;
+  _DWORD *v44; // eax
                         v44 = GetTextBoundingRect(
                                 &aP3[344],
                                 (CampaignScore *)StringCSF,
@@ -1436,30 +1354,30 @@ LABEL_135:
       {
         while ( 1 )
         {
-          v45 = *(_DWORD *)(v84 + 68) + v85;
-          v46 = *(_DWORD *)(v84 + 36) + 2 * v85 * *(_DWORD *)&stru_B05488[24696] + 1;
-          v47 = *(_DWORD *)(v84 + 32) - *(_DWORD *)&stru_87C374[44060];
+          int v45 = *(_DWORD *)(v84 + 68) + v85;
+          int v46 = *(_DWORD *)(v84 + 36) + 2 * v85 * *(_DWORD *)&stru_B05488[24696] + 1;
+          int v47 = *(_DWORD *)(v84 + 32) - *(_DWORD *)&stru_87C374[44060];
           if ( v45 >= *(int *)&stru_87C374[35204] )
             goto LABEL_135;
           v92 = *(_DWORD *)&stru_87C374[22428][4 * v45 + 12420];
-          v48 = v92;
+          int v48 = v92;
           if ( !v92 )
             goto LABEL_135;
-          v49 = *(_DWORD *)(v92 + 52);
+          int v49 = *(_DWORD *)(v92 + 52);
           if ( v49 )
           {
-            v50 = *(_DWORD *)(v49 + 188);
+            int v50 = *(_DWORD *)(v49 + 188);
             if ( !v50 )
             {
               v51 = *(ConvertClass **)&stru_B05488[24584];
 LABEL_105:
               if ( v51 )
               {
-                v53 = v47 + *(__int16 *)v51->field_2;
+                int v53 = v47 + *(__int16 *)v51->field_2;
                 *(_DWORD *)&aP3[40] = 0;
                 *(_DWORD *)&aP3[48] = v53;
                 *(_DWORD *)&aP3[44] = 0;
-                v54 = v46 + *(__int16 *)&v51->field_2[2];
+                int v54 = v46 + *(__int16 *)&v51->field_2[2];
                 *(_DWORD *)&aP3[32] = v47;
                 *(_DWORD *)&aP3[52] = v54;
                 *(_DWORD *)&aP3[36] = v46;
@@ -1496,7 +1414,7 @@ LABEL_105:
             }
           }
 LABEL_107:
-          v55 = *(_DWORD *)(v48 + 52);
+          int v55 = *(_DWORD *)(v48 + 52);
           if ( v55 )
           {
             eax108 = *(_DWORD *)(v55 + 184);
@@ -1543,7 +1461,7 @@ LABEL_121:
                   if ( eax108 == 9 )
                   {
                     updated = UI_Update_72F4D0();
-                    v59 = *(__int16 *)v56->field_2 + v47 + 70;
+                    int v59 = *(__int16 *)v56->field_2 + v47 + 70;
                     *(_DWORD *)&aP3[72] = 0;
                     *(_DWORD *)&aP3[80] = v59;
                     *(_DWORD *)&aP3[76] = 0;
@@ -1570,9 +1488,9 @@ LABEL_121:
                   }
                   else
                   {
-                    v60 = *(__int16 *)v56->field_2 + v47 + 70;
+                    int v60 = *(__int16 *)v56->field_2 + v47 + 70;
                     *(_DWORD *)&aP3[56] = 0;
-                    v61 = *(__int16 *)&v56->field_2[2];
+                    int v61 = *(__int16 *)&v56->field_2[2];
                     *(_DWORD *)&aP3[64] = v60;
                     *(_DWORD *)&aP3[60] = 0;
                     *(_DWORD *)&aP3[68] = v61 + v46 + 70;
@@ -1612,7 +1530,7 @@ LABEL_121:
           if ( *(_BYTE *)(v84 + 63) )
             v46 += *(_DWORD *)(v84 + 76) - *(_DWORD *)&stru_B05488[24696];
           v82 = v47 + 8;
-          v83 = v46 + 4;
+          int v83 = v46 + 4;
           TextRenderer::DrawText(
             (int *)&aP3[192],
             (size_t)&stru_B05488[9256],
@@ -1624,7 +1542,7 @@ LABEL_121:
             66);
           if ( *(_DWORD *)&HouseClass_Player[29932] == 4 )
           {
-            v63 = *(_DWORD *)&stru_87C374[22428][4 * v45 + 12580];
+            int v63 = *(_DWORD *)&stru_87C374[22428][4 * v45 + 12580];
             v83 += 17;
             if ( v63 >= 1 )
             {

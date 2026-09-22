@@ -7,9 +7,8 @@
 int FlyLocomotionClass::LocomotionClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall FlyLocomotionClass::LocomotionClass(int this)
+void FlyLocomotionClass::LocomotionClass(int this)
 {
-  int v2; // edx
 
   LocomotionClass::Init((_DWORD *)this); /*0x4cc9a3*/
   this->AirportBound = 0; /*0x4cc9ad*/
@@ -18,7 +17,7 @@ int __thiscall FlyLocomotionClass::LocomotionClass(int this)
   this->q090 = DataGlobal_8B3C80; /*0x4cc9c7*/
   this->XYZ2 = DataGlobal_8B3C78; /*0x4cc9d3*/
   *(_DWORD *)(this + 44) = DataGlobal_8B3C7C; /*0x4cc9dc*/
-  v2 = DataGlobal_8B3C80; /*0x4cc9df*/
+  int v2 = DataGlobal_8B3C80; /*0x4cc9df*/
   this->Powered = 0; /*0x4cc9e5*/
   this->q012 = 0; /*0x4cc9e8*/
   this->HasMoveOrder = 0; /*0x4cc9eb*/
@@ -43,13 +42,9 @@ int __thiscall FlyLocomotionClass::LocomotionClass(int this)
 void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __stdcall FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
+void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
 {
-  int v2; // ecx
   int i; // edi
-  int v4; // esi
-  int v5; // eax
-  _DWORD *v6; // ecx
   int v7; // eax
   _DWORD *v8; // esi
   int v9; // edx
@@ -66,7 +61,6 @@ void __stdcall FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
   int v20; // [esp+34h] [ebp-8h]
   int v21; // [esp+38h] [ebp-4h]
   char v22; // [esp+40h] [ebp+4h]
-
   if ( *(_DWORD *)(*(_DWORD *)(a1 + 8) + 692) ) /*0x4cfe8e*/
     return; /*0x4cfe94*/
   ObjectVector::Construct(&v16, 0, 0); /*0x4cfea2*/
@@ -78,6 +72,7 @@ void __stdcall FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
   v15 = 10; /*0x4cfed3*/
   v14 = 0; /*0x4cfed7*/
   if ( !g_GameMode_Current[0] /*0x4cfeef*/
+  int v2; // ecx
     || (v2 = *(_DWORD *)(*(_DWORD *)(a1 + 8) + 540), *(_DWORD *)(v2 + 22016) == -1)
     || (v22 = 1, (unsigned __int8)House::IsCurrentPlayer((#375 *)v2)) )
   {
@@ -85,7 +80,7 @@ void __stdcall FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
   }
   for ( i = g_SidebarState - 1; i >= 0; --i ) /*0x4cff0c*/
   {
-    v4 = *((_DWORD *)g_TechnoClass_Count + i); /*0x4cff17*/
+    int v4 = *((_DWORD *)g_TechnoClass_Count + i); /*0x4cff17*/
     if ( v22 ) /*0x4cff20*/
     {
       if ( *(_DWORD *)(v4 + 540) != *(_DWORD *)&HouseClass_Array->__pad_0[4 /*0x4cff5e*/
@@ -107,6 +102,8 @@ void __stdcall FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
        || (*(int (__thiscall **)(int))(*(_DWORD *)v4 + 44))(v4) != 1
        || !*(_BYTE *)(*(_DWORD *)(v4 + 1732) + 3598)) )
     {
+  _DWORD *v6; // ecx
+  int v5; // eax
       if ( g_GameMode_Current[0] /*0x4d003d*/
         && (unsigned __int8)House::IsCurrentPlayer(*(#375 **)(*(_DWORD *)(a1 + 8) + 540))
         && !*(_BYTE *)(*(_DWORD *)(*(_DWORD *)(v4 + 540) + 52) + 422)

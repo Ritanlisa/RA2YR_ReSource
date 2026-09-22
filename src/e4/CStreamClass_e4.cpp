@@ -11,15 +11,12 @@ HRESULT __stdcall CStreamClass::CopyStreamToBuffer(int a1, IStream *Src, signed 
 {
   IStream *v4; // ebp
   size_t v5; // edi
-  signed int v6; // ebx
   HRESULT result; // eax
-  int v8; // ecx
   size_t v9; // eax
   ULONG v10; // [esp+0h] [ebp-10h]
-
   v4 = Src; /*0x4a2cd2*/
   v5 = Size; /*0x4a2cd8*/
-  v6 = Size; /*0x4a2cde*/
+  signed int v6 = Size; /*0x4a2cde*/
   if ( !Src ) /*0x4a2ce0*/
     return -2147467261; /*0x4a2ceb*/
   if ( Size < 0 ) /*0x4a2cf0*/
@@ -33,7 +30,7 @@ HRESULT __stdcall CStreamClass::CopyStreamToBuffer(int a1, IStream *Src, signed 
     return 0; /*0x4a2d2e*/
   if ( a4 ) /*0x4a2d3a*/
     *a4 = 0; /*0x4a2d3c*/
-  v8 = *(_DWORD *)(a1 + 20); /*0x4a2d42*/
+  int v8 = *(_DWORD *)(a1 + 20); /*0x4a2d42*/
   if ( v8 > 0 ) /*0x4a2d47*/
   {
     if ( Size >= 0x10000 - v8 ) /*0x4a2d52*/

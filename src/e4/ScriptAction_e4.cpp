@@ -66,9 +66,8 @@ namespace gamemd {
 int ScriptAction::CreatePlacementAction(AbstractClass * aP1, const void * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ScriptAction::CreatePlacementAction(_DWORD *this, AbstractClass *aP1, const void *a2)
+void ScriptAction::CreatePlacementAction(AbstractClass *aP1, const void *a2)
 {
-  int v4; // eax
   int v5; // ebx
   _BYTE *v6; // eax
   int v7; // eax
@@ -80,8 +79,7 @@ int __thiscall ScriptAction::CreatePlacementAction(_DWORD *this, AbstractClass *
   int v13; // ecx
   int v14; // eax
   int v15; // edx
-
-  v4 = __2_YAPAXI_Z(0x10u); /*0x633fa7*/
+  int v4 = __2_YAPAXI_Z(0x10u); /*0x633fa7*/
   if ( v4 ) /*0x633fb1*/
   {
     *(_DWORD *)v4 = 0; /*0x633fb3*/
@@ -140,15 +138,12 @@ unsigned int * ScriptAction::GetCoords(unsigned int * a2)
 _DWORD *__thiscall ScriptAction_GetCoords(_DWORD **this, _DWORD *a2)
 {
   int *ActionCoords; // eax
-  int v3; // ecx
-  int v4; // edx
-  int v5; // esi
-  _DWORD v7[3]; // [esp+8h] [ebp-Ch] BYREF
 
+  _DWORD v7[3]; // [esp+8h] [ebp-Ch] BYREF
   ActionCoords = GetScenarioClassActionCoords(v7, *(_BYTE **)(*this->q004 + 4)); /*0x6343d1*/
-  v3 = *ActionCoords; /*0x6343d6*/
-  v4 = ActionCoords[1]; /*0x6343d8*/
-  v5 = ActionCoords[2]; /*0x6343db*/
+  int v3 = *ActionCoords; /*0x6343d6*/
+  int v4 = ActionCoords[1]; /*0x6343d8*/
+  int v5 = ActionCoords[2]; /*0x6343db*/
   *a2 = v3; /*0x6343e4*/
   a2[1] = v4; /*0x6343e6*/
   a2[2] = v5; /*0x6343e9*/
@@ -165,16 +160,15 @@ unsigned int * ScriptAction::GetScreenPos(unsigned int * a2)
 _DWORD *__thiscall ScriptAction_GetScreenPos(_DWORD **this, _DWORD *a2)
 {
   _DWORD *ActionCoords; // eax
-  int v3; // edx
-  int v5[3]; // [esp+0h] [ebp-18h] BYREF
-  _DWORD v6[3]; // [esp+Ch] [ebp-Ch] BYREF
 
+  int v5[3]; // [esp+0h] [ebp-18h] BYREF
   ActionCoords = GetScenarioClassActionCoords(v5, *(_BYTE **)(*this->q004 + 4)); /*0x63440f*/
+  _DWORD v6[3]; // [esp+Ch] [ebp-Ch] BYREF
   v6[0] = *ActionCoords; /*0x634416*/
   v6[1] = ActionCoords[1]; /*0x63441d*/
   v6[2] = ActionCoords[2]; /*0x634434*/
   Coord::To_Screen(g_TacticalClass_Instance, v6, v5); /*0x634438*/
-  v3 = g_Map_VisibleRect + v5[1]; /*0x634452*/
+  int v3 = g_Map_VisibleRect + v5[1]; /*0x634452*/
   *a2 = DSurface_ViewBounds + v5[0]; /*0x634458*/
   a2[1] = v3; /*0x63445a*/
   return a2; /*0x63445d*/
@@ -187,11 +181,11 @@ namespace gamemd {
 BOOL ScriptAction::GetActionCoordinates(int a2, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall sub_634550(_DWORD **this, int a2, int a3, int a4)
+void sub_634550(_DWORD **this, int a2, int a3, int a4)
 {
   _DWORD *ScenarioClassActionCoords; // eax
-  _DWORD v6[3]; // [esp+4h] [ebp-Ch] BYREF
 
+  _DWORD v6[3]; // [esp+4h] [ebp-Ch] BYREF
   ScenarioClassActionCoords = GetScenarioClassActionCoords(v6, *(_BYTE **)(*this->q004 + 4)); /*0x634560*/
   return *ScenarioClassActionCoords == a2 && ScenarioClassActionCoords[1] == a3 && ScenarioClassActionCoords[2] == a4; /*0x63456f*/
 }
@@ -205,13 +199,11 @@ unsigned int * ScriptAction::FindItemByValue(int a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6346B0(int *this, int a2)
 {
-  int v2; // edx
-  int v3; // eax
   _DWORD **v4; // esi
   _DWORD **i; // ecx
 
-  v2 = this->q004; /*0x6346b0*/
-  v3 = 0; /*0x6346b4*/
+  int v2 = this->q004; /*0x6346b0*/
+  int v3 = 0; /*0x6346b4*/
   if ( v2 <= 0 ) /*0x6346ba*/
     return 0; /*0x6346ba*/
   v4 = (_DWORD **)this->q004; /*0x6346bc*/
@@ -233,68 +225,43 @@ namespace gamemd {
 int ScriptAction::FindSquadMember()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ScriptAction_FindSquadMember(int this)
+void ScriptAction_FindSquadMember(int this)
 {
-  int v2; // edi
-  _DWORD *v3; // ebx
   int Type; // esi
-  int v5; // eax
-  int v6; // eax
-  int v7; // ecx
-  int *v8; // esi
   int Value; // eax
-  int v10; // eax
-  _BYTE *v11; // esi
   int result; // eax
-  int v13; // ebx
-  _BYTE *v14; // esi
   int *ActionCoords; // eax
-  int v16; // esi
-  int v17; // edi
-  int *v18; // edx
-  int v19; // ecx
-  int v20; // edx
-  int v21; // [esp+10h] [ebp-110h]
-  int v22; // [esp+10h] [ebp-110h]
-  int v23; // [esp+14h] [ebp-10Ch]
-  int v24[3]; // [esp+18h] [ebp-108h] BYREF
-  int v25; // [esp+24h] [ebp-FCh]
-  int v26[3]; // [esp+28h] [ebp-F8h] BYREF
-  int v27[3]; // [esp+34h] [ebp-ECh] BYREF
-  _BYTE v28[112]; // [esp+40h] [ebp-E0h] BYREF
-  _BYTE v29[108]; // [esp+B0h] [ebp-70h] BYREF
   __int16 v30; // [esp+11Ch] [ebp-4h]
-  char v31; // [esp+11Eh] [ebp-2h]
-
-  v23 = 0; /*0x6349bc*/
-  v21 = this->ScriptAction_field_0x10; /*0x6349c9*/
+  int v23 = 0; /*0x6349bc*/
+  int v21 = this->ScriptAction_field_0x10; /*0x6349c9*/
   if ( v21 > 0 ) /*0x6349cd*/
   {
     do /*0x634a64*/
     {
-      v2 = *(_DWORD *)(this->ScriptAction_field_0x4 + 4 * v23); /*0x6349da*/
-      v3 = *(_DWORD **)v2; /*0x6349dd*/
+      int v2 = *(_DWORD *)(this->ScriptAction_field_0x4 + 4 * v23); /*0x6349da*/
+      _DWORD * v3 = *(_DWORD **)v2; /*0x6349dd*/
       Type = BuildingClass::GetPlanningToken(*(_DWORD **)v2); /*0x6349e6*/
+  int v24[3]; // [esp+18h] [ebp-108h] BYREF
       v24[0] = this; /*0x6349ed*/
       if ( (*(int (__thiscall **)(int, int *))(*(_DWORD *)(Type + 4) + 16))(Type + 4, v24) == *(_DWORD *)(Type + 148) ) /*0x634a00*/
       {
         *(_BYTE *)(v2 + 12) = 1; /*0x634a02*/
-        v5 = this->ScriptAction_field_0xA8 + 1; /*0x634a10*/
+        int v5 = this->ScriptAction_field_0xA8 + 1; /*0x634a10*/
         this->ScriptAction_field_0xA8 = v5; /*0x634a15*/
         if ( v5 == 1 ) /*0x634a18*/
         {
-          v6 = BuildingClass::GetPlanningToken(v3); /*0x634a1c*/
-          v7 = *(_DWORD *)(v6 + 20) - 1; /*0x634a24*/
+          int v6 = BuildingClass::GetPlanningToken(v3); /*0x634a1c*/
+          int v7 = *(_DWORD *)(v6 + 20) - 1; /*0x634a24*/
           if ( v7 >= 0 ) /*0x634a25*/
-            v8 = *(int **)(*(_DWORD *)(v6 + 8) + 4 * v7); /*0x634a2e*/
+            int * v8 = *(int **)(*(_DWORD *)(v6 + 8) + 4 * v7); /*0x634a2e*/
           else
             v8 = 0; /*0x634a27*/
           Value = Array::FindValue(v8, (int)v3); /*0x634a34*/
           if ( Value == -1 ) /*0x634a3c*/
-            v10 = 0; /*0x634a3e*/
+            int v10 = 0; /*0x634a3e*/
           else
             v10 = *(_DWORD *)(v8[1] + 4 * Value); /*0x634a45*/
-          v11 = *(_BYTE **)(v10 + 4); /*0x634a48*/
+          _BYTE * v11 = *(_BYTE **)(v10 + 4); /*0x634a48*/
           qmemcpy((void *)(this + 56), v11, 0x6Cu); /*0x634a50*/
           v11 += 108; /*0x634a50*/
           *(_WORD *)(this + 164) = *(_WORD *)v11; /*0x634a52*/
@@ -310,27 +277,31 @@ int __thiscall ScriptAction_FindSquadMember(int this)
   if ( result ) /*0x634a7c*/
   {
     result = this->ScriptAction_field_0x30; /*0x634a8e*/
+  _BYTE v28[112]; // [esp+40h] [ebp-E0h] BYREF
     qmemcpy(v28, (const void *)(this + 56), 0x6Eu); /*0x634a91*/
-    v13 = 0; /*0x634a95*/
-    v22 = result; /*0x634a97*/
+    int v13 = 0; /*0x634a95*/
+    int v22 = result; /*0x634a97*/
     v28[110] = *(_BYTE *)(this + 166); /*0x634a9d*/
     if ( result > 0 ) /*0x634a9e*/
     {
       while ( 1 ) /*0x634aaf*/
       {
-        v14 = *(_BYTE **)(this->ScriptAction_field_0x24 + 4 * v13); /*0x634aaf*/
+        _BYTE * v14 = *(_BYTE **)(this->ScriptAction_field_0x24 + 4 * v13); /*0x634aaf*/
+  _BYTE v29[108]; // [esp+B0h] [ebp-70h] BYREF
         qmemcpy(v29, v14, sizeof(v29)); /*0x634ab6*/
         v14 += 108; /*0x634ab6*/
         v30 = *(_WORD *)v14; /*0x634ab8*/
-        v31 = v14[2]; /*0x634abe*/
+        char v31 = v14[2]; /*0x634abe*/
+  int v27[3]; // [esp+34h] [ebp-ECh] BYREF
         ActionCoords = GetScenarioClassActionCoords(v27, v28); /*0x634abf*/
-        v16 = *ActionCoords; /*0x634ac4*/
-        v17 = ActionCoords[1]; /*0x634ad1*/
-        v25 = ActionCoords[2]; /*0x634ad7*/
-        v18 = GetScenarioClassActionCoords(v26, v29); /*0x634ae0*/
+        int v16 = *ActionCoords; /*0x634ac4*/
+        int v17 = ActionCoords[1]; /*0x634ad1*/
+        int v25 = ActionCoords[2]; /*0x634ad7*/
+  int v26[3]; // [esp+28h] [ebp-F8h] BYREF
+        int * v18 = GetScenarioClassActionCoords(v26, v29); /*0x634ae0*/
         result = *v18; /*0x634ae2*/
-        v19 = v18[1]; /*0x634ae6*/
-        v20 = v18[2]; /*0x634ae9*/
+        int v19 = v18[1]; /*0x634ae6*/
+        int v20 = v18[2]; /*0x634ae9*/
         if ( v16 == result && v17 == v19 && v25 == v20 ) /*0x634af6*/
           break; /*0x634af6*/
         result = v22; /*0x634af8*/
@@ -350,65 +321,45 @@ namespace gamemd {
 int ScriptAction::FindBuildingMatch(AbstractClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ScriptAction::FindBuildingMatch(ObjectClass *this, AbstractClass *aP1)
+void ScriptAction::FindBuildingMatch(AbstractClass *aP1)
 {
   int *Type; // esi
-  int v4; // eax
-  int v5; // eax
-  ObjectClass *v6; // esi
-  int v7; // ecx
-  int v8; // eax
-  int v9; // eax
-  int v10; // ecx
+  ScriptAction *v6; // esi
   ObjectClass *v11; // ecx
   int Value; // eax
-  int v13; // eax
-  _BYTE *v14; // esi
-  ObjectClass *v15; // edi
+  ScriptAction *v15; // edi
   int *ScenarioClassActionCoords; // eax
-  int v17; // ebp
-  int v18; // ebx
-  _DWORD *v19; // esi
-  _DWORD *v20; // esi
-  _DWORD *v21; // eax
   ObjectClass *nextObject; // [esp+10h] [ebp-100h] BYREF
-  ObjectClass *v24; // [esp+14h] [ebp-FCh]
-  int v25; // [esp+1Ch] [ebp-F4h]
+  ScriptAction *v24; // [esp+14h] [ebp-FCh]
   int i; // [esp+20h] [ebp-F0h]
-  _DWORD v27[3]; // [esp+24h] [ebp-ECh] BYREF
-  _BYTE v28[108]; // [esp+30h] [ebp-E0h] BYREF
   __int16 v29; // [esp+9Ch] [ebp-74h]
-  char v30; // [esp+9Eh] [ebp-72h]
-  _BYTE v31[108]; // [esp+A0h] [ebp-70h] BYREF
   __int16 v32; // [esp+10Ch] [ebp-4h]
-  char v33; // [esp+10Eh] [ebp-2h]
-
   v24 = this; /*0x634cd5*/
   Type = (int *)BuildingClass::GetPlanningToken(aP1); /*0x634cde*/
-  v4 = Type[1]; /*0x634ce0*/
+  int v4 = Type[1]; /*0x634ce0*/
   nextObject = this; /*0x634ce7*/
-  v5 = (*(int (__thiscall **)(int *, ObjectClass **))(v4 + 16))(Type + 1, &nextObject); /*0x634cef*/
+  int v5 = (*(int (__thiscall **)(int *, ObjectClass **))(v4 + 16))(Type + 1, &nextObject); /*0x634cef*/
   if ( v5 == -1 ) /*0x634cf5*/
   {
     v6 = 0; /*0x634cf7*/
   }
   else
   {
-    v7 = Type[5]; /*0x634cfb*/
+    int v7 = Type[5]; /*0x634cfb*/
     if ( v7 == 1 ) /*0x634d01*/
     {
       v6 = this; /*0x634d03*/
     }
     else
     {
-      v8 = v5 - 1; /*0x634d07*/
+      int v8 = v5 - 1; /*0x634d07*/
       if ( v8 < 0 ) /*0x634d08*/
         v8 = v7 - 1; /*0x634d0a*/
       v6 = (ObjectClass *)ArrayClass::GetAt_Wrap(Type, v8); /*0x634d15*/
     }
   }
-  v9 = BuildingClass::GetPlanningToken(aP1); /*0x634d19*/
-  v10 = *(_DWORD *)(v9 + 20) - 1; /*0x634d21*/
+  int v9 = BuildingClass::GetPlanningToken(aP1); /*0x634d19*/
+  int v10 = *(_DWORD *)(v9 + 20) - 1; /*0x634d21*/
   if ( v10 >= 0 ) /*0x634d22*/
     v11 = *(ObjectClass **)(*(_DWORD *)(v9 + 8) + 4 * v10); /*0x634d2b*/
   else
@@ -416,30 +367,33 @@ int __thiscall ScriptAction::FindBuildingMatch(ObjectClass *this, AbstractClass 
   if ( v6 != v11 )
   {
     Value = Array::FindValue((int *)v6->__pad_0, (IUnknown *)aP1); /*0x634d39*/
-    v13 = Value == -1 ? 0 : *(_DWORD *)(*(_DWORD *)&v6->__pad_0[4] + 4 * Value);
-    v14 = *(_BYTE **)(v13 + 4); /*0x634d4d*/
+    int v13 = Value == -1 ? 0 : *(_DWORD *)(*(_DWORD *)&v6->__pad_0[4] + 4 * Value);
+    _BYTE * v14 = *(_BYTE **)(v13 + 4); /*0x634d4d*/
+  _BYTE v28[108]; // [esp+30h] [ebp-E0h] BYREF
     qmemcpy(v28, v14, sizeof(v28)); /*0x634d59*/
     v14 += 108; /*0x634d59*/
     v29 = *(_WORD *)v14; /*0x634d5b*/
-    v30 = v14[2]; /*0x634d5d*/
+    char v30 = v14[2]; /*0x634d5d*/
     nextObject = (ObjectClass *)this->nextObject; /*0x634d63*/
     v15 = nextObject; /*0x634d5e*/
     if ( nextObject ) /*0x634d67*/
     {
+  _DWORD v27[3]; // [esp+24h] [ebp-ECh] BYREF
       ScenarioClassActionCoords = GetScenarioClassActionCoords(v27, v28); /*0x634d75*/
-      v17 = *ScenarioClassActionCoords; /*0x634d7a*/
-      v18 = 0; /*0x634d7c*/
-      v25 = ScenarioClassActionCoords[1]; /*0x634d83*/
+      int v17 = *ScenarioClassActionCoords; /*0x634d7a*/
+      int v18 = 0; /*0x634d7c*/
+      int v25 = ScenarioClassActionCoords[1]; /*0x634d83*/
       for ( i = ScenarioClassActionCoords[2]; v18 < (int)v15; ++v18 ) /*0x634d8e*/
       {
-        v19 = *(_DWORD **)(v24->objectTypeFlags + 4 * v18); /*0x634d97*/
+        _DWORD * v19 = *(_DWORD **)(v24->objectTypeFlags + 4 * v18); /*0x634d97*/
         if ( v19[28] ) /*0x634d9a*/
         {
+  _BYTE v31[108]; // [esp+A0h] [ebp-70h] BYREF
           qmemcpy(v31, v19, sizeof(v31)); /*0x634dad*/
-          v20 = v19 + 27; /*0x634dad*/
+          _DWORD * v20 = v19 + 27; /*0x634dad*/
           v32 = *(_WORD *)v20; /*0x634daf*/
-          v33 = *((_BYTE *)v20 + 2); /*0x634dbc*/
-          v21 = GetScenarioClassActionCoords(v27, v31); /*0x634dbd*/
+          char v33 = *((_BYTE *)v20 + 2); /*0x634dbc*/
+          _DWORD * v21 = GetScenarioClassActionCoords(v27, v31); /*0x634dbd*/
           if ( v17 == *v21 && v25 == v21[1] && i == v21[2] ) /*0x634dda*/
             return v18; /*0x634df3*/
           v15 = nextObject; /*0x634ddc*/
@@ -457,78 +411,49 @@ namespace gamemd {
 int ScriptAction::PlaceObject(AbstractClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ScriptAction::PlaceObject(int this, AbstractClass *aP1)
+void ScriptAction::PlaceObject(int this, AbstractClass *aP1)
 {
   AbstractClass *v3; // edi
   int result; // eax
   int *Type; // esi
-  int v6; // eax
-  int v7; // eax
-  int *v8; // esi
-  int v9; // ecx
-  int v10; // eax
-  int v11; // eax
-  int v12; // ecx
-  int *v13; // ecx
-  _BYTE *v14; // esi
-  int v15; // eax
-  int v16; // ebp
-  int v17; // edx
-  int v18; // eax
-  int v19; // ecx
-  int v20; // eax
-  int v21; // edx
-  int v22; // ecx
-  int v23; // ebp
   ObjectClass *v24; // ecx
-  _BYTE *v25; // esi
   _DWORD *ScenarioClassActionCoords; // eax
-  _DWORD *v27; // eax
-  int v28; // ecx
-  int v29; // [esp+10h] [ebp-118h] BYREF
+  ScriptAction *v29; // [esp+10h] [ebp-118h] BYREF
   ObjectClass *v30; // [esp+14h] [ebp-114h]
-  _DWORD v31[3]; // [esp+18h] [ebp-110h] BYREF
-  _DWORD v32[3]; // [esp+24h] [ebp-104h] BYREF
-  int v33[3]; // [esp+30h] [ebp-F8h] BYREF
-  int v34[3]; // [esp+3Ch] [ebp-ECh] BYREF
-  _BYTE v35[108]; // [esp+48h] [ebp-E0h] BYREF
   __int16 v36; // [esp+B4h] [ebp-74h]
-  char v37; // [esp+B6h] [ebp-72h]
-  _BYTE v38[108]; // [esp+B8h] [ebp-70h] BYREF
   __int16 v39; // [esp+124h] [ebp-4h]
-  char v40; // [esp+126h] [ebp-2h]
-
   v3 = *(AbstractClass **)aP1->__pad_0; /*0x634e23*/
   result = ScriptAction::FindBuildingMatch((ObjectClass *)this, *(AbstractClass **)aP1->__pad_0); /*0x634e27*/
   if ( result == -1 ) /*0x634e31*/
   {
+  ScriptAction *v8; // esi
     Type = (int *)BuildingClass::GetPlanningToken(v3); /*0x634e3e*/
-    v6 = Type[1]; /*0x634e40*/
+    int v6 = Type[1]; /*0x634e40*/
     v29 = this; /*0x634e47*/
-    v7 = (*(int (__thiscall **)(int *, int *))(v6 + 16))(Type + 1, &v29); /*0x634e4f*/
+    int v7 = (*(int (__thiscall **)(int *, int *))(v6 + 16))(Type + 1, &v29); /*0x634e4f*/
     if ( v7 == -1 ) /*0x634e55*/
     {
       v8 = 0; /*0x634e57*/
     }
     else
     {
-      v9 = Type[5]; /*0x634e5b*/
+      int v9 = Type[5]; /*0x634e5b*/
       if ( v9 == 1 ) /*0x634e61*/
       {
         v8 = (int *)this; /*0x634e63*/
       }
       else
       {
-        v10 = v7 - 1; /*0x634e67*/
+        int v10 = v7 - 1; /*0x634e67*/
         if ( v10 < 0 ) /*0x634e68*/
           v10 = v9 - 1; /*0x634e6a*/
         v8 = (int *)ArrayClass::GetAt_Wrap(Type, v10); /*0x634e75*/
       }
     }
-    v11 = BuildingClass::GetPlanningToken(v3); /*0x634e79*/
-    v12 = *(_DWORD *)(v11 + 20) - 1; /*0x634e81*/
+    int v11 = BuildingClass::GetPlanningToken(v3); /*0x634e79*/
+    int v12 = *(_DWORD *)(v11 + 20) - 1; /*0x634e81*/
     if ( v12 >= 0 ) /*0x634e82*/
-      v13 = *(int **)(*(_DWORD *)(v11 + 8) + 4 * v12); /*0x634e8b*/
+      int * v13 = *(int **)(*(_DWORD *)(v11 + 8) + 4 * v12); /*0x634e8b*/
     else
       v13 = 0; /*0x634e84*/
     if ( v8 == v13 ) /*0x634e90*/
@@ -538,13 +463,14 @@ int __thiscall ScriptAction::PlaceObject(int this, AbstractClass *aP1)
     }
     else
     {
-      v14 = (_BYTE *)ScriptAction::FindItemByValue(v8, (int)v3)[1]; /*0x634ead*/
+      _BYTE * v14 = (_BYTE *)ScriptAction::FindItemByValue(v8, (int)v3)[1]; /*0x634ead*/
+  _BYTE v35[108]; // [esp+48h] [ebp-E0h] BYREF
       qmemcpy(v35, v14, sizeof(v35)); /*0x634ebb*/
       v14 += 108; /*0x634ebb*/
       v36 = *(_WORD *)v14; /*0x634ebd*/
-      v37 = v14[2]; /*0x634ebf*/
-      v15 = __2_YAPAXI_Z(0x78u); /*0x634ec0*/
-      v16 = 0; /*0x634ec5*/
+      char v37 = v14[2]; /*0x634ebf*/
+      int v15 = __2_YAPAXI_Z(0x78u); /*0x634ec0*/
+      int v16 = 0; /*0x634ec5*/
       if ( v15 ) /*0x634ecc*/
       {
         *(_DWORD *)(v15 + 112) = 0; /*0x634ece*/
@@ -552,23 +478,24 @@ int __thiscall ScriptAction::PlaceObject(int this, AbstractClass *aP1)
         *(_DWORD *)(v15 + 116) = -1; /*0x634ed4*/
         v16 = v15; /*0x634edb*/
       }
-      v17 = *(_DWORD *)(v16 + 112); /*0x634ee8*/
+      int v17 = *(_DWORD *)(v16 + 112); /*0x634ee8*/
       qmemcpy((void *)v16, v35, 0x6Cu); /*0x634eeb*/
       *(_WORD *)(v16 + 108) = v36; /*0x634eed*/
       *(_BYTE *)(v16 + 110) = v37; /*0x634eef*/
       *(_DWORD *)(v16 + 112) = v17 + 1; /*0x634ef4*/
-      v18 = this->q028; /*0x634ef7*/
+      int v18 = this->q028; /*0x634ef7*/
       if ( this->ScriptAction_field_0x30 < v18 /*0x634f1c*/
         || (*(_BYTE *)(this + 45) || !v18)
+  int v19; // ecx
         && (v19 = this->q034, v19 > 0)
         && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(this->q008 + 8))(this + 32, v18 + v19, 0) )
       {
-        v20 = this->ScriptAction_field_0x30; /*0x634f23*/
-        v21 = this->ScriptAction_field_0x24; /*0x634f26*/
+        int v20 = this->ScriptAction_field_0x30; /*0x634f23*/
+        int v21 = this->ScriptAction_field_0x24; /*0x634f26*/
         this->ScriptAction_field_0x30 = v20 + 1; /*0x634f2c*/
         *(_DWORD *)(v21 + 4 * v20) = v16; /*0x634f2f*/
       }
-      v22 = this->ScriptAction_field_0xA8; /*0x634f35*/
+      int v22 = this->ScriptAction_field_0xA8; /*0x634f35*/
       result = this->ScriptAction_field_0x30 - 1; /*0x634f3b*/
       v29 = result; /*0x634f3e*/
       if ( v22 > 0 && this->ScriptAction_field_0xB0 == -1 ) /*0x634f53*/
@@ -576,9 +503,9 @@ int __thiscall ScriptAction::PlaceObject(int this, AbstractClass *aP1)
         this->ScriptAction_field_0xB0 = -1; /*0x634f59*/
         if ( this->ScriptAction_field_0xA8 ) /*0x634f5f*/
         {
-          v23 = 0; /*0x634f79*/
+          int v23 = 0; /*0x634f79*/
           qmemcpy(v35, (const void *)(this + 56), sizeof(v35)); /*0x634f7b*/
-          v24 = *(ObjectClass **)(this + 48); /*0x634f7d*/
+          v24 = this->q030; /*0x634f7d*/
           v36 = *(_WORD *)(this + 164); /*0x634f80*/
           v37 = *(_BYTE *)(this + 166); /*0x634f84*/
           v30 = v24; /*0x634f85*/
@@ -586,16 +513,21 @@ int __thiscall ScriptAction::PlaceObject(int this, AbstractClass *aP1)
           {
             while ( 1 ) /*0x634fa2*/
             {
-              v25 = *(_BYTE **)(this->ScriptAction_field_0x24 + 4 * v23); /*0x634fa2*/
+              _BYTE * v25 = *(_BYTE **)(this->ScriptAction_field_0x24 + 4 * v23); /*0x634fa2*/
+  _BYTE v38[108]; // [esp+B8h] [ebp-70h] BYREF
               qmemcpy(v38, v25, sizeof(v38)); /*0x634fa5*/
               v25 += 108; /*0x634fa5*/
               v39 = *(_WORD *)v25; /*0x634fa7*/
-              v40 = v25[2]; /*0x634fad*/
+              char v40 = v25[2]; /*0x634fad*/
+  int v34[3]; // [esp+3Ch] [ebp-ECh] BYREF
               ScenarioClassActionCoords = GetScenarioClassActionCoords(v34, v35); /*0x634fae*/
+  _DWORD v31[3]; // [esp+18h] [ebp-110h] BYREF
               v31[0] = *ScenarioClassActionCoords; /*0x634fb5*/
               v31[1] = ScenarioClassActionCoords[1]; /*0x634fc0*/
               v31[2] = ScenarioClassActionCoords[2]; /*0x634fce*/
-              v27 = GetScenarioClassActionCoords(v33, v38); /*0x634fd2*/
+  int v33[3]; // [esp+30h] [ebp-F8h] BYREF
+              _DWORD * v27 = GetScenarioClassActionCoords(v33, v38); /*0x634fd2*/
+  _DWORD v32[3]; // [esp+24h] [ebp-104h] BYREF
               v32[0] = *v27; /*0x634fd9*/
               v32[1] = v27[1]; /*0x634fe5*/
               v32[2] = v27[2]; /*0x634ff0*/
@@ -616,7 +548,7 @@ LABEL_30:
   }
   else
   {
-    v28 = *(_DWORD *)(this->ScriptAction_field_0x24 + 4 * result); /*0x635038*/
+    int v28 = *(_DWORD *)(this->ScriptAction_field_0x24 + 4 * result); /*0x635038*/
     *(_DWORD *)(v28 + 116) = -1; /*0x63503b*/
     *(_DWORD *)(this + 180) = -1; /*0x63503e*/
     ++*(_DWORD *)(v28 + 112); /*0x635048*/
@@ -632,7 +564,7 @@ namespace gamemd {
 int ScriptAction::DecrementRefCount(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ScriptAction::DecrementRefCount(_DWORD *this, int a2)
+void ScriptAction::DecrementRefCount(int a2)
 {
   int result; // eax
 
@@ -678,15 +610,14 @@ namespace gamemd {
 BOOL ScriptAction::Check()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall sub_636570(int *this)
+void sub_636570(int *this)
 {
-  int v1; // eax
   BOOL result; // eax
 
   result = 0; /*0x636586*/
   if ( this->q014 > 0 ) /*0x636575*/
   {
-    v1 = this->q08C; /*0x636577*/
+    int v1 = this->q08C; /*0x636577*/
     if ( v1 == -1 || v1 > 0 ) /*0x636584*/
       return 1; /*0x636575*/
   }
@@ -700,29 +631,22 @@ namespace gamemd {
 int ScriptAction::ClearBuildingState()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_636CE0(int this)
+void sub_636CE0(int this)
 {
-  int v1; // eax
-  _DWORD *v2; // edx
-  int v3; // esi
   int i; // eax
-  int v5; // ebp
   int result; // eax
   int j; // ebx
-  _DWORD *v8; // edx
-  int v9; // esi
-  int v10; // [esp+10h] [ebp-4h]
 
   if ( (unsigned char)this->ScriptAction_field_0x98 ) /*0x636ce1*/
   {
-    v1 = this->ScriptAction_field_0x94; /*0x636cf2*/
+    int v1 = this->ScriptAction_field_0x94; /*0x636cf2*/
     if ( v1 != -1 ) /*0x636cfa*/
     {
-      v2 = *(_DWORD **)(this->ScriptAction_field_0x8 + 4 * v1); /*0x636cff*/
+      _DWORD * v2 = *(_DWORD **)(this->ScriptAction_field_0x8 + 4 * v1); /*0x636cff*/
       if ( v2 ) /*0x636d04*/
       {
         v2[45] = -1; /*0x636d06*/
-        v3 = v2[12]; /*0x636d0c*/
+        int v3 = v2[12]; /*0x636d0c*/
         for ( i = 0; i < v3; *(_DWORD *)(*(_DWORD *)(v2[9] + 4 * i - 4) + 116) = -1 ) /*0x636d13*/
           ++i; /*0x636d18*/
         v2[43] = -1; /*0x636d24*/
@@ -730,17 +654,17 @@ int __thiscall sub_636CE0(int this)
     }
     this->q098 = 0; /*0x636d2a*/
   }
-  v5 = this->ScriptAction_field_0x14; /*0x636d37*/
-  v10 = v5; /*0x636d3c*/
+  int v5 = this->ScriptAction_field_0x14; /*0x636d37*/
+  int v10 = v5; /*0x636d3c*/
   result = this->ScriptAction_field_0x8C != -1 ? this->ScriptAction_field_0x8C : 0;
   for ( j = result; j < v5; ++j ) /*0x636d4b*/
   {
     result = this->ScriptAction_field_0x8; /*0x636d4d*/
-    v8 = *(_DWORD **)(result + 4 * j); /*0x636d50*/
+    _DWORD * v8 = *(_DWORD **)(result + 4 * j); /*0x636d50*/
     if ( v8 ) /*0x636d55*/
     {
       v8[45] = -1; /*0x636d57*/
-      v9 = v8[12]; /*0x636d5d*/
+      int v9 = v8[12]; /*0x636d5d*/
       result = 0; /*0x636d60*/
       if ( v9 > 0 ) /*0x636d64*/
       {
@@ -766,37 +690,12 @@ namespace gamemd {
 char ScriptAction::DispatchBuilding()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall DispatchBuildingScriptAction(char *this)
+void DispatchBuildingScriptAction(char *this)
 {
-  char v2; // al
   _DWORD *BuildingLoadQueue; // eax
-  int v4; // ebp
-  _DWORD *v5; // edi
-  int v6; // ecx
-  _DWORD *v7; // esi
   int TypeBuildingClass; // eax
-  int v9; // esi
-  char v10; // bl
-  char v11; // al
-  int v12; // ebp
-  int v13; // edi
-  _DWORD *v14; // ebx
   _DWORD **v15; // esi
   int *CoordsScriptAction; // eax
-  _DWORD *v17; // eax
-  _DWORD *v18; // edi
-  _DWORD *v19; // eax
-  _BYTE *v20; // ecx
-  int v21; // ebx
-  int v22; // edi
-  _DWORD *v23; // ebp
-  int v24; // esi
-  _DWORD *v25; // edi
-  int v26; // eax
-  int v27; // ebx
-  int *v28; // eax
-  int v29; // edi
-  _DWORD *v30; // eax
   int v32; // [esp+10h] [ebp-38h] BYREF
   _DWORD v33[2]; // [esp+14h] [ebp-34h] BYREF
   int v34; // [esp+1Ch] [ebp-2Ch]
@@ -807,28 +706,28 @@ char __thiscall DispatchBuildingScriptAction(char *this)
   int v39; // [esp+38h] [ebp-10h]
   _DWORD v40[3]; // [esp+3Ch] [ebp-Ch] BYREF
 
-  v2 = *this; /*0x637e09*/
+  char v2 = *this; /*0x637e09*/
   if ( *this == 43 ) /*0x637e0d*/
   {
     v32 = this->q008; /*0x637e17*/
     LOBYTE(BuildingLoadQueue) = g_SidebarState; /*0x637e1b*/
-    v4 = 0; /*0x637e20*/
+    int v4 = 0; /*0x637e20*/
     for ( v33[0] = g_SidebarState; v4 < v33[0]; ++v4 ) /*0x637e28*/
     {
-      v5 = (_DWORD *)*((_DWORD *)g_TechnoClass_Count + v4); /*0x637e34*/
-      v6 = v5[135]; /*0x637e37*/
-      v7 = *(_DWORD **)(v6 + 48); /*0x637e3d*/
+      _DWORD * v5 = (_DWORD *)*((_DWORD *)g_TechnoClass_Count + v4); /*0x637e34*/
+      int v6 = v5[135]; /*0x637e37*/
+      _DWORD * v7 = *(_DWORD **)(v6 + 48); /*0x637e3d*/
       if ( (unsigned __int8)House::IsHumanPlayer((#375 *)v6) && HouseClass_Player ) /*0x637e50*/
         v7 = (_DWORD *)*((_DWORD *)HouseClass_Player + 12); /*0x637e52*/
       if ( (_DWORD *)v32 == v7 ) /*0x637e59*/
       {
         TypeBuildingClass = BuildingClass::GetPlanningToken(v5); /*0x637e5d*/
-        v9 = TypeBuildingClass; /*0x637e62*/
+        int v9 = TypeBuildingClass; /*0x637e62*/
         if ( TypeBuildingClass ) /*0x637e66*/
         {
-          v10 = ScriptAction::Check(TypeBuildingClass); /*0x637e71*/
+          char v10 = ScriptAction::Check(TypeBuildingClass); /*0x637e71*/
           ScriptAction::ClearBuildingState(v9); /*0x637e73*/
-          v11 = ScriptAction::IsBuildingTypeMatch(v5); /*0x637e7a*/
+          char v11 = ScriptAction::IsBuildingTypeMatch(v5); /*0x637e7a*/
           if ( !v10 ) /*0x637e81*/
           {
             if ( v11 ) /*0x637e85*/
@@ -851,9 +750,9 @@ char __thiscall DispatchBuildingScriptAction(char *this)
         BuildingLoadQueue = (_DWORD *)(*(int (__thiscall **)(_DWORD *, int *))(*BuildingLoadQueue + 88))( /*0x637ed4*/
                                         BuildingLoadQueue,
                                         &v37);
-        v12 = *BuildingLoadQueue; /*0x637ed7*/
-        v13 = 0; /*0x637ed9*/
-        v14 = (_DWORD *)this->q008; /*0x637edb*/
+        int v12 = *BuildingLoadQueue; /*0x637ed7*/
+        int v13 = 0; /*0x637ed9*/
+        _DWORD * v14 = (_DWORD *)this->q008; /*0x637edb*/
         v34 = BuildingLoadQueue[1]; /*0x637ee2*/
         v35 = BuildingLoadQueue[2]; /*0x637ee9*/
         LOBYTE(BuildingLoadQueue) = DataGlobal_AC4B40; /*0x637eed*/
@@ -872,7 +771,7 @@ char __thiscall DispatchBuildingScriptAction(char *this)
             v39 = CoordsScriptAction[2]; /*0x637f40*/
             if ( Coord3D::Equals(&v37, v36) ) /*0x637f44*/
             {
-              v17 = (_DWORD *)Function::Method_6342D0(0); /*0x637f51*/
+              _DWORD * v17 = (_DWORD *)Function::Method_6342D0(0); /*0x637f51*/
               BuildingLoadQueue = (_DWORD *)TeamClass::GetLeaderIndex(v17); /*0x637f58*/
               if ( v14 == (_DWORD *)-1 || v14 == BuildingLoadQueue ) /*0x637f64*/
                 break; /*0x637f64*/
@@ -883,8 +782,8 @@ char __thiscall DispatchBuildingScriptAction(char *this)
           }
           if ( v15 ) /*0x637f79*/
           {
-            v18 = (_DWORD *)v32; /*0x637f7f*/
-            v19 = (_DWORD *)BuildingClass::GetPlanningToken((_DWORD *)v32); /*0x637f85*/
+            _DWORD * v18 = (_DWORD *)v32; /*0x637f7f*/
+            _DWORD * v19 = (_DWORD *)BuildingClass::GetPlanningToken((_DWORD *)v32); /*0x637f85*/
             if ( !v19 ) /*0x637f8c*/
             {
               if ( __2_YAPAXI_Z(0x9Cu) ) /*0x637f93*/
@@ -907,7 +806,7 @@ char __thiscall DispatchBuildingScriptAction(char *this)
   }
   else
   {
-    v20 = this + 7; /*0x63800a*/
+    _BYTE * v20 = this + 7; /*0x63800a*/
     if ( v2 == 44 ) /*0x63800d*/
     {
       BuildingLoadQueue = BuildingLoadQueue::GetNext(v20); /*0x638013*/
@@ -916,15 +815,16 @@ char __thiscall DispatchBuildingScriptAction(char *this)
         BuildingLoadQueue = (_DWORD *)(*(int (__thiscall **)(_DWORD *, _DWORD *))(*BuildingLoadQueue + 88))( /*0x638029*/
                                         BuildingLoadQueue,
                                         v40);
-        v21 = *BuildingLoadQueue; /*0x63802c*/
-        v22 = 0; /*0x63802e*/
-        v23 = (_DWORD *)this->q008; /*0x638030*/
+        int v21 = *BuildingLoadQueue; /*0x63802c*/
+        int v22 = 0; /*0x63802e*/
+        _DWORD * v23 = (_DWORD *)this->q008; /*0x638030*/
         v38 = BuildingLoadQueue[1]; /*0x638037*/
         v39 = BuildingLoadQueue[2]; /*0x63803e*/
         LOBYTE(BuildingLoadQueue) = DataGlobal_AC4B40; /*0x638042*/
         v33[0] = DataGlobal_AC4B40; /*0x638049*/
         if ( DataGlobal_AC4B40 > 0 ) /*0x63804d*/
         {
+  int v24; // esi
           while ( 1 ) /*0x638060*/
           {
             v24 = *((_DWORD *)DataGlobal_AC4B34 + v22); /*0x638060*/
@@ -940,12 +840,12 @@ char __thiscall DispatchBuildingScriptAction(char *this)
           }
           if ( v24 ) /*0x6380a4*/
           {
-            v25 = ***(_DWORD ****)(v24 + 4); /*0x6380ab*/
-            v26 = BuildingClass::GetPlanningToken(v25); /*0x6380af*/
+            _DWORD * v25 = ***(_DWORD ****)(v24 + 4); /*0x6380ab*/
+            int v26 = BuildingClass::GetPlanningToken(v25); /*0x6380af*/
             v33[0] = v24; /*0x6380bc*/
-            v27 = (*(int (__thiscall **)(int, _DWORD *))(*(_DWORD *)(v26 + 4) + 16))(v26 + 4, v33); /*0x6380c7*/
-            v28 = (int *)BuildingClass::GetPlanningToken(v25); /*0x6380c9*/
-            v29 = ArrayClass::GetAt_Wrap(v28, v27 + 1); /*0x6380d9*/
+            int v27 = (*(int (__thiscall **)(int, _DWORD *))(*(_DWORD *)(v26 + 4) + 16))(v26 + 4, v33); /*0x6380c7*/
+            int * v28 = (int *)BuildingClass::GetPlanningToken(v25); /*0x6380c9*/
+            int v29 = ArrayClass::GetAt_Wrap(v28, v27 + 1); /*0x6380d9*/
             LOBYTE(BuildingLoadQueue) = BuildingClass::FlushScriptActions(v24); /*0x6380db*/
             if ( v29 ) /*0x6380e2*/
             {
@@ -959,7 +859,7 @@ char __thiscall DispatchBuildingScriptAction(char *this)
     }
     else
     {
-      v30 = BuildingLoadQueue::Find(v20); /*0x6380fc*/
+      _DWORD * v30 = BuildingLoadQueue::Find(v20); /*0x6380fc*/
       LOBYTE(BuildingLoadQueue) = ExecuteActionPlanManager(v30, this); /*0x638105*/
     }
   }
@@ -973,21 +873,20 @@ namespace gamemd {
 char ScriptAction::IsBuildingTypeMatch()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall sub_638C70(_DWORD **this)
+void sub_638C70(_DWORD **this)
 {
-  int v2; // edi
   _BYTE *WaypointCoords; // eax
-  char v5; // al
-  _BYTE v6[8]; // [esp+8h] [ebp-10h] BYREF
-  int v7; // [esp+10h] [ebp-8h]
 
   if ( !this ) /*0x638c79*/
     return 0; /*0x638c79*/
-  v2 = ((int (__thiscall *)(_DWORD **))(*this)[97])(this); /*0x638c83*/
+  int v2 = ((int (__thiscall *)(_DWORD **))(*this)[97])(this); /*0x638c83*/
   if ( v2 == 5 ) /*0x638c88*/
     return 1; /*0x638c91*/
+  _BYTE v6[8]; // [esp+8h] [ebp-10h] BYREF
   if ( ((WaypointCoords = ScriptAction::GetWaypointCoords(v6, *(this + 173)), /*0x638cc0*/
+  int v7; // [esp+10h] [ebp-8h]
          v7 = *(_DWORD *)WaypointCoords,
+  char v5; // al
          v5 = WaypointCoords[4],
          v2 == 1)
      || v2 == 11)
@@ -1042,36 +941,23 @@ int __fastcall ScriptAction::ExecutePlacement(
   int result; // eax
   AbstractClass *v31; // ebx
   _BYTE *WaypointCoords; // eax
-  int v33; // eax
-  _BYTE *v34; // eax
-  int v35; // eax
-  int v36; // ecx
-  int v37; // eax
-  int v38; // edx
   int Type; // ebx
-  int v40; // eax
-  int v41; // ecx
-  int v42; // eax
-  int v43; // edx
   AbstractClass *aP1; // [esp+Ch] [ebp-18h]
-  int v45; // [esp+10h] [ebp-14h]
-  int v46; // [esp+14h] [ebp-10h]
-  int v47; // [esp+18h] [ebp-Ch]
-  char v48[8]; // [esp+1Ch] [ebp-8h] BYREF
 
   result = *(_DWORD *)(a2 + 16); /*0x639a53*/
-  v46 = a2; /*0x639a5c*/
-  v47 = result; /*0x639a62*/
-  v45 = 0; /*0x639a66*/
+  int v46 = a2; /*0x639a5c*/
+  int v47 = result; /*0x639a62*/
+  int v45 = 0; /*0x639a66*/
   if ( result > 0 ) /*0x639a6a*/
   {
     while ( 1 ) /*0x639a88*/
     {
       v31 = **(AbstractClass ***)(*(_DWORD *)(a2 + 4) + 4 * v45); /*0x639a88*/
+  char v48[8]; // [esp+1Ch] [ebp-8h] BYREF
       WaypointCoords = ScriptAction::GetWaypointCoords(v48, (IUnknown *)v31); /*0x639a8b*/
       *(_DWORD *)((char *)&a4 + 3) = *(_DWORD *)WaypointCoords; /*0x639a94*/
       HIBYTE(a4) = WaypointCoords[4]; /*0x639a9b*/
-      v33 = __2_YAPAXI_Z(0x10u); /*0x639a9f*/
+      int v33 = __2_YAPAXI_Z(0x10u); /*0x639a9f*/
       if ( v33 ) /*0x639aa9*/
       {
         *(_DWORD *)v33 = 0; /*0x639aab*/
@@ -1085,7 +971,7 @@ int __fastcall ScriptAction::ExecutePlacement(
         aP1 = 0; /*0x639ac1*/
       }
       *(_DWORD *)aP1->__pad_0 = v31; /*0x639acb*/
-      v34 = (_BYTE *)__2_YAPAXI_Z(0x6Fu); /*0x639acd*/
+      _BYTE * v34 = (_BYTE *)__2_YAPAXI_Z(0x6Fu); /*0x639acd*/
       if ( v34 ) /*0x639ad7*/
         *v34 = 0; /*0x639ad9*/
       else
@@ -1094,26 +980,28 @@ int __fastcall ScriptAction::ExecutePlacement(
       *((_WORD *)v34 + 54) = a29; /*0x639aed*/
       v34[110] = BYTE2(a29); /*0x639aef*/
       *(_DWORD *)&aP1->__pad_0[4] = v34; /*0x639af4*/
-      v35 = *(_DWORD *)(a1 + 8); /*0x639af7*/
+      int v35 = *(_DWORD *)(a1 + 8); /*0x639af7*/
       if ( *(_DWORD *)(a1 + 16) < v35 /*0x639b1b*/
         || (*(_BYTE *)(a1 + 13) || !v35)
+  int v36; // ecx
         && (v36 = *(_DWORD *)(a1 + 20), v36 > 0)
         && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)a1 + 8))(a1, v35 + v36, 0) )
       {
-        v37 = *(_DWORD *)(a1 + 16); /*0x639b22*/
-        v38 = *(_DWORD *)(a1 + 4); /*0x639b25*/
+        int v37 = *(_DWORD *)(a1 + 16); /*0x639b22*/
+        int v38 = *(_DWORD *)(a1 + 4); /*0x639b25*/
         *(_DWORD *)(a1 + 16) = v37 + 1; /*0x639b2b*/
         *(_DWORD *)(v38 + 4 * v37) = aP1; /*0x639b2e*/
       }
       Type = BuildingClass::GetPlanningToken(v31); /*0x639b38*/
-      v40 = *(_DWORD *)(Type + 12); /*0x639b3a*/
+      int v40 = *(_DWORD *)(Type + 12); /*0x639b3a*/
       if ( *(_DWORD *)(Type + 20) < v40 /*0x639b62*/
         || (*(_BYTE *)(Type + 17) || !v40)
+  int v41; // ecx
         && (v41 = *(_DWORD *)(Type + 24), v41 > 0)
         && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(Type + 4) + 8))(Type + 4, v40 + v41, 0) )
       {
-        v42 = *(_DWORD *)(Type + 20); /*0x639b69*/
-        v43 = *(_DWORD *)(Type + 8); /*0x639b6c*/
+        int v42 = *(_DWORD *)(Type + 20); /*0x639b69*/
+        int v43 = *(_DWORD *)(Type + 8); /*0x639b6c*/
         *(_DWORD *)(Type + 20) = v42 + 1; /*0x639b72*/
         *(_DWORD *)(v43 + 4 * v42) = a1; /*0x639b75*/
       }
@@ -1136,35 +1024,31 @@ namespace gamemd {
 char ScriptAction::HitTest(MouseClass * aP0, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __stdcall ScriptAction::HitTest(MouseClass *aP0, int a2)
+void ScriptAction::HitTest(MouseClass *aP0, int a2)
 {
   ObjectClass *v3; // esi
-  int v4; // edi
-  int v5; // ebp
   _DWORD **v6; // esi
   int *ScreenPos; // eax
-  _DWORD *v8; // eax
-  int *v9; // eax
-  int *v10; // eax
-  int v11; // [esp+10h] [ebp-3Ch] BYREF
   ObjectClass *v12; // [esp+18h] [ebp-34h]
-  int v13; // [esp+1Ch] [ebp-30h] BYREF
-  int v14; // [esp+20h] [ebp-2Ch]
-  int v15; // [esp+24h] [ebp-28h]
-  int v16; // [esp+28h] [ebp-24h]
-  _BYTE v17[32]; // [esp+2Ch] [ebp-20h] BYREF
-
   if ( !*((_BYTE *)&(&g_MatrixTransformState)[506] + 4) ) /*0x63a8ee*/
     return 0; /*0x63a8f9*/
   v3 = (ObjectClass *)*(&g_MatrixTransformState + 6026); /*0x63a902*/
-  v4 = 0; /*0x63a90c*/
+  int v4 = 0; /*0x63a90c*/
   v12 = (ObjectClass *)*(&g_MatrixTransformState + 6026); /*0x63a910*/
   if ( !*(&g_MatrixTransformState + 6063) /*0x63aa32*/
+  int v11; // [esp+10h] [ebp-3Ch] BYREF
+  int *v9; // eax
     || (v9 = ScriptAction::GetScreenPos((_DWORD **)*(&g_MatrixTransformState + 6063), &v11),
+  int *v10; // eax
+  _BYTE v17[32]; // [esp+2Ch] [ebp-20h] BYREF
         v10 = ComputeBounds((AbstractClass *)v17, (ObjectClass *)8, *v9, v9[1]),
+  int v13; // [esp+1Ch] [ebp-30h] BYREF
         v13 = *v10,
+  int v14; // [esp+20h] [ebp-2Ch]
         v14 = v10[1],
+  int v15; // [esp+24h] [ebp-28h]
         v15 = v10[2],
+  int v16; // [esp+28h] [ebp-24h]
         v16 = v10[3],
         ShrinkRect(&v13, 4),
         (int)aP0 < v13)
@@ -1174,14 +1058,14 @@ char __stdcall ScriptAction::HitTest(MouseClass *aP0, int a2)
   {
     v11 = 0; /*0x63a91a*/
 LABEL_5:
-    v5 = (int)*(&g_MatrixTransformState + 5964); /*0x63a91e*/
+    int v5 = (int)*(&g_MatrixTransformState + 5964); /*0x63a91e*/
     if ( (int)*(&g_MatrixTransformState + 5964) > 0 ) /*0x63a926*/
     {
       while ( 1 ) /*0x63a936*/
       {
         v6 = (_DWORD **)*(&(*(&g_MatrixTransformState + 5961))->X + v4); /*0x63a936*/
         ScreenPos = ScriptAction::GetScreenPos(v6, &v13); /*0x63a93b*/
-        v8 = ComputeBounds((AbstractClass *)&v17[16], (ObjectClass *)8, *ScreenPos, ScreenPos[1]); /*0x63a950*/
+        _DWORD * v8 = ComputeBounds((AbstractClass *)&v17[16], (ObjectClass *)8, *ScreenPos, ScreenPos[1]); /*0x63a950*/
         *(_DWORD *)v17 = *v8; /*0x63a957*/
         *(_DWORD *)&v17[4] = v8[1]; /*0x63a95e*/
         *(_DWORD *)&v17[8] = v8[2]; /*0x63a965*/
@@ -1220,45 +1104,20 @@ namespace gamemd {
 char ScriptAction::ProcessIdleAction()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall ScriptAction::ProcessIdleAction(IUnknown *this)
+void ScriptAction::ProcessIdleAction()
 {
   int *PlanningToken; // esi
-  int v3; // eax
-  int v4; // eax
-  int v5; // edi
   ObjectClass *v6; // ebx
-  int v7; // eax
-  bool v8; // dl
-  _BYTE *v9; // esi
   AbstractClass **ScenarioClassActionCoords; // eax
   BuildingClass *v11; // eax
-  int v12; // eax
-  int v13; // eax
   BuildingClass *v14; // edi
-  int *v15; // ebp
   int *Viewport; // eax
-  int *v17; // eax
-  int v18; // esi
-  int v19; // eax
-  int *v20; // eax
-  int v21; // eax
   IUnknown *v22; // esi
   IUnknown *v23; // edi
-  int *v24; // eax
-  int *v25; // eax
-  int *v26; // eax
   int updated; // eax
-  char v28; // al
-  int v29; // edx
-  int *v30; // eax
-  char v31; // al
   AbstractClass *v32; // edi
-  char *v33; // esi
-  int *v34; // eax
   AbstractClass **v35; // eax
-  int *v36; // eax
   AbstractClass **v37; // eax
-  int v38; // esi
   int v39; // eax
   int *v40; // eax
   int v41; // eax
@@ -1300,9 +1159,9 @@ char __thiscall ScriptAction::ProcessIdleAction(IUnknown *this)
   AbstractClass v78[3]; // [esp+130h] [ebp-70h] BYREF
 
   PlanningToken = (int *)BuildingClass::GetPlanningToken(this); /*0x63b565*/
-  v3 = this->field_0; /*0x63b567*/
+  int v3 = this->field_0; /*0x63b567*/
   v72 = PlanningToken; /*0x63b56d*/
-  v4 = (*(int (__thiscall **)(IUnknown *, int *))(v3 + 88))(this, &v68.uniqueId); /*0x63b571*/
+  int v4 = (*(int (__thiscall **)(IUnknown *, int *))(v3 + 88))(this, &v68.uniqueId); /*0x63b571*/
   aP0.NeedsSaveOrLink = *(void **)v4; /*0x63b576*/
   v75 = *(_DWORD *)(v4 + 4); /*0x63b580*/
   v76 = *(_DWORD *)(v4 + 8); /*0x63b59d*/
@@ -1311,7 +1170,7 @@ char __thiscall ScriptAction::ProcessIdleAction(IUnknown *this)
   aP1_32 = *(ObjectClass **)&v68[4]; /*0x63b5c5*/
   *(_DWORD *)v68[0] += *(_DWORD *)&stru_87C374[44076]; /*0x63b5ce*/
   aP1_28 = *(AbstractClass **)v68[0]; /*0x63b5d2*/
-  v5 = PackRGBFromBytes(&byte_A83CD9); /*0x63b5dd*/
+  int v5 = PackRGBFromBytes(&byte_A83CD9); /*0x63b5dd*/
   if ( this ) /*0x63b5df*/
   {
     v6 = (ObjectClass *)PackRGBFromBytes(&byte_A80220); /*0x63b5f1*/
@@ -1328,17 +1187,20 @@ char __thiscall ScriptAction::ProcessIdleAction(IUnknown *this)
   v6 = (ObjectClass *)v5; /*0x63b60e*/
 LABEL_7:
   if ( PlanningToken ) /*0x63b612*/
-    v7 = PlanningToken[5]; /*0x63b618*/
+    int v7 = PlanningToken[5]; /*0x63b618*/
   else
     v7 = 0; /*0x63b614*/
   v57 = v7 > 0; /*0x63b622*/
+  bool v8; // dl
   v8 = (*(int (__thiscall **)(IUnknown *))(this->field_0 + 388))(this) != 5 /*0x63b653*/
     && !BuildingClass::IsIdleWithNoCaptives(this)
     && (v57 || this->__pad_68[27]);
   v62 = (ObjectClass *)4; /*0x63b657*/
   if ( PlanningToken && (*(_DWORD *)(*PlanningToken + 172) == 28 || *(_DWORD *)(*PlanningToken + 180) == 28) ) /*0x63b67a*/
   {
-    v9 = (char *)PlanningToken + 29; /*0x63b680*/
+  int v19; // eax
+  int v13; // eax
+    _BYTE * v9 = (char *)PlanningToken + 29; /*0x63b680*/
     qmemcpy(v77, v9, 0x6Cu); /*0x63b696*/
     v9 += 108; /*0x63b696*/
     v77[54] = *(_WORD *)v9; /*0x63b698*/
@@ -1350,7 +1212,7 @@ LABEL_7:
     v11 = (BuildingClass *)Coord3D::Set(&aP1_28, (IUnknown *)0xFFFFFFFF, (MouseClass *)0xFFFFFFFF, -1); /*0x63b6c2*/
     if ( Coord3D::Equals(&aP1, v11) && this ) /*0x63b6d7*/
     {
-      v12 = (*(int (__thiscall **)(IUnknown *, int **))(this->field_0 + 88))(this, &v72); /*0x63b6e3*/
+      int v12 = (*(int (__thiscall **)(IUnknown *, int **))(this->field_0 + 88))(this, &v72); /*0x63b6e3*/
       aP1 = *(AbstractClass **)v12; /*0x63b6e8*/
       aP1_4 = *(BuildingClass **)(v12 + 4); /*0x63b6ef*/
       v13 = *(_DWORD *)(v12 + 8); /*0x63b6f3*/
@@ -1364,14 +1226,14 @@ LABEL_7:
     v69 = (int)aP1_4; /*0x63b71c*/
     Coord::To_Screen(*(_DWORD **)&stru_87C374[44976], &v68.NeedsSaveOrLink, (IUnknown *)&v62); /*0x63b720*/
     v14 = (BuildingClass *)((char *)aP1_20 + *(_DWORD *)&stru_87C374[44080]); /*0x63b739*/
-    v15 = (int *)&v62->__pad_0[*(_DWORD *)&stru_87C374[44076]]; /*0x63b73f*/
+    int * v15 = (int *)&v62->__pad_0[*(_DWORD *)&stru_87C374[44076]]; /*0x63b73f*/
     aP1_20 = (BuildingClass *)((char *)aP1_20 + *(_DWORD *)&stru_87C374[44080]); /*0x63b741*/
     Viewport = Display::GetViewport((int *)aP0[0]); /*0x63b745*/
     aP1 = (AbstractClass *)*Viewport; /*0x63b74c*/
     aP1_4 = (BuildingClass *)Viewport[1]; /*0x63b753*/
     aP1_8 = Viewport[2]; /*0x63b75f*/
     v61 = (AbstractClass *)Viewport[3]; /*0x63b76f*/
-    v17 = ComputeBounds(&aP0, (ObjectClass *)6, *(int *)v68[0], *(int *)&v68[4]); /*0x63b778*/
+    int * v17 = ComputeBounds(&aP0, (ObjectClass *)6, *(int *)v68[0], *(int *)&v68[4]); /*0x63b778*/
     v68.uniqueId = *v17; /*0x63b77f*/
     v68.abstractFlags = v17[1]; /*0x63b787*/
     v68.nextArrayIndex = v17[2]; /*0x63b78e*/
@@ -1382,7 +1244,7 @@ LABEL_7:
       &aP1,
       &v68.uniqueId,
       v6);
-    v18 = -1; /*0x63b7ae*/
+    int v18 = -1; /*0x63b7ae*/
     do /*0x63b7cc*/
       DrawTacticalLine2D(v18++, v6, *(int *)v68[0], *(int *)&v68[4], (int)v15, (int)v14, 0); /*0x63b7c3*/
     while ( v18 <= 1 ); /*0x63b7cc*/
@@ -1395,12 +1257,12 @@ LABEL_7:
       if ( SLOBYTE(v77[6]) != 29 ) /*0x63b7e5*/
       {
 LABEL_32:
-        v25 = Display::GetViewport((int *)aP0[0]); /*0x63b8ac*/
+        int * v25 = Display::GetViewport((int *)aP0[0]); /*0x63b8ac*/
         aP1 = (AbstractClass *)*v25; /*0x63b8b7*/
         aP1_4 = (BuildingClass *)v25[1]; /*0x63b8c0*/
         aP1_8 = v25[2]; /*0x63b8c7*/
         v61 = (AbstractClass *)v25[3]; /*0x63b8d5*/
-        v26 = ComputeBounds(&aP0, (ObjectClass *)6, (int)v15, (int)v14); /*0x63b8de*/
+        int * v26 = ComputeBounds(&aP0, (ObjectClass *)6, (int)v15, (int)v14); /*0x63b8de*/
         v68.uniqueId = *v26; /*0x63b8e5*/
         v68.abstractFlags = v26[1]; /*0x63b8ed*/
         v68.nextArrayIndex = v26[2]; /*0x63b8f4*/
@@ -1421,13 +1283,14 @@ LABEL_32:
       v72 = v15; /*0x63b813*/
       v73 = v14; /*0x63b817*/
       aP1_32 = *(ObjectClass **)&v68[4]; /*0x63b81b*/
-      v20 = Coord2D::Sub(&aP1_28, (AbstractClass *)&aP1, (IUnknown *)&v72); /*0x63b81f*/
+      int * v20 = Coord2D::Sub(&aP1_28, (AbstractClass *)&aP1, (IUnknown *)&v72); /*0x63b81f*/
       Vector::TwoDMagnitudeMath(v20); /*0x63b826*/
+  int v21; // eax
       if ( v21 >= 37 ) /*0x63b82e*/
       {
         v22 = (IUnknown *)(((int)v72 + (int)aP1_28) / 2 - 10); /*0x63b857*/
         v23 = (IUnknown *)((int)&aP1_32->__pad_0[(int)v73] / 2 - 10); /*0x63b85a*/
-        v24 = Display::GetViewport((int *)aP0[0]); /*0x63b85d*/
+        int * v24 = Display::GetViewport((int *)aP0[0]); /*0x63b85d*/
         v68.uniqueId = *v24; /*0x63b864*/
         v68.abstractFlags = v24[1]; /*0x63b86f*/
         v68.nextArrayIndex = v24[2]; /*0x63b878*/
@@ -1450,23 +1313,23 @@ LABEL_32:
       return updated; /*0x63bd1f*/
     goto LABEL_55; /*0x63bd1f*/
   }
-  v28 = (*(int (__thiscall **)(IUnknown *))(this->field_0 + 1196))(this); /*0x63b92c*/
-  v29 = this->field_0; /*0x63b932*/
+  char v28 = (*(int (__thiscall **)(IUnknown *))(this->field_0 + 1196))(this); /*0x63b92c*/
+  int v29 = this->field_0; /*0x63b932*/
   aP1_27 = v28; /*0x63b937*/
   v58 = (*(int (__thiscall **)(IUnknown *))(v29 + 1200))(this); /*0x63b945*/
-  v30 = (int *)(*(int (__thiscall **)(IUnknown *, AbstractClass **))(this->field_0 + 1068))(this, &aP1); /*0x63b94f*/
+  int * v30 = (int *)(*(int (__thiscall **)(IUnknown *, AbstractClass **))(this->field_0 + 1068))(this, &aP1); /*0x63b94f*/
   v68.uniqueId = *v30; /*0x63b957*/
   v68.abstractFlags = v30[1]; /*0x63b95e*/
   v68.nextArrayIndex = v30[2]; /*0x63b975*/
   Coord::To_Screen(*(_DWORD **)&stru_87C374[44976], &v68.uniqueId, (IUnknown *)&v62); /*0x63b979*/
-  v31 = this->__pad_68[25]; /*0x63b992*/
+  char v31 = this->__pad_68[25]; /*0x63b992*/
   v32 = (AbstractClass *)&v62->__pad_0[*(_DWORD *)&stru_87C374[44076]]; /*0x63b998*/
-  v33 = &aP1_20->__pad_0[*(_DWORD *)&stru_87C374[44080]]; /*0x63b99a*/
+  char * v33 = &aP1_20->__pad_0[*(_DWORD *)&stru_87C374[44080]]; /*0x63b99a*/
   v62 = (ObjectClass *)((char *)v62 + *(_DWORD *)&stru_87C374[44076]); /*0x63b99c*/
   aP1_20 = (BuildingClass *)((char *)aP1_20 + *(_DWORD *)&stru_87C374[44080]); /*0x63b9a2*/
   if ( v31 ) /*0x63b9a6*/
   {
-    v34 = Display::GetViewport((int *)aP0[0]); /*0x63b9ac*/
+    int * v34 = Display::GetViewport((int *)aP0[0]); /*0x63b9ac*/
     v68.NeedsSaveOrLink = (void *)*v34; /*0x63b9b3*/
     v69 = v34[1]; /*0x63b9bc*/
     v70 = v34[2]; /*0x63b9ca*/
@@ -1484,7 +1347,7 @@ LABEL_32:
                         v6);
     return updated; /*0x63ba1a*/
   }
-  v36 = Display::GetViewport((int *)aP0[0]); /*0x63ba1f*/
+  int * v36 = Display::GetViewport((int *)aP0[0]); /*0x63ba1f*/
   v68.NeedsSaveOrLink = (void *)*v36; /*0x63ba26*/
   v69 = v36[1]; /*0x63ba2d*/
   v70 = v36[2]; /*0x63ba34*/
@@ -1500,7 +1363,7 @@ LABEL_32:
     &v68.NeedsSaveOrLink,
     &aP1,
     v6);
-  v38 = -1; /*0x63ba8b*/
+  int v38 = -1; /*0x63ba8b*/
   do /*0x63baad*/
     DrawTacticalLine2D(v38++, v6, *(int *)v68[0], *(int *)&v68[4], (int)v32, (int)aP1_20, 0); /*0x63baa4*/
   while ( v38 <= 1 ); /*0x63baad*/
@@ -1634,33 +1497,31 @@ namespace gamemd {
 int ScriptAction::DrawPlacementMarker()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_63CE40(_DWORD *this)
+void sub_63CE40(_DWORD *this)
 {
   int DrawColor; // edi
   int *Viewport; // eax
-  int v4; // edx
-  int v5; // eax
   _DWORD *ScenarioClassActionCoords; // eax
-  int v8[2]; // [esp+8h] [ebp-44h] BYREF
-  _DWORD v9[3]; // [esp+10h] [ebp-3Ch] BYREF
-  int v10[4]; // [esp+1Ch] [ebp-30h] BYREF
-  _DWORD v11[4]; // [esp+2Ch] [ebp-20h] BYREF
-  _DWORD v12[4]; // [esp+3Ch] [ebp-10h] BYREF
 
   DrawColor = BuildingClass::GetDrawColor((int)this); /*0x63ce50*/
+  int v10[4]; // [esp+1Ch] [ebp-30h] BYREF
   Viewport = Display::GetViewport(v10); /*0x63ce52*/
+  _DWORD v12[4]; // [esp+3Ch] [ebp-10h] BYREF
   v12[0] = *Viewport; /*0x63ce59*/
   v12[1] = Viewport[1]; /*0x63ce60*/
   v12[2] = Viewport[2]; /*0x63ce67*/
-  v4 = Viewport[3]; /*0x63ce6b*/
-  v5 = this->q004; /*0x63ce6e*/
+  int v4 = Viewport[3]; /*0x63ce6b*/
+  AbstractClass *v5 = this->q004; /*0x63ce6e*/
   v12[3] = v4; /*0x63ce71*/
   ScenarioClassActionCoords = GetScenarioClassActionCoords(v10, *(_BYTE **)(*(_DWORD *)v5 + 4)); /*0x63ce7e*/
+  _DWORD v9[3]; // [esp+10h] [ebp-3Ch] BYREF
   v9[0] = *ScenarioClassActionCoords; /*0x63ce85*/
   v9[1] = ScenarioClassActionCoords[1]; /*0x63ce8c*/
   v9[2] = ScenarioClassActionCoords[2]; /*0x63cea3*/
+  int v8[2]; // [esp+8h] [ebp-44h] BYREF
   Coord::To_Screen(g_TacticalClass_Instance, v9, v8); /*0x63cea7*/
   v8[0] += DSurface_ViewBounds; /*0x63cec7*/
+  _DWORD v11[4]; // [esp+2Ch] [ebp-20h] BYREF
   v11[0] = v8[0] - 4 + 1; /*0x63cedb*/
   v11[1] = g_Map_VisibleRect + v8[1] - 4 + 1; /*0x63cedf*/
   v11[2] = 6; /*0x63cef5*/
@@ -1679,29 +1540,16 @@ namespace gamemd {
 int ScriptAction::Serialize(char * Buffer)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall SerializeScriptAction(int this, char *Buffer)
+void SerializeScriptAction(int this, char *Buffer)
 {
-  int v3; // eax
-  int v4; // ebx
-  const char *v5; // ebp
-  int v6; // edx
-  int v7; // edx
-  int v8; // edx
-  int v9; // eax
-  char *v10; // edx
-  const char *v12; // eax
-  const char *v13; // eax
-  int v14; // [esp+Ch] [ebp-Ch]
-  int v15; // [esp+10h] [ebp-8h]
-  int v16; // [esp+14h] [ebp-4h]
   char *Buffera; // [esp+1Ch] [ebp+4h]
 
-  v3 = ScriptAction::GetActionTypeInfo(this->q0B0); /*0x6dd30b*/
-  v4 = 0; /*0x6dd316*/
-  v5 = 0; /*0x6dd318*/
-  v14 = this->q090; /*0x6dd31d*/
-  v16 = 0; /*0x6dd321*/
-  v15 = 0; /*0x6dd325*/
+  int v3 = ScriptAction::GetActionTypeInfo(this->q0B0); /*0x6dd30b*/
+  int v4 = 0; /*0x6dd316*/
+  const char * v5 = 0; /*0x6dd318*/
+  int v14 = this->q090; /*0x6dd31d*/
+  int v16 = 0; /*0x6dd321*/
+  int v15 = 0; /*0x6dd325*/
   switch ( v3 ) /*0x6dd329*/
   {
     case '/': /*0x6dd329*/
@@ -1722,7 +1570,7 @@ int __thiscall SerializeScriptAction(int this, char *Buffer)
       v5 = (const char *)(this + 84); /*0x6dd36e*/
       goto LABEL_33; /*0x6dd371*/
   }
-  v6 = this->ScriptAction_field_0x30; /*0x6dd376*/
+  int v6 = this->ScriptAction_field_0x30; /*0x6dd376*/
   if ( v6 ) /*0x6dd37b*/
   {
     if ( v3 == 40 ) /*0x6dd380*/
@@ -1740,7 +1588,7 @@ int __thiscall SerializeScriptAction(int this, char *Buffer)
       goto LABEL_33; /*0x6dd3b9*/
     }
   }
-  v7 = this->q050; /*0x6dd3be*/
+  int v7 = this->q050; /*0x6dd3be*/
   if ( v7 && v3 == 11 ) /*0x6dd3c8*/
   {
     v4 = 2; /*0x6dd3d0*/
@@ -1748,7 +1596,7 @@ int __thiscall SerializeScriptAction(int this, char *Buffer)
     v5 = (const char *)(v7 + 36); /*0x6dd3d9*/
     goto LABEL_33; /*0x6dd3dc*/
   }
-  v8 = this->q04C; /*0x6dd3de*/
+  int v8 = this->q04C; /*0x6dd3de*/
   if ( v8 && v3 == 26 ) /*0x6dd3e8*/
   {
     v4 = 3; /*0x6dd3f0*/
@@ -1765,6 +1613,7 @@ int __thiscall SerializeScriptAction(int this, char *Buffer)
   }
   else
   {
+  int v9; // eax
     switch ( v3 ) /*0x6dd420*/
     {
       case 4: /*0x6dd420*/
@@ -1786,7 +1635,7 @@ int __thiscall SerializeScriptAction(int this, char *Buffer)
     v5 = (const char *)v9; /*0x6dd459*/
   }
 LABEL_33:
-  v10 = &Buffer[strlen(Buffer)]; /*0x6dd45b*/
+  char * v10 = &Buffer[strlen(Buffer)]; /*0x6dd45b*/
   Buffera = v10; /*0x6dd472*/
   switch ( v4 ) /*0x6dd476*/
   {
@@ -1803,7 +1652,7 @@ LABEL_33:
                this->q010,
                v15);
     case 10: /*0x6dd476*/
-      v12 = (const char *)Waypoint::To_String(this->q044); /*0x6dd4b6*/
+      const char * v12 = (const char *)Waypoint::To_String(this->q044); /*0x6dd4b6*/
       return sprintf( /*0x6dd4dc*/
                Buffera,
                DataGlobal_842BC4,
@@ -1829,7 +1678,7 @@ LABEL_33:
                this->q010,
                this->q090);
     default:
-      v13 = (const char *)Waypoint::To_String(this->q044); /*0x6dd4fe*/
+      const char * v13 = (const char *)Waypoint::To_String(this->q044); /*0x6dd4fe*/
       if ( v4 ) /*0x6dd4fc*/
         return sprintf( /*0x6dd524*/
                  Buffera,
@@ -1866,32 +1715,20 @@ const char * ScriptAction::ParseScriptActionParams()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 const char *__thiscall ParseScriptActionParams(int this)
 {
-  char *v2; // eax
-  char *v3; // eax
-  int v4; // ebx
-  char *v5; // esi
-  int v6; // eax
-  const char *v7; // eax
   char i; // cl
-  unsigned int v9; // kr10_4
-  unsigned int v10; // ecx
-  char *v11; // eax
-  char *v12; // eax
-  char *v13; // eax
-  char *v14; // eax
   const char *result; // eax
   char Destination[24]; // [esp+14h] [ebp-1Ch] BYREF
-  char v17; // [esp+2Ch] [ebp-4h]
 
   this->q090 = 0; /*0x6dd5c1*/
-  v2 = strtok(0, Delimiter); /*0x6dd5c7*/
+  char * v2 = strtok(0, Delimiter); /*0x6dd5c7*/
   this->q0B0 = atoi(v2); /*0x6dd5d8*/
-  v3 = strtok(0, Delimiter); /*0x6dd5db*/
-  v4 = atoi(v3); /*0x6dd5e6*/
-  v5 = strtok(0, Delimiter); /*0x6dd5f7*/
-  v6 = atoi(v5); /*0x6dd5fa*/
+  char * v3 = strtok(0, Delimiter); /*0x6dd5db*/
+  int v4 = atoi(v3); /*0x6dd5e6*/
+  char * v5 = strtok(0, Delimiter); /*0x6dd5f7*/
+  int v6 = atoi(v5); /*0x6dd5fa*/
   switch ( v4 ) /*0x6dd60d*/
   {
+  char v17; // [esp+2Ch] [ebp-4h]
     case 0: /*0x6dd60d*/
     case 11: /*0x6dd60d*/
       this->q090 = v6; /*0x6dd614*/
@@ -1946,7 +1783,7 @@ const char *__thiscall ParseScriptActionParams(int this)
       }
       else
       {
-        v7 = v5; /*0x6dd6de*/
+        const char * v7 = v5; /*0x6dd6de*/
         this->q06D = 0; /*0x6dd6e2*/
         if ( v5 ) /*0x6dd6e5*/
         {
@@ -1959,8 +1796,8 @@ const char *__thiscall ParseScriptActionParams(int this)
           {
             strncpy((char *)(this + 109), v7, 0x1Fu); /*0x6dd704*/
             this->q08C = 0; /*0x6dd711*/
-            v9 = strlen((const char *)(this + 109)) + 1; /*0x6dd718*/
-            v10 = v9 - 1; /*0x6dd71c*/
+            unsigned int v9 = strlen((const char *)(this + 109)) + 1; /*0x6dd718*/
+            unsigned int v10 = v9 - 1; /*0x6dd71c*/
             if ( v9 != 1 ) /*0x6dd71d*/
             {
               do /*0x6dd726*/
@@ -2005,13 +1842,13 @@ const char *__thiscall ParseScriptActionParams(int this)
     default:
       break;
   }
-  v11 = strtok(0, Delimiter); /*0x6dd731*/
+  char * v11 = strtok(0, Delimiter); /*0x6dd731*/
   this->q034 = atoi(v11); /*0x6dd74a*/
-  v12 = strtok(0, Delimiter); /*0x6dd74d*/
+  char * v12 = strtok(0, Delimiter); /*0x6dd74d*/
   *(_DWORD *)(this + 56) = atoi(v12); /*0x6dd75f*/
-  v13 = strtok(0, Delimiter); /*0x6dd762*/
+  char * v13 = strtok(0, Delimiter); /*0x6dd762*/
   *(_DWORD *)(this + 60) = atoi(v13); /*0x6dd774*/
-  v14 = strtok(0, Delimiter); /*0x6dd777*/
+  char * v14 = strtok(0, Delimiter); /*0x6dd777*/
   this->q010 = atoi(v14); /*0x6dd789*/
   result = strtok(0, Delimiter); /*0x6dd78c*/
   if ( result ) /*0x6dd796*/
@@ -2044,19 +1881,16 @@ unsigned int * ScriptAction::ReadParameter()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_6E1830(_DWORD *this)
 {
-  int v1; // esi
-  int v2; // eax
-  _DWORD *v3; // esi
   _DWORD *result; // eax
   __int16 v5[2]; // [esp+4h] [ebp-4h] BYREF
 
-  v1 = *this / 256; /*0x6e184b*/
-  v2 = this->q004 / 256; /*0x6e184e*/
+  int v1 = *this / 256; /*0x6e184b*/
+  int v2 = this->q004 / 256; /*0x6e184e*/
   v5[0] = v1; /*0x6e1851*/
   v5[1] = v2; /*0x6e1856*/
   if ( __PAIR32__(v2, v1) == DataGlobal_B0E680 ) /*0x6e186c*/
     return 0; /*0x6e189e*/
-  v3 = CellCoord::To_CellObj(&DataGlobal_87F7E8, v5); /*0x6e1886*/
+  _DWORD * v3 = CellCoord::To_CellObj(&DataGlobal_87F7E8, v5); /*0x6e1886*/
   result = Cell::IsBridge(v3); /*0x6e188a*/
   if ( !result ) /*0x6e1891*/
     return CellClass::FindInfantry(v3, 0); /*0x6e1896*/
@@ -2070,7 +1904,7 @@ namespace gamemd {
 int ScriptAction::GetActionTypeInfo()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_6E3B60(void *this)
+void sub_6E3B60(void *this)
 {
   int result; // eax
 
@@ -2325,18 +2159,10 @@ namespace gamemd {
 int ScriptAction::ExecuteMissionCmd()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ScriptAction::ExecuteMissionCmd(#377 *this)
+void ScriptAction::ExecuteMissionCmd(#377 *this)
 {
-  bool v2; // al
-  int v3; // edi
   _BYTE *WaypointCoords; // eax
   int result; // eax
-  unsigned int v6; // ebx
-  int v7; // eax
-  _BYTE *v8; // eax
-  int v9[27]; // [esp-70h] [ebp-108h] BYREF
-  int v10; // [esp-4h] [ebp-9Ch]
-  _DWORD v11[2]; // [esp+10h] [ebp-88h] BYREF
   _BYTE v12[8]; // [esp+18h] [ebp-80h] BYREF
   _BYTE v13[8]; // [esp+20h] [ebp-78h] BYREF
   char v14[108]; // [esp+28h] [ebp-70h] BYREF
@@ -2347,12 +2173,13 @@ int __thiscall ScriptAction::ExecuteMissionCmd(#377 *this)
   IUnknown *v19; // [esp+A4h] [ebp+Ch]
   IUnknown *aP1; // [esp+A8h] [ebp+10h]
 
-  v2 = Render_Draw_731BF0() && (*(unsigned __int8 (__thiscall **)(#377 *))(*(_DWORD *)this + 1216))(this); /*0x6ffc03*/
-  v3 = v17; /*0x6ffc09*/
+  bool v2 = Render_Draw_731BF0() && (*(unsigned __int8 (__thiscall **)(#377 *))(*(_DWORD *)this + 1216))(this); /*0x6ffc03*/
+  int v3 = v17; /*0x6ffc09*/
   if ( (v17 == 2 || v17 == 1) && v2 ) /*0x6ffc1c*/
     v3 = 29; /*0x6ffc1e*/
   if ( FactoryClass::GetFlag() ) /*0x6ffc23*/
   {
+  int v9[27]; // [esp-70h] [ebp-108h] BYREF
     ScriptAction::GetWaypointCoords(&v9[26], aP1); /*0x6ffc3d*/
     ScriptAction::GetWaypointCoords(&v9[24], v19); /*0x6ffc4f*/
     ScriptAction::GetWaypointCoords(&v9[22], v18); /*0x6ffc61*/
@@ -2368,6 +2195,7 @@ int __thiscall ScriptAction::ExecuteMissionCmd(#377 *this)
       v9[24],
       v9[25],
       v9[26],
+  int v10; // [esp-4h] [ebp-9Ch]
       v10);
     qmemcpy(v9, v14, sizeof(v9)); /*0x6ffca4*/
     LOWORD(v10) = v15; /*0x6ffca6*/
@@ -2405,6 +2233,7 @@ int __thiscall ScriptAction::ExecuteMissionCmd(#377 *this)
   }
   else
   {
+  _DWORD v11[2]; // [esp+10h] [ebp-88h] BYREF
     if ( g_MoveFeedback ) /*0x6ffccb*/
     {
       switch ( v3 ) /*0x6ffcd4*/
@@ -2431,8 +2260,8 @@ int __thiscall ScriptAction::ExecuteMissionCmd(#377 *this)
         default:
           if ( *(int *)((*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 132))(this) + 1200) > 0 ) /*0x6ffd59*/
           {
-            v6 = Random::State(&stru_87C374[43028]); /*0x6ffd65*/
-            v7 = (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 132))(this); /*0x6ffd6b*/
+            unsigned int v6 = Random::State(&stru_87C374[43028]); /*0x6ffd65*/
+            int v7 = (*(int (__thiscall **)(#377 *))(*(_DWORD *)this + 132))(this); /*0x6ffd6b*/
             v11[0] = *(_DWORD *)this; /*0x6ffd7b*/
             (*(void (__thiscall **)(#377 *, _DWORD))(v11[0] + 852))( /*0x6ffd93*/
               this,
@@ -2443,7 +2272,7 @@ int __thiscall ScriptAction::ExecuteMissionCmd(#377 *this)
     }
     ScriptAction::GetWaypointCoords(v11, v19); /*0x6ffdb1*/
     ScriptAction::GetWaypointCoords(v12, v18); /*0x6ffdbb*/
-    v8 = ScriptAction::GetWaypointCoords(v13, (IUnknown *)this); /*0x6ffdce*/
+    _BYTE * v8 = ScriptAction::GetWaypointCoords(v13, (IUnknown *)this); /*0x6ffdce*/
     Object_Init(v3, (int)v12, *(_DWORD *)v8, v8[4], (int)v11); /*0x6ffde6*/
     LOBYTE(result) = 1; /*0x6ffdee*/
   }

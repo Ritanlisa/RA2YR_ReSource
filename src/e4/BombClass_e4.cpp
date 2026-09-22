@@ -10,9 +10,8 @@ namespace game {
 int BombClass::AbstractClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BombClass::AbstractClass(int this)
+void BombClass::AbstractClass(int this)
 {
-  int v2; // eax
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x4385d4*/
   this->BombClass_field_54 = 0; /*0x4385de*/
@@ -33,7 +32,7 @@ int __thiscall BombClass::AbstractClass(int this)
          dword_89C670 + dword_89C67C,
          0) )
   {
-    v2 = dword_89C678++; /*0x438657*/
+    int v2 = dword_89C678++; /*0x438657*/
     *((_DWORD *)unk_89C66C + v2) = this; /*0x438666*/
   }
   return this; /*0x43866b*/
@@ -50,11 +49,10 @@ Iostream_init * BombClass::GetCurrentFrame()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 Iostream_init *__thiscall BombClass::GetCurrentFrame(_DWORD *this)
 {
-  int v2; // ecx
 
   if ( this->audioController == 1 ) /*0x438a04*/
     return (Iostream_init *)12; /*0x438a06*/
-  v2 = 2 * (((int)g_CurrentFrame - this->q034) / (g_RulesClass_Instance->?[1] / 6)); /*0x438a4c*/
+  int v2 = 2 * (((int)g_CurrentFrame - this->q034) / (g_RulesClass_Instance->?[1] / 6)); /*0x438a4c*/
   if ( (int)g_CurrentFrame % (2 * g_RulesClass_Instance->?[3]) >= g_RulesClass_Instance->?[3] ) /*0x438a53*/
     ++v2; /*0x438a55*/
   if ( v2 < 12 ) /*0x438a59*/
@@ -72,7 +70,7 @@ namespace game {
 bool BombClass::TimeToExplode()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-bool __thiscall BombClass::TimeToExplode(int this)
+void BombClass::TimeToExplode(int this)
 {
   return !this->audioController && (int)g_CurrentFrame > this->q038 && !this->BombClass_field_58; /*0x438a8c*/
 }
@@ -86,35 +84,29 @@ namespace game {
 int BombClass::Stat(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BombClass::_vt13(int this, int *a2)
+void BombClass::_vt13(int this, int *a2)
 {
-  int v3; // edx
-  int v4; // eax
-  int v5; // eax
-  int v6; // eax
-  int v7; // eax
-  int v8; // eax
-  int v9; // eax
 
   AbstractClass::ProcessPower((#378 *)this); /*0x438a99*/
-  v4 = this->BombClass_field_28; /*0x438a9e*/
+  int v4 = this->BombClass_field_28; /*0x438a9e*/
   if ( v4 ) /*0x438aa3*/
   {
-    v5 = (*(int (__stdcall **)(int))(*(_DWORD *)(v4 + 4) + 16))(v4 + 4); /*0x438aac*/
+    int v5 = (*(int (__stdcall **)(int))(*(_DWORD *)(v4 + 4) + 16))(v4 + 4); /*0x438aac*/
     Power::TimerProcess(v5); /*0x438ab2*/
   }
-  v6 = this->q024; /*0x438ab7*/
+  int v6 = this->q024; /*0x438ab7*/
   if ( v6 ) /*0x438abc*/
   {
-    v7 = (*(int (__stdcall **)(int))(*(_DWORD *)(v6 + 4) + 16))(v6 + 4); /*0x438ac5*/
+    int v7 = (*(int (__stdcall **)(int))(*(_DWORD *)(v6 + 4) + 16))(v6 + 4); /*0x438ac5*/
     Power::TimerProcess(v7); /*0x438acb*/
   }
-  v8 = this->BombClass_field_2C; /*0x438ad0*/
+  int v8 = this->BombClass_field_2C; /*0x438ad0*/
   if ( v8 ) /*0x438ad5*/
   {
-    v9 = (*(int (__stdcall **)(int))(*(_DWORD *)(v8 + 4) + 16))(v8 + 4); /*0x438ade*/
+    int v9 = (*(int (__stdcall **)(int))(*(_DWORD *)(v8 + 4) + 16))(v8 + 4); /*0x438ade*/
     Power::TimerProcess(v9); /*0x438ae4*/
   }
+  int v3; // edx
   LOBYTE(v3) = this->BombClass_field_58; /*0x438ae9*/
   return Power::FlagProcess(a2, v3); /*0x438af4*/
 }

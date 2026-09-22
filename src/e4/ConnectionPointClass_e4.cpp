@@ -8,21 +8,13 @@
 int ConnectionPointClass::GetConnectionInterface(unsigned int * a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __stdcall ConnectionPointClass::_vt07(_DWORD *a1, int a2)
+void ConnectionPointClass::_vt07(_DWORD *a1, int a2)
 {
-  _DWORD *v3; // edi
-  int v4; // eax
-  void *v5; // eax
-  int v6; // eax
-  int v7; // ecx
-  _DWORD *v8; // edx
-  _DWORD *v9; // eax
   int i; // esi
-  int v11; // [esp-Ch] [ebp-14h]
 
   if ( !a2 ) /*0x4a076a*/
     return -2147467261; /*0x4a076d*/
-  v3 = __2_YAPAXI_Z(0x24u); /*0x4a077d*/
+  _DWORD * v3 = __2_YAPAXI_Z(0x24u); /*0x4a077d*/
   if ( !v3 ) /*0x4a0784*/
     return -2147024882; /*0x4a0864*/
   v3[2] = 0; /*0x4a0798*/
@@ -33,23 +25,23 @@ int __stdcall ConnectionPointClass::_vt07(_DWORD *a1, int a2)
   if ( v3 + 1 != a1 + 7 ) /*0x4a07ab*/
   {
     VectorClass::ClearAndFree2((int)(v3 + 1)); /*0x4a07af*/
-    v4 = a1[9]; /*0x4a07b5*/
+    int v4 = a1[9]; /*0x4a07b5*/
     v3[3] = v4; /*0x4a07ba*/
     if ( v4 ) /*0x4a07bd*/
     {
-      v5 = __2_YAPAXI_Z(8 * v4); /*0x4a07c7*/
+      void * v5 = __2_YAPAXI_Z(8 * v4); /*0x4a07c7*/
       v3[2] = v5; /*0x4a07d1*/
       if ( v5 ) /*0x4a07d4*/
       {
-        v6 = v3[3]; /*0x4a07d6*/
-        v7 = 0; /*0x4a07d9*/
+        int v6 = v3[3]; /*0x4a07d6*/
+        int v7 = 0; /*0x4a07d9*/
         *((_BYTE *)v3 + 17) = 1; /*0x4a07dd*/
         if ( v6 > 0 ) /*0x4a07e1*/
         {
           do /*0x4a0806*/
           {
-            v8 = (_DWORD *)(a1[8] + 8 * v7); /*0x4a07ef*/
-            v9 = (_DWORD *)(v3[2] + 8 * v7++); /*0x4a07f4*/
+            _DWORD * v8 = (_DWORD *)(a1[8] + 8 * v7); /*0x4a07ef*/
+            _DWORD * v9 = (_DWORD *)(v3[2] + 8 * v7++); /*0x4a07f4*/
             *v9 = *v8; /*0x4a07f9*/
             v9[1] = v8[1]; /*0x4a07fe*/
           }
@@ -71,7 +63,7 @@ int __stdcall ConnectionPointClass::_vt07(_DWORD *a1, int a2)
   *v3 = &vt_EnumConnectionsClass; /*0x4a082a*/
   for ( i = 0; i < v3[5]; ++i ) /*0x4a0837*/
   {
-    v11 = *(_DWORD *)(v3[2] + 8 * i); /*0x4a083f*/
+    int v11 = *(_DWORD *)(v3[2] + 8 * i); /*0x4a083f*/
     (*(void (__stdcall **)(int))(*(_DWORD *)v11 + 4))(v11); /*0x4a0842*/
   }
   return (*(int (__stdcall **)(_DWORD *, void *, int))*v3)(v3, &unk_7F7CB0, a2); /*0x4a076c*/
@@ -108,17 +100,15 @@ namespace gamemd {
 char ConnectionPointClass_9::Release(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall ConnectionPointClass_9_::_vt02(void *this, int a2, _DWORD *a3)
+void ConnectionPointClass_9_::_vt02(int a2, _DWORD *a3)
 {
-  _DWORD *v4; // edi
-  int v6; // ecx
   int i; // eax
 
   if ( a2 ) /*0x4a128c*/
   {
     this->q00C = 0; /*0x4a1296*/
     if ( a3 ) /*0x4a129c*/
-      v4 = a3; /*0x4a12b2*/
+      _DWORD * v4 = a3; /*0x4a12b2*/
     else
       v4 = __2_YAPAXI_Z(4 * a2); /*0x4a12ae*/
     this->q00C = 1; /*0x4a12b6*/
@@ -126,14 +116,14 @@ char __thiscall ConnectionPointClass_9_::_vt02(void *this, int a2, _DWORD *a3)
     {
       if ( this->ConnectionPointClass_9_field_0x4 ) /*0x4a12c5*/
       {
-        v6 = this->ConnectionPointClass_9_field_0x8; /*0x4a12cc*/
+        int v6 = this->ConnectionPointClass_9_field_0x8; /*0x4a12cc*/
         if ( a2 < v6 ) /*0x4a12d1*/
           v6 = a2; /*0x4a12d3*/
         for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->ConnectionPointClass_9_field_0x4 + 4 * i - 4) ) /*0x4a12d9*/
           ++i; /*0x4a12de*/
         if ( this->IsAllocated ) /*0x4a12eb*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4a12f6*/
+          __3_YAXPAX_Z(this->q004); /*0x4a12f6*/
           this->ConnectionPointClass_9_field_0x4 = 0; /*0x4a12fe*/
         }
       }

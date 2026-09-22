@@ -423,41 +423,26 @@ bool MixFileClass::Bootstrap()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x5301a0
-char MixFileClass::Bootstrap()
+void MixFileClass::Bootstrap()
 {
   int i; // edi
-  _DWORD *v1; // eax
-  char v2; // bl
-  _DWORD *v3; // eax
-  _DWORD *v4; // esi
-  int v5; // eax
-  _DWORD *v6; // eax
-  _DWORD *v7; // eax
-  _DWORD *v8; // eax
-  _DWORD *v10; // eax
-  _DWORD *v11; // eax
-  _DWORD *v12; // eax
-  _DWORD *v13; // eax
-  _DWORD *v14; // eax
-  _DWORD *v15; // eax
-  int v16; // [esp+10h] [ebp-68h]
-  int v17[9]; // [esp+14h] [ebp-64h] BYREF
   char Buffer[64]; // [esp+38h] [ebp-40h] BYREF
 
-  v16 = dword_81C1D0;
+  int v16 = dword_81C1D0;
   SetSoundWarning(-2);
   for ( i = 99; i >= 0; --i )
   {
     sprintf(Buffer, "EXPANDMD%02d.MIX", i);
-    v1 = RawFileClass::Construct(v17, (int)Buffer);
-    v2 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v1 + 20))(v1, 0);
+  int v17[9]; // [esp+14h] [ebp-64h] BYREF
+    _DWORD * v1 = RawFileClass::Construct(v17, (int)Buffer);
+    char v2 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v1 + 20))(v1, 0);
     RawFileClass::Dtor(v17);
     if ( v2 )
     {
-      v3 = (_DWORD *)__2_YAPAXI_Z(40);
+      _DWORD * v3 = (_DWORD *)__2_YAPAXI_Z(40);
       if ( v3 )
       {
-        v4 = MixFileClass::FromFile(v3, Buffer, (int)&DataGlobal_87F7E8[7270]);
+        _DWORD * v4 = MixFileClass::FromFile(v3, Buffer, (int)&DataGlobal_87F7E8[7270]);
         if ( v4 )
         {
           if ( DataGlobal_87F7E8[5486] < DataGlobal_87F7E8[5484]
@@ -468,7 +453,7 @@ char MixFileClass::Bootstrap()
                  DataGlobal_87F7E8[5484] + DataGlobal_87F7E8[5487],
                  0) )
           {
-            v5 = DataGlobal_87F7E8[5486]++;
+            int v5 = DataGlobal_87F7E8[5486]++;
             *(_DWORD *)(DataGlobal_87F7E8[5483] + 4 * v5) = v4;
           }
           Debug::Log_0();
@@ -476,7 +461,7 @@ char MixFileClass::Bootstrap()
       }
     }
   }
-  v6 = (_DWORD *)__2_YAPAXI_Z(40);
+  _DWORD * v6 = (_DWORD *)__2_YAPAXI_Z(40);
   if ( !v6 )
   {
     DataGlobal_87F7E8[5508] = 0;
@@ -485,18 +470,18 @@ char MixFileClass::Bootstrap()
   DataGlobal_87F7E8[5508] = MixFileClass::FromFile(v6, aRa2mdMix, (int)&DataGlobal_87F7E8[7270]);
   if ( !DataGlobal_87F7E8[5508] )
     return 0;
-  v7 = (_DWORD *)__2_YAPAXI_Z(40);
+  _DWORD * v7 = (_DWORD *)__2_YAPAXI_Z(40);
   if ( !v7 )
   {
     DataGlobal_87F7E8[5509] = 0;
     return 0;
   }
-  v8 = MixFileClass::FromFile(v7, aRa2Mix, (int)&DataGlobal_87F7E8[7270]);
+  _DWORD * v8 = MixFileClass::FromFile(v7, aRa2Mix, (int)&DataGlobal_87F7E8[7270]);
   DataGlobal_87F7E8[5509] = v8;
   if ( !v8 )
     return 0;
   Debug::Log_0();
-  v10 = (_DWORD *)__2_YAPAXI_Z(40);
+  _DWORD * v10 = (_DWORD *)__2_YAPAXI_Z(40);
   if ( !v10 )
   {
     DataGlobal_87F7E8[5528] = 0;
@@ -506,18 +491,18 @@ char MixFileClass::Bootstrap()
   if ( !DataGlobal_87F7E8[5528] || !_do_always_noconv_codecvt_base_std__MBE_NXZ_7((#345 *)aCachemdMix) )
     return 0;
   Debug::Log_0();
-  v11 = (_DWORD *)__2_YAPAXI_Z(40);
+  _DWORD * v11 = (_DWORD *)__2_YAPAXI_Z(40);
   if ( !v11 )
   {
     DataGlobal_87F7E8[5529] = 0;
     return 0;
   }
-  v12 = MixFileClass::FromFile(v11, aCacheMix_0, (int)&DataGlobal_87F7E8[7270]);
+  _DWORD * v12 = MixFileClass::FromFile(v11, aCacheMix_0, (int)&DataGlobal_87F7E8[7270]);
   DataGlobal_87F7E8[5529] = v12;
   if ( !v12 || !_do_always_noconv_codecvt_base_std__MBE_NXZ_7((#345 *)aCacheMix_0) )
     return 0;
   Debug::Log_0();
-  v13 = (_DWORD *)__2_YAPAXI_Z(40);
+  _DWORD * v13 = (_DWORD *)__2_YAPAXI_Z(40);
   if ( !v13 )
   {
     DataGlobal_87F7E8[5530] = 0;
@@ -526,13 +511,13 @@ char MixFileClass::Bootstrap()
   DataGlobal_87F7E8[5530] = MixFileClass::FromFile(v13, aLocalmdMix, (int)&DataGlobal_87F7E8[7270]);
   if ( !DataGlobal_87F7E8[5530] )
     return 0;
-  v14 = (_DWORD *)__2_YAPAXI_Z(40);
+  _DWORD * v14 = (_DWORD *)__2_YAPAXI_Z(40);
   if ( !v14 )
   {
     DataGlobal_87F7E8[5531] = 0;
     return 0;
   }
-  v15 = MixFileClass::FromFile(v14, aLocalMix, (int)&DataGlobal_87F7E8[7270]);
+  _DWORD * v15 = MixFileClass::FromFile(v14, aLocalMix, (int)&DataGlobal_87F7E8[7270]);
   DataGlobal_87F7E8[5531] = v15;
   if ( !v15 )
     return 0;

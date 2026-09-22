@@ -98,33 +98,19 @@ _WORD *__thiscall BlitTransXlatAlphaZRead_ushort::Blit_Alpha_Lucent50_0(
 int BlitTransXlatAlphaZRead_ushort::AddRef(unsigned short * a2, unsigned char * a3, int a4, int a5, unsigned short * a6, unsigned short * a7, int a8, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BlitTransXlatAlphaZRead_ushort::_vt01(
-        _DWORD *this,
-        _WORD *a2,
-        _BYTE *a3,
-        int a4,
-        int a5,
-        unsigned __int16 *a6,
-        unsigned __int16 *a7,
-        int a8,
-        int a9)
+void BlitTransXlatAlphaZRead_ushort::_vt01(_WORD *a2, _BYTE *a3, int a4, int a5, unsigned __int16 *a6, unsigned __int16 *a7, int a8, int a9)
 {
-  int v11; // eax
   int result; // eax
-  _DWORD *v13; // ebp
   unsigned __int16 v15; // ax
-  int v16; // [esp+20h] [ebp+14h]
-  int v17; // [esp+24h] [ebp+18h]
-
-  v11 = (261 * (a8 <= 0 ? 0 : a8)) >> 11;
+  int v11 = (261 * (a8 <= 0 ? 0 : a8)) >> 11;
   if ( v11 > 254 ) /*0x494b8b*/
     v11 = 254; /*0x494b8d*/
   result = this->q008 + (v11 << 9); /*0x494b98*/
-  v17 = result; /*0x494ba0*/
+  int v17 = result; /*0x494ba0*/
   if ( a4 > 0 ) /*0x494ba4*/
   {
-    v13 = g_ZBufferDescriptor; /*0x494bab*/
-    v16 = a4; /*0x494bb1*/
+    _DWORD * v13 = g_ZBufferDescriptor; /*0x494bab*/
+    int v16 = a4; /*0x494bb1*/
     do /*0x494c31*/
     {
       v15 = *a6++; /*0x494bbf*/
@@ -151,34 +137,19 @@ int __thiscall BlitTransXlatAlphaZRead_ushort::_vt01(
 int BlitTransXlatAlphaZRead_ushort::BlitRect(unsigned short * a2, unsigned char * a3, int a4, int a5, unsigned short * a6, unsigned short * a7, int a8, int a9, short a10)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BlitTransXlatAlphaZRead_ushort::BlitRect(
-        _DWORD *this,
-        _WORD *a2,
-        _BYTE *a3,
-        int a4,
-        int a5,
-        unsigned __int16 *a6,
-        unsigned __int16 *a7,
-        int a8,
-        int a9,
-        __int16 a10)
+void BlitTransXlatAlphaZRead_ushort::BlitRect(_WORD *a2, _BYTE *a3, int a4, int a5, unsigned __int16 *a6, unsigned __int16 *a7, int a8, int a9, __int16 a10)
 {
-  int v12; // eax
   int result; // eax
-  _DWORD *v14; // ebp
   unsigned __int16 v16; // ax
-  int v17; // [esp+20h] [ebp+14h]
-  int v18; // [esp+24h] [ebp+18h]
-
-  v12 = (261 * (a8 <= 0 ? 0 : a8)) >> 11;
+  int v12 = (261 * (a8 <= 0 ? 0 : a8)) >> 11;
   if ( v12 > 254 ) /*0x494c6b*/
     v12 = 254; /*0x494c6d*/
   result = this->q008 + (v12 << 9); /*0x494c78*/
-  v18 = result; /*0x494c80*/
+  int v18 = result; /*0x494c80*/
   if ( a4 > 0 ) /*0x494c84*/
   {
-    v14 = g_ZBufferDescriptor; /*0x494c8b*/
-    v17 = a4; /*0x494c91*/
+    _DWORD * v14 = g_ZBufferDescriptor; /*0x494c8b*/
+    int v17 = a4; /*0x494c91*/
     do /*0x494d16*/
     {
       v16 = *a6++; /*0x494c9f*/
@@ -212,16 +183,7 @@ int BlitTransXlatAlphaZRead_ushort::ddtor(int a2, int a3, int a4, int a5, int a6
 int BlitTransXlatAlphaZRead_ushort::GetSize(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall BlitTransXlatAlphaZRead_ushort::_vt04(
-        void *this,
-        int a2,
-        int a3,
-        int a4,
-        int a5,
-        int a6,
-        int a7,
-        int a8,
-        int a9)
+void BlitTransXlatAlphaZRead_ushort::_vt04(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD, int))(this->q008)( /*0x494d7f*/
            this,

@@ -7,9 +7,8 @@
 int DiskLaserClass::DiskLaserClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall DiskLaserClass::DiskLaserClass(int this)
+D DiskLaserClass::DiskLaserClass(int this)
 {
-  int v2; // eax
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x4a7a33*/
   *(_DWORD *)this = &DiskLaserClass::`vftable'; /*0x4a7a3a*/
@@ -31,7 +30,7 @@ int __thiscall DiskLaserClass::DiskLaserClass(int this)
          DataGlobal_8A0210 + DataGlobal_8A021C,
          0) )
   {
-    v2 = DataGlobal_8A0218++; /*0x4a7aab*/
+    int v2 = DataGlobal_8A0218++; /*0x4a7aab*/
     *((_DWORD *)DataGlobal_8A020C + v2) = this; /*0x4a7aba*/
   }
   return this; /*0x4a7abf*/
@@ -44,15 +43,13 @@ DiskLaserClass * DiskLaserClass::CopyTo(char a2)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 DiskLaserClass *__thiscall DiskLaserClass::CopyTo(_DWORD *this, char a2)
 {
-  int v3; // eax
-  _DWORD *v5; // [esp+4h] [ebp-4h] BYREF
 
   *this = &DiskLaserClass::`vftable'; /*0x4a7c9d*/
   this->vtable2 = &DiskLaserClass::`vftable'; /*0x4a7ca3*/
   this->vtable3 = &DiskLaserClass::`vftable'; /*0x4a7caa*/
   this->vtable4 = &vt_DiskLaserClass; /*0x4a7cb1*/
-  v5 = this; /*0x4a7cbf*/
-  v3 = (*(int (__thiscall **)(int *, _DWORD **))(DataGlobal_8A0208 + 16))(&DataGlobal_8A0208, &v5); /*0x4a7cc3*/
+  DiskLaserClass *v5 = this; /*0x4a7cbf*/
+  int v3 = (*(int (__thiscall **)(int *, _DWORD **))(DataGlobal_8A0208 + 16))(&DataGlobal_8A0208, &v5); /*0x4a7cc3*/
   if ( v3 != -1 && v3 < DataGlobal_8A0218 && v3 < --DataGlobal_8A0218 ) /*0x4a7cde*/
   {
     do /*0x4a7cf6*/

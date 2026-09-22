@@ -6,7 +6,7 @@
 int LinkClass::Destroy()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall LinkClass_Destroy(_DWORD *this)
+void LinkClass_Destroy(_DWORD *this)
 {
   (*(void (__thiscall **)(_DWORD *))(*this + 84))(this); /*0x4e1485*/
   return LinkedList::RemoveNode(this); /*0x4e148f*/
@@ -17,22 +17,20 @@ int __thiscall LinkClass_Destroy(_DWORD *this)
 int LinkClass::Destruct()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall LinkClass_Destructor(_DWORD *this)
+void LinkClass_Destructor(_DWORD *this)
 {
   _DWORD *Prev; // edi
   int result; // eax
-  int v4; // edx
-  int v5; // edx
 
   *this = &vt_LinkClass; /*0x5565a5*/
   Prev = LinkedList::FindPrev(this); /*0x5565b1*/
   result = (*(int (__thiscall **)(_DWORD *))(*this + 28))(this); /*0x5565b7*/
-  v4 = this->m_Prev; /*0x5565ba*/
+  LinkClass *v4 = this->m_Prev; /*0x5565ba*/
   if ( v4 ) /*0x5565c1*/
-    *(_DWORD *)(v4 + 4) = this->m_Next; /*0x5565c6*/
-  v5 = this->m_Next; /*0x5565c9*/
+    v4->m_Next = this->m_Next; /*0x5565c6*/
+  LinkClass *v5 = this->m_Next; /*0x5565c9*/
   if ( v5 ) /*0x5565ce*/
-    *(_DWORD *)(v5 + 8) = this->m_Prev; /*0x5565d3*/
+    v5->m_Prev = this->m_Prev; /*0x5565d3*/
   this->m_Prev = 0; /*0x5565d8*/
   this->m_Next = 0; /*0x5565db*/
   if ( Prev == this && (_DWORD *)result != this ) /*0x5565e2*/

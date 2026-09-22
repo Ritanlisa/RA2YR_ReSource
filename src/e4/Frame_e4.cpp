@@ -7,41 +7,17 @@
 int Frame::Present(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Frame::Present(Frame *this, IUnknown *aP1)
+void Frame::Present(IUnknown *aP1)
 {
-  int v2; // edx
-  int v3; // esi
-  int *v4; // eax
   int result; // eax
-  int v6; // edi
   LONG v7; // eax
   TechnoTypeClass *v8; // edx
-  char *v9; // edi
-  int v10; // edi
-  int v11; // eax
-  int v12; // edi
-  int v13; // eax
-  char *v14; // ecx
-  int v15; // ebp
   LONG v16; // edi
   LONG v17; // ebx
-  int v18; // eax
-  double v19; // st7
   AbstractClass *v25; // edi
-  int v21; // eax
-  double v22; // st7
   LONG v23; // ebx
   LONG v24; // eax
   char al44; // al
-  int v26; // ecx
-  int v27; // edi
-  int v28; // eax
-  unsigned int v29; // edi
-  int v30; // edi
-  int v31; // eax
-  char v32; // [esp+31h] [ebp-4Dh]
-  _BYTE v33[12]; // [esp+32h] [ebp-4Ch] BYREF
-  int v34; // [esp+3Eh] [ebp-40h]
   char *v35; // [esp+42h] [ebp-3Ch]
   char *v36; // [esp+46h] [ebp-38h]
   double v37; // [esp+4Ah] [ebp-34h] BYREF
@@ -55,12 +31,11 @@ int __thiscall Frame::Present(Frame *this, IUnknown *aP1)
   struct tagRECT Rect; // [esp+6Eh] [ebp-10h] BYREF
   int *v46; // [esp+8Eh] [ebp+10h]
   int v47; // [esp+8Eh] [ebp+10h]
-
-  v3 = v2; /*0x4f478a*/
+  int v2 = v2; /*0x4f478a*/
   if ( !aP1 ) /*0x4f4790*/
   {
-    v4 = (int *)(*(int (__thiscall **)(int, char **))(*(_DWORD *)v2 + 120))(v2, &v41); /*0x4f479b*/
-    v34 = *v4; /*0x4f47a0*/
+    int * v4 = (int *)(*(int (__thiscall **)(int, char **))(*(_DWORD *)v2 + 120))(v2, &v41); /*0x4f479b*/
+    int v34 = *v4; /*0x4f47a0*/
     v35 = (char *)v4[1]; /*0x4f47a7*/
     v36 = (char *)v4[2]; /*0x4f47b6*/
     LODWORD(v37) = v4[3]; /*0x4f47bd*/
@@ -68,17 +43,18 @@ int __thiscall Frame::Present(Frame *this, IUnknown *aP1)
   result = GetClientRect((HWND)g_hWnd, &Rect); /*0x4f47cc*/
   if ( result ) /*0x4f47d4*/
   {
+  _BYTE v33[12]; // [esp+32h] [ebp-4Ch] BYREF
     *(double *)&v33[4] = *(double *)&Rect.left; /*0x4f47e2*/
     result = ClientToScreen((HWND)g_hWnd, (LPPOINT)&v33[4]); /*0x4f47f6*/
     if ( result ) /*0x4f47fe*/
     {
-      v6 = (*(int (__thiscall **)(int))(*(_DWORD *)v3 + 128))(v3); /*0x4f4811*/
+      int v3 = (*(int (__thiscall **)(int))(*(_DWORD *)v3 + 128))(v3); /*0x4f4811*/
       v7 = (*(int (__thiscall **)(int))(*(_DWORD *)v3 + 124))(v3); /*0x4f4817*/
       v8 = DataGlobal_87F7F0; /*0x4f4828*/
       v40 = v35; /*0x4f4830*/
       v41 = v36; /*0x4f4834*/
       v42 = v7; /*0x4f4838*/
-      v43 = v6; /*0x4f483c*/
+      int v6 = v6; /*0x4f483c*/
       if ( !DataGlobal_87F7EC ) /*0x4f4840*/
       {
         if ( !DataGlobal_87F7F0 ) /*0x4f4844*/
@@ -89,6 +65,7 @@ int __thiscall Frame::Present(Frame *this, IUnknown *aP1)
       {
         if ( (int)DataGlobal_87F7EC >= 0 ) /*0x4f4856*/
         {
+  char *v9; // edi
 LABEL_13:
           if ( (int)DataGlobal_87F7F0 > 0 ) /*0x4f4860*/
           {
@@ -106,9 +83,10 @@ LABEL_17:
 LABEL_18:
           if ( !g_NetworkPlayerBuffer[5440] && !g_NetworkPlayerBuffer[5935] ) /*0x4f4887*/
           {
-            v10 = *(_DWORD *)&DataGlobal_87F8E4[30420] - v7; /*0x4f4895*/
+  int v13; // eax
+            int v10 = *(_DWORD *)&DataGlobal_87F8E4[30420] - v7; /*0x4f4895*/
             if ( (*(int (__thiscall **)(_DWORD))(**(_DWORD **)&DataGlobal_87F8E4[31260] + 124))(*(_DWORD *)&DataGlobal_87F8E4[31260]) >= v10 ) /*0x4f489e*/
-              v11 = v10; /*0x4f48ad*/
+              int v11 = v10; /*0x4f48ad*/
             else
               v11 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)&DataGlobal_87F8E4[31260] + 124))(*(_DWORD *)&DataGlobal_87F8E4[31260]); /*0x4f48a8*/
             if ( v11 <= 0 ) /*0x4f48b1*/
@@ -117,18 +95,18 @@ LABEL_18:
             }
             else
             {
-              v12 = *(_DWORD *)&DataGlobal_87F8E4[30420] - v42; /*0x4f48c3*/
+              int v12 = *(_DWORD *)&DataGlobal_87F8E4[30420] - v42; /*0x4f48c3*/
               if ( (*(int (__thiscall **)(_DWORD))(**(_DWORD **)&DataGlobal_87F8E4[31260] + 124))(*(_DWORD *)&DataGlobal_87F8E4[31260]) >= v12 ) /*0x4f48cc*/
                 v13 = v12; /*0x4f48db*/
               else
                 v13 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)&DataGlobal_87F8E4[31260] + 124))(*(_DWORD *)&DataGlobal_87F8E4[31260]); /*0x4f48d6*/
             }
             v8 = DataGlobal_87F7F0; /*0x4f48e5*/
-            v14 = &v40[v13]; /*0x4f48eb*/
+            char * v14 = &v40[v13]; /*0x4f48eb*/
             v7 = v42; /*0x4f48ed*/
             v40 = v14; /*0x4f48f1*/
           }
-          v15 = *v46; /*0x4f48f9*/
+          int v15 = *v46; /*0x4f48f9*/
           v16 = v46[1]; /*0x4f48fb*/
           v17 = v46[2]; /*0x4f48fe*/
           Rect.right = v46[3]; /*0x4f4904*/
@@ -140,13 +118,13 @@ LABEL_18:
              || *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[31296] + 196) != 1072693248) )
           {
             v47 = (*(int (__thiscall **)(int))(*(_DWORD *)v3 + 124))(v3); /*0x4f4941*/
-            v18 = (*(int (__thiscall **)(int))(*(_DWORD *)v3 + 128))(v3); /*0x4f4949*/
-            v19 = (double)v47; /*0x4f494f*/
+            int v18 = (*(int (__thiscall **)(int))(*(_DWORD *)v3 + 128))(v3); /*0x4f4949*/
+            double v19 = (double)v47; /*0x4f494f*/
             v25 = *(AbstractClass **)&DataGlobal_87F8E4[31296]; /*0x4f4953*/
             *(_DWORD *)v33 = v18; /*0x4f4959*/
             v37 = v19 / *(double *)(*(_DWORD *)&DataGlobal_87F8E4[31296] + 192); /*0x4f4965*/
-            v21 = Math::RoundToInt((v19 - v37) * 0.5); /*0x4f4973*/
-            v22 = (double)*(int *)v33; /*0x4f4978*/
+            int v21 = Math::RoundToInt((v19 - v37) * 0.5); /*0x4f4973*/
+            double v22 = (double)*(int *)v33; /*0x4f4978*/
             v15 = v21; /*0x4f497c*/
             *(double *)v33 = v22 / *(double *)&v25[5].__pad_0[12]; /*0x4f4986*/
             v16 = Math::RoundToInt((v22 - *(double *)v33) * 0.5); /*0x4f499d*/
@@ -186,6 +164,7 @@ LABEL_47:
 LABEL_51:
               if ( DataGlobal_87F7EC ) /*0x4f4a5e*/
               {
+  int v26; // ecx
                 v26 = (*(int (__thiscall **)(int))(*(_DWORD *)v3 + 128))(v3) /*0x4f4a7c*/
                     - *(_DWORD *)(*(_DWORD *)&g_OverlayTypeConfig[33888] + 12);
                 HIDWORD(v37) = v36; /*0x4f4a82*/
@@ -195,7 +174,8 @@ LABEL_51:
                   LODWORD(v37) = v40 - (char *)DataGlobal_87F7EC; /*0x4f4aad*/
                 else
                   LODWORD(v37) = &v40[v42]; /*0x4f4aa1*/
-                v27 = **(_DWORD **)&DataGlobal_87F8E4[31268]; /*0x4f4ac1*/
+                int v27 = **(_DWORD **)&DataGlobal_87F8E4[31268]; /*0x4f4ac1*/
+  int v28; // eax
                 v28 = (*(int (__thiscall **)(_DWORD, _BYTE *, double *, _DWORD))(**(_DWORD **)&DataGlobal_87F8E4[31268] /*0x4f4ac5*/
                                                                                + 120))(
                         *(_DWORD *)&DataGlobal_87F8E4[31268],
@@ -207,7 +187,7 @@ LABEL_51:
               }
               if ( v8 ) /*0x4f4ada*/
               {
-                v29 = abs32((int)v8); /*0x4f4ae7*/
+                unsigned int v29 = abs32((int)v8); /*0x4f4ae7*/
                 v38 = (*(int (__thiscall **)(int))(*(_DWORD *)v3 + 124))(v3); /*0x4f4af0*/
                 LODWORD(v37) = v35; /*0x4f4af9*/
                 v39 = v29; /*0x4f4aff*/
@@ -215,7 +195,8 @@ LABEL_51:
                   HIDWORD(v37) = v41 - (char *)DataGlobal_87F7F0; /*0x4f4b1b*/
                 else
                   HIDWORD(v37) = &v41[v43]; /*0x4f4b0f*/
-                v30 = **(_DWORD **)&DataGlobal_87F8E4[31268]; /*0x4f4b2f*/
+                int v30 = **(_DWORD **)&DataGlobal_87F8E4[31268]; /*0x4f4b2f*/
+  int v31; // eax
                 v31 = (*(int (__thiscall **)(_DWORD, _BYTE *, double *, _DWORD))(**(_DWORD **)&DataGlobal_87F8E4[31268] /*0x4f4b33*/
                                                                                + 120))(
                         *(_DWORD *)&DataGlobal_87F8E4[31268],
@@ -224,6 +205,7 @@ LABEL_51:
                         0);
                 (*(void (__thiscall **)(_DWORD, int))(v30 + 16))(*(_DWORD *)&DataGlobal_87F8E4[31268], v31); /*0x4f4b3d*/
               }
+  char v32; // [esp+31h] [ebp-4Dh]
               if ( v32 && *(_DWORD *)&DataGlobal_87F8E4[32092] ) /*0x4f4b50*/
                 (*(void (__thiscall **)(_DWORD, int, _DWORD))(**(_DWORD **)&DataGlobal_87F8E4[32092] + 60))( /*0x4f4b57*/
                   *(_DWORD *)&DataGlobal_87F8E4[32092],
@@ -272,7 +254,7 @@ LABEL_51:
 BOOL Frame::Init()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-BOOL __thiscall sub_724C00(_DWORD *this)
+void sub_724C00(_DWORD *this)
 {
   return this->q004 != 0; /*0x724c0a*/
 }

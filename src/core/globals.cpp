@@ -148,20 +148,13 @@ void FindGameDirectoryCD(const char* path) {
 // 0x47ab10
 BOOL __thiscall Game::FindGameDirectoryCD(char *Source)
 {
-  char v1; // bl
-  char *v3; // ebp
   char *i; // edx
-  char v5; // cl
-  _DWORD *v6; // esi
-  _DWORD *v7; // ecx
-  _DWORD *v8; // eax
-  _DWORD *v9; // eax
   char Str1[260]; // [esp+8h] [ebp-104h] BYREF
 
-  v1 = 0;
+  char v1 = 0;
   if ( !Source )
     return 0;
-  v3 = _strdup(Source);
+  char * v3 = _strdup(Source);
   if ( v3 != (char *)&DataGlobal_87F7E8[31501] )
   {
     strcat((char *)&DataGlobal_87F7E8[31501], asc_81C8FC);
@@ -171,8 +164,10 @@ BOOL __thiscall Game::FindGameDirectoryCD(char *Source)
   {
     if ( strlen(i) )
     {
+  _DWORD *v7; // ecx
+  _DWORD *v6; // esi
       strcpy(Str1, i);
-      v5 = Str1[strlen(Str1) - 1];
+      char v5 = Str1[strlen(Str1) - 1];
       if ( v5 != 58 && v5 != 92 )
         strcat(Str1, asc_815E74);
       if ( !strncmp(Str1, Str2, 2) )
@@ -189,7 +184,7 @@ BOOL __thiscall Game::FindGameDirectoryCD(char *Source)
         v7 = (_DWORD *)DataGlobal_87F7E8[31498];
         if ( DataGlobal_87F7E8[31498] )
         {
-          v8 = *(_DWORD **)DataGlobal_87F7E8[31498];
+          _DWORD * v8 = *(_DWORD **)DataGlobal_87F7E8[31498];
           if ( *(_DWORD *)DataGlobal_87F7E8[31498] )
           {
             do
@@ -216,7 +211,7 @@ LABEL_24:
         v7 = (_DWORD *)DataGlobal_87F7E8[31498];
         if ( DataGlobal_87F7E8[31498] )
         {
-          v9 = *(_DWORD **)DataGlobal_87F7E8[31498];
+          _DWORD * v9 = *(_DWORD **)DataGlobal_87F7E8[31498];
           if ( *(_DWORD *)DataGlobal_87F7E8[31498] )
           {
             do
@@ -481,10 +476,9 @@ void NetworkAssignAddress(void* addr, void* port, int arg) {
 _DWORD *__thiscall NetworkAddress_Assign(_DWORD *this, _DWORD *a2, int a3, __int16 a4)
 {
   _DWORD *result; // eax
-  char *v5; // ecx
 
   result = this;
-  v5 = (char *)(this + 1);
+  char * v5 = (char *)(this + 1);
   *(_DWORD *)v5 = *(_DWORD *)a3;
   *((_WORD *)v5 + 2) = *(_WORD *)(a3 + 4);
   if ( dword_828140 == 1 )
@@ -610,8 +604,8 @@ void InitSkirmishSettings() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int InitSkirmishSettings()
 {
-  int v1; // [esp+4h] [ebp-4h] BYREF
 
+  int v1; // [esp+4h] [ebp-4h] BYREF
   dword_A8ED54[127989] = Timer::GetTicks(&v1);
   dword_A8ED54[127990] = v1;
   LOBYTE(dword_A8ED54[128024]) = 1;
@@ -724,30 +718,27 @@ void CleanupCampaignResources() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char CleanupCampaignResources()
 {
-  int v0; // eax
-  int v1; // edi
-  int v2; // esi
-  _BYTE v4[108]; // [esp+8h] [ebp-70h] BYREF
   __int16 v5; // [esp+74h] [ebp-4h]
-  char v6; // [esp+76h] [ebp-2h]
 
+  int v0; // eax
   LOBYTE(v0) = DataGlobal_87F7E8[538500];
+  _BYTE v4[108]; // [esp+8h] [ebp-70h] BYREF
   v4[0] = 0;
   if ( (DataGlobal_87F7E8[538500] & 2) == 0 )
   {
     memset(v4, 0, sizeof(v4));
     v5 = 0;
-    v6 = 0;
+    char v6 = 0;
     v4[0] = 19;
     Stream::WriteBlock((int)&DataGlobal_87F7E8[539810], (int)v4, 111, 0);
     Stream::WriteBlock((int)&DataGlobal_87F7E8[539810], (int)v4, 111, 0);
-    v1 = DataGlobal_87F7E8[7894];
+    int v1 = DataGlobal_87F7E8[7894];
     if ( DataGlobal_87F7E8[7892] != -1 )
       v1 += Timer::GetTicks(&DataGlobal_87F7E8[7893]) - DataGlobal_87F7E8[7892];
     while ( 1 )
     {
       LOBYTE(v0) = DataGlobal_87F7E8[7892];
-      v2 = DataGlobal_87F7E8[7894];
+      int v2 = DataGlobal_87F7E8[7894];
       if ( DataGlobal_87F7E8[7892] != -1 )
       {
         v0 = Timer::GetTicks(&DataGlobal_87F7E8[7893]) - DataGlobal_87F7E8[7892];
@@ -971,42 +962,23 @@ int HashString(const char* str) {
 // 0x5f9e80
 int __thiscall Checksummer::HashString(char *Source)
 {
-  int v1; // ebp
-  unsigned int v3; // kr04_4
-  int v4; // ebx
-  int v5; // esi
-  int v6; // esi
-  int v7; // ecx
   int i; // edx
-  int v9; // ecx
   int j; // esi
   int k; // edi
-  char v12; // si
-  char v13; // dl
-  char v14; // cl
-  char v15; // cl
-  char v16; // si
-  char v17; // al
-  int v18; // [esp+4h] [ebp-9Ch]
-  char v19; // [esp+8h] [ebp-98h]
-  unsigned int v20; // [esp+Ch] [ebp-94h] BYREF
-  int v21; // [esp+10h] [ebp-90h]
-  int v22; // [esp+14h] [ebp-8Ch]
-  int v23; // [esp+18h] [ebp-88h]
-  int v24; // [esp+1Ch] [ebp-84h]
   char Destination[128]; // [esp+20h] [ebp-80h] BYREF
 
+  int v1; // ebp
   HIWORD(v1) = 0;
   if ( !Source )
     return 0;
   memset(Destination, 0xA5u, sizeof(Destination));
   strncpy(Destination, Source, 128);
   Destination[127] = 0;
-  v3 = strlen(Destination) + 1;
-  v4 = v3 - 1;
-  v23 = v3 - 1;
+  unsigned int v3 = strlen(Destination) + 1;
+  int v4 = v3 - 1;
+  int v23 = v3 - 1;
   _strupr(Destination);
-  v5 = 0;
+  int v5 = 0;
   if ( (int)(v3 - 1) > 0 )
   {
     do
@@ -1019,10 +991,10 @@ int __thiscall Checksummer::HashString(char *Source)
   }
   if ( v4 < 16 || (v4 & 3) != 0 )
   {
-    v6 = 16;
+    int v6 = 16;
     if ( (((_BYTE)v4 + 3) & 0xFCu) > 0x10 )
       v6 = ((_BYTE)v4 + 3) & 0xFC;
-    v7 = v3 - 1;
+    int v7 = v3 - 1;
     if ( v4 < v6 )
     {
       do
@@ -1036,16 +1008,17 @@ int __thiscall Checksummer::HashString(char *Source)
     Destination[v7] = 0;
     v23 = v7;
   }
-  v20 = 0;
-  v21 = 0;
-  v22 = 0;
+  unsigned int v20 = 0;
+  int v21 = 0;
+  int v22 = 0;
   Checksummer::Add_Buffer(&v20, (unsigned __int8 *)Destination, v4);
   _strrev(Destination);
   v20 = 0;
   v21 = 0;
   v22 = 0;
-  v18 = Checksummer::Add_Buffer(&v20, (unsigned __int8 *)Destination, v4);
+  int v18 = Checksummer::Add_Buffer(&v20, (unsigned __int8 *)Destination, v4);
   _strrev(Destination);
+  int v9; // ecx
   for ( i = 0; i < v4; v18 = (v9 >> 8) | ((unsigned __int8)v9 << 24) )
   {
     v9 = (unsigned __int8)Destination[i] ^ v18;
@@ -1053,14 +1026,17 @@ int __thiscall Checksummer::HashString(char *Source)
   }
   for ( j = 0; j < v4; ++j )
     Destination[j] = ~byte_832C0C[j & 7] & (Destination[j] | byte_832C14[j & 7]);
+  char v15; // cl
+  char v16; // si
+  char v17; // al
   for ( k = 0; k < v4; Destination[k - 1] = (v17 + v16) ^ v15 )
   {
-    v12 = Destination[k];
+    char v12 = Destination[k];
     LOWORD(v1) = Destination[k + 2];
-    v13 = v12 * v12;
-    v14 = Destination[k + 3];
-    v19 = 2 * Destination[k + 1];
-    v24 = 2 * v1;
+    char v13 = v12 * v12;
+    char v14 = Destination[k + 3];
+    char v19 = 2 * Destination[k + 1];
+    int v24 = 2 * v1;
     v15 = v14 * v14;
     v16 = v12 * ((v12 * v12) ^ (2 * v1));
     k += 4;
@@ -1319,14 +1295,12 @@ const wchar_t* GetCSFString(const wchar_t* key, const char* file, int line) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 #72 *__fastcall GetStringCSF(#72 *Format, _DWORD *a2, const char *a3, int a4)
 {
-  int v6; // eax
-  int v7; // esi
 
   if ( a2 )
     *a2 = 0;
   if ( !dword_A8ED54[145544] )
     return (#72 *)aFatalStringMan;
-  v6 = bsearch(Format, (const void *)dword_A8ED54[145544], dword_A8ED54[145542], 40, _strcmpi);
+  int v6 = bsearch(Format, (const void *)dword_A8ED54[145544], dword_A8ED54[145542], 40, _strcmpi);
   if ( v6 )
   {
     if ( a2 )
@@ -1335,7 +1309,7 @@ const wchar_t* GetCSFString(const wchar_t* key, const char* file, int line) {
   }
   else
   {
-    v7 = __2_YAPAXI_Z(520);
+    int v7 = __2_YAPAXI_Z(520);
     swprintf((#72 *const)(v7 + 4), aMissingHs);
     Debug::Log();
     *(_DWORD *)v7 = dword_A8ED54[145549];

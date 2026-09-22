@@ -524,31 +524,16 @@ namespace gamemd { int COMObject::ValidatePtr() {
 // 0x69B8C0
 namespace gamemd { void Player::RandomAssign() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall Player_RandomAssign(_DWORD *this)
+void Player_RandomAssign(_DWORD *this)
 {
-  int v1; // ebp
   int i; // ebx
-  int v3; // esi
-  int v4; // eax
-  int v5; // ecx
-  int v6; // edi
-  int *v7; // ebx
-  int v8; // ecx
-  int v9; // eax
-  int v10; // eax
-  int v11; // edx
-  int v12; // esi
-  int v13; // ecx
-  int v14; // ecx
-  int v15; // ecx
-  int v17; // [esp+14h] [ebp-4h]
 
   Debug::Log(); /*0x69b8d0*/
-  v1 = Game_PlayerCount; /*0x69b8d5*/
+  int v1 = Game_PlayerCount; /*0x69b8d5*/
   for ( i = 0; i < v1; ++i ) /*0x69b8e2*/
   {
-    v3 = *(_DWORD *)(Game_PlayerInfoArray + 4 * i); /*0x69b8f2*/
-    v4 = *(_DWORD *)(v3 + 79); /*0x69b8f5*/
+    int v3 = *(_DWORD *)(Game_PlayerInfoArray + 4 * i); /*0x69b8f2*/
+    int v4 = *(_DWORD *)(v3 + 79); /*0x69b8f5*/
     if ( v4 == -3 || *(_DWORD *)(v3 + 75) == -3 ) /*0x69b8ff*/
     {
       *(_DWORD *)(v3 + 75) = -3; /*0x69b977*/
@@ -561,7 +546,7 @@ void __thiscall Player_RandomAssign(_DWORD *this)
       if ( v4 == -2 ) /*0x69b904*/
       {
         *(_DWORD *)(v3 + 79) = -1; /*0x69b90d*/
-        v5 = this->q004; /*0x69b910*/
+        int v5 = this->q004; /*0x69b910*/
         if ( v5 ) /*0x69b915*/
           *(_DWORD *)(v3 + 75) = (*(int (__thiscall **)(int))(*(_DWORD *)v5 + 108))(v5); /*0x69b91c*/
         else
@@ -572,7 +557,7 @@ void __thiscall Player_RandomAssign(_DWORD *this)
         *(_DWORD *)(v3 + 87) = -1; /*0x69b943*/
         *(_DWORD *)(v3 + 83) = -1; /*0x69b946*/
         do /*0x69b966*/
-          v6 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 7); /*0x69b95e*/
+          int v6 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 7); /*0x69b95e*/
         while ( (unsigned __int8)NetworkSession::IsPlayerInGame(v6) ); /*0x69b966*/
         *(_DWORD *)(v3 + 83) = v6; /*0x69b96f*/
       }
@@ -582,31 +567,32 @@ void __thiscall Player_RandomAssign(_DWORD *this)
     ToWideStringChar((char *)v3); /*0x69b9b1*/
     Debug::Log(); /*0x69b9bd*/
   }
-  v17 = 0; /*0x69b9ce*/
-  v7 = g_CampaignPlayerArray; /*0x69b9d6*/
+  int v17 = 0; /*0x69b9ce*/
+  int * v7 = g_CampaignPlayerArray; /*0x69b9d6*/
   do /*0x69baa0*/
   {
     if ( *v7 == -2 ) /*0x69b9e4*/
     {
-      v8 = this->q004; /*0x69b9ea*/
+      int v8 = this->q004; /*0x69b9ea*/
       if ( v8 ) /*0x69b9ef*/
-        v9 = (*(int (__thiscall **)(int))(*(_DWORD *)v8 + 112))(v8); /*0x69b9f3*/
+        int v9 = (*(int (__thiscall **)(int))(*(_DWORD *)v8 + 112))(v8); /*0x69b9f3*/
       else
         v9 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 9); /*0x69ba07*/
       *v7 = v9; /*0x69ba0c*/
     }
     if ( v7[8] == -2 ) /*0x69ba11*/
     {
+  int v10; // eax
       while ( 1 ) /*0x69ba23*/
       {
         v10 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 7); /*0x69ba23*/
         if ( v10 == -2 ) /*0x69ba2a*/
           break; /*0x69ba2a*/
-        v11 = 0; /*0x69ba32*/
+        int v11 = 0; /*0x69ba32*/
         if ( Game_PlayerCount <= 0 ) /*0x69ba36*/
         {
 LABEL_32:
-          v15 = 33; /*0x69ba5e*/
+          int v15 = 33; /*0x69ba5e*/
           while ( g_GameMode_Current[v15] != v10 ) /*0x69ba69*/
           {
             if ( ++v15 >= 41 ) /*0x69ba74*/
@@ -615,12 +601,12 @@ LABEL_32:
         }
         else
         {
-          v12 = Game_PlayerInfoArray; /*0x69ba38*/
+          int v12 = Game_PlayerInfoArray; /*0x69ba38*/
           while ( 1 ) /*0x69ba3e*/
           {
-            v13 = *(_DWORD *)v12; /*0x69ba3e*/
+            int v13 = *(_DWORD *)v12; /*0x69ba3e*/
             if ( *(_DWORD *)(*(_DWORD *)v12 + 87) == -2 && *(_DWORD *)(v13 + 83) == -1 ) /*0x69ba49*/
-              v14 = -2; /*0x69ba4b*/
+              int v14 = -2; /*0x69ba4b*/
             else
               v14 = *(_DWORD *)(v13 + 83); /*0x69ba4f*/
             if ( v14 == v10 ) /*0x69ba54*/

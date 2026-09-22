@@ -6,16 +6,13 @@
 int GameSetup::LookupDialogHash()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_60D320(void *this)
+void sub_60D320(void *this)
 {
-  _DWORD *v1; // eax
-  _DWORD *v3; // eax
-  void *v4; // [esp+0h] [ebp-4h] BYREF
 
-  v4 = this; /*0x60d326*/
+  GameSetup *v4 = this; /*0x60d326*/
   if ( !g_DialogHashMap_Count ) /*0x60d32c*/
     return 0; /*0x60d32c*/
-  v1 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Buckets(&v4) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x60d34d*/
+  _DWORD * v1 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Buckets(&v4) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x60d34d*/
   if ( !v1 ) /*0x60d352*/
     return 0; /*0x60d352*/
   while ( (void *)*v1 != v4 ) /*0x60d35a*/
@@ -24,7 +21,7 @@ int __thiscall sub_60D320(void *this)
     if ( !v1 ) /*0x60d364*/
       return 0; /*0x60d364*/
   }
-  v3 = v1 + 1; /*0x60d36e*/
+  _DWORD * v3 = v1 + 1; /*0x60d36e*/
   if ( v3 ) /*0x60d373*/
     return v3[27]; /*0x60d375*/
   else
@@ -36,15 +33,13 @@ int __thiscall sub_60D320(void *this)
 int GameSetup::WriteINI(CCINIClass * aP1, unsigned char * Block)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall GameSetup::WriteINI(int this, CCINIClass *aP1, unsigned __int8 *Block)
+void GameSetup::WriteINI(int this, CCINIClass *aP1, unsigned __int8 *Block)
 {
   INIClass *v4; // edx
   INIClass *v5; // eax
   INIClass *v6; // ecx
   INIClass *v7; // edx
   INIClass *v8; // eax
-  int v9; // ebp
-  int v10; // ebx
   int result; // eax
   char Buffer[16]; // [esp+10h] [ebp-10h] BYREF
 
@@ -73,8 +68,8 @@ int __thiscall GameSetup::WriteINI(int this, CCINIClass *aP1, unsigned __int8 *B
   INIClass::SetBool(aP1->__pad_0, (INIClass *)Block, &stru_830620[59800], v7); /*0x69903e*/
   LOBYTE(v8) = (unsigned char)this->GameSetup_field_0x18; /*0x699043*/
   INIClass::SetBool(aP1->__pad_0, (INIClass *)Block, &stru_830620[59784], v8); /*0x69904f*/
-  v9 = 1; /*0x699054*/
-  v10 = this + 44; /*0x699059*/
+  int v9 = 1; /*0x699054*/
+  int v10 = this + 44; /*0x699059*/
   do /*0x69908e*/
   {
     sprintf(Buffer, &stru_830620[59772], v9); /*0x699067*/

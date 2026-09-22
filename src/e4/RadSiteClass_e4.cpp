@@ -11,7 +11,6 @@ unsigned int * RadSiteClass::RadSiteClass()
 _DWORD *__thiscall sub_65B1E0(_DWORD *this)
 {
   wchar_t *v2; // edx
-  int v3; // eax
 
   AbstractClass::Constructor((int)this); /*0x65b1e3*/
   this->LightSource = 0; /*0x65b1ea*/
@@ -43,7 +42,7 @@ _DWORD *__thiscall sub_65B1E0(_DWORD *this)
          dword_B04BD8 + dword_B04BE4,
          0) )
   {
-    v3 = dword_B04BE0++; /*0x65b284*/
+    int v3 = dword_B04BE0++; /*0x65b284*/
     *((_DWORD *)dword_B04BD4 + v3) = this; /*0x65b293*/
   }
   return this; /*0x65b298*/

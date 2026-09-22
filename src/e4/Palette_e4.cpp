@@ -25,51 +25,21 @@ int Palette_Preview_Generate()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int *__userpurge Palette::Preview_Generate@<eax>(int *a1@<ecx>, char a2@<sil>, int a3, AbstractClass **a4)
 {
-  int v6; // esi
-  int v7; // eax
-  int v8; // eax
-  int v9; // ecx
-  int v10; // eax
   CCINIClass *v11; // ebx
-  int v12; // eax
-  int v13; // ebp
   unsigned __int16 Pixel; // ax
-  int v15; // edi
-  int v16; // ebx
-  int v17; // esi
-  int v18; // esi
-  int v19; // eax
-  int v20; // edi
   AbstractClass *v21; // eax
-  int v22; // ecx
-  int v23; // ebp
-  int v24; // eax
   CCINIClass *v25; // esi
-  int v26; // eax
-  int v27; // ecx
   unsigned __int16 v28; // ax
-  int v29; // ebp
   AbstractClass *v30; // edi
-  int v31; // ecx
-  __int64 v32; // rax
-  int v33; // ecx
-  __int64 v34; // rax
   XSurface *v35; // ecx
-  int v36; // eax
   AbstractClass *v37; // ebx
-  int v38; // ebp
   XSurface *v39; // eax
-  int v41; // [esp+8h] [ebp-70h]
   AbstractClass *v42; // [esp+8h] [ebp-70h]
-  int v43; // [esp+8h] [ebp-70h]
-  int v44; // [esp+Ch] [ebp-6Ch]
-  int v45; // [esp+Ch] [ebp-6Ch]
   AbstractClass *Block; // [esp+10h] [ebp-68h]
   AbstractClass *Blocka; // [esp+10h] [ebp-68h]
   CCINIClass *v48; // [esp+14h] [ebp-64h]
   XSurface *v49; // [esp+18h] [ebp-60h]
   XSurface *v50; // [esp+1Ch] [ebp-5Ch]
-  int v51; // [esp+20h] [ebp-58h]
   XSurface *v52; // [esp+24h] [ebp-54h]
   _DWORD v53[2]; // [esp+2Ch] [ebp-4Ch] BYREF
   int v54; // [esp+34h] [ebp-44h] BYREF
@@ -82,32 +52,31 @@ int *__userpurge Palette::Preview_Generate@<eax>(int *a1@<ecx>, char a2@<sil>, i
   char v61[4]; // [esp+58h] [ebp-20h] BYREF
   int v62; // [esp+5Ch] [ebp-1Ch]
   int v63; // [esp+60h] [ebp-18h]
-
   if ( !*a1 ) /*0x642139*/
     return 0; /*0x642146*/
-  v6 = *a1; /*0x64214b*/
-  v7 = (*(int (__thiscall **)(int))(*(_DWORD *)v6 + 128))(v6); /*0x642153*/
-  v8 = (*(int (__thiscall **)(int, int))(*(_DWORD *)v6 + 124))(v6, v7 / 2); /*0x642163*/
+  int v6 = *a1; /*0x64214b*/
+  int v7 = (*(int (__thiscall **)(int))(*(_DWORD *)v6 + 128))(v6); /*0x642153*/
+  int v8 = (*(int (__thiscall **)(int, int))(*(_DWORD *)v6 + 124))(v6, v7 / 2); /*0x642163*/
   DSurface::Construct(v61, (IUnknown *)(v8 / 2), 0, 0, a2); /*0x642170*/
   v58 = 0; /*0x642181*/
-  v9 = *a1; /*0x642185*/
+  int v9 = *a1; /*0x642185*/
   v59 = v62; /*0x642187*/
   v57 = 0; /*0x64218b*/
   v60 = v63; /*0x64218f*/
-  v10 = (*(int (__thiscall **)(int))(*(_DWORD *)v9 + 120))(v9); /*0x64219c*/
+  int v10 = (*(int (__thiscall **)(int))(*(_DWORD *)v9 + 120))(v9); /*0x64219c*/
   DSurface::BlitPart(&v60, (int)&v56, *a1, v10, (int)v55, 0); /*0x6421ac*/
   v11 = (CCINIClass *)__2_YAPAXI_Z(0x4000u); /*0x6421bb*/
   memset(v11, 0, 0x4000u); /*0x6421c6*/
   v48 = v11; /*0x6421cd*/
   Block = 0; /*0x6421d1*/
   DSurface::Lock(&v60, 0, 0); /*0x6421db*/
-  v41 = 0; /*0x6421e4*/
+  int v41 = 0; /*0x6421e4*/
   if ( v62 > 0 ) /*0x6421ea*/
   {
-    v12 = *(_DWORD *)v61; /*0x6421f0*/
+    int v12 = *(_DWORD *)v61; /*0x6421f0*/
     do /*0x6422f7*/
     {
-      v13 = 0; /*0x6421f4*/
+      int v13 = 0; /*0x6421f4*/
       if ( v12 > 0 ) /*0x6421f8*/
       {
         do /*0x6422de*/
@@ -116,11 +85,14 @@ int *__userpurge Palette::Preview_Generate@<eax>(int *a1@<ecx>, char a2@<sil>, i
           v55[0] = v41; /*0x64220f*/
           Pixel = XSurface::GetPixel(&v60, &v54); /*0x642213*/
           v53[0] = v13; /*0x64222c*/
+  int v15; // edi
           v15 = ((unsigned __int8)(Pixel >> g_CellDirectionOffsets[5952]) << g_CellDirectionOffsets[5956]) /*0x642248*/
               & 0xF0;
+  int v16; // ebx
           v16 = ((unsigned __int8)(Pixel >> g_CellDirectionOffsets[5968]) << g_CellDirectionOffsets[5972]) /*0x64225c*/
               & 0xF0;
           v53[1] = v41; /*0x642268*/
+  int v17; // esi
           v17 = ((unsigned __int8)(Pixel >> g_CellDirectionOffsets[5960]) << g_CellDirectionOffsets[5964]) /*0x64227f*/
               & 0xF0;
           XSurface::SetPixel( /*0x6422b5*/
@@ -129,8 +101,8 @@ int *__userpurge Palette::Preview_Generate@<eax>(int *a1@<ecx>, char a2@<sil>, i
             (v17 >> g_CellDirectionOffsets[5964] << g_CellDirectionOffsets[5960])
           | (v16 >> g_CellDirectionOffsets[5972] << g_CellDirectionOffsets[5968])
           | (v15 >> g_CellDirectionOffsets[5956] << g_CellDirectionOffsets[5952]));
-          v18 = v16 | (16 * v15) | (v17 >> 4); /*0x6422c6*/
-          v19 = *(_DWORD *)&v48->__pad_0[4 * v18]; /*0x6422c8*/
+          int v18 = v16 | (16 * v15) | (v17 >> 4); /*0x6422c6*/
+          int v19 = *(_DWORD *)&v48->__pad_0[4 * v18]; /*0x6422c8*/
           if ( !v19 ) /*0x6422cd*/
             Block = (AbstractClass *)((char *)Block + 1); /*0x6422cf*/
           ++v13; /*0x6422d4*/
@@ -145,18 +117,18 @@ int *__userpurge Palette::Preview_Generate@<eax>(int *a1@<ecx>, char a2@<sil>, i
     while ( v41 < v62 ); /*0x6422f7*/
   }
   DSurface::Unlock(&v60); /*0x642301*/
-  v20 = a3; /*0x642306*/
+  int v20 = a3; /*0x642306*/
   v21 = (AbstractClass *)__2_YAPAXI_Z(2 * a3); /*0x642311*/
   Blocka = v21; /*0x642319*/
-  v44 = 0; /*0x64231f*/
+  int v44 = 0; /*0x64231f*/
   if ( a3 > 0 ) /*0x642327*/
   {
     v42 = v21; /*0x642329*/
     do /*0x642370*/
     {
-      v22 = -1; /*0x64232d*/
-      v23 = 0; /*0x642330*/
-      v24 = 0; /*0x642332*/
+      int v22 = -1; /*0x64232d*/
+      int v23 = 0; /*0x642330*/
+      int v24 = 0; /*0x642332*/
       v25 = v11; /*0x642334*/
       do /*0x642349*/
       {
@@ -181,10 +153,12 @@ int *__userpurge Palette::Preview_Generate@<eax>(int *a1@<ecx>, char a2@<sil>, i
   v52 = (XSurface *)__2_YAPAXI_Z(v62 * *(_DWORD *)v61); /*0x642384*/
   v50 = v52; /*0x642388*/
   DSurface::Lock(&v60, 0, 0); /*0x642396*/
-  v43 = 0; /*0x64239f*/
+  int v43 = 0; /*0x64239f*/
   if ( v62 > 0 ) /*0x6423a9*/
   {
-    v26 = *(_DWORD *)v61; /*0x6423af*/
+  int v51; // [esp+20h] [ebp-58h]
+  int v27; // ecx
+    int v26 = *(_DWORD *)v61; /*0x6423af*/
     while ( 1 ) /*0x6423b3*/
     {
       v27 = 0; /*0x6423b3*/
@@ -197,11 +171,12 @@ LABEL_37:
     }
     while ( 1 ) /*0x6423c1*/
     {
+  int v36; // eax
       v56 = v27; /*0x6423c1*/
       v57 = v43; /*0x6423cd*/
       v28 = XSurface::GetPixel(&v60, &v56); /*0x6423d6*/
-      v29 = 0; /*0x6423ed*/
-      v45 = -1; /*0x6423ef*/
+      int v29 = 0; /*0x6423ed*/
+      int v45 = -1; /*0x6423ef*/
       v49 = (XSurface *)0xFFFF; /*0x6423f7*/
       LOBYTE(v54) = (unsigned __int8)(v28 >> g_CellDirectionOffsets[5952]) << g_CellDirectionOffsets[5956]; /*0x642408*/
       BYTE1(v54) = (unsigned __int8)(v28 >> g_CellDirectionOffsets[5968]) << g_CellDirectionOffsets[5972]; /*0x642429*/
@@ -209,13 +184,13 @@ LABEL_37:
       if ( v20 > 0 ) /*0x642435*/
       {
         v30 = Blocka; /*0x642447*/
-        v31 = (unsigned __int8)v54; /*0x642451*/
+        int v31 = (unsigned __int8)v54; /*0x642451*/
         v53[0] = BYTE1(v54); /*0x642460*/
         while ( 1 ) /*0x642490*/
         {
-          v32 = 16 * (*(_WORD *)v30->__pad_0 & 0xF) - BYTE2(v54); /*0x642490*/
-          v33 = (HIDWORD(v32) ^ v32) - HIDWORD(v32) + abs32(((*(unsigned __int16 *)v30->__pad_0 >> 4) & 0xF0) - v31); /*0x642499*/
-          v34 = (*(_WORD *)v30->__pad_0 & 0xF0) - v53[0]; /*0x6424a4*/
+          __int64 v32 = 16 * (*(_WORD *)v30->__pad_0 & 0xF) - BYTE2(v54); /*0x642490*/
+          int v33 = (HIDWORD(v32) ^ v32) - HIDWORD(v32) + abs32(((*(unsigned __int16 *)v30->__pad_0 >> 4) & 0xF0) - v31); /*0x642499*/
+          __int64 v34 = (*(_WORD *)v30->__pad_0 & 0xF0) - v53[0]; /*0x6424a4*/
           v35 = (XSurface *)((HIDWORD(v34) ^ v34) - HIDWORD(v34) + v33); /*0x6424a9*/
           if ( !v35 ) /*0x6424ab*/
             break; /*0x6424ab*/
@@ -256,7 +231,7 @@ LABEL_38:
   DSurface::Unlock(&v60); /*0x64252f*/
   v37 = (AbstractClass *)(2 * v20 + 12 + v62 * *(_DWORD *)v61); /*0x642545*/
   v53[0] = 2 * v20 + 12; /*0x642547*/
-  v38 = __2_YAPAXI_Z((size_t)v37); /*0x642551*/
+  int v38 = __2_YAPAXI_Z((size_t)v37); /*0x642551*/
   *(_DWORD *)v38 = *(_DWORD *)v61; /*0x64255b*/
   *(_DWORD *)(v38 + 4) = v62; /*0x642562*/
   *(_DWORD *)(v38 + 8) = v20; /*0x64256a*/
@@ -278,19 +253,16 @@ LABEL_38:
 int Palette::CalcColorDistance(unsigned char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_661350(unsigned __int8 *this, unsigned __int8 *a2)
+void sub_661350(unsigned __int8 *this, unsigned __int8 *a2)
 {
-  int v2; // esi
-  int v3; // edx
-  int v4; // eax
 
-  v2 = *this - *a2; /*0x661360*/
+  int v2 = *this - *a2; /*0x661360*/
   if ( v2 < 0 ) /*0x661362*/
     v2 = *a2 - *this; /*0x661364*/
-  v3 = *(this + 1) - a2[1]; /*0x661370*/
+  int v3 = *(this + 1) - a2[1]; /*0x661370*/
   if ( v3 < 0 ) /*0x661372*/
     v3 = a2[1] - *(this + 1); /*0x661374*/
-  v4 = *(this + 2) - a2[2]; /*0x661382*/
+  int v4 = *(this + 2) - a2[2]; /*0x661382*/
   if ( v4 < 0 ) /*0x661384*/
     v4 = a2[2] - *(this + 2); /*0x661386*/
   return 3 * v4 + 2 * (v2 + 2 * v3); /*0x66138e*/

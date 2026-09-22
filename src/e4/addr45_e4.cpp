@@ -21,30 +21,10 @@ char UpdateBuildingActiveAnim(int a1, int edx0)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char __fastcall UpdateBuildingActiveAnim(int a1, int edx0)
 {
-  int v3; // eax
   IUnknown *v4; // edi
-  int v5; // esi
-  _DWORD *v6; // ebx
-  int v7; // ecx
   double HealthRatio; // st7
-  int v9; // edx
-  int v10; // ecx
-  int v11; // edi
-  int v12; // esi
-  _DWORD *v13; // ebx
-  int v14; // ecx
-  int v15; // ecx
-  int v16; // eax
-  int v17; // ebx
-  unsigned int v18; // edx
-  unsigned int v19; // ecx
-  char v21; // al
-  BOOL v22; // edx
   IUnknown *v23; // eax
-  _BYTE *v24; // ecx
-  char a2[64]; // [esp+10h] [ebp-40h] BYREF
-
-  v3 = *(_DWORD *)(*(_DWORD *)(a1 + 1312) + 160); /*0x451412*/
+  int v3 = *(_DWORD *)(*(_DWORD *)(a1 + 1312) + 160); /*0x451412*/
   if ( *(_DWORD *)(a1 + 108) != v3 ) /*0x45141a*/
   {
     *(_DWORD *)(a1 + 108) = v3; /*0x451420*/
@@ -52,13 +32,13 @@ char __fastcall UpdateBuildingActiveAnim(int a1, int edx0)
     {
       v4 = 0; /*0x45142d*/
       *(_BYTE *)(a1 + 1766) = 0; /*0x45142f*/
-      v5 = 0; /*0x451436*/
-      v6 = (_DWORD *)(a1 + 1372); /*0x451438*/
+      int v5 = 0; /*0x451436*/
+      _DWORD * v6 = (_DWORD *)(a1 + 1372); /*0x451438*/
       do /*0x451475*/
       {
         if ( *v6 ) /*0x45143e*/
         {
-          v7 = *(_DWORD *)(a1 + 1312); /*0x451443*/
+          int v7 = *(_DWORD *)(a1 + 1312); /*0x451443*/
           if ( v5 + v7 != -3916 ) /*0x451452*/
           {
             if ( *(_BYTE *)(v5 + v7 + 3916) ) /*0x451454*/
@@ -72,21 +52,21 @@ char __fastcall UpdateBuildingActiveAnim(int a1, int edx0)
       while ( v5 < 1428 ); /*0x451475*/
     }
     HealthRatio = BuildingClass::GetHealthRatio((int *)a1); /*0x451479*/
-    v9 = *(_DWORD *)&stru_87C374[44652]; /*0x45147e*/
+    int v9 = *(_DWORD *)&stru_87C374[44652]; /*0x45147e*/
     if ( HealthRatio > *(double *)(*(_DWORD *)&stru_87C374[44652] + 5888) ) /*0x45148f*/
     {
-      v10 = *(_DWORD *)(a1 + 784); /*0x451491*/
+      int v10 = *(_DWORD *)(a1 + 784); /*0x451491*/
       if ( v10 ) /*0x451499*/
         (*(void (__thiscall **)(int))(*(_DWORD *)v10 + 248))(v10); /*0x45149d*/
     }
-    v11 = 3; /*0x4514a3*/
-    v12 = 204; /*0x4514a8*/
-    v13 = (_DWORD *)(a1 + 1384); /*0x4514ad*/
+    int v11 = 3; /*0x4514a3*/
+    int v12 = 204; /*0x4514a8*/
+    _DWORD * v13 = (_DWORD *)(a1 + 1384); /*0x4514ad*/
     do /*0x4514ea*/
     {
       if ( !*v13 ) /*0x4514b3*/
       {
-        v14 = *(_DWORD *)(a1 + 1312); /*0x4514b8*/
+        int v14 = *(_DWORD *)(a1 + 1312); /*0x4514b8*/
         if ( v12 + v14 != -3916 ) /*0x4514c7*/
         {
           if ( *(_BYTE *)(v12 + v14 + 3916) ) /*0x4514c9*/
@@ -100,11 +80,11 @@ char __fastcall UpdateBuildingActiveAnim(int a1, int edx0)
     while ( v12 <= 408 ); /*0x4514ea*/
     *(_BYTE *)(a1 + 128) = 1; /*0x4514ec*/
   }
-  v15 = *(_DWORD *)(a1 + 1312); /*0x4514f9*/
+  int v15 = *(_DWORD *)(a1 + 1312); /*0x4514f9*/
   if ( v15 == *(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 2172) ) /*0x451505*/
   {
-    v16 = *(_DWORD *)(a1 + 1532); /*0x45150b*/
-    v17 = v16 + 1; /*0x451511*/
+    int v16 = *(_DWORD *)(a1 + 1532); /*0x45150b*/
+    int v17 = v16 + 1; /*0x451511*/
     if ( v16 + 1 > 2 ) /*0x451517*/
       v17 = 0; /*0x451519*/
     if ( v17 != v16 && !*(_BYTE *)(v15 + 5829) ) /*0x451523*/
@@ -112,10 +92,11 @@ char __fastcall UpdateBuildingActiveAnim(int a1, int edx0)
       BuildingClass::ClearAnims((int *)a1, (TechnoClass *)9); /*0x451535*/
       if ( v17 != -1 ) /*0x45153d*/
       {
+  char a2[64]; // [esp+10h] [ebp-40h] BYREF
         strcpy(a2, (const char *)(*(_DWORD *)(a1 + 1312) + 504)); /*0x45156b*/
-        v18 = strlen(asc_818D7C) + 1; /*0x45158c*/
+        unsigned int v18 = strlen(asc_818D7C) + 1; /*0x45158c*/
         qmemcpy(&a2[strlen(a2)], asc_818D7C, v18); /*0x451599*/
-        v19 = strlen(a2); /*0x4515b3*/
+        unsigned int v19 = strlen(a2); /*0x4515b3*/
         a2[v19] = v17 + 66; /*0x4515b6*/
         a2[v19 + 1] = 0; /*0x4515ba*/
         BuildingClass::PlayAnim((ObjectClass *)a1, v18, a2, (IUnknown *)9, 0, 0, 0); /*0x4515c6*/
@@ -127,7 +108,7 @@ char __fastcall UpdateBuildingActiveAnim(int a1, int edx0)
   }
   else
   {
-    v21 = *(_BYTE *)(a1 + 1794); /*0x4515e9*/
+    char v21 = *(_BYTE *)(a1 + 1794); /*0x4515e9*/
     if ( v21 == *(_DWORD *)(v15 + 5344) ) /*0x4515fa*/
     {
       return 0; /*0x4515ff*/
@@ -135,10 +116,10 @@ char __fastcall UpdateBuildingActiveAnim(int a1, int edx0)
     else
     {
       *(_BYTE *)(a1 + 1794) = v21 + 1; /*0x45160a*/
-      v22 = BuildingClass::GetHealthRatio((int *)a1) <= *(double *)(*(_DWORD *)&stru_87C374[44652] + 5888); /*0x451625*/
+      BOOL v22 = BuildingClass::GetHealthRatio((int *)a1) <= *(double *)(*(_DWORD *)&stru_87C374[44652] + 5888); /*0x451625*/
       v23 = (IUnknown *)(*(char *)(a1 + 1794) - 1); /*0x451637*/
       if ( v22 ) /*0x45163c*/
-        v24 = (_BYTE *)(*(_DWORD *)(a1 + 1312) + 68 * (_DWORD)v23 + 3932); /*0x451649*/
+        _BYTE * v24 = (_BYTE *)(*(_DWORD *)(a1 + 1312) + 68 * (_DWORD)v23 + 3932); /*0x451649*/
       else
         v24 = (_BYTE *)(*(_DWORD *)(a1 + 1312) + 68 * (_DWORD)v23 + 3916); /*0x45165d*/
       if ( v24 && *v24 ) /*0x451668*/
@@ -157,14 +138,6 @@ int sub_452000(unsigned int * a1)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall sub_452000(_DWORD *a1)
 {
-  int v2; // eax
-  int v3; // edi
-  _DWORD *v4; // eax
-  _DWORD *v5; // eax
-  int v6; // ecx
-  int v7; // ebx
-  _DWORD *v8; // ecx
-  int v9; // ebp
   bool v10; // zf
   int v11; // ebx
   int *v12; // ecx
@@ -175,10 +148,11 @@ int __fastcall sub_452000(_DWORD *a1)
   int v17; // [esp+18h] [ebp-8h]
 
   v17 = (*(int (__thiscall **)(_DWORD *))(*a1 + 484))(a1); /*0x452015*/
-  v2 = (*(int (__thiscall **)(_DWORD *))(*a1 + 444))(a1); /*0x452019*/
-  v3 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*a1 + 1124))(a1, *(__int16 *)(v2 + 266)); /*0x452031*/
+  int v2 = (*(int (__thiscall **)(_DWORD *))(*a1 + 444))(a1); /*0x452019*/
+  int v3 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*a1 + 1124))(a1, *(__int16 *)(v2 + 266)); /*0x452031*/
   if ( (*(unsigned __int8 (__thiscall **)(_DWORD *))(*a1 + 352))(a1)
     || a1[165]
+  _DWORD *v4; // eax
     && (a1 ? (v4 = (*(int (__thiscall **)(_DWORD *))(*a1 + 44))(a1) == 6 ? a1 : 0) : (v4 = 0),
         *(_DWORD **)(a1[165] + 80) == v4) )
   {
@@ -189,20 +163,20 @@ int __fastcall sub_452000(_DWORD *a1)
   v16 = 21; /*0x452095*/
   do /*0x45211d*/
   {
-    v5 = (_DWORD *)*v15; /*0x4520a1*/
+    _DWORD * v5 = (_DWORD *)*v15; /*0x4520a1*/
     if ( *v15 ) /*0x4520a1*/
     {
-      v6 = v5[50]; /*0x4520a7*/
+      int v6 = v5[50]; /*0x4520a7*/
       if ( v6 && *(_BYTE *)(v6 + 860) ) /*0x4520b1*/
       {
         v5[53] = v17; /*0x4520c3*/
         v5[63] = (unsigned __int16)v3; /*0x4520c9*/
       }
-      v7 = *((char *)a1 + 1773); /*0x4520cf*/
+      int v7 = *((char *)a1 + 1773); /*0x4520cf*/
       if ( v7 == 15 && (*(int (__thiscall **)(_DWORD *, _DWORD, _DWORD))(*a1 + 104))(a1, 0, 0) == 5 ) /*0x4520e9*/
         LOBYTE(v7) = 16; /*0x4520eb*/
-      v8 = a1 + 343; /*0x4520f0*/
-      v9 = 21; /*0x4520f2*/
+      _DWORD * v8 = a1 + 343; /*0x4520f0*/
+      int v9 = 21; /*0x4520f2*/
       do /*0x452107*/
       {
         if ( *v8 ) /*0x4520f7*/
@@ -241,16 +215,15 @@ namespace gamemd {
 int sub_452D40()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int sub_452D40()
+void sub_452D40()
 {
   int result; // eax
   int i; // edi
-  int v2; // esi
 
   result = g_BuildingProductionState; /*0x452d40*/
   for ( i = 0; i < g_BuildingProductionState; ++i ) /*0x452d4a*/
   {
-    v2 = *((_DWORD *)g_BuildingClass_InstanceCount + i); /*0x452d52*/
+    int v2 = *((_DWORD *)g_BuildingClass_InstanceCount + i); /*0x452d52*/
     if ( v2 /*0x452d7c*/
       && *(_BYTE *)(*(_DWORD *)(v2 + 1312) + 5822)
       && !g_IKnowWhatImDoing
@@ -286,7 +259,6 @@ char __fastcall DrawTechnoDeployCircle(
         char a8,
         char a9)
 {
-  double v9; // st7
   int v10; // eax
   double v11; // st7
   int v12; // esi
@@ -325,7 +297,7 @@ char __fastcall DrawTechnoDeployCircle(
   double v46; // [esp+C8h] [ebp-20h] BYREF
   _DWORD v47[4]; // [esp+D8h] [ebp-10h] BYREF
 
-  v9 = a7; /*0x45698d*/
+  double v9 = a7; /*0x45698d*/
   v32 = (char)aP1; /*0x456994*/
   v33 = (char)aP0; /*0x456998*/
   if ( a9 ) /*0x45699c*/
@@ -475,13 +447,12 @@ int sub_456FB0(unsigned int * a1, int a2, int a3)
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int __fastcall sub_456FB0(_DWORD *a1, int a2, int a3)
 {
-  int v4; // edi
-  _DWORD *v5; // eax
 
-  v4 = (*(int (__thiscall **)(_DWORD *, int))(*a1 + 1124))(a1, a3); /*0x456fc7*/
+  int v4 = (*(int (__thiscall **)(_DWORD *, int))(*a1 + 1124))(a1, a3); /*0x456fc7*/
   if ( (*(unsigned __int8 (__thiscall **)(_DWORD *))(*a1 + 352))(a1) ) /*0x456fc9*/
     return Techno::StartInvulnerability(v4); /*0x456fc9*/
   if ( a1[165]
+  _DWORD *v5; // eax
     && (a1 ? (v5 = (*(int (__thiscall **)(_DWORD *))(*a1 + 44))(a1) == 6 ? a1 : 0) : (v5 = 0),
         *(_DWORD **)(a1[165] + 80) == v5) )
   {
@@ -517,7 +488,6 @@ int Map_InitCellOffsets()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 int Map_InitCellOffsets()
 {
-  int v1; // [esp+10h] [ebp-4h] BYREF
 
   unk_89D368 = 0x10000;
   unk_89D36C = 0x1FFFF;
@@ -781,7 +751,7 @@ int Map_InitCellOffsets()
   unk_89DB60 = -1;
   unk_89DB64 = -65536;
   unk_89DB68 = -65535;
-  v1 = -65532;
+  int v1 = -65532;
   unk_89DB70 = -65533;
   unk_89DB6C = -65534;
   unk_89DB74 = -65532;
@@ -864,11 +834,9 @@ char * E4Recv_45DD20::sub_45DD20()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 char *__thiscall sub_45DD20(void *this)
 {
-  int v1; // edx
-  int *v2; // eax
 
-  v1 = 0; /*0x45dd20*/
-  v2 = &dword_81928C; /*0x45dd22*/
+  int v1 = 0; /*0x45dd20*/
+  int * v2 = &dword_81928C; /*0x45dd22*/
   while ( (void *)*v2 != this ) /*0x45dd29*/
   {
     v2 += 2; /*0x45dd2b*/
@@ -886,7 +854,7 @@ namespace gamemd {
 int E4Recv_45DD50::sub_45DD50()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall sub_45DD50(void *this)
+void sub_45DD50(void *this)
 {
   ObjectClass *v2; // edi
   const void **v3; // esi

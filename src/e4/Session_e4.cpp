@@ -14,27 +14,24 @@ namespace gamemd {
 int Session::RemoveTeam(MSShapeAnim * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Session::RemoveTeam(_DWORD *this, MSShapeAnim *aP1)
+void Session::RemoveTeam(MSShapeAnim *aP1)
 {
   MSShapeAnim *result; // eax
-  _DWORD *v3; // esi
-  int v4; // ecx
-  int v5; // ecx
 
   result = aP1; /*0x5d1d80*/
   if ( aP1 ) /*0x5d1d87*/
   {
-    v3 = this + 6; /*0x5d1d8c*/
+    _DWORD * v3 = this + 6; /*0x5d1d8c*/
     result = (MSShapeAnim *)(*(int (__thiscall **)(_DWORD *, MSShapeAnim **))(this->q018 + 16))(this + 6, &aP1); /*0x5d1d96*/
     if ( result != (MSShapeAnim *)-1 ) /*0x5d1d9c*/
     {
       result = (MSShapeAnim *)(*(int (__thiscall **)(_DWORD *, MSShapeAnim **))(*v3 + 16))(v3, &aP1); /*0x5d1da7*/
       if ( result != (MSShapeAnim *)-1 ) /*0x5d1dad*/
       {
-        v4 = v3[4]; /*0x5d1daf*/
+        int v4 = v3[4]; /*0x5d1daf*/
         if ( (int)result < v4 ) /*0x5d1db4*/
         {
-          v5 = v4 - 1; /*0x5d1db6*/
+          int v5 = v4 - 1; /*0x5d1db6*/
           for ( v3[4] = v5; /*0x5d1dbc*/
                 (int)result < v3[4];
                 *(_DWORD *)(v3[1] + 4 * (_DWORD)result - 4) = *(_DWORD *)(v3[1] + 4 * (_DWORD)result) )
@@ -57,28 +54,15 @@ namespace gamemd {
 int Session::PrepareGame()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Session::PrepareGame(HWND this)
+void Session::PrepareGame(HWND this)
 {
   ObjectClass *v1; // esi
-  int v3; // eax
   char *Flagged; // eax
-  char *v5; // eax
   int result; // eax
-  char v7; // bl
   ObjectClass *v8; // esi
-  int v9; // esi
-  int v10; // edi
-  int v11; // esi
   ObjectClass *v12; // esi
-  _DWORD *v13; // eax
-  char v14; // al
-  bool v15; // bl
-  int v16; // [esp+10h] [ebp-1F8h]
-  int v17[9]; // [esp+1Ch] [ebp-1ECh] BYREF
   char Str[452]; // [esp+40h] [ebp-1C8h] BYREF
   __int16 v19; // [esp+204h] [ebp-4h]
-  char v20; // [esp+206h] [ebp-2h]
-
   v1 = (ObjectClass *)g_UIControlState; /*0x5e74e9*/
   if ( g_UIControlState ) /*0x5e74f6*/
   {
@@ -102,8 +86,8 @@ int __thiscall Session::PrepareGame(HWND this)
       memset(Str, 0, 250); /*0x5e7764*/
       *(_DWORD *)Str = 119; /*0x5e776c*/
       result = Timer::GetTicks(); /*0x5e7774*/
-      v9 = 1800; /*0x5e7779*/
-      v16 = result; /*0x5e777e*/
+      int v9 = 1800; /*0x5e7779*/
+      int v16 = result; /*0x5e777e*/
       while ( 1 ) /*0x5e778f*/
       {
         if ( v16 != -1 ) /*0x5e7793*/
@@ -115,11 +99,11 @@ int __thiscall Session::PrepareGame(HWND this)
         }
         if ( !v9 ) /*0x5e77ae*/
           return result; /*0x5e7812*/
-        v10 = Stream::WriteBlock((int)&g_EventManager, (int)Str, 250, 1); /*0x5e77cf*/
+        int v10 = Stream::WriteBlock((int)&g_EventManager, (int)Str, 250, 1); /*0x5e77cf*/
         for ( result = Count::GetCountQueue(&g_EventManager); result > 0; result = Count::GetCountQueue(&g_EventManager) ) /*0x5e77d8*/
         {
           result = v16; /*0x5e77da*/
-          v11 = 1800; /*0x5e77de*/
+          int v11 = 1800; /*0x5e77de*/
           if ( v16 != -1 ) /*0x5e77e4*/
           {
             result = Timer::GetTicks() - v16; /*0x5e77ef*/
@@ -149,13 +133,13 @@ int __thiscall Session::PrepareGame(HWND this)
       InvalidateRect(this, 0, 0); /*0x5e7560*/
       memset(Str, 0, sizeof(Str)); /*0x5e7571*/
       v19 = 0; /*0x5e7573*/
-      v20 = 0; /*0x5e7575*/
+      char v20 = 0; /*0x5e7575*/
       *(_DWORD *)Str = 27; /*0x5e7576*/
       break; /*0x5e7576*/
     case 4: /*0x5e7521*/
       if ( !Dialog::FindByHandle((void *)0xC9) ) /*0x5e7609*/
         goto LABEL_42; /*0x5e7609*/
-      v7 = 0; /*0x5e762e*/
+      char v7 = 0; /*0x5e762e*/
       if ( FindAndValidateMap( /*0x5e7630*/
              &Destination,
              g_MultiplayerConfigState,
@@ -168,6 +152,7 @@ int __thiscall Session::PrepareGame(HWND this)
         Debug::Log(); /*0x5e7677*/
         if ( !(_BYTE)g_MultiplayerSetupState && strstr(Str, DataGlobal_831A88) && strstr(Str, DataGlobal_831A80) ) /*0x5e76a8*/
           goto LABEL_42; /*0x5e76a8*/
+  int v17[9]; // [esp+1Ch] [ebp-1ECh] BYREF
         RawFileClass::Construct(v17, (int)&Destination); /*0x5e76c1*/
         if ( FileClass::Open(v17, 0) ) /*0x5e76cc*/
           v7 = 1; /*0x5e76d5*/
@@ -196,10 +181,10 @@ LABEL_42:
       return InvalidateRect(this, 0, 0); /*0x5e7733*/
     default:
 LABEL_44:
-      v13 = CCFileClass::Construct(Str, &Destination); /*0x5e7845*/
-      v14 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v13 + 20))(v13, 0); /*0x5e7858*/
+      _DWORD * v13 = CCFileClass::Construct(Str, &Destination); /*0x5e7845*/
+      char v14 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v13 + 20))(v13, 0); /*0x5e7858*/
       *(_DWORD *)Str = &vt_CCFileClass; /*0x5e7864*/
-      v15 = v14 == 0; /*0x5e786c*/
+      bool v15 = v14 == 0; /*0x5e786c*/
       *(_DWORD *)&Str[100] = 0; /*0x5e786f*/
       Vector::Clear((int)&Str[88]); /*0x5e7876*/
       *(_DWORD *)Str = &off_7E1668; /*0x5e787f*/
@@ -232,6 +217,7 @@ LABEL_44:
   }
   while ( 1 ) /*0x5e757e*/
   {
+  int v3; // eax
     if ( g_GameMode_Current[0] == 3 ) /*0x5e7584*/
     {
       v3 = Network::SendMessage((int)g_NetworkManager, (int)Str, 47, 1, (int)&g_NetworkRematchObject, 0, 0); /*0x5e759d*/
@@ -241,7 +227,7 @@ LABEL_44:
       Flagged = GameSettings::FindFlagged(); /*0x5e75a4*/
       if ( !Flagged ) /*0x5e75ab*/
         goto LABEL_12; /*0x5e75ab*/
-      v5 = CharToWideString(Flagged + 36); /*0x5e75b0*/
+      char * v5 = CharToWideString(Flagged + 36); /*0x5e75b0*/
       v3 = Network::SendToPlayer((int)g_NetworkManager, (int)Str, 47, 1, (wchar_t *)v5); /*0x5e75c4*/
     }
     if ( v3 ) /*0x5e75cb*/
@@ -266,7 +252,7 @@ namespace gamemd {
 int Session::GetPlayerOption()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Session_GetPlayerOption(_DWORD *this)
+void Session_GetPlayerOption(_DWORD *this)
 {
   int result; // eax
 
@@ -283,7 +269,7 @@ namespace gamemd {
 int Session::GetPlayerColor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Session_GetPlayerColor(_DWORD *this)
+void Session_GetPlayerColor(_DWORD *this)
 {
   int result; // eax
 

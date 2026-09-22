@@ -6,7 +6,7 @@
 char PlayerClass::SetHouse(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall PlayerClass_SetHouse(_DWORD *this, int a2)
+void PlayerClass_SetHouse(_DWORD *this, int a2)
 {
   char result; // al
 

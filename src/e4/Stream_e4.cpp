@@ -6,22 +6,17 @@
 int Stream::FlushAndReset()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Stream::FlushAndReset(_DWORD *this)
+void Stream::FlushAndReset()
 {
-  _DWORD *v1; // esi
-  int v2; // eax
-  int v3; // edi
-  int v4; // eax
-  int v5; // edi
 
-  v1 = this; /*0x439111*/
-  v2 = *this; /*0x439114*/
-  v3 = this->Stream_field_08; /*0x439116*/
+  Stream *v1 = this; /*0x439111*/
+  int v2 = *this; /*0x439114*/
+  int v3 = this->Stream_field_08; /*0x439116*/
   this->Stream_field_0C = 45; /*0x439119*/
   (*(void (**)(void))(v2 + 12))(); /*0x439120*/
   (*(void (__thiscall **)(_DWORD *, int, _DWORD))(*v1 + 8))(v1, v3, 0); /*0x43912a*/
-  v4 = v1[6]; /*0x43912d*/
-  v5 = v1[8]; /*0x439130*/
+  int v4 = v1[6]; /*0x43912d*/
+  int v5 = v1[8]; /*0x439130*/
   v1 += 6; /*0x439133*/
   (*(void (__thiscall **)(_DWORD *))(v4 + 12))(v1); /*0x439138*/
   return (*(int (__thiscall **)(_DWORD *, int, _DWORD))(*v1 + 8))(v1, v5, 0); /*0x439145*/
@@ -32,23 +27,20 @@ int __thiscall Stream::FlushAndReset(_DWORD *this)
 int Stream::ReadIntArray(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Stream_ReadIntArray(int *this, int a2)
+void Stream_ReadIntArray(int *this, int a2)
 {
-  int v2; // esi
   int result; // eax
-  int v5; // eax
-  int v6; // ebx
 
-  v2 = a2; /*0x49fb72*/
+  int v2 = a2; /*0x49fb72*/
   result = (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)a2 + 16))(a2, this + 4, 4, 0); /*0x49fb84*/
   if ( result >= 0 ) /*0x49fb89*/
   {
-    v5 = *(_DWORD *)v2; /*0x49fb8e*/
+    int v5 = *(_DWORD *)v2; /*0x49fb8e*/
     a2 = this->Stream_field_08; /*0x49fb9a*/
     result = (*(int (__stdcall **)(int, int *, int, _DWORD))(v5 + 16))(v2, &a2, 4, 0); /*0x49fb9e*/
     if ( result >= 0 ) /*0x49fba3*/
     {
-      v6 = 0; /*0x49fba9*/
+      int v6 = 0; /*0x49fba9*/
       if ( a2 <= 0 ) /*0x49fbad*/
       {
         return 0; /*0x49fbcd*/
@@ -74,15 +66,13 @@ int __thiscall Stream_ReadIntArray(int *this, int a2)
 int Stream::WriteIntArray(TechnoTypeClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Stream::WriteIntArray(_DWORD *this, TechnoTypeClass *aP1)
+void Stream::WriteIntArray(TechnoTypeClass *aP1)
 {
-  int v3; // ecx
   int result; // eax
   int i; // esi
-  int v6; // [esp+20h] [ebp-4h] BYREF
 
-  v3 = *(_DWORD *)aP1->vtable0; /*0x67a4ac*/
-  v6 = this->Stream_field_10; /*0x67a4b9*/
+  int v3 = *(_DWORD *)aP1->vtable0; /*0x67a4ac*/
+  int v6 = this->Stream_field_10; /*0x67a4b9*/
   (*(void (__stdcall **)(TechnoTypeClass *, int *, int, _DWORD))(v3 + 16))(aP1, &v6, 4, 0); /*0x67a4bd*/
   result = v6; /*0x67a4c0*/
   for ( i = 0; i < v6; ++i ) /*0x67a4c8*/
@@ -112,46 +102,37 @@ char *__thiscall Stream::InitializeBinkAudio(
         int a7,
         int a8)
 {
-  int v9; // eax
-  int v10; // eax
-  int v11; // eax
-  int v12; // edx
-  int v13; // eax
-  bool v14; // zf
-  int v15; // eax
-  int v16; // eax
-  char v17; // al
-  char v19; // [esp+13h] [ebp-1h] BYREF
 
   CCFileClass::Construct3((int)(this + 4)); /*0x75926a*/
   Stream::CopyFromTemplate(this + 376); /*0x759275*/
   this->q52C = aP2; /*0x759282*/
   *((_DWORD *)this + 121) = this; /*0x759288*/
+  char v19; // [esp+13h] [ebp-1h] BYREF
   *((_DWORD *)this + 101) = &v19; /*0x75928e*/
   this->q1B8 = 0; /*0x75929b*/
   if ( !TestBitArray(15) ) /*0x7592a1*/
     this->q1B8 |= 1u; /*0x7592af*/
   if ( !TestBitArray(1) ) /*0x7592b7*/
   {
-    v9 = this->q1B8; /*0x7592c0*/
+    int v9 = this->q1B8; /*0x7592c0*/
     LOBYTE(v9) = v9 | 4; /*0x7592c6*/
     this->q1B8 = v9; /*0x7592c8*/
   }
   if ( TestBitArray(10) ) /*0x7592d3*/
   {
-    v10 = this->q1B8; /*0x7592dc*/
+    int v10 = this->q1B8; /*0x7592dc*/
     LOBYTE(v10) = v10 | 0x40; /*0x7592e2*/
     this->q1B8 = v10; /*0x7592e4*/
   }
   if ( TestBitArray(12) ) /*0x7592ef*/
   {
-    v11 = this->q1B8; /*0x7592f8*/
+    int v11 = this->q1B8; /*0x7592f8*/
     LOBYTE(v11) = v11 | 0x80; /*0x7592fe*/
     this->q1B8 = v11; /*0x759300*/
   }
-  v12 = *((_DWORD *)this + 111) | 8; /*0x75930c*/
+  int v12 = *((_DWORD *)this + 111) | 8; /*0x75930c*/
   *((_DWORD *)this + 111) = v12; /*0x75930f*/
-  v13 = v12; /*0x75931e*/
+  int v13 = v12; /*0x75931e*/
   if ( (this->q52C & 2) != 0 ) /*0x759320*/
   {
     LOBYTE(v13) = v12 | 0x20; /*0x759322*/
@@ -166,15 +147,15 @@ char *__thiscall Stream::InitializeBinkAudio(
   }
   *((_DWORD *)this + 111) = v13; /*0x75933c*/
 LABEL_14:
-  v14 = TestBitArray(17); /*0x759342*/
-  v15 = *((_DWORD *)this + 111); /*0x75934e*/
+  bool v14 = TestBitArray(17); /*0x759342*/
+  int v15 = *((_DWORD *)this + 111); /*0x75934e*/
   if ( v14 ) /*0x759354*/
     LOBYTE(v15) = v15 | 4; /*0x759356*/
   else
     LOBYTE(v15) = v15 & 0xFB; /*0x75935a*/
   *((_DWORD *)this + 111) = v15; /*0x759361*/
   v14 = TestBitArray(3); /*0x75936c*/
-  v16 = *((_DWORD *)this + 111); /*0x75936e*/
+  int v16 = *((_DWORD *)this + 111); /*0x75936e*/
   if ( v14 ) /*0x759374*/
     LOBYTE(v16) = v16 & 0xFE; /*0x759376*/
   else
@@ -191,7 +172,7 @@ LABEL_14:
     this->q070 = 1; /*0x7593c5*/
   else
     this->q070 = 14; /*0x7593cd*/
-  v17 = this->q52C; /*0x7593d7*/
+  char v17 = this->q52C; /*0x7593d7*/
   *((_DWORD *)this + 113) = -1; /*0x7593dd*/
   if ( (v17 & 1) != 0 ) /*0x7593e5*/
     *((_DWORD *)this + 94) = sub_75A2B0; /*0x7593e7*/

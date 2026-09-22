@@ -18,22 +18,15 @@
 // 0x41DB40
 namespace gamemd { int WTFMode::ResetUnitFlags() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __thiscall WTFMode_ResetUnitFlags(int this)
+void WTFMode_ResetUnitFlags(int this)
 {
-  _DWORD *v1; // eax
-  int v3; // ecx
-  _DWORD *v4; // esi
-  int v5; // edi
-  _DWORD *v6; // esi
-  _DWORD *v7; // edx
-  _DWORD *v8; // ecx
-  int v9; // edi
 
+  _DWORD *v1; // eax
   LOBYTE(v1) = g_WTFMode; /*0x41db40*/
   if ( g_WTFMode ) /*0x41db4d*/
   {
-    v3 = this->q05C; /*0x41db53*/
-    v1 = *(_DWORD **)(this + 92); /*0x41db56*/
+    int v3 = this->q05C; /*0x41db53*/
+    v1 = this->q05C; /*0x41db56*/
     if ( v1 ) /*0x41db5a*/
     {
       while ( v1[191] ) /*0x41db62*/
@@ -42,7 +35,7 @@ char __thiscall WTFMode_ResetUnitFlags(int this)
         if ( !v1 ) /*0x41db6c*/
           goto LABEL_8; /*0x41db6c*/
       }
-      v1 = *(_DWORD **)(this + 92); /*0x41db74*/
+      v1 = this->q05C; /*0x41db74*/
       if ( v3 ) /*0x41db78*/
       {
         do /*0x41db88*/
@@ -54,8 +47,8 @@ char __thiscall WTFMode_ResetUnitFlags(int this)
       }
     }
 LABEL_8:
-    v4 = *(_DWORD **)(this + 92); /*0x41db8a*/
-    v5 = 0; /*0x41db8f*/
+    _DWORD * v4 = this->q05C; /*0x41db8a*/
+    int v5 = 0; /*0x41db8f*/
     if ( v4 ) /*0x41db93*/
     {
       do /*0x41dbc8*/
@@ -68,7 +61,7 @@ LABEL_8:
       }
       while ( v5 <= 100 && v4 ); /*0x41dbc8*/
     }
-    v6 = *(_DWORD **)(this + 80); /*0x41dbca*/
+    AudioController *v6 = this->q050; /*0x41dbca*/
     *(_BYTE *)(this + 61) = 0; /*0x41dbcd*/
     if ( v6 ) /*0x41dbd2*/
     {
@@ -76,11 +69,11 @@ LABEL_8:
       if ( v1 == (_DWORD *)6 && v6[165] == this ) /*0x41dbe6*/
       {
         LOBYTE(v1) = DataGlobal_889FC8; /*0x41dbe8*/
-        v7 = 0; /*0x41dbed*/
+        _DWORD * v7 = 0; /*0x41dbed*/
         if ( DataGlobal_889FC8 > 0 ) /*0x41dbf1*/
         {
-          v8 = DataGlobal_889FBC; /*0x41dbf3*/
-          v9 = DataGlobal_889FC8; /*0x41dbf9*/
+          _DWORD * v8 = DataGlobal_889FBC; /*0x41dbf3*/
+          int v9 = DataGlobal_889FC8; /*0x41dbf9*/
           do /*0x41dc0c*/
           {
             v1 = (_DWORD *)*v8; /*0x41dbfb*/
@@ -326,36 +319,23 @@ namespace gamemd { int Stream::WriteBlock(int a1, int a2, int a3) {
 // 0x5F1C60
 namespace gamemd { int Stream::ReadPacket() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall Stream_ReadPacket(int this)
+void Stream_ReadPacket(int this)
 {
-  unsigned int v3; // ecx
-  int v4; // edi
-  char *v5; // eax
-  int v6; // ecx
-  char *v7; // ebp
-  int v8; // edi
-  int v9; // ecx
-  int v10; // edx
-  int v11; // ebx
-  int v12; // edi
-  int v13; // ecx
-  int v14; // edi
-  int v15; // ecx
-  unsigned int v16; // [esp+14h] [ebp-4h]
 
   if ( !this->q03C ) /*0x5f1c69*/
     return 0; /*0x5f1c79*/
+  unsigned int v3; // ecx
   v3 = WinModemClass::ReadBytes( /*0x5f1c97*/
          *(_DWORD *)(this + 88) + this->q014,
          *(_DWORD *)(this + 84) - *(_DWORD *)(this + 88))
      + *(_DWORD *)(this + 88);
   *(_DWORD *)(this + 88) = v3; /*0x5f1c9c*/
   if ( v3 < 0xB ) /*0x5f1c9f*/
-    return (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 56) + 20))(this->q038); /*0x5f1c9f*/
-  v4 = 0; /*0x5f1cb4*/
+    return (*(int (__thiscall **)(_DWORD))(*this->q038 + 20))(this->q038); /*0x5f1c9f*/
+  int v4 = 0; /*0x5f1cb4*/
   if ( (int)(v3 - 2) < 0 ) /*0x5f1cb8*/
     goto LABEL_11; /*0x5f1cb8*/
-  v5 = *(char **)(this + 80); /*0x5f1cba*/
+  char * v5 = this->q014; /*0x5f1cba*/
   while ( *(_WORD *)&v5[v4] != 0xDABD ) /*0x5f1cc3*/
   {
     if ( ++v4 > (int)(v3 - 2) ) /*0x5f1cc8*/
@@ -364,21 +344,21 @@ int __thiscall Stream_ReadPacket(int this)
   if ( v4 == -1 ) /*0x5f1ccf*/
   {
 LABEL_11:
-    memcpy(*(void **)(this + 80), (const void *)(this->q014 + v4), 1u); /*0x5f1cd1*/
-    v6 = this->q038; /*0x5f1ce0*/
+    memcpy(this->q014, (const void *)(this->q014 + v4), 1u); /*0x5f1cd1*/
+    int v6 = this->q038; /*0x5f1ce0*/
     *(_DWORD *)(this + 88) = 1; /*0x5f1ce3*/
     return (*(int (__thiscall **)(int))(*(_DWORD *)v6 + 20))(v6); /*0x5f1cef*/
   }
   else if ( v3 - v4 >= 6 ) /*0x5f1d05*/
   {
-    v7 = &v5[v4]; /*0x5f1d36*/
+    char * v7 = &v5[v4]; /*0x5f1d36*/
     if ( *(_WORD *)&v5[v4 + 4] == 0xDEAF ) /*0x5f1d39*/
     {
-      v10 = this->Stream_field_08; /*0x5f1d6a*/
-      v11 = *((unsigned __int16 *)v7 + 1); /*0x5f1d6d*/
+      int v10 = this->Stream_field_08; /*0x5f1d6a*/
+      int v11 = *((unsigned __int16 *)v7 + 1); /*0x5f1d6d*/
       if ( v11 <= v10 ) /*0x5f1d75*/
       {
-        v16 = v11 + v4 + 10; /*0x5f1dbb*/
+        unsigned int v16 = v11 + v4 + 10; /*0x5f1dbb*/
         if ( v16 > v3 ) /*0x5f1dbf*/
         {
           if ( v4 ) /*0x5f1dc3*/
@@ -386,26 +366,26 @@ LABEL_11:
             memcpy(v5, &v5[v4], v3 - v4); /*0x5f1dcc*/
             *(_DWORD *)(this + 88) -= v4; /*0x5f1dd9*/
           }
-          return (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 56) + 20))(this->q038); /*0x5f1cb0*/
+          return (*(int (__thiscall **)(_DWORD))(*this->q038 + 20))(this->q038); /*0x5f1cb0*/
         }
         if ( Audio_Read(v7 + 6, v11) == *(_DWORD *)&v5[v11 + 6 + v4] ) /*0x5f1e06*/
         {
-          if ( !(*(int (__thiscall **)(_DWORD, int, int))(**(_DWORD **)(this + 56) + 12))( /*0x5f1e58*/
+          if ( !(*(int (__thiscall **)(_DWORD, int, int))(*this->q038 + 12))( /*0x5f1e58*/
                   this->q038,
                   this->q014 + v4 + 6,
                   v11) )
             ++this->q06C; /*0x5f1e5f*/
-          memcpy(*(void **)(this + 80), (const void *)(this->q014 + v16), *(_DWORD *)(this + 88) - v16); /*0x5f1e74*/
+          memcpy(this->q014, (const void *)(this->q014 + v16), *(_DWORD *)(this + 88) - v16); /*0x5f1e74*/
           *(_DWORD *)(this + 88) -= v16; /*0x5f1e81*/
-          return (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 56) + 20))(this->q038); /*0x5f1e8b*/
+          return (*(int (__thiscall **)(_DWORD))(*this->q038 + 20))(this->q038); /*0x5f1e8b*/
         }
         else
         {
           ++this->q070; /*0x5f1e11*/
           Debug::Log(DataGlobal_00832400); /*0x5f1e14*/
-          v14 = v4 + 2; /*0x5f1e1f*/
-          memcpy(*(void **)(this + 80), (const void *)(this->q014 + v14), *(_DWORD *)(this + 88) - v14); /*0x5f1e2a*/
-          v15 = this->q038; /*0x5f1e32*/
+          int v14 = v4 + 2; /*0x5f1e1f*/
+          memcpy(this->q014, (const void *)(this->q014 + v14), *(_DWORD *)(this + 88) - v14); /*0x5f1e2a*/
+          int v15 = this->q038; /*0x5f1e32*/
           *(_DWORD *)(this + 88) -= v14; /*0x5f1e3a*/
           return (*(int (__thiscall **)(int))(*(_DWORD *)v15 + 20))(v15); /*0x5f1e3f*/
         }
@@ -413,18 +393,18 @@ LABEL_11:
       else
       {
         Debug::Log(DataGlobal_00832420, v11 - v10); /*0x5f1d7f*/
-        v12 = v4 + 2; /*0x5f1d8a*/
-        memcpy(*(void **)(this + 80), (const void *)(this->q014 + v12), *(_DWORD *)(this + 88) - v12); /*0x5f1d95*/
-        v13 = this->q038; /*0x5f1d9d*/
+        int v12 = v4 + 2; /*0x5f1d8a*/
+        memcpy(this->q014, (const void *)(this->q014 + v12), *(_DWORD *)(this + 88) - v12); /*0x5f1d95*/
+        int v13 = this->q038; /*0x5f1d9d*/
         *(_DWORD *)(this + 88) -= v12; /*0x5f1da5*/
         return (*(int (__thiscall **)(int))(*(_DWORD *)v13 + 20))(v13); /*0x5f1daa*/
       }
     }
     else
     {
-      v8 = v4 + 2; /*0x5f1d3b*/
+      int v8 = v4 + 2; /*0x5f1d3b*/
       memcpy(v5, &v5[v8], v3 - v8); /*0x5f1d46*/
-      v9 = this->q038; /*0x5f1d4e*/
+      int v9 = this->q038; /*0x5f1d4e*/
       *(_DWORD *)(this + 88) -= v8; /*0x5f1d56*/
       return (*(int (__thiscall **)(int))(*(_DWORD *)v9 + 20))(v9); /*0x5f1d5b*/
     }
@@ -433,7 +413,7 @@ LABEL_11:
   {
     memcpy(v5, &v5[v4], v3 - v4); /*0x5f1d0d*/
     *(_DWORD *)(this + 88) -= v4; /*0x5f1d1a*/
-    return (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 56) + 20))(this->q038); /*0x5f1d24*/
+    return (*(int (__thiscall **)(_DWORD))(*this->q038 + 20))(this->q038); /*0x5f1d24*/
   }
 }
 } }

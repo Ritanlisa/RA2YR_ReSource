@@ -25,16 +25,13 @@ int SmallFunc_6F19B0(char * a1, int a2)
 int __fastcall SmallFunc_6F19B0(char *a1, int a2)
 {
   int result; // eax
-  int v4; // ebp
   CCINIClass *i; // ebx
   unsigned __int8 *StringByIndex; // eax
-  int v7; // esi
-  _DWORD *v8; // eax
   TeamTypeClass *v9; // esi
   char Source[32]; // [esp+10h] [ebp-20h] BYREF
 
   result = INIClass::GetKeyCount(a1, (INIClass *)&stru_830620[76508]); /*0x6f19c1*/
-  v4 = result; /*0x6f19c6*/
+  int v4 = result; /*0x6f19c6*/
   for ( i = 0; (int)i < v4; *(_DWORD *)v9[2].__pad_0 = a2 ) /*0x6f19cc*/
   {
     StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(a1, (CCINIClass *)&stru_830620[76508], i); /*0x6f19db*/
@@ -47,7 +44,7 @@ int __fastcall SmallFunc_6F19B0(char *a1, int a2)
       32);
     if ( !_strcmpi((char *)&stru_817460.sectionHead[1], Source) || !_strcmpi(g_Str_none, Source) ) /*0x6f1a19*/
       goto LABEL_10; /*0x6f1a19*/
-    v7 = 0; /*0x6f1a2a*/
+    int v7 = 0; /*0x6f1a2a*/
     if ( *(int *)&g_NetworkPlayerBuffer[5748] > 0 ) /*0x6f1a2e*/
     {
       while ( _strcmpi((char *)(*(_DWORD *)(*(_DWORD *)&g_NetworkPlayerBuffer[5736] + 4 * v7) + 36), Source) ) /*0x6f1a4c*/
@@ -59,7 +56,7 @@ int __fastcall SmallFunc_6F19B0(char *a1, int a2)
       goto LABEL_11; /*0x6f1a82*/
     }
 LABEL_7:
-    v8 = (_DWORD *)__2_YAPAXI_Z(0xF8u); /*0x6f1a5d*/
+    _DWORD * v8 = (_DWORD *)__2_YAPAXI_Z(0xF8u); /*0x6f1a5d*/
     if ( v8 ) /*0x6f1a67*/
       v9 = (TeamTypeClass *)TechnoTypeClass::LoadBase(v8, Source); /*0x6f1a75*/
     else

@@ -9,12 +9,11 @@
 int ComStreamClass::Write()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ComStreamClass::Write(CNetUtilEventSink *this)
+void ComStreamClass::Write()
 {
   HWND v1; // esi
   HWND DlgItem; // ebx
   CCINIClass *v7; // ebx
-  char *v4; // eax
   HWND v5; // eax
   void (__stdcall *v6)(HWND, BOOL); // ebx
   HWND eax12; // eax
@@ -25,8 +24,6 @@ int __thiscall ComStreamClass::Write(CNetUtilEventSink *this)
   HWND v12; // eax
   HWND Current; // eax
   HWND v14; // eax
-  bool v16; // [esp+Ah] [ebp-281Ah]
-  char v17; // [esp+Bh] [ebp-2819h]
   LPARAM ChannelWOL; // [esp+Ch] [ebp-2818h] BYREF
   rc_ptr_base v19; // [esp+10h] [ebp-2814h] BYREF
   int v20; // [esp+14h] [ebp-2810h]
@@ -55,8 +52,8 @@ int __thiscall ComStreamClass::Write(CNetUtilEventSink *this)
     ChannelWOL = FindChannelWOL(lParam->__pad_0, (int)aP1, 1u, *(_DWORD *)(v20 + 16)); /*0x7a3e2d*/
     SaveConfigWOL((int)&g_GameMode_Current); /*0x7a3e31*/
   }
-  v17 = 1; /*0x7a3e3b*/
-  v16 = 0; /*0x7a3e40*/
+  char v17 = 1; /*0x7a3e3b*/
+  bool v16 = 0; /*0x7a3e40*/
   v1 = (HWND)Dialog::FindByHandle((void *)0x10F); /*0x7a3e4a*/
   if ( v1 /*0x7a3e7a*/
     || (v1 = (HWND)Dialog::FindByHandle((void *)0x11D), v16 = v1 != 0, v1)
@@ -78,7 +75,7 @@ int __thiscall ComStreamClass::Write(CNetUtilEventSink *this)
       String::Assign_Alt((void **)&g_WebBrowser, lParam); /*0x7a3eeb*/
       String::Assign_Alt((void **)&g_WebBrowserConfig, aP1); /*0x7a3efd*/
       v7 = (CCINIClass *)GetDlgItem(v1, 1836); /*0x7a3f0f*/
-      v4 = String::GetOrEmpty_Alt(&g_WebBrowserConfig); /*0x7a3f11*/
+      char * v4 = String::GetOrEmpty_Alt(&g_WebBrowserConfig); /*0x7a3f11*/
       SendMessageA((HWND)v7, 0x4B4u, 0, (LPARAM)v4); /*0x7a3f1f*/
       LOBYTE(dword_84A238) = 1; /*0x7a3f29*/
       v5 = GetDlgItem(v1, 1337); /*0x7a3f30*/
@@ -162,11 +159,10 @@ LONG __thiscall ComStreamClass::Release(CComObject_VCNetUtilEventSink___ATL *thi
 int ComStreamClass::QueryInterface()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __thiscall ComStreamClass::QueryInterface(CComObject_VCNetUtilEventSink___ATL *this)
+void ComStreamClass::QueryInterface()
 {
   _UNKNOWN **v1; // esi
   int result; // eax
-  _DWORD *v3; // eax
   BOOL v4; // ebp
   int (__stdcall *v5)(char *, _DWORD *, char **, void *); // eax
   void *v6; // eax
@@ -187,7 +183,7 @@ int __thiscall ComStreamClass::QueryInterface(CComObject_VCNetUtilEventSink___AT
   }
   while ( 1 ) /*0x7ac8dd*/
   {
-    v3 = *v1; /*0x7ac8dd*/
+    _DWORD * v3 = *v1; /*0x7ac8dd*/
     v4 = *v1 == 0; /*0x7ac8e6*/
     if ( !*v1 || *v3 == *v9 && v3[1] == v9[1] && v3[2] == v9[2] && v3[3] == v9[3] ) /*0x7ac910*/
       break; /*0x7ac910*/
@@ -216,46 +212,35 @@ LABEL_17:
 void ComStreamClass::readData()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_7AE0E0(_DWORD *this)
+void sub_7AE0E0(_DWORD *this)
 {
-  int v2; // esi
-  _DWORD *v3; // ebp
-  int v4; // edi
-  void *v5; // edi
-  unsigned int v6; // edx
-  int *v7; // edi
-  int v8; // ebp
-  int v9; // esi
-  int v10; // edx
-  int v11; // ecx
-  int v12; // eax
-  _DWORD *v13; // [esp+4h] [ebp-4h]
 
   if ( (unsigned char)this->ComStreamClass_field_0x14 != 1 ) /*0x7ae0e8*/
   {
-    v2 = this->q008; /*0x7ae0f0*/
-    v3 = (_DWORD *)*this; /*0x7ae0f3*/
-    v4 = this->q00C + 1; /*0x7ae0fc*/
+    rc_ptr_base *v2 = this->q008; /*0x7ae0f0*/
+    _DWORD * v3 = (_DWORD *)*this; /*0x7ae0f3*/
+    int v4 = this->q00C + 1; /*0x7ae0fc*/
     this->q008 = 2 * v2; /*0x7ae0fd*/
-    v13 = v3; /*0x7ae100*/
+    _DWORD * v13 = v3; /*0x7ae100*/
     this->q00C = v4; /*0x7ae108*/
-    v5 = __2_YAPAXI_Z(8 * v2); /*0x7ae113*/
-    v6 = 4 * this->q008; /*0x7ae118*/
+    void * v5 = __2_YAPAXI_Z(8 * v2); /*0x7ae113*/
+    unsigned int v6 = 4 * this->q008; /*0x7ae118*/
     *this = v5; /*0x7ae11f*/
     memset(v5, 0, v6); /*0x7ae124*/
     if ( v2 > 0 ) /*0x7ae12f*/
     {
-      v7 = v3; /*0x7ae131*/
-      v8 = v2; /*0x7ae133*/
+      int * v7 = v3; /*0x7ae131*/
+      rc_ptr_base *v8 = v2; /*0x7ae133*/
       do /*0x7ae167*/
       {
-        v9 = *v7; /*0x7ae135*/
+        int v9 = *v7; /*0x7ae135*/
         if ( *v7 ) /*0x7ae135*/
         {
+  int v12; // eax
           do /*0x7ae161*/
           {
-            v10 = ((int (__thiscall *)(int))this->q018)(v9) & ((1 << this->q00C) - 1); /*0x7ae14b*/
-            v11 = *(_DWORD *)(*this + 4 * v10); /*0x7ae14f*/
+            int v10 = ((int (__thiscall *)(int))this->q018)(v9) & ((1 << this->q00C) - 1); /*0x7ae14b*/
+            int v11 = *(_DWORD *)(*this + 4 * v10); /*0x7ae14f*/
             *(_DWORD *)(*this + 4 * v10) = v9; /*0x7ae155*/
             v12 = *(_DWORD *)(v9 + 72); /*0x7ae157*/
             *(_DWORD *)(v9 + 72) = v11; /*0x7ae15a*/
@@ -278,46 +263,35 @@ void __thiscall sub_7AE0E0(_DWORD *this)
 void ComStreamClass::flushStream()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void __thiscall sub_7AEF50(_DWORD *this)
+void sub_7AEF50(_DWORD *this)
 {
-  unsigned int v2; // esi
-  int *v3; // ebp
-  int v4; // edi
-  void *v5; // edi
-  unsigned int v6; // edx
-  int *v7; // edi
-  unsigned int v8; // ebp
-  int v9; // esi
-  int v10; // edx
-  int v11; // ecx
-  int v12; // eax
-  int *v13; // [esp+8h] [ebp-4h]
 
-  v2 = this->q008; /*0x7aef55*/
+  unsigned int v2 = this->q008; /*0x7aef55*/
   if ( v2 > this->q030 && (unsigned char)this->ComStreamClass_field_0x14 != 1 ) /*0x7aef67*/
   {
-    v3 = (int *)*this; /*0x7aef70*/
-    v4 = this->q00C; /*0x7aef73*/
-    v13 = (int *)*this; /*0x7aef76*/
+    int * v3 = (int *)*this; /*0x7aef70*/
+    int v4 = this->q00C; /*0x7aef73*/
+    int * v13 = (int *)*this; /*0x7aef76*/
     this->q008 = v2 >> 1; /*0x7aef7c*/
     this->q00C = v4 - 1; /*0x7aef84*/
-    v5 = __2_YAPAXI_Z(4 * (v2 >> 1)); /*0x7aef8f*/
-    v6 = 4 * this->q008; /*0x7aef94*/
+    void * v5 = __2_YAPAXI_Z(4 * (v2 >> 1)); /*0x7aef8f*/
+    unsigned int v6 = 4 * this->q008; /*0x7aef94*/
     *this = v5; /*0x7aef9b*/
     memset(v5, 0, v6); /*0x7aefa0*/
     if ( (int)v2 > 0 ) /*0x7aefab*/
     {
-      v7 = v3; /*0x7aefad*/
-      v8 = v2; /*0x7aefaf*/
+      int * v7 = v3; /*0x7aefad*/
+      unsigned int v8 = v2; /*0x7aefaf*/
       do /*0x7aefe3*/
       {
-        v9 = *v7; /*0x7aefb1*/
+        int v9 = *v7; /*0x7aefb1*/
         if ( *v7 ) /*0x7aefb1*/
         {
+  int v12; // eax
           do /*0x7aefdd*/
           {
-            v10 = ((int (__thiscall *)(int))this->q018)(v9) & ((1 << this->q00C) - 1); /*0x7aefc7*/
-            v11 = *(_DWORD *)(*this + 4 * v10); /*0x7aefcb*/
+            int v10 = ((int (__thiscall *)(int))this->q018)(v9) & ((1 << this->q00C) - 1); /*0x7aefc7*/
+            int v11 = *(_DWORD *)(*this + 4 * v10); /*0x7aefcb*/
             *(_DWORD *)(*this + 4 * v10) = v9; /*0x7aefd1*/
             v12 = *(_DWORD *)(v9 + 72); /*0x7aefd3*/
             *(_DWORD *)(v9 + 72) = v11; /*0x7aefd6*/
@@ -342,14 +316,12 @@ unsigned int * ComStreamClass::seekToPosition()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_7B0220(int *this)
 {
-  _DWORD *v2; // eax
-  _DWORD *v3; // eax
-  _DWORD v5[2]; // [esp+4h] [ebp-10h] BYREF
-  _DWORD v6[2]; // [esp+Ch] [ebp-8h] BYREF
 
   ComPtr::Set(&stru_B77F58, this->q004); /*0x7b022f*/
-  v2 = Audio_Create_76BE90(v6, (int)this); /*0x7b023a*/
-  v3 = Audio_Create(v5, (const char **)&g_WebBrowser, (int)v2); /*0x7b0249*/
+  _DWORD v6[2]; // [esp+Ch] [ebp-8h] BYREF
+  _DWORD * v2 = Audio_Create_76BE90(v6, (int)this); /*0x7b023a*/
+  _DWORD v5[2]; // [esp+4h] [ebp-10h] BYREF
+  _DWORD * v3 = Audio_Create(v5, (const char **)&g_WebBrowser, (int)v2); /*0x7b0249*/
   ComPtr::Set(&stru_B77F68, v3[1]); /*0x7b0257*/
   v5[0] = &vt_rc_ptr_WorldDominationTour_Campaign; /*0x7b0260*/
   ComPtr::Release(v5); /*0x7b0268*/
@@ -364,14 +336,12 @@ unsigned int * ComStreamClass::getStreamSize()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 _DWORD *__thiscall sub_7B02A0(int *this)
 {
-  _DWORD *v2; // eax
-  _DWORD *v3; // eax
-  _DWORD v5[2]; // [esp+4h] [ebp-10h] BYREF
-  _DWORD v6[2]; // [esp+Ch] [ebp-8h] BYREF
 
   ComPtr::Set(&stru_B77F70, this->q004); /*0x7b02af*/
-  v2 = Audio_Create_76BE90(v6, (int)this); /*0x7b02ba*/
-  v3 = Audio_Create(v5, (const char **)&g_WebBrowser, (int)v2); /*0x7b02c9*/
+  _DWORD v6[2]; // [esp+Ch] [ebp-8h] BYREF
+  _DWORD * v2 = Audio_Create_76BE90(v6, (int)this); /*0x7b02ba*/
+  _DWORD v5[2]; // [esp+4h] [ebp-10h] BYREF
+  _DWORD * v3 = Audio_Create(v5, (const char **)&g_WebBrowser, (int)v2); /*0x7b02c9*/
   ComPtr::Set(&stru_B77F78, v3[1]); /*0x7b02d7*/
   v5[0] = &vt_rc_ptr_WorldDominationTour_Campaign; /*0x7b02e0*/
   ComPtr::Release(v5); /*0x7b02e8*/

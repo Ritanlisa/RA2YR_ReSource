@@ -61,15 +61,10 @@ void sub_72B130()
 // [IDA decompile] original pseudocode - translation pending (final goal)
 void sub_72B130()
 {
-  void *v0; // esi
-  void *v1; // esi
-  void *v2; // esi
-  void *v3; // esi
-  void *v4; // esi
 
   if ( DataGlobal_B0FC90 ) /*0x72b13b*/
   {
-    v0 = DataGlobal_B0FC80; /*0x72b13d*/
+    void * v0 = DataGlobal_B0FC80; /*0x72b13d*/
     if ( DataGlobal_B0FC80 ) /*0x72b145*/
     {
       FileTreeNode::Destroy(DataGlobal_B0FC80); /*0x72b149*/
@@ -80,7 +75,7 @@ void sub_72B130()
   DataGlobal_B0FC80 = 0; /*0x72b162*/
   if ( DataGlobal_B0FC91 ) /*0x72b16a*/
   {
-    v1 = DataGlobal_B0FC84; /*0x72b16c*/
+    void * v1 = DataGlobal_B0FC84; /*0x72b16c*/
     if ( DataGlobal_B0FC84 ) /*0x72b174*/
     {
       FileTreeNode::Destroy(DataGlobal_B0FC84); /*0x72b178*/
@@ -91,7 +86,7 @@ void sub_72B130()
   DataGlobal_B0FC84 = 0; /*0x72b191*/
   if ( DataGlobal_B0FC92 ) /*0x72b199*/
   {
-    v2 = DataGlobal_B0FC88; /*0x72b19b*/
+    void * v2 = DataGlobal_B0FC88; /*0x72b19b*/
     if ( DataGlobal_B0FC88 ) /*0x72b1a3*/
     {
       FileTreeNode::Destroy(DataGlobal_B0FC88); /*0x72b1a7*/
@@ -102,7 +97,7 @@ void sub_72B130()
   DataGlobal_B0FC88 = 0; /*0x72b1c0*/
   if ( DataGlobal_B0FC93 ) /*0x72b1c8*/
   {
-    v3 = DataGlobal_B0FC8C; /*0x72b1ca*/
+    void * v3 = DataGlobal_B0FC8C; /*0x72b1ca*/
     if ( DataGlobal_B0FC8C ) /*0x72b1d2*/
     {
       FileTreeNode::Destroy(DataGlobal_B0FC8C); /*0x72b1d6*/
@@ -113,7 +108,7 @@ void sub_72B130()
   DataGlobal_B0FC8C = 0; /*0x72b1ef*/
   if ( DataGlobal_B0FC94 ) /*0x72b1f7*/
   {
-    v4 = DataGlobal_B0FACC; /*0x72b1f9*/
+    void * v4 = DataGlobal_B0FACC; /*0x72b1f9*/
     if ( DataGlobal_B0FACC ) /*0x72b201*/
     {
       FileTreeNode::Destroy(DataGlobal_B0FACC); /*0x72b205*/
