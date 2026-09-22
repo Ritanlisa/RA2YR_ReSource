@@ -4,7 +4,7 @@
 #include "e4/classes/Debug_e4.hpp"
 
 // 0x5F1950
-void NullModemClass::COMStub()
+int NullModemClass::COMStub()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -13,7 +13,7 @@ void NullModemClass::COMStub()
 }
 
 // 0x5F1F00
-void NullModemClass::Flush(int a2)
+int NullModemClass::Flush(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -27,7 +27,7 @@ void NullModemClass::Flush(int a2)
 }
 
 // 0x5F3560
-void NullModemClass::Release(int a2, int a3, int a4, int a5)
+int NullModemClass::Release(int a2, int a3, int a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -57,7 +57,7 @@ int NullModemClass::ddtor(int a2, int a3, int a4)
 }
 
 // 0x5F35D0
-void NullModemClass::Receive()
+int NullModemClass::Receive()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -71,7 +71,7 @@ void NullModemClass::Receive()
 }
 
 // 0x5F35F0
-void NullModemClass::CheckStatus()
+int NullModemClass::CheckStatus()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -85,7 +85,7 @@ void NullModemClass::CheckStatus()
 }
 
 // 0x5F3610
-void NullModemClass::GetAddress(int a2)
+int NullModemClass::GetAddress(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -99,7 +99,7 @@ void NullModemClass::GetAddress(int a2)
 }
 
 // 0x5F3630
-void NullModemClass::SetAddress(int a2)
+int NullModemClass::SetAddress(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -152,7 +152,7 @@ LABEL_10:
 }
 
 // 0x774670
-void NullModemClass::sendData()
+int NullModemClass::sendData()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -213,7 +213,7 @@ void NullModemClass::sendData()
 }
 
 // 0x7747C0
-void NullModemClass::receiveData()
+int NullModemClass::receiveData()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -253,7 +253,7 @@ void NullModemClass::receiveData()
 }
 
 // 0x7754C0
-void NullModemClass::GetMember23()
+int NullModemClass::GetMember23()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

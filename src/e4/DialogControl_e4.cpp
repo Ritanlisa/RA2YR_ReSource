@@ -3,7 +3,7 @@
 #include "e4/e4_globals.hpp"
 
 // 0x4E1450
-void DialogControl::Hide()
+int DialogControl::Hide()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -16,7 +16,7 @@ void DialogControl::Hide()
 }
 
 // 0x4E1460
-void DialogControl::Show()
+int DialogControl::Show()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -27,7 +27,7 @@ void DialogControl::Show()
 }
 
 // 0x4E1470
-void DialogControl::IsHidden()
+int DialogControl::IsHidden()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

@@ -6,7 +6,7 @@
 #include "e4/classes/AudioStream_e4.hpp"
 
 // 0x4080C0
-void ThemeClass::RequestBuffer()
+int ThemeClass::RequestBuffer()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -24,7 +24,7 @@ long long ThemeClass::GetValue()
 }
 
 // 0x720480
-void ThemeClass::ReadThemeEntry(unsigned char *** a2)
+int ThemeClass::ReadThemeEntry(unsigned char *** a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

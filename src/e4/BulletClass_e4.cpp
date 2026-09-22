@@ -63,7 +63,7 @@ B BulletClass::BulletClass()
 
 // 0x466560
 namespace gamemd {
-void BulletClass::Dtor()
+int BulletClass::Dtor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

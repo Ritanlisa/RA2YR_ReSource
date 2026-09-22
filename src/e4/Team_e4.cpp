@@ -118,7 +118,7 @@ LABEL_13:
 
 // 0x5D26C0
 namespace gamemd {
-void Team::ReleaseAll(ObjectClass * aP1)
+int Team::ReleaseAll(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -410,7 +410,7 @@ LABEL_9:
 
 // 0x65AD30
 namespace gamemd {
-void Team::GetMember(AbstractClass * aP1)
+int Team::GetMember(AbstractClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -421,7 +421,7 @@ void Team::GetMember(AbstractClass * aP1)
 
 // 0x65AE30
 namespace gamemd {
-void Team::AllMembersValid()
+int Team::AllMembersValid()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

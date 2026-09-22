@@ -25,20 +25,20 @@ CCFileClass::CCFileClass(const char* pFileName) noexcept
 // Searches MIX pool first, then falls back to disk
 REVERSE(0x473c50, "CCFileClass::Open: IDA verified", "None")
 // 0x473c50
-void CCFileClass::Open(const char* pFileName)
+int CCFileClass::Open(const char* pFileName)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   if ( this->q068 == 1 )
     return 1;
-  if ( (*(unsigned __int8 (__thiscall **)(_DWORD *))(*this + 24))(this) )
+  if ( this->Destru_vt06() )
   {
     this->q068 = 1;
     return 1;
   }
   else
   {
-    (*(void (__thiscall **)(_DWORD *))(*this + 4))(this);
+    this->GetMember06();
     if ( (unsigned __int8)LookupFileInfoCache(0, 0, 0) )
     {
       this->q068 = 1;
@@ -140,7 +140,7 @@ void* CCFileClass::ReadEntireFile()
 REVERSE(0x473ce0, "CCFileClass::Reset: IDA verified", "None")
 // IDA 0x473CE0 -- CCFileClass::Reset
 // 0x473ce0
-void CCFileClass::Reset()
+int CCFileClass::Reset()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

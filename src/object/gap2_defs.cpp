@@ -9855,7 +9855,7 @@ LABEL_61:
         if ( (*(unsigned __int8 (__thiscall **)(int *))(*this + 508))(this) ) /*0x707a3d*/
         {
           (*(void (__thiscall **)(int *))(*this + 504))(this); /*0x707a4b*/
-          if ( (*(int (__thiscall **)(int *))(*this + 44))(this) == 2 && this->q02B == 25 ) /*0x707a64*/
+          if ( this->getAltitude() == 2 && this->q02B == 25 ) /*0x707a64*/
           {
             this->q0BC = 0; /*0x707a66*/
             *((_BYTE *)this + 1746) = 0; /*0x707a6c*/
@@ -9883,8 +9883,8 @@ LABEL_65:
     this->q21C = 0; /*0x707a8e*/
     *((_BYTE *)this + 1050) = 0; /*0x707a94*/
   }
-  if ( (*(unsigned __int8 (__thiscall **)(int *))(*this + 196))(this) /*0x707ab6*/
-    && (IUnknown *)(*(int (__thiscall **)(int *, int))(*this + 208))(this, 1) == aP1 )
+  if ( this->COMStub_Return0_49() /*0x707ab6*/
+    && (IUnknown *)this->StubReturnFalse2(1) == aP1 )
   {
     (*(void (__thiscall **)(int *))(*this + 1136))(this); /*0x707abc*/
   }
@@ -11673,10 +11673,10 @@ namespace ra2 { namespace game { int TechnoClass::Draw(void* a1, void* a2) {
     v6 = (AbstractClass *)((char *)v6 + 14); /*0x73cf16*/
     v41 = v6; /*0x73cf19*/
   }
-  int * v8 = (int *)(*(int (__thiscall **)(int *, Tactical ***))(*this + 440))(this, &aP10); /*0x73cf26*/
+  int * v8 = (int *)this->GetCellCoords_Alt(&aP10); /*0x73cf26*/
   int v9 = *this; /*0x73cf2e*/
   v38 = *v8; /*0x73cf30*/
-  int v10 = (*(int (__thiscall **)(int *, _DWORD, _DWORD))(v9 + 104))(this, 0, 0); /*0x73cf3a*/
+  int v10 = this->UpdatePowerDrain_0(0, 0); /*0x73cf3a*/
   if ( v10 == 5 ) /*0x73cf40*/
     return v10; /*0x73cf40*/
   LOBYTE(v10) = *((_BYTE *)this + 1761); /*0x73cf46*/
@@ -11690,7 +11690,7 @@ namespace ra2 { namespace game { int TechnoClass::Draw(void* a1, void* a2) {
     (AbstractClass *)this,
     (AbstractClass *)v4,
     (MouseClass *)v6);
-  ebx8 = (*(int (__thiscall **)(int *))(*this + 456))(this); /*0x73cf80*/
+  ebx8 = this->GetZAboveGround(); /*0x73cf80*/
   v45[0] = this->q027; /*0x73cf84*/
   v45[1] = this->owningHouseIndex; /*0x73cf90*/
   v45[2] = this->q029; /*0x73cf97*/
@@ -11705,7 +11705,7 @@ namespace ra2 { namespace game { int TechnoClass::Draw(void* a1, void* a2) {
 LABEL_25:
     v16 = 0; /*0x73d078*/
     if ( (*((_DWORD *)CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&v38) + 80) & 0x10000) != 0 /*0x73d099*/
-      && !(*(unsigned __int8 (__thiscall **)(int *))(*this + 84))(this) )
+      && !this->IsHeightAboveThreshold() )
     {
       v16 = -500; /*0x73d0a0*/
     }
@@ -11748,7 +11748,7 @@ LABEL_29:
   if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)this->q674 + 128))(this->q674) ) /*0x73d114*/
   {
     v19 = (unsigned int)((*ProgressTimer::GetValue((_WORD *)this + 452, (IUnknown *)&v39) >> 12) + 1) >> 1 << 13; /*0x73d145*/
-    v20 = (int *)(*(int (__thiscall **)(int *, int *))(*this + 172))(this, v46); /*0x73d157*/
+    v20 = (int *)this->GetCoordsThunk2(v46); /*0x73d157*/
     LODWORD(v39) = (__int16)v19 - 0x3FFF; /*0x73d159*/
     v21 = v20[2]; /*0x73d161*/
     a1 = (double)SLODWORD(v39) * -0.00009587672516830327; /*0x73d16a*/
@@ -11762,8 +11762,8 @@ LABEL_29:
     Coord::To_Screen(*(_DWORD **)&stru_87C374[44976], &a1, (IUnknown *)v45); /*0x73d1d6*/
     v24 = 7 - (((unsigned int)((*ProgressTimer::GetValue((_WORD *)this + 452, (IUnknown *)&v39) >> 12) + 1) >> 1) & 7); /*0x73d1fd*/
     if ( this->temporalTargetingMe /*0x73d219*/
-      || (*(unsigned __int8 (__thiscall **)(int *))(*this + 468))(this)
-      || (*(unsigned __int8 (__thiscall **)(int *))(*this + 472))(this) )
+      || this->GetShroudByte()
+      || this->GetFogByte() )
     {
       ebx37 = aP5; /*0x73d28e*/
       ebp29 = aP10; /*0x73d292*/
@@ -11771,7 +11771,7 @@ LABEL_29:
     else
     {
       v37 = (ConvertClass *)aP10; /*0x73d232*/
-      v25 = (*(int (__thiscall **)(int *))(*this + 748))(this); /*0x73d236*/
+      v25 = this->GetDrawHeight(); /*0x73d236*/
       ebx37 = aP5; /*0x73d23c*/
       DrawToSurfaceSHP( /*0x73d283*/
         *(int *)&stru_87C374[44960],
@@ -11810,8 +11810,8 @@ LABEL_39:
     }
   }
   v28 = (AbstractClass *)this->q1B1; /*0x73d2d1*/
-  if ( !(*(unsigned __int8 (__thiscall **)(int *, int))(*this + 1088))(this, HouseClass_Player.field_0) ) /*0x73d2da*/
-    v28 = (AbstractClass *)(*(int (__thiscall **)(int *, int))(*this + 204))(this, 1); /*0x73d2f0*/
+  if ( !this->CheckFireCooldown(HouseClass_Player.field_0) ) /*0x73d2da*/
+    v28 = (AbstractClass *)this->LandingCheckStub(1); /*0x73d2f0*/
   if ( this->q6E0 && *(_DWORD *)(this->q1B1 + 1720) ) /*0x73d302*/
     v28 = *(AbstractClass **)(this->q1B1 + 1720); /*0x73d30c*/
   if ( this->q684 == 0xFF ) /*0x73d315*/

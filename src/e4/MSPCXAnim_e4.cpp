@@ -5,7 +5,7 @@
 #include "e4/classes/MSPCXAnim_42_e4.hpp"
 
 // 0x5CEAB0
-void MSPCXAnim::Stub()
+int MSPCXAnim::Stub()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -15,7 +15,7 @@ void MSPCXAnim::Stub()
 
 // 0x5D09C0
 namespace gamemd {
-void MSPCXAnim_42::AllocCopyData_8B(int a2, unsigned int * a3)
+int MSPCXAnim_42::AllocCopyData_8B(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

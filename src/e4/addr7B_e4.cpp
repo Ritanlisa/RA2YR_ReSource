@@ -536,7 +536,7 @@ void unknown_libname_73()
 
 // 0x7B60E0
 namespace gamemd {
-void E4Recv_7B60E0::sub_7B60E0(signed int a2, void ** a3)
+int E4Recv_7B60E0::sub_7B60E0(signed int a2, void ** a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -733,7 +733,7 @@ void unknown_libname_74()
 
 // 0x7B7C00
 namespace gamemd {
-void E4Recv_7B7C00::sub_7B7C00(int a2, void ** a3)
+int E4Recv_7B7C00::sub_7B7C00(int a2, void ** a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -818,7 +818,7 @@ void E4Recv_7B7C00::sub_7B7C00(int a2, void ** a3)
 
 // 0x7B9530
 namespace gamemd {
-void E4Recv_7B9530::sub_7B9530()
+int E4Recv_7B9530::sub_7B9530()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1331,7 +1331,7 @@ int sub_7BD470(int a1)
 
 // 0x7BEFE0
 namespace gamemd {
-void E4Recv_7BEFE0::sub_7BEFE0()
+int E4Recv_7BEFE0::sub_7BEFE0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

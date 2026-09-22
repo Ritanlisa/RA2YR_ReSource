@@ -51,7 +51,7 @@ unsigned int * WWMouseClass::initSurface()
 }
 
 // 0x7B9930
-void WWMouseClass::hideCursor()
+int WWMouseClass::hideCursor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -60,7 +60,7 @@ void WWMouseClass::hideCursor()
     Debug::Log(); /*0x7b9960*/
   if ( !this->q00C ) /*0x7b9968*/
   {
-    if ( (*(unsigned __int8 (__thiscall **)(_DWORD *))(*this + 28))(this) ) /*0x7b9977*/
+    if ( this->checkCapture() ) /*0x7b9977*/
     {
       if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b9994*/
         Debug::Log(); /*0x7b99a5*/
@@ -116,14 +116,14 @@ void WWMouseClass::captureMouse()
 {
   int *FoundationSize; // eax
   IUnknown *v14; // eax
-  if ( this && !(*(unsigned __int8 (__thiscall **)(int *))(*this + 28))(this) ) /*0x7b9a70*/
+  if ( this && !this->checkCapture() ) /*0x7b9a70*/
   {
     Debug::Log(); /*0x7b9a82*/
     if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b9aa3*/
       Debug::Log(); /*0x7b9ab4*/
     int v2 = *this; /*0x7b9abc*/
     this->q010 = 1; /*0x7b9ac0*/
-    if ( !(*(unsigned __int8 (__thiscall **)(int *))(v2 + 8))(this) ) /*0x7b9ac4*/
+    if ( !this->drawCursor() ) /*0x7b9ac4*/
     {
       if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b9ae7*/
         Debug::Log(); /*0x7b9af8*/
@@ -245,7 +245,7 @@ void WWMouseClass::releaseMouse()
 }
 
 // 0x7BA340
-void WWMouseClass::checkRegion()
+int WWMouseClass::checkRegion()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

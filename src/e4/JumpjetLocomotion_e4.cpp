@@ -10,7 +10,7 @@
 
 // 0x4B0AD0
 namespace gamemd {
-void JumpjetLocomotion::MoveTo(IUnknown * aP1, int aP3)
+int JumpjetLocomotion::MoveTo(IUnknown * aP1, int aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -101,7 +101,7 @@ void JumpjetLocomotion::MoveTo(IUnknown * aP1, int aP3)
 
 // 0x4B0F20
 namespace gamemd {
-void JumpjetLocomotion::ProcessCollision(char a2)
+int JumpjetLocomotion::ProcessCollision(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1066,7 +1066,7 @@ LABEL_197:
 
 // 0x4B2630
 namespace gamemd {
-void JumpjetLocomotion::Update(unsigned char * a2, int a3, int a4)
+int JumpjetLocomotion::Update(unsigned char * a2, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2483,7 +2483,7 @@ unsigned int * JumpjetLocomotion::TransformCoords(IUnknown * aP1, IUnknown * aP2
 
 // 0x54CA90
 namespace gamemd {
-void JumpjetLocomotion::Land()
+int JumpjetLocomotion::Land()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2765,7 +2765,7 @@ LABEL_74:
 
 // 0x54D0F0
 namespace gamemd {
-void JumpjetLocomotion::UpdateFacing()
+int JumpjetLocomotion::UpdateFacing()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

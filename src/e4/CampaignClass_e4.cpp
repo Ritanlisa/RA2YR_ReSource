@@ -38,7 +38,7 @@ C CampaignClass::CampaignClass(ObjectClass * aP1)
 
 // 0x46CE10
 namespace gamemd {
-void CampaignClass::LoadFromINIList()
+int CampaignClass::LoadFromINIList()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -114,7 +114,7 @@ LABEL_7:
 
 // 0x49C5A0
 namespace gamemd {
-void CampaignClass::SaveProgress()
+int CampaignClass::SaveProgress()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

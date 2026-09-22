@@ -245,7 +245,7 @@ LABEL_60:
 }
 
 // 0x7C1730
-void Buffer::AllocateCodecFrameBuffers()
+int Buffer::AllocateCodecFrameBuffers()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

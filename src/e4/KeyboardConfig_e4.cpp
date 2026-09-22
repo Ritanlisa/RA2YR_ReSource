@@ -5,7 +5,7 @@
 #include "e4/classes/Vector_e4.hpp"
 
 // 0x533D20
-void KeyboardConfig::LoadINI()
+int KeyboardConfig::LoadINI()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -87,7 +87,7 @@ LABEL_14:
 }
 
 // 0x538B80
-void KeyboardConfig::ReleaseBuffer(int a2)
+int KeyboardConfig::ReleaseBuffer(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

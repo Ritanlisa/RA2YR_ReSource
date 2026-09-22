@@ -6,7 +6,7 @@
 #include "e4/classes/AudioStream_e4.hpp"
 
 // 0x406650
-void AudioMixer::SetVolume()
+int AudioMixer::SetVolume()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -20,7 +20,7 @@ void AudioMixer::SetVolume()
 }
 
 // 0x4071C0
-void AudioMixer::PlaySample()
+int AudioMixer::PlaySample()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

@@ -31,7 +31,7 @@
 
 // 0x4880F0
 namespace gamemd {
-void E4Recv_4880F0::sub_4880F0(int a2)
+int E4Recv_4880F0::sub_4880F0(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

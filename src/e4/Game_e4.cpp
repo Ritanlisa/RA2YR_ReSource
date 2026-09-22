@@ -137,7 +137,7 @@ int Game::SendCampaignOptions()
 
 // 0x534450
 namespace gamemd {
-void Game::DestroyAllObjects()
+int Game::DestroyAllObjects()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -357,7 +357,7 @@ void Game::DestroyAllObjects()
 
 // 0x537BC0
 namespace gamemd {
-void Game::MakeScreenshot(int a1)
+int Game::MakeScreenshot(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -440,7 +440,7 @@ void Game::MakeScreenshot(int a1)
 
 // 0x5B7090
 namespace gamemd {
-void Game::StartModemMultiplayer(char a2)
+int Game::StartModemMultiplayer(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -546,7 +546,7 @@ LABEL_31:
 
 // 0x5BA660
 namespace gamemd {
-void Game::BuildGameSetupPacket()
+int Game::BuildGameSetupPacket()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -617,7 +617,7 @@ void Game::BuildGameSetupPacket()
 
 // 0x5CA110
 namespace gamemd {
-void Game::GetMultiplayerScoreScreenBar()
+int Game::GetMultiplayerScoreScreenBar()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -944,7 +944,7 @@ unsigned int * Game::LockMutex(IUnknown * aP1, IUnknown * aP2)
 
 // 0x67E440
 namespace gamemd {
-void Game::LoadSaved()
+int Game::LoadSaved()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1051,7 +1051,7 @@ LABEL_6:
 
 // 0x67F9C0
 namespace gamemd {
-void Game::SerializeGameSaveState()
+int Game::SerializeGameSaveState()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1248,7 +1248,7 @@ LABEL_39:
 
 // 0x680F70
 namespace gamemd {
-void Game::validateScenario(unsigned int * a2)
+int Game::validateScenario(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1532,7 +1532,7 @@ LABEL_16:
 
 // 0x77F900
 namespace gamemd {
-void Game::ProcessIdle()
+int Game::ProcessIdle()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1886,7 +1886,7 @@ void Game_Setup(CCINIClass * aP0, CCINIClass * aP1, char * Buffera, char * a3)
 
 // 0x7A2330
 namespace gamemd {
-void Game::SetupWOLTournament()
+int Game::SetupWOLTournament()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

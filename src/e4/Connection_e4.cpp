@@ -5,7 +5,7 @@
 
 // 0x5422F0
 namespace gamemd {
-void Connection::GetSpeed()
+int Connection::GetSpeed()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -19,7 +19,7 @@ void Connection::GetSpeed()
 
 // 0x543090
 namespace gamemd {
-void Connection::Close()
+int Connection::Close()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

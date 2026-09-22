@@ -466,10 +466,9 @@ void ValidateNetworkLobbyHostMap()
 
 // 0x5E3AB0
 namespace gamemd {
-void SendMultiplayerStartSignal()
+int SendMultiplayerStartSignal()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void SendMultiplayerStartSignal()
 {
   int started; // esi
   HWND v1; // eax
@@ -2556,7 +2555,7 @@ LABEL_20:
 
 // 0x5E7160
 namespace gamemd {
-void E4Recv_5E7160::HandleMultiplayerMapSelection()
+int E4Recv_5E7160::HandleMultiplayerMapSelection()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -4215,10 +4214,9 @@ void PlayerSkirmishSlotHandler()
 
 // 0x5ED270
 namespace gamemd {
-void sub_5ED270(SkirmishDialog * hDlg, int nIDDlgItem, LPARAM a3)
+char sub_5ED270(SkirmishDialog * hDlg, int nIDDlgItem, LPARAM a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-char __fastcall sub_5ED270(SkirmishDialog *hDlg, int nIDDlgItem, LPARAM a3)
 {
   CCINIClass *v5; // edx
   WPARAM v6; // ebx

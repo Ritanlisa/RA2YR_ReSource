@@ -6,7 +6,7 @@
 
 // 0x4138C0
 namespace gamemd {
-void Coord::ToGridIndex(VectorClass * aP1, VectorClass * aP2, VectorClass * aP3)
+int Coord::ToGridIndex(VectorClass * aP1, VectorClass * aP2, VectorClass * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -116,7 +116,7 @@ void * Coord::Subtract(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3)
 
 // 0x41C380
 namespace gamemd {
-void Coord::Length()
+int Coord::Length()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -190,7 +190,7 @@ void * Coord::To_Cell(IUnknown * aP1)
 
 // 0x5AC370
 namespace gamemd {
-void Coord::Compare2D(unsigned short * a2)
+int Coord::Compare2D(unsigned short * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -232,7 +232,7 @@ void * Coord::WorldToScreen(MouseClass * aP1, MouseClass * aP2, char a4)
 
 // 0x6D2140
 namespace gamemd {
-void Coord::To_Screen(unsigned int * a1, IUnknown * aP2)
+int Coord::To_Screen(unsigned int * a1, IUnknown * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

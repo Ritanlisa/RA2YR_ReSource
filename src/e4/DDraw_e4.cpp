@@ -4,7 +4,7 @@
 #include "e4/classes/Debug_e4.hpp"
 
 // 0x4A3370
-void DDraw::ReleaseSurfaces()
+int DDraw::ReleaseSurfaces()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -108,7 +108,7 @@ LABEL_7:
 }
 
 // 0x4A4830
-void DDraw::WaitForIdle()
+int DDraw::WaitForIdle()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -122,7 +122,7 @@ void DDraw::WaitForIdle()
 }
 
 // 0x4C19B0
-void DDraw::CleanupSurfaces()
+int DDraw::CleanupSurfaces()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -182,7 +182,7 @@ void DDraw::CleanupSurfaces()
 }
 
 // 0x5D2530
-void DDraw::HandleSuspend()
+int DDraw::HandleSuspend()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

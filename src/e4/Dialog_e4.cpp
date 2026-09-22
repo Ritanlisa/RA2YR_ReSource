@@ -26,7 +26,7 @@ void Dialog::MapDialogResource()
 
 // 0x5B5BC0
 namespace gamemd {
-void Dialog::InitializeGameSettings()
+int Dialog::InitializeGameSettings()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -112,7 +112,7 @@ void Dialog::InitializeGameSettings()
 
 // 0x5D3490
 namespace gamemd {
-void Dialog::ShowMessageBox(int lParam, unsigned short * a2, Movie * aP2, IUnknown * aP3, IUnknown * aP4, int a6)
+int Dialog::ShowMessageBox(int lParam, unsigned short * a2, Movie * aP2, IUnknown * aP3, IUnknown * aP4, int a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -209,7 +209,7 @@ void Dialog::ShowMessageBox(int lParam, unsigned short * a2, Movie * aP2, IUnkno
 
 // 0x5D5DC0
 namespace gamemd {
-void Dialog::GetModeNeg2()
+int Dialog::GetModeNeg2()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -220,7 +220,7 @@ void Dialog::GetModeNeg2()
 
 // 0x5D5DD0
 namespace gamemd {
-void Dialog::GetMode3()
+int Dialog::GetMode3()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -231,7 +231,7 @@ void Dialog::GetMode3()
 
 // 0x5EE350
 namespace gamemd {
-void Dialog::RefreshDialogsGame()
+int Dialog::RefreshDialogsGame()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -257,7 +257,7 @@ void Dialog::RefreshDialogsGame()
 
 // 0x5F2950
 namespace gamemd {
-void Dialog::RunModemDialing(ObjectClass * aP1, int a3, char a4)
+int Dialog::RunModemDialing(ObjectClass * aP1, int a3, char a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -398,7 +398,7 @@ LABEL_36:
 
 // 0x606800
 namespace gamemd {
-void Dialog::MapControlToAction(HWND hWnd, LPARAM a2)
+int Dialog::MapControlToAction(HWND hWnd, LPARAM a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -682,7 +682,7 @@ LABEL_208:
 
 // 0x607FD0
 namespace gamemd {
-void Dialog::StopBink()
+int Dialog::StopBink()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -724,7 +724,7 @@ void Dialog::StopBink()
 
 // 0x608070
 namespace gamemd {
-void Dialog::IdleProcess()
+int Dialog::IdleProcess()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -804,7 +804,7 @@ LABEL_31:
 
 // 0x60A330
 namespace gamemd {
-void Dialog::HandleTabKey(HWND hWnd, LPARAM a2)
+int Dialog::HandleTabKey(HWND hWnd, LPARAM a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -917,7 +917,7 @@ LABEL_33:
 
 // 0x60A5B0
 namespace gamemd {
-void Dialog::DispatchEvent(HWND hWnd, LPARAM a2)
+int Dialog::DispatchEvent(HWND hWnd, LPARAM a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1130,7 +1130,7 @@ LABEL_74:
 
 // 0x60F760
 namespace gamemd {
-void Dialog::InitWindow(SkirmishDialog * aP0, LPARAM a2)
+int Dialog::InitWindow(SkirmishDialog * aP0, LPARAM a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1225,7 +1225,7 @@ LABEL_22:
 
 // 0x60F9A0
 namespace gamemd {
-void Dialog::InitializeControls(HWND hWnd, LPARAM a2)
+int Dialog::InitializeControls(HWND hWnd, LPARAM a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1524,7 +1524,7 @@ LABEL_71:
 
 // 0x610360
 namespace gamemd {
-void Dialog::DestroyDialogSystem()
+int Dialog::DestroyDialogSystem()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1998,7 +1998,7 @@ LABEL_43:
 
 // 0x6213A0
 namespace gamemd {
-void Dialog::Resize()
+int Dialog::Resize()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2337,7 +2337,7 @@ LABEL_72:
 
 // 0x622720
 namespace gamemd {
-void Dialog::Destroy()
+int Dialog::Destroy()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2432,7 +2432,7 @@ LABEL_12:
 
 // 0x624930
 namespace gamemd {
-void Dialog::UpdateControlState(unsigned int * a2, unsigned int * a3)
+int Dialog::UpdateControlState(unsigned int * a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2508,7 +2508,7 @@ void Dialog::GrowBuffer()
 
 // 0x624CA0
 namespace gamemd {
-void Dialog::BindGadgetData(IUnknown * aP1, IUnknown * aP2)
+int Dialog::BindGadgetData(IUnknown * aP1, IUnknown * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2707,7 +2707,7 @@ LABEL_41:
 
 // 0x671EA0
 namespace gamemd {
-void Dialog::ReadMultiplayerDialogSettings()
+int Dialog::ReadMultiplayerDialogSettings()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2794,7 +2794,7 @@ void Dialog::ReadMultiplayerDialogSettings()
 
 // 0x775940
 namespace gamemd {
-void Dialog::FindByHandle()
+int Dialog::FindByHandle()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2815,7 +2815,7 @@ void Dialog::FindByHandle()
 
 // 0x775B10
 namespace gamemd {
-void Dialog::GetCurrent()
+int Dialog::GetCurrent()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2826,7 +2826,7 @@ void Dialog::GetCurrent()
 
 // 0x775B20
 namespace gamemd {
-void Dialog::GetCurrentType()
+int Dialog::GetCurrentType()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

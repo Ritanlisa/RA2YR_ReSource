@@ -8,7 +8,7 @@
 #include "e4/classes/Tactical_e4.hpp"
 
 // 0x4FB840
-void BuildingPlacement::Activate(int a2, unsigned int * a3)
+int BuildingPlacement::Activate(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -44,7 +44,7 @@ void BuildingPlacement::Activate(int a2, unsigned int * a3)
 }
 
 // 0x54C550
-void BuildingPlacement::ProcessBuildingPlacementAction()
+int BuildingPlacement::ProcessBuildingPlacementAction()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

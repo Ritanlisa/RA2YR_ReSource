@@ -4,7 +4,7 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 
 // 0x410800
-void AbstractTypeClass::Constructor(AbstractClass * aP1)
+int AbstractTypeClass::Constructor(AbstractClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -77,7 +77,7 @@ LABEL_9:
 }
 
 // 0x4109C0
-void AbstractTypeClass::Dtor()
+int AbstractTypeClass::Dtor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -102,7 +102,7 @@ void AbstractTypeClass::Dtor()
 }
 
 // 0x410A60
-void AbstractTypeClass::LoadFromINI(AbstractTypeClass * aP1)
+int AbstractTypeClass::LoadFromINI(AbstractTypeClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

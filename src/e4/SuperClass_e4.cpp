@@ -53,7 +53,7 @@ void * SuperClass::LaunchPsychicDominator(int a2)
 
 // 0x6CAEC0
 namespace gamemd {
-void SuperClass::Constructor()
+int SuperClass::Constructor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -100,7 +100,7 @@ void SuperClass::Constructor()
 
 // 0x6CAF90
 namespace gamemd {
-void SuperClass::Construct(int a2, CCINIClass * aP2)
+int SuperClass::Construct(int a2, CCINIClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -250,7 +250,7 @@ void SuperClass::CleanupMembers()
 
 // 0x6CB560
 namespace gamemd {
-void SuperClass::StartTimer(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3)
+int SuperClass::StartTimer(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -393,7 +393,7 @@ LABEL_45:
 
 // 0x6CB7B0
 namespace gamemd {
-void SuperClass::Lose()
+int SuperClass::Lose()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -421,7 +421,7 @@ void SuperClass::Lose()
 
 // 0x6CB830
 namespace gamemd {
-void SuperClass::StopPreclickAnim(IUnknown * aP1)
+int SuperClass::StopPreclickAnim(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -475,7 +475,7 @@ void SuperClass::StopPreclickAnim(IUnknown * aP1)
 
 // 0x6CB920
 namespace gamemd {
-void SuperClass::ClickFire(int a2, short * a3)
+int SuperClass::ClickFire(int a2, short * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -663,7 +663,7 @@ LABEL_11:
 
 // 0x6CC080
 namespace gamemd {
-void SuperClass::AnnounceReady(DynamicVector * aP1)
+int SuperClass::AnnounceReady(DynamicVector * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -737,7 +737,7 @@ void SuperClass::AnnounceReady(DynamicVector * aP1)
 
 // 0x6CC1E0
 namespace gamemd {
-void SuperClass::SetCharge(int a2)
+int SuperClass::SetCharge(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

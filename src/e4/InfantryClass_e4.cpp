@@ -7,7 +7,7 @@
 
 // 0x4D4DC0
 namespace gamemd {
-void InfantryClass::ScanTarget(int * a1)
+int InfantryClass::ScanTarget(int * a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -78,7 +78,7 @@ void InfantryClass::ScanTarget(int * a1)
 
 // 0x4D5350
 namespace gamemd {
-void InfantryClass::ProcessDeploy(void ** a1)
+int InfantryClass::ProcessDeploy(void ** a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -160,7 +160,7 @@ LABEL_25:
 
 // 0x517D90
 namespace gamemd {
-void InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
+int InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

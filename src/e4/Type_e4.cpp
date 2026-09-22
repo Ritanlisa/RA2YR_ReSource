@@ -3,7 +3,7 @@
 #include "e4/e4_globals.hpp"
 
 // 0x578540
-void Type::CheckAmbiguity(int a2, char a3)
+int Type::CheckAmbiguity(int a2, char a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

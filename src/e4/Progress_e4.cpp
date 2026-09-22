@@ -3,7 +3,7 @@
 #include "e4/e4_globals.hpp"
 
 // 0x6433D0
-void Progress::GetAverage()
+int Progress::GetAverage()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -25,7 +25,7 @@ void Progress::GetAverage()
 }
 
 // 0x643E90
-void Progress::GetWeighted(int a2)
+int Progress::GetWeighted(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

@@ -73,7 +73,7 @@ void SmudgeTypeClass::vt_entry_A0(int * a2, int * a3, int a4, int a5, short * a6
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
-  int v7 = (*(int (__thiscall **)(_DWORD *))(*this + 156))(this); /*0x6b55ff*/
+  int v7 = this->GetMember41_2(); /*0x6b55ff*/
   if ( v7 ) /*0x6b5603*/
   {
     int v8 = a2[1]; /*0x6b5614*/
@@ -94,7 +94,7 @@ void SmudgeTypeClass::vt_entry_A0(int * a2, int * a3, int a4, int a5, short * a6
 }
 
 // 0x6B56D0
-void SmudgeTypeClass::GetSize(unsigned char *** aP1)
+int SmudgeTypeClass::GetSize(unsigned char *** aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

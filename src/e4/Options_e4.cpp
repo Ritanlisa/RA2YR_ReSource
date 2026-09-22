@@ -12,7 +12,7 @@
 
 // 0x4F11B0
 namespace gamemd {
-void Options::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4)
+int Options::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -248,7 +248,7 @@ LABEL_39:
 
 // 0x558840
 namespace gamemd {
-void Options::PrepareSaveLoadDlg()
+int Options::PrepareSaveLoadDlg()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -404,7 +404,7 @@ char Options::Screen_Dialog()
 
 // 0x6244E0
 namespace gamemd {
-void Options::DeleteAndZero()
+int Options::DeleteAndZero()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -437,7 +437,7 @@ void Options::DeleteAndZero()
 
 // 0x6248A0
 namespace gamemd {
-void Options::EnsureCapacity()
+int Options::EnsureCapacity()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -466,7 +466,7 @@ void Options::EnsureCapacity()
 
 // 0x6253B0
 namespace gamemd {
-void Options::GrowBuffer()
+int Options::GrowBuffer()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -498,7 +498,7 @@ void Options::GrowBuffer()
 
 // 0x6254D0
 namespace gamemd {
-void Options::ReadOptionValue()
+int Options::ReadOptionValue()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -667,7 +667,7 @@ void * Options::RebuildDropdownList(ObjectClass * aP1)
 
 // 0x625A20
 namespace gamemd {
-void Options::SaveOptionValue()
+int Options::SaveOptionValue()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

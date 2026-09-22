@@ -980,7 +980,7 @@ LABEL_59:
 
 // 0x404BB0
 namespace gamemd {
-void E4Recv_404BB0::sub_404BB0()
+int E4Recv_404BB0::sub_404BB0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1100,7 +1100,7 @@ LABEL_30:
 
 // 0x405AC0
 namespace gamemd {
-void E4Recv_405AC0::sub_405AC0()
+int E4Recv_405AC0::sub_405AC0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1236,7 +1236,7 @@ void * E4Recv_406760::sub_406760(void (__thiscall *this)(char *) a1)
 
 // 0x406B10
 namespace gamemd {
-void E4Recv_406B10::InitializeAudioSubsystem()
+int E4Recv_406B10::InitializeAudioSubsystem()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1757,7 +1757,7 @@ void sub_408610(int a1, unsigned int * a2, size_t * a3)
 
 // 0x408970
 namespace gamemd {
-void E4Recv_408970::sub_408970()
+int E4Recv_408970::sub_408970()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2024,7 +2024,7 @@ LABEL_11:
 
 // 0x409100
 namespace gamemd {
-void E4Recv_409100::sub_409100()
+int E4Recv_409100::sub_409100()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2530,7 +2530,7 @@ LABEL_47:
 
 // 0x40A090
 namespace gamemd {
-void E4Recv_40A090::sub_40A090()
+int E4Recv_40A090::sub_40A090()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

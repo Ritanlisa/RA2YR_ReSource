@@ -180,7 +180,7 @@ bool LoadOptions::DeleteSaveFile(const char* filename) {
 
 // IDA 0x5587F0: Run — launch save/load dialog
 // 0x5587f0
-void LoadOptions::Run() {
+int LoadOptions::Run() {
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -365,7 +365,7 @@ bool LoadOptions::ReadEntry(FileEntryClass* dest, int a2) {
 
 // IDA 0x55A1F0: CopyItems — resize vector, preserve existing entries
 // 0x55a1f0
-void LoadOptions::CopyItems(uint32_t new_size, FileEntryClass** out_buffer) {
+int LoadOptions::CopyItems(uint32_t new_size, FileEntryClass** out_buffer) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x55a1f0
 {
@@ -524,7 +524,7 @@ void LoadOptions::ClearBuffer() {
 
 // IDA 0x55A2D0: FindItem — linear search by first dword
 // 0x55a2d0
-void LoadOptions::FindItem(FileEntryClass* const* key) {
+int LoadOptions::FindItem(FileEntryClass* const* key) {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax

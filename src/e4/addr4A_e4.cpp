@@ -36,7 +36,7 @@
 #include "e4/classes/Waypoint_e4.hpp"
 
 // 0x4A0190
-void EnumConnectionsClass::_vt06(unsigned int * a1, unsigned int * a2)
+int EnumConnectionsClass::_vt06(unsigned int * a1, unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -235,7 +235,7 @@ unsigned int * E4Recv_4A0380::sub_4A0380(unsigned int * a2)
 } // namespace gamemd
 
 // 0x4A0B20
-void EnumConnectionPointsClass::_vt06(unsigned int * a1, unsigned int * a2)
+int EnumConnectionPointsClass::_vt06(unsigned int * a1, unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1185,17 +1185,6 @@ namespace gamemd {
 int * RenderTextLabelWordWrap(int * a1, const wchar_t * a2, int a3, unsigned int * a4, int * a5, short a6, int a7, int a8, unsigned int a9, unsigned int * a10)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int *__fastcall RenderTextLabelWordWrap(
-        int *a1,
-        const wchar_t *a2,
-        int a3,
-        _DWORD *a4,
-        int *a5,
-        __int16 a6,
-        int a7,
-        int a8,
-        unsigned int a9,
-        unsigned int *a10)
 {
   wchar_t *v12; // ebp
   wchar_t *v14; // eax
@@ -1337,10 +1326,9 @@ void globalHelper_0A66D0()
 
 // 0x4A67E0
 namespace gamemd {
-int * sub_4A67E0(char a1, int a2)
+int * * sub_4A67E0(char a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int *__fastcall sub_4A67E0(char a1, int a2)
 {
 
   LOBYTE(a2) = a1; /*0x4a67e0*/
@@ -2398,7 +2386,7 @@ LABEL_21:
 
 // 0x4AF2A0
 namespace gamemd {
-void E4Recv_4AF2A0::BlitterDrawSHP()
+int E4Recv_4AF2A0::BlitterDrawSHP()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -3694,7 +3682,7 @@ int sub_4A59C0()
 
 // 0x4A5E50
 namespace gamemd {
-void E4Recv_4A5E50::sub_4A5E50(int a2, AbstractClass * aP2, AbstractClass * aP3)
+int E4Recv_4A5E50::sub_4A5E50(int a2, AbstractClass * aP2, AbstractClass * aP3)
  {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

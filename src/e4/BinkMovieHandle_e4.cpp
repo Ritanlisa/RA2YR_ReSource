@@ -4,7 +4,7 @@
 #include "e4/classes/BinkMovie_e4.hpp"
 
 // 0x432AB0
-void BinkMovieHandle::RenderFrameClipped(int a2, int a3)
+int BinkMovieHandle::RenderFrameClipped(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

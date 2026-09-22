@@ -28,7 +28,7 @@ int ObjectClass::processPointerInvalid()
 // 0x4D7D50
 namespace ra2 {
 namespace game {
-void ObjectClass::SpawnInfantry(FootClass * aP1, FootClass * aP2, FootClass * aP3, FootClass * aP4)
+int ObjectClass::SpawnInfantry(FootClass * aP1, FootClass * aP2, FootClass * aP3, FootClass * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -219,7 +219,7 @@ LABEL_52:
 // 0x4D9C60
 namespace ra2 {
 namespace game {
-void ObjectClass::CheckCellFlags(int a1, int a2, int * a3, unsigned char * a4, unsigned int * a5)
+int ObjectClass::CheckCellFlags(int a1, int a2, int * a3, unsigned char * a4, unsigned int * a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -303,7 +303,7 @@ void ObjectClass::CheckCellFlags(int a1, int a2, int * a3, unsigned char * a4, u
 // 0x4DB3C0
 namespace ra2 {
 namespace game {
-void ObjectClass::LoadFromStream_Common(FootClass * aP0, LPSTREAM pStm)
+int ObjectClass::LoadFromStream_Common(FootClass * aP0, LPSTREAM pStm)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -475,7 +475,7 @@ LABEL_28:
 // 0x4DB690
 namespace ra2 {
 namespace game {
-void ObjectClass::SaveToStream_Common(IPersistStream * a0, FootClass * aP1, struct IPersistStreamVtbl * a2)
+int ObjectClass::SaveToStream_Common(IPersistStream * a0, FootClass * aP1, struct IPersistStreamVtbl * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1274,7 +1274,7 @@ LABEL_39:
 // 0x5F4D30
 namespace ra2 {
 namespace game {
-void ObjectClass::Undeploy()
+int ObjectClass::Undeploy()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1334,7 +1334,7 @@ void ObjectClass::Undeploy()
 // 0x5F4EC0
 namespace ra2 {
 namespace game {
-void ObjectClass::Deploy()
+int ObjectClass::Deploy()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1488,7 +1488,7 @@ LABEL_41:
 // 0x5F5280
 namespace ra2 {
 namespace game {
-void ObjectClass::Destroy2()
+int ObjectClass::Destroy2()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1525,7 +1525,7 @@ LABEL_10:
 // 0x5F5850
 namespace ra2 {
 namespace game {
-void ObjectClass::UpdateProductionDisplay()
+int ObjectClass::UpdateProductionDisplay()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1585,7 +1585,7 @@ void ObjectClass::UpdateProductionDisplay()
 // 0x5F6BD0
 namespace ra2 {
 namespace game {
-void ObjectClass::GetBoundingSize()
+int ObjectClass::GetBoundingSize()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1602,7 +1602,7 @@ void ObjectClass::GetBoundingSize()
 // 0x652E50
 namespace ra2 {
 namespace game {
-void ObjectClass::resetObjectState(SidebarClass * aP1)
+int ObjectClass::resetObjectState(SidebarClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1610,13 +1610,13 @@ void ObjectClass::resetObjectState(SidebarClass * aP1)
   int v3 = *this; /*0x652e5e*/
   if ( (_BYTE)aP1 ) /*0x652e60*/
   {
-    (*(void (__stdcall **)(_DWORD *))(v3 + 48))(DataGlobal_B04978); /*0x652e62*/
-    return (*(int (__thiscall **)(int *, _DWORD *))(*this + 48))(this, DataGlobal_B04910); /*0x652e6e*/
+    this->COMStub_Ret176_12(DataGlobal_B04978); /*0x652e62*/
+    return this->COMStub_Ret176_12(DataGlobal_B04910); /*0x652e6e*/
   }
   else
   {
-    (*(void (__stdcall **)(_DWORD *))(v3 + 52))(DataGlobal_B04978); /*0x652e75*/
-    return (*(int (__thiscall **)(int *, _DWORD *))(*this + 52))(this, DataGlobal_B04910); /*0x652e81*/
+    this->ProcessPower_1(DataGlobal_B04978); /*0x652e75*/
+    return this->ProcessPower_1(DataGlobal_B04910); /*0x652e81*/
   }
 }
 }
@@ -1893,7 +1893,7 @@ unsigned char ObjectClass::ToggleSidebarDisplay(unsigned int * a0, TabClass * aP
 // 0x718260
 namespace ra2 {
 namespace game {
-void ObjectClass::FindPlacementPosition(int a2, int a3, int a4, int a5)
+int ObjectClass::FindPlacementPosition(int a2, int a3, int a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2130,7 +2130,7 @@ void ObjectClass_GetTypeVt41_2()
 // 0x74CD60
 namespace ra2 {
 namespace game {
-void ObjectClass::processDeath()
+int ObjectClass::processDeath()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

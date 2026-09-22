@@ -216,7 +216,7 @@ LABEL_45:
 
 // 0x6E6220
 namespace gamemd {
-void TagClass::HasValidHouse()
+int TagClass::HasValidHouse()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -237,7 +237,7 @@ void TagClass::HasValidHouse()
 
 // 0x71ADE0
 namespace gamemd {
-void TagClass::Unlink()
+int TagClass::Unlink()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

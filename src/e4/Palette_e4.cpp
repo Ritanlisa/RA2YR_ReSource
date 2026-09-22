@@ -248,7 +248,7 @@ LABEL_38:
 } // namespace gamemd
 
 // 0x661350
-void Palette::CalcColorDistance(unsigned char * a2)
+int Palette::CalcColorDistance(unsigned char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

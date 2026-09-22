@@ -5,7 +5,7 @@
 #include "e4/classes/CellStruct_e4.hpp"
 
 // 0x7BA8C0
-void XSurface::DrawDashedLine(int * a1, int * a2, XSurface * aP3, int a5, int a6)
+int XSurface::DrawDashedLine(int * a1, int * a2, XSurface * aP3, int a5, int a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -195,7 +195,7 @@ void XSurface::DrawDashedLine(int * a1, int * a2, XSurface * aP3, int a5, int a6
 }
 
 // 0x7BAB90
-void XSurface::WalkLine(int a2, unsigned int * a3, unsigned int * a4, void (__thiscall *a5)(int *) a4)
+int XSurface::WalkLine(int a2, unsigned int * a3, unsigned int * a4, void (__thiscall *a5)(int *) a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -205,7 +205,7 @@ void XSurface::WalkLine(int a2, unsigned int * a3, unsigned int * a4, void (__th
   int v5 = *this; /*0x7bab93*/
   XSurface *v28 = this; /*0x7bab9b*/
   int v33; // [esp+28h] [ebp-20h] BYREF
-  int v6 = (*(int (__stdcall **)(int *))(v5 + 120))(&v33); /*0x7bab9f*/
+  int v6 = this->GetRect(&v33); /*0x7bab9f*/
   int * v7 = (int *)ClipRectIntersection(v6, 0, 0); /*0x7babaf*/
   int v35 = *v7; /*0x7babb6*/
   int v36 = v7[1]; /*0x7babbd*/
@@ -339,7 +339,7 @@ void XSurface::WalkLine(int a2, unsigned int * a3, unsigned int * a4, void (__th
 }
 
 // 0x7BB050
-void XSurface::FillRectEx(XSurface * aP1, int * a2, XSurface * aP3)
+int XSurface::FillRectEx(XSurface * aP1, int * a2, XSurface * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -537,7 +537,7 @@ LABEL_9:
 }
 
 // 0x7BB350
-void XSurface::DrawEllipseOutline(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
+int XSurface::DrawEllipseOutline(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
         int *this,
@@ -595,7 +595,7 @@ void XSurface::DrawEllipseOutline(int a2, int a3, int a4, int a5, int a6, int a7
     v58 = v12; /*0x7bb3a3*/
     int v13 = *this; /*0x7bb3a7*/
     v57 = a2; /*0x7bb3b1*/
-    (*(void (__thiscall **)(int *, int *, int))(v13 + 36))(this, &v57, a10); /*0x7bb3b5*/
+    this->SetPixel(&v57, a10); /*0x7bb3b5*/
   }
   int v14 = a3 - a5; /*0x7bb3bc*/
   v51 = a3 - a5; /*0x7bb3c0*/
@@ -604,7 +604,7 @@ void XSurface::DrawEllipseOutline(int a2, int a3, int a4, int a5, int a6, int a7
     v58 = a3 - a5; /*0x7bb3e6*/
     int v15 = *this; /*0x7bb3ea*/
     v57 = a2; /*0x7bb3f4*/
-    (*(void (__thiscall **)(int *, int *, int))(v15 + 36))(this, &v57, a10); /*0x7bb3f8*/
+    this->SetPixel(&v57, a10); /*0x7bb3f8*/
   }
   v53 = a5 * a5; /*0x7bb409*/
   int v17 = a5 * a4 * a4; /*0x7bb40f*/
@@ -613,7 +613,7 @@ void XSurface::DrawEllipseOutline(int a2, int a3, int a4, int a5, int a6, int a7
   v48 = 0; /*0x7bb41d*/
   v46 = 2 * v17; /*0x7bb425*/
   int v18 = a4 * a4 / 4 - v17; /*0x7bb438*/
-  int v19 = (*(int (__thiscall **)(int *, _DWORD, _DWORD))(*this + 92))(this, 0, 0); /*0x7bb449*/
+  int v19 = this->Lock(0, 0); /*0x7bb449*/
   v50 = a2; /*0x7bb44f*/
   int v20 = v54 * v63; /*0x7bb453*/
   v64 = (_WORD *)(v19 + 2 * (v54 * v63 + a2)); /*0x7bb45c*/
@@ -686,7 +686,7 @@ void XSurface::DrawEllipseOutline(int a2, int a3, int a4, int a5, int a6, int a7
       {
         v59 = a2 + a4; /*0x7bb699*/
         v60 = a3; /*0x7bb6a1*/
-        (*(void (__thiscall **)(int *, int *, int))(*this + 36))(this, &v59, a10); /*0x7bb6ad*/
+        this->SetPixel(&v59, a10); /*0x7bb6ad*/
       }
       v27 = a6; /*0x7bb6b0*/
     }
@@ -696,7 +696,7 @@ void XSurface::DrawEllipseOutline(int a2, int a3, int a4, int a5, int a6, int a7
     v59 = a2 - a4; /*0x7bb6e5*/
     v29 = *this; /*0x7bb6e9*/
     v60 = v28; /*0x7bb6f0*/
-    (*(void (__thiscall **)(int *, int *, int))(v29 + 36))(this, &v59, a10); /*0x7bb6f4*/
+    this->SetPixel(&v59, a10); /*0x7bb6f4*/
   }
   v58 = 0; /*0x7bb700*/
   v47 = 0; /*0x7bb704*/
@@ -759,12 +759,12 @@ void XSurface::DrawEllipseOutline(int a2, int a3, int a4, int a5, int a6, int a7
     if ( v33 >= a6 && v33 < a6 + a8 && v40 >= v37 && v40 < a9 + v37 ) /*0x7bb8ec*/
       *v45 = a10; /*0x7bb8fb*/
   }
-  return (*(int (__thiscall **)(int *))(*this + 96))(this); /*0x7bb90c*/
+  return this->Unlock(); /*0x7bb90c*/
 }
 }
 
 // 0x7BBB90
-void XSurface::BlitPart(void ** a2, XSurface * a3, void ** arg8, void ** a4, int a6)
+int XSurface::BlitPart(void ** a2, XSurface * a3, void ** arg8, void ** a4, int a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -815,7 +815,7 @@ void XSurface::BlitPart(void ** a2, XSurface * a3, void ** arg8, void ** a4, int
 }
 
 // 0x7BBCF0
-void XSurface::Blit(int a2, void ** a3, XSurface * arg8, int a5, unsigned int * a6, void ** a4, int a8)
+int XSurface::Blit(int a2, void ** a3, XSurface * arg8, int a5, unsigned int * a6, void ** a4, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

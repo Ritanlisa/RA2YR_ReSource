@@ -17,7 +17,7 @@
 
 // 0x49B660
 namespace gamemd {
-void MPCooperative::processTurn(char * a2, char * a3)
+int MPCooperative::processTurn(char * a2, char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -54,7 +54,7 @@ void MPCooperative::processTurn(char * a2, char * a3)
 
 // 0x49BCE0
 namespace gamemd {
-void MPCooperative::BuildScoreEntries(int a2, CCINIClass * aP2)
+int MPCooperative::BuildScoreEntries(int a2, CCINIClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -123,7 +123,7 @@ void MPCooperative::BuildScoreEntries(int a2, CCINIClass * aP2)
 
 // 0x49BE40
 namespace gamemd {
-void MPCooperative::WriteCoopSaveINI()
+int MPCooperative::WriteCoopSaveINI()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -322,7 +322,7 @@ void MPCooperative_validateMove()
 
 // 0x49D120
 namespace gamemd {
-void MPCooperative::ReadCoopSaveINI()
+int MPCooperative::ReadCoopSaveINI()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -661,7 +661,7 @@ void MPCooperative_Cleanup(MPCooperative * aP0, int a2)
 
 // 0x5C18A0
 namespace gamemd {
-void MPCooperative::Read()
+int MPCooperative::Read()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -713,7 +713,7 @@ void MPCooperative::Read()
 
 // 0x5C1A10
 namespace gamemd {
-void MPCooperative::CopyTo()
+int MPCooperative::CopyTo()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -846,7 +846,7 @@ void MPCooperative::COMStub()
 
 // 0x5C1CC0
 namespace gamemd {
-void MPCooperative::InitSession()
+int MPCooperative::InitSession()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -872,7 +872,7 @@ void MPCooperative::InitSession()
   if ( g_MultiplayerOptions <= 0 ) /*0x5c1d26*/
   {
 LABEL_10:
-    (*(void (__thiscall **)(int *))(*this + 16))(this); /*0x5c1d5d*/
+    this->Read_8(); /*0x5c1d5d*/
     return -1; /*0x5c1d6f*/
   }
   while ( _strnicmp((const char *)(*(_DWORD *)(g_MultiplayerGameState + 4 * v2) + 88), String2, strlen(String2)) ) /*0x5c1d51*/
@@ -887,7 +887,7 @@ LABEL_10:
 
 // 0x5C1DC0
 namespace gamemd {
-void MPCooperative::Seek()
+int MPCooperative::Seek()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -998,7 +998,7 @@ LABEL_16:
 
 // 0x5C1FA0
 namespace gamemd {
-void MPCooperative::Revert()
+int MPCooperative::Revert()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1036,7 +1036,7 @@ void MPCooperative::Revert()
 
 // 0x5C2040
 namespace gamemd {
-void MPCooperative::StartGame(int a2, void ** a3, void * Block, int a5, short a6, int a7, int a8, char * a9, char * a10)
+int MPCooperative::StartGame(int a2, void ** a3, void * Block, int a5, short a6, int a7, int a8, char * a9, char * a10)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1083,7 +1083,7 @@ void MPCooperative::StartGame(int a2, void ** a3, void * Block, int a5, short a6
 
 // 0x5C2100
 namespace gamemd {
-void MPCooperative::EndGame(int a2, int a3, int a4)
+int MPCooperative::EndGame(int a2, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1175,7 +1175,7 @@ void MPCooperative::EndGame(int a2, int a3, int a4)
 
 // 0x5C2680
 namespace gamemd {
-void MPCooperative::ProcessTurn()
+int MPCooperative::ProcessTurn()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1201,7 +1201,7 @@ void MPCooperative::ProcessTurn()
 
 // 0x5C2710
 namespace gamemd {
-void MPCooperative::SyncState()
+int MPCooperative::SyncState()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1604,7 +1604,7 @@ unsigned int * MPCooperative::selectTeam(unsigned int * a1, int a2, int a3, int 
 
 // 0x5C2EF0
 namespace gamemd {
-void MPCooperative::GetPlayerCount(int a1)
+int MPCooperative::GetPlayerCount(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1693,7 +1693,7 @@ LABEL_17:
 
 // 0x5C30C0
 namespace gamemd {
-void MPCooperative::BroadcastMessage()
+int MPCooperative::BroadcastMessage()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1758,7 +1758,7 @@ void MPCooperative::BroadcastMessage()
 
 // 0x5C3220
 namespace gamemd {
-void MPCooperative::GetMapData()
+int MPCooperative::GetMapData()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1860,7 +1860,7 @@ void MPCooperative::GetMapData()
 
 // 0x5C34F0
 namespace gamemd {
-void MPCooperative::ReceiveMessage()
+int MPCooperative::ReceiveMessage()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1912,7 +1912,7 @@ void MPCooperative::ReceiveMessage()
 
 // 0x5C35F0
 namespace gamemd {
-void MPCooperative::HandleEvent()
+int MPCooperative::HandleEvent()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2215,7 +2215,7 @@ LABEL_22:
 
 // 0x5C4110
 namespace gamemd {
-void MPCooperative::ProcessChat()
+int MPCooperative::ProcessChat()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2244,7 +2244,7 @@ void MPCooperative::ProcessChat()
   {
     if ( Game_PlayerCount == 2 ) /*0x5c415e*/
       String::AssignWideToChar(v5, *(char **)Game_PlayerInfoArray, *(char **)(Game_PlayerInfoArray + 4)); /*0x5c416c*/
-    (*(void (__thiscall **)(LRESULT *))(*this + 96))(this); /*0x5c4175*/
+    this->ProcessTurn_0(); /*0x5c4175*/
     LOBYTE(v2) = MPCooperative::ReadCoopSaveINI(this->q010); /*0x5c417b*/
     if ( (_BYTE)v2 ) /*0x5c4182*/
     {
@@ -2303,7 +2303,7 @@ void MPCooperative::ProcessChat()
 
 // 0x5C42D0
 namespace gamemd {
-void MPCooperative::UpdateMovieScore()
+int MPCooperative::UpdateMovieScore()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2516,7 +2516,7 @@ void MPCooperative::ShowScoreScreen(int a2)
 
 // 0x5C4CA0
 namespace gamemd {
-void MPCooperative::InitializePlayers()
+int MPCooperative::InitializePlayers()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2608,7 +2608,6 @@ namespace gamemd {
 unsigned int * MPCooperative::processTurnEnd(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-_DWORD *__thiscall sub_5C4F30(_DWORD *this, _DWORD *a2)
 {
 
   this->q004 = 0; /*0x5c4f3d*/
@@ -2657,7 +2656,7 @@ _DWORD *__thiscall sub_5C4F30(_DWORD *this, _DWORD *a2)
 
 // 0x696F30
 namespace gamemd {
-void MPCooperative::finalizeSession()
+int MPCooperative::finalizeSession()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

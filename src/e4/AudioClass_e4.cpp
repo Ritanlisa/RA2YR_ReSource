@@ -7,7 +7,7 @@
 
 // 0x7228B0
 namespace gamemd {
-void AudioClass::ProcessEvent()
+int AudioClass::ProcessEvent()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

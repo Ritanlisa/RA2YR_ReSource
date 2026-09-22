@@ -99,7 +99,7 @@ void Math_ArcTan2()
 
 // 0x4CAD50
 namespace gamemd {
-void Math::Sin(double a1)
+int Math::Sin(double a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -195,7 +195,7 @@ void * Math::BuildRotationMatrix(float * a2, float a3)
 
 // 0x5F6560
 namespace gamemd {
-void Math::DistSq2D(TechnoClass * aP1)
+int Math::DistSq2D(TechnoClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

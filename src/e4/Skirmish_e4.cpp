@@ -7,7 +7,7 @@
 #include "e4/classes/WideString_e4.hpp"
 
 // 0x46F600
-void Skirmish::FillPlayerNames()
+int Skirmish::FillPlayerNames()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -140,7 +140,7 @@ void Skirmish::SetupAllSpawnLocations()
 }
 
 // 0x596C70
-void Skirmish::ReadSettings(HWND hDlg)
+int Skirmish::ReadSettings(HWND hDlg)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -232,7 +232,7 @@ void Skirmish::ReadSettings(HWND hDlg)
 }
 
 // 0x597260
-void Skirmish::RandomizeSettings(ObjectClass * aP1)
+int Skirmish::RandomizeSettings(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -290,7 +290,7 @@ void Skirmish::RandomizeSettings(ObjectClass * aP1)
 }
 
 // 0x640710
-void Skirmish::RenderPreview(SkirmishDialog * aP1)
+int Skirmish::RenderPreview(SkirmishDialog * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -418,7 +418,7 @@ void Skirmish::RenderPreview(SkirmishDialog * aP1)
 }
 
 // 0x6ACD60
-void Skirmish::EnableSpawnButtons()
+int Skirmish::EnableSpawnButtons()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -494,7 +494,7 @@ void Skirmish::EnableSpawnButtons()
 }
 
 // 0x6AE3F0
-void Skirmish::Setup_DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, int a4)
+int Skirmish::Setup_DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -613,7 +613,7 @@ void Skirmish::Setup_DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, int a4
 }
 
 // 0x6AE6E0
-void Skirmish::SetupGame(int a2)
+int Skirmish::SetupGame(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

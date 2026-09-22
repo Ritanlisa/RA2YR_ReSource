@@ -37,7 +37,7 @@ AircraftClass::AircraftClass() noexcept
 
 // IDA: 0x417FE0 (Mission_Attack, 3445B)
 // 0x417fe0
-void AircraftClass::Mission_Attack()
+int AircraftClass::Mission_Attack()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x417fe0
@@ -78,7 +78,7 @@ void AircraftClass::Mission_Attack()
       {
         int v8 = *this;
         int v9 = ((int (__stdcall *)(int))FindSpiralMoveTarget)(v7);
-        (*(void (__thiscall **)(int *, int, int))(v8 + 1152))(this, v9, 1);
+        this->AssignDestination(v9, 1);
         this->missionStatus = this->q169 != 0 ? 3 : 10;
       }
       else
@@ -101,14 +101,14 @@ LABEL_107:
       int * v12 = this + 432;
       if ( (*(int (__stdcall **)(int *))(this->q1B0 + 24))(this + 432) )
       {
-        int v13 = *(_DWORD *)(*(int (__thiscall **)(int *, _DWORD))(*this + 1016))(this, 0);
+        int v13 = *(_DWORD *)this->SelectVocOrSfx(0);
         if ( ObjectClass::ComputeDistance(this, this->q2B4) < *(_DWORD *)(v13 + 180) )
         {
 LABEL_14:
           this->missionStatus = 4;
           return 1;
         }
-        (*(void (__thiscall **)(int *, _DWORD, int))(*this + 1152))(this, this->q2B4, 1);
+        this->AssignDestination(this->q2B4, 1);
       }
       else
       {
@@ -155,7 +155,7 @@ LABEL_14:
           {
             int v16 = *this;
             this->missionStatus = 4;
-            (*(void (__thiscall **)(int *, _DWORD, int))(v16 + 1152))(this, 0, 1);
+            this->AssignDestination(0, 1);
             return 1;
           }
         }
@@ -179,29 +179,29 @@ LABEL_14:
         FacingClass::Update((char *)this + 928, v22);
       }
       int v23 = *this;
-      int v24 = (*(int (__thiscall **)(int *, _DWORD, int))(*this + 740))(this, this->q2B4, 1);
-      switch ( (*(int (__thiscall **)(int *, _DWORD, int))(v23 + 960))(this, this->q2B4, v24) )
+      int v24 = this->SelectWeapon(this->q2B4, 1);
+      switch ( this->ReadINI_3(this->q2B4, v24) )
       {
         case 0:
           int v25 = *this;
           int v93 = this->q2B4;
           this->AircraftClass_field_bool_6C8 = 1;
           int v26 = 0;
-          int v27 = (*(int (__thiscall **)(int *, int))(v25 + 740))(this, v93);
-          if ( *(int *)(*(_DWORD *)(*(int (__thiscall **)(int *, int))(v25 + 1016))(this, v27) + 156) > 0 )
+          int v27 = this->SelectWeapon(v93);
+          if ( *(int *)(*(_DWORD *)this->SelectVocOrSfx(v27) + 156) > 0 )
           {
   int v31; // eax
   int v30; // edi
             do
             {
               int v28 = *this;
-              int v29 = (*(int (__thiscall **)(int *, _DWORD))(*this + 740))(this, this->q2B4);
-              (*(void (__thiscall **)(int *, _DWORD, int))(v28 + 972))(this, this->q2B4, v29);
+              int v29 = this->SelectWeapon(this->q2B4);
+              this->FireWeapon(this->q2B4, v29);
               v30 = *this;
               ++v26;
-              v31 = (*(int (__thiscall **)(int *, _DWORD))(*this + 740))(this, this->q2B4);
+              v31 = this->SelectWeapon(this->q2B4);
             }
-            while ( v26 < *(_DWORD *)(*(_DWORD *)(*(int (__thiscall **)(int *, int))(v30 + 1016))(this, v31) + 156) );
+            while ( v26 < *(_DWORD *)(*(_DWORD *)this->SelectVocOrSfx(v31) + 156) );
           }
   _DWORD v103[3]; // [esp+64h] [ebp-A8h] BYREF
           v103[0] = this->q027;
@@ -219,7 +219,7 @@ LABEL_14:
             int v34 = *this;
             this->missionStatus = 6;
             this->AircraftClass_field_bool_6D2 = 1;
-            return *(_DWORD *)(*(_DWORD *)(*(int (__thiscall **)(int *, _DWORD))(v34 + 1016))(this, 0) + 176);
+            return *(_DWORD *)(*(_DWORD *)this->SelectVocOrSfx(0) + 176);
           }
           if ( !(*(int (__stdcall **)(int *))(*v20 + 28))(this + 432) )
             goto LABEL_54;
@@ -229,14 +229,14 @@ LABEL_14:
           int v38 = *this;
           this->AircraftClass_field_bool_6D2 = 1;
           this->missionStatus = !v37 && !v36 ? 1 : 10;
-          return *(_DWORD *)(*(_DWORD *)(*(int (__thiscall **)(int *, _DWORD))(v38 + 1016))(this, 0) + 176);
+          return *(_DWORD *)(*(_DWORD *)this->SelectVocOrSfx(0) + 176);
         case 2:
           if ( !this->q0BF )
           {
             this->missionStatus = 10;
             return 1;
           }
-          if ( !(*(unsigned __int8 (__thiscall **)(int *, _DWORD))(*this + 940))(this, this->q2B4)
+          if ( !this->CheckCellPassable2(this->q2B4)
             || (*(int (__stdcall **)(int *))(*v20 + 24))(this + 432) )
           {
             this->missionStatus = 1;
@@ -255,7 +255,7 @@ LABEL_14:
         case 3:
           return 1;
         case 9:
-          (*(void (__thiscall **)(int *, _DWORD))(*this + 1116))(this, 0);
+          this->TransitionEffectState(0);
           return 1;
         default:
           if ( !this->q0BF )
@@ -281,13 +281,13 @@ LABEL_54:
         int * v40 = ObjectClass::CalcTargetFacing(this, &v111, this->q2B4);
         FacingClass::Update((char *)this + 928, v40);
         int v41 = *this;
-        int v42 = (*(int (__thiscall **)(int *, _DWORD, int))(*this + 740))(this, this->q2B4, 1);
-        switch ( (*(unsigned int (__thiscall **)(int *, _DWORD, int))(v41 + 960))(this, this->q2B4, v42) )
+        int v42 = this->SelectWeapon(this->q2B4, 1);
+        switch ( this->ReadINI_3(this->q2B4, v42) )
         {
           case 0u:
             int v44 = *this;
-            int v45 = (*(int (__thiscall **)(int *, _DWORD))(*this + 740))(this, this->q2B4);
-            (*(void (__thiscall **)(int *, _DWORD, int))(v44 + 972))(this, this->q2B4, v45);
+            int v45 = this->SelectWeapon(this->q2B4);
+            this->FireWeapon(this->q2B4, v45);
             v105 = this->q027;
             v106 = this->owningHouseIndex;
             int v107 = this->q029;
@@ -301,7 +301,7 @@ LABEL_54:
           case 2u:
             if ( !this->q0BF )
               goto LABEL_107;
-            if ( !(*(unsigned __int8 (__thiscall **)(int *, _DWORD))(*this + 940))(this, this->q2B4)
+            if ( !this->CheckCellPassable2(this->q2B4)
               || (*(int (__stdcall **)(int *))(this->q1B0 + 24))(this + 432) )
             {
               this->missionStatus = 1;
@@ -319,12 +319,12 @@ LABEL_54:
           case 3u:
             goto LABEL_108;
           case 9u:
-            (*(void (__thiscall **)(int *, _DWORD))(*this + 1116))(this, 0);
+            this->TransitionEffectState(0);
             goto LABEL_108;
           default:
             if ( !this->q0BF )
               goto LABEL_107;
-            if ( (*(unsigned __int8 (__thiscall **)(int *, _DWORD))(*this + 940))(this, this->q2B4) )
+            if ( this->CheckCellPassable2(this->q2B4) )
               this->missionStatus = *(_BYTE *)(DataGlobal_87F7E8[7806] + 6113) != 0 ? 1 : 4;
             else
               this->missionStatus = 1;
@@ -342,23 +342,23 @@ LABEL_54:
       if ( v48 )
       {
         int v49 = *this;
-        int v50 = (*(int (__thiscall **)(int *, int, int))(*this + 740))(this, v48, 1);
-        switch ( (*(int (__thiscall **)(int *, _DWORD, int))(v49 + 960))(this, this->q2B4, v50) )
+        int v50 = this->SelectWeapon(v48, 1);
+        switch ( this->ReadINI_3(this->q2B4, v50) )
         {
           case 0:
           case 2:
           case 9:
             break;
           case 8:
-            (*(void (__thiscall **)(int *, _DWORD, int))(*this + 1152))(this, this->q2B4, 1);
+            this->AssignDestination(this->q2B4, 1);
             break;
           default:
             goto LABEL_91;
         }
         int v51 = *this;
-        int v94 = (*(int (__thiscall **)(int *, _DWORD))(*this + 740))(this, this->q2B4);
+        int v94 = this->SelectWeapon(this->q2B4);
         int v89 = this->q2B4;
-        (*(void (__thiscall **)(int *))(v51 + 972))(this);
+        this->FireWeapon();
         v100 = this->q027;
         int v52 = this->q2B4;
         v101[0] = this->owningHouseIndex;
@@ -374,10 +374,10 @@ LABEL_54:
                           0);
         _DWORD * v54 = Coord::To_Cell(DataGlobal_87F7E8, v53);
         Cell::ApplyDamage(v54, v89, v94, v98, v99);
-        (*(void (__thiscall **)(int *, _DWORD, int))(*this + 1152))(this, this->q2B4, 1);
+        this->AssignDestination(this->q2B4, 1);
         int v55 = *this;
         this->missionStatus = 7;
-        return *(_DWORD *)(*(_DWORD *)(*(int (__thiscall **)(int *, _DWORD))(v55 + 1016))(this, 0) + 176);
+        return *(_DWORD *)(*(_DWORD *)this->SelectVocOrSfx(0) + 176);
       }
       else
       {
@@ -389,23 +389,23 @@ LABEL_54:
       if ( v56 )
       {
         int v57 = *this;
-        int v58 = (*(int (__thiscall **)(int *, int, int))(*this + 740))(this, v56, 1);
-        switch ( (*(unsigned int (__thiscall **)(int *, _DWORD, int))(v57 + 960))(this, this->q2B4, v58) )
+        int v58 = this->SelectWeapon(v56, 1);
+        switch ( this->ReadINI_3(this->q2B4, v58) )
         {
           case 0u:
           case 2u:
           case 9u:
             break;
           case 8u:
-            (*(void (__thiscall **)(int *, _DWORD, int))(*this + 1152))(this, this->q2B4, 1);
+            this->AssignDestination(this->q2B4, 1);
             break;
           default:
             goto LABEL_91;
         }
         int v59 = *this;
-        int v95 = (*(int (__thiscall **)(int *, _DWORD))(*this + 740))(this, this->q2B4);
+        int v95 = this->SelectWeapon(this->q2B4);
         int v90 = this->q2B4;
-        (*(void (__thiscall **)(int *))(v59 + 972))(this);
+        this->FireWeapon();
   _DWORD v108[5]; // [esp+80h] [ebp-8Ch] BYREF
         v108[0] = this->q027;
         v108[1] = this->owningHouseIndex;
@@ -422,10 +422,10 @@ LABEL_54:
                           0);
         _DWORD * v61 = Coord::To_Cell(DataGlobal_87F7E8, v60);
         Cell::ApplyDamage(v61, v90, v95, v98, v99);
-        (*(void (__thiscall **)(int *, _DWORD, int))(*this + 1152))(this, this->q2B4, 1);
+        this->AssignDestination(this->q2B4, 1);
         int v62 = *this;
         this->missionStatus = 8;
-        return *(_DWORD *)(*(_DWORD *)(*(int (__thiscall **)(int *, _DWORD))(v62 + 1016))(this, 0) + 176);
+        return *(_DWORD *)(*(_DWORD *)this->SelectVocOrSfx(0) + 176);
       }
       else
       {
@@ -437,23 +437,23 @@ LABEL_54:
       if ( v63 )
       {
         int v64 = *this;
-        int v65 = (*(int (__thiscall **)(int *, int, int))(*this + 740))(this, v63, 1);
-        switch ( (*(unsigned int (__thiscall **)(int *, _DWORD, int))(v64 + 960))(this, this->q2B4, v65) )
+        int v65 = this->SelectWeapon(v63, 1);
+        switch ( this->ReadINI_3(this->q2B4, v65) )
         {
           case 0u:
           case 2u:
           case 9u:
             break;
           case 8u:
-            (*(void (__thiscall **)(int *, _DWORD, int))(*this + 1152))(this, this->q2B4, 1);
+            this->AssignDestination(this->q2B4, 1);
             break;
           default:
             goto LABEL_91;
         }
         int v66 = *this;
-        int v96 = (*(int (__thiscall **)(int *, _DWORD))(*this + 740))(this, this->q2B4);
+        int v96 = this->SelectWeapon(this->q2B4);
         int v91 = this->q2B4;
-        (*(void (__thiscall **)(int *))(v66 + 972))(this);
+        this->FireWeapon();
   _DWORD v102[5]; // [esp+50h] [ebp-BCh] BYREF
         v102[0] = this->q027;
         v102[1] = this->owningHouseIndex;
@@ -469,10 +469,10 @@ LABEL_54:
                           0);
         _DWORD * v68 = Coord::To_Cell(DataGlobal_87F7E8, v67);
         Cell::ApplyDamage(v68, v91, v96, v98, v99);
-        (*(void (__thiscall **)(int *, _DWORD, int))(*this + 1152))(this, this->q2B4, 1);
+        this->AssignDestination(this->q2B4, 1);
         int v69 = *this;
         this->missionStatus = 9;
-        return *(_DWORD *)(*(_DWORD *)(*(int (__thiscall **)(int *, _DWORD))(v69 + 1016))(this, 0) + 176);
+        return *(_DWORD *)(*(_DWORD *)this->SelectVocOrSfx(0) + 176);
       }
       else
       {
@@ -485,8 +485,8 @@ LABEL_83:
       if ( v70 )
       {
         int v71 = *this;
-        int v72 = (*(int (__thiscall **)(int *, int, int))(*this + 740))(this, v70, 1);
-        switch ( (*(unsigned int (__thiscall **)(int *, _DWORD, int))(v71 + 960))(this, this->q2B4, v72) )
+        int v72 = this->SelectWeapon(v70, 1);
+        switch ( this->ReadINI_3(this->q2B4, v72) )
         {
           case 0u:
           case 2u:
@@ -494,9 +494,9 @@ LABEL_83:
           case 9u:
             int v73 = *this;
             int v97 = this->q2B4;
-            int v92 = (*(int (__thiscall **)(int *))(*this + 740))(this);
+            int v92 = this->SelectWeapon();
             int v88 = this->q2B4;
-            (*(void (__thiscall **)(int *))(v73 + 972))(this);
+            this->FireWeapon();
             int v104 = this->q027;
             v105 = this->owningHouseIndex;
             int v74 = this->q2B4;
@@ -513,7 +513,7 @@ LABEL_83:
             Cell::ApplyDamage(v76, v88, v92, v97, v98);
             int v77 = *this;
             this->missionStatus = 3;
-            result = (*(_DWORD *)(*(_DWORD *)(*(int (__thiscall **)(int *, _DWORD))(v77 + 1016))(this, 0) + 180) + 1024)
+            result = (*(_DWORD *)(*(_DWORD *)this->SelectVocOrSfx(0) + 180) + 1024)
                    / *(_DWORD *)(this->q1B1 + 1656);
             break;
           default:
@@ -552,7 +552,7 @@ LABEL_91:
       }
       else if ( this->isALoaner || (unsigned __int8)House::IsCurrentPlayer((#375 *)this->focus) )
       {
-        (*(void (__thiscall **)(int *, _DWORD))(*this + 968))(this, 0);
+        this->AssignTarget_SyncLog(0);
       }
       unsigned int * v80 = (unsigned int *)this->focus;
       this->AircraftClass_field_bool_6D2 = 0;
@@ -570,18 +570,18 @@ LABEL_91:
       int v83 = *this;
       v101[0] = *OpenNeighbor;
       void * v84 = CellCoord::To_CellObj(DataGlobal_87F7E8, (__int16 *)v101);
-      (*(void (__thiscall **)(int *, void *, int))(v83 + 1152))(this, v84, 1);
+      this->AssignDestination(v84, 1);
       int v85 = this->airstrike;
       this->AircraftClass_field_bool_6D5 = 0;
       if ( v85 && this->q0BF > 0 )
       {
-        (*(void (__thiscall **)(int *, int, _DWORD))(*this + 488))(this, 4, 0);
+        this->ProcessLanding(4, 0);
         this->AircraftClass_field_bool_6D5 = 1;
         return 1;
       }
       else
       {
-        (*(void (__thiscall **)(int *, _DWORD, int))(*this + 1156))(this, 0, 1);
+        this->ValidatePlacement(0, 1);
         this->AircraftClass_field_bool_6D5 = 1;
         return 1;
       }
@@ -1910,7 +1910,7 @@ int AircraftClass::Mission_Retreat()
 
 // IDA: 0x4166C0 (Mission_Enter, 1037B)
 // 0x4166c0
-void AircraftClass::Mission_Enter()
+int AircraftClass::Mission_Enter()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2483,7 +2483,7 @@ retn
 
 // IDA: 0x419C80 (Mission_Transport, 1215B)
 // 0x419c80
-void AircraftClass::Mission_Transport()
+int AircraftClass::Mission_Transport()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -3206,7 +3206,7 @@ retn
 
 // IDA: 0x4190B0 (MissionDispatch, 1147B)
 // 0x4190b0
-void AircraftClass::MissionDispatch()
+int AircraftClass::MissionDispatch()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x4190b0
@@ -3845,7 +3845,7 @@ retn    0Ch
 
 // IDA: 0x414310 (MoveTo, 406B)
 // 0x414310
-void AircraftClass::MoveTo()
+int AircraftClass::MoveTo()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -3874,8 +3874,8 @@ void AircraftClass::MoveTo()
   int v9 = this->Type;
   if ( !*(_BYTE *)(v9 + 560)
     || !*(_BYTE *)(v9 + 3594)
-    || *(_DWORD *)(*(int (__thiscall **)(_DWORD *, _DWORD))(*this + 1016))(this, 0)
-    && *(_BYTE *)(*(_DWORD *)(*(int (__thiscall **)(_DWORD *, _DWORD))(*this + 1016))(this, 0) + 327) )
+    || *(_DWORD *)this->SelectVocOrSfx(0)
+    && *(_BYTE *)(*(_DWORD *)this->SelectVocOrSfx(0) + 327) )
   {
     this->isALoaner = 1;
   }
@@ -3893,10 +3893,10 @@ void AircraftClass::MoveTo()
   int v12 = this->Type;
   this->radioContact = 0;
   int v13 = (*(int (__thiscall **)(int))(*(_DWORD *)v12 + 188))(v12);
-  if ( (*(int (__thiscall **)(_DWORD *))(*this + 456))(this) == v13 )
-    (*(void (__thiscall **)(_DWORD *, _DWORD, int))(*this + 1348))(this, 0, 1072693248);
+  if ( this->GetZAboveGround() == v13 )
+    this->Destru_vt337(0, 1072693248);
   else
-    (*(void (__thiscall **)(_DWORD *, _DWORD, _DWORD))(*this + 1348))(this, 0, 0);
+    this->Destru_vt337(0, 0);
   return 1;
 }
 
@@ -4072,7 +4072,7 @@ bool AircraftClass::CanEnterCell()
 
 // IDA: 0x41BA90 (ProcessLanding, 82B)
 // 0x41ba90
-void AircraftClass::ProcessLanding()
+int AircraftClass::ProcessLanding()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -4305,7 +4305,7 @@ int AircraftClass::LandingCheckStub()
 
 // IDA: 0x41B870 (ProcessPassengerEjection, 21B)
 // 0x41b870
-void AircraftClass::ProcessPassengerEjection()
+int AircraftClass::ProcessPassengerEjection()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -4376,7 +4376,7 @@ int AircraftClass::PowerDrainUpdate(int a2)
 
 // IDA: 0x41B660 (HandleTargetDestroyed, 56B)
 // 0x41b660
-void AircraftClass::HandleTargetDestroyed()
+int AircraftClass::HandleTargetDestroyed()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -4420,7 +4420,7 @@ retn    8
 
 // IDA: 0x414A80 (ProcessMissionTimeout, 302B)
 // 0x414a80
-void AircraftClass::ProcessMissionTimeout()
+int AircraftClass::ProcessMissionTimeout()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x414a80
@@ -4440,8 +4440,8 @@ void AircraftClass::ProcessMissionTimeout()
       v9 = this->location;
       v10 = this->q0A0;
       v11 = this->q0A4;
-      int v6 = (*(int (__thiscall **)(_DWORD *, int, int *, _DWORD))(v5 + 964))(this, 64, &v9, 0);
-      (*(void (__thiscall **)(_DWORD *, int))(v5 + 968))(this, v6);
+      int v6 = this->SelectAutoTarget_Cloaked(64, &v9, 0);
+      this->AssignTarget_SyncLog(v6);
     }
     if ( !this->q2B4 )
     {
@@ -4449,18 +4449,18 @@ void AircraftClass::ProcessMissionTimeout()
       v9 = this->location;
       v10 = this->q0A0;
       v11 = this->q0A4;
-      int v8 = (*(int (__thiscall **)(_DWORD *, _DWORD, int *, _DWORD))(v7 + 964))(this, 0, &v9, 0);
-      (*(void (__thiscall **)(_DWORD *, int))(v7 + 968))(this, v8);
+      int v8 = this->SelectAutoTarget_Cloaked(0, &v9, 0);
+      this->AssignTarget_SyncLog(v8);
     }
     if ( this->q2B4 )
     {
 LABEL_12:
-      (*(void (__thiscall **)(_DWORD *, int, _DWORD))(*this + 488))(this, 1, 0);
+      this->ProcessLanding(1, 0);
       return 1;
     }
     else
     {
-      (*(void (__thiscall **)(_DWORD *, _DWORD, int))(*this + 1156))(this, 0, 1);
+      this->ValidatePlacement(0, 1);
       return 1;
     }
   }
@@ -4468,7 +4468,7 @@ LABEL_12:
   {
     if ( this->team )
       TeamClass::LiberateMember_Start(this, -1, 0);
-    (*(void (__thiscall **)(_DWORD *, _DWORD, int))(*this + 1156))(this, 0, 1);
+    this->ValidatePlacement(0, 1);
     MissionControl = MissionClass::GetMissionControl(this);
     int v3 = Math::RoundToInt(*((double *)MissionControl + 2) * 900.0);
     return v3 + Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 2);
@@ -4593,7 +4593,7 @@ retn
 
 // IDA: 0x41A5C0 (GetMissionTimer, 886B)
 // 0x41a5c0
-void AircraftClass::GetMissionTimer()
+int AircraftClass::GetMissionTimer()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x41a5c0
@@ -5117,7 +5117,7 @@ int AircraftClass::LoadFromStream()
 
 // IDA: 0x414080 (Destruct, 513B)
 // 0x414080
-void AircraftClass::Destruct()
+int AircraftClass::Destruct()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x414080

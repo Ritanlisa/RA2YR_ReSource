@@ -12,7 +12,7 @@
 #include "e4/classes/Trigger_e4.hpp"
 
 // 0x41D7E0
-void Warhead::GetWarheadSound(int a2)
+int Warhead::GetWarheadSound(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -26,7 +26,7 @@ void Warhead::GetWarheadSound(int a2)
 }
 
 // 0x452820
-void Warhead::RemoveFromDamageList(int a2)
+int Warhead::RemoveFromDamageList(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -60,7 +60,7 @@ void Warhead::RemoveFromDamageList(int a2)
 }
 
 // 0x4690B0
-void Warhead::ApplyDamage(ObjectClass * aP1)
+int Warhead::ApplyDamage(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -827,7 +827,7 @@ LABEL_158:
 }
 
 // 0x46A310
-void Warhead::ApplyPostDamageEffects()
+int Warhead::ApplyPostDamageEffects()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1174,7 +1174,7 @@ void Warhead::ApplyPostDamageEffects()
 }
 
 // 0x65B580
-void Warhead::ProcessDamageArea()
+int Warhead::ProcessDamageArea()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

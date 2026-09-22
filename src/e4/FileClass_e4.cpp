@@ -3,7 +3,7 @@
 #include "e4/e4_globals.hpp"
 
 // 0x473AE0
-void FileClass::Write(CCFileClass * aP1, DWORD nNumberOfBytesToWrite)
+int FileClass::Write(CCFileClass * aP1, DWORD nNumberOfBytesToWrite)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -19,7 +19,7 @@ void FileClass::Write(CCFileClass * aP1, DWORD nNumberOfBytesToWrite)
 }
 
 // 0x473FC0
-void FileClass::SetFileName(IUnknown * aP1)
+int FileClass::SetFileName(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -29,7 +29,7 @@ void FileClass::SetFileName(IUnknown * aP1)
 }
 
 // 0x65CBF0
-void FileClass::Open(int a2)
+int FileClass::Open(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -74,7 +74,7 @@ LABEL_12:
 }
 
 // 0x65CCE0
-void FileClass::Read(BufferIOFileClass * aP1, AbstractClass * aP2)
+int FileClass::Read(BufferIOFileClass * aP1, AbstractClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -142,7 +142,7 @@ void FileClass::Read(BufferIOFileClass * aP1, AbstractClass * aP2)
 }
 
 // 0x65CF00
-void FileClass::Seek(LONG lDistanceToMove, DWORD dwMoveMethod)
+int FileClass::Seek(LONG lDistanceToMove, DWORD dwMoveMethod)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -305,7 +305,7 @@ LABEL_27:
 }
 
 // 0x65D150
-void FileClass::Close()
+int FileClass::Close()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

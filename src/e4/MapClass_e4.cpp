@@ -18,7 +18,7 @@
 #include "e4/classes/VectorCursor_uint_DynamicVectorClass_uint____13_e4.hpp"
 
 // 0x4112D0
-void MapClass::isLocationShrouded(unsigned short a2)
+int MapClass::isLocationShrouded(unsigned short a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -106,7 +106,7 @@ unsigned int * MapClass::AllocArrays()
 }
 
 // 0x485130
-void MapClass::RemoveCellReference(int a2)
+int MapClass::RemoveCellReference(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -160,7 +160,7 @@ void MapClass::RemoveCellReference(int a2)
 }
 
 // 0x4A95A0
-void MapClass::SetCellFlagsAlongPath(IUnknown * aP1, unsigned short * a2)
+int MapClass::SetCellFlagsAlongPath(IUnknown * aP1, unsigned short * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -202,7 +202,7 @@ void MapClass::SetCellFlagsAlongPath(IUnknown * aP1, unsigned short * a2)
 }
 
 // 0x4AC960
-void MapClass::ToggleZoom(int a2)
+int MapClass::ToggleZoom(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -249,7 +249,7 @@ void MapClass::ToggleZoom(int a2)
       {
         int v6 = *this; /*0x4ac9f4*/
         this->q11B4 = 0; /*0x4ac9f8*/
-        return (*(int (__thiscall **)(int *))(v6 + 80))(this); /*0x4ac9ff*/
+        return this->IsBelowScreen(); /*0x4ac9ff*/
       }
     }
   }
@@ -258,7 +258,7 @@ void MapClass::ToggleZoom(int a2)
 }
 
 // 0x4AD7E0
-void MapClass::SaveCellTagsToINI(char * a2)
+int MapClass::SaveCellTagsToINI(char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -330,7 +330,7 @@ void MapClass::SaveCellTagsToINI(char * a2)
 }
 
 // 0x4AEB30
-void MapClass::SetScrollMode(MouseClass * aP1)
+int MapClass::SetScrollMode(MouseClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -341,7 +341,7 @@ void MapClass::SetScrollMode(MouseClass * aP1)
 }
 
 // 0x506D50
-void MapClass::CalcVisibleCellRange(int a1, int a2, VectorClass * aP2, int * a3)
+int MapClass::CalcVisibleCellRange(int a1, int a2, VectorClass * aP2, int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -424,7 +424,7 @@ void MapClass::CalcVisibleCellRange(int a1, int a2, VectorClass * aP2, int * a3)
 }
 
 // 0x547020
-void MapClass::LoadFileData()
+int MapClass::LoadFileData()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -474,7 +474,7 @@ void MapClass::LoadFileData()
 }
 
 // 0x554A80
-void MapClass::ScrollOnce(AbstractClass * aP1)
+int MapClass::ScrollOnce(AbstractClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -594,7 +594,7 @@ void MapClass::Destruct()
 }
 
 // 0x565800
-void MapClass::Destru_vt05()
+int MapClass::Destru_vt05()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -605,7 +605,7 @@ void MapClass::Destru_vt05()
   v1[84] = 512; /*0x56581f*/
   int v2 = *v1; /*0x565825*/
   v1[85] = 0x40000; /*0x565828*/
-  (*(void (__thiscall **)(int *))(v2 + 88))(v1); /*0x565832*/
+  v1->InitCellVector(); /*0x565832*/
   if ( v1[5] ) /*0x565835*/
     goto LABEL_14; /*0x56583a*/
   _DWORD * v3 = __2_YAPAXI_Z(0x10u); /*0x565842*/
@@ -777,7 +777,7 @@ void MapClass::Destru_vt07()
 }
 
 // 0x565AA0
-void MapClass::InitCellVector()
+int MapClass::InitCellVector()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -833,7 +833,7 @@ unsigned int * MapClass::InitAllCells()
 }
 
 // 0x5673A0
-void MapClass::RevealArea0(IUnknown * aP1, MouseClass * aP2, HouseClass * aP3, MouseClass * aP4, HouseClass * aP5, char a7, char a8, char a9)
+int MapClass::RevealArea0(IUnknown * aP1, MouseClass * aP2, HouseClass * aP3, MouseClass * aP4, HouseClass * aP5, char a7, char a8, char a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1449,7 +1449,7 @@ LABEL_17:
 }
 
 // 0x568BB0
-void MapClass::PostProcessReveal(char a2)
+int MapClass::PostProcessReveal(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1550,7 +1550,7 @@ void MapClass::PostProcessReveal(char a2)
 }
 
 // 0x56B3F0
-void MapClass::DecompressCellData(MouseClass * aP1)
+int MapClass::DecompressCellData(MouseClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1615,7 +1615,7 @@ void MapClass::DecompressCellData(MouseClass * aP1)
 }
 
 // 0x56D230
-void MapClass::GetTileIndex(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3)
+int MapClass::GetTileIndex(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1689,7 +1689,7 @@ void MapClass::GetTileIndex(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3)
 }
 
 // 0x56D6E0
-void MapClass::ProcessRegion()
+int MapClass::ProcessRegion()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1841,7 +1841,7 @@ LABEL_30:
 }
 
 // 0x56DAE0
-void MapClass::ClearRegions(IUnknown * aP1)
+int MapClass::ClearRegions(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1873,7 +1873,7 @@ void MapClass::ClearRegions(IUnknown * aP1)
 }
 
 // 0x56E7C0
-void MapClass::CheckCellsBuildable(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnknown * aP4, IUnknown * aP5, int aP6, IUnknown * aP7, IUnknown * aP8)
+int MapClass::CheckCellsBuildable(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnknown * aP4, IUnknown * aP5, int aP6, IUnknown * aP7, IUnknown * aP8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1918,7 +1918,7 @@ LABEL_11:
 }
 
 // 0x574780
-void MapClass::TransitionCliff(MouseClass * aP0)
+int MapClass::TransitionCliff(MouseClass * aP0)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2362,7 +2362,7 @@ LABEL_79:
 }
 
 // 0x577920
-void MapClass::RemoveTriggerRef(AbstractClass * aP1, int a3)
+int MapClass::RemoveTriggerRef(AbstractClass * aP1, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2701,7 +2701,7 @@ void MapClass::IncrementRedrawCounter()
 }
 
 // 0x57A0C0
-void MapClass::InitTileData(MouseClass * aP0, int aP3)
+int MapClass::InitTileData(MouseClass * aP0, int aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2829,7 +2829,7 @@ void MapClass::InitTileData(MouseClass * aP0, int aP3)
 }
 
 // 0x5856B0
-void MapClass::InitializeTileData(MapClass * aP1)
+int MapClass::InitializeTileData(MapClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2958,7 +2958,7 @@ void MapClass::InitializeTileData(MapClass * aP1)
 }
 
 // 0x585D00
-void MapClass::LoadTerrainData(MapClass * aP1)
+int MapClass::LoadTerrainData(MapClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -3059,7 +3059,7 @@ void MapClass::LoadTerrainData(MapClass * aP1)
 }
 
 // 0x586780
-void MapClass::IsAreaFree(int * a2, int a3)
+int MapClass::IsAreaFree(int * a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -3128,7 +3128,7 @@ LABEL_20:
 }
 
 // 0x589370
-void MapClass::AllocateCellDataBuffer(int a2, char * a3)
+int MapClass::AllocateCellDataBuffer(int a2, char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -3237,7 +3237,7 @@ LABEL_14:
 }
 
 // 0x589A60
-void MapClass::AllocateMapDataBuffer(int a2, int * a3)
+int MapClass::AllocateMapDataBuffer(int a2, int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -3443,7 +3443,7 @@ int MapClass::Cleanup(int a1, int a2)
 }
 
 // 0x599530
-void MapClass::ProcessTile()
+int MapClass::ProcessTile()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -3498,7 +3498,7 @@ void MapClass::ProcessTile()
 }
 
 // 0x5A0410
-void MapClass::GrowLayer(int a2, int a3, int a4)
+int MapClass::GrowLayer(int a2, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -3860,7 +3860,7 @@ unsigned int * MapClass::FindPlacementCellsAlt(IUnknown * aP1, IUnknown * aP2)
 }
 
 // 0x7BCF50
-void MapClass::isCellShrouded(unsigned short a2)
+int MapClass::isCellShrouded(unsigned short a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

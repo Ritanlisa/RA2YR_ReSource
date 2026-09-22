@@ -3,7 +3,7 @@
 #include "e4/e4_globals.hpp"
 
 // 0x552060
-void LCWPipe::Dtor()
+int LCWPipe::Dtor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

@@ -4,7 +4,7 @@
 #include "e4/classes/Math_e4.hpp"
 
 // 0x4810A0
-void Input::OffsetToDirection()
+int Input::OffsetToDirection()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

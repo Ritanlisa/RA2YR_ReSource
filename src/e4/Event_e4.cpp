@@ -16,7 +16,7 @@
 
 // 0x48D080
 namespace gamemd {
-void Event::Dispatch()
+int Event::Dispatch()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

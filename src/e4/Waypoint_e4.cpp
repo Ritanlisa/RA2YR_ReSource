@@ -80,7 +80,7 @@ void * Waypoint::InitInvalid()
 
 // 0x763A50
 namespace gamemd {
-void Waypoint::FindCell(unsigned int * a2)
+int Waypoint::FindCell(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

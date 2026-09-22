@@ -37,7 +37,7 @@ LABEL_6:
 }
 
 // 0x473980
-void ObjectTypeClass::loadTypeMember_473980()
+int ObjectTypeClass::loadTypeMember_473980()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -58,7 +58,7 @@ void ObjectTypeClass::loadTypeMember_473980()
 }
 
 // 0x474940
-void ObjectTypeClass::loadTypeMember_5474940(CCINIClass * aP1, unsigned char * a2, int a4)
+int ObjectTypeClass::loadTypeMember_5474940(CCINIClass * aP1, unsigned char * a2, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -87,7 +87,7 @@ void ObjectTypeClass::loadTypeMember_5474940(CCINIClass * aP1, unsigned char * a
 }
 
 // 0x474F50
-void ObjectTypeClass::ReadInt(unsigned char * a2, unsigned char * a3, int a4)
+int ObjectTypeClass::ReadInt(unsigned char * a2, unsigned char * a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -110,7 +110,7 @@ void ObjectTypeClass::ReadInt(unsigned char * a2, unsigned char * a3, int a4)
 }
 
 // 0x5F7090
-void ObjectTypeClass::ConstructFull(AbstractClass * aP1)
+int ObjectTypeClass::ConstructFull(AbstractClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -291,7 +291,7 @@ unsigned int * ObjectTypeClass::Construct(ObjectTypeClass * aP1)
 }
 
 // 0x5F7400
-void ObjectTypeClass::Destruct()
+int ObjectTypeClass::Destruct()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -473,7 +473,7 @@ void ObjectTypeClass::UnloadPipsSHP()
 }
 
 // 0x5F9070
-void ObjectTypeClass::Load2DArt()
+int ObjectTypeClass::Load2DArt()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -582,7 +582,7 @@ LABEL_41:
 }
 
 // 0x5F92D0
-void ObjectTypeClass::LoadFromINI(CCINIClass * aP1)
+int ObjectTypeClass::LoadFromINI(CCINIClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -803,7 +803,7 @@ void ObjectTypeClass::SetRTTI71()
 }
 
 // 0x5F9720
-void ObjectTypeClass::LoadCleanup(IUnknown * aP0, ObjectTypeClass * aP1)
+int ObjectTypeClass::LoadCleanup(IUnknown * aP0, ObjectTypeClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -935,7 +935,7 @@ void ObjectTypeClass::LoadCleanup(IUnknown * aP0, ObjectTypeClass * aP1)
 }
 
 // 0x712040
-void ObjectTypeClass::SelectArtOrAlt()
+int ObjectTypeClass::SelectArtOrAlt()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -947,7 +947,7 @@ void ObjectTypeClass::SelectArtOrAlt()
     return *(this + 444); /*0x7120bf*/
   if ( *((_BYTE *)HouseClass_Player + 703) ) /*0x71204c*/
   {
-    if ( (*(int (__thiscall **)(_DWORD *))(*this + 44))(this) == 16 ) /*0x712060*/
+    if ( this->getAltitude() == 16 ) /*0x712060*/
     {
       result = this->q710; /*0x712062*/
       if ( result ) /*0x71206a*/
@@ -960,8 +960,8 @@ void ObjectTypeClass::SelectArtOrAlt()
   }
   if ( !v1 /*0x7120a1*/
     || !*((_BYTE *)v1 + 704)
-    || (*(int (__thiscall **)(_DWORD *))(*this + 44))(this) != 40
-    && ((*(int (__thiscall **)(_DWORD *))(*this + 44))(this) != 7 || !*(this + 258)) )
+    || this->getAltitude() != 40
+    && (this->getAltitude() != 7 || !*(this + 258)) )
   {
     return *(this + 444); /*0x7120a1*/
   }
@@ -973,7 +973,7 @@ void ObjectTypeClass::SelectArtOrAlt()
 }
 
 // 0x712170
-void ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char *** a2)
+int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char *** a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -4820,7 +4820,7 @@ LABEL_286:
 }
 
 // 0x7170A0
-void ObjectTypeClass::DeserializeArrays()
+int ObjectTypeClass::DeserializeArrays()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -4873,7 +4873,7 @@ void ObjectTypeClass::DeserializeArrays()
 }
 
 // 0x717820
-void ObjectTypeClass::loadTypeMember_5717820()
+int ObjectTypeClass::loadTypeMember_5717820()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -4898,7 +4898,7 @@ unsigned int * ObjectTypeClass::loadTypeMember_5717C00(unsigned int * a2)
 
   if ( this == a2 ) /*0x717c0a*/
     return this; /*0x717c0a*/
-  (*(void (__thiscall **)(_DWORD *))(*this + 12))(this); /*0x717c0e*/
+  this->vt_entry_68(); /*0x717c0e*/
   int v3 = a2[2]; /*0x717c11*/
   this->vtable3 = v3; /*0x717c16*/
   if ( !v3 ) /*0x717c19*/

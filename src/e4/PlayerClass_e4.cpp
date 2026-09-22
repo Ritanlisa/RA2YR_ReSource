@@ -3,7 +3,7 @@
 #include "e4/e4_globals.hpp"
 
 // 0x5D8CB0
-void PlayerClass::SetHouse(int a2)
+int PlayerClass::SetHouse(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

@@ -65,7 +65,7 @@ void * TagTypeClass::Construct(ObjectClass * aP1)
 
 // 0x6E5CA0
 namespace gamemd {
-void TagTypeClass::CleanupMembers()
+int TagTypeClass::CleanupMembers()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -139,7 +139,7 @@ void TagTypeClass::CleanupMembers()
 
 // 0x6E5E50
 namespace gamemd {
-void TagTypeClass::GetEvent(int a2, int a3)
+int TagTypeClass::GetEvent(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -158,7 +158,7 @@ void TagTypeClass::GetEvent(int a2, int a3)
 
 // 0x6E6080
 namespace gamemd {
-void TagTypeClass::GetAction(unsigned char *** a2)
+int TagTypeClass::GetAction(unsigned char *** a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -201,7 +201,7 @@ void TagTypeClass::GetAction(unsigned char *** a2)
 
 // 0x6E6160
 namespace gamemd {
-void TagTypeClass::GetParameter(char * a2)
+int TagTypeClass::GetParameter(char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -248,7 +248,7 @@ LABEL_6:
 
 // 0x6E63E0
 namespace gamemd {
-void TagTypeClass::PowerDrainUpdate(int * a2)
+int TagTypeClass::PowerDrainUpdate(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -260,7 +260,7 @@ void TagTypeClass::PowerDrainUpdate(int * a2)
 
 // 0x6E64B0
 namespace gamemd {
-void TagTypeClass::GetAuxField()
+int TagTypeClass::GetAuxField()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

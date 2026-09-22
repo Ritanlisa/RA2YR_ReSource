@@ -28,7 +28,7 @@ uint32_t Hash::ComputeHashSHA1(const void* data, uint32_t size)
 // IDA 0x4F4410: Hash::InsertOrdered (stub).
 // NOTE: previous annotation pointed at Int_CompareFunc4 (a different function).
 // 0x4f4410
-void Hash::InsertOrdered(void* table, const void* entry)
+int Hash::InsertOrdered(void* table, const void* entry)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -115,7 +115,7 @@ void SHA1::Init()
 
 // IDA 0x69DA00: Process
 // 0x69d960
-void SHA1::Process(const void* data, uint32_t size)
+int SHA1::Process(const void* data, uint32_t size)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -208,7 +208,7 @@ retn    8
 
 // IDA 0x69DC00: Compute
 // 0x69d9e0
-void SHA1::Compute(uint8_t digest[20])
+int SHA1::Compute(uint8_t digest[20])
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -513,7 +513,7 @@ static const uint32_t crc32_table[256] = {
 
 // IDA 0x69E000: Compute
 // 0x4a1fb0
-void CRC32::Compute(const void* data, uint32_t size)
+int CRC32::Compute(const void* data, uint32_t size)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x4a1fb0

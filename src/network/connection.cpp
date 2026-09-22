@@ -264,7 +264,7 @@ void ConnectionClass::serviceSendQueue()
 
 // IDA 0x48C5A0 — connect: activate network connection
 // 0x48c5a0
-void ConnectionClass::connect()
+int ConnectionClass::connect()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

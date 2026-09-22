@@ -3,7 +3,7 @@
 #include "e4/e4_globals.hpp"
 
 // 0x642B60
-void LoadingScreen::GetColorScheme()
+int LoadingScreen::GetColorScheme()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

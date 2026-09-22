@@ -30,7 +30,7 @@ void * WarheadTypeClass::loadWarheadINI(CCINIClass * aP1, unsigned char * a2, CC
 }
 
 // 0x525300
-void WarheadTypeClass::Release(int a2, unsigned int * a3)
+int WarheadTypeClass::Release(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -256,7 +256,7 @@ void * WarheadTypeClass::ReadParticleSystems(char a2)
 }
 
 // 0x644630
-void WarheadTypeClass::applyDamage()
+int WarheadTypeClass::applyDamage()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -295,7 +295,7 @@ LABEL_6:
 }
 
 // 0x75CEC0
-void WarheadTypeClass::Construct(ObjectClass * aP1)
+int WarheadTypeClass::Construct(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -414,7 +414,7 @@ void WarheadTypeClass::Construct(ObjectClass * aP1)
 }
 
 // 0x75DEC0
-void WarheadTypeClass::ProcessPower(int * a2)
+int WarheadTypeClass::ProcessPower(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -483,7 +483,7 @@ void WarheadTypeClass::ProcessPower(int * a2)
 }
 
 // 0x75E0C0
-void WarheadTypeClass::SaveLoad_Prefix(unsigned int * a1, int a2)
+int WarheadTypeClass::SaveLoad_Prefix(unsigned int * a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -589,7 +589,7 @@ void WarheadTypeClass_SaveLoad_Prefix_0()
 } // namespace gamemd
 
 // 0x75E3B0
-void WarheadTypeClass::FindOrCreate()
+int WarheadTypeClass::FindOrCreate()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -615,7 +615,7 @@ LABEL_6:
 }
 
 // 0x75E440
-void WarheadTypeClass::GetDamage(int a2, int a3)
+int WarheadTypeClass::GetDamage(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

@@ -4,7 +4,7 @@
 #include "e4/classes/Array_e4.hpp"
 
 // 0x6D1200
-void CommandClass::BuildBar()
+int CommandClass::BuildBar()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -135,7 +135,7 @@ void CommandClass::BuildBar()
 }
 
 // 0x724580
-void CommandClass::AddAction(ToolTipManager * aP1)
+int CommandClass::AddAction(ToolTipManager * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

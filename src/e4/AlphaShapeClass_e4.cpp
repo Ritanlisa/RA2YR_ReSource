@@ -5,7 +5,7 @@
 #include "e4/classes/Power_e4.hpp"
 
 // 0x420DA0
-void AlphaShapeClass::SD_vt13(int a2)
+int AlphaShapeClass::SD_vt13(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -18,7 +18,7 @@ void AlphaShapeClass::SD_vt13(int a2)
 }
 
 // 0x420E40
-void AlphaShapeClass::SD_vt06(TechnoTypeClass * aP0, int * a1, int aP2)
+int AlphaShapeClass::SD_vt06(TechnoTypeClass * aP0, int * a1, int aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -30,7 +30,7 @@ void AlphaShapeClass::SD_vt06(TechnoTypeClass * aP0, int * a1, int aP2)
 }
 
 // 0x420E70
-void AlphaShapeClass::SD_vt10(int a2, int a3)
+int AlphaShapeClass::SD_vt10(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

@@ -31,7 +31,7 @@ void * MSVQAnim::GetFrameRect(int * a2)
 }
 
 // 0x5CD320
-void MSVQAnim::Stub()
+int MSVQAnim::Stub()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

@@ -5,7 +5,7 @@
 
 // 0x6CC260
 namespace gamemd {
-void Super::GetDefaultTimer()
+int Super::GetDefaultTimer()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

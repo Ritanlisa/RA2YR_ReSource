@@ -9,7 +9,7 @@
 
 // 0x71E940
 namespace gamemd {
-void TEventClass::Execute(int a2, int a3, int a4, int * a5, int a6, int a7)
+int TEventClass::Execute(int a2, int a3, int a4, int * a5, int a6, int a7)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -426,7 +426,7 @@ LABEL_122:
 
 // 0x71F390
 namespace gamemd {
-void TEventClass::PrepareSaveToINI(const char * a2)
+int TEventClass::PrepareSaveToINI(const char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -529,7 +529,7 @@ void TEventClass::PrepareSaveToINI(const char * a2)
 
 // 0x71F800
 namespace gamemd {
-void TEventClass::CheckConditions(int a2, int a3)
+int TEventClass::CheckConditions(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

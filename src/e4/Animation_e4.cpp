@@ -169,7 +169,7 @@ LABEL_51:
 }
 
 // 0x4A52F0
-void Animation::GetProgress()
+int Animation::GetProgress()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

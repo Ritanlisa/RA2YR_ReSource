@@ -55,7 +55,7 @@ LABEL_9:
     FacingClass::Set_SyncLog((FacingClass *)(this + 232), Value); /*0x414015*/
     int v11 = *this; /*0x414020*/
     int v12 = (*(int (__thiscall **)(int))(*(_DWORD *)this[433] + 188))(this[433]); /*0x414024*/
-    (*(void (__thiscall **)(int *, int))(v11 + 460))(this, v12); /*0x41402d*/
+    this->SetZ(v12); /*0x41402d*/
     v13 = (AircraftTypeClass *)this[433]; /*0x414033*/
     int v14 = *(_DWORD *)&v13[2].Name[28]; /*0x41403a*/
     if ( v14 == -1 ) /*0x414043*/
@@ -75,7 +75,7 @@ LABEL_9:
 
 // 0x415B10
 namespace gamemd {
-void AircraftClass::FindLandingCell(int * a2, int a3)
+int AircraftClass::FindLandingCell(int * a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -88,7 +88,7 @@ void AircraftClass::FindLandingCell(int * a2, int a3)
   {
     int v6 = *v5; /*0x415b34*/
   char v20[4]; // [esp+30h] [ebp-10h] BYREF
-    _WORD * v7 = (_WORD *)(*(int (__thiscall **)(_DWORD *, char *))(*this + 440))(this, v20); /*0x415b3e*/
+    _WORD * v7 = (_WORD *)this->GetCellCoords_Alt(v20); /*0x415b3e*/
     int v8 = v6 & 7; /*0x415b44*/
     int v9 = 4 * v8 + 9041544; /*0x415b55*/
     v10 = *v7 + LOWORD(Direction_X_Offsets[v8]); /*0x415b5c*/
@@ -119,8 +119,8 @@ void AircraftClass::FindLandingCell(int * a2, int a3)
   int v15 = *a2; /*0x415c0b*/
   void * v16 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v18); /*0x415c19*/
   (*(void (__thiscall **)(int *, void *, int))(v15 + 1152))(a2, v16, 1); /*0x415c21*/
-  if ( (*(int (__thiscall **)(_DWORD *, int, int *))(*this + 632))(this, 2, a2) == 1 ) /*0x415c37*/
-    (*(void (__thiscall **)(_DWORD *, int))(*this + 628))(this, 9); /*0x415c3f*/
+  if ( this->ThunkTo636(2, a2) == 1 ) /*0x415c37*/
+    this->ThunkTo159x4(9); /*0x415c3f*/
   return 1; /*0x415c45*/
 }
 }
@@ -169,7 +169,7 @@ void AircraftClass_DeployWithAnim()
 
 // 0x417CC0
 namespace gamemd {
-void AircraftClass::GetCursorOverObject(IUnknown * aP1, IUnknown * a3)
+int AircraftClass::GetCursorOverObject(IUnknown * aP1, IUnknown * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -294,7 +294,7 @@ LABEL_36:
 
 // 0x4196B0
 namespace gamemd {
-void AircraftClass::ValidateLandingCell(unsigned int * a2, int a3, int a4, int a5, int a6)
+int AircraftClass::ValidateLandingCell(unsigned int * a2, int a3, int a4, int a5, int a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -331,29 +331,29 @@ void AircraftClass::ValidateLandingCell(unsigned int * a2, int a3, int a4, int a
 
 // 0x41A940
 namespace gamemd {
-void AircraftClass::EvaluateTargetingState()
+int AircraftClass::EvaluateTargetingState()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v2 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->q1B1 + 188))(this->q1B1); /*0x41a956*/
-  if ( (*(int (__thiscall **)(int *))(*this + 456))(this) == v2 ) /*0x41a960*/
+  if ( this->GetZAboveGround() == v2 ) /*0x41a960*/
   {
     if ( !this->q175 ) /*0x41a962*/
-      (*(void (__thiscall **)(int *, _DWORD, int))(*this + 1156))(this, 0, 1); /*0x41a974*/
+      this->ValidatePlacement(0, 1); /*0x41a974*/
     return 1; /*0x41a97b*/
   }
   else
   {
     if ( !this->q0BF /*0x41a99c*/
-      && (*(unsigned __int8 (__thiscall **)(int *))(*this + 684))(this)
+      && this->HasActiveParam()
       && !Team::AllMembersValid(this) )
     {
-      (*(void (__thiscall **)(int *, _DWORD, int))(*this + 1156))(this, 0, 1); /*0x41a9ad*/
+      this->ValidatePlacement(0, 1); /*0x41a9ad*/
     }
     if ( this->q2B4 ) /*0x41a9b3*/
     {
-      (*(void (__thiscall **)(int *, int, _DWORD))(*this + 488))(this, 1, 0); /*0x41a9c5*/
+      this->ProcessLanding(1, 0); /*0x41a9c5*/
       return 1; /*0x41a9cc*/
     }
     else
@@ -513,7 +513,7 @@ LABEL_35:
 
 // 0x41ADF0
 namespace gamemd {
-void AircraftClass::RevealSight(int a2, int a3)
+int AircraftClass::RevealSight(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -525,7 +525,7 @@ void AircraftClass::RevealSight(int a2, int a3)
   int v18; // [esp+10h] [ebp-8h]
   int v19; // [esp+14h] [ebp-4h]
   int v4 = *(_DWORD *)(this->q1B1 + 1512); /*0x41ae00*/
-  if ( !(*(int (__thiscall **)(int *))(*this + 456))(this) ) /*0x41ae06*/
+  if ( !this->GetZAboveGround() ) /*0x41ae06*/
   {
     v4 = 1; /*0x41ae10*/
 LABEL_4:
@@ -552,7 +552,7 @@ LABEL_4:
     v18 = this->owningHouseIndex; /*0x41aed6*/
     int v11 = *this; /*0x41aeda*/
     v19 = this->q029; /*0x41aedf*/
-    int v12 = (*(int (__thiscall **)(int *))(v11 + 456))(this); /*0x41aee3*/
+    int v12 = this->GetZAboveGround(); /*0x41aee3*/
     MapClass::RevealArea1( /*0x41af1a*/
       &v17,
       CrateImg,
@@ -568,7 +568,7 @@ LABEL_4:
     int v15 = *this; /*0x41af2b*/
     v18 = v13; /*0x41af2d*/
     v19 = v14; /*0x41af35*/
-    int v16 = (*(int (__thiscall **)(int *))(v15 + 456))(this); /*0x41af39*/
+    int v16 = this->GetZAboveGround(); /*0x41af39*/
     return MapClass::RevealArea1( /*0x41af70*/
              &v17,
              CrateImg,
@@ -586,7 +586,7 @@ LABEL_4:
 
 // 0x41B430
 namespace gamemd {
-void AircraftClass::LoadFromStream(unsigned int * a0, FootClass * aP1)
+int AircraftClass::LoadFromStream(unsigned int * a0, FootClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -671,7 +671,7 @@ LABEL_18:
 
 // 0x41B9F0
 namespace gamemd {
-void AircraftClass::UpdateDocking(int a2)
+int AircraftClass::UpdateDocking(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -710,7 +710,7 @@ LABEL_4:
 
 // 0x41BB30
 namespace gamemd {
-void AircraftClass::OverrideMission_SyncLog(int a2, int a3, int a4)
+int AircraftClass::OverrideMission_SyncLog(int a2, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

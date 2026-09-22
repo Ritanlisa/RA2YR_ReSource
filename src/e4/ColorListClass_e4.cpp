@@ -3,7 +3,7 @@
 #include "e4/e4_globals.hpp"
 
 // 0x557AE0
-void ColorListClass::SetColor()
+int ColorListClass::SetColor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -17,7 +17,7 @@ void ColorListClass::SetColor()
 }
 
 // 0x557F40
-void ColorListClass::Clear(unsigned int a2)
+int ColorListClass::Clear(unsigned int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -31,13 +31,13 @@ void ColorListClass::Clear(unsigned int a2)
   else
   {
     this->q05B = a2; /*0x557f4c*/
-    (*(void (__thiscall **)(int *))(*this + 72))(this); /*0x557f56*/
+    this->AddItem_1(); /*0x557f56*/
     if ( this->q05B < this->q170 ) /*0x557f67*/
-      (*(void (__thiscall **)(int *, _DWORD))(*this + 192))(this, this->q05B); /*0x557f6e*/
+      this->OnKeyDown(this->q05B); /*0x557f6e*/
     int v4 = this->q014; /*0x557f74*/
     result = this->q05B; /*0x557f7d*/
     if ( result >= v4 + this->q170 ) /*0x557f87*/
-      return (*(int (__thiscall **)(int *, int))(*this + 192))(this, result - v4 + 1); /*0x557f91*/
+      return this->OnKeyDown(result - v4 + 1); /*0x557f91*/
   }
   return result; /*0x557f97*/
 }
@@ -57,7 +57,7 @@ void ColorListClass::RemoveColor(wchar_t * String2)
       if ( ++v3 >= this->q044 ) /*0x558044*/
         return; /*0x558044*/
     }
-    (*(void (__thiscall **)(_DWORD *, int))(*this + 184))(this, v3); /*0x558051*/
+    this->Clear(v3); /*0x558051*/
   }
 }
 }

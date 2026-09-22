@@ -5,7 +5,7 @@
 #include "e4/classes/Vector_e4.hpp"
 
 // 0x42DDB0
-void Delegate::ProcessBitmapStream(char * Src, int a3)
+int Delegate::ProcessBitmapStream(char * Src, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -132,7 +132,7 @@ void Delegate::Set(AbstractTypeClass * aP1)
 }
 
 // 0x6C98E0
-void Delegate::Invoke(int a2, Straw * aP2)
+int Delegate::Invoke(int a2, Straw * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

@@ -8,7 +8,7 @@
 #include "e4/classes/Timer_e4.hpp"
 
 // 0x484680
-void TacticalMap::ComputeScreenTint()
+int TacticalMap::ComputeScreenTint()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -94,7 +94,7 @@ void TacticalMap::ComputeScreenTint()
 }
 
 // 0x4F4480
-void TacticalMap::Redraw()
+int TacticalMap::Redraw()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -156,7 +156,7 @@ void TacticalMap::MultiplyByScalar(ObjectClass * aP1)
 }
 
 // 0x5D49A0
-void TacticalMap::DrawCursor()
+int TacticalMap::DrawCursor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -196,7 +196,7 @@ void TacticalMap::DrawCursor()
 }
 
 // 0x6D1C20
-void TacticalMap::Construct()
+int TacticalMap::Construct()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -271,7 +271,7 @@ void TacticalMap::Construct()
 }
 
 // 0x6D2B60
-void TacticalMap::RenderCell(char arg0, AbstractClass * aP2, int a4, int a2)
+int TacticalMap::RenderCell(char arg0, AbstractClass * aP2, int a4, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -405,10 +405,9 @@ void TacticalMap_Render()
 } // namespace gamemd
 
 // 0x6D8DB0
-void TacticalMap::RenderAllObjects(int a2)
+int TacticalMap::RenderAllObjects(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void TacticalMap_RenderAllObjects(int this, int a2)
 {
   LPPERSISTSTREAM v19; // edi
   LPPERSISTSTREAM v39; // ebx
@@ -749,7 +748,7 @@ LABEL_53:
 }
 
 // 0x6DA180
-void TacticalMap::DrawOccupiedRegion()
+int TacticalMap::DrawOccupiedRegion()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

@@ -3,7 +3,7 @@
 #include "e4/e4_globals.hpp"
 
 // 0x52B620
-void SortedArray::BinarySearch(CCINIClass * aP1)
+int SortedArray::BinarySearch(CCINIClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -48,7 +48,7 @@ void SortedArray::BinarySearch(CCINIClass * aP1)
 }
 
 // 0x5387D0
-void SortedArray::Append(DynamicVector * aP1, unsigned int * a2)
+int SortedArray::Append(DynamicVector * aP1, unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -101,7 +101,7 @@ LABEL_9:
 }
 
 // 0x5388A0
-void SortedArray::RemoveByKey(DynamicVector * aP1)
+int SortedArray::RemoveByKey(DynamicVector * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -168,7 +168,7 @@ LABEL_9:
 }
 
 // 0x538980
-void SortedArray::FindPair(int * a2)
+int SortedArray::FindPair(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

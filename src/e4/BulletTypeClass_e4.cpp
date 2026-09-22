@@ -10,7 +10,7 @@
 #include "e4/classes/WalkLocomotion_e4.hpp"
 
 // 0x465450
-void BulletTypeClass::ReadArmor()
+int BulletTypeClass::ReadArmor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -75,7 +75,7 @@ void BulletTypeClass::ReadArmor()
 }
 
 // 0x465CC0
-void BulletTypeClass::ReadTrailerAnim()
+int BulletTypeClass::ReadTrailerAnim()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -194,7 +194,7 @@ unsigned char * BulletTypeClass::Construct(ObjectClass * aP1)
 }
 
 // 0x46BEE0
-void BulletTypeClass::LoadFromINI(unsigned char *** a2)
+int BulletTypeClass::LoadFromINI(unsigned char *** a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -450,7 +450,7 @@ void BulletTypeClass::LoadFromINI(unsigned char *** a2)
 }
 
 // 0x46C560
-void BulletTypeClass::ProcessPower(int * a2)
+int BulletTypeClass::ProcessPower(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -541,7 +541,7 @@ BulletTypeClass * BulletTypeClass::ddtor(char a2)
 }
 
 // 0x69FC10
-void BulletTypeClass::ProcessImpact(int a1)
+int BulletTypeClass::ProcessImpact(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

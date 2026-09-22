@@ -307,7 +307,7 @@ LABEL_32:
 
 // 0x5A1C70
 namespace gamemd {
-void E4Recv_5A1C70::sub_5A1C70()
+int E4Recv_5A1C70::sub_5A1C70()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1266,7 +1266,7 @@ LABEL_27:
 
 // 0x5A6BA0
 namespace gamemd {
-void E4Recv_5A6BA0::sub_5A6BA0()
+int E4Recv_5A6BA0::sub_5A6BA0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -4922,7 +4922,7 @@ double E4Recv_5AF3B0::sub_5AF3B0()
 
 // 0x5AF470
 namespace gamemd {
-void E4Recv_5AF470::sub_5AF470()
+int E4Recv_5AF470::sub_5AF470()
  {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

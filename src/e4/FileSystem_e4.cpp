@@ -4,7 +4,7 @@
 #include "e4/classes/String_e4.hpp"
 
 // 0x626DA0
-void FileSystem::ProcessNextFileExtension()
+int FileSystem::ProcessNextFileExtension()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

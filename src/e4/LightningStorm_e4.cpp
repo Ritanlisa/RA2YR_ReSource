@@ -7,7 +7,7 @@
 
 // 0x539EB0
 namespace gamemd {
-void LightningStorm::Start(int a1, int a2, int a3, void * a4)
+int LightningStorm::Start(int a1, int a2, int a3, void * a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -76,7 +76,7 @@ void LightningStorm::Start(int a1, int a2, int a3, void * a4)
 
 // 0x53A100
 namespace gamemd {
-void LightningStorm::IsActive()
+int LightningStorm::IsActive()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -87,7 +87,7 @@ void LightningStorm::IsActive()
 
 // 0x53A140
 namespace gamemd {
-void LightningStorm::Strike(IUnknown * aP0)
+int LightningStorm::Strike(IUnknown * aP0)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -151,7 +151,7 @@ void LightningStorm::Strike(IUnknown * aP0)
 
 // 0x53A300
 namespace gamemd {
-void LightningStorm::Strike2(int a1, int a2, int a3)
+int LightningStorm::Strike2(int a1, int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

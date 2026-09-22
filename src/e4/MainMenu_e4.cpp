@@ -117,7 +117,7 @@ LABEL_27:
 } // namespace gamemd
 
 // 0x531F60
-void MainMenu::DlgProc(HWND hWnd, int a2, int a3, int a4)
+int MainMenu::DlgProc(HWND hWnd, int a2, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

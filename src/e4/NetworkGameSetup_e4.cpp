@@ -3,7 +3,7 @@
 #include "e4/e4_globals.hpp"
 
 // 0x5B9750
-void NetworkGameSetup::ReadRulesUnknown()
+int NetworkGameSetup::ReadRulesUnknown()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

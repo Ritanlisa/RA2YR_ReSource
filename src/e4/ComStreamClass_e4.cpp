@@ -6,7 +6,7 @@
 #include "e4/classes/String_e4.hpp"
 
 // 0x7A3D90
-void ComStreamClass::Write()
+int ComStreamClass::Write()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -133,7 +133,7 @@ LABEL_16:
 }
 
 // 0x7AC820
-void ComStreamClass::Release()
+int ComStreamClass::Release()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -154,7 +154,7 @@ void ComStreamClass::Release()
 }
 
 // 0x7AC870
-void ComStreamClass::QueryInterface()
+int ComStreamClass::QueryInterface()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

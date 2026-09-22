@@ -3,7 +3,7 @@
 #include "e4/e4_globals.hpp"
 
 // 0x408E70
-void Count::DecrementRefCountsAudio()
+int Count::DecrementRefCountsAudio()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -26,7 +26,7 @@ void Count::DecrementRefCountsAudio()
 }
 
 // 0x46F6D0
-void Count::SetupAllCountriesLobby()
+int Count::SetupAllCountriesLobby()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -105,7 +105,7 @@ void Count::SetupAllCountriesLobby()
 }
 
 // 0x5F1EA0
-void Count::GetCountQueue()
+int Count::GetCountQueue()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -119,7 +119,7 @@ void Count::GetCountQueue()
 }
 
 // 0x76F080
-void Count::Get()
+int Count::Get()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

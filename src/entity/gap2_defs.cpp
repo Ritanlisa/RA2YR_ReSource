@@ -13555,7 +13555,7 @@ LABEL_11:
   if ( result <= 0 ) /*0x65b8cd*/
   {
     if ( this ) /*0x65b8d1*/
-      return (*(int (__thiscall **)(int *, int))(*this + 32))(this, 1); /*0x65b8d9*/
+      return this->ProcessEvent_7(1); /*0x65b8d9*/
   }
   return result; /*0x65b8dc*/
 }
@@ -14141,7 +14141,7 @@ namespace gamemd { int TerrainClass::IsPlacementValid(int a1, int a2, int a3, in
       int v17;
       int v18;
 
-      v7 = (_WORD *)(*(int (__thiscall **)(_DWORD *, _DWORD))(*this + 264))(this, 0);
+      v7 = (_WORD *)this->GetOrCreateResHandle(0);
       v8 = *(_DWORD *)(a2 + 36);
       while ( *v7 != 0x7FFF || v7[1] != 0x7FFF )
       {

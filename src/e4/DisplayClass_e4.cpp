@@ -9,7 +9,7 @@
 #include "e4/classes/VectorCursor_uint_DynamicVectorClass_uint____13_e4.hpp"
 
 // 0x487630
-void DisplayClass::UpdateDisplayTimer()
+int DisplayClass::UpdateDisplayTimer()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -42,7 +42,7 @@ void DisplayClass::UpdateDisplayTimer()
 }
 
 // 0x487690
-void DisplayClass::AdvanceFrameCounter()
+int DisplayClass::AdvanceFrameCounter()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -72,7 +72,7 @@ void DisplayClass::AdvanceFrameCounter()
 }
 
 // 0x4A8850
-void DisplayClass::LoadTypeData()
+int DisplayClass::LoadTypeData()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -90,12 +90,12 @@ void DisplayClass::LoadTypeData()
   int v3 = Viewport[3]; /*0x4a889e*/
   int v4 = *this; /*0x4a88a1*/
   v6[3] = v3; /*0x4a88a6*/
-  return (*(int (__thiscall **)(int *, _DWORD *))(v4 + 168))(this, v6); /*0x4a88b0*/
+  return this->SetViewDimensions(v6); /*0x4a88b0*/
 }
 }
 
 // 0x4A88C0
-void DisplayClass::SetSize()
+int DisplayClass::SetSize()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -138,7 +138,7 @@ char DisplayClass::ddtor()
 }
 
 // 0x4A9890
-void DisplayClass::UpdateCellPassability(short * a1, IUnknown * aP2)
+int DisplayClass::UpdateCellPassability(short * a1, IUnknown * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -245,7 +245,7 @@ void DisplayClass::UpdateCellPassability(short * a1, IUnknown * aP2)
         if ( v15 != -2 && (v14->__pad_11C[16] & 8) == 0 ) /*0x4a9ac6*/
         {
 LABEL_19:
-          (*(void (__thiscall **)(_DWORD *, IUnknown **, IUnknown *))(*this + 144))(this, &v32, aP2); /*0x4a9a0d*/
+          this->UpdateCellPassability(&v32, aP2); /*0x4a9a0d*/
           goto LABEL_30; /*0x4a9a21*/
         }
         if ( v15 >= 0 && v15 != v14->__pad_11C[4] ) /*0x4a9aeb*/
@@ -291,7 +291,7 @@ LABEL_30:
         if ( v22 != -2 && (v14->field_140 & 2) == 0 ) /*0x4a9c03*/
         {
 LABEL_34:
-          (*(void (__thiscall **)(_DWORD *, IUnknown **, IUnknown *))(*this + 144))(this, &v32, aP2); /*0x4a9b4a*/
+          this->UpdateCellPassability(&v32, aP2); /*0x4a9b4a*/
           continue; /*0x4a9b5e*/
         }
         if ( v22 >= 0 && v22 != v14->__pad_11C[5] ) /*0x4a9c28*/
@@ -311,7 +311,7 @@ LABEL_34:
 }
 
 // 0x4A9DD0
-void DisplayClass::ProcessCellReveal(MouseClass * aP1, IUnknown * aP2)
+int DisplayClass::ProcessCellReveal(MouseClass * aP1, IUnknown * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -398,7 +398,7 @@ void DisplayClass::ProcessCellReveal(MouseClass * aP1, IUnknown * aP2)
         if ( eax10 != -2 && (v13->field_140 & 2) == 0 ) /*0x4a9fac*/
         {
 LABEL_12:
-          (*(void (__thiscall **)(_DWORD *, IUnknown **, IUnknown *))(*this + 152))(this, &v22, aP2); /*0x4a9ef2*/
+          this->ProcessCellReveal(&v22, aP2); /*0x4a9ef2*/
           continue; /*0x4a9f07*/
         }
         if ( eax10 >= 0 && eax10 != v13->__pad_11C[5] ) /*0x4a9fd2*/
@@ -418,7 +418,7 @@ LABEL_12:
 }
 
 // 0x4AA050
-void DisplayClass::RevealFogCell(short * a1, IUnknown * aP2)
+int DisplayClass::RevealFogCell(short * a1, IUnknown * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -503,7 +503,7 @@ void DisplayClass::RevealFogCell(short * a1, IUnknown * aP2)
         if ( eax10 != -2 && (v14->__pad_11C[16] & 8) == 0 ) /*0x4aa218*/
         {
 LABEL_12:
-          (*(void (__thiscall **)(_DWORD *, int *, IUnknown *))(*this + 156))(this, &v22, aP2); /*0x4aa162*/
+          this->RevealFogCell(&v22, aP2); /*0x4aa162*/
           continue; /*0x4aa177*/
         }
         if ( eax10 >= 0 && eax10 != v14->__pad_11C[4] ) /*0x4aa23e*/
@@ -521,7 +521,7 @@ LABEL_12:
 }
 
 // 0x4AC310
-void DisplayClass::InitViewBounds(unsigned int * a2)
+int DisplayClass::InitViewBounds(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -571,7 +571,7 @@ void * DisplayClass::Draw(int a2)
   _BYTE v18[12]; // [esp+1Ch] [ebp-18h] BYREF
   int v19[3]; // [esp+28h] [ebp-Ch] BYREF
 
-  if ( a2 < 500 || a2 > 900 || (*(unsigned __int8 (__thiscall **)(_DWORD *))(*this + 104))(this) ) /*0x4ae513*/
+  if ( a2 < 500 || a2 > 900 || this->Stub() ) /*0x4ae513*/
     return 0; /*0x4ae513*/
   int v3 = DSurface_ViewBounds; /*0x4ae524*/
   int v4 = g_Map_VisibleRect; /*0x4ae531*/
@@ -625,7 +625,7 @@ void * DisplayClass::Draw(int a2)
 }
 
 // 0x4AEAD0
-void DisplayClass::ExitMode()
+int DisplayClass::ExitMode()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -639,7 +639,7 @@ void DisplayClass::ExitMode()
 }
 
 // 0x5519B0
-void DisplayClass::RenderStatusText(IUnknown * aP1, char a3)
+int DisplayClass::RenderStatusText(IUnknown * aP1, char a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -664,7 +664,7 @@ void DisplayClass::RenderStatusText(IUnknown * aP1, char a3)
 }
 
 // 0x551A90
-void DisplayClass::InsertPriorityText(int a2)
+int DisplayClass::InsertPriorityText(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -677,7 +677,7 @@ void DisplayClass::InsertPriorityText(int a2)
     if ( !this->MovementZones && v3 ) /*0x551aa6*/
       return 0; /*0x551aa6*/
     int v4 = this->CapacityIncrement; /*0x551aa8*/
-    if ( v4 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*this + 8))(this, v3 + v4, 0) ) /*0x551ab8*/
+    if ( v4 <= 0 || !this->Release(v3 + v4, 0) ) /*0x551ab8*/
       return 0; /*0x551abf*/
   }
   for ( i = 0; i < this->Count; ++i ) /*0x551ad2*/
@@ -694,7 +694,7 @@ void DisplayClass::InsertPriorityText(int a2)
 }
 
 // 0x5F6220
-void DisplayClass::checkScreenBounds(int a2)
+int DisplayClass::checkScreenBounds(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -705,7 +705,7 @@ void DisplayClass::checkScreenBounds(int a2)
 }
 
 // 0x6D8530
-void DisplayClass::ScrollTacticalView(IUnknown * aP1, IUnknown * aP2)
+int DisplayClass::ScrollTacticalView(IUnknown * aP1, IUnknown * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -748,7 +748,7 @@ void DisplayClass::ScrollTacticalView(IUnknown * aP1, IUnknown * aP2)
 }
 
 // 0x6DA230
-void DisplayClass::GetCoordDelta(AbstractClass * aP1)
+int DisplayClass::GetCoordDelta(AbstractClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -804,7 +804,7 @@ void DisplayClass::GetCoordDelta(AbstractClass * aP1)
 }
 
 // 0x7BA4D0
-void DisplayClass::ReadFromBuffer(void * a1, signed int Size)
+int DisplayClass::ReadFromBuffer(void * a1, signed int Size)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

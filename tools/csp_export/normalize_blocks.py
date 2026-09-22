@@ -25,6 +25,7 @@ from collections import defaultdict
 import sys as _sys, pathlib as _pathlib
 _sys.path.insert(0, str(_pathlib.Path(__file__).resolve().parent))
 from _blockspan import block_span, find_marker
+from _vtable import slot_name, load_name_ret, VT_OPEN, balance_paren, split_args
 
 ROOT = Path(__file__).resolve().parents[2]
 SRC = ROOT / 'src'
@@ -39,6 +40,27 @@ try:
     tmap = json.loads((ROOT / 'type_map.json').read_text(encoding='utf-8'))['type_map']
 except Exception:
     pass
+try:
+    cdb = json.loads((ROOT / 'anchors/class_db.json').read_text(encoding='utf-8'))['classes']
+except Exception:
+    cdb = {}
+
+_slot_cache = {}
+
+
+def slot_name(cls, slot_bytes):
+    """vtable byte offset -> method name for cls (ancestors chain)."""
+    if cls not in _slot_cache:
+        table = {}
+        chain = [cls] + list((cdb.get(cls) or {}).get('full_ancestors') or [])
+        for c in chain:
+            for arec in ((cdb.get(c) or {}).get('methods') or {}).values():
+                vs = arec.get('vtable_slots') or []
+                if vs:
+                    table.setdefault(vs[0]['slot'] * 4,
+                                     (arec.get('name') or '').split('::')[-1])
+        _slot_cache[cls] = table
+    return _slot_cache[cls].get(slot_bytes)
 
 # canon return types: addr -> ret (from csp_canon headers)
 canon_ret = {}
@@ -101,9 +123,14 @@ R_INDEX = re.compile(
     r'(0x[0-9A-Fa-f]+|\d+)\s*\)')
 
 
+NAME_RET = load_name_ret()
+
+
 def build_types(body, cls, addr):
     env = {}
     env_val = {}  # primitive types adopted from member declarations (CSP)
+    vt_of = {}    # vtable-value holders: var -> source object expression
+    vt_of = {}    # vtable-value holders: var -> source object expression
     if cls:
         env['this'] = cls
     ai = '0x%08X' % addr if addr else None
@@ -173,17 +200,44 @@ def build_types(body, cls, addr):
                 env[v] = env[vm.group(1)]
                 grew = True
                 continue
+            # vtable value: `vN = *this` / `vN = *recv` (vtable holder)
+            vtm = re.match(r'^\*(this|[a-z]\w*)$', rhs)
+            if vtm and (vtm.group(1) == 'this' or vtm.group(1) in env):
+                vt_of[v] = vtm.group(1)
+                grew = True
+                continue
+            # address of member: `vN = &this->M` -> M's declared class
+            am = re.match(r'^&this->([A-Za-z_]\w*)$', rhs)
+            if am and cls:
+                for o, info in (mtab.get(cls) or {}).get('members', {}).items():
+                    if info.get('name') == am.group(1):
+                        mt = (info.get('type') or '').strip()
+                        if is_cls(mt.rstrip('*').strip()):
+                            env[v] = mt.rstrip('*').strip()
+                            grew = True
+                        break
+                if v in env:
+                    continue
+            # call returning a class: `vN = Name(...)` (canon return types)
+            fm = re.match(r'^([A-Za-z_]\w*)\s*\(', rhs)
+            if fm and fm.group(1) not in ('if', 'for', 'while', 'switch',
+                                          'return', 'sizeof'):
+                t = NAME_RET.get(fm.group(1))
+                if t and is_cls(t.rstrip('*').strip()):
+                    env[v] = t.rstrip('*').strip()
+                    grew = True
+                    continue
             if re.fullmatch(r'[a-z]\w*', rhs) and rhs in env:
                 env[v] = env[rhs]
                 grew = True
         if not grew:
             break
-    return env, env_val
+    return env, env_val, vt_of
 
 
 def normalize(body, cls, addr):
     stats = defaultdict(int)
-    env, env_val = build_types(body, cls, addr)
+    env, env_val, vt_of = build_types(body, cls, addr)
     stats['typed_vars'] = len([k for k in env if k != 'this'])
     GENERIC = {'int', 'char', 'unsigned char', 'unsigned int', 'unsigned',
                'short', 'unsigned short', 'long', 'unsigned long', '_DWORD',
@@ -205,6 +259,58 @@ def normalize(body, cls, addr):
 
     body = R_DEREF.sub(lambda m: rw(m, False), body)
     body = R_INDEX.sub(lambda m: rw(m, True), body)
+
+    # ---- virtual calls: (*(CC **)(RECV + SLOT))(args) -> RECV->Name(args)
+    def rewrite_vt_line(ln):
+        pos = 0
+        changed_any = False
+        while True:
+            m = VT_OPEN.search(ln, pos)
+            if not m:
+                return ln, changed_any
+            recv = m.group(1)
+            slot = int(m.group(2), 0)
+            obj = None
+            tgt = None
+            if recv in ('this', '*this'):
+                obj, tgt = 'this', env.get('this')
+            elif recv in vt_of:
+                src_obj = vt_of[recv]
+                obj = src_obj
+                tgt = env.get(src_obj) or env.get(recv)
+            elif recv in env:
+                obj, tgt = recv, env[recv]
+            name = slot_name(tgt, slot) if tgt else None
+            if not name:
+                pos = m.end()
+                continue
+            call_open = m.end() - 1
+            call_close = balance_paren(ln, call_open)
+            if call_close < 0:
+                pos = m.end()
+                continue
+            args = split_args(ln[call_open + 1:call_close])
+            first = (args[0] if args else '').strip()
+            if first == obj or first == recv:
+                args = args[1:]
+            # extend the match head left to the deref opener `(*(` so the
+            # whole construct (including the cast) is consumed
+            head = ln.rfind('(*(', 0, m.start())
+            start = head if (head >= 0 and
+                             ln[head:m.start()].count('(') >=
+                             ln[head:m.start()].count(')')) else m.start()
+            new_call = '%s->%s(%s)' % (obj, name, ', '.join(args))
+            ln = ln[:start] + new_call + ln[call_close + 1:]
+            changed_any = True
+            stats['vt_calls'] += 1
+            pos = start + len(new_call)
+
+    new_lines = []
+    for ln in body.split(chr(10)):
+        if '**)(' in ln:
+            ln, ch = rewrite_vt_line(ln)
+        new_lines.append(ln)
+    body = chr(10).join(new_lines)
 
     # local retype: plain decls and merged declarations
     def ret_swap(type_and_name):
@@ -309,6 +415,8 @@ for p in sorted(SRC.rglob('*.cpp')):
             nblk += 1
             for kk, vv in st.items():
                 tot[kk] += vv
+            # vt_calls is read via st inside normalize; ensure key exists
+            st.setdefault('vt_calls', 0)
         # ---- duplicate-signature removal + outer def canon adoption ----
         # the block's FIRST lines are the IDA-rendered def + its `{`; the
         # signature duplicates the outer (tree) def -- drop the def line and
@@ -390,6 +498,7 @@ for p in sorted(SRC.rglob('*.cpp')):
         p.write_bytes('\n'.join(lines).encode('latin-1'))
 
 print('blocks normalized:', nblk)
+print('vt calls rewritten:', tot.get('vt_calls', 0))
 print('typed vars:', tot['typed_vars'])
 print('offset rewrites (param/local receivers):', tot['offsets'])
 print('locals retyped:', tot['retyped'])

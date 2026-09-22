@@ -8,7 +8,7 @@
 
 // 0x535CF0
 namespace gamemd {
-void CreateTeamCommand::vt02()
+int CreateTeamCommand::vt02()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -103,7 +103,7 @@ unsigned int * CreateTeamCommand::performAction_158()
 
 // 0x5386A0
 namespace gamemd {
-void CreateTeamCommand::performAction_241(int a2, unsigned int * a3)
+int CreateTeamCommand::performAction_241(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -193,7 +193,7 @@ void * CreateTeamCommand::performAction_243(char a2)
 
 // 0x6A6A00
 namespace gamemd {
-void CreateTeamCommand::performAction_245(char a2, int a3)
+int CreateTeamCommand::performAction_245(char a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1245,7 +1245,7 @@ wchar_t * CreateTeamCommand::performAction_78()
 
 // 0x536C00
 namespace gamemd {
-void CreateTeamCommand::performAction_79()
+int CreateTeamCommand::performAction_79()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // attributes: thunk
@@ -1495,7 +1495,7 @@ wchar_t * CreateTeamCommand::performAction_103()
 
 // 0x536EA0
 namespace gamemd {
-void CreateTeamCommand::performAction_104()
+int CreateTeamCommand::performAction_104()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // attributes: thunk
@@ -1543,7 +1543,7 @@ wchar_t * CreateTeamCommand::performAction_108()
 
 // 0x536F20
 namespace gamemd {
-void CreateTeamCommand::performAction_109()
+int CreateTeamCommand::performAction_109()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // attributes: thunk

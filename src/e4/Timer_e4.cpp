@@ -19,7 +19,7 @@ void * Timer::Start(DynamicVector * aP1)
 
 // 0x4A5240
 namespace gamemd {
-void Timer::StartDouble(double a2)
+int Timer::StartDouble(double a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -58,7 +58,7 @@ void * Timer::Init(DWORD a2)
 
 // 0x4F1B20
 namespace gamemd {
-void Timer::GetRemainingMs()
+int Timer::GetRemainingMs()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -77,7 +77,7 @@ void Timer::GetRemainingMs()
 
 // 0x54F720
 namespace gamemd {
-void Timer::PumpMessages()
+int Timer::PumpMessages()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -105,7 +105,7 @@ void Timer::PumpMessages()
 
 // 0x5B1E40
 namespace gamemd {
-void Timer::GetHighPrecision()
+int Timer::GetHighPrecision()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -124,7 +124,7 @@ void Timer::GetHighPrecision()
 
 // 0x5F1390
 namespace gamemd {
-void Timer::GetElapsed()
+int Timer::GetElapsed()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

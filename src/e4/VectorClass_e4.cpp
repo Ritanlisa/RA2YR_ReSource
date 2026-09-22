@@ -152,7 +152,7 @@
 #include "e4/classes/VectorClass_ushort_e4.hpp"
 
 // 0x4137A0
-void VectorClass::RemoveObjectById()
+int VectorClass::RemoveObjectById()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -183,7 +183,7 @@ void VectorClass::RemoveObjectById()
 }
 
 // 0x65A970
-void VectorClass::RemoveElement()
+int VectorClass::RemoveElement()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -261,7 +261,7 @@ LABEL_20:
 }
 
 // 0x763BA0
-void VectorClass::GetAtChecked(IUnknown * aP1)
+int VectorClass::GetAtChecked(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -278,7 +278,7 @@ void VectorClass::GetAtChecked(IUnknown * aP1)
 
 // 0x42F6F0
 namespace gamemd {
-void VectorClass_Cell::Release(int a2, unsigned int * a3)
+int VectorClass_Cell::Release(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -337,7 +337,7 @@ void VectorClass_Cell::Release(int a2, unsigned int * a3)
 
 // 0x4E0840
 namespace gamemd {
-void VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::Release(int a2, int * a3)
+int VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::Release(int a2, int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -439,7 +439,7 @@ void VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_Ce
 
 // 0x4E0B10
 namespace gamemd {
-void VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::SetCapacity(int a2, int * a3)
+int VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::SetCapacity(int a2, int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -565,7 +565,7 @@ unsigned int * VectorClass_K_8::Constructor()
 
 // 0x5AD010
 namespace gamemd {
-void VectorClass_Ptr::ResizeAndCopy(int a2, unsigned int * a3)
+int VectorClass_Ptr::ResizeAndCopy(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -676,7 +676,7 @@ unsigned int * VectorClass_ptr_BuildChoiceClass_int_ouseClass::Constructor(EnumC
 
 // 0x4F6A20
 namespace gamemd {
-void VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity(int a1, int a2)
+int VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -700,7 +700,7 @@ void VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity(int a1, int a2)
 
 // 0x4F6A80
 namespace gamemd {
-void VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_0(int a1, int a2)
+int VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_0(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -724,7 +724,7 @@ void VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_0(int a1, int a
 
 // 0x4F6AE0
 namespace gamemd {
-void VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_1(int a1, int a2)
+int VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_1(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -749,7 +749,7 @@ void VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_1(int a1, int a
 
 // 0x4F6B50
 namespace gamemd {
-void VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_2(int a1, int a2)
+int VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_2(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -910,7 +910,7 @@ unsigned int * VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_4(int
 
 // 0x501400
 namespace gamemd {
-void VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_5(int a1)
+int VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_5(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -973,7 +973,7 @@ void VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_5(int a1)
 
 // 0x50F520
 namespace gamemd {
-void VectorClass_ptr_BuildChoiceClass_int_ouseClass::Release(int a2, unsigned int * a3)
+int VectorClass_ptr_BuildChoiceClass_int_ouseClass::Release(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1023,7 +1023,7 @@ void VectorClass_ptr_BuildChoiceClass_int_ouseClass::Release(int a2, unsigned in
 
 // 0x50F660
 namespace gamemd {
-void VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_6(int a2, unsigned int * a3)
+int VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_6(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1070,7 +1070,7 @@ void VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_6(int a2, unsig
 
 // 0x6288F0
 namespace gamemd {
-void VectorClass_ptr_ColorScheme::SetCapacity_0(CCINIClass * aP1, unsigned char * a2)
+int VectorClass_ptr_ColorScheme::SetCapacity_0(CCINIClass * aP1, unsigned char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1223,7 +1223,7 @@ void VectorClass_ptr_ConvertClass::MarkDirty()
 
 // 0x63E090
 namespace gamemd {
-void VectorClass_ptr_PlanningBranchClass::Release(int a2, unsigned int * a3)
+int VectorClass_ptr_PlanningBranchClass::Release(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1273,7 +1273,7 @@ void VectorClass_ptr_PlanningBranchClass::Release(int a2, unsigned int * a3)
 
 // 0x76B8C0
 namespace gamemd {
-void VectorClass_rc_ptr_WDTTerritory::Release(int a2, unsigned int * a3)
+int VectorClass_rc_ptr_WDTTerritory::Release(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1364,7 +1364,7 @@ LABEL_14:
 
 // 0x5D8470
 namespace gamemd {
-void VectorClass_Scenario::ResizeAndCopy(int a2, unsigned int * a3)
+int VectorClass_Scenario::ResizeAndCopy(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1411,7 +1411,7 @@ void VectorClass_Scenario::ResizeAndCopy(int a2, unsigned int * a3)
 
 // 0x5D8730
 namespace gamemd {
-void VectorClass_Scenario2::ResizeAndCopy(int a2, unsigned int * a3)
+int VectorClass_Scenario2::ResizeAndCopy(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1458,7 +1458,7 @@ void VectorClass_Scenario2::ResizeAndCopy(int a2, unsigned int * a3)
 
 // 0x5D8590
 namespace gamemd {
-void VectorClass_Scenario3::ResizeAndCopy(int a2, unsigned int * a3)
+int VectorClass_Scenario3::ResizeAndCopy(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1508,7 +1508,7 @@ void VectorClass_Scenario3::ResizeAndCopy(int a2, unsigned int * a3)
 
 // 0x4E9840
 namespace gamemd {
-void VectorClass_SuperPtr::ResizeAndCopy(int a2, unsigned int * a3)
+int VectorClass_SuperPtr::ResizeAndCopy(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1555,7 +1555,7 @@ void VectorClass_SuperPtr::ResizeAndCopy(int a2, unsigned int * a3)
 
 // 0x6DC850
 namespace gamemd {
-void VectorClass_UDirtyAreaStruct::SetCapacity(CCINIClass * aP1, char * a2)
+int VectorClass_UDirtyAreaStruct::SetCapacity(CCINIClass * aP1, char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1659,7 +1659,7 @@ LABEL_26:
 
 // 0x6B44A0
 namespace gamemd {
-void VectorClass_UUndoInfoStruct::Release(int a2, unsigned int * a3)
+int VectorClass_UUndoInfoStruct::Release(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1759,7 +1759,7 @@ LABEL_14:
 
 // 0x6B4650
 namespace gamemd {
-void VectorClass_UUndoInfoStruct::SetCapacity(int a2, unsigned int * a3)
+int VectorClass_UUndoInfoStruct::SetCapacity(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

@@ -3,7 +3,7 @@
 #include "e4/e4_globals.hpp"
 
 // 0x4E1480
-void LinkClass::Destroy()
+int LinkClass::Destroy()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -13,7 +13,7 @@ void LinkClass::Destroy()
 }
 
 // 0x5565A0
-void LinkClass::Destruct()
+int LinkClass::Destruct()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -22,7 +22,7 @@ void LinkClass::Destruct()
 
   *this = &vt_LinkClass; /*0x5565a5*/
   Prev = LinkedList::FindPrev(this); /*0x5565b1*/
-  result = (*(int (__thiscall **)(_DWORD *))(*this + 28))(this); /*0x5565b7*/
+  result = this->FindNext(); /*0x5565b7*/
   LinkClass *v4 = this->m_Prev; /*0x5565ba*/
   if ( v4 ) /*0x5565c1*/
     v4->m_Next = this->m_Next; /*0x5565c6*/

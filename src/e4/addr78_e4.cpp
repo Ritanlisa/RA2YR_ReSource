@@ -2374,7 +2374,7 @@ void WOL_HandleLogout()
 
 // 0x786DC0
 namespace gamemd {
-void E4Recv_786DC0::sub_786DC0()
+int E4Recv_786DC0::sub_786DC0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

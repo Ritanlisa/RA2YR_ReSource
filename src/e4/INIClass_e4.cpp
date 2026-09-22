@@ -6,7 +6,7 @@
 
 // 0x526810
 namespace gamemd {
-void INIClass::BinarySearchSection(INIClass * aP1)
+int INIClass::BinarySearchSection(INIClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -93,7 +93,7 @@ LABEL_19:
 
 // 0x526960
 namespace gamemd {
-void INIClass::GetKeyCount(INIClass * aP1)
+int INIClass::GetKeyCount(INIClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

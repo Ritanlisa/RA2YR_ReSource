@@ -233,7 +233,7 @@ LABEL_7:
 
 // 0x4DB8A0
 namespace gamemd {
-void E4Recv_4DB8A0::sub_4DB8A0()
+int E4Recv_4DB8A0::sub_4DB8A0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

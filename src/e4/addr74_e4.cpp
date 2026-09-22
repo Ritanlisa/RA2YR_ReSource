@@ -30,10 +30,9 @@ void PlaceScenarioUnits()
 
 // 0x746EC0
 namespace gamemd {
-void sub_746EC0()
+int sub_746EC0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_746EC0()
 {
   unk_B1D0C8 = 0; /*0x746ec2*/
   unk_B1D0CC = 0; /*0x746ec7*/
@@ -530,7 +529,7 @@ LABEL_10:
 
 // 0x74BDC0
 namespace gamemd {
-void E4Recv_74BDC0::sub_74BDC0(unsigned int a2)
+int E4Recv_74BDC0::sub_74BDC0(unsigned int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -737,7 +736,7 @@ LABEL_18:
 
 // 0x74F3C0
 namespace gamemd {
-void _::AddRef(int a2)
+int _::AddRef(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -765,7 +764,7 @@ void _::AddRef(int a2)
 
 // 0x74F400
 namespace gamemd {
-void _::Release(int a2, unsigned int * a3)
+int _::Release(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -829,7 +828,7 @@ void _::ddtor()
 
 // 0x74F4E0
 namespace gamemd {
-void _::Read(unsigned int * a2)
+int _::Read(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1808,7 +1807,7 @@ void sub_74C3C0()
 
 // 0x74F3B0
 namespace gamemd {
-void _::Seek(int a2)
+int _::Seek(int a2)
  {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

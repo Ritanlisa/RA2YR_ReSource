@@ -7,7 +7,7 @@
 #include "e4/classes/Math_e4.hpp"
 
 // 0x4CD600
-void DamageArea::ApplyScatter()
+int DamageArea::ApplyScatter()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -549,7 +549,7 @@ LABEL_23:
 }
 
 // 0x4D0180
-void DamageArea::CheckOccupancyEligibility()
+int DamageArea::CheckOccupancyEligibility()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

@@ -3,7 +3,7 @@
 #include "e4/e4_globals.hpp"
 
 // 0x487F40
-void Rect::Union(IUnknown * aP0, const RECT * lprcSrc1, const RECT * lprcSrc2)
+int Rect::Union(IUnknown * aP0, const RECT * lprcSrc1, const RECT * lprcSrc2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

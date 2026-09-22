@@ -27,7 +27,7 @@ void ParticleTypeClass::GetClassIdentifier()
 
 // 0x4784F0
 namespace gamemd {
-void ParticleTypeClass::Release(int a2, char * a3)
+int ParticleTypeClass::Release(int a2, char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -134,7 +134,7 @@ unsigned int * ParticleTypeClass::EnsureCapacity(unsigned int * a2)
 
   if ( this == a2 ) /*0x4788ec*/
     return this; /*0x4788ec*/
-  (*(void (__thiscall **)(_DWORD *))(*this + 12))(this); /*0x4788f4*/
+  this->Dispatch(); /*0x4788f4*/
   int v3 = a2[2]; /*0x4788f7*/
   this->vtable3 = v3; /*0x4788fe*/
   if ( !v3 ) /*0x478901*/
@@ -494,7 +494,7 @@ LABEL_17:
 
 // 0x6454E0
 namespace gamemd {
-void ParticleTypeClass::ProcessPower(int * a2)
+int ParticleTypeClass::ProcessPower(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -535,7 +535,7 @@ void ParticleTypeClass::ProcessPower(int * a2)
 
 // 0x645660
 namespace gamemd {
-void ParticleTypeClass::SaveLoad_Prefix(int a1, int a2)
+int ParticleTypeClass::SaveLoad_Prefix(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -608,7 +608,7 @@ LABEL_14:
 
 // 0x6458B0
 namespace gamemd {
-void ParticleTypeClass::GetType(int a2, int a3)
+int ParticleTypeClass::GetType(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

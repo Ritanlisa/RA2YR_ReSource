@@ -11,7 +11,7 @@
 #include "e4/classes/Vector_e4.hpp"
 
 // 0x4D0980
-void FoggedObjectClass::InitBuildingFog(unsigned int * a2, int a3, int a4)
+int FoggedObjectClass::InitBuildingFog(unsigned int * a2, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -260,7 +260,7 @@ LABEL_15:
 }
 
 // 0x4D0EF0
-void FoggedObjectClass::Constructor(BuildingClass * aP1, FoggedObjectClass * aP2)
+int FoggedObjectClass::Constructor(BuildingClass * aP1, FoggedObjectClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -490,7 +490,7 @@ LABEL_47:
 }
 
 // 0x4D1370
-void FoggedObjectClass::InitDrawRecord(unsigned int * a2)
+int FoggedObjectClass::InitDrawRecord(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -603,7 +603,7 @@ LABEL_21:
 }
 
 // 0x4D2510
-void FoggedObjectClass::LoadTypeData(int * a1, int a2)
+int FoggedObjectClass::LoadTypeData(int * a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -715,7 +715,7 @@ LABEL_22:
 }
 
 // 0x4D2810
-void FoggedObjectClass::PowerDrainUpdate(int a2)
+int FoggedObjectClass::PowerDrainUpdate(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -752,7 +752,7 @@ unsigned int * FoggedObjectClass::CheckVisibility(unsigned int * a2)
 }
 
 // 0x4D2BC0
-void FoggedObjectClass::ResizeArray(int a2, char * a3)
+int FoggedObjectClass::ResizeArray(int a2, char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -854,7 +854,7 @@ void FoggedObjectClass::ResizeArray(int a2, char * a3)
 }
 
 // 0x4D2CD0
-void FoggedObjectClass::Read(unsigned int * a2)
+int FoggedObjectClass::Read(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -876,7 +876,7 @@ void FoggedObjectClass::Read(unsigned int * a2)
 
 // 0x4E07B0
 namespace gamemd {
-void FoggedObjectClass_42::FindItem(unsigned int * a2)
+int FoggedObjectClass_42::FindItem(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

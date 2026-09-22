@@ -4,7 +4,7 @@
 
 // 0x68C8D0
 namespace gamemd {
-void ColorScheme::Destructor()
+int ColorScheme::Destructor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

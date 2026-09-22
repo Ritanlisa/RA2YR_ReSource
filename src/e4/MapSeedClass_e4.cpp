@@ -6,7 +6,7 @@
 #include "e4/classes/Math_e4.hpp"
 
 // 0x5A5B50
-void MapSeedClass::PlaceBuildingClusters(MapSeedClass * aP1)
+int MapSeedClass::PlaceBuildingClusters(MapSeedClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -389,7 +389,7 @@ LABEL_73:
 }
 
 // 0x5A76E0
-void MapSeedClass::ValidateRectBounds()
+int MapSeedClass::ValidateRectBounds()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

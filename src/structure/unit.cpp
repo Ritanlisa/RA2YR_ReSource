@@ -44,7 +44,7 @@ UnitClass::UnitClass() noexcept
 // Merged: Westwood combined harvest + unload into a single 5-case state machine.
 // Case 3 handles unloading logic (pop cargo, apply overlay, handle team members).
 // No separate Mission_Unload override exists in the binary (vtable slot = Return450J).
-void UnitClass::Mission_Harvest()
+int UnitClass::Mission_Harvest()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x4151e0
@@ -59,7 +59,7 @@ void UnitClass::Mission_Harvest()
   switch ( this->missionStatus )
   {
     case 0:
-      if ( !(*(int (__thiscall **)(int *))(*this + 456))(this)
+      if ( !this->GetZAboveGround()
         && this->q2E8 == 0.0
   int v2; // ecx
         && ((v2 = this->q169) == 0
@@ -80,11 +80,11 @@ void UnitClass::Mission_Harvest()
       }
       else if ( this->q169
              || !*(_BYTE *)(this->q1B1 + 3221)
-             || (*(int (__thiscall **)(int *))(*this + 456))(this) <= 0 )
+             || this->GetZAboveGround() <= 0 )
       {
         if ( this->q169 )
         {
-          if ( (*(unsigned __int8 (__thiscall **)(int *, _DWORD))(*this + 1360))(this, this->q169) )
+          if ( this->ValidateTargetCell(this->q169) )
           {
             DB = CCINIClass::GetDB(this + 69);
             int v14 = DB;
@@ -101,7 +101,7 @@ void UnitClass::Mission_Harvest()
                                             &v31);
               void * v18 = CellCoord::To_CellObj(DataGlobal_87F7E8, WaypointCoords);
               NearbyCell = InfantryClass::FindNearbyCell(this, (int)v18);
-              (*(void (__thiscall **)(int *, void *, int))(v16 + 1152))(this, NearbyCell, 1);
+              this->AssignDestination(NearbyCell, 1);
             }
             else
             {
@@ -113,7 +113,7 @@ void UnitClass::Mission_Harvest()
                                                700);
               void * v22 = CellCoord::To_CellObj(DataGlobal_87F7E8, Waypoint_Location);
               void * v23 = InfantryClass::FindNearbyCell(this, (int)v22);
-              (*(void (__thiscall **)(int *, void *, int))(v20 + 1152))(this, v23, 1);
+              this->AssignDestination(v23, 1);
               bool v24 = this->q175;
               if ( v24 )
                 TeamClass::SelectMember(v24, this->q169);
@@ -122,7 +122,7 @@ void UnitClass::Mission_Harvest()
           else
           {
             int v25 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->q1B1 + 188))(this->q1B1);
-            this->missionStatus = v25 != (*(int (__thiscall **)(int *))(*this + 456))(this) ? 4 : 1;
+            this->missionStatus = v25 != this->GetZAboveGround() ? 4 : 1;
           }
         }
         else
@@ -132,16 +132,16 @@ void UnitClass::Mission_Harvest()
       }
       else
       {
-        int v10 = (*(int (__thiscall **)(int *, int, _DWORD, _DWORD))(*this + 1320))(this, this->q1B1 + 1000, 0, 0);
+        int v10 = this->FindBestMatch(this->q1B1 + 1000, 0, 0);
         if ( v10 )
         {
-          (*(void (__thiscall **)(int *, int, int))(*this + 1152))(this, v10, 1);
+          this->AssignDestination(v10, 1);
         }
         else
         {
           int v11 = *this;
           ClosestPlacementCell = TechnoClass::FindClosestPlacementCell(this);
-          (*(void (__thiscall **)(int *, void *, int))(v11 + 1152))(this, ClosestPlacementCell, 1);
+          this->AssignDestination(ClosestPlacementCell, 1);
         }
       }
       goto LABEL_9;
@@ -150,7 +150,7 @@ void UnitClass::Mission_Harvest()
         WinAPI::Wrapper(-2147467261);
       if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)this->Locomotor + 16))(this->Locomotor) )
         this->missionStatus = 2;
-      if ( !(*(unsigned __int8 (__thiscall **)(int *, _DWORD))(*this + 1360))(this, this->q169) )
+      if ( !this->ValidateTargetCell(this->q169) )
         this->missionStatus = 0;
       goto LABEL_9;
     case 2:
@@ -166,31 +166,31 @@ void UnitClass::Mission_Harvest()
         {
           if ( *(_BYTE *)(this->q1B1 + 3580) )
           {
-            (*(void (__thiscall **)(int *, _DWORD))(*this + 292))(this, 0);
+            this->ModifyCellTiles(0);
             FootClass::MissionMoveCarryallLand(this);
-            (*(void (__thiscall **)(int *, int))(*this + 292))(this, 1);
+            this->ModifyCellTiles(1);
           }
           else
           {
             int v26 = LinkedList::Pop(this + 69);
   _BYTE v33[4]; // [esp+1Ch] [ebp-14h] BYREF
-            _WORD * v27 = (_WORD *)(*(int (__thiscall **)(int *, _BYTE *, int *))(*this + 440))(this, v33, this);
+            _WORD * v27 = (_WORD *)this->GetCellCoords_Alt(v33, this);
   char *v29; // [esp+0h] [ebp-30h]
             MapClass::ApplyOverlayReveal(DataGlobal_87F7E8, v27, v29);
-            if ( (*(int (__thiscall **)(int *, int))(*this + 256))(this, v26) )
+            if ( this->IsDirty(v26) )
               *(_BYTE *)(v26 + 1060) = 0;
   _BYTE v34[4]; // [esp+20h] [ebp-10h] BYREF
-            _WORD * v28 = (_WORD *)(*(int (__thiscall **)(int *, _BYTE *))(*this + 440))(this, v34);
+            _WORD * v28 = (_WORD *)this->GetCellCoords_Alt(v34);
             MapClass::FillRevealBuffer(DataGlobal_87F7E8, v28, this);
             if ( !*(_BYTE *)(v26 + 1060) && *(_DWORD *)(v26 + 1492) )
               TeamClass::AddMember(this->q175, v26, 0);
             if ( !this->q118 )
-              (*(void (__thiscall **)(int *, _DWORD, int))(*this + 1156))(this, 0, 1);
+              this->ValidatePlacement(0, 1);
           }
         }
         else
         {
-          (*(void (__thiscall **)(int *, _DWORD, int))(*this + 1156))(this, 0, 1);
+          this->ValidatePlacement(0, 1);
         }
       }
       goto LABEL_9;
@@ -579,7 +579,7 @@ retn
 
 // IDA: 0x73D450 (ProcessResourceHarvesting, 477B)
 // 0x73d450
-void UnitClass::ProcessResourceHarvesting()
+int UnitClass::ProcessResourceHarvesting()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -827,7 +827,7 @@ UnitClass* UnitClass::updateHarvesting()
 
 // IDA: 0x6B4BE0 (UnloadPassengers, 136B)
 // 0x6b4be0
-void UnitClass::UnloadPassengers(int placementType)
+int UnitClass::UnloadPassengers(int placementType)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -836,12 +836,12 @@ void UnitClass::UnloadPassengers(int placementType)
   if ( !(unsigned __int8)ObjectClass::UpdateProductionDisplay((#374 *)this) || v2 != 1 && v2 != 3 ) /*0x6b4bfb*/
     return 0; /*0x6b4c61*/
   _BYTE v6[4]; // [esp+8h] [ebp-4h] BYREF
-  a2 = *(_DWORD *)(*(int (__thiscall **)(int *, _BYTE *))(*this + 440))(this, v6); /*0x6b4c0e*/
+  a2 = *(_DWORD *)this->GetCellCoords_Alt(v6); /*0x6b4c0e*/
   if ( g_IKnowWhatImDoing > 0 || ArmageddonMode || Cell::IsWalkable((int *)this->q02B, &a2, 1) ) /*0x6b4c31*/
     UnitClass::CreateUnloadPlacementCraters(&a2); /*0x6b4c45*/
   int v4 = *this; /*0x6b4c4a*/
   this->isOnMap = 0; /*0x6b4c4e*/
-  (*(void (__thiscall **)(int *))(v4 + 248))(this); /*0x6b4c52*/
+  this->PreDestroy(); /*0x6b4c52*/
   return 1; /*0x6b4c58*/
 }
 }
@@ -2330,7 +2330,7 @@ retn
 
 // IDA: 0x6B6080 (CreateUnloadPlacementCraters, 167B)
 // 0x6b6080
-void UnitClass::CreateUnloadPlacementCraters(CellStruct* cell)
+int UnitClass::CreateUnloadPlacementCraters(CellStruct* cell)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2545,7 +2545,7 @@ retn    8
 
 // IDA: 0x7192F0 (Deploy, 2302B)
 // 0x7192f0
-void UnitClass::Deploy()
+int UnitClass::Deploy()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2891,7 +2891,7 @@ LABEL_82:
 }
 }
 // 0x738d30
-void UnitClass::DeployToBuilding()
+int UnitClass::DeployToBuilding()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2907,7 +2907,7 @@ void UnitClass::DeployToBuilding()
 
   if ( !*(_DWORD *)(this->Type + 1028) ) /*0x738d41*/
     return 1; /*0x738d52*/
-  (*(void (__thiscall **)(_DWORD *, _DWORD))(*this + 292))(this, 0); /*0x738d58*/
+  this->ModifyCellTiles(0); /*0x738d58*/
   int v3 = 0; /*0x738d64*/
   int v4 = g_RulesClass_Instance->CanDetonateTimeBomb[1]; /*0x738d66*/
   if ( v4 <= 0 ) /*0x738d6e*/
@@ -2920,7 +2920,7 @@ void UnitClass::DeployToBuilding()
     if ( v3 >= v4 ) /*0x738d90*/
       goto LABEL_7; /*0x738d90*/
   }
-  if ( *(_BYTE *)((*(int (__thiscall **)(_DWORD *))(*this + 60))(this) + 497) ) /*0x738e33*/
+  if ( *(_BYTE *)(this->GetTarget() + 497) ) /*0x738e33*/
   {
     if ( !this->FootClass_field_5A4 ) /*0x738e3f*/
     {
@@ -2975,9 +2975,9 @@ void UnitClass::DeployToBuilding()
       {
         int v17 = *this; /*0x738f62*/
         void * v18 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v26); /*0x738f70*/
-        (*(void (__thiscall **)(_DWORD *, void *, int))(v17 + 1152))(this, v18, 1); /*0x738f78*/
+        this->AssignDestination(v18, 1); /*0x738f78*/
       }
-      *(_BYTE *)((*(int (__thiscall **)(_DWORD *))(*this + 60))(this) + 497) = 0; /*0x738f85*/
+      *(_BYTE *)(this->GetTarget() + 497) = 0; /*0x738f85*/
     }
   }
   else
@@ -2985,7 +2985,7 @@ void UnitClass::DeployToBuilding()
 LABEL_7:
     if ( !this->FootClass_field_5A4 ) /*0x738d92*/
     {
-      _DWORD * v6 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, _BYTE *))(*this + 72))(this, v31); /*0x738da7*/
+      _DWORD * v6 = (_DWORD *)this->GetCoords_0(v31); /*0x738da7*/
       LOWORD(v27) = *v6 / 256; /*0x738dbf*/
       HIWORD(v27) = v6[1] / 256; /*0x738dd7*/
       v26 = v27; /*0x738de4*/
@@ -2997,7 +2997,7 @@ LABEL_7:
              &v28,
              0) )
       {
-        (*(void (__thiscall **)(_DWORD *, int))(*this + 292))(this, 1); /*0x738e1c*/
+        this->ModifyCellTiles(1); /*0x738e1c*/
         return 1; /*0x738e2b*/
       }
       if ( !this->FootClass_field_5A4 ) /*0x738f90*/
@@ -3047,7 +3047,7 @@ LABEL_7:
         int * v19 = &unk_B1D010; /*0x7392ca*/
         while ( 1 ) /*0x7392d8*/
         {
-          _WORD * v20 = (_WORD *)(*(int (__thiscall **)(_DWORD *, _BYTE *))(*this + 440))(this, v30); /*0x7392d8*/
+          _WORD * v20 = (_WORD *)this->GetCellCoords_Alt(v30); /*0x7392d8*/
           v21 = v20[1] + *((_WORD *)v19 + 1); /*0x7392e8*/
           LOWORD(v27) = *v20 + *(_WORD *)v19; /*0x7392ed*/
           HIWORD(v27) = v21; /*0x7392f8*/
@@ -3068,14 +3068,14 @@ LABEL_7:
         }
         int v23 = *this; /*0x73934a*/
         void * v24 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v29); /*0x739358*/
-        (*(void (__thiscall **)(_DWORD *, void *, int))(v23 + 1152))(this, v24, 1); /*0x739360*/
+        this->AssignDestination(v24, 1); /*0x739360*/
       }
     }
   }
 LABEL_23:
-  (*(void (__thiscall **)(_DWORD *, int))(*this + 292))(this, 1); /*0x739366*/
+  this->ModifyCellTiles(1); /*0x739366*/
   if ( !this->FootClass_field_5A4 && !(unsigned __int8)House::IsCurrentPlayer((#375 *)this->owner) ) /*0x739380*/
-    (*(void (__thiscall **)(_DWORD *, int *, _DWORD, _DWORD))(*this + 372))(this, &unk_B1CFE8, 0, 0); /*0x739394*/
+    this->COMStub_Return0_93(&unk_B1CFE8, 0, 0); /*0x739394*/
   return 0; /*0x738d49*/
 }
 }
@@ -4581,12 +4581,12 @@ void UnitClass::CalcMoveTarget()
   int v85; // [esp+7Ch] [ebp-4h]
   if ( *(_DWORD *)(*((_DWORD *)g_PathClass_State + this->FootClass_field_684) + 4 * this->unknownBool685 + 48) != -1 )
   {
-    _DWORD * v2 = (_DWORD *)(*(int (__thiscall **)(int *))(*this + 72))(this);
+    _DWORD * v2 = (_DWORD *)this->GetCoords_0();
     int * v3 = this + 346;
     int * v4 = Vector3::Subtract(v2, &v76, this + 346);
     Coord::Length(v4);
     _DWORD * v5 = (_DWORD *)*((_DWORD *)g_PathClass_State + this->FootClass_field_684);
-    int * v6 = (int *)(*(int (__thiscall **)(int *, int *, int *))(*this + 72))(this, &v82, this + 346);
+    int * v6 = (int *)this->GetCoords_0(&v82, this + 346);
     Height = Cell::GetHeight(v72, v6, &v83);
     int v8 = this->q1B1;
     LODWORD(v72[0]) = *(_DWORD *)Height;
@@ -4636,14 +4636,14 @@ void UnitClass::CalcMoveTarget()
         v45 = 362.0386719675124;
       __int64 v46 = Math::RoundToInt(v45);
       v76 = v46;
-      (*(void (__fastcall **)(int *, _DWORD, int *))(*this + 436))(this, HIDWORD(v46), &v74);
+      this->SetPositionAnimated(HIDWORD(v46), &v74);
       return;
     }
     int v14 = *this;
     char v15 = this->unknownBool685 + 1;
     this->unknownBool685 = v15;
     int v16 = v5[v15 + 12];
-    (*(void (__thiscall **)(int *, int *))(v14 + 436))(this, this + 346);
+    this->SetPositionAnimated(this + 346);
     if ( v16 != -1 )
     {
   int *v17; // eax
@@ -4666,7 +4666,7 @@ void UnitClass::CalcMoveTarget()
       this->FootClass_field_56C = v23;
       this->FootClass_field_570 = v24;
       this->FootClass_field_570 += v68;
-      int * v25 = (int *)(*(int (__thiscall **)(int *, int *))(*this + 72))(this, &v83);
+      int * v25 = (int *)this->GetCoords_0(&v83);
       int v26 = (__int16)*(_DWORD *)Cell::GetHeight(v72, v25, this + 346);
       v83 = this->q027;
       v84 = this->owningHouseIndex;
@@ -4695,7 +4695,7 @@ void UnitClass::CalcMoveTarget()
       int v35 = Math::RoundToInt(v34);
       int v36 = *this;
       v79 = v35;
-      (*(void (__thiscall **)(int *, void ***))(v36 + 436))(this, &v77);
+      this->SetPositionAnimated(&v77);
       return;
     }
   }
@@ -4740,7 +4740,7 @@ LABEL_26:
             }
           }
         }
-        (*(void (__thiscall **)(int *, _DWORD, _DWORD))(*this + 1348))(this, 0, 0);
+        this->Destru_vt337(0, 0);
         v77 = &VectorClass<ObjectClass *>::`vftable';
         if ( Block && BYTE1(v80) )
           __3_YAXPAX_Z(Block);
@@ -4762,22 +4762,22 @@ LABEL_24:
   v85 = v55;
   v84 = (SWORD1(v72[0]) << 8) + 128;
   v83 = (SLOWORD(v72[0]) << 8) + 128;
-  (*(void (__thiscall **)(int *, int *))(*this + 436))(this, &v83);
+  this->SetPositionAnimated(&v83);
   int v56 = *this;
   this->FootClass_field_684 = -1;
-  (*(void (__thiscall **)(int *, int))(v56 + 292))(this, 1);
+  this->ModifyCellTiles(1);
   if ( (_DWORD *)this->q169 == v47 )
   {
     int v57 = *this;
     v77 = 0;
     Block = 0;
     v79 = 0;
-    (*(void (__thiscall **)(int *, void ***, int, int))(v57 + 372))(this, &v77, 1, 1);
+    this->COMStub_Return0_93(&v77, 1, 1);
   }
   int v58 = *this;
   this->q68B = 1;
-  (*(void (__thiscall **)(int *, int))(v58 + 396))(this, 2);
-  (*(void (__thiscall **)(int *, _DWORD, int))(*this + 1348))(this, 0, 1072693248);
+  this->UpdateAI(2);
+  this->Destru_vt337(0, 1072693248);
   void * v59 = (void *)this->owningHouseIndex;
   int v60 = this->q029;
   v77 = (void **)this->q027;
@@ -9345,7 +9345,7 @@ retn
 
 // IDA: 0x743A50 (Scatter, 1622B)
 // 0x743a50
-void UnitClass::Scatter(CellStruct* threatPos, bool a3, bool a4)
+int UnitClass::Scatter(CellStruct* threatPos, bool a3, bool a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -9384,7 +9384,7 @@ void UnitClass::Scatter(CellStruct* threatPos, bool a3, bool a4)
   IUnknown *v40; // [esp+5Ch] [ebp-30h] BYREF
   AbstractClass aP1; // [esp+60h] [ebp-2Ch] BYREF
 
-  result = (*(int (__thiscall **)(_DWORD *))(*this + 652))(this); /*0x743a5c*/
+  result = this->IsNotAircraftOrBuilding(); /*0x743a5c*/
   if ( !(_BYTE)result ) /*0x743a64*/
     return result; /*0x743a64*/
   int v5 = this->Locomotor; /*0x743a6a*/
@@ -9437,7 +9437,7 @@ LABEL_7:
   if ( *a2 == unk_B1CFE8 && a2[1] == unk_B1CFEC && a2[2] == unk_B1CFF0 ) /*0x743bda*/
   {
     aP14.field_0 = 0; /*0x743be6*/
-    v9 = (IUnknown *)(*(int (__thiscall **)(_DWORD *, int *, _DWORD))(*this + 76))(this, &aP1.uniqueId, 0); /*0x743bff*/
+    v9 = (IUnknown *)this->GetDeployCoords(&aP1.uniqueId, 0); /*0x743bff*/
     v10 = v9; /*0x743c02*/
     LOWORD(aP14.field_4) = v9->field_0 / 256; /*0x743c16*/
     LOBYTE(v10) = this->q230; /*0x743c25*/
@@ -9476,7 +9476,7 @@ LABEL_7:
       return (*(int (__stdcall **)(int))(*(_DWORD *)v34 + 8))(v34); /*0x743cb4*/
     return result; /*0x743cb4*/
   }
-  if ( (*(int (__thiscall **)(_DWORD *))(*this + 44))(this) == 1 && this->Unloading /*0x743d33*/
+  if ( this->StubReturn1() == 1 && this->Unloading /*0x743d33*/
     || this->FootClass_field_5A4 && (!LOBYTE(aP14.field_4) || this->q6AF)
     || this->q2B4
     && !LOBYTE(aP14.field_0)
@@ -9507,13 +9507,13 @@ LABEL_7:
   v37 = v18; /*0x743e16*/
   a2 = 0; /*0x743e1a*/
   aP14.field_0 = 0; /*0x743e24*/
-  v19 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, int *, _DWORD))(v17 + 76))(this, &aP1.uniqueId, 0); /*0x743e2e*/
+  v19 = (_DWORD *)this->GetDeployCoords(&aP1.uniqueId, 0); /*0x743e2e*/
   LOWORD(aP14.field_4) = *v19 / 256; /*0x743e41*/
   HIWORD(aP14.field_4) = v19[1] / 256; /*0x743e59*/
   v35 = aP14.field_4; /*0x743e62*/
   v20 = (char *)CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&v35); /*0x743e71*/
-  v21 = v20[283] + (*(unsigned __int8 (__thiscall **)(_DWORD *, _DWORD))(*this + 188))(this, 0) != 0 ? 4 : 0;
-  (*(void (__thiscall **)(_DWORD *, int *, _DWORD))(*this + 76))(this, &aP1.uniqueId, 0); /*0x743ea1*/
+  v21 = v20[283] + this->CheckHeightDiff(0) != 0 ? 4 : 0;
+  this->GetDeployCoords(&aP1.uniqueId, 0); /*0x743ea1*/
   v22 = v21 * unk_B1D0B8; /*0x743ea9*/
   v23 = 0; /*0x743eac*/
   aP1.nextArrayIndex = v22; /*0x743eae*/
@@ -9531,7 +9531,7 @@ LABEL_7:
       goto LABEL_56; /*0x743f16*/
     v28 = *this; /*0x743f23*/
     LandHeight = ObjectClass::GetLandHeight(this); /*0x743f2c*/
-    if ( (*(int (__thiscall **)(_DWORD *, void *, int, int, _DWORD, int))(v28 + 428))(this, v27, v24, LandHeight, 0, 1) ) /*0x743f36*/
+    if ( this->Destru_vt107(v27, v24, LandHeight, 0, 1) ) /*0x743f36*/
       goto LABEL_56; /*0x743f3e*/
     v30 = dword_B1CFB8; /*0x743f53*/
     if ( a2 == (int *)dword_B1CFB8 ) /*0x743f5a*/
@@ -9571,11 +9571,11 @@ LABEL_60:
   if ( __PAIR32__(HIWORD(v36), v32) != v30 ) /*0x744041*/
   {
 LABEL_64:
-    (*(void (__thiscall **)(_DWORD *, int, _DWORD))(*this + 488))(this, 2, 0); /*0x744053*/
+    this->MissionDispatch(2, 0); /*0x744053*/
     v11 = *this; /*0x744059*/
     v12 = CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&v36); /*0x744068*/
 LABEL_65:
-    (*(void (__thiscall **)(_DWORD *, void *, int))(v11 + 1152))(this, v12, 1); /*0x74406d*/
+    this->AssignDestination(v12, 1); /*0x74406d*/
   }
 LABEL_66:
   result = v34; /*0x744076*/
@@ -10881,16 +10881,16 @@ retn    1Ch
 
 // IDA: 0x70DC70 (SetTurret, 110B)
 // 0x70dc70
-void UnitClass::SetTurret(unsigned int a2)
+int UnitClass::SetTurret(unsigned int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   int result; // eax
 
-  result = (*(int (__thiscall **)(_DWORD *))(*this + 132))(this);
+  result = this->Vt34Thunk();
   if ( !*(_BYTE *)(result + 2064) )
   {
-    (*(void (__thiscall **)(_DWORD *))(*this + 132))(this);
+    this->Vt34Thunk();
     if ( a2 > 0x11 )
     {
       result = UnitClass::processEnterTarget(0);
@@ -12687,7 +12687,7 @@ retn    14h
 
 // IDA: 0x7438F0 (CanCrushTarget, 339B)
 // 0x7438f0
-void UnitClass::CanCrushTarget(TechnoClass* aP1)
+int UnitClass::CanCrushTarget(TechnoClass* aP1)
  {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -12753,7 +12753,7 @@ retn
 
 // IDA: 0x6B4A50 (Create, 234B static)
 // 0x6b4a50
-void UnitClass::Create(void* aP0, void* aP1, int aP2)
+int UnitClass::Create(void* aP0, void* aP1, int aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -12795,7 +12795,7 @@ void UnitClass::Create(void* aP0, void* aP1, int aP2)
 int UnitClass::ReadINI()
 {
 // 0x6b4fa0
-void UnitClass::DestroySmudge(char a2)
+int UnitClass::DestroySmudge(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -13561,7 +13561,7 @@ retn    4
 
 // IDA: 0x746810 (PerFrameUpdate, 167B)
 // 0x746810
-void UnitClass::PerFrameUpdate(int _DWORD *a1@<ecx>, int int a2@<edi>)
+int UnitClass::PerFrameUpdate(int _DWORD *a1@<ecx>, int int a2@<edi>)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -13883,7 +13883,7 @@ retn
 
 // IDA: 0x4D4280 (ApproachEvaluate, 2177B)
 // 0x4d4280
-void UnitClass::ApproachEvaluate()
+int UnitClass::ApproachEvaluate()
 {
 {
 {
@@ -13895,7 +13895,7 @@ void UnitClass::ApproachEvaluate()
   __int16 *v38; // ebp
   int TileIndex; // [esp-4h] [ebp-D0h]
   __int16 v72; // [esp+50h] [ebp-7Ch] BYREF
-  int v2 = (*(int (__thiscall **)(_DWORD *, int))(*this + 796))(this, 2);
+  int v2 = this->ComputeScanDistance(2);
   this->planningToken = 1;
   int v3 = v2 / 256 + 6;
   switch ( this->missionStatus )
@@ -13910,16 +13910,16 @@ void UnitClass::ApproachEvaluate()
       int v5 = *this;
       v75[1] = this->q0A0;
       v75[2] = this->q0A4;
-      int v6 = (*(int (__thiscall **)(_DWORD *, int, _DWORD *, _DWORD))(v5 + 964))(this, 2, v75, 0);
+      int v6 = this->SelectAutoTarget_Cloaked(2, v75, 0);
       int v68 = v6;
       if ( v6 )
         int v7 = (*(_BYTE *)(v6 + 20) & 2) != 0 ? v6 : 0;
       else
         v7 = 0;
-      int v8 = (*(int (__thiscall **)(_DWORD *, int))(*this + 740))(this, v7);
+      int v8 = this->SelectWeapon(v7);
       if ( v7 )
       {
-        if ( (*(unsigned __int8 (__thiscall **)(_DWORD *, int, int))(*this + 936))(this, v7, v8) )
+        if ( this->ValidateTarget(v7, v8) )
           goto LABEL_10;
         _DWORD * v9 = (_DWORD *)(*(int (__thiscall **)(int))(*(_DWORD *)v7 + 76))(v7);
   int v63; // [esp+34h] [ebp-98h]
@@ -13928,31 +13928,31 @@ void UnitClass::ApproachEvaluate()
         int v10 = *this;
         v70 = v63;
   _BYTE v79[20]; // [esp+7Ch] [ebp-50h] BYREF
-        _DWORD * v11 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, _BYTE *, _DWORD))(v10 + 76))(this, v79, 0);
+        _DWORD * v11 = (_DWORD *)this->GetDeployCoords(v79, 0);
         LOWORD(v63) = *v11 / 256;
         HIWORD(v63) = v11[1] / 256;
         v71 = v63;
         int v12 = (*(int (__thiscall **)(int, _DWORD, int))(*(_DWORD *)v7 + 188))(v7, 0, -1);
-        int v13 = (*(int (__thiscall **)(_DWORD *, _DWORD, int))(*this + 188))(this, 0, v12);
+        int v13 = this->CheckHeightDiff(0, v12);
   _BYTE v81[12]; // [esp+9Ch] [ebp-30h] BYREF
         if ( Pathfinding::CalcDistance((int)g_AudioInitFlag, (__int16 *)&v73, &v72, (int)this, v13, (int)v81, 0) < v3 )
         {
 LABEL_10:
-          int v14 = (*(int (__thiscall **)(_DWORD *))(*this + 452))(this);
+          int v14 = this->GetCell();
           this->FootClass_field_5DC = v14;
           if ( (*(_DWORD *)(v14 + 320) & 0x100) != 0
-            && !(*(unsigned __int8 (__thiscall **)(_DWORD *, _DWORD))(*this + 188))(this, 0) )
+            && !this->CheckHeightDiff(0) )
           {
             int v15 = *this;
             v69 = 0;
-            int v61 = *(_DWORD *)((*(int (__thiscall **)(_DWORD *))(v15 + 132))(this) + 1460);
-            int v16 = (*(int (__thiscall **)(_DWORD *))(*this + 132))(this);
+            int v61 = *(_DWORD *)(this->Vt34Thunk() + 1460);
+            int v16 = this->Vt34Thunk();
             TileIndex = MapClass::GetTileIndex(
                           DataGlobal_87F7E8,
                           (__int16 *)(this->FootClass_field_5DC + 36),
                           *(_DWORD *)(v16 + 1460),
                           0);
-            int v17 = (*(int (__thiscall **)(_DWORD *))(*this + 132))(this);
+            int v17 = this->Vt34Thunk();
   int v67; // [esp+3Ch] [ebp-90h] BYREF
             v67 = *LayerClass::Pathfinding_Find(
                      DataGlobal_87F7E8,
@@ -13995,8 +13995,8 @@ LABEL_10:
               TechnoClass::SetFocus(this, *(_DWORD *)(this->q58C + 4 * v18 - 4));
             }
           }
-          (*(void (__thiscall **)(_DWORD *, _DWORD, int))(*this + 1152))(this, 0, 1);
-          (*(void (__thiscall **)(_DWORD *, int))(*this + 968))(this, v68);
+          this->AssignDestination(0, 1);
+          this->AssignTarget_SyncLog(v68);
           goto LABEL_22;
         }
       }
@@ -14007,7 +14007,7 @@ LABEL_10:
       if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)this->Locomotor + 16))(this->Locomotor) )
       {
 LABEL_28:
-        (*(void (__thiscall **)(_DWORD *, _DWORD, int))(*this + 1156))(this, 0, 1);
+        this->ValidatePlacement(0, 1);
         goto LABEL_70;
       }
 LABEL_23:
@@ -14020,8 +14020,8 @@ LABEL_23:
         v22 = (*(_BYTE *)(v21 + 20) & 2) != 0 ? (#375 **)v21 : 0;
       else
         v22 = 0;
-      int v23 = (*(int (__thiscall **)(_DWORD *, #375 **))(*this + 740))(this, v22);
-      if ( !(*(unsigned __int8 (__thiscall **)(_DWORD *))(*this + 816))(this) )
+      int v23 = this->SelectWeapon(v22);
+      if ( !this->vt_entry_1FC() )
         goto LABEL_41;
       if ( !v22 )
         goto LABEL_38;
@@ -14030,14 +14030,14 @@ LABEL_23:
 // 0x5f5c60
         && BuildingClass::GetHealthRatio((int *)v22) > *(double *)(DataGlobal_87F7E8[7806] + 5896) )
       {
-        (*(void (__thiscall **)(_DWORD *, _DWORD))(*this + 968))(this, 0);
+        this->AssignTarget_SyncLog(0);
       }
       else
       {
 LABEL_41:
         if ( v22 )
         {
-          if ( (*(unsigned __int8 (__thiscall **)(_DWORD *, #375 **, int))(*this + 936))(this, v22, v23) )
+          if ( this->ValidateTarget(v22, v23) )
             goto LABEL_44;
   _BYTE v83[12]; // [esp+B4h] [ebp-18h] BYREF
           _DWORD * v29 = (_DWORD *)(*((int (__thiscall **)(#375 **, _BYTE *))*v22 + 19))(v22, v83);
@@ -14059,10 +14059,10 @@ LABEL_41:
                  0) < v3 )
           {
 LABEL_44:
-            (*(void (__thiscall **)(_DWORD *, _DWORD))(*this + 1340))(this, 0);
+            this->CalculateApproachPath(0);
             if ( this->q2B4 )
               goto LABEL_23;
-            (*(void (__thiscall **)(_DWORD *, _DWORD, int))(*this + 1152))(this, this->focus, 1);
+            this->AssignDestination(this->focus, 1);
             TechnoClass::SetFocus(this, 0);
             this->FootClass_field_5DC = 0;
             this->missionStatus = 0;
@@ -14076,18 +14076,18 @@ LABEL_38:
         int v24 = *this;
   _BYTE v77[12]; // [esp+6Ch] [ebp-60h] BYREF
         int v25 = (*(int (__thiscall **)(_DWORD, _BYTE *, _DWORD))(*(_DWORD *)this->FootClass_field_5DC + 72))(this->FootClass_field_5DC, v77, 0);
-        int v26 = (*(int (__thiscall **)(_DWORD *, int, int))(v24 + 964))(this, 2, v25);
+        int v26 = this->SelectAutoTarget_Cloaked(2, v25);
         int v27 = v26;
         v68 = v26;
         int v28 = v26 ? ((*(_BYTE *)(v26 + 20) & 2) != 0 ? v26 : 0) : 0;
-        int v32 = (*(int (__thiscall **)(_DWORD *, int))(*this + 740))(this, v28);
+        int v32 = this->SelectWeapon(v28);
         if ( v28 )
         {
-          if ( (*(unsigned __int8 (__thiscall **)(_DWORD *, int, int))(*this + 936))(this, v28, v32) )
+          if ( this->ValidateTarget(v28, v32) )
           {
 LABEL_51:
-            (*(void (__thiscall **)(_DWORD *, int))(*this + 968))(this, v27);
-            (*(void (__thiscall **)(_DWORD *, _DWORD, int))(*this + 1152))(this, 0, 1);
+            this->AssignTarget_SyncLog(v27);
+            this->AssignDestination(0, 1);
             return 1;
           }
   _BYTE v78[4]; // [esp+78h] [ebp-54h] BYREF
@@ -14116,11 +14116,11 @@ LABEL_51:
       }
       int v37 = *this;
       this->missionStatus = 2;
-      (*(void (__thiscall **)(_DWORD *, _DWORD))(v37 + 968))(this, 0);
+      this->AssignTarget_SyncLog(0);
       if ( this->focus )
       {
-        v38 = (__int16 *)(*(int (__thiscall **)(_DWORD *))(*this + 452))(this);
-        char v39 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*this + 188))(this, 0);
+        v38 = (__int16 *)this->GetCell();
+        char v39 = this->CheckHeightDiff(0);
         AbstractClass *v40 = this->focus;
         LOBYTE(v68) = v39;
   _BYTE v80[12]; // [esp+90h] [ebp-3Ch] BYREF
@@ -14136,16 +14136,16 @@ LABEL_51:
         LOBYTE(v47) = v47 & 1;
         v68 = v46;
         if ( v46 >= Pathfinding::CalcDistance((int)g_AudioInitFlag, v38, (__int16 *)v42 + 18, (int)this, v44, v47, -1) )
-          (*(void (__thiscall **)(_DWORD *, _DWORD, int))(*this + 1152))(this, this->focus, 1);
+          this->AssignDestination(this->focus, 1);
         else
-          (*(void (__thiscall **)(_DWORD *, _DWORD, int))(*this + 1152))(this, this->FootClass_field_5DC, 1);
+          this->AssignDestination(this->FootClass_field_5DC, 1);
         return 1;
       }
       else
       {
         int v48 = *this;
         this->missionStatus = 0;
-        (*(void (__thiscall **)(_DWORD *, _DWORD, int))(v48 + 1156))(this, 0, 1);
+        this->ValidatePlacement(0, 1);
         this->missionStatus = 3;
         return 1;
       }
@@ -14153,16 +14153,16 @@ LABEL_51:
       int v49 = *this;
   _BYTE v82[12]; // [esp+A8h] [ebp-24h] BYREF
       int v50 = (*(int (__thiscall **)(_DWORD, _BYTE *, _DWORD))(*(_DWORD *)this->FootClass_field_5DC + 72))(this->FootClass_field_5DC, v82, 0);
-      int v51 = (*(int (__thiscall **)(_DWORD *, int, int))(v49 + 964))(this, 2, v50);
+      int v51 = this->SelectAutoTarget_Cloaked(2, v50);
       v68 = v51;
       if ( v51 )
         int v52 = (*(_BYTE *)(v51 + 20) & 2) != 0 ? v51 : 0;
       else
         v52 = 0;
-      int v53 = (*(int (__thiscall **)(_DWORD *, int))(*this + 740))(this, v52);
+      int v53 = this->SelectWeapon(v52);
       if ( !v52 )
         goto LABEL_66;
-      if ( (*(unsigned __int8 (__thiscall **)(_DWORD *, int, int))(*this + 936))(this, v52, v53) )
+      if ( this->ValidateTarget(v52, v53) )
         goto LABEL_65;
   _BYTE v84[12]; // [esp+C0h] [ebp-Ch] BYREF
       _DWORD * v54 = (_DWORD *)(*(int (__thiscall **)(int, _BYTE *))(*(_DWORD *)v52 + 76))(v52, v84);
@@ -14186,8 +14186,8 @@ LABEL_51:
       {
         v51 = v68;
 LABEL_65:
-        (*(void (__thiscall **)(_DWORD *, int))(*this + 968))(this, v51);
-        (*(void (__thiscall **)(_DWORD *, _DWORD, int))(*this + 1152))(this, 0, 1);
+        this->AssignTarget_SyncLog(v51);
+        this->AssignDestination(0, 1);
 LABEL_22:
         this->missionStatus = 1;
         goto LABEL_23;
@@ -14195,11 +14195,11 @@ LABEL_22:
 LABEL_66:
       if ( this->FootClass_field_5A4 )
         goto LABEL_23;
-      (*(void (__thiscall **)(_DWORD *, _DWORD))(*this + 968))(this, 0);
+      this->AssignTarget_SyncLog(0);
       AbstractClass *v58 = this->focus;
       if ( v58 )
       {
-        (*(void (__thiscall **)(_DWORD *, int, int))(*this + 1152))(this, v58, 1);
+        this->AssignDestination(v58, 1);
         TechnoClass::SetFocus(this, 0);
         this->missionStatus = 0;
         this->FootClass_field_5DC = 0;
@@ -14207,7 +14207,7 @@ LABEL_66:
       }
       int v59 = *this;
       this->missionStatus = 0;
-      (*(void (__thiscall **)(_DWORD *, _DWORD, int))(v59 + 1156))(this, 0, 1);
+      this->ValidatePlacement(0, 1);
 LABEL_70:
       this->missionStatus = 3;
       return 1;

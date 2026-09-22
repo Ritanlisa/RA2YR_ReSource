@@ -8,7 +8,7 @@
 
 // 0x4391C0
 namespace gamemd {
-void SaveGame::LoadArrayData(int * a2)
+int SaveGame::LoadArrayData(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -56,7 +56,7 @@ LABEL_5:
 
 // 0x54E750
 namespace gamemd {
-void SaveGame::WriteDataArray(int * a2)
+int SaveGame::WriteDataArray(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -82,7 +82,7 @@ void SaveGame::WriteDataArray(int * a2)
 
 // 0x6607D0
 namespace gamemd {
-void SaveGame::SaveTriggerEvents()
+int SaveGame::SaveTriggerEvents()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -112,7 +112,7 @@ void SaveGame::SaveTriggerEvents()
 
 // 0x67D300
 namespace gamemd {
-void SaveGame::Start()
+int SaveGame::Start()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -888,7 +888,7 @@ void SaveGame::Start()
 
 // 0x67F7E0
 namespace gamemd {
-void SaveGame::LoadMainGameState()
+int SaveGame::LoadMainGameState()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1043,7 +1043,7 @@ LABEL_17:
 
 // 0x74ED60
 namespace gamemd {
-void SaveGame::LoadVeinholeData()
+int SaveGame::LoadVeinholeData()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1114,7 +1114,7 @@ void SaveGame::LoadVeinholeData()
 
 // 0x751620
 namespace gamemd {
-void SaveGame::SaveAudioQueueItems()
+int SaveGame::SaveAudioQueueItems()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

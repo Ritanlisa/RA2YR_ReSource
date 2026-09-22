@@ -235,7 +235,7 @@ void AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
         v6 -= *(_DWORD *)&HouseClass_Player[45112] - v4; /*0x422d01*/
     }
     int v7 = v5 + this->q0AC * v5 - v6; /*0x422d12*/
-    int v8 = v5 * (*(int (__thiscall **)(_DWORD *))(*this + 492))(this); /*0x422d23*/
+    int v8 = v5 * this->CheckEndOfSequence(); /*0x422d23*/
     v9 = v7 + 8; /*0x422d28*/
     v10 = (ConvertClass *)(*(_DWORD *)a2->__pad_0 + 2 * (v7 + 8)); /*0x422d30*/
     aP0 = (IUnknown *)(*(_DWORD *)a2->__pad_0 - 2 * (v7 + 8)); /*0x422d3c*/
@@ -283,7 +283,7 @@ void AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
     {
       v15 = 0; /*0x422e18*/
     }
-    v16 = (IUnknown *)(*(int (__thiscall **)(_DWORD *))(*this + 464))(this); /*0x422e2d*/
+    v16 = (IUnknown *)this->CheckDamageFlags(); /*0x422e2d*/
     v17 = *(_WORD *)(*(_DWORD *)&stru_87C374[45776] + 4) /*0x422e87*/
         + *(_WORD *)(*(_DWORD *)&stru_87C374[45776] + 36)
         - *(_WORD *)&a2->field_2[2]
@@ -333,7 +333,7 @@ void AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
   v20 = (CoordStruct *)this->q0C8; /*0x422ffa*/
   if ( v20[60].Y > *(int *)&HouseClass_Player[44588] || this->q199 && LOBYTE(v20[73].Z) ) /*0x42301e*/
     return; /*0x42301e*/
-  v103 = (ConvertClass *)(*(int (__thiscall **)(_DWORD *))(*this + 108))(this); /*0x423035*/
+  v103 = (ConvertClass *)this->HasC4(); /*0x423035*/
   if ( !v103 ) /*0x423039*/
     return; /*0x423039*/
   v21 = (CoordStruct *)this->q0C8; /*0x42303f*/
@@ -411,7 +411,7 @@ LABEL_46:
 LABEL_47:
   if ( (v22 & 1) == 0 ) /*0x423101*/
     BYTE1(v22) |= 8u; /*0x423103*/
-  aP0 = (IUnknown *)(*(int (__thiscall **)(_DWORD *))(*this + 456))(this); /*0x423110*/
+  aP0 = (IUnknown *)this->GetZAboveGround(); /*0x423110*/
   v25 = (CoordStruct *)this->q0C8; /*0x423114*/
   aP10 = (ConvertClass *)1000; /*0x42311a*/
   if ( BYTE1(v25[71].X) ) /*0x423122*/
@@ -419,13 +419,13 @@ LABEL_47:
     v105[0] = *(_DWORD *)(*(_DWORD *)(stru_B05488.field_4C + 4 * *(_DWORD *)(HouseClass_Player.field_0 + 90196)) + 780); /*0x42314b*/
     if ( BYTE1(v25[71].Z) ) /*0x42314f*/
       goto LABEL_78; /*0x423157*/
-    v26 = (IUnknown *)(*(int (__thiscall **)(_DWORD *, int *))(*this + 172))(this, &v108); /*0x423166*/
+    v26 = (IUnknown *)this->GetCoordsThunk2(&v108); /*0x423166*/
     v27 = (ConvertClass *)*((__int16 *)Coord::To_Cell(&stru_87C374[13428], v26) + 134); /*0x423177*/
     goto LABEL_77; /*0x42317e*/
   }
   if ( this->q658 ) /*0x4231f3*/
   {
-    _DWORD * v30 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, int *))(*this + 172))(this, &v108); /*0x42320a*/
+    _DWORD * v30 = (_DWORD *)this->GetCoordsThunk2(&v108); /*0x42320a*/
     LOWORD(v91) = *v30 / 256; /*0x423220*/
     HIWORD(v91) = v30[1] / 256; /*0x423238*/
     aP2 = v91; /*0x423241*/
@@ -450,7 +450,7 @@ LABEL_47:
       v105[0] = *(_DWORD *)(*(_DWORD *)stru_B05488.field_4C + 780); /*0x4232f0*/
     if ( !BYTE1(v25[71].Z) ) /*0x4232f4*/
     {
-      _DWORD * v33 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, int *))(*this + 172))(this, &v108); /*0x423307*/
+      _DWORD * v33 = (_DWORD *)this->GetCoordsThunk2(&v108); /*0x423307*/
       LOWORD(v92) = *v33 / 256; /*0x42331d*/
       HIWORD(v92) = v33[1] / 256; /*0x423336*/
       aP2 = v92; /*0x423343*/
@@ -468,7 +468,7 @@ LABEL_78:
     int v37 = *this; /*0x42339a*/
     v102 = v36; /*0x42339c*/
     aP0 = v35; /*0x4233a2*/
-    v38 = (IUnknown *)(*(int (__thiscall **)(_DWORD *))(v37 + 464))(this); /*0x4233a6*/
+    v38 = (IUnknown *)this->CheckDamageFlags(); /*0x4233a6*/
     int v39 = ZCoordToScreenY(v38); /*0x4233ae*/
     DrawToSurfaceSHP( /*0x4233e9*/
       *(int *)&stru_87C374[44960],
@@ -494,7 +494,7 @@ LABEL_78:
   *(float *)&aP2 = 0.0; /*0x4233f8*/
   if ( !v40 ) /*0x4233fc*/
     goto LABEL_99; /*0x4233fc*/
-  v42 = (IUnknown *)(*(int (__thiscall **)(_DWORD *, int *))(*this + 72))(this, &v108); /*0x42340b*/
+  v42 = (IUnknown *)this->UpdateZAdjust(&v108); /*0x42340b*/
   _DWORD * v43 = Coord::To_Cell(&stru_87C374[13428], v42); /*0x423414*/
   v44 = (CoordStruct *)Cell::IsBridge(v43); /*0x42341b*/
   v93 = v44; /*0x423422*/
@@ -587,7 +587,7 @@ LABEL_98:
   v41 |= v55 | (32 * ((32 * v56) | v57)); /*0x4235cd*/
   aP2 = (CoordStruct *)v41; /*0x4235cf*/
 LABEL_99:
-  v60 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, int *))(*this + 72))(this, &v108); /*0x4235d3*/
+  v60 = (_DWORD *)this->UpdateZAdjust(&v108); /*0x4235d3*/
   LOWORD(v94) = *v60 / 256; /*0x4235ef*/
   HIWORD(v94) = v60[1] / 256; /*0x423608*/
   aP0 = v94; /*0x423615*/
@@ -610,7 +610,7 @@ LABEL_99:
     v95 = (int)aP0 / 2; /*0x423673*/
     v67 = v65 - (int)aP0 / 2; /*0x423677*/
     v86 = 0; /*0x423679*/
-    v68 = (IUnknown *)(*(int (__thiscall **)(_DWORD *))(v66 + 464))(this); /*0x42367e*/
+    v68 = (IUnknown *)this->CheckDamageFlags(); /*0x42367e*/
     v69 = (ConvertClass *)(this->q100 + *(_DWORD *)(this->q0C8 + 836) - ZCoordToScreenY(v68) - 50); /*0x4236a1*/
     BYTE1(v22) |= 0x20u; /*0x4236a4*/
     do /*0x423719*/
@@ -650,7 +650,7 @@ LABEL_99:
     v82 = (BuildingTypeClass *)aP10; /*0x423756*/
     v72 = *this; /*0x42375e*/
     v102 = (ConvertClass *)(v109 + v71); /*0x423766*/
-    v73 = (IUnknown *)(*(int (__thiscall **)(_DWORD *))(v72 + 464))(this); /*0x42376a*/
+    v73 = (IUnknown *)this->CheckDamageFlags(); /*0x42376a*/
     BYTE1(v22) |= 0x20u; /*0x42379b*/
     v80 = this->q100 + *(_DWORD *)(this->q0C8 + 836) - ZCoordToScreenY(v73) - 3; /*0x42379e*/
     DrawToSurfaceSHP( /*0x4237a9*/
@@ -677,7 +677,7 @@ LABEL_99:
     v102 = (ConvertClass *)(v62[69].Z + *(_DWORD *)&a2->field_2[2]); /*0x4237bb*/
     aP0 = v74; /*0x4237cb*/
     v83 = (BuildingTypeClass *)aP10; /*0x4237d2*/
-    v75 = (IUnknown *)(*(int (__thiscall **)(_DWORD *))(*this + 464))(this); /*0x4237d7*/
+    v75 = (IUnknown *)this->CheckDamageFlags(); /*0x4237d7*/
     v76 = this->q100 + *(_DWORD *)(this->q0C8 + 836) - ZCoordToScreenY(v75); /*0x4237ff*/
     v77 = (ConvertClass *)v22; /*0x423801*/
     BYTE1(v77) = BYTE1(v22) | 0x20; /*0x423806*/
@@ -701,7 +701,7 @@ LABEL_99:
     if ( *(_BYTE *)(this->q0C8 + 882) ) /*0x423832*/
     {
       v78 = *(__int16 *)v103->__pad_6; /*0x423845*/
-      v79 = (IUnknown *)(*(int (__thiscall **)(_DWORD *))(*this + 464))(this); /*0x423857*/
+      v79 = (IUnknown *)this->CheckDamageFlags(); /*0x423857*/
       v81 = -2 - ZCoordToScreenY(v79); /*0x423875*/
       DrawToSurfaceSHP( /*0x42389e*/
         *(int *)&stru_87C374[44960],
@@ -728,7 +728,7 @@ LABEL_99:
 
 // 0x424CB0
 namespace gamemd {
-void AnimClass::InWhichLayer_AttachedObjectLayer()
+int AnimClass::InWhichLayer_AttachedObjectLayer()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -746,7 +746,7 @@ void AnimClass::InWhichLayer_AttachedObjectLayer()
 
 // 0x4253B0
 namespace gamemd {
-void AnimClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
+int AnimClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -797,7 +797,7 @@ void AnimClass::FreeRenderBuffer()
 
 // 0x448260
 namespace gamemd {
-void AnimClass::drawFrame()
+int AnimClass::drawFrame()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1812,7 +1812,7 @@ void AnimClass_GetAnimation()
 
 // 0x761030
 namespace gamemd {
-void AnimClass::ProcessFrame()
+int AnimClass::ProcessFrame()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

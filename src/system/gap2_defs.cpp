@@ -971,7 +971,7 @@ namespace gamemd { bool CellClass::Get(void* a1) {
       int v13;
       int v14;
 
-      v3 = (int *)(*(int (__thiscall **)(_DWORD *, int *))(*this + 72))(this, &v12);
+      v3 = (int *)this->GetOccupier(&v12);
       v4 = *v3;
       v5 = v3[1];
       v6 = v3[2];
@@ -14444,7 +14444,7 @@ LABEL_13:
           || (this->q034 || !v8)
   int v9; // eax
           && (v9 = this->CapacityIncrement, v9 > 0)
-          && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*this + 8))(this, v8 + v9, 0) )
+          && this->checkCondition(v8 + v9, 0) )
         {
           int v10 = this->q010; /*0x551c12*/
           int v11 = this->count; /*0x551c15*/
@@ -37349,10 +37349,10 @@ namespace gamemd { int FactoryClass::CompleteProduction() {
   int v112; // [esp+AAh] [ebp-8h] BYREF
   if ( this->q0B9 )
   {
-    _DWORD * v2 = (_DWORD *)(*(int (__thiscall **)(_DWORD *))(*this + 444))(this);
+    _DWORD * v2 = (_DWORD *)this->GetCellCoords();
     if ( Cell::IsBridge(v2) )
     {
-      _DWORD * v3 = (_DWORD *)(*(int (__thiscall **)(_DWORD *))(*this + 444))(this);
+      _DWORD * v3 = (_DWORD *)this->GetCellCoords();
       int * v4 = Cell::IsBridge(v3);
       BuildingClass::EmptyBunker(v4);
     }
@@ -37364,7 +37364,7 @@ namespace gamemd { int FactoryClass::CompleteProduction() {
     if ( *(_BYTE *)(v8 + 1708) && !*(_BYTE *)(v8 + 3603) )
     {
       v47 = *this;
-      v48 = (__int16 *)(*(int (__thiscall **)(_DWORD *, int *))(*this + 440))(this, &v106);
+      v48 = (__int16 *)this->GetCellCoords_Alt(&v106);
       v49 = CellCoord::To_CellObj(DataGlobal_87F7E8, v48);
       (*(void (__thiscall **)(_DWORD *, void *))(v47 + 968))(this, v49);
       if ( !(*(int (__thiscall **)(_DWORD *, _DWORD, _DWORD, int))(*this + 960))(this, this->q0AD, 0, 1) )
@@ -37402,7 +37402,7 @@ LABEL_4:
           this->q108 = 1;
           if ( *(_BYTE *)(this->q1B1 + 3598) )
           {
-            v55 = (_WORD *)(*(int (__thiscall **)(_DWORD *, int *))(*this + 440))(this, &v106);
+            v55 = (_WORD *)this->GetCellCoords_Alt(&v106);
             v56 = HIWORD(DataGlobal_87F7E8[32686]) + v55[1];
             LOWORD(v100) = *v55 + LOWORD(DataGlobal_87F7E8[32686]);
             HIWORD(v100) = v56;
@@ -37421,7 +37421,7 @@ LABEL_4:
         }
         if ( this->q02F == 3 )
         {
-          v72 = (_WORD *)(*(int (__thiscall **)(_DWORD *, int *))(*this + 440))(this, &v105);
+          v72 = (_WORD *)this->GetCellCoords_Alt(&v105);
           v73 = HIWORD(DataGlobal_87F7E8[32686]) + v72[1];
           LOWORD(v100) = LOWORD(DataGlobal_87F7E8[32686]) + *v72;
           HIWORD(v100) = v73;
@@ -37528,7 +37528,7 @@ LABEL_4:
             (*(void (__thiscall **)(_DWORD *))(*this + 492))(this);
             goto LABEL_150;
           }
-          v63 = (__int16 *)(*(int (__thiscall **)(_DWORD *, int *))(*this + 440))(this, &v106);
+          v63 = (__int16 *)this->GetCellCoords_Alt(&v106);
           v64 = *v63;
           LOWORD(v63) = HIWORD(DataGlobal_87F7E8[32686]) + v63[1];
           LOWORD(v100) = LOWORD(DataGlobal_87F7E8[32686]) + v64;
@@ -37666,13 +37666,13 @@ LABEL_90:
         WinAPI::Wrapper(-2147467261);
       if ( (*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)this->q19D + 16))(this->q19D) )
         return 10;
-      v100 = *(int *)(*(int (__thiscall **)(_DWORD *, char *))(*this + 440))(this, v102);
+      v100 = *(int *)this->GetCellCoords_Alt(v102);
       _DWORD * v10 = CellCoord::To_CellObj(DataGlobal_87F7E8, (__int16 *)&v100);
       if ( !this->q169 && v10[59] == 2 )
       {
         int v11 = *this;
         v95 = 0;
-        v12 = (__int16 *)(*(int (__thiscall **)(_DWORD *, char *, int, int))(v11 + 440))(this, v103, 2, -1);
+        v12 = (__int16 *)this->GetCellCoords_Alt(v103, 2, -1);
   float *v13; // eax
         v13 = (float *)LayerClass::Pathfinding_Find(
                          DataGlobal_87F7E8,
@@ -37745,7 +37745,7 @@ LABEL_90:
   while ( 1 )
   {
     v22 = (LOBYTE(v20) + (_BYTE)v21) & 7;
-    v23 = (_WORD *)(*(int (__thiscall **)(_DWORD *, int *))(*this + 440))(this, &v105);
+    v23 = (_WORD *)this->GetCellCoords_Alt(&v105);
     v24 = v23[1] + HIWORD(DataGlobal_87F7E8[(v22 & 7) + 32680]);
     LOWORD(v97) = LOWORD(DataGlobal_87F7E8[(v22 & 7) + 32680]) + *v23;
     v25 = LOWORD(DataGlobal_87F7E8[(v22 & 7) + 32680]) + v97;
@@ -37841,7 +37841,7 @@ LABEL_41:
   {
 LABEL_63:
     CellClass::AddObject(this + 69, v19);
-    if ( *(_BYTE *)((*(int (__thiscall **)(_DWORD *))(*this + 132))(this) + 2053) )
+    if ( *(_BYTE *)(this->GetSpecialValue() + 2053) )
       (*(void (__thiscall **)(_DWORD *, _DWORD *))(*this + 1236))(this, v19);
     (*(void (__thiscall **)(_DWORD *))(*v19 + 284))(v19);
     goto LABEL_150;
@@ -37862,13 +37862,13 @@ LABEL_63:
   v44 = this->q175;
   if ( v44 )
     TeamClass::AddMember(v44, (int)v19, 0);
-  if ( *(_DWORD *)((*(int (__thiscall **)(_DWORD *, int))(*this + 132))(this, 1) + 1384) != -1 )
+  if ( *(_DWORD *)(this->GetSpecialValue(1) + 1384) != -1 )
   {
     v110[0] = this->q027;
     v110[1] = this->q028;
     v45 = *this;
     v110[2] = this->q0A4;
-    v46 = (*(int (__thiscall **)(_DWORD *))(v45 + 132))(this);
+    v46 = this->GetSpecialValue();
     PlayAudioAt2(*(_DWORD *)(v46 + 1384), v110, 0);
   }
 LABEL_150:

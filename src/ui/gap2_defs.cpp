@@ -409,17 +409,17 @@ namespace gamemd { void DropListClass::OnKeyDown(void* a1) {
       if ( String1 )
       {
         v3 = 0;
-        if ( (*(int (__thiscall **)(_DWORD *))(*this + 176))(this) > 0 )
+        if ( this->ScrollUp() > 0 )
         {
           while ( 1 )
           {
             v4 = (const wchar_t *)(*(int (__thiscall **)(_DWORD *, int))(this->List + 160))(this + 44, v3);
             if ( !_wcsicmp(String1, v4) )
               break;
-            if ( ++v3 >= (*(int (__thiscall **)(_DWORD *))(*this + 176))(this) )
+            if ( ++v3 >= this->ScrollUp() )
               return;
           }
-          (*(void (__thiscall **)(_DWORD *, int))(*this + 172))(this, v3);
+          this->OnKeyUp(v3);
         }
       }
 }
@@ -482,8 +482,8 @@ namespace gamemd { int DropListClass::GetItem(int a1) {
         this->q010,
         this->q014,
         this->q018);
-      (*(void (__thiscall **)(_DWORD *))(*this + 144))(this);
-      (*(void (__thiscall **)(_DWORD *, _DWORD))(*this + 148))(this, this->q034);
+      this->GetSelected();
+      this->GetItemText(this->q034);
       (*(void (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 36))(g_WWMouseClass_Instance);
       return 1;
 }
@@ -638,13 +638,13 @@ namespace gamemd { int DropListClass::SetItemText(int a1) {
         int v11 = v9 - 1; /*0x4c354a*/
         this->q03C = v11; /*0x4c354b*/
         *(_WORD *)(v10 + 2 * v11) = 0; /*0x4c354e*/
-        (*(void (__thiscall **)(_DWORD *))(*this + 72))(this); /*0x4c3558*/
+        this->MarkDirty(); /*0x4c3558*/
       }
       return 1; /*0x4c3558*/
     }
     if ( C == 13 ) /*0x4c3447*/
     {
-      (*(void (__thiscall **)(_DWORD *))(*this + 84))(this); /*0x4c3535*/
+      this->AddItem(); /*0x4c3535*/
       return 0; /*0x4c353d*/
     }
     int v5 = Text::MeasureWidth(this->q034, 0); /*0x4c345e*/
@@ -667,7 +667,7 @@ LABEL_11:
             int v7 = this->q03C + 1; /*0x4c3518*/
             this->q03C = v7; /*0x4c3519*/
             *(_WORD *)(v6 + 2 * v7) = 0; /*0x4c351e*/
-            (*(void (__thiscall **)(_DWORD *))(*this + 72))(this); /*0x4c3526*/
+            this->MarkDirty(); /*0x4c3526*/
             return 1; /*0x4c352e*/
           }
           return 1; /*0x4c3506*/
@@ -1129,7 +1129,7 @@ namespace gamemd { int ListClass::Destru_vt43(int a1) {
       {
         v4 = *this;
         v5 = (*(int (__thiscall **)(int *, int *))(this->q034 + 16))(this + 13, &a2);
-        return (*(int (__thiscall **)(int *, int))(v4 + 168))(this, v5);
+        return this->RemoveItem_0(v5);
       }
       return result;
 }
@@ -1511,7 +1511,7 @@ namespace gamemd { int CheckListClass::getItemCount(int * a2) {
 // 0x5BDAA0
 namespace gamemd { int MouseClass::GetPosition() {
 {
-      return (*(int (__thiscall **)(_DWORD *, _DWORD, _DWORD))(*this + 76))(this, this->q5564, 0);
+      return this->SetCursor(this->q5564, 0);
 }
 } }
 // 0x5BDAB0
@@ -1604,7 +1604,7 @@ namespace gamemd { int MouseClass::LoadGameAssets() {
     if ( result >= 0 ) /*0x5bdfbd*/
     {
       dword_822CF8 = -1; /*0x5bdfc3*/
-      (*(void (__thiscall **)(int *))(*this + 92))(this); /*0x5bdfd2*/
+      this->FreeAllCells(); /*0x5bdfd2*/
       __3_YAXPAX_Z((void *)this->q01C); /*0x5bdfd9*/
       void * v5 = (void *)this->q01A; /*0x5bdfde*/
       this->q01C = 0; /*0x5bdfe1*/
@@ -1695,12 +1695,12 @@ namespace gamemd { int MouseClass::LoadGameAssets() {
         ObjectPtr::RegisterForTracking( /*0x5be123*/
           (SwizzleManagerClass *)&stru_B05488[27784],
           (MouseClass *)(this + 1128));
-        (*(void (__thiscall **)(int *))(*this + 88))(this); /*0x5be12d*/
-        (*(void (__thiscall **)(int *))(*this + 96))(this); /*0x5be135*/
+        this->InitCellVector(); /*0x5be12d*/
+        this->InitAllCells(); /*0x5be135*/
         int v17 = *this; /*0x5be138*/
         this->q01C = 0; /*0x5be14a*/
         this->q01A = 0; /*0x5be14d*/
-        (*(void (__thiscall **)(int *, int *, int, _DWORD, _DWORD))(v17 + 112))(this, this + 59, 1, 0, 0); /*0x5be150*/
+        this->DrawWrapper(this + 59, 1, 0, 0); /*0x5be150*/
         if ( this->q01C ) /*0x5be153*/
         {
           __3_YAXPAX_Z((void *)this->q01C); /*0x5be15b*/
@@ -3793,12 +3793,12 @@ namespace gamemd { int SidebarClass::Init() {
       v11 += 997; /*0x6a5532*/
     }
     while ( v10 < 4 ); /*0x6a553b*/
-    (*(void (__thiscall **)(_DWORD *))(*this + 136))(this); /*0x6a5541*/
+    this->LoadResources(); /*0x6a5541*/
     SidebarClass::CalcBounds(1); /*0x6a554b*/
     if ( this->q53A5 ) /*0x6a5550*/
     {
-      (*(void (__thiscall **)(_DWORD *, _DWORD))(*this + 216))(this, 0); /*0x6a5560*/
-      (*(void (__thiscall **)(_DWORD *, int))(*this + 216))(this, 1); /*0x6a556c*/
+      this->ToggleSidebarDisplay(0); /*0x6a5560*/
+      this->ToggleSidebarDisplay(1); /*0x6a556c*/
     }
     this->q1544 = 0; /*0x6a5574*/
     LOBYTE(v2) = g_GameMode_Current[0]; /*0x6a557a*/
@@ -6770,9 +6770,9 @@ namespace gamemd { int SliderClass::OnTrack(int a1) {
 
       v2 = *this;
       if ( a2 )
-        return (*(int (__stdcall **)(int))(v2 + 140))(this->q034 - this->q048);
+        return this->Draw(this->q034 - this->q048);
       else
-        return (*(int (__stdcall **)(int))(v2 + 140))(this->q034 + this->q048);
+        return this->Draw(this->q034 + this->q048);
 }
 } }
 // 0x6B2040
@@ -7553,22 +7553,22 @@ namespace gamemd { int GadgetClass::ProcessMouseOver(int a1, void* a2, int a3) {
           {
             v7 = *this;
             this->q02C = 1;
-            (*(void (__thiscall **)(_DWORD *))(v7 + 72))(this);
+            this->MarkDirty();
           }
         }
         else if ( v6 )
         {
           v8 = *this;
           this->q02C = 0;
-          (*(void (__thiscall **)(_DWORD *))(v8 + 72))(this);
+          this->MarkDirty();
         }
       }
-      (*(void (__thiscall **)(_DWORD *, int))(*this + 120))(this, a2);
+      this->TrackCurrent(a2);
       if ( (a2 & 0x11) != 0 )
       {
         v9 = *this;
         this->q02C = 1;
-        (*(void (__thiscall **)(_DWORD *))(v9 + 72))(this);
+        this->MarkDirty();
         CellClass::Draw((int)this, a2 & 0xFFFFFFEE, aP2, 0);
         *(_DWORD *)aP2->__pad_0 = 0;
         return 1;
@@ -7588,7 +7588,7 @@ namespace gamemd { int GadgetClass::ProcessMouseOver(int a1, void* a2, int a3) {
             v12 = *this;
             this->q02D = this->q02D == 0;
             this->q02C = 0;
-            (*(void (__thiscall **)(_DWORD *))(v12 + 72))(this);
+            this->MarkDirty();
             return CellClass::Draw((int)this, v5, aP2, 0);
           }
           if ( v11 == 2 && !this->q02D )
@@ -7596,7 +7596,7 @@ namespace gamemd { int GadgetClass::ProcessMouseOver(int a1, void* a2, int a3) {
         }
         v13 = *this;
         this->q02C = 0;
-        (*(void (__thiscall **)(_DWORD *))(v13 + 72))(this);
+        this->MarkDirty();
       }
       return CellClass::Draw((int)this, v5, aP2, 0);
 }
@@ -8509,10 +8509,10 @@ namespace gamemd { int WWMouseClass::DrawCursorBuffered(void* a1, int a2) {
       int v27;
       IUnknown *aP1a;
 
-      result = (*(int (__thiscall **)(int *))(*this + 8))(this);
+      result = this->drawCursor();
       if ( !(_BYTE)result )
       {
-        result = (*(int (__thiscall **)(int *))(*this + 28))(this);
+        result = this->checkCapture();
         if ( (_BYTE)result )
         {
           result = 0;
@@ -8627,10 +8627,10 @@ namespace gamemd { void WWMouseClass::updateCursor() {
       int v10;
       _DWORD v11[4];
 
-      result = (*(int (__thiscall **)(int *))(*this + 8))(this);
+      result = this->drawCursor();
       if ( !(_BYTE)result )
       {
-        result = (*(int (__thiscall **)(int *))(*this + 28))(this);
+        result = this->checkCapture();
         if ( (_BYTE)result )
         {
           if ( a2 )

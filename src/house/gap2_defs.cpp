@@ -725,7 +725,7 @@ LABEL_5:
     --this->Count; /*0x49fac1*/
     return *(_DWORD *)(v5 + 4 * a2); /*0x49fac9*/
   }
-  if ( (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*this + 8))(this, a2 + 10, 0) ) /*0x49fa8a*/
+  if ( this->vt02(a2 + 10, 0) ) /*0x49fa8a*/
   {
     for ( i = v3; i < this->Capacity; *(_DWORD *)(this->count + 4 * i - 4) = 0 ) /*0x49fa98*/
       ++i; /*0x49fa9d*/
@@ -775,7 +775,7 @@ namespace gamemd { int CounterClass::Load(int a1) {
                    0);
         if ( result >= 0 )
         {
-          if ( (*(unsigned __int8 (__thiscall **)(_DWORD *, AbstractClass *, _DWORD))(*this + 8))(this, aP1, 0) )
+          if ( this->COMStub_Ret1_2(aP1, 0) )
           {
             v5 = 0;
             if ( (int)aP1 <= 0 )
@@ -13055,7 +13055,7 @@ namespace gamemd { int HouseClass::AddCoordTrackingEntry(void* a1) {
         if ( !this->IsAllocated && v3 )
           return 0;
         v4 = this->abstractFlags;
-        if ( v4 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*this + 8))(this, v3 + v4, 0) )
+        if ( v4 <= 0 || !this->COMStub_Ret1_2(v3 + v4, 0) )
           return 0;
       }
       v6 = this->uniqueId;
@@ -13734,7 +13734,7 @@ namespace gamemd { void* HouseClass::updateFactoryQueue() {
       v1 = this;
       v2 = *this;
       this->q5545 = 1;
-      (*(void (__stdcall **)(_DWORD))(v2 + 56))(0);
+      this->SetCapacity_5(0);
       result = g_CurrentFrame;
       v1 += 5454;
       *v1 = g_CurrentFrame;

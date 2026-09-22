@@ -342,7 +342,7 @@ LABEL_55:
 
 // 0x5BDA80
 namespace gamemd {
-void Mission::SetAndCall(IUnknown * aP1, IUnknown * aP2)
+int Mission::SetAndCall(IUnknown * aP1, IUnknown * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

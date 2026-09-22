@@ -4,7 +4,7 @@
 #include "e4/classes/Vector_e4.hpp"
 
 // 0x76FC50
-void ArtConfig::validateConfig(Selection_WorldDominationTour * aP1, int a3, Selection_WorldDominationTour * aP3)
+int ArtConfig::validateConfig(Selection_WorldDominationTour * aP1, int a3, Selection_WorldDominationTour * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

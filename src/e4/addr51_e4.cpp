@@ -47,7 +47,7 @@ unsigned char E4Recv_517360::sub_517360(unsigned char a2, unsigned char * a3)
 
 // 0x5173F0
 namespace gamemd {
-void E4Recv_5173F0::sub_5173F0(unsigned char * a2)
+int E4Recv_5173F0::sub_5173F0(unsigned char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

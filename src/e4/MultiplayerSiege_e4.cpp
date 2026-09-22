@@ -5,7 +5,7 @@
 #include "e4/classes/WideString_e4.hpp"
 
 // 0x5CA680
-void MultiplayerSiege::Read()
+int MultiplayerSiege::Read()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -31,7 +31,7 @@ void MultiplayerSiege::Read()
 }
 
 // 0x5CA6D0
-void MultiplayerSiege::Write(void ** a1)
+int MultiplayerSiege::Write(void ** a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -106,7 +106,7 @@ LABEL_12:
 }
 
 // 0x5CA800
-void MultiplayerSiege::ProcessTurn(char a2)
+int MultiplayerSiege::ProcessTurn(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

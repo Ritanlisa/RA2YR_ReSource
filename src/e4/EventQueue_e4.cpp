@@ -3,7 +3,7 @@
 #include "e4/e4_globals.hpp"
 
 // 0x54F000
-void EventQueue::Process()
+int EventQueue::Process()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -19,7 +19,7 @@ void EventQueue::Process()
 }
 
 // 0x54F050
-void EventQueue::Read()
+int EventQueue::Read()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -92,7 +92,7 @@ void EventQueue::Read()
 }
 
 // 0x54F650
-void EventQueue::Check()
+int EventQueue::Check()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

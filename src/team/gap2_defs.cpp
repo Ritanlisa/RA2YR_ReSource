@@ -2575,7 +2575,7 @@ LABEL_28:
   v25[2] = v5[41]; /*0x6f0239*/
   int v14 = v23->buildingType; /*0x6f0241*/
   LOBYTE(v14) = *(_BYTE *)(v14 + 247); /*0x6f0244*/
-  int v15 = (*(int (__thiscall **)(int *, int, _DWORD *, int))(v13 + 964))(v5, v12, v25, v14); /*0x6f0253*/
+  int v15 = v5->SelectAutoTarget_Start_AU(v12, v25, v14); /*0x6f0253*/
   TeamClass *v16 = v23; /*0x6f0259*/
   int v17 = v15; /*0x6f025d*/
   if ( v15 ) /*0x6f0261*/

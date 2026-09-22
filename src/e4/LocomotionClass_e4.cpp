@@ -5,7 +5,7 @@
 #include "e4/classes/Cell_e4.hpp"
 
 // 0x4AF540
-void LocomotionClass::Initialize()
+int LocomotionClass::Initialize()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -66,7 +66,7 @@ void * LocomotionClass::UpdateAll()
 }
 
 // 0x4CFA70
-void LocomotionClass::CheckBridgeBlock()
+int LocomotionClass::CheckBridgeBlock()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -101,7 +101,7 @@ void LocomotionClass::CheckBridgeBlock()
 }
 
 // 0x4DC760
-void LocomotionClass::GetSpeedMultiplier()
+int LocomotionClass::GetSpeedMultiplier()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -115,7 +115,7 @@ void LocomotionClass::GetSpeedMultiplier()
 }
 
 // 0x513C20
-void LocomotionClass::ProcessData()
+int LocomotionClass::ProcessData()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -145,7 +145,7 @@ void LocomotionClass::ProcessData()
 }
 
 // 0x54AC40
-void LocomotionClass::Update()
+int LocomotionClass::Update()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

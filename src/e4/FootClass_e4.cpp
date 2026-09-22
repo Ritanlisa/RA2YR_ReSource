@@ -8,7 +8,7 @@
 // 0x4D3590
 namespace ra2 {
 namespace game {
-void FootClass::Destruct()
+int FootClass::Destruct()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -103,7 +103,7 @@ void FootClass::Destroyed(int a2)
 // 0x70F7E0
 namespace ra2 {
 namespace game {
-void FootClass::updateThreat()
+int FootClass::updateThreat()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

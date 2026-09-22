@@ -5,7 +5,7 @@
 #include "e4/classes/String_e4.hpp"
 
 // 0x597730
-void MapSeed::ValidateName(int a2)
+int MapSeed::ValidateName(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -17,7 +17,7 @@ void MapSeed::ValidateName(int a2)
 }
 
 // 0x5AC230
-void MapSeed::IsCellInBounds()
+int MapSeed::IsCellInBounds()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -32,7 +32,7 @@ void MapSeed::IsCellInBounds()
 }
 
 // 0x79C520
-void MapSeed::CheckName()
+int MapSeed::CheckName()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

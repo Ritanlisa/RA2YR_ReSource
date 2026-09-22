@@ -9,7 +9,7 @@
 #include "e4/classes/Super_e4.hpp"
 
 // 0x41EC90
-void AITriggerTypeClass::CivilianHouseOwns(int a2, int a3)
+int AITriggerTypeClass::CivilianHouseOwns(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -89,7 +89,7 @@ LABEL_12:
 }
 
 // 0x41EE90
-void AITriggerTypeClass::OwnerHouseOwns(unsigned int * a2, int a3)
+int AITriggerTypeClass::OwnerHouseOwns(unsigned int * a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -155,7 +155,7 @@ LABEL_8:
 }
 
 // 0x41F0D0
-void AITriggerTypeClass::IronCurtainCharged(int a1, int a2)
+int AITriggerTypeClass::IronCurtainCharged(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -192,7 +192,7 @@ LABEL_12:
 }
 
 // 0x41F180
-void AITriggerTypeClass::ChronoSphereCharged(int a1, int a2)
+int AITriggerTypeClass::ChronoSphereCharged(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -229,7 +229,7 @@ LABEL_12:
 }
 
 // 0x41F230
-void AITriggerTypeClass::HouseCredits(int a2, int a3)
+int AITriggerTypeClass::HouseCredits(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -266,7 +266,7 @@ void AITriggerTypeClass::HouseCredits(int a2, int a3)
 }
 
 // 0x41F580
-void AITriggerTypeClass::LoadFromINI(unsigned char *** a2)
+int AITriggerTypeClass::LoadFromINI(unsigned char *** a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -513,7 +513,7 @@ LABEL_26:
 }
 
 // 0x41FD60
-void AITriggerTypeClass::RegisterSuccess()
+int AITriggerTypeClass::RegisterSuccess()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -547,7 +547,7 @@ void AITriggerTypeClass::RegisterSuccess()
 }
 
 // 0x41FE20
-void AITriggerTypeClass::RegisterFailure()
+int AITriggerTypeClass::RegisterFailure()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

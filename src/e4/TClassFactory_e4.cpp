@@ -3,7 +3,7 @@
 #include "e4/e4_globals.hpp"
 
 // 0x6C0260
-void TClassFactory_CampaignClass::GetClassName()
+int TClassFactory_CampaignClass::GetClassName()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -18,7 +18,7 @@ void TClassFactory_CampaignClass::GetClassName()
 }
 
 // 0x6C4D60
-void TClassFactory_MechLocomotionClass::GetClassName()
+int TClassFactory_MechLocomotionClass::GetClassName()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

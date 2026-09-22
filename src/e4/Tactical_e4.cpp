@@ -232,7 +232,7 @@ void * Tactical::CreateTacticalLightSurface(int * a2, int * a1, IUnknown * aP2, 
 
 // 0x484180
 namespace gamemd {
-void Tactical::CalculateTacticalLighting(int * a1, IUnknown * aP2, int * a3, int * a4, IUnknown * aP5, int * a6, long long a8)
+int Tactical::CalculateTacticalLighting(int * a1, IUnknown * aP2, int * a3, int * a4, IUnknown * aP5, int * a6, long long a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -528,7 +528,7 @@ LABEL_11:
 
 // 0x568350
 namespace gamemd {
-void Tactical::IsCellVisible(IUnknown * aP1)
+int Tactical::IsCellVisible(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -756,7 +756,7 @@ void Tactical_Radar_Render()
 
 // 0x692300
 namespace gamemd {
-void Tactical::MouseOver(MouseClass * aP0, MouseClass * aP1, MouseClass * aP2, MouseClass * aP3, MouseClass * aP4, MouseClass * aP5)
+int Tactical::MouseOver(MouseClass * aP0, MouseClass * aP1, MouseClass * aP2, MouseClass * aP3, MouseClass * aP4, MouseClass * aP5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -918,7 +918,7 @@ void Tactical::MouseOver(MouseClass * aP0, MouseClass * aP1, MouseClass * aP2, M
 
 // 0x6930A0
 namespace gamemd {
-void Tactical::HandleTacticalMouseInput(int _28, unsigned int * a2, int a4, MouseClass * aP4)
+int Tactical::HandleTacticalMouseInput(int _28, unsigned int * a2, int a4, MouseClass * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1042,7 +1042,7 @@ void Tactical::HandleTacticalMouseInput(int _28, unsigned int * a2, int a4, Mous
 
 // 0x6A6610
 namespace gamemd {
-void Tactical::UpdateUIVisibility()
+int Tactical::UpdateUIVisibility()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1365,7 +1365,7 @@ unsigned int * Tactical::PixelToCell(AbstractClass * aP1, IUnknown * aP2)
 
 // 0x6DA7D0
 namespace gamemd {
-void Tactical::AddCellToDrawList(IUnknown * aP1)
+int Tactical::AddCellToDrawList(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1430,7 +1430,7 @@ void Tactical::AddCellToDrawList(IUnknown * aP1)
 
 // 0x6DB210
 namespace gamemd {
-void Tactical::DrawTacticalConnectorLines()
+int Tactical::DrawTacticalConnectorLines()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1610,7 +1610,7 @@ void Tactical::DrawTacticalConnectorLines()
 
 // 0x6DBB60
 namespace gamemd {
-void Tactical::DrawOverlay(int * a1, BuildingTypeClass * aP2, int a4, int a5)
+int Tactical::DrawOverlay(int * a1, BuildingTypeClass * aP2, int a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1669,7 +1669,7 @@ void Tactical::DrawOverlay(int * a1, BuildingTypeClass * aP2, int a4, int a5)
 
 // 0x6E4A80
 namespace gamemd {
-void Tactical_42::FindItem(unsigned int * a2)
+int Tactical_42::FindItem(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

@@ -6,7 +6,7 @@
 #include "e4/classes/WideString_e4.hpp"
 
 // 0x4E5D60
-void Lobby::InvalidatePlayerSlots()
+int Lobby::InvalidatePlayerSlots()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -495,7 +495,7 @@ void Lobby::SetupPlayerWidgets()
 }
 
 // 0x77DB90
-void Lobby::BuildPlayerList()
+int Lobby::BuildPlayerList()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

@@ -176,7 +176,7 @@ void TacticalClass::DrawCellTerrainOverlay(int * a2, int * a3)
 
 // 0x4AC380
 namespace gamemd {
-void TacticalClass::ProcessScroll(int * a2)
+int TacticalClass::ProcessScroll(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -755,7 +755,7 @@ signed int TacticalClass::RenderIsometricOverlay(IUnknown * aP1, IUnknown * aP2,
 
 // 0x6D3660
 namespace gamemd {
-void TacticalClass::CalcAllDrawPositions(AbstractClass * aP1, BuildingTypeClass * aP2, int * a3, char a5)
+int TacticalClass::CalcAllDrawPositions(AbstractClass * aP1, BuildingTypeClass * aP2, int * a3, char a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1039,7 +1039,7 @@ void * TacticalClass::DrawBuildingsInView(AbstractClass * aP1)
 
 // 0x6D9B50
 namespace gamemd {
-void TacticalClass::CheckUnitOverlap(int a2, int a3, AbstractClass * aP3, int a5)
+int TacticalClass::CheckUnitOverlap(int a2, int a3, AbstractClass * aP3, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

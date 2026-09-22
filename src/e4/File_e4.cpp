@@ -7,7 +7,7 @@
 
 // 0x431F10
 namespace gamemd {
-void File::IsReady(int a2)
+int File::IsReady(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -167,7 +167,7 @@ LABEL_24:
 
 // 0x4CB920
 namespace gamemd {
-void File::Dispatch()
+int File::Dispatch()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -221,7 +221,7 @@ unsigned int * File::LoadFileHVA(ObjectClass * aP1)
 
 // 0x5BD5C0
 namespace gamemd {
-void File::ParseFileHVA(int a2)
+int File::ParseFileHVA(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -356,7 +356,7 @@ void * File::LoadPaletteData(ObjectClass * aP1)
 
 // 0x625DB0
 namespace gamemd {
-void File::FindByPrefix(char * Str1, unsigned char * a3)
+int File::FindByPrefix(char * Str1, unsigned char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -378,7 +378,7 @@ void File::FindByPrefix(char * Str1, unsigned char * a3)
 
 // 0x734990
 namespace gamemd {
-void File::ParseCSFString()
+int File::ParseCSFString()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -697,7 +697,7 @@ LABEL_25:
 
 // 0x76B0A0
 namespace gamemd {
-void File::LoadWDTDecompress(CCINIClass * aP1, int a3)
+int File::LoadWDTDecompress(CCINIClass * aP1, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -775,7 +775,7 @@ LABEL_15:
 
 // 0x7C12B0
 namespace gamemd {
-void File::ParseAudioFileRIFF()
+int File::ParseAudioFileRIFF()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

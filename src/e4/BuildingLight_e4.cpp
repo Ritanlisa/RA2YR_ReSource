@@ -8,7 +8,7 @@
 
 // 0x5FF850
 namespace gamemd {
-void BuildingLight::CalculateShading()
+int BuildingLight::CalculateShading()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

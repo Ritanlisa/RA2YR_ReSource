@@ -11,7 +11,7 @@
 #include "e4/classes/VectorClass_ptr_SuperClass_e4.hpp"
 
 // 0x660840
-void LoadGame::LoadTriggerEvents()
+int LoadGame::LoadTriggerEvents()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -80,7 +80,7 @@ void LoadGame::LoadTriggerEvents()
 }
 
 // 0x660F10
-void LoadGame::RemoveItem(int a2)
+int LoadGame::RemoveItem(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -105,7 +105,7 @@ void LoadGame::RemoveItem(int a2)
 }
 
 // 0x67E730
-void LoadGame::Start()
+int LoadGame::Start()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -920,7 +920,7 @@ LABEL_222:
 }
 
 // 0x69B5B0
-void LoadGame::LoadBlock300(int a2)
+int LoadGame::LoadBlock300(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -943,7 +943,7 @@ void LoadGame::LoadBlock300(int a2)
 }
 
 // 0x751710
-void LoadGame::RestoreAudioState()
+int LoadGame::RestoreAudioState()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1027,7 +1027,7 @@ void LoadGame::RestoreAudioState()
 }
 
 // 0x7533F0
-void LoadGame::LoadMagicAndAudio()
+int LoadGame::LoadMagicAndAudio()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

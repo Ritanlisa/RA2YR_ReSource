@@ -18,7 +18,7 @@
 
 // 0x6A6AF0
 namespace gamemd {
-void E4Recv_6A6AF0::sub_6A6AF0(ObjectClass * aP1, int a3)
+int E4Recv_6A6AF0::sub_6A6AF0(ObjectClass * aP1, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -82,7 +82,7 @@ LABEL_18:
 
 // 0x6A74A0
 namespace gamemd {
-void E4Recv_6A74A0::sub_6A74A0(int a2)
+int E4Recv_6A74A0::sub_6A74A0(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -114,7 +114,7 @@ void E4Recv_6A74A0::sub_6A74A0(int a2)
 
 // 0x6A87F0
 namespace gamemd {
-void E4Recv_6A87F0::sub_6A87F0(int a2, int a3)
+int E4Recv_6A87F0::sub_6A87F0(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -148,7 +148,7 @@ LABEL_7:
 
 // 0x6A89E0
 namespace gamemd {
-void E4Recv_6A89E0::sub_6A89E0(char a2)
+int E4Recv_6A89E0::sub_6A89E0(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -201,7 +201,7 @@ void E4Recv_6A89E0::sub_6A89E0(char a2)
 
 // 0x6A93F0
 namespace gamemd {
-void E4Recv_6A93F0::sub_6A93F0()
+int E4Recv_6A93F0::sub_6A93F0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -536,7 +536,7 @@ void ShowSkirmishSetupScreen()
 // 0x6AFD60
 namespace ra2 {
 namespace game {
-void TechnoClass::ProcessDeployAction()
+int TechnoClass::ProcessDeployAction()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

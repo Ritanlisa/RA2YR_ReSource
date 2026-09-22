@@ -11,7 +11,7 @@
 
 // 0x49CAF0
 namespace gamemd {
-void Movie::SetupScreen(CCINIClass * aP1)
+int Movie::SetupScreen(CCINIClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -83,7 +83,7 @@ void Movie::SetupScreen(CCINIClass * aP1)
 
 // 0x49E3B0
 namespace gamemd {
-void Movie::GetSection(CCINIClass * aP1, CCINIClass * aP2)
+int Movie::GetSection(CCINIClass * aP1, CCINIClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -278,10 +278,9 @@ void Movie_PlayWrapper()
 
 // 0x7209D0
 namespace gamemd {
-void Movie::Update()
+int Movie::Update()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void Movie::Update(int this)
 {
   int IsSoundEnabled; // eax
 
@@ -297,12 +296,12 @@ void Movie::Update(int this)
         IsSoundEnabled = this->Movie_field_0xC; /*0x7209fa*/
         if ( IsSoundEnabled > 0 ) /*0x7209ff*/
         {
-          int v3 = *(_DWORD *)(this + 44); /*0x720a01*/
+          bool v3 = this->q00B; /*0x720a01*/
           if ( !v3 ) /*0x720a06*/
             goto LABEL_10; /*0x720a06*/
-          if ( *(_BYTE *)(this + 17) && !AudioSample::IsBuffering(v3) ) /*0x720a0f*/
-            Audio::Release(*(_DWORD **)(this + 44)); /*0x720a1b*/
-          LOBYTE(IsSoundEnabled) = Audio::IsSoundPlaying(*(_DWORD **)(this + 44)) != 0; /*0x720a2a*/
+          if ( this->q044 && !AudioSample::IsBuffering(v3) ) /*0x720a0f*/
+            Audio::Release(this->q00B); /*0x720a1b*/
+          LOBYTE(IsSoundEnabled) = Audio::IsSoundPlaying(this->q00B) != 0; /*0x720a2a*/
           if ( !(_BYTE)IsSoundEnabled ) /*0x720a2f*/
           {
 LABEL_10:

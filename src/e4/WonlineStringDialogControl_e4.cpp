@@ -26,7 +26,7 @@ void * WonlineStringDialogControl_12::Constructor_WonlineStringDialogControl(cha
 
 // 0x7AD690
 namespace gamemd {
-void WonlineStringDialogControl_28::QueryInterface(char * a1, unsigned int * a2, char ** a3)
+int WonlineStringDialogControl_28::QueryInterface(char * a1, unsigned int * a2, char ** a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

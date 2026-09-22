@@ -19,7 +19,7 @@ unsigned int * TabClass::initStripClass()
 }
 
 // 0x658330
-void TabClass::DrawPower(HWND hDlg, void * a1, AbstractClass * aP2)
+int TabClass::DrawPower(HWND hDlg, void * a1, AbstractClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

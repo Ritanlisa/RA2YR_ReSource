@@ -203,7 +203,7 @@ void Render_Show(CCINIClass * aP0, int a2)
 } // namespace gamemd
 
 // 0x705270
-void Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a6, int a7, char a8)
+int Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a6, int a7, char a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

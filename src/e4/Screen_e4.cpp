@@ -50,7 +50,7 @@ void Screen_Capture()
 } // namespace gamemd
 
 // 0x68F060
-void Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
+int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -461,7 +461,7 @@ void Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
 }
 
 // 0x690160
-void Screen::TransitionLoop(int a2)
+int Screen::TransitionLoop(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

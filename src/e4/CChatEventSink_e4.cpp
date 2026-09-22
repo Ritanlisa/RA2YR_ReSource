@@ -9,7 +9,7 @@
 #include "e4/classes/String_e4.hpp"
 
 // 0x7AA870
-void CChatEventSink::HandleChatChannelList(int a1, int a2, const char * a3)
+int CChatEventSink::HandleChatChannelList(int a1, int a2, const char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -374,7 +374,7 @@ LABEL_104:
 }
 
 // 0x7AD930
-void CChatEventSink::GrowBuffer()
+int CChatEventSink::GrowBuffer()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -401,7 +401,7 @@ void CChatEventSink::GrowBuffer()
 }
 
 // 0x7AED40
-void CChatEventSink::ProcessChatEvent()
+int CChatEventSink::ProcessChatEvent()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -426,7 +426,7 @@ void CChatEventSink::ProcessChatEvent()
 }
 
 // 0x7AEE90
-void CChatEventSink::Check(unsigned int * a2, int a3)
+int CChatEventSink::Check(unsigned int * a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

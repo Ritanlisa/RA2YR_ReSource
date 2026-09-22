@@ -193,7 +193,7 @@ ObjectClass* CellClass::FindObjectOfType(AbstractType type, bool alt) const
 // Draws the cell at a given screen position.
 // 55 bytes: thin wrapper around DrawDispatch.
 // 0x48e5a0
-void CellClass::Draw(const Point2D* screen_pos, const RectangleStruct* bounds) const
+int CellClass::Draw(const Point2D* screen_pos, const RectangleStruct* bounds) const
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -278,7 +278,7 @@ retn    0Ch
 // - Fogged/shrouded cells get fog overlay
 // - Visible cells get full rendering
 // 0x4e2830
-void CellClass::DrawDispatch(const Point2D* screen_pos, const RectangleStruct* bounds) const
+int CellClass::DrawDispatch(const Point2D* screen_pos, const RectangleStruct* bounds) const
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -286,7 +286,7 @@ void CellClass::DrawDispatch(const Point2D* screen_pos, const RectangleStruct* b
   if ( !*((_BYTE *)this + 45) )
     return 0;
   unsigned int v6 = a2;
-  (*(void (__thiscall **)(int *, unsigned int))(*this + 120))(this, a2);
+  this->checkBuildingPlacement(a2);
   if ( (a2 & 1) == 0 && ((a2 & 2) == 0 || (int *)DataGlobal_8B3E88 != this) )
   {
     v6 = a2 & 0xFFFFFFFD;
@@ -294,13 +294,13 @@ void CellClass::DrawDispatch(const Point2D* screen_pos, const RectangleStruct* b
   }
   if ( (a2 & 1) != 0 )
   {
-    int v7 = (*(int (__thiscall **)(int *, _DWORD))(*this + 164))(this, this->attached3);
+    int v7 = this->GetCoordsThunk1(this->attached3);
   int v8; // eax
     v8 = *((_BYTE *)this + 46)
        ? (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 44))(g_WWMouseClass_Instance)
        : (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 48))(g_WWMouseClass_Instance);
   int v9; // edi
-    if ( v8 <= v7 || (v9 = v8 - v7, v8 - v7 >= (*(int (__thiscall **)(int *))(*this + 152))(this)) )
+    if ( v8 <= v7 || (v9 = v8 - v7, v8 - v7 >= this->MissionStub7()) )
       this->q038 = 0;
     else
       this->q038 = v9;
@@ -330,7 +330,7 @@ void CellClass::DrawDispatch(const Point2D* screen_pos, const RectangleStruct* b
     v13 = (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 48))(g_WWMouseClass_Instance);
   int v14 = *this;
   int v15 = (*(int (__thiscall **)(int *, int))(*this + 160))(this, v13 - this->q038);
-  if ( (*(int (__thiscall **)(int *, int))(v14 + 140))(this, v15) )
+  if ( this->MissionStub11(v15) )
     return CellClass::Draw((int)this, v6, a3, 0);
   CellClass::Draw((int)this, 0, a3, 0);
   *a3 = 0;
@@ -530,7 +530,7 @@ retn    0Ch
 //   5. Objects on cell (firstObject chain)
 //   6. Bridge overlays (if ContainsBridge())
 // 0x557830
-void CellClass::DrawWithFlags(const Point2D* screen_pos, const RectangleStruct* bounds, int flags) const
+int CellClass::DrawWithFlags(const Point2D* screen_pos, const RectangleStruct* bounds, int flags) const
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -546,13 +546,13 @@ void CellClass::DrawWithFlags(const Point2D* screen_pos, const RectangleStruct* 
   {
     if ( *a3 == 38 )
     {
-      (*(void (__thiscall **)(_DWORD *, int))(*this + 164))(this, -1);
+      this->GetCoordsThunk1(-1);
       *a3 = 0;
       return CellClass::Draw((int)this, a2, a3, 0);
     }
     else if ( *a3 == 40 )
     {
-      (*(void (__thiscall **)(_DWORD *, int))(*this + 164))(this, 1);
+      this->GetCoordsThunk1(1);
       *a3 = 0;
       return CellClass::Draw((int)this, a2, a3, 0);
     }
@@ -724,7 +724,7 @@ RectangleStruct* CellClass::GetScreenRect(RectangleStruct* out) const
 // Marks this cell as needing redraw and notifies the map.
 // 298 bytes: integrates with MapClass::MarkForRedraw.
 // 0x7235a0
-void CellClass::RegisterForRedraw()
+int CellClass::RegisterForRedraw()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

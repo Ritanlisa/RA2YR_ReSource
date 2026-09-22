@@ -3,7 +3,7 @@
 #include "e4/e4_globals.hpp"
 
 // 0x60D320
-void GameSetup::LookupDialogHash()
+int GameSetup::LookupDialogHash()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -29,7 +29,7 @@ void GameSetup::LookupDialogHash()
 }
 
 // 0x698F90
-void GameSetup::WriteINI(CCINIClass * aP1, unsigned char * Block)
+int GameSetup::WriteINI(CCINIClass * aP1, unsigned char * Block)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

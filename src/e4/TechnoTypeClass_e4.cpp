@@ -7,7 +7,7 @@
 #include "e4/classes/Math_e4.hpp"
 
 // 0x48DCD0
-void TechnoTypeClass::GetByTypeAndIndex(int a1, int a2)
+int TechnoTypeClass::GetByTypeAndIndex(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -40,7 +40,7 @@ void TechnoTypeClass::GetByTypeAndIndex(int a1, int a2)
 }
 
 // 0x50BDF0
-void TechnoTypeClass::Dispatch(TechnoTypeClass * aP1)
+int TechnoTypeClass::Dispatch(TechnoTypeClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -72,7 +72,7 @@ void TechnoTypeClass::Dispatch(TechnoTypeClass * aP1)
 }
 
 // 0x50BEB0
-void TechnoTypeClass::GetThreatMultiplier(TechnoTypeClass * aP1)
+int TechnoTypeClass::GetThreatMultiplier(TechnoTypeClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -725,7 +725,7 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3)
 }
 
 // 0x711840
-void TechnoTypeClass::Construct(ObjectTypeClass * aP1)
+int TechnoTypeClass::Construct(ObjectTypeClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -948,7 +948,7 @@ int TechnoTypeClass::DTOR()
 }
 
 // 0x711F00
-void TechnoTypeClass::ComputeValueSimple(float * a2)
+int TechnoTypeClass::ComputeValueSimple(float * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -964,7 +964,7 @@ void TechnoTypeClass::ComputeValueSimple(float * a2)
 }
 
 // 0x711F60
-void TechnoTypeClass::ComputeValue(void * a2, float a3)
+int TechnoTypeClass::ComputeValue(void * a2, float a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1000,7 +1000,7 @@ void TechnoTypeClass::ComputeValue(void * a2, float a3)
 }
 
 // 0x7162F0
-void TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
+int TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1360,7 +1360,7 @@ void TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
 }
 
 // 0x716DC0
-void TechnoTypeClass::SaveLoad_Prefix_0(void * a1, TechnoTypeClass * aP2, TechnoTypeClass * aP3)
+int TechnoTypeClass::SaveLoad_Prefix_0(void * a1, TechnoTypeClass * aP2, TechnoTypeClass * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

@@ -14,7 +14,7 @@
 
 // 0x431090
 namespace gamemd {
-void Radar::FindNearestRadarTarget(int a2, int a3, int a4)
+int Radar::FindNearestRadarTarget(int a2, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -147,7 +147,7 @@ LABEL_19:
 
 // 0x5090F0
 namespace gamemd {
-void Radar::IsRadarTargetEligible()
+int Radar::IsRadarTargetEligible()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -163,7 +163,7 @@ void Radar::IsRadarTargetEligible()
 
 // 0x5824A0
 namespace gamemd {
-void Radar::ProcessSubzone(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnknown * aP4, IUnknown * aP5)
+int Radar::ProcessSubzone(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnknown * aP4, IUnknown * aP5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1191,7 +1191,7 @@ void * Radar::CopyDataArray(int * a2)
 
 // 0x6558B0
 namespace gamemd {
-void Radar::PixelIndex()
+int Radar::PixelIndex()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1202,7 +1202,7 @@ void Radar::PixelIndex()
 
 // 0x656EC0
 namespace gamemd {
-void Radar::RenderMinimap()
+int Radar::RenderMinimap()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1662,7 +1662,7 @@ LABEL_99:
 
 // 0x692610
 namespace gamemd {
-void Radar::ScanWaypoints(MouseClass * aP0, MouseClass * aP1, int aP3_4)
+int Radar::ScanWaypoints(MouseClass * aP0, MouseClass * aP1, int aP3_4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

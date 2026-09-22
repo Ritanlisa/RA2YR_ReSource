@@ -86,7 +86,7 @@ unsigned int * VoxelAnimTypeClass::Constructor(ObjectClass * aP1)
 
 // 0x74B050
 namespace gamemd {
-void VoxelAnimTypeClass::LoadFromINI(unsigned char *** aP1)
+int VoxelAnimTypeClass::LoadFromINI(unsigned char *** aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -420,7 +420,7 @@ void VoxelAnimTypeClass::LoadFromINI(unsigned char *** aP1)
 
 // 0x74B690
 namespace gamemd {
-void VoxelAnimTypeClass::PowerDrainUpdate(int * a2)
+int VoxelAnimTypeClass::PowerDrainUpdate(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

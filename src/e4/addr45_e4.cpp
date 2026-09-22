@@ -834,7 +834,7 @@ void * E4Recv_45DD20::sub_45DD20()
 
 // 0x45DD50
 namespace gamemd {
-void E4Recv_45DD50::sub_45DD50()
+int E4Recv_45DD50::sub_45DD50()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

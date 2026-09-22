@@ -4,7 +4,7 @@
 #include "e4/classes/AudioStream_e4.hpp"
 
 // 0x4052F0
-void VocClass::Release()
+int VocClass::Release()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

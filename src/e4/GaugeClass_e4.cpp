@@ -3,7 +3,7 @@
 #include "e4/e4_globals.hpp"
 
 // 0x4E30A0
-void GaugeClass::Stub()
+int GaugeClass::Stub()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -12,7 +12,7 @@ void GaugeClass::Stub()
 }
 
 // 0x4E30B0
-void GaugeClass::Draw(int a2)
+int GaugeClass::Draw(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

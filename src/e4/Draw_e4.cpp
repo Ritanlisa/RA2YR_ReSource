@@ -3,7 +3,7 @@
 #include "e4/e4_globals.hpp"
 
 // 0x7BB920
-void Draw::Ellipse(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
+int Draw::Ellipse(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

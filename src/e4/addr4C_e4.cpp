@@ -380,7 +380,7 @@ void sub_4C1E70(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, 
 
 // 0x4C2790
 namespace gamemd {
-void E4Recv_4C2790::sub_4C2790()
+int E4Recv_4C2790::sub_4C2790()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -595,7 +595,7 @@ LABEL_6:
 
 // 0x4C3DD0
 namespace gamemd {
-void E4Recv_4C3DD0::sub_4C3DD0(int a2)
+int E4Recv_4C3DD0::sub_4C3DD0(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

@@ -3,7 +3,7 @@
 #include "e4/e4_globals.hpp"
 
 // 0x5D4E70
-void DialogQueue::PushEntry()
+int DialogQueue::PushEntry()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -27,7 +27,7 @@ void DialogQueue::PushEntry()
 }
 
 // 0x5D4ED0
-void DialogQueue::RemoveEntry()
+int DialogQueue::RemoveEntry()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

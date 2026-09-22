@@ -86,7 +86,7 @@ void * DSurface::Construct(IUnknown * aP1, DSurface * aP2, ObjectClass * aP3, ch
 }
 
 // 0x4BA6B0
-void DSurface::Destroy()
+int DSurface::Destroy()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -420,7 +420,7 @@ unsigned int * DSurface::CreateBackBuffer(int a2)
 }
 
 // 0x4BAD60
-void DSurface::GetBytesPerPixel()
+int DSurface::GetBytesPerPixel()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -429,7 +429,7 @@ void DSurface::GetBytesPerPixel()
 }
 
 // 0x4BB000
-void DSurface::RestoreIfLost()
+int DSurface::RestoreIfLost()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -449,9 +449,9 @@ void DSurface::RestoreIfLost()
     {
       int v5 = *this; /*0x4bb050*/
       this->q00C = 0; /*0x4bb058*/
-      (*(void (__thiscall **)(int *, _DWORD, _DWORD))(v5 + 92))(this, 0, 0); /*0x4bb05b*/
+      this->Lock(0, 0); /*0x4bb05b*/
       ++this->q00C; /*0x4bb064*/
-      (*(void (__thiscall **)(int *))(*this + 96))(this); /*0x4bb069*/
+      this->Unlock(); /*0x4bb069*/
       this->q00C = v4; /*0x4bb06c*/
     }
   }
@@ -460,7 +460,7 @@ void DSurface::RestoreIfLost()
 }
 
 // 0x4BB0D0
-void DSurface::Blit(int * a1, int * a2, unsigned int * a3, int * a4, DSurface * aP5, int a7, char a8)
+int DSurface::Blit(int * a1, int * a2, unsigned int * a3, int * a4, DSurface * aP5, int a7, char a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -537,9 +537,9 @@ void DSurface::Blit(int * a1, int * a2, unsigned int * a3, int * a4, DSurface * 
     {
       int v15 = *this; /*0x4bb256*/
       this->q00C = 0; /*0x4bb25d*/
-      (*(void (__thiscall **)(int *, _DWORD, _DWORD))(v15 + 92))(this, 0, 0); /*0x4bb264*/
+      this->Lock(0, 0); /*0x4bb264*/
       ++this->q00C; /*0x4bb26d*/
-      (*(void (__thiscall **)(int *))(*this + 96))(this); /*0x4bb273*/
+      this->Unlock(); /*0x4bb273*/
       this->q00C = (int)v47; /*0x4bb27a*/
     }
   }
@@ -619,7 +619,7 @@ LABEL_53:
   int v33 = *v51; /*0x4bb41c*/
   int v66 = v28; /*0x4bb426*/
   int v71[4]; // [esp+90h] [ebp-10h] BYREF
-  int v34 = (*(int (__thiscall **)(int *, int *))(v33 + 120))(v51, v71); /*0x4bb439*/
+  int v34 = v51->GetRect(v71); /*0x4bb439*/
   Rect::Set(&v43, 0, 0, 0, 0); /*0x4bb43b*/
   v35 = *(DSurface **)v34; /*0x4bb449*/
   int v36 = a1[2]; /*0x4bb44b*/
@@ -689,7 +689,7 @@ LABEL_71:
 }
 
 // 0x4BB620
-void DSurface::FillRectEx(XSurface * aP1, int * a2, XSurface * aP3)
+int DSurface::FillRectEx(XSurface * aP1, int * a2, XSurface * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -699,7 +699,7 @@ void DSurface::FillRectEx(XSurface * aP1, int * a2, XSurface * aP3)
   if ( this->q01C && a2[2] > 0 && a2[3] > 0 ) /*0x4bb64d*/
   {
     if ( !g_DDraw_UseHWBlit /*0x4bb675*/
-      || (*(unsigned __int8 (__thiscall **)(int *))(*this + 108))(this)
+      || this->IsLocked()
       || (*(int (__stdcall **)(_DWORD, int))(*(_DWORD *)this->q01C + 52))(this->q01C, 1) )
     {
       return XSurface::FillRectEx(this, aP1, a2, aP3); /*0x4bb81d*/
@@ -717,14 +717,14 @@ void DSurface::FillRectEx(XSurface * aP1, int * a2, XSurface * aP3)
         {
           int v7 = *this; /*0x4bb6d3*/
           this->q00C = 0; /*0x4bb6db*/
-          (*(void (__thiscall **)(int *, _DWORD, _DWORD))(v7 + 92))(this, 0, 0); /*0x4bb6de*/
+          this->Lock(0, 0); /*0x4bb6de*/
           ++this->q00C; /*0x4bb6e7*/
-          (*(void (__thiscall **)(int *))(*this + 96))(this); /*0x4bb6ec*/
+          this->Unlock(); /*0x4bb6ec*/
           this->q00C = v6; /*0x4bb6ef*/
         }
 LABEL_15:
   char v32[16]; // [esp+60h] [ebp-74h] BYREF
-        int * v8 = (int *)(*(int (__thiscall **)(int *, char *))(*this + 120))(this, v32); /*0x4bb6f2*/
+        int * v8 = (int *)this->GetRect(v32); /*0x4bb6f2*/
   _DWORD v31[4]; // [esp+50h] [ebp-84h] BYREF
         int * v9 = ClipRectIntersection(v31, (int *)aP1->__pad_0, v8, 0, 0); /*0x4bb710*/
   int v30[4]; // [esp+40h] [ebp-94h] BYREF
@@ -912,7 +912,7 @@ void DSurface::BlitStretch(int a1, int a2, int a3)
 }
 
 // 0x4BBCA0
-void DSurface::DrawLineModulated(int * a1, int a2, int a3, unsigned int * a4, unsigned int * a5, int a6, int a7, int a8, char a9)
+int DSurface::DrawLineModulated(int * a1, int a2, int a3, unsigned int * a4, unsigned int * a5, int a6, int a7, int a8, char a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1280,7 +1280,7 @@ LABEL_69:
 }
 
 // 0x4BC750
-void DSurface::DrawLineFaded(int a2, unsigned int * a3, int * a4, unsigned char * a5, int a6, int a7, char a8, float a9, char a10, char a11, float a12)
+int DSurface::DrawLineFaded(int a2, unsigned int * a3, int * a4, unsigned char * a5, int a6, int a7, char a8, float a9, char a10, char a11, float a12)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
         void *this,
@@ -2082,7 +2082,7 @@ void DSurface::DrawLineFaded(int a2, unsigned int * a3, int * a4, unsigned char 
 }
 
 // 0x4BDF00
-void DSurface::DrawLineZBufColored(int a2, unsigned int * a3, unsigned int * a4, unsigned char * a5, float a6, int a7, int a8)
+int DSurface::DrawLineZBufColored(int a2, unsigned int * a3, unsigned int * a4, unsigned char * a5, float a6, int a7, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
         void *this,
@@ -2477,7 +2477,7 @@ void DSurface::DrawLineZBufColored(int a2, unsigned int * a3, unsigned int * a4,
 }
 
 // 0x4BF750
-void DSurface::DrawGradientLine(int aP1, unsigned int * a2, DSurface * aP3, int a5, int arg10, float * a6, float * a7)
+int DSurface::DrawGradientLine(int aP1, unsigned int * a2, DSurface * aP3, int a5, int arg10, float * a6, float * a7)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2721,7 +2721,7 @@ LABEL_58:
 }
 
 // 0x4BFD30
-void DSurface::DrawLineZBuf(int a1, int a2, int a3, unsigned int * a4, unsigned int * a5, unsigned short a6, int a7, int a8, char a9)
+int DSurface::DrawLineZBuf(int a1, int a2, int a3, unsigned int * a4, unsigned int * a5, unsigned short a6, int a7, int a8, char a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -3153,7 +3153,7 @@ LABEL_15:
 }
 
 // 0x4C0750
-void DSurface::DrawDashedLineStipple(int * a1, int * a2, short a4, int a5, int a6, DSurface * aP6)
+int DSurface::DrawDashedLineStipple(int * a1, int * a2, short a4, int a5, int a6, DSurface * aP6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -3595,7 +3595,7 @@ LABEL_155:
 }
 
 // 0x4C0E30
-void DSurface::DrawStippledRect(unsigned int * a1, unsigned int * a2, short a4, DSurface * aP4)
+int DSurface::DrawStippledRect(unsigned int * a1, unsigned int * a2, short a4, DSurface * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -4064,7 +4064,7 @@ void * DSurface::loc_4C1AC0(char a2)
 }
 
 // 0x5D1E70
-void DSurface::RenderToSurface(ObjectClass * aP1)
+int DSurface::RenderToSurface(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -4116,7 +4116,7 @@ void DSurface::RenderToSurface(ObjectClass * aP1)
     this->q004 = 0; /*0x5d1f38*/
     v13 = (ObjectClass *)(*(int (__thiscall **)(ObjectClass *, _BYTE *))(*(_DWORD *)aP1->__pad_0 + 120))(aP1, v25); /*0x5d1f44*/
     Surface::CopyRect(this, v13); /*0x5d1f4a*/
-    (*(void (__thiscall **)(_DWORD *, ObjectClass *))(*this + 4))(this, aP1); /*0x5d1f54*/
+    this->BlitWhole(aP1); /*0x5d1f54*/
   }
   result = this->q028; /*0x5d1f57*/
   for ( j = 0; j < result; ++j ) /*0x5d1f5e*/
@@ -4148,7 +4148,7 @@ void DSurface::RenderToSurface(ObjectClass * aP1)
 }
 
 // 0x621B80
-void DSurface::FillRectWithColor(int * a0, ObjectClass * aP1, short a3, unsigned char a4)
+int DSurface::FillRectWithColor(int * a0, ObjectClass * aP1, short a3, unsigned char a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -4228,7 +4228,7 @@ void DSurface::FillRectWithColor(int * a0, ObjectClass * aP1, short a3, unsigned
 }
 
 // 0x7BD210
-void DSurface::LockAndPrepareRect()
+int DSurface::LockAndPrepareRect()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -4236,12 +4236,12 @@ void DSurface::LockAndPrepareRect()
 
   if ( (*(_BYTE *)(this + 1980) & 0x40) != 0 ) /*0x7bd21a*/
   {
-    (*(void (__cdecl **)(int, int, _DWORD, _DWORD))(this + 88))(this, 7, 0, 0); /*0x7bd223*/
+    this->DrawRect(7, 0, 0); /*0x7bd223*/
     int v2 = *(_DWORD *)(this + 1980); /*0x7bd226*/
     LOBYTE(v2) = v2 & 0xBF; /*0x7bd22f*/
     *(_DWORD *)(this + 1980) = v2; /*0x7bd231*/
   }
-  (*(void (__cdecl **)(int, int, _DWORD, _DWORD))(this + 88))(this, 3, 0, 0); /*0x7bd23e*/
+  this->DrawRect(3, 0, 0); /*0x7bd23e*/
   result = *(_DWORD *)(this + 1980); /*0x7bd241*/
   if ( (result & 0x80000000) == 1 ) /*0x7bd255*/
   {
@@ -4253,7 +4253,7 @@ void DSurface::LockAndPrepareRect()
 }
 
 // 0x7BDF80
-void DSurface::CommitBuffers()
+int DSurface::CommitBuffers()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -4283,47 +4283,47 @@ void DSurface::CommitBuffers()
   int v2 = *(_DWORD *)(this + 1780); /*0x7bdf86*/
   if ( v2 ) /*0x7bdf8e*/
   {
-    (*(void (__cdecl **)(int, int, int, _DWORD))(this + 68))(this, 5, v2, *(_DWORD *)(this + 1784)); /*0x7bdf9b*/
-    (*(void (__cdecl **)(int, int, _DWORD, _DWORD))(this + 68))(this, 3, *(_DWORD *)(this + 1780), 0); /*0x7bdfaa*/
+    this->WalkLine(5, v2, *(_DWORD *)(this + 1784)); /*0x7bdf9b*/
+    this->WalkLine(3, *(_DWORD *)(this + 1780), 0); /*0x7bdfaa*/
   }
   int v3 = *(_DWORD *)(this + 1892); /*0x7bdfb0*/
   if ( v3 ) /*0x7bdfb8*/
   {
-    (*(void (__cdecl **)(int, int, int, int))(this + 68))(this, 5, v3, 4 * *(unsigned __int16 *)(this + 236)); /*0x7bdfcb*/
-    (*(void (__cdecl **)(int, int, _DWORD, _DWORD))(this + 68))(this, 3, *(_DWORD *)(this + 1892), 0); /*0x7bdfda*/
+    this->WalkLine(5, v3, 4 * *(unsigned __int16 *)(this + 236)); /*0x7bdfcb*/
+    this->WalkLine(3, *(_DWORD *)(this + 1892), 0); /*0x7bdfda*/
   }
   if ( !*(_DWORD *)(this + 148) ) /*0x7bdfe0*/
   {
     int v4 = *(_DWORD *)(this + 1932); /*0x7bdfea*/
     if ( v4 ) /*0x7bdff2*/
     {
-      (*(void (__cdecl **)(int, int, int, _DWORD))(this + 68))(this, 5, v4, *(_DWORD *)(this + 152)); /*0x7bdfff*/
-      (*(void (__cdecl **)(int, int, _DWORD, _DWORD))(this + 68))(this, 3, *(_DWORD *)(this + 1932), 0); /*0x7be00e*/
+      this->WalkLine(5, v4, *(_DWORD *)(this + 152)); /*0x7bdfff*/
+      this->WalkLine(3, *(_DWORD *)(this + 1932), 0); /*0x7be00e*/
     }
   }
   int v5 = *(_DWORD *)(this + 1940); /*0x7be014*/
   if ( v5 ) /*0x7be01c*/
   {
-    (*(void (__cdecl **)(int, int, int, _DWORD))(this + 68))(this, 5, v5, *(_DWORD *)(this + 1948)); /*0x7be029*/
-    (*(void (__cdecl **)(int, int, _DWORD, _DWORD))(this + 68))(this, 3, *(_DWORD *)(this + 1940), 0); /*0x7be038*/
+    this->WalkLine(5, v5, *(_DWORD *)(this + 1948)); /*0x7be029*/
+    this->WalkLine(3, *(_DWORD *)(this + 1940), 0); /*0x7be038*/
   }
   int v6 = *(_DWORD *)(this + 1944); /*0x7be03e*/
   if ( v6 ) /*0x7be046*/
   {
-    (*(void (__cdecl **)(int, int, int, int))(this + 68))(this, 5, v6, 2 * *(_DWORD *)(this + 1948)); /*0x7be055*/
-    (*(void (__cdecl **)(int, int, _DWORD, _DWORD))(this + 68))(this, 3, *(_DWORD *)(this + 1944), 0); /*0x7be064*/
+    this->WalkLine(5, v6, 2 * *(_DWORD *)(this + 1948)); /*0x7be055*/
+    this->WalkLine(3, *(_DWORD *)(this + 1944), 0); /*0x7be064*/
   }
   int v7 = *(_DWORD *)(this + 1960); /*0x7be06a*/
   if ( v7 ) /*0x7be072*/
   {
-    (*(void (__cdecl **)(int, int, int, _DWORD))(this + 68))(this, 5, v7, *(_DWORD *)(this + 1972)); /*0x7be07f*/
-    (*(void (__cdecl **)(int, int, _DWORD, _DWORD))(this + 68))(this, 3, *(_DWORD *)(this + 1960), 0); /*0x7be08e*/
+    this->WalkLine(5, v7, *(_DWORD *)(this + 1972)); /*0x7be07f*/
+    this->WalkLine(3, *(_DWORD *)(this + 1960), 0); /*0x7be08e*/
   }
   int v8 = *(_DWORD *)(this + 1976); /*0x7be094*/
   if ( v8 ) /*0x7be09c*/
   {
-    (*(void (__cdecl **)(int, int, int, _DWORD))(this + 68))(this, 5, v8, *(_DWORD *)(this + 156)); /*0x7be0a9*/
-    (*(void (__cdecl **)(int, int, _DWORD, _DWORD))(this + 68))(this, 3, *(_DWORD *)(this + 1976), 0); /*0x7be0b8*/
+    this->WalkLine(5, v8, *(_DWORD *)(this + 156)); /*0x7be0a9*/
+    this->WalkLine(3, *(_DWORD *)(this + 1976), 0); /*0x7be0b8*/
   }
   int v9 = 0; /*0x7be0c6*/
   int v11; // ebp
@@ -4336,8 +4336,8 @@ void DSurface::CommitBuffers()
     int v13 = *(_DWORD *)(this + 1904) + 4; /*0x7be0ed*/
     *(_DWORD *)(this + 1904) = v13; /*0x7be0f1*/
     *(_DWORD *)(this + 1900) = v12; /*0x7be0f7*/
-    (*(void (__cdecl **)(int, int, int, int))(this + 68))(this, 5, i, v12 + v13 + 44); /*0x7be106*/
-    (*(void (__cdecl **)(int, int, int, _DWORD))(this + 68))(this, 3, i, 0); /*0x7be10f*/
+    this->WalkLine(5, i, v12 + v13 + 44); /*0x7be106*/
+    this->WalkLine(3, i, 0); /*0x7be10f*/
     ++v9; /*0x7be11b*/
   }
   if ( (*(_BYTE *)(this + 340) & 2) != 0 ) /*0x7be129*/
@@ -4345,8 +4345,8 @@ void DSurface::CommitBuffers()
     int v14 = *(_DWORD *)(this + 1768); /*0x7be12b*/
     if ( v14 ) /*0x7be133*/
     {
-      (*(void (__cdecl **)(int, int, int, _DWORD))(this + 68))(this, 5, v14, *(_DWORD *)(this + 1912)); /*0x7be140*/
-      (*(void (__cdecl **)(int, int, _DWORD, _DWORD))(this + 68))(this, 3, *(_DWORD *)(this + 1768), 0); /*0x7be14f*/
+      this->WalkLine(5, v14, *(_DWORD *)(this + 1912)); /*0x7be140*/
+      this->WalkLine(3, *(_DWORD *)(this + 1768), 0); /*0x7be14f*/
       *(_DWORD *)(this + 1768) = 0; /*0x7be155*/
     }
   }
@@ -4359,8 +4359,8 @@ void DSurface::CommitBuffers()
     v17 = *(_DWORD *)(v15 + 4); /*0x7be17b*/
     int v18 = *(_DWORD *)(this + 1896) + 4; /*0x7be17e*/
     *(_DWORD *)(this + 1896) = v18; /*0x7be183*/
-    (*(void (__cdecl **)(int, int, int, int))(this + 68))(this, 5, v15, v18 + 24); /*0x7be191*/
-    (*(void (__cdecl **)(int, int, int, _DWORD))(this + 68))(this, 3, v15, 0); /*0x7be19a*/
+    this->WalkLine(5, v15, v18 + 24); /*0x7be191*/
+    this->WalkLine(3, v15, 0); /*0x7be19a*/
     ++j; /*0x7be1a6*/
   }
   if ( (*(_BYTE *)(this + 340) & 1) != 0 ) /*0x7be1b4*/
@@ -4368,22 +4368,22 @@ void DSurface::CommitBuffers()
     int v19 = *(_DWORD *)(this + 1776); /*0x7be1b6*/
     if ( v19 ) /*0x7be1be*/
     {
-      (*(void (__cdecl **)(int, int, int, _DWORD))(this + 68))(this, 5, v19, *(_DWORD *)(this + 1908)); /*0x7be1cb*/
-      (*(void (__cdecl **)(int, int, _DWORD, _DWORD))(this + 68))(this, 3, *(_DWORD *)(this + 1776), 0); /*0x7be1da*/
+      this->WalkLine(5, v19, *(_DWORD *)(this + 1908)); /*0x7be1cb*/
+      this->WalkLine(3, *(_DWORD *)(this + 1776), 0); /*0x7be1da*/
       *(_DWORD *)(this + 1776) = 0; /*0x7be1e0*/
     }
   }
   int v20 = *(_DWORD *)(this + 1888); /*0x7be1ea*/
   if ( v20 ) /*0x7be1f2*/
   {
-    (*(void (__cdecl **)(int, int, int, int))(this + 68))(this, 5, v20, 2 * *(unsigned __int16 *)(this + 1880)); /*0x7be204*/
-    (*(void (__cdecl **)(int, int, _DWORD, _DWORD))(this + 68))(this, 3, *(_DWORD *)(this + 1888), 0); /*0x7be213*/
+    this->WalkLine(5, v20, 2 * *(unsigned __int16 *)(this + 1880)); /*0x7be204*/
+    this->WalkLine(3, *(_DWORD *)(this + 1888), 0); /*0x7be213*/
   }
   int v21 = *(_DWORD *)(this + 1876); /*0x7be219*/
   if ( v21 ) /*0x7be221*/
   {
-    (*(void (__cdecl **)(int, int, int, int))(this + 68))(this, 5, v21, 6 * *(unsigned __int16 *)(this + 1868)); /*0x7be236*/
-    (*(void (__cdecl **)(int, int, _DWORD, _DWORD))(this + 68))(this, 3, *(_DWORD *)(this + 1876), 0); /*0x7be245*/
+    this->WalkLine(5, v21, 6 * *(unsigned __int16 *)(this + 1868)); /*0x7be236*/
+    this->WalkLine(3, *(_DWORD *)(this + 1876), 0); /*0x7be245*/
   }
   int v22 = *(_DWORD *)(this + 1852); /*0x7be24b*/
   v47 = v22; /*0x7be253*/
@@ -4406,12 +4406,12 @@ void DSurface::CommitBuffers()
           5,
           v27,
           v26 * ((*(_DWORD *)(*(_DWORD *)(this + 1860) + v41 + 4) + 1) & 0xFFFFFFFE));
-        (*(void (__cdecl **)(int, int, int, _DWORD))(this + 68))(this, 3, v27, 0); /*0x7be2a6*/
+        this->WalkLine(3, v27, 0); /*0x7be2a6*/
       }
       if ( v25 ) /*0x7be2ae*/
       {
-        (*(void (__cdecl **)(int, int, int *, int))(this + 68))(this, 5, v25, 12 * v26); /*0x7be2bb*/
-        (*(void (__cdecl **)(int, int, int *, _DWORD))(this + 68))(this, 3, v25, 0); /*0x7be2c4*/
+        this->WalkLine(5, v25, 12 * v26); /*0x7be2bb*/
+        this->WalkLine(3, v25, 0); /*0x7be2c4*/
       }
       v23 = v43 + 12; /*0x7be2d6*/
       v28 = v45 == 1; /*0x7be2dc*/
@@ -4425,14 +4425,14 @@ void DSurface::CommitBuffers()
   v29 = *(_DWORD *)(this + 1864); /*0x7be2ef*/
   if ( v29 ) /*0x7be2f7*/
   {
-    (*(void (__cdecl **)(int, int, int, int))(this + 68))(this, 5, v29, 12 * v22); /*0x7be304*/
-    (*(void (__cdecl **)(int, int, _DWORD, _DWORD))(this + 68))(this, 3, *(_DWORD *)(this + 1864), 0); /*0x7be313*/
+    this->WalkLine(5, v29, 12 * v22); /*0x7be304*/
+    this->WalkLine(3, *(_DWORD *)(this + 1864), 0); /*0x7be313*/
   }
   v30 = *(_DWORD *)(this + 1860); /*0x7be319*/
   if ( v30 ) /*0x7be321*/
   {
-    (*(void (__cdecl **)(int, int, int, int))(this + 68))(this, 5, v30, 16 * v22); /*0x7be32b*/
-    (*(void (__cdecl **)(int, int, _DWORD, _DWORD))(this + 68))(this, 3, *(_DWORD *)(this + 1860), 0); /*0x7be33a*/
+    this->WalkLine(5, v30, 16 * v22); /*0x7be32b*/
+    this->WalkLine(3, *(_DWORD *)(this + 1860), 0); /*0x7be33a*/
   }
   v31 = *(_DWORD *)(this + 1828); /*0x7be340*/
   v48 = v31; /*0x7be348*/
@@ -4455,12 +4455,12 @@ void DSurface::CommitBuffers()
           5,
           v36,
           v35 * ((*(_DWORD *)(*(_DWORD *)(this + 1844) + v42 + 8) + 1) & 0xFFFFFFFE));
-        (*(void (__cdecl **)(int, int, int, _DWORD))(this + 68))(this, 3, v36, 0); /*0x7be39b*/
+        this->WalkLine(3, v36, 0); /*0x7be39b*/
       }
       if ( v34 ) /*0x7be3a3*/
       {
-        (*(void (__cdecl **)(int, int, int *, int))(this + 68))(this, 5, v34, 12 * v35); /*0x7be3b0*/
-        (*(void (__cdecl **)(int, int, int *, _DWORD))(this + 68))(this, 3, v34, 0); /*0x7be3b9*/
+        this->WalkLine(5, v34, 12 * v35); /*0x7be3b0*/
+        this->WalkLine(3, v34, 0); /*0x7be3b9*/
       }
       v32 = v46 + 12; /*0x7be3cb*/
       v28 = v44 == 1; /*0x7be3d1*/
@@ -4474,33 +4474,33 @@ void DSurface::CommitBuffers()
   v37 = *(_DWORD *)(this + 1848); /*0x7be3e4*/
   if ( v37 ) /*0x7be3ec*/
   {
-    (*(void (__cdecl **)(int, int, int, int))(this + 68))(this, 5, v37, 12 * v31); /*0x7be3f9*/
-    (*(void (__cdecl **)(int, int, _DWORD, _DWORD))(this + 68))(this, 3, *(_DWORD *)(this + 1848), 0); /*0x7be408*/
+    this->WalkLine(5, v37, 12 * v31); /*0x7be3f9*/
+    this->WalkLine(3, *(_DWORD *)(this + 1848), 0); /*0x7be408*/
   }
   v38 = *(_DWORD *)(this + 1844); /*0x7be40e*/
   if ( v38 ) /*0x7be416*/
   {
-    (*(void (__cdecl **)(int, int, int, int))(this + 68))(this, 5, v38, 16 * v31); /*0x7be420*/
-    (*(void (__cdecl **)(int, int, _DWORD, _DWORD))(this + 68))(this, 3, *(_DWORD *)(this + 1844), 0); /*0x7be42f*/
+    this->WalkLine(5, v38, 16 * v31); /*0x7be420*/
+    this->WalkLine(3, *(_DWORD *)(this + 1844), 0); /*0x7be42f*/
   }
   v39 = *(_DWORD *)(this + 1840); /*0x7be435*/
   if ( v39 ) /*0x7be440*/
   {
-    (*(void (__cdecl **)(int, int, int, int))(this + 68))(this, 5, v39, 24 * *(_DWORD *)(this + 1824)); /*0x7be453*/
-    (*(void (__cdecl **)(int, int, _DWORD, _DWORD))(this + 68))(this, 3, *(_DWORD *)(this + 1840), 0); /*0x7be462*/
+    this->WalkLine(5, v39, 24 * *(_DWORD *)(this + 1824)); /*0x7be453*/
+    this->WalkLine(3, *(_DWORD *)(this + 1840), 0); /*0x7be462*/
   }
   result = *(_DWORD *)(this + 1820); /*0x7be468*/
   if ( result ) /*0x7be470*/
   {
-    (*(void (__cdecl **)(int, int, int, int))(this + 68))(this, 5, result, 4 * *(unsigned __int16 *)(this + 1812)); /*0x7be483*/
-    return (*(int (__cdecl **)(int, int, _DWORD, _DWORD))(this + 68))(this, 3, *(_DWORD *)(this + 1820), 0); /*0x7be492*/
+    this->WalkLine(5, result, 4 * *(unsigned __int16 *)(this + 1812)); /*0x7be483*/
+    return this->WalkLine(3, *(_DWORD *)(this + 1820), 0); /*0x7be492*/
   }
   return result; /*0x7be498*/
 }
 }
 
 // 0x7C2C60
-void DSurface::Flip()
+int DSurface::Flip()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -4524,13 +4524,13 @@ void DSurface::Flip()
         5,
         v2,
         *(_DWORD *)(this + 348) * *(_DWORD *)(this + 352));
-      (*(void (__cdecl **)(int, int, _DWORD, _DWORD))(this + 68))(this, 3, *(_DWORD *)(this + 344), 0); /*0x7c2cc9*/
+      this->WalkLine(3, *(_DWORD *)(this + 344), 0); /*0x7c2cc9*/
     }
   }
   DSurface::CommitBuffers(this); /*0x7c2cd1*/
-  (*(void (__cdecl **)(int, int, _DWORD, _DWORD))(this + 64))(this, 4, 0, 0); /*0x7c2cdd*/
-  (*(void (__cdecl **)(int, int, int, int))(this + 68))(this, 5, this, 2012); /*0x7c2ce9*/
-  return (*(int (__cdecl **)(int, int, int, _DWORD))(this + 68))(this, 3, this, 0); /*0x7c2cf8*/
+  this->entry_40_(4, 0, 0); /*0x7c2cdd*/
+  this->WalkLine(5, this, 2012); /*0x7c2ce9*/
+  return this->WalkLine(3, this, 0); /*0x7c2cf8*/
 }
 }
 

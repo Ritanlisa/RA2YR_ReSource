@@ -5,7 +5,7 @@
 
 // 0x5BD0D0
 namespace gamemd {
-void Debug::ScrollText(CellStruct * aP1)
+int Debug::ScrollText(CellStruct * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -66,7 +66,7 @@ void Debug::ScrollText(CellStruct * aP1)
 
 // 0x6E61F0
 namespace gamemd {
-void Debug::AccumFlags()
+int Debug::AccumFlags()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

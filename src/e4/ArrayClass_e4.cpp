@@ -5,7 +5,7 @@
 
 // 0x636E60
 namespace gamemd {
-void ArrayClass::GetAt_Wrap(int a2)
+int ArrayClass::GetAt_Wrap(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

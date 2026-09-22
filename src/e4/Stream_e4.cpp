@@ -3,7 +3,7 @@
 #include "e4/e4_globals.hpp"
 
 // 0x439110
-void Stream::FlushAndReset()
+int Stream::FlushAndReset()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -23,7 +23,7 @@ void Stream::FlushAndReset()
 }
 
 // 0x49FB70
-void Stream::ReadIntArray(int a2)
+int Stream::ReadIntArray(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -61,7 +61,7 @@ void Stream::ReadIntArray(int a2)
 }
 
 // 0x67A4A0
-void Stream::WriteIntArray(TechnoTypeClass * aP1)
+int Stream::WriteIntArray(TechnoTypeClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

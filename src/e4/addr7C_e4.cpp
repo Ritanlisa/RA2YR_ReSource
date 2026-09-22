@@ -8513,7 +8513,6 @@ namespace gamemd {
 void* _powhlp(double a1, double a2, double * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void* _powhlp(double a1, double a2, double *a3)
 {
   double v7; // st7
   int v8; // ecx

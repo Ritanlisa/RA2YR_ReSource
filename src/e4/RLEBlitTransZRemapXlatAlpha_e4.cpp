@@ -71,7 +71,7 @@ unsigned short * RLEBlitTransZRemapXlatAlpha_ushort::AddRef(int arg0, unsigned c
 }
 
 // 0x497B40
-void RLEBlitTransZRemapXlatAlpha_ushort::Release(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
+int RLEBlitTransZRemapXlatAlpha_ushort::Release(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

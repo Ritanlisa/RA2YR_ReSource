@@ -3,7 +3,7 @@
 #include "e4/e4_globals.hpp"
 
 // 0x643E60
-void LoadScreen::IsActive()
+int LoadScreen::IsActive()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

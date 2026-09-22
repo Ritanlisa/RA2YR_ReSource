@@ -14,7 +14,7 @@
 
 // 0x4FCDC0
 namespace gamemd {
-void TActionClass::executeBuildAction()
+int TActionClass::executeBuildAction()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -39,7 +39,7 @@ void TActionClass::executeBuildAction()
 
 // 0x50D2D0
 namespace gamemd {
-void TActionClass::executeMoveAction(int a2)
+int TActionClass::executeMoveAction(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -65,7 +65,7 @@ void TActionClass::executeMoveAction(int a2)
 
 // 0x50DA00
 namespace gamemd {
-void TActionClass::executeGuardAction(int a2)
+int TActionClass::executeGuardAction(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -77,7 +77,7 @@ void TActionClass::executeGuardAction(int a2)
 
 // 0x50DA20
 namespace gamemd {
-void TActionClass::executeHuntAction(int a2)
+int TActionClass::executeHuntAction(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -90,7 +90,7 @@ void TActionClass::executeHuntAction(int a2)
 
 // 0x50DFE0
 namespace gamemd {
-void TActionClass::executeDeployAction(int a2)
+int TActionClass::executeDeployAction(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -196,7 +196,7 @@ void sub_567F70(int * a1, int a2)
 
 // 0x577C90
 namespace gamemd {
-void TActionClass::executeRepairAction(int a2)
+int TActionClass::executeRepairAction(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -235,14 +235,14 @@ LABEL_7:
   Radar::UpdateReveal(0, 0); /*0x577d63*/
   *((_BYTE *)HouseClass_Player + 576) = 0; /*0x577d72*/
   FogOfWar::Render((int **)&DataGlobal_87F7E8); /*0x577d79*/
-  return (*(int (__thiscall **)(_DWORD *, int))(*this + 56))(this, 2); /*0x577d88*/
+  return this->computeDistanceSquared(2); /*0x577d88*/
 }
 }
 } // namespace gamemd
 
 // 0x578850
 namespace gamemd {
-void TActionClass::executeSellAction()
+int TActionClass::executeSellAction()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -374,7 +374,7 @@ LABEL_38:
 
 // 0x6E0B60
 namespace gamemd {
-void TActionClass::ConvertHouseUnits(int a2, int _14, unsigned int * a3, IUnknown * aP4)
+int TActionClass::ConvertHouseUnits(int a2, int _14, unsigned int * a3, IUnknown * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -463,7 +463,7 @@ void TActionClass::ConvertHouseUnits(int a2, int _14, unsigned int * a3, IUnknow
 
 // 0x6E1CC0
 namespace gamemd {
-void TActionClass::executeRetreatAction(AbstractClass * aP1, int a3, int a4, AbstractClass * aP4)
+int TActionClass::executeRetreatAction(AbstractClass * aP1, int a3, int a4, AbstractClass * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -501,7 +501,7 @@ void TActionClass::executeRetreatAction(AbstractClass * aP1, int a3, int a4, Abs
 
 // 0x6E2290
 namespace gamemd {
-void TActionClass::executeEscortAction(int a2, int a3, int a4, IUnknown * aP4)
+int TActionClass::executeEscortAction(int a2, int a3, int a4, IUnknown * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -539,7 +539,7 @@ void TActionClass::executeEscortAction(int a2, int a3, int a4, IUnknown * aP4)
 
 // 0x6E2390
 namespace gamemd {
-void TActionClass::CreateWeaponImpactAtWaypoint(int a2, int a3, int a4, IUnknown * aP4)
+int TActionClass::CreateWeaponImpactAtWaypoint(int a2, int a3, int a4, IUnknown * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -594,7 +594,7 @@ void TActionClass::CreateWeaponImpactAtWaypoint(int a2, int a3, int a4, IUnknown
 
 // 0x6E2C40
 namespace gamemd {
-void TActionClass::SpawnMeteorShower(AbstractClass * aP1, int a3, int a4, AbstractClass * aP4)
+int TActionClass::SpawnMeteorShower(AbstractClass * aP1, int a3, int a4, AbstractClass * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -662,7 +662,7 @@ void TActionClass::SpawnMeteorShower(AbstractClass * aP1, int a3, int a4, Abstra
 
 // 0x6E36E0
 namespace gamemd {
-void TActionClass::executeParadropAction(int a2, int a3, int a4, IUnknown * aP4)
+int TActionClass::executeParadropAction(int a2, int a3, int a4, IUnknown * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -724,7 +724,7 @@ void TActionClass::executeParadropAction(int a2, int a3, int a4, IUnknown * aP4)
 
 // 0x6E4150
 namespace gamemd {
-void TActionClass::executeGeneticMutatorAction(int a2, int a3, int a4, IUnknown * aP4)
+int TActionClass::executeGeneticMutatorAction(int a2, int a3, int a4, IUnknown * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -761,7 +761,7 @@ LABEL_7:
 
 // 0x6E42D0
 namespace gamemd {
-void TActionClass::executeIronCurtainAction(int a2, int a3, int a4, IUnknown * aP4)
+int TActionClass::executeIronCurtainAction(int a2, int a3, int a4, IUnknown * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -784,7 +784,7 @@ void TActionClass::executeIronCurtainAction(int a2, int a3, int a4, IUnknown * a
 
 // 0x6E4320
 namespace gamemd {
-void TActionClass::executeNukeAction(int a2, int a3, int a4, IUnknown * aP4)
+int TActionClass::executeNukeAction(int a2, int a3, int a4, IUnknown * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

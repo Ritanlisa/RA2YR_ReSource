@@ -6,7 +6,7 @@
 
 // 0x4C9480
 namespace gamemd {
-void TimerClass::Active()
+int TimerClass::Active()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

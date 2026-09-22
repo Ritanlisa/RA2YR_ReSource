@@ -31,7 +31,7 @@
 
 // 0x431BC0
 namespace gamemd {
-void E4Recv_431BC0::sub_431BC0(int a2, size_t a3)
+int E4Recv_431BC0::sub_431BC0(int a2, size_t a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

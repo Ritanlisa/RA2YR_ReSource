@@ -11,7 +11,7 @@
 
 // 0x48B720
 namespace gamemd {
-void Terrain::GetTileIndex(int a2)
+int Terrain::GetTileIndex(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -24,7 +24,7 @@ void Terrain::GetTileIndex(int a2)
 
 // 0x48B9E0
 namespace gamemd {
-void Terrain::GetTileType(AnimClass * aP1)
+int Terrain::GetTileType(AnimClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -459,7 +459,7 @@ LABEL_44:
 
 // 0x56C510
 namespace gamemd {
-void Terrain::ConnectivityGraph()
+int Terrain::ConnectivityGraph()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -910,7 +910,7 @@ LABEL_48:
 
 // 0x56CB90
 namespace gamemd {
-void Terrain::FloodFillConnectivity(unsigned char * a1, IUnknown * aP2, AbstractClass * aP3)
+int Terrain::FloodFillConnectivity(unsigned char * a1, IUnknown * aP2, AbstractClass * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2254,7 +2254,7 @@ LABEL_141:
 
 // 0x576770
 namespace gamemd {
-void Terrain::CreateCrater(IUnknown * aP1)
+int Terrain::CreateCrater(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2455,7 +2455,7 @@ LABEL_64:
 
 // 0x579620
 namespace gamemd {
-void Terrain::SelectTileType(Random * aP0, IUnknown * aP1)
+int Terrain::SelectTileType(Random * aP0, IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

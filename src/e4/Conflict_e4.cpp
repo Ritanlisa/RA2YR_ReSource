@@ -7,7 +7,7 @@
 
 // 0x766C10
 namespace gamemd {
-void Conflict_WorldDominationTour_12::Release(int a2, unsigned int * a3)
+int Conflict_WorldDominationTour_12::Release(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -98,7 +98,7 @@ LABEL_14:
 
 // 0x766DC0
 namespace gamemd {
-void Conflict_WorldDominationTour_12::Constructor_1(int a2, unsigned int * a3)
+int Conflict_WorldDominationTour_12::Constructor_1(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -190,7 +190,7 @@ void Conflict_WorldDominationTour_12::Constructor_1(int a2, unsigned int * a3)
 
 // 0x766800
 namespace gamemd {
-void Conflict_WorldDominationTour_12_::ReleaseBuffer()
+int Conflict_WorldDominationTour_12_::ReleaseBuffer()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -213,7 +213,7 @@ void Conflict_WorldDominationTour_12_::ReleaseBuffer()
 
 // 0x766920
 namespace gamemd {
-void Conflict_WorldDominationTour_26::AddRef()
+int Conflict_WorldDominationTour_26::AddRef()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

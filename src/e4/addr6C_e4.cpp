@@ -1485,7 +1485,7 @@ void DlgProcScoreScreen()
 
 // 0x6CA1E0
 namespace gamemd {
-void E4Recv_6CA1E0::sub_6CA1E0(char * Source)
+int E4Recv_6CA1E0::sub_6CA1E0(char * Source)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

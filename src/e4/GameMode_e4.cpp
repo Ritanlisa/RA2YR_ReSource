@@ -5,7 +5,7 @@
 
 // 0x5D5DE0
 namespace gamemd {
-void GameMode::IsValid(unsigned int a2)
+int GameMode::IsValid(unsigned int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

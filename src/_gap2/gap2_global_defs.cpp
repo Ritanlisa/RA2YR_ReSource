@@ -28536,7 +28536,7 @@ namespace gamemd { int QueueTechnoVoiceLine(void* a1, int a2, int a3, int a4, in
   result = (AbstractClass *)this->parachute; /*0x706bdd*/
   if ( result ) /*0x706be5*/
     return (int)result->__pad_0; /*0x706be5*/
-  result = (AbstractClass *)(*(int (__thiscall **)(int *))(*this + 132))(this); /*0x706bed*/
+  result = (AbstractClass *)this->COMStub_Return0_33(); /*0x706bed*/
   if ( LOBYTE(result[96].nextArrayIndex) || **(_BYTE **)aP1->__pad_0 ) /*0x706c07*/
     return (int)result->__pad_0; /*0x706c0a*/
   v14 = aP3; /*0x706c10*/
@@ -28619,7 +28619,7 @@ LABEL_31:
     appended = aP8a; /*0x706e20*/
 LABEL_34:
     edi31 = this; /*0x706e2a*/
-    (*(void (__thiscall **)(int *))(*this + 136))(this); /*0x706e32*/
+    this->COMStub_Return0_34(); /*0x706e32*/
     TechnoClass::ClearArrays(); /*0x706e38*/
     if ( !appended ) /*0x706e3f*/
     {
@@ -28645,7 +28645,7 @@ LABEL_40:
     }
     return QueueTechnoVoiceLine(edi31, aP1, aP2, v14, aP4, aP5, aP6, aP7, 0, 0, 0, 0); /*0x706e97*/
   }
-  if ( !aP4 || *(_BYTE *)((*(int (__thiscall **)(int *))(*this + 132))(this) + 3519) ) /*0x706c33*/
+  if ( !aP4 || *(_BYTE *)(this->COMStub_Return0_33() + 3519) ) /*0x706c33*/
   {
     aP3 = (TechnoClass *)-1; /*0x706ce1*/
     v14 = (TechnoClass *)-1; /*0x706ce9*/
@@ -28695,7 +28695,6 @@ namespace gamemd { void* RenderTechnoOverlaySHP(void* a1, int a2, int a3, int a4
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   BSurface *v16; // eax
-
   qmemcpy( /*0x7072ca*/
   float a2[12]; // [esp+28h] [ebp-C0h] BYREF
     a2,
@@ -28708,11 +28707,11 @@ namespace gamemd { void* RenderTechnoOverlaySHP(void* a1, int a2, int a3, int a4
   int v14 = *this; /*0x7072d8*/
   float a4[12]; // [esp+88h] [ebp-60h] BYREF
   qmemcpy(a4, v13, sizeof(a4)); /*0x7072e8*/
-  if ( *(_BYTE *)((*(int (__thiscall **)(int *))(v14 + 132))(this) + 3500) ) /*0x7072f2*/
+  if ( *(_BYTE *)(this->COMStub_Return0_33() + 3500) ) /*0x7072f2*/
     dword_B43180 = 1; /*0x7072fc*/
   float v24[12]; // [esp+58h] [ebp-90h] BYREF
   Matrix3x4::Identity(v24); /*0x70730a*/
-  if ( *(_BYTE *)((*(int (__thiscall **)(int *))(*this + 132))(this) + 3478) ) /*0x707319*/
+  if ( *(_BYTE *)(this->COMStub_Return0_33() + 3478) ) /*0x707319*/
     TacticalMap::MultiplyByScalar(v24, (ObjectClass *)0x3F000000); /*0x70732c*/
   Viewport::Clear(); /*0x707331*/
   float * v15 = MultiplyMatrix3x4((ObjectClass *)v26, (float *)&stru_87C374[45244], v24); /*0x70736c*/
@@ -28743,7 +28742,7 @@ namespace gamemd { void* RenderTechnoOverlaySHP(void* a1, int a2, int a3, int a4
     Miles::DriverGet(); /*0x707420*/
     BlitterDrawSHP(*(IUnknown **)&stru_87C374[44960]); /*0x707432*/
   }
-  if ( *(_BYTE *)((*(int (__thiscall **)(int *))(*this + 132))(this) + 3500) ) /*0x707441*/
+  if ( *(_BYTE *)(this->COMStub_Return0_33() + 3500) ) /*0x707441*/
     dword_B43180 = 1; /*0x70744b*/
   qmemcpy(aP1, v22, 0x18u); /*0x707467*/
   return aP1; /*0x707469*/

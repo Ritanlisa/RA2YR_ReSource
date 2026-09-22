@@ -4,7 +4,7 @@
 #include "e4/classes/Debug_e4.hpp"
 
 // 0x7B2630
-void Socket::ConfigureBuffers(AnimClass * aP1)
+int Socket::ConfigureBuffers(AnimClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

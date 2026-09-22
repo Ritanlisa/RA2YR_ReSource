@@ -3,7 +3,7 @@
 #include "e4/e4_globals.hpp"
 
 // 0x5BCC90
-void TextBuffer::Init()
+int TextBuffer::Init()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

@@ -35,7 +35,7 @@
 
 // 0x5D0190
 namespace gamemd {
-void E4Recv_5D0190::sub_5D0190(const char * a2)
+int E4Recv_5D0190::sub_5D0190(const char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -160,7 +160,7 @@ void sub_5D2350(int a1, int * a2)
 
 // 0x5D25D0
 namespace gamemd {
-void E4Recv_5D25D0::sub_5D25D0(char * Source, int a3)
+int E4Recv_5D25D0::sub_5D25D0(char * Source, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -595,7 +595,7 @@ LABEL_12:
 
 // 0x5D4F20
 namespace gamemd {
-void E4Recv_5D4F20::sub_5D4F20()
+int E4Recv_5D4F20::sub_5D4F20()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -991,7 +991,7 @@ void GameInit_Complete()
 
 // 0x5D9060
 namespace gamemd {
-void E4Recv_5D9060::sub_5D9060(int a2)
+int E4Recv_5D9060::sub_5D9060(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

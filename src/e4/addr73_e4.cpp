@@ -230,7 +230,7 @@ void sub_730D60()
 
 // 0x731130
 namespace gamemd {
-void E4Recv_731130::sub_731130()
+int E4Recv_731130::sub_731130()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1605,7 +1605,7 @@ void * GetStringCSF(wchar_t * Format, unsigned int * a2, CampaignScore * aP3, in
 
 // 0x734F50
 namespace gamemd {
-void E4Recv_734F50::sub_734F50()
+int E4Recv_734F50::sub_734F50()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1625,7 +1625,7 @@ void E4Recv_734F50::sub_734F50()
 
 // 0x734F80
 namespace gamemd {
-void E4Recv_734F80::sub_734F80()
+int E4Recv_734F80::sub_734F80()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

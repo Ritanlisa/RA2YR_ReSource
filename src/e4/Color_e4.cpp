@@ -4,7 +4,7 @@
 #include "e4/classes/Math_e4.hpp"
 
 // 0x517440
-void Color::ConvertToRGB(int a2)
+int Color::ConvertToRGB(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

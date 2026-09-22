@@ -40,7 +40,7 @@ unsigned int * LightSourceClass::Construct(int a2, int a3, LightSourceClass * aP
 }
 
 // 0x554830
-void LightSourceClass::Constructor()
+int LightSourceClass::Constructor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

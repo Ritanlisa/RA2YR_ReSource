@@ -5,7 +5,7 @@
 
 // 0x557AC0
 namespace gamemd {
-void Array::GetClamped(CheckListClass * aP1)
+int Array::GetClamped(CheckListClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -28,7 +28,7 @@ void Array::GetClamped(CheckListClass * aP1)
 
 // 0x634290
 namespace gamemd {
-void Array::FindValue(IUnknown * aP1)
+int Array::FindValue(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -54,7 +54,7 @@ void Array::FindValue(IUnknown * aP1)
 
 // 0x63E590
 namespace gamemd {
-void Array::RemoveAt(int a2)
+int Array::RemoveAt(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -81,7 +81,7 @@ void Array::RemoveAt(int a2)
 
 // 0x65AD40
 namespace gamemd {
-void Array::Get(int a2)
+int Array::Get(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -92,7 +92,7 @@ void Array::Get(int a2)
 
 // 0x65ADF0
 namespace gamemd {
-void Array::ContainsValue(IUnknown * aP1)
+int Array::ContainsValue(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -114,7 +114,7 @@ void Array::ContainsValue(IUnknown * aP1)
 
 // 0x7490D0
 namespace gamemd {
-void Array::Zero()
+int Array::Zero()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -167,7 +167,7 @@ void Array::ByteSwap()
 
 // 0x763980
 namespace gamemd {
-void Array::GetElement(CampaignScore * aP1)
+int Array::GetElement(CampaignScore * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -181,7 +181,7 @@ void Array::GetElement(CampaignScore * aP1)
 
 // 0x7ACD30
 namespace gamemd {
-void Array::CleanupArrayWOL()
+int Array::CleanupArrayWOL()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -201,7 +201,7 @@ void Array::CleanupArrayWOL()
 
 // 0x7AD790
 namespace gamemd {
-void Array::InsertElement(const void * a1, ObjectClass * aP2)
+int Array::InsertElement(const void * a1, ObjectClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

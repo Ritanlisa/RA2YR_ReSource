@@ -15,7 +15,7 @@
 
 // 0x5E3850
 namespace gamemd {
-void INIClass::WOLobby_Play()
+int INIClass::WOLobby_Play()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -71,7 +71,7 @@ void INIClass::WOLobby_Play()
 } // namespace gamemd
 
 // 0x78F7F0
-void WOLobby::SetupDlgProc(HWND hDlg, unsigned int a2, unsigned int nIDDlgItem, HWND hWnd)
+int WOLobby::SetupDlgProc(HWND hDlg, unsigned int a2, unsigned int nIDDlgItem, HWND hWnd)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1449,7 +1449,7 @@ LABEL_93:
 }
 
 // 0x791B10
-void WOLobby::ChatDlgProc(HWND hDlg, UINT a2, WPARAM a3, HWND hWnd)
+int WOLobby::ChatDlgProc(HWND hDlg, UINT a2, WPARAM a3, HWND hWnd)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

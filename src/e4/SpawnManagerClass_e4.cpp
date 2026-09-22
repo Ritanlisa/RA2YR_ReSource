@@ -105,7 +105,7 @@ S SpawnManagerClass::SpawnManagerClass(TechnoClass * aP1, int a3, int a4, int a5
 // 0x6B6EA0
 namespace ra2 {
 namespace game {
-void SpawnManagerClass::Constructor()
+int SpawnManagerClass::Constructor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -205,7 +205,7 @@ void SpawnManagerClass::Constructor_SpawnManagerClass()
 // 0x6B7B90
 namespace ra2 {
 namespace game {
-void SpawnManagerClass::SetTarget(int a2)
+int SpawnManagerClass::SetTarget(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -223,7 +223,7 @@ void SpawnManagerClass::SetTarget(int a2)
 // 0x6B7D30
 namespace ra2 {
 namespace game {
-void SpawnManagerClass::CountAliveSpawns()
+int SpawnManagerClass::CountAliveSpawns()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -252,7 +252,7 @@ void SpawnManagerClass::CountAliveSpawns()
 // 0x6B7D50
 namespace ra2 {
 namespace game {
-void SpawnManagerClass::CountDockedSpawns()
+int SpawnManagerClass::CountDockedSpawns()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -282,7 +282,7 @@ void SpawnManagerClass::CountDockedSpawns()
 // 0x6B7DE0
 namespace ra2 {
 namespace game {
-void SpawnManagerClass::PowerDrainUpdate(int a2)
+int SpawnManagerClass::PowerDrainUpdate(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -345,7 +345,7 @@ void SpawnManagerClass::PowerDrainUpdate(int a2)
 // 0x6B7F10
 namespace ra2 {
 namespace game {
-void SpawnManagerClass::LoadFromStream(int aP1, AbstractClass * aP1_4)
+int SpawnManagerClass::LoadFromStream(int aP1, AbstractClass * aP1_4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

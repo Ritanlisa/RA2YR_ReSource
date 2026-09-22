@@ -3,7 +3,7 @@
 #include "e4/e4_globals.hpp"
 
 // 0x552450
-void LCWStraw::Dtor()
+int LCWStraw::Dtor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

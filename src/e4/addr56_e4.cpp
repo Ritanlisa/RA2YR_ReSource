@@ -541,7 +541,7 @@ void * E4Recv_56AF40::sub_56AF40(int a2)
 
 // 0x56B250
 namespace gamemd {
-void E4Recv_56B250::sub_56B250(int a2)
+int E4Recv_56B250::sub_56B250(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

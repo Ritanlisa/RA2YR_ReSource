@@ -1181,7 +1181,7 @@ LABEL_290:
 
 // 0x71CDA0
 namespace gamemd {
-void TerrainClass::LoadFromStream(unsigned int * a1, int a2)
+int TerrainClass::LoadFromStream(unsigned int * a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1259,7 +1259,7 @@ LABEL_16:
 
 // 0x71D000
 namespace gamemd {
-void TerrainClass::ProcessSpawnAnim(unsigned int * a1, AbstractClass * aP2)
+int TerrainClass::ProcessSpawnAnim(unsigned int * a1, AbstractClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

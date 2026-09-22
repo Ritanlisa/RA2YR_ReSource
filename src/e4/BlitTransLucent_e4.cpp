@@ -3,7 +3,7 @@
 #include "e4/e4_globals.hpp"
 
 // 0x496130
-void BlitTransLucent25AlphaZReadWrite_ushort::CallBlit0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
+int BlitTransLucent25AlphaZReadWrite_ushort::CallBlit0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

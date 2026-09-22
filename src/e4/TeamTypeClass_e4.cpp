@@ -12,7 +12,7 @@
 
 // 0x4C98B0
 namespace gamemd {
-void TeamTypeClass::Construct()
+int TeamTypeClass::Construct()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -186,7 +186,7 @@ LABEL_6:
 
 // 0x6EF5F0
 namespace gamemd {
-void TeamTypeClass::Check(int a2)
+int TeamTypeClass::Check(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -201,7 +201,7 @@ void TeamTypeClass::Check(int a2)
 
 // 0x6F0A70
 namespace gamemd {
-void TeamTypeClass::DestroyAllInstances()
+int TeamTypeClass::DestroyAllInstances()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -227,7 +227,7 @@ void TeamTypeClass::DestroyAllInstances()
 
 // 0x6F1030
 namespace gamemd {
-void TeamTypeClass::GetTeam(int a2, int a3)
+int TeamTypeClass::GetTeam(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -252,7 +252,7 @@ void TeamTypeClass::GetTeam(int a2, int a3)
 
 // 0x6F1090
 namespace gamemd {
-void TeamTypeClass::LoadFromINI(unsigned char *** aP1)
+int TeamTypeClass::LoadFromINI(unsigned char *** aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -571,7 +571,7 @@ void TeamTypeClass::LoadFromINI(unsigned char *** aP1)
 
 // 0x6F1550
 namespace gamemd {
-void TeamTypeClass::GetMaxCount(CCINIClass * aP1)
+int TeamTypeClass::GetMaxCount(CCINIClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -706,7 +706,7 @@ void TeamTypeClass::GetMaxCount(CCINIClass * aP1)
 
 // 0x6F1870
 namespace gamemd {
-void TeamTypeClass::GetGroup()
+int TeamTypeClass::GetGroup()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -750,7 +750,7 @@ unsigned int * TeamTypeClass::GetTransportWaypoint(unsigned int * a2)
 
 // 0x6F1C80
 namespace gamemd {
-void TeamTypeClass::PowerDrainUpdate(int * a2)
+int TeamTypeClass::PowerDrainUpdate(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -829,7 +829,7 @@ void TeamTypeClass::PowerDrainUpdate(int * a2)
 
 // 0x6F1FA0
 namespace gamemd {
-void TeamTypeClass::ProcessTaskForce()
+int TeamTypeClass::ProcessTaskForce()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -869,7 +869,7 @@ void TeamTypeClass::ProcessTaskForce()
 
 // 0x6F20C0
 namespace gamemd {
-void TeamTypeClass::GetAuxField()
+int TeamTypeClass::GetAuxField()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -914,7 +914,7 @@ TeamTypeClass * TeamTypeClass::ddtor(char a2)
 
 // 0x6F22F0
 namespace gamemd {
-void TeamTypeClass_28::Release(int a2, int * a3)
+int TeamTypeClass_28::Release(int a2, int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1016,7 +1016,7 @@ void TeamTypeClass_28::Release(int a2, int * a3)
 
 // 0x6F24B0
 namespace gamemd {
-void TeamTypeClass_28::SetCapacity(int a2, int * a3)
+int TeamTypeClass_28::SetCapacity(int a2, int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

@@ -8,7 +8,7 @@
 
 // 0x7718A0
 namespace gamemd {
-void Territory_WorldDominationTour_8::AddRef(char a2)
+int Territory_WorldDominationTour_8::AddRef(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -76,7 +76,7 @@ void Territory_WorldDominationTour_8::ddtor()
 
 // 0x771970
 namespace gamemd {
-void Territory_WorldDominationTour_8::Read(int a2, int a3)
+int Territory_WorldDominationTour_8::Read(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

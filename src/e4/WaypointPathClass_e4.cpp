@@ -6,7 +6,7 @@
 
 // 0x763730
 namespace gamemd {
-void WaypointPathClass::Init()
+int WaypointPathClass::Init()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -42,7 +42,7 @@ void WaypointPathClass::Init()
 
 // 0x763810
 namespace gamemd {
-void WaypointPathClass::Construct(WaypointClass * aP1)
+int WaypointPathClass::Construct(WaypointClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -79,7 +79,7 @@ void WaypointPathClass::Construct(WaypointClass * aP1)
 
 // 0x763C70
 namespace gamemd {
-void WaypointPathClass::LoadState(unsigned int * a1, int a2)
+int WaypointPathClass::LoadState(unsigned int * a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

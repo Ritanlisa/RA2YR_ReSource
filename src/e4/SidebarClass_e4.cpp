@@ -6,7 +6,7 @@
 #include "e4/classes/VectorClass_ptr_ConvertClass_e4.hpp"
 
 // 0x4C9C50
-void SidebarClass::draw()
+int SidebarClass::draw()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -15,7 +15,7 @@ void SidebarClass::draw()
 }
 
 // 0x4CA170
-void SidebarClass::draw2()
+int SidebarClass::draw2()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -24,7 +24,7 @@ void SidebarClass::draw2()
 }
 
 // 0x6A5090
-void SidebarClass::InitPositions()
+int SidebarClass::InitPositions()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -51,7 +51,7 @@ void SidebarClass::InitPositions()
 }
 
 // 0x6A5130
-void SidebarClass::CalcBounds(char a1)
+int SidebarClass::CalcBounds(char a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -227,7 +227,7 @@ void * SidebarClass::LoadAssets()
 }
 
 // 0x6A6C30
-void SidebarClass::Redraw(char a2)
+int SidebarClass::Redraw(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -472,7 +472,7 @@ void SidebarClass::Redraw(char a2)
 }
 
 // 0x6A7590
-void SidebarClass::SwitchTab(int a2)
+int SidebarClass::SwitchTab(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -519,7 +519,7 @@ void SidebarClass::SwitchTab(int a2)
 }
 
 // 0x6ABD30
-void SidebarClass::LoadResources()
+int SidebarClass::LoadResources()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -693,7 +693,7 @@ void SidebarClass::LoadResources()
 
 // 0x40D270
 namespace gamemd {
-void SidebarClass::initButtons2()
+int SidebarClass::initButtons2()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // attributes: thunk

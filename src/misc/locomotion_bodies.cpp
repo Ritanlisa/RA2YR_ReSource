@@ -701,7 +701,7 @@ LABEL_16:
 // the elapsed fraction, then either accept the desired facing immediately
 // (timer zeroed, returns 0 when already in place) or snap both facings to it.
 // 0x4C9300
-void FacingClass::Set_SyncLog(unsigned int* a1)
+int FacingClass::Set_SyncLog(unsigned int* a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

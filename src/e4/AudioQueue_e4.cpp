@@ -42,7 +42,7 @@ unsigned int * AudioQueue::CreateNode()
 
 // 0x4035F0
 namespace gamemd {
-void AudioQueue::FindBestChannel(int a1, int a2)
+int AudioQueue::FindBestChannel(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -114,7 +114,7 @@ void AudioQueue::FindBestChannel(int a1, int a2)
 
 // 0x403730
 namespace gamemd {
-void AudioQueue::StopAllVoices(__thiscall *__fastcall AudioQueue::StopAllVoices(int a1, int a2))( int)
+int AudioQueue::StopAllVoices(__thiscall *__fastcall AudioQueue::StopAllVoices(int a1, int a2))( int)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -403,7 +403,7 @@ unsigned char * AudioQueue::AllocBuffer(WinsockInterfaceClass * aP1)
 
 // 0x7B22E0
 namespace gamemd {
-void AudioQueue::ReadBuffer(void * a2, int a3, void * a4, unsigned int * a5, unsigned short * a6)
+int AudioQueue::ReadBuffer(void * a2, int a3, void * a4, unsigned int * a5, unsigned short * a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -448,7 +448,7 @@ void AudioQueue::ReadBuffer(void * a2, int a3, void * a4, unsigned int * a5, uns
 
 // 0x7B23B0
 namespace gamemd {
-void AudioQueue::WriteBuffer(WinsockInterfaceClass * aP1, unsigned int arg4, const void * a3, unsigned int a5, WinsockInterfaceClass * aP5, char a7, short a8)
+int AudioQueue::WriteBuffer(WinsockInterfaceClass * aP1, unsigned int arg4, const void * a3, unsigned int a5, WinsockInterfaceClass * aP5, char a7, short a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

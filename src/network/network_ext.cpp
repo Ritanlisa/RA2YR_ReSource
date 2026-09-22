@@ -185,7 +185,7 @@ void NetworkManager::RemovePlayer() {}
 // --- NetworkOptions ---
 
 // 0x560480
-void NetworkOptions::DlgProc() {
+int NetworkOptions::DlgProc() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x560480
 {

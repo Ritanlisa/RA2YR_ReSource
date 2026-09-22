@@ -9,7 +9,7 @@
 
 // 0x501750
 namespace gamemd {
-void E4Recv_501750::sub_501750(int a2)
+int E4Recv_501750::sub_501750(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

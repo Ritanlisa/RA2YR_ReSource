@@ -7,7 +7,7 @@
 
 // 0x5ACD30
 namespace gamemd {
-void MSEngine::Release(int a2, char * a3)
+int MSEngine::Release(int a2, char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -83,7 +83,7 @@ void MSEngine::Release(int a2, char * a3)
 
 // 0x5ACED0
 namespace gamemd {
-void MSEngine::SetCapacity(int a2, char * a3)
+int MSEngine::SetCapacity(int a2, char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -298,7 +298,7 @@ void MSEngine::Destruct()
 
 // 0x5D1DF0
 namespace gamemd {
-void MSEngine::ProcessEvents(MSVQAnim * aP1, int a3)
+int MSEngine::ProcessEvents(MSVQAnim * aP1, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

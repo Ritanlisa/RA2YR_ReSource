@@ -13,7 +13,7 @@ unsigned int * DynamicVector::Copy(VectorClass * aP1)
 
   if ( this == (_DWORD *)aP1 ) /*0x5ac43a*/
     goto LABEL_8; /*0x5ac43a*/
-  (*(void (__thiscall **)(_DWORD *))(*this + 12))(this); /*0x5ac43e*/
+  this->initEvent(); /*0x5ac43e*/
   int v3 = aP1->Capacity; /*0x5ac441*/
   this->q008 = v3; /*0x5ac446*/
   if ( !v3 ) /*0x5ac449*/

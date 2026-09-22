@@ -502,7 +502,7 @@ LABEL_17:
 
 // 0x752CB0
 namespace gamemd {
-void E4Recv_752CB0::sub_752CB0(const char * a2)
+int E4Recv_752CB0::sub_752CB0(const char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -533,7 +533,7 @@ void E4Recv_752CB0::sub_752CB0(const char * a2)
 
 // 0x753000
 namespace gamemd {
-void CCINIClass::InitFromINIEVA()
+int CCINIClass::InitFromINIEVA()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -633,7 +633,7 @@ LABEL_10:
 
 // 0x7531A0
 namespace gamemd {
-void E4Recv_7531A0::EVA_LoadINI()
+int E4Recv_7531A0::EVA_LoadINI()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1785,7 +1785,7 @@ void ProcessVoxelScanSamples()
 
 // 0x758AD0
 namespace gamemd {
-void E4Recv_758AD0::sub_758AD0(int * a2)
+int E4Recv_758AD0::sub_758AD0(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1853,7 +1853,7 @@ void sub_7591C0()
 
 // 0x759790
 namespace gamemd {
-void E4Recv_759790::sub_759790()
+int E4Recv_759790::sub_759790()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1864,7 +1864,7 @@ void E4Recv_759790::sub_759790()
 
 // 0x75A120
 namespace gamemd {
-void E4Recv_75A120::sub_75A120(int a2, int * a3, int a4)
+int E4Recv_75A120::sub_75A120(int a2, int * a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

@@ -4,7 +4,7 @@
 #include "e4/classes/String_e4.hpp"
 
 // 0x624760
-void HashTable::Get(IUnknown * aP1, IUnknown * aP2)
+int HashTable::Get(IUnknown * aP1, IUnknown * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -76,7 +76,7 @@ void HashTable::Grow2()
 }
 
 // 0x625090
-void HashTable::RemoveAndResize(unsigned int * a2, unsigned char * a3)
+int HashTable::RemoveAndResize(unsigned int * a2, unsigned char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -312,7 +312,7 @@ void HashTable::Rebuild2()
 }
 
 // 0x625F60
-void HashTable::FindString(char * Str1, IUnknown * aP2)
+int HashTable::FindString(char * Str1, IUnknown * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -338,7 +338,7 @@ void HashTable::FindString(char * Str1, IUnknown * aP2)
 }
 
 // 0x625FB0
-void HashTable::FindChunk(char * Str1, void * a2, CCINIClass * aP3)
+int HashTable::FindChunk(char * Str1, void * a2, CCINIClass * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -522,7 +522,7 @@ LABEL_23:
 }
 
 // 0x6BA140
-void HashTable::Find(const char * a1, ConvertClass * aP2)
+int HashTable::Find(const char * a1, ConvertClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -650,7 +650,7 @@ LABEL_24:
 }
 
 // 0x6BAC40
-void HashTable::RemoveHashTableEntry(ObjectClass * aP1, void * a2)
+int HashTable::RemoveHashTableEntry(ObjectClass * aP1, void * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1100,7 +1100,7 @@ unsigned int HashTable::Rebuild()
 }
 
 // 0x7ADC60
-void HashTable::LookupString(const char ** a2, unsigned int * a3)
+int HashTable::LookupString(const char ** a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1126,7 +1126,7 @@ void HashTable::LookupString(const char ** a2, unsigned int * a3)
 }
 
 // 0x7ADCD0
-void HashTable::Insert(ObjectClass * aP1, void * a2)
+int HashTable::Insert(ObjectClass * aP1, void * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1283,7 +1283,7 @@ LABEL_24:
 }
 
 // 0x7AE1F0
-void HashTable::Lookup(ObjectClass * aP1, TechnoTypeClass * aP2)
+int HashTable::Lookup(ObjectClass * aP1, TechnoTypeClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1483,7 +1483,7 @@ void HashTable::Grow()
 }
 
 // 0x7AE950
-void HashTable::FindWOLHashTableEntry(const char ** a2, void * a3)
+int HashTable::FindWOLHashTableEntry(const char ** a2, void * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

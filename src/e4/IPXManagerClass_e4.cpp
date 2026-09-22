@@ -3,7 +3,7 @@
 #include "e4/e4_globals.hpp"
 
 // 0x540D80
-void IPXManagerClass::sendPacket(int a2, int a3, int a4)
+int IPXManagerClass::sendPacket(int a2, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -29,7 +29,7 @@ void IPXManagerClass::sendPacket(int a2, int a3, int a4)
 }
 
 // 0x541040
-void IPXManagerClass::send(int a2)
+int IPXManagerClass::send(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -50,7 +50,7 @@ void IPXManagerClass::send(int a2)
 }
 
 // 0x541070
-void IPXManagerClass::receivePacket(int a2)
+int IPXManagerClass::receivePacket(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

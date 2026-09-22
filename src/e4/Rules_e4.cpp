@@ -7,7 +7,7 @@
 
 // 0x6691E0
 namespace gamemd {
-void Rules::ReadMiscINI()
+int Rules::ReadMiscINI()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2205,7 +2205,7 @@ void Rules::ReadMiscINI()
 
 // 0x66BBB0
 namespace gamemd {
-void Rules::ReadCombatINI()
+int Rules::ReadCombatINI()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

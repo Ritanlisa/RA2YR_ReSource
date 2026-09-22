@@ -1708,7 +1708,7 @@ int result;
 }
 
 // 0x66D150
-void RulesClass::readAudioVisual()
+int RulesClass::readAudioVisual()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1754,7 +1754,7 @@ void RulesClass::readAudioVisual()
 }
 
 // 0x673E80
-void RulesClass::ReadPowerupsSection()
+int RulesClass::ReadPowerupsSection()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1839,7 +1839,7 @@ void RulesClass::ReadPowerupsSection()
 }
 
 // 0x6743D0
-void RulesClass::readDifficulty()
+int RulesClass::readDifficulty()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1911,7 +1911,7 @@ void RulesClass::readDifficulty()
 }
 
 // 0x674550
-void RulesClass::ReadMovies()
+int RulesClass::ReadMovies()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2189,7 +2189,7 @@ unsigned int * RulesClass::readParticles()
 }
 
 // 0x67B480
-void RulesClass::readAI(unsigned int * a2)
+int RulesClass::readAI(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

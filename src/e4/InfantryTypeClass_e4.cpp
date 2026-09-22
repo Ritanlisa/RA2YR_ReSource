@@ -9,7 +9,7 @@
 #include "e4/classes/VoxelAnimType_e4.hpp"
 
 // 0x5236A0
-void InfantryTypeClass::Constructor(ObjectClass * aP1)
+int InfantryTypeClass::Constructor(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -159,7 +159,7 @@ unsigned int * InfantryTypeClass::Constructor_523980(ObjectTypeClass * aP1)
 }
 
 // 0x523B40
-void InfantryTypeClass::CreateInfantry(short * a2, AbstractClass * ppv)
+int InfantryTypeClass::CreateInfantry(short * a2, AbstractClass * ppv)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -198,7 +198,7 @@ void InfantryTypeClass::CreateInfantry(short * a2, AbstractClass * ppv)
 }
 
 // 0x5240A0
-void InfantryTypeClass::LoadFromINI(unsigned char *** a2)
+int InfantryTypeClass::LoadFromINI(unsigned char *** a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -708,7 +708,7 @@ unsigned int * InfantryTypeClass::CopyDataArray(DynamicVector * aP1)
 
   if ( this == (_DWORD *)aP1 ) /*0x524f2a*/
     goto LABEL_8; /*0x524f2a*/
-  (*(void (__thiscall **)(_DWORD *))(*this + 12))(this); /*0x524f2e*/
+  this->GetClassIdentifier(); /*0x524f2e*/
   int v3 = aP1->field_8; /*0x524f31*/
   this->vtable3 = v3; /*0x524f36*/
   if ( !v3 ) /*0x524f39*/

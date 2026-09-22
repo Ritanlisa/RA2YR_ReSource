@@ -6,7 +6,7 @@
 
 // 0x679A10
 namespace gamemd {
-void SideClass::LoadAllFromINI(CCINIClass * aP0)
+int SideClass::LoadAllFromINI(CCINIClass * aP0)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -160,7 +160,7 @@ unsigned int * SideClass::Construct(CCINIClass * aP1)
 
 // 0x6A4710
 namespace gamemd {
-void SideClass::GetCountry(int * a2)
+int SideClass::GetCountry(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -172,7 +172,7 @@ void SideClass::GetCountry(int * a2)
 
 // 0x6A4780
 namespace gamemd {
-void SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
+int SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

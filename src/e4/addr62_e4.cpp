@@ -1810,7 +1810,7 @@ void Dialog_Run(unsigned short a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, L
 
 // 0x6242B0
 namespace gamemd {
-void E4Recv_6242B0::sub_6242B0()
+int E4Recv_6242B0::sub_6242B0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1960,7 +1960,7 @@ unsigned int * sub_627020()
 
 // 0x6278C0
 namespace gamemd {
-void E4Recv_6278C0::sub_6278C0(const char * a2)
+int E4Recv_6278C0::sub_6278C0(const char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

@@ -740,7 +740,7 @@ LABEL_5:
 
 // 0x655890
 namespace gamemd {
-void E4Recv_655890::sub_655890()
+int E4Recv_655890::sub_655890()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -954,7 +954,7 @@ LABEL_23:
 
 // 0x659590
 namespace gamemd {
-void E4Recv_659590::sub_659590(unsigned int * a2, unsigned int * a3, short a4)
+int E4Recv_659590::sub_659590(unsigned int * a2, unsigned int * a3, short a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1027,7 +1027,7 @@ void sub_65B1A0()
 
 // 0x65C300
 namespace gamemd {
-void RAMFileClass::nullsub_0_1()
+int RAMFileClass::nullsub_0_1()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1041,7 +1041,7 @@ void RAMFileClass::nullsub_0_1()
 
 // 0x65C350
 namespace gamemd {
-void RAMFileClass::nullsub_0_2(int a2)
+int RAMFileClass::nullsub_0_2(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1059,7 +1059,7 @@ void RAMFileClass::nullsub_0_2(int a2)
 
 // 0x65C3A0
 namespace gamemd {
-void RAMFileClass::nullsub_0_3(void * a1, signed int Size)
+int RAMFileClass::nullsub_0_3(void * a1, signed int Size)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1095,7 +1095,7 @@ LABEL_7:
 
 // 0x65C420
 namespace gamemd {
-void RAMFileClass::nullsub_0_4(int a2, int a3)
+int RAMFileClass::nullsub_0_4(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1135,7 +1135,7 @@ LABEL_11:
 
 // 0x65C560
 namespace gamemd {
-void RAMFileClass::nullsub_0_6(int a2)
+int RAMFileClass::nullsub_0_6(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1183,7 +1183,7 @@ void unknown_libname_28()
 
 // 0x65C910
 namespace gamemd {
-void E4Recv_65C910::sub_65C910(ObjectClass * aP1, int a3)
+int E4Recv_65C910::sub_65C910(ObjectClass * aP1, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

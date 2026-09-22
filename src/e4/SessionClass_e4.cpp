@@ -13,7 +13,7 @@
 #include "e4/classes/Waypoint_e4.hpp"
 
 // 0x540DC0
-void SessionClass::initLAN(int a2, wchar_t * Source, unsigned int * a4)
+int SessionClass::initLAN(int a2, wchar_t * Source, unsigned int * a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -50,7 +50,7 @@ void SessionClass::initLAN(int a2, wchar_t * Source, unsigned int * a4)
 }
 
 // 0x540E70
-void SessionClass::initInternet()
+int SessionClass::initInternet()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -149,7 +149,7 @@ unsigned int * SessionClass::Load()
 }
 
 // 0x5ADF20
-void SessionClass::LoadGameSession(ObjectClass * aP1, CellStruct * aP2)
+int SessionClass::LoadGameSession(ObjectClass * aP1, CellStruct * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -216,7 +216,7 @@ LABEL_17:
 }
 
 // 0x5CEEF0
-void SessionClass::LoadMapSelection(char ** a1)
+int SessionClass::LoadMapSelection(char ** a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -478,7 +478,7 @@ LABEL_17:
 }
 
 // 0x5CF5F0
-void SessionClass::Destruct()
+int SessionClass::Destruct()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -661,7 +661,7 @@ unsigned int SessionClass::initPlayers()
 }
 
 // 0x663B40
-void SessionClass::BuildLobbyPlayerList()
+int SessionClass::BuildLobbyPlayerList()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -758,7 +758,7 @@ unsigned int * SessionClass::GetEntry(IUnknown * aP1)
 }
 
 // 0x6915D0
-void SessionClass::SetField()
+int SessionClass::SetField()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -767,7 +767,7 @@ void SessionClass::SetField()
 }
 
 // 0x696F10
-void SessionClass::GetPlayerSide()
+int SessionClass::GetPlayerSide()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -781,7 +781,7 @@ void SessionClass::GetPlayerSide()
 }
 
 // 0x696F20
-void SessionClass::GetPlayerColor()
+int SessionClass::GetPlayerColor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -795,7 +795,7 @@ void SessionClass::GetPlayerColor()
 }
 
 // 0x696F50
-void SessionClass::GetOption()
+int SessionClass::GetOption()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -809,7 +809,7 @@ void SessionClass::GetOption()
 }
 
 // 0x696F70
-void SessionClass::GetOption2()
+int SessionClass::GetOption2()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -823,7 +823,7 @@ void SessionClass::GetOption2()
 }
 
 // 0x696F90
-void SessionClass::SetPlayerOption(SkirmishDialog * aP1)
+int SessionClass::SetPlayerOption(SkirmishDialog * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -845,7 +845,7 @@ void SessionClass::SetPlayerOption(SkirmishDialog * aP1)
 }
 
 // 0x696FC0
-void SessionClass::SetPlayerColor(int a2)
+int SessionClass::SetPlayerColor(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -867,7 +867,7 @@ void SessionClass::SetPlayerColor(int a2)
 }
 
 // 0x696FF0
-void SessionClass::SetOption(SessionClass * aP1)
+int SessionClass::SetOption(SessionClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -889,7 +889,7 @@ void SessionClass::SetOption(SessionClass * aP1)
 }
 
 // 0x697020
-void SessionClass::SetOption2(SessionClass * aP1)
+int SessionClass::SetOption2(SessionClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1215,7 +1215,7 @@ S * SessionClass::SessionClass()
 }
 
 // 0x697B70
-void SessionClass::CreateConnections()
+int SessionClass::CreateConnections()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1315,7 +1315,7 @@ LABEL_22:
 }
 
 // 0x697E70
-void SessionClass::IsValidHouse(void * a2)
+int SessionClass::IsValidHouse(void * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1819,7 +1819,7 @@ void * SessionClass::ParseGameInfo(char * Source, CampaignScore * aP2, CCINIClas
 }
 
 // 0x69B7E0
-void SessionClass::AssignColor(int a2, MPCooperative * aP2)
+int SessionClass::AssignColor(int a2, MPCooperative * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

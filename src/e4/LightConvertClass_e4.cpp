@@ -3,7 +3,7 @@
 #include "e4/e4_globals.hpp"
 
 // 0x490E50
-void LightConvertClass::SelectRLEBlitter(IUnknown * aP1)
+int LightConvertClass::SelectRLEBlitter(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

@@ -37,7 +37,7 @@ unsigned int * RadioClass::Release()
 // 0x65AA80
 namespace ra2 {
 namespace game {
-void RadioClass::ProcessCmd()
+int RadioClass::ProcessCmd()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -52,7 +52,7 @@ void RadioClass::ProcessCmd()
 // 0x65AB10
 namespace ra2 {
 namespace game {
-void RadioClass::PowerDrainUpdate(AbstractClass * aP1)
+int RadioClass::PowerDrainUpdate(AbstractClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -84,7 +84,7 @@ void RadioClass::PowerDrainUpdate(AbstractClass * aP1)
 // 0x65AB80
 namespace ra2 {
 namespace game {
-void RadioClass::LoadState(ObjectClass * aP1, ObjectClass * aP2)
+int RadioClass::LoadState(ObjectClass * aP1, ObjectClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -157,7 +157,7 @@ LABEL_8:
 // 0x65AD90
 namespace ra2 {
 namespace game {
-void RadioClass::FindLinkIndex(int a2)
+int RadioClass::FindLinkIndex(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -184,7 +184,7 @@ void RadioClass::FindLinkIndex(int a2)
 // 0x65ADC0
 namespace ra2 {
 namespace game {
-void RadioClass::HasFreeLink()
+int RadioClass::HasFreeLink()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

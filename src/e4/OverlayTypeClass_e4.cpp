@@ -87,7 +87,7 @@ LABEL_11:
 }
 
 // 0x5FE770
-void OverlayTypeClass::LoadFromINI(unsigned char *** aP1)
+int OverlayTypeClass::LoadFromINI(unsigned char *** aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -249,7 +249,7 @@ void OverlayTypeClass::LoadFromINI(unsigned char *** aP1)
 }
 
 // 0x5FEAF0
-void OverlayTypeClass::SaveLoad_Prefix(int a1, int a2)
+int OverlayTypeClass::SaveLoad_Prefix(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

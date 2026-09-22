@@ -4,7 +4,7 @@
 
 // 0x41F2E0
 namespace gamemd {
-void CCINIClass::ReadTypeList(char * a1, CCINIClass * a2)
+int CCINIClass::ReadTypeList(char * a1, CCINIClass * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -97,7 +97,7 @@ LABEL_28:
 
 // 0x473450
 namespace gamemd {
-void CCINIClass::GetDB()
+int CCINIClass::GetDB()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -108,7 +108,7 @@ void CCINIClass::GetDB()
 
 // 0x4741F0
 namespace gamemd {
-void CCINIClass::Load(MultiplayerGameMode * aP1, char a3, char aP2)
+int CCINIClass::Load(MultiplayerGameMode * aP1, char a3, char aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

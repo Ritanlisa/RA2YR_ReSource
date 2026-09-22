@@ -680,7 +680,6 @@ namespace gamemd {
 void WOL_MatchGame()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void WOL_MatchGame()
 {
   wchar_t *String; // eax
   wchar_t *v8; // eax
@@ -869,7 +868,7 @@ LABEL_25:
 
 // 0x7A2830
 namespace gamemd {
-void E4Recv_7A2830::sub_7A2830()
+int E4Recv_7A2830::sub_7A2830()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1214,7 +1213,7 @@ LABEL_16:
 
 // 0x7AF640
 namespace gamemd {
-void E4Recv_7AF640::sub_7AF640(int a2)
+int E4Recv_7AF640::sub_7AF640(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

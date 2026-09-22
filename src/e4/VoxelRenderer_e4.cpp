@@ -3,7 +3,7 @@
 #include "e4/e4_globals.hpp"
 
 // 0x758EA0
-void VoxelRenderer::ProjectVertex(float a2, float a3, float a4, char a5)
+int VoxelRenderer::ProjectVertex(float a2, float a3, float a4, char a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -44,7 +44,7 @@ LABEL_13:
 }
 
 // 0x759FB0
-void VoxelRenderer::InitializeBuffers(int a2, unsigned int * a3, int a4)
+int VoxelRenderer::InitializeBuffers(int a2, unsigned int * a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

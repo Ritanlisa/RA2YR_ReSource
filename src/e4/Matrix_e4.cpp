@@ -4,7 +4,7 @@
 #include "e4/classes/Math_e4.hpp"
 
 // 0x5AE860
-void Matrix3x4::Identity()
+int Matrix3x4::Identity()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

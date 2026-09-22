@@ -263,7 +263,7 @@ LABEL_16:
 
 // 0x5ADD10
 namespace gamemd {
-void E4Recv_5ADD10::Map_Delete()
+int E4Recv_5ADD10::Map_Delete()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1439,7 +1439,7 @@ void sub_6DA980()
 
 // 0x769E30
 namespace gamemd {
-void Map_WorldDominationTour_20::Release(int a2, unsigned int * a3)
+int Map_WorldDominationTour_20::Release(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1573,7 +1573,7 @@ void * Map_WorldDominationTour_20::Constructor_0(char a2)
 
 // 0x76A3F0
 namespace gamemd {
-void Map_WorldDominationTour_43::Release(int a2, char * a3)
+int Map_WorldDominationTour_43::Release(int a2, char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2408,7 +2408,7 @@ unsigned int * Map_WorldDominationTour_20::Seek(unsigned int * a2, int a3)
 
 // 0x769D20
 namespace gamemd {
-void Map_WorldDominationTour_28::Seek(int a2)
+int Map_WorldDominationTour_28::Seek(int a2)
  {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2435,7 +2435,7 @@ unsigned int * Map_WorldDominationTour_43::Seek(unsigned int * a2, int a3)
 
 // 0x769D60
 namespace gamemd {
-void Map_WorldDominationTour_38::AddRef()
+int Map_WorldDominationTour_38::AddRef()
  {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

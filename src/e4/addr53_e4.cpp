@@ -2292,7 +2292,7 @@ void sub_538D40()
 
 // 0x538E70
 namespace gamemd {
-void E4Recv_538E70::sub_538E70(double a2)
+int E4Recv_538E70::sub_538E70(double a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

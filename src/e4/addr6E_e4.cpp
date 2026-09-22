@@ -45,7 +45,7 @@
 
 // 0x6E0250
 namespace gamemd {
-void E4Recv_6E0250::sub_6E0250(int a2, int a3, int a4, int a5)
+int E4Recv_6E0250::sub_6E0250(int a2, int a3, int a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -57,7 +57,7 @@ void E4Recv_6E0250::sub_6E0250(int a2, int a3, int a4, int a5)
 
 // 0x6E0270
 namespace gamemd {
-void E4Recv_6E0270::sub_6E0270(int a2, int a3, int a4, int a5)
+int E4Recv_6E0270::sub_6E0270(int a2, int a3, int a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -69,7 +69,7 @@ void E4Recv_6E0270::sub_6E0270(int a2, int a3, int a4, int a5)
 
 // 0x6E0290
 namespace gamemd {
-void E4Recv_6E0290::sub_6E0290(int a2, int a3, int a4, int a5)
+int E4Recv_6E0290::sub_6E0290(int a2, int a3, int a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -90,10 +90,9 @@ void globalHelper_0E2050()
 
 // 0x6E2790
 namespace gamemd {
-void E4Recv_6E2790::sub_6E2790(int a2, int a3, int a4, int a5)
+int E4Recv_6E2790::sub_6E2790(int a2, int a3, int a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_6E2790(int *this, int a2, int a3, int a4, int a5)
 {
   int GroundHeight; // [esp+10h] [ebp-4h]
 
@@ -126,10 +125,9 @@ void CreateHouseClass()
 
 // 0x6E3380
 namespace gamemd {
-void E4Recv_6E3380::sub_6E3380(int a2, int a3, int a4, int a5)
+int E4Recv_6E3380::sub_6E3380(int a2, int a3, int a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_6E3380(int *this, int a2, int a3, int a4, int a5)
 {
   int GroundHeight; // [esp+Ch] [ebp-4h]
 
@@ -148,7 +146,7 @@ void sub_6E3380(int *this, int a2, int a3, int a4, int a5)
 
 // 0x6E37F0
 namespace gamemd {
-void E4Recv_6E37F0::sub_6E37F0(int a2, int a3, int a4, ObjectClass * aP4)
+int E4Recv_6E37F0::sub_6E37F0(int a2, int a3, int a4, ObjectClass * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

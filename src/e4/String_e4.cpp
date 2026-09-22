@@ -62,7 +62,7 @@ void String::Release()
 
 // 0x5D0380
 namespace gamemd {
-void String::SplitComma(ObjectClass * aP1)
+int String::SplitComma(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -144,7 +144,7 @@ LABEL_6:
 
 // 0x763690
 namespace gamemd {
-void String::To_Waypoint()
+int String::To_Waypoint()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -199,7 +199,7 @@ unsigned int String::Length()
 
 // 0x7B57A0
 namespace gamemd {
-void String::Replace(char * SubStr, const char * a3)
+int String::Replace(char * SubStr, const char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -327,7 +327,7 @@ LABEL_35:
 
 // 0x7B5F10
 namespace gamemd {
-void String::Tokenize(int a2, ObjectClass * aP2, ObjectClass * aP3)
+int String::Tokenize(int a2, ObjectClass * aP2, ObjectClass * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -412,7 +412,7 @@ void String::Tokenize(int a2, ObjectClass * aP2, ObjectClass * aP3)
 
 // 0x7B7A60
 namespace gamemd {
-void String::Tokenize2(int a2, wchar_t * Str, void ** a4)
+int String::Tokenize2(int a2, wchar_t * Str, void ** a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

@@ -226,7 +226,7 @@ void ScenarioClass_dispatchEvents()
 
 // 0x5D6440
 namespace gamemd {
-void ScenarioClass::MissionStubReturnZero3()
+int ScenarioClass::MissionStubReturnZero3()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -237,7 +237,7 @@ void ScenarioClass::MissionStubReturnZero3()
 
 // 0x5D6BE0
 namespace gamemd {
-void ScenarioClass::AssignStartPositions(char a1)
+int ScenarioClass::AssignStartPositions(char a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -270,7 +270,7 @@ void ScenarioClass::AssignStartPositions(char a1)
 
 // 0x6832C0
 namespace gamemd {
-void ScenarioClass::Constructor()
+int ScenarioClass::Constructor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -377,7 +377,7 @@ void ScenarioClass::Constructor()
 
 // 0x683AB0
 namespace gamemd {
-void ScenarioClass::LoadScenarioAndStart(AnimClass * Source, char a2, int a3)
+int ScenarioClass::LoadScenarioAndStart(AnimClass * Source, char a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -518,7 +518,7 @@ LABEL_21:
 
 // 0x683EB0
 namespace gamemd {
-void ScenarioClass::CleanupTemporary()
+int ScenarioClass::CleanupTemporary()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1292,7 +1292,7 @@ LABEL_124:
 
 // 0x689E90
 namespace gamemd {
-void ScenarioClass::ReadMapINI(CCINIClass * aP1)
+int ScenarioClass::ReadMapINI(CCINIClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

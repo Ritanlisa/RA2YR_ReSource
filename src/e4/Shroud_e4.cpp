@@ -3,7 +3,7 @@
 #include "e4/e4_globals.hpp"
 
 // 0x654490
-void Shroud::ProcessCellVisibility(MouseClass * aP1)
+int Shroud::ProcessCellVisibility(MouseClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

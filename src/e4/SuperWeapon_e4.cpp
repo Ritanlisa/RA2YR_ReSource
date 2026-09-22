@@ -4,7 +4,7 @@
 
 // 0x6CC2A0
 namespace gamemd {
-void SuperWeapon::GetField10()
+int SuperWeapon::GetField10()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

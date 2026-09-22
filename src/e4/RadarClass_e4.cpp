@@ -4,7 +4,7 @@
 
 // 0x652C00
 namespace gamemd {
-void RadarClass::Destruct()
+int RadarClass::Destruct()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -135,7 +135,7 @@ void RadarClass_RecreateSurface()
 
 // 0x6A8420
 namespace gamemd {
-void RadarClass::GetBlip(int a1, int a2, int a3, ObjectClass * aP3)
+int RadarClass::GetBlip(int a1, int a2, int a3, ObjectClass * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

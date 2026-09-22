@@ -500,7 +500,7 @@ int WDT_InitGameOptions()
 
 // 0x7667E0
 namespace gamemd {
-void E4Recv_7667E0::sub_7667E0()
+int E4Recv_7667E0::sub_7667E0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -511,7 +511,7 @@ void E4Recv_7667E0::sub_7667E0()
 
 // 0x7667F0
 namespace gamemd {
-void E4Recv_7667F0::sub_7667F0()
+int E4Recv_7667F0::sub_7667F0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

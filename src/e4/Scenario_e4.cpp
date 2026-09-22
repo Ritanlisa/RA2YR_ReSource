@@ -21,7 +21,7 @@
 
 // 0x44F820
 namespace gamemd {
-void Scenario::ReadTeams()
+int Scenario::ReadTeams()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -295,7 +295,7 @@ void Scenario::ReadTeams()
 
 // 0x4C6180
 namespace gamemd {
-void Scenario::CopyLocalScenarioData()
+int Scenario::CopyLocalScenarioData()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -329,7 +329,7 @@ void Scenario::CopyLocalScenarioData()
 
 // 0x50D610
 namespace gamemd {
-void Scenario::ProcessSidebarUnits()
+int Scenario::ProcessSidebarUnits()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -370,7 +370,7 @@ void Scenario::ProcessSidebarUnits()
 
 // 0x552B10
 namespace gamemd {
-void Scenario::ComputeDisplayPosition()
+int Scenario::ComputeDisplayPosition()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -839,7 +839,7 @@ LABEL_82:
 
 // 0x597A10
 namespace gamemd {
-void Scenario::LoadOrReloadOptions(IUnknown * aP1)
+int Scenario::LoadOrReloadOptions(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -890,7 +890,7 @@ void Scenario::SetByte96()
 
 // 0x684240
 namespace gamemd {
-void Scenario::ClearScreen()
+int Scenario::ClearScreen()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -910,7 +910,7 @@ void Scenario::ClearScreen()
 
 // 0x684620
 namespace gamemd {
-void Scenario::LoadWithProgress()
+int Scenario::LoadWithProgress()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

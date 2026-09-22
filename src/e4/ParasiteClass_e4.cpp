@@ -11,7 +11,7 @@
 // 0x629210
 namespace ra2 {
 namespace game {
-void ParasiteClass::Constructor()
+int ParasiteClass::Constructor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -97,7 +97,7 @@ P ParasiteClass::ParasiteClass(TechnoClass * aP1)
 // 0x6294D0
 namespace ra2 {
 namespace game {
-void ParasiteClass::Attach(int * a2)
+int ParasiteClass::Attach(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -520,7 +520,7 @@ LABEL_8:
 // 0x62A980
 namespace ra2 {
 namespace game {
-void ParasiteClass::TryInfect(unsigned int * a2)
+int ParasiteClass::TryInfect(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -600,7 +600,7 @@ void ParasiteClass::TryInfect(unsigned int * a2)
 // 0x62AB40
 namespace ra2 {
 namespace game {
-void ParasiteClass::CanExistOnVictimCell()
+int ParasiteClass::CanExistOnVictimCell()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -701,7 +701,7 @@ void * ParasiteClass::UpdateParasite(char a2)
 // 0x62BD50
 namespace ra2 {
 namespace game {
-void ParasiteClass::Update()
+int ParasiteClass::Update()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

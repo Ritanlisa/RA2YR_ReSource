@@ -8,7 +8,7 @@
 
 // 0x6D0680
 namespace gamemd {
-void BlowStraw_29::Seek(TabClass * aP1, unsigned int * a2)
+int BlowStraw_29::Seek(TabClass * aP1, unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

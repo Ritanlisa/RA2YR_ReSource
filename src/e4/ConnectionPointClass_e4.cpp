@@ -5,7 +5,7 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 
 // 0x4A0760
-void ConnectionPointClass::GetConnectionInterface(unsigned int * a1, int a2)
+int ConnectionPointClass::GetConnectionInterface(unsigned int * a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -95,7 +95,7 @@ unsigned int * ConnectionPointClass::Construct(unsigned int * a1, ConnectionPoin
 
 // 0x4A1280
 namespace gamemd {
-void ConnectionPointClass_9::Release(int a2, unsigned int * a3)
+int ConnectionPointClass_9::Release(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

@@ -5,7 +5,7 @@
 
 // 0x5D4B20
 namespace gamemd {
-void WideString::WordWrap(wchar_t * a0, CampaignScore * aP1, int a3, CampaignScore * aP3, int a5)
+int WideString::WordWrap(wchar_t * a0, CampaignScore * aP1, int a3, CampaignScore * aP3, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -69,7 +69,7 @@ LABEL_18:
 
 // 0x7B73F0
 namespace gamemd {
-void WideString::Replace(CampaignScore * aP1, wchar_t * String)
+int WideString::Replace(CampaignScore * aP1, wchar_t * String)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

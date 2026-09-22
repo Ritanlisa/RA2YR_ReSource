@@ -30,7 +30,7 @@ unsigned int * BuildingLightClass::FindTarget(CCINIClass * aP1)
   this->q0B4 = 0; /*0x436c06*/
   if ( aP1 == (CCINIClass *)3 ) /*0x436c0c*/
   {
-    int v4 = *(_DWORD *)(*(int (__thiscall **)(_DWORD *, _DWORD **))(*this + 440))(this, &nextArrayIndex); /*0x436c21*/
+    int v4 = *(_DWORD *)this->GetCellCoords_Alt(&nextArrayIndex); /*0x436c21*/
     v5 = (ObjectClass *)v3->FollowingObject; /*0x436c23*/
     int v25 = v4; /*0x436c29*/
     v19 = (TechnoClass *)&unk_98967F; /*0x436c2d*/

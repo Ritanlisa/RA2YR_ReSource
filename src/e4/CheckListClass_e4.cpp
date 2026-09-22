@@ -78,7 +78,7 @@ void CheckListClass_OnClick()
 } // namespace gamemd
 
 // 0x4886B0
-void CheckListClass::COMStub()
+int CheckListClass::COMStub()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

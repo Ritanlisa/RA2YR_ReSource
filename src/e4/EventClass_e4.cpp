@@ -18,7 +18,7 @@
 
 // 0x48B390
 namespace gamemd {
-void EventClass::serializeEvent()
+int EventClass::serializeEvent()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -55,7 +55,7 @@ void EventClass::serializeEvent()
 
 // 0x48BAD0
 namespace gamemd {
-void EventClass::SetData(int a2, int a3, int a4, int a5, int a6)
+int EventClass::SetData(int a2, int a3, int a4, int a5, int a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1016,7 +1016,7 @@ LABEL_2:
 
 // 0x542280
 namespace gamemd {
-void EventClass::deserializeEvent(int a2, IUnknown * aP2)
+int EventClass::deserializeEvent(int a2, IUnknown * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1038,7 +1038,7 @@ void EventClass::deserializeEvent(int a2, IUnknown * aP2)
 
 // 0x54F200
 namespace gamemd {
-void EventClass::Enqueue(unsigned short a2, char a3)
+int EventClass::Enqueue(unsigned short a2, char a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1084,7 +1084,7 @@ void EventClass::Enqueue(unsigned short a2, char a3)
 
 // 0x5F19C0
 namespace gamemd {
-void EventClass::CheckFlag()
+int EventClass::CheckFlag()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1099,7 +1099,7 @@ void EventClass::CheckFlag()
 
 // 0x664440
 namespace gamemd {
-void EventClass::validateEventType()
+int EventClass::validateEventType()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

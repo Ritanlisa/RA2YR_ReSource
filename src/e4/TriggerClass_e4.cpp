@@ -77,7 +77,7 @@ char TriggerClass::FindByEventType(char a1)
 
 // 0x71FA30
 namespace gamemd {
-void TriggerClass::GetValue()
+int TriggerClass::GetValue()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -88,7 +88,7 @@ void TriggerClass::GetValue()
 
 // 0x7264C0
 namespace gamemd {
-void TriggerClass::RegisterEvent(TriggerClass * aP1, TechnoClass * aP2, char a4, char a5, int a6)
+int TriggerClass::RegisterEvent(TriggerClass * aP1, TechnoClass * aP2, char a4, char a5, int a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

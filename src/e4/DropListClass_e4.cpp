@@ -31,7 +31,7 @@ void DropListClass_OnKeyUp()
 } // namespace gamemd
 
 // 0x4B55A0
-void DropListClass::COMStub()
+int DropListClass::COMStub()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

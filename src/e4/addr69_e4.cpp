@@ -35,7 +35,7 @@
 
 // 0x690400
 namespace gamemd {
-void E4Recv_690400::sub_690400()
+int E4Recv_690400::sub_690400()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1477,7 +1477,7 @@ LABEL_20:
 
 // 0x69B690
 namespace gamemd {
-void E4Recv_69B690::sub_69B690()
+int E4Recv_69B690::sub_69B690()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

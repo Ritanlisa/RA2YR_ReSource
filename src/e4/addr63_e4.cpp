@@ -586,7 +586,7 @@ void PhoneEditorDialogProc(HWND hWnd, unsigned int a2, unsigned int a3, unsigned
 
 // 0x631300
 namespace gamemd {
-void E4Recv_631300::sub_631300()
+int E4Recv_631300::sub_631300()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -818,7 +818,7 @@ LABEL_11:
 
 // 0x635560
 namespace gamemd {
-void E4Recv_635560::sub_635560(int a2)
+int E4Recv_635560::sub_635560(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -884,7 +884,7 @@ void E4Recv_635560::sub_635560(int a2)
 
 // 0x635680
 namespace gamemd {
-void E4Recv_635680::sub_635680(int a2)
+int E4Recv_635680::sub_635680(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -952,7 +952,7 @@ void E4Recv_635680::sub_635680(int a2)
 
 // 0x636F00
 namespace gamemd {
-void E4Recv_636F00::sub_636F00(int a2, int a3)
+int E4Recv_636F00::sub_636F00(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1181,7 +1181,7 @@ LABEL_37:
 
 // 0x6375B0
 namespace gamemd {
-void E4Recv_6375B0::sub_6375B0()
+int E4Recv_6375B0::sub_6375B0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2663,7 +2663,7 @@ void RenderScriptActionHighlight()
 
 // 0x63CF10
 namespace gamemd {
-void E4Recv_63CF10::sub_63CF10()
+int E4Recv_63CF10::sub_63CF10()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2686,7 +2686,7 @@ void E4Recv_63CF10::sub_63CF10()
 
 // 0x63CFC0
 namespace gamemd {
-void E4Recv_63CFC0::sub_63CFC0()
+int E4Recv_63CFC0::sub_63CFC0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

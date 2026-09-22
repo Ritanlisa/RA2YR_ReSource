@@ -10,7 +10,7 @@
 #include "e4/classes/Vector_e4.hpp"
 
 // 0x45DD90
-void BuildingTypeClass::ConstructFull(char * Source)
+int BuildingTypeClass::ConstructFull(char * Source)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -378,7 +378,7 @@ unsigned int * BuildingTypeClass::loadBuildingProperty_b_545E520(ObjectTypeClass
 }
 
 // 0x45E580
-void BuildingTypeClass::CleanupMembers(AbstractClass * a1, AbstractClass * a2)
+int BuildingTypeClass::CleanupMembers(AbstractClass * a1, AbstractClass * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -570,7 +570,7 @@ void BuildingTypeClass::LoadRepairAnimations(void * this)
 }
 
 // 0x45F230
-void BuildingTypeClass::LoadAnimations(ObjectTypeClass * aP1)
+int BuildingTypeClass::LoadAnimations(ObjectTypeClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1021,7 +1021,7 @@ void BuildingTypeClass::LoadVoxel()
 }
 
 // 0x464B30
-void BuildingTypeClass::UpdatePower()
+int BuildingTypeClass::UpdatePower()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1201,7 +1201,7 @@ void BuildingTypeClass::UpdatePower()
 }
 
 // 0x465010
-void BuildingTypeClass::SaveLoad_Prefix()
+int BuildingTypeClass::SaveLoad_Prefix()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1378,7 +1378,7 @@ void BuildingTypeClass::IsPowered()
 }
 
 // 0x50B760
-void BuildingTypeClass::ProcessData(unsigned int * a2, short * a3)
+int BuildingTypeClass::ProcessData(unsigned int * a2, short * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1422,7 +1422,7 @@ LABEL_8:
 }
 
 // 0x594010
-void BuildingTypeClass::CheckPlacementArea(ObjectClass * aP1, ObjectClass * aP2)
+int BuildingTypeClass::CheckPlacementArea(ObjectClass * aP1, ObjectClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1620,7 +1620,7 @@ unsigned int * BuildingTypeClass::Construct(AbstractClass * aP1)
 }
 
 // 0x645430
-void BuildingTypeClass::FindOrCreateEx()
+int BuildingTypeClass::FindOrCreateEx()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1661,7 +1661,7 @@ LABEL_5:
 }
 
 // 0x7171A0
-void BuildingTypeClass::ProcessPower(AbstractClass * aP1)
+int BuildingTypeClass::ProcessPower(AbstractClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1880,7 +1880,7 @@ unsigned int * BuildingTypeClass::GetUpgradeOffset(unsigned int * a2)
 }
 
 // 0x746000
-void BuildingTypeClass::IsPlacementValid(IUnknown * aP1, IUnknown * aP2)
+int BuildingTypeClass::IsPlacementValid(IUnknown * aP1, IUnknown * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

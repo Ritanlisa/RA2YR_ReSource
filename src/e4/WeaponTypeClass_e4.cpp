@@ -32,7 +32,7 @@ LABEL_6:
 }
 
 // 0x6CEEF0
-void WeaponTypeClass::Process()
+int WeaponTypeClass::Process()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -151,7 +151,7 @@ unsigned int * WeaponTypeClass::Constructor(ObjectClass * aP1)
 }
 
 // 0x771F50
-void WeaponTypeClass::Destructor()
+int WeaponTypeClass::Destructor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -206,7 +206,7 @@ void WeaponTypeClass::Destructor()
 }
 
 // 0x772AE0
-void WeaponTypeClass::ProcessPower(int * a2)
+int WeaponTypeClass::ProcessPower(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

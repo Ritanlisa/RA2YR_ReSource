@@ -4,7 +4,7 @@
 #include "e4/classes/House_e4.hpp"
 
 // 0x4CC9A0
-void FlyLocomotionClass::LocomotionClass()
+int FlyLocomotionClass::LocomotionClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

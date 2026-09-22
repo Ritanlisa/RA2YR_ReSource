@@ -3,7 +3,7 @@
 #include "e4/e4_globals.hpp"
 
 // 0x487E00
-void MovementAI::IsPathMovementAllowed()
+int MovementAI::IsPathMovementAllowed()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -24,7 +24,7 @@ void MovementAI::IsPathMovementAllowed()
 }
 
 // 0x4A5150
-void MovementAI::IsProgressAtEnd()
+int MovementAI::IsProgressAtEnd()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -48,7 +48,7 @@ void MovementAI::IsProgressAtEnd()
 }
 
 // 0x4A5360
-void MovementAI::Check()
+int MovementAI::Check()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

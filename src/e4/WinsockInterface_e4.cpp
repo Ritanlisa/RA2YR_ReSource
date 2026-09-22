@@ -77,7 +77,7 @@ void * WinsockInterface::ProcessPacket(int a2)
 
 // 0x7B1DE0
 namespace gamemd {
-void WinsockInterface::Init()
+int WinsockInterface::Init()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

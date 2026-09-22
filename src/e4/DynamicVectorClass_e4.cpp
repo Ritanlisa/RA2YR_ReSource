@@ -14,7 +14,7 @@
 
 // 0x525110
 namespace gamemd {
-void DynamicVectorClass_AnimType::Release(int a2, unsigned int * a3)
+int DynamicVectorClass_AnimType::Release(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -64,7 +64,7 @@ void DynamicVectorClass_AnimType::Release(int a2, unsigned int * a3)
 
 // 0x589190
 namespace gamemd {
-void DynamicVectorClass_SubzoneConn::Release(int a2, char * a3)
+int DynamicVectorClass_SubzoneConn::Release(int a2, char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -160,7 +160,7 @@ void DynamicVectorClass_SubzoneConn::Release(int a2, char * a3)
 
 // 0x517590
 namespace gamemd {
-void DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::HashEntryCompare(unsigned char * a2)
+int DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::HashEntryCompare(unsigned char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -171,7 +171,7 @@ void DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::HashEntryCompare
 
 // 0x6284A0
 namespace gamemd {
-void DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::SetCapacity_0(int a2, char * a3)
+int DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::SetCapacity_0(int a2, char * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -271,7 +271,7 @@ void DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::SetCapacity_0(in
 
 // 0x628BB0
 namespace gamemd {
-void DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Remove(CCINIClass * aP1, unsigned char * a2)
+int DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Remove(CCINIClass * aP1, unsigned char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

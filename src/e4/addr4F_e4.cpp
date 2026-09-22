@@ -451,7 +451,7 @@ LABEL_22:
 
 // 0x4F2300
 namespace gamemd {
-void E4Recv_4F2300::ProcessGraphicMenu()
+int E4Recv_4F2300::ProcessGraphicMenu()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -595,7 +595,7 @@ void E4Recv_4F2300::ProcessGraphicMenu()
 
 // 0x4F2640
 namespace gamemd {
-void E4Recv_4F2640::sub_4F2640(int (__thiscall ***a2)(unsigned int, int) a1)
+int E4Recv_4F2640::sub_4F2640(int (__thiscall ***a2)(unsigned int, int) a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -867,7 +867,7 @@ void ParseINIGadgetDefinition(ObjectClass * aP0, ObjectClass * edx0, unsigned in
 
 // 0x4F3460
 namespace gamemd {
-void E4Recv_4F3460::sub_4F3460(int aP1, ReferenceCounted * aP2, unsigned int * a3, ReferenceCounted * aP4, const char ** a5, ReferenceCounted * aP6, const char ** a7, ReferenceCounted * aP8, const char ** a9)
+int E4Recv_4F3460::sub_4F3460(int aP1, ReferenceCounted * aP2, unsigned int * a3, ReferenceCounted * aP4, const char ** a5, ReferenceCounted * aP6, const char ** a7, ReferenceCounted * aP8, const char ** a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
         int this,
@@ -981,10 +981,9 @@ void sub_4F38B0()
 
 // 0x4F3AB0
 namespace gamemd {
-void E4Recv_4F3AB0::sub_4F3AB0(int a2)
+int E4Recv_4F3AB0::sub_4F3AB0(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void sub_4F3AB0(_BYTE *this, int a2)
 {
   int result; // eax
 
@@ -1035,7 +1034,7 @@ unsigned int * sub_4F3B80(ObjectClass * a1, ObjectClass * edx0)
 
 // 0x4F3D40
 namespace gamemd {
-void E4Recv_4F3D40::sub_4F3D40()
+int E4Recv_4F3D40::sub_4F3D40()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1140,7 +1139,7 @@ void sub_4F4E53()
 
 // 0x4FA210
 namespace gamemd {
-void E4Recv_4FA210::sub_4FA210(int a2, int a3)
+int E4Recv_4FA210::sub_4FA210(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1210,7 +1209,7 @@ void E4Recv_4FA210::sub_4FA210(int a2, int a3)
 
 // 0x4FBD80
 namespace gamemd {
-void E4Recv_4FBD80::sub_4FBD80(int a2, int a3)
+int E4Recv_4FBD80::sub_4FBD80(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

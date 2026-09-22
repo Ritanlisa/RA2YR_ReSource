@@ -6,7 +6,7 @@
 #include "e4/classes/Vector_e4.hpp"
 
 // 0x4791F0
-void LinkedList::LoadScenarioMixFiles(INIClass * aP0, int aP2, int a3, int a4)
+int LinkedList::LoadScenarioMixFiles(INIClass * aP0, int aP2, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -260,7 +260,7 @@ unsigned int * LinkedList::FindPrev()
 }
 
 // 0x5566A0
-void LinkedList::InsertAfter(int a2)
+int LinkedList::InsertAfter(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -292,7 +292,7 @@ unsigned int * LinkedList::Attach(int a2)
 }
 
 // 0x556700
-void LinkedList::Append(int a2)
+int LinkedList::Append(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -308,7 +308,7 @@ void LinkedList::Append(int a2)
 }
 
 // 0x556730
-void LinkedList::RemoveNode()
+int LinkedList::RemoveNode()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -387,7 +387,7 @@ void LinkedList::RelinkNode(int a2)
 }
 
 // 0x6E5380
-void LinkedList::Contains(IUnknown * aP1)
+int LinkedList::Contains(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

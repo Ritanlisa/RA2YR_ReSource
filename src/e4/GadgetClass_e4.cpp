@@ -31,7 +31,7 @@ void * GadgetClass::Construct(GadgetClass * aP1, GadgetClass * aP2, GadgetClass 
 
 // 0x4E1390
 namespace gamemd {
-void GadgetClass::Dtor()
+int GadgetClass::Dtor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -59,7 +59,7 @@ void GadgetClass::Dtor()
 
 // 0x557920
 namespace gamemd {
-void GadgetClass::DrawBuildingPlacement(ControlClass * aP1)
+int GadgetClass::DrawBuildingPlacement(ControlClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -105,7 +105,7 @@ void GadgetClass::DrawBuildingPlacement(ControlClass * aP1)
 
 // 0x60AAB0
 namespace gamemd {
-void GadgetClass::FindByWindow(HWND hWnd, LPARAM a2)
+int GadgetClass::FindByWindow(HWND hWnd, LPARAM a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -295,7 +295,7 @@ void GadgetClass::SetTooltip(CCINIClass * aP1)
 
 // 0x723EA0
 namespace gamemd {
-void GadgetClass::Show()
+int GadgetClass::Show()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

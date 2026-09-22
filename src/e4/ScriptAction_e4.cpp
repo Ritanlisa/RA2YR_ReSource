@@ -51,7 +51,7 @@ void * ScriptAction::InitActionFields(int a2, int a3, char a4, char a5, int a6, 
 
 // 0x633FA0
 namespace gamemd {
-void ScriptAction::CreatePlacementAction(AbstractClass * aP1, const void * a2)
+int ScriptAction::CreatePlacementAction(AbstractClass * aP1, const void * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -163,7 +163,7 @@ unsigned int * ScriptAction::GetScreenPos(unsigned int * a2)
 
 // 0x634550
 namespace gamemd {
-void ScriptAction::GetActionCoordinates(int a2, int a3, int a4)
+int ScriptAction::GetActionCoordinates(int a2, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -205,7 +205,7 @@ unsigned int * ScriptAction::FindItemByValue(int a2)
 
 // 0x6349B0
 namespace gamemd {
-void ScriptAction::FindSquadMember()
+int ScriptAction::FindSquadMember()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -300,7 +300,7 @@ void ScriptAction::FindSquadMember()
 
 // 0x634CC0
 namespace gamemd {
-void ScriptAction::FindBuildingMatch(AbstractClass * aP1)
+int ScriptAction::FindBuildingMatch(AbstractClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -389,7 +389,7 @@ void ScriptAction::FindBuildingMatch(AbstractClass * aP1)
 
 // 0x634E10
 namespace gamemd {
-void ScriptAction::PlaceObject(AbstractClass * aP1)
+int ScriptAction::PlaceObject(AbstractClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -541,7 +541,7 @@ LABEL_30:
 
 // 0x6351E0
 namespace gamemd {
-void ScriptAction::DecrementRefCount(int a2)
+int ScriptAction::DecrementRefCount(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -585,7 +585,7 @@ void * ScriptAction::Constructor(AbstractClass * aP1)
 
 // 0x636570
 namespace gamemd {
-void ScriptAction::Check()
+int ScriptAction::Check()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -605,7 +605,7 @@ void ScriptAction::Check()
 
 // 0x636CE0
 namespace gamemd {
-void ScriptAction::ClearBuildingState()
+int ScriptAction::ClearBuildingState()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -663,7 +663,7 @@ void ScriptAction::ClearBuildingState()
 
 // 0x637E00
 namespace gamemd {
-void ScriptAction::DispatchBuilding()
+int ScriptAction::DispatchBuilding()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -845,7 +845,7 @@ void ScriptAction::DispatchBuilding()
 
 // 0x638C70
 namespace gamemd {
-void ScriptAction::IsBuildingTypeMatch()
+int ScriptAction::IsBuildingTypeMatch()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -965,7 +965,7 @@ int ScriptAction::ExecutePlacement(int a1, int a2, int a3, long long a4, int a5,
 
 // 0x63A8E0
 namespace gamemd {
-void ScriptAction::HitTest(MouseClass * aP0, int a2)
+int ScriptAction::HitTest(MouseClass * aP0, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1044,7 +1044,7 @@ LABEL_22:
 
 // 0x63B550
 namespace gamemd {
-void ScriptAction::ProcessIdleAction()
+int ScriptAction::ProcessIdleAction()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1436,7 +1436,7 @@ LABEL_55:
 
 // 0x63CE40
 namespace gamemd {
-void ScriptAction::DrawPlacementMarker()
+int ScriptAction::DrawPlacementMarker()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1478,7 +1478,7 @@ void ScriptAction::DrawPlacementMarker()
 
 // 0x6DD300
 namespace gamemd {
-void ScriptAction::Serialize(char * Buffer)
+int ScriptAction::Serialize(char * Buffer)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1839,7 +1839,7 @@ unsigned int * ScriptAction::ReadParameter()
 
 // 0x6E3B60
 namespace gamemd {
-void ScriptAction::GetActionTypeInfo()
+int ScriptAction::GetActionTypeInfo()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2091,7 +2091,7 @@ unsigned char * ScriptAction::GetWaypointCoords(IUnknown * aP1)
 
 // 0x6FFBE0
 namespace gamemd {
-void ScriptAction::ExecuteMissionCmd()
+int ScriptAction::ExecuteMissionCmd()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

@@ -904,7 +904,7 @@ LABEL_15:
 
 // 0x5BCE10
 namespace gamemd {
-void E4Recv_5BCE10::sub_5BCE10(int a2)
+int E4Recv_5BCE10::sub_5BCE10(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

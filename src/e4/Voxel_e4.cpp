@@ -12,7 +12,7 @@
 
 // 0x748220
 namespace gamemd {
-void Voxel::BuildIndexTable()
+int Voxel::BuildIndexTable()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -218,7 +218,7 @@ void * Voxel::RenderFrame()
 
 // 0x754CB0
 namespace gamemd {
-void Voxel::Projection_Setup()
+int Voxel::Projection_Setup()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -466,7 +466,7 @@ void Voxel::Projection_Setup()
 
 // 0x755DB0
 namespace gamemd {
-void Voxel::SortDepth(ObjectClass * aP1, int a3)
+int Voxel::SortDepth(ObjectClass * aP1, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -827,7 +827,7 @@ LABEL_70:
 
 // 0x756590
 namespace gamemd {
-void Voxel::ProcessColor(unsigned int * a2, float * a3)
+int Voxel::ProcessColor(unsigned int * a2, float * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -903,7 +903,7 @@ void Voxel::ProcessColor(unsigned int * a2, float * a3)
 
 // 0x75C240
 namespace gamemd {
-void Voxel::DrawHelper(IUnknown * aP1)
+int Voxel::DrawHelper(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1075,7 +1075,7 @@ void Voxel::DrawHelper(IUnknown * aP1)
 
 // 0x75EDF0
 namespace gamemd {
-void Voxel::BlendShadowColor(int a2, WaveClass * aP2, int arg8, unsigned short * a4)
+int Voxel::BlendShadowColor(int a2, WaveClass * aP2, int arg8, unsigned short * a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1117,7 +1117,7 @@ void Voxel::BlendShadowColor(int a2, WaveClass * aP2, int arg8, unsigned short *
 
 // 0x75F140
 namespace gamemd {
-void Voxel::loadSectionData()
+int Voxel::loadSectionData()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1156,7 +1156,7 @@ void Voxel::loadSectionData()
 
 // 0x75F4C0
 namespace gamemd {
-void Voxel::renderSection(ObjectClass * aP1)
+int Voxel::renderSection(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1504,7 +1504,7 @@ void Voxel::ShadowCalc(WaveClass * aP1, int * a2)
 
 // 0x760190
 namespace gamemd {
-void Voxel::BlendColor(int a2, WaveClass * aP2, int arg8, unsigned short * a4)
+int Voxel::BlendColor(int a2, WaveClass * aP2, int arg8, unsigned short * a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1897,7 +1897,7 @@ void Voxel::FaceBlit()
 
 // 0x761640
 namespace gamemd {
-void Voxel::SectionProject(int * a2, int a3)
+int Voxel::SectionProject(int * a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2117,7 +2117,7 @@ void Voxel::SectionProject(int * a2, int a3)
 
 // 0x762070
 namespace gamemd {
-void Voxel::LightRender(AbstractClass ** a2, int a3)
+int Voxel::LightRender(AbstractClass ** a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2399,7 +2399,7 @@ void Voxel::LightRender(AbstractClass ** a2, int a3)
 
 // 0x762AF0
 namespace gamemd {
-void Voxel::TransformMatrix()
+int Voxel::TransformMatrix()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2608,7 +2608,7 @@ LABEL_22:
 
 // 0x763330
 namespace gamemd {
-void Voxel::freeSectionMemory(unsigned int * a2)
+int Voxel::freeSectionMemory(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

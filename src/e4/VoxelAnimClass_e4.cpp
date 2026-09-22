@@ -72,7 +72,7 @@ unsigned int VoxelAnimClass::ProcessFrame()
 
 // 0x7499F0
 namespace gamemd {
-void VoxelAnimClass::CleanupMembers()
+int VoxelAnimClass::CleanupMembers()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -124,7 +124,7 @@ void VoxelAnimClass::CleanupMembers()
 
 // 0x749B70
 namespace gamemd {
-void VoxelAnimClass::ProcessAnim(int * a2, unsigned int * a3)
+int VoxelAnimClass::ProcessAnim(int * a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -232,7 +232,7 @@ LABEL_6:
         int v24 = v14; /*0x749e97*/
         int v16 = *this; /*0x749e98*/
         v26 = v28 + v35; /*0x749ea0*/
-        int v17 = (*(int (__thiscall **)(int *))(v16 + 464))(this); /*0x749ea4*/
+        int v17 = this->GetMember41(); /*0x749ea4*/
         int v23 = -2 - ZCoordToScreenY(v17); /*0x749eb8*/
         int * v21 = (int *)BuildingClass::GetSHPFrame(v15, v9); /*0x749ec8*/
         int * v18 = Miles::DriverGet(); /*0x749ed6*/
@@ -256,10 +256,9 @@ void VoxelAnimClass_Update()
 
 // 0x74A970
 namespace gamemd {
-void VoxelAnimClass::SaveLoad_Prefix(ObjectClass * aP1, int aP1a)
+int VoxelAnimClass::SaveLoad_Prefix(ObjectClass * aP1, int aP1a)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-void VoxelAnimClass::SaveLoad_Prefix(ObjectClass *aP1, int aP1a)
 {
   ObjectClass *Register; // edi
 
@@ -293,7 +292,7 @@ void VoxelAnimClass::SaveLoad_Prefix(ObjectClass *aP1, int aP1a)
 
 // 0x74AA30
 namespace gamemd {
-void VoxelAnimClass::GetFrameCount(int * a2)
+int VoxelAnimClass::GetFrameCount(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -322,7 +321,7 @@ void VoxelAnimClass::GetFrameCount(int * a2)
 
 // 0x74AB30
 namespace gamemd {
-void VoxelAnimClass::LoadFrame()
+int VoxelAnimClass::LoadFrame()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -333,7 +332,7 @@ void VoxelAnimClass::LoadFrame()
 
 // 0x75AA90
 namespace gamemd {
-void VoxelAnimClass::Reset()
+int VoxelAnimClass::Reset()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -358,7 +357,7 @@ void VoxelAnimClass::Reset()
 
 // 0x75EBE0
 namespace gamemd {
-void VoxelAnimClass::Constructor()
+int VoxelAnimClass::Constructor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

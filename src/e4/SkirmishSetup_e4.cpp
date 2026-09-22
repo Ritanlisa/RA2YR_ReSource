@@ -66,7 +66,7 @@ void SkirmishSetup_Setup(HWND hWnd, int a2)
 } // namespace gamemd
 
 // 0x5E6920
-void SkirmishSetup::DlgProc(SkirmishDialog * aP0, int a2, HWND hWnd, signed int a4, WPARAM _3C, char * a5)
+int SkirmishSetup::DlgProc(SkirmishDialog * aP0, int a2, HWND hWnd, signed int a4, WPARAM _3C, char * a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -392,7 +392,7 @@ LABEL_28:
 }
 
 // 0x608260
-void SkirmishSetup::PlayButtonClickAnim()
+int SkirmishSetup::PlayButtonClickAnim()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

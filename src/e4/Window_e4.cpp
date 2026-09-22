@@ -3,7 +3,7 @@
 #include "e4/e4_globals.hpp"
 
 // 0x4A5110
-void Window::IsVisible()
+int Window::IsVisible()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

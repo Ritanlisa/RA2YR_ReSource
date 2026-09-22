@@ -9,7 +9,7 @@
 
 // 0x4B5B70
 namespace gamemd {
-void DroppodLocomotionClass::ILoco_Process(int a1)
+int DroppodLocomotionClass::ILoco_Process(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

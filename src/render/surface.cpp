@@ -323,7 +323,7 @@ DSurface::~DSurface()
 // Rect::Set(0,0,0,0) → Blit(zero, zero, src, zero, zero, option1, option2)
 REVERSE(0x4C1A90, "DSurface::BlitWhole: Thin wrapper around Blit", "None")
 // 0x4c1a90
-void DSurface::BlitWhole(class Surface* src, bool option1, bool option2)
+int DSurface::BlitWhole(class Surface* src, bool option1, bool option2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -820,13 +820,13 @@ bool DSurface::FillRectEx(
 // GetRect() → FillRectEx(clip, fill_rect, color)
 REVERSE(0x4BB5F0, "DSurface::FillRect: Fill rectangle with color", "None")
 // 0x4bb5f0
-void DSurface::FillRect(const RectangleStruct& fill_rect, uint32_t color)
+int DSurface::FillRect(const RectangleStruct& fill_rect, uint32_t color)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   _BYTE v6[16]; // [esp+4h] [ebp-10h] BYREF
-  int v4 = (*(int (__thiscall **)(int *, _BYTE *))(*this + 120))(this, v6);
+  int v4 = this->GetRect(v6);
   return DSurface::FillRectEx(this, v4, a2, a3);
 }
 
@@ -1041,7 +1041,7 @@ void* DSurface::Lock(int x, int y)
 // Also handles lost-surface recovery on unlock (re-lock cycle after Restore).
 REVERSE(0x4BAF40, "DSurface::Unlock: Release DDraw surface lock", "None")
 // 0x4baf40
-void DSurface::Unlock()
+int DSurface::Unlock()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1060,9 +1060,9 @@ void DSurface::Unlock()
         {
           int v4 = *this;
           this->q00C = 0;
-          (*(void (__thiscall **)(int *, _DWORD, _DWORD))(v4 + 92))(this, 0, 0);
+          this->Lock(0, 0);
           ++this->q00C;
-          (*(void (__thiscall **)(int *))(*this + 96))(this);
+          this->Unlock();
           this->q00C = v3;
         }
       }
@@ -1167,7 +1167,7 @@ retn
 // vtable[25] — Probes whether the surface can be locked via test-lock-then-unlock.
 REVERSE(0x4BAEC0, "DSurface::CanLock: Test if surface can be locked", "None")
 // 0x4baec0
-void DSurface::CanLock(uint32_t /*unk1*/, uint32_t /*unk2*/)
+int DSurface::CanLock(uint32_t /*unk1*/, uint32_t /*unk2*/)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1390,7 +1390,7 @@ Point2D Surface::DrawText(
 // vtable[9]  0x24 -- Lock(point) -> check BPP -> write pixel -> Unlock
 REVERSE(0x7baeb0, "XSurface::SetPixel: pixel write", "None")
 // 0x7baeb0
-void XSurface::SetPixel(const Point2D& point, uint32_t color)
+int XSurface::SetPixel(const Point2D& point, uint32_t color)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1461,7 +1461,7 @@ retn    8
 // vtable[10] 0x28 -- Lock(point) -> check BPP -> read pixel -> Unlock
 REVERSE(0x7bae60, "XSurface::GetPixel: pixel read", "None")
 // 0x7bae60
-void XSurface::GetPixel(const Point2D& point)
+int XSurface::GetPixel(const Point2D& point)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1535,7 +1535,7 @@ retn    4
 // vtable[34] 0x88 -- bounds check -> Lock -> check BPP -> write -> Unlock
 REVERSE(0x7baf90, "XSurface::PutPixel: pixel write + bounds", "Inject")
 // 0x7baf90
-void XSurface::PutPixel(const Point2D& point, uint16_t color, const RectangleStruct& clip_rect)
+int XSurface::PutPixel(const Point2D& point, uint16_t color, const RectangleStruct& clip_rect)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1636,7 +1636,7 @@ retn    0Ch
 // vtable[35] 0x8C -- bounds check -> Lock -> check BPP -> read -> Unlock
 REVERSE(0x7baf10, "XSurface::GetPixelAtCoords: pixel read + bounds", "Inject")
 // 0x7baf10
-void XSurface::GetPixelAtCoords(const Point2D& point, const RectangleStruct& clip_rect)
+int XSurface::GetPixelAtCoords(const Point2D& point, const RectangleStruct& clip_rect)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1986,7 +1986,7 @@ bool XSurface::DrawLineEx(
 // IDA: 0x7BA5E0 -- XSurface::DrawLine (48B)
 // vtable[12] 0x30 -- DrawLineEx wrapper with surface-level clip
 // 0x7ba5e0
-void XSurface::DrawLine(const Point2D& start, const Point2D& end, uint32_t color)
+int XSurface::DrawLine(const Point2D& start, const Point2D& end, uint32_t color)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2205,17 +2205,17 @@ bool XSurface::DrawDashedLine(
 // vtable[6] 0x18 -- fill entire surface with single color
 REVERSE(0x7bbab0, "XSurface::Fill: fill surface", "None")
 // 0x7bbab0
-void XSurface::Fill(uint32_t color)
+int XSurface::Fill(uint32_t color)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   int v3 = *this;
   _BYTE v7[20]; // [esp+8h] [ebp-20h] BYREF
-  int v4 = (*(int (__thiscall **)(int *, _BYTE *, int))(*this + 120))(this, v7, a2);
+  int v4 = this->GetRect(v7, a2);
   _BYTE v8[12]; // [esp+1Ch] [ebp-Ch] BYREF
-  int v5 = (*(int (__thiscall **)(int *, _BYTE *, int))(*this + 120))(this, v8, v4);
-  return (*(int (__thiscall **)(int *, int))(v3 + 16))(this, v5);
+  int v5 = this->GetRect(v8, v4);
+  return this->FillRectEx(v5);
 }
 
 /* ASM:
@@ -2270,7 +2270,7 @@ bool XSurface::DrawRectEx(
 // IDA: 0x7BAD90 -- XSurface::DrawRect (43B)
 // vtable[22] 0x58 -- DrawRectEx wrapper with surface-level clip
 // 0x7bad90
-void XSurface::DrawRect(const RectangleStruct& draw_rect, uint32_t color)
+int XSurface::DrawRect(const RectangleStruct& draw_rect, uint32_t color)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2381,7 +2381,7 @@ bool XSurface::DrawEllipseOutline(
 // vtable[5] 0x14 -- GetRect() → FillRectEx wrapper
 REVERSE(0x7BB020, "XSurface::FillRect: rect fill wrapper", "None")
 // 0x7bb020
-void XSurface::FillRect(const RectangleStruct& fill_rect, uint32_t color)
+int XSurface::FillRect(const RectangleStruct& fill_rect, uint32_t color)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2549,13 +2549,13 @@ extern "C" bool BlitterCopySimpleSHP(
 // vtable[1] 0x04 -- GetRect both surfaces → Blit with zero origins
 REVERSE(0x7BBAF0, "XSurface::BlitWhole: Blit wrapper with zero origins", "None")
 // 0x7bbaf0
-void XSurface::BlitWhole(Surface* src, bool option1, bool option2)
+int XSurface::BlitWhole(Surface* src, bool option1, bool option2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
 
   _BYTE v20[16]; // [esp+2Ch] [ebp-10h] BYREF
-  int * v5 = (int *)(*(int (__thiscall **)(int *, _BYTE *))(*this + 120))(this, v20);
+  int * v5 = (int *)this->GetRect(v20);
   int v16 = *v5;
   int v17 = v5[1];
   int v18 = v5[2];
@@ -2573,7 +2573,7 @@ void XSurface::BlitWhole(Surface* src, bool option1, bool option2)
   int v15 = v9;
   v12 = 0;
   v13 = 0;
-  return (*(int (__thiscall **)(int *, int *, int *, int *, int, int))(v10 + 8))(this, &v16, a2, &v12, a3, a4);
+  return this->BlitPart(&v16, a2, &v12, a3, a4);
 }
 
 /* ASM:

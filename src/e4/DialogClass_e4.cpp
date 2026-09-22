@@ -4,7 +4,7 @@
 
 // 0x5D6350
 namespace gamemd {
-void DialogClass::GetFlag()
+int DialogClass::GetFlag()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -15,7 +15,7 @@ void DialogClass::GetFlag()
 
 // 0x775BC0
 namespace gamemd {
-void DialogClass::Reposition(SkirmishDialog * aP0, LPARAM a2)
+int DialogClass::Reposition(SkirmishDialog * aP0, LPARAM a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

@@ -5,7 +5,7 @@
 
 // 0x6CF5A0
 namespace gamemd {
-void SwizzleManagerClass_19::Release(int a2, unsigned int * a3)
+int SwizzleManagerClass_19::Release(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -104,7 +104,7 @@ void SwizzleManagerClass_19::Release(int a2, unsigned int * a3)
 
 // 0x6CF720
 namespace gamemd {
-void SwizzleManagerClass_19::SetCapacity(int a2, unsigned int * a3)
+int SwizzleManagerClass_19::SetCapacity(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

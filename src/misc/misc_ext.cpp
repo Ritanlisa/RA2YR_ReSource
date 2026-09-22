@@ -2593,7 +2593,7 @@ void ReinforcementClass::CreateObject()
 }
 
 // 0x4cb890
-void ResultNode::Init()
+int ResultNode::Init()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

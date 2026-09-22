@@ -9,7 +9,7 @@
 
 // 0x765840
 namespace gamemd {
-void Campaign_WorldDominationTour_16::Release(int a2, unsigned int * a3)
+int Campaign_WorldDominationTour_16::Release(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -100,7 +100,7 @@ LABEL_14:
 
 // 0x765700
 namespace gamemd {
-void Campaign_WorldDominationTour_24::AddRef()
+int Campaign_WorldDominationTour_24::AddRef()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

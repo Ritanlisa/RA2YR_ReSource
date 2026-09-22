@@ -133,7 +133,7 @@ LABEL_28:
 
 // 0x583AD0
 namespace gamemd {
-void E4Recv_583AD0::sub_583AD0(int * a2)
+int E4Recv_583AD0::sub_583AD0(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -685,7 +685,7 @@ void unknown::ddtor()
 }
 
 // 0x5896A0
-void unknown::Read(unsigned short * a2)
+int unknown::Read(unsigned short * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1258,7 +1258,7 @@ unsigned int unknown::Write(int a2)
 }
 
 // 0x588D30
-void unknown::Seek(int a2, int a3)
+int unknown::Seek(int a2, int a3)
  {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

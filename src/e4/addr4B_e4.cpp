@@ -255,7 +255,7 @@ LABEL_39:
 
 // 0x4B69E0
 namespace gamemd {
-void E4Recv_4B69E0::sub_4B69E0(int a2)
+int E4Recv_4B69E0::sub_4B69E0(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -301,7 +301,7 @@ LABEL_11:
 
 // 0x4B6AB0
 namespace gamemd {
-void E4Recv_4B6AB0::sub_4B6AB0(int a2)
+int E4Recv_4B6AB0::sub_4B6AB0(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -351,7 +351,7 @@ LABEL_12:
 
 // 0x4B6BF0
 namespace gamemd {
-void E4Recv_4B6BF0::sub_4B6BF0()
+int E4Recv_4B6BF0::sub_4B6BF0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

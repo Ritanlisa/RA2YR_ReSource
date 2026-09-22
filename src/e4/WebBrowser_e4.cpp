@@ -8,7 +8,7 @@
 
 // 0x773600
 namespace gamemd {
-void WebBrowser::LoadURLFromRegistry(const char * a2)
+int WebBrowser::LoadURLFromRegistry(const char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -67,7 +67,7 @@ void WebBrowser::LoadURLFromRegistry(const char * a2)
 
 // 0x773E90
 namespace gamemd {
-void WebBrowser::ShowDialog()
+int WebBrowser::ShowDialog()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -142,7 +142,7 @@ void WebBrowser::ShowDialog()
 
 // 0x7740A0
 namespace gamemd {
-void WebBrowser::GoForward()
+int WebBrowser::GoForward()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

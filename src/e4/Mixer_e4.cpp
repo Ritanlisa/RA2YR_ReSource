@@ -5,7 +5,7 @@
 #include "e4/classes/AudioStream_e4.hpp"
 
 // 0x406060
-void Mixer::ReleaseChannel()
+int Mixer::ReleaseChannel()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

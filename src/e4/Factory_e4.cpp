@@ -7,7 +7,7 @@
 
 // 0x663D60
 namespace gamemd {
-void Factory::GetLinkedIndex(DynamicVector * aP1)
+int Factory::GetLinkedIndex(DynamicVector * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

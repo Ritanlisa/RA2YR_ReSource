@@ -17,7 +17,7 @@
 
 // 0x47C3D0
 namespace gamemd {
-void Object::FindClosestObjectCell(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3)
+int Object::FindClosestObjectCell(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -60,7 +60,7 @@ void Object::FindClosestObjectCell(IUnknown * aP1, IUnknown * aP2, IUnknown * aP
 
 // 0x47C5A0
 namespace gamemd {
-void Object::FindObjectCell(TechnoClass * aP1, char aP2)
+int Object::FindObjectCell(TechnoClass * aP1, char aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -108,7 +108,7 @@ LABEL_5:
 
 // 0x4F9A90
 namespace gamemd {
-void Object::IsAlliedWithObjectHouse(IUnknown * aP1)
+int Object::IsAlliedWithObjectHouse(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -130,7 +130,7 @@ void Object::IsAlliedWithObjectHouse(IUnknown * aP1)
 
 // 0x4F9AF0
 namespace gamemd {
-void Object::IsAlliedWithObjectSimpleHouse(unsigned char * a2)
+int Object::IsAlliedWithObjectSimpleHouse(unsigned char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -559,7 +559,7 @@ LABEL_20:
 
 // 0x5FDDE0
 namespace gamemd {
-void Object::ProcessEvent()
+int Object::ProcessEvent()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

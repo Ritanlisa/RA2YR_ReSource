@@ -379,7 +379,7 @@ void TechnoClass::Uncloak(bool play_sound)
 }
 
 // 0x6f3330
-void TechnoClass::SelectWeapon(AbstractClass* target) const
+int TechnoClass::SelectWeapon(AbstractClass* target) const
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x6f3330
@@ -1141,7 +1141,7 @@ void TechnoClass::AddPassenger(FootClass* passenger)
 // 10. Final unit creation via CreateUnitOnCompletion
 // ============================================================
 // 0x423ac0
-void TechnoClass::CreateUnit()
+int TechnoClass::CreateUnit()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x423ac0
@@ -3728,7 +3728,7 @@ return missionState == 11
     || missionState == 21;
 }
 // 0x5f5390
-void TechnoClass::CreateDestructionEffect() {
+int TechnoClass::CreateDestructionEffect() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x5f5390
 {
@@ -4490,7 +4490,7 @@ int TechnoClass::CanInitiateSell() const { return false; }
 // 0x6f3280
 int TechnoClass::IsNotAircraftOrBuilding() const { return false; }
 // 0x6f3330
-void TechnoClass::SelectWeapon() {
+int TechnoClass::SelectWeapon() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x6f3330
 {

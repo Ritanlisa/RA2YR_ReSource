@@ -222,7 +222,7 @@ void MPCooperative___vt07(int a2)
 
 // 0x5C60D0
 namespace gamemd {
-void E4Recv_5C60D0::ShowConfirmDialog()
+int E4Recv_5C60D0::ShowConfirmDialog()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2790,7 +2790,7 @@ LABEL_25:
 
 // 0x5CE0C0
 namespace gamemd {
-void E4Recv_5CE0C0::sub_5CE0C0(int a2, unsigned int * a3)
+int E4Recv_5CE0C0::sub_5CE0C0(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

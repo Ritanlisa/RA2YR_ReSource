@@ -5,7 +5,7 @@
 #include "e4/classes/Timer_e4.hpp"
 
 // 0x774980
-void WinModemClass::ReadSerial()
+int WinModemClass::ReadSerial()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -111,7 +111,7 @@ void WinModemClass::ReadSerial()
 }
 
 // 0x774B30
-void WinModemClass::ReadBytes(void (**this)() a1, WinModemClass * aP1, WinModemClass * aP2)
+int WinModemClass::ReadBytes(void (**this)() a1, WinModemClass * aP1, WinModemClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -147,7 +147,7 @@ void WinModemClass::ReadBytes(void (**this)() a1, WinModemClass * aP1, WinModemC
 }
 
 // 0x774C70
-void WinModemClass::WriteSerial(LPCVOID lpBuffer, WinModemClass * aP2)
+int WinModemClass::WriteSerial(LPCVOID lpBuffer, WinModemClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -169,7 +169,7 @@ void WinModemClass::WriteSerial(LPCVOID lpBuffer, WinModemClass * aP2)
 }
 
 // 0x774CD0
-void WinModemClass::LoadTypeData(int a2, char * Str, int a4, WinModemClass * aP4)
+int WinModemClass::LoadTypeData(int a2, char * Str, int a4, WinModemClass * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -291,7 +291,7 @@ LABEL_38:
 }
 
 // 0x774F50
-void WinModemClass::SaveToINI(const char * NumberOfBytesWritten)
+int WinModemClass::SaveToINI(const char * NumberOfBytesWritten)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -330,7 +330,7 @@ void WinModemClass::SaveToINI(const char * NumberOfBytesWritten)
 }
 
 // 0x775110
-void WinModemClass::Dial(const char * a2, unsigned char a3, char * Destination, signed int Count, int a6, int a7, int a8)
+int WinModemClass::Dial(const char * a2, unsigned char a3, char * Destination, signed int Count, int a6, int a7, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -470,7 +470,7 @@ int WinModemClass::ddtor(int a2)
 }
 
 // 0x7754B0
-void WinModemClass::HangUp(int a2)
+int WinModemClass::HangUp(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -480,7 +480,7 @@ void WinModemClass::HangUp(int a2)
 }
 
 // 0x7754D0
-void WinModemClass::LogCommErrors(NullModemClass * aP1, char a3, int a4, int a5)
+int WinModemClass::LogCommErrors(NullModemClass * aP1, char a3, int a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

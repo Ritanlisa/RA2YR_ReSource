@@ -67,7 +67,7 @@ void InfantryClass::ProcessDeploy()
 
 // IDA: 0x51D6F0 (ProcessDeployAction, 1013B) — validates weapon, checks mission, sets loco
 // 0x51d6f0
-void InfantryClass::ProcessDeployAction(int deploy_type, bool a3, bool a4)
+int InfantryClass::ProcessDeployAction(int deploy_type, bool a3, bool a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x51d6f0
@@ -90,7 +90,7 @@ void InfantryClass::ProcessDeployAction(int deploy_type, bool a3, bool a4)
     return 0;
   }
   if ( this->isPlayingDamageSound
-    && *(_DWORD *)((*(int (__thiscall **)(_DWORD *))(*this + 132))(this) + 2048)
+    && *(_DWORD *)(this->Vt34Thunk() + 2048)
     && ((double (__thiscall *)(_DWORD *))*(_DWORD *)(*this + 692))(this) == 1.0
     && v4 == 3 )
   {
@@ -102,7 +102,7 @@ void InfantryClass::ProcessDeployAction(int deploy_type, bool a3, bool a4)
 LABEL_12:
   if ( *(_DWORD *)(this->Type + 1460) == 3 )
   {
-    v6 = (__int16 *)(*(int (__thiscall **)(_DWORD *, int *))(*this + 440))(this, &a2);
+    v6 = (__int16 *)this->GetCellCoords_Alt(&a2);
     int v7 = *((_DWORD *)CellCoord::To_CellObj(&DataGlobal_87F7E8, v6) + 59);
     int v8 = 1;
     if ( (v7 == 6 || v7 == 2) && !this->q230 )
@@ -158,7 +158,7 @@ LABEL_12:
     }
     this->waterState = v8;
   }
-  if ( !(*(unsigned __int8 (__thiscall **)(_DWORD *))(*this + 84))(this)
+  if ( !this->IsHeightAboveThreshold_0()
     || this->q230
     || *(int *)(*(_DWORD *)(this->Type + 3644) + 828) <= 0
     || v4 )
@@ -175,23 +175,23 @@ LABEL_12:
     return 0;
   if ( v4 == 27 )
   {
-    if ( *(_DWORD *)((*(int (__thiscall **)(_DWORD *))(*this + 132))(this) + 1388) != -1 )
+    if ( *(_DWORD *)(this->Vt34Thunk() + 1388) != -1 )
     {
       v24 = this->location;
       v25 = this->q0A0;
       int v13 = *this;
       v26 = this->q0A4;
-      int v14 = *(_DWORD *)((*(int (__thiscall **)(_DWORD *))(v13 + 132))(this) + 1388);
+      int v14 = *(_DWORD *)(this->Vt34Thunk() + 1388);
       StartAudioControllerAt(v14, (int)&v24, 0);
     }
   }
-  else if ( v4 == 31 && *(_DWORD *)((*(int (__thiscall **)(_DWORD *))(*this + 132))(this) + 1392) != -1 )
+  else if ( v4 == 31 && *(_DWORD *)(this->Vt34Thunk() + 1392) != -1 )
   {
     v24 = this->location;
     int v15 = *this;
     v25 = this->q0A0;
     v26 = this->q0A4;
-    int v16 = *(_DWORD *)((*(int (__thiscall **)(_DWORD *))(v15 + 132))(this) + 1392);
+    int v16 = *(_DWORD *)(this->Vt34Thunk() + 1392);
     StartAudioControllerAt(v16, (int)&v24, 0);
   }
   this->SequenceAnim = v4;
@@ -224,7 +224,7 @@ LABEL_12:
     this->radioContact = 0;
   }
   if ( !this->health )
-    (*(void (__thiscall **)(_DWORD *))(*this + 1280))(this);
+    this->PlayIdleAnim();
   v21 = v4 - 5;
   if ( v21 )
   {
@@ -636,7 +636,7 @@ retn    0Ch
 
 // IDA: 0x5200B0 (ProcessIdleDeploy, 428B)
 // 0x5200b0
-void InfantryClass::ProcessIdleDeploy()
+int InfantryClass::ProcessIdleDeploy()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -645,7 +645,7 @@ void InfantryClass::ProcessIdleDeploy()
   {
     if ( !*(_BYTE *)(this->animation + 3772) )
       --this->q1B5;
-    if ( !this->q1B5 && !this->q0BF && (*(unsigned __int8 (__thiscall **)(int *))(*this + 684))(this) )
+    if ( !this->q1B5 && !this->q0BF && this->HasActiveParam() )
       this->q0BF = *(_DWORD *)(this->animation + 1668);
     int v2 = this->q1B5;
     if ( this->Crawling )
@@ -654,7 +654,7 @@ void InfantryClass::ProcessIdleDeploy()
       {
         int v3 = this->q1B1;
         if ( v3 != 27 && v3 != 28 && v3 != 29 && v3 != 30 )
-          (*(void (__thiscall **)(int *, int, _DWORD, _DWORD))(*this + 1368))(this, 7, 0, 0);
+          this->ProcessDeployAction(7, 0, 0);
       }
     }
     else if ( v2 >= 50 )
@@ -672,7 +672,7 @@ void InfantryClass::ProcessIdleDeploy()
           {
 LABEL_42:
             if ( !*(_BYTE *)(this->animation + 3775) )
-              (*(void (__thiscall **)(int *, int, _DWORD, _DWORD))(*this + 1368))(this, 5, 0, 0);
+              this->ProcessDeployAction(5, 0, 0);
           }
         }
       }
@@ -784,7 +784,7 @@ void InfantryClass::DeployAnimation()
       if ( !v2[144] )
         return 0;
       int v4 = (*(int (__thiscall **)(_BYTE *))(*(_DWORD *)v2 + 464))(v2);
-      int v5 = *(_DWORD *)(a1 + 8);
+      bool v5 = *(_DWORD *)(a1 + 8);
       v58 = v4;
   double v57; // [esp+3Ch] [ebp-40h] BYREF
       LODWORD(v57) = (*(int (__thiscall **)(int))(*(_DWORD *)v5 + 1336))(v5);
@@ -1857,7 +1857,6 @@ retn    4
 int InfantryClass::ComputeDeploySpeedFactor()
 {
     int v2;
-
     v2 = TechnoClass::ComputeSpeedFactorEx((double *)this);
     if ( this->Crawling )
     {
@@ -1875,7 +1874,6 @@ int InfantryClass::GetDeployWeaponIndex()
 {
     InfantryTypeClass *v3;
     int v4;
-
     v3 = this->Type;
     if ( !*(_BYTE *)((char *)v3 + 2084) )
         return TechnoClass::SelectWeapon(this);
@@ -1948,11 +1946,10 @@ retn    4
 }
 
 // 0x522600
-int __thiscall InfantryClass::FireAtTargetPos(int *this, int a2, int a3, int a4)
+int InfantryClass::FireAtTargetPos(int a2, int a3, int a4)
 {
   int v4; // eax
   int v6; // [esp+0h] [ebp-4h] BYREF
-
   v4 = *this;
   v6 = *(_DWORD *)(*(this + 432) + 160);
   return (*(int (__thiscall **)(int *, int *, _DWORD, _DWORD, _DWORD, int, _DWORD, int))(v4 + 364))(
@@ -2070,7 +2067,7 @@ retn    8
 }
 
 // 0x51c8b0
-void InfantryClass::GetFireError(int* target, int weapon_idx, int a4, int a5)
+int InfantryClass::GetFireError(int* target, int weapon_idx, int a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x51c8b0
@@ -3478,7 +3475,7 @@ int InfantryClass::FindMoveTarget()
 }
 
 // 0x418e20
-void InfantryClass::FindNearbyCell()
+int InfantryClass::FindNearbyCell()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -3487,7 +3484,7 @@ void InfantryClass::FindNearbyCell()
   InfantryClass *v22 = this;
   if ( a2 && (!this->FootClass_field_5D4 || !(unsigned __int8)TechnoClass::IsWaypointHidden()) )
   {
-    if ( !(*(unsigned __int8 (__thiscall **)(_DWORD *, int))(*this + 1360))(this, a2)
+    if ( !this->ValidateTargetCell(a2)
   _DWORD *v4; // eax
   double v25; // [esp+48h] [ebp-10h] BYREF
       || (v4 = (_DWORD *)(*(int (__thiscall **)(int, double *, _DWORD))(*(_DWORD *)a2 + 76))(a2, &v25, 0),
@@ -4587,7 +4584,7 @@ int InfantryClass::ProcessTunnelMovement()
 }
 
 // 0x736579
-void InfantryClass::UpdateBehavior()
+int InfantryClass::UpdateBehavior()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -5074,7 +5071,7 @@ retn
 }
 
 // 0x51dbd0
-void InfantryClass::CalcFacingToTarget()
+int InfantryClass::CalcFacingToTarget()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x51dbd0
@@ -5418,7 +5415,7 @@ retn    4
 }
 
 // 0x51bf90
-void InfantryClass::EvaluateTarget()
+int InfantryClass::EvaluateTarget()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x51bf90
@@ -6628,7 +6625,7 @@ retn    14h
 }
 
 // 0x51e140
-void InfantryClass::SelectAutoTarget(unsigned int flags, __int64 a3)
+int InfantryClass::SelectAutoTarget(unsigned int flags, __int64 a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x51e140
@@ -7559,7 +7556,7 @@ retn
 }
 
 // 0x522d50
-void InfantryClass::SlaveGiveMoney_RecordBalanceBefore()
+int InfantryClass::SlaveGiveMoney_RecordBalanceBefore()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // 0x522d50

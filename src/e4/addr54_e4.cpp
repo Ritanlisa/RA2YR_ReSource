@@ -29,7 +29,7 @@
 
 // 0x540C50
 namespace gamemd {
-void E4Recv_540C50::sub_540C50()
+int E4Recv_540C50::sub_540C50()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -40,7 +40,7 @@ void E4Recv_540C50::sub_540C50()
 
 // 0x541170
 namespace gamemd {
-void E4Recv_541170::sub_541170(int a2, int a3, int a4, int a5)
+int E4Recv_541170::sub_541170(int a2, int a3, int a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -92,7 +92,7 @@ void E4Recv_541170::sub_541170(int a2, int a3, int a4, int a5)
 
 // 0x542F30
 namespace gamemd {
-void E4Recv_542F30::sub_542F30()
+int E4Recv_542F30::sub_542F30()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1780,7 +1780,7 @@ int Map_InitCoordinateOffsets(int a1)
 
 // 0x549830
 namespace gamemd {
-void E4Recv_549830::sub_549830(int a2, void ** a3, int a4, int a5)
+int E4Recv_549830::sub_549830(int a2, void ** a3, int a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1918,7 +1918,7 @@ int sub_549B30()
 
 // 0x54BA30
 namespace gamemd {
-void E4Recv_54BA30::UpdateFootMovement()
+int E4Recv_54BA30::UpdateFootMovement()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

@@ -4326,7 +4326,7 @@ LABEL_27:
 
 // 0x79BF50
 namespace gamemd {
-void E4Recv_79BF50::sub_79BF50()
+int E4Recv_79BF50::sub_79BF50()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

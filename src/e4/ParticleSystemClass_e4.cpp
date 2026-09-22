@@ -7,7 +7,7 @@
 
 // 0x62FE60
 namespace gamemd {
-void ParticleSystemClass::Draw()
+int ParticleSystemClass::Draw()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -40,7 +40,7 @@ _DWORD * ParticleSystemClass::ddtor(int a2, int a3)
 
 // 0x4E87D0
 namespace gamemd {
-void ParticleSystemClass_16::Write(int a2)
+int ParticleSystemClass_16::Write(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

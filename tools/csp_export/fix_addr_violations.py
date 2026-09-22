@@ -19,6 +19,7 @@ vocabulary and are NOT touched.
 Usage: python tools/csp_export/fix_addr_violations.py [--workers 6]
 """
 from _blockspan import block_span, find_marker
+from _vtable import VT_OPEN, balance_paren, split_args, slot_name
 import json, re, subprocess, sys, time
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor
@@ -27,6 +28,57 @@ ROOT = Path(__file__).resolve().parents[2]
 SRC = ROOT / 'src'
 INSIDE = ("// [IDA decompile] original pseudocode - translation "
           "pending (final goal)")
+
+
+def vt_rewrite_fn(seg_text, cls):
+    """R4: virtual-call dispatch -> RECV->Name(args). Receiver = this (or
+    a `vN = *this` vtable holder). Returns (text, count)."""
+    env = {'this': cls} if cls else {}
+    vt_of = {}
+    for m in re.finditer(r'\b([a-z]\w*)\s*=\s*\*(this|[a-z]\w*)\s*;', seg_text):
+        if m.group(2) == 'this' or m.group(2) in env:
+            vt_of[m.group(1)] = m.group(2)
+    lines_out = []
+    n = 0
+    for ln in seg_text.split(chr(10)):
+        pos = 0
+        while True:
+            m = VT_OPEN.search(ln, pos)
+            if not m:
+                break
+            recv = m.group(1)
+            slot = int(m.group(2), 0)
+            if recv in ('this', '*this'):
+                obj, tgt = 'this', cls
+            elif recv in vt_of:
+                obj = vt_of[recv]
+                tgt = env.get(obj) or cls
+            else:
+                pos = m.end()
+                continue
+            name = slot_name(tgt, slot) if tgt else None
+            if not name:
+                pos = m.end()
+                continue
+            call_open = m.end() - 1
+            call_close = balance_paren(ln, call_open)
+            if call_close < 0:
+                pos = m.end()
+                continue
+            args = split_args(ln[call_open + 1:call_close])
+            first = (args[0] if args else '').strip()
+            if first == obj or first == recv:
+                args = args[1:]
+            head = ln.rfind('(*(', 0, m.start())
+            start = head if (head >= 0 and
+                             ln[head:m.start()].count('(') >=
+                             ln[head:m.start()].count(')')) else m.start()
+            new_call = '%s->%s(%s)' % (obj, name, ', '.join(args))
+            ln = ln[:start] + new_call + ln[call_close + 1:]
+            n += 1
+            pos = start + len(new_call)
+        lines_out.append(ln)
+    return chr(10).join(lines_out), n
 
 print('loading tables...', flush=True)
 mtab = json.loads((ROOT / 'anchors/csp_canon_members.json').read_text(encoding='utf-8'))
@@ -226,8 +278,9 @@ def process_file(rel):
         if dm:
             cls = dm.group(1)
         nb, c_mem = (real_mem_rewrite(seg, cls) if cls else (seg, 0))
+        nb, c_vt = vt_rewrite_fn(nb, cls)
         nb, c_glob = glob_rewrite(nb, includes, rel)
-        if not (c_mem + c_glob):
+        if not (c_mem + c_vt + c_glob):
             continue
         old = lines[def_i:end_i + 1]
         lines[def_i:end_i + 1] = nb.split('\n')

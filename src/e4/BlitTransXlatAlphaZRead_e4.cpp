@@ -75,7 +75,7 @@ unsigned short * BlitTransXlatAlphaZRead_ushort::Blit_Alpha_Lucent50_0(unsigned 
 }
 
 // 0x494B60
-void BlitTransXlatAlphaZRead_ushort::AddRef(unsigned short * a2, unsigned char * a3, int a4, int a5, unsigned short * a6, unsigned short * a7, int a8, int a9)
+int BlitTransXlatAlphaZRead_ushort::AddRef(unsigned short * a2, unsigned char * a3, int a4, int a5, unsigned short * a6, unsigned short * a7, int a8, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -113,7 +113,7 @@ void BlitTransXlatAlphaZRead_ushort::AddRef(unsigned short * a2, unsigned char *
 }
 
 // 0x494C40
-void BlitTransXlatAlphaZRead_ushort::BlitRect(unsigned short * a2, unsigned char * a3, int a4, int a5, unsigned short * a6, unsigned short * a7, int a8, int a9, short a10)
+int BlitTransXlatAlphaZRead_ushort::BlitRect(unsigned short * a2, unsigned char * a3, int a4, int a5, unsigned short * a6, unsigned short * a7, int a8, int a9, short a10)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -158,7 +158,7 @@ int BlitTransXlatAlphaZRead_ushort::ddtor(int a2, int a3, int a4, int a5, int a6
 }
 
 // 0x494D50
-void BlitTransXlatAlphaZRead_ushort::GetSize(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
+int BlitTransXlatAlphaZRead_ushort::GetSize(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

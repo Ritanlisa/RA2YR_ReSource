@@ -17,7 +17,7 @@
 
 // 0x5D4210
 namespace gamemd {
-void NetworkLobby::MessageList_Append(int a2, int a3, CellStruct * aP3, char a5, int a6)
+int NetworkLobby::MessageList_Append(int a2, int a3, CellStruct * aP3, char a5, int a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -182,7 +182,7 @@ int NetworkLobby_UpdatePlayerList()
 
 // 0x5DC350
 namespace gamemd {
-void NetworkLobby::CreateGame()
+int NetworkLobby::CreateGame()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1157,7 +1157,7 @@ LABEL_202:
 
 // 0x5DE520
 namespace gamemd {
-void NetworkLobby::DlgProc(HWND hDlg, UINT a2, WPARAM nIDDlgItem, unsigned int lParam)
+int NetworkLobby::DlgProc(HWND hDlg, UINT a2, WPARAM nIDDlgItem, unsigned int lParam)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2995,7 +2995,7 @@ void NetworkLobby::SetupPlayers()
 
 // 0x5E9240
 namespace gamemd {
-void NetworkLobby::AssignPlayerSlot()
+int NetworkLobby::AssignPlayerSlot()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -3019,7 +3019,7 @@ void NetworkLobby::AssignPlayerSlot()
 
 // 0x5E9E00
 namespace gamemd {
-void NetworkLobby::InitLobbyDropdowns()
+int NetworkLobby::InitLobbyDropdowns()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -3132,7 +3132,7 @@ LABEL_34:
 
 // 0x5EB660
 namespace gamemd {
-void NetworkLobby::SetupPlayerSlotControls()
+int NetworkLobby::SetupPlayerSlotControls()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

@@ -1350,7 +1350,6 @@ namespace gamemd {
 void FindInfantryDeployPosition(int * a1, RadarClass * a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-int __fastcall FindInfantryDeployPosition(int *a1, RadarClass *a2, int a3)
 {
   RadarClass *v3; // esi
   int ClosestObjectCell; // eax

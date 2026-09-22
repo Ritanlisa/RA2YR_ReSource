@@ -18,7 +18,7 @@
 
 // 0x486790
 namespace gamemd {
-void RandomMap::Check()
+int RandomMap::Check()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -83,7 +83,7 @@ unsigned int * RandomMap::TerrainTileDataConstructor(int a2)
 
 // 0x58C800
 namespace gamemd {
-void RandomMap::GenerateTerrain()
+int RandomMap::GenerateTerrain()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -379,7 +379,7 @@ LABEL_84:
 
 // 0x58D1C0
 namespace gamemd {
-void RandomMap::ExpandTerrainCells(int a2, int a3)
+int RandomMap::ExpandTerrainCells(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -615,7 +615,7 @@ unsigned int * RandomMap::TerrainAlloc()
 
 // 0x58E740
 namespace gamemd {
-void RandomMap::CollectTerrainCells(int a2)
+int RandomMap::CollectTerrainCells(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -724,7 +724,7 @@ void RandomMap::CollectTerrainCells(int a2)
 
 // 0x58E9B0
 namespace gamemd {
-void RandomMap::PlaceRandomMapTerrain()
+int RandomMap::PlaceRandomMapTerrain()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -937,7 +937,7 @@ void RandomMap::CollectBorderCells()
 
 // 0x58F2C0
 namespace gamemd {
-void RandomMap::PlaceBuildings(int a2, int a3)
+int RandomMap::PlaceBuildings(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1557,7 +1557,7 @@ LABEL_129:
 
 // 0x5905D0
 namespace gamemd {
-void RandomMap::AllocateArea()
+int RandomMap::AllocateArea()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1810,7 +1810,7 @@ LABEL_66:
 
 // 0x590970
 namespace gamemd {
-void RandomMap::CheckCellPlacement(short * a1, void * a2, DynamicVector * aP3)
+int RandomMap::CheckCellPlacement(short * a1, void * a2, DynamicVector * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2116,7 +2116,7 @@ LABEL_64:
 
 // 0x590FD0
 namespace gamemd {
-void RandomMap::CheckNeighborhoodCompatibility(unsigned short * a1, DynamicVector * aP2, int a4, DynamicVector * aP4)
+int RandomMap::CheckNeighborhoodCompatibility(unsigned short * a1, DynamicVector * aP2, int a4, DynamicVector * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2179,7 +2179,7 @@ void RandomMap::CheckNeighborhoodCompatibility(unsigned short * a1, DynamicVecto
 
 // 0x592440
 namespace gamemd {
-void RandomMap::CheckPlacementArea(short * a2, short * a3, ObjectClass * aP2)
+int RandomMap::CheckPlacementArea(short * a2, short * a3, ObjectClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2665,7 +2665,7 @@ void RandomMap::CleanupRandomMapData()
 
 // 0x596E50
 namespace gamemd {
-void RandomMap::SetupDialog(HWND hDlg)
+int RandomMap::SetupDialog(HWND hDlg)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2808,7 +2808,7 @@ void RandomMap::SetupDialog(HWND hDlg)
 
 // 0x597D60
 namespace gamemd {
-void RandomMap::LoadInfo(wchar_t * Destination, int a2)
+int RandomMap::LoadInfo(wchar_t * Destination, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2881,7 +2881,7 @@ void RandomMap::LoadInfo(wchar_t * Destination, int a2)
 
 // 0x5981F0
 namespace gamemd {
-void RandomMap::LoadConfig()
+int RandomMap::LoadConfig()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -3265,7 +3265,7 @@ void RandomMap::LoadConfig()
 
 // 0x598960
 namespace gamemd {
-void RandomMap::Generate(char a2, HWND hDlg)
+int RandomMap::Generate(char a2, HWND hDlg)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -4285,7 +4285,7 @@ LABEL_153:
 
 // 0x59A6C0
 namespace gamemd {
-void RandomMap::FinalizeMapData()
+int RandomMap::FinalizeMapData()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -4611,7 +4611,7 @@ void RandomMap::FillTerrainProgressively()
 
 // 0x59B200
 namespace gamemd {
-void RandomMap::PlaceTerrainFeatures()
+int RandomMap::PlaceTerrainFeatures()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -4895,7 +4895,7 @@ void RandomMap::PlaceShoreObjects()
 
 // 0x59BBC0
 namespace gamemd {
-void RandomMap::PlaceTerrain(int a2, MapResourceClass * aP2, MapResourceClass * aP3, int a5, MapResourceClass * aP5, double a7, char a8)
+int RandomMap::PlaceTerrain(int a2, MapResourceClass * aP2, MapResourceClass * aP3, int a5, MapResourceClass * aP5, double a7, char a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -5336,7 +5336,7 @@ LABEL_27:
 
 // 0x59C580
 namespace gamemd {
-void RandomMap::GrowTiberium()
+int RandomMap::GrowTiberium()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -5487,7 +5487,7 @@ LABEL_33:
 
 // 0x5A08D0
 namespace gamemd {
-void RandomMap::SpreadArea(MouseClass * aP1, float a3, MapResourceClass * aP3, short * a4, char a6)
+int RandomMap::SpreadArea(MouseClass * aP1, float a3, MapResourceClass * aP3, short * a4, char a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -5985,7 +5985,7 @@ LABEL_123:
 
 // 0x5A23A0
 namespace gamemd {
-void RandomMap::PlaceRandomMapTiberium()
+int RandomMap::PlaceRandomMapTiberium()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -6258,7 +6258,7 @@ void RandomMap::PlaceRandomMapTiberium()
 
 // 0x5A3AE0
 namespace gamemd {
-void RandomMap::PlaceResources()
+int RandomMap::PlaceResources()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -6550,7 +6550,7 @@ LABEL_71:
 
 // 0x5A4280
 namespace gamemd {
-void RandomMap::GenerateRandomMapTerrain()
+int RandomMap::GenerateRandomMapTerrain()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -6681,7 +6681,7 @@ LABEL_27:
 
 // 0x5A80B0
 namespace gamemd {
-void RandomMap::PlaceMapSeedBuildings()
+int RandomMap::PlaceMapSeedBuildings()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -6964,7 +6964,7 @@ unsigned int * RandomMap::PlaceTileSet()
 
 // 0x74EF10
 namespace gamemd {
-void RandomMap::RemoveMatching(IUnknown * aP1)
+int RandomMap::RemoveMatching(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

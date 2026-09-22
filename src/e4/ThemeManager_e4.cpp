@@ -5,7 +5,7 @@
 #include "e4/classes/Event_e4.hpp"
 
 // 0x4080F0
-void ThemeManager::ProcessCallback()
+int ThemeManager::ProcessCallback()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

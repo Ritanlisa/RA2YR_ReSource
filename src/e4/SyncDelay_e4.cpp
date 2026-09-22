@@ -168,7 +168,7 @@ LABEL_44:
 }
 
 // 0x55F6C0
-void SyncDelay::Check(unsigned int * a2)
+int SyncDelay::Check(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

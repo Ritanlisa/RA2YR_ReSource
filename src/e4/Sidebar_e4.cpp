@@ -8,7 +8,7 @@
 
 // 0x4FA350
 namespace gamemd {
-void Sidebar::StartSidebarProduction(void * a1, BuildingTypeClass * aP2, HouseClass * aP3, char a5)
+int Sidebar::StartSidebarProduction(void * a1, BuildingTypeClass * aP2, HouseClass * aP3, char a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -247,7 +247,7 @@ LABEL_55:
 
 // 0x5007A0
 namespace gamemd {
-void Sidebar::Dispatch(IUnknown * aP1, char a3, int a4, char a5)
+int Sidebar::Dispatch(IUnknown * aP1, char a3, int a4, char a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -295,7 +295,7 @@ LABEL_3:
 
 // 0x533F50
 namespace gamemd {
-void Sidebar::ScrollSidebarSkipGame()
+int Sidebar::ScrollSidebarSkipGame()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -425,7 +425,7 @@ void Sidebar::CancelSidebarProductionQueue()
 
 // 0x63F040
 namespace gamemd {
-void Sidebar::RemoveItem(int a2)
+int Sidebar::RemoveItem(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -452,7 +452,7 @@ void Sidebar::RemoveItem(int a2)
 
 // 0x63FB20
 namespace gamemd {
-void Sidebar::Render(char a2)
+int Sidebar::Render(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -635,7 +635,7 @@ void Sidebar::Render(char a2)
 
 // 0x6A60A0
 namespace gamemd {
-void Sidebar::ActivateTab(IUnknown * aP1)
+int Sidebar::ActivateTab(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

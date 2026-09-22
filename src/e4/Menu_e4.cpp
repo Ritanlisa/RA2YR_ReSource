@@ -3,7 +3,7 @@
 #include "e4/e4_globals.hpp"
 
 // 0x4C6140
-void Menu::Reset()
+int Menu::Reset()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

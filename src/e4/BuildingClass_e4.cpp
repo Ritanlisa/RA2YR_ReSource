@@ -6,7 +6,7 @@
 
 // 0x453E20
 namespace gamemd {
-void BuildingClass::LoadFromStream()
+int BuildingClass::LoadFromStream()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -190,7 +190,7 @@ LABEL_36:
 
 // 0x455D50
 namespace gamemd {
-void BuildingClass::AssignDestination_SyncLog()
+int BuildingClass::AssignDestination_SyncLog()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -214,7 +214,7 @@ void BuildingClass::AssignDestination_SyncLog()
 
 // 0x4DFCB0
 namespace gamemd {
-void BuildingClass::FindClosestForRepair(unsigned int * a1)
+int BuildingClass::FindClosestForRepair(unsigned int * a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -270,7 +270,7 @@ LABEL_10:
 
 // 0x4DFE00
 namespace gamemd {
-void BuildingClass::FindClosestForRepair2(int a1)
+int BuildingClass::FindClosestForRepair2(int a1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -330,7 +330,7 @@ LABEL_10:
 
 // 0x629720
 namespace gamemd {
-void BuildingClass::AnimController()
+int BuildingClass::AnimController()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -388,7 +388,7 @@ LABEL_8:
 
 // 0x70BF50
 namespace gamemd {
-void BuildingClass::AllocAndCtor(BuildingClass * aP0, int aP2)
+int BuildingClass::AllocAndCtor(BuildingClass * aP0, int aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -520,7 +520,7 @@ void BuildingClass::AllocAndCtor(BuildingClass * aP0, int aP2)
 
 // 0x712130
 namespace gamemd {
-void BuildingClass::processCapture()
+int BuildingClass::processCapture()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

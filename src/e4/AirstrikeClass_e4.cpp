@@ -6,7 +6,7 @@
 // 0x41D860
 namespace ra2 {
 namespace game {
-void AirstrikeClass::SpawnAircraft(int * a2)
+int AirstrikeClass::SpawnAircraft(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -96,7 +96,7 @@ void AirstrikeClass::SpawnAircraft(int * a2)
 // 0x41DA20
 namespace ra2 {
 namespace game {
-void AirstrikeClass::ReassignTarget(int a2)
+int AirstrikeClass::ReassignTarget(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -173,7 +173,7 @@ LABEL_6:
 // 0x41DC80
 namespace ra2 {
 namespace game {
-void AirstrikeClass::RemoveAircraft(AudioController * aP1)
+int AirstrikeClass::RemoveAircraft(AudioController * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -257,7 +257,7 @@ void * AirstrikeClass::CopyTo(char a2)
 // 0x420E90
 namespace ra2 {
 namespace game {
-void AirstrikeClass::UpdateAll()
+int AirstrikeClass::UpdateAll()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

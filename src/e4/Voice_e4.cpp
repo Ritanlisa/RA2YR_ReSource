@@ -4,7 +4,7 @@
 #include "e4/classes/AudioStream_e4.hpp"
 
 // 0x4025B0
-void Voice::Stop(__thiscall *__thiscall Voice_Stop(int this))( int)
+int Voice::Stop(__thiscall *__thiscall Voice_Stop(int this))( int)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -23,7 +23,7 @@ void Voice::Stop(__thiscall *__thiscall Voice_Stop(int this))( int)
 }
 
 // 0x404140
-void Voice::DetachChannel()
+int Voice::DetachChannel()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

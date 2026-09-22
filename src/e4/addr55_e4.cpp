@@ -977,7 +977,7 @@ unsigned int int sub_552640(unsigned char * a1, unsigned int a2)
 
 // 0x554400
 namespace gamemd {
-void E4Recv_554400::sub_554400(int a2, int a3)
+int E4Recv_554400::sub_554400(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1104,7 +1104,7 @@ void UpdateDeferredLightSurfaces(int a1, char a2)
 
 // 0x557380
 namespace gamemd {
-void E4Recv_557380::sub_557380(int a2)
+int E4Recv_557380::sub_557380(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1192,16 +1192,16 @@ void CheckListClass__vt_19_(char a2, int a3, unsigned int * a4)
   if ( (a2 & 4) != 0 ) /*0x557b1e*/
   {
     if ( a4 == this + 22 ) /*0x557b25*/
-      (*(void (__thiscall **)(_DWORD *, int))(*this + 196))(this, 1); /*0x557b2b*/
+      this->OnKeyUp(1); /*0x557b2b*/
     result = (_BYTE)this - 72; /*0x557b31*/
     if ( a4 == this + 46 ) /*0x557b39*/
-      result = (*(int (__thiscall **)(_DWORD *, _DWORD))(*this + 196))(this, 0); /*0x557b41*/
+      result = this->OnKeyUp(0); /*0x557b41*/
   }
   if ( a4 == this + 70 ) /*0x557b4f*/
   {
     int v6 = *this; /*0x557b53*/
     int v7 = (*(int (__thiscall **)(_DWORD *))(this->q118 + 144))(this + 70); /*0x557b55*/
-    return (*(int (__thiscall **)(_DWORD *, int))(v6 + 192))(this, v7); /*0x557b5e*/
+    return this->OnKeyDown(v7); /*0x557b5e*/
   }
   return result; /*0x557b64*/
 }
@@ -1210,7 +1210,7 @@ void CheckListClass__vt_19_(char a2, int a3, unsigned int * a4)
 
 // 0x558810
 namespace gamemd {
-void E4Recv_558810::ShowSaveLoadDialog(CampaignScore * aP1)
+int E4Recv_558810::ShowSaveLoadDialog(CampaignScore * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1227,7 +1227,7 @@ void E4Recv_558810::ShowSaveLoadDialog(CampaignScore * aP1)
 
 // 0x55B720
 namespace gamemd {
-void E4Recv_55B720::sub_55B720()
+int E4Recv_55B720::sub_55B720()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

@@ -189,7 +189,7 @@ void char WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
 } // namespace gamemd
 
 // 0x69A1F0
-void WinMain::Constructor_VectorClass_Wstring_()
+int WinMain::Constructor_VectorClass_Wstring_()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

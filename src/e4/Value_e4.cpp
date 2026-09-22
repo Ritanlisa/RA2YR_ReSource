@@ -3,7 +3,7 @@
 #include "e4/e4_globals.hpp"
 
 // 0x486730
-void Value::InRange()
+int Value::InRange()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

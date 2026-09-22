@@ -10,7 +10,7 @@
 
 // 0x437FD0
 namespace gamemd {
-void GameClass::initGameMode(int a2, int a3)
+int GameClass::initGameMode(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -75,7 +75,7 @@ unsigned int * GameClass::updateUI(int a2, int a3)
 
 // 0x5D2260
 namespace gamemd {
-void GameClass::loadScenarioFiles(ObjectClass * aP1)
+int GameClass::loadScenarioFiles(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -138,7 +138,7 @@ void GameClass::loadScenarioFiles(ObjectClass * aP1)
 
 // 0x5D2410
 namespace gamemd {
-void GameClass::FrameLoop(int a2)
+int GameClass::FrameLoop(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -198,7 +198,7 @@ void GameClass::FrameLoop(int a2)
 
 // 0x5D6370
 namespace gamemd {
-void GameClass::FindOpenSlot()
+int GameClass::FindOpenSlot()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -233,7 +233,7 @@ LABEL_8:
 
 // 0x631D30
 namespace gamemd {
-void GameClass::GetRelatedObject()
+int GameClass::GetRelatedObject()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -307,7 +307,7 @@ void * GameClass::WriteEncryptedStream(BombClass * Src, signed int aP2)
 
 // 0x633130
 namespace gamemd {
-void GameClass::ReadEncryptedStream(char * a2, signed int Size)
+int GameClass::ReadEncryptedStream(char * a2, signed int Size)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -379,7 +379,7 @@ void GameClass::ReadEncryptedStream(char * a2, signed int Size)
 
 // 0x69AE10
 namespace gamemd {
-void GameClass::initPlayerData(const char ** a2)
+int GameClass::initPlayerData(const char ** a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -462,7 +462,7 @@ void GameClass::Shutdown()
 
 // 0x74F960
 namespace gamemd {
-void GameClass::ReadVersionFile()
+int GameClass::ReadVersionFile()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -503,7 +503,7 @@ void GameClass::ReadVersionFile()
 
 // 0x74FA20
 namespace gamemd {
-void GameClass::ReadVersionFile2()
+int GameClass::ReadVersionFile2()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -568,7 +568,7 @@ void GameClass::ReadVersionString()
 
 // 0x7BA3C0
 namespace gamemd {
-void GameClass::processNetworkPacket(void * Src, signed int Size)
+int GameClass::processNetworkPacket(void * Src, signed int Size)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

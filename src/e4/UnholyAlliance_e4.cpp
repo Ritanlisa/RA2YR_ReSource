@@ -15,7 +15,6 @@ void UnholyAlliance_GetResult()
 UnholyAlliance * UnholyAlliance::QueryInterface(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
-UnholyAlliance *__thiscall UnholyAlliance::QueryInterface(_DWORD *this, char a2)
 {
   *this = &vt_UnholyAlliance; /*0x5cb543*/
   MultiplayerGameMode::Dtor(this); /*0x5cb549*/

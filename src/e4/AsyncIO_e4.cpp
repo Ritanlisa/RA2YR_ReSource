@@ -4,7 +4,7 @@
 #include "e4/classes/Timer_e4.hpp"
 
 // 0x5BF450
-void AsyncIO::Shutdown()
+int AsyncIO::Shutdown()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -46,7 +46,7 @@ void AsyncIO::Shutdown()
 }
 
 // 0x774BC0
-void AsyncIO::WaitCompletion()
+int AsyncIO::WaitCompletion()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

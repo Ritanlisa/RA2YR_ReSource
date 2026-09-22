@@ -174,7 +174,7 @@ LABEL_11:
 }
 
 // 0x71DEA0
-void TerrainTypeClass::LoadFromINI(unsigned char *** aP1)
+int TerrainTypeClass::LoadFromINI(unsigned char *** aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

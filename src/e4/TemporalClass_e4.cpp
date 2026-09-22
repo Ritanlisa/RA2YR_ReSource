@@ -10,7 +10,7 @@
 // 0x71A450
 namespace ra2 {
 namespace game {
-void TemporalClass::Constructor()
+int TemporalClass::Constructor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -265,7 +265,7 @@ LABEL_10:
 // 0x71AB10
 namespace ra2 {
 namespace game {
-void TemporalClass::GetWarpPerStep(int a2)
+int TemporalClass::GetWarpPerStep(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

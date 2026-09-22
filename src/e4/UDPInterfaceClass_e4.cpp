@@ -7,7 +7,7 @@
 #include "e4/classes/NetworkClass_e4.hpp"
 
 // 0x7B1B50
-void UDPInterfaceClass::connect()
+int UDPInterfaceClass::connect()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -98,7 +98,7 @@ LABEL_7:
 }
 
 // 0x7B3A20
-void UDPInterfaceClass::Flush()
+int UDPInterfaceClass::Flush()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -132,7 +132,7 @@ void UDPInterfaceClass::Flush()
 }
 
 // 0x7B3AA0
-void UDPInterfaceClass::ProcessSocketIO(int a2, SOCKET s, int a4, unsigned int a5)
+int UDPInterfaceClass::ProcessSocketIO(int a2, SOCKET s, int a4, unsigned int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -446,7 +446,7 @@ LABEL_43:
 }
 
 // 0x7B4150
-void UDPInterfaceClass::Connect(int a2)
+int UDPInterfaceClass::Connect(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -455,7 +455,7 @@ void UDPInterfaceClass::Connect(int a2)
 }
 
 // 0x7B4160
-void UDPInterfaceClass::Receive()
+int UDPInterfaceClass::Receive()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -553,7 +553,7 @@ unsigned int UDPInterfaceClass::reset(int a2)
 }
 
 // 0x7B44A0
-void UDPInterfaceClass::flush(int a2, unsigned int * a3)
+int UDPInterfaceClass::flush(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -598,7 +598,7 @@ void UDPInterfaceClass::flush(int a2, unsigned int * a3)
 }
 
 // 0x7B4550
-void UDPInterfaceClass::sendPacket(unsigned int * a2)
+int UDPInterfaceClass::sendPacket(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -619,7 +619,7 @@ void UDPInterfaceClass::sendPacket(unsigned int * a2)
 }
 
 // 0x7B3450
-void UDPInterfaceClass_Destru::Bind(int a2)
+int UDPInterfaceClass_Destru::Bind(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -806,7 +806,7 @@ void UDPInterfaceClass_Destru_Connect()
 } // namespace gamemd
 
 // 0x7B3890
-void UDPInterfaceClass_Destru::Receive()
+int UDPInterfaceClass_Destru::Receive()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -839,7 +839,7 @@ LABEL_6:
 }
 
 // 0x7B3900
-void UDPInterfaceClass_Destru::CheckStatus()
+int UDPInterfaceClass_Destru::CheckStatus()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -885,7 +885,7 @@ void UDPInterfaceClass_Destru::Reset(unsigned int * a2, short a3)
 }
 
 // 0x7B4100
-void UDPInterfaceClass_Destru::GetStatistics(int a2)
+int UDPInterfaceClass_Destru::GetStatistics(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -897,7 +897,7 @@ void UDPInterfaceClass_Destru::GetStatistics(int a2)
 }
 
 // 0x7B4140
-void UDPInterfaceClass_Destru::COMStub()
+int UDPInterfaceClass_Destru::COMStub()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

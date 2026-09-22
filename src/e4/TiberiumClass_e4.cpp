@@ -9,7 +9,7 @@
 
 // 0x5A0160
 namespace gamemd {
-void TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a7, char a8)
+int TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a7, char a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -194,7 +194,7 @@ unsigned int * TiberiumClass::TiberiumClass(ObjectClass * aP1)
 
 // 0x721A50
 namespace gamemd {
-void TiberiumClass::LoadFromINI(unsigned char *** aP1)
+int TiberiumClass::LoadFromINI(unsigned char *** aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -343,7 +343,7 @@ LABEL_19:
 
 // 0x721E80
 namespace gamemd {
-void TiberiumClass::SaveLoad_Prefix(int a1, int a2)
+int TiberiumClass::SaveLoad_Prefix(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

@@ -9,7 +9,7 @@
 #include "e4/classes/Voxel_e4.hpp"
 
 // 0x411580
-void Surface::IsLocked()
+int Surface::IsLocked()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -295,7 +295,7 @@ void sub_626C60()
 } // namespace gamemd
 
 // 0x641DB0
-void Surface::LoadToSurfaceSHP(char * Source)
+int Surface::LoadToSurfaceSHP(char * Source)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -350,7 +350,7 @@ LABEL_11:
 }
 
 // 0x655250
-void Surface::RenderRadar()
+int Surface::RenderRadar()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -530,7 +530,7 @@ LABEL_33:
 }
 
 // 0x6BA3E0
-void Surface::TileBlit(INIClass * aP0, ObjectClass * aP1, int a3, int a4, int a5)
+int Surface::TileBlit(INIClass * aP0, ObjectClass * aP1, int a3, int a4, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -603,7 +603,7 @@ void Surface::TileBlit(INIClass * aP0, ObjectClass * aP1, int a3, int a4, int a5
 }
 
 // 0x6BA580
-void Surface::BlitTransparent(int * a0, ObjectClass * aP1, int a3, ObjectClass * aP3)
+int Surface::BlitTransparent(int * a0, ObjectClass * aP1, int a3, ObjectClass * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -662,7 +662,7 @@ void Surface::BlitTransparent(int * a0, ObjectClass * aP1, int a3, ObjectClass *
 }
 
 // 0x6BA690
-void Surface::AlphaBlend(unsigned int * a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
+int Surface::AlphaBlend(unsigned int * a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1372,7 +1372,7 @@ void Surface::RenderToSurfaceVoxel(unsigned int * a2, int * a3)
 }
 
 // 0x769330
-void Surface::PixelToIndex(unsigned int * a2)
+int Surface::PixelToIndex(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1396,7 +1396,7 @@ void Surface::PixelToIndex(unsigned int * a2)
 }
 
 // 0x7BD690
-void Surface::CommitSurfaceBuffersAudio()
+int Surface::CommitSurfaceBuffersAudio()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

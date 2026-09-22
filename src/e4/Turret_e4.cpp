@@ -6,7 +6,7 @@
 #include "e4/classes/Vector_e4.hpp"
 
 // 0x5F8CE0
-void Turret::LoadVoxelTurretAndBarrel()
+int Turret::LoadVoxelTurretAndBarrel()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

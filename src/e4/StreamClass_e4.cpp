@@ -3,7 +3,7 @@
 #include "e4/e4_globals.hpp"
 
 // 0x411310
-void StreamClass::WriteBytes(unsigned short a2, char a3, int a4, int a5, int a6)
+int StreamClass::WriteBytes(unsigned short a2, char a3, int a4, int a5, int a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -32,7 +32,7 @@ unsigned int StreamClass::ReadAndSeek(MouseClass * aP1, MouseClass * aP2)
 }
 
 // 0x45AEA0
-void StreamClass::Set2(unsigned int * a2)
+int StreamClass::Set2(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -70,7 +70,7 @@ void StreamClass::Set2(unsigned int * a2)
 }
 
 // 0x45AF20
-void StreamClass::Set(IUnknown * aP1)
+int StreamClass::Set(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

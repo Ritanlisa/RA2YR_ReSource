@@ -5,7 +5,7 @@
 #include "e4/classes/Vector_e4.hpp"
 
 // 0x5FB320
-void HotkeyOptions::DlgProc(int hWnd, unsigned int a2, unsigned int a3, int a4)
+int HotkeyOptions::DlgProc(int hWnd, unsigned int a2, unsigned int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

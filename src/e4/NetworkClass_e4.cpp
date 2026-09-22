@@ -7,7 +7,7 @@
 
 // 0x639FD0
 namespace gamemd {
-void NetworkClass::ExecutePlanningModeCmd()
+int NetworkClass::ExecutePlanningModeCmd()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -48,7 +48,7 @@ LABEL_10:
 
 // 0x6FFE00
 namespace gamemd {
-void NetworkClass::RecordEvent()
+int NetworkClass::RecordEvent()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -92,7 +92,7 @@ void NetworkClass::RecordEvent()
 
 // 0x7B1C50
 namespace gamemd {
-void NetworkClass::UnregisterAsync()
+int NetworkClass::UnregisterAsync()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

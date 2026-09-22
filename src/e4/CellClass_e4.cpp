@@ -8,7 +8,7 @@
 
 // 0x544C80
 namespace gamemd {
-void CellClass::EnsureFileLoaded()
+int CellClass::EnsureFileLoaded()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -21,7 +21,7 @@ void CellClass::EnsureFileLoaded()
 
 // 0x56EF50
 namespace gamemd {
-void CellClass::UpdateVariant3(IUnknown * aP0, IUnknown * aP1)
+int CellClass::UpdateVariant3(IUnknown * aP0, IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -200,7 +200,7 @@ void CellClass::UpdateVariant3(IUnknown * aP0, IUnknown * aP1)
 
 // 0x56F2F0
 namespace gamemd {
-void CellClass::UpdateVariant4(IUnknown * aP0, IUnknown * aP1)
+int CellClass::UpdateVariant4(IUnknown * aP0, IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -379,7 +379,7 @@ void CellClass::UpdateVariant4(IUnknown * aP0, IUnknown * aP1)
 
 // 0x56F8B0
 namespace gamemd {
-void CellClass::UpdateTerrain(IUnknown * aP0, IUnknown * aP1)
+int CellClass::UpdateTerrain(IUnknown * aP0, IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -564,7 +564,7 @@ void CellClass::UpdateTerrain(IUnknown * aP0, IUnknown * aP1)
 
 // 0x56FC80
 namespace gamemd {
-void CellClass::UpdateTileVariant2(IUnknown * aP0, IUnknown * aP1)
+int CellClass::UpdateTileVariant2(IUnknown * aP0, IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -749,7 +749,7 @@ void CellClass::UpdateTileVariant2(IUnknown * aP0, IUnknown * aP1)
 
 // 0x572440
 namespace gamemd {
-void CellClass::UpdateVariant7(IUnknown * aP0, IUnknown * aP1)
+int CellClass::UpdateVariant7(IUnknown * aP0, IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -928,7 +928,7 @@ void CellClass::UpdateVariant7(IUnknown * aP0, IUnknown * aP1)
 
 // 0x5727E0
 namespace gamemd {
-void CellClass::UpdateVariant8(IUnknown * aP0, IUnknown * aP1)
+int CellClass::UpdateVariant8(IUnknown * aP0, IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1107,7 +1107,7 @@ void CellClass::UpdateVariant8(IUnknown * aP0, IUnknown * aP1)
 
 // 0x572DA0
 namespace gamemd {
-void CellClass::UpdateVariant5(IUnknown * aP0, IUnknown * aP1)
+int CellClass::UpdateVariant5(IUnknown * aP0, IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1292,7 +1292,7 @@ void CellClass::UpdateVariant5(IUnknown * aP0, IUnknown * aP1)
 
 // 0x573170
 namespace gamemd {
-void CellClass::UpdateVariant6(IUnknown * aP0, IUnknown * aP1)
+int CellClass::UpdateVariant6(IUnknown * aP0, IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1477,7 +1477,7 @@ void CellClass::UpdateVariant6(IUnknown * aP0, IUnknown * aP1)
 
 // 0x57BAA0
 namespace gamemd {
-void CellClass::CheckTilePassable2(IUnknown * aP0)
+int CellClass::CheckTilePassable2(IUnknown * aP0)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1581,7 +1581,7 @@ void CellClass::CheckTilePassable2(IUnknown * aP0)
 
 // 0x57CCF0
 namespace gamemd {
-void CellClass::CheckTilePassable(IUnknown * aP0)
+int CellClass::CheckTilePassable(IUnknown * aP0)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1685,7 +1685,7 @@ void CellClass::CheckTilePassable(IUnknown * aP0)
 
 // 0x65B510
 namespace gamemd {
-void CellClass::GetOccupiedRatio()
+int CellClass::GetOccupiedRatio()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

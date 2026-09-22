@@ -8,7 +8,7 @@
 
 // 0x5F7A90
 namespace gamemd {
-void VoxelAnimType::LoadSection(const char * a2, int a3)
+int VoxelAnimType::LoadSection(const char * a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -121,7 +121,7 @@ void VoxelAnimType::LoadSection(const char * a2, int a3)
 
 // 0x5F7DB0
 namespace gamemd {
-void VoxelAnimType::LoadBarrel(const char * a2, int a3)
+int VoxelAnimType::LoadBarrel(const char * a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -222,7 +222,7 @@ void VoxelAnimType::LoadBarrel(const char * a2, int a3)
 
 // 0x5F8110
 namespace gamemd {
-void VoxelAnimType::LoadAnim()
+int VoxelAnimType::LoadAnim()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

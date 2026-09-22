@@ -569,7 +569,7 @@ void sub_4251F0(int a1, short * a2)
 
 // 0x425670
 namespace gamemd {
-void E4Recv_425670::ConstructionPositionTracker()
+int E4Recv_425670::ConstructionPositionTracker()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -928,7 +928,7 @@ void sub_4267F0()
 
 // 0x426ED0
 namespace gamemd {
-void E4Recv_426ED0::sub_426ED0(int a2)
+int E4Recv_426ED0::sub_426ED0(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

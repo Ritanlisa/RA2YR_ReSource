@@ -9,7 +9,7 @@
 #include "e4/classes/Voxel_e4.hpp"
 
 // 0x7586F0
-void VoxelAnim::ComputeTransform(float * a1, float * a2, float a3, int a4)
+int VoxelAnim::ComputeTransform(float * a1, float * a2, float a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -85,7 +85,7 @@ void VoxelAnim::ComputeTransform(float * a1, float * a2, float a3, int a4)
 }
 
 // 0x75AEC0
-void VoxelAnim::Draw(unsigned int * a2)
+int VoxelAnim::Draw(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -316,7 +316,7 @@ void VoxelAnim::Draw(unsigned int * a2)
               *(_DWORD *)(this + 44) = g_MovieFrameState1;
               v121 = this->num_sections;
               this->q00C = g_MovieFrameState2;
-              (*(void (__stdcall **)(int))(v121 + 72))(this + 4);
+              v121->GetExitCoords(this + 4);
               *(_BYTE *)(this + 54) = 0;
             }
             (*(void (__thiscall **)(_DWORD, int))(*this->q00C + 292))(this->q00C, 1);
@@ -351,7 +351,7 @@ void VoxelAnim::Draw(unsigned int * a2)
     v128 = this->num_sections;
     v129 = v127;
     LOWORD(v155) = v127;
-    (*(void (__stdcall **)(int, _DWORD))(v128 + 76))(this + 4, LODWORD(v155));
+    v128->TogglePrimaryFactory(this + 4, LODWORD(v155));
     v130 = (_DWORD **)(*(int (__thiscall **)(_DWORD, double *))(*this->q00C + 440))(
                         this->q00C,
                         &v155);
@@ -642,7 +642,7 @@ LABEL_32:
     *(_DWORD *)(this + 44) = g_MovieFrameState1;
     v58 = this->num_sections;
     this->q00C = g_MovieFrameState2;
-    (*(void (__stdcall **)(int))(v58 + 72))(this + 4);
+    v58->GetExitCoords(this + 4);
     goto LABEL_37;
   }
   v59 = Coord::Subtract(
@@ -738,7 +738,7 @@ LABEL_32:
           v77 = this->num_sections;
           *(_DWORD *)(this + 44) = g_MovieFrameState1;
           this->q00C = g_MovieFrameState2;
-          (*(void (__stdcall **)(int))(v77 + 72))(this + 4);
+          v77->GetExitCoords(this + 4);
           (*(void (__thiscall **)(_DWORD, _DWORD, _DWORD))(*this->q00C + 1348))(
             this->q00C,
             0,
@@ -913,7 +913,7 @@ LABEL_67:
       v104 = Math::RoundToInt((v103 - 1.570796326794897) * -10430.06004058427);
       v105 = this->num_sections;
       LOWORD(a2) = v104;
-      (*(void (__stdcall **)(int, _DWORD *))(v105 + 76))(this + 4, a2);
+      v105->TogglePrimaryFactory(this + 4, a2);
       (*(void (__thiscall **)(_DWORD, _DWORD, int))(*this->q00C + 1348))(
         this->q00C,
         0,

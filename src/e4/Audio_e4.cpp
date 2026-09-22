@@ -26,7 +26,7 @@
 
 // 0x402720
 namespace gamemd {
-void Audio::GetChannelStatus()
+int Audio::GetChannelStatus()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -53,7 +53,7 @@ void Audio::GetChannelStatus()
 
 // 0x404D80
 namespace gamemd {
-void Audio::ReleaseChannelRefs()
+int Audio::ReleaseChannelRefs()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -87,7 +87,7 @@ void Audio::ReleaseChannelRefs()
 
 // 0x4054A0
 namespace gamemd {
-void Audio::UpdatePlaybackPosition()
+int Audio::UpdatePlaybackPosition()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -174,7 +174,7 @@ LABEL_6:
 
 // 0x406870
 namespace gamemd {
-void Audio::ApplyFormatFlags(int * a1, char * a2)
+int Audio::ApplyFormatFlags(int * a1, char * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -223,7 +223,7 @@ LABEL_10:
 
 // 0x4070B0
 namespace gamemd {
-void Audio::WaitForCallback()
+int Audio::WaitForCallback()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -270,7 +270,7 @@ void Audio::Release()
 
 // 0x408070
 namespace gamemd {
-void Audio::IsSoundPlaying()
+int Audio::IsSoundPlaying()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -281,7 +281,7 @@ void Audio::IsSoundPlaying()
 
 // 0x408540
 namespace gamemd {
-void Audio::CalcRate(int a2, int a3)
+int Audio::CalcRate(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -292,7 +292,7 @@ void Audio::CalcRate(int a2, int a3)
 
 // 0x409320
 namespace gamemd {
-void Audio::GetSampleSize()
+int Audio::GetSampleSize()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -385,7 +385,7 @@ void sub_53E1D0()
 
 // 0x5D0470
 namespace gamemd {
-void Audio::ParseVolume(const char ** a1, ObjectClass * aP2)
+int Audio::ParseVolume(const char ** a1, ObjectClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -592,7 +592,7 @@ LABEL_50:
 
 // 0x7207F0
 namespace gamemd {
-void Audio::LoadWAVFiles()
+int Audio::LoadWAVFiles()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -650,7 +650,7 @@ void Audio::LoadWAVFiles()
 
 // 0x7510D0
 namespace gamemd {
-void Audio::InitFromINI()
+int Audio::InitFromINI()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

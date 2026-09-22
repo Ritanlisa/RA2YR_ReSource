@@ -7,7 +7,7 @@
 
 // 0x43A5D0
 namespace gamemd {
-void Power::Update(int * a2)
+int Power::Update(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -278,7 +278,7 @@ unsigned int * Power::UpdateAll()
 
 // 0x68B940
 namespace gamemd {
-void Power::ComputeHousePowerChecksum(unsigned int * a2)
+int Power::ComputeHousePowerChecksum(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

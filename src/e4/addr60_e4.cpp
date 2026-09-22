@@ -4972,7 +4972,7 @@ LABEL_41:
 } // namespace gamemd
 
 // 0x60C4A0
-void SkirmishDialog::ResizeDialogAndEnum()
+int SkirmishDialog::ResizeDialogAndEnum()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

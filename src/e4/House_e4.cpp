@@ -449,7 +449,7 @@ LABEL_13:
 
 // 0x4FD500
 namespace gamemd {
-void House::UpdateHouseAI()
+int House::UpdateHouseAI()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -734,7 +734,7 @@ void sub_501A20()
 
 // 0x50B6F0
 namespace gamemd {
-void House::IsHumanPlayer()
+int House::IsHumanPlayer()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -747,7 +747,7 @@ void House::IsHumanPlayer()
 
 // 0x50B730
 namespace gamemd {
-void House::IsCurrentPlayer()
+int House::IsCurrentPlayer()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -764,7 +764,7 @@ void House::IsCurrentPlayer()
 
 // 0x50DB00
 namespace gamemd {
-void House::ChooseHouseEnemy(BuildingClass * aP1)
+int House::ChooseHouseEnemy(BuildingClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -948,7 +948,7 @@ LABEL_24:
 
 // 0x544BE0
 namespace gamemd {
-void House::LookupObject(int a2)
+int House::LookupObject(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -965,7 +965,7 @@ void House::LookupObject(int a2)
 
 // 0x544C20
 namespace gamemd {
-void House::LoadMapFileData(int a2, char a3)
+int House::LoadMapFileData(int a2, char a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1009,7 +1009,7 @@ void House::Constructor()
 
 // 0x70C270
 namespace gamemd {
-void House::PowerBeginUpdate(AbstractClass * aP1)
+int House::PowerBeginUpdate(AbstractClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

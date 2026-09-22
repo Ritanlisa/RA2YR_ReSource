@@ -66,7 +66,7 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
       || (this->q034 || !v8)
   int v9; // ecx
       && (v9 = this->abstractFlags, v9 > 0)
-      && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*this + 8))(this, v8 + v9, 0) )
+      && this->COMStub_Release(v8 + v9, 0) )
     {
       int v10 = this->uniqueId; /*0x438fbb*/
       int v11 = this->vtable2; /*0x438fbe*/

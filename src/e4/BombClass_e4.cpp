@@ -7,7 +7,7 @@
 // 0x4385D0
 namespace ra2 {
 namespace game {
-void BombClass::AbstractClass()
+int BombClass::AbstractClass()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -65,7 +65,7 @@ void * BombClass::GetCurrentFrame()
 // 0x438A70
 namespace ra2 {
 namespace game {
-void BombClass::TimeToExplode()
+int BombClass::TimeToExplode()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -78,7 +78,7 @@ void BombClass::TimeToExplode()
 // 0x438A90
 namespace ra2 {
 namespace game {
-void BombClass::Stat(int * a2)
+int BombClass::Stat(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

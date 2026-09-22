@@ -4,7 +4,7 @@
 #include "e4/classes/Dialog_e4.hpp"
 
 // 0x48E620
-void Control::DispatchClick(ControlClass * aP1)
+int Control::DispatchClick(ControlClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -17,7 +17,7 @@ void Control::DispatchClick(ControlClass * aP1)
 }
 
 // 0x60B950
-void Control::RepositionControlsDialog()
+int Control::RepositionControlsDialog()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -307,7 +307,7 @@ LABEL_171:
 }
 
 // 0x60C540
-void Control::CheckControlTypeDialog()
+int Control::CheckControlTypeDialog()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

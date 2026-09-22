@@ -3,7 +3,7 @@
 #include "e4/e4_globals.hpp"
 
 // 0x48B2A0
-void Struct::ClearAllMemberFlags()
+int Struct::ClearAllMemberFlags()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -69,7 +69,7 @@ void Struct::ClearAllMemberFlags()
 }
 
 // 0x48BF10
-void Struct::ZeroInitAndSetup()
+int Struct::ZeroInitAndSetup()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -111,7 +111,7 @@ int Struct::ZeroInit32()
 
 // 0x53F4E0
 namespace gamemd {
-void Struct::ZeroInitAndSetup_0()
+int Struct::ZeroInitAndSetup_0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // attributes: thunk
@@ -122,7 +122,7 @@ void Struct::ZeroInitAndSetup_0()
 }
 // 0x5EF280
 namespace gamemd {
-void Struct::ZeroInitAndSetup_0_0()
+int Struct::ZeroInitAndSetup_0_0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 // attributes: thunk

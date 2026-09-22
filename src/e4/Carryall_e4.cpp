@@ -9,7 +9,7 @@
 #include "e4/classes/Team_e4.hpp"
 
 // 0x416D50
-void Carryall::MissionStateMachine()
+int Carryall::MissionStateMachine()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

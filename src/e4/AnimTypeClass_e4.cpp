@@ -204,7 +204,7 @@ LABEL_17:
 
 // 0x427B50
 namespace gamemd {
-void AnimTypeClass::GetWarhead(int a2)
+int AnimTypeClass::GetWarhead(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -269,7 +269,7 @@ void AnimTypeClass::GetWarhead(int a2)
 
 // 0x427D00
 namespace gamemd {
-void AnimTypeClass::LoadFromINI(unsigned char *** a2)
+int AnimTypeClass::LoadFromINI(unsigned char *** a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -878,7 +878,7 @@ LABEL_70:
 
 // 0x428800
 namespace gamemd {
-void AnimTypeClass::SaveLoad_Prefix(int a1, int a2)
+int AnimTypeClass::SaveLoad_Prefix(int a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -931,7 +931,7 @@ void AnimTypeClass::SaveLoad_Prefix(int a1, int a2)
 
 // 0x4289D0
 namespace gamemd {
-void AnimTypeClass::PowerDrainUpdate(int * a2)
+int AnimTypeClass::PowerDrainUpdate(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1020,7 +1020,7 @@ LABEL_6:
 
 // 0x428C30
 namespace gamemd {
-void AnimTypeClass::GetDamage()
+int AnimTypeClass::GetDamage()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1120,7 +1120,7 @@ AnimTypeClass * AnimTypeClass::ddtor(char a2)
 
 // 0x48E050
 namespace gamemd {
-void AnimTypeClass::LookupByName()
+int AnimTypeClass::LookupByName()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

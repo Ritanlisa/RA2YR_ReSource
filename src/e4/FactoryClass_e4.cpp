@@ -10,7 +10,7 @@
 
 // 0x4C9B20
 namespace gamemd {
-void FactoryClass::UpdateProduction()
+int FactoryClass::UpdateProduction()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -98,7 +98,7 @@ void FactoryClass::UpdateProduction()
 
 // 0x4C9C60
 namespace gamemd {
-void FactoryClass::HasProgressChanged()
+int FactoryClass::HasProgressChanged()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -113,7 +113,7 @@ void FactoryClass::HasProgressChanged()
 
 // 0x4C9C70
 namespace gamemd {
-void FactoryClass::DemandProduction(int a2, void * a3, char a4)
+int FactoryClass::DemandProduction(int a2, void * a3, char a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -187,7 +187,7 @@ void FactoryClass::DemandProduction(int a2, void * a3, char a4)
 
 // 0x4C9E10
 namespace gamemd {
-void FactoryClass::SetObject(int a2)
+int FactoryClass::SetObject(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -212,7 +212,7 @@ void FactoryClass::SetObject(int a2)
 
 // 0x4C9E60
 namespace gamemd {
-void FactoryClass::StartProduction(char a2)
+int FactoryClass::StartProduction(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -234,7 +234,7 @@ void FactoryClass::StartProduction(char a2)
 
 // 0x4C9FB0
 namespace gamemd {
-void FactoryClass::GetBuildTimeFrames()
+int FactoryClass::GetBuildTimeFrames()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -257,7 +257,7 @@ void FactoryClass::GetBuildTimeFrames()
 
 // 0x4CA270
 namespace gamemd {
-void FactoryClass::LoadFromStream(int a1, int * a2)
+int FactoryClass::LoadFromStream(int a1, int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -337,7 +337,7 @@ LABEL_14:
 
 // 0x4CA430
 namespace gamemd {
-void FactoryClass::Stat(int * a2)
+int FactoryClass::Stat(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -380,7 +380,7 @@ void FactoryClass::Stat(int * a2)
 
 // 0x4CA580
 namespace gamemd {
-void FactoryClass::Revert(int a2, int a3)
+int FactoryClass::Revert(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -396,7 +396,7 @@ void FactoryClass::Revert(int a2, int a3)
 
 // 0x4CA5A0
 namespace gamemd {
-void FactoryClass::StartProduction_2()
+int FactoryClass::StartProduction_2()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -440,7 +440,7 @@ void FactoryClass::StartProduction_2()
 
 // 0x4CA670
 namespace gamemd {
-void FactoryClass::CountType(IUnknown * aP1)
+int FactoryClass::CountType(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -470,7 +470,7 @@ void FactoryClass::CountType(IUnknown * aP1)
 
 // 0x4CA6B0
 namespace gamemd {
-void FactoryClass::IsQueued(int a2)
+int FactoryClass::IsQueued(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -546,7 +546,7 @@ void * FactoryClass::CopyTo(char a2)
 
 // 0x635060
 namespace gamemd {
-void FactoryClass::FinishProduction(int a2)
+int FactoryClass::FinishProduction(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

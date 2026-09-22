@@ -191,7 +191,7 @@ LABEL_41:
 
 // 0x485020
 namespace gamemd {
-void Building::GetNthOfType()
+int Building::GetNthOfType()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -207,7 +207,7 @@ void Building::GetNthOfType()
 
 // 0x772A90
 namespace gamemd {
-void Building::GetRenderType()
+int Building::GetRenderType()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

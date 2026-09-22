@@ -3,7 +3,7 @@
 #include "e4/e4_globals.hpp"
 
 // 0x69ACC0
-void GameOption::GetField()
+int GameOption::GetField()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

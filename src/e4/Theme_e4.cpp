@@ -5,7 +5,7 @@
 #include "e4/classes/Debug_e4.hpp"
 
 // 0x720B20
-void Theme::QueueSong(IUnknown * aP1)
+int Theme::QueueSong(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -48,7 +48,7 @@ void Theme::QueueSong(IUnknown * aP1)
 }
 
 // 0x720EA0
-void Theme::Stop(ObjectClass * aP1)
+int Theme::Stop(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -97,7 +97,7 @@ LABEL_14:
 }
 
 // 0x720FD0
-void Theme::IsPlaying()
+int Theme::IsPlaying()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

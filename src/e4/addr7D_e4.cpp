@@ -9601,7 +9601,7 @@ unsigned int * _com_error::sub_7DCE0E(int a2)
 
 // 0x7DCE3B
 namespace gamemd {
-void _com_error::sub_7DCE3B()
+int _com_error::sub_7DCE3B()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

@@ -70,7 +70,7 @@ unsigned int * BSurface::Construct(int a2, int a3, int a4, int a5)
 
 // 0x7B8C60
 namespace gamemd {
-void BSurface::CreateTripleBuffer()
+int BSurface::CreateTripleBuffer()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

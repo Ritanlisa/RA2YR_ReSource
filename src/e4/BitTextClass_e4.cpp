@@ -4,7 +4,7 @@
 #include "e4/classes/File_e4.hpp"
 
 // 0x433880
-void BitTextClass::ParseFontData(char * Source)
+int BitTextClass::ParseFontData(char * Source)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

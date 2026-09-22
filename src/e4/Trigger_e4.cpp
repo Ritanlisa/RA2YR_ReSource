@@ -11,7 +11,7 @@
 
 // 0x554A60
 namespace gamemd {
-void Trigger::EnableOnce(AbstractClass * aP1)
+int Trigger::EnableOnce(AbstractClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -335,7 +335,7 @@ unsigned int * Trigger::checkCondition(ObjectClass * aP1, ObjectClass * aP2)
 
 // 0x76FF20
 namespace gamemd {
-void Trigger::executeActions(int a2)
+int Trigger::executeActions(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

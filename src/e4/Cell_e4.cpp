@@ -13,7 +13,7 @@
 
 // 0x419B00
 namespace gamemd {
-void Cell::IsOccupied(short * a2, char a3)
+int Cell::IsOccupied(short * a2, char a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -73,7 +73,7 @@ void Cell::IsOccupied(short * a2, char a3)
 
 // 0x42B1C0
 namespace gamemd {
-void Cell::PosToIndex()
+int Cell::PosToIndex()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -85,7 +85,7 @@ void Cell::PosToIndex()
 
 // 0x43B4C0
 namespace gamemd {
-void Cell::CanPlaceBuilding(IUnknown * this, unsigned int * a2)
+int Cell::CanPlaceBuilding(IUnknown * this, unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -265,7 +265,7 @@ void * Cell::GetNeighbourContent(unsigned int a2)
 
 // 0x4834A0
 namespace gamemd {
-void Cell::IsBuildable(int a2, char a3, char a4, IUnknown * aP4, IUnknown * aP5, IUnknown * aP6, IUnknown * aP7)
+int Cell::IsBuildable(int a2, char a3, char a4, IUnknown * aP4, IUnknown * aP5, IUnknown * aP6, IUnknown * aP7)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -338,7 +338,7 @@ void Cell::IsBuildable(int a2, char a3, char a4, IUnknown * aP4, IUnknown * aP5,
 
 // 0x485060
 namespace gamemd {
-void Cell::IsValidHeight()
+int Cell::IsValidHeight()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -351,7 +351,7 @@ void Cell::IsValidHeight()
 
 // 0x486380
 namespace gamemd {
-void Cell::IsEmpty()
+int Cell::IsEmpty()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -364,7 +364,7 @@ void Cell::IsEmpty()
 
 // 0x4865D0
 namespace gamemd {
-void Cell::IsGroundTypeRange()
+int Cell::IsGroundTypeRange()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -383,7 +383,7 @@ void Cell::IsGroundTypeRange()
 
 // 0x486750
 namespace gamemd {
-void Cell::IsInRange()
+int Cell::IsInRange()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -403,7 +403,7 @@ void Cell::IsInRange()
 
 // 0x486770
 namespace gamemd {
-void Cell::IsInRange2()
+int Cell::IsInRange2()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -423,7 +423,7 @@ void Cell::IsInRange2()
 
 // 0x4867B0
 namespace gamemd {
-void Cell::IsShore()
+int Cell::IsShore()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -436,7 +436,7 @@ void Cell::IsShore()
 
 // 0x486FF0
 namespace gamemd {
-void Cell::IsBuildableAdvanced()
+int Cell::IsBuildableAdvanced()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -482,7 +482,7 @@ LABEL_14:
 
 // 0x4870B0
 namespace gamemd {
-void Cell::HasOccupierBit(IUnknown * aP1)
+int Cell::HasOccupierBit(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -493,7 +493,7 @@ void Cell::HasOccupierBit(IUnknown * aP1)
 
 // 0x487A10
 namespace gamemd {
-void Cell::SearchEnemies(IUnknown * aP1)
+int Cell::SearchEnemies(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -626,7 +626,7 @@ long long Cell::GetTraversability()
 
 // 0x487D50
 namespace gamemd {
-void Cell::GetSlopeIndex()
+int Cell::GetSlopeIndex()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -637,7 +637,7 @@ void Cell::GetSlopeIndex()
 
 // 0x487DF0
 namespace gamemd {
-void Cell::IsBridge2()
+int Cell::IsBridge2()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -648,7 +648,7 @@ void Cell::IsBridge2()
 
 // 0x4DCE80
 namespace gamemd {
-void Cell::IsValidDestination(short * a2)
+int Cell::IsValidDestination(short * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -700,7 +700,7 @@ void Cell::IsValidDestination(short * a2)
 
 // 0x5657E0
 namespace gamemd {
-void Cell::Exists(MouseClass * aP1)
+int Cell::Exists(MouseClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -711,7 +711,7 @@ void Cell::Exists(MouseClass * aP1)
 
 // 0x56D430
 namespace gamemd {
-void Cell::CoordToIndex(IUnknown * aP1)
+int Cell::CoordToIndex(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -722,7 +722,7 @@ void Cell::CoordToIndex(IUnknown * aP1)
 
 // 0x56D460
 namespace gamemd {
-void Cell::SetRadar(IUnknown * aP1)
+int Cell::SetRadar(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -799,7 +799,7 @@ void Cell::SetRadar(IUnknown * aP1)
 
 // 0x56E990
 namespace gamemd {
-void Cell::UpdateTileType(IUnknown * aP0, IUnknown * aP1, int a3)
+int Cell::UpdateTileType(IUnknown * aP0, IUnknown * aP1, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -894,7 +894,7 @@ void Cell::UpdateTileType(IUnknown * aP0, IUnknown * aP1, int a3)
 
 // 0x56EB80
 namespace gamemd {
-void Cell::SetTileType(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, int a5)
+int Cell::SetTileType(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -987,7 +987,7 @@ void Cell::SetTileType(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2, IUnknown 
 
 // 0x578AD0
 namespace gamemd {
-void Cell::IsPassableAllied(IUnknown * aP0, IUnknown * aP1)
+int Cell::IsPassableAllied(IUnknown * aP0, IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1024,7 +1024,7 @@ LABEL_10:
 
 // 0x579B70
 namespace gamemd {
-void Cell::GetAdjacencyFlags(MouseClass * aP0)
+int Cell::GetAdjacencyFlags(MouseClass * aP0)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1260,7 +1260,7 @@ void Cell::GetAdjacencyFlags(MouseClass * aP0)
 
 // 0x57B210
 namespace gamemd {
-void Cell::GetTerrainMask(IUnknown * aP1, int a3)
+int Cell::GetTerrainMask(IUnknown * aP1, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1376,7 +1376,7 @@ void * Cell::Clear()
 
 // 0x6B5F80
 namespace gamemd {
-void Cell::IsWalkable(unsigned short * a2, char a3)
+int Cell::IsWalkable(unsigned short * a2, char a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1430,7 +1430,7 @@ LABEL_15:
 
 // 0x6D2790
 namespace gamemd {
-void Cell::CreateCrater(IUnknown aP2)
+int Cell::CreateCrater(IUnknown aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1620,7 +1620,7 @@ LABEL_43:
 
 // 0x6D8700
 namespace gamemd {
-void Cell::GetAdjacentPassableMask(IUnknown * aP0, int a2)
+int Cell::GetAdjacentPassableMask(IUnknown * aP0, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

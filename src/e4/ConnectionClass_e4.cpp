@@ -6,7 +6,7 @@
 #include "e4/classes/Timer_e4.hpp"
 
 // 0x48B750
-void ConnectionClass::allocPacketSlot(const void * a2, signed int a3, const void * a4, signed int a5)
+int ConnectionClass::allocPacketSlot(const void * a2, signed int a3, const void * a4, signed int a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -110,7 +110,7 @@ void ConnectionClass::dtor()
 }
 
 // 0x48BF40
-void ConnectionClass::sendAck(AnimClass * aP1, AnimClass * aP2, AnimClass * aP3, AnimClass * aP4)
+int ConnectionClass::sendAck(AnimClass * aP1, AnimClass * aP2, AnimClass * aP3, AnimClass * aP4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -152,7 +152,7 @@ void ConnectionClass::sendAck(AnimClass * aP1, AnimClass * aP2, AnimClass * aP3,
 }
 
 // 0x48C040
-void ConnectionClass::receivePacket(int a2, int a3)
+int ConnectionClass::receivePacket(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -303,7 +303,7 @@ LABEL_40:
 }
 
 // 0x48C320
-void ConnectionClass::processTileUpdate(void * a2, signed int * a3)
+int ConnectionClass::processTileUpdate(void * a2, signed int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -345,7 +345,7 @@ LABEL_10:
 }
 
 // 0x48C3E0
-void ConnectionClass::serviceSendQueue()
+int ConnectionClass::serviceSendQueue()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

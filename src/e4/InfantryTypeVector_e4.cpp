@@ -3,7 +3,7 @@
 #include "e4/e4_globals.hpp"
 
 // 0x512F20
-void InfantryTypeVector::Add(InfantryTypeClass * aP1)
+int InfantryTypeVector::Add(InfantryTypeClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

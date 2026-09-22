@@ -51,7 +51,7 @@ C CaptureManagerClass::CaptureManagerClass(TechnoClass * aP1, int a3, char a4)
 // 0x471A50
 namespace ra2 {
 namespace game {
-void CaptureManagerClass::HandleOverload()
+int CaptureManagerClass::HandleOverload()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -171,7 +171,7 @@ void CaptureManagerClass::HandleOverload()
 // 0x471C90
 namespace ra2 {
 namespace game {
-void CaptureManagerClass::CanCapture(unsigned int * a2)
+int CaptureManagerClass::CanCapture(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -207,7 +207,7 @@ void CaptureManagerClass::CanCapture(unsigned int * a2)
 // 0x471D40
 namespace ra2 {
 namespace game {
-void CaptureManagerClass::CaptureUnit(int a2)
+int CaptureManagerClass::CaptureUnit(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -343,7 +343,7 @@ void CaptureManagerClass::CaptureUnit(int a2)
 // 0x471FF0
 namespace ra2 {
 namespace game {
-void CaptureManagerClass::FreeUnit(IUnknown * aP0, int _28, IUnknown * a2, IUnknown * aP1, int _34, IUnknown ** a5)
+int CaptureManagerClass::FreeUnit(IUnknown * aP0, int _28, IUnknown * a2, IUnknown * aP1, int _34, IUnknown ** a5)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -422,7 +422,7 @@ void CaptureManagerClass::FreeUnit(IUnknown * aP0, int _28, IUnknown * a2, IUnkn
 // 0x472160
 namespace ra2 {
 namespace game {
-void CaptureManagerClass::DrawLinks(int a1, ... a2)
+int CaptureManagerClass::DrawLinks(int a1, ... a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -509,7 +509,7 @@ LABEL_5:
 // 0x4722A0
 namespace ra2 {
 namespace game {
-void CaptureManagerClass::CannotControlAnyMore()
+int CaptureManagerClass::CannotControlAnyMore()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -664,7 +664,7 @@ LABEL_33:
 // 0x472640
 namespace ra2 {
 namespace game {
-void CaptureManagerClass::NeedsToDrawLinks()
+int CaptureManagerClass::NeedsToDrawLinks()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -711,7 +711,7 @@ LABEL_12:
 // 0x4726C0
 namespace ra2 {
 namespace game {
-void CaptureManagerClass::IsOverloading(bool * a2)
+int CaptureManagerClass::IsOverloading(bool * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -727,7 +727,7 @@ void CaptureManagerClass::IsOverloading(bool * a2)
 // 0x472720
 namespace ra2 {
 namespace game {
-void CaptureManagerClass::LoadFromStream(int a1, int * a2)
+int CaptureManagerClass::LoadFromStream(int a1, int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -833,7 +833,7 @@ LABEL_19:
 // 0x4728E0
 namespace ra2 {
 namespace game {
-void CaptureManagerClass::SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2)
+int CaptureManagerClass::SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -872,7 +872,7 @@ void CaptureManagerClass::SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2)
 // 0x472D70
 namespace ra2 {
 namespace game {
-void CaptureManagerClass::Capture(unsigned int * a2)
+int CaptureManagerClass::Capture(unsigned int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

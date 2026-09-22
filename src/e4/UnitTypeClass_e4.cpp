@@ -7,7 +7,7 @@
 #include "e4/classes/VoxelAnimType_e4.hpp"
 
 // 0x6B4DD0
-void UnitTypeClass::ReadINIEntry()
+int UnitTypeClass::ReadINIEntry()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

@@ -5,7 +5,7 @@
 #include "e4/classes/Power_e4.hpp"
 
 // 0x549B70
-void IsometricTileTypeClass::ProcessPower(int * a2)
+int IsometricTileTypeClass::ProcessPower(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -40,7 +40,7 @@ void IsometricTileTypeClass::ProcessPower(int * a2)
 }
 
 // 0x549C80
-void IsometricTileTypeClass::LoadTypeData(int * a1, int a2)
+int IsometricTileTypeClass::LoadTypeData(int * a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -82,7 +82,7 @@ void IsometricTileTypeClass::LoadTypeData(int * a1, int a2)
 }
 
 // 0x549DD0
-void IsometricTileTypeClass::GetTileIndex(int a2, int a3)
+int IsometricTileTypeClass::GetTileIndex(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -98,7 +98,7 @@ void IsometricTileTypeClass::GetTileIndex(int a2, int a3)
 }
 
 // 0x54A160
-void IsometricTileTypeClass::GetAuxField()
+int IsometricTileTypeClass::GetAuxField()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

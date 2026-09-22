@@ -608,7 +608,7 @@ int TechnoClass::DTOR()
 // 0x702D40
 namespace ra2 {
 namespace game {
-void TechnoClass::RegisterKill()
+int TechnoClass::RegisterKill()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -800,7 +800,7 @@ LABEL_67:
 // 0x705860
 namespace ra2 {
 namespace game {
-void TechnoClass::DrawAirstrikeFlare_SetContext(int a1, int a2, int a3, int a4, int a5, int a6)
+int TechnoClass::DrawAirstrikeFlare_SetContext(int a1, int a2, int a3, int a4, int a5, int a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -936,7 +936,7 @@ void TechnoClass::DrawAirstrikeFlare_SetContext(int a1, int a2, int a3, int a4, 
 // 0x70D0D0
 namespace ra2 {
 namespace game {
-void TechnoClass::HasVoiceResponse(int weaponIndex)
+int TechnoClass::HasVoiceResponse(int weaponIndex)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -957,7 +957,7 @@ void TechnoClass::HasVoiceResponse(int weaponIndex)
 // 0x73B140
 namespace ra2 {
 namespace game {
-void TechnoClass::RenderTechnoSHP(int * a0, int * a1, int * a2, HouseClass * aP3, HouseClass * aP4, int a6, int a7, TechnoClass * aP7, TechnoClass * aP8, int a10, int a11)
+int TechnoClass::RenderTechnoSHP(int * a0, int * a1, int * a2, HouseClass * aP3, HouseClass * aP4, int a6, int a7, TechnoClass * aP7, TechnoClass * aP8, int a10, int a11)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

@@ -28,7 +28,7 @@ unsigned int * HouseTypeClass::loadVeteranWeapons(HouseTypeClass * aP1)
 
 // 0x5116A0
 namespace gamemd {
-void HouseTypeClass::Dtor()
+int HouseTypeClass::Dtor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -83,7 +83,7 @@ void HouseTypeClass::Dtor()
 
 // 0x511850
 namespace gamemd {
-void HouseTypeClass::LoadFromINI(unsigned char *** aP1)
+int HouseTypeClass::LoadFromINI(unsigned char *** aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -510,7 +510,7 @@ void HouseTypeClass::LoadFromINI(unsigned char *** aP1)
 
 // 0x512170
 namespace gamemd {
-void HouseTypeClass::ProcessPower(int * a2)
+int HouseTypeClass::ProcessPower(int * a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -538,7 +538,7 @@ void HouseTypeClass::ProcessPower(int * a2)
 
 // 0x512290
 namespace gamemd {
-void HouseTypeClass::SaveLoad_Prefix(unsigned int * i, int a2)
+int HouseTypeClass::SaveLoad_Prefix(unsigned int * i, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -649,7 +649,7 @@ unsigned int * HouseTypeClass::readBaseDefense(VectorClass * aP1)
 
   if ( this == (_DWORD *)aP1 ) /*0x51337a*/
     return this; /*0x51337a*/
-  (*(void (__thiscall **)(_DWORD *))(*this + 12))(this); /*0x51337e*/
+  this->GetClassIdentifier(); /*0x51337e*/
   void * v3 = aP1->Capacity; /*0x513381*/
   this->vtable3 = v3; /*0x513386*/
   if ( !v3 ) /*0x513389*/
@@ -1681,7 +1681,7 @@ int HouseTypeClass::readLoadoutData(int a1)
 
 // 0x6A46D0
 namespace gamemd {
-void HouseTypeClass::Find()
+int HouseTypeClass::Find()
  {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

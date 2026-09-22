@@ -22,7 +22,7 @@ unsigned int * IPXInterfaceClass::Construct()
 }
 
 // 0x7B0DD0
-void IPXInterfaceClass::initSocket(IUnknown * aP1, Color * aP2)
+int IPXInterfaceClass::initSocket(IUnknown * aP1, Color * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -87,7 +87,7 @@ void IPXInterfaceClass::initSocket(IUnknown * aP1, Color * aP2)
 }
 
 // 0x7B13D0
-void IPXInterfaceClass::SendPacket(ObjectClass * aP1, int a3, int a4, unsigned int fromlen)
+int IPXInterfaceClass::SendPacket(ObjectClass * aP1, int a3, int a4, unsigned int fromlen)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -254,7 +254,7 @@ LABEL_6:
 }
 
 // 0x7B1760
-void IPXInterfaceClass::GetLocalAddress(int a2)
+int IPXInterfaceClass::GetLocalAddress(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -324,7 +324,7 @@ void * IPXInterfaceClass::bindSocket()
 }
 
 // 0x7B1B80
-void IPXInterfaceClass::AddRef()
+int IPXInterfaceClass::AddRef()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -346,19 +346,19 @@ void IPXInterfaceClass::AddRef()
 }
 
 // 0x7B1BC0
-void IPXInterfaceClass::Receive()
+int IPXInterfaceClass::Receive()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
   u_int v2; // eax
   u_int v5; // eax
-  v2 = (*(int (__thiscall **)(SOCKET *, int))(*this + 56))(this, -1); /*0x7b1bc9*/
+  v2 = this->COMStub_Ret1139(-1); /*0x7b1bc9*/
   if ( WSAAsyncSelect(this->q3F06C, g_hWnd, v2, 3) != -1 ) /*0x7b1be3*/
   {
     int v4 = this->q3F070; /*0x7b1bfc*/
     if ( v4 == -1 ) /*0x7b1c05*/
       return 1; /*0x7b1c05*/
-    v5 = (*(int (__thiscall **)(SOCKET *, int))(*this + 56))(this, v4); /*0x7b1c0e*/
+    v5 = this->COMStub_Ret1139(v4); /*0x7b1c0e*/
     if ( WSAAsyncSelect(this->q3F070, g_hWnd, v5, 3) != -1 ) /*0x7b1c27*/
       return 1; /*0x7b1c40*/
   }
@@ -447,7 +447,7 @@ unsigned char * IPXInterfaceClass::processPacket()
 }
 
 // 0x7B24E0
-void IPXInterfaceClass::Connect(const void * a1, unsigned int a3, UDPInterfaceClass * aP3)
+int IPXInterfaceClass::Connect(const void * a1, unsigned int a3, UDPInterfaceClass * aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -501,7 +501,7 @@ void IPXInterfaceClass::Connect(const void * a1, unsigned int a3, UDPInterfaceCl
 }
 
 // 0x7B2A20
-void IPXInterfaceClass::getSocketState(int a2, unsigned int * a3)
+int IPXInterfaceClass::getSocketState(int a2, unsigned int * a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

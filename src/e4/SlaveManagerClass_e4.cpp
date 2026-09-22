@@ -12,7 +12,7 @@
 // 0x522D00
 namespace ra2 {
 namespace game {
-void SlaveManagerClass::Check()
+int SlaveManagerClass::Check()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -29,7 +29,7 @@ void SlaveManagerClass::Check()
 // 0x522D20
 namespace ra2 {
 namespace game {
-void SlaveManagerClass::VtableDispatch()
+int SlaveManagerClass::VtableDispatch()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -42,7 +42,7 @@ void SlaveManagerClass::VtableDispatch()
 // 0x522D30
 namespace ra2 {
 namespace game {
-void SlaveManagerClass::CheckIsOne()
+int SlaveManagerClass::CheckIsOne()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -55,7 +55,7 @@ void SlaveManagerClass::CheckIsOne()
 // 0x522FC0
 namespace ra2 {
 namespace game {
-void SlaveManagerClass::IsMasterHarvester()
+int SlaveManagerClass::IsMasterHarvester()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -68,7 +68,7 @@ void SlaveManagerClass::IsMasterHarvester()
 // 0x6AF1A0
 namespace ra2 {
 namespace game {
-void SlaveManagerClass::ctor(TechnoClass * aP1, int a3, int a4, int a5, int a6)
+int SlaveManagerClass::ctor(TechnoClass * aP1, int a3, int a4, int a5, int a6)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -162,7 +162,7 @@ void SlaveManagerClass::ctor(TechnoClass * aP1, int a3, int a4, int a5, int a6)
 // 0x6AF360
 namespace ra2 {
 namespace game {
-void SlaveManagerClass::Constructor()
+int SlaveManagerClass::Constructor()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -259,7 +259,7 @@ void SlaveManagerClass::Constructor_SlaveManagerClass()
 // 0x6AF580
 namespace ra2 {
 namespace game {
-void SlaveManagerClass::SetOwner(TechnoClass * aP1)
+int SlaveManagerClass::SetOwner(TechnoClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -292,7 +292,7 @@ void SlaveManagerClass::SetOwner(TechnoClass * aP1)
 // 0x6AF5F0
 namespace ra2 {
 namespace game {
-void SlaveManagerClass::UpdateSlaves()
+int SlaveManagerClass::UpdateSlaves()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -659,7 +659,7 @@ LABEL_61:
 // 0x6B0A20
 namespace ra2 {
 namespace game {
-void SlaveManagerClass::LostSlave(ObjectClass * aP1)
+int SlaveManagerClass::LostSlave(ObjectClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -696,7 +696,7 @@ void SlaveManagerClass::LostSlave(ObjectClass * aP1)
 // 0x6B1020
 namespace ra2 {
 namespace game {
-void SlaveManagerClass::ShouldWakeUpNow()
+int SlaveManagerClass::ShouldWakeUpNow()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -725,7 +725,7 @@ void SlaveManagerClass::ShouldWakeUpNow()
 // 0x6B10F0
 namespace ra2 {
 namespace game {
-void SlaveManagerClass::AssignTask(AbstractClass * aP1)
+int SlaveManagerClass::AssignTask(AbstractClass * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -745,7 +745,7 @@ void SlaveManagerClass::AssignTask(AbstractClass * aP1)
 // 0x6B1170
 namespace ra2 {
 namespace game {
-void SlaveManagerClass::LoadManager(unsigned int * a1, int a2)
+int SlaveManagerClass::LoadManager(unsigned int * a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

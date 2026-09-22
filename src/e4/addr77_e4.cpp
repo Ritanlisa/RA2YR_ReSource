@@ -81,7 +81,7 @@ void E4Recv_771890::sub_771890()
 
 // 0x7741C0
 namespace gamemd {
-void E4Recv_7741C0::FindRegistrySubKey()
+int E4Recv_7741C0::FindRegistrySubKey()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -536,7 +536,7 @@ char sub_776230(HWND hWnd, HWND a2, LPARAM * a3)
 
 // 0x776320
 namespace gamemd {
-void E4Recv_776320::sub_776320()
+int E4Recv_776320::sub_776320()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -2322,7 +2322,7 @@ void sub_77CCD0()
 
 // 0x77D3F0
 namespace gamemd {
-void E4Recv_77D3F0::sub_77D3F0()
+int E4Recv_77D3F0::sub_77D3F0()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

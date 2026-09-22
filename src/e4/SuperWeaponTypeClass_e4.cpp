@@ -9,7 +9,7 @@
 
 // 0x4F6540
 namespace gamemd {
-void SuperWeaponTypeClass::IsAvailable()
+int SuperWeaponTypeClass::IsAvailable()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -315,7 +315,7 @@ LABEL_16:
 
 // 0x6CEA20
 namespace gamemd {
-void SuperWeaponTypeClass::SD_vt25(unsigned char *** aP1)
+int SuperWeaponTypeClass::SD_vt25(unsigned char *** aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -574,7 +574,7 @@ LABEL_25:
 
 // 0x6CEEB0
 namespace gamemd {
-void SuperWeaponTypeClass::FindFirstOfAction()
+int SuperWeaponTypeClass::FindFirstOfAction()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -595,7 +595,7 @@ void SuperWeaponTypeClass::FindFirstOfAction()
 
 // 0x6CEF80
 namespace gamemd {
-void SuperWeaponTypeClass::SD_vt27(int a2, int a3)
+int SuperWeaponTypeClass::SD_vt27(int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

@@ -12,7 +12,7 @@
 
 // 0x568300
 namespace gamemd {
-void LayerClass::CoordinatesLegal(IUnknown * aP1)
+int LayerClass::CoordinatesLegal(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -540,7 +540,7 @@ LABEL_25:
 
 // 0x578290
 namespace gamemd {
-void LayerClass::CellIteratorNext()
+int LayerClass::CellIteratorNext()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -586,7 +586,7 @@ void LayerClass::CellIteratorNext()
 
 // 0x578350
 namespace gamemd {
-void LayerClass::CellIteratorReset()
+int LayerClass::CellIteratorReset()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -605,7 +605,7 @@ void LayerClass::CellIteratorReset()
 
 // 0x578460
 namespace gamemd {
-void LayerClass::IsWithinUsableArea(IUnknown * aP1, TechnoClass * aP2)
+int LayerClass::IsWithinUsableArea(IUnknown * aP1, TechnoClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -642,7 +642,7 @@ void LayerClass::IsWithinUsableArea(IUnknown * aP1, TechnoClass * aP2)
 
 // 0x581140
 namespace gamemd {
-void LayerClass::DestroyCliff(int * a1, int a2, int a3)
+int LayerClass::DestroyCliff(int * a1, int a2, int a3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

@@ -5,7 +5,7 @@
 #include "e4/classes/EventClass_e4.hpp"
 
 // 0x7327D0
-void MoveFeedback::ProcessCommand()
+int MoveFeedback::ProcessCommand()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

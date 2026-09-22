@@ -3,7 +3,7 @@
 #include "e4/e4_globals.hpp"
 
 // 0x53DDA0
-void Explosion::RemoveItem(int a2)
+int Explosion::RemoveItem(int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

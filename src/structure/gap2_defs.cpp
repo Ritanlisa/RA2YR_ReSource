@@ -266,7 +266,7 @@ namespace gamemd { void* BuildingLightClass::CTOR(int a1) {
     v20 = (BuildingLightClass *)v18[2]; /*0x435abc*/
     eax8f = *this; /*0x435abf*/
     this->nextObject = (int)v20; /*0x435ac4*/
-    (*(void (__thiscall **)(int *, int *))(eax8f + 436))(this, &v39); /*0x435ac7*/
+    this->SetPosition(&v39); /*0x435ac7*/
     v39 = this->q027; /*0x435ad7*/
     v40 = (BuildingLightClass *)this->owningHouseIndex; /*0x435ae3*/
     v41 = (BuildingLightClass *)this->q029; /*0x435aec*/
@@ -468,7 +468,7 @@ namespace gamemd { int BuildingLightClass::Draw_Start(int a1, int a2) {
                       v25 = v24[2];
                       v26 = *this;
                       v67 = v25;
-                      v27 = (_DWORD *)(*(int (__thiscall **)(int *, double *))(v26 + 72))(this, &v80);
+                      v27 = (_DWORD *)this->GetCoords_0(&v80);
                       v28 = (float *)Coord::Subtract(v83, *v27 - v65, v27[1] - v66, v27[2] - v25);
                       v61 = *v28;
                       v62 = v28[1];

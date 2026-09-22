@@ -5,7 +5,7 @@
 
 // 0x42EE30
 namespace gamemd {
-void BaseClass::LoadBaseNodeClass(VectorClass * aP0, int a2)
+int BaseClass::LoadBaseNodeClass(VectorClass * aP0, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -132,7 +132,7 @@ LABEL_34:
 
 // 0x42F070
 namespace gamemd {
-void BaseClass::LoadArrayFields(unsigned int * a1, int a2)
+int BaseClass::LoadArrayFields(unsigned int * a1, int a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

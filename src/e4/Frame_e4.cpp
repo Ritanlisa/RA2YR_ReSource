@@ -4,7 +4,7 @@
 #include "e4/classes/Math_e4.hpp"
 
 // 0x4F4780
-void Frame::Present(IUnknown * aP1)
+int Frame::Present(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -250,7 +250,7 @@ LABEL_51:
 }
 
 // 0x724C00
-void Frame::Init()
+int Frame::Init()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

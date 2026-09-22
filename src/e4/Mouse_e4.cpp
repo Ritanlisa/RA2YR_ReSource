@@ -7,7 +7,7 @@
 
 // 0x4A8BF0
 namespace gamemd {
-void Mouse::SetBounds(IUnknown * aP1)
+int Mouse::SetBounds(IUnknown * aP1)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -60,7 +60,7 @@ void Mouse::SetBounds(IUnknown * aP1)
 
 // 0x5BDC80
 namespace gamemd {
-void Mouse::SetCursor(ObjectClass * aP1, ObjectClass * aP2)
+int Mouse::SetCursor(ObjectClass * aP1, ObjectClass * aP2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -125,7 +125,7 @@ void Mouse::SetCursor(ObjectClass * aP1, ObjectClass * aP2)
 
 // 0x6938C0
 namespace gamemd {
-void Mouse::ReleaseCapture()
+int Mouse::ReleaseCapture()
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {

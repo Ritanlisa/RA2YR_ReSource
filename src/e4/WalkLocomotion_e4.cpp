@@ -10,7 +10,7 @@
 
 // 0x6A01A0
 namespace gamemd {
-void WalkLocomotion::MoveTo(IUnknown * aP1, int aP3)
+int WalkLocomotion::MoveTo(IUnknown * aP1, int aP3)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -101,7 +101,7 @@ void WalkLocomotion::MoveTo(IUnknown * aP1, int aP3)
 
 // 0x6A05F0
 namespace gamemd {
-void WalkLocomotion::ProcessCollision(char a2)
+int WalkLocomotion::ProcessCollision(char a2)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
@@ -1007,7 +1007,7 @@ LABEL_190:
 
 // 0x6A1C80
 namespace gamemd {
-void WalkLocomotion::Update(unsigned char * a2, int a3, int a4)
+int WalkLocomotion::Update(unsigned char * a2, int a3, int a4)
 {
 // [IDA decompile] original pseudocode - translation pending (final goal)
 {
