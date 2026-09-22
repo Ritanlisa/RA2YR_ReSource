@@ -107,7 +107,7 @@ LABEL_17:
     int v24 = 0; /*0x4f66a3*/
     if ( v23 <= 0 ) /*0x4f66a7*/
     {
-      v27 = (*(int (__thiscall **)(_DWORD, _DWORD *))(MEMORY[0] + 132))(0, this); /*0x4f6702*/
+      v27 = (*(int (__thiscall **)(_DWORD, _DWORD *))(0 + 132))(0, this); /*0x4f6702*/
     }
     else
     {
@@ -120,7 +120,7 @@ LABEL_17:
         if ( v24 >= v23 ) /*0x4f66bf*/
         {
           v11 = v38; /*0x4f66c1*/
-          v27 = (*(int (__thiscall **)(_DWORD, _DWORD *))(MEMORY[0] + 132))(0, this); /*0x4f66d2*/
+          v27 = (*(int (__thiscall **)(_DWORD, _DWORD *))(0 + 132))(0, this); /*0x4f66d2*/
           goto LABEL_28; /*0x4f66d4*/
         }
       }

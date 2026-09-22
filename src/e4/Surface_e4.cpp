@@ -288,7 +288,7 @@ void sub_626C60()
   else
   {
     g_FileExtensionState = 0; /*0x626d83*/
-    return *(_DWORD *)(MEMORY[4] + 16); /*0x626d8b*/
+    return *(_DWORD *)(4 + 16); /*0x626d8b*/
   }
 }
 }
