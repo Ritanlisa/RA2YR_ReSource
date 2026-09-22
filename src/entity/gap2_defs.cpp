@@ -627,26 +627,6 @@ namespace gamemd { void* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, v
       }
 }
 } }
-    return 0;
-    else
-    return ObjectClass::CalcDrawRect((AnimClass *)this);
-}
-} }
-
-// 0x4238B0
-namespace gamemd { bool AnimClass::UpdateMirrorState(int a1) {
-{
-    return (unsigned char)ObjectClass::UpdateProductionDisplay((#374 *)this) != 0;
-}
-} }
-
-// 0x423930
-namespace gamemd { int AnimClass::UpdateProjectileTrajectory() {
-{
-      float *v2;
-      int v3;
-      int v4;
-      void **v5;
       int *v6;
       _DWORD *Coords;
       _DWORD *v8;
