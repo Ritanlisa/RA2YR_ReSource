@@ -129,6 +129,7 @@ LABEL_16:
     SetFocus(v14); /*0x7a405b*/
   return 0; /*0x7a4054*/
 }
+}
 
 // 0x7AC820
 int ComStreamClass::Release()
@@ -147,6 +148,7 @@ int ComStreamClass::Release()
     __3_YAXPAX_Z(Block); /*0x7ac85c*/
   }
   return v1; /*0x7ac864*/
+}
 }
 
 // 0x7AC870
@@ -197,6 +199,7 @@ LABEL_17:
   *v10 = v7; /*0x7ac958*/
   return 0; /*0x7ac881*/
 }
+}
 
 // 0x7AE0E0
 AbstractClass * * ComStreamClass::readData()
@@ -244,6 +247,7 @@ AbstractClass * * ComStreamClass::readData()
     }
     __3_YAXPAX_Z(v3); /*0x7ae16e*/
   }
+}
 }
 
 // 0x7AEF50
@@ -293,6 +297,7 @@ void ComStreamClass::flushStream()
     __3_YAXPAX_Z(v3); /*0x7aefea*/
   }
 }
+}
 
 // 0x7B0220
 unsigned int * ComStreamClass::seekToPosition()
@@ -310,6 +315,7 @@ unsigned int * ComStreamClass::seekToPosition()
   v6[0] = &vt_rc_ptr_WorldDominationTour_CampaignProperties; /*0x7b0271*/
   return ComPtr::Release(v6); /*0x7b027e*/
 }
+}
 
 // 0x7B02A0
 unsigned int * ComStreamClass::getStreamSize()
@@ -326,6 +332,7 @@ unsigned int * ComStreamClass::getStreamSize()
   ComPtr::Release(v5); /*0x7b02e8*/
   v6[0] = &vt_rc_ptr_WorldDominationTour_CampaignProperties; /*0x7b02f1*/
   return ComPtr::Release(v6); /*0x7b02fe*/
+}
 }
 
 // 0x7A4070

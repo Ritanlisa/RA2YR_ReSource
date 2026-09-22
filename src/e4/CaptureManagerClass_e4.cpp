@@ -45,6 +45,7 @@ C CaptureManagerClass::CaptureManagerClass(TechnoClass * aP1, int a3, char a4)
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x471A50
 namespace ra2 {
@@ -163,6 +164,7 @@ ScenarioClass * * CaptureManagerClass::HandleOverload()
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x471C90
 namespace ra2 {
@@ -197,6 +199,7 @@ int CaptureManagerClass::CanCapture(unsigned int * a2)
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x471D40
 namespace ra2 {
@@ -330,6 +333,7 @@ void* CaptureManagerClass::CaptureUnit(int a2)
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x471FF0
 namespace ra2 {
@@ -407,6 +411,7 @@ AnimClass * * CaptureManagerClass::FreeUnit(IUnknown * aP0, int _28, IUnknown * 
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x472160
 namespace ra2 {
@@ -492,6 +497,7 @@ LABEL_5:
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x4722A0
 namespace ra2 {
@@ -503,6 +509,7 @@ int CaptureManagerClass::CannotControlAnyMore()
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x4723B0
 namespace ra2 {
@@ -643,6 +650,7 @@ LABEL_33:
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x472640
 namespace ra2 {
@@ -688,6 +696,7 @@ LABEL_12:
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x4726C0
 namespace ra2 {
@@ -702,6 +711,7 @@ int CaptureManagerClass::IsOverloading(bool * a2)
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x472720
 namespace ra2 {
@@ -806,6 +816,7 @@ LABEL_19:
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x4728E0
 namespace ra2 {
@@ -843,6 +854,7 @@ int CaptureManagerClass::SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2)
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x472D70
 namespace ra2 {
@@ -866,6 +878,7 @@ int CaptureManagerClass::Capture(unsigned int * a2)
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x4722F0
 namespace ra2 {
@@ -959,9 +972,9 @@ CaptureManagerClass * CaptureManagerClass::ddtor(char a2)
     void *v4;
     int *v6;
     *(void**)this = vt_CaptureManagerClass;
-    *(this + 1) = (unsigned int)vt_CaptureManagerClass;
-    *(this + 2) = (unsigned int)vt_CaptureManagerClass;
-    *(this + 3) = &vt_CaptureManagerClass;
+    this->vtable2 = (unsigned int)vt_CaptureManagerClass;
+    this->vtable3 = (unsigned int)vt_CaptureManagerClass;
+    this->vtable4 = &vt_CaptureManagerClass;
     v6 = this;
     v3 = (*(int (__thiscall **)(int *, int **))(DataGlobal_89E0F0 + 16))(&DataGlobal_89E0F0, &v6);
     if ( v3 != -1 && v3 < DataGlobal_89E100 && v3 < --DataGlobal_89E100 )
@@ -973,15 +986,15 @@ CaptureManagerClass * CaptureManagerClass::ddtor(char a2)
     }
     while ( v3 < DataGlobal_89E100 );
   }
-    v4 = (void *)*(this + 10);
-    *(this + 9) = &vt_VectorClass_ControlNode;
-    if ( v4 && *((char *)(this) + 49) )
+    v4 = (void *)*(&this->vtable20);
+    this->controlNodes = &vt_VectorClass_ControlNode;
+    if ( v4 && this->q031 )
   {
     __3_YAXPAX_Z(v4);
-    *(this + 10) = 0;
+    *(&this->vtable20) = 0;
   }
-    *((char *)(this) + 49) = 0;
-    *(this + 11) = 0;
+    this->q031 = 0;
+    *(&this->vtable21) = 0;
     AbstractClass::DTOR(this);
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
@@ -1206,15 +1219,15 @@ VectorClass * CaptureManagerClass::Constructor_VectorClass_ControlNode___(char a
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->vtable2;
     *(void**)this = &vt_VectorClass_ControlNode;
-    if ( v3 && *((char *)(this) + 13) )
+    if ( v3 && this->originalOwner )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->vtable2 = 0;
   }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
+    this->originalOwner = 0;
+    this->vtable3 = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (VectorClass *)this;
@@ -1230,15 +1243,15 @@ DynamicVector * CaptureManagerClass::QueryInterface(char a2)
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->vtable2;
     *(void**)this = &vt_VectorClass_ControlNode;
-    if ( v3 && *((char *)(this) + 13) )
+    if ( v3 && this->originalOwner )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->vtable2 = 0;
   }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
+    this->originalOwner = 0;
+    this->vtable3 = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;

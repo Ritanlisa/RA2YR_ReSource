@@ -19,6 +19,7 @@ int BlitTransLucent25AlphaZReadWrite_ushort::CallBlit0(int a2, int a3, int a4, i
            a10,
            a11);
 }
+}
 
 // 0x496250
 unsigned short * BlitTransLucent25AlphaZReadWrite_ushort::Blit_RLE_Lucent50(unsigned short * a1, unsigned char * a2, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11)
@@ -63,6 +64,7 @@ unsigned short * BlitTransLucent25AlphaZReadWrite_ushort::Blit_RLE_Lucent50(unsi
     }
   }
   return result; /*0x4962c3*/
+}
 }
 
 // 0x494500
@@ -162,10 +164,10 @@ BlitTransLucent25Alpha_ushort * BlitTransLucent25Alpha_ushort::Blit(char a2)
 {
 {
     void *v3;
-    v3 = (void *)*(this + 2);
+    v3 = (void *)this->ptr_8;
     *(void**)this = &vt_BlitTransLucent25Alpha_unsigned_short;
     FractalNoise::Release(v3);
-    *(this + 2) = 0;
+    this->ptr_8 = 0;
     *(void**)this = &vt_Blitter;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
@@ -189,10 +191,10 @@ BlitTransLucent25AlphaZReadWrite_ushort * BlitTransLucent25AlphaZReadWrite_ushor
 {
 {
     void *v3;
-    v3 = (void *)*(this + 2);
+    v3 = (void *)this->ptr_8;
     *(void**)this = &vt_BlitTransLucent25AlphaZReadWrite_unsigned_short;
     FractalNoise::Release(v3);
-    *(this + 2) = 0;
+    this->ptr_8 = 0;
     *(void**)this = &vt_Blitter;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);

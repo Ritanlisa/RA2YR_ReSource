@@ -16,6 +16,7 @@ int PlayerClass::SetHouse(int a2)
   }
   return result; /*0x5d8cc2*/
 }
+}
 
 // 0x5D62C0
 char PlayerClass::AssignPlayerIndex()

@@ -71,6 +71,7 @@ bool ObjectClass::Remove()
 }
 
 // IDA: 0x5F65F0 -- ObjectClass::Destroy (146B)
+}
 // 0x5f65f0
 AbstractClass * * ObjectClass::Destroy()
 {
@@ -363,9 +364,11 @@ void ObjectClass::Reveal()
 }
 
 // IDA: 0x5F4D10 -- ObjectClass::MarkForRedraw
+}
 // 0x5f4d10
 void ObjectClass::MarkForRedraw()
 {
+}
 // 0x5f4d10
     int __thiscall ObjectClass::MarkForRedraw(#374 *(void**)this)
 {

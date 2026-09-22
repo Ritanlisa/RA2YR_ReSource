@@ -117,6 +117,7 @@ LABEL_8:
       return;
   }
 }
+}
 
 // 0x72A110
 int TunnelLocomotionClass::ddtor(int a1, unsigned int * a2)

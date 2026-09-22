@@ -34,6 +34,7 @@ int TActionClass::executeBuildAction()
   return result; /*0x4fcddb*/
 }
 } // namespace gamemd
+}
 
 // 0x50D2D0
 namespace gamemd {
@@ -58,6 +59,7 @@ int TActionClass::executeMoveAction(int a2)
   return result; /*0x50d30e*/
 }
 } // namespace gamemd
+}
 
 // 0x50DA00
 namespace gamemd {
@@ -68,6 +70,7 @@ int TActionClass::executeGuardAction(int a2)
   return a2; /*0x50da0a*/
 }
 } // namespace gamemd
+}
 
 // 0x50DA20
 namespace gamemd {
@@ -79,6 +82,7 @@ int TActionClass::executeHuntAction(int a2)
   return a2; /*0x50da36*/
 }
 } // namespace gamemd
+}
 
 // 0x50DFE0
 namespace gamemd {
@@ -89,6 +93,7 @@ int TActionClass::executeDeployAction(int a2)
   return a2; /*0x50dfea*/
 }
 } // namespace gamemd
+}
 
 // 0x567F70
 namespace gamemd {
@@ -181,6 +186,7 @@ void sub_567F70(int * a1, int a2)
   return result; /*0x568137*/
 }
 } // namespace gamemd
+}
 
 // 0x577C90
 namespace gamemd {
@@ -225,6 +231,7 @@ LABEL_7:
   return this->computeDistanceSquared(2); /*0x577d88*/
 }
 } // namespace gamemd
+}
 
 // 0x578850
 namespace gamemd {
@@ -240,6 +247,7 @@ int TActionClass::executeSellAction()
   return result; /*0x578877*/
 }
 } // namespace gamemd
+}
 
 // 0x6AC5F0
 namespace gamemd {
@@ -353,6 +361,7 @@ LABEL_38:
   return result->vtable0; /*0x6ac670*/
 }
 } // namespace gamemd
+}
 
 // 0x6E0B60
 namespace gamemd {
@@ -440,6 +449,7 @@ AbstractClass * * TActionClass::ConvertHouseUnits(int a2, int _14, unsigned int 
   return v6; /*0x6e0ba6*/
 }
 } // namespace gamemd
+}
 
 // 0x6E1CC0
 namespace gamemd {
@@ -476,6 +486,7 @@ AnimClass * * TActionClass::executeRetreatAction(AbstractClass * aP1, int a3, in
   return 1; /*0x6e1d9b*/
 }
 } // namespace gamemd
+}
 
 // 0x6E2290
 namespace gamemd {
@@ -512,6 +523,7 @@ AnimClass * * TActionClass::executeEscortAction(int a2, int a3, int a4, IUnknown
   return 1; /*0x6e2371*/
 }
 } // namespace gamemd
+}
 
 // 0x6E2390
 namespace gamemd {
@@ -565,6 +577,7 @@ AbstractClass * * TActionClass::CreateWeaponImpactAtWaypoint(int a2, int a3, int
   return 1; /*0x6e2510*/
 }
 } // namespace gamemd
+}
 
 // 0x6E2C40
 namespace gamemd {
@@ -631,6 +644,7 @@ ScenarioClass * * TActionClass::SpawnMeteorShower(AbstractClass * aP1, int a3, i
   return 1; /*0x6e2e01*/
 }
 } // namespace gamemd
+}
 
 // 0x6E36E0
 namespace gamemd {
@@ -691,6 +705,7 @@ int TActionClass::executeParadropAction(int a2, int a3, int a4, IUnknown * aP4)
   return 1; /*0x6e37dc*/
 }
 } // namespace gamemd
+}
 
 // 0x6E4150
 namespace gamemd {
@@ -726,6 +741,7 @@ LABEL_7:
   return 1; /*0x6e41c3*/
 }
 } // namespace gamemd
+}
 
 // 0x6E42D0
 namespace gamemd {
@@ -747,6 +763,7 @@ int TActionClass::executeIronCurtainAction(int a2, int a3, int a4, IUnknown * aP
   return 1; /*0x6e4314*/
 }
 } // namespace gamemd
+}
 
 // 0x6E4320
 namespace gamemd {
@@ -763,6 +780,7 @@ int TActionClass::executeNukeAction(int a2, int a3, int a4, IUnknown * aP4)
   return 1; /*0x6e4352*/
 }
 } // namespace gamemd
+}
 
 // 0x71E6A0
 namespace gamemd {
@@ -841,6 +859,7 @@ LABEL_11:
   return this; /*0x71e7fd*/
 }
 } // namespace gamemd
+}
 
 // 0x50D290
 namespace gamemd {

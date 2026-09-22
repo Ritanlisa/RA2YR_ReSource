@@ -42,6 +42,7 @@ AbstractClass * * AsyncIO::Shutdown()
   }
   return result; /*0x5bf4f5*/
 }
+}
 
 // 0x774BC0
 int AsyncIO::WaitCompletion()
@@ -51,7 +52,7 @@ int AsyncIO::WaitCompletion()
   DWORD Ticks; // [esp+8h] [ebp-18h]
 
   Ticks = Timer::GetTicks(); /*0x774bcf*/
-  char v2 = *(_BYTE *)(this + 81); /*0x774bd3*/
+  char v2 = this->u8_51; /*0x774bd3*/
   int v9 = 0; /*0x774bd8*/
   if ( v2 ) /*0x774be0*/
   {
@@ -62,7 +63,7 @@ int AsyncIO::WaitCompletion()
     v9 = 300; /*0x774c05*/
     do /*0x774c4d*/
     {
-      if ( GetOverlappedResult(*(HANDLE *)(this + 92), (LPOVERLAPPED)(this + 60), &NumberOfBytesTransferred, 0) /*0x774c29*/
+      if ( GetOverlappedResult(*(HANDLE *)(&this->u32_242), (LPOVERLAPPED)(&this->u32_180), &NumberOfBytesTransferred, 0) /*0x774c29*/
         || GetLastError() != 996 )
       {
         break; /*0x774c29*/
@@ -77,9 +78,10 @@ int AsyncIO::WaitCompletion()
       }
     }
     while ( v3 ); /*0x774c4d*/
-    *(_BYTE *)(this + 81) = 0; /*0x774c4f*/
+    this->u8_51 = 0; /*0x774c4f*/
   }
-  return ResetEvent(*(HANDLE *)(this + 76)); /*0x774c60*/
+  return ResetEvent(*(HANDLE *)(&this->u32_1C6)); /*0x774c60*/
+}
 }
 
 // 0x5BF500

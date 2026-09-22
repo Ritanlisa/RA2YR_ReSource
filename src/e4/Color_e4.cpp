@@ -29,6 +29,7 @@ int Color::ConvertToRGB(int a2)
   *(_BYTE *)(a2 + 2) = v6; /*0x51754a*/
   return a2; /*0x517530*/
 }
+}
 
 // 0x661020
 unsigned char * Color::Lerp2(int a2, int a3, float a4)
@@ -51,6 +52,7 @@ unsigned char * Color::Lerp2(int a2, int a3, float a4)
     this->q008 = Math::RoundToInt(0.0); /*0x661151*/
     return this; /*0x661154*/
   }
+}
 }
 
 // 0x661190
@@ -94,6 +96,7 @@ unsigned char * Color::ScaleRGB(unsigned char * a2, float a3)
     return this; /*0x661285*/
   }
 }
+}
 
 // 0x6612C0
 unsigned char Color::Lerp(ObjectClass * aP1, unsigned char * a2)
@@ -113,6 +116,7 @@ unsigned char Color::Lerp(ObjectClass * aP1, unsigned char * a2)
   this->q008 = result; /*0x661340*/
   return result; /*0x66132a*/
 }
+}
 
 // 0x75F540
 unsigned int * Color::RGBFromFloat(IUnknown * aP1, float a3)
@@ -127,4 +131,5 @@ unsigned int * Color::RGBFromFloat(IUnknown * aP1, float a3)
   this->q004 = v8; /*0x75f5a0*/
   this->q008 = v6; /*0x75f5a3*/
   return this; /*0x75f5ac*/
+}
 }

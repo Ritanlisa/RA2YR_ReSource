@@ -60,6 +60,7 @@ AbstractTypeClass * * TagTypeClass::Construct(ObjectClass * aP1)
   return this; /*0x6e5c92*/
 }
 } // namespace gamemd
+}
 
 // 0x6E5CA0
 namespace gamemd {
@@ -132,6 +133,7 @@ AbstractClass * * TagTypeClass::CleanupMembers()
   return AbstractTypeClass::Dtor((_DWORD *)this); /*0x6e5dc9*/
 }
 } // namespace gamemd
+}
 
 // 0x6E5E50
 namespace gamemd {
@@ -149,6 +151,7 @@ int TagTypeClass::GetEvent(int a2, int a3)
   return result; /*0x6e5e6a*/
 }
 } // namespace gamemd
+}
 
 // 0x6E6080
 namespace gamemd {
@@ -190,6 +193,7 @@ void* TagTypeClass::GetAction(unsigned char *** a2)
   return 1; /*0x6e6143*/
 }
 } // namespace gamemd
+}
 
 // 0x6E6160
 namespace gamemd {
@@ -207,6 +211,7 @@ int TagTypeClass::GetParameter(char * a2)
   return 1; /*0x6e61db*/
 }
 } // namespace gamemd
+}
 
 // 0x6E6310
 namespace gamemd {
@@ -233,6 +238,7 @@ LABEL_6:
   return *(char **)(*(_DWORD *)&stru_B05488[37628] + 4 * v2); /*0x6e637f*/
 }
 } // namespace gamemd
+}
 
 // 0x6E63E0
 namespace gamemd {
@@ -243,6 +249,7 @@ int TagTypeClass::PowerDrainUpdate(int * a2)
   return Power::TimerProcess(this->q09C); /*0x6e63fc*/
 }
 } // namespace gamemd
+}
 
 // 0x6E64B0
 namespace gamemd {
@@ -252,6 +259,7 @@ int TagTypeClass::GetAuxField()
   return this->q098; /*0x6e64b6*/
 }
 } // namespace gamemd
+}
 
 // 0x727AA0
 namespace gamemd {
@@ -278,6 +286,7 @@ LABEL_6:
   return (TriggerTypeClass *)*((_DWORD *)unk_8B417C + v2); /*0x727b0f*/
 }
 } // namespace gamemd
+}
 
 // 0x6E63A0
 namespace gamemd {

@@ -30,10 +30,10 @@ AnimFile * AnimFile::QueryInterface(char a2)
     (**v4)(v4, 1);
     *((int *)(this) + 899) = 0;
   }
-    if ( *((int *)(this) + 900) )
+    if ( this->qE10 )
   {
     __3_YAXPAX_Z(*((void **)(this) + 900));
-    *((int *)(this) + 900) = 0;
+    this->qE10 = 0;
   }
     *((char *)(this) + 136) = 0;
     *(int *)this = &vt_Animate;

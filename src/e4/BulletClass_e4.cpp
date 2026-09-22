@@ -30,7 +30,7 @@ B BulletClass::BulletClass()
   this->q12D = 0; /*0x4663fb*/
   this->BulletClass_field_0x130 = 0; /*0x466401*/
   this->NextAnim = -1; /*0x466407*/
-  *(_WORD *)(this + 334) = -1; /*0x46640e*/
+  this->u16_14E = -1; /*0x46640e*/
   this->BulletClass_field_0x154 = 0; /*0x466419*/
   this->q158 = 0; /*0x46641f*/
   *(_DWORD *)this = &BulletClass::`vftable'; /*0x466425*/
@@ -58,6 +58,7 @@ B BulletClass::BulletClass()
   return this; /*0x4664bc*/
 }
 } // namespace gamemd
+}
 
 // 0x466560
 namespace gamemd {
@@ -104,6 +105,7 @@ BulletClass * * BulletClass::Dtor()
   return ObjectClass::Dtor(this); /*0x466657*/
 }
 } // namespace gamemd
+}
 
 // 0x466660
 namespace gamemd {

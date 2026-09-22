@@ -41,6 +41,7 @@ int sub_6D1130()
   return ShapeButton::SetShape((int)DataGlobal_B0CC40, (int)v0, 0, 0); /*0x6d11f4*/
 }
 } // namespace gamemd
+}
 
 // 0x6D6BB0
 namespace gamemd {
@@ -118,6 +119,7 @@ unsigned int * sub_6D6BB0(unsigned short * a1)
   return result; /*0x6d6cfc*/
 }
 } // namespace gamemd
+}
 
 // 0x6D0E50
 namespace gamemd {

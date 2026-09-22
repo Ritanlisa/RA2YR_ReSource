@@ -127,6 +127,7 @@ LABEL_34:
   return 0; /*0x42f056*/
 }
 } // namespace gamemd
+}
 
 // 0x42F070
 namespace gamemd {
@@ -198,3 +199,4 @@ LABEL_11:
   return 0; /*0x42f161*/
 }
 } // namespace gamemd
+}

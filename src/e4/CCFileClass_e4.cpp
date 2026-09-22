@@ -31,6 +31,7 @@ AudioController * * CCFileClass::Close()
   this->q025 = 0; /*0x432601*/
   return result; /*0x4325f4*/
 }
+}
 
 // 0x535A70
 int CCFileClass::Destruct()
@@ -41,6 +42,7 @@ int CCFileClass::Destruct()
   Vector::Clear((int)(this + 22)); /*0x535a83*/
   *this = &off_7E1668; /*0x535a8a*/
   return BufferIOFileClass::Dtor(this); /*0x535a95*/
+}
 }
 
 // 0x65D0D0
@@ -78,6 +80,7 @@ int CCFileClass::GetFileSize()
     this->FilePointer = result; /*0x65d140*/
   }
   return result; /*0x65d119*/
+}
 }
 
 // 0x69E320
@@ -155,4 +158,5 @@ void CCFileClass::ProcessStream(unsigned int a1)
     DataGlobal_B077B8 = 0; /*0x69e419*/
     DataGlobal_B077BC = 0; /*0x69e41f*/
   }
+}
 }

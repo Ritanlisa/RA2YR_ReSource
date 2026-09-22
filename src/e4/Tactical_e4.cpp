@@ -34,8 +34,8 @@ void * Tactical::ConstructTacticalSurface()
   this->q03C = 0; /*0x42a70a*/
   this->q1B0 = -1; /*0x42a70d*/
   this->q038 = 0; /*0x42a710*/
-  *((_WORD *)this + 57) = 0; /*0x42a714*/
-  VectorClass *v2 = this + 116; /*0x42a718*/
+  this->u16_72 = 0; /*0x42a714*/
+  VectorClass *v2 = &this->u32_1D0; /*0x42a718*/
   int v3 = 3; /*0x42a71b*/
   do /*0x42a73d*/
   {
@@ -146,10 +146,10 @@ void * Tactical::ConstructTacticalSurface()
   for ( i = 0; i <= *v20; *(_DWORD *)(v20[2] + 4 * i - 4) = 0 ) /*0x42a864*/
     ++i; /*0x42a869*/
   *v20 = 0; /*0x42a874*/
-  VectorClass *v22 = this + 116; /*0x42a87c*/
-  char * v26 = this + 188; /*0x42a87f*/
-  char * v25 = this + 116; /*0x42a883*/
-  _DWORD * v23 = this + 76; /*0x42a887*/
+  VectorClass *v22 = &this->u32_1D0; /*0x42a87c*/
+  char * v26 = &this->u32_2F0; /*0x42a87f*/
+  char * v25 = &this->u32_1D0; /*0x42a883*/
+  _DWORD * v23 = &this->u32_130; /*0x42a887*/
   int v27 = 3; /*0x42a88a*/
   while ( 1 ) /*0x42a898*/
   {
@@ -170,6 +170,7 @@ void * Tactical::ConstructTacticalSurface()
   return this; /*0x42a8f2*/
 }
 } // namespace gamemd
+}
 
 // 0x484050
 namespace gamemd {
@@ -190,8 +191,8 @@ void * Tactical::CreateTacticalLightSurface(int * a2, int * a1, IUnknown * aP2, 
   *v8 = 1000; /*0x484077*/
   *v12 = 1000; /*0x48407d*/
   v9->field_0 = 1000; /*0x484083*/
-  if ( !this->q024 && !*(_WORD *)(this + 38) /*0x4840a8*/
-    || this->q024 == 0xFFFF && *(_WORD *)(this + 38) == 0xFFFF )
+  if ( !this->q024 && !this->u16_26 /*0x4840a8*/
+    || this->q024 == 0xFFFF && this->u16_26 == 0xFFFF )
   {
     result = (int *)CreateSurfaceClassPrimary(1000, 1000, 1000); /*0x484161*/
     *a2 = (int)result; /*0x48416d*/
@@ -203,13 +204,13 @@ void * Tactical::CreateTacticalLightSurface(int * a2, int * a1, IUnknown * aP2, 
     LODWORD(v15) = &aP5; /*0x4840b7*/
   int a6; // [esp+10h] [ebp-4h] BYREF
     Tactical::CalculateTacticalLighting((IUnknown *)this, v7, v11, v8, v12, v9, &a6, v15); /*0x4840c4*/
-    if ( *(_DWORD *)(this + 52) /*0x484125*/
+    if ( this->u32_34 /*0x484125*/
       && (a1 = (int *)a6,
           aP2 = aP5,
           a3 = a4,
           QuantizeColorRGB((int *)&a1, (int *)&aP2, (int *)&a3),
   int v13; // esi
-          v13 = *(_DWORD *)(this + 52),
+          v13 = this->u32_34,
           *(int **)(v13 + 408) == a1)
       && *(IUnknown **)(v13 + 412) == aP2
       && (result = *(int **)(v13 + 416), result == a3) )
@@ -225,6 +226,7 @@ void * Tactical::CreateTacticalLightSurface(int * a2, int * a1, IUnknown * aP2, 
   return result; /*0x48412b*/
 }
 } // namespace gamemd
+}
 
 // 0x484180
 namespace gamemd {
@@ -363,6 +365,7 @@ LABEL_21:
   return result; /*0x48461a*/
 }
 } // namespace gamemd
+}
 
 // 0x4A91B0
 namespace gamemd {
@@ -433,66 +436,66 @@ unsigned int * Tactical::MouseMove(MouseClass * aP1, MouseClass * aP2)
     aP2 = v3; /*0x4a92b1*/
   }
 LABEL_11:
-  v16 = *(DisplayClass **)(this + 4476); /*0x4a92b5*/
+  v16 = *(DisplayClass **)(&this->u32_6FC6); /*0x4a92b5*/
   if ( v16 ) /*0x4a92bd*/
   {
     if ( !g_NetworkPlayerBuffer[5935] ) /*0x4a92e3*/
     {
-      v19 = HIWORD(aP2) + *(_WORD *)(this + 4474); /*0x4a92f3*/
-      LOWORD(v28) = (_WORD)v3 + *(_WORD *)(this + 4472); /*0x4a92fb*/
+      v19 = HIWORD(aP2) + this->u16_117A; /*0x4a92f3*/
+      LOWORD(v28) = (_WORD)v3 + this->u16_1178; /*0x4a92fb*/
       HIWORD(v28) = v19; /*0x4a9301*/
       _WORD * v20 = UI_Move(&v29, &v28, (int)v16); /*0x4a931e*/
-      v21 = v20[1] - *(_WORD *)(this + 4474); /*0x4a9331*/
-      LOWORD(aP2) = *v20 - *(_WORD *)(this + 4472); /*0x4a9338*/
+      v21 = v20[1] - this->u16_117A; /*0x4a9331*/
+      LOWORD(aP2) = *v20 - this->u16_1178; /*0x4a9338*/
       HIWORD(aP2) = v21; /*0x4a933d*/
       v3 = aP2; /*0x4a9342*/
     }
-    v4 = (_WORD)v3 == *(_WORD *)(this + 4468); /*0x4a9346*/
+    v4 = (_WORD)v3 == this->u16_1174; /*0x4a9346*/
     aP2 = v3; /*0x4a934d*/
-    if ( v4 && HIWORD(v3) == *(_WORD *)(this + 4470) ) /*0x4a935f*/
+    if ( v4 && HIWORD(v3) == this->u16_1176 ) /*0x4a935f*/
     {
       aP1->field_0 = (int)v3; /*0x4a9367*/
       return &aP1->field_0; /*0x4a9361*/
     }
     else
     {
-      int v22 = *(_DWORD *)(this + 4468); /*0x4a9377*/
-      if ( *(_DWORD *)(this + 4476) ) /*0x4a9371*/
+      int v22 = this->u16_1174; /*0x4a9377*/
+      if ( this->u32_117C ) /*0x4a9371*/
       {
-        if ( v3 != *(MouseClass **)(this + 4468) /*0x4a93b0*/
-          && (*(_WORD *)(this + 4468) != *(_WORD *)&g_CellDirectionOffsets[3432]
-           || *(_WORD *)(this + 4470) != *(_WORD *)&g_CellDirectionOffsets[3434]) )
+        if ( v3 != *(MouseClass **)(&this->u32_6F88) /*0x4a93b0*/
+          && (this->u16_1174 != *(_WORD *)&g_CellDirectionOffsets[3432]
+           || this->u16_1176 != *(_WORD *)&g_CellDirectionOffsets[3434]) )
         {
-          v23 = *(_WORD *)(this + 4470) + *(_WORD *)(this + 4474); /*0x4a93c7*/
-          LOWORD(aP2) = *(_WORD *)(this + 4468) + *(_WORD *)(this + 4472); /*0x4a93d0*/
+          v23 = this->u16_1176 + this->u16_117A; /*0x4a93c7*/
+          LOWORD(aP2) = this->u16_1174 + this->u16_1178; /*0x4a93d0*/
           HIWORD(aP2) = v23; /*0x4a93d5*/
           MapClass::SetCellFlagsAlongPath((__int16 **)this, (IUnknown *)&aP2, 0); /*0x4a93e9*/
         }
         if ( v3 != *(MouseClass **)&g_CellDirectionOffsets[3432] ) /*0x4a93f5*/
         {
-          v24 = *(_WORD *)(this + 4472) + (_WORD)v3; /*0x4a940a*/
-          HIWORD(aP2) = HIWORD(v3) + *(_WORD *)(this + 4474); /*0x4a9414*/
+          v24 = this->u16_1178 + (_WORD)v3; /*0x4a940a*/
+          HIWORD(aP2) = HIWORD(v3) + this->u16_117A; /*0x4a9414*/
           LOWORD(aP2) = v24; /*0x4a941b*/
           MapClass::SetCellFlagsAlongPath((__int16 **)this, (IUnknown *)&aP2, (_WORD *)1); /*0x4a942f*/
         }
       }
-      *(_DWORD *)(this + 4468) = v3; /*0x4a9434*/
-      v25 = *(_WORD *)(this + 4472) + (_WORD)v3; /*0x4a944b*/
-      HIWORD(aP2) = *(_WORD *)(this + 4470) + *(_WORD *)(this + 4474); /*0x4a9452*/
-      v26 = *(DisplayClass **)(this + 4476); /*0x4a9457*/
+      this->u16_1174 = v3; /*0x4a9434*/
+      v25 = this->u16_1178 + (_WORD)v3; /*0x4a944b*/
+      HIWORD(aP2) = this->u16_1176 + this->u16_117A; /*0x4a9452*/
+      v26 = *(DisplayClass **)(&this->u32_6FC6); /*0x4a9457*/
       LOWORD(aP2) = v25; /*0x4a945d*/
-      *(_BYTE *)(this + 4480) = GetBuildingPlacement( /*0x4a9485*/
-                                  *(_DWORD **)(this + 4520),
-                                  *(_DWORD *)(this + 4524),
+      this->u8_1180 = GetBuildingPlacement( /*0x4a9485*/
+                                  *(_DWORD **)(&this->u32_7100),
+                                  this->u32_11AC,
                                   (int)v26,
                                   (__int16 *)&aP2);
-      v27 = *(_WORD *)(this + 4474) + *(_WORD *)(this + 4470); /*0x4a94a0*/
-      LOWORD(aP2) = *(_WORD *)(this + 4468) + *(_WORD *)(this + 4472); /*0x4a94a7*/
+      v27 = this->u16_117A + this->u16_1176; /*0x4a94a0*/
+      LOWORD(aP2) = this->u16_1174 + this->u16_1178; /*0x4a94a7*/
       HIWORD(aP2) = v27; /*0x4a94b0*/
-      *(_BYTE *)(this + 4481) = ProcessDataBuildingTypeClass( /*0x4a94da*/
-                                  *(_DWORD **)(this + 4520),
-                                  *(_DWORD *)(this + 4524),
-                                  *(_DWORD *)(this + 4476),
+      this->u8_1181 = ProcessDataBuildingTypeClass( /*0x4a94da*/
+                                  *(_DWORD **)(&this->u32_7100),
+                                  this->u32_11AC,
+                                  this->u32_117C,
                                   (__int16 *)&aP2);
       aP1->field_0 = v22; /*0x4a94e6*/
       return &aP1->field_0; /*0x4a94e0*/
@@ -500,13 +503,14 @@ LABEL_11:
   }
   else
   {
-    int v17 = *(_DWORD *)(this + 4468); /*0x4a92bf*/
-    *(_DWORD *)(this + 4468) = v3; /*0x4a92c9*/
+    int v17 = this->u16_1174; /*0x4a92bf*/
+    this->u16_1174 = v3; /*0x4a92c9*/
     aP1->field_0 = v17; /*0x4a92d2*/
     return &aP1->field_0; /*0x4a92c5*/
   }
 }
 } // namespace gamemd
+}
 
 // 0x568350
 namespace gamemd {
@@ -520,6 +524,7 @@ int Tactical::IsCellVisible(IUnknown * aP1)
   return v4 + v3 > v2 && v3 - v4 < v2 && v4 - v3 < v2 && v4 + v3 <= v2 + 2 * this->q0F8; /*0x5683a5*/
 }
 } // namespace gamemd
+}
 
 // 0x58C2A0
 namespace gamemd {
@@ -529,6 +534,7 @@ void * Tactical::GetCellData()
   return (char *)g_MapTileArray + 80 * *this + 80 * unk_89C2DC * this->vtable2; /*0x58c2be*/
 }
 } // namespace gamemd
+}
 
 // 0x640A40
 namespace gamemd {
@@ -728,6 +734,7 @@ void* Tactical_Radar_Render()
   return result; /*0x6410b6*/
 }
 } // namespace gamemd
+}
 
 // 0x692300
 namespace gamemd {
@@ -884,6 +891,7 @@ int Tactical::MouseOver(MouseClass * aP0, MouseClass * aP1, MouseClass * aP2, Mo
   return 1; /*0x6925f0*/
 }
 } // namespace gamemd
+}
 
 // 0x6930A0
 namespace gamemd {
@@ -1006,6 +1014,7 @@ MouseClass * * Tactical::HandleTacticalMouseInput(int _28, unsigned int * a2, in
   return v5; /*0x6931f1*/
 }
 } // namespace gamemd
+}
 
 // 0x6A6610
 namespace gamemd {
@@ -1057,6 +1066,7 @@ int Tactical::UpdateUIVisibility()
   return result; /*0x6a679b*/
 }
 } // namespace gamemd
+}
 
 // 0x6D4E20
 namespace gamemd {
@@ -1128,6 +1138,7 @@ void Tactical::DisplayTacticalOverlayText(wchar_t * String)
   }
 }
 } // namespace gamemd
+}
 
 // 0x6D6070
 namespace gamemd {
@@ -1150,15 +1161,16 @@ unsigned int Tactical::SetTacticalPosition(IUnknown * aP1)
     v5 = v8; /*0x6d6137*/
     v6 = v9; /*0x6d613b*/
   }
-  *(_DWORD *)(this + 3428) = v5; /*0x6d613f*/
-  *(_DWORD *)(this + 3444) = v5; /*0x6d6145*/
-  *(_DWORD *)(this + 3432) = v6; /*0x6d614d*/
-  *(_DWORD *)(this + 3448) = v6; /*0x6d6153*/
+  this->u32_D64 = v5; /*0x6d613f*/
+  this->u32_D74 = v5; /*0x6d6145*/
+  this->u32_D68 = v6; /*0x6d614d*/
+  this->u32_D78 = v6; /*0x6d6153*/
   result = TacticalClass::CalcViewportCells(this); /*0x6d6159*/
-  *(_BYTE *)(this + 3453) = 1; /*0x6d615e*/
+  this->u8_D7D = 1; /*0x6d615e*/
   return result; /*0x6d6165*/
 }
 } // namespace gamemd
+}
 
 // 0x6D6590
 namespace gamemd {
@@ -1321,6 +1333,7 @@ unsigned int * Tactical::PixelToCell(AbstractClass * aP1, IUnknown * aP2)
   return aP1->__pad_0; /*0x6d69f6*/
 }
 } // namespace gamemd
+}
 
 // 0x6DA7D0
 namespace gamemd {
@@ -1372,18 +1385,19 @@ int Tactical::AddCellToDrawList(IUnknown * aP1)
         result = this->q038; /*0x6da938*/
         if ( result < 799 ) /*0x6da943*/
         {
-          *(_DWORD *)(this + 4 * result + 228) = aP1; /*0x6da949*/
+          *(_DWORD *)(&this->u32_10 * result + 228) = aP1; /*0x6da949*/
           result = this->q038 + 1; /*0x6da956*/
           this->q038 = result; /*0x6da957*/
         }
         aP1->__pad_134[4] = 0; /*0x6da961*/
-        *(_BYTE *)(this + 3453) = 1; /*0x6da968*/
+        this->u8_D7D = 1; /*0x6da968*/
       }
     }
   }
   return result; /*0x6da96f*/
 }
 } // namespace gamemd
+}
 
 // 0x6DB210
 namespace gamemd {
@@ -1558,6 +1572,7 @@ void* Tactical::DrawTacticalConnectorLines()
   return result; /*0x6db611*/
 }
 } // namespace gamemd
+}
 
 // 0x6DBB60
 namespace gamemd {
@@ -1615,6 +1630,7 @@ int Tactical::DrawOverlay(int * a1, BuildingTypeClass * aP2, int a4, int a5)
   return 1; /*0x6dbcca*/
 }
 } // namespace gamemd
+}
 
 // 0x6E4A80
 namespace gamemd {
@@ -1636,6 +1652,7 @@ int Tactical_42::FindItem(unsigned int * a2)
   return result; /*0x6e4aa2*/
 }
 } // namespace gamemd
+}
 
 // 0x4A35F0
 namespace gamemd {
@@ -1807,9 +1824,9 @@ Tactical * Tactical::UpdateView(char a2)
 {
 {
     *(void**)this = vt_Tactical;
-    *(this + 1) = (unsigned int)vt_Tactical;
-    *(this + 2) = (unsigned int)vt_Tactical;
-    *(this + 3) = &vt_Tactical;
+    this->vtable2 = (unsigned int)vt_Tactical;
+    this->vtable3 = (unsigned int)vt_Tactical;
+    this->vtable4 = &vt_Tactical;
     g_TacticalClass_Instance = 0;
     AbstractClass::DTOR(this);
     if ( (a2 & 1) != 0 )
@@ -2048,15 +2065,15 @@ VectorClass * Tactical_42::QueryInterface(char a2)
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_TActionClass;
-    if ( v3 && *((char *)(this) + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
+    this->IsAllocated = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (VectorClass *)this;

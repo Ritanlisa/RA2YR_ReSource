@@ -1112,6 +1112,7 @@ pop     ebx
 add     esp, 100h
 retn    10h
 */
+}
 // 0x7b0f50
 void NetworkOptions::ApplySettings() {}
 

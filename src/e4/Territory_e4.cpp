@@ -33,6 +33,7 @@ int Territory_WorldDominationTour_8::AddRef(char a2)
   return Ticks; /*0x7718f0*/
 }
 } // namespace gamemd
+}
 
 // 0x771900
 namespace gamemd {
@@ -44,22 +45,23 @@ signed int Territory_WorldDominationTour_8::Release()
   result = this->q004; /*0x771903*/
   if ( result != -1 ) /*0x771909*/
   {
-    signed int v3 = *(this + 6); /*0x77190c*/
+    signed int v3 = this->u32_18; /*0x77190c*/
     result = Timer::GetTicks() - this->q004; /*0x77191c*/
     if ( result >= v3 ) /*0x771921*/
     {
-      *(this + 6) = 0; /*0x771934*/
+      this->u32_18 = 0; /*0x771934*/
       this->q004 = -1; /*0x771937*/
     }
     else
     {
       this->q004 = -1; /*0x771925*/
-      *(this + 6) = v3 - result; /*0x77192c*/
+      this->u32_18 = v3 - result; /*0x77192c*/
     }
   }
   return result; /*0x771930*/
 }
 } // namespace gamemd
+}
 
 // 0x771950
 namespace gamemd {
@@ -79,6 +81,7 @@ int Territory_WorldDominationTour_8::Read(int a2, int a3)
   return 0; /*0x77197a*/
 }
 } // namespace gamemd
+}
 
 // 0x771980
 namespace gamemd {
@@ -88,6 +91,7 @@ void Territory_WorldDominationTour_8::Write(int a2, int a3)
   AudioQueue::Update(this->q01C); /*0x771983*/
 }
 } // namespace gamemd
+}
 
 // 0x7719D0
 namespace gamemd {
@@ -97,6 +101,7 @@ void Territory_WorldDominationTour_8::Close(int a2)
   AudioQueue::Update(this->q01C); /*0x7719d3*/
 }
 } // namespace gamemd
+}
 
 // 0x771A30
 namespace gamemd {
@@ -110,6 +115,7 @@ unsigned int * Territory_WorldDominationTour_8::QueryInterface(char a2)
   return this; /*0x771a50*/
 }
 } // namespace gamemd
+}
 
 // 0x771990
 namespace gamemd {

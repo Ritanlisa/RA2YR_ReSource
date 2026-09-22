@@ -131,6 +131,7 @@ int CommandClass::BuildBar()
   PushCommandClass::Execute(v35, (int)DataGlobal_842858); /*0x6d14d8*/
   return PushCommandClass::Execute(DataGlobal_B0CCB0, (int)DataGlobal_842848); /*0x6d14ec*/
 }
+}
 
 // 0x724580
 int CommandClass::AddAction(ToolTipManager * aP1)
@@ -144,11 +145,11 @@ int CommandClass::AddAction(ToolTipManager * aP1)
   int i; // eax
 
   v2 = aP1; /*0x724584*/
-  v4 = (ObjectClass *)(this + 588); /*0x72458c*/
+  v4 = (ObjectClass *)(&this->u32_E88); /*0x72458c*/
   aP1 = *(ToolTipManager **)&aP1->IsVisible; /*0x724592*/
-  if ( *(_DWORD *)(this + 592) ) /*0x724596*/
+  if ( this->u32_250 ) /*0x724596*/
   {
-    if ( CommandClass::executeAction((_DWORD *)(this + 588), (ObjectClass *)&aP1) ) /*0x7245a4*/
+    if ( CommandClass::executeAction((_DWORD *)(&this->u32_E88), (ObjectClass *)&aP1) ) /*0x7245a4*/
       return 0; /*0x7245ab*/
     v5 = CommandClass::BinarySearchAction((char **)v4, (ObjectClass *)&aP1); /*0x7245b8*/
     if ( v5 ) /*0x7245bf*/
@@ -168,16 +169,16 @@ int CommandClass::AddAction(ToolTipManager * aP1)
     *(_DWORD *)(v7 + 16) = v2->Duration; /*0x7245ff*/
     *(_DWORD *)(v7 + 20) = v2->DisplayTimer[0]; /*0x724605*/
     *(_BYTE *)(v7 + 24) = v2->DisplayTimer[1]; /*0x724611*/
-    int v9 = *(_DWORD *)(this + 572); /*0x724614*/
-    if ( *(_DWORD *)(this + 580) < v9 /*0x724641*/
-      || (*(_BYTE *)(this + 577) || !v9)
+    int v9 = this->u32_23C; /*0x724614*/
+    if ( this->u32_244 < v9 /*0x724641*/
+      || (this->u8_241 || !v9)
   int v10; // ecx
-      && (v10 = *(_DWORD *)(this + 584), v10 > 0)
-      && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(this + 564) + 8))(this + 564, v9 + v10, 0) )
+      && (v10 = this->u32_248, v10 > 0)
+      && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(this->u32_234 + 8))(&this->u32_8D0, v9 + v10, 0) )
     {
-      int v11 = *(_DWORD *)(this + 580); /*0x72464c*/
-      int v12 = *(_DWORD *)(this + 568); /*0x72464f*/
-      *(_DWORD *)(this + 580) = v11 + 1; /*0x724655*/
+      int v11 = this->u32_244; /*0x72464c*/
+      int v12 = this->u32_238; /*0x72464f*/
+      this->u32_244 = v11 + 1; /*0x724655*/
       *(_DWORD *)(v12 + 4 * v11) = v8; /*0x724658*/
       int v13 = *(_DWORD *)&v4->__pad_0[8]; /*0x72465e*/
       if ( *(_DWORD *)&v4->__pad_0[4] + 1 <= v13 ) /*0x724664*/
@@ -225,4 +226,5 @@ LABEL_19:
     __3_YAXPAX_Z(v8); /*0x72471d*/
   }
   return 0; /*0x7245c4*/
+}
 }

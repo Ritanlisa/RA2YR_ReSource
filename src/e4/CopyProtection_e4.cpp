@@ -17,6 +17,7 @@ bool CopyProtection::CheckLauncher()
   Debug::Log(unk_81F3D0, v1); /*0x49f60d*/
   return v1; /*0x49f617*/
 }
+}
 
 // 0x49F620
 char CopyProtection::NotifyLauncher()
@@ -62,6 +63,7 @@ char CopyProtection::NotifyLauncher()
 LABEL_9:
   Debug::Log(aFailedToNotify); /*0x49f6f2*/
   return 0; /*0x49f701*/
+}
 }
 
 // 0x49F7A0

@@ -17,7 +17,7 @@ unsigned int * Waypoint::FindByCell(IUnknown * aP1)
   signed int v10; // [esp+10h] [ebp-4h]
   signed int v2 = 0; /*0x5023b8*/
   v10 = 0; /*0x5023bb*/
-  for ( i = this + 528; ; i += 4 ) /*0x5023bf*/
+  for ( i = &this->u32_840; ; i += 4 ) /*0x5023bf*/
   {
     if ( !*(_DWORD *)i ) /*0x5023c5*/
     {
@@ -29,7 +29,7 @@ unsigned int * Waypoint::FindByCell(IUnknown * aP1)
     }
     v6 = *(_DWORD **)i; /*0x5023e6*/
     v7 = 0; /*0x5023e8*/
-    if ( *(int *)(*(_DWORD *)i + 56) > 0 ) /*0x5023ef*/
+    if ( *(int *)(i->q038 > 0 ) /*0x5023ef*/
       break; /*0x5023ef*/
 LABEL_12:
     v10 = ++v2; /*0x502437*/
@@ -46,7 +46,7 @@ LABEL_12:
     }
     v6 = *(_DWORD **)i; /*0x502424*/
     v7 = (CampaignScore *)((char *)v7 + 1); /*0x502426*/
-    if ( (int)v7 >= *(_DWORD *)(*(_DWORD *)i + 56) ) /*0x50242a*/
+    if ( (int)v7 >= *(_DWORD *)(i->q038 ) /*0x50242a*/
     {
       v2 = v10; /*0x50242c*/
       goto LABEL_12; /*0x50242c*/
@@ -54,6 +54,7 @@ LABEL_12:
   }
 }
 } // namespace gamemd
+}
 
 // 0x53ECB0
 namespace gamemd {
@@ -61,18 +62,19 @@ void * Waypoint::InitInvalid()
 {
 {
   *this = -1; /*0x53ecb4*/
-  *(this + 1) = -1; /*0x53ecb6*/
-  *(this + 2) = -1; /*0x53ecb9*/
-  *(this + 3) = -1; /*0x53ecbc*/
-  *(this + 4) = -1; /*0x53ecbf*/
-  *(this + 5) = -1; /*0x53ecc2*/
-  *(this + 6) = -1; /*0x53ecc5*/
-  *(this + 7) = -1; /*0x53ecc8*/
-  *(this + 8) = -1; /*0x53eccb*/
-  *(this + 9) = -1; /*0x53ecce*/
+  this->ptr_4 = -1; /*0x53ecb6*/
+  this->ptr_8 = -1; /*0x53ecb9*/
+  this->u32_C = -1; /*0x53ecbc*/
+  this->u32_10 = -1; /*0x53ecbf*/
+  this->u32_14 = -1; /*0x53ecc2*/
+  this->u32_18 = -1; /*0x53ecc5*/
+  this->u32_1C = -1; /*0x53ecc8*/
+  this->u32_20 = -1; /*0x53eccb*/
+  this->u32_24 = -1; /*0x53ecce*/
   return (IPXManagerClass *)this; /*0x53ecd1*/
 }
 } // namespace gamemd
+}
 
 // 0x763A50
 namespace gamemd {
@@ -98,6 +100,7 @@ int Waypoint::FindCell(unsigned int * a2)
   return 1; /*0x763acd*/
 }
 } // namespace gamemd
+}
 
 // 0x763610
 namespace gamemd {

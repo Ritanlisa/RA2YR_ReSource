@@ -23,3 +23,4 @@ unsigned int * ObjectVector::Construct(IUnknown * aP1, IUnknown * aP2)
   }
   return this; /*0x4d046d*/
 }
+}

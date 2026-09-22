@@ -104,6 +104,7 @@ AbstractClass * * FilePipe_38::Release(int a2, char * a3)
   }
 }
 } // namespace gamemd
+}
 
 // 0x4778A0
 namespace gamemd {
@@ -157,15 +158,15 @@ TypeList * FilePipe_30::QueryInterface(char a2)
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_TechnoTypeClass;
-    if ( v3 && *((char *)(this) + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
+    this->IsAllocated = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (TypeList *)this;
@@ -337,15 +338,15 @@ VectorClass * FilePipe_38::QueryInterface(char a2)
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_RGBClass;
-    if ( v3 && *((char *)(this) + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
+    this->IsAllocated = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (VectorClass *)this;
@@ -563,15 +564,15 @@ DynamicVector * FilePipe_30::Destructor(char a2)
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_TechnoTypeClass;
-    if ( v3 && *((char *)(this) + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
+    this->IsAllocated = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -585,15 +586,15 @@ DynamicVector * FilePipe_30::Destructor_0(char a2)
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &DataGlobal_7E8500;
-    if ( v3 && *((char *)(this) + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
+    this->IsAllocated = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -607,15 +608,15 @@ DynamicVector * FilePipe_30::Destructor_1(char a2)
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_CrossDissolveEffect;
-    if ( v3 && *((char *)(this) + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
+    this->IsAllocated = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;

@@ -88,6 +88,7 @@ LABEL_19:
   return unk_B7882C; /*0x526912*/
 }
 } // namespace gamemd
+}
 
 // 0x526960
 namespace gamemd {
@@ -144,6 +145,7 @@ LABEL_14:
   return 0; /*0x526a0f*/
 }
 } // namespace gamemd
+}
 
 // 0x528A10
 namespace gamemd {
@@ -288,6 +290,7 @@ LABEL_36:
   return strlen(v6->__pad_0); /*0x528bbe*/
 }
 } // namespace gamemd
+}
 
 // 0x535AA0
 namespace gamemd {
@@ -341,6 +344,7 @@ unsigned int * INIClass::INIClass()
   return result; /*0x535b22*/
 }
 } // namespace gamemd
+}
 
 // 0x474620
 namespace gamemd {

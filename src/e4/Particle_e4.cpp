@@ -19,7 +19,7 @@ int Particle::Init(AbstractClass * aP1, TechnoClass * aP2, IUnknown * aP3, Techn
   this->Particle_field_0xAC = aP1; /*0x4664fb*/
   this->Particle_field_0xB0 = aP3; /*0x466501*/
   this->q12C = 0; /*0x466507*/
-  *(_BYTE *)(this + 301) = aP1[21].__pad_0[2]; /*0x466513*/
+  this->u8_12D = aP1[21].__pad_0[2]; /*0x466513*/
   if ( BYTE1(aP1[18].NeedsSaveOrLink) && aP3 ) /*0x466525*/
   {
     result = *(AbstractClass **)(aP3->field_21C + 90196); /*0x46652d*/
@@ -35,3 +35,4 @@ int Particle::Init(AbstractClass * aP1, TechnoClass * aP2, IUnknown * aP3, Techn
   return (int)result->__pad_0; /*0x466545*/
 }
 } // namespace gamemd
+}

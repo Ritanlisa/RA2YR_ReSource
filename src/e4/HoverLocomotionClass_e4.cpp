@@ -45,7 +45,7 @@ HoverLocomotionClass * HoverLocomotionClass::ProcessMove(char a2)
 {
 {
     *(void**)this = vt_HoverLocomotionClass;
-    *(this + 1) = &vt_HoverLocomotionClass;
+    this->vtable2 = &vt_HoverLocomotionClass;
     LocomotionClass::Construct(this);
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);

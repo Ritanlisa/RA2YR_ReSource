@@ -116,6 +116,7 @@ LABEL_31:
   return 1; /*0x610784*/
 }
 } // namespace gamemd
+}
 
 // 0x610810
 namespace gamemd {
@@ -173,6 +174,7 @@ LABEL_8:
   return TriggerClass::FindByEventType(1); /*0x610938*/
 }
 } // namespace gamemd
+}
 
 // 0x610B50
 namespace gamemd {
@@ -202,6 +204,7 @@ void sub_610B50()
   return 1; /*0x610b61*/
 }
 } // namespace gamemd
+}
 
 // 0x610BF0
 namespace gamemd {
@@ -238,6 +241,7 @@ LABEL_6:
   return 1; /*0x610c01*/
 }
 } // namespace gamemd
+}
 
 // 0x612930
 namespace gamemd {
@@ -307,6 +311,7 @@ void sub_612930()
   __3_YAXPAX_Z(DataGlobal_AC1858); /*0x612a46*/
 }
 } // namespace gamemd
+}
 
 // 0x612A60
 namespace gamemd {
@@ -369,6 +374,7 @@ LABEL_10:
   return GetStockObject(5); /*0x612b47*/
 }
 } // namespace gamemd
+}
 
 // 0x61D6D0
 namespace gamemd {
@@ -477,6 +483,7 @@ AbstractClass * * NetworkLobbyPaintProc(HWND hWnd, unsigned int a2, int a3, unsi
   }
 }
 } // namespace gamemd
+}
 
 // 0x61ECA0
 namespace gamemd {
@@ -607,6 +614,7 @@ AbstractClass * * RenderDialogSurface(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM
   return CallWindowProcA(v5, v7, v4, wParam, lParam); /*0x61ed43*/
 }
 } // namespace gamemd
+}
 
 // 0x61EF70
 namespace gamemd {
@@ -662,6 +670,7 @@ void FormatHotkeyDisplayString()
   return result; /*0x61f180*/
 }
 } // namespace gamemd
+}
 
 // 0x61F210
 namespace gamemd {
@@ -1053,6 +1062,7 @@ char Dialog_InitCountryIcons(int a1, int a2)
   return LoadPaletteFromFile((int)g_DialogHashTable, v191, DataGlobal_00835A38, 2, 0);
 }
 } // namespace gamemd
+}
 
 // 0x6107A0
 namespace gamemd {

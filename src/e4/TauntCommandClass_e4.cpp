@@ -10,6 +10,7 @@ unsigned int * TauntCommandClass::Construct(int a2)
   *this = &vt_TauntCommandClass; /*0x536299*/
   return this; /*0x53629f*/
 }
+}
 
 // 0x5362B0
 void * TauntCommandClass::AddRef()
@@ -20,6 +21,7 @@ void * TauntCommandClass::AddRef()
     (ObjectClass *)&stru_8271A0.customSound_controller[2],
     (INIClass *)this->TauntCommandClass_field_00);
   return (ObjectClass *)&HouseClass_Player[47208]; /*0x5362cb*/
+}
 }
 
 // 0x5362D0
@@ -33,6 +35,7 @@ void * TauntCommandClass::Release()
   StringCSF = GetStringCSF(DataGlobal_827204, 0, g_Str_File_Init_CPP, 6400); /*0x5362e5*/
   swprintf(&g_TeamCommandBuffer, (const size_t)StringCSF, v3); /*0x5362f0*/
   return &g_TeamCommandBuffer; /*0x5362fd*/
+}
 }
 
 // 0x536300

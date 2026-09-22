@@ -14,7 +14,7 @@ int FlyLocomotionClass::LocomotionClass()
   this->Owner = DataGlobal_8B3C7C; /*0x4cc9be*/
   this->q090 = DataGlobal_8B3C80; /*0x4cc9c7*/
   this->XYZ2 = DataGlobal_8B3C78; /*0x4cc9d3*/
-  *(_DWORD *)(this + 44) = DataGlobal_8B3C7C; /*0x4cc9dc*/
+  this->u32_2C = DataGlobal_8B3C7C; /*0x4cc9dc*/
   int v2 = DataGlobal_8B3C80; /*0x4cc9df*/
   this->Powered = 0; /*0x4cc9e5*/
   this->q012 = 0; /*0x4cc9e8*/
@@ -23,8 +23,8 @@ int FlyLocomotionClass::LocomotionClass()
   this->CurrentSpeed = 0; /*0x4cc9f1*/
   this->IsTakingOff = 0; /*0x4cc9f4*/
   this->RefCount = 0; /*0x4cc9f7*/
-  *(_BYTE *)(this + 81) = 0; /*0x4cc9fa*/
-  *(_BYTE *)(this + 82) = 0; /*0x4cc9fd*/
+  this->u8_51 = 0; /*0x4cc9fa*/
+  this->u8_52 = 0; /*0x4cc9fd*/
   this->FlyLocomotionClass_field_bool_53 = 0; /*0x4cca00*/
   this->FlyLocomotionClass_field_54 = 0; /*0x4cca03*/
   this->FlyLocomotionClass_field_58 = 0; /*0x4cca06*/
@@ -33,6 +33,7 @@ int FlyLocomotionClass::LocomotionClass()
   this->vtable2 = &vt_FlyLocomotionClass; /*0x4cca12*/
   this->LinkedTo = v2; /*0x4cca1b*/
   return this; /*0x4cca1e*/
+}
 }
 
 // 0x4CFE80
@@ -163,6 +164,7 @@ LABEL_45:
       __3_YAXPAX_Z(v17); /*0x4d0162*/
   }
 }
+}
 
 // 0x4CFC80
 int FlyLocomotionClass::ddtor(int a1, unsigned int * a2)
@@ -205,7 +207,7 @@ FlyLocomotionClass * FlyLocomotionClass::ProcessMove(char a2)
 {
 {
     *(void**)this = vt_FlyLocomotionClass;
-    *(this + 1) = &vt_FlyLocomotionClass;
+    this->vtable2 = &vt_FlyLocomotionClass;
     LocomotionClass::Construct(this);
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);

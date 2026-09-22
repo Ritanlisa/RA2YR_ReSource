@@ -41,15 +41,15 @@ namespace gamemd { int Rect::SetRedraw(int a1) {
 namespace gamemd { void* EnumConnectionPointsClass::Constructor_VectorClass_IConnectionPoint___(int a2) {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_IConnectionPoint;
-    if ( v3 && *((char *)(this) + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
+    this->IsAllocated = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -491,7 +491,7 @@ namespace gamemd { int ComPtr::Set(int a2) {
       if ( a2 != this->q004 )
       {
         if ( a2 )
-          ++*(_DWORD *)(a2 + 4);
+          ++a2->u32_4;
         v3 = this->q004;
         if ( v3 )
         {
@@ -531,37 +531,37 @@ namespace gamemd { void Player::RandomAssign() {
   for ( i = 0; i < v1; ++i ) /*0x69b8e2*/
   {
     WinModemClass *v3 = *(_DWORD *)(Game_PlayerInfoArray + 4 * i); /*0x69b8f2*/
-    int v4 = *(_DWORD *)(v3 + 79); /*0x69b8f5*/
-    if ( v4 == -3 || *(_DWORD *)(v3 + 75) == -3 ) /*0x69b8ff*/
+    int v4 = v3->u32_4F; /*0x69b8f5*/
+    if ( v4 == -3 || v3->u32_4B == -3 ) /*0x69b8ff*/
     {
-      *(_DWORD *)(v3 + 75) = -3; /*0x69b977*/
-      *(_DWORD *)(v3 + 79) = -1; /*0x69b97a*/
-      *(_DWORD *)(v3 + 83) = 8; /*0x69b97d*/
-      *(_DWORD *)(v3 + 87) = -1; /*0x69b984*/
+      v3->u32_4B = -3; /*0x69b977*/
+      v3->u32_4F = -1; /*0x69b97a*/
+      v3->u32_53 = 8; /*0x69b97d*/
+      v3->u32_57 = -1; /*0x69b984*/
     }
     else
     {
       if ( v4 == -2 ) /*0x69b904*/
       {
-        *(_DWORD *)(v3 + 79) = -1; /*0x69b90d*/
+        v3->u32_4F = -1; /*0x69b90d*/
         int v5 = this->q004; /*0x69b910*/
         if ( v5 ) /*0x69b915*/
-          *(_DWORD *)(v3 + 75) = (*(int (__thiscall **)(int))(*(_DWORD *)v5 + 108))(v5); /*0x69b91c*/
+          v3->u32_4B = (*(int (__thiscall **)(int))(*(_DWORD *)v5 + 108))(v5); /*0x69b91c*/
         else
-          *(_DWORD *)(v3 + 75) = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 9); /*0x69b935*/
+          v3->u32_4B = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 9); /*0x69b935*/
       }
-      if ( *(_DWORD *)(v3 + 87) == -2 ) /*0x69b941*/
+      if ( v3->u32_57 == -2 ) /*0x69b941*/
       {
-        *(_DWORD *)(v3 + 87) = -1; /*0x69b943*/
-        *(_DWORD *)(v3 + 83) = -1; /*0x69b946*/
+        v3->u32_57 = -1; /*0x69b943*/
+        v3->u32_53 = -1; /*0x69b946*/
         do /*0x69b966*/
           ScenarioClass *v6 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 7); /*0x69b95e*/
         while ( (unsigned __int8)NetworkSession::IsPlayerInGame(v6) ); /*0x69b966*/
-        *(_DWORD *)(v3 + 83) = v6; /*0x69b96f*/
+        v3->u32_53 = v6; /*0x69b96f*/
       }
     }
     if ( !i ) /*0x69b989*/
-      g_TauntCommandState = *(_DWORD *)(v3 + 83); /*0x69b98e*/
+      g_TauntCommandState = v3->u32_53; /*0x69b98e*/
     ToWideStringChar((char *)v3); /*0x69b9b1*/
     Debug::Log(); /*0x69b9bd*/
   }
@@ -624,6 +624,8 @@ LABEL_35:
     ++v17; /*0x69ba9c*/
   }
   while ( (int)v7 < (int)g_CampaignConfig ); /*0x69baa0*/
+}
+}
 }
 // 0x6ABAC0
 namespace gamemd { bool PlayerClass::HasPlayers() {

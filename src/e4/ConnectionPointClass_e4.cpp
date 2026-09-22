@@ -66,6 +66,7 @@ int ConnectionPointClass::GetConnectionInterface(unsigned int * a1, int a2)
   }
   return (*(int (__stdcall **)(_DWORD *, void *, int))*v3)(v3, &unk_7F7CB0, a2); /*0x4a076c*/
 }
+}
 
 // 0x4A0870
 unsigned int * ConnectionPointClass::Construct(unsigned int * a1, ConnectionPointClass * aP2)
@@ -79,14 +80,15 @@ unsigned int * ConnectionPointClass::Construct(unsigned int * a1, ConnectionPoin
   this->q014 = 0; /*0x4a0899*/
   this->q020 = 0; /*0x4a089c*/
   this->q024 = 0; /*0x4a089f*/
-  *((_BYTE *)this + 40) = 1; /*0x4a08a2*/
-  *((_BYTE *)this + 41) = 0; /*0x4a08a6*/
+  this->u8_28 = 1; /*0x4a08a2*/
+  this->u8_29 = 0; /*0x4a08a6*/
   this->q01C = &vt_DynamicVectorClass_tagCONNECTDATA; /*0x4a08a9*/
   this->q00C = 10; /*0x4a08b0*/
   this->q00B = 0; /*0x4a08b7*/
   *this = &vt_ConnectionPointClass; /*0x4a08ba*/
   (*(void (__stdcall **)(ConnectionPointClass *))(*(_DWORD *)aP2->__pad_0 + 4))(aP2); /*0x4a08c3*/
   return this; /*0x4a08c8*/
+}
 }
 
 // 0x4A1280
@@ -135,6 +137,7 @@ AbstractClass * * ConnectionPointClass_9::Release(int a2, unsigned int * a3)
   }
 }
 } // namespace gamemd
+}
 
 // 0x4A0630
 int ConnectionPointClass::Unadvise(int a1, int (__stdcall ***a2)(unsigned int, int, int *) a2, int * a3)
@@ -289,15 +292,15 @@ VectorClass * ConnectionPointClass_9::QueryInterface(char a2)
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_IConnectionPoint;
-    if ( v3 && *((char *)(this) + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
+    this->IsAllocated = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (VectorClass *)this;

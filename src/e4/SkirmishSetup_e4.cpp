@@ -62,6 +62,7 @@ void SkirmishSetup_Setup(HWND hWnd, int a2)
   return result; /*0x5d62b4*/
 }
 } // namespace gamemd
+}
 
 // 0x5E6920
 int SkirmishSetup::DlgProc(SkirmishDialog * aP0, int a2, HWND hWnd, signed int a4, WPARAM _3C, char * a5)
@@ -386,6 +387,7 @@ LABEL_28:
   }
   return 1; /*0x5e695c*/
 }
+}
 
 // 0x608260
 int SkirmishSetup::PlayButtonClickAnim()
@@ -423,6 +425,7 @@ int SkirmishSetup::PlayButtonClickAnim()
   EnableWindow(this, (unsigned __int8)v7); /*0x60835d*/
   InvalidateRect(this, 0, 0); /*0x608364*/
   return 1; /*0x6082b8*/
+}
 }
 
 // 0x5E8590
@@ -516,6 +519,7 @@ LABEL_18:
   }
 }
 } // namespace gamemd
+}
 
 // 0x5E70D0
 namespace gamemd {

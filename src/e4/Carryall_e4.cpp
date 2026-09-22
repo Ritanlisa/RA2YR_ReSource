@@ -145,7 +145,7 @@ LABEL_5:
             (unsigned __int16)(v19 / 256) == (_WORD)v18)
         && (unsigned __int16)(v20 / 256) == (unsigned __int16)(v17 / 256) )
       {
-        *((_BYTE *)this + 1748) = 0; /*0x41710f*/
+        this->u8_6D4 = 0; /*0x41710f*/
 LABEL_44:
         if ( !this->q19D ) /*0x417116*/
           WinAPI::Wrapper(-2147467261); /*0x417125*/
@@ -168,7 +168,7 @@ LABEL_44:
       {
         if ( this->q140 ) /*0x417177*/
         {
-          *((_BYTE *)this + 1748) = 1; /*0x41717f*/
+          this->u8_6D4 = 1; /*0x41717f*/
         }
         else
         {
@@ -213,11 +213,12 @@ LABEL_44:
         (*(void (__thiscall **)(FootClass **, int))&(*this)->__pad_26A[10])(this, 3); /*0x4172b1*/
         (*(void (__thiscall **)(FootClass **, int))&(*this)->__pad_115[15])(this, 1); /*0x4172bd*/
         v25 = *this; /*0x4172c3*/
-        *((_BYTE *)this + 1748) = 1; /*0x4172ca*/
+        this->u8_6D4 = 1; /*0x4172ca*/
         ((void (__thiscall *)(FootClass **, _DWORD, int))v25->audioController4[2])(this, 0, 1); /*0x4172d1*/
         return 1; /*0x4172da*/
       }
     default:
       goto LABEL_5;
   }
+}
 }

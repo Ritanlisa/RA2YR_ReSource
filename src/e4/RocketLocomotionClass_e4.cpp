@@ -10,7 +10,7 @@ R RocketLocomotionClass::RocketLocomotionClass()
   CDTimerClass *v2; // ecx
   LocomotionClass::Init((_DWORD *)this); /*0x661ec3*/
   this->MovingDestination = dword_B04E38; /*0x661ed1*/
-  *(_DWORD *)(this + 28) = dword_B04E3C; /*0x661eda*/
+  this->u32_1C = dword_B04E3C; /*0x661eda*/
   this->Owner = dword_B04E40; /*0x661ee3*/
   this->MissionTimer = g_CurrentFrame; /*0x661eee*/
   this->MissionTimer.TimeLeft = 0; /*0x661ef1*/
@@ -20,7 +20,7 @@ R RocketLocomotionClass::RocketLocomotionClass()
   this->TrailerTimer = v2; /*0x661f00*/
   this->CurrentSpeed = 0; /*0x661f03*/
   this->MissionState = 0; /*0x661f06*/
-  *(_DWORD *)(this + 76) = 0; /*0x661f09*/
+  this->u32_4C = 0; /*0x661f09*/
   this->SpawnerIsElite = 0; /*0x661f0c*/
   this->CurrentPitch = 0; /*0x661f0f*/
   this->RocketLocomotionClass_field_58 = 0; /*0x661f12*/
@@ -28,6 +28,7 @@ R RocketLocomotionClass::RocketLocomotionClass()
   *(_DWORD *)this = &RocketLocomotionClass::`vftable'; /*0x661f19*/
   this->__pad_004 = &vt_RocketLocomotionClass; /*0x661f1f*/
   return this; /*0x661f28*/
+}
 }
 
 // 0x6633D0
@@ -77,7 +78,7 @@ RocketLocomotionClass * RocketLocomotionClass::ProcessMove(char a2)
 {
 {
     *(void**)this = vt_RocketLocomotionClass;
-    *(this + 1) = &vt_RocketLocomotionClass;
+    this->vtable2 = &vt_RocketLocomotionClass;
     LocomotionClass::Construct(this);
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
@@ -336,15 +337,15 @@ VectorClass * RocketLocomotionClass_17::Constructor(char a2)
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_OwnerTalkClass_ConnectionListStruct;
-    if ( v3 && *((char *)(this) + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
+    this->IsAllocated = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (VectorClass *)this;
@@ -358,15 +359,15 @@ DynamicVector * RocketLocomotionClass_17::QueryInterface(char a2)
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_OwnerTalkClass_ConnectionListStruct;
-    if ( v3 && *((char *)(this) + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
+    this->IsAllocated = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;

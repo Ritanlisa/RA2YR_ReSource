@@ -458,7 +458,7 @@ _DWORD *__thiscall sub_4D08B0(_DWORD *this)
   this->House = 0; /*0x4d08c0*/
   this->Cell = 0; /*0x4d08c3*/
   this->q030 = 0; /*0x4d08c6*/
-  this->q034 = 0; /*0x4d08c9*/
+  this->u8_34 = 0; /*0x4d08c9*/
   this->q038 = 0; /*0x4d08cc*/
   this->q03C = 0; /*0x4d08cf*/
   this->q040 = 0; /*0x4d08d2*/
@@ -471,7 +471,7 @@ _DWORD *__thiscall sub_4D08B0(_DWORD *this)
   this->q060 = 0; /*0x4d08e9*/
   this->q064 = 0; /*0x4d08ec*/
   this->q068 = 1; /*0x4d08ef*/
-  *((_BYTE *)this + 105) = 0; /*0x4d08f2*/
+  this->u8_69 = 0; /*0x4d08f2*/
   this->q05C = &vt_DynamicVectorClass_FoggedObjectClass_DrawRecord; /*0x4d08f5*/
   this->q070 = 10; /*0x4d08fc*/
   this->q06C = 0; /*0x4d0903*/
@@ -2039,7 +2039,7 @@ _DWORD *__thiscall FoggedObjectClass::_vt24(_DWORD *this, _DWORD *a2)
 {
   int v3; // [esp+0h] [ebp-4h]
 
-  LOWORD(v3) = this->q034 / 256; /*0x4d28e0*/
+  LOWORD(v3) = this->u8_34 / 256; /*0x4d28e0*/
   HIWORD(v3) = this->q038 / 256; /*0x4d28f4*/
   *a2 = v3; /*0x4d2901*/
   return a2; /*0x4d2904*/
@@ -2753,8 +2753,8 @@ _DWORD *__thiscall FootClass::Construct(_DWORD *this, AbstractClass *aP1)
   int v5; // eax
 
   TechnoClass::TechnoClass(this, aP1); /*0x4d31ea*/
-  this->FootClass_field_520 = -1; /*0x4d31f1*/
-  *((_WORD *)this + 658) = 0; /*0x4d31fb*/
+  this->q520 = -1; /*0x4d31f1*/
+  this->q292 = 0; /*0x4d31fb*/
   *((_WORD *)this + 659) = 0; /*0x4d3202*/
   this->owningHouseIndex0 = 0; /*0x4d3209*/
   *((_WORD *)this + 661) = 0; /*0x4d3210*/
@@ -2762,7 +2762,7 @@ _DWORD *__thiscall FootClass::Construct(_DWORD *this, AbstractClass *aP1)
   this->FootClass_field_534 = 0; /*0x4d321d*/
   this->FootClass_field_538 = 0; /*0x4d3223*/
   this->FootClass_field_53C = 0; /*0x4d3229*/
-  this->FootClass_field_540 = 0; /*0x4d322f*/
+  this->q540 = 0; /*0x4d322f*/
   this->isBerserk = 0; /*0x4d3235*/
   this->alignmentPadding29D = 0; /*0x4d323c*/
   *((_WORD *)this + 686) = 0; /*0x4d3243*/
@@ -2771,15 +2771,15 @@ _DWORD *__thiscall FootClass::Construct(_DWORD *this, AbstractClass *aP1)
   *((_WORD *)this + 689) = 0; /*0x4d3258*/
   this->q2B2 = 0; /*0x4d325f*/
   this->q2B3 = 0; /*0x4d3266*/
-  this->FootClass_field_568 = 0; /*0x4d326d*/
+  this->q568 = 0; /*0x4d326d*/
   this->FootClass_field_56C = 0; /*0x4d3273*/
   this->FootClass_field_570 = 0; /*0x4d3279*/
   this->FootClass_field_578 = 0; /*0x4d327f*/
   this->FootClass_field_57C = 0; /*0x4d328b*/
   this->FootClass_field_580 = 0; /*0x4d3292*/
-  this->FootClass_field_584 = 1072693248; /*0x4d329b*/
+  this->u32_248 = 1072693248; /*0x4d329b*/
   AbstractClassVector::Construct(this + 354, 0, 0); /*0x4d32a5*/
-  this->FootClass_DVC_588 = &vt_DynamicVectorClass_AbstractClass; /*0x4d32aa*/
+  this->q588 = &vt_DynamicVectorClass_AbstractClass; /*0x4d32aa*/
   this->q59C = 10; /*0x4d32b0*/
   this->q598 = 0; /*0x4d32b7*/
   this->FootClass_field_5A0 = 0; /*0x4d32c0*/
@@ -2796,25 +2796,25 @@ _DWORD *__thiscall FootClass::Construct(_DWORD *this, AbstractClass *aP1)
   this->FootClass_field_5D4 = 0; /*0x4d3308*/
   this->FootClass_field_5D8 = 0; /*0x4d330e*/
   this->FootClass_field_5DC = 0; /*0x4d3314*/
-  this->FootClass_field_640 = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x4d3320*/
-  this->FootClass_field_648 = 0; /*0x4d3326*/
+  this->q640 = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x4d3320*/
+  this->q648 = 0; /*0x4d3326*/
   this->FootClass_field_64C = 10; /*0x4d332c*/
   this->FootClass_field_650 = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x4d3338*/
   this->FootClass_field_658 = 0; /*0x4d333e*/
   v3 = *(IUnknown **)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x4d3344*/
-  this->FootClass_field_664 = 0; /*0x4d3349*/
+  this->q664 = 0; /*0x4d3349*/
   this->FootClass_field_65C = v3; /*0x4d334f*/
-  this->FootClass_field_668 = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x4d335b*/
+  this->q668 = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x4d335b*/
   this->FootClass_field_670 = 0; /*0x4d3361*/
   this->Locomotor = 0; /*0x4d3367*/
   this->Locomotor_ptr = *(_DWORD *)&MEMORY[0x89F690].__pad_579C[61308]; /*0x4d3378*/
   this->IsDeploying = *(_DWORD *)&MEMORY[0x89F690].__pad_579C[61312]; /*0x4d3384*/
-  this->FootClass_field_680 = *(_DWORD *)&MEMORY[0x89F690].__pad_579C[61316]; /*0x4d338c*/
-  this->FootClass_field_684 = -1; /*0x4d338f*/
+  this->q680 = *(_DWORD *)&MEMORY[0x89F690].__pad_579C[61316]; /*0x4d338c*/
+  this->q684 = -1; /*0x4d338f*/
   this->unknownBool685 = 0; /*0x4d3396*/
   this->waypointIndex = 0; /*0x4d339c*/
   this->unknownBool687 = 0; /*0x4d33a2*/
-  this->FootClass_bools_688 = 0; /*0x4d33a8*/
+  this->q688 = 0; /*0x4d33a8*/
   this->isTeamLeader = 0; /*0x4d33ae*/
   this->shouldScanForTarget = 0; /*0x4d33b4*/
   this->FootClass_field_bool_68B = 0; /*0x4d33ba*/
@@ -2837,7 +2837,7 @@ _DWORD *__thiscall FootClass::Construct(_DWORD *this, AbstractClass *aP1)
   this->FootClass_field_6B1 = 0; /*0x4d342c*/
   this->FootClass_field_6B2 = 0; /*0x4d3432*/
   this->FootClass_field_6B3 = 0; /*0x4d3438*/
-  this->FootClass_field_6B4 = 0; /*0x4d343e*/
+  this->u32_1AD0 = 0; /*0x4d343e*/
   this->FootClass_field_6B5 = 0; /*0x4d3444*/
   this->FootClass_field_6B6 = 1; /*0x4d344a*/
   this->FootClass_field_6B7 = 0; /*0x4d3451*/
@@ -2879,7 +2879,7 @@ _DWORD *__thiscall FootClass::Construct(_DWORD *this, AbstractClass *aP1)
 _DWORD *__thiscall FootClass::PostLoadInit(_DWORD *this, int a2)
 {
   TechnoClass::Constructor(this, a2); /*0x4d3548*/
-  this->FootClass_DVC_588 = &vt_DynamicVectorClass_AbstractClass; /*0x4d3552*/
+  this->q588 = &vt_DynamicVectorClass_AbstractClass; /*0x4d3552*/
   this->FootClass_DVC_5AC = &vt_DynamicVectorClass_AbstractClass; /*0x4d3558*/
   this->Locomotor = 0; /*0x4d355e*/
   *this = &FootClass::`vftable'; /*0x4d3568*/
@@ -2941,22 +2941,22 @@ int __thiscall FootClass::Destruct(void *this)
   if ( v7 ) /*0x4d368b*/
     (*(void (__stdcall **)(_DWORD))(*(_DWORD *)v7 + 8))(this->Locomotor); /*0x4d3690*/
   v8 = (CCINIClass *)this->q16C; /*0x4d3693*/
-  this->q16B = &vt_VectorClass_AbstractClass; /*0x4d36a0*/
-  if ( v8 && *((_BYTE *)this + 1465) ) /*0x4d36a8*/
+  this->FootClass_DVC_5AC = &vt_VectorClass_AbstractClass; /*0x4d36a0*/
+  if ( v8 && this->u8_5B9 ) /*0x4d36a8*/
   {
     __3_YAXPAX_Z(v8); /*0x4d36b1*/
     this->q16C = 0; /*0x4d36b9*/
   }
-  *((_BYTE *)this + 1465) = 0; /*0x4d36bf*/
+  this->u8_5B9 = 0; /*0x4d36bf*/
   this->q16D = 0; /*0x4d36c5*/
   v9 = (CCINIClass *)this->q163; /*0x4d36cb*/
-  this->q162 = &vt_VectorClass_AbstractClass; /*0x4d36d1*/
-  if ( v9 && *((_BYTE *)this + 1429) ) /*0x4d36dc*/
+  this->q588 = &vt_VectorClass_AbstractClass; /*0x4d36d1*/
+  if ( v9 && this->u8_595 ) /*0x4d36dc*/
   {
     __3_YAXPAX_Z(v9); /*0x4d36e5*/
     this->q163 = 0; /*0x4d36ed*/
   }
-  *((_BYTE *)this + 1429) = 0; /*0x4d36f5*/
+  this->u8_595 = 0; /*0x4d36f5*/
   this->q164 = 0; /*0x4d36fb*/
   return TechnoClass::DTOR((int)this); /*0x4d3706*/
 }
@@ -3984,7 +3984,7 @@ int __thiscall FootClass::EnterAttackState(#377 *this)
 {
   int v2; // edx
 
-  (*(void (__thiscall **)(#377 *, _DWORD, int))(this->q120)(this, 0, 1); /*0x4d5669*/
+  (*(void (__thiscall **)(#377 *, _DWORD, int))(this->q480)(this, 0, 1); /*0x4d5669*/
   v2 = *(_DWORD *)this; /*0x4d566f*/
   this->q178 = -1; /*0x4d5673*/
   (*(void (__thiscall **)(#377 *))(v2 + 1280))(this); /*0x4d567d*/
@@ -5559,7 +5559,7 @@ int __thiscall FootClass::OverrideMission_SyncLog(#377 *this, int a2, int a3, in
 {
   this->FootClass_field_5A8 = this->q169; /*0x4d8f5b*/
   MissionClass::OverrideMission_SyncLog(this); /*0x4d8f61*/
-  return (*(int (__thiscall **)(#377 *, int, int))(this->q120)(this, a4, 1); /*0x4d8f73*/
+  return (*(int (__thiscall **)(#377 *, int, int))(this->q480)(this, a4, 1); /*0x4d8f73*/
 }
 
 
@@ -6079,9 +6079,9 @@ int __thiscall FootClass::HandleTargetDestroyed(int *this, TechnoTypeClass *aP1,
       1);
   if ( v4 == (BuildingClass *)this ) /*0x4d99cb*/
     this->q1A5 = 0; /*0x4d99cd*/
-  v8 = (BuildingClass *)this->FootClass_field_5D8; /*0x4d99d3*/
+  v8 = (BuildingClass *)this->q176; /*0x4d99d3*/
   if ( v8 == v4 && v3 && v4 ) /*0x4d99e3*/
-    this->FootClass_field_5D8 = v8->DamageFireAnims[4]; /*0x4d99eb*/
+    this->q176 = v8->DamageFireAnims[4]; /*0x4d99eb*/
   if ( (BuildingClass *)this->q086 == v4 ) /*0x4d99f7*/
     TechnoClass::SetFocus(this, 0); /*0x4d99fc*/
   if ( (BuildingClass *)this->FootClass_field_5A8 == v4 ) /*0x4d9a07*/
@@ -6125,16 +6125,16 @@ int __thiscall FootClass::HandleTargetDestroyed(int *this, TechnoTypeClass *aP1,
       LOWORD(aP2) = *v14 / 256; /*0x4d9af1*/
       HIWORD(aP2) = v14[1] / 256; /*0x4d9b0a*/
       aP1 = aP2; /*0x4d9b18*/
-      this->FootClass_field_5C8 = (int)CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (__int16 *)&aP1); /*0x4d9b21*/
+      this->q172 = (int)CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (__int16 *)&aP1); /*0x4d9b21*/
     }
     else
     {
-      this->FootClass_field_5C8 = 0; /*0x4d9b29*/
+      this->q172 = 0; /*0x4d9b29*/
     }
     this->q173 = 0; /*0x4d9b2f*/
   }
-  if ( (BuildingClass *)this->FootClass_field_5C8 == v4 ) /*0x4d9b3b*/
-    this->FootClass_field_5C8 = 0; /*0x4d9b3d*/
+  if ( (BuildingClass *)this->q172 == v4 ) /*0x4d9b3b*/
+    this->q172 = 0; /*0x4d9b3d*/
   for ( i = 0; i < this->q16F; ++i ) /*0x4d9b4d*/
   {
     if ( *(BuildingClass **)(this->q16C + 4 * i) == v4 ) /*0x4d9b58*/
@@ -6530,7 +6530,7 @@ char __thiscall FootClass::CanBeRecruited(_DWORD *this, AbstractClass *aP1)
   v4 = (*(int (__thiscall **)(_DWORD *))(*this + 388))(this); /*0x4da273*/
   result = IPersistStream::SetField(v4); /*0x4da27b*/
   if ( result ) /*0x4da282*/
-    return this->q421 != 0; /*0x4da291*/
+    return this->q1084 != 0; /*0x4da291*/
   return result; /*0x4da23d*/
 }
 
@@ -7802,7 +7802,7 @@ _DWORD *__thiscall TechnoClass_GetDeployCoords(_BYTE *this, _DWORD *a2, int a3)
   __int16 v13; // [esp+Ah] [ebp-Eh]
   _BYTE v14[12]; // [esp+Ch] [ebp-Ch] BYREF
 
-  v4 = this->FootClass_field_684; /*0x4dbdf7*/
+  v4 = this->q684; /*0x4dbdf7*/
   if ( v4 < 0 ) /*0x4dbdff*/
   {
     if ( !this->Locomotor ) /*0x4dbe46*/
@@ -7911,7 +7911,7 @@ int __thiscall FootClass::vt_entry_4F4(void *this)
   if ( result == 15 ) /*0x4dc03e*/
   {
     (*(void (__thiscall **)(void *, _DWORD))(this->unknown_short_3C8)(this, 0); /*0x4dc046*/
-    return (*(int (__thiscall **)(void *, _DWORD, int))(this->q120)(this, 0, 1); /*0x4dc054*/
+    return (*(int (__thiscall **)(void *, _DWORD, int))(this->q480)(this, 0, 1); /*0x4dc054*/
   }
   return result; /*0x4dc05a*/
 }
@@ -8764,7 +8764,7 @@ int *__thiscall BuildingClass::Validate(_BYTE *this, TechnoClass *aP1, int a3)
   char v12[12]; // [esp+10h] [ebp-Ch] BYREF
 
   v10 = *(_DWORD *)&MEMORY[0x89F690].__pad_579C[61276]; /*0x4dd89b*/
-  v4 = (_DWORD *)(*(int (__thiscall **)(_BYTE *, char *))(this->q012)(this, v12); /*0x4dd8a6*/
+  v4 = (_DWORD *)(*(int (__thiscall **)(_BYTE *, char *))(this->q048)(this, v12); /*0x4dd8a6*/
   LOWORD(v9) = *v4 / 256; /*0x4dd8bd*/
   HIWORD(v9) = v4[1] / 256; /*0x4dd8d5*/
   v11 = v9; /*0x4dd8de*/
@@ -8902,7 +8902,7 @@ char __thiscall FootClass::MoveToWeed(int *this, int a2)
 // ==== 0x004DDC40  FootClass::CheckHeightDiff  this=FootClass  sig=csp ====
 char __thiscall FootClass_CheckHeightDiff(_BYTE *this, int a2)
 {
-  if ( (char)this->FootClass_field_684 < 0 ) /*0x4ddc48*/
+  if ( (char)this->q684 < 0 ) /*0x4ddc48*/
     return ObjectClass::CheckGroundHeightDiff(this, a2); /*0x4ddc54*/
   else
     return 0; /*0x4ddc4a*/
@@ -9803,7 +9803,7 @@ int __thiscall TechnoClass_FindBestMatch(int *this, int a2, int a3, int a4)
 // ==== 0x004DF0D0  FootClass::ClearPathIndex  this=IUnknown  sig=csp ====
 int __thiscall FootClass_ClearPathIndex(_DWORD *this)
 {
-  *(this + 360) = 0; /*0x4df0d2*/
+  this->q168 = 0; /*0x4df0d2*/
   this->q169 = 0; /*0x4df0d8*/
   return 0; /*0x4df0de*/
 }
@@ -9829,7 +9829,7 @@ int __thiscall FootClass_MissionSell_Dispatch(_BYTE *this, char *a2)
       this->FootClass_field_5C4 = 29; /*0x4df132*/
       if ( v8 ) /*0x4df13c*/
       {
-        this->FootClass_field_5C8 = BuildingLoadQueue::GetNext(a2 + 19); /*0x4df146*/
+        this->q172 = BuildingLoadQueue::GetNext(a2 + 19); /*0x4df146*/
         return 2; /*0x4df14f*/
       }
       else if ( v6 ) /*0x4df15a*/
@@ -10063,7 +10063,7 @@ char __thiscall TechnoClass::vt_entry_4D0(_BYTE *this)
       (*(void (__thiscall **)(_BYTE *))(*(_DWORD *)this + 1192))(this); /*0x4df4fd*/
       return 0; /*0x4df503*/
     }
-    return (*(int (__thiscall **)(_BYTE *))(*(_DWORD *)this + 1224))(this); /*0x4df4d3*/
+    return (*(int (__thiscall **)(_BYTE *))(this->FootClass_field_528)(this); /*0x4df4d3*/
   }
   return result; /*0x4df4d9*/
 }
@@ -10256,7 +10256,7 @@ char __thiscall FootClass::Destru_vt322(_BYTE *this, int a2, int a3, int a4)
   v7 = *(_DWORD *)this; /*0x4df946*/
   v8 = Coord::To_Cell(&MEMORY[0x87F7E8], &a2); /*0x4df954*/
   (*(void (__thiscall **)(_BYTE *, void *, int))(v7 + 1152))(this, v8, 1); /*0x4df95c*/
-  (*(void (__thiscall **)(_BYTE *, _DWORD, int))(this->q120)(this, 0, 1); /*0x4df96a*/
+  (*(void (__thiscall **)(_BYTE *, _DWORD, int))(this->q480)(this, 0, 1); /*0x4df96a*/
   if ( !ppv ) /*0x4df976*/
     WinAPI::Wrapper(-2147467261); /*0x4df97d*/
   (*(void (__stdcall **)(LPVOID, _BYTE *))(*(_DWORD *)ppv + 12))(ppv, this); /*0x4df98a*/
@@ -10399,7 +10399,7 @@ char __thiscall TechnoClass::FindClosestUnit(int this)
     if ( Team::GetMember((_DWORD *)this, 0) != v11 && *(_DWORD *)(this + 1280) != v11 ) /*0x4dfc81*/
     {
       (*(void (__thiscall **)(int, int, _DWORD))(this->q7A0)(this, 7, 0); /*0x4dfc8b*/
-      (*(void (__thiscall **)(int, int, int))(this->q120)(this, v11, 1); /*0x4dfc98*/
+      (*(void (__thiscall **)(int, int, int))(this->q480)(this, v11, 1); /*0x4dfc98*/
     }
     return 1; /*0x4dfc9f*/
   }

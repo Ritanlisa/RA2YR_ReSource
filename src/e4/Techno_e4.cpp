@@ -11,17 +11,18 @@ int Techno::GetOwnerHouse()
 {
   int result; // eax
 
-  result = *(_DWORD *)(this + 196); /*0x6f2073*/
+  result = this->u32_C4; /*0x6f2073*/
   if ( !result ) /*0x6f207b*/
   {
-    if ( BuildingType::IsSpecialType(*(void **)(this + 200)) ) /*0x6f2083*/
-      return BuildingType::FindOwnerHouse(*(void **)(this + 200)); /*0x6f2093*/
+    if ( BuildingType::IsSpecialType(*(void **)(&this->u32_500)) ) /*0x6f2083*/
+      return BuildingType::FindOwnerHouse(*(void **)(&this->u32_500)); /*0x6f2093*/
     else
       return 0; /*0x6f2098*/
   }
   return result; /*0x6f2092*/
 }
 } // namespace gamemd
+}
 
 // 0x70E360
 namespace gamemd {

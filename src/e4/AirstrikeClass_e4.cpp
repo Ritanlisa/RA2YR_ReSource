@@ -23,7 +23,7 @@ int AirstrikeClass::SpawnAircraft(int * a2)
   int v3 = this->AirstrikeClass_field_54; /*0x41d869*/
   this->AirstrikeClass_field_3C = 1; /*0x41d86c*/
   this->AirstrikeClass_field_3D = 1; /*0x41d870*/
-  *(_DWORD *)(this + 52) = 0; /*0x41d874*/
+  this->u32_34 = 0; /*0x41d874*/
   int v4 = *(_DWORD *)(v3 + 3576); /*0x41d881*/
   v17 = *(_DWORD *)(*(_DWORD *)g_RulesClass_Instance->? + 3576); /*0x41d895*/
   if ( VeterancyStruct::IsElite((float *)(this->owner + 336)) ) /*0x41d8a2*/
@@ -87,6 +87,7 @@ int AirstrikeClass::SpawnAircraft(int * a2)
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x41DA20
 namespace ra2 {
@@ -157,6 +158,7 @@ LABEL_6:
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x41DC80
 namespace ra2 {
@@ -180,9 +182,9 @@ int AirstrikeClass::RemoveAircraft(AudioController * aP1)
   {
     do /*0x41dceb*/
     {
-      if ( *(AudioController **)(result + 1496) == aP1 ) /*0x41dcbc*/
+      if ( result->u32_5D8 == aP1 ) /*0x41dcbc*/
       {
-        *(_DWORD *)(result + 1496) = *(_DWORD *)&aP1[7].__pad_94[4]; /*0x41dcc4*/
+        result->u32_5D8 = *(_DWORD *)&aP1[7].__pad_94[4]; /*0x41dcc4*/
         *(_DWORD *)&aP1[7].__pad_94[4] = 0; /*0x41dcca*/
         result = 0; /*0x41dcd3*/
         --this->EliteAirstrikeTeamTypeIndex; /*0x41dcd6*/
@@ -190,7 +192,7 @@ int AirstrikeClass::RemoveAircraft(AudioController * aP1)
       }
       else
       {
-        result = *(_DWORD *)(result + 1496); /*0x41dce1*/
+        result = result->u32_5D8; /*0x41dce1*/
       }
       ++v3; /*0x41dce3*/
     }
@@ -207,6 +209,7 @@ int AirstrikeClass::RemoveAircraft(AudioController * aP1)
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x41DD50
 namespace ra2 {
@@ -237,6 +240,7 @@ void * AirstrikeClass::CopyTo(char a2)
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x420E90
 namespace ra2 {
@@ -297,6 +301,7 @@ LABEL_9:
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x41D380
 namespace ra2 {

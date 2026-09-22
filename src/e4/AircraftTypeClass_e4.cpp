@@ -60,18 +60,19 @@ LABEL_11:
     }
   }
   this->ArrayIndex = v5; /*0x41c991*/
-  *(_BYTE *)(this + 3384) = 1; /*0x41c997*/
-  *(_BYTE *)(this + 3478) = 1; /*0x41c99d*/
+  this->u8_D38 = 1; /*0x41c997*/
+  this->u8_D96 = 1; /*0x41c99d*/
   this->MoveToShroud = 0; /*0x41c9a3*/
   this->RotCount = 32; /*0x41c9a9*/
   this->Trailer = 0; /*0x41c9b3*/
   this->SpawnDelay = 3; /*0x41c9b9*/
-  *(_BYTE *)(this + 3381) = 0; /*0x41c9c3*/
-  *(_BYTE *)(this + 3382) = 0; /*0x41c9c9*/
-  *(_BYTE *)(this + 3387) = 0; /*0x41c9cf*/
-  *(_BYTE *)(this + 3479) = 0; /*0x41c9d5*/
-  *(_BYTE *)(this + 3374) = 0; /*0x41c9db*/
+  this->u8_D35 = 0; /*0x41c9c3*/
+  this->u8_D36 = 0; /*0x41c9c9*/
+  this->u8_D3B = 0; /*0x41c9cf*/
+  this->u8_D97 = 0; /*0x41c9d5*/
+  this->u8_D2E = 0; /*0x41c9db*/
   return this; /*0x41c9e3*/
+}
 }
 
 // 0x41CC20
@@ -132,6 +133,7 @@ AnimTypeClass * * AircraftTypeClass_LoadTypeData()
   return 1; /*0x41cd8a*/
 }
 } // namespace gamemd
+}
 
 // 0x41CFE0
 AircraftTypeClass * AircraftTypeClass::ddtor(char a2)

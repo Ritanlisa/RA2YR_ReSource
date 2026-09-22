@@ -92,6 +92,7 @@ AbstractClass * * WDTState_4::Release(int a2, unsigned int * a3)
   return 1; /*0x76bb79*/
 }
 } // namespace gamemd
+}
 
 // 0x76B710
 namespace gamemd {
@@ -155,15 +156,15 @@ DynamicVector * WDTState_4::QueryInterface(char a2)
 {
 {
     void (__thiscall ***v3)(int, int);
-    v3 = (void (__thiscall ***)(int, int))*(this + 1);
+    v3 = (void (__thiscall ***)(int, int))this->Items;
     *(void**)this = &vt_VectorClass_rc_ptr_WDTTerritory;
-    if ( v3 && *((char *)(this) + 13) )
+    if ( v3 && this->IsAllocated )
   {
     (**v3)(v3, 3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
+    this->IsAllocated = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;

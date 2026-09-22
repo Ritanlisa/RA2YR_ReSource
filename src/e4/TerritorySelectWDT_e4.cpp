@@ -96,6 +96,7 @@ wchar_t ** E4Recv_7665D0::sub_7665D0(wchar_t ** a2)
   return a2; /*0x76678e*/
 }
 } // namespace gamemd
+}
 
 // 0x7714B0
 namespace gamemd {
@@ -103,58 +104,59 @@ void E4Recv_7714B0::sub_7714B0(int a2, char a3, int a4)
 {
 {
 
-  int v5 = *(this + 244); /*0x7714c4*/
+  int v5 = *(&this->u32_604); /*0x7714c4*/
   int v6 = v5 - 1; /*0x7714c6*/
-  if ( v5 > *(this + 239) ) /*0x7714c9*/
+  if ( v5 > *(&this->u32_5C9) ) /*0x7714c9*/
   {
   int v10; // edx
     do /*0x77150b*/
     {
-      int v7 = *(this + 244); /*0x7714cb*/
+      int v7 = *(&this->u32_604); /*0x7714cb*/
       if ( v6 < v7 ) /*0x7714d3*/
       {
         int v8 = v7 - 1; /*0x7714d5*/
         int v9 = v6; /*0x7714d6*/
-        for ( *(this + 244) = v8; v9 < *(this + 244); ++v9 ) /*0x7714e0*/
-          String::Reassign((char **)(*(this + 241) + 4 * v9), (const char **)(*(this + 241) + 4 * v9 + 4)); /*0x7714f0*/
+        for ( *(&this->u32_604) = v8; v9 < *(&this->u32_604); ++v9 ) /*0x7714e0*/
+          String::Reassign((char **)(*(&this->u32_601) + 4 * v9), (const char **)(*(&this->u32_601) + 4 * v9 + 4)); /*0x7714f0*/
       }
       v10 = v6--; /*0x771506*/
     }
-    while ( v10 > *(this + 239) ); /*0x77150b*/
+    while ( v10 > *(&this->u32_5C9) ); /*0x77150b*/
   }
-  if ( !*(this + 239) ) /*0x77150d*/
-    *((_BYTE *)this + 952) = 1; /*0x771517*/
+  if ( !*(&this->u32_5C9) ) /*0x77150d*/
+    this->M952 = 1; /*0x771517*/
   void *v17[4]; // [esp+Ch] [ebp-10h] BYREF
   unknown_libname_73(v17); /*0x771522*/
   int v11 = *this; /*0x77152b*/
   DeleteAndZero::Alt2(v17); /*0x77153b*/
-  int v12 = *(this + 6 * a2 + 227); /*0x771540*/
+  int v12 = *(&this->u32_18 * a2 + 227); /*0x771540*/
   if ( v12 > 0 )
   {
     int v13 = v12 == 1 ? 0 : Random::Range(Randomizer_Global, 0, v12 - 1);
-    if ( Map_Remove_770CE0(v11, *(_DWORD *)(*(this + 6 * a2 + 224) + 4 * v13), (char **)v17) ) /*0x77156f*/
+    if ( Map_Remove_770CE0(v11, *(_DWORD *)(*(&this->u32_18 * a2 + 224) + 4 * v13), (char **)v17) ) /*0x77156f*/
     {
       if ( !(unsigned __int8)Audio::IsPlaying() ) /*0x77157c*/
       {
-        *(this + 235) = Timer::GetTicks(); /*0x771598*/
-        *(this + 236) = v17[2]; /*0x7715a2*/
-        *(this + 237) = a4; /*0x7715a5*/
+        *(&this->u32_5C5) = Timer::GetTicks(); /*0x771598*/
+        *(&this->u32_5C6) = v17[2]; /*0x7715a2*/
+        *(&this->u32_5C7) = a4; /*0x7715a5*/
       }
-      int v14 = *(this + 242); /*0x7715a8*/
-      if ( *(this + 244) < v14 /*0x7715d9*/
+      int v14 = *(&this->u32_602); /*0x7715a8*/
+      if ( *(&this->u32_604) < v14 /*0x7715d9*/
         || ((unsigned char)this->M973 || !v14)
   int v15; // eax
-        && (v15 = *(this + 245), v15 > 0)
-        && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*(this + 240) + 8))(this + 240, v14 + v15, 0) )
+        && (v15 = *(&this->u32_605), v15 > 0)
+        && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*(&this->u32_600) + 8))(&this->M960, v14 + v15, 0) )
       {
-        int v16 = *(this + 244); /*0x7715e0*/
-        *(this + 244) = v16 + 1; /*0x7715eb*/
-        String::Reassign((char **)(*(this + 241) + 4 * v16), (const char **)v17); /*0x7715f4*/
+        int v16 = *(&this->u32_604); /*0x7715e0*/
+        *(&this->u32_604) = v16 + 1; /*0x7715eb*/
+        String::Reassign((char **)(*(&this->u32_601) + 4 * v16), (const char **)v17); /*0x7715f4*/
       }
       if ( a3 ) /*0x7715ff*/
-        ++*(this + 239); /*0x771601*/
+        ++*(&this->u32_5C9); /*0x771601*/
     }
   }
   DeleteAndZero(v17); /*0x77160b*/
 }
 } // namespace gamemd
+}

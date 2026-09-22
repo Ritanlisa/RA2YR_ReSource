@@ -53,6 +53,7 @@ void Render_Load()
   return result; /*0x52ffb7*/
 }
 } // namespace gamemd
+}
 
 // 0x53C0A0
 namespace gamemd {
@@ -133,6 +134,7 @@ void sub_53C0A0(unsigned short * a1, int a2, unsigned short a3, int a4, int a5, 
   return result; /*0x53c273*/
 }
 } // namespace gamemd
+}
 
 // 0x652230
 namespace gamemd {
@@ -194,6 +196,7 @@ AbstractClass * * Render_Show(CCINIClass * aP0, int a2)
   return result; /*0x6522a2*/
 }
 } // namespace gamemd
+}
 
 // 0x705270
 AbstractClass * * Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a6, int a7, char a8)
@@ -357,6 +360,7 @@ AbstractClass * * Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a
   while ( v22 <= 64 ); /*0x705841*/
   return result; /*0x705847*/
 }
+}
 
 // 0x780D90
 namespace gamemd {
@@ -399,6 +403,7 @@ LABEL_6:
   }
 }
 } // namespace gamemd
+}
 
 // 0x7C7371
 void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, unsigned int a5, int a6)
@@ -1053,6 +1058,7 @@ LABEL_39:
     }
   }
 }
+}
 
 // 0x731BF0
 namespace gamemd {
@@ -1087,6 +1093,7 @@ void sub_731BF0()
   return 0; /*0x731bfc*/
 }
 } // namespace gamemd
+}
 
 // 0x777E00
 namespace gamemd {
@@ -1106,6 +1113,7 @@ int sub_777E00()
   return result; /*0x777e32*/
 }
 } // namespace gamemd
+}
 
 // 0x778030
 namespace gamemd {
@@ -1162,6 +1170,7 @@ LABEL_12:
   return 0; /*0x7780f9*/
 }
 } // namespace gamemd
+}
 
 // 0x778120
 namespace gamemd {
@@ -1171,6 +1180,7 @@ int sub_778120()
   return dword_B73570; /*0x778125*/
 }
 } // namespace gamemd
+}
 
 // 0x6CA310
 namespace gamemd {
@@ -1250,6 +1260,7 @@ LABEL_18:
   return 0; /*0x6ca440*/
 }
 } // namespace gamemd
+}
 
 // 0x6CA940
 namespace gamemd {
@@ -1288,6 +1299,7 @@ LABEL_9:
   }
 }
 } // namespace gamemd
+}
 
 // 0x53D850
 namespace gamemd {
@@ -1320,6 +1332,7 @@ void sub_53D850()
   return result; /*0x53d8d3*/
 }
 } // namespace gamemd
+}
 
 // 0x5541C0
 namespace gamemd {
@@ -1361,6 +1374,7 @@ CampaignScore * * Render_Render_5541C0(unsigned short * a0, int a2, AbstractClas
   return DSurface::FillRectWithColor(a0a, (ObjectClass *)a2, 0, 0x9Fu); /*0x554269*/
 }
 } // namespace gamemd
+}
 
 // 0x554280
 namespace gamemd {
@@ -1384,6 +1398,7 @@ void Render_Render_554280(unsigned short * a0, AbstractClass * aP1, int * a2, un
   return PrintFontLayout((AbstractClass *)v10, aP0, v9); /*0x554341*/
 }
 } // namespace gamemd
+}
 
 // 0x63B0A0
 namespace gamemd {
@@ -1416,6 +1431,7 @@ AbstractClass * * sub_63B0A0()
   }
 }
 } // namespace gamemd
+}
 
 // 0x642BB0
 namespace gamemd {
@@ -1439,6 +1455,7 @@ void sub_642BB0(unsigned int a1)
   return result; /*0x642bec*/
 }
 } // namespace gamemd
+}
 
 // 0x660000
 namespace gamemd {
@@ -1471,6 +1488,7 @@ LABEL_7:
   return result; /*0x660049*/
 }
 } // namespace gamemd
+}
 
 // 0x6603B0
 namespace gamemd {
@@ -1523,6 +1541,7 @@ LABEL_7:
   }
 }
 } // namespace gamemd
+}
 
 // 0x7760B0
 namespace gamemd {
@@ -1572,6 +1591,7 @@ void Render_Render_7760B0(HDC hdc, const char * a2, LONG a3, LONG a4, char a5)
   return v8; /*0x776204*/
 }
 } // namespace gamemd
+}
 
 // 0x556D40
 namespace gamemd {

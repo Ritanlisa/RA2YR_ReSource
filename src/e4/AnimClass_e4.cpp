@@ -134,6 +134,7 @@ void AnimClass::Destruct(void * this, AbstractClass * a2)
   ObjectClass::Dtor(this); /*0x422b10*/
 }
 } // namespace gamemd
+}
 
 // 0x422CA0
 namespace gamemd {
@@ -703,6 +704,7 @@ LABEL_99:
   }
 }
 } // namespace gamemd
+}
 
 // 0x424CB0
 namespace gamemd {
@@ -714,11 +716,12 @@ int AnimClass::InWhichLayer_AttachedObjectLayer()
     return 2; /*0x424cba*/
   Coord *v2 = this->q0C8; /*0x424cc0*/
   if ( v2 ) /*0x424cc8*/
-    return *(_DWORD *)(v2 + 868); /*0x424cca*/
+    return v2->u32_364; /*0x424cca*/
   else
     return 3; /*0x424cd1*/
 }
 } // namespace gamemd
+}
 
 // 0x4253B0
 namespace gamemd {
@@ -748,15 +751,16 @@ LABEL_6:
   return AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x4253ff*/
 }
 } // namespace gamemd
+}
 
 // 0x428DE0
 namespace gamemd {
 void AnimClass::FreeRenderBuffer()
 {
 {
-  if ( *(_BYTE *)(this + 862) && this->AnimClass_field_0xA4 ) /*0x428ded*/
+  if ( this->u8_35E && this->AnimClass_field_0xA4 ) /*0x428ded*/
   {
-    if ( *(_BYTE *)(this + 863) ) /*0x428df7*/
+    if ( this->u8_35F ) /*0x428df7*/
     {
       Debug::Log(); /*0x428e0a*/
       __3_YAXPAX_Z(this->q0A4); /*0x428e16*/
@@ -766,6 +770,7 @@ void AnimClass::FreeRenderBuffer()
   }
 }
 } // namespace gamemd
+}
 
 // 0x448260
 namespace gamemd {
@@ -837,7 +842,7 @@ BuildingTypeClass * * AnimClass::drawFrame()
   #375 *v185; // [esp+108h] [ebp+4h]
   AbstractClass *aP1; // [esp+10Ch] [ebp+8h] BYREF
   HouseClass *v187; // [esp+110h] [ebp+Ch]
-  if ( v185 == *((#375 **)this + 135) )
+  if ( v185 == *((#375 **)&this->u32_345) )
   {
     LOBYTE(result) = 0;
   }
@@ -860,7 +865,7 @@ BuildingTypeClass * * AnimClass::drawFrame()
         int v7 = *(_DWORD *)(this->q148 + 5472);
         this->q1B4 = *(_DWORD *)&HouseClass_Player[45112];
         this->q1B5 = v174;
-        *((_DWORD *)this + 438) = v7;
+        this->u32_6D8 = v7;
       }
     }
     bool v8 = this->hasParachute;
@@ -893,10 +898,10 @@ BuildingTypeClass * * AnimClass::drawFrame()
       }
     }
     v16 = (BuildingTypeClass *)this->q148;
-    *((_BYTE *)this + 979) = 0;
+    this->u8_3D3 = 0;
     if ( v16->LaserFencePost )
       BuildingClass::DemolishBridgeCheck((int *)this, 0);
-    if ( (unsigned __int8)House::IsHumanPlayer(*((#375 **)this + 135)) || (unsigned __int8)House::IsHumanPlayer(v185) )
+    if ( (unsigned __int8)House::IsHumanPlayer(*((#375 **)&this->u32_345)) || (unsigned __int8)House::IsHumanPlayer(v185) )
     {
       if ( !*(_BYTE *)(*((_DWORD *)v185 + 13) + 422) && (_BYTE)aP1 )
       {
@@ -930,17 +935,17 @@ BuildingTypeClass * * AnimClass::drawFrame()
     }
     v20 = (BuildingTypeClass *)this->q148;
     this->q080 = 1;
-    *((_BYTE *)this + 1740) = 1;
+    this->u8_6CC = 1;
     if ( v20->NeedsEngineer )
     {
-      v21 = (LightSourceClass *)*((_DWORD *)this + 389);
-      *((_BYTE *)this + 1770) = 1;
+      v21 = (LightSourceClass *)this->ptr_614;
+      this->u8_6EA = 1;
       if ( v21 )
         Trigger::EnableOnce(v21, 0);
       if ( *(_BYTE *)(this->q148 + 5822) )
         BuildingClass::RepairPlacement(this, 0);
       int v22 = 0;
-      v23 = (_BYTE **)((char *)this + 1372);
+      v23 = (_BYTE **)((char *)&this->u32_2242);
       do
       {
         if ( *(_BYTE *)(v22 + this->q148 + 3980) && *v23 )
@@ -1053,7 +1058,7 @@ LABEL_66:
     v37 = (AbstractClass *)this->AnimClass_field_0x21C;
   char v172[8]; // [esp+B4h] [ebp-50h] BYREF
     ScriptAction::GetWaypointCoords(v172, (IUnknown *)this);
-    *((_BYTE *)this + 1763) = 1;
+    this->u8_6E3 = 1;
     int v39 = 0;
     int v40 = *(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 2236);
     if ( v40 > 0 )
@@ -1297,7 +1302,7 @@ LABEL_80:
     ecx134 = *(_DWORD *)(this->q148 + 5476);
     if ( ecx134 )
     {
-      if ( *((_BYTE *)this + 1764) )
+      if ( this->u8_6E4 )
       {
         *(_DWORD *)(this->AnimClass_field_0x21C + 356) -= ecx134;
         v88 = (AbstractClass *)this->AnimClass_field_0x21C;
@@ -1308,7 +1313,7 @@ LABEL_80:
     ecx138 = *(_DWORD *)(this->q148 + 5480);
     if ( ecx138 )
     {
-      if ( *((_BYTE *)this + 1764) )
+      if ( this->u8_6E4 )
       {
         *(_DWORD *)(this->AnimClass_field_0x21C + 360) -= ecx138;
         v90 = (AbstractClass *)this->AnimClass_field_0x21C;
@@ -1323,7 +1328,7 @@ LABEL_80:
     if ( v92->CloakGenerator )
     {
       char v94 = this->q1BB;
-      *((_BYTE *)this + 1771) = -1;
+      this->u8_6EB = -1;
       if ( !v94 )
         this->q1BB = v92->CloakRadiusInCells;
       vfptr0 = *(BuildingTypeClass **)this;
@@ -1344,7 +1349,7 @@ LABEL_80:
         if ( v96->CloakGenerator )
         {
           cl153 = this->q1BB;
-          *((_BYTE *)this + 1771) = 1;
+          this->u8_6EB = 1;
           if ( cl153 == v96->CloakRadiusInCells )
             this->q1BB = 0;
           this->q080 = 1;
@@ -1354,7 +1359,7 @@ LABEL_80:
     if ( *(_BYTE *)(this->q148 + 3281)
       && (*(unsigned __int8 (__thiscall **)(#377 *))(this->q0D4)(this) )
     {
-      (*(void (__thiscall **)(#377 *))(*(_DWORD *)this + 1044))(this);
+      (*(void (__thiscall **)(#377 *))(*(_DWORD *)&this->u32_1A04))(this);
     }
     AnimClass::updateAnimation((int)this, 0);
     v37[603].abstractFlags = (int)this;
@@ -1372,7 +1377,7 @@ LABEL_80:
     }
     BuildingClass::IncrementOccupantTypeCounter(this->q21C, (BuildingClass *)this);
     v99 = *(BuildingTypeClass **)this;
-    *((_BYTE *)this + 1768) = 0;
+    this->u8_6E8 = 0;
     (*(void (__thiscall **)(#377 *, int))&v99->DebrisTypes[456])(this, 1);
     if ( *(_BYTE *)(this->q148 + 5822) )
     {
@@ -1388,11 +1393,11 @@ LABEL_80:
               !*(_DWORD *)&HouseClass_Player[43616]) )
         {
           if ( *(_BYTE *)(this->q148 + 5822) )
-            *((_DWORD *)this + 390) = 0;
+            this->u32_618 = 0;
         }
       }
     }
-    if ( (unsigned __int8)House::IsHumanPlayer(*((#375 **)this + 135)) )
+    if ( (unsigned __int8)House::IsHumanPlayer(*((#375 **)&this->u32_345)) )
     {
       (*(void (__thiscall **)(#377 *, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD))(this->q488)(
         this,
@@ -1419,7 +1424,7 @@ LABEL_80:
     }
     this->qE00 = (_WORD)v104;
     BuildingClass::SyncCrateVisuals((char *)this, v103, (unsigned __int16)v104);
-    BuildingClass::SetConnectedBuildingMission((int *)this, (BuildingClass *)*((char *)this + 1773));
+    BuildingClass::SetConnectedBuildingMission((int *)this, (BuildingClass *)*((char *)&this->u32_2C43));
     int v106 = 0;
     int v107 = *(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 2236);
     if ( v107 <= 0 )
@@ -1681,7 +1686,7 @@ LABEL_183:
         bool v162 = this->q053;
         if ( v162 != v109 && !*(_BYTE *)(*(_DWORD *)(v162 + 52) + 422) )
         {
-          for ( i = *((_BYTE *)this + 1794); i > 0; i = *((_BYTE *)this + 1794) )
+          for ( i = this->u8_702; i > 0; i = this->u8_702 )
           {
             int v164 = *((_DWORD *)this + i + 378);
             v165 = (IUnknown *)(*(int (__thiscall **)(int, _DWORD, int))(*(_DWORD *)v164 + 184))(
@@ -1711,6 +1716,7 @@ LABEL_183:
   return result;
 }
 } // namespace gamemd
+}
 
 // 0x7298F0
 namespace gamemd {
@@ -1775,6 +1781,7 @@ void AnimClass_GetAnimation()
   return result; /*0x729a34*/
 }
 } // namespace gamemd
+}
 
 // 0x761030
 namespace gamemd {
@@ -1788,7 +1795,7 @@ int AnimClass::ProcessFrame()
   for ( i = 0; i < this->q080; ++i ) /*0x761046*/
   {
   int v6[3]; // [esp+8h] [ebp-Ch] BYREF
-    Coords = (ObjectClass *)CellClass::GetCoords(*(_DWORD **)(*((_DWORD *)this + 125) + 4 * i), v6); /*0x761056*/
+    Coords = (ObjectClass *)CellClass::GetCoords(*(_DWORD **)(this->u32_1F4 + 4 * i), v6); /*0x761056*/
     WaveClass::DamageArea((int *)this, Coords); /*0x76105e*/
   }
   int v4 = this->q04C - 1; /*0x761074*/
@@ -1799,6 +1806,7 @@ int AnimClass::ProcessFrame()
     return (*(int (__thiscall **)(#374 *))(this->TintColor)(this); /*0x761081*/
 }
 } // namespace gamemd
+}
 
 // 0x4238D0
 namespace gamemd {

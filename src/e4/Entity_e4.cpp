@@ -25,6 +25,7 @@ int sub_53AB70()
   return MapClass::MarkForRedraw(&DataGlobal_87F7E8, 1); /*0x53ac4a*/
 }
 } // namespace gamemd
+}
 
 // 0x5C0080
 namespace gamemd {

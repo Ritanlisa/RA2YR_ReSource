@@ -497,6 +497,7 @@ retn    8
 
 // IDA: 0x480350 -- TacticalClass::CheckCellVisibility
 // Checks if a cell at given world coordinate is visible and processes it.
+}
 // 0x480350
 int TacticalClass::CheckCellVisibility(const Point2D& screen_pos, int flags, bool unk)
 {
@@ -527,10 +528,10 @@ LABEL_10:
     goto LABEL_11;
   }
   v7 = (int *)*((_DWORD *)g_FrameCounter + v6);
-  v15 = *(unsigned __int8 *)(this + 282);
+  v15 = *(unsigned __int8 *)(&this->field702);
   if ( v7[188] > 1 )
   {
-    if ( CellClass::GetTerrainFlag(v7, *(unsigned __int8 *)(this + 282)) )
+    if ( CellClass::GetTerrainFlag(v7, *(unsigned __int8 *)(&this->field702)) )
       inited = (this->field50 >> 13) & 1;
     else
       inited = CellClass::InitRandomOffsets(this, this->field38, v7[188]);
@@ -538,7 +539,7 @@ LABEL_10:
   }
 LABEL_11:
   ++DataGlobal_00A83ECC;
-  v9 = *(char *)(this + 283);
+  v9 = this->u32_11B;
   v10 = a2[1];
   v16[0] = *a2;
   v11 = v10 - 15 * v9;
@@ -554,8 +555,8 @@ LABEL_11:
                    a3[1],
                    a3[2],
                    a3[3],
-                   *(char *)(this + 283),
-                   *(__int16 *)(this + 268),
+                   this->u32_11B,
+                   *(__int16 *)(&this->field688),
                    1,
                    v17,
                    0,
@@ -574,9 +575,9 @@ LABEL_11:
                    *((_DWORD *)FactoryClass_Array + v13),
                    v16,
                    a3,
-                   *(unsigned __int8 *)(this + 287),
-                   DataGlobal_89E7C0 * *(char *)(this + 283),
-                   this + 36);
+                   *(unsigned __int8 *)(&this->field707),
+                   DataGlobal_89E7C0 * this->u32_11B,
+                   &this->q00C6);
   }
   return v4;
 }
@@ -747,6 +748,7 @@ retn    0Ch
 
 // IDA: 0x6D7840 -- TacticalClass::DrawMap
 // Main map drawing function. Draws terrain, overlays, and building debris.
+}
 // 0x6d7840
 int TacticalClass::DrawMap(const RectangleStruct& viewRect, RectangleStruct* bounds)
 {
@@ -1212,6 +1214,7 @@ retn    8
 
 // IDA: 0x6D7C00 -- TacticalClass::DrawTerrain
 // Draws terrain tiles for all visible cells.
+}
 // 0x6d7c00
 int TacticalClass::DrawTerrain(const RectangleStruct& viewRect)
 {
@@ -1591,6 +1594,7 @@ void TacticalClass::DrawCellTerrainOverlay(int cx, int cy, RectangleStruct* boun
 
 // IDA: 0x6D3040 -- TacticalClass::DrawTerrainPartial
 // Draws partial terrain for a region of cells.
+}
 // 0x6d3040
 int TacticalClass::DrawTerrainPartial(const RectangleStruct& rect)
 {
@@ -1919,6 +1923,7 @@ void TacticalClass::DrawBuildingsInView(const RectangleStruct& viewRect)
 
 // IDA: 0x6D71E0 -- TacticalClass::CalcBuildingDrawPos
 // Calculates the screen draw position for a building.
+}
 // 0x6d71e0
 Point2D* TacticalClass::CalcBuildingDrawPos(Point2D* out, BuildingClass* building)
 {
@@ -3249,6 +3254,7 @@ void TacticalClass::RenderIsometricOverlay(const RectangleStruct& viewRect)
 
 // IDA: 0x658780 -- TacticalClass::renderOverlay
 // Thin wrapper that delegates to RenderIsometricOverlay.
+}
 // 0x658780
 void TacticalClass::renderOverlay(int * Block, char a2)
 {
@@ -3343,7 +3349,7 @@ int TacticalClass::RenderCells()
         dword_A8ED54[46744] = 0;
         atexit(nullsub_21);
       }
-      LOBYTE(v2) = *(_BYTE *)(this + 81);
+      LOBYTE(v2) = this->u8_51;
       if ( !(_BYTE)v2 )
       {
   int v54; // [esp+90h] [ebp-4h]
@@ -3359,9 +3365,9 @@ int TacticalClass::RenderCells()
         LOWORD(v44) = Math::RoundToInt((v4 - 1.570796326794897) * -10430.06004058427);
         unsigned int v5 = ((((unsigned int)v44 >> 12) + 1) >> 1) & 7;
   int v53; // [esp+8Ch] [ebp-8h] BYREF
-        Coord::To_Screen((_DWORD *)DataGlobal_87F7E8[7887], (_DWORD *)(this + 36), &v53);
+        Coord::To_Screen((_DWORD *)DataGlobal_87F7E8[7887], (_DWORD *)(&this->q00C6), &v53);
   int v51; // [esp+84h] [ebp-10h] BYREF
-        Coord::To_Screen((_DWORD *)DataGlobal_87F7E8[7887], (_DWORD *)(this + 48), &v51);
+        Coord::To_Screen((_DWORD *)DataGlobal_87F7E8[7887], (_DWORD *)(&this->uniqueId8), &v51);
         int v6 = this->TacticalClass_field_3C - ZCoordToScreenY(this->TacticalClass_field_2C) - 2;
         int v7 = ZCoordToScreenY(this->field38);
         v39 = 0;
@@ -3370,12 +3376,12 @@ int TacticalClass::RenderCells()
         char v40 = 0;
         v44 = 0;
         char v38 = 1;
-        if ( (_BYTE)v7 || *(_BYTE *)(this + 69) || *(_BYTE *)(this + 70) )
+        if ( (_BYTE)v7 || this->u8_45 || this->u8_46 )
         {
           v44 = Random::Range(
                   &DataGlobal_87F7E8[7400],
-                  -*(unsigned __int8 *)(this + 71),
-                  *(unsigned __int8 *)(this + 71));
+                  -*(unsigned __int8 *)(&this->referenceCount1),
+                  *(unsigned __int8 *)(&this->referenceCount1));
           v41 = Random::Range(
                   &DataGlobal_87F7E8[7400],
                   -this->field48,
@@ -3383,15 +3389,15 @@ int TacticalClass::RenderCells()
           *(float *)&v42 = COERCE_FLOAT(
                              Random::Range(
                                &DataGlobal_87F7E8[7400],
-                               -*(unsigned __int8 *)(this + 73),
-                               *(unsigned __int8 *)(this + 73)));
+                               -*(unsigned __int8 *)(&this->referenceCount3),
+                               *(unsigned __int8 *)(&this->referenceCount3)));
           int v9 = this->field44 + v44 < 0 ? 0 : this->field44 + v44;
           if ( v9 > 255 )
             v9 = 255;
-          v41 = *(unsigned __int8 *)(this + 69) + v41 < 0 ? 0 : *(unsigned __int8 *)(this + 69) + v41;
+          v41 = *(unsigned __int8 *)(&this->nextArrayIndex9) + v41 < 0 ? 0 : *(unsigned __int8 *)(&this->nextArrayIndex9) + v41;
           if ( v41 > 255 )
             v41 = 255;
-          v42 = *(unsigned __int8 *)(this + 70) + v42 < 0 ? 0 : *(unsigned __int8 *)(this + 70) + v42;
+          v42 = *(unsigned __int8 *)(&this->referenceCount0) + v42 < 0 ? 0 : *(unsigned __int8 *)(&this->referenceCount0) + v42;
           int v10 = v42;
           if ( v42 > 255 )
           {
@@ -3409,19 +3415,19 @@ int TacticalClass::RenderCells()
         {
           v38 = 0;
         }
-        v11 = *(_BYTE *)(this + 66);
-        v43 = this + 65;
+        v11 = this->u8_42;
+        v43 = &this->q104;
         *(float *)&v42 = 1.0;
   int v49; // [esp+7Ch] [ebp-18h] BYREF
-        LOBYTE(v49) = *(_BYTE *)(this + 65);
+        LOBYTE(v49) = this->u8_41;
   int v47; // [esp+74h] [ebp-20h] BYREF
         LOBYTE(v47) = (_BYTE)v49 != 0;
   int v46; // [esp+70h] [ebp-24h]
         LOBYTE(v46) = v11 != 0;
-        v12 = *(_BYTE *)(this + 67);
+        v12 = this->u8_43;
   int v45; // [esp+6Ch] [ebp-28h]
         LOBYTE(v45) = v12 != 0;
-        if ( *(_BYTE *)(this + 82) )
+        if ( this->u8_52 )
         {
           double v13 = this->field54 - this->field58;
           v41 = this->TacticalClass_field_4C;
@@ -4229,6 +4235,7 @@ retn
 
 // IDA: 0x6D8B30 -- TacticalClass::CalcViewportCells
 // Calculates which cells are visible in the current viewport.
+}
 // 0x6d8b30
 BuildingTypeClass * * TacticalClass::CalcViewportCells()
 {
@@ -4249,7 +4256,7 @@ BuildingTypeClass * * TacticalClass::CalcViewportCells()
   float v11 = v4;
   LODWORD(v10[1]) = v5 - 30;
   float v12 = (float)(v5 - 30);
-  float * v6 = TransformMatrix3x4Point(v10, (float *)(this + 3556), &v11);
+  float * v6 = TransformMatrix3x4Point(v10, (float *)(&this->u32_58C6), &v11);
   v11 = *v6;
   v12 = v6[1];
   v13 = *((_DWORD *)v6 + 2);
@@ -4484,7 +4491,7 @@ LABEL_8:
   }
   else
   {
-    double v13 = (double)v4 / *(float *)(this + 5256) - (double)*(int *)(this + 5264);
+    double v13 = (double)v4 / this->u32_1488 - (double)this->u32_1490;
   int v17; // [esp+30h] [ebp+Ch]
     LOWORD(v17) = Math::RoundToInt(v13);
     result = Math::RoundToInt(v13);
@@ -4621,6 +4628,9 @@ retn    0Ch
 
 // IDA: 0x483E30 -- TacticalClass::SetView
 // Sets the tactical view parameters.
+}
+}
+}
 // 0x483e30
 int TacticalClass::SetView(int view_x, int view_y, int view_width, int view_height)
 {
@@ -4649,19 +4659,19 @@ int TacticalClass::SetView(int view_x, int view_y, int view_width, int view_heig
 LABEL_20:
     v13 = a4;
     v14 = a5;
-    *(_DWORD *)(this + 260) = a3;
+    this->q104 = a3;
     v15 = a6;
-    *(_WORD *)(this + 264) = v13;
+    this->q108 = v13;
     v16 = a7;
-    *(_WORD *)(this + 266) = v14;
+    this->u16_10A = v14;
     v17 = a2;
-    *(_WORD *)(this + 268) = v15;
+    this->u32_10C = v15;
     LOWORD(v18) = v21;
-    *(_WORD *)(this + 270) = v16;
+    this->u16_10E = v16;
     v19 = v22;
     this->field44 = v17;
-    *(_WORD *)(this + 274) = v18;
-    *(_WORD *)(this + 276) = v19;
+    this->q112 = v18;
+    this->u16_114 = v19;
     return v18;
   }
   if ( (this->field24 || this->field98)
@@ -4695,14 +4705,14 @@ LABEL_18:
   this->field34 = v18;
   if ( v18 )
     ++*(_DWORD *)(v18 + 404);
-  *(_WORD *)(this + 266) = 1000;
-  *(_WORD *)(this + 268) = 1000;
-  *(_WORD *)(this + 270) = 1000;
+  this->u16_10A = 1000;
+  this->u32_10C = 1000;
+  this->u16_10E = 1000;
   this->field44 = 1000;
-  *(_WORD *)(this + 274) = 1000;
-  *(_WORD *)(this + 276) = 1000;
-  *(_DWORD *)(this + 260) = 0x10000;
-  *(_WORD *)(this + 264) = 0;
+  this->q112 = 1000;
+  this->u16_114 = 1000;
+  this->q104 = 0x10000;
+  this->q108 = 0;
   return v18;
 }
 
@@ -4876,6 +4886,7 @@ retn    18h
 
 // IDA: 0x4A8960 -- TacticalClass::SetViewDimensions
 // Sets viewport dimensions and recalculates visible area.
+}
 // 0x4a8960
 AbstractClass * * TacticalClass::SetViewDimensions(int width, int height)
 {
@@ -5172,6 +5183,7 @@ retn    4
 
 // IDA: 0x537620 -- TacticalClass::InitView
 // Initializes the tactical view for first use.
+}
 // 0x537620
 int TacticalClass::InitView()
 {
@@ -5230,6 +5242,7 @@ retn    4
 
 // IDA: 0x6D5F60 -- TacticalClass::SetViewportPosition
 // Sets the viewport scroll position.
+}
 // 0x6d5f60
 int TacticalClass::SetViewportPosition(int x, int y)
 {
@@ -5316,6 +5329,7 @@ retn    4
 
 // IDA: 0x6D2540 -- TacticalClass::ScrollViewport
 // Scrolls the viewport by a delta amount.
+}
 // 0x6d2540
 AbstractClass * * TacticalClass::ScrollViewport(int dx, int dy)
 {
@@ -5631,9 +5645,11 @@ retn
 
 // IDA: 0x5090A0 -- TacticalClass::updateVisibility
 // Updates visibility state for all visible cells.
+}
 // 0x5090a0
 void TacticalClass::updateVisibility()
 {
+}
 // 0x5090a0
     int __thiscall TacticalClass::updateVisibility(int *(void**)this)
 {
@@ -5882,6 +5898,7 @@ void TacticalClass::RenderFrame()
 
 // IDA: 0x6D9EF0 -- TacticalClass::AddToDrawQueue
 // Adds an object to the draw queue for Y-sorted rendering.
+}
 // 0x6d9ef0
 int TacticalClass::AddToDrawQueue(ObjectClass* obj, int screen_x, int screen_y)
 {
@@ -6110,6 +6127,8 @@ retn    8
 
 // IDA: 0x631E50 -- TacticalClass::InterpolateColor
 // Interpolates between two colors for fade effects.
+}
+}
 // 0x631e50
 int TacticalClass::InterpolateColor(uint32_t elapsed_ms)
 {
@@ -6184,6 +6203,7 @@ retn    4
 
 // IDA: 0x631EE0 -- TacticalClass::DecrementCounter
 // Decrements a frame counter.
+}
 // 0x631ee0
 int TacticalClass::DecrementCounter(uint32_t delta)
 {
@@ -6228,6 +6248,7 @@ void TacticalClass::MapSpecialDrawMode()
 
 // IDA: 0x653850 -- TacticalClass::MouseInput
 // Processes mouse input for the tactical view.
+}
 // 0x653850
 int TacticalClass::MouseInput(int x, int y, int buttons)
 {
@@ -6439,6 +6460,7 @@ retn    8
 
 // IDA: 0x6539D0 -- TacticalClass::ProcessMouseClick
 // Handles mouse click events in the tactical view.
+}
 // 0x6539d0
 int TacticalClass::ProcessMouseClick(int x, int y)
 {

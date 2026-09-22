@@ -72,6 +72,7 @@ AbstractClass * * sub_777420()
   return result; /*0x7775bb*/
 }
 } // namespace gamemd
+}
 
 // 0x5C09A0
 namespace gamemd {
@@ -85,6 +86,7 @@ void sub_5C09A0()
   return result; /*0x5c09af*/
 }
 } // namespace gamemd
+}
 
 // 0x5C0980
 namespace gamemd {

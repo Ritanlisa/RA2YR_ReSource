@@ -8,3 +8,4 @@ int LoadScreen::IsActive()
 {
   return this->q064 != 0; /*0x643e6a*/
 }
+}

@@ -35,3 +35,4 @@ int IStream::Read(IStream * pstm, void * pv, ULONG cb)
   }
   return result; /*0x4a3088*/
 }
+}

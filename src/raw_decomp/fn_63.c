@@ -145,7 +145,7 @@ char __thiscall VectorClass::PushBackCopy(_DWORD *this, AbstractClass *aP1)
   {
     if ( !this->q034 && v3 ) /*0x630266*/
       return 0; /*0x630266*/
-    v4 = this->q005; /*0x630268*/
+    v4 = this->u32_14; /*0x630268*/
     if ( v4 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*this + 8))(this, v3 + v4, 0) ) /*0x630278*/
       return 0; /*0x63027f*/
   }
@@ -1581,11 +1581,11 @@ int __thiscall BuildingDebris_Init(_DWORD *this, int a2)
   this->q00A = v10; /*0x631dcc*/
   this->q008 = v10; /*0x631dcf*/
   v11 = MEMORY[0x8367C8][10 * a2 + 5]; /*0x631dd2*/
-  this->q004 = 0; /*0x631dd5*/
+  this->q010 = 0; /*0x631dd5*/
   this->q00B = v11; /*0x631ddc*/
   this->q00C = v11; /*0x631ddf*/
   v12 = MEMORY[0x8367C8][10 * a2 + 8] - MEMORY[0x8367C8][10 * a2 + 9] + 1; /*0x631dea*/
-  this->q005 = MEMORY[0x8367C8][10 * a2 + 9] + rand() % v12; /*0x631df7*/
+  this->q014 = MEMORY[0x8367C8][10 * a2 + 9] + rand() % v12; /*0x631df7*/
   result = MEMORY[0x8367C8][10 * a2 + 7] & rand(); /*0x631e03*/
   this->q00E = result; /*0x631e05*/
   return result; /*0x631e02*/
@@ -3468,11 +3468,11 @@ _DWORD *__thiscall sub_6346B0(int *this, int a2)
   _DWORD **v4; // esi
   _DWORD **i; // ecx
 
-  v2 = this->q004; /*0x6346b0*/
+  v2 = this->u32_4; /*0x6346b0*/
   v3 = 0; /*0x6346b4*/
   if ( v2 <= 0 ) /*0x6346ba*/
     return 0; /*0x6346ba*/
-  v4 = (_DWORD **)this->q004; /*0x6346bc*/
+  v4 = (_DWORD **)this->u32_4; /*0x6346bc*/
   for ( i = v4; **i != a2; ++i ) /*0x6346c3*/
   {
     if ( ++v3 >= v2 ) /*0x6346d1*/
@@ -4922,7 +4922,7 @@ char __thiscall TeamClass::Reset(_DWORD *this, ObjectClass *aP1)
     v3 = this->q030; /*0x635dc2*/
     for ( i = 0; i < v3; *(_DWORD *)(*(_DWORD *)(this->q024 + 4 * i - 4) + 116) = -1 ) /*0x635dc9*/
       ++i; /*0x635dcf*/
-    this->q02B = -1; /*0x635ddc*/
+    this->u32_AC = -1; /*0x635ddc*/
   }
   return i; /*0x635de2*/
 }
@@ -4991,7 +4991,7 @@ AbstractClass *__thiscall ScriptAction::Constructor(_DWORD *this, AbstractClass 
   this->vtable3 = 0; /*0x635f27*/
   this->vtable4 = 0; /*0x635f2a*/
   this->q040 = 1; /*0x635f2d*/
-  this->q044 = 0; /*0x635f31*/
+  this->u32_44 = 0; /*0x635f31*/
   this->vtable2 = &vt_DynamicVectorClass_PlanningNodeClass; /*0x635f34*/
   this->nextArrayIndex = 10; /*0x635f3b*/
   this->abstractFlags = 0; /*0x635f42*/
@@ -5329,7 +5329,7 @@ BOOL __thiscall sub_636570(int *this)
   BOOL result; // eax
 
   result = 0; /*0x636586*/
-  if ( this->q014 > 0 ) /*0x636575*/
+  if ( this->u32_14 > 0 ) /*0x636575*/
   {
     v1 = this->q08C; /*0x636577*/
     if ( v1 == -1 || v1 > 0 ) /*0x636584*/
@@ -9860,7 +9860,7 @@ void *__thiscall sub_63B050(_BYTE *this)
     return BuildingLoadQueue::GetNext(this + 14); /*0x63b05c*/
   if ( this->referenceCount ) /*0x63b061*/
     return BuildingLoadQueue::GetNext(this + 24); /*0x63b06b*/
-  if ( this->q017 ) /*0x63b070*/
+  if ( this->q05C ) /*0x63b070*/
     return BuildingLoadQueue::GetNext(this + 19); /*0x63b07a*/
   return result; /*0x63b07f*/
 }
@@ -11334,7 +11334,7 @@ int __thiscall sub_63CE40(_DWORD *this)
   v12[1] = Viewport[1]; /*0x63ce60*/
   v12[2] = Viewport[2]; /*0x63ce67*/
   v4 = Viewport[3]; /*0x63ce6b*/
-  v5 = this->q004; /*0x63ce6e*/
+  v5 = this->u32_4; /*0x63ce6e*/
   v12[3] = v4; /*0x63ce71*/
   ScenarioClassActionCoords = GetScenarioClassActionCoords(v10, *(_BYTE **)(*(_DWORD *)v5 + 4)); /*0x63ce7e*/
   v9[0] = *ScenarioClassActionCoords; /*0x63ce85*/
@@ -12245,7 +12245,7 @@ _DWORD *__thiscall sub_63DEC0(_DWORD *this, int a2, int a3)
     }
   }
   *this = &DynamicVectorClass<PlanningMemberClass *>::`vftable'; /*0x63df03*/
-  this->q005 = 10; /*0x63df09*/
+  this->u32_14 = 10; /*0x63df09*/
   this->q010 = 0; /*0x63df10*/
   return this; /*0x63df19*/
 }
@@ -12479,7 +12479,7 @@ _DWORD *__thiscall sub_63E1D0(_DWORD *this, int a2, int a3)
     }
   }
   *this = &DynamicVectorClass<PlanningBranchClass *>::`vftable'; /*0x63e213*/
-  this->q005 = 10; /*0x63e219*/
+  this->u32_14 = 10; /*0x63e219*/
   this->q010 = 0; /*0x63e220*/
   return this; /*0x63e229*/
 }
@@ -12731,7 +12731,7 @@ char __thiscall VectorClass::Append(_DWORD *this, VectorClass *aP1)
   {
     if ( !this->q034 && v3 ) /*0x63e556*/
       return 0; /*0x63e556*/
-    v4 = this->q005; /*0x63e558*/
+    v4 = this->u32_14; /*0x63e558*/
     if ( v4 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*this + 8))(this, v3 + v4, 0) ) /*0x63e568*/
       return 0; /*0x63e56f*/
   }
@@ -13569,7 +13569,7 @@ char __thiscall sub_63F040(_DWORD *this, int a2)
     do /*0x63f064*/
     {
       ++v3; /*0x63f057*/
-      *(_DWORD *)(this->q004 + 4 * v3 - 4) = *(_DWORD *)(this->q004 + 4 * v3); /*0x63f05b*/
+      *(_DWORD *)(this->u32_4 + 4 * v3 - 4) = *(_DWORD *)(this->u32_4 + 4 * v3); /*0x63f05b*/
     }
     while ( v3 < this->q010 ); /*0x63f064*/
   }

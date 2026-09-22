@@ -238,6 +238,7 @@ int E4Recv_490400::sub_490400()
   return result; /*0x490457*/
 }
 } // namespace gamemd
+}
 
 // 0x491B40
 namespace gamemd {
@@ -292,7 +293,7 @@ int E4Recv_491B40::sub_491B40(unsigned char * a2, unsigned char * a3, int a4, in
       v15 += 2; /*0x491bcf*/
       int v21 = a6 - *a11++; /*0x491bd2*/
       if ( v21 < *(unsigned __int16 *)(v15 - 2) ) /*0x491bdd*/
-        *v14 = *(_BYTE *)(v19 + *(this + 1)); /*0x491bf2*/
+        *v14 = *(_BYTE *)(v19 + this->M4); /*0x491bf2*/
       ++v14; /*0x491bf4*/
       --v18; /*0x491bf5*/
     }
@@ -311,6 +312,7 @@ int E4Recv_491B40::sub_491B40(unsigned char * a2, unsigned char * a3, int a4, in
   return result; /*0x491c07*/
 }
 } // namespace gamemd
+}
 
 // 0x491C50
 namespace gamemd {
@@ -397,6 +399,7 @@ int E4Recv_491C50::sub_491C50(unsigned char * a1, unsigned char * a2, int a4, in
   return result; /*0x491d3e*/
 }
 } // namespace gamemd
+}
 
 // 0x491D90
 namespace gamemd {
@@ -478,6 +481,7 @@ int E4Recv_491D90::sub_491D90(unsigned char * a1, unsigned char * a2, RLEBlitTra
   return v11; /*0x491e52*/
 }
 } // namespace gamemd
+}
 
 // 0x491EA0
 namespace gamemd {
@@ -551,6 +555,7 @@ int E4Recv_491EA0::sub_491EA0(int arg0, unsigned char * a2, int a4, int a5, int 
   return result; /*0x491f81*/
 }
 } // namespace gamemd
+}
 
 // 0x491FD0
 namespace gamemd {
@@ -617,6 +622,7 @@ unsigned short * E4Recv_491FD0::sub_491FD0(int arg0, unsigned char * a2, RLEBlit
   return result; /*0x4920a9*/
 }
 } // namespace gamemd
+}
 
 // 0x492100
 namespace gamemd {
@@ -694,6 +700,7 @@ unsigned short * E4Recv_492100::sub_492100(int arg0, unsigned char * a2, int a4,
   return result; /*0x492200*/
 }
 } // namespace gamemd
+}
 
 // 0x492250
 namespace gamemd {
@@ -769,6 +776,7 @@ unsigned short * E4Recv_492250::sub_492250(unsigned char * a1, unsigned char * a
   return result; /*0x492325*/
 }
 } // namespace gamemd
+}
 
 // 0x492370
 namespace gamemd {
@@ -842,6 +850,7 @@ unsigned short * E4Recv_492370::sub_492370(unsigned char * a1, unsigned char * a
   return result; /*0x492471*/
 }
 } // namespace gamemd
+}
 
 // 0x496310
 namespace gamemd {
@@ -905,6 +914,7 @@ int E4Recv_496310::sub_496310()
   return result; /*0x4963a9*/
 }
 } // namespace gamemd
+}
 
 // 0x4964D0
 namespace gamemd {
@@ -971,6 +981,7 @@ int E4Recv_4964D0::sub_4964D0()
   return result; /*0x496569*/
 }
 } // namespace gamemd
+}
 
 // 0x4965B0
 namespace gamemd {
@@ -1033,7 +1044,7 @@ int E4Recv_4965B0::sub_4965B0(unsigned short * a1, RLEBlitTransXlatZRead * aP2, 
       v12 += 2; /*0x496641*/
       int v21 = a6 - *a10++; /*0x496644*/
       if ( v21 < *(unsigned __int16 *)(v12 - 2) ) /*0x49664f*/
-        *v15 = *(_WORD *)(*(this + 1) + 2 * v19); /*0x496665*/
+        *v15 = *(_WORD *)(this->M4 + 2 * v19); /*0x496665*/
       ++v15; /*0x496668*/
       --v18; /*0x49666b*/
     }
@@ -1053,6 +1064,7 @@ int E4Recv_4965B0::sub_4965B0(unsigned short * a1, RLEBlitTransXlatZRead * aP2, 
   return result; /*0x49667d*/
 }
 } // namespace gamemd
+}
 
 // 0x4966D0
 namespace gamemd {
@@ -1129,6 +1141,7 @@ int E4Recv_4966D0::sub_4966D0(int arg0, unsigned char * a2, int a4, int a5, int 
   return result; /*0x4967c9*/
 }
 } // namespace gamemd
+}
 
 // 0x496930
 namespace gamemd {
@@ -1203,6 +1216,7 @@ int E4Recv_496930::sub_496930(int arg0, unsigned char * a2, RLEBlitTransLucent75
   return result; /*0x496a2e*/
 }
 } // namespace gamemd
+}
 
 // 0x496A80
 namespace gamemd {
@@ -1277,6 +1291,7 @@ int E4Recv_496A80::sub_496A80(unsigned short * a1, unsigned char * a2, RLEBlitTr
   return result; /*0x496b77*/
 }
 } // namespace gamemd
+}
 
 // 0x496BC0
 namespace gamemd {
@@ -1351,6 +1366,7 @@ int E4Recv_496BC0::sub_496BC0(int arg0, unsigned char * a2, RLEBlitTransLucent25
   return result; /*0x496cbe*/
 }
 } // namespace gamemd
+}
 
 // 0x496D10
 namespace gamemd {
@@ -1425,6 +1441,7 @@ int E4Recv_496D10::sub_496D10(int arg0, unsigned char * a2, RLEBlitTransLucent75
   return result; /*0x496e13*/
 }
 } // namespace gamemd
+}
 
 // 0x496E60
 namespace gamemd {
@@ -1499,6 +1516,7 @@ int E4Recv_496E60::sub_496E60(unsigned short * a1, unsigned char * a2, RLEBlitTr
   return result; /*0x496f5c*/
 }
 } // namespace gamemd
+}
 
 // 0x496FB0
 namespace gamemd {
@@ -1573,6 +1591,7 @@ int E4Recv_496FB0::sub_496FB0(int arg0, unsigned char * a2, RLEBlitTransLucent25
   return result; /*0x4970b3*/
 }
 } // namespace gamemd
+}
 
 // 0x497100
 namespace gamemd {
@@ -1636,6 +1655,7 @@ unsigned short * E4Recv_497100::sub_497100(int arg0, unsigned char * a2, RLEBlit
   return result; /*0x4971e0*/
 }
 } // namespace gamemd
+}
 
 // 0x497230
 namespace gamemd {
@@ -1714,6 +1734,7 @@ unsigned short * E4Recv_497230::sub_497230(int arg0, unsigned char * a2, int a4,
   return result; /*0x497339*/
 }
 } // namespace gamemd
+}
 
 // 0x497390
 namespace gamemd {
@@ -1783,6 +1804,7 @@ unsigned short * E4Recv_497390::sub_497390(unsigned short * a1, unsigned char * 
   return result; /*0x497465*/
 }
 } // namespace gamemd
+}
 
 // 0x49B7E0
 namespace gamemd {
@@ -1860,6 +1882,7 @@ LABEL_8:
   Debug::Log(); /*0x49b922*/
 }
 } // namespace gamemd
+}
 
 // 0x49C0D0
 namespace gamemd {
@@ -2042,6 +2065,7 @@ LABEL_44:
   return 1; /*0x49c543*/
 }
 } // namespace gamemd
+}
 
 // 0x49CCF0
 namespace gamemd {
@@ -2087,7 +2111,7 @@ AbstractClass * * E4Recv_49CCF0::sub_49CCF0(int a2, int a3, void * Block, int a5
     }
     this->M68 = a2; /*0x49cd86*/
     AbstractClass *v14 = this->M60; /*0x49cd89*/
-    *(_BYTE *)(this + 108) = 1; /*0x49cd8e*/
+    this->M108 = 1; /*0x49cd8e*/
     if ( v14 ) /*0x49cd92*/
     {
       for ( i = 0; i < this->M64; ++i ) /*0x49cd9b*/
@@ -2095,7 +2119,7 @@ AbstractClass * * E4Recv_49CCF0::sub_49CCF0(int a2, int a3, void * Block, int a5
         if ( *(_DWORD *)(this->M60 + 4 * i) ) /*0x49cda0*/
           __3_YAXPAX_Z(*(void **)(this->M60 + 4 * i)); /*0x49cda8*/
       }
-      __3_YAXPAX_Z(*(void **)(this + 60)); /*0x49cdbe*/
+      __3_YAXPAX_Z(*(void **)(&this->u32_180)); /*0x49cdbe*/
     }
     this->M60 = 0; /*0x49cdc8*/
     this->M64 = 0; /*0x49cdcb*/
@@ -2280,11 +2304,11 @@ AbstractClass * * E4Recv_49CCF0::sub_49CCF0(int a2, int a3, void * Block, int a5
         while ( v31 ); /*0x49d001*/
       }
       *v26 = 0; /*0x49d007*/
-      strcpy((char *)(this + 28), DataGlobal_89F118); /*0x49d026*/
+      strcpy((char *)(&this->u32_88), DataGlobal_89F118); /*0x49d026*/
     }
     else
     {
-      *(_BYTE *)(this + 28) = 0; /*0x49d031*/
+      this->M28 = 0; /*0x49d031*/
     }
     Debug::Log(); /*0x49d03e*/
   }
@@ -2294,6 +2318,7 @@ AbstractClass * * E4Recv_49CCF0::sub_49CCF0(int a2, int a3, void * Block, int a5
   return v32; /*0x49cd7d*/
 }
 } // namespace gamemd
+}
 
 // 0x49D390
 namespace gamemd {
@@ -2413,6 +2438,7 @@ LABEL_5:
   return 1; /*0x49d44c*/
 }
 } // namespace gamemd
+}
 
 // 0x49D680
 namespace gamemd {
@@ -2424,7 +2450,7 @@ AbstractClass * * E4Recv_49D680::SerializeCampaignOptions()
   unsigned __int8 v21; // al
   char Buffer[400]; // [esp+28h] [ebp-190h] BYREF
 
-  if ( !*(this + 108) ) /*0x49d68b*/
+  if ( !*(&this->u32_288) ) /*0x49d68b*/
     return 0; /*0x49d68b*/
   AnimClass *v3 = this->M68; /*0x49d6a3*/
   if ( !DataGlobal_89F578 ) /*0x49d6a8*/
@@ -2447,7 +2473,7 @@ AbstractClass * * E4Recv_49D680::SerializeCampaignOptions()
     this->M84,
     this->M92,
     this->M100);
-  if ( *((int *)this + 16) > 0 ) /*0x49d719*/
+  if ( this->q040 > 0 ) /*0x49d719*/
   {
     int v23 = 0; /*0x49d71f*/
     do /*0x49d7ae*/
@@ -2516,7 +2542,7 @@ AbstractClass * * E4Recv_49D680::SerializeCampaignOptions()
   }
   g_IsWindowed[v7] = 0; /*0x49d883*/
   strcat(Buffer, g_IsWindowed); /*0x49d8a5*/
-  char * v15 = this + 28; /*0x49d8b0*/
+  char * v15 = &this->u32_70; /*0x49d8b0*/
   strcat(Buffer, Delimiter); /*0x49d8d4*/
   char v16 = *v15; /*0x49d8d6*/
   for ( i = 0; v16; ++v15 )
@@ -2560,6 +2586,7 @@ AbstractClass * * E4Recv_49D680::SerializeCampaignOptions()
   return 1; /*0x49d692*/
 }
 } // namespace gamemd
+}
 
 // 0x49E7C0
 namespace gamemd {
@@ -2638,6 +2665,7 @@ AbstractClass * * E4Recv_49E7C0::sub_49E7C0(char a2)
   }
 }
 } // namespace gamemd
+}
 
 // 0x491100
 namespace gamemd {
@@ -3450,7 +3478,7 @@ unsigned int E4Recv_492830::sub_492830(unsigned short * a2, unsigned char * a3, 
     unsigned int result;
     int v14;
     v14 = this->M4;
-    v11 = *(unsigned short *)(this + 8);
+    v11 = this->u32_8;
     do
   {
     result = (unsigned char)*a3;

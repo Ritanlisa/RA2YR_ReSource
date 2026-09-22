@@ -24,8 +24,8 @@ BuildingTypeClass * * BulletTypeClass::ReadArmor()
     AbstractClass *v2 = (char *)g_TriggerTypeCount; /*0x465464*/
     do /*0x46547d*/
     {
-      if ( v1 <= *(char *)(*(_DWORD *)v2 + 5895) ) /*0x465475*/
-        v1 = *(char *)(*(_DWORD *)v2 + 5895); /*0x465477*/
+      if ( v1 <= *(char *)(v2->u32_1707 ) /*0x465475*/
+        v1 = *(char *)(v2->u32_1707; /*0x465477*/
       v2 += 4; /*0x465479*/
       --v0; /*0x46547c*/
     }
@@ -71,6 +71,7 @@ BuildingTypeClass * * BulletTypeClass::ReadArmor()
   }
   return result; /*0x465541*/
 }
+}
 
 // 0x465CC0
 BuildingTypeClass * * BulletTypeClass::ReadTrailerAnim()
@@ -94,10 +95,11 @@ BuildingTypeClass * * BulletTypeClass::ReadTrailerAnim()
       60);
     int v3 = Entity_Read(Destination); /*0x465cfe*/
     if ( v3 >= 0 && v3 < g_TechnoClassCount ) /*0x465d0d*/
-      *(_DWORD *)(v2 + 3672) = *((_DWORD *)g_FrameCounter + v3); /*0x465d18*/
+      v2->u32_E58 = *((_DWORD *)g_FrameCounter + v3); /*0x465d18*/
     result = g_TriggerClassCount; /*0x465d1e*/
   }
   return result; /*0x465d29*/
+}
 }
 
 // 0x46BBC0
@@ -185,6 +187,7 @@ unsigned char * BulletTypeClass::Construct(ObjectClass * aP1)
     *(_DWORD *)(*(_DWORD *)&g_OverlayTypeConfig[32380] + 4 * v4) = this; /*0x46bdd4*/
   }
   return this; /*0x46bdd9*/
+}
 }
 
 // 0x46BEE0
@@ -440,6 +443,7 @@ WeaponTypeClass * * BulletTypeClass::LoadFromINI(unsigned char *** a2)
     VoxelAnimType::LoadAnim((char *)this); /*0x46c417*/
   return 1; /*0x46c41c*/
 }
+}
 
 // 0x46C560
 int BulletTypeClass::ProcessPower(int * a2)
@@ -494,6 +498,7 @@ int BulletTypeClass::ProcessPower(int * a2)
   int v18; // edx
   LOBYTE(v18) = this->flat; /*0x46c67f*/
   return Power::FlagProcess(a2, v18); /*0x46c68d*/
+}
 }
 
 // 0x46C890
@@ -739,6 +744,7 @@ LABEL_32:
       (*(void (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)v15 + 1348))(v15, 0, 0); /*0x69ff47*/
   }
   return (*(int (__stdcall **)(int))(*(_DWORD *)v1 + 16))(v1); /*0x69fd72*/
+}
 }
 
 // 0x46C4F0

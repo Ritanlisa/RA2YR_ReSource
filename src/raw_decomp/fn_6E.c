@@ -58,7 +58,7 @@ char __thiscall ScenarioClass::Create(int *this, int a2, int a3, ParticleSystemC
   int GroundHeight; // [esp+10h] [ebp-10h]
   _DWORD v12[3]; // [esp+14h] [ebp-Ch] BYREF
 
-  v8 = (ParticleSystemClass *)*ScenarioClass::Get_Waypoint_Location((char *)MEMORY[0xA8B230], &v8, this->q044); /*0x6e012f*/
+  v8 = (ParticleSystemClass *)*ScenarioClass::Get_Waypoint_Location((char *)MEMORY[0xA8B230], &v8, this->q011); /*0x6e012f*/
   GroundHeight = 0; /*0x6e014c*/
   v12[2] = 0; /*0x6e0150*/
   v10 = (SHIWORD(v8) << 8) + 128; /*0x6e0158*/
@@ -704,7 +704,7 @@ char __thiscall ScenarioClass::PrepareTextDisplay(_DWORD *this, int a2, int a3, 
   int v9; // [esp+4h] [ebp-28h]
   char Destination[32]; // [esp+Ch] [ebp-20h] BYREF
 
-  v5 = this->q090; /*0x6e1530*/
+  v5 = this->u32_90; /*0x6e1530*/
   missionTimer = MEMORY[0xA8B230]->missionTimer; /*0x6e1542*/
   MEMORY[0xA8B230]->missionTimer[0] = *(_DWORD *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6e154e*/
   missionTimer[1] = v9; /*0x6e1557*/
@@ -742,7 +742,7 @@ char __thiscall ObjectClass::ReadINIEntry(const char *this, int a2, int a3, Obje
   char v10[32]; // [esp+2Ch] [ebp-20h] BYREF
 
   v5 = (RandomStruct *)(this + 109); /*0x6e15f8*/
-  if ( *(this + 109) && this != (const char *)-109 ) /*0x6e1604*/
+  if ( this->u32_1B4 && this != (const char *)-109 ) /*0x6e1604*/
   {
     strncpy(Destination, this + 109, 0x1Fu); /*0x6e1631*/
     Destination[31] = 0; /*0x6e163d*/
@@ -854,7 +854,7 @@ char __thiscall sub_6E18B0(int *this, int a2, int a3, int a4, int a5)
   int v13; // [esp+14h] [ebp-10h]
   _DWORD v14[3]; // [esp+18h] [ebp-Ch] BYREF
 
-  WorldCoords = Cell::GetWorldCoords((__int16 *)MEMORY[0xA8B230], v14, this->q011); /*0x6e18c6*/
+  WorldCoords = Cell::GetWorldCoords((__int16 *)MEMORY[0xA8B230], v14, this->q044); /*0x6e18c6*/
   v11 = *WorldCoords; /*0x6e18cf*/
   v12 = WorldCoords[1]; /*0x6e18d6*/
   v13 = WorldCoords[2]; /*0x6e18e4*/
@@ -1208,7 +1208,7 @@ char __thiscall sub_6E26D0(int *this, int a2, int a3, int a4, int a5)
   _DWORD v9[2]; // [esp+Ch] [ebp-Ch] BYREF
   int GroundHeight; // [esp+14h] [ebp-4h]
 
-  v7 = *ScenarioClass::Get_Waypoint_Location((char *)MEMORY[0xA8B230], &v8, this->q044); /*0x6e26ee*/
+  v7 = *ScenarioClass::Get_Waypoint_Location((char *)MEMORY[0xA8B230], &v8, this->q011); /*0x6e26ee*/
   GroundHeight = 0; /*0x6e26f2*/
   v9[1] = (SHIWORD(v7) << 8) + 128; /*0x6e2713*/
   v9[0] = ((__int16)v7 << 8) + 128; /*0x6e271d*/
@@ -2850,7 +2850,7 @@ char __thiscall Tactical_42_::sub_6E49D0(void *this, int a2, _DWORD *a3)
         v5 = a2; /*0x6e4a16*/
       for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->vtable2 + 4 * i - 4) ) /*0x6e4a1c*/
         ++i; /*0x6e4a21*/
-      if ( *((_BYTE *)this + 13) ) /*0x6e4a2e*/
+      if ( this->u32_34 ) /*0x6e4a2e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x6e4a39*/
         this->vtable2 = 0; /*0x6e4a41*/
@@ -2858,7 +2858,7 @@ char __thiscall Tactical_42_::sub_6E49D0(void *this, int a2, _DWORD *a3)
     }
     this->vtable2 = v4; /*0x6e4a4a*/
     this->vtable3 = a2; /*0x6e4a52*/
-    *((_BYTE *)this + 13) = a3 == 0; /*0x6e4a55*/
+    this->u32_34 = a3 == 0; /*0x6e4a55*/
   }
   else
   {
@@ -3979,7 +3979,7 @@ char *__thiscall TagTypeClass::Construct(char *this, ObjectClass *aP1)
   AbstractTypeClass::Constructor((int)this, (AbstractClass *)aP1); /*0x6e5b6c*/
   this->q098 = -1; /*0x6e5b78*/
   this->q09C = 0; /*0x6e5b82*/
-  this->q028 = 0; /*0x6e5b88*/
+  this->u32_28 = 0; /*0x6e5b88*/
   *(_DWORD *)this = &TagTypeClass::`vftable'; /*0x6e5b8e*/
   this->vtable2 = &TagTypeClass::`vftable'; /*0x6e5b95*/
   this->vtable3 = &TagTypeClass::`vftable'; /*0x6e5b9c*/
@@ -4107,11 +4107,11 @@ int __thiscall TagTypeClass::_vt10(_DWORD *this, int a2, int a3)
 {
   int result; // eax
 
-  result = this->q0A0; /*0x6e5e50*/
+  result = this->u32_A0; /*0x6e5e50*/
   if ( result == a2 ) /*0x6e5e5c*/
   {
     result = *(_DWORD *)(result + 168); /*0x6e5e5e*/
-    this->q0A0 = result; /*0x6e5e64*/
+    this->u32_A0 = result; /*0x6e5e64*/
   }
   return result; /*0x6e5e6a*/
 }
@@ -4315,7 +4315,7 @@ int __thiscall Debug_AccumFlags(_DWORD *this)
   int i; // edi
   int v3; // eax
 
-  v1 = this->q0A0; /*0x6e61f1*/
+  v1 = this->u32_A0; /*0x6e61f1*/
   for ( i = 0; v1; i |= v3 ) /*0x6e61fc*/
   {
     v3 = TriggerTypeClass::GetFlags(v1); /*0x6e6200*/
@@ -4330,7 +4330,7 @@ char __thiscall TagClass::HasValidHouse(_DWORD *this)
 {
   _DWORD *v1; // esi
 
-  v1 = (_DWORD *)this->q0A0; /*0x6e6221*/
+  v1 = (_DWORD *)this->u32_A0; /*0x6e6221*/
   if ( !v1 ) /*0x6e6229*/
     return 0; /*0x6e6240*/
   while ( !HouseClass::FindType15(v1) ) /*0x6e6234*/
@@ -4348,7 +4348,7 @@ char __thiscall TagTypeClass::HasCrossesHorizontalLineEvent(_DWORD *this)
 {
   _DWORD *v1; // esi
 
-  v1 = (_DWORD *)this->q0A0; /*0x6e6251*/
+  v1 = (_DWORD *)this->u32_A0; /*0x6e6251*/
   if ( !v1 ) /*0x6e6259*/
     return 0; /*0x6e6270*/
   while ( !HouseClass::HasType25Building(v1) ) /*0x6e6264*/
@@ -4366,7 +4366,7 @@ char __thiscall TagTypeClass::HasCrossesVerticalLineEvent(_DWORD *this)
 {
   _DWORD *v1; // esi
 
-  v1 = (_DWORD *)this->q0A0; /*0x6e6281*/
+  v1 = (_DWORD *)this->u32_A0; /*0x6e6281*/
   if ( !v1 ) /*0x6e6289*/
     return 0; /*0x6e62a0*/
   while ( !HouseClass::HasType26Building(v1) ) /*0x6e6294*/
@@ -4384,7 +4384,7 @@ char __thiscall TagTypeClass::HasZoneEntryByEvent(_DWORD *this)
 {
   int v1; // esi
 
-  v1 = this->q0A0; /*0x6e62b1*/
+  v1 = this->u32_A0; /*0x6e62b1*/
   if ( !v1 ) /*0x6e62b9*/
     return 0; /*0x6e62d0*/
   while ( !HouseClass::FindType24((std::codecvt_base **)v1) ) /*0x6e62c4*/
@@ -4927,19 +4927,19 @@ _BYTE *__thiscall ScriptAction::GetWaypointCoords(_BYTE *this, IUnknown *aP1)
   {
     if ( (*(int (__thiscall **)(IUnknown *))(aP1->field_0 + 44))(aP1) == 11 ) /*0x6e6ac6*/
     {
-      this->q004 = 11; /*0x6e6ac8*/
+      this->u32_4 = 11; /*0x6e6ac8*/
       *(_DWORD *)this = (__int16)aP1->field_24 + 1000 * (__int16)HIWORD(aP1->field_24); /*0x6e6ae7*/
     }
     else
     {
-      this->q004 = 52; /*0x6e6af2*/
+      this->u32_4 = 52; /*0x6e6af2*/
       *(_DWORD *)this = (*(int (__stdcall **)(int *))(aP1->field_4 + 16))(&aP1->field_4); /*0x6e6afc*/
     }
     return this; /*0x6e6ae9*/
   }
   else
   {
-    this->q004 = 0; /*0x6e6b05*/
+    this->u32_4 = 0; /*0x6e6b05*/
     *(_DWORD *)this = 0; /*0x6e6b09*/
     return this; /*0x6e6b0f*/
   }
@@ -5397,8 +5397,8 @@ _DWORD *__thiscall TaskForceClass::Construct(_DWORD *this, ObjectClass *aP1)
   int v5; // ecx
 
   AbstractTypeClass::Constructor((int)this, (AbstractClass *)aP1); /*0x6e7e8a*/
-  this->q098 = -1; /*0x6e7e8f*/
-  this->q09C = 0; /*0x6e7e99*/
+  this->ptr_98 = -1; /*0x6e7e8f*/
+  this->u32_9C = 0; /*0x6e7e99*/
   this->q0A0 = 0; /*0x6e7ea3*/
   *this = &TaskForceClass::`vftable'; /*0x6e7ead*/
   this->vtable2 = &TaskForceClass::`vftable'; /*0x6e7eb3*/
@@ -7262,7 +7262,7 @@ char __thiscall sub_6EA3E0(void *this)
 
   v8 = this->TeamClass_field_7A; /*0x6ea3ec*/
   v2 = TeamClass::SumMemberCounts(*(int **)(this->buildingType + 228)); /*0x6ea3f6*/
-  v3 = this->q012; /*0x6ea3fb*/
+  v3 = this->u32_C; /*0x6ea3fb*/
   if ( v3 > 0 ) /*0x6ea404*/
   {
     this->unknown79 = v3 == v2; /*0x6ea40d*/
@@ -8746,7 +8746,7 @@ char __thiscall TeamClass::WakeUpAllMembers(_DWORD *this)
   int i; // esi
 
   result = TeamClass::SelectMember((int)this, 0); /*0x6ec3a5*/
-  for ( i = this->q054; i; i = *(_DWORD *)(i + 1496) ) /*0x6ec3af*/
+  for ( i = this->u32_54; i; i = *(_DWORD *)(i + 1496) ) /*0x6ec3af*/
   {
     result = (*(int (__thiscall **)(int, _DWORD))(*(_DWORD *)i + 968))(i, 0); /*0x6ec3b7*/
     *(_BYTE *)(i + 1672) = 1; /*0x6ec3bd*/

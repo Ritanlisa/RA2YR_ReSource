@@ -42,6 +42,7 @@ N NeuronClass::NeuronClass()
   }
   return this; /*0x43a43c*/
 }
+}
 
 // 0x43A9C0
 void * NeuronClass::Reset(char a2)
@@ -78,6 +79,7 @@ void * NeuronClass::Reset(char a2)
   if ( (a2 & 1) != 0 ) /*0x43aa7d*/
     __3_YAXPAX_Z(this); /*0x43aa80*/
   return (NeuronClass *)this; /*0x43aa8a*/
+}
 }
 
 // 0x43AB20
@@ -229,15 +231,15 @@ VectorClass * NeuronClass_25::QueryInterface(char a2)
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_NeuronClass;
-    if ( v3 && *((char *)(this) + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
+    this->IsAllocated = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (VectorClass *)this;

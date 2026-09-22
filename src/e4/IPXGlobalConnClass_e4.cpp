@@ -69,6 +69,7 @@ LABEL_14:
   }
   Debug::Log(); /*0x540296*/
 }
+}
 
 // 0x5403F0
 HashTable * * IPXGlobalConnClass::SetAddress(int a2, int arg4, int * a3, IPXGlobalConnClass * aP4, int a6, int aP3)
@@ -168,6 +169,7 @@ LABEL_13:
       v12);
   }
   return 1; /*0x5405f5*/
+}
 }
 
 // 0x5400D0

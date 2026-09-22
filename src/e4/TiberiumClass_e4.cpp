@@ -116,6 +116,7 @@ int TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a
   return 1; /*0x5a03d2*/
 }
 } // namespace gamemd
+}
 
 // 0x7216C0
 namespace gamemd {
@@ -186,6 +187,7 @@ unsigned int * TiberiumClass::TiberiumClass(ObjectClass * aP1)
   return this; /*0x721878*/
 }
 } // namespace gamemd
+}
 
 // 0x721A50
 namespace gamemd {
@@ -333,6 +335,7 @@ LABEL_19:
   return result; /*0x721c7b*/
 }
 } // namespace gamemd
+}
 
 // 0x721E80
 namespace gamemd {
@@ -358,15 +361,15 @@ AbstractClass * * TiberiumClass::SaveLoad_Prefix(int a1, int a2)
       Scalar::Dtor(v6, 1); /*0x721eb8*/
     v2->UINameLabel = 0; /*0x721ebd*/
   }
-  if ( *(_DWORD *)(v2 + 252) ) /*0x721ec3*/
+  if ( v2->u32_FC ) /*0x721ec3*/
   {
-    __3_YAXPAX_Z(*(void **)(v2 + 252)); /*0x721ece*/
-    *(_DWORD *)(v2 + 252) = 0; /*0x721ed6*/
+    __3_YAXPAX_Z(v2->u32_FC); /*0x721ece*/
+    v2->u32_FC = 0; /*0x721ed6*/
   }
-  if ( *(_DWORD *)(v2 + 248) ) /*0x721edc*/
+  if ( v2->u32_F8 ) /*0x721edc*/
   {
-    __3_YAXPAX_Z(*(void **)(v2 + 248)); /*0x721ee7*/
-    *(_DWORD *)(v2 + 248) = 0; /*0x721eef*/
+    __3_YAXPAX_Z(v2->u32_F8); /*0x721ee7*/
+    v2->u32_F8 = 0; /*0x721eef*/
   }
   _DWORD * v7 = v2->q110; /*0x721ef5*/
   v2->q0F0 = 0; /*0x721efb*/
@@ -380,15 +383,15 @@ AbstractClass * * TiberiumClass::SaveLoad_Prefix(int a1, int a2)
       Scalar::Dtor(v9, 1); /*0x721f29*/
     v2->q110 = 0; /*0x721f2e*/
   }
-  if ( *(_DWORD *)(v2 + 280) ) /*0x721f34*/
+  if ( v2->u32_118 ) /*0x721f34*/
   {
-    __3_YAXPAX_Z(*(void **)(v2 + 280)); /*0x721f3f*/
-    *(_DWORD *)(v2 + 280) = 0; /*0x721f47*/
+    __3_YAXPAX_Z(v2->u32_118); /*0x721f3f*/
+    v2->u32_118 = 0; /*0x721f47*/
   }
-  if ( *(_DWORD *)(v2 + 276) ) /*0x721f4d*/
+  if ( v2->u32_114 ) /*0x721f4d*/
   {
-    __3_YAXPAX_Z(*(void **)(v2 + 276)); /*0x721f58*/
-    *(_DWORD *)(v2 + 276) = 0; /*0x721f60*/
+    __3_YAXPAX_Z(v2->u32_114); /*0x721f58*/
+    v2->u32_114 = 0; /*0x721f60*/
   }
   int v10 = v2->q031; /*0x721f66*/
   v2->q10C = 0; /*0x721f74*/
@@ -426,23 +429,24 @@ AbstractClass * * TiberiumClass::SaveLoad_Prefix(int a1, int a2)
       result = 0; /*0x722039*/
     }
     int v13 = 0; /*0x722041*/
-    if ( *(int *)(v2 + 212) > 0 ) /*0x722045*/
+    if ( v2->u32_D4 > 0 ) /*0x722045*/
     {
       do /*0x722064*/
-        ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(*(_DWORD *)(v2 + 200) + 4 * v13++)); /*0x722056*/
-      while ( v13 < *(_DWORD *)(v2 + 212) ); /*0x722064*/
+        ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v2->u32_C8 + 4 * v13++)); /*0x722056*/
+      while ( v13 < v2->u32_D4 ); /*0x722064*/
       result = 0; /*0x722066*/
     }
     v2->q110 = 0; /*0x722068*/
-    *(_DWORD *)(v2 + 276) = 0; /*0x72206e*/
-    *(_DWORD *)(v2 + 280) = 0; /*0x722074*/
+    v2->u32_114 = 0; /*0x72206e*/
+    v2->u32_118 = 0; /*0x722074*/
     v2->UINameLabel = 0; /*0x72207a*/
-    *(_DWORD *)(v2 + 248) = 0; /*0x722080*/
-    *(_DWORD *)(v2 + 252) = 0; /*0x722086*/
+    v2->u32_F8 = 0; /*0x722080*/
+    v2->u32_FC = 0; /*0x722086*/
   }
   return result; /*0x72208c*/
 }
 } // namespace gamemd
+}
 
 // 0x721E40
 namespace gamemd {

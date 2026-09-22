@@ -46,6 +46,7 @@ unsigned int * TaskForceClass::ParseUnitCountAndType(char * Buffer)
   }
 }
 } // namespace gamemd
+}
 
 // 0x6E7E80
 namespace gamemd {
@@ -86,6 +87,7 @@ unsigned int * TaskForceClass::Construct(ObjectClass * aP1)
   return this; /*0x6e7f3c*/
 }
 } // namespace gamemd
+}
 
 // 0x6E8220
 namespace gamemd {
@@ -157,6 +159,7 @@ LABEL_12:
   return result; /*0x6e8330*/
 }
 } // namespace gamemd
+}
 
 // 0x6E87F0
 namespace gamemd {
@@ -187,6 +190,7 @@ void * TaskForceClass::ExecuteAction(char a2)
   return (TaskForceClass *)this; /*0x6e8878*/
 }
 } // namespace gamemd
+}
 
 // 0x4C4F90
 namespace gamemd {

@@ -10,6 +10,7 @@ void VtableStub_643E70()
   this->q064 = 0; /*0x643e70*/
 }
 } // namespace gamemd
+}
 
 
 // 0x65D690

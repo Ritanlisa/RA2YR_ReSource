@@ -55,6 +55,7 @@ int Object::FindClosestObjectCell(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3
   return v12; /*0x47c4b6*/
 }
 } // namespace gamemd
+}
 
 // 0x47C5A0
 namespace gamemd {
@@ -101,6 +102,7 @@ LABEL_5:
   return result; /*0x47c609*/
 }
 } // namespace gamemd
+}
 
 // 0x4F9A90
 namespace gamemd {
@@ -121,6 +123,7 @@ int Object::IsAlliedWithObjectHouse(IUnknown * aP1)
   return v5 != -1 && (*(this + 5602) & (1 << v5)) != 0; /*0x4f9ad5*/
 }
 } // namespace gamemd
+}
 
 // 0x4F9AF0
 namespace gamemd {
@@ -143,6 +146,7 @@ int Object::IsAlliedWithObjectSimpleHouse(unsigned char * a2)
   return v5 != -1 && (*(this + 5602) & (1 << v5)) != 0; /*0x4f9b3b*/
 }
 } // namespace gamemd
+}
 
 // 0x56C210
 namespace gamemd {
@@ -248,6 +252,7 @@ LABEL_20:
   return result; /*0x56c4de*/
 }
 } // namespace gamemd
+}
 
 // 0x5902C0
 namespace gamemd {
@@ -325,6 +330,7 @@ LABEL_24:
   return 0; /*0x590492*/
 }
 } // namespace gamemd
+}
 
 // 0x5FC380
 namespace gamemd {
@@ -365,6 +371,7 @@ void * Object::SpawnAtCell(IUnknown * aP1, IUnknown * aP2, BuildingTypeClass * a
   return (OverlayClass *)this; /*0x5fc4c2*/
 }
 } // namespace gamemd
+}
 
 // 0x5FD970
 namespace gamemd {
@@ -376,11 +383,11 @@ void* Object::HandleAction(int * a2, int * a3)
   BuildingTypeClass *v14; // esi
   __int16 *v26; // eax
   __int16 *v28; // [esp-4h] [ebp-2Ch]
-  Coord *v4 = (int *)(this + 156); /*0x5fd987*/
+  Coord *v4 = (int *)(&this->u32_3C6); /*0x5fd987*/
   int v5 = (*(int (__thiscall **)(_DWORD))(*this->q0AC + 156))(this->Object_field_0xAC); /*0x5fd98d*/
   int v32 = *v4; /*0x5fd993*/
-  int v33 = *(_DWORD *)(this + 160); /*0x5fd99f*/
-  int v34 = *(_DWORD *)(this + 164); /*0x5fd9a6*/
+  int v33 = this->u32_A0; /*0x5fd99f*/
+  int v34 = this->u32_A4; /*0x5fd9a6*/
   GroundHeight = Cell::GetGroundHeight(&v32); /*0x5fd9af*/
   int v29 = ZCoordToScreenY(GroundHeight); /*0x5fd9c1*/
   int v7 = 0; /*0x5fd9c5*/
@@ -464,8 +471,8 @@ LABEL_20:
     if ( v12->LandType == 167 ) /*0x5fdb20*/
       v31 -= 38; /*0x5fdb22*/
     v32 = *v4; /*0x5fdb2b*/
-    v33 = *(_DWORD *)(this + 160); /*0x5fdb32*/
-    v34 = *(_DWORD *)(this + 164); /*0x5fdb41*/
+    v33 = this->u32_A0; /*0x5fdb32*/
+    v34 = this->u32_A4; /*0x5fdb41*/
     char * v20 = (char *)BuildingTypeClass_AnimTable + 4 * *((_DWORD *)HouseClass_Player + 22549); /*0x5fdb60*/
     int v27 = *((__int16 *)Coord::To_Cell(&DataGlobal_87F7E8, &v32) + 134); /*0x5fdb7c*/
     DrawToSurfaceSHP( /*0x5fdb9a*/
@@ -490,14 +497,14 @@ LABEL_20:
   {
   _DWORD *v25; // eax
     int v21 = *v4; /*0x5fdba1*/
-    int v22 = *(_DWORD *)(this + 160); /*0x5fdba3*/
-    v34 = *(_DWORD *)(this + 164); /*0x5fdba9*/
+    int v22 = this->u32_A0; /*0x5fdba3*/
+    v34 = this->u32_A4; /*0x5fdba9*/
     LOWORD(a2) = v21 / 256; /*0x5fdbb9*/
     HIWORD(a2) = v22 / 256; /*0x5fdbd1*/
     if ( LayerClass::CoordinatesLegal(&DataGlobal_87F7E8, (__int16 *)&a2) ) /*0x5fdbe3*/
     {
-      int v23 = *(_DWORD *)(this + 164); /*0x5fdbee*/
-      int v24 = *(_DWORD *)(this + 160); /*0x5fdbf1*/
+      int v23 = this->u32_A4; /*0x5fdbee*/
+      int v24 = this->u32_A0; /*0x5fdbf1*/
       v32 = *v4; /*0x5fdbf4*/
       v34 = v23; /*0x5fdbfc*/
       v33 = v24; /*0x5fdc06*/
@@ -538,6 +545,7 @@ LABEL_20:
   }
 }
 } // namespace gamemd
+}
 
 // 0x5FDDE0
 namespace gamemd {
@@ -547,6 +555,7 @@ int Object::ProcessEvent()
   return this->q0AC; /*0x5fdde6*/
 }
 } // namespace gamemd
+}
 
 // 0x5FDF70
 namespace gamemd {
@@ -580,6 +589,7 @@ void * Object::DrawObject(char a2)
   return (OverlayClass *)this; /*0x5fe012*/
 }
 } // namespace gamemd
+}
 
 // 0x62AC30
 namespace gamemd {
@@ -597,7 +607,7 @@ void* * Object::CalculateObjectPlacementPosition(int * a2)
   int v29; // [esp+1Ch] [ebp-1Ch]
   _BYTE v30[12]; // [esp+20h] [ebp-18h] BYREF
 
-  if ( !*(_DWORD *)(this + 40) ) /*0x62ac39*/
+  if ( !this->ptr_28 ) /*0x62ac39*/
   {
     result = a2; /*0x62ac40*/
     v4 = DataGlobal_AC4948; /*0x62ac44*/
@@ -611,8 +621,8 @@ LABEL_39:
   if ( !(unsigned __int8)ParasiteClass::CanExistOnVictimCell(this) ) /*0x62ac5a*/
   {
   int v26; // [esp+10h] [ebp-28h] BYREF
-    VectorClass *v12 = ((unsigned int)((*ProgressTimer::GetValue((_WORD *)(*(_DWORD *)(this + 40) + 904), &v26) >> 12) + 1) >> 1) & 7; /*0x62ad3a*/
-    _DWORD * v13 = (_DWORD *)(*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 40) + 444))(*(_DWORD *)(this + 40)); /*0x62ad43*/
+    VectorClass *v12 = ((unsigned int)((*ProgressTimer::GetValue((_WORD *)(this->ptr_28 + 904), &v26) >> 12) + 1) >> 1) & 7; /*0x62ad3a*/
+    _DWORD * v13 = (_DWORD *)(*(int (__thiscall **)(_DWORD))(**(_DWORD **)(&this->u32_100) + 444))(this->ptr_28); /*0x62ad43*/
     NeighbourContentCell = Cell::GetNeighbourContent(v13, v12); /*0x62ad50*/
     if ( !*(_BYTE *)((*(int (__thiscall **)(_DWORD))(*this->q090 + 132))(this->q090) + 3278) ) /*0x62ad5a*/
     {
@@ -620,9 +630,9 @@ LABEL_39:
       if ( v15 == 2 || v15 == 6 || v15 == 3 ) /*0x62ad77*/
       {
   bool v16; // bl
-        v16 = (*(_DWORD *)((*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 40) + 444))(*(_DWORD *)(this + 40)) + 320) /*0x62ad90*/
+        v16 = (*(_DWORD *)((*(int (__thiscall **)(_DWORD))(**(_DWORD **)(&this->u32_100) + 444))(this->ptr_28) + 320) /*0x62ad90*/
              & 0x100) == 0;
-        int v17 = *(_DWORD *)((*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 40) + 444))(*(_DWORD *)(this + 40)) + 68); /*0x62ad9d*/
+        int v17 = *(_DWORD *)((*(int (__thiscall **)(_DWORD))(**(_DWORD **)(&this->u32_100) + 444))(this->ptr_28) + 68); /*0x62ad9d*/
         if ( v17 >= 74 && v17 <= 99 ) /*0x62ada8*/
           v16 = 0; /*0x62adaa*/
         if ( (v17 < 205 || v17 > 230) && v16 ) /*0x62adbc*/
@@ -649,7 +659,7 @@ LABEL_39:
       v28 = v22[1]; /*0x62ae37*/
       v29 = v22[2]; /*0x62ae3e*/
     }
-    if ( *(_BYTE *)(*(_DWORD *)(this + 40) + 140) ) /*0x62ae45*/
+    if ( *(_BYTE *)(this->ptr_28 + 140) ) /*0x62ae45*/
     {
       if ( (*((_DWORD *)Coord::To_Cell(&DataGlobal_87F7E8, &v27) + 80) & 0x100) != 0 ) /*0x62ae67*/
       {
@@ -690,7 +700,7 @@ LABEL_34:
     v5 = a2; /*0x62af25*/
     goto LABEL_39; /*0x62af25*/
   }
-  v6 = (int *)(*(_DWORD *)(this + 40) + 156); /*0x62ac63*/
+  v6 = (int *)(this->ptr_28 + 156); /*0x62ac63*/
   v27 = *v6; /*0x62ac6a*/
   v7 = this->q090; /*0x62ac6e*/
   v28 = v6[1]; /*0x62ac74*/
@@ -702,7 +712,7 @@ LABEL_34:
       void * v8 = Coord::To_Cell(&DataGlobal_87F7E8, &v27); /*0x62ac97*/
       int * v9 = (int *)(*(int (__thiscall **)(void *, _BYTE *))(*(_DWORD *)v8 + 72))(v8, v30); /*0x62aca5*/
       v27 = *v9; /*0x62acaa*/
-      IUnknown *v10 = *(_DWORD *)(this + 40); /*0x62acae*/
+      IUnknown *v10 = this->ptr_28; /*0x62acae*/
       v28 = v9[1]; /*0x62acb4*/
       int v11 = v9[2]; /*0x62acb8*/
       v29 = v11; /*0x62acbb*/
@@ -710,7 +720,7 @@ LABEL_34:
         v29 = DataGlobal_AC497C + v11; /*0x62accf*/
     }
   }
-  if ( *(_BYTE *)(*(_DWORD *)(this + 40) + 140) ) /*0x62acd6*/
+  if ( *(_BYTE *)(this->ptr_28 + 140) ) /*0x62acd6*/
     *(_BYTE *)(this->q090 + 140) = 1; /*0x62ace3*/
   else
     *(_BYTE *)(this->q090 + 140) = 0; /*0x62acef*/
@@ -720,6 +730,7 @@ LABEL_34:
   return a2; /*0x62ad00*/
 }
 } // namespace gamemd
+}
 
 // 0x639E30
 namespace gamemd {
@@ -821,6 +832,7 @@ LABEL_28:
   return v19 != -1; /*0x639f49*/
 }
 } // namespace gamemd
+}
 
 // 0x646E90
 namespace gamemd {
@@ -850,6 +862,7 @@ char Object_Init(char a1, int a2, int a3, char a4, int a5)
   return 1; /*0x646f50*/
 }
 } // namespace gamemd
+}
 
 // 0x7DEEFA
 namespace gamemd {
@@ -907,6 +920,7 @@ void Object_Calc(MouseClass * aP0, unsigned short * a1, int a3, int a4, int a5, 
   return v9; /*0x7defd4*/
 }
 } // namespace gamemd
+}
 
 // 0x7DEFD7
 namespace gamemd {
@@ -964,6 +978,7 @@ void Object_Calc_7DEFD7(MouseClass * aP0, unsigned short * a1, int a3, int a4, i
   return v9; /*0x7df0b1*/
 }
 } // namespace gamemd
+}
 
 // 0x7DF0B4
 namespace gamemd {
@@ -1021,6 +1036,7 @@ void Object_Calc_7DF0B4(MouseClass * aP0, unsigned short * a1, int a3, int a4, i
   return v9; /*0x7df18e*/
 }
 } // namespace gamemd
+}
 
 // 0x7DF191
 namespace gamemd {
@@ -1078,6 +1094,7 @@ void Object_Calc_7DF191(MouseClass * aP0, unsigned short * a1, int a3, int a4, i
   return v9; /*0x7df26b*/
 }
 } // namespace gamemd
+}
 
 // 0x7DF280
 namespace gamemd {
@@ -1151,6 +1168,7 @@ LABEL_9:
   return v12; /*0x7df3bf*/
 }
 } // namespace gamemd
+}
 
 // 0x7DF3C2
 namespace gamemd {
@@ -1224,6 +1242,7 @@ LABEL_9:
   return v12; /*0x7df4fd*/
 }
 } // namespace gamemd
+}
 
 // 0x7DF500
 namespace gamemd {
@@ -1297,6 +1316,7 @@ LABEL_9:
   return v12; /*0x7df63d*/
 }
 } // namespace gamemd
+}
 
 // 0x7DF640
 namespace gamemd {
@@ -1370,6 +1390,7 @@ LABEL_9:
   return v12; /*0x7df77e*/
 }
 } // namespace gamemd
+}
 
 // 0x5A7E90
 namespace gamemd {
@@ -1427,6 +1448,7 @@ void sub_5A7E90(int a1, unsigned short * a2)
   return result; /*0x5a7f8d*/
 }
 } // namespace gamemd
+}
 
 // 0x710890
 namespace gamemd {
@@ -1457,6 +1479,7 @@ LABEL_7:
   return a1 + 8 * (v3 / 2); /*0x7108c4*/
 }
 } // namespace gamemd
+}
 
 // 0x42B1F0
 namespace gamemd {

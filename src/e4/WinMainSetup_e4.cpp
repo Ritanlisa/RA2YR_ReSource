@@ -50,6 +50,7 @@ AbstractClass * * WinMainSetup_Setup_6BB8E0()
   return result; /*0x6bb98d*/
 }
 } // namespace gamemd
+}
 
 // 0x72B130
 namespace gamemd {
@@ -114,6 +115,7 @@ void sub_72B130()
   DataGlobal_B0FACC = 0; /*0x72b219*/
 }
 } // namespace gamemd
+}
 
 // 0x53D550
 namespace gamemd {

@@ -34,7 +34,7 @@ int WebBrowser::LoadURLFromRegistry(const char * a2)
   Debug::Log(); /*0x7736e5*/
   if ( !this->WebBrowser_field_0x8 ) /*0x7736f2*/
     return WebBrowser::OpenURL(Data); /*0x773843*/
-  mbstowcs((wchar_t *)(this + 12), (const char *)Data, 0x200u); /*0x773709*/
+  mbstowcs((wchar_t *)(&this->u32_42), (const char *)Data, 0x200u); /*0x773709*/
   if ( RegOpenKeyExA(HKEY_LOCAL_MACHINE, g_Str_Software_Westwood_Yuri_s_Reven, 0, 0x20019u, &phkResult) ) /*0x773726*/
     return 0; /*0x773726*/
   cbData = 260; /*0x77374a*/
@@ -57,11 +57,12 @@ int WebBrowser::LoadURLFromRegistry(const char * a2)
   if ( v6 ) /*0x77380f*/
   {
     (*(void (__stdcall **)(_DWORD))(*(_DWORD *)v6 + 28))(this->WebBrowser_field_0x8); /*0x773814*/
-    *(_BYTE *)(this + 1036) = 1; /*0x773817*/
+    this->u8_40C = 1; /*0x773817*/
   }
   return 1; /*0x77381e*/
 }
 } // namespace gamemd
+}
 
 // 0x773E90
 namespace gamemd {
@@ -135,6 +136,7 @@ int WebBrowser::ShowDialog()
   return result; /*0x774051*/
 }
 } // namespace gamemd
+}
 
 // 0x7740A0
 namespace gamemd {
@@ -159,6 +161,7 @@ int WebBrowser::GoForward()
   return (int)this->__pad_0; /*0x7740fc*/
 }
 } // namespace gamemd
+}
 
 // 0x551630
 namespace gamemd {

@@ -27,6 +27,7 @@ int MultiplayerSiege::Read()
   }
   return result; /*0x5ca689*/
 }
+}
 
 // 0x5CA6D0
 int MultiplayerSiege::Write(void ** a1)
@@ -99,6 +100,7 @@ LABEL_12:
     }
   }
   return result; /*0x5ca6e3*/
+}
 }
 
 // 0x5CA800
@@ -177,6 +179,7 @@ LABEL_26:
   if ( Block && v16 ) /*0x5ca969*/
     __3_YAXPAX_Z(Block); /*0x5ca96c*/
   return 1; /*0x5ca974*/
+}
 }
 
 // 0x5CA7E0

@@ -44,6 +44,7 @@ int SortedArray::BinarySearch(CCINIClass * aP1)
   }
   return result; /*0x52b62a*/
 }
+}
 
 // 0x5387D0
 int SortedArray::Append(DynamicVector * aP1, unsigned int * a2)
@@ -92,6 +93,7 @@ LABEL_9:
     goto LABEL_9; /*0x538854*/
   }
   return 0; /*0x538864*/
+}
 }
 
 // 0x5388A0
@@ -157,6 +159,7 @@ LABEL_9:
   this->SortedArray_field_0x10 = 0; /*0x538966*/
   return 1; /*0x538917*/
 }
+}
 
 // 0x538980
 int SortedArray::FindPair(int * a2)
@@ -203,4 +206,5 @@ LABEL_12:
     return 0; /*0x538a04*/
   this->SortedArray_field_0x10 = v10; /*0x538a0d*/
   return 1; /*0x5389a0*/
+}
 }

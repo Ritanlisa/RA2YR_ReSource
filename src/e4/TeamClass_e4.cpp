@@ -54,6 +54,7 @@ int TeamClass::CheckCohesion()
   }
 }
 } // namespace gamemd
+}
 
 // 0x4E0080
 namespace gamemd {
@@ -63,6 +64,7 @@ int TeamClass::HasAnyMemberFlagged()
   return this->__pad_68F || this->q690 || *(this + 1681); /*0x4e00a0*/
 }
 } // namespace gamemd
+}
 
 // 0x577BB0
 namespace gamemd {
@@ -101,6 +103,7 @@ LABEL_7:
   return this->computeDistanceSquared(2); /*0x577c84*/
 }
 } // namespace gamemd
+}
 
 // 0x62A260
 namespace gamemd {
@@ -211,6 +214,7 @@ LABEL_12:
   return result; /*0x62a27a*/
 }
 } // namespace gamemd
+}
 
 // 0x6339B0
 namespace gamemd {
@@ -226,6 +230,7 @@ int TeamClass::GetLeaderIndex()
     return v2; /*0x6339d1*/
 }
 } // namespace gamemd
+}
 
 // 0x6340B0
 namespace gamemd {
@@ -347,6 +352,7 @@ LABEL_9:
   }
 }
 } // namespace gamemd
+}
 
 // 0x635A40
 namespace gamemd {
@@ -426,6 +432,7 @@ LABEL_19:
   return result; /*0x635b54*/
 }
 } // namespace gamemd
+}
 
 // 0x635C10
 namespace gamemd {
@@ -496,6 +503,7 @@ LABEL_16:
   return result; /*0x635c60*/
 }
 } // namespace gamemd
+}
 
 // 0x635DB0
 namespace gamemd {
@@ -516,6 +524,7 @@ int TeamClass::Reset(ObjectClass * aP1)
   return i; /*0x635de2*/
 }
 } // namespace gamemd
+}
 
 // 0x636120
 namespace gamemd {
@@ -598,11 +607,12 @@ TechnoClass * * TeamClass::RemoveAllMembers()
   this->q08C = -1; /*0x6362e6*/
   this->buildingType = -1; /*0x6362ec*/
   this->q250 = -1; /*0x6362f2*/
-  *(_BYTE *)(this + 152) = 0; /*0x6362f8*/
-  *(_BYTE *)(this + 153) = 0; /*0x6362ff*/
+  this->u8_98 = 0; /*0x6362f8*/
+  this->u8_99 = 0; /*0x6362ff*/
   return result; /*0x636306*/
 }
 } // namespace gamemd
+}
 
 // 0x6367B0
 namespace gamemd {
@@ -722,6 +732,7 @@ LABEL_13:
   return result; /*0x63696c*/
 }
 } // namespace gamemd
+}
 
 // 0x636980
 namespace gamemd {
@@ -834,6 +845,7 @@ LABEL_13:
   return result; /*0x636b38*/
 }
 } // namespace gamemd
+}
 
 // 0x636B50
 namespace gamemd {
@@ -936,6 +948,7 @@ LABEL_4:
   return result; /*0x636ccc*/
 }
 } // namespace gamemd
+}
 
 // 0x6E52A0
 namespace gamemd {
@@ -972,6 +985,7 @@ LABEL_5:
   return result; /*0x6e52db*/
 }
 } // namespace gamemd
+}
 
 // 0x6E53A0
 namespace gamemd {
@@ -1061,6 +1075,7 @@ LABEL_14:
   return v7; /*0x6e554b*/
 }
 } // namespace gamemd
+}
 
 // 0x6E8DE0
 namespace gamemd {
@@ -1206,6 +1221,7 @@ void TeamClass::Destructor(void ** this, AbstractClass * a2)
   AbstractClass::DTOR(this); /*0x6e903f*/
 }
 } // namespace gamemd
+}
 
 // 0x6E9140
 namespace gamemd {
@@ -1922,6 +1938,7 @@ LABEL_74:
   }
 }
 } // namespace gamemd
+}
 
 // 0x6EA3E0
 namespace gamemd {
@@ -1950,7 +1967,7 @@ int TeamClass::UpdateReadinessState()
     {
       this->TeamClass_field_7A = this->spawnStatus == 0; /*0x6ea44e*/
     }
-    if ( *(_BYTE *)(v4 + 167) ) /*0x6ea451*/
+    if ( v4->u8_A7 ) /*0x6ea451*/
     {
       if ( this->TeamClass_field_7A ) /*0x6ea459*/
         this->unknown76 = 0; /*0x6ea45e*/
@@ -1986,6 +2003,7 @@ LABEL_14:
   return 0; /*0x6ea47c*/
 }
 } // namespace gamemd
+}
 
 // 0x6EA870
 namespace gamemd {
@@ -2119,6 +2137,7 @@ int TeamClass::LiberateMember_Start(IUnknown * aP1, unsigned int a3, AbstractCla
   return 1; /*0x6ea88a*/
 }
 } // namespace gamemd
+}
 
 // 0x6EAA90
 namespace gamemd {
@@ -2291,6 +2310,7 @@ TeamTypeClass * * TeamClass::RecruitMember(int a2)
   return 1; /*0x6eac3b*/
 }
 } // namespace gamemd
+}
 
 // 0x6EAEE0
 namespace gamemd {
@@ -2441,9 +2461,9 @@ AbstractClass * * TeamClass::FindClosestEnemy(AbstractClass * aP1, AbstractClass
           {
             if ( *(_DWORD *)&g_NetworkPlayerBuffer[4464] || (v3 = v6->q081, !(_BYTE)v3) ) /*0x6eb1f7*/
             {
-              if ( *(_BYTE *)(v6 + 1673) || (v3 = v6->getAltitude(), v3 == 2) ) /*0x6eb211*/
+              if ( v6->u8_689 || (v3 = v6->getAltitude(), v3 == 2) ) /*0x6eb211*/
               {
-                LOBYTE(v3) = *(_BYTE *)(v6 + 981); /*0x6eb217*/
+                LOBYTE(v3) = v6->u8_3D5; /*0x6eb217*/
                 if ( (_BYTE)v3 ) /*0x6eb21f*/
                 {
                   int * v24 = (int *)(v6 + 156); /*0x6eb225*/
@@ -2469,7 +2489,7 @@ AbstractClass * * TeamClass::FindClosestEnemy(AbstractClass * aP1, AbstractClass
                     v33 = (BuildingTypeClass *)((char *)v33 + v40); /*0x6eb2a6*/
                   }
                   if ( *(int *)(v6->GetSpecialValue() + 1504) <= 0 /*0x6eb2c8*/
-                    || (v3 = v6->GetSpecialValue(), !*(_BYTE *)(v3 + 3278)) )
+                    || (v3 = v6->GetSpecialValue(), !v3->u8_CCE) )
                   {
                     v3 = BuildingClass::SquaredDistanceTo((void *)v6, this->focus); /*0x6eb2dc*/
                     if ( !v36 || v3 < v36 ) /*0x6eb2eb*/
@@ -2510,6 +2530,7 @@ AbstractClass * * TeamClass::FindClosestEnemy(AbstractClass * aP1, AbstractClass
   return v3; /*0x6eb187*/
 }
 } // namespace gamemd
+}
 
 // 0x6EB490
 namespace gamemd {
@@ -2662,6 +2683,7 @@ LABEL_67:
   return (char)Entry; /*0x6eb862*/
 }
 } // namespace gamemd
+}
 
 // 0x6EBAD0
 namespace gamemd {
@@ -2818,6 +2840,7 @@ LABEL_87:
   }
 }
 } // namespace gamemd
+}
 
 // 0x6EBF50
 namespace gamemd {
@@ -2896,6 +2919,7 @@ int TeamClass::ProcessMemberPositions()
   return result; /*0x6ebf6f*/
 }
 } // namespace gamemd
+}
 
 // 0x6EC5A0
 namespace gamemd {
@@ -2983,6 +3007,7 @@ int TeamClass::PowerDrainUpdate(int * a2)
   return Checksummer::Add_Buffer((unsigned int *)a2, (unsigned __int8 *)(this + 136), 24); /*0x6ec71e*/
 }
 } // namespace gamemd
+}
 
 // 0x6EC7D0
 namespace gamemd {
@@ -3078,6 +3103,7 @@ void TeamClass::MoveTeamToWaypoint(ScriptClass * aP1, TeamClass * aP2)
   TeamClass::UpdateMembers((int)v3); /*0x6ec98b*/
 }
 } // namespace gamemd
+}
 
 // 0x5095D0
 namespace gamemd {

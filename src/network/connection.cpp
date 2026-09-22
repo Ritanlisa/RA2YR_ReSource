@@ -261,6 +261,7 @@ void ConnectionClass::serviceSendQueue()
 }
 
 // IDA 0x48C5A0 — connect: activate network connection
+}
 // 0x48c5a0
 int ConnectionClass::connect()
 {
@@ -345,6 +346,7 @@ IPXConnClass::IPXConnClass() noexcept
 {
     std::memset(RemoteAddress, 0, sizeof(RemoteAddress));
     std::memset(padding, 0, sizeof(padding));
+}
 }
 
 // 0x48be60

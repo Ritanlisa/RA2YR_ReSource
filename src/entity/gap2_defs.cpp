@@ -88,7 +88,7 @@ namespace gamemd { void* BulletClass::FlightUpdate(int a1, int a2) {
         *(double *)&v8->vtable0[8] = Math::ArcTan2(-0.00009587672516830327) * *(double *)&v8->vtable0[8]; /*0x41602d*/
         double v13 = Math::SinCos(-0.00009587672516830327) * v54; /*0x416035*/
         *(double *)&v8->uniqueId = v13; /*0x416047*/
-        Value = ProgressTimer::GetValue((_WORD *)this + 464, (IUnknown *)v53); /*0x416051*/
+        Value = ProgressTimer::GetValue((_WORD *)&this->u32_740, (IUnknown *)v53); /*0x416051*/
         Vector2::NormalizeNonZero((double *)v8->vtable0); /*0x416053*/
         Function::Method_41C430((double *)v8->vtable0); /*0x41605a*/
         int v15 = *(__int16 *)Value; /*0x41605f*/
@@ -170,10 +170,10 @@ namespace gamemd { void* BulletClass::FlightUpdate(int a1, int a2) {
         *(double *)(v51 + 248) = v36 * *(double *)(v51 + 248); /*0x416318*/
         v7 = v51; /*0x41631b*/
       }
-      if ( (unsigned __int8)House::IsHumanPlayer(*((#375 **)this + 135)) ) /*0x416325*/
+      if ( (unsigned __int8)House::IsHumanPlayer(*((#375 **)&this->u32_345)) ) /*0x416325*/
       {
-        _DWORD * v37 = (char *)this + 156; /*0x416332*/
-        v54 = *(double *)((char *)this + 156); /*0x41633c*/
+        _DWORD * v37 = (char *)&this->u32_270; /*0x416332*/
+        v54 = *(double *)((char *)&this->u32_3C6); /*0x41633c*/
         v55 = this->q029; /*0x41634f*/
         if ( Cell::IsPassable(&v54) ) /*0x416358*/
           goto LABEL_21; /*0x416358*/
@@ -256,10 +256,12 @@ LABEL_21:
         v7 = v51; /*0x41659a*/
       }
     }
-    if ( *((_BYTE *)this + 1738) ) /*0x41659e*/
+    if ( this->u8_6CA ) /*0x41659e*/
       (*(void (__thiscall **)(void *))(this->q0F8)(this); /*0x4165ac*/
     return (double *)v7; /*0x4165b2*/
   }
+}
+}
 }
 
 // 0x41C3F0
@@ -392,8 +394,8 @@ namespace gamemd { void* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, v
       this->q19D = 0;
       this->q19E = 0;
       *this = &AnimClass::`vftable';
-      *(this + 1) = &AnimClass::`vftable';
-      *(this + 2) = &AnimClass::`vftable';
+      this->vtable2 = &AnimClass::`vftable';
+      this->vtable3 = &AnimClass::`vftable';
       this->q00C = &off_7E3328;
       this->PaletteName = 0;
       AbstractClass::GenerateUniqueID((int)(this + 1));
@@ -587,7 +589,7 @@ namespace gamemd { void* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, v
         if ( v13 )
           (*(void (__thiscall **)(int, void **))(*(_DWORD *)v13 + 96))(v13, this);
         BuildingClass::AimTurret(this, 0);
-        Mixer::ReleaseChannel((int **)this + 104);
+        Mixer::ReleaseChannel((int **)&this->q0284);
         if ( !this->q198 )
         {
           v14 = (int)this->q0C8;
@@ -596,7 +598,7 @@ namespace gamemd { void* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, v
             if ( *(_DWORD *)(v14 + 764) != -1 )
             {
               v15 = (*((int (__thiscall **)(void **, _DWORD *))*this + 18))(this, v67);
-              StartAudioControllerAt(*((_DWORD *)this->q0C8 + 191), v15, (int)(this + 109));
+              StartAudioControllerAt(*((_DWORD *)this->q0C8 + 191), v15, (int)(&this->q0289));
             }
           }
         }
@@ -816,6 +818,7 @@ namespace gamemd { void* AnimClass::InitRotation(void* a1, int a2, int a3, int a
       return Float4::Copy((float *)this + 12, (IUnknown *)&v22, (IUnknown *)v16);
 }
 } }
+}
 
 // 0x447E00
 namespace gamemd { int AnimClass::initAnimation() {
@@ -850,7 +853,7 @@ namespace gamemd { bool AnimClass::updateAnimation(int a1) {
     LOBYTE(v4) = 0; /*0x44808a*/
     return v4; /*0x448090*/
   }
-  v12 = *(_BYTE *)(this + 979); /*0x44809a*/
+  v12 = this->u8_3D3; /*0x44809a*/
   int v5 = this->q21C; /*0x44809e*/
   int v6 = *(_DWORD *)(v5 + 120); /*0x4480a6*/
   int v7 = 0; /*0x4480a9*/
@@ -885,11 +888,12 @@ LABEL_15:
   {
     *(_BYTE *)(v9 + 979) = 0; /*0x448116*/
 LABEL_17:
-    *(_BYTE *)(this + 979) = 1; /*0x44811d*/
+    this->u8_3D3 = 1; /*0x44811d*/
   }
   if ( *(_DWORD *)(this->q520 + 3768) == 7 ) /*0x448134*/
     House::ChooseHouseEnemy(this->q21C, (BuildingClass *)this); /*0x44813d*/
-  return *(_BYTE *)(this + 979) != v12; /*0x44808c*/
+  return this->u8_3D3 != v12; /*0x44808c*/
+}
 }
 }
 // 0x449540
@@ -1043,6 +1047,8 @@ LABEL_7:
     }
     (*(void (__thiscall **)(_DWORD, _DWORD))(*this->vtable4 + 220))(this->vtable4, 0); /*0x729465*/
   }
+}
+}
 }
 
 // 0x4666C0
@@ -1243,7 +1249,7 @@ char __thiscall BulletClass::ProcessNukeExplosion(int *this)
     return v2;
   if ( !this->q158 )
   {
-    v4 = *(this + 43);
+    v4 = *(&this->q0103);
     HIBYTE(v159) = 0;
     LOBYTE(v158) = 0;
     if ( *(_BYTE *)(v4 + 668) )
@@ -1261,8 +1267,8 @@ char __thiscall BulletClass::ProcessNukeExplosion(int *this)
           this->q12C = *(_BYTE *)(v4 + 756);
       }
     }
-    v161 = *(double *)(this + 39);
-    v162 = *(this + 41);
+    v161 = *(double *)(&this->vtable49);
+    v162 = *(&this->q0101);
     if ( *(_DWORD *)(v4 + 728) )
     {
       v7 = *(_DWORD *)(v4 + 744);
@@ -1273,7 +1279,7 @@ char __thiscall BulletClass::ProcessNukeExplosion(int *this)
           v8 = (void **)__2_YAPAXI_Z(456);
           if ( v8 )
 LABEL_23:
-            AnimClass::ctor(v8, *(void **)(*(this + 43) + 728), (int *)&v161, (void *)1, 1, (void *)0x600, 0, 0);
+            AnimClass::ctor(v8, *(void **)(*(&this->q0103) + 728), (int *)&v161, (void *)1, 1, (void *)0x600, 0, 0);
         }
       }
       else if ( !(dword_A8ED54[12] % *(_DWORD *)(v4 + 740)) )
@@ -1283,30 +1289,30 @@ LABEL_23:
           goto LABEL_23;
       }
     }
-    v9 = *(this + 43);
+    v9 = *(&this->q0103);
     v160 = 0;
     if ( *(int *)(v9 + 732) > 0 )
     {
-      v10 = *((double *)this + 30);
-      v11 = *((double *)this + 29);
-      v12 = (double *)(this + 58);
-      v13 = *((double *)this + 31) * *((double *)this + 31);
-      GroundHeight = *(this + 68);
+      v10 = *((double *)&this->vtable40);
+      v11 = *((double *)&this->vtable39);
+      v12 = (double *)(&this->q0148);
+      v13 = *((double *)&this->vtable41) * *((double *)&this->vtable41);
+      GroundHeight = *(&this->q0188);
       v14 = Math::Sqrt(v11 * v11 + v10 * v10 + v13);
-      v15 = *(this + 43);
+      v15 = *(&this->q0103);
       v16 = *(_DWORD *)(v15 + 736);
       v171[0] = v14;
       if ( v16 )
       {
-        v17 = *(this + 66);
+        v17 = *(&this->q0186);
         if ( v17 < v16 )
         {
-          *(this + 66) = v17 + 1;
+          *(&this->q0186) = v17 + 1;
           if ( v17 + 1 >= *(_DWORD *)(v15 + 736) )
             goto LABEL_31;
         }
       }
-      else if ( *(this + 68) >= 40 || (double)GroundHeight <= v171[0] + 0.5 )
+      else if ( *(&this->q0188) >= 40 || (double)GroundHeight <= v171[0] + 0.5 )
       {
 LABEL_31:
         this->CourseLock = 0;
@@ -1328,31 +1334,31 @@ LABEL_31:
         v171[0] = v171[0] - (double)(v19 / 2);
         if ( v171[0] <= 0.0 )
           v171[0] = 0.0;
-        if ( *v12 != 0.0 || *((double *)this + 30) != 0.0 || *((double *)this + 31) != 0.0 )
+        if ( *v12 != 0.0 || *((double *)&this->vtable40) != 0.0 || *((double *)&this->vtable41) != 0.0 )
         {
 LABEL_49:
           v21 = Math::Sqrt(
-                  *((double *)this + 31) * *((double *)this + 31)
-                + *((double *)this + 30) * *((double *)this + 30)
+                  *((double *)&this->vtable41) * *((double *)&this->vtable41)
+                + *((double *)&this->vtable40) * *((double *)&this->vtable40)
                 + *v12 * *v12);
           v22 = v171[0] / v21;
           *v12 = v22 * *v12;
-          *((double *)this + 30) = v22 * *((double *)this + 30);
-          *((double *)this + 31) = v22 * *((double *)this + 31);
+          *((double *)&this->vtable40) = v22 * *((double *)&this->vtable40);
+          *((double *)&this->vtable41) = v22 * *((double *)&this->vtable41);
 LABEL_50:
           v172 = *v12;
-          LODWORD(v173) = *(this + 60);
-          v23 = *(this + 63);
-          v24 = *(this + 62);
-          HIDWORD(v173) = *(this + 61);
-          v25 = *(this + 67);
+          LODWORD(v173) = *(&this->q0180);
+          v23 = *(&this->q0183);
+          v24 = *(&this->q0182);
+          HIDWORD(v173) = *(&this->q0181);
+          v25 = *(&this->q0187);
           v174 = COERCE_DOUBLE(__PAIR64__(v23, v24));
           if ( v25 )
             v26 = (_DWORD *)(*(int (__thiscall **)(int, int *))(*(_DWORD *)v25 + 88))(v25, &v175);
           else
             v26 = &DataGlobal_87F7E8[31122];
           LODWORD(v163[0]) = *v26;
-          v27 = (_BYTE *)*(this + 67);
+          v27 = (_BYTE *)*(&this->q0187);
           HIDWORD(v163[0]) = v26[1];
           LODWORD(v163[1]) = v26[2];
           if ( v27 && (v27[20] & 2) != 0 )
@@ -1362,9 +1368,9 @@ LABEL_50:
             LODWORD(v163[1]) = *(_DWORD *)(v28 + 8);
           }
           v29 = (double *)(DataGlobal_87F7E8[7806] + 1432);
-          GroundHeight = (dword_A8ED54[12] + (*(int (__stdcall **)(int *))(*(this + 1) + 16))(this + 1)) % 15;
+          GroundHeight = (dword_A8ED54[12] + (*(int (__stdcall **)(int *))(this->vtable2 + 16))(this + 1)) % 15;
           v30 = Math::SinCos((double)GroundHeight * 0.06666666666666667 * 6.283185307179586);
-          v31 = Math::RoundToInt((v30 * *v29 + *v29 + 1.0) * (double)*(int *)(*(this + 43) + 732));
+          v31 = Math::RoundToInt((v30 * *v29 + *v29 + 1.0) * (double)*(int *)(*(&this->q0103) + 732));
           v32 = v31;
           LODWORD(v31) = *this;
           GroundHeight = v32;
@@ -1382,12 +1388,12 @@ LABEL_50:
             LOBYTE(v32) = Math::RoundToInt(v37);
           }
           v164 = v161;
-          v38 = *(this + 67);
+          v38 = *(&this->q0187);
           v165 = v162;
           v39 = v38 && (*(int (__thiscall **)(int))(*(_DWORD *)v38 + 44))(v38) == 2;
           LOBYTE(v40) = 0;
           HIBYTE(v40) = this->CourseLock == 0 ? v32 : 0;
-          v41 = (char *)*(this + 43);
+          v41 = (char *)*(&this->q0103);
           LOWORD(GroundHeight) = v40;
           GroundHeight = Movement::CalcVelocity(
                            &v172,
@@ -1404,8 +1410,8 @@ LABEL_50:
           *(double *)&v178[1] = v173;
           *(double *)&v178[2] = v174;
           qmemcpy(v12, v178, 0x18u);
-          v42 = *((double *)this + 31);
-          v43 = *((double *)this + 30);
+          v42 = *((double *)&this->vtable41);
+          v43 = *((double *)&this->vtable40);
           v44 = *v12;
           *(double *)v166 = (double)GroundHeight;
           v45 = Math::Sqrt(v44 * v44 + v43 * v43 + v42 * v42) * 0.5;
@@ -1415,7 +1421,7 @@ LABEL_50:
             LOBYTE(v158) = 1;
             v160 = 1;
             if ( this->GetZAboveGround() > 0
-              && !*(_BYTE *)(*(this + 43) + 660)
+              && !*(_BYTE *)(*(&this->q0103) + 660)
               && (LODWORD(v163[0]) != DataGlobal_87F7E8[31122]
                || *(_QWORD *)((char *)v163 + 4) != *(_QWORD *)&DataGlobal_87F7E8[31123]) )
             {
@@ -1456,14 +1462,14 @@ LABEL_50:
           GroundHeight = v50 - Math::RoundToInt(v54);
           if ( !this->CourseLock )
           {
-            v55 = *(this + 70);
+            v55 = *(&this->q01C0);
             if ( v55 >= 60 )
             {
-              v57 = *((double *)this + 36) * 0.9833333333333333 + (double)GroundHeight;
-              *((double *)this + 36) = v57;
+              v57 = *((double *)&this->vtable46) * 0.9833333333333333 + (double)GroundHeight;
+              *((double *)&this->vtable46) = v57;
               if ( !v59 && v57 < 60.0 )
               {
-                v60 = *(this + 43);
+                v60 = *(&this->q0103);
                 if ( !*(_BYTE *)(v60 + 660) && !*(_BYTE *)(v60 + 665) )
                 {
                   LOBYTE(v158) = 1;
@@ -1475,8 +1481,8 @@ LABEL_50:
             else
             {
               v56 = (double)GroundHeight;
-              *(this + 70) = v55 + 1;
-              *((double *)this + 36) = v56 + *((double *)this + 36);
+              *(&this->q01C0) = v55 + 1;
+              *((double *)&this->vtable46) = v56 + *((double *)&this->vtable46);
             }
           }
           if ( !v160
@@ -1509,8 +1515,8 @@ LABEL_184:
             this->UpdateMirrorState(2);
             this->SetPosition(&v161);
             if ( (_BYTE)v158
-              || (v164 = *(double *)(this + 39),
-                  v165 = *(this + 41),
+              || (v164 = *(double *)(&this->vtable49),
+                  v165 = *(&this->q0101),
                   v117 = BulletClass::CheckBulletCollision(this, (int *)&v164),
                   v118 = *this,
                   v119 = v117,
@@ -1521,12 +1527,12 @@ LABEL_184:
               if ( this->GetZAboveGround() < 0 )
                 this->SetZ(0);
             }
-            v120 = *(this + 43);
+            v120 = *(&this->q0103);
             if ( *(int *)(v120 + 732) > 0 || *(_BYTE *)(v120 + 672) )
               v121 = this->BulletClass_2E.CheckProximityDetonation(&v161);
             else
               v121 = 0;
-            v122 = *(this + 44);
+            v122 = *(&this->q0104);
             v168 = v121;
             if ( v122 && *(_BYTE *)((*(int (__thiscall **)(int))(*(_DWORD *)v122 + 132))(v122) + 3476) && v121 == 2 )
             {
@@ -1535,22 +1541,22 @@ LABEL_184:
             }
             if ( !(_BYTE)v158 )
             {
-              v123 = *(this + 43);
+              v123 = *(&this->q0103);
               if ( *(_BYTE *)(v123 + 668) || !v121 )
               {
                 if ( *(_BYTE *)(v123 + 678) )
                 {
-                  v124 = *(this + 27);
+                  v124 = *(&this->vtable37);
                   if ( v124 > 5 )
-                    *(this + 27) = v124 - 1;
+                    *(&this->vtable37) = v124 - 1;
                 }
                 goto LABEL_233;
               }
             }
-            v125 = *(this + 67);
+            v125 = *(&this->q0187);
             if ( v125 && (v168 == 1 || HIBYTE(v159)) )
             {
-              v126 = *(this + 43);
+              v126 = *(&this->q0103);
               if ( !*(_BYTE *)(v126 + 660) && !*(_BYTE *)(v126 + 674) )
               {
                 v127 = v161;
@@ -1572,25 +1578,25 @@ LABEL_184:
                   GroundHeight = v132 / 3;
                 if ( v168 == 1
                   || ((v133 = Math::Sqrt(
-                                *((double *)this + 29) * *((double *)this + 29)
-                              + *((double *)this + 30) * *((double *)this + 30)
-                              + *((double *)this + 31) * *((double *)this + 31)),
+                                *((double *)&this->vtable39) * *((double *)&this->vtable39)
+                              + *((double *)&this->vtable40) * *((double *)&this->vtable40)
+                              + *((double *)&this->vtable41) * *((double *)&this->vtable41)),
                        v133 + v133 >= 128.0)
                     ? (v135 = Math::Sqrt(
-                                *((double *)this + 29) * *((double *)this + 29)
-                              + *((double *)this + 30) * *((double *)this + 30)
-                              + *((double *)this + 31) * *((double *)this + 31)),
+                                *((double *)&this->vtable39) * *((double *)&this->vtable39)
+                              + *((double *)&this->vtable40) * *((double *)&this->vtable40)
+                              + *((double *)&this->vtable41) * *((double *)&this->vtable41)),
                        v134 = v135 + v135)
                     : (v134 = 128.0),
                       (double)GroundHeight <= v134) )
                 {
                   v136 = *this;
-                  v137 = (*(int (__thiscall **)(_DWORD, double *))(*(_DWORD *)*(this + 67) + 72))(*(this + 67), v163);
+                  v137 = (*(int (__thiscall **)(_DWORD, double *))(*(_DWORD *)*(&this->q0187) + 72))(*(&this->q0187), v163);
                   this->SetPosition(v137);
                 }
               }
             }
-            if ( AbstractTypeClass::NameEquals(*(this + 74), aNuke) )
+            if ( AbstractTypeClass::NameEquals(*(&this->q01C4), aNuke) )
             {
               if ( this->GetZAboveGround() < 0 )
                 this->SetZ(0);
@@ -1606,19 +1612,19 @@ LABEL_184:
                   v141 = (void **)__2_YAPAXI_Z(456);
                   if ( v141 )
                   {
-                    v166[0] = *(this + 39);
-                    v166[1] = *(this + 40);
-                    v167 = *(this + 41);
-                    v142 = *(this + 41);
+                    v166[0] = *(&this->vtable49);
+                    v166[1] = *(&this->q0100);
+                    v167 = *(&this->q0101);
+                    v142 = *(&this->q0101);
                     v151 = (unsigned int)v142;
-                    v143 = (void *)Return::HRESULT_Fail(*(this + 39), *(this + 40), v142);
+                    v143 = (void *)Return::HRESULT_Fail(*(&this->vtable49), *(&this->q0100), v142);
                     v144 = AnimClass::ctor(v141, v140, v166, 0, 1, (void *)0x2600, v143, SBYTE4(v151));
                   }
                   else
                   {
                     v144 = 0;
                   }
-                  *(this + 85) = (int)v144;
+                  *(&this->q0205) = (int)v144;
                   this->q158 = 1;
                   if ( dword_A8ED54[131613] < dword_A8ED54[131611]
                     || (BYTE1(dword_A8ED54[131612]) || !dword_A8ED54[131611])
@@ -1642,7 +1648,7 @@ LABEL_233:
           LOWORD(GroundHeight) = SLODWORD(v161) / 256;
           v2 = SHIDWORD(v161) / 256;
           HIWORD(GroundHeight) = SHIDWORD(v161) / 256;
-          *(this + 83) = GroundHeight;
+          *(&this->q0203) = GroundHeight;
           return v2;
         }
       }
@@ -1651,18 +1657,18 @@ LABEL_233:
         v171[0] = (double)(int)v169 + v171[0];
         if ( v171[0] >= v20 )
           v171[0] = v20;
-        if ( *v12 != 0.0 || *((double *)this + 30) != 0.0 || *((double *)this + 31) != 0.0 )
+        if ( *v12 != 0.0 || *((double *)&this->vtable40) != 0.0 || *((double *)&this->vtable41) != 0.0 )
           goto LABEL_49;
       }
       *(_DWORD *)v12 = 0;
-      *(this + 59) = 1079574528;
+      *(&this->q0149) = 1079574528;
       goto LABEL_49;
     }
-    v62 = (double *)(this + 58);
-    v63 = *((double *)this + 31);
-    v170[0] = *((double *)this + 29);
-    v64 = *(this + 61);
-    LODWORD(v170[1]) = *(this + 60);
+    v62 = (double *)(&this->q0148);
+    v63 = *((double *)&this->vtable41);
+    v170[0] = *((double *)&this->vtable39);
+    v64 = *(&this->q0181);
+    LODWORD(v170[1]) = *(&this->q0180);
     v170[2] = v63;
     HIDWORD(v170[1]) = v64;
     qmemcpy(v178, v170, sizeof(v178));
@@ -1670,50 +1676,50 @@ LABEL_233:
     v173 = v170[1];
     v174 = v63;
     v160 = Math::Sqrt(v170[1] * v170[1] + v170[0] * v170[0] + v170[2] * v170[2]) < 8.0;
-    v65 = *(this + 43);
+    v65 = *(&this->q0103);
     v170[0] = (double)SLODWORD(v161);
     v170[1] = (double)SHIDWORD(v161);
     v170[2] = (double)v162;
     FiringDistance = (double)*(int *)(DataGlobal_87F7E8[7806] + 5816);
     if ( *(_BYTE *)(v65 + 661) )
       FiringDistance = RulesClass::GetFiringDistance();
-    v67 = *(this + 43);
+    v67 = *(&this->q0103);
     if ( *(_BYTE *)(v67 + 704) )
     {
       v68 = Math::Sqrt(
               *v62 * *v62
-            + *((double *)this + 30) * *((double *)this + 30)
-            + *((double *)this + 31) * *((double *)this + 31));
+            + *((double *)&this->vtable40) * *((double *)&this->vtable40)
+            + *((double *)&this->vtable41) * *((double *)&this->vtable41));
       v69 = Math::RoundToInt(v68);
-      if ( v69 < *(this + 68) )
+      if ( v69 < *(&this->q0188) )
       {
-        GroundHeight = v69 + *(_DWORD *)(*(this + 43) + 720);
+        GroundHeight = v69 + *(_DWORD *)(*(&this->q0103) + 720);
         *(double *)v166 = (double)GroundHeight;
-        if ( *v62 == 0.0 && *((double *)this + 30) == 0.0 && *((double *)this + 31) == 0.0 )
+        if ( *v62 == 0.0 && *((double *)&this->vtable40) == 0.0 && *((double *)&this->vtable41) == 0.0 )
         {
           *(_DWORD *)v62 = 0;
-          *(this + 59) = 1079574528;
+          *(&this->q0149) = 1079574528;
         }
         v70 = Math::Sqrt(
-                *((double *)this + 31) * *((double *)this + 31)
-              + *((double *)this + 30) * *((double *)this + 30)
+                *((double *)&this->vtable41) * *((double *)&this->vtable41)
+              + *((double *)&this->vtable40) * *((double *)&this->vtable40)
               + *v62 * *v62);
         v71 = *(double *)v166 / v70;
         *v62 = v71 * *v62;
-        *((double *)this + 30) = v71 * *((double *)this + 30);
-        *((double *)this + 31) = v71 * *((double *)this + 31);
+        *((double *)&this->vtable40) = v71 * *((double *)&this->vtable40);
+        *((double *)&this->vtable41) = v71 * *((double *)&this->vtable41);
       }
-      v72 = *((double *)this + 31);
+      v72 = *((double *)&this->vtable41);
       v179[0] = *v62;
-      v73 = *(this + 61);
-      LODWORD(v179[1]) = *(this + 60);
+      v73 = *(&this->q0181);
+      LODWORD(v179[1]) = *(&this->q0180);
       HIDWORD(v179[1]) = v73;
       v74 = Math::RoundToInt(v72);
       v75 = Math::RoundToInt(v72);
       v76 = Math::RoundToInt(v72);
       v164 = v161;
       LODWORD(v161) += v74;
-      v77 = *(this + 43);
+      v77 = *(&this->q0103);
       v165 = v162;
       HIDWORD(v161) += v75;
       v162 += v76;
@@ -1752,25 +1758,25 @@ LABEL_233:
         LOBYTE(v158) = 1;
       }
 LABEL_152:
-      v98 = *(this + 80);
+      v98 = *(&this->q0200);
       LOWORD(GroundHeight) = SLODWORD(v161) / 256;
       HIWORD(GroundHeight) = SHIDWORD(v161) / 256;
       v180 = GroundHeight;
       v99 = v98 / 256;
-      v100 = *(this + 81) / 256;
+      v100 = *(&this->q0201) / 256;
       LOWORD(GroundHeight) = v99;
       HIWORD(GroundHeight) = v100;
       LODWORD(v171[0]) = GroundHeight;
       if ( (unsigned __int16)(SLODWORD(v161) / 256) == (_WORD)v99
         && (unsigned __int16)(SHIDWORD(v161) / 256) == (_WORD)v100
-        && !*(_BYTE *)(*(this + 43) + 704)
+        && !*(_BYTE *)(*(&this->q0103) + 704)
         && this->GetZAboveGround() < 2 * DataGlobal_87F7E8[31138]
         || (v101 = CellCoord::To_CellObj(DataGlobal_87F7E8, (__int16 *)&v180),
             v102 = CellCoord::To_CellObj(DataGlobal_87F7E8, (__int16 *)v171),
             v103 = Cell::IsBridge(v101),
             v104 = Cell::IsBridge(v102),
             v103)
-        && !*(_BYTE *)(*(this + 43) + 704)
+        && !*(_BYTE *)(*(&this->q0103) + 704)
         && v103 == v104
         && this->GetZAboveGround() < 2 * DataGlobal_87F7E8[31138] )
       {
@@ -1783,7 +1789,7 @@ LABEL_152:
       v166[1] = 0;
       v105 = Coord::To_Cell(DataGlobal_87F7E8, &v161);
       ClosestObjectCell = (_DWORD *)Object::FindClosestObjectCell(v105, v166, 0, 0);
-      v107 = *(this + 44);
+      v107 = *(&this->q0104);
       if ( !v107 || (HIBYTE(v157) = 1, ClosestObjectCell != (_DWORD *)v107) )
         HIBYTE(v157) = 0;
       if ( !ClosestObjectCell
@@ -1815,11 +1821,11 @@ LABEL_152:
         {
           v160 = 2;
           LOBYTE(v158) = 1;
-          v161 = *(double *)(this + 39);
-          v162 = *(this + 41);
+          v161 = *(double *)(&this->vtable49);
+          v162 = *(&this->q0101);
           goto LABEL_184;
         }
-        v115 = *(this + 43);
+        v115 = *(&this->q0103);
         *(double *)&v178[1] = v173;
         *(double *)v178 = v172;
         if ( !*(_BYTE *)(v115 + 704) )
@@ -1827,12 +1833,12 @@ LABEL_152:
           v179[0] = *(double *)v178;
           v179[1] = *(double *)&v178[1];
           v179[2] = v174;
-          qmemcpy(this + 58, v179, 0x18u);
+          qmemcpy(&this->q0E8, v179, 0x18u);
         }
         if ( Math::Sqrt(
-               *((double *)this + 29) * *((double *)this + 29)
-             + *((double *)this + 30) * *((double *)this + 30)
-             + *((double *)this + 31) * *((double *)this + 31)) < 10.0
+               *((double *)&this->vtable39) * *((double *)&this->vtable39)
+             + *((double *)&this->vtable40) * *((double *)&this->vtable40)
+             + *((double *)&this->vtable41) * *((double *)&this->vtable41)) < 10.0
           && this->GetZAboveGround() < 10 )
         {
           v160 = 1;
@@ -1841,7 +1847,7 @@ LABEL_152:
       }
       else
       {
-        v113 = *(this + 43);
+        v113 = *(&this->q0103);
         v160 = 1;
         LOBYTE(v158) = 1;
         if ( !*(_BYTE *)(v113 + 674) )
@@ -1855,7 +1861,7 @@ LABEL_152:
     }
     v79 = *(_DWORD *)(v67 + 712);
     v80 = *(_DWORD *)(v67 + 716);
-    v81 = (_DWORD *)*(this + 44);
+    v81 = (_DWORD *)*(&this->q0104);
     v166[0] = v79;
     v169 = v81;
     v166[1] = v80;
@@ -1982,7 +1988,7 @@ LABEL_151:
     v84 = v168;
     goto LABEL_134;
   }
-  v2 = *(this + 85);
+  v2 = *(&this->q0205);
   if ( !v2 )
   {
     GroundHeight = (int)this;
@@ -4274,7 +4280,7 @@ char __thiscall BulletClass::ProcessNukeExplosion(int *this)
     return v2;
   if ( !this->q158 )
   {
-    v4 = *(this + 43);
+    v4 = *(&this->q0103);
     HIBYTE(v159) = 0;
     LOBYTE(v158) = 0;
     if ( *(_BYTE *)(v4 + 668) )
@@ -4292,8 +4298,8 @@ char __thiscall BulletClass::ProcessNukeExplosion(int *this)
           this->q12C = *(_BYTE *)(v4 + 756);
       }
     }
-    v161 = *(double *)(this + 39);
-    v162 = *(this + 41);
+    v161 = *(double *)(&this->vtable49);
+    v162 = *(&this->q0101);
     if ( *(_DWORD *)(v4 + 728) )
     {
       v7 = *(_DWORD *)(v4 + 744);
@@ -4304,7 +4310,7 @@ char __thiscall BulletClass::ProcessNukeExplosion(int *this)
           v8 = (void **)__2_YAPAXI_Z(456);
           if ( v8 )
 LABEL_23:
-            AnimClass::ctor(v8, *(void **)(*(this + 43) + 728), (int *)&v161, (void *)1, 1, (void *)0x600, 0, 0);
+            AnimClass::ctor(v8, *(void **)(*(&this->q0103) + 728), (int *)&v161, (void *)1, 1, (void *)0x600, 0, 0);
         }
       }
       else if ( !(dword_A8ED54[12] % *(_DWORD *)(v4 + 740)) )
@@ -4314,30 +4320,30 @@ LABEL_23:
           goto LABEL_23;
       }
     }
-    v9 = *(this + 43);
+    v9 = *(&this->q0103);
     v160 = 0;
     if ( *(int *)(v9 + 732) > 0 )
     {
-      v10 = *((double *)this + 30);
-      v11 = *((double *)this + 29);
-      v12 = (double *)(this + 58);
-      v13 = *((double *)this + 31) * *((double *)this + 31);
-      GroundHeight = *(this + 68);
+      v10 = *((double *)&this->vtable40);
+      v11 = *((double *)&this->vtable39);
+      v12 = (double *)(&this->q0148);
+      v13 = *((double *)&this->vtable41) * *((double *)&this->vtable41);
+      GroundHeight = *(&this->q0188);
       v14 = Math::Sqrt(v11 * v11 + v10 * v10 + v13);
-      v15 = *(this + 43);
+      v15 = *(&this->q0103);
       v16 = *(_DWORD *)(v15 + 736);
       v171[0] = v14;
       if ( v16 )
       {
-        v17 = *(this + 66);
+        v17 = *(&this->q0186);
         if ( v17 < v16 )
         {
-          *(this + 66) = v17 + 1;
+          *(&this->q0186) = v17 + 1;
           if ( v17 + 1 >= *(_DWORD *)(v15 + 736) )
             goto LABEL_31;
         }
       }
-      else if ( *(this + 68) >= 40 || (double)GroundHeight <= v171[0] + 0.5 )
+      else if ( *(&this->q0188) >= 40 || (double)GroundHeight <= v171[0] + 0.5 )
       {
 LABEL_31:
         this->CourseLock = 0;
@@ -4359,31 +4365,31 @@ LABEL_31:
         v171[0] = v171[0] - (double)(v19 / 2);
         if ( v171[0] <= 0.0 )
           v171[0] = 0.0;
-        if ( *v12 != 0.0 || *((double *)this + 30) != 0.0 || *((double *)this + 31) != 0.0 )
+        if ( *v12 != 0.0 || *((double *)&this->vtable40) != 0.0 || *((double *)&this->vtable41) != 0.0 )
         {
 LABEL_49:
           v21 = Math::Sqrt(
-                  *((double *)this + 31) * *((double *)this + 31)
-                + *((double *)this + 30) * *((double *)this + 30)
+                  *((double *)&this->vtable41) * *((double *)&this->vtable41)
+                + *((double *)&this->vtable40) * *((double *)&this->vtable40)
                 + *v12 * *v12);
           v22 = v171[0] / v21;
           *v12 = v22 * *v12;
-          *((double *)this + 30) = v22 * *((double *)this + 30);
-          *((double *)this + 31) = v22 * *((double *)this + 31);
+          *((double *)&this->vtable40) = v22 * *((double *)&this->vtable40);
+          *((double *)&this->vtable41) = v22 * *((double *)&this->vtable41);
 LABEL_50:
           v172 = *v12;
-          LODWORD(v173) = *(this + 60);
-          v23 = *(this + 63);
-          v24 = *(this + 62);
-          HIDWORD(v173) = *(this + 61);
-          v25 = *(this + 67);
+          LODWORD(v173) = *(&this->q0180);
+          v23 = *(&this->q0183);
+          v24 = *(&this->q0182);
+          HIDWORD(v173) = *(&this->q0181);
+          v25 = *(&this->q0187);
           v174 = COERCE_DOUBLE(__PAIR64__(v23, v24));
           if ( v25 )
             v26 = (_DWORD *)(*(int (__thiscall **)(int, int *))(*(_DWORD *)v25 + 88))(v25, &v175);
           else
             v26 = &DataGlobal_87F7E8[31122];
           LODWORD(v163[0]) = *v26;
-          v27 = (_BYTE *)*(this + 67);
+          v27 = (_BYTE *)*(&this->q0187);
           HIDWORD(v163[0]) = v26[1];
           LODWORD(v163[1]) = v26[2];
           if ( v27 && (v27[20] & 2) != 0 )
@@ -4393,9 +4399,9 @@ LABEL_50:
             LODWORD(v163[1]) = *(_DWORD *)(v28 + 8);
           }
           v29 = (double *)(DataGlobal_87F7E8[7806] + 1432);
-          GroundHeight = (dword_A8ED54[12] + (*(int (__stdcall **)(int *))(*(this + 1) + 16))(this + 1)) % 15;
+          GroundHeight = (dword_A8ED54[12] + (*(int (__stdcall **)(int *))(this->vtable2 + 16))(this + 1)) % 15;
           v30 = Math::SinCos((double)GroundHeight * 0.06666666666666667 * 6.283185307179586);
-          v31 = Math::RoundToInt((v30 * *v29 + *v29 + 1.0) * (double)*(int *)(*(this + 43) + 732));
+          v31 = Math::RoundToInt((v30 * *v29 + *v29 + 1.0) * (double)*(int *)(*(&this->q0103) + 732));
           v32 = v31;
           LODWORD(v31) = *this;
           GroundHeight = v32;
@@ -4413,12 +4419,12 @@ LABEL_50:
             LOBYTE(v32) = Math::RoundToInt(v37);
           }
           v164 = v161;
-          v38 = *(this + 67);
+          v38 = *(&this->q0187);
           v165 = v162;
           v39 = v38 && (*(int (__thiscall **)(int))(*(_DWORD *)v38 + 44))(v38) == 2;
           LOBYTE(v40) = 0;
           HIBYTE(v40) = this->CourseLock == 0 ? v32 : 0;
-          v41 = (char *)*(this + 43);
+          v41 = (char *)*(&this->q0103);
           LOWORD(GroundHeight) = v40;
           GroundHeight = Movement::CalcVelocity(
                            &v172,
@@ -4435,8 +4441,8 @@ LABEL_50:
           *(double *)&v178[1] = v173;
           *(double *)&v178[2] = v174;
           qmemcpy(v12, v178, 0x18u);
-          v42 = *((double *)this + 31);
-          v43 = *((double *)this + 30);
+          v42 = *((double *)&this->vtable41);
+          v43 = *((double *)&this->vtable40);
           v44 = *v12;
           *(double *)v166 = (double)GroundHeight;
           v45 = Math::Sqrt(v44 * v44 + v43 * v43 + v42 * v42) * 0.5;
@@ -4446,7 +4452,7 @@ LABEL_50:
             LOBYTE(v158) = 1;
             v160 = 1;
             if ( this->GetZAboveGround() > 0
-              && !*(_BYTE *)(*(this + 43) + 660)
+              && !*(_BYTE *)(*(&this->q0103) + 660)
               && (LODWORD(v163[0]) != DataGlobal_87F7E8[31122]
                || *(_QWORD *)((char *)v163 + 4) != *(_QWORD *)&DataGlobal_87F7E8[31123]) )
             {
@@ -4487,14 +4493,14 @@ LABEL_50:
           GroundHeight = v50 - Math::RoundToInt(v54);
           if ( !this->CourseLock )
           {
-            v55 = *(this + 70);
+            v55 = *(&this->q01C0);
             if ( v55 >= 60 )
             {
-              v57 = *((double *)this + 36) * 0.9833333333333333 + (double)GroundHeight;
-              *((double *)this + 36) = v57;
+              v57 = *((double *)&this->vtable46) * 0.9833333333333333 + (double)GroundHeight;
+              *((double *)&this->vtable46) = v57;
               if ( !v59 && v57 < 60.0 )
               {
-                v60 = *(this + 43);
+                v60 = *(&this->q0103);
                 if ( !*(_BYTE *)(v60 + 660) && !*(_BYTE *)(v60 + 665) )
                 {
                   LOBYTE(v158) = 1;
@@ -4506,8 +4512,8 @@ LABEL_50:
             else
             {
               v56 = (double)GroundHeight;
-              *(this + 70) = v55 + 1;
-              *((double *)this + 36) = v56 + *((double *)this + 36);
+              *(&this->q01C0) = v55 + 1;
+              *((double *)&this->vtable46) = v56 + *((double *)&this->vtable46);
             }
           }
           if ( !v160
@@ -4540,8 +4546,8 @@ LABEL_184:
             this->UpdateMirrorState(2);
             this->SetPosition(&v161);
             if ( (_BYTE)v158
-              || (v164 = *(double *)(this + 39),
-                  v165 = *(this + 41),
+              || (v164 = *(double *)(&this->vtable49),
+                  v165 = *(&this->q0101),
                   v117 = BulletClass::CheckBulletCollision(this, (int *)&v164),
                   v118 = *this,
                   v119 = v117,
@@ -4552,12 +4558,12 @@ LABEL_184:
               if ( this->GetZAboveGround() < 0 )
                 this->SetZ(0);
             }
-            v120 = *(this + 43);
+            v120 = *(&this->q0103);
             if ( *(int *)(v120 + 732) > 0 || *(_BYTE *)(v120 + 672) )
               v121 = this->BulletClass_2E.CheckProximityDetonation(&v161);
             else
               v121 = 0;
-            v122 = *(this + 44);
+            v122 = *(&this->q0104);
             v168 = v121;
             if ( v122 && *(_BYTE *)((*(int (__thiscall **)(int))(*(_DWORD *)v122 + 132))(v122) + 3476) && v121 == 2 )
             {
@@ -4566,22 +4572,22 @@ LABEL_184:
             }
             if ( !(_BYTE)v158 )
             {
-              v123 = *(this + 43);
+              v123 = *(&this->q0103);
               if ( *(_BYTE *)(v123 + 668) || !v121 )
               {
                 if ( *(_BYTE *)(v123 + 678) )
                 {
-                  v124 = *(this + 27);
+                  v124 = *(&this->vtable37);
                   if ( v124 > 5 )
-                    *(this + 27) = v124 - 1;
+                    *(&this->vtable37) = v124 - 1;
                 }
                 goto LABEL_233;
               }
             }
-            v125 = *(this + 67);
+            v125 = *(&this->q0187);
             if ( v125 && (v168 == 1 || HIBYTE(v159)) )
             {
-              v126 = *(this + 43);
+              v126 = *(&this->q0103);
               if ( !*(_BYTE *)(v126 + 660) && !*(_BYTE *)(v126 + 674) )
               {
                 v127 = v161;
@@ -4603,25 +4609,25 @@ LABEL_184:
                   GroundHeight = v132 / 3;
                 if ( v168 == 1
                   || ((v133 = Math::Sqrt(
-                                *((double *)this + 29) * *((double *)this + 29)
-                              + *((double *)this + 30) * *((double *)this + 30)
-                              + *((double *)this + 31) * *((double *)this + 31)),
+                                *((double *)&this->vtable39) * *((double *)&this->vtable39)
+                              + *((double *)&this->vtable40) * *((double *)&this->vtable40)
+                              + *((double *)&this->vtable41) * *((double *)&this->vtable41)),
                        v133 + v133 >= 128.0)
                     ? (v135 = Math::Sqrt(
-                                *((double *)this + 29) * *((double *)this + 29)
-                              + *((double *)this + 30) * *((double *)this + 30)
-                              + *((double *)this + 31) * *((double *)this + 31)),
+                                *((double *)&this->vtable39) * *((double *)&this->vtable39)
+                              + *((double *)&this->vtable40) * *((double *)&this->vtable40)
+                              + *((double *)&this->vtable41) * *((double *)&this->vtable41)),
                        v134 = v135 + v135)
                     : (v134 = 128.0),
                       (double)GroundHeight <= v134) )
                 {
                   v136 = *this;
-                  v137 = (*(int (__thiscall **)(_DWORD, double *))(*(_DWORD *)*(this + 67) + 72))(*(this + 67), v163);
+                  v137 = (*(int (__thiscall **)(_DWORD, double *))(*(_DWORD *)*(&this->q0187) + 72))(*(&this->q0187), v163);
                   this->SetPosition(v137);
                 }
               }
             }
-            if ( AbstractTypeClass::NameEquals(*(this + 74), aNuke) )
+            if ( AbstractTypeClass::NameEquals(*(&this->q01C4), aNuke) )
             {
               if ( this->GetZAboveGround() < 0 )
                 this->SetZ(0);
@@ -4637,19 +4643,19 @@ LABEL_184:
                   v141 = (void **)__2_YAPAXI_Z(456);
                   if ( v141 )
                   {
-                    v166[0] = *(this + 39);
-                    v166[1] = *(this + 40);
-                    v167 = *(this + 41);
-                    v142 = *(this + 41);
+                    v166[0] = *(&this->vtable49);
+                    v166[1] = *(&this->q0100);
+                    v167 = *(&this->q0101);
+                    v142 = *(&this->q0101);
                     v151 = (unsigned int)v142;
-                    v143 = (void *)Return::HRESULT_Fail(*(this + 39), *(this + 40), v142);
+                    v143 = (void *)Return::HRESULT_Fail(*(&this->vtable49), *(&this->q0100), v142);
                     v144 = AnimClass::ctor(v141, v140, v166, 0, 1, (void *)0x2600, v143, SBYTE4(v151));
                   }
                   else
                   {
                     v144 = 0;
                   }
-                  *(this + 85) = (int)v144;
+                  *(&this->q0205) = (int)v144;
                   this->q158 = 1;
                   if ( dword_A8ED54[131613] < dword_A8ED54[131611]
                     || (BYTE1(dword_A8ED54[131612]) || !dword_A8ED54[131611])
@@ -4673,7 +4679,7 @@ LABEL_233:
           LOWORD(GroundHeight) = SLODWORD(v161) / 256;
           v2 = SHIDWORD(v161) / 256;
           HIWORD(GroundHeight) = SHIDWORD(v161) / 256;
-          *(this + 83) = GroundHeight;
+          *(&this->q0203) = GroundHeight;
           return v2;
         }
       }
@@ -4682,18 +4688,18 @@ LABEL_233:
         v171[0] = (double)(int)v169 + v171[0];
         if ( v171[0] >= v20 )
           v171[0] = v20;
-        if ( *v12 != 0.0 || *((double *)this + 30) != 0.0 || *((double *)this + 31) != 0.0 )
+        if ( *v12 != 0.0 || *((double *)&this->vtable40) != 0.0 || *((double *)&this->vtable41) != 0.0 )
           goto LABEL_49;
       }
       *(_DWORD *)v12 = 0;
-      *(this + 59) = 1079574528;
+      *(&this->q0149) = 1079574528;
       goto LABEL_49;
     }
-    v62 = (double *)(this + 58);
-    v63 = *((double *)this + 31);
-    v170[0] = *((double *)this + 29);
-    v64 = *(this + 61);
-    LODWORD(v170[1]) = *(this + 60);
+    v62 = (double *)(&this->q0148);
+    v63 = *((double *)&this->vtable41);
+    v170[0] = *((double *)&this->vtable39);
+    v64 = *(&this->q0181);
+    LODWORD(v170[1]) = *(&this->q0180);
     v170[2] = v63;
     HIDWORD(v170[1]) = v64;
     qmemcpy(v178, v170, sizeof(v178));
@@ -4701,50 +4707,50 @@ LABEL_233:
     v173 = v170[1];
     v174 = v63;
     v160 = Math::Sqrt(v170[1] * v170[1] + v170[0] * v170[0] + v170[2] * v170[2]) < 8.0;
-    v65 = *(this + 43);
+    v65 = *(&this->q0103);
     v170[0] = (double)SLODWORD(v161);
     v170[1] = (double)SHIDWORD(v161);
     v170[2] = (double)v162;
     FiringDistance = (double)*(int *)(DataGlobal_87F7E8[7806] + 5816);
     if ( *(_BYTE *)(v65 + 661) )
       FiringDistance = RulesClass::GetFiringDistance();
-    v67 = *(this + 43);
+    v67 = *(&this->q0103);
     if ( *(_BYTE *)(v67 + 704) )
     {
       v68 = Math::Sqrt(
               *v62 * *v62
-            + *((double *)this + 30) * *((double *)this + 30)
-            + *((double *)this + 31) * *((double *)this + 31));
+            + *((double *)&this->vtable40) * *((double *)&this->vtable40)
+            + *((double *)&this->vtable41) * *((double *)&this->vtable41));
       v69 = Math::RoundToInt(v68);
-      if ( v69 < *(this + 68) )
+      if ( v69 < *(&this->q0188) )
       {
-        GroundHeight = v69 + *(_DWORD *)(*(this + 43) + 720);
+        GroundHeight = v69 + *(_DWORD *)(*(&this->q0103) + 720);
         *(double *)v166 = (double)GroundHeight;
-        if ( *v62 == 0.0 && *((double *)this + 30) == 0.0 && *((double *)this + 31) == 0.0 )
+        if ( *v62 == 0.0 && *((double *)&this->vtable40) == 0.0 && *((double *)&this->vtable41) == 0.0 )
         {
           *(_DWORD *)v62 = 0;
-          *(this + 59) = 1079574528;
+          *(&this->q0149) = 1079574528;
         }
         v70 = Math::Sqrt(
-                *((double *)this + 31) * *((double *)this + 31)
-              + *((double *)this + 30) * *((double *)this + 30)
+                *((double *)&this->vtable41) * *((double *)&this->vtable41)
+              + *((double *)&this->vtable40) * *((double *)&this->vtable40)
               + *v62 * *v62);
         v71 = *(double *)v166 / v70;
         *v62 = v71 * *v62;
-        *((double *)this + 30) = v71 * *((double *)this + 30);
-        *((double *)this + 31) = v71 * *((double *)this + 31);
+        *((double *)&this->vtable40) = v71 * *((double *)&this->vtable40);
+        *((double *)&this->vtable41) = v71 * *((double *)&this->vtable41);
       }
-      v72 = *((double *)this + 31);
+      v72 = *((double *)&this->vtable41);
       v179[0] = *v62;
-      v73 = *(this + 61);
-      LODWORD(v179[1]) = *(this + 60);
+      v73 = *(&this->q0181);
+      LODWORD(v179[1]) = *(&this->q0180);
       HIDWORD(v179[1]) = v73;
       v74 = Math::RoundToInt(v72);
       v75 = Math::RoundToInt(v72);
       v76 = Math::RoundToInt(v72);
       v164 = v161;
       LODWORD(v161) += v74;
-      v77 = *(this + 43);
+      v77 = *(&this->q0103);
       v165 = v162;
       HIDWORD(v161) += v75;
       v162 += v76;
@@ -4783,25 +4789,25 @@ LABEL_233:
         LOBYTE(v158) = 1;
       }
 LABEL_152:
-      v98 = *(this + 80);
+      v98 = *(&this->q0200);
       LOWORD(GroundHeight) = SLODWORD(v161) / 256;
       HIWORD(GroundHeight) = SHIDWORD(v161) / 256;
       v180 = GroundHeight;
       v99 = v98 / 256;
-      v100 = *(this + 81) / 256;
+      v100 = *(&this->q0201) / 256;
       LOWORD(GroundHeight) = v99;
       HIWORD(GroundHeight) = v100;
       LODWORD(v171[0]) = GroundHeight;
       if ( (unsigned __int16)(SLODWORD(v161) / 256) == (_WORD)v99
         && (unsigned __int16)(SHIDWORD(v161) / 256) == (_WORD)v100
-        && !*(_BYTE *)(*(this + 43) + 704)
+        && !*(_BYTE *)(*(&this->q0103) + 704)
         && this->GetZAboveGround() < 2 * DataGlobal_87F7E8[31138]
         || (v101 = CellCoord::To_CellObj(DataGlobal_87F7E8, (__int16 *)&v180),
             v102 = CellCoord::To_CellObj(DataGlobal_87F7E8, (__int16 *)v171),
             v103 = Cell::IsBridge(v101),
             v104 = Cell::IsBridge(v102),
             v103)
-        && !*(_BYTE *)(*(this + 43) + 704)
+        && !*(_BYTE *)(*(&this->q0103) + 704)
         && v103 == v104
         && this->GetZAboveGround() < 2 * DataGlobal_87F7E8[31138] )
       {
@@ -4814,7 +4820,7 @@ LABEL_152:
       v166[1] = 0;
       v105 = Coord::To_Cell(DataGlobal_87F7E8, &v161);
       ClosestObjectCell = (_DWORD *)Object::FindClosestObjectCell(v105, v166, 0, 0);
-      v107 = *(this + 44);
+      v107 = *(&this->q0104);
       if ( !v107 || (HIBYTE(v157) = 1, ClosestObjectCell != (_DWORD *)v107) )
         HIBYTE(v157) = 0;
       if ( !ClosestObjectCell
@@ -4846,11 +4852,11 @@ LABEL_152:
         {
           v160 = 2;
           LOBYTE(v158) = 1;
-          v161 = *(double *)(this + 39);
-          v162 = *(this + 41);
+          v161 = *(double *)(&this->vtable49);
+          v162 = *(&this->q0101);
           goto LABEL_184;
         }
-        v115 = *(this + 43);
+        v115 = *(&this->q0103);
         *(double *)&v178[1] = v173;
         *(double *)v178 = v172;
         if ( !*(_BYTE *)(v115 + 704) )
@@ -4858,12 +4864,12 @@ LABEL_152:
           v179[0] = *(double *)v178;
           v179[1] = *(double *)&v178[1];
           v179[2] = v174;
-          qmemcpy(this + 58, v179, 0x18u);
+          qmemcpy(&this->q0E8, v179, 0x18u);
         }
         if ( Math::Sqrt(
-               *((double *)this + 29) * *((double *)this + 29)
-             + *((double *)this + 30) * *((double *)this + 30)
-             + *((double *)this + 31) * *((double *)this + 31)) < 10.0
+               *((double *)&this->vtable39) * *((double *)&this->vtable39)
+             + *((double *)&this->vtable40) * *((double *)&this->vtable40)
+             + *((double *)&this->vtable41) * *((double *)&this->vtable41)) < 10.0
           && this->GetZAboveGround() < 10 )
         {
           v160 = 1;
@@ -4872,7 +4878,7 @@ LABEL_152:
       }
       else
       {
-        v113 = *(this + 43);
+        v113 = *(&this->q0103);
         v160 = 1;
         LOBYTE(v158) = 1;
         if ( !*(_BYTE *)(v113 + 674) )
@@ -4886,7 +4892,7 @@ LABEL_152:
     }
     v79 = *(_DWORD *)(v67 + 712);
     v80 = *(_DWORD *)(v67 + 716);
-    v81 = (_DWORD *)*(this + 44);
+    v81 = (_DWORD *)*(&this->q0104);
     v166[0] = v79;
     v169 = v81;
     v166[1] = v80;
@@ -5013,7 +5019,7 @@ LABEL_151:
     v84 = v168;
     goto LABEL_134;
   }
-  v2 = *(this + 85);
+  v2 = *(&this->q0205);
   if ( !v2 )
   {
     GroundHeight = (int)this;
@@ -7158,13 +7164,13 @@ namespace gamemd { void BulletClass::SetupVoxelTransform(void* a1, void* a2) {
           if ( *(_BYTE *)(v4 + 566) )
           {
             Matrix3x4::Identity(v30);
-            v5 = Math::CalcAngle(-*((double *)this + 30), *((double *)this + 29));
+            v5 = Math::CalcAngle(-this->u64_F0, this->q0E8);
             LOWORD(v22) = Math::RoundToInt((v5 - 1.570796326794897) * -10430.06004058427);
             v20 = (double)(int)(((((v22 >> 10) + 1) >> 1) & 0x1F) - 8) * -0.1963495408493621;
             Matrix2D::Rotate(v30, v20);
-            v23 = Math::Sqrt(*((double *)this + 29) * *((double *)this + 29) + *((double *)this + 30)
-                                                                             * *((double *)this + 30));
-            v6 = Math::CalcAngle(*((double *)this + 31), v23);
+            v23 = Math::Sqrt(this->q0E8 * this->q0E8 + this->u64_F0
+                                                                             * this->u64_F0);
+            v6 = Math::CalcAngle(this->u64_F8, v23);
             LOWORD(v23) = Math::RoundToInt((v6 - 1.570796326794897) * -10430.06004058427);
             v21 = -((double)(int)((((unsigned int)((LODWORD(v23) >> 10) + 1) >> 1) & 0x1F) - 8) * -0.1963495408493621);
             Matrix3D::RotateZ(v30, v21);
@@ -7395,7 +7401,7 @@ namespace gamemd { int BulletClass::ProcessObstacle(void* a1, void* a2) {
 
       if ( !(unsigned __int8)ObjectClass::Deploy((#374 *)this) )
         return 0;
-      qmemcpy(this + 58, a2, 0x18u);
+      qmemcpy(&this->q0E8, a2, 0x18u);
       this->q134 = aP1->field_0;
       this->TargetCoords = aP1->field_4;
       this->q13C = aP1->field_8;
@@ -7470,19 +7476,19 @@ namespace gamemd { int BulletClass::ProcessObstacle(void* a1, void* a2) {
           }
           this->SetPosition(&a1);
           this->q110 = 0;
-          if ( *((double *)this + 29) == 0.0 && *((double *)this + 30) == 0.0 && *((double *)this + 31) == 0.0 )
+          if ( this->q0E8 == 0.0 && this->u64_F0 == 0.0 && this->u64_F8 == 0.0 )
           {
             this->q0E8 = 0;
             this->q0EC = 1079574528;
           }
           v26 = 0.0
               / Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64(
-                                              *((double *)this + 31) * *((double *)this + 31)
-                                            + *((double *)this + 30) * *((double *)this + 30)
-                                            + *((double *)this + 29) * *((double *)this + 29)));
-          *((double *)this + 29) = v26 * *((double *)this + 29);
-          *((double *)this + 30) = v26 * *((double *)this + 30);
-          *((double *)this + 31) = v26 * *((double *)this + 31);
+                                              this->u64_F8 * this->u64_F8
+                                            + this->u64_F0 * this->u64_F0
+                                            + this->q0E8 * this->q0E8));
+          this->q0E8 = v26 * this->q0E8;
+          this->u64_F0 = v26 * this->u64_F0;
+          this->u64_F8 = v26 * this->u64_F8;
         }
         else
         {
@@ -7503,19 +7509,19 @@ namespace gamemd { int BulletClass::ProcessObstacle(void* a1, void* a2) {
       this->BulletClass_2E.InitDetonationTimer(&v37[1], &a1, v28, 0x7FFFFFFF);
       if ( *(int *)(this->Type + 732) > 0 )
       {
-        if ( *((double *)this + 29) == 0.0 && *((double *)this + 30) == 0.0 && *((double *)this + 31) == 0.0 )
+        if ( this->q0E8 == 0.0 && this->u64_F0 == 0.0 && this->u64_F8 == 0.0 )
         {
           this->q0E8 = 0;
           this->q0EC = 1079574528;
         }
         v29 = 1.0
             / Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64(
-                                            *((double *)this + 31) * *((double *)this + 31)
-                                          + *((double *)this + 30) * *((double *)this + 30)
-                                          + *((double *)this + 29) * *((double *)this + 29)));
-        *((double *)this + 29) = v29 * *((double *)this + 29);
-        *((double *)this + 30) = v29 * *((double *)this + 30);
-        *((double *)this + 31) = v29 * *((double *)this + 31);
+                                            this->u64_F8 * this->u64_F8
+                                          + this->u64_F0 * this->u64_F0
+                                          + this->q0E8 * this->q0E8));
+        this->q0E8 = v29 * this->q0E8;
+        this->u64_F0 = v29 * this->u64_F0;
+        this->u64_F8 = v29 * this->u64_F8;
       }
       if ( this->q090 )
         Targeting::Readd((IUnknown *)this);
@@ -7755,6 +7761,8 @@ LABEL_30:
   }
   return v21; /*0x469091*/
 }
+}
+}
 
 // 0x46AE70
 namespace gamemd { int BulletClass::SaveLoad_Prefix(void* a1, int a2) {
@@ -7826,7 +7834,7 @@ namespace gamemd { int BulletClass::RenderVoxelBullet(int a1, void* a2, void* a3
       float v28[12];
 
       v8 = *(_DWORD **)a2;
-      v9 = *(_DWORD **)(a2 + 4);
+      v9 = a2->q004;
       v22[0] = (int)this;
       v23 = v8;
       globalHelper_053C80(v8, 0, 0, a3, (float *)&DataGlobal_887470);
@@ -8012,6 +8020,8 @@ LABEL_5:
   this->q024 = v6; /*0x4e12a1*/
   return 0; /*0x4e1282*/
 }
+}
+}
 
 // 0x4E87B0
 namespace gamemd { int ParticleSystemClass::updateParticles(int a1) {
@@ -8187,15 +8197,15 @@ namespace gamemd { int ParticleSystemClass::processParticleFrame(void* a1) {
 namespace gamemd { void* ParticleSystemClass::QueryInterface(int a2) {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->vtable2;
     *(void**)this = &vt_VectorClass_ParticleClass;
-    if ( v3 && *((char *)(this) + 13) )
+    if ( v3 && this->attachedTag )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->vtable2 = 0;
   }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
+    this->attachedTag = 0;
+    this->vtable3 = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -8206,15 +8216,15 @@ namespace gamemd { void* ParticleSystemClass::QueryInterface(int a2) {
 namespace gamemd { void* ParticleSystemClass::finalizeParticles(int a2) {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->vtable2;
     *(void**)this = &vt_VectorClass_SmudgeClass;
-    if ( v3 && *((char *)(this) + 13) )
+    if ( v3 && this->attachedTag )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->vtable2 = 0;
   }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
+    this->attachedTag = 0;
+    this->vtable3 = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -10843,6 +10853,8 @@ LABEL_79:
     }
   }
 }
+}
+}
 
 // 0x59C920
 namespace gamemd { int TiberiumClass::Grow(void* a1) {
@@ -11345,6 +11357,8 @@ LABEL_122:
   }
   return 0; /*0x59cc78*/
 }
+}
+}
 
 // 0x5B35E0
 namespace gamemd { int MissionClass::QueueMission() {
@@ -11725,8 +11739,8 @@ namespace gamemd { void ParticleClass::UpdateParticlePhysics() {
       (*(void (__thiscall **)(void *, int *))(LODWORD(v9) + 436))(this, &v17);
       v13 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 2147483646);
       v10 = this->Type;
-      v11 = (double)v13 * 4.656612877414201e-10 * 0.05 + *(double *)(v10 + 688) + *((double *)this + 23);
-      *((double *)this + 23) = v11;
+      v11 = (double)v13 * 4.656612877414201e-10 * 0.05 + *(double *)(v10 + 688) + this->q0B8;
+      this->q0B8 = v11;
       if ( v11 > 1.0 )
       {
         v12 = this->q0B4;
@@ -11956,9 +11970,9 @@ namespace gamemd { void* ParticleClass::UpdateParticle(int a1) {
       void **v6;
 
       *this = &ParticleClass::`vftable';
-      *(this + 1) = &ParticleClass::`vftable';
-      *(this + 2) = &ParticleClass::`vftable';
-      *(this + 3) = &vt_ParticleClass;
+      this->vtable2 = &ParticleClass::`vftable';
+      this->vtable3 = &ParticleClass::`vftable';
+      this->vtable4 = &vt_ParticleClass;
       ObjectClass::Undeploy((#374 *)this);
       LOBYTE(v3) = 1;
       AbstractClass::AnnounceExpiredPointer((AbstractClass *)this, v3);
@@ -12944,7 +12958,7 @@ LABEL_14:
             break; /*0x62fffe*/
           int v9 = v4->q0C4; /*0x630004*/
           if ( v4->q0CC < v9 /*0x630032*/
-            || (*(_BYTE *)(v4 + 201) || !v9)
+            || (v4->u8_C9 || !v9)
   int v10; // eax
             && (v10 = v4->q0D0, v10 > 0)
             && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(v4->q0BC + 8))(v4 + 188, v9 + v10, 0) )
@@ -12961,6 +12975,8 @@ LABEL_14:
     }
   }
   return result; /*0x630088*/
+}
+}
 }
 
 // 0x630100
@@ -13137,6 +13153,8 @@ LABEL_11:
       return this->ProcessEvent_7(1); /*0x65b8d9*/
   }
   return result; /*0x65b8dc*/
+}
+}
 }
 
 // 0x65BED0
@@ -13364,6 +13382,8 @@ LABEL_19:
   }
   return (TerrainClass *)this; /*0x71bdd7*/
 }
+}
+}
 
 // 0x71BB90
 namespace gamemd { void* TerrainClass::Construct(void* a1, void* a2) {
@@ -13458,6 +13478,8 @@ LABEL_19:
   }
   return (TerrainClass *)this; /*0x71bdd7*/
 }
+}
+}
 
 // 0x71BFB0
 namespace gamemd { int TerrainClass::CheckNearbyObjects(int a1) {
@@ -13488,6 +13510,8 @@ namespace gamemd { int TerrainClass::CheckNearbyObjects(int a1) {
     MapClass::ApplyOverlayReveal(&DataGlobal_87F7E8, &aP1, (BuildingClass *)this); /*0x71c053*/
   }
   return 1; /*0x71c026*/
+}
+}
 }
 
 // 0x71C070
@@ -14291,6 +14315,7 @@ namespace gamemd {
   }
   return result; /*0x7220ca*/
 }
+}
 
 // 0x722140
 namespace gamemd { int TiberiumClass::UpdateField(int a1, int a2) {
@@ -14394,6 +14419,8 @@ LABEL_13:
   }
   return this; /*0x7280c0*/
 }
+}
+}
 
 // 0x728630
 namespace gamemd { int TubeClass::PowerDrainUpdate(void* a1) {
@@ -14469,6 +14496,8 @@ LABEL_6:
     __3_YAXPAX_Z(Block); /*0x7287d7*/
   return (TubeClass *)Block; /*0x7287e1*/
 }
+}
+}
 
 // 0x729370
 namespace gamemd { void AnimClass::ProcessSequence() {
@@ -14512,6 +14541,8 @@ LABEL_7:
     }
     (*(void (__thiscall **)(_DWORD, _DWORD))(*this->vtable4 + 220))(this->vtable4, 0); /*0x729465*/
   }
+}
+}
 }
 
 // 0x755D10
@@ -14562,20 +14593,20 @@ namespace gamemd { void* WaveClass::Constructor(void* a1, void* a2, void* a3, vo
       this->q1A8 = 0;
       this->LaserIntensity = 0;
       this->Owner = aP3;
-      FrameSnapshot::Init((_WORD *)this + 236);
+      FrameSnapshot::Init((_WORD *)&this->WaveClass_field_1086);
       this->q1F4 = 0;
       this->q1F8 = (void *)5;
       this->q1FC = 1;
       this->q1FD = 0;
-      *(this + 124) = &vt_VectorClass_CellClass;
+      *(&this->WaveClass_field_DC4) = &vt_VectorClass_CellClass;
       this->q1F4 = (void *)__2_YAPAXI_Z(0x14u);
       this->q1FD = 1;
-      *(this + 124) = &vt_DynamicVectorClass_CellClass;
+      *(&this->WaveClass_field_DC4) = &vt_DynamicVectorClass_CellClass;
       this->q204 = (void *)10;
       this->q200 = 0;
       *this = &WaveClass::`vftable';
-      *(this + 1) = &WaveClass::`vftable';
-      *(this + 2) = &vt_WaveClass;
+      this->vtable2 = &WaveClass::`vftable';
+      this->vtable3 = &vt_WaveClass;
       this->nextObject = &off_7F6BC8;
       v7 = a1[1] - aP2->field_4;
       if ( Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64((double)((*a1 - aP2->field_0) * (*a1 - aP2->field_0) + v7 * v7))) >= 240.0 )
@@ -14599,8 +14630,8 @@ namespace gamemd { void* WaveClass::Constructor(void* a1, void* a2, void* a3, vo
         else
           Voxel::SectionProject(this, a1, (int)aP2);
         this->q1A8 = 0;
-        this->q1CC = (void *)CalcMathFacing8(this + 51, this + 57);
-        WaveClass::DrawWave(this, (WaveClass *)(this + 45), 0);
+        this->q1CC = (void *)CalcMathFacing8(&this->WaveClass_field_178, &this->WaveClass_field_C07);
+        WaveClass::DrawWave(this, (WaveClass *)(&this->WaveClass_field_BC5), 0);
         v10 = (int)this->WaveClass_field_15C;
         if ( v10 > 0 && v10 <= 2 )
         {
@@ -14799,6 +14830,8 @@ LABEL_3:
       return result;
   }
   return result; /*0x760f8c*/
+}
+}
 }
 
 // 0x7632D0

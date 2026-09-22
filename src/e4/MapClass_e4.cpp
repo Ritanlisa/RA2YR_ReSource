@@ -31,6 +31,7 @@ int MapClass::isLocationShrouded(unsigned short a2)
   v5[2] = v2; /*0x4112f4*/
   return (*(int (__thiscall **)(int, _DWORD *, _DWORD))(*(_DWORD *)v3 + 20))(v3, v5, a2); /*0x411303*/
 }
+}
 
 // 0x42C1C0
 unsigned int * MapClass::AllocArrays()
@@ -100,6 +101,7 @@ unsigned int * MapClass::AllocArrays()
   while ( v3 ); /*0x42c27c*/
   return result; /*0x42c282*/
 }
+}
 
 // 0x485130
 int MapClass::RemoveCellReference(int a2)
@@ -152,6 +154,7 @@ int MapClass::RemoveCellReference(int a2)
   }
   return result; /*0x4851f5*/
 }
+}
 
 // 0x4A95A0
 int MapClass::SetCellFlagsAlongPath(IUnknown * aP1, unsigned short * a2)
@@ -191,6 +194,7 @@ int MapClass::SetCellFlagsAlongPath(IUnknown * aP1, unsigned short * a2)
     }
   }
   return (char)v5; /*0x4a963f*/
+}
 }
 
 // 0x4AC960
@@ -245,6 +249,7 @@ int MapClass::ToggleZoom(int a2)
     }
   }
   return result; /*0x4ac9ef*/
+}
 }
 
 // 0x4AD7E0
@@ -316,6 +321,7 @@ INIClass * * MapClass::SaveCellTagsToINI(char * a2)
   Vector::Clear((int)v19); /*0x4ada0d*/
   return Pipe::Dtor(v18); /*0x4ada1b*/
 }
+}
 
 // 0x4AEB30
 int MapClass::SetScrollMode(MouseClass * aP1)
@@ -324,6 +330,7 @@ int MapClass::SetScrollMode(MouseClass * aP1)
   this->MapClass_field_0x11A0 = aP1; /*0x4aeb36*/
   this->q119C = aP1 != 0; /*0x4aeb3f*/
   return aP1 != 0; /*0x4aeb45*/
+}
 }
 
 // 0x506D50
@@ -402,6 +409,7 @@ int MapClass::CalcVisibleCellRange(int a1, int a2, VectorClass * aP2, int * a3)
   }
   return result; /*0x506edd*/
 }
+}
 
 // 0x547020
 ObjectClass * * MapClass::LoadFileData()
@@ -450,6 +458,7 @@ ObjectClass * * MapClass::LoadFileData()
   BufferIOFileClass::Dtor(v12); /*0x5470f9*/
   return Size; /*0x5470fe*/
 }
+}
 
 // 0x554A80
 int MapClass::ScrollOnce(AbstractClass * aP1)
@@ -464,6 +473,7 @@ int MapClass::ScrollOnce(AbstractClass * aP1)
     return TacticalClass::ScrollView((_DWORD *)this, aP1); /*0x554a90*/
   }
   return result; /*0x554a95*/
+}
 }
 
 // 0x5652C0
@@ -565,6 +575,7 @@ void* MapClass::Destruct()
   this->q05D = 0; /*0x56545d*/
   this->MapClass_field_0x58 = 0; /*0x565460*/
   *(_DWORD *)this = &off_7EA6FC; /*0x565463*/
+}
 }
 
 // 0x565800
@@ -704,6 +715,7 @@ LABEL_14:
   memset(v1 + 6, 0, 0x34u); /*0x5659e3*/
   return 0; /*0x5659e5*/
 }
+}
 
 // 0x5659F0
 void MapClass::Destru_vt07()
@@ -745,6 +757,7 @@ void MapClass::Destru_vt07()
   this->q1158 = 0; /*0x565a87*/
   Debug::Log(); /*0x565a8e*/
 }
+}
 
 // 0x565AA0
 int MapClass::InitCellVector()
@@ -765,6 +778,7 @@ int MapClass::InitCellVector()
   for ( result = 0; result < this->q154; *(_DWORD *)(this->q13C + 4 * result - 4) = 0 ) /*0x565ae1*/
     ++result; /*0x565ae9*/
   return result; /*0x565afc*/
+}
 }
 
 // 0x565BC0
@@ -796,6 +810,7 @@ unsigned int * MapClass::InitAllCells()
   }
   while ( v2 < 0x40000 ); /*0x565bfc*/
   return result; /*0x565bfe*/
+}
 }
 
 // 0x5673A0
@@ -1010,6 +1025,7 @@ LABEL_54:
   }
   return MapClass::RevealArea2(this, (IUnknown *)&v48, 0, (MouseClass *)((char *)&aP2->field_0 + 3), 0); /*0x5678cf*/
 }
+}
 
 // 0x5683C0
 void MapClass::FillRevealBuffer(MouseClass * aP1, IUnknown * aP2)
@@ -1216,6 +1232,7 @@ LABEL_17:
     }
   }
 }
+}
 
 // 0x5687F0
 void MapClass::ApplyOverlayReveal(MouseClass * aP1, BuildingClass * aP2)
@@ -1407,6 +1424,7 @@ LABEL_17:
     }
   }
 }
+}
 
 // 0x568BB0
 TechnoTypeClass * * MapClass::PostProcessReveal(char a2)
@@ -1506,6 +1524,7 @@ TechnoTypeClass * * MapClass::PostProcessReveal(char a2)
   }
   return v20; /*0x568e30*/
 }
+}
 
 // 0x56B3F0
 BombClass * * MapClass::DecompressCellData(MouseClass * aP1)
@@ -1568,6 +1587,7 @@ BombClass * * MapClass::DecompressCellData(MouseClass * aP1)
   v13 = (TagClass *)(*(int (__thiscall **)(char *))(*(_DWORD *)&v17[4] + 4))(&v17[4]); /*0x56b582*/
   LZOPipe::Destructor((int *)&v17[4]); /*0x56b584*/
   return (int)&v13->__pad_0[v12]; /*0x56b58c*/
+}
 }
 
 // 0x56D230
@@ -1640,6 +1660,7 @@ int MapClass::GetTileIndex(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3)
   }
   return *(unsigned __int16 *)(*(_DWORD *)&v5->__pad_10[4 * (_DWORD)aP2 + 8] /*0x56d365*/
                              + 2 * *(unsigned __int16 *)(*(_DWORD *)v5->__pad_68 + 4 * v14 + 2));
+}
 }
 
 // 0x56D6E0
@@ -1791,6 +1812,7 @@ LABEL_30:
   }
   return result; /*0x56d9fd*/
 }
+}
 
 // 0x56DAE0
 int MapClass::ClearRegions(IUnknown * aP1)
@@ -1820,6 +1842,7 @@ int MapClass::ClearRegions(IUnknown * aP1)
   }
   while ( RegionMap != -1 ); /*0x56db5e*/
   return aP1a; /*0x56db14*/
+}
 }
 
 // 0x56E7C0
@@ -1862,6 +1885,7 @@ LABEL_11:
     if ( ++v11 >= (int)aP2 ) /*0x56e869*/
       goto LABEL_11; /*0x56e869*/
   }
+}
 }
 
 // 0x574780
@@ -1954,6 +1978,7 @@ int MapClass::TransitionCliff(MouseClass * aP0)
     }
   }
   return result; /*0x574837*/
+}
 }
 
 // 0x574C20
@@ -2274,6 +2299,7 @@ LABEL_79:
     }
   }
 }
+}
 
 // 0x577920
 MapClass * * MapClass::RemoveTriggerRef(AbstractClass * aP1, int a3)
@@ -2349,6 +2375,7 @@ MapClass * * MapClass::RemoveTriggerRef(AbstractClass * aP1, int a3)
   }
   return result; /*0x577a4a*/
 }
+}
 
 // 0x577F30
 void * MapClass::ClearShroud(HouseClass * aP1)
@@ -2419,6 +2446,7 @@ LABEL_26:
   }
   return result; /*0x57807a*/
 }
+}
 
 // 0x578390
 namespace gamemd {
@@ -2456,6 +2484,7 @@ void MapClass_IsRectInBounds()
   return LayerClass::IsWithinUsableArea(this, (IUnknown *)&v13, v2); /*0x578446*/
 }
 } // namespace gamemd
+}
 
 // 0x578710
 unsigned int * MapClass::SpiralSearch()
@@ -2507,6 +2536,7 @@ unsigned int * MapClass::SpiralSearch()
     return g_CellClassArray; /*0x578845*/
   }
   return result; /*0x57880d*/
+}
 }
 
 // 0x578880
@@ -2593,12 +2623,14 @@ unsigned int * MapClass::FastCellLookup(short * a2, int a3, char a4)
   }
   return result; /*0x5788bc*/
 }
+}
 
 // 0x578AC0
 void MapClass::IncrementRedrawCounter()
 {
 {
   ++this->q1158; /*0x578ac0*/
+}
 }
 
 // 0x57A0C0
@@ -2725,6 +2757,7 @@ void* MapClass::InitTileData(MouseClass * aP0, int aP3)
     g_MapTileArray = 0; /*0x57a2ff*/
   }
   return j; /*0x57a309*/
+}
 }
 
 // 0x5856B0
@@ -2853,6 +2886,7 @@ int MapClass::InitializeTileData(MapClass * aP1)
   }
   return j; /*0x585918*/
 }
+}
 
 // 0x585D00
 int MapClass::LoadTerrainData(MapClass * aP1)
@@ -2952,6 +2986,7 @@ int MapClass::LoadTerrainData(MapClass * aP1)
   }
   return v14; /*0x585ed3*/
 }
+}
 
 // 0x586780
 int MapClass::IsAreaFree(int * a2, int a3)
@@ -3015,6 +3050,7 @@ LABEL_20:
       goto LABEL_20; /*0x58685c*/
     }
   }
+}
 }
 
 // 0x589370
@@ -3115,6 +3151,7 @@ LABEL_14:
   this->MapClass_field_0x8 = v3; /*0x58947e*/
   this->IsAllocated = a3 == 0; /*0x589481*/
   return 1; /*0x589408*/
+}
 }
 
 // 0x589A60
@@ -3219,6 +3256,7 @@ LABEL_28:
     this->MapClass_field_0x10 = v15; /*0x589bad*/
   return 1; /*0x589bb0*/
 }
+}
 
 // 0x589BD0
 unsigned int * MapClass::allocateMapBuffers()
@@ -3236,6 +3274,7 @@ unsigned int * MapClass::allocateMapBuffers()
   this->q01C = 0; /*0x589bfd*/
   this->q020 = 0; /*0x589c00*/
   return this; /*0x589c05*/
+}
 }
 
 // 0x594700
@@ -3307,6 +3346,7 @@ int MapClass::Cleanup(int a1, int a2)
   }
   return result; /*0x594868*/
 }
+}
 
 // 0x599530
 int MapClass::ProcessTile()
@@ -3359,6 +3399,7 @@ int MapClass::ProcessTile()
   Debug::Log(); /*0x59961f*/
   Shroud::ProcessCellVisibility(&DataGlobal_87F7E8, (int)&DataGlobal_87F8E4); /*0x599631*/
   return RadarClass::RecreateSurface((int)&DataGlobal_87F7E8, 0); /*0x599640*/
+}
 }
 
 // 0x5A0410
@@ -3495,6 +3536,7 @@ MapClass * * MapClass::GrowLayer(int a2, int a3, int a4)
   }
   return 1; /*0x5a06e5*/
 }
+}
 
 // 0x5A17F0
 int MapClass::FindPassableNeighbor()
@@ -3562,6 +3604,7 @@ int MapClass::FindPassableNeighbor()
     result = LayerClass::CellIteratorNext(&DataGlobal_87F7E8); /*0x5a19bc*/
   }
   return result; /*0x5a19ce*/
+}
 }
 
 // 0x6D8260
@@ -3659,6 +3702,7 @@ unsigned int MapClass::TransformCoordToScreen(int a2, unsigned int * a3)
   }
   return result; /*0x6d84c1*/
 }
+}
 
 // 0x703590
 unsigned int * MapClass::FindPlacementCellsAlt(IUnknown * aP1, IUnknown * aP2)
@@ -3713,6 +3757,7 @@ unsigned int * MapClass::FindPlacementCellsAlt(IUnknown * aP1, IUnknown * aP2)
                     0);
   return &aP1->field_0; /*0x7036a7*/
 }
+}
 
 // 0x7BCF50
 int MapClass::isCellShrouded(unsigned short a2)
@@ -3727,6 +3772,7 @@ int MapClass::isCellShrouded(unsigned short a2)
   int v3 = this->q014; /*0x7bcf6b*/
   v5[2] = v2; /*0x7bcf74*/
   return (*(int (__thiscall **)(int, _DWORD *, _DWORD))(*(_DWORD *)v3 + 20))(v3, v5, a2); /*0x7bcf83*/
+}
 }
 
 // 0x430F30
@@ -4165,15 +4211,15 @@ VectorClass * MapClass::InitCellVe_vt00(char a2)
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->q004;
     *(void**)this = &vt_VectorClass_CellClass;
-    if ( v3 && *((char *)(this) + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->q004 = 0;
   }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
+    this->IsAllocated = 0;
+    this->q008 = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (VectorClass *)this;

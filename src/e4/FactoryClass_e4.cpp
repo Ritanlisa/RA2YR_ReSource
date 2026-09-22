@@ -92,6 +92,7 @@ int FactoryClass::UpdateProduction()
   return Speed; /*0x4c9bbe*/
 }
 } // namespace gamemd
+}
 
 // 0x4C9C60
 namespace gamemd {
@@ -105,6 +106,7 @@ int FactoryClass::HasProgressChanged()
   return result; /*0x4c9c67*/
 }
 } // namespace gamemd
+}
 
 // 0x4C9C70
 namespace gamemd {
@@ -177,6 +179,7 @@ int FactoryClass::DemandProduction(int a2, void * a3, char a4)
   }
 }
 } // namespace gamemd
+}
 
 // 0x4C9E10
 namespace gamemd {
@@ -200,6 +203,7 @@ int FactoryClass::SetObject(int a2)
   return 1; /*0x4c9e56*/
 }
 } // namespace gamemd
+}
 
 // 0x4C9E60
 namespace gamemd {
@@ -220,6 +224,7 @@ int FactoryClass::StartProduction(char a2)
   return 1; /*0x4c9e92*/
 }
 } // namespace gamemd
+}
 
 // 0x4C9FB0
 namespace gamemd {
@@ -241,6 +246,7 @@ int FactoryClass::GetBuildTimeFrames()
   return result; /*0x4c9fdd*/
 }
 } // namespace gamemd
+}
 
 // 0x4CA270
 namespace gamemd {
@@ -319,6 +325,7 @@ LABEL_14:
   return result; /*0x4ca3b0*/
 }
 } // namespace gamemd
+}
 
 // 0x4CA430
 namespace gamemd {
@@ -360,6 +367,7 @@ AbstractClass * * FactoryClass::Stat(int * a2)
   return Power::TimerProcess(v7); /*0x4ca56e*/
 }
 } // namespace gamemd
+}
 
 // 0x4CA580
 namespace gamemd {
@@ -374,6 +382,7 @@ int FactoryClass::Revert(int a2, int a3)
   return result; /*0x4ca592*/
 }
 } // namespace gamemd
+}
 
 // 0x4CA5A0
 namespace gamemd {
@@ -416,6 +425,7 @@ int FactoryClass::StartProduction_2()
   return v2; /*0x4ca60f*/
 }
 } // namespace gamemd
+}
 
 // 0x4CA670
 namespace gamemd {
@@ -444,6 +454,7 @@ int FactoryClass::CountType(IUnknown * aP1)
   return v3; /*0x4ca6aa*/
 }
 } // namespace gamemd
+}
 
 // 0x4CA6B0
 namespace gamemd {
@@ -464,6 +475,7 @@ int FactoryClass::IsQueued(int a2)
   return 1; /*0x4ca6cf*/
 }
 } // namespace gamemd
+}
 
 // 0x4CA770
 namespace gamemd {
@@ -516,6 +528,7 @@ void * FactoryClass::CopyTo(char a2)
   return (FactoryClass *)this; /*0x4ca881*/
 }
 } // namespace gamemd
+}
 
 // 0x635060
 namespace gamemd {
@@ -568,6 +581,7 @@ int FactoryClass::FinishProduction(int a2)
   return v4; /*0x635111*/
 }
 } // namespace gamemd
+}
 
 // 0x4CA230
 namespace gamemd {
@@ -801,15 +815,15 @@ VectorClass * FactoryClass_33::QueryInterface(char a2)
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_TechnoTypeClass_const;
-    if ( v3 && *((char *)(this) + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
+    this->IsAllocated = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (VectorClass *)this;

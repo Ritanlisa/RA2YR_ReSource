@@ -6304,7 +6304,7 @@ LABEL_7:
   this->q10C = 1; /*0x577bf7*/
   this->q110 = v4; /*0x577c01*/
   this->q045 = v4 - 1; /*0x577c0a*/
-  this->q046 = (v4 << 11) + this->q13C + 4; /*0x577c1f*/
+  this->GuardSlowerIsNotUnderStrength = (v4 << 11) + this->q13C + 4; /*0x577c1f*/
   for ( i = LayerClass::CellIteratorNext(this); i; i = LayerClass::CellIteratorNext(this) ) /*0x577c2c*/
   {
     v6 = *(_DWORD *)(i + 320) & 0xFFFFFFFC; /*0x577c3d*/
@@ -6731,12 +6731,12 @@ bool __thiscall LayerClass::IsWithinUsableArea(_DWORD *this, IUnknown *aP1, Tech
       v7 = g_CellClassArray; /*0x57849d*/
     }
     v3 = *((char *)v7 + 283); /*0x5784a8*/
-    if ( *((_BYTE *)v7 + 284) && v4 + v5 < v3 + this->q03D + 2 * this->q010 + 4 ) /*0x5784ca*/
+    if ( *((_BYTE *)v7 + 284) && v4 + v5 < v3 + this->q03D + 2 * this->q040 + 4 ) /*0x5784ca*/
       ++v3; /*0x5784cc*/
   }
   v8 = this->q03D; /*0x5784d3*/
   result = 0; /*0x578531*/
-  if ( v4 + v5 > v3 + v8 + 2 * this->q010 && v4 + v5 <= v3 + v8 + 2 * (this->q010 + this->q042) + 2 ) /*0x5784fe*/
+  if ( v4 + v5 > v3 + v8 + 2 * this->q040 && v4 + v5 <= v3 + v8 + 2 * (this->q040 + this->q042) + 2 ) /*0x5784fe*/
   {
     v9 = this->q0FC; /*0x578500*/
     if ( v5 - v4 < 2 * (v9 + this->q041) - v8 && v4 - v5 < v8 - 2 * v9 ) /*0x578523*/
@@ -6897,7 +6897,7 @@ int __thiscall sub_578850(_DWORD *this)
   int v2; // edx
 
   result = this->q100; /*0x578850*/
-  v2 = this->q0FC; /*0x578856*/
+  v2 = this->u32_FC; /*0x578856*/
   this->q11C = v2 + result + 1; /*0x578861*/
   this->q120 = result + this->q0F4 - v2; /*0x578871*/
   return result; /*0x578877*/

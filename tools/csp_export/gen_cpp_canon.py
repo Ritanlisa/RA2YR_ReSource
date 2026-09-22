@@ -142,6 +142,10 @@ def size_type(sz):
             8:'unsigned long long'}.get(sz, 'unsigned char')
 
 all_classes = set(db.keys()) | set(layouts.keys())
+# classes known only through member evidence (member_types keys, synced
+# member_lookup classes such as Gap2Recv_*) join the canon universe
+all_classes |= {k.rsplit('+', 1)[0] for k in mtypes if '+' in k}
+all_classes |= set(J(ROOT / 'tools/member_lookup.json').keys())
 canon_of = {}
 for c in all_classes:
     cc = canon(c) or c

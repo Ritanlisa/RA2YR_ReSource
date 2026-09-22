@@ -90,6 +90,7 @@ LABEL_14:
   return 1; /*0x766ca7*/
 }
 } // namespace gamemd
+}
 
 // 0x766DC0
 namespace gamemd {
@@ -180,6 +181,7 @@ AbstractClass * * Conflict_WorldDominationTour_12::Constructor_1(int a2, unsigne
   return 1; /*0x766ec9*/
 }
 } // namespace gamemd
+}
 
 // 0x766800
 namespace gamemd {
@@ -190,46 +192,50 @@ int Conflict_WorldDominationTour_12_::ReleaseBuffer()
   int result; // eax
 
   v2 = *(int (__thiscall ****)(_DWORD, int))(this + 4); /*0x766806*/
-  *(_DWORD *)(this + 16) = 0; /*0x766809*/
-  if ( v2 && *(_BYTE *)(this + 13) ) /*0x766810*/
+  this->ptr_10 = 0; /*0x766809*/
+  if ( v2 && this->u8_D ) /*0x766810*/
   {
     result = (**v2)(v2, 3); /*0x76681d*/
-    *(_DWORD *)(this + 4) = 0; /*0x76681f*/
+    this->ptr_4 = 0; /*0x76681f*/
   }
-  *(_BYTE *)(this + 13) = 0; /*0x766822*/
-  *(_DWORD *)(this + 8) = 0; /*0x766825*/
+  this->u8_D = 0; /*0x766822*/
+  this->ptr_8 = 0; /*0x766825*/
   return result; /*0x766828*/
 }
 } // namespace gamemd
+}
 
 // 0x766920
 namespace gamemd {
 int Conflict_WorldDominationTour_26::AddRef()
 {
 {
-  return *(this + 2) < *(_DWORD *)(*(this + 1) + 16); /*0x76692d*/
+  return this->RefCount < *(_DWORD *)(this->u32_4 + 16); /*0x76692d*/
 }
 } // namespace gamemd
+}
 
 // 0x766FA0
 namespace gamemd {
 unsigned int * Conflict_WorldDominationTour_26::Release()
 {
 {
-  ++*(this + 2); /*0x766fa2*/
+  ++this->RefCount; /*0x766fa2*/
   return this; /*0x766fa5*/
 }
 } // namespace gamemd
+}
 
 // 0x766FB0
 namespace gamemd {
 unsigned int * Conflict_WorldDominationTour_26::ddtor()
 {
 {
-  --*(this + 2); /*0x766fb2*/
+  --this->RefCount; /*0x766fb2*/
   return this; /*0x766fb5*/
 }
 } // namespace gamemd
+}
 
 // 0x766830
 namespace gamemd {
@@ -401,15 +407,15 @@ VectorClass * Conflict_WorldDominationTour_12::QueryInterface(char a2)
 {
 {
     void (__thiscall ***v3)(int, int);
-    v3 = (void (__thiscall ***)(int, int))*(this + 1);
+    v3 = (void (__thiscall ***)(int, int))this->Items;
     *(void**)this = &vt_VectorClass_rc_ptr_WorldDominationTour_GameOption;
-    if ( v3 && *((char *)(this) + 13) )
+    if ( v3 && this->IsAllocated )
   {
     (**v3)(v3, 3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
+    this->IsAllocated = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (VectorClass *)this;
@@ -423,15 +429,15 @@ DynamicVector * Conflict_WorldDominationTour_12::Constructor_2(char a2)
 {
 {
     void (__thiscall ***v3)(int, int);
-    v3 = (void (__thiscall ***)(int, int))*(this + 1);
+    v3 = (void (__thiscall ***)(int, int))this->Items;
     *(void**)this = &vt_VectorClass_rc_ptr_WorldDominationTour_GameOption;
-    if ( v3 && *((char *)(this) + 13) )
+    if ( v3 && this->IsAllocated )
   {
     (**v3)(v3, 3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
+    this->IsAllocated = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;

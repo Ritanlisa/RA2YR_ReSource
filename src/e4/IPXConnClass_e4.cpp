@@ -22,21 +22,22 @@ void * IPXConnClass::constructor(int aP1, SessionClass * aP2, IPXConnClass * aP3
     -1,
     (TechnoTypeClass *)0x3C,
     (CampaignScore *)aP8);
-  Waypoint::InitInvalid((_BYTE *)this + 76); /*0x53f462*/
+  Waypoint::InitInvalid((_BYTE *)&this->RemoteAddress6); /*0x53f462*/
   *(_DWORD *)this = &vt_IPXConnClass; /*0x53f46b*/
   if ( a5 ) /*0x53f473*/
   {
     this->q04C = *a5; /*0x53f479*/
     this->PacketsReceived = a5[1]; /*0x53f47e*/
-    *((_DWORD *)this + 21) = a5[2]; /*0x53f484*/
+    this->u32_54 = a5[2]; /*0x53f484*/
   }
   this->q064 = a7; /*0x53f494*/
-  wcscpy((wchar_t *)this + 52, Source); /*0x53f497*/
-  Network::CopyAddress((_DWORD *)this + 19, &aP8, (int)&v13); /*0x53f4ab*/
+  wcscpy((wchar_t *)&this->u32_D0, Source); /*0x53f497*/
+  Network::CopyAddress((_DWORD *)&this->u32_4C, &aP8, (int)&v13); /*0x53f4ab*/
   v10 = (IPXConnClass *)v13; /*0x53f4b0*/
   v11 = v14; /*0x53f4b4*/
   this->Socket = 0; /*0x53f4bc*/
-  *((_DWORD *)this + 22) = v10; /*0x53f4c4*/
-  *((_WORD *)this + 46) = v11; /*0x53f4c6*/
+  this->u32_58 = v10; /*0x53f4c4*/
+  this->u16_5C = v11; /*0x53f4c6*/
   return this; /*0x53f4c3*/
+}
 }

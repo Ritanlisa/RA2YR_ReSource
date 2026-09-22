@@ -46,6 +46,7 @@ void Screen_Capture()
   return result; /*0x52ff84*/
 }
 } // namespace gamemd
+}
 
 // 0x68F060
 int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
@@ -428,6 +429,7 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
   *(_DWORD *)this->q003->vt_slot_8(this->q003, v81); /*0x68f878*/
   return Screen::TransitionLoop((MPCooperative *)this, 20); /*0x68f884*/
 }
+}
 
 // 0x690160
 int Screen::TransitionLoop(int a2)
@@ -525,6 +527,7 @@ int Screen::TransitionLoop(int a2)
   }
   while ( !v14 );
   return result; /*0x690356*/
+}
 }
 
 // 0x690360

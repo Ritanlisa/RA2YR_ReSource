@@ -11,6 +11,7 @@ void PowerClass_Stub()
   return RadarClass::Destru_vt05(this);
 }
 } // namespace gamemd
+}
 
 // 0x63F7E0
 void PowerClass::checkLowPower()
@@ -22,4 +23,5 @@ void PowerClass::checkLowPower()
     __3_YAXPAX_Z(DataGlobal_AC4E74); /*0x63f7f4*/
     DataGlobal_AC4E78 = 0; /*0x63f7fc*/
   }
+}
 }

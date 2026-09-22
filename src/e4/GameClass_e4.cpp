@@ -18,6 +18,7 @@ int GameClass::initGameMode(int a2, int a3)
   return (*(int (__stdcall **)(_DWORD, int, int))(*(_DWORD *)*this + 12))(*this, a3, a2); /*0x437ff4*/
 }
 } // namespace gamemd
+}
 
 // 0x4381D0
 namespace gamemd {
@@ -42,6 +43,7 @@ unsigned int * GameClass::processFrame(int a2, int a3)
   return result; /*0x4381f9*/
 }
 } // namespace gamemd
+}
 
 // 0x438300
 namespace gamemd {
@@ -66,6 +68,7 @@ unsigned int * GameClass::updateUI(int a2, int a3)
   return result; /*0x438329*/
 }
 } // namespace gamemd
+}
 
 // 0x5D2260
 namespace gamemd {
@@ -127,6 +130,7 @@ int GameClass::loadScenarioFiles(ObjectClass * aP1)
   return result; /*0x5d233a*/
 }
 } // namespace gamemd
+}
 
 // 0x5D2410
 namespace gamemd {
@@ -185,6 +189,7 @@ int GameClass::FrameLoop(int a2)
   return result; /*0x5d2517*/
 }
 } // namespace gamemd
+}
 
 // 0x5D6370
 namespace gamemd {
@@ -218,6 +223,7 @@ LABEL_8:
   }
 }
 } // namespace gamemd
+}
 
 // 0x631D30
 namespace gamemd {
@@ -232,6 +238,7 @@ int GameClass::GetRelatedObject()
     return 0; /*0x631d3c*/
 }
 } // namespace gamemd
+}
 
 // 0x632DC0
 namespace gamemd {
@@ -245,41 +252,41 @@ void * GameClass::WriteEncryptedStream(BombClass * Src, signed int aP2)
   Pipe aP1[16]; // [esp+8h] [ebp-100h] BYREF
 
   v3 = Src; /*0x632dc7*/
-  if ( Src && aP2 >= 1 && *(_DWORD *)(this + 56) ) /*0x632de7*/
+  if ( Src && aP2 >= 1 && this->u32_38 ) /*0x632de7*/
   {
     v5 = 0; /*0x632df6*/
     if ( this->q003 ) /*0x632df2*/
     {
-      if ( *(_DWORD *)(this + 52) ) /*0x632e01*/
+      if ( this->u32_34 ) /*0x632e01*/
       {
-        ModemGame *v9 = *(_DWORD *)(this + 320); /*0x632e6f*/
+        ModemGame *v9 = this->u32_140; /*0x632e6f*/
         if ( v9 >= aP2 ) /*0x632e7e*/
           v9 = aP2; /*0x632e80*/
-        memcpy((void *)(*(_DWORD *)(this + 316) - *(_DWORD *)(this + 320) + this + 60), (AbstractClass *)Src, v9); /*0x632e97*/
+        memcpy((void *)(this->u32_13C - this->u32_140 + &this->u32_180), (AbstractClass *)Src, v9); /*0x632e97*/
         v3 = (BombClass *)((char *)Src + v9); /*0x632eb0*/
-        bool v10 = *(_DWORD *)(this + 320) == v9; /*0x632eb2*/
+        bool v10 = this->u32_140 == v9; /*0x632eb2*/
         aP2 -= v9; /*0x632eb4*/
-        *(_DWORD *)(this + 320) -= v9; /*0x632ebb*/
+        this->u32_140 -= v9; /*0x632ebb*/
         if ( !v10 ) /*0x632ec1*/
           return (Pipe *)((char *)Delegate::Dispatch((_DWORD *)this, (Pipe *)v3, (Pipe *)aP2) + (_DWORD)v5); /*0x632ec1*/
         BigInt::RSAOperation( /*0x632ed6*/
-          *(_DWORD *)(this + 56),
-          (AbstractClass *)(this + 60),
-          *(_DWORD *)(this + 316),
+          this->u32_38,
+          (AbstractClass *)(&this->u32_180),
+          this->u32_13C,
           aP1[0].__pad_0);
-        GameClass::processFrame((_DWORD *)(this + 20), (int)aP1, 56); /*0x632ee5*/
+        GameClass::processFrame((_DWORD *)(&this->u32_80), (int)aP1, 56); /*0x632ee5*/
       }
       else
       {
         memset(aP1, 0, sizeof(aP1)); /*0x632e17*/
         (*(void (__thiscall **)(_DWORD, Pipe *, int))(*this->q004 + 8))(this->q004, aP1, 56); /*0x632e21*/
-        int v6 = *(_DWORD *)(this + 56); /*0x632e24*/
+        int v6 = this->u32_38; /*0x632e24*/
         if ( v6 ) /*0x632e29*/
           v7 = (Pipe *)((*(_DWORD *)(v6 + 512) - 1) / 8 * (55 / ((*(_DWORD *)(v6 + 512) - 1) / 8) + 1)); /*0x632e4a*/
         Pipe *v7 = 0; /*0x632e2b*/
-        v8 = (Pipe *)BigInt::DecryptBlock(v6, aP1, v7, (Pipe *)(this + 60)); /*0x632e57*/
-        v5 = Delegate::Dispatch((_DWORD *)this, (Pipe *)(this + 60), v8); /*0x632e65*/
-        GameClass::processFrame((_DWORD *)(this + 20), (int)aP1, 56); /*0x632e6d*/
+        v8 = (Pipe *)BigInt::DecryptBlock(v6, aP1, v7, (Pipe *)(&this->u32_180)); /*0x632e57*/
+        v5 = Delegate::Dispatch((_DWORD *)this, (Pipe *)(&this->u32_180), v8); /*0x632e65*/
+        GameClass::processFrame((_DWORD *)(&this->u32_80), (int)aP1, 56); /*0x632e6d*/
       }
       this->q003 = 0; /*0x632eea*/
     }
@@ -288,6 +295,7 @@ void * GameClass::WriteEncryptedStream(BombClass * Src, signed int aP2)
   return Delegate::Dispatch((_DWORD *)this, (Pipe *)Src, (Pipe *)aP2); /*0x632f02*/
 }
 } // namespace gamemd
+}
 
 // 0x633130
 namespace gamemd {
@@ -306,58 +314,59 @@ int GameClass::ReadEncryptedStream(char * a2, signed int Size)
     return Delegate::Invoke((_DWORD *)this, (int)a2, (Straw *)Size); /*0x63314c*/
   if ( Size < 1 ) /*0x633155*/
     return Delegate::Invoke((_DWORD *)this, (int)a2, (Straw *)Size); /*0x633155*/
-  int v6 = *(_DWORD *)(this + 56); /*0x63315b*/
+  int v6 = this->u32_38; /*0x63315b*/
   if ( !v6 ) /*0x633160*/
     return Delegate::Invoke((_DWORD *)this, (int)a2, (Straw *)Size); /*0x6332e5*/
   ModemGame *v16 = 0; /*0x633169*/
   if ( this->q003 ) /*0x633166*/
   {
-    if ( *(_DWORD *)(this + 52) == 1 ) /*0x63317d*/
+    if ( this->u32_34 == 1 ) /*0x63317d*/
     {
       v7 = (Straw *)Delegate::Invoke( /*0x6331a6*/
                       (_DWORD *)this,
                       (int)Src,
                       (Straw *)(((*(_DWORD *)(v6 + 512) - 1) / 8 + 1) * (55 / ((*(_DWORD *)(v6 + 512) - 1) / 8) + 1)));
-      int v8 = *(_DWORD *)(this + 56); /*0x6331ab*/
+      int v8 = this->u32_38; /*0x6331ab*/
       v9 = v7; /*0x6331ae*/
       if ( v8 ) /*0x6331b2*/
         v10 = (Straw *)(((*(_DWORD *)(v8 + 512) - 1) / 8 + 1) * (55 / ((*(_DWORD *)(v8 + 512) - 1) / 8) + 1)); /*0x6331d4*/
       Straw *v10 = 0; /*0x6331b4*/
       if ( v9 != v10 ) /*0x6331d9*/
         return 0; /*0x6331e7*/
-      BigInt::RSAOperation(v8, Src[0].__pad_0, (int)v9, (char *)(this + 60)); /*0x6331f4*/
-      GameClass::updateUI((_DWORD *)(this + 20), this + 60, 56); /*0x6331fc*/
+      BigInt::RSAOperation(v8, Src[0].__pad_0, (int)v9, (char *)(&this->u32_180)); /*0x6331f4*/
+      GameClass::updateUI((_DWORD *)(&this->u32_80), &this->u32_F0, 56); /*0x6331fc*/
     }
     else
     {
       memset(Src, 0, sizeof(Src)); /*0x63320d*/
       (*(void (__thiscall **)(_DWORD, Pipe *, int))(*this->q004 + 8))(this->q004, Src, 56); /*0x633217*/
-      int v12 = *(_DWORD *)(this + 56); /*0x63321a*/
+      int v12 = this->u32_38; /*0x63321a*/
       if ( v12 ) /*0x63321f*/
         v13 = (Pipe *)((*(_DWORD *)(v12 + 512) - 1) / 8 * (55 / ((*(_DWORD *)(v12 + 512) - 1) / 8) + 1)); /*0x633240*/
       Pipe *v13 = 0; /*0x633221*/
-      int v14 = BigInt::DecryptBlock(v12, Src, v13, (Pipe *)(this + 60)); /*0x63324d*/
-      *(_DWORD *)(this + 320) = v14; /*0x633258*/
-      *(_DWORD *)(this + 316) = v14; /*0x63325e*/
-      GameClass::updateUI((_DWORD *)(this + 20), (int)Src, 56); /*0x633268*/
+      int v14 = BigInt::DecryptBlock(v12, Src, v13, (Pipe *)(&this->u32_180)); /*0x63324d*/
+      this->u32_140 = v14; /*0x633258*/
+      this->u32_13C = v14; /*0x63325e*/
+      GameClass::updateUI((_DWORD *)(&this->u32_80), (int)Src, 56); /*0x633268*/
     }
     v4 = Size; /*0x63326d*/
     this->q003 = 0; /*0x633274*/
   }
-  int v15 = *(_DWORD *)(this + 320); /*0x633278*/
+  int v15 = this->u32_140; /*0x633278*/
   if ( v15 > 0 ) /*0x633280*/
   {
     if ( v4 >= v15 ) /*0x633284*/
-      v4 = *(_DWORD *)(this + 320); /*0x633286*/
-    memcpy(a2, (const void *)(*(_DWORD *)(this + 316) - v15 + this + 60), v4); /*0x633297*/
+      v4 = this->u32_140; /*0x633286*/
+    memcpy(a2, (const void *)(this->u32_13C - v15 + &this->u32_180), v4); /*0x633297*/
     v3 = &a2[v4]; /*0x6332ac*/
     v16 = v4; /*0x6332b2*/
-    *(_DWORD *)(this + 320) -= v4; /*0x6332b6*/
+    this->u32_140 -= v4; /*0x6332b6*/
     v4 = Size - v4; /*0x6332c3*/
   }
   return v16 + Delegate::Invoke((_DWORD *)this, (int)v3, (Straw *)v4); /*0x6331db*/
 }
 } // namespace gamemd
+}
 
 // 0x69AE10
 namespace gamemd {
@@ -379,6 +388,7 @@ int GameClass::initPlayerData(const char ** a2)
   return 1; /*0x69ae2d*/
 }
 } // namespace gamemd
+}
 
 // 0x6BEC60
 namespace gamemd {
@@ -437,6 +447,7 @@ ObjectClass * * GameClass::Shutdown()
   WinMainSetup(); /*0x6bed48*/
 }
 } // namespace gamemd
+}
 
 // 0x74F960
 namespace gamemd {
@@ -444,16 +455,16 @@ int GameClass::ReadVersionFile()
 {
 {
 
-  if ( (*(_BYTE *)(this + 68) & 8) == 0 ) /*0x74f96a*/
+  if ( (this->u8_44 & 8) == 0 ) /*0x74f96a*/
   {
   int v5[9]; // [esp+4h] [ebp-24h] BYREF
     RawFileClass::Construct(v5, (int)g_Str_File_VERSION_TXT); /*0x74f97c*/
     if ( FileClass::Open(v5, 0) ) /*0x74f988*/
     {
-      FileClass::Read(v5, (char *)(this + 42), 16); /*0x74f99b*/
+      FileClass::Read(v5, (char *)(&this->u32_102), 16); /*0x74f99b*/
       for ( this->q039 = 0; /*0x74f9b5*/
-            *(_BYTE *)(strlen((const char *)(this + 42)) + this + 41) == 13;
-            *(_BYTE *)(strlen((const char *)(this + 42)) + this + 41) = 0 )
+            *(_BYTE *)(strlen((const char *)(&this->u32_102)) + &this->u32_101) == 13;
+            *(_BYTE *)(strlen((const char *)(&this->u32_102)) + &this->u32_101) = 0 )
       {
         ; /*0x74f9c5*/
       }
@@ -463,19 +474,20 @@ int GameClass::ReadVersionFile()
       this->q02A = 0; /*0x74f9d9*/
     }
     RawFileClass::Dtor(v5); /*0x74f9e0*/
-    int v2 = *(_DWORD *)(this + 68); /*0x74f9e5*/
+    int v2 = this->u8_44; /*0x74f9e5*/
     LOBYTE(v2) = v2 | 8; /*0x74f9e9*/
-    *(_DWORD *)(this + 68) = v2; /*0x74f9ec*/
+    this->u8_44 = v2; /*0x74f9ec*/
   }
-  int v3 = *(_DWORD *)(this + 68); /*0x74f9f0*/
+  int v3 = this->u8_44; /*0x74f9f0*/
   if ( (v3 & 2) != 0 ) /*0x74f9f5*/
-    return *(_WORD *)(this + 8); /*0x74f9f7*/
+    return this->u32_8; /*0x74f9f7*/
   LOBYTE(v3) = v3 | 2; /*0x74fa00*/
-  *(_WORD *)(this + 8) = 1; /*0x74fa02*/
-  *(_DWORD *)(this + 68) = v3; /*0x74fa08*/
+  this->u32_8 = 1; /*0x74fa02*/
+  this->u8_44 = v3; /*0x74fa08*/
   return 1; /*0x74f9fb*/
 }
 } // namespace gamemd
+}
 
 // 0x74FA20
 namespace gamemd {
@@ -483,16 +495,16 @@ int GameClass::ReadVersionFile2()
 {
 {
 
-  if ( (*(_BYTE *)(this + 68) & 8) == 0 ) /*0x74fa2a*/
+  if ( (this->u8_44 & 8) == 0 ) /*0x74fa2a*/
   {
   int v5[9]; // [esp+4h] [ebp-24h] BYREF
     RawFileClass::Construct(v5, (int)g_Str_File_VERSION_TXT); /*0x74fa3c*/
     if ( FileClass::Open(v5, 0) ) /*0x74fa48*/
     {
-      FileClass::Read(v5, (char *)(this + 42), 16); /*0x74fa5b*/
+      FileClass::Read(v5, (char *)(&this->u32_102), 16); /*0x74fa5b*/
       for ( this->q039 = 0; /*0x74fa75*/
-            *(_BYTE *)(strlen((const char *)(this + 42)) + this + 41) == 13;
-            *(_BYTE *)(strlen((const char *)(this + 42)) + this + 41) = 0 )
+            *(_BYTE *)(strlen((const char *)(&this->u32_102)) + &this->u32_101) == 13;
+            *(_BYTE *)(strlen((const char *)(&this->u32_102)) + &this->u32_101) = 0 )
       {
         ; /*0x74fa85*/
       }
@@ -502,19 +514,20 @@ int GameClass::ReadVersionFile2()
       this->q02A = 0; /*0x74fa99*/
     }
     RawFileClass::Dtor(v5); /*0x74faa0*/
-    int v2 = *(_DWORD *)(this + 68); /*0x74faa5*/
+    int v2 = this->u8_44; /*0x74faa5*/
     LOBYTE(v2) = v2 | 8; /*0x74faa9*/
-    *(_DWORD *)(this + 68) = v2; /*0x74faac*/
+    this->u8_44 = v2; /*0x74faac*/
   }
-  int v3 = *(_DWORD *)(this + 68); /*0x74fab0*/
+  int v3 = this->u8_44; /*0x74fab0*/
   if ( (v3 & 4) != 0 ) /*0x74fab5*/
-    return *(_WORD *)(this + 10); /*0x74fab7*/
+    return this->u16_A; /*0x74fab7*/
   LOBYTE(v3) = v3 | 4; /*0x74fac0*/
-  *(_WORD *)(this + 10) = 1; /*0x74fac2*/
-  *(_DWORD *)(this + 68) = v3; /*0x74fac8*/
+  this->u16_A = 1; /*0x74fac2*/
+  this->u8_44 = v3; /*0x74fac8*/
   return 1; /*0x74fabb*/
 }
 } // namespace gamemd
+}
 
 // 0x74FC80
 namespace gamemd {
@@ -537,6 +550,7 @@ void GameClass::ReadVersionString()
   RawFileClass::Dtor(v2); /*0x74fd05*/
 }
 } // namespace gamemd
+}
 
 // 0x7BA3C0
 namespace gamemd {
@@ -553,19 +567,20 @@ int GameClass::processNetworkPacket(void * Src, signed int Size)
     ModemGame *v7 = Size; /*0x7ba3e3*/
     if ( v6 ) /*0x7ba3e5*/
     {
-      signed int v8 = v6 - *((_DWORD *)this + 6); /*0x7ba3ea*/
+      signed int v8 = v6 - this->u32_18; /*0x7ba3ea*/
       v7 = Size; /*0x7ba3ec*/
       if ( Size >= v8 ) /*0x7ba3f0*/
         v7 = v8; /*0x7ba3f2*/
     }
     if ( v7 > 0 ) /*0x7ba3f6*/
-      memcpy((void *)(v5 + *((_DWORD *)this + 6)), Src, v7); /*0x7ba400*/
-    *((_DWORD *)this + 6) += v7; /*0x7ba40d*/
+      memcpy((void *)(v5 + this->u32_18), Src, v7); /*0x7ba400*/
+    this->u32_18 += v7; /*0x7ba40d*/
     return v7; /*0x7ba410*/
   }
   return result; /*0x7ba413*/
 }
 } // namespace gamemd
+}
 
 // 0x4AECA0
 namespace gamemd {
@@ -657,9 +672,9 @@ PKPipe * GameClass::validateGameFile(char a2)
 {
     int *v3;
     Pipe *v4;
-    v3 = (int *)*(this + 8);
+    v3 = (int *)this->ptr_20;
     v4 = (Pipe *)(this + 5);
-    *(this + 5) = &vt_BlowPipe;
+    this->ptr_14 = &vt_BlowPipe;
     if ( v3 )
   {
     COMObject::Release(v3);
@@ -692,9 +707,9 @@ PKStrawClass * GameClass::applyGameSettings(char a2)
 {
     int *v3;
     Straw *v4;
-    v3 = (int *)*(this + 8);
+    v3 = (int *)this->ptr_20;
     v4 = (Straw *)(this + 5);
-    *(this + 5) = &vt_BlowStraw;
+    this->ptr_14 = &vt_BlowStraw;
     if ( v3 )
   {
     COMObject::Release(v3);

@@ -105,6 +105,7 @@ int CComObject_CChatEventSink___ATL::DispatchConnectionPairs()
   return v9; /*0x793927*/
 }
 } // namespace gamemd
+}
 
 // 0x7A4EC0
 namespace gamemd {
@@ -254,6 +255,7 @@ LABEL_42:
   return 0; /*0x7a520e*/
 }
 } // namespace gamemd
+}
 
 // 0x7A5290
 namespace gamemd {
@@ -360,6 +362,7 @@ LABEL_20:
   return 0; /*0x7a5308*/
 }
 } // namespace gamemd
+}
 
 // 0x7A5690
 namespace gamemd {
@@ -442,6 +445,7 @@ AbstractClass * * CComObject_CChatEventSink___ATL::FireEvent(int a1, int a2, uns
   return 0; /*0x7a571f*/
 }
 } // namespace gamemd
+}
 
 // 0x7A7B60
 namespace gamemd {
@@ -568,6 +572,7 @@ LABEL_41:
   }
 }
 } // namespace gamemd
+}
 
 // 0x7A7EA0
 namespace gamemd {
@@ -716,6 +721,7 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_22(int a1, int a2, int a
   return 0; /*0x7a7fbd*/
 }
 } // namespace gamemd
+}
 
 // 0x7A8DA0
 namespace gamemd {
@@ -784,6 +790,7 @@ int CComObject_CChatEventSink___ATL::DispatchStub_16(int a1, int a2, int a3, con
   return 0; /*0x7a8de7*/
 }
 } // namespace gamemd
+}
 
 // 0x7A8ED0
 namespace gamemd {
@@ -826,6 +833,7 @@ LABEL_21:
   return 0; /*0x7a8edc*/
 }
 } // namespace gamemd
+}
 
 // 0x7A8FC0
 namespace gamemd {
@@ -833,6 +841,7 @@ AbstractClass * * CComObject_CChatEventSink___ATL_DispatchStub_17()
 {
 // (no pseudocode — ASM-only function)
 } // namespace gamemd
+}
 
 // 0x7A9110
 namespace gamemd {
@@ -875,6 +884,7 @@ LABEL_21:
   return 0; /*0x7a911c*/
 }
 } // namespace gamemd
+}
 
 // 0x7A9200
 namespace gamemd {
@@ -994,6 +1004,7 @@ LABEL_12:
   }
 }
 } // namespace gamemd
+}
 
 // 0x7A9550
 namespace gamemd {
@@ -1098,6 +1109,7 @@ LABEL_27:
   return 0; /*0x7a9561*/
 }
 } // namespace gamemd
+}
 
 // 0x7A9800
 namespace gamemd {
@@ -1177,6 +1189,7 @@ LABEL_19:
   }
 }
 } // namespace gamemd
+}
 
 // 0x7AA6D0
 namespace gamemd {
@@ -1250,6 +1263,7 @@ void CComObject_CChatEventSink___ATL_DispatchStub_19()
   return 0; /*0x7aa6fa*/
 }
 } // namespace gamemd
+}
 
 // 0x7AB440
 namespace gamemd {
@@ -1357,6 +1371,7 @@ LABEL_31:
   return 0; /*0x7ab654*/
 }
 } // namespace gamemd
+}
 
 // 0x7AB670
 namespace gamemd {
@@ -1446,6 +1461,7 @@ int CComObject_CChatEventSink___ATL::DispatchStub_24(int a1, int a2, int a3, int
   return 0; /*0x7ab681*/
 }
 } // namespace gamemd
+}
 
 // 0x7AB8E0
 namespace gamemd {
@@ -1534,6 +1550,7 @@ int CComObject_CChatEventSink___ATL::DispatchStub_33(int a1, int a2, int a3)
   }
 }
 } // namespace gamemd
+}
 
 // 0x7ABAF0
 namespace gamemd {
@@ -1625,6 +1642,7 @@ LABEL_19:
   return 0; /*0x7abd34*/
 }
 } // namespace gamemd
+}
 
 // 0x7ABD40
 namespace gamemd {
@@ -1725,6 +1743,7 @@ LABEL_21:
   }
 }
 } // namespace gamemd
+}
 
 // 0x7ABFA0
 namespace gamemd {
@@ -1817,6 +1836,7 @@ LABEL_20:
   return 0; /*0x7ac1f7*/
 }
 } // namespace gamemd
+}
 
 // 0x7AC220
 namespace gamemd {
@@ -1921,6 +1941,7 @@ LABEL_21:
   return 0; /*0x7ac493*/
 }
 } // namespace gamemd
+}
 
 // 0x7AC6B0
 namespace gamemd {
@@ -1942,6 +1963,7 @@ int CComObject_CChatEventSink___ATL::Release()
   return v1; /*0x7ac6f4*/
 }
 } // namespace gamemd
+}
 
 // 0x7AC700
 namespace gamemd {
@@ -1993,15 +2015,17 @@ LABEL_17:
   return 0; /*0x7ac711*/
 }
 } // namespace gamemd
+}
 
 // 0x7AE5B0
 namespace gamemd {
 int CComObject_CChatEventSink___ATL::Check(TechnoTypeClass * aP1)
 {
 {
-  return this->vt_slot_24(aP1) & ((1 << *(_DWORD *)(this + 12)) - 1); /*0x7ae5c4*/
+  return this->vt_slot_24(aP1) & ((1 << this->u32_C) - 1); /*0x7ae5c4*/
 }
 } // namespace gamemd
+}
 
 // 0x7A5220
 namespace gamemd {

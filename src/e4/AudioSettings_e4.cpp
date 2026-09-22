@@ -14,6 +14,7 @@ void AudioSettings::SetFlag70(char a2)
   byte_A83D22 = a2; /*0x5fa447*/
   Debug::Log(); /*0x5fa463*/
 }
+}
 
 // 0x5FA470
 void AudioSettings::SetFlag68(char a2)
@@ -22,6 +23,7 @@ void AudioSettings::SetFlag68(char a2)
   this->q044 = a2; /*0x5fa474*/
   byte_A83D20 = a2; /*0x5fa477*/
   Debug::Log(); /*0x5fa493*/
+}
 }
 
 // 0x6B6300
@@ -287,4 +289,5 @@ AbstractClass * * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned in
   }
   *(_DWORD *)GetWindowLongA(hDlg, 8) = 1; /*0x6b69b5*/
   return 0; /*0x6b6619*/
+}
 }

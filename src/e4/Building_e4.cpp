@@ -182,6 +182,7 @@ LABEL_41:
   return &aP1->field_0; /*0x425faa*/
 }
 } // namespace gamemd
+}
 
 // 0x485020
 namespace gamemd {
@@ -189,13 +190,14 @@ int Building::GetNthOfType()
 {
 {
 
-  int v2 = FindBuildingByTiberiumType(*(_DWORD *)(this + 68)); /*0x485026*/
+  int v2 = FindBuildingByTiberiumType(this->u32_44); /*0x485026*/
   if ( v2 == -1 ) /*0x48502e*/
     return 0; /*0x485030*/
   else
-    return (*(unsigned __int8 *)(this + 286) + 1) * *(_DWORD *)(*((_DWORD *)BuildingClass_InstanceArray + v2) + 184); /*0x48504f*/
+    return (*(unsigned __int8 *)(&this->u32_706) + 1) * *(_DWORD *)(*((_DWORD *)BuildingClass_InstanceArray + v2) + 184); /*0x48504f*/
 }
 } // namespace gamemd
+}
 
 // 0x772A90
 namespace gamemd {
@@ -213,6 +215,7 @@ int Building::GetRenderType()
   return result; /*0x772ab3*/
 }
 } // namespace gamemd
+}
 
 // 0x69E7E0
 namespace gamemd {

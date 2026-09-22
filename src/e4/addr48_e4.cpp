@@ -76,6 +76,7 @@ ConvertClass * * E4Recv_4880F0::sub_4880F0(int a2)
   return 1; /*0x4881fd*/
 }
 } // namespace gamemd
+}
 
 // 0x489180
 namespace gamemd {
@@ -101,6 +102,7 @@ void Network_SendTimestamp(int a1, int a2, int a3, int a4)
   return result; /*0x4891b8*/
 }
 } // namespace gamemd
+}
 
 // 0x489280
 namespace gamemd {
@@ -887,6 +889,7 @@ LABEL_213:
   return v103;
 }
 } // namespace gamemd
+}
 
 // 0x48A620
 namespace gamemd {
@@ -937,6 +940,7 @@ AbstractClass * * CreateSmokeEffectAt(int a1, int a2, int a3, int a4, int a5, ch
   return v7; /*0x48a6ef*/
 }
 } // namespace gamemd
+}
 
 // 0x48A9D0
 namespace gamemd {
@@ -978,6 +982,7 @@ void Math_SolveTrajectory(char a1, int a2, int a3, int a4, double a5, int a6)
   }
 }
 } // namespace gamemd
+}
 
 // 0x48B0E0
 namespace gamemd {
@@ -1030,6 +1035,7 @@ AbstractClass * * CommBufferClass::sub_48B0E0(int a2, int a3, size_t Size, int a
   return this; /*0x48b1e6*/
 }
 } // namespace gamemd
+}
 
 // 0x48BB60
 namespace gamemd {
@@ -1089,6 +1095,7 @@ LABEL_12:
   return !*v7 || (*(unsigned __int8 (__thiscall **)(_DWORD, int))(*(_DWORD *)*v7 + 20))(*v7, v1) == 0; /*0x48bc1d*/
 }
 } // namespace gamemd
+}
 
 // 0x48BC20
 namespace gamemd {
@@ -1101,6 +1108,7 @@ int CompareFuncInt(unsigned int * a1, unsigned int * a2)
     return *a1 >= *a2 ? 1 : -1;
 }
 } // namespace gamemd
+}
 
 // 0x48C8B0
 namespace gamemd {
@@ -1267,6 +1275,7 @@ LABEL_45:
   return PostFrameCleanup(); /*0x48c990*/
 }
 } // namespace gamemd
+}
 
 // 0x48CCC0
 namespace gamemd {
@@ -1398,6 +1407,7 @@ LABEL_34:
   return inited; /*0x48cd8b*/
 }
 } // namespace gamemd
+}
 
 // 0x48DEE0
 namespace gamemd {
@@ -1433,6 +1443,7 @@ LABEL_7:
   }
 }
 } // namespace gamemd
+}
 
 // 0x48E0B0
 namespace gamemd {
@@ -1498,6 +1509,7 @@ CellStruct * * sub_48E0B0()
   return result; /*0x48e26c*/
 }
 } // namespace gamemd
+}
 
 // 0x483710
 namespace gamemd {
@@ -1509,15 +1521,15 @@ char E4Recv_483710::sub_483710()
     IUnknown *v4;
     if ( !*(char *)(*(int *)&HouseClass_Player[29924] + 13478) )
     return 0;
-    BuildingByTiberiumType = FindBuildingByTiberiumType(*(IUnknown **)(this + 68));
+    BuildingByTiberiumType = FindBuildingByTiberiumType(*(IUnknown **)(&this->u32_188));
     if ( BuildingByTiberiumType == -1 )
     return 0;
     v3 = *(int *)(*(int *)&DataGlobal_B05488[41060] + 4 * BuildingByTiberiumType);
-    if ( (unsigned char)this->M284 || *(unsigned char *)(this + 286) >= *(int *)(v3 + 228) - 1 || *(double *)(v3 + 176) < 0.00001 )
+    if ( (unsigned char)this->M284 || this->u32_11E >= *(int *)(v3 + 228) - 1 || *(double *)(v3 + 176) < 0.00001 )
   {
     return 0;
   }
-    v4 = (IUnknown *)FindBuildingByTiberiumType(*(IUnknown **)(this + 68));
+    v4 = (IUnknown *)FindBuildingByTiberiumType(*(IUnknown **)(&this->u32_188));
     return Crate::FindPlacement(this, v4, 1);
 }
 }
@@ -1582,7 +1594,7 @@ int E4Recv_484F50::sub_484F50()
       {
     if ( !v7[413] )
     WinAPI::Wrapper(-2147467261);
-    result = (*(int (__stdcall **)(int, int))(*(int *)v7[413] + 124))( v7[413], *(unsigned char *)(this + 284));
+    result = (*(int (__stdcall **)(int, int))(*(int *)v7[413] + 124))( v7[413], this->u32_11C);
       }
     ++v5;
     --v6;

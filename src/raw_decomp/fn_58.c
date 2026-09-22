@@ -6129,9 +6129,9 @@ _DWORD *__thiscall HouseClass::ClampToUsableCell(_DWORD *this, MouseClass *aP1, 
     v15 = v14; /*0x586ef2*/
   }
   v16 = *((char *)v15 + 283); /*0x586f0a*/
-  if ( *((_BYTE *)v15 + 284) && v5 + v3 < v16 + this->q03D + 2 * this->q010 + 4 ) /*0x586f2c*/
+  if ( *((_BYTE *)v15 + 284) && v5 + v3 < v16 + this->q03D + 2 * this->q040 + 4 ) /*0x586f2c*/
     ++v16; /*0x586f2e*/
-  v17 = this->q010; /*0x586f2f*/
+  v17 = this->q040; /*0x586f2f*/
   if ( v5 + v3 > v16 + this->q03D + 2 * v17 ) /*0x586f46*/
   {
     if ( v5 + v3 > v16 + this->q03D + 2 * (v17 + this->q042) + 2 ) /*0x586f7e*/
@@ -8312,7 +8312,7 @@ _DWORD *__thiscall sub_589100(_DWORD *this, int a2, int a3)
     }
   }
   *this = &vt_DynamicVectorClass_SubzoneConnectionStruct; /*0x589178*/
-  this->q005 = 10; /*0x58917e*/
+  this->u32_14 = 10; /*0x58917e*/
   this->q010 = 0; /*0x589185*/
   return this; /*0x58918a*/
 }
@@ -11789,7 +11789,7 @@ _DWORD *__thiscall TileData_Constructor(_DWORD *this)
   this->nextArrayIndex = 0; /*0x58bdca*/
   this->needsSave = 0; /*0x58bdcd*/
   this->q028 = 0; /*0x58bdd0*/
-  this->q030 = 0; /*0x58bdd3*/
+  this->u32_30 = 0; /*0x58bdd3*/
   *(_WORD *)this = 0; /*0x58bdd6*/
   this->vtable2 = 0; /*0x58bdd9*/
   this->vtable4 = 0; /*0x58bddd*/
@@ -11904,22 +11904,22 @@ _DWORD *__thiscall RandomMap_TerrainTileData_Constructor(_DWORD *this, int a2)
   v5 = a2; /*0x58bfb5*/
   this->SlowdownDistance = IsGroundTypeRange; /*0x58bfb9*/
   *(_DWORD *)((char *)this + 22) = v5; /*0x58bfbe*/
-  this->q01A = 0; /*0x58bfc1*/
+  this->u32_68 = 0; /*0x58bfc1*/
   this->q1B0 = 1; /*0x58bfc4*/
   this->referenceCount = 0; /*0x58bfc7*/
   this->NeedsSaveOrLink = 0; /*0x58bfca*/
-  this->LineTrailColorDecrement = 0; /*0x58bfcd*/
+  this->u32_90 = 0; /*0x58bfcd*/
   this->ChargerBarrels_0x12 = 0; /*0x58bfd0*/
   this->TargetSpecialThreatCoefficient = 0; /*0x58bfd3*/
   this->q034 = 1; /*0x58bfd6*/
-  *((_BYTE *)this + 53) = 0; /*0x58bfd9*/
+  this->u32_D4 = 0; /*0x58bfd9*/
   this->TargetEffectivenessCoefficient = &vt_DynamicVectorClass_Cell; /*0x58bfdc*/
   this->zero_3C = 10; /*0x58bfe3*/
   this->TargetStrengthCoefficient = 0; /*0x58bfea*/
   this->TargetDistanceCoefficient = 0; /*0x58bfed*/
   this->q044 = 0; /*0x58bff0*/
-  this->ThreatAvoidanceCoefficient = 0; /*0x58bff3*/
-  this->q04C = 0; /*0x58bff6*/
+  this->u32_48 = 0; /*0x58bff3*/
+  this->u32_4C = 0; /*0x58bff6*/
   this->zero_3C = 100000; /*0x58bff9*/
   ++g_MapTileArrayEnd; /*0x58c014*/
   if ( g_RandomMap_TileData < dword_ABDF98 /*0x58c041*/
@@ -11970,7 +11970,7 @@ void __thiscall sub_58C070(_DWORD *this)
     this->q02C = 0; /*0x58c0ea*/
   }
   this->q0D4 = 0; /*0x58c0ed*/
-  this->q030 = 0; /*0x58c0f0*/
+  this->u32_30 = 0; /*0x58c0f0*/
 }
 
 

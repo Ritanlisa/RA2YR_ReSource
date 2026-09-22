@@ -22,6 +22,7 @@ int LayerClass::CoordinatesLegal(IUnknown * aP1)
   return v4 + v3 > v2 && v3 - v4 < v2 && v4 - v3 < v2 && v4 + v3 <= v2 + 2 * this->q0F8; /*0x568337*/
 }
 } // namespace gamemd
+}
 
 // 0x56DC20
 namespace gamemd {
@@ -452,6 +453,7 @@ LABEL_123:
   }
 }
 } // namespace gamemd
+}
 
 // 0x577D90
 namespace gamemd {
@@ -531,6 +533,7 @@ LABEL_25:
   return result; /*0x577f1e*/
 }
 } // namespace gamemd
+}
 
 // 0x578290
 namespace gamemd {
@@ -575,6 +578,7 @@ int LayerClass::CellIteratorNext()
   }
 }
 } // namespace gamemd
+}
 
 // 0x578350
 namespace gamemd {
@@ -592,6 +596,7 @@ int LayerClass::CellIteratorReset()
   return result; /*0x578382*/
 }
 } // namespace gamemd
+}
 
 // 0x578460
 namespace gamemd {
@@ -627,6 +632,7 @@ int LayerClass::IsWithinUsableArea(IUnknown * aP1, TechnoClass * aP2)
   return result; /*0x578525*/
 }
 } // namespace gamemd
+}
 
 // 0x581140
 namespace gamemd {
@@ -1142,3 +1148,4 @@ void* LayerClass::DestroyCliff(int * a1, int a2, int a3)
   return result;
 }
 } // namespace gamemd
+}

@@ -98,6 +98,7 @@ LABEL_25:
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x72D170
 namespace ra2 {

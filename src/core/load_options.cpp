@@ -162,6 +162,7 @@ pop     esi
 pop     ebx
 retn
 */
+}
 
 // IDA 0x55A0D0: VT00_Destroy (QueryInterface destructor)
 void LoadOptions::VT00_Destroy(char free_self) {
@@ -185,8 +186,11 @@ int LoadOptions::Run() {
   this->q00C = 0; /*0x5587f7*/
   return SaveLoadDialog::DlgProc(this);
 }
+}
+}
 // 0x559c20
 bool LoadOptions::Check() {
+}
 // 0x559c20
     char __thiscall LoadOptions::Check(const char **(void**)this)
 {
@@ -220,17 +224,17 @@ bool LoadOptions::Check() {
     v14 = 0;
     v13 = 0;
     sprintf(FileName, "*.%3s", v3);
-    v4 = ((int (__stdcall *)(char *, short *))FindFirstFileA)(FileName, FindFileData);
+    v4 = FindFirstFileA(FileName, FindFileData);
     if ( v4 != -1 )
   {
     while ( (FindFileData[0] & 0x116) != 0 || !_strcmpi(&FindFileData[22], MultiByteStr) || (*((unsigned char (__thiscall **)(const char **, short *, short *))*(void**)(this) + 4))(this, v7, FindFileData) != 1 || v16 )
     {
-    if ( !((int (__stdcall *)(int, short *))FindNextFileA)(v4, FindFileData) )
+    if ( !FindNextFileA(v4, FindFileData) )
     goto LABEL_9;
     }
     v2 = 1;
   }
-    LABEL_9: ((void (__stdcall *)(int))FindClose)(v4);
+    LABEL_9: FindClose(v4);
     return v2;
 }
 
@@ -503,6 +507,7 @@ retn    8
 */
 
 // IDA 0x55A2A0: ClearBuffer
+}
 // 0x55a2a0
 void LoadOptions::ClearBuffer() {
 // [IDA decompile] original pseudocode - translation pending (final goal)
@@ -517,6 +522,7 @@ void LoadOptions::ClearBuffer() {
 }
 
 // IDA 0x55A2D0: FindItem — linear search by first dword
+}
 // 0x55a2d0
 int LoadOptions::FindItem(FileEntryClass* const* key) {
 {
@@ -538,6 +544,7 @@ int LoadOptions::FindItem(FileEntryClass* const* key) {
 }
 
 // IDA 0x55A310: PointerToIndex
+}
 // 0x55a310
 uint32_t LoadOptions::PointerToIndex(FileEntryClass* ptr) {
     if (!is_active) return 0;

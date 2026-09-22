@@ -9,16 +9,16 @@ void E4Recv_7AE830::sub_7AE830()
 {
 {
 
-  unsigned int v2 = *(this + 2); /*0x7ae835*/
-  if ( v2 > *(this + 12) && (unsigned char)this->M20 != 1 ) /*0x7ae847*/
+  unsigned int v2 = this->vtable3; /*0x7ae835*/
+  if ( v2 > *(&this->vtable22) && (unsigned char)this->M20 != 1 ) /*0x7ae847*/
   {
     int * v3 = (int *)*this; /*0x7ae850*/
-    int v4 = *(this + 3); /*0x7ae853*/
+    int v4 = this->vtable4; /*0x7ae853*/
     int * v13 = (int *)*this; /*0x7ae856*/
-    *(this + 2) = v2 >> 1; /*0x7ae85c*/
-    *(this + 3) = v4 - 1; /*0x7ae864*/
+    this->vtable3 = v2 >> 1; /*0x7ae85c*/
+    this->vtable4 = v4 - 1; /*0x7ae864*/
     AbstractClass *v5 = __2_YAPAXI_Z(4 * (v2 >> 1)); /*0x7ae86f*/
-    unsigned int v6 = 4 * *(this + 2); /*0x7ae874*/
+    unsigned int v6 = 4 * this->vtable3; /*0x7ae874*/
     *this = v5; /*0x7ae87b*/
     memset(v5, 0, v6); /*0x7ae880*/
     if ( (int)v2 > 0 ) /*0x7ae88b*/
@@ -33,7 +33,7 @@ void E4Recv_7AE830::sub_7AE830()
   int v12; // eax
           do /*0x7ae8bd*/
           {
-            int v10 = ((int (__thiscall *)(int))*(this + 6))(v9) & ((1 << *(this + 3)) - 1); /*0x7ae8a7*/
+            int v10 = ((int (__thiscall *)(int))this->nextArrayIndex)(v9) & ((1 << this->vtable4) - 1); /*0x7ae8a7*/
             int v11 = *(_DWORD *)(*this + 4 * v10); /*0x7ae8ab*/
             *(_DWORD *)(*this + 4 * v10) = v9; /*0x7ae8b1*/
             v12 = *(_DWORD *)(v9 + 8); /*0x7ae8b3*/
@@ -52,3 +52,4 @@ void E4Recv_7AE830::sub_7AE830()
   }
 }
 } // namespace gamemd
+}

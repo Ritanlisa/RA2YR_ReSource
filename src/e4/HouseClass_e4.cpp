@@ -32,6 +32,7 @@ void ** HouseClass::PsiWarn(InfantryClass * aP0, int a2, int arg0, void * a3)
   return (void **)v9; /*0x43b66a*/
 }
 } // namespace gamemd
+}
 
 // 0x459840
 namespace gamemd {
@@ -55,6 +56,7 @@ int HouseClass::GetRepairStepAmount()
   return result; /*0x45986a*/
 }
 } // namespace gamemd
+}
 
 // 0x4ADEE0
 namespace gamemd {
@@ -103,6 +105,7 @@ LABEL_15:
   }
 }
 } // namespace gamemd
+}
 
 // 0x4ADFF0
 namespace gamemd {
@@ -138,6 +141,7 @@ int HouseClass::RevealShroudForAllies(char a1, int a2)
   return result; /*0x4ae0a4*/
 }
 } // namespace gamemd
+}
 
 // 0x4F54A0
 namespace gamemd {
@@ -197,6 +201,7 @@ void HouseClass::Construct(CCINIClass * aP1)
 //   int v51; //... [33044 chars total]
 // end truncated pseudocode
 }
+}
 
 // 0x4F9A50
 namespace gamemd {
@@ -227,6 +232,7 @@ LABEL_8:
   return (int)result; /*0x4f9a60*/
 }
 } // namespace gamemd
+}
 
 // 0x4FBE40
 namespace gamemd {
@@ -263,14 +269,15 @@ int HouseClass::IsCellOccupied(IUnknown * aP1, char a3)
 LABEL_10:
   if ( a3 /*0x4fbf28*/
     && ((unsigned short)this->killedUnitsOfHouses != *(_WORD *)&g_NetworkPlayerBuffer[6492]
-     || *(_WORD *)(this + 21474) != *(_WORD *)&g_NetworkPlayerBuffer[6494]) )
+     || this->u16_53E2 != *(_WORD *)&g_NetworkPlayerBuffer[6494]) )
   {
-    *((_DWORD *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)(this + 21472)) + 17) = -1; /*0x4fbf35*/
+    *((_DWORD *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)(&this->u32_218C2)) + 17) = -1; /*0x4fbf35*/
     this->killedUnitsOfHouses = *(_DWORD *)&g_NetworkPlayerBuffer[6492]; /*0x4fbf41*/
   }
   return v4; /*0x4fbf43*/
 }
 } // namespace gamemd
+}
 
 // 0x4FC790
 namespace gamemd {
@@ -314,6 +321,7 @@ int HouseClass::DestroyAllBuildings()
   return PriorityTarget; /*0x4fc81a*/
 }
 } // namespace gamemd
+}
 
 // 0x4FC820
 namespace gamemd {
@@ -358,6 +366,7 @@ int HouseClass::DestroyAllNonBuildingsNonNaval()
   return PriorityTarget; /*0x4fc8c6*/
 }
 } // namespace gamemd
+}
 
 // 0x4FC8D0
 namespace gamemd {
@@ -402,6 +411,7 @@ int HouseClass::DestroyAllNonBuildingsNaval()
   return PriorityTarget; /*0x4fc976*/
 }
 } // namespace gamemd
+}
 
 // 0x501540
 namespace gamemd {
@@ -462,6 +472,7 @@ int HouseClass::CanAlly(HouseClass * aP1)
   return v5 != v6 + 1; /*0x501575*/
 }
 } // namespace gamemd
+}
 
 // 0x501640
 namespace gamemd {
@@ -521,6 +532,7 @@ int HouseClass::CanDetect()
   return (char)v0; /*0x50174c*/
 }
 } // namespace gamemd
+}
 
 // 0x503040
 namespace gamemd {
@@ -1464,6 +1476,7 @@ LABEL_187:
 }
 
 } // namespace gamemd
+}
 
 // 0x505360
 namespace gamemd {
@@ -1542,6 +1555,7 @@ LABEL_20:
   return 1; /*0x505475*/
 }
 } // namespace gamemd
+}
 
 // 0x506EF0
 namespace gamemd {
@@ -1598,6 +1612,7 @@ AbstractClass * * HouseClass::AutoBuildScanAndSort(int a2, unsigned int * a3)
 //   do... [24279 chars total]
 // end truncated pseudocode
 }
+}
 
 // 0x508C30
 namespace gamemd {
@@ -1643,7 +1658,7 @@ LABEL_21:
     }
     while ( v4 < v13 ); /*0x508ca5*/
   }
-  *(_BYTE *)(this + 22395) = v12; /*0x508d45*/
+  this->u8_577B = v12; /*0x508d45*/
   TimerStruct *v6 = this->powerBlackoutTimer; /*0x508d50*/
   int v7 = this->q0AB; /*0x508d56*/
   if ( v6 != -1 ) /*0x508d5f*/
@@ -1669,10 +1684,11 @@ LABEL_28:
   int v10 = v8 < v9 && v9 && (!v8 || (double)this->powerOutput / (double)this->powerDrain < 1.0); /*0x508dc9*/
   if ( v14 != v10 ) /*0x508dd7*/
     LOBYTE(v10) = SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(this); /*0x508ddb*/
-  *(_BYTE *)(this + 22393) = 1; /*0x508de0*/
+  this->u8_5779 = 1; /*0x508de0*/
   return v10; /*0x508de7*/
 }
 } // namespace gamemd
+}
 
 // 0x508DF0
 namespace gamemd {
@@ -1681,7 +1697,7 @@ void * HouseClass::CanTogglePower()
 {
   #375 *result; // eax
 
-  *(_BYTE *)(this + 22393) = 0; /*0x508df0*/
+  this->u8_5779 = 0; /*0x508df0*/
   result = HouseClass_Player; /*0x508df7*/
   if ( (#375 *)this == HouseClass_Player ) /*0x508e01*/
   {
@@ -1747,6 +1763,7 @@ LABEL_29:
   return result; /*0x508f54*/
 }
 } // namespace gamemd
+}
 
 // 0x5098F0
 namespace gamemd {
@@ -1820,13 +1837,13 @@ CellStruct * * HouseClass::UpdateAITryFireSW()
             v5 = (unsigned short)this->preferredDefensiveCell2 == *(_WORD *)&g_NetworkPlayerBuffer[6492]; /*0x509a4b*/
             v12 = *(_DWORD *)(this->supersCount + 4 * i); /*0x509a52*/
             v11 = *(CellStruct **)&g_NetworkPlayerBuffer[6492]; /*0x509a56*/
-            if ( !v5 || *(_WORD *)(this + 21754) != *(_WORD *)&g_NetworkPlayerBuffer[6494] ) /*0x509a63*/
+            if ( !v5 || this->u16_54FA != *(_WORD *)&g_NetworkPlayerBuffer[6494] ) /*0x509a63*/
             {
               v8 = this->preferredDefensiveCell2; /*0x509a65*/
               goto LABEL_32; /*0x509a6b*/
             }
             if ( ((unsigned short)this->preferredDefensiveCell != *(_WORD *)&g_NetworkPlayerBuffer[6492] /*0x509a99*/
-               || *(_WORD *)(this + 21750) != *(_WORD *)&g_NetworkPlayerBuffer[6494])
+               || this->u16_54F6 != *(_WORD *)&g_NetworkPlayerBuffer[6494])
               && *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[30972] + 3808) + this->preferredDefensiveCellStartTime > *(int *)&g_NetworkPlayerBuffer[5960] )
             {
               v8 = this->preferredDefensiveCell; /*0x509a9b*/
@@ -1836,7 +1853,7 @@ LABEL_32:
               {
 LABEL_33:
                 v9 = (AbstractClass *)this->supers->IsClean(/*0x509aca*/
-                                        this + 596, &v12);
+                                        &this->u32_950, &v12);
                 SuperWeapon::FireSuperWeaponHouseClass((void *)this, v9, (AbstractClass *)&v11); /*0x509acd*/
               }
               break; /*0x509acd*/
@@ -1852,6 +1869,7 @@ LABEL_33:
   return v2; /*0x509ae2*/
 }
 } // namespace gamemd
+}
 
 // 0x50BC90
 namespace gamemd {
@@ -1868,6 +1886,7 @@ int HouseClass::CreatePowerOutage(int a2)
   return v4; /*0x50bcba*/
 }
 } // namespace gamemd
+}
 
 // 0x50BCD0
 namespace gamemd {
@@ -1876,14 +1895,15 @@ int HouseClass::CreateRadarOutage(int a2)
 {
   wchar_t *v2; // eax
   v2 = g_CurrentFrame; /*0x50bcd0*/
-  *(_BYTE *)(this + 22393) = 1; /*0x50bcdc*/
+  this->u8_5779 = 1; /*0x50bcdc*/
   this->radarBlackoutTimer = v2; /*0x50bcea*/
   int v4; // [esp+8h] [ebp-8h]
-  *(_DWORD *)(this + 692) = v4; /*0x50bcf4*/
+  this->u32_2B4 = v4; /*0x50bcf4*/
   this->q2B8 = a2; /*0x50bcf7*/
   return v4; /*0x50bcfa*/
 }
 } // namespace gamemd
+}
 
 // 0x50D320
 namespace gamemd {
@@ -1947,6 +1967,7 @@ void HouseClass_RespawnStartingBuildings()
   return result; /*0x50d439*/
 }
 } // namespace gamemd
+}
 
 // 0x50D440
 namespace gamemd {
@@ -2020,6 +2041,7 @@ LABEL_9:
   return result; /*0x50d51f*/
 }
 } // namespace gamemd
+}
 
 // 0x50D9E0
 namespace gamemd {
@@ -2029,6 +2051,7 @@ int HouseClass::GetInfSelfHealStep()
   return this->q059 * g_RulesClass_Instance->SelfHealInfantryAmount; /*0x50d9ef*/
 }
 } // namespace gamemd
+}
 
 // 0x50D9F0
 namespace gamemd {
@@ -2038,6 +2061,7 @@ int HouseClass::GetUnitSelfHealStep()
   return this->q05A * g_RulesClass_Instance->SelfHealUnitAmount; /*0x50d9ff*/
 }
 } // namespace gamemd
+}
 
 // 0x50E0E0
 namespace gamemd {
@@ -2088,6 +2112,7 @@ LABEL_16:
   }
 }
 } // namespace gamemd
+}
 
 // 0x5471B0
 namespace gamemd {
@@ -2103,6 +2128,7 @@ int HouseClass::GetCameoTypeIndex(int a2)
     return 0; /*0x5471dc*/
 }
 } // namespace gamemd
+}
 
 // 0x5D70F0
 namespace gamemd {
@@ -2308,6 +2334,7 @@ LABEL_34:
   return 0; /*0x5d730a*/
 }
 } // namespace gamemd
+}
 
 // 0x5D74A0
 namespace gamemd {
@@ -2354,6 +2381,7 @@ int HouseClass::InitAlliances()
   return 1; /*0x5d7549*/
 }
 } // namespace gamemd
+}
 
 // 0x5EE9D0
 namespace gamemd {
@@ -2439,6 +2467,7 @@ AbstractClass * * HouseClass::FindStartPositions()
   }
 }
 } // namespace gamemd
+}
 
 // 0x740DF0
 namespace gamemd {
@@ -2452,6 +2481,7 @@ int HouseClass::SetPrimaryFactory(int a2)
   return 1; /*0x740e14*/
 }
 } // namespace gamemd
+}
 
 // 0x429210
 namespace gamemd {
@@ -2751,15 +2781,15 @@ VectorClass * HouseClass_24::QueryInterface(char a2)
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_GraphicMenuItem;
-    if ( v3 && *((char *)(this) + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
+    this->IsAllocated = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (VectorClass *)this;

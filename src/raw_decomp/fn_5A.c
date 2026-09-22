@@ -1854,7 +1854,7 @@ int __thiscall RandomMapClass::PlaceTiberium(int *this)
 
   v1 = this; /*0x5a23af*/
   v2 = 0; /*0x5a23b1*/
-  v3 = this->q03C; /*0x5a23b4*/
+  v3 = this->u32_3C; /*0x5a23b4*/
   v4 = this->q010; /*0x5a23b7*/
   v46 = v1; /*0x5a23bd*/
   v45 = 0; /*0x5a23c1*/
@@ -2942,7 +2942,7 @@ int __thiscall sub_5A38C0(int *this)
   LayerClass::CellIteratorReset(&MEMORY[0x87F7E8]); /*0x5a38d4*/
   result = LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]); /*0x5a38de*/
   v3 = (int *)result; /*0x5a38e6*/
-  for ( i = (double)this->q017 * 0.01; result; v3 = (int *)result ) /*0x5a38f4*/
+  for ( i = (double)this->CellClass_field_5C * 0.01; result; v3 = (int *)result ) /*0x5a38f4*/
   {
     v4 = (char *)g_MapTileArray + 80 * (__int16)v3[9] + 80 * unk_89C2DC * (__int16)HIWORD(v3[9]); /*0x5a3920*/
     if ( CellClass::IsTerrainType(v3) ) /*0x5a3922*/
@@ -5747,14 +5747,14 @@ char __thiscall sub_5A76E0(int *this)
   int v14; // [esp+18h] [ebp-4h]
 
   v2 = *this; /*0x5a76ee*/
-  v3 = this->q004; /*0x5a76f0*/
+  v3 = this->u32_4; /*0x5a76f0*/
   v12 = (__int16)v3 + (__int16)v2; /*0x5a76fe*/
   if ( v12 > g_MapCellHeight_Value /*0x5a772a*/
     && (__int16)v2 - (__int16)v3 < g_MapCellHeight_Value
     && (__int16)v3 - (__int16)v2 < g_MapCellHeight_Value
     && v12 <= g_MapCellCount )
   {
-    v13 = this->q008 + v2 - 1; /*0x5a7737*/
+    v13 = this->M8 + v2 - 1; /*0x5a7737*/
     v12 = (__int16)v3 + (__int16)v13; /*0x5a7746*/
     if ( v12 > g_MapCellHeight_Value /*0x5a7772*/
       && (__int16)v13 - (__int16)v3 < g_MapCellHeight_Value
@@ -5783,7 +5783,7 @@ LABEL_24:
               return 1; /*0x5a78b9*/
             while ( 1 ) /*0x5a786b*/
             {
-              v9 = this->q004 + 3; /*0x5a786b*/
+              v9 = this->u32_4 + 3; /*0x5a786b*/
               LOWORD(v12) = v8; /*0x5a7874*/
               HIWORD(v12) = v9; /*0x5a7879*/
               v10 = (int *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v12); /*0x5a7883*/
@@ -5801,7 +5801,7 @@ LABEL_24:
               if ( !__OFSUB__(v2, v2 + 3) ) /*0x5a780e*/
                 break; /*0x5a780e*/
 LABEL_23:
-              if ( ++v3 >= this->q004 + 3 ) /*0x5a7859*/
+              if ( ++v3 >= this->u32_4 + 3 ) /*0x5a7859*/
                 goto LABEL_24; /*0x5a7859*/
             }
             while ( 1 ) /*0x5a7814*/
@@ -7263,7 +7263,7 @@ CCINIClass *__thiscall PlaceRandomAIBuildings(_DWORD *this)
   __int64 v34; // [esp+4Ch] [ebp-14h]
   _DWORD v35[3]; // [esp+54h] [ebp-Ch] BYREF
 
-  if ( this->q03C == 2 ) /*0x5a95bd*/
+  if ( this->u32_3C == 2 ) /*0x5a95bd*/
   {
     do /*0x5a95e7*/
     {
@@ -9591,7 +9591,7 @@ _DWORD *__thiscall DynamicVectorClass_BuildingType_Constructor(_DWORD *this, int
     }
   }
   *this = &vt_DynamicVectorClass_BuildingTypeClass_const; /*0x5ac943*/
-  this->q005 = 10; /*0x5ac949*/
+  this->u32_14 = 10; /*0x5ac949*/
   this->q010 = 0; /*0x5ac950*/
   return this; /*0x5ac959*/
 }
@@ -10603,7 +10603,7 @@ _DWORD *__thiscall TypeList::BuildingTypeCopy(_DWORD *this, VectorClass *aP1)
     }
   }
   this->q010 = aP1[1].vtable0; /*0x5ad6d1*/
-  this->q005 = aP1[1].Items; /*0x5ad6d7*/
+  this->u32_14 = aP1[1].Items; /*0x5ad6d7*/
   *this = &vt_TypeList_BuildingTypeClass_const; /*0x5ad6da*/
   return this; /*0x5ad6e2*/
 }
@@ -11437,18 +11437,18 @@ ObjectClass *__thiscall Matrix3D::Constructor(float *this, AbstractClass *a2, Ab
 {
   AbstractClass *v5; // [esp+0h] [ebp-8h]
 
-  *(this + 1) = 0.0; /*0x5ae6fa*/
-  *(this + 2) = 0.0; /*0x5ae6fd*/
-  *(this + 3) = 0.0; /*0x5ae700*/
-  *(this + 4) = 0.0; /*0x5ae703*/
-  *(this + 6) = 0.0; /*0x5ae706*/
-  *(this + 7) = 0.0; /*0x5ae709*/
-  *(this + 8) = 0.0; /*0x5ae70c*/
-  *(this + 9) = 0.0; /*0x5ae70f*/
-  *(this + 11) = 0.0; /*0x5ae712*/
+  this->q004 = 0.0; /*0x5ae6fa*/
+  this->q008 = 0.0; /*0x5ae6fd*/
+  this->q00C = 0.0; /*0x5ae700*/
+  this->q004 = 0.0; /*0x5ae703*/
+  this->q018 = 0.0; /*0x5ae706*/
+  this->q01C = 0.0; /*0x5ae709*/
+  this->q008 = 0.0; /*0x5ae70c*/
+  this->q024 = 0.0; /*0x5ae70f*/
+  this->q02C = 0.0; /*0x5ae712*/
   *this = 1.0; /*0x5ae719*/
-  *(this + 5) = 1.0; /*0x5ae71b*/
-  *(this + 10) = 1.0; /*0x5ae71e*/
+  this->q014 = 1.0; /*0x5ae71b*/
+  this->q028 = 1.0; /*0x5ae71e*/
   Matrix2D::Rotate(this, a2); /*0x5ae724*/
   Matrix3x3::RotateX(this, aP1); /*0x5ae730*/
   *(float *)&v5 = -*(float *)&a2; /*0x5ae73e*/
@@ -12367,7 +12367,7 @@ int __thiscall sub_5AFEF0(int this)
 void __thiscall sub_5AFF50(_DWORD *this)
 {
   *this = &MechLocomotionClass::`vftable'; /*0x5aff50*/
-  this->__pad_004 = &vt_MechLocomotionClass; /*0x5aff56*/
+  this->vtable2 = &vt_MechLocomotionClass; /*0x5aff56*/
   LocomotionClass::Construct(this); /*0x5aff5d*/
 }
 

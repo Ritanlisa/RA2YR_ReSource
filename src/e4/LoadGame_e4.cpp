@@ -76,6 +76,7 @@ int LoadGame::LoadTriggerEvents()
   }
   return (*(int (__stdcall **)(void *, __int16 *, int, _DWORD))(this->q00C)(this, &word_B04D78, 4, 0) >= 0; /*0x6608df*/
 }
+}
 
 // 0x660F10
 int LoadGame::RemoveItem(int a2)
@@ -98,6 +99,7 @@ int LoadGame::RemoveItem(int a2)
     while ( v3 < this->q010 ); /*0x660f34*/
   }
   return 1; /*0x660f39*/
+}
 }
 
 // 0x67E730
@@ -912,6 +914,7 @@ LABEL_222:
   }
   return result;
 }
+}
 
 // 0x69B5B0
 int LoadGame::LoadBlock300(int a2)
@@ -932,6 +935,7 @@ int LoadGame::LoadBlock300(int a2)
     }
   }
   return result; /*0x69b5f2*/
+}
 }
 
 // 0x751710
@@ -1015,6 +1019,7 @@ int LoadGame::RestoreAudioState()
   }
   return result; /*0x751895*/
 }
+}
 
 // 0x7533F0
 int LoadGame::LoadMagicAndAudio()
@@ -1056,6 +1061,7 @@ int LoadGame::LoadMagicAndAudio()
     }
   }
   return result; /*0x7534c6*/
+}
 }
 
 // 0x54E7B0

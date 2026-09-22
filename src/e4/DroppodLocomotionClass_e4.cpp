@@ -171,6 +171,7 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
   }
 }
 } // namespace gamemd
+}
 
 // 0x4B6200
 int DropPodLocomotionClass::ddtor(int a1, unsigned int * a2)
@@ -286,9 +287,9 @@ DropPodLocomotionClass * DropPodLocomotionClass::ProcessMove(char a2)
 {
     ILocomotion *v3;
     *(void**)this = (unsigned int)vt_DropPodLocomotionClass;
-    *(this + 1) = (unsigned int)vt_DropPodLocomotionClass;
-    *(this + 6) = (ILocomotion *)&vt_DropPodLocomotionClass;
-    v3 = *(this + 11);
+    this->vtable2 = (unsigned int)vt_DropPodLocomotionClass;
+    this->vtable3 = (ILocomotion *)&vt_DropPodLocomotionClass;
+    v3 = *(&this->vtable21);
     if ( v3 )
     (*(void (__stdcall **)(ILocomotion *))(*(int *)(v3) + 8))(v3);
     LocomotionClass::Construct(this);

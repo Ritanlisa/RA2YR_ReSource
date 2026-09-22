@@ -65,6 +65,7 @@ LABEL_7:
   return result; /*0x722236*/
 }
 } // namespace gamemd
+}
 
 // 0x722C40
 namespace gamemd {
@@ -115,6 +116,7 @@ LABEL_7:
   return result; /*0x722cf7*/
 }
 } // namespace gamemd
+}
 
 // 0x725040
 namespace gamemd {
@@ -127,6 +129,7 @@ int CompareFunc2Int(unsigned int * a1, unsigned int * a2)
     return *a1 >= *a2 ? 1 : -1;
 }
 } // namespace gamemd
+}
 
 // 0x725C70
 namespace gamemd {
@@ -185,6 +188,7 @@ AbstractClass * * sub_725C70()
   return result; /*0x725d8c*/
 }
 } // namespace gamemd
+}
 
 // 0x728200
 namespace gamemd {
@@ -215,6 +219,7 @@ void sub_728200()
   }
 }
 } // namespace gamemd
+}
 
 // 0x72AA40
 namespace gamemd {
@@ -255,6 +260,7 @@ unsigned char char LoadMouseClassResources()
   return result; /*0x72ac38*/
 }
 } // namespace gamemd
+}
 
 // 0x72ADE0
 namespace gamemd {
@@ -319,6 +325,7 @@ void Palette_LoadSimple(char * Source, unsigned int * a2, unsigned int * a3)
   return BufferIOFileClass::Dtor(v16); /*0x72af07*/
 }
 } // namespace gamemd
+}
 
 // 0x72DAA0
 namespace gamemd {
@@ -369,6 +376,7 @@ void CleanupEVASystem()
   }
 }
 } // namespace gamemd
+}
 
 // 0x72DFB0
 namespace gamemd {
@@ -422,6 +430,7 @@ LABEL_3:
   return result; /*0x72e19f*/
 }
 } // namespace gamemd
+}
 
 // 0x72E2D0
 namespace gamemd {
@@ -491,6 +500,7 @@ void DrawScoreScreenStats(ConvertClass * aP0, int a2)
   return (int)result->__pad_0; /*0x72e44a*/
 }
 } // namespace gamemd
+}
 
 // 0x72E450
 namespace gamemd {
@@ -670,6 +680,7 @@ AbstractClass * * RenderScoreScreen(ConvertClass * a1, int * a2, char a3)
       0);
 }
 } // namespace gamemd
+}
 
 // 0x72EC70
 namespace gamemd {
@@ -837,6 +848,7 @@ int * * MouseClass_SetupResources(int a1, int a2)
   return result; /*0x72ef32*/
 }
 } // namespace gamemd
+}
 
 // 0x72F540
 namespace gamemd {
@@ -852,7 +864,7 @@ AbstractClass * * RenderCreditsScreen(int a1, ConvertClass * a2, char a3)
     SetupScreenBuffers(*(int *)&HouseClass_Player[44600], *(int *)&HouseClass_Player[44604]); /*0x72f56a*/
     stru_B05488[42884] = 1; /*0x72f56f*/
   }
-  (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)a1 + 24))(a1, 0); /*0x72f57d*/
+  (*(void (__thiscall **)(int, _DWORD))(a1->nextArrayIndex)(a1, 0); /*0x72f57d*/
   int v8 = 0; /*0x72f585*/
   i = 0; /*0x72f589*/
   v8 = **(_DWORD **)&stru_B05488[42920]; /*0x72f58f*/
@@ -1175,6 +1187,7 @@ AbstractClass * * RenderCreditsScreen(int a1, ConvertClass * a2, char a3)
     0);
 }
 } // namespace gamemd
+}
 
 // 0x72FC60
 namespace gamemd {
@@ -1478,6 +1491,7 @@ unsigned int * Screen_SetupBuffers(int a1, int a2)
   return result; /*0x7300d6*/
 }
 } // namespace gamemd
+}
 
 // 0x720230
 namespace gamemd {

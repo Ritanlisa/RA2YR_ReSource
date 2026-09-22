@@ -53,3 +53,4 @@ LABEL_14:
   aP1->field_0 = *(_DWORD *)this; /*0x4c945a*/
   return &aP1->field_0; /*0x4c944d*/
 }
+}

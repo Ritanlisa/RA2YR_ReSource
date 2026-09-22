@@ -575,16 +575,16 @@ _DWORD *__thiscall ConnectionPointClass::Construct(_DWORD *this, _DWORD *a1, Con
   this->q004 = *a1; /*0x4a087c*/
   this->q008 = a1[1]; /*0x4a0881*/
   this->q00C = a1[2]; /*0x4a0887*/
-  this->q010 = a1[3]; /*0x4a088d*/
+  this->u32_10 = a1[3]; /*0x4a088d*/
   this->q018 = aP2; /*0x4a0896*/
   this->q014 = 0; /*0x4a0899*/
   this->q020 = 0; /*0x4a089c*/
   this->q024 = 0; /*0x4a089f*/
-  *((_BYTE *)this + 40) = 1; /*0x4a08a2*/
-  *((_BYTE *)this + 41) = 0; /*0x4a08a6*/
+  this->u8_28 = 1; /*0x4a08a2*/
+  this->u8_29 = 0; /*0x4a08a6*/
   this->q01C = &vt_DynamicVectorClass_tagCONNECTDATA; /*0x4a08a9*/
-  this->q00C = 10; /*0x4a08b0*/
-  this->q00B = 0; /*0x4a08b7*/
+  this->ptr_30 = 10; /*0x4a08b0*/
+  this->u32_2C = 0; /*0x4a08b7*/
   *this = &vt_ConnectionPointClass; /*0x4a08ba*/
   (*(void (__stdcall **)(ConnectionPointClass *))(*(_DWORD *)aP2->__pad_0 + 4))(aP2); /*0x4a08c3*/
   return this; /*0x4a08c8*/
@@ -822,9 +822,9 @@ _DWORD *__thiscall VectorClass_ptr_BuildChoiceClass_int_ouseClass::Constructor(
   int v10; // [esp-4h] [ebp-14h]
 
   v3 = this + 3; /*0x4a0c2c*/
-  this->q004 = 0; /*0x4a0c2f*/
-  this->q008 = 0; /*0x4a0c32*/
-  this->q004 = 0; /*0x4a0c37*/
+  this->Items = 0; /*0x4a0c2f*/
+  this->Capacity = 0; /*0x4a0c32*/
+  this->Items = 0; /*0x4a0c37*/
   this->q005 = 0; /*0x4a0c3a*/
   this->q018 = 1; /*0x4a0c3d*/
   *((_BYTE *)this + 25) = 0; /*0x4a0c41*/
@@ -866,7 +866,7 @@ _DWORD *__thiscall VectorClass_ptr_BuildChoiceClass_int_ouseClass::Constructor(
   *this = &vt_EnumConnectionPointsClass; /*0x4a0cac*/
   for ( i = 0; i < this->q01C; ++i ) /*0x4a0cb9*/
   {
-    v10 = *(_DWORD *)(this->q004 + 4 * i); /*0x4a0cc1*/
+    v10 = *(_DWORD *)(this->Items + 4 * i); /*0x4a0cc1*/
     (*(void (__stdcall **)(int))(*(_DWORD *)v10 + 4))(v10); /*0x4a0cc4*/
   }
   return this; /*0x4a0cd1*/
@@ -885,8 +885,8 @@ _DWORD *__thiscall sub_4A0CE0(_DWORD *this, _DWORD *a2)
   int v10; // [esp-4h] [ebp-14h]
 
   v3 = this + 3; /*0x4a0cf2*/
-  this->q004 = a2[1]; /*0x4a0cf5*/
-  this->q008 = 0; /*0x4a0cf8*/
+  this->Items = a2[1]; /*0x4a0cf5*/
+  this->Capacity = 0; /*0x4a0cf8*/
   this->q010 = 0; /*0x4a0cfd*/
   this->q014 = 0; /*0x4a0d00*/
   this->q018 = 1; /*0x4a0d03*/
@@ -2370,7 +2370,7 @@ _DWORD *__thiscall sub_4A2350(_DWORD *this)
 {
   *this = 0; /*0x4a2354*/
   this->q004 = 0; /*0x4a2356*/
-  this->q020 = 0; /*0x4a2359*/
+  this->u32_20 = 0; /*0x4a2359*/
   this->q024 = 0; /*0x4a235c*/
   this->q028 = 0; /*0x4a235f*/
   this->q00C = 0; /*0x4a2362*/
@@ -2621,7 +2621,7 @@ int __thiscall Delegate::StreamToBuffer(CacheStraw *this, char *a1, int a3)
 // ==== 0x004A2820  CStreamClass::Constructor  this=CStreamClass  sig=csp ====
 _DWORD *__thiscall sub_4A2820(_DWORD *this)
 {
-  this->q008 = 0; /*0x4a282a*/
+  this->Capacity = 0; /*0x4a282a*/
   this->q00C = 0; /*0x4a282d*/
   this->q040 = 0; /*0x4a2830*/
   this->q044 = 0; /*0x4a2833*/
@@ -2645,31 +2645,31 @@ void __thiscall sub_4A2880(void *this)
   int v5; // esi
   ULONG v6; // [esp+0h] [ebp-8h]
 
-  v2 = this->q008; /*0x4a2886*/
+  v2 = this->Capacity; /*0x4a2886*/
   *(_DWORD *)this = &CStreamClass::`vftable'; /*0x4a2889*/
   this->vtable2 = &vt_CStreamClass; /*0x4a2891*/
   if ( v2 ) /*0x4a2898*/
   {
-    if ( this->q044 && *((int *)this + 5) > 0 && this->q008 ) /*0x4a28aa*/
+    if ( this->q044 && *((int *)this + 5) > 0 && this->Capacity ) /*0x4a28aa*/
       IStream::Read(*((IStream **)this + 6), *((void **)this + 5), v6); /*0x4a28b4*/
-    if ( this->q008 /*0x4a28da*/
-      && (*(int (__stdcall **)(_DWORD, _DWORD))(**((_DWORD **)this + 2) + 32))(this->q008, 0) >= 0 )
+    if ( this->Capacity /*0x4a28da*/
+      && (*(int (__stdcall **)(_DWORD, _DWORD))(**((_DWORD **)this + 2) + 32))(this->Capacity, 0) >= 0 )
     {
-      if ( !this->q008 ) /*0x4a28dc*/
+      if ( !this->Capacity ) /*0x4a28dc*/
         WinAPI::Wrapper(-2147467261); /*0x4a28e6*/
-      (*(void (__stdcall **)(_DWORD))(**((_DWORD **)this + 2) + 8))(this->q008); /*0x4a28f1*/
-      this->q008 = 0; /*0x4a28f4*/
+      (*(void (__stdcall **)(_DWORD))(**((_DWORD **)this + 2) + 8))(this->Capacity); /*0x4a28f1*/
+      this->Capacity = 0; /*0x4a28f4*/
     }
   }
   __3_YAXPAX_Z(*((void **)this + 8)); /*0x4a28fb*/
   v3 = (void *)this->q018; /*0x4a2900*/
-  this->q008 = 0; /*0x4a2903*/
+  this->Capacity = 0; /*0x4a2903*/
   __3_YAXPAX_Z(v3); /*0x4a2907*/
   v4 = (void *)this->q01C; /*0x4a290c*/
   this->q018 = 0; /*0x4a290f*/
   __3_YAXPAX_Z(v4); /*0x4a2913*/
   this->q01C = 0; /*0x4a2918*/
-  v5 = this->q008; /*0x4a291b*/
+  v5 = this->Capacity; /*0x4a291b*/
   if ( v5 ) /*0x4a2923*/
     (*(void (__stdcall **)(int))(*(_DWORD *)v5 + 8))(v5); /*0x4a2928*/
 }
@@ -5319,7 +5319,7 @@ Dial8Class *__thiscall Dial8Class::Constructor(
   aP5b = 42 * (int)aP4 / 2 / 100; /*0x4a55a7*/
   this->q01F = aP5b + v13; /*0x4a55ae*/
   aP4a = 42 * (int)v7 / 2 / 100; /*0x4a55df*/
-  this->q008 = v12 - aP4a; /*0x4a55e8*/
+  this->u32_20 = v12 - aP4a; /*0x4a55e8*/
   this->q02C = v12 - aP4a; /*0x4a55fe*/
   v14 = 6 * (int)aP4 / 2 / 10; /*0x4a5607*/
   this->q021 = v14 + v13; /*0x4a560c*/
@@ -6741,7 +6741,7 @@ int __thiscall DiskLaserClass::Fire(_DWORD *this, int a2, InfantryClass *aP2, Di
         v9 = Math::CalcAngle((double)v8[1] - (double)(int)v7[1], (double)(int)*v7 - (double)*v8); /*0x4a72eb*/
         result = Math::RoundToInt((v9 - 1.570796326794897) * -10430.06004058427); /*0x4a72ff*/
         LOWORD(v12) = result; /*0x4a7304*/
-        this->q0D0 = (int)(((((v12 >> 11) + 1) >> 1) & 0xF) + 8) % 16; /*0x4a7326*/
+        this->u8_34 = (int)(((((v12 >> 11) + 1) >> 1) & 0xF) + 8) % 16; /*0x4a7326*/
         this->q030 = 0; /*0x4a7329*/
         this->q038 = 0; /*0x4a7330*/
         return result; /*0x4a7330*/
@@ -7163,7 +7163,7 @@ void __thiscall DiskLaserClass::PointerGotInvalid(_DWORD *this, AbstractClass *a
 
   if ( aP1 == (AbstractClass *)this->q024 ) /*0x4a790b*/
   {
-    this->q030 = -1; /*0x4a790d*/
+    this->u32_30 = -1; /*0x4a790d*/
     if ( *(int *)&MEMORY[0xB077F8].__pad_579C[10004] < *(int *)&MEMORY[0xB077F8].__pad_579C[9996] /*0x4a7948*/
       || (MEMORY[0xB077F8].__pad_579C[10001] || !*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[9996])
       && *(int *)&MEMORY[0xB077F8].__pad_579C[10008] > 0
@@ -7178,7 +7178,7 @@ void __thiscall DiskLaserClass::PointerGotInvalid(_DWORD *this, AbstractClass *a
   }
   if ( aP1 == (AbstractClass *)this->q028 ) /*0x4a796a*/
   {
-    this->q030 = -1; /*0x4a796c*/
+    this->u32_30 = -1; /*0x4a796c*/
     if ( *(int *)&MEMORY[0xB077F8].__pad_579C[10004] < *(int *)&MEMORY[0xB077F8].__pad_579C[9996] /*0x4a79a8*/
       || (MEMORY[0xB077F8].__pad_579C[10001] || !*(_DWORD *)&MEMORY[0xB077F8].__pad_579C[9996])
       && *(int *)&MEMORY[0xB077F8].__pad_579C[10008] > 0
@@ -7557,7 +7557,7 @@ char __thiscall VectorClass::AppendCopy(_DWORD *this, DynamicVector *aP1)
   {
     if ( !this->q034 && v3 ) /*0x4a7ff6*/
       return 0; /*0x4a7ff6*/
-    v4 = this->q005; /*0x4a7ff8*/
+    v4 = this->u32_14; /*0x4a7ff8*/
     if ( v4 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*this + 8))(this, v3 + v4, 0) ) /*0x4a8008*/
       return 0; /*0x4a800f*/
   }
@@ -8028,8 +8028,8 @@ _DWORD *__thiscall sub_4A8730(_DWORD *this)
   this->q11A8 = 0; /*0x4a87ac*/
   this->q11AC = -1; /*0x4a87b2*/
   this->q11B0 = 0; /*0x4a87b8*/
-  *((_BYTE *)this + 4529) = 0; /*0x4a87be*/
-  *((_BYTE *)this + 4530) = 0; /*0x4a87c4*/
+  this->u8_11B1 = 0; /*0x4a87be*/
+  this->u8_11B2 = 0; /*0x4a87c4*/
   this->q11B3 = 0; /*0x4a87ca*/
   this->q11B4 = 0; /*0x4a87d0*/
   this->q11B8 = -1; /*0x4a87d6*/
@@ -9985,13 +9985,13 @@ int __thiscall TacticalClass::DispatchMode(int *this, MouseClass *aP1)
     LOBYTE(v6) = MEMORY[0x87F8E4].__pad_125C[16900]; /*0x4aad95*/
     return (*(int (__thiscall **)(int *, _DWORD, int))(*this + 72))(this, 0, v6); /*0x4aada1*/
   }
-  else if ( *((_BYTE *)this + 4529) ) /*0x4aada9*/
+  else if ( this->u8_11B1 ) /*0x4aada9*/
   {
     BuildingClass::TogglePower(this, 0); /*0x4aadb7*/
     LOBYTE(v7) = MEMORY[0x87F8E4].__pad_125C[16900]; /*0x4aadbc*/
     return (*(int (__thiscall **)(int *, _DWORD, int))(*this + 72))(this, 0, v7); /*0x4aadc8*/
   }
-  else if ( *((_BYTE *)this + 4530) ) /*0x4aadd0*/
+  else if ( this->u8_11B2 ) /*0x4aadd0*/
   {
     TacticalClass::SetObserverMode(this, 0); /*0x4aadde*/
     LOBYTE(v8) = MEMORY[0x87F8E4].__pad_125C[16900]; /*0x4aade3*/
@@ -11236,9 +11236,9 @@ _DWORD *__thiscall TacticalClass_SetDisplayMode(_BYTE *this, _DWORD *a2, char a3
         result = (_DWORD *)this->q11BC; /*0x4ac7d4*/
         if ( result ) /*0x4ac7dc*/
         {
-          *result = *((_DWORD *)this + 1136); /*0x4ac7ea*/
-          result[1] = *((_DWORD *)this + 1137); /*0x4ac7ef*/
-          result[2] = *((_DWORD *)this + 1138); /*0x4ac7f5*/
+          *result = this->u32_11C0; /*0x4ac7ea*/
+          result[1] = this->u32_11C4; /*0x4ac7ef*/
+          result[2] = this->q472; /*0x4ac7f5*/
           this->q11BC = 0; /*0x4ac7f8*/
           return (_DWORD *)(*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887640] + 16))(MEMORY[0x887640]); /*0x4ac80a*/
         }

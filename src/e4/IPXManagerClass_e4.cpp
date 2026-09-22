@@ -25,6 +25,7 @@ int IPXManagerClass::sendPacket(int a2, int a3, int a4)
   }
   return result; /*0x540dba*/
 }
+}
 
 // 0x541040
 int IPXManagerClass::send(int a2)
@@ -43,6 +44,7 @@ int IPXManagerClass::send(int a2)
       return -1; /*0x54105f*/
   }
   return result; /*0x541064*/
+}
 }
 
 // 0x541070
@@ -81,6 +83,7 @@ LABEL_5:
     }
   }
   return result; /*0x541093*/
+}
 }
 
 // 0x5415F0

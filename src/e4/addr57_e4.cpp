@@ -49,6 +49,7 @@ LABEL_20:
   return *(_BYTE *)(v4 + 282) == v3; /*0x574669*/
 }
 } // namespace gamemd
+}
 
 // 0x575EE0
 namespace gamemd {
@@ -192,6 +193,7 @@ Coord * * sub_575EE0(void * a1, int a2)
   return (char)v4; /*0x5761ef*/
 }
 } // namespace gamemd
+}
 
 // 0x578E60
 namespace gamemd {
@@ -281,6 +283,7 @@ void* CreateMapObject(ProgressScreenClass * aP0, int aP1)
   return v2; /*0x579000*/
 }
 } // namespace gamemd
+}
 
 // 0x57A430
 namespace gamemd {
@@ -475,6 +478,7 @@ MapClass * * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, I
   return 1; /*0x57a81e*/
 }
 } // namespace gamemd
+}
 
 // 0x57ACF0
 namespace gamemd {
@@ -738,6 +742,7 @@ LABEL_71:
   return (_BYTE)aP2 != 0; /*0x57b1ee*/
 }
 } // namespace gamemd
+}
 
 // 0x57B440
 namespace gamemd {
@@ -895,6 +900,7 @@ LABEL_58:
   return 0; /*0x57b6aa*/
 }
 } // namespace gamemd
+}
 
 // 0x57C870
 namespace gamemd {
@@ -960,6 +966,7 @@ void sub_57C870(int a1)
   return UpdateTeamsInAreaMap(v17, v18); /*0x57c985*/
 }
 } // namespace gamemd
+}
 
 // 0x57C990
 namespace gamemd {
@@ -1025,6 +1032,7 @@ void sub_57C990(int a1)
   return UpdateTeamsInAreaMap(v17, v18); /*0x57caa5*/
 }
 } // namespace gamemd
+}
 
 // 0x57DAF0
 namespace gamemd {
@@ -1090,6 +1098,7 @@ void sub_57DAF0(int a1)
   return UpdateTeamsInAreaMap(v17, v18); /*0x57dc0d*/
 }
 } // namespace gamemd
+}
 
 // 0x57DC20
 namespace gamemd {
@@ -1155,6 +1164,7 @@ void sub_57DC20(int a1)
   return UpdateTeamsInAreaMap(v17, v18); /*0x57dd3d*/
 }
 } // namespace gamemd
+}
 
 // 0x57DD50
 namespace gamemd {
@@ -1332,7 +1342,7 @@ AbstractClass * * CreateCliffRampMap(IUnknown * aP0)
       }
       v24 = (IUnknown *)v49; /*0x57e009*/
       int v25 = *(_DWORD *)&aP1[8]; /*0x57e00d*/
-      *(_DWORD *)(v49 + 68) = v23; /*0x57e015*/
+      v49->q044 = v23; /*0x57e015*/
       *(_DWORD *)(v25 + 68) = v23; /*0x57e018*/
       v47[17] = v23; /*0x57e01b*/
   _DWORD v59[2]; // [esp+64h] [ebp-78h] BYREF
@@ -1432,6 +1442,7 @@ AbstractClass * * CreateCliffRampMap(IUnknown * aP0)
   return result; /*0x57e290*/
 }
 } // namespace gamemd
+}
 
 // 0x57E2A0
 namespace gamemd {
@@ -1709,6 +1720,7 @@ void* CreateCliffStraightMap(IUnknown * aP0)
   return v2; /*0x57e785*/
 }
 } // namespace gamemd
+}
 
 // 0x57E7A0
 namespace gamemd {
@@ -1886,7 +1898,7 @@ AbstractClass * * CreateCliffBridgeMap(IUnknown * aP0)
       }
       v24 = (IUnknown *)v49; /*0x57ea63*/
       int v25 = *(_DWORD *)&aP1[8]; /*0x57ea67*/
-      *(_DWORD *)(v49 + 68) = v23; /*0x57ea6f*/
+      v49->q044 = v23; /*0x57ea6f*/
       *(_DWORD *)(v25 + 68) = v23; /*0x57ea72*/
       v47[17] = v23; /*0x57ea75*/
   _DWORD v59[2]; // [esp+64h] [ebp-78h] BYREF
@@ -1986,6 +1998,7 @@ AbstractClass * * CreateCliffBridgeMap(IUnknown * aP0)
   return result; /*0x57eced*/
 }
 } // namespace gamemd
+}
 
 // 0x57ED00
 namespace gamemd {
@@ -2263,6 +2276,7 @@ void* CreateCliffStraightBridgeMap(IUnknown * aP0)
   return v2; /*0x57f1f2*/
 }
 } // namespace gamemd
+}
 
 // 0x572230
 namespace gamemd {

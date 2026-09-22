@@ -55,7 +55,7 @@ MapClass * * FogOfWar::RevealArea(RadarClass * aP1)
   result = (IUnknown *)(v7 + result->field_C); /*0x655cae*/
   if ( (int)v6 >= (int)result ) /*0x655cb2*/
     return (int)result; /*0x655cb2*/
-  double v8 = (double)(int)aP1a / *(float *)(this + 5256) - (double)*(int *)(this + 5264); /*0x655cc2*/
+  double v8 = (double)(int)aP1a / this->u32_1488 - (double)this->u32_1490; /*0x655cc2*/
   v37[0] = ((__int16)Math::RoundToInt(v8) << 8) + 128; /*0x655d1b*/
   v37[1] = ((__int16)Math::RoundToInt(v8) << 8) + 128; /*0x655d2b*/
   GroundHeight = 0; /*0x655d2f*/
@@ -65,7 +65,7 @@ MapClass * * FogOfWar::RevealArea(RadarClass * aP1)
   if ( !g_hWnd || (v34 = 1, !FogOfWar_Get(v37)) ) /*0x655d74*/
     v34 = 0; /*0x655d82*/
   v35 = 0; /*0x655d8a*/
-  int v9 = **(_DWORD **)(this + 4696) + 24 * (unsigned __int8)(aP1->field_0 - 5 * (int)aP1->field_4); /*0x655da7*/
+  int v9 = **(_DWORD **)(&this->u32_7546) + 24 * (unsigned __int8)(aP1->field_0 - 5 * (int)aP1->field_4); /*0x655da7*/
   v10 = *(IUnknown **)(v9 + 16); /*0x655daa*/
   int v11 = *(_DWORD *)(v9 + 4); /*0x655dae*/
   v36 = v10; /*0x655db3*/
@@ -169,9 +169,9 @@ LABEL_41:
     (*(void (__stdcall **)(RadarClass *, int))(*this->q487 + 36))(aP1, v17); /*0x65604d*/
   }
 LABEL_45:
-  RadarClass *v22 = *(_DWORD *)(this + 5276); /*0x65608f*/
-  int v23 = *(_DWORD *)(this + 5280); /*0x656095*/
-  int v24 = this + 4620; /*0x6560a0*/
+  RadarClass *v22 = this->u32_149C; /*0x65608f*/
+  int v23 = this->u32_14A0; /*0x656095*/
+  int v24 = &this->u32_4830; /*0x6560a0*/
   int v25 = v22 + aP1->field_0; /*0x6560a6*/
   v26 = (RadarClass *)((char *)aP1->field_4 + v23); /*0x6560a8*/
   if ( *(int *)(v24 + 8) <= 0 || *(int *)(v24 + 12) <= 0 ) /*0x6560be*/
@@ -215,6 +215,7 @@ LABEL_45:
   *(_DWORD *)(v24 + 12) = v33; /*0x656135*/
   return (int)result; /*0x656138*/
 }
+}
 
 // 0x656150
 int FogOfWar::RenderCell()
@@ -226,7 +227,7 @@ int FogOfWar::RenderCell()
   int v2 = this->q487; /*0x65615f*/
   int v3 = (*(int (__thiscall **)(int))(*(_DWORD *)v2 + 128))(v2); /*0x65616f*/
   __int64 v4 = v3 * (*(int (__thiscall **)(int))(*(_DWORD *)v2 + 124))(v2); /*0x65617b*/
-  char * v5 = *(char **)(this + 4724); /*0x65617f*/
+  char * v5 = *(char **)(&this->u32_7604); /*0x65617f*/
   HIDWORD(v4) = (((BYTE4(v4) & 7) + (int)v4) >> 3) + 1; /*0x65618f*/
   memset(v5, 0, 4 * (HIDWORD(v4) >> 2)); /*0x656194*/
   char * v6 = &v5[4 * (HIDWORD(v4) >> 2)]; /*0x656194*/
@@ -236,7 +237,7 @@ int FogOfWar::RenderCell()
   int v23 = 0; /*0x65619f*/
   do /*0x6562b5*/
   {
-    int v9 = v8 + **(_DWORD **)(this + 4696); /*0x6561ab*/
+    int v9 = v8 + **(_DWORD **)(&this->u32_7546); /*0x6561ab*/
     int v10 = *(_DWORD *)(v9 + 16); /*0x6561ad*/
     result = *(_DWORD *)(v9 + 4); /*0x6561b0*/
     if ( v10 > 0 ) /*0x6561b5*/
@@ -250,7 +251,7 @@ int FogOfWar::RenderCell()
         v14 = *v12 /*0x6561d8*/
             + v12[1] * (*(int (__thiscall **)(_DWORD))(*this->q487 + 124))(this->q487);
         int v15 = 1 << (v14 & 7); /*0x6561e2*/
-        _BYTE * v16 = (_BYTE *)(*(_DWORD *)(this + 4724) + (v14 >> 3)); /*0x6561ed*/
+        _BYTE * v16 = (_BYTE *)(this->u32_1274 + (v14 >> 3)); /*0x6561ed*/
         if ( (*v16 & (unsigned __int8)v15) == 0 ) /*0x6561f3*/
         {
           *v16 |= v15; /*0x6561fb*/
@@ -287,6 +288,7 @@ int FogOfWar::RenderCell()
   while ( v8 < 6144 ); /*0x6562b5*/
   return result; /*0x6562bb*/
 }
+}
 
 // 0x6562D0
 AbstractClass * * FogOfWar::RevealCell(IUnknown * aP1)
@@ -302,26 +304,27 @@ AbstractClass * * FogOfWar::RevealCell(IUnknown * aP1)
     v3 = aP1->field_0 /*0x656329*/
        + aP1->field_4 * (*(int (__thiscall **)(_DWORD))(*this->q487 + 124))(this->q487);
     int v4 = 1 << (v3 & 7); /*0x656333*/
-    _BYTE * v5 = (_BYTE *)(*(_DWORD *)(this + 4724) + (v3 >> 3)); /*0x65633e*/
+    _BYTE * v5 = (_BYTE *)(this->u32_1274 + (v3 >> 3)); /*0x65633e*/
     if ( (*v5 & (unsigned __int8)v4) == 0 ) /*0x656344*/
     {
       *v5 |= v4; /*0x65634f*/
-      int v6 = *(_DWORD *)(this + 4708); /*0x656351*/
-      if ( *(_DWORD *)(this + 4716) < v6 /*0x656376*/
-        || (*(_BYTE *)(this + 4713) || !v6)
+      int v6 = this->u32_1264; /*0x656351*/
+      if ( this->u32_126C < v6 /*0x656376*/
+        || (this->u8_1269 || !v6)
   int v7; // ecx
-        && (v7 = *(_DWORD *)(this + 4720), v7 > 0)
-        && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(this + 4700) + 8))(this + 4700, v6 + v7, 0) )
+        && (v7 = this->u32_1270, v7 > 0)
+        && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(this->u32_125C + 8))(&this->u32_4970, v6 + v7, 0) )
       {
-        int v8 = *(_DWORD *)(this + 4716); /*0x65637d*/
-        int v9 = *(_DWORD *)(this + 4704); /*0x656380*/
-        *(_DWORD *)(this + 4716) = v8 + 1; /*0x656386*/
+        int v8 = this->u32_126C; /*0x65637d*/
+        int v9 = this->u32_1260; /*0x656380*/
+        this->u32_126C = v8 + 1; /*0x656386*/
         *(_DWORD *)(v9 + 8 * v8) = aP1->field_0; /*0x65638b*/
         *(_DWORD *)(v9 + 8 * v8 + 4) = aP1->field_4; /*0x656391*/
       }
-      *(_BYTE *)(this + 5337) = 1; /*0x656395*/
+      this->u8_14D9 = 1; /*0x656395*/
     }
   }
+}
 }
 
 // 0x657CE0
@@ -365,6 +368,7 @@ int FogOfWar::Render()
     return FogOfWar::RenderCell((int)this); /*0x657d30*/
   }
   return result; /*0x657d35*/
+}
 }
 
 // 0x5864A0

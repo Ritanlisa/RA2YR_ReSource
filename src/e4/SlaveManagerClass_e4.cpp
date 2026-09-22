@@ -23,6 +23,7 @@ int SlaveManagerClass::Check()
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x522D20
 namespace ra2 {
@@ -34,6 +35,7 @@ int SlaveManagerClass::VtableDispatch()
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x522D30
 namespace ra2 {
@@ -45,6 +47,7 @@ int SlaveManagerClass::CheckIsOne()
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x522FC0
 namespace ra2 {
@@ -56,6 +59,7 @@ int SlaveManagerClass::IsMasterHarvester()
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x6AF1A0
 namespace ra2 {
@@ -68,7 +72,7 @@ void* SlaveManagerClass::ctor(TechnoClass * aP1, int a3, int a4, int a5, int a6)
   TechnoClass *aP1a; // [esp+1Ch] [ebp+4h]
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x6af1a8*/
-  SlaveControlVector::Constructor((_DWORD *)(this + 56), 0, 0); /*0x6af1b6*/
+  SlaveControlVector::Constructor((_DWORD *)(&this->abstractFlags6), 0, 0); /*0x6af1b6*/
   this->slaves = &vt_DynamicVectorClass_SlaveManagerClass_SlaveControl; /*0x6af1c3*/
   this->q04C = 10; /*0x6af1c9*/
   this->q048 = 0; /*0x6af1d0*/
@@ -114,11 +118,11 @@ void* SlaveManagerClass::ctor(TechnoClass * aP1, int a3, int a4, int a5, int a6)
     int v13 = this->slaveVectorCapacity; /*0x6af290*/
     if ( this->q048 >= v13 ) /*0x6af298*/
     {
-      if ( !*(_BYTE *)(this + 69) && v13 ) /*0x6af2a1*/
+      if ( !this->u8_45 && v13 ) /*0x6af2a1*/
         continue; /*0x6af2a1*/
       int v14 = this->q04C; /*0x6af2a3*/
       if ( v14 <= 0 /*0x6af2b2*/
-        || !(*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(this->slaves + 8))(this + 56, v13 + v14, 0) )
+        || !(*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(this->slaves + 8))(&this->u32_E0, v13 + v14, 0) )
       {
         continue; /*0x6af2b2*/
       }
@@ -148,6 +152,7 @@ void* SlaveManagerClass::ctor(TechnoClass * aP1, int a3, int a4, int a5, int a6)
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x6AF360
 namespace ra2 {
@@ -160,7 +165,7 @@ int SlaveManagerClass::Constructor()
   this->slaveVectorCount = 0; /*0x6af371*/
   this->slaveVectorCapacity = 0; /*0x6af374*/
   this->creationFrame = 1; /*0x6af377*/
-  *(_BYTE *)(this + 69) = 0; /*0x6af37b*/
+  this->u8_45 = 0; /*0x6af37b*/
   this->slaves = &vt_DynamicVectorClass_SlaveManagerClass_SlaveControl; /*0x6af37e*/
   this->q04C = 10; /*0x6af385*/
   this->q048 = 0; /*0x6af38c*/
@@ -196,6 +201,7 @@ int SlaveManagerClass::Constructor()
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x6AF4A0
 namespace ra2 {
@@ -215,8 +221,8 @@ void SlaveManagerClass::Constructor_SlaveManagerClass()
       __3_YAXPAX_Z(*(void **)(this->slaveVectorCount + 4 * i)); /*0x6af4d1*/
   }
   int v3 = this->slaveVectorCapacity; /*0x6af4e5*/
-  (*(void (__thiscall **)(int))(this->slaves + 12))(this + 56); /*0x6af4e8*/
-  (*(void (__thiscall **)(int, int, _DWORD))(this->slaves + 8))(this + 56, v3, 0); /*0x6af4f2*/
+  (*(void (__thiscall **)(int))(this->slaves + 12))(&this->abstractFlags6); /*0x6af4e8*/
+  (*(void (__thiscall **)(int, int, _DWORD))(this->slaves + 8))(&this->u32_E0, v3, 0); /*0x6af4f2*/
   v6 = this; /*0x6af505*/
   int v4 = (*(int (__thiscall **)(int *, int *))(SlaveManagerClass_Array + 16))(&SlaveManagerClass_Array, &v6); /*0x6af509*/
   if ( v4 != -1 && v4 < DataGlobal_B0B600 && v4 < --DataGlobal_B0B600 ) /*0x6af525*/
@@ -230,17 +236,18 @@ void SlaveManagerClass::Constructor_SlaveManagerClass()
   }
   void * v5 = this->slaveVectorCount; /*0x6af53f*/
   this->slaves = &vt_VectorClass_SlaveManagerClass_SlaveControl; /*0x6af542*/
-  if ( v5 && *(_BYTE *)(this + 69) ) /*0x6af54c*/
+  if ( v5 && this->u8_45 ) /*0x6af54c*/
   {
     __3_YAXPAX_Z(v5); /*0x6af554*/
     this->slaveVectorCount = 0; /*0x6af55c*/
   }
-  *(_BYTE *)(this + 69) = 0; /*0x6af565*/
+  this->u8_45 = 0; /*0x6af565*/
   this->slaveVectorCapacity = 0; /*0x6af569*/
   AbstractClass::DTOR((_DWORD *)this); /*0x6af570*/
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x6AF580
 namespace ra2 {
@@ -272,6 +279,7 @@ int SlaveManagerClass::SetOwner(TechnoClass * aP1)
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x6AF5F0
 namespace ra2 {
@@ -310,6 +318,7 @@ LABEL_5:
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x6AF6C0
 namespace gamemd {
@@ -627,6 +636,7 @@ LABEL_61:
   return result; /*0x6afd36*/
 }
 } // namespace gamemd
+}
 
 // 0x6B0A20
 namespace ra2 {
@@ -662,6 +672,7 @@ int SlaveManagerClass::LostSlave(ObjectClass * aP1)
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x6B1020
 namespace ra2 {
@@ -689,6 +700,7 @@ int SlaveManagerClass::ShouldWakeUpNow()
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x6B10F0
 namespace ra2 {
@@ -707,6 +719,7 @@ int SlaveManagerClass::AssignTask(AbstractClass * aP1)
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x6B1170
 namespace ra2 {
@@ -803,6 +816,7 @@ LABEL_20:
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x6B1A70
 namespace ra2 {
@@ -816,6 +830,7 @@ long long SlaveManagerClass::Calc2DDistance()
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x6AF650
 namespace ra2 {
@@ -833,7 +848,7 @@ wchar_t * SlaveManagerClass::CreateSlave(wchar_t ** a2)
     *a2 = result;
     if ( result )
   {
-    (*(void (__thiscall **)(wchar_t *))(*(int *)(result) + 212))(result);
+    (*(void (__thiscall **)(wchar_t *))(result->u32_D4)(result);
     *((int *)*a2 + 183) = this->master;
     *((int*)(a2) + 1) = 0;
     result = g_CurrentFrame;
@@ -1077,15 +1092,15 @@ DynamicVector * SlaveManagerClass_25::QueryInterface(char a2)
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_SlaveManagerClass_SlaveControl;
-    if ( v3 && *((char *)(this) + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
+    this->IsAllocated = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;

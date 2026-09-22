@@ -1082,9 +1082,16 @@ def _build_ida_cfg_events(efv, ida_decompiled, this_type, M, class_name=None):
     cfg = efv["normalize"].normalize(cfg)
     # G11: class_name enables til-named `this->Member` extraction (symmetric
     # with the C++ side's this-> handling); None keeps the legacy behavior.
+    # G31: this_name = the snapshot's own this-param name (`_DWORD *Block`)
+    # so this-keyed member/vtable patterns also match renamed receivers.
+    try:
+        this_name = efv["ida_events"].extract_this_name(ida_decompiled)
+    except AttributeError:
+        this_name = None
     try:
         efv["ida_events"].extract_events_into(cfg, this_type, maps=M,
-                                              class_name=class_name)
+                                              class_name=class_name,
+                                              this_name=this_name)
     except TypeError:
         efv["ida_events"].extract_events_into(cfg, this_type, maps=M)
     cfg = efv["normalize"].normalize(cfg)

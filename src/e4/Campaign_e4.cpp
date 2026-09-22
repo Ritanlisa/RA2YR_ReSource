@@ -92,35 +92,39 @@ LABEL_14:
   return 1; /*0x7658d7*/
 }
 } // namespace gamemd
+}
 
 // 0x765700
 namespace gamemd {
 int Campaign_WorldDominationTour_24::AddRef()
 {
 {
-  return *(this + 2) < *(_DWORD *)(*(this + 1) + 16); /*0x76570d*/
+  return this->u32_8 < *(_DWORD *)(this->u32_4 + 16); /*0x76570d*/
 }
 } // namespace gamemd
+}
 
 // 0x765B40
 namespace gamemd {
 unsigned int * Campaign_WorldDominationTour_24::Release()
 {
 {
-  ++*(this + 2); /*0x765b42*/
+  ++this->u32_8; /*0x765b42*/
   return this; /*0x765b45*/
 }
 } // namespace gamemd
+}
 
 // 0x765B50
 namespace gamemd {
 unsigned int * Campaign_WorldDominationTour_24::ddtor()
 {
 {
-  --*(this + 2); /*0x765b52*/
+  --this->u32_8; /*0x765b52*/
   return this; /*0x765b55*/
 }
 } // namespace gamemd
+}
 
 // 0x60D380
 LONG Campaign::Screen(char a1)
@@ -307,15 +311,15 @@ VectorClass * Campaign_WorldDominationTour_16::QueryInterface(char a2)
 {
 {
     void (__thiscall ***v3)(int, int);
-    v3 = (void (__thiscall ***)(int, int))*(this + 1);
+    v3 = (void (__thiscall ***)(int, int))this->Items;
     *(void**)this = &vt_VectorClass_rc_ptr_WorldDominationTour_Conflict;
-    if ( v3 && *((char *)(this) + 13) )
+    if ( v3 && this->IsAllocated )
   {
     (**v3)(v3, 3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
+    this->IsAllocated = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (VectorClass *)this;

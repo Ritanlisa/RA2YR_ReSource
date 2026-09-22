@@ -11,6 +11,7 @@ void Function_643E80()
   return a2; /*0x643e87*/
 }
 } // namespace gamemd
+}
 
 // 0x645D00
 namespace gamemd {

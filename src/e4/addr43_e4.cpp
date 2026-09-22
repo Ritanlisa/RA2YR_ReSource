@@ -35,12 +35,12 @@ int E4Recv_431BC0::sub_431BC0(int a2, size_t a3)
 {
 {
   AbstractClass *v9; // eax
-  if ( *(this + 12) ) /*0x431bc8*/
+  if ( *(&this->u32_42) ) /*0x431bc8*/
     return !a2 && !a3; /*0x431bdb*/
   if ( this->vt_slot_20(0) ) /*0x431bef*/
-    *(this + 18) = this->vt_slot_44(); /*0x431bfd*/
+    *(&this->u32_48) = this->vt_slot_44(); /*0x431bfd*/
   else
-    *(this + 18) = 0; /*0x431c02*/
+    *(&this->u32_48) = 0; /*0x431c02*/
   TagClass *v5 = a2; /*0x431c05*/
   if ( a2 ) /*0x431c0f*/
   {
@@ -50,90 +50,91 @@ int E4Recv_431BC0::sub_431BC0(int a2, size_t a3)
       if ( a3 ) /*0x431c20*/
         this->vt_slot_64(22, 0, 0); /*0x431c2a*/
     }
-    *(this + 13) = v5; /*0x431c2f*/
+    *(&this->u32_43) = v5; /*0x431c2f*/
     if ( v5 ) /*0x431c32*/
       goto LABEL_14; /*0x431c32*/
   }
   else
   {
-    *(this + 13) = *(this + 18); /*0x431c53*/
+    *(&this->u32_43) = *(&this->u32_48); /*0x431c53*/
   }
   if ( a3 ) /*0x431c36*/
     return 0; /*0x431d83*/
 LABEL_14:
-  if ( !*(this + 13) ) /*0x431c41*/
+  if ( !*(&this->u32_43) ) /*0x431c41*/
     return 0; /*0x431c41*/
   if ( a3 ) /*0x431c49*/
-    *(this + 12) = a3; /*0x431c4b*/
+    *(&this->u32_42) = a3; /*0x431c4b*/
   else
-    *(this + 12) = (size_t)__2_YAPAXI_Z(*(this + 13)); /*0x431c61*/
-  if ( !*(this + 12) ) /*0x431c67*/
+    *(&this->u32_42) = (size_t)__2_YAPAXI_Z(*(&this->u32_43)); /*0x431c61*/
+  if ( !*(&this->u32_42) ) /*0x431c67*/
   {
     this->vt_slot_64(12, 0, 0); /*0x431d7d*/
     return 0; /*0x431d7d*/
   }
-  AudioController *v6 = *(this + 18); /*0x431c6d*/
-  *((_BYTE *)this + 36) = 1; /*0x431c75*/
-  *((_BYTE *)this + 38) = 0; /*0x431c79*/
-  *(this + 14) = 0; /*0x431c7c*/
-  *(this + 15) = 0; /*0x431c7f*/
-  *(this + 16) = -1; /*0x431c82*/
-  *(this + 17) = -1; /*0x431c85*/
-  *(this + 19) = 0; /*0x431c88*/
-  *(this + 20) = 0; /*0x431c8b*/
+  AudioController *v6 = *(&this->u32_48); /*0x431c6d*/
+  this->M36 = 1; /*0x431c75*/
+  this->M38 = 0; /*0x431c79*/
+  *(&this->u32_44) = 0; /*0x431c7c*/
+  *(&this->u32_45) = 0; /*0x431c7f*/
+  *(&this->u32_46) = -1; /*0x431c82*/
+  *(&this->u32_47) = -1; /*0x431c85*/
+  *(&this->u32_49) = 0; /*0x431c88*/
+  *(&this->u32_80) = 0; /*0x431c8b*/
   if ( v6 ) /*0x431c8e*/
   {
     AbstractClass *v7 = 0; /*0x431c97*/
     int v11 = 0; /*0x431c9b*/
     AudioController *v10 = v6; /*0x431c9f*/
-    if ( v6 > (int)*(this + 13) ) /*0x431ca3*/
-      v10 = *(this + 13); /*0x431ca5*/
+    if ( v6 > (int)*(&this->u32_43) ) /*0x431ca3*/
+      v10 = *(&this->u32_43); /*0x431ca5*/
     bool v8 = this->vt_slot_24() == 0; /*0x431cb0*/
     v9 = *this; /*0x431cb2*/
     if ( v8 ) /*0x431cb6*/
     {
       if ( this->vt_slot_28(1) ) /*0x431d02*/
       {
-        *(this + 20) = FileClass::Seek((int *)this, 0, 1u); /*0x431d13*/
+        *(&this->u32_80) = FileClass::Seek((int *)this, 0, 1u); /*0x431d13*/
         v11 = 1; /*0x431d16*/
       }
     }
     else
     {
       v7 = this->vt_slot_40(0); /*0x431cbe*/
-      if ( *(this + 5) == -1 ) /*0x431cc5*/
-        *(this + 20) = v7; /*0x431cd6*/
+      if ( this->M20 == -1 ) /*0x431cc5*/
+        *(&this->u32_80) = v7; /*0x431cd6*/
       else
-        *(this + 20) = FileClass::Seek((int *)this, 0, 1u); /*0x431cd1*/
-      if ( (int)*(this + 18) > (int)*(this + 13) ) /*0x431ce1*/
+        *(&this->u32_80) = FileClass::Seek((int *)this, 0, 1u); /*0x431cd1*/
+      if ( (int)*(&this->u32_48) > (int)*(&this->u32_43) ) /*0x431ce1*/
       {
-        *(this + 15) = v7; /*0x431cf8*/
-        *(this + 19) = v7; /*0x431cfb*/
+        *(&this->u32_45) = v7; /*0x431cf8*/
+        *(&this->u32_49) = v7; /*0x431cfb*/
       }
       else
       {
         if ( v7 ) /*0x431ce5*/
           this->vt_slot_40(0, 0); /*0x431ced*/
-        *(this + 14) = v7; /*0x431cf0*/
-        *(this + 19) = v7; /*0x431cf3*/
+        *(&this->u32_44) = v7; /*0x431cf0*/
+        *(&this->u32_49) = v7; /*0x431cf3*/
       }
     }
-    if ( this->vt_slot_36(*(this + 12), v10) != v10 ) /*0x431d30*/
+    if ( this->vt_slot_36(*(&this->u32_42), v10) != v10 ) /*0x431d30*/
       this->vt_slot_64(5, 0, 0); /*0x431d3a*/
     if ( v11 ) /*0x431d41*/
     {
       this->vt_slot_52(); /*0x431d47*/
-      *((_BYTE *)this + 39) = 1; /*0x431d4a*/
-      *((_BYTE *)this + 41) = 1; /*0x431d4e*/
+      this->M39 = 1; /*0x431d4a*/
+      this->M41 = 1; /*0x431d4e*/
       return 1; /*0x431d58*/
     }
     this->vt_slot_40(v7, 0); /*0x431d61*/
-    *((_BYTE *)this + 39) = 1; /*0x431d64*/
+    this->M39 = 1; /*0x431d64*/
   }
-  *((_BYTE *)this + 41) = 1; /*0x431d68*/
+  this->M41 = 1; /*0x431d68*/
   return 1; /*0x431be1*/
 }
 } // namespace gamemd
+}
 
 // 0x4373B0
 namespace gamemd {
@@ -483,6 +484,7 @@ MouseClass * * BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XS
   return result; /*0x43746a*/
 }
 } // namespace gamemd
+}
 
 // 0x437A10
 namespace gamemd {
@@ -702,6 +704,7 @@ LABEL_12:
   }
 }
 } // namespace gamemd
+}
 
 // 0x437F50
 namespace gamemd {
@@ -728,6 +731,7 @@ LABEL_5:
   return this; /*0x437fba*/
 }
 } // namespace gamemd
+}
 
 // 0x43A600
 namespace gamemd {
@@ -737,31 +741,32 @@ void BrainClass::sub_43A600()
 
   int v2 = 0; /*0x43a608*/
   this->vfptr = &vt_BrainClass; /*0x43a60a*/
-  int v3 = *((_DWORD *)this + 5); /*0x43a610*/
+  int v3 = this->u32_14; /*0x43a610*/
   if ( v3 > 0 ) /*0x43a615*/
   {
     do /*0x43a632*/
     {
-      int v4 = *(_DWORD *)(*((_DWORD *)this + 2) + 4 * v2); /*0x43a61a*/
+      int v4 = *(_DWORD *)(this->u32_8 + 4 * v2); /*0x43a61a*/
       if ( v4 ) /*0x43a61f*/
         (*(void (__thiscall **)(int, int))(*(_DWORD *)v4 + 32))(v4, 1); /*0x43a625*/
       ++v2; /*0x43a62b*/
-      *(_DWORD *)(*((_DWORD *)this + 2) + 4 * v2 - 4) = 0; /*0x43a62e*/
+      *(_DWORD *)(this->u32_8 + 4 * v2 - 4) = 0; /*0x43a62e*/
     }
     while ( v2 < v3 ); /*0x43a632*/
   }
-  (*(void (__thiscall **)(BrainClass *))(*((_DWORD *)this + 1) + 12))(this + 1); /*0x43a63c*/
-  void * v5 = (void *)*((_DWORD *)this + 2); /*0x43a63f*/
-  *((_DWORD *)this + 1) = &vt_VectorClass_NeuronClass; /*0x43a642*/
-  if ( v5 && *((_BYTE *)this + 17) ) /*0x43a64c*/
+  (*(void (__thiscall **)(BrainClass *))(this->u32_4 + 12))(this + 1); /*0x43a63c*/
+  void * v5 = (void *)this->u32_8; /*0x43a63f*/
+  this->u32_4 = &vt_VectorClass_NeuronClass; /*0x43a642*/
+  if ( v5 && this->u8_11 ) /*0x43a64c*/
   {
     __3_YAXPAX_Z(v5); /*0x43a652*/
-    *((_DWORD *)this + 2) = 0; /*0x43a65a*/
+    this->u32_8 = 0; /*0x43a65a*/
   }
-  *((_BYTE *)this + 17) = 0; /*0x43a65d*/
-  *((_DWORD *)this + 3) = 0; /*0x43a660*/
+  this->u8_11 = 0; /*0x43a65d*/
+  this->u32_C = 0; /*0x43a660*/
 }
 } // namespace gamemd
+}
 
 // 0x43AA90
 namespace gamemd {
@@ -771,34 +776,35 @@ unsigned int * BrainClass::sub_43AA90(char a2)
 
   int v3 = 0; /*0x43aa95*/
   this->vfptr = &vt_BrainClass; /*0x43aa97*/
-  int v4 = *((_DWORD *)this + 5); /*0x43aa9d*/
+  int v4 = this->u32_14; /*0x43aa9d*/
   if ( v4 > 0 ) /*0x43aaa2*/
   {
     do /*0x43aac3*/
     {
-      int v5 = *(_DWORD *)(*((_DWORD *)this + 2) + 4 * v3); /*0x43aaa7*/
+      int v5 = *(_DWORD *)(this->u32_8 + 4 * v3); /*0x43aaa7*/
       if ( v5 ) /*0x43aaac*/
         (*(void (__thiscall **)(int, int))(*(_DWORD *)v5 + 32))(v5, 1); /*0x43aab2*/
       ++v3; /*0x43aab8*/
-      *(_DWORD *)(*((_DWORD *)this + 2) + 4 * v3 - 4) = 0; /*0x43aabb*/
+      *(_DWORD *)(this->u32_8 + 4 * v3 - 4) = 0; /*0x43aabb*/
     }
     while ( v3 < v4 ); /*0x43aac3*/
   }
-  (*(void (__thiscall **)(BrainClass *))(*((_DWORD *)this + 1) + 12))(this + 1); /*0x43aacd*/
-  void * v6 = (void *)*((_DWORD *)this + 2); /*0x43aad0*/
-  *((_DWORD *)this + 1) = &vt_VectorClass_NeuronClass; /*0x43aad3*/
-  if ( v6 && *((_BYTE *)this + 17) ) /*0x43aadd*/
+  (*(void (__thiscall **)(BrainClass *))(this->u32_4 + 12))(this + 1); /*0x43aacd*/
+  void * v6 = (void *)this->u32_8; /*0x43aad0*/
+  this->u32_4 = &vt_VectorClass_NeuronClass; /*0x43aad3*/
+  if ( v6 && this->u8_11 ) /*0x43aadd*/
   {
     __3_YAXPAX_Z(v6); /*0x43aae5*/
-    *((_DWORD *)this + 2) = 0; /*0x43aaed*/
+    this->u32_8 = 0; /*0x43aaed*/
   }
-  *((_BYTE *)this + 17) = 0; /*0x43aaf8*/
-  *((_DWORD *)this + 3) = 0; /*0x43aafe*/
+  this->u8_11 = 0; /*0x43aaf8*/
+  this->u32_C = 0; /*0x43aafe*/
   if ( (a2 & 1) != 0 ) /*0x43ab05*/
     __3_YAXPAX_Z(this); /*0x43ab08*/
   return &this->vfptr; /*0x43ab12*/
 }
 } // namespace gamemd
+}
 
 // 0x430010
 namespace gamemd {
@@ -1231,10 +1237,10 @@ unsigned char * E4Recv_434700::sub_434700()
     v7 = this->M4;
     v8 = 0;
     result = (char *)(this->M8 + 1);
-    for ( ; v8 < *(int *)(v7 + 8); ++v8 )
+    for ( ; v8 < v7->vtable3; ++v8 )
         {
     v9 = 0;
-    if ( *(int *)(v7 + 4) )
+    if ( v7->vtable2 )
           {
     do
             {
@@ -2485,6 +2491,7 @@ int sub_43B0F0()
   return 0; /*0x43b101*/
 }
 } // namespace gamemd
+}
 
 // 0x43B110
 namespace gamemd {
@@ -2529,8 +2536,8 @@ int E4Recv_43EE50::sub_43EE50()
     result = DataGlobal_7F4890[((unsigned int)((*Value >> 10) + 1) >> 1) & 0x1F];
     if ( v3 )
   {
-    *(int *)(v3 + 172) = result;
-    *(int *)(v3 + 196) = 0;
+    v3->q0AC = result;
+    v3->q0C4 = 0;
   }
     return result;
 }

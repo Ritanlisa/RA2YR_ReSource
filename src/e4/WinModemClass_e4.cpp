@@ -104,6 +104,7 @@ int WinModemClass::ReadSerial()
   Debug::Log(); /*0x774b14*/
   return v16 != 0; /*0x7749fb*/
 }
+}
 
 // 0x774B30
 int WinModemClass::ReadBytes(void (**this)() a1, WinModemClass * aP1, WinModemClass * aP2)
@@ -138,6 +139,7 @@ int WinModemClass::ReadBytes(void (**this)() a1, WinModemClass * aP1, WinModemCl
   while ( v7 ); /*0x774b96*/
   return (int)v5->__pad_0; /*0x774b99*/
 }
+}
 
 // 0x774C70
 int WinModemClass::WriteSerial(LPCVOID lpBuffer, WinModemClass * aP2)
@@ -147,16 +149,17 @@ int WinModemClass::WriteSerial(LPCVOID lpBuffer, WinModemClass * aP2)
   DWORD NumberOfBytesWritten; // [esp+4h] [ebp-4h] BYREF
 
   AsyncIO::WaitCompletion(this); /*0x774c74*/
-  result = WriteFile(this->q05C, lpBuffer, (DWORD)aP2, &NumberOfBytesWritten, (LPOVERLAPPED)(this + 60)); /*0x774c90*/
+  result = WriteFile(this->q05C, lpBuffer, (DWORD)aP2, &NumberOfBytesWritten, (LPOVERLAPPED)(&this->u32_180)); /*0x774c90*/
   if ( !result ) /*0x774c98*/
   {
     result = GetLastError(); /*0x774c9a*/
     if ( result == 997 ) /*0x774ca5*/
-      *(_BYTE *)(this + 81) = 1; /*0x774ca7*/
+      this->u8_51 = 1; /*0x774ca7*/
     else
       Debug::Log(); /*0x774cb7*/
   }
   return result; /*0x774cab*/
+}
 }
 
 // 0x774CD0
@@ -278,6 +281,7 @@ LABEL_38:
     v5 = this; /*0x774d5f*/
   }
 }
+}
 
 // 0x774F50
 int WinModemClass::SaveToINI(const char * NumberOfBytesWritten)
@@ -304,16 +308,17 @@ int WinModemClass::SaveToINI(const char * NumberOfBytesWritten)
   Debug::Log(); /*0x775084*/
   unsigned int v3 = strlen(Buffer) + 1; /*0x775095*/
   AsyncIO::WaitCompletion(this); /*0x77509e*/
-  if ( !WriteFile(this->q05C, Buffer, v3 - 1, (LPDWORD)&NumberOfBytesWritten, (LPOVERLAPPED)(this + 60)) ) /*0x7750b6*/
+  if ( !WriteFile(this->q05C, Buffer, v3 - 1, (LPDWORD)&NumberOfBytesWritten, (LPOVERLAPPED)(&this->u32_180)) ) /*0x7750b6*/
   {
     if ( GetLastError() == 997 ) /*0x7750cb*/
     {
-      *(_BYTE *)(this + 81) = 1; /*0x7750cf*/
+      this->u8_51 = 1; /*0x7750cf*/
       return AsyncIO::WaitCompletion(this); /*0x7750df*/
     }
     Debug::Log(); /*0x7750e9*/
   }
   return AsyncIO::WaitCompletion(this); /*0x7750d8*/
+}
 }
 
 // 0x775110
@@ -347,10 +352,10 @@ AbstractClass * * WinModemClass::Dial(const char * a2, unsigned char a3, char * 
     unsigned int v9 = strlen(Buffer) + 1; /*0x7751de*/
     int v27 = a6; /*0x7751ea*/
     AsyncIO::WaitCompletion(this); /*0x7751f2*/
-    if ( !WriteFile(this->q05C, Buffer, v9 - 1, &NumberOfBytesWritten, (LPOVERLAPPED)(this + 60)) ) /*0x77520d*/
+    if ( !WriteFile(this->q05C, Buffer, v9 - 1, &NumberOfBytesWritten, (LPOVERLAPPED)(&this->u32_180)) ) /*0x77520d*/
     {
       if ( GetLastError() == 997 ) /*0x77521e*/
-        *(_BYTE *)(this + 81) = 1; /*0x775220*/
+        this->u8_51 = 1; /*0x775220*/
       else
         Debug::Log(); /*0x77522d*/
     }
@@ -433,10 +438,10 @@ LABEL_21:
     strncpy(Destination, Str, v22); /*0x7753af*/
     Sleep(0x64u); /*0x7753bf*/
     AsyncIO::WaitCompletion(this); /*0x7753c3*/
-    if ( !WriteFile(this->q05C, &stru_830620[8576], 1u, &v28, (LPOVERLAPPED)(this + 60)) ) /*0x7753dc*/
+    if ( !WriteFile(this->q05C, &stru_830620[8576], 1u, &v28, (LPOVERLAPPED)(&this->u32_180)) ) /*0x7753dc*/
     {
       if ( GetLastError() == 997 ) /*0x7753ed*/
-        *(_BYTE *)(this + 81) = 1; /*0x7753ef*/
+        this->u8_51 = 1; /*0x7753ef*/
       else
         Debug::Log(); /*0x7753fc*/
     }
@@ -444,6 +449,7 @@ LABEL_21:
     Sleep(0x64u); /*0x77540d*/
   }
   return 0; /*0x775428*/
+}
 }
 
 // 0x7754A0
@@ -460,6 +466,7 @@ int WinModemClass::HangUp(int a2)
 {
   this->q068 = a2; /*0x7754b4*/
   return a2; /*0x7754b7*/
+}
 }
 
 // 0x7754D0
@@ -525,19 +532,20 @@ int WinModemClass::LogCommErrors(NullModemClass * aP1, char a3, int a4, int a5)
     Debug::Log(); /*0x775604*/
   return result; /*0x7755f8*/
 }
+}
 
 // 0x775610
 WinModemClass * WinModemClass::QueryInterface(char a2)
 {
 {
     int v3;
-    v3 = *((int *)(this) + 23);
+    v3 = this->q05C;
     *(int *)this = &vt_WinModemClass;
     if ( v3 != -1 )
   {
     Debug::Log();
     CloseHandle(*((HANDLE *)(this) + 23));
-    *((int *)(this) + 23) = -1;
+    this->q05C = -1;
   }
     if ( this->q024 )
     __3_YAXPAX_Z(*((void **)(this) + 9));

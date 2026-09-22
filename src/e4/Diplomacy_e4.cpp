@@ -254,6 +254,7 @@ LABEL_60:
   SquadClass::ProcessMove(v26); /*0x658269*/
   return 0; /*0x658178*/
 }
+}
 
 // 0x603DB0
 namespace gamemd {

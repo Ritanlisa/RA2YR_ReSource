@@ -31,7 +31,7 @@ int VocClass::Release()
     int v4 = 0; /*0x405389*/
     if ( result > 0 ) /*0x40538d*/
     {
-      v5 = (_DWORD **)(this + 40); /*0x405390*/
+      v5 = (_DWORD **)(&this->u32_100); /*0x405390*/
       do /*0x4053a8*/
       {
         RefCount::Decrement(*v5); /*0x405395*/
@@ -45,10 +45,11 @@ int VocClass::Release()
     this->ActiveBufferCount = 0; /*0x4053ab*/
     this->Volume.AudioState = 4; /*0x4053b1*/
     this->Attack = 0; /*0x4053b8*/
-    *(_DWORD *)(this + 632) = 0; /*0x4053be*/
+    this->u32_278 = 0; /*0x4053be*/
     this->Volume |= 1u; /*0x4053ca*/
   }
   return result; /*0x4053cf*/
+}
 }
 
 // 0x751590

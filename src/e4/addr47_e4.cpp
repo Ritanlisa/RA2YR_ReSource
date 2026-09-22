@@ -24,15 +24,16 @@ void CaptureManagerClass__vt_03_()
 
   AbstractClass *v2 = *(void **)(this + 4); /*0x472a86*/
   this->uniqueId = 0; /*0x472a89*/
-  if ( v2 && *(_BYTE *)(this + 13) ) /*0x472a90*/
+  if ( v2 && this->IsAllocated ) /*0x472a90*/
   {
     __3_YAXPAX_Z(v2); /*0x472a96*/
     this->vtable1 = 0; /*0x472a9e*/
   }
-  *(_BYTE *)(this + 13) = 0; /*0x472aa1*/
+  this->IsAllocated = 0; /*0x472aa1*/
   this->vtable2 = 0; /*0x472aa4*/
 }
 } // namespace gamemd
+}
 
 // 0x472AD0
 namespace gamemd {
@@ -42,6 +43,7 @@ void CaptureManagerClass__vt_06_(int a2)
   return *(_DWORD *)(this->Items + 4 * a2); /*0x472ada*/
 }
 } // namespace gamemd
+}
 
 // 0x4770E0
 namespace gamemd {
@@ -175,6 +177,7 @@ VectorClass * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsigned c
   }
 }
 } // namespace gamemd
+}
 
 // 0x4790B0
 namespace gamemd {
@@ -193,6 +196,7 @@ void SoundWarning_Set(int a1)
   }
 }
 } // namespace gamemd
+}
 
 // 0x479740
 namespace gamemd {
@@ -251,6 +255,7 @@ LABEL_18:
   CloseHandle(FileA); /*0x4798e4*/
 }
 } // namespace gamemd
+}
 
 // 0x479BA0
 namespace gamemd {
@@ -310,6 +315,7 @@ LABEL_17:
   return v7; /*0x479be9*/
 }
 } // namespace gamemd
+}
 
 // 0x479D60
 namespace gamemd {
@@ -372,6 +378,7 @@ LABEL_13:
   return 1; /*0x479da5*/
 }
 } // namespace gamemd
+}
 
 // 0x479EF0
 namespace gamemd {
@@ -434,6 +441,7 @@ LABEL_13:
   return 1; /*0x479f35*/
 }
 } // namespace gamemd
+}
 
 // 0x47A080
 namespace ra2 {
@@ -479,6 +487,7 @@ LABEL_9:
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x47A920
 namespace gamemd {
@@ -516,6 +525,7 @@ LABEL_5:
   return 1; /*0x47a9b7*/
 }
 } // namespace gamemd
+}
 
 // 0x47AA50
 namespace gamemd {
@@ -535,6 +545,7 @@ int sub_47AA50(char a1)
   return 1; /*0x47aa92*/
 }
 } // namespace gamemd
+}
 
 // 0x47E040
 namespace gamemd {
@@ -724,6 +735,7 @@ void CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3, int a4)
   return (char)v36; /*0x47e458*/
 }
 } // namespace gamemd
+}
 
 // 0x47E470
 namespace gamemd {
@@ -913,6 +925,7 @@ void CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int a4)
   return (char)v36; /*0x47e888*/
 }
 } // namespace gamemd
+}
 
 // 0x47EFE0
 namespace gamemd {
@@ -1057,6 +1070,7 @@ void int sub_47EFE0(unsigned int * a1, int * a2, unsigned int a3)
   return result; /*0x47f204*/
 }
 } // namespace gamemd
+}
 
 // 0x47F250
 namespace gamemd {
@@ -1212,6 +1226,7 @@ unsigned short * RenderFogOfWarOverlay(int a1, int * a2, unsigned int a3)
   return result; /*0x47f478*/
 }
 } // namespace gamemd
+}
 
 // 0x470C30
 namespace gamemd {

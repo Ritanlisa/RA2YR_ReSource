@@ -2441,6 +2441,7 @@ void OwnerDrawControl::InitVtable()
 {
   this->vfptr = &OwnerDraw::DialogControl::`vftable'; /*0x624130*/
 }
+}
 
 // 0x633050
 void PKStrawClass::Initialize()
@@ -2598,6 +2599,7 @@ int ResultNode::Init()
 {
   __3_YAXPAX_Z((void *)this->headNode[1]); /*0x4cb897*/
   this->headNode[1] = 0; /*0x4cb89f*/
+}
 }
 
 // 0x625ab0

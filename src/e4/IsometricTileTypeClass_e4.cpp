@@ -12,9 +12,9 @@ int IsometricTileTypeClass::ProcessPower(int * a2)
   AbstractTypeClass::ProcessPower((char *)this, a2); /*0x549b79*/
   Power::TimerProcess(this->q294); /*0x549b87*/
   Power::TimerProcess(this->q298); /*0x549b95*/
-  Power::TimerProcess(*(_DWORD *)(this + 668)); /*0x549ba3*/
+  Power::TimerProcess(this->u32_29C); /*0x549ba3*/
   Power::TimerProcess(this->q0A8); /*0x549bb1*/
-  Power::TimerProcess(*(_DWORD *)(this + 692)); /*0x549bbf*/
+  Power::TimerProcess(this->u32_2B4); /*0x549bbf*/
   int v3 = this->q2BC; /*0x549bc4*/
   if ( v3 ) /*0x549bcc*/
   {
@@ -22,19 +22,20 @@ int IsometricTileTypeClass::ProcessPower(int * a2)
     Power::TimerProcess(v4); /*0x549bdb*/
   }
   Power::TimerProcess(this->q2C0); /*0x549be9*/
-  Power::TimerProcess(*(_DWORD *)(this + 708)); /*0x549bf7*/
-  Power::TimerProcess(*(_DWORD *)(this + 724)); /*0x549c05*/
-  Power::TimerProcess(*(_DWORD *)(this + 728)); /*0x549c13*/
-  Power::TimerProcess(*(_DWORD *)(this + 732)); /*0x549c21*/
+  Power::TimerProcess(this->u32_2C4); /*0x549bf7*/
+  Power::TimerProcess(this->u32_2D4); /*0x549c05*/
+  Power::TimerProcess(this->u32_2D8); /*0x549c13*/
+  Power::TimerProcess(this->u32_2DC); /*0x549c21*/
   int v5; // edx
-  LOBYTE(v5) = *(_BYTE *)(this + 736); /*0x549c26*/
+  LOBYTE(v5) = this->u8_2E0; /*0x549c26*/
   int v6 = Power::FlagProcess(a2, v5); /*0x549c2f*/
-  LOBYTE(v6) = *(_BYTE *)(this + 737); /*0x549c34*/
+  LOBYTE(v6) = this->u8_2E1; /*0x549c34*/
   Power::FlagProcess(a2, v6); /*0x549c3d*/
   Power::TimerProcess(this->q0B9); /*0x549c4b*/
-  Power::TimerProcess(*(_DWORD *)(this + 744)); /*0x549c59*/
-  Power::TimerProcess(*(_DWORD *)(this + 748)); /*0x549c67*/
-  return Power::TimerProcess(*(_DWORD *)(this + 752)); /*0x549c7a*/
+  Power::TimerProcess(this->u32_2E8); /*0x549c59*/
+  Power::TimerProcess(this->u32_2EC); /*0x549c67*/
+  return Power::TimerProcess(this->u32_2F0); /*0x549c7a*/
+}
 }
 
 // 0x549C80
@@ -76,6 +77,7 @@ AbstractClass * * IsometricTileTypeClass::LoadTypeData(int * a1, int a2)
   }
   return result; /*0x549d5d*/
 }
+}
 
 // 0x549DD0
 int IsometricTileTypeClass::GetTileIndex(int a2, int a3)
@@ -90,12 +92,14 @@ int IsometricTileTypeClass::GetTileIndex(int a2, int a3)
     this->q2C8 = -1; /*0x549e04*/
   return result; /*0x549e0e*/
 }
+}
 
 // 0x54A160
 int IsometricTileTypeClass::GetAuxField()
 {
 {
   return this->q294; /*0x54a166*/
+}
 }
 
 // 0x549D70
@@ -244,15 +248,15 @@ DynamicVector * IsometricTileTypeClass::Constructor(char a2)
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->vtable2;
     *(void**)this = &vt_VectorClass_unsigned_short;
-    if ( v3 && *((char *)(this) + 13) )
+    if ( v3 && this->q034 )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->vtable2 = 0;
   }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
+    this->q034 = 0;
+    this->vtable3 = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;

@@ -92,6 +92,7 @@ LABEL_28:
   return result; /*0x41f480*/
 }
 } // namespace gamemd
+}
 
 // 0x473450
 namespace gamemd {
@@ -101,6 +102,7 @@ int CCINIClass::GetDB()
   return this->q004; /*0x473453*/
 }
 } // namespace gamemd
+}
 
 // 0x4741F0
 namespace gamemd {
@@ -153,6 +155,7 @@ LABEL_8:
   return (int)v7->__pad_0; /*0x474311*/
 }
 } // namespace gamemd
+}
 
 // 0x535B30
 namespace gamemd {
@@ -207,6 +210,7 @@ unsigned int * CCINIClass::CCINIClass()
   return result; /*0x535ba3*/
 }
 } // namespace gamemd
+}
 
 // 0x41F490
 namespace gamemd {

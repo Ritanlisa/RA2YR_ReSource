@@ -42,7 +42,7 @@ LABEL_17:
         if ( v6 > 0 ) /*0x75f79d*/
         {
           do /*0x75f7b8*/
-            ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(*(_DWORD *)(v4 + 500) + 4 * v11++)); /*0x75f7ae*/
+            ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v4->u32_1F4 + 4 * v11++)); /*0x75f7ae*/
           while ( v11 < a2 ); /*0x75f7b8*/
         }
       }
@@ -54,15 +54,15 @@ LABEL_17:
           Register = (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v3 + 12))(v3, &v13, 4, 0); /*0x75f737*/
           if ( Register < 0 ) /*0x75f73b*/
             break; /*0x75f73b*/
-          int v7 = *(_DWORD *)(v4 + 504); /*0x75f73d*/
+          int v7 = v4->u32_1F8; /*0x75f73d*/
           if ( v4->q200 < v7 /*0x75f76e*/
-            || (*(_BYTE *)(v4 + 509) || !v7)
+            || (v4->u8_1FD || !v7)
   int v8; // eax
             && (v8 = v4->inLimbo, v8 > 0)
             && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(v4->q7C0 + 8))(v4 + 496, v7 + v8, 0) )
           {
             int v9 = v4->q200; /*0x75f775*/
-            int v10 = *(_DWORD *)(v4 + 500); /*0x75f778*/
+            int v10 = v4->u32_1F4; /*0x75f778*/
             v4->q200 = v9 + 1; /*0x75f77e*/
             *(_DWORD *)(v10 + 4 * v9) = v13; /*0x75f785*/
           }
@@ -76,6 +76,7 @@ LABEL_17:
   return Register; /*0x75f7ba*/
 }
 } // namespace gamemd
+}
 
 // 0x763200
 namespace gamemd {

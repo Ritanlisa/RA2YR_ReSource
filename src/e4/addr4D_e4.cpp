@@ -121,6 +121,7 @@ void* DestructFoggedObjectClass(FoggedObjectClass * aP0)
   return result; /*0x4d187e*/
 }
 } // namespace gamemd
+}
 
 // 0x4D2370
 namespace gamemd {
@@ -225,6 +226,7 @@ LABEL_7:
   return a1 + 8 * (v3 / 2); /*0x4d2f34*/
 }
 } // namespace gamemd
+}
 
 // 0x4DB8A0
 namespace gamemd {
@@ -283,6 +285,7 @@ LABEL_13:
   return result; /*0x4db9a3*/
 }
 } // namespace gamemd
+}
 
 // 0x4D0540
 namespace gamemd {

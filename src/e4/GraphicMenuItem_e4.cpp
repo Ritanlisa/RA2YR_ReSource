@@ -16,3 +16,4 @@ void GraphicMenuItem::Dtor()
     __3_YAXPAX_Z(v1); /*0x4f3a86*/
   }
 }
+}

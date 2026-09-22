@@ -290,6 +290,7 @@ int Scenario::ReadTeams()
   return result; /*0x44fe4a*/
 }
 } // namespace gamemd
+}
 
 // 0x4C6180
 namespace gamemd {
@@ -322,6 +323,7 @@ int Scenario::CopyLocalScenarioData()
   return result; /*0x4c6200*/
 }
 } // namespace gamemd
+}
 
 // 0x50D610
 namespace gamemd {
@@ -343,16 +345,16 @@ int Scenario::ProcessSidebarUnits()
       int * v6 = (int *)__2_YAPAXI_Z(8u); /*0x50d660*/
       *v6 = v5; /*0x50d665*/
       v6[1] = v4; /*0x50d66d*/
-      int v7 = *(_DWORD *)(this + 372); /*0x50d670*/
-      if ( *(_DWORD *)(this + 380) < v7 /*0x50d695*/
-        || (*(_BYTE *)(this + 377) || !v7)
+      int v7 = this->u32_174; /*0x50d670*/
+      if ( this->u32_17C < v7 /*0x50d695*/
+        || (this->u8_179 || !v7)
   int v8; // ecx
         && (v8 = this->q060, v8 > 0)
-        && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(this + 364) + 8))(this + 364, v7 + v8, 0) )
+        && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(this->u32_16C + 8))(&this->u32_5B0, v7 + v8, 0) )
       {
-        int v9 = *(_DWORD *)(this + 380); /*0x50d69c*/
-        int v10 = *(_DWORD *)(this + 368); /*0x50d69f*/
-        *(_DWORD *)(this + 380) = v9 + 1; /*0x50d6a5*/
+        int v9 = this->u32_17C; /*0x50d69c*/
+        int v10 = this->u32_170; /*0x50d69f*/
+        this->u32_17C = v9 + 1; /*0x50d6a5*/
         *(_DWORD *)(v10 + 4 * v9) = v6; /*0x50d6a8*/
       }
     }
@@ -361,6 +363,7 @@ int Scenario::ProcessSidebarUnits()
   return result; /*0x50d6bd*/
 }
 } // namespace gamemd
+}
 
 // 0x552B10
 namespace gamemd {
@@ -412,6 +415,7 @@ Game * * Scenario::ComputeDisplayPosition()
   return result; /*0x552b87*/
 }
 } // namespace gamemd
+}
 
 // 0x552BE0
 namespace gamemd {
@@ -457,6 +461,7 @@ unsigned int * Scenario::ComputeDialogPos(unsigned int * a2)
   return result; /*0x552c11*/
 }
 } // namespace gamemd
+}
 
 // 0x55AFB0
 namespace gamemd {
@@ -805,6 +810,7 @@ LABEL_82:
   }
 }
 } // namespace gamemd
+}
 
 // 0x597A10
 namespace gamemd {
@@ -817,6 +823,7 @@ int Scenario::LoadOrReloadOptions(IUnknown * aP1)
     return (unsigned __int8)LoadOptions::Run(this) != 0; /*0x597a28*/
 }
 } // namespace gamemd
+}
 
 // 0x5E7460
 namespace gamemd {
@@ -841,6 +848,7 @@ int Scenario::PreGameInit()
   return result;
 }
 } // namespace gamemd
+}
 
 // 0x642AD0
 namespace gamemd {
@@ -850,6 +858,7 @@ void Scenario::SetByte96()
   this->q060 = 0; /*0x642ad0*/
 }
 } // namespace gamemd
+}
 
 // 0x684240
 namespace gamemd {
@@ -868,6 +877,7 @@ int Scenario::ClearScreen()
   return result; /*0x68428c*/
 }
 } // namespace gamemd
+}
 
 // 0x684620
 namespace gamemd {
@@ -1108,6 +1118,7 @@ int Scenario::LoadWithProgress()
   }
 }
 } // namespace gamemd
+}
 
 // 0x685670
 namespace gamemd {
@@ -1368,6 +1379,7 @@ LABEL_64:
   return FadePalette(&FileSystem_TEMPERAT_PAL, 7, (void (*)(void))Event::Dispatch); /*0x6858fa*/
 }
 } // namespace gamemd
+}
 
 // 0x685DC0
 namespace gamemd {
@@ -1619,6 +1631,7 @@ LABEL_60:
   return v13; /*0x686045*/
 }
 } // namespace gamemd
+}
 
 // 0x4758F0
 namespace gamemd {

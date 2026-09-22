@@ -19,6 +19,7 @@ int globalHelper_0108F0(unsigned int * a1, unsigned int * a2)
     return *a1 >= *a2 ? 1 : -1;
 }
 } // namespace gamemd
+}
 
 // 0x517360
 namespace gamemd {
@@ -30,16 +31,17 @@ unsigned char E4Recv_517360::sub_517360(unsigned char a2, unsigned char * a3)
   AbstractClass *v5; // bl
   unsigned __int8 result; // al
 
-  v3 = *(this + 1); /*0x517394*/
-  *(this + 2) += a2 * (a3[2] - *(this + 2)) / 256; /*0x517397*/
+  v3 = this->u32_4; /*0x517394*/
+  this->u32_8 += a2 * (a3[2] - this->u32_8) / 256; /*0x517397*/
   v4 = v3 + a2 * (a3[1] - v3) / 256; /*0x5173b8*/
   v5 = *this; /*0x5173ba*/
-  *(this + 1) = v4; /*0x5173bc*/
+  this->u32_4 = v4; /*0x5173bc*/
   result = v5 + a2 * (*a3 - v5) / 256; /*0x5173de*/
   *this = result; /*0x5173e1*/
   return result; /*0x5173cb*/
 }
 } // namespace gamemd
+}
 
 // 0x5173F0
 namespace gamemd {
@@ -50,15 +52,16 @@ int E4Recv_5173F0::sub_5173F0(unsigned char * a2)
   int v2 = *this - *a2; /*0x517400*/
   if ( v2 < 0 ) /*0x517402*/
     v2 = *a2 - *this; /*0x517404*/
-  int v3 = *(this + 1) - a2[1]; /*0x517410*/
+  int v3 = this->u32_4 - a2[1]; /*0x517410*/
   if ( v3 < 0 ) /*0x517412*/
-    v3 = a2[1] - *(this + 1); /*0x517414*/
-  int v4 = *(this + 2) - a2[2]; /*0x517422*/
+    v3 = a2[1] - this->u32_4; /*0x517414*/
+  int v4 = this->u32_8 - a2[2]; /*0x517422*/
   if ( v4 < 0 ) /*0x517424*/
-    v4 = a2[2] - *(this + 2); /*0x517426*/
+    v4 = a2[2] - this->u32_8; /*0x517426*/
   return v2 * v2 + v3 * v3 + v4 * v4; /*0x517437*/
 }
 } // namespace gamemd
+}
 
 // 0x51FEF0
 namespace gamemd {
@@ -76,26 +79,26 @@ void SaveInfantryToINI()
   for ( i = 0; result < g_BuildingClass_Count; i = result ) /*0x51ff15*/
   {
     IUnknown *v4 = *((_DWORD *)g_InfantryClassLimit + result); /*0x51ff25*/
-    if ( !*(_BYTE *)(v4 + 129) ) /*0x51ff28*/
+    if ( !v4->u8_81 ) /*0x51ff28*/
     {
       sprintf(Buffer, g_Str_Trace__d, result); /*0x51ff41*/
       if ( v4->vt_slot_388(a2, a3) == -1 ) /*0x51ff71*/
-        char * v30 = *(char **)(v4 + 180); /*0x51ff79*/
+        char * v30 = v4->u32_B4; /*0x51ff79*/
       else
         v30 = (char *)v4->vt_slot_388(); /*0x51ff89*/
   int v32; // [esp+2Ch] [ebp-90h] BYREF
       unsigned int v5 = *ProgressTimer::GetValue((_WORD *)(v4 + 904), &v32); /*0x51ff9d*/
       int v6 = v4->q21C; /*0x51ffab*/
-      const char * v7 = (const char *)(*(_DWORD *)(v4 + 1728) + 36); /*0x51ffb3*/
+      const char * v7 = (const char *)(v4->u32_6C0 + 36); /*0x51ffb3*/
   _DWORD v31[3]; // [esp+20h] [ebp-9Ch] BYREF
       v31[0] = v4->q09C; /*0x51ffb6*/
-      int v8 = *(unsigned __int8 *)(v4 + 1058); /*0x51ffbf*/
+      int v8 = v4->u32_422; /*0x51ffbf*/
       v31[1] = v4->q028; /*0x51ffc5*/
-      int v9 = *(unsigned __int8 *)(v4 + 1057); /*0x51ffce*/
+      int v9 = v4->q421; /*0x51ffce*/
       v31[2] = v4->q0A4; /*0x51ffd4*/
       a3 = v8; /*0x51ffe0*/
       a2 = v9; /*0x51ffe7*/
-      int v23 = FootClass::GetField(v4 + 336, *(_DWORD *)(v4 + 532), v4->q08C); /*0x52000b*/
+      int v23 = FootClass::GetField(v4 + 336, v4->u32_214, v4->q08C); /*0x52000b*/
       char * v19 = FromNameIndex((int)v30); /*0x52001b*/
   int v10; // eax
       LOBYTE(v10) = Input::OffsetToDirection(v31); /*0x52001c*/
@@ -142,6 +145,7 @@ void SaveInfantryToINI()
   return result; /*0x5200a5*/
 }
 } // namespace gamemd
+}
 
 // 0x510B00
 namespace gamemd {

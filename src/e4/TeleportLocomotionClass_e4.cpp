@@ -12,7 +12,7 @@ T TeleportLocomotionClass::TeleportLocomotionClass()
   this->Owner = DataGlobal_B0EBFC; /*0x71801a*/
   this->q090 = DataGlobal_B0EC00; /*0x718026*/
   this->LastCoords = DataGlobal_B0EBF8; /*0x71802e*/
-  *(_DWORD *)(this + 44) = DataGlobal_B0EBFC; /*0x718036*/
+  this->u32_2C = DataGlobal_B0EBFC; /*0x718036*/
   this->LinkedTo = DataGlobal_B0EC00; /*0x71803e*/
   this->Moving = 0; /*0x718043*/
   this->TeleportLocomotionClass_field_bool_35 = 0; /*0x718046*/
@@ -24,6 +24,7 @@ T TeleportLocomotionClass::TeleportLocomotionClass()
   this->Piggybackee = 0; /*0x71805b*/
   *(_DWORD *)this = &TeleportLocomotionClass::`vftable'; /*0x71805e*/
   this->vtable2 = &TeleportLocomotionClass::`vftable'; /*0x718064*/
-  *(_DWORD *)(this + 24) = &vt_TeleportLocomotionClass; /*0x71806b*/
+  this->vtable3 = &vt_TeleportLocomotionClass; /*0x71806b*/
   return this; /*0x718074*/
+}
 }

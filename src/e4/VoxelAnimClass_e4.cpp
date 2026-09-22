@@ -67,6 +67,7 @@ unsigned int VoxelAnimClass::ProcessFrame()
   return result; /*0x4cb056*/
 }
 } // namespace gamemd
+}
 
 // 0x7499F0
 namespace gamemd {
@@ -117,6 +118,7 @@ int VoxelAnimClass::CleanupMembers()
   return ObjectClass::Dtor(this); /*0x749b11*/
 }
 } // namespace gamemd
+}
 
 // 0x749B70
 namespace gamemd {
@@ -171,7 +173,7 @@ LABEL_6:
   ConvertClass *v15; // esi
   float v38[12]; // [esp+50h] [ebp-60h] BYREF
   float v39[12]; // [esp+80h] [ebp-30h] BYREF
-        qmemcpy(v38, VoxelAnimClass::QuaternionToMatrix((float *)this + 44, v39), sizeof(v38)); /*0x749cbc*/
+        qmemcpy(v38, VoxelAnimClass::QuaternionToMatrix((float *)&this->u32_B0, v39), sizeof(v38)); /*0x749cbc*/
         Viewport::Clear(); /*0x749cbe*/
         globalHelper_053F90( /*0x749ce8*/
           v6,
@@ -193,7 +195,7 @@ LABEL_6:
         SHPFrame = (int *)BuildingClass::GetSHPFrame((_DWORD *)DataGlobal_87F6B4, 8193); /*0x749d4e*/
         int * v7 = Miles::DriverGet(); /*0x749d5c*/
         BlitterDrawSHP((int *)g_DSurface_Hidden_2, DataGlobal_87F6B4, v7, v37, &v25, a3, 0, SHPFrame, v22, 0, 1000, 0, 0); /*0x749d6e*/
-        qmemcpy(v38, VoxelAnimClass::QuaternionToMatrix((float *)this + 44, v39), sizeof(v38)); /*0x749d95*/
+        qmemcpy(v38, VoxelAnimClass::QuaternionToMatrix((float *)&this->u32_B0, v39), sizeof(v38)); /*0x749d95*/
         globalHelper_053C80(v6, 0, 0, v38, (float *)&DataGlobal_887470); /*0x749da3*/
         Viewport::Clear(); /*0x749da8*/
         float * v8 = MultiplyMatrix3x4(v39, DataGlobal_887430, v38); /*0x749dbe*/
@@ -212,7 +214,7 @@ LABEL_6:
         int v14 = v12[133]; /*0x749e38*/
         if ( v13 ) /*0x749e41*/
         {
-          v15 = *(_DWORD **)(*((_DWORD *)BuildingTypeClass_AnimTable + *(_DWORD *)(v13 + 90196)) + 780); /*0x749e52*/
+          v15 = *(_DWORD **)(*((_DWORD *)BuildingTypeClass_AnimTable + v13->u32_16054) + 780); /*0x749e52*/
         }
         else if ( *(_BYTE *)(this->q104 + 768) ) /*0x749e60*/
         {
@@ -238,6 +240,7 @@ LABEL_6:
   return v4; /*0x749eea*/
 }
 } // namespace gamemd
+}
 
 // 0x749F30
 namespace gamemd {
@@ -245,6 +248,7 @@ void VoxelAnimClass_Update()
 {
 // (no pseudocode — ASM-only function)
 } // namespace gamemd
+}
 
 // 0x74A970
 namespace gamemd {
@@ -279,6 +283,7 @@ int VoxelAnimClass::SaveLoad_Prefix(ObjectClass * aP1, int aP1a)
   return (int)Register->__pad_0; /*0x74a9fd*/
 }
 } // namespace gamemd
+}
 
 // 0x74AA30
 namespace gamemd {
@@ -306,6 +311,7 @@ AbstractClass * * VoxelAnimClass::GetFrameCount(int * a2)
   return Power::TimerProcess(this->VoxelAnimClass_field_0x140); /*0x74aac0*/
 }
 } // namespace gamemd
+}
 
 // 0x74AB30
 namespace gamemd {
@@ -315,6 +321,7 @@ int VoxelAnimClass::LoadFrame()
   return this->q104; /*0x74ab36*/
 }
 } // namespace gamemd
+}
 
 // 0x75AA90
 namespace gamemd {
@@ -338,6 +345,7 @@ int VoxelAnimClass::Reset()
   return this; /*0x75aaf5*/
 }
 } // namespace gamemd
+}
 
 // 0x75EBE0
 namespace gamemd {
@@ -361,14 +369,14 @@ int VoxelAnimClass::Constructor()
   this->q06A = 0; /*0x75ec38*/
   this->isOnMap = 0; /*0x75ec44*/
   this->Audio4 = 0; /*0x75ec4a*/
-  FrameSnapshot::Init((_WORD *)(this + 472)); /*0x75ec50*/
-  *(_DWORD *)(this + 500) = 0; /*0x75ec57*/
-  *(_DWORD *)(this + 504) = 5; /*0x75ec5d*/
-  *(_BYTE *)(this + 508) = 1; /*0x75ec67*/
-  *(_BYTE *)(this + 509) = 0; /*0x75ec6e*/
+  FrameSnapshot::Init((_WORD *)(&this->u32_BC2)); /*0x75ec50*/
+  this->u32_1F4 = 0; /*0x75ec57*/
+  this->u32_1F8 = 5; /*0x75ec5d*/
+  this->u8_1FC = 1; /*0x75ec67*/
+  this->u8_1FD = 0; /*0x75ec6e*/
   this->q7C0 = &vt_VectorClass_CellClass; /*0x75ec74*/
-  *(_DWORD *)(this + 500) = __2_YAPAXI_Z(0x14u); /*0x75ec83*/
-  *(_BYTE *)(this + 509) = 1; /*0x75ec89*/
+  this->u32_1F4 = __2_YAPAXI_Z(0x14u); /*0x75ec83*/
+  this->u8_1FD = 1; /*0x75ec89*/
   this->q7C0 = &vt_DynamicVectorClass_CellClass; /*0x75ec90*/
   this->q081 = 10; /*0x75ec9a*/
   this->q200 = 0; /*0x75eca4*/
@@ -392,6 +400,7 @@ int VoxelAnimClass::Constructor()
   return this; /*0x75ed29*/
 }
 } // namespace gamemd
+}
 
 // 0x4399E0
 namespace gamemd {

@@ -67,6 +67,7 @@ LABEL_11:
   return result; /*0x6f1aa2*/
 }
 } // namespace gamemd
+}
 
 // 0x40D1B0
 namespace gamemd {

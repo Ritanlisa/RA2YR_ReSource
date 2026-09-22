@@ -25,15 +25,15 @@ InfantryTypeClass * * InfantryTypeClass::Constructor(ObjectClass * aP1)
   this->FireProne = 0; /*0x5236e3*/
   this->SecondaryFire = 0; /*0x5236ea*/
   this->SecondaryProne = 0; /*0x5236f3*/
-  AnimTypeVector::Constructor((_DWORD *)(this + 3664), 0, 0); /*0x5236f9*/
+  AnimTypeVector::Constructor((_DWORD *)(&this->q5B84), 0, 0); /*0x5236f9*/
   this->DeadBodies.Count = 0; /*0x523703*/
   this->DeadBodies.CapacityIncrement = 10; /*0x523706*/
   this->DeadBodies = &vt_TypeList_AnimTypeClass_const; /*0x523709*/
-  AnimTypeVector::Constructor((_DWORD *)(this + 3692), 0, 0); /*0x523719*/
+  AnimTypeVector::Constructor((_DWORD *)(&this->q5C42), 0, 0); /*0x523719*/
   this->DeathAnims.CapacityIncrement = 10; /*0x52371e*/
   this->DeathAnims.Count = 0; /*0x523721*/
   this->DeathAnims = &vt_TypeList_AnimTypeClass_const; /*0x523724*/
-  VectorClass::Construct((_DWORD *)(this + 3720), 0, 0); /*0x523734*/
+  VectorClass::Construct((_DWORD *)(&this->u32_5D00), 0, 0); /*0x523734*/
   this->VoiceComment.CapacityIncrement = 10; /*0x523739*/
   this->VoiceComment.Count = 0; /*0x52373c*/
   this->VoiceComment = &vt_TypeList_int; /*0x52373f*/
@@ -101,32 +101,32 @@ LABEL_11:
     }
   }
   this->ArrayIndex = v5; /*0x52387e*/
-  *(_DWORD *)(this + 3592) = 0; /*0x523886*/
+  this->u32_E08 = 0; /*0x523886*/
   this->OccupyWeapon = 0; /*0x523890*/
-  *(_DWORD *)(this + 3596) = 0; /*0x523896*/
-  *(_DWORD *)(this + 3604) = 0; /*0x523899*/
-  *(_DWORD *)(this + 3608) = 0; /*0x52389f*/
-  *(_BYTE *)(this + 3612) = 0; /*0x5238a5*/
+  this->u32_E0C = 0; /*0x523896*/
+  this->u32_E14 = 0; /*0x523899*/
+  this->u32_E18 = 0; /*0x52389f*/
+  this->u8_E1C = 0; /*0x5238a5*/
   this->q384 = 0; /*0x5238ab*/
   this->EliteOccupyWeapon = 0; /*0x5238b4*/
   this->q38C = 0; /*0x5238ba*/
-  *(_DWORD *)(this + 3620) = 0; /*0x5238c0*/
-  *(_DWORD *)(this + 3636) = 0; /*0x5238c3*/
-  *(_BYTE *)(this + 3640) = 0; /*0x5238c9*/
+  this->u32_E24 = 0; /*0x5238c0*/
+  this->u32_E34 = 0; /*0x5238c3*/
+  this->u8_E38 = 0; /*0x5238c9*/
   this->RotCount = 8; /*0x5238cf*/
-  *(_DWORD *)(this + 3624) = 0; /*0x5238d9*/
+  this->u32_E28 = 0; /*0x5238d9*/
   this->RadarVisible = 0; /*0x5238dc*/
   this->Crushable = 1; /*0x5238e2*/
   this->Repairable = 0; /*0x5238e9*/
-  *(_DWORD *)(this + 3628) = 0; /*0x5238ef*/
+  this->u32_E2C = 0; /*0x5238ef*/
   this->Crewed = 0; /*0x5238f2*/
-  *(_BYTE *)(this + 3381) = 0; /*0x5238f8*/
-  *(_BYTE *)(this + 3382) = 0; /*0x5238fe*/
-  *(_BYTE *)(this + 3387) = 0; /*0x523904*/
+  this->u8_D35 = 0; /*0x5238f8*/
+  this->u8_D36 = 0; /*0x5238fe*/
+  this->u8_D3B = 0; /*0x523904*/
   this->SpawnRegenRate = 1; /*0x52390a*/
   this->DisableShadowCache = 1; /*0x523911*/
   this->DisableVoxelCache = 0; /*0x523918*/
-  *(_BYTE *)(this + 3374) = 0; /*0x52391e*/
+  this->u8_D2E = 0; /*0x52391e*/
   this->Sequence = __2_YAPAXI_Z(0x5E8u); /*0x52392c*/
   for ( i = 0; i < 1512; *(_DWORD *)(i + this->Sequence - 20) = 0 ) /*0x523932*/
   {
@@ -137,6 +137,7 @@ LABEL_11:
     *(_DWORD *)(i + this->Sequence - 24) = -1; /*0x523960*/
   }
   return this; /*0x523972*/
+}
 }
 
 // 0x523980
@@ -152,6 +153,7 @@ unsigned int * InfantryTypeClass::Constructor_523980(ObjectTypeClass * aP1)
   this->vtable3 = &InfantryTypeClass::`vftable'; /*0x5239b5*/
   this->vtable4 = &vt_InfantryTypeClass; /*0x5239bc*/
   return this; /*0x5239c5*/
+}
 }
 
 // 0x523B40
@@ -189,6 +191,7 @@ int InfantryTypeClass::CreateInfantry(short * a2, AbstractClass * ppv)
     }
   }
   return 0; /*0x523c07*/
+}
 }
 
 // 0x5240A0
@@ -517,6 +520,7 @@ int InfantryTypeClass::LoadFromINI(unsigned char *** a2)
   AnimSequence::Parse(this); /*0x52473a*/
   return 1; /*0x524741*/
 }
+}
 
 // 0x524960
 namespace gamemd {
@@ -597,6 +601,7 @@ ObjectTypeClass * * InfantryTypeClass_LoadTypeData()
   return result; /*0x524b57*/
 }
 } // namespace gamemd
+}
 
 // 0x524B60
 namespace gamemd {
@@ -633,6 +638,7 @@ TechnoTypeClass * * InfantryTypeClass_SaveLoad_Prefix()
   return result; /*0x524c51*/
 }
 } // namespace gamemd
+}
 
 // 0x524D70
 InfantryTypeClass * InfantryTypeClass::ddtor(char a2)
@@ -725,6 +731,7 @@ LABEL_8:
   this->abstractFlags = *(_DWORD *)aP1->__pad_14; /*0x524f7c*/
   return this; /*0x524f81*/
 }
+}
 
 // 0x772FA0
 WeaponTypeClass * * InfantryTypeClass::Find()
@@ -748,6 +755,7 @@ LABEL_6:
       goto LABEL_6; /*0x772ff4*/
   }
   return *(WeaponTypeClass **)(*(_DWORD *)&stru_87C374[45560] + 4 * v2); /*0x77300f*/
+}
 }
 
 // 0x523B10

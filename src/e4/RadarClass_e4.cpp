@@ -11,7 +11,7 @@ CampaignClass * * RadarClass::Destruct()
   *this = &vt_RadarClass; /*0x652c0c*/
   this->AudioFileClass_530.Release(); /*0x652c12*/
   TacticalClass::FreeResources(this); /*0x652c19*/
-  MapClass *v2 = (char *)(this + 1314); /*0x652c1e*/
+  MapClass *v2 = (char *)(&this->u32_20C4); /*0x652c1e*/
   int v3 = 22; /*0x652c24*/
   do /*0x652c53*/
   {
@@ -30,25 +30,26 @@ CampaignClass * * RadarClass::Destruct()
   while ( v3 ); /*0x652c53*/
   CampaignClass *v5 = (void *)this->q1260; /*0x652c55*/
   this->q125C = &vt_VectorClass_Point2D; /*0x652c5b*/
-  if ( v5 && *((_BYTE *)this + 4713) ) /*0x652c69*/
+  if ( v5 && this->u8_1269 ) /*0x652c69*/
   {
     __3_YAXPAX_Z(v5); /*0x652c72*/
     this->q1260 = 0; /*0x652c7a*/
   }
-  *((_BYTE *)this + 4713) = 0; /*0x652c80*/
+  this->u8_1269 = 0; /*0x652c80*/
   this->q1264 = 0; /*0x652c86*/
   CampaignClass *v6 = (void *)this->q1228; /*0x652c8c*/
   this->q1224 = &vt_VectorClass_Cell; /*0x652c92*/
-  if ( v6 && *((_BYTE *)this + 4657) ) /*0x652ca0*/
+  if ( v6 && this->u8_1231 ) /*0x652ca0*/
   {
     __3_YAXPAX_Z(v6); /*0x652ca9*/
     this->q1228 = 0; /*0x652cb1*/
   }
-  *((_BYTE *)this + 4657) = 0; /*0x652cb9*/
+  this->u8_1231 = 0; /*0x652cb9*/
   this->q122C = 0; /*0x652cbf*/
   return MapClass::Destruct(this); /*0x652cca*/
 }
 } // namespace gamemd
+}
 
 // 0x654650
 namespace gamemd {
@@ -128,6 +129,7 @@ void RadarClass_RecreateSurface()
   return (char)v3; /*0x6547b3*/
 }
 } // namespace gamemd
+}
 
 // 0x6A8420
 namespace gamemd {
@@ -318,6 +320,7 @@ LABEL_74:
   return wcscmp(v14, v15) <= 0; /*0x6a8457*/
 }
 } // namespace gamemd
+}
 
 // 0x4F4220
 namespace gamemd {

@@ -505,6 +505,7 @@ LABEL_81:
   SendMessageA(v42, 1202, 0, v41); /*0x5fb8b3*/
   return 1; /*0x5fb4da*/
 }
+}
 
 // 0x5FC120
 namespace gamemd {
@@ -535,3 +536,4 @@ LABEL_7:
   return a1 + 8 * (v3 / 2); /*0x5fc154*/
 }
 } // namespace gamemd
+}

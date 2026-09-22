@@ -16,3 +16,4 @@ int LCWPipe::Dtor()
   this->q006 = 0; /*0x552087*/
   return Pipe::Dtor(this); /*0x552093*/
 }
+}

@@ -25,3 +25,4 @@ int ArrayClass::GetAt_Wrap(int a2)
   return 0; /*0x636e95*/
 }
 } // namespace gamemd
+}

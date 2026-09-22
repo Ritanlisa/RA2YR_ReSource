@@ -30,3 +30,4 @@ int TextBuffer::Init()
   this->q2734 = 1; /*0x5bccc8*/
   return Text::DrawRepeated(this, 0, 0, 80, 25); /*0x5bccd4*/
 }
+}

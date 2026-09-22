@@ -164,6 +164,7 @@ LABEL_44:
   dword_ABCD90 = 60; /*0x55e3f7*/
   return result; /*0x55e3fd*/
 }
+}
 
 // 0x55F6C0
 int SyncDelay::Check(unsigned int * a2)
@@ -172,4 +173,5 @@ int SyncDelay::Check(unsigned int * a2)
 
   _DWORD * v2 = (_DWORD *)this->q010; /*0x55f6c0*/
   return v2 && *v2 == *a2; /*0x55f6d3*/
+}
 }

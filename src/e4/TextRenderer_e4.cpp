@@ -13,6 +13,7 @@ void * TextRenderer::GetInstance()
   return aP0; /*0x4a60d5*/
 }
 } // namespace gamemd
+}
 
 // 0x4B96A0
 namespace gamemd {
@@ -121,6 +122,7 @@ void * TextRenderer::RenderCentered(int a1, int a2, ObjectClass * aP2, int * a3,
            v28);
 }
 } // namespace gamemd
+}
 
 // 0x642C80
 namespace gamemd {
@@ -134,7 +136,7 @@ int TextRenderer::MeasureBuilding(int a2, ProgressScreenClass * aP2, ProgressScr
   __int16 v23; // [esp+3Eh] [ebp-2h]
   if ( a2 == -1 && aP2 == (ProgressScreenClass *)-1 ) /*0x642c9a*/
   {
-    int v20 = *((char *)this + 97); /*0x642cb1*/
+    int v20 = *((char *)&this->u32_247); /*0x642cb1*/
   int v22[7]; // [esp+20h] [ebp-20h] BYREF
     FoundationSize = Building::GetFoundationSize(v22, 0); /*0x642cb5*/
     int v8 = 0; /*0x642cbc*/
@@ -173,20 +175,21 @@ int TextRenderer::MeasureBuilding(int a2, ProgressScreenClass * aP2, ProgressScr
     Viewport = Display::GetViewport(v22); /*0x642d8d*/
     int v15 = Viewport[2] - v12; /*0x642dac*/
     int v16 = Viewport[3] - v13; /*0x642db0*/
-    *((_DWORD *)this + 26) = v15 / 2; /*0x642dbb*/
-    *((_DWORD *)this + 27) = v16 / 2; /*0x642dbe*/
+    this->u32_68 = v15 / 2; /*0x642dbb*/
+    this->u32_6C = v16 / 2; /*0x642dbe*/
   }
   else
   {
-    *((_DWORD *)this + 26) = a2; /*0x642dc4*/
-    *((_DWORD *)this + 27) = aP2; /*0x642dc7*/
+    this->u32_68 = a2; /*0x642dc4*/
+    this->u32_6C = aP2; /*0x642dc7*/
   }
   *(_DWORD *)&this->__pad_4C[4] = aP3; /*0x642dd6*/
-  *((_BYTE *)this + 112) = (_BYTE)aP4; /*0x642dd9*/
-  *((_BYTE *)this + 113) = a6; /*0x642ddc*/
+  this->u8_70 = (_BYTE)aP4; /*0x642dd9*/
+  this->u8_71 = a6; /*0x642ddc*/
   return a6; /*0x642ddf*/
 }
 } // namespace gamemd
+}
 
 // 0x642EF0
 namespace gamemd {
@@ -251,6 +254,7 @@ void * TextRenderer::MeasureBuilding2()
   return result; /*0x642fdf*/
 }
 } // namespace gamemd
+}
 
 // 0x4A60E0
 namespace gamemd {

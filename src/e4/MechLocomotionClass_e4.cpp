@@ -45,7 +45,7 @@ MechLocomotionClass * MechLocomotionClass::ProcessMove(char a2)
 {
 {
     *(void**)this = vt_MechLocomotionClass;
-    *(this + 1) = &vt_MechLocomotionClass;
+    this->vtable2 = &vt_MechLocomotionClass;
     LocomotionClass::Construct(this);
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);

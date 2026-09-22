@@ -18,7 +18,7 @@ vocabulary and are NOT touched.
 
 Usage: python tools/csp_export/fix_addr_violations.py [--workers 6]
 """
-from _blockspan import block_span, find_marker
+from _blockspan import block_span, find_marker, brace_delta
 import normalize_blocks as _NB
 from normalize_blocks import build_types
 from _vtable import VT_OPEN, balance_paren, split_args, slot_name
@@ -32,10 +32,11 @@ INSIDE = ("// [IDA decompile] original pseudocode - translation "
           "pending (final goal)")
 
 
-def vt_rewrite_fn(seg_text, cls):
+def vt_rewrite_fn(seg_text, cls, env=None):
     """R4: virtual-call dispatch -> RECV->Name(args). Receiver = this (or
-    a `vN = *this` vtable holder). Returns (text, count)."""
-    env = {'this': cls} if cls else {}
+    a `vN = *this` vtable holder). env may carry a CSP this/typed receiver."""
+    env = dict(env or {})
+    env.setdefault('this', cls)
     vt_of = {}
     for m in re.finditer(r'\b([a-z]\w*)\s*=\s*\*(this|[a-z]\w*)\s*;', seg_text):
         if m.group(2) == 'this' or m.group(2) in env:
@@ -51,7 +52,7 @@ def vt_rewrite_fn(seg_text, cls):
             recv = m.group(1)
             slot = int(m.group(2), 0)
             if recv in ('this', '*this'):
-                obj, tgt = 'this', cls
+                obj, tgt = 'this', env.get('this') or cls
             elif recv in vt_of:
                 obj = vt_of[recv]
                 tgt = env.get(obj) or cls
@@ -120,10 +121,11 @@ for p in sorted(SRC.rglob('*.hpp')):
 
 R_MEM = re.compile(r'MEMORY\s*\[\s*(0x[0-9A-Fa-f]+)\s*\]')
 R_THIS1 = re.compile(r'\*\(\s*(?:_DWORD|_BYTE|_WORD|_QWORD|int|unsigned int|char|unsigned char|unsigned short|long long|unsigned long long|float|BOOL)\s*\*\s*\)\s*\(\s*this\s*\+\s*(0x[0-9A-Fa-f]+|\d+)\s*\)')
-R_THIS2 = re.compile(r'\*\(\s*\(\s*(_DWORD|_BYTE|_WORD|_QWORD)\s*\*\s*\)this\s*\+\s*(0x[0-9A-Fa-f]+|\d+)\s*\)')
-WIDTH = {'_DWORD': 4, 'int': 4, 'unsigned int': 4, 'long long': 8,
+R_THIS2 = re.compile(r'\*\(\s*\(\s*(_DWORD|_BYTE|_WORD|_QWORD|char|unsigned char|short|unsigned short|int|unsigned int|long|float|BOOL|double)\s*\*\s*\)\s*\(?\s*this\s*\)?\s*\+\s*(0x[0-9A-Fa-f]+|\d+)\s*\)')
+WIDTH = {'_DWORD': 4, 'int': 4, 'unsigned int': 4, 'long': 4, 'long long': 8,
          'unsigned long long': 8, '_BYTE': 1, 'char': 1, 'unsigned char': 1,
-         '_WORD': 2, 'unsigned short': 2, '_QWORD': 8, 'float': 4, 'BOOL': 4}
+         '_WORD': 2, 'short': 2, 'unsigned short': 2, '_QWORD': 8,
+         'float': 4, 'double': 8, 'BOOL': 4}
 
 def mem_of(cls, off):
     e = mtab.get(cls)
@@ -143,10 +145,11 @@ def mem_of(cls, off):
 def real_mem_rewrite(text, cls, env=None):
     """this-offset + typed-local offset rewrites (R2/R3/R5)."""
     env = env or {}
+    this_cls = env.get('this') or cls
     n = 0
     def rewrite_one(recv, off):
         nonlocal n
-        c = env.get(recv) if recv != 'this' else cls
+        c = env.get(recv) or (this_cls if recv == 'this' else None)
         if not c:
             return None
         name = mem_of(c, off)
@@ -173,19 +176,27 @@ def real_mem_rewrite(text, cls, env=None):
         return m.group(0)
     text = R_THIS1.sub(s1, text)
     text = R_THIS2.sub(s2, text)
-    # bare `this + OFF` (pointer initializer / cast argument)
-    if cls:
+    # bare `this + OFF` (pointer initializer / cast argument).
+    # this renders as untyped/_DWORD* in raw decomp: OFF is dword units.
+    if this_cls:
         def s_bare(m):
-            off = int(m.group(1), 0)
-            info = (mtab.get(cls) or {}).get('members', {}).get(str(off))
-            if not info or not info.get('name'):
+            info = None
+            nm = None
+            for off in (int(m.group(1), 0) * 4, int(m.group(1), 0)):
+                info = (mtab.get(this_cls) or {}).get('members', {}).get(str(off))
+                if info and info.get('name'):
+                    nm = info['name']
+                    break
+            if nm is None:
                 return m.group(0)
             t = (info.get('type') or '').strip()
             nm = info['name']
-            if '*' in t or '[' in t:
+            # `this + OFF` is an ADDRESS: only arrays decay to this->M;
+            # scalar/pointer members need &this->M
+            if '[' in t:
                 return 'this->' + nm
             return '&this->' + nm
-        text = re.sub(r'(?<!\*)this\s*\+\s*(0x[0-9A-Fa-f]+|\d+)(?!\s*\))',
+        text = re.sub(r'(?<!\*)\bthis\s*\+\s*(0x[0-9A-Fa-f]+|\d+)(?!\s*\))',
                       s_bare, text)
         # cast form: (_BYTE *)(this + OFF) etc
         text = re.sub(
@@ -206,10 +217,23 @@ def real_mem_rewrite(text, cls, env=None):
             n += 1
             return '%s->%s' % (recv, name)
         text = re.sub(
-            r'\*\(\s*[A-Za-z_][\w\s\*]*?\s*\*\s*\)\s*\(\s*([a-z]\w*)\s*\+\s*'
+            r'\*\(\s*[A-Za-z_][\w\s\*]*?\s*\*\s*\)\s*\(?\s*([a-z]\w*)\s*\)?\s*\+\s*'
             r'(0x[0-9A-Fa-f]+|\d+)\s*\)',
             s3,
             text)
+    # R6: bare deref-of-offset *(recv + N). IDA renders these on untyped
+    # (_DWORD *) receivers, so N is in dword units: byte offset = N*4.
+    if env or this_cls:
+        def s6(m):
+            recv, off = m.group(1), int(m.group(2), 0) * 4
+            r = rewrite_one(recv, off)
+            if r is not None:
+                return r
+            r = rewrite_one(recv, m.group(2) and int(m.group(2), 0))
+            return r if r is not None else m.group(0)
+        text = re.sub(
+            r'\*\(\s*(this|[a-z]\w*)\s*\+\s*(0x[0-9A-Fa-f]+|\d+)\s*\)',
+            s6, text)
     return text, n
 
 def glob_rewrite(text, includes, rel):
@@ -257,9 +281,12 @@ def process_file(rel):
             continue
         k = close
         cls = None
+        addr = None
         for j in range(i - 1, max(i - 8, -1), -1):
             ln = lines[j].strip()
-            if ln.startswith('//') and re.search(r'//\s*0x[0-9A-Fa-f]{6,8}\s*$', ln):
+            am = re.search(r'//\s*0x([0-9A-Fa-f]{6,8})\s*$', ln)
+            if ln.startswith('//') and am:
+                addr = int(am.group(1), 16)
                 continue
             dm = DEF_Q.search(ln)
             if dm and '(' in ln and not ln.startswith('#'):
@@ -267,10 +294,9 @@ def process_file(rel):
                 break
         body = '\n'.join(lines[i + 1:k])
         nb, c1 = glob_rewrite(body, includes, rel)
-        if cls:
-            nb, c2 = real_mem_rewrite(nb, cls)
-        else:
-            c2 = 0
+        env1 = build_types(body, cls, addr)[0] if addr else {}
+        cls_eff = env1.get('this') or cls
+        nb, c2 = real_mem_rewrite(nb, cls_eff, env1)
         pend_glob += c1
         pend_refs += c2
         if c1 + c2:
@@ -289,10 +315,10 @@ def process_file(rel):
             depth, started = 0, False
             k = i
             while k < len(lines):
-                if '{' in lines[k]:
+                if brace_delta(lines[k]):
                     started = True
                 if started:
-                    depth += lines[k].count('{') - lines[k].count('}')
+                    depth += brace_delta(lines[k])
                     if depth <= 0:
                         break
                 k += 1
@@ -311,10 +337,11 @@ def process_file(rel):
                 # span from def to balanced close
                 depth, started, k = 0, False, j
                 while k < len(lines):
-                    if '{' in lines[k]:
+                    d = brace_delta(lines[k])
+                    if d:
                         started = True
                     if started:
-                        depth += lines[k].count('{') - lines[k].count('}')
+                        depth += d
                         if depth <= 0:
                             break
                     k += 1
@@ -331,12 +358,13 @@ def process_file(rel):
         dm = DEF_Q.search(lines[def_i])
         if dm:
             cls = dm.group(1)
-        env_full = build_types(seg, cls, addr) if cls and addr else ({}, {}, {})
+        env_full = build_types(seg, cls, addr) if addr else ({}, {}, {})
         env = env_full[0]
-        nb, c_mem = (real_mem_rewrite(seg, cls, env) if cls else (seg, 0))
-        nb, c_vt = vt_rewrite_fn(nb, cls)
+        cls_eff = env.get('this') or cls
+        nb, c_mem = real_mem_rewrite(seg, cls_eff, env)
+        nb, c_vt = vt_rewrite_fn(nb, cls_eff, env)
         from _vtable import rewrite_static_sub, rewrite_cast_call
-        nb, c_ss = rewrite_static_sub(nb, cls, mtab)
+        nb, c_ss = rewrite_static_sub(nb, cls_eff, mtab)
         nb, c_cc = rewrite_cast_call(nb)
         nb, c_glob = glob_rewrite(nb, includes, rel)
         if not (c_mem + c_vt + c_ss + c_cc + c_glob):
@@ -364,35 +392,35 @@ def process_file(rel):
                 'real_fixed': fixed, 'real_rolled': rolled}
     return None
 
-files = []
-for p in sorted(SRC.rglob('*.cpp')):
-    rel = str(p.relative_to(ROOT)).replace('\\', '/')
-    if '_generated' in rel:
-        continue
-    try:
-        t = p.read_text(encoding='latin-1', errors='replace')
-    except OSError:
-        continue
-    if 'MEMORY[' in t or R_THIS1.search(t) or R_THIS2.search(t):
+if __name__ == '__main__':
+    files = []
+    ONLY = sys.argv[sys.argv.index('--file') + 1] if '--file' in sys.argv else None
+    for p in sorted(SRC.rglob('*.cpp')):
+        rel = str(p.relative_to(ROOT)).replace('\\', '/')
+        if '_generated' in rel:
+            continue
+        if ONLY and ONLY not in rel:
+            continue
+        # no pre-filter: typed-local + this-key channels make any file eligible
         files.append(rel)
 
-print('files to fix:', len(files), flush=True)
-WORKERS = 6
-if '--workers' in sys.argv:
-    WORKERS = int(sys.argv[sys.argv.index('--workers') + 1])
-out = []
-with ThreadPoolExecutor(max_workers=WORKERS) as ex:
-    for r in ex.map(process_file, files):
-        if r:
-            out.append(r)
-            print('  {file}: pending_mem={pending_mem} pending_glob={pending_glob} '
-                  'real_fixed={real_fixed} real_rolled={real_rolled}'.format(**r),
-                  flush=True)
+    print('files to fix:', len(files), flush=True)
+    WORKERS = 6
+    if '--workers' in sys.argv:
+        WORKERS = int(sys.argv[sys.argv.index('--workers') + 1])
+    out = []
+    with ThreadPoolExecutor(max_workers=WORKERS) as ex:
+        for r in ex.map(process_file, files):
+            if r:
+                out.append(r)
+                print('  {file}: pending_mem={pending_mem} pending_glob={pending_glob} '
+                      'real_fixed={real_fixed} real_rolled={real_rolled}'.format(**r),
+                      flush=True)
 
-print('=== summary ===')
-print('files changed:', len(out))
-print('pending refs rewritten:', sum(r['pending_mem'] for r in out))
-print('pending MEMORY->name:', sum(r['pending_glob'] for r in out))
-print('real functions fixed:', sum(r['real_fixed'] for r in out))
-print('real functions rolled back:', sum(r['real_rolled'] for r in out))
-print('DONE')
+    print('=== summary ===')
+    print('files changed:', len(out))
+    print('pending refs rewritten:', sum(r['pending_mem'] for r in out))
+    print('pending MEMORY->name:', sum(r['pending_glob'] for r in out))
+    print('real functions fixed:', sum(r['real_fixed'] for r in out))
+    print('real functions rolled back:', sum(r['real_rolled'] for r in out))
+    print('DONE')

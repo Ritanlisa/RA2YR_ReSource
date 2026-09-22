@@ -112,9 +112,9 @@ ShipLocomotionClass * ShipLocomotionClass::ProcessMove(char a2)
 {
     ILocomotion *v3;
     *(void**)this = (unsigned int)vt_ShipLocomotionClass;
-    *(this + 1) = (ILocomotion *)&vt_ShipLocomotionClass;
-    *(this + 6) = (ILocomotion *)&vt_ShipLocomotionClass_2;
-    v3 = *(this + 26);
+    this->vtable2 = (ILocomotion *)&vt_ShipLocomotionClass;
+    this->vtable3 = (ILocomotion *)&vt_ShipLocomotionClass_2;
+    v3 = *(&this->u32_86);
     if ( v3 )
     (*(void (__stdcall **)(ILocomotion *))(*(int *)(v3) + 8))(v3);
     LocomotionClass::Construct(this);

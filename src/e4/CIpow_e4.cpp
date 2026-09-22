@@ -109,6 +109,7 @@ LABEL_11:
   return result; /*0x7cf43a*/
 }
 } // namespace gamemd
+}
 
 // 0x7C91A5
 namespace gamemd {
@@ -124,3 +125,4 @@ void* __usercall CIpow_Helper_Helper(double a1@<st0> a1)
   }
 }
 } // namespace gamemd
+}

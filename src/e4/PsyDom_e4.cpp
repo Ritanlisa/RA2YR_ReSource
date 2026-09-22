@@ -158,6 +158,7 @@ void PsyDom::Fire()
   }
 }
 } // namespace gamemd
+}
 
 // 0x53B400
 namespace gamemd {

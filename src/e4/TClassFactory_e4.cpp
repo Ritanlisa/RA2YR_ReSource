@@ -14,6 +14,7 @@ int TClassFactory_CampaignClass::GetClassName()
     __3_YAXPAX_Z((void *)Block); /*0x6c0277*/
   return v1; /*0x6c0281*/
 }
+}
 
 // 0x6C4D60
 int TClassFactory_MechLocomotionClass::GetClassName()
@@ -26,6 +27,7 @@ int TClassFactory_MechLocomotionClass::GetClassName()
   if ( !v1 ) /*0x6c4d74*/
     __3_YAXPAX_Z((void *)Block); /*0x6c4d77*/
   return v1; /*0x6c4d81*/
+}
 }
 
 // 0x6C0290

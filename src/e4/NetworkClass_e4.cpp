@@ -43,6 +43,7 @@ LABEL_10:
   return PlayVocClass(g_RulesClass_Instance->?[3], 0x2000, 1.0, 0); /*0x63a0c0*/
 }
 } // namespace gamemd
+}
 
 // 0x6FFE00
 namespace gamemd {
@@ -85,6 +86,7 @@ AbstractClass * * NetworkClass::RecordEvent()
   return result; /*0x6ffe4d*/
 }
 } // namespace gamemd
+}
 
 // 0x7B1C50
 namespace gamemd {
@@ -111,3 +113,4 @@ AnimClass * * NetworkClass::UnregisterAsync()
   return result; /*0x7b1c7f*/
 }
 } // namespace gamemd
+}

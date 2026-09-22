@@ -12,8 +12,8 @@ int Mission::ExecuteTechnoMissionAction()
   int result; // eax
   __int16 v18; // [esp+14h] [ebp-1Ch] BYREF
   _DWORD v19[3]; // [esp+18h] [ebp-18h] BYREF
-  int v2 = *(this + 433); /*0x520ae9*/
-  if ( v2 == -1 || *(this + 62) >= *(_DWORD *)(*(_DWORD *)(*(this + 432) + 3644) + 36 * v2 + 4) ) /*0x520b0d*/
+  int v2 = *(&this->u32_AC3); /*0x520ae9*/
+  if ( v2 == -1 || *(&this->u32_182) >= *(_DWORD *)(*(_DWORD *)(*(&this->u32_AC2) + 3644) + 36 * v2 + 4) ) /*0x520b0d*/
   {
     switch ( v2 ) /*0x520b27*/
     {
@@ -25,17 +25,17 @@ int Mission::ExecuteTechnoMissionAction()
       case 13: /*0x520b27*/
       case 14: /*0x520b27*/
       case 15: /*0x520b27*/
-        int v3 = *(this + 432); /*0x520bc6*/
-        if ( *(this + 62) < *(_DWORD *)(*(_DWORD *)(v3 + 3644) + 36 * v2 + 4) ) /*0x520bdf*/
+        int v3 = *(&this->u32_AC2); /*0x520bc6*/
+        if ( *(&this->u32_182) < *(_DWORD *)(*(_DWORD *)(v3 + 3644) + 36 * v2 + 4) ) /*0x520bdf*/
           break; /*0x520bdf*/
         if ( *(int *)(v3 + 3680) > 0 ) /*0x520bed*/
         {
           v4 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x520bf9*/
           if ( !v4 ) /*0x520c00*/
             goto LABEL_20; /*0x520c00*/
-          unsigned int v5 = (unsigned int)Random::State((_DWORD *)g_ScenarioClass_Instance + 134) % *(_DWORD *)(*(this + 432) + 3680); /*0x520c2d*/
+          unsigned int v5 = (unsigned int)Random::State((_DWORD *)g_ScenarioClass_Instance + 134) % *(_DWORD *)(*(&this->u32_AC2) + 3680); /*0x520c2d*/
           v6 = (char *)v19; /*0x520c37*/
-          v7 = *(void **)(*(_DWORD *)(*(this + 432) + 3668) + 4 * v5); /*0x520c3b*/
+          v7 = *(void **)(*(_DWORD *)(*(&this->u32_AC2) + 3668) + 4 * v5); /*0x520c3b*/
           v8 = *this; /*0x520c3e*/
           goto LABEL_19; /*0x520c40*/
         }
@@ -61,19 +61,19 @@ LABEL_20:
       case 20: /*0x520b27*/
       case 21: /*0x520b27*/
       case 36: /*0x520b27*/
-        if ( *(this + 62) >= *(_DWORD *)(*(_DWORD *)(*(this + 432) + 3644) + 36 * v2 + 4) ) /*0x520cd1*/
+        if ( *(&this->u32_182) >= *(_DWORD *)(*(_DWORD *)(*(&this->u32_AC2) + 3644) + 36 * v2 + 4) ) /*0x520cd1*/
           this->vt_slot_248(); /*0x520cdb*/
         break; /*0x520ce1*/
       case 27: /*0x520b27*/
         this->vt_slot_1368(28, 1, 0); /*0x520b38*/
-        if ( !*(_BYTE *)(*(this + 432) + 3785) ) /*0x520b44*/
-          *((_BYTE *)this + 676) = 1; /*0x520b4e*/
+        if ( !*(_BYTE *)(*(&this->u32_AC2) + 3785) ) /*0x520b44*/
+          this->u8_2A4 = 1; /*0x520b4e*/
         Mission::GetMissionDelay(this); /*0x520b57*/
         break; /*0x520b5c*/
       case 31: /*0x520b27*/
         this->vt_slot_1368(0, 1, 0); /*0x520b93*/
-        if ( !*(_BYTE *)(*(this + 432) + 3785) ) /*0x520b9f*/
-          *((_BYTE *)this + 676) = 0; /*0x520bad*/
+        if ( !*(_BYTE *)(*(&this->u32_AC2) + 3785) ) /*0x520b9f*/
+          this->u8_2A4 = 0; /*0x520bad*/
         break; /*0x520bb4*/
       case 33: /*0x520b27*/
         break;
@@ -88,47 +88,47 @@ LABEL_20:
       default:
         if ( v2 != -1 ) /*0x520ce9*/
         {
-          int v10 = *(_DWORD *)(*(_DWORD *)(*(this + 432) + 3644) + 36 * v2 + 12); /*0x520cfa*/
+          int v10 = *(_DWORD *)(*(_DWORD *)(*(&this->u32_AC2) + 3644) + 36 * v2 + 12); /*0x520cfa*/
           if ( v10 != -1 ) /*0x520d01*/
           {
             v18 = (_WORD)v10 << 13; /*0x520d11*/
             FacingClass::Set_SyncLog(&v18); /*0x520d16*/
           }
         }
-        if ( !*(this + 413) ) /*0x520d1b*/
+        if ( !*(&this->u32_A43) ) /*0x520d1b*/
           WinAPI::Wrapper(-2147467261); /*0x520d2a*/
-        if ( (*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)*(this + 413) + 16))(*(this + 413)) /*0x520d50*/
-          && *((double *)this + 175) > 0.1 )
+        if ( (*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)*(&this->u32_A43) + 16))(*(&this->u32_A43)) /*0x520d50*/
+          && *((double *)&this->u32_445) > 0.1 )
         {
-          if ( *((_BYTE *)this + 1755) ) /*0x520d52*/
+          if ( this->u8_6DB ) /*0x520d52*/
             this->vt_slot_1368(6, 1, 0); /*0x520d66*/
           else
             this->vt_slot_1368(3, 1, 0); /*0x520d79*/
         }
         else
         {
-          int v11 = *(this + 433); /*0x520d7e*/
-          if ( v11 != 40 && v11 != 41 || !*(this + 165) || !*(this + 173) ) /*0x520d98*/
+          int v11 = *(&this->u32_AC3); /*0x520d7e*/
+          if ( v11 != 40 && v11 != 41 || !*(&this->u32_405) || !*(&this->u32_443) ) /*0x520d98*/
             goto LABEL_44; /*0x520d98*/
-          if ( !*(this + 413) ) /*0x520da2*/
+          if ( !*(&this->u32_A43) ) /*0x520da2*/
             WinAPI::Wrapper(-2147467261); /*0x520db1*/
-          if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)*(this + 413) + 16))(*(this + 413)) ) /*0x520dbf*/
+          if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)*(&this->u32_A43) + 16))(*(&this->u32_A43)) ) /*0x520dbf*/
           {
-            if ( *((_BYTE *)this + 1755) ) /*0x520dc6*/
+            if ( this->u8_6DB ) /*0x520dc6*/
               this->vt_slot_1368(41, 1, 0); /*0x520dda*/
             else
               this->vt_slot_1368(40, 1, 0); /*0x520df3*/
-            *((_BYTE *)this + 1677) = 0; /*0x520de0*/
+            this->u8_68D = 0; /*0x520de0*/
           }
           else
           {
 LABEL_44:
-            int v12 = *(this + 433); /*0x520e02*/
+            int v12 = *(&this->u32_AC3); /*0x520e02*/
             if ( v12 == 27 || v12 == 28 || v12 == 29 || v12 == 30 ) /*0x520e1a*/
             {
               this->vt_slot_1368(28, 1, 0); /*0x520e24*/
             }
-            else if ( *((_BYTE *)this + 1755) ) /*0x520e26*/
+            else if ( this->u8_6DB ) /*0x520e26*/
             {
               this->vt_slot_1368(2, 1, 0); /*0x520e3a*/
             }
@@ -142,26 +142,26 @@ LABEL_51:
         break; /*0x520d6c*/
     }
   }
-  if ( *(this + 433) == 33 && !*((_BYTE *)this + 141) ) /*0x520e5b*/
+  if ( *(&this->u32_AC3) == 33 && !this->u8_8D ) /*0x520e5b*/
     this->vt_slot_1368(0, 1, 0); /*0x520e6f*/
   int v13 = 0; /*0x520e81*/
-  int v14 = *(_DWORD *)(*(this + 432) + 3644) + 36 * *(this + 433); /*0x520e8c*/
+  int v14 = *(_DWORD *)(*(&this->u32_AC2) + 3644) + 36 * *(&this->u32_AC3); /*0x520e8c*/
   result = *(_DWORD *)(v14 + 16); /*0x520e8f*/
   if ( result > 0 ) /*0x520e95*/
   {
     int * v16 = (int *)(v14 + 24); /*0x520e97*/
     do /*0x520ef2*/
     {
-      if ( *((_BYTE *)this + 252) ) /*0x520e9a*/
+      if ( this->u8_FC ) /*0x520e9a*/
       {
         int v17 = *(_DWORD *)(v14 + 4); /*0x520eaa*/
         if ( v17 <= 1 ) /*0x520eac*/
           v17 = 1; /*0x520eae*/
-        if ( *(this + 62) % v17 == *(v16 - 1) ) /*0x520ebf*/
+        if ( *(&this->u32_182) % v17 == *(v16 - 1) ) /*0x520ebf*/
         {
-          v19[0] = *(this + 39); /*0x520ecb*/
-          v19[1] = *(this + 40); /*0x520ed6*/
-          v19[2] = *(this + 41); /*0x520edd*/
+          v19[0] = *(&this->u32_C9); /*0x520ecb*/
+          v19[1] = *(&this->u32_100); /*0x520ed6*/
+          v19[2] = *(&this->u32_101); /*0x520edd*/
           StartAudioControllerAt(*v16, (int)v19, 0); /*0x520ee4*/
         }
       }
@@ -174,6 +174,7 @@ LABEL_51:
   return result; /*0x520ef4*/
 }
 } // namespace gamemd
+}
 
 // 0x520F40
 namespace gamemd {
@@ -189,11 +190,11 @@ char Mission::ProcessUnitMissionAI()
 
   if ( this->vt_slot_388() == 2 ) /*0x520f53*/
   {
-    if ( !*(this + 413) ) /*0x520f55*/
+    if ( !*(&this->u32_A43) ) /*0x520f55*/
       WinAPI::Wrapper(-2147467261); /*0x520f64*/
-    if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)*(this + 413) + 16))(*(this + 413)) ) /*0x520f72*/
+    if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)*(&this->u32_A43) + 16))(*(&this->u32_A43)) ) /*0x520f72*/
     {
-      int v2 = *(this + 361); /*0x520f79*/
+      int v2 = *(&this->u32_901); /*0x520f79*/
       SpeedType *v3 = *this; /*0x520f7f*/
       if ( v2 ) /*0x520f86*/
       {
@@ -206,13 +207,13 @@ char Mission::ProcessUnitMissionAI()
       }
     }
   }
-  int v4 = *(this + 361); /*0x520faf*/
+  int v4 = *(&this->u32_901); /*0x520faf*/
   if ( v4 ) /*0x520fb7*/
   {
     _DWORD * v5 = (_DWORD *)(*(int (__thiscall **)(int, _BYTE *, _DWORD *))(*(_DWORD *)v4 + 76))(v4, v25, this); /*0x520fc5*/
     LOWORD(v22) = *v5 / 256; /*0x520fd8*/
     HIWORD(v22) = v5[1] / 256; /*0x520fec*/
-    LOBYTE(v5) = *((_BYTE *)this + 1756); /*0x520ff1*/
+    LOBYTE(v5) = this->u8_6DC; /*0x520ff1*/
     int v23 = v22; /*0x520ffd*/
     if ( !(_BYTE)v5 /*0x521022*/
   int v6; // esi
@@ -221,14 +222,14 @@ char Mission::ProcessUnitMissionAI()
           v7 = this->vt_slot_452(-1, -1, 0, 1),
           (*(int (__thiscall **)(_DWORD *, int))(v6 + 428))(this, v7) != 7) )
     {
-      if ( !*(this + 413) ) /*0x521028*/
+      if ( !*(&this->u32_A43) ) /*0x521028*/
         WinAPI::Wrapper(-2147467261); /*0x521037*/
-      if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)*(this + 413) + 16))(*(this + 413)) /*0x521050*/
-        && !*((_BYTE *)this + 1048) )
+      if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)*(&this->u32_A43) + 16))(*(&this->u32_A43)) /*0x521050*/
+        && !this->u8_418 )
       {
-        if ( *(this + 361) ) /*0x52105e*/
+        if ( *(&this->u32_901) ) /*0x52105e*/
         {
-          if ( *((_BYTE *)this + 981) ) /*0x52106c*/
+          if ( this->u8_3D5 ) /*0x52106c*/
           {
             _DWORD * v8 = (_DWORD *)this->vt_slot_76(); /*0x521086*/
   int v20; // [esp+58h] [ebp-24h]
@@ -244,11 +245,11 @@ char Mission::ProcessUnitMissionAI()
                     &DataGlobal_87F7E8,
                     (__int16 *)&v24,
                     (__int16 *)&v23,
-                    *(_DWORD *)(*(this + 432) + 1460),
+                    *(_DWORD *)(*(&this->u32_AC2) + 1460),
                     v11,
                     (char)v25,
                     0)
-              && !*(_BYTE *)(*(this + 432) + 3774)
+              && !*(_BYTE *)(*(&this->u32_AC2) + 3774)
               && this->vt_slot_388() != 7 )
             {
               this->vt_slot_1152(0, 1); /*0x52113e*/
@@ -258,14 +259,14 @@ char Mission::ProcessUnitMissionAI()
       }
     }
   }
-  if ( !*(this + 413) ) /*0x521144*/
+  if ( !*(&this->u32_A43) ) /*0x521144*/
     WinAPI::Wrapper(-2147467261); /*0x521153*/
-  if ( (*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)*(this + 413) + 168))(*(this + 413)) ) /*0x521161*/
+  if ( (*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)*(&this->u32_A43) + 168))(*(&this->u32_A43)) ) /*0x521161*/
   {
   int v14; // eax
-    if ( !*(_BYTE *)(*(this + 432) + 3476) ) /*0x521175*/
+    if ( !*(_BYTE *)(*(&this->u32_AC2) + 3476) ) /*0x521175*/
       goto LABEL_55; /*0x521175*/
-    v12 = (int (__stdcall ***)(_DWORD, void *, int *))*(this + 413); /*0x521183*/
+    v12 = (int (__stdcall ***)(_DWORD, void *, int *))*(&this->u32_A43); /*0x521183*/
     v22 = 0; /*0x52118d*/
     if ( !v12 ) /*0x521195*/
       goto LABEL_33; /*0x521195*/
@@ -293,10 +294,10 @@ LABEL_33:
       (*(void (__stdcall **)(int))(*(_DWORD *)v22 + 8))(v22); /*0x52121f*/
     if ( v16 ) /*0x521226*/
     {
-      LOBYTE(v17) = *((_BYTE *)this + 1677); /*0x521228*/
+      LOBYTE(v17) = this->u8_68D; /*0x521228*/
       if ( !(_BYTE)v17 ) /*0x521230*/
       {
-        if ( *((double *)this + 175) <= 0.8 ) /*0x521247*/
+        if ( *((double *)&this->u32_445) <= 0.8 ) /*0x521247*/
           LOBYTE(v17) = this->vt_slot_1368(23, 0, 0); /*0x52126b*/
         else
           LOBYTE(v17) = this->vt_slot_1368(24, 0, 0); /*0x521254*/
@@ -305,7 +306,7 @@ LABEL_33:
     else
     {
 LABEL_55:
-      if ( *((_BYTE *)this + 1755) ) /*0x521277*/
+      if ( this->u8_6DB ) /*0x521277*/
         LOBYTE(v17) = this->vt_slot_1368(6, 0, 0); /*0x52128c*/
       else
         LOBYTE(v17) = this->vt_slot_1368(3, 0, 0); /*0x5212a3*/
@@ -313,7 +314,7 @@ LABEL_55:
   }
   else
   {
-    v17 = *(this + 433); /*0x5212af*/
+    v17 = *(&this->u32_AC3); /*0x5212af*/
     switch ( v17 ) /*0x5212c2*/
     {
       case 3: /*0x5212c2*/
@@ -332,6 +333,7 @@ LABEL_55:
   return v17; /*0x52125a*/
 }
 } // namespace gamemd
+}
 
 // 0x5BDA80
 namespace gamemd {
@@ -344,6 +346,7 @@ int Mission::SetAndCall(IUnknown * aP1, IUnknown * aP2)
   return this->vt_slot_76(aP1, aP2); /*0x5bda96*/
 }
 } // namespace gamemd
+}
 
 // 0x6ED7E0
 namespace gamemd {
@@ -358,19 +361,19 @@ char Mission::AssignTeamMemberMissions(ScriptClass * aP1, int a3)
 
   LOBYTE(v3) = (_BYTE)aP1; /*0x6ed7e3*/
   v4 = *(ScriptClass **)&aP1->__pad_0[4]; /*0x6ed7e9*/
-  for ( i = *(ObjectClass **)(this + 84); i; i = (ObjectClass *)i[8].spawnStatus )
+  for ( i = *(ObjectClass **)(&this->u32_204); i; i = (ObjectClass *)i[8].spawnStatus )
   {
     LOBYTE(v3) = i->isAliveFlag; /*0x6ed801*/
     if ( (_BYTE)v3 )
     {
       if ( i->health && (*(_DWORD *)&HouseClass_Player[43616] || !i->inLimbo) && !BYTE1(i[9].visibilityFlags) ) /*0x6ed831*/
       {
-        int v7 = *SessionClass::GetEntry(*(_DWORD **)(this + 40), (IUnknown *)&v16[12]); /*0x6ed848*/
+        int v7 = *SessionClass::GetEntry(*(_DWORD **)(&this->u32_100), (IUnknown *)&v16[12]); /*0x6ed848*/
         if ( v7 == 54 || v7 == 53 ) /*0x6ed852*/
           int v8 = *(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 5920); /*0x6ed867*/
         else
           v8 = *(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 5916); /*0x6ed85a*/
-        if ( ObjectClass::DistanceTo(i, *(AbstractClass **)(this + 52)) <= v8 ) /*0x6ed87a*/
+        if ( ObjectClass::DistanceTo(i, *(AbstractClass **)(&this->u32_142)) <= v8 ) /*0x6ed87a*/
         {
           BYTE1(i[9].visibilityFlags) = 1; /*0x6ed8b2*/
         }
@@ -380,7 +383,7 @@ char Mission::AssignTeamMemberMissions(ScriptClass * aP1, int a3)
           (*(void (__thiscall **)(ObjectClass *, _DWORD))(*(_DWORD *)i->__pad_0 + 968))(i, 0); /*0x6ed89a*/
           (*(void (__thiscall **)(ObjectClass *, _DWORD, int))(*(_DWORD *)i->__pad_0 + 1152))( /*0x6ed8aa*/
             i,
-            *(_DWORD *)(this + 52),
+            this->ptr_34,
             1);
         }
       }
@@ -402,12 +405,12 @@ char Mission::AssignTeamMemberMissions(ScriptClass * aP1, int a3)
               {
                 if ( i[8].ambientSoundController[2]
   int v9; // eax
-                  || ((v9 = *SessionClass::GetEntry(*(_DWORD **)(this + 40), (IUnknown *)&v16.abstractFlags), v9 == 54)
+                  || ((v9 = *SessionClass::GetEntry(*(_DWORD **)(&this->u32_100), (IUnknown *)&v16.abstractFlags), v9 == 54)
                    || v9 == 53
   int v10; // ebp
                     ? (v10 = *(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 5920))
                     : (v10 = *(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 5916)),
-                      ObjectClass::DistanceTo(i, *(AbstractClass **)(this + 52)) <= 2 * v10 || v4 == (ScriptClass *)11) )
+                      ObjectClass::DistanceTo(i, *(AbstractClass **)(&this->u32_142)) <= 2 * v10 || v4 == (ScriptClass *)11) )
                 {
                   v3 = *(ScriptClass **)&i[4].__pad_0[4]; /*0x6eda11*/
                   if ( !v3 ) /*0x6eda19*/
@@ -442,12 +445,12 @@ char Mission::AssignTeamMemberMissions(ScriptClass * aP1, int a3)
                   (*(void (__thiscall **)(ObjectClass *, int, _DWORD))(*(_DWORD *)i->__pad_0 + 488))(i, 2, 0); /*0x6ed97a*/
                   (*(void (__thiscall **)(ObjectClass *, _DWORD, int))(*(_DWORD *)i->__pad_0 + 1152))( /*0x6ed98a*/
                     i,
-                    *(_DWORD *)(this + 52),
+                    this->ptr_34,
                     1);
                   (*(void (__thiscall **)(ObjectClass *, int, _DWORD))(*(_DWORD *)i->__pad_0 + 488))(i, 2, 0); /*0x6ed998*/
   _DWORD *v11; // eax
-                  v11 = (_DWORD *)(*(int (__thiscall **)(_DWORD, int *))(**(_DWORD **)(this + 52) + 72))( /*0x6ed9a8*/
-                                    *(_DWORD *)(this + 52),
+                  v11 = (_DWORD *)(*(int (__thiscall **)(_DWORD, int *))(**(_DWORD **)(&this->u32_142) + 72))( /*0x6ed9a8*/
+                                    this->ptr_34,
                                     &v16.referenceCount);
                   LOWORD(aP1a) = *v11 / 256; /*0x6ed9bb*/
                   HIWORD(aP1a) = v11[1] / 256; /*0x6ed9d7*/
@@ -468,6 +471,7 @@ char Mission::AssignTeamMemberMissions(ScriptClass * aP1, int a3)
   return (char)v3; /*0x6eda86*/
 }
 } // namespace gamemd
+}
 
 // 0x70F770
 namespace gamemd {
@@ -499,3 +503,4 @@ int Mission::GetMissionDelay()
   return result; /*0x70f7cd*/
 }
 } // namespace gamemd
+}

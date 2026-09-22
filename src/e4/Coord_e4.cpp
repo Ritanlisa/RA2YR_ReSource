@@ -81,6 +81,7 @@ int Coord::ToGridIndex(VectorClass * aP1, VectorClass * aP2, VectorClass * aP3)
   return result; /*0x413a24*/
 }
 } // namespace gamemd
+}
 
 // 0x413A30
 namespace gamemd {
@@ -95,6 +96,7 @@ unsigned int * Coord::ToCell(IUnknown * aP1)
   return &aP1->field_0; /*0x413a63*/
 }
 } // namespace gamemd
+}
 
 // 0x41C230
 namespace gamemd {
@@ -107,6 +109,7 @@ void * Coord::Subtract(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3)
   return (IUnknown *)this; /*0x41c246*/
 }
 } // namespace gamemd
+}
 
 // 0x41C380
 namespace gamemd {
@@ -123,6 +126,7 @@ int Coord::Length()
   return result; /*0x41c3a9*/
 }
 } // namespace gamemd
+}
 
 // 0x4399A0
 namespace gamemd {
@@ -139,6 +143,7 @@ unsigned int * Coord::GetCoords(int * outCoords)
   return outCoords; /*0x4399c9*/
 }
 } // namespace gamemd
+}
 
 // 0x43A0D0
 namespace gamemd {
@@ -151,6 +156,7 @@ void * Coord::Scale(IUnknown * aP1)
   return this; /*0x43a0ee*/
 }
 } // namespace gamemd
+}
 
 // 0x565730
 namespace gamemd {
@@ -173,6 +179,7 @@ void * Coord::To_Cell(IUnknown * aP1)
   return g_CellClassArray; /*0x565773*/
 }
 } // namespace gamemd
+}
 
 // 0x5AC370
 namespace gamemd {
@@ -182,6 +189,7 @@ int Coord::Compare2D(unsigned short * a2)
   return *this != *a2 || this->q004 != a2[1]; /*0x5ac388*/
 }
 } // namespace gamemd
+}
 
 // 0x6557F0
 namespace gamemd {
@@ -191,18 +199,18 @@ void * Coord::WorldToScreen(MouseClass * aP1, MouseClass * aP2, char a4)
 
   int v4 = aP2->field_0; /*0x6557f7*/
   void * v5 = aP2->field_4; /*0x6557f9*/
-  int v7 = Math::RoundToInt((double)(aP2->field_0 + (*(_DWORD *)(this + 5264) << 8) - (int)v5) * *(float *)(this + 5256) * 0.00390625); /*0x65582b*/
-  void * v8 = (void *)Math::RoundToInt((double)((int)v5 + v4 + -256 * *(_DWORD *)(this + 5272)) * *(float *)(this + 5256) * 0.00390625); /*0x655848*/
+  int v7 = Math::RoundToInt((double)(aP2->field_0 + (this->u32_1490 << 8) - (int)v5) * this->u32_1488 * 0.00390625); /*0x65582b*/
+  void * v8 = (void *)Math::RoundToInt((double)((int)v5 + v4 + -256 * this->u32_1498) * this->u32_1488 * 0.00390625); /*0x655848*/
   if ( a4 ) /*0x655853*/
   {
     if ( v7 < 0 ) /*0x655857*/
       v7 = 0; /*0x655859*/
-    int v9 = *(_DWORD *)(this + 5284); /*0x65585b*/
+    int v9 = this->u32_14A4; /*0x65585b*/
     if ( v7 >= v9 ) /*0x655863*/
       v7 = v9 - 1; /*0x655865*/
     if ( (int)v8 < 0 ) /*0x65586a*/
       v8 = 0; /*0x65586c*/
-    int v10 = *(_DWORD *)(this + 5288); /*0x65586e*/
+    int v10 = this->u32_14A8; /*0x65586e*/
     if ( (int)v8 >= v10 ) /*0x655876*/
       v8 = (void *)(v10 - 1); /*0x655878*/
   }
@@ -211,6 +219,7 @@ void * Coord::WorldToScreen(MouseClass * aP1, MouseClass * aP2, char a4)
   return &aP1->field_0; /*0x65587f*/
 }
 } // namespace gamemd
+}
 
 // 0x6D2140
 namespace gamemd {
@@ -237,6 +246,7 @@ AbstractClass * * Coord::To_Screen(unsigned int * a1, IUnknown * aP2)
   return 0; /*0x6d2220*/
 }
 } // namespace gamemd
+}
 
 // 0x710700
 namespace gamemd {
@@ -261,6 +271,7 @@ void * Coord::Divide(int * a2, int a3)
   return a2; /*0x71071c*/
 }
 } // namespace gamemd
+}
 
 // 0x6D1F10
 namespace gamemd {

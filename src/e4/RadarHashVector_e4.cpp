@@ -99,6 +99,7 @@ AbstractClass * * RadarHashVector::ComputeHashIndex(int a2, char * a3)
     this->RadarHashVector_field_0x10 = v15; /*0x658c02*/
   return 1; /*0x658c05*/
 }
+}
 
 // 0x658DE0
 unsigned int * RadarHashVector::Construct(MapClass * aP1, MapClass * aP2)
@@ -164,6 +165,7 @@ unsigned int * RadarHashVector::Construct(MapClass * aP1, MapClass * aP2)
   this->q014 = 10; /*0x658e64*/
   this->q010 = 0; /*0x658e6b*/
   return this; /*0x658e70*/
+}
 }
 
 // 0x658A70
@@ -251,7 +253,7 @@ char * RadarHashVector::Destructor(char a2)
     v4 = this - 1;
     v5 = 3 * v3;
     v6 = v3 - 1;
-    v7 = this + 2 * v5;
+    v7 = &this->Capacity * v5;
     if ( v6 >= 0 )
     {
     v8 = v6 + 1;
@@ -277,15 +279,15 @@ char * RadarHashVector::Destructor(char a2)
   }
     else
   {
-    v11 = (void *)*(this + 1);
+    v11 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_HashObject_RadarTrackingStruct_TechnoClass;
-    if ( v11 && *((char *)(this) + 13) )
+    if ( v11 && this->IsAllocated )
     {
     __3_YAXPAX_Z(v11);
-    *(this + 1) = 0;
+    this->Items = 0;
     }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
+    this->IsAllocated = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (char *)this;
@@ -298,15 +300,15 @@ VectorClass * RadarHashVector::QueryInterface(char a2)
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_HashObject_RadarTrackingStruct_TechnoClass;
-    if ( v3 && *((char *)(this) + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
+    this->IsAllocated = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (VectorClass *)this;

@@ -40,6 +40,7 @@ int ParasiteClass::Constructor()
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x6292B0
 namespace ra2 {
@@ -88,6 +89,7 @@ P ParasiteClass::ParasiteClass(TechnoClass * aP1)
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x6294D0
 namespace ra2 {
@@ -112,6 +114,7 @@ int ParasiteClass::Attach(int * a2)
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x6297F0
 namespace ra2 {
@@ -386,6 +389,7 @@ LABEL_47:
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x629FD0
 namespace ra2 {
@@ -493,6 +497,7 @@ LABEL_8:
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x62A980
 namespace ra2 {
@@ -571,6 +576,7 @@ AbstractClass * * ParasiteClass::TryInfect(unsigned int * a2)
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x62AB40
 namespace ra2 {
@@ -614,6 +620,7 @@ LABEL_20:
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x62AF70
 namespace ra2 {
@@ -668,6 +675,7 @@ void * ParasiteClass::UpdateParasite(char a2)
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x62BD50
 namespace ra2 {
@@ -707,7 +715,7 @@ Coord * * ParasiteClass::Update()
 
   if ( ((unsigned __int8)g_CurrentFrame & 1) != 0 ) /*0x62bd63*/
     goto LABEL_50; /*0x62bd63*/
-  v51 = *((_DWORD *)this + 39); /*0x62bd75*/
+  v51 = this->u32_9C; /*0x62bd75*/
   v52 = this->q028; /*0x62bd88*/
   v53 = this->q0A4; /*0x62bd8f*/
   if ( (abs32(Random::State((_DWORD *)g_ScenarioClass_Instance + 134)) & 7) == 0 ) /*0x62bd9f*/
@@ -743,7 +751,7 @@ Coord * * ParasiteClass::Update()
     }
   }
   double v7 = (double)v51; /*0x62be60*/
-  Coord *v8 = (int *)(this + 204); /*0x62be64*/
+  Coord *v8 = (int *)(&this->u32_504); /*0x62be64*/
   v51 = 0; /*0x62be6a*/
   v56 = v7; /*0x62be78*/
   double v9 = (double)SLODWORD(v52); /*0x62be7c*/
@@ -754,8 +762,8 @@ Coord * * ParasiteClass::Update()
   v53 = -2.0; /*0x62be96*/
   this->ParasiteClass_field_34 = 0; /*0x62bea2*/
   v58 = v10; /*0x62bea5*/
-  *((_DWORD *)this + 53) = -1073741824; /*0x62bea9*/
-  *((float *)this + 53) = *((float *)this + 53) - (double)g_RulesClass_Instance[1].?; /*0x62bebd*/
+  this->u32_D4 = -1073741824; /*0x62bea9*/
+  *((float *)&this->abstractFlags3) = *((float *)&this->abstractFlags3) - (double)g_RulesClass_Instance[1].?; /*0x62bebd*/
   v45 = Math::RoundToInt(v58); /*0x62becd*/
   v42 = Math::RoundToInt(v57); /*0x62bed7*/
   int v11 = Math::RoundToInt(v56); /*0x62bed8*/
@@ -844,7 +852,7 @@ LABEL_39:
   int v19 = *v8; /*0x62c0ea*/
   qmemcpy(v66, v17, sizeof(v66)); /*0x62c0ec*/
   *(float *)&v44 = -v18; /*0x62c0f9*/
-  Triple::Set(&v51, v19, v44, *((_DWORD *)this + 53)); /*0x62c0fd*/
+  Triple::Set(&v51, v19, v44, this->u32_D4); /*0x62c0fd*/
   float * v20 = Matrix3x3::TransformPoint(v66, v63, (float *)&v51); /*0x62c113*/
   v51 = *(_DWORD *)v20; /*0x62c11f*/
   v52 = v20[1]; /*0x62c126*/
@@ -859,27 +867,27 @@ LABEL_39:
   this->ParasiteClass_field_34 = -v52; /*0x62c171*/
   v53 = v22; /*0x62c176*/
   *v8 = v23; /*0x62c17a*/
-  *((float *)this + 53) = v22; /*0x62c17c*/
+  *((float *)&this->abstractFlags3) = v22; /*0x62c17c*/
 LABEL_40:
-  if ( (*(int (__thiscall **)(char *))(*(_DWORD *)this + 456))(this) <= 5 || (int)g_CurrentFrame % 2 )
+  if ( (*(int (__thiscall **)(char *))(*(_DWORD *)&this->u32_B46))(this) <= 5 || (int)g_CurrentFrame % 2 )
   {
-    v24 = *((_DWORD *)this + 50) <= 0 ? 0 : *((_DWORD *)this + 50);
+    v24 = this->u32_C8 <= 0 ? 0 : this->u32_C8;
   }
   else
   {
-    v24 = *((_DWORD *)this + 50) - 1; /*0x62c1a8*/
+    v24 = this->u32_C8 - 1; /*0x62c1a8*/
     if ( v24 < -5 ) /*0x62c1ac*/
       v24 = -5; /*0x62c1ae*/
   }
-  *((_DWORD *)this + 50) = v24; /*0x62c1fa*/
+  this->u32_C8 = v24; /*0x62c1fa*/
 LABEL_50:
-  if ( !--*((_WORD *)this + 149) ) /*0x62c207*/
+  if ( !--this->u16_12A ) /*0x62c207*/
   {
     bool v25 = this->q02B; /*0x62c215*/
     if ( *(_DWORD *)(v25 + 744) ) /*0x62c21b*/
     {
-      *((_WORD *)this + 149) = *(_WORD *)(v25 + 732); /*0x62c236*/
-      v60[0] = *((_DWORD *)this + 39); /*0x62c23f*/
+      this->u16_12A = *(_WORD *)(v25 + 732); /*0x62c236*/
+      v60[0] = this->u32_9C; /*0x62c23f*/
       v60[1] = this->q028; /*0x62c250*/
       v61 = this->q0A4; /*0x62c257*/
       int * v26 = (int *)*((_DWORD *)Coord::To_Cell(&DataGlobal_87F7E8, v60) + 57); /*0x62c260*/
@@ -891,7 +899,7 @@ LABEL_50:
           int v27 = v26[39]; /*0x62c276*/
           int v28 = v26[40]; /*0x62c278*/
           int v64 = v26[41]; /*0x62c286*/
-          int v29 = *((_DWORD *)this + 39) - v27; /*0x62c28c*/
+          int v29 = this->u32_9C - v27; /*0x62c28c*/
           int v30 = this->q028 - v28; /*0x62c291*/
           v31 = (int *)v26[12]; /*0x62c293*/
           v64 = this->q0A4; /*0x62c299*/
@@ -900,7 +908,7 @@ LABEL_50:
           {
             AbstractClass *v33 = this->q049; /*0x62c2c2*/
             if ( v33 ) /*0x62c2ca*/
-              int v34 = *(_DWORD *)(v33 + 252); /*0x62c2cc*/
+              int v34 = v33->u32_FC; /*0x62c2cc*/
             else
               v34 = 0; /*0x62c2d4*/
             bool v35 = this->q02B; /*0x62c2d6*/
@@ -931,20 +939,21 @@ LABEL_50:
       - this->q025
       + this->vtable1->vt_slot_16();
   if ( !(v39 % (*(char *)(v38 + 779) + (this->vtable1->vt_slot_16() & 1))) ) /*0x62c355*/
-    ++*(this + 302); /*0x62c35b*/
-  result = *(this + 302); /*0x62c361*/
+    ++*(&this->u32_782); /*0x62c35b*/
+  result = *(&this->u32_782); /*0x62c361*/
   if ( result == *(_BYTE *)(v38 + 777) ) /*0x62c36f*/
   {
     result = *(_BYTE *)(v38 + 776); /*0x62c371*/
     if ( result ) /*0x62c379*/
-      *(this + 305) = 1; /*0x62c37c*/
+      *(&this->u32_785) = 1; /*0x62c37c*/
     else
-      *(this + 302) = 0; /*0x62c38d*/
+      *(&this->u32_782) = 0; /*0x62c38d*/
   }
   return result; /*0x62c37b*/
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x6295B0
 namespace ra2 {

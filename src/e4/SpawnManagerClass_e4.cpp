@@ -19,7 +19,7 @@ S SpawnManagerClass::SpawnManagerClass(TechnoClass * aP1, int a3, int a4, int a5
   TechnoClass *aP1a; // [esp+20h] [ebp+4h]
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x6b6c99*/
-  SpawnControlVector::Constructor((_DWORD *)(this + 56), 0, 0); /*0x6b6ca7*/
+  SpawnControlVector::Constructor((_DWORD *)(&this->abstractFlags6), 0, 0); /*0x6b6ca7*/
   this->spawns = &vt_DynamicVectorClass_SpawnManagerClass_SpawnControl; /*0x6b6cb0*/
   this->q04C = 10; /*0x6b6cb6*/
   this->q048 = 0; /*0x6b6cbd*/
@@ -63,10 +63,10 @@ S SpawnManagerClass::SpawnManagerClass(TechnoClass * aP1, int a3, int a4, int a5
       v8[4] = 0; /*0x6b6db7*/
       int v14 = this->spawnVectorCapacity; /*0x6b6dba*/
       if ( this->q048 < v14 /*0x6b6dda*/
-        || (*(_BYTE *)(this + 69) || !v14)
+        || (this->u8_45 || !v14)
   int v15; // ecx
         && (v15 = this->q04C, v15 > 0)
-        && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(this->spawns + 8))(this + 56, v14 + v15, 0) )
+        && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(this->spawns + 8))(&this->u32_E0, v14 + v15, 0) )
       {
         int v16 = this->q048; /*0x6b6de1*/
         int v17 = this->spawnVectorCount; /*0x6b6de4*/
@@ -99,6 +99,7 @@ S SpawnManagerClass::SpawnManagerClass(TechnoClass * aP1, int a3, int a4, int a5
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x6B6EA0
 namespace ra2 {
@@ -148,6 +149,7 @@ void* SpawnManagerClass::Constructor()
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x6B7010
 namespace ra2 {
@@ -169,8 +171,8 @@ void SpawnManagerClass::Constructor_SpawnManagerClass()
       __3_YAXPAX_Z(*(void **)(this->spawnVectorCount + 4 * i)); /*0x6b704f*/
   }
   int v3 = this->spawnVectorCapacity; /*0x6b7063*/
-  (*(void (__thiscall **)(int))(this->spawns + 12))(this + 56); /*0x6b7066*/
-  (*(void (__thiscall **)(int, int, _DWORD))(this->spawns + 8))(this + 56, v3, 0); /*0x6b7070*/
+  (*(void (__thiscall **)(int))(this->spawns + 12))(&this->abstractFlags6); /*0x6b7066*/
+  (*(void (__thiscall **)(int, int, _DWORD))(this->spawns + 8))(&this->u32_E0, v3, 0); /*0x6b7070*/
   v6 = this; /*0x6b7083*/
   int v4 = (*(int (__thiscall **)(int *, int *))(SpawnManagerClass_Array + 16))(&SpawnManagerClass_Array, &v6); /*0x6b7087*/
   if ( v4 != -1 && v4 < DataGlobal_B0B890 && v4 < --DataGlobal_B0B890 ) /*0x6b70a3*/
@@ -184,17 +186,18 @@ void SpawnManagerClass::Constructor_SpawnManagerClass()
   }
   void * v5 = this->spawnVectorCount; /*0x6b70bd*/
   this->spawns = &vt_VectorClass_SpawnManagerClass_SpawnControl; /*0x6b70c0*/
-  if ( v5 && *(_BYTE *)(this + 69) ) /*0x6b70ca*/
+  if ( v5 && this->u8_45 ) /*0x6b70ca*/
   {
     __3_YAXPAX_Z(v5); /*0x6b70d2*/
     this->spawnVectorCount = 0; /*0x6b70da*/
   }
-  *(_BYTE *)(this + 69) = 0; /*0x6b70e3*/
+  this->u8_45 = 0; /*0x6b70e3*/
   this->spawnVectorCapacity = 0; /*0x6b70e7*/
   AbstractClass::DTOR((_DWORD *)this); /*0x6b70ee*/
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x6B7B90
 namespace ra2 {
@@ -211,6 +214,7 @@ int SpawnManagerClass::SetTarget(int a2)
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x6B7D30
 namespace ra2 {
@@ -238,6 +242,7 @@ int SpawnManagerClass::CountAliveSpawns()
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x6B7D50
 namespace ra2 {
@@ -266,6 +271,7 @@ int SpawnManagerClass::CountDockedSpawns()
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x6B7DE0
 namespace ra2 {
@@ -327,6 +333,7 @@ int SpawnManagerClass::PowerDrainUpdate(int a2)
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x6B7F10
 namespace ra2 {
@@ -443,6 +450,7 @@ LABEL_20:
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x6B7ED0
 namespace ra2 {
@@ -706,15 +714,15 @@ DynamicVector * SpawnManagerClass_25::QueryInterface(char a2)
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_SpawnManagerClass_SpawnControl;
-    if ( v3 && *((char *)(this) + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
+    this->IsAllocated = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;

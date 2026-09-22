@@ -97,3 +97,4 @@ void SetupMultiplayerLobbyScreen_Setup(SkirmishDialog * hDlg, char * a2, int nID
   return CheckGameSettingsChanged(1, 0); /*0x5ec020*/
 }
 } // namespace gamemd
+}

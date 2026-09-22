@@ -31,6 +31,7 @@ void * RadBeam::Create()
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x6593F0
 namespace ra2 {
@@ -47,8 +48,8 @@ unsigned int * RadBeam::InitState(rc_ptr_base * aP1)
   this->uniqueId = aP1; /*0x65940f*/
   this->referenceCount = 0; /*0x659412*/
   this->NeedsSaveOrLink = 0; /*0x659415*/
-  *((_BYTE *)this + 33) = 0; /*0x659418*/
-  *((_BYTE *)this + 34) = 0; /*0x65941b*/
+  this->u8_21 = 0; /*0x659418*/
+  this->u8_22 = 0; /*0x65941b*/
   this->range = 0; /*0x65941e*/
   this->q00A = 0; /*0x659421*/
   this->data = 0; /*0x659424*/
@@ -65,9 +66,10 @@ unsigned int * RadBeam::InitState(rc_ptr_base * aP1)
   this->memberAtOffset88 = 0; /*0x659445*/
   this->q01F = 0; /*0x659448*/
   this->color2 = 0; /*0x65944b*/
-  *((_BYTE *)this + 193) = 0; /*0x659451*/
-  *((_BYTE *)this + 194) = 0; /*0x659457*/
+  this->u8_C1 = 0; /*0x659451*/
+  this->u8_C2 = 0; /*0x659457*/
   return this; /*0x65945d*/
 }
 } // namespace game
 } // namespace ra2
+}

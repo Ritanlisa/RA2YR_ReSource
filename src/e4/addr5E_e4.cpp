@@ -108,6 +108,7 @@ LABEL_23:
   return ReleaseDC(v4, hDC); /*0x5e2996*/
 }
 } // namespace gamemd
+}
 
 // 0x5E2AC0
 namespace gamemd {
@@ -161,6 +162,7 @@ LABEL_5:
   }
 }
 } // namespace gamemd
+}
 
 // 0x5E2CD0
 namespace gamemd {
@@ -240,6 +242,7 @@ LABEL_18:
   return 0; /*0x5e2e2e*/
 }
 } // namespace gamemd
+}
 
 // 0x5E2EF0
 namespace gamemd {
@@ -256,6 +259,7 @@ void SetDialogPlayerName(HWND hDlg, int a2)
   }
 }
 } // namespace gamemd
+}
 
 // 0x5E3010
 namespace gamemd {
@@ -352,6 +356,7 @@ AbstractClass * * InitSkirmishDialogControls(HWND hDlg, int a2)
   return SendDlgItemMessageA(hDlg, 1357, 0xF1u, *(&wParam + (unsigned __int8)Crates), 0); /*0x5e32bd*/
 }
 } // namespace gamemd
+}
 
 // 0x5E32D0
 namespace gamemd {
@@ -440,6 +445,7 @@ LABEL_11:
   return result; /*0x5e357d*/
 }
 } // namespace gamemd
+}
 
 // 0x5E39C0
 namespace gamemd {
@@ -447,6 +453,7 @@ ObjectClass * * ValidateNetworkLobbyHostMap()
 {
 // (no pseudocode — ASM-only function)
 } // namespace gamemd
+}
 
 // 0x5E3AB0
 namespace gamemd {
@@ -593,6 +600,7 @@ LABEL_40:
   return result; /*0x5e3d06*/
 }
 } // namespace gamemd
+}
 
 // 0x5E3D10
 namespace gamemd {
@@ -2102,6 +2110,7 @@ LABEL_13:
 }
 
 } // namespace gamemd
+}
 
 // 0x5E5F10
 namespace gamemd {
@@ -2258,6 +2267,7 @@ AbstractClass * * RehashGenericHashMap(HWND hWnd, int a2)
   DeleteAndZero::Alt(&v28); /*0x5e6219*/
 }
 } // namespace gamemd
+}
 
 // 0x5E6230
 namespace gamemd {
@@ -2368,6 +2378,7 @@ LABEL_30:
   DeleteAndZero::Alt(&v19); /*0x5e6420*/
 }
 } // namespace gamemd
+}
 
 // 0x5E6520
 namespace gamemd {
@@ -2432,6 +2443,7 @@ AbstractClass * * Map_ReadPlayerCount(int a1)
   return Int_Overwrite; /*0x5e661f*/
 }
 } // namespace gamemd
+}
 
 // 0x5E66F0
 namespace gamemd {
@@ -2521,6 +2533,7 @@ LABEL_20:
   return 0; /*0x5e6865*/
 }
 } // namespace gamemd
+}
 
 // 0x5E7160
 namespace gamemd {
@@ -2679,6 +2692,7 @@ LABEL_32:
   return 1; /*0x5e71c8*/
 }
 } // namespace gamemd
+}
 
 // 0x5E7920
 namespace gamemd {
@@ -2778,6 +2792,7 @@ void ExchangeMultiplayerGameInfo()
   }
 }
 } // namespace gamemd
+}
 
 // 0x5E7BF0
 namespace gamemd {
@@ -2883,6 +2898,7 @@ LABEL_9:
   return result; /*0x5e7bff*/
 }
 } // namespace gamemd
+}
 
 // 0x5E87A0
 namespace gamemd {
@@ -2988,6 +3004,7 @@ HashTable * * LoadNetworkShareStrings()
   return result; /*0x5e8a1b*/
 }
 } // namespace gamemd
+}
 
 // 0x5E9B20
 namespace gamemd {
@@ -3003,6 +3020,7 @@ void GetComboBoxSelectedDefault(SkirmishDialog * aP0, int nIDDlgItem, WPARAM wPa
   return v6 != -1 ? v6 : 0;
 }
 } // namespace gamemd
+}
 
 // 0x5E9C00
 namespace gamemd {
@@ -3064,6 +3082,7 @@ LABEL_19:
   return result; /*0x5e9cc5*/
 }
 } // namespace gamemd
+}
 
 // 0x5E9CE0
 namespace gamemd {
@@ -3124,6 +3143,7 @@ LABEL_19:
   return result; /*0x5e9d98*/
 }
 } // namespace gamemd
+}
 
 // 0x5E9DB0
 namespace gamemd {
@@ -3149,6 +3169,7 @@ void ProcessNetworkLobbyOption(SessionClass * hDlg, void * nIDDlgItem)
   return result; /*0x5e9def*/
 }
 } // namespace gamemd
+}
 
 // 0x5E9E70
 namespace gamemd {
@@ -3266,6 +3287,7 @@ void SetupSkirmishPlayerSlots(SkirmishDialog * hDlg, int a2, HWND hWnd)
   return result; /*0x5e9f64*/
 }
 } // namespace gamemd
+}
 
 // 0x5EA0D0
 namespace gamemd {
@@ -3316,6 +3338,7 @@ char sub_5EA0D0(HWND hDlg, void * a2)
   return SetupSkirmishPlayerSlots(hDlg, a2, (HWND)1); /*0x5ea176*/
 }
 } // namespace gamemd
+}
 
 // 0x5EA3E0
 namespace gamemd {
@@ -3532,6 +3555,7 @@ LABEL_40:
     RefreshLobbyAll_Setup(hDlg); /*0x5ea8d0*/
 }
 } // namespace gamemd
+}
 
 // 0x5EA920
 namespace gamemd {
@@ -3559,6 +3583,7 @@ int sub_5EA920(int a1)
   return result; /*0x5ea972*/
 }
 } // namespace gamemd
+}
 
 // 0x5EB7B0
 namespace gamemd {
@@ -3687,6 +3712,7 @@ void UpdateMultiplayerLobbySlots(HWND hDlg, char * a2, int nIDDlgItem)
   return result; /*0x5eb9f8*/
 }
 } // namespace gamemd
+}
 
 // 0x5EBC00
 namespace gamemd {
@@ -3778,6 +3804,7 @@ void DisableCampaignSlots(HWND hDlg, int a2)
   }
 }
 } // namespace gamemd
+}
 
 // 0x5EC290
 namespace gamemd {
@@ -3850,6 +3877,7 @@ char sub_5EC290(SkirmishDialog * hDlg, int a2)
   return CheckGameSettingsChanged(1, 0);
 }
 } // namespace gamemd
+}
 
 // 0x5EC3A0
 namespace gamemd {
@@ -4133,6 +4161,7 @@ LABEL_43:
   }
 }
 } // namespace gamemd
+}
 
 // 0x5EC9F0
 namespace gamemd {
@@ -4140,6 +4169,7 @@ AbstractClass * * PlayerSkirmishSlotHandler()
 {
 // (no pseudocode — ASM-only function)
 } // namespace gamemd
+}
 
 // 0x5ED270
 namespace gamemd {
@@ -4192,6 +4222,7 @@ LABEL_18:
   return PlayerSkirmishSlotHandler(hDlg, nIDDlgItem, (LPARAM)v10, 0); /*0x5ed35a*/
 }
 } // namespace gamemd
+}
 
 // 0x5ED400
 namespace gamemd {
@@ -4292,6 +4323,7 @@ AbstractClass * * SaveMultiplayerLobbySettings(ReferenceCounted * hDlg, int a2)
   return result; /*0x5ed555*/
 }
 } // namespace gamemd
+}
 
 // 0x5ED5A0
 namespace gamemd {
@@ -4648,6 +4680,7 @@ LABEL_121:
   return a2; /*0x5edcaa*/
 }
 } // namespace gamemd
+}
 
 // 0x5EDDE0
 namespace gamemd {
@@ -4715,6 +4748,7 @@ void EnablePlayerSlotControls(HWND hDlg, bool a2)
   }
 }
 } // namespace gamemd
+}
 
 // 0x5EE510
 namespace gamemd {
@@ -4790,6 +4824,7 @@ LABEL_23:
   return result; /*0x5ee698*/
 }
 } // namespace gamemd
+}
 
 // 0x5EE6F0
 namespace gamemd {
@@ -4957,6 +4992,7 @@ LABEL_16:
   return &aP0->field_0; /*0x5ee772*/
 }
 } // namespace gamemd
+}
 
 // 0x5E2410
 namespace gamemd {

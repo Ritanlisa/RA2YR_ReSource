@@ -33,6 +33,7 @@ LABEL_6:
   }
   return *(BulletTypeClass **)&dword_A83C84->__pad_0[4 * v2]; /*0x46c7ff*/
 }
+}
 
 // 0x473980
 int ObjectTypeClass::loadTypeMember_473980()
@@ -51,6 +52,7 @@ int ObjectTypeClass::loadTypeMember_473980()
       return -1; /*0x4739bb*/
   }
   return v2; /*0x4739bd*/
+}
 }
 
 // 0x474940
@@ -79,6 +81,7 @@ int ObjectTypeClass::loadTypeMember_5474940(CCINIClass * aP1, unsigned char * a2
   }
   return dword_81B9B4[2 * v4]; /*0x47498b*/
 }
+}
 
 // 0x474F50
 int ObjectTypeClass::ReadInt(unsigned char * a2, unsigned char * a3, int a4)
@@ -99,6 +102,7 @@ int ObjectTypeClass::ReadInt(unsigned char * a2, unsigned char * a3, int a4)
   INIClass::GetString(this, a2, a3, v4, Destination, 32); /*0x474f85*/
   return ObjectTypeClass_Read(Destination); /*0x474f93*/
 }
+}
 
 // 0x5F7090
 int ObjectTypeClass::ConstructFull(AbstractClass * aP1)
@@ -107,7 +111,7 @@ int ObjectTypeClass::ConstructFull(AbstractClass * aP1)
   char Destination[24]; // [esp+8h] [ebp-1Ch] BYREF
   char v10; // [esp+20h] [ebp-4h]
   AbstractTypeClass::Constructor(this, aP1); /*0x5f709c*/
-  _DWORD * v3 = (_DWORD *)(this + 200); /*0x5f70a3*/
+  _DWORD * v3 = (_DWORD *)(&this->u32_500); /*0x5f70a3*/
   this->q098 = 0; /*0x5f70a9*/
   this->q264 = 0; /*0x5f70af*/
   this->q268 = 0; /*0x5f70b5*/
@@ -131,7 +135,7 @@ int ObjectTypeClass::ConstructFull(AbstractClass * aP1)
     --v4; /*0x5f710a*/
   }
   while ( v4 ); /*0x5f710b*/
-  _DWORD * v5 = (_DWORD *)(this + 344); /*0x5f710d*/
+  _DWORD * v5 = (_DWORD *)(&this->u32_884); /*0x5f710d*/
   int v6 = 18; /*0x5f7113*/
   do /*0x5f7121*/
   {
@@ -165,7 +169,7 @@ int ObjectTypeClass::ConstructFull(AbstractClass * aP1)
   this->IgnoresFirestorm = 0; /*0x5f71ac*/
   this->UseLineTrail = 0; /*0x5f71b2*/
   this->q23B = 0x80; /*0x5f71b8*/
-  *(_BYTE *)(this + 572) = 0x80; /*0x5f71be*/
+  this->u8_23C = 0x80; /*0x5f71be*/
   this->q23D = 0x80; /*0x5f71c4*/
   this->LineTrailColorDecrement = 16; /*0x5f71ca*/
   this->VoxelCaches = 0; /*0x5f71d4*/
@@ -192,8 +196,8 @@ int ObjectTypeClass::ConstructFull(AbstractClass * aP1)
   this->vtable1 = &ObjectTypeClass::`vftable'; /*0x5f7258*/
   this->vtable2 = &ObjectTypeClass::`vftable'; /*0x5f725f*/
   this->vtable3 = &vt_ObjectTypeClass; /*0x5f7266*/
-  if ( this + 36 != this + 504 ) /*0x5f726d*/
-    qmemcpy((void *)(this + 504), (const void *)(this + 36), 0x19u); /*0x5f7274*/
+  if ( &this->u32_90 != &this->u32_C84 ) /*0x5f726d*/
+    qmemcpy((void *)(&this->u32_C84), (const void *)(&this->vtable46), 0x19u); /*0x5f7274*/
   if ( &DataGlobal_87F8E4 == (MouseClass *)-42624 ) /*0x5f727e*/
   {
     Destination[0] = 0; /*0x5f7280*/
@@ -203,10 +207,10 @@ int ObjectTypeClass::ConstructFull(AbstractClass * aP1)
     strncpy(Destination, &DataGlobal_87F8E4[42624], 0x18u); /*0x5f7292*/
     v10 = 0; /*0x5f729a*/
   }
-  if ( Destination != (char *)(this + 531) ) /*0x5f72aa*/
+  if ( Destination != (char *)(&this->u32_D41) ) /*0x5f72aa*/
   {
-    qmemcpy((void *)(this + 531), Destination, 0x18u); /*0x5f72b5*/
-    *(_BYTE *)(this + 555) = v10; /*0x5f72b7*/
+    qmemcpy((void *)(&this->u32_D41), Destination, 0x18u); /*0x5f72b5*/
+    this->u8_22B = v10; /*0x5f72b7*/
   }
   if ( (int)*(&g_MatrixTransformState + 2438) < (int)*(&g_MatrixTransformState + 2436) /*0x5f72ee*/
     || (*((_BYTE *)&(&g_MatrixTransformState)[203] + 5) || !*(&g_MatrixTransformState + 2436))
@@ -221,6 +225,7 @@ int ObjectTypeClass::ConstructFull(AbstractClass * aP1)
     *(&(*(&g_MatrixTransformState + 2435))->X + v7) = this; /*0x5f730a*/
   }
   return this; /*0x5f730f*/
+}
 }
 
 // 0x5F7320
@@ -275,6 +280,7 @@ unsigned int * ObjectTypeClass::Construct(ObjectTypeClass * aP1)
   this->vtable3 = &ObjectTypeClass::`vftable'; /*0x5f73e6*/
   this->vtable4 = &vt_ObjectTypeClass; /*0x5f73ed*/
   return this; /*0x5f73f6*/
+}
 }
 
 // 0x5F7400
@@ -350,6 +356,7 @@ SomeVoxelCache * * ObjectTypeClass::Destruct()
   ObjectTypeClass::ReleaseWaveAndString((int *)(this + 184)); /*0x5f7588*/
   ObjectTypeClass::ReleaseWaveAndString((int *)(this + 176)); /*0x5f7593*/
   return AbstractTypeClass::Dtor((_DWORD *)this); /*0x5f759f*/
+}
 }
 
 // 0x5F77F0
@@ -453,6 +460,7 @@ void ObjectTypeClass::UnloadPipsSHP()
     }
     DataGlobal_AC148B = 0; /*0x5f78f1*/
   }
+}
 }
 
 // 0x5F9070
@@ -559,6 +567,7 @@ LABEL_41:
     this->MaxDimension = result; /*0x5f92b5*/
   }
   return result; /*0x5f92bb*/
+}
 }
 
 // 0x5F92D0
@@ -770,12 +779,14 @@ void* ObjectTypeClass::LoadFromINI(CCINIClass * aP1)
   }
   return 1; /*0x5f9690*/
 }
+}
 
 // 0x5F9710
 void ObjectTypeClass::SetRTTI71()
 {
 {
   this->vtable2 = 71; /*0x5f9710*/
+}
 }
 
 // 0x5F9720
@@ -907,6 +918,7 @@ int ObjectTypeClass::LoadCleanup(IUnknown * aP0, ObjectTypeClass * aP1)
   }
   return result; /*0x5f993e*/
 }
+}
 
 // 0x712040
 SHPStruct * * ObjectTypeClass::SelectArtOrAlt()
@@ -917,7 +929,7 @@ SHPStruct * * ObjectTypeClass::SelectArtOrAlt()
 
   v1 = HouseClass_Player; /*0x712040*/
   if ( !HouseClass_Player ) /*0x71204a*/
-    return *(this + 444); /*0x7120bf*/
+    return *(&this->MainVoxel4); /*0x7120bf*/
   if ( *((_BYTE *)HouseClass_Player + 703) ) /*0x71204c*/
   {
     if ( this->getAltitude() == 16 ) /*0x712060*/
@@ -925,7 +937,7 @@ SHPStruct * * ObjectTypeClass::SelectArtOrAlt()
       result = this->q710; /*0x712062*/
       if ( result ) /*0x71206a*/
       {
-        if ( *((_BYTE *)this + 3214) ) /*0x71206c*/
+        if ( this->u8_C8E ) /*0x71206c*/
           return result; /*0x712074*/
       }
     }
@@ -934,14 +946,15 @@ SHPStruct * * ObjectTypeClass::SelectArtOrAlt()
   if ( !v1 /*0x7120a1*/
     || !v1->armor
     || this->getAltitude() != 40
-    && (this->getAltitude() != 7 || !*(this + 258)) )
+    && (this->getAltitude() != 7 || !*(&this->Name8)) )
   {
-    return *(this + 444); /*0x7120a1*/
+    return *(&this->MainVoxel4); /*0x7120a1*/
   }
   result = this->q710; /*0x7120ab*/
-  if ( !result || !*((_BYTE *)this + 3214) ) /*0x7120b5*/
-    return *(this + 444); /*0x7120bd*/
+  if ( !result || !this->u8_C8E ) /*0x7120b5*/
+    return *(&this->MainVoxel4); /*0x7120bd*/
   return result; /*0x7120c5*/
+}
 }
 
 // 0x712170
@@ -4786,6 +4799,7 @@ LABEL_286:
   }
   return 1;
 }
+}
 
 
 // 0x7170A0
@@ -4838,6 +4852,7 @@ int ObjectTypeClass::DeserializeArrays()
   }
   return result; /*0x71719a*/
 }
+}
 
 // 0x717820
 int ObjectTypeClass::loadTypeMember_5717820()
@@ -4845,14 +4860,15 @@ int ObjectTypeClass::loadTypeMember_5717820()
 {
 
   int v2; // eax
-  LOBYTE(v2) = *(_BYTE *)(this + 3536); /*0x717823*/
-  const char * v3 = (const char *)(this + 3536); /*0x717829*/
+  LOBYTE(v2) = this->u8_DD0; /*0x717823*/
+  const char * v3 = (const char *)(&this->u32_5846); /*0x717829*/
   if ( (_BYTE)v2 ) /*0x717831*/
   {
     v2 = FileExtension::MapHandler(v3); /*0x717833*/
-    *(_DWORD *)(this + 3568) = v2; /*0x717838*/
+    this->u32_DF0 = v2; /*0x717838*/
   }
   return v2; /*0x71783e*/
+}
 }
 
 // 0x717C00
@@ -4868,7 +4884,7 @@ unsigned int * ObjectTypeClass::loadTypeMember_5717C00(unsigned int * a2)
   if ( !v3 ) /*0x717c19*/
   {
     this->vtable2 = 0; /*0x717c5a*/
-    *((_BYTE *)this + 13) = 0; /*0x717c61*/
+    this->u8_34 = 0; /*0x717c61*/
     return this; /*0x717c65*/
   }
   void * v4 = __2_YAPAXI_Z(4 * v3); /*0x717c23*/
@@ -4877,7 +4893,7 @@ unsigned int * ObjectTypeClass::loadTypeMember_5717C00(unsigned int * a2)
     return this; /*0x717c30*/
   int v5 = this->vtable3; /*0x717c32*/
   int v6 = 0; /*0x717c35*/
-  *((_BYTE *)this + 13) = 1; /*0x717c39*/
+  this->u8_34 = 1; /*0x717c39*/
   if ( v5 <= 0 ) /*0x717c3d*/
     return this; /*0x717c3d*/
   do /*0x717c51*/
@@ -4887,6 +4903,7 @@ unsigned int * ObjectTypeClass::loadTypeMember_5717C00(unsigned int * a2)
   }
   while ( v6 < this->vtable3 ); /*0x717c51*/
   return this; /*0x717c55*/
+}
 }
 
 // 0x41CBF0

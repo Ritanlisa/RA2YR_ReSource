@@ -155,6 +155,7 @@ LABEL_5:
   return v4; /*0x431258*/
 }
 } // namespace gamemd
+}
 
 // 0x431450
 namespace gamemd {
@@ -236,7 +237,7 @@ LABEL_5:
         WinModemClass *v24 = -1; /*0x4315b8*/
         char v25 = v14; /*0x4315bc*/
         v5 = 0; /*0x4315c0*/
-        int * v15 = this + 3 * v14; /*0x4315c8*/
+        int * v15 = &this->q00C * v14; /*0x4315c8*/
         do /*0x4315dc*/
         {
           if ( *v15 == v11 ) /*0x4315cd*/
@@ -280,7 +281,7 @@ LABEL_5:
             if ( (_BYTE)v5 ) /*0x43168f*/
             {
               v5 = *(_DWORD *)&HouseClass_Array->__pad_0[4 * *(_DWORD *)(v11 + 272)]; /*0x43169d*/
-              if ( !*(_BYTE *)(v5 + 501) ) /*0x4316a0*/
+              if ( !v5->u8_1F5 ) /*0x4316a0*/
               {
                 v16 = *(CellStruct **)(v11 + 4); /*0x4316b4*/
   int v21; // [esp+14h] [ebp-1D8h]
@@ -297,6 +298,7 @@ LABEL_5:
   return v5; /*0x431641*/
 }
 } // namespace gamemd
+}
 
 // 0x48D1E0
 namespace gamemd {
@@ -633,6 +635,7 @@ LABEL_95:
   return i; /*0x48db08*/
 }
 } // namespace gamemd
+}
 
 // 0x4C6C50
 namespace gamemd {
@@ -662,6 +665,7 @@ void * Network::initConnection(int a2, unsigned int * a3, char a4)
   }
 }
 } // namespace gamemd
+}
 
 // 0x4FC980
 namespace gamemd {
@@ -690,6 +694,7 @@ int Network::SendOffer()
   return result; /*0x4fc9c9*/
 }
 } // namespace gamemd
+}
 
 // 0x52F3F0
 namespace gamemd {
@@ -775,6 +780,7 @@ AbstractClass * * Network::Init()
   return v4; /*0x52f606*/
 }
 } // namespace gamemd
+}
 
 // 0x53ED60
 namespace gamemd {
@@ -798,6 +804,7 @@ int Network::GetAddress(unsigned int * a1, ObjectClass * aP2, unsigned short * a
   return result; /*0x53ed6c*/
 }
 } // namespace gamemd
+}
 
 // 0x53EDA0
 namespace gamemd {
@@ -806,14 +813,15 @@ void * Network::CopyAddress(unsigned int * a2, int a3)
 {
   char *result; // eax
 
-  result = (char *)(this + 1); /*0x53eda4*/
+  result = &this->q004; /*0x53eda4*/
   *(_DWORD *)a3 = this->q004; /*0x53edaa*/
   LOWORD(result) = (unsigned short)this->Network_field_0x8; /*0x53edad*/
-  *(_WORD *)(a3 + 4) = (_WORD)result; /*0x53edb1*/
+  a3->vtable2 = (_WORD)result; /*0x53edb1*/
   *a2 = *this; /*0x53edbb*/
   return result; /*0x53edac*/
 }
 } // namespace gamemd
+}
 
 // 0x53EE00
 namespace gamemd {
@@ -848,6 +856,7 @@ int Network::IsBroadcastAddr()
   return 0; /*0x53ee42*/
 }
 } // namespace gamemd
+}
 
 // 0x53EF60
 namespace gamemd {
@@ -893,6 +902,7 @@ int Network::processPacket(TechnoTypeClass * aP1)
   return !v7; /*0x53ef8f*/
 }
 } // namespace gamemd
+}
 
 // 0x53F5B0
 namespace gamemd {
@@ -905,6 +915,7 @@ void sub_53F5B0()
   return 1; /*0x53f5ce*/
 }
 } // namespace gamemd
+}
 
 // 0x53F830
 namespace gamemd {
@@ -915,6 +926,7 @@ int sub_53F830(int a1, int a2)
   return 1; /*0x53f847*/
 }
 } // namespace gamemd
+}
 
 // 0x540C60
 namespace gamemd {
@@ -956,6 +968,7 @@ AbstractClass * * Network::SetConnectionParams(IUnknown * aP1, int a3, int a4, C
   return result; /*0x540d03*/
 }
 } // namespace gamemd
+}
 
 // 0x540F00
 namespace gamemd {
@@ -1001,6 +1014,7 @@ int Network::sendData(AnimClass * aP1)
   return 1; /*0x540f2f*/
 }
 } // namespace gamemd
+}
 
 // 0x540F90
 namespace gamemd {
@@ -1010,6 +1024,7 @@ int Network::GetSendCount()
   return this->q044; /*0x540f93*/
 }
 } // namespace gamemd
+}
 
 // 0x540FA0
 namespace gamemd {
@@ -1022,6 +1037,7 @@ int Network::GetConnectionSpeed(CellStruct * aP1)
     return *(_DWORD *)(*(this + (_DWORD)aP1 + 10) + 100); /*0x540fb1*/
 }
 } // namespace gamemd
+}
 
 // 0x540FC0
 namespace gamemd {
@@ -1042,6 +1058,7 @@ int Network::GetClass(int a2)
   return *(this + v3 + 10) + 104; /*0x540fe2*/
 }
 } // namespace gamemd
+}
 
 // 0x541000
 namespace gamemd {
@@ -1062,6 +1079,7 @@ int Network::FindPlayerByID(DynamicVector * aP1)
   return *(this + v3 + 10) + 76; /*0x541022*/
 }
 } // namespace gamemd
+}
 
 // 0x5410F0
 namespace gamemd {
@@ -1092,6 +1110,7 @@ int Network::SendMessage(int a2, int a3, int a4, int a5, int a6, int a7)
   return v9; /*0x541165*/
 }
 } // namespace gamemd
+}
 
 // 0x541260
 namespace gamemd {
@@ -1141,6 +1160,7 @@ AbstractClass * * Network::SendToPlayer(int a2, int a3, int a4, wchar_t * String
   return v11; /*0x5412b9*/
 }
 } // namespace gamemd
+}
 
 // 0x541370
 namespace gamemd {
@@ -1158,6 +1178,7 @@ int Network::Send(int a2, int a3, TechnoTypeClass * aP3, int a5)
     return 0; /*0x54139d*/
 }
 } // namespace gamemd
+}
 
 // 0x5413B0
 namespace gamemd {
@@ -1177,6 +1198,7 @@ int Network::SendPacketThunk(int a2, int a3, int a4, int a5, int a6, int a7)
     return 0; /*0x5413e7*/
 }
 } // namespace gamemd
+}
 
 // 0x5413F0
 namespace gamemd {
@@ -1195,6 +1217,7 @@ int Network::receiveData(int a2)
   return result; /*0x54140b*/
 }
 } // namespace gamemd
+}
 
 // 0x541410
 namespace gamemd {
@@ -1218,6 +1241,7 @@ int Network::SendPacket(int a2, int a3, unsigned char a4)
   return v6; /*0x541471*/
 }
 } // namespace gamemd
+}
 
 // 0x541480
 namespace gamemd {
@@ -1235,6 +1259,7 @@ int Network::SendPacketThunk2(int a2, int a3, int a4, int a5)
     return 0; /*0x5414ad*/
 }
 } // namespace gamemd
+}
 
 // 0x541820
 namespace gamemd {
@@ -1688,6 +1713,7 @@ LABEL_92:
   return result; /*0x542274*/
 }
 } // namespace gamemd
+}
 
 // 0x5422D0
 namespace gamemd {
@@ -1700,6 +1726,7 @@ int Network::GetQueueCount()
     return 0; /*0x5422e8*/
 }
 } // namespace gamemd
+}
 
 // 0x5424C0
 namespace gamemd {
@@ -1714,6 +1741,7 @@ int Network::GetLobbyStatus()
     return 0; /*0x5424cf*/
 }
 } // namespace gamemd
+}
 
 // 0x542500
 namespace gamemd {
@@ -1728,6 +1756,7 @@ int Network::updateLatency()
     return 0; /*0x54250f*/
 }
 } // namespace gamemd
+}
 
 // 0x543050
 namespace gamemd {
@@ -1746,6 +1775,7 @@ unsigned int * Network::SetPlayerCoords(IPXManagerClass * aP1)
   return result; /*0x54306e*/
 }
 } // namespace gamemd
+}
 
 // 0x543080
 namespace gamemd {
@@ -1760,6 +1790,7 @@ int Network::Disconnect()
   return result; /*0x54308e*/
 }
 } // namespace gamemd
+}
 
 // 0x5BCC40
 namespace gamemd {
@@ -1771,6 +1802,7 @@ int Network::validateConnection(int a2, int a3)
   return a2; /*0x5bcc54*/
 }
 } // namespace gamemd
+}
 
 // 0x5C46E0
 namespace gamemd {
@@ -1810,34 +1842,34 @@ AbstractClass * * Network::SetupRematch()
     Network::GetAddress((_DWORD *)(*(_DWORD *)(Game_PlayerInfoArray + 4 * v5) + 40), &v15, (int)v16, &v14); /*0x5c47ed*/
     (*(void (__thiscall **)(int, char *, int))(*(_DWORD *)g_NetworkInterface + 44))(g_NetworkInterface, v17, v14); /*0x5c4804*/
   }
-  qmemcpy(&DataGlobal_A8DBCC, (const void *)(this + 196), 0x60u); /*0x5c4827*/
-  qmemcpy(DataGlobal_A8DC2C, (const void *)(this + 292), sizeof(DataGlobal_A8DC2C)); /*0x5c4839*/
-  qmemcpy(&DataGlobal_A8E230, (const void *)(this + 324), 0x20u); /*0x5c484b*/
-  Network_PlayerPorts = *(_DWORD *)(this + 404); /*0x5c484f*/
-  DataGlobal_A8E2B6 = *(_DWORD *)(this + 408); /*0x5c4858*/
-  DataGlobal_A8E2BA = *(_DWORD *)(this + 412); /*0x5c4861*/
-  DataGlobal_A8E2BE = *(_DWORD *)(this + 416); /*0x5c4876*/
-  wcscpy(&DataGlobal_A8E258, (const wchar_t *)(this + 356)); /*0x5c487c*/
+  qmemcpy(&DataGlobal_A8DBCC, (const void *)(&this->q04C6), 0x60u); /*0x5c4827*/
+  qmemcpy(DataGlobal_A8DC2C, (const void *)(&this->u32_742), sizeof(DataGlobal_A8DC2C)); /*0x5c4839*/
+  qmemcpy(&DataGlobal_A8E230, (const void *)(&this->u32_804), 0x20u); /*0x5c484b*/
+  Network_PlayerPorts = this->u32_194; /*0x5c484f*/
+  DataGlobal_A8E2B6 = this->u32_198; /*0x5c4858*/
+  DataGlobal_A8E2BA = this->u32_19C; /*0x5c4861*/
+  DataGlobal_A8E2BE = this->u32_1A0; /*0x5c4876*/
+  wcscpy(&DataGlobal_A8E258, (const wchar_t *)(&this->u32_8C6)); /*0x5c487c*/
   DataGlobal_A8E2AC = this->q064; /*0x5c488a*/
-  g_MenuRandomSeed = *(_DWORD *)(this + 156); /*0x5c4896*/
+  g_MenuRandomSeed = this->u32_9C; /*0x5c4896*/
   InitRandomSeed(); /*0x5c489c*/
   Debug::Log("Setup Rematch: Random Seed = %d\n", g_MenuRandomSeed);
   g_RulesInitConfig = this->q0A0; /*0x5c48ba*/
   g_Rules_MultiEngineer = this->q0A4; /*0x5c48c6*/
   g_Rules_Bases = this->q2A0; /*0x5c48d2*/
-  FOW = *(_BYTE *)(this + 172); /*0x5c48dd*/
-  BridgeDestruction = *(_BYTE *)(this + 173); /*0x5c48e9*/
-  Crates = *(_BYTE *)(this + 174); /*0x5c48f5*/
-  LOBYTE(MCVRedeploy) = *(_BYTE *)(this + 175); /*0x5c4900*/
+  FOW = this->u8_AC; /*0x5c48dd*/
+  BridgeDestruction = this->u8_AD; /*0x5c48e9*/
+  Crates = this->u8_AE; /*0x5c48f5*/
+  LOBYTE(MCVRedeploy) = this->u8_AF; /*0x5c4900*/
   AlliesAllowed = this->q02C; /*0x5c490c*/
-  HarvesterTruce = *(_BYTE *)(this + 177); /*0x5c4918*/
-  Bases = *(_BYTE *)(this + 178); /*0x5c4923*/
-  CTF = *(_BYTE *)(this + 179); /*0x5c492f*/
-  DataGlobal_A8B278 = *(_DWORD *)(this + 184); /*0x5c493b*/
-  ShortGame = *(_BYTE *)(this + 188); /*0x5c4946*/
-  SWAllowed = *(_BYTE *)(this + 189); /*0x5c4952*/
-  LOBYTE(g_Rules_ShortGame) = *(_BYTE *)(this + 190); /*0x5c495e*/
-  MultiEngineer = *(_BYTE *)(this + 191); /*0x5c4969*/
+  HarvesterTruce = this->u8_B1; /*0x5c4918*/
+  Bases = this->u8_B2; /*0x5c4923*/
+  CTF = this->u8_B3; /*0x5c492f*/
+  DataGlobal_A8B278 = this->u32_B8; /*0x5c493b*/
+  ShortGame = this->u8_BC; /*0x5c4946*/
+  SWAllowed = this->u8_BD; /*0x5c4952*/
+  LOBYTE(g_Rules_ShortGame) = this->u8_BE; /*0x5c495e*/
+  MultiEngineer = this->u8_BF; /*0x5c4969*/
   g_Rules_EngineerCount = this->q030; /*0x5c497b*/
   LoadScenarioClassByIndex(g_GameRulesOptions); /*0x5c4981*/
   *(_DWORD *)g_GameModeOptions = g_Rules_EngineerCount; /*0x5c4997*/
@@ -1970,6 +2002,7 @@ LABEL_35:
   }
 }
 } // namespace gamemd
+}
 
 // 0x5D93D0
 namespace gamemd {
@@ -1992,6 +2025,7 @@ int Network::dispatchEvent()
   return result; /*0x5d9405*/
 }
 } // namespace gamemd
+}
 
 // 0x5D9410
 namespace gamemd {
@@ -2503,6 +2537,7 @@ LABEL_152:
   }
 }
 } // namespace gamemd
+}
 
 // 0x5DA0B0
 namespace gamemd {
@@ -2639,6 +2674,7 @@ LABEL_19:
   }
 }
 } // namespace gamemd
+}
 
 // 0x5E2BA0
 namespace gamemd {
@@ -2665,6 +2701,7 @@ int Network::processQueue()
   return result; /*0x5e2bdf*/
 }
 } // namespace gamemd
+}
 
 // 0x5E2BE0
 namespace gamemd {
@@ -2720,6 +2757,7 @@ LABEL_20:
   return v8; /*0x5e2cc1*/
 }
 } // namespace gamemd
+}
 
 // 0x5EF4E0
 namespace gamemd {
@@ -3180,6 +3218,7 @@ LABEL_121:
   return (ObjectClass *)v51; /*0x5efecd*/
 }
 } // namespace gamemd
+}
 
 // 0x630B90
 namespace gamemd {
@@ -3210,6 +3249,7 @@ void Network_resetConnectionState()
   return *(_DWORD *)(dwNewLong + 4) == 1; /*0x630c05*/
 }
 } // namespace gamemd
+}
 
 // 0x643C50
 namespace gamemd {
@@ -3269,6 +3309,7 @@ void Network_UpdateLatencyDisplay()
   }
 }
 } // namespace gamemd
+}
 
 // 0x646D70
 namespace gamemd {
@@ -3282,6 +3323,7 @@ int sub_646D70()
   return result; /*0x646d83*/
 }
 } // namespace gamemd
+}
 
 // 0x6471A0
 namespace gamemd {
@@ -3308,6 +3350,7 @@ int Network::AddFrameEvent()
   return 1; /*0x647250*/
 }
 } // namespace gamemd
+}
 
 // 0x6475F0
 namespace gamemd {
@@ -3919,6 +3962,7 @@ LABEL_162:
   }
 }
 } // namespace gamemd
+}
 
 // 0x64AC90
 namespace gamemd {
@@ -3948,6 +3992,7 @@ int Network::syncGameState()
   return result; /*0x64ad05*/
 }
 } // namespace gamemd
+}
 
 // 0x64C380
 namespace gamemd {
@@ -4172,7 +4217,7 @@ LABEL_96:
       if ( v25 >= (int)v51 ) /*0x64c7e3*/
         goto LABEL_57; /*0x64c7e3*/
     }
-    *(_BYTE *)(v26 + 584) = 1; /*0x64c7e7*/
+    v26->u8_248 = 1; /*0x64c7e7*/
 LABEL_57:
     if ( Network::CountDisconnectedHouses((void *)v26) == 1 ) /*0x64c7f8*/
     {
@@ -4349,6 +4394,7 @@ LABEL_95:
   return 0; /*0x64cc52*/
 }
 } // namespace gamemd
+}
 
 // 0x6521C0
 namespace gamemd {
@@ -4397,6 +4443,7 @@ AbstractClass * * Network::RecordEvent(long long a1, int a2, int a3, int a4, int
   return 1; /*0x652227*/
 }
 } // namespace gamemd
+}
 
 // 0x6523A0
 namespace gamemd {
@@ -4461,6 +4508,7 @@ int Network::SendUnreachable()
   return result; /*0x652536*/
 }
 } // namespace gamemd
+}
 
 // 0x663910
 namespace gamemd {
@@ -4488,6 +4536,7 @@ void Network::validatePacket()
   this->q01C = 0; /*0x663956*/
 }
 } // namespace gamemd
+}
 
 // 0x6639D0
 namespace gamemd {
@@ -4549,6 +4598,7 @@ int Network::SendMasterPlayerList()
   return 1; /*0x663a0c*/
 }
 } // namespace gamemd
+}
 
 // 0x6640E0
 namespace gamemd {
@@ -4608,6 +4658,7 @@ HashTable * * Network::ProcessAddressChange()
   return result; /*0x66422a*/
 }
 } // namespace gamemd
+}
 
 // 0x6642A0
 namespace gamemd {
@@ -4643,6 +4694,7 @@ void * Network::processAcknowledgment(IUnknown * aP1)
   return byte_B052C0; /*0x664325*/
 }
 } // namespace gamemd
+}
 
 // 0x664400
 namespace gamemd {
@@ -4669,6 +4721,7 @@ void * Network::reconnect(DynamicVector * aP1, short a3)
   return result; /*0x664426*/
 }
 } // namespace gamemd
+}
 
 // 0x69B540
 namespace gamemd {
@@ -4690,6 +4743,7 @@ unsigned int * Network::processGameEvent()
   return result; /*0x69b55d*/
 }
 } // namespace gamemd
+}
 
 // 0x792F10
 namespace gamemd {
@@ -4764,6 +4818,7 @@ AbstractClass * * Network::SyncPlayerList()
   Debug::Log(); /*0x793090*/
 }
 } // namespace gamemd
+}
 
 // 0x79C3A0
 namespace gamemd {
@@ -4827,6 +4882,7 @@ AbstractClass * * int sub_79C3A0()
   return result; /*0x79c518*/
 }
 } // namespace gamemd
+}
 
 // 0x7B2DB0
 namespace gamemd {
@@ -4845,7 +4901,7 @@ int Network::finalizeSession()
   this->q3F558 = 0; /*0x7b2df5*/
   this->q3F55C = 1; /*0x7b2dfb*/
   this->q3F55D = 0; /*0x7b2e02*/
-  *(_DWORD *)(this + 259408) = &vt_DynamicVectorClass_unsigned_char; /*0x7b2e08*/
+  this->u32_3F550 = &vt_DynamicVectorClass_unsigned_char; /*0x7b2e08*/
   this->q3F564 = 10; /*0x7b2e0e*/
   this->q3F560 = 0; /*0x7b2e14*/
   this->q3F2FC = 0; /*0x7b2e1a*/
@@ -4856,6 +4912,7 @@ int Network::finalizeSession()
   return this; /*0x7b2e3f*/
 }
 } // namespace gamemd
+}
 
 // 0x793BB0
 namespace gamemd {
@@ -4908,6 +4965,7 @@ LABEL_7:
   return result; /*0x793cc0*/
 }
 } // namespace gamemd
+}
 
 // 0x7A2730
 namespace gamemd {
@@ -4924,6 +4982,7 @@ void sub_7A2730()
   return result; /*0x7a2744*/
 }
 } // namespace gamemd
+}
 
 // 0x53F540
 namespace gamemd {
@@ -4947,6 +5006,7 @@ AbstractClass * * sub_53F540()
   return 0; /*0x53f575*/
 }
 } // namespace gamemd
+}
 
 // 0x5F0120
 namespace gamemd {
@@ -4987,6 +5047,7 @@ LABEL_3:
   return result; /*0x5f016f*/
 }
 } // namespace gamemd
+}
 
 // 0x5F6810
 namespace gamemd {
@@ -5033,6 +5094,7 @@ LABEL_6:
   return result; /*0x5f692b*/
 }
 } // namespace gamemd
+}
 
 // 0x64AD10
 namespace gamemd {
@@ -5092,6 +5154,7 @@ LABEL_5:
   return result; /*0x64ae23*/
 }
 } // namespace gamemd
+}
 
 // 0x7B2730
 namespace gamemd {
@@ -5101,6 +5164,7 @@ int sub_7B2730()
   return dword_B780A0; /*0x7b2735*/
 }
 } // namespace gamemd
+}
 
 // 0x53EDC0
 namespace gamemd {
@@ -5887,6 +5951,7 @@ AbstractClass * * Network::handleDisconnect(IUnknown * aP1)
   return *(_WORD *)(*(_DWORD *)(this->q004 + 4 * v3) + 37); /*0x6643bf*/
 }
 } // namespace gamemd
+}
 
 // 0x6643E0
 namespace gamemd {
@@ -5899,6 +5964,7 @@ int Network::checkTimeout(int a2)
     return *(_DWORD *)(this->q004 + 4 * a2) + 1; /*0x6643f1*/
 }
 } // namespace gamemd
+}
 
 // 0x68CAB0
 namespace gamemd {

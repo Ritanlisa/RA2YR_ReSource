@@ -20,6 +20,7 @@ int MovementAI::IsPathMovementAllowed()
   }
   return this->MovementAI_field_10 != 1 && this->MovementAI_field_10 != 0; /*0x487e48*/
 }
+}
 
 // 0x4A5150
 int MovementAI::IsProgressAtEnd()
@@ -41,6 +42,7 @@ int MovementAI::IsProgressAtEnd()
       v3 -= (int)g_CurrentFrame - v2; /*0x4a517d*/
   }
   return (double)(v1 - v3) / (double)this->MovementAI_field_14 == 1.0; /*0x4a519e*/
+}
 }
 
 // 0x4A5360
@@ -67,4 +69,5 @@ int MovementAI::Check()
     }
   }
   return result; /*0x4a5385*/
+}
 }

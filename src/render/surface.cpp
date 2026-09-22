@@ -344,6 +344,7 @@ retn    0Ch
 // If HW blit possible (both surfaces exist, BPP/pitch match) → Blit
 // Otherwise fallback to XSurface::BlitPart (software path)
 REVERSE(0x4BB080, "DSurface::BlitPart: HW/SW blit with coordinate clipping", "None")
+}
 // 0x4bb080
 bool DSurface::BlitPart(
     const RectangleStruct& dest_rect, class Surface* src,
@@ -856,6 +857,7 @@ retn    8
 //   result = (src_alpha * src_ch + dst_alpha * dst_ch) >> 8
 // Opacity 0-100 clamped to 100, scaled to 0-255.
 REVERSE(0x4BB830, "DSurface::FillRectWithFlags: CPU pixel fill with alpha blending", "None")
+}
 // 0x4bb830
 bool DSurface::FillRectWithFlags(
     const RectangleStruct& clip_rect,
@@ -1160,6 +1162,7 @@ retn
 // IDA: 0x4BAEC0 -- DSurface::CanLock (95B)
 // vtable[25] — Probes whether the surface can be locked via test-lock-then-unlock.
 REVERSE(0x4BAEC0, "DSurface::CanLock: Test if surface can be locked", "None")
+}
 // 0x4baec0
 int DSurface::CanLock(uint32_t /*unk1*/, uint32_t /*unk2*/)
 {
@@ -1240,10 +1243,11 @@ int DSurface::GetPitch() const
 // IDA: 0x4BAF20 -- DSurface::CheckBltStatus (17B)
 // Calls IDirectDrawSurface7::GetBltStatus(DDGBS_ISBLTDONE)
 // Returns true if blit is complete (DD_OK)
+}
 // 0x4baf20
 BOOL __thiscall DSurface::CheckBltStatus(_DWORD **this)
 {
-  return (*(int (__stdcall **)(_DWORD, int))(**(this + 7) + 52))(*(this + 7), 1) == 0;
+  return (*(int (__stdcall **)(_DWORD, int))(*this->u32_1C + 52))(this->u32_1C, 1) == 0;
 }
 
 /* ASM:
@@ -1450,6 +1454,7 @@ retn    8
 // IDA: 0x7BAE60 -- XSurface::GetPixel (80B)
 // vtable[10] 0x28 -- Lock(point) -> check BPP -> read pixel -> Unlock
 REVERSE(0x7bae60, "XSurface::GetPixel: pixel read", "None")
+}
 // 0x7bae60
 int XSurface::GetPixel(const Point2D& point)
 {
@@ -1522,6 +1527,7 @@ retn    4
 // IDA: 0x7BAF90 -- XSurface::PutPixel (130B)
 // vtable[34] 0x88 -- bounds check -> Lock -> check BPP -> write -> Unlock
 REVERSE(0x7baf90, "XSurface::PutPixel: pixel write + bounds", "Inject")
+}
 // 0x7baf90
 int XSurface::PutPixel(const Point2D& point, uint16_t color, const RectangleStruct& clip_rect)
 {
@@ -1621,6 +1627,7 @@ retn    0Ch
 // IDA: 0x7BAF10 -- XSurface::GetPixelAtCoords (119B)
 // vtable[35] 0x8C -- bounds check -> Lock -> check BPP -> read -> Unlock
 REVERSE(0x7baf10, "XSurface::GetPixelAtCoords: pixel read + bounds", "Inject")
+}
 // 0x7baf10
 int XSurface::GetPixelAtCoords(const Point2D& point, const RectangleStruct& clip_rect)
 {
@@ -1969,6 +1976,7 @@ bool XSurface::DrawLineEx(
 
 // IDA: 0x7BA5E0 -- XSurface::DrawLine (48B)
 // vtable[12] 0x30 -- DrawLineEx wrapper with surface-level clip
+}
 // 0x7ba5e0
 int XSurface::DrawLine(const Point2D& start, const Point2D& end, uint32_t color)
 {
@@ -2186,6 +2194,7 @@ bool XSurface::DrawDashedLine(
 // IDA: 0x7BBAB0 -- XSurface::Fill (51B)
 // vtable[6] 0x18 -- fill entire surface with single color
 REVERSE(0x7bbab0, "XSurface::Fill: fill surface", "None")
+}
 // 0x7bbab0
 int XSurface::Fill(uint32_t color)
 {
@@ -2229,6 +2238,7 @@ retn    4
 // IDA: 0x7BADC0 -- XSurface::DrawRectEx (158B)
 // vtable[21] 0x54 -- rectangle outline drawing 4 edges via DrawLineEx
 REVERSE(0x7badc0, "XSurface::DrawRectEx: rect outline", "None")
+}
 // 0x7badc0
 bool XSurface::DrawRectEx(
     const RectangleStruct& clip_rect,
@@ -2358,6 +2368,7 @@ bool XSurface::DrawEllipseOutline(
 // IDA: 0x7BB020 -- XSurface::FillRect (41B)
 // vtable[5] 0x14 -- GetRect() → FillRectEx wrapper
 REVERSE(0x7BB020, "XSurface::FillRect: rect fill wrapper", "None")
+}
 // 0x7bb020
 int XSurface::FillRect(const RectangleStruct& fill_rect, uint32_t color)
 {
@@ -2391,6 +2402,7 @@ retn    8
 // IDA: 0x7BB050 -- XSurface::FillRectEx (748B)
 // vtable[4] 0x10 -- software pixel fill with BPP-aware memset
 REVERSE(0x7BB050, "XSurface::FillRectEx: software pixel fill", "None")
+}
 // 0x7bb050
 bool XSurface::FillRectEx(
     const RectangleStruct& clip_rect,
@@ -2837,6 +2849,7 @@ static uint16_t LerpColor(uint16_t a, uint16_t b, float t)
 // IDA: 0x4BF750 -- DSurface::DrawGradientLine (1499B)
 // vtable[36] 0x90 -- line with palette gradient interpolation
 REVERSE(0x4BF750, "DSurface::DrawGradientLine: Line with palette gradient interpolation", "None")
+}
 // 0x4bf750
 bool DSurface::DrawGradientLine(
     const Point2D& start, const Point2D& end,

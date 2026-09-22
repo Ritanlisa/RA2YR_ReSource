@@ -43,6 +43,7 @@ void TechnoClass_CanFireAtTarget()
   return result; /*0x41aa13*/
 }
 } // namespace gamemd
+}
 
 // 0x6F2B40
 namespace ra2 {
@@ -79,7 +80,7 @@ unsigned int * TechnoClass::TechnoClass(AbstractClass * aP1)
   this->currentRank = 0; /*0x6f2bd0*/
   this->gattlingStage = 0; /*0x6f2bd6*/
   this->gattlingValue = 0; /*0x6f2be2*/
-  unknown_libname_35(this + 84); /*0x6f2be8*/
+  unknown_libname_35(&this->NeedsSaveOrLink4); /*0x6f2be8*/
   this->alignmentPadding154 = 0; /*0x6f2bf2*/
   this->armorMultiplier = 1072693248; /*0x6f2bf8*/
   this->q160 = 0; /*0x6f2bfe*/
@@ -189,10 +190,10 @@ unsigned int * TechnoClass::TechnoClass(AbstractClass * aP1)
   this->firingParticles = 0; /*0x6f2ec2*/
   this->waveEffect = -1; /*0x6f2ec8*/
   this->Delegate_CF.GetField(); /*0x6f2ece*/
-  TechnoClass::checkCloakState((int)(this + 212)); /*0x6f2ed9*/
-  FrameSnapshot::InitMax((_WORD *)this + 440, 3); /*0x6f2ee6*/
-  FrameSnapshot::Init((_WORD *)this + 452); /*0x6f2ef1*/
-  FrameSnapshot::Init((_WORD *)this + 464); /*0x6f2efc*/
+  TechnoClass::checkCloakState((int)(&this->u32_542)); /*0x6f2ed9*/
+  FrameSnapshot::InitMax((_WORD *)&this->u32_6E0, 3); /*0x6f2ee6*/
+  FrameSnapshot::Init((_WORD *)&this->queuedMission2); /*0x6f2ef1*/
+  FrameSnapshot::Init((_WORD *)&this->missionQueued4); /*0x6f2efc*/
   this->q3B8 = 0; /*0x6f2f01*/
   this->targetLaserTimer = *(_DWORD *)&g_NetworkPlayerBuffer[5960]; /*0x6f2f0d*/
   this->qF10 = 0; /*0x6f2f13*/
@@ -248,7 +249,7 @@ unsigned int * TechnoClass::TechnoClass(AbstractClass * aP1)
   this->secondaryTurretIndex = 0; /*0x6f307a*/
   this->attackedTargets = 0; /*0x6f3080*/
   this->audioController3 = 0; /*0x6f3086*/
-  *((_BYTE *)this + 1124) = 1; /*0x6f308c*/
+  this->q464 = 1; /*0x6f308c*/
   this->vecAbs_IsAllocated = 0; /*0x6f3093*/
   this->currentTargets = &vt_DynamicVectorClass_AbstractClass; /*0x6f3099*/
   this->q11B = 10; /*0x6f309f*/
@@ -308,12 +309,13 @@ unsigned int * TechnoClass::TechnoClass(AbstractClass * aP1)
   }
   (unsigned char)this->abstractFlags |= 1u; /*0x6f3237*/
   this->ammoReloadTimer = aP1; /*0x6f3241*/
-  memset(this + 193, 0, 0x20u); /*0x6f3247*/
+  memset(&this->fireParticles, 0, 0x20u); /*0x6f3247*/
   this->q1E4 = Random::State(&g_ScenarioClass_Instance->random[1]); /*0x6f3259*/
   return this; /*0x6f3262*/
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x6F3F40
 namespace ra2 {
@@ -488,6 +490,7 @@ unsigned int * TechnoClass::Update(BuildingClass * aP0, FootClass * aP1)
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x6F4500
 namespace ra2 {
@@ -658,11 +661,11 @@ Coord * * TechnoClass::RegisterKill()
       {
         v3 = 0; /*0x702e75*/
       }
-      else if ( VeterancyStruct::IsVeteran((float *)this + 84) ) /*0x702e81*/
+      else if ( VeterancyStruct::IsVeteran((float *)&this->NeedsSaveOrLink4) ) /*0x702e81*/
       {
         v3 *= 2; /*0x702e8a*/
       }
-      else if ( VeterancyStruct::IsElite((float *)this + 84) ) /*0x702e90*/
+      else if ( VeterancyStruct::IsElite((float *)&this->NeedsSaveOrLink4) ) /*0x702e90*/
       {
         v3 *= 3; /*0x702e99*/
       }
@@ -759,7 +762,7 @@ LABEL_67:
         result = (*(int (__thiscall **)(#377 *))(this->hasParachute)(this); /*0x703039*/
         if ( !*(_BYTE *)(result + 562) ) /*0x70303f*/
         {
-          if ( *((_DWORD *)this + 335) != -1 ) /*0x703054*/
+          if ( this->u32_53C != -1 ) /*0x703054*/
             ++*(_DWORD *)(this->owner + 21640); /*0x70305c*/
           if ( v28 && !*(_BYTE *)((*(int (__thiscall **)(#377 *))(this->hasParachute)(this) + 3231) ) /*0x703070*/
           {
@@ -787,6 +790,7 @@ LABEL_67:
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x705860
 namespace ra2 {
@@ -921,6 +925,7 @@ int TechnoClass::DrawAirstrikeFlare_SetContext(int a1, int a2, int a3, int a4, i
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x70D0D0
 namespace ra2 {
@@ -940,6 +945,7 @@ int TechnoClass::HasVoiceResponse(int weaponIndex)
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x73B140
 namespace ra2 {
@@ -1096,6 +1102,7 @@ HouseClass * * TechnoClass::RenderTechnoSHP(int * a0, int * a1, int * a2, HouseC
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x73B470
 namespace gamemd {
@@ -1827,6 +1834,7 @@ LABEL_102:
   return (*(int (__thiscall **)(ObjectClass *, _DWORD *, _DWORD))(*(_DWORD *)v116->__pad_0 + 20))(v116, v143, 0);
 }
 } // namespace gamemd
+}
 
 // 0x41B7D0
 namespace ra2 {

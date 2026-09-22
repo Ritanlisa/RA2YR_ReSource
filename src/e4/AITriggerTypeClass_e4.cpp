@@ -85,6 +85,7 @@ LABEL_12:
   }
   return result; /*0x41ecdc*/
 }
+}
 
 // 0x41EE90
 DynamicVector * * AITriggerTypeClass::OwnerHouseOwns(unsigned int * a2, int a3)
@@ -149,6 +150,7 @@ LABEL_8:
   }
   return result; /*0x41ef58*/
 }
+}
 
 // 0x41F0D0
 int AITriggerTypeClass::IronCurtainCharged(int a1, int a2)
@@ -183,6 +185,7 @@ LABEL_12:
   }
   v9 = 0; /*0x41f171*/
   return 1.0 - *(float *)&g_RulesClass_Instance->? >= (double)v9 / (double)Super::GetDefaultTimer((_DWORD *)v6); /*0x41f167*/
+}
 }
 
 // 0x41F180
@@ -219,6 +222,7 @@ LABEL_12:
   v9 = 0; /*0x41f221*/
   return 1.0 - *(float *)&g_RulesClass_Instance->? >= (double)v9 / (double)Super::GetDefaultTimer((_DWORD *)v6); /*0x41f217*/
 }
+}
 
 // 0x41F230
 int AITriggerTypeClass::HouseCredits(int a2, int a3)
@@ -253,6 +257,7 @@ int AITriggerTypeClass::HouseCredits(int a2, int a3)
       return v3;
   }
   return result; /*0x41f260*/
+}
 }
 
 // 0x41F580
@@ -292,7 +297,7 @@ ObjectClass * * AITriggerTypeClass::LoadFromINI(unsigned char *** a2)
   if ( !INIClass::GetString( /*0x41f5b9*/
           a2,
           (unsigned __int8 *)aAitriggertypes,
-          (unsigned __int8 *)(this + 36),
+          (unsigned __int8 *)(&this->vtable46),
           &g_INI_DefaultBuffer,
           String,
           512) )
@@ -302,9 +307,9 @@ ObjectClass * * AITriggerTypeClass::LoadFromINI(unsigned char *** a2)
     return 0; /*0x41f5df*/
   strncpy(Destination, v3, 0x30u); /*0x41f5ed*/
   v46 = 0; /*0x41f5fe*/
-  if ( Destination != (char *)(this + 100) ) /*0x41f602*/
+  if ( Destination != (char *)(&this->u32_280) ) /*0x41f602*/
   {
-    qmemcpy((void *)(this + 100), Destination, 0x30u); /*0x41f60d*/
+    qmemcpy((void *)(&this->u32_280), Destination, 0x30u); /*0x41f60d*/
     this->q094 = v46; /*0x41f60f*/
   }
   char * v4 = strtok(0, Delimiter); /*0x41f616*/
@@ -412,7 +417,7 @@ LABEL_26:
       }
       if ( v15 >= 0x20 ) /*0x41f85c*/
         break; /*0x41f85c*/
-      *(_BYTE *)(v15 + this + 228) = globalHelper_0C9DBD(v40, &v41, 16); /*0x41f86f*/
+      *(_BYTE *)(v15 + &this->u32_588) = globalHelper_0C9DBD(v40, &v41, 16); /*0x41f86f*/
       ++v15; /*0x41f87b*/
     }
     while ( *v17 ); /*0x41f876*/
@@ -447,7 +452,7 @@ LABEL_26:
     this->q0AC = atoi(v28); /*0x41f962*/
   v29 = strtok(0, Delimiter); /*0x41f96e*/
   if ( v29 ) /*0x41f978*/
-    *(_BYTE *)(this + 209) = atoi(v29) != 0; /*0x41f988*/
+    this->u8_D1 = atoi(v29) != 0; /*0x41f988*/
   v30 = strtok(0, Delimiter); /*0x41f994*/
   if ( v30 ) /*0x41f99e*/
   {
@@ -461,13 +466,13 @@ LABEL_26:
   }
   v31 = strtok(0, Delimiter); /*0x41f9f0*/
   if ( v31 ) /*0x41f9fa*/
-    *(_BYTE *)(this + 210) = atoi(v31) != 0; /*0x41fa0a*/
+    this->u8_D2 = atoi(v31) != 0; /*0x41fa0a*/
   v32 = strtok(0, Delimiter); /*0x41fa16*/
   if ( v32 ) /*0x41fa20*/
-    *(_BYTE *)(this + 211) = atoi(v32) != 0; /*0x41fa30*/
+    this->u8_D3 = atoi(v32) != 0; /*0x41fa30*/
   v33 = strtok(0, Delimiter); /*0x41fa3c*/
   if ( v33 ) /*0x41fa46*/
-    *(_BYTE *)(this + 212) = atoi(v33) != 0; /*0x41fa56*/
+    this->u8_D4 = atoi(v33) != 0; /*0x41fa56*/
   v34 = this->q0DC; /*0x41fa5c*/
   if ( v34 ) /*0x41fa64*/
   {
@@ -490,6 +495,7 @@ LABEL_26:
     this->q0B0 = HouseClass::GetMaxBuildLevel(*(int **)(this->q0E0 + 228)); /*0x41fadd*/
   }
   return 1; /*0x41fab7*/
+}
 }
 
 // 0x41FD60
@@ -522,6 +528,7 @@ int AITriggerTypeClass::RegisterSuccess()
   this->q104 = result; /*0x41fe11*/
   this->q108 = v1 + 1; /*0x41fe17*/
   return result; /*0x41fe1e*/
+}
 }
 
 // 0x41FE20
@@ -561,6 +568,7 @@ int AITriggerTypeClass::RegisterFailure()
   }
   this->q108 = v1 + 1; /*0x41fed3*/
   return result; /*0x41fed9*/
+}
 }
 
 // 0x41FFF0
@@ -848,15 +856,15 @@ VectorClass * AITriggerTypeClass_40::QueryInterface(char a2)
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_AlphaLightingRemapClass;
-    if ( v3 && *((char *)(this) + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
+    this->IsAllocated = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (VectorClass *)this;
@@ -870,15 +878,15 @@ DynamicVector * AITriggerTypeClass_40::Constructor_VectorClass_AlphaLightingRema
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_AlphaLightingRemapClass;
-    if ( v3 && *((char *)(this) + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
+    this->IsAllocated = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;

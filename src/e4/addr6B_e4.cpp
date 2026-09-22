@@ -52,6 +52,7 @@ unsigned int * sub_6B2430(int * a1, int a2)
   return result; /*0x6b249b*/
 }
 } // namespace gamemd
+}
 
 // 0x6B2700
 namespace gamemd {
@@ -185,6 +186,7 @@ LABEL_24:
   return result; /*0x6b2a58*/
 }
 } // namespace gamemd
+}
 
 // 0x6B2A70
 namespace gamemd {
@@ -380,6 +382,7 @@ AbstractClass * * SlaveManager_InitGrid()
   return result; /*0x6b2f23*/
 }
 } // namespace gamemd
+}
 
 // 0x6B2F30
 namespace gamemd {
@@ -868,6 +871,7 @@ LABEL_110:
   return 1; /*0x6b3838*/
 }
 } // namespace gamemd
+}
 
 // 0x6B3850
 namespace gamemd {
@@ -968,6 +972,7 @@ LABEL_36:
   return 1; /*0x6b3a7c*/
 }
 } // namespace gamemd
+}
 
 // 0x6B3A80
 namespace gamemd {
@@ -1080,6 +1085,7 @@ LABEL_33:
   return 0; /*0x6b3cb3*/
 }
 } // namespace gamemd
+}
 
 // 0x6B3CD0
 namespace gamemd {
@@ -1152,6 +1158,7 @@ LABEL_20:
   return ProcessBuildingClassConstruction(a2, v10, v5); /*0x6b3e13*/
 }
 } // namespace gamemd
+}
 
 // 0x6B3E60
 namespace gamemd {
@@ -1300,6 +1307,7 @@ LABEL_36:
   return 0; /*0x6b402d*/
 }
 } // namespace gamemd
+}
 
 // 0x6B5490
 namespace gamemd {
@@ -1332,6 +1340,7 @@ int FactoryClass_LoadTheaterSHP(int a1)
   return result; /*0x6b553a*/
 }
 } // namespace gamemd
+}
 
 // 0x6B59A0
 namespace gamemd {
@@ -1492,6 +1501,7 @@ LABEL_37:
   return 0; /*0x6b59e2*/
 }
 } // namespace gamemd
+}
 
 // 0x6B5C90
 namespace gamemd {
@@ -1652,6 +1662,7 @@ LABEL_37:
   return 0; /*0x6b5cd2*/
 }
 } // namespace gamemd
+}
 
 // 0x6B6230
 namespace gamemd {
@@ -1689,6 +1700,7 @@ void sub_6B6230()
   Debug::Log(); /*0x6b62e9*/
 }
 } // namespace gamemd
+}
 
 // 0x6B8F00
 namespace gamemd {
@@ -1925,6 +1937,7 @@ int Texture_DrawAffine(int a1, unsigned int * a2, int * a3, int a4, unsigned cha
   return (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 96))(a1); /*0x6b9203*/
 }
 } // namespace gamemd
+}
 
 // 0x6B9D00
 namespace gamemd {
@@ -2127,6 +2140,7 @@ LABEL_31:
   }
 }
 } // namespace gamemd
+}
 
 // 0x6BB390
 namespace gamemd {
@@ -2228,6 +2242,7 @@ void sub_6BB390()
   return 0; /*0x6bb73a*/
 }
 } // namespace gamemd
+}
 
 // 0x6BB9A0
 namespace gamemd {
@@ -3547,6 +3562,7 @@ LABEL_374:
 }
 
 } // namespace gamemd
+}
 
 // 0x6BE1C0
 namespace gamemd {
@@ -4140,6 +4156,7 @@ void WinMain_Setup()
   }
 }
 } // namespace gamemd
+}
 
 // 0x6B0A90
 namespace gamemd {

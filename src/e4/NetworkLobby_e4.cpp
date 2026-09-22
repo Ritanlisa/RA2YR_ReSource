@@ -24,27 +24,27 @@ int NetworkLobby::MessageList_Append(int a2, int a3, CellStruct * aP3, char a5, 
   CellStruct *v14; // ebx
   size_t v15; // eax
   TextLabelClass *v16; // eax
-  if ( *((_BYTE *)this + 25) ) /*0x5d4213*/
+  if ( this->u8_19 ) /*0x5d4213*/
   {
-    (*(void (__thiscall **)(_DWORD))(*(_DWORD *)*(this + 9) + 80))(*(this + 9)); /*0x5d421f*/
+    (*(void (__thiscall **)(_DWORD))(*(_DWORD *)this->u32_24 + 80))(this->u32_24); /*0x5d421f*/
     return 0; /*0x5d4222*/
   }
   else
   {
   int v18; // eax
-    if ( *((_BYTE *)this + 26) ) /*0x5d4228*/
+    if ( this->u8_1A ) /*0x5d4228*/
     {
       int v8 = *this; /*0x5d4232*/
       for ( i = 0; v8; v8 = (*(int (__thiscall **)(int))(*(_DWORD *)v8 + 4))(v8) ) /*0x5d4232*/
         ++i; /*0x5d423e*/
-      if ( *((_BYTE *)this + 25) && *((_BYTE *)this + 26) ) /*0x5d424d*/
+      if ( this->u8_19 && this->u8_1A ) /*0x5d424d*/
         ++i; /*0x5d4254*/
       if ( i + 1 > this->q00C ) /*0x5d425b*/
       {
         int v10 = *this; /*0x5d425d*/
         *this = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)*this + 36))(*this); /*0x5d4266*/
-        _WORD * v11 = this + 1312; /*0x5d4268*/
-        _DWORD * v12 = this + 178; /*0x5d426e*/
+        _WORD * v11 = &this->u32_1480; /*0x5d4268*/
+        _DWORD * v12 = &this->u32_2C8; /*0x5d426e*/
         int v13 = 14; /*0x5d4274*/
         do /*0x5d428d*/
         {
@@ -62,44 +62,44 @@ int NetworkLobby::MessageList_Append(int a2, int a3, CellStruct * aP3, char a5, 
     v14 = aP3; /*0x5d429b*/
     if ( !aP3 ) /*0x5d42a1*/
       v14 = (CellStruct *)&DataGlobal_87F8E4[32336]; /*0x5d42a3*/
-    *((_WORD *)this + 348) = a5; /*0x5d42b1*/
-    memset(this + 10, 0, 0x144u); /*0x5d42c2*/
-    wcscpy((wchar_t *)this + 20, (const wchar_t *)v14); /*0x5d42c5*/
-    *((_WORD *)this + 182) = 0; /*0x5d42cb*/
+    this->u16_2B8 = a5; /*0x5d42b1*/
+    memset(&this->u32_28, 0, 0x144u); /*0x5d42c2*/
+    wcscpy((wchar_t *)&this->u32_50, (const wchar_t *)v14); /*0x5d42c5*/
+    this->u16_16C = 0; /*0x5d42cb*/
     v15 = wcslen((const wchar_t *)v14); /*0x5d42d4*/
-    *(this + 173) = v15; /*0x5d42db*/
-    *(this + 172) = v15; /*0x5d42e1*/
+    *(&this->u32_443) = v15; /*0x5d42db*/
+    *(&this->u32_442) = v15; /*0x5d42e1*/
     v16 = (TextLabelClass *)__2_YAPAXI_Z(0x4Cu); /*0x5d42e7*/
     if ( v16 ) /*0x5d42f1*/
     {
       int v17 = a3; /*0x5d42f3*/
       BYTE1(v17) = BYTE1(a3) | 0x80; /*0x5d42fb*/
-      v18 = MessageListClass::clearMessages(v16, (int)(this + 10), *(this + 7), this->q008, a2, v17); /*0x5d430b*/
+      v18 = MessageListClass::clearMessages(v16, (int)(&this->u32_40), this->u32_1C, this->q008, a2, v17); /*0x5d430b*/
     }
     else
     {
       v18 = 0; /*0x5d4312*/
     }
     int v19 = a6; /*0x5d4314*/
-    *(this + 9) = v18; /*0x5d4318*/
+    this->u32_24 = v18; /*0x5d4318*/
     if ( a6 <= 0 ) /*0x5d431d*/
-      v19 = *(this + 177); /*0x5d431f*/
+      v19 = *(&this->u32_447); /*0x5d431f*/
     *(_DWORD *)(v18 + 56) = v19; /*0x5d4325*/
-    int v20 = *(this + 9); /*0x5d4328*/
+    int v20 = this->u32_24; /*0x5d4328*/
     if ( v20 ) /*0x5d432d*/
     {
-      *((_BYTE *)this + 25) = 1; /*0x5d432f*/
+      this->u8_19 = 1; /*0x5d432f*/
       (*(void (__thiscall **)(int))(*(_DWORD *)v20 + 80))(v20); /*0x5d4335*/
     }
     else
     {
-      *((_BYTE *)this + 25) = 0; /*0x5d433a*/
+      this->u8_19 = 0; /*0x5d433a*/
     }
     Network_Append(); /*0x5d433e*/
-    if ( *((_BYTE *)this + 26) ) /*0x5d4343*/
+    if ( this->u8_1A ) /*0x5d4343*/
     {
-      if ( *((_BYTE *)this + 25) ) /*0x5d434a*/
-        int v21 = this->q008 + *(this + 5); /*0x5d4357*/
+      if ( this->u8_19 ) /*0x5d434a*/
+        int v21 = this->q008 + this->u32_14; /*0x5d4357*/
       else
         v21 = this->q008; /*0x5d435b*/
       int * v22 = (int *)*this; /*0x5d435e*/
@@ -110,16 +110,17 @@ int NetworkLobby::MessageList_Append(int a2, int a3, CellStruct * aP3, char a5, 
           int v23 = *v22; /*0x5d4364*/
           v22[4] = v21; /*0x5d4368*/
           v22 = (int *)(*(int (__thiscall **)(int *))(v23 + 4))(v22); /*0x5d436b*/
-          v21 += *(this + 5); /*0x5d436e*/
+          v21 += this->u32_14; /*0x5d436e*/
         }
         while ( v22 ); /*0x5d4373*/
       }
       --this->q00C; /*0x5d4375*/
     }
-    return *(this + 9); /*0x5d4378*/
+    return this->u32_24; /*0x5d4378*/
   }
 }
 } // namespace gamemd
+}
 
 // 0x5DB9B0
 namespace gamemd {
@@ -175,6 +176,7 @@ int NetworkLobby_UpdatePlayerList()
   return result; /*0x5dbb52*/
 }
 } // namespace gamemd
+}
 
 // 0x5DC350
 namespace gamemd {
@@ -1148,6 +1150,7 @@ LABEL_202:
   return 0;
 }
 } // namespace gamemd
+}
 
 // 0x5DE520
 namespace gamemd {
@@ -1612,6 +1615,7 @@ LABEL_75:
   return result;
 }
 } // namespace gamemd
+}
 
 // 0x5E00B0
 namespace gamemd {
@@ -2768,6 +2772,7 @@ LABEL_336:
 }
 
 } // namespace gamemd
+}
 
 // 0x5E8EA0
 namespace gamemd {
@@ -2980,6 +2985,7 @@ void NetworkLobby::SetupPlayers()
   }
 }
 } // namespace gamemd
+}
 
 // 0x5E9240
 namespace gamemd {
@@ -2990,8 +2996,8 @@ int NetworkLobby::AssignPlayerSlot()
   LPARAM *v2; // edx
   result = 0; /*0x5e9250*/
   v2 = &g_NetworkPlayerName; /*0x5e9252*/
-  while ( (*v2 != g_HouseClass_ObserverFlags || *(_DWORD *)(this + 107) == -1) /*0x5e926c*/
-       && (*v2 != g_Lobby_MaxPlayers || *(_DWORD *)(this + 107) != -1) )
+  while ( (*v2 != g_HouseClass_ObserverFlags || this->u32_6B == -1) /*0x5e926c*/
+       && (*v2 != g_Lobby_MaxPlayers || this->u32_6B != -1) )
   {
     ++v2; /*0x5e926e*/
     ++result; /*0x5e9271*/
@@ -3002,6 +3008,7 @@ int NetworkLobby::AssignPlayerSlot()
   return result; /*0x5e927a*/
 }
 } // namespace gamemd
+}
 
 // 0x5E9E00
 namespace gamemd {
@@ -3033,6 +3040,7 @@ int NetworkLobby::InitLobbyDropdowns()
   return result; /*0x5e9e5c*/
 }
 } // namespace gamemd
+}
 
 // 0x5EA2A0
 namespace gamemd {
@@ -3111,6 +3119,7 @@ LABEL_34:
   return result; /*0x5ea3d3*/
 }
 } // namespace gamemd
+}
 
 // 0x5EB660
 namespace gamemd {
@@ -3185,6 +3194,7 @@ int NetworkLobby::SetupPlayerSlotControls()
   return v7; /*0x5eb7a2*/
 }
 } // namespace gamemd
+}
 
 // 0x5EE3A0
 namespace gamemd {
@@ -3262,6 +3272,7 @@ LABEL_19:
   return (char)ResourceID4; /*0x5ee4a5*/
 }
 } // namespace gamemd
+}
 
 // 0x5DA080
 namespace gamemd {

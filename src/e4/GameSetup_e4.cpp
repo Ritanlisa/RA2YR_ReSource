@@ -25,6 +25,7 @@ int GameSetup::LookupDialogHash()
   else
     return 0; /*0x60d366*/
 }
+}
 
 // 0x698F90
 AbstractClass * * GameSetup::WriteINI(CCINIClass * aP1, unsigned char * Block)
@@ -55,16 +56,16 @@ AbstractClass * * GameSetup::WriteINI(CCINIClass * aP1, unsigned char * Block)
     0);
   LOBYTE(v4) = (unsigned char)this->GameSetup_field_0x14; /*0x698fff*/
   INIClass::SetBool(aP1->__pad_0, (INIClass *)Block, &stru_830620[51592], v4); /*0x69900b*/
-  LOBYTE(v5) = *(_BYTE *)(this + 21); /*0x699010*/
+  LOBYTE(v5) = this->u8_15; /*0x699010*/
   INIClass::SetBool(aP1->__pad_0, (INIClass *)Block, &stru_830620[51572], v5); /*0x69901c*/
-  LOBYTE(v6) = *(_BYTE *)(this + 22); /*0x699021*/
+  LOBYTE(v6) = this->u8_16; /*0x699021*/
   INIClass::SetBool(aP1->__pad_0, (INIClass *)Block, &stru_830620[51556], v6); /*0x69902d*/
-  LOBYTE(v7) = *(_BYTE *)(this + 23); /*0x699032*/
+  LOBYTE(v7) = this->u8_17; /*0x699032*/
   INIClass::SetBool(aP1->__pad_0, (INIClass *)Block, &stru_830620[59800], v7); /*0x69903e*/
   LOBYTE(v8) = (unsigned char)this->GameSetup_field_0x18; /*0x699043*/
   INIClass::SetBool(aP1->__pad_0, (INIClass *)Block, &stru_830620[59784], v8); /*0x69904f*/
   int v9 = 1; /*0x699054*/
-  int v10 = this + 44; /*0x699059*/
+  int v10 = &this->u32_B0; /*0x699059*/
   do /*0x69908e*/
   {
     sprintf(Buffer, &stru_830620[59772], v9); /*0x699067*/
@@ -80,4 +81,5 @@ AbstractClass * * GameSetup::WriteINI(CCINIClass * aP1, unsigned char * Block)
   }
   while ( v9 < 8 ); /*0x69908e*/
   return result; /*0x699090*/
+}
 }

@@ -1570,24 +1570,24 @@ int __thiscall RadarClass_Destructor(_DWORD *this)
     *((_DWORD *)v2 + 2) = 0; /*0x652c50*/
   }
   while ( v3 ); /*0x652c53*/
-  v5 = (void *)this->q1260; /*0x652c55*/
+  v5 = (void *)this->ptr_1260; /*0x652c55*/
   this->q125C = &vt_VectorClass_Point2D; /*0x652c5b*/
-  if ( v5 && *((_BYTE *)this + 4713) ) /*0x652c69*/
+  if ( v5 && this->u8_1269 ) /*0x652c69*/
   {
     __3_YAXPAX_Z(v5); /*0x652c72*/
-    this->q1260 = 0; /*0x652c7a*/
+    this->ptr_1260 = 0; /*0x652c7a*/
   }
-  *((_BYTE *)this + 4713) = 0; /*0x652c80*/
-  this->q1264 = 0; /*0x652c86*/
-  v6 = (void *)this->q1228; /*0x652c8c*/
+  this->u8_1269 = 0; /*0x652c80*/
+  this->u32_1264 = 0; /*0x652c86*/
+  v6 = (void *)this->ptr_1228; /*0x652c8c*/
   this->q1224 = &vt_VectorClass_Cell; /*0x652c92*/
-  if ( v6 && *((_BYTE *)this + 4657) ) /*0x652ca0*/
+  if ( v6 && this->u8_1231 ) /*0x652ca0*/
   {
     __3_YAXPAX_Z(v6); /*0x652ca9*/
-    this->q1228 = 0; /*0x652cb1*/
+    this->ptr_1228 = 0; /*0x652cb1*/
   }
-  *((_BYTE *)this + 4657) = 0; /*0x652cb9*/
-  this->q122C = 0; /*0x652cbf*/
+  this->u8_1231 = 0; /*0x652cb9*/
+  this->u32_122C = 0; /*0x652cbf*/
   return MapClass::Destruct(this); /*0x652cca*/
 }
 
@@ -3600,7 +3600,7 @@ int __thiscall Surface::RenderRadar(_DWORD *this)
   {
     while ( 1 ) /*0x65528b*/
     {
-      v35 = *(_DWORD *)(this->q1228 + 4 * v4); /*0x65528b*/
+      v35 = *(_DWORD *)(this->ptr_1228 + 4 * v4); /*0x65528b*/
       if ( !LayerClass::IsWithinUsableArea(this, (IUnknown *)&v35, (TechnoClass *)1) ) /*0x655298*/
         goto LABEL_32; /*0x655298*/
       v5 = (__int16)v35 + this->q1490 - SHIWORD(v35); /*0x6552b8*/
@@ -3980,7 +3980,7 @@ int __thiscall sub_655890(_DWORD *this)
 // ==== 0x006558B0  Radar::PixelIndex  this=Radar  sig=csp ====
 int __thiscall Radar_PixelIndex(_DWORD *this)
 {
-  return this->q004 + 251 * this->q008; /*0x6558c4*/
+  return this->q004 + 251 * this->u32_8; /*0x6558c4*/
 }
 
 
@@ -5110,7 +5110,7 @@ LABEL_10:
             {
               result = (*(int (__stdcall **)(int, int, int, _DWORD))(*(_DWORD *)v2 + 16))( /*0x656b63*/
                          v2,
-                         this->q1228 + 4 * v8,
+                         this->ptr_1228 + 4 * v8,
                          4,
                          0);
               if ( result < 0 ) /*0x656b68*/
@@ -5125,7 +5125,7 @@ LABEL_10:
       {
         while ( 1 ) /*0x656b13*/
         {
-          result = (*(int (__stdcall **)(int, int, int, _DWORD))(*(_DWORD *)v2 + 16))(v2, this->q1260 + 8 * v6, 8, 0); /*0x656b13*/
+          result = (*(int (__stdcall **)(int, int, int, _DWORD))(*(_DWORD *)v2 + 16))(v2, this->ptr_1260 + 8 * v6, 8, 0); /*0x656b13*/
           if ( result < 0 ) /*0x656b18*/
             break; /*0x656b18*/
           if ( ++v6 >= a2 ) /*0x656b25*/
@@ -7107,7 +7107,7 @@ _DWORD *__thiscall RadarHashVector::Construct(_DWORD *this, MapClass *aP1, MapCl
     }
   }
   *this = &vt_DynamicVectorClass_HashObject_RadarTrackingStruct_TechnoClass; /*0x658e5e*/
-  this->q005 = 10; /*0x658e64*/
+  this->u32_14 = 10; /*0x658e64*/
   this->q010 = 0; /*0x658e6b*/
   return this; /*0x658e70*/
 }
@@ -7443,26 +7443,26 @@ _DWORD *__thiscall RadBeam::InitState(_DWORD *this, rc_ptr_base *aP1)
   this->uniqueId = aP1; /*0x65940f*/
   this->referenceCount = 0; /*0x659412*/
   this->NeedsSaveOrLink = 0; /*0x659415*/
-  *((_BYTE *)this + 33) = 0; /*0x659418*/
-  *((_BYTE *)this + 34) = 0; /*0x65941b*/
+  this->q084 = 0; /*0x659418*/
+  this->q088 = 0; /*0x65941b*/
   this->range = 0; /*0x65941e*/
   this->q00A = 0; /*0x659421*/
   this->data = 0; /*0x659424*/
   this->memberAtOffset48 = 0; /*0x659427*/
-  this->q00D = 0; /*0x65942a*/
+  this->q034 = 0; /*0x65942a*/
   this->q00E = 0; /*0x65942d*/
   this->memberAtOffset64 = 0; /*0x659430*/
   this->pad_72 = 0; /*0x659433*/
   this->memberAtOffset60 = 0; /*0x659436*/
   this->memberAtOffset68 = 0; /*0x659439*/
-  this->q013 = 0; /*0x65943c*/
+  this->u32_4C = 0; /*0x65943c*/
   this->abstractFlags = 0; /*0x65943f*/
   this->memberAtOffset84 = 1; /*0x659442*/
   this->memberAtOffset88 = 0; /*0x659445*/
   this->q01F = 0; /*0x659448*/
   this->color2 = 0; /*0x65944b*/
-  *((_BYTE *)this + 193) = 0; /*0x659451*/
-  *((_BYTE *)this + 194) = 0; /*0x659457*/
+  this->u8_C1 = 0; /*0x659451*/
+  this->u8_C2 = 0; /*0x659457*/
   return this; /*0x65945d*/
 }
 
@@ -7531,7 +7531,7 @@ int __thiscall sub_6594E0(_DWORD *this, int a2)
 int __thiscall sub_6594F0(_DWORD *this, int a2, int a3)
 {
   this->q040 = a2; /*0x6594f8*/
-  this->q044 = a3; /*0x6594fb*/
+  this->u32_44 = a3; /*0x6594fb*/
   return a2; /*0x6594fe*/
 }
 
@@ -7556,7 +7556,7 @@ int __thiscall sub_659530(_DWORD *this, int a2)
 // ==== 0x00659540  TechnoClass::drawMindControlPips  this=TechnoClass  sig=csp ====
 int __thiscall sub_659540(_DWORD *this, int a2)
 {
-  this->q054 = a2; /*0x659544*/
+  this->u32_54 = a2; /*0x659544*/
   return a2; /*0x659547*/
 }
 
@@ -8527,7 +8527,7 @@ _DWORD *__thiscall RadioClass::RadioClass(_DWORD *this)
 {
   RadioClass::Constructor((int)this); /*0x65a753*/
   this->q0E4 = 0; /*0x65a75a*/
-  this->q0E8 = 1; /*0x65a764*/
+  this->u32_E8 = 1; /*0x65a764*/
   this->q0EC = 1; /*0x65a76e*/
   this->q0ED = 0; /*0x65a775*/
   this->radioLinks = &vt_VectorClass_TechnoClass; /*0x65a77c*/
@@ -8748,7 +8748,7 @@ int __thiscall ObjectClass::ThunkTo636(#377 *this)
   int v2; // [esp+4h] [ebp+4h]
   int v3; // [esp+8h] [ebp+8h]
 
-  return (*(int (__thiscall **)(#377 *, int, void *, int))(*(_DWORD *)this + 636))(this, v2, &MEMORY[0xA8EC30], v3); /*0x65aab7*/
+  return (*(int (__thiscall **)(#377 *, int, void *, int))(this->u32_27C)(this, v2, &MEMORY[0xA8EC30], v3); /*0x65aab7*/
 }
 
 
@@ -8924,7 +8924,7 @@ int __thiscall ObjectClass::ThunkTo159x4(#377 *this)
   int v2; // [esp+4h] [ebp+4h]
 
   if ( **((_DWORD **)this + 57) ) /*0x65acb6*/
-    return (*(int (__thiscall **)(#377 *, int, void *, _DWORD))(*(_DWORD *)this + 636))( /*0x65acc9*/
+    return (*(int (__thiscall **)(#377 *, int, void *, _DWORD))(this->u32_27C)( /*0x65acc9*/
              this,
              v2,
              &MEMORY[0xA8EC30],
@@ -8948,7 +8948,7 @@ int __thiscall TacticalClass::UpdateObjects(#377 *this)
     do /*0x65ad1c*/
     {
       if ( *(_DWORD *)(this->q0E4 + 4 * v2) ) /*0x65acfb*/
-        (*(void (__thiscall **)(#377 *, int, void *, _DWORD))(*(_DWORD *)this + 636))( /*0x65ad0d*/
+        (*(void (__thiscall **)(#377 *, int, void *, _DWORD))(this->u32_27C)( /*0x65ad0d*/
           this,
           v4,
           &MEMORY[0xA8EC30],
@@ -9300,7 +9300,7 @@ _DWORD *__thiscall sub_65B1E0(_DWORD *this)
   this->q03C = 0; /*0x65b1ff*/
   this->RadLightTimer = v2; /*0x65b202*/
   this->q080 = 0; /*0x65b205*/
-  this->alignmentPadding = 0; /*0x65b209*/
+  this->q084 = 0; /*0x65b209*/
   this->Spread = 0; /*0x65b20d*/
   this->SpreadInLeptons = 0; /*0x65b210*/
   this->RadLevel = 0; /*0x65b213*/
@@ -9662,7 +9662,7 @@ LABEL_9:
   TacticalClass::UpdateScrollTarget( /*0x65b871*/
     this->LightSource,
     *(_DWORD *)(this->LightSource + 36) - this->q01A,
-    this->referenceCount * this->Tint / this->RadDuration,
+    this->referenceCount * this->q016 / this->RadDuration,
     this->referenceCount * this->q017 / this->RadDuration,
     this->referenceCount * this->nextArrayIndex / this->RadDuration,
     0);
@@ -10015,7 +10015,7 @@ char __thiscall RadSiteClass::DecreaseLight(int *this)
   return TacticalClass::UpdateScrollTarget( /*0x65becc*/
            this->LightSource,
            *(_DWORD *)(this->LightSource + 36) - this->q01A,
-           this->referenceCount * this->Tint / this->RadDuration,
+           this->referenceCount * this->q016 / this->RadDuration,
            this->referenceCount * this->q017 / this->RadDuration,
            this->referenceCount * this->nextArrayIndex / this->RadDuration,
            0);
@@ -10303,12 +10303,12 @@ _BYTE *__thiscall WinMain_Helper_65C250(RAMFileClass *this, int a2, MixFileClass
   this->q014 = 0; /*0x65c26b*/
   this->q018 = 1; /*0x65c26e*/
   this->q01C = 0; /*0x65c275*/
-  *((_BYTE *)this + 29) = 0; /*0x65c278*/
+  this->u8_1D = 0; /*0x65c278*/
   *(_DWORD *)this->__pad_0 = &vt_RAMFileClass; /*0x65c27b*/
   if ( !a2 && (int)aP2 > 0 ) /*0x65c285*/
   {
     this->field_8 = __2_YAPAXI_Z((size_t)aP2); /*0x65c290*/
-    *((_BYTE *)this + 29) = 1; /*0x65c293*/
+    this->u8_1D = 1; /*0x65c293*/
   }
   return this->__pad_0; /*0x65c299*/
 }
@@ -10319,14 +10319,14 @@ void __thiscall WinMain_Helper_65C2A0(RAMFileClass *this)
 {
   char v2; // al
 
-  v2 = *((_BYTE *)this + 29); /*0x65c2a3*/
+  v2 = this->u8_1D; /*0x65c2a3*/
   *(_DWORD *)this->__pad_0 = &vt_RAMFileClass; /*0x65c2a6*/
   this->q01C = 0; /*0x65c2ae*/
   if ( v2 ) /*0x65c2b2*/
   {
     __3_YAXPAX_Z((void *)this->field_8); /*0x65c2b8*/
     this->field_8 = 0; /*0x65c2c0*/
-    *((_BYTE *)this + 29) = 0; /*0x65c2c7*/
+    this->u8_1D = 0; /*0x65c2c7*/
   }
   *(_DWORD *)this->__pad_0 = &vt_FileClass; /*0x65c2cb*/
 }
@@ -10556,14 +10556,14 @@ void *__thiscall nullsub_0_10(RAMFileClass *this, char a2)
 {
   char v3; // al
 
-  v3 = *((_BYTE *)this + 29); /*0x65c5a3*/
+  v3 = this->u8_1D; /*0x65c5a3*/
   *(_DWORD *)this->__pad_0 = &vt_RAMFileClass; /*0x65c5a6*/
   this->q01C = 0; /*0x65c5ae*/
   if ( v3 ) /*0x65c5b2*/
   {
     __3_YAXPAX_Z((void *)this->field_8); /*0x65c5b8*/
     this->field_8 = 0; /*0x65c5c0*/
-    *((_BYTE *)this + 29) = 0; /*0x65c5c7*/
+    this->u8_1D = 0; /*0x65c5c7*/
   }
   *(_DWORD *)this->__pad_0 = &vt_FileClass; /*0x65c5cf*/
   if ( (a2 & 1) != 0 ) /*0x65c5d7*/
@@ -10920,7 +10920,7 @@ _DWORD *__thiscall RawFileClass::Construct(_DWORD *this, RawFileClass *aP1)
   this->Handle = 0; /*0x65ca97*/
   this->FileNameAllocated = aP1; /*0x65ca9a*/
   this->q038 = 0; /*0x65ca9d*/
-  *((_WORD *)this + 15) = 0; /*0x65caa1*/
+  this->u32_3C = 0; /*0x65caa1*/
   this->q020 = 0; /*0x65caa5*/
   *this = &vt_RawFileClass; /*0x65caa8*/
   return this; /*0x65caae*/
@@ -11589,7 +11589,7 @@ BOOL __thiscall RawFileClass::_vt06(_DWORD *this)
 // ==== 0x0065D430  ComPtr::Constructor  this=rc_ptr_base  sig=csp ====
 _DWORD *__thiscall ComPtr::Constructor(rc_ptr_base *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x65d432*/
+  this->u32_4 = 0; /*0x65d432*/
   this->vfptr = &rc_ptr_base::`vftable'; /*0x65d439*/
   return &this->vfptr; /*0x65d43f*/
 }
@@ -11602,7 +11602,7 @@ _DWORD *__thiscall ComPtr::Release(rc_ptr_base *this)
   int v2; // ecx
 
   result = this; /*0x65d460*/
-  v2 = *((_DWORD *)this + 1); /*0x65d462*/
+  v2 = this->u32_4; /*0x65d462*/
   result->vfptr = &rc_ptr_base::`vftable'; /*0x65d465*/
   if ( v2 ) /*0x65d46d*/
   {
@@ -11619,17 +11619,17 @@ int __thiscall ComPtr::Set(rc_ptr_base *this, int a2)
   int v3; // ecx
   int result; // eax
 
-  if ( a2 != *((_DWORD *)this + 1) ) /*0x65d48b*/
+  if ( a2 != this->u32_4 ) /*0x65d48b*/
   {
     if ( a2 ) /*0x65d48f*/
       ++*(_DWORD *)(a2 + 4); /*0x65d491*/
-    v3 = *((_DWORD *)this + 1); /*0x65d494*/
+    v3 = this->u32_4; /*0x65d494*/
     if ( v3 ) /*0x65d499*/
     {
-      *((_DWORD *)this + 1) = 0; /*0x65d49b*/
+      this->u32_4 = 0; /*0x65d49b*/
       result = (*(int (__thiscall **)(int))(*(_DWORD *)v3 + 8))(v3); /*0x65d4a4*/
     }
-    *((_DWORD *)this + 1) = a2; /*0x65d4a7*/
+    this->u32_4 = a2; /*0x65d4a7*/
   }
   return result; /*0x65d4aa*/
 }
@@ -11640,11 +11640,11 @@ int *__thiscall AbstractClass::checkAICondition(rc_ptr_base *this, char a2)
 {
   int v3; // ecx
 
-  v3 = *((_DWORD *)this + 1); /*0x65d4d3*/
+  v3 = this->u32_4; /*0x65d4d3*/
   this->vfptr = &rc_ptr_base::`vftable'; /*0x65d4d6*/
   if ( v3 ) /*0x65d4de*/
   {
-    *((_DWORD *)this + 1) = 0; /*0x65d4e0*/
+    this->u32_4 = 0; /*0x65d4e0*/
     (*(void (__thiscall **)(int))(*(_DWORD *)v3 + 8))(v3); /*0x65d4e9*/
   }
   if ( (a2 & 1) != 0 ) /*0x65d4f1*/

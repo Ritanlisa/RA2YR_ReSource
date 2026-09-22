@@ -72,6 +72,7 @@ int VoxelAnim::ComputeTransform(float * a1, float * a2, float a3, int a4)
   byte_B45A8D = 16; /*0x75886b*/
   return 16; /*0x75885c*/
 }
+}
 
 // 0x75AEC0
 int VoxelAnim::Draw(unsigned int * a2)
@@ -117,15 +118,15 @@ int VoxelAnim::Draw(unsigned int * a2)
   int v160; // [esp+64h] [ebp-Ch] BYREF
   int v161; // [esp+68h] [ebp-8h]
   int v162; // [esp+6Ch] [ebp-4h]
-  _DWORD * v3 = (_DWORD *)(this + 40);
+  _DWORD * v3 = (_DWORD *)(&this->u32_100);
   if ( this->q0A0 != g_AsyncMovieState
-    || *(_DWORD *)(this + 44) != g_MovieFrameState1
+    || this->u32_2C != g_MovieFrameState1
     || this->q00C != g_MovieFrameState2 )
   {
     int v107 = this->q00C;
     _DWORD * v108 = (_DWORD *)*v3;
-    int v109 = *(_DWORD *)(this + 44);
-    *(_BYTE *)(this + 54) = 1;
+    int v109 = this->u32_2C;
+    this->u8_36 = 1;
     int * v110 = (int *)(*(int (__thiscall **)(int, int *))(*(_DWORD *)v107 + 72))(v107, &v160);
     int v111 = *v110;
     HIDWORD(v155) = v110[1] - v109;
@@ -143,9 +144,9 @@ int VoxelAnim::Draw(unsigned int * a2)
         *(_DWORD *)(v115 + 1508) = -1;
       qmemcpy((void *)(this->q00C + 1504), (const void *)(this->q00C + 1508), 0x5Cu);
       *(_DWORD *)(this->q00C + 1596) = -1;
-      (*(void (__thiscall **)(_DWORD, int))(*this->q00C + 436))(this->q00C, this + 40);
+      (*(void (__thiscall **)(_DWORD, int))(*this->q00C + 436))(this->q00C, &this->u32_100);
       LOWORD(a2) = *v3 / 256;
-      HIWORD(a2) = *(_DWORD *)(this + 44) / 256;
+      HIWORD(a2) = this->u32_2C / 256;
       *(_DWORD *)(this->q00C + 1368) = a2;
       (*(void (__thiscall **)(_DWORD, _DWORD))(*this->q00C + 460))(this->q00C, 0);
       *(_BYTE *)(this->q00C + 1719) = 0;
@@ -164,11 +165,11 @@ int VoxelAnim::Draw(unsigned int * a2)
           LOBYTE(v9) = v117[141];
           if ( !(_BYTE)v9 )
           {
-            if ( *(_DWORD *)(this + 28) == g_AsyncMovieState
+            if ( this->u32_1C == g_AsyncMovieState
               && this->matrices == g_MovieFrameState1
               && this->q090 == g_MovieFrameState2
   int v118; // esi
-              || (v118 = *(_DWORD *)(this + 28) / 256,
+              || (v118 = this->u32_1C / 256,
   int v119; // edi
                   v119 = this->matrices / 256,
                   a2 = (_DWORD *)(*(int (__thiscall **)(_BYTE *, int *, _DWORD))(*(_DWORD *)v117 + 76))(v117, &v160, 0),
@@ -192,11 +193,11 @@ int VoxelAnim::Draw(unsigned int * a2)
                 0,
                 0);
               *v3 = g_AsyncMovieState;
-              *(_DWORD *)(this + 44) = g_MovieFrameState1;
+              this->u32_2C = g_MovieFrameState1;
               v121 = this->num_sections;
               this->q00C = g_MovieFrameState2;
               v121->GetExitCoords(this + 4);
-              *(_BYTE *)(this + 54) = 0;
+              this->u8_36 = 0;
             }
             (*(void (__thiscall **)(_DWORD, int))(*this->q00C + 292))(this->q00C, 1);
             v9 = this->q00C;
@@ -209,7 +210,7 @@ int VoxelAnim::Draw(unsigned int * a2)
     if ( (*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)v114 + 892))(v114) )
     {
       v9 = this->q00C;
-      *(_BYTE *)(this + 54) = 0;
+      this->u8_36 = 0;
       *(_BYTE *)(v9 + 1674) = 0;
       return v9;
     }
@@ -225,12 +226,12 @@ int VoxelAnim::Draw(unsigned int * a2)
     int v125 = *v124;
     LODWORD(v155) = *v3;
     LODWORD(v154) = v125;
-    double v126 = Math::CalcAngle((double)v124[1] - (double)*(int *)(this + 44), (double)SLODWORD(v155) - (double)v125);
+    double v126 = Math::CalcAngle((double)v124[1] - (double)this->u32_2C, (double)SLODWORD(v155) - (double)v125);
     v127 = Math::RoundToInt((v126 - 1.570796326794897) * -10430.06004058427);
     v128 = this->num_sections;
     v129 = v127;
     LOWORD(v155) = v127;
-    v128->TogglePrimaryFactory(this + 4, LODWORD(v155));
+    v128->TogglePrimaryFactory(&this->u32_10, LODWORD(v155));
     v130 = (_DWORD **)(*(int (__thiscall **)(_DWORD, double *))(*this->q00C + 440))(
                         this->q00C,
                         &v155);
@@ -293,8 +294,8 @@ LABEL_120:
       *(_BYTE *)(this->q00C + 140) = 0;
     goto LABEL_122;
   }
-  _DWORD * v4 = (_DWORD *)(this + 28);
-  if ( *(_DWORD *)(this + 28) == g_AsyncMovieState
+  _DWORD * v4 = (_DWORD *)(&this->u32_88);
+  if ( this->u32_1C == g_AsyncMovieState
     && this->matrices == g_MovieFrameState1
     && this->q090 == g_MovieFrameState2 )
   {
@@ -341,8 +342,8 @@ LABEL_11:
   if ( !(unsigned __int8)FootClass::MovementStep(v152, 0, 0) )
   {
     int v12 = this->q00C;
-    *(_BYTE *)(this + 54) = 0;
-    if ( (*(unsigned __int8 (__thiscall **)(int, int))(*(_DWORD *)v12 + 716))(v12, this + 28) )
+    this->u8_36 = 0;
+    if ( (*(unsigned __int8 (__thiscall **)(int, int))(*(_DWORD *)v12 + 716))(v12, &this->u32_88) )
     {
       (*(void (__thiscall **)(_DWORD))(*this->q00C + 1268))(this->q00C);
   _DWORD *v13; // eax
@@ -475,7 +476,7 @@ LABEL_32:
       int v39 = SWORD1(v155) << 8;
       *v3 = (SLOWORD(v155) << 8) + 128;
       int v40 = this->q00C;
-      *(_DWORD *)(this + 44) = v39 + 128;
+      this->u32_2C = v39 + 128;
       this->q00C = 0;
       qmemcpy((void *)(v40 + 1504), (const void *)(v40 + 1508), 0x5Cu);
       *(_DWORD *)(this->q00C + 1596) = -1;
@@ -522,7 +523,7 @@ LABEL_32:
     }
     *(_DWORD *)(this->q00C + 1504) = -1;
     *v3 = g_AsyncMovieState;
-    *(_DWORD *)(this + 44) = g_MovieFrameState1;
+    this->u32_2C = g_MovieFrameState1;
     v58 = this->num_sections;
     this->q00C = g_MovieFrameState2;
     v58->GetExitCoords(this + 4);
@@ -563,7 +564,7 @@ LABEL_32:
   if ( v67 )
   {
     int v68 = this->q00C;
-    *(_BYTE *)(this + 54) = 0;
+    this->u8_36 = 0;
     (*(void (__thiscall **)(int))(*(_DWORD *)v68 + 1352))(v68);
     if ( v67 == 6 )
     {
@@ -572,7 +573,7 @@ LABEL_32:
       {
         *(_DWORD *)(this->q00C + 1504) = -1;
         *v3 = g_AsyncMovieState;
-        *(_DWORD *)(this + 44) = g_MovieFrameState1;
+        this->u32_2C = g_MovieFrameState1;
         this->q00C = g_MovieFrameState2;
         _DWORD * v70 = (_DWORD *)(this->q00C + 1600);
         *v70 = g_CurrentFrame;
@@ -586,7 +587,7 @@ LABEL_32:
         v71 = (_DWORD *)(*(int (__thiscall **)(_DWORD, double *))(*this->q00C + 72))(
                           this->q00C,
                           &v155);
-        int v72 = *v71 - *(_DWORD *)(this + 28);
+        int v72 = *v71 - this->u32_1C;
         int v73 = v71[1] - this->matrices;
         int v74 = v71[2] - this->q090;
         v157 = v72;
@@ -624,7 +625,7 @@ LABEL_32:
         {
           *v3 = g_AsyncMovieState;
           v77 = this->num_sections;
-          *(_DWORD *)(this + 44) = g_MovieFrameState1;
+          this->u32_2C = g_MovieFrameState1;
           this->q00C = g_MovieFrameState2;
           v77->GetExitCoords(this + 4);
           (*(void (__thiscall **)(_DWORD, _DWORD, _DWORD))(*this->q00C + 1348))(
@@ -682,7 +683,7 @@ LABEL_65:
       }
       v87 = 0;
 LABEL_67:
-      LOWORD(a2) = *(_DWORD *)(this + 28) / 256;
+      LOWORD(a2) = this->u32_1C / 256;
       HIWORD(a2) = this->matrices / 256;
       char v88 = FootClass::MovementStep(a2, 0, (v87 != 0) + 1);
       v89 = g_CurrentFrame;
@@ -697,7 +698,7 @@ LABEL_67:
       {
         LOBYTE(v9) = (*(int (__thiscall **)(int))(*(_DWORD *)v93 + 1272))(v93);
       }
-      else if ( (*(unsigned __int8 (__thiscall **)(int, int))(*(_DWORD *)v93 + 716))(v93, this + 28) )
+      else if ( (*(unsigned __int8 (__thiscall **)(int, int))(*(_DWORD *)v93 + 716))(v93, &this->u32_88) )
       {
         LOBYTE(v9) = (*(int (__thiscall **)(_DWORD))(*this->q00C + 1268))(this->q00C);
       }
@@ -727,7 +728,7 @@ LABEL_67:
         {
           *(_DWORD *)(this->q00C + 1504) = -1;
           *v3 = g_AsyncMovieState;
-          *(_DWORD *)(this + 44) = g_MovieFrameState1;
+          this->u32_2C = g_MovieFrameState1;
           _DWORD * v95 = this->q00C;
           this->q00C = g_MovieFrameState2;
           v95 += 400;
@@ -777,7 +778,7 @@ LABEL_67:
         *(_DWORD *)(this->q00C + 1504) = -1;
         *v3 = g_AsyncMovieState;
         _DWORD * v99 = this->q00C;
-        *(_DWORD *)(this + 44) = g_MovieFrameState1;
+        this->u32_2C = g_MovieFrameState1;
         v99 += 400;
         this->q00C = g_MovieFrameState2;
         *v99 = g_CurrentFrame;
@@ -790,7 +791,7 @@ LABEL_67:
   else if ( (unsigned __int8)Voxel::DrawHelper(&v160) )
   {
     _BYTE * v100 = this->q00C;
-    *(_BYTE *)(this + 54) = 1;
+    this->u8_36 = 1;
     LOBYTE(v9) = v100[144];
     if ( (_BYTE)v9 )
     {
@@ -798,11 +799,11 @@ LABEL_67:
       int v102 = *v101;
       a2 = (_DWORD *)*v3;
       LODWORD(v155) = v102;
-      double v103 = Math::CalcAngle((double)v101[1] - (double)*(int *)(this + 44), (double)(int)a2 - (double)v102);
+      double v103 = Math::CalcAngle((double)v101[1] - (double)this->u32_2C, (double)(int)a2 - (double)v102);
       v104 = Math::RoundToInt((v103 - 1.570796326794897) * -10430.06004058427);
       v105 = this->num_sections;
       LOWORD(a2) = v104;
-      v105->TogglePrimaryFactory(this + 4, a2);
+      v105->TogglePrimaryFactory(&this->u32_10, a2);
       (*(void (__thiscall **)(_DWORD, _DWORD, int))(*this->q00C + 1348))(
         this->q00C,
         0,
@@ -818,4 +819,5 @@ LABEL_67:
     *(_BYTE *)(v9 + 1674) = 0;
   }
   return v9;
+}
 }

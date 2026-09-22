@@ -26,3 +26,4 @@ int sub_7781B0(short a1)
   return v1 = = 1 ? *(_DWORD *)WideCharStr : 0;
 }
 } // namespace gamemd
+}

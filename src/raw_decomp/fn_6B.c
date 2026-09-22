@@ -632,7 +632,7 @@ int *__thiscall BuildingClass_InitBuildLimit(int **this)
   {
     this->q017 = (int *)1; /*0x6b0ccb*/
     this->nextArrayIndex = (int *)0x7FFFFFFF; /*0x6b0cd2*/
-    for ( i = (int)this->q048 - 1; i >= 0; --i ) /*0x6b0cdd*/
+    for ( i = (int)this->q012 - 1; i >= 0; --i ) /*0x6b0cdd*/
     {
       result = (int *)(this->ambientSoundController)[i]; /*0x6b0ce2*/
       v4 = *result; /*0x6b0ce8*/
@@ -659,7 +659,7 @@ int *__thiscall sub_6B0D10(int **this)
   {
     this->q017 = (int *)4; /*0x6b0d1b*/
     this->nextArrayIndex = (int *)0x7FFFFFFF; /*0x6b0d22*/
-    for ( i = (int)this->q048 - 1; i >= 0; --i ) /*0x6b0d2d*/
+    for ( i = (int)this->q012 - 1; i >= 0; --i ) /*0x6b0d2d*/
     {
       result = (int *)(this->ambientSoundController)[i]; /*0x6b0d32*/
       v4 = *result; /*0x6b0d38*/
@@ -686,7 +686,7 @@ int *__thiscall sub_6B0D60(int **this)
   {
     this->q017 = (int *)4; /*0x6b0d6b*/
     this->nextArrayIndex = (int *)0x7FFFFFFF; /*0x6b0d72*/
-    for ( i = (int)this->q048 - 1; i >= 0; --i ) /*0x6b0d7d*/
+    for ( i = (int)this->q012 - 1; i >= 0; --i ) /*0x6b0d7d*/
     {
       result = (int *)(this->ambientSoundController)[i]; /*0x6b0d82*/
       v4 = *result; /*0x6b0d88*/
@@ -1667,9 +1667,9 @@ int *__thiscall SliderClass::Constructor(
   v16 = this->q00C; /*0x6b1c25*/
   if ( v16 > 1 ) /*0x6b1c2b*/
     v16 = 1; /*0x6b1c2d*/
-  this->q048 = v16; /*0x6b1c35*/
+  this->q012 = v16; /*0x6b1c35*/
   v17 = *this; /*0x6b1c3f*/
-  this->q048 = 1; /*0x6b1c43*/
+  this->q012 = 1; /*0x6b1c43*/
   (*(void (__thiscall **)(int *))(v17 + 72))(this); /*0x6b1c46*/
   v18 = this->q0B8; /*0x6b1c49*/
   if ( v18 ) /*0x6b1c4e*/
@@ -1765,10 +1765,10 @@ __int64 __thiscall SliderClass::_vt42(int *this, int a2)
   v3 = this->q00C; /*0x6b1dc7*/
   if ( a2 < v3 ) /*0x6b1dcc*/
     v3 = a2; /*0x6b1dce*/
-  this->q048 = v3; /*0x6b1dd3*/
+  this->q012 = v3; /*0x6b1dd3*/
   if ( v3 <= 1 ) /*0x6b1dd6*/
     v3 = 1; /*0x6b1dd8*/
-  this->q048 = v3; /*0x6b1ddd*/
+  this->q012 = v3; /*0x6b1ddd*/
   (*(void (__thiscall **)(int *))(*this + 72))(this); /*0x6b1de6*/
   if ( this->q0B8 ) /*0x6b1de9*/
     v4 = this->q005; /*0x6b1df0*/
@@ -1902,9 +1902,9 @@ int __thiscall SliderClass::_vt43(int *this, int a2)
 
   v2 = *this; /*0x6b2007*/
   if ( a2 ) /*0x6b2009*/
-    return (*(int (__stdcall **)(int))(v2 + 140))(this->q034 - this->q048); /*0x6b2014*/
+    return (*(int (__stdcall **)(int))(v2 + 140))(this->q034 - this->q012); /*0x6b2014*/
   else
-    return (*(int (__stdcall **)(int))(v2 + 140))(this->q034 + this->q048); /*0x6b2027*/
+    return (*(int (__stdcall **)(int))(v2 + 140))(this->q034 + this->q012); /*0x6b2027*/
 }
 
 
@@ -3685,7 +3685,7 @@ int __thiscall sub_6B4100(int *this)
   int v17; // [esp+14h] [ebp-14h] BYREF
   _DWORD v18[4]; // [esp+18h] [ebp-10h] BYREF
 
-  v1 = this->q024; /*0x6b4113*/
+  v1 = this->ptr_24; /*0x6b4113*/
   v17 = v1; /*0x6b4120*/
   v2 = SHIWORD(v1) - dword_8759AC; /*0x6b412c*/
   v3 = (__int16)v1 - dword_8759A8; /*0x6b4130*/
@@ -3726,7 +3726,7 @@ int __thiscall sub_6B4100(int *this)
       v17 = v1; /*0x6b41cb*/
       if ( !Tactical::GetCellData((__int16 *)&v17)[69] ) /*0x6b41d4*/
       {
-        v14 = this->q038; /*0x6b41db*/
+        v14 = this->u32_38; /*0x6b41db*/
         if ( v14 >= MEMORY[0xA8ED38] || v14 == 0xFFFF || *(_BYTE *)(*((_DWORD *)MEMORY[0xA8ED2C] + v14) + 736) ) /*0x6b41f8*/
           return v9 / 15; /*0x6b421e*/
       }
@@ -6377,7 +6377,7 @@ void __thiscall UnitClass::ProcessExitQueue(int *this)
   int v94; // [esp+7Ah] [ebp-8h]
 
   v2 = this->abstractFlags; /*0x6b723f*/
-  v3 = this->SpawnManagerClass_field_58; /*0x6b7242*/
+  v3 = this->q016; /*0x6b7242*/
   if ( v2 != -1 ) /*0x6b7248*/
   {
     if ( dword_A8ED54[12] - v2 >= v3 ) /*0x6b7250*/
@@ -6390,7 +6390,7 @@ LABEL_5:
   v4 = v91; /*0x6b725c*/
   this->abstractFlags = dword_A8ED54[12]; /*0x6b7265*/
   this->SpawnManagerClass_field_54 = v4; /*0x6b7268*/
-  this->SpawnManagerClass_field_58 = 10; /*0x6b726b*/
+  this->q016 = 10; /*0x6b726b*/
   v5 = 0; /*0x6b7271*/
   v80 = 0; /*0x6b7275*/
   if ( this->q012 > 0 )
@@ -6854,8 +6854,8 @@ int __thiscall SpawnManagerClass::SetTarget(_DWORD *this, int a2)
   int result; // eax
 
   result = a2; /*0x6b7b90*/
-  if ( a2 != this->q01A ) /*0x6b7b99*/
-    this->q1B0 = a2; /*0x6b7b9b*/
+  if ( a2 != this->q068 ) /*0x6b7b99*/
+    this->__pad_06C = a2; /*0x6b7b9b*/
   return result; /*0x6b7b9e*/
 }
 
@@ -7495,7 +7495,7 @@ _DWORD *__thiscall SpawnManagerClass::Constructor_6B83A0(_DWORD *this, DynamicVe
     }
   }
   *this = &vt_DynamicVectorClass_SpawnManagerClass_SpawnControl; /*0x6b83e3*/
-  this->q005 = 10; /*0x6b83e9*/
+  this->u32_14 = 10; /*0x6b83e9*/
   this->q010 = 0; /*0x6b83f0*/
   return this; /*0x6b83f9*/
 }
@@ -10027,7 +10027,7 @@ char __thiscall HashTable::RemoveHashTableEntry(_DWORD *this, ObjectClass *aP1, 
   v4 = this->q004; /*0x6bac4b*/
   if ( !v4 ) /*0x6bac50*/
     return 0; /*0x6bac55*/
-  v37 = (double)(unsigned int)(v4 - 1) / (double)(int)this->q008; /*0x6bac80*/
+  v37 = (double)(unsigned int)(v4 - 1) / (double)(int)this->u32_8; /*0x6bac80*/
   v7 = ((int (__thiscall *)(ObjectClass *))this->q018)(aP1) & ((1 << this->q00C) - 1); /*0x6bac95*/
   v8 = *(_DWORD *)(*this + 4 * v7); /*0x6bac97*/
   v36 = (ObjectClass *)v8; /*0x6bac9c*/
@@ -10049,16 +10049,16 @@ char __thiscall HashTable::RemoveHashTableEntry(_DWORD *this, ObjectClass *aP1, 
     --this->q004; /*0x6bacfd*/
     if ( v11 || v12 ) /*0x6bad02*/
     {
-      v13 = this->q008; /*0x6bad0b*/
+      v13 = this->u32_8; /*0x6bad0b*/
       if ( v13 > this->q030 && this->q050 != 1 ) /*0x6bad1d*/
       {
         v14 = (AbstractClass *)*this; /*0x6bad26*/
         a2a = (AbstractClass *)*this; /*0x6bad2b*/
         v15 = this->q00C - 1; /*0x6bad31*/
-        this->q008 = v13 >> 1; /*0x6bad32*/
+        this->u32_8 = v13 >> 1; /*0x6bad32*/
         this->q00C = v15; /*0x6bad3c*/
         v16 = (void *)__2_YAPAXI_Z(4 * (v13 >> 1)); /*0x6bad48*/
-        v17 = 4 * this->q008; /*0x6bad4d*/
+        v17 = 4 * this->u32_8; /*0x6bad4d*/
         *this = v16; /*0x6bad54*/
         memset(v16, 0, v17); /*0x6bad5a*/
         if ( (int)v13 > 0 ) /*0x6bad65*/
@@ -10115,16 +10115,16 @@ char __thiscall HashTable::RemoveHashTableEntry(_DWORD *this, ObjectClass *aP1, 
 LABEL_24:
     if ( v37 <= *((double *)this + 4) ) /*0x6bae34*/
     {
-      v25 = this->q008; /*0x6bae3a*/
+      v25 = this->u32_8; /*0x6bae3a*/
       if ( v25 > this->q030 && this->q050 != 1 ) /*0x6bae4c*/
       {
         v26 = this->q00C; /*0x6bae52*/
         v27 = (AbstractClass *)*this; /*0x6bae55*/
         a2b = (AbstractClass *)*this; /*0x6bae5a*/
-        this->q008 = v25 >> 1; /*0x6bae60*/
+        this->u32_8 = v25 >> 1; /*0x6bae60*/
         this->q00C = v26 - 1; /*0x6bae68*/
         v28 = (AbstractClass *)__2_YAPAXI_Z(4 * (v25 >> 1)); /*0x6bae73*/
-        v29 = 4 * this->q008; /*0x6bae78*/
+        v29 = 4 * this->u32_8; /*0x6bae78*/
         *this = v28; /*0x6bae7f*/
         memset(v28, 0, v29); /*0x6bae85*/
         if ( (int)v25 > 0 ) /*0x6bae90*/
@@ -10177,16 +10177,16 @@ void __thiscall HashTable_RebuildEx(_DWORD *this)
   int v12; // eax
   int *v13; // [esp+8h] [ebp-4h]
 
-  v2 = this->q008; /*0x6baef5*/
+  v2 = this->u32_8; /*0x6baef5*/
   if ( v2 > this->q030 && this->q050 != 1 ) /*0x6baf07*/
   {
     v3 = (int *)*this; /*0x6baf10*/
     v4 = this->q00C; /*0x6baf13*/
     v13 = (int *)*this; /*0x6baf16*/
-    this->q008 = v2 >> 1; /*0x6baf1c*/
+    this->u32_8 = v2 >> 1; /*0x6baf1c*/
     this->q00C = v4 - 1; /*0x6baf24*/
     v5 = __2_YAPAXI_Z(4 * (v2 >> 1)); /*0x6baf2f*/
-    v6 = 4 * this->q008; /*0x6baf34*/
+    v6 = 4 * this->u32_8; /*0x6baf34*/
     *this = v5; /*0x6baf3b*/
     memset(v5, 0, v6); /*0x6baf40*/
     if ( (int)v2 > 0 ) /*0x6baf4b*/
@@ -12930,7 +12930,7 @@ int __thiscall COMClassFactory::Register(LPVOID *ppv, IID *rclsid, LPUNKNOWN pUn
 // ==== 0x006BEE40  ClassFactory_CStream::Construct  this=?$TClassFactory@VCStreamClass@@  sig=csp ====
 _DWORD *__thiscall ClassFactory_CStream::Construct(TClassFactory_VCStreamClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6bee42*/
+  this->u32_4 = 0; /*0x6bee42*/
   this->vfptr = &TClassFactory<CStreamClass>::`vftable'; /*0x6bee49*/
   return &this->vfptr; /*0x6bee4f*/
 }
@@ -13016,7 +13016,7 @@ int __stdcall VectorClass_K_8_::_vt04(int a1, int a2)
 // ==== 0x006BEFC0  ClassFactory_Wave::Construct  this=?$TClassFactory@VWaveClass@@  sig=csp ====
 _DWORD *__thiscall ClassFactory_Wave::Construct(TClassFactory_VWaveClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6befc2*/
+  this->u32_4 = 0; /*0x6befc2*/
   this->vfptr = &TClassFactory<WaveClass>::`vftable'; /*0x6befc9*/
   return &this->vfptr; /*0x6befcf*/
 }
@@ -13102,7 +13102,7 @@ int __stdcall VectorClass_K_14_::_vt04(int a1, int a2)
 // ==== 0x006BF140  COMClassFactory::Construct  this=?$TClassFactory@VTerrainTypeClass@@  sig=csp ====
 _DWORD *__thiscall COMClassFactory_3::Construct(TClassFactory_VTerrainTypeClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6bf142*/
+  this->u32_4 = 0; /*0x6bf142*/
   this->vfptr = &TClassFactory<TerrainTypeClass>::`vftable'; /*0x6bf149*/
   return &this->vfptr; /*0x6bf14f*/
 }
@@ -13188,7 +13188,7 @@ int __stdcall VectorClass_K_20_::_vt04(int a1, int a2)
 // ==== 0x006BF2C0  COMClassFactory::Construct  this=?$TClassFactory@VTerrainClass@@  sig=csp ====
 _DWORD *__thiscall COMClassFactory_4::Construct(TClassFactory_VTerrainClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6bf2c2*/
+  this->u32_4 = 0; /*0x6bf2c2*/
   this->vfptr = &TClassFactory<TerrainClass>::`vftable'; /*0x6bf2c9*/
   return &this->vfptr; /*0x6bf2cf*/
 }
@@ -13274,7 +13274,7 @@ int __stdcall VectorClass_K_26_::_vt04(int a1, int a2)
 // ==== 0x006BF440  COMClassFactory::Construct  this=?$TClassFactory@VSuperWeaponTypeClass@@  sig=csp ====
 _DWORD *__thiscall COMClassFactory_5::Construct(TClassFactory_VSuperWeaponTypeClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6bf442*/
+  this->u32_4 = 0; /*0x6bf442*/
   this->vfptr = &TClassFactory<SuperWeaponTypeClass>::`vftable'; /*0x6bf449*/
   return &this->vfptr; /*0x6bf44f*/
 }
@@ -13360,7 +13360,7 @@ int __stdcall VectorClass_K_32_::_vt04(int a1, int a2)
 // ==== 0x006BF5C0  COMClassFactory::Construct  this=?$TClassFactory@VSuperClass@@  sig=csp ====
 _DWORD *__thiscall COMClassFactory_6::Construct(TClassFactory_VSuperClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6bf5c2*/
+  this->u32_4 = 0; /*0x6bf5c2*/
   this->vfptr = &TClassFactory<SuperClass>::`vftable'; /*0x6bf5c9*/
   return &this->vfptr; /*0x6bf5cf*/
 }
@@ -13446,7 +13446,7 @@ int __stdcall VectorClass_K_38_::_vt04(int a1, int a2)
 // ==== 0x006BF740  COMClassFactory::Construct  this=?$TClassFactory@VTactical@@  sig=csp ====
 _DWORD *__thiscall COMClassFactory_7::Construct(TClassFactory_VTactical__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6bf742*/
+  this->u32_4 = 0; /*0x6bf742*/
   this->vfptr = &TClassFactory<Tactical>::`vftable'; /*0x6bf749*/
   return &this->vfptr; /*0x6bf74f*/
 }
@@ -13532,7 +13532,7 @@ int __stdcall VectorClass_K_44_::_vt04(int a1, int a2)
 // ==== 0x006BF8C0  COMClassFactory::Construct  this=?$TClassFactory@VCellClass@@  sig=csp ====
 _DWORD *__thiscall COMClassFactory_8::Construct(TClassFactory_VCellClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6bf8c2*/
+  this->u32_4 = 0; /*0x6bf8c2*/
   this->vfptr = &TClassFactory<CellClass>::`vftable'; /*0x6bf8c9*/
   return &this->vfptr; /*0x6bf8cf*/
 }
@@ -13630,7 +13630,7 @@ int __thiscall TClassFactory_CellClass::GetSize(TClassFactory_VCellClass__ *this
 // ==== 0x006BFA40  COMClassFactory::Construct  this=?$TClassFactory@VEMPulseClass@@  sig=csp ====
 _DWORD *__thiscall COMClassFactory_9::Construct(TClassFactory_VEMPulseClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6bfa42*/
+  this->u32_4 = 0; /*0x6bfa42*/
   this->vfptr = &TClassFactory<EMPulseClass>::`vftable'; /*0x6bfa49*/
   return &this->vfptr; /*0x6bfa4f*/
 }
@@ -13728,7 +13728,7 @@ int __thiscall TClassFactory_EMPulseClass::GetSize(TClassFactory_VEMPulseClass__
 // ==== 0x006BFBC0  COMClassFactory::Construct  this=?$TClassFactory@VLightSourceClass@@  sig=csp ====
 _DWORD *__thiscall COMClassFactory_10::Construct(TClassFactory_VLightSourceClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6bfbc2*/
+  this->u32_4 = 0; /*0x6bfbc2*/
   this->vfptr = &TClassFactory<LightSourceClass>::`vftable'; /*0x6bfbc9*/
   return &this->vfptr; /*0x6bfbcf*/
 }
@@ -13826,7 +13826,7 @@ int __thiscall TClassFactory_LightSourceClass::GetSize(TClassFactory_VLightSourc
 // ==== 0x006BFD40  ObjectClass::WinMain_Helper_6BFD40  this=?$TClassFactory@VSideClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6BFD40(TClassFactory_VSideClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6bfd42*/
+  this->u32_4 = 0; /*0x6bfd42*/
   this->vfptr = &TClassFactory<SideClass>::`vftable'; /*0x6bfd49*/
   return &this->vfptr; /*0x6bfd4f*/
 }
@@ -13924,7 +13924,7 @@ int __thiscall TClassFactory_SideClass::GetSize(TClassFactory_VSideClass__ *this
 // ==== 0x006BFEC0  ObjectClass::WinMain_Helper_6BFEC0  this=?$TClassFactory@VTiberiumClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6BFEC0(TClassFactory_VTiberiumClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6bfec2*/
+  this->u32_4 = 0; /*0x6bfec2*/
   this->vfptr = &TClassFactory<TiberiumClass>::`vftable'; /*0x6bfec9*/
   return &this->vfptr; /*0x6bfecf*/
 }

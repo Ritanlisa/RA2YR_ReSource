@@ -8,6 +8,7 @@ int GaugeClass::Stub()
 {
   return this->q034; /*0x4e30a3*/
 }
+}
 
 // 0x4E30B0
 int GaugeClass::Draw(int a2)
@@ -15,6 +16,7 @@ int GaugeClass::Draw(int a2)
 {
   *(this + 45) = a2 != 0; /*0x4e30b9*/
   return a2 != 0; /*0x4e30bc*/
+}
 }
 
 // 0x4E30D0

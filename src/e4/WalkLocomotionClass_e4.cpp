@@ -23,7 +23,7 @@ int WalkLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, long
       *v6 = g_OverlayTypeConfig; /*0x6a0386*/
       *(_DWORD *)(a1 + 64) = DataGlobal_B077FC; /*0x6a038d*/
       TechnoClass *v7 = HIDWORD(DataGlobal_B077FC); /*0x6a0390*/
-      *(_BYTE *)(v5 + 99) = 0; /*0x6a0396*/
+      v5->u8_63 = 0; /*0x6a0396*/
       *(_DWORD *)(a1 - 4 + 72) = v7; /*0x6a039a*/
       v4 = g_OverlayTypeConfig; /*0x6a039d*/
     }
@@ -31,7 +31,7 @@ int WalkLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, long
       || (LOBYTE(v4) = BYTE4(DataGlobal_B077FC), HIDWORD(a4) != HIDWORD(DataGlobal_B077FC)) )
     {
       VoxelAnimClass *v8 = v13; /*0x6a03c4*/
-      *(_BYTE *)(v5 + 99) = 1; /*0x6a03ca*/
+      v5->u8_63 = 1; /*0x6a03ca*/
       *v6 = a3; /*0x6a03ce*/
       *(_QWORD *)(a1 + 64) = v8; /*0x6a03d0*/
       int v11 = v5->q00C; /*0x6a03dd*/
@@ -44,7 +44,7 @@ int WalkLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, long
           LOBYTE(v4) = g_OverlayTypeConfig; /*0x6a0447*/
           *v6 = g_OverlayTypeConfig; /*0x6a044c*/
           *(_QWORD *)(a1 + 64) = DataGlobal_B077FC; /*0x6a0454*/
-          *(_BYTE *)(v5 + 99) = 0; /*0x6a0460*/
+          v5->u8_63 = 0; /*0x6a0460*/
         }
       }
       else
@@ -59,6 +59,7 @@ int WalkLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, long
     }
   }
   return v4; /*0x6a0430*/
+}
 }
 
 // 0x6A3F50
@@ -118,6 +119,7 @@ int WalkLocomotionClass::IsAtDestination(int a1, int a2, int a3, int a4)
   return (unsigned __int16)(v23 / 256) == (unsigned __int16)(a2 / 256) /*0x6a411e*/
       && (unsigned __int16)(v24 / 256) == (unsigned __int16)(a3 / 256)
       && (int)abs32(v25 - a4) <= DataGlobal_B07838;
+}
 }
 
 // 0x75C640
@@ -230,9 +232,9 @@ WalkLocomotionClass * WalkLocomotionClass::ProcessMove(char a2)
 {
     ILocomotion *v3;
     *(void**)this = (unsigned int)vt_WalkLocomotionClass;
-    *(this + 1) = (unsigned int)vt_WalkLocomotionClass;
-    *(this + 6) = (ILocomotion *)&vt_WalkLocomotionClass;
-    v3 = *(this + 14);
+    this->vtable2 = (unsigned int)vt_WalkLocomotionClass;
+    this->vtable3 = (ILocomotion *)&vt_WalkLocomotionClass;
+    v3 = *(&this->vtable24);
     if ( v3 )
     (*(void (__stdcall **)(ILocomotion *))(*(int *)(v3) + 8))(v3);
     LocomotionClass::Construct(this);

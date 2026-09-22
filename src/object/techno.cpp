@@ -437,9 +437,13 @@ AbstractClass * * TechnoClass::SelectWeapon(AbstractClass* target) const
       }
       if ( *(_BYTE *)(v4 + 336) && (*(int (__thiscall **)(#377 *))(this->q184)(this) == 16 )
         return 1;
-      if ( (*(int (__thiscall **)(#377 *))(this->fallRate)(this) == 6 && *((_BYTE *)this + 1633) )
+      if ( (*(int (__thiscall **)(#377 *))(this->fallRate)(this) == 6 && this->u8_661 )
         return 1;
       if ( (*(int (__thiscall **)(_DWORD *))(*v11 + 44))(v11) == 6
+      }
+      }
+      }
+      }
 // 0x4f9af0
         && Object::IsAlliedWithObjectSimpleHouse(this->owner, v11)
         && *(_BYTE *)(*(_DWORD *)(v4 + 172) + 344)
@@ -1165,7 +1169,7 @@ int TechnoClass::CreateUnit()
   if ( !this->q198 && *(_DWORD *)(this->missionTimer + 760) != -1 )
   {
     int v2 = (*(int (__thiscall **)(#361 *, int *))(this->q048)(this, &v122);
-    StartAudioController(v2, (int)this + 416);
+    StartAudioController(v2, (int)&this->locationZ6);
   }
   if ( *(_BYTE *)(this->missionTimer + 852) )
   {
@@ -1176,7 +1180,7 @@ int TechnoClass::CreateUnit()
   {
     _DWORD * v3 = (_DWORD *)(*(int (__thiscall **)(#361 *, int *))(this->q048)(this, &v122);
     _DWORD * v4 = Coord::To_Cell(DataGlobal_87F7E8, v3);
-    this->q674 = Cell::CanPlaceBuilding(*((#375 **)this + 96), v4) == 0;
+    this->q674 = Cell::CanPlaceBuilding(*((#375 **)&this->objectTypeFlags6), v4) == 0;
   }
   if ( this->missionTimer == *(_DWORD *)(DataGlobal_87F7E8[7806] + 184) )
   {
@@ -1205,7 +1209,7 @@ int TechnoClass::CreateUnit()
     int v7 = (*(int (__thiscall **)(#361 *))(this->q1E8)(this);
     if ( v7 == 2 || v7 == 1 )
     {
-      int * v8 = (int *)((char *)this + 156);
+      int * v8 = (int *)((char *)&this->ambientSoundController6);
       v122 = this->q027;
       v123 = this->owningHouseIndex;
       v124 = this->q029;
@@ -1238,12 +1242,12 @@ int TechnoClass::CreateUnit()
           int v25 = this->missionTimer;
           int v112 = *(_DWORD *)(v25 + 816);
           int v26 = Math::RoundToInt(*(double *)(v25 + 680));
-          Coords = Coord::GetCoords((float *)this + 74, &v122);
+          Coords = Coord::GetCoords((float *)&this->q128, &v122);
           PlaySoundEffectAt(Coords, v26, 0, v112, 1, 0);
           int v28 = this->missionTimer;
           v117 = *(_DWORD *)(v28 + 816);
           int v29 = Math::RoundToInt(*(double *)(v28 + 680));
-          int * v30 = Coord::GetCoords((float *)this + 74, &v122);
+          int * v30 = Coord::GetCoords((float *)&this->q128, &v122);
           CreateSmokeEffectAt(v29, v117, *v30, v30[1], v30[2], 0, 0);
         }
       }
@@ -1293,7 +1297,7 @@ int TechnoClass::CreateUnit()
       }
       if ( !v11 || v114 )
       {
-        int * v31 = Coord::GetCoords((float *)this + 74, &v120);
+        int * v31 = Coord::GetCoords((float *)&this->q128, &v120);
         v122 = *v31;
         v123 = v31[1];
         v124 = v31[2];
@@ -1433,7 +1437,7 @@ int TechnoClass::CreateUnit()
   }
   if ( this->isAliveFlag )
   {
-    if ( !*((_BYTE *)this + 411) )
+    if ( !this->u8_19B )
     {
       int v57 = this->missionTimer;
       if ( *(_DWORD *)(v57 + 776) )
@@ -1456,9 +1460,9 @@ int TechnoClass::CreateUnit()
     _DWORD * v61 = (_DWORD *)(*(int (__thiscall **)(#361 *, int *))(this->q048)(this, &v122);
     _DWORD * v62 = Coord::To_Cell(DataGlobal_87F7E8, v61);
     if ( Cell::IsBridge(v62) )
-      *((_BYTE *)this + 411) = 1;
+      this->u8_19B = 1;
   }
-  if ( *((_BYTE *)this + 411) )
+  if ( this->u8_19B )
     goto LABEL_187;
   LOBYTE(Speed) = this->ironTintTimer;
   if ( (_BYTE)Speed )
@@ -1489,7 +1493,7 @@ int TechnoClass::CreateUnit()
       v124 = v67;
       int v68 = *((_DWORD *)Coord::To_Cell(DataGlobal_87F7E8, &v122) + 17);
       if ( v68 == -1 || *(_DWORD *)(*(_DWORD *)(DataGlobal_87F7E8[528743] + 4 * v68) + 668) != this->missionTimer )
-        *((_BYTE *)this + 411) = 1;
+        this->u8_19B = 1;
     }
     _DWORD * v69 = (_DWORD *)this->missionTimer;
     if ( v69[176] == -1 )
@@ -1509,7 +1513,7 @@ int TechnoClass::CreateUnit()
       LOBYTE(Speed) = this->q11A;
       if ( !(_BYTE)Speed )
       {
-        Speed = CDTimerClass::TimeRemaining((int *)this + 45);
+        Speed = CDTimerClass::TimeRemaining((int *)&this->uniqueId5);
         if ( Speed || (Speed = this->nextObject) == 0 )
         {
           this->suspendedMission = 0;
@@ -1633,7 +1637,7 @@ LABEL_143:
             if ( *(_DWORD *)(v88 + 700) == -1 )
               *(_DWORD *)(v88 + 700) = *(_DWORD *)(v88 + 704);
             int v89 = this->missionTimer;
-            *((_BYTE *)this + 411) = 0;
+            this->u8_19B = 0;
             char v90 = *(_BYTE *)(v89 + 708);
             this->q188 = 0;
             this->q654 = v90;
@@ -1658,7 +1662,7 @@ LABEL_143:
           }
           if ( *(_DWORD *)(v84 + 844) != -1 )
           {
-            int * v94 = (int *)((char *)this + 156);
+            int * v94 = (int *)((char *)&this->ambientSoundController6);
             v122 = this->q027;
             int v95 = *(_DWORD *)this;
             v123 = this->owningHouseIndex;
@@ -3331,7 +3335,7 @@ void ConstructionPositionTracker(TechnoClass* techno)
     }
 
     // IDA: Section 2-3: Target position management
-    // Compare current location with target coords (this+0x210 region).
+    // Compare current location with target coords (&this->q840 region).
     // If target matches Map_InvalidCoord or ProductionBlocked:
     //   Building::ComputePosition → compute new target
     //   If still invalid: mark ProductionBlocked, set ProductionSpeed=1
@@ -3344,7 +3348,7 @@ void ConstructionPositionTracker(TechnoClass* techno)
     // IDA: Section 5: Cell walkability check
     // If on surface (Z >= ground + threshold):
     //   Check 3 adjacent cells for walkability (cell_data[80] & 0x100)
-    //   If all 3 blocked: set flag (this+141 = 1)
+    //   If all 3 blocked: set flag (&this->u32_234 = 1)
 
     // IDA: Section 6: Angle calculation and timer update
     // if (!ProductionBlocked && current != target):
@@ -3478,6 +3482,7 @@ int TechnoClass::VoiceSelect() { return 0; }
 int TechnoClass::VoiceCapture() { return 0; }
 int TechnoClass::VoiceMove() { return 0; }
 int TechnoClass::VoiceDeploy() { return 0; }
+}
 // 0x7090a0
 int TechnoClass::VoiceAttack(ObjectClass* target) { return 0; }
 bool TechnoClass::ClickedEvent(NetworkEvents event) { return false; }
@@ -3745,7 +3750,7 @@ int TechnoClass::CreateDestructionEffect() {
   if ( this
     && (*(int (__thiscall **)(#374 *))(this->fallRate)(this) == 6
     && !*(_BYTE *)(*((*(int (__thiscall **)(#374 *))(this->fallRate)(this) == 6
-                   ? (_DWORD *)((char *)this + 1312)
+                   ? (_DWORD *)((char *)&this->currentBarrelIndex2)
                    : (_DWORD *)1312)
                  + 5495) )
   {
@@ -3779,7 +3784,7 @@ int TechnoClass::CreateDestructionEffect() {
       || (*(int (__thiscall **)(#374 *))(this->fallRate)(this) != 15
       || v31
       || !*(_BYTE *)(this->airstrikeTimer + 3756)
-      || *((_BYTE *)this + 1755) )
+      || this->u8_6DB )
     {
       v13 = v24;
     }
@@ -3800,7 +3805,7 @@ int TechnoClass::CreateDestructionEffect() {
         v11 = 1;
       int v12 = *(_DWORD *)this;
       this->health = v11;
-      *((_BYTE *)this + 1755) = 1;
+      this->u8_6DB = 1;
       (*(void (__thiscall **)(#374 *, int, int, _DWORD))(v12 + 1368))(this, 6, 1, 0);
       v13 = 3;
       v24 = 3;
@@ -3866,7 +3871,7 @@ int TechnoClass::CreateDestructionEffect() {
           if ( !this->health )
           {
             if ( v30 )
-              v21 = *(_DWORD *)(v30 + 540);
+              v21 = v30->u32_21C;
   int v33; // [esp+40h] [ebp+1Ch]
             if ( !v33 || v30 && v33 == v21 )
               (*(void (__thiscall **)(#374 *, int))(this->radioLinks)(this, v30);
@@ -4418,6 +4423,7 @@ pop     ebx
 add     esp, 14h
 retn    1Ch
 */
+}
 // 0x5f7900
 int TechnoClass::FindMatchingUnit() { return -1; }
 // 0x5f99e0
@@ -4531,9 +4537,13 @@ AbstractClass * * TechnoClass::SelectWeapon() {
       }
       if ( *(_BYTE *)(v4 + 336) && (*(int (__thiscall **)(#377 *))(this->q184)(this) == 16 )
         return 1;
-      if ( (*(int (__thiscall **)(#377 *))(this->fallRate)(this) == 6 && *((_BYTE *)this + 1633) )
+      if ( (*(int (__thiscall **)(#377 *))(this->fallRate)(this) == 6 && this->u8_661 )
         return 1;
       if ( (*(int (__thiscall **)(_DWORD *))(*v11 + 44))(v11) == 6
+      }
+      }
+      }
+      }
 // 0x4f9af0
         && Object::IsAlliedWithObjectSimpleHouse(this->owner, v11)
         && *(_BYTE *)(*(_DWORD *)(v4 + 172) + 344)

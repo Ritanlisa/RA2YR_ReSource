@@ -30,6 +30,7 @@ LABEL_5:
   (*(void (__thiscall **)(int))(*(_DWORD *)a2 + 52))(a2); /*0x758ab5*/
   return v3; /*0x758ab8*/
 }
+}
 
 // 0x753B70
 int VoxelPaletteClass::LoadFromFile()

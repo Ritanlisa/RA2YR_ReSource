@@ -700,6 +700,7 @@ LABEL_16:
 // FacingClass - network-sync variant (0x4c9300): step the displayed facing by
 // the elapsed fraction, then either accept the desired facing immediately
 // (timer zeroed, returns 0 when already in place) or snap both facings to it.
+}
 // 0x4C9300
 int FacingClass::Set_SyncLog(unsigned int* a1)
 {
@@ -761,5 +762,6 @@ LABEL_12:
   }
   p_RotationTimer->TimeLeft = 0; /*0x4c939e*/
   return result; /*0x4c93a1*/
+}
 }
 

@@ -1590,7 +1590,7 @@ _DWORD *__thiscall WeaponTypeClass::Constructor(_DWORD *this, ObjectClass *aP1)
   this->q118 = 0; /*0x771d24*/
   this->q11C = 0; /*0x771d2a*/
   this->q120 = 0; /*0x771d30*/
-  *((_BYTE *)this + 289) = 0; /*0x771d36*/
+  this->ptr_121 = 0; /*0x771d36*/
   this->q488 = 0; /*0x771d3c*/
   this->q48C = 0; /*0x771d42*/
   this->q124 = 0; /*0x771d48*/
@@ -3269,15 +3269,15 @@ _DWORD *__thiscall WinModemClass::Construct(_DWORD *this)
   this->q015 = 0; /*0x77413b*/
   this->q016 = 0; /*0x77413e*/
   this->q014 = 0; /*0x774141*/
-  *((_BYTE *)this + 81) = 0; /*0x774144*/
+  this->u8_51 = 0; /*0x774144*/
   this->q068 = 0; /*0x774147*/
   this->Member100 = 0; /*0x77414a*/
   this->q004 = 0; /*0x77414d*/
   this->q008 = 0; /*0x774150*/
   this->q00C = 0; /*0x774153*/
-  this->q010 = 0; /*0x774156*/
+  this->u32_10 = 0; /*0x774156*/
   this->q014 = 0; /*0x774159*/
-  this->q018 = 0; /*0x77415c*/
+  this->u32_18 = 0; /*0x77415c*/
   this->q05C = -1; /*0x77415f*/
   return this; /*0x774168*/
 }
@@ -3462,7 +3462,7 @@ int __thiscall WinModemClass::AddRef(int this, const char *a2, DWORD a3, BYTE a4
     CommTimeouts.WriteTotalTimeoutConstant = 1000; /*0x7745f0*/
     if ( !SetCommTimeouts(FileA, &CommTimeouts) ) /*0x7745f4*/
       Debug::Log(); /*0x774604*/
-    (*(void (__thiscall **)(int, int))(this->q010)(this, 1); /*0x774612*/
+    (*(void (__thiscall **)(int, int))(this->u32_10)(this, 1); /*0x774612*/
     if ( ClearCommError(*(HANDLE *)(this + 92), &Errors, &Stat) ) /*0x774623*/
     {
       v9 = (NullModemClass *)Errors; /*0x77462d*/

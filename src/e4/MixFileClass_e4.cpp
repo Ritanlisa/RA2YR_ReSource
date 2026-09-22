@@ -78,6 +78,7 @@ void MixFileClass::CleanupCache()
     DataGlobal_B077BC = 0; /*0x69e309*/
   }
 }
+}
 
 // 0x69E180
 void MixFileClass::DestroyCache()

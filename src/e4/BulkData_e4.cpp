@@ -29,3 +29,4 @@ void BulkData::InitMissionHashing()
   this->q051 = Time; /*0x697b41*/
   Debug::Log(); /*0x697b47*/
 }
+}

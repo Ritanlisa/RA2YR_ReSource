@@ -37,6 +37,7 @@ void unknown_libname_27()
   return this; /*0x6406e8*/
 }
 } // namespace gamemd
+}
 
 // 0x645B60
 namespace gamemd {
@@ -58,6 +59,7 @@ void * E4Recv_645B60::sub_645B60()
   return v2; /*0x645b88*/
 }
 } // namespace gamemd
+}
 
 // 0x645D60
 namespace gamemd {
@@ -74,7 +76,7 @@ ObjectClass * * E4Recv_645D60::sub_645D60(float * a2)
   float * v3 = sub_6460C0(v29, a2); /*0x645d8e*/
   float v30[4]; // [esp+48h] [ebp-30h] BYREF
   float * v4 = QuaternionMathMultiply(v30, &v21, v3); /*0x645d9c*/
-  double v5 = *(this + 3); /*0x645da3*/
+  double v5 = this->M12; /*0x645da3*/
   int v6 = *((_DWORD *)v4 + 1); /*0x645da6*/
   int v25 = *(_DWORD *)v4; /*0x645da9*/
   int v7 = *((_DWORD *)v4 + 2); /*0x645daf*/
@@ -82,12 +84,12 @@ ObjectClass * * E4Recv_645D60::sub_645D60(float * a2)
   int v27 = v7; /*0x645db7*/
   int v20; // [esp+Ch] [ebp-6Ch]
   *(float *)&v20 = -v5; /*0x645dbe*/
-  double v8 = *(this + 2); /*0x645dc1*/
+  double v8 = this->M8; /*0x645dc1*/
   int v28 = *((_DWORD *)v4 + 3); /*0x645dc5*/
   int v19; // [esp+8h] [ebp-70h]
   *(float *)&v19 = -v8; /*0x645dcb*/
   int v18; // [esp+4h] [ebp-74h]
-  *(float *)&v18 = -*(this + 1); /*0x645dd4*/
+  *(float *)&v18 = -this->M4; /*0x645dd4*/
   int v17; // [esp+0h] [ebp-78h]
   *(float *)&v17 = -*this; /*0x645de0*/
   float * v9 = (float *)Int4::Set(v30, v17, v18, v19, v20); /*0x645de3*/
@@ -107,13 +109,14 @@ ObjectClass * * E4Recv_645D60::sub_645D60(float * a2)
   if ( !(v14 | v15) ) /*0x645e97*/
   {
     *this = -*this; /*0x645ea2*/
-    *(this + 1) = -*(this + 1); /*0x645ea9*/
-    *(this + 2) = -*(this + 2); /*0x645eb1*/
-    *(this + 3) = -*(this + 3); /*0x645eb9*/
+    this->M4 = -this->M4; /*0x645ea9*/
+    this->M8 = -this->M8; /*0x645eb1*/
+    this->M12 = -this->M12; /*0x645eb9*/
   }
   return this; /*0x645ebe*/
 }
 } // namespace gamemd
+}
 
 // 0x646730
 namespace gamemd {
@@ -214,6 +217,7 @@ void * ConvertMatrixToQuaternion(float * a1, float * a2)
   return result; /*0x646801*/
 }
 } // namespace gamemd
+}
 
 // 0x646F70
 namespace gamemd {
@@ -245,6 +249,7 @@ char sub_646F70(IUnknown * a1, int a2, int a3, char a4, int a5, int a6, int a7)
   return 1; /*0x64702d*/
 }
 } // namespace gamemd
+}
 
 // 0x647260
 namespace gamemd {
@@ -377,6 +382,7 @@ LABEL_31:
   }
 }
 } // namespace gamemd
+}
 
 // 0x648350
 namespace gamemd {
@@ -543,6 +549,7 @@ LABEL_23:
   SendNetworkFrameSync(v2, dword_AFA400); /*0x6486d8*/
 }
 } // namespace gamemd
+}
 
 // 0x648710
 namespace gamemd {
@@ -1466,6 +1473,7 @@ LABEL_116:
   return 7;
 }
 } // namespace gamemd
+}
 
 // 0x649CA0
 namespace gamemd {
@@ -1598,6 +1606,7 @@ AbstractClass * * BuildNetworkEventPacket(int a1, int a2, int a3, int a4, short 
   return v20; /*0x649ff2*/
 }
 } // namespace gamemd
+}
 
 // 0x64A000
 namespace gamemd {
@@ -1627,6 +1636,7 @@ void Network_SendFrameSync(int * a1, short a2)
   return ++dword_B0487C; /*0x64a0a6*/
 }
 } // namespace gamemd
+}
 
 // 0x64A0C0
 namespace gamemd {
@@ -1857,6 +1867,7 @@ LABEL_59:
   }
 }
 } // namespace gamemd
+}
 
 // 0x64A630
 namespace gamemd {
@@ -1924,6 +1935,7 @@ LABEL_7:
   return v11 + 6; /*0x64a660*/
 }
 } // namespace gamemd
+}
 
 // 0x64AAE0
 namespace gamemd {
@@ -1994,6 +2006,7 @@ LABEL_10:
   }
 }
 } // namespace gamemd
+}
 
 // 0x64B240
 namespace gamemd {
@@ -2056,6 +2069,7 @@ AbstractClass * * Network_KickPlayerNow(int a1, int a2, int a3, unsigned char a4
   }
 }
 } // namespace gamemd
+}
 
 // 0x64B4D0
 namespace gamemd {
@@ -2136,6 +2150,7 @@ LABEL_21:
   return 0; /*0x64b5c4*/
 }
 } // namespace gamemd
+}
 
 // 0x64B660
 namespace gamemd {
@@ -2343,6 +2358,7 @@ LABEL_47:
   return result; /*0x64bdb9*/
 }
 } // namespace gamemd
+}
 
 // 0x64BDD0
 namespace gamemd {
@@ -2594,6 +2610,7 @@ LABEL_48:
   return -1; /*0x64c362*/
 }
 } // namespace gamemd
+}
 
 // 0x64CD30
 namespace gamemd {
@@ -2616,6 +2633,7 @@ void sub_64CD30(int a1, int a2, int a3, char a4, int a5)
   }
 }
 } // namespace gamemd
+}
 
 // 0x64CDA0
 namespace gamemd {
@@ -3079,6 +3097,7 @@ LABEL_99:
   }
 }
 } // namespace gamemd
+}
 
 // 0x64DAB0
 namespace gamemd {
@@ -3204,6 +3223,7 @@ void ComputeNetworkFrameCRC()
   return AllocateTriggerLog((int)g_CurrentFrame % 256); /*0x64de75*/
 }
 } // namespace gamemd
+}
 
 // 0x6404D0
 namespace gamemd {
@@ -4343,6 +4363,7 @@ void sub_646464()
   return a3; /*0x64646e*/
 }
 } // namespace gamemd
+}
 
 // 0x646480
 namespace gamemd {

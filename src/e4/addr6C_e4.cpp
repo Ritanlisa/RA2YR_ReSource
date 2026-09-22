@@ -1204,6 +1204,7 @@ LABEL_343:
   ResultNode::CleanupList(v262);
 }
 } // namespace gamemd
+}
 
 // 0x6C87F0
 namespace gamemd {
@@ -1218,6 +1219,7 @@ int sub_6C87F0()
   return v1; /*0x6c8811*/
 }
 } // namespace gamemd
+}
 
 // 0x6C8FF0
 namespace gamemd {
@@ -1383,6 +1385,7 @@ void DlgProcScoreScreen()
   return result; /*0x6c905c*/
 }
 } // namespace gamemd
+}
 
 // 0x6CA1E0
 namespace gamemd {
@@ -1459,6 +1462,7 @@ LABEL_10:
   }
 }
 } // namespace gamemd
+}
 
 // 0x6CA4A0
 namespace gamemd {
@@ -1485,6 +1489,7 @@ void sub_6CA4A0(wchar_t * String2, int a2, int a3)
   }
 }
 } // namespace gamemd
+}
 
 // 0x6CA4F0
 namespace gamemd {
@@ -1536,6 +1541,7 @@ LABEL_11:
   }
 }
 } // namespace gamemd
+}
 
 // 0x6CA6A0
 namespace gamemd {
@@ -1588,6 +1594,7 @@ LABEL_8:
   return result; /*0x6ca70b*/
 }
 } // namespace gamemd
+}
 
 // 0x6CF320
 namespace gamemd {
@@ -1600,6 +1607,7 @@ int globalHelper_0CF320(unsigned int * a1, unsigned int * a2)
     return *a1 >= *a2 ? 1 : -1;
 }
 } // namespace gamemd
+}
 
 // 0x6CFD60
 namespace gamemd {
@@ -1619,6 +1627,7 @@ unsigned int * sub_6CFD60(unsigned int * a1, int a2)
   return result; /*0x6cfda0*/
 }
 } // namespace gamemd
+}
 
 // 0x6CFDB0
 namespace gamemd {
@@ -1636,6 +1645,7 @@ int sub_6CFDB0(int a1)
   return result; /*0x6cfdd8*/
 }
 } // namespace gamemd
+}
 
 // 0x6C0025
 namespace gamemd {

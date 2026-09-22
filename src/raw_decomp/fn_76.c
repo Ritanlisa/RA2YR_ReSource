@@ -666,7 +666,7 @@ int __thiscall WaveClass::Update(#374 *this)
   {
     case 0: /*0x760f65*/
       Voxel::TransformMatrix((int)this); /*0x760fa0*/
-      for ( i = 0; i < this->WaveClass_field_12C; ++i ) /*0x760faf*/
+      for ( i = 0; i < this->q080; ++i ) /*0x760faf*/
       {
         Coords = (ObjectClass *)CellClass::GetCoords(*(_DWORD **)(this->q1F4 + 4 * i), v7); /*0x760fbf*/
         WaveClass::DamageArea((int *)this, Coords); /*0x760fc7*/
@@ -713,7 +713,7 @@ int __thiscall AnimClass::ProcessFrame(#374 *this)
   Voxel::TransformMatrix((int)this); /*0x761037*/
   for ( i = 0; i < this->q080; ++i ) /*0x761046*/
   {
-    Coords = (ObjectClass *)CellClass::GetCoords(*(_DWORD **)(*((_DWORD *)this + 125) + 4 * i), v6); /*0x761056*/
+    Coords = (ObjectClass *)CellClass::GetCoords(*(_DWORD **)(this->u32_1F4 + 4 * i), v6); /*0x761056*/
     WaveClass::DamageArea((int *)this, Coords); /*0x76105e*/
   }
   v4 = this->q04C - 1; /*0x761074*/
@@ -1839,7 +1839,7 @@ _DWORD *__thiscall sub_7632D0(_DWORD *this, int a2, int a3)
     }
   }
   *this = &vt_DynamicVectorClass_CellClass; /*0x763313*/
-  this->q005 = 10; /*0x763319*/
+  this->u32_14 = 10; /*0x763319*/
   this->q010 = 0; /*0x763320*/
   return this; /*0x763329*/
 }
@@ -1854,17 +1854,17 @@ char __thiscall sub_763330(_DWORD *this, _DWORD *a2)
   int v7; // edx
 
   v3 = this->q008; /*0x763333*/
-  if ( this->q010 >= v3 ) /*0x76333b*/
+  if ( this->u32_10 >= v3 ) /*0x76333b*/
   {
-    if ( !this->q0D0 && v3 ) /*0x763346*/
+    if ( !this->u32_34 && v3 ) /*0x763346*/
       return 0; /*0x763346*/
-    v4 = this->q014; /*0x763348*/
+    v4 = this->u32_14; /*0x763348*/
     if ( v4 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*this + 8))(this, v3 + v4, 0) ) /*0x763358*/
       return 0; /*0x76335f*/
   }
-  v6 = this->q010; /*0x763365*/
-  v7 = this->q004; /*0x763368*/
-  this->q010 = v6 + 1; /*0x76336e*/
+  v6 = this->u32_10; /*0x763365*/
+  v7 = this->u32_4; /*0x763368*/
+  this->u32_10 = v6 + 1; /*0x76336e*/
   *(_DWORD *)(v7 + 4 * v6) = *a2; /*0x763378*/
   return 1; /*0x763361*/
 }
@@ -2046,8 +2046,8 @@ int __thiscall String::To_Waypoint(char *this)
   int v2; // esi
 
   v2 = -1; /*0x763694*/
-  if ( isalpha(*this) && (v2 = toupper(*this) - 65, isalpha(*(this + 1))) ) /*0x7636ba*/
-    return toupper(*(this + 1)) + 26 * v2 - 39; /*0x7636db*/
+  if ( isalpha(*this) && (v2 = toupper(*this) - 65, isalpha(this->ptr_4)) ) /*0x7636ba*/
+    return toupper(this->ptr_4) + 26 * v2 - 39; /*0x7636db*/
   else
     return v2; /*0x7636e0*/
 }
@@ -2233,13 +2233,13 @@ int __thiscall VectorClass::GetAtChecked(int *this, IUnknown *aP1)
 {
   int v3; // eax
 
-  v3 = (*(int (__thiscall **)(int *, IUnknown *))(this->q028 + 20))(this + 10, aP1) + 1; /*0x763bb4*/
-  if ( this->q024 != -1 && v3 == this->q038 ) /*0x763bbd*/
-    v3 = this->q024; /*0x763bbf*/
-  if ( v3 < 0 || v3 >= this->q038 ) /*0x763bc8*/
+  v3 = (*(int (__thiscall **)(int *, IUnknown *))(this->u32_28 + 20))(this + 10, aP1) + 1; /*0x763bb4*/
+  if ( this->ptr_24 != -1 && v3 == this->u32_38 ) /*0x763bbd*/
+    v3 = this->ptr_24; /*0x763bbf*/
+  if ( v3 < 0 || v3 >= this->u32_38 ) /*0x763bc8*/
     return 0; /*0x763bd7*/
   else
-    return this->q02C + 12 * v3; /*0x763bd1*/
+    return this->u32_2C + 12 * v3; /*0x763bd1*/
 }
 
 
@@ -4330,7 +4330,7 @@ _DWORD *__thiscall sub_765C90(_DWORD *this, int a2, _DWORD *a3)
 
   v3 = a2; /*0x765c93*/
   this->q004 = 0; /*0x765c9c*/
-  this->q008 = a2; /*0x765ca3*/
+  this->u32_8 = a2; /*0x765ca3*/
   this->q030 = 1; /*0x765ca6*/
   this->q034 = 0; /*0x765caa*/
   *this = &vt_VectorClass_rc_ptr_WorldDominationTour_Conflict; /*0x765cae*/
@@ -10371,7 +10371,7 @@ rc_ptr *__thiscall ShowWDTTerritorySelection(ObjectClass *this, _DWORD *a2)
       }
       else if ( v9 == 2049 ) /*0x76ce7f*/
       {
-        WDTSurface::ToggleState(this->q45C, this, 0); /*0x76ce8e*/
+        WDTSurface::ToggleState(this->q117, this, 0); /*0x76ce8e*/
         if ( WDTSurface::PointInRect(*((_DWORD **)this + 279), &v28) ) /*0x76ce9e*/
         {
           String::Assign((char **)&v24, aCanceled); /*0x76ceb4*/
@@ -10402,7 +10402,7 @@ rc_ptr *__thiscall ShowWDTTerritorySelection(ObjectClass *this, _DWORD *a2)
     else
     {
       v10 = (int)v29; /*0x76cf6d*/
-      if ( v28.vfptr != (void *)*((_DWORD *)this + 274) || v29 != *((ObjectClass **)this + 275) ) /*0x76cf79*/
+      if ( v28.vfptr != (void *)this->q112 || v29 != *((ObjectClass **)this + 275) ) /*0x76cf79*/
       {
         *((rc_ptr_base *)this + 274) = v28; /*0x76cf85*/
         *((_DWORD *)this + 275) = v10; /*0x76cf8f*/
@@ -10516,10 +10516,10 @@ void __thiscall WDTGame::ProcessTerritorySelection(int *this, _DWORD *a1, Object
 
   v3 = a1; /*0x76d184*/
   v18 = 0; /*0x76d18c*/
-  if ( WDTSurface::PointInRect((_DWORD *)this->q45C, a1) ) /*0x76d19a*/
+  if ( WDTSurface::PointInRect((_DWORD *)this->q117, a1) ) /*0x76d19a*/
   {
-    WDTSurface::ToggleState(this->q45C, (ObjectClass *)this, (ObjectClass *)1); /*0x76d1bd*/
-    v5 = this->q45C; /*0x76d1c2*/
+    WDTSurface::ToggleState(this->q117, (ObjectClass *)this, (ObjectClass *)1); /*0x76d1bd*/
+    v5 = this->q117; /*0x76d1c2*/
     if ( !*(_BYTE *)(v5 + 104) ) /*0x76d1c8*/
     {
       WDTGame::ToggleTeamMode(v5, (ObjectClass *)this, (ObjectClass *)1); /*0x76d1d6*/
@@ -10534,7 +10534,7 @@ void __thiscall WDTGame::ProcessTerritorySelection(int *this, _DWORD *a1, Object
   }
   else
   {
-    WDTSurface::ToggleState(this->q45C, (ObjectClass *)this, 0); /*0x76d245*/
+    WDTSurface::ToggleState(this->q117, (ObjectClass *)this, 0); /*0x76d245*/
     v7 = Count::Get(this + 278); /*0x76d253*/
     v8 = Surface::PixelToIndex(v7, v3); /*0x76d25a*/
     if ( v8 != this->q118 ) /*0x76d265*/
@@ -10591,7 +10591,7 @@ bool __thiscall sub_76D3A0(int *this, _DWORD *a2)
   int v10; // [esp+18h] [ebp-4h]
 
   v10 = 0; /*0x76d3ac*/
-  v3 = Surface::PixelToIndex(this->q45C, a2); /*0x76d3ba*/
+  v3 = Surface::PixelToIndex(this->q117, a2); /*0x76d3ba*/
   if ( v3 != this->q118 ) /*0x76d3c5*/
   {
     this->q118 = v3; /*0x76d3cb*/
@@ -10599,7 +10599,7 @@ bool __thiscall sub_76D3A0(int *this, _DWORD *a2)
     TerritorySelectWDT(this, v4); /*0x76d3e1*/
     ComPtr::Territory_Dtor(&v8); /*0x76d3ea*/
   }
-  FindTerritoryWOL(&v8, this->q45C + 44, this->q118); /*0x76d403*/
+  FindTerritoryWOL(&v8, this->q117 + 44, this->q118); /*0x76d403*/
   ComPtr::Constructor(&v7); /*0x76d40c*/
   v7.vfptr = &vt_rc_ptr_WorldDominationTour_Territory; /*0x76d415*/
   ComPtr::Set(&v7, v9); /*0x76d422*/
@@ -10618,11 +10618,11 @@ _DWORD *__thiscall sub_76D470(int *this, _DWORD *a2)
   _DWORD *result; // eax
   rc_ptr_base v4; // [esp+4h] [ebp-8h] BYREF
 
-  result = (_DWORD *)Surface::PixelToIndex(this->q45C, a2); /*0x76d481*/
+  result = (_DWORD *)Surface::PixelToIndex(this->q117, a2); /*0x76d481*/
   if ( result != (_DWORD *)this->q118 ) /*0x76d48c*/
   {
     this->q118 = (int)result; /*0x76d48e*/
-    FindTerritoryWOL(&v4, this->q45C + 44, (int)result); /*0x76d4a2*/
+    FindTerritoryWOL(&v4, this->q117 + 44, (int)result); /*0x76d4a2*/
     TerritorySelectWDT(this, (ObjectClass *)&v4); /*0x76d4ae*/
     v4.vfptr = &vt_rc_ptr_WorldDominationTour_Territory; /*0x76d4b7*/
     return ComPtr::Release(&v4); /*0x76d4bf*/
@@ -10921,7 +10921,7 @@ bool __thiscall TerritorySelectWDT(int *this, ObjectClass *aP1)
     ComPtr::Set((rc_ptr_base *)this + 281, *(_DWORD *)&aP1->__pad_0[4]); /*0x76db54*/
     if ( !this->q468 ) /*0x76db59*/
     {
-      State = FileClass::GetState((_DWORD *)(this->q04C + 8)); /*0x76db6b*/
+      State = FileClass::GetState((_DWORD *)(this->u8_D + 8)); /*0x76db6b*/
       ScoreText::ShowAlt(this, (CampaignScore *)(State + 20), 0); /*0x76db76*/
       StringCSF = GetStringCSF(g_Str_WDT_TerritorySelectToolTip, 0, g_Str_File_WDTSel_cpp, 1230); /*0x76db8c*/
       WideString::Assign((wchar_t **)&aP1, (CampaignScore *)StringCSF); /*0x76db96*/
@@ -10936,7 +10936,7 @@ bool __thiscall TerritorySelectWDT(int *this, ObjectClass *aP1)
     CellType = WDTClass::GetCellType((_DWORD *)this->q123, *(_DWORD *)(this->q468 + 8)); /*0x76dbf0*/
     v11 = 2; /*0x76dbf2*/
     if ( CellType >= 2 ) /*0x76dbfa*/
-      v11 = *(_DWORD *)(this->q04C + 68) != CellType; /*0x76dc0b*/
+      v11 = *(_DWORD *)(this->u8_D + 68) != CellType; /*0x76dc0b*/
     ScoreScreen::RemoveItem((int)(this + 22), 3, v11, 0, 0, 30); /*0x76dc19*/
     v12 = CellType - 1; /*0x76dc1e*/
     if ( v12 ) /*0x76dc1f*/
@@ -10976,9 +10976,9 @@ bool __thiscall TerritorySelectWDT(int *this, ObjectClass *aP1)
     }
     DeleteAndZero::Alt((void **)v14); /*0x76dcf4*/
     TerritorySelectWDT_Process((_DWORD *)this->q468, 1, (ObjectClass *)this); /*0x76dcff*/
-    if ( Conflict::GetOwnerHouse(*(_DWORD **)(this->q04C + 12)) == this->q114 ) /*0x76dd18*/
+    if ( Conflict::GetOwnerHouse(*(_DWORD **)(this->u8_D + 12)) == this->q114 ) /*0x76dd18*/
     {
-      v19 = this->q04C + 24; /*0x76dd25*/
+      v19 = this->u8_D + 24; /*0x76dd25*/
       v28 = 0; /*0x76dd28*/
       v27.CampaignScore_field_0x20 = v19; /*0x76dd30*/
       v27.CampaignScore_field_0x1C = (int)&vt_VectorCursor_rc_ptr_WorldDominationTour_Conflict_DynamicVectorClass_rc_ptr_WorldDominationTour_Conflict; /*0x76dd34*/
@@ -11158,7 +11158,7 @@ void __thiscall ShowWDTTerritorySelection_Show(ObjectClass *this)
   int *v6; // [esp+Ch] [ebp-8h]
   int v7; // [esp+10h] [ebp-4h]
 
-  v2 = this->q45C; /*0x76e186*/
+  v2 = this->q117; /*0x76e186*/
   if ( !*(_BYTE *)(v2 + 104) ) /*0x76e18c*/
   {
     WDTGame::ToggleTeamMode(v2, this, (ObjectClass *)1); /*0x76e19c*/
@@ -11254,7 +11254,7 @@ int __thiscall Team_Start_76E430(int *this, int a2, ScoreScreen *aP2)
   ActivateScreenWDT((int)&v8, a2); /*0x76e449*/
   if ( !v9 ) /*0x76e454*/
     goto LABEL_6; /*0x76e454*/
-  v4 = WDTClass::CountCellType(v9, *(_DWORD *)(this->q04C + 68)); /*0x76e45d*/
+  v4 = WDTClass::CountCellType(v9, *(_DWORD *)(this->u8_D + 68)); /*0x76e45d*/
   if ( v4 <= this->q10E ) /*0x76e468*/
   {
     v5 = this->q110; /*0x76e46a*/
@@ -11460,11 +11460,11 @@ bool __userpurge Team_Start_76E8B0@<al>(int *this@<ecx>, ScoreScreen aP2)
 
   v2 = *(_DWORD *)aP2.__pad_0; /*0x76e8b4*/
   ActivateScreenWDT((int)&v13.CampaignScore_field_0x20, *(int *)aP2.__pad_0); /*0x76e8cc*/
-  v4 = WDTClass::CountCellType(v14, *(_DWORD *)(this->q04C + 68)); /*0x76e8dc*/
+  v4 = WDTClass::CountCellType(v14, *(_DWORD *)(this->u8_D + 68)); /*0x76e8dc*/
   ScoreScreen_field_0x04 = aP2.ScoreScreen_field_0x04; /*0x76e8e1*/
   v6 = v4; /*0x76e8e5*/
   ActivateScreenWDT((int)&v13.CampaignScore_field_0x18, aP2.ScoreScreen_field_0x04); /*0x76e8f6*/
-  v7 = WDTClass::CountCellType((_DWORD *)v13.CampaignScore_field_0x1C, *(_DWORD *)(this->q04C + 68)); /*0x76e906*/
+  v7 = WDTClass::CountCellType((_DWORD *)v13.CampaignScore_field_0x1C, *(_DWORD *)(this->u8_D + 68)); /*0x76e906*/
   v8 = v7 - v6; /*0x76e90d*/
   if ( v7 - v6 < -1 ) /*0x76e912*/
   {
@@ -11521,12 +11521,12 @@ void __thiscall ScoreText::ShowAlt(int *this, CampaignScore *aP1, int a3)
     Session::RemoveTeam(this, (int (__thiscall ***)(_DWORD, int))this->q47C); /*0x76ea2f*/
     (*(void (__thiscall **)(_DWORD, int, _DWORD, int, _DWORD, int))(**(_DWORD **)&MEMORY[0x87F8E4].__pad_5568[9408] + 8))( /*0x76ea5a*/
       *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9408],
-      this->q45C + 124,
+      this->q117 + 124,
       *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9412],
-      this->q45C + 124,
+      this->q117 + 124,
       0,
       1);
-    Surface::CopyRect(this, (ObjectClass *)(this->q45C + 124)); /*0x76ea69*/
+    Surface::CopyRect(this, (ObjectClass *)(this->q117 + 124)); /*0x76ea69*/
     this->q47C = 0; /*0x76ea6e*/
   }
   v4 = (GameSetup *)aP1; /*0x76ea78*/
@@ -11538,7 +11538,7 @@ void __thiscall ScoreText::ShowAlt(int *this, CampaignScore *aP1, int a3)
       v5 = (MSAnim *)MSBitPrintAnim::Construct( /*0x76eab2*/
                        eax4,
                        (const wchar_t **)&aP1,
-                       (MSAnim *)(this->q45C + 124),
+                       (MSAnim *)(this->q117 + 124),
                        (MPCooperative *)1);
     else
       v5 = 0; /*0x76eab9*/
@@ -11562,7 +11562,7 @@ void __thiscall ScoreText::Show(int *this, ObjectClass *aP1)
   MSAnim aP2; // [esp+14h] [ebp-10h] BYREF
   int v10; // [esp+20h] [ebp-4h]
 
-  v3 = (MSAnim *)(this->q45C + 140); /*0x76eafd*/
+  v3 = (MSAnim *)(this->q117 + 140); /*0x76eafd*/
   aP2 = *v3; /*0x76eb04*/
   v4 = *(_DWORD *)v3[1].__pad_0; /*0x76eb16*/
   v5 = (MSShapeAnim *)this->q120; /*0x76eb19*/
@@ -11770,7 +11770,7 @@ int __stdcall ComPtr::DestroyWrapper(int aP0, ObjectClass *aP1)
 // ==== 0x0076F020  FileClass::GetState  this=FileClass  sig=csp ====
 int __thiscall FileClass::GetState(_DWORD *this)
 {
-  return this->q004; /*0x76f023*/
+  return this->u32_4; /*0x76f023*/
 }
 
 
@@ -11795,7 +11795,7 @@ _DWORD *__thiscall ComPtr_Territory_Dtor(_DWORD *this)
 // ==== 0x0076F070  FileClass::SetState  this=FileClass  sig=csp ====
 int __thiscall FileClass::SetState(_DWORD *this)
 {
-  return this->q004; /*0x76f073*/
+  return this->u32_4; /*0x76f073*/
 }
 
 

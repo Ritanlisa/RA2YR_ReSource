@@ -80,9 +80,9 @@ ScriptTypeClass * ScriptTypeClass::ddtor(char a2)
     int v3;
     void **v5;
     *(void**)this = vt_ScriptTypeClass;
-    *(this + 1) = (unsigned int)vt_ScriptTypeClass;
-    *(this + 2) = (unsigned int)vt_ScriptTypeClass;
-    *(this + 3) = &vt_ScriptTypeClass;
+    this->vtable2 = (unsigned int)vt_ScriptTypeClass;
+    this->vtable3 = (unsigned int)vt_ScriptTypeClass;
+    this->vtable4 = &vt_ScriptTypeClass;
     AbstractClass::AnnounceExpiredPointer(this, 1);
     v5 = this;
     v3 = (*(int (__thiscall **)(int *, void ***))(DataGlobal_8B41C8 + 16))(&DataGlobal_8B41C8, &v5);

@@ -23,6 +23,7 @@ unsigned int * MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass(int 
   }
   return this; /*0x5d8a1d*/
 }
+}
 
 // 0x5D7F20
 MultiplayerGameMode * MultiplayerGameMode::QueryInterface(char a2)
@@ -40,7 +41,7 @@ MultiplayerGameMode * MultiplayerGameMode::QueryInterface(char a2)
     (**v4)(v4, 1);
   }
     (*(void (__thiscall **)(char *))(this->q008 + 12))(this + 8);
-    v5 = (void (__thiscall ***)(int, int))*((int *)(this) + 14);
+    v5 = (void (__thiscall ***)(int, int))this->q038;
     if ( v5 )
     (**v5)(v5, 1);
     DeleteAndZero((void **)(this) + 12);
@@ -49,12 +50,12 @@ MultiplayerGameMode * MultiplayerGameMode::QueryInterface(char a2)
     DeleteAndZero::Alt((void **)(this) + 8);
     v6 = (void *)this->q00C;
     this->q008 = &vt_VectorClass_MultiplayerTeam;
-    if ( v6 && *(this + 21) )
+    if ( v6 && *(&this->u32_81) )
   {
     __3_YAXPAX_Z(v6);
     this->q00C = 0;
   }
-    *(this + 21) = 0;
+    *(&this->u32_81) = 0;
     this->q010 = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);

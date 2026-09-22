@@ -67,7 +67,7 @@ LABEL_44:
       a6 = -1; /*0x71e975*/
       if ( DataGlobal_A8EB10 - 1 < 0 ) /*0x71e97b*/
         goto LABEL_8; /*0x71e97b*/
-      const char * v11 = (const char *)(this + 14); /*0x71e982*/
+      const char * v11 = (const char *)(&this->vtable24); /*0x71e982*/
       char * v12 = (char *)DataGlobal_A8EB04 + 4 * v10; /*0x71e985*/
       while ( strcmp((const char *)(*(_DWORD *)v12 + 36), v11) ) /*0x71e9bb*/
       {
@@ -108,7 +108,7 @@ LABEL_8:
       a6 = -1; /*0x71ea3a*/
       if ( DataGlobal_A8EB10 - 1 < 0 ) /*0x71ea40*/
         goto LABEL_22; /*0x71ea40*/
-      const char * v20 = (const char *)(this + 14); /*0x71ea47*/
+      const char * v20 = (const char *)(&this->vtable24); /*0x71ea47*/
       char * v21 = (char *)DataGlobal_A8EB04 + 4 * v19; /*0x71ea4a*/
       while ( strcmp((const char *)(*(_DWORD *)v21 + 36), v20) ) /*0x71ea80*/
       {
@@ -368,7 +368,7 @@ LABEL_112:
         while ( 1 ) /*0x71eebe*/
         {
           int v43 = *(_DWORD *)v42; /*0x71eebe*/
-          if ( *(_DWORD *)(*(_DWORD *)v42 + 36) == this->TEventClass_field_30 && !*(_DWORD *)(v43 + 84) && *(_BYTE *)(v43 + 130) ) /*0x71eecc*/
+          if ( *(_DWORD *)(v42->q024 == this->TEventClass_field_30 && !*(_DWORD *)(v43 + 84) && *(_BYTE *)(v43 + 130) ) /*0x71eecc*/
             break; /*0x71eecc*/
           ++v41; /*0x71eed6*/
           v42 += 4; /*0x71eed7*/
@@ -421,6 +421,7 @@ LABEL_122:
   }
 }
 } // namespace gamemd
+}
 
 // 0x71F390
 namespace gamemd {
@@ -522,6 +523,7 @@ int TEventClass::PrepareSaveToINI(const char * a2)
   return wsprintfA((LPSTR)&a2[strlen(a2)], v6, v7, v8, v9); /*0x71f441*/
 }
 } // namespace gamemd
+}
 
 // 0x71F800
 namespace gamemd {
@@ -541,6 +543,7 @@ int TEventClass::CheckConditions(int a2, int a3)
   return result; /*0x71f81d*/
 }
 } // namespace gamemd
+}
 
 // 0x71FA80
 namespace gamemd {
@@ -593,6 +596,7 @@ void * TEventClass::Fire(char a2)
   return (TEventClass *)this; /*0x71fb9a*/
 }
 } // namespace gamemd
+}
 
 // 0x71F820
 namespace gamemd {

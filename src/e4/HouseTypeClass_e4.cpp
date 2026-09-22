@@ -23,6 +23,7 @@ unsigned int * HouseTypeClass::loadVeteranWeapons(HouseTypeClass * aP1)
   return this; /*0x511698*/
 }
 } // namespace gamemd
+}
 
 // 0x5116A0
 namespace gamemd {
@@ -48,34 +49,35 @@ AbstractClass * * HouseTypeClass::Dtor()
   }
   AbstractTypeClass *v3 = this->q188; /*0x511710*/
   this->q184 = &vt_VectorClass_AircraftTypeClass_const; /*0x51171a*/
-  if ( v3 && *(_BYTE *)(this + 401) ) /*0x511726*/
+  if ( v3 && this->q191 ) /*0x511726*/
   {
     __3_YAXPAX_Z(v3); /*0x51172f*/
     this->q188 = 0; /*0x511737*/
   }
-  *(_BYTE *)(this + 401) = 0; /*0x51173d*/
+  this->q191 = 0; /*0x51173d*/
   this->q18C = 0; /*0x511743*/
   AbstractClass *v4 = this->q16C; /*0x511749*/
   this->q168 = &vt_VectorClass_UnitTypeClass_const; /*0x51174f*/
-  if ( v4 && *(_BYTE *)(this + 373) ) /*0x51175d*/
+  if ( v4 && this->u8_175 ) /*0x51175d*/
   {
     __3_YAXPAX_Z(v4); /*0x511766*/
     this->q16C = 0; /*0x51176e*/
   }
-  *(_BYTE *)(this + 373) = 0; /*0x511774*/
+  this->u8_175 = 0; /*0x511774*/
   this->q170 = 0; /*0x51177a*/
   AbstractClass *v5 = this->q150; /*0x511780*/
   this->veteranInfantry = &vt_VectorClass_InfantryTypeClass_const; /*0x511786*/
-  if ( v5 && *(_BYTE *)(this + 345) ) /*0x511794*/
+  if ( v5 && this->u8_159 ) /*0x511794*/
   {
     __3_YAXPAX_Z(v5); /*0x51179d*/
     this->veteranInfantryCount = 0; /*0x5117a5*/
   }
-  *(_BYTE *)(this + 345) = 0; /*0x5117ad*/
+  this->u8_159 = 0; /*0x5117ad*/
   this->veteranUnits = 0; /*0x5117b3*/
   return AbstractTypeClass::Dtor((_DWORD *)this); /*0x5117be*/
 }
 } // namespace gamemd
+}
 
 // 0x511850
 namespace gamemd {
@@ -115,21 +117,21 @@ void* HouseTypeClass::LoadFromINI(unsigned char *** aP1)
     return 0; /*0x51215c*/
   INIClass::GetString( /*0x511892*/
     aP1,
-    (INIClass *)(this + 36),
+    (INIClass *)(&this->vtable46),
     &unk_8254AC,
     (INIClass *)&DataGlobal_87F8E4[42624],
     (INIClass *)&aP4[34],
     4);
   if ( strlen(&aP4[34]) ) /*0x51189b*/
   {
-    strcpy((char *)(this + 416), &aP4[34]); /*0x5118c3*/
+    strcpy((char *)(&this->veteranInfantry6), &aP4[34]); /*0x5118c3*/
     v3 = (CCINIClass *)aP1; /*0x5118cc*/
   }
   INIClass::GetString( /*0x5118e2*/
     (unsigned __int8 ***)v3,
-    (INIClass *)(this + 36),
+    (INIClass *)(&this->vtable46),
     &unk_82549C,
-    (INIClass *)(this + 36),
+    (INIClass *)(&this->vtable46),
     (INIClass *)&aP4[34],
     25);
   if ( &aP4 == (INIClass *)-34 ) /*0x5118ed*/
@@ -141,22 +143,22 @@ void* HouseTypeClass::LoadFromINI(unsigned char *** aP1)
     strncpy(Destination, &aP4[34], 0x18u); /*0x511901*/
     LOBYTE(v58) = 0; /*0x511909*/
   }
-  if ( Destination != (char *)(this + 152) ) /*0x51191a*/
+  if ( Destination != (char *)(&this->m_zero_3C2) ) /*0x51191a*/
   {
-    qmemcpy((void *)(this + 152), Destination, 0x18u); /*0x511925*/
+    qmemcpy((void *)(&this->m_zero_3C2), Destination, 0x18u); /*0x511925*/
     this->veteranUnitsCount = v58; /*0x511927*/
     v3 = (CCINIClass *)aP1; /*0x511928*/
   }
   this->colorSchemeIndex = BuildingTypeClass::FindAnimByName( /*0x511942*/
                               (unsigned __int8 ***)v3,
-                              (unsigned __int8 *)(this + 36),
+                              (unsigned __int8 *)(&this->vtable46),
                               (unsigned __int8 *)&stru_81B138,
                               this->colorSchemeIndex);
   aP4[34] = this->q1A4; /*0x51195a*/
   aP4[35] = 0; /*0x511966*/
   INIClass::GetString( /*0x51196b*/
     (unsigned __int8 ***)v3,
-    (INIClass *)(this + 36),
+    (INIClass *)(&this->vtable46),
     &unk_825494,
     (INIClass *)&aP4[34],
     &aP4,
@@ -164,18 +166,18 @@ void* HouseTypeClass::LoadFromINI(unsigned char *** aP1)
   this->q1A4 = aP4[0]; /*0x511974*/
   Double_Overwrite = INIClass::ReadDouble_Overwrite( /*0x511990*/
                        (int)v3,
-                       (INIClass *)(this + 36),
+                       (INIClass *)(&this->vtable46),
                        aFirepower,
                        (INIClass *)this->firepowerMult);
   aP3 = this->q0D0; /*0x51199b*/
   this->firepowerMult = Double_Overwrite; /*0x5119a1*/
-  double v7 = INIClass::ReadDouble_Overwrite((int)v3, (INIClass *)(this + 36), &unk_825488, aP3); /*0x5119b1*/
+  double v7 = INIClass::ReadDouble_Overwrite((int)v3, (INIClass *)(&this->vtable46), &unk_825488, aP3); /*0x5119b1*/
   v8 = this->q0D8; /*0x5119bc*/
   this->q0D0 = v7; /*0x5119c2*/
   double v9; // st7
   v9 = INIClass::ReadDouble_Overwrite( /*0x5119d2*/
          (int)v3,
-         (INIClass *)(this + 36),
+         (INIClass *)(&this->vtable46),
          (unsigned __int8 *)&stru_825430.CCINIClass_field_4C,
          v8);
   v10 = this->q0E0; /*0x5119dd*/
@@ -183,146 +185,146 @@ void* HouseTypeClass::LoadFromINI(unsigned char *** aP1)
   double v11; // st7
   v11 = INIClass::ReadDouble_Overwrite( /*0x5119f3*/
           (int)v3,
-          (INIClass *)(this + 36),
+          (INIClass *)(&this->vtable46),
           (unsigned __int8 *)&g_INI_Key_Speed.headNode[1],
           v10);
   v12 = this->q0E8; /*0x5119fe*/
   this->q0E0 = v11; /*0x511a04*/
-  double v13 = INIClass::ReadDouble_Overwrite((int)v3, (INIClass *)(this + 36), (unsigned __int8 *)stru_825430[72], v12); /*0x511a14*/
+  double v13 = INIClass::ReadDouble_Overwrite((int)v3, (INIClass *)(&this->vtable46), (unsigned __int8 *)stru_825430[72], v12); /*0x511a14*/
   v14 = this->q0F0; /*0x511a1f*/
   this->q0E8 = v13; /*0x511a25*/
-  double v15 = INIClass::ReadDouble_Overwrite((int)v3, (INIClass *)(this + 36), (unsigned __int8 *)&stru_825430.ownsFile, v14); /*0x511a35*/
+  double v15 = INIClass::ReadDouble_Overwrite((int)v3, (INIClass *)(&this->vtable46), (unsigned __int8 *)&stru_825430.ownsFile, v14); /*0x511a35*/
   v16 = this->q0F8; /*0x511a40*/
   this->q0F0 = v15; /*0x511a46*/
   double v17; // st7
   v17 = INIClass::ReadDouble_Overwrite( /*0x511a56*/
           (int)v3,
-          (INIClass *)(this + 36),
+          (INIClass *)(&this->vtable46),
           (unsigned __int8 *)&stru_825430.needsSave_flag,
           v16);
   char v18 = this->q1A5; /*0x511a5b*/
   this->q0F8 = v17; /*0x511a61*/
   Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x511a70*/
                      (int)v3,
-                     (unsigned __int8 *)(this + 36),
+                     (unsigned __int8 *)(&this->vtable46),
                      (CCINIClass *)&stru_825430[40],
                      v18);
   aP3_4 = this->q1A6; /*0x511a7d*/
   this->q1A5 = Bool_Overwrite; /*0x511a84*/
   this->q1A6 = INIClass::ReadBool_Overwrite( /*0x511a8f*/
                              (int)v3,
-                             (unsigned __int8 *)(this + 36),
+                             (unsigned __int8 *)(&this->vtable46),
                              (CCINIClass *)&stru_825430.sectionHead[1],
                              aP3_4);
   char v20; // al
   v20 = INIClass::ReadBool_Overwrite( /*0x511aa4*/
           (int)v3,
-          (unsigned __int8 *)(this + 36),
+          (unsigned __int8 *)(&this->vtable46),
           (CCINIClass *)&stru_825430.headNode[1],
           this->q1A7);
   FlashData *v21 = this->q1A8; /*0x511aa9*/
   this->q1A7 = v20; /*0x511aaf*/
-  char v22 = INIClass::ReadBool_Overwrite((int)v3, (unsigned __int8 *)(this + 36), &stru_825430, v21); /*0x511abe*/
+  char v22 = INIClass::ReadBool_Overwrite((int)v3, (unsigned __int8 *)(&this->vtable46), &stru_825430, v21); /*0x511abe*/
   double v23 = this->q100; /*0x511ac3*/
   this->q1A8 = v22; /*0x511ace*/
   this->q100 = INIClass::ReadDouble_Overwrite( /*0x511ae2*/
                              (int)v3,
-                             (INIClass *)(this + 36),
+                             (INIClass *)(&this->vtable46),
                              aArmorinfantrym,
                              (INIClass *)LODWORD(v23));
   this->q104 = INIClass::ReadDouble_Overwrite( /*0x511b01*/
                              (int)v3,
-                             (INIClass *)(this + 36),
+                             (INIClass *)(&this->vtable46),
                              aArmorunitsmult,
                              (INIClass *)COERCE_UNSIGNED_INT64(this->q104));
   this->q108 = INIClass::ReadDouble_Overwrite( /*0x511b20*/
                              (int)v3,
-                             (INIClass *)(this + 36),
+                             (INIClass *)(&this->vtable46),
                              aArmoraircraftm,
                              (INIClass *)COERCE_UNSIGNED_INT64(this->q108));
   this->q10C = INIClass::ReadDouble_Overwrite( /*0x511b3f*/
                              (int)v3,
-                             (INIClass *)(this + 36),
+                             (INIClass *)(&this->vtable46),
                              aArmorbuildings,
                              (INIClass *)COERCE_UNSIGNED_INT64(this->q10C));
   this->q110 = INIClass::ReadDouble_Overwrite( /*0x511b5e*/
                              (int)v3,
-                             (INIClass *)(this + 36),
+                             (INIClass *)(&this->vtable46),
                              aArmordefensesm,
                              (INIClass *)COERCE_UNSIGNED_INT64(this->q110));
   this->q114 = INIClass::ReadDouble_Overwrite( /*0x511b7d*/
                              (int)v3,
-                             (INIClass *)(this + 36),
+                             (INIClass *)(&this->vtable46),
                              aCostinfantrymu,
                              (INIClass *)COERCE_UNSIGNED_INT64(this->q114));
   this->q118 = INIClass::ReadDouble_Overwrite( /*0x511b9c*/
                              (int)v3,
-                             (INIClass *)(this + 36),
+                             (INIClass *)(&this->vtable46),
                              aCostunitsmult,
                              (INIClass *)COERCE_UNSIGNED_INT64(this->q118));
   this->q11C = INIClass::ReadDouble_Overwrite( /*0x511bbb*/
                              (int)v3,
-                             (INIClass *)(this + 36),
+                             (INIClass *)(&this->vtable46),
                              aCostaircraftmu,
                              (INIClass *)COERCE_UNSIGNED_INT64(this->q11C));
   this->q120 = INIClass::ReadDouble_Overwrite( /*0x511bda*/
                              (int)v3,
-                             (INIClass *)(this + 36),
+                             (INIClass *)(&this->vtable46),
                              aCostbuildingsm,
                              (INIClass *)COERCE_UNSIGNED_INT64(this->q120));
   this->q124 = INIClass::ReadDouble_Overwrite( /*0x511bf9*/
                              (int)v3,
-                             (INIClass *)(this + 36),
+                             (INIClass *)(&this->vtable46),
                              aCostdefensesmu,
                              (INIClass *)COERCE_UNSIGNED_INT64(this->q124));
   this->q128 = INIClass::ReadDouble_Overwrite( /*0x511c18*/
                              (int)v3,
-                             (INIClass *)(this + 36),
+                             (INIClass *)(&this->vtable46),
                              aSpeedinfantrym,
                              (INIClass *)COERCE_UNSIGNED_INT64(this->q128));
   this->q12C = INIClass::ReadDouble_Overwrite( /*0x511c37*/
                              (int)v3,
-                             (INIClass *)(this + 36),
+                             (INIClass *)(&this->vtable46),
                              aSpeedunitsmult,
                              (INIClass *)COERCE_UNSIGNED_INT64(this->q12C));
   this->q130 = INIClass::ReadDouble_Overwrite( /*0x511c56*/
                              (int)v3,
-                             (INIClass *)(this + 36),
+                             (INIClass *)(&this->vtable46),
                              aSpeedaircraftm,
                              (INIClass *)COERCE_UNSIGNED_INT64(this->q130));
   this->q134 = INIClass::ReadDouble_Overwrite( /*0x511c75*/
                              (int)v3,
-                             (INIClass *)(this + 36),
+                             (INIClass *)(&this->vtable46),
                              aBuildtimeinfan,
                              (INIClass *)COERCE_UNSIGNED_INT64(this->q134));
   this->q138 = INIClass::ReadDouble_Overwrite( /*0x511c94*/
                              (int)v3,
-                             (INIClass *)(this + 36),
+                             (INIClass *)(&this->vtable46),
                              aBuildtimeunits,
                              (INIClass *)COERCE_UNSIGNED_INT64(this->q138));
   this->q13C = INIClass::ReadDouble_Overwrite( /*0x511cb3*/
                              (int)v3,
-                             (INIClass *)(this + 36),
+                             (INIClass *)(&this->vtable46),
                              aBuildtimeaircr,
                              (INIClass *)COERCE_UNSIGNED_INT64(this->q13C));
   this->q140 = INIClass::ReadDouble_Overwrite( /*0x511cd2*/
                              (int)v3,
-                             (INIClass *)(this + 36),
+                             (INIClass *)(&this->vtable46),
                              aBuildtimebuild,
                              (INIClass *)COERCE_UNSIGNED_INT64(this->q140));
   this->q144 = INIClass::ReadDouble_Overwrite( /*0x511cf1*/
                              (int)v3,
-                             (INIClass *)(this + 36),
+                             (INIClass *)(&this->vtable46),
                              aBuildtimedefen,
                              (INIClass *)COERCE_UNSIGNED_INT64(this->q144));
   this->q148 = INIClass::ReadDouble_Overwrite( /*0x511d10*/
                              (int)v3,
-                             (INIClass *)(this + 36),
+                             (INIClass *)(&this->vtable46),
                              aIncomemult,
                              (INIClass *)COERCE_UNSIGNED_INT64(this->q148));
   if ( INIClass::GetString( /*0x511d2d*/
          (unsigned __int8 ***)v3,
-         (INIClass *)(this + 36),
+         (INIClass *)(&this->vtable46),
          aVeteraninfantr,
          (INIClass *)&DataGlobal_87F8E4[42624],
          String,
@@ -345,10 +347,10 @@ void* HouseTypeClass::LoadFromINI(unsigned char *** aP1)
   }
   else
   {
-    HouseTypeClass::readAllowedUnits(Destination, (InfantryTypeClass *)(this + 332)); /*0x511dcb*/
+    HouseTypeClass::readAllowedUnits(Destination, (InfantryTypeClass *)(&this->currentSpeed_units_mult2)); /*0x511dcb*/
     *(_DWORD *)Destination = &vt_TypeList_InfantryTypeClass_const; /*0x511dd0*/
   }
-  HouseTypeClass::readStartInfantry((_DWORD *)(this + 332), (InfantryTypeClass *)Destination); /*0x511de5*/
+  HouseTypeClass::readStartInfantry((_DWORD *)(&this->currentSpeed_units_mult2), (InfantryTypeClass *)Destination); /*0x511de5*/
   int v25 = *(_DWORD *)&Destination[16]; /*0x511dee*/
   int v26 = v58; /*0x511df2*/
   this->veteranAircraftCount = *(_DWORD *)&Destination[20]; /*0x511df6*/
@@ -360,7 +362,7 @@ void* HouseTypeClass::LoadFromINI(unsigned char *** aP1)
     __3_YAXPAX_Z(v27); /*0x511e18*/
   if ( INIClass::GetString( /*0x511e3a*/
          (unsigned __int8 ***)v3,
-         (INIClass *)(this + 36),
+         (INIClass *)(&this->vtable46),
          aVeteranunits,
          (INIClass *)&DataGlobal_87F8E4[42624],
          String,
@@ -392,21 +394,21 @@ void* HouseTypeClass::LoadFromINI(unsigned char *** aP1)
   }
   else
   {
-    TypeList::CopyConstructor(&aP4[2], (VectorClass *)(this + 360)); /*0x511f09*/
+    TypeList::CopyConstructor(&aP4[2], (VectorClass *)(&this->buildtimeUnitsMult0)); /*0x511f09*/
   }
-  VectorClass::CopyConstructor((_DWORD *)(this + 360), (InfantryTypeClass *)&aP4[2]); /*0x511f1b*/
+  VectorClass::CopyConstructor((_DWORD *)(&this->buildtimeUnitsMult0), (InfantryTypeClass *)&aP4[2]); /*0x511f1b*/
   int v31 = *(int *)((char *)aP4.sectionHead + 2); /*0x511f24*/
   int v32 = *(int *)((char *)&aP4.sectionHead[2] + 2); /*0x511f28*/
-  *(_DWORD *)(this + 380) = *(int *)((char *)&aP4.sectionHead[1] + 2); /*0x511f2c*/
+  this->u32_17C = *(int *)((char *)&aP4.sectionHead[1] + 2); /*0x511f2c*/
   v48 = *(CCINIClass **)((char *)aP4.headNode + 2); /*0x511f2f*/
-  *(_DWORD *)(this + 376) = v31; /*0x511f33*/
+  this->u32_178 = v31; /*0x511f33*/
   this->armorAircraftMult = v32; /*0x511f38*/
   *(_DWORD *)&aP4[2] = &vt_VectorClass_UnitTypeClass_const; /*0x511f3b*/
   if ( v48 && HIBYTE(aP4.headNode[2]) ) /*0x511f4b*/
     __3_YAXPAX_Z(v48); /*0x511f4e*/
   if ( INIClass::GetString( /*0x511f70*/
          (unsigned __int8 ***)v3,
-         (INIClass *)(this + 36),
+         (INIClass *)(&this->vtable46),
          aVeteranaircraf,
          (INIClass *)&DataGlobal_87F8E4[42624],
          String,
@@ -440,22 +442,22 @@ void* HouseTypeClass::LoadFromINI(unsigned char *** aP1)
   }
   else
   {
-    HouseTypeClass::readParaDropTypes(&aP4[2], (VectorClass *)(this + 388)); /*0x51203f*/
+    HouseTypeClass::readParaDropTypes(&aP4[2], (VectorClass *)(&this->buildtimeBuildingsMult8)); /*0x51203f*/
   }
-  HouseTypeClass::readBaseDefense((_DWORD *)(this + 388), (VectorClass *)&aP4[2]); /*0x512051*/
+  HouseTypeClass::readBaseDefense((_DWORD *)(&this->buildtimeBuildingsMult8), (VectorClass *)&aP4[2]); /*0x512051*/
   int v37 = *(int *)((char *)aP4.sectionHead + 2); /*0x51205a*/
   int v38 = *(int *)((char *)&aP4.sectionHead[2] + 2); /*0x51205e*/
   this->q198 = *(int *)((char *)&aP4.sectionHead[1] + 2); /*0x512062*/
   v54 = *(CCINIClass **)((char *)aP4.headNode + 2); /*0x512065*/
   this->q194 = v37; /*0x512069*/
-  *(_DWORD *)(this + 412) = v38; /*0x51206e*/
+  this->u32_19C = v38; /*0x51206e*/
   *(_DWORD *)&aP4[2] = &vt_VectorClass_AircraftTypeClass_const; /*0x512071*/
   if ( v54 && HIBYTE(aP4.headNode[2]) ) /*0x512081*/
     __3_YAXPAX_Z(v54); /*0x512084*/
   v55 = this->suffix_4; /*0x51208c*/
   CountryData = (CCINIClass *)HouseTypeClass::loadCountryData( /*0x51209e*/
                                 (unsigned __int8 ***)v3,
-                                (unsigned __int8 *)(this + 36),
+                                (unsigned __int8 *)(&this->vtable46),
                                 (unsigned __int8 *)&stru_8172FC.unknown38,
                                 (int)v55);
   this->sideIndex = CountryData; /*0x5120a5*/
@@ -501,6 +503,7 @@ void* HouseTypeClass::LoadFromINI(unsigned char *** aP1)
   return 1; /*0x512151*/
 }
 } // namespace gamemd
+}
 
 // 0x512170
 namespace gamemd {
@@ -513,13 +516,13 @@ AbstractClass * * HouseTypeClass::ProcessPower(int * a2)
   Power::TimerProcess(this->sideIndex); /*0x512196*/
   Power::TimerProcess(this->colorSchemeIndex); /*0x5121a4*/
   Checksummer::Add_double(this->firepowerMult, this->q0CC); /*0x5121b9*/
-  Checksummer::Add_double(this->groundspeedMult, *(_DWORD *)(this + 212)); /*0x5121ce*/
+  Checksummer::Add_double(this->groundspeedMult, this->u32_D4); /*0x5121ce*/
   Checksummer::Add_double(this->airspeedMult, this->q0DC); /*0x5121e3*/
   Checksummer::Add_double(this->armorMult, this->q0E4); /*0x5121f8*/
   Checksummer::Add_double(this->rofMult, this->q0EC); /*0x51220d*/
   Checksummer::Add_double(this->costMult, this->q0F4); /*0x512222*/
   Checksummer::Add_double(this->buildtimeMult, this->q0FC); /*0x512237*/
-  Checksummer::Add_Buffer((unsigned int *)a2, (unsigned __int8 *)(this + 416), strlen((const char *)(this + 416))); /*0x512252*/
+  Checksummer::Add_Buffer((unsigned int *)a2, (unsigned __int8 *)(&this->veteranInfantry6), strlen((const char *)(&this->veteranInfantry6))); /*0x512252*/
   int v3; // edx
   LOBYTE(v3) = this->q1A4; /*0x512257*/
   int v4 = Power::FinalizeDrain(a2, v3); /*0x512260*/
@@ -527,6 +530,7 @@ AbstractClass * * HouseTypeClass::ProcessPower(int * a2)
   return Power::FlagProcess(a2, v4); /*0x512273*/
 }
 } // namespace gamemd
+}
 
 // 0x512290
 namespace gamemd {
@@ -593,6 +597,7 @@ int HouseTypeClass::SaveLoad_Prefix(unsigned int * i, int a2)
   return result; /*0x51246d*/
 }
 } // namespace gamemd
+}
 
 // 0x512480
 namespace gamemd {
@@ -627,6 +632,7 @@ void HouseTypeClass_SaveLoad_Prefix_0()
   return result; /*0x51255c*/
 }
 } // namespace gamemd
+}
 
 // 0x513370
 namespace gamemd {
@@ -663,6 +669,7 @@ unsigned int * HouseTypeClass::readBaseDefense(VectorClass * aP1)
   return this; /*0x5133c5*/
 }
 } // namespace gamemd
+}
 
 // 0x67B8F0
 namespace gamemd {
@@ -766,6 +773,7 @@ void * HouseTypeClass::ReadCountryName(int a1, unsigned char *** edx0, INIClass 
   return (VectorClass *)a1; /*0x67ba22*/
 }
 } // namespace gamemd
+}
 
 // 0x4756F0
 namespace gamemd {
@@ -926,9 +934,9 @@ HouseTypeClass * HouseTypeClass::Destructor(char a2)
     void *v6;
     void **v8;
     *(void**)this = vt_HouseTypeClass;
-    *(this + 1) = (unsigned int)vt_HouseTypeClass;
-    *(this + 2) = (unsigned int)vt_HouseTypeClass;
-    *(this + 3) = &vt_HouseTypeClass;
+    this->vtable2 = (unsigned int)vt_HouseTypeClass;
+    this->vtable3 = (unsigned int)vt_HouseTypeClass;
+    this->vtable4 = &vt_HouseTypeClass;
     AbstractClass::AnnounceExpiredPointer(this, 1);
     v8 = this;
     v3 = (*(int (__thiscall **)(int *, void ***))(DataGlobal_A83C98 + 16))(&DataGlobal_A83C98, &v8);
@@ -941,33 +949,33 @@ HouseTypeClass * HouseTypeClass::Destructor(char a2)
     }
     while ( v3 < g_SuperWeaponTypeArray );
   }
-    v4 = (UnitTypeClass *)*(this + 98);
-    *(this + 97) = &vt_VectorClass_AircraftTypeClass_const;
-    if ( v4 && *((char *)(this) + 401) )
+    v4 = (UnitTypeClass *)*(&this->id8);
+    *(&this->id7) = &vt_VectorClass_AircraftTypeClass_const;
+    if ( v4 && this->q191 )
   {
     __3_YAXPAX_Z(v4);
-    *(this + 98) = 0;
+    *(&this->id8) = 0;
   }
-    *((char *)(this) + 401) = 0;
-    *(this + 99) = 0;
-    v5 = *(this + 91);
-    *(this + 90) = &vt_VectorClass_UnitTypeClass_const;
-    if ( v5 && *((char *)(this) + 373) )
+    this->q191 = 0;
+    *(&this->id9) = 0;
+    v5 = *(&this->id1);
+    *(&this->id0) = &vt_VectorClass_UnitTypeClass_const;
+    if ( v5 && this->u8_175 )
   {
     __3_YAXPAX_Z(v5);
-    *(this + 91) = 0;
+    *(&this->id1) = 0;
   }
-    *((char *)(this) + 373) = 0;
-    *(this + 92) = 0;
-    v6 = *(this + 84);
-    *(this + 83) = &vt_VectorClass_InfantryTypeClass_const;
-    if ( v6 && *((char *)(this) + 345) )
+    this->u8_175 = 0;
+    *(&this->id2) = 0;
+    v6 = *(&this->NeedsSaveOrLink4);
+    *(&this->NeedsSaveOrLink3) = &vt_VectorClass_InfantryTypeClass_const;
+    if ( v6 && this->u8_159 )
   {
     __3_YAXPAX_Z(v6);
-    *(this + 84) = 0;
+    *(&this->NeedsSaveOrLink4) = 0;
   }
-    *((char *)(this) + 345) = 0;
-    *(this + 85) = 0;
+    this->u8_159 = 0;
+    *(&this->NeedsSaveOrLink5) = 0;
     AbstractTypeClass::Dtor(this);
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
@@ -1083,15 +1091,15 @@ TypeList * HouseTypeClass_36::QueryInterface(char a2)
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_UnitTypeClass_const;
-    if ( v3 && *((char *)(this) + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
+    this->IsAllocated = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (TypeList *)this;
@@ -1105,15 +1113,15 @@ TypeList * HouseTypeClass_28::QueryInterface(char a2)
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_AircraftTypeClass_const;
-    if ( v3 && *((char *)(this) + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
+    this->IsAllocated = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (TypeList *)this;
@@ -1127,15 +1135,15 @@ VectorClass * HouseTypeClass_36::Constructor(char a2)
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_AircraftTypeClass_const;
-    if ( v3 && *((char *)(this) + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
+    this->IsAllocated = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (VectorClass *)this;
@@ -1680,3 +1688,4 @@ int HouseTypeClass::Find()
   return v1; /*0x6a4702*/
 }
 } // namespace gamemd
+}

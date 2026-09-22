@@ -56,6 +56,7 @@ unsigned int * AnimTypeClass::Construct2(ObjectClass * aP1)
   return this; /*0x41e473*/
 }
 } // namespace gamemd
+}
 
 // 0x427530
 namespace gamemd {
@@ -197,6 +198,7 @@ LABEL_17:
   return this; /*0x42784a*/
 }
 } // namespace gamemd
+}
 
 // 0x427B50
 namespace gamemd {
@@ -260,6 +262,7 @@ void* AnimTypeClass::GetWarhead(int a2)
   return v3; /*0x427c80*/
 }
 } // namespace gamemd
+}
 
 // 0x427D00
 namespace gamemd {
@@ -867,6 +870,7 @@ LABEL_70:
   return 1;
 }
 } // namespace gamemd
+}
 
 // 0x428800
 namespace gamemd {
@@ -918,6 +922,7 @@ ScenarioClass * * AnimTypeClass::SaveLoad_Prefix(int a1, int a2)
   return result; /*0x42892b*/
 }
 } // namespace gamemd
+}
 
 // 0x4289D0
 namespace gamemd {
@@ -977,6 +982,7 @@ int AnimTypeClass::PowerDrainUpdate(int * a2)
   return Power::FlagProcess(a2, v14); /*0x428b6d*/
 }
 } // namespace gamemd
+}
 
 // 0x428B80
 namespace gamemd {
@@ -1003,6 +1009,7 @@ LABEL_6:
   return *(AnimTypeClass **)(*(_DWORD *)&stru_89E138[90140] + 4 * v2); /*0x428bef*/
 }
 } // namespace gamemd
+}
 
 // 0x428C30
 namespace gamemd {
@@ -1066,6 +1073,7 @@ int AnimTypeClass::GetDamage()
   return result; /*0x428dd4*/
 }
 } // namespace gamemd
+}
 
 // 0x428EA0
 namespace gamemd {
@@ -1123,6 +1131,7 @@ int AnimTypeClass::LookupByName()
   return v2; /*0x48e07c*/
 }
 } // namespace gamemd
+}
 
 // 0x427A80
 namespace gamemd {

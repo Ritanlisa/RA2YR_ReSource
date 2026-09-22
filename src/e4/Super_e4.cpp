@@ -16,3 +16,4 @@ int Super::GetDefaultTimer()
   return result; /*0x6cc271*/
 }
 } // namespace gamemd
+}

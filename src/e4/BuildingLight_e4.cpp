@@ -311,3 +311,4 @@ double BuildingLight::CalcIntensity(double a1)
 }
 }
 } // namespace gamemd
+}

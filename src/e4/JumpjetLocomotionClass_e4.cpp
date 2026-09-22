@@ -268,12 +268,14 @@ LABEL_43:
     return v17; /*0x43a09f*/
   return result; /*0x43a0a1*/
 }
+}
 
 // 0x43A130
 void JumpjetLocomotionClass::ComputeVectorLengthMetric_0()
 {
 {
   Math::Sqrt(*this * *this + this->vtable2 * this->vtable2 + this->Owner * this->Owner); /*0x43a154*/
+}
 }
 
 // 0x4848B0
@@ -339,6 +341,7 @@ int JumpjetLocomotionClass::AdjustClimbFacing(unsigned int * a2)
   }
   return result; /*0x484a47*/
 }
+}
 
 // 0x485080
 AbstractClass * * JumpjetLocomotionClass::FindClosestOccupiableCell()
@@ -373,6 +376,7 @@ LABEL_5:
       inited += 85; /*0x4850ef*/
     return inited; /*0x4850f3*/
   }
+}
 }
 
 // 0x4AFF60
@@ -585,6 +589,7 @@ LABEL_52:
   qmemcpy(a2, v51, 0x30u); /*0x4b03fa*/
   return a2; /*0x4b03fc*/
 }
+}
 
 // 0x4B0C40
 int JumpjetLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, long long a4)
@@ -605,7 +610,7 @@ int JumpjetLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, l
       *v6 = g_DDraw_ClipRect; /*0x4b0cb6*/
       *(_DWORD *)(a1 + 64) = DataGlobal_8A0794; /*0x4b0cbd*/
       TechnoClass *v7 = HIDWORD(DataGlobal_8A0794); /*0x4b0cc0*/
-      *(_BYTE *)(v5 + 99) = 0; /*0x4b0cc6*/
+      v5->u8_63 = 0; /*0x4b0cc6*/
       *(_DWORD *)(a1 - 4 + 72) = v7; /*0x4b0cca*/
       v4 = g_DDraw_ClipRect; /*0x4b0ccd*/
     }
@@ -613,7 +618,7 @@ int JumpjetLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, l
       || (LOBYTE(v4) = BYTE4(DataGlobal_8A0794), HIDWORD(a4) != HIDWORD(DataGlobal_8A0794)) )
     {
       VoxelAnimClass *v8 = v13; /*0x4b0cf4*/
-      *(_BYTE *)(v5 + 99) = 1; /*0x4b0cfa*/
+      v5->u8_63 = 1; /*0x4b0cfa*/
       *v6 = a3; /*0x4b0cfe*/
       *(_QWORD *)(a1 + 64) = v8; /*0x4b0d00*/
       int v11 = v5->q00C; /*0x4b0d0d*/
@@ -626,7 +631,7 @@ int JumpjetLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, l
           LOBYTE(v4) = g_DDraw_ClipRect; /*0x4b0d77*/
           *v6 = g_DDraw_ClipRect; /*0x4b0d7c*/
           *(_QWORD *)(a1 + 64) = DataGlobal_8A0794; /*0x4b0d84*/
-          *(_BYTE *)(v5 + 99) = 0; /*0x4b0d90*/
+          v5->u8_63 = 0; /*0x4b0d90*/
         }
       }
       else
@@ -641,6 +646,7 @@ int JumpjetLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, l
     }
   }
   return v4; /*0x4b0d60*/
+}
 }
 
 // 0x4B4920
@@ -701,6 +707,7 @@ int JumpjetLocomotionClass::IsAtDestination(int a1, int a2, int a3, int a4)
       && (unsigned __int16)(v24 / 256) == (unsigned __int16)(a3 / 256)
       && (int)abs32(v25 - a4) <= DataGlobal_8A07D0;
 }
+}
 
 // 0x4B4B00
 int JumpjetLocomotionClass::StubReturnZero_2(unsigned int a1)
@@ -739,6 +746,7 @@ int JumpjetLocomotionClass::StubReturnZero_2(unsigned int a1)
   {
     return 0; /*0x4b4bd3*/
   }
+}
 }
 
 // 0x4B6040
@@ -805,6 +813,7 @@ void ** JumpjetLocomotionClass::UpdateMovementPosition(unsigned int * a1, double
   }
   return result; /*0x4b61d6*/
 }
+}
 
 // 0x4C94B0
 int JumpjetLocomotionClass::StubReturnZero_5()
@@ -825,6 +834,7 @@ int JumpjetLocomotionClass::StubReturnZero_5()
     return (__int16)(*this - this->Owner) > 0; /*0x4c94e7*/
   return 0; /*0x4c94d8*/
 }
+}
 
 // 0x4C94F0
 int JumpjetLocomotionClass::StubReturnZero_6()
@@ -844,6 +854,7 @@ int JumpjetLocomotionClass::StubReturnZero_6()
   if ( v2 ) /*0x4c9513*/
     return (__int16)(*this - this->Owner) < 0; /*0x4c9525*/
   return 0; /*0x4c9518*/
+}
 }
 
 // 0x4CCC80
@@ -1004,6 +1015,7 @@ LABEL_54:
   }
   return v6; /*0x4cce12*/
 }
+}
 
 // 0x4CCFD0
 TechnoClass * * JumpjetLocomotionClass::ComputeMoveToPosition(int a1)
@@ -1126,18 +1138,19 @@ LABEL_21:
   }
   return result; /*0x4cd0fd*/
 }
+}
 
 // 0x4CE5A0
 BuildingClass * * JumpjetLocomotionClass::ProcessRotation()
 {
 {
 
-  if ( *(_BYTE *)(this + 83) && *(int *)(this->LinkedTo + 108) > 0 ) /*0x4ce5b9*/
+  if ( this->u8_53 && *(int *)(this->LinkedTo + 108) > 0 ) /*0x4ce5b9*/
   {
     if ( this->vtable2->vt_slot_96() ) /*0x4ce5c6*/
     {
       _DWORD * v5 = this->LinkedTo; /*0x4ce636*/
-      *(_BYTE *)(this + 83) = 0; /*0x4ce639*/
+      this->u8_53 = 0; /*0x4ce639*/
       v5 += 39; /*0x4ce63d*/
   _DWORD v9[3]; // [esp+Ch] [ebp-Ch] BYREF
       v9[0] = *v5; /*0x4ce645*/
@@ -1164,6 +1177,7 @@ BuildingClass * * JumpjetLocomotionClass::ProcessRotation()
       this->q054 = v4; /*0x4ce624*/
     }
   }
+}
 }
 
 // 0x4CF610
@@ -1252,12 +1266,14 @@ LABEL_25:
   qmemcpy(a2, v15, 0x30u); /*0x4cf818*/
   return result; /*0x4cf81a*/
 }
+}
 
 // 0x4CFCF0
 int JumpjetLocomotionClass::DispatchVirtualCall_0(int a1)
 {
 {
   return (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 8) + 456))(*(_DWORD *)(a1 + 8)) > 0 ? 4 : 2;
+}
 }
 
 // 0x4CFD20
@@ -1274,6 +1290,7 @@ int JumpjetLocomotionClass::ClearLocomotionDirty(unsigned char * a1)
     *((_DWORD *)a1 + 21) = 0; /*0x4cfd73*/
   }
   return StreamClass::ClearDirty(a1); /*0x4cfd80*/
+}
 }
 
 // 0x514D90
@@ -1364,6 +1381,7 @@ unsigned int * JumpjetLocomotionClass::SetMovementTarget(int a1, int a2, int a3,
   }
   return result; /*0x514e97*/
 }
+}
 
 // 0x516BF0
 int JumpjetLocomotionClass::ClearLocomotionDirty_0(unsigned char * a1)
@@ -1388,6 +1406,7 @@ int JumpjetLocomotionClass::ClearLocomotionDirty_0(unsigned char * a1)
     (*(void (__stdcall **)(_BYTE *))(*(_DWORD *)a1 + 72))(a1); /*0x516c5b*/
   return StreamClass::ClearDirty(a1); /*0x516c64*/
 }
+}
 
 // 0x516C70
 int JumpjetLocomotionClass::DispatchVirtualCall_2(int a1)
@@ -1395,6 +1414,7 @@ int JumpjetLocomotionClass::DispatchVirtualCall_2(int a1)
 {
   return StreamClass::GetDirty(a1) /*0x516c90*/
       || (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 8) + 456))(*(_DWORD *)(a1 + 8)) > 0;
+}
 }
 
 // 0x54AEC0
@@ -1520,6 +1540,7 @@ Coord * * JumpjetLocomotionClass::DispatchLocomotion(unsigned int * a1)
       Targeting::Readd((_DWORD *)a1[2]); /*0x54b18e*/
   }
   return 0; /*0x54b195*/
+}
 }
 
 // 0x54B1C0
@@ -1652,6 +1673,7 @@ int JumpjetLocomotionClass::SmoothObjectPlacement(int a1, int a2, int a3, int a4
   }
   return result; /*0x54b4b7*/
 }
+}
 
 // 0x54B4D0
 Coord * * JumpjetLocomotionClass::MoveToDestination(int a1)
@@ -1742,6 +1764,7 @@ Coord * * JumpjetLocomotionClass::MoveToDestination(int a1)
   }
   return result; /*0x54b686*/
 }
+}
 
 // 0x54D6D0
 void* * JumpjetLocomotionClass::ProcessLanding(int * a2, unsigned int * a3)
@@ -1802,6 +1825,7 @@ LABEL_14:
   a2[1] = v13; /*0x54d811*/
   a2[2] = v8; /*0x54d815*/
   return a2; /*0x54d805*/
+}
 }
 
 // 0x54DCC0
@@ -1864,6 +1888,7 @@ void * JumpjetLocomotionClass::ComputeMovementTransform(signed int a1, float * a
     return a2; /*0x54df30*/
   }
 }
+}
 
 // 0x586AC0
 unsigned int * JumpjetLocomotionClass::ClampToCellBounds(MouseClass * aP1, IUnknown * aP2, char a4)
@@ -1917,6 +1942,7 @@ unsigned int * JumpjetLocomotionClass::ClampToCellBounds(MouseClass * aP1, IUnkn
   HIWORD(v16) = v4 + (v12 >> 1) - v13; /*0x586bcf*/
   aP1->field_0 = v16; /*0x586bdc*/
   return &aP1->field_0; /*0x586bb5*/
+}
 }
 
 // 0x663470
@@ -1983,6 +2009,7 @@ LABEL_15:
   result = a2; /*0x66358b*/
   qmemcpy(a2, v13, 0x30u); /*0x66359a*/
   return result; /*0x66359c*/
+}
 }
 
 // 0x69F670
@@ -2195,6 +2222,7 @@ LABEL_52:
   qmemcpy(a2, v51, 0x30u); /*0x69fb0a*/
   return a2; /*0x69fb0c*/
 }
+}
 
 // 0x6A4130
 int JumpjetLocomotionClass::StubReturnZero_15(unsigned int a1)
@@ -2234,6 +2262,7 @@ int JumpjetLocomotionClass::StubReturnZero_15(unsigned int a1)
     return 0; /*0x6a4203*/
   }
 }
+}
 
 // 0x709480
 int JumpjetLocomotionClass::StubReturnZero_16()
@@ -2255,6 +2284,7 @@ int JumpjetLocomotionClass::StubReturnZero_16()
       this->q143 = 1; /*0x7094c8*/
   }
   return result; /*0x7094cf*/
+}
 }
 
 // 0x719BF0
@@ -2290,6 +2320,7 @@ LABEL_5:
   if ( result > 0 ) /*0x719c4e*/
     a1[14] = ++result; /*0x719c51*/
   return result; /*0x719c54*/
+}
 }
 
 // 0x729B40
@@ -2434,6 +2465,7 @@ void* * JumpjetLocomotionClass::ComputeTurretTransform(unsigned int * a1, void *
   }
   return result; /*0x729c09*/
 }
+}
 
 // 0x729E50
 int JumpjetLocomotionClass::ComputeBounceHeight(int a1)
@@ -2506,6 +2538,7 @@ int JumpjetLocomotionClass::ComputeBounceHeight(int a1)
   }
   return result; /*0x729f49*/
 }
+}
 
 // 0x72A1A0
 int JumpjetLocomotionClass::ShortFunc_72A1A0(int a1)
@@ -2567,6 +2600,7 @@ double JumpjetLocomotionClass::ComputeVectorLengthMetric()
     v13 = Math::RoundToInt((double)v10 * *(double *)(this + 8) + this->Accel);
     v8 = Math::Sqrt((double)v13 * (double)v13 + (double)v11 * (double)v11 + (double)v12 * (double)v12);
     return (double)(int)Math::RoundToInt(v8);
+}
 }
 }
 
@@ -4366,9 +4400,9 @@ JumpjetLocomotionClass * JumpjetLocomotionClass::ProcessAttach(char a2)
 {
     int v3;
     *(void**)this = vt_JumpjetLocomotionClass;
-    *(this + 1) = (int)(unsigned int)vt_JumpjetLocomotionClass;
-    *(this + 6) = (int)&vt_JumpjetLocomotionClass;
-    v3 = *(this + 37);
+    this->vtable2 = (int)(unsigned int)vt_JumpjetLocomotionClass;
+    this->vtable3 = (int)&vt_JumpjetLocomotionClass;
+    v3 = *(&this->LinkedTo7);
     if ( v3 )
     (*(void (__stdcall **)(int))(*(int *)(v3) + 8))(v3);
     LocomotionClass::Construct(this);
@@ -4466,6 +4500,7 @@ int JumpjetLocomotionClass_26::Seek(int a2)
   return *(_DWORD *)(this->q004 + 4 * a2); /*0x54e8ea*/
 }
 } // namespace gamemd
+}
 
 // 0x54E8F0
 namespace gamemd {
@@ -4654,15 +4689,15 @@ VectorClass * JumpjetLocomotionClass_26::QueryInterface(char a2)
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_KamikazeControl;
-    if ( v3 && *((char *)(this) + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
+    this->IsAllocated = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (VectorClass *)this;
@@ -4676,15 +4711,15 @@ DynamicVector * JumpjetLocomotionClass_26::Constructor_VectorClass_KamikazeContr
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_KamikazeControl;
-    if ( v3 && *((char *)(this) + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
+    this->IsAllocated = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -5619,6 +5654,7 @@ int JumpjetLocomotionClass::ShortFunc_718090()
 {
   return this->vtable2->vt_slot_16() == 0; /*0x71809e*/
 }
+}
 
 // 0x7180A0
 unsigned int * JumpjetLocomotionClass::GetCoordinateConditional(unsigned int * a1, unsigned int * a2)
@@ -5698,6 +5734,7 @@ namespace gamemd {
     }
   }
   return result; /*0x7181f2*/
+}
 }
 
 // 0x718230

@@ -12,3 +12,4 @@ int GameLoop::Thunk()
   return Game::ProcessIdle(this);
 }
 }
+}

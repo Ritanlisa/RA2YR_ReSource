@@ -277,9 +277,9 @@ int sub_720420()
 // ==== 0x00720440  ObjectClass::method  this=ObjectClass  sig=csp ====
 _DWORD *__thiscall sub_720440(_DWORD *this)
 {
-  this->q0A0 = 0; /*0x720444*/
-  this->qA10 = 0; /*0x72044a*/
-  *((_BYTE *)this + 648) = 1; /*0x720450*/
+  this->q280 = 0; /*0x720444*/
+  this->q284 = 0; /*0x72044a*/
+  this->q288 = 1; /*0x720450*/
   this->q2890 = 0; /*0x720457*/
   this->q28A0 = 0; /*0x72045d*/
   this->q0A3 = -1; /*0x720463*/
@@ -515,7 +515,7 @@ char __thiscall Audio::LoadWAVFiles(_DWORD *this)
       LOBYTE(IsSoundEnabled) = dword_A8ED54[4]; /*0x720814*/
       if ( !LOBYTE(dword_A8ED54[4]) ) /*0x72081b*/
       {
-        IsSoundEnabled = this->q009; /*0x720821*/
+        IsSoundEnabled = this->u32_90; /*0x720821*/
         for ( i = 0; i < IsSoundEnabled; ++i ) /*0x720828*/
         {
           _makepath(Buffer, 0, 0, (const char *)(*(_DWORD *)(this->q018 + 4 * i) + 256), g_Str_File__WAV); /*0x720855*/
@@ -540,7 +540,7 @@ char __thiscall Audio::LoadWAVFiles(_DWORD *this)
           Vector::Clear((int)v11); /*0x72090c*/
           v10[0] = (int)&off_7E1668; /*0x720915*/
           BufferIOFileClass::Dtor(v10); /*0x72091d*/
-          IsSoundEnabled = this->q009; /*0x720922*/
+          IsSoundEnabled = this->u32_90; /*0x720922*/
         }
       }
     }
@@ -754,7 +754,7 @@ int __thiscall ThemeClass::Play(int *this, Movie *aP1)
     v3 = this->q00B; /*0x720bdc*/
     if ( !v3 ) /*0x720be5*/
       goto LABEL_13; /*0x720be5*/
-    if ( this->q044 && !AudioSample::IsBuffering(v3) ) /*0x720bee*/
+    if ( this->q011 && !AudioSample::IsBuffering(v3) ) /*0x720bee*/
       Audio::Release((_DWORD *)this->q00B); /*0x720bfa*/
     if ( !Audio::IsSoundPlaying((_DWORD *)this->q00B) || (Movie *)this->q004 != aP1 )
     {
@@ -772,7 +772,7 @@ LABEL_13:
         this->q004 = -1; /*0x720c5c*/
         this->q008 = -1; /*0x720c63*/
       }
-      this->q044 = 0; /*0x720c6d*/
+      this->q011 = 0; /*0x720c6d*/
       if ( aP1 != (Movie *)-1 && aP1 != (Movie *)-3 )
       {
         if ( (int)aP1 <= -1 || this->q00C <= 0 ) /*0x720c8e*/
@@ -782,7 +782,7 @@ LABEL_13:
         v6 = this->q00B; /*0x720cab*/
         if ( v6 && v5 > -1 ) /*0x720cba*/
         {
-          if ( (unsigned int)aP1 >= this->q024 ) /*0x720cbf*/
+          if ( (unsigned int)aP1 >= this->u32_24 ) /*0x720cbf*/
           {
             ThreadAudioMixerMain((_DWORD *)this->q00B, (RawFileClass *)&MEMORY[0x87F8E4].__pad_5568[20760], 1); /*0x720d02*/
           }
@@ -876,7 +876,7 @@ char __thiscall Theme::Stop(_DWORD *this, ObjectClass *aP1)
         v4 = this->audioSample; /*0x720edb*/
         if ( !v4 ) /*0x720ee0*/
           goto LABEL_14; /*0x720ee0*/
-        if ( *((_BYTE *)this + 17) && !AudioSample::IsBuffering(v4) ) /*0x720ee9*/
+        if ( this->q044 && !AudioSample::IsBuffering(v4) ) /*0x720ee9*/
           Audio::Release((_DWORD *)this->audioSample); /*0x720ef5*/
         if ( Audio::IsSoundPlaying((_DWORD *)this->audioSample) != 0 ) /*0x720f04*/
         {
@@ -884,7 +884,7 @@ char __thiscall Theme::Stop(_DWORD *this, ObjectClass *aP1)
           v5 = (_DWORD *)this->audioSample; /*0x720f19*/
           if ( v5 ) /*0x720f21*/
             LOBYTE(IsSoundEnabled) = ThemeClass::RequestBuffer(v5); /*0x720f23*/
-          *((_BYTE *)this + 17) = 1; /*0x720f28*/
+          this->q044 = 1; /*0x720f28*/
         }
         else
         {
@@ -895,7 +895,7 @@ LABEL_14:
             Audio::Release(v6); /*0x720f46*/
         }
         *this = -1; /*0x720f4b*/
-        this->q001 = -1; /*0x720f51*/
+        this->ptr_4 = -1; /*0x720f51*/
         this->q002 = -1; /*0x720f58*/
       }
     }
@@ -989,9 +989,9 @@ bool __thiscall RulesClass::IsTypeBuildable(_DWORD *this, TechnoTypeClass *aP1)
 
   if ( aP1 == (TechnoTypeClass *)-3 || aP1 == (TechnoTypeClass *)-2 ) /*0x721150*/
     return 1; /*0x721150*/
-  if ( (unsigned int)aP1 >= this->q024 ) /*0x721155*/
+  if ( (unsigned int)aP1 >= this->u32_24 ) /*0x721155*/
     return 0; /*0x721159*/
-  v3 = *(_DWORD *)(this->q006 + 4 * (_DWORD)aP1); /*0x72115f*/
+  v3 = *(_DWORD *)(this->u32_60 + 4 * (_DWORD)aP1); /*0x72115f*/
   if ( !*(_BYTE *)(v3 + 650) ) /*0x721162*/
     return 0; /*0x72116e*/
   if ( !*(_BYTE *)(v3 + 648) ) /*0x721171*/
@@ -1033,7 +1033,7 @@ ObjectClass *__thiscall ScriptAction::GetArgumentString(_DWORD *this, int a2)
   if ( a2 < 0 || a2 >= this->q024 ) /*0x72127b*/
     return (ObjectClass *)g_Str_none; /*0x721286*/
   else
-    return *(ObjectClass **)(this->q018 + 4 * a2); /*0x721280*/
+    return *(ObjectClass **)(this->u32_18 + 4 * a2); /*0x721280*/
 }
 
 
@@ -1321,7 +1321,7 @@ _DWORD *__thiscall TiberiumClass::TiberiumClass(_DWORD *this, ObjectClass *aP1)
   int v5; // eax
 
   AbstractTypeClass::Constructor((int)this, (AbstractClass *)aP1); /*0x7216ca*/
-  this->owningHouseIndex = -1717986918; /*0x7216dc*/
+  this->u32_A0 = -1717986918; /*0x7216dc*/
   this->Spread = -1717986918; /*0x7216e7*/
   this->isInLogic = -1; /*0x7216f1*/
   this->location = 0; /*0x7216fb*/
@@ -1329,17 +1329,17 @@ _DWORD *__thiscall TiberiumClass::TiberiumClass(_DWORD *this, ObjectClass *aP1)
   this->lineTrailer = 0; /*0x721707*/
   this->SpreadPercentage = 1069128089; /*0x72170d*/
   this->q0B8 = 0; /*0x721713*/
-  this->Growth = 0; /*0x721719*/
+  this->q0BC = 0; /*0x721719*/
   this->GrowthPercentage = 0; /*0x72171f*/
   AnimTypeVector::Constructor(this + 49, 0, 0); /*0x721725*/
   this->Image = 10; /*0x72172a*/
   this->Debris = 0; /*0x721731*/
   this->q0C4 = &vt_TypeList_AnimTypeClass_const; /*0x721734*/
-  this->NumImages = 0; /*0x72173a*/
+  this->q0E0 = 0; /*0x72173a*/
   this->q0E4 = 0; /*0x721740*/
   this->q0E8 = 0; /*0x721746*/
-  this->TiberiumClass_field_EC = 0; /*0x72174c*/
-  this->TiberiumClass_field_F0 = 0; /*0x721752*/
+  this->q0EC = 0; /*0x72174c*/
+  this->q0F0 = 0; /*0x721752*/
   this->q0F4 = 0; /*0x721758*/
   this->q0F8 = 0; /*0x72175e*/
   this->q0FC = 0; /*0x721764*/
@@ -1348,10 +1348,10 @@ _DWORD *__thiscall TiberiumClass::TiberiumClass(_DWORD *this, ObjectClass *aP1)
   this->q10C = 0; /*0x72177c*/
   this->q110 = 0; /*0x721782*/
   this->q114 = 0; /*0x721788*/
-  this->TiberiumClass_field_118 = 0; /*0x72178e*/
+  this->q118 = 0; /*0x72178e*/
   v3 = *(IUnknown **)&HouseClass_Player.__pad_5568[23248]; /*0x721794*/
   this->q124 = 0; /*0x72179a*/
-  this->GrowthTimer = v3; /*0x7217a0*/
+  this->q11C = v3; /*0x7217a0*/
   *this = &TiberiumClass::`vftable'; /*0x7217a6*/
   this->vtable2 = &TiberiumClass::`vftable'; /*0x7217ac*/
   this->vtable3 = &TiberiumClass::`vftable'; /*0x7217b3*/
@@ -1857,7 +1857,7 @@ int __thiscall TiberiumClass::_vt10(int *this, int a2, int a3)
 
   for ( i = this->Debris - 1; i >= 0; --i ) /*0x72214c*/
   {
-    if ( *(_DWORD *)(this->Value + 4 * i) == a2 ) /*0x722159*/
+    if ( *(_DWORD *)(this->Power + 4 * i) == a2 ) /*0x722159*/
     {
       v4 = this->Debris; /*0x72215b*/
       if ( i < v4 ) /*0x722163*/
@@ -1866,7 +1866,7 @@ int __thiscall TiberiumClass::_vt10(int *this, int a2, int a3)
         v6 = i; /*0x722168*/
         for ( this->Debris = v5; /*0x722172*/
               v6 < this->Debris;
-              *(_DWORD *)(this->Value + 4 * v6 - 4) = *(_DWORD *)(this->Value + 4 * v6) )
+              *(_DWORD *)(this->Power + 4 * v6 - 4) = *(_DWORD *)(this->Power + 4 * v6) )
         {
           ++v6; /*0x72217a*/
         }
@@ -3055,7 +3055,7 @@ int __thiscall BuildingClass_RebuildOccupancy2(int **this)
     while ( v2 <= *v3 ); /*0x7233ce*/
   }
   *v3 = 0; /*0x7233d0*/
-  for ( i = Object::ComputeAllocationSize() - 1; i >= 0; *((_BYTE *)this->q114 + i + 1) = 0 ) /*0x7233dc*/
+  for ( i = Object::ComputeAllocationSize() - 1; i >= 0; *((_BYTE *)this->u8_45 + i + 1) = 0 ) /*0x7233dc*/
     --i; /*0x7233e4*/
   LayerClass::CellIteratorReset(&MEMORY[0x87F7E8]); /*0x7233f1*/
   result = LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]); /*0x7233fb*/
@@ -3102,7 +3102,7 @@ int __thiscall BuildingClass_RebuildOccupancy2(int **this)
         if ( v10 < v9[4] ) /*0x7234d7*/
           v9[4] = v10; /*0x7234d9*/
       }
-      *((_BYTE *)this->q114 + Cell::PosToIndex(v7)) = 1; /*0x7234e7*/
+      *((_BYTE *)this->u8_45 + Cell::PosToIndex(v7)) = 1; /*0x7234e7*/
     }
     result = LayerClass::CellIteratorNext(&MEMORY[0x87F7E8]); /*0x7234f0*/
   }
@@ -3703,7 +3703,7 @@ int __thiscall GadgetClass_Show(_BYTE *this)
   int v1; // eax
 
   v1 = *(_DWORD *)this; /*0x723ea0*/
-  this->q0B4 = 1; /*0x723ea2*/
+  this->u32_B4 = 1; /*0x723ea2*/
   return (*(int (**)(void))(v1 + 72))();
 }
 
@@ -3818,7 +3818,7 @@ char *__thiscall sub_724000(char *this, int a2)
 
   v3 = this + 564; /*0x72400a*/
   this->Position = 0; /*0x724010*/
-  this->q008 = a2; /*0x724013*/
+  this->u32_8 = a2; /*0x724013*/
   this->ToolTipText = 0; /*0x724016*/
   this->q08A = 1000; /*0x724019*/
   *((_DWORD *)this + 140) = 10000; /*0x724023*/
@@ -3855,11 +3855,11 @@ void __thiscall ToolTipClass::updateString(char *this)
   int v4; // edx
   void *v5; // eax
 
-  v2 = this->q008; /*0x7240ba*/
+  v2 = this->u32_8; /*0x7240ba*/
   *(_DWORD *)this = &ToolTipManager::`vftable'; /*0x7240bd*/
   ((void (__stdcall *)(int, int))KillTimer)(v2, 1414809936); /*0x7240c4*/
   if ( this->Position ) /*0x7240ca*/
-    (*(void (__thiscall **)(char *, char *))(this->q008)(this, this + 24); /*0x7240db*/
+    (*(void (__thiscall **)(char *, char *))(this->u32_8)(this, this + 24); /*0x7240db*/
   __3_YAXPAX_Z(*((void **)this + 147)); /*0x7240e5*/
   this->q24C = 0; /*0x7240ea*/
   this->q250 = 0; /*0x7240f0*/
@@ -3905,7 +3905,7 @@ char __thiscall Tooltip_Enable(void *this, char a2)
     {
       KillTimer(*((HWND *)this + 2), 0x54544950u); /*0x7241bc*/
       if ( this->Position ) /*0x7241c2*/
-        (*(void (__thiscall **)(void *, int))(this->q008)(this, (int)this + 24); /*0x7241d1*/
+        (*(void (__thiscall **)(void *, int))(this->u32_8)(this, (int)this + 24); /*0x7241d1*/
     }
     v4 = (const char *)&MEMORY[0x8394E8]; /*0x7241d9*/
     if ( this->ToolTipText != 1 ) /*0x7241de*/
@@ -4039,7 +4039,7 @@ LABEL_8:
 // ==== 0x00724510  ObjectClass::method  this=ObjectClass  sig=csp ====
 int __thiscall sub_724510(_DWORD *this)
 {
-  return this->q08A; /*0x724516*/
+  return this->q228; /*0x724516*/
 }
 
 
@@ -4091,7 +4091,7 @@ int __thiscall sub_724560(_DWORD *this, int a2)
 // ==== 0x00724570  ObjectClass::method  this=ObjectClass  sig=csp ====
 int __thiscall sub_724570(_DWORD *this)
 {
-  return this->alignmentPadding91; /*0x724576*/
+  return this->q244; /*0x724576*/
 }
 
 
@@ -4487,7 +4487,7 @@ BOOL __thiscall ToolTipClass_InitString(wchar_t *this)
   const wchar_t *v5; // edi
   int v6; // edx
 
-  v2 = (_DWORD *)this->q004; /*0x724ad7*/
+  v2 = (_DWORD *)this->Items; /*0x724ad7*/
   if ( v2 ) /*0x724adc*/
   {
     v3 = (wchar_t *)v2[5]; /*0x724ae2*/
@@ -4499,16 +4499,16 @@ BOOL __thiscall ToolTipClass_InitString(wchar_t *this)
     if ( String && wcslen(String) ) /*0x724b0d*/
     {
       wcsncpy(this + 20, v5, 0x100u); /*0x724b23*/
-      v6 = this->q004; /*0x724b28*/
+      v6 = this->Items; /*0x724b28*/
       this->q01C = this->q014; /*0x724b36*/
       this->q018 = v6; /*0x724b39*/
-      if ( !(*(unsigned __int8 (__thiscall **)(wchar_t *, _DWORD *))(this->q004)(this, (_DWORD *)this + 6) ) /*0x724b3e*/
+      if ( !(*(unsigned __int8 (__thiscall **)(wchar_t *, _DWORD *))(this->Items)(this, (_DWORD *)this + 6) ) /*0x724b3e*/
       {
         this->q018 = 0; /*0x724b47*/
         this->q01C = 0; /*0x724b49*/
-        this->q008 = 0; /*0x724b4c*/
+        this->Capacity = 0; /*0x724b4c*/
         this->q024 = 0; /*0x724b4f*/
-        this->q004 = 0; /*0x724b54*/
+        this->Items = 0; /*0x724b54*/
         return 0; /*0x724b5f*/
       }
     }
@@ -4516,12 +4516,12 @@ BOOL __thiscall ToolTipClass_InitString(wchar_t *this)
     {
       this->q018 = 0; /*0x724b60*/
       this->q01C = 0; /*0x724b63*/
-      this->q008 = 0; /*0x724b66*/
+      this->Capacity = 0; /*0x724b66*/
       this->q024 = 0; /*0x724b69*/
-      this->q004 = 0; /*0x724b6c*/
+      this->Items = 0; /*0x724b6c*/
     }
   }
-  return this->q004 != 0; /*0x724b59*/
+  return this->Items != 0; /*0x724b59*/
 }
 
 

@@ -60,6 +60,7 @@ LABEL_18:
   return v6; /*0x6827d6*/
 }
 } // namespace gamemd
+}
 
 // 0x6829A0
 namespace gamemd {
@@ -106,3 +107,4 @@ LABEL_6:
   return v4; /*0x682a0b*/
 }
 } // namespace gamemd
+}

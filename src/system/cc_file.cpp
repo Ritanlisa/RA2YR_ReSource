@@ -124,6 +124,7 @@ retn    4
 
 REVERSE(0x4a3890, "CCFileClass::ReadEntireFile: IDA verified", "None")
 // IDA 0x4A3890 -- CCFileClass::ReadEntireFile
+}
 // 0x4a3890
 void* CCFileClass::ReadEntireFile()
 {

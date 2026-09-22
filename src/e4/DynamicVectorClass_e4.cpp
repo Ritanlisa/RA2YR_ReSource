@@ -58,6 +58,7 @@ AbstractClass * * DynamicVectorClass_AnimType::Release(int a2, unsigned int * a3
   }
 }
 } // namespace gamemd
+}
 
 // 0x589190
 namespace gamemd {
@@ -152,6 +153,7 @@ AbstractClass * * DynamicVectorClass_SubzoneConn::Release(int a2, char * a3)
   return 1; /*0x589278*/
 }
 } // namespace gamemd
+}
 
 // 0x517590
 namespace gamemd {
@@ -161,6 +163,7 @@ int DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::HashEntryCompare(
   return *this != *a2 || this->Items != a2[1] || this->Capacity != a2[2]; /*0x5175bd*/
 }
 } // namespace gamemd
+}
 
 // 0x6284A0
 namespace gamemd {
@@ -259,6 +262,7 @@ AbstractClass * * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Set
   return 1; /*0x628586*/
 }
 } // namespace gamemd
+}
 
 // 0x628BB0
 namespace gamemd {
@@ -363,6 +367,7 @@ AbstractClass * * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Rem
   return 1; /*0x628ceb*/
 }
 } // namespace gamemd
+}
 
 // 0x42D540
 namespace gamemd {
@@ -602,15 +607,15 @@ VectorClass * DynamicVectorClass_uint::Destructor(char a2)
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_unsigned_int;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (VectorClass *)this;
@@ -624,15 +629,15 @@ DynamicVectorClass_uint * DynamicVectorClass_uint::Add(char a2)
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_unsigned_int;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVectorClass_uint *)this;
@@ -1112,15 +1117,15 @@ DynamicVector * DynamicVectorClass_PAD::Add(char a2)
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_char;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -1134,15 +1139,15 @@ VectorClass * DynamicVectorClass_PAD_16::QueryInterface(char a2)
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_DynamicVectorClass_char;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (VectorClass *)this;
@@ -1156,15 +1161,15 @@ DynamicVector * DynamicVectorClass_PAD::Destructor(char a2)
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_DynamicVectorClass_char;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -1192,15 +1197,15 @@ VectorClass * DynamicVectorClass_AnimType::Add(char a2)
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_AnimTypeClass_const;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (VectorClass *)this;
@@ -1293,15 +1298,15 @@ DynamicVector * DynamicVectorClass_cptr_AnimTypeClass::Add(char a2)
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_AnimTypeClass_const;
-    if ( v3 && *((char *)(this) + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
+    this->IsAllocated = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -1328,15 +1333,15 @@ DynamicVector * DynamicVectorClass_SubzoneConn::Add(char a2)
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_SubzoneConnectionStruct;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -1542,15 +1547,15 @@ DynamicVector * DynamicVectorClass_ptr_NodeNameType::Add(char a2)
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_NodeNameType;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -1776,15 +1781,15 @@ DynamicVector * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Destr
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_ColorScheme;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -1811,7 +1816,7 @@ char * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Add(char a2)
     v4 = this - 1;
     v5 = 3 * v3;
     v6 = v3 - 1;
-    v7 = this + 2 * v5;
+    v7 = &this->Capacity * v5;
     if ( v6 >= 0 )
     {
     v8 = v6 + 1;
@@ -1837,15 +1842,15 @@ char * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Add(char a2)
   }
     else
   {
-    v11 = (void *)*(this + 1);
+    v11 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_HashObject_HashString_SchemeNode;
     if ( v11 && this->IsAllocated )
     {
     __3_YAXPAX_Z(v11);
-    *(this + 1) = 0;
+    this->Items = 0;
     }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (char *)this;
@@ -1860,15 +1865,15 @@ DynamicVector * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Destr
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_HSVClass;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -1956,15 +1961,15 @@ DynamicVector * DynamicVectorClass_cptr_VoxelAnimTypeClass::Add(char a2)
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_VoxelAnimTypeClass_const;
-    if ( v3 && *((char *)(this) + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
+    this->IsAllocated = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;

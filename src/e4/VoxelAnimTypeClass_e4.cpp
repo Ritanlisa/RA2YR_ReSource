@@ -81,6 +81,7 @@ unsigned int * VoxelAnimTypeClass::Constructor(ObjectClass * aP1)
   return this; /*0x74af5e*/
 }
 } // namespace gamemd
+}
 
 // 0x74B050
 namespace gamemd {
@@ -413,6 +414,7 @@ AbstractTypeClass * * VoxelAnimTypeClass::LoadFromINI(unsigned char *** aP1)
   return 1; /*0x74b4f2*/
 }
 } // namespace gamemd
+}
 
 // 0x74B690
 namespace gamemd {
@@ -450,6 +452,7 @@ int VoxelAnimTypeClass::PowerDrainUpdate(int * a2)
   return Power::FlagProcess(a2, v7); /*0x74b7c4*/
 }
 } // namespace gamemd
+}
 
 // 0x74BA30
 namespace gamemd {

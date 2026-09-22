@@ -1608,7 +1608,7 @@ int __thiscall OptionQueue::PushEntry(int *this, IUnknown *aP1)
 DWORD *__thiscall Timer_Init(DWORD *this, DWORD a2)
 {
   *this = Timer::GetTicks(); /*0x4f1b0b*/
-  *(this + 2) = a2; /*0x4f1b11*/
+  this->ptr_8 = a2; /*0x4f1b11*/
   return this; /*0x4f1b16*/
 }
 
@@ -1619,9 +1619,9 @@ int __thiscall Timer_GetRemainingMs(signed int *this)
   signed int v1; // edi
   signed int v2; // ecx
 
-  v1 = *(this + 2); /*0x4f1b26*/
+  v1 = this->ptr_8; /*0x4f1b26*/
   if ( *this == -1 ) /*0x4f1b2c*/
-    return *(this + 2); /*0x4f1b4c*/
+    return this->ptr_8; /*0x4f1b4c*/
   v2 = Timer::GetTicks() - *this; /*0x4f1b3a*/
   if ( v2 >= v1 ) /*0x4f1b3e*/
     return 0; /*0x4f1b48*/
@@ -3770,7 +3770,7 @@ void VectorCursor_uint_DynamicVectorClass_uint____13_::_vt05()
 // ==== 0x004F42B0  GScreenClass::DtorSequence  this=GScreenClass  sig=csp ====
 int __thiscall COMObject_DtorSequence(void *this, int a2)
 {
-  (*(void (__thiscall **)(void *))(*(_DWORD *)this + 28))(this); /*0x4f42b5*/
+  (*(void (__thiscall **)(void *))(this->u32_1C0)(this); /*0x4f42b5*/
   return (*(int (__thiscall **)(void *))(this->q008)(this); /*0x4f42bf*/
 }
 
@@ -3854,7 +3854,7 @@ bool __stdcall COMObject::IsSameType(GScreenClass *aP0)
 // ==== 0x004F4410  GScreenClass::InsertOrdered  this=GScreenClass  sig=csp ====
 char __thiscall Hash_InsertOrdered(void *this, int a2)
 {
-  if ( (*(unsigned __int8 (__thiscall **)(void *, int))(*(_DWORD *)this + 44))(this, a2) ) /*0x4f4418*/
+  if ( (*(unsigned __int8 (__thiscall **)(void *, int))(this->u32_2C)(this, a2) ) /*0x4f4418*/
     return 0; /*0x4f441f*/
   if ( MEMORY[0xA8EF54] ) /*0x4f442c*/
     (*(void (__thiscall **)(int, int))(*(_DWORD *)a2 + 16))(a2, MEMORY[0xA8EF54]); /*0x4f4433*/
@@ -3869,7 +3869,7 @@ char __thiscall Tactical_SelectObject(void *this, int a2)
 {
   char result; // al
 
-  result = (*(int (__thiscall **)(void *, int))(*(_DWORD *)this + 44))(this, a2); /*0x4f4458*/
+  result = (*(int (__thiscall **)(void *, int))(this->u32_2C)(this, a2); /*0x4f4458*/
   if ( result ) /*0x4f445d*/
   {
     MEMORY[0xA8EF54] = (*(int (__thiscall **)(int))(*(_DWORD *)a2 + 36))(a2); /*0x4f446a*/
@@ -4706,7 +4706,7 @@ bool __thiscall SuperWeaponTypeClass::IsAvailable(_DWORD *this)
 
   v36 = this->q057 > 0; /*0x4f6565*/
   v33 = this->q056 > 0; /*0x4f656c*/
-  v37 = this->q058 > 0; /*0x4f6573*/
+  v37 = this->q160 > 0; /*0x4f6573*/
   v2 = *(_DWORD *)&MEMORY[0x87F8E4].__pad_5568[9108] + 2848; /*0x4f657d*/
   v32 = this->UIName > 0; /*0x4f6583*/
   v3 = SuperWeaponTypeClass::FindByName((void *)(this->SidebarImageFile_0x18 + 152)); /*0x4f6598*/
@@ -6243,12 +6243,12 @@ int __thiscall sub_4F9370(#375 *this)
   int Status; // eax
 
   v2 = 0; /*0x4f9374*/
-  result = this->lastBuiltInfantryType; /*0x4f9376*/
+  result = this->u8_99; /*0x4f9376*/
   if ( result > 0 ) /*0x4f937e*/
   {
     do /*0x4f93d2*/
     {
-      v4 = *(_DWORD *)(this->supersCount + 4 * v2); /*0x4f9387*/
+      v4 = *(_DWORD *)(this->q096 + 4 * v2); /*0x4f9387*/
       if ( SuperWeapon::UpdateSuperWeaponReadyState(v4, this == HouseClass_Player) ) /*0x4f9397*/
       {
         if ( this == HouseClass_Player ) /*0x4f93a6*/
@@ -6258,7 +6258,7 @@ int __thiscall sub_4F9370(#375 *this)
           Sidebar::ActivateTab((int)&MEMORY[0x87F7E8], Status); /*0x4f93c4*/
         }
       }
-      result = this->lastBuiltInfantryType; /*0x4f93c9*/
+      result = this->u8_99; /*0x4f93c9*/
       ++v2; /*0x4f93cf*/
     }
     while ( v2 < result ); /*0x4f93d2*/
@@ -6651,7 +6651,7 @@ bool __thiscall Object::IsAlliedWithObjectHouse(_DWORD *this, IUnknown *aP1)
   v5 = v3[12]; /*0x4f9aae*/
   if ( v5 == this->q030 ) /*0x4f9ab6*/
     return 1; /*0x4f9abb*/
-  return v5 != -1 && (*(this + 5602) & (1 << v5)) != 0; /*0x4f9ad5*/
+  return v5 != -1 && (this->u32_5788 & (1 << v5)) != 0; /*0x4f9ad5*/
 }
 
 
@@ -6671,7 +6671,7 @@ bool __thiscall House_IsAlliedWithObjectSimple(_DWORD *this, _BYTE *a2)
   if ( (_DWORD *)v3 == this ) /*0x4f9b0c*/
     return 1; /*0x4f9b11*/
   v5 = *(_DWORD *)(v3 + 48); /*0x4f9b14*/
-  if ( v5 == this->q030 ) /*0x4f9b1c*/
+  if ( v5 == this->u32_30 ) /*0x4f9b1c*/
     return 1; /*0x4f9b21*/
   return v5 != -1 && (this->q15E2 & (1 << v5)) != 0; /*0x4f9b3b*/
 }
@@ -7557,7 +7557,7 @@ char __thiscall SuperWeapon::FireSuperWeaponHouseClass(void *this, AbstractClass
   int i; // esi
   int v10; // ecx
 
-  v4 = this->supersCount; /*0x4fae58*/
+  v4 = this->q096; /*0x4fae58*/
   v5 = 0; /*0x4fae60*/
   v6 = *(_DWORD *)(v4 + 4 * (_DWORD)aP1); /*0x4fae62*/
   v7 = *(_DWORD *)(v6 + 40); /*0x4fae65*/

@@ -37,6 +37,7 @@ int BombClass::AbstractClass()
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x438A00
 namespace ra2 {
@@ -57,6 +58,7 @@ void * BombClass::GetCurrentFrame()
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x438A70
 namespace ra2 {
@@ -68,6 +70,7 @@ int BombClass::TimeToExplode()
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x438A90
 namespace ra2 {
@@ -101,6 +104,7 @@ int BombClass::Stat(int * a2)
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x438550
 namespace ra2 {
@@ -200,10 +204,10 @@ BombClass * BombClass::CopyTo(char a2)
     int v3;
     int *v5;
     *(void**)this = vt_BombClass;
-    *(this + 1) = (unsigned int)vt_BombClass;
-    *(this + 2) = (unsigned int)vt_BombClass;
-    *(this + 3) = &vt_BombClass;
-    AudioFileClass::Release(this + 15);
+    this->vtable2 = (unsigned int)vt_BombClass;
+    this->vtable3 = (unsigned int)vt_BombClass;
+    this->vtable4 = &vt_BombClass;
+    AudioFileClass::Release(&this->vtable25);
     v5 = this;
     v3 = (*(int (__thiscall **)(int *, int **))(DataGlobal_89C668 + 16))(&DataGlobal_89C668, &v5);
     if ( v3 != -1 && v3 < DataGlobal_89C678 && v3 < --DataGlobal_89C678 )

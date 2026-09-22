@@ -21,6 +21,7 @@ void Dialog::MapDialogResource()
   }
 }
 } // namespace gamemd
+}
 
 // 0x5B5BC0
 namespace gamemd {
@@ -105,6 +106,7 @@ int Dialog::InitializeGameSettings()
   return PlayVocClass(HIDWORD(g_RulesClass_Instance->MovieOff), 0x2000, 1.0, 0); /*0x5b5e7c*/
 }
 } // namespace gamemd
+}
 
 // 0x5D3490
 namespace gamemd {
@@ -200,6 +202,7 @@ int Dialog::ShowMessageBox(int lParam, unsigned short * a2, Movie * aP2, IUnknow
   return dwNewLong; /*0x5d3693*/
 }
 } // namespace gamemd
+}
 
 // 0x5D5DC0
 namespace gamemd {
@@ -209,6 +212,7 @@ int Dialog::GetModeNeg2()
   return *(this + 63) != 0 ? 0 : -2;
 }
 } // namespace gamemd
+}
 
 // 0x5D5DD0
 namespace gamemd {
@@ -218,6 +222,7 @@ int Dialog::GetMode3()
   return this->q03C != 0 ? 3 : -2;
 }
 } // namespace gamemd
+}
 
 // 0x5EE350
 namespace gamemd {
@@ -242,6 +247,7 @@ int Dialog::RefreshDialogsGame()
   return result; /*0x5ee398*/
 }
 } // namespace gamemd
+}
 
 // 0x5F2950
 namespace gamemd {
@@ -381,6 +387,7 @@ LABEL_36:
   return v6; /*0x5f2cca*/
 }
 } // namespace gamemd
+}
 
 // 0x606800
 namespace gamemd {
@@ -663,6 +670,7 @@ LABEL_208:
   return 1; /*0x60711e*/
 }
 } // namespace gamemd
+}
 
 // 0x607FD0
 namespace gamemd {
@@ -703,6 +711,7 @@ int Dialog::StopBink()
   return v1; /*0x60801e*/
 }
 } // namespace gamemd
+}
 
 // 0x608070
 namespace gamemd {
@@ -781,6 +790,7 @@ LABEL_31:
   return 1; /*0x6080cb*/
 }
 } // namespace gamemd
+}
 
 // 0x60A330
 namespace gamemd {
@@ -892,6 +902,7 @@ LABEL_33:
   return 1; /*0x60a47a*/
 }
 } // namespace gamemd
+}
 
 // 0x60A5B0
 namespace gamemd {
@@ -1103,6 +1114,7 @@ LABEL_74:
   }
 }
 } // namespace gamemd
+}
 
 // 0x60F760
 namespace gamemd {
@@ -1196,6 +1208,7 @@ LABEL_22:
   }
 }
 } // namespace gamemd
+}
 
 // 0x60F9A0
 namespace gamemd {
@@ -1493,6 +1506,7 @@ LABEL_71:
   return 1; /*0x61033f*/
 }
 } // namespace gamemd
+}
 
 // 0x610360
 namespace gamemd {
@@ -1585,6 +1599,7 @@ LABEL_22:
   return 1; /*0x61055c*/
 }
 } // namespace gamemd
+}
 
 // 0x6137D0
 namespace gamemd {
@@ -1963,6 +1978,7 @@ LABEL_43:
   return v67; /*0x613896*/
 }
 } // namespace gamemd
+}
 
 // 0x6213A0
 namespace gamemd {
@@ -2025,6 +2041,7 @@ AbstractClass * * Dialog::Resize()
   return result; /*0x621476*/
 }
 } // namespace gamemd
+}
 
 // 0x621E90
 namespace gamemd {
@@ -2298,6 +2315,7 @@ LABEL_72:
   }
 }
 } // namespace gamemd
+}
 
 // 0x622720
 namespace gamemd {
@@ -2348,6 +2366,7 @@ int Dialog::Destroy()
   return result; /*0x622760*/
 }
 } // namespace gamemd
+}
 
 // 0x6233A0
 namespace gamemd {
@@ -2389,6 +2408,7 @@ LABEL_12:
   }
 }
 } // namespace gamemd
+}
 
 // 0x624930
 namespace gamemd {
@@ -2411,6 +2431,7 @@ int Dialog::UpdateControlState(unsigned int * a2, unsigned int * a3)
   return 1; /*0x62493b*/
 }
 } // namespace gamemd
+}
 
 // 0x624BE0
 namespace gamemd {
@@ -2461,6 +2482,7 @@ AbstractClass * * Dialog::GrowBuffer()
   }
 }
 } // namespace gamemd
+}
 
 // 0x624CA0
 namespace gamemd {
@@ -2643,6 +2665,7 @@ LABEL_41:
   }
 }
 } // namespace gamemd
+}
 
 // 0x671EA0
 namespace gamemd {
@@ -2657,68 +2680,68 @@ INIClass * * Dialog::ReadMultiplayerDialogSettings()
   result = INIClass::BinarySearchSection(v37, (unsigned __int8 *)DataGlobal_83079C); /*0x671eb0*/
   if ( result ) /*0x671ebc*/
   {
-    *((_DWORD *)this + 1312) = INIClass::ReadInt_Overwrite(DataGlobal_83079C, DataGlobal_83D0A4, *((_DWORD *)this + 1312)); /*0x671edc*/
-    IntOverwriteINIClass = INIClass::ReadInt_Overwrite(DataGlobal_83079C, DataGlobal_81DA20, *((_DWORD *)this + 1313)); /*0x671ef7*/
-    INIClass *v4 = *((_DWORD *)this + 1314); /*0x671efc*/
-    *((_DWORD *)this + 1313) = IntOverwriteINIClass; /*0x671f02*/
+    this->ptr_1480 = INIClass::ReadInt_Overwrite(DataGlobal_83079C, DataGlobal_83D0A4, this->ptr_1480); /*0x671edc*/
+    IntOverwriteINIClass = INIClass::ReadInt_Overwrite(DataGlobal_83079C, DataGlobal_81DA20, this->u32_1484); /*0x671ef7*/
+    INIClass *v4 = this->ptr_1488; /*0x671efc*/
+    this->u32_1484 = IntOverwriteINIClass; /*0x671f02*/
     int v5 = INIClass::ReadInt_Overwrite(DataGlobal_83079C, DataGlobal_83D098, v4); /*0x671f16*/
-    INIClass *v6 = *((_DWORD *)this + 1315); /*0x671f1b*/
-    *((_DWORD *)this + 1314) = v5; /*0x671f21*/
-    *((_DWORD *)this + 1315) = INIClass::ReadInt_Overwrite(DataGlobal_83079C, DataGlobal_83D088, v6); /*0x671f3b*/
-    int v7 = INIClass::ReadInt_Overwrite(DataGlobal_83079C, DataGlobal_83D078, *((_DWORD *)this + 1316)); /*0x671f56*/
-    INIClass *v8 = *((_DWORD *)this + 1317); /*0x671f5b*/
-    *((_DWORD *)this + 1316) = v7; /*0x671f61*/
+    INIClass *v6 = this->u32_148C; /*0x671f1b*/
+    this->ptr_1488 = v5; /*0x671f21*/
+    this->u32_148C = INIClass::ReadInt_Overwrite(DataGlobal_83079C, DataGlobal_83D088, v6); /*0x671f3b*/
+    int v7 = INIClass::ReadInt_Overwrite(DataGlobal_83079C, DataGlobal_83D078, this->u32_1490); /*0x671f56*/
+    INIClass *v8 = this->ptr_1494; /*0x671f5b*/
+    this->u32_1490 = v7; /*0x671f61*/
     int v9 = INIClass::ReadInt_Overwrite(DataGlobal_83079C, g_INI_Key_UnitCount, v8); /*0x671f75*/
-    INIClass *v10 = *((_DWORD *)this + 1318); /*0x671f7a*/
-    *((_DWORD *)this + 1317) = v9; /*0x671f80*/
-    *((_DWORD *)this + 1318) = INIClass::ReadInt_Overwrite(DataGlobal_83079C, DataGlobal_83D05C, v10); /*0x671f9a*/
-    int v11 = INIClass::ReadInt_Overwrite(DataGlobal_83079C, aTechlevel, *((_DWORD *)this + 1319)); /*0x671fb5*/
-    INIClass *v12 = *((_DWORD *)this + 1320); /*0x671fba*/
-    *((_DWORD *)this + 1319) = v11; /*0x671fc0*/
+    INIClass *v10 = this->ptr_1498; /*0x671f7a*/
+    this->ptr_1494 = v9; /*0x671f80*/
+    this->ptr_1498 = INIClass::ReadInt_Overwrite(DataGlobal_83079C, DataGlobal_83D05C, v10); /*0x671f9a*/
+    int v11 = INIClass::ReadInt_Overwrite(DataGlobal_83079C, aTechlevel, this->u32_149C); /*0x671fb5*/
+    INIClass *v12 = this->u32_14A0; /*0x671fba*/
+    this->u32_149C = v11; /*0x671fc0*/
     int v13 = INIClass::ReadInt_Overwrite(DataGlobal_83079C, g_INI_Key_GameSpeed, v12); /*0x671fd4*/
-    INIClass *v14 = *((_DWORD *)this + 1321); /*0x671fd9*/
-    *((_DWORD *)this + 1320) = v13; /*0x671fdf*/
-    *((_DWORD *)this + 1321) = INIClass::ReadInt_Overwrite(DataGlobal_83079C, DataGlobal_83D04C, v14); /*0x671ff9*/
-    int v15 = INIClass::ReadInt_Overwrite(DataGlobal_83079C, DataGlobal_83D040, *((_DWORD *)this + 1322)); /*0x672014*/
-    char v16 = *((_BYTE *)this + 5292); /*0x672019*/
-    *((_DWORD *)this + 1322) = v15; /*0x67201f*/
+    INIClass *v14 = this->u32_14A4; /*0x671fd9*/
+    this->u32_14A0 = v13; /*0x671fdf*/
+    this->u32_14A4 = INIClass::ReadInt_Overwrite(DataGlobal_83079C, DataGlobal_83D04C, v14); /*0x671ff9*/
+    int v15 = INIClass::ReadInt_Overwrite(DataGlobal_83079C, DataGlobal_83D040, this->u32_14A8); /*0x672014*/
+    char v16 = this->u8_14AC; /*0x672019*/
+    this->u32_14A8 = v15; /*0x67201f*/
     BoolOverwriteINIClass = INIClass::ReadBool_Overwrite(DataGlobal_83079C, DataGlobal_83D02C, v16); /*0x672033*/
-    char v18 = *((_BYTE *)this + 5293); /*0x672038*/
-    *((_BYTE *)this + 5292) = BoolOverwriteINIClass; /*0x67203e*/
-    *((_BYTE *)this + 5293) = INIClass::ReadBool_Overwrite(DataGlobal_83079C, DataGlobal_83D020, v18); /*0x672058*/
-    char v19 = INIClass::ReadBool_Overwrite(DataGlobal_83079C, DataGlobal_83D018, *((_BYTE *)this + 5294)); /*0x672073*/
-    char v20 = *((_BYTE *)this + 5295); /*0x672078*/
-    *((_BYTE *)this + 5294) = v19; /*0x67207e*/
+    char v18 = this->u8_14AD; /*0x672038*/
+    this->u8_14AC = BoolOverwriteINIClass; /*0x67203e*/
+    this->u8_14AD = INIClass::ReadBool_Overwrite(DataGlobal_83079C, DataGlobal_83D020, v18); /*0x672058*/
+    char v19 = INIClass::ReadBool_Overwrite(DataGlobal_83079C, DataGlobal_83D018, this->u8_14AE); /*0x672073*/
+    char v20 = this->u8_14AF; /*0x672078*/
+    this->u8_14AE = v19; /*0x67207e*/
     char v21 = INIClass::ReadBool_Overwrite(DataGlobal_83079C, DataGlobal_83D010, v20); /*0x672092*/
-    char v22 = *((_BYTE *)this + 5296); /*0x672097*/
-    *((_BYTE *)this + 5295) = v21; /*0x67209d*/
-    *((_BYTE *)this + 5296) = INIClass::ReadBool_Overwrite(DataGlobal_83079C, g_INI_Key_TiberiumGrows, v22); /*0x6720b7*/
-    char v23 = INIClass::ReadBool_Overwrite(DataGlobal_83079C, DataGlobal_83CFF8, *((_BYTE *)this + 5297)); /*0x6720d2*/
-    char v24 = *((_BYTE *)this + 5298); /*0x6720d7*/
-    *((_BYTE *)this + 5297) = v23; /*0x6720dd*/
+    char v22 = this->u8_14B0; /*0x672097*/
+    this->u8_14AF = v21; /*0x67209d*/
+    this->u8_14B0 = INIClass::ReadBool_Overwrite(DataGlobal_83079C, g_INI_Key_TiberiumGrows, v22); /*0x6720b7*/
+    char v23 = INIClass::ReadBool_Overwrite(DataGlobal_83079C, DataGlobal_83CFF8, this->u8_14B1); /*0x6720d2*/
+    char v24 = this->u8_14B2; /*0x6720d7*/
+    this->u8_14B1 = v23; /*0x6720dd*/
     char v25 = INIClass::ReadBool_Overwrite(DataGlobal_83079C, DataGlobal_83CFE8, v24); /*0x6720f1*/
-    char v26 = *((_BYTE *)this + 5299); /*0x6720f6*/
-    *((_BYTE *)this + 5298) = v25; /*0x6720fc*/
-    *((_BYTE *)this + 5299) = INIClass::ReadBool_Overwrite(DataGlobal_83079C, DataGlobal_83CFD8, v26); /*0x672116*/
-    char v27 = INIClass::ReadBool_Overwrite(DataGlobal_83079C, DataGlobal_83CFC8, *((_BYTE *)this + 5300)); /*0x672131*/
-    char v28 = *((_BYTE *)this + 5301); /*0x672136*/
-    *((_BYTE *)this + 5300) = v27; /*0x67213c*/
+    char v26 = this->u8_14B3; /*0x6720f6*/
+    this->u8_14B2 = v25; /*0x6720fc*/
+    this->u8_14B3 = INIClass::ReadBool_Overwrite(DataGlobal_83079C, DataGlobal_83CFD8, v26); /*0x672116*/
+    char v27 = INIClass::ReadBool_Overwrite(DataGlobal_83079C, DataGlobal_83CFC8, this->u8_14B4); /*0x672131*/
+    char v28 = this->u8_14B5; /*0x672136*/
+    this->u8_14B4 = v27; /*0x67213c*/
     char v29 = INIClass::ReadBool_Overwrite(DataGlobal_83079C, DataGlobal_8308AC, v28); /*0x672150*/
-    char v30 = *((_BYTE *)this + 5307); /*0x672155*/
-    *((_BYTE *)this + 5301) = v29; /*0x67215b*/
-    *((_BYTE *)this + 5307) = INIClass::ReadBool_Overwrite(DataGlobal_83079C, DataGlobal_83CFB4, v30); /*0x672175*/
-    char v31 = INIClass::ReadBool_Overwrite(DataGlobal_83079C, g_INI_Key_ShortGame, *((_BYTE *)this + 5302)); /*0x672190*/
-    char v32 = *((_BYTE *)this + 5305); /*0x672195*/
-    *((_BYTE *)this + 5302) = v31; /*0x67219b*/
+    char v30 = this->u8_14BB; /*0x672155*/
+    this->u8_14B5 = v29; /*0x67215b*/
+    this->u8_14BB = INIClass::ReadBool_Overwrite(DataGlobal_83079C, DataGlobal_83CFB4, v30); /*0x672175*/
+    char v31 = INIClass::ReadBool_Overwrite(DataGlobal_83079C, g_INI_Key_ShortGame, this->u8_14B6); /*0x672190*/
+    char v32 = this->u8_14B9; /*0x672195*/
+    this->u8_14B6 = v31; /*0x67219b*/
     char v33 = INIClass::ReadBool_Overwrite(DataGlobal_83079C, g_INI_Key_SuperWeaponsAllowed, v32); /*0x6721af*/
-    char v34 = *((_BYTE *)this + 5306); /*0x6721b4*/
-    *((_BYTE *)this + 5305) = v33; /*0x6721ba*/
-    *((_BYTE *)this + 5306) = INIClass::ReadBool_Overwrite(DataGlobal_83079C, g_INI_Key_BuildOffAlly, v34); /*0x6721d4*/
-    char v35 = INIClass::ReadBool_Overwrite(DataGlobal_83079C, g_INI_Key_FogOfWar, *((_BYTE *)this + 5303)); /*0x6721ef*/
-    char v36 = *((_BYTE *)this + 5304); /*0x6721f4*/
-    *((_BYTE *)this + 5303) = v35; /*0x6721fa*/
+    char v34 = this->u8_14BA; /*0x6721b4*/
+    this->u8_14B9 = v33; /*0x6721ba*/
+    this->u8_14BA = INIClass::ReadBool_Overwrite(DataGlobal_83079C, g_INI_Key_BuildOffAlly, v34); /*0x6721d4*/
+    char v35 = INIClass::ReadBool_Overwrite(DataGlobal_83079C, g_INI_Key_FogOfWar, this->u8_14B7); /*0x6721ef*/
+    char v36 = this->u8_14B8; /*0x6721f4*/
+    this->u8_14B7 = v35; /*0x6721fa*/
     result = INIClass::ReadBool_Overwrite(DataGlobal_83079C, DataGlobal_83CF68, v36); /*0x67220e*/
-    *((_BYTE *)this + 5304) = result; /*0x672213*/
+    this->u8_14B8 = result; /*0x672213*/
     LOBYTE(result) = 1; /*0x67221a*/
   }
   else
@@ -2728,6 +2751,7 @@ INIClass * * Dialog::ReadMultiplayerDialogSettings()
   return result; /*0x672219*/
 }
 } // namespace gamemd
+}
 
 // 0x775940
 namespace gamemd {
@@ -2747,6 +2771,7 @@ int Dialog::FindByHandle()
   return a0[2 * v1]; /*0x77595f*/
 }
 } // namespace gamemd
+}
 
 // 0x775B10
 namespace gamemd {
@@ -2756,6 +2781,7 @@ int Dialog::GetCurrent()
   return dword_B72F44; /*0x775b15*/
 }
 } // namespace gamemd
+}
 
 // 0x775B20
 namespace gamemd {
@@ -2765,6 +2791,7 @@ int Dialog::GetCurrentType()
   return dword_B72F48; /*0x775b25*/
 }
 } // namespace gamemd
+}
 
 // 0x4E4EC0
 namespace gamemd {

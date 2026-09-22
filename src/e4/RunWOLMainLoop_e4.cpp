@@ -43,6 +43,7 @@ LABEL_5:
   return v0; /*0x77e17b*/
 }
 } // namespace gamemd
+}
 
 // 0x785EA0
 namespace gamemd {
@@ -136,6 +137,7 @@ void sub_785EA0()
   return result; /*0x786072*/
 }
 } // namespace gamemd
+}
 
 // 0x798DE0
 namespace gamemd {
@@ -195,6 +197,7 @@ Coord * * RunWOLMainLoop_Read()
   return v6; /*0x798efa*/
 }
 } // namespace gamemd
+}
 
 // 0x72C7E0
 namespace gamemd {

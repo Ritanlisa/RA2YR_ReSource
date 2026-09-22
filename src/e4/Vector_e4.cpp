@@ -16,36 +16,39 @@ void Math_Vector2D_Magnitude()
   return result; /*0x4c1b6e*/
 }
 } // namespace gamemd
+}
 
 // 0x512D30
 namespace gamemd {
 void Vector::Cleanup()
 {
 {
-  if ( this->Vector_field_0x4 && *(_BYTE *)(this + 13) ) /*0x512d3d*/
+  if ( this->Vector_field_0x4 && this->u8_D ) /*0x512d3d*/
   {
     __3_YAXPAX_Z(this->q004); /*0x512d43*/
     this->Vector_field_0x4 = 0; /*0x512d4b*/
   }
-  *(_BYTE *)(this + 13) = 0; /*0x512d4e*/
+  this->u8_D = 0; /*0x512d4e*/
   this->Vector_field_0x8 = 0; /*0x512d51*/
 }
 } // namespace gamemd
+}
 
 // 0x513100
 namespace gamemd {
 void Vector::Destructor()
 {
 {
-  if ( this->Vector_field_0x4 && *(_BYTE *)(this + 13) ) /*0x51310d*/
+  if ( this->Vector_field_0x4 && this->u8_D ) /*0x51310d*/
   {
     __3_YAXPAX_Z(this->q004); /*0x513113*/
     this->Vector_field_0x4 = 0; /*0x51311b*/
   }
-  *(_BYTE *)(this + 13) = 0; /*0x51311e*/
+  this->u8_D = 0; /*0x51311e*/
   this->Vector_field_0x8 = 0; /*0x513121*/
 }
 } // namespace gamemd
+}
 
 // 0x5AE890
 namespace gamemd {
@@ -57,21 +60,23 @@ void Vector::MatrixMulVectorMath(float a2, float a3, float a4)
   this->q00B = a2 * this->q008 + a3 * this->q009 + a4 * this->q00A + this->q00B; /*0x5ae8e9*/
 }
 } // namespace gamemd
+}
 
 // 0x67ABE0
 namespace gamemd {
 void Vector::Cleanup2()
 {
 {
-  if ( this->Vector_field_0x4 && *(_BYTE *)(this + 13) ) /*0x67abed*/
+  if ( this->Vector_field_0x4 && this->u8_D ) /*0x67abed*/
   {
     __3_YAXPAX_Z(this->q004); /*0x67abf3*/
     this->Vector_field_0x4 = 0; /*0x67abfb*/
   }
-  *(_BYTE *)(this + 13) = 0; /*0x67abfe*/
+  this->u8_D = 0; /*0x67abfe*/
   this->Vector_field_0x8 = 0; /*0x67ac01*/
 }
 } // namespace gamemd
+}
 
 // 0x41C2E0
 namespace gamemd {

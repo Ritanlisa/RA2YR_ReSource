@@ -70,6 +70,7 @@ ScenarioClass * * ScenarioClass::CopyStartPositions()
   return result; /*0x58bc16*/
 }
 } // namespace gamemd
+}
 
 // 0x5CC330
 namespace gamemd {
@@ -207,6 +208,7 @@ LABEL_6:
   return *(_BYTE *)(a1 + 72) == 0; /*0x5cc51b*/
 }
 } // namespace gamemd
+}
 
 // 0x5D6430
 namespace gamemd {
@@ -217,6 +219,7 @@ void ScenarioClass_dispatchEvents()
   return Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 9); /*0x69b684*/
 }
 } // namespace gamemd
+}
 
 // 0x5D6440
 namespace gamemd {
@@ -226,6 +229,7 @@ int ScenarioClass::MissionStubReturnZero3()
   return this->vt_slot_108();
 }
 } // namespace gamemd
+}
 
 // 0x5D6BE0
 namespace gamemd {
@@ -257,6 +261,7 @@ int ScenarioClass::AssignStartPositions(char a1)
   return 1; /*0x5d6c4f*/
 }
 } // namespace gamemd
+}
 
 // 0x6832C0
 namespace gamemd {
@@ -267,7 +272,7 @@ TimerStruct * * ScenarioClass::Constructor()
   TimerStruct *v3; // ecx
   TimerStruct *v4; // eax
   TimerStruct *v5; // edx
-  SeedInitRNG((_DWORD *)(this + 536), 0); /*0x6832cf*/
+  SeedInitRNG((_DWORD *)(&this->u32_D46), 0); /*0x6832cf*/
   this->q614 = Timer::GetTicks(); /*0x6832e5*/
   this->pauseTimer = 0; /*0x6832eb*/
   this->q620 = Timer::GetTicks(); /*0x6832f6*/
@@ -291,15 +296,15 @@ TimerStruct * * ScenarioClass::Constructor()
   this->ambientTimer = v5; /*0x68336c*/
   this->ScenarioClass_field_timer_34C0 = g_CurrentFrame; /*0x683381*/
   this->q34C8 = 0; /*0x683387*/
-  TypeList::TechnoTypeConstructor((_DWORD *)(this + 13524), 0, 0); /*0x68338d*/
+  TypeList::TechnoTypeConstructor((_DWORD *)(&this->u32_15204), 0, 0); /*0x68338d*/
   this->dropshipUnitCounts = 0; /*0x683397*/
   this->dropshipCountsCount = 10; /*0x68339a*/
   this->allowableUnits = &vt_TypeList_TechnoTypeClass; /*0x68339d*/
-  VectorClass::Construct((_DWORD *)(this + 13552), 0, 0); /*0x6833ad*/
+  VectorClass::Construct((_DWORD *)(&this->u32_152C2), 0, 0); /*0x6833ad*/
   this->ground = 10; /*0x6833b2*/
   this->blue = 0; /*0x6833b5*/
   this->ambientCurrent = &vt_TypeList_int; /*0x6833b8*/
-  VectorClass::Construct((_DWORD *)(this + 13580), 0, 0); /*0x6833c8*/
+  VectorClass::Construct((_DWORD *)(&this->u32_15380), 0, 0); /*0x6833c8*/
   this->ionLevel = 10; /*0x6833cf*/
   this->ionGround = 0; /*0x6833d2*/
   this->ionAmbient = &vt_TypeList_int; /*0x6833d5*/
@@ -311,7 +316,7 @@ TimerStruct * * ScenarioClass::Constructor()
   this->campaignIndex = -1; /*0x6833fd*/
   this->Items = 0; /*0x683407*/
   this->q108 = 0; /*0x68340a*/
-  CellStruct *v6 = (_DWORD *)(this + 1586); /*0x683410*/
+  CellStruct *v6 = (_DWORD *)(&this->u32_2786); /*0x683410*/
   int v7 = 702; /*0x683416*/
   do /*0x683427*/
   {
@@ -319,14 +324,14 @@ TimerStruct * * ScenarioClass::Constructor()
     --v7; /*0x683426*/
   }
   while ( v7 ); /*0x683427*/
-  wcscpy((wchar_t *)(this + 4960), &g_TypeClass_DefaultString); /*0x683435*/
-  wcscpy((wchar_t *)(this + 5082), &g_TypeClass_DefaultString); /*0x683446*/
-  strcpy((char *)(this + 4700), &g_INI_DefaultBuffer); /*0x683475*/
-  strcpy((char *)(this + 7248), &g_INI_DefaultBuffer); /*0x68349d*/
-  strcpy((char *)(this + 5050), &g_INI_DefaultBuffer); /*0x6834bf*/
-  wcscpy((wchar_t *)(this + 5200), &g_TypeClass_DefaultString); /*0x6834cf*/
+  wcscpy((wchar_t *)(&this->u32_7C00), &g_TypeClass_DefaultString); /*0x683435*/
+  wcscpy((wchar_t *)(&this->u32_7F02), &g_TypeClass_DefaultString); /*0x683446*/
+  strcpy((char *)(&this->u32_7580), &g_INI_DefaultBuffer); /*0x683475*/
+  strcpy((char *)(&this->u32_B508), &g_INI_DefaultBuffer); /*0x68349d*/
+  strcpy((char *)(&this->u32_7E40), &g_INI_DefaultBuffer); /*0x6834bf*/
+  wcscpy((wchar_t *)(&this->u32_8200), &g_TypeClass_DefaultString); /*0x6834cf*/
   int v8 = 0; /*0x6834d7*/
-  _BYTE * v9 = (_BYTE *)(this + 7344); /*0x6834d9*/
+  _BYTE * v9 = (_BYTE *)(&this->u32_B784); /*0x6834d9*/
   do /*0x683502*/
   {
     *(v9 - 40) = 0; /*0x6834e2*/
@@ -341,7 +346,7 @@ TimerStruct * * ScenarioClass::Constructor()
   }
   while ( v8 < 50 ); /*0x683502*/
   int v10 = 0; /*0x683504*/
-  _BYTE * v11 = (_BYTE *)(this + 9394); /*0x683506*/
+  _BYTE * v11 = (_BYTE *)(&this->u32_EAC4); /*0x683506*/
   do /*0x68352f*/
   {
     *(v11 - 40) = 0; /*0x68350f*/
@@ -355,13 +360,14 @@ TimerStruct * * ScenarioClass::Constructor()
     v11 += 41; /*0x683529*/
   }
   while ( v10 < 100 ); /*0x68352f*/
-  *(_DWORD *)(this + 13454) = 0; /*0x683534*/
-  *(_DWORD *)(this + 13458) = 0; /*0x68353c*/
-  *(_DWORD *)(this + 13462) = 0; /*0x683543*/
-  *(_DWORD *)(this + 13466) = 0; /*0x683549*/
+  this->u32_348E = 0; /*0x683534*/
+  this->u32_3492 = 0; /*0x68353c*/
+  this->u32_3496 = 0; /*0x683543*/
+  this->u32_349A = 0; /*0x683549*/
   return this; /*0x683533*/
 }
 } // namespace gamemd
+}
 
 // 0x683AB0
 namespace gamemd {
@@ -501,6 +507,7 @@ LABEL_21:
   return 1; /*0x683d4a*/
 }
 } // namespace gamemd
+}
 
 // 0x683EB0
 namespace gamemd {
@@ -542,6 +549,7 @@ int ScenarioClass::CleanupTemporary()
   return (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 16))(g_WWMouseClass_Instance);
 }
 } // namespace gamemd
+}
 
 // 0x684180
 namespace gamemd {
@@ -579,6 +587,7 @@ unsigned char * ScenarioClass::ProcessIntroTimer()
   return result; /*0x684239*/
 }
 } // namespace gamemd
+}
 
 // 0x686730
 namespace gamemd {
@@ -634,6 +643,7 @@ void ScenarioClass_Construct()
   return result; /*0x686756*/
 }
 } // namespace gamemd
+}
 
 // 0x686B20
 namespace gamemd {
@@ -1265,6 +1275,7 @@ LABEL_124:
   return 1;
 }
 } // namespace gamemd
+}
 
 // 0x689E90
 namespace gamemd {
@@ -1341,7 +1352,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
   v4 = 0;
   if ( this->numberStartingPoints > 0 )
   {
-    v5 = (RandomStruct *)(this + 4416);
+    v5 = (RandomStruct *)(&this->u32_6E46);
     do
     {
       v122 = (void ***)((char *)v4 + 1);
@@ -1373,8 +1384,8 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
     (unsigned __int8 ***)aP1,
     (INIClass *)&g_INI_Key_Lighting.sectionHead[1],
     (unsigned __int8 *)&stru_830620[56172],
-    (INIClass *)(this + 264),
-    (INIClass *)(this + 264),
+    (INIClass *)(&this->u32_684),
+    (INIClass *)(&this->u32_684),
     260);
   this->intro = INIClass::GetBool(
                                (unsigned __int8 ***)aP1,
@@ -1506,7 +1517,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
   int v119; // [esp+8h] [ebp-50h]
   LOWORD(v119) = 1;
   v116 = &vt_VectorClass_TechnoTypeClass;
-  if ( &v116 != (void ***)(this + 13524) )
+  if ( &v116 != (void ***)(&this->u32_15204) )
   {
     TypeList_TechnoType::ddtor((int)&v116);
     v115 = this->allowableUnitMaximums;
@@ -1539,7 +1550,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
                                this->dropshipCountsCount,
                                (int)aP3[1]->__pad_0);
   v122 = TechnoTypeList;
-  if ( (void ***)(this + 13524) != TechnoTypeList )
+  if ( (void ***)(&this->u32_15204) != TechnoTypeList )
   {
     this->allowableUnits->vt_entry_68();
     v14 = v122[2];
@@ -1552,7 +1563,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
       {
         int v16 = this->allowableUnitMaximums;
         eax16 = 0;
-        *(_BYTE *)(this + 13537) = 1;
+        this->u8_34E1 = 1;
         if ( v16 > 0 )
         {
           do
@@ -1567,7 +1578,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
     else
     {
       this->allowableUnitsCount = 0;
-      *(_BYTE *)(this + 13537) = 0;
+      this->u8_34E1 = 0;
     }
     TechnoTypeList = v122;
   }
@@ -1580,14 +1591,14 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
   char v127; // [esp+49h] [ebp-Fh]
   if ( v17 && v127 )
     __3_YAXPAX_Z(v17);
-  v20 = (void ***)(this + 13552);
+  v20 = (void ***)(&this->u32_152C2);
   v21 = &v116;
   v122 = &v116;
   var58 = 0;
   v115 = 0;
   LOWORD(v119) = 1;
   v116 = &vt_VectorClass_int;
-  if ( &v116 != (void ***)(this + 13552) )
+  if ( &v116 != (void ***)(&this->u32_152C2) )
   {
     VectorClass::Destroy((int)&v116);
     v22 = this->red;
@@ -1639,7 +1650,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
   v122 = IntList;
   if ( v20 != IntList )
   {
-    ((void (__thiscall *)(int))(*v20)[3])(this + 13552);
+    ((void (__thiscall *)(int))(*v20)[3])(&this->u32_152C2);
     v29 = v122[2];
     this->red = v29;
     if ( v29 )
@@ -1650,7 +1661,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
       {
         int v31 = this->red;
         eax35 = 0;
-        *(_BYTE *)(this + 13565) = 1;
+        this->u8_34FD = 1;
         if ( v31 > 0 )
         {
           do
@@ -1665,7 +1676,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
     else
     {
       this->ambientTarget = 0;
-      *(_BYTE *)(this + 13565) = 0;
+      this->u8_34FD = 0;
     }
     IntList = v122;
   }
@@ -1734,10 +1745,10 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
     {
       int v41 = this->red;
       if ( this->blue < v41
-        || (*(_BYTE *)(this + 13565) || !v41)
+        || (this->u8_34FD || !v41)
   int v42; // eax
         && (v42 = this->ground, v42 > 0)
-        && ((unsigned __int8 (__thiscall *)(int, int, _DWORD))(*v20)[2])(this + 13552, v41 + v42, 0) )
+        && ((unsigned __int8 (__thiscall *)(int, int, _DWORD))(*v20)[2])(&this->u32_D3C0, v41 + v42, 0) )
       {
         int v43 = this->blue;
         int v44 = this->ambientTarget;
@@ -1758,7 +1769,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
     {
       int v47 = this->ionGreen;
       if ( this->ionGround < v47
-        || (*(_BYTE *)(this + 13593) || !v47)
+        || (this->u8_3519 || !v47)
   int v48; // eax
         && (v48 = this->ionLevel, v48 > 0)
         && this->ionAmbient->vt_slot_8(v47 + v48, 0) )
@@ -1802,28 +1813,28 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
     (INIClass *)&stru_830620[55716],
     (unsigned __int8 *)&stru_830620[55652],
     (INIClass *)&stru_830620[55668],
-    (INIClass *)(this + 13744),
+    (INIClass *)(&this->u32_15784),
     31);
   INIClass::GetString(
     (unsigned __int8 ***)aP1,
     (INIClass *)&stru_830620[55716],
     (unsigned __int8 *)&stru_830620[55612],
     (INIClass *)&stru_830620[55628],
-    (INIClass *)(this + 13775),
+    (INIClass *)(&this->u32_15845),
     31);
   INIClass::GetString(
     (unsigned __int8 ***)aP1,
     (INIClass *)&stru_830620[55716],
     (unsigned __int8 *)&stru_830620[55576],
     (INIClass *)&stru_830620[55592],
-    (INIClass *)(this + 13806),
+    (INIClass *)(&this->u32_15906),
     31);
   INIClass::GetString(
     (unsigned __int8 ***)aP1,
     (INIClass *)&stru_830620[55716],
     (unsigned __int8 *)&stru_830620[55536],
     (INIClass *)&stru_830620[55552],
-    (INIClass *)(this + 13837),
+    (INIClass *)(&this->u32_159C7),
     31);
   *(double *)aP3 = (double)this->nukeRed * 0.01;
   double v55; // st7
@@ -2056,6 +2067,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
   return 1;
 }
 } // namespace gamemd
+}
 
 // 0x5C0E20
 namespace gamemd {

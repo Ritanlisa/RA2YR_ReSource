@@ -40,6 +40,7 @@ int sub_679CC0()
   return dword_B053B4; /*0x679d84*/
 }
 } // namespace gamemd
+}
 
 // 0x67B550
 namespace gamemd {
@@ -143,6 +144,7 @@ void ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, Vector
   return (int)aP0->__pad_0; /*0x67b682*/
 }
 } // namespace gamemd
+}
 
 // 0x67BB10
 namespace gamemd {
@@ -246,6 +248,7 @@ void * ReadINIClassInfantryTypeList(INIClass * aP0, unsigned char *** edx0, INIC
   return (InfantryTypeClass *)aP0; /*0x67bc42*/
 }
 } // namespace gamemd
+}
 
 // 0x674500
 int RulesClass::sub_674500()

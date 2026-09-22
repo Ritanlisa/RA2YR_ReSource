@@ -1604,6 +1604,7 @@ uint32_t FootClass::getWaypointData(uint32_t a) { return 0; }
 void FootClass::onWaypointReached(uint32_t a) {}
 void FootClass::onPathComplete() {}
 void FootClass::onMovementDone() {}
+}
 // 0x709290
 bool FootClass::CanEnterCell(uint32_t a) { return false; }
 // 0x416af0

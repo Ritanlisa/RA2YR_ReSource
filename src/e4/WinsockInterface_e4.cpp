@@ -29,7 +29,7 @@ void * WinsockInterface::ProcessPacket(int a2)
     --v3; /*0x7702b5*/
   }
   while ( v3 ); /*0x7702b6*/
-  VectorClass *v6 = this + 892; /*0x7702b8*/
+  VectorClass *v6 = &this->u32_DF0; /*0x7702b8*/
   int v7 = 2; /*0x7702be*/
   do /*0x7702e2*/
   {
@@ -41,37 +41,38 @@ void * WinsockInterface::ProcessPacket(int a2)
     --v7; /*0x7702e1*/
   }
   while ( v7 ); /*0x7702e2*/
-  *((_DWORD *)this + 235) = Timer::GetTicks(); /*0x7702f6*/
-  *((_DWORD *)this + 237) = 0; /*0x7702fc*/
-  *(this + 952) = 1; /*0x770305*/
-  *((_DWORD *)this + 239) = 0; /*0x77030c*/
-  VectorClass::WstringConstructor((_DWORD *)this + 240, 0, 0); /*0x770312*/
-  *((_DWORD *)this + 240) = &vt_DynamicVectorClass_Wstring; /*0x770317*/
-  *((_DWORD *)this + 245) = 10; /*0x77031d*/
-  *((_DWORD *)this + 244) = 0; /*0x770324*/
-  *((_DWORD *)this + 246) = 0; /*0x770327*/
+  this->u32_3AC = Timer::GetTicks(); /*0x7702f6*/
+  this->u32_3B4 = 0; /*0x7702fc*/
+  *(&this->u32_17C2) = 1; /*0x770305*/
+  this->u32_3BC = 0; /*0x77030c*/
+  VectorClass::WstringConstructor((_DWORD *)&this->u32_3C0, 0, 0); /*0x770312*/
+  this->u32_3C0 = &vt_DynamicVectorClass_Wstring; /*0x770317*/
+  this->u32_3D4 = 10; /*0x77031d*/
+  this->u32_3D0 = 0; /*0x770324*/
+  this->u32_3D8 = 0; /*0x770327*/
   Audio::GetEnabled(); /*0x77032d*/
   String::Assign((char **)&a2, DataGlobal_8491C4); /*0x77033b*/
-  String::Reassign((char **)this + 1, (const char **)&a2); /*0x770348*/
+  String::Reassign((char **)&this->ptr_4, (const char **)&a2); /*0x770348*/
   DeleteAndZero((void **)&a2); /*0x770351*/
   String::Assign((char **)&a2, DataGlobal_8491BC); /*0x77035f*/
-  String::Reassign((char **)this + 38, (const char **)&a2); /*0x77036f*/
+  String::Reassign((char **)&this->u32_98, (const char **)&a2); /*0x77036f*/
   DeleteAndZero((void **)&a2); /*0x770378*/
   String::Assign((char **)&a2, DataGlobal_8491B4); /*0x770386*/
-  String::Reassign((char **)this + 75, (const char **)&a2); /*0x770396*/
+  String::Reassign((char **)&this->u32_12C, (const char **)&a2); /*0x770396*/
   DeleteAndZero((void **)&a2); /*0x77039f*/
   String::Assign((char **)&a2, stru_8489C0); /*0x7703ad*/
-  String::Reassign((char **)this + 112, (const char **)&a2); /*0x7703bd*/
+  String::Reassign((char **)&this->u32_1C0, (const char **)&a2); /*0x7703bd*/
   DeleteAndZero((void **)&a2); /*0x7703c6*/
   String::Assign((char **)&a2, DataGlobal_8491AC); /*0x7703d4*/
-  String::Reassign((char **)this + 149, (const char **)&a2); /*0x7703e4*/
+  String::Reassign((char **)&this->u32_254, (const char **)&a2); /*0x7703e4*/
   DeleteAndZero((void **)&a2); /*0x7703ed*/
   String::Assign((char **)&a2, DataGlobal_8491A0); /*0x7703fb*/
-  String::Reassign((char **)this + 186, (const char **)&a2); /*0x77040b*/
+  String::Reassign((char **)&this->u32_2E8, (const char **)&a2); /*0x77040b*/
   DeleteAndZero((void **)&a2); /*0x770414*/
   return this; /*0x77041b*/
 }
 } // namespace gamemd
+}
 
 // 0x7B1DE0
 namespace gamemd {
@@ -88,7 +89,7 @@ int WinsockInterface::Init()
   _BYTE ProtocolBuffer[24]; // [esp+10h] [ebp-1000h] BYREF
 
   Debug::Log(DataGlobal_84E028); /*0x7b1df3*/
-  if ( *((_BYTE *)this + 258152) ) /*0x7b1df8*/
+  if ( this->u8_3F068 ) /*0x7b1df8*/
   {
     Debug::Log(DataGlobal_84E000); /*0x7b1e0a*/
     return 1; /*0x7b1e12*/
@@ -104,7 +105,7 @@ int WinsockInterface::Init()
     AbstractClass *v4 = *this; /*0x7b1e58*/
     v5 = v3; /*0x7b1e5a*/
     v12 = v3; /*0x7b1e61*/
-    *(this + 64539) = -1; /*0x7b1e65*/
+    *(&this->u32_64D49) = -1; /*0x7b1e65*/
     this->vt_slot_20(); /*0x7b1e6f*/
     this->vt_slot_24(); /*0x7b1e76*/
     Debug::Log(DataGlobal_84DFB4); /*0x7b1e7e*/
@@ -127,7 +128,7 @@ int WinsockInterface::Init()
       else
       {
         Debug::Log(DataGlobal_84DF50, (unsigned __int8)v5->wVersion, HIBYTE(v5->wVersion)); /*0x7b1efa*/
-        *(this + 1) = 546; /*0x7b1f0a*/
+        this->ptr_4 = 546; /*0x7b1f0a*/
         dwBufferLength = 4096; /*0x7b1f18*/
         v7 = EnumProtocolsA(&iProtocols, ProtocolBuffer, &dwBufferLength); /*0x7b1f20*/
         if ( v7 == -1 ) /*0x7b1f28*/
@@ -152,11 +153,11 @@ int WinsockInterface::Init()
             }
             while ( v10 ); /*0x7b1f63*/
             if ( v8 != 0x7FFFFFFF && v8 > 400 ) /*0x7b1f74*/
-              *(this + 1) = v8; /*0x7b1f76*/
+              this->ptr_4 = v8; /*0x7b1f76*/
             v5 = v12; /*0x7b1f79*/
           }
         }
-        *((_BYTE *)this + 258152) = 1; /*0x7b1f7e*/
+        this->u8_3F068 = 1; /*0x7b1f7e*/
         __3_YAXPAX_Z(v5); /*0x7b1f85*/
         return 1; /*0x7b1f8d*/
       }
@@ -164,3 +165,4 @@ int WinsockInterface::Init()
   }
 }
 } // namespace gamemd
+}

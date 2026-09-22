@@ -11,12 +11,14 @@ int ThemeClass::RequestBuffer()
 {
   return RequestBufferMixer((unsigned int *)(this->q014 + 16), 0);
 }
+}
 
 // 0x408140
 long long ThemeClass::GetValue()
 {
 {
   return this->ThemeClass_field_04; /*0x408146*/
+}
 }
 
 // 0x720480
@@ -30,25 +32,25 @@ int ThemeClass::ReadThemeEntry(unsigned char *** a2)
   INIClass::ResetSection(a2); /*0x72048a*/
   if ( !INIClass::BinarySearchSection((int)a2, (INIClass *)this) ) /*0x720492*/
     return 0; /*0x720584*/
-  v3 = (CCINIClass *)(this + 256); /*0x7204a6*/
+  v3 = (CCINIClass *)(&this->u32_646); /*0x7204a6*/
   INIClass::GetString( /*0x7204bf*/
     a2,
     (INIClass *)this,
     (unsigned __int8 *)&stru_830620[82216],
     (INIClass *)&DataGlobal_87F8E4[42624],
-    (INIClass *)(this + 256),
+    (INIClass *)(&this->u32_646),
     256);
   while ( v3->__pad_0[0] == 36 || v3->__pad_0[0] == 35 ) /*0x7204cc*/
     v3 = (CCINIClass *)((char *)v3 + 1); /*0x7204ce*/
-  strcpy((char *)(this + 256), v3->__pad_0); /*0x7204e9*/
+  strcpy((char *)(&this->u32_646), v3->__pad_0); /*0x7204e9*/
   Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x720501*/
                     (int)a2,
                     (unsigned __int8 *)this,
                     (CCINIClass *)&stru_81B1A4.sectionHead[2],
-                    *(INIClass **)(this + 640));
-  char v8 = *(_BYTE *)(this + 648); /*0x72050e*/
-  *(_DWORD *)(this + 640) = Int_Overwrite; /*0x720515*/
-  *(_BYTE *)(this + 648) = INIClass::ReadBool_Overwrite( /*0x720520*/
+                    *(INIClass **)(&this->q1000));
+  char v8 = this->u8_288; /*0x72050e*/
+  this->u32_280 = Int_Overwrite; /*0x720515*/
+  this->u8_288 = INIClass::ReadBool_Overwrite( /*0x720520*/
                              (int)a2,
                              (unsigned __int8 *)this,
                              (CCINIClass *)&stru_81BB58.headNode[1],
@@ -57,22 +59,23 @@ int ThemeClass::ReadThemeEntry(unsigned char *** a2)
                      (int)a2,
                      (unsigned __int8 *)this,
                      (CCINIClass *)&stru_830620[82208],
-                     *(_BYTE *)(this + 649));
-  int v6 = *(_DWORD *)(this + 652); /*0x72053a*/
-  *(_BYTE *)(this + 649) = Bool_Overwrite; /*0x720540*/
-  *(_DWORD *)(this + 652) = HouseTypeClass::loadCountryData( /*0x720554*/
+                     this->u8_289);
+  int v6 = this->u32_28C; /*0x72053a*/
+  this->u8_289 = Bool_Overwrite; /*0x720540*/
+  this->u32_28C = HouseTypeClass::loadCountryData( /*0x720554*/
                               a2,
                               (unsigned __int8 *)this,
                               (unsigned __int8 *)&stru_8172FC.unknown38,
                               v6);
-  if ( *(_BYTE *)(this + 648) ) /*0x72055a*/
+  if ( this->u8_288 ) /*0x72055a*/
     INIClass::GetStringEx( /*0x720577*/
       (int)a2,
       (INIClass *)this,
       (CCINIClass *)&g_INI_Key_UIName.headNode[1],
-      (CCINIClass *)(this + 512),
+      (CCINIClass *)(&this->u32_CC2),
       0x40u);
   return 1; /*0x72057c*/
+}
 }
 
 // 0x720590
@@ -110,7 +113,7 @@ void * ThemeClass::InitializeThemes(char * a2)
       int v7 = 0; /*0x720606*/
       if ( this->q024 <= 0 ) /*0x72060a*/
         goto LABEL_10; /*0x72060a*/
-      while ( _strcmpi(*(const void **)(*(_DWORD *)(this + 24) + 4 * v7), Destination) ) /*0x720622*/
+      while ( _strcmpi(*(const void **)(this->u32_18 + 4 * v7), Destination) ) /*0x720622*/
       {
         if ( ++v7 >= this->q024 ) /*0x72062a*/
           goto LABEL_10; /*0x72062a*/
@@ -134,22 +137,22 @@ LABEL_10:
           v9 = (char *)v8; /*0x720686*/
         }
         strcpy(v9, Destination); /*0x7206a0*/
-        int v10 = *(_DWORD *)(this + 28); /*0x7206a9*/
+        int v10 = this->u32_1C; /*0x7206a9*/
         if ( this->q024 < v10 /*0x7206d1*/
-          || (*(_BYTE *)(this + 33) || !v10)
+          || (this->u8_21 || !v10)
   int v11; // ecx
           && (v11 = this->ThemeClass_field_28, v11 > 0)
           && this->q014->vt_slot_8(v10 + v11, 0) )
         {
           int v12 = this->q024; /*0x7206d8*/
-          int v13 = *(_DWORD *)(this + 24); /*0x7206db*/
+          int v13 = this->u32_18; /*0x7206db*/
           this->q024 = v12 + 1; /*0x7206e1*/
           *(_DWORD *)(v13 + 4 * v12) = v9; /*0x7206e4*/
         }
       }
       else
       {
-        v9 = *(char **)(*(_DWORD *)(this + 24) + 4 * v7); /*0x7206ec*/
+        v9 = *(char **)(this->u32_18 + 4 * v7); /*0x7206ec*/
       }
       ThemeClass::ReadThemeEntry((int)v9, (unsigned __int8 ***)a2); /*0x7206f6*/
       v5 = i; /*0x7206fb*/
@@ -172,6 +175,7 @@ LABEL_10:
     }
   }
   return result; /*0x72075f*/
+}
 }
 
 // 0x752370
@@ -220,6 +224,7 @@ int ThemeClass::ClearQueues()
     while ( (int)v3 < (int)&DataGlobal_B1D480 ); /*0x752457*/
   }
   return result; /*0x75245c*/
+}
 }
 
 // 0x752AB0

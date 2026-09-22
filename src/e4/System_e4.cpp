@@ -77,6 +77,7 @@ LABEL_17:
   return result; /*0x52aa75*/
 }
 } // namespace gamemd
+}
 
 // 0x52B750
 namespace gamemd {
@@ -107,6 +108,7 @@ LABEL_7:
   return (int)&aP0->__pad_0[8 * (v3 / 2)]; /*0x52b784*/
 }
 } // namespace gamemd
+}
 
 // 0x6269A0
 namespace gamemd {
@@ -179,6 +181,7 @@ void sub_6269A0()
   return (*(int (__thiscall **)(_DWORD))(*g_FileExtensionState->vtable3 + 12))(g_FileExtensionState->vtable3); /*0x626aa9*/
 }
 } // namespace gamemd
+}
 
 // 0x626AB0
 namespace gamemd {
@@ -269,6 +272,7 @@ void sub_626AB0(const char * a1, int a2)
   return v17; /*0x626c57*/
 }
 } // namespace gamemd
+}
 
 // 0x7C8F46
 namespace gamemd {
@@ -284,6 +288,7 @@ int sub_7C8F46()
   return result; /*0x7c8f5c*/
 }
 } // namespace gamemd
+}
 
 // 0x7A2EA0
 namespace gamemd {
@@ -309,6 +314,7 @@ void sub_7A2EA0(int (__stdcall ***a1)(unsigned int, void *, int *) a1, int a2, i
   return v5; /*0x7a2f1b*/
 }
 } // namespace gamemd
+}
 
 // 0x68C9C0
 namespace gamemd {
@@ -339,6 +345,7 @@ LABEL_6:
   }
 }
 } // namespace gamemd
+}
 
 // 0x5BDB90
 namespace gamemd {

@@ -62,6 +62,7 @@ LABEL_18:
   return v9; /*0x5d4b2b*/
 }
 } // namespace gamemd
+}
 
 // 0x7B73F0
 namespace gamemd {
@@ -182,6 +183,7 @@ LABEL_35:
   return 1; /*0x7b75ed*/
 }
 } // namespace gamemd
+}
 
 // 0x5DAC00
 namespace gamemd {

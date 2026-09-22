@@ -174,6 +174,7 @@ LABEL_28:
   return 0; /*0x4f65ea*/
 }
 } // namespace gamemd
+}
 
 // 0x5113F0
 namespace gamemd {
@@ -208,8 +209,8 @@ unsigned char * SuperWeaponTypeClass::Construct(AbstractClass * aP1)
   this->PostClick = 1065353216; /*0x511496*/
   this->q043 = 1065353216; /*0x51149c*/
   this->PreDependent = 1065353216; /*0x5114a2*/
-  *((_DWORD *)this + 69) = 1065353216; /*0x5114a8*/
-  *((_DWORD *)this + 70) = 1065353216; /*0x5114ae*/
+  this->u32_114 = 1065353216; /*0x5114a8*/
+  this->u32_118 = 1065353216; /*0x5114ae*/
   this->q11C = 1065353216; /*0x5114b4*/
   this->ShowTimer = 1065353216; /*0x5114ba*/
   this->ManualControl = 1065353216; /*0x5114c0*/
@@ -222,29 +223,29 @@ unsigned char * SuperWeaponTypeClass::Construct(AbstractClass * aP1)
   this->LineMultiplier = 1065353216; /*0x5114ea*/
   this->q144 = 1065353216; /*0x5114f0*/
   this->q148 = 1065353216; /*0x5114f6*/
-  InfantryTypeVector::Construct2((_DWORD *)this + 83, 0, 0); /*0x5114fc*/
+  InfantryTypeVector::Construct2((_DWORD *)&this->u32_14C, 0, 0); /*0x5114fc*/
   this->q058 = 10; /*0x511501*/
   this->q057 = 0; /*0x511508*/
-  *((_DWORD *)this + 83) = &vt_TypeList_InfantryTypeClass_const; /*0x51150b*/
-  UnitTypeVector::ConstructUnitTypeVectorClass((_DWORD *)this + 90, 0, 0); /*0x51151b*/
-  *((_DWORD *)this + 95) = 10; /*0x511520*/
-  *((_DWORD *)this + 94) = 0; /*0x511527*/
-  *((_DWORD *)this + 90) = &vt_TypeList_UnitTypeClass_const; /*0x51152a*/
-  AircraftTypeVector::Constructor((_DWORD *)this + 97, 0, 0); /*0x51153a*/
+  this->u32_14C = &vt_TypeList_InfantryTypeClass_const; /*0x51150b*/
+  UnitTypeVector::ConstructUnitTypeVectorClass((_DWORD *)&this->q168, 0, 0); /*0x51151b*/
+  this->u32_17C = 10; /*0x511520*/
+  this->u32_178 = 0; /*0x511527*/
+  this->q168 = &vt_TypeList_UnitTypeClass_const; /*0x51152a*/
+  AircraftTypeVector::Constructor((_DWORD *)&this->q184, 0, 0); /*0x51153a*/
   this->q198 = 10; /*0x511542*/
   this->q194 = 0; /*0x511549*/
-  *((_DWORD *)this + 97) = &vt_TypeList_AircraftTypeClass_const; /*0x51154c*/
-  *(this + 420) = 65; /*0x511552*/
+  this->q184 = &vt_TypeList_AircraftTypeClass_const; /*0x51154c*/
+  *(&this->q0A80) = 65; /*0x511552*/
   this->q1A5 = 0; /*0x511559*/
-  *(this + 422) = 0; /*0x51155f*/
+  *(&this->q0A82) = 0; /*0x51155f*/
   this->q1A7 = 1; /*0x511565*/
-  *(this + 424) = 0; /*0x51156c*/
+  *(&this->q0A84) = 0; /*0x51156c*/
   *(_DWORD *)this = &HouseTypeClass::`vftable'; /*0x511572*/
   this->vtable1 = &HouseTypeClass::`vftable'; /*0x511578*/
   this->vtable2 = &HouseTypeClass::`vftable'; /*0x51157f*/
   this->vtable3 = &vt_HouseTypeClass; /*0x511586*/
   AbstractClass::GenerateUniqueID((int)(this + 4)); /*0x51158d*/
-  *(this + 416) = 0; /*0x511592*/
+  *(&this->q0A46) = 0; /*0x511592*/
   int v4 = g_SuperWeaponTypeArray; /*0x511598*/
   if ( g_SuperWeaponTypeArray < dword_A83CA0 /*0x5115d6*/
     || (byte_A83CA5 || !dword_A83CA0)
@@ -300,6 +301,7 @@ LABEL_16:
   }
 }
 } // namespace gamemd
+}
 
 // 0x6CEA20
 namespace gamemd {
@@ -557,6 +559,7 @@ LABEL_25:
   return 1; /*0x6cee43*/
 }
 } // namespace gamemd
+}
 
 // 0x6CEEB0
 namespace gamemd {
@@ -568,7 +571,7 @@ int SuperWeaponTypeClass::FindFirstOfAction()
   int v1 = 0; /*0x6ceeb8*/
   if ( g_HouseClassInitState <= 0 ) /*0x6ceebd*/
     return 0; /*0x6ceed9*/
-  for ( i = (char *)g_SuperWeaponPool; *(void **)(*(_DWORD *)i + 188) != this; i += 4 ) /*0x6ceec5*/
+  for ( i = (char *)g_SuperWeaponPool; *(void **)(i->u32_BC != this; i += 4 ) /*0x6ceec5*/
   {
     if ( ++v1 >= g_HouseClassInitState ) /*0x6ceed7*/
       return 0; /*0x6ceed7*/
@@ -576,6 +579,7 @@ int SuperWeaponTypeClass::FindFirstOfAction()
   return *((_DWORD *)g_SuperWeaponPool + v1); /*0x6ceed9*/
 }
 } // namespace gamemd
+}
 
 // 0x6CEF80
 namespace gamemd {
@@ -599,6 +603,7 @@ int SuperWeaponTypeClass::SD_vt27(int a2, int a3)
   }
 }
 } // namespace gamemd
+}
 
 // 0x6CEFE0
 namespace gamemd {

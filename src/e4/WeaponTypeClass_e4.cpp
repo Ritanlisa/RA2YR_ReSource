@@ -28,6 +28,7 @@ LABEL_6:
   }
   return (HouseTypeClass *)*((_DWORD *)g_SuperWeaponTypeCount + v2); /*0x5126ef*/
 }
+}
 
 // 0x6CEEF0
 int WeaponTypeClass::Process()
@@ -51,6 +52,7 @@ LABEL_6:
       goto LABEL_6; /*0x6cef44*/
   }
   return *(_DWORD *)(*(_DWORD *)&HouseClass_Player[42472] + 4 * v2); /*0x6cef5f*/
+}
 }
 
 // 0x771C70
@@ -85,7 +87,7 @@ unsigned int * WeaponTypeClass::Constructor(ObjectClass * aP1)
   this->q118 = 0; /*0x771d24*/
   this->q11C = 0; /*0x771d2a*/
   this->q120 = 0; /*0x771d30*/
-  *((_BYTE *)this + 289) = 0; /*0x771d36*/
+  this->ptr_121 = 0; /*0x771d36*/
   this->q488 = 0; /*0x771d3c*/
   this->q48C = 0; /*0x771d42*/
   this->q124 = 0; /*0x771d48*/
@@ -143,6 +145,7 @@ unsigned int * WeaponTypeClass::Constructor(ObjectClass * aP1)
   }
   return this; /*0x771eeb*/
 }
+}
 
 // 0x771F50
 int WeaponTypeClass::Destructor()
@@ -195,6 +198,7 @@ int WeaponTypeClass::Destructor()
   this->Report.IsAllocated = 0; /*0x772069*/
   this->Report.Capacity = 0; /*0x77206f*/
   return AbstractTypeClass::Dtor((_DWORD *)this); /*0x77207a*/
+}
 }
 
 // 0x772AE0
@@ -268,6 +272,7 @@ int WeaponTypeClass::ProcessPower(int * a2)
   LOBYTE(v22) = this->DistributedWeaponFire; /*0x772c76*/
   return Power::FlagProcess(a2, v22); /*0x772c84*/
 }
+}
 
 // 0x772CD0
 namespace gamemd {
@@ -333,6 +338,7 @@ void WeaponTypeClass_SaveLoad_Prefix()
   return result; /*0x772ea6*/
 }
 } // namespace gamemd
+}
 
 // 0x772EB0
 namespace gamemd {
@@ -367,6 +373,7 @@ void WeaponTypeClass_SaveLoad_Prefix_0()
   return result; /*0x772f8c*/
 }
 } // namespace gamemd
+}
 
 // 0x7730F0
 WeaponTypeClass * WeaponTypeClass::ddtor(char a2)

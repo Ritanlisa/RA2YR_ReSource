@@ -36,11 +36,11 @@ AbstractClass * * GameSettings::Read()
                     (unsigned __int8 *)&g_INI_Key_Options,
                     (CCINIClass *)&stru_830620[11436],
                     *((INIClass **)this + 1));
-  *((_DWORD *)this + 1) = Int_Overwrite; /*0x5fa680*/
+  this->ptr_4 = Int_Overwrite; /*0x5fa680*/
   if ( Int_Overwrite >= 4 ) /*0x5fa683*/
     Int_Overwrite = 4; /*0x5fa685*/
-  *((_DWORD *)this + 1) = Int_Overwrite; /*0x5fa68c*/
-  *((_DWORD *)this + 1) = Int_Overwrite <= 0 ? 0 : Int_Overwrite;
+  this->ptr_4 = Int_Overwrite; /*0x5fa68c*/
+  this->ptr_4 = Int_Overwrite <= 0 ? 0 : Int_Overwrite;
   Debug::Log(); /*0x5fa6a0*/
   int v3; // eax
   v3 = INIClass::ReadInt_Overwrite( /*0x5fa6bb*/
@@ -48,29 +48,29 @@ AbstractClass * * GameSettings::Read()
          (unsigned __int8 *)&g_INI_Key_Options,
          (CCINIClass *)&stru_830620[11400],
          *((INIClass **)this + 2));
-  *((_DWORD *)this + 2) = v3; /*0x5fa6c3*/
+  this->ptr_8 = v3; /*0x5fa6c3*/
   if ( v3 >= 2 ) /*0x5fa6c6*/
     v3 = 2; /*0x5fa6c8*/
-  *((_DWORD *)this + 2) = v3; /*0x5fa6cf*/
-  *((_DWORD *)this + 2) = v3 <= 0 ? 0 : v3;
+  this->ptr_8 = v3; /*0x5fa6cf*/
+  this->ptr_8 = v3 <= 0 ? 0 : v3;
   Debug::Log(); /*0x5fa6e3*/
-  *((_DWORD *)this + 3) = INIClass::ReadInt_Overwrite( /*0x5fa709*/
+  this->u32_C = INIClass::ReadInt_Overwrite( /*0x5fa709*/
                             (int)&stru_87C374[44364],
                             (unsigned __int8 *)&g_INI_Key_Options,
                             (CCINIClass *)&stru_830620[11360],
                             *((INIClass **)this + 3));
   Debug::Log(); /*0x5fa70c*/
-  *((_DWORD *)this + 4) = INIClass::ReadInt_Overwrite( /*0x5fa732*/
+  this->ptr_10 = INIClass::ReadInt_Overwrite( /*0x5fa732*/
                             (int)&stru_87C374[44364],
                             (unsigned __int8 *)&g_INI_Key_Options,
                             (CCINIClass *)&stru_830620[11328],
                             *((INIClass **)this + 4));
   Debug::Log(); /*0x5fa735*/
-  *((_BYTE *)this + 20) = INIClass::ReadBool_Overwrite( /*0x5fa75a*/
+  this->u8_14 = INIClass::ReadBool_Overwrite( /*0x5fa75a*/
                             (int)&stru_87C374[44364],
                             (unsigned __int8 *)&g_INI_Key_Options,
                             (CCINIClass *)&stru_830620[11296],
-                            *((_BYTE *)this + 20));
+                            this->u8_14);
   Debug::Log(); /*0x5fa771*/
   AbstractClass *v4; // eax
   v4 = INIClass::ReadInt_Overwrite( /*0x5fa78c*/
@@ -78,37 +78,37 @@ AbstractClass * * GameSettings::Read()
          (unsigned __int8 *)&g_INI_Key_Options,
          &unk_81855C,
          *((INIClass **)this + 6));
-  *((_DWORD *)this + 6) = v4; /*0x5fa794*/
+  this->ptr_18 = v4; /*0x5fa794*/
   if ( v4 >= 2 ) /*0x5fa797*/
     v4 = 2; /*0x5fa799*/
-  *((_DWORD *)this + 6) = v4; /*0x5fa7a0*/
-  *((_DWORD *)this + 6) = v4 <= 0 ? 0 : v4;
+  this->ptr_18 = v4; /*0x5fa7a0*/
+  this->ptr_18 = v4 <= 0 ? 0 : v4;
   Debug::Log(); /*0x5fa7b4*/
-  *((_BYTE *)this + 28) = 1; /*0x5fa7c3*/
+  this->u8_1C = 1; /*0x5fa7c3*/
   Debug::Log(); /*0x5fa7c6*/
-  *((_BYTE *)this + 29) = INIClass::ReadBool_Overwrite( /*0x5fa7e6*/
+  this->u8_1D = INIClass::ReadBool_Overwrite( /*0x5fa7e6*/
                             (int)&stru_87C374[44364],
                             (unsigned __int8 *)&g_INI_Key_Options,
                             (CCINIClass *)&stru_830620[11212],
-                            *((_BYTE *)this + 29));
+                            this->u8_1D);
   Debug::Log(); /*0x5fa7fd*/
-  *((_BYTE *)this + 30) = INIClass::ReadBool_Overwrite( /*0x5fa81d*/
+  this->u8_1E = INIClass::ReadBool_Overwrite( /*0x5fa81d*/
                             (int)&stru_87C374[44364],
                             (unsigned __int8 *)&g_INI_Key_Options,
                             (CCINIClass *)&stru_830620[11176],
-                            *((_BYTE *)this + 30));
+                            this->u8_1E);
   Debug::Log(); /*0x5fa834*/
-  *((_BYTE *)this + 31) = INIClass::ReadBool_Overwrite( /*0x5fa854*/
+  this->u8_1F = INIClass::ReadBool_Overwrite( /*0x5fa854*/
                             (int)&stru_87C374[44364],
                             (unsigned __int8 *)&g_INI_Key_Options,
                             (CCINIClass *)&stru_830620[11144],
-                            *((_BYTE *)this + 31));
+                            this->u8_1F);
   Debug::Log(); /*0x5fa86b*/
-  *((_BYTE *)this + 32) = INIClass::ReadBool_Overwrite( /*0x5fa88b*/
+  this->u8_20 = INIClass::ReadBool_Overwrite( /*0x5fa88b*/
                             (int)&stru_87C374[44364],
                             (unsigned __int8 *)&g_INI_Key_Options,
                             (CCINIClass *)&stru_830620[11112],
-                            *((_BYTE *)this + 32));
+                            this->u8_20);
   Debug::Log(); /*0x5fa8a2*/
   int v5; // eax
   v5 = INIClass::ReadInt_Overwrite( /*0x5fa8bd*/
@@ -116,9 +116,9 @@ AbstractClass * * GameSettings::Read()
          (unsigned __int8 *)&stru_830620[11072],
          (CCINIClass *)&stru_830620[11080],
          this->q024);
-  v6 = (CCINIClass *)*((_DWORD *)this + 10); /*0x5fa8c2*/
+  v6 = (CCINIClass *)this->ptr_28; /*0x5fa8c2*/
   this->q024 = v5; /*0x5fa8c5*/
-  *((_DWORD *)this + 10) = INIClass::ReadInt_Overwrite( /*0x5fa8e7*/
+  this->ptr_28 = INIClass::ReadInt_Overwrite( /*0x5fa8e7*/
                              (int)&stru_87C374[44364],
                              (unsigned __int8 *)&stru_830620[11072],
                              (CCINIClass *)&stru_830620[11056],
@@ -128,16 +128,16 @@ AbstractClass * * GameSettings::Read()
                      (int)&stru_87C374[44364],
                      (unsigned __int8 *)&stru_830620[11072],
                      (CCINIClass *)&stru_830620[11016],
-                     *((_BYTE *)this + 52));
-  *((_BYTE *)this + 52) = Bool_Overwrite; /*0x5fa90c*/
+                     this->u8_34);
+  this->u8_34 = Bool_Overwrite; /*0x5fa90c*/
   bool v8 = Bool_Overwrite == 1 && stru_89E138[11446] == 1; /*0x5fa919*/
-  *((_BYTE *)this + 52) = v8; /*0x5fa91f*/
+  this->u8_34 = v8; /*0x5fa91f*/
   Debug::Log(); /*0x5fa936*/
-  *((_BYTE *)this + 53) = INIClass::ReadBool_Overwrite( /*0x5fa956*/
+  this->u8_35 = INIClass::ReadBool_Overwrite( /*0x5fa956*/
                             (int)&stru_87C374[44364],
                             (unsigned __int8 *)&stru_830620[11072],
                             (CCINIClass *)&stru_830620[10976],
-                            *((_BYTE *)this + 53));
+                            this->u8_35);
   Debug::Log(); /*0x5fa96d*/
   HouseClass_Player[45079] = INIClass::ReadBool_Overwrite( /*0x5fa990*/
                                           (int)&stru_87C374[44364],
@@ -149,9 +149,9 @@ AbstractClass * * GameSettings::Read()
          (int)&stru_87C374[44364],
          (unsigned __int8 *)&stru_830620[11072],
          (CCINIClass *)&stru_830620[10920],
-         *((_BYTE *)this + 54));
-  double v10 = *((float *)this + 14); /*0x5fa9ad*/
-  *((_BYTE *)this + 54) = v9; /*0x5fa9b8*/
+         this->u8_36);
+  double v10 = *((float *)&this->ptr_44); /*0x5fa9ad*/
+  this->u8_36 = v9; /*0x5fa9b8*/
   Double_Overwrite = INIClass::ReadDouble_Overwrite( /*0x5fa9c8*/
                        (int)&stru_87C374[44364],
                        (INIClass *)&stru_830620[10900],
@@ -159,7 +159,7 @@ AbstractClass * * GameSettings::Read()
                        (INIClass *)LODWORD(v10));
   if ( Double_Overwrite >= 1.0 ) /*0x5fa9d8*/
     Double_Overwrite = 1.0; /*0x5fa9dc*/
-  *((float *)this + 14) = Double_Overwrite; /*0x5fa9e2*/
+  *((float *)&this->ptr_44) = Double_Overwrite; /*0x5fa9e2*/
   int v12 = Math::RoundToInt(Double_Overwrite * 16384.0); /*0x5fa9eb*/
   EndBufferMixer(*(int **)&stru_87C374[9172], v12); /*0x5fa9f8*/
   Debug::Log(); /*0x5faa0b*/
@@ -168,13 +168,13 @@ AbstractClass * * GameSettings::Read()
           (int)&stru_87C374[44364],
           (INIClass *)&stru_830620[10900],
           (unsigned __int8 *)&stru_830620[10888],
-          (INIClass *)COERCE_UNSIGNED_INT64(*((float *)this + 15)));
+          (INIClass *)COERCE_UNSIGNED_INT64(*((float *)&this->ptr_45)));
   if ( v13 >= 1.0 ) /*0x5faa38*/
     v13 = 1.0; /*0x5faa3c*/
-  *((float *)this + 15) = v13; /*0x5faa42*/
+  *((float *)&this->ptr_45) = v13; /*0x5faa42*/
   int v14 = Math::RoundToInt(v13 * 255.0); /*0x5faa4b*/
   ThemeClass::GetField(v14); /*0x5faa52*/
-  int v15 = Math::RoundToInt(*((float *)this + 15) * 16384.0); /*0x5faa60*/
+  int v15 = Math::RoundToInt(*((float *)&this->ptr_45) * 16384.0); /*0x5faa60*/
   EndBufferMixer(*(int **)&stru_87C374[9164], v15); /*0x5faa6d*/
   Debug::Log(); /*0x5faa80*/
   double v16; // st7
@@ -182,13 +182,13 @@ AbstractClass * * GameSettings::Read()
           (int)&stru_87C374[44364],
           (INIClass *)&stru_830620[10900],
           (unsigned __int8 *)&stru_830620[10876],
-          (INIClass *)COERCE_UNSIGNED_INT64(*((float *)this + 16)));
+          (INIClass *)COERCE_UNSIGNED_INT64(*((float *)&this->ptr_46)));
   if ( v16 >= 1.0 ) /*0x5faaad*/
     v16 = 1.0; /*0x5faab1*/
-  *((float *)this + 16) = v16; /*0x5faab7*/
+  *((float *)&this->ptr_46) = v16; /*0x5faab7*/
   int v17 = Math::RoundToInt(v16 * 16384.0); /*0x5faac0*/
   EndBufferMixer(*(int **)&stru_87C374[9168], v17); /*0x5faacd*/
-  v18 = (IUnknown *)Math::RoundToInt(*((float *)this + 16) * 255.0); /*0x5faadb*/
+  v18 = (IUnknown *)Math::RoundToInt(*((float *)&this->ptr_46) * 255.0); /*0x5faadb*/
   GameSettings::SetScoreVolume(&g_BuildingTypeClass_Count, v18); /*0x5faae6*/
   Debug::Log(); /*0x5faaf9*/
   char v19; // al
@@ -196,8 +196,8 @@ AbstractClass * * GameSettings::Read()
           (int)&stru_87C374[44364],
           (unsigned __int8 *)&stru_830620[10900],
           (CCINIClass *)&stru_830620[10860],
-          *((_BYTE *)this + 68));
-  *((_BYTE *)this + 68) = v19; /*0x5fab19*/
+          this->u8_44);
+  this->u8_44 = v19; /*0x5fab19*/
   byte_A83D20 = v19; /*0x5fab1c*/
   Debug::Log(); /*0x5fab38*/
   char v20; // al
@@ -205,17 +205,17 @@ AbstractClass * * GameSettings::Read()
           (int)&stru_87C374[44364],
           (unsigned __int8 *)&stru_830620[10900],
           (CCINIClass *)&stru_830620[10844],
-          *((_BYTE *)this + 70));
-  *((_BYTE *)this + 70) = v20; /*0x5fab58*/
+          this->u8_46);
+  this->u8_46 = v20; /*0x5fab58*/
   byte_A83D22 = v20; /*0x5fab5b*/
   Debug::Log(); /*0x5fab77*/
-  *((_BYTE *)this + 69) = INIClass::ReadBool_Overwrite( /*0x5fabb8*/
+  this->u8_45 = INIClass::ReadBool_Overwrite( /*0x5fabb8*/
                             (int)&stru_87C374[44364],
                             (unsigned __int8 *)&stru_830620[10900],
                             (CCINIClass *)&stru_830620[10832],
-                            *((_BYTE *)this + 69));
-  *((_DWORD *)this + 19) = -1; /*0x5fabbb*/
-  *((_DWORD *)this + 20) = -1; /*0x5fabbe*/
+                            this->u8_45);
+  this->u32_4C = -1; /*0x5fabbb*/
+  this->u32_50 = -1; /*0x5fabbe*/
   INIClass::ParseValue_Wide( /*0x5fabc1*/
     (char **)&stru_87C374[44364],
     (unsigned __int8 *)&stru_830620[10816],
@@ -238,18 +238,18 @@ AbstractClass * * GameSettings::Read()
     v23 = wcstok((wchar_t *)String, &stru_82083C, v32); /*0x5fabf8*/
     if ( v23 ) /*0x5fac02*/
     {
-      *((_DWORD *)this + 19) = wcstol((BlowStraw *)v23, 0, 10) - 1; /*0x5fac16*/
+      this->u32_4C = wcstol((BlowStraw *)v23, 0, 10) - 1; /*0x5fac16*/
       v24 = wcstok(0, &stru_82083C, v30); /*0x5fac19*/
       if ( v24 ) /*0x5fac23*/
-        *((_DWORD *)this + 20) = wcstol((BlowStraw *)v24, 0, 10) - 1; /*0x5fac33*/
+        this->u32_50 = wcstol((BlowStraw *)v24, 0, 10) - 1; /*0x5fac33*/
     }
   }
-  int v25 = *((_DWORD *)this + 19); /*0x5fac36*/
+  int v25 = this->u32_4C; /*0x5fac36*/
   if ( v25 < -1 || v25 >= 8 ) /*0x5fac40*/
-    *((_DWORD *)this + 19) = -1; /*0x5fac42*/
-  int v26 = *((_DWORD *)this + 20); /*0x5fac45*/
+    this->u32_4C = -1; /*0x5fac42*/
+  int v26 = this->u32_50; /*0x5fac45*/
   if ( v26 < -1 || v26 >= 8 ) /*0x5fac4f*/
-    *((_DWORD *)this + 20) = -1; /*0x5fac51*/
+    this->u32_50 = -1; /*0x5fac51*/
   this->q024 = INIClass::ReadInt_Overwrite( /*0x5fac6f*/
                    (int)&stru_87C374[44364],
                    (unsigned __int8 *)&stru_830620[10900],
@@ -261,9 +261,9 @@ AbstractClass * * GameSettings::Read()
           (unsigned __int8 *)&stru_830620[10816],
           (CCINIClass *)&stru_830620[10748],
           (INIClass *)this->q025);
-  aP3_4 = (INIClass *)*((_DWORD *)this + 21); /*0x5faca9*/
+  aP3_4 = (INIClass *)this->ptr_54; /*0x5faca9*/
   this->q025 = v27; /*0x5facb4*/
-  *((_DWORD *)this + 21) = INIClass::ReadInt_Overwrite( /*0x5facbd*/
+  this->ptr_54 = INIClass::ReadInt_Overwrite( /*0x5facbd*/
                              (int)&stru_87C374[44364],
                              (unsigned __int8 *)&stru_830620[10816],
                              (CCINIClass *)&stru_830620[10740],
@@ -273,13 +273,14 @@ AbstractClass * * GameSettings::Read()
     (INIClass *)&stru_830620[10816],
     (unsigned __int8 *)&stru_830620[10732],
     (INIClass *)&stru_87C374[56304],
-    (INIClass *)(this + 44),
+    (INIClass *)(&this->ptr_104),
     64);
   Debug::Log(); /*0x5face4*/
-  LOBYTE(v28) = *((_BYTE *)this + 29); /*0x5face9*/
+  LOBYTE(v28) = this->u8_1D; /*0x5face9*/
   nullsub_36(v28); /*0x5facf5*/
-  SetGlobalFlag(*((_BYTE *)this + 30)); /*0x5facfd*/
+  SetGlobalFlag(this->u8_1E); /*0x5facfd*/
   return GameSettings::ParseNetworkAddress((const char *)this); /*0x5fad09*/
+}
 }
 
 // 0x5FB050
@@ -335,6 +336,7 @@ void * GameSettings::ParseNetworkAddress()
   }
   return result; /*0x5fb159*/
 }
+}
 
 // 0x721290
 void GameSettings::SetScoreVolume(int volume)
@@ -345,7 +347,8 @@ void GameSettings::SetScoreVolume(int volume)
   result = (MouseClass *)volume; /*0x721290*/
   if ( volume >= 255 ) /*0x721299*/
     result = (MouseClass *)255; /*0x72129b*/
-  *((_DWORD *)this + 3) = result; /*0x7212a0*/
+  this->u32_C = result; /*0x7212a0*/
+}
 }
 
 // 0x7931A0

@@ -14,6 +14,7 @@ unsigned char * Palette_6BitTo16Bit(char a2, char a3, char a4)
   return this; /*0x4355c6*/
 }
 } // namespace gamemd
+}
 
 // 0x642130
 namespace gamemd {
@@ -242,6 +243,7 @@ LABEL_38:
   return (int *)v38; /*0x64213f*/
 }
 } // namespace gamemd
+}
 
 // 0x661350
 int Palette::CalcColorDistance(unsigned char * a2)
@@ -251,13 +253,14 @@ int Palette::CalcColorDistance(unsigned char * a2)
   int v2 = *this - *a2; /*0x661360*/
   if ( v2 < 0 ) /*0x661362*/
     v2 = *a2 - *this; /*0x661364*/
-  int v3 = *(this + 1) - a2[1]; /*0x661370*/
+  int v3 = this->u32_4 - a2[1]; /*0x661370*/
   if ( v3 < 0 ) /*0x661372*/
-    v3 = a2[1] - *(this + 1); /*0x661374*/
-  int v4 = *(this + 2) - a2[2]; /*0x661382*/
+    v3 = a2[1] - this->u32_4; /*0x661374*/
+  int v4 = this->u32_8 - a2[2]; /*0x661382*/
   if ( v4 < 0 ) /*0x661384*/
-    v4 = a2[2] - *(this + 2); /*0x661386*/
+    v4 = a2[2] - this->u32_8; /*0x661386*/
   return 3 * v4 + 2 * (v2 + 2 * v3); /*0x66138e*/
+}
 }
 
 // 0x626200

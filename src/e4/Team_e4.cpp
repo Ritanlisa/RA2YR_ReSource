@@ -112,6 +112,7 @@ LABEL_13:
   return result; /*0x5611d9*/
 }
 } // namespace gamemd
+}
 
 // 0x5D26C0
 namespace gamemd {
@@ -121,14 +122,14 @@ int Team::ReleaseAll(ObjectClass * aP1)
   int result; // eax
 
   int v3 = 0; /*0x5d26c4*/
-  result = *(this + 10); /*0x5d26c6*/
+  result = *(&this->u32_40); /*0x5d26c6*/
   if ( result > 0 ) /*0x5d26cb*/
   {
     do /*0x5d26e4*/
     {
-      int v5 = *(_DWORD *)(*(this + 7) + 4 * v3); /*0x5d26d6*/
+      int v5 = *(_DWORD *)(this->u32_1C + 4 * v3); /*0x5d26d6*/
       (*(void (__thiscall **)(int, ObjectClass *))(*(_DWORD *)v5 + 32))(v5, aP1); /*0x5d26db*/
-      result = *(this + 10); /*0x5d26de*/
+      result = *(&this->u32_40); /*0x5d26de*/
       ++v3; /*0x5d26e1*/
     }
     while ( v3 < result ); /*0x5d26e4*/
@@ -136,6 +137,7 @@ int Team::ReleaseAll(ObjectClass * aP1)
   return result; /*0x5d26e7*/
 }
 } // namespace gamemd
+}
 
 // 0x6219D0
 namespace gamemd {
@@ -237,6 +239,7 @@ void sub_6219D0(int * a1, int a2, int a3, int a4)
   return result; /*0x621b6c*/
 }
 } // namespace gamemd
+}
 
 // 0x634B20
 namespace gamemd {
@@ -250,24 +253,24 @@ Game * * E4Recv_634B20::sub_634B20()
   _WORD v18[56]; // [esp+30h] [ebp-70h] BYREF
 
   int v2 = 0; /*0x634b2a*/
-  int v13 = *(this + 12); /*0x634b33*/
+  int v13 = *(&this->M42); /*0x634b33*/
   if ( v13 > 0 ) /*0x634b37*/
   {
     do /*0x634bf7*/
     {
-      _BYTE * v3 = *(_BYTE **)(*(this + 9) + 4 * v2); /*0x634b48*/
+      _BYTE * v3 = *(_BYTE **)(this->M36 + 4 * v2); /*0x634b48*/
       qmemcpy(v18, v3, 0x6Cu); /*0x634b57*/
       v3 += 108; /*0x634b57*/
       v18[54] = *(_WORD *)v3; /*0x634b59*/
       LOBYTE(v18[55]) = v3[2]; /*0x634b5f*/
       GetScenarioClassActionCoords(v17, v18); /*0x634b60*/
       Debug::Log(); /*0x634b7d*/
-      int v4 = *(this + 4); /*0x634b82*/
+      int v4 = this->M16; /*0x634b82*/
       int v5 = 0; /*0x634b88*/
       int v14 = v4; /*0x634b8a*/
       for ( i = 0; v5 < v4; i = v5 ) /*0x634b94*/
       {
-        _DWORD * v6 = *(_DWORD **)(*(this + 1) + 4 * v5); /*0x634b99*/
+        _DWORD * v6 = *(_DWORD **)(this->M4 + 4 * v5); /*0x634b99*/
         if ( v6[2] == v2 ) /*0x634b9f*/
         {
           int v7 = *v6; /*0x634ba1*/
@@ -283,16 +286,16 @@ Game * * E4Recv_634B20::sub_634B20()
     }
     while ( v2 < v13 ); /*0x634bf7*/
   }
-  if ( *(this + 42) > 0 ) /*0x634c05*/
+  if ( *(&this->M162) > 0 ) /*0x634c05*/
   {
-    qmemcpy(v18, this + 14, 0x6Fu); /*0x634c1b*/
+    qmemcpy(v18, &this->u32_38, 0x6Fu); /*0x634c1b*/
     GetScenarioClassActionCoords(v17, v18); /*0x634c24*/
     Debug::Log(); /*0x634c43*/
-    int v8 = *(this + 4); /*0x634c48*/
+    int v8 = this->M16; /*0x634c48*/
     int v9 = 0; /*0x634c4e*/
     for ( j = v8; v9 < v8; ++v9 ) /*0x634c56*/
     {
-      _BYTE * v10 = *(_BYTE **)(*(this + 1) + 4 * v9); /*0x634c5b*/
+      _BYTE * v10 = *(_BYTE **)(this->M4 + 4 * v9); /*0x634c5b*/
       if ( v10[12] ) /*0x634c5e*/
       {
         int v11 = *(_DWORD *)v10; /*0x634c65*/
@@ -305,6 +308,7 @@ Game * * E4Recv_634B20::sub_634B20()
   }
 }
 } // namespace gamemd
+}
 
 // 0x637640
 namespace gamemd {
@@ -357,6 +361,7 @@ _UNKNOWN ** E4Recv_637640::sub_637640()
   return result; /*0x637747*/
 }
 } // namespace gamemd
+}
 
 // 0x638B70
 namespace gamemd {
@@ -394,6 +399,7 @@ LABEL_9:
   return (_WORD)v6 == (_WORD)v8 && HIWORD(v12) == HIWORD(v11); /*0x638b89*/
 }
 } // namespace gamemd
+}
 
 // 0x65AD30
 namespace gamemd {
@@ -403,6 +409,7 @@ int Team::GetMember(AbstractClass * aP1)
   return *(_DWORD *)(this->q0E4 + 4 * (_DWORD)aP1); /*0x65ad3d*/
 }
 } // namespace gamemd
+}
 
 // 0x65AE30
 namespace gamemd {
@@ -423,6 +430,7 @@ int Team::AllMembersValid()
   return 1; /*0x65ae51*/
 }
 } // namespace gamemd
+}
 
 // 0x63A1B0
 namespace gamemd {
@@ -452,6 +460,7 @@ LABEL_7:
   }
 }
 } // namespace gamemd
+}
 
 // 0x76ED10
 namespace gamemd {
@@ -515,6 +524,7 @@ bool Team_Start_76ED10()
   return v7; /*0x76ed22*/
 }
 } // namespace gamemd
+}
 
 // 0x7AFAD0
 namespace gamemd {
@@ -550,6 +560,7 @@ void Team_Start_7AFAD0()
   return 0; /*0x7afb34*/
 }
 } // namespace gamemd
+}
 
 // 0x752460
 namespace gamemd {

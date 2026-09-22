@@ -23,12 +23,14 @@ int DDraw::ReleaseSurfaces()
   }
   return result; /*0x4a339b*/
 }
+}
 
 // 0x4A3640
 void DDraw::Init()
 {
 {
   this->q18000 = 0; /*0x4a3640*/
+}
 }
 
 // 0x4A3E40
@@ -100,6 +102,7 @@ LABEL_7:
   }
   return DSurface::Destroy(v7); /*0x4a3fa1*/
 }
+}
 
 // 0x4A4830
 int DDraw::WaitForIdle()
@@ -111,6 +114,7 @@ int DDraw::WaitForIdle()
     result = (*(int (__stdcall **)(int, int))(*(_DWORD *)g_DDraw_Gray127 + 52))(g_DDraw_Gray127, 2); /*0x4a483a*/
   while ( result && result != -2005532222 ); /*0x4a4846*/
   return result; /*0x4a4848*/
+}
 }
 
 // 0x4C19B0
@@ -170,6 +174,7 @@ int DDraw::CleanupSurfaces()
   }
   return result; /*0x4c1a88*/
 }
+}
 
 // 0x5D2530
 int DDraw::HandleSuspend()
@@ -183,9 +188,9 @@ int DDraw::HandleSuspend()
   if ( g_DDraw_Initialized != 1 ) /*0x5d253b*/
   {
     Debug::Log(aMsenginePausin); /*0x5d2546*/
-    for ( i = 0; i < *(this + 10); ++i ) /*0x5d2555*/
+    for ( i = 0; i < *(&this->u32_40); ++i ) /*0x5d2555*/
     {
-      int v4 = *(_DWORD *)(*(this + 7) + 4 * i); /*0x5d255a*/
+      int v4 = *(_DWORD *)(this->u32_1C + 4 * i); /*0x5d255a*/
       (*(void (__thiscall **)(int))(*(_DWORD *)v4 + 8))(v4); /*0x5d255f*/
     }
     while ( !g_DDraw_Initialized ) /*0x5d2571*/
@@ -195,15 +200,16 @@ int DDraw::HandleSuspend()
       MessageLoop(); /*0x5d258d*/
     }
     Debug::Log(aMsengineResumi); /*0x5d25a0*/
-    v1 = *(this + 10); /*0x5d25a5*/
+    v1 = *(&this->u32_40); /*0x5d25a5*/
     for ( j = 0; j < v1; ++j ) /*0x5d25af*/
     {
-      int v6 = *(_DWORD *)(*(this + 7) + 4 * j); /*0x5d25b4*/
+      int v6 = *(_DWORD *)(this->u32_1C + 4 * j); /*0x5d25b4*/
       (*(void (__thiscall **)(int))(*(_DWORD *)v6 + 12))(v6); /*0x5d25b9*/
-      v1 = *(this + 10); /*0x5d25bc*/
+      v1 = *(&this->u32_40); /*0x5d25bc*/
     }
   }
   return v1; /*0x5d25c4*/
+}
 }
 
 // 0x4A3DD0

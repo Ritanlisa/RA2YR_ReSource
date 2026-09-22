@@ -178,6 +178,7 @@ LABEL_24:
     __3_YAXPAX_Z(v16); /*0x68869b*/
   return v2; /*0x6886a5*/
 }
+}
 
 // 0x68C2B0
 unsigned int * Multiplayer::CopyDataArray(ObjectClass * aP1)
@@ -192,7 +193,7 @@ unsigned int * Multiplayer::CopyDataArray(ObjectClass * aP1)
   if ( !v3 ) /*0x68c2ca*/
   {
     this->q001 = 0; /*0x68c319*/
-    *((_BYTE *)this + 13) = 0; /*0x68c320*/
+    this->u8_D = 0; /*0x68c320*/
     return this; /*0x68c324*/
   }
   int v4 = __2_YAPAXI_Z(4 * v3); /*0x68c2d4*/
@@ -203,7 +204,7 @@ unsigned int * Multiplayer::CopyDataArray(ObjectClass * aP1)
     return this; /*0x68c2ee*/
   bool v5 = this->q002; /*0x68c2f0*/
   int v6 = 0; /*0x68c2f3*/
-  *((_BYTE *)this + 13) = 1; /*0x68c2f7*/
+  this->u8_D = 1; /*0x68c2f7*/
   if ( v5 <= 0 ) /*0x68c2fb*/
     return this; /*0x68c2fb*/
   do /*0x68c30f*/
@@ -213,6 +214,7 @@ unsigned int * Multiplayer::CopyDataArray(ObjectClass * aP1)
   }
   while ( v6 < this->q002 ); /*0x68c30f*/
   return this; /*0x68c313*/
+}
 }
 
 // 0x69AE90
@@ -308,6 +310,7 @@ LABEL_25:
       Event::Dispatch(); /*0x69b148*/
     }
   }
+}
 }
 
 // 0x53F1F0

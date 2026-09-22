@@ -13,6 +13,7 @@ int ColorListClass::SetColor()
   else
     return 0; /*0x557aed*/
 }
+}
 
 // 0x557F40
 int ColorListClass::Clear(unsigned int a2)
@@ -38,6 +39,7 @@ int ColorListClass::Clear(unsigned int a2)
   }
   return result; /*0x557f97*/
 }
+}
 
 // 0x558010
 void ColorListClass::RemoveColor(wchar_t * String2)
@@ -55,6 +57,7 @@ void ColorListClass::RemoveColor(wchar_t * String2)
     this->Clear(v3); /*0x558051*/
   }
 }
+}
 
 // 0x488EE0
 int ColorListClass::GetColor(int a2)
@@ -71,11 +74,11 @@ ColorListClass * ColorListClass::QueryInterface(char a2)
     int v3;
     char *v4;
     void *v5;
-    v3 = *((int *)(this) + 93);
-    v4 = this + 372;
+    v3 = this->__pad_174;
+    v4 = &this->u32_5D0;
     *(int *)this = &vt_ColorListClass;
-    (*(void (__thiscall **)(char *))(v3 + 12))(this + 372);
-    *((int *)(this) + 100) = 0;
+    (*(void (__thiscall **)(char *))(v3 + 12))(&this->u32_942);
+    this->q190 = 0;
     v5 = (void *)*((int *)(v4) + 1);
     *(int *)v4 = &vt_VectorClass_int;
     if ( v5 && v4[13] )

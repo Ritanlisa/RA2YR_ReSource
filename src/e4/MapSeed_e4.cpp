@@ -13,6 +13,7 @@ int MapSeed::ValidateName(int a2)
   else
     return (unsigned __int8)ShowSaveLoadDialog(this + 120) != 0; /*0x597752*/
 }
+}
 
 // 0x5AC230
 int MapSeed::IsCellInBounds()
@@ -25,6 +26,7 @@ int MapSeed::IsCellInBounds()
       && v1 - v2 < g_MapCellHeight_Value
       && v2 - v1 < g_MapCellHeight_Value
       && v2 + v1 <= g_MapCellCount;
+}
 }
 
 // 0x79C520
@@ -80,6 +82,7 @@ LABEL_12:
       return 0; /*0x79c642*/
     }
   }
+}
 }
 
 // 0x79C650
@@ -191,4 +194,5 @@ LABEL_33:
     }
     goto LABEL_33; /*0x79c8b3*/
   }
+}
 }

@@ -24,6 +24,7 @@ int sub_6F2040()
   return result; /*0x6f2063*/
 }
 } // namespace gamemd
+}
 
 // 0x4371D0
 char Helper::ProcessData(void ** a1, int a2, int * a3)

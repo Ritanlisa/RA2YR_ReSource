@@ -18,3 +18,4 @@ unsigned int * Bounds::Subtract(IUnknown * aP1, unsigned int * a2)
   aP1->field_C = v6; /*0x487f0d*/
   return &aP1->field_0; /*0x487f05*/
 }
+}

@@ -10,10 +10,11 @@ void * Timer::Start(DynamicVector * aP1)
 {
 {
   *this = *(_DWORD *)&HouseClass_Player[45112]; /*0x46b64c*/
-  *(this + 2) = aP1; /*0x46b64e*/
+  this->ptr_8 = aP1; /*0x46b64e*/
   return (DynamicVector *)this; /*0x46b651*/
 }
 } // namespace gamemd
+}
 
 // 0x4A5240
 namespace gamemd {
@@ -22,22 +23,23 @@ int Timer::StartDouble(double a2)
 {
   wchar_t *v4; // ecx
   int v3; // eax
-  if ( *(this + 24) || (LOBYTE(v3) = *(this + 25), (_BYTE)v3) ) /*0x4a5252*/
+  if ( *(&this->ptr_84) || (LOBYTE(v3) = *(&this->ptr_85), (_BYTE)v3) ) /*0x4a5252*/
   {
-    *(this + 24) = 1; /*0x4a525e*/
+    *(&this->ptr_84) = 1; /*0x4a525e*/
     *(double *)this = a2 * 900.0; /*0x4a5262*/
     v3 = Math::RoundToInt(a2 * 900.0); /*0x4a5264*/
     v4 = g_CurrentFrame; /*0x4a5269*/
-    *(this + 25) = 0; /*0x4a5272*/
-    *((_DWORD *)this + 2) = v4; /*0x4a5276*/
+    *(&this->ptr_85) = 0; /*0x4a5272*/
+    this->ptr_8 = v4; /*0x4a5276*/
   int v6; // [esp+8h] [ebp-Ch]
-    *((_DWORD *)this + 3) = v6; /*0x4a527c*/
-    *((_DWORD *)this + 4) = v3; /*0x4a527f*/
-    *((_DWORD *)this + 5) = v3; /*0x4a5282*/
+    this->u32_C = v6; /*0x4a527c*/
+    this->u32_10 = v3; /*0x4a527f*/
+    this->u32_14 = v3; /*0x4a5282*/
   }
   return v3; /*0x4a5285*/
 }
 } // namespace gamemd
+}
 
 // 0x4F1B00
 namespace gamemd {
@@ -45,10 +47,11 @@ void * Timer::Init(DWORD a2)
 {
 {
   *this = Timer::GetTicks(); /*0x4f1b0b*/
-  *(this + 2) = a2; /*0x4f1b11*/
+  this->ptr_8 = a2; /*0x4f1b11*/
   return this; /*0x4f1b16*/
 }
 } // namespace gamemd
+}
 
 // 0x4F1B20
 namespace gamemd {
@@ -56,9 +59,9 @@ int Timer::GetRemainingMs()
 {
 {
 
-  signed int v1 = *(this + 2); /*0x4f1b26*/
+  signed int v1 = this->ptr_8; /*0x4f1b26*/
   if ( *this == -1 ) /*0x4f1b2c*/
-    return *(this + 2); /*0x4f1b4c*/
+    return this->ptr_8; /*0x4f1b4c*/
   signed int v2 = Timer::GetTicks() - *this; /*0x4f1b3a*/
   if ( v2 >= v1 ) /*0x4f1b3e*/
     return 0; /*0x4f1b48*/
@@ -66,6 +69,7 @@ int Timer::GetRemainingMs()
     return v1 - v2; /*0x4f1b43*/
 }
 } // namespace gamemd
+}
 
 // 0x54F720
 namespace gamemd {
@@ -92,6 +96,7 @@ int Timer::PumpMessages()
   return result; /*0x54f779*/
 }
 } // namespace gamemd
+}
 
 // 0x5B1E40
 namespace gamemd {
@@ -101,7 +106,7 @@ int Timer::GetHighPrecision()
 
   if ( dword_82C24C == -1 ) /*0x5b1e4e*/
     GetVersionString(&dword_82C24C, DataGlobal_ABEED4, 0, 0); /*0x5b1e5e*/
-  if ( !*(_DWORD *)this && *((_DWORD *)this + 1) == 1072693248 || dword_82C24C <= 4 ) /*0x5b1e78*/
+  if ( !*(_DWORD *)this && this->u32_4 == 1072693248 || dword_82C24C <= 4 ) /*0x5b1e78*/
     return (double)timeGetTime(); /*0x5b1ecc*/
   unsigned int v4; // [esp+4h] [ebp-Ch] BYREF
   unsigned int v2 = Timer::ReadTSC(&v4); /*0x5b1e7f*/
@@ -109,6 +114,7 @@ int Timer::GetHighPrecision()
   return ((double)v2 + (double)v4 * 4294967296.0) / *this; /*0x5b1eb5*/
 }
 } // namespace gamemd
+}
 
 // 0x5F1390
 namespace gamemd {
@@ -116,12 +122,13 @@ int Timer::GetElapsed()
 {
 {
 
-  int v1 = *(this + 2); /*0x5f1396*/
+  int v1 = this->ptr_8; /*0x5f1396*/
   if ( *this != -1 ) /*0x5f139c*/
     v1 += Timer::GetTicks() - *this; /*0x5f13a8*/
   return v1; /*0x5f13ac*/
 }
 } // namespace gamemd
+}
 
 // 0x5D5870
 namespace gamemd {

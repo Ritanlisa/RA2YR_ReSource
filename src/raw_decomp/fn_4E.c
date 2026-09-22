@@ -5,7 +5,7 @@
 // ==== 0x004E0080  TeamClass::HasAnyMemberFlagged  this=TechnoClass  sig=csp ====
 BOOL __thiscall sub_4E0080(_BYTE *this)
 {
-  return this->q68F || this->q1A4 || this->q691; /*0x4e00a0*/
+  return this->q68F || this->q690 || this->q691; /*0x4e00a0*/
 }
 
 
@@ -549,7 +549,7 @@ char __thiscall FoggedObjectClass_42_::sub_4E0700(void *this, int a2, _DWORD *a3
         v5 = a2; /*0x4e0746*/
       for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->vtable2 + 4 * i - 4) ) /*0x4e074c*/
         ++i; /*0x4e0751*/
-      if ( this->q034 ) /*0x4e075e*/
+      if ( this->u8_34 ) /*0x4e075e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x4e0769*/
         this->vtable2 = 0; /*0x4e0771*/
@@ -557,7 +557,7 @@ char __thiscall FoggedObjectClass_42_::sub_4E0700(void *this, int a2, _DWORD *a3
     }
     this->vtable2 = v4; /*0x4e077a*/
     this->vtable3 = a2; /*0x4e0782*/
-    this->q034 = a3 == 0; /*0x4e0785*/
+    this->u8_34 = a3 == 0; /*0x4e0785*/
   }
   else
   {
@@ -853,7 +853,7 @@ _DWORD *__thiscall sub_4E0A00(_DWORD *this, int a2, _DWORD *a3)
     }
   }
   *this = &vt_DynamicVectorClass_DiscreteDistributionClass_CellClass_DistributionObject_CellClass; /*0x4e0a8a*/
-  this->q005 = 10; /*0x4e0a90*/
+  this->u32_14 = 10; /*0x4e0a90*/
   this->q010 = 0; /*0x4e0a97*/
   return this; /*0x4e0aa0*/
 }
@@ -1423,13 +1423,13 @@ _DWORD *__thiscall GadgetClass_Constructor(_DWORD *this, int a2, int a3, int a4,
   this->Visible = a4; /*0x4e1312*/
   this->X = 0; /*0x4e1319*/
   this->Y = 0; /*0x4e131c*/
-  this->q070 = 0; /*0x4e131f*/
+  this->u32_70 = 0; /*0x4e131f*/
   this->q01E = 0; /*0x4e1322*/
   this->q01D = a7; /*0x4e1327*/
-  this->q020 = a6; /*0x4e132a*/
+  this->u32_20 = a6; /*0x4e132a*/
   *this = &GadgetClass::`vftable'; /*0x4e132d*/
   if ( a7 ) /*0x4e1334*/
-    this->q020 = a6 | 5; /*0x4e1339*/
+    this->u32_20 = a6 | 5; /*0x4e1339*/
   return result; /*0x4e1333*/
 }
 
@@ -1463,9 +1463,9 @@ int __thiscall GadgetClass_Dtor(_DWORD *this)
   v1 = MEMORY[0x8B3E90]; /*0x4e1396*/
   if ( this == (_DWORD *)MEMORY[0x8B3E90] ) /*0x4e139f*/
   {
-    v2 = this->q020; /*0x4e13a1*/
+    v2 = this->u32_20; /*0x4e13a1*/
     BYTE1(v2) &= ~1u; /*0x4e13a4*/
-    this->q020 = v2; /*0x4e13a7*/
+    this->u32_20 = v2; /*0x4e13a7*/
     v1 = 0; /*0x4e13aa*/
     MEMORY[0x8B3E90] = 0; /*0x4e13ac*/
   }
@@ -1484,7 +1484,7 @@ int __thiscall ObjectClass_DispatchEvent(_DWORD *this, int a2, int a3, int a4, i
 {
   int v6; // eax
 
-  v6 = this->q020 & a3; /*0x4e13fe*/
+  v6 = this->u32_20 & a3; /*0x4e13fe*/
   if ( this == (_DWORD *)MEMORY[0x8B3E88] /*0x4e142b*/
     || (v6 & 0x100) != 0
     || v6 && (unsigned int)(a4 - this->Width) < this->Visible && (unsigned int)(a5 - this->Height) < this->ID )
@@ -1885,9 +1885,9 @@ __int16 __thiscall COMObject_ActivateGlobal(_DWORD *this)
     (*(void (__thiscall **)(int))(*(_DWORD *)MEMORY[0x8B3E90] + 72))(MEMORY[0x8B3E90]); /*0x4e19af*/
     (*(void (__thiscall **)(int))(*(_DWORD *)MEMORY[0x8B3E90] + 84))(MEMORY[0x8B3E90]); /*0x4e19ba*/
   }
-  v2 = this->q020; /*0x4e19bd*/
+  v2 = this->u32_20; /*0x4e19bd*/
   BYTE1(v2) |= 1u; /*0x4e19c0*/
-  this->q020 = v2; /*0x4e19c3*/
+  this->u32_20 = v2; /*0x4e19c3*/
   MEMORY[0x8B3E90] = (int)this; /*0x4e19c6*/
   return v2; /*0x4e19cc*/
 }
@@ -1900,9 +1900,9 @@ __int16 __thiscall COMObject_DeactivateGlobal(_DWORD *this)
 
   if ( (_DWORD *)MEMORY[0x8B3E90] == this ) /*0x4e19d6*/
   {
-    v1 = this->q020; /*0x4e19d8*/
+    v1 = this->u32_20; /*0x4e19d8*/
     BYTE1(v1) &= ~1u; /*0x4e19db*/
-    this->q020 = v1; /*0x4e19de*/
+    this->u32_20 = v1; /*0x4e19de*/
     MEMORY[0x8B3E90] = 0; /*0x4e19e1*/
   }
   return v1; /*0x4e19eb*/
@@ -2693,7 +2693,7 @@ int __thiscall CellClass_DrawDispatch(int *this, unsigned int a2, _DWORD *a3, in
   int v14; // edi
   int v15; // eax
 
-  if ( !*((_BYTE *)this + 45) ) /*0x4e2835*/
+  if ( !this->u32_B4 ) /*0x4e2835*/
     return 0; /*0x4e2841*/
   v6 = a2; /*0x4e2844*/
   (*(void (__thiscall **)(int *, unsigned int))(*this + 120))(this, a2); /*0x4e284d*/
@@ -3140,7 +3140,7 @@ int __thiscall GaugeClass::_vt36(_DWORD *this)
 // ==== 0x004E30B0  GaugeClass::Draw  this=GaugeClass  sig=csp ====
 bool __thiscall GaugeClass::_vt37(_BYTE *this, int a2)
 {
-  *(this + 45) = a2 != 0; /*0x4e30b9*/
+  this->u32_B4 = a2 != 0; /*0x4e30b9*/
   return a2 != 0; /*0x4e30bc*/
 }
 

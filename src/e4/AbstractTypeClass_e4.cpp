@@ -73,6 +73,7 @@ LABEL_9:
   }
   return this; /*0x410948*/
 }
+}
 
 // 0x4109C0
 int AbstractTypeClass::Dtor()
@@ -95,6 +96,7 @@ int AbstractTypeClass::Dtor()
     while ( v2 < g_AbstractTypePool ); /*0x410a26*/
   }
   return AbstractClass::DTOR(this); /*0x410a2f*/
+}
 }
 
 // 0x410A60
@@ -155,6 +157,7 @@ int AbstractTypeClass::LoadFromINI(AbstractTypeClass * aP1)
   else
     this->UIName = &DataGlobal_87F8E4[32336]; /*0x410b69*/
   return 1; /*0x410b57*/
+}
 }
 
 // 0x410C30

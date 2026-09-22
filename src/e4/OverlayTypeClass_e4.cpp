@@ -18,7 +18,7 @@ unsigned int * OverlayTypeClass::OverlayTypeClass(ObjectClass * aP1)
   this->q2A0 = 1; /*0x5fe265*/
   this->Wall = 1; /*0x5fe26b*/
   this->Explodes = 1; /*0x5fe271*/
-  *((_BYTE *)this + 691) = 1; /*0x5fe277*/
+  this->u8_2B3 = 1; /*0x5fe277*/
   this->LandType = -1; /*0x5fe280*/
   this->CellAnim = 0; /*0x5fe28a*/
   this->DamageLevels = 0; /*0x5fe290*/
@@ -83,6 +83,7 @@ LABEL_11:
     return this; /*0x5fe3ad*/
   }
 }
+}
 
 // 0x5FE770
 AnimTypeClass * * OverlayTypeClass::LoadFromINI(unsigned char *** aP1)
@@ -104,26 +105,26 @@ AnimTypeClass * * OverlayTypeClass::LoadFromINI(unsigned char *** aP1)
     return 0; /*0x5fea1f*/
   v3 = (AnimTypeClass *)OverlayTypeClass::ReadINIString( /*0x5fe7ac*/
                           aP1,
-                          (INIClass *)(this + 36),
+                          (INIClass *)(&this->vtable46),
                           (unsigned __int8 *)&stru_830620[12128],
                           this->CellAnim);
   v4 = this->Wall; /*0x5fe7b1*/
   this->CellAnim = v3; /*0x5fe7b7*/
   Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x5fe7c6*/
                     (int)aP1,
-                    (unsigned __int8 *)(this + 36),
+                    (unsigned __int8 *)(&this->vtable46),
                     (CCINIClass *)&stru_830620[9560],
                     v4);
   bool v23 = this->NoUseTileLandType; /*0x5fe7d3*/
   this->Wall = Int_Overwrite; /*0x5fe7da*/
   this->NoUseTileLandType = INIClass::ReadBool_Overwrite( /*0x5fe7e5*/
                              (int)aP1,
-                             (unsigned __int8 *)(this + 36),
+                             (unsigned __int8 *)(&this->vtable46),
                              (CCINIClass *)&stru_81AC50.headNode[1],
                              v23);
   Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x5fe7fa*/
                      (int)aP1,
-                     (unsigned __int8 *)(this + 36),
+                     (unsigned __int8 *)(&this->vtable46),
                      (CCINIClass *)&stru_817244.needsSave_flag,
                      this->IsVeinholeMonster);
   bool v7 = this->IsVeins; /*0x5fe7ff*/
@@ -131,20 +132,20 @@ AnimTypeClass * * OverlayTypeClass::LoadFromINI(unsigned char *** aP1)
   char v8; // al
   v8 = INIClass::ReadBool_Overwrite( /*0x5fe814*/
          (int)aP1,
-         (unsigned __int8 *)(this + 36),
+         (unsigned __int8 *)(&this->vtable46),
          (CCINIClass *)&stru_830620[12120],
          v7);
   bool v24 = this->ImageLoaded; /*0x5fe821*/
   this->IsVeins = v8; /*0x5fe828*/
   this->ImageLoaded = INIClass::ReadBool_Overwrite( /*0x5fe833*/
                              (int)aP1,
-                             (unsigned __int8 *)(this + 36),
+                             (unsigned __int8 *)(&this->vtable46),
                              (CCINIClass *)&stru_830620[12104],
                              v24);
   char v9; // al
   v9 = INIClass::ReadBool_Overwrite( /*0x5fe848*/
          (int)aP1,
-         (unsigned __int8 *)(this + 36),
+         (unsigned __int8 *)(&this->vtable46),
          (CCINIClass *)&stru_830620[12092],
          this->IsRubble);
   Color *v10 = this->q2B2; /*0x5fe84d*/
@@ -152,14 +153,14 @@ AnimTypeClass * * OverlayTypeClass::LoadFromINI(unsigned char *** aP1)
   char v11; // al
   v11 = INIClass::ReadBool_Overwrite( /*0x5fe862*/
           (int)aP1,
-          (unsigned __int8 *)(this + 36),
+          (unsigned __int8 *)(&this->vtable46),
           (CCINIClass *)&stru_830620[12080],
           v10);
   v12 = this->DamageLevels; /*0x5fe867*/
   this->q2B2 = v11; /*0x5fe884*/
   if ( INIClass::GetString( /*0x5fe88a*/
          aP1,
-         (INIClass *)(this + 36),
+         (INIClass *)(&this->vtable46),
          (unsigned __int8 *)&stru_830620[12068],
          (INIClass *)&DataGlobal_87F8E4[42624],
          (INIClass *)v28.headNode,
@@ -174,7 +175,7 @@ AnimTypeClass * * OverlayTypeClass::LoadFromINI(unsigned char *** aP1)
   this->DamageLevels = v13; /*0x5fe8a0*/
   this->Strength = INIClass::ReadInt_Overwrite( /*0x5fe8c3*/
                               (int)&DataGlobal_87F8E4[30876],
-                              (unsigned __int8 *)(this + 504),
+                              (unsigned __int8 *)(&this->u32_C84),
                               (CCINIClass *)&stru_830620[12052],
                               this->q2A0);
   if ( this->IsVeinholeMonster ) /*0x5fe8c9*/
@@ -186,22 +187,22 @@ AnimTypeClass * * OverlayTypeClass::LoadFromINI(unsigned char *** aP1)
   }
   if ( !this->Theater && !this->DrawFlat ) /*0x5fe8fb*/
   {
-    _makepath(Buffer, 0, 0, (const char *)(this + 504), Ext); /*0x5fe917*/
+    _makepath(Buffer, 0, 0, (const char *)(&this->u32_C84), Ext); /*0x5fe917*/
     this->Image = SearchMIXFile(Buffer, 1); /*0x5fe92d*/
   }
   Coord = INIClass::GetCoord( /*0x5fe947*/
             aP1,
             &v28,
-            (INIClass *)(this + 36),
+            (INIClass *)(&this->vtable46),
             (Color *)&stru_830620[12040],
-            (Color *)(this + 694));
+            (Color *)(&this->u32_1144));
   this->q2B6 = *(_WORD *)Coord; /*0x5fe94f*/
   bool v25 = this->Explodes; /*0x5fe95e*/
   this->q2B8 = *(_BYTE *)(Coord + 2); /*0x5fe965*/
   char v16; // al
   v16 = INIClass::ReadBool_Overwrite( /*0x5fe968*/
           (int)aP1,
-          (unsigned __int8 *)(this + 36),
+          (unsigned __int8 *)(&this->vtable46),
           (CCINIClass *)&stru_830620[12020],
           v25);
   bool v17 = this->ChainReaction; /*0x5fe96d*/
@@ -209,39 +210,40 @@ AnimTypeClass * * OverlayTypeClass::LoadFromINI(unsigned char *** aP1)
   char v18; // al
   v18 = INIClass::ReadBool_Overwrite( /*0x5fe982*/
           (int)aP1,
-          (unsigned __int8 *)(this + 36),
+          (unsigned __int8 *)(&this->vtable46),
           (CCINIClass *)&stru_830620[12000],
           v17);
   bool v26 = this->Overrides; /*0x5fe98f*/
   this->ChainReaction = v18; /*0x5fe996*/
-  this->Overrides = INIClass::ReadBool_Overwrite((int)aP1, (unsigned __int8 *)(this + 36), &unk_8184A8, v26); /*0x5fe9a1*/
+  this->Overrides = INIClass::ReadBool_Overwrite((int)aP1, (unsigned __int8 *)(&this->vtable46), &unk_8184A8, v26); /*0x5fe9a1*/
   char v19; // al
   v19 = INIClass::ReadBool_Overwrite( /*0x5fe9b6*/
           (int)aP1,
-          (unsigned __int8 *)(this + 36),
+          (unsigned __int8 *)(&this->vtable46),
           (CCINIClass *)&stru_830620[11984],
           this->IsARock);
-  char v20 = *(_BYTE *)(this + 691); /*0x5fe9bb*/
+  char v20 = this->u8_2B3; /*0x5fe9bb*/
   this->IsARock = v19; /*0x5fe9c1*/
   char v21; // al
   v21 = INIClass::ReadBool_Overwrite( /*0x5fe9d0*/
           (int)aP1,
-          (unsigned __int8 *)(this + 36),
+          (unsigned __int8 *)(&this->vtable46),
           (CCINIClass *)&stru_830620[11972],
           v20);
   char v27 = this->tail_2B5; /*0x5fe9dd*/
-  *(_BYTE *)(this + 691) = v21; /*0x5fe9e4*/
+  this->u8_2B3 = v21; /*0x5fe9e4*/
   this->tail_2B5 = INIClass::ReadBool_Overwrite( /*0x5fe9ef*/
                              (int)aP1,
-                             (unsigned __int8 *)(this + 36),
+                             (unsigned __int8 *)(&this->vtable46),
                              (CCINIClass *)&stru_830620[11964],
                              v27);
   this->q2B4 = INIClass::ReadBool_Overwrite( /*0x5fea0a*/
                              (int)aP1,
-                             (unsigned __int8 *)(this + 36),
+                             (unsigned __int8 *)(&this->vtable46),
                              (CCINIClass *)&stru_830620[11952],
                              this->q2B4);
   return 1; /*0x5fea11*/
+}
 }
 
 // 0x5FEAF0
@@ -289,6 +291,7 @@ ScenarioClass * * OverlayTypeClass::SaveLoad_Prefix(int a1, int a2)
   }
   return result; /*0x5febf9*/
 }
+}
 
 // 0x5FEDE0
 AnimTypeClass * * OverlayTypeClass::GetCategory()
@@ -331,6 +334,7 @@ AnimTypeClass * * OverlayTypeClass::GetCategory()
     return EntireFile; /*0x5feeea*/
   }
   return result; /*0x5feeed*/
+}
 }
 
 // 0x6440A0
@@ -389,6 +393,7 @@ unsigned int * OverlayTypeClass::Construct(ObjectClass * aP1)
   }
   this->IsLogic = 1; /*0x64420e*/
   return this; /*0x644217*/
+}
 }
 
 // 0x4754B0
@@ -611,9 +616,9 @@ OverlayTypeClass * OverlayTypeClass::ddtor(char a2)
     int v3;
     void **v5;
     *(void**)this = vt_OverlayTypeClass;
-    *(this + 1) = (unsigned int)vt_OverlayTypeClass;
-    *(this + 2) = (unsigned int)vt_OverlayTypeClass;
-    *(this + 3) = &vt_OverlayTypeClass;
+    this->vtable2 = (unsigned int)vt_OverlayTypeClass;
+    this->vtable3 = (unsigned int)vt_OverlayTypeClass;
+    this->vtable4 = &vt_OverlayTypeClass;
     AbstractClass::AnnounceExpiredPointer(this, 1);
     v5 = this;
     v3 = (*(int (__thiscall **)(int *, void ***))(DataGlobal_A83D80 + 16))(&DataGlobal_A83D80, &v5);

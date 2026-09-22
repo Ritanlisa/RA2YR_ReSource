@@ -12,6 +12,7 @@ int DialogControl::Hide()
   this->q01C = 1; /*0x4e1456*/
   return v1->DeactivateGlobal();
 }
+}
 
 // 0x4E1460
 int DialogControl::Show()
@@ -21,12 +22,14 @@ int DialogControl::Show()
   this->q01C = 1; /*0x4e1465*/
   return this->vt_slot_84();
 }
+}
 
 // 0x4E1470
 int DialogControl::IsHidden()
 {
 {
   return *(this + 30) == 0; /*0x4e147a*/
+}
 }
 
 // 0x623340
@@ -47,4 +50,5 @@ unsigned int * DialogControl::Constructor()
   this->q017 = 0; /*0x62337f*/
   this->q024 = -1; /*0x623382*/
   return this; /*0x62338e*/
+}
 }

@@ -46,9 +46,9 @@ AbstractClass * * Sidebar::StartSidebarProduction(void * a1, BuildingTypeClass *
     case 1u: /*0x4fa3b0*/
     case 0x28u: /*0x4fa3b0*/
       if ( (_BYTE)aP3 ) /*0x4fa3c9*/
-        v21 = *(_BYTE *)(this + 21459); /*0x4fa3d1*/
+        v21 = this->u8_53D3; /*0x4fa3d1*/
       else
-        v21 = *(_BYTE *)(this + 21458); /*0x4fa3dd*/
+        v21 = this->u8_53D2; /*0x4fa3dd*/
       break; /*0x4fa3d5*/
     case 2u: /*0x4fa3b0*/
     case 3u: /*0x4fa3b0*/
@@ -63,7 +63,7 @@ AbstractClass * * Sidebar::StartSidebarProduction(void * a1, BuildingTypeClass *
       break; /*0x4fa3f2*/
     case 0xFu: /*0x4fa3b0*/
     case 0x10u: /*0x4fa3b0*/
-      v21 = *(_BYTE *)(this + 21457); /*0x4fa3bd*/
+      v21 = this->u8_53D1; /*0x4fa3bd*/
       break; /*0x4fa3c1*/
     default:
       v21 = 0; /*0x4fa40c*/
@@ -87,22 +87,22 @@ LABEL_40:
     case 1u: /*0x4fa47b*/
     case 0x28u: /*0x4fa47b*/
       if ( (_BYTE)aP3 ) /*0x4fa4b0*/
-        v10 = *(_DWORD *)(this + 21432); /*0x4fa4b2*/
-      FactoryClass *v10 = *(_DWORD *)(this + 21428); /*0x4fa4ba*/
+        v10 = this->u32_53B8; /*0x4fa4b2*/
+      FactoryClass *v10 = this->u32_53B4; /*0x4fa4ba*/
       break; /*0x4fa4b8*/
     case 2u: /*0x4fa47b*/
     case 3u: /*0x4fa47b*/
-      v10 = *(_DWORD *)(this + 21420); /*0x4fa4d7*/
+      v10 = this->u32_53AC; /*0x4fa4d7*/
       break; /*0x4fa4dd*/
     case 6u: /*0x4fa47b*/
     case 7u: /*0x4fa47b*/
       if ( v7 == 5 ) /*0x4fa4c5*/
-        v10 = *(_DWORD *)(this + 21452); /*0x4fa4c7*/
-      FactoryClass *v10 = *(_DWORD *)(this + 21436); /*0x4fa4cf*/
+        v10 = this->u32_53CC; /*0x4fa4c7*/
+      FactoryClass *v10 = this->u32_53BC; /*0x4fa4cf*/
       break; /*0x4fa4cd*/
     case 0xFu: /*0x4fa47b*/
     case 0x10u: /*0x4fa47b*/
-      v10 = *(_DWORD *)(this + 21424); /*0x4fa482*/
+      v10 = this->u32_53B0; /*0x4fa482*/
       break; /*0x4fa488*/
     default:
       v10 = 0; /*0x4fa4df*/
@@ -124,24 +124,24 @@ LABEL_40:
     case 1u: /*0x4fa564*/
     case 0x28u: /*0x4fa564*/
       if ( (_BYTE)aP3 ) /*0x4fa571*/
-        *(_DWORD *)(this + 21432) = v10; /*0x4fa573*/
+        this->u32_53B8 = v10; /*0x4fa573*/
       else
-        *(_DWORD *)(this + 21428) = v10; /*0x4fa57b*/
+        this->u32_53B4 = v10; /*0x4fa57b*/
       break; /*0x4fa579*/
     case 2u: /*0x4fa564*/
     case 3u: /*0x4fa564*/
-      *(_DWORD *)(this + 21420) = v10; /*0x4fa5a2*/
+      this->u32_53AC = v10; /*0x4fa5a2*/
       break; /*0x4fa5a2*/
     case 6u: /*0x4fa564*/
     case 7u: /*0x4fa564*/
       if ( v22 == 5 ) /*0x4fa590*/
-        *(_DWORD *)(this + 21452) = v10; /*0x4fa592*/
+        this->u32_53CC = v10; /*0x4fa592*/
       else
-        *(_DWORD *)(this + 21436) = v10; /*0x4fa59a*/
+        this->u32_53BC = v10; /*0x4fa59a*/
       break; /*0x4fa598*/
     case 0xFu: /*0x4fa564*/
     case 0x10u: /*0x4fa564*/
-      *(_DWORD *)(this + 21424) = v10; /*0x4fa583*/
+      this->u32_53B0 = v10; /*0x4fa583*/
       break; /*0x4fa589*/
     default:
       break;
@@ -160,7 +160,7 @@ LABEL_55:
         {
           bool v16 = v10->isSuspended; /*0x4fa622*/
           ProductionClass::StartTimer(v10, v24); /*0x4fa628*/
-          if ( !v16 && g_GameMode_Current && *(_BYTE *)(this + 492) ) /*0x4fa63a*/
+          if ( !v16 && g_GameMode_Current && this->u8_1EC ) /*0x4fa63a*/
           {
             int v17 = (*(int (__thiscall **)(_DWORD))(*v10->q058 + 132))(v10->q058); /*0x4fa649*/
   int v18; // eax
@@ -207,26 +207,26 @@ LABEL_55:
     case 0u: /*0x4fa782*/
     case 0x27u: /*0x4fa782*/
       if ( (_BYTE)aP3 ) /*0x4fa78f*/
-        *(_DWORD *)(this + 21432) = 0; /*0x4fa791*/
+        this->u32_53B8 = 0; /*0x4fa791*/
       else
-        *(_DWORD *)(this + 21428) = 0; /*0x4fa7a6*/
+        this->u32_53B4 = 0; /*0x4fa7a6*/
       result = 3; /*0x4fa79a*/
       break; /*0x4fa7a3*/
     case 1u: /*0x4fa782*/
     case 2u: /*0x4fa782*/
-      *(_DWORD *)(this + 21420) = 0; /*0x4fa801*/
+      this->u32_53AC = 0; /*0x4fa801*/
       return 3; /*0x4fa801*/
     case 5u: /*0x4fa782*/
     case 6u: /*0x4fa782*/
       if ( v22 == 5 ) /*0x4fa7d5*/
-        *(_DWORD *)(this + 21452) = 0; /*0x4fa7d7*/
+        this->u32_53CC = 0; /*0x4fa7d7*/
       else
-        *(_DWORD *)(this + 21436) = 0; /*0x4fa7ec*/
+        this->u32_53BC = 0; /*0x4fa7ec*/
       result = 3; /*0x4fa7e0*/
       break; /*0x4fa7e9*/
     case 0xEu: /*0x4fa782*/
     case 0xFu: /*0x4fa782*/
-      *(_DWORD *)(this + 21424) = 0; /*0x4fa7bb*/
+      this->u32_53B0 = 0; /*0x4fa7bb*/
       result = 3; /*0x4fa7c4*/
       break; /*0x4fa7cd*/
     default:
@@ -235,6 +235,7 @@ LABEL_55:
   return result; /*0x4fa4a0*/
 }
 } // namespace gamemd
+}
 
 // 0x5007A0
 namespace gamemd {
@@ -281,6 +282,7 @@ LABEL_3:
   return result; /*0x5007d2*/
 }
 } // namespace gamemd
+}
 
 // 0x533F50
 namespace gamemd {
@@ -308,6 +310,7 @@ CreateTeamCommand * * Sidebar::ScrollSidebarSkipGame()
   return result; /*0x533fab*/
 }
 } // namespace gamemd
+}
 
 // 0x636310
 namespace gamemd {
@@ -353,13 +356,13 @@ TechnoClass * * Sidebar::CancelSidebarProductionQueue()
     DecFactoryClassCounter(v9); /*0x6363d5*/
     VectorClass::EraseAt((int *)&g_MatrixTransformState + 6028, (IUnknown *)&Blocka); /*0x6363e4*/
   }
-  _DWORD * v10 = this + 1; /*0x6363ec*/
+  _DWORD * v10 = &this->u32_4; /*0x6363ec*/
   this->q004->vt_slot_12(); /*0x6363f1*/
-  *((_BYTE *)this + 152) = 0; /*0x6363f7*/
-  *(this + 35) = -1; /*0x636400*/
+  this->u8_98 = 0; /*0x6363f7*/
+  *(&this->u32_C5) = -1; /*0x636400*/
   this->q024 = -1; /*0x636406*/
-  *(this + 37) = -1; /*0x63640c*/
-  *((_BYTE *)this + 153) = 0; /*0x636412*/
+  *(&this->u32_C7) = -1; /*0x63640c*/
+  this->u8_99 = 0; /*0x636412*/
   *this = 0; /*0x636419*/
   if ( this ) /*0x63641f*/
   {
@@ -386,11 +389,11 @@ TechnoClass * * Sidebar::CancelSidebarProductionQueue()
       VectorClass::EraseAt((int *)&g_MatrixTransformState + 6028, (IUnknown *)&v17); /*0x6364a8*/
     }
     (*(void (__thiscall **)(int *))(*v10 + 12))(this + 1); /*0x6364b1*/
-    *((_BYTE *)this + 152) = 0; /*0x6364b7*/
-    *(this + 35) = -1; /*0x6364be*/
+    this->u8_98 = 0; /*0x6364b7*/
+    *(&this->u32_C5) = -1; /*0x6364be*/
     this->q024 = -1; /*0x6364c4*/
-    *(this + 37) = -1; /*0x6364ca*/
-    *((_BYTE *)this + 153) = 0; /*0x6364d0*/
+    *(&this->u32_C7) = -1; /*0x6364ca*/
+    this->u8_99 = 0; /*0x6364d0*/
     AbstractClass *v15 = (void *)this->q008; /*0x6364d7*/
     *v10 = &vt_VectorClass_PlanningNodeClass; /*0x6364de*/
     if ( v15 ) /*0x6364e4*/
@@ -407,6 +410,7 @@ TechnoClass * * Sidebar::CancelSidebarProductionQueue()
   }
 }
 } // namespace gamemd
+}
 
 // 0x63F040
 namespace gamemd {
@@ -432,6 +436,7 @@ int Sidebar::RemoveItem(int a2)
   return 1; /*0x63f069*/
 }
 } // namespace gamemd
+}
 
 // 0x63FB20
 namespace gamemd {
@@ -439,10 +444,10 @@ ObjectClass * * Sidebar::Render(char a2)
 {
 {
 
-  if ( (a2 || *(_BYTE *)(this + 5388)) && DataGlobal_884B8D ) /*0x63fb43*/
+  if ( (a2 || this->u8_150C) && DataGlobal_884B8D ) /*0x63fb43*/
   {
   int v17; // [esp+8h] [ebp-1Ch]
-    *(_BYTE *)(this + 5388) = 0; /*0x63fb49*/
+    this->u8_150C = 0; /*0x63fb49*/
     g_TooltipActive = 1; /*0x63fb55*/
     if ( *((_DWORD *)g_ScenarioClass_Instance + 3374) ) /*0x63fb5d*/
       int v3 = 0; /*0x63fb70*/
@@ -451,14 +456,14 @@ ObjectClass * * Sidebar::Render(char a2)
     int v16 = *((_DWORD *)g_ScenarioClass_Instance + 3374); /*0x63fb78*/
     int v4 = g_DSurface_SidebarBounds + 69; /*0x63fb80*/
     int * v5 = (int *)(*(int (__thiscall **)(int, int *))(*(_DWORD *)DSurface_Sidebar + 120))(DSurface_Sidebar, &v16); /*0x63fb8c*/
-    ObjectClass *v6 = *(_DWORD *)(this + 5424); /*0x63fb91*/
+    ObjectClass *v6 = this->ptr_1530; /*0x63fb91*/
   int v18[4]; // [esp+14h] [ebp-10h] BYREF
     v18[0] = *v5; /*0x63fb97*/
     v18[1] = v5[1]; /*0x63fb9e*/
     v18[2] = v5[2]; /*0x63fba5*/
     v18[3] = v5[3]; /*0x63fbb1*/
-    int v7 = *(_DWORD *)(this + 5428); /*0x63fbc6*/
-    int v8 = *(_DWORD *)(this + 5420); /*0x63fbce*/
+    int v7 = this->u32_1534; /*0x63fbc6*/
+    int v8 = this->u32_152C; /*0x63fbce*/
     if ( (DataGlobal_B0B504 + 3) / 3 - v7 - v6 - v8 > 0 ) /*0x63fbdc*/
     {
       int v9 = (DataGlobal_B0B504 + 3) / 3 - v7 - v6 - v8; /*0x63fbde*/
@@ -488,7 +493,7 @@ ObjectClass * * Sidebar::Render(char a2)
       }
       while ( v9 ); /*0x63fc24*/
     }
-    int v10 = *(_DWORD *)(this + 5404); /*0x63fc26*/
+    int v10 = this->u32_151C; /*0x63fc26*/
     int v11 = 0; /*0x63fc2c*/
     if ( v10 > 0 && (v10 & 1) == 0 ) /*0x63fc3e*/
     {
@@ -514,7 +519,7 @@ ObjectClass * * Sidebar::Render(char a2)
       v4 += 3; /*0x63fc82*/
       v11 = 1; /*0x63fc85*/
     }
-    int v12 = *(_DWORD *)(this + 5420); /*0x63fc8a*/
+    int v12 = this->u32_152C; /*0x63fc8a*/
     if ( v12 > 0 ) /*0x63fc92*/
     {
       if ( v11 < v12 ) /*0x63fc96*/
@@ -543,11 +548,11 @@ ObjectClass * * Sidebar::Render(char a2)
           v4 += 3; /*0x63fcde*/
           ++v11; /*0x63fce1*/
         }
-        while ( v11 < *(_DWORD *)(this + 5420) ); /*0x63fce4*/
+        while ( v11 < this->u32_152C ); /*0x63fce4*/
       }
       v11 = 0; /*0x63fce6*/
     }
-    ObjectClass *v13 = *(_DWORD *)(this + 5424); /*0x63fce8*/
+    ObjectClass *v13 = this->ptr_1530; /*0x63fce8*/
     if ( v13 > 0 ) /*0x63fcf0*/
     {
       if ( v11 < v13 ) /*0x63fcf4*/
@@ -576,11 +581,11 @@ ObjectClass * * Sidebar::Render(char a2)
           v4 += 3; /*0x63fd3c*/
           ++v11; /*0x63fd3f*/
         }
-        while ( v11 < *(_DWORD *)(this + 5424) ); /*0x63fd42*/
+        while ( v11 < this->ptr_1530 ); /*0x63fd42*/
       }
       v11 = 0; /*0x63fd44*/
     }
-    int v14 = *(_DWORD *)(this + 5428); /*0x63fd46*/
+    int v14 = this->u32_1534; /*0x63fd46*/
     if ( v14 > 0 && v11 < v14 ) /*0x63fd52*/
     {
       do /*0x63fda0*/
@@ -607,12 +612,13 @@ ObjectClass * * Sidebar::Render(char a2)
         v4 += 3; /*0x63fd9a*/
         ++v11; /*0x63fd9d*/
       }
-      while ( v11 < *(_DWORD *)(this + 5428) ); /*0x63fda0*/
+      while ( v11 < this->u32_1534 ); /*0x63fda0*/
     }
   }
   return RadarClass::Destru_vt16(a2); /*0x63fdb1*/
 }
 } // namespace gamemd
+}
 
 // 0x6A60A0
 namespace gamemd {
@@ -631,6 +637,7 @@ int Sidebar::ActivateTab(IUnknown * aP1)
   return (int)result; /*0x6a60d8*/
 }
 } // namespace gamemd
+}
 
 // 0x6A70E0
 namespace gamemd {
@@ -774,6 +781,7 @@ LABEL_25:
   g_TooltipActive = 0; /*0x6a7488*/
 }
 } // namespace gamemd
+}
 
 // 0x6A9540
 namespace gamemd {
@@ -1577,6 +1585,7 @@ LABEL_121:
   return result;
 }
 } // namespace gamemd
+}
 
 // 0x6A6140
 namespace gamemd {

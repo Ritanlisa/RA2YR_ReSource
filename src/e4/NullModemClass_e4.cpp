@@ -9,6 +9,7 @@ int NullModemClass::COMStub()
 {
   return this->linkOpen; /*0x5f1953*/
 }
+}
 
 // 0x5F1F00
 int NullModemClass::Flush(int a2)
@@ -20,6 +21,7 @@ int NullModemClass::Flush(int a2)
   if ( result ) /*0x5f1f05*/
     return Rect::SetRedraw(result->PlayerIndex, 1); /*0x5f1f0c*/
   return result; /*0x5f1f11*/
+}
 }
 
 // 0x5F3560
@@ -39,6 +41,7 @@ int NullModemClass::Release(int a2, int a3, int a4, int a5)
   if ( !result ) /*0x5f358b*/
     ++this->q068; /*0x5f358d*/
   return result; /*0x5f356c*/
+}
 }
 
 // 0x5F35A0
@@ -61,6 +64,7 @@ int NullModemClass::Receive()
   else
     return 0; /*0x5f35de*/
 }
+}
 
 // 0x5F35F0
 int NullModemClass::CheckStatus()
@@ -72,6 +76,7 @@ int NullModemClass::CheckStatus()
     return *(_DWORD *)(v1->PlayerIndex + 56); /*0x5f35fa*/
   else
     return 0; /*0x5f35fe*/
+}
 }
 
 // 0x5F3610
@@ -85,6 +90,7 @@ int NullModemClass::GetAddress(int a2)
   else
     return 0; /*0x5f3620*/
 }
+}
 
 // 0x5F3630
 int NullModemClass::SetAddress(int a2)
@@ -96,6 +102,7 @@ int NullModemClass::SetAddress(int a2)
     return *(_DWORD *)(v2->PlayerIndex + 56); /*0x5f363a*/
   else
     return 0; /*0x5f3640*/
+}
 }
 
 // 0x5F3650
@@ -134,6 +141,7 @@ LABEL_10:
     __3_YAXPAX_Z(this); /*0x5f36de*/
   return (NullModemClass *)this; /*0x5f36e8*/
 }
+}
 
 // 0x774670
 int NullModemClass::sendData()
@@ -150,10 +158,10 @@ int NullModemClass::sendData()
   Debug::Log(); /*0x77467d*/
   PurgeComm(this->q05C, 0xFu); /*0x77468b*/
   ResetEvent(this->linkObject); /*0x77469b*/
-  ResetEvent(*(HANDLE *)(this + 76)); /*0x7746a1*/
+  ResetEvent(*(HANDLE *)(&this->q01C6)); /*0x7746a1*/
   void * v8 = this->q05C; /*0x7746ad*/
   this->q050 = 0; /*0x7746ae*/
-  *(_BYTE *)(this + 81) = 0; /*0x7746b1*/
+  this->ptr_51 = 0; /*0x7746b1*/
   if ( GetCommState(v8, &DCB) ) /*0x7746b4*/
   {
     void * v2 = this->q05C; /*0x7746c2*/
@@ -193,6 +201,7 @@ int NullModemClass::sendData()
   }
   return 1; /*0x77470a*/
 }
+}
 
 // 0x7747C0
 int NullModemClass::receiveData()
@@ -207,11 +216,11 @@ int NullModemClass::receiveData()
   Debug::Log(); /*0x7747cd*/
   PurgeComm(this->q05C, 0xFu); /*0x7747db*/
   ResetEvent(this->linkObject); /*0x7747eb*/
-  ResetEvent(*(HANDLE *)(this + 76)); /*0x7747f1*/
+  ResetEvent(*(HANDLE *)(&this->q01C6)); /*0x7747f1*/
   void * v7 = this->q05C; /*0x7747ff*/
   this->q050 = 0; /*0x774800*/
-  *(_BYTE *)(this + 81) = 0; /*0x774803*/
-  if ( !SetCommState(v7, (LPDCB)(this + 8300)) ) /*0x774806*/
+  this->ptr_51 = 0; /*0x774803*/
+  if ( !SetCommState(v7, (LPDCB)(&this->u32_CF80)) ) /*0x774806*/
     Debug::Log(); /*0x774816*/
   if ( !EscapeCommFunction(this->q05C, 3u) ) /*0x774824*/
   {
@@ -231,12 +240,14 @@ int NullModemClass::receiveData()
   }
   return (*(int (__thiscall **)(int, int))(this->PacketsSent)(this, 1); /*0x774893*/
 }
+}
 
 // 0x7754C0
 int NullModemClass::GetMember23()
 {
 {
   return this->q05C; /*0x7754c3*/
+}
 }
 
 // 0x5F3520

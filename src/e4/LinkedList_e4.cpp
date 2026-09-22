@@ -220,6 +220,7 @@ LABEL_60:
     goto LABEL_61; /*0x479662*/
   return Map_Load_751C30(); /*0x479390*/
 }
+}
 
 // 0x556600
 void * LinkedList::MoveNode(void * a2)
@@ -231,6 +232,7 @@ void * LinkedList::MoveNode(void * a2)
     (*(void (__thiscall **)(void *, void *))(this->q00C)(this, a2); /*0x556616*/
   }
   return this; /*0x55661b*/
+}
 }
 
 // 0x556640
@@ -252,6 +254,7 @@ unsigned int * LinkedList::FindPrev()
   while ( result[2] ); /*0x556651*/
   return result; /*0x55665b*/
 }
+}
 
 // 0x5566A0
 LinkClass * * LinkedList::InsertAfter(int a2)
@@ -267,6 +270,7 @@ LinkClass * * LinkedList::InsertAfter(int a2)
     v3->m_Prev = this; /*0x5566bc*/
   return this->vt_slot_24(); /*0x5566c6*/
 }
+}
 
 // 0x5566D0
 unsigned int * LinkedList::Attach(int a2)
@@ -279,6 +283,7 @@ unsigned int * LinkedList::Attach(int a2)
   this->Tail = v3; /*0x5566e4*/
   this->q008 = 0; /*0x5566e7*/
   return this; /*0x5566f0*/
+}
 }
 
 // 0x556700
@@ -293,6 +298,7 @@ LinkClass * * LinkedList::Append(int a2)
   LinkClass *v4 = *this; /*0x556717*/
   this->Tail = 0; /*0x55671b*/
   return this->vt_slot_24(); /*0x556725*/
+}
 }
 
 // 0x556730
@@ -315,6 +321,7 @@ int LinkedList::RemoveNode()
   if ( (_DWORD *)v3 == this ) /*0x55676b*/
     return 0; /*0x55676f*/
   return (*(int (__thiscall **)(int))(*(_DWORD *)v3 + 24))(v3); /*0x55676d*/
+}
 }
 
 // 0x623460
@@ -340,13 +347,14 @@ void LinkedList::Remove(unsigned int * a2)
     __3_YAXPAX_Z(v2); /*0x62348b*/
   }
 }
+}
 
 // 0x632D10
 void LinkedList::RelinkNode(int a2)
 {
 {
 
-  if ( *(this + 6) != a2 ) /*0x632d1b*/
+  if ( this->u32_18 != a2 ) /*0x632d1b*/
   {
     if ( a2 ) /*0x632d1f*/
     {
@@ -357,15 +365,16 @@ void LinkedList::RelinkNode(int a2)
         *(_DWORD *)(a2 + 8) = 0; /*0x632d2f*/
       }
     }
-    int v4 = *(this + 6); /*0x632d36*/
+    int v4 = this->u32_18; /*0x632d36*/
     if ( v4 ) /*0x632d3b*/
       *(_DWORD *)(v4 + 8) = 0; /*0x632d3d*/
-    *(this + 6) = a2; /*0x632d46*/
+    this->u32_18 = a2; /*0x632d46*/
     if ( a2 ) /*0x632d49*/
-      *(_DWORD *)(a2 + 8) = this + 5; /*0x632d4e*/
-    *(this + 7) = this; /*0x632d54*/
-    this->Tail = this + 5; /*0x632d57*/
+      *(_DWORD *)(a2 + 8) = &this->ptr_14; /*0x632d4e*/
+    this->u32_1C = this; /*0x632d54*/
+    this->Tail = &this->ptr_14; /*0x632d57*/
   }
+}
 }
 
 // 0x6E5380
@@ -383,6 +392,7 @@ int LinkedList::Contains(IUnknown * aP1)
       return 0; /*0x6e5394*/
   }
   return 1; /*0x6e5398*/
+}
 }
 
 // 0x407450
@@ -460,8 +470,8 @@ int LinkedList::Pop()
     result = this->Tail;
     if ( result )
   {
-    this->Tail = *(int *)(result + 48);
-    *(int *)(result + 48) = 0;
+    this->Tail = result->ptr_30;
+    result->ptr_30 = 0;
     --*(void**)this;
   }
     return result;

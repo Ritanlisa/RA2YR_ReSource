@@ -112,6 +112,7 @@ void SHA1::Init()
 }
 
 // IDA 0x69DA00: Process
+}
 // 0x69d960
 EditClass * * SHA1::Process(const void* data, uint32_t size)
 {
@@ -203,6 +204,7 @@ retn    8
 */
 
 // IDA 0x69DC00: Compute
+}
 // 0x69d9e0
 int SHA1::Compute(uint8_t digest[20])
 {
@@ -383,6 +385,7 @@ retn    4
 */
 
 // Transform: process one 64-byte block
+}
 // 0x69db30
 void SHA1::Transform()
 {

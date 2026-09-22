@@ -93,6 +93,11 @@ PRIM = {'int', 'unsigned int', 'void', 'char', 'unsigned char', 'short',
 ASSIGN_ANY = re.compile(r'\b([a-z]\w*)\s*=\s*([^;=][^;]*);')
 CAST_HINT = re.compile(r'^\(\s*([A-Za-z_]\w*)\s*\*\s*\)')
 MEMBER_RD = re.compile(r'^([a-z]\w*)->([A-Za-z_]\w*)$')
+# `T vN; // [esp+Xh] [ebp-Yh]` (optional [SIZE], optional BYREF tail)
+DECL_STACK = re.compile(
+    r'^\s*(?:struct\s+|union\s+)?[A-Za-z_][\w]*?(?:(?:\s+(?:unsigned|signed))?'
+    r'\s+[A-Za-z_][\w]*?)*\s*[\*&\s]\s*\**\s*([A-Za-z_]\w*)\s*(?:\[[^\]]*\])?'
+    r'\s*;\s*//\s*\[esp\+([0-9A-Fa-f]+?)h\]')
 WIDTH = {'_DWORD': 4, 'int': 4, 'unsigned int': 4, 'long long': 8,
          'unsigned long long': 8, '_BYTE': 1, 'char': 1, 'unsigned char': 1,
          '_WORD': 2, 'unsigned short': 2, '_QWORD': 8, 'float': 4, 'BOOL': 4}
@@ -133,10 +138,14 @@ def build_types(body, cls, addr):
     env = {}
     env_val = {}  # primitive types adopted from member declarations (CSP)
     vt_of = {}    # vtable-value holders: var -> source object expression
-    vt_of = {}    # vtable-value holders: var -> source object expression
     if cls:
         env['this'] = cls
     ai = '0x%08X' % addr if addr else None
+    # CSP this-key fallback: canonical this class for free/unknown-cls fns
+    if not cls and ai:
+        t = (tmap.get('%s:this' % ai) or {}).get('type')
+        if is_cls(t):
+            env['this'] = t
     # params by position: first non-this param name -> param0, ...
     dm = re.search(r'\b\w+\s*\(([^)]*)\)', body)
     if dm and ai:
@@ -148,11 +157,22 @@ def build_types(body, cls, addr):
             nm = re.match(r'(?:[A-Za-z_][\w\s\*]*?\s)\*?\s*([A-Za-z_]\w*)$',
                           pspec)
             if nm:
-                v = tmap.get('%s:param%d' % (ai, pn)) or {}
+                v = tmap.get('%s::param%d' % (ai, pn)) or {}
                 t = v.get('type')
                 if is_cls(t):
                     env[nm.group(1)] = t
             pn += 1
+    # stack slots: `T vN; // [esp+Xh] [ebp-Yh]` -> `0xADDR::stack_+0xX`
+    if ai:
+        for ln in body.split('\n'):
+            sm = DECL_STACK.search(ln)
+            if not sm:
+                continue
+            off = int(sm.group(2), 16)
+            v = tmap.get('%s::stack_+0x%X' % (ai, off)) or {}
+            t = v.get('type')
+            if is_cls(t):
+                env[sm.group(1)] = t
     for _ in range(3):
         grew = False
         for ln in body.split('\n'):
@@ -300,7 +320,8 @@ def normalize(body, cls, addr):
                 return None
             name = info['name']
             t = (info.get('type') or '').strip()
-            if '*' in t or '[' in t:
+            # `this + OFF` is an ADDRESS: only arrays decay to this->M
+            if '[' in t:
                 return 'this->%s' % name
             return '&this->%s' % name
         def _sub_bare(m):
@@ -393,143 +414,144 @@ def normalize(body, cls, addr):
 ADDR = re.compile(r'//\s*0x([0-9A-Fa-f]{6,8})\s*$')
 DEF_Q = re.compile(r'\b([A-Za-z_]\w*)::\s*~?[A-Za-z_]\w*\s*\(')
 
-tot = defaultdict(int)
-nblk = 0
-for p in sorted(SRC.rglob('*.cpp')):
-    try:
-        lines = p.read_text(encoding='latin-1').split('\n')
-    except OSError:
-        continue
-    spans = []
-    i = 0
-    while i < len(lines):
-        if lines[i].rstrip('\r') != INSIDE:
-            i += 1
+if __name__ == '__main__':
+    tot = defaultdict(int)
+    nblk = 0
+    for p in sorted(SRC.rglob('*.cpp')):
+        try:
+            lines = p.read_text(encoding='latin-1').split('\n')
+        except OSError:
             continue
-        _, close = block_span(lines, i)
-        if close < 0:
-            i += 1
+        spans = []
+        i = 0
+        while i < len(lines):
+            if lines[i].rstrip('\r') != INSIDE:
+                i += 1
+                continue
+            _, close = block_span(lines, i)
+            if close < 0:
+                i += 1
+                continue
+            spans.append((i, close))
+            i = close + 1
+        if not spans:
             continue
-        spans.append((i, close))
-        i = close + 1
-    if not spans:
-        continue
-    changed = False
-    for (lo, hi) in reversed(spans):
-        cls = None
-        addr = None
-        for j in range(lo - 1, max(lo - 8, -1), -1):
-            ln = lines[j].strip()
-            a = ADDR.search(ln)
-            if a and addr is None:
-                addr = int(a.group(1), 16)
-            dm = DEF_Q.search(ln)
-            if dm and '(' in ln and not ln.startswith('#') and cls is None:
-                cls = dm.group(1)
-        if cls is None and addr:
-            cls = (man.get('0x%08X' % addr) or {}).get('cls')
-        seg = '\n'.join(lines[lo + 1:hi])
-        newseg, st = normalize(seg, cls, addr)
-        if any(st.values()):
-            lines[lo + 1:hi] = newseg.split('\n')
-            changed = True
-            nblk += 1
-            for kk, vv in st.items():
-                tot[kk] += vv
-            # vt_calls is read via st inside normalize; ensure key exists
-            st.setdefault('vt_calls', 0)
-        # ---- duplicate-signature removal + outer def canon adoption ----
-        # the block's FIRST lines are the IDA-rendered def + its `{`; the
-        # signature duplicates the outer (tree) def -- drop the def line and
-        # keep the `{` as the span opener (span logic requires it).
-        seg_lines = lines[lo + 1:hi]
-        drop = -1
-        for j, ln in enumerate(seg_lines[:5]):
-            s = ln.strip()
-            if not s or s.startswith('//'):
-                continue
-            # materialized-signature shape: a `(...)` header line (not a
-            # statement) whose next line is its `{` -- structural, so any
-            # return-type/CC spelling matches
-            nxt = seg_lines[j + 1].strip() if j + 1 < len(seg_lines) else ''
-            is_ctl = re.match(r'^(if|for|while|switch|return|else)', s)
-            if ('(' in s and not s.endswith(';') and not s.endswith('}')
-                    and not is_ctl and nxt == '{'):
-                drop = j
-            elif ('(' in s and not s.endswith(';') and not s.endswith('}')
-                    and not is_ctl):
-                # multi-line header: params continue (up to 48 lines) until
-                # the `{` opener; drop the WHOLE header run, keep `{`
-                k2 = j
-                while k2 + 1 < min(j + 48, len(seg_lines)):
-                    k2 += 1
-                    t = seg_lines[k2].strip()
-                    if t == '{':
-                        seg_lines[j:k2] = []
-                        tot['dup_sig_removed'] += 1
-                        changed = True
-                        drop = -2
-                        break
-                    if ';' in t or re.match(r'^(if|for|while|switch|return)',
-                                            t):
-                        break
-                break
-            break
-        if drop >= 0:
-            del seg_lines[drop]
-        if drop >= 0 or drop == -2:
-            lines[lo + 1:hi] = seg_lines
-            changed = True
-        # outer def soundness: a void return with value-returning body is
-        # unsound -- the body wins (generic value type int)
-        body_lo = lo + 1
-        seg_txt = chr(10).join(lines[body_lo:hi])
-        for j in range(lo - 1, max(lo - 8, -1), -1):
-            s = lines[j].strip()
-            if s.startswith('//') or not s or s in ('{', '}'):
-                continue
-            vm2 = re.match(r'^void\s+\w+::', s)
-            if vm2 and re.search(r'return\s+[^;\s]', seg_txt):
-                rest = s[4:].lstrip()
-                pre = lines[j][:len(lines[j]) - len(lines[j].lstrip())]
-                lines[j] = pre + 'int ' + rest
-                tot['void_to_int'] = tot.get('void_to_int', 0) + 1
+        changed = False
+        for (lo, hi) in reversed(spans):
+            cls = None
+            addr = None
+            for j in range(lo - 1, max(lo - 8, -1), -1):
+                ln = lines[j].strip()
+                a = ADDR.search(ln)
+                if a and addr is None:
+                    addr = int(a.group(1), 16)
+                dm = DEF_Q.search(ln)
+                if dm and '(' in ln and not ln.startswith('#') and cls is None:
+                    cls = dm.group(1)
+            if cls is None and addr:
+                cls = (man.get('0x%08X' % addr) or {}).get('cls')
+            seg = '\n'.join(lines[lo + 1:hi])
+            newseg, st = normalize(seg, cls, addr)
+            if any(st.values()):
+                lines[lo + 1:hi] = newseg.split('\n')
                 changed = True
-            break
-        # outer def return type <- canon (when anchored and different)
-        if addr and addr in canon_ret:
-            cret = canon_ret[addr]
-            seg_txt2 = chr(10).join(lines[body_lo:hi])
-            if cret.strip() == 'void' and re.search(r'return\s+[^;\s]', seg_txt2):
-                cret = None  # unsound: body returns values
+                nblk += 1
+                for kk, vv in st.items():
+                    tot[kk] += vv
+                # vt_calls is read via st inside normalize; ensure key exists
+                st.setdefault('vt_calls', 0)
+            # ---- duplicate-signature removal + outer def canon adoption ----
+            # the block's FIRST lines are the IDA-rendered def + its `{`; the
+            # signature duplicates the outer (tree) def -- drop the def line and
+            # keep the `{` as the span opener (span logic requires it).
+            seg_lines = lines[lo + 1:hi]
+            drop = -1
+            for j, ln in enumerate(seg_lines[:5]):
+                s = ln.strip()
+                if not s or s.startswith('//'):
+                    continue
+                # materialized-signature shape: a `(...)` header line (not a
+                # statement) whose next line is its `{` -- structural, so any
+                # return-type/CC spelling matches
+                nxt = seg_lines[j + 1].strip() if j + 1 < len(seg_lines) else ''
+                is_ctl = re.match(r'^(if|for|while|switch|return|else)\b', s)
+                if ('(' in s and not s.endswith(';') and not s.endswith('}')
+                        and not is_ctl and nxt == '{'):
+                    drop = j
+                elif ('(' in s and not s.endswith(';') and not s.endswith('}')
+                        and not is_ctl):
+                    # multi-line header: params continue (up to 48 lines) until
+                    # the `{` opener; drop the WHOLE header run, keep `{`
+                    k2 = j
+                    while k2 + 1 < min(j + 48, len(seg_lines)):
+                        k2 += 1
+                        t = seg_lines[k2].strip()
+                        if t == '{':
+                            seg_lines[j:k2] = []
+                            tot['dup_sig_removed'] += 1
+                            changed = True
+                            drop = -2
+                            break
+                        if ';' in t or re.match(r'^(if|for|while|switch|return)\b',
+                                                t):
+                            break
+                    break
+                break
+            if drop >= 0:
+                del seg_lines[drop]
+            if drop >= 0 or drop == -2:
+                lines[lo + 1:hi] = seg_lines
+                changed = True
+            # outer def soundness: a void return with value-returning body is
+            # unsound -- the body wins (generic value type int)
+            body_lo = lo + 1
+            seg_txt = chr(10).join(lines[body_lo:hi])
             for j in range(lo - 1, max(lo - 8, -1), -1):
                 s = lines[j].strip()
                 if s.startswith('//') or not s or s in ('{', '}'):
                     continue
-                od = re.match(r'^([A-Za-z_][\w:]*)\s+(\*?\s*~?[A-Za-z_]\w*'
-                              r'(?:\s*::)?\s*~?\w*\s*\()', s)
-                if od and cret is not None and od.group(1) != cret:
-                    rest = s[len(od.group(1)):].lstrip()
+                vm2 = re.match(r'^void\s+\w+::', s)
+                if vm2 and re.search(r'return\s+[^;\s]', seg_txt):
+                    rest = s[4:].lstrip()
                     pre = lines[j][:len(lines[j]) - len(lines[j].lstrip())]
-                    lines[j] = pre + cret + ' ' + rest
-                    tot['outer_ret_fixed'] += 1
+                    lines[j] = pre + 'int ' + rest
+                    tot['void_to_int'] = tot.get('void_to_int', 0) + 1
                     changed = True
                 break
-    if changed:
-        p.write_bytes('\n'.join(lines).encode('latin-1'))
+            # outer def return type <- canon (when anchored and different)
+            if addr and addr in canon_ret:
+                cret = canon_ret[addr]
+                seg_txt2 = chr(10).join(lines[body_lo:hi])
+                if cret.strip() == 'void' and re.search(r'return\s+[^;\s]', seg_txt2):
+                    cret = None  # unsound: body returns values
+                for j in range(lo - 1, max(lo - 8, -1), -1):
+                    s = lines[j].strip()
+                    if s.startswith('//') or not s or s in ('{', '}'):
+                        continue
+                    od = re.match(r'^([A-Za-z_][\w:]*)\s+(\*?\s*~?[A-Za-z_]\w*'
+                                  r'(?:\s*::)?\s*~?\w*\s*\()', s)
+                    if od and cret is not None and od.group(1) != cret:
+                        rest = s[len(od.group(1)):].lstrip()
+                        pre = lines[j][:len(lines[j]) - len(lines[j].lstrip())]
+                        lines[j] = pre + cret + ' ' + rest
+                        tot['outer_ret_fixed'] += 1
+                        changed = True
+                    break
+        if changed:
+            p.write_bytes('\n'.join(lines).encode('latin-1'))
 
-print('blocks normalized:', nblk)
-print('vt calls rewritten:', tot.get('vt_calls', 0))
-print('load+call merged:', tot.get('vt_merged', 0))
-print('static-sub calls:', tot.get('static_sub', 0))
-print('partial repairs:', tot.get('vt_partial', 0))
-print('cast-calls removed:', tot.get('cast_calls', 0))
-print('typed vars:', tot['typed_vars'])
-print('offset rewrites (param/local receivers):', tot['offsets'])
-print('locals retyped:', tot['retyped'])
-print('member sigs normalized:', tot['sig'])
-print('dup sigs removed:', tot['dup_sig_removed'])
-print('outer rets fixed:', tot['outer_ret_fixed'])
-print('primitive retypes:', tot['retyped_prim'])
-print('free sigs normalized:', tot['sig_free'])
-print('DONE')
+    print('blocks normalized:', nblk)
+    print('vt calls rewritten:', tot.get('vt_calls', 0))
+    print('load+call merged:', tot.get('vt_merged', 0))
+    print('static-sub calls:', tot.get('static_sub', 0))
+    print('partial repairs:', tot.get('vt_partial', 0))
+    print('cast-calls removed:', tot.get('cast_calls', 0))
+    print('typed vars:', tot['typed_vars'])
+    print('offset rewrites (param/local receivers):', tot['offsets'])
+    print('locals retyped:', tot['retyped'])
+    print('member sigs normalized:', tot['sig'])
+    print('dup sigs removed:', tot['dup_sig_removed'])
+    print('outer rets fixed:', tot['outer_ret_fixed'])
+    print('primitive retypes:', tot['retyped_prim'])
+    print('free sigs normalized:', tot['sig_free'])
+    print('DONE')

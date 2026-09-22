@@ -85,7 +85,7 @@ char __thiscall sub_520260(_DWORD *this)
   _DWORD v4[3]; // [esp+4h] [ebp-Ch] BYREF
 
   v2 = this->q175; /*0x520266*/
-  if ( v2 && *((_BYTE *)this + 981) ) /*0x520270*/
+  if ( v2 && this->u8_3D5 ) /*0x520270*/
     *(_BYTE *)(v2 + 130) = 1; /*0x52027a*/
   if ( this->q175 ) /*0x520281*/
     return 0; /*0x520281*/
@@ -349,7 +349,7 @@ LABEL_20:
         (*(void (__stdcall **)(int))(*(_DWORD *)v21 + 8))(v21); /*0x520818*/
       if ( v9 ) /*0x52081e*/
       {
-        (*(void (__thiscall **)(int, int, _DWORD, _DWORD))(*(_DWORD *)this + 1368))(this, 26, 0, 0); /*0x52082b*/
+        (*(void (__thiscall **)(int, int, _DWORD, _DWORD))(this->q156)(this, 26, 0, 0); /*0x52082b*/
         v3 = v22; /*0x520831*/
         goto LABEL_44; /*0x520835*/
       }
@@ -358,7 +358,7 @@ LABEL_20:
     v10 = *(_DWORD *)(this + 1732); /*0x52083e*/
     if ( v10 == 27 || v10 == 28 || v10 == 29 || v10 == 30 ) /*0x520856*/
     {
-      (*(void (__thiscall **)(int, int, _DWORD, _DWORD))(*(_DWORD *)this + 1368))(this, 29, 0, 0); /*0x520861*/
+      (*(void (__thiscall **)(int, int, _DWORD, _DWORD))(this->q156)(this, 29, 0, 0); /*0x520861*/
       goto LABEL_44; /*0x520861*/
     }
     if ( *(_DWORD *)(this + 660) && (v10 == 40 || v10 == 41) ) /*0x520878*/
@@ -370,20 +370,20 @@ LABEL_20:
       goto LABEL_73; /*0x520888*/
     if ( *(_BYTE *)(this + 1755) && *(_DWORD *)(*(_DWORD *)(*(_DWORD *)(this + 1728) + 3644) + 1480) ) /*0x5208a0*/
     {
-      (*(void (__thiscall **)(int, int, _DWORD, _DWORD))(*(_DWORD *)this + 1368))(this, 41, 0, 0); /*0x5208b3*/
+      (*(void (__thiscall **)(int, int, _DWORD, _DWORD))(this->q156)(this, 41, 0, 0); /*0x5208b3*/
       goto LABEL_44; /*0x5208b3*/
     }
     if ( *(_DWORD *)(*(_DWORD *)(*(_DWORD *)(this + 1728) + 3644) + 1444) ) /*0x5208c1*/
     {
-      (*(void (__thiscall **)(int, int, _DWORD, _DWORD))(*(_DWORD *)this + 1368))(this, 40, 0, 0); /*0x5208d4*/
+      (*(void (__thiscall **)(int, int, _DWORD, _DWORD))(this->q156)(this, 40, 0, 0); /*0x5208d4*/
     }
     else
     {
 LABEL_73:
       if ( *(_BYTE *)(this + 1755) ) /*0x5208d6*/
-        (*(void (__thiscall **)(int, int, _DWORD, _DWORD))(*(_DWORD *)this + 1368))(this, 8, 0, 0); /*0x5208eb*/
+        (*(void (__thiscall **)(int, int, _DWORD, _DWORD))(this->q156)(this, 8, 0, 0); /*0x5208eb*/
       else
-        (*(void (__thiscall **)(int, int, _DWORD, _DWORD))(*(_DWORD *)this + 1368))(this, 4, 0, 0); /*0x5208fe*/
+        (*(void (__thiscall **)(int, int, _DWORD, _DWORD))(this->q156)(this, 4, 0, 0); /*0x5208fe*/
     }
 LABEL_44:
     v20 = *(ObjectClass **)(this + 692); /*0x520904*/
@@ -393,7 +393,7 @@ LABEL_44:
     if ( *(_DWORD *)(this + 692) == *(_DWORD *)(this + 1444) ) /*0x520938*/
     {
       FootClass::ClearPathIndex((_DWORD *)this); /*0x52093c*/
-      (*(void (__thiscall **)(int))(this->q140)(this); /*0x520946*/
+      (*(void (__thiscall **)(int))(this->q500)(this); /*0x520946*/
     }
   }
 LABEL_46:
@@ -427,15 +427,15 @@ LABEL_46:
       *(_BYTE *)(this + 1677) = 0; /*0x520a03*/
       if ( v16 ) /*0x520a0c*/
       {
-        (*(void (__thiscall **)(int, int, _DWORD, _DWORD))(*(_DWORD *)this + 1368))(this, 2, 0, 0); /*0x520a17*/
+        (*(void (__thiscall **)(int, int, _DWORD, _DWORD))(this->q156)(this, 2, 0, 0); /*0x520a17*/
       }
       else
       {
         v17 = *(_DWORD *)(this + 1732); /*0x520a19*/
         if ( v17 == 27 || v17 == 28 || v17 == 29 || v17 == 30 ) /*0x520a31*/
-          (*(void (__thiscall **)(int, int, _DWORD, _DWORD))(*(_DWORD *)this + 1368))(this, 28, 0, 0); /*0x520a3e*/
+          (*(void (__thiscall **)(int, int, _DWORD, _DWORD))(this->q156)(this, 28, 0, 0); /*0x520a3e*/
         else
-          (*(void (__thiscall **)(int, _DWORD, _DWORD, _DWORD))(*(_DWORD *)this + 1368))(this, 0, 0, 0); /*0x520a51*/
+          (*(void (__thiscall **)(int, _DWORD, _DWORD, _DWORD))(this->q156)(this, 0, 0, 0); /*0x520a51*/
       }
     }
     else
@@ -705,11 +705,11 @@ char __thiscall ProcessUnitMissionAI(_DWORD *this)
       if ( !this->q19D ) /*0x521028*/
         WinAPI::Wrapper(-2147467261); /*0x521037*/
       if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(*(_DWORD *)this->q19D + 16))(this->q19D) /*0x521050*/
-        && !*((_BYTE *)this + 1048) )
+        && !this->q106 )
       {
         if ( this->q5A4 ) /*0x52105e*/
         {
-          if ( *((_BYTE *)this + 981) ) /*0x52106c*/
+          if ( this->u8_3D5 ) /*0x52106c*/
           {
             v8 = (_DWORD *)(*(int (__thiscall **)(_DWORD *))(*this + 76))(this); /*0x521086*/
             LOWORD(v20) = *v8 / 256; /*0x521099*/
@@ -2026,7 +2026,7 @@ int __thiscall InfantryClass::StartBombDeploy(void *this, char a2)
 
   if ( a2 ) /*0x522c09*/
     return (*(int (__thiscall **)(void *, int, _DWORD, _DWORD))(this->FootClass_field_558)(this, 32, 0, 0); /*0x522c09*/
-  result = (*(int (__thiscall **)(void *))(*(_DWORD *)this + 900))(this); /*0x522c0d*/
+  result = (*(int (__thiscall **)(void *))(this->q384)(this); /*0x522c0d*/
   if ( (_BYTE)result ) /*0x522c15*/
     return (*(int (__thiscall **)(void *, int, _DWORD, _DWORD))(this->FootClass_field_558)(this, 32, 0, 0); /*0x522c21*/
   return result; /*0x522c27*/
@@ -4024,7 +4024,7 @@ _DWORD *__thiscall DynamicVectorClass::AnimTypeConstructor(_DWORD *this, Dynamic
     }
   }
   *this = &vt_DynamicVectorClass_AnimTypeClass_const; /*0x525293*/
-  this->q005 = 10; /*0x525299*/
+  this->u32_14 = 10; /*0x525299*/
   this->q010 = 0; /*0x5252a0*/
   return this; /*0x5252a9*/
 }
@@ -4109,7 +4109,7 @@ char __thiscall DynamicVector::Add_Alt4(_DWORD *this, VectorClass *aP1)
   {
     if ( !this->q034 && v3 ) /*0x5253c6*/
       return 0; /*0x5253c6*/
-    v4 = this->q005; /*0x5253c8*/
+    v4 = this->u32_14; /*0x5253c8*/
     if ( v4 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, char *, _DWORD))(*this + 8))(this, (char *)v3 + v4, 0) ) /*0x5253d8*/
       return 0; /*0x5253df*/
   }
@@ -4284,7 +4284,7 @@ _DWORD *__thiscall TypeList::AnimTypeCopy(_DWORD *this, VectorClass *aP1)
     }
   }
   this->q010 = aP1[1].vtable0; /*0x525661*/
-  this->q005 = aP1[1].Items; /*0x525667*/
+  this->u32_14 = aP1[1].Items; /*0x525667*/
   *this = &vt_TypeList_AnimTypeClass_const; /*0x52566a*/
   return this; /*0x525672*/
 }
@@ -4649,9 +4649,9 @@ int __thiscall INIClass::LoadFile(_DWORD *this, CCINIClass *aP1, INIClass *aP2)
   INIClass v101; // [esp+278h] [ebp-200h] BYREF
 
   v3 = (char *)this; /*0x525a69*/
-  this->q004 = 0; /*0x525a6e*/
+  this->u32_4 = 0; /*0x525a6e*/
   this->q008 = 0; /*0x525a71*/
-  v4 = this->q02C; /*0x525a74*/
+  v4 = this->u32_2C; /*0x525a74*/
   v5 = 0; /*0x525a77*/
   v6 = 0; /*0x525a79*/
   v89 = (int)this; /*0x525a7d*/
@@ -5244,7 +5244,7 @@ int __thiscall INIClass::WriteToString(_DWORD *this, CCINIClass *aP1)
 
   v2 = (CCINIClass *)this; /*0x526478*/
   v3 = 0; /*0x52647a*/
-  this->q004 = 0; /*0x526485*/
+  this->u32_4 = 0; /*0x526485*/
   this->q008 = 0; /*0x526488*/
   v4 = this->q005; /*0x52648b*/
   memset(v32, 0x20u, sizeof(v32)); /*0x52649e*/
@@ -5624,7 +5624,7 @@ LABEL_14:
 // ==== 0x00526B00  INIClass::ResetSection  this=IUnknown  sig=csp ====
 int __thiscall INIClass_ResetSection(_DWORD *this)
 {
-  this->q004 = 0; /*0x526b02*/
+  this->u32_4 = 0; /*0x526b02*/
   this->q008 = 0; /*0x526b05*/
   return 0; /*0x526b08*/
 }
@@ -7448,7 +7448,7 @@ unsigned int __thiscall INIClass::GetString(
   v9 = a2; /*0x528a3d*/
   if ( !a2 ) /*0x528a43*/
     return 0; /*0x528a43*/
-  if ( aP1 == (INIClass *)this->q004 ) /*0x528a4f*/
+  if ( aP1 == (INIClass *)this->u32_4 ) /*0x528a4f*/
   {
     v10 = (unsigned __int8 *)this->q008; /*0x528a55*/
     goto LABEL_7; /*0x528a55*/
@@ -7461,9 +7461,9 @@ unsigned int __thiscall INIClass::GetString(
                       (unsigned __int8 *)aP1,
                       (IUnknown *)strlen(aP1->__pad_0));
   aP1 = v19; /*0x528b1b*/
-  if ( !this->q02C ) /*0x528b1f*/
+  if ( !this->u32_2C ) /*0x528b1f*/
     goto LABEL_29; /*0x528b1f*/
-  v20 = (INIClass **)this->q038; /*0x528b26*/
+  v20 = (INIClass **)this->u32_38; /*0x528b26*/
   if ( v20 && *v20 == v19 ) /*0x528b2f*/
     goto LABEL_24; /*0x528b2f*/
   v21 = (unsigned __int8 **)SortedArray::BinarySearch((char **)this + 10, (CCINIClass *)&aP1); /*0x528b38*/
@@ -7472,15 +7472,15 @@ unsigned int __thiscall INIClass::GetString(
 LABEL_29:
     v23 = aP3; /*0x528b80*/
     v6 = aP4; /*0x528b84*/
-    this->q004 = 0; /*0x528b8a*/
+    this->u32_4 = 0; /*0x528b8a*/
     this->q008 = 0; /*0x528b8d*/
     goto LABEL_36; /*0x528b90*/
   }
-  this->q038 = v21; /*0x528b41*/
+  this->u32_38 = v21; /*0x528b41*/
 LABEL_24:
   aP1 = v19; /*0x528b44*/
   if ( HashTable::BinarySearch((int)(this + 10), (ObjectClass *)&aP1) ) /*0x528b4f*/
-    v22 = this->q038 + 1; /*0x528b5b*/
+    v22 = this->u32_38 + 1; /*0x528b5b*/
   else
     v22 = (unsigned __int8 **)&unk_B7882C; /*0x528b60*/
   v10 = *v22; /*0x528b65*/
@@ -7489,7 +7489,7 @@ LABEL_24:
   v9 = a2; /*0x528b6b*/
   v6 = aP4; /*0x528b6f*/
   this->q008 = (unsigned __int8 **)v10; /*0x528b73*/
-  this->q004 = v8; /*0x528b76*/
+  this->u32_4 = v8; /*0x528b76*/
 LABEL_7:
   if ( v10 ) /*0x528a5a*/
   {
@@ -8310,7 +8310,7 @@ int *__thiscall INIClass::ReadPoint2D_Overwrite(
   v7 = (Color *)aP3; /*0x5298aa*/
   if ( !aP3 ) /*0x5298b0*/
     goto LABEL_18; /*0x5298b0*/
-  if ( aP2 == (INIClass *)this->q004 ) /*0x5298bc*/
+  if ( aP2 == (INIClass *)this->u32_4 ) /*0x5298bc*/
   {
     v8 = this->q008; /*0x5298c2*/
   }
@@ -8325,13 +8325,13 @@ int *__thiscall INIClass::ReadPoint2D_Overwrite(
     if ( !HashTable::BinarySearch((int)(this + 10), (ObjectClass *)&aP2) /*0x5299ec*/
       || (*(_DWORD *)v19.__pad_0 = v16, (v8 = *(_DWORD *)SortedArray::FindValue((int)(this + 10), &v19)) == 0) )
     {
-      this->q004 = 0; /*0x5299ff*/
+      this->u32_4 = 0; /*0x5299ff*/
       this->q008 = 0; /*0x529a02*/
       goto LABEL_11; /*0x529a05*/
     }
     v7 = (Color *)aP3; /*0x5299ee*/
     this->q008 = v8; /*0x5299f2*/
-    this->q004 = v6; /*0x5299f5*/
+    this->u32_4 = v6; /*0x5299f5*/
   }
   if ( v8 ) /*0x5298c7*/
   {
@@ -8400,7 +8400,7 @@ _DWORD *__thiscall INIClass::GetCoordPair(_DWORD *this, CCINIClass *aP1, ObjectC
   aP2 = (ObjectClass *)&MEMORY[0x87F8E4].__pad_5568[20760]; /*0x529a58*/
   if ( &v20 == (CCINIClass **)-44 || !v7 || !v6 ) /*0x529a70*/
     goto LABEL_18; /*0x529a70*/
-  if ( v7 == (char *)this->q004 ) /*0x529a7c*/
+  if ( v7 == (char *)this->u32_4 ) /*0x529a7c*/
   {
     v8 = this->q008; /*0x529a82*/
   }
@@ -8413,13 +8413,13 @@ _DWORD *__thiscall INIClass::GetCoordPair(_DWORD *this, CCINIClass *aP1, ObjectC
     if ( !HashTable::BinarySearch((int)(this + 10), (ObjectClass *)&v22) /*0x529bae*/
       || (*(_DWORD *)v23.__pad_0 = v17, (v8 = *(_DWORD *)SortedArray::FindValue((int)(this + 10), &v23)) == 0) )
     {
-      this->q004 = 0; /*0x529bc1*/
+      this->u32_4 = 0; /*0x529bc1*/
       this->q008 = 0; /*0x529bc4*/
       goto LABEL_11; /*0x529bc7*/
     }
     v6 = a3; /*0x529bb0*/
     this->q008 = v8; /*0x529bb4*/
-    this->q004 = v7; /*0x529bb7*/
+    this->u32_4 = v7; /*0x529bb7*/
   }
   if ( v8 ) /*0x529a87*/
   {
@@ -9407,7 +9407,7 @@ _DWORD *__thiscall GenericList_Constructor(_DWORD *this)
   this->q004 = &vt_GenericNode; /*0x52acf5*/
   this->q005 = 0; /*0x52acfb*/
   this->q006 = 0; /*0x52acfe*/
-  this->q004 = &vt_GenericNode; /*0x52ad01*/
+  this->u32_10 = &vt_GenericNode; /*0x52ad01*/
   *this = &vt_GenericList; /*0x52ad07*/
   if ( this != (_DWORD *)-16 ) /*0x52ad0d*/
   {
@@ -9552,7 +9552,7 @@ _DWORD *__thiscall KeyValuePair::Init(_DWORD *this, INIClass *aP1)
 {
   *this = aP1; /*0x52aec6*/
   this->q004 = 0; /*0x52aeca*/
-  *(this + 2) = 0; /*0x52aecd*/
+  this->q020 = 0; /*0x52aecd*/
   return this; /*0x52aed0*/
 }
 
@@ -9609,7 +9609,7 @@ _DWORD *__thiscall sub_52AF50(_DWORD *this)
   this->q004 = &vt_GenericNode; /*0x52af65*/
   this->q005 = 0; /*0x52af6b*/
   this->q006 = 0; /*0x52af6e*/
-  this->q004 = &vt_GenericNode; /*0x52af71*/
+  this->u32_10 = &vt_GenericNode; /*0x52af71*/
   *this = &vt_GenericList; /*0x52af77*/
   if ( this != (_DWORD *)-16 ) /*0x52af7d*/
   {

@@ -52,6 +52,7 @@ int E4Recv_6E0250::sub_6E0250(int a2, int a3, int a4, int a5)
   return 1; /*0x6e0264*/
 }
 } // namespace gamemd
+}
 
 // 0x6E0270
 namespace gamemd {
@@ -62,6 +63,7 @@ int E4Recv_6E0270::sub_6E0270(int a2, int a3, int a4, int a5)
   return 1; /*0x6e0284*/
 }
 } // namespace gamemd
+}
 
 // 0x6E0290
 namespace gamemd {
@@ -72,6 +74,7 @@ int E4Recv_6E0290::sub_6E0290(int a2, int a3, int a4, int a5)
   return 1; /*0x6e02a4*/
 }
 } // namespace gamemd
+}
 
 // 0x6E2050
 namespace gamemd {
@@ -79,6 +82,7 @@ void globalHelper_0E2050()
 {
 // (no pseudocode — ASM-only function)
 } // namespace gamemd
+}
 
 // 0x6E2790
 namespace gamemd {
@@ -103,6 +107,7 @@ int E4Recv_6E2790::sub_6E2790(int a2, int a3, int a4, int a5)
   return 1; /*0x6e283d*/
 }
 } // namespace gamemd
+}
 
 // 0x6E30C0
 namespace gamemd {
@@ -110,6 +115,7 @@ void CreateHouseClass()
 {
 // (no pseudocode — ASM-only function)
 } // namespace gamemd
+}
 
 // 0x6E3380
 namespace gamemd {
@@ -129,6 +135,7 @@ int E4Recv_6E3380::sub_6E3380(int a2, int a3, int a4, int a5)
   return 1; /*0x6e3407*/
 }
 } // namespace gamemd
+}
 
 // 0x6E37F0
 namespace gamemd {
@@ -157,6 +164,7 @@ LABEL_7:
   return result; /*0x6e3867*/
 }
 } // namespace gamemd
+}
 
 // 0x6E4090
 namespace gamemd {
@@ -192,6 +200,7 @@ void sub_6E4090(int a1, int a2, int a3, int a4)
   return 1; /*0x6e40e3*/
 }
 } // namespace gamemd
+}
 
 // 0x6EC250
 namespace gamemd {
@@ -225,6 +234,7 @@ int sub_6EC250(int a1, int a2)
   return result; /*0x6ec2f9*/
 }
 } // namespace gamemd
+}
 
 // 0x6EDFD0
 namespace gamemd {
@@ -259,9 +269,10 @@ void E4Recv_6EDFD0::sub_6EDFD0(int a2, int a3)
     while ( v4 ); /*0x6ee034*/
   }
   while ( v5 ); /*0x6ee038*/
-  *(_BYTE *)(this + 128) = 1; /*0x6ee03a*/
+  this->M128 = 1; /*0x6ee03a*/
 }
 } // namespace gamemd
+}
 
 // 0x6EEBD0
 namespace gamemd {
@@ -394,6 +405,7 @@ LABEL_19:
   return result; /*0x6eee7a*/
 }
 } // namespace gamemd
+}
 
 // 0x6EFC70
 namespace gamemd {
@@ -485,6 +497,7 @@ LABEL_24:
   }
 }
 } // namespace gamemd
+}
 
 // 0x6E0030
 namespace gamemd {
@@ -783,15 +796,15 @@ unsigned int * Tactical_42::loc_6E4B00(char a2)
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_TActionClass;
-    if ( v3 && *((char *)(this) + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
+    this->IsAllocated = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return this;
@@ -1841,9 +1854,9 @@ char E4Recv_6EC370::sub_6EC370()
     result = 1;
     if ( v1 )
   {
-    while ( *(char *)(v1 + 981) )
+    while ( v1->u32_3D5 )
     {
-    v1 = *(int *)(v1 + 1496);
+    v1 = v1->u32_5D8;
     if ( !v1 )
     return result;
     }

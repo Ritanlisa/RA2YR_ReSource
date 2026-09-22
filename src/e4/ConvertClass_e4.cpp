@@ -207,6 +207,7 @@ unsigned int * ConvertClass::Construct(ConvertClass * aP1, int a3, ConvertClass 
   }
   return this; /*0x48ebd8*/
 }
+}
 
 // 0x491430
 int ConvertClass::ddtor(int a2, int a3, int a4, int a5, int a6, int a7, int a8)

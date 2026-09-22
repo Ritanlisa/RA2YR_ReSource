@@ -13,9 +13,10 @@ int NetworkGameSetup::ReadRulesUnknown()
   {
     result = (HWND)SendMessageA(result, 0x400u, 0, 0); /*0x5b976f*/
     DataGlobal_A8B278 = (LPARAM)result; /*0x5b9775*/
-    *(_BYTE *)(this + 9) = 1; /*0x5b977a*/
+    this->u8_9 = 1; /*0x5b977a*/
   }
   return result; /*0x5b977e*/
+}
 }
 
 // 0x5BA970

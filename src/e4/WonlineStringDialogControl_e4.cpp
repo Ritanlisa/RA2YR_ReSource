@@ -21,6 +21,7 @@ void * WonlineStringDialogControl_12::Constructor_WonlineStringDialogControl(cha
   return (CreateGameDialogControl *)this; /*0x7ac660*/
 }
 } // namespace gamemd
+}
 
 // 0x7AD690
 namespace gamemd {
@@ -68,6 +69,7 @@ LABEL_17:
   return 0; /*0x7ad6a1*/
 }
 } // namespace gamemd
+}
 
 // 0x7AC970
 namespace gamemd {
@@ -320,15 +322,15 @@ VectorClass * WonlineStringDialogControl_12::QueryInterface(char a2)
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_tConnInfoStruct;
-    if ( v3 && *((char *)(this) + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
+    this->IsAllocated = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (VectorClass *)this;
@@ -342,15 +344,15 @@ DynamicVector * WonlineStringDialogControl_12::Constructor_VectorClass_tConnInfo
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_tConnInfoStruct;
-    if ( v3 && *((char *)(this) + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
+    this->IsAllocated = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;

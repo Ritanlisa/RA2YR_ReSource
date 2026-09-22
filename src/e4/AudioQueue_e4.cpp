@@ -37,6 +37,7 @@ unsigned int * AudioQueue::CreateNode()
   return v2; /*0x402b44*/
 }
 } // namespace gamemd
+}
 
 // 0x4035F0
 namespace gamemd {
@@ -107,6 +108,7 @@ int AudioQueue::FindBestChannel(int a1, int a2)
   return result; /*0x4036b2*/
 }
 } // namespace gamemd
+}
 
 // 0x403730
 namespace gamemd {
@@ -124,7 +126,7 @@ int AudioQueue::StopAllVoices(__thiscall *__fastcall AudioQueue::StopAllVoices(i
     {
       result = (int (__thiscall *)(int))AudioQueue::GetNextAlt(v4); /*0x40374a*/
       v4 = (int *)result; /*0x403752*/
-      if ( a2 == -1 || *(_DWORD *)(v5 + 12) == a2 ) /*0x403759*/
+      if ( a2 == -1 || v5->u32_C == a2 ) /*0x403759*/
         result = Voice::Stop(v5); /*0x40375d*/
       v5 = (int)v4; /*0x403764*/
     }
@@ -133,6 +135,7 @@ int AudioQueue::StopAllVoices(__thiscall *__fastcall AudioQueue::StopAllVoices(i
   return result; /*0x403768*/
 }
 } // namespace gamemd
+}
 
 // 0x752680
 namespace gamemd {
@@ -190,6 +193,7 @@ LABEL_10:
   return result; /*0x7526fb*/
 }
 } // namespace gamemd
+}
 
 // 0x771620
 namespace gamemd {
@@ -197,15 +201,15 @@ RandomStruct * * AudioQueue::Update()
 {
 {
 
-  signed int v2 = *(_DWORD *)(this + 948); /*0x77162a*/
-  if ( *(_DWORD *)(this + 940) == -1 ) /*0x771633*/
+  signed int v2 = this->u32_3B4; /*0x77162a*/
+  if ( this->u32_3AC == -1 ) /*0x771633*/
   {
 LABEL_4:
     if ( v2 ) /*0x77164e*/
       return; /*0x77164e*/
     goto LABEL_5; /*0x77164e*/
   }
-  signed int v3 = Timer::GetTicks() - *(_DWORD *)(this + 940); /*0x771640*/
+  signed int v3 = Timer::GetTicks() - this->u32_3AC; /*0x771640*/
   if ( v3 < v2 ) /*0x771648*/
   {
     v2 -= v3; /*0x77164a*/
@@ -214,7 +218,7 @@ LABEL_4:
 LABEL_5:
   if ( this->q3D0 > 0 && !(unsigned __int8)Audio::IsPlaying() ) /*0x771662*/
   {
-    if ( !*(_BYTE *)(this + 952) ) /*0x77166f*/
+    if ( !this->u8_3B8 ) /*0x77166f*/
     {
       RandomStruct *v4 = this->q3D0; /*0x771679*/
       if ( v4 > 0 ) /*0x771681*/
@@ -223,28 +227,29 @@ LABEL_5:
         int v6 = 0; /*0x771684*/
         for ( this->q3D0 = v5; v6 < this->q3D0; ++v6 ) /*0x77168e*/
           String::Reassign( /*0x77169e*/
-            (char **)(*(_DWORD *)(this + 964) + 4 * v6),
-            (const char **)(*(_DWORD *)(this + 964) + 4 * v6 + 4));
+            (char **)(this->u32_3C4 + 4 * v6),
+            (const char **)(this->u32_3C4 + 4 * v6 + 4));
       }
-      int v7 = *(_DWORD *)(this + 956); /*0x7716ae*/
+      int v7 = this->u32_3BC; /*0x7716ae*/
       if ( v7 > 0 ) /*0x7716b6*/
-        *(_DWORD *)(this + 956) = v7 - 1; /*0x7716b9*/
+        this->u32_3BC = v7 - 1; /*0x7716b9*/
     }
     if ( this->q3D0 <= 0 ) /*0x7716c7*/
     {
-      *(_DWORD *)(this + 956) = 0; /*0x7716f1*/
-      *(_BYTE *)(this + 952) = 1; /*0x7716fb*/
+      this->u32_3BC = 0; /*0x7716f1*/
+      this->u8_3B8 = 1; /*0x7716fb*/
     }
     else
     {
-      char * v8 = String::GetOrEmpty(*(char ***)(this + 964)); /*0x7716d1*/
+      char * v8 = String::GetOrEmpty(*(char ***)(&this->u32_1804)); /*0x7716d1*/
       int v9 = VocClass::FindByName(v8); /*0x7716d8*/
       UpdateThemeManager(v9, -1, -1); /*0x7716e2*/
-      *(_BYTE *)(this + 952) = 0; /*0x7716e7*/
+      this->u8_3B8 = 0; /*0x7716e7*/
     }
   }
 }
 } // namespace gamemd
+}
 
 // 0x7B1D10
 namespace gamemd {
@@ -252,26 +257,26 @@ CampaignClass * * AudioQueue::Cleanup()
 {
 {
 
-  while ( *(_DWORD *)(this + 48) ) /*0x7b1d16*/
+  while ( this->u32_30 ) /*0x7b1d16*/
   {
-    AbstractClass *v2 = **(_DWORD **)(this + 36); /*0x7b1d1e*/
+    AbstractClass *v2 = **(_DWORD **)(&this->u32_C6); /*0x7b1d1e*/
     if ( v2->q058 ) /*0x7b1d20*/
     {
-      __3_YAXPAX_Z(**(void ***)(this + 36)); /*0x7b1d26*/
+      __3_YAXPAX_Z(**(void ***)(&this->u32_C6)); /*0x7b1d26*/
     }
     else
     {
       v2->q054 = 0; /*0x7b1d30*/
       --this->q3F060; /*0x7b1d3a*/
     }
-    int v3 = *(_DWORD *)(this + 48); /*0x7b1d40*/
+    int v3 = this->u32_30; /*0x7b1d40*/
     if ( v3 > 0 ) /*0x7b1d45*/
     {
       int v4 = v3 - 1; /*0x7b1d47*/
       int v5 = 0; /*0x7b1d4a*/
-      for ( *(_DWORD *)(this + 48) = v4; /*0x7b1d51*/
-            v5 < *(_DWORD *)(this + 48);
-            *(_DWORD *)(*(_DWORD *)(this + 36) + 4 * v5 - 4) = *(_DWORD *)(*(_DWORD *)(this + 36) + 4 * v5) )
+      for ( this->u32_30 = v4; /*0x7b1d51*/
+            v5 < this->u32_30;
+            *(_DWORD *)(this->ptr_24 + 4 * v5 - 4) = *(_DWORD *)(this->ptr_24 + 4 * v5) )
       {
         ++v5; /*0x7b1d56*/
       }
@@ -279,26 +284,26 @@ CampaignClass * * AudioQueue::Cleanup()
   }
   this->q3F060 = 0; /*0x7b1d6a*/
   this->q3F054 = 0; /*0x7b1d70*/
-  while ( *(_DWORD *)(this + 72) ) /*0x7b1d76*/
+  while ( this->u32_48 ) /*0x7b1d76*/
   {
-    AbstractClass *v6 = **(_DWORD **)(this + 60); /*0x7b1d7e*/
+    AbstractClass *v6 = **(_DWORD **)(&this->u32_180); /*0x7b1d7e*/
     if ( v6->q058 ) /*0x7b1d80*/
     {
-      __3_YAXPAX_Z(**(void ***)(this + 60)); /*0x7b1d86*/
+      __3_YAXPAX_Z(**(void ***)(&this->u32_180)); /*0x7b1d86*/
     }
     else
     {
       v6->q054 = 0; /*0x7b1d90*/
       --this->q3F064; /*0x7b1d9a*/
     }
-    int v7 = *(_DWORD *)(this + 72); /*0x7b1da0*/
+    int v7 = this->u32_48; /*0x7b1da0*/
     if ( v7 > 0 ) /*0x7b1da5*/
     {
       int v8 = v7 - 1; /*0x7b1da7*/
       int v9 = 0; /*0x7b1daa*/
-      for ( *(_DWORD *)(this + 72) = v8; /*0x7b1db1*/
-            v9 < *(_DWORD *)(this + 72);
-            *(_DWORD *)(*(_DWORD *)(this + 60) + 4 * v9 - 4) = *(_DWORD *)(*(_DWORD *)(this + 60) + 4 * v9) )
+      for ( this->u32_48 = v8; /*0x7b1db1*/
+            v9 < this->u32_48;
+            *(_DWORD *)(this->u32_3C + 4 * v9 - 4) = *(_DWORD *)(this->u32_3C + 4 * v9) )
       {
         ++v9; /*0x7b1db6*/
       }
@@ -308,6 +313,7 @@ CampaignClass * * AudioQueue::Cleanup()
   this->q3F058 = 0; /*0x7b1dd0*/
 }
 } // namespace gamemd
+}
 
 // 0x7B20E0
 namespace gamemd {
@@ -386,6 +392,7 @@ unsigned char * AudioQueue::AllocBuffer(WinsockInterfaceClass * aP1)
   return result; /*0x7b2153*/
 }
 } // namespace gamemd
+}
 
 // 0x7B22E0
 namespace gamemd {
@@ -429,6 +436,7 @@ int AudioQueue::ReadBuffer(void * a2, int a3, void * a4, unsigned int * a5, unsi
   return *(_DWORD *)a3; /*0x7b22f7*/
 }
 } // namespace gamemd
+}
 
 // 0x7B23B0
 namespace gamemd {
@@ -447,41 +455,42 @@ AnimClass * * AudioQueue::WriteBuffer(WinsockInterfaceClass * aP1, unsigned int 
   this->vt_slot_84(v9); /*0x7b2411*/
   if ( (_BYTE)aP5 ) /*0x7b241a*/
   {
-    int v10 = *(_DWORD *)(this + 64); /*0x7b241c*/
-    if ( *(_DWORD *)(this + 72) < v10 /*0x7b2444*/
-      || (*(_BYTE *)(this + 69) || !v10)
+    int v10 = this->u32_40; /*0x7b241c*/
+    if ( this->u32_48 < v10 /*0x7b2444*/
+      || (this->u8_45 || !v10)
   int v11; // eax
-      && (v11 = *(_DWORD *)(this + 76), v11 > 0)
-      && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(this + 56) + 8))(this + 56, v10 + v11, 0) )
+      && (v11 = this->u32_4C, v11 > 0)
+      && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(this->u32_38 + 8))(&this->u32_E0, v10 + v11, 0) )
     {
-      int v12 = *(_DWORD *)(this + 72); /*0x7b244b*/
-      int v13 = *(_DWORD *)(this + 60); /*0x7b244e*/
-      *(_DWORD *)(this + 72) = v12 + 1; /*0x7b2454*/
+      int v12 = this->u32_48; /*0x7b244b*/
+      int v13 = this->u32_3C; /*0x7b244e*/
+      this->u32_48 = v12 + 1; /*0x7b2454*/
       *(_DWORD *)(v13 + 4 * v12) = v9; /*0x7b2457*/
     }
-    v14 = *(_DWORD *)(this + 258160); /*0x7b245a*/
+    v14 = this->u32_3F070; /*0x7b245a*/
   }
   else
   {
-    int v15 = *(_DWORD *)(this + 40); /*0x7b2462*/
-    if ( *(_DWORD *)(this + 48) < v15 /*0x7b248a*/
-      || (*(_BYTE *)(this + 45) || !v15)
+    int v15 = this->u32_28; /*0x7b2462*/
+    if ( this->u32_30 < v15 /*0x7b248a*/
+      || (this->u8_2D || !v15)
   int v16; // eax
-      && (v16 = *(_DWORD *)(this + 52), v16 > 0)
-      && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(this + 32) + 8))(this + 32, v15 + v16, 0) )
+      && (v16 = this->u32_34, v16 > 0)
+      && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(this->u32_20 + 8))(&this->u32_80, v15 + v16, 0) )
     {
-      int v17 = *(_DWORD *)(this + 48); /*0x7b2491*/
-      int v18 = *(_DWORD *)(this + 36); /*0x7b2494*/
-      *(_DWORD *)(this + 48) = v17 + 1; /*0x7b249a*/
+      int v17 = this->u32_30; /*0x7b2491*/
+      int v18 = this->ptr_24; /*0x7b2494*/
+      this->u32_30 = v17 + 1; /*0x7b249a*/
       *(_DWORD *)(v18 + 4 * v17) = v9; /*0x7b249d*/
     }
-    v14 = *(_DWORD *)(this + 258156); /*0x7b24a0*/
+    v14 = this->u32_3F06C; /*0x7b24a0*/
   }
   v19 = this->vt_slot_56(v14); /*0x7b24af*/
   SendMessageA((HWND)g_hWnd, v19, 0, 2); /*0x7b24b9*/
   return EventQueue::Process(g_BinkMoviePlayer); /*0x7b24ca*/
 }
 } // namespace gamemd
+}
 
 // 0x403530
 namespace gamemd {

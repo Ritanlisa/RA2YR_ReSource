@@ -46,6 +46,7 @@ void Game::initScenario()
   }
 }
 } // namespace gamemd
+}
 
 // 0x46D4A0
 namespace gamemd {
@@ -130,6 +131,7 @@ int Game::SendCampaignOptions()
   return result; /*0x46d642*/
 }
 } // namespace gamemd
+}
 
 // 0x534450
 namespace gamemd {
@@ -348,6 +350,7 @@ AbstractClass * * Game::DestroyAllObjects()
   return --g_IKnowWhatImDoing; /*0x5349ab*/
 }
 } // namespace gamemd
+}
 
 // 0x537BC0
 namespace gamemd {
@@ -429,6 +432,7 @@ int Game::MakeScreenshot(int a1)
   return result; /*0x537dc2*/
 }
 } // namespace gamemd
+}
 
 // 0x5B7090
 namespace gamemd {
@@ -448,9 +452,9 @@ HashTable * * Game::StartModemMultiplayer(char a2)
   {
     Waypoint::InitInvalid(v4 + 40); /*0x5b70d3*/
     BulkCharToWide(v5, (unsigned __int8 *)g_GameSetupBuffer, -1); /*0x5b70e0*/
-    *(_DWORD *)(v5 + 75) = g_CommandExecState; /*0x5b70ea*/
-    *(_DWORD *)(v5 + 83) = g_TauntCommandState; /*0x5b70f3*/
-    *(_DWORD *)(v5 + 115) = -1; /*0x5b70f6*/
+    v5->u32_4B = g_CommandExecState; /*0x5b70ea*/
+    v5->u32_53 = g_TauntCommandState; /*0x5b70f3*/
+    v5->u32_73 = -1; /*0x5b70f6*/
     if ( Game_PlayerCount < DataGlobal_A8DA7C /*0x5b7130*/
       || (DataGlobal_A8DA81 || !DataGlobal_A8DA7C)
       && DataGlobal_A8DA88 > 0
@@ -469,9 +473,9 @@ HashTable * * Game::StartModemMultiplayer(char a2)
   if ( v7 ) /*0x5b7166*/
   {
     Waypoint::InitInvalid(v7 + 40); /*0x5b716f*/
-    wcscpy((wchar_t *)v8, (const wchar_t *)(this + 32)); /*0x5b7179*/
-    *(_DWORD *)(v8 + 75) = *(_DWORD *)(this + 76); /*0x5b7184*/
-    *(_DWORD *)(v8 + 83) = *(_DWORD *)(this + 72); /*0x5b718a*/
+    wcscpy((wchar_t *)v8, (const wchar_t *)(&this->u32_C2)); /*0x5b7179*/
+    *(_DWORD *)(v8 + 75) = this->u32_4C; /*0x5b7184*/
+    *(_DWORD *)(v8 + 83) = this->u32_48; /*0x5b718a*/
     *(_DWORD *)(v8 + 115) = -1; /*0x5b718d*/
     if ( Game_PlayerCount < DataGlobal_A8DA7C /*0x5b71c7*/
       || (DataGlobal_A8DA81 || !DataGlobal_A8DA7C)
@@ -533,6 +537,7 @@ LABEL_31:
   return 1; /*0x5b709d*/
 }
 } // namespace gamemd
+}
 
 // 0x5BA660
 namespace gamemd {
@@ -547,9 +552,9 @@ AbstractClass * * Game::BuildGameSetupPacket()
   int v3 = this->q160; /*0x5ba696*/
   _DWORD v11[62]; // [esp+8h] [ebp-168h] BYREF
   memset(v11, 0, sizeof(v11)); /*0x5ba699*/
-  int v4 = *(_DWORD *)(this + 84); /*0x5ba69b*/
+  int v4 = this->u32_54; /*0x5ba69b*/
   v12 = 0; /*0x5ba69e*/
-  int v5 = *(_DWORD *)(this + 92); /*0x5ba6a0*/
+  int v5 = this->u32_5C; /*0x5ba6a0*/
   v11[0] = 101; /*0x5ba6a3*/
   *(_DWORD *)((char *)&v11[33] + 2) = v4; /*0x5ba6ab*/
   v11[53] = v3; /*0x5ba6b2*/
@@ -602,6 +607,7 @@ AbstractClass * * Game::BuildGameSetupPacket()
   return BufferIOFileClass::Dtor(v13); /*0x5ba95b*/
 }
 } // namespace gamemd
+}
 
 // 0x5CA110
 namespace gamemd {
@@ -686,6 +692,7 @@ int Game::GetMultiplayerScoreScreenBar()
   return 0; /*0x5ca139*/
 }
 } // namespace gamemd
+}
 
 // 0x5DBB60
 namespace gamemd {
@@ -774,6 +781,7 @@ void Game::BuildGameSettingsPacket()
   DeleteAndZero((int)&v9); /*0x5dbe04*/
 }
 } // namespace gamemd
+}
 
 // 0x6579E0
 namespace gamemd {
@@ -785,7 +793,7 @@ unsigned char Game::ManageGameSpeed()
   unsigned __int8 v17; // [esp+13h] [ebp-1Dh]
   _BYTE *v18; // [esp+14h] [ebp-1Ch] BYREF
   _BYTE * v2 = 0; /*0x6579ef*/
-  char v3 = *(_BYTE *)(this + 5309); /*0x6579f1*/
+  char v3 = this->u8_14BD; /*0x6579f1*/
   v18 = 0; /*0x6579f7*/
   bool v4 = g_AsyncIOState > 0; /*0x6579fd*/
   v17 = 0; /*0x657a02*/
@@ -794,20 +802,20 @@ unsigned char Game::ManageGameSpeed()
     Audio::IsPlaying(); /*0x657a0c*/
     v2 = v18; /*0x657a11*/
   }
-  if ( *(_BYTE *)(this + 5338) == 1 && !*(_BYTE *)(this + 5309) ) /*0x657a22*/
+  if ( this->u8_14DA == 1 && !this->u8_14BD ) /*0x657a22*/
   {
     int v5 = VtableStub::72F510(); /*0x657a35*/
   int v19[2]; // [esp+18h] [ebp-18h] BYREF
-    v19[0] = *(_DWORD *)(this + 4580); /*0x657a4d*/
-    v19[1] = *(_DWORD *)(this + 4588); /*0x657a5f*/
+    v19[0] = this->u32_11E4; /*0x657a4d*/
+    v19[1] = this->u32_11EC; /*0x657a5f*/
   _BYTE v20[16]; // [esp+20h] [ebp-10h] BYREF
     int * v6 = (int *)(*(int (__thiscall **)(int, _BYTE *))(*(_DWORD *)DSurface_Sidebar + 120))(DSurface_Sidebar, v20); /*0x657a6a*/
     DrawToSurfaceSHP(DSurface_Sidebar, v5, DataGlobal_B04A38, 0x20u, v19, v6, 0, 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x657a84*/
-    MapClass *v7 = *(_DWORD *)(this + 4588); /*0x657a95*/
-    *(_DWORD *)(this + 4620) = *(_DWORD *)(this + 4580); /*0x657aab*/
-    *(_DWORD *)(this + 4624) = v7; /*0x657aae*/
-    *(_DWORD *)(this + 4628) = 168; /*0x657ab1*/
-    *(_DWORD *)(this + 4632) = 110; /*0x657ab4*/
+    MapClass *v7 = this->u32_11EC; /*0x657a95*/
+    this->u32_120C = this->u32_11E4; /*0x657aab*/
+    this->u32_1210 = v7; /*0x657aae*/
+    this->u32_1214 = 168; /*0x657ab1*/
+    this->u32_1218 = 110; /*0x657ab4*/
     Debug::Log(); /*0x657ab7*/
     v2 = v18; /*0x657abc*/
   }
@@ -839,21 +847,21 @@ LABEL_13:
     if ( g_AsyncIOState ) /*0x657ba2*/
     {
       Debug::Log(); /*0x657ba9*/
-      Mixer::ReleaseChannel((int **)(this + 5312)); /*0x657bb9*/
+      Mixer::ReleaseChannel((int **)(&this->u32_84C2)); /*0x657bb9*/
       _DWORD * v11 = (_DWORD *)PlayVocClass(g_RulesClass_Instance->?[1], 0x2000, 1.0, 0); /*0x657bd8*/
-      SetAudioSource(this + 5312, v11, 0); /*0x657be1*/
-      *(_DWORD *)(this + 5292) = 4; /*0x657be6*/
-      *(_DWORD *)(this + 5372) = 25; /*0x657bf0*/
+      SetAudioSource(&this->u32_5300, v11, 0); /*0x657be1*/
+      this->u32_14AC = 4; /*0x657be6*/
+      this->u32_14FC = 25; /*0x657bf0*/
     }
     goto LABEL_22; /*0x657bf0*/
   }
   if ( (*(unsigned __int8 (__thiscall **)(_BYTE *))(*(_DWORD *)v2 + 4))(v2) == 1 ) /*0x657af3*/
   {
-    MapClass *v8 = *(_DWORD *)(this + 4588); /*0x657b01*/
-    *(_DWORD *)(this + 4620) = *(_DWORD *)(this + 4580); /*0x657b12*/
-    *(_DWORD *)(this + 4624) = v8; /*0x657b15*/
-    *(_DWORD *)(this + 4628) = 168; /*0x657b18*/
-    *(_DWORD *)(this + 4632) = 110; /*0x657b1b*/
+    MapClass *v8 = this->u32_11EC; /*0x657b01*/
+    this->u32_120C = this->u32_11E4; /*0x657b12*/
+    this->u32_1210 = v8; /*0x657b15*/
+    this->u32_1214 = 168; /*0x657b18*/
+    this->u32_1218 = 110; /*0x657b1b*/
   }
   char v9 = (*(int (__thiscall **)(_BYTE *))(*(_DWORD *)v18 + 20))(v18); /*0x657b24*/
   v2 = v18; /*0x657b27*/
@@ -862,40 +870,41 @@ LABEL_13:
   if ( v9 == 1 ) /*0x657b38*/
     goto LABEL_13; /*0x657b38*/
 LABEL_22:
-  *(_BYTE *)(this + 5337) = 0; /*0x657bfa*/
+  this->u8_14D9 = 0; /*0x657bfa*/
   if ( !v4 ) /*0x657c03*/
   {
     Debug::Log(); /*0x657c0a*/
-    MapClass *v12 = *(_DWORD *)(this + 5300); /*0x657c0f*/
-    *(_DWORD *)(this + 5292) = 5; /*0x657c1a*/
+    MapClass *v12 = this->u32_14B4; /*0x657c0f*/
+    this->u32_14AC = 5; /*0x657c1a*/
     RadarClass::SetViewMode(this, v12, 0); /*0x657c27*/
     Game_Process(); /*0x657c2c*/
     v17 = 0; /*0x657c37*/
-    Mixer::ReleaseChannel((int **)(this + 5312)); /*0x657c3d*/
+    Mixer::ReleaseChannel((int **)(&this->u32_84C2)); /*0x657c3d*/
     _DWORD * v13 = (_DWORD *)PlayVocClass(g_RulesClass_Instance->?[2], 0x2000, 1.0, 0); /*0x657c5b*/
-    SetAudioSource(this + 5312, v13, 0); /*0x657c64*/
+    SetAudioSource(&this->u32_5300, v13, 0); /*0x657c64*/
     RadarClass::SetGlobal((void *)g_RulesClass_Instance->DetailMinFrameRateNormal); /*0x657c71*/
-    *(_BYTE *)(this + 5337) = 1; /*0x657c76*/
+    this->u8_14D9 = 1; /*0x657c76*/
   }
   result = v17; /*0x657c81*/
-  bool v15 = *(_BYTE *)(this + 5308) == v17; /*0x657c90*/
-  *(_BYTE *)(this + 5309) = v16 == 0; /*0x657c92*/
+  bool v15 = this->u8_14BC == v17; /*0x657c90*/
+  this->u8_14BD = v16 == 0; /*0x657c92*/
   if ( !v15 ) /*0x657c98*/
   {
     if ( v17 ) /*0x657c9c*/
     {
       result = (unsigned __int8)SetScenarioClassTimer(0); /*0x657ca0*/
-      *(_BYTE *)(this + 5308) = 1; /*0x657ca5*/
+      this->u8_14BC = 1; /*0x657ca5*/
     }
     else
     {
       result = (unsigned __int8)ScenarioClass::ProcessIntroTimer(); /*0x657cc8*/
-      *(_BYTE *)(this + 5308) = 0; /*0x657ccd*/
+      this->u8_14BC = 0; /*0x657ccd*/
     }
   }
   return result; /*0x657cac*/
 }
 } // namespace gamemd
+}
 
 // 0x67C3A0
 namespace gamemd {
@@ -905,7 +914,7 @@ unsigned int * Game::LockMutex(IUnknown * aP1, IUnknown * aP2)
   this->q004 = 0; /*0x67c3ab*/
   this->q008 = aP1; /*0x67c3ae*/
   this->q003 = 1; /*0x67c3b1*/
-  *((_BYTE *)this + 13) = 0; /*0x67c3b5*/
+  this->u8_D = 0; /*0x67c3b5*/
   *this = &vt_VectorClass_SmudgeTypeClass_const; /*0x67c3b8*/
   if ( aP1 ) /*0x67c3be*/
   {
@@ -915,11 +924,12 @@ unsigned int * Game::LockMutex(IUnknown * aP1, IUnknown * aP2)
       return this; /*0x67c3ce*/
     }
     this->q004 = __2_YAPAXI_Z(4 * (_DWORD)aP1); /*0x67c3dd*/
-    *((_BYTE *)this + 13) = 1; /*0x67c3e0*/
+    this->u8_D = 1; /*0x67c3e0*/
   }
   return this; /*0x67c3cd*/
 }
 } // namespace gamemd
+}
 
 // 0x67E440
 namespace gamemd {
@@ -1025,6 +1035,7 @@ LABEL_6:
   }
 }
 } // namespace gamemd
+}
 
 // 0x67F9C0
 namespace gamemd {
@@ -1220,6 +1231,7 @@ LABEL_39:
   return result; /*0x67fd11*/
 }
 } // namespace gamemd
+}
 
 // 0x680F70
 namespace gamemd {
@@ -1258,6 +1270,7 @@ int Game::validateScenario(unsigned int * a2)
   }
 }
 } // namespace gamemd
+}
 
 // 0x685120
 namespace gamemd {
@@ -1290,6 +1303,7 @@ void sub_685120()
   return Map_Reset_660C50(); /*0x6851de*/
 }
 } // namespace gamemd
+}
 
 // 0x698CB0
 namespace gamemd {
@@ -1378,6 +1392,7 @@ CellStruct * * Game_DumpMultiplayerGameInfo()
   }
 }
 } // namespace gamemd
+}
 
 // 0x77E430
 namespace gamemd {
@@ -1492,6 +1507,7 @@ LABEL_16:
   DeleteAndZero((int)&var3C); /*0x77e770*/
 }
 } // namespace gamemd
+}
 
 // 0x77F900
 namespace gamemd {
@@ -1790,6 +1806,7 @@ LABEL_118:
   return 0; /*0x7800f8*/
 }
 } // namespace gamemd
+}
 
 // 0x7A2230
 namespace gamemd {
@@ -1842,6 +1859,7 @@ void Game_Setup(CCINIClass * aP0, CCINIClass * aP1, char * Buffera, char * a3)
   }
 }
 } // namespace gamemd
+}
 
 // 0x7A2330
 namespace gamemd {
@@ -1930,6 +1948,7 @@ LABEL_6:
   return result; /*0x7a25e7*/
 }
 } // namespace gamemd
+}
 
 // 0x4790A0
 namespace gamemd {

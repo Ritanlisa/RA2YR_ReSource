@@ -3172,7 +3172,7 @@ int __thiscall CCINIClass::Load(char *this, int a2, char a3, char a4)
   v11 = 0; /*0x47421f*/
   v10[0] = &FileStraw::`vftable'; /*0x474223*/
   File = INIClass::LoadFile(this, (int)v10, a4); /*0x474230*/
-  this->q010 = 0; /*0x474232*/
+  this->q040 = 0; /*0x474232*/
   if ( !File || !a3 ) /*0x474244*/
     goto LABEL_7; /*0x474244*/
   Base64Data = INIClass::GetBase64Data(g_INI_Key_Digest, v21, 20); /*0x47425b*/
@@ -3197,7 +3197,7 @@ int __thiscall CCINIClass::Load(char *this, int a2, char a3, char a4)
   v12[0] = (int)&SHAPipe::`vftable'; /*0x4742c5*/
   INIClass::WriteToString(this, (int)v12); /*0x4742cd*/
   SHA1::ComputeThunk(v12, this + 65); /*0x4742da*/
-  this->q010 = 1; /*0x4742e3*/
+  this->q040 = 1; /*0x4742e3*/
   Pipe::Dtor(v12); /*0x4742e7*/
   v8 = memcmp(v21, this + 65, 0x14u) == 0; /*0x4742fa*/
   v7 = 2; /*0x4742fd*/
@@ -3274,7 +3274,7 @@ int __thiscall INIClass::WriteDigest(_BYTE *this, CCINIClass *aP1, char a3)
     v6.sectionHead[1] = (int)&vt_SHAPipe; /*0x4744ca*/
     INIClass::WriteToString(this, (CCINIClass *)&v6.sectionHead[1]); /*0x4744d2*/
     SHA1::ComputeThunk(&v6.sectionHead[1], (ObjectClass *)(this + 65)); /*0x4744df*/
-    this->q100 = 1; /*0x4744e8*/
+    this->q040 = 1; /*0x4744e8*/
     Pipe::Dtor(&v6.sectionHead[1]); /*0x4744ec*/
     INIClass::ReadBase64Data( /*0x4744fb*/
       this,
@@ -5561,7 +5561,7 @@ _DWORD *__thiscall VectorClass::Copy(_DWORD *this, VectorClass *aP1)
     }
   }
   this->q010 = aP1[1].vtable0; /*0x477821*/
-  this->q005 = aP1[1].Items; /*0x477827*/
+  this->u32_14 = aP1[1].Items; /*0x477827*/
   *this = &vt_TypeList_int; /*0x47782a*/
   return this; /*0x477832*/
 }
@@ -5739,7 +5739,7 @@ _DWORD *__thiscall DynamicVectorClass::Copy(_DWORD *this, DynamicVector *aP1)
     }
   }
   this->q010 = aP1->field_10; /*0x477a51*/
-  this->q005 = *(_DWORD *)aP1->__pad_14; /*0x477a57*/
+  this->u32_14 = *(_DWORD *)aP1->__pad_14; /*0x477a57*/
   *this = &vt_DynamicVectorClass_int; /*0x477a5a*/
   return this; /*0x477a62*/
 }
@@ -6012,7 +6012,7 @@ _DWORD *__thiscall DynamicVectorClass_Constructor(_DWORD *this, int a2, int a3)
     }
   }
   *this = &vt_DynamicVectorClass_int; /*0x477df3*/
-  this->q005 = 10; /*0x477df9*/
+  this->u32_14 = 10; /*0x477df9*/
   this->q010 = 0; /*0x477e00*/
   return this; /*0x477e09*/
 }
@@ -6077,7 +6077,7 @@ char __thiscall DynamicVector::Add_Alt(_DWORD *this, VectorClass *aP1)
   {
     if ( !this->q034 && v3 ) /*0x477ed6*/
       return 0; /*0x477ed6*/
-    v4 = this->q005; /*0x477ed8*/
+    v4 = this->u32_14; /*0x477ed8*/
     if ( v4 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, char *, _DWORD))(*this + 8))(this, (char *)v3 + v4, 0) ) /*0x477ee8*/
       return 0; /*0x477eef*/
   }
@@ -9139,7 +9139,7 @@ _DWORD *__thiscall sub_47BBF0(_DWORD *this)
   v2 = this->copyFlags & 0xFFFFFFE0; /*0x47bc58*/
   this->unknown70 = 0; /*0x47bc5d*/
   this->copyFlags = v2; /*0x47bc60*/
-  this->alignmentPadding = 0; /*0x47bc69*/
+  this->q084 = 0; /*0x47bc69*/
   this->unknown74 = 0; /*0x47bc70*/
   this->cloakedByHouses = 0; /*0x47bc73*/
   this->baseSpacerOfHouses = 0; /*0x47bc76*/
@@ -9151,9 +9151,9 @@ _DWORD *__thiscall sub_47BBF0(_DWORD *this)
   this->q214 = 1000; /*0x47bc9f*/
   this->q218 = 1000; /*0x47bca6*/
   *((_WORD *)this + 135) = 1000; /*0x47bcad*/
-  *((_WORD *)this + 136) = 1000; /*0x47bcb4*/
-  *((_WORD *)this + 137) = 1000; /*0x47bcbb*/
-  *((_WORD *)this + 138) = 1000; /*0x47bcc2*/
+  this->q220 = 1000; /*0x47bcb4*/
+  this->q224 = 1000; /*0x47bcbb*/
+  this->q228 = 1000; /*0x47bcc2*/
   v3 = this->flags; /*0x47bcc9*/
   this->q0F4 = 0; /*0x47bccf*/
   this->radSite = 0; /*0x47bcd5*/
@@ -9163,11 +9163,11 @@ _DWORD *__thiscall sub_47BBF0(_DWORD *this)
   this->unknown118 = -1; /*0x47bcf7*/
   this->unknown119 = 0; /*0x47bcfe*/
   this->height = 0; /*0x47bd04*/
-  this->level = 0; /*0x47bd0a*/
+  this->u32_46C = 0; /*0x47bd0a*/
   this->slopeIndex = 0; /*0x47bd10*/
   this->CellClass_field_11D = 0; /*0x47bd16*/
   this->powerup = 0; /*0x47bd1c*/
-  this->CellClass_field_11F = 0; /*0x47bd22*/
+  this->u32_47C = 0; /*0x47bd22*/
   this->shroudedness = -2; /*0x47bd28*/
   this->foggedness = -2; /*0x47bd2e*/
   this->q488 = 0; /*0x47bd34*/
@@ -9183,7 +9183,7 @@ _DWORD *__thiscall sub_47BBF0(_DWORD *this)
   memset(this + 31, 0, 0x30u); /*0x47bd80*/
   memset(this + 43, 0, 0x30u); /*0x47bd8d*/
   AbstractClass::GenerateUniqueID(this + 1); /*0x47bd90*/
-  this->occupationFlags = 0; /*0x47bd95*/
+  this->u32_1240 = 0; /*0x47bd95*/
   this->altOccupationFlags = 0; /*0x47bd9b*/
   return this; /*0x47bda3*/
 }

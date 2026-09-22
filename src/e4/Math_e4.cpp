@@ -17,6 +17,7 @@ int Math_InitDegToRad()
   return result; /*0x410022*/
 }
 } // namespace gamemd
+}
 
 // 0x41C350
 namespace gamemd {
@@ -26,6 +27,7 @@ void Math::Hypotenuse2D()
   Math::Sqrt(*this * *this + this->q004 * this->q004); /*0x41c369*/
 }
 } // namespace gamemd
+}
 
 // 0x4CAC40
 namespace gamemd {
@@ -48,6 +50,7 @@ void Math_Sqrt()
   return COERCE_FLOAT(((((__int16)v4 >> 1) + 127) << 23) + dword_8650BC[v3 >> 10]); /*0x4cac59*/
 }
 } // namespace gamemd
+}
 
 // 0x4CACB0
 namespace gamemd {
@@ -66,6 +69,7 @@ void Math_SinCos()
   return *(float *)&stru_84DD9C[4696][4 * v3 + 144]; /*0x4cacf1*/
 }
 } // namespace gamemd
+}
 
 // 0x4CAD00
 namespace gamemd {
@@ -86,6 +90,7 @@ void Math_ArcTan2()
   return *(float *)&stru_84DD9C[4696][4 * v4 + 144]; /*0x4cad48*/
 }
 } // namespace gamemd
+}
 
 // 0x4CAD50
 namespace gamemd {
@@ -99,6 +104,7 @@ int Math::Sin(double a1)
   return DataGlobal_85D0A4[v1]; /*0x4cad7b*/
 }
 } // namespace gamemd
+}
 
 // 0x4CAE30
 namespace gamemd {
@@ -143,6 +149,7 @@ void Math_CalcAngle()
   return result; /*0x4cae6a*/
 }
 } // namespace gamemd
+}
 
 // 0x5AE750
 namespace gamemd {
@@ -169,13 +176,14 @@ void * Math::BuildRotationMatrix(float * a2, float a3)
   this->q007 = 0.0; /*0x5ae801*/
   this->q006 = v12 - v13; /*0x5ae806*/
   this->q008 = a2[2] * *a2 * v8 - v5 * a2[1]; /*0x5ae817*/
-  *(this + 9) = a2[2] * a2[1] * v8 + v5 * *a2; /*0x5ae82b*/
+  this->u32_24 = a2[2] * a2[1] * v8 + v5 * *a2; /*0x5ae82b*/
   double v14 = a2[2] * a2[2]; /*0x5ae835*/
-  *(this + 11) = 0.0; /*0x5ae83f*/
-  *(this + 10) = (1.0 - v14) * v16 + v14; /*0x5ae84a*/
+  *(&this->u32_41) = 0.0; /*0x5ae83f*/
+  *(&this->u32_40) = (1.0 - v14) * v16 + v14; /*0x5ae84a*/
   return this; /*0x5ae851*/
 }
 } // namespace gamemd
+}
 
 // 0x5F6560
 namespace gamemd {
@@ -192,6 +200,7 @@ int Math::DistSq2D(TechnoClass * aP1)
        + (v4 - *(_DWORD *)&aP1->__pad_0[4]) * (v4 - *(_DWORD *)&aP1->__pad_0[4]);
 }
 } // namespace gamemd
+}
 
 // 0x646590
 namespace gamemd {
@@ -258,6 +267,7 @@ unsigned int * Math::QuaternionSlerp(unsigned int * a1, float * a2, float * a3, 
   return a1; /*0x646722*/
 }
 } // namespace gamemd
+}
 
 // 0x7C5F00
 namespace gamemd {
@@ -267,6 +277,7 @@ void Math_RoundToInt()
   return (__int64)a1; /*0x7c5f22*/
 }
 } // namespace gamemd
+}
 
 // 0x473650
 namespace gamemd {

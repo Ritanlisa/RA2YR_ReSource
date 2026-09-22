@@ -19,27 +19,27 @@ BuildingClass * * Animation::UpdateBuildingAnimations()
   int v4 = *(_DWORD *)(v3 + 1036); /*0x4549c5*/
   if ( !v2 ) /*0x4549cb*/
   {
-    if ( v4 && !*((_BYTE *)this + 1634) ) /*0x4549d5*/
+    if ( v4 && !this->u8_662 ) /*0x4549d5*/
     {
-      *((_BYTE *)this + 1634) = 1; /*0x4549df*/
+      this->u8_662 = 1; /*0x4549df*/
       TechnoClass::Find(this->q087, *(_DWORD *)(v3 + 1036)); /*0x4549f3*/
     }
     _BYTE * v5 = (_BYTE *)this->q148; /*0x4549f8*/
     if ( v5[5831] ) /*0x4549fe*/
     {
-      if ( *((char *)this + 1771) <= 0 ) /*0x454a10*/
+      if ( *((char *)&this->u32_2C41) <= 0 ) /*0x454a10*/
       {
-        char v6 = *((_BYTE *)this + 1772); /*0x454a12*/
+        char v6 = this->u8_6EC; /*0x454a12*/
         if ( v6 != v5[5895] ) /*0x454a20*/
         {
-          *((_BYTE *)this + 1771) = 1; /*0x454a22*/
+          this->u8_6EB = 1; /*0x454a22*/
           if ( v6 == v5[5895] ) /*0x454a31*/
-            *((_BYTE *)this + 1772) = 0; /*0x454a33*/
-          *((_BYTE *)this + 128) = 1; /*0x454a3a*/
+            this->u8_6EC = 0; /*0x454a33*/
+          this->u8_80 = 1; /*0x454a3a*/
         }
       }
     }
-    if ( v5[3281] && !*((_BYTE *)this + 617) ) /*0x454a4b*/
+    if ( v5[3281] && !this->u8_269 ) /*0x454a4b*/
       this->vt_slot_1044(); /*0x454a59*/
     int v7 = this->q148; /*0x454a5f*/
     if ( *(_BYTE *)(v7 + 5491) && *(int *)(v7 + 3812) > 0 ) /*0x454a77*/
@@ -78,10 +78,10 @@ BuildingClass * * Animation::UpdateBuildingAnimations()
     }
     return; /*0x454b10*/
   }
-  if ( v4 && *((_BYTE *)this + 1634) ) /*0x454b1a*/
+  if ( v4 && this->u8_662 ) /*0x454b1a*/
   {
     int v14 = this->q087; /*0x454b24*/
-    *((_BYTE *)this + 1634) = 0; /*0x454b2a*/
+    this->u8_662 = 0; /*0x454b2a*/
     HouseClass::LostPoweredCenter(v14, *(_DWORD *)(v3 + 1036)); /*0x454b38*/
   }
   _DWORD * v15 = (_DWORD *)this->q0AF; /*0x454b3d*/
@@ -90,21 +90,21 @@ BuildingClass * * Animation::UpdateBuildingAnimations()
   if ( this->q0AB ) /*0x454b4c*/
     TechnoClass::EjectPassengers(this, 1); /*0x454b5a*/
   int v16 = this->q148; /*0x454b5f*/
-  if ( *(_BYTE *)(v16 + 5831) && *((char *)this + 1771) >= 0 && *((_BYTE *)this + 1772) ) /*0x454b79*/
+  if ( *(_BYTE *)(v16 + 5831) && *((char *)&this->u32_2C41) >= 0 && this->u8_6EC ) /*0x454b79*/
   {
-    *((_BYTE *)this + 1771) = -1; /*0x454b83*/
-    *((_BYTE *)this + 128) = 1; /*0x454b8a*/
+    this->u8_6EB = -1; /*0x454b83*/
+    this->u8_80 = 1; /*0x454b8a*/
   }
   if ( *(_BYTE *)(v16 + 3281) ) /*0x454b91*/
   {
-    if ( *((_BYTE *)this + 617) ) /*0x454b9b*/
+    if ( this->u8_269 ) /*0x454b9b*/
     {
       this->vt_slot_1048(); /*0x454ba9*/
-      if ( *((_BYTE *)this + 616) ) /*0x454baf*/
+      if ( this->u8_268 ) /*0x454baf*/
       {
         int v17 = this->q087; /*0x454bb9*/
-        *((_BYTE *)this + 616) = 0; /*0x454bbf*/
-        *((_BYTE *)this + 1641) = 0; /*0x454bc6*/
+        this->u8_268 = 0; /*0x454bbf*/
+        this->u8_669 = 0; /*0x454bc6*/
         *(_BYTE *)(v17 + 22392) = 1; /*0x454bcd*/
         int v18 = *this; /*0x454bda*/
         this->q09B = *(char *)(this->q148 + 3282); /*0x454be5*/
@@ -165,6 +165,7 @@ LABEL_51:
     goto LABEL_52; /*0x454c57*/
   }
 }
+}
 
 // 0x4A52F0
 int Animation::GetProgress()
@@ -185,6 +186,7 @@ int Animation::GetProgress()
     v4 = 0; /*0x4a533d*/
   }
   return (double)(v1 - v4) / (double)v1; /*0x4a530d*/
+}
 }
 
 // 0x770550
@@ -310,6 +312,7 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
   DeleteAndZero((void **)&a1); /*0x770824*/
   DeleteAndZero((void **)&v24); /*0x77082d*/
   DeleteAndZero(&v23); /*0x770836*/
+}
 }
 
 // 0x661D80

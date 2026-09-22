@@ -2122,70 +2122,70 @@ int Rules::ReadMiscINI()
               &aP1,
               (INIClass *)&stru_830620[39048],
               (Color *)&stru_830620[39928],
-              (Color *)this + 1560);
-    *((_WORD *)this + 3120) = *(_WORD *)Coord;
-    *((_BYTE *)this + 6242) = *(_BYTE *)(Coord + 2);
+              (Color *)&this->u32_2700);
+    this->ptr_1860 = *(_WORD *)Coord;
+    this->u8_1862 = *(_BYTE *)(Coord + 2);
   int v252; // eax
     v252 = INIClass::GetCoord(
              v273,
              &aP1,
              (INIClass *)&stru_830620[39048],
              (Color *)&stru_830620[39904],
-             (Color *)((char *)this + 6243));
-    *(_WORD *)((char *)this + 6243) = *(_WORD *)v252;
-    *((_BYTE *)this + 6245) = *(_BYTE *)(v252 + 2);
+             (Color *)((char *)&this->u32_9C03));
+    *(_WORD *)((char *)&this->u32_9C03) = *(_WORD *)v252;
+    this->u8_1865 = *(_BYTE *)(v252 + 2);
   int v253; // eax
     v253 = INIClass::GetCoord(
              v273,
              &aP1,
              (INIClass *)&stru_830620[39048],
              (Color *)&stru_830620[39888],
-             (Color *)((char *)this + 6246));
-    *((_WORD *)this + 3123) = *(_WORD *)v253;
-    *((_BYTE *)this + 6248) = *(_BYTE *)(v253 + 2);
+             (Color *)((char *)&this->u32_9C06));
+    this->ptr_1866 = *(_WORD *)v253;
+    this->u8_1868 = *(_BYTE *)(v253 + 2);
   int v254; // eax
     v254 = INIClass::GetCoord(
              v273,
              &aP1,
              (INIClass *)&stru_830620[39048],
              (Color *)&stru_830620[39872],
-             (Color *)((char *)this + 6249));
-    *(_WORD *)((char *)this + 6249) = *(_WORD *)v254;
-    *((_BYTE *)this + 6251) = *(_BYTE *)(v254 + 2);
-    *((_DWORD *)this + 1563) = INIClass::ReadInt_Overwrite(
+             (Color *)((char *)&this->u32_9C09));
+    *(_WORD *)((char *)&this->u32_9C09) = *(_WORD *)v254;
+    this->u8_186B = *(_BYTE *)(v254 + 2);
+    this->u32_186C = INIClass::ReadInt_Overwrite(
                                  (int)v273,
                                  (unsigned __int8 *)&stru_830620[39048],
                                  (CCINIClass *)&stru_830620[39852],
-                                 *((INIClass **)this + 1563));
-    *((_DWORD *)this + 1577) = INIClass::ReadInt_Overwrite(
+                                 *((INIClass **)&this->u32_2703));
+    this->u32_18A4 = INIClass::ReadInt_Overwrite(
                                  (int)v273,
                                  (unsigned __int8 *)&stru_830620[39048],
                                  (CCINIClass *)&stru_830620[39832],
-                                 *((INIClass **)this + 1577));
-    *((_DWORD *)this + 1578) = INIClass::ReadInt_Overwrite(
+                                 *((INIClass **)&this->u32_2747));
+    this->u32_18A8 = INIClass::ReadInt_Overwrite(
                                  (int)v273,
                                  (unsigned __int8 *)&stru_830620[39048],
                                  (CCINIClass *)&stru_830620[39812],
-                                 *((INIClass **)this + 1578));
-    *((_DWORD *)this + 1579) = INIClass::ReadInt_Overwrite(
+                                 *((INIClass **)&this->u32_2748));
+    this->u32_18AC = INIClass::ReadInt_Overwrite(
                                  (int)v273,
                                  (unsigned __int8 *)&stru_830620[39048],
                                  (CCINIClass *)&stru_830620[39796],
-                                 *((INIClass **)this + 1579));
-    *((_DWORD *)this + 1580) = INIClass::ReadInt_Overwrite(
+                                 *((INIClass **)&this->u32_2749));
+    this->u32_18B0 = INIClass::ReadInt_Overwrite(
                                  (int)v273,
                                  (unsigned __int8 *)&stru_830620[39048],
                                  (CCINIClass *)&stru_830620[39776],
-                                 *((INIClass **)this + 1580));
-    *(double *)&v260[4] = *((float *)this + 1581);
-    *((float *)this + 1581) = INIClass::ReadDouble_Overwrite(
+                                 *((INIClass **)&this->u32_2780));
+    *(double *)&v260[4] = *((float *)&this->u32_2781);
+    *((float *)&this->u32_2781) = INIClass::ReadDouble_Overwrite(
                                 (int)v273,
                                 (INIClass *)&stru_830620[39048],
                                 (unsigned __int8 *)&stru_830620[39748],
                                 *(INIClass **)&v260[4]);
-    double v255 = *((float *)this + 1582);
+    double v255 = *((float *)&this->u32_2782);
     *(double *)&v260[4] = v255;
-    *((float *)this + 1582) = INIClass::ReadDouble_Overwrite(
+    *((float *)&this->u32_2782) = INIClass::ReadDouble_Overwrite(
                                 (int)v273,
                                 (INIClass *)&stru_830620[39048],
                                 (unsigned __int8 *)&stru_830620[39728],
@@ -2200,6 +2200,7 @@ int Rules::ReadMiscINI()
 }
 
 } // namespace gamemd
+}
 
 // 0x66BBB0
 namespace gamemd {
@@ -3281,6 +3282,7 @@ IUnknown * * Rules::ReadCombatINI()
   return result;
 }
 } // namespace gamemd
+}
 
 // 0x67A570
 namespace gamemd {
@@ -3292,36 +3294,37 @@ unsigned int * Rules::CopyDataArray(VectorClass * aP1)
     goto LABEL_8; /*0x67a57a*/
   this->vt_slot_12(); /*0x67a57e*/
   int v3 = aP1->Capacity; /*0x67a581*/
-  *(this + 2) = v3; /*0x67a586*/
+  this->u32_8 = v3; /*0x67a586*/
   if ( !v3 ) /*0x67a589*/
   {
-    *(this + 1) = 0; /*0x67a5d6*/
-    *((_BYTE *)this + 13) = 0; /*0x67a5dd*/
+    this->u32_4 = 0; /*0x67a5d6*/
+    this->u8_D = 0; /*0x67a5dd*/
 LABEL_8:
-    *(this + 4) = aP1[1].vtable0; /*0x67a5e1*/
-    *(this + 5) = aP1[1].Items; /*0x67a5ea*/
+    this->u32_10 = aP1[1].vtable0; /*0x67a5e1*/
+    this->u32_14 = aP1[1].Items; /*0x67a5ea*/
     return this; /*0x67a5ed*/
   }
   int v4 = __2_YAPAXI_Z(4 * v3); /*0x67a593*/
-  *(this + 1) = v4; /*0x67a59b*/
+  this->u32_4 = v4; /*0x67a59b*/
   if ( !v4 ) /*0x67a5a0*/
     goto LABEL_8; /*0x67a5a0*/
-  int v5 = *(this + 2); /*0x67a5a2*/
+  int v5 = this->u32_8; /*0x67a5a2*/
   int v6 = 0; /*0x67a5a5*/
-  *((_BYTE *)this + 13) = 1; /*0x67a5a9*/
+  this->u8_D = 1; /*0x67a5a9*/
   if ( v5 <= 0 ) /*0x67a5ad*/
     goto LABEL_8; /*0x67a5ad*/
   do /*0x67a5c1*/
   {
-    *(_DWORD *)(*(this + 1) + 4 * v6) = *((_DWORD *)aP1->Items + v6); /*0x67a5b8*/
+    *(_DWORD *)(this->u32_4 + 4 * v6) = *((_DWORD *)aP1->Items + v6); /*0x67a5b8*/
     ++v6; /*0x67a5be*/
   }
-  while ( v6 < *(this + 2) ); /*0x67a5c1*/
-  *(this + 4) = aP1[1].vtable0; /*0x67a5c6*/
-  *(this + 5) = aP1[1].Items; /*0x67a5cc*/
+  while ( v6 < this->u32_8 ); /*0x67a5c1*/
+  this->u32_10 = aP1[1].vtable0; /*0x67a5c6*/
+  this->u32_14 = aP1[1].Items; /*0x67a5cc*/
   return this; /*0x67a5d1*/
 }
 } // namespace gamemd
+}
 
 // 0x5FB2E0
 namespace gamemd {

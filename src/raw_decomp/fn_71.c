@@ -190,10 +190,10 @@ int __thiscall ObjectClass::ClearPointerRefs(#377 *this)
     this->behindAnim = 0; /*0x710421*/
   if ( v2 == this->alignmentPadding75 ) /*0x71042d*/
     this->alignmentPadding75 = 0; /*0x71042f*/
-  if ( v2 == this->q0B2 ) /*0x71043b*/
-    this->q0B2 = 0; /*0x71043d*/
-  if ( v2 == this->q04C ) /*0x71044c*/
-    this->q04C = 0; /*0x71044e*/
+  if ( v2 == this->mindControlRingAnim ) /*0x71043b*/
+    this->mindControlRingAnim = 0; /*0x71043d*/
+  if ( v2 == this->u32_4C ) /*0x71044c*/
+    this->u32_4C = 0; /*0x71044e*/
   return ObjectClass::ResetPointerIfMatch(this); /*0x71045a*/
 }
 
@@ -332,7 +332,7 @@ int __thiscall BuildingClass::_vt229(#377 *this)
       v5[0] = this->q027; /*0x7106ac*/
       v3 = *(_DWORD *)this; /*0x7106b0*/
       v5[1] = this->owningHouseIndex; /*0x7106b5*/
-      v5[2] = this->q029; /*0x7106bc*/
+      v5[2] = this->locationZ; /*0x7106bc*/
       v4 = (*(int (__thiscall **)(#377 *))(v3 + 132))(this); /*0x7106c2*/
       return PlayAudioAt2(*(_DWORD *)(v4 + 1380), v5, 0); /*0x7106d0*/
     }
@@ -637,7 +637,7 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
   this->ImageAllocated = 0; /*0x710b1c*/
   this->q0A9 = 0; /*0x710b28*/
   this->q0AA = 0; /*0x710b2f*/
-  this->VoiceEnter = 0; /*0x710b36*/
+  this->q156 = 0; /*0x710b36*/
   *(_DWORD *)(this + 686) = 0; /*0x710b3d*/
   *(_DWORD *)(this + 690) = 0; /*0x710b43*/
   *(_DWORD *)(this + 694) = 0; /*0x710b4b*/
@@ -650,39 +650,39 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
   this->TurretVoxel = 0; /*0x710b76*/
   this->threatPosed = 0; /*0x710b7c*/
   this->threatAvoidValue = 0; /*0x710b82*/
-  this->cloakable = 0; /*0x710b88*/
+  this->u32_2DC = 0; /*0x710b88*/
   this->q0B8 = 0; /*0x710b8e*/
   this->q0B9 = 0; /*0x710b94*/
   this->buildLimit = 0; /*0x710b9a*/
-  *((_DWORD *)this + 187) = 0; /*0x710ba0*/
+  this->u32_2EC = 0; /*0x710ba0*/
   this->ChargerTurrets = 0; /*0x710ba6*/
-  *((_DWORD *)this + 189) = 0; /*0x710bac*/
+  this->u32_2F4 = 0; /*0x710bac*/
   this->q2F8 = 500; /*0x710bb2*/
   this->q0C0 = -755914244; /*0x710bbc*/
-  *((_DWORD *)this + 193) = 1063281229; /*0x710bc6*/
+  this->u32_304 = 1063281229; /*0x710bc6*/
   this->AccelerationFactor = -343597384; /*0x710bd0*/
   this->q0C3 = 1067366481; /*0x710bda*/
-  this->q0C4 = 7; /*0x710be4*/
+  this->u32_C4 = 7; /*0x710be4*/
   VoxelAnimTypeVector::Constructor(0, 0); /*0x710bee*/
-  this->TargetLaser = 0; /*0x710bf8*/
-  this->DamageSelf = 10; /*0x710bfb*/
+  this->q324 = 0; /*0x710bf8*/
+  this->q328 = 10; /*0x710bfb*/
   this->DebrisTypes = &vt_TypeList_VoxelAnimTypeClass_const; /*0x710bfe*/
   VectorClass::Construct((_DWORD *)this + 204, 0, 0); /*0x710c0f*/
-  *((_DWORD *)this + 209) = 10; /*0x710c14*/
+  this->q344 = 10; /*0x710c14*/
   this->q034 = 0; /*0x710c17*/
   this->DebrisMaximums = &vt_TypeList_int; /*0x710c1a*/
   this->Locomotor = 1247291207; /*0x710c2d*/
-  this->SuppressionThreshold = 298948665; /*0x710c39*/
+  this->u32_D4 = 298948665; /*0x710c39*/
   this->JumpjetCrash = -1610610249; /*0x710c42*/
   this->qD60 = -777003740; /*0x710c4b*/
   this->unknown_double_360 = 0; /*0x710c4e*/
   this->q364 = 0; /*0x710c54*/
   this->unknown_double_368 = 0; /*0x710c5a*/
   this->qDB0 = 0; /*0x710c60*/
-  this->Weight = 0; /*0x710c6b*/
+  this->u32_DC = 0; /*0x710c6b*/
   this->q374 = 1072693248; /*0x710c71*/
   this->PhysicalSize = 0; /*0x710c77*/
-  *((_DWORD *)this + 223) = 0x40000000; /*0x710c7d*/
+  this->u32_37C = 0x40000000; /*0x710c7d*/
   this->Size = 0; /*0x710c87*/
   this->q384 = 1072693248; /*0x710c8d*/
   this->SizeLimit = 0; /*0x710c93*/
@@ -691,21 +691,21 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
   this->VHPScan = 0; /*0x710ca5*/
   this->unknown_int_398 = 15; /*0x710cab*/
   this->RollAngle = 942502757; /*0x710cb5*/
-  *((_DWORD *)this + 233) = 1071694162; /*0x710cbf*/
+  this->u32_3A4 = 1071694162; /*0x710cbf*/
   this->PitchSpeed = 0; /*0x710cc9*/
   this->q3AC = 1070596096; /*0x710ccf*/
   this->q0EC = 1256670343; /*0x710cd9*/
-  *((_DWORD *)this + 237) = 1071011608; /*0x710ce3*/
+  this->u32_3B4 = 1071011608; /*0x710ce3*/
   this->BuildLimit = 0x7FFFFFFF; /*0x710cf0*/
   this->Category = -1; /*0x710cfa*/
   this->unknown_3C0 = 0; /*0x710d00*/
   this->DeployTime = 0; /*0x710d06*/
-  *((_DWORD *)this + 243) = 0; /*0x710d0c*/
+  this->u8_F3 = 0; /*0x710d0c*/
   this->FireAngle = 8; /*0x710d12*/
   this->PipScale = 0; /*0x710d1c*/
   this->PipsDrawForAll = 0; /*0x710d22*/
   this->q0F7 = 70; /*0x710d28*/
-  this->PixelSelectionBracketDelta = 0; /*0x710d33*/
+  this->u32_F8 = 0; /*0x710d33*/
   this->q0F9 = 0; /*0x710d40*/
   VectorClass::BuildingTypeConstructor((_DWORD *)this + 250, 0, 0); /*0x710d46*/
   *((_DWORD *)this + 255) = 10; /*0x710d4b*/
@@ -716,19 +716,19 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
   this->PowersUnit = 0; /*0x710d6e*/
   this->PoweredUnit = 0; /*0x710d7b*/
   VectorClass::Construct((_DWORD *)this + 261, 0, 0); /*0x710d81*/
-  *((_DWORD *)this + 266) = 10; /*0x710d8e*/
+  this->q428 = 10; /*0x710d8e*/
   *((_DWORD *)this + 265) = 0; /*0x710d94*/
   this->VoiceSelect = &vt_TypeList_int; /*0x710d9a*/
   VectorClass::Construct((_DWORD *)this + 268, 0, 0); /*0x710da4*/
   this->q111 = 10; /*0x710db1*/
-  this->q044 = 0; /*0x710db7*/
+  this->q440 = 0; /*0x710db7*/
   this->q10C = &vt_TypeList_int; /*0x710dbd*/
   VectorClass::Construct((_DWORD *)this + 275, 0, 0); /*0x710dc7*/
-  this->q046 = 10; /*0x710dd4*/
+  this->u32_118 = 10; /*0x710dd4*/
   *((_DWORD *)this + 279) = 0; /*0x710dda*/
   this->VoiceSelectDeactivated = &vt_TypeList_int; /*0x710de0*/
   VectorClass::Construct((_DWORD *)this + 282, 0, 0); /*0x710dea*/
-  *((_DWORD *)this + 287) = 10; /*0x710df7*/
+  this->u32_47C = 10; /*0x710df7*/
   *((_DWORD *)this + 286) = 0; /*0x710dfd*/
   this->VoiceMove = &vt_TypeList_int; /*0x710e03*/
   VectorClass::Construct((_DWORD *)this + 289, 0, 0); /*0x710e0d*/
@@ -742,49 +742,49 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
   VectorClass::Construct((_DWORD *)this + 303, 0, 0); /*0x710e53*/
   this->q134 = 10; /*0x710e58*/
   *((_DWORD *)this + 307) = 0; /*0x710e5e*/
-  this->VoiceDie = &vt_TypeList_int; /*0x710e6c*/
+  this->u8_12F = &vt_TypeList_int; /*0x710e6c*/
   VectorClass::Construct((_DWORD *)this + 310, 0, 0); /*0x710e76*/
   *((_DWORD *)this + 315) = 10; /*0x710e83*/
   *((_DWORD *)this + 314) = 0; /*0x710e89*/
   this->VoiceFeedback = &vt_TypeList_int; /*0x710e8f*/
   VectorClass::Construct((_DWORD *)this + 317, 0, 0); /*0x710e99*/
-  *((_DWORD *)this + 322) = 10; /*0x710ea6*/
+  this->q508 = 10; /*0x710ea6*/
   this->q504 = 0; /*0x710eac*/
   this->MoveSound = &vt_TypeList_int; /*0x710eb2*/
   VectorClass::Construct((_DWORD *)this + 324, 0, 0); /*0x710ebc*/
-  *((_DWORD *)this + 329) = 10; /*0x710ec1*/
-  this->q052 = 0; /*0x710ec7*/
-  this->q144 = &vt_TypeList_int; /*0x710ecd*/
+  this->q149 = 10; /*0x710ec1*/
+  this->u32_148 = 0; /*0x710ec7*/
+  this->u32_144 = &vt_TypeList_int; /*0x710ecd*/
   this->AuxSound1 = -1; /*0x710ed7*/
   this->NoSpawnAlt = -1; /*0x710edd*/
   this->q14D = -1; /*0x710ee3*/
   this->DamageSound = -1; /*0x710ee9*/
   this->ImpactWaterSound = -1; /*0x710eef*/
   this->q150 = -1; /*0x710ef5*/
-  this->CrashingSound = -1; /*0x710efb*/
-  this->SinkingSound = -1; /*0x710f01*/
+  this->u8_151 = -1; /*0x710efb*/
+  this->q152 = -1; /*0x710f01*/
   this->VoiceFalling = -1; /*0x710f07*/
   this->q154 = -1; /*0x710f0d*/
-  this->VoiceSinking = -1; /*0x710f13*/
-  this->VoiceEnter = -1; /*0x710f19*/
+  this->q155 = -1; /*0x710f13*/
+  this->q156 = -1; /*0x710f19*/
   this->VoiceCapture = -1; /*0x710f1f*/
-  this->TurretRotateSound = -1; /*0x710f25*/
+  this->u32_158 = -1; /*0x710f25*/
   this->EnterTransportSound = -1; /*0x710f2b*/
   this->LeaveTransportSound = -1; /*0x710f31*/
   this->DeploySound = -1; /*0x710f37*/
-  this->UndeploySound = -1; /*0x710f3d*/
+  this->u32_15C = -1; /*0x710f3d*/
   this->ChronoInSound = -1; /*0x710f43*/
   this->ChronoOutSound = -1; /*0x710f49*/
   this->VoiceHarvest = -1; /*0x710f4f*/
-  this->VoicePrimaryWeaponAttack = -1; /*0x710f55*/
+  this->q160 = -1; /*0x710f55*/
   this->VoicePrimaryEliteWeaponAttack = -1; /*0x710f5b*/
   this->q162 = -1; /*0x710f61*/
   this->VoiceSecondaryEliteWeaponAttack = -1; /*0x710f68*/
-  this->VoiceDeploy = -1; /*0x710f75*/
+  this->q164 = -1; /*0x710f75*/
   this->VoiceUndeploy = -1; /*0x710f7b*/
   this->q166 = -1; /*0x710f81*/
   this->LeaveGrinderSound = -1; /*0x710f87*/
-  this->EnterBioReactorSound = -1; /*0x710f8d*/
+  this->q168 = -1; /*0x710f8d*/
   this->q169 = -1; /*0x710f93*/
   this->ActivateSound = -1; /*0x710f99*/
   this->q16B = -1; /*0x710f9f*/
@@ -794,8 +794,8 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
   this->q16F = 0; /*0x710fb7*/
   this->q170 = 0; /*0x710fbd*/
   AnimTypeVector::Constructor((_DWORD *)this + 369, 0, 0); /*0x710fc3*/
-  this->q1760 = 10; /*0x710fc8*/
-  *((_DWORD *)this + 373) = 0; /*0x710fce*/
+  this->q176 = 10; /*0x710fc8*/
+  this->q1750 = 0; /*0x710fce*/
   this->DebrisAnims = &vt_TypeList_AnimTypeClass_const; /*0x710fd4*/
   this->Passengers = 0; /*0x710fde*/
   this->OpenTopped = 0; /*0x710fe4*/
@@ -808,15 +808,15 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
   this->DetectDisguiseRange = 0; /*0x71100e*/
   this->BombSight = 0; /*0x711014*/
   this->LeadershipRating = 5; /*0x71101a*/
-  this->NavalTargeting = 0; /*0x711024*/
+  this->q180 = 0; /*0x711024*/
   this->LandTargeting = 0; /*0x71102a*/
   this->BuildTimeMultiplier = 1065353216; /*0x711030*/
   this->MindControlRingOffset = 140; /*0x71103a*/
-  this->Cost = 0; /*0x711044*/
+  this->q184 = 0; /*0x711044*/
   this->Soylent = 0; /*0x71104a*/
   this->FlightLevel = -1; /*0x711050*/
   this->AirstrikeTeam = 0; /*0x711056*/
-  this->EliteAirstrikeTeam = 0; /*0x71105c*/
+  this->q188 = 0; /*0x71105c*/
   this->AirstrikeTeamType = 0; /*0x711062*/
   this->EliteAirstrikeTeamType = 0; /*0x711068*/
   this->AirstrikeRechargeTime = 0; /*0x71106e*/
@@ -824,17 +824,17 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
   this->TechLevel = 255; /*0x711082*/
   VectorClass::Construct((_DWORD *)this + 398, 0, 0); /*0x71108c*/
   *((_DWORD *)this + 403) = 10; /*0x711099*/
-  *((_DWORD *)this + 402) = 0; /*0x71109f*/
+  this->q648 = 0; /*0x71109f*/
   this->Prerequisite = &vt_TypeList_int; /*0x7110a5*/
   VectorClass::Construct((_DWORD *)this + 405, 0, 0); /*0x7110af*/
-  *((_DWORD *)this + 410) = 10; /*0x7110b8*/
+  this->VeteranAbilities = 10; /*0x7110b8*/
   this->q199 = 0; /*0x7110be*/
-  this->PrerequisiteOverride = &vt_TypeList_int; /*0x7110c4*/
+  this->u8_195 = &vt_TypeList_int; /*0x7110c4*/
   this->ThreatPosed = 0; /*0x7110ce*/
   this->q19D = 0; /*0x7110d4*/
   this->Speed = 0; /*0x7110da*/
   this->SpeedType = a3; /*0x7110e0*/
-  this->InitialAmmo = -1; /*0x7110e6*/
+  this->u32_1A0 = -1; /*0x7110e6*/
   this->q1A1 = -1; /*0x7110ec*/
   this->q1A2 = 0; /*0x7110f2*/
   this->AirRangeBonus = 0; /*0x7110f8*/
@@ -903,29 +903,29 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
   this->DestroyAnim = &vt_TypeList_AnimTypeClass_const; /*0x711271*/
   this->NaturalParticleSystem = 0; /*0x71127b*/
   this->NaturalParticleSystemLocation = 0; /*0x711282*/
-  *((_DWORD *)this + 475) = 0; /*0x711288*/
-  *((_DWORD *)this + 476) = 0; /*0x71128e*/
+  this->u32_76C = 0; /*0x711288*/
+  this->ptr_770 = 0; /*0x71128e*/
   this->RefinerySmokeParticleSystem = 0; /*0x71129b*/
   VectorClass::ConstructorWithVtable(0, 0); /*0x7112a1*/
   *((_DWORD *)this + 483) = 10; /*0x7112ae*/
-  *((_DWORD *)this + 482) = 0; /*0x7112b4*/
+  this->VoxelAnimList_Embed = 0; /*0x7112b4*/
   this->DamageParticleSystems = &vt_TypeList_ParticleSystemTypeClass_const; /*0x7112ba*/
   VectorClass::ConstructorWithVtable(0, 0); /*0x7112c4*/
   *((_DWORD *)this + 490) = 10; /*0x7112c9*/
   this->q1E9 = 0; /*0x7112cf*/
   this->DestroyParticleSystems = &vt_TypeList_ParticleSystemTypeClass_const; /*0x7112d5*/
   this->MaxDimension = 0; /*0x7112df*/
-  *((_DWORD *)this + 493) = 0; /*0x7112e5*/
-  *((_DWORD *)this + 494) = 0; /*0x7112eb*/
+  this->u32_7B4 = 0; /*0x7112e5*/
+  this->u32_7B8 = 0; /*0x7112eb*/
   this->DamSmkOffScrnRel = 0; /*0x7112f1*/
   this->CrushSound = 0; /*0x7112f7*/
   this->q7C4 = 0; /*0x7112fd*/
-  *((_DWORD *)this + 498) = 0; /*0x711303*/
+  this->u32_7C8 = 0; /*0x711303*/
   this->RefinerySmokeOffsetOne = 0; /*0x711309*/
   this->AmbientSound = 0; /*0x71130f*/
-  *((_DWORD *)this + 501) = 0; /*0x711315*/
+  this->u32_7D4 = 0; /*0x711315*/
   this->RefinerySmokeOffsetTwo = 0; /*0x71131b*/
-  *((_DWORD *)this + 503) = 0; /*0x711321*/
+  this->u32_7DC = 0; /*0x711321*/
   this->ImageFile = 0; /*0x711327*/
   this->AlternateArcticArt = 0; /*0x71132d*/
   this->ArcticArtInUse = 0; /*0x711333*/
@@ -965,14 +965,14 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
   this->Turret = 0; /*0x711402*/
   this->TurretRecoil = 0; /*0x711412*/
   this->TurretAnimData = 2; /*0x711418*/
-  *((_DWORD *)this + 810) = 1; /*0x71141e*/
-  *((_DWORD *)this + 811) = 1; /*0x711424*/
-  *((_DWORD *)this + 812) = 1; /*0x71142a*/
+  this->u32_CA8 = 1; /*0x71141e*/
+  this->u32_CAC = 1; /*0x711424*/
+  this->u32_CB0 = 1; /*0x71142a*/
   this->unknown_bool_CB4 = 0; /*0x711430*/
   this->BarrelAnimData = 2; /*0x711436*/
-  *((_DWORD *)this + 815) = 1; /*0x71143c*/
+  this->u32_CBC = 1; /*0x71143c*/
   this->DebrisMaximums = 1; /*0x711442*/
-  *((_DWORD *)this + 817) = 1; /*0x711448*/
+  this->u32_CC4 = 1; /*0x711448*/
   this->unknown_bool_CC8 = 0; /*0x71144e*/
   this->qCCC = 1; /*0x711454*/
   this->qCCD = 0; /*0x71145a*/
@@ -984,9 +984,9 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
   this->Cloakable = 0; /*0x71147e*/
   this->qCD4 = 0; /*0x711484*/
   this->qCD5 = 0; /*0x71148a*/
-  *((_DWORD *)this + 822) = 0; /*0x711490*/
-  *((_DWORD *)this + 835) = 0; /*0x711496*/
-  *((_DWORD *)this + 836) = 0; /*0x71149c*/
+  this->u32_CD8 = 0; /*0x711490*/
+  this->u32_D0C = 0; /*0x711496*/
+  this->q344 = 0; /*0x71149c*/
   this->qD14 = 0; /*0x7114a2*/
   this->qD15 = 0; /*0x7114a8*/
   this->SlavesNumber = 0; /*0x7114ae*/
@@ -1023,7 +1023,7 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
   this->JumpjetClimb = 0; /*0x71156c*/
   this->JumpjetCrash = -1; /*0x711572*/
   this->qD54 = 0; /*0x711578*/
-  this->JumpjetAccel = 0; /*0x71157e*/
+  this->u32_164 = 0; /*0x71157e*/
   this->JumpjetWobbles = 0; /*0x711584*/
   this->qD60 = 0; /*0x71158a*/
   this->JumpjetDeviation = 0; /*0x711590*/
@@ -1037,7 +1037,7 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
   this->SecretHouses = 1084227584; /*0x7115cd*/
   this->unknown_double_360 = 500; /*0x7115d3*/
   this->SecondSpawnOffset = 0x40000000; /*0x7115dd*/
-  *((_DWORD *)this + 866) = 1041865114; /*0x7115e7*/
+  this->u32_D88 = 1041865114; /*0x7115e7*/
   this->qD8C = 0; /*0x7115f1*/
   this->q364 = 40; /*0x7115f7*/
   this->JumpJet = 0; /*0x711601*/
@@ -1050,7 +1050,7 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
   this->qD9D = 0; /*0x71162d*/
   this->unknown_double_368 = -1; /*0x711633*/
   this->PaletteFile = -1; /*0x711639*/
-  *((_DWORD *)this + 874) = -1; /*0x71163f*/
+  this->u32_DA8 = -1; /*0x71163f*/
   this->qDAC = 0; /*0x711645*/
   this->qDBC = 0; /*0x71164b*/
   this->qDBD = 1; /*0x711651*/
@@ -1060,7 +1060,7 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
   this->Palette = 5; /*0x71166a*/
   this->qDC8 = 10; /*0x711674*/
   this->qDCC = 0; /*0x71167a*/
-  *((_DWORD *)this + 892) = 0; /*0x711680*/
+  this->u32_37C = 0; /*0x711680*/
   *(_DWORD *)this = &TechnoTypeClass::`vftable'; /*0x711686*/
   this->vtable2 = &TechnoTypeClass::`vftable'; /*0x71168c*/
   this->vtable3 = &TechnoTypeClass::`vftable'; /*0x711693*/
@@ -1117,9 +1117,9 @@ char *__thiscall TechnoTypeClass_ConstructorFull(char *this, char *Source, int a
   while ( v11 ); /*0x711757*/
   this->qDB0 = 0; /*0x711763*/
   v13 = this + 3316; /*0x711765*/
-  *((_DWORD *)this + 877) = 0; /*0x71176b*/
+  this->u32_DB4 = 0; /*0x71176b*/
   v14 = 6; /*0x71176e*/
-  *((_DWORD *)this + 878) = 0; /*0x711773*/
+  this->u32_DB8 = 0; /*0x711773*/
   do /*0x71177f*/
   {
     *(v13 - 6) = 0; /*0x711776*/
@@ -1458,7 +1458,7 @@ double __thiscall TechnoTypeClass_ComputeBuildTime(int *this)
 {
   double result; // st7
 
-  result = (double)this->Cost * *((double *)MEMORY[0x8871E0] + 745) * 0.9; /*0x711ef1*/
+  result = (double)this->q184 * *((double *)MEMORY[0x8871E0] + 745) * 0.9; /*0x711ef1*/
   Math::RoundToInt(result); /*0x711ef7*/
   return result;
 }
@@ -6545,7 +6545,7 @@ int __thiscall sub_717A50(_DWORD *this, int a2)
   result = a2; /*0x717a50*/
   if ( a2 <= 0 ) /*0x717a56*/
     result = 1; /*0x717a58*/
-  *(this + 1) = result; /*0x717a5d*/
+  this->__pad_004 = result; /*0x717a5d*/
   return result; /*0x717a60*/
 }
 
@@ -6553,7 +6553,7 @@ int __thiscall sub_717A50(_DWORD *this, int a2)
 // ==== 0x00717A70  ObjectTypeClass::loadTypeMember_5717A70  this=Turret  sig=csp ====
 int __thiscall sub_717A70(_DWORD *this)
 {
-  return *(this + 1); /*0x717a73*/
+  return this->__pad_004; /*0x717a73*/
 }
 
 
@@ -6711,7 +6711,7 @@ _DWORD *__thiscall sub_717C00(_DWORD *this, _DWORD *a2)
   if ( !v3 ) /*0x717c19*/
   {
     this->vtable2 = 0; /*0x717c5a*/
-    *((_BYTE *)this + 13) = 0; /*0x717c61*/
+    this->u8_34 = 0; /*0x717c61*/
     return this; /*0x717c65*/
   }
   v4 = __2_YAPAXI_Z(4 * v3); /*0x717c23*/
@@ -6720,7 +6720,7 @@ _DWORD *__thiscall sub_717C00(_DWORD *this, _DWORD *a2)
     return this; /*0x717c30*/
   v5 = this->vtable3; /*0x717c32*/
   v6 = 0; /*0x717c35*/
-  *((_BYTE *)this + 13) = 1; /*0x717c39*/
+  this->u8_34 = 1; /*0x717c39*/
   if ( v5 <= 0 ) /*0x717c3d*/
     return this; /*0x717c3d*/
   do /*0x717c51*/
@@ -6754,7 +6754,7 @@ _DWORD *__thiscall TypeList_Particle_Constructor(_DWORD *this, int a2, int a3)
     }
   }
   *this = &vt_DynamicVectorClass_ParticleSystemTypeClass_const; /*0x717cb3*/
-  this->q005 = 10; /*0x717cb9*/
+  this->u32_14 = 10; /*0x717cb9*/
   this->q010 = 0; /*0x717cc0*/
   return this; /*0x717cc9*/
 }
@@ -6830,7 +6830,7 @@ _DWORD *__thiscall VectorClass::CopyParticle(_DWORD *this, DynamicVector *aP1)
     }
   }
   this->q010 = aP1->field_10; /*0x717d91*/
-  this->q005 = *(_DWORD *)aP1->__pad_14; /*0x717d97*/
+  this->u32_14 = *(_DWORD *)aP1->__pad_14; /*0x717d97*/
   *this = &vt_TypeList_ParticleSystemTypeClass_const; /*0x717d9a*/
   return this; /*0x717da2*/
 }
@@ -9102,13 +9102,13 @@ int __thiscall TemporalClass::GetWarpPerStep(int **this, int a2)
   int *v7; // eax
 
   WarpPerStep = 0; /*0x71ab14*/
-  if ( this->q011 && a2 <= 50 ) /*0x71ab25*/
+  if ( this->u32_44 && a2 <= 50 ) /*0x71ab25*/
     WarpPerStep = TemporalClass::GetWarpPerStep(a2 + 1); /*0x71ab2e*/
   v4 = this->objectTypeFlags; /*0x71ab30*/
   v5 = *v4; /*0x71ab35*/
   v6 = (*(int (__thiscall **)(int *, _DWORD))(*v4 + 740))(v4, 0); /*0x71ab37*/
   v7 = *(int **)(*(_DWORD *)(*(int (__thiscall **)(_DWORD, int))(v5 + 1016))(this->objectTypeFlags, v6) + 164); /*0x71ab4a*/
-  this->q04C = v7; /*0x71ab50*/
+  this->u32_4C = v7; /*0x71ab50*/
   return (int)v7 + WarpPerStep; /*0x71ab49*/
 }
 
@@ -9133,7 +9133,7 @@ _DWORD *__thiscall sub_71AB60(_DWORD *this, _DWORD *a2)
   else if ( a2 == (_DWORD *)this->owningHouseIndex ) /*0x71ab8a*/
   {
     this->owningHouseIndex = 0; /*0x71ab90*/
-    this->q044 = 0; /*0x71ab93*/
+    this->u32_44 = 0; /*0x71ab93*/
     this->q040 = 0; /*0x71ab96*/
     this->ambientSoundController = 0; /*0x71ab99*/
     this->attachedBomb = 0; /*0x71ab9c*/
@@ -9152,7 +9152,7 @@ _DWORD *__thiscall FactoryClass_CompleteItem(_DWORD *this)
   int v4; // edi
 
   result = (_DWORD *)this->q040; /*0x71abc6*/
-  v3 = this->q044; /*0x71abc9*/
+  v3 = this->u32_44; /*0x71abc9*/
   if ( result ) /*0x71abce*/
   {
     if ( v3 ) /*0x71ac71*/
@@ -9161,9 +9161,9 @@ _DWORD *__thiscall FactoryClass_CompleteItem(_DWORD *this)
       result = (_DWORD *)this->q040; /*0x71ac76*/
       if ( result ) /*0x71ac7b*/
       {
-        result[17] = this->q044; /*0x71ac80*/
+        result[17] = this->u32_44; /*0x71ac80*/
         this->owningHouseIndex = 0; /*0x71ac83*/
-        this->q044 = 0; /*0x71ac86*/
+        this->u32_44 = 0; /*0x71ac86*/
         this->q040 = 0; /*0x71ac89*/
         this->ambientSoundController = 0; /*0x71ac8c*/
         this->attachedBomb = 0; /*0x71ac8f*/
@@ -9181,11 +9181,11 @@ _DWORD *__thiscall FactoryClass_CompleteItem(_DWORD *this)
   {
     if ( result ) /*0x71abdd*/
       result[158] = v3; /*0x71abdf*/
-    result = (_DWORD *)this->q044; /*0x71abe5*/
+    result = (_DWORD *)this->u32_44; /*0x71abe5*/
     result[16] = 0; /*0x71abe8*/
-    *(_DWORD *)(this->q044 + 72) = this->q048; /*0x71abf1*/
+    *(_DWORD *)(this->u32_44 + 72) = this->u32_48; /*0x71abf1*/
     this->owningHouseIndex = 0; /*0x71abf4*/
-    this->q044 = 0; /*0x71abf7*/
+    this->u32_44 = 0; /*0x71abf7*/
     this->q040 = 0; /*0x71abfa*/
     this->ambientSoundController = 0; /*0x71abfd*/
     this->attachedBomb = 0; /*0x71ac00*/
@@ -9195,7 +9195,7 @@ _DWORD *__thiscall FactoryClass_CompleteItem(_DWORD *this)
   {
 LABEL_14:
     this->owningHouseIndex = 0; /*0x71ac98*/
-    this->q044 = 0; /*0x71ac9b*/
+    this->u32_44 = 0; /*0x71ac9b*/
     this->q040 = 0; /*0x71ac9e*/
     this->ambientSoundController = 0; /*0x71aca1*/
     this->attachedBomb = 0; /*0x71aca4*/
@@ -9212,7 +9212,7 @@ LABEL_14:
   }
   result = (_DWORD *)(*(int (__thiscall **)(_DWORD, int))(*(_DWORD *)this->owningHouseIndex + 292))(this->owningHouseIndex, 2); /*0x71ac57*/
   this->owningHouseIndex = 0; /*0x71ac5d*/
-  this->q044 = 0; /*0x71ac60*/
+  this->u32_44 = 0; /*0x71ac60*/
   this->q040 = 0; /*0x71ac63*/
   this->ambientSoundController = 0; /*0x71ac66*/
   this->attachedBomb = 0; /*0x71ac69*/
@@ -9979,19 +9979,19 @@ TerrainClass *__thiscall TerrainClass::Construct(void **this, TerrainTypeClass *
   this->Type = v4; /*0x71bbbb*/
   this->nextObject = 0; /*0x71bbc1*/
   this->q031 = (void *)1; /*0x71bbc7*/
-  this->q0C8 = aP1; /*0x71bbd4*/
+  this->q032 = aP1; /*0x71bbd4*/
   this->q0CC = 0; /*0x71bbda*/
   this->q0CD = 0; /*0x71bbe0*/
   this->attachedTag = 0; /*0x71bbe6*/
   this->q0D4 = 0; /*0x71bbec*/
-  this->q0D8 = 0; /*0x71bbf2*/
+  this->occupant = 0; /*0x71bbf2*/
   this->q037 = 0; /*0x71bbf8*/
   *this = &TerrainClass::`vftable'; /*0x71bbff*/
   this->vtable2 = &off_7F5200; /*0x71bc05*/
   this->vtable3 = &TerrainClass::`vftable'; /*0x71bc0b*/
   this->vtable4 = &vt_TerrainClass; /*0x71bc12*/
   AbstractClass::GenerateUniqueID((int)(this + 1)); /*0x71bc19*/
-  this->health = (void *)*((_DWORD *)this->q0C8 + 40); /*0x71bc2e*/
+  this->health = (void *)*((_DWORD *)this->q032 + 40); /*0x71bc2e*/
   if ( *(_WORD *)aP2->__pad_0 != *(_WORD *)&stru_B05488.__pad_579C[16588] /*0x71bc48*/
     || *(_WORD *)&aP2->__pad_0[2] != *(_WORD *)&stru_B05488.__pad_579C[16590] )
   {
@@ -10077,19 +10077,19 @@ TerrainClass *__thiscall TerrainClass::Construct(void **this, TerrainTypeClass *
   this->Type = v4; /*0x71bbbb*/
   this->nextObject = 0; /*0x71bbc1*/
   this->q031 = (void *)1; /*0x71bbc7*/
-  this->q0C8 = aP1; /*0x71bbd4*/
+  this->q032 = aP1; /*0x71bbd4*/
   this->q0CC = 0; /*0x71bbda*/
   this->q0CD = 0; /*0x71bbe0*/
   this->attachedTag = 0; /*0x71bbe6*/
   this->q0D4 = 0; /*0x71bbec*/
-  this->q0D8 = 0; /*0x71bbf2*/
+  this->occupant = 0; /*0x71bbf2*/
   this->q037 = 0; /*0x71bbf8*/
   *this = &TerrainClass::`vftable'; /*0x71bbff*/
   this->vtable2 = &off_7F5200; /*0x71bc05*/
   this->vtable3 = &TerrainClass::`vftable'; /*0x71bc0b*/
   this->vtable4 = &vt_TerrainClass; /*0x71bc12*/
   AbstractClass::GenerateUniqueID((int)(this + 1)); /*0x71bc19*/
-  this->health = (void *)*((_DWORD *)this->q0C8 + 40); /*0x71bc2e*/
+  this->health = (void *)*((_DWORD *)this->q032 + 40); /*0x71bc2e*/
   if ( *(_WORD *)aP2->__pad_0 != *(_WORD *)&stru_B05488.__pad_579C[16588] /*0x71bc48*/
     || *(_WORD *)&aP2->__pad_0[2] != *(_WORD *)&stru_B05488.__pad_579C[16590] )
   {
@@ -10342,7 +10342,7 @@ void __thiscall TerrainClass::Draw(unsigned int *this, int *a2, int *a3)
   v16 = (*(int (__thiscall **)(unsigned int *))(v5 + 108))(this); /*0x71c1ec*/
   if ( v16 ) /*0x71c1f0*/
   {
-    if ( *(_BYTE *)(this->q0C8 + 691) ) /*0x71c1fe*/
+    if ( *(_BYTE *)(this->q032 + 691) ) /*0x71c1fe*/
     {
       v7 = this->q02B; /*0x71c208*/
     }
@@ -10362,7 +10362,7 @@ void __thiscall TerrainClass::Draw(unsigned int *this, int *a2, int *a3)
     v11 = -(int)ZCoordToScreenY(v10); /*0x71c25b*/
     if ( !*(_DWORD *)(v6 + 52) ) /*0x71c258*/
       TacticalClass::SetView(v6, 0, 0x10000, 0, 1000, 1000, 1000); /*0x71c27b*/
-    v12 = this->q0C8; /*0x71c280*/
+    v12 = this->q032; /*0x71c280*/
     if ( *(_BYTE *)(v12 + 689) ) /*0x71c286*/
     {
       v13 = MEMORY[0x87F6BC]; /*0x71c294*/
@@ -10435,7 +10435,7 @@ void __thiscall TerrainClass::_vt70(unsigned __int8 *this, int *a2, int *a3)
     v10 = -(int)ZCoordToScreenY(v9); /*0x71c3ea*/
     if ( !v4[13] ) /*0x71c3e7*/
       TacticalClass::SetView((int)v4, 0, 0x10000, 0, 1000, 1000, 1000); /*0x71c40a*/
-    if ( *(_BYTE *)(this->q0C8 + 689) ) /*0x71c415*/
+    if ( *(_BYTE *)(this->q032 + 689) ) /*0x71c415*/
     {
       v11 = MEMORY[0x87F6BC]; /*0x71c423*/
       v12 = *((__int16 *)v4 + 133); /*0x71c429*/
@@ -11095,7 +11095,7 @@ char __thiscall TerrainClass::ProcessSpawnAnim(int this, _DWORD *a1, AbstractCla
 // ==== 0x0071D150  TerrainClass::GetOffset  this=TerrainClass  sig=csp ====
 unsigned int __thiscall IRTTITypeInfo::GetOffset(Concurrency::details::SchedulerBase *this)
 {
-  return this->q0C8; /*0x71d156*/
+  return this->q032; /*0x71d156*/
 }
 
 
@@ -13057,7 +13057,7 @@ char __thiscall TEventClass::GetStateB_SpyEvent(_DWORD *this)
 // ==== 0x0071FA30  TriggerClass::GetValue  this=TriggerClass  sig=csp ====
 int __thiscall sub_71FA30(_DWORD *this)
 {
-  return this->q054; /*0x71fa33*/
+  return this->u32_54; /*0x71fa33*/
 }
 
 

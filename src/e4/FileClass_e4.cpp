@@ -15,6 +15,7 @@ int FileClass::Write(CCFileClass * aP1, DWORD nNumberOfBytesToWrite)
   }
   return FileClass::BufferedWriter(this, aP1, nNumberOfBytesToWrite); /*0x473b0c*/
 }
+}
 
 // 0x473FC0
 int FileClass::SetFileName(IUnknown * aP1)
@@ -22,6 +23,7 @@ int FileClass::SetFileName(IUnknown * aP1)
 {
   this->q068 = 0; /*0x473fc4*/
   return FileClass::OpenWithCDSearch(this, aP1); /*0x473fd1*/
+}
 }
 
 // 0x65CBF0
@@ -65,6 +67,7 @@ LABEL_12:
     goto LABEL_13; /*0x65cc8a*/
   }
   return 1; /*0x65cbfb*/
+}
 }
 
 // 0x65CCE0
@@ -131,6 +134,7 @@ int FileClass::Read(BufferIOFileClass * aP1, AbstractClass * aP2)
   if ( v14 ) /*0x65cdb9*/
     this->vt_slot_52(); /*0x65cdbf*/
   return NumberOfBytesRead; /*0x65cd07*/
+}
 }
 
 // 0x65CF00
@@ -293,6 +297,7 @@ LABEL_27:
   }
   return result; /*0x65d020*/
 }
+}
 
 // 0x65D150
 int FileClass::Close()
@@ -305,6 +310,7 @@ int FileClass::Close()
     this->vt_slot_40(0, 0); /*0x65d173*/
   this->vt_slot_52(); /*0x65d17a*/
   return 1; /*0x65d182*/
+}
 }
 
 // 0x401950

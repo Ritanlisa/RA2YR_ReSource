@@ -12,7 +12,8 @@ int AlphaShapeClass::SD_vt13(int a2)
   Power::TimerProcess(this->q028); /*0x420db4*/
   Power::TimerProcess(this->q02C); /*0x420dbf*/
   Power::TimerProcess(this->q030); /*0x420dca*/
-  return Power::TimerProcess(*(_DWORD *)(this + 52)); /*0x420dda*/
+  return Power::TimerProcess(this->u32_34); /*0x420dda*/
+}
 }
 
 // 0x420E40
@@ -23,6 +24,7 @@ int AlphaShapeClass::SD_vt06(TechnoTypeClass * aP0, int * a1, int aP2)
 
   Prefix = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x420e4f*/
   return Prefix >= 0 ? 0 : Prefix;
+}
 }
 
 // 0x420E70
@@ -35,6 +37,7 @@ int AlphaShapeClass::SD_vt10(int a2, int a3)
   if ( a2 == this->AlphaShapeClass_field_0x24 ) /*0x420e79*/
     this->q03C = 1; /*0x420e7b*/
   return result; /*0x420e7f*/
+}
 }
 
 // 0x421730

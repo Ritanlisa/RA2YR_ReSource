@@ -113,6 +113,7 @@ LABEL_27:
   return dwNewLong; /*0x531f5a*/
 }
 } // namespace gamemd
+}
 
 // 0x531F60
 int MainMenu::DlgProc(HWND hWnd, int a2, int a3, int a4)
@@ -180,4 +181,5 @@ int MainMenu::DlgProc(HWND hWnd, int a2, int a3, int a4)
     return 0; /*0x5320f1*/
   }
   return result; /*0x532017*/
+}
 }

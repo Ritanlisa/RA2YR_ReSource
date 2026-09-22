@@ -24,3 +24,4 @@ int Explosion::RemoveItem(int a2)
   }
   return 1; /*0x53ddc9*/
 }
+}

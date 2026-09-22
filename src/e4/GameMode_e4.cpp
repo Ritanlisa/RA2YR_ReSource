@@ -11,6 +11,7 @@ int GameMode::IsValid(unsigned int a2)
   return (!*(this + 63) || a2 != -2) && a2 < 4; /*0x5d5df2*/
 }
 } // namespace gamemd
+}
 
 // 0x6B8CA0
 namespace gamemd {
@@ -151,3 +152,4 @@ unsigned int GameMode::ReadFlagsFromINI(CCINIClass * aP1)
   return result; /*0x6b8ed9*/
 }
 } // namespace gamemd
+}

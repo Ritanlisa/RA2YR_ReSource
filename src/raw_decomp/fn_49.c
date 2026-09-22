@@ -5311,7 +5311,7 @@ int __thiscall BlitTransXlatAlpha_ushort::_vt01(
   v11 = (261 * (a8 <= 0 ? 0 : a8)) >> 11;
   if ( v11 > 254 ) /*0x493e18*/
     v11 = 254; /*0x493e1a*/
-  result = this->q008 + (v11 << 9); /*0x493e25*/
+  result = this->ptr_8 + (v11 << 9); /*0x493e25*/
   if ( a4 > 0 ) /*0x493e2d*/
   {
     v14 = MEMORY[0x87E8A4]; /*0x493e35*/
@@ -6551,7 +6551,7 @@ int __thiscall BlitTransXlatAlphaZRead_ushort::_vt01(
   v11 = (261 * (a8 <= 0 ? 0 : a8)) >> 11;
   if ( v11 > 254 ) /*0x494b8b*/
     v11 = 254; /*0x494b8d*/
-  result = this->q008 + (v11 << 9); /*0x494b98*/
+  result = this->ptr_8 + (v11 << 9); /*0x494b98*/
   v17 = result; /*0x494ba0*/
   if ( a4 > 0 ) /*0x494ba4*/
   {
@@ -6602,7 +6602,7 @@ int __thiscall BlitTransXlatAlphaZRead_ushort::BlitRect(
   v12 = (261 * (a8 <= 0 ? 0 : a8)) >> 11;
   if ( v12 > 254 ) /*0x494c6b*/
     v12 = 254; /*0x494c6d*/
-  result = this->q008 + (v12 << 9); /*0x494c78*/
+  result = this->ptr_8 + (v12 << 9); /*0x494c78*/
   v18 = result; /*0x494c80*/
   if ( a4 > 0 ) /*0x494c84*/
   {
@@ -6666,7 +6666,7 @@ int __thiscall BlitTransXlatAlphaZRead_ushort::_vt04(
         int a8,
         int a9)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD, int))(this->q008)( /*0x494d7f*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD, int))(this->ptr_8)( /*0x494d7f*/
            this,
            a2,
            a3,
@@ -14780,25 +14780,25 @@ char __fastcall Hex_EncodeDigit(int a1)
 _DWORD *__thiscall MissionClass_Init(_DWORD *this)
 {
   this->abstractFlags = -2; /*0x49b619*/
-  this->q0C0 = -2; /*0x49b61c*/
+  this->u32_30 = -2; /*0x49b61c*/
   this->nextArrayIndex = -2; /*0x49b61f*/
-  this->q0D0 = -2; /*0x49b622*/
+  this->u8_34 = -2; /*0x49b622*/
   *(_BYTE *)this = 0; /*0x49b628*/
   this->q070 = 0; /*0x49b62a*/
-  this->q03C = 0; /*0x49b62d*/
+  this->u32_3C = 0; /*0x49b62d*/
   this->q044 = -1; /*0x49b630*/
   this->q1B0 = 0; /*0x49b633*/
-  this->uniqueId = 0; /*0x49b636*/
-  this->q038 = -1; /*0x49b639*/
+  this->q040 = 0; /*0x49b636*/
+  this->u32_38 = -1; /*0x49b639*/
   this->q048 = 0; /*0x49b63c*/
   this->q04C = 0; /*0x49b63f*/
-  this->q050 = 0; /*0x49b642*/
+  this->u32_50 = 0; /*0x49b642*/
   this->q054 = 0; /*0x49b645*/
   this->q058 = 0; /*0x49b648*/
   this->q05C = 0; /*0x49b64b*/
   this->q068 = 0; /*0x49b64e*/
   this->q060 = 0; /*0x49b651*/
-  this->Name = 0; /*0x49b654*/
+  this->u32_64 = 0; /*0x49b654*/
   return this; /*0x49b657*/
 }
 
@@ -14863,7 +14863,7 @@ void __thiscall String::AssignWideToChar(char *this, CampaignScore *aP1, Campaig
   if ( aP2 ) /*0x49b79c*/
     strcpy(this + 28, ToWideStringChar(aP2->__pad_0)); /*0x49b7bc*/
   else
-    *(this + 28) = 0; /*0x49b7cc*/
+    this->u32_70 = 0; /*0x49b7cc*/
 }
 
 
@@ -15225,7 +15225,7 @@ char __thiscall MPCooperative::WriteCoopSaveINI(char *this)
   if ( !*this ) /*0x49be4d*/
     return 1; /*0x49be4d*/
   v2 = this + 28; /*0x49be58*/
-  if ( !this->q070 ) /*0x49be55*/
+  if ( !this->u32_1C ) /*0x49be55*/
     return 1; /*0x49c0c5*/
   CCFileClass::Construct(v22, MEMORY[0x81F0F8]); /*0x49be70*/
   v15[1] = 0; /*0x49be79*/
@@ -15471,16 +15471,16 @@ LABEL_44:
                              -2);
   this->attachedTag = INIClass::ReadInt_Overwrite(v28, unk_81F164, -2); /*0x49c388*/
   this->q012 = INIClass::ReadInt_Overwrite(v28, unk_81F15C, 0); /*0x49c390*/
-  this->q04C = INIClass::ReadInt_Overwrite(v28, unk_81F154, 0); /*0x49c3b6*/
+  this->u8_D = INIClass::ReadInt_Overwrite(v28, unk_81F154, 0); /*0x49c3b6*/
   this->abstractFlags = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F14C], 0); /*0x49c3cd*/
   this->q054 = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F144], 0); /*0x49c3d5*/
-  this->q058 = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F13C], 0); /*0x49c3fb*/
-  this->q017 = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F134], 0); /*0x49c412*/
+  this->q016 = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F13C], 0); /*0x49c3fb*/
+  this->q05C = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F134], 0); /*0x49c412*/
   this->nextArrayIndex = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F12C], 0); /*0x49c41a*/
   this->customSound = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F124], 0); /*0x49c440*/
   Int_Overwrite = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F11C], 0); /*0x49c443*/
   v20 = this->q011; /*0x49c448*/
-  this->q01A = Int_Overwrite; /*0x49c44b*/
+  this->bombVisible = Int_Overwrite; /*0x49c44b*/
   if ( !MEMORY[0x89F578] ) /*0x49c455*/
     CampaignClass::LoadFromINI((int)&MEMORY[0x89F518]); /*0x49c45c*/
   if ( v20 < 0 || v20 >= MEMORY[0x89F574] ) /*0x49c46f*/
@@ -15568,7 +15568,7 @@ char __thiscall CampaignClass_SaveProgress(char *this)
   if ( v3 < 0 || v3 >= MEMORY[0x89F574] ) /*0x49c5f5*/
     return 0; /*0x49cae5*/
   v27 = MEMORY[0x89F570] + 76 * v3; /*0x49c60d*/
-  if ( this->uniqueId == this->q038 ) /*0x49c616*/
+  if ( this->uniqueId == this->u32_38 ) /*0x49c616*/
     return 1; /*0x49c61b*/
   CCFileClass::Construct(v36, MEMORY[0x81F0F8]); /*0x49c631*/
   v28[1] = 0; /*0x49c63a*/
@@ -15654,11 +15654,11 @@ char __thiscall CampaignClass_SaveProgress(char *this)
   (*(void (__thiscall **)(_DWORD *, char *))(v33[0] + 8))(v33, MEMORY[0x81F0F8]); /*0x49c807*/
   (*(void (__thiscall **)(_DWORD *, int))(v33[0] + 28))(v33, 2); /*0x49c81a*/
   INIClass::ClearSection((int)v28, (int)Block, 0); /*0x49c828*/
-  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, unk_81F19C, this->q038, 0); /*0x49c841*/
+  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, unk_81F19C, this->u32_38, 0); /*0x49c841*/
   INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, unk_81F184, this->alignmentPadding_3, 0); /*0x49c85a*/
   for ( j = 0; /*0x49c863*/
         j < *(char *)(v27 + 8);
-        INIClass::SetString((char *)v28, (unsigned __int8 *)Block, Buffer, *(char **)(this->q03C + 4 * j++)) )
+        INIClass::SetString((char *)v28, (unsigned __int8 *)Block, Buffer, *(char **)(this->u32_3C + 4 * j++)) )
   {
     sprintf(Buffer, MEMORY[0x81F114], j + 1); /*0x49c87d*/
   }
@@ -15689,14 +15689,14 @@ char __thiscall CampaignClass_SaveProgress(char *this)
   }
 LABEL_47:
   INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, MEMORY[0x81F11C], this->q01A, 0); /*0x49c962*/
-  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, unk_81F15C, this->q012, 0); /*0x49c98f*/
-  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, unk_81F154, this->q04C, 0); /*0x49c9a8*/
+  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, unk_81F15C, this->description_128, 0); /*0x49c98f*/
+  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, unk_81F154, this->q013, 0); /*0x49c9a8*/
   INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, MEMORY[0x81F14C], this->abstractFlags, 0); /*0x49c9c1*/
   INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, MEMORY[0x81F144], this->q054, 0); /*0x49c9da*/
-  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, MEMORY[0x81F13C], this->q058, 0); /*0x49c9f3*/
+  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, MEMORY[0x81F13C], this->q016, 0); /*0x49c9f3*/
   INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, MEMORY[0x81F134], this->q017, 0); /*0x49ca0c*/
   INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, MEMORY[0x81F12C], this->nextArrayIndex, 0); /*0x49ca25*/
-  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, MEMORY[0x81F124], this->Name, 0); /*0x49ca3e*/
+  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, MEMORY[0x81F124], this->u32_64, 0); /*0x49ca3e*/
   INIClass::WriteDigest(v28, (int)v33, 0); /*0x49ca51*/
   CCFileClass::Reset(v33); /*0x49ca5d*/
   v33[0] = &vt_CCFileClass; /*0x49ca67*/
@@ -15853,15 +15853,15 @@ char __thiscall sub_49CC50(
 
   if ( a2 < 0 || a2 >= this->q010 ) /*0x49cc5f*/
     return 0; /*0x49ccde*/
-  v59 = this->q048; /*0x49cc66*/
+  v59 = this->IsInitialized; /*0x49cc66*/
   this->q038 = a2; /*0x49cc69*/
-  this->q048 = a20 + v59; /*0x49cc75*/
-  this->q04C += a48; /*0x49cc81*/
+  this->IsInitialized = a20 + v59; /*0x49cc75*/
+  this->q013 += a48; /*0x49cc81*/
   this->q014 += a24; /*0x49cc90*/
   this->q054 += a52; /*0x49cc9c*/
-  this->q058 += a16; /*0x49ccab*/
+  this->Count += a16; /*0x49ccab*/
   this->q05C += a44; /*0x49ccb7*/
-  this->q018 += a28; /*0x49ccc6*/
+  this->u32_18 += a28; /*0x49ccc6*/
   this->q064 += a56; /*0x49ccd2*/
   this->q068 = a3; /*0x49ccd5*/
   return 1; /*0x49ccdb*/
@@ -16188,7 +16188,7 @@ bool __thiscall MPCooperative::ReadCoopSaveINI(char *this)
   if ( !*this ) /*0x49d12b*/
     return 0; /*0x49d12b*/
   v2 = this + 28; /*0x49d137*/
-  if ( !this->q070 ) /*0x49d134*/
+  if ( !this->u32_1C ) /*0x49d134*/
     return 0; /*0x49d13c*/
   CCFileClass::Construct(v16, MEMORY[0x81F0F8]); /*0x49d14b*/
   v19[1] = 0; /*0x49d159*/
@@ -16452,14 +16452,14 @@ char __thiscall SerializeCampaignOptions(char *this)
     stru_81F218,
     this->q011,
     this->attachedBomb,
-    this->q01A,
+    this->bombVisible,
     this->q012,
     this->abstractFlags,
-    this->q058,
+    this->q016,
     this->nextArrayIndex,
-    this->q04C,
+    this->u8_D,
     this->q054,
-    this->q017,
+    this->q05C,
     this->customSound);
   if ( *((int *)this + 16) > 0 ) /*0x49d719*/
   {
@@ -17458,7 +17458,7 @@ _DWORD *__thiscall INISectionList_Constructor(_DWORD *this)
   this->q004 = &vt_GenericNode; /*0x49e8f5*/
   this->q005 = 0; /*0x49e8fb*/
   this->q006 = 0; /*0x49e8fe*/
-  this->q004 = &vt_GenericNode; /*0x49e901*/
+  this->u32_10 = &vt_GenericNode; /*0x49e901*/
   *this = &vt_GenericList; /*0x49e907*/
   if ( this != (_DWORD *)-16 ) /*0x49e90d*/
   {
@@ -17803,7 +17803,7 @@ _DWORD *__thiscall sub_49ECD0(_DWORD *this, int a2, int a3)
     }
   }
   *this = &DynamicVectorClass<DynamicVectorClass<char *> *>::`vftable'; /*0x49ed13*/
-  this->q005 = 10; /*0x49ed19*/
+  this->u32_14 = 10; /*0x49ed19*/
   this->q010 = 0; /*0x49ed20*/
   return this; /*0x49ed29*/
 }

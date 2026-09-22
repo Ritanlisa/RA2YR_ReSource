@@ -560,6 +560,7 @@ LABEL_147:
   return 1;
 }
 } // namespace gamemd
+}
 
 // 0x59E740
 namespace gamemd {
@@ -1079,7 +1080,7 @@ LABEL_6:
             GenerateTerrainMap(0, 0x10000, v53, (MapClass *)v54[194], &v116, 0);
             v55 = v119[1];
             v126 = v52 + 3;
-            v115 = (MouseClass *)(*(_DWORD *)v119 + 0x20000);
+            v115 = (MouseClass *)(v119->u32_20000;
             v118 = *(_DWORD *)v119 + 0x20000;
             HIWORD(v115) = v119[1] - (v52 + 3);
             int v56 = g_MapCellHeight_Value;
@@ -1404,3 +1405,4 @@ LABEL_6:
   return v40;
 }
 } // namespace gamemd
+}

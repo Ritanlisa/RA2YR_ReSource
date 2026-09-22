@@ -70,6 +70,7 @@ LABEL_9:
   return result; /*0x41406d*/
 }
 } // namespace gamemd
+}
 
 // 0x415B10
 namespace gamemd {
@@ -121,6 +122,7 @@ int AircraftClass::FindLandingCell(int * a2, int a3)
   return 1; /*0x415c45*/
 }
 } // namespace gamemd
+}
 
 // 0x4165C0
 namespace gamemd {
@@ -160,6 +162,7 @@ void AircraftClass_DeployWithAnim()
   return v11; /*0x4165ff*/
 }
 } // namespace gamemd
+}
 
 // 0x417CC0
 namespace gamemd {
@@ -283,6 +286,7 @@ LABEL_36:
   return v7; /*0x417cdf*/
 }
 } // namespace gamemd
+}
 
 // 0x4196B0
 namespace gamemd {
@@ -318,6 +322,7 @@ int AircraftClass::ValidateLandingCell(unsigned int * a2, int a3, int a4, int a5
     return 7; /*0x41979e*/
 }
 } // namespace gamemd
+}
 
 // 0x41A940
 namespace gamemd {
@@ -352,6 +357,7 @@ int AircraftClass::EvaluateTargetingState()
   }
 }
 } // namespace gamemd
+}
 
 // 0x41AA80
 namespace gamemd {
@@ -489,6 +495,7 @@ LABEL_35:
   return v6; /*0x41aaab*/
 }
 } // namespace gamemd
+}
 
 // 0x41ADF0
 namespace gamemd {
@@ -560,6 +567,7 @@ LABEL_4:
   return result; /*0x41ae9b*/
 }
 } // namespace gamemd
+}
 
 // 0x41B430
 namespace gamemd {
@@ -643,6 +651,7 @@ LABEL_18:
   return result; /*0x41b5b5*/
 }
 } // namespace gamemd
+}
 
 // 0x41B9F0
 namespace gamemd {
@@ -680,6 +689,7 @@ LABEL_4:
   return result; /*0x41ba39*/
 }
 } // namespace gamemd
+}
 
 // 0x41BB30
 namespace gamemd {
@@ -717,6 +727,7 @@ LABEL_4:
   return result; /*0x41bb83*/
 }
 } // namespace gamemd
+}
 
 // 0x417BD0
 namespace gamemd {

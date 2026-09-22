@@ -44,7 +44,7 @@ AbstractClass * * E4Recv_690400::sub_690400()
   GetClientRect(g_hWnd, &Rect); /*0x690412*/
   ClientToScreen(g_hWnd, (LPPOINT)&Rect); /*0x690423*/
   AbstractClass *v2 = *this; /*0x690429*/
-  AbstractClass *v3 = *(this + 1); /*0x69042f*/
+  AbstractClass *v3 = this->M4; /*0x69042f*/
   _DWORD v5[4]; // [esp+8h] [ebp-30h] BYREF
   v5[0] = v2; /*0x690432*/
   _DWORD v6[4]; // [esp+18h] [ebp-20h] BYREF
@@ -72,6 +72,7 @@ AbstractClass * * E4Recv_690400::sub_690400()
   return result; /*0x6904b7*/
 }
 } // namespace gamemd
+}
 
 // 0x693B70
 namespace gamemd {
@@ -328,6 +329,7 @@ LABEL_78:
   return v30; /*0x693d6c*/
 }
 } // namespace gamemd
+}
 
 // 0x6941A0
 namespace gamemd {
@@ -542,6 +544,7 @@ LABEL_54:
   return v21; /*0x694755*/
 }
 } // namespace gamemd
+}
 
 // 0x694760
 namespace gamemd {
@@ -978,6 +981,7 @@ LABEL_122:
   return v48; /*0x6947de*/
 }
 } // namespace gamemd
+}
 
 // 0x6951F0
 namespace gamemd {
@@ -1071,6 +1075,7 @@ LABEL_16:
   return 1; /*0x695401*/
 }
 } // namespace gamemd
+}
 
 // 0x695760
 namespace gamemd {
@@ -1282,6 +1287,7 @@ LABEL_38:
   return 0; /*0x6957ff*/
 }
 } // namespace gamemd
+}
 
 // 0x6994F0
 namespace gamemd {
@@ -1443,6 +1449,7 @@ LABEL_20:
   return BufferIOFileClass::Dtor(v20); /*0x699970*/
 }
 } // namespace gamemd
+}
 
 // 0x69B690
 namespace gamemd {
@@ -1490,6 +1497,7 @@ LABEL_10:
   }
 }
 } // namespace gamemd
+}
 
 // 0x69BCC0
 namespace gamemd {
@@ -1513,6 +1521,7 @@ void sub_69BCC0(ObjectClass * aP0)
   return (int)v1->__pad_0; /*0x69bcef*/
 }
 } // namespace gamemd
+}
 
 // 0x69F0C0
 namespace gamemd {
@@ -1525,11 +1534,11 @@ void * E4Recv_69F0C0::sub_69F0C0(void * a2)
   char v14[48]; // [esp+4Ch] [ebp-30h] BYREF
 
   Matrix3x4::Identity(v13); /*0x69f0cc*/
-  ObjectClass *v3 = *(this + 12); /*0x69f0d1*/
+  ObjectClass *v3 = *(&this->u32_42); /*0x69f0d1*/
   if ( v3 ) /*0x69f0da*/
   {
-    int v4 = *(this + 9); /*0x69f0e0*/
-    int v5 = *(this + 11); /*0x69f0e3*/
+    int v4 = this->M36; /*0x69f0e0*/
+    int v5 = *(&this->u32_41); /*0x69f0e3*/
     if ( v4 != -1 ) /*0x69f0ef*/
     {
       if ( (int)g_CurrentFrame - v4 >= v5 ) /*0x69f0f7*/
@@ -1537,14 +1546,14 @@ void * E4Recv_69F0C0::sub_69F0C0(void * a2)
       else
         v5 -= (int)g_CurrentFrame - v4; /*0x69f0f9*/
     }
-    if ( (double)(v3 - v5) / (double)*(this + 12) < 1.0 ) /*0x69f118*/
+    if ( (double)(v3 - v5) / (double)*(&this->u32_42) < 1.0 ) /*0x69f118*/
     {
   double v7; // st7
-      ObjectClass *v6 = *(this + 12); /*0x69f11a*/
+      ObjectClass *v6 = *(&this->u32_42); /*0x69f11a*/
       if ( v6 ) /*0x69f123*/
       {
-        int v8 = *(this + 9); /*0x69f12d*/
-        int v9 = *(this + 11); /*0x69f130*/
+        int v8 = this->M36; /*0x69f12d*/
+        int v9 = *(&this->u32_41); /*0x69f130*/
         if ( v8 != -1 ) /*0x69f136*/
         {
           if ( (int)g_CurrentFrame - v8 >= v9 ) /*0x69f13e*/
@@ -1552,17 +1561,17 @@ void * E4Recv_69F0C0::sub_69F0C0(void * a2)
           else
             v9 -= (int)g_CurrentFrame - v8; /*0x69f140*/
         }
-        v7 = (double)(v6 - v9) / (double)*(this + 12); /*0x69f150*/
+        v7 = (double)(v6 - v9) / (double)*(&this->u32_42); /*0x69f150*/
       }
       else
       {
         v7 = 1.0; /*0x69f125*/
       }
-      v10 = InterpolateVoxelAnimPose(v14, *(this + 8), *(this + 7), v7); /*0x69f165*/
+      v10 = InterpolateVoxelAnimPose(v14, this->M32, this->M28, v7); /*0x69f165*/
       goto LABEL_17; /*0x69f16a*/
     }
   }
-  v11 = *(this + 7); /*0x69f16c*/
+  v11 = this->M28; /*0x69f16c*/
   if ( v11 ) /*0x69f171*/
   {
     v10 = CopyAudioData(v14, v11); /*0x69f177*/
@@ -1573,6 +1582,7 @@ LABEL_17:
   return a2; /*0x69f19a*/
 }
 } // namespace gamemd
+}
 
 // 0x690150
 namespace gamemd {
@@ -2356,7 +2366,7 @@ HWND E4Recv_696950::sub_696950()
     EnableWindow(v3, 0);
     SendMessageA(v3, 0x4B5u, 0x10u, this + 8);
     this->M23 = 0;
-    String::Trim((char *)(this + 8));
+    this->String_8.Trim();
     _strupr((char *)(this + 8));
     return ListBox::SetCustomEntry((HWND *)this, 1625, 3, (void *)(this + 8));
   }

@@ -242,6 +242,7 @@ void WOL_ResetSystem()
   return result; /*0x7806b7*/
 }
 } // namespace gamemd
+}
 
 // 0x7806C0
 namespace gamemd {
@@ -346,6 +347,7 @@ AbstractClass * * PopulateWOLLobbyListBox()
   }
 }
 } // namespace gamemd
+}
 
 // 0x780A90
 namespace gamemd {
@@ -469,6 +471,7 @@ LABEL_27:
   return a1; /*0x780d7b*/
 }
 } // namespace gamemd
+}
 
 // 0x780E30
 namespace gamemd {
@@ -564,6 +567,7 @@ LABEL_14:
   return (CampaignScore *)a1; /*0x78104c*/
 }
 } // namespace gamemd
+}
 
 // 0x781130
 namespace gamemd {
@@ -754,6 +758,7 @@ LABEL_85:
       && (aP0->abstractFlags || ((int)aP0->NeedsSaveOrLink & 0x100) != 0);
 }
 } // namespace gamemd
+}
 
 // 0x781380
 namespace gamemd {
@@ -778,6 +783,7 @@ int sub_781380(unsigned int * a1, unsigned int * a2)
   }
 }
 } // namespace gamemd
+}
 
 // 0x781480
 namespace gamemd {
@@ -1142,6 +1148,7 @@ LABEL_100:
   DeleteAndZero((int)&a2); /*0x781caf*/
 }
 } // namespace gamemd
+}
 
 // 0x781FB0
 namespace gamemd {
@@ -1307,6 +1314,7 @@ LABEL_75:
   return result; /*0x781fea*/
 }
 } // namespace gamemd
+}
 
 // 0x782320
 namespace gamemd {
@@ -1732,6 +1740,7 @@ LABEL_160:
   DeleteAndZero(&v46); /*0x782b93*/
 }
 } // namespace gamemd
+}
 
 // 0x782BB0
 namespace gamemd {
@@ -1965,6 +1974,7 @@ LABEL_50:
   return DynamicClass::Insert((int *)&g_WOL_State, (HashTable *)a1, (IUnknown *)aP2); /*0x782be6*/
 }
 } // namespace gamemd
+}
 
 // 0x7830C0
 namespace gamemd {
@@ -2013,6 +2023,7 @@ int sub_7830C0(signed int * a1, signed int * a2)
   }
 }
 } // namespace gamemd
+}
 
 // 0x783270
 namespace gamemd {
@@ -2141,6 +2152,7 @@ void SortWOLPlayerList(char a1)
   }
 }
 } // namespace gamemd
+}
 
 // 0x7835C0
 namespace gamemd {
@@ -2187,6 +2199,7 @@ LABEL_6:
   return _strcmpi(&v11[36], &v10[36]); /*0x7835e0*/
 }
 } // namespace gamemd
+}
 
 // 0x7836E0
 namespace gamemd {
@@ -2233,6 +2246,7 @@ LABEL_6:
   return _strcmpi(&v11[36], &v10[36]); /*0x783700*/
 }
 } // namespace gamemd
+}
 
 // 0x786080
 namespace gamemd {
@@ -2323,6 +2337,7 @@ Coord * * WOL_HandleLogout()
   return (char)v1; /*0x78626a*/
 }
 } // namespace gamemd
+}
 
 // 0x786DC0
 namespace gamemd {
@@ -2365,6 +2380,7 @@ int E4Recv_786DC0::sub_786DC0()
   return 1; /*0x786e2f*/
 }
 } // namespace gamemd
+}
 
 // 0x787010
 namespace gamemd {
@@ -2720,6 +2736,7 @@ LABEL_87:
   return 1; /*0x787348*/
 }
 } // namespace gamemd
+}
 
 // 0x787770
 namespace gamemd {
@@ -3144,6 +3161,7 @@ LABEL_88:
   return result; /*0x788148*/
 }
 } // namespace gamemd
+}
 
 // 0x788180
 namespace gamemd {
@@ -3351,6 +3369,7 @@ LABEL_56:
   return v8; /*0x788619*/
 }
 } // namespace gamemd
+}
 
 // 0x788710
 namespace gamemd {
@@ -3394,6 +3413,7 @@ int sub_788710(int a1, char a2)
   return g_WOL_ChannelState == 0; /*0x7887f6*/
 }
 } // namespace gamemd
+}
 
 // 0x788800
 namespace gamemd {
@@ -3465,6 +3485,7 @@ LABEL_14:
   }
 }
 } // namespace gamemd
+}
 
 // 0x788A30
 namespace gamemd {
@@ -3509,6 +3530,7 @@ LABEL_9:
   }
 }
 } // namespace gamemd
+}
 
 // 0x788B00
 namespace gamemd {
@@ -3870,6 +3892,7 @@ LABEL_75:
   return CreateAccountWOL_Create_72C290(); /*0x788c94*/
 }
 } // namespace gamemd
+}
 
 // 0x789500
 namespace gamemd {
@@ -3945,6 +3968,7 @@ LABEL_15:
   return v6; /*0x789626*/
 }
 } // namespace gamemd
+}
 
 // 0x7896A0
 namespace gamemd {
@@ -4077,6 +4101,7 @@ LABEL_30:
   }
 }
 } // namespace gamemd
+}
 
 // 0x789960
 namespace gamemd {
@@ -4162,6 +4187,7 @@ void ValidateJoinWOL()
   return result; /*0x789974*/
 }
 } // namespace gamemd
+}
 
 // 0x789B60
 namespace gamemd {
@@ -4538,6 +4564,7 @@ LABEL_71:
   return 1; /*0x789c37*/
 }
 } // namespace gamemd
+}
 
 // 0x78D120
 namespace gamemd {
@@ -4847,6 +4874,7 @@ LABEL_50:
   return 0; /*0x78d266*/
 }
 } // namespace gamemd
+}
 
 // 0x78DA30
 namespace gamemd {
@@ -4909,6 +4937,7 @@ Coord * * sub_78DA30(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
   return result; /*0x78da98*/
 }
 } // namespace gamemd
+}
 
 // 0x78E230
 namespace gamemd {
@@ -5170,6 +5199,7 @@ ObjectClass * * sub_78E230(HWND hWnd, UINT a2, WPARAM a3, HWND hCtl)
   }
 }
 } // namespace gamemd
+}
 
 // 0x78E950
 namespace gamemd {
@@ -5278,6 +5308,7 @@ void WOLobbySmallDlgProc(HWND hWnd, UINT a2, WPARAM a3, HWND hCtl)
   return 0; /*0x78e97b*/
 }
 } // namespace gamemd
+}
 
 // 0x78EBC0
 namespace gamemd {
@@ -5440,6 +5471,7 @@ LABEL_37:
   return result; /*0x78ec13*/
 }
 } // namespace gamemd
+}
 
 // 0x780A00
 namespace gamemd {

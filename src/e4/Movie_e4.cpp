@@ -31,14 +31,14 @@ AbstractClass * * Movie::SetupScreen(CCINIClass * aP1)
   char * v5 = &v4->vtable0[76 * (_DWORD)aP1]; /*0x49cb3a*/
   v6 = this->q044; /*0x49cb3d*/
   this->q048 = 0; /*0x49cb42*/
-  *(_DWORD *)(this + 76) = 0; /*0x49cb45*/
-  *(_DWORD *)(this + 80) = 0; /*0x49cb48*/
-  *(_DWORD *)(this + 84) = 0; /*0x49cb4b*/
-  *(_DWORD *)(this + 96) = 0; /*0x49cb4e*/
-  *(_DWORD *)(this + 100) = 0; /*0x49cb51*/
-  *(_DWORD *)(this + 88) = 0; /*0x49cb54*/
-  *(_DWORD *)(this + 92) = 0; /*0x49cb57*/
-  *(_DWORD *)(this + 104) = 0; /*0x49cb5a*/
+  this->u32_4C = 0; /*0x49cb45*/
+  this->u32_50 = 0; /*0x49cb48*/
+  this->u32_54 = 0; /*0x49cb4b*/
+  this->u32_60 = 0; /*0x49cb4e*/
+  this->u32_64 = 0; /*0x49cb51*/
+  this->ptr_58 = 0; /*0x49cb54*/
+  this->u32_5C = 0; /*0x49cb57*/
+  this->u32_68 = 0; /*0x49cb5a*/
   if ( v6 != aP1 ) /*0x49cb5d*/
   {
     if ( this->q03C ) /*0x49cb63*/
@@ -78,26 +78,28 @@ AbstractClass * * Movie::SetupScreen(CCINIClass * aP1)
   return 1; /*0x49cc3d*/
 }
 } // namespace gamemd
+}
 
 // 0x49E3B0
 namespace gamemd {
 CampaignClass * * Movie::GetSection(CCINIClass * aP1, CCINIClass * aP2)
 {
 {
-  if ( !*(_BYTE *)(this + 96) ) /*0x49e3b3*/
+  if ( !this->u32_60 ) /*0x49e3b3*/
     CampaignClass::LoadFromINI(this); /*0x49e3ba*/
-  if ( (int)aP1 < 0 || (int)aP1 >= *(_DWORD *)(this + 92) ) /*0x49e3ca*/
+  if ( (int)aP1 < 0 || (int)aP1 >= this->u32_5C ) /*0x49e3ca*/
   {
     *(_DWORD *)aP2->__pad_0 = 0; /*0x49e3e9*/
     return 0; /*0x49e3ef*/
   }
   else
   {
-    *(_DWORD *)aP2->__pad_0 = *(_DWORD *)(this + 88) + 76 * (_DWORD)aP1; /*0x49e3df*/
+    *(_DWORD *)aP2->__pad_0 = this->ptr_58 + 76 * (_DWORD)aP1; /*0x49e3df*/
     return 1; /*0x49e3dd*/
   }
 }
 } // namespace gamemd
+}
 
 // 0x5BED40
 namespace gamemd {
@@ -260,6 +262,7 @@ void Movie::Play(CCINIClass * aP0, int a2, CCINIClass * aP2, IUnknown * aP3, cha
   }
 }
 } // namespace gamemd
+}
 
 // 0x5BF260
 namespace gamemd {
@@ -267,6 +270,7 @@ void Movie_PlayWrapper()
 {
 // (no pseudocode — ASM-only function)
 } // namespace gamemd
+}
 
 // 0x7209D0
 namespace gamemd {
@@ -315,6 +319,7 @@ LABEL_10:
   return IsSoundEnabled; /*0x720a7b*/
 }
 } // namespace gamemd
+}
 
 // 0x720A80
 namespace gamemd {
@@ -374,6 +379,7 @@ unsigned int Movie::SelectNextBuildableType(AnimClass * aP1)
   }
 }
 } // namespace gamemd
+}
 
 // 0x49BC80
 namespace gamemd {

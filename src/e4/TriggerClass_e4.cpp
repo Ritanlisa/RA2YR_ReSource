@@ -71,6 +71,7 @@ char TriggerClass::FindByEventType(char a1)
   return 1; /*0x610961*/
 }
 } // namespace gamemd
+}
 
 // 0x71FA30
 namespace gamemd {
@@ -80,6 +81,7 @@ int TriggerClass::GetValue()
   return this->q054; /*0x71fa33*/
 }
 } // namespace gamemd
+}
 
 // 0x7264C0
 namespace gamemd {
@@ -127,6 +129,7 @@ LABEL_16:
   return v12; /*0x7265af*/
 }
 } // namespace gamemd
+}
 
 // 0x726820
 namespace gamemd {

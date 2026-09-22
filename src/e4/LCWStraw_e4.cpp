@@ -16,3 +16,4 @@ int LCWStraw::Dtor()
   this->q018 = 0; /*0x552477*/
   return Straw::Dtor(this); /*0x552483*/
 }
+}

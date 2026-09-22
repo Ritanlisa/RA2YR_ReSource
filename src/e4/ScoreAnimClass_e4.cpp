@@ -30,13 +30,13 @@ unsigned int * ScoreAnimClass::Constructor_ScoreFontClass(char a2)
 {
     void *v3;
     char *v4;
-    v3 = (void *)*(this + 3);
+    v3 = (void *)this->u32_C;
     *(void**)this = &vt_ScoreFontClass;
     if ( v3 && (unsigned char)this->q010 == 1 )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 3) = 0;
-    *((char *)(this) + 16) = 0;
+    this->u32_C = 0;
+    this->q010 = 0;
   }
     if ( !--DataGlobal_B0558C )
   {

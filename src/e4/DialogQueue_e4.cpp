@@ -23,6 +23,7 @@ int DialogQueue::PushEntry()
   }
   return result; /*0x5d4ec6*/
 }
+}
 
 // 0x5D4ED0
 int DialogQueue::RemoveEntry()
@@ -42,4 +43,5 @@ int DialogQueue::RemoveEntry()
     while ( result < DataGlobal_ABFCA0 ); /*0x5d4f18*/
   }
   return result; /*0x5d4f1b*/
+}
 }

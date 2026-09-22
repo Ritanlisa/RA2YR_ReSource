@@ -50,6 +50,7 @@ LABEL_9:
   }
   return result; /*0x46f6c5*/
 }
+}
 
 // 0x46F8F0
 CampaignClass * * Skirmish::SetupAllSpawnLocations()
@@ -133,6 +134,7 @@ CampaignClass * * Skirmish::SetupAllSpawnLocations()
     ++v7; /*0x46f9fc*/
   }
   while ( (int)v8 < (int)g_CampaignSideIndex ); /*0x46fa03*/
+}
 }
 
 // 0x596C70
@@ -224,6 +226,7 @@ int Skirmish::ReadSettings(HWND hDlg)
   byte_ABE2D8 = 0; /*0x596e31*/
   return SettingsClass::ClampValues((int *)this); /*0x596e3f*/
 }
+}
 
 // 0x597260
 TechnoTypeClass * * Skirmish::RandomizeSettings(ObjectClass * aP1)
@@ -279,6 +282,7 @@ TechnoTypeClass * * Skirmish::RandomizeSettings(ObjectClass * aP1)
   result = Random::Range(&DataGlobal_87F8E4[29348], 0, (IUnknown *)0xFFFF); /*0x59736d*/
   *(this + 29) = result; /*0x597372*/
   return result; /*0x597375*/
+}
 }
 
 // 0x640710
@@ -406,6 +410,7 @@ int Skirmish::RenderPreview(SkirmishDialog * aP1)
   }
   return result; /*0x640a2f*/
 }
+}
 
 // 0x6ACD60
 int Skirmish::EnableSpawnButtons()
@@ -479,6 +484,7 @@ int Skirmish::EnableSpawnButtons()
     while ( (int)(v3 + 1) < 8 );
   }
   return result; /*0x6ace79*/
+}
 }
 
 // 0x6AE3F0
@@ -596,6 +602,7 @@ ReferenceCounted * * Skirmish::Setup_DlgProc(HWND hDlg, unsigned int a2, unsigne
     }
   }
   return result; /*0x6ae448*/
+}
 }
 
 // 0x6AE6E0
@@ -967,6 +974,7 @@ LABEL_92:
     Session::PrepareGame((HWND)this); /*0x6aeef2*/
   return 0; /*0x6aeef7*/
 }
+}
 
 // 0x6ADF00
 namespace gamemd {
@@ -1050,6 +1058,7 @@ void Skirmish_Setup_6ADDF0_Setup(HWND hDlg, int a2, int nIDDlgItem)
   return result; /*0x6ae06d*/
 }
 } // namespace gamemd
+}
 
 // 0x5E2F80
 namespace gamemd {

@@ -347,6 +347,7 @@ LABEL_48:
   Coord::Length(&aP1.nextArrayIndex); /*0x5b2917*/
   return result; /*0x5b2347*/
 }
+}
 
 // 0x5B2930
 unsigned int * Movement::Check(unsigned int * a2, unsigned short * a3)

@@ -94,6 +94,7 @@ LABEL_3:
   }
 }
 } // namespace gamemd
+}
 
 // 0x5B3FF0
 namespace gamemd {
@@ -114,6 +115,7 @@ unsigned int * sub_5B3FF0(unsigned int * a1, unsigned int * a2)
   return result; /*0x5b401c*/
 }
 } // namespace gamemd
+}
 
 // 0x5B40B0
 namespace gamemd {
@@ -212,6 +214,7 @@ LABEL_9:
   }
 }
 } // namespace gamemd
+}
 
 // 0x5B4430
 namespace gamemd {
@@ -289,6 +292,7 @@ LABEL_14:
   return 1; /*0x5b456e*/
 }
 } // namespace gamemd
+}
 
 // 0x5B4B10
 namespace gamemd {
@@ -439,6 +443,7 @@ void GameSetupDialogProc(HWND hWnd, unsigned int a2, unsigned int a3, unsigned i
   }
 }
 } // namespace gamemd
+}
 
 // 0x5B67F0
 namespace gamemd {
@@ -557,6 +562,7 @@ LABEL_33:
   return 1; /*0x5b69dc*/
 }
 } // namespace gamemd
+}
 
 // 0x5BB290
 namespace gamemd {
@@ -657,6 +663,7 @@ LABEL_15:
   }
 }
 } // namespace gamemd
+}
 
 // 0x5BC6E0
 namespace gamemd {
@@ -881,6 +888,7 @@ LABEL_15:
   return 1; /*0x5bc743*/
 }
 } // namespace gamemd
+}
 
 // 0x5BCE10
 namespace gamemd {
@@ -976,6 +984,7 @@ int E4Recv_5BCE10::sub_5BCE10(int a2)
   return result; /*0x5bcf83*/
 }
 } // namespace gamemd
+}
 
 // 0x5BDC00
 namespace gamemd {
@@ -1000,6 +1009,7 @@ void * sub_5BDC00(int * a1, int a2)
   return a1; /*0x5bdc73*/
 }
 } // namespace gamemd
+}
 
 // 0x5BF390
 namespace gamemd {
@@ -1035,6 +1045,7 @@ void sub_5BF390(int a1, char a2)
   }
 }
 } // namespace gamemd
+}
 
 // 0x5BF8C0
 namespace gamemd {
@@ -1068,6 +1079,7 @@ ObjectClass * * sub_5BF8C0()
   return result; /*0x5bf943*/
 }
 } // namespace gamemd
+}
 
 // 0x5BF950
 namespace gamemd {
@@ -1136,6 +1148,7 @@ AbstractClass * * sub_5BF950()
   return result; /*0x5bfa95*/
 }
 } // namespace gamemd
+}
 
 // 0x5BFAA0
 namespace gamemd {
@@ -1331,6 +1344,7 @@ LABEL_47:
   return v15; /*0x5bfc12*/
 }
 } // namespace gamemd
+}
 
 // 0x5BFF60
 namespace gamemd {
@@ -1343,24 +1357,24 @@ void Movie_RenderFrame(int a1, char a2, int a3, char a4)
   if ( !g_BigIntPool ) /*0x5bff71*/
   {
   bool v9; // zf
-    *(_BYTE *)(a1 + 69) = 1; /*0x5bff7a*/
+    a1->u8_45 = 1; /*0x5bff7a*/
     g_BigIntPool = a1; /*0x5bff83*/
     int v12 = 0; /*0x5bff89*/
     int v6 = -1; /*0x5bff91*/
     int v7 = 0; /*0x5bff94*/
     if ( (unsigned __int8)TestBitArray(2) ) /*0x5bff96*/
     {
-      v12 = *(_DWORD *)(a1 + 16); /*0x5bffa2*/
-      if ( *(int *)(a1 + 20) >= 0 ) /*0x5bffab*/
-        v6 = *(_DWORD *)(a1 + 20); /*0x5bffad*/
-      v7 = *(_DWORD *)(a1 + 28); /*0x5bffb2*/
-      if ( *(_DWORD *)(a1 + 12) == 1 ) /*0x5bffb8*/
+      v12 = a1->uniqueId; /*0x5bffa2*/
+      if ( a1->abstractFlags >= 0 ) /*0x5bffab*/
+        v6 = a1->abstractFlags; /*0x5bffad*/
+      v7 = a1->referenceCount; /*0x5bffb2*/
+      if ( a1->vtable4 == 1 ) /*0x5bffb8*/
       {
-        int v10 = *(_DWORD *)(a1 + 28); /*0x5bffbd*/
-        if ( *(_DWORD *)(a1 + 24) ) /*0x5bffba*/
+        int v10 = a1->referenceCount; /*0x5bffbd*/
+        if ( a1->nextArrayIndex ) /*0x5bffba*/
           Render_Render_759880(v12, v6, v10); /*0x5bffd7*/
         else
-          Render_Render_759850(*(_DWORD *)(a1 + 32), v10); /*0x5bffc8*/
+          Render_Render_759850(a1->needsSave, v10); /*0x5bffc8*/
       }
     }
     if ( a2 ) /*0x5bffe2*/
@@ -1369,10 +1383,10 @@ void Movie_RenderFrame(int a1, char a2, int a3, char a4)
       Theme::QueueSong(a3); /*0x5bfffe*/
     do /*0x5c0049*/
     {
-      if ( *(_DWORD *)(a1 + 12) == 2 || v12 ) /*0x5c000f*/
+      if ( a1->vtable4 == 2 || v12 ) /*0x5c000f*/
         AbstractClass::updateBuildingState(v12); /*0x5c0018*/
       int v8 = MovieClass::RenderLoop(v6, a4); /*0x5c002a*/
-      if ( *(_DWORD *)(a1 + 12) == 1 ) /*0x5c0032*/
+      if ( a1->vtable4 == 1 ) /*0x5c0032*/
         v7 = 0; /*0x5c0034*/
       AbstractClass::finalizeConstruction(*(_DWORD *)a1); /*0x5c0038*/
       if ( v8 == 1 ) /*0x5c0040*/
@@ -1390,6 +1404,7 @@ void Movie_RenderFrame(int a1, char a2, int a3, char a4)
   return result; /*0x5c006b*/
 }
 } // namespace gamemd
+}
 
 // 0x5B1B80
 namespace gamemd {
@@ -3059,6 +3074,7 @@ int sub_5BC450(int a1)
   return DataGlobal_ABF168[a1]; /*0x5bc457*/
 }
 } // namespace gamemd
+}
 
 // 0x5BC460
 namespace gamemd {

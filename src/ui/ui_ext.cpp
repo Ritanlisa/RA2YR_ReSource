@@ -386,6 +386,7 @@ void ToolTipClass::ddtor() {
     this->IsAllocated = 0;
     this->Capacity = 0;
  // 0x724C30
+ }
 // 0x724c60
 void ToolTipClass::write() {} // 0x724C60
 

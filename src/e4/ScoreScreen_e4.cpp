@@ -45,6 +45,7 @@ unsigned int * ScoreScreen::LoadScoreFont(ScoreFontClass * aP1)
   this->q008 = 21; /*0x690ac1*/
   return this; /*0x690aca*/
 }
+}
 
 // 0x690AE0
 unsigned int * ScoreScreen::LoadCountryFlags(int a2)
@@ -82,6 +83,7 @@ unsigned int * ScoreScreen::LoadCountryFlags(int a2)
   this->q008 = 35; /*0x690b91*/
   return this; /*0x690b9a*/
 }
+}
 
 // 0x690F30
 unsigned int * ScoreScreen::Constructor(ScoreAnimClass * aP1, int a3, int a4)
@@ -95,60 +97,61 @@ unsigned int * ScoreScreen::Constructor(ScoreAnimClass * aP1, int a3, int a4)
   *this = &vt_ScoreAnimClass; /*0x690f5a*/
   return this; /*0x690f62*/
 }
+}
 
 // 0x7712C0
 void ScoreScreen::RemoveItem(int a2, int a3, ObjectClass * aP3, char a5, int a6)
 {
 {
 
-  int v7 = *(_DWORD *)(this + 976); /*0x7712d5*/
+  int v7 = this->u32_3D0; /*0x7712d5*/
   int v8 = v7 - 1; /*0x7712d7*/
-  if ( v7 > *(_DWORD *)(this + 956) ) /*0x7712da*/
+  if ( v7 > this->u32_3BC ) /*0x7712da*/
   {
   int v12; // edx
     do /*0x77131c*/
     {
-      int v9 = *(_DWORD *)(this + 976); /*0x7712dc*/
+      int v9 = this->u32_3D0; /*0x7712dc*/
       if ( v8 < v9 ) /*0x7712e4*/
       {
         int v10 = v9 - 1; /*0x7712e6*/
         int v11 = v8; /*0x7712e7*/
-        for ( *(_DWORD *)(this + 976) = v10; v11 < *(_DWORD *)(this + 976); ++v11 ) /*0x7712f1*/
+        for ( this->u32_3D0 = v10; v11 < this->u32_3D0; ++v11 ) /*0x7712f1*/
           String::Reassign( /*0x771301*/
-            (char **)(*(_DWORD *)(this + 964) + 4 * v11),
-            (AbstractClass *)(*(_DWORD *)(this + 964) + 4 * v11 + 4));
+            (char **)(this->u32_3C4 + 4 * v11),
+            (AbstractClass *)(this->u32_3C4 + 4 * v11 + 4));
       }
       v12 = v8--; /*0x771317*/
     }
-    while ( v12 > *(_DWORD *)(this + 956) ); /*0x77131c*/
+    while ( v12 > this->u32_3BC ); /*0x77131c*/
   }
-  if ( !*(_DWORD *)(this + 956) ) /*0x77131e*/
-    *(_BYTE *)(this + 952) = 1; /*0x771328*/
+  if ( !this->u32_3BC ) /*0x77131e*/
+    this->u8_3B8 = 1; /*0x771328*/
   void *v24[4]; // [esp+10h] [ebp-10h] BYREF
   unknown_libname_73(v24); /*0x771333*/
-  int v13 = 48 * a3 + this + 148 * a2; /*0x771352*/
+  int v13 = 48 * a3 + &this->u32_250 * a2; /*0x771352*/
   if ( Map_Remove(*(_DWORD *)this, v13 + 8, v24) )
   {
     if ( !(unsigned __int8)Audio::IsPlaying() ) /*0x77136a*/
     {
-      *(_DWORD *)(this + 940) = Timer::GetTicks(); /*0x771386*/
-      *(void **)(this + 944) = v24[2]; /*0x771390*/
-      *(_DWORD *)(this + 948) = a6; /*0x771393*/
+      this->u32_3AC = Timer::GetTicks(); /*0x771386*/
+      *(void **)(&this->u32_1784) = v24[2]; /*0x771390*/
+      this->u32_3B4 = a6; /*0x771393*/
     }
-    int v14 = *(_DWORD *)(this + 968); /*0x771396*/
-    int v15 = this + 960; /*0x7713a2*/
-    if ( *(_DWORD *)(this + 976) < v14 /*0x7713c7*/
-      || (*(_BYTE *)(this + 973) || !v14)
+    int v14 = this->u32_3C8; /*0x771396*/
+    int v15 = &this->u32_F00; /*0x7713a2*/
+    if ( this->u32_3D0 < v14 /*0x7713c7*/
+      || (this->u8_3CD || !v14)
   int v16; // eax
-      && (v16 = *(_DWORD *)(this + 980), v16 > 0)
-      && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)v15 + 8))(this + 960, v14 + v16, 0) )
+      && (v16 = this->u32_3D4, v16 > 0)
+      && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)v15 + 8))(&this->u32_F00, v14 + v16, 0) )
     {
-      int v17 = *(_DWORD *)(this + 976); /*0x7713ce*/
-      *(_DWORD *)(this + 976) = v17 + 1; /*0x7713d9*/
-      String::Reassign((char **)(*(_DWORD *)(this + 964) + 4 * v17), (AbstractClass *)v24); /*0x7713e2*/
+      int v17 = this->u32_3D0; /*0x7713ce*/
+      this->u32_3D0 = v17 + 1; /*0x7713d9*/
+      String::Reassign((char **)(this->u32_3C4 + 4 * v17), (AbstractClass *)v24); /*0x7713e2*/
     }
     if ( a5 ) /*0x7713ed*/
-      ++*(_DWORD *)(this + 956); /*0x7713ef*/
+      ++this->u32_3BC; /*0x7713ef*/
     if ( (_BYTE)aP3 )
     {
       int v18 = *(_DWORD *)this; /*0x771401*/
@@ -159,24 +162,25 @@ void ScoreScreen::RemoveItem(int a2, int a3, ObjectClass * aP3, char a5, int a6)
         int v20 = v19 == 1 ? 0 : Random::Range(&DataGlobal_87F8E4[29348], 0, (IUnknown *)(v19 - 1));
         if ( Map_Remove_770CE0(v18, *(_DWORD *)(*(_DWORD *)(v13 + 36) + 4 * v20), (char **)v24) ) /*0x77143b*/
         {
-          int v21 = *(_DWORD *)(this + 968); /*0x771444*/
-          if ( *(_DWORD *)(this + 976) < v21 /*0x771469*/
-            || (*(_BYTE *)(this + 973) || !v21)
+          int v21 = this->u32_3C8; /*0x771444*/
+          if ( this->u32_3D0 < v21 /*0x771469*/
+            || (this->u8_3CD || !v21)
   int v22; // eax
-            && (v22 = *(_DWORD *)(this + 980), v22 > 0)
-            && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)v15 + 8))(this + 960, v21 + v22, 0) )
+            && (v22 = this->u32_3D4, v22 > 0)
+            && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)v15 + 8))(&this->u32_F00, v21 + v22, 0) )
           {
-            int v23 = *(_DWORD *)(this + 976); /*0x771470*/
-            *(_DWORD *)(this + 976) = v23 + 1; /*0x77147b*/
-            String::Reassign((char **)(*(_DWORD *)(this + 964) + 4 * v23), (AbstractClass *)v24); /*0x771484*/
+            int v23 = this->u32_3D0; /*0x771470*/
+            this->u32_3D0 = v23 + 1; /*0x77147b*/
+            String::Reassign((char **)(this->u32_3C4 + 4 * v23), (AbstractClass *)v24); /*0x771484*/
           }
           if ( a5 ) /*0x77148f*/
-            ++*(_DWORD *)(this + 956); /*0x771491*/
+            ++this->u32_3BC; /*0x771491*/
         }
       }
     }
   }
   DeleteAndZero(v24); /*0x77149b*/
+}
 }
 
 // 0x778210
@@ -282,3 +286,4 @@ AbstractClass * * ScoreScreen_DrawSHPBackground()
   return BufferIOFileClass::Dtor(v37); /*0x77848a*/
 }
 } // namespace gamemd
+}

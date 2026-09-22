@@ -45,6 +45,7 @@ int Session::RemoveTeam(MSShapeAnim * aP1)
   return (int)result->__pad_0; /*0x5d1dde*/
 }
 } // namespace gamemd
+}
 
 // 0x5E74E0
 namespace gamemd {
@@ -240,6 +241,7 @@ LABEL_12:
   }
 }
 } // namespace gamemd
+}
 
 // 0x69B700
 namespace gamemd {
@@ -254,6 +256,7 @@ int Session::GetPlayerOption()
   return result; /*0x69b715*/
 }
 } // namespace gamemd
+}
 
 // 0x69B720
 namespace gamemd {
@@ -268,6 +271,7 @@ int Session::GetPlayerColor()
   return result; /*0x69b735*/
 }
 } // namespace gamemd
+}
 
 // 0x5ED370
 namespace gamemd {

@@ -74,12 +74,14 @@ void CheckListClass_OnClick()
   return result; /*0x48867d*/
 }
 } // namespace gamemd
+}
 
 // 0x4886B0
 int CheckListClass::COMStub()
 {
 {
   return this->q044; /*0x4886b3*/
+}
 }
 
 // 0x557E10

@@ -280,7 +280,7 @@ int CellClass::DrawDispatch(const Point2D* screen_pos, const RectangleStruct* bo
 {
 {
 
-  if ( !*((_BYTE *)this + 45) )
+  if ( !this->u8_2D )
     return 0;
   unsigned int v6 = a2;
   this->checkBuildingPlacement(a2);
@@ -293,7 +293,7 @@ int CellClass::DrawDispatch(const Point2D* screen_pos, const RectangleStruct* bo
   {
     int v7 = this->GetCoordsThunk1(this->attached3);
   int v8; // eax
-    v8 = *((_BYTE *)this + 46)
+    v8 = this->u8_2E
        ? (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 44))(g_WWMouseClass_Instance)
        : (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 48))(g_WWMouseClass_Instance);
   int v9; // edi
@@ -302,7 +302,7 @@ int CellClass::DrawDispatch(const Point2D* screen_pos, const RectangleStruct* bo
     else
       this->q038 = v9;
   int v10; // eax
-    v10 = *((_BYTE *)this + 46)
+    v10 = this->u8_2E
         ? (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 44))(g_WWMouseClass_Instance)
         : (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 48))(g_WWMouseClass_Instance);
     if ( this->vt_slot_160(v10 - this->q038) < this->attached3 )
@@ -314,14 +314,14 @@ int CellClass::DrawDispatch(const Point2D* screen_pos, const RectangleStruct* bo
         if ( v11 <= 0 )
           break;
         this->q038 = v11 - 1;
-        v12 = *((_BYTE *)this + 46)
+        v12 = this->u8_2E
             ? (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 44))(g_WWMouseClass_Instance)
             : (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 48))(g_WWMouseClass_Instance);
       }
       while ( this->vt_slot_160(v12 - this->q038) < this->attached3 );
     }
   }
-  if ( *((_BYTE *)this + 46) )
+  if ( this->u8_2E )
     int v13 = (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 44))(g_WWMouseClass_Instance);
   else
     v13 = (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 48))(g_WWMouseClass_Instance);
@@ -717,6 +717,9 @@ RectangleStruct* CellClass::GetScreenRect(RectangleStruct* out) const
 // IDA: 0x7235A0 -- CellClass::RegisterForRedraw
 // Marks this cell as needing redraw and notifies the map.
 // 298 bytes: integrates with MapClass::MarkForRedraw.
+}
+}
+}
 // 0x7235a0
 int CellClass::RegisterForRedraw()
 {
@@ -1061,6 +1064,7 @@ bool Cell_IsBridge(const CellClass* cell)
 // ============================================================
 // Object management
 // ============================================================
+}
 
 // 0x47e8a0
 void CellClass::AddContent(ObjectClass* content, bool on_bridge)

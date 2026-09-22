@@ -961,7 +961,7 @@ int __thiscall sub_4024A0(_DWORD *this)
     this->q029 = 0; /*0x40250a*/
     this->q028 = 0; /*0x402510*/
     v3 = MEMORY[0x87DE30]; /*0x402516*/
-    this->q024 = 0; /*0x40251c*/
+    this->q090 = 0; /*0x40251c*/
     this->q025 = v3; /*0x402522*/
     this->q026 = 0; /*0x40252b*/
     this->q027 = 0; /*0x402531*/
@@ -1054,7 +1054,7 @@ int __thiscall Accessor_4026a0(_DWORD *this)
 // ==== 0x004026B0  AudioStream::Stop  this=AudioStream  sig=csp ====
 int __thiscall AudioStream_Stop(_DWORD *this)
 {
-  return (*(int (**)(void))(this->q0D4 + 44))();
+  return (*(int (**)(void))(this->u32_D4 + 44))();
 }
 
 
@@ -1070,9 +1070,9 @@ int __thiscall sub_4026C0(_DWORD *this)
 // ==== 0x004026F0  AudioStream::ReleaseChannel  this=AudioStream  sig=csp ====
 int __thiscall AudioStream_ReleaseChannel(_DWORD *this)
 {
-  (*(void (**)(void))(this->q0D4 + 40))(); /*0x4026f9*/
-  this->q029 &= ~0x10u; /*0x402705*/
-  return (*(int (__thiscall **)(_DWORD *))(this->q0D4 + 44))(this);
+  (*(void (**)(void))(this->u32_D4 + 40))(); /*0x4026f9*/
+  this->u32_A4 &= ~0x10u; /*0x402705*/
+  return (*(int (__thiscall **)(_DWORD *))(this->u32_D4 + 44))(this);
 }
 
 
@@ -1863,21 +1863,21 @@ int __thiscall sub_403810(int (**this)(void))
 int __thiscall AudioStream::Reset(_DWORD *this)
 {
   *this = 0; /*0x403822*/
-  this->q004 = 0; /*0x403824*/
+  this->u8_4 = 0; /*0x403824*/
   this->q008 = 0; /*0x403827*/
   this->q00C = 0; /*0x40382a*/
-  this->q010 = 0; /*0x40382d*/
-  this->q014 = 0; /*0x403830*/
-  this->q018 = 0; /*0x403833*/
+  this->u32_10 = 0; /*0x40382d*/
+  this->u32_14 = 0; /*0x403830*/
+  this->u32_18 = 0; /*0x403833*/
   this->q01C = 0; /*0x403836*/
   this->q028 = 0; /*0x403839*/
-  this->q02C = 0; /*0x40383c*/
+  this->u32_2C = 0; /*0x40383c*/
   this->q048 = 0; /*0x40383f*/
   this->q050 = 0; /*0x403842*/
   this->q040 = 5000; /*0x403845*/
   this->q044 = 0; /*0x40384c*/
   this->q030 = 0; /*0x40384f*/
-  this->q034 = 0; /*0x403852*/
+  this->u32_34 = 0; /*0x403852*/
   this->q038 = 0; /*0x403855*/
   this->q03C = 0; /*0x403858*/
   this->q054 = 0; /*0x40385b*/
@@ -1914,7 +1914,7 @@ int __thiscall AudioStream::ResetChannel(_DWORD *this, int a2, int a3)
 int __thiscall AudioStream::ResetChannel2(_DWORD *this, int a2, int a3)
 {
   this->q020 = a2; /*0x4038c4*/
-  this->q024 = a3; /*0x4038cb*/
+  this->u32_24 = a3; /*0x4038cb*/
   return a2; /*0x4038ce*/
 }
 
@@ -3505,7 +3505,7 @@ int __thiscall sub_4054A0(int *this)
   if ( this != (int *)v2[48] ) /*0x4054b0*/
     return 0; /*0x4054b3*/
   AudioFile::GetCallback(v2); /*0x4054b7*/
-  v4 = (_DWORD *)this->q148; /*0x4054bc*/
+  v4 = (_DWORD *)this->q052; /*0x4054bc*/
   v5 = this->nextArrayIndex; /*0x4054c2*/
   LOBYTE(v5) = v5 | 8; /*0x4054c5*/
   this->nextArrayIndex = v5; /*0x4054c7*/
@@ -3518,11 +3518,11 @@ int __thiscall sub_4054A0(int *this)
   EndBufferMixer((int *)(this->fallRate + 16), v7); /*0x405519*/
   this->referenceCount = 3; /*0x40551e*/
   this->nextArrayIndex |= 2u; /*0x40552b*/
-  this->q148 = 0; /*0x40552e*/
+  this->q052 = 0; /*0x40552e*/
   if ( Audio::GetChannelStatus(this->fallRate) ) /*0x40553e*/
   {
     this->referenceCount = 1; /*0x405547*/
-    this->q148 = (int)v4; /*0x40554e*/
+    this->q052 = (int)v4; /*0x40554e*/
     v8 = this->nextArrayIndex; /*0x405554*/
     LOBYTE(v8) = v8 & 0xFD; /*0x405557*/
     this->nextArrayIndex = v8; /*0x405559*/
@@ -5345,14 +5345,14 @@ int __thiscall AudioMixer_PlaySample(_DWORD *this)
   int v19; // eax
   int v20; // ecx
 
-  v2 = this->q002; /*0x4071c7*/
-  v3 = this->q010; /*0x4071ca*/
+  v2 = this->u32_20; /*0x4071c7*/
+  v3 = this->u32_4; /*0x4071ca*/
   v4 = v2 - v3; /*0x4071cf*/
   if ( v2 == v3 ) /*0x4071d1*/
     return 0; /*0x40729e*/
   if ( (*(_BYTE *)this & 1) != 0 ) /*0x4071da*/
   {
-    this->q010 = v2; /*0x4071dc*/
+    this->u32_4 = v2; /*0x4071dc*/
     v5 = *this; /*0x4071df*/
     LOBYTE(v5) = *this | 2; /*0x4071e1*/
     *this = v5; /*0x4071e3*/
@@ -5362,29 +5362,29 @@ int __thiscall AudioMixer_PlaySample(_DWORD *this)
   {
     v7 = Audio::Callback(); /*0x4071f2*/
     v8 = this->q018; /*0x4071f7*/
-    v9 = this->q007; /*0x4071fa*/
+    v9 = this->u32_1C; /*0x4071fa*/
     v10 = v7; /*0x4071fd*/
     this->q018 = v7; /*0x4071ff*/
     v11 = this->q014; /*0x407202*/
-    this->q007 = v15; /*0x407209*/
+    this->u32_1C = v15; /*0x407209*/
     v14 = __PAIR64__(v15, v10) - __PAIR64__(v9, v8); /*0x407205*/
     v13 = (__PAIR64__(v15, v10) - __PAIR64__(v9, v8)) >> 32; /*0x407205*/
     v12 = v14; /*0x407205*/
-    if ( __PAIR64__(v13, v14) > __PAIR64__(v11, this->q010) ) /*0x40721b*/
-      v12 = this->q010; /*0x40721d*/
-    v16 = v12 * this->q00C; /*0x407226*/
+    if ( __PAIR64__(v13, v14) > __PAIR64__(v11, this->u32_10) ) /*0x40721b*/
+      v12 = this->u32_10; /*0x40721d*/
+    v16 = v12 * this->u32_C; /*0x407226*/
     if ( v4 >= 0 ) /*0x40722b*/
     {
       if ( v16 <= v4 ) /*0x407269*/
       {
-        v20 = v16 + this->q010; /*0x407287*/
+        v20 = v16 + this->u32_4; /*0x407287*/
         v19 = *this; /*0x407289*/
         LOBYTE(v19) = *this | 2; /*0x40728b*/
-        this->q010 = v20; /*0x40728d*/
+        this->u32_4 = v20; /*0x40728d*/
       }
       else
       {
-        this->q010 += v4; /*0x407270*/
+        this->u32_4 += v4; /*0x407270*/
         v19 = *this; /*0x407273*/
         LOBYTE(v19) = *this | 2; /*0x407275*/
       }
@@ -5395,14 +5395,14 @@ int __thiscall AudioMixer_PlaySample(_DWORD *this)
     {
       if ( v16 <= -v4 ) /*0x407233*/
       {
-        v18 = this->q010 - v16; /*0x407251*/
+        v18 = this->u32_4 - v16; /*0x407251*/
         v17 = *this; /*0x407253*/
         LOBYTE(v17) = *this | 2; /*0x407255*/
-        this->q010 = v18; /*0x407257*/
+        this->u32_4 = v18; /*0x407257*/
       }
       else
       {
-        this->q010 += v4; /*0x40723a*/
+        this->u32_4 += v4; /*0x40723a*/
         v17 = *this; /*0x40723d*/
         LOBYTE(v17) = *this | 2; /*0x40723f*/
       }
@@ -5416,7 +5416,7 @@ int __thiscall AudioMixer_PlaySample(_DWORD *this)
 // ==== 0x004072B0  ObjectClass::method_4072B0  this=Audio  sig=csp ====
 int __thiscall sub_4072B0(_DWORD *this)
 {
-  return HIWORD(this->q002); /*0x4072b6*/
+  return HIWORD(this->u32_20); /*0x4072b6*/
 }
 
 
@@ -5842,7 +5842,7 @@ int __thiscall sub_4079C0(_DWORD *this)
   int v4; // ecx
   int v5; // eax
 
-  v2 = this->q0C0; /*0x4079c4*/
+  v2 = this->u32_C0; /*0x4079c4*/
   ReadAudioStream(*(int **)(v2 + 56), *(_DWORD *)(v2 + 144)); /*0x4079d3*/
   AudioStream::ReadStreamAndReturn(*(int **)(v2 + 56)); /*0x4079db*/
   v3 = *(_DWORD *)(v2 + 160); /*0x4079e3*/
@@ -5866,7 +5866,7 @@ int __thiscall sub_407A30(_DWORD *this)
   int v2; // edx
   int v3; // eax
 
-  v1 = this->q0C0; /*0x407a31*/
+  v1 = this->u32_C0; /*0x407a31*/
   if ( (*(_BYTE *)(v1 + 12) & 3) != 0 ) /*0x407a3b*/
   {
     *(_DWORD *)(v1 + 32) = Audio::Callback(); /*0x407a42*/
@@ -5887,7 +5887,7 @@ int __thiscall sub_407A60(_DWORD *this)
   int v2; // edx
   int v3; // eax
 
-  v1 = this->q0C0; /*0x407a61*/
+  v1 = this->u32_C0; /*0x407a61*/
   if ( (*(_BYTE *)(v1 + 12) & 3) != 0 ) /*0x407a6b*/
   {
     *(_DWORD *)(v1 + 32) = Audio::Callback(); /*0x407a72*/
@@ -6269,7 +6269,7 @@ void __thiscall sub_408000(int this)
 // ==== 0x00408070  Audio::IsSoundPlaying  this=Audio  sig=csp ====
 int __thiscall Audio_IsSoundPlaying(_DWORD *this)
 {
-  return this->q00C & 1; /*0x408076*/
+  return this->u32_C & 1; /*0x408076*/
 }
 
 
@@ -6340,7 +6340,7 @@ char __thiscall sub_4080F0(int this)
 // ==== 0x00408140  ThemeClass::GetValue  this=ThemeClass  sig=csp ====
 __int64 __thiscall sub_408140(_QWORD *this)
 {
-  return this->ThemeClass_field_04; /*0x408146*/
+  return this->ptr_4; /*0x408146*/
 }
 
 
@@ -6570,9 +6570,9 @@ _DWORD *__thiscall sub_408460(size_t Size)
 void __thiscall sub_4084E0(_DWORD *this)
 {
   *this = 0; /*0x4084e2*/
-  this->q004 = 0; /*0x4084e4*/
-  this->q014 = 0; /*0x4084e7*/
-  this->q018 = 0; /*0x4084ea*/
+  this->u8_4 = 0; /*0x4084e4*/
+  this->u32_14 = 0; /*0x4084e7*/
+  this->u32_18 = 0; /*0x4084ea*/
   DListNode::Init(this + 2); /*0x4084f0*/
 }
 
@@ -7235,7 +7235,7 @@ int __thiscall sub_408D40(_DWORD *this)
 // ==== 0x00408D50  AudioStream::GetChannel  this=AudioStream  sig=csp ====
 int __thiscall Accessor_408d50(_DWORD *this)
 {
-  return this->q014; /*0x408d53*/
+  return this->u32_14; /*0x408d53*/
 }
 
 
@@ -12445,7 +12445,7 @@ void *__thiscall AbstractClass_IsTechno(void *this)
 
   if ( !this ) /*0x40dd25*/
     return 0; /*0x40dd45*/
-  switch ( (*(int (__thiscall **)(void *))(this->q02C)(this) ) /*0x40dd3a*/
+  switch ( (*(int (__thiscall **)(void *))(this->u32_2C)(this) ) /*0x40dd3a*/
   {
     case 1: /*0x40dd3a*/
     case 2: /*0x40dd3a*/

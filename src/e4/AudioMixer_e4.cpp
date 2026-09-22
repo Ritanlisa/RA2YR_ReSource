@@ -16,6 +16,7 @@ int AudioMixer::SetVolume()
     return 0; /*0x406663*/
   return result; /*0x406665*/
 }
+}
 
 // 0x4071C0
 int AudioMixer::PlaySample()
@@ -90,6 +91,7 @@ int AudioMixer::PlaySample()
       return 1; /*0x407244*/
     }
   }
+}
 }
 
 // 0x401000

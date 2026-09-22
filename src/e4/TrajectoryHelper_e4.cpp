@@ -76,6 +76,7 @@ unsigned int * TrajectoryHelper::FindFirstObstacle(IUnknown * aP0, int * a1, int
   return result; /*0x4cc304*/
 }
 } // namespace gamemd
+}
 
 // 0x4CC360
 namespace gamemd {
@@ -189,6 +190,7 @@ LABEL_22:
   return 0; /*0x4cc5c8*/
 }
 } // namespace gamemd
+}
 
 // 0x4CC310
 namespace gamemd {

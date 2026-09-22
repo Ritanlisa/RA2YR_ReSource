@@ -42,6 +42,7 @@ unsigned int * WWMouseClass::initSurface()
   }
   return result; /*0x7b90b1*/
 }
+}
 
 // 0x7B9930
 int WWMouseClass::hideCursor()
@@ -93,6 +94,7 @@ int WWMouseClass::hideCursor()
   }
   --this->q00C; /*0x7b9a3f*/
   return ReleaseMutex(hMutex); /*0x7b9a4f*/
+}
 }
 
 // 0x7B9A60
@@ -169,6 +171,7 @@ void* WWMouseClass::captureMouse()
     ReleaseMutex(hMutex); /*0x7b9c19*/
   }
 }
+}
 
 // 0x7B9C30
 void WWMouseClass::releaseMouse()
@@ -220,12 +223,14 @@ void WWMouseClass::releaseMouse()
     ReleaseMutex(hMutex); /*0x7b9d5c*/
   }
 }
+}
 
 // 0x7BA340
 int WWMouseClass::checkRegion()
 {
 {
   return this->q01C; /*0x7ba343*/
+}
 }
 
 // 0x7BA360
@@ -238,6 +243,7 @@ unsigned int * WWMouseClass::updatePosition(unsigned int * a2)
   *a2 = v3; /*0x7ba36a*/
   a2[1] = v4; /*0x7ba36c*/
   return a2; /*0x7ba36f*/
+}
 }
 
 // 0x7B89F0

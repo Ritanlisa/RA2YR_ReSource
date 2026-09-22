@@ -44,6 +44,7 @@ LABEL_8:
   return this; /*0x5ac491*/
 }
 } // namespace gamemd
+}
 
 // 0x413A70
 namespace gamemd {

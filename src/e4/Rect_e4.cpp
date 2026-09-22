@@ -62,6 +62,7 @@ int Rect::Union(IUnknown * aP0, const RECT * lprcSrc1, const RECT * lprcSrc2)
     }
   }
 }
+}
 
 // 0x42E410
 IUnknown * Rect::Set(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnknown * aP4)

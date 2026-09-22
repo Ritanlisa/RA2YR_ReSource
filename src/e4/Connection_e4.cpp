@@ -8,12 +8,13 @@ namespace gamemd {
 int Connection::GetSpeed()
 {
 {
-  if ( (unsigned char)this->Connection_field_0x4 && *(_BYTE *)(this + 5) ) /*0x5422f7*/
+  if ( (unsigned char)this->Connection_field_0x4 && this->u8_5 ) /*0x5422f7*/
     return *(_DWORD *)(*(_DWORD *)(this->Connection_field_0x48 + 4) + 56); /*0x542304*/
   else
     return 0; /*0x542308*/
 }
 } // namespace gamemd
+}
 
 // 0x543090
 namespace gamemd {
@@ -28,3 +29,4 @@ int Connection::Close()
   return result; /*0x54309e*/
 }
 } // namespace gamemd
+}

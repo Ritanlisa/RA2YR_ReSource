@@ -18,7 +18,7 @@ W WinsockInterfaceClass::WinsockInterfaceClass()
     this->q3F068 = 0; /*0x7b1ad8*/
   }
   AbstractClass *v3 = this->q03C; /*0x7b1ade*/
-  *(_DWORD *)(this + 56) = &vt_VectorClass_WinsockInterfaceClass_WinsockBufferType; /*0x7b1ae1*/
+  this->u32_38 = &vt_VectorClass_WinsockInterfaceClass_WinsockBufferType; /*0x7b1ae1*/
   if ( v3 && this->q045 ) /*0x7b1aec*/
   {
     __3_YAXPAX_Z(v3); /*0x7b1af2*/
@@ -44,6 +44,7 @@ W WinsockInterfaceClass::WinsockInterfaceClass()
   }
   this->q015 = 0; /*0x7b1b47*/
   this->q010 = 0; /*0x7b1b4a*/
+}
 }
 
 // 0x7B2740
@@ -78,42 +79,42 @@ SOCKET * WinsockInterfaceClass::Destru_vt00(char a2)
     void *v4;
     void *v5;
     void *v6;
-    v3 = *((char *)(this) + 258152);
+    v3 = this->q3F068;
     *(void**)this = (SOCKET)&vt_WinsockInterfaceClass;
     if ( v3 )
   {
     NetworkClass::UnregisterAsync(this);
     (*(void (__thiscall **)(SOCKET *))(*(void**)(this) + 4))(this);
     WSACleanup();
-    *((char *)(this) + 258152) = 0;
+    this->q3F068 = 0;
   }
-    v4 = (void *)*(this + 15);
-    *(this + 14) = (SOCKET)&vt_VectorClass_WinsockInterfaceClass_WinsockBufferType;
-    if ( v4 && *((char *)(this) + 69) )
+    v4 = (void *)*(&this->u32_45);
+    *(&this->u32_44) = (SOCKET)&vt_VectorClass_WinsockInterfaceClass_WinsockBufferType;
+    if ( v4 && this->q045 )
   {
     __3_YAXPAX_Z(v4);
-    *(this + 15) = 0;
+    *(&this->u32_45) = 0;
   }
-    *((char *)(this) + 69) = 0;
-    *(this + 16) = 0;
-    v5 = (void *)*(this + 9);
-    *(this + 8) = (SOCKET)&vt_VectorClass_WinsockInterfaceClass_WinsockBufferType;
-    if ( v5 && *((char *)(this) + 45) )
+    this->q045 = 0;
+    *(&this->u32_46) = 0;
+    v5 = (void *)this->ptr_24;
+    this->u32_20 = (SOCKET)&vt_VectorClass_WinsockInterfaceClass_WinsockBufferType;
+    if ( v5 && this->q02D )
   {
     __3_YAXPAX_Z(v5);
-    *(this + 9) = 0;
+    this->ptr_24 = 0;
   }
-    *((char *)(this) + 45) = 0;
-    *(this + 10) = 0;
-    v6 = (void *)*(this + 3);
-    *(this + 2) = (SOCKET)&vt_VectorClass_WinsockInterfaceClass_WinsockBufferType;
-    if ( v6 && *((char *)(this) + 21) )
+    this->q02D = 0;
+    *(&this->u32_40) = 0;
+    v6 = (void *)this->u32_C;
+    this->u32_8 = (SOCKET)&vt_VectorClass_WinsockInterfaceClass_WinsockBufferType;
+    if ( v6 && this->q015 )
   {
     __3_YAXPAX_Z(v6);
-    *(this + 3) = 0;
+    this->u32_C = 0;
   }
-    *((char *)(this) + 21) = 0;
-    *(this + 4) = 0;
+    this->q015 = 0;
+    this->u32_10 = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return this;

@@ -290,6 +290,7 @@ void Surface_DrawLineAlpha(int a1, int * a2, int * a3, short a4, unsigned char a
   return 1; /*0x6200e3*/
 }
 } // namespace gamemd
+}
 
 // 0x6208F0
 namespace gamemd {
@@ -429,6 +430,7 @@ void Dialog_DrawGradient(int * a1, int * a2, int a3, int a4)
   return result; /*0x620cbb*/
 }
 } // namespace gamemd
+}
 
 // 0x620CD0
 namespace gamemd {
@@ -519,6 +521,7 @@ int ComputeHashModPrime(int * a1, int * a2, int a3)
   return result; /*0x620f4c*/
 }
 } // namespace gamemd
+}
 
 // 0x621040
 namespace gamemd {
@@ -613,6 +616,8 @@ LABEL_9:
   return result; /*0x6211c8*/
 }
 } // namespace gamemd
+}
+}
 
 // 0x6211D0
 namespace gamemd {
@@ -682,6 +687,7 @@ LABEL_21:
   return FontRenderer::DrawText(v9, a7, a3, v12, yTop, a5, a9) - v12; /*0x6211e4*/
 }
 } // namespace gamemd
+}
 
 // 0x6214B0
 namespace gamemd {
@@ -842,6 +848,7 @@ LABEL_17:
            1);
 }
 } // namespace gamemd
+}
 
 // 0x6223C0
 namespace gamemd {
@@ -880,6 +887,7 @@ unsigned int * E4Recv_6223C0::DestroyDialog()
   return result; /*0x622407*/
 }
 } // namespace gamemd
+}
 
 // 0x622470
 namespace gamemd {
@@ -941,6 +949,7 @@ void AddDynamicVector(HWND a1, int * a2)
   return 1; /*0x6225ca*/
 }
 } // namespace gamemd
+}
 
 // 0x622650
 namespace gamemd {
@@ -990,6 +999,7 @@ void sub_622650(unsigned short a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, L
   return result; /*0x622675*/
 }
 } // namespace gamemd
+}
 
 // 0x622820
 namespace gamemd {
@@ -1106,6 +1116,7 @@ AbstractClass * * SetupDialog(CoordStruct * hWnd, int a2)
   return Dialog::RestoreParent((HWND)hWnd); /*0x622b42*/
 }
 } // namespace gamemd
+}
 
 // 0x622B50
 namespace gamemd {
@@ -1197,7 +1208,7 @@ LABEL_49:
       aP2 = 0; /*0x622feb*/
       HashTable::Get(&g_MatrixTransformState + 2876, (IUnknown *)&hWnd, (IUnknown *)&aP2); /*0x622fef*/
       if ( aP2 ) /*0x622ffa*/
-        *(_DWORD *)(aP2 + 108) = 0; /*0x622ffc*/
+        aP2->health = 0; /*0x622ffc*/
       if ( !SessionClass::GetGameSpeed(&HouseClass_Player[29932]) ) /*0x623004*/
         Control::CreateControlDialog(aP0); /*0x62300f*/
       UI_Helper_60CAF0(aP0); /*0x623016*/
@@ -1264,13 +1275,13 @@ LABEL_49:
         aP2 = 0; /*0x622c67*/
         HashTable::Get(&g_MatrixTransformState + 2876, (IUnknown *)&lParam, (IUnknown *)&aP2); /*0x622c6f*/
         unsigned int v7 = aP2; /*0x622c74*/
-        if ( aP2 && *(_BYTE *)(aP2 + 190) ) /*0x622c7c*/
+        if ( aP2 && aP2->u8_BE ) /*0x622c7c*/
         {
           DlgItem = GetDlgItem((HWND)aP0, 1818); /*0x622c8c*/
           if ( DlgItem ) /*0x622c94*/
             SendMessageA(DlgItem, 0x4E2u, 0, 0); /*0x622ca0*/
           RenderGadgetClassAnimation((HWND)aP0, 0); /*0x622caa*/
-          *(_BYTE *)(v7 + 190) = 0; /*0x622caf*/
+          v7->u8_BE = 0; /*0x622caf*/
         }
         ValidateRect((HWND)aP0, 0); /*0x622cb9*/
         return 0; /*0x622cbf*/
@@ -1339,6 +1350,7 @@ LABEL_49:
   return 0; /*0x622ba9*/
 }
 } // namespace gamemd
+}
 
 // 0x623230
 namespace gamemd {
@@ -1365,6 +1377,7 @@ void* CreateMessageBox(LPARAM lParam, LPARAM a2, LONG dwNewLong)
   return Dialog; /*0x6232a9*/
 }
 } // namespace gamemd
+}
 
 // 0x623730
 namespace gamemd {
@@ -1434,6 +1447,7 @@ LABEL_15:
   return this; /*0x623828*/
 }
 } // namespace gamemd
+}
 
 // 0x623880
 namespace gamemd {
@@ -1677,6 +1691,7 @@ CampaignScore * * DrawTextRendererMultiline(IUnknown * aP0, int * a1, wchar_t * 
   return result; /*0x623ca7*/
 }
 } // namespace gamemd
+}
 
 // 0x623E40
 namespace gamemd {
@@ -1702,6 +1717,7 @@ AbstractClass * * GetDialogText(HWND hWnd, void ** a2)
   }
 }
 } // namespace gamemd
+}
 
 // 0x6241F0
 namespace gamemd {
@@ -1747,6 +1763,7 @@ void Dialog_Run(unsigned short a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, L
   }
 }
 } // namespace gamemd
+}
 
 // 0x6242B0
 namespace gamemd {
@@ -1784,6 +1801,7 @@ int E4Recv_6242B0::sub_6242B0()
   }
 }
 } // namespace gamemd
+}
 
 // 0x627020
 namespace gamemd {
@@ -1893,6 +1911,7 @@ unsigned int * sub_627020()
   return result; /*0x627146*/
 }
 } // namespace gamemd
+}
 
 // 0x6278C0
 namespace gamemd {
@@ -1917,7 +1936,7 @@ int E4Recv_6278C0::sub_6278C0(const char * a2)
     v18 = 0; /*0x62791f*/
   }
   String::CopyUpper(String, a2); /*0x62792c*/
-  int v5 = *(this + 3); /*0x627931*/
+  int v5 = this->M12; /*0x627931*/
   int v6 = (*(int (__thiscall **)(char *))(v5 + 4))(String); /*0x627938*/
   int v7 = *(_DWORD *)(*(_DWORD *)v5 + 24 * (v6 % *(_DWORD *)(v5 + 8)) + 16); /*0x627944*/
   int v8 = *(_DWORD *)v5 + 24 * (v6 % *(_DWORD *)(v5 + 8)); /*0x627948*/
@@ -1959,6 +1978,7 @@ LABEL_8:
   return v11; /*0x6279f4*/
 }
 } // namespace gamemd
+}
 
 // 0x627A10
 namespace gamemd {
@@ -1977,7 +1997,7 @@ unsigned int * E4Recv_627A10::sub_627A10(ObjectClass * aP1)
   ObjectClass String; // [esp+14h] [ebp-100h] BYREF
 
   String::CopyUpper(String[0], aP1); /*0x627a2c*/
-  int v3 = *(this + 3); /*0x627a31*/
+  int v3 = this->M12; /*0x627a31*/
   int v4 = *(_DWORD *)v3 + 24 * ((*(int (__thiscall **)(ObjectClass *))(v3 + 4))(&String) % *(_DWORD *)(v3 + 8)); /*0x627a48*/
   int v5 = *(_DWORD *)(v4 + 16) - 1; /*0x627a4b*/
   if ( v5 < 0 ) /*0x627a4c*/
@@ -2032,6 +2052,7 @@ LABEL_5:
   return result->__pad_0; /*0x627af5*/
 }
 } // namespace gamemd
+}
 
 // 0x629530
 namespace gamemd {
@@ -2061,10 +2082,11 @@ void E4Recv_629530::sub_629530()
       }
       while ( v3 < g_BuildingTypeInstanceCount ); /*0x62959e*/
     }
-    *(_BYTE *)(this + 84) = 0; /*0x6295a0*/
+    this->M84 = 0; /*0x6295a0*/
   }
 }
 } // namespace gamemd
+}
 
 // 0x62E070
 namespace gamemd {
@@ -2190,6 +2212,7 @@ AbstractClass * * DestructParticleSystemClass(ParticleSystemClass * aP0, int a2)
   return result; /*0x62e27c*/
 }
 } // namespace gamemd
+}
 
 // 0x620720
 namespace gamemd {
@@ -2235,7 +2258,7 @@ void DrawScrollArrowUI(int * a0, unsigned int * a1, ObjectClass * aP2, int a4, c
     v12 = (*(int (__thiscall **)(ObjectClass *))(*(int *)v8->__pad_0 + 128))(v8);
     v13 = *a0;
     v17[3] = v12;
-    (*(void (__thiscall **)(int *, int *, ObjectClass *, int *, int, int))(v13 + 8))(a0, v14, v8, v17, 0, 1);
+    a0->COMStub_Release(v14, v8, v17, 0, 1);
     }
   }
 }
@@ -2612,7 +2635,7 @@ void E4Recv_626290::sub_626290()
     v2 = this->M256;
     if ( v2 )
   {
-    v3 = *(int *)(v2 + 16);
+    v3 = v2->uniqueId;
     for ( i = 0; i < v3; ++i )
     {
     v5 = *(int *)(this->M256 + 4);

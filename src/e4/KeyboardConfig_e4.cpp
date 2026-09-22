@@ -83,6 +83,7 @@ LABEL_14:
     return 0; /*0x533f3b*/
   }
 }
+}
 
 // 0x538B80
 AbstractClass * * KeyboardConfig::ReleaseBuffer(int a2)
@@ -109,4 +110,5 @@ AbstractClass * * KeyboardConfig::ReleaseBuffer(int a2)
   this->vtable3 = v7; /*0x538bea*/
   this->uniqueId = 0; /*0x538bed*/
   return 1; /*0x538bf4*/
+}
 }

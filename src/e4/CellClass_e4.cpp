@@ -11,11 +11,12 @@ namespace gamemd {
 int CellClass::EnsureFileLoaded()
 {
 {
-  if ( !this->q0A4 && *(_BYTE *)(this + 756) ) /*0x544c8d*/
+  if ( !this->q0A4 && this->u8_2F4 ) /*0x544c8d*/
     MapClass::LoadFileData(this); /*0x544c97*/
   return this->q0A4 != 0; /*0x544ca9*/
 }
 } // namespace gamemd
+}
 
 // 0x56EF50
 namespace gamemd {
@@ -168,7 +169,7 @@ HouseClass * * CellClass::UpdateVariant3(IUnknown * aP0, IUnknown * aP1)
         g_Map_GlobalCellIndex = aP1; /*0x56f25a*/
       }
       CellClass::UpdateAnimations((int)v29); /*0x56f25f*/
-      aP1 = (IUnknown *)(*(_DWORD *)v32 + 0x10000); /*0x56f277*/
+      aP1 = (IUnknown *)(v32->u32_10000; /*0x56f277*/
       void * v30 = CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&aP1); /*0x56f28a*/
       CellClass::UpdateAnimations((int)v30); /*0x56f291*/
       v23 = CellCoord::To_CellObj(&stru_87C374[13428], v32); /*0x56f2a2*/
@@ -183,6 +184,7 @@ HouseClass * * CellClass::UpdateVariant3(IUnknown * aP0, IUnknown * aP1)
   return v9; /*0x56f1c5*/
 }
 } // namespace gamemd
+}
 
 // 0x56F2F0
 namespace gamemd {
@@ -335,7 +337,7 @@ HouseClass * * CellClass::UpdateVariant4(IUnknown * aP0, IUnknown * aP1)
         g_Map_GlobalCellIndex = aP1; /*0x56f5fa*/
       }
       CellClass::UpdateAnimations((int)v29); /*0x56f5ff*/
-      aP1 = (IUnknown *)(*(_DWORD *)v32 + 0x10000); /*0x56f617*/
+      aP1 = (IUnknown *)(v32->u32_10000; /*0x56f617*/
       void * v30 = CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&aP1); /*0x56f62a*/
       CellClass::UpdateAnimations((int)v30); /*0x56f631*/
       v23 = CellCoord::To_CellObj(&stru_87C374[13428], v32); /*0x56f642*/
@@ -350,6 +352,7 @@ HouseClass * * CellClass::UpdateVariant4(IUnknown * aP0, IUnknown * aP1)
   return v9; /*0x56f565*/
 }
 } // namespace gamemd
+}
 
 // 0x56F8B0
 namespace gamemd {
@@ -525,6 +528,7 @@ HouseClass * * CellClass::UpdateTerrain(IUnknown * aP0, IUnknown * aP1)
   return v9; /*0x56fb2c*/
 }
 } // namespace gamemd
+}
 
 // 0x56FC80
 namespace gamemd {
@@ -700,6 +704,7 @@ HouseClass * * CellClass::UpdateTileVariant2(IUnknown * aP0, IUnknown * aP1)
   return v9; /*0x56fefc*/
 }
 } // namespace gamemd
+}
 
 // 0x572440
 namespace gamemd {
@@ -852,7 +857,7 @@ HouseClass * * CellClass::UpdateVariant7(IUnknown * aP0, IUnknown * aP1)
         g_Map_GlobalCellIndex = aP1; /*0x57274a*/
       }
       CellClass::UpdateAnimations((int)v29); /*0x57274f*/
-      aP1 = (IUnknown *)(*(_DWORD *)v32 + 0x10000); /*0x572767*/
+      aP1 = (IUnknown *)(v32->u32_10000; /*0x572767*/
       void * v30 = CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&aP1); /*0x57277a*/
       CellClass::UpdateAnimations((int)v30); /*0x572781*/
       v23 = CellCoord::To_CellObj(&stru_87C374[13428], v32); /*0x572792*/
@@ -867,6 +872,7 @@ HouseClass * * CellClass::UpdateVariant7(IUnknown * aP0, IUnknown * aP1)
   return v9; /*0x5726b5*/
 }
 } // namespace gamemd
+}
 
 // 0x5727E0
 namespace gamemd {
@@ -1019,7 +1025,7 @@ HouseClass * * CellClass::UpdateVariant8(IUnknown * aP0, IUnknown * aP1)
         g_Map_GlobalCellIndex = aP1; /*0x572aea*/
       }
       CellClass::UpdateAnimations((int)v29); /*0x572aef*/
-      aP1 = (IUnknown *)(*(_DWORD *)v32 + 0x10000); /*0x572b07*/
+      aP1 = (IUnknown *)(v32->u32_10000; /*0x572b07*/
       void * v30 = CellCoord::To_CellObj(&stru_87C374[13428], (__int16 *)&aP1); /*0x572b1a*/
       CellClass::UpdateAnimations((int)v30); /*0x572b21*/
       v23 = CellCoord::To_CellObj(&stru_87C374[13428], v32); /*0x572b32*/
@@ -1034,6 +1040,7 @@ HouseClass * * CellClass::UpdateVariant8(IUnknown * aP0, IUnknown * aP1)
   return v9; /*0x572a55*/
 }
 } // namespace gamemd
+}
 
 // 0x572DA0
 namespace gamemd {
@@ -1209,6 +1216,7 @@ HouseClass * * CellClass::UpdateVariant5(IUnknown * aP0, IUnknown * aP1)
   return v9; /*0x57301c*/
 }
 } // namespace gamemd
+}
 
 // 0x573170
 namespace gamemd {
@@ -1384,6 +1392,7 @@ HouseClass * * CellClass::UpdateVariant6(IUnknown * aP0, IUnknown * aP1)
   return v9; /*0x5733ec*/
 }
 } // namespace gamemd
+}
 
 // 0x57BAA0
 namespace gamemd {
@@ -1481,6 +1490,7 @@ int CellClass::CheckTilePassable2(IUnknown * aP0)
   }
 }
 } // namespace gamemd
+}
 
 // 0x57CCF0
 namespace gamemd {
@@ -1578,6 +1588,7 @@ int CellClass::CheckTilePassable(IUnknown * aP0)
   }
 }
 } // namespace gamemd
+}
 
 // 0x65B510
 namespace gamemd {
@@ -1592,6 +1603,7 @@ int CellClass::GetOccupiedRatio()
     return 0; /*0x65b518*/
 }
 } // namespace gamemd
+}
 
 // 0x487E60
 namespace gamemd {

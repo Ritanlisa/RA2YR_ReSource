@@ -88,3 +88,4 @@ LABEL_12:
   DeleteAndZero(&v12); /*0x7a1b9c*/
 }
 } // namespace gamemd
+}

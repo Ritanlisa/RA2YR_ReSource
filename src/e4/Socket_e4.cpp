@@ -19,3 +19,4 @@ int Socket::ConfigureBuffers(AnimClass * aP1)
   Debug::Log(); /*0x7b26a6*/
   return 1; /*0x7b26b0*/
 }
+}

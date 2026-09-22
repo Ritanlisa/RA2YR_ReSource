@@ -2135,7 +2135,7 @@ char __thiscall RandomMap::CheckPlacementArea(_DWORD *this, __int16 *a2, __int16
                 SetLayerDataMap((__int16 *)&v66, this->q008); /*0x59269d*/
                 v29 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v66); /*0x5926ac*/
                 v26 = v70; /*0x5926b4*/
-                v29[283] = this->q040; /*0x5926b8*/
+                v29[283] = this->u32_40; /*0x5926b8*/
               }
               ++v28; /*0x5926c2*/
             }
@@ -2168,7 +2168,7 @@ char __thiscall RandomMap::CheckPlacementArea(_DWORD *this, __int16 *a2, __int16
               if ( MapSeed::IsCellInBounds((__int16 *)&v66) ) /*0x59272a*/
               {
                 SetLayerDataMap((__int16 *)&v66, this->q008); /*0x59273e*/
-                *((_BYTE *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v66) + 283) = this->q040; /*0x592759*/
+                *((_BYTE *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v66) + 283) = this->u32_40; /*0x592759*/
               }
               ++v34; /*0x592763*/
             }
@@ -2251,7 +2251,7 @@ char __thiscall RandomMap::CheckPlacementArea(_DWORD *this, __int16 *a2, __int16
               v53 = *v46; /*0x592969*/
               v46 += 4; /*0x59296b*/
               v47 += 4; /*0x59296e*/
-              v52[283] = this->q040 + v53 - 4; /*0x592977*/
+              v52[283] = this->u32_40 + v53 - 4; /*0x592977*/
               v54 = *(_BYTE *)(v47 - 4); /*0x59297d*/
               v52[284] = v54; /*0x592980*/
               v55 = g_CellTileLookup; /*0x592986*/
@@ -2294,7 +2294,7 @@ char __thiscall RandomMap::CheckPlacementArea(_DWORD *this, __int16 *a2, __int16
             if ( g_MapTileArray ) /*0x592a58*/
               *((_DWORD *)g_MapTileArray + 20 * (__int16)(v73 + v59 - v42) + 20 * unk_89C2DC * v61 + 14) = aP2; /*0x592a73*/
             v62 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v71); /*0x592a81*/
-            v63 = this->q040; /*0x592a8a*/
+            v63 = this->u32_40; /*0x592a8a*/
             v62[284] = 1; /*0x592a8d*/
             v64 = v63 - v42++ - 1; /*0x592a96*/
             v62[283] = v64; /*0x592a99*/

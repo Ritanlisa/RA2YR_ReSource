@@ -50,6 +50,7 @@ int EventClass::serializeEvent()
   return result; /*0x48b405*/
 }
 } // namespace gamemd
+}
 
 // 0x48BAD0
 namespace gamemd {
@@ -64,6 +65,7 @@ int EventClass::SetData(int a2, int a3, int a4, int a5, int a6)
   return a6; /*0x48baf3*/
 }
 } // namespace gamemd
+}
 
 // 0x4C65E0
 namespace gamemd {
@@ -89,6 +91,7 @@ void * EventClass::Add(AbstractClass * aP1, unsigned char a3, int a4, char a5)
   }
 }
 } // namespace gamemd
+}
 
 // 0x4C66C0
 namespace gamemd {
@@ -112,6 +115,7 @@ void * EventClass::AddEvent(int a2, unsigned char a3)
   }
 }
 } // namespace gamemd
+}
 
 // 0x4C6720
 namespace gamemd {
@@ -136,6 +140,7 @@ void * EventClass::Add2(AnimClass * aP1, unsigned char a3, IUnknown * aP3)
   }
 }
 } // namespace gamemd
+}
 
 // 0x4C6970
 namespace gamemd {
@@ -162,6 +167,7 @@ void * EventClass::AddEventEx(SelectClass_StripClass_SidebarClass * aP1, unsigne
   }
 }
 } // namespace gamemd
+}
 
 // 0x4C6AE0
 namespace gamemd {
@@ -190,6 +196,7 @@ void * EventClass::Init(IUnknown * aP1, char a3, int a4, int a5, int arg10, unsi
   }
 }
 } // namespace gamemd
+}
 
 // 0x4C6CB0
 namespace gamemd {
@@ -265,13 +272,13 @@ AbstractClass * * EventClass::ProcessEvent()
   int a1; // [esp+16h] [ebp-36Ch] BYREF
   int v86; // eax
     case 1:
-      Building = (BuildingClass *)BuildingLoadQueue::FindBuilding((_BYTE *)(this + 7));
+      Building = (BuildingClass *)BuildingLoadQueue::FindBuilding(&this->q007);
       ClearFactoryClassProduction(Building, 0);
       if ( Building && Building->isAliveFlag && !Building->inLimbo && !*((_BYTE *)Building->Type + 5824) )
         BuildingClass::AnnounceReady((int)Building);
       return;
     case 2:
-      v7 = (BuildingClass *)BuildingLoadQueue::FindBuilding((_BYTE *)(this + 7));
+      v7 = (BuildingClass *)BuildingLoadQueue::FindBuilding(&this->q007);
       ClearFactoryClassProduction(v7, 0);
       if ( v7 && v7->isAliveFlag && !v7->inLimbo && !*((_BYTE *)v7->Type + 5824) )
         BuildingClass::PowerOff((int)v7);
@@ -286,8 +293,8 @@ AbstractClass * * EventClass::ProcessEvent()
       return;
     case 4:
     case 5:
-      _DWORD * v26 = BuildingLoadQueue::Find((_BYTE *)(this + 7));
-      if ( *(_BYTE *)(this + 29) == 1 )
+      _DWORD * v26 = BuildingLoadQueue::Find(&this->q007);
+      if ( this->u8_1D == 1 )
         goto LABEL_2;
       ClearFactoryClassProduction(v26, this);
       if ( v26 )
@@ -299,11 +306,11 @@ AbstractClass * * EventClass::ProcessEvent()
             int v27 = 0;
             if ( !this->q048
   int v28; // eax
-              || (v28 = BuildingLoadQueue::FindObject((_BYTE *)(this + 14)), (v27 = v28) == 0)
+              || (v28 = BuildingLoadQueue::FindObject((_BYTE *)(&this->q0044)), (v27 = v28) == 0)
               || *(_BYTE *)(v28 + 144) && *(_DWORD *)(v28 + 108) && !*(_BYTE *)(v28 + 129) )
             {
-              if ( !*(_BYTE *)(this + 23)
-                || (Object = BuildingLoadQueue::FindObject((_BYTE *)(this + 19)), (v27 = Object) == 0)
+              if ( !this->u8_17
+                || (Object = BuildingLoadQueue::FindObject((_BYTE *)(&this->q0049)), (v27 = Object) == 0)
                 || *(_BYTE *)(Object + 144) && *(_DWORD *)(Object + 108) && !*(_BYTE *)(Object + 129) )
               {
                 if ( (unsigned char)this->EventClass_field_0xC != 7
@@ -311,7 +318,7 @@ AbstractClass * * EventClass::ProcessEvent()
                   || (v26[5] & 4) == 0
   void *v30; // eax
   void *v31; // ebp
-                  || (v30 = BuildingLoadQueue::GetNext((_BYTE *)(this + 19)), (v31 = v30) == 0)
+                  || (v30 = BuildingLoadQueue::GetNext((_BYTE *)(&this->q0049)), (v31 = v30) == 0)
                   || (*(int (__thiscall **)(void *))(*(_DWORD *)v30 + 44))(v30) != 6
                   || (void *)Team::GetMember(v26, 0) != v31 )
                 {
@@ -365,7 +372,7 @@ AbstractClass * * EventClass::ProcessEvent()
                   {
                     (*(void (__thiscall **)(_DWORD *, _DWORD))(*v26 + 968))(v26, 0);
                     int v38 = *v26;
-                    _BYTE * v39 = (_BYTE *)(this + 14);
+                    _BYTE * v39 = (_BYTE *)(&this->q0044);
                     Next = BuildingLoadQueue::GetNext(v39);
                     (*(void (__thiscall **)(_DWORD *, void *, int))(v38 + 1152))(v26, Next, 1);
                     eax99a = (IUnknown *)BuildingLoadQueue::GetNext(v39);
@@ -378,17 +385,17 @@ AbstractClass * * EventClass::ProcessEvent()
                       TechnoClass::SetFocus(v36, 0);
                       FootClass::ClearSomeVector(v36);
                     }
-                    v41 = (IUnknown *)BuildingLoadQueue::GetNext((_BYTE *)(this + 14));
+                    v41 = (IUnknown *)BuildingLoadQueue::GetNext((_BYTE *)(&this->q0044));
                     (*(void (__thiscall **)(_DWORD *, IUnknown *))(*v26 + 968))(v26, v41);
                     int v43 = *v26;
-                    void * v44 = BuildingLoadQueue::GetNext((_BYTE *)(this + 19));
+                    void * v44 = BuildingLoadQueue::GetNext((_BYTE *)(&this->q0049));
                     (*(void (__thiscall **)(_DWORD *, void *, int))(v43 + 1152))(v26, v44, 1);
                     if ( *(_BYTE *)((*(int (__thiscall **)(_DWORD *))(*v26 + 132))(v26) + 1508) && v41 )
                       CCINIClass::IterateNodes(v26, v41);
                     if ( this->q007 )
                     {
                       int v45 = *v26;
-                      eax107 = BuildingLoadQueue::GetNext((_BYTE *)(this + 24));
+                      eax107 = BuildingLoadQueue::GetNext((_BYTE *)(&this->q0084));
                       (*(void (__thiscall **)(_DWORD *, void *))(v45 + 1148))(v26, eax107);
                     }
                   }
@@ -400,7 +407,7 @@ AbstractClass * * EventClass::ProcessEvent()
       }
       return;
     case 6:
-      v46 = (TechnoClass *)BuildingLoadQueue::Find((_BYTE *)(this + 7));
+      v46 = (TechnoClass *)BuildingLoadQueue::Find(&this->q007);
       ClearFactoryClassProduction(v46, 0);
       if ( v46 )
       {
@@ -463,7 +470,7 @@ AbstractClass * * EventClass::ProcessEvent()
       }
       return;
     case 7:
-      v57 = (CellStruct *)BuildingLoadQueue::Find((_BYTE *)(this + 7));
+      v57 = (CellStruct *)BuildingLoadQueue::Find(&this->q007);
       ClearFactoryClassProduction(v57, 0);
       if ( v57 && (v57->__pad_8[12] & 4) != 0 && v57->__pad_34[92] && !v57->__pad_34[77] && !v57[1].__pad_FC[84] )
       {
@@ -479,7 +486,7 @@ AbstractClass * * EventClass::ProcessEvent()
     case 8:
       goto LABEL_184;
     case 9:
-      v51 = (CellStruct *)BuildingLoadQueue::Find((_BYTE *)(this + 7));
+      v51 = (CellStruct *)BuildingLoadQueue::Find(&this->q007);
       ClearFactoryClassProduction(v51, 0);
       if ( v51 )
       {
@@ -518,7 +525,7 @@ AbstractClass * * EventClass::ProcessEvent()
       }
       return;
     case 0xA:
-      v55 = (CellStruct *)BuildingLoadQueue::Find((_BYTE *)(this + 7));
+      v55 = (CellStruct *)BuildingLoadQueue::Find(&this->q007);
       ClearFactoryClassProduction(v55, 0);
       if ( v55 )
       {
@@ -576,7 +583,7 @@ AbstractClass * * EventClass::ProcessEvent()
         0);
       return;
     case 0x11:
-      int v25 = BuildingLoadQueue::FindBuilding((_BYTE *)(this + 7));
+      int v25 = BuildingLoadQueue::FindBuilding(&this->q007);
       ClearFactoryClassProduction((_DWORD *)v25, 0);
       if ( v25 && *(_BYTE *)(v25 + 144) )
         (*(void (__thiscall **)(int))(*(_DWORD *)v25 + 1264))(v25);
@@ -642,13 +649,13 @@ AbstractClass * * EventClass::ProcessEvent()
       }
       return;
     case 0x15:
-      _BYTE * v11 = BuildingLoadQueue::Find((_BYTE *)(this + 7));
+      _BYTE * v11 = BuildingLoadQueue::Find(&this->q007);
       ClearFactoryClassProduction(v11, 0);
       if ( v11 && v11[144] )
         (*(void (__thiscall **)(_BYTE *, int))(*(_DWORD *)v11 + 412))(v11, -1);
       return;
     case 0x16:
-      v12 = (CellStruct *)BuildingLoadQueue::Find((_BYTE *)(this + 7));
+      v12 = (CellStruct *)BuildingLoadQueue::Find(&this->q007);
       ClearFactoryClassProduction(v12, 0);
       if ( v12 && v12->__pad_34[92] && *(_DWORD *)(*(_DWORD *)&v12->__pad_170[172] + 48) == this->q008 )
       {
@@ -735,11 +742,11 @@ LABEL_173:
       SaveScenarioClassGame_AdjustMPSaveFileName(MultiByteStr, eax174, 0);
       return;
     case 0x1E:
-      v8 = (ObjectClass *)BuildingLoadQueue::Find((_BYTE *)(this + 7));
+      v8 = (ObjectClass *)BuildingLoadQueue::Find(&this->q007);
       ClearFactoryClassProduction(v8, 0);
       if ( v8 && v8->isAliveFlag )
       {
-        v9 = (IUnknown *)BuildingLoadQueue::GetNext((_BYTE *)(this + 12));
+        v9 = (IUnknown *)BuildingLoadQueue::GetNext((_BYTE *)(&this->q0042));
         TechnoClass::SetFocus(v8, v9);
       }
       return;
@@ -985,6 +992,7 @@ LABEL_2:
   }
 }
 } // namespace gamemd
+}
 
 // 0x542280
 namespace gamemd {
@@ -1005,6 +1013,7 @@ int EventClass::deserializeEvent(int a2, IUnknown * aP2)
   return result; /*0x5422b4*/
 }
 } // namespace gamemd
+}
 
 // 0x54F200
 namespace gamemd {
@@ -1049,6 +1058,7 @@ int EventClass::Enqueue(unsigned short a2, char a3)
   return 0; /*0x54f2d7*/
 }
 } // namespace gamemd
+}
 
 // 0x5F19C0
 namespace gamemd {
@@ -1062,6 +1072,7 @@ int EventClass::CheckFlag()
   return 1; /*0x5f19d4*/
 }
 } // namespace gamemd
+}
 
 // 0x664440
 namespace gamemd {
@@ -1133,6 +1144,7 @@ LABEL_23:
   return v1; /*0x66451c*/
 }
 } // namespace gamemd
+}
 
 // 0x40B6A0
 namespace gamemd {
@@ -1355,15 +1367,15 @@ DynamicVector * EventClass::executeAction(char a2)
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->q004;
     *(void**)this = &vt_VectorClass_BombClass;
-    if ( v3 && *((char *)(this) + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->q004 = 0;
   }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
+    this->IsAllocated = 0;
+    this->q008 = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -1419,15 +1431,15 @@ VectorClass * EventClass::queueEvent(char a2)
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->q004;
     *(void**)this = &vt_VectorClass_CommandClass_const;
-    if ( v3 && *((char *)(this) + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->q004 = 0;
   }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
+    this->IsAllocated = 0;
+    this->q008 = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (VectorClass *)this;

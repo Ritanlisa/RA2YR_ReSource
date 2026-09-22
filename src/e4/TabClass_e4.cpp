@@ -15,6 +15,7 @@ unsigned int * TabClass::initStripClass()
   this->q00C = 0; /*0x4a2362*/
   return this; /*0x4a2365*/
 }
+}
 
 // 0x658330
 int TabClass::DrawPower(HWND hDlg, void * a1, AbstractClass * aP2)
@@ -133,4 +134,5 @@ int TabClass::DrawPower(HWND hDlg, void * a1, AbstractClass * aP2)
     v24 = GetDlgItem(hDlg, v3); /*0x658619*/
     return SendMessageA(v24, 0x4B2u, 0, (LPARAM)lParam); /*0x658628*/
   }
+}
 }

@@ -65,6 +65,7 @@ int Struct::ClearAllMemberFlags()
   this->q054 = 0; /*0x48b38a*/
   return result; /*0x48b37f*/
 }
+}
 
 // 0x48BF10
 int Struct::ZeroInitAndSetup()
@@ -83,6 +84,7 @@ int Struct::ZeroInitAndSetup()
   this->q048 = -1; /*0x48bf33*/
   return Struct::ClearAllMemberFlags(this->q004);
 }
+}
 
 // 0x4B9BD0
 unsigned char * Struct::Zero3()
@@ -92,6 +94,7 @@ unsigned char * Struct::Zero3()
   this->q004 = 0; /*0x4b9bd6*/
   this->q008 = 0; /*0x4b9bd9*/
   return this; /*0x4b9bdc*/
+}
 }
 
 // 0x4085A0
@@ -112,6 +115,7 @@ int Struct::ZeroInitAndSetup_0()
   return Struct::ZeroInitAndSetup(this);
 }
 }
+}
 // 0x5EF280
 namespace gamemd {
 int Struct::ZeroInitAndSetup_0_0()
@@ -119,6 +123,7 @@ int Struct::ZeroInitAndSetup_0_0()
 // attributes: thunk
 {
   return Struct::ZeroInitAndSetup(this);
+}
 }
 }
 // 0x5F75E0

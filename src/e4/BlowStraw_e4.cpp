@@ -15,8 +15,8 @@ int BlowStraw_29::Seek(TabClass * aP1, unsigned int * a2)
   int i; // edi
   char *FontClassEntry; // eax
 
-  IUnknown *v4 = *(this + 5454); /*0x6d068b*/
-  int v5 = *(this + 5456); /*0x6d0691*/
+  IUnknown *v4 = *(&this->u32_8844); /*0x6d068b*/
+  int v5 = *(&this->u32_8846); /*0x6d0691*/
   if ( v4 != -1 ) /*0x6d069a*/
   {
     if ( *(_DWORD *)&g_NetworkPlayerBuffer[5960] - v4 >= v5 ) /*0x6d06a6*/
@@ -26,7 +26,7 @@ int BlowStraw_29::Seek(TabClass * aP1, unsigned int * a2)
   if ( v5 == 1 ) /*0x6d06ac*/
   {
     int v6 = *this; /*0x6d06ae*/
-    *((_BYTE *)this + 21829) = 1; /*0x6d06b4*/
+    this->u8_5545 = 1; /*0x6d06b4*/
     this->vt_slot_56(0); /*0x6d06ba*/
   }
 LABEL_6:
@@ -44,7 +44,7 @@ LABEL_6:
     if ( v9 == 33008 ) /*0x6d0842*/
     {
       PlayVocClass(*(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[30972] + 408), 0x2000, 1.0, 0); /*0x6d0860*/
-      if ( *((_BYTE *)this + 21828) ) /*0x6d0865*/
+      if ( this->u8_5544 ) /*0x6d0865*/
       {
         SidebarUpdateAll(this); /*0x6d0875*/
         this->vt_slot_52(&g_OverlayTypeConfig[21688]); /*0x6d0883*/
@@ -56,11 +56,11 @@ LABEL_6:
         }
         HashTable::Remove(*(int **)&DataGlobal_87F8E4[31364], 240); /*0x6d08b3*/
         int v16 = *this; /*0x6d08b8*/
-        *((_BYTE *)this + 21828) = 0; /*0x6d08c1*/
+        this->u8_5544 = 0; /*0x6d08c1*/
         this->vt_slot_48(&g_OverlayTypeConfig[21576]); /*0x6d08c8*/
         PushCommandClass::Execute(&g_OverlayTypeConfig[21576], (int)&stru_830620[74264]); /*0x6d08d5*/
         int v17 = *this; /*0x6d08da*/
-        *((_BYTE *)this + 21829) = 1; /*0x6d08e0*/
+        this->u8_5545 = 1; /*0x6d08e0*/
         this->vt_slot_56(0); /*0x6d08e6*/
       }
     }
@@ -69,14 +69,14 @@ LABEL_6:
       if ( !MuteSWLaunches ) /*0x6d08fc*/
       {
         PlayVocClass(*(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[30972] + 404), 0x2000, 1.0, 0); /*0x6d091a*/
-        if ( !*((_BYTE *)this + 21828) ) /*0x6d091f*/
+        if ( !this->u8_5544 ) /*0x6d091f*/
         {
           this->vt_slot_52(&g_OverlayTypeConfig[21576]); /*0x6d0932*/
           HashTable::Remove(*(int **)&DataGlobal_87F8E4[31364], 241); /*0x6d0940*/
-          *((_BYTE *)this + 21828) = 1; /*0x6d0947*/
+          this->u8_5544 = 1; /*0x6d0947*/
           CommandClass::BuildBar(this); /*0x6d094d*/
           int v18 = *this; /*0x6d0952*/
-          *((_BYTE *)this + 21829) = 1; /*0x6d0958*/
+          this->u8_5545 = 1; /*0x6d0958*/
           this->vt_slot_56(0); /*0x6d095e*/
         }
       }
@@ -154,6 +154,7 @@ LABEL_6:
   return SidebarClass::UpdateStrips((char *)this, aP1, a2); /*0x6d09af*/
 }
 } // namespace gamemd
+}
 
 // 0x731AF0
 namespace gamemd {
@@ -208,6 +209,7 @@ LABEL_5:
   return (wchar_t *)MessageListClass::AddMessage(g_GameNetworkObject, 0, 0, v6, v7, 16454, 240, 1); /*0x731b43*/
 }
 } // namespace gamemd
+}
 
 // 0x5BE9E0
 namespace gamemd {

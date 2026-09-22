@@ -49,6 +49,7 @@ char sub_5F0070()
   return v0; /*0x5f0119*/
 }
 } // namespace gamemd
+}
 
 // 0x5F0180
 namespace gamemd {
@@ -155,6 +156,7 @@ LABEL_20:
   return result; /*0x5f03a2*/
 }
 } // namespace gamemd
+}
 
 // 0x5F2CE0
 namespace gamemd {
@@ -339,6 +341,7 @@ LABEL_36:
   return v3; /*0x5f3149*/
 }
 } // namespace gamemd
+}
 
 // 0x5F33B0
 namespace gamemd {
@@ -359,6 +362,7 @@ void* sub_5F33B0()
   return -1000; /*0x5f33ed*/
 }
 } // namespace gamemd
+}
 
 // 0x5F66A0
 namespace gamemd {
@@ -421,6 +425,7 @@ unsigned int * sub_5F66A0(unsigned int * a1, int a2)
   return a1; /*0x5f6777*/
 }
 } // namespace gamemd
+}
 
 // 0x5FBEF0
 namespace gamemd {
@@ -452,6 +457,7 @@ char sub_5FBEF0()
   return 1; /*0x5fbf60*/
 }
 } // namespace gamemd
+}
 
 // 0x5FDD20
 namespace gamemd {
@@ -500,6 +506,7 @@ LABEL_11:
   }
 }
 } // namespace gamemd
+}
 
 // 0x5FDDF0
 namespace gamemd {
@@ -558,6 +565,7 @@ AbstractClass * * sub_5FDDF0()
   }
 }
 } // namespace gamemd
+}
 
 // 0x5FE620
 namespace gamemd {
@@ -614,6 +622,7 @@ LABEL_5:
   return result; /*0x5fe763*/
 }
 } // namespace gamemd
+}
 
 // 0x5FF390
 namespace gamemd {
@@ -645,6 +654,7 @@ void sub_5FF390()
   }
 }
 } // namespace gamemd
+}
 
 // 0x5FF420
 namespace gamemd {
@@ -814,6 +824,7 @@ AbstractClass * * GenerateRangeRingTextures()
   return result; /*0x5ff7ef*/
 }
 } // namespace gamemd
+}
 
 // 0x5F1350
 namespace gamemd {

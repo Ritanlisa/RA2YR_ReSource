@@ -8,13 +8,13 @@ bool GUID::Compare(int a2)
 {
 
   if ( dword_828140 == 2 ) /*0x53ee7d*/
-    return this->Data4 == *(_DWORD *)(a2 + 4) && *(_WORD *)this == *(_WORD *)a2; /*0x53ef1b*/
-  if ( (*this || this->Data4 || this->Data3 || *(this + 3)) /*0x53eed8*/
-    && (*(_BYTE *)a2 || *(_BYTE *)(a2 + 1) || *(_BYTE *)(a2 + 2) || *(_BYTE *)(a2 + 3)) )
+    return this->Data4 == a2->vtable2 && *(_WORD *)this == *(_WORD *)a2; /*0x53ef1b*/
+  if ( (*this || this->Data4 || this->Data3 || this->u32_C) /*0x53eed8*/
+    && (*(_BYTE *)a2 || a2->vtable2 || a2->vtable3 || a2->vtable4) )
   {
     int v8 = 3; /*0x53eef8*/
     _WORD * v9 = (_WORD *)(a2 + 4); /*0x53eefd*/
-    _WORD * v10 = this + 4; /*0x53ef00*/
+    _WORD * v10 = &this->u32_10; /*0x53ef00*/
     bool v11 = 1; /*0x53ef03*/
     do /*0x53ef05*/
     {
@@ -28,7 +28,7 @@ bool GUID::Compare(int a2)
   }
   _WORD * v4 = (_WORD *)(a2 + 4); /*0x53eedf*/
   int v5 = 3; /*0x53eee2*/
-  _WORD * v6 = this + 4; /*0x53eee7*/
+  _WORD * v6 = &this->u32_10; /*0x53eee7*/
   bool v7 = 1; /*0x53eeea*/
   do /*0x53eeec*/
   {
@@ -39,4 +39,5 @@ bool GUID::Compare(int a2)
   }
   while ( v7 ); /*0x53eeec*/
   return v7; /*0x53ee9f*/
+}
 }

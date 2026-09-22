@@ -75,6 +75,7 @@ LABEL_7:
   return 1; /*0x59052b*/
 }
 } // namespace gamemd
+}
 
 // 0x594190
 namespace gamemd {
@@ -134,7 +135,7 @@ LABEL_19:
               else
               {
                 AbstractClass *v12 = (char *)g_RandomMap_TerrainState; /*0x59424f*/
-                while ( *(_DWORD *)(*(_DWORD *)v12 + 8) != v9 ) /*0x59425a*/
+                while ( *(_DWORD *)(v12->vtable3 != v9 ) /*0x59425a*/
                 {
                   ++v11; /*0x59425c*/
                   v12 += 4; /*0x59425d*/
@@ -167,6 +168,7 @@ LABEL_19:
   return result; /*0x5942df*/
 }
 } // namespace gamemd
+}
 
 // 0x594420
 namespace gamemd {
@@ -301,6 +303,7 @@ void FloodFillRandomMapTerrain(int a1, IUnknown * a2, int a3)
   }
 }
 } // namespace gamemd
+}
 
 // 0x594B50
 namespace gamemd {
@@ -464,6 +467,7 @@ ObjectClass * * RandomMap_DistributeTerrain()
   return 1; /*0x594f03*/
 }
 } // namespace gamemd
+}
 
 // 0x595CE0
 namespace gamemd {
@@ -623,6 +627,7 @@ LABEL_37:
   }
 }
 } // namespace gamemd
+}
 
 // 0x595FB0
 namespace gamemd {
@@ -746,6 +751,7 @@ LABEL_39:
   return ComPtr::Release(v15); /*0x5962f5*/
 }
 } // namespace gamemd
+}
 
 // 0x59A8F0
 namespace gamemd {
@@ -958,6 +964,7 @@ AbstractClass * * ArrangeBuildingPlacementGrid(int a1, int a2, MapResourceClass 
   }
 }
 } // namespace gamemd
+}
 
 // 0x59C630
 namespace gamemd {
@@ -1030,6 +1037,7 @@ LABEL_25:
   return result; /*0x59c7f3*/
 }
 } // namespace gamemd
+}
 
 // 0x5942F0
 namespace gamemd {

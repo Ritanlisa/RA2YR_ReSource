@@ -89,6 +89,7 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int * a2)
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x41BF30
 namespace ra2 {

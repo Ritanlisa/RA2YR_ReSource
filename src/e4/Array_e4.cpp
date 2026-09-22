@@ -23,6 +23,7 @@ int Array::GetClamped(CheckListClass * aP1)
   return result; /*0x557ac7*/
 }
 } // namespace gamemd
+}
 
 // 0x634290
 namespace gamemd {
@@ -47,6 +48,7 @@ int Array::FindValue(IUnknown * aP1)
   return result; /*0x6342b4*/
 }
 } // namespace gamemd
+}
 
 // 0x63E590
 namespace gamemd {
@@ -72,6 +74,7 @@ int Array::RemoveAt(int a2)
   return 1; /*0x63e5b9*/
 }
 } // namespace gamemd
+}
 
 // 0x65AD40
 namespace gamemd {
@@ -81,6 +84,7 @@ int Array::Get(int a2)
   return *(_DWORD *)(this->q0E4 + 4 * a2); /*0x65ad4d*/
 }
 } // namespace gamemd
+}
 
 // 0x65ADF0
 namespace gamemd {
@@ -101,6 +105,7 @@ int Array::ContainsValue(IUnknown * aP1)
   return 1; /*0x65ae1a*/
 }
 } // namespace gamemd
+}
 
 // 0x7490D0
 namespace gamemd {
@@ -124,6 +129,7 @@ int Array::Zero()
   return result; /*0x7490f4*/
 }
 } // namespace gamemd
+}
 
 // 0x749150
 namespace gamemd {
@@ -150,6 +156,7 @@ void Array::ByteSwap()
   }
 }
 } // namespace gamemd
+}
 
 // 0x763980
 namespace gamemd {
@@ -162,6 +169,7 @@ int Array::GetElement(CampaignScore * aP1)
     return this->q02C + 12 * (_DWORD)aP1; /*0x763993*/
 }
 } // namespace gamemd
+}
 
 // 0x7ACD30
 namespace gamemd {
@@ -180,6 +188,7 @@ int Array::CleanupArrayWOL()
   return result; /*0x7acd53*/
 }
 } // namespace gamemd
+}
 
 // 0x7AD790
 namespace gamemd {
@@ -240,6 +249,7 @@ AbstractClass * * Array::InsertElement(const void * a1, ObjectClass * aP2)
   return 1; /*0x7ad91b*/
 }
 } // namespace gamemd
+}
 
 // 0x4068F0
 namespace gamemd {

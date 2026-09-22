@@ -243,10 +243,12 @@ LABEL_51:
   }
   return result; /*0x4f4ba4*/
 }
+}
 
 // 0x724C00
 int Frame::Init()
 {
 {
   return this->q004 != 0; /*0x724c0a*/
+}
 }

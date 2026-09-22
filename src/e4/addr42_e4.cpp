@@ -102,6 +102,7 @@ LABEL_5:
   }
 }
 } // namespace gamemd
+}
 
 // 0x420F40
 namespace gamemd {
@@ -285,6 +286,7 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
   return result; /*0x42133e*/
 }
 } // namespace gamemd
+}
 
 // 0x421B60
 namespace gamemd {
@@ -350,6 +352,7 @@ LABEL_23:
   return result; /*0x421c58*/
 }
 } // namespace gamemd
+}
 
 // 0x424CE0
 namespace gamemd {
@@ -441,6 +444,7 @@ void* ProductionCompletionCallback()
   return v3; /*0x424ef9*/
 }
 } // namespace gamemd
+}
 
 // 0x424F00
 namespace gamemd {
@@ -532,6 +536,7 @@ AbstractClass * * CreateUnitOnCompletion()
   return v11; /*0x4250c9*/
 }
 } // namespace gamemd
+}
 
 // 0x4251F0
 namespace gamemd {
@@ -553,6 +558,7 @@ void sub_4251F0(int a1, short * a2)
   return result; /*0x425259*/
 }
 } // namespace gamemd
+}
 
 // 0x425670
 namespace gamemd {
@@ -781,6 +787,7 @@ LABEL_47:
   return v18; /*0x4258bb*/
 }
 } // namespace gamemd
+}
 
 // 0x4261D0
 namespace gamemd {
@@ -814,6 +821,7 @@ void sub_4261D0()
   return result; /*0x42626b*/
 }
 } // namespace gamemd
+}
 
 // 0x4267F0
 namespace gamemd {
@@ -884,6 +892,7 @@ AbstractClass * * sub_4267F0()
   return *(_BYTE *)(a1 + 136); /*0x4268fe*/
 }
 } // namespace gamemd
+}
 
 // 0x426ED0
 namespace gamemd {
@@ -946,6 +955,7 @@ AbstractClass * * E4Recv_426ED0::sub_426ED0(int a2)
   return v12 + v14 + 2; /*0x426f14*/
 }
 } // namespace gamemd
+}
 
 // 0x4270D0
 namespace gamemd {
@@ -1055,6 +1065,7 @@ LABEL_22:
   }
 }
 } // namespace gamemd
+}
 
 // 0x427940
 namespace gamemd {
@@ -1108,6 +1119,7 @@ int BuildingTypeClass_LoadTheatreSHP(int a1)
   return result; /*0x427a72*/
 }
 } // namespace gamemd
+}
 
 // 0x428F70
 namespace gamemd {
@@ -1134,6 +1146,7 @@ LABEL_6:
   return *(AnimTypeClass **)(*(_DWORD *)(a2 + 4) + 4 * v4); /*0x428fdc*/
 }
 } // namespace gamemd
+}
 
 // 0x429780
 namespace gamemd {
@@ -1179,6 +1192,7 @@ unsigned int * PathClass_WalkPath(unsigned int * a1, int * a2, int a3, int * a4)
   }
 }
 } // namespace gamemd
+}
 
 // 0x42A900
 namespace gamemd {
@@ -1189,28 +1203,28 @@ AbstractClass * * E4Recv_42A900::sub_42A900()
   void **v3; // esi
   void **v7; // esi
 
-  v2 = *(void ***)(this + 20); /*0x42a907*/
+  v2 = *(void ***)(&this->u32_80); /*0x42a907*/
   if ( v2 ) /*0x42a90c*/
   {
     __3_YAXPAX_Z(v2[2]); /*0x42a912*/
     __3_YAXPAX_Z(v2); /*0x42a918*/
   }
-  v3 = *(void ***)(this + 104); /*0x42a920*/
+  v3 = *(void ***)(&this->u32_284); /*0x42a920*/
   this->M20 = 0; /*0x42a923*/
   if ( v3 ) /*0x42a928*/
   {
     __3_YAXPAX_Z(v3[2]); /*0x42a92e*/
     __3_YAXPAX_Z(v3); /*0x42a934*/
   }
-  AbstractClass *v4 = *(void **)(this + 16); /*0x42a93c*/
+  AbstractClass *v4 = *(void **)(&this->u32_46); /*0x42a93c*/
   this->M104 = 0; /*0x42a93f*/
   if ( v4 ) /*0x42a944*/
     __3_YAXPAX_Z(v4); /*0x42a947*/
-  AbstractClass *v5 = *(void **)(this + 12); /*0x42a94f*/
+  AbstractClass *v5 = *(void **)(&this->u32_42); /*0x42a94f*/
   this->M16 = 0; /*0x42a952*/
   if ( v5 ) /*0x42a957*/
     __3_YAXPAX_Z(v5); /*0x42a95a*/
-  AbstractClass *v6 = *(void **)(this + 24); /*0x42a962*/
+  AbstractClass *v6 = *(void **)(&this->u32_84); /*0x42a962*/
   this->M12 = 0; /*0x42a965*/
   if ( v6 ) /*0x42a96a*/
   {
@@ -1219,20 +1233,20 @@ AbstractClass * * E4Recv_42A900::sub_42A900()
   }
   if ( this->M28 ) /*0x42a978*/
   {
-    __3_YAXPAX_Z(*(void **)(this + 28)); /*0x42a980*/
+    __3_YAXPAX_Z(*(void **)(&this->u32_88)); /*0x42a980*/
     this->M28 = 0; /*0x42a988*/
   }
   if ( this->M36 ) /*0x42a98b*/
   {
-    __3_YAXPAX_Z(*(void **)(this + 36)); /*0x42a993*/
+    __3_YAXPAX_Z(*(void **)(&this->M126)); /*0x42a993*/
     this->M36 = 0; /*0x42a99b*/
   }
   if ( this->M32 ) /*0x42a99e*/
   {
-    __3_YAXPAX_Z(*(void **)(this + 32)); /*0x42a9a6*/
+    __3_YAXPAX_Z(*(void **)(&this->M122)); /*0x42a9a6*/
     this->M32 = 0; /*0x42a9ae*/
   }
-  v7 = (void **)(this + 76); /*0x42a9b2*/
+  v7 = (void **)(&this->M286); /*0x42a9b2*/
   int v8 = 3; /*0x42a9b5*/
   do /*0x42a9f5*/
   {
@@ -1255,8 +1269,8 @@ AbstractClass * * E4Recv_42A900::sub_42A900()
     --v8; /*0x42a9f4*/
   }
   while ( v8 ); /*0x42a9f5*/
-  __3_YAXPAX_Z(*(void **)(this + 100)); /*0x42a9fb*/
-  Coord *v9 = this + 188; /*0x42aa03*/
+  __3_YAXPAX_Z(*(void **)(&this->u32_280)); /*0x42a9fb*/
+  Coord *v9 = &this->u32_2F0; /*0x42aa03*/
   int v10 = 3; /*0x42aa09*/
   do /*0x42aa37*/
   {
@@ -1265,19 +1279,20 @@ AbstractClass * * E4Recv_42A900::sub_42A900()
     *(_DWORD *)v9 = &vt_VectorClass_unsigned_int; /*0x42aa17*/
     if ( v11 ) /*0x42aa1d*/
     {
-      if ( *(_BYTE *)(v9 + 13) ) /*0x42aa1f*/
+      if ( v9->u8_D ) /*0x42aa1f*/
       {
         __3_YAXPAX_Z(v11); /*0x42aa25*/
         v9->q004 = 0; /*0x42aa2d*/
       }
     }
     --v10; /*0x42aa30*/
-    *(_BYTE *)(v9 + 13) = 0; /*0x42aa31*/
+    v9->u8_D = 0; /*0x42aa31*/
     v9->q008 = 0; /*0x42aa34*/
   }
   while ( v10 ); /*0x42aa37*/
 }
 } // namespace gamemd
+}
 
 // 0x42AA90
 namespace gamemd {
@@ -1352,6 +1367,7 @@ void * globalHelper_02AA90(int a1, DynamicVectorClass_uint * aP1)
   return &dword_89A2D8; /*0x42abe3*/
 }
 } // namespace gamemd
+}
 
 // 0x42B080
 namespace gamemd {
@@ -1416,6 +1432,7 @@ void sub_42B080(short * a1, int a2)
   return 0; /*0x42b1a9*/
 }
 } // namespace gamemd
+}
 
 // 0x42B420
 namespace gamemd {
@@ -1637,6 +1654,7 @@ LABEL_38:
   return v7; /*0x42b6f5*/
 }
 } // namespace gamemd
+}
 
 // 0x42BCA0
 namespace gamemd {
@@ -1718,6 +1736,7 @@ LABEL_11:
   return result; /*0x42bdbd*/
 }
 } // namespace gamemd
+}
 
 // 0x42BE20
 namespace gamemd {
@@ -1859,6 +1878,7 @@ LABEL_48:
   return 1; /*0x42c14f*/
 }
 } // namespace gamemd
+}
 
 // 0x42C900
 namespace gamemd {
@@ -1877,9 +1897,9 @@ void * E4Recv_42C900::FindPathWithRetry(FootClass * aP1, short * a2, int aP4, in
   IUnknown *aP4a; // [esp+44h] [ebp+Ch]
   IUnknown *aP4b; // [esp+44h] [ebp+Ch]
 
-  *(_BYTE *)(this + 56) = 1; /*0x42c909*/
+  this->M56 = 1; /*0x42c909*/
   CellClass::ClearOccupancyGrid((_DWORD *)this); /*0x42c90d*/
-  int v9 = this + 116; /*0x42c912*/
+  int v9 = &this->u32_1D0; /*0x42c912*/
   int v10 = 3; /*0x42c915*/
   do /*0x42c925*/
   {
@@ -2004,6 +2024,7 @@ LABEL_18:
   return result; /*0x42cb36*/
 }
 } // namespace gamemd
+}
 
 // 0x42CCD0
 namespace gamemd {
@@ -2103,6 +2124,7 @@ LABEL_25:
   }
 }
 } // namespace gamemd
+}
 
 // 0x42CF80
 namespace gamemd {
@@ -2225,6 +2247,7 @@ void E4Recv_42CF80::sub_42CF80(int a2, IUnknown * aP2)
   }
 }
 } // namespace gamemd
+}
 
 // 0x42D490
 namespace gamemd {
@@ -2252,6 +2275,7 @@ unsigned int * Cell_GetNeighborCoord(unsigned int * a1, short * a2, int a3)
   }
 }
 } // namespace gamemd
+}
 
 // 0x42E150
 namespace gamemd {
@@ -2278,6 +2302,7 @@ void sub_42E150()
   return result; /*0x42e1b0*/
 }
 } // namespace gamemd
+}
 
 // 0x42FD30
 namespace gamemd {
@@ -2359,6 +2384,7 @@ LABEL_19:
   return v17; /*0x42fe41*/
 }
 } // namespace gamemd
+}
 
 // 0x42FE50
 namespace gamemd {
@@ -2469,6 +2495,7 @@ LABEL_16:
   return 0; /*0x42ff5c*/
 }
 } // namespace gamemd
+}
 
 // 0x420080
 namespace gamemd {
@@ -3010,10 +3037,10 @@ char E4Recv_426990::sub_426990()
     if ( (unsigned char)this->M169 <= 1u && (unsigned char)this->M171 == 1 && !(unsigned char)this->M170 && !(unsigned char)this->M168 )
     {
     v2 = 0;
-    v3 = *(unsigned short *)(this + 146);
+    v3 = this->u32_92;
     if ( !(short)v3 )
     return result;
-    for ( i = (short *)(this + 2062); *i <= 0x100u; i += 3 )
+    for ( i = (short *)(&this->u32_3382); *i <= 0x100u; i += 3 )
       {
     if ( ++v2 >= v3 )
     return result;
@@ -3047,10 +3074,10 @@ int E4Recv_426E80::sub_426E80(int a2)
     if ( a2 >= this->M204 )
     return -1;
     result = 0;
-    v3 = *(unsigned short *)(this + 146);
+    v3 = this->u32_92;
     if ( !(short)v3 )
     return -1;
-    for ( i = (unsigned short *)(this + 2060); ; i += 3 )
+    for ( i = (unsigned short *)(&this->u32_3380); ; i += 3 )
   {
     HIWORD(v5) = 0;
     if ( *i <= a2 )
@@ -3087,10 +3114,10 @@ unsigned short E4Recv_426FD0::sub_426FD0(int a2)
     if ( a2 < this->M204 )
   {
     v5 = 0;
-    v6 = *(unsigned short *)(this + 146);
+    v6 = this->u32_92;
     if ( (short)v6 )
     {
-    for ( i = (unsigned short *)(this + 2060); ; i += 3 )
+    for ( i = (unsigned short *)(&this->u32_3380); ; i += 3 )
       {
     HIWORD(v8) = 0;
     if ( *i <= a2 )
@@ -3109,11 +3136,11 @@ unsigned short E4Recv_426FD0::sub_426FD0(int a2)
     v9 = this->M132;
     this->M3608 = v5;
     (*(void (__thiscall **)(int, int, int))(*(int *)(v9) + 40))(v9, (v5 << 16) + 2816, 0);
-    (*(void (__thiscall **)(int, int, int))(**(int **)(this + 132) + 36))( this->M132, this->M3600, *(unsigned short *)(this + 2 * (3 * v5 + 1032)) + 2 * *(unsigned short *)(this + 6 * v5 + 2062) + 8);
+    (*(void (__thiscall **)(int, int, int))(**(int **)(&this->u32_342) + 36))( this->M132, this->M3600, *(unsigned short *)(&this->u32_8 * (3 * v5 + 1032)) + 2 * *(unsigned short *)(&this->u32_18 * v5 + 2062) + 8);
     v2 = a2;
       }
     v10 = (unsigned short *)(this->M3600 + 8);
-    v11 = v2 - *(unsigned short *)(this + 6 * v5 + 2060);
+    v11 = v2 - *(unsigned short *)(&this->u32_18 * v5 + 2060);
     if ( v11 < 0 )
     return 0;
     v12 = v11 + 1;

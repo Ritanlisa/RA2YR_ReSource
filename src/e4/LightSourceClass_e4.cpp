@@ -36,6 +36,7 @@ unsigned int * LightSourceClass::Construct(int a2, int a3, LightSourceClass * aP
   }
   return this; /*0x55481e*/
 }
+}
 
 // 0x554830
 int LightSourceClass::Constructor()
@@ -69,6 +70,7 @@ int LightSourceClass::Constructor()
     *((_DWORD *)dword_ABCA14 + v3) = this; /*0x5548d2*/
   }
   return this; /*0x5548d7*/
+}
 }
 
 // 0x555070
@@ -144,9 +146,9 @@ LightSourceClass * LightSourceClass::CopyTo(char a2)
     int v3;
     void **v5;
     *(void**)this = vt_LightSourceClass;
-    *(this + 1) = (unsigned int)vt_LightSourceClass;
-    *(this + 2) = (unsigned int)vt_LightSourceClass;
-    *(this + 3) = &vt_LightSourceClass;
+    this->vtable2 = (unsigned int)vt_LightSourceClass;
+    this->vtable3 = (unsigned int)vt_LightSourceClass;
+    this->vtable4 = &vt_LightSourceClass;
     AbstractClass::AnnounceExpiredPointer(this, 1);
     v5 = this;
     v3 = ((int (__thiscall *)(DynamicVector **, void ***))DataGlobal_ABCA10->field_10)(&DataGlobal_ABCA10, &v5);

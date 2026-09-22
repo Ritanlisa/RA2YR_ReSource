@@ -250,6 +250,7 @@ LABEL_39:
   return (*(int (__stdcall **)(int))(*(_DWORD *)v1 + 16))(v1); /*0x4b06cb*/
 }
 } // namespace gamemd
+}
 
 // 0x4B69E0
 namespace gamemd {
@@ -257,7 +258,7 @@ int E4Recv_4B69E0::sub_4B69E0(int a2)
 {
 {
   int v3; // esi
-  if ( *(this + 4) >= 5 ) /*0x4b69f1*/
+  if ( this->M16 >= 5 ) /*0x4b69f1*/
     return 0; /*0x4b69f1*/
   int v2 = *((_DWORD *)g_ScenarioClass_Instance + 3385); /*0x4b6a01*/
   if ( v2 ) /*0x4b6a09*/
@@ -286,13 +287,14 @@ int E4Recv_4B69E0::sub_4B69E0(int a2)
   }
   v3 = -1; /*0x4b6a0b*/
 LABEL_11:
-  *(this + (*(this + 4))++ + 5) = a2; /*0x4b6a55*/
-  *(this + 10) += (*(int (__thiscall **)(int))(*(_DWORD *)a2 + 172))(a2); /*0x4b6a74*/
+  *(this + (this->M16)++ + 5) = a2; /*0x4b6a55*/
+  *(&this->u32_40) += (*(int (__thiscall **)(int))(*(_DWORD *)a2 + 172))(a2); /*0x4b6a74*/
   if ( v3 != -1 ) /*0x4b6a77*/
     ++*(_DWORD *)(*((_DWORD *)g_ScenarioClass_Instance + 3396) + 4 * v3); /*0x4b6a8b*/
   return 1; /*0x4b6a8d*/
 }
 } // namespace gamemd
+}
 
 // 0x4B6AB0
 namespace gamemd {
@@ -300,7 +302,7 @@ int E4Recv_4B6AB0::sub_4B6AB0(int a2)
 {
 {
 
-  int v3 = *(this + 4); /*0x4b6ab4*/
+  int v3 = this->M16; /*0x4b6ab4*/
   if ( v3 <= 0 || a2 < 0 || a2 >= v3 ) /*0x4b6acd*/
     return 0; /*0x4b6b72*/
   int v4 = *((_DWORD *)g_ScenarioClass_Instance + 3385); /*0x4b6adb*/
@@ -320,9 +322,9 @@ int E4Recv_4B6AB0::sub_4B6AB0(int a2)
     }
   }
 LABEL_12:
-  int v6 = *(this + 10) - (*(int (__thiscall **)(_DWORD))(*(_DWORD *)*(this + a2 + 5) + 172))(*(this + a2 + 5)); /*0x4b6b24*/
-  int v7 = *(this + 4) - 1; /*0x4b6b3c*/
-  *(this + 10) = v6; /*0x4b6b3d*/
+  int v6 = *(&this->u32_40) - (*(int (__thiscall **)(_DWORD))(*(_DWORD *)*(this + a2 + 5) + 172))(*(this + a2 + 5)); /*0x4b6b24*/
+  int v7 = this->M16 - 1; /*0x4b6b3c*/
+  *(&this->u32_40) = v6; /*0x4b6b3d*/
   int v8 = a2; /*0x4b6b42*/
   if ( a2 < v7 ) /*0x4b6b44*/
   {
@@ -333,14 +335,15 @@ LABEL_12:
       *v9 = v9[1]; /*0x4b6b4c*/
       ++v9; /*0x4b6b51*/
     }
-    while ( v8 < *(this + 4) - 1 ); /*0x4b6b57*/
+    while ( v8 < this->M16 - 1 ); /*0x4b6b57*/
   }
-  int v10 = *(this + 4) - 1; /*0x4b6b5d*/
-  *(this + 4) = v10; /*0x4b6b5f*/
+  int v10 = this->M16 - 1; /*0x4b6b5d*/
+  this->M16 = v10; /*0x4b6b5f*/
   *(this + v10 + 5) = 0; /*0x4b6b62*/
   return 1; /*0x4b6b6a*/
 }
 } // namespace gamemd
+}
 
 // 0x4B6BF0
 namespace gamemd {
@@ -364,6 +367,7 @@ int E4Recv_4B6BF0::sub_4B6BF0()
   return result; /*0x4b6c28*/
 }
 } // namespace gamemd
+}
 
 // 0x4B9890
 namespace gamemd {
@@ -554,6 +558,7 @@ CampaignScore * * DisplayBuildingInfoPanel(CampaignScore ** a1, unsigned int * a
   return result; /*0x4b9bbf*/
 }
 } // namespace gamemd
+}
 
 // 0x4BE9D0
 namespace gamemd {
@@ -607,6 +612,7 @@ LABEL_17:
        | (v6 >> g_BitShift_Blue << g_BitShift_Blue);
 }
 } // namespace gamemd
+}
 
 // 0x4B0DF0
 namespace gamemd {

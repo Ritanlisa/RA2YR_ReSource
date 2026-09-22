@@ -37,6 +37,7 @@ int TemporalClass::Constructor()
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x71A4E0
 namespace ra2 {
@@ -79,6 +80,7 @@ unsigned int * TemporalClass::TemporalClass(TechnoClass * aP1)
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x71A760
 namespace ra2 {
@@ -255,6 +257,7 @@ LABEL_10:
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x71AB10
 namespace ra2 {
@@ -276,6 +279,7 @@ int TemporalClass::GetWarpPerStep(int a2)
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x71B1B0
 namespace ra2 {
@@ -306,6 +310,7 @@ void * TemporalClass::ProcessEvent(char a2)
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x71A650
 namespace ra2 {

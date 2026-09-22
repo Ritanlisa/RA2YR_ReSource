@@ -14,3 +14,4 @@ int Compare::Field96(const void * a1, const void * a2)
   else
     return v2 <= v3 ? 1 : -1;
 }
+}

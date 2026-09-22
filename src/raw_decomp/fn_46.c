@@ -226,7 +226,7 @@ int __thiscall BuildingTypeClass::UpdatePower(#376 *this)
   LOBYTE(v48) = this->BarrelAnimIsVoxel; /*0x464f3c*/
   Power::FlagProcess(v54, v48); /*0x464f45*/
   Checksum::AddString((unsigned int *)v54, (unsigned __int8 *)this + 5908); /*0x464f53*/
-  Checksummer::Add_double(*((_DWORD *)this + 1482), *((_DWORD *)this + 1483)); /*0x464f68*/
+  Checksummer::Add_double(this->u32_1728, this->u32_172C); /*0x464f68*/
   Checksummer::Add_Buffer((unsigned int *)v54, (unsigned __int8 *)this + 5936, 12); /*0x464f78*/
   Checksummer::Add_Buffer((unsigned int *)v54, (unsigned __int8 *)this + 5948, 12); /*0x464f88*/
   Checksummer::Add_Buffer((unsigned int *)v54, (unsigned __int8 *)this + 5960, 12); /*0x464f98*/
@@ -1458,7 +1458,7 @@ int __thiscall BulletClass::Dtor(#374 *this)
   }
   if ( MEMORY[0xA8E9A0] ) /*0x4665e0*/
     ObjectClass::Undeploy(this); /*0x4665e4*/
-  this->q02B = 0; /*0x4665e9*/
+  this->q0AC = 0; /*0x4665e9*/
   this->q02C = 0; /*0x4665f3*/
   this->q154 = 0; /*0x4665fd*/
   v5 = this; /*0x466617*/
@@ -1694,7 +1694,7 @@ char __thiscall BulletClass::ProcessNukeExplosion(int *this)
     return v2;
   if ( !this->q158 )
   {
-    v4 = this->q02B;
+    v4 = this->q0AC;
     HIBYTE(v161) = 0;
     LOBYTE(v160) = 0;
     if ( *(_BYTE *)(v4 + 668) )
@@ -1725,7 +1725,7 @@ char __thiscall BulletClass::ProcessNukeExplosion(int *this)
 LABEL_23:
             AnimClass::ctor(
               v8,
-              *(CoordStruct **)(this->q02B + 728),
+              *(CoordStruct **)(this->q0AC + 728),
               &aP2,
               (CoordStruct *)1,
               (CoordStruct *)1,
@@ -1741,7 +1741,7 @@ LABEL_23:
           goto LABEL_23;
       }
     }
-    v9 = this->q02B;
+    v9 = this->q0AC;
     v162 = 0;
     if ( *(int *)(v9 + 732) > 0 )
     {
@@ -1749,22 +1749,22 @@ LABEL_23:
       v11 = *((double *)this + 29);
       v12 = (double *)(this + 58);
       v13 = *((double *)this + 31) * *((double *)this + 31);
-      a1 = this->q044;
+      a1 = this->u32_44;
       v14 = Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64(v11 * v11 + v10 * v10 + v13));
-      v15 = this->q02B;
+      v15 = this->q0AC;
       v16 = *(_DWORD *)(v15 + 736);
       v171[0] = v14;
       if ( v16 )
       {
-        v17 = this->q042;
+        v17 = this->CourseLockCounter;
         if ( v17 < v16 )
         {
-          this->q042 = v17 + 1;
+          this->CourseLockCounter = v17 + 1;
           if ( v17 + 1 >= *(_DWORD *)(v15 + 736) )
             goto LABEL_31;
         }
       }
-      else if ( this->q044 >= 40 || (double)(int)a1 <= v171[0] + 0.5 )
+      else if ( this->u32_44 >= 40 || (double)(int)a1 <= v171[0] + 0.5 )
       {
 LABEL_31:
         this->CourseLock = 0;
@@ -1799,18 +1799,18 @@ LABEL_49:
           *((double *)this + 31) = v22 * *((double *)this + 31);
 LABEL_50:
           v172 = *v12;
-          LODWORD(v173) = this->q03C;
-          v23 = this->q0FC;
-          v24 = this->q0F8;
-          HIDWORD(v173) = this->q03D;
-          v25 = this->q043;
+          LODWORD(v173) = this->u32_3C;
+          v23 = this->u32_FC;
+          v24 = this->u64_F8;
+          HIDWORD(v173) = this->u32_F4;
+          v25 = this->q10C;
           v174 = COERCE_DOUBLE(__PAIR64__(v23, v24));
           if ( v25 )
             v26 = (int *)(*(int (__thiscall **)(int, int *))(*(_DWORD *)v25 + 88))(v25, &v175);
           else
             v26 = &dword_89DE30;
           a2.X = *v26;
-          v27 = (_BYTE *)this->q043;
+          v27 = (_BYTE *)this->q10C;
           a2.Y = v26[1];
           a2.Z = v26[2];
           if ( v27 && (v27[20] & 2) != 0 )
@@ -1820,7 +1820,7 @@ LABEL_50:
               + (*(int (__stdcall **)(int *))(this->vtable2 + 16))(this + 1))
              % 15;
           v29 = Math::SinCos((IUnknown *)COERCE_UNSIGNED_INT64((double)(int)a1 * 0.06666666666666667 * 6.283185307179586));
-          v30 = Math::RoundToInt((v29 * *v28 + *v28 + 1.0) * (double)*(int *)(this->q02B + 732));
+          v30 = Math::RoundToInt((v29 * *v28 + *v28 + 1.0) * (double)*(int *)(this->q0AC + 732));
           v31 = v30;
           LODWORD(v30) = *this;
           a1 = v31;
@@ -1843,13 +1843,13 @@ LABEL_50:
             LOBYTE(v31) = Math::RoundToInt((double)(int)a1 * 1.5);
           Y = aP2.Y;
           v165[0] = aP2.X;
-          v38 = this->q043;
+          v38 = this->q10C;
           v165[1] = aP2.Y;
           Z = aP2.Z;
           v39 = v38 && (*(int (__thiscall **)(int))(*(_DWORD *)v38 + 44))(v38) == 2;
           LOBYTE(v40) = 0;
           HIBYTE(v40) = this->CourseLock == 0 ? v31 : 0;
-          v41 = (_BYTE *)this->q02B;
+          v41 = (_BYTE *)this->q0AC;
           LOWORD(a1) = v40;
           LOBYTE(Y) = v41[669];
           LOBYTE(v40) = v41[665];
@@ -1881,7 +1881,7 @@ LABEL_50:
             LOBYTE(v160) = 1;
             v162 = 1;
             if ( (*(int (__thiscall **)(int *))(v46 + 456))(this) > 0
-              && !*(_BYTE *)(this->q02B + 660)
+              && !*(_BYTE *)(this->q0AC + 660)
               && (a2.X != dword_89DE30 || *(_QWORD *)&a2.Y != qword_89DE34) )
             {
               aP2 = a2;
@@ -1926,14 +1926,14 @@ LABEL_50:
           a1 = v50 - Math::RoundToInt(v54);
           if ( !this->CourseLock )
           {
-            v55 = this->q118;
+            v55 = this->u32_118;
             if ( v55 >= 60 )
             {
               v57 = *((double *)this + 36) * 0.9833333333333333 + (double)(int)a1;
               *((double *)this + 36) = v57;
               if ( !v59 && v57 < 60.0 )
               {
-                v60 = this->q02B;
+                v60 = this->q0AC;
                 if ( !*(_BYTE *)(v60 + 660) && !*(_BYTE *)(v60 + 665) )
                 {
                   LOBYTE(v160) = 1;
@@ -1945,7 +1945,7 @@ LABEL_50:
             else
             {
               v56 = (double)(int)a1;
-              this->q118 = v55 + 1;
+              this->u32_118 = v55 + 1;
               *((double *)this + 36) = v56 + *((double *)this + 36);
             }
           }
@@ -1981,9 +1981,9 @@ LABEL_184:
             (*(void (__thiscall **)(int *, CoordStruct *))(*this + 436))(this, &aP2);
             if ( (_BYTE)v160 )
               goto LABEL_187;
-            v165[0] = this->q027;
+            v165[0] = this->u64_27;
             v165[1] = this->q028;
-            Z = this->q029;
+            Z = this->q0A4;
             v115 = BulletClass::CheckBulletCollision(this, (IUnknown *)v165);
             v116 = *this;
             v117 = v115;
@@ -1995,7 +1995,7 @@ LABEL_187:
               if ( (*(int (__thiscall **)(int *))(*this + 456))(this) < 0 )
                 (*(void (__thiscall **)(int *, _DWORD))(*this + 460))(this, 0);
             }
-            v118 = this->q02B;
+            v118 = this->q0AC;
             if ( *(int *)(v118 + 732) > 0 || *(_BYTE *)(v118 + 672) )
               v119 = BulletClass::CheckProximityDetonation(this + 46, &aP2);
             else
@@ -2009,22 +2009,22 @@ LABEL_187:
             }
             if ( !(_BYTE)v160 )
             {
-              v121 = this->q02B;
+              v121 = this->q0AC;
               if ( *(_BYTE *)(v121 + 668) || !v119 )
               {
                 if ( *(_BYTE *)(v121 + 678) )
                 {
-                  v122 = this->health;
+                  v122 = this->u32_6C;
                   if ( v122 > 5 )
-                    this->health = v122 - 1;
+                    this->u32_6C = v122 - 1;
                 }
                 goto LABEL_233;
               }
             }
-            v123 = this->q043;
+            v123 = this->q10C;
             if ( v123 && (v168 == 1 || HIBYTE(v161)) )
             {
-              v124 = this->q02B;
+              v124 = this->q0AC;
               if ( !*(_BYTE *)(v124 + 660) && !*(_BYTE *)(v124 + 674) )
               {
                 X = aP2.X;
@@ -2060,14 +2060,14 @@ LABEL_187:
                       (double)(int)a1 <= v133) )
                 {
                   v135 = *this;
-                  v136 = (*(int (__thiscall **)(_DWORD, CoordStruct *))(*(_DWORD *)this->q043 + 72))(
-                           this->q043,
+                  v136 = (*(int (__thiscall **)(_DWORD, CoordStruct *))(*(_DWORD *)this->q10C + 72))(
+                           this->q10C,
                            &a2);
                   (*(void (__thiscall **)(int *, int))(v135 + 436))(this, v136);
                 }
               }
             }
-            if ( AbstractTypeClass::NameEquals(this->q04A, aNuke) )
+            if ( AbstractTypeClass::NameEquals(this->WeaponType, aNuke) )
             {
               if ( (*(int (__thiscall **)(int *))(*this + 456))(this) < 0 )
                 (*(void (__thiscall **)(int *, _DWORD))(*this + 460))(this, 0);
@@ -2084,7 +2084,7 @@ LABEL_187:
                   if ( v141 )
                   {
                     v167 = *(CoordStruct *)((_BYTE *)this + 13);
-                    eax222a = (void *)Return::HRESULT_Fail((BulletClass *)this->q027, this->q028, this->q029);
+                    eax222a = (void *)Return::HRESULT_Fail((BulletClass *)this->u64_27, this->q028, this->q0A4);
                     v142 = AnimClass::ctor((void **)v141, v140, &v167, 0, (CoordStruct *)1, (void *)0x2600, eax222a, 0);
                   }
                   else
@@ -2116,7 +2116,7 @@ LABEL_233:
           LOWORD(a1) = aP2.X / 256;
           v2 = aP2.Y / 256;
           HIWORD(a1) = aP2.Y / 256;
-          this->q053 = a1;
+          this->NextAnim = a1;
           return v2;
         }
       }
@@ -2129,14 +2129,14 @@ LABEL_233:
           goto LABEL_49;
       }
       *(_DWORD *)v12 = 0;
-      this->q03B = 1079574528;
+      this->q0EC = 1079574528;
       goto LABEL_49;
     }
     v62 = (double *)(this + 58);
     v63 = *((double *)this + 31);
     v170[0] = *((double *)this + 29);
-    v64 = this->q03D;
-    LODWORD(v170[1]) = this->q03C;
+    v64 = this->u32_F4;
+    LODWORD(v170[1]) = this->u32_3C;
     v170[2] = v63;
     HIDWORD(v170[1]) = v64;
     qmemcpy(v178, v170, sizeof(v178));
@@ -2144,14 +2144,14 @@ LABEL_233:
     v173 = v170[1];
     v174 = v63;
     v162 = Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64(v170[1] * v170[1] + v170[0] * v170[0] + v170[2] * v170[2])) < 8.0;
-    v65 = this->q02B;
+    v65 = this->q0AC;
     v170[0] = (double)aP2.X;
     v170[1] = (double)aP2.Y;
     v170[2] = (double)aP2.Z;
     FiringDistance = (double)*(int *)(*(_DWORD *)&stru_87C374.__pad_579C[22224] + 5816);
     if ( *(_BYTE *)(v65 + 661) )
       FiringDistance = RulesClass::GetFiringDistance();
-    v67 = this->q02B;
+    v67 = this->q0AC;
     if ( *(_BYTE *)(v67 + 704) )
     {
       v68 = Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64(
@@ -2159,14 +2159,14 @@ LABEL_233:
                                         + *((double *)this + 30) * *((double *)this + 30)
                                         + *((double *)this + 31) * *((double *)this + 31)));
       v69 = Math::RoundToInt(v68);
-      if ( v69 < this->q044 )
+      if ( v69 < this->u32_44 )
       {
-        a1 = v69 + *(_DWORD *)(this->q02B + 720);
+        a1 = v69 + *(_DWORD *)(this->q0AC + 720);
         *(double *)&v167.X = (double)(int)a1;
         if ( *v62 == 0.0 && *((double *)this + 30) == 0.0 && *((double *)this + 31) == 0.0 )
         {
           *(_DWORD *)v62 = 0;
-          this->q03B = 1079574528;
+          this->q0EC = 1079574528;
         }
         v70 = Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64(
                                             *((double *)this + 31) * *((double *)this + 31)
@@ -2179,8 +2179,8 @@ LABEL_233:
       }
       v72 = *((double *)this + 31);
       v179[0] = *v62;
-      v73 = this->q03D;
-      LODWORD(v179[1]) = this->q03C;
+      v73 = this->u32_F4;
+      LODWORD(v179[1]) = this->u32_3C;
       HIDWORD(v179[1]) = v73;
       v74 = Math::RoundToInt(v72);
       v75 = Math::RoundToInt(v72);
@@ -2188,7 +2188,7 @@ LABEL_233:
       v165[0] = aP2.X;
       v165[1] = aP2.Y;
       aP2.X += v74;
-      v77 = this->q02B;
+      v77 = this->q0AC;
       Z = aP2.Z;
       aP2.Y += v75;
       aP2.Z += v76;
@@ -2238,14 +2238,14 @@ LABEL_152:
       LODWORD(v171[0]) = a1;
       if ( (unsigned __int16)(aP2.X / 256) == (_WORD)v98
         && (unsigned __int16)(aP2.Y / 256) == (_WORD)v99
-        && !*(_BYTE *)(this->q02B + 704)
+        && !*(_BYTE *)(this->q0AC + 704)
         && (*(int (__thiscall **)(int *))(*this + 456))(this) < 2 * unk_89DE70
         || (v101 = (BuildingTypeClass *)CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (__int16 *)&v180),
             v102 = (BuildingTypeClass *)CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (__int16 *)v171),
             esi157 = Cell::IsBridge(v101),
             v103 = Cell::IsBridge(v102),
             esi157)
-        && !*(_BYTE *)(this->q02B + 704)
+        && !*(_BYTE *)(this->q0AC + 704)
         && esi157 == v103
         && (*(int (__thiscall **)(int *))(*this + 456))(this) < 2 * unk_89DE70 )
       {
@@ -2293,7 +2293,7 @@ LABEL_152:
           aP2 = *(CoordStruct *)((_BYTE *)this + 13);
           goto LABEL_184;
         }
-        v113 = this->q02B;
+        v113 = this->q0AC;
         *(double *)&v178[1] = v173;
         *(double *)v178 = v172;
         if ( !*(_BYTE *)(v113 + 704) )
@@ -2315,7 +2315,7 @@ LABEL_152:
       }
       else
       {
-        v112 = this->q02B;
+        v112 = this->q0AC;
         v162 = 1;
         LOBYTE(v160) = 1;
         if ( !*(_BYTE *)(v112 + 674) )
@@ -2535,11 +2535,11 @@ void __thiscall BulletClass::SetupVoxelTransform(void *this, int *a2, int *a3)
   float v32[12]; // [esp+A0h] [ebp-30h] BYREF
 
   if ( (*(_DWORD *)MEMORY[0xA8B230] & 0x1000) == 0 /*0x4680d5*/
-    || (v25 = this->q027, v26 = this->q028,
-                                      v27 = this->q029,
+    || (v25 = this->u64_27, v26 = this->q028,
+                                      v27 = this->q0A4,
                                       !Game::Stub3((int)&v25)) )
   {
-    v4 = this->q02B; /*0x4680e2*/
+    v4 = this->q0AC; /*0x4680e2*/
     if ( !*(_BYTE *)(v4 + 670) && !this->q158 ) /*0x4680f6*/
     {
       if ( *(_BYTE *)(v4 + 566) ) /*0x468104*/
@@ -2558,7 +2558,7 @@ void __thiscall BulletClass::SetupVoxelTransform(void *this, int *a2, int *a3)
         inited = (float *)AudioConfig::InitDefault(v31); /*0x468227*/
         v8 = MultiplyMatrix3x4(v32, inited, v30); /*0x468235*/
         ((void (__stdcall *)(int, float *, int *, int *, _DWORD, int, int))BulletClass::RenderVoxelBullet)( /*0x46824a*/
-          this->q02B + 176,
+          this->q0AC + 176,
           v8,
           a2,
           a3,
@@ -2568,20 +2568,20 @@ void __thiscall BulletClass::SetupVoxelTransform(void *this, int *a2, int *a3)
       }
       else
       {
-        v24 = (*(int (__thiscall **)(void *))(this->health)(this); /*0x468261*/
+        v24 = (*(int (__thiscall **)(void *))(this->u32_6C)(this); /*0x468261*/
         if ( v24 ) /*0x468265*/
         {
           v29 = (*(int (__thiscall **)(void *))(this->q7A0)(this); /*0x468275*/
           v9 = (*(int (__thiscall **)(void *))(*(_DWORD *)this + 456))(this); /*0x468289*/
-          v25 = this->q027; /*0x46828f*/
+          v25 = this->u64_27; /*0x46828f*/
           v26 = this->q028; /*0x46829b*/
-          v27 = this->q029; /*0x4682a2*/
+          v27 = this->q0A4; /*0x4682a2*/
           GroundHeight = Cell::GetGroundHeight(&v25); /*0x4682b0*/
           if ( !this->q08C ) /*0x4682b4*/
           {
             v10 = this->q028; /*0x4682c0*/
-            v11 = this->q029; /*0x4682c3*/
-            v25 = this->q027; /*0x4682c6*/
+            v11 = this->q0A4; /*0x4682c3*/
+            v25 = this->u64_27; /*0x4682c6*/
             v26 = v10; /*0x4682ce*/
             v27 = v11; /*0x4682d8*/
             if ( (*((_DWORD *)Coord::To_Cell(&MEMORY[0x87F7E8], &v25) + 80) & 0x100) != 0 && v9 >= unk_89DE64 ) /*0x4682f3*/
@@ -2590,7 +2590,7 @@ void __thiscall BulletClass::SetupVoxelTransform(void *this, int *a2, int *a3)
               GroundHeight += unk_89DE64; /*0x4682fd*/
             }
           }
-          if ( v9 > 0 && *(_BYTE *)(this->q02B + 666) ) /*0x46830e*/
+          if ( v9 > 0 && *(_BYTE *)(this->q0AC + 666) ) /*0x46830e*/
           {
             v12 = ZCoordToScreenY(v9); /*0x46831a*/
             v13 = *a2; /*0x468322*/
@@ -2615,7 +2615,7 @@ void __thiscall BulletClass::SetupVoxelTransform(void *this, int *a2, int *a3)
               0,
               0);
           }
-          v15 = this->q02B; /*0x468379*/
+          v15 = this->q0AC; /*0x468379*/
           v16 = MEMORY[0x87F6C4]; /*0x46837f*/
           if ( *(_BYTE *)(v15 + 680) ) /*0x468385*/
           {
@@ -2623,13 +2623,13 @@ void __thiscall BulletClass::SetupVoxelTransform(void *this, int *a2, int *a3)
           }
           else if ( *(_BYTE *)(v15 + 681) ) /*0x468397*/
           {
-            v17 = this->InheritedColor; /*0x4683a1*/
+            v17 = this->u8_45; /*0x4683a1*/
             if ( v17 == -1 ) /*0x4683aa*/
               v16 = *(_DWORD *)(*((_DWORD *)MEMORY[0xB054D4] + *((_DWORD *)HouseClass_Player + 22549)) + 780); /*0x4683d1*/
             else
               v16 = *(_DWORD *)(*((_DWORD *)MEMORY[0xB054D4] + v17) + 780); /*0x4683b5*/
           }
-          v18 = (*(int (__thiscall **)(void *))(this->isOnMap)(this); /*0x4683ea*/
+          v18 = (*(int (__thiscall **)(void *))(this->u32_740)(this); /*0x4683ea*/
           v19 = ZCoordToScreenY(v18); /*0x4683f2*/
           DrawToSurfaceSHP(MEMORY[0x887314], v16, v24, v29, a2, a3, 11776, 0, -30 - v19, 0, 1000, 0, 0, 0, 0, 0); /*0x46841d*/
         }
@@ -2647,21 +2647,21 @@ __int16 __thiscall BulletClass::LoseTarget(_DWORD **this)
   int v5; // [esp+8h] [ebp-10h]
   _BYTE v6[12]; // [esp+Ch] [ebp-Ch] BYREF
 
-  v2 = (_DWORD *)(*(int (__thiscall **)(_DWORD, _BYTE *))(*this->q043 + 72))(this->q043, v6); /*0x468443*/
+  v2 = (_DWORD *)(*(int (__thiscall **)(_DWORD, _BYTE *))(*this->q10C + 72))(this->q10C, v6); /*0x468443*/
   LOWORD(v5) = *v2 / 256; /*0x468456*/
   HIWORD(v5) = v2[1] / 256; /*0x46846a*/
   v4 = v5; /*0x468473*/
   LOWORD(v2) = MEMORY[0xA8E7AC]; /*0x468477*/
   if ( MEMORY[0xA8E7AC] /*0x46849b*/
-    || (LOWORD(v2) = (*(int (__thiscall **)(_DWORD))(*this->q043 + 84))(this->q043), (_BYTE)v2)
+    || (LOWORD(v2) = (*(int (__thiscall **)(_DWORD))(*this->q10C + 84))(this->q10C), (_BYTE)v2)
     || (LOWORD(v2) = v4, v4 == dword_89DDF0) )
   {
-    this->q043 = 0; /*0x4684c5*/
+    this->q10C = 0; /*0x4684c5*/
   }
   else
   {
     v2 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v4); /*0x4684b5*/
-    this->q043 = v2; /*0x4684ba*/
+    this->q10C = v2; /*0x4684ba*/
   }
   return (__int16)v2; /*0x4684c0*/
 }
@@ -2907,7 +2907,7 @@ char __thiscall BulletClass::ProcessObstacle(_DWORD *this, IUnknown *aP1, const 
     *((double *)this + 30) = v29 * *((double *)this + 30); /*0x468b4b*/
     *((double *)this + 31) = v29 * *((double *)this + 31); /*0x468b57*/
   }
-  if ( this->q090 ) /*0x468b5d*/
+  if ( this->q240 ) /*0x468b5d*/
     Targeting::Readd((IUnknown *)this); /*0x468b6d*/
   return 1; /*0x468b74*/
 }
@@ -3701,7 +3701,7 @@ char __thiscall Warhead::ApplyDamage(char *this, ObjectClass *aP1)
   if ( BYTE2(v69[6].abstractFlags) )
     aP2 = *(CoordStruct *)RandomCoordScatter((int *)&v141, &aP2.X, 32, 0);
   v70 = -1;
-  if ( (*(int (__thiscall **)(char *))(*(_DWORD *)this + 456))(this) < 2 * unk_89DE70 )
+  if ( (*(int (__thiscall **)(char *))(this->q072)(this) < 2 * unk_89DE70 )
   {
     v141 = *(double *)(this + 156);
     LODWORD(v142) = this->q029;
@@ -4624,7 +4624,7 @@ int __thiscall BulletClass::InitScalable(_DWORD **this)
   v3 = unk_89DE28 - 5; /*0x46b2dc*/
   if ( unk_89DE28 - 5 < 0 ) /*0x46b2e1*/
     v3 = 0; /*0x46b2e3*/
-  return BulletTypeClass::SetScaledSpawnDelay(this->q02B, v3 / 3 + (this->q02B)[185]); /*0x46b307*/
+  return BulletTypeClass::SetScaledSpawnDelay(this->q0AC, v3 / 3 + (this->q0AC)[185]); /*0x46b307*/
 }
 
 
@@ -4800,7 +4800,7 @@ int __thiscall VectorClass_ptr_BulletClass::Get(_DWORD *this, int a2)
 DynamicVector *__thiscall Timer::Start(_DWORD *this, DynamicVector *aP1)
 {
   *this = *(_DWORD *)&HouseClass_Player.__pad_5568[23248]; /*0x46b64c*/
-  *(this + 2) = aP1; /*0x46b64e*/
+  this->ptr_8 = aP1; /*0x46b64e*/
   return (DynamicVector *)this; /*0x46b651*/
 }
 

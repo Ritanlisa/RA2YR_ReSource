@@ -243,6 +243,7 @@ LABEL_39:
   return result; /*0x4f120d*/
 }
 } // namespace gamemd
+}
 
 // 0x558840
 namespace gamemd {
@@ -254,6 +255,7 @@ int Options::PrepareSaveLoadDlg()
   return SaveLoadDialog::DlgProc(this);
 }
 } // namespace gamemd
+}
 
 // 0x55FAA0
 namespace gamemd {
@@ -325,6 +327,7 @@ AbstractClass * * Options::Screen_Save()
   }
 }
 } // namespace gamemd
+}
 
 // 0x55FC80
 namespace gamemd {
@@ -393,6 +396,7 @@ char Options::Screen_Dialog()
   return v7; /*0x55fd97*/
 }
 } // namespace gamemd
+}
 
 // 0x6244E0
 namespace gamemd {
@@ -424,6 +428,7 @@ int Options::DeleteAndZero()
   return result; /*0x624518*/
 }
 } // namespace gamemd
+}
 
 // 0x6248A0
 namespace gamemd {
@@ -451,6 +456,7 @@ int Options::EnsureCapacity()
   return 1; /*0x6248b2*/
 }
 } // namespace gamemd
+}
 
 // 0x6253B0
 namespace gamemd {
@@ -481,6 +487,7 @@ int Options::GrowBuffer()
   return 1; /*0x6253bf*/
 }
 } // namespace gamemd
+}
 
 // 0x6254D0
 namespace gamemd {
@@ -508,6 +515,7 @@ int Options::ReadOptionValue()
   return 1; /*0x6254e2*/
 }
 } // namespace gamemd
+}
 
 // 0x625560
 namespace gamemd {
@@ -516,12 +524,12 @@ AbstractClass * * Options::DestroyComposite(char a2)
 {
   _DWORD *i; // ecx
 
-  if ( *((_DWORD *)this + 11) ) /*0x625563*/
+  if ( this->u32_2C ) /*0x625563*/
   {
-    __3_YAXPAX_Z(*((void **)this + 11)); /*0x62556b*/
-    *((_DWORD *)this + 11) = 0; /*0x625573*/
+    __3_YAXPAX_Z(*((void **)&this->u32_41)); /*0x62556b*/
+    this->u32_2C = 0; /*0x625573*/
   }
-  for ( i = (_DWORD *)*((_DWORD *)this + 14); i; i = (_DWORD *)*((_DWORD *)this + 14) ) /*0x62557f*/
+  for ( i = (_DWORD *)this->ptr_38; i; i = (_DWORD *)this->ptr_38 ) /*0x62557f*/
   {
     AbstractClass *v4 = i; /*0x625581*/
     AbstractClass *v5 = 0; /*0x625583*/
@@ -535,7 +543,7 @@ AbstractClass * * Options::DestroyComposite(char a2)
     if ( v5 ) /*0x62559d*/
       *v5 = *v4; /*0x6255a1*/
     else
-      *((_DWORD *)this + 14) = *v4; /*0x6255a7*/
+      this->ptr_38 = *v4; /*0x6255a7*/
     __3_YAXPAX_Z(v4); /*0x6255ab*/
 LABEL_12:
     ; /*0x6255b3*/
@@ -551,6 +559,7 @@ LABEL_12:
   return this; /*0x6255e6*/
 }
 } // namespace gamemd
+}
 
 // 0x6255F0
 namespace gamemd {
@@ -644,6 +653,7 @@ void * Options::RebuildDropdownList(ObjectClass * aP1)
   return v3->GameMode; /*0x62576a*/
 }
 } // namespace gamemd
+}
 
 // 0x625A20
 namespace gamemd {
@@ -669,6 +679,7 @@ int Options::SaveOptionValue()
   return 1; /*0x625a2f*/
 }
 } // namespace gamemd
+}
 
 // 0x4F1720
 namespace gamemd {
@@ -842,6 +853,7 @@ int Options::DialogProc(CCINIClass hWnd)
     int v47;
 }
 } // namespace gamemd
+}
 
 // 0x624460
 namespace gamemd {

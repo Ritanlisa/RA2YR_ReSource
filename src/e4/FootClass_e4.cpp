@@ -45,37 +45,38 @@ AbstractClass * * FootClass::Destruct()
   if ( (unsigned short)this->currentJumpjetMapCoords != *(_WORD *)&g_CellDirectionOffsets[83704] /*0x4d3653*/
     || (unsigned short)this->FootClass_field_566 != *(_WORD *)&g_CellDirectionOffsets[83706] )
   {
-    _DWORD * v6 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)this + 690); /*0x4d365b*/
+    _DWORD * v6 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&this->inAirFlag0); /*0x4d365b*/
     if ( (void *)v6[56] == this ) /*0x4d3666*/
       v6[56] = 0; /*0x4d3668*/
   }
-  Mixer::ReleaseChannel((int **)this + 337); /*0x4d3677*/
-  AudioFileClass::Release((_DWORD *)this + 337); /*0x4d367e*/
+  Mixer::ReleaseChannel((int **)&this->hasParachute7); /*0x4d3677*/
+  AudioFileClass::Release((_DWORD *)&this->hasParachute7); /*0x4d367e*/
   v7 = (ILocomotion *)this->locomotor; /*0x4d3683*/
   if ( v7 ) /*0x4d368b*/
     v7->ReleaseRef(this->locomotor); /*0x4d3690*/
   v8 = (CCINIClass *)this->q16C; /*0x4d3693*/
   this->FootClass_field_abstract_array_5AC = &vt_VectorClass_AbstractClass; /*0x4d36a0*/
-  if ( v8 && *((_BYTE *)this + 1465) ) /*0x4d36a8*/
+  if ( v8 && this->u8_5B9 ) /*0x4d36a8*/
   {
     __3_YAXPAX_Z(v8); /*0x4d36b1*/
     this->q16C = 0; /*0x4d36b9*/
   }
-  *((_BYTE *)this + 1465) = 0; /*0x4d36bf*/
+  this->u8_5B9 = 0; /*0x4d36bf*/
   this->q16D = 0; /*0x4d36c5*/
   v9 = (CCINIClass *)this->q163; /*0x4d36cb*/
   this->unknownAbstractArray588 = &vt_VectorClass_AbstractClass; /*0x4d36d1*/
-  if ( v9 && *((_BYTE *)this + 1429) ) /*0x4d36dc*/
+  if ( v9 && this->u8_595 ) /*0x4d36dc*/
   {
     __3_YAXPAX_Z(v9); /*0x4d36e5*/
     this->q163 = 0; /*0x4d36ed*/
   }
-  *((_BYTE *)this + 1429) = 0; /*0x4d36f5*/
+  this->u8_595 = 0; /*0x4d36f5*/
   this->q164 = 0; /*0x4d36fb*/
   return TechnoClass::DTOR((int)this); /*0x4d3706*/
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x4D98C0
 namespace ra2 {
@@ -95,6 +96,7 @@ void FootClass::Destroyed(int a2)
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x70F7E0
 namespace ra2 {
@@ -115,6 +117,7 @@ int FootClass::updateThreat()
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x710000
 namespace ra2 {
@@ -268,6 +271,7 @@ void FootClass::FootClass_ImbueLocomotor(int *a1@<ecx> a1, int a2@<ebp> a2, int 
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x41C120
 namespace ra2 {

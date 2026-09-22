@@ -70,6 +70,7 @@ LABEL_18:
   this->throttleCounter = v14; /*0x432bba*/
   return result; /*0x432bbd*/
 }
+}
 
 // 0x433060
 unsigned int * BinkMovieHandle::CopyFrameToSurface()
@@ -112,6 +113,7 @@ LABEL_6:
     }
   }
   return BinkMovie::BlitToTarget(this, v2); /*0x43316a*/
+}
 }
 
 // 0x432BD0
@@ -212,7 +214,7 @@ BinkMovieHandle * BinkMovieHandle::QueryInterface(char a2)
 {
 {
     BinkMovie *v3;
-    v3 = *(this + 4);
+    v3 = this->u32_10;
     *(void**)this = (BinkMovie *)&vt_BinkMovieHandle;
     if ( v3 )
   {

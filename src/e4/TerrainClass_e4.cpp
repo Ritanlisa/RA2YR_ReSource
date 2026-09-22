@@ -1173,6 +1173,7 @@ LABEL_290:
 }
 
 } // namespace gamemd
+}
 
 // 0x71CDA0
 namespace gamemd {
@@ -1249,6 +1250,7 @@ LABEL_16:
   return Register; /*0x71cf25*/
 }
 } // namespace gamemd
+}
 
 // 0x71D000
 namespace gamemd {
@@ -1293,6 +1295,7 @@ AbstractClass * * TerrainClass::ProcessSpawnAnim(unsigned int * a1, AbstractClas
   return 1; /*0x71d137*/
 }
 } // namespace gamemd
+}
 
 // 0x71CF30
 namespace gamemd {

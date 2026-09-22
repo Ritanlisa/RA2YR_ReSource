@@ -140,6 +140,7 @@ void ParticleClass::DrawParticle(int * a2, int * a3)
   }
 }
 } // namespace gamemd
+}
 
 // 0x62D5E0
 namespace gamemd {
@@ -198,6 +199,7 @@ void ParticleClass::AdjustHeight()
   }
 }
 } // namespace gamemd
+}
 
 // 0x62D710
 namespace gamemd {

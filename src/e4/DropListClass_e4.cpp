@@ -27,10 +27,12 @@ void DropListClass_OnKeyUp()
   return result; /*0x4b507f*/
 }
 } // namespace gamemd
+}
 
 // 0x4B55A0
 int DropListClass::COMStub()
 {
 {
   return this->q034; /*0x4b55a3*/
+}
 }

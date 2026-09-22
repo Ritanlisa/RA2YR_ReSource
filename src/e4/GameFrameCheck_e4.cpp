@@ -67,6 +67,7 @@ int sub_6863E0()
   return TacticalMap::Redraw(&DataGlobal_87F7E8); /*0x686562*/
 }
 } // namespace gamemd
+}
 
 // 0x686570
 namespace gamemd {
@@ -130,3 +131,4 @@ AbstractClass * * sub_686570()
   return result; /*0x6866f5*/
 }
 } // namespace gamemd
+}

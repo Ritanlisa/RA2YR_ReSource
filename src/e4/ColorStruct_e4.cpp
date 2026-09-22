@@ -16,3 +16,4 @@ int ColorStruct::SetRGB(unsigned char a2, unsigned char a3, unsigned char a4)
   this->q014 = -16777216; /*0x4a35db*/
   return -16777216; /*0x4a35de*/
 }
+}

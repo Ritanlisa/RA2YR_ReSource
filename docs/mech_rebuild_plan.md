@@ -624,3 +624,67 @@ this-relative 访问**，参数型 receiver（`a1->X`）架构上不产事件。
 5. **任意深度声明前置**（lower_temp_decls 第 6 段升级，作用域安全=内层公共祖先块规则）：**292,336 处移动**（28,217 合并到首次赋值 + 264,119 插入首用点，423 文件，0 跳过）。工程教训：heredoc `\b` 会被转义层吃成退格符，含反斜杠的生成器一律用 Write 工具落地。
 6. 完整性：花括号不平衡文件数 = HEAD 同值 59（gap2 形态既有，零新增）；pending 3,919 不变；replace_body 定位正常；verify PASS。
 7. **canon_regen 七段闭环**：canon 表 → 成员引用改写 → 回填 → pending 块成员化 → 块规范化 → 声明前置 → addr+int/MEMORY 清零（verify 门控）。
+
+## G31 执行记录（2026-09-22，Step-4 数据供给轮：brace 大修复 + 成员表供给 + 三通道解锁）
+
+**用户指令**：「全部清空！没有CSP就给我去补！Step4之后全部处理好」——收敛不许停在
+「现有数据的不动点」，缺数据就去供给。
+
+### 根因链（五连破）
+
+1. **param 通道冒号 bug**：build_types 查 `0xADDR:paramK`（单冒号），type_map 实际键
+   `0xADDR::paramK`（双冒号）——4,824 类类型参数**从未生效过**。修复后激活。
+2. **this-key 通道未接**：`0xADDR:this`（单冒号）10,645 类类型——cls=None 的自由函数
+   （gap2 全家）的 this 类型来源。接入 build_types 回退。
+3. **stack_+N 通道未接**：`0xADDR::stack_+0xX` 53,788 键（10,564 类类型），键偏移 =
+   反编译 `[esp+Xh]` 显示值 = frame_size−Y（实测 0x4011C0 全 16 键逐一验证）。
+   DECL_STACK 正则解析 `T vN; // [esp+Xh]` 声明行直接入 env。
+4. **验证器杀手：三处 `\b`→0x08 退格符损坏**（heredoc 转义层事故的历史残留）：
+   fix_addr 裸 this+N 正则 `(?<!\*)\x08this` **从未匹配过任何东西**；
+   normalize_blocks 两处 is_ctl 同病。全 tools/ 控制字符扫描清零。
+5. **span 扫描器 / 花括号大疫**：
+   - brace 计数会被字符串/注释里的花括号带偏 → `_blockspan.brace_delta` +
+     `block_walker`（/* */ 块注释感知，ASM dump 不计数）。
+   - **系统性漏}病**：机械管线产出的函数 `def(){`+裸`{`+单`}`（每函数漏 1 个闭括号，
+     逐函数累积破坏编译 + 让一切深度 span 扫描吞到 EOF）。
+     fix_leaks_general（形态无关，块注释感知，边界=注解行+def 判定
+     `\)\s*\{` 先于 `;` + 控制关键字排除）：472 文件 / ~4,350 函数修复，
+     修后 480+ 文件花括号平衡；残 39 文件 ±1~21（下一轮）。
+   - 教训：两个形状假设的 fixer 叠用会互相打架（-107 过闭合事故）——
+     单一权威 fixer + 干净 revert 重放。
+
+### CSP 数据供给（成员表）
+
+- **register_offset_members.py**：扫全部函数 span（修好的扫描器，16,755 函数），
+  对带类型接收者的 `*(T*)(R+N)`/`*(R+N)`/裸 `this+N` 且 canon 表缺该偏移者，
+  以宽度类型 + CSP member-value 类型（`0xFN:this.member(0xOFF)` 类类型通道）
+  注册 filler 成员（u8_/u32_/ptr_ 前缀，evidence=函数地址）。
+- **ml→mt sync**：member_lookup 独有类（Gap2Recv_*/E4Recv 合成类，G6 时代直写 ml
+  从未进 canon）17,061 条同步进 member_types。
+- **canon 宇宙扩容**：gen_cpp_canon 的 all_classes 吸收 member_types 键类 +
+  member_lookup 类：**1,597 → 2,959 类**。csp_canon/classes.hpp +13,954 行。
+- 三通道合计：**940+ 函数一扫净增改写**（brace 修复前 14 个/扫——span 吞噬使
+  fix_addr 大部分函数从未被处理过）。
+
+### 量化
+
+- 违规 pattern census（R_THIS1/R_THIS2/bare_this/R5/bare_deref）：
+  **28,026 → 15,423**（-45%），MEMORY=0 保持。
+- completed 12,693；注册成员 ~5,100 + sync 17,061；净增改写 ~1,000 函数。
+- 残余结构：a2/v14 等参数与子对象链接收者 —— CSP 无事实，需 IDA 在线
+  til 类型化快照重导（typed lvars 让伪码原生显示 ->Member）= 下一轮主供给。
+
+### 新工具
+
+- `tools/csp_export/fix_leaks_general.py`（单一权威 brace 修复）
+- `tools/csp_export/register_offset_members.py`（注册+升级+sync 三合一）
+- `_blockspan.brace_delta/block_walker`（字面量/块注释感知 span 基元）
+- fix_addr R6 裸解引用 `*(recv+N)` 通道；`--file` 过滤；__main__ guard。
+
+### 下一步
+
+1. 残 39 文件 ±brace 尾巴清零（编译器错误单驱动）。
+2. **IDA 在线 typed-snapshot 重导**：对残 15.4K 命中的函数重反编译
+   （til lvar 类型已就位），native 成员访问替换 raw 块 —— 一次供给,
+   全量消除。
+3. verify_changed 回归（本次跑）→ FAIL 逐个归因。

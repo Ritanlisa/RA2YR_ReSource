@@ -40,6 +40,7 @@ void* BuildingPlacement::Activate(int a2, unsigned int * a3)
   (*(void (__thiscall **)(int, int))(*(_DWORD *)v4 + 292))(v4, 2); /*0x4fb909*/
   return 1; /*0x4fb90f*/
 }
+}
 
 // 0x54C550
 VectorClass * * BuildingPlacement::ProcessBuildingPlacementAction()
@@ -58,8 +59,8 @@ VectorClass * * BuildingPlacement::ProcessBuildingPlacementAction()
   int v49; // [esp+60h] [ebp-Ch] BYREF
   int v50; // [esp+64h] [ebp-8h]
   int v51; // [esp+68h] [ebp-4h]
-  _DWORD * v2 = (_DWORD *)(this + 64); /*0x54c55e*/
-  _DWORD * v3 = Coord::To_Cell(&DataGlobal_87F7E8, (_DWORD *)(this + 64)); /*0x54c562*/
+  _DWORD * v2 = (_DWORD *)(&this->u32_184); /*0x54c55e*/
+  _DWORD * v3 = Coord::To_Cell(&DataGlobal_87F7E8, (_DWORD *)(&this->u32_184)); /*0x54c562*/
   int v4 = this->BuildingPlacement_field_0x0C; /*0x54c567*/
   _DWORD * v5 = v3; /*0x54c56a*/
   if ( !*(_BYTE *)(v4 + 1709) ) /*0x54c56c*/
@@ -92,7 +93,7 @@ VectorClass * * BuildingPlacement::ProcessBuildingPlacementAction()
         char v15 = v14[116]; /*0x54c638*/
         LOBYTE(v12) = (*(int (__thiscall **)(_BYTE *, _DWORD))(*(_DWORD *)v14 + 292))(v14, 0); /*0x54c63b*/
         *(_BYTE *)(this->BuildingPlacement_field_0x0C + 116) = v15; /*0x54c645*/
-        int v16 = *(_DWORD *)(this + 44); /*0x54c648*/
+        int v16 = this->u32_2C; /*0x54c648*/
         this->q014 = 2; /*0x54c64b*/
         this->q020 = v16; /*0x54c652*/
       }
@@ -106,7 +107,7 @@ VectorClass * * BuildingPlacement::ProcessBuildingPlacementAction()
             0,
             1);
   int v17; // eax
-    LOBYTE(v17) = Input::OffsetToDirection((_DWORD *)(this + 64)); /*0x54c679*/
+    LOBYTE(v17) = Input::OffsetToDirection((_DWORD *)(&this->u32_184)); /*0x54c679*/
     VectorClass *v18 = v17; /*0x54c684*/
     if ( (unsigned __int8)BuildingPlacement::IsPlacementFlagSet(v17, BYTE1(v5[80]) & 1) /*0x54c699*/
   char v47; // [esp+5Bh] [ebp-11h]
@@ -120,7 +121,7 @@ VectorClass * * BuildingPlacement::ProcessBuildingPlacementAction()
     if ( v19[45] != 7 && (*(int (__thiscall **)(_DWORD *))(*v19 + 388))(v19) != 7 ) /*0x54c6d9*/
     {
       if ( !v47 /*0x54c70c*/
-        || (*((_DWORD *)Coord::To_Cell(&DataGlobal_87F7E8, (_DWORD *)(this + 64)) + 80) & 0x100) == 0
+        || (*((_DWORD *)Coord::To_Cell(&DataGlobal_87F7E8, (_DWORD *)(&this->u32_184)) + 80) & 0x100) == 0
         && (v48 > 2 || v48 == 2 && !this->q090) )
       {
         LOBYTE(v12) = (*(int (__stdcall **)(int))(this->BuildingPlacement_field_0x04 + 72))(this + 4); /*0x54ca43*/
@@ -130,7 +131,7 @@ VectorClass * * BuildingPlacement::ProcessBuildingPlacementAction()
       {
         int v20 = this->BuildingPlacement_field_0x0C; /*0x54c724*/
         this->q090 = 1; /*0x54c727*/
-        (*(void (__thiscall **)(int, int))(*(_DWORD *)v20 + 240))(v20, this + 64); /*0x54c731*/
+        (*(void (__thiscall **)(int, int))(*(_DWORD *)v20 + 240))(v20, &this->u32_184); /*0x54c731*/
       }
     }
   }
@@ -144,7 +145,7 @@ VectorClass * * BuildingPlacement::ProcessBuildingPlacementAction()
         if ( !*(_BYTE *)(this->BuildingPlacement_field_0x0C + 1709) ) /*0x54c75d*/
         {
           DeployDir = g_RulesClass_Instance->DeployDir; /*0x54c776*/
-          Value = ProgressTimer::GetValue((_WORD *)(this + 84), &v48); /*0x54c77a*/
+          Value = ProgressTimer::GetValue((_WORD *)(&this->u32_204), &v48); /*0x54c77a*/
           LOBYTE(v24) = 0; /*0x54c77f*/
           HIBYTE(v24) = DeployDir; /*0x54c781*/
           if ( *(_WORD *)Value != v24 ) /*0x54c786*/
@@ -152,7 +153,7 @@ VectorClass * * BuildingPlacement::ProcessBuildingPlacementAction()
             LOBYTE(v25) = 0; /*0x54c78d*/
             HIBYTE(v25) = g_RulesClass_Instance->DeployDir; /*0x54c793*/
             LOWORD(v48) = v25; /*0x54c799*/
-            ((FacingClass *)((char *)this + 84)).Update((char *)(this + 84), &v48); /*0x54c79e*/
+            ((FacingClass *)((char *)&this->u32_204)).Update((char *)(&this->u32_204), &v48); /*0x54c79e*/
           }
         }
       }
@@ -182,7 +183,7 @@ VectorClass * * BuildingPlacement::ProcessBuildingPlacementAction()
     (*(void (__thiscall **)(_DWORD, _DWORD))(*this->q00C + 292))(this->BuildingPlacement_field_0x0C, 0); /*0x54c820*/
     _BYTE * v29 = this->q00C; /*0x54c826*/
     if ( !v29[1709] ) /*0x54c829*/
-      (*(void (__thiscall **)(_BYTE *, int))(*(_DWORD *)v29 + 436))(v29, this + 64); /*0x54c836*/
+      (*(void (__thiscall **)(_BYTE *, int))(*(_DWORD *)v29 + 436))(v29, &this->u32_184); /*0x54c836*/
     int * v30 = (int *)(this->BuildingPlacement_field_0x0C + 156); /*0x54c83f*/
     v49 = *v30; /*0x54c848*/
     v50 = v30[1]; /*0x54c84f*/
@@ -203,8 +204,8 @@ VectorClass * * BuildingPlacement::ProcessBuildingPlacementAction()
     *v2 = dword_ABC5A8; /*0x54c8d2*/
     this->q044 = dword_ABC5AC; /*0x54c8db*/
     int v33 = this->BuildingPlacement_field_0x0C; /*0x54c8e4*/
-    *(_DWORD *)(this + 72) = dword_ABC5B0; /*0x54c8e7*/
-    *(_BYTE *)(this + 76) = 0; /*0x54c8ea*/
+    this->u32_48 = dword_ABC5B0; /*0x54c8e7*/
+    this->u8_4C = 0; /*0x54c8ea*/
     (*(void (__thiscall **)(int, int))(*(_DWORD *)v33 + 396))(v33, 2); /*0x54c8f0*/
     (*(void (__thiscall **)(_DWORD, _DWORD, int))(*this->q00C + 1152))(this->BuildingPlacement_field_0x0C, 0, 1); /*0x54c8ff*/
     _BYTE * v34 = this->q00C; /*0x54c905*/
@@ -277,6 +278,7 @@ VectorClass * * BuildingPlacement::ProcessBuildingPlacementAction()
     }
   }
   return (char)v12; /*0x54c60c*/
+}
 }
 
 // 0x594F40
@@ -489,6 +491,7 @@ LABEL_72:
     return v7; /*0x595235*/
   }
   return v7; /*0x594fbd*/
+}
 }
 
 // 0x500200

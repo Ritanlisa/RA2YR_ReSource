@@ -83,6 +83,7 @@ LABEL_16:
   return MapClass::MarkForRedraw(2); /*0x4f11a2*/
 }
 } // namespace gamemd
+}
 
 // 0x4F1840
 namespace gamemd {
@@ -113,6 +114,7 @@ LABEL_7:
   return dwNewLong; /*0x4f18a4*/
 }
 } // namespace gamemd
+}
 
 // 0x4F18B0
 namespace gamemd {
@@ -212,6 +214,7 @@ LABEL_19:
   return result; /*0x4f1a2f*/
 }
 } // namespace gamemd
+}
 
 // 0x4F1CA0
 namespace gamemd {
@@ -440,6 +443,7 @@ LABEL_22:
   return (char **)aP2_4.nextArrayIndex; /*0x4f1ccf*/
 }
 } // namespace gamemd
+}
 
 // 0x4F2300
 namespace gamemd {
@@ -582,6 +586,7 @@ ObjectClass * * E4Recv_4F2300::ProcessGraphicMenu()
     return -1; /*0x4f2632*/
 }
 } // namespace gamemd
+}
 
 // 0x4F2640
 namespace gamemd {
@@ -600,6 +605,7 @@ int E4Recv_4F2640::sub_4F2640(int (__thiscall ***a2)(unsigned int, int) a1)
   return result; /*0x4f265c*/
 }
 } // namespace gamemd
+}
 
 // 0x4F2C70
 namespace gamemd {
@@ -730,6 +736,7 @@ void ParseINIAnimGadgetDefinition()
   }
 }
 } // namespace gamemd
+}
 
 // 0x4F3140
 namespace gamemd {
@@ -848,6 +855,7 @@ ReferenceCounted * * ParseINIGadgetDefinition(ObjectClass * aP0, ObjectClass * e
   return v10; /*0x4f317b*/
 }
 } // namespace gamemd
+}
 
 // 0x4F3460
 namespace gamemd {
@@ -948,6 +956,7 @@ MSAnim * * E4Recv_4F3460::sub_4F3460(int aP1, ReferenceCounted * aP2, unsigned i
   return this; /*0x4f35f5*/
 }
 } // namespace gamemd
+}
 
 // 0x4F38B0
 namespace gamemd {
@@ -955,6 +964,7 @@ void sub_4F38B0()
 {
 // (no pseudocode — ASM-only function)
 } // namespace gamemd
+}
 
 // 0x4F3AB0
 namespace gamemd {
@@ -964,15 +974,16 @@ int E4Recv_4F3AB0::sub_4F3AB0(int a2)
   int result; // eax
 
   result = a2; /*0x4f3ab0*/
-  if ( (_BYTE)a2 != *(this + 9) ) /*0x4f3ab9*/
+  if ( (_BYTE)a2 != this->u32_24 ) /*0x4f3ab9*/
   {
     int v3 = *(_DWORD *)this; /*0x4f3abb*/
-    *(this + 9) = a2; /*0x4f3abe*/
+    this->u32_24 = a2; /*0x4f3abe*/
     return (*(int (__stdcall **)(int))(v3 + 20))(a2); /*0x4f3ac1*/
   }
   return result; /*0x4f3ac4*/
 }
 } // namespace gamemd
+}
 
 // 0x4F3B80
 namespace gamemd {
@@ -1004,6 +1015,7 @@ unsigned int * sub_4F3B80(ObjectClass * a1, ObjectClass * edx0)
   return v8; /*0x4f3bb3*/
 }
 } // namespace gamemd
+}
 
 // 0x4F3D40
 namespace gamemd {
@@ -1075,6 +1087,7 @@ LABEL_13:
   return v5; /*0x4f3e5b*/
 }
 } // namespace gamemd
+}
 
 // 0x4F4E53
 namespace gamemd {
@@ -1104,6 +1117,7 @@ void sub_4F4E53()
   return result; /*0x4f4ea9*/
 }
 } // namespace gamemd
+}
 
 // 0x4FA210
 namespace gamemd {
@@ -1169,6 +1183,7 @@ int E4Recv_4FA210::sub_4FA210(int a2, int a3)
   return a2; /*0x4fa2cf*/
 }
 } // namespace gamemd
+}
 
 // 0x4FBD80
 namespace gamemd {
@@ -1215,6 +1230,7 @@ LABEL_10:
   return result; /*0x4fbdac*/
 }
 } // namespace gamemd
+}
 
 // 0x4F0ED0
 namespace gamemd {
@@ -1925,6 +1941,7 @@ void j_Stub_InfiniteLoop()
   Stub::InfiniteLoop(a1, a2); /*0x4f4d90*/
 }
 } // namespace gamemd
+}
 
 // 0x4F4EE0
 namespace gamemd {

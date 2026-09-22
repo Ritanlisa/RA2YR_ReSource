@@ -83,6 +83,7 @@ loc_734F72:                             ; CODE XREF: RestartNetworkSession+A↑j
 pop     esi
 retn
 */
+}
 
 // 0x734F80: ToggleNetworkSession
 void ToggleNetworkSession(int enable) {
@@ -114,6 +115,7 @@ loc_734FA2:                             ; CODE XREF: ToggleNetworkSession+A↑j
 pop     esi
 retn
 */
+}
 
 // 0x6B8AE0: ScenarioClass::ResetIntroFlags
 void ResetIntroFlags(int* obj) {
@@ -132,6 +134,7 @@ or      eax, 8088h
 mov     [ecx], eax
 retn
 */
+}
 
 // 0x47AB10: Game::FindGameDirectoryCD
 void FindGameDirectoryCD(const char* path) {
@@ -457,6 +460,7 @@ setz    al
 add     esp, 108h
 retn
 */
+}
 
 // 0x53ECE0: NetworkAddress::Assign
 void NetworkAssignAddress(void* addr, void* port, int arg) {
@@ -504,6 +508,7 @@ mov     dword ptr [eax], 0
 mov     [eax], cx
 retn    0Ch
 */
+}
 
 // 0x542430: Network::GetField
 void NetworkGetField(int port) {
@@ -579,6 +584,7 @@ void FadePalette(int mode) {
     // Full impl: DSurface::Lock -> palette blend -> Unlock -> Flip, ~400B of loop
     Sleep(16); // ~1 frame at 60fps
 }
+}
 
 // 0x6C87F0: InitSkirmishSettings
 void InitSkirmishSettings() {
@@ -605,6 +611,7 @@ retn
 
 // 0x69BAB0: WTFMode::Init (see game_loop.hpp struct)
 // 0x69BB40: WTFMode::Shutdown (see game_loop.hpp struct)
+}
 
 // 0x48E0B0: DumpNetworkStats
 void DumpNetworkStats() {
@@ -687,6 +694,7 @@ retn
 */
 
 // 0x532100: ScreenSaver::Process (see game_loop.hpp struct)
+}
 
 // 0x5F0070: CleanupCampaignResources
 void CleanupCampaignResources() {
@@ -787,6 +795,7 @@ pop     esi
 add     esp, 70h
 retn
 */
+}
 
 // 0x5DA720: Network::ShutdownInterface
 void NetworkShutdownInterface() {
@@ -923,6 +932,7 @@ int dword_ABCE14 = 0;
 int dword_B07784 = 0;
 
 // ============================================================
+}
 
 // 0x5F9E80: Checksummer::HashString
 int HashString(const char* str) {
@@ -1254,6 +1264,7 @@ pop     ebp
 add     esp, 9Ch
 retn
 */
+}
 
 // 0x734E60: GetStringCSF -- returns "TXT_KEY" as placeholder
 const wchar_t* GetCSFString(const wchar_t* key, const char* file, int line) {

@@ -30,3 +30,4 @@ int Type::CheckAmbiguity(int a2, char a3)
   }
   return result; /*0x5785dd*/
 }
+}

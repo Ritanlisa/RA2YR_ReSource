@@ -22,6 +22,7 @@ int sub_53AE00()
   return MessageListClass::AddMessage(g_GameNetworkObject, 0, 0, StringCSF, v1, 16454, 150, 0); /*0x53ae47*/
 }
 } // namespace gamemd
+}
 
 // 0x659CA0
 namespace gamemd {
@@ -88,6 +89,7 @@ void Weapon_Update()
   return v11 >= v10; /*0x659e19*/
 }
 } // namespace gamemd
+}
 
 // 0x70C690
 AbstractClass * * Weapon::DestroyTerrain(int * a1, IUnknown * aP2, InfantryClass * aP3, IUnknown * aP4)
@@ -343,6 +345,7 @@ LABEL_55:
   ObjectVector::ddtor((int)&v48); /*0x70cb55*/
   return a1; /*0x70cb5c*/
 }
+}
 
 // 0x53B410
 namespace gamemd {
@@ -358,6 +361,7 @@ int sub_53B410()
   return MessageListClass::AddMessage(g_GameNetworkObject, 0, 0, StringCSF, v1, 16454, 150, 0); /*0x53b457*/
 }
 } // namespace gamemd
+}
 
 // 0x53A0E0
 namespace gamemd {

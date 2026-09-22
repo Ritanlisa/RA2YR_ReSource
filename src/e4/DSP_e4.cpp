@@ -717,6 +717,7 @@ LABEL_73:
   return -2;
 }
 } // namespace gamemd
+}
 
 // 0x7C0C80
 namespace gamemd {
@@ -981,3 +982,4 @@ LABEL_64:
   return -1; /*0x7c10f2*/
 }
 } // namespace gamemd
+}

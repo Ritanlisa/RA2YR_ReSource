@@ -84,6 +84,7 @@ LABEL_8:
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x550150
 namespace gamemd {
@@ -147,6 +148,7 @@ LABEL_10:
   }
 }
 } // namespace gamemd
+}
 
 // 0x5509F0
 namespace gamemd {
@@ -517,6 +519,7 @@ LABEL_37:
   }
 }
 } // namespace gamemd
+}
 
 // 0x551C60
 namespace gamemd {
@@ -653,6 +656,7 @@ void int LCW_BitStreamIO(unsigned char * a1, unsigned int a2, int a3)
   return v5 - v3; /*0x551e38*/
 }
 } // namespace gamemd
+}
 
 // 0x551E50
 namespace gamemd {
@@ -809,6 +813,7 @@ LABEL_35:
   return v4 + 1 - a1; /*0x551fde*/
 }
 } // namespace gamemd
+}
 
 // 0x552640
 namespace gamemd {
@@ -942,6 +947,7 @@ unsigned int int sub_552640(unsigned char * a1, unsigned int a2)
   return v4 - v3; /*0x552818*/
 }
 } // namespace gamemd
+}
 
 // 0x554400
 namespace gamemd {
@@ -957,6 +963,7 @@ ObjectClass * * E4Recv_554400::sub_554400(int a2, int a3)
   return 1; /*0x554425*/
 }
 } // namespace gamemd
+}
 
 // 0x554D50
 namespace gamemd {
@@ -1065,6 +1072,7 @@ void UpdateDeferredLightSurfaces(int a1, char a2)
   }
 }
 } // namespace gamemd
+}
 
 // 0x557380
 namespace gamemd {
@@ -1077,56 +1085,56 @@ int E4Recv_557380::sub_557380(int a2)
   this->M48 = *(_DWORD *)(a2 + 48); /*0x55739f*/
   this->M56 = 0; /*0x5573a7*/
   this->M60 = 0; /*0x5573aa*/
-  *(_BYTE *)(this + 64) = 1; /*0x5573ad*/
-  *(_BYTE *)(this + 65) = 0; /*0x5573b1*/
+  this->M64 = 1; /*0x5573ad*/
+  this->M65 = 0; /*0x5573b1*/
   this->M52 = &vt_VectorClass_unsigned_short_const; /*0x5573b4*/
-  sub_4B5830((_DWORD *)(this + 52), (_DWORD *)(a2 + 52)); /*0x5573ba*/
+  sub_4B5830((_DWORD *)(&this->u32_142), (_DWORD *)(a2 + 52)); /*0x5573ba*/
   this->M68 = *(_DWORD *)(a2 + 68); /*0x5573c2*/
   this->M72 = *(_DWORD *)(a2 + 72); /*0x5573c8*/
   this->M52 = &vt_DynamicVectorClass_unsigned_short_const; /*0x5573cb*/
   this->M76 = *(_DWORD *)(a2 + 76); /*0x5573d7*/
   this->M80 = *(_DWORD *)(a2 + 80); /*0x5573dd*/
-  *(_BYTE *)(this + 84) = *(_BYTE *)(a2 + 84); /*0x5573e9*/
-  ControlClass::CtorFromData((_DWORD *)(this + 88), a2 + 88); /*0x5573ec*/
-  *(_BYTE *)(this + 132) = *(_BYTE *)(a2 + 132); /*0x5573fa*/
-  *(_BYTE *)(this + 133) = *(_BYTE *)(a2 + 133); /*0x557400*/
+  this->M84 = *(_BYTE *)(a2 + 84); /*0x5573e9*/
+  ControlClass::CtorFromData((_DWORD *)(&this->u32_208), a2 + 88); /*0x5573ec*/
+  this->q084 = *(_BYTE *)(a2 + 132); /*0x5573fa*/
+  this->M133 = *(_BYTE *)(a2 + 133); /*0x557400*/
   this->M136 = *(_DWORD *)(a2 + 136); /*0x557406*/
   this->M88 = &vt_ToggleClass; /*0x557409*/
-  *(_BYTE *)(this + 140) = *(_BYTE *)(a2 + 140); /*0x557413*/
+  this->M140 = *(_BYTE *)(a2 + 140); /*0x557413*/
   this->M144 = *(_DWORD *)(a2 + 144); /*0x557419*/
   this->M148 = *(_DWORD *)(a2 + 148); /*0x55741f*/
-  *(_BYTE *)(this + 152) = *(_BYTE *)(a2 + 152); /*0x557425*/
+  this->M152 = *(_BYTE *)(a2 + 152); /*0x557425*/
   this->M156 = *(_DWORD *)(a2 + 156); /*0x55742b*/
   this->M160 = *(_DWORD *)(a2 + 160); /*0x557431*/
-  *(_BYTE *)(this + 164) = *(_BYTE *)(a2 + 164); /*0x557437*/
+  this->M164 = *(_BYTE *)(a2 + 164); /*0x557437*/
   this->M168 = *(_DWORD *)(a2 + 168); /*0x55743d*/
-  *(_BYTE *)(this + 172) = *(_BYTE *)(a2 + 172); /*0x557443*/
-  *(_BYTE *)(this + 173) = *(_BYTE *)(a2 + 173); /*0x557449*/
+  this->M172 = *(_BYTE *)(a2 + 172); /*0x557443*/
+  this->M173 = *(_BYTE *)(a2 + 173); /*0x557449*/
   this->M176 = *(_DWORD *)(a2 + 176); /*0x55744f*/
-  *(_BYTE *)(this + 180) = *(_BYTE *)(a2 + 180); /*0x55745b*/
+  this->M180 = *(_BYTE *)(a2 + 180); /*0x55745b*/
   this->M88 = &vt_ShapeButtonClass; /*0x557460*/
-  ControlClass::CtorFromData((_DWORD *)(this + 184), a2 + 184); /*0x557466*/
-  *(_BYTE *)(this + 228) = *(_BYTE *)(a2 + 228); /*0x55746e*/
-  *(_BYTE *)(this + 229) = *(_BYTE *)(a2 + 229); /*0x557474*/
+  ControlClass::CtorFromData((_DWORD *)(&this->q0484), a2 + 184); /*0x557466*/
+  this->M228 = *(_BYTE *)(a2 + 228); /*0x55746e*/
+  this->M229 = *(_BYTE *)(a2 + 229); /*0x557474*/
   this->M232 = *(_DWORD *)(a2 + 232); /*0x55747a*/
   this->M184 = &vt_ToggleClass; /*0x55747d*/
-  *(_BYTE *)(this + 236) = *(_BYTE *)(a2 + 236); /*0x557486*/
+  this->M236 = *(_BYTE *)(a2 + 236); /*0x557486*/
   this->M240 = *(_DWORD *)(a2 + 240); /*0x55748c*/
   this->M244 = *(_DWORD *)(a2 + 244); /*0x557492*/
-  *(_BYTE *)(this + 248) = *(_BYTE *)(a2 + 248); /*0x557498*/
+  this->M248 = *(_BYTE *)(a2 + 248); /*0x557498*/
   this->M252 = *(_DWORD *)(a2 + 252); /*0x55749e*/
   this->M256 = *(_DWORD *)(a2 + 256); /*0x5574a4*/
-  *(_BYTE *)(this + 260) = *(_BYTE *)(a2 + 260); /*0x5574aa*/
+  this->q104 = *(_BYTE *)(a2 + 260); /*0x5574aa*/
   this->M264 = *(_DWORD *)(a2 + 264); /*0x5574b0*/
-  *(_BYTE *)(this + 268) = *(_BYTE *)(a2 + 268); /*0x5574b6*/
-  *(_BYTE *)(this + 269) = *(_BYTE *)(a2 + 269); /*0x5574bc*/
+  this->M268 = *(_BYTE *)(a2 + 268); /*0x5574b6*/
+  this->M269 = *(_BYTE *)(a2 + 269); /*0x5574bc*/
   this->M272 = *(_DWORD *)(a2 + 272); /*0x5574c6*/
-  *(_BYTE *)(this + 276) = *(_BYTE *)(a2 + 276); /*0x5574d2*/
+  this->M276 = *(_BYTE *)(a2 + 276); /*0x5574d2*/
   this->M184 = &vt_ShapeButtonClass; /*0x5574de*/
-  sub_5581A0(this + 280, a2 + 280); /*0x5574e4*/
+  sub_5581A0(&this->u32_460, a2 + 280); /*0x5574e4*/
   this->M340 = *(_DWORD *)(a2 + 340); /*0x5574fa*/
   this->M344 = *(_DWORD *)(a2 + 344); /*0x557500*/
-  *(_BYTE *)(this + 348) = *(_BYTE *)(a2 + 348); /*0x557506*/
+  this->M348 = *(_BYTE *)(a2 + 348); /*0x557506*/
   this->M352 = *(_DWORD *)(a2 + 352); /*0x55750c*/
   this->M356 = *(_DWORD *)(a2 + 356); /*0x557512*/
   this->M360 = *(_DWORD *)(a2 + 360); /*0x55751c*/
@@ -1135,12 +1143,13 @@ int E4Recv_557380::sub_557380(int a2)
   int v3 = this->M88; /*0x557538*/
   this->M368 = *(_DWORD *)(a2 + 368); /*0x55753c*/
   *(_DWORD *)this = &vt_ListClass; /*0x557542*/
-  (*(void (__thiscall **)(int, int))(v3 + 132))(this + 88, this); /*0x557548*/
-  (*(void (__thiscall **)(int, int))(this->M184 + 132))(this + 184, this); /*0x557553*/
-  (*(void (__thiscall **)(int, int))(this->M280 + 132))(this + 280, this); /*0x55755f*/
+  (*(void (__thiscall **)(int, int))(v3 + 132))(&this->q160, this); /*0x557548*/
+  (*(void (__thiscall **)(int, int))(this->M184 + 132))(&this->u32_2E0, this); /*0x557553*/
+  (*(void (__thiscall **)(int, int))(this->M280 + 132))(&this->u32_460, this); /*0x55755f*/
   return this; /*0x557566*/
 }
 } // namespace gamemd
+}
 
 // 0x557B10
 namespace gamemd {
@@ -1167,6 +1176,7 @@ ControlClass * * CheckListClass__vt_19_(char a2, int a3, unsigned int * a4)
   return result; /*0x557b64*/
 }
 } // namespace gamemd
+}
 
 // 0x558810
 namespace gamemd {
@@ -1182,6 +1192,7 @@ int E4Recv_558810::ShowSaveLoadDialog(CampaignScore * aP1)
   return SaveLoadDialog::DlgProc((const char **)this); /*0x558831*/
 }
 } // namespace gamemd
+}
 
 // 0x55B720
 namespace gamemd {
@@ -1248,21 +1259,22 @@ LABEL_15:
     goto LABEL_15; /*0x55b7ef*/
   }
 LABEL_16:
-  result = *(this + 4); /*0x55b818*/
+  result = this->M16; /*0x55b818*/
   for ( i = 0; i < result; ++i ) /*0x55b81f*/
   {
-    int v14 = *(_DWORD *)(*(this + 1) + 4 * i); /*0x55b824*/
+    int v14 = *(_DWORD *)(this->M4 + 4 * i); /*0x55b824*/
     if ( v14 && (*(_BYTE *)(v14 + 20) & 4) != 0 && *(_DWORD *)(v14 + 1652) && !*(_BYTE *)(v14 + 973) ) /*0x55b844*/
     {
       if ( !*(_DWORD *)(v14 + 1652) ) /*0x55b84e*/
         WinAPI::Wrapper(-2147467261); /*0x55b85d*/
       (*(void (__stdcall **)(_DWORD))(**(_DWORD **)(v14 + 1652) + 64))(*(_DWORD *)(v14 + 1652)); /*0x55b86b*/
     }
-    result = *(this + 4); /*0x55b86e*/
+    result = this->M16; /*0x55b86e*/
   }
   return result; /*0x55b876*/
 }
 } // namespace gamemd
+}
 
 // 0x55BC00
 namespace gamemd {
@@ -1600,6 +1612,7 @@ LABEL_72:
   return 0; /*0x55c0c1*/
 }
 } // namespace gamemd
+}
 
 // 0x55C0E0
 namespace gamemd {
@@ -1778,6 +1791,7 @@ LABEL_14:
   return -(v7 != v5); /*0x55c27b*/
 }
 } // namespace gamemd
+}
 
 // 0x55CFD0
 namespace gamemd {
@@ -1931,6 +1945,7 @@ LABEL_52:
   return g_WTFMode == 0; /*0x55d351*/
 }
 } // namespace gamemd
+}
 
 // 0x55D360
 namespace gamemd {
@@ -2369,6 +2384,7 @@ LABEL_128:
   return LOBYTE(DataGlobal_87F7E8[539758]) == 0; /*0x55d861*/
 }
 } // namespace gamemd
+}
 
 // 0x55F1E0
 namespace gamemd {
@@ -2654,6 +2670,7 @@ BitFont * * DrawHUD()
   return result; /*0x55f67c*/
 }
 } // namespace gamemd
+}
 
 // 0x55F970
 namespace gamemd {
@@ -2702,6 +2719,7 @@ void* unknown_libname_21()
   return dword_ABCE70; /*0x5fa421*/
 }
 } // namespace gamemd
+}
 
 // 0x55FDB0
 namespace gamemd {
@@ -2972,6 +2990,7 @@ AbstractClass * * Options_Screen_DlgProc(HWND hWnd, WPARAM wParam, unsigned int 
   return result; /*0x55fe5c*/
 }
 } // namespace gamemd
+}
 
 // 0x5509E0
 namespace gamemd {

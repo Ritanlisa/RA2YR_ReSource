@@ -1944,17 +1944,17 @@ char __thiscall TextRenderer::MeasureBuilding(
     Viewport = Display::GetViewport(v22); /*0x642d8d*/
     v15 = Viewport[2] - v12; /*0x642dac*/
     v16 = Viewport[3] - v13; /*0x642db0*/
-    *((_DWORD *)this + 26) = v15 / 2; /*0x642dbb*/
-    *((_DWORD *)this + 27) = v16 / 2; /*0x642dbe*/
+    this->u32_68 = v15 / 2; /*0x642dbb*/
+    this->u32_6C = v16 / 2; /*0x642dbe*/
   }
   else
   {
-    *((_DWORD *)this + 26) = a2; /*0x642dc4*/
-    *((_DWORD *)this + 27) = aP2; /*0x642dc7*/
+    this->u32_68 = a2; /*0x642dc4*/
+    this->u32_6C = aP2; /*0x642dc7*/
   }
   *(_DWORD *)&this->__pad_4C[4] = aP3; /*0x642dd6*/
-  *((_BYTE *)this + 112) = (_BYTE)aP4; /*0x642dd9*/
-  *((_BYTE *)this + 113) = a6; /*0x642ddc*/
+  this->u8_70 = (_BYTE)aP4; /*0x642dd9*/
+  this->u8_71 = a6; /*0x642ddc*/
   return a6; /*0x642ddf*/
 }
 
@@ -3018,7 +3018,7 @@ _DWORD *__thiscall OverlayTypeClass::Construct(_DWORD *this, ObjectClass *aP1)
   this->ParticleSystemTypeClass_field_2C8 = 0; /*0x644108*/
   this->Beam = -1717986918; /*0x64410e*/
   this->q2D0 = -1717986918; /*0x644114*/
-  this->q0B6 = 0; /*0x64411a*/
+  this->u32_2D8 = 0; /*0x64411a*/
   this->q0B8 = 0; /*0x644120*/
   this->q2E8 = 0; /*0x644126*/
   this->q2F0 = 0; /*0x64412c*/
@@ -3586,7 +3586,7 @@ _DWORD *__thiscall BuildingTypeClass::Construct(_DWORD *this, AbstractClass *aP1
   int v4; // eax
 
   ObjectTypeClass::ConstructFull((int)this, aP1); /*0x644beb*/
-  this->q0A5 = 0; /*0x644bf8*/
+  this->u32_A50 = 0; /*0x644bf8*/
   this->q0A6 = 0; /*0x644bfe*/
   this->q0A7 = 0; /*0x644c04*/
   this->q2B0 = 0; /*0x644c10*/
@@ -3600,9 +3600,9 @@ _DWORD *__thiscall BuildingTypeClass::Construct(_DWORD *this, AbstractClass *aP1
   this->q2C8 = 0; /*0x644c43*/
   this->q2B8 = &vt_TypeList_RGBClass; /*0x644c46*/
   this->q2D4 = 0; /*0x644c4c*/
-  *((_BYTE *)this + 728) = 0; /*0x644c66*/
-  *((_BYTE *)this + 729) = 0; /*0x644c6c*/
-  *((_BYTE *)this + 781) = -1; /*0x644c72*/
+  this->u32_2D8 = 0; /*0x644c66*/
+  this->u8_2D9 = 0; /*0x644c6c*/
+  this->u32_30D = -1; /*0x644c72*/
   this->q30E = -1; /*0x644c78*/
   this->q2DC = 0; /*0x644c81*/
   this->q2E0 = 1; /*0x644c87*/
@@ -3615,12 +3615,12 @@ _DWORD *__thiscall BuildingTypeClass::Construct(_DWORD *this, AbstractClass *aP1
   this->q0BF = 0; /*0x644cb1*/
   this->q300 = 0; /*0x644cb7*/
   this->q304 = 0; /*0x644cbd*/
-  *((_BYTE *)this + 776) = 0; /*0x644cc3*/
-  *((_BYTE *)this + 777) = 0; /*0x644cc9*/
+  this->q308 = 0; /*0x644cc3*/
+  this->u32_309 = 0; /*0x644cc9*/
   this->q30A = 0; /*0x644ccf*/
-  *((_BYTE *)this + 779) = 4; /*0x644cd5*/
+  this->u32_30B = 4; /*0x644cd5*/
   this->q0C3 = 0; /*0x644cdc*/
-  *((_BYTE *)this + 783) = 0; /*0x644ce2*/
+  this->u8_30F = 0; /*0x644ce2*/
   this->q310 = -1; /*0x644ce8*/
   this->q314 = -1; /*0x644cee*/
   *this = &ParticleTypeClass::`vftable'; /*0x644cf4*/
@@ -4378,7 +4378,7 @@ _DWORD *__thiscall sub_645A70(_DWORD *this, int a2, int a3)
     }
   }
   *this = &vt_DynamicVectorClass_RGBClass; /*0x645aec*/
-  this->q005 = 10; /*0x645af2*/
+  this->u32_14 = 10; /*0x645af2*/
   this->q010 = 0; /*0x645af9*/
   return this; /*0x645afe*/
 }

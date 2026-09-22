@@ -35,10 +35,10 @@ void * ScriptAction::InitActionFields(int a2, int a3, char a4, char a5, int a6, 
     this->q01C = a3; /*0x4c687b*/
     this->q0B0 = a4; /*0x4c6881*/
     this->q00C = a5; /*0x4c6888*/
-    *(_DWORD *)(this + 14) = a6; /*0x4c6892*/
+    this->u32_E = a6; /*0x4c6892*/
     this->q048 = a7; /*0x4c6899*/
     this->q04C = a8; /*0x4c68a3*/
-    *(this + 23) = a9; /*0x4c68aa*/
+    *(&this->u32_83) = a9; /*0x4c68aa*/
     this->ScriptAction_field_0x18 = a10; /*0x4c68b4*/
     this->q01C = a11; /*0x4c68bb*/
   }
@@ -46,6 +46,7 @@ void * ScriptAction::InitActionFields(int a2, int a3, char a4, char a5, int a6, 
   return result; /*0x4c68c7*/
 }
 } // namespace gamemd
+}
 
 // 0x633FA0
 namespace gamemd {
@@ -109,6 +110,7 @@ int ScriptAction::CreatePlacementAction(AbstractClass * aP1, const void * a2)
   return ScriptAction::PlaceObject((int)this, (AbstractClass *)v5); /*0x6340a1*/
 }
 } // namespace gamemd
+}
 
 // 0x6343C0
 namespace gamemd {
@@ -128,6 +130,7 @@ unsigned int * ScriptAction::GetCoords(unsigned int * a2)
   return a2; /*0x6343ec*/
 }
 } // namespace gamemd
+}
 
 // 0x634400
 namespace gamemd {
@@ -149,6 +152,7 @@ unsigned int * ScriptAction::GetScreenPos(unsigned int * a2)
   return a2; /*0x63445d*/
 }
 } // namespace gamemd
+}
 
 // 0x634550
 namespace gamemd {
@@ -162,6 +166,7 @@ int ScriptAction::GetActionCoordinates(int a2, int a3, int a4)
   return *ScenarioClassActionCoords == a2 && ScenarioClassActionCoords[1] == a3 && ScenarioClassActionCoords[2] == a4; /*0x63456f*/
 }
 } // namespace gamemd
+}
 
 // 0x6346B0
 namespace gamemd {
@@ -187,6 +192,7 @@ unsigned int * ScriptAction::FindItemByValue(int a2)
     return v4[v3]; /*0x6346e8*/
 }
 } // namespace gamemd
+}
 
 // 0x6349B0
 namespace gamemd {
@@ -227,10 +233,10 @@ int ScriptAction::FindSquadMember()
           else
             v10 = *(_DWORD *)(v8[1] + 4 * Value); /*0x634a45*/
           _BYTE * v11 = *(_BYTE **)(v10 + 4); /*0x634a48*/
-          qmemcpy((void *)(this + 56), v11, 0x6Cu); /*0x634a50*/
+          qmemcpy((void *)(&this->u32_146), v11, 0x6Cu); /*0x634a50*/
           v11 += 108; /*0x634a50*/
-          *(_WORD *)(this + 164) = *(_WORD *)v11; /*0x634a52*/
-          *(_BYTE *)(this + 166) = v11[2]; /*0x634a54*/
+          this->u16_A4 = *(_WORD *)v11; /*0x634a52*/
+          this->u8_A6 = v11[2]; /*0x634a54*/
         }
       }
       ++v23; /*0x634a60*/
@@ -243,10 +249,10 @@ int ScriptAction::FindSquadMember()
   {
     result = this->ScriptAction_field_0x30; /*0x634a8e*/
   _BYTE v28[112]; // [esp+40h] [ebp-E0h] BYREF
-    qmemcpy(v28, (const void *)(this + 56), 0x6Eu); /*0x634a91*/
+    qmemcpy(v28, (const void *)(&this->u32_146), 0x6Eu); /*0x634a91*/
     int v13 = 0; /*0x634a95*/
     int v22 = result; /*0x634a97*/
-    v28[110] = *(_BYTE *)(this + 166); /*0x634a9d*/
+    v28[110] = this->u8_A6; /*0x634a9d*/
     if ( result > 0 ) /*0x634a9e*/
     {
       while ( 1 ) /*0x634aaf*/
@@ -279,6 +285,7 @@ int ScriptAction::FindSquadMember()
   return result; /*0x634b09*/
 }
 } // namespace gamemd
+}
 
 // 0x634CC0
 namespace gamemd {
@@ -366,6 +373,7 @@ int ScriptAction::FindBuildingMatch(AbstractClass * aP1)
   return -1; /*0x634de7*/
 }
 } // namespace gamemd
+}
 
 // 0x634E10
 namespace gamemd {
@@ -444,7 +452,7 @@ ObjectClass * * ScriptAction::PlaceObject(AbstractClass * aP1)
       *(_DWORD *)(v16 + 112) = v17 + 1; /*0x634ef4*/
       int v18 = this->q028; /*0x634ef7*/
       if ( this->ScriptAction_field_0x30 < v18 /*0x634f1c*/
-        || (*(_BYTE *)(this + 45) || !v18)
+        || (this->u8_2D || !v18)
   int v19; // ecx
         && (v19 = this->q034, v19 > 0)
         && this->q008->vt_slot_8(v18 + v19, 0) )
@@ -463,10 +471,10 @@ ObjectClass * * ScriptAction::PlaceObject(AbstractClass * aP1)
         if ( this->ScriptAction_field_0xA8 ) /*0x634f5f*/
         {
           int v23 = 0; /*0x634f79*/
-          qmemcpy(v35, (const void *)(this + 56), sizeof(v35)); /*0x634f7b*/
+          qmemcpy(v35, (const void *)(&this->u32_146), sizeof(v35)); /*0x634f7b*/
           v24 = this->q030; /*0x634f7d*/
-          v36 = *(_WORD *)(this + 164); /*0x634f80*/
-          v37 = *(_BYTE *)(this + 166); /*0x634f84*/
+          v36 = this->u16_A4; /*0x634f80*/
+          v37 = this->u8_A6; /*0x634f84*/
           v30 = v24; /*0x634f85*/
           if ( (int)v24 > 0 ) /*0x634f89*/
           {
@@ -501,7 +509,7 @@ LABEL_30:
           }
         }
       }
-      *(_DWORD *)(this + 180) = -1; /*0x63501b*/
+      this->u32_B4 = -1; /*0x63501b*/
       *(_DWORD *)&aP1->__pad_0[8] = result; /*0x635026*/
     }
   }
@@ -509,13 +517,14 @@ LABEL_30:
   {
     int v28 = *(_DWORD *)(this->ScriptAction_field_0x24 + 4 * result); /*0x635038*/
     *(_DWORD *)(v28 + 116) = -1; /*0x63503b*/
-    *(_DWORD *)(this + 180) = -1; /*0x63503e*/
+    this->u32_B4 = -1; /*0x63503e*/
     ++*(_DWORD *)(v28 + 112); /*0x635048*/
     *(_DWORD *)&aP1->__pad_0[8] = result; /*0x63504b*/
   }
   return result; /*0x634e95*/
 }
 } // namespace gamemd
+}
 
 // 0x6351E0
 namespace gamemd {
@@ -532,6 +541,7 @@ int ScriptAction::DecrementRefCount(int a2)
   return result; /*0x635201*/
 }
 } // namespace gamemd
+}
 
 // 0x635F20
 namespace gamemd {
@@ -548,7 +558,7 @@ void * ScriptAction::Constructor(AbstractClass * aP1)
   this->q070 = 0; /*0x635f45*/
   this->q074 = 0; /*0x635f48*/
   this->q098 = 0; /*0x635f4b*/
-  *((_BYTE *)this + 153) = 0; /*0x635f51*/
+  this->u8_99 = 0; /*0x635f51*/
   this->q08C = -1; /*0x635f5b*/
   this->q090 = -1; /*0x635f61*/
   this->q094 = -1; /*0x635f67*/
@@ -556,6 +566,7 @@ void * ScriptAction::Constructor(AbstractClass * aP1)
   return (AbstractClass *)this; /*0x635f6f*/
 }
 } // namespace gamemd
+}
 
 // 0x636570
 namespace gamemd {
@@ -574,6 +585,7 @@ int ScriptAction::Check()
   return result; /*0x63658b*/
 }
 } // namespace gamemd
+}
 
 // 0x636CE0
 namespace gamemd {
@@ -630,6 +642,7 @@ int ScriptAction::ClearBuildingState()
   return result; /*0x636d8a*/
 }
 } // namespace gamemd
+}
 
 // 0x637E00
 namespace gamemd {
@@ -808,6 +821,7 @@ TechnoClass * * ScriptAction::DispatchBuilding()
   return (char)BuildingLoadQueue; /*0x637e97*/
 }
 } // namespace gamemd
+}
 
 // 0x638C70
 namespace gamemd {
@@ -839,6 +853,7 @@ int ScriptAction::IsBuildingTypeMatch()
   }
 }
 } // namespace gamemd
+}
 
 // 0x639A50
 namespace gamemd {
@@ -924,6 +939,7 @@ int ScriptAction::ExecutePlacement(int a1, int a2, int a3, long long a4, int a5,
   return result; /*0x639baa*/
 }
 } // namespace gamemd
+}
 
 // 0x63A8E0
 namespace gamemd {
@@ -1001,6 +1017,7 @@ LABEL_22:
   return v3 || v11; /*0x63a8f0*/
 }
 } // namespace gamemd
+}
 
 // 0x63B550
 namespace gamemd {
@@ -1387,6 +1404,7 @@ LABEL_55:
   return updated; /*0x63b914*/
 }
 } // namespace gamemd
+}
 
 // 0x63CE40
 namespace gamemd {
@@ -1407,7 +1425,7 @@ int ScriptAction::DrawPlacementMarker()
   int v4 = Viewport[3]; /*0x63ce6b*/
   AbstractClass *v5 = this->q004; /*0x63ce6e*/
   v12[3] = v4; /*0x63ce71*/
-  ScenarioClassActionCoords = GetScenarioClassActionCoords(v10, *(_BYTE **)(*(_DWORD *)v5 + 4)); /*0x63ce7e*/
+  ScenarioClassActionCoords = GetScenarioClassActionCoords(v10, *(_BYTE **)(v5->vtable2); /*0x63ce7e*/
   _DWORD v9[3]; // [esp+10h] [ebp-3Ch] BYREF
   v9[0] = *ScenarioClassActionCoords; /*0x63ce85*/
   v9[1] = ScenarioClassActionCoords[1]; /*0x63ce8c*/
@@ -1427,6 +1445,7 @@ int ScriptAction::DrawPlacementMarker()
            DrawColor);
 }
 } // namespace gamemd
+}
 
 // 0x6DD300
 namespace gamemd {
@@ -1445,7 +1464,7 @@ AbstractClass * * ScriptAction::Serialize(char * Buffer)
   {
     case '/': /*0x6dd329*/
       v4 = 9; /*0x6dd32b*/
-      v5 = (const char *)(this + 84); /*0x6dd330*/
+      v5 = (const char *)(&this->u32_204); /*0x6dd330*/
       goto LABEL_33; /*0x6dd333*/
     case '.': /*0x6dd329*/
       v4 = 11; /*0x6dd340*/
@@ -1454,11 +1473,11 @@ AbstractClass * * ScriptAction::Serialize(char * Buffer)
       goto LABEL_33; /*0x6dd34d*/
     case '+': /*0x6dd329*/
       v4 = 9; /*0x6dd357*/
-      v5 = (const char *)(this + 84); /*0x6dd35c*/
+      v5 = (const char *)(&this->u32_204); /*0x6dd35c*/
       goto LABEL_33; /*0x6dd35f*/
     case '-': /*0x6dd329*/
       v4 = 10; /*0x6dd369*/
-      v5 = (const char *)(this + 84); /*0x6dd36e*/
+      v5 = (const char *)(&this->u32_204); /*0x6dd36e*/
       goto LABEL_33; /*0x6dd371*/
   }
   int v6 = this->ScriptAction_field_0x30; /*0x6dd376*/
@@ -1497,7 +1516,7 @@ AbstractClass * * ScriptAction::Serialize(char * Buffer)
   }
   if ( v3 == 39 ) /*0x6dd401*/
   {
-    v5 = (const char *)(this + 109); /*0x6dd406*/
+    v5 = (const char *)(&this->u32_289); /*0x6dd406*/
     v4 = 4; /*0x6dd40b*/
     if ( !this->q06D || this == -109 ) /*0x6dd414*/
       v5 = DataGlobal_842BF4; /*0x6dd416*/
@@ -1538,8 +1557,8 @@ LABEL_33:
                11,
                v16,
                this->q034,
-               *(_DWORD *)(this + 56),
-               *(_DWORD *)(this + 60),
+               this->u32_38,
+               this->u32_3C,
                this->q010,
                v15);
     case 10: /*0x6dd476*/
@@ -1551,8 +1570,8 @@ LABEL_33:
                10,
                v5,
                this->q034,
-               *(_DWORD *)(this + 56),
-               *(_DWORD *)(this + 60),
+               this->u32_38,
+               this->u32_3C,
                this->q010,
                v12);
     case 5: /*0x6dd476*/
@@ -1564,8 +1583,8 @@ LABEL_33:
                v4,
                v5,
                this->q034,
-               *(_DWORD *)(this + 56),
-               *(_DWORD *)(this + 60),
+               this->u32_38,
+               this->u32_3C,
                this->q010,
                this->q090);
     default:
@@ -1578,8 +1597,8 @@ LABEL_33:
                  v4,
                  v5,
                  this->q034,
-                 *(_DWORD *)(this + 56),
-                 *(_DWORD *)(this + 60),
+                 this->u32_38,
+                 this->u32_3C,
                  this->q010,
                  v13);
       else
@@ -1590,13 +1609,14 @@ LABEL_33:
                  0,
                  v14,
                  this->q034,
-                 *(_DWORD *)(this + 56),
-                 *(_DWORD *)(this + 60),
+                 this->u32_38,
+                 this->u32_3C,
                  this->q010,
                  v13);
   }
 }
 } // namespace gamemd
+}
 
 // 0x6DD5B0
 namespace gamemd {
@@ -1682,21 +1702,21 @@ const char * ScriptAction::ParseScriptActionParams()
           }
           if ( *v7 ) /*0x6dd6fb*/
           {
-            strncpy((char *)(this + 109), v7, 0x1Fu); /*0x6dd704*/
+            strncpy((char *)(&this->u32_289), v7, 0x1Fu); /*0x6dd704*/
             this->q08C = 0; /*0x6dd711*/
-            unsigned int v9 = strlen((const char *)(this + 109)) + 1; /*0x6dd718*/
+            unsigned int v9 = strlen((const char *)(&this->u32_289)) + 1; /*0x6dd718*/
             unsigned int v10 = v9 - 1; /*0x6dd71c*/
             if ( v9 != 1 ) /*0x6dd71d*/
             {
               do /*0x6dd726*/
               {
-                if ( *(_BYTE *)(v10 + this + 108) > 0x20u ) /*0x6dd723*/
+                if ( *(_BYTE *)(v10 + &this->u32_288) > 0x20u ) /*0x6dd723*/
                   break; /*0x6dd723*/
                 --v10; /*0x6dd725*/
               }
               while ( v10 ); /*0x6dd726*/
             }
-            *(_BYTE *)(v10 + this + 109) = 0; /*0x6dd728*/
+            *(_BYTE *)(v10 + &this->u32_289) = 0; /*0x6dd728*/
           }
         }
       }
@@ -1721,10 +1741,10 @@ const char * ScriptAction::ParseScriptActionParams()
       {
         Destination[0] = 0; /*0x6dd7fa*/
       }
-      if ( Destination != (char *)(this + 84) ) /*0x6dd81f*/
+      if ( Destination != (char *)(&this->u32_204) ) /*0x6dd81f*/
       {
-        qmemcpy((void *)(this + 84), Destination, 0x18u); /*0x6dd82e*/
-        *(_BYTE *)(this + 108) = v17; /*0x6dd830*/
+        qmemcpy((void *)(&this->u32_204), Destination, 0x18u); /*0x6dd82e*/
+        this->u8_6C = v17; /*0x6dd830*/
       }
       break; /*0x6dd831*/
     default:
@@ -1733,9 +1753,9 @@ const char * ScriptAction::ParseScriptActionParams()
   char * v11 = strtok(0, Delimiter); /*0x6dd731*/
   this->q034 = atoi(v11); /*0x6dd74a*/
   char * v12 = strtok(0, Delimiter); /*0x6dd74d*/
-  *(_DWORD *)(this + 56) = atoi(v12); /*0x6dd75f*/
+  this->u32_38 = atoi(v12); /*0x6dd75f*/
   char * v13 = strtok(0, Delimiter); /*0x6dd762*/
-  *(_DWORD *)(this + 60) = atoi(v13); /*0x6dd774*/
+  this->u32_3C = atoi(v13); /*0x6dd774*/
   char * v14 = strtok(0, Delimiter); /*0x6dd777*/
   this->q010 = atoi(v14); /*0x6dd789*/
   result = strtok(0, Delimiter); /*0x6dd78c*/
@@ -1760,6 +1780,7 @@ const char * ScriptAction::ParseScriptActionParams()
   return result; /*0x6dd7b4*/
 }
 } // namespace gamemd
+}
 
 // 0x6E1830
 namespace gamemd {
@@ -1782,6 +1803,7 @@ unsigned int * ScriptAction::ReadParameter()
   return result; /*0x6e189b*/
 }
 } // namespace gamemd
+}
 
 // 0x6E3B60
 namespace gamemd {
@@ -1981,6 +2003,7 @@ int ScriptAction::GetActionTypeInfo()
   return result; /*0x6e3b82*/
 }
 } // namespace gamemd
+}
 
 // 0x6E4790
 namespace gamemd {
@@ -2000,6 +2023,7 @@ void * ScriptAction::CopyStringField(char * Source)
   }
 }
 } // namespace gamemd
+}
 
 // 0x6E6AB0
 namespace gamemd {
@@ -2028,6 +2052,7 @@ unsigned char * ScriptAction::GetWaypointCoords(IUnknown * aP1)
   }
 }
 } // namespace gamemd
+}
 
 // 0x6FFBE0
 namespace gamemd {
@@ -2152,6 +2177,7 @@ TechnoClass * * ScriptAction::ExecuteMissionCmd()
   return result; /*0x6ffcb0*/
 }
 } // namespace gamemd
+}
 
 // 0x721270
 namespace gamemd {
@@ -2164,6 +2190,7 @@ void * ScriptAction::GetArgumentString(int a2)
     return *(ObjectClass **)(this->q018 + 4 * a2); /*0x721280*/
 }
 } // namespace gamemd
+}
 
 // 0x637DB0
 namespace gamemd {

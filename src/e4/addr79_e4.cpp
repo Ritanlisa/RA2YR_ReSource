@@ -92,6 +92,7 @@ LABEL_6:
   return result; /*0x792d2c*/
 }
 } // namespace gamemd
+}
 
 // 0x793280
 namespace gamemd {
@@ -180,6 +181,7 @@ void sub_793280(HWND hWnd, UINT a2, WPARAM a3, char * a4)
   return result; /*0x7932b0*/
 }
 } // namespace gamemd
+}
 
 // 0x793490
 namespace gamemd {
@@ -306,6 +308,7 @@ LABEL_26:
   return result; /*0x7934d6*/
 }
 } // namespace gamemd
+}
 
 // 0x793B30
 namespace gamemd {
@@ -325,6 +328,7 @@ int sub_793B30(char a1, const char * a2)
   return (*(int (__stdcall **)(LPVOID, _BYTE *))(*(_DWORD *)ppv + 60))(ppv, v3); /*0x793b9d*/
 }
 } // namespace gamemd
+}
 
 // 0x793D20
 namespace gamemd {
@@ -786,6 +790,7 @@ LABEL_100:
   return v44; /*0x793e37*/
 }
 } // namespace gamemd
+}
 
 // 0x7947B0
 namespace gamemd {
@@ -945,6 +950,7 @@ LABEL_45:
   return 0; /*0x7947f5*/
 }
 } // namespace gamemd
+}
 
 // 0x794BA0
 namespace gamemd {
@@ -1371,6 +1377,7 @@ LABEL_97:
   }
 }
 } // namespace gamemd
+}
 
 // 0x795CD0
 namespace gamemd {
@@ -1807,6 +1814,7 @@ LABEL_147:
   return result; /*0x796703*/
 }
 } // namespace gamemd
+}
 
 // 0x796710
 namespace gamemd {
@@ -1896,6 +1904,7 @@ LABEL_13:
   return 1; /*0x7968d9*/
 }
 } // namespace gamemd
+}
 
 // 0x796B90
 namespace gamemd {
@@ -2000,6 +2009,7 @@ CampaignScore * * WOL_LobbyDlgProc(HWND hWnd, LONG a2, int a3, HWND a4)
   return result; /*0x796c01*/
 }
 } // namespace gamemd
+}
 
 // 0x7970D0
 namespace gamemd {
@@ -2197,6 +2207,7 @@ AbstractClass * * NetworkGame_Init()
   return Scenario::PreGameInit(); /*0x7975a0*/
 }
 } // namespace gamemd
+}
 
 // 0x797640
 namespace gamemd {
@@ -2292,6 +2303,7 @@ LABEL_22:
   return v3; /*0x7977d3*/
 }
 } // namespace gamemd
+}
 
 // 0x797800
 namespace gamemd {
@@ -2503,6 +2515,7 @@ LABEL_12:
   return 0; /*0x79789f*/
 }
 } // namespace gamemd
+}
 
 // 0x797C20
 namespace gamemd {
@@ -2629,6 +2642,7 @@ AbstractClass * * WOL_InitVersionStrings()
   return result; /*0x798112*/
 }
 } // namespace gamemd
+}
 
 // 0x7982D0
 namespace gamemd {
@@ -2660,6 +2674,7 @@ LABEL_4:
   }
 }
 } // namespace gamemd
+}
 
 // 0x7983E0
 namespace gamemd {
@@ -2844,6 +2859,7 @@ void Multiplayer_Setup2_DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned int
   return result; /*0x798452*/
 }
 } // namespace gamemd
+}
 
 // 0x7988C0
 namespace gamemd {
@@ -3037,6 +3053,7 @@ void Multiplayer_GameMode_DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned i
   return result; /*0x798932*/
 }
 } // namespace gamemd
+}
 
 // 0x799080
 namespace gamemd {
@@ -3451,6 +3468,7 @@ LABEL_67:
   return result;
 }
 } // namespace gamemd
+}
 
 // 0x799EA0
 namespace gamemd {
@@ -4044,6 +4062,7 @@ LABEL_44:
   }
 }
 } // namespace gamemd
+}
 
 // 0x79BA60
 namespace gamemd {
@@ -4137,6 +4156,7 @@ LABEL_35:
   return 0; /*0x79bb0a*/
 }
 } // namespace gamemd
+}
 
 // 0x79BC80
 namespace gamemd {
@@ -4219,6 +4239,7 @@ LABEL_27:
   return v10; /*0x79bc98*/
 }
 } // namespace gamemd
+}
 
 // 0x79BF50
 namespace gamemd {
@@ -4268,6 +4289,7 @@ LABEL_12:
   return EnableWindow(v5, v9); /*0x79c031*/
 }
 } // namespace gamemd
+}
 
 // 0x79CBA0
 namespace gamemd {
@@ -4388,6 +4410,7 @@ LABEL_34:
   }
 }
 } // namespace gamemd
+}
 
 // 0x79CE70
 namespace gamemd {
@@ -4483,6 +4506,7 @@ AbstractClass * * int WOL_RefreshChannelList()
   return result; /*0x79ceda*/
 }
 } // namespace gamemd
+}
 
 // 0x79D110
 namespace gamemd {
@@ -4577,6 +4601,7 @@ AbstractClass * * WOL_SendGameList()
   DeleteAndZero(&v12); /*0x79d2dd*/
 }
 } // namespace gamemd
+}
 
 // 0x79D2F0
 namespace gamemd {
@@ -4659,6 +4684,7 @@ AbstractClass * * WOL_RefreshGameList()
   SendGameListWOL(); /*0x79d4d0*/
 }
 } // namespace gamemd
+}
 
 // 0x79D4E0
 namespace gamemd {
@@ -4751,6 +4777,7 @@ AbstractClass * * CleanupWOLSession()
   RefreshGameListWOL(); /*0x79d70c*/
 }
 } // namespace gamemd
+}
 
 // 0x79D720
 namespace gamemd {
@@ -4872,6 +4899,7 @@ void WOLLoginDialogProc(HWND hWnd, unsigned int a2, int a3, HWND a4)
   return result; /*0x79d771*/
 }
 } // namespace gamemd
+}
 
 // 0x79DA90
 namespace gamemd {
@@ -4912,6 +4940,7 @@ LABEL_7:
   }
 }
 } // namespace gamemd
+}
 
 // 0x79DFE0
 namespace gamemd {
@@ -5118,6 +5147,7 @@ LABEL_50:
   return result; /*0x79e069*/
 }
 } // namespace gamemd
+}
 
 // 0x79E520
 namespace gamemd {
@@ -5484,6 +5514,7 @@ LABEL_90:
   return result; /*0x79e598*/
 }
 } // namespace gamemd
+}
 
 // 0x79F0A0
 namespace gamemd {
@@ -5526,6 +5557,7 @@ LABEL_8:
   }
 }
 } // namespace gamemd
+}
 
 // 0x79F140
 namespace gamemd {
@@ -5975,6 +6007,7 @@ LABEL_143:
   return 0; /*0x79f195*/
 }
 } // namespace gamemd
+}
 
 // 0x79FC40
 namespace gamemd {
@@ -6268,6 +6301,7 @@ LABEL_73:
   return i; /*0x79fd7e*/
 }
 } // namespace gamemd
+}
 
 // 0x792BE0
 namespace gamemd {

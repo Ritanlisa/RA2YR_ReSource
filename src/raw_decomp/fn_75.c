@@ -4755,7 +4755,7 @@ _DWORD *__thiscall sub_755CB0(_DWORD *this)
 _DWORD *__thiscall VXL_LoadFile(_DWORD *this, int a2, int a3)
 {
   *(_BYTE *)this = 0; /*0x755cd9*/
-  this->q004 = 0; /*0x755cdb*/
+  this->u32_4 = 0; /*0x755cdb*/
   this->q008 = 0; /*0x755cde*/
   this->q00C = 0; /*0x755ce1*/
   this->q010 = 0; /*0x755ce4*/
@@ -5313,7 +5313,7 @@ int __thiscall Voxel_ProcessColor(_DWORD *this, _DWORD *a2, float *a3)
   int v35; // [esp+58h] [ebp+4h]
   float v36; // [esp+5Ch] [ebp+8h]
 
-  v4 = this->q014 + 164 * (a2[2] + *(_DWORD *)(this->q010 + 12 * a2[1])); /*0x7565b8*/
+  v4 = this->u32_14 + 164 * (a2[2] + *(_DWORD *)(this->u32_10 + 12 * a2[1])); /*0x7565b8*/
   v5 = 9 * a2[3]; /*0x7565be*/
   v16 = *(_BYTE *)(v4 + 161); /*0x7565cd*/
   v6 = *(_BYTE *)(v4 + 162); /*0x7565d1*/
@@ -7985,8 +7985,8 @@ char *__thiscall Stream::InitializeBinkAudio(
   CCFileClass::Construct3((int)(this + 4)); /*0x75926a*/
   Stream::CopyFromTemplate(this + 376); /*0x759275*/
   this->q52C = aP2; /*0x759282*/
-  *((_DWORD *)this + 121) = this; /*0x759288*/
-  *((_DWORD *)this + 101) = &v19; /*0x75928e*/
+  this->u32_1E4 = this; /*0x759288*/
+  this->u32_194 = &v19; /*0x75928e*/
   this->q1B8 = 0; /*0x75929b*/
   if ( !TestBitArray(15) ) /*0x7592a1*/
     this->q1B8 |= 1u; /*0x7592af*/
@@ -8008,13 +8008,13 @@ char *__thiscall Stream::InitializeBinkAudio(
     LOBYTE(v11) = v11 | 0x80; /*0x7592fe*/
     this->q1B8 = v11; /*0x759300*/
   }
-  v12 = *((_DWORD *)this + 111) | 8; /*0x75930c*/
-  *((_DWORD *)this + 111) = v12; /*0x75930f*/
+  v12 = this->u32_1BC | 8; /*0x75930c*/
+  this->u32_1BC = v12; /*0x75930f*/
   v13 = v12; /*0x75931e*/
   if ( (this->q52C & 2) != 0 ) /*0x759320*/
   {
     LOBYTE(v13) = v12 | 0x20; /*0x759322*/
-    *((_DWORD *)this + 111) = v13; /*0x759324*/
+    this->u32_1BC = v13; /*0x759324*/
     if ( (this->q52C & 4) == 0 ) /*0x759333*/
       goto LABEL_14; /*0x759333*/
     BYTE1(v13) = BYTE1(v12) | 1; /*0x759335*/
@@ -8023,67 +8023,67 @@ char *__thiscall Stream::InitializeBinkAudio(
   {
     LOBYTE(v13) = v12 & 0xDF; /*0x75933a*/
   }
-  *((_DWORD *)this + 111) = v13; /*0x75933c*/
+  this->u32_1BC = v13; /*0x75933c*/
 LABEL_14:
   v14 = TestBitArray(17); /*0x759342*/
-  v15 = *((_DWORD *)this + 111); /*0x75934e*/
+  v15 = this->u32_1BC; /*0x75934e*/
   if ( v14 ) /*0x759354*/
     LOBYTE(v15) = v15 | 4; /*0x759356*/
   else
     LOBYTE(v15) = v15 & 0xFB; /*0x75935a*/
-  *((_DWORD *)this + 111) = v15; /*0x759361*/
+  this->u32_1BC = v15; /*0x759361*/
   v14 = TestBitArray(3); /*0x75936c*/
-  v16 = *((_DWORD *)this + 111); /*0x75936e*/
+  v16 = this->u32_1BC; /*0x75936e*/
   if ( v14 ) /*0x759374*/
     LOBYTE(v16) = v16 & 0xFE; /*0x759376*/
   else
     v16 |= 1u; /*0x75937a*/
-  *((_DWORD *)this + 111) = v16; /*0x759383*/
-  *((_DWORD *)this + 102) = -1; /*0x75938d*/
-  *((_DWORD *)this + 103) = -1; /*0x759393*/
+  this->u32_1BC = v16; /*0x759383*/
+  this->u32_198 = -1; /*0x75938d*/
+  this->u32_19C = -1; /*0x759393*/
   this->q068 = 0; /*0x75939e*/
-  *((_DWORD *)this + 105) = 0; /*0x7593a4*/
-  *((_DWORD *)this + 97) = 0; /*0x7593aa*/
-  *((_DWORD *)this + 106) = a7; /*0x7593b0*/
-  *((_DWORD *)this + 107) = a8; /*0x7593b6*/
+  this->u32_1A4 = 0; /*0x7593a4*/
+  this->u32_184 = 0; /*0x7593aa*/
+  this->u32_1A8 = a7; /*0x7593b0*/
+  this->u32_1AC = a8; /*0x7593b6*/
   if ( TestBitArray(3) ) /*0x7593bc*/
     this->q070 = 1; /*0x7593c5*/
   else
     this->q070 = 14; /*0x7593cd*/
   v17 = this->q52C; /*0x7593d7*/
-  *((_DWORD *)this + 113) = -1; /*0x7593dd*/
+  this->u32_1C4 = -1; /*0x7593dd*/
   if ( (v17 & 1) != 0 ) /*0x7593e5*/
-    *((_DWORD *)this + 94) = sub_75A2B0; /*0x7593e7*/
+    this->u32_178 = sub_75A2B0; /*0x7593e7*/
   else
-    *((_DWORD *)this + 94) = sub_75A100; /*0x7593f3*/
-  *((_DWORD *)this + 95) = sub_75A2F0; /*0x759402*/
-  this->q018 = sub_75A350; /*0x75940c*/
+    this->u32_178 = sub_75A100; /*0x7593f3*/
+  this->u32_17C = sub_75A2F0; /*0x759402*/
+  this->q060 = sub_75A350; /*0x75940c*/
   if ( TestBitArray(4) ) /*0x759416*/
   {
-    *((_DWORD *)this + 98) = j_Time_GetElapsedMS; /*0x75941f*/
+    this->u32_188 = j_Time_GetElapsedMS; /*0x75941f*/
     this->q06C = 60; /*0x759429*/
   }
   else
   {
-    *((_DWORD *)this + 98) = sub_4116A0; /*0x759435*/
+    this->u32_188 = sub_4116A0; /*0x759435*/
     this->q06C = 60; /*0x75943f*/
-    *((_DWORD *)this + 127) = *(unsigned __int16 *)&MEMORY[0xA8D63C].__pad_14B0[188]; /*0x759455*/
+    this->u32_1FC = *(unsigned __int16 *)&MEMORY[0xA8D63C].__pad_14B0[188]; /*0x759455*/
   }
-  *((_DWORD *)this + 100) = ManageMultimediaTimer; /*0x759463*/
-  *((_DWORD *)this + 117) = 0x2000; /*0x75946d*/
-  *((_DWORD *)this + 321) = 0; /*0x759477*/
-  *((_DWORD *)this + 339) = 0; /*0x75947d*/
-  *((_DWORD *)this + 322) = 0; /*0x759483*/
+  this->__pad_064 = ManageMultimediaTimer; /*0x759463*/
+  this->u32_1D4 = 0x2000; /*0x75946d*/
+  this->u32_504 = 0; /*0x759477*/
+  this->u32_54C = 0; /*0x75947d*/
+  this->q508 = 0; /*0x759483*/
   strcpy(this + 113, a1); /*0x75949f*/
-  *((_DWORD *)this + 338) = aP5; /*0x7594b0*/
+  this->u32_548 = aP5; /*0x7594b0*/
   this->q518 = 0; /*0x7594b7*/
-  *((_DWORD *)this + 327) = 0; /*0x7594bd*/
-  *((_DWORD *)this + 328) = 0; /*0x7594c3*/
-  *((_DWORD *)this + 329) = 0; /*0x7594c9*/
-  *((_DWORD *)this + 324) = -1; /*0x7594cf*/
+  this->u32_51C = 0; /*0x7594bd*/
+  this->u32_520 = 0; /*0x7594c3*/
+  this->u32_524 = 0; /*0x7594c9*/
+  this->u32_510 = -1; /*0x7594cf*/
   this->q528 = 0; /*0x7594d9*/
-  *((_DWORD *)this + 336) = a4; /*0x7594df*/
-  *((_DWORD *)this + 337) = a5; /*0x7594e5*/
+  this->u32_540 = a4; /*0x7594df*/
+  this->u32_544 = a5; /*0x7594e5*/
   this->q070 = 0; /*0x7594eb*/
   this->q514 = 0; /*0x7594ee*/
   this->q550 = 0; /*0x7594f4*/
@@ -8313,11 +8313,11 @@ bool __thiscall sub_759880(int *this, int a2, int a3, int a4)
   int v6; // esi
 
   v4 = a2; /*0x759880*/
-  if ( a2 < 0 || a2 >= this->q508 ) /*0x75988e*/
+  if ( a2 < 0 || a2 >= this->q142 ) /*0x75988e*/
     v4 = 0; /*0x759890*/
   v5 = a3; /*0x759892*/
-  if ( a3 < 0 || a3 >= this->q508 ) /*0x7598a1*/
-    v5 = this->q508 - 1; /*0x7598a9*/
+  if ( a3 < 0 || a3 >= this->q142 ) /*0x7598a1*/
+    v5 = this->q142 - 1; /*0x7598a9*/
   v6 = a4; /*0x7598aa*/
   if ( a4 < 0 ) /*0x7598b0*/
     v6 = -1; /*0x7598b2*/
@@ -8328,8 +8328,8 @@ bool __thiscall sub_759880(int *this, int a2, int a3, int a4)
 // ==== 0x007598D0  AbstractClass::updateBuildingState  this=ObjectClass  sig=csp ====
 void __thiscall sub_7598D0(int *this, signed int a2)
 {
-  if ( a2 != this->q504 && ProcessAudioStreamBuffer(this->needsRedraw, a2, 0) != -6 ) /*0x7598f2*/
-    this->q504 = a2; /*0x7598f4*/
+  if ( a2 != this->q141 && ProcessAudioStreamBuffer(this->needsRedraw, a2, 0) != -6 ) /*0x7598f2*/
+    this->q141 = a2; /*0x7598f4*/
 }
 
 
@@ -8413,10 +8413,10 @@ LABEL_23:
             v5 = MovieClass::ComputeTime(this->needsRedraw); /*0x759afa*/
             BinkMovie::CheckKeyframeTransition(*(_DWORD **)this, v5); /*0x759b02*/
           }
-          v6 = (void (*)(void))*((_DWORD *)this + 338); /*0x759b07*/
+          v6 = (void (*)(void))this->q152; /*0x759b07*/
           if ( v6 ) /*0x759b0f*/
             v6(); /*0x759b11*/
-          this->q504 = v4 + 1; /*0x759b16*/
+          this->q141 = v4 + 1; /*0x759b16*/
         }
       }
       if ( !a3 && EventQueue::Process(MEMORY[0x87F770]) && EventQueue::Read(MEMORY[0x87F770]) == 2075 ) /*0x759b8d*/
@@ -8465,7 +8465,7 @@ char __thiscall sub_759C30(char *this, _BYTE *a2)
   *a2 = 0; /*0x759c3b*/
   if ( !this->q551 ) /*0x759c40*/
   {
-    Render_Render_7C3690(this->needsRedraw, this->q508); /*0x759c56*/
+    Render_Render_7C3690(this->needsRedraw, this->q142); /*0x759c56*/
     if ( this->q144 != -1 ) /*0x759c62*/
     {
       Render_Render_7C3710(*((unsigned __int8 **)this + 128), &v10, &v9, &a2); /*0x759c78*/
@@ -8515,10 +8515,10 @@ char __thiscall sub_759C30(char *this, _BYTE *a2)
         v6 = MovieClass::ComputeTime(this->needsRedraw); /*0x759d5c*/
         BinkMovie::CheckKeyframeTransition(*(_DWORD **)this, v6); /*0x759d64*/
       }
-      v7 = (void (*)(void))*((_DWORD *)this + 338); /*0x759d69*/
+      v7 = (void (*)(void))this->q152; /*0x759d69*/
       if ( v7 ) /*0x759d71*/
         v7(); /*0x759d73*/
-      this->q504 = v5 + 1; /*0x759d78*/
+      this->q141 = v5 + 1; /*0x759d78*/
       return 1; /*0x759d76*/
     }
   }
@@ -8611,9 +8611,9 @@ bool __thiscall sub_759EB0(int *this, int a2, unsigned int a3, unsigned int a4, 
     this->q148 = a3; /*0x759ec3*/
   v7 = a4; /*0x759ec9*/
   if ( a4 == -1 ) /*0x759ed0*/
-    v7 = this->q524; /*0x759ed2*/
+    v7 = this->u8_149; /*0x759ed2*/
   else
-    this->q524 = a4; /*0x759eda*/
+    this->u8_149 = a4; /*0x759eda*/
   v8 = a5; /*0x759ee0*/
   if ( a5 == -1 ) /*0x759ee7*/
     v8 = 0; /*0x759ee9*/
@@ -10426,9 +10426,9 @@ char __thiscall Voxel::DrawHelper(_DWORD *this, IUnknown *aP1)
   char aP1a; // [esp+2Ch] [ebp+4h]
 
   v3 = (IUnknown *)CONTAINING_RECORD(this, IUnknown, field_0)->__pad_28; /*0x75c251*/
-  if ( this->q028 == g_AsyncMovieState.field_0 /*0x75c26e*/
-    && this->q02C == g_AsyncMovieState.field_4
-    && this->q030 == g_AsyncMovieState.field_8 )
+  if ( this->u32_28 == g_AsyncMovieState.field_0 /*0x75c26e*/
+    && this->u32_2C == g_AsyncMovieState.field_4
+    && this->u32_30 == g_AsyncMovieState.field_8 )
   {
     v4 = (BuildingTypeClass *)this->q00C; /*0x75c278*/
     a1 = v4->Armor[0]; /*0x75c287*/
@@ -10450,8 +10450,8 @@ char __thiscall Voxel::DrawHelper(_DWORD *this, IUnknown *aP1)
     && aP1->field_8 == g_AsyncMovieState.field_8 )
   {
     v3->field_0 = aP1->field_0; /*0x75c5b7*/
-    this->q02C = aP1->field_4; /*0x75c5bc*/
-    this->q030 = aP1->field_8; /*0x75c5c2*/
+    this->u32_2C = aP1->field_4; /*0x75c5bc*/
+    this->u32_30 = aP1->field_8; /*0x75c5c2*/
   }
   else
   {
@@ -10530,10 +10530,10 @@ char __thiscall Voxel::DrawHelper(_DWORD *this, IUnknown *aP1)
     eax39 = Coord::To_Cell(&MEMORY[0x87F7E8], (IUnknown *)v38); /*0x75c53a*/
     v26 = ObjectPlacement::CalcPosition(eax39, &a1, (IUnknown *)v38, aP1a, v33, 0); /*0x75c541*/
     v3 = (IUnknown *)(this + 10); /*0x75c548*/
-    this->q028 = *v26; /*0x75c54d*/
-    this->q02C = v26[1]; /*0x75c552*/
+    this->u32_28 = *v26; /*0x75c54d*/
+    this->u32_2C = v26[1]; /*0x75c552*/
     v31 = (AbstractClass *)this->q00C; /*0x75c55b*/
-    this->q030 = v26[2]; /*0x75c562*/
+    this->u32_30 = v26[2]; /*0x75c562*/
     eax39b = Coord::To_Cell(&MEMORY[0x87F7E8], (IUnknown *)(this + 10)); /*0x75c565*/
     if ( !CrateClass::ProcessPickup(eax39b, v31) ) /*0x75c56c*/
     {
@@ -10541,8 +10541,8 @@ char __thiscall Voxel::DrawHelper(_DWORD *this, IUnknown *aP1)
       if ( !v25->Name[29] ) /*0x75c578*/
       {
         v3->field_0 = g_AsyncMovieState.field_0; /*0x75c58a*/
-        this->q02C = g_AsyncMovieState.field_4; /*0x75c592*/
-        this->q030 = g_AsyncMovieState.field_8; /*0x75c59b*/
+        this->u32_2C = g_AsyncMovieState.field_4; /*0x75c592*/
+        this->u32_30 = g_AsyncMovieState.field_8; /*0x75c59b*/
         if ( !v25->Name[44] ) /*0x75c59e*/
           return 0; /*0x75c5b0*/
       }
@@ -12141,7 +12141,7 @@ _DWORD *__thiscall sub_75E6B0(_DWORD *this, _DWORD *a2)
     }
   }
   this->q010 = a2[4]; /*0x75e721*/
-  this->q005 = a2[5]; /*0x75e727*/
+  this->u32_14 = a2[5]; /*0x75e727*/
   *this = &vt_DynamicVectorClass_VoxelAnimTypeClass_const; /*0x75e72a*/
   return this; /*0x75e732*/
 }
@@ -12295,12 +12295,12 @@ WaveClass *__thiscall WaveClass::Constructor(
   this->Facing = 1; /*0x75e981*/
   this->q12D = 0; /*0x75e988*/
   this->WaveClass_field_F8 = (void *)100; /*0x75e98e*/
-  this->q134 = 0; /*0x75e998*/
+  this->WaveClass_field_134 = 0; /*0x75e998*/
   this->q04F = 0; /*0x75e99e*/
   this->alignmentPadding75_3 = 0; /*0x75e9a4*/
-  this->q148 = 0; /*0x75e9aa*/
+  this->q052 = 0; /*0x75e9aa*/
   this->q053 = 0; /*0x75e9b0*/
-  this->WaveClass_field_114 = 0; /*0x75e9b6*/
+  this->q068 = 0; /*0x75e9b6*/
   this->q069 = 0; /*0x75e9bc*/
   this->wasFallingDown = 0; /*0x75e9c2*/
   this->WaveClass_field_120 = 0; /*0x75e9ce*/
@@ -12314,8 +12314,8 @@ WaveClass *__thiscall WaveClass::Constructor(
   this->q1F4 = (void *)__2_YAPAXI_Z(0x14u); /*0x75ea18*/
   this->q1FD = 1; /*0x75ea1e*/
   this->WaveClass_field_128 = &vt_DynamicVectorClass_CellClass; /*0x75ea25*/
-  this->WaveClass_field_12D = (void *)10; /*0x75ea2f*/
-  this->WaveClass_field_12C = 0; /*0x75ea39*/
+  this->q081 = (void *)10; /*0x75ea2f*/
+  this->q080 = 0; /*0x75ea39*/
   *this = &WaveClass::`vftable'; /*0x75ea3f*/
   this->vtable2 = &WaveClass::`vftable'; /*0x75ea45*/
   this->vtable3 = &vt_WaveClass; /*0x75ea4b*/
@@ -12342,7 +12342,7 @@ WaveClass *__thiscall WaveClass::Constructor(
     else
       Voxel::SectionProject(this, a1, (int)aP2); /*0x75eb29*/
     this->wasFallingDown = 0; /*0x75eb3c*/
-    this->q1CC = (void *)CalcMathFacing8(this + 51, this + 57); /*0x75eb51*/
+    this->WaveClass_field_1CC = (void *)CalcMathFacing8(this + 51, this + 57); /*0x75eb51*/
     WaveClass::DrawWave(this, (WaveClass *)(this + 45), 0); /*0x75eb57*/
     v10 = (int)this->WaveClass_field_D8; /*0x75eb5c*/
     if ( v10 > 0 && v10 <= 2 ) /*0x75eb69*/
@@ -12356,7 +12356,7 @@ WaveClass *__thiscall WaveClass::Constructor(
       v11[1] = this->WaveClass_field_E4; /*0x75eb99*/
       v13 = (int)this->q053; /*0x75eb9c*/
       *(_DWORD *)(v13 + 8) = this->WaveClass_field_180; /*0x75eba8*/
-      *(_DWORD *)(v13 + 12) = this->WaveClass_field_184; /*0x75ebb1*/
+      *(_DWORD *)(v13 + 12) = this->q036; /*0x75ebb1*/
       v14 = (int)this->q053; /*0x75ebb4*/
       *(_DWORD *)(v14 + 16) = this->WaveClass_field_190; /*0x75ebbc*/
       *(_DWORD *)(v14 + 20) = this->q03A; /*0x75ebc2*/
@@ -12588,27 +12588,27 @@ int __thiscall sub_75F140(_DWORD *this)
   int result; // eax
 
   v2 = (*(int (__thiscall **)(int))(*(_DWORD *)MEMORY[0x887314] + 116))(MEMORY[0x887314]) >> 1; /*0x75f14e*/
-  this->q1AC = -v2; /*0x75f159*/
-  this->q1B0 = 1 - v2; /*0x75f164*/
+  this->WaveClass_field_1AC = -v2; /*0x75f159*/
+  this->WaveClass_field_1B0 = 1 - v2; /*0x75f164*/
   this->q1B8 = v2 + 1; /*0x75f16a*/
   this->q1BC = v2; /*0x75f176*/
   this->q1C0 = v2 - 1; /*0x75f17c*/
-  v3 = this->q1CC; /*0x75f182*/
+  v3 = this->WaveClass_field_1CC; /*0x75f182*/
   v4 = -1 - v2; /*0x75f188*/
   this->q208 = 0; /*0x75f18c*/
-  this->WaveClass_field_12F = 0; /*0x75f192*/
+  this->__pad_20C = 0; /*0x75f192*/
   v5 = this + v3 + 107; /*0x75f198*/
-  this->q1B4 = 1; /*0x75f19f*/
-  this->q1C4 = -1; /*0x75f1a9*/
+  this->WaveClass_field_1B4 = 1; /*0x75f19f*/
+  this->WaveClass_field_1C4 = -1; /*0x75f1a9*/
   this->q1C8 = v4; /*0x75f1b3*/
   this->WaveIntensity = *v5; /*0x75f1bb*/
   this->q214 = *v5; /*0x75f1c3*/
   this->q218 = *v5; /*0x75f1cb*/
   this->q21C = *v5; /*0x75f1d3*/
   this->q220 = *v5; /*0x75f1db*/
-  this->q089 = 2 * *v5; /*0x75f1e5*/
-  this->q08A = 2 * *v5; /*0x75f1ef*/
-  this->q08B = 2 * *v5; /*0x75f1f9*/
+  this->q224 = 2 * *v5; /*0x75f1e5*/
+  this->q228 = 2 * *v5; /*0x75f1ef*/
+  this->__pad_22C = 2 * *v5; /*0x75f1f9*/
   this->WaveClass_field_138 = 3 * *v5; /*0x75f204*/
   this->isFallingDown = 3 * *v5; /*0x75f20f*/
   result = 3 * *v5; /*0x75f217*/
@@ -12969,7 +12969,7 @@ char __thiscall WaveClass::DrawWave(_BYTE *this, WaveClass *aP1, int a3)
 
   if ( !HouseClass_Player.__pad_5568[22252] ) /*0x75f8bb*/
     return 0; /*0x75f8bb*/
-  if ( !this->WaveClass_field_12D ) /*0x75f8c1*/
+  if ( !this->q081 ) /*0x75f8c1*/
     return 0; /*0x75f8c1*/
   if ( this->WaveClass_field_120 ) /*0x75f8cf*/
     return 0; /*0x75f8cf*/
@@ -12982,8 +12982,8 @@ char __thiscall WaveClass::DrawWave(_BYTE *this, WaveClass *aP1, int a3)
       return 0; /*0x75f902*/
   }
   v6 = *(_DWORD *)this; /*0x75f90d*/
-  this->WaveClass_field_12D = 0; /*0x75f912*/
-  this->WaveClass_field_12C = 0; /*0x75f919*/
+  this->q081 = 0; /*0x75f912*/
+  this->q080 = 0; /*0x75f919*/
   (*(void (__thiscall **)(_BYTE *, WaveClass *))(v6 + 436))(this, aP1); /*0x75f920*/
   if ( !(*(unsigned __int8 (__thiscall **)(_BYTE *, int))(this->LaserIntensity)(this, 1) ) /*0x75f92c*/
     return 0; /*0x75f96c*/

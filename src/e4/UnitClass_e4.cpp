@@ -31,3 +31,4 @@ void UnitClass::ProcessIdleOrders()
   this->bombVisible = 0; /*0x6b7c2c*/
 }
 } // namespace gamemd
+}

@@ -58,6 +58,7 @@ LABEL_16:
   }
 }
 } // namespace gamemd
+}
 
 // 0x72BCA0
 namespace gamemd {

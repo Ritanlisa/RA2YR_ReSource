@@ -190,6 +190,7 @@ void DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
   return result; /*0x704dfb*/
 }
 } // namespace gamemd
+}
 
 // 0x704E40
 namespace gamemd {
@@ -301,6 +302,7 @@ void* DrawTacticalLaserLine()
   return result; /*0x705256*/
 }
 } // namespace gamemd
+}
 
 // 0x706ED0
 namespace gamemd {
@@ -460,6 +462,7 @@ void * TechnoClass_RenderVoxel(int * a1, int a2, void * a3, unsigned int * a4, c
   return a3; /*0x70726d*/
 }
 } // namespace gamemd
+}
 
 // 0x709550
 namespace gamemd {
@@ -610,6 +613,7 @@ LABEL_8:
   }
 }
 } // namespace gamemd
+}
 
 // 0x70E920
 namespace gamemd {
@@ -799,6 +803,7 @@ LABEL_50:
   }
 }
 } // namespace gamemd
+}
 
 // 0x70F120
 namespace gamemd {
@@ -835,6 +840,7 @@ unsigned long long TechnoClass_RevealRadarEvent(int a1, int a2)
   return result; /*0x70f18f*/
 }
 } // namespace gamemd
+}
 
 // 0x7011A0
 namespace gamemd {

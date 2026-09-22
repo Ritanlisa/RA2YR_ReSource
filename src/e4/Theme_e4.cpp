@@ -27,7 +27,7 @@ int Theme::QueueSong(IUnknown * aP1)
           int v4 = this->audioSample; /*0x720b5f*/
           if ( v4 ) /*0x720b67*/
           {
-            if ( *(_BYTE *)(this + 17) && !AudioSample::IsBuffering(v4) ) /*0x720b70*/
+            if ( this->u8_11 && !AudioSample::IsBuffering(v4) ) /*0x720b70*/
               Audio::Release(this->audioSample); /*0x720b7c*/
             LOBYTE(IsSoundEnabled) = Audio::IsSoundPlaying(this->audioSample) != 0; /*0x720b8b*/
             if ( (_BYTE)IsSoundEnabled == 1 ) /*0x720b90*/
@@ -35,7 +35,7 @@ int Theme::QueueSong(IUnknown * aP1)
               _DWORD * v5 = this->audioSample; /*0x720b92*/
               if ( v5 ) /*0x720b97*/
                 LOBYTE(IsSoundEnabled) = ThemeClass::RequestBuffer(v5); /*0x720b99*/
-              *(_BYTE *)(this + 17) = 1; /*0x720b9e*/
+              this->u8_11 = 1; /*0x720b9e*/
             }
           }
         }
@@ -43,6 +43,7 @@ int Theme::QueueSong(IUnknown * aP1)
     }
   }
   return IsSoundEnabled; /*0x720ba2*/
+}
 }
 
 // 0x720EA0
@@ -65,7 +66,7 @@ int Theme::Stop(ObjectClass * aP1)
         int v4 = this->audioSample; /*0x720edb*/
         if ( !v4 ) /*0x720ee0*/
           goto LABEL_14; /*0x720ee0*/
-        if ( *((_BYTE *)this + 17) && !AudioSample::IsBuffering(v4) ) /*0x720ee9*/
+        if ( this->u8_11 && !AudioSample::IsBuffering(v4) ) /*0x720ee9*/
           Audio::Release((_DWORD *)this->audioSample); /*0x720ef5*/
         if ( Audio::IsSoundPlaying((_DWORD *)this->audioSample) != 0 ) /*0x720f04*/
         {
@@ -73,7 +74,7 @@ int Theme::Stop(ObjectClass * aP1)
           _DWORD * v5 = (_DWORD *)this->audioSample; /*0x720f19*/
           if ( v5 ) /*0x720f21*/
             LOBYTE(IsSoundEnabled) = ThemeClass::RequestBuffer(v5); /*0x720f23*/
-          *((_BYTE *)this + 17) = 1; /*0x720f28*/
+          this->u8_11 = 1; /*0x720f28*/
         }
         else
         {
@@ -91,6 +92,7 @@ LABEL_14:
   }
   return IsSoundEnabled; /*0x720f5f*/
 }
+}
 
 // 0x720FD0
 int Theme::IsPlaying()
@@ -98,10 +100,11 @@ int Theme::IsPlaying()
 {
   if ( !this->audioSample ) /*0x720fd3*/
     return 0; /*0x721002*/
-  if ( *(_BYTE *)(this + 17) ) /*0x720fda*/
+  if ( this->u8_11 ) /*0x720fda*/
   {
     if ( !AudioSample::IsBuffering() ) /*0x720fe1*/
       Audio::Release(this->audioSample); /*0x720fed*/
   }
   return Audio::IsSoundPlaying(this->audioSample) != 0; /*0x720ffe*/
+}
 }

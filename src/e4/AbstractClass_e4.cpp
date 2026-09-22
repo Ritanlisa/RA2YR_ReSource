@@ -87,6 +87,7 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
   }
 }
 } // namespace gamemd
+}
 
 // 0x44B760
 namespace gamemd {
@@ -268,6 +269,7 @@ VectorClass * * AbstractClass_RemoveObjectFromHouse()
   return result; /*0x4fbcf3*/
 }
 } // namespace gamemd
+}
 
 // 0x5C03D0
 namespace gamemd {
@@ -309,6 +311,7 @@ ObjectClass * * AbstractClass_getPathDirection()
   return result; /*0x5c047d*/
 }
 } // namespace gamemd
+}
 
 // 0x5D7FD0
 namespace gamemd {
@@ -321,6 +324,7 @@ unsigned int * AbstractClass::checkVisibility(char a2)
   return &this->vfptr; /*0x5d7fec*/
 }
 } // namespace gamemd
+}
 
 // 0x5D8030
 namespace gamemd {
@@ -333,6 +337,7 @@ unsigned int * AbstractClass::updateVisibilityState(char a2)
   return &this->vfptr; /*0x5d804c*/
 }
 } // namespace gamemd
+}
 
 // 0x5D8050
 namespace gamemd {
@@ -345,6 +350,7 @@ unsigned int * AbstractClass::processFogReveal(char a2)
   return &this->vfptr; /*0x5d806c*/
 }
 } // namespace gamemd
+}
 
 // 0x5D8070
 namespace gamemd {
@@ -357,6 +363,7 @@ unsigned int * AbstractClass::checkShroudState(char a2)
   return &this->vfptr; /*0x5d808c*/
 }
 } // namespace gamemd
+}
 
 // 0x5D8090
 namespace gamemd {
@@ -369,6 +376,7 @@ unsigned int * AbstractClass::updateShroudMap(char a2)
   return &this->vfptr; /*0x5d80ac*/
 }
 } // namespace gamemd
+}
 
 // 0x70D4A0
 namespace gamemd {
@@ -417,6 +425,7 @@ void AbstractClass::ClearTargetToMeClearManagerTarget(int a1)
   }
 }
 } // namespace gamemd
+}
 
 // 0x7258D0
 namespace gamemd {
@@ -594,6 +603,7 @@ LABEL_20:
   }
 }
 } // namespace gamemd
+}
 
 // 0x410100
 namespace gamemd {
@@ -639,11 +649,11 @@ int AbstractClass::GenerateUniqueID(int a1)
     if ( g_ScenarioClass_Instance )
   {
     result = AbstractClass::updateAITimer();
-    *(int *)(a1 + 12) = result;
+    a1->vtable4 = result;
   }
     else
   {
-    *(int *)(a1 + 12) = 0;
+    a1->vtable4 = 0;
     return 0;
   }
     return result;
@@ -1167,6 +1177,7 @@ void AbstractClass_queryInterface()
   return a2; /*0x464a9f*/
 }
 } // namespace gamemd
+}
 
 // 0x465910
 namespace gamemd {
@@ -1464,9 +1475,9 @@ MissionClass * AbstractClass::getWeaponRange(char a2)
 {
 {
     *(void**)this = vt_MissionClass;
-    *(this + 1) = (unsigned int)vt_MissionClass;
-    *(this + 2) = (unsigned int)vt_MissionClass;
-    *(this + 3) = &vt_MissionClass;
+    this->vtable2 = (unsigned int)vt_MissionClass;
+    this->vtable3 = (unsigned int)vt_MissionClass;
+    this->vtable4 = &vt_MissionClass;
     ObjectClass::Dtor(this);
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);

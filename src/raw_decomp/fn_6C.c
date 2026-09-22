@@ -33,7 +33,7 @@ void __stdcall nullsub_114(int a1, int a2)
 // ==== 0x006C0040  ObjectClass::WinMain_Helper_6C0040  this=?$TClassFactory@VTubeClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C0040(TClassFactory_VTubeClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c0042*/
+  this->u32_4 = 0; /*0x6c0042*/
   this->vfptr = &TClassFactory<TubeClass>::`vftable'; /*0x6c0049*/
   return &this->vfptr; /*0x6c004f*/
 }
@@ -131,7 +131,7 @@ int __thiscall TClassFactory_CampaignClass::AdjustRefCOM(TClassFactory_VTubeClas
 // ==== 0x006C01C0  ObjectClass::WinMain_Helper_6C01C0  this=?$TClassFactory@VCampaignClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C01C0(TClassFactory_VCampaignClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c01c2*/
+  this->u32_4 = 0; /*0x6c01c2*/
   this->vfptr = &TClassFactory<CampaignClass>::`vftable'; /*0x6c01c9*/
   return &this->vfptr; /*0x6c01cf*/
 }
@@ -229,7 +229,7 @@ int __thiscall TClassFactory_CampaignClass::GetSize(TClassFactory_VCampaignClass
 // ==== 0x006C0340  ObjectClass::WinMain_Helper_6C0340  this=?$TClassFactory@VBuildingLightClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C0340(TClassFactory_VBuildingLightClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c0342*/
+  this->u32_4 = 0; /*0x6c0342*/
   this->vfptr = &TClassFactory<BuildingLightClass>::`vftable'; /*0x6c0349*/
   return &this->vfptr; /*0x6c034f*/
 }
@@ -327,7 +327,7 @@ int __thiscall TClassFactory_BuildingLightClass::GetSize(TClassFactory_VBuilding
 // ==== 0x006C04C0  ObjectClass::WinMain_Helper_6C04C0  this=?$TClassFactory@VWaypointPathClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C04C0(TClassFactory_VWaypointPathClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c04c2*/
+  this->u32_4 = 0; /*0x6c04c2*/
   this->vfptr = &TClassFactory<WaypointPathClass>::`vftable'; /*0x6c04c9*/
   return &this->vfptr; /*0x6c04cf*/
 }
@@ -425,7 +425,7 @@ int __thiscall TClassFactory_WaypointPathClass::GetSize(TClassFactory_VWaypointP
 // ==== 0x006C0640  ObjectClass::WinMain_Helper_6C0640  this=?$TClassFactory@VTemporalClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C0640(TClassFactory_VTemporalClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c0642*/
+  this->u32_4 = 0; /*0x6c0642*/
   this->vfptr = &TClassFactory<TemporalClass>::`vftable'; /*0x6c0649*/
   return &this->vfptr; /*0x6c064f*/
 }
@@ -523,7 +523,7 @@ int __thiscall TClassFactory_TemporalClass::GetSize(TClassFactory_VTemporalClass
 // ==== 0x006C07C0  ObjectClass::WinMain_Helper_6C07C0  this=?$TClassFactory@VAirstrikeClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C07C0(TClassFactory_VAirstrikeClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c07c2*/
+  this->u32_4 = 0; /*0x6c07c2*/
   this->vfptr = &TClassFactory<AirstrikeClass>::`vftable'; /*0x6c07c9*/
   return &this->vfptr; /*0x6c07cf*/
 }
@@ -621,7 +621,7 @@ int __thiscall TClassFactory_AirstrikeClass::GetSize(TClassFactory_VAirstrikeCla
 // ==== 0x006C0940  ObjectClass::WinMain_Helper_6C0940  this=?$TClassFactory@VSpawnManagerClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C0940(TClassFactory_VSpawnManagerClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c0942*/
+  this->u32_4 = 0; /*0x6c0942*/
   this->vfptr = &TClassFactory<SpawnManagerClass>::`vftable'; /*0x6c0949*/
   return &this->vfptr; /*0x6c094f*/
 }
@@ -719,7 +719,7 @@ int __thiscall TClassFactory_SpawnManagerClass::GetSize(TClassFactory_VSpawnMana
 // ==== 0x006C0AC0  COMClassFactory::CreateInstance  this=?$TClassFactory@VSlaveManagerClass@@  sig=csp ====
 _DWORD *__thiscall COMClassFactory::CreateInstance(TClassFactory_VSlaveManagerClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c0ac2*/
+  this->u32_4 = 0; /*0x6c0ac2*/
   this->vfptr = &TClassFactory<SlaveManagerClass>::`vftable'; /*0x6c0ac9*/
   return &this->vfptr; /*0x6c0acf*/
 }
@@ -817,7 +817,7 @@ int __thiscall TClassFactory_SlaveManagerClass::GetSize(TClassFactory_VSlaveMana
 // ==== 0x006C0C40  ObjectClass::WinMain_Helper_6C0C40  this=?$TClassFactory@VCaptureManagerClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C0C40(TClassFactory_VCaptureManagerClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c0c42*/
+  this->u32_4 = 0; /*0x6c0c42*/
   this->vfptr = &TClassFactory<CaptureManagerClass>::`vftable'; /*0x6c0c49*/
   return &this->vfptr; /*0x6c0c4f*/
 }
@@ -915,7 +915,7 @@ int __thiscall TClassFactory_CaptureManagerClass::GetSize(TClassFactory_VCapture
 // ==== 0x006C0DC0  ObjectClass::WinMain_Helper_6C0DC0  this=?$TClassFactory@VDiskLaserClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C0DC0(TClassFactory_VDiskLaserClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c0dc2*/
+  this->u32_4 = 0; /*0x6c0dc2*/
   this->vfptr = &TClassFactory<DiskLaserClass>::`vftable'; /*0x6c0dc9*/
   return &this->vfptr; /*0x6c0dcf*/
 }
@@ -1013,7 +1013,7 @@ int __thiscall TClassFactory_DiskLaserClass::GetSize(TClassFactory_VDiskLaserCla
 // ==== 0x006C0F40  ObjectClass::WinMain_Helper_6C0F40  this=?$TClassFactory@VParasiteClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C0F40(TClassFactory_VParasiteClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c0f42*/
+  this->u32_4 = 0; /*0x6c0f42*/
   this->vfptr = &TClassFactory<ParasiteClass>::`vftable'; /*0x6c0f49*/
   return &this->vfptr; /*0x6c0f4f*/
 }
@@ -1111,7 +1111,7 @@ int __thiscall TClassFactory_ParasiteClass::GetSize(TClassFactory_VParasiteClass
 // ==== 0x006C10C0  ObjectClass::WinMain_Helper_6C10C0  this=?$TClassFactory@VBombClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C10C0(TClassFactory_VBombClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c10c2*/
+  this->u32_4 = 0; /*0x6c10c2*/
   this->vfptr = &TClassFactory<BombClass>::`vftable'; /*0x6c10c9*/
   return &this->vfptr; /*0x6c10cf*/
 }
@@ -1209,7 +1209,7 @@ int __thiscall TClassFactory_BombClass::GetSize(TClassFactory_VBombClass__ *this
 // ==== 0x006C1240  ObjectClass::WinMain_Helper_6C1240  this=?$TClassFactory@VRadSiteClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C1240(TClassFactory_VRadSiteClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c1242*/
+  this->u32_4 = 0; /*0x6c1242*/
   this->vfptr = &TClassFactory<RadSiteClass>::`vftable'; /*0x6c1249*/
   return &this->vfptr; /*0x6c124f*/
 }
@@ -1307,7 +1307,7 @@ int __thiscall TClassFactory_RadSiteClass::GetSize(TClassFactory_VRadSiteClass__
 // ==== 0x006C13C0  ObjectClass::WinMain_Helper_6C13C0  this=?$TClassFactory@VTEventClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C13C0(TClassFactory_VTEventClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c13c2*/
+  this->u32_4 = 0; /*0x6c13c2*/
   this->vfptr = &TClassFactory<TEventClass>::`vftable'; /*0x6c13c9*/
   return &this->vfptr; /*0x6c13cf*/
 }
@@ -1405,7 +1405,7 @@ int __thiscall TClassFactory_TEventClass::GetSize(TClassFactory_VTEventClass__ *
 // ==== 0x006C1540  ObjectClass::WinMain_Helper_6C1540  this=?$TClassFactory@VVoxelAnimTypeClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C1540(TClassFactory_VVoxelAnimTypeClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c1542*/
+  this->u32_4 = 0; /*0x6c1542*/
   this->vfptr = &TClassFactory<VoxelAnimTypeClass>::`vftable'; /*0x6c1549*/
   return &this->vfptr; /*0x6c154f*/
 }
@@ -1503,7 +1503,7 @@ int __thiscall TClassFactory_VoxelAnimTypeClass::GetSize(TClassFactory_VVoxelAni
 // ==== 0x006C16C0  ObjectClass::WinMain_Helper_6C16C0  this=?$TClassFactory@VVoxelAnimClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C16C0(TClassFactory_VVoxelAnimClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c16c2*/
+  this->u32_4 = 0; /*0x6c16c2*/
   this->vfptr = &TClassFactory<VoxelAnimClass>::`vftable'; /*0x6c16c9*/
   return &this->vfptr; /*0x6c16cf*/
 }
@@ -1601,7 +1601,7 @@ int __thiscall TClassFactory_VoxelAnimClass::GetSize(TClassFactory_VVoxelAnimCla
 // ==== 0x006C1840  ObjectClass::WinMain_Helper_6C1840  this=?$TClassFactory@VTActionClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C1840(TClassFactory_VTActionClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c1842*/
+  this->u32_4 = 0; /*0x6c1842*/
   this->vfptr = &TClassFactory<TActionClass>::`vftable'; /*0x6c1849*/
   return &this->vfptr; /*0x6c184f*/
 }
@@ -1699,7 +1699,7 @@ int __thiscall TClassFactory_TActionClass::GetSize(TClassFactory_VTActionClass__
 // ==== 0x006C19C0  ObjectClass::WinMain_Helper_6C19C0  this=?$TClassFactory@VTriggerClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C19C0(TClassFactory_VTriggerClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c19c2*/
+  this->u32_4 = 0; /*0x6c19c2*/
   this->vfptr = &TClassFactory<TriggerClass>::`vftable'; /*0x6c19c9*/
   return &this->vfptr; /*0x6c19cf*/
 }
@@ -1797,7 +1797,7 @@ int __thiscall TClassFactory_TriggerClass::GetSize(TClassFactory_VTriggerClass__
 // ==== 0x006C1B40  ObjectClass::WinMain_Helper_6C1B40  this=?$TClassFactory@VTriggerTypeClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C1B40(TClassFactory_VTriggerTypeClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c1b42*/
+  this->u32_4 = 0; /*0x6c1b42*/
   this->vfptr = &TClassFactory<TriggerTypeClass>::`vftable'; /*0x6c1b49*/
   return &this->vfptr; /*0x6c1b4f*/
 }
@@ -1895,7 +1895,7 @@ int __thiscall TClassFactory_TriggerTypeClass::GetSize(TClassFactory_VTriggerTyp
 // ==== 0x006C1CC0  ObjectClass::WinMain_Helper_6C1CC0  this=?$TClassFactory@VScriptClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C1CC0(TClassFactory_VScriptClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c1cc2*/
+  this->u32_4 = 0; /*0x6c1cc2*/
   this->vfptr = &TClassFactory<ScriptClass>::`vftable'; /*0x6c1cc9*/
   return &this->vfptr; /*0x6c1ccf*/
 }
@@ -1993,7 +1993,7 @@ int __thiscall TClassFactory_ScriptClass::GetSize(TClassFactory_VScriptClass__ *
 // ==== 0x006C1E40  ObjectClass::WinMain_Helper_6C1E40  this=?$TClassFactory@VScriptTypeClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C1E40(TClassFactory_VScriptTypeClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c1e42*/
+  this->u32_4 = 0; /*0x6c1e42*/
   this->vfptr = &TClassFactory<ScriptTypeClass>::`vftable'; /*0x6c1e49*/
   return &this->vfptr; /*0x6c1e4f*/
 }
@@ -2091,7 +2091,7 @@ int __thiscall TClassFactory_ScriptTypeClass::GetSize(TClassFactory_VScriptTypeC
 // ==== 0x006C1FC0  ObjectClass::WinMain_Helper_6C1FC0  this=?$TClassFactory@VTagClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C1FC0(TClassFactory_VTagClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c1fc2*/
+  this->u32_4 = 0; /*0x6c1fc2*/
   this->vfptr = &TClassFactory<TagClass>::`vftable'; /*0x6c1fc9*/
   return &this->vfptr; /*0x6c1fcf*/
 }
@@ -2189,7 +2189,7 @@ int __thiscall TClassFactory_TagClass::GetSize(TClassFactory_VTagClass__ *this)
 // ==== 0x006C2140  ObjectClass::WinMain_Helper_6C2140  this=?$TClassFactory@VTagTypeClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C2140(TClassFactory_VTagTypeClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c2142*/
+  this->u32_4 = 0; /*0x6c2142*/
   this->vfptr = &TClassFactory<TagTypeClass>::`vftable'; /*0x6c2149*/
   return &this->vfptr; /*0x6c214f*/
 }
@@ -2287,7 +2287,7 @@ int __thiscall TClassFactory_TagTypeClass::GetSize(TClassFactory_VTagTypeClass__
 // ==== 0x006C22C0  ObjectClass::WinMain_Helper_6C22C0  this=?$TClassFactory@VTeamClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C22C0(TClassFactory_VTeamClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c22c2*/
+  this->u32_4 = 0; /*0x6c22c2*/
   this->vfptr = &TClassFactory<TeamClass>::`vftable'; /*0x6c22c9*/
   return &this->vfptr; /*0x6c22cf*/
 }
@@ -2385,7 +2385,7 @@ int __thiscall TClassFactory_TeamClass::GetSize(TClassFactory_VTeamClass__ *this
 // ==== 0x006C2440  ObjectClass::WinMain_Helper_6C2440  this=?$TClassFactory@VTeamTypeClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C2440(TClassFactory_VTeamTypeClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c2442*/
+  this->u32_4 = 0; /*0x6c2442*/
   this->vfptr = &TClassFactory<TeamTypeClass>::`vftable'; /*0x6c2449*/
   return &this->vfptr; /*0x6c244f*/
 }
@@ -2483,7 +2483,7 @@ int __thiscall TClassFactory_TeamTypeClass::GetSize(TClassFactory_VTeamTypeClass
 // ==== 0x006C25C0  ObjectClass::WinMain_Helper_6C25C0  this=?$TClassFactory@VTaskForceClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C25C0(TClassFactory_VTaskForceClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c25c2*/
+  this->u32_4 = 0; /*0x6c25c2*/
   this->vfptr = &TClassFactory<TaskForceClass>::`vftable'; /*0x6c25c9*/
   return &this->vfptr; /*0x6c25cf*/
 }
@@ -2581,7 +2581,7 @@ int __thiscall TClassFactory_TaskForceClass::GetSize(TClassFactory_VTaskForceCla
 // ==== 0x006C2740  ObjectClass::WinMain_Helper_6C2740  this=?$TClassFactory@VUnitTypeClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C2740(TClassFactory_VUnitTypeClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c2742*/
+  this->u32_4 = 0; /*0x6c2742*/
   this->vfptr = &TClassFactory<UnitTypeClass>::`vftable'; /*0x6c2749*/
   return &this->vfptr; /*0x6c274f*/
 }
@@ -2679,7 +2679,7 @@ int __thiscall TClassFactory_UnitTypeClass::GetSize(TClassFactory_VUnitTypeClass
 // ==== 0x006C28C0  ObjectClass::WinMain_Helper_6C28C0  this=?$TClassFactory@VBuildingTypeClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C28C0(TClassFactory_VBuildingTypeClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c28c2*/
+  this->u32_4 = 0; /*0x6c28c2*/
   this->vfptr = &TClassFactory<BuildingTypeClass>::`vftable'; /*0x6c28c9*/
   return &this->vfptr; /*0x6c28cf*/
 }
@@ -2777,7 +2777,7 @@ int __thiscall TClassFactory_BuildingTypeClass::GetSize(TClassFactory_VBuildingT
 // ==== 0x006C2A40  ObjectClass::WinMain_Helper_6C2A40  this=?$TClassFactory@VAircraftTypeClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C2A40(TClassFactory_VAircraftTypeClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c2a42*/
+  this->u32_4 = 0; /*0x6c2a42*/
   this->vfptr = &TClassFactory<AircraftTypeClass>::`vftable'; /*0x6c2a49*/
   return &this->vfptr; /*0x6c2a4f*/
 }
@@ -2875,7 +2875,7 @@ int __thiscall TClassFactory_AircraftTypeClass::GetSize(TClassFactory_VAircraftT
 // ==== 0x006C2BC0  ObjectClass::WinMain_Helper_6C2BC0  this=?$TClassFactory@VInfantryTypeClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C2BC0(TClassFactory_VInfantryTypeClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c2bc2*/
+  this->u32_4 = 0; /*0x6c2bc2*/
   this->vfptr = &TClassFactory<InfantryTypeClass>::`vftable'; /*0x6c2bc9*/
   return &this->vfptr; /*0x6c2bcf*/
 }
@@ -2973,7 +2973,7 @@ int __thiscall TClassFactory_InfantryTypeClass::GetSize(TClassFactory_VInfantryT
 // ==== 0x006C2D40  ObjectClass::WinMain_Helper_6C2D40  this=?$TClassFactory@VBulletTypeClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C2D40(TClassFactory_VBulletTypeClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c2d42*/
+  this->u32_4 = 0; /*0x6c2d42*/
   this->vfptr = &TClassFactory<BulletTypeClass>::`vftable'; /*0x6c2d49*/
   return &this->vfptr; /*0x6c2d4f*/
 }
@@ -3071,7 +3071,7 @@ int __thiscall TClassFactory_BulletTypeClass::GetSize(TClassFactory_VBulletTypeC
 // ==== 0x006C2EC0  ObjectClass::WinMain_Helper_6C2EC0  this=?$TClassFactory@VIsometricTileTypeClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C2EC0(TClassFactory_VIsometricTileTypeClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c2ec2*/
+  this->u32_4 = 0; /*0x6c2ec2*/
   this->vfptr = &TClassFactory<IsometricTileTypeClass>::`vftable'; /*0x6c2ec9*/
   return &this->vfptr; /*0x6c2ecf*/
 }
@@ -3169,7 +3169,7 @@ int __thiscall TClassFactory_IsometricTileTypeClass::GetSize(TClassFactory_VIsom
 // ==== 0x006C3040  ObjectClass::WinMain_Helper_6C3040  this=?$TClassFactory@VOverlayTypeClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C3040(TClassFactory_VOverlayTypeClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c3042*/
+  this->u32_4 = 0; /*0x6c3042*/
   this->vfptr = &TClassFactory<OverlayTypeClass>::`vftable'; /*0x6c3049*/
   return &this->vfptr; /*0x6c304f*/
 }
@@ -3267,7 +3267,7 @@ int __thiscall TClassFactory_OverlayTypeClass::GetSize(TClassFactory_VOverlayTyp
 // ==== 0x006C31C0  ObjectClass::WinMain_Helper_6C31C0  this=?$TClassFactory@VSmudgeTypeClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C31C0(TClassFactory_VSmudgeTypeClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c31c2*/
+  this->u32_4 = 0; /*0x6c31c2*/
   this->vfptr = &TClassFactory<SmudgeTypeClass>::`vftable'; /*0x6c31c9*/
   return &this->vfptr; /*0x6c31cf*/
 }
@@ -3365,7 +3365,7 @@ int __thiscall TClassFactory_SmudgeTypeClass::GetSize(TClassFactory_VSmudgeTypeC
 // ==== 0x006C3340  ObjectClass::WinMain_Helper_6C3340  this=?$TClassFactory@VUnitClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C3340(TClassFactory_VUnitClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c3342*/
+  this->u32_4 = 0; /*0x6c3342*/
   this->vfptr = &TClassFactory<UnitClass>::`vftable'; /*0x6c3349*/
   return &this->vfptr; /*0x6c334f*/
 }
@@ -3451,7 +3451,7 @@ int __thiscall TClassFactory_UnitClass::GetSize(TClassFactory_VUnitClass__ *this
 // ==== 0x006C34C0  ObjectClass::WinMain_Helper_6C34C0  this=?$TClassFactory@VBuildingClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C34C0(TClassFactory_VBuildingClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c34c2*/
+  this->u32_4 = 0; /*0x6c34c2*/
   this->vfptr = &TClassFactory<BuildingClass>::`vftable'; /*0x6c34c9*/
   return &this->vfptr; /*0x6c34cf*/
 }
@@ -3549,7 +3549,7 @@ int __thiscall TClassFactory_BuildingClass::GetSize(TClassFactory_VBuildingClass
 // ==== 0x006C3640  ObjectClass::WinMain_Helper_6C3640  this=?$TClassFactory@VAircraftClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C3640(TClassFactory_VAircraftClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c3642*/
+  this->u32_4 = 0; /*0x6c3642*/
   this->vfptr = &TClassFactory<AircraftClass>::`vftable'; /*0x6c3649*/
   return &this->vfptr; /*0x6c364f*/
 }
@@ -3647,7 +3647,7 @@ int __thiscall TClassFactory_AircraftClass::GetSize(TClassFactory_VAircraftClass
 // ==== 0x006C37C0  ObjectClass::WinMain_Helper_6C37C0  this=?$TClassFactory@VInfantryClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C37C0(TClassFactory_VInfantryClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c37c2*/
+  this->u32_4 = 0; /*0x6c37c2*/
   this->vfptr = &TClassFactory<InfantryClass>::`vftable'; /*0x6c37c9*/
   return &this->vfptr; /*0x6c37cf*/
 }
@@ -3745,7 +3745,7 @@ int __thiscall TClassFactory_InfantryClass::GetSize(TClassFactory_VInfantryClass
 // ==== 0x006C3940  ObjectClass::WinMain_Helper_6C3940  this=?$TClassFactory@VAnimClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C3940(TClassFactory_VAnimClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c3942*/
+  this->u32_4 = 0; /*0x6c3942*/
   this->vfptr = &TClassFactory<AnimClass>::`vftable'; /*0x6c3949*/
   return &this->vfptr; /*0x6c394f*/
 }
@@ -3843,7 +3843,7 @@ int __thiscall TClassFactory_AnimClass::GetSize(TClassFactory_VAnimClass__ *this
 // ==== 0x006C3AC0  ObjectClass::WinMain_Helper_6C3AC0  this=?$TClassFactory@VAnimTypeClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C3AC0(TClassFactory_VAnimTypeClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c3ac2*/
+  this->u32_4 = 0; /*0x6c3ac2*/
   this->vfptr = &TClassFactory<AnimTypeClass>::`vftable'; /*0x6c3ac9*/
   return &this->vfptr; /*0x6c3acf*/
 }
@@ -3941,7 +3941,7 @@ int __thiscall TClassFactory_AnimTypeClass::GetSize(TClassFactory_VAnimTypeClass
 // ==== 0x006C3C40  ObjectClass::WinMain_Helper_6C3C40  this=?$TClassFactory@VHouseTypeClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C3C40(TClassFactory_VHouseTypeClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c3c42*/
+  this->u32_4 = 0; /*0x6c3c42*/
   this->vfptr = &TClassFactory<HouseTypeClass>::`vftable'; /*0x6c3c49*/
   return &this->vfptr; /*0x6c3c4f*/
 }
@@ -4039,7 +4039,7 @@ int __thiscall TClassFactory_HouseTypeClass::GetSize(TClassFactory_VHouseTypeCla
 // ==== 0x006C3DC0  ObjectClass::WinMain_Helper_6C3DC0  this=?$TClassFactory@VHouseClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C3DC0(TClassFactory_VHouseClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c3dc2*/
+  this->u32_4 = 0; /*0x6c3dc2*/
   this->vfptr = &TClassFactory<HouseClass>::`vftable'; /*0x6c3dc9*/
   return &this->vfptr; /*0x6c3dcf*/
 }
@@ -4137,7 +4137,7 @@ int __thiscall TClassFactory_HouseClass::GetSize(TClassFactory_VHouseClass__ *th
 // ==== 0x006C3F40  ObjectClass::WinMain_Helper_6C3F40  this=?$TClassFactory@VDriveLocomotionClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C3F40(TClassFactory_VDriveLocomotionClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c3f42*/
+  this->u32_4 = 0; /*0x6c3f42*/
   this->vfptr = &TClassFactory<DriveLocomotionClass>::`vftable'; /*0x6c3f49*/
   return &this->vfptr; /*0x6c3f4f*/
 }
@@ -4235,7 +4235,7 @@ int __thiscall TClassFactory_DriveLocomotionClass::GetSize(TClassFactory_VDriveL
 // ==== 0x006C40C0  ObjectClass::WinMain_Helper_6C40C0  this=?$TClassFactory@VJumpjetLocomotionClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C40C0(TClassFactory_VJumpjetLocomotionClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c40c2*/
+  this->u32_4 = 0; /*0x6c40c2*/
   this->vfptr = &TClassFactory<JumpjetLocomotionClass>::`vftable'; /*0x6c40c9*/
   return &this->vfptr; /*0x6c40cf*/
 }
@@ -4333,7 +4333,7 @@ int __thiscall TClassFactory_JumpjetLocomotionClass::GetSize(TClassFactory_VJump
 // ==== 0x006C4240  ObjectClass::WinMain_Helper_6C4240  this=?$TClassFactory@VHoverLocomotionClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C4240(TClassFactory_VHoverLocomotionClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c4242*/
+  this->u32_4 = 0; /*0x6c4242*/
   this->vfptr = &TClassFactory<HoverLocomotionClass>::`vftable'; /*0x6c4249*/
   return &this->vfptr; /*0x6c424f*/
 }
@@ -4431,7 +4431,7 @@ int __thiscall TClassFactory_HoverLocomotionClass::GetSize(TClassFactory_VHoverL
 // ==== 0x006C43C0  ObjectClass::WinMain_Helper_6C43C0  this=?$TClassFactory@VRocketLocomotionClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C43C0(TClassFactory_VRocketLocomotionClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c43c2*/
+  this->u32_4 = 0; /*0x6c43c2*/
   this->vfptr = &TClassFactory<RocketLocomotionClass>::`vftable'; /*0x6c43c9*/
   return &this->vfptr; /*0x6c43cf*/
 }
@@ -4529,7 +4529,7 @@ int __thiscall TClassFactory_RocketLocomotionClass::GetSize(TClassFactory_VRocke
 // ==== 0x006C4540  ObjectClass::WinMain_Helper_6C4540  this=?$TClassFactory@VTunnelLocomotionClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C4540(TClassFactory_VTunnelLocomotionClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c4542*/
+  this->u32_4 = 0; /*0x6c4542*/
   this->vfptr = &TClassFactory<TunnelLocomotionClass>::`vftable'; /*0x6c4549*/
   return &this->vfptr; /*0x6c454f*/
 }
@@ -4627,7 +4627,7 @@ int __thiscall TClassFactory_TunnelLocomotionClass::GetSize(TClassFactory_VTunne
 // ==== 0x006C46C0  ObjectClass::WinMain_Helper_6C46C0  this=?$TClassFactory@VWalkLocomotionClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C46C0(TClassFactory_VWalkLocomotionClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c46c2*/
+  this->u32_4 = 0; /*0x6c46c2*/
   this->vfptr = &TClassFactory<WalkLocomotionClass>::`vftable'; /*0x6c46c9*/
   return &this->vfptr; /*0x6c46cf*/
 }
@@ -4725,7 +4725,7 @@ int __thiscall TClassFactory_WalkLocomotionClass::GetSize(TClassFactory_VWalkLoc
 // ==== 0x006C4840  ObjectClass::WinMain_Helper_6C4840  this=?$TClassFactory@VDropPodLocomotionClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C4840(TClassFactory_VDropPodLocomotionClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c4842*/
+  this->u32_4 = 0; /*0x6c4842*/
   this->vfptr = &TClassFactory<DropPodLocomotionClass>::`vftable'; /*0x6c4849*/
   return &this->vfptr; /*0x6c484f*/
 }
@@ -4823,7 +4823,7 @@ int __thiscall TClassFactory_DropPodLocomotionClass::GetSize(TClassFactory_VDrop
 // ==== 0x006C49C0  ObjectClass::WinMain_Helper_6C49C0  this=?$TClassFactory@VFlyLocomotionClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C49C0(TClassFactory_VFlyLocomotionClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c49c2*/
+  this->u32_4 = 0; /*0x6c49c2*/
   this->vfptr = &TClassFactory<FlyLocomotionClass>::`vftable'; /*0x6c49c9*/
   return &this->vfptr; /*0x6c49cf*/
 }
@@ -4921,7 +4921,7 @@ int __thiscall TClassFactory_FlyLocomotionClass::GetSize(TClassFactory_VFlyLocom
 // ==== 0x006C4B40  ObjectClass::WinMain_Helper_6C4B40  this=?$TClassFactory@VTeleportLocomotionClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C4B40(TClassFactory_VTeleportLocomotionClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c4b42*/
+  this->u32_4 = 0; /*0x6c4b42*/
   this->vfptr = &TClassFactory<TeleportLocomotionClass>::`vftable'; /*0x6c4b49*/
   return &this->vfptr; /*0x6c4b4f*/
 }
@@ -5019,7 +5019,7 @@ int __thiscall TClassFactory_TeleportLocomotionClass::GetSize(TClassFactory_VTel
 // ==== 0x006C4CC0  ObjectClass::WinMain_Helper_6C4CC0  this=?$TClassFactory@VMechLocomotionClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C4CC0(TClassFactory_VMechLocomotionClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c4cc2*/
+  this->u32_4 = 0; /*0x6c4cc2*/
   this->vfptr = &TClassFactory<MechLocomotionClass>::`vftable'; /*0x6c4cc9*/
   return &this->vfptr; /*0x6c4ccf*/
 }
@@ -5117,7 +5117,7 @@ int __thiscall TClassFactory_MechLocomotionClass::GetSize(TClassFactory_VMechLoc
 // ==== 0x006C4E40  ObjectClass::WinMain_Helper_6C4E40  this=?$TClassFactory@VShipLocomotionClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C4E40(TClassFactory_VShipLocomotionClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c4e42*/
+  this->u32_4 = 0; /*0x6c4e42*/
   this->vfptr = &TClassFactory<ShipLocomotionClass>::`vftable'; /*0x6c4e49*/
   return &this->vfptr; /*0x6c4e4f*/
 }
@@ -5215,7 +5215,7 @@ int __thiscall TClassFactory_ShipLocomotionClass::GetSize(TClassFactory_VShipLoc
 // ==== 0x006C4FC0  ObjectClass::WinMain_Helper_6C4FC0  this=?$TClassFactory@VBulletClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C4FC0(TClassFactory_VBulletClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c4fc2*/
+  this->u32_4 = 0; /*0x6c4fc2*/
   this->vfptr = &TClassFactory<BulletClass>::`vftable'; /*0x6c4fc9*/
   return &this->vfptr; /*0x6c4fcf*/
 }
@@ -5313,7 +5313,7 @@ int __thiscall TClassFactory_BulletClass::GetSize(TClassFactory_VBulletClass__ *
 // ==== 0x006C5140  ObjectClass::WinMain_Helper_6C5140  this=?$TClassFactory@VFactoryClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C5140(TClassFactory_VFactoryClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c5142*/
+  this->u32_4 = 0; /*0x6c5142*/
   this->vfptr = &TClassFactory<FactoryClass>::`vftable'; /*0x6c5149*/
   return &this->vfptr; /*0x6c514f*/
 }
@@ -5411,7 +5411,7 @@ int __thiscall TClassFactory_FactoryClass::GetSize(TClassFactory_VFactoryClass__
 // ==== 0x006C52C0  ObjectClass::WinMain_Helper_6C52C0  this=?$TClassFactory@VWarheadTypeClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C52C0(TClassFactory_VWarheadTypeClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c52c2*/
+  this->u32_4 = 0; /*0x6c52c2*/
   this->vfptr = &TClassFactory<WarheadTypeClass>::`vftable'; /*0x6c52c9*/
   return &this->vfptr; /*0x6c52cf*/
 }
@@ -5509,7 +5509,7 @@ int __thiscall TClassFactory_WarheadTypeClass::GetSize(TClassFactory_VWarheadTyp
 // ==== 0x006C5440  ObjectClass::WinMain_Helper_6C5440  this=?$TClassFactory@VWeaponTypeClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C5440(TClassFactory_VWeaponTypeClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c5442*/
+  this->u32_4 = 0; /*0x6c5442*/
   this->vfptr = &TClassFactory<WeaponTypeClass>::`vftable'; /*0x6c5449*/
   return &this->vfptr; /*0x6c544f*/
 }
@@ -5607,7 +5607,7 @@ int __thiscall TClassFactory_WeaponTypeClass::GetSize(TClassFactory_VWeaponTypeC
 // ==== 0x006C55C0  ObjectClass::WinMain_Helper_6C55C0  this=?$TClassFactory@VParticleClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C55C0(TClassFactory_VParticleClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c55c2*/
+  this->u32_4 = 0; /*0x6c55c2*/
   this->vfptr = &TClassFactory<ParticleClass>::`vftable'; /*0x6c55c9*/
   return &this->vfptr; /*0x6c55cf*/
 }
@@ -5705,7 +5705,7 @@ int __thiscall TClassFactory_ParticleClass::GetSize(TClassFactory_VParticleClass
 // ==== 0x006C5740  ObjectClass::WinMain_Helper_6C5740  this=?$TClassFactory@VParticleTypeClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C5740(TClassFactory_VParticleTypeClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c5742*/
+  this->u32_4 = 0; /*0x6c5742*/
   this->vfptr = &TClassFactory<ParticleTypeClass>::`vftable'; /*0x6c5749*/
   return &this->vfptr; /*0x6c574f*/
 }
@@ -5803,7 +5803,7 @@ int __thiscall TClassFactory_ParticleTypeClass::GetSize(TClassFactory_VParticleT
 // ==== 0x006C58C0  ObjectClass::WinMain_Helper_6C58C0  this=?$TClassFactory@VParticleSystemClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C58C0(TClassFactory_VParticleSystemClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c58c2*/
+  this->u32_4 = 0; /*0x6c58c2*/
   this->vfptr = &TClassFactory<ParticleSystemClass>::`vftable'; /*0x6c58c9*/
   return &this->vfptr; /*0x6c58cf*/
 }
@@ -5901,7 +5901,7 @@ int __thiscall TClassFactory_ParticleSystemClass::GetSize(TClassFactory_VParticl
 // ==== 0x006C5A40  ObjectClass::WinMain_Helper_6C5A40  this=?$TClassFactory@VParticleSystemTypeClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C5A40(TClassFactory_VParticleSystemTypeClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c5a42*/
+  this->u32_4 = 0; /*0x6c5a42*/
   this->vfptr = &TClassFactory<ParticleSystemTypeClass>::`vftable'; /*0x6c5a49*/
   return &this->vfptr; /*0x6c5a4f*/
 }
@@ -6000,7 +6000,7 @@ int __thiscall TClassFactory_ParticleSystemTypeClass::GetSize(TClassFactory_VPar
 // ==== 0x006C5BC0  ObjectClass::WinMain_Helper_6C5BC0  this=?$TClassFactory@VAITriggerTypeClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C5BC0(TClassFactory_VAITriggerTypeClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c5bc2*/
+  this->u32_4 = 0; /*0x6c5bc2*/
   this->vfptr = &TClassFactory<AITriggerTypeClass>::`vftable'; /*0x6c5bc9*/
   return &this->vfptr; /*0x6c5bcf*/
 }
@@ -6098,7 +6098,7 @@ int __thiscall TClassFactory_AITriggerTypeClass::GetSize(TClassFactory_VAITrigge
 // ==== 0x006C5D40  ObjectClass::WinMain_Helper_6C5D40  this=?$TClassFactory@VNeuronClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C5D40(TClassFactory_VNeuronClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c5d42*/
+  this->u32_4 = 0; /*0x6c5d42*/
   this->vfptr = &TClassFactory<NeuronClass>::`vftable'; /*0x6c5d49*/
   return &this->vfptr; /*0x6c5d4f*/
 }
@@ -6196,7 +6196,7 @@ int __thiscall TClassFactory_NeuronClass::GetSize(TClassFactory_VNeuronClass__ *
 // ==== 0x006C5EC0  ObjectClass::WinMain_Helper_6C5EC0  this=?$TClassFactory@VFoggedObjectClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C5EC0(TClassFactory_VFoggedObjectClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c5ec2*/
+  this->u32_4 = 0; /*0x6c5ec2*/
   this->vfptr = &TClassFactory<FoggedObjectClass>::`vftable'; /*0x6c5ec9*/
   return &this->vfptr; /*0x6c5ecf*/
 }
@@ -6294,7 +6294,7 @@ int __thiscall TClassFactory_FoggedObjectClass::GetSize(TClassFactory_VFoggedObj
 // ==== 0x006C6040  ObjectClass::WinMain_Helper_6C6040  this=?$TClassFactory@VAlphaShapeClass@@  sig=csp ====
 _DWORD *__thiscall WinMain_Helper_6C6040(TClassFactory_VAlphaShapeClass__ *this)
 {
-  *((_DWORD *)this + 1) = 0; /*0x6c6042*/
+  this->u32_4 = 0; /*0x6c6042*/
   this->vfptr = &TClassFactory<AlphaShapeClass>::`vftable'; /*0x6c6049*/
   return &this->vfptr; /*0x6c604f*/
 }
@@ -6778,7 +6778,7 @@ char __thiscall StaticButtonClass::_vt34(int *this)
       }
       if ( !*v2 ) /*0x6c6781*/
         return v3; /*0x6c6781*/
-      v5 = this->q004; /*0x6c6786*/
+      v5 = this->u32_4; /*0x6c6786*/
       v6 = this->q005; /*0x6c6789*/
       v12 = this->q00C; /*0x6c678c*/
       v7 = this->q006; /*0x6c6790*/
@@ -6792,7 +6792,7 @@ char __thiscall StaticButtonClass::_vt34(int *this)
   {
 LABEL_9:
     v8 = this->q005; /*0x6c67b4*/
-    v9 = this->q004; /*0x6c67ba*/
+    v9 = this->u32_4; /*0x6c67ba*/
     v12 = this->q00C; /*0x6c67bd*/
     v10 = this->q006; /*0x6c67c1*/
     v14 = v8; /*0x6c67c4*/
@@ -6819,7 +6819,7 @@ int *__thiscall StaticButtonClass::_vt35(_DWORD *this, size_t a2)
   int v12; // [esp+Ch] [ebp-18h] BYREF
   _BYTE v13[16]; // [esp+14h] [ebp-10h] BYREF
 
-  result = (int *)this->q030; /*0x6c67f6*/
+  result = (int *)this->ptr_30; /*0x6c67f6*/
   if ( result ) /*0x6c67fb*/
   {
     v4 = this->q034; /*0x6c67fd*/
@@ -15450,17 +15450,17 @@ _DWORD *__thiscall TabClass::Constructor(_DWORD *this)
   int v35; // eax
 
   TabClass::initTabData(); /*0x6cfe2b*/
-  this->q1546 = &vt_INoticeSink; /*0x6cfe3c*/
+  this->vtable2 = &vt_INoticeSink; /*0x6cfe3c*/
   TabClass::initStripClass(this + 5447); /*0x6cfe42*/
   this->q552C = MEMORY[0xA8ED84]; /*0x6cfe4e*/
   this->q154D = 0; /*0x6cfe54*/
   v2 = MEMORY[0xA8ED84]; /*0x6cfe5a*/
   this->q1550 = 0; /*0x6cfe60*/
   this->q5538 = v2; /*0x6cfe66*/
-  this->q1546 = &TabClass::`vftable'; /*0x6cfe6e*/
-  this->q5544 = 1; /*0x6cfe74*/
-  this->q5545 = 1; /*0x6cfe7a*/
-  this->q5546 = 1; /*0x6cfe80*/
+  this->vtable2 = &TabClass::`vftable'; /*0x6cfe6e*/
+  this->u32_15510 = 1; /*0x6cfe74*/
+  this->u32_15514 = 1; /*0x6cfe7a*/
+  this->u32_15518 = 1; /*0x6cfe80*/
   *this = &TabClass::`vftable'; /*0x6cfe86*/
   v3 = 0; /*0x6cfe8c*/
   v4 = (const char **)MEMORY[0x8427D0]; /*0x6cfe8e*/

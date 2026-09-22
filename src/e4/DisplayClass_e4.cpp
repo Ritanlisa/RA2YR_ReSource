@@ -38,6 +38,7 @@ int DisplayClass::UpdateDisplayTimer()
   }
   return v3; /*0x48766c*/
 }
+}
 
 // 0x487690
 int DisplayClass::AdvanceFrameCounter()
@@ -66,6 +67,7 @@ int DisplayClass::AdvanceFrameCounter()
   }
   return result; /*0x4876c7*/
 }
+}
 
 // 0x4A8850
 int DisplayClass::LoadTypeData()
@@ -87,6 +89,7 @@ int DisplayClass::LoadTypeData()
   v6[3] = v3; /*0x4a88a6*/
   return this->SetViewDimensions(v6); /*0x4a88b0*/
 }
+}
 
 // 0x4A88C0
 int DisplayClass::SetSize()
@@ -103,8 +106,8 @@ int DisplayClass::SetSize()
   this->q11B0 = 0; /*0x4a88eb*/
   this->q11CF = 0; /*0x4a88f1*/
   this->q11D0 = 0; /*0x4a88f7*/
-  *(_BYTE *)(this + 4529) = 0; /*0x4a88fd*/
-  *(_BYTE *)(this + 4530) = 0; /*0x4a8903*/
+  this->u8_11B1 = 0; /*0x4a88fd*/
+  this->u8_11B2 = 0; /*0x4a8903*/
   LogicClass *v2 = DataGlobal_8A0360; /*0x4a8909*/
   do /*0x4a891e*/
   {
@@ -113,6 +116,7 @@ int DisplayClass::SetSize()
   }
   while ( (int)v2 < (int)&DataGlobal_8A03D8 ); /*0x4a891e*/
   return result; /*0x4a8920*/
+}
 }
 
 // 0x4A8930
@@ -299,6 +303,7 @@ LABEL_34:
     CellClass::UpdateZone(v5); /*0x4a9c8c*/
   return v30; /*0x4a9c91*/
 }
+}
 
 // 0x4A9DD0
 VectorClass * * DisplayClass::ProcessCellReveal(MouseClass * aP1, IUnknown * aP2)
@@ -404,6 +409,7 @@ LABEL_12:
     CellClass::UpdateZone(v5); /*0x4aa036*/
   return aP1a; /*0x4aa03b*/
 }
+}
 
 // 0x4AA050
 int DisplayClass::RevealFogCell(short * a1, IUnknown * aP2)
@@ -505,6 +511,7 @@ LABEL_12:
     CellClass::SpiralFindClosest((int)v28, (int)aP2, var8); /*0x4aa27c*/
   return v8; /*0x4aa281*/
 }
+}
 
 // 0x4AC310
 int DisplayClass::InitViewBounds(unsigned int * a2)
@@ -515,10 +522,10 @@ int DisplayClass::InitViewBounds(unsigned int * a2)
   LOBYTE(v2) = (unsigned char)this->DisplayClass_field_0x11B0; /*0x4ac310*/
   if ( !(_BYTE)v2 ) /*0x4ac318*/
   {
-    LOBYTE(v2) = *(_BYTE *)(this + 4530); /*0x4ac31a*/
+    LOBYTE(v2) = this->u8_11B2; /*0x4ac31a*/
     if ( !(_BYTE)v2 ) /*0x4ac322*/
     {
-      LOBYTE(v2) = *(_BYTE *)(this + 4529); /*0x4ac324*/
+      LOBYTE(v2) = this->u8_11B1; /*0x4ac324*/
       if ( !(_BYTE)v2 && this->q11B8 == -1 ) /*0x4ac335*/
       {
         v2 = this->DisplayClass_field_0x11A8; /*0x4ac337*/
@@ -535,6 +542,7 @@ int DisplayClass::InitViewBounds(unsigned int * a2)
     }
   }
   return v2; /*0x4ac36e*/
+}
 }
 
 // 0x4AE4F0
@@ -601,6 +609,7 @@ void * DisplayClass::Draw(int a2)
   }
   return result; /*0x4ae5b9*/
 }
+}
 
 // 0x4AEAD0
 int DisplayClass::ExitMode()
@@ -612,6 +621,7 @@ int DisplayClass::ExitMode()
   this->q11D0 = 0; /*0x4aeae9*/
   DataGlobal_A8ED9D = 1; /*0x4aeaf0*/
   return (*(int (__thiscall **)(_BYTE *, _DWORD, _DWORD))(this->q048)(this, 0, 0); /*0x4aeb02*/
+}
 }
 
 // 0x5519B0
@@ -635,6 +645,7 @@ int DisplayClass::RenderStatusText(IUnknown * aP1, char a3)
   this->Count = v7 + 1; /*0x551a13*/
   *(_DWORD *)(v8 + 4 * v7) = aP1; /*0x551a1a*/
   return 1; /*0x5519c9*/
+}
 }
 
 // 0x551A90
@@ -664,6 +675,7 @@ int DisplayClass::InsertPriorityText(int a2)
   ++this->Count; /*0x551b0f*/
   return 1; /*0x551ac1*/
 }
+}
 
 // 0x5F6220
 int DisplayClass::checkScreenBounds(int a2)
@@ -672,6 +684,7 @@ int DisplayClass::checkScreenBounds(int a2)
 
   int v3 = (*(int (__thiscall **)(int))(*(_DWORD *)a2 + 184))(a2); /*0x5f6234*/
   return this->HandlePlayerAction() > v3; /*0x5f623e*/
+}
 }
 
 // 0x6D8530
@@ -713,6 +726,7 @@ int DisplayClass::ScrollTacticalView(IUnknown * aP1, IUnknown * aP2)
     *(this + 862) = result; /*0x6d8622*/
   }
   return result; /*0x6d8628*/
+}
 }
 
 // 0x6DA230
@@ -768,6 +782,7 @@ int DisplayClass::GetCoordDelta(AbstractClass * aP1)
   }
   return result; /*0x6da343*/
 }
+}
 
 // 0x7BA4D0
 int DisplayClass::ReadFromBuffer(void * a1, signed int Size)
@@ -794,6 +809,7 @@ int DisplayClass::ReadFromBuffer(void * a1, signed int Size)
     return v7; /*0x7ba520*/
   }
   return result; /*0x7ba523*/
+}
 }
 
 // 0x4A9700
@@ -918,15 +934,15 @@ unsigned int * DisplayClass::loc_4AEB50(char a2)
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->ptr_4;
     *(void**)this = &vt_VectorClass_ObjectClass;
-    if ( v3 && *((char *)(this) + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->ptr_4 = 0;
   }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
+    this->IsAllocated = 0;
+    this->u32_8 = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return this;

@@ -19,6 +19,7 @@ int sub_798340()
   return result; /*0x79835d*/
 }
 } // namespace gamemd
+}
 
 // 0x72C060
 namespace gamemd {

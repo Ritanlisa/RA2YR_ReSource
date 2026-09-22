@@ -22,6 +22,7 @@ void String::AssignWideToChar(CampaignScore * aP1, CampaignScore * aP2)
     *(this + 28) = 0; /*0x49b7cc*/
 }
 } // namespace gamemd
+}
 
 // 0x4CB5E0
 namespace gamemd {
@@ -30,29 +31,31 @@ void * String::AllocAndCopy(RandomStruct * aP1, IUnknown * aP2)
 {
 
   strncpy(this, (const char *)aP1, (IUnknown *)4); /*0x4cb5ed*/
-  *((_WORD *)this + 2) = 2; /*0x4cb5f4*/
-  *((_WORD *)this + 3) = 1; /*0x4cb5fa*/
+  this->ptr_4 = 2; /*0x4cb5f4*/
+  this->u16_6 = 1; /*0x4cb5fa*/
   char * v4 = (char *)__2_YAPAXI_Z(1u); /*0x4cb600*/
   unsigned int v5 = *((unsigned __int16 *)this + 3); /*0x4cb611*/
-  *((_DWORD *)this + 2) = v4; /*0x4cb613*/
+  this->ptr_8 = v4; /*0x4cb613*/
   qmemcpy(v4, &aP2, 4 * (v5 >> 2)); /*0x4cb619*/
   char * v6 = &v4[4 * (v5 >> 2)]; /*0x4cb619*/
   qmemcpy(v6, &aP2 + (v5 >> 2), v5 & 3); /*0x4cb625*/
-  *((_DWORD *)this + 3) = 0; /*0x4cb628*/
+  this->u32_C = 0; /*0x4cb628*/
   return this; /*0x4cb627*/
 }
 } // namespace gamemd
+}
 
 // 0x5BD5A0
 namespace gamemd {
 void String::Release()
 {
 {
-  if ( *(this + 3) ) /*0x5bd5a3*/
-    __3_YAXPAX_Z(*(this + 3)); /*0x5bd5ab*/
-  *(this + 3) = 0; /*0x5bd5b3*/
+  if ( this->u32_C ) /*0x5bd5a3*/
+    __3_YAXPAX_Z(this->u32_C); /*0x5bd5ab*/
+  this->u32_C = 0; /*0x5bd5b3*/
 }
 } // namespace gamemd
+}
 
 // 0x5D0380
 namespace gamemd {
@@ -63,9 +66,9 @@ ObjectClass * * String::SplitComma(ObjectClass * aP1)
   ObjectClass *v4; // ebx
   ObjectClass *v6; // ebx
   String::Assign((char **)this, 0); /*0x5d0389*/
-  *(_DWORD *)(this + 4) = 0; /*0x5d0392*/
-  *(_DWORD *)(this + 8) = 0; /*0x5d0395*/
-  *(_DWORD *)(this + 12) = 0; /*0x5d0398*/
+  this->ptr_4 = 0; /*0x5d0392*/
+  this->ptr_8 = 0; /*0x5d0395*/
+  this->u32_C = 0; /*0x5d0398*/
   int v10; // [esp+Ch] [ebp-4h] BYREF
   unknown_libname_73(&v10); /*0x5d039b*/
   v3 = (ObjectClass *)String::Tokenize((const char **)aP1, 0, &Delimiter, (ObjectClass *)&v10); /*0x5d03ba*/
@@ -76,26 +79,27 @@ ObjectClass * * String::SplitComma(ObjectClass * aP1)
   {
     __1_Timevec_std__QAE_XZ((std::_Timevec *)&v10); /*0x5d03f6*/
   int v5; // eax
-    *(_DWORD *)(this + 4) = v5; /*0x5d03fb*/
+    this->ptr_4 = v5; /*0x5d03fb*/
   }
   v6 = (ObjectClass *)String::Tokenize((const char **)aP1, (int)v4, &Delimiter, (ObjectClass *)&v10); /*0x5d0414*/
   if ( String::Length((const char **)&v10) ) /*0x5d0416*/
   {
     __1_Timevec_std__QAE_XZ((std::_Timevec *)&v10); /*0x5d0423*/
   int v7; // eax
-    *(_DWORD *)(this + 8) = v7; /*0x5d0428*/
+    this->ptr_8 = v7; /*0x5d0428*/
   }
   String::Tokenize((const char **)aP1, (int)v6, &Delimiter, (ObjectClass *)&v10); /*0x5d0438*/
   if ( String::Length((const char **)&v10) ) /*0x5d0441*/
   {
     __1_Timevec_std__QAE_XZ((std::_Timevec *)&v10); /*0x5d044e*/
   int v8; // eax
-    *(_DWORD *)(this + 12) = v8; /*0x5d0453*/
+    this->u32_C = v8; /*0x5d0453*/
   }
   DeleteAndZero((void **)&v10); /*0x5d045a*/
   return this; /*0x5d0461*/
 }
 } // namespace gamemd
+}
 
 // 0x5F3350
 namespace gamemd {
@@ -131,6 +135,7 @@ LABEL_6:
   return v1; /*0x5f3394*/
 }
 } // namespace gamemd
+}
 
 // 0x763690
 namespace gamemd {
@@ -139,12 +144,13 @@ ControlClass * * String::To_Waypoint()
 {
 
   int v2 = -1; /*0x763694*/
-  if ( isalpha(*this) && (v2 = toupper(*this) - 65, isalpha(*(this + 1))) ) /*0x7636ba*/
-    return toupper(*(this + 1)) + 26 * v2 - 39; /*0x7636db*/
+  if ( isalpha(*this) && (v2 = toupper(*this) - 65, isalpha(this->ptr_4)) ) /*0x7636ba*/
+    return toupper(this->ptr_4) + 26 * v2 - 39; /*0x7636db*/
   else
     return v2; /*0x7636e0*/
 }
 } // namespace gamemd
+}
 
 // 0x7B51D0
 namespace gamemd {
@@ -168,6 +174,7 @@ void String::TrimLeft(ObjectClass * aP1)
     String::Erase(this, 0, i); /*0x7b5220*/
 }
 } // namespace gamemd
+}
 
 // 0x7B54B0
 namespace gamemd {
@@ -180,6 +187,7 @@ unsigned int String::Length()
     return 0; /*0x7b54b7*/
 }
 } // namespace gamemd
+}
 
 // 0x7B57A0
 namespace gamemd {
@@ -303,6 +311,7 @@ LABEL_35:
   return 1; /*0x7b5a34*/
 }
 } // namespace gamemd
+}
 
 // 0x7B5F10
 namespace gamemd {
@@ -384,6 +393,7 @@ AbstractClass * * String::Tokenize(int a2, ObjectClass * aP2, ObjectClass * aP3)
   return (int)(Str + 1); /*0x7b5f1e*/
 }
 } // namespace gamemd
+}
 
 // 0x7B7A60
 namespace gamemd {
@@ -474,6 +484,7 @@ AbstractClass * * String::Tokenize2(int a2, wchar_t * Str, void ** a4)
   return v23 + 1; /*0x7b7a6d*/
 }
 } // namespace gamemd
+}
 
 // 0x7CCA34
 namespace gamemd {
@@ -544,6 +555,7 @@ exception * * int sub_7CCA34(unsigned char * a1, unsigned int a2, unsigned char 
   return a2 - v11; /*0x7ccb17*/
 }
 } // namespace gamemd
+}
 
 // 0x4F4C30
 namespace gamemd {

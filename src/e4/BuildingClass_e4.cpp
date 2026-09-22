@@ -185,6 +185,7 @@ LABEL_36:
   return result; /*0x45417e*/
 }
 } // namespace gamemd
+}
 
 // 0x455D50
 namespace gamemd {
@@ -207,6 +208,7 @@ int BuildingClass::AssignDestination_SyncLog()
   return result; /*0x455d93*/
 }
 } // namespace gamemd
+}
 
 // 0x4DFCB0
 namespace gamemd {
@@ -261,6 +263,7 @@ LABEL_10:
   }
 }
 } // namespace gamemd
+}
 
 // 0x4DFE00
 namespace gamemd {
@@ -319,6 +322,7 @@ LABEL_10:
   }
 }
 } // namespace gamemd
+}
 
 // 0x629720
 namespace gamemd {
@@ -372,6 +376,7 @@ LABEL_8:
   return 0; /*0x62978a*/
 }
 } // namespace gamemd
+}
 
 // 0x70BF50
 namespace gamemd {
@@ -502,6 +507,7 @@ int BuildingClass::AllocAndCtor(BuildingClass * aP0, int aP2)
   return result; /*0x70c249*/
 }
 } // namespace gamemd
+}
 
 // 0x712130
 namespace gamemd {
@@ -520,6 +526,7 @@ int BuildingClass::processCapture()
   return result; /*0x712163*/
 }
 } // namespace gamemd
+}
 
 // 0x739EC0
 namespace gamemd {
@@ -527,6 +534,7 @@ void* BuildingClass_ProcessSell()
 {
 // (no pseudocode — ASM-only function)
 } // namespace gamemd
+}
 
 // 0x451690
 namespace gamemd {

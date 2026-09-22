@@ -17,3 +17,4 @@ unsigned int * _com_error::ThrowErrorCOM_Helper(int a2, int a3, char a4)
   return &this->vfptr; /*0x7dcdee*/
 }
 } // namespace gamemd
+}

@@ -205,7 +205,28 @@ def get_maps():
 # IDA leaf extractor (PORTED — builds events via efv_model builders)
 # ============================================================
 
-def make_ida_leaf(this_type, M, class_name=None, shadowed_names=None):
+def extract_this_name(text):
+    """Snapshot this-param name: `... Constructor(_DWORD *Block, char a2)`
+    -> `Block`. Handles multi-line signatures. None when there is no
+    pointer first param."""
+    t = (text or '')
+    # header only: up to the first brace, so call parens never interfere
+    t = t.split('{', 1)[0]
+    m = _re.search(r'\(([^()]*)\)', t, _re.S)
+    if not m:
+        return None
+    params = [p.strip() for p in m.group(1).split(',') if p.strip()]
+    if not params or params[0] == 'void':
+        return None
+    if not _re.search(r'\*|\bthis\b', params[0]):
+        return None
+    nm = _re.findall(r'([A-Za-z_]\w*)\s*$', params[0])
+    nm = nm[-1] if nm else None
+    return None if (not nm or nm == 'this') else nm
+
+
+def make_ida_leaf(this_type, M, class_name=None, shadowed_names=None,
+                  this_name=None):
     """Return `leaf(fragment_text) -> list[event_str]`.
 
     A faithful port of `verify_execution_flow.make_ida_leaf`: same regexes,
@@ -219,6 +240,27 @@ def make_ida_leaf(this_type, M, class_name=None, shadowed_names=None):
     """
     mult = _this_mult(this_type)
     shadowed = shadowed_names or frozenset()
+    # The snapshot's this param may carry an arbitrary name (`_DWORD *Block`);
+    # every this-keyed member/vtable pattern below must also match that name
+    # or the IDA side under-counts member events vs the C++ side (`this->M`).
+    if this_name and this_name != 'this':
+        recv = r'(?:this|' + _re.escape(this_name) + r')'
+        dyn_byte_cast = _re.compile(
+            r'\*\(\(\s*(_BYTE|char|uint8_t|unsigned __int8|_WORD|uint16_t|__int16|unsigned __int16)'
+            r'\s*\*\s*\)\s*' + recv + r'\s*\+\s*(\d+)\s*\)')
+        dyn_dw_cast = _re.compile(
+            r'\*\(\(\s*(_DWORD|int|uint32_t|unsigned int|float|BOOL|_QWORD|__int64)'
+            r'\s*\*\s*\)\s*' + recv + r'\s*\+\s*(\d+)\s*\)')
+        dyn_cast_paren = _re.compile(
+            r'\*\(\s*(_DWORD|_BYTE|_WORD|int|char|uint8_t|uint16_t|uint32_t|float|BOOL|void|__int16)'
+            r'\s*\*\s*\)\s*\(\s*(?:\(\s*(char|uint8_t|_BYTE)\s*\*\s*\)\s*)?'
+            + recv + r'\s*\+\s*(\d+)\s*\)')
+        dyn_simple = _re.compile(r'\*\(\s*' + recv + r'\s*\+\s*(\d+)\s*\)')
+        dyn_named = _re.compile(r'\b' + recv + r'->(\w+)')
+        dyn_vtable = _re.compile(r'\*' + recv + r'\s*\+\s*(\d+)')
+    else:
+        dyn_byte_cast = dyn_dw_cast = dyn_cast_paren = None
+        dyn_simple = dyn_named = dyn_vtable = None
 
     def leaf(text):
         hits = []  # (start, end_of_span, event_str)
@@ -256,6 +298,24 @@ def make_ida_leaf(this_type, M, class_name=None, shadowed_names=None):
             off = int(m.group(1)) * mult
             ev = write_member(off) if _is_write(text, m.end()) else read_member(off)
             hits.append((m.start(), m.end(), ev))
+        # same forms with the snapshot's own this-param name (`Block`, ...)
+        if dyn_simple is not None:
+            for m in dyn_byte_cast.finditer(text):
+                off = _cast_byte_off(m.group(1), int(m.group(2)))
+                ev = write_member(off) if _is_write(text, m.end()) else read_member(off)
+                hits.append((m.start(), m.end(), ev))
+            for m in dyn_dw_cast.finditer(text):
+                off = int(m.group(2)) * 4
+                ev = write_member(off) if _is_write(text, m.end()) else read_member(off)
+                hits.append((m.start(), m.end(), ev))
+            for m in dyn_cast_paren.finditer(text):
+                off = int(m.group(3))
+                ev = write_member(off) if _is_write(text, m.end()) else read_member(off)
+                hits.append((m.start(), m.end(), ev))
+            for m in dyn_simple.finditer(text):
+                off = int(m.group(1)) * mult
+                ev = write_member(off) if _is_write(text, m.end()) else read_member(off)
+                hits.append((m.start(), m.end(), ev))
 
         # --- G11: til-named member accesses `this->Name` ---
         # Symmetric with the C++ side's _this_member_event: resolved name ->
@@ -265,6 +325,20 @@ def make_ida_leaf(this_type, M, class_name=None, shadowed_names=None):
             for m in _IDA_THIS_NAMED.finditer(text):
                 if text[m.end():m.end()+1] == '(':
                     continue  # method call -> dispatch patterns own it
+                nm = m.group(1)
+                off = None
+                mn2o = getattr(M, 'member_name_to_off', None)
+                if mn2o is not None:
+                    off = (mn2o.get(class_name) or {}).get(nm)
+                if off is not None:
+                    ev = write_member(off) if _is_write(text, m.end()) else read_member(off)
+                else:
+                    ev = write_member_unresolved() if _is_write(text, m.end()) else read_member_unresolved()
+                hits.append((m.start(), m.end(), ev))
+        if class_name and dyn_named is not None:
+            for m in dyn_named.finditer(text):
+                if text[m.end():m.end()+1] == '(':
+                    continue
                 nm = m.group(1)
                 off = None
                 mn2o = getattr(M, 'member_name_to_off', None)
@@ -297,6 +371,12 @@ def make_ida_leaf(this_type, M, class_name=None, shadowed_names=None):
             if m.start() > 0 and text[m.start()-1] == ')':
                 n *= 4
             hits.append((m.start(), m.end(), call_virtual(n)))
+        if dyn_vtable is not None:
+            for m in dyn_vtable.finditer(text):
+                n = int(m.group(1))
+                if m.start() > 0 and text[m.start()-1] == ')':
+                    n *= 4
+                hits.append((m.start(), m.end(), call_virtual(n)))
         # --- vtable dispatch via local var `(vN + N))(this)` -> CALL(vfptr+N) ---
         for m in _IDA_VTABLE_LOCAL.finditer(text):
             hits.append((m.start(), m.end(), call_virtual(int(m.group(2)))))
@@ -389,7 +469,8 @@ def make_ida_leaf(this_type, M, class_name=None, shadowed_names=None):
 # CFG event extraction (the public entry point)
 # ============================================================
 
-def extract_events_into(cfg, this_type, maps=None, class_name=None):
+def extract_events_into(cfg, this_type, maps=None, class_name=None,
+                        this_name=None):
     """Replace every block's RAW pseudocode `ordered_events` (placeholders from
     T7) with the extracted CANONICAL events, in source order, IN PLACE.
 
@@ -406,7 +487,8 @@ def extract_events_into(cfg, this_type, maps=None, class_name=None):
     if maps is None:
         maps = get_maps()
     leaf = make_ida_leaf(this_type, maps, class_name=class_name,
-                         shadowed_names=getattr(cfg, "locals_hint", None))
+                         shadowed_names=getattr(cfg, "locals_hint", None),
+                         this_name=this_name)
     for block in cfg:
         events = []
         for fragment in block.ordered_events:
@@ -422,7 +504,8 @@ def build_events_cfg(pseudocode_text, maps=None):
     a ready-to-match `efv_model.CFG`."""
     this_type = detect_this_type(pseudocode_text or "")
     cfg = build_ida_cfg(pseudocode_text)
-    return extract_events_into(cfg, this_type, maps=maps)
+    return extract_events_into(cfg, this_type, maps=maps,
+                               this_name=extract_this_name(pseudocode_text or ""))
 
 
 # ============================================================

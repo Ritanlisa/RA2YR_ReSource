@@ -24,6 +24,7 @@ unsigned int * BinkMovie::Close(char * FullPath)
   return this; /*0x4326ba*/
 }
 } // namespace gamemd
+}
 
 // 0x4326C0
 namespace gamemd {
@@ -41,6 +42,7 @@ unsigned int * BinkMovie::Open(char * FullPath, int a3)
   return this; /*0x4326f0*/
 }
 } // namespace gamemd
+}
 
 // 0x432700
 namespace gamemd {
@@ -70,6 +72,7 @@ int BinkMovie::Stop()
   return result; /*0x43274d*/
 }
 } // namespace gamemd
+}
 
 // 0x432750
 namespace gamemd {
@@ -241,6 +244,7 @@ LABEL_40:
   }
 }
 } // namespace gamemd
+}
 
 // 0x432C30
 namespace gamemd {
@@ -250,6 +254,7 @@ int BinkMovie::Pause(unsigned char a2)
   return BinkPause(this->q004, a2); /*0x432c44*/
 }
 } // namespace gamemd
+}
 
 // 0x432C50
 namespace gamemd {
@@ -262,6 +267,7 @@ int BinkMovie::IsAtEnd()
   return v2 >= *(_DWORD *)(v1 + 8) || v2 < this->q00C; /*0x432c5c*/
 }
 } // namespace gamemd
+}
 
 // 0x432C70
 namespace gamemd {
@@ -346,6 +352,7 @@ AbstractClass * * BinkMovie::Play()
   }
 }
 } // namespace gamemd
+}
 
 // 0x432E40
 namespace gamemd {
@@ -434,6 +441,7 @@ int BinkMovie::RenderLoop(DSurface * aP1, int a3, int a4)
   return result; /*0x432f50*/
 }
 } // namespace gamemd
+}
 
 // 0x433040
 namespace gamemd {
@@ -443,6 +451,7 @@ int BinkMovie::RenderFrameToSurface()
   return BinkMovie::RenderLoop((int)this, this->q00C, this->q004, this->q014); /*0x433051*/
 }
 } // namespace gamemd
+}
 
 // 0x4331F0
 namespace gamemd {
@@ -466,6 +475,7 @@ unsigned int * BinkMovie::RenderSingleFrame(DSurface * aP1, int a3, int a4, char
   return BinkMovie::BlitToTarget(this, aP1); /*0x433267*/
 }
 } // namespace gamemd
+}
 
 // 0x433270
 namespace gamemd {
@@ -511,6 +521,7 @@ unsigned int * BinkMovie::BlitToTarget(DSurface * aP1)
   return result; /*0x433328*/
 }
 } // namespace gamemd
+}
 
 // 0x433330
 namespace gamemd {
@@ -550,6 +561,7 @@ int BinkMovie::AdjustSurfaceFormat(DSurface * aP1)
   return result; /*0x4333d3*/
 }
 } // namespace gamemd
+}
 
 // 0x5C01F0
 namespace gamemd {
@@ -576,6 +588,7 @@ void BinkMovie::Cleanup()
   }
 }
 } // namespace gamemd
+}
 
 // 0x6033F0
 namespace gamemd {
@@ -659,6 +672,7 @@ LABEL_46:
   return 0; /*0x6035c5*/
 }
 } // namespace gamemd
+}
 
 // 0x6153E0
 namespace gamemd {
@@ -1329,6 +1343,7 @@ LABEL_34:
   return CallWindowProcA(v14, v4, v8, wParam, lParam);
 }
 } // namespace gamemd
+}
 
 // 0x6C9930
 namespace gamemd {
@@ -1339,6 +1354,7 @@ void BinkMovie::Destroy()
     __3_YAXPAX_Z(this->q014); /*0x6c9938*/
 }
 } // namespace gamemd
+}
 
 // 0x6C9AE0
 namespace gamemd {
@@ -1377,6 +1393,7 @@ int BinkMovie::FreeSurfaceTracker()
   return result; /*0x6c9b27*/
 }
 } // namespace gamemd
+}
 
 // 0x6C9B40
 namespace gamemd {
@@ -1426,6 +1443,7 @@ LABEL_6:
   return 1; /*0x6c9c0b*/
 }
 } // namespace gamemd
+}
 
 // 0x6C9C60
 namespace gamemd {
@@ -1495,6 +1513,7 @@ int BinkMovie::CheckKeyframeTransition(CellStruct * aP1)
   return v6; /*0x6c9c6c*/
 }
 } // namespace gamemd
+}
 
 // 0x6C9D40
 namespace gamemd {
@@ -1575,6 +1594,7 @@ LABEL_7:
   }
 }
 } // namespace gamemd
+}
 
 // 0x6C9EC0
 namespace gamemd {
@@ -1592,6 +1612,7 @@ unsigned int * BinkMovie::VtableDispatch(int a2)
   return this; /*0x6c9ef9*/
 }
 } // namespace gamemd
+}
 
 // 0x6C99D0
 namespace gamemd {

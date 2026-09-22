@@ -25,3 +25,4 @@ int Input::OffsetToDirection()
   }
   return v4; /*0x4810f2*/
 }
+}

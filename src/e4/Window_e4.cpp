@@ -8,6 +8,7 @@ int Window::IsVisible()
 {
   return this->q018 && *(this + 25); /*0x4a5120*/
 }
+}
 
 // 0x776D80
 char Window::ClampToScreen(int * a1)

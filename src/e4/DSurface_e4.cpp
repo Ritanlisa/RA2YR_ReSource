@@ -32,6 +32,7 @@ AbstractClass * * DSurface::Process(IUnknown * aP1, int * a2)
     0,
     0);
 }
+}
 
 // 0x4BA5A0
 AbstractClass * * DSurface::Construct(IUnknown * aP1, DSurface * aP2, ObjectClass * aP3, char a5)
@@ -80,6 +81,7 @@ AbstractClass * * DSurface::Construct(IUnknown * aP1, DSurface * aP2, ObjectClas
   }
   return this; /*0x4ba69a*/
 }
+}
 
 // 0x4BA6B0
 int DSurface::Destroy()
@@ -110,6 +112,7 @@ int DSurface::Destroy()
   this->DSurface_field_0x1C = 0; /*0x4ba706*/
   *(_DWORD *)this = &Surface_Vtable; /*0x4ba709*/
   return result; /*0x4ba70f*/
+}
 }
 
 // 0x4BA770
@@ -357,6 +360,7 @@ LABEL_65:
     (*(void (__thiscall **)(_DWORD *, int))*v7)(v7, 1); /*0x4bac4d*/
   return 0; /*0x4bab91*/
 }
+}
 
 // 0x4BAC60
 unsigned int * DSurface::CreateBackBuffer(int a2)
@@ -390,12 +394,14 @@ unsigned int * DSurface::CreateBackBuffer(int a2)
   }
   return this; /*0x4baceb*/
 }
+}
 
 // 0x4BAD60
 int DSurface::GetBytesPerPixel()
 {
 {
   return this->q010; /*0x4bad63*/
+}
 }
 
 // 0x4BB000
@@ -425,6 +431,7 @@ int DSurface::RestoreIfLost()
     }
   }
   return 1; /*0x4bb016*/
+}
 }
 
 // 0x4BB0D0
@@ -653,6 +660,7 @@ LABEL_71:
   }
   return 0; /*0x4bb298*/
 }
+}
 
 // 0x4BB620
 void* DSurface::FillRectEx(XSurface * aP1, int * a2, XSurface * aP3)
@@ -743,6 +751,7 @@ LABEL_15:
   }
   return 0; /*0x4bb7ef*/
 }
+}
 
 // 0x4BB830
 namespace gamemd {
@@ -828,6 +837,7 @@ void DSurface_FillRectWithFlags()
   return 1; /*0x4bb849*/
 }
 } // namespace gamemd
+}
 
 // 0x4BBB00
 void DSurface::BlitStretch(int a1, int a2, int a3)
@@ -868,6 +878,7 @@ void DSurface::BlitStretch(int a1, int a2, int a3)
       v3 = a2; /*0x4bbb32*/
     }
   }
+}
 }
 
 // 0x4BBCA0
@@ -1231,6 +1242,7 @@ LABEL_69:
     }
   }
   return 0; /*0x4bc28d*/
+}
 }
 
 // 0x4BC750
@@ -2030,6 +2042,7 @@ Coord * * DSurface::DrawLineFaded(int a2, unsigned int * a3, int * a4, unsigned 
     return 0; /*0x4bcbf1*/
   }
 }
+}
 
 // 0x4BDF00
 void* DSurface::DrawLineZBufColored(int a2, unsigned int * a3, unsigned int * a4, unsigned char * a5, float a6, int a7, int a8)
@@ -2400,6 +2413,7 @@ void* DSurface::DrawLineZBufColored(int a2, unsigned int * a3, unsigned int * a4
   (*(void (__thiscall **)(void *))(this->q018)(this); /*0x4be599*/
   return 1; /*0x4be59c*/
 }
+}
 
 // 0x4BF750
 void* DSurface::DrawGradientLine(int aP1, unsigned int * a2, DSurface * aP3, int a5, int arg10, float * a6, float * a7)
@@ -2641,6 +2655,7 @@ LABEL_58:
     }
   }
   return 0; /*0x4bf94b*/
+}
 }
 
 // 0x4BFD30
@@ -3040,6 +3055,7 @@ LABEL_15:
   }
   (*(void (__thiscall **)(_DWORD))(*(_DWORD *)v84[0] + 96))(v84[0]); /*0x4c0364*/
   return 1; /*0x4c0367*/
+}
 }
 
 // 0x4C0750
@@ -3481,6 +3497,7 @@ LABEL_155:
   }
   return a6; /*0x4c077f*/
 }
+}
 
 // 0x4C0E30
 MouseClass * * DSurface::DrawStippledRect(unsigned int * a1, unsigned int * a2, short a4, DSurface * aP4)
@@ -3883,6 +3900,7 @@ MouseClass * * DSurface::DrawStippledRect(unsigned int * a1, unsigned int * a2, 
   (*(void (__thiscall **)(void *))(this->q018)(this); /*0x4c1386*/
   return 1; /*0x4c0fba*/
 }
+}
 
 // 0x4C1AC0
 void * DSurface::loc_4C1AC0(char a2)
@@ -3914,6 +3932,7 @@ void * DSurface::loc_4C1AC0(char a2)
   if ( (a2 & 1) != 0 ) /*0x4c1b31*/
     __3_YAXPAX_Z(this); /*0x4c1b34*/
   return this; /*0x4c1b3e*/
+}
 }
 
 // 0x5D1E70
@@ -3993,6 +4012,7 @@ ObjectClass * * DSurface::RenderToSurface(ObjectClass * aP1)
   }
   return result; /*0x5d1fbe*/
 }
+}
 
 // 0x621B80
 int DSurface::FillRectWithColor(int * a0, ObjectClass * aP1, short a3, unsigned char a4)
@@ -4070,6 +4090,7 @@ int DSurface::FillRectWithColor(int * a0, ObjectClass * aP1, short a3, unsigned 
   }
   return result; /*0x621d21*/
 }
+}
 
 // 0x7BD210
 int DSurface::LockAndPrepareRect()
@@ -4077,21 +4098,22 @@ int DSurface::LockAndPrepareRect()
 {
   int result; // eax
 
-  if ( (*(_BYTE *)(this + 1980) & 0x40) != 0 ) /*0x7bd21a*/
+  if ( (this->u8_7BC & 0x40) != 0 ) /*0x7bd21a*/
   {
     this->DrawRect(7, 0, 0); /*0x7bd223*/
-    int v2 = *(_DWORD *)(this + 1980); /*0x7bd226*/
+    int v2 = this->u8_7BC; /*0x7bd226*/
     LOBYTE(v2) = v2 & 0xBF; /*0x7bd22f*/
-    *(_DWORD *)(this + 1980) = v2; /*0x7bd231*/
+    this->u8_7BC = v2; /*0x7bd231*/
   }
   this->DrawRect(3, 0, 0); /*0x7bd23e*/
-  result = *(_DWORD *)(this + 1980); /*0x7bd241*/
+  result = this->u8_7BC; /*0x7bd241*/
   if ( (result & 0x80000000) == 1 ) /*0x7bd255*/
   {
     result &= ~0x80000000; /*0x7bd257*/
-    *(_DWORD *)(this + 1980) = result; /*0x7bd25c*/
+    this->u8_7BC = result; /*0x7bd25c*/
   }
   return result; /*0x7bd262*/
+}
 }
 
 // 0x7BDF80
@@ -4110,129 +4132,129 @@ int DSurface::CommitBuffers()
   int result; // eax
   int v47; // [esp+10h] [ebp-4h]
   int v48; // [esp+10h] [ebp-4h]
-  int v2 = *(_DWORD *)(this + 1780); /*0x7bdf86*/
+  int v2 = this->u32_6F4; /*0x7bdf86*/
   if ( v2 ) /*0x7bdf8e*/
   {
-    this->WalkLine(5, v2, *(_DWORD *)(this + 1784)); /*0x7bdf9b*/
-    this->WalkLine(3, *(_DWORD *)(this + 1780), 0); /*0x7bdfaa*/
+    this->WalkLine(5, v2, this->u32_6F8); /*0x7bdf9b*/
+    this->WalkLine(3, this->u32_6F4, 0); /*0x7bdfaa*/
   }
-  int v3 = *(_DWORD *)(this + 1892); /*0x7bdfb0*/
+  int v3 = this->q764; /*0x7bdfb0*/
   if ( v3 ) /*0x7bdfb8*/
   {
-    this->WalkLine(5, v3, 4 * *(unsigned __int16 *)(this + 236)); /*0x7bdfcb*/
-    this->WalkLine(3, *(_DWORD *)(this + 1892), 0); /*0x7bdfda*/
+    this->WalkLine(5, v3, 4 * *(unsigned __int16 *)(&this->u32_5C6)); /*0x7bdfcb*/
+    this->WalkLine(3, this->q764, 0); /*0x7bdfda*/
   }
-  if ( !*(_DWORD *)(this + 148) ) /*0x7bdfe0*/
+  if ( !this->u32_94 ) /*0x7bdfe0*/
   {
-    int v4 = *(_DWORD *)(this + 1932); /*0x7bdfea*/
+    int v4 = this->u32_78C; /*0x7bdfea*/
     if ( v4 ) /*0x7bdff2*/
     {
-      this->WalkLine(5, v4, *(_DWORD *)(this + 152)); /*0x7bdfff*/
-      this->WalkLine(3, *(_DWORD *)(this + 1932), 0); /*0x7be00e*/
+      this->WalkLine(5, v4, this->u32_98); /*0x7bdfff*/
+      this->WalkLine(3, this->u32_78C, 0); /*0x7be00e*/
     }
   }
-  int v5 = *(_DWORD *)(this + 1940); /*0x7be014*/
+  int v5 = this->u32_794; /*0x7be014*/
   if ( v5 ) /*0x7be01c*/
   {
-    this->WalkLine(5, v5, *(_DWORD *)(this + 1948)); /*0x7be029*/
-    this->WalkLine(3, *(_DWORD *)(this + 1940), 0); /*0x7be038*/
+    this->WalkLine(5, v5, this->u32_79C); /*0x7be029*/
+    this->WalkLine(3, this->u32_794, 0); /*0x7be038*/
   }
-  int v6 = *(_DWORD *)(this + 1944); /*0x7be03e*/
+  int v6 = this->u32_798; /*0x7be03e*/
   if ( v6 ) /*0x7be046*/
   {
-    this->WalkLine(5, v6, 2 * *(_DWORD *)(this + 1948)); /*0x7be055*/
-    this->WalkLine(3, *(_DWORD *)(this + 1944), 0); /*0x7be064*/
+    this->WalkLine(5, v6, 2 * this->u32_79C); /*0x7be055*/
+    this->WalkLine(3, this->u32_798, 0); /*0x7be064*/
   }
-  int v7 = *(_DWORD *)(this + 1960); /*0x7be06a*/
+  int v7 = this->u32_7A8; /*0x7be06a*/
   if ( v7 ) /*0x7be072*/
   {
-    this->WalkLine(5, v7, *(_DWORD *)(this + 1972)); /*0x7be07f*/
-    this->WalkLine(3, *(_DWORD *)(this + 1960), 0); /*0x7be08e*/
+    this->WalkLine(5, v7, this->u32_7B4); /*0x7be07f*/
+    this->WalkLine(3, this->u32_7A8, 0); /*0x7be08e*/
   }
-  int v8 = *(_DWORD *)(this + 1976); /*0x7be094*/
+  int v8 = this->u32_7B8; /*0x7be094*/
   if ( v8 ) /*0x7be09c*/
   {
-    this->WalkLine(5, v8, *(_DWORD *)(this + 156)); /*0x7be0a9*/
-    this->WalkLine(3, *(_DWORD *)(this + 1976), 0); /*0x7be0b8*/
+    this->WalkLine(5, v8, this->u32_9C); /*0x7be0a9*/
+    this->WalkLine(3, this->u32_7B8, 0); /*0x7be0b8*/
   }
   int v9 = 0; /*0x7be0c6*/
   int v11; // ebp
-  for ( i = *(_DWORD *)(this + 1764); v9 < this->q022; i = v11 ) /*0x7be0d1*/
+  for ( i = this->u32_6E4; v9 < this->q022; i = v11 ) /*0x7be0d1*/
   {
     if ( !i ) /*0x7be0d5*/
       break; /*0x7be0d5*/
     v11 = *(_DWORD *)(i + 12); /*0x7be0e3*/
-    int v12 = *(_DWORD *)(this + 1900) + 4; /*0x7be0eb*/
-    int v13 = *(_DWORD *)(this + 1904) + 4; /*0x7be0ed*/
-    *(_DWORD *)(this + 1904) = v13; /*0x7be0f1*/
-    *(_DWORD *)(this + 1900) = v12; /*0x7be0f7*/
+    int v12 = this->u32_76C + 4; /*0x7be0eb*/
+    int v13 = this->u32_770 + 4; /*0x7be0ed*/
+    this->u32_770 = v13; /*0x7be0f1*/
+    this->u32_76C = v12; /*0x7be0f7*/
     this->WalkLine(5, i, v12 + v13 + 44); /*0x7be106*/
     this->WalkLine(3, i, 0); /*0x7be10f*/
     ++v9; /*0x7be11b*/
   }
-  if ( (*(_BYTE *)(this + 340) & 2) != 0 ) /*0x7be129*/
+  if ( (this->u8_154 & 2) != 0 ) /*0x7be129*/
   {
-    int v14 = *(_DWORD *)(this + 1768); /*0x7be12b*/
+    int v14 = this->u32_6E8; /*0x7be12b*/
     if ( v14 ) /*0x7be133*/
     {
-      this->WalkLine(5, v14, *(_DWORD *)(this + 1912)); /*0x7be140*/
-      this->WalkLine(3, *(_DWORD *)(this + 1768), 0); /*0x7be14f*/
-      *(_DWORD *)(this + 1768) = 0; /*0x7be155*/
+      this->WalkLine(5, v14, this->u32_778); /*0x7be140*/
+      this->WalkLine(3, this->u32_6E8, 0); /*0x7be14f*/
+      this->u32_6E8 = 0; /*0x7be155*/
     }
   }
-  int v15 = *(_DWORD *)(this + 1772); /*0x7be165*/
+  int v15 = this->u32_6EC; /*0x7be165*/
   int v17; // ebp
-  for ( j = 0; j < *(_DWORD *)(this + 140); v15 = v17 ) /*0x7be16f*/
+  for ( j = 0; j < this->u32_8C; v15 = v17 ) /*0x7be16f*/
   {
     if ( !v15 ) /*0x7be173*/
       break; /*0x7be173*/
     v17 = *(_DWORD *)(v15 + 4); /*0x7be17b*/
-    int v18 = *(_DWORD *)(this + 1896) + 4; /*0x7be17e*/
-    *(_DWORD *)(this + 1896) = v18; /*0x7be183*/
+    int v18 = this->u32_768 + 4; /*0x7be17e*/
+    this->u32_768 = v18; /*0x7be183*/
     this->WalkLine(5, v15, v18 + 24); /*0x7be191*/
     this->WalkLine(3, v15, 0); /*0x7be19a*/
     ++j; /*0x7be1a6*/
   }
-  if ( (*(_BYTE *)(this + 340) & 1) != 0 ) /*0x7be1b4*/
+  if ( (this->u8_154 & 1) != 0 ) /*0x7be1b4*/
   {
-    int v19 = *(_DWORD *)(this + 1776); /*0x7be1b6*/
+    int v19 = this->u32_6F0; /*0x7be1b6*/
     if ( v19 ) /*0x7be1be*/
     {
-      this->WalkLine(5, v19, *(_DWORD *)(this + 1908)); /*0x7be1cb*/
-      this->WalkLine(3, *(_DWORD *)(this + 1776), 0); /*0x7be1da*/
-      *(_DWORD *)(this + 1776) = 0; /*0x7be1e0*/
+      this->WalkLine(5, v19, this->u32_774); /*0x7be1cb*/
+      this->WalkLine(3, this->u32_6F0, 0); /*0x7be1da*/
+      this->u32_6F0 = 0; /*0x7be1e0*/
     }
   }
-  int v20 = *(_DWORD *)(this + 1888); /*0x7be1ea*/
+  int v20 = this->q760; /*0x7be1ea*/
   if ( v20 ) /*0x7be1f2*/
   {
-    this->WalkLine(5, v20, 2 * *(unsigned __int16 *)(this + 1880)); /*0x7be204*/
-    this->WalkLine(3, *(_DWORD *)(this + 1888), 0); /*0x7be213*/
+    this->WalkLine(5, v20, 2 * *(unsigned __int16 *)(&this->u32_2F00)); /*0x7be204*/
+    this->WalkLine(3, this->q760, 0); /*0x7be213*/
   }
-  int v21 = *(_DWORD *)(this + 1876); /*0x7be219*/
+  int v21 = this->u32_754; /*0x7be219*/
   if ( v21 ) /*0x7be221*/
   {
-    this->WalkLine(5, v21, 6 * *(unsigned __int16 *)(this + 1868)); /*0x7be236*/
-    this->WalkLine(3, *(_DWORD *)(this + 1876), 0); /*0x7be245*/
+    this->WalkLine(5, v21, 6 * *(unsigned __int16 *)(&this->u32_2E88)); /*0x7be236*/
+    this->WalkLine(3, this->u32_754, 0); /*0x7be245*/
   }
-  int v22 = *(_DWORD *)(this + 1852); /*0x7be24b*/
+  int v22 = this->u32_73C; /*0x7be24b*/
   v47 = v22; /*0x7be253*/
   if ( v22 ) /*0x7be257*/
   {
     int v23 = 0; /*0x7be25d*/
     int v41 = 0; /*0x7be25f*/
     int v43 = 0; /*0x7be267*/
-    int v45 = *(_DWORD *)(this + 1852); /*0x7be26b*/
+    int v45 = this->u32_73C; /*0x7be26b*/
     do /*0x7be2e9*/
     {
-      int * v24 = (int *)(*(_DWORD *)(this + 1864) + v23); /*0x7be275*/
+      int * v24 = (int *)(this->q748 + v23); /*0x7be275*/
       int * v25 = (int *)v24[2]; /*0x7be277*/
       int v26 = *v24; /*0x7be27a*/
       int v27 = *v25; /*0x7be27c*/
       if ( *v25 ) /*0x7be27c*/
       {
         this->WalkLine(/*0x7be29d*/
-          this, 5, v27, v26 * ((*(_DWORD *)(*(_DWORD *)(this + 1860) + v41 + 4) + 1) & 0xFFFFFFFE));
+          this, 5, v27, v26 * ((*(_DWORD *)(this->q744 + v41 + 4) + 1) & 0xFFFFFFFE));
         this->WalkLine(3, v27, 0); /*0x7be2a6*/
       }
       if ( v25 ) /*0x7be2ae*/
@@ -4249,36 +4271,36 @@ int DSurface::CommitBuffers()
     while ( !v28 ); /*0x7be2e9*/
     v22 = v47; /*0x7be2eb*/
   }
-  v29 = *(_DWORD *)(this + 1864); /*0x7be2ef*/
+  v29 = this->q748; /*0x7be2ef*/
   if ( v29 ) /*0x7be2f7*/
   {
     this->WalkLine(5, v29, 12 * v22); /*0x7be304*/
-    this->WalkLine(3, *(_DWORD *)(this + 1864), 0); /*0x7be313*/
+    this->WalkLine(3, this->q748, 0); /*0x7be313*/
   }
-  v30 = *(_DWORD *)(this + 1860); /*0x7be319*/
+  v30 = this->q744; /*0x7be319*/
   if ( v30 ) /*0x7be321*/
   {
     this->WalkLine(5, v30, 16 * v22); /*0x7be32b*/
-    this->WalkLine(3, *(_DWORD *)(this + 1860), 0); /*0x7be33a*/
+    this->WalkLine(3, this->q744, 0); /*0x7be33a*/
   }
-  v31 = *(_DWORD *)(this + 1828); /*0x7be340*/
+  v31 = this->q724; /*0x7be340*/
   v48 = v31; /*0x7be348*/
   if ( v31 ) /*0x7be34c*/
   {
     int v32 = 0; /*0x7be352*/
     int v42 = 0; /*0x7be354*/
     int v46 = 0; /*0x7be35c*/
-    int v44 = *(_DWORD *)(this + 1828); /*0x7be360*/
+    int v44 = this->q724; /*0x7be360*/
     do /*0x7be3de*/
     {
-      int * v33 = (int *)(*(_DWORD *)(this + 1848) + v32); /*0x7be36a*/
+      int * v33 = (int *)(this->u32_738 + v32); /*0x7be36a*/
       int * v34 = (int *)v33[2]; /*0x7be36c*/
       int v35 = *v33; /*0x7be36f*/
       int v36 = *v34; /*0x7be371*/
       if ( *v34 ) /*0x7be371*/
       {
         this->WalkLine(/*0x7be392*/
-          this, 5, v36, v35 * ((*(_DWORD *)(*(_DWORD *)(this + 1844) + v42 + 8) + 1) & 0xFFFFFFFE));
+          this, 5, v36, v35 * ((*(_DWORD *)(this->u32_734 + v42 + 8) + 1) & 0xFFFFFFFE));
         this->WalkLine(3, v36, 0); /*0x7be39b*/
       }
       if ( v34 ) /*0x7be3a3*/
@@ -4295,31 +4317,32 @@ int DSurface::CommitBuffers()
     while ( !v28 ); /*0x7be3de*/
     v31 = v48; /*0x7be3e0*/
   }
-  v37 = *(_DWORD *)(this + 1848); /*0x7be3e4*/
+  v37 = this->u32_738; /*0x7be3e4*/
   if ( v37 ) /*0x7be3ec*/
   {
     this->WalkLine(5, v37, 12 * v31); /*0x7be3f9*/
-    this->WalkLine(3, *(_DWORD *)(this + 1848), 0); /*0x7be408*/
+    this->WalkLine(3, this->u32_738, 0); /*0x7be408*/
   }
-  v38 = *(_DWORD *)(this + 1844); /*0x7be40e*/
+  v38 = this->u32_734; /*0x7be40e*/
   if ( v38 ) /*0x7be416*/
   {
     this->WalkLine(5, v38, 16 * v31); /*0x7be420*/
-    this->WalkLine(3, *(_DWORD *)(this + 1844), 0); /*0x7be42f*/
+    this->WalkLine(3, this->u32_734, 0); /*0x7be42f*/
   }
-  v39 = *(_DWORD *)(this + 1840); /*0x7be435*/
+  v39 = this->u32_730; /*0x7be435*/
   if ( v39 ) /*0x7be440*/
   {
-    this->WalkLine(5, v39, 24 * *(_DWORD *)(this + 1824)); /*0x7be453*/
-    this->WalkLine(3, *(_DWORD *)(this + 1840), 0); /*0x7be462*/
+    this->WalkLine(5, v39, 24 * this->u32_720); /*0x7be453*/
+    this->WalkLine(3, this->u32_730, 0); /*0x7be462*/
   }
-  result = *(_DWORD *)(this + 1820); /*0x7be468*/
+  result = this->u32_71C; /*0x7be468*/
   if ( result ) /*0x7be470*/
   {
-    this->WalkLine(5, result, 4 * *(unsigned __int16 *)(this + 1812)); /*0x7be483*/
-    return this->WalkLine(3, *(_DWORD *)(this + 1820), 0); /*0x7be492*/
+    this->WalkLine(5, result, 4 * *(unsigned __int16 *)(&this->u32_2D42)); /*0x7be483*/
+    return this->WalkLine(3, this->u32_71C, 0); /*0x7be492*/
   }
   return result; /*0x7be498*/
+}
 }
 
 // 0x7C2C60
@@ -4327,29 +4350,30 @@ int DSurface::Flip()
 {
 {
 
-  if ( (*(_BYTE *)(this + 132) & 1) != 0 && (*(_BYTE *)(this + 234) & 3) != 0 ) /*0x7c2c73*/
+  if ( (this->u8_84 & 1) != 0 && (this->u8_EA & 3) != 0 ) /*0x7c2c73*/
   {
     DSurface::LockAndPrepareRect(); /*0x7c2c75*/
-    if ( (*(_DWORD *)(this + 1980) & 0x40000000) != 0 ) /*0x7c2c84*/
+    if ( (this->u8_7BC & 0x40000000) != 0 ) /*0x7c2c84*/
     {
       sub_412600(); /*0x7c2c86*/
-      *(_DWORD *)(this + 1980) &= ~0x40000000u; /*0x7c2c8b*/
+      this->u8_7BC &= ~0x40000000u; /*0x7c2c8b*/
     }
   }
-  if ( (*(_BYTE *)(this + 336) & 0x20) != 0 ) /*0x7c2c9c*/
+  if ( (this->u8_150 & 0x20) != 0 ) /*0x7c2c9c*/
   {
-    int v2 = *(_DWORD *)(this + 344); /*0x7c2c9e*/
+    int v2 = this->u32_158; /*0x7c2c9e*/
     if ( v2 ) /*0x7c2ca6*/
     {
       this->WalkLine(/*0x7c2cba*/
-        this, 5, v2, *(_DWORD *)(this + 348) * *(_DWORD *)(this + 352));
-      this->WalkLine(3, *(_DWORD *)(this + 344), 0); /*0x7c2cc9*/
+        this, 5, v2, this->u32_15C * this->u32_160);
+      this->WalkLine(3, this->u32_158, 0); /*0x7c2cc9*/
     }
   }
   DSurface::CommitBuffers(this); /*0x7c2cd1*/
   this->entry_40_(4, 0, 0); /*0x7c2cdd*/
   this->WalkLine(5, this, 2012); /*0x7c2ce9*/
   return this->WalkLine(3, this, 0); /*0x7c2cf8*/
+}
 }
 
 // 0x4BA480

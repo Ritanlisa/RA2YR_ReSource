@@ -202,6 +202,7 @@ LABEL_37:
   }
 }
 } // namespace gamemd
+}
 
 // 0x5A19E0
 namespace gamemd {
@@ -300,6 +301,7 @@ LABEL_32:
   return result; /*0x5a1c60*/
 }
 } // namespace gamemd
+}
 
 // 0x5A1C70
 namespace gamemd {
@@ -382,7 +384,7 @@ int E4Recv_5A1C70::sub_5A1C70()
         void * v15 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)((char *)g_MapTileArray + v13)); /*0x5a1def*/
         result = RandomMap::GenerateTerrain((int)v15); /*0x5a1df6*/
         if ( result ) /*0x5a1dfd*/
-          *(_BYTE *)(result + 26) = 0; /*0x5a1dff*/
+          result->u8_1A = 0; /*0x5a1dff*/
       }
       v13 += 80; /*0x5a1e03*/
       --v14; /*0x5a1e06*/
@@ -392,6 +394,7 @@ int E4Recv_5A1C70::sub_5A1C70()
   return result; /*0x5a1e09*/
 }
 } // namespace gamemd
+}
 
 // 0x5A33F0
 namespace gamemd {
@@ -472,6 +475,7 @@ LABEL_24:
   return result; /*0x5a35e6*/
 }
 } // namespace gamemd
+}
 
 // 0x5A45E0
 namespace gamemd {
@@ -708,6 +712,7 @@ void ScatterTerrainTrees(IUnknown * aP0, int a2, double a3)
   return v42; /*0x5a4aca*/
 }
 } // namespace gamemd
+}
 
 // 0x5A4B60
 namespace gamemd {
@@ -922,6 +927,7 @@ void FloodFillPathfinding(Random * aP0, int a2, CellClass * aP2, int a4, char a5
   }
 }
 } // namespace gamemd
+}
 
 // 0x5A6510
 namespace gamemd {
@@ -1102,6 +1108,7 @@ LABEL_48:
   }
 }
 } // namespace gamemd
+}
 
 // 0x5A6920
 namespace gamemd {
@@ -1222,6 +1229,7 @@ LABEL_27:
   return result; /*0x5a6b96*/
 }
 } // namespace gamemd
+}
 
 // 0x5A6BA0
 namespace gamemd {
@@ -1231,7 +1239,7 @@ int E4Recv_5A6BA0::sub_5A6BA0()
   int v7; // esi
   __int16 v10[2]; // [esp+10h] [ebp-8h] BYREF
   int v11; // [esp+14h] [ebp-4h]
-  int v1 = *(this + 1); /*0x5a6ba3*/
+  int v1 = this->u32_4; /*0x5a6ba3*/
   int v2 = *this; /*0x5a6ba7*/
   int v3 = v2 + 7; /*0x5a6bae*/
   int v4 = v2 - 7; /*0x5a6bb1*/
@@ -1264,6 +1272,7 @@ LABEL_6:
   }
 }
 } // namespace gamemd
+}
 
 // 0x5A6C10
 namespace gamemd {
@@ -1333,6 +1342,7 @@ void PlaceMapSeedClassBuildings(ObjectClass * aP0, ObjectClass * aP1, int a3, in
   return result; /*0x5a6d6e*/
 }
 } // namespace gamemd
+}
 
 // 0x5A6D80
 namespace gamemd {
@@ -1464,6 +1474,7 @@ unsigned int * FindClearPlacementCell(unsigned int * a0, MapSeedClass * aP1, Map
   return a0; /*0x5a6e7b*/
 }
 } // namespace gamemd
+}
 
 // 0x5A7070
 namespace gamemd {
@@ -1563,6 +1574,7 @@ unsigned int * globalHelper_0A7070(MapSeedClass * aP0, short * a1, MapSeedClass 
   return aP0->__pad_0; /*0x5a723f*/
 }
 } // namespace gamemd
+}
 
 // 0x5A7250
 namespace gamemd {
@@ -1653,6 +1665,7 @@ void IsAreaClearMap(MapClass * aP0, char a2, char a3)
   return 1; /*0x5a741e*/
 }
 } // namespace gamemd
+}
 
 // 0x5A7440
 namespace gamemd {
@@ -1736,6 +1749,7 @@ LABEL_28:
   return 0; /*0x5a762c*/
 }
 } // namespace gamemd
+}
 
 // 0x5A78D0
 namespace gamemd {
@@ -1859,6 +1873,7 @@ void int PlaceMapSeedBuildingsStrategic(int a1)
   return result; /*0x5a7b2c*/
 }
 } // namespace gamemd
+}
 
 // 0x5A7FA0
 namespace gamemd {
@@ -1918,6 +1933,7 @@ void IsoTile_Draw(int a1, unsigned short * a2, char a3)
   return result; /*0x5a809c*/
 }
 } // namespace gamemd
+}
 
 // 0x5A8720
 namespace gamemd {
@@ -2057,6 +2073,7 @@ LABEL_27:
   return result; /*0x5a89bb*/
 }
 } // namespace gamemd
+}
 
 // 0x5A89D0
 namespace gamemd {
@@ -2330,6 +2347,7 @@ LABEL_61:
   return v42 > 1; /*0x5a8ee4*/
 }
 } // namespace gamemd
+}
 
 // 0x5A8F00
 namespace gamemd {
@@ -2459,6 +2477,7 @@ LABEL_22:
   return 1; /*0x5a9199*/
 }
 } // namespace gamemd
+}
 
 // 0x5A9C40
 namespace gamemd {
@@ -2623,7 +2642,7 @@ unsigned int * InitializePathData()
   }
   dword_ABE380 = (TechnoTypeClass *)v5;
   *(_DWORD *)v5 = v118;
-  *(_DWORD *)(v5 + 4) = 0;
+  v5->u32_4 = 0;
   *(_DWORD *)&dword_ABE380->vtable0[8] = 1;
   LOWORD(v120) = 1;
   *(_DWORD *)&dword_ABE380->vtable0[12] = 2;
@@ -3932,6 +3951,7 @@ unsigned int * InitializePathData()
 }
 
 } // namespace gamemd
+}
 
 // 0x5AD9C0
 namespace gamemd {
@@ -3944,6 +3964,7 @@ int sub_5AD9C0(unsigned int * a1, unsigned int * a2)
     return *a1 >= *a2 ? 1 : -1;
 }
 } // namespace gamemd
+}
 
 // 0x5AF550
 namespace gamemd {
@@ -4000,26 +4021,27 @@ void E4Recv_5AF550::sub_5AF550(float * a2, float * a3, AbstractClass * a4)
   this->M40 = 1065353216; /*0x5af655*/
   this->M44 = 0; /*0x5af658*/
   double v9 = *a2; /*0x5af65b*/
-  *(float *)(this + 12) = *a2; /*0x5af669*/
-  *(float *)(this + 28) = 0.0; /*0x5af677*/
-  *(float *)(this + 44) = 0.0; /*0x5af67a*/
+  this->M12 = *a2; /*0x5af669*/
+  this->M28 = 0.0; /*0x5af677*/
+  this->M44 = 0.0; /*0x5af67a*/
   double v10 = v9 + 0.0; /*0x5af680*/
   float v15 = a2[1]; /*0x5af684*/
-  *(float *)(this + 12) = v10; /*0x5af68d*/
-  float v16 = v15 + *(float *)(this + 28); /*0x5af697*/
-  *(float *)(this + 28) = v16; /*0x5af69b*/
+  this->M12 = v10; /*0x5af68d*/
+  float v16 = v15 + this->M28; /*0x5af697*/
+  this->M28 = v16; /*0x5af69b*/
   float v13 = (float)0.0 + 0.0; /*0x5af6ae*/
-  *(float *)(this + 44) = v13; /*0x5af6b2*/
+  this->M44 = v13; /*0x5af6b2*/
   v22 = a2[2]; /*0x5af6be*/
-  *(float *)(this + 12) = v10 + 0.0; /*0x5af6c4*/
-  *(float *)(this + 28) = v16 + 0.0; /*0x5af6d1*/
-  *(float *)(this + 44) = v13 + v22; /*0x5af6dc*/
+  this->M12 = v10 + 0.0; /*0x5af6c4*/
+  this->M28 = v16 + 0.0; /*0x5af6d1*/
+  this->M44 = v13 + v22; /*0x5af6dc*/
   sub_5AF120((float *)this, v20, v24); /*0x5af6df*/
   float aP1 = -v21; /*0x5af6f0*/
   sub_5AF000((float *)this, (ObjectClass *)LODWORD(aP1), (ObjectClass *)LODWORD(aP2)); /*0x5af6f5*/
   Matrix2D::Rotate((float *)this, a4); /*0x5af701*/
 }
 } // namespace gamemd
+}
 
 // 0x5AF980
 namespace gamemd {
@@ -4171,6 +4193,7 @@ double sub_5A5AE0(short * a1, short * a2)
 }
 }
 } // namespace gamemd
+}
 
 // 0x5A7640
 namespace gamemd {
@@ -4809,6 +4832,7 @@ int E4Recv_5AF470::sub_5AF470()
   return Math::CalcAngle((AbstractClass *)aP0, *(double *)((char *)&aP0 + 4)); /*0x5af4cc*/
 }
 } // namespace gamemd
+}
 
 // 0x5AFB80
 namespace gamemd {

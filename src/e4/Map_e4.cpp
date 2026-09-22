@@ -101,6 +101,7 @@ AbstractClass * * sub_539760()
   return UpdateSurfaceAnimations(-1, -1, -1, 0); /*0x53988c*/
 }
 } // namespace gamemd
+}
 
 // 0x5558E0
 namespace gamemd {
@@ -191,6 +192,7 @@ LABEL_22:
   return result; /*0x555aa2*/
 }
 } // namespace gamemd
+}
 
 // 0x5A1E50
 namespace gamemd {
@@ -253,6 +255,7 @@ LABEL_16:
   }
 }
 } // namespace gamemd
+}
 
 // 0x5ADD10
 namespace gamemd {
@@ -290,6 +293,7 @@ int E4Recv_5ADD10::Map_Delete()
   }
 }
 } // namespace gamemd
+}
 
 // 0x682150
 namespace gamemd {
@@ -341,6 +345,7 @@ LABEL_5:
   return v6; /*0x6821b9*/
 }
 } // namespace gamemd
+}
 
 // 0x68C050
 namespace gamemd {
@@ -448,6 +453,7 @@ LABEL_29:
   }
 }
 } // namespace gamemd
+}
 
 // 0x55CF10
 namespace gamemd {
@@ -500,6 +506,7 @@ void sub_55CF10()
   return result; /*0x55cfc2*/
 }
 } // namespace gamemd
+}
 
 // 0x5C98A0
 namespace gamemd {
@@ -576,6 +583,7 @@ void sub_5C98A0()
   return result; /*0x5c9a8f*/
 }
 } // namespace gamemd
+}
 
 // 0x5EC880
 namespace gamemd {
@@ -664,6 +672,7 @@ LABEL_39:
   return 1; /*0x5ec9c9*/
 }
 } // namespace gamemd
+}
 
 // 0x6ACCA0
 namespace gamemd {
@@ -713,6 +722,7 @@ char sub_6ACCA0(int a1)
   return 1; /*0x6acd4d*/
 }
 } // namespace gamemd
+}
 
 // 0x584030
 namespace gamemd {
@@ -760,6 +770,7 @@ LABEL_10:
   }
 }
 } // namespace gamemd
+}
 
 // 0x59BAB0
 namespace gamemd {
@@ -803,6 +814,7 @@ void Map_Helper_59BAB0()
   return 0; /*0x59bae7*/
 }
 } // namespace gamemd
+}
 
 // 0x5A7D00
 namespace gamemd {
@@ -867,6 +879,7 @@ LABEL_17:
   return 1; /*0x5a7e5b*/
 }
 } // namespace gamemd
+}
 
 // 0x6B4240
 namespace gamemd {
@@ -967,6 +980,7 @@ int sub_6B4240(int a1, int a2)
   return result; /*0x6b433d*/
 }
 } // namespace gamemd
+}
 
 // 0x751C30
 namespace gamemd {
@@ -1011,6 +1025,7 @@ char sub_751C30()
   return 1; /*0x751c51*/
 }
 } // namespace gamemd
+}
 
 // 0x63AB60
 namespace gamemd {
@@ -1061,6 +1076,7 @@ LABEL_17:
   return 1; /*0x63ab6f*/
 }
 } // namespace gamemd
+}
 
 // 0x76FD40
 namespace gamemd {
@@ -1161,6 +1177,7 @@ void Map_Process_76FD40(int a1, ObjectClass * aP1, int a3, int _54, int * a4, in
   }
 }
 } // namespace gamemd
+}
 
 // 0x682240
 namespace gamemd {
@@ -1218,6 +1235,7 @@ LABEL_5:
   return v7; /*0x68229b*/
 }
 } // namespace gamemd
+}
 
 // 0x6824B0
 namespace gamemd {
@@ -1275,6 +1293,7 @@ LABEL_7:
   return v7; /*0x68250c*/
 }
 } // namespace gamemd
+}
 
 // 0x5549A0
 namespace gamemd {
@@ -1347,6 +1366,7 @@ AbstractClass * * sub_5549A0()
   byte_829AE4 = 1; /*0x554a4c*/
 }
 } // namespace gamemd
+}
 
 // 0x660C50
 namespace gamemd {
@@ -1359,6 +1379,7 @@ int sub_660C50()
   return dword_B04D68; /*0x660c6f*/
 }
 } // namespace gamemd
+}
 
 // 0x6DA980
 namespace gamemd {
@@ -1387,6 +1408,7 @@ void sub_6DA980()
   }
 }
 } // namespace gamemd
+}
 
 // 0x769E30
 namespace gamemd {
@@ -1473,6 +1495,7 @@ LABEL_14:
   return 1; /*0x769ec7*/
 }
 } // namespace gamemd
+}
 
 // 0x76A610
 namespace gamemd {
@@ -1513,6 +1536,7 @@ void * Map_WorldDominationTour_20::Constructor_0(char a2)
   }
 }
 } // namespace gamemd
+}
 
 // 0x76A3F0
 namespace gamemd {
@@ -1615,6 +1639,7 @@ AbstractClass * * Map_WorldDominationTour_43::Release(int a2, char * a3)
   }
 }
 } // namespace gamemd
+}
 
 // 0x535BE0
 unsigned int Map::IsCellFlag(int a1)
@@ -2338,7 +2363,7 @@ unsigned int * Map_WorldDominationTour_20::Seek(unsigned int * a2, int a3)
 {
 {
     int v3;
-    v3 = *(this + 1) + 8 * a3;
+    v3 = this->Items + 8 * a3;
     ComPtr::Constructor(a2);
     *a2 = &vt_rc_ptr_WorldDominationTour_Territory;
     ComPtr::Set(a2, *(int *)(v3 + 4));
@@ -2355,6 +2380,7 @@ int Map_WorldDominationTour_28::Seek(int a2)
   return *(_DWORD *)(this->q004 + 4 * a2); /*0x769d2a*/
 }
 } // namespace gamemd
+}
 
 // 0x769D30
 namespace gamemd {
@@ -2369,15 +2395,17 @@ unsigned int * Map_WorldDominationTour_43::Seek(unsigned int * a2, int a3)
   return a2; /*0x769d4e*/
 }
 } // namespace gamemd
+}
 
 // 0x769D60
 namespace gamemd {
 int Map_WorldDominationTour_38::AddRef()
  {
 {
-  return *(this + 2) < *(_DWORD *)(*(this + 1) + 8); /*0x769d6d*/
+  return this->RefCount < *(_DWORD *)(this->u32_4 + 8); /*0x769d6d*/
 }
 } // namespace gamemd
+}
 
 // 0x769D70
 namespace gamemd {
@@ -2717,20 +2745,22 @@ namespace gamemd {
 unsigned int * Map_WorldDominationTour_38::Release()
  {
 {
-  ++*(this + 2); /*0x76a5a2*/
+  ++this->RefCount; /*0x76a5a2*/
   return this; /*0x76a5a5*/
 }
 } // namespace gamemd
+}
 
 // 0x76A5B0
 namespace gamemd {
 unsigned int * Map_WorldDominationTour_38::ddtor()
  {
 {
-  --*(this + 2); /*0x76a5b2*/
+  --this->RefCount; /*0x76a5b2*/
   return this; /*0x76a5b5*/
 }
 } // namespace gamemd
+}
 
 // 0x76A5C0
 namespace gamemd {
@@ -2738,15 +2768,15 @@ VectorClass * Map_WorldDominationTour_20::QueryInterface(char a2)
 {
 {
     void (__thiscall ***v3)(int, int);
-    v3 = (void (__thiscall ***)(int, int))*(this + 1);
+    v3 = (void (__thiscall ***)(int, int))this->Items;
     *(void**)this = &vt_VectorClass_rc_ptr_WorldDominationTour_Territory;
-    if ( v3 && *((char *)(this) + 13) )
+    if ( v3 && this->IsAllocated )
   {
     (**v3)(v3, 3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
+    this->IsAllocated = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (VectorClass *)this;
@@ -2760,15 +2790,15 @@ VectorClass * Map_WorldDominationTour_28::QueryInterface(char a2)
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_WorldDominationTour_Map_AnimationPalette;
-    if ( v3 && *((char *)(this) + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
+    this->IsAllocated = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (VectorClass *)this;
@@ -2782,15 +2812,15 @@ VectorClass * Map_WorldDominationTour_43::QueryInterface(char a2)
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_WorldDominationTour_Centroid;
-    if ( v3 && *((char *)(this) + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
+    this->IsAllocated = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (VectorClass *)this;

@@ -121,6 +121,7 @@ Coord * * int CollectWOLConnectionTokens()
   return result; /*0x7a067b*/
 }
 } // namespace gamemd
+}
 
 // 0x7A0690
 namespace gamemd {
@@ -355,6 +356,7 @@ LABEL_50:
   return 1; /*0x7a07c7*/
 }
 } // namespace gamemd
+}
 
 // 0x7A0DD0
 namespace gamemd {
@@ -381,6 +383,7 @@ void E4Recv_7A0DD0::sub_7A0DD0()
   }
 }
 } // namespace gamemd
+}
 
 // 0x7A1060
 namespace gamemd {
@@ -508,6 +511,7 @@ LABEL_37:
   return result; /*0x7a1328*/
 }
 } // namespace gamemd
+}
 
 // 0x7A1330
 namespace gamemd {
@@ -655,6 +659,7 @@ LABEL_40:
   }
 }
 } // namespace gamemd
+}
 
 // 0x7A16B0
 namespace gamemd {
@@ -662,6 +667,7 @@ ObjectClass * * HandleWOLMatchMessage()
 {
 // (no pseudocode — ASM-only function)
 } // namespace gamemd
+}
 
 // 0x7A1BB0
 namespace gamemd {
@@ -849,6 +855,7 @@ LABEL_25:
   }
 }
 } // namespace gamemd
+}
 
 // 0x7A2830
 namespace gamemd {
@@ -882,6 +889,7 @@ Coord * * E4Recv_7A2830::sub_7A2830()
   return result; /*0x7a288f*/
 }
 } // namespace gamemd
+}
 
 // 0x7A29E0
 namespace gamemd {
@@ -1080,6 +1088,7 @@ LABEL_51:
   return result; /*0x7a2a54*/
 }
 } // namespace gamemd
+}
 
 // 0x7A4C10
 namespace gamemd {
@@ -1188,6 +1197,7 @@ LABEL_16:
   }
 }
 } // namespace gamemd
+}
 
 // 0x7AF640
 namespace gamemd {
@@ -1199,7 +1209,7 @@ AbstractClass * * E4Recv_7AF640::sub_7AF640(int a2)
   result = DSurface_Alternate; /*0x7af640*/
   if ( DSurface_Alternate ) /*0x7af64d*/
   {
-    int v4 = *(this + 7); /*0x7af64f*/
+    int v4 = this->M28; /*0x7af64f*/
     if ( v4 ) /*0x7af654*/
     {
   _BYTE v7[16]; // [esp+1Ch] [ebp-10h] BYREF
@@ -1213,7 +1223,7 @@ AbstractClass * * E4Recv_7AF640::sub_7AF640(int a2)
       return (*(int (__thiscall **)(int, _DWORD *, _DWORD, _DWORD *, _DWORD, int))(*(_DWORD *)DSurface_Alternate + 8))( /*0x7af6a7*/
                DSurface_Alternate,
                v6,
-               *(this + 7),
+               this->M28,
                v6,
                0,
                1);
@@ -1222,6 +1232,7 @@ AbstractClass * * E4Recv_7AF640::sub_7AF640(int a2)
   return result; /*0x7af6aa*/
 }
 } // namespace gamemd
+}
 
 // 0x7AF6C0
 namespace gamemd {
@@ -1334,6 +1345,7 @@ LABEL_14:
   return result; /*0x7af75a*/
 }
 } // namespace gamemd
+}
 
 // 0x7AF970
 namespace gamemd {
@@ -1389,6 +1401,7 @@ AbstractClass * * sub_7AF970()
   return v3; /*0x7afac0*/
 }
 } // namespace gamemd
+}
 
 // 0x7AFB90
 namespace gamemd {
@@ -1578,6 +1591,7 @@ LABEL_41:
   }
 }
 } // namespace gamemd
+}
 
 // 0x7A0D10
 namespace gamemd {

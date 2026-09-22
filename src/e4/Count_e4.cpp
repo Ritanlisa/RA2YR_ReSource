@@ -22,6 +22,7 @@ AbstractClass * * Count::DecrementRefCountsAudio()
   }
   return result; /*0x408ea1*/
 }
+}
 
 // 0x46F6D0
 int Count::SetupAllCountriesLobby()
@@ -99,6 +100,7 @@ int Count::SetupAllCountriesLobby()
   while ( (int)v2 < (int)&g_PlayerNameListEnd ); /*0x46f7ff*/
   return result; /*0x46f805*/
 }
+}
 
 // 0x5F1EA0
 int Count::GetCountQueue()
@@ -111,12 +113,14 @@ int Count::GetCountQueue()
   else
     return 0; /*0x5f1eae*/
 }
+}
 
 // 0x76F080
 int Count::Get()
 {
 {
   return this->q004; /*0x76f083*/
+}
 }
 
 // 0x76F160
@@ -126,6 +130,7 @@ unsigned int * Count::Release()
   ++this->q008; /*0x76f162*/
   return this; /*0x76f165*/
 }
+}
 
 // 0x76F170
 unsigned int * Count::ddtor()
@@ -133,4 +138,5 @@ unsigned int * Count::ddtor()
 {
   --this->q008; /*0x76f172*/
   return this; /*0x76f175*/
+}
 }

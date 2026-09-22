@@ -361,3 +361,4 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct *a1@<ecx> a1, un
   }
 }
 } // namespace gamemd
+}

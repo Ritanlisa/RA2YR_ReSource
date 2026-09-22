@@ -45,6 +45,7 @@ LABEL_9:
   }
 }
 } // namespace gamemd
+}
 
 // 0x74EEE0
 int VeinholeMonsterClass::Update(TechnoTypeClass * aP0, int * a1, int aP2)

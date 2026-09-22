@@ -62,6 +62,7 @@ int MPBattleClass::vt_entry_18()
   return ScenarioClass::createStartingForces(this);
 }
 }
+}
 // 0x5CACF0
 long long MPBattleClass::isValidMap()
 {

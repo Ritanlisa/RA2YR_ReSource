@@ -17,6 +17,7 @@ int sub_53EC40(unsigned char a1, char a2)
   return result; /*0x53ec67*/
 }
 } // namespace gamemd
+}
 
 // 0x6149B0
 namespace gamemd {
@@ -145,6 +146,7 @@ double Memory_Helper_58C6F0(IUnknown * aP0, short * a1, double a3)
 }
 }
 } // namespace gamemd
+}
 
 // 0x5C0E90
 char Memory::FreeConditional(int a1, int a2, void * Block, int a4, short a5, int a6, int a7, int a8, int a9)

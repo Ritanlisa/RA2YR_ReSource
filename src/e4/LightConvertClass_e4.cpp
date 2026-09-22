@@ -182,3 +182,4 @@ int LightConvertClass::SelectRLEBlitter(IUnknown * aP1)
         return this->q0D0; /*0x490f8b*/
   }
 }
+}

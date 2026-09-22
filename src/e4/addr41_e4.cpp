@@ -97,6 +97,7 @@ LABEL_14:
   return *(_DWORD *)(v3 + 32); /*0x4116da*/
 }
 } // namespace gamemd
+}
 
 // 0x411820
 namespace gamemd {
@@ -227,6 +228,7 @@ int ManageMultimediaTimer(struct _RTL_CRITICAL_SECTION * dwUser, int a2, int a3,
   return result; /*0x411840*/
 }
 } // namespace gamemd
+}
 
 // 0x411B20
 namespace gamemd {
@@ -294,6 +296,7 @@ AbstractClass * * sub_411B20(DWORD_PTR dwUser, AnimClass * aP1, int a3)
   return *((_DWORD *)v5 + 24) != 0 ? -1 : -13;
 }
 } // namespace gamemd
+}
 
 // 0x411DF0
 namespace gamemd {
@@ -401,6 +404,7 @@ void InitializeSoundBufferPlayback(LPCRITICAL_SECTION lpCriticalSection)
   }
 }
 } // namespace gamemd
+}
 
 // 0x412000
 namespace gamemd {
@@ -530,6 +534,7 @@ LABEL_21:
   return -1; /*0x4120c7*/
 }
 } // namespace gamemd
+}
 
 // 0x4123A0
 namespace gamemd {
@@ -603,6 +608,7 @@ LABEL_21:
   InterlockedDecrement(lpAddend); /*0x412518*/
 }
 } // namespace gamemd
+}
 
 // 0x413CD0
 namespace gamemd {
@@ -620,6 +626,7 @@ bool sub_413CD0(int a1)
   return 0; /*0x413cd9*/
 }
 } // namespace gamemd
+}
 
 // 0x41B110
 namespace gamemd {
@@ -754,6 +761,7 @@ INIClass * * PlaceAircraftFromINI()
   return result; /*0x41b421*/
 }
 } // namespace gamemd
+}
 
 // 0x41C610
 namespace gamemd {
@@ -766,6 +774,7 @@ int CompareFunction(unsigned int * a1, unsigned int * a2)
     return *a1 >= *a2 ? 1 : -1;
 }
 } // namespace gamemd
+}
 
 // 0x410070
 namespace gamemd {

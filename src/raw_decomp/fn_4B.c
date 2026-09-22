@@ -3035,7 +3035,7 @@ _DWORD *__thiscall JumpjetLocomotion::TransformCoords(_DWORD *this, IUnknown *aP
   int v9; // ecx
 
   v4 = *(_DWORD *)aP3->__pad_0; /*0x4b478d*/
-  v5 = dword_7E7B30[3 * this->q160]; /*0x4b4791*/
+  v5 = dword_7E7B30[3 * this->q058]; /*0x4b4791*/
   v6 = aP2->field_0; /*0x4b479f*/
   v7 = aP2->field_4; /*0x4b47a1*/
   if ( (v5 & 1) != 0 ) /*0x4b47a4*/
@@ -3055,7 +3055,7 @@ _DWORD *__thiscall JumpjetLocomotion::TransformCoords(_DWORD *this, IUnknown *aP
     v4 = (unsigned __int8)(0x80 - v4); /*0x4b47dd*/
   }
   *(_DWORD *)aP3->__pad_0 = v4; /*0x4b47df*/
-  v8 = this->q010; /*0x4b47e2*/
+  v8 = this->q040; /*0x4b47e2*/
   v9 = this->q044; /*0x4b47e5*/
   aP1->field_0 = v6 + v8; /*0x4b47f2*/
   aP1->field_4 = v7 + v9; /*0x4b47f5*/
@@ -3647,8 +3647,8 @@ __int16 __thiscall DropListClass::_vt19(char *this, char a2, _DWORD *a3, char *a
     }
     else
     {
-      v6 = this->q004; /*0x4b5101*/
-      v7 = this->q005; /*0x4b5104*/
+      v6 = this->u32_4; /*0x4b5101*/
+      v7 = this->q014; /*0x4b5104*/
       v8 = this->q02C; /*0x4b5108*/
       this->q0BC = this->q00C; /*0x4b510e*/
       v9 = this->q04C; /*0x4b5114*/
@@ -8222,7 +8222,7 @@ char *__thiscall DSurface::Construct(char *this, IUnknown *aP1, DSurface *aP2, O
   this->q014 = 0; /*0x4ba5c1*/
   this->q018 = 0; /*0x4ba5c4*/
   this->q019 = 0; /*0x4ba5c7*/
-  this->q01C = 0; /*0x4ba5ca*/
+  this->u32_1C = 0; /*0x4ba5ca*/
   this->q008 = 0; /*0x4ba5cd*/
   *(_DWORD *)this = &DSurface_Vtable; /*0x4ba5d0*/
   v7 = (ObjectClass *)__2_YAPAXI_Z(0x6Cu); /*0x4ba5db*/
@@ -8268,7 +8268,7 @@ int __thiscall DSurface_Destroy(void *this)
   *(_DWORD *)this = &DSurface_Vtable; /*0x4ba6b9*/
   if ( v2 ) /*0x4ba6c1*/
   {
-    v3 = this->q01C; /*0x4ba6c3*/
+    v3 = this->u32_1C; /*0x4ba6c3*/
     if ( v3 ) /*0x4ba6c8*/
     {
       if ( MEMORY[0x8A0DCC] ) /*0x4ba6d0*/
@@ -8280,11 +8280,11 @@ int __thiscall DSurface_Destroy(void *this)
     }
   }
   __3_YAXPAX_Z(*((void **)this + 8)); /*0x4ba6ee*/
-  result = this->q01C; /*0x4ba6f3*/
+  result = this->u32_1C; /*0x4ba6f3*/
   this->q008 = 0; /*0x4ba6fb*/
   if ( result ) /*0x4ba6fe*/
     result = (*(int (__stdcall **)(int))(*(_DWORD *)result + 8))(result); /*0x4ba703*/
-  this->q01C = 0; /*0x4ba706*/
+  this->u32_1C = 0; /*0x4ba706*/
   *(_DWORD *)this = &Surface_Vtable; /*0x4ba709*/
   return result; /*0x4ba70f*/
 }
@@ -8553,9 +8553,9 @@ _DWORD *__thiscall sub_4BAC60(_DWORD *this, int a2)
   this->q00C = 0; /*0x4bac71*/
   this->q010 = 0; /*0x4bac74*/
   this->q014 = 0; /*0x4bac77*/
-  this->q018 = 0; /*0x4bac7a*/
-  this->q019 = 0; /*0x4bac7d*/
-  this->q01C = a2; /*0x4bac80*/
+  this->q060 = 0; /*0x4bac7a*/
+  this->u32_64 = 0; /*0x4bac7d*/
+  this->u32_1C = a2; /*0x4bac80*/
   this->q020 = 0; /*0x4bac83*/
   *this = &DSurface_Vtable; /*0x4bac86*/
   if ( a2 ) /*0x4bac8c*/
@@ -8564,11 +8564,11 @@ _DWORD *__thiscall sub_4BAC60(_DWORD *this, int a2)
     this->q020 = v3; /*0x4bac9f*/
     memset(v3, 0, 0x6Cu); /*0x4baca2*/
     *(_DWORD *)this->q020 = 108; /*0x4bacaa*/
-    if ( !(*(int (__stdcall **)(_DWORD, _DWORD))(*(_DWORD *)this->q01C + 88))(this->q01C, this->q020) ) /*0x4bacba*/
+    if ( !(*(int (__stdcall **)(_DWORD, _DWORD))(*(_DWORD *)this->u32_1C + 88))(this->u32_1C, this->q020) ) /*0x4bacba*/
     {
       v4 = (_DWORD *)this->q020; /*0x4bacc2*/
       this->q010 = (unsigned int)(v4[21] + 7) >> 3; /*0x4bacce*/
-      this->q019 = (v4[26] & 0x4000) != 0; /*0x4bacda*/
+      this->u32_64 = (v4[26] & 0x4000) != 0; /*0x4bacda*/
       this->q004 = v4[3]; /*0x4bace0*/
       this->q008 = v4[2]; /*0x4bace6*/
     }
@@ -8604,11 +8604,11 @@ int __thiscall DSurface_Lock(int *this, int a2, int a3)
 
   if ( !MEMORY[0x89F978] && !MEMORY[0xA8ED80] ) /*0x4bad99*/
     return 0; /*0x4bad99*/
-  v4 = this->q01C; /*0x4bad9f*/
-  if ( v4 && (*(int (__stdcall **)(_DWORD))(*(_DWORD *)v4 + 96))(this->q01C) == -2005532222 ) /*0x4badb1*/
+  v4 = this->u32_1C; /*0x4bad9f*/
+  if ( v4 && (*(int (__stdcall **)(_DWORD))(*(_DWORD *)v4 + 96))(this->u32_1C) == -2005532222 ) /*0x4badb1*/
   {
-    if ( (*(int (__stdcall **)(_DWORD))(*(_DWORD *)this->q01C + 108))(this->q01C) /*0x4badca*/
-      || (*(int (__stdcall **)(_DWORD))(*(_DWORD *)this->q01C + 96))(this->q01C) )
+    if ( (*(int (__stdcall **)(_DWORD))(*(_DWORD *)this->u32_1C + 108))(this->u32_1C) /*0x4badca*/
+      || (*(int (__stdcall **)(_DWORD))(*(_DWORD *)this->u32_1C + 96))(this->u32_1C) )
     {
       return 0; /*0x4badcf*/
     }
@@ -8633,7 +8633,7 @@ LABEL_14:
       return a2 * (*(int (__thiscall **)(int *))(*this + 112))(this) + v9 + this->q014; /*0x4baeac*/
     }
     memset(v11, 0, sizeof(v11)); /*0x4bae2d*/
-    v7 = this->q01C; /*0x4bae2f*/
+    v7 = this->u32_1C; /*0x4bae2f*/
     v11[0] = 108; /*0x4bae38*/
     if ( !(*(int (__stdcall **)(int, _DWORD, _DWORD *, int, _DWORD))(*(_DWORD *)v7 + 100))(v7, 0, v11, 1, 0) ) /*0x4bae46*/
     {
@@ -8658,11 +8658,11 @@ char __thiscall DSurface_CanLock(_DWORD *this, int a2, int a3)
   if ( !this->q00C ) /*0x4baec6*/
   {
     memset(v6, 0, sizeof(v6)); /*0x4baed9*/
-    v4 = this->q01C; /*0x4baedb*/
+    v4 = this->u32_1C; /*0x4baedb*/
     v6[0] = 108; /*0x4baee6*/
     if ( (*(int (__stdcall **)(int, _DWORD, _DWORD *, _DWORD, _DWORD))(*(_DWORD *)v4 + 100))(v4, 0, v6, 0, 0) ) /*0x4baef4*/
       return 0; /*0x4baf02*/
-    (*(void (__stdcall **)(_DWORD, _DWORD))(*(_DWORD *)this->q01C + 128))(this->q01C, v6[9]); /*0x4baf10*/
+    (*(void (__stdcall **)(_DWORD, _DWORD))(*(_DWORD *)this->u32_1C + 128))(this->u32_1C, v6[9]); /*0x4baf10*/
   }
   return 1; /*0x4baefe*/
 }
@@ -8671,7 +8671,7 @@ char __thiscall DSurface_CanLock(_DWORD *this, int a2, int a3)
 // ==== 0x004BAF20  DSurface::CheckBltStatus  this=DSurface  sig=csp ====
 BOOL __thiscall DSurface::CheckBltStatus(_DWORD **this)
 {
-  return (*(int (__stdcall **)(_DWORD, int))(*this->q01C + 52))(this->q01C, 1) == 0; /*0x4baf30*/
+  return (*(int (__stdcall **)(_DWORD, int))(*this->u32_1C + 52))(this->u32_1C, 1) == 0; /*0x4baf30*/
 }
 
 
@@ -8686,12 +8686,12 @@ char __thiscall DSurface_Unlock(int *this)
 
   if ( MEMORY[0x89F978] || MEMORY[0xA8ED80] ) /*0x4baf54*/
   {
-    v2 = this->q01C; /*0x4baf56*/
+    v2 = this->u32_1C; /*0x4baf56*/
     if ( v2 ) /*0x4baf5b*/
     {
-      if ( (*(int (__stdcall **)(_DWORD))(*(_DWORD *)v2 + 96))(this->q01C) == -2005532222 /*0x4baf7d*/
-        && !(*(int (__stdcall **)(_DWORD))(*(_DWORD *)this->q01C + 108))(this->q01C)
-        && !(*(int (__stdcall **)(_DWORD))(*(_DWORD *)this->q01C + 96))(this->q01C) )
+      if ( (*(int (__stdcall **)(_DWORD))(*(_DWORD *)v2 + 96))(this->u32_1C) == -2005532222 /*0x4baf7d*/
+        && !(*(int (__stdcall **)(_DWORD))(*(_DWORD *)this->u32_1C + 108))(this->u32_1C)
+        && !(*(int (__stdcall **)(_DWORD))(*(_DWORD *)this->u32_1C + 96))(this->u32_1C) )
       {
         v3 = this->q00C; /*0x4baf84*/
         if ( v3 > 0 ) /*0x4baf89*/
@@ -8713,7 +8713,7 @@ char __thiscall DSurface_Unlock(int *this)
   this->q00C = v6; /*0x4bafb4*/
   if ( !v6 ) /*0x4bafb7*/
   {
-    (*(void (__stdcall **)(_DWORD, _DWORD))(*(_DWORD *)this->q01C + 128))(this->q01C, this->q014); /*0x4bafc3*/
+    (*(void (__stdcall **)(_DWORD, _DWORD))(*(_DWORD *)this->u32_1C + 128))(this->u32_1C, this->q014); /*0x4bafc3*/
     this->q014 = 0; /*0x4bafc9*/
   }
   return 1; /*0x4bafd0*/
@@ -8739,11 +8739,11 @@ char __thiscall DSurface_RestoreIfLost(int *this)
 
   if ( !MEMORY[0x89F978] && !MEMORY[0xA8ED80] ) /*0x4bb014*/
     return 0; /*0x4bb014*/
-  v3 = this->q01C; /*0x4bb01b*/
-  if ( v3 && (*(int (__stdcall **)(_DWORD))(*(_DWORD *)v3 + 96))(this->q01C) == -2005532222 ) /*0x4bb02d*/
+  v3 = this->u32_1C; /*0x4bb01b*/
+  if ( v3 && (*(int (__stdcall **)(_DWORD))(*(_DWORD *)v3 + 96))(this->u32_1C) == -2005532222 ) /*0x4bb02d*/
   {
-    if ( (*(int (__stdcall **)(_DWORD))(*(_DWORD *)this->q01C + 108))(this->q01C) /*0x4bb042*/
-      || (*(int (__stdcall **)(_DWORD))(*(_DWORD *)this->q01C + 96))(this->q01C) )
+    if ( (*(int (__stdcall **)(_DWORD))(*(_DWORD *)this->u32_1C + 108))(this->u32_1C) /*0x4bb042*/
+      || (*(int (__stdcall **)(_DWORD))(*(_DWORD *)this->u32_1C + 96))(this->u32_1C) )
     {
       return 0; /*0x4bb01a*/
     }
@@ -8884,11 +8884,11 @@ char __thiscall DSurface::Blit(int *this, int *a1, int *a2, _DWORD *a3, int *a4,
   }
   if ( !stru_89E138.__pad_14B0[912] && !HouseClass_Player.__pad_5568[23244] ) /*0x4bb20f*/
     return 0; /*0x4bb20f*/
-  v14 = this->q01C; /*0x4bb215*/
-  if ( v14 && (*(int (__stdcall **)(_DWORD))(*(_DWORD *)v14 + 96))(this->q01C) == -2005532222 ) /*0x4bb227*/
+  v14 = this->u32_1C; /*0x4bb215*/
+  if ( v14 && (*(int (__stdcall **)(_DWORD))(*(_DWORD *)v14 + 96))(this->u32_1C) == -2005532222 ) /*0x4bb227*/
   {
-    if ( (*(int (__stdcall **)(_DWORD))(*(_DWORD *)this->q01C + 108))(this->q01C) /*0x4bb240*/
-      || (*(int (__stdcall **)(_DWORD))(*(_DWORD *)this->q01C + 96))(this->q01C) )
+    if ( (*(int (__stdcall **)(_DWORD))(*(_DWORD *)this->u32_1C + 108))(this->u32_1C) /*0x4bb240*/
+      || (*(int (__stdcall **)(_DWORD))(*(_DWORD *)this->u32_1C + 96))(this->u32_1C) )
     {
       return 0; /*0x4bb245*/
     }
@@ -9076,21 +9076,21 @@ char __thiscall DSurface_FillRectEx(int *this, int a2, int a3, int a4)
   char v19[16]; // [esp+60h] [ebp-74h] BYREF
   _DWORD v20[25]; // [esp+70h] [ebp-64h] BYREF
 
-  if ( this->q01C && *(int *)(a3 + 8) > 0 && *(int *)(a3 + 12) > 0 ) /*0x4bb64d*/
+  if ( this->u32_1C && *(int *)(a3 + 8) > 0 && *(int *)(a3 + 12) > 0 ) /*0x4bb64d*/
   {
     if ( !g_DDraw_UseHWBlit /*0x4bb675*/
       || (*(unsigned __int8 (__thiscall **)(int *))(*this + 108))(this)
-      || (*(int (__stdcall **)(_DWORD, int))(*(_DWORD *)this->q01C + 52))(this->q01C, 1) )
+      || (*(int (__stdcall **)(_DWORD, int))(*(_DWORD *)this->u32_1C + 52))(this->u32_1C, 1) )
     {
       return XSurface::FillRectEx(a2, a3, a4); /*0x4bb81d*/
     }
     if ( MEMORY[0x89F978] || MEMORY[0xA8ED80] ) /*0x4bb690*/
     {
-      v5 = this->q01C; /*0x4bb696*/
-      if ( !v5 || (*(int (__stdcall **)(_DWORD))(*(_DWORD *)v5 + 96))(this->q01C) != -2005532222 ) /*0x4bb6a8*/
+      v5 = this->u32_1C; /*0x4bb696*/
+      if ( !v5 || (*(int (__stdcall **)(_DWORD))(*(_DWORD *)v5 + 96))(this->u32_1C) != -2005532222 ) /*0x4bb6a8*/
         goto LABEL_15; /*0x4bb6a8*/
-      if ( !(*(int (__stdcall **)(_DWORD))(*(_DWORD *)this->q01C + 108))(this->q01C) /*0x4bb6c1*/
-        && !(*(int (__stdcall **)(_DWORD))(*(_DWORD *)this->q01C + 96))(this->q01C) )
+      if ( !(*(int (__stdcall **)(_DWORD))(*(_DWORD *)this->u32_1C + 108))(this->u32_1C) /*0x4bb6c1*/
+        && !(*(int (__stdcall **)(_DWORD))(*(_DWORD *)this->u32_1C + 96))(this->u32_1C) )
       {
         v6 = this->q00C; /*0x4bb6cc*/
         if ( v6 > 0 ) /*0x4bb6d1*/
@@ -9116,7 +9116,7 @@ LABEL_15:
         v14 = v10[3]; /*0x4bb781*/
         if ( v13 > 0 && v14 > 0 ) /*0x4bb792*/
         {
-          v15 = this->q01C; /*0x4bb79c*/
+          v15 = this->u32_1C; /*0x4bb79c*/
           v17[0] = v11; /*0x4bb79f*/
           v17[2] = v11 + v13; /*0x4bb7a3*/
           v17[3] = v12 + v14; /*0x4bb7a7*/
@@ -10958,8 +10958,8 @@ char __thiscall DSurface_DrawLineZBufColored(
     else
       v97 = v21 - v32; /*0x4be235*/
   }
-  (*(void (__thiscall **)(void *))(this->q01C)(this); /*0x4be24f*/
-  v33 = (*(int (__thiscall **)(void *, _DWORD, _DWORD))(*(_DWORD *)this + 92))(this, v87, HIDWORD(v87)); /*0x4be269*/
+  (*(void (__thiscall **)(void *))(this->u32_70)(this); /*0x4be24f*/
+  v33 = (*(int (__thiscall **)(void *, _DWORD, _DWORD))(this->u32_5C)(this, v87, HIDWORD(v87)); /*0x4be269*/
   v96 = v33; /*0x4be26d*/
   if ( !MEMORY[0x887644] ) /*0x4be274*/
     return 0; /*0x4be274*/
@@ -10978,7 +10978,7 @@ char __thiscall DSurface_DrawLineZBufColored(
   v71 = v88 - v87; /*0x4be305*/
   v38 = HIDWORD(v88) - HIDWORD(v87); /*0x4be310*/
   v39 = v98 - v97; /*0x4be31a*/
-  v40 = (*(int (__thiscall **)(void *))(*(_DWORD *)this + 116))(this); /*0x4be31c*/
+  v40 = (*(int (__thiscall **)(void *))(this->u32_1D0)(this); /*0x4be31c*/
   v65 = v40; /*0x4be321*/
   if ( v38 < 0 ) /*0x4be325*/
   {
@@ -11207,7 +11207,7 @@ char __thiscall DSurface_DrawLineZBufColored(
       while ( !v50 ); /*0x4be58d*/
     }
   }
-  (*(void (__thiscall **)(void *))(this->q018)(this); /*0x4be599*/
+  (*(void (__thiscall **)(void *))(this->q060)(this); /*0x4be599*/
   return 1; /*0x4be59c*/
 }
 
@@ -11975,7 +11975,7 @@ LABEL_43:
             v34 += v66; /*0x4bfbd7*/
             if ( ++v33 > v54 - v52 ) /*0x4bfbdc*/
             {
-              (*(void (__thiscall **)(void *))(this->q018)(this); /*0x4bfbeb*/
+              (*(void (__thiscall **)(void *))(this->q060)(this); /*0x4bfbeb*/
               return 1; /*0x4bfbf7*/
             }
           }

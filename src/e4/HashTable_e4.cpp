@@ -22,6 +22,7 @@ int HashTable::Get(IUnknown * aP1, IUnknown * aP2)
   aP2->field_0 = (int)(v4 + 1); /*0x6247c3*/
   return 1; /*0x62476b*/
 }
+}
 
 // 0x624FC0
 AbstractClass * * HashTable::Grow2()
@@ -69,6 +70,7 @@ AbstractClass * * HashTable::Grow2()
     }
     __3_YAXPAX_Z(v3); /*0x625054*/
   }
+}
 }
 
 // 0x625090
@@ -204,6 +206,7 @@ LABEL_23:
     return v34; /*0x6252e1*/
   }
 }
+}
 
 // 0x625780
 void HashTable::Shrink2()
@@ -251,6 +254,7 @@ void HashTable::Shrink2()
     }
     __3_YAXPAX_Z(v3); /*0x62581a*/
   }
+}
 }
 
 // 0x625830
@@ -300,6 +304,7 @@ void HashTable::Rebuild2()
     __3_YAXPAX_Z(v3); /*0x6258d0*/
   }
 }
+}
 
 // 0x625F60
 int HashTable::FindString(char * Str1, IUnknown * aP2)
@@ -324,6 +329,7 @@ int HashTable::FindString(char * Str1, IUnknown * aP2)
   }
   return v4; /*0x625f86*/
 }
+}
 
 // 0x625FB0
 int HashTable::FindChunk(char * Str1, void * a2, CCINIClass * aP3)
@@ -345,6 +351,7 @@ int HashTable::FindChunk(char * Str1, void * a2, CCINIClass * aP3)
   qmemcpy(a2, *(const void **)(v4 + 8), v6); /*0x626003*/
   *(_DWORD *)aP3->__pad_0 = *(unsigned __int16 *)(v4 + 6); /*0x626013*/
   return v4 != 0; /*0x625fd6*/
+}
 }
 
 // 0x6B9530
@@ -479,6 +486,7 @@ LABEL_23:
   }
   __3_YAXPAX_Z(*(void **)this); /*0x6b972b*/
 }
+}
 
 // 0x6BA140
 int HashTable::Find(const char * a1, ConvertClass * aP2)
@@ -519,6 +527,7 @@ LABEL_7:
     return 0; /*0x6ba1cd*/
   }
 }
+}
 
 // 0x6BA230
 CampaignClass * * HashTable::RemoveEntry(const char * a2)
@@ -553,20 +562,20 @@ CampaignClass * * HashTable::RemoveEntry(const char * a2)
     __int64 v17 = (unsigned int)(v6 - 1); /*0x6ba2c7*/
     *(float *)&v17 = (double)v17 / (double)v7; /*0x6ba2e3*/
     int v8 = this->vt_slot_24(&v16) & ((1 << this->HashTable_field_0x0C) - 1); /*0x6ba2f5*/
-    HashTable *v9 = *(_DWORD *)(*(_DWORD *)this + 4 * v8); /*0x6ba2f9*/
+    HashTable *v9 = *(_DWORD *)(*(_DWORD *)&this->u32_10 * v8); /*0x6ba2f9*/
     if ( v9 ) /*0x6ba2fe*/
     {
       if ( String::Compare((const char **)v9, (const char **)&v16) ) /*0x6ba30b*/
       {
-        SessionClass *v10 = *(_DWORD **)(*(_DWORD *)this + 4 * v8); /*0x6ba316*/
+        SessionClass *v10 = *(_DWORD **)(*(_DWORD *)&this->u32_10 * v8); /*0x6ba316*/
         int v11 = v10[194]; /*0x6ba31b*/
         if ( v10 ) /*0x6ba321*/
         {
-          DeleteAndZero(*(void ***)(*(_DWORD *)this + 4 * v8)); /*0x6ba325*/
+          DeleteAndZero(*(void ***)(*(_DWORD *)&this->u32_10 * v8)); /*0x6ba325*/
           __3_YAXPAX_Z(v10); /*0x6ba32b*/
         }
         double v12 = *(float *)&v17; /*0x6ba335*/
-        *(_DWORD *)(*(_DWORD *)this + 4 * v8) = v11; /*0x6ba339*/
+        *(_DWORD *)(*(_DWORD *)&this->u32_10 * v8) = v11; /*0x6ba339*/
         bool v13 = v12 < this->q020; /*0x6ba33f*/
         bool v14 = v12 == this->q020; /*0x6ba33f*/
         --this->HashTable_field_0x04; /*0x6ba343*/
@@ -575,17 +584,17 @@ CampaignClass * * HashTable::RemoveEntry(const char * a2)
       }
       else
       {
-        HashTable *v15 = *(_DWORD *)(v9 + 776); /*0x6ba34f*/
+        HashTable *v15 = v9->u32_308; /*0x6ba34f*/
         if ( v15 ) /*0x6ba357*/
         {
           while ( !String::Compare((const char **)v15, (const char **)&v16) ) /*0x6ba367*/
           {
             v9 = v15; /*0x6ba369*/
-            v15 = *(_DWORD *)(v15 + 776); /*0x6ba36b*/
+            v15 = v15->u32_308; /*0x6ba36b*/
             if ( !v15 ) /*0x6ba373*/
               goto LABEL_20; /*0x6ba373*/
           }
-          *(_DWORD *)(v9 + 776) = *(_DWORD *)(v15 + 776); /*0x6ba37d*/
+          v9->u32_308 = v15->u32_308; /*0x6ba37d*/
           --this->HashTable_field_0x04; /*0x6ba389*/
           DeleteAndZero((void **)v15); /*0x6ba390*/
           __3_YAXPAX_Z((void *)v15); /*0x6ba396*/
@@ -602,6 +611,7 @@ LABEL_22:
     (**(void (__thiscall ***)(_DWORD, int))v18[0])(v18[0], 1); /*0x6ba3c0*/
 LABEL_24:
   DeleteAndZero(&v16); /*0x6ba3c2*/
+}
 }
 
 // 0x6BAC40
@@ -758,6 +768,7 @@ LABEL_24:
     return aP1a; /*0x6baede*/
   }
 }
+}
 
 // 0x6BAEF0
 AbstractClass * * HashTable::RebuildEx()
@@ -805,6 +816,7 @@ AbstractClass * * HashTable::RebuildEx()
     }
     __3_YAXPAX_Z(v3); /*0x6baf90*/
   }
+}
 }
 
 // 0x724730
@@ -901,6 +913,7 @@ LABEL_13:
   if ( Block ) /*0x72489e*/
     __3_YAXPAX_Z(Block); /*0x7248a1*/
 }
+}
 
 // 0x7ACE60
 unsigned int HashTable::CleanupAndResize()
@@ -972,6 +985,7 @@ unsigned int HashTable::CleanupAndResize()
   }
   return result; /*0x7acf65*/
 }
+}
 
 // 0x7ACF70
 unsigned int HashTable::Rebuild()
@@ -987,7 +1001,7 @@ unsigned int HashTable::Rebuild()
     while ( v3 ) /*0x7acf87*/
     {
       v4 = (void **)v3; /*0x7acf89*/
-      v3 = *(_DWORD *)(v3 + 272); /*0x7acf8b*/
+      v3 = v3->u32_110; /*0x7acf8b*/
       DeleteAndZero(v4); /*0x7acf97*/
       __3_YAXPAX_Z(v4); /*0x7acf9d*/
     }
@@ -1043,6 +1057,7 @@ unsigned int HashTable::Rebuild()
   }
   return result; /*0x7ad07e*/
 }
+}
 
 // 0x7ADC60
 int HashTable::LookupString(const char ** a2, unsigned int * a3)
@@ -1066,6 +1081,7 @@ int HashTable::LookupString(const char ** a2, unsigned int * a3)
   }
   *a3 = v4 + 4; /*0x7adcc5*/
   return 1; /*0x7adc6b*/
+}
 }
 
 // 0x7ADCD0
@@ -1222,6 +1238,7 @@ LABEL_24:
     return aP1a; /*0x7adf53*/
   }
 }
+}
 
 // 0x7AE1F0
 AbstractClass * * HashTable::Lookup(ObjectClass * aP1, TechnoTypeClass * aP2)
@@ -1370,6 +1387,7 @@ LABEL_23:
     return aP1a; /*0x7ae44a*/
   }
 }
+}
 
 // 0x7AE510
 AbstractClass * * HashTable::Grow()
@@ -1417,6 +1435,7 @@ AbstractClass * * HashTable::Grow()
     }
     __3_YAXPAX_Z(v3); /*0x7ae59e*/
   }
+}
 }
 
 // 0x7AE950
@@ -1561,6 +1580,7 @@ LABEL_24:
     return v38; /*0x7aebee*/
   }
 }
+}
 
 // 0x7AEC00
 void HashTable::Shrink()
@@ -1608,6 +1628,7 @@ void HashTable::Shrink()
     }
     __3_YAXPAX_Z(v3); /*0x7aeca0*/
   }
+}
 }
 
 // 0x625070

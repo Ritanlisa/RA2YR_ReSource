@@ -10,6 +10,7 @@ unsigned int * AddTeamCommand::Construct(int a2)
   *this = &vt_AddTeamCommandClass; /*0x5360b9*/
   return this; /*0x5360bf*/
 }
+}
 
 // 0x5360D0
 void * AddTeamCommand::AddRef()
@@ -20,6 +21,7 @@ void * AddTeamCommand::AddRef()
     (ObjectClass *)&stru_8270D8.customSound_controller[3],
     (INIClass *)this->AddTeamCommand_field_00);
   return (ObjectClass *)&HouseClass_Player[47208]; /*0x5360eb*/
+}
 }
 
 // 0x5360F0
@@ -33,6 +35,7 @@ void * AddTeamCommand::Release()
   StringCSF = GetStringCSF(DataGlobal_827148, 0, g_Str_File_Init_CPP, 6326); /*0x536105*/
   swprintf(&g_TeamCommandBuffer, (const size_t)StringCSF, v3); /*0x536110*/
   return &g_TeamCommandBuffer; /*0x53611d*/
+}
 }
 
 // 0x536120

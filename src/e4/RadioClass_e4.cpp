@@ -31,6 +31,7 @@ unsigned int * RadioClass::Release()
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x65AA80
 namespace ra2 {
@@ -44,6 +45,7 @@ int RadioClass::ProcessCmd()
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x65AB10
 namespace ra2 {
@@ -74,6 +76,7 @@ int RadioClass::PowerDrainUpdate(AbstractClass * aP1)
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x65AB80
 namespace ra2 {
@@ -145,6 +148,7 @@ LABEL_8:
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x65AD90
 namespace ra2 {
@@ -170,6 +174,7 @@ int RadioClass::FindLinkIndex(int a2)
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x65ADC0
 namespace ra2 {
@@ -192,6 +197,7 @@ int RadioClass::HasFreeLink()
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x65AE60
 namespace ra2 {
@@ -215,6 +221,7 @@ void RadioClass::SetLinkCount(int a2)
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x65AAC0
 namespace ra2 {

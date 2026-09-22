@@ -1244,7 +1244,7 @@ python tools/type_infer/auto_name.py
 
 ## 下一会话快速接手指引
 
-0. **【最高优先】先读 `docs/mech_rebuild_plan.md`——机械重建 1-5 步 + 回填已完成，当前阶段 = 第 6 步 RA2MCP。G30 缺口总账轮已完成（缺口 A e4 试点 5 件 PASS+判别规则回写；缺口 B #150 IsTechInfiltrated/IsProductionInfiltrated 双 PASS；缺口 C #151 BuildingClass::CheckState1/2 四方同步；缺口 D j_Game_ProcessIdle 正名；净增 +7 → completed 12,687 / pending 3,920）——执行记录 = mech_rebuild_plan.md「G30 执行记录」节 + docs/g30_prep.md「G30 执行结果」。下一步：①修 #154（E1 生成器 MEMORY[0x] 全局声明盲区 = class="" 池最大阻塞）②#152/#153 词汇缺口裁决 ③harvest async 放量收割。G26 及此前 fleet/H5 配额管线已被取代，不要恢复执行。**
+0. **【最高优先】先读 `docs/mech_rebuild_plan.md`——当前阶段 = Step-4 收敛（G31 数据供给轮，2026-09-22）。五连根因修复：①param 通道冒号 bug（4,824 参数类型从未生效）②this-key 通道接入（10,645 类类型）③stack_+N 通道接入（10,564 类类型槽，键=[esp+Xh] 显示值）④三处 →0x08 退格符损坏清除（裸 this+N 正则从未匹配过）⑤系统性漏}病修复（fix_leaks_general：472 文件/~4,350 函数，brace_delta/block_walker 块注释感知 span 基元）。CSP 供给：register_offset_members（注册 ~5,100 + ml→mt sync 17,061 + canon 宇宙 1,597→2,959 类）。违规 census 28,026→15,423，MEMORY=0。执行记录 = mech_rebuild_plan.md「G31 执行记录」节。下一步：①残 39 文件 ±brace 尾巴 ②IDA 在线 typed-snapshot 重导（残 15.4K 命中函数重反编译，typed lvars 原生 ->Member）③verify_changed 回归 FAIL 归因。G26 及此前 fleet/H5 配额管线已被取代，不要恢复执行。**
 
 1. 看 `docs/coverage.md` 了解整体进度（**1,120 IDA 类全部完成 header，0 unknown_**）
 2. 看 **`docs/master_plan.md`（总计划·单一权威）** + **`docs/mech_rebuild_plan.md`（六步机械重建 + 第 6 步 RA2MCP 执行记录——当前权威工作文档）** + **`docs/g30_prep.md`（下一步工作包）**。全池基线：**12,687（G30 末；并行会话并行推进，接手先 stats 复核），pending 3,920**

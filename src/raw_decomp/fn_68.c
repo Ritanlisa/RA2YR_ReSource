@@ -1537,7 +1537,7 @@ char *__thiscall sub_681100(char *this)
 // ==== 0x00681110  ObjectClass::Map_Save  this=ScenarioClass  sig=csp ====
 int __thiscall sub_681110(_DWORD *this, int a2)
 {
-  this->q620 = a2; /*0x681114*/
+  this->q188 = a2; /*0x681114*/
   return a2; /*0x68111a*/
 }
 
@@ -9537,7 +9537,7 @@ _DWORD *__thiscall sub_68C200(_DWORD *this, int a2, int a3)
     }
   }
   *this = &vt_DynamicVectorClass_TechnoTypeClass; /*0x68c243*/
-  this->q005 = 10; /*0x68c249*/
+  this->u32_14 = 10; /*0x68c249*/
   this->q010 = 0; /*0x68c250*/
   return this; /*0x68c259*/
 }
@@ -9556,7 +9556,7 @@ char __thiscall DynamicVector_PushBack(_DWORD *this, VectorClass *aP1)
   {
     if ( !this->q034 && v3 ) /*0x68c276*/
       return 0; /*0x68c276*/
-    v4 = this->q005; /*0x68c278*/
+    v4 = this->u32_14; /*0x68c278*/
     if ( v4 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, char *, _DWORD))(*this + 8))(this, (char *)v3 + v4, 0) ) /*0x68c288*/
       return 0; /*0x68c28f*/
   }
@@ -9583,24 +9583,24 @@ _DWORD *__thiscall Multiplayer::CopyDataArray(_DWORD *this, ObjectClass *aP1)
   this->q002 = v3; /*0x68c2c7*/
   if ( !v3 ) /*0x68c2ca*/
   {
-    this->q001 = 0; /*0x68c319*/
-    *((_BYTE *)this + 13) = 0; /*0x68c320*/
+    this->u32_4 = 0; /*0x68c319*/
+    this->u8_D = 0; /*0x68c320*/
     return this; /*0x68c324*/
   }
   v4 = __2_YAPAXI_Z(4 * v3); /*0x68c2d4*/
   if ( !v4 ) /*0x68c2de*/
     v4 = 0; /*0x68c2e7*/
-  this->q001 = v4; /*0x68c2eb*/
+  this->u32_4 = v4; /*0x68c2eb*/
   if ( !v4 ) /*0x68c2ee*/
     return this; /*0x68c2ee*/
   v5 = this->q002; /*0x68c2f0*/
   v6 = 0; /*0x68c2f3*/
-  *((_BYTE *)this + 13) = 1; /*0x68c2f7*/
+  this->u8_D = 1; /*0x68c2f7*/
   if ( v5 <= 0 ) /*0x68c2fb*/
     return this; /*0x68c2fb*/
   do /*0x68c30f*/
   {
-    *(_DWORD *)(this->q001 + 4 * v6) = *(_DWORD *)(*(_DWORD *)&aP1->__pad_0[4] + 4 * v6); /*0x68c306*/
+    *(_DWORD *)(this->u32_4 + 4 * v6) = *(_DWORD *)(*(_DWORD *)&aP1->__pad_0[4] + 4 * v6); /*0x68c306*/
     ++v6; /*0x68c30c*/
   }
   while ( v6 < this->q002 ); /*0x68c30f*/
@@ -9752,7 +9752,7 @@ char *__thiscall FontClass::InitMetrics(
   *((_DWORD *)this + 198) = 15; /*0x68c78a*/
   *((_DWORD *)this + 199) = 25; /*0x68c794*/
   this->q0C8 = 24; /*0x68c79e*/
-  this->qC90 = 22; /*0x68c7a8*/
+  this->q324 = 22; /*0x68c7a8*/
   *((_DWORD *)this + 202) = 16; /*0x68c7b2*/
   *((_DWORD *)this + 203) = 19; /*0x68c7b8*/
   this->q0CC = 16; /*0x68c7c2*/

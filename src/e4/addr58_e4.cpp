@@ -128,6 +128,7 @@ LABEL_28:
   }
 }
 } // namespace gamemd
+}
 
 // 0x583AD0
 namespace gamemd {
@@ -234,6 +235,7 @@ LABEL_16:
   }
 }
 } // namespace gamemd
+}
 
 // 0x585F40
 namespace gamemd {
@@ -328,6 +330,7 @@ void InterpolateTerrainLighting(int a1, MouseClass * aP1, int a3, int a4)
   return (v23 + v25) >> 1; /*0x586076*/
 }
 } // namespace gamemd
+}
 
 // 0x586BF0
 namespace gamemd {
@@ -450,6 +453,7 @@ int MarkCliffEdgePassability(int a1)
   return result; /*0x586e48*/
 }
 } // namespace gamemd
+}
 
 // 0x588570
 namespace gamemd {
@@ -552,6 +556,7 @@ LABEL_21:
   return v5; /*0x588744*/
 }
 } // namespace gamemd
+}
 
 // 0x588750
 namespace gamemd {
@@ -649,6 +654,7 @@ LABEL_24:
   return result; /*0x58894c*/
 }
 } // namespace gamemd
+}
 
 // 0x588CE0
 void unknown::ddtor()
@@ -682,6 +688,7 @@ int unknown::Read(unsigned short * a2)
   }
   return result; /*0x5896e4*/
 }
+}
 
 // 0x58B670
 namespace gamemd {
@@ -691,6 +698,7 @@ void sub_58B670()
   *(double *)&Buffer[40] = Math::ArcTan((double)(2 * dword_ABED00) / dbl_ABE368); /*0x58b692*/
 }
 } // namespace gamemd
+}
 
 // 0x58B6E0
 namespace gamemd {
@@ -703,6 +711,7 @@ int sub_58B6E0()
   return 0; /*0x58b6f1*/
 }
 } // namespace gamemd
+}
 
 // 0x58B7E0
 namespace gamemd {
@@ -712,6 +721,7 @@ int sub_58B7E0()
   return dword_ABDFD4; /*0x58b7e5*/
 }
 } // namespace gamemd
+}
 
 // 0x58B7F0
 namespace gamemd {
@@ -721,6 +731,7 @@ int sub_58B7F0()
   return dword_ABDFD0; /*0x58b7f5*/
 }
 } // namespace gamemd
+}
 
 // 0x58B800
 namespace gamemd {
@@ -730,6 +741,7 @@ int sub_58B800()
   return dword_ABEC90; /*0x58b805*/
 }
 } // namespace gamemd
+}
 
 // 0x58B810
 namespace gamemd {
@@ -739,6 +751,7 @@ int * sub_58B810()
   return dword_ABECD0; /*0x58b815*/
 }
 } // namespace gamemd
+}
 
 // 0x58B820
 namespace gamemd {
@@ -856,6 +869,7 @@ ScenarioClass * * ComputeMapCameraBounds()
   return result; /*0x58baef*/
 }
 } // namespace gamemd
+}
 
 // 0x58EBC0
 namespace gamemd {
@@ -1017,6 +1031,7 @@ LABEL_32:
   return result; /*0x58ee90*/
 }
 } // namespace gamemd
+}
 
 // 0x58EF10
 namespace gamemd {
@@ -1135,6 +1150,7 @@ AbstractClass * * sub_58EF10()
   return 1; /*0x58f0ac*/
 }
 } // namespace gamemd
+}
 
 // 0x585EE0
 namespace gamemd {
@@ -1226,6 +1242,7 @@ int unknown::Seek(int a2, int a3)
   *(_BYTE *)(a2 + 8) = *(_BYTE *)(v3 + 8); /*0x588d4d*/
   *(_DWORD *)(a2 + 12) = *(_DWORD *)(v3 + 12); /*0x588d53*/
   return a2; /*0x588d56*/
+}
 }
 
 // 0x58B110

@@ -72,6 +72,7 @@ void sub_4C1440()
   return result; /*0x4c1470*/
 }
 } // namespace gamemd
+}
 
 // 0x4C14D0
 namespace gamemd {
@@ -163,6 +164,7 @@ void sub_4C14D0()
   return result; /*0x4c151c*/
 }
 } // namespace gamemd
+}
 
 // 0x4C1600
 namespace gamemd {
@@ -204,6 +206,7 @@ void sub_4C1600()
   return result; /*0x4c168c*/
 }
 } // namespace gamemd
+}
 
 // 0x4C16A0
 namespace gamemd {
@@ -337,6 +340,7 @@ void InitializeRadialGradientTexture()
   return result; /*0x4c16e8*/
 }
 } // namespace gamemd
+}
 
 // 0x4C1E70
 namespace gamemd {
@@ -367,6 +371,7 @@ void sub_4C1E70(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, 
            0);
 }
 } // namespace gamemd
+}
 
 // 0x4C2790
 namespace gamemd {
@@ -380,7 +385,7 @@ int E4Recv_4C2790::sub_4C2790()
   int v4[2]; // [esp+10h] [ebp-8h] BYREF
     Coord::To_Screen(*(_DWORD **)&DataGlobal_87F8E4[31296], (_DWORD *)this, (IUnknown *)v4); /*0x4c27aa*/
   int v3[2]; // [esp+8h] [ebp-10h] BYREF
-    Coord::To_Screen(*(_DWORD **)&DataGlobal_87F8E4[31296], (_DWORD *)(this + 12), (IUnknown *)v3); /*0x4c27be*/
+    Coord::To_Screen(*(_DWORD **)&DataGlobal_87F8E4[31296], (_DWORD *)(&this->M42), (IUnknown *)v3); /*0x4c27be*/
     if ( ClipLine(v4, v3, (int *)&DataGlobal_87F8E4[30396]) )
       Lightning::Draw(
         (_DWORD *)this,
@@ -393,11 +398,12 @@ int E4Recv_4C2790::sub_4C2790()
         (unsigned char)this->M44 != 0 ? 5 : 10);
     ++this->M28; /*0x4c281a*/
   }
-  result = *(int *)(this + 40) >> 1; /*0x4c2821*/
+  result = this->q028 >> 1; /*0x4c2821*/
   this->M40 = result; /*0x4c2823*/
   return result; /*0x4c2820*/
 }
 } // namespace gamemd
+}
 
 // 0x4C2830
 namespace gamemd {
@@ -484,6 +490,7 @@ void sub_4C2830()
   return result; /*0x4c29d1*/
 }
 } // namespace gamemd
+}
 
 // 0x4C29E0
 namespace gamemd {
@@ -516,6 +523,7 @@ ParticleSystemClass * * sub_4C29E0()
   DataGlobal_8A0E90 = 0; /*0x4c2a4a*/
 }
 } // namespace gamemd
+}
 
 // 0x4C38E0
 namespace gamemd {
@@ -573,6 +581,7 @@ LABEL_6:
   return v5; /*0x4c3a0a*/
 }
 } // namespace gamemd
+}
 
 // 0x4C3DD0
 namespace gamemd {
@@ -582,7 +591,7 @@ AbstractClass * * E4Recv_4C3DD0::sub_4C3DD0(int a2)
 
   TextRenderer::GetInstance(); /*0x4c3dd9*/
   Text::MeasureWidth(*this, 0); /*0x4c3de5*/
-  AbstractClass *v3 = *(this + 2); /*0x4c3def*/
+  AbstractClass *v3 = this->M8; /*0x4c3def*/
   _DWORD v5[4]; // [esp+4h] [ebp-10h] BYREF
   v5[2] = g_DDraw_Active; /*0x4c3df8*/
   v5[0] = 0; /*0x4c3e09*/
@@ -597,6 +606,7 @@ AbstractClass * * E4Recv_4C3DD0::sub_4C3DD0(int a2)
            1);
 }
 } // namespace gamemd
+}
 
 // 0x4C83E0
 namespace gamemd {
@@ -641,6 +651,7 @@ void DialogFunc(HWND hDlg, UINT a2, WPARAM a3, LPARAM a4)
   return 0; /*0x4c844e*/
 }
 } // namespace gamemd
+}
 
 // 0x4C95D0
 namespace gamemd {
@@ -651,7 +662,7 @@ unsigned int * E4Recv_4C95D0::sub_4C95D0(unsigned int * a2, unsigned short * a3)
   __int16 v11; // cx
   AbstractClass *v12; // ecx
   int v14; // [esp+Ch] [ebp-4h]
-  v3 = *(this + 10); /*0x4c95d2*/
+  v3 = *(&this->M40); /*0x4c95d2*/
   if ( v3 <= 0 ) /*0x4c95db*/
     goto LABEL_14; /*0x4c95db*/
   AbstractClass *v4 = this->M8; /*0x4c95dd*/
@@ -668,8 +679,8 @@ LABEL_14:
   }
   if ( !v5 ) /*0x4c95fa*/
     goto LABEL_14; /*0x4c95fa*/
-  AbstractClass *v6 = (__int16)(*this - *(this + 2)); /*0x4c9606*/
-  __int64 v7 = (__int16)(*this - *(this + 2)); /*0x4c960b*/
+  AbstractClass *v6 = (__int16)(*this - this->M8); /*0x4c9606*/
+  __int64 v7 = (__int16)(*this - this->M8); /*0x4c960b*/
   int v8 = (int)((HIDWORD(v7) ^ v7) - HIDWORD(v7)) / v3; /*0x4c9611*/
   v14 = *(_DWORD *)this; /*0x4c9615*/
   if ( (__int16)v8 > 0 ) /*0x4c961c*/
@@ -696,6 +707,7 @@ LABEL_15:
   return a2; /*0x4c9655*/
 }
 } // namespace gamemd
+}
 
 // 0x4CB150
 namespace gamemd {
@@ -714,6 +726,7 @@ void ComputeDistortionVariant(float a1)
     return DataGlobal_84F084[v3]; /*0x4cb193*/
 }
 } // namespace gamemd
+}
 
 // 0x4CB4C0
 namespace gamemd {
@@ -752,6 +765,7 @@ void sub_4CB4C0()
   }
 }
 } // namespace gamemd
+}
 
 // 0x4CB580
 namespace gamemd {
@@ -760,8 +774,8 @@ AbstractClass * * E4Recv_4CB580::sub_4CB580(char * Source, int a3)
 {
 
   strncpy(this, Source, (IUnknown *)4); /*0x4cb58d*/
-  *((_WORD *)this + 2) = 1; /*0x4cb598*/
-  *((_WORD *)this + 3) = 1; /*0x4cb59c*/
+  this->M4 = 1; /*0x4cb598*/
+  this->M6 = 1; /*0x4cb59c*/
   int * v4 = (int *)__2_YAPAXI_Z(1u); /*0x4cb5a0*/
   unsigned int v5 = *((unsigned __int16 *)this + 3); /*0x4cb5b1*/
   this->M8 = v4; /*0x4cb5b3*/
@@ -772,6 +786,7 @@ AbstractClass * * E4Recv_4CB580::sub_4CB580(char * Source, int a3)
   return (ObjectClass *)this; /*0x4cb5c7*/
 }
 } // namespace gamemd
+}
 
 // 0x4CB640
 namespace gamemd {
@@ -780,8 +795,8 @@ void * E4Recv_4CB640::sub_4CB640(RandomStruct * aP1, int a3)
 {
 
   strncpy(this, (const char *)aP1, (IUnknown *)4); /*0x4cb64d*/
-  *((_WORD *)this + 2) = 3; /*0x4cb654*/
-  *((_WORD *)this + 3) = 2; /*0x4cb65a*/
+  this->M4 = 3; /*0x4cb654*/
+  this->M6 = 2; /*0x4cb65a*/
   int * v4 = (int *)__2_YAPAXI_Z(2u); /*0x4cb660*/
   unsigned int v5 = *((unsigned __int16 *)this + 3); /*0x4cb671*/
   this->M8 = v4; /*0x4cb673*/
@@ -792,6 +807,7 @@ void * E4Recv_4CB640::sub_4CB640(RandomStruct * aP1, int a3)
   return (ObjectClass *)this; /*0x4cb687*/
 }
 } // namespace gamemd
+}
 
 // 0x4CB6A0
 namespace gamemd {
@@ -800,8 +816,8 @@ void * E4Recv_4CB6A0::sub_4CB6A0(RandomStruct * aP1, int a3)
 {
 
   strncpy(this, (const char *)aP1, (IUnknown *)4); /*0x4cb6ad*/
-  *((_WORD *)this + 2) = 4; /*0x4cb6b4*/
-  *((_WORD *)this + 3) = 2; /*0x4cb6ba*/
+  this->M4 = 4; /*0x4cb6b4*/
+  this->M6 = 2; /*0x4cb6ba*/
   int * v4 = (int *)__2_YAPAXI_Z(2u); /*0x4cb6c0*/
   unsigned int v5 = *((unsigned __int16 *)this + 3); /*0x4cb6d1*/
   this->M8 = v4; /*0x4cb6d3*/
@@ -812,6 +828,7 @@ void * E4Recv_4CB6A0::sub_4CB6A0(RandomStruct * aP1, int a3)
   return (ObjectClass *)this; /*0x4cb6e7*/
 }
 } // namespace gamemd
+}
 
 // 0x4CEFB0
 namespace gamemd {
@@ -1085,6 +1102,7 @@ LABEL_60:
   return v23; /*0x4cf600*/
 }
 } // namespace gamemd
+}
 
 // 0x4C1B80
 namespace gamemd {
@@ -1940,7 +1958,7 @@ int E4Recv_4C4FC0::sub_4C4FC0(int a2)
     v4 = this->M4;
     if ( v4 )
   {
-    v5 = (*(int (__thiscall **)(int))(*(int *)(v4) + 44))(v4);
+    v5 = (*(int (__thiscall **)(int))(v4->q02C)(v4);
     Power::TimerProcess(v5);
     v6 = (*(int (__stdcall **)(int))(*(int *)(this->M4 + 4) + 16))(this->M4 + 4);
     return Power::TimerProcess(v6);

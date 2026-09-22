@@ -631,6 +631,7 @@ retn    0Ch
 */
 
 // IDA: 0x5200B0 (ProcessIdleDeploy, 428B)
+}
 // 0x5200b0
 AnimClass * * InfantryClass::ProcessIdleDeploy()
 {
@@ -699,6 +700,7 @@ LABEL_42:
     }
   }
   return v5;
+}
 }
 
 // 0x521b60
@@ -1838,6 +1840,7 @@ mov     esp, ebp
 pop     ebp
 retn    4
 */
+}
 
 // 0x521d80
 AnimClass * InfantryClass::ComputeDeploySpeedFactor()
@@ -2471,6 +2474,7 @@ retn    0Ch
 */
 
 // IDA: 0x5227F0 — checks if target can be attacked (not allied, not cloaked, in range)
+}
 // 0x5227f0
 bool InfantryClass::CanAttackTarget(HouseClass* other)
 {
@@ -3758,6 +3762,7 @@ mov     esp, ebp
 pop     ebp
 retn    4
 */
+}
 
 // 0x51f330
 int InfantryClass::FindPathToBuilding()
@@ -4087,6 +4092,7 @@ int InfantryClass::ProcessEnterOrRepair()
 // 0x522bc0
 bool InfantryClass::CanEnterBuilding()
 {
+}
 // 0x522bc0
     bool __thiscall InfantryClass::CanEnterBuilding(int *(void**)this)
 {
@@ -4150,6 +4156,7 @@ int InfantryClass::FindIdleMovePosition()
 // 0x51f640
 int InfantryClass::FindIdleAITarget()
 {
+}
 // 0x51f640
     int __thiscall InfantryClass::FindIdleAITarget(int *(void**)this)
 {
@@ -4365,6 +4372,7 @@ int InfantryClass::HandleTargetDestroyed()
         this->Type = 0;
     }
     return result;
+    }
 
 // 0x51f250
 int InfantryClass::ProcessUpdate()
@@ -5040,6 +5048,7 @@ pop     ebx
 add     esp, 20h
 retn
 */
+}
 
 // 0x51dbd0
 void* InfantryClass::CalcFacingToTarget()
@@ -5382,6 +5391,7 @@ mov     esp, ebp
 pop     ebp
 retn    4
 */
+}
 
 // 0x51bf90
 int InfantryClass::EvaluateTarget()
@@ -6590,6 +6600,7 @@ pop     ebx
 add     esp, 24h
 retn    14h
 */
+}
 
 // 0x51e140
 BuildingTypeClass * * InfantryClass::SelectAutoTarget(unsigned int flags, __int64 a3)
@@ -6632,6 +6643,10 @@ BuildingTypeClass * * InfantryClass::SelectAutoTarget(unsigned int flags, __int6
         && (*(unsigned __int8 (__thiscall **)(_BYTE *))(*(_DWORD *)v10 + 128))(v10)
         && !*(_BYTE *)((*(int (__thiscall **)(_DWORD))(*this->Archive + 132))(this->Archive)
                      + 3220)
+                     }
+                     }
+                     }
+                     }
 // 0x5f6360
         && ObjectClass::DistanceTo((void *)this, this->Archive) < 3840 )
       {
@@ -7668,6 +7683,7 @@ pop     ebx
 add     esp, 0Ch
 retn    4
 */
+}
 
 // 0x772ac0
 void InfantryClass::startPanic()

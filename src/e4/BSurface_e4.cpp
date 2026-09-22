@@ -65,6 +65,7 @@ unsigned int * BSurface::Construct(int a2, int a3, int a4, int a5)
   return this; /*0x410db0*/
 }
 } // namespace gamemd
+}
 
 // 0x7B8C60
 namespace gamemd {
@@ -77,39 +78,39 @@ int BSurface::CreateTripleBuffer()
 
   if ( !this->Width ) /*0x7b8c66*/
     return 0; /*0x7b8e70*/
-  IUnknown *v2 = *(_DWORD *)(this + 68); /*0x7b8c6f*/
+  IUnknown *v2 = this->ptr_44; /*0x7b8c6f*/
   if ( v2 /*0x7b8c9a*/
     && (*(__int16 *)(this->Width + 2) > v2->IsAboveScreenMargin()
-     || *(__int16 *)(this->Width + 4) > (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 68) + 128))(*(_DWORD *)(this + 68))) )
+     || *(__int16 *)(this->Width + 4) > (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(&this->u32_188) + 128))(this->ptr_44)) )
   {
-    v3 = *(void (__thiscall ****)(_DWORD, int))(this + 68); /*0x7b8c9c*/
+    v3 = *(void (__thiscall ****)(_DWORD, int))(&this->u32_188); /*0x7b8c9c*/
     if ( v3 ) /*0x7b8ca1*/
       (**v3)(v3, 1); /*0x7b8ca7*/
-    *(_DWORD *)(this + 68) = 0; /*0x7b8ca9*/
+    this->ptr_44 = 0; /*0x7b8ca9*/
   }
-  IUnknown *v4 = *(_DWORD *)(this + 88); /*0x7b8cac*/
+  IUnknown *v4 = this->ptr_58; /*0x7b8cac*/
   if ( v4 /*0x7b8cd7*/
     && (*(__int16 *)(this->Width + 2) > v4->IsAboveScreenMargin()
-     || *(__int16 *)(this->Width + 4) > (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 88) + 128))(*(_DWORD *)(this + 88))) )
+     || *(__int16 *)(this->Width + 4) > (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(&this->u32_208) + 128))(this->ptr_58)) )
   {
-    v5 = *(void (__thiscall ****)(_DWORD, int))(this + 88); /*0x7b8cd9*/
+    v5 = *(void (__thiscall ****)(_DWORD, int))(&this->u32_208); /*0x7b8cd9*/
     if ( v5 ) /*0x7b8cde*/
       (**v5)(v5, 1); /*0x7b8ce4*/
-    *(_DWORD *)(this + 88) = 0; /*0x7b8ce6*/
+    this->ptr_58 = 0; /*0x7b8ce6*/
   }
-  IUnknown *v6 = *(_DWORD *)(this + 108); /*0x7b8ce9*/
+  IUnknown *v6 = this->u32_6C; /*0x7b8ce9*/
   if ( v6 /*0x7b8d14*/
     && (*(__int16 *)(this->Width + 2) > v6->IsAboveScreenMargin()
-     || *(__int16 *)(this->Width + 4) > (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 108) + 128))(*(_DWORD *)(this + 108))) )
+     || *(__int16 *)(this->Width + 4) > (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(&this->u32_288) + 128))(this->u32_6C)) )
   {
-    v7 = *(void (__thiscall ****)(_DWORD, int))(this + 108); /*0x7b8d16*/
+    v7 = *(void (__thiscall ****)(_DWORD, int))(&this->u32_288); /*0x7b8d16*/
     if ( v7 ) /*0x7b8d1b*/
       (**v7)(v7, 1); /*0x7b8d21*/
-    *(_DWORD *)(this + 108) = 0; /*0x7b8d23*/
+    this->u32_6C = 0; /*0x7b8d23*/
   }
   if ( this->q009 ) /*0x7b8d26*/
   {
-    if ( !*(_DWORD *)(this + 68) ) /*0x7b8d33*/
+    if ( !this->ptr_44 ) /*0x7b8d33*/
     {
       CellStruct *v8 = __2_YAPAXI_Z(0x20u); /*0x7b8d3f*/
       if ( v8 ) /*0x7b8d46*/
@@ -130,9 +131,9 @@ int BSurface::CreateTripleBuffer()
       {
         v8 = 0; /*0x7b8d8a*/
       }
-      *(_DWORD *)(this + 68) = v8; /*0x7b8d8c*/
+      this->ptr_44 = v8; /*0x7b8d8c*/
     }
-    if ( !*(_DWORD *)(this + 88) ) /*0x7b8d8f*/
+    if ( !this->ptr_58 ) /*0x7b8d8f*/
     {
       IUnknown *v13 = __2_YAPAXI_Z(0x20u); /*0x7b8d9d*/
       if ( v13 ) /*0x7b8da4*/
@@ -153,9 +154,9 @@ int BSurface::CreateTripleBuffer()
       {
         v13 = 0; /*0x7b8de8*/
       }
-      *(_DWORD *)(this + 88) = v13; /*0x7b8dea*/
+      this->ptr_58 = v13; /*0x7b8dea*/
     }
-    if ( !*(_DWORD *)(this + 108) ) /*0x7b8ded*/
+    if ( !this->u32_6C ) /*0x7b8ded*/
     {
       IUnknown *v18 = __2_YAPAXI_Z(0x20u); /*0x7b8dfb*/
       if ( v18 ) /*0x7b8e02*/
@@ -176,12 +177,13 @@ int BSurface::CreateTripleBuffer()
       {
         v18 = 0; /*0x7b8e46*/
       }
-      *(_DWORD *)(this + 108) = v18; /*0x7b8e48*/
+      this->u32_6C = v18; /*0x7b8e48*/
     }
   }
-  return *(_DWORD *)(this + 68) && *(_DWORD *)(this + 88) && *(_DWORD *)(this + 108); /*0x7b8e62*/
+  return this->ptr_44 && this->ptr_58 && this->u32_6C; /*0x7b8e62*/
 }
 } // namespace gamemd
+}
 
 // 0x7BC970
 namespace gamemd {
@@ -244,6 +246,7 @@ unsigned int * BSurface::ConstructEx(int a2, int a3, int a4, int a5)
   return this; /*0x7bca43*/
 }
 } // namespace gamemd
+}
 
 // 0x4114F0
 char BSurface::Stub(int a1, int a2)

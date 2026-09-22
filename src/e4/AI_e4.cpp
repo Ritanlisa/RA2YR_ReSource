@@ -8,3 +8,4 @@ void AI_CreateMCV()
 {
 // (no pseudocode — ASM-only function)
 } // namespace gamemd
+}

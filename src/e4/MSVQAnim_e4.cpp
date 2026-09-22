@@ -27,12 +27,14 @@ void * MSVQAnim::GetFrameRect(int * a2)
   a2[3] = v4[3]; /*0x5cd2fb*/
   return a2; /*0x5cd2e8*/
 }
+}
 
 // 0x5CD320
 int MSVQAnim::Stub()
 {
 {
   return *(this + 45); /*0x5cd323*/
+}
 }
 
 // 0x5CECB0
@@ -42,18 +44,18 @@ MSVQAnim * MSVQAnim::QueryInterface(char a2)
     void (__thiscall ***v3)(int, int);
     int **v4;
     ObjectClass *v5;
-    v3 = (void (__thiscall ***)(int, int))*(this + 10);
+    v3 = (void (__thiscall ***)(int, int))*(&this->vtable20);
     *(void**)this = (ObjectClass *)&vt_MSVQAnim;
     if ( v3 )
     (**v3)(v3, 1);
-    v4 = (int **)*(this + 7);
+    v4 = (int **)this->referenceCount;
     if ( v4 )
   {
     MovieContext::Cleanup(v4);
-    v5 = *(this + 7);
+    v5 = this->referenceCount;
     if ( v5 )
     {
-    BinkMovie::Cleanup(*(this + 7));
+    BinkMovie::Cleanup(this->referenceCount);
     __3_YAXPAX_Z(v5);
     }
   }

@@ -67,6 +67,7 @@ LABEL_7:
   return a1 + 8 * (v3 / 2); /*0x52b704*/
 }
 } // namespace gamemd
+}
 
 // 0x53E720
 namespace gamemd {
@@ -76,6 +77,7 @@ int sub_53E720()
   return unk_AA0444; /*0x53e725*/
 }
 } // namespace gamemd
+}
 
 // 0x60AF50
 namespace gamemd {
@@ -99,6 +101,7 @@ void UI_Get(HWND hWnd, unsigned int * a2)
   return InvalidateRect(hWnd, 0, 0); /*0x60aff5*/
 }
 } // namespace gamemd
+}
 
 // 0x622610
 namespace gamemd {
@@ -124,6 +127,7 @@ void sub_622610()
   return result; /*0x622646*/
 }
 } // namespace gamemd
+}
 
 // 0x647040
 namespace gamemd {
@@ -148,6 +152,7 @@ void sub_647040()
   return 1; /*0x6470d8*/
 }
 } // namespace gamemd
+}
 
 // 0x6470F0
 namespace gamemd {
@@ -172,6 +177,7 @@ void sub_6470F0()
   return 1; /*0x647188*/
 }
 } // namespace gamemd
+}
 
 // 0x725070
 namespace gamemd {
@@ -202,6 +208,7 @@ LABEL_7:
   return a1 + 8 * (v3 / 2); /*0x7250a4*/
 }
 } // namespace gamemd
+}
 
 // 0x6AC430
 namespace gamemd {
@@ -216,6 +223,7 @@ void sub_6AC430()
   return 2 * ((v1 >> 31) + v1); /*0x6ac478*/
 }
 } // namespace gamemd
+}
 
 // 0x730EA0
 namespace gamemd {
@@ -259,6 +267,7 @@ wchar_t * * sub_730EA0()
   return result; /*0x730f1c*/
 }
 } // namespace gamemd
+}
 
 // 0x730F30
 namespace gamemd {
@@ -289,6 +298,7 @@ void * sub_730F30()
   return result; /*0x730fd8*/
 }
 } // namespace gamemd
+}
 
 // 0x730FE0
 namespace gamemd {
@@ -332,6 +342,7 @@ void * sub_730FE0()
   return result; /*0x73104f*/
 }
 } // namespace gamemd
+}
 
 // 0x7318F0
 namespace gamemd {
@@ -378,6 +389,7 @@ AbstractClass * * sub_7318F0()
   return result; /*0x7319fe*/
 }
 } // namespace gamemd
+}
 
 // 0x6D0E60
 namespace gamemd {
@@ -395,6 +407,7 @@ void sub_6D0E60()
   g_TooltipActive = 1; /*0x6d0eae*/
 }
 } // namespace gamemd
+}
 
 // 0x60B1D0
 namespace gamemd {
@@ -461,6 +474,7 @@ LABEL_9:
   return MoveWindow(hWnd, right - v10 - v6 - v15 - Rect.left, v14 + top - Rect.top, v6, v8, 0); /*0x60b31b*/
 }
 } // namespace gamemd
+}
 
 // 0x602B90
 namespace gamemd {
@@ -518,6 +532,7 @@ LABEL_5:
       || v4 == 3014 && (DlgCtrlID == 1919 || DlgCtrlID == 1755);
 }
 } // namespace gamemd
+}
 
 // 0x603240
 namespace gamemd {
@@ -578,6 +593,7 @@ LABEL_5:
       && DlgCtrlID == 1820;
 }
 } // namespace gamemd
+}
 
 // 0x60D2C0
 namespace gamemd {
@@ -606,6 +622,7 @@ unsigned int * sub_60D2C0(int a1, int a2)
   return result; /*0x60d309*/
 }
 } // namespace gamemd
+}
 
 // 0x6217E0
 namespace gamemd {
@@ -708,6 +725,7 @@ void UI_Helper_6217E0(ObjectClass * aP0, ObjectClass * aP1, short a3, int a4)
   }
 }
 } // namespace gamemd
+}
 
 // 0x6D0FD0
 namespace gamemd {
@@ -783,6 +801,7 @@ void sub_6D0FD0()
   return result; /*0x6d1124*/
 }
 } // namespace gamemd
+}
 
 // 0x639DA0
 namespace gamemd {
@@ -813,6 +832,7 @@ int sub_639DA0()
   return 2; /*0x639df1*/
 }
 } // namespace gamemd
+}
 
 // 0x5EBDD0
 namespace gamemd {
@@ -866,6 +886,7 @@ void UI_Setup_5EBDD0(SkirmishDialog * aP0, int a2, int a3, int a4)
   }
 }
 } // namespace gamemd
+}
 
 // 0x793930
 namespace gamemd {
@@ -919,6 +940,7 @@ void * UI_Setup_793930(void * a1, void * a2, int a3)
   return result; /*0x7939d7*/
 }
 } // namespace gamemd
+}
 
 // 0x53BAE0
 namespace gamemd {
@@ -1344,12 +1366,13 @@ void sub_6AC480(int a1, int * a2, unsigned int * a3, int a4)
   int v16; // [esp+8h] [ebp-28h] BYREF
   int v17; // [esp+Ch] [ebp-24h] BYREF
       Text::Layout((_DWORD *)v6, (unsigned __int16 *)v15, &v17, &v16, a4); /*0x6ac584*/
-      return Font::Print(v6, DSurface_Sidebar, v13, v20, *(_DWORD *)(v6 + 28) - v16 + v5, a4, 0, 0, 0, 0); /*0x6ac5b2*/
+      return Font::Print(v6, DSurface_Sidebar, v13, v20, v6->u32_1C - v16 + v5, a4, 0, 0, 0, 0); /*0x6ac5b2*/
     }
   }
   return result; /*0x6ac5bb*/
 }
 } // namespace gamemd
+}
 
 // 0x6BA120
 namespace gamemd {

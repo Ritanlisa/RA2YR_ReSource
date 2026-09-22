@@ -33,6 +33,7 @@ C CampaignClass::CampaignClass(ObjectClass * aP1)
   return this; /*0x46cc08*/
 }
 } // namespace gamemd
+}
 
 // 0x46CE10
 namespace gamemd {
@@ -107,6 +108,7 @@ LABEL_7:
   return result; /*0x46cf75*/
 }
 } // namespace gamemd
+}
 
 // 0x49C5A0
 namespace gamemd {
@@ -288,6 +290,7 @@ LABEL_47:
   return 1; /*0x49c618*/
 }
 } // namespace gamemd
+}
 
 // 0x46CF80
 namespace gamemd {
@@ -365,9 +368,9 @@ CampaignClass * CampaignClass::DTOR(char a2)
     int v3;
     void **v5;
     *(void**)this = vt_CampaignClass;
-    *(this + 1) = (unsigned int)vt_CampaignClass;
-    *(this + 2) = (unsigned int)vt_CampaignClass;
-    *(this + 3) = &vt_CampaignClass;
+    this->vtable2 = (unsigned int)vt_CampaignClass;
+    this->vtable3 = (unsigned int)vt_CampaignClass;
+    this->vtable4 = &vt_CampaignClass;
     AbstractClass::AnnounceExpiredPointer(this, 1);
     v5 = this;
     v3 = (*(int (__thiscall **)(int *, void ***))(DataGlobal_A83CF8 + 16))(&DataGlobal_A83CF8, &v5);

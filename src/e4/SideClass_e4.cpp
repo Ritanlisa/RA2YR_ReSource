@@ -119,6 +119,7 @@ int SideClass::LoadAllFromINI(CCINIClass * aP0)
   return 1; /*0x679caf*/
 }
 } // namespace gamemd
+}
 
 // 0x6A4550
 namespace gamemd {
@@ -130,7 +131,7 @@ unsigned int * SideClass::Construct(CCINIClass * aP1)
   this->houseTypesCount = 0; /*0x6a4563*/
   this->q0A0 = 0; /*0x6a4569*/
   this->q0A4 = 1; /*0x6a456f*/
-  *((_BYTE *)this + 165) = 0; /*0x6a4576*/
+  this->u8_A5 = 0; /*0x6a4576*/
   this->q02B = 10; /*0x6a457c*/
   this->q0A8 = 0; /*0x6a4586*/
   this->houseTypes = &vt_TypeList_int; /*0x6a458c*/
@@ -153,6 +154,7 @@ unsigned int * SideClass::Construct(CCINIClass * aP1)
   return this; /*0x6a460b*/
 }
 } // namespace gamemd
+}
 
 // 0x6A4710
 namespace gamemd {
@@ -163,6 +165,7 @@ int SideClass::GetCountry(int * a2)
   return Power::TimerProcess(this->q0A8); /*0x6a472c*/
 }
 } // namespace gamemd
+}
 
 // 0x6A4780
 namespace gamemd {
@@ -241,6 +244,7 @@ int SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
   return result; /*0x6a488b*/
 }
 } // namespace gamemd
+}
 
 // 0x6A4930
 namespace gamemd {
@@ -267,12 +271,12 @@ void * SideClass::Init(char a2)
   }
   AbstractClass *v4 = this->houseTypesCount; /*0x6a499f*/
   this->houseTypes = &vt_VectorClass_int; /*0x6a49a5*/
-  if ( v4 && *((_BYTE *)this + 165) ) /*0x6a49b3*/
+  if ( v4 && this->u8_A5 ) /*0x6a49b3*/
   {
     __3_YAXPAX_Z(v4); /*0x6a49be*/
     this->houseTypesCount = 0; /*0x6a49c6*/
   }
-  *((_BYTE *)this + 165) = 0; /*0x6a49d2*/
+  this->u8_A5 = 0; /*0x6a49d2*/
   this->q028 = 0; /*0x6a49d9*/
   AbstractTypeClass::Dtor(this); /*0x6a49e3*/
   if ( (a2 & 1) != 0 ) /*0x6a49ed*/
@@ -280,6 +284,7 @@ void * SideClass::Init(char a2)
   return (SideClass *)this; /*0x6a49fa*/
 }
 } // namespace gamemd
+}
 
 // 0x49D9F0
 namespace gamemd {

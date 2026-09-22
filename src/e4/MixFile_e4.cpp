@@ -442,6 +442,7 @@ LABEL_149:
   return DataGlobal_87F7E8[5521] != 0; /*0x5304f2*/
 }
 } // namespace gamemd
+}
 
 // 0x534FA0
 namespace gamemd {
@@ -601,6 +602,7 @@ AbstractClass * * MixFile::LoadSide()
   }
 }
 } // namespace gamemd
+}
 
 // 0x627590
 namespace gamemd {
@@ -748,3 +750,4 @@ unsigned int * MIXFile::Load(ObjectClass * aP1)
   return v14; /*0x6275a8*/
 }
 } // namespace gamemd
+}

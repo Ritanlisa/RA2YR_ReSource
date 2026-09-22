@@ -71,6 +71,7 @@ int LightningStorm::Start(int a1, int a2, int a3, void * a4)
   return result; /*0x539f76*/
 }
 } // namespace gamemd
+}
 
 // 0x53A100
 namespace gamemd {
@@ -80,6 +81,7 @@ int LightningStorm::IsActive()
   return unk_A9FAB4; /*0x53a105*/
 }
 } // namespace gamemd
+}
 
 // 0x53A140
 namespace gamemd {
@@ -141,6 +143,7 @@ AnimClass * * LightningStorm::Strike(IUnknown * aP0)
   return result; /*0x53a2ed*/
 }
 } // namespace gamemd
+}
 
 // 0x53A300
 namespace gamemd {
@@ -280,6 +283,7 @@ int LightningStorm::Strike2(int a1, int a2, int a3)
   return (char)v11; /*0x53a693*/
 }
 } // namespace gamemd
+}
 
 // 0x53A090
 namespace gamemd {

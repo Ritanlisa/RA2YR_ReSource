@@ -213,6 +213,7 @@ LABEL_52:
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x4D9C60
 namespace ra2 {
@@ -295,6 +296,7 @@ int ObjectClass::CheckCellFlags(int a1, int a2, int * a3, unsigned char * a4, un
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x4DB3C0
 namespace ra2 {
@@ -465,6 +467,7 @@ LABEL_28:
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x4DB690
 namespace ra2 {
@@ -554,6 +557,7 @@ LABEL_6:
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x4DE1D0
 namespace ra2 {
@@ -742,6 +746,7 @@ LABEL_36:
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x4DE620
 namespace gamemd {
@@ -752,6 +757,7 @@ void ObjectClass_IsHeightAboveThreshold_0()
   return ObjectClass::IsHeightAboveThreshold(this);
 }
 } // namespace gamemd
+}
 
 // 0x513F40
 namespace ra2 {
@@ -848,6 +854,7 @@ LABEL_16:
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x5228B0
 namespace gamemd {
@@ -858,6 +865,7 @@ void ObjectClass_GetTypeVt40_0()
   return TechnoClass::GetTypeVt40(this);
 }
 } // namespace gamemd
+}
 
 // 0x5228C0
 namespace gamemd {
@@ -868,6 +876,7 @@ void ObjectClass_GetTypeVt41_0()
   return ObjectClass::GetTypeVt41(this);
 }
 } // namespace gamemd
+}
 
 // 0x556A20
 namespace ra2 {
@@ -910,6 +919,7 @@ void * ObjectClass::checkLimbo()
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x5F3B80
 namespace ra2 {
@@ -1023,6 +1033,7 @@ ObjectClass * * ObjectClass::Dtor()
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x5F4160
 namespace ra2 {
@@ -1068,6 +1079,7 @@ int ObjectClass::DropAsBomb_Track()
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x5F4870
 namespace ra2 {
@@ -1224,6 +1236,7 @@ LABEL_39:
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x5F4D30
 namespace ra2 {
@@ -1282,6 +1295,7 @@ AbstractClass * * ObjectClass::Undeploy()
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x5F4EC0
 namespace ra2 {
@@ -1400,7 +1414,7 @@ LABEL_41:
       }
     }
     result = (*(int (__thiscall **)(#374 *))(this->parachute)(this); /*0x5f514f*/
-    if ( *(_BYTE *)(result + 570) )
+    if ( result->u8_23A )
     {
       char * v14 = (char *)__2_YAPAXI_Z(0x210u); /*0x5f5168*/
       result = v14 ? (int)ObjectClass::checkLimbo(v14) : 0;
@@ -1421,7 +1435,7 @@ LABEL_41:
           LineTrail *v16 = this->lineTrailer; /*0x5f51c4*/
           char v17 = *(_BYTE *)(v15 + 573); /*0x5f51d4*/
           *(_WORD *)v16 = *(_WORD *)(v15 + 571); /*0x5f51d7*/
-          *(_BYTE *)(v16 + 2) = v17; /*0x5f51da*/
+          v16->u8_2 = v17; /*0x5f51da*/
         }
         int v19 = (*(int (__thiscall **)(#374 *))(this->parachute)(this); /*0x5f51ef*/
         result = ObjectClass::updateMissionState(this->q02A, *(_DWORD *)(v19 + 576)); /*0x5f5202*/
@@ -1434,6 +1448,7 @@ LABEL_41:
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x5F5280
 namespace ra2 {
@@ -1469,6 +1484,7 @@ LABEL_10:
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x5F5850
 namespace ra2 {
@@ -1527,6 +1543,7 @@ int ObjectClass::UpdateProductionDisplay()
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x5F6BD0
 namespace ra2 {
@@ -1542,6 +1559,7 @@ int ObjectClass::GetBoundingSize()
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x652E50
 namespace ra2 {
@@ -1564,6 +1582,7 @@ int ObjectClass::resetObjectState(SidebarClass * aP1)
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x6A5BF0
 namespace ra2 {
@@ -1702,6 +1721,7 @@ ConvertClass * * ObjectClass::CleanupSidebarResources()
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x6A7D70
 namespace ra2 {
@@ -1827,6 +1847,7 @@ unsigned char ObjectClass::ToggleSidebarDisplay(unsigned int * a0, TabClass * aP
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x718260
 namespace ra2 {
@@ -2037,6 +2058,7 @@ void* ObjectClass::FindPlacementPosition(int a2, int a3, int a4, int a5)
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x746CB0
 namespace gamemd {
@@ -2047,6 +2069,7 @@ void ObjectClass_GetTypeVt40_2()
   return TechnoClass::GetTypeVt40(this);
 }
 } // namespace gamemd
+}
 
 // 0x746CC0
 namespace gamemd {
@@ -2057,6 +2080,7 @@ void ObjectClass_GetTypeVt41_2()
   return ObjectClass::GetTypeVt41(this);
 }
 } // namespace gamemd
+}
 
 // 0x74CD60
 namespace ra2 {
@@ -2080,6 +2104,7 @@ int ObjectClass::processDeath()
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x401940
 namespace ra2 {
@@ -2462,6 +2487,7 @@ char j_Game_ProcessIdle()
 // attributes: thunk
 {
   return Game::ProcessIdle((CreateGameDialogControl *)this);
+}
 }
 }
 // 0x7A2E70

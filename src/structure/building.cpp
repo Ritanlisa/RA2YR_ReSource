@@ -164,7 +164,7 @@ AbstractClass * * BuildingClass::Construct()
   this->BuildingClass_field_5FC = -1;
   this->Spotlight = 0;
   int v4 = dword_A8ED54[12];
-  *(_DWORD *)(this + 1548) = 0;
+  this->u32_60C = 0;
   this->GateTimer = v4;
   this->q610 = 0;
   this->LightSource = 0;
@@ -235,8 +235,8 @@ AbstractClass * * BuildingClass::Construct()
   this->StorageFilledSlots = 0;
   this->SecretProduction = 0;
   this->ColorAdd = 0;
-  *(_BYTE *)(this + 1785) = 0;
-  *(_BYTE *)(this + 1786) = 0;
+  this->u8_6F9 = 0;
+  this->u8_6FA = 0;
   this->BuildingClass_field_int_6FC = 0;
   this->BuildingClass_field_short_700 = 1000;
   this->UpgradeLevel = 0;
@@ -263,16 +263,16 @@ AbstractClass * * BuildingClass::Construct()
     LOWORD(a3) = v6;
     this->barrelFacing.Update(&a3);
   }
-  memset((void *)(this + 1372), 0, 0x54u);
-  memset((void *)(this + 1480), 0, 0x20u);
+  memset((void *)(&this->cloakState2), 0, 0x54u);
+  memset((void *)(&this->q2500), 0, 0x20u);
   this->AnimStates = 0;
   this->q16D0 = 0;
-  *(_DWORD *)(this + 1464) = 0;
+  this->u32_5B8 = 0;
   this->q16F0 = 0;
   this->q170 = 0;
   this->q5C4 = 0;
-  AudioController::Init((_DWORD *)(this + 1696));
-  AudioController::Init((_DWORD *)(this + 1716));
+  AudioController::Init((_DWORD *)(&this->isUncrushable6));
+  AudioController::Init((_DWORD *)(&this->q2AC6));
   LOWORD(a3) = 0x4000;
   this->barrelFacing.Update(&a3);
   this->RepairProgress = 0;
@@ -746,6 +746,7 @@ retn    8
 */
 
 // IDA 0x43bcf0
+}
 // 0x43bcf0
 int BuildingClass::Dtor()
 {
@@ -1250,9 +1251,11 @@ retn
 */
 
 // IDA 0x459f20: scalar destructor → calls Dtor, conditionally frees memory
+}
 // 0x459f20
 int BuildingClass::ScalarDtor()
 {
+}
 // 0x459f20
     int __thiscall BuildingClass::ScalarDtor(#377 *(void**)this)
 {
@@ -1328,9 +1331,11 @@ BuildingTypeClass * * BuildingClass::Deactivate()
 }
 
 // IDA 0x459e80: Destroyed notification — set destroyed state
+}
 // 0x459e80
 void BuildingClass::Destroyed(ObjectClass* killer)
 {
+}
 // 0x459e80
     int __thiscall BuildingClass::Destroyed(#377 *(void**)this)
 {
@@ -1755,6 +1760,7 @@ retn
 */
 
 // IDA 0x43bd10: Cleanup → clear anims + super weapon anim
+}
 // 0x43eeb0
 void BuildingClass::Cleanup()
 {
@@ -1860,6 +1866,7 @@ pop     ebx
 add     esp, 40h
 retn    4
 */
+}
 
 // IDA 0x43bcf0: Place building on map
 void BuildingClass::Place(bool bUnk)
@@ -1976,6 +1983,8 @@ int BuildingClass::IsCellPlaceable(int cell_x, int cell_y) const
     return false; // TODO stub - retranslate via C-line pipeline
 
 // IDA 0x44d310: validate placement passes all checks
+}
+}
 // 0x480630
 AbstractClass * * BuildingClass::ValidatePlacement() {
 {
@@ -2535,6 +2544,7 @@ pop     ebx
 add     esp, 0CCh
 retn    4
 */
+}
 // 0x44efb0
 bool BuildingClass::ValidateFoundation() { return CheckBuildability(); }
 // 0x4dc8c0
@@ -6110,6 +6120,7 @@ retn    4
 */
 
 // IDA 0x449830: find placement cells variant
+}
 // 0x6b0300
 void BuildingClass::FindPlacementCells2(int* outCell, int inCell) {
     TechnoClass* occupant = (TechnoClass*)this->objectTypeFlags;
@@ -6582,6 +6593,7 @@ retn    8
 */
 
 // IDA 0x449850: visualize placement footprint
+}
 // 0x485af0
 void* BuildingClass::VisualizePlacement()
 {
@@ -7711,6 +7723,7 @@ RectangleStruct* BuildingClass::GetPlacementRect(RectangleStruct* out) const
 }
 
 // IDA 0x44e3a0: check overlap with other buildings
+}
 // 0x44e3a0
 bool BuildingClass::CheckOverlapWithOthers() {
 {
@@ -8145,6 +8158,7 @@ retn
 */
 
 // IDA 0x70c5a0: check cell passability (delegates to TechnoClass flag)
+}
 // 0x70c5a0
 int BuildingClass::CheckCellPassability()
 {
@@ -8163,6 +8177,7 @@ retn
 */
 
 // IDA 0x710670: placement complete notification
+}
 // 0x710670
 int BuildingClass::OnCellPlacementComplete()
 {
@@ -8341,6 +8356,7 @@ CoordStruct* BuildingClass::GetBuildCoordsAdjusted(CoordStruct* out) const
 }
 
 // IDA 0x44cd60: set rally point
+}
 // 0x443860
 void BuildingClass::SetRallyPoint(CoordStruct* target)
 {
@@ -8707,6 +8723,7 @@ retn    8
 */
 
 // IDA 0x4a9650: mark exit path cells
+}
 // 0x4a9650
 int BuildingClass::MarkExitPath()
 {
@@ -8815,6 +8832,7 @@ retn    8
 */
 
 // IDA 0x44f590: check exit path is clear
+}
 // 0x639cb0
 int BuildingClass::CheckExitPath()
 {
@@ -9034,6 +9052,7 @@ pop     ebx
 add     esp, 8
 retn
 */
+}
 
 // 0x453840
 void BuildingClass::RenderExitPosition() {}
@@ -9077,6 +9096,7 @@ jmp     BuildingClass__Is1x1AndUndeployable_BuildingMassSelectable
 // ============================================================
 // Section 4: Mission Controllers
 // ============================================================
+}
 
 // 0x459ec0
 int BuildingClass::Mission_Construction()
@@ -12333,6 +12353,7 @@ pop     ebx
 add     esp, 130h
 retn    8
 */
+}
 
 // IDA 0x44f2d0: selling mission
 int BuildingClass::Mission_Selling()
@@ -13028,6 +13049,7 @@ retn    4
 */
 
 // IDA 0x4d9f70: sell unit - create MCV from undeployable building
+}
 // 0x4d9f70
 int BuildingClass::SellUnit()
 {
@@ -13095,6 +13117,7 @@ retn    4
 */
 
 // IDA 0x701410: handle sell or repair from sidebar
+}
 // 0x701410
 int BuildingClass::HandleSellOrRepair()
 {
@@ -13118,6 +13141,7 @@ int BuildingClass::HandleSellOrRepair()
     return StartAudioControllerAt(g_RulesClass_Instance->PsychicRevealActivateSound, v6, 0); /*0x701494*/
   }
   return result; /*0x701499*/
+}
 }
 
 // IDA 0x44f450: repair mission
@@ -13147,6 +13171,7 @@ int BuildingClass::Mission_Repair()
 }
     return {}; // TODO stub - retranslate via C-line pipeline
     return 20;
+}
 }
 
 // 0x44b780
@@ -13440,6 +13465,7 @@ char BuildingClass::ClearSuperWeaponAnim()
   return *(_DWORD *)(*(_DWORD *)&aP1->__pad_0[4] + 4 * v3); /*0x50534e*/
 }
     return {}; // TODO stub - retranslate via C-line pipeline
+    }
 
 // 0x4503f0
 void BuildingClass::UpdatePrism() {}
@@ -13541,6 +13567,9 @@ LABEL_144:
         }
       }
       if ( *(_BYTE *)(this->gattlingValue + 5803)
+      }
+      }
+      }
 // 0x65ad50
         && Array::Contains((int *)this, v53)
         && !TechnoClass::CanSelfRepair((_BYTE *)v53) )
@@ -15420,6 +15449,7 @@ retn    4
 
 
 // IDA 0x44e880: base drain + overpower drain
+}
 // 0x44e880
 int BuildingClass::GetPowerDrain()
 {
@@ -15537,6 +15567,7 @@ LABEL_20:
     return false; // TODO stub - retranslate via C-line pipeline
 
 // IDA 0x4a51b0: check power flags
+}
 // 0x4a51b0
 bool BuildingClass::CheckPowerFlags()
 {
@@ -16136,6 +16167,7 @@ retn    4
 */
 
 // IDA 0x447ab0: update production timer
+}
 // 0x4496b0
 BuildingTypeClass * * BuildingClass::CheckState1()
 {
@@ -16185,6 +16217,9 @@ BuildingTypeClass * * BuildingClass::CheckState1()
     this->missionStatus = 1;
 LABEL_32:
     if ( *(_BYTE *)(this->gattlingValue + 5802)
+    }
+    }
+    }
 // 0x65ae30
       && Team::AllMembersValid((int *)this)
       && (*(int (__thiscall **)(#377 *, int))(this->temporalUsing)(this, 29) != 1
@@ -16710,6 +16745,7 @@ pop     ebx
 add     esp, 8
 retn
 */
+}
 
 // 0x43f180
 void BuildingClass::ProductionDisplayUpdate() {}
@@ -16739,7 +16775,7 @@ bool BuildingClass::CanAcceptType(int a2, int a3)
   {
     return 0;
   }
-    v4 = *(int *)(a2 + 5884);
+    v4 = a2->u32_16FC;
     if ( v4 == -1 )
   {
     if ( this->UpgradeLevel < *(int *)(this->Type + 5344) )
@@ -17047,6 +17083,7 @@ void BuildingClass::DrawFactoryProduction(Point2D*, RectangleStruct*, int) const
 // ============================================================
 // Section 7: Capture / Occupancy
 // ============================================================
+}
 
 // IDA 0x43d200: process capture attempt
 int BuildingClass::ProcessCapture() { return 0; }
@@ -17085,6 +17122,7 @@ void BuildingClass::Capture() { CaptureBuilding(nullptr); }
 // 0x4521c0
 void BuildingClass::DisableTemporal()
 {
+}
 // 0x4521c0
     int __thiscall BuildingClass::DisableTemporal(int *(void**)this)
 {
@@ -17611,6 +17649,7 @@ pop     ebp
 pop     ecx
 retn    4
 */
+}
 
 // 0x458200
 void BuildingClass::ProcessStructureAbandoned() {}
@@ -17630,6 +17669,7 @@ bool BuildingClass::IsIdleWithNoCaptives()
 // 0x44eb10
 int BuildingClass::GetCrew()
 {
+}
 // 0x44eb10
 {
   if ( this->HasBeenCaptured /*0x44eb43*/
@@ -17692,6 +17732,7 @@ int BuildingClass::GetCrewCount()
 }
 
 // IDA 0x44eb50: eject crew units
+}
 // 0x442d90
 void BuildingClass::EjectCrew()
 {
@@ -17725,7 +17766,7 @@ void BuildingClass::EjectCrew()
     v45 += 6;
   int v46 = this->GetCrewCount();
   PassengersClass *v7 = this->gattlingValue;
-  if ( *(_BYTE *)(v7 + 5806) || *(_BYTE *)(v7 + 5807) )
+  if ( v7->u8_16AE || v7->u8_16AF )
   {
     v7 = this->inAirFlag;
     if ( v7 > 0 )
@@ -17741,7 +17782,7 @@ void BuildingClass::EjectCrew()
         v52 = 0;
         v50 = (v10 << 8) + 128;
         v51 = ((__int16)v9 << 8) + 164;
-        if ( (*(int (__thiscall **)(int))(*(_DWORD *)i + 44))(i) == 1 )
+        if ( (*(int (__thiscall **)(int))(i->u32_2C)(i) == 1 )
         {
           void * v11 = Coord::To_Cell(DataGlobal_87F7E8, &v50);
           v12 = (int *)(*(int (__thiscall **)(void *, int *))(*(_DWORD *)v11 + 72))(v11, v58);
@@ -17755,7 +17796,7 @@ void BuildingClass::EjectCrew()
         v51 = v12[1];
         v52 = v12[2];
         ++DataGlobal_87F7E8[539633];
-        *(_BYTE *)(i + 140) = this->onBridge;
+        i->u8_8C = this->onBridge;
         v53 = this->q027;
         int v14 = *this;
         v54 = this->owningHouseIndex;
@@ -17765,8 +17806,8 @@ void BuildingClass::EjectCrew()
         bool v17 = this->NoCrew;
         v55 = v16;
         if ( v17
-          || (Value = ProgressTimer::GetValue((_WORD *)this + 452, &v49),
-              !(*(unsigned __int8 (__thiscall **)(int, int *, _DWORD))(*(_DWORD *)i + 216))(
+          || (Value = ProgressTimer::GetValue((_WORD *)&this->u32_710, &v49),
+              !(*(unsigned __int8 (__thiscall **)(int, int *, _DWORD))(i->u32_D8)(
                  i,
                  &v53,
                  (unsigned __int8)((unsigned int)((*Value >> 7) + 1) >> 1))) )
@@ -17775,21 +17816,21 @@ void BuildingClass::EjectCrew()
             _BYTE * v20 = (a2[20] & 1) != 0 ? a2 : 0;
           else
             v20 = 0;
-          (*(void (__thiscall **)(int, _BYTE *))(*(_DWORD *)i + 224))(i, v20);
-          (*(void (__thiscall **)(int))(*(_DWORD *)i + 248))(i);
+          (*(void (__thiscall **)(int, _BYTE *))(i->u32_E0)(i, v20);
+          (*(void (__thiscall **)(int))(i->u32_F8)(i);
         }
         else
         {
-          if ( !*(_BYTE *)(i + 1080) )
+          if ( !i->u8_438 )
           {
-            ++*(_DWORD *)(*(_DWORD *)(i + 540) + 756);
-            *(_BYTE *)(i + 1080) = 1;
+            ++*(_DWORD *)(i->u32_21C + 756);
+            i->u8_438 = 1;
           }
           int v19 = *(_DWORD *)i;
-          *(_BYTE *)(i + 1081) = 0;
+          i->u8_439 = 0;
           (*(void (__thiscall **)(int, _DWORD *, int, _DWORD))(v19 + 372))(i, &DataGlobal_87F7E8[29720], 1, 0);
           if ( !(unsigned __int8)House::IsCurrentPlayer((#375 *)this->owner) )
-            (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)i + 488))(i, 15, 0);
+            (*(void (__thiscall **)(int, int, _DWORD))(i->u32_1E8)(i, 15, 0);
         }
         --DataGlobal_87F7E8[539633];
         v7 = this->LinkedList_45.Pop();
@@ -18461,6 +18502,7 @@ pop     ebx
 add     esp, 7Ch
 retn    4
 */
+}
 
 // 0x454db0
 void BuildingClass::CleanupOccupation() {}
@@ -18540,6 +18582,7 @@ pop     edi
 pop     esi
 retn
 */
+}
 
 // 0x722240
 void BuildingClass::ClearFactoryData() {}
@@ -18665,6 +18708,7 @@ pop     ebp
 pop     ebx
 retn
 */
+}
 // 0x722e50
 void BuildingClass::FreeUpgradeQueue2() { FreeUpgradeQueue(); }
 
@@ -18724,6 +18768,7 @@ int BuildingClass::GetFacingToTarget()
 }
 
 // IDA 0x44d7d0: get target facing (delegates to GetFacingToTarget)
+}
 // 0x44d7d0
 int BuildingClass::GetTargetFacing() {
 int angleOut;
@@ -18824,6 +18869,7 @@ BuildingTypeClass * * BuildingClass::SelectTargetTypeFlags()
 }
 
 int BuildingClass::DistanceToTarget() { return 0; }
+}
 // 0x453bf0
 void BuildingClass::CalcBarrelFlashPosition() {}
 // 0x458810
@@ -18956,6 +19002,7 @@ CoordStruct* BuildingClass::GetBridgeAwareCoords(CoordStruct* out) const
 // ============================================================
 
 // IDA 0x44ced0: deploy building
+}
 // 0x62a4a0
 BuildingTypeClass * * BuildingClass::Deploy()
 {
@@ -19515,9 +19562,11 @@ retn
 */
 
 // IDA 0x465d40: check if 1x1 and undeployable
+}
 // 0x465d40
 bool BuildingTypeClass::Is1x1AndUndeployable_BuildingMassSelectable()
 {
+}
 // 0x465d40
     int __thiscall BuildingTypeClass::Is1x1AndUndeployable_BuildingMassSelectable(int *(void**)this)
 {
@@ -19701,7 +19750,7 @@ BuildingTypeClass * * BuildingClass::SyncCrateVisuals()
   int result; // eax
 
   int v11 = 21;
-  AnimClass *v4 = this + 1372;
+  AnimClass *v4 = &this->u32_1570;
   do
   {
     _DWORD * v5 = (_DWORD *)*v4;
@@ -19716,12 +19765,12 @@ BuildingTypeClass * * BuildingClass::SyncCrateVisuals()
       char v7 = this->Translucency;
       if ( v7 == 15 && (*(int (__thiscall **)(char *, _DWORD, _DWORD))(this->bombVisible)(this, 0, 0) == 5 )
         LOBYTE(v7) = 16;
-      AnimClass *v8 = this + 1372;
+      AnimClass *v8 = &this->u32_1570;
       int v9 = 21;
       do
       {
         if ( *(_DWORD *)v8 )
-          *(_BYTE *)(*(_DWORD *)v8 + 376) = v7;
+          *(_BYTE *)(v8->q178 = v7;
         v8 += 4;
         --v9;
       }
@@ -19802,6 +19851,7 @@ pop     ebx
 pop     ecx
 retn    8
 */
+}
 
 // 0x42f260
 void BuildingClass::MarkUpgradeComponentUsed() {}
@@ -19872,6 +19922,7 @@ retn    0Ch
 */
 
 // IDA 0x6f9e10: IsInvisible — vtable[33] → GetType, member(176) → ptr check
+}
 // 0x6f9e10
 int BuildingClass::IsInvisible()
 {
@@ -19890,6 +19941,7 @@ int BuildingClass::IsInvisible()
     LOBYTE(result) = 0; /*0x6f9e25*/
   }
   return result; /*0x6f9e27*/
+}
 }
 
 // 0x452260
@@ -19967,6 +20019,7 @@ retn
 */
 
 // IDA 0x4565e0: update gap generator field
+}
 // 0x4565e0
 int BuildingClass::UpdateGapGeneratorField()
 {
@@ -20038,6 +20091,7 @@ retn
 */
 
 // IDA 0x456640: update detection field
+}
 // 0x456640
 void BuildingClass::UpdateDetectionField()
 {
@@ -20256,6 +20310,7 @@ retn    0Ch
 // ============================================================
 // Section 13: Update
 // ============================================================
+}
 
 // 0x442c40
 void BuildingClass::Update()
@@ -20632,6 +20687,7 @@ retn    8
 */
 
 // IDA 0x4a5290: update timer with elapsed seconds
+}
 // 0x4a5290
 int BuildingClass::UpdateTimerWithElapsed()
 {
@@ -20693,6 +20749,7 @@ retn
 */
 
 // IDA 0x458db0: check if has active parameter
+}
 // 0x458db0
 bool BuildingClass::HasActiveParam()
 {
@@ -20806,6 +20863,7 @@ void BuildingClass::AddRectToDrawList(RectangleStruct*) const {}
 // 0x43e900
 int BuildingClass::GetZDrawOffset() const
 {
+}
 // 0x43e900
     int __thiscall BuildingClass::GetZDrawOffset(#377 *(void**)this)
 {
@@ -20816,7 +20874,7 @@ int BuildingClass::GetZDrawOffset() const
     v3 = ZCoordToScreenY(v2);
     v4 = this->Type;
     if ( v4->TurretAnimIsVoxel )
-    return *(int *)(v4 + 4584) - v3;
+    return v4->u32_11E8 - v3;
     else
     return -v3;
 }
@@ -20937,6 +20995,7 @@ LABEL_9:
 }
 
 // IDA 0x705d20: get type pointer (duplicate of GetTypePtr at different address)
+}
 // 0x705d20
 ra2::game::PlanningTokenClass* BuildingClass::GetPlanningToken() {
     // IDA 0x705D20. Reads planningToken@+0x514 (ASM: mov eax,[ecx+514h]) - NOT
@@ -20980,6 +21039,7 @@ HouseClass* BuildingClass::CheckState2()
 {
 {
   return (*(int (__thiscall **)(#377 *))(this->owner)(this);
+}
 }
 // 0x6347b0
 int BuildingClass::GetTypeEntry()
@@ -21085,6 +21145,7 @@ mov     eax, [eax+60h]
 retn
 */
 }
+}
 
 // 0x6385c0
 int BuildingClass::GetObjectData() { return 0; }
@@ -21093,6 +21154,7 @@ int BuildingClass::GetObjectData() { return 0; }
 // 0x455b90
 int BuildingClass::GetFWFlags()
 {
+}
 // 0x455b90
     int __thiscall BuildingClass::GetFWFlags(int *(void**)this)
 {
@@ -21275,6 +21337,7 @@ xor     al, al
 pop     ebx
 retn
 */
+}
 
 // 0x4526f0
 ra2::game::WeaponStruct* BuildingClass::SelectWeaponSlot(int weaponIndex) { return nullptr; }
@@ -21411,6 +21474,7 @@ retn    4
 */
 
 // IDA 0x4ffa50: increment occupant type counter
+}
 // 0x4ffa50
 int BuildingClass::IncrementOccupantTypeCounter()
 {
@@ -21563,32 +21627,33 @@ retn
 }
 
 // IDA 0x6551c0: add upgrade to building
+}
 // 0x6551c0
 int BuildingClass::AddUpgrade(BuildingTypeClass* upgrade)
 {
 {
 
-  int v3 = *(_DWORD *)(this + 4660) - 1;
+  int v3 = this->u32_1234 - 1;
   if ( v3 < 0 )
   {
 LABEL_6:
-    int v5 = *(_DWORD *)(this + 4652);
-    if ( *(_DWORD *)(this + 4660) < v5
-      || ((LOBYTE(v3) = *(_BYTE *)(this + 4657), (_BYTE)v3) || !v5)
-      && (v3 = *(_DWORD *)(this + 4664), v3 > 0)
-      && (LOBYTE(v3) = (*(int (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(this + 4644) + 8))(this + 4644, v5 + v3, 0),
+    int v5 = this->u32_122C;
+    if ( this->u32_1234 < v5
+      || ((LOBYTE(v3) = this->u8_1231, (_BYTE)v3) || !v5)
+      && (v3 = this->u32_1238, v3 > 0)
+      && (LOBYTE(v3) = (*(int (__thiscall **)(int, int, _DWORD))(this->u32_1224 + 8))(&this->u32_4890, v5 + v3, 0),
           (_BYTE)v3) )
     {
-      v3 = *(_DWORD *)(this + 4660);
-      int v6 = *(_DWORD *)(this + 4648);
-      *(_DWORD *)(this + 4660) = v3 + 1;
+      v3 = this->u32_1234;
+      int v6 = this->u32_1228;
+      this->u32_1234 = v3 + 1;
       *(_DWORD *)(v6 + 4 * v3) = *(_DWORD *)a2;
     }
     this->q14D9 = 1;
   }
   else
   {
-    _WORD * v4 = (_WORD *)(*(_DWORD *)(this + 4648) + 4 * v3);
+    _WORD * v4 = (_WORD *)(this->u32_1228 + 4 * v3);
     while ( *v4 != *(_WORD *)a2 || v4[1] != *(_WORD *)(a2 + 2) )
     {
       --v3;
@@ -21671,6 +21736,7 @@ retn    4
 */
 
 // IDA 0x726400: process upgrade effects
+}
 // 0x726400
 int BuildingClass::ProcessUpgradeEffects()
 {
@@ -21787,6 +21853,7 @@ retn
 */
 
 // IDA 0x7265c0: execute triggers
+}
 // 0x7265c0
 int BuildingClass::ExecuteTriggers()
 {
@@ -21863,6 +21930,7 @@ retn    8
 */
 
 // IDA 0x459c20: process upgrade targeting
+}
 // 0x459c20
 BuildingTypeClass * * BuildingClass::ProcessUpgradeTargeting()
 {
@@ -21950,6 +22018,7 @@ call    TechnoClass__PickAlternateTarget
 pop     edi
 retn
 */
+}
 
 // 0x43fb20
 void BuildingClass::ProcessSpreadEffect() {}
@@ -22031,7 +22100,7 @@ retn    4
   v6[0] = (v2 / 256) << 8; /*0x48532c*/
   int v5[2]; // [esp+8h] [ebp-14h] BYREF
   Coord::To_Screen((_DWORD *)DataGlobal_87F7E8[7887], v6, v5); /*0x485330*/
-  return Cell::CreateCrater(v5[0] - 30, DataGlobal_87F7E8[7663] - 15 * *(char *)(this + 283) + v5[1] - 15, 60, 30, 0); /*0x485389*/
+  return Cell::CreateCrater(v5[0] - 30, DataGlobal_87F7E8[7663] - 15 * this->u32_46C + v5[1] - 15, 60, 30, 0); /*0x485389*/
 }
 
 
@@ -22059,6 +22128,7 @@ int BuildingClass::MarkCellOccupied(int cell_x, int cell_y)
   *(_DWORD *)result = v3; /*0x453db0*/
   return result; /*0x453db2*/
 }
+}
 // 0x453dc0
 int BuildingClass::ClearCellOccupied(int cell_x, int cell_y)
 {
@@ -22075,6 +22145,7 @@ int BuildingClass::ClearCellOccupied(int cell_x, int cell_y)
   LOBYTE(v3) = v3 & 0x7F; /*0x453e0d*/
   *(_DWORD *)result = v3; /*0x453e10*/
   return result; /*0x453e12*/
+}
 }
 // 0x455980
 void BuildingClass::ScanCircleForTiberium() {}
@@ -22366,6 +22437,7 @@ retn    4
 */
 
 // IDA 0x425260: set field at offset 8 (activates flag)
+}
 // 0x425260
 void AnimClass::SetField8(int v) {
 PowerOff = 1;
@@ -22383,6 +22455,7 @@ int BuildingClass::GetCursorAction() { return 0; }
 // 0x70f6e0
 BuildingTypeClass * * BuildingClass::UpdateThreatBounds()
 {
+}
 // 0x70f6e0
 {
 

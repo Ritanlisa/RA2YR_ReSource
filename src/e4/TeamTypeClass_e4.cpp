@@ -78,6 +78,7 @@ int TeamTypeClass::Construct()
   return this; /*0x4c99fd*/
 }
 } // namespace gamemd
+}
 
 // 0x691C00
 namespace gamemd {
@@ -151,6 +152,7 @@ LABEL_17:
   return (INIClass *)*((_DWORD *)unk_8B41CC + v2); /*0x691d2e*/
 }
 } // namespace gamemd
+}
 
 // 0x6E85F0
 namespace gamemd {
@@ -177,6 +179,7 @@ LABEL_6:
   return *(TaskForceClass **)(*(_DWORD *)&HouseClass_Player[43912] + 4 * v2); /*0x6e865f*/
 }
 } // namespace gamemd
+}
 
 // 0x6EF5F0
 namespace gamemd {
@@ -190,6 +193,7 @@ int TeamTypeClass::Check(int a2)
   return result; /*0x6ef60b*/
 }
 } // namespace gamemd
+}
 
 // 0x6F0A70
 namespace gamemd {
@@ -214,6 +218,7 @@ int TeamTypeClass::DestroyAllInstances()
   return result; /*0x6f0aa2*/
 }
 } // namespace gamemd
+}
 
 // 0x6F1030
 namespace gamemd {
@@ -237,6 +242,7 @@ int TeamTypeClass::GetTeam(int a2, int a3)
   return result; /*0x6f1086*/
 }
 } // namespace gamemd
+}
 
 // 0x6F1090
 namespace gamemd {
@@ -285,7 +291,7 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1)
   void *v5; // ebp
   v5 = (void *)SuperWeaponTypeClass::FindOrCreate( /*0x6f10e1*/
                  aP1,
-                 (INIClass *)(this + 36),
+                 (INIClass *)(&this->vtable46),
                  (unsigned __int8 *)aHouse,
                  (CCINIClass *)v4);
   if ( BuildingType::IsSpecialType(v5) ) /*0x6f10e5*/
@@ -300,61 +306,61 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1)
   }
   Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x6f112b*/
                     (int)aP1,
-                    (unsigned __int8 *)(this + 36),
+                    (unsigned __int8 *)(&this->vtable46),
                     (CCINIClass *)&stru_830620[76492],
                     this->q0A0);
   v44 = this->q0C0; /*0x6f1138*/
   this->q0A0 = Int_Overwrite; /*0x6f113f*/
   this->q0C0 = INIClass::ReadInt_Overwrite( /*0x6f114a*/
                               (int)aP1,
-                              (unsigned __int8 *)(this + 36),
+                              (unsigned __int8 *)(&this->vtable46),
                               (CCINIClass *)&stru_830620[76472],
                               (INIClass *)v44);
   Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x6f115f*/
                      (int)aP1,
-                     (unsigned __int8 *)(this + 36),
+                     (unsigned __int8 *)(&this->vtable46),
                      (CCINIClass *)&stru_830620[76460],
                      this->q0A4);
-  char v8 = *(_BYTE *)(this + 165); /*0x6f1164*/
+  char v8 = this->u8_A5; /*0x6f1164*/
   this->q0A4 = Bool_Overwrite; /*0x6f116a*/
   char v9; // al
   v9 = INIClass::ReadBool_Overwrite( /*0x6f1179*/
          (int)aP1,
-         (unsigned __int8 *)(this + 36),
+         (unsigned __int8 *)(&this->vtable46),
          (CCINIClass *)&stru_830620[76452],
          v8);
-  v45 = *(_BYTE *)(this + 166); /*0x6f1186*/
-  *(_BYTE *)(this + 165) = v9; /*0x6f118d*/
-  *(_BYTE *)(this + 166) = INIClass::ReadBool_Overwrite( /*0x6f1198*/
+  v45 = this->u8_A6; /*0x6f1186*/
+  this->u8_A5 = v9; /*0x6f118d*/
+  this->u8_A6 = INIClass::ReadBool_Overwrite( /*0x6f1198*/
                              (int)aP1,
-                             (unsigned __int8 *)(this + 36),
+                             (unsigned __int8 *)(&this->vtable46),
                              (CCINIClass *)&stru_830620[76440],
                              v45);
   char v10; // al
   v10 = INIClass::ReadBool_Overwrite( /*0x6f11ad*/
           (int)aP1,
-          (unsigned __int8 *)(this + 36),
+          (unsigned __int8 *)(&this->vtable46),
           (CCINIClass *)&stru_830620[76428],
-          *(_BYTE *)(this + 167));
+          this->u8_A7);
   char v11 = this->q0A9; /*0x6f11b2*/
-  *(_BYTE *)(this + 167) = v10; /*0x6f11b8*/
+  this->u8_A7 = v10; /*0x6f11b8*/
   char v12; // al
   v12 = INIClass::ReadBool_Overwrite( /*0x6f11c7*/
           (int)aP1,
-          (unsigned __int8 *)(this + 36),
+          (unsigned __int8 *)(&this->vtable46),
           (CCINIClass *)&stru_830620[76416],
           v11);
   v46 = this->q0AA; /*0x6f11d4*/
   this->q0A9 = v12; /*0x6f11db*/
   this->q0AA = INIClass::ReadBool_Overwrite( /*0x6f11e6*/
                              (int)aP1,
-                             (unsigned __int8 *)(this + 36),
+                             (unsigned __int8 *)(&this->vtable46),
                              (CCINIClass *)&stru_830620[76404],
                              v46);
   char v13; // al
   v13 = INIClass::ReadBool_Overwrite( /*0x6f11fb*/
           (int)aP1,
-          (unsigned __int8 *)(this + 36),
+          (unsigned __int8 *)(&this->vtable46),
           (CCINIClass *)&stru_830620[76392],
           this->q0AB);
   char v14 = this->TeamTypeClass_field_2C; /*0x6f1200*/
@@ -362,20 +368,20 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1)
   char v15; // al
   v15 = INIClass::ReadBool_Overwrite( /*0x6f1215*/
           (int)aP1,
-          (unsigned __int8 *)(this + 36),
+          (unsigned __int8 *)(&this->vtable46),
           (CCINIClass *)&stru_830620[76384],
           v14);
-  v47 = *(_BYTE *)(this + 177); /*0x6f1222*/
+  v47 = this->u8_B1; /*0x6f1222*/
   this->TeamTypeClass_field_2C = v15; /*0x6f1229*/
-  *(_BYTE *)(this + 177) = INIClass::ReadBool_Overwrite( /*0x6f1234*/
+  this->u8_B1 = INIClass::ReadBool_Overwrite( /*0x6f1234*/
                              (int)aP1,
-                             (unsigned __int8 *)(this + 36),
+                             (unsigned __int8 *)(&this->vtable46),
                              (CCINIClass *)&stru_830620[76364],
                              v47);
   char v16; // al
   v16 = INIClass::ReadBool_Overwrite( /*0x6f1249*/
           (int)aP1,
-          (unsigned __int8 *)(this + 36),
+          (unsigned __int8 *)(&this->vtable46),
           (CCINIClass *)&stru_830620[76352],
           this->q0A8);
   bool v17 = this->q02B; /*0x6f124e*/
@@ -383,41 +389,41 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1)
   char v18; // al
   v18 = INIClass::ReadBool_Overwrite( /*0x6f1263*/
           (int)aP1,
-          (unsigned __int8 *)(this + 36),
+          (unsigned __int8 *)(&this->vtable46),
           (CCINIClass *)&stru_830620[76344],
           v17);
   v48 = this->q0AF; /*0x6f1270*/
   this->q02B = v18; /*0x6f1277*/
   this->q0AF = INIClass::ReadBool_Overwrite( /*0x6f1282*/
                              (int)aP1,
-                             (unsigned __int8 *)(this + 36),
+                             (unsigned __int8 *)(&this->vtable46),
                              (CCINIClass *)&stru_830620[76336],
                              v48);
   char v19; // al
   v19 = INIClass::ReadBool_Overwrite( /*0x6f1297*/
           (int)aP1,
-          (unsigned __int8 *)(this + 36),
+          (unsigned __int8 *)(&this->vtable46),
           (CCINIClass *)&stru_830620[76320],
-          *(_BYTE *)(this + 174));
-  char v20 = *(_BYTE *)(this + 173); /*0x6f129c*/
-  *(_BYTE *)(this + 174) = v19; /*0x6f12a2*/
+          this->u8_AE);
+  char v20 = this->u8_AD; /*0x6f129c*/
+  this->u8_AE = v19; /*0x6f12a2*/
   char v21; // al
   v21 = INIClass::ReadBool_Overwrite( /*0x6f12b1*/
           (int)aP1,
-          (unsigned __int8 *)(this + 36),
+          (unsigned __int8 *)(&this->vtable46),
           (CCINIClass *)&stru_830620[76308],
           v20);
-  v49 = *(_BYTE *)(this + 179); /*0x6f12be*/
-  *(_BYTE *)(this + 173) = v21; /*0x6f12c5*/
-  *(_BYTE *)(this + 179) = INIClass::ReadBool_Overwrite( /*0x6f12d0*/
+  v49 = this->u8_B3; /*0x6f12be*/
+  this->u8_AD = v21; /*0x6f12c5*/
+  this->u8_B3 = INIClass::ReadBool_Overwrite( /*0x6f12d0*/
                              (int)aP1,
-                             (unsigned __int8 *)(this + 36),
+                             (unsigned __int8 *)(&this->vtable46),
                              (CCINIClass *)&stru_830620[76296],
                              v49);
   int v22; // eax
   v22 = INIClass::ReadInt_Overwrite( /*0x6f12e5*/
           (int)aP1,
-          (unsigned __int8 *)(this + 36),
+          (unsigned __int8 *)(&this->vtable46),
           (CCINIClass *)&stru_830620[76284],
           this->q0B4);
   v23 = this->q0B8; /*0x6f12ea*/
@@ -425,17 +431,17 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1)
   int v24; // eax
   v24 = INIClass::ReadInt_Overwrite( /*0x6f12ff*/
           (int)aP1,
-          (unsigned __int8 *)(this + 36),
+          (unsigned __int8 *)(&this->vtable46),
           (CCINIClass *)&stru_830620[76280],
           (INIClass *)v23);
   v50 = this->q0CC; /*0x6f130c*/
   this->q0B8 = v24; /*0x6f1313*/
-  int v25 = INIClass::ReadInt_Overwrite((int)aP1, (unsigned __int8 *)(this + 36), aTechlevel, (INIClass *)v50); /*0x6f1319*/
+  int v25 = INIClass::ReadInt_Overwrite((int)aP1, (unsigned __int8 *)(&this->vtable46), aTechlevel, (INIClass *)v50); /*0x6f1319*/
   char * v26 = this->q0D0; /*0x6f131e*/
   this->q0CC = v25; /*0x6f1324*/
   if ( INIClass::GetString( /*0x6f1341*/
          aP1,
-         (INIClass *)(this + 36),
+         (INIClass *)(&this->vtable46),
          (unsigned __int8 *)unk_81728C,
          (INIClass *)&DataGlobal_87F8E4[42624],
          Destination,
@@ -451,56 +457,56 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1)
   this->q0D0 = v27; /*0x6f135d*/
   v29 = INIClass::ReadInt_Overwrite( /*0x6f136c*/
           (int)aP1,
-          (unsigned __int8 *)(this + 36),
+          (unsigned __int8 *)(&this->vtable46),
           (CCINIClass *)&stru_830620[75684],
           (INIClass *)v28);
-  v51 = *(_BYTE *)(this + 242); /*0x6f1379*/
+  v51 = this->u8_F2; /*0x6f1379*/
   this->q09C = v29; /*0x6f1380*/
-  *(_BYTE *)(this + 242) = INIClass::ReadBool_Overwrite( /*0x6f138b*/
+  this->u8_F2 = INIClass::ReadBool_Overwrite( /*0x6f138b*/
                              (int)aP1,
-                             (unsigned __int8 *)(this + 36),
+                             (unsigned __int8 *)(&this->vtable46),
                              (CCINIClass *)&stru_830620[76264],
                              v51);
   v30 = INIClass::ReadBool_Overwrite( /*0x6f13a0*/
           (int)aP1,
-          (unsigned __int8 *)(this + 36),
+          (unsigned __int8 *)(&this->vtable46),
           (CCINIClass *)&stru_830620[76252],
-          *(_BYTE *)(this + 243));
-  v31 = *(_BYTE *)(this + 246); /*0x6f13a5*/
-  *(_BYTE *)(this + 243) = v30; /*0x6f13ab*/
+          this->u8_F3);
+  v31 = this->u8_F6; /*0x6f13a5*/
+  this->u8_F3 = v30; /*0x6f13ab*/
   v32 = INIClass::ReadBool_Overwrite( /*0x6f13ba*/
           (int)aP1,
-          (unsigned __int8 *)(this + 36),
+          (unsigned __int8 *)(&this->vtable46),
           (CCINIClass *)&g_INI_Key_Height[68],
           v31);
   v52 = this->q0F7; /*0x6f13c7*/
-  *(_BYTE *)(this + 246) = v32; /*0x6f13ce*/
+  this->u8_F6 = v32; /*0x6f13ce*/
   this->q0F7 = INIClass::ReadBool_Overwrite( /*0x6f13d9*/
                              (int)aP1,
-                             (unsigned __int8 *)(this + 36),
+                             (unsigned __int8 *)(&this->vtable46),
                              (CCINIClass *)&stru_830620[76228],
                              v52);
   v33 = INIClass::ReadBool_Overwrite( /*0x6f13ee*/
           (int)aP1,
-          (unsigned __int8 *)(this + 36),
+          (unsigned __int8 *)(&this->vtable46),
           (CCINIClass *)&stru_830620[76200],
           this->UINameLabel);
-  v34 = *(_BYTE *)(this + 245); /*0x6f13f3*/
+  v34 = this->u8_F5; /*0x6f13f3*/
   this->UINameLabel = v33; /*0x6f13f9*/
   v35 = INIClass::ReadBool_Overwrite( /*0x6f1408*/
           (int)aP1,
-          (unsigned __int8 *)(this + 36),
+          (unsigned __int8 *)(&this->vtable46),
           (CCINIClass *)&stru_830620[76172],
           v34);
   v36 = this->q0D4; /*0x6f140d*/
-  *(_BYTE *)(this + 245) = v35; /*0x6f141a*/
+  this->u8_F5 = v35; /*0x6f141a*/
   v37 = (INIClass *)Waypoint::To_String((int)v36); /*0x6f1420*/
-  if ( (int)INIClass::GetString(aP1, (INIClass *)(this + 36), (unsigned __int8 *)&stru_817244, v37, &aP4, 64) > 0 ) /*0x6f1435*/
+  if ( (int)INIClass::GetString(aP1, (INIClass *)(&this->vtable46), (unsigned __int8 *)&stru_817244, v37, &aP4, 64) > 0 ) /*0x6f1435*/
     this->q0D4 = String::To_Waypoint(aP4[0]); /*0x6f1440*/
   v38 = (INIClass *)Waypoint::To_String(this->q0D8); /*0x6f1453*/
   if ( (int)INIClass::GetString( /*0x6f1468*/
               aP1,
-              (INIClass *)(this + 36),
+              (INIClass *)(&this->vtable46),
               (unsigned __int8 *)&stru_830620[76152],
               v38,
               &aP4,
@@ -509,7 +515,7 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1)
   v39 = this->q0E0; /*0x6f1479*/
   if ( INIClass::GetString( /*0x6f1496*/
          aP1,
-         (INIClass *)(this + 36),
+         (INIClass *)(&this->vtable46),
          (unsigned __int8 *)&stru_817348,
          (INIClass *)&DataGlobal_87F8E4[42624],
          Destination,
@@ -525,7 +531,7 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1)
   this->q0E0 = ScriptType; /*0x6f14c9*/
   if ( INIClass::GetString( /*0x6f14cf*/
          aP1,
-         (INIClass *)(this + 36),
+         (INIClass *)(&this->vtable46),
          (unsigned __int8 *)&stru_8172FC,
          (INIClass *)&DataGlobal_87F8E4[42624],
          Destination,
@@ -554,6 +560,7 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1)
   return 0; /*0x6f1528*/
 }
 } // namespace gamemd
+}
 
 // 0x6F1550
 namespace gamemd {
@@ -596,97 +603,98 @@ AbstractClass * * TeamTypeClass::GetMaxCount(CCINIClass * aP1)
   {
     v4 = this->q0C8; /*0x6f158f*/
   }
-  v5 = (INIClass *)(this + 36); /*0x6f159d*/
+  v5 = (INIClass *)(&this->vtable46); /*0x6f159d*/
   INIClass::SetInt( /*0x6f15a9*/
     aP1->__pad_0,
-    (INIClass *)(this + 36),
+    (INIClass *)(&this->vtable46),
     (CCINIClass *)&stru_830620[76492],
     this->q0A0,
     0);
   INIClass::SetInt( /*0x6f15bf*/
     aP1->__pad_0,
-    (INIClass *)(this + 36),
+    (INIClass *)(&this->vtable46),
     (CCINIClass *)&stru_830620[76472],
     this->q0C0,
     0);
   LOBYTE(v6) = this->q0A4; /*0x6f15c4*/
-  INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &stru_830620[76460], v6); /*0x6f15d3*/
-  LOBYTE(v7) = *(_BYTE *)(this + 165); /*0x6f15d8*/
-  INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &stru_830620[76452], v7); /*0x6f15e7*/
-  LOBYTE(v8) = *(_BYTE *)(this + 166); /*0x6f15ec*/
-  INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &stru_830620[76440], v8); /*0x6f15fb*/
-  LOBYTE(v9) = *(_BYTE *)(this + 167); /*0x6f1600*/
-  INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &stru_830620[76428], v9); /*0x6f160f*/
-  INIClass::SetHouseName(aP1->__pad_0, (INIClass *)(this + 36), aHouse, (INIClass *)v4); /*0x6f161d*/
+  INIClass::SetBool(aP1->__pad_0, (INIClass *)(&this->vtable46), &stru_830620[76460], v6); /*0x6f15d3*/
+  LOBYTE(v7) = this->u8_A5; /*0x6f15d8*/
+  INIClass::SetBool(aP1->__pad_0, (INIClass *)(&this->vtable46), &stru_830620[76452], v7); /*0x6f15e7*/
+  LOBYTE(v8) = this->u8_A6; /*0x6f15ec*/
+  INIClass::SetBool(aP1->__pad_0, (INIClass *)(&this->vtable46), &stru_830620[76440], v8); /*0x6f15fb*/
+  LOBYTE(v9) = this->u8_A7; /*0x6f1600*/
+  INIClass::SetBool(aP1->__pad_0, (INIClass *)(&this->vtable46), &stru_830620[76428], v9); /*0x6f160f*/
+  INIClass::SetHouseName(aP1->__pad_0, (INIClass *)(&this->vtable46), aHouse, (INIClass *)v4); /*0x6f161d*/
   LOBYTE(v10) = this->q0A8; /*0x6f1622*/
-  INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &stru_830620[76352], v10); /*0x6f1631*/
+  INIClass::SetBool(aP1->__pad_0, (INIClass *)(&this->vtable46), &stru_830620[76352], v10); /*0x6f1631*/
   LOBYTE(v11) = this->q0A9; /*0x6f1636*/
-  INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &stru_830620[76416], v11); /*0x6f1645*/
+  INIClass::SetBool(aP1->__pad_0, (INIClass *)(&this->vtable46), &stru_830620[76416], v11); /*0x6f1645*/
   LOBYTE(v12) = this->q0AA; /*0x6f164a*/
-  INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &stru_830620[76404], v12); /*0x6f1659*/
+  INIClass::SetBool(aP1->__pad_0, (INIClass *)(&this->vtable46), &stru_830620[76404], v12); /*0x6f1659*/
   LOBYTE(v13) = this->q0AB; /*0x6f165e*/
-  INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &stru_830620[76392], v13); /*0x6f166d*/
+  INIClass::SetBool(aP1->__pad_0, (INIClass *)(&this->vtable46), &stru_830620[76392], v13); /*0x6f166d*/
   LOBYTE(v14) = this->TeamTypeClass_field_2C; /*0x6f1672*/
-  INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &stru_830620[76384], v14); /*0x6f1681*/
-  LOBYTE(v15) = *(_BYTE *)(this + 177); /*0x6f1686*/
-  INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &stru_830620[76364], v15); /*0x6f1695*/
+  INIClass::SetBool(aP1->__pad_0, (INIClass *)(&this->vtable46), &stru_830620[76384], v14); /*0x6f1681*/
+  LOBYTE(v15) = this->u8_B1; /*0x6f1686*/
+  INIClass::SetBool(aP1->__pad_0, (INIClass *)(&this->vtable46), &stru_830620[76364], v15); /*0x6f1695*/
   LOBYTE(v16) = this->q02B; /*0x6f169a*/
-  INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &stru_830620[76344], v16); /*0x6f16a9*/
-  LOBYTE(v17) = *(_BYTE *)(this + 174); /*0x6f16ae*/
-  INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &stru_830620[76320], v17); /*0x6f16bd*/
-  LOBYTE(v18) = *(_BYTE *)(this + 173); /*0x6f16c2*/
-  INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &stru_830620[76308], v18); /*0x6f16d1*/
+  INIClass::SetBool(aP1->__pad_0, (INIClass *)(&this->vtable46), &stru_830620[76344], v16); /*0x6f16a9*/
+  LOBYTE(v17) = this->u8_AE; /*0x6f16ae*/
+  INIClass::SetBool(aP1->__pad_0, (INIClass *)(&this->vtable46), &stru_830620[76320], v17); /*0x6f16bd*/
+  LOBYTE(v18) = this->u8_AD; /*0x6f16c2*/
+  INIClass::SetBool(aP1->__pad_0, (INIClass *)(&this->vtable46), &stru_830620[76308], v18); /*0x6f16d1*/
   LOBYTE(v19) = this->q0AF; /*0x6f16d6*/
-  INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &stru_830620[76336], v19); /*0x6f16e5*/
+  INIClass::SetBool(aP1->__pad_0, (INIClass *)(&this->vtable46), &stru_830620[76336], v19); /*0x6f16e5*/
   INIClass::SetInt( /*0x6f16fb*/
     aP1->__pad_0,
-    (INIClass *)(this + 36),
+    (INIClass *)(&this->vtable46),
     (CCINIClass *)&stru_830620[76284],
     this->q0B4,
     0);
   INIClass::SetInt( /*0x6f1711*/
     aP1->__pad_0,
-    (INIClass *)(this + 36),
+    (INIClass *)(&this->vtable46),
     (CCINIClass *)&stru_830620[76280],
     this->q0B8,
     0);
-  INIClass::SetInt(aP1->__pad_0, (INIClass *)(this + 36), aTechlevel, this->q0CC, 0); /*0x6f1727*/
+  INIClass::SetInt(aP1->__pad_0, (INIClass *)(&this->vtable46), aTechlevel, this->q0CC, 0); /*0x6f1727*/
   INIClass::SetInt( /*0x6f173d*/
     aP1->__pad_0,
-    (INIClass *)(this + 36),
+    (INIClass *)(&this->vtable46),
     (CCINIClass *)&stru_830620[75684],
     this->q09C,
     0);
-  LOBYTE(v20) = *(_BYTE *)(this + 179); /*0x6f1742*/
-  INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &stru_830620[76296], v20); /*0x6f1751*/
-  LOBYTE(v21) = *(_BYTE *)(this + 242); /*0x6f1756*/
-  INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &stru_830620[76264], v21); /*0x6f1765*/
-  LOBYTE(v22) = *(_BYTE *)(this + 243); /*0x6f176a*/
-  INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &stru_830620[76252], v22); /*0x6f1779*/
+  LOBYTE(v20) = this->u8_B3; /*0x6f1742*/
+  INIClass::SetBool(aP1->__pad_0, (INIClass *)(&this->vtable46), &stru_830620[76296], v20); /*0x6f1751*/
+  LOBYTE(v21) = this->u8_F2; /*0x6f1756*/
+  INIClass::SetBool(aP1->__pad_0, (INIClass *)(&this->vtable46), &stru_830620[76264], v21); /*0x6f1765*/
+  LOBYTE(v22) = this->u8_F3; /*0x6f176a*/
+  INIClass::SetBool(aP1->__pad_0, (INIClass *)(&this->vtable46), &stru_830620[76252], v22); /*0x6f1779*/
   LOBYTE(v23) = this->UINameLabel; /*0x6f177e*/
-  INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &stru_830620[76200], v23); /*0x6f178d*/
-  LOBYTE(v24) = *(_BYTE *)(this + 245); /*0x6f1792*/
-  INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &stru_830620[76172], v24); /*0x6f17a1*/
-  LOBYTE(v25) = *(_BYTE *)(this + 246); /*0x6f17a6*/
-  INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &g_INI_Key_Height[68], v25); /*0x6f17b5*/
+  INIClass::SetBool(aP1->__pad_0, (INIClass *)(&this->vtable46), &stru_830620[76200], v23); /*0x6f178d*/
+  LOBYTE(v24) = this->u8_F5; /*0x6f1792*/
+  INIClass::SetBool(aP1->__pad_0, (INIClass *)(&this->vtable46), &stru_830620[76172], v24); /*0x6f17a1*/
+  LOBYTE(v25) = this->u8_F6; /*0x6f17a6*/
+  INIClass::SetBool(aP1->__pad_0, (INIClass *)(&this->vtable46), &g_INI_Key_Height[68], v25); /*0x6f17b5*/
   LOBYTE(v26) = this->q0F7; /*0x6f17ba*/
-  INIClass::SetBool(aP1->__pad_0, (INIClass *)(this + 36), &stru_830620[76228], v26); /*0x6f17c9*/
+  INIClass::SetBool(aP1->__pad_0, (INIClass *)(&this->vtable46), &stru_830620[76228], v26); /*0x6f17c9*/
   int v27 = this->q0D0; /*0x6f17ce*/
   if ( v27 ) /*0x6f17d6*/
-    INIClass::SetString(aP1->__pad_0, (INIClass *)(this + 36), (INIClass *)unk_81728C, (INIClass *)(v27 + 36)); /*0x6f17e4*/
+    INIClass::SetString(aP1->__pad_0, (INIClass *)(&this->vtable46), (INIClass *)unk_81728C, (INIClass *)(v27 + 36)); /*0x6f17e4*/
   v28 = (INIClass *)Waypoint::To_String(this->q0D4); /*0x6f17ef*/
-  INIClass::SetString(aP1->__pad_0, (INIClass *)(this + 36), &stru_817244, v28); /*0x6f17fd*/
+  INIClass::SetString(aP1->__pad_0, (INIClass *)(&this->vtable46), &stru_817244, v28); /*0x6f17fd*/
   v29 = (INIClass *)Waypoint::To_String(this->q0D8); /*0x6f1808*/
-  INIClass::SetString(aP1->__pad_0, (INIClass *)(this + 36), (INIClass *)&stru_830620[76152], v29); /*0x6f1816*/
+  INIClass::SetString(aP1->__pad_0, (INIClass *)(&this->vtable46), (INIClass *)&stru_830620[76152], v29); /*0x6f1816*/
   int v30 = this->q0E0; /*0x6f181b*/
   if ( v30 ) /*0x6f1823*/
-    INIClass::SetString(aP1->__pad_0, (INIClass *)(this + 36), &stru_817348, (INIClass *)(v30 + 36)); /*0x6f1831*/
+    INIClass::SetString(aP1->__pad_0, (INIClass *)(&this->vtable46), &stru_817348, (INIClass *)(v30 + 36)); /*0x6f1831*/
   int v31 = this->q0E4; /*0x6f1836*/
   if ( v31 ) /*0x6f183e*/
     INIClass::SetString(aP1->__pad_0, v5, &stru_8172FC, (INIClass *)(v31 + 36)); /*0x6f184c*/
   return 1; /*0x6f1853*/
 }
 } // namespace gamemd
+}
 
 // 0x6F1870
 namespace gamemd {
@@ -705,6 +713,7 @@ int TeamTypeClass::GetGroup()
   return result; /*0x6f1890*/
 }
 } // namespace gamemd
+}
 
 // 0x6F18E0
 namespace gamemd {
@@ -727,6 +736,7 @@ unsigned int * TeamTypeClass::GetTransportWaypoint(unsigned int * a2)
   }
 }
 } // namespace gamemd
+}
 
 // 0x6F1C80
 namespace gamemd {
@@ -751,10 +761,10 @@ int TeamTypeClass::PowerDrainUpdate(int * a2)
   int v7; // edx
   LOBYTE(v7) = this->q02B; /*0x6f1cd4*/
   int v8 = Power::FlagProcess(a2, v7); /*0x6f1cdd*/
-  LOBYTE(v8) = *(_BYTE *)(this + 173); /*0x6f1ce2*/
+  LOBYTE(v8) = this->u8_AD; /*0x6f1ce2*/
   Power::FlagProcess(a2, v8); /*0x6f1ceb*/
   int v9; // ecx
-  LOBYTE(v9) = *(_BYTE *)(this + 174); /*0x6f1cf0*/
+  LOBYTE(v9) = this->u8_AE; /*0x6f1cf0*/
   Power::FlagProcess(a2, v9); /*0x6f1cf9*/
   int v10; // edx
   LOBYTE(v10) = this->q0AF; /*0x6f1cfe*/
@@ -762,7 +772,7 @@ int TeamTypeClass::PowerDrainUpdate(int * a2)
   LOBYTE(v11) = this->TeamTypeClass_field_2C; /*0x6f1d0c*/
   Power::FlagProcess(a2, v11); /*0x6f1d15*/
   int v12; // ecx
-  LOBYTE(v12) = *(_BYTE *)(this + 177); /*0x6f1d1a*/
+  LOBYTE(v12) = this->u8_B1; /*0x6f1d1a*/
   Power::FlagProcess(a2, v12); /*0x6f1d23*/
   Power::TimerProcess(this->q0B4); /*0x6f1d31*/
   Power::TimerProcess(this->q0B8); /*0x6f1d3f*/
@@ -804,6 +814,7 @@ int TeamTypeClass::PowerDrainUpdate(int * a2)
   return result; /*0x6f1e11*/
 }
 } // namespace gamemd
+}
 
 // 0x6F1FA0
 namespace gamemd {
@@ -815,7 +826,7 @@ int TeamTypeClass::ProcessTaskForce()
   int v2 = 0; /*0x6f1fa7*/
   result = this->q0E4; /*0x6f1fa9*/
   this->q0F0 = 1; /*0x6f1faf*/
-  *(_BYTE *)(this + 241) = 0; /*0x6f1fb6*/
+  this->u8_F1 = 0; /*0x6f1fb6*/
   this->q0EC = 9; /*0x6f1fbc*/
   if ( *(int *)(result + 156) > 0 ) /*0x6f1fcc*/
   {
@@ -826,7 +837,7 @@ int TeamTypeClass::ProcessTaskForce()
       if ( *(_BYTE *)(v5 + 3278) ) /*0x6f1fd7*/
       {
         if ( *(_DWORD *)(v5 + 1504) ) /*0x6f1fdf*/
-          *(_BYTE *)(this + 241) = 1; /*0x6f1fef*/
+          this->u8_F1 = 1; /*0x6f1fef*/
         else
           this->q0F0 = 0; /*0x6f1fe7*/
       }
@@ -837,11 +848,12 @@ int TeamTypeClass::ProcessTaskForce()
     }
     while ( v2 < *(_DWORD *)(result + 156) ); /*0x6f201d*/
   }
-  if ( *(_BYTE *)(this + 246) ) /*0x6f2020*/
+  if ( this->u8_F6 ) /*0x6f2020*/
     this->q0F0 = 0; /*0x6f2028*/
   return result; /*0x6f202e*/
 }
 } // namespace gamemd
+}
 
 // 0x6F20C0
 namespace gamemd {
@@ -851,6 +863,7 @@ int TeamTypeClass::GetAuxField()
   return this->q098; /*0x6f20c6*/
 }
 } // namespace gamemd
+}
 
 // 0x6F20D0
 namespace gamemd {
@@ -985,6 +998,7 @@ AbstractClass * * TeamTypeClass_28::Release(int a2, int * a3)
   }
 }
 } // namespace gamemd
+}
 
 // 0x6F24B0
 namespace gamemd {
@@ -1087,6 +1101,7 @@ AbstractClass * * TeamTypeClass_28::SetCapacity(int a2, int * a3)
   return 1; /*0x6f25bb*/
 }
 } // namespace gamemd
+}
 
 // 0x6F0FC0
 namespace gamemd {
@@ -1434,15 +1449,15 @@ VectorClass * TeamTypeClass_28::QueryInterface(char a2)
 {
 {
     int v3;
-    v3 = *(this + 1);
+    v3 = this->Items;
     *(void**)this = &vt_VectorClass_DiscreteDistributionClass_AITriggerTypeClass_DistributionObject_AITriggerTypeClass;
-    if ( v3 && *((char *)(this) + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z((void *)(v3 - 4));
-    *(this + 1) = 0;
+    this->Items = 0;
   }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
+    this->IsAllocated = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (VectorClass *)this;
@@ -1456,15 +1471,15 @@ DynamicVector * TeamTypeClass_28::Constructor(char a2)
 {
 {
     int v3;
-    v3 = *(this + 1);
+    v3 = this->Items;
     *(void**)this = &vt_VectorClass_DiscreteDistributionClass_AITriggerTypeClass_DistributionObject_AITriggerTypeClass;
-    if ( v3 && *((char *)(this) + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z((void *)(v3 - 4));
-    *(this + 1) = 0;
+    this->Items = 0;
   }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
+    this->IsAllocated = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;

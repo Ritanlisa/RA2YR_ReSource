@@ -14,6 +14,7 @@ int RefCount::Decrement()
     this->q00C = 0; /*0x401f9b*/
   return result; /*0x401fa2*/
 }
+}
 
 // 0x49FA00
 int RefCount::Increment(int a2)
@@ -37,4 +38,5 @@ LABEL_5:
     goto LABEL_5; /*0x49fa3b*/
   }
   return 0; /*0x49fa40*/
+}
 }

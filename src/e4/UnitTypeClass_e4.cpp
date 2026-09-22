@@ -44,6 +44,7 @@ INIClass * * UnitTypeClass::ReadINIEntry()
   while ( v1 < 512 ); /*0x6b4e8e*/
   return v4; /*0x6b4e94*/
 }
+}
 
 // 0x7470D0
 U UnitTypeClass::UnitTypeClass(INIClass * aP1)
@@ -56,7 +57,7 @@ U UnitTypeClass::UnitTypeClass(INIClass * aP1)
   this->MovementRestrictedTo = -1; /*0x7470eb*/
   this->HalfDamageSmokeLocation = 0; /*0x7470f1*/
   this->qE04 = 0; /*0x7470f7*/
-  *(_DWORD *)(this + 3592) = 0; /*0x7470fd*/
+  this->u32_E08 = 0; /*0x7470fd*/
   this->Passive = 0; /*0x747103*/
   this->CrateGoodie = 0; /*0x747109*/
   this->Harvester = 0; /*0x74710f*/
@@ -132,14 +133,15 @@ LABEL_11:
   this->BurstDelay1 = -1; /*0x747273*/
   this->BurstDelay2 = -1; /*0x747279*/
   this->BurstDelay3 = -1; /*0x74727f*/
-  *(_BYTE *)(this + 3381) = 0; /*0x747285*/
-  *(_BYTE *)(this + 3382) = 0; /*0x74728b*/
-  *(_BYTE *)(this + 3387) = 0; /*0x747291*/
+  this->u8_D35 = 0; /*0x747285*/
+  this->u8_D36 = 0; /*0x74728b*/
+  this->u8_D3B = 0; /*0x747291*/
   this->SpawnRegenRate = 1; /*0x747297*/
   this->DisableShadowCache = 0; /*0x74729e*/
   this->DisableVoxelCache = 0; /*0x7472a4*/
-  *(_BYTE *)(this + 3374) = 1; /*0x7472aa*/
+  this->u8_D2E = 1; /*0x7472aa*/
   return this; /*0x7472b1*/
+}
 }
 
 // 0x7474B0
@@ -148,6 +150,7 @@ void UnitTypeClass_CreateUnit()
 {
 // (no pseudocode — ASM-only function)
 } // namespace gamemd
+}
 
 // 0x747560
 namespace gamemd {
@@ -155,6 +158,7 @@ void UnitTypeClass_ConstructUnit()
 {
 // (no pseudocode — ASM-only function)
 } // namespace gamemd
+}
 
 // 0x747620
 namespace gamemd {
@@ -368,6 +372,7 @@ void* UnitTypeClass_LoadFromINI()
   return 1; /*0x747e92*/
 }
 } // namespace gamemd
+}
 
 // 0x74B960
 VoxelAnimTypeClass * * UnitTypeClass::FindOrCreate()
@@ -391,6 +396,7 @@ LABEL_6:
       goto LABEL_6; /*0x74b9b4*/
   }
   return *(VoxelAnimTypeClass **)(*(_DWORD *)&HouseClass_Player[44512] + 4 * v2); /*0x74b9cf*/
+}
 }
 
 // 0x747590
@@ -575,9 +581,9 @@ UnitTypeClass * UnitTypeClass::ddtor(char a2)
     int v3;
     void **v5;
     *(void**)this = vt_UnitTypeClass;
-    *(this + 1) = (unsigned int)vt_UnitTypeClass;
-    *(this + 2) = (unsigned int)vt_UnitTypeClass;
-    *(this + 3) = &vt_UnitTypeClass;
+    this->vtable2 = (unsigned int)vt_UnitTypeClass;
+    this->vtable3 = (unsigned int)vt_UnitTypeClass;
+    this->vtable4 = &vt_UnitTypeClass;
     AbstractClass::AnnounceExpiredPointer(this, 1);
     v5 = this;
     v3 = (*(int (__thiscall **)(int *, void ***))(UnitTypeClass_Array + 16))(&UnitTypeClass_Array, &v5);

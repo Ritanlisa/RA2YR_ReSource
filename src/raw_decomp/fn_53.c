@@ -10246,7 +10246,7 @@ bool __thiscall TechnoClass::CanBePermaMC(void *this)
     return 0; /*0x53c491*/
   if ( *(_BYTE *)((*(int (__thiscall **)(void *))(this->hasParachute)(this) + 3434) ) /*0x53c49f*/
     return 0; /*0x53c4a9*/
-  return (*(unsigned __int8 (__thiscall **)(void *))(this->q054)(this) == 0; /*0x53c459*/
+  return (*(unsigned __int8 (__thiscall **)(void *))(this->u32_54)(this) == 0; /*0x53c459*/
 }
 
 
@@ -10692,7 +10692,7 @@ _DWORD *__thiscall ActionQueue::PushEntry(_DWORD *this, int a2, int a3, int a4)
   *this = a2; /*0x53cb1d*/
   this->q004 = a3; /*0x53cb23*/
   this->q00C = 0; /*0x53cb28*/
-  this->q004 = 0; /*0x53cb2b*/
+  this->u32_10 = 0; /*0x53cb2b*/
   this->q008 = a4; /*0x53cb2e*/
   if ( unk_AA0128 < unk_AA0120 /*0x53cb63*/
     || (unk_AA0125 || !unk_AA0120)
@@ -12491,7 +12491,7 @@ int __thiscall Network_IsBroadcastAddr(_BYTE *this)
       && this->q00C == 0xFF
       && this->q004 == 0xFF
       && this->q014 == 0xFF
-      && this->q018 == 0xFF
+      && this->u32_18 == 0xFF
       && this->q01C == 0xFF
       && this->q008 == 0xFF
       && this->q024 == 0xFF )
@@ -12501,7 +12501,7 @@ int __thiscall Network_IsBroadcastAddr(_BYTE *this)
   }
   else if ( this->q004 == 0xFF /*0x53ee5f*/
          && this->q014 == 0xFF
-         && this->q018 == 0xFF
+         && this->u32_18 == 0xFF
          && this->q01C == 0xFF
          && this->q008 == 0xFF
          && this->q024 == 0xFF )
@@ -12857,9 +12857,9 @@ void *__thiscall IPXConnClass::constructor(
   *(_DWORD *)this = &vt_IPXConnClass; /*0x53f46b*/
   if ( a5 ) /*0x53f473*/
   {
-    this->q04C = *a5; /*0x53f479*/
+    this->u32_4C = *a5; /*0x53f479*/
     this->PacketsReceived = a5[1]; /*0x53f47e*/
-    *((_DWORD *)this + 21) = a5[2]; /*0x53f484*/
+    this->u32_54 = a5[2]; /*0x53f484*/
   }
   this->q064 = a7; /*0x53f494*/
   wcscpy((wchar_t *)this + 52, Source); /*0x53f497*/
@@ -12867,7 +12867,7 @@ void *__thiscall IPXConnClass::constructor(
   v10 = (IPXConnClass *)v13; /*0x53f4b0*/
   v11 = v14; /*0x53f4b4*/
   this->Socket = 0; /*0x53f4bc*/
-  *((_DWORD *)this + 22) = v10; /*0x53f4c4*/
+  this->q016 = v10; /*0x53f4c4*/
   *((_WORD *)this + 46) = v11; /*0x53f4c6*/
   return this; /*0x53f4c3*/
 }
@@ -13215,7 +13215,7 @@ int *__thiscall Network_Init_53FA90(
     (wchar_t *)&MEMORY[0x87F8E4].__pad_5568[10472],
     12);
   *this = (int)&vt_IPXGlobalConnClass; /*0x53facc*/
-  *((_WORD *)this + 92) = (_WORD)aP4; /*0x53fad2*/
+  this->u16_5C = (_WORD)aP4; /*0x53fad2*/
   this->q0C4 = 0; /*0x53fad9*/
   this->q0C8 = 1; /*0x53fadf*/
   this->q035 = (int)aP2; /*0x53fae6*/
@@ -13243,7 +13243,7 @@ int *__thiscall Network_Init_53FA90(
   }
   v11 = this->q035; /*0x53fb31*/
   v12 = 0; /*0x53fb37*/
-  this->q0CC = (int)v9; /*0x53fb3b*/
+  this->u32_CC = (int)v9; /*0x53fb3b*/
   if ( v11 > 0 ) /*0x53fb41*/
   {
     do /*0x53fb5a*/
@@ -13336,7 +13336,7 @@ int __thiscall IPXGlobalConnClass::_vt12(void *this, _WORD *a2, signed int a3, i
 LABEL_24:
       if ( !ConnectionClass::allocPacketSlot(*((int **)this + 1), a2, a3, &v20, 12) ) /*0x53fe20*/
         goto LABEL_30; /*0x53fe20*/
-      v14 = (_DWORD *)(this->q0CC + 12 * this->q036); /*0x53fe31*/
+      v14 = (_DWORD *)(this->u32_CC + 12 * this->q036); /*0x53fe31*/
       *v14 = v20; /*0x53fe38*/
       v14[1] = v21; /*0x53fe3e*/
       v14[2] = v22; /*0x53fe45*/
@@ -13358,7 +13358,7 @@ LABEL_23:
           v11 = a5; /*0x53fe05*/
           goto LABEL_24; /*0x53fe05*/
         }
-        if ( GUID::Compare((char *)&v20, v13 + this->q0CC) /*0x53fdf1*/
+        if ( GUID::Compare((char *)&v20, v13 + this->u32_CC) /*0x53fdf1*/
           && *((_DWORD *)a2 + 1) == *(_DWORD *)(this->q034 + 4 * v12) )
         {
           break; /*0x53fdf1*/
@@ -13371,7 +13371,7 @@ LABEL_23:
       v11 = a5; /*0x53fe86*/
     }
     v17 = *((_DWORD *)a2 + 1); /*0x53fe8e*/
-    v18 = *((_WORD *)this + 92); /*0x53fe91*/
+    v18 = this->u16_5C; /*0x53fe91*/
     v23 = this->q012; /*0x53fe98*/
     v24 = 2; /*0x53fe9f*/
     v26 = v17; /*0x53feaa*/

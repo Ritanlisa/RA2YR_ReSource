@@ -1855,6 +1855,7 @@ pop     ebx
 add     esp, 0C8h
 retn
 */
+}
 
 // IDA: 0x415A50 (ProcessReturnToBase, 185B)
 int AircraftClass::Mission_Return()
@@ -2466,6 +2467,7 @@ retn
 */
 
 // IDA: 0x419C80 (Mission_Transport, 1215B)
+}
 // 0x419c80
 ILocomotion * * AircraftClass::Mission_Transport()
 {
@@ -3187,6 +3189,7 @@ retn
 */
 
 // IDA: 0x4190B0 (MissionDispatch, 1147B)
+}
 // 0x4190b0
 int AircraftClass::MissionDispatch()
 {
@@ -3824,6 +3827,7 @@ retn    0Ch
 // ============================================================
 
 // IDA: 0x414310 (MoveTo, 406B)
+}
 // 0x414310
 int AircraftClass::MoveTo()
 {
@@ -4029,6 +4033,7 @@ pop     ebx
 add     esp, 0Ch
 retn    8
 */
+}
 
 // IDA: 0x417BD0 (ValidateMovement, 137B)
 int AircraftClass::ValidateMovement()
@@ -4125,6 +4130,7 @@ def_41BACC:                             ; CODE XREF: AircraftClass__ProcessLandi
 pop     esi             ; jumptable 0041BACC default case, cases 5-25,28,29
 retn    8
 */
+}
 
 // IDA: 0x415B10 (FindLandingCell, 336B)
 int AircraftClass::FindLandingCell()
@@ -4297,6 +4303,7 @@ mov     byte ptr [ecx+6D2h], 0
 loc_41B880:                             ; CODE XREF: AircraftClass__ProcessPassengerEjection+7↑j
 jmp     MissionClass__AdvanceState
 */
+}
 
 // IDA: 0x41B5C0 (CheckPassengerCount, 23B)
 int AircraftClass::CheckPassengerCount()
@@ -4391,6 +4398,7 @@ retn    8
 */
 
 // IDA: 0x414A80 (ProcessMissionTimeout, 302B)
+}
 // 0x414a80
 AbstractClass * * AircraftClass::ProcessMissionTimeout()
 {
@@ -4562,6 +4570,7 @@ retn
 */
 
 // IDA: 0x41A5C0 (GetMissionTimer, 886B)
+}
 // 0x41a5c0
 int AircraftClass::GetMissionTimer()
 {
@@ -5029,6 +5038,7 @@ pop     esi
 add     esp, 0Ch
 retn
 */
+}
 
 // IDA: 0x41A940 (EvaluateTargetingState, 157B)
 int AircraftClass::EvaluateTargetingState()
@@ -5392,6 +5402,7 @@ retn
 // ============================================================
 // Phase 3: Cursor & State
 // ============================================================
+}
 
 // IDA: 0x417CC0 (GetCursorOverObject, 692B)
 int AircraftClass::GetActionOnObject()

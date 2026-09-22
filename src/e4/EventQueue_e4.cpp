@@ -15,6 +15,7 @@ int EventQueue::Process()
   else
     return *((_WORD *)this + v2 + 138); /*0x54f03a*/
 }
+}
 
 // 0x54F050
 int EventQueue::Read()
@@ -65,9 +66,9 @@ int EventQueue::Read()
       v9 = *((_WORD *)this + v8 + 138); /*0x54f148*/
       this->q314 = (v8 + 1) % 256; /*0x54f161*/
     }
-    *(this + 3) = v7; /*0x54f16d*/
-    *(this + 1) = v9; /*0x54f171*/
-    *(this + 4) = v9; /*0x54f174*/
+    this->u32_C = v7; /*0x54f16d*/
+    this->u32_4 = v9; /*0x54f171*/
+    this->u32_10 = v9; /*0x54f174*/
   }
   else if ( (unsigned __int8)result == 10 ) /*0x54f17e*/
   {
@@ -78,9 +79,10 @@ int EventQueue::Read()
       v11 = *((_WORD *)this + v10 + 138); /*0x54f18c*/
       this->q314 = (v10 + 1) % 256; /*0x54f1a5*/
     }
-    *((_WORD *)this + 4) = v11; /*0x54f1ab*/
+    this->u16_8 = v11; /*0x54f1ab*/
   }
   return result; /*0x54f177*/
+}
 }
 
 // 0x54F650
@@ -93,4 +95,5 @@ int EventQueue::Check()
     return 0; /*0x54f669*/
   else
     return *((_WORD *)this + v1 + 138); /*0x54f660*/
+}
 }

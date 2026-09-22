@@ -36,6 +36,7 @@ AbstractClass * * TechnoTypeClass::GetByTypeAndIndex(int a1, int a2)
   }
   return result; /*0x48dcef*/
 }
+}
 
 // 0x50BDF0
 int TechnoTypeClass::Dispatch(TechnoTypeClass * aP1)
@@ -65,6 +66,7 @@ int TechnoTypeClass::Dispatch(TechnoTypeClass * aP1)
       break; /*0x50be65*/
   }
   return result; /*0x50be6b*/
+}
 }
 
 // 0x50BEB0
@@ -96,6 +98,7 @@ int TechnoTypeClass::GetThreatMultiplier(TechnoTypeClass * aP1)
   }
   return result; /*0x50bedc*/
 }
+}
 
 // 0x6F06E0
 unsigned int * TechnoTypeClass::LoadBase(ObjectClass * aP1)
@@ -104,7 +107,7 @@ unsigned int * TechnoTypeClass::LoadBase(ObjectClass * aP1)
   TeamTypeClass *v3; // ecx
   CCINIClass *v6; // edx
   AbstractTypeClass::Constructor((int)this, (AbstractClass *)aP1); /*0x6f06ea*/
-  *(this + 38) = -1; /*0x6f06f7*/
+  *(&this->vtable48) = -1; /*0x6f06f7*/
   this->Armor = -1; /*0x6f06ff*/
   this->Strength = 1; /*0x6f0705*/
   this->Image = 0; /*0x6f070b*/
@@ -116,10 +119,10 @@ unsigned int * TechnoTypeClass::LoadBase(ObjectClass * aP1)
   this->ChargerTurrets = 0; /*0x6f077b*/
   this->q0C0 = 0; /*0x6f0781*/
   this->q0C4 = 0; /*0x6f0787*/
-  *(this + 50) = -1; /*0x6f078d*/
+  *(&this->abstractFlags0) = -1; /*0x6f078d*/
   this->DebrisMaximums = 0; /*0x6f0793*/
   this->q034 = 0; /*0x6f0799*/
-  *(this + 53) = -1; /*0x6f079f*/
+  *(&this->abstractFlags3) = -1; /*0x6f079f*/
   this->unknown_double_360 = -1; /*0x6f07a5*/
   this->Weight = 0; /*0x6f07ab*/
   this->Size = 0; /*0x6f07b1*/
@@ -129,7 +132,7 @@ unsigned int * TechnoTypeClass::LoadBase(ObjectClass * aP1)
   this->unknown_3C0 = 1; /*0x6f07cd*/
   this->q3C4 = 0; /*0x6f07d3*/
   this->DeployTime = 0; /*0x6f07d9*/
-  *((_BYTE *)this + 243) = 0; /*0x6f07df*/
+  this->u8_F3 = 0; /*0x6f07df*/
   this->FireAngle = 0; /*0x6f07e5*/
   this->PipScale = 1; /*0x6f07eb*/
   this->PipsDrawForAll = 0; /*0x6f07f1*/
@@ -171,7 +174,7 @@ LABEL_11:
         goto LABEL_11; /*0x6f0887*/
     }
   }
-  *(this + 38) = v5; /*0x6f088b*/
+  *(&this->vtable48) = v5; /*0x6f088b*/
   if ( *(int *)&stru_B05488[41464] < *(int *)&stru_B05488[41456] /*0x6f08c5*/
     || (stru_B05488[41461] || !*(_DWORD *)&stru_B05488[41456])
     && *(int *)&stru_B05488[41468] > 0
@@ -184,6 +187,7 @@ LABEL_11:
     *(_DWORD *)(*(_DWORD *)&stru_B05488[41452] + 4 * v7) = this; /*0x6f08e1*/
   }
   return this; /*0x6f08e6*/
+}
 }
 
 // 0x710AF0
@@ -200,9 +204,9 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3)
   this->q0AA = 0; /*0x710b2f*/
   this->VoiceEnter = 0; /*0x710b36*/
   this->EliteAbilities = 0; /*0x710b3d*/
-  *(_DWORD *)(this + 690) = 0; /*0x710b43*/
-  *(_DWORD *)(this + 694) = 0; /*0x710b4b*/
-  *(_DWORD *)(this + 698) = 0; /*0x710b51*/
+  this->u32_2B2 = 0; /*0x710b43*/
+  this->u32_2B6 = 0; /*0x710b4b*/
+  this->u32_2BA = 0; /*0x710b51*/
   this->VoiceHarvest = 0; /*0x710b57*/
   this->SpecialThreatValue = 0; /*0x710b5e*/
   this->techLevel = 0; /*0x710b64*/
@@ -215,12 +219,12 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3)
   this->TargetStrengthCoefficient = 0; /*0x710b8e*/
   this->q0B9 = 0; /*0x710b94*/
   this->TargetDistanceCoefficient = 0; /*0x710b9a*/
-  *((_DWORD *)this + 187) = 0; /*0x710ba0*/
+  this->u32_2EC = 0; /*0x710ba0*/
   this->ThreatAvoidanceCoefficient = 0; /*0x710ba6*/
-  *((_DWORD *)this + 189) = 0; /*0x710bac*/
+  this->u32_2F4 = 0; /*0x710bac*/
   this->SlowdownDistance = 500; /*0x710bb2*/
   this->unknown_double_300 = -755914244; /*0x710bbc*/
-  *((_DWORD *)this + 193) = 1063281229; /*0x710bc6*/
+  this->u32_304 = 1063281229; /*0x710bc6*/
   this->AccelerationFactor = -343597384; /*0x710bd0*/
   this->q0C3 = 1067366481; /*0x710bda*/
   this->CloakingSpeed = 7; /*0x710be4*/
@@ -228,7 +232,7 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3)
   this->DebrisTypes.Count = 0; /*0x710bf8*/
   this->DebrisTypes.CapacityIncrement = 10; /*0x710bfb*/
   this->DebrisTypes = &vt_TypeList_VoxelAnimTypeClass_const; /*0x710bfe*/
-  VectorClass::Construct((_DWORD *)this + 204, 0, 0); /*0x710c0f*/
+  VectorClass::Construct((_DWORD *)&this->DebrisMaximums, 0, 0); /*0x710c0f*/
   this->DebrisMaximums.CapacityIncrement = 10; /*0x710c14*/
   this->DebrisMaximums.Count = 0; /*0x710c17*/
   this->DebrisMaximums = &vt_TypeList_int; /*0x710c1a*/
@@ -243,7 +247,7 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3)
   this->Weight = 0; /*0x710c6b*/
   this->q374 = 1072693248; /*0x710c71*/
   this->PhysicalSize = 0; /*0x710c77*/
-  *((_DWORD *)this + 223) = 0x40000000; /*0x710c7d*/
+  this->u32_37C = 0x40000000; /*0x710c7d*/
   this->Size = 0; /*0x710c87*/
   this->q384 = 1072693248; /*0x710c8d*/
   this->SizeLimit = 0; /*0x710c93*/
@@ -252,23 +256,23 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3)
   this->VHPScan = 0; /*0x710ca5*/
   this->unknown_int_398 = 15; /*0x710cab*/
   this->RollAngle = 942502757; /*0x710cb5*/
-  *((_DWORD *)this + 233) = 1071694162; /*0x710cbf*/
+  this->u32_3A4 = 1071694162; /*0x710cbf*/
   this->PitchSpeed = 0; /*0x710cc9*/
   this->q3AC = 1070596096; /*0x710ccf*/
   this->PitchAngle = 1256670343; /*0x710cd9*/
-  *((_DWORD *)this + 237) = 1071011608; /*0x710ce3*/
+  this->u32_3B4 = 1071011608; /*0x710ce3*/
   this->BuildLimit = 0x7FFFFFFF; /*0x710cf0*/
   this->Category = -1; /*0x710cfa*/
   this->unknown_3C0 = 0; /*0x710d00*/
   this->DeployTime = 0; /*0x710d06*/
-  *((_DWORD *)this + 243) = 0; /*0x710d0c*/
+  this->u32_3CC = 0; /*0x710d0c*/
   this->FireAngle = 8; /*0x710d12*/
   this->PipScale = 0; /*0x710d1c*/
   this->PipsDrawForAll = 0; /*0x710d22*/
   this->LeptonMindControlOffset = 70; /*0x710d28*/
   this->PixelSelectionBracketDelta = 0; /*0x710d33*/
   this->PipWrap = 0; /*0x710d40*/
-  VectorClass::BuildingTypeConstructor((_DWORD *)this + 250, 0, 0); /*0x710d46*/
+  VectorClass::BuildingTypeConstructor((_DWORD *)&this->Dock, 0, 0); /*0x710d46*/
   this->Dock.CapacityIncrement = 10; /*0x710d4b*/
   this->Dock.Count = 0; /*0x710d51*/
   this->Dock = &vt_TypeList_BuildingTypeClass_const; /*0x710d57*/
@@ -276,43 +280,43 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3)
   this->UndeploysInto = 0; /*0x710d67*/
   this->PowersUnit = 0; /*0x710d6e*/
   this->PoweredUnit = 0; /*0x710d7b*/
-  VectorClass::Construct((_DWORD *)this + 261, 0, 0); /*0x710d81*/
+  VectorClass::Construct((_DWORD *)&this->VoiceSelect, 0, 0); /*0x710d81*/
   this->VoiceSelect.CapacityIncrement = 10; /*0x710d8e*/
   this->VoiceSelect.Count = 0; /*0x710d94*/
   this->VoiceSelect = &vt_TypeList_int; /*0x710d9a*/
-  VectorClass::Construct((_DWORD *)this + 268, 0, 0); /*0x710da4*/
+  VectorClass::Construct((_DWORD *)&this->VoiceSelectEnslaved, 0, 0); /*0x710da4*/
   this->VoiceSelectEnslaved.CapacityIncrement = 10; /*0x710db1*/
   this->VoiceSelectEnslaved.Count = 0; /*0x710db7*/
   this->VoiceSelectEnslaved = &vt_TypeList_int; /*0x710dbd*/
-  VectorClass::Construct((_DWORD *)this + 275, 0, 0); /*0x710dc7*/
+  VectorClass::Construct((_DWORD *)&this->VoiceSelectDeactivated, 0, 0); /*0x710dc7*/
   this->VoiceSelectDeactivated.CapacityIncrement = 10; /*0x710dd4*/
   this->VoiceSelectDeactivated.Count = 0; /*0x710dda*/
   this->VoiceSelectDeactivated = &vt_TypeList_int; /*0x710de0*/
-  VectorClass::Construct((_DWORD *)this + 282, 0, 0); /*0x710dea*/
+  VectorClass::Construct((_DWORD *)&this->VoiceMove, 0, 0); /*0x710dea*/
   this->VoiceMove.CapacityIncrement = 10; /*0x710df7*/
   this->VoiceMove.Count = 0; /*0x710dfd*/
   this->VoiceMove = &vt_TypeList_int; /*0x710e03*/
-  VectorClass::Construct((_DWORD *)this + 289, 0, 0); /*0x710e0d*/
+  VectorClass::Construct((_DWORD *)&this->VoiceAttack, 0, 0); /*0x710e0d*/
   this->VoiceAttack.CapacityIncrement = 10; /*0x710e1a*/
   this->VoiceAttack.Count = 0; /*0x710e20*/
   this->VoiceAttack = &vt_TypeList_int; /*0x710e26*/
-  VectorClass::Construct((_DWORD *)this + 296, 0, 0); /*0x710e30*/
+  VectorClass::Construct((_DWORD *)&this->VoiceSpecialAttack, 0, 0); /*0x710e30*/
   this->VoiceSpecialAttack.CapacityIncrement = 10; /*0x710e3d*/
   this->VoiceSpecialAttack.Count = 0; /*0x710e43*/
   this->VoiceSpecialAttack = &vt_TypeList_int; /*0x710e49*/
-  VectorClass::Construct((_DWORD *)this + 303, 0, 0); /*0x710e53*/
+  VectorClass::Construct((_DWORD *)&this->VoiceDie, 0, 0); /*0x710e53*/
   this->VoiceDie.CapacityIncrement = 10; /*0x710e58*/
   this->VoiceDie.Count = 0; /*0x710e5e*/
   this->VoiceDie = &vt_TypeList_int; /*0x710e6c*/
-  VectorClass::Construct((_DWORD *)this + 310, 0, 0); /*0x710e76*/
+  VectorClass::Construct((_DWORD *)&this->VoiceFeedback, 0, 0); /*0x710e76*/
   this->VoiceFeedback.CapacityIncrement = 10; /*0x710e83*/
   this->VoiceFeedback.Count = 0; /*0x710e89*/
   this->VoiceFeedback = &vt_TypeList_int; /*0x710e8f*/
-  VectorClass::Construct((_DWORD *)this + 317, 0, 0); /*0x710e99*/
+  VectorClass::Construct((_DWORD *)&this->MoveSound, 0, 0); /*0x710e99*/
   this->MoveSound.CapacityIncrement = 10; /*0x710ea6*/
   this->MoveSound.Count = 0; /*0x710eac*/
   this->MoveSound = &vt_TypeList_int; /*0x710eb2*/
-  VectorClass::Construct((_DWORD *)this + 324, 0, 0); /*0x710ebc*/
+  VectorClass::Construct((_DWORD *)&this->DieSound, 0, 0); /*0x710ebc*/
   this->DieSound.CapacityIncrement = 10; /*0x710ec1*/
   this->DieSound.Count = 0; /*0x710ec7*/
   this->DieSound = &vt_TypeList_int; /*0x710ecd*/
@@ -354,7 +358,7 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3)
   this->GuardRange = 0; /*0x710fb1*/
   this->MinDebris = 0; /*0x710fb7*/
   this->MaxDebris = 0; /*0x710fbd*/
-  AnimTypeVector::Constructor((_DWORD *)this + 369, 0, 0); /*0x710fc3*/
+  AnimTypeVector::Constructor((_DWORD *)&this->DebrisAnims, 0, 0); /*0x710fc3*/
   this->DebrisAnims.CapacityIncrement = 10; /*0x710fc8*/
   this->DebrisAnims.Count = 0; /*0x710fce*/
   this->DebrisAnims = &vt_TypeList_AnimTypeClass_const; /*0x710fd4*/
@@ -383,11 +387,11 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3)
   this->AirstrikeRechargeTime = 0; /*0x71106e*/
   this->EliteAirstrikeRechargeTime = 0; /*0x711075*/
   this->TechLevel = 255; /*0x711082*/
-  VectorClass::Construct((_DWORD *)this + 398, 0, 0); /*0x71108c*/
+  VectorClass::Construct((_DWORD *)&this->Prerequisite, 0, 0); /*0x71108c*/
   this->Prerequisite.CapacityIncrement = 10; /*0x711099*/
   this->Prerequisite.Count = 0; /*0x71109f*/
   this->Prerequisite = &vt_TypeList_int; /*0x7110a5*/
-  VectorClass::Construct((_DWORD *)this + 405, 0, 0); /*0x7110af*/
+  VectorClass::Construct((_DWORD *)&this->PrerequisiteOverride, 0, 0); /*0x7110af*/
   this->PrerequisiteOverride.CapacityIncrement = 10; /*0x7110b8*/
   this->PrerequisiteOverride.Count = 0; /*0x7110be*/
   this->PrerequisiteOverride = &vt_TypeList_int; /*0x7110c4*/
@@ -429,7 +433,7 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3)
   this->AllowedToStartInMultiplayer = 1; /*0x7111ac*/
   if ( &g_INI_DefaultBuffer ) /*0x7111b9*/
   {
-    strncpy(this + 1750, &g_INI_DefaultBuffer, 0x18u); /*0x7111c7*/
+    strncpy(&this->u32_1B58, &g_INI_DefaultBuffer, 0x18u); /*0x7111c7*/
     this->q6EE = 0; /*0x7111cf*/
   }
   else
@@ -440,7 +444,7 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3)
   this->CameoAllocated = 0; /*0x7111e2*/
   if ( &g_INI_DefaultBuffer ) /*0x7111ee*/
   {
-    strncpy(this + 1781, &g_INI_DefaultBuffer, 0x18u); /*0x7111fc*/
+    strncpy(&this->u32_1BD4, &g_INI_DefaultBuffer, 0x18u); /*0x7111fc*/
     this->q70D = 0; /*0x711204*/
   }
   else
@@ -454,18 +458,18 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3)
   this->TurretOffset = 0; /*0x711222*/
   this->CanBeHidden = 1; /*0x711229*/
   this->Points2 = 0; /*0x711237*/
-  AnimTypeVector::Constructor((_DWORD *)this + 459, 0, 0); /*0x71123d*/
+  AnimTypeVector::Constructor((_DWORD *)&this->Explosion, 0, 0); /*0x71123d*/
   this->Explosion.CapacityIncrement = 10; /*0x71124a*/
   this->Explosion.Count = 0; /*0x711250*/
   this->Explosion = &vt_TypeList_AnimTypeClass_const; /*0x711256*/
-  AnimTypeVector::Constructor((_DWORD *)this + 466, 0, 0); /*0x711260*/
+  AnimTypeVector::Constructor((_DWORD *)&this->DestroyAnim, 0, 0); /*0x711260*/
   this->DestroyAnim.CapacityIncrement = 10; /*0x711265*/
   this->DestroyAnim.Count = 0; /*0x71126b*/
   this->DestroyAnim = &vt_TypeList_AnimTypeClass_const; /*0x711271*/
   this->NaturalParticleSystem = 0; /*0x71127b*/
   this->NaturalParticleSystemLocation = 0; /*0x711282*/
-  *((_DWORD *)this + 475) = 0; /*0x711288*/
-  *((_DWORD *)this + 476) = 0; /*0x71128e*/
+  this->u32_76C = 0; /*0x711288*/
+  this->ptr_770 = 0; /*0x71128e*/
   this->RefinerySmokeParticleSystem = 0; /*0x71129b*/
   VectorClass::ConstructorWithVtable(0, 0); /*0x7112a1*/
   this->DamageParticleSystems.CapacityIncrement = 10; /*0x7112ae*/
@@ -476,17 +480,17 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3)
   this->DestroyParticleSystems.Count = 0; /*0x7112cf*/
   this->DestroyParticleSystems = &vt_TypeList_ParticleSystemTypeClass_const; /*0x7112d5*/
   this->DamageSmokeOffset = 0; /*0x7112df*/
-  *((_DWORD *)this + 493) = 0; /*0x7112e5*/
-  *((_DWORD *)this + 494) = 0; /*0x7112eb*/
+  this->u32_7B4 = 0; /*0x7112e5*/
+  this->u32_7B8 = 0; /*0x7112eb*/
   this->DamSmkOffScrnRel = 0; /*0x7112f1*/
   this->DestroySmokeOffset = 0; /*0x7112f7*/
   this->q7C4 = 0; /*0x7112fd*/
-  *((_DWORD *)this + 498) = 0; /*0x711303*/
+  this->u32_7C8 = 0; /*0x711303*/
   this->RefinerySmokeOffsetOne = 0; /*0x711309*/
   this->AmbientSound = 0; /*0x71130f*/
-  *((_DWORD *)this + 501) = 0; /*0x711315*/
+  this->u32_7D4 = 0; /*0x711315*/
   this->RefinerySmokeOffsetTwo = 0; /*0x71131b*/
-  *((_DWORD *)this + 503) = 0; /*0x711321*/
+  this->u32_7DC = 0; /*0x711321*/
   this->ImageFile = 0; /*0x711327*/
   this->RefinerySmokeOffsetThree = 0; /*0x71132d*/
   this->ArcticArtInUse = 0; /*0x711333*/
@@ -526,14 +530,14 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3)
   this->Turret = 0; /*0x711402*/
   this->TurretRecoil = 0; /*0x711412*/
   this->TurretAnimData = 2; /*0x711418*/
-  *((_DWORD *)this + 810) = 1; /*0x71141e*/
-  *((_DWORD *)this + 811) = 1; /*0x711424*/
-  *((_DWORD *)this + 812) = 1; /*0x71142a*/
+  this->u32_CA8 = 1; /*0x71141e*/
+  this->u32_CAC = 1; /*0x711424*/
+  this->u32_CB0 = 1; /*0x71142a*/
   this->unknown_bool_CB4 = 0; /*0x711430*/
   this->BarrelAnimData = 2; /*0x711436*/
-  *((_DWORD *)this + 815) = 1; /*0x71143c*/
+  this->u32_CBC = 1; /*0x71143c*/
   this->DebrisMaximums = 1; /*0x711442*/
-  *((_DWORD *)this + 817) = 1; /*0x711448*/
+  this->u32_CC4 = 1; /*0x711448*/
   this->unknown_bool_CC8 = 0; /*0x71144e*/
   this->qCCC = 1; /*0x711454*/
   this->qCCD = 0; /*0x71145a*/
@@ -545,9 +549,9 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3)
   this->Cloakable = 0; /*0x71147e*/
   this->qCD4 = 0; /*0x711484*/
   this->qCD5 = 0; /*0x71148a*/
-  *((_DWORD *)this + 822) = 0; /*0x711490*/
-  *((_DWORD *)this + 835) = 0; /*0x711496*/
-  *((_DWORD *)this + 836) = 0; /*0x71149c*/
+  this->u32_CD8 = 0; /*0x711490*/
+  this->u32_D0C = 0; /*0x711496*/
+  this->u32_D10 = 0; /*0x71149c*/
   this->qD14 = 0; /*0x7114a2*/
   this->qD15 = 0; /*0x7114a8*/
   this->SlavesNumber = 0; /*0x7114ae*/
@@ -598,7 +602,7 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3)
   this->SecretHouses = 1084227584; /*0x7115cd*/
   this->unknown_double_360 = 500; /*0x7115d3*/
   this->SecondSpawnOffset = 0x40000000; /*0x7115dd*/
-  *((_DWORD *)this + 866) = 1041865114; /*0x7115e7*/
+  this->u32_D88 = 1041865114; /*0x7115e7*/
   this->qD8C = 0; /*0x7115f1*/
   this->q364 = 40; /*0x7115f7*/
   this->JumpJet = 0; /*0x711601*/
@@ -611,7 +615,7 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3)
   this->qD9D = 0; /*0x71162d*/
   this->ZFudgeBridge = -1; /*0x711633*/
   this->PaletteFile = -1; /*0x711639*/
-  *((_DWORD *)this + 874) = -1; /*0x71163f*/
+  this->u32_DA8 = -1; /*0x71163f*/
   this->qDAC = 0; /*0x711645*/
   this->qDBC = 0; /*0x71164b*/
   this->qDBD = 1; /*0x711651*/
@@ -621,18 +625,18 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3)
   this->Palette = 5; /*0x71166a*/
   this->qDC8 = 10; /*0x711674*/
   this->qDCC = 0; /*0x71167a*/
-  *((_DWORD *)this + 892) = 0; /*0x711680*/
+  this->u32_DF0 = 0; /*0x711680*/
   *(_DWORD *)this = &TechnoTypeClass::`vftable'; /*0x711686*/
   this->vtable1 = &TechnoTypeClass::`vftable'; /*0x71168c*/
   this->vtable2 = &TechnoTypeClass::`vftable'; /*0x711693*/
   this->vtable3 = &vt_TechnoTypeClass; /*0x71169a*/
   this->qDD0 = 0; /*0x7116a7*/
   this->q234 = 1; /*0x7116ad*/
-  (*(void (__thiscall **)(char *))(this->DebrisTypes + 12))(this + 788); /*0x7116b6*/
-  (*(void (__thiscall **)(char *))(this->DebrisAnims + 12))(this + 1476); /*0x7116c5*/
-  (*(void (__thiscall **)(char *))(this->DebrisMaximums + 12))(this + 816); /*0x7116d4*/
-  (*(void (__thiscall **)(char *))(this->Dock + 12))(this + 1000); /*0x7116e3*/
-  _DWORD * v4 = this + 2216; /*0x7116e6*/
+  (*(void (__thiscall **)(char *))(this->DebrisTypes + 12))(&this->u32_1388); /*0x7116b6*/
+  (*(void (__thiscall **)(char *))(this->DebrisAnims + 12))(&this->u32_24C6); /*0x7116c5*/
+  (*(void (__thiscall **)(char *))(this->DebrisMaximums + 12))(&this->u32_1446); /*0x7116d4*/
+  (*(void (__thiscall **)(char *))(this->Dock + 12))(&this->u32_1900); /*0x7116e3*/
+  _DWORD * v4 = &this->u32_22A0; /*0x7116e6*/
   int v5 = 18; /*0x7116ec*/
   do /*0x71170f*/
   {
@@ -648,7 +652,7 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3)
     *((_BYTE *)v4 - 20) = 0; /*0x71170c*/
   }
   while ( v5 ); /*0x71170f*/
-  _DWORD * v7 = this + 2724; /*0x711711*/
+  _DWORD * v7 = &this->u32_2A90; /*0x711711*/
   int v8 = 18; /*0x711717*/
   do /*0x71173a*/
   {
@@ -664,7 +668,7 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3)
     *((_BYTE *)v7 - 20) = 0; /*0x711737*/
   }
   while ( v8 ); /*0x71173a*/
-  _DWORD * v10 = this + 2140; /*0x71173c*/
+  _DWORD * v10 = &this->u32_2170; /*0x71173c*/
   int v11 = 5; /*0x711742*/
   do /*0x711757*/
   {
@@ -677,10 +681,10 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3)
   }
   while ( v11 ); /*0x711757*/
   this->qDB0 = 0; /*0x711763*/
-  _DWORD * v13 = this + 3316; /*0x711765*/
-  *((_DWORD *)this + 877) = 0; /*0x71176b*/
+  _DWORD * v13 = &this->u32_33D0; /*0x711765*/
+  this->u32_DB4 = 0; /*0x71176b*/
   int v14 = 6; /*0x71176e*/
-  *((_DWORD *)this + 878) = 0; /*0x711773*/
+  this->u32_DB8 = 0; /*0x711773*/
   do /*0x71177f*/
   {
     *(v13 - 6) = 0; /*0x711776*/
@@ -688,7 +692,7 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3)
     --v14; /*0x71177e*/
   }
   while ( v14 ); /*0x71177f*/
-  memset(this + 2068, 0xFFu, 0x48u); /*0x71178e*/
+  memset(&this->u32_2050, 0xFFu, 0x48u); /*0x71178e*/
   if ( g_AnimManager < g_AnimTypePool /*0x7117c3*/
     || (g_AnimPoolLocked || !g_AnimTypePool)
     && g_AnimManagerConfig > 0
@@ -713,6 +717,7 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3)
   }
   return this; /*0x711837*/
 }
+}
 
 // 0x711840
 AbstractClass * * TechnoTypeClass::Construct(ObjectTypeClass * aP1)
@@ -720,58 +725,58 @@ AbstractClass * * TechnoTypeClass::Construct(ObjectTypeClass * aP1)
 {
   CCINIClass *v5; // edx
   ObjectTypeClass::Construct((_DWORD *)this, aP1); /*0x71184b*/
-  TechnoTypeClass::Constructor_0((_DWORD *)(this + 788), aP1); /*0x711859*/
+  TechnoTypeClass::Constructor_0((_DWORD *)(&this->u32_1388), aP1); /*0x711859*/
   this->DebrisTypes = &vt_TypeList_VoxelAnimTypeClass_const; /*0x71185e*/
-  IntDynamicVector::Construct((_DWORD *)(this + 816), aP1); /*0x71186d*/
+  IntDynamicVector::Construct((_DWORD *)(&this->u32_1446), aP1); /*0x71186d*/
   this->DebrisMaximums = &vt_TypeList_int; /*0x711872*/
   this->unknown_3C0 = 0; /*0x711883*/
-  TechnoTypeClass::Constructor_1((_DWORD *)(this + 1000), aP1); /*0x711889*/
+  TechnoTypeClass::Constructor_1((_DWORD *)(&this->u32_1900), aP1); /*0x711889*/
   this->Dock = &vt_TypeList_BuildingTypeClass_const; /*0x71188e*/
-  IntDynamicVector::Construct((_DWORD *)(this + 1044), aP1); /*0x71189e*/
+  IntDynamicVector::Construct((_DWORD *)(&this->u32_1A04), aP1); /*0x71189e*/
   this->VoiceSelect = &vt_TypeList_int; /*0x7118a3*/
-  IntDynamicVector::Construct((_DWORD *)(this + 1072), aP1); /*0x7118b3*/
+  IntDynamicVector::Construct((_DWORD *)(&this->u32_1AC2), aP1); /*0x7118b3*/
   this->VoiceSelectEnslaved = &vt_TypeList_int; /*0x7118b8*/
-  IntDynamicVector::Construct((_DWORD *)(this + 1100), aP1); /*0x7118c8*/
+  IntDynamicVector::Construct((_DWORD *)(&this->u32_1B80), aP1); /*0x7118c8*/
   this->VoiceSelectDeactivated = &vt_TypeList_int; /*0x7118cd*/
-  IntDynamicVector::Construct((_DWORD *)(this + 1128), aP1); /*0x7118dd*/
+  IntDynamicVector::Construct((_DWORD *)(&this->u32_1C08), aP1); /*0x7118dd*/
   this->VoiceMove = &vt_TypeList_int; /*0x7118e2*/
-  IntDynamicVector::Construct((_DWORD *)(this + 1156), aP1); /*0x7118f2*/
+  IntDynamicVector::Construct((_DWORD *)(&this->u32_1CC6), aP1); /*0x7118f2*/
   this->VoiceAttack = &vt_TypeList_int; /*0x7118f7*/
-  IntDynamicVector::Construct((_DWORD *)(this + 1184), aP1); /*0x711907*/
+  IntDynamicVector::Construct((_DWORD *)(&this->u32_1D84), aP1); /*0x711907*/
   this->VoiceSpecialAttack = &vt_TypeList_int; /*0x71190c*/
-  IntDynamicVector::Construct((_DWORD *)(this + 1212), aP1); /*0x71191c*/
+  IntDynamicVector::Construct((_DWORD *)(&this->u32_1E42), aP1); /*0x71191c*/
   this->VoiceDie = &vt_TypeList_int; /*0x711921*/
-  IntDynamicVector::Construct((_DWORD *)(this + 1240), aP1); /*0x711931*/
+  IntDynamicVector::Construct((_DWORD *)(&this->CrushSound0), aP1); /*0x711931*/
   this->VoiceFeedback = &vt_TypeList_int; /*0x711936*/
-  IntDynamicVector::Construct((_DWORD *)(this + 1268), aP1); /*0x711946*/
+  IntDynamicVector::Construct((_DWORD *)(&this->ImageFile8), aP1); /*0x711946*/
   this->MoveSound = &vt_TypeList_int; /*0x71194b*/
-  IntDynamicVector::Construct((_DWORD *)(this + 1296), aP1); /*0x71195b*/
+  IntDynamicVector::Construct((_DWORD *)(&this->IsLogic6), aP1); /*0x71195b*/
   this->DieSound = &vt_TypeList_int; /*0x711960*/
-  ObjectTypeClass::CheckFlag((_DWORD *)(this + 1476), aP1); /*0x711970*/
+  ObjectTypeClass::CheckFlag((_DWORD *)(&this->u32_24C6), aP1); /*0x711970*/
   this->DebrisAnims = &vt_TypeList_AnimTypeClass_const; /*0x711975*/
-  IntDynamicVector::Construct((_DWORD *)(this + 1592), aP1); /*0x711985*/
+  IntDynamicVector::Construct((_DWORD *)(&this->u32_27C2), aP1); /*0x711985*/
   this->Prerequisite = &vt_TypeList_int; /*0x71198a*/
-  IntDynamicVector::Construct((_DWORD *)(this + 1620), aP1); /*0x71199a*/
+  IntDynamicVector::Construct((_DWORD *)(&this->u32_2880), aP1); /*0x71199a*/
   this->PrerequisiteOverride = &vt_TypeList_int; /*0x71199f*/
   this->CameoFile = 0; /*0x7119ac*/
   this->AltCameoFile = 0; /*0x7119b5*/
-  ObjectTypeClass::CheckFlag((_DWORD *)(this + 1836), aP1); /*0x7119bb*/
+  ObjectTypeClass::CheckFlag((_DWORD *)(&this->u32_2DC6), aP1); /*0x7119bb*/
   this->Explosion = &vt_TypeList_AnimTypeClass_const; /*0x7119c0*/
-  ObjectTypeClass::CheckFlag((_DWORD *)(this + 1864), aP1); /*0x7119d0*/
+  ObjectTypeClass::CheckFlag((_DWORD *)(&this->buildLimit4), aP1); /*0x7119d0*/
   this->DestroyAnim = &vt_TypeList_AnimTypeClass_const; /*0x7119df*/
-  TypeList::ParticleConstructor((_DWORD *)(this + 1912), 0, 0); /*0x7119e6*/
+  TypeList::ParticleConstructor((_DWORD *)(&this->q2FC2), 0, 0); /*0x7119e6*/
   this->DamageParticleSystems = &vt_TypeList_ParticleSystemTypeClass_const; /*0x7119eb*/
-  TypeList::ParticleConstructor((_DWORD *)(this + 1940), 0, 0); /*0x7119fb*/
+  TypeList::ParticleConstructor((_DWORD *)(&this->AccelerationFactor0), 0, 0); /*0x7119fb*/
   this->DestroyParticleSystems = &vt_TypeList_ParticleSystemTypeClass_const; /*0x711a0a*/
   this->TurretAnimData = 2; /*0x711a10*/
-  *(_DWORD *)(this + 3240) = 1; /*0x711a16*/
-  *(_DWORD *)(this + 3244) = 1; /*0x711a1c*/
-  *(_DWORD *)(this + 3248) = 1; /*0x711a22*/
+  this->u32_CA8 = 1; /*0x711a16*/
+  this->u32_CAC = 1; /*0x711a1c*/
+  this->u32_CB0 = 1; /*0x711a22*/
   this->unknown_bool_CB4 = 0; /*0x711a28*/
   this->BarrelAnimData = 2; /*0x711a2e*/
-  *(_DWORD *)(this + 3260) = 1; /*0x711a34*/
+  this->u32_CBC = 1; /*0x711a34*/
   this->DebrisMaximums = 1; /*0x711a3a*/
-  *(_DWORD *)(this + 3268) = 1; /*0x711a40*/
+  this->u32_CC4 = 1; /*0x711a40*/
   this->unknown_bool_CC8 = 0; /*0x711a46*/
   *(_DWORD *)this = &TechnoTypeClass::`vftable'; /*0x711a4c*/
   this->vtable1 = &TechnoTypeClass::`vftable'; /*0x711a52*/
@@ -808,6 +813,7 @@ LABEL_5:
       goto LABEL_5; /*0x711a82*/
   }
   return this; /*0x711ad0*/
+}
 }
 
 // 0x711AE0
@@ -948,6 +954,7 @@ int TechnoTypeClass::ComputeValueSimple(float * a2)
   float * v6 = (float *)(*(int (__thiscall **)(TechnoTypeClass *))(*(_DWORD *)this->vtable0 + 172))(this); /*0x711f31*/
   return Math::RoundToInt((double)(int)v6 * ThreatMultiplier * v5); /*0x711f46*/
 }
+}
 
 // 0x711F60
 int TechnoTypeClass::ComputeValue(void * a2, float a3)
@@ -981,6 +988,7 @@ int TechnoTypeClass::ComputeValue(void * a2, float a3)
     int v11 = (*(int (__thiscall **)(TechnoTypeClass *))(*(_DWORD *)this->vtable0 + 172))(this); /*0x712020*/
     return Math::RoundToInt((double)v11 * v7); /*0x71202c*/
   }
+}
 }
 
 // 0x7162F0
@@ -1340,6 +1348,7 @@ DynamicVectorClass * * TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, i
   }
   return result; /*0x716dac*/
 }
+}
 
 // 0x716DC0
 int TechnoTypeClass::SaveLoad_Prefix_0(void * a1, TechnoTypeClass * aP2, TechnoTypeClass * aP3)
@@ -1457,6 +1466,7 @@ int TechnoTypeClass::SaveLoad_Prefix_0(void * a1, TechnoTypeClass * aP2, TechnoT
   }
   return result; /*0x717094*/
 }
+}
 
 // 0x41CB50
 char TechnoTypeClass::vt_entry_A0()
@@ -1473,6 +1483,7 @@ void* TechnoTypeClass::CanAttackMove_IgnoreWeapon_0()
 // attributes: thunk
 {
   return TechnoTypeClass::CanAttackMove_IgnoreWeapon(this);
+}
 }
 }
 // 0x711E90
@@ -1592,5 +1603,6 @@ void* TechnoTypeClass::CanAttackMove_IgnoreWeapon_0_0()
 // attributes: thunk
 {
   return TechnoTypeClass::CanAttackMove_IgnoreWeapon(this);
+}
 }
 }

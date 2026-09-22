@@ -262,6 +262,7 @@ LABEL_19:
   return 0; /*0x560dc7*/
 }
 } // namespace gamemd
+}
 
 // 0x561400
 namespace gamemd {
@@ -382,6 +383,7 @@ void VideoSettingsDialogProc(INIClass * aP0, unsigned int a2, WPARAM wParam, uns
   return 0; /*0x5615aa*/
 }
 } // namespace gamemd
+}
 
 // 0x568140
 namespace gamemd {
@@ -463,6 +465,7 @@ void sub_568140(int * a1, int a2)
   return result; /*0x5682f5*/
 }
 } // namespace gamemd
+}
 
 // 0x56AF40
 namespace gamemd {
@@ -530,6 +533,7 @@ BombClass * * E4Recv_56AF40::sub_56AF40(int a2)
   return v11; /*0x56b0df*/
 }
 } // namespace gamemd
+}
 
 // 0x56B250
 namespace gamemd {
@@ -590,6 +594,7 @@ BombClass * * E4Recv_56B250::sub_56B250(int a2)
   return v12 + v11; /*0x56b3d9*/
 }
 } // namespace gamemd
+}
 
 // 0x561350
 namespace gamemd {

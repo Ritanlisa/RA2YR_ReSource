@@ -15,6 +15,7 @@ void * BufferIOFile::Constructor(char * Source)
   return (CDFileClass *)this; /*0x47a9f0*/
 }
 } // namespace gamemd
+}
 
 // 0x47AA30
 namespace gamemd {
@@ -27,3 +28,4 @@ unsigned char * BufferIOFile::Init()
   return this; /*0x47aa44*/
 }
 } // namespace gamemd
+}

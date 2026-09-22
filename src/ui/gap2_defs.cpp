@@ -141,15 +141,15 @@ namespace gamemd { int MouseClass::getCursorFrame(int * a2) {
 namespace gamemd { void* MouseClass::applyCursorSettings(int a2) {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->ptr_4;
     *(void**)this = &vt_VectorClass_MixFileClass;
-    if ( v3 && *((char *)(this) + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->ptr_4 = 0;
   }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
+    this->IsAllocated = 0;
+    this->ptr_8 = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -541,10 +541,10 @@ namespace gamemd { int DropListClass::GetSelected() {
     int v2;
     int v3;
     int v5[4];
-    v1 = *(this + 4);
-    v5[0] = *(this + 3);
-    v2 = *(this + 5);
-    v3 = *(this + 6);
+    v1 = this->q010;
+    v5[0] = this->q00C;
+    v2 = this->q014;
+    v3 = this->q018;
     v5[1] = v1;
     v5[3] = v3;
     v5[2] = v2;
@@ -680,6 +680,8 @@ LABEL_11:
   }
   return 1; /*0x4c3529*/
 }
+}
+}
 // 0x4C3570
 namespace gamemd { int DropListClass::Close() {
 {
@@ -763,6 +765,8 @@ LABEL_3:
   }
   return result; /*0x5005e0*/
 }
+}
+}
 // 0x500700
 namespace gamemd { int SidebarClass::getTypeProductionCount(int a1, int a2, int a3) {
 {
@@ -814,7 +818,7 @@ namespace gamemd { void* SelectTeamCommand::Read() {
 // 0x536080
 namespace gamemd { int SelectTeamCommand::Do(int a1) {
 {
-    return TacticalClass::SetObserverView(*(this + 1));
+    return TacticalClass::SetObserverView(this->SelectTeamCommand_field_00);
 }
 } }
 // 0x536140
@@ -832,7 +836,7 @@ namespace gamemd { void* AddTeamCommand::Read() {
 // 0x536170
 namespace gamemd { int AddTeamCommand::Do(int a1) {
 {
-    return SquadClass::SelectAllMembers(*(this + 1));
+    return SquadClass::SelectAllMembers(this->AddTeamCommand_field_00);
 }
 } }
 // 0x536230
@@ -850,7 +854,7 @@ namespace gamemd { void* CenterTeamCommand::Read() {
 // 0x536260
 namespace gamemd { int CenterTeamCommand::Do(int a1) {
 {
-    return TacticalClass::ResetView(*(this + 1));
+    return TacticalClass::ResetView(this->CenterTeamCommand_field_00);
 }
 } }
 // 0x536320
@@ -1065,15 +1069,15 @@ namespace gamemd { int CheckListClass::checkItem(int * a2) {
 namespace gamemd { void* CheckListClass::toggleItem(int a2) {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_LineTrail;
-    if ( v3 && *((char *)(this) + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
+    this->IsAllocated = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -1367,30 +1371,30 @@ namespace gamemd { void* ListClass::Destru_vt00(int a2) {
     char v3;
     GaugeClass *v4;
     void *v5;
-    v3 = *(this + 84);
+    v3 = *(&this->u32_204);
     *(int *)this = &vt_ListClass;
     if ( v3 )
   {
-    v4 = (GaugeClass *)*((int *)(this) + 70);
-    *((int *)(this) + 5) += *((int *)(this) + 75);
-    *(this + 84) = 0;
-    ((void (__thiscall *)(char *))v4[1].GaugeClass_field_0x04)(this + 280);
-    (*(void (__thiscall **)(char *))(*((int *)(this) + 22) + 36))(this + 88);
-    (*(void (__thiscall **)(char *))(*((int *)(this) + 46) + 36))(this + 184);
+    v4 = (GaugeClass *)this->q118;
+    this->q014 += this->q12C;
+    *(&this->u32_204) = 0;
+    ((void (__thiscall *)(char *))v4[1].GaugeClass_field_0x04)(&this->u32_700);
+    (*(void (__thiscall **)(char *))(this->q058 + 36))(&this->u32_208);
+    (*(void (__thiscall **)(char *))(this->q0B8 + 36))(&this->u32_484);
     (*(void (__thiscall **)(char *))(*(int *)(this) + 72))(this);
   }
     SliderClass::Destructor((int *)(this) + 70);
-    ShapeButtonClass::Destructor((int)(this + 184));
-    ShapeButtonClass::Destructor((int)(this + 88));
-    v5 = (void *)*((int *)(this) + 14);
-    *((int *)(this) + 13) = &vt_VectorClass_unsigned_short_const;
-    if ( v5 && *(this + 65) )
+    ShapeButtonClass::Destructor((int)(&this->u32_484));
+    ShapeButtonClass::Destructor((int)(&this->u32_208));
+    v5 = (void *)this->q038;
+    this->q034 = &vt_VectorClass_unsigned_short_const;
+    if ( v5 && *(&this->u32_185) )
   {
     __3_YAXPAX_Z(v5);
-    *((int *)(this) + 14) = 0;
+    this->q038 = 0;
   }
-    *(this + 65) = 0;
-    *((int *)(this) + 15) = 0;
+    *(&this->u32_185) = 0;
+    this->q03C = 0;
     GadgetClass::Dtor(this);
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
@@ -1401,15 +1405,15 @@ namespace gamemd { void* ListClass::Destru_vt00(int a2) {
 namespace gamemd { void* CheckListClass::drawList(int a2) {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_unsigned_short_const;
-    if ( v3 && *((char *)(this) + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
+    this->IsAllocated = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -2051,6 +2055,8 @@ LABEL_99:
   }
   return result; /*0x5be6b8*/
 }
+}
+}
 // 0x5BE6D0
 namespace gamemd { int MouseClass::DrawCursor() {
 {
@@ -2235,6 +2241,8 @@ LABEL_29:
   }
   return result; /*0x5be831*/
 }
+}
+}
 // 0x5BE9B0
 namespace gamemd { void* MouseClass::drawCursor(int a1) {
 {
@@ -2353,6 +2361,7 @@ namespace gamemd { void MessageListClass::Init(int a1, int a2, int a3, int a4, i
       return result;
 }
 } }
+}
 // 0x5D3BA0
 namespace gamemd { int MessageListClass::AddMessage(void* a1, int a2, void* a3, int a4, int a5, int a6, int a7) {
 {
@@ -2517,6 +2526,8 @@ LABEL_38:
       MessageListClass::AddMessage(this, aP1, aP2, (CellStruct *)v32, a5, aP5, a7, 1); /*0x5d3f44*/
   }
   return (int)v23->__pad_0; /*0x5d3bc5*/
+}
+}
 }
 // 0x60CBA0
 namespace gamemd { int CampaignScore::LookupDialogHash() {
@@ -2813,6 +2824,8 @@ LABEL_46:
     result = ++v25; /*0x637cd3*/
   }
   return result; /*0x637cec*/
+}
+}
 }
 // 0x63E880
 namespace gamemd { int SidebarClass::addToList(void* a1) {
@@ -3126,6 +3139,8 @@ LABEL_62:
   }
   return TacticalClass::MouseInput((_DWORD *)this, (PowerClass *)aP1, a2); /*0x640396*/
 }
+}
+}
 // 0x6403A0
 namespace gamemd { int PowerClass::getDrain() {
 {
@@ -3199,9 +3214,9 @@ namespace gamemd { int SidebarClass::Load(int a1) {
     result = (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v2 + 12))(v2, &a2, 4, 0); /*0x6568cc*/
     if ( result >= 0 ) /*0x6568d1*/
     {
-      _DWORD * v21 = (_DWORD *)(this + 5312); /*0x6568dd*/
-      AudioController::Init((_DWORD *)(this + 5312)); /*0x6568e1*/
-      VectorClass *v5 = this + 4700; /*0x6568e6*/
+      _DWORD * v21 = (_DWORD *)(&this->u32_84C2); /*0x6568dd*/
+      AudioController::Init((_DWORD *)(&this->u32_84C2)); /*0x6568e1*/
+      VectorClass *v5 = &this->u32_4970; /*0x6568e6*/
       if ( this != -4700 ) /*0x6568ee*/
       {
         VectorClass::PointConstructor(0, 0); /*0x6568f4*/
@@ -3216,10 +3231,10 @@ LABEL_14:
         result = (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v2 + 12))(v2, &a2, 4, 0); /*0x656980*/
         if ( result >= 0 ) /*0x656990*/
         {
-          VectorClass *v10 = this + 4644; /*0x656996*/
+          VectorClass *v10 = &this->u32_4890; /*0x656996*/
           if ( this != -4644 ) /*0x65699e*/
           {
-            VectorClass::CellConstructor((_DWORD *)(this + 4644), 0, 0); /*0x6569a4*/
+            VectorClass::CellConstructor((_DWORD *)(&this->u32_7404), 0, 0); /*0x6569a4*/
             *(_DWORD *)v10 = &vt_DynamicVectorClass_Cell; /*0x6569a9*/
             this->q1238 = 10; /*0x6569af*/
             this->q1234 = 0; /*0x6569b6*/
@@ -3299,9 +3314,9 @@ LABEL_26:
           result = (*(int (__stdcall **)(int, _DWORD *, int, _DWORD))(*(_DWORD *)v2 + 12))(v2, v22, 8, 0); /*0x656920*/
           if ( result < 0 ) /*0x656925*/
             break; /*0x656925*/
-          int v6 = *(_DWORD *)(this + 4708); /*0x65692b*/
+          int v6 = this->u32_1264; /*0x65692b*/
           if ( this->q126C < v6 /*0x65694d*/
-            || (*(_BYTE *)(this + 4713) || !v6)
+            || (this->u8_1269 || !v6)
   int v7; // eax
             && (v7 = this->q1270, v7 > 0)
             && v5->Release(v6 + v7, 0) )
@@ -3319,6 +3334,7 @@ LABEL_26:
     }
   }
   return result; /*0x656ab3*/
+}
 }
 }
 // 0x656AC0
@@ -3394,6 +3410,8 @@ LABEL_10:
     }
   }
   return result; /*0x656bcd*/
+}
+}
 }
 // 0x674650
 namespace gamemd { int SidebarClass::ReadButtonList() {
@@ -3734,7 +3752,7 @@ namespace gamemd { int SidebarClass::Init() {
     DataGlobal_00B0B428 = 85; /*0x6a54e6*/
     SHA1::Reset((int)g_SidebarFlag); /*0x6a54ec*/
     int v10 = 0; /*0x6a54f1*/
-    _DWORD * v11 = this + 1370; /*0x6a54f5*/
+    _DWORD * v11 = &this->u32_1568; /*0x6a54f5*/
     do /*0x6a553b*/
     {
       *(v11 - 1) = DataGlobal_B0B4F4; /*0x6a5502*/
@@ -3878,9 +3896,11 @@ LABEL_44:
         *(this + v26 + 5355) = v2; /*0x6a581a*/
       }
     }
-    *((_BYTE *)this + 21772) = 0; /*0x6a5831*/
+    this->u8_550C = 0; /*0x6a5831*/
   }
   return v2; /*0x6a5839*/
+}
+}
 }
 // 0x6A5F20
 namespace gamemd { int SidebarClass::UpdateCameoProductionState(void* a1) {
@@ -4188,6 +4208,8 @@ LABEL_32:
     GadgetClass::Hide(&g_OverlayTypeConfig[15272]); /*0x6a7af9*/
   return PowerClass::updatePowerBarAnimation((int)this, (SidebarClass *)aP1, a2); /*0x6a7b0f*/
 }
+}
+}
 // 0x6A80A0
 namespace gamemd { void* TabClass::updateTabProduction(int a1) {
 {
@@ -4376,7 +4398,7 @@ namespace gamemd { int SidebarClass::UpdateCameos(int a1, int a2) {
         if ( v8 * (v7 + this->CellIterator_NextY) < v6 ) /*0x6a8c09*/
         {
           this->q012 = v4 - 1; /*0x6a8c11*/
-          *((_DWORD *)this + 19) = DataGlobal_B0B500; /*0x6a8c1a*/
+          this->u32_4C = DataGlobal_B0B500; /*0x6a8c1a*/
           this->q0F8 = 1; /*0x6a8c1d*/
           this->VisibleRect = 1; /*0x6a8c21*/
         }
@@ -4394,7 +4416,7 @@ namespace gamemd { int SidebarClass::UpdateCameos(int a1, int a2) {
           this->q0F8 = 0; /*0x6a8bef*/
           this->VisibleRect = 1; /*0x6a8bf3*/
           this->CellIterator_NextY = v10 - 1; /*0x6a8bf7*/
-          *((_DWORD *)this + 19) = 0; /*0x6a8bfa*/
+          this->u32_4C = 0; /*0x6a8bfa*/
         }
         else
         {
@@ -4412,31 +4434,31 @@ namespace gamemd { int SidebarClass::UpdateCameos(int a1, int a2) {
 LABEL_115:
     if ( this->q0F8 ) /*0x6a8c2c*/
     {
-      int v11 = *((_DWORD *)this + 19) - DataGlobal_B0B514; /*0x6a8c3e*/
-      *((_DWORD *)this + 19) = v11; /*0x6a8c40*/
+      int v11 = this->u32_4C - DataGlobal_B0B514; /*0x6a8c3e*/
+      this->u32_4C = v11; /*0x6a8c40*/
       if ( v11 <= 0 ) /*0x6a8c45*/
       {
         BuildingClass *v12 = this->CellIterator_NextY; /*0x6a8c47*/
         this->VisibleRect = 0; /*0x6a8c4a*/
-        *((_DWORD *)this + 19) = 0; /*0x6a8c4f*/
+        this->u32_4C = 0; /*0x6a8c4f*/
         this->CellIterator_NextY = v12 + 1; /*0x6a8c56*/
       }
     }
     else
     {
-      int v13 = DataGlobal_B0B514 + *((_DWORD *)this + 19); /*0x6a8c63*/
-      *((_DWORD *)this + 19) = v13; /*0x6a8c65*/
+      int v13 = DataGlobal_B0B514 + this->u32_4C; /*0x6a8c63*/
+      this->u32_4C = v13; /*0x6a8c65*/
       if ( v13 >= DataGlobal_B0B500 ) /*0x6a8c72*/
       {
         this->VisibleRect = 0; /*0x6a8c74*/
-        *((_DWORD *)this + 19) = 0; /*0x6a8c78*/
+        this->u32_4C = 0; /*0x6a8c78*/
       }
     }
     v57 = 1; /*0x6a8c7f*/
   }
   if ( this->q010 != -1 ) /*0x6a8c8c*/
   {
-    IUnknown *v14 = this + 8; /*0x6a8c8e*/
+    IUnknown *v14 = &this->u32_20; /*0x6a8c8e*/
   int v15; // ecx
     if ( CDTimerClass::TimeRemaining((int *)this + 2) || (v15 = this->q005) == 0 ) /*0x6a8ca5*/
     {
@@ -4469,7 +4491,7 @@ LABEL_115:
     int v17 = 0; /*0x6a8d1a*/
     if ( this->q054 > 0 ) /*0x6a8d1e*/
     {
-      _DWORD * v18 = this + 88; /*0x6a8d20*/
+      _DWORD * v18 = &this->u32_160; /*0x6a8d20*/
       do /*0x6a8d23*/
       {
         if ( v18[1] == 31 ) /*0x6a8d27*/
@@ -4518,7 +4540,7 @@ LABEL_44:
     int v58 = 0; /*0x6a8dad*/
     if ( this->q054 > 0 )
     {
-      _DWORD * v21 = this + 104; /*0x6a8dbd*/
+      _DWORD * v21 = &this->u32_1A0; /*0x6a8dbd*/
       do
       {
         IUnknown *v22 = (_DWORD *)*(v21 - 1); /*0x6a8dc6*/
@@ -4572,7 +4594,7 @@ LABEL_44:
   int v28 = 0; /*0x6a8f6a*/
   if ( this->q054 > 0 ) /*0x6a8f6f*/
   {
-    IUnknown *v29 = (int *)(this + 116); /*0x6a8f79*/
+    IUnknown *v29 = (int *)(&this->u32_2C6); /*0x6a8f79*/
     do /*0x6a9025*/
     {
       if ( *(v29 - 3) == 1 ) /*0x6a8f80*/
@@ -4749,6 +4771,8 @@ LABEL_97:
     return v57; /*0x6a92a3*/
   }
   return result; /*0x6a92b5*/
+}
+}
 }
 // 0x6AA600
 namespace gamemd { int SidebarClass::UpdateProduction() {
@@ -5035,6 +5059,8 @@ LABEL_79:
   if ( v43 ) /*0x6aac85*/
     __3_YAXPAX_Z(v43 - 4); /*0x6aac8f*/
   return v39; /*0x6aac9b*/
+}
+}
 }
 // 0x6AAD00
 namespace gamemd { int SidebarClass::ProcessInput(int a1, void* a2, int a3) {
@@ -6509,6 +6535,8 @@ pop     edi
 add     esp, 9Ch
 retn    0Ch
 */
+}
+}
 // 0x6AC5D0
 namespace gamemd { int SidebarClass::saveLoadPrefix(int a1) {
 {
@@ -6519,6 +6547,7 @@ namespace gamemd { int SidebarClass::saveLoadPrefix(int a1) {
 namespace gamemd {
 {
   return SidebarClass::Save(this, a2); /*0x6ac5ea*/
+}
 }
 // 0x6AC780
 namespace gamemd { void* SidebarClass::queryInterface(int a2) {
@@ -6784,12 +6813,12 @@ namespace gamemd { int SidebarClass::GetProductionState() {
   int v15; // [esp+Ch] [ebp-Ch]
   int v16; // [esp+10h] [ebp-8h]
   int v17; // [esp+14h] [ebp-4h]
-  if ( !*(_BYTE *)(this + 109) ) /*0x6cbeeb*/
+  if ( !this->u8_6D ) /*0x6cbeeb*/
     return 0; /*0x6cc064*/
   int v1 = this->q028; /*0x6cbef1*/
   if ( !*(_BYTE *)(v1 + 229) ) /*0x6cbefc*/
   {
-    if ( *(_BYTE *)(this + 111) ) /*0x6cbfe5*/
+    if ( this->u8_6F ) /*0x6cbfe5*/
       return 54; /*0x6cbff7*/
     int v11 = this->q024; /*0x6cbff8*/
     int v12 = v11; /*0x6cbffe*/
@@ -6811,7 +6840,7 @@ namespace gamemd { int SidebarClass::GetProductionState() {
     v5 = (double)(v12 - v13) / (double)v18; /*0x6cc044*/
     goto LABEL_37; /*0x6cc044*/
   }
-  if ( *(_DWORD *)(this + 124) != 2 ) /*0x6cbf06*/
+  if ( this->u32_7C != 2 ) /*0x6cbf06*/
   {
     int v6 = this->q024; /*0x6cbf85*/
     int v7 = v6; /*0x6cbf8b*/
@@ -6863,6 +6892,8 @@ LABEL_37:
   if ( result >= 53 ) /*0x6cc056*/
     return 53; /*0x6cc05a*/
   return result; /*0x6cbfec*/
+}
+}
 }
 // 0x6CFCC0
 namespace gamemd { int SidebarClass::findEntryIndexByName() {
@@ -7097,6 +7128,8 @@ LABEL_65:
   DataGlobal_B0CB38 = v35; /*0x6d022a*/
   TabClass::processTabInput(this != 0 ? this + 5446 : 0);
   return this; /*0x6d0248*/
+}
+}
 }
 // 0x6D02B0
 namespace gamemd { int SidebarClass::LoadButtonSHPs() {
@@ -7390,6 +7423,8 @@ LABEL_29:
 // moved to ui/gadget.cpp: GadgetClass::Show
 // 0x723EB0
 // moved to ui/gadget.cpp: GadgetClass::Hide
+}
+}
 // 0x723EC0
 namespace gamemd { int GadgetClass::ProcessMouseOver(int a1, void* a2, int a3) {
 {
@@ -7511,6 +7546,7 @@ namespace gamemd { int ToolTipManager::release(int a1) {
 namespace gamemd {
 {
   return *(_DWORD *)(this->Items + 4 * a2); /*0x724c8a*/
+}
 }
 // 0x724C90
 namespace gamemd { int ToolTipClass::addRef(int a2) {
@@ -7692,15 +7728,15 @@ namespace gamemd { int ToolTipClass::read(int * a2) {
 namespace gamemd { void* ToolTipClass::compareString(int a2) {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_ToolTip_const;
-    if ( v3 && *((char *)(this) + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
+    this->IsAllocated = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (VectorClass *)this;
@@ -7712,6 +7748,7 @@ namespace gamemd {
 
   AbstractClass *v2 = (_DWORD *)this->uniqueId; /*0x724fa0*/
   return v2 && *v2 == *(_DWORD *)aP1->__pad_0; /*0x724fb3*/
+}
 }
 // 0x724FC0
 namespace gamemd { int CommandClass::BinarySearchAction() {
@@ -7949,6 +7986,8 @@ namespace gamemd { void* SidebarClass::FindProductionData() {
 LABEL_18:
   DeleteAndZero(&v7); /*0x77db73*/
   return v2; /*0x77da87*/
+}
+}
 }
 // 0x7B8730
 namespace gamemd { void* MouseClass::Construct(int a1, int a2) {
@@ -8569,7 +8608,7 @@ namespace gamemd { bool WWMouseClass::renderDragSelectionRect() {
             v10[1] = v7 + v4;
             v9[2] = v6;
             v9[3] = v5;
-            (*(void (__thiscall **)(int, _DWORD *, int, _DWORD *, _DWORD, int))(*(_DWORD *)v2 + 8))(v2, v10, v3, v9, 0, 1);
+            (*(void (__thiscall **)(int, _DWORD *, int, _DWORD *, _DWORD, int))(v2->q008)(v2, v10, v3, v9, 0, 1);
           }
         }
       }

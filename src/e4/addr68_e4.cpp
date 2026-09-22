@@ -101,6 +101,7 @@ LABEL_18:
   return v6; /*0x6826bf*/
 }
 } // namespace gamemd
+}
 
 // 0x682880
 namespace gamemd {
@@ -151,6 +152,7 @@ LABEL_6:
   return v5; /*0x682913*/
 }
 } // namespace gamemd
+}
 
 // 0x682A90
 namespace gamemd {
@@ -209,6 +211,7 @@ LABEL_18:
   return v6; /*0x682ae6*/
 }
 } // namespace gamemd
+}
 
 // 0x682B80
 namespace gamemd {
@@ -255,6 +258,7 @@ LABEL_6:
   return v4; /*0x682beb*/
 }
 } // namespace gamemd
+}
 
 // 0x682C70
 namespace gamemd {
@@ -313,6 +317,7 @@ LABEL_7:
   return v7; /*0x682cd3*/
 }
 } // namespace gamemd
+}
 
 // 0x682E10
 namespace gamemd {
@@ -371,6 +376,7 @@ LABEL_18:
   return v6; /*0x682e66*/
 }
 } // namespace gamemd
+}
 
 // 0x682F00
 namespace gamemd {
@@ -419,6 +425,7 @@ LABEL_6:
   return v4; /*0x682f6f*/
 }
 } // namespace gamemd
+}
 
 // 0x683FB0
 namespace gamemd {
@@ -445,6 +452,7 @@ void sub_683FB0()
   return sub_406F40();
 }
 } // namespace gamemd
+}
 
 // 0x684060
 namespace gamemd {
@@ -500,6 +508,7 @@ void * * ScenarioClass_SetTimer(int a1)
   return result; /*0x68417a*/
 }
 } // namespace gamemd
+}
 
 // 0x684290
 namespace gamemd {
@@ -522,6 +531,7 @@ ScenarioClass * * Mouse_Update()
   return result; /*0x6842ef*/
 }
 } // namespace gamemd
+}
 
 // 0x684370
 namespace gamemd {
@@ -617,6 +627,7 @@ LABEL_18:
   return 0; /*0x68452e*/
 }
 } // namespace gamemd
+}
 
 // 0x684C30
 namespace gamemd {
@@ -815,6 +826,7 @@ void PostLoadInitScenario()
   return Map_Init(g_RulesClass_Instance->DetailBufferZoneWidth); /*0x685110*/
 }
 } // namespace gamemd
+}
 
 // 0x6851F0
 namespace gamemd {
@@ -1003,6 +1015,7 @@ LABEL_16:
   return result; /*0x685657*/
 }
 } // namespace gamemd
+}
 
 // 0x687CE0
 namespace gamemd {
@@ -1089,6 +1102,7 @@ void SaveScenarioToINI()
   return HashTable::DestroyHashTableINIClass((void **)&a1); /*0x687eff*/
 }
 } // namespace gamemd
+}
 
 // 0x687F10
 namespace gamemd {
@@ -1295,6 +1309,7 @@ AbstractClass * * SessionClass_AssignHouses()
   return HouseClass::GetColor((char *)v25); /*0x688378*/
 }
 } // namespace gamemd
+}
 
 // 0x6886B0
 namespace gamemd {
@@ -1302,6 +1317,7 @@ void GenerateScenarioUnits()
 {
 // (no pseudocode — ASM-only function)
 } // namespace gamemd
+}
 
 // 0x688ED0
 namespace gamemd {
@@ -1509,6 +1525,7 @@ LABEL_8:
   return 0; /*0x688fa8*/
 }
 } // namespace gamemd
+}
 
 // 0x681070
 namespace gamemd {

@@ -75,6 +75,7 @@ LABEL_18:
   return 0; /*0x6a6c1d*/
 }
 } // namespace gamemd
+}
 
 // 0x6A74A0
 namespace gamemd {
@@ -105,6 +106,7 @@ int E4Recv_6A74A0::sub_6A74A0(int a2)
   return Tactical::UpdateUIVisibility(this); /*0x6a7580*/
 }
 } // namespace gamemd
+}
 
 // 0x6A87F0
 namespace gamemd {
@@ -118,7 +120,7 @@ int E4Recv_6A87F0::sub_6A87F0(int a2, int a3)
   int v5 = 0; /*0x6a8805*/
   if ( v4 > 0 ) /*0x6a8809*/
   {
-    _DWORD * v6 = (_DWORD *)(this + 88); /*0x6a880b*/
+    _DWORD * v6 = (_DWORD *)(&this->u32_208); /*0x6a880b*/
     while ( v6[1] != a2 || *v6 != a3 ) /*0x6a8815*/
     {
       ++v5; /*0x6a8817*/
@@ -132,11 +134,12 @@ LABEL_7:
   if ( !g_IKnowWhatImDoing && a2 != 31 ) /*0x6a882b*/
     VoxClass::FindAndPlay(DataGlobal_83FA64, -1); /*0x6a8837*/
   TabCameoListClass::AddCameo_ReplaceItAll((int *)this, a2, a3); /*0x6a8840*/
-  *(_BYTE *)(this + 60) = 1; /*0x6a8848*/
+  this->M60 = 1; /*0x6a8848*/
   g_CameoRenderFlag = 1; /*0x6a884c*/
   return 1; /*0x6a8847*/
 }
 } // namespace gamemd
+}
 
 // 0x6A89E0
 namespace gamemd {
@@ -188,6 +191,7 @@ int E4Recv_6A89E0::sub_6A89E0(char a2)
   }
 }
 } // namespace gamemd
+}
 
 // 0x6A93F0
 namespace gamemd {
@@ -195,7 +199,7 @@ BombClass * * E4Recv_6A93F0::sub_6A93F0()
 {
 {
 
-  *(_BYTE *)(this + 28) = 1; /*0x6a93f8*/
+  this->M28 = 1; /*0x6a93f8*/
   int v2 = 26; /*0x6a9408*/
   if ( *((_DWORD *)g_ScenarioClass_Instance + 3374) ) /*0x6a9400*/
     v2 = 18; /*0x6a940f*/
@@ -217,6 +221,7 @@ BombClass * * E4Recv_6A93F0::sub_6A93F0()
   return v5; /*0x6a9496*/
 }
 } // namespace gamemd
+}
 
 // 0x6ACBAE
 namespace gamemd {
@@ -226,6 +231,7 @@ void* __inc_tmpoff()
   ++DataGlobal_0000051D; /*0x6acbae*/
 }
 } // namespace gamemd
+}
 
 // 0x6ADC20
 namespace gamemd {
@@ -324,6 +330,7 @@ void SetupSkirmishSpawnLocationEntry(SessionClass * hDlg, int nIDDlgItem)
   return EnableWindow(v22, v20); /*0x6addd6*/
 }
 } // namespace gamemd
+}
 
 // 0x6AE080
 namespace gamemd {
@@ -454,6 +461,7 @@ LABEL_22:
   }
 }
 } // namespace gamemd
+}
 
 // 0x6AE2C0
 namespace gamemd {
@@ -506,6 +514,7 @@ void ShowSkirmishSetupScreen()
   return dwNewLong == 1559; /*0x6ae3e0*/
 }
 } // namespace gamemd
+}
 
 // 0x6AFD60
 namespace ra2 {
@@ -760,6 +769,7 @@ LABEL_53:
 }
 } // namespace game
 } // namespace ra2
+}
 
 // 0x6A04C0
 namespace gamemd {

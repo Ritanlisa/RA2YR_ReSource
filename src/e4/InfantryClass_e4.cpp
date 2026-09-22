@@ -72,6 +72,7 @@ int InfantryClass::ScanTarget(int * a1)
   return result; /*0x4d4fa0*/
 }
 } // namespace gamemd
+}
 
 // 0x4D5350
 namespace gamemd {
@@ -152,6 +153,7 @@ LABEL_25:
   return v10 + Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 2); /*0x4d55b0*/
 }
 } // namespace gamemd
+}
 
 // 0x517D90
 namespace gamemd {
@@ -262,6 +264,7 @@ void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
   return FootClass::Destruct(a1); /*0x517f8e*/
 }
 } // namespace gamemd
+}
 
 // 0x7447A0
 namespace gamemd {

@@ -8,6 +8,7 @@ AbstractClass * * UnholyAlliance_GetResult()
 {
 // (no pseudocode — ASM-only function)
 } // namespace gamemd
+}
 
 // 0x5CB540
 UnholyAlliance * UnholyAlliance::QueryInterface(char a2)
@@ -18,6 +19,7 @@ UnholyAlliance * UnholyAlliance::QueryInterface(char a2)
   if ( (a2 & 1) != 0 ) /*0x5cb553*/
     __3_YAXPAX_Z(this); /*0x5cb556*/
   return (UnholyAlliance *)this; /*0x5cb560*/
+}
 }
 
 // 0x5CB3F0

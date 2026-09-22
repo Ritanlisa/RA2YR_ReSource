@@ -96,6 +96,7 @@ unsigned int * BuildingLightClass::FindTarget(CCINIClass * aP1)
   return result->__pad_0; /*0x436d88*/
 }
 } // namespace gamemd
+}
 
 // 0x4370C0
 namespace gamemd {
@@ -203,6 +204,7 @@ signed int BuildingLightClass::UpdateOscillation()
   return result; /*0x513f2a*/
 }
 } // namespace gamemd
+}
 
 // 0x436900
 namespace gamemd {

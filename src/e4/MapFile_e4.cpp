@@ -12,9 +12,9 @@ DynamicVector * MapFile::QueryInterface(char a2)
     void **v6;
     int v7;
     int v8;
-    v3 = *(this + 1);
+    v3 = this->Items;
     *(void**)this = &vt_VectorClass_Wstring;
-    if ( v3 && *((char *)(this) + 13) )
+    if ( v3 && this->IsAllocated )
   {
     v4 = *(int *)(v3 - 4);
     v5 = (void *)(v3 - 4);
@@ -31,10 +31,10 @@ DynamicVector * MapFile::QueryInterface(char a2)
     while ( v8 );
     }
     __3_YAXPAX_Z(v5);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
+    this->IsAllocated = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;

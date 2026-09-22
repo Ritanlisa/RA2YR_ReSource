@@ -65,6 +65,7 @@ unsigned short * RLEBlitTransZRemapXlatAlpha_ushort::AddRef(int arg0, unsigned c
   }
   return result; /*0x497b2a*/
 }
+}
 
 // 0x497B40
 int RLEBlitTransZRemapXlatAlpha_ushort::Release(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
@@ -82,6 +83,7 @@ int RLEBlitTransZRemapXlatAlpha_ushort::Release(int a2, int a3, int a4, int a5, 
            a9,
            a10,
            a11);
+}
 }
 
 // 0x497880
@@ -130,10 +132,10 @@ RLEBlitTransZRemapXlatAlpha_ushort * RLEBlitTransZRemapXlatAlpha_ushort::QueryIn
 {
 {
     void *v3;
-    v3 = (void *)*(this + 3);
+    v3 = (void *)this->u32_C;
     *(void**)this = &vt_RLEBlitTransZRemapXlatAlpha_unsigned_short;
     FractalNoise::Release(v3);
-    *(this + 3) = 0;
+    this->u32_C = 0;
     *(void**)this = &vt_RLEBlitter;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);

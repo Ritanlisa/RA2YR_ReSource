@@ -39,6 +39,7 @@ void * COMClass::lockServer(char a2)
     return this; /*0x767073*/
   }
 }
+}
 
 // 0x7669F0
 VectorCursor * COMClass::disconnectPoint(char a2)

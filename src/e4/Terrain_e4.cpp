@@ -19,6 +19,7 @@ int Terrain::GetTileIndex(int a2)
        : 0;
 }
 } // namespace gamemd
+}
 
 // 0x48B9E0
 namespace gamemd {
@@ -30,6 +31,7 @@ int Terrain::GetTileType(AnimClass * aP1)
        : 0;
 }
 } // namespace gamemd
+}
 
 // 0x568E40
 namespace gamemd {
@@ -427,6 +429,7 @@ LABEL_44:
   }
 }
 } // namespace gamemd
+}
 
 // 0x56C510
 namespace gamemd {
@@ -858,6 +861,7 @@ LABEL_48:
   return v81; /*0x56cb57*/
 }
 } // namespace gamemd
+}
 
 // 0x56CB90
 namespace gamemd {
@@ -1017,7 +1021,7 @@ LABEL_31:
   v83 = 0; /*0x56cdf6*/
   *(_DWORD *)aP3->__pad_0 = ((v8 - a1) >> 2) - 1; /*0x56cdff*/
   v38 = v8 - 4; /*0x56ce01*/
-  v39 = *(_DWORD *)(this + 248) + *(_DWORD *)(this + 244) + 1; /*0x56ce12*/
+  v39 = this->u32_F8 + this->u32_F4 + 1; /*0x56ce12*/
   v40 = 4 * v39 + 4; /*0x56ce16*/
   v39 *= 4; /*0x56ce1d*/
   v80 = v40; /*0x56ce20*/
@@ -1172,6 +1176,7 @@ LABEL_82:
   return v77; /*0x56d0f0*/
 }
 } // namespace gamemd
+}
 
 // 0x570050
 namespace gamemd {
@@ -1627,6 +1632,7 @@ LABEL_101:
   }
 }
 } // namespace gamemd
+}
 
 // 0x573540
 namespace gamemd {
@@ -2098,6 +2104,7 @@ LABEL_141:
   }
 }
 } // namespace gamemd
+}
 
 // 0x576770
 namespace gamemd {
@@ -2286,6 +2293,7 @@ LABEL_64:
   return v10; /*0x5768c0*/
 }
 } // namespace gamemd
+}
 
 // 0x579620
 namespace gamemd {
@@ -2521,6 +2529,7 @@ LABEL_82:
   return GenerateTerrainMap(0, 0, Random_field_0x08_high, (MouseClass *)aP1, (MouseClass *)&aP0, 0) || (_BYTE)aP0; /*0x579b4e*/
 }
 } // namespace gamemd
+}
 
 // 0x5A28C0
 namespace gamemd {
@@ -2837,6 +2846,7 @@ LABEL_72:
   }
 }
 } // namespace gamemd
+}
 
 // 0x6D6410
 namespace gamemd {

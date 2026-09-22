@@ -146,6 +146,7 @@ LABEL_36:
   }
   return v27; /*0x626eb6*/
 }
+}
 
 // 0x5F76B0
 void FileSystem::InitPipShapes()

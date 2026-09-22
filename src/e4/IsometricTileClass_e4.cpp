@@ -35,3 +35,4 @@ I * IsometricTileClass::IsometricTileClass(IsometricTileClass * aP1, IsometricTi
   }
   return this; /*0x543876*/
 }
+}

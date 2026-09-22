@@ -244,3 +244,4 @@ LABEL_25:
   return result; /*0x470da5*/
 }
 } // namespace gamemd
+}

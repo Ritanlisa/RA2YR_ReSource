@@ -94,6 +94,7 @@ MixFileClass * * sub_530000()
   return 1; /*0x530189*/
 }
 } // namespace gamemd
+}
 
 // 0x5312A0
 namespace gamemd {
@@ -303,6 +304,7 @@ void ShowLoadingScreen()
   return BufferIOFileClass::Dtor(v40); /*0x531668*/
 }
 } // namespace gamemd
+}
 
 // 0x531680
 namespace gamemd {
@@ -395,6 +397,7 @@ LABEL_16:
   return 1; /*0x5317c4*/
 }
 } // namespace gamemd
+}
 
 // 0x532150
 namespace gamemd {
@@ -1730,6 +1733,7 @@ CreateTeamCommand * * InitCommands()
   return SortedArray::Append((int)&dword_87F5D8[42], &v175, &v174); /*0x533d18*/
 }
 } // namespace gamemd
+}
 
 // 0x533FD0
 namespace gamemd {
@@ -1795,11 +1799,11 @@ DSurface * * AllocateSurfaceScreenSurfaces(int a1, ObjectClass * aP1, ObjectClas
   }
   bool v7 = stru_830620[66636] == 0; /*0x5340d2*/
   var1 = HouseClass_Player[44618] == 0; /*0x5340d7*/
-  if ( a5 && *(int *)(a1 + 8) > 0 && *(int *)(a1 + 12) > 0 ) /*0x5340e8*/
+  if ( a5 && a1->ptr_8 > 0 && a1->u32_C > 0 ) /*0x5340e8*/
   {
     char * v8 = (char *)__2_YAPAXI_Z(0x24u); /*0x5340ec*/
     if ( v8 ) /*0x5340f6*/
-      v9 = (DSurface *)DSurface::Construct(v8, *(IUnknown **)(a1 + 8), *(DSurface **)(a1 + 12), 0, 0); /*0x534104*/
+      v9 = (DSurface *)DSurface::Construct(v8, a1->ptr_8, a1->u32_C, 0, 0); /*0x534104*/
     DSurface *v9 = 0; /*0x53410b*/
     *(_DWORD *)&stru_87C374[44952] = v9; /*0x53410d*/
     (*(void (__thiscall **)(DSurface *, _DWORD))(v9->field_0 + 24))(v9, 0); /*0x534117*/
@@ -1888,24 +1892,24 @@ DSurface * * AllocateSurfaceScreenSurfaces(int a1, ObjectClass * aP1, ObjectClas
   }
   if ( !a5 ) /*0x534358*/
   {
-    if ( *(int *)(a1 + 8) <= 0 ) /*0x53435f*/
+    if ( a1->ptr_8 <= 0 ) /*0x53435f*/
       return 1; /*0x53435f*/
-    if ( *(int *)(a1 + 12) > 0 ) /*0x53436a*/
+    if ( a1->u32_C > 0 ) /*0x53436a*/
     {
       char * v18 = (char *)__2_YAPAXI_Z(0x24u); /*0x53436e*/
       if ( v18 ) /*0x534378*/
-        v23 = (DSurface *)DSurface::Construct(v18, *(IUnknown **)(a1 + 8), *(DSurface **)(a1 + 12), 0, 0); /*0x534388*/
+        v23 = (DSurface *)DSurface::Construct(v18, a1->ptr_8, a1->u32_C, 0, 0); /*0x534388*/
       DSurface *v23 = 0; /*0x53438f*/
       *(_DWORD *)&stru_87C374[44952] = v23; /*0x534391*/
       (*(void (__thiscall **)(DSurface *, _DWORD))(v23->field_0 + 24))(v23, 0); /*0x53439c*/
       Debug::Log(); /*0x5343c3*/
     }
   }
-  if ( *(int *)(a1 + 8) > 0 && *(int *)(a1 + 12) > 0 ) /*0x5343d7*/
+  if ( a1->ptr_8 > 0 && a1->u32_C > 0 ) /*0x5343d7*/
   {
     eax68 = (char *)__2_YAPAXI_Z(0x24u); /*0x5343db*/
     if ( eax68 ) /*0x5343e5*/
-      v26 = (DSurface *)DSurface::Construct(eax68, *(IUnknown **)(a1 + 8), *(DSurface **)(a1 + 12), (ObjectClass *)1, 0); /*0x5343f5*/
+      v26 = (DSurface *)DSurface::Construct(eax68, a1->ptr_8, a1->u32_C, (ObjectClass *)1, 0); /*0x5343f5*/
     DSurface *v26 = 0; /*0x5343fc*/
     *(_DWORD *)&stru_87C374[44956] = v26; /*0x5343fe*/
     (*(void (__thiscall **)(DSurface *, _DWORD))(v26->field_0 + 24))(v26, 0); /*0x534409*/
@@ -1914,6 +1918,7 @@ DSurface * * AllocateSurfaceScreenSurfaces(int a1, ObjectClass * aP1, ObjectClas
   return 1; /*0x534438*/
 }
 } // namespace gamemd
+}
 
 // 0x5349C0
 namespace gamemd {
@@ -2058,6 +2063,7 @@ void TheaterClass_LoadMIX(int a1)
   }
 }
 } // namespace gamemd
+}
 
 // 0x5353D0
 namespace gamemd {
@@ -2156,6 +2162,7 @@ LABEL_23:
   return result; /*0x5355ab*/
 }
 } // namespace gamemd
+}
 
 // 0x538D40
 namespace gamemd {
@@ -2231,6 +2238,7 @@ void sub_538D40()
   return result; /*0x538e5e*/
 }
 } // namespace gamemd
+}
 
 // 0x538E70
 namespace gamemd {
@@ -2269,6 +2277,7 @@ AbstractClass * * E4Recv_538E70::sub_538E70(double a2)
   return result; /*0x538f0d*/
 }
 } // namespace gamemd
+}
 
 // 0x538F20
 namespace gamemd {
@@ -2359,6 +2368,7 @@ char sub_538F20(int a1, int a2, char * Source)
   return result; /*0x5390fd*/
 }
 } // namespace gamemd
+}
 
 // 0x539560
 namespace gamemd {
@@ -2369,6 +2379,7 @@ int sub_539560()
   return unk_A9F9F8; /*0x53956a*/
 }
 } // namespace gamemd
+}
 
 // 0x539570
 namespace gamemd {
@@ -2379,6 +2390,7 @@ int sub_539570()
   return unk_A9F9F8; /*0x53957a*/
 }
 } // namespace gamemd
+}
 
 // 0x53A6C0
 namespace gamemd {
@@ -2597,6 +2609,7 @@ LABEL_52:
   return v16; /*0x53a93c*/
 }
 } // namespace gamemd
+}
 
 // 0x53AF40
 namespace gamemd {
@@ -2647,6 +2660,7 @@ AnimClass * * PsyDom::Update()
   }
 }
 } // namespace gamemd
+}
 
 // 0x53B460
 namespace gamemd {
@@ -2691,6 +2705,7 @@ void sub_53B460(int a1)
   }
 }
 } // namespace gamemd
+}
 
 // 0x53B560
 namespace gamemd {
@@ -2765,6 +2780,7 @@ AnimClass * * UpdateChronosphereEffect()
   }
 }
 } // namespace gamemd
+}
 
 // 0x53BBA0
 namespace gamemd {
@@ -2969,6 +2985,7 @@ int RenderChronosphereScreenEffect(char a1)
   return (*(int (__thiscall **)(int))(*(_DWORD *)DSurface_Composite + 96))(DSurface_Composite); /*0x53c08c*/
 }
 } // namespace gamemd
+}
 
 // 0x53D330
 namespace gamemd {
@@ -3049,6 +3066,7 @@ void GenerateLightningStormGlow()
   return result; /*0x53d545*/
 }
 } // namespace gamemd
+}
 
 // 0x53DE00
 namespace gamemd {
@@ -3144,6 +3162,7 @@ LABEL_8:
   return 1; /*0x53df89*/
 }
 } // namespace gamemd
+}
 
 // 0x53E730
 namespace gamemd {
@@ -3160,6 +3179,7 @@ void Message_IsDialog(LPMSG lpMsg, HWND a2, UINT wMsgFilterMin, UINT wMsgFilterM
   return result; /*0x53e754*/
 }
 } // namespace gamemd
+}
 
 // 0x53E770
 namespace gamemd {
@@ -3366,6 +3386,7 @@ LABEL_65:
   }
 }
 } // namespace gamemd
+}
 
 // 0x532130
 namespace gamemd {

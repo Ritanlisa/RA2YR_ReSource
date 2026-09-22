@@ -51,6 +51,7 @@ LABEL_5:
   return result; /*0x43924e*/
 }
 } // namespace gamemd
+}
 
 // 0x54E750
 namespace gamemd {
@@ -75,6 +76,7 @@ int SaveGame::WriteDataArray(int * a2)
   return result; /*0x54e79c*/
 }
 } // namespace gamemd
+}
 
 // 0x6607D0
 namespace gamemd {
@@ -100,6 +102,7 @@ int SaveGame::SaveTriggerEvents()
   return this->vt_slot_16(&word_B04D78, 4, 0) >= 0; /*0x6607f1*/
 }
 } // namespace gamemd
+}
 
 // 0x67D300
 namespace gamemd {
@@ -874,6 +877,7 @@ int SaveGame::Start()
   return result;
 }
 } // namespace gamemd
+}
 
 // 0x67F7E0
 namespace gamemd {
@@ -1000,6 +1004,7 @@ LABEL_17:
   return result; /*0x67f9b8*/
 }
 } // namespace gamemd
+}
 
 // 0x74ED60
 namespace gamemd {
@@ -1058,6 +1063,7 @@ int SaveGame::LoadVeinholeData()
   return 1; /*0x74ed85*/
 }
 } // namespace gamemd
+}
 
 // 0x751620
 namespace gamemd {
@@ -1115,6 +1121,7 @@ LABEL_11:
   return v2; /*0x751701*/
 }
 } // namespace gamemd
+}
 
 // 0x4073B0
 namespace gamemd {

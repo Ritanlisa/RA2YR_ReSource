@@ -72,6 +72,7 @@ int Delegate::ProcessBitmapStream(char * Src, int a3)
   }
   return (int)v13->__pad_0; /*0x42df15*/
 }
+}
 
 // 0x631D10
 void * Delegate::Dispatch(Pipe * aP1, Pipe * aP2)
@@ -84,6 +85,7 @@ void * Delegate::Dispatch(Pipe * aP1, Pipe * aP2)
   else
     return aP2; /*0x631d29*/
 }
+}
 
 // 0x6C95E0
 unsigned int * Delegate::GetField()
@@ -94,6 +96,7 @@ unsigned int * Delegate::GetField()
   this->Delegate_field_08 = 0; /*0x6c95eb*/
   this->m_allocated = 0; /*0x6c95ee*/
   return this; /*0x6c95f1*/
+}
 }
 
 // 0x6C9890
@@ -121,6 +124,7 @@ void Delegate::Set(AbstractTypeClass * aP1)
       *(_DWORD *)&aP1->__pad_0[8] = this; /*0x6c98cb*/
   }
 }
+}
 
 // 0x6C98E0
 int Delegate::Invoke(int a2, Straw * aP2)
@@ -132,6 +136,7 @@ int Delegate::Invoke(int a2, Straw * aP2)
     return (*(int (__thiscall **)(Straw *, int, Straw *))(*(_DWORD *)v3->__pad_0 + 8))(v3, a2, aP2); /*0x6c98f3*/
   else
     return 0; /*0x6c98f9*/
+}
 }
 
 // 0x42DF40
@@ -225,16 +230,16 @@ GenericNode * Delegate::Constructor_GenericNode(char a2)
     *(void**)this = (GenericNode *)&vt_GenericNode;
     if ( this )
   {
-    v3 = *(this + 1);
+    v3 = this->Previous;
     if ( v3 )
     {
-    v4 = *(this + 2);
+    v4 = this->q008;
     if ( v4 )
       {
     v4->Previous = v3;
-    *(int *)(*(this + 1))[1].__pad_0 = *(this + 2);
-    *(this + 2) = 0;
-    *(this + 1) = 0;
+    *(int *)(this->Previous)[1].__pad_0 = this->q008;
+    this->q008 = 0;
+    this->Previous = 0;
       }
     }
   }

@@ -64,6 +64,7 @@ LABEL_11:
     return this; /*0x6b5367*/
   }
 }
+}
 
 // 0x6B55F0
 void SmudgeTypeClass::vt_entry_A0(int * a2, int * a3, int a4, int a5, short * a6)
@@ -87,6 +88,7 @@ void SmudgeTypeClass::vt_entry_A0(int * a2, int * a3, int a4, int a5, short * a6
     int v11 = ZCoordToScreenY(a5); /*0x6b568c*/
     DrawToSurfaceSHP(g_DSurface_Hidden_2, v10[13], v7, 0, &v13, a3, 3584, 0, -1 - v11, 0, v12, 0, 0, 0, 0, 0); /*0x6b56b4*/
   }
+}
 }
 
 // 0x6B56D0
@@ -131,6 +133,7 @@ int SmudgeTypeClass::GetSize(unsigned char *** aP1)
     _makepath(Buffer, 0, 0, (const char *)(this + 504), Ext); /*0x6b5784*/
   this->Image = SearchMIXFile(Buffer, 0); /*0x6b57c7*/
   return 1; /*0x6b57cd*/
+}
 }
 
 // 0x6B6160

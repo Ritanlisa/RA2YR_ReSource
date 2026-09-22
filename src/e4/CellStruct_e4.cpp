@@ -18,6 +18,7 @@ IUnknown * CellStruct::Add(IUnknown * aP1, IUnknown * aP2)
   return aP1; /*0x42d536*/
 }
 } // namespace gamemd
+}
 
 // 0x437F30
 namespace gamemd {
@@ -32,6 +33,7 @@ unsigned int * CellStruct::Copy(IUnknown * aP1)
   return &aP1->field_0; /*0x437f3e*/
 }
 } // namespace gamemd
+}
 
 // 0x50E470
 namespace gamemd {
@@ -41,6 +43,7 @@ BOOL CellStruct::Equals(unsigned short * a2)
   return *this == *a2 && this->q004 == a2[1]; /*0x50e48b*/
 }
 } // namespace gamemd
+}
 
 // 0x588C60
 namespace gamemd {
@@ -59,6 +62,7 @@ IUnknown * CellStruct::Sub(IUnknown * aP1, IUnknown * aP2)
   return aP1; /*0x588c86*/
 }
 } // namespace gamemd
+}
 
 // 0x42D470
 namespace gamemd {

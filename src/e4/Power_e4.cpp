@@ -14,6 +14,7 @@ int Power::Update(int * a2)
   return Power::TimerProcess((int)g_CurrentFrame - this->q00C); /*0x43a5f0*/
 }
 } // namespace gamemd
+}
 
 // 0x67C6E0
 namespace gamemd {
@@ -271,6 +272,7 @@ unsigned int * Power::UpdateAll()
   return this; /*0x67ced4*/
 }
 } // namespace gamemd
+}
 
 // 0x68B940
 namespace gamemd {
@@ -278,50 +280,50 @@ void* Power::ComputeHousePowerChecksum(unsigned int * a2)
 {
 {
 
-  Checksum::AddString(a2, (unsigned __int8 *)(this + 5050)); /*0x68b952*/
-  Power::TimerProcess(*(_DWORD *)(this + 5172)); /*0x68b960*/
-  Power::TimerProcess(*(_DWORD *)(this + 5176)); /*0x68b96e*/
-  Power::TimerProcess(*(_DWORD *)(this + 5180)); /*0x68b97c*/
-  Power::TimerProcess(*(_DWORD *)(this + 5184)); /*0x68b98a*/
-  Power::TimerProcess(*(_DWORD *)(this + 5188)); /*0x68b998*/
-  Power::TimerProcess(*(_DWORD *)(this + 5192)); /*0x68b9a6*/
-  Power::TimerProcess(*(_DWORD *)(this + 5196)); /*0x68b9b4*/
-  Power::TimerProcess(*(_DWORD *)(this + 7284)); /*0x68b9c2*/
-  Power::TimerProcess(*(_DWORD *)(this + 7300)); /*0x68b9d0*/
-  Power::TimerProcess(*(_DWORD *)(this + 7280)); /*0x68b9de*/
-  Checksummer::Add_double(*(_DWORD *)(this + 7288), *(_DWORD *)(this + 7292)); /*0x68b9f3*/
+  Checksum::AddString(a2, (unsigned __int8 *)(&this->u32_7E40)); /*0x68b952*/
+  Power::TimerProcess(this->u32_1434); /*0x68b960*/
+  Power::TimerProcess(this->u32_1438); /*0x68b96e*/
+  Power::TimerProcess(this->u32_143C); /*0x68b97c*/
+  Power::TimerProcess(this->u32_1440); /*0x68b98a*/
+  Power::TimerProcess(this->u32_1444); /*0x68b998*/
+  Power::TimerProcess(this->u32_1448); /*0x68b9a6*/
+  Power::TimerProcess(this->u32_144C); /*0x68b9b4*/
+  Power::TimerProcess(this->u32_1C74); /*0x68b9c2*/
+  Power::TimerProcess(this->u32_1C84); /*0x68b9d0*/
+  Power::TimerProcess(this->u32_1C70); /*0x68b9de*/
+  Checksummer::Add_double(this->u32_1C78, this->u32_1C7C); /*0x68b9f3*/
   int v3; // ecx
-  LOBYTE(v3) = *(_BYTE *)(this + 13500); /*0x68b9f8*/
+  LOBYTE(v3) = this->u8_34BC; /*0x68b9f8*/
   Power::FlagProcess((int *)a2, v3); /*0x68ba01*/
   int v4; // edx
-  LOBYTE(v4) = *(_BYTE *)(this + 13485); /*0x68ba06*/
+  LOBYTE(v4) = this->u8_34AD; /*0x68ba06*/
   Power::FlagProcess((int *)a2, v4); /*0x68ba0f*/
-  Power::TimerProcess(*(_DWORD *)(this + 7296) / 100); /*0x68ba2e*/
-  Power::TimerProcess(*(_DWORD *)(this + 13472)); /*0x68ba3c*/
+  Power::TimerProcess(this->u32_1C80 / 100); /*0x68ba2e*/
+  Power::TimerProcess(this->u32_34A0); /*0x68ba3c*/
   int v5; // edx
-  LOBYTE(v5) = *(_BYTE *)(this + 13484); /*0x68ba41*/
+  LOBYTE(v5) = this->u8_34AC; /*0x68ba41*/
   Power::FlagProcess((int *)a2, v5); /*0x68ba4a*/
-  Power::TimerProcess(*(_DWORD *)(this + 13516)); /*0x68ba58*/
+  Power::TimerProcess(this->u32_34CC); /*0x68ba58*/
   int v6; // ecx
-  LOBYTE(v6) = *(_BYTE *)(this + 13486); /*0x68ba5d*/
+  LOBYTE(v6) = this->u8_34AE; /*0x68ba5d*/
   Power::FlagProcess((int *)a2, v6); /*0x68ba66*/
   int v7; // edx
-  LOBYTE(v7) = *(_BYTE *)(this + 13487); /*0x68ba6b*/
+  LOBYTE(v7) = this->u8_34AF; /*0x68ba6b*/
   int v8 = Power::FlagProcess((int *)a2, v7); /*0x68ba74*/
-  LOBYTE(v8) = *(_BYTE *)(this + 13488); /*0x68ba79*/
+  LOBYTE(v8) = this->u8_34B0; /*0x68ba79*/
   Power::FlagProcess((int *)a2, v8); /*0x68ba82*/
   int v9; // ecx
-  LOBYTE(v9) = *(_BYTE *)(this + 13490); /*0x68ba87*/
+  LOBYTE(v9) = this->u8_34B2; /*0x68ba87*/
   Power::FlagProcess((int *)a2, v9); /*0x68ba90*/
   int v10; // edx
-  LOBYTE(v10) = *(_BYTE *)(this + 13492); /*0x68ba95*/
+  LOBYTE(v10) = this->u8_34B4; /*0x68ba95*/
   int v11 = Power::FlagProcess((int *)a2, v10); /*0x68ba9e*/
-  LOBYTE(v11) = *(_BYTE *)(this + 13489); /*0x68baa3*/
+  LOBYTE(v11) = this->u8_34B1; /*0x68baa3*/
   Power::FlagProcess((int *)a2, v11); /*0x68baac*/
-  Power::TimerProcess(*(_DWORD *)(this + 7300)); /*0x68baba*/
-  Power::TimerProcess(*(_DWORD *)(this + 13520)); /*0x68bac8*/
-  int v12 = *(_DWORD *)(this + 4584); /*0x68bacd*/
-  int v13 = *(_DWORD *)(this + 4592); /*0x68bad3*/
+  Power::TimerProcess(this->u32_1C84); /*0x68baba*/
+  Power::TimerProcess(this->u32_34D0); /*0x68bac8*/
+  int v12 = this->u32_11E8; /*0x68bacd*/
+  int v13 = this->u32_11F0; /*0x68bad3*/
   if ( v12 != -1 ) /*0x68badc*/
   {
     if ( (int)g_CurrentFrame - v12 >= v13 ) /*0x68bae8*/
@@ -330,8 +332,8 @@ void* Power::ComputeHousePowerChecksum(unsigned int * a2)
       v13 -= (int)g_CurrentFrame - v12; /*0x68baea*/
   }
   Power::TimerProcess(v13); /*0x68baf3*/
-  int v14 = *(_DWORD *)(this + 4632); /*0x68baf8*/
-  int v15 = *(_DWORD *)(this + 4640); /*0x68bafe*/
+  int v14 = this->u32_1218; /*0x68baf8*/
+  int v15 = this->u32_1220; /*0x68bafe*/
   if ( v14 != -1 ) /*0x68bb07*/
   {
     if ( (int)g_CurrentFrame - v14 >= v15 ) /*0x68bb13*/
@@ -340,8 +342,8 @@ void* Power::ComputeHousePowerChecksum(unsigned int * a2)
       v15 -= (int)g_CurrentFrame - v14; /*0x68bb15*/
   }
   Power::TimerProcess(v15); /*0x68bb1e*/
-  int v16 = *(_DWORD *)(this + 4644); /*0x68bb23*/
-  int v17 = *(_DWORD *)(this + 4652); /*0x68bb29*/
+  int v16 = this->u32_1224; /*0x68bb23*/
+  int v17 = this->u32_122C; /*0x68bb29*/
   if ( v16 != -1 ) /*0x68bb32*/
   {
     if ( (int)g_CurrentFrame - v16 >= v17 ) /*0x68bb3e*/
@@ -350,8 +352,8 @@ void* Power::ComputeHousePowerChecksum(unsigned int * a2)
       v17 -= (int)g_CurrentFrame - v16; /*0x68bb40*/
   }
   Power::TimerProcess(v17); /*0x68bb49*/
-  int v18 = *(_DWORD *)(this + 4656); /*0x68bb4e*/
-  int v19 = *(_DWORD *)(this + 4664); /*0x68bb54*/
+  int v18 = this->u32_1230; /*0x68bb4e*/
+  int v19 = this->u32_1238; /*0x68bb54*/
   if ( v18 != -1 ) /*0x68bb5d*/
   {
     if ( (int)g_CurrentFrame - v18 >= v19 ) /*0x68bb69*/
@@ -360,8 +362,8 @@ void* Power::ComputeHousePowerChecksum(unsigned int * a2)
       v19 -= (int)g_CurrentFrame - v18; /*0x68bb6b*/
   }
   Power::TimerProcess(v19); /*0x68bb74*/
-  int v20 = *(_DWORD *)(this + 4668); /*0x68bb79*/
-  int v21 = *(_DWORD *)(this + 4676); /*0x68bb7f*/
+  int v20 = this->u32_123C; /*0x68bb79*/
+  int v21 = this->u32_1244; /*0x68bb7f*/
   if ( v20 != -1 ) /*0x68bb88*/
   {
     if ( (int)g_CurrentFrame - v20 >= v21 ) /*0x68bb94*/
@@ -370,29 +372,30 @@ void* Power::ComputeHousePowerChecksum(unsigned int * a2)
       v21 -= (int)g_CurrentFrame - v20; /*0x68bb96*/
   }
   Power::TimerProcess(v21); /*0x68bb9f*/
-  int v22 = *(_DWORD *)(this + 1564); /*0x68bbaa*/
-  if ( *(_DWORD *)(this + 1556) != -1 ) /*0x68bbb3*/
-    v22 += Timer::GetTicks() - *(_DWORD *)(this + 1556); /*0x68bbc6*/
+  int v22 = this->u32_61C; /*0x68bbaa*/
+  if ( this->u32_614 != -1 ) /*0x68bbb3*/
+    v22 += Timer::GetTicks() - this->u32_614; /*0x68bbc6*/
   Power::TimerProcess(v22); /*0x68bbcb*/
-  Power::TimerProcess(*(_DWORD *)(this + 1548)); /*0x68bbd9*/
-  Power::TimerProcess(*(_DWORD *)(this + 1552)); /*0x68bbe7*/
-  Power::TimerProcess(*(_DWORD *)(this + 4696)); /*0x68bbf5*/
-  Power::TimerProcess(*(_DWORD *)(this + 13632)); /*0x68bc03*/
-  Power::TimerProcess(*(_DWORD *)(this + 13636)); /*0x68bc11*/
+  Power::TimerProcess(this->u32_60C); /*0x68bbd9*/
+  Power::TimerProcess(this->u32_610); /*0x68bbe7*/
+  Power::TimerProcess(this->u32_1258); /*0x68bbf5*/
+  Power::TimerProcess(this->u32_3540); /*0x68bc03*/
+  Power::TimerProcess(this->u32_3544); /*0x68bc11*/
   int v23; // edx
-  LOBYTE(v23) = *(_BYTE *)(this + 13476); /*0x68bc16*/
+  LOBYTE(v23) = this->u8_34A4; /*0x68bc16*/
   Power::FlagProcess((int *)a2, v23); /*0x68bc1f*/
-  Power::TimerProcess(*(_DWORD *)(this + 13640)); /*0x68bc2d*/
-  Power::TimerProcess(*(_DWORD *)(this + 13644)); /*0x68bc3b*/
-  Power::TimerProcess(*(_DWORD *)(this + 13648)); /*0x68bc49*/
-  Power::TimerProcess(*(_DWORD *)(this + 13652)); /*0x68bc57*/
-  Power::TimerProcess(*(_DWORD *)(this + 13656)); /*0x68bc65*/
-  Power::TimerProcess(*(_DWORD *)(this + 13660)); /*0x68bc73*/
-  Power::TimerProcess(*(_DWORD *)(this + 13608)); /*0x68bc81*/
-  Power::TimerProcess(*(_DWORD *)(this + 13612)); /*0x68bc8f*/
-  return Power::TimerProcess(*(_DWORD *)(this + 13616)); /*0x68bca2*/
+  Power::TimerProcess(this->u32_3548); /*0x68bc2d*/
+  Power::TimerProcess(this->u32_354C); /*0x68bc3b*/
+  Power::TimerProcess(this->u32_3550); /*0x68bc49*/
+  Power::TimerProcess(this->u32_3554); /*0x68bc57*/
+  Power::TimerProcess(this->u32_3558); /*0x68bc65*/
+  Power::TimerProcess(this->u32_355C); /*0x68bc73*/
+  Power::TimerProcess(this->u32_3528); /*0x68bc81*/
+  Power::TimerProcess(this->u32_352C); /*0x68bc8f*/
+  return Power::TimerProcess(this->u32_3530); /*0x68bca2*/
 }
 } // namespace gamemd
+}
 
 // 0x4A1C10
 namespace gamemd {

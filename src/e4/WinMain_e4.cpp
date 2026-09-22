@@ -185,6 +185,7 @@ void char WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
   return result; /*0x5bc2b9*/
 }
 } // namespace gamemd
+}
 
 // 0x69A1F0
 int WinMain::Constructor_VectorClass_Wstring_()
@@ -203,26 +204,27 @@ int WinMain::Constructor_VectorClass_Wstring_()
       VectorClass_Wstring::ddtor(v3 + 420); /*0x69a21b*/
       void * v4 = v3->q630; /*0x69a220*/
       v3->q620 = &vt_VectorClass_enum_DiskID; /*0x69a226*/
-      if ( v4 && *(_BYTE *)(v3 + 405) ) /*0x69a234*/
+      if ( v4 && v3->u8_195 ) /*0x69a234*/
       {
         __3_YAXPAX_Z(v4); /*0x69a23d*/
         v3->q630 = 0; /*0x69a245*/
       }
-      *(_BYTE *)(v3 + 405) = 0; /*0x69a24c*/
+      v3->u8_195 = 0; /*0x69a24c*/
       v3->q190 = 0; /*0x69a252*/
       __3_YAXPAX_Z((void *)v3); /*0x69a258*/
     }
   }
-  (*(void (__thiscall **)(_DWORD *))(this->q1A4 + 12))(this + 420); /*0x69a277*/
+  (*(void (__thiscall **)(_DWORD *))(this->q1A4 + 12))(&this->u32_A80); /*0x69a277*/
   for ( j = 0; j < this->qA49; ++j ) /*0x69a284*/
     __3_YAXPAX_Z(*(void **)(this->qA46 + 4 * j)); /*0x69a290*/
-  (*(void (__thiscall **)(_DWORD *))(this->qA45 + 12))(this + 2629); /*0x69a2af*/
+  (*(void (__thiscall **)(_DWORD *))(this->qA45 + 12))(&this->u32_4189); /*0x69a2af*/
   for ( k = 0; k < this->qA43; ++k ) /*0x69a2bc*/
   {
     if ( *(_DWORD *)(this->qA40 + 4 * k) ) /*0x69a2c4*/
       __3_YAXPAX_Z(*(void **)(this->qA40 + 4 * k)); /*0x69a2cc*/
   }
-  return (*(int (__thiscall **)(_DWORD *))(this->qA3F + 12))(this + 2623); /*0x69a2ee*/
+  return (*(int (__thiscall **)(_DWORD *))(this->qA3F + 12))(&this->u32_4183); /*0x69a2ee*/
+}
 }
 
 // 0x734D30
@@ -291,6 +293,7 @@ unsigned int * WinMain::ShutdownCleanup()
   unk_B1CF80 = 0; /*0x734e1d*/
   return result; /*0x734e23*/
 }
+}
 
 // 0x5D7E50
 namespace gamemd {
@@ -337,6 +340,7 @@ void sub_5D7E50()
   return result; /*0x5d7f1a*/
 }
 } // namespace gamemd
+}
 
 // 0x7B84F0
 namespace gamemd {
@@ -386,6 +390,7 @@ void* sub_7B84F0()
   return result; /*0x7b85fe*/
 }
 } // namespace gamemd
+}
 
 // 0x49F8B0
 LSTATUS WinMain::CleanupResource()

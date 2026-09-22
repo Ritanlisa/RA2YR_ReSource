@@ -175,17 +175,17 @@ LoadOptions * LoadOptions::QueryInterface(char a2)
     void *v4;
     v3 = 0;
     for ( *(int *)this = &vt_LoadOptionsClass; v3 < this->capacity; ++v3 )
-    __3_YAXPAX_Z(*(void **)(*((int *)(this) + 9) + 4 * v3));
-    (*(void (__thiscall **)(char *))(*((int *)(this) + 8) + 12))(this + 32);
-    v4 = (void *)*((int *)(this) + 9);
-    *((int *)(this) + 8) = &vt_VectorClass_FileEntryClass;
-    if ( v4 && *(this + 45) )
+    __3_YAXPAX_Z(*(void **)(this->q024 + 4 * v3));
+    (*(void (__thiscall **)(char *))(this->is_active + 12))(&this->q00C2);
+    v4 = (void *)this->q024;
+    this->is_active = &vt_VectorClass_FileEntryClass;
+    if ( v4 && *(&this->max_entries5) )
   {
     __3_YAXPAX_Z(v4);
-    *((int *)(this) + 9) = 0;
+    this->q024 = 0;
   }
-    *(this + 45) = 0;
-    *((int *)(this) + 10) = 0;
+    *(&this->max_entries5) = 0;
+    this->q028 = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (LoadOptions *)this;
@@ -322,15 +322,15 @@ VectorClass * LoadOptions::Constructor_VectorClass_FileEntryClass___(char a2)
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_FileEntryClass;
-    if ( v3 && *((char *)(this) + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
+    this->IsAllocated = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (VectorClass *)this;
@@ -344,15 +344,15 @@ DynamicVector * LoadOptions::vt00(char a2)
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_FileEntryClass;
-    if ( v3 && *((char *)(this) + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
+    this->IsAllocated = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;

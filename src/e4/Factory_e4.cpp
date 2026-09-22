@@ -32,6 +32,7 @@ int Factory::GetLinkedIndex(DynamicVector * aP1)
   return result; /*0x663d6c*/
 }
 } // namespace gamemd
+}
 
 // 0x718B70
 namespace gamemd {
@@ -300,6 +301,7 @@ void* Factory_CalculateExitCell()
   }
 }
 } // namespace gamemd
+}
 
 // 0x523C90
 namespace gamemd {

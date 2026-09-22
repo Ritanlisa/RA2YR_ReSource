@@ -13,11 +13,12 @@ int Voice::Stop(__thiscall *__thiscall Voice_Stop(int this))( int)
   if ( (this->q029 & 5) != 0 ) /*0x4025c3*/
     (*(void (__thiscall **)(int))(this->q035 + 16))(this); /*0x4025cd*/
   (*(void (__thiscall **)(int))(this->q035 + 44))(this); /*0x4025d8*/
-  result = *(int (__thiscall **)(int))(this + 188); /*0x4025db*/
+  result = *(int (__thiscall **)(int))(&this->u32_488); /*0x4025db*/
   if ( result ) /*0x4025e3*/
     result = (int (__thiscall *)(int))result(this); /*0x4025e7*/
-  *(_DWORD *)(this + 360) = 0; /*0x4025e9*/
+  this->u32_168 = 0; /*0x4025e9*/
   return result; /*0x4025f3*/
+}
 }
 
 // 0x404140
@@ -43,4 +44,5 @@ int Voice::DetachChannel()
     this->q02C = 0; /*0x4041c2*/
   }
   return result; /*0x4041c8*/
+}
 }

@@ -12,3 +12,4 @@ void Stub_InfiniteLoop()
     ; /*0x4f4d80*/
 }
 } // namespace gamemd
+}

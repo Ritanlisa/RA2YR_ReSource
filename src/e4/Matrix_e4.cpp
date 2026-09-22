@@ -21,6 +21,7 @@ int Matrix3x4::Identity()
   this->q02C = 0; /*0x5ae887*/
   return 0; /*0x5ae88a*/
 }
+}
 
 // 0x5AE980
 void Matrix3x4::Translate(ParticleSystemClass * aP1)
@@ -29,6 +30,7 @@ void Matrix3x4::Translate(ParticleSystemClass * aP1)
   this->q00C = *(float *)&aP1 * *this + this->q00C; /*0x5ae989*/
   this->q01C = *(float *)&aP1 * this->q004 + this->q01C; /*0x5ae996*/
   this->q02C = *(float *)&aP1 * this->q008 + this->q02C; /*0x5ae9a3*/
+}
 }
 
 // 0x6D2360

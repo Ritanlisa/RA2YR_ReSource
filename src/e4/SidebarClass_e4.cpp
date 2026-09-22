@@ -11,12 +11,14 @@ int SidebarClass::draw()
 {
   return this->q05C; /*0x4c9c53*/
 }
+}
 
 // 0x4CA170
 int SidebarClass::draw2()
 {
 {
   return this->q068; /*0x4ca173*/
+}
 }
 
 // 0x6A5090
@@ -42,6 +44,7 @@ int SidebarClass::InitPositions()
     g_SidebarBounds = g_DSurface_SidebarBounds + 69; /*0x6a50d6*/
   }
   return g_DSurface_SidebarBounds + 69; /*0x6a50db*/
+}
 }
 
 // 0x6A5130
@@ -124,6 +127,7 @@ int SidebarClass::CalcBounds(char a1)
     return v1 + 26; /*0x6a529f*/
   }
   return result; /*0x6a52a5*/
+}
 }
 
 // 0x6A5840
@@ -211,6 +215,7 @@ void * SidebarClass::LoadAssets()
   result = LoadFileSHP(DataGlobal_83F938, (bool *)&DataGlobal_B0B4DA); /*0x6a5bd4*/
   DataGlobal_B0B4C8 = result; /*0x6a5bdb*/
   return result; /*0x6a5bd9*/
+}
 }
 
 // 0x6A6C30
@@ -452,6 +457,7 @@ int SidebarClass::Redraw(char a2)
   g_DSurface_Hidden_2 = v19; /*0x6a70c5*/
   return v19; /*0x6a70c3*/
 }
+}
 
 // 0x6A7590
 int SidebarClass::SwitchTab(int a2)
@@ -496,6 +502,7 @@ int SidebarClass::SwitchTab(int a2)
     this->q53A7 = 1; /*0x6a76d9*/
   }
   return result; /*0x6a76e1*/
+}
 }
 
 // 0x6ABD30
@@ -666,6 +673,7 @@ GadgetClass * * SidebarClass::LoadResources()
   }
   return result; /*0x6ac1fb*/
 }
+}
 
 // 0x40D270
 namespace gamemd {
@@ -674,6 +682,7 @@ int SidebarClass::initButtons2()
 // attributes: thunk
 {
   return SidebarClass::InitButtons(this);
+}
 }
 }
 // 0x653010

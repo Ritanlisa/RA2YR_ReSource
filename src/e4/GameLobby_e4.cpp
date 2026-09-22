@@ -89,3 +89,4 @@ void GameLobby_Setup(HWND hDlg, void * a2)
   return SetupSkirmishPlayerSlots(hDlg, a2, (HWND)1); /*0x5ea297*/
 }
 } // namespace gamemd
+}

@@ -211,6 +211,7 @@ LABEL_45:
   AbstractClass::DTOR(a1); /*0x6e5219*/
 }
 } // namespace gamemd
+}
 
 // 0x6E6220
 namespace gamemd {
@@ -230,6 +231,7 @@ int TagClass::HasValidHouse()
   return 1; /*0x6e6242*/
 }
 } // namespace gamemd
+}
 
 // 0x71ADE0
 namespace gamemd {
@@ -244,15 +246,15 @@ Coord * * TagClass::Unlink()
   this->firstTrigger = 0; /*0x71adfd*/
   if ( v2 ) /*0x71ae00*/
   {
-    if ( *(int **)(v2 + 64) == this ) /*0x71ae05*/
-      *(_DWORD *)(v2 + 64) = 0; /*0x71ae07*/
+    if ( v2->ptr_40 == this ) /*0x71ae05*/
+      v2->ptr_40 = 0; /*0x71ae07*/
     TagClass::Unlink(this->q011); /*0x71ae0d*/
   }
   result = this->uniqueId; /*0x71ae12*/
   if ( result ) /*0x71ae17*/
   {
-    if ( *(int **)(result + 68) == this ) /*0x71ae1c*/
-      *(_DWORD *)(result + 68) = 0; /*0x71ae1e*/
+    if ( result->ptr_44 == this ) /*0x71ae1c*/
+      result->ptr_44 = 0; /*0x71ae1e*/
     result = TagClass::Unlink(this->uniqueId); /*0x71ae24*/
   }
   int v4 = this->buildingType; /*0x71ae29*/
@@ -265,6 +267,7 @@ Coord * * TagClass::Unlink()
   return result; /*0x71ae47*/
 }
 } // namespace gamemd
+}
 
 // 0x6E5610
 namespace gamemd {
@@ -322,7 +325,7 @@ int TagClass::ProcessTag(int * a2)
     v4 = this->firstTrigger;
     if ( v4 )
   {
-    v5 = (*(int (__stdcall **)(int))(*(int *)(v4 + 4) + 16))(v4 + 4);
+    v5 = (*(int (__stdcall **)(int))(v4->vtable2 + 16))(v4 + 4);
     v4 = Power::TimerProcess(v5);
   }
     LOBYTE(v4) = this->destroyed;

@@ -57,6 +57,7 @@ LABEL_9:
   this->q03C = v14; /*0x48b878*/
   return 1; /*0x48b7a2*/
 }
+}
 
 // 0x48BA10
 unsigned int ConnectionClass::initQueue(unsigned int a2)
@@ -86,6 +87,7 @@ unsigned int ConnectionClass::initQueue(unsigned int a2)
     this->Active = a2; /*0x48ba6a*/
   return result; /*0x48ba6d*/
 }
+}
 
 // 0x48BEE0
 void ConnectionClass::dtor()
@@ -99,6 +101,7 @@ void ConnectionClass::dtor()
   v3 = (void (__thiscall ***)(_DWORD, int))this->PlayerIndex; /*0x48bef2*/
   if ( v3 ) /*0x48befb*/
     (**v3)(v3, 1); /*0x48bf01*/
+}
 }
 
 // 0x48BF40
@@ -139,6 +142,7 @@ AbstractClass * * ConnectionClass::sendAck(AnimClass * aP1, AnimClass * aP2, Ani
   else
     ++this->q03C; /*0x48c026*/
   return 1; /*0x48bfc9*/
+}
 }
 
 // 0x48C040
@@ -283,6 +287,7 @@ LABEL_40:
   }
   return 1; /*0x48c059*/
 }
+}
 
 // 0x48C320
 int ConnectionClass::processTileUpdate(void * a2, signed int * a3)
@@ -321,6 +326,7 @@ LABEL_10:
     qmemcpy(a2, (const void *)(*(_DWORD *)(TileType + 12) + 14), v10); /*0x48c395*/
   *a3 = v10; /*0x48c3a5*/
   return 1; /*0x48c364*/
+}
 }
 
 // 0x48C3E0
@@ -418,6 +424,7 @@ int ConnectionClass::serviceSendQueue()
     return 1; /*0x48c57a*/
   Debug::Log(); /*0x48c565*/
   return 0; /*0x48c56f*/
+}
 }
 
 // 0x48C590

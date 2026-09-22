@@ -2678,7 +2678,7 @@ _DWORD *__thiscall WalkLocomotion::TransformCoords(_DWORD *this, ObjectClass *aP
   int v9; // ecx
 
   v4 = *(_DWORD *)aP3->__pad_0; /*0x6a3dbd*/
-  v5 = dword_7F2A48[3 * this->q160]; /*0x6a3dc1*/
+  v5 = dword_7F2A48[3 * this->q058]; /*0x6a3dc1*/
   v6 = aP2->field_0; /*0x6a3dcf*/
   v7 = aP2->field_4; /*0x6a3dd1*/
   if ( (v5 & 1) != 0 ) /*0x6a3dd4*/
@@ -2698,7 +2698,7 @@ _DWORD *__thiscall WalkLocomotion::TransformCoords(_DWORD *this, ObjectClass *aP
     v4 = (unsigned __int8)(0x80 - v4); /*0x6a3e0d*/
   }
   *(_DWORD *)aP3->__pad_0 = v4; /*0x6a3e0f*/
-  v8 = this->q010; /*0x6a3e12*/
+  v8 = this->q040; /*0x6a3e12*/
   v9 = this->q044; /*0x6a3e15*/
   *(_DWORD *)aP1->__pad_0 = v6 + v8; /*0x6a3e22*/
   *(_DWORD *)&aP1->__pad_0[4] = v7 + v9; /*0x6a3e25*/
@@ -3122,13 +3122,13 @@ _DWORD *__thiscall SideClass::Construct(_DWORD *this, CCINIClass *aP1)
   int v3; // eax
 
   AbstractTypeClass::Constructor((int)this, (AbstractClass *)aP1); /*0x6a4559*/
-  this->houseTypesCount = 0; /*0x6a4563*/
+  this->q09C = 0; /*0x6a4563*/
   this->q0A0 = 0; /*0x6a4569*/
   this->q0A4 = 1; /*0x6a456f*/
-  *((_BYTE *)this + 165) = 0; /*0x6a4576*/
+  this->u8_A5 = 0; /*0x6a4576*/
   this->q02B = 10; /*0x6a457c*/
   this->q0A8 = 0; /*0x6a4586*/
-  this->houseTypes = &vt_TypeList_int; /*0x6a458c*/
+  this->q098 = &vt_TypeList_int; /*0x6a458c*/
   *this = &SideClass::`vftable'; /*0x6a4597*/
   this->vtable2 = &SideClass::`vftable'; /*0x6a459d*/
   this->vtable3 = &SideClass::`vftable'; /*0x6a45a3*/
@@ -4022,7 +4022,7 @@ char __thiscall SidebarClass::Init(_DWORD *this)
       (*(void (__thiscall **)(_DWORD *, _DWORD))(*this + 216))(this, 0); /*0x6a5560*/
       (*(void (__thiscall **)(_DWORD *, int))(*this + 216))(this, 1); /*0x6a556c*/
     }
-    this->q1544 = 0; /*0x6a5574*/
+    this->u32_5510 = 0; /*0x6a5574*/
     LOBYTE(v2) = MEMORY[0xA8B238][0]; /*0x6a557a*/
     if ( MEMORY[0xA8B238][0] == 3 || MEMORY[0xA8B238][0] == 4 ) /*0x6a5587*/
     {
@@ -4050,7 +4050,7 @@ LABEL_17:
         }
       }
       this->q53AC = v2; /*0x6a55db*/
-      for ( i = 0; i < 8; i = this->q1544 ) /*0x6a55e1*/
+      for ( i = 0; i < 8; i = this->u32_5510 ) /*0x6a55e1*/
       {
         v16 = *(this + i + 5355); /*0x6a55e7*/
         if ( !v16 ) /*0x6a55f0*/
@@ -4073,14 +4073,14 @@ LABEL_17:
         }
         while ( v21 ); /*0x6a5622*/
         *(this + i + 5363) = v17; /*0x6a5626*/
-        *(this + this->q1544 + 5371) = *(_DWORD *)(v16 + 744) /*0x6a5659*/
+        *(this + this->u32_5510 + 5371) = *(_DWORD *)(v16 + 744) /*0x6a5659*/
                                         + *(_DWORD *)(v16 + 752)
                                         + *(_DWORD *)(v16 + 756)
                                         + *(_DWORD *)(v16 + 760);
         v22 = (*(int (__stdcall **)(int))(*(_DWORD *)(v16 + 36) + 24))(v16 + 36); /*0x6a5669*/
         if ( v22 < 0 ) /*0x6a566e*/
           v22 = 0; /*0x6a5670*/
-        *(this + this->q1544 + 5379) = v22; /*0x6a567a*/
+        *(this + this->u32_5510 + 5379) = v22; /*0x6a567a*/
         if ( v16 == MEMORY[0xAC1198] ) /*0x6a569a*/
         {
           v23 = FindBuildingAnimByName(MEMORY[0x836ECC], 1); /*0x6a56a6*/
@@ -4093,30 +4093,30 @@ LABEL_17:
         {
           v23 = *((_DWORD *)MEMORY[0xB054D4] + *(_DWORD *)(v16 + 90196)); /*0x6a56d3*/
         }
-        *(this + this->q1544 + 5387) = v23; /*0x6a56dc*/
-        *(this + this->q1544 + 5395) = 0; /*0x6a56e9*/
-        *(this + this->q1544 + 5403) = 0; /*0x6a56f6*/
-        *(this + this->q1544 + 5411) = 0; /*0x6a5703*/
-        *(this + this->q1544 + 5419) = 0; /*0x6a5710*/
-        *(this + this->q1544 + 5427) = 0; /*0x6a571d*/
-        *(this + this->q1544 + 5435) = 0; /*0x6a572a*/
+        *(this + this->u32_5510 + 5387) = v23; /*0x6a56dc*/
+        *(this + this->u32_5510 + 5395) = 0; /*0x6a56e9*/
+        *(this + this->u32_5510 + 5403) = 0; /*0x6a56f6*/
+        *(this + this->u32_5510 + 5411) = 0; /*0x6a5703*/
+        *(this + this->u32_5510 + 5419) = 0; /*0x6a5710*/
+        *(this + this->u32_5510 + 5427) = 0; /*0x6a571d*/
+        *(this + this->u32_5510 + 5435) = 0; /*0x6a572a*/
         if ( MEMORY[0xA8B238][0] == 4 ) /*0x6a5739*/
         {
           v24 = (_DWORD *)SidebarClass::FindProductionData(v16 + 90154); /*0x6a5741*/
           if ( v24 ) /*0x6a5748*/
           {
-            *(this + this->q1544 + 5395) = v24[7]; /*0x6a5754*/
-            *(this + this->q1544 + 5403) = v24[4]; /*0x6a5764*/
-            *(this + this->q1544 + 5411) = v24[2]; /*0x6a5774*/
-            *(this + this->q1544 + 5419) = v24[3]; /*0x6a5784*/
-            *(this + this->q1544 + 5427) = v24[8]; /*0x6a5794*/
-            *(this + this->q1544 + 5435) = v24[12]; /*0x6a57a4*/
+            *(this + this->u32_5510 + 5395) = v24[7]; /*0x6a5754*/
+            *(this + this->u32_5510 + 5403) = v24[4]; /*0x6a5764*/
+            *(this + this->u32_5510 + 5411) = v24[2]; /*0x6a5774*/
+            *(this + this->u32_5510 + 5419) = v24[3]; /*0x6a5784*/
+            *(this + this->u32_5510 + 5427) = v24[8]; /*0x6a5794*/
+            *(this + this->u32_5510 + 5435) = v24[12]; /*0x6a57a4*/
             __3_YAXPAX_Z(v24); /*0x6a57ab*/
           }
         }
         v30 = 0; /*0x6a57b9*/
-        v25 = this->q1544 + 1; /*0x6a57bd*/
-        this->q1544 = v25; /*0x6a57be*/
+        v25 = this->u32_5510 + 1; /*0x6a57bd*/
+        this->u32_5510 = v25; /*0x6a57be*/
         v26 = v25; /*0x6a57ca*/
         v27 = 0; /*0x6a57cc*/
         if ( HouseClass_Count > 0 ) /*0x6a57d0*/
@@ -4144,7 +4144,7 @@ LABEL_44:
         *(this + v26 + 5355) = v2; /*0x6a581a*/
       }
     }
-    *((_BYTE *)this + 21772) = 0; /*0x6a5831*/
+    this->u8_550C = 0; /*0x6a5831*/
   }
   return v2; /*0x6a5839*/
 }
@@ -6399,10 +6399,10 @@ char __thiscall SidebarClass::UpdateCameos(char *this, int a2, int a3)
     {
       if ( v4 >= 0 ) /*0x6a8bdc*/
       {
-        if ( v8 * (v7 + this->q011) < v6 ) /*0x6a8c09*/
+        if ( v8 * (v7 + this->buildings) < v6 ) /*0x6a8c09*/
         {
           this->q012 = v4 - 1; /*0x6a8c11*/
-          this->buildingsCapacity = MEMORY[0xB0B500]; /*0x6a8c1a*/
+          this->IsAllocated = MEMORY[0xB0B500]; /*0x6a8c1a*/
           this->armorMultiplier = 1; /*0x6a8c1d*/
           this->q0FC = 1; /*0x6a8c21*/
         }
@@ -6413,14 +6413,14 @@ char __thiscall SidebarClass::UpdateCameos(char *this, int a2, int a3)
       }
       else
       {
-        v10 = this->q011; /*0x6a8bde*/
+        v10 = this->buildings; /*0x6a8bde*/
         if ( v10 ) /*0x6a8be3*/
         {
           this->q012 = v4 + 1; /*0x6a8bec*/
           this->armorMultiplier = 0; /*0x6a8bef*/
           this->q0FC = 1; /*0x6a8bf3*/
-          this->q011 = v10 - 1; /*0x6a8bf7*/
-          this->buildingsCapacity = 0; /*0x6a8bfa*/
+          this->buildings = v10 - 1; /*0x6a8bf7*/
+          this->IsAllocated = 0; /*0x6a8bfa*/
         }
         else
         {
@@ -6438,24 +6438,24 @@ char __thiscall SidebarClass::UpdateCameos(char *this, int a2, int a3)
 LABEL_115:
     if ( this->armorMultiplier ) /*0x6a8c2c*/
     {
-      v11 = this->buildingsCapacity - MEMORY[0xB0B514]; /*0x6a8c3e*/
-      this->buildingsCapacity = v11; /*0x6a8c40*/
+      v11 = this->IsAllocated - MEMORY[0xB0B514]; /*0x6a8c3e*/
+      this->IsAllocated = v11; /*0x6a8c40*/
       if ( v11 <= 0 ) /*0x6a8c45*/
       {
-        v12 = this->q011; /*0x6a8c47*/
+        v12 = this->buildings; /*0x6a8c47*/
         this->q0FC = 0; /*0x6a8c4a*/
-        this->buildingsCapacity = 0; /*0x6a8c4f*/
-        this->q011 = v12 + 1; /*0x6a8c56*/
+        this->IsAllocated = 0; /*0x6a8c4f*/
+        this->buildings = v12 + 1; /*0x6a8c56*/
       }
     }
     else
     {
-      v13 = MEMORY[0xB0B514] + this->buildingsCapacity; /*0x6a8c63*/
-      this->buildingsCapacity = v13; /*0x6a8c65*/
+      v13 = MEMORY[0xB0B514] + this->IsAllocated; /*0x6a8c63*/
+      this->IsAllocated = v13; /*0x6a8c65*/
       if ( v13 >= MEMORY[0xB0B500] ) /*0x6a8c72*/
       {
         this->q0FC = 0; /*0x6a8c74*/
-        this->buildingsCapacity = 0; /*0x6a8c78*/
+        this->IsAllocated = 0; /*0x6a8c78*/
       }
     }
     v57 = 1; /*0x6a8c7f*/
@@ -9412,7 +9412,7 @@ _DWORD *__thiscall sub_6AC8D0(_DWORD *this, int a2, int a3)
     }
   }
   *this = &DynamicVectorClass<Point2D>::`vftable'; /*0x6ac92a*/
-  this->q005 = 10; /*0x6ac930*/
+  this->u32_14 = 10; /*0x6ac930*/
   this->q010 = 0; /*0x6ac937*/
   return this; /*0x6ac940*/
 }
@@ -11640,7 +11640,7 @@ char __thiscall SlaveManagerClass::_vt23(int *this)
 
   v2 = (int *)MEMORY[0xA8ED84]; /*0x6af5f7*/
   v3 = this->abstractFlags; /*0x6af5fd*/
-  v4 = this->SlaveManagerClass_field_58; /*0x6af600*/
+  v4 = this->q016; /*0x6af600*/
   if ( v3 == -1 ) /*0x6af606*/
   {
 LABEL_4:
@@ -11656,7 +11656,7 @@ LABEL_4:
 LABEL_5:
   this->abstractFlags = (int)MEMORY[0xA8ED84]; /*0x6af616*/
   this->SlaveManagerClass_field_54 = v6; /*0x6af622*/
-  this->SlaveManagerClass_field_58 = 10; /*0x6af625*/
+  this->q016 = 10; /*0x6af625*/
   v4 = this->master; /*0x6af628*/
   if ( v4 ) /*0x6af62d*/
   {
@@ -12196,7 +12196,7 @@ char __thiscall ProcessDeployAction(TechnoClass **this)
             v2 = v34; /*0x6aff2c*/
             this->nextArrayIndex = (TechnoClass *)0x7FFFFFFF; /*0x6aff30*/
             this->SlaveManagerClass_field_54 = (TechnoClass *)v2; /*0x6aff38*/
-            this->SlaveManagerClass_field_58 = (TechnoClass *)30; /*0x6aff3c*/
+            this->q016 = (TechnoClass *)30; /*0x6aff3c*/
           }
         }
       }

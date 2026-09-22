@@ -14,6 +14,7 @@ int Surface::IsLocked()
 {
   return this->q00C != 0; /*0x41158a*/
 }
+}
 
 // 0x5D1FD0
 unsigned int * Surface::CopyRect(ObjectClass * aP1)
@@ -196,6 +197,7 @@ LABEL_16:
   }
   return Surface::CopyRect(this, (ObjectClass *)&v44); /*0x5d208c*/
 }
+}
 
 // 0x626C60
 namespace gamemd {
@@ -287,6 +289,7 @@ void sub_626C60()
   }
 }
 } // namespace gamemd
+}
 
 // 0x641DB0
 AbstractClass * * Surface::LoadToSurfaceSHP(char * Source)
@@ -339,6 +342,7 @@ LABEL_11:
     BufferIOFileClass::Dtor(v9); /*0x641ed0*/
     return 0; /*0x641ed6*/
   }
+}
 }
 
 // 0x655250
@@ -518,6 +522,7 @@ LABEL_33:
   v29[3] = v30; /*0x655551*/
   return result; /*0x655554*/
 }
+}
 
 // 0x6BA3E0
 int Surface::TileBlit(INIClass * aP0, ObjectClass * aP1, int a3, int a4, int a5)
@@ -589,6 +594,7 @@ int Surface::TileBlit(INIClass * aP0, ObjectClass * aP1, int a3, int a4, int a5)
     return 0; /*0x6ba429*/
   }
 }
+}
 
 // 0x6BA580
 int Surface::BlitTransparent(int * a0, ObjectClass * aP1, int a3, ObjectClass * aP3)
@@ -599,13 +605,13 @@ int Surface::BlitTransparent(int * a0, ObjectClass * aP1, int a3, ObjectClass * 
   int v15 = (*(int (__thiscall **)(ObjectClass *, _DWORD, _DWORD))(*(_DWORD *)aP1->__pad_0 + 92))(aP1, 0, 0); /*0x6ba599*/
   if ( !v15 ) /*0x6ba59d*/
     return 0; /*0x6ba5a1*/
-  int v5 = (*(int (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)a3 + 92))(a3, 0, 0); /*0x6ba5bb*/
+  int v5 = (*(int (__thiscall **)(int, _DWORD, _DWORD))(a3->u32_5C)(a3, 0, 0); /*0x6ba5bb*/
   if ( v5 ) /*0x6ba5bf*/
   {
     int v6 = *a0; /*0x6ba5d8*/
     int v7 = a0[1]; /*0x6ba5da*/
-    int v16 = (*(int (__thiscall **)(int))(*(_DWORD *)a3 + 124))(a3); /*0x6ba5f2*/
-    int v8 = (*(int (__thiscall **)(int))(*(_DWORD *)a3 + 128))(a3); /*0x6ba604*/
+    int v16 = (*(int (__thiscall **)(int))(a3->u32_7C)(a3); /*0x6ba5f2*/
+    int v8 = (*(int (__thiscall **)(int))(a3->u32_80)(a3); /*0x6ba604*/
     int v9 = (*(int (__thiscall **)(ObjectClass *))(*(_DWORD *)aP1->__pad_0 + 116))(aP1) / 2; /*0x6ba60e*/
     if ( v8 > 0 ) /*0x6ba612*/
     {
@@ -637,7 +643,7 @@ int Surface::BlitTransparent(int * a0, ObjectClass * aP1, int a3, ObjectClass * 
       while ( v8 ); /*0x6ba65a*/
     }
     (*(void (__thiscall **)(ObjectClass *))(*(_DWORD *)aP1->__pad_0 + 96))(aP1); /*0x6ba662*/
-    (*(void (__thiscall **)(int))(*(_DWORD *)a3 + 96))(a3); /*0x6ba66b*/
+    (*(void (__thiscall **)(int))(a3->u32_60)(a3); /*0x6ba66b*/
     return 1; /*0x6ba671*/
   }
   else
@@ -645,6 +651,7 @@ int Surface::BlitTransparent(int * a0, ObjectClass * aP1, int a3, ObjectClass * 
     (*(void (__thiscall **)(ObjectClass *))(*(_DWORD *)aP1->__pad_0 + 96))(aP1); /*0x6ba5c5*/
     return 0; /*0x6ba5ca*/
   }
+}
 }
 
 // 0x6BA690
@@ -661,7 +668,7 @@ int Surface::AlphaBlend(unsigned int * a1, int a2, int a3, int a4, int a5, int a
   _WORD v77[256]; // [esp+94h] [ebp-200h] BYREF
 
   char v76[16]; // [esp+84h] [ebp-210h] BYREF
-  int v8 = (*(int (__thiscall **)(int, char *))(*(_DWORD *)a3 + 120))(a3, v76); /*0x6ba6a8*/
+  int v8 = (*(int (__thiscall **)(int, char *))(a3->u32_78)(a3, v76); /*0x6ba6a8*/
   int v9 = 0; /*0x6ba6b8*/
   MSShapeAnim *v10 = 0; /*0x6ba6bd*/
   MSShapeAnim *v56 = 0; /*0x6ba6c3*/
@@ -730,13 +737,13 @@ int Surface::AlphaBlend(unsigned int * a1, int a2, int a3, int a4, int a5, int a
   int v64 = 0; /*0x6ba7ed*/
   if ( a5 ) /*0x6ba7f1*/
   {
-    v64 = (*(int (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)a3 + 92))(a3, 0, 0); /*0x6ba843*/
+    v64 = (*(int (__thiscall **)(int, _DWORD, _DWORD))(a3->u32_5C)(a3, 0, 0); /*0x6ba843*/
     if ( !v64 ) /*0x6ba847*/
       goto LABEL_21; /*0x6ba847*/
   }
   else
   {
-    v19 = (*(int (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)a3 + 92))(a3, 0, 0); /*0x6ba805*/
+    v19 = (*(int (__thiscall **)(int, _DWORD, _DWORD))(a3->u32_5C)(a3, 0, 0); /*0x6ba805*/
     v53 = v19; /*0x6ba809*/
     if ( !v19 ) /*0x6ba80d*/
     {
@@ -774,7 +781,7 @@ LABEL_21:
     v12 = v75; /*0x6ba8fd*/
   }
   int v72 = (*(int (__thiscall **)(int))(*(_DWORD *)a2 + 116))(a2) / 2; /*0x6ba91b*/
-  unsigned int v26 = (*(int (__thiscall **)(int))(*(_DWORD *)a3 + 116))(a3); /*0x6ba91f*/
+  unsigned int v26 = (*(int (__thiscall **)(int))(a3->u32_74)(a3); /*0x6ba91f*/
   unsigned int v69 = v26; /*0x6ba929*/
   if ( !a5 ) /*0x6ba92f*/
   {
@@ -891,9 +898,10 @@ LABEL_43:
     while ( v50 ); /*0x6ba992*/
   }
   (*(void (__thiscall **)(int))(*(_DWORD *)a2 + 96))(a2); /*0x6babfe*/
-  (*(void (__thiscall **)(int))(*(_DWORD *)a3 + 96))(a3); /*0x6bac13*/
+  (*(void (__thiscall **)(int))(a3->u32_60)(a3); /*0x6bac13*/
   (*(void (__thiscall **)(int))(*(_DWORD *)a4 + 96))(a4); /*0x6bac1f*/
   return 1; /*0x6ba7cf*/
+}
 }
 
 // 0x707480
@@ -933,17 +941,17 @@ TechnoClass * * Surface::BlitTechnoTo(short * a1, TechnoClass * aP2, TechnoClass
   int v11 = *(_DWORD *)this; /*0x7074d9*/
   v36 = &BSurface_Vtable; /*0x7074dd*/
   unsigned int v12 = (unsigned int)aP4 & 0xFFFFFFEF; /*0x7074e5*/
-  if ( (*(int (__thiscall **)(_BYTE *))(v11 + 44))(this) == 1 && *(this + 1747) ) /*0x7074f0*/
+  if ( (*(int (__thiscall **)(_BYTE *))(v11 + 44))(this) == 1 && *(&this->u32_2B87) ) /*0x7074f0*/
     ConvertClass *v13 = *(_DWORD **)&g_OverlayTypeConfig[88392]; /*0x7074fa*/
-  ConvertClass *v13 = (_DWORD *)(*(int (__thiscall **)(_BYTE *))(*(_DWORD *)this + 484))(this); /*0x707505*/
+  ConvertClass *v13 = (_DWORD *)(*(int (__thiscall **)(_BYTE *))(*(_DWORD *)&this->u32_C04))(this); /*0x707505*/
   aP4a = (int *)LightConvertClass::SelectRLEBlitter(v13, (IUnknown *)v12); /*0x707516*/
   a1a = 0; /*0x70751a*/
   if ( (v12 & 8) != 0 ) /*0x707522*/
   {
     int v14 = this->Width->vt_slot_16(); /*0x707534*/
-    a1a = (int)(v14 + Math::RoundToInt(*((float *)this + 147))) % 400; /*0x707545*/
+    a1a = (int)(v14 + Math::RoundToInt(this->u32_24C)) % 400; /*0x707545*/
   }
-  if ( (*(int (__thiscall **)(_BYTE *))(*(_DWORD *)this + 44))(this) == 1 ) /*0x707557*/
+  if ( (*(int (__thiscall **)(_BYTE *))(*(_DWORD *)&this->u32_104))(this) == 1 ) /*0x707557*/
   {
     eax8 = (TechnoClass *)(*(_DWORD *)aP2->__pad_0 + *a1); /*0x70756b*/
     v15 = (TechnoClass *)(*(_DWORD *)&aP2->__pad_0[4] + a1[1]); /*0x707571*/
@@ -1036,6 +1044,7 @@ TechnoClass * * Surface::BlitTechnoTo(short * a1, TechnoClass * aP2, TechnoClass
   }
   Vector::Clear((int)v41); /*0x70773f*/
 }
+}
 
 // 0x7602E0
 void Surface::RenderToSurfaceVoxel(unsigned int * a2, int * a3)
@@ -1064,7 +1073,7 @@ void Surface::RenderToSurfaceVoxel(unsigned int * a2, int * a3)
   unsigned __int16 v86; // [esp+48h] [ebp+4h]
   unsigned __int16 v87; // [esp+48h] [ebp+4h]
   CCINIClass *v89; // [esp+4Ch] [ebp+8h]
-  int v58 = ZCoordToScreenY(*(_DWORD *)(this + 188)); /*0x7602f8*/
+  int v58 = ZCoordToScreenY(this->u32_BC); /*0x7602f8*/
   int v74; // [esp+24h] [ebp-20h]
   v74 = (*(int (__thiscall **)(_DWORD, _DWORD, _DWORD))(**(_DWORD **)&DataGlobal_87F8E4[31280] + 92))( /*0x760309*/
           *(_DWORD *)&DataGlobal_87F8E4[31280],
@@ -1078,15 +1087,15 @@ void Surface::RenderToSurfaceVoxel(unsigned int * a2, int * a3)
     int v77 = v5 + 3; /*0x76032f*/
     int v79 = *a3 + 3; /*0x760340*/
     int v69 = *a3 + a3[2] - 3; /*0x760348*/
-    int v6 = a2[1] - *(_DWORD *)(this + 208); /*0x760359*/
-    aP2 = (WaveClass *)(*a2 - *(_DWORD *)(this + 204)); /*0x760367*/
+    int v6 = a2[1] - this->u32_D0; /*0x760359*/
+    aP2 = (WaveClass *)(*a2 - this->u32_CC); /*0x760367*/
     int v76 = v6; /*0x76036b*/
-    ProcessVoxelVertexData((_DWORD *)(this + 328), (int *)(this + 416)); /*0x76036f*/
-    if ( *(_DWORD *)(this + 424) ) /*0x760374*/
+    ProcessVoxelVertexData((_DWORD *)(&this->u32_808), (int *)(&this->u32_A46)); /*0x76036f*/
+    if ( this->u32_1A8 ) /*0x760374*/
     {
   _WORD *a4; // [esp+18h] [ebp-2Ch]
-      int v7 = *(_DWORD *)(this + 416); /*0x760398*/
-      int v8 = v6 + *(_DWORD *)&DataGlobal_87F8E4[30400] + *(_DWORD *)(this + 420); /*0x76039e*/
+      int v7 = this->u32_1A0; /*0x760398*/
+      int v8 = v6 + *(_DWORD *)&DataGlobal_87F8E4[30400] + this->u32_1A4; /*0x76039e*/
       int v61 = v8; /*0x7603a0*/
       int v9 = v7 + v8 - 1; /*0x7603a4*/
       if ( v9 >= a3[3] + a3[1] ) /*0x7603aa*/
@@ -1099,7 +1108,7 @@ void Surface::RenderToSurfaceVoxel(unsigned int * a2, int * a3)
         a4 = (_WORD *)(v7 + v8 - 1); /*0x7603ac*/
       }
       Voxel::loadSectionData((_DWORD *)this); /*0x7603ba*/
-      int v10 = *(_DWORD *)(this + 460); /*0x7603bf*/
+      int v10 = this->u32_1CC; /*0x7603bf*/
       if ( v10 <= 1 || v10 >= 6 ) /*0x7603d1*/
       {
         a4d = (_WORD *)Audio::GetSamplePosition( /*0x7606be*/
@@ -1126,7 +1135,7 @@ void Surface::RenderToSurfaceVoxel(unsigned int * a2, int * a3)
               int v48 = v4[1]; /*0x760880*/
               if ( v46 >= v48 + 2 && v46 <= v48 + v4[3] - 2 ) /*0x760897*/
               {
-                _DWORD * v49 = (_DWORD *)(*(_DWORD *)(this + 424) + v73); /*0x7608b0*/
+                _DWORD * v49 = (_DWORD *)(this->u32_1A8 + v73); /*0x7608b0*/
                 int v50 = (int)&aP2->__pad_0[v49[1]]; /*0x7608ba*/
                 if ( v50 >= *v4 + v4[2] - 2 ) /*0x7608be*/
                   v50 = *v4 + v4[2] - 2; /*0x7608c0*/
@@ -1140,7 +1149,7 @@ void Surface::RenderToSurfaceVoxel(unsigned int * a2, int * a3)
                                * ((*(int (__thiscall **)(_DWORD))(**(_DWORD **)&DataGlobal_87F8E4[31280] + 116))(*(_DWORD *)&DataGlobal_87F8E4[31280]) >> 1)));
                 v51 = (MouseClass *)(v56 - *(_DWORD *)&DataGlobal_87F8E4[30400]); /*0x760910*/
                 aP1b = (MouseClass *)v50; /*0x760914*/
-                for ( i = abs32(v56 - v76 - *(_DWORD *)(this + 208)); v50 >= v60; --a4c ) /*0x760925*/
+                for ( i = abs32(v56 - v76 - this->u32_D0); v50 >= v60; --a4c ) /*0x760925*/
                 {
                   if ( *(_WORD *)Audio::GetSamplePosition(*(int *)&DataGlobal_87F8E4[32096], aP1b, v51) > (unsigned __int16)v88 ) /*0x760940*/
                     Voxel::BlendColor((_DWORD *)this, v50, aP2, i, a4c); /*0x760950*/
@@ -1165,7 +1174,7 @@ void Surface::RenderToSurfaceVoxel(unsigned int * a2, int * a3)
         {
           aP1a = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)&DataGlobal_87F8E4[31280] + 116))(*(_DWORD *)&DataGlobal_87F8E4[31280]) >> 1; /*0x760709*/
           _WORD * v37 = (_WORD *)(v74 + 2 * v9 * aP1a); /*0x76071a*/
-          _DWORD * v90 = (_DWORD *)(*(_DWORD *)(this + 424) + 8 * v81); /*0x760728*/
+          _DWORD * v90 = (_DWORD *)(this->u32_1A8 + 8 * v81); /*0x760728*/
           v87 = *(_WORD *)(*(_DWORD *)&DataGlobal_87F8E4[32096] + 36) - v9 - v58 - 2; /*0x760740*/
           SamplePosition = Audio::GetSamplePosition( /*0x760753*/
                              *(int *)&DataGlobal_87F8E4[32096],
@@ -1188,7 +1197,7 @@ void Surface::RenderToSurfaceVoxel(unsigned int * a2, int * a3)
                 _WORD * v41 = &v37[v40]; /*0x7607b8*/
                 v42 = (unsigned __int16 *)(2 * v40 + SamplePosition); /*0x7607ba*/
                 a4b = v42; /*0x7607c6*/
-                __int64 v43 = v39 - v76 - *(_DWORD *)(this + 208); /*0x7607ca*/
+                __int64 v43 = v39 - v76 - this->u32_D0; /*0x7607ca*/
                 for ( j = (HIDWORD(v43) ^ v43) - HIDWORD(v43); v40 >= (int)v59; a4b = v42 ) /*0x7607d7*/
                 {
                   if ( *v42 > v87 ) /*0x7607e1*/
@@ -1240,7 +1249,7 @@ void Surface::RenderToSurfaceVoxel(unsigned int * a2, int * a3)
               int v28 = v4[1]; /*0x76056f*/
               if ( v27 >= v28 + 2 && v27 <= v28 + v4[3] - 2 ) /*0x760586*/
               {
-                _DWORD * v29 = (_DWORD *)(*(_DWORD *)(this + 424) + v71); /*0x760599*/
+                _DWORD * v29 = (_DWORD *)(this->u32_1A8 + v71); /*0x760599*/
                 int v30 = *v4; /*0x76059b*/
                 int v63 = (int)&aP2->__pad_0[v29[1]]; /*0x7605b4*/
                 if ( v63 >= *v4 + v4[2] - 2 ) /*0x7605b8*/
@@ -1257,7 +1266,7 @@ void Surface::RenderToSurfaceVoxel(unsigned int * a2, int * a3)
                                * ((*(int (__thiscall **)(_DWORD))(**(_DWORD **)&DataGlobal_87F8E4[31280] + 116))(*(_DWORD *)&DataGlobal_87F8E4[31280]) >> 1)));
                 v33 = (MouseClass *)(v27 - *(_DWORD *)&DataGlobal_87F8E4[30400]); /*0x7605fd*/
                 v85 = (MouseClass *)(v27 - *(_DWORD *)&DataGlobal_87F8E4[30400]); /*0x760607*/
-                int v34 = abs32(v27 - v76 - *(_DWORD *)(this + 208)); /*0x760616*/
+                int v34 = abs32(v27 - v76 - this->u32_D0); /*0x760616*/
                 if ( v32 <= v63 ) /*0x76061a*/
                 {
                   while ( 1 ) /*0x760622*/
@@ -1289,7 +1298,7 @@ void Surface::RenderToSurfaceVoxel(unsigned int * a2, int * a3)
           int v80 = v13; /*0x760455*/
           _WORD * v14 = (_WORD *)(v74 + 2 * v61 * v13); /*0x760459*/
           int v15 = v61; /*0x76045c*/
-          v16 = *(CCINIClass **)(this + 424); /*0x760460*/
+          v16 = *(CCINIClass **)(&this->u32_A84); /*0x760460*/
           v89 = v16; /*0x760468*/
           for ( k = v61; v15 <= v9; k = v15 ) /*0x760470*/
           {
@@ -1305,7 +1314,7 @@ void Surface::RenderToSurfaceVoxel(unsigned int * a2, int * a3)
                 v19 = (int)v18; /*0x7604ae*/
               v20 = (unsigned __int16 *)(2 * v19 + v11); /*0x7604b7*/
               _WORD * v21 = &v14[v19]; /*0x7604b9*/
-              __int64 v22 = v15 - v76 - *(_DWORD *)(this + 208); /*0x7604cb*/
+              __int64 v22 = v15 - v76 - this->u32_D0; /*0x7604cb*/
               int v23 = v22; /*0x7604cc*/
               int v24 = v19; /*0x7604ce*/
               int v75 = v19; /*0x7604d2*/
@@ -1338,12 +1347,13 @@ void Surface::RenderToSurfaceVoxel(unsigned int * a2, int * a3)
       }
     }
     (*(void (__thiscall **)(_DWORD))(**(_DWORD **)&DataGlobal_87F8E4[31280] + 96))(*(_DWORD *)&DataGlobal_87F8E4[31280]); /*0x7609a7*/
-    if ( *(_DWORD *)(this + 424) ) /*0x7609aa*/
+    if ( this->u32_1A8 ) /*0x7609aa*/
     {
-      __3_YAXPAX_Z(*(void **)(this + 424)); /*0x7609b7*/
-      *(_DWORD *)(this + 424) = 0; /*0x7609bf*/
+      __3_YAXPAX_Z(*(void **)(&this->u32_A84)); /*0x7609b7*/
+      this->u32_1A8 = 0; /*0x7609bf*/
     }
   }
+}
 }
 
 // 0x769330
@@ -1351,8 +1361,8 @@ int Surface::PixelToIndex(unsigned int * a2)
 {
 {
 
-  int v3 = *a2 - *(_DWORD *)(this + 68); /*0x769342*/
-  int v4 = a2[1] - *(_DWORD *)(this + 72); /*0x769347*/
+  int v3 = *a2 - this->u32_44; /*0x769342*/
+  int v4 = a2[1] - this->u32_48; /*0x769347*/
   int v6 = v3; /*0x769349*/
   int v7 = v4; /*0x76934f*/
   if ( v3 < 0 /*0x76937a*/
@@ -1366,6 +1376,7 @@ int Surface::PixelToIndex(unsigned int * a2)
   {
     return (*(int (__thiscall **)(_DWORD, int *))(*this->q024 + 40))(this->q024, &v6); /*0x769386*/
   }
+}
 }
 
 // 0x7BD690
@@ -1387,54 +1398,54 @@ int Surface::CommitSurfaceBuffersAudio()
   int v50; // [esp-4h] [ebp-28h]
   int v56; // [esp+1Ch] [ebp-8h]
   int v57; // [esp+1Ch] [ebp-8h]
-  if ( !*(_DWORD *)(this + 136) ) /*0x7bd699*/
+  if ( !this->u32_88 ) /*0x7bd699*/
     return -8; /*0x7bd6af*/
-  int v3 = *(unsigned __int8 *)(this + 243) * *(unsigned __int8 *)(this + 242) * *(unsigned __int16 *)(this + 248) + 4; /*0x7bd6cf*/
+  int v3 = *(unsigned __int8 *)(&this->u32_603) * *(unsigned __int8 *)(&this->u32_602) * *(unsigned __int16 *)(&this->u32_608) + 4; /*0x7bd6cf*/
   LOBYTE(v3) = v3 & 0xFC; /*0x7bd6d2*/
-  *(_DWORD *)(this + 1908) = v3; /*0x7bd6d4*/
-  char v4 = *(_BYTE *)(this + 264); /*0x7bd6da*/
+  this->u32_774 = v3; /*0x7bd6d4*/
+  char v4 = this->u8_108; /*0x7bd6da*/
   if ( v4 == 1 || v4 == 4 ) /*0x7bd6e8*/
-    *(_DWORD *)(this + 1908) = 2 * v3; /*0x7bd6ec*/
-  unsigned int v5 = *(_DWORD *)(this + 266); /*0x7bd6f2*/
-  unsigned int v6 = *(_DWORD *)(this + 1908); /*0x7bd6f8*/
+    this->u32_774 = 2 * v3; /*0x7bd6ec*/
+  unsigned int v5 = this->u32_10A; /*0x7bd6f2*/
+  unsigned int v6 = this->u32_774; /*0x7bd6f8*/
   if ( v5 > v6 ) /*0x7bd700*/
     return -3; /*0x7bd70e*/
   if ( !v5 ) /*0x7bd711*/
-    *(_DWORD *)(this + 266) = v6; /*0x7bd713*/
-  if ( *(int *)(this + 140) > 0 ) /*0x7bd721*/
+    this->u32_10A = v6; /*0x7bd713*/
+  if ( this->u32_8C > 0 ) /*0x7bd721*/
     goto LABEL_57; /*0x7bd721*/
-  if ( *(_WORD *)(this + 1868) ) /*0x7bd727*/
-    int v7 = *(unsigned __int16 *)(this + 1870); /*0x7bd735*/
+  if ( this->u16_74C ) /*0x7bd727*/
+    int v7 = *(unsigned __int16 *)(&this->u32_2EC0); /*0x7bd735*/
   else
-    v7 = *(unsigned __int8 *)(this + 245); /*0x7bd746*/
+    v7 = *(unsigned __int8 *)(&this->u32_605); /*0x7bd746*/
   if ( v7 != this->q010 ) /*0x7bd74b*/
   {
   int v54; // [esp+18h] [ebp-Ch]
   int v53; // [esp+14h] [ebp-10h]
   int v9; // eax
-    int v8 = *(_DWORD *)(this + 136); /*0x7bd75c*/
+    int v8 = this->u32_88; /*0x7bd75c*/
     int v52 = 0; /*0x7bd762*/
     if ( v8 <= 1 ) /*0x7bd76d*/
       goto LABEL_56; /*0x7bd76d*/
     v52 = (v8 - 2) / v7 + 1; /*0x7bd77a*/
-    if ( (*(_BYTE *)(this + 132) & 0x20) == 0 ) /*0x7bd786*/
+    if ( (this->u8_84 & 0x20) == 0 ) /*0x7bd786*/
       goto LABEL_56; /*0x7bd786*/
-    if ( !*(_WORD *)(this + 1812) ) /*0x7bd78c*/
+    if ( !this->u16_714 ) /*0x7bd78c*/
     {
       v9 = (v8 - 2) / v7 + 3; /*0x7bd79c*/
       goto LABEL_55; /*0x7bd79f*/
     }
-    _WORD * v10 = *(_WORD **)(this + 1820); /*0x7bd7a4*/
-    int v11 = *(unsigned __int8 *)(this + 245); /*0x7bd7ac*/
-    int v55 = *(unsigned __int16 *)(this + 1812); /*0x7bd7bb*/
-    if ( *(_BYTE *)(this + 245) ) /*0x7bd7ac*/
+    _WORD * v10 = *(_WORD **)(&this->u32_2D80); /*0x7bd7a4*/
+    int v11 = *(unsigned __int8 *)(&this->u32_605); /*0x7bd7ac*/
+    int v55 = *(unsigned __int16 *)(&this->u32_2D42); /*0x7bd7bb*/
+    if ( this->u32_F5 ) /*0x7bd7ac*/
     {
       int v12 = 0; /*0x7bd7c1*/
       v53 = 0; /*0x7bd7c5*/
       v54 = 0; /*0x7bd7c9*/
-      if ( *(_WORD *)(this + 1812) ) /*0x7bd7b4*/
+      if ( this->u16_714 ) /*0x7bd7b4*/
       {
-        v13 = *(unsigned __int16 **)(this + 1820); /*0x7bd7cf*/
+        v13 = *(unsigned __int16 **)(&this->u32_2D80); /*0x7bd7cf*/
         while ( !(*v13 % v11) ) /*0x7bd7db*/
         {
           ++v12; /*0x7bd7e1*/
@@ -1446,7 +1457,7 @@ int Surface::CommitSurfaceBuffersAudio()
       }
 LABEL_27:
       int v14 = 0; /*0x7bd7f3*/
-      if ( *(_WORD *)(this + 1812) ) /*0x7bd7b4*/
+      if ( this->u16_714 ) /*0x7bd7b4*/
       {
         v15 = v10 + 1; /*0x7bd801*/
         while ( !(*v15 % v11) ) /*0x7bd810*/
@@ -1466,18 +1477,18 @@ LABEL_51:
     {
       v53 = 1; /*0x7bd837*/
       v54 = 1; /*0x7bd83b*/
-      int v16 = *(unsigned __int16 *)(this + 1868); /*0x7bd84b*/
+      int v16 = *(unsigned __int16 *)(&this->u32_2E88); /*0x7bd84b*/
       int v58 = 0; /*0x7bd84d*/
-      if ( *(_WORD *)(this + 1812) ) /*0x7bd7b4*/
+      if ( this->u16_714 ) /*0x7bd7b4*/
       {
         while ( 1 ) /*0x7bd85b*/
         {
           if ( v53 ) /*0x7bd861*/
           {
             int v17 = 0; /*0x7bd863*/
-            if ( *(_WORD *)(this + 1868) ) /*0x7bd84b*/
+            if ( this->u16_74C ) /*0x7bd84b*/
             {
-              _WORD * v18 = *(_WORD **)(this + 1876); /*0x7bd86d*/
+              _WORD * v18 = *(_WORD **)(&this->u32_2EC6); /*0x7bd86d*/
               while ( *v10 != *v18 ) /*0x7bd872*/
               {
                 ++v17; /*0x7bd874*/
@@ -1492,9 +1503,9 @@ LABEL_41:
           if ( v54 ) /*0x7bd88c*/
           {
             int v19 = 0; /*0x7bd88e*/
-            if ( *(_WORD *)(this + 1868) ) /*0x7bd84b*/
+            if ( this->u16_74C ) /*0x7bd84b*/
             {
-              _WORD * v20 = *(_WORD **)(this + 1876); /*0x7bd898*/
+              _WORD * v20 = *(_WORD **)(&this->u32_2EC6); /*0x7bd898*/
               while ( v10[1] != *v20 ) /*0x7bd89d*/
               {
                 ++v19; /*0x7bd89f*/
@@ -1519,7 +1530,7 @@ LABEL_53:
     if ( !v54 ) /*0x7bd8e7*/
     {
 LABEL_56:
-      *(_DWORD *)(this + 140) = v52 + 2; /*0x7bd8f2*/
+      this->u32_8C = v52 + 2; /*0x7bd8f2*/
       goto LABEL_57; /*0x7bd8f9*/
     }
     v9 = v52 + 1; /*0x7bd8ed*/
@@ -1527,29 +1538,29 @@ LABEL_55:
     v52 = v9; /*0x7bd8ee*/
     goto LABEL_56; /*0x7bd8ee*/
   }
-  *(_DWORD *)(this + 140) = 1; /*0x7bd74d*/
+  this->u32_8C = 1; /*0x7bd74d*/
 LABEL_57:
-  v49 = *(_DWORD *)(this + 1908); /*0x7bd8ff*/
-  *(_DWORD *)(this + 340) |= 1u; /*0x7bd90f*/
+  v49 = this->u32_774; /*0x7bd8ff*/
+  this->u32_154 |= 1u; /*0x7bd90f*/
   _DWORD * v21 = 0; /*0x7bd91b*/
-  *(_DWORD *)(this + 1896) = (*(_DWORD *)(this + 266) + 16) & 0xFFFFFFFC; /*0x7bd927*/
+  this->u32_768 = (this->u32_10A + 16) & 0xFFFFFFFC; /*0x7bd927*/
   int v22 = this->vt_slot_68(2, 0, v49); /*0x7bd92d*/
-  *(_DWORD *)(this + 1776) = v22; /*0x7bd935*/
+  this->u32_6F0 = v22; /*0x7bd935*/
   if ( !v22 ) /*0x7bd93b*/
     goto LABEL_103; /*0x7bd93b*/
-  this->vt_slot_68(4, v22, *(_DWORD *)(this + 1908)); /*0x7bd95c*/
-  this->q00C += *(_DWORD *)(this + 1908); /*0x7bd96d*/
+  this->vt_slot_68(4, v22, this->u32_774); /*0x7bd95c*/
+  this->q00C += this->u32_774; /*0x7bd96d*/
   v56 = 0; /*0x7bd978*/
-  if ( *(int *)(this + 140) > 0 ) /*0x7bd97c*/
+  if ( this->u32_8C > 0 ) /*0x7bd97c*/
   {
     while ( 1 ) /*0x7bd991*/
     {
-      int v23 = this->vt_slot_68(2, 0, *(_DWORD *)(this + 1896) + 24); /*0x7bd991*/
+      int v23 = this->vt_slot_68(2, 0, this->u32_768 + 24); /*0x7bd991*/
       _DWORD * v24 = (_DWORD *)v23; /*0x7bd994*/
       if ( !v23 ) /*0x7bd99b*/
         goto LABEL_103; /*0x7bd99b*/
-      this->vt_slot_68(4, v23, *(_DWORD *)(this + 1896) + 24); /*0x7bd9af*/
-      this->q00C += *(_DWORD *)(this + 1896) + 24; /*0x7bd9c4*/
+      this->vt_slot_68(4, v23, this->u32_768 + 24); /*0x7bd9af*/
+      this->q00C += this->u32_768 + 24; /*0x7bd9c4*/
       memset(v24, 0, 0x18u); /*0x7bd9cc*/
       *v24 = v24 + 6; /*0x7bd9d6*/
       if ( v21 ) /*0x7bd9d9*/
@@ -1559,40 +1570,40 @@ LABEL_57:
       }
       else
       {
-        *(_DWORD *)(this + 1772) = v24; /*0x7bd9db*/
+        this->u32_6EC = v24; /*0x7bd9db*/
       }
       v21 = v24; /*0x7bd9f4*/
-      if ( ++v56 >= *(_DWORD *)(this + 140) ) /*0x7bd9fc*/
+      if ( ++v56 >= this->u32_8C ) /*0x7bd9fc*/
       {
         if ( v24 ) /*0x7bda00*/
         {
-          v24[1] = *(_DWORD *)(this + 1772); /*0x7bda08*/
-          *(_DWORD *)(*(_DWORD *)(this + 1772) + 8) = v24; /*0x7bda11*/
+          v24[1] = this->u32_6EC; /*0x7bda08*/
+          *(_DWORD *)(this->u32_6EC + 8) = v24; /*0x7bda11*/
         }
         break; /*0x7bda11*/
       }
     }
   }
-  int v25 = *(_DWORD *)(this + 1772); /*0x7bda14*/
-  int v26 = *(_DWORD *)(this + 1896); /*0x7bda1a*/
-  *(_DWORD *)(this + 356) = v25; /*0x7bda20*/
-  *(_DWORD *)(this + 360) = v25; /*0x7bda26*/
-  *(_DWORD *)(this + 1896) = v26 - 4; /*0x7bda31*/
-  *(_DWORD *)(this + 1904) = 1020; /*0x7bda37*/
+  int v25 = this->u32_6EC; /*0x7bda14*/
+  int v26 = this->u32_768; /*0x7bda1a*/
+  this->q164 = v25; /*0x7bda20*/
+  this->q168 = v25; /*0x7bda26*/
+  this->u32_768 = v26 - 4; /*0x7bda31*/
+  this->u32_770 = 1020; /*0x7bda37*/
   _DWORD * v27 = 0; /*0x7bda69*/
   unsigned int v28; // ecx
   v28 = (2 /*0x7bda72*/
-       * *(unsigned __int16 *)(this + 240)
-       / (int)*(unsigned __int8 *)(this + 243)
-       * (*(unsigned __int16 *)(this + 238)
-        / (int)*(unsigned __int8 *)(this + 242))
+       * *(unsigned __int16 *)(&this->u32_600)
+       / (int)*(unsigned __int8 *)(&this->u32_603)
+       * (*(unsigned __int16 *)(&this->u32_5C8)
+        / (int)*(unsigned __int8 *)(&this->u32_602))
        + 4)
       & 0xFFFFFFFC;
-  *(_DWORD *)(this + 1912) = v28; /*0x7bda75*/
-  if ( *(_WORD *)(this + 254) ) /*0x7bda7b*/
+  this->u32_778 = v28; /*0x7bda75*/
+  if ( this->u16_FE ) /*0x7bda7b*/
   {
-    v29 = *(unsigned __int16 *)(this + 254); /*0x7bda8b*/
-    if ( *(_WORD *)(this + 232) > 2u ) /*0x7bda98*/
+    v29 = *(unsigned __int16 *)(&this->u32_644); /*0x7bda8b*/
+    if ( this->u16_E8 > 2u ) /*0x7bda98*/
       v29 <<= 8; /*0x7bda9a*/
   }
   else
@@ -1600,36 +1611,36 @@ LABEL_57:
     v29 = v28; /*0x7bda87*/
   }
   v30 = v29 + 8; /*0x7bdaa9*/
-  v50 = *(_DWORD *)(this + 1912); /*0x7bdaac*/
+  v50 = this->u32_778; /*0x7bdaac*/
   LOBYTE(v30) = v30 & 0xFC; /*0x7bdab1*/
-  *(_DWORD *)(this + 340) |= 2u; /*0x7bdab6*/
-  *(_DWORD *)(this + 1900) = v30; /*0x7bdabc*/
+  this->u32_154 |= 2u; /*0x7bdab6*/
+  this->u32_76C = v30; /*0x7bdabc*/
   v31 = this->vt_slot_68(2, 0, v50); /*0x7bdac2*/
-  *(_DWORD *)(this + 1768) = v31; /*0x7bdaca*/
+  this->u32_6E8 = v31; /*0x7bdaca*/
   if ( !v31 ) /*0x7bdad0*/
   {
 LABEL_103:
     DSurface::CommitBuffers(this); /*0x7bdf14*/
     return -8; /*0x7bdf27*/
   }
-  this->vt_slot_68(4, v31, *(_DWORD *)(this + 1912)); /*0x7bdaf1*/
-  this->q00C += *(_DWORD *)(this + 1912); /*0x7bdb02*/
+  this->vt_slot_68(4, v31, this->u32_778); /*0x7bdaf1*/
+  this->q00C += this->u32_778; /*0x7bdb02*/
   v57 = 0; /*0x7bdb0d*/
-  if ( *(int *)(this + 136) > 0 ) /*0x7bdb11*/
+  if ( this->u32_88 > 0 ) /*0x7bdb11*/
   {
     while ( 1 ) /*0x7bdb30*/
     {
   _DWORD *v32; // ebp
       v32 = (_DWORD *)this->vt_slot_68(/*0x7bdb30*/
-                        this, 2, 0, *(_DWORD *)(this + 1904) + *(_DWORD *)(this + 1900) + 44);
+                        this, 2, 0, this->u32_770 + this->u32_76C + 44);
       if ( !v32 ) /*0x7bdb37*/
         goto LABEL_103; /*0x7bdb37*/
       this->vt_slot_68(/*0x7bdb52*/
-        this, 4, v32, *(_DWORD *)(this + 1904) + *(_DWORD *)(this + 1900) + 44);
-      this->q00C += *(_DWORD *)(this + 1904) + *(_DWORD *)(this + 1900) + 44; /*0x7bdb71*/
+        this, 4, v32, this->u32_770 + this->u32_76C + 44);
+      this->q00C += this->u32_770 + this->u32_76C + 44; /*0x7bdb71*/
       memset(v32, 0, 0x2Cu); /*0x7bdb79*/
       *v32 = v32 + 11; /*0x7bdb7e*/
-      int v33 = (int)v32 + *(_DWORD *)(this + 1900) + 44; /*0x7bdb89*/
+      int v33 = (int)v32 + this->u32_76C + 44; /*0x7bdb89*/
       v32[1] = 0; /*0x7bdb8d*/
       v32[2] = v33; /*0x7bdb94*/
       if ( v27 ) /*0x7bdb97*/
@@ -1639,119 +1650,120 @@ LABEL_103:
       }
       else
       {
-        *(_DWORD *)(this + 1764) = v32; /*0x7bdb99*/
+        this->u32_6E4 = v32; /*0x7bdb99*/
       }
       v27 = v32; /*0x7bdbb2*/
-      if ( ++v57 >= *(_DWORD *)(this + 136) ) /*0x7bdbba*/
+      if ( ++v57 >= this->u32_88 ) /*0x7bdbba*/
       {
-        v32[3] = *(_DWORD *)(this + 1764); /*0x7bdbca*/
-        *(_DWORD *)(*(_DWORD *)(this + 1764) + 16) = v32; /*0x7bdbd3*/
+        v32[3] = this->u32_6E4; /*0x7bdbca*/
+        *(_DWORD *)(this->u32_6E4 + 16) = v32; /*0x7bdbd3*/
         break; /*0x7bdbd3*/
       }
     }
   }
-  v34 = *(_DWORD *)(this + 1764); /*0x7bdbd6*/
-  v35 = *(_DWORD *)(this + 1904); /*0x7bdbdc*/
-  v36 = *(_DWORD *)(this + 1900); /*0x7bdbe2*/
-  *(_DWORD *)(this + 368) = v34; /*0x7bdbe8*/
-  *(_DWORD *)(this + 416) = v34; /*0x7bdbee*/
-  *(_DWORD *)(this + 1756) = v34; /*0x7bdbf4*/
-  *(_DWORD *)(this + 1904) = v35 - 4; /*0x7bdc03*/
-  *(_DWORD *)(this + 1900) = v36 - 4; /*0x7bdc09*/
-  v37 = *(_WORD *)(this + 234); /*0x7bdc0f*/
+  v34 = this->u32_6E4; /*0x7bdbd6*/
+  v35 = this->u32_770; /*0x7bdbdc*/
+  v36 = this->u32_76C; /*0x7bdbe2*/
+  this->u32_170 = v34; /*0x7bdbe8*/
+  this->u32_1A0 = v34; /*0x7bdbee*/
+  this->u32_6DC = v34; /*0x7bdbf4*/
+  this->u32_770 = v35 - 4; /*0x7bdc03*/
+  this->u32_76C = v36 - 4; /*0x7bdc09*/
+  v37 = this->u16_EA; /*0x7bdc0f*/
   if ( (v37 & 1) != 0 ) /*0x7bdc18*/
   {
-    int v38 = *(_DWORD *)(this + 132); /*0x7bdc1e*/
+    int v38 = this->u8_84; /*0x7bdc1e*/
     if ( (v38 & 1) != 0 ) /*0x7bdc27*/
     {
-      if ( *(_WORD *)(this + 232) >= 2u ) /*0x7bdc35*/
+      if ( this->u16_E8 >= 2u ) /*0x7bdc35*/
       {
         if ( (v38 & 0x40) != 0 && (v37 & 2) != 0 ) /*0x7bdc57*/
         {
-          *(_WORD *)(this + 60) = *(_WORD *)(this + 260); /*0x7bdc60*/
-          *(_BYTE *)(this + 62) = *(_BYTE *)(this + 262); /*0x7bdc6a*/
-          v39 = *(_BYTE *)(this + 263); /*0x7bdc6d*/
+          this->u16_3C = this->q104; /*0x7bdc60*/
+          this->u8_3E = this->u8_106; /*0x7bdc6a*/
+          v39 = this->u8_107; /*0x7bdc6d*/
         }
         else
         {
-          *(_WORD *)(this + 60) = *(_WORD *)(this + 256); /*0x7bdc7c*/
-          *(_BYTE *)(this + 62) = *(_BYTE *)(this + 258); /*0x7bdc86*/
-          v39 = *(_BYTE *)(this + 259); /*0x7bdc89*/
+          this->u16_3C = this->q100; /*0x7bdc7c*/
+          this->u8_3E = this->u8_102; /*0x7bdc86*/
+          v39 = this->u8_103; /*0x7bdc89*/
         }
-        int v40 = *(unsigned __int16 *)(this + 60) * (v39 >> 3); /*0x7bdc9c*/
-        *(_BYTE *)(this + 63) = v39; /*0x7bdc9f*/
-        *(_DWORD *)(this + 1996) = *(unsigned __int8 *)(this + 62) * v40; /*0x7bdcaa*/
+        int v40 = *(unsigned __int16 *)(&this->u32_180) * (v39 >> 3); /*0x7bdc9c*/
+        this->u8_3F = v39; /*0x7bdc9f*/
+        this->u32_7CC = *(unsigned __int8 *)(&this->u32_182) * v40; /*0x7bdcaa*/
       }
       else
       {
-        *(_BYTE *)(this + 62) = 1; /*0x7bdc3c*/
-        *(_WORD *)(this + 60) = 22050; /*0x7bdc40*/
-        *(_BYTE *)(this + 63) = 8; /*0x7bdc44*/
-        *(_DWORD *)(this + 1996) = 22050; /*0x7bdc48*/
+        this->u8_3E = 1; /*0x7bdc3c*/
+        this->u16_3C = 22050; /*0x7bdc40*/
+        this->u8_3F = 8; /*0x7bdc44*/
+        this->u32_7CC = 22050; /*0x7bdc48*/
       }
-      if ( *(_DWORD *)(this + 152) == -1 ) /*0x7bdcb7*/
-        *(_DWORD *)(this + 152) = *(_DWORD *)(this + 156) /*0x7bdcd2*/
-                                * ((unsigned int)(*(_DWORD *)(this + 1996) + (*(_DWORD *)(this + 1996) >> 1))
-                                 / *(_DWORD *)(this + 156));
-      if ( *(int *)(this + 152) <= 0 ) /*0x7bdce0*/
+      if ( this->u32_98 == -1 ) /*0x7bdcb7*/
+        this->u32_98 = this->u32_9C /*0x7bdcd2*/
+                                * ((unsigned int)(this->u32_7CC + (this->u32_7CC >> 1))
+                                 / this->u32_9C);
+      if ( this->u32_98 <= 0 ) /*0x7bdce0*/
       {
         DSurface::CommitBuffers(this); /*0x7bdf2a*/
         return -18; /*0x7bdf3b*/
       }
-      int v41 = *(_DWORD *)(this + 148); /*0x7bdce6*/
+      int v41 = this->u32_94; /*0x7bdce6*/
       if ( v41 ) /*0x7bdcee*/
       {
-        *(_DWORD *)(this + 1932) = v41; /*0x7bdd3a*/
+        this->u32_78C = v41; /*0x7bdd3a*/
       }
       else
       {
-        int v42 = this->vt_slot_68(2, 0, *(_DWORD *)(this + 152)); /*0x7bdcf5*/
-        *(_DWORD *)(this + 1932) = v42; /*0x7bdcfb*/
+        int v42 = this->vt_slot_68(2, 0, this->u32_98); /*0x7bdcf5*/
+        this->u32_78C = v42; /*0x7bdcfb*/
         if ( !v42 ) /*0x7bdd03*/
           goto LABEL_103; /*0x7bdd03*/
-        this->vt_slot_68(4, v42, *(_DWORD *)(this + 152)); /*0x7bdd24*/
-        this->q00C += *(_DWORD *)(this + 152); /*0x7bdd35*/
+        this->vt_slot_68(4, v42, this->u32_98); /*0x7bdd24*/
+        this->q00C += this->u32_98; /*0x7bdd35*/
       }
-      int v51 = *(_DWORD *)(this + 152) / *(_DWORD *)(this + 156); /*0x7bdd4d*/
-      *(_DWORD *)(this + 1948) = v51; /*0x7bdd53*/
+      int v51 = this->u32_98 / this->u32_9C; /*0x7bdd4d*/
+      this->u32_79C = v51; /*0x7bdd53*/
       int v43 = this->vt_slot_68(2, 0, v51); /*0x7bdd59*/
-      *(_DWORD *)(this + 1940) = v43; /*0x7bdd5f*/
+      this->u32_794 = v43; /*0x7bdd5f*/
       if ( !v43 ) /*0x7bdd67*/
         goto LABEL_103; /*0x7bdd67*/
-      this->vt_slot_68(4, v43, *(_DWORD *)(this + 1948)); /*0x7bdd88*/
-      this->q00C += *(_DWORD *)(this + 1948); /*0x7bdd96*/
-      memset(*(void **)(this + 1940), 0, *(_DWORD *)(this + 1948)); /*0x7bddac*/
-      int v44 = this->vt_slot_68(2, 0, 2 * *(_DWORD *)(this + 1948)); /*0x7bddc3*/
-      *(_DWORD *)(this + 1944) = v44; /*0x7bddc9*/
+      this->vt_slot_68(4, v43, this->u32_79C); /*0x7bdd88*/
+      this->q00C += this->u32_79C; /*0x7bdd96*/
+      memset(*(void **)(&this->u32_3080), 0, this->u32_79C); /*0x7bddac*/
+      int v44 = this->vt_slot_68(2, 0, 2 * this->u32_79C); /*0x7bddc3*/
+      this->u32_798 = v44; /*0x7bddc9*/
       if ( !v44 ) /*0x7bddd1*/
         goto LABEL_103; /*0x7bddd1*/
-      this->vt_slot_68(4, v44, 2 * *(_DWORD *)(this + 1948)); /*0x7bddf4*/
-      this->q00C += 2 * *(_DWORD *)(this + 1948); /*0x7bde04*/
-      memset(*(void **)(this + 1944), 0, 2 * *(_DWORD *)(this + 1948)); /*0x7bde1c*/
-      unsigned int v48 = 2 * (*(_DWORD *)(this + 1996) / (unsigned int)*(unsigned __int8 *)(this + 244)) + 100; /*0x7bde3b*/
-      *(_DWORD *)(this + 1972) = v48; /*0x7bde41*/
+      this->vt_slot_68(4, v44, 2 * this->u32_79C); /*0x7bddf4*/
+      this->q00C += 2 * this->u32_79C; /*0x7bde04*/
+      memset(*(void **)(&this->u32_3084), 0, 2 * this->u32_79C); /*0x7bde1c*/
+      unsigned int v48 = 2 * (this->u32_7CC / (unsigned int)*(unsigned __int8 *)(&this->u32_604)) + 100; /*0x7bde3b*/
+      this->u32_7B4 = v48; /*0x7bde41*/
       int v45 = this->vt_slot_68(2, 0, v48); /*0x7bde47*/
-      *(_DWORD *)(this + 1960) = v45; /*0x7bde4d*/
+      this->u32_7A8 = v45; /*0x7bde4d*/
       if ( !v45 ) /*0x7bde55*/
         goto LABEL_103; /*0x7bde55*/
-      this->vt_slot_68(4, v45, *(_DWORD *)(this + 1972)); /*0x7bde76*/
-      this->q00C += *(_DWORD *)(this + 1972); /*0x7bde84*/
-      int v46 = this->vt_slot_68(2, 0, *(_DWORD *)(this + 156)); /*0x7bde93*/
-      *(_DWORD *)(this + 1976) = v46; /*0x7bde99*/
+      this->vt_slot_68(4, v45, this->u32_7B4); /*0x7bde76*/
+      this->q00C += this->u32_7B4; /*0x7bde84*/
+      int v46 = this->vt_slot_68(2, 0, this->u32_9C); /*0x7bde93*/
+      this->u32_7B8 = v46; /*0x7bde99*/
       if ( !v46 ) /*0x7bdea1*/
         goto LABEL_103; /*0x7bdea1*/
-      this->vt_slot_68(4, v46, *(_DWORD *)(this + 156)); /*0x7bdec2*/
-      memset(*(void **)(this + 1976), 0, *(_DWORD *)(this + 156)); /*0x7bded8*/
-      this->q00C += *(_DWORD *)(this + 156); /*0x7bdeef*/
+      this->vt_slot_68(4, v46, this->u32_9C); /*0x7bdec2*/
+      memset(*(void **)(&this->u32_3146), 0, this->u32_9C); /*0x7bded8*/
+      this->q00C += this->u32_9C; /*0x7bdeef*/
     }
   }
-  v47 = this->vt_slot_68(2, 0, 4 * *(unsigned __int16 *)(this + 236)); /*0x7bdf04*/
-  *(_DWORD *)(this + 1892) = v47; /*0x7bdf0a*/
+  v47 = this->vt_slot_68(2, 0, 4 * *(unsigned __int16 *)(&this->u32_5C6)); /*0x7bdf04*/
+  this->q764 = v47; /*0x7bdf0a*/
   if ( !v47 ) /*0x7bdf12*/
     goto LABEL_103; /*0x7bdf12*/
-  this->vt_slot_68(4, v47, 4 * *(unsigned __int16 *)(this + 236)); /*0x7bdf4d*/
-  this->q00C += 4 * *(unsigned __int16 *)(this + 236); /*0x7bdf65*/
+  this->vt_slot_68(4, v47, 4 * *(unsigned __int16 *)(&this->u32_5C6)); /*0x7bdf4d*/
+  this->q00C += 4 * *(unsigned __int16 *)(&this->u32_5C6); /*0x7bdf65*/
   return -1; /*0x7bd6a3*/
+}
 }
 
 // 0x411510

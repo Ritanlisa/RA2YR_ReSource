@@ -20,7 +20,7 @@ AbstractClass * * WalkLocomotion::MoveTo(IUnknown * aP1, int aP3)
   int v5; // eax
     || (v5 = aP1->field_8, v5 != g_OverlayTypeConfig.field_8) )
   {
-    LOBYTE(v5) = *(_BYTE *)(this + 96); /*0x6a01d4*/
+    LOBYTE(v5) = this->ptr_60; /*0x6a01d4*/
     int v6 = aP3; /*0x6a01d7*/
     if ( !(_BYTE)v5 ) /*0x6a01dd*/
     {
@@ -96,6 +96,7 @@ AbstractClass * * WalkLocomotion::MoveTo(IUnknown * aP1, int aP3)
   return v5; /*0x6a0295*/
 }
 } // namespace gamemd
+}
 
 // 0x6A05F0
 namespace gamemd {
@@ -169,11 +170,11 @@ int WalkLocomotion::ProcessCollision(char a2)
   double varD0; // [esp+54h] [ebp-D0h] BYREF
   IUnknown *v183; // [esp+5Ch] [ebp-C8h]
   ObjectClass aP3; // [esp+60h] [ebp-C4h] BYREF
-  if ( (!*(_BYTE *)(this + 99) || this->WalkLocomotion_field_0x58 == -1) && *(_DWORD *)(this->q00C + 1504) != 8
-    || *(_BYTE *)(this + 98)
+  if ( (!this->u8_63 || this->WalkLocomotion_field_0x58 == -1) && *(_DWORD *)(this->q00C + 1504) != 8
+    || this->u8_62
     && !*(_BYTE *)((*(int (__thiscall **)(_DWORD))(*this->q00C + 132))(this->q00C) + 3233) )
   {
-    *(_DWORD *)(this + 76) = 0;
+    this->u32_4C = 0;
     return 0;
   }
   int v3 = (*(int (__thiscall **)(_DWORD))(*this->q00C + 132))(this->q00C);
@@ -183,9 +184,9 @@ int WalkLocomotion::ProcessCollision(char a2)
     bool v5 = (*(int (**)(void))(v4 + 44))() != 1 || !*(_BYTE *)(*(_DWORD *)(this->q00C + 1732) + 3596);
     if ( this->q058 < 64 && v5 )
     {
-      *(_DWORD *)v182 = *(_DWORD *)(this + 52);
-      *(_DWORD *)&v182[4] = *(_DWORD *)(this + 56);
-      *(_DWORD *)&v182[8] = *(_DWORD *)(this + 60);
+      *(_DWORD *)v182 = this->ptr_34;
+      *(_DWORD *)&v182[4] = this->u32_38;
+      *(_DWORD *)&v182[8] = this->u32_3C;
   int v6; // esi
       v6 = (*((_DWORD *)Coord::To_Cell(&DataGlobal_87F7E8, (IUnknown *)v182) + 80) & 0x100) != 0
          ? g_OverlayTypeConfig.field_34
@@ -293,19 +294,19 @@ LABEL_37:
   }
   else
   {
-    (*(void (__stdcall **)(_DWORD, _DWORD))(v4 + 1348))(this->q140, *(_DWORD *)(this + 84));
+    (*(void (__stdcall **)(_DWORD, _DWORD))(v4 + 1348))(this->q140, this->u32_54);
   }
   int v26 = (*(int (__thiscall **)(_DWORD))(*this->q00C + 1336))(this->q00C);
   v27 = this->q00C;
   int v28 = a2 == 0 ? v26 : 0;
   int v29 = *(_DWORD *)&v27->__pad_1D4[1036];
-  int v30 = *(_DWORD *)(this + 76) + v28;
+  int v30 = this->u32_4C + v28;
   *(_DWORD *)&aP3[4] = v30;
   aP3.uniqueId = v29;
   if ( v29 == 8 && this->WalkLocomotion_field_0x58 == -1 )
   {
     (*(void (__thiscall **)(MouseClass *, _DWORD))(v27->field_0 + 292))(v27, 0);
-    int * v31 = (int *)(this + 64);
+    int * v31 = (int *)(&this->u32_184);
     if ( this->WalkLocomotion_field_0x40 != g_OverlayTypeConfig.field_0
       || this->WalkLocomotion_field_0x44 != g_OverlayTypeConfig.field_4
       || this->q048 != g_OverlayTypeConfig.field_8 )
@@ -313,7 +314,7 @@ LABEL_37:
       *v31 = g_OverlayTypeConfig.field_0;
       this->WalkLocomotion_field_0x44 = g_OverlayTypeConfig.field_4;
       v32 = (TechnoClass *)g_OverlayTypeConfig.field_8;
-      *(_BYTE *)(this + 99) = 0;
+      this->u8_63 = 0;
       this->q048 = v32;
     }
     int v33 = *(__int16 *)((*(int (__thiscall **)(_DWORD))(*this->q00C + 444))(this->q00C) + 278);
@@ -353,7 +354,7 @@ LABEL_37:
       aP3.NeedsSaveOrLink = 0;
       *(_DWORD *)(this->q00C + 1392) = GroundHeight
                                                  + (Cell::GetGroundHeight(&aP3.nextArrayIndex) - GroundHeight) / v43;
-      *(_BYTE *)(this + 99) = 1;
+      this->u8_63 = 1;
       this->WalkLocomotion_field_0x58 = -1;
       return 0;
     }
@@ -369,7 +370,7 @@ LABEL_37:
       *v31 = g_OverlayTypeConfig.field_0;
       this->WalkLocomotion_field_0x44 = g_OverlayTypeConfig.field_4;
       this->q048 = g_OverlayTypeConfig.field_8;
-      *(_BYTE *)(this + 99) = 0;
+      this->u8_63 = 0;
       return 0;
     }
     return 0;
@@ -377,7 +378,7 @@ LABEL_37:
   if ( v30 <= 7 )
     goto LABEL_141;
   char * v45 = (char *)(12 * this->WalkLocomotion_field_0x58 + 8333888);
-  char v46 = *(_BYTE *)(this + 96);
+  char v46 = this->ptr_60;
   *(_DWORD *)&aP3.bombVisible = v45;
   if ( v46 )
     int v47 = v45[1];
@@ -556,7 +557,7 @@ LABEL_79:
       if ( v78 != -1 )
       {
         int v79 = *(_DWORD *)&g_BuildingTypeClass_Array->__pad_0[4 * v78];
-        if ( *(_BYTE *)(this + 100) )
+        if ( this->u8_64 )
         {
           if ( (*(_BYTE *)((*(int (__thiscall **)(_DWORD))(*this->q00C + 132))(this->q00C)
                          + 3368)
@@ -617,7 +618,7 @@ LABEL_101:
             if ( dword_7F2968[4 * v89] )
             {
               v90 = this->q00C;
-              int * v91 = (int *)(this + 64);
+              int * v91 = (int *)(&this->u32_184);
               int v92 = *(_DWORD *)&v90->__pad_1D4[936];
               aP3.ambientSoundController[2] = *(_DWORD *)&v90->__pad_1D4[932];
               int v93 = aP3.uniqueId & 7;
@@ -651,7 +652,7 @@ LABEL_101:
                     break;
                   }
                   v99 = *(IUnknown **)&aP3[12];
-                  *(_BYTE *)(this + 96) = 0;
+                  this->ptr_60 = 0;
                   this->WalkLocomotion_field_0x58 = v99;
                   *(_DWORD *)&aP3.bombVisible = v88;
                   int v100 = 4 * *v88;
@@ -667,14 +668,14 @@ LABEL_101:
                     *v91 = g_OverlayTypeConfig.field_0;
                     this->WalkLocomotion_field_0x44 = g_OverlayTypeConfig.field_4;
                     v102 = (TechnoClass *)g_OverlayTypeConfig.field_8;
-                    *(_BYTE *)(this + 99) = 0;
+                    this->u8_63 = 0;
                     this->q048 = v102;
                   }
                   v103 = this->q00C;
-                  *(_BYTE *)(this + 99) = 1;
+                  this->u8_63 = 1;
                   (*(void (__thiscall **)(MouseClass *, int))(v103->field_0 + 396))(v103, 2);
                   v104 = this->q00C;
-                  *(_BYTE *)(this + 99) = 0;
+                  this->u8_63 = 0;
                   if ( !v104->__pad_74[28] || v104->__pad_74[13] || v104->__pad_74[25] )
                     return 0;
                   int v105 = g_OverlayTypeConfig.field_0;
@@ -685,7 +686,7 @@ LABEL_101:
                     *v91 = g_OverlayTypeConfig.field_0;
                     this->WalkLocomotion_field_0x44 = g_OverlayTypeConfig.field_4;
                     v106 = (TechnoClass *)g_OverlayTypeConfig.field_8;
-                    *(_BYTE *)(this + 99) = 0;
+                    this->u8_63 = 0;
                     this->q048 = v106;
                     v105 = g_OverlayTypeConfig.field_0;
                   }
@@ -698,7 +699,7 @@ LABEL_101:
                     || *(_DWORD *)&v182[8] != g_OverlayTypeConfig.field_8 )
                   {
                     v176 = (AbstractClass *)v104;
-                    *(_BYTE *)(this + 99) = 1;
+                    this->u8_63 = 1;
                     *v91 = v107;
                     this->WalkLocomotion_field_0x44 = v108;
                     this->q048 = v109;
@@ -710,7 +711,7 @@ LABEL_101:
                         *v91 = g_OverlayTypeConfig.field_0;
                         this->WalkLocomotion_field_0x44 = g_OverlayTypeConfig.field_4;
                         this->q048 = g_OverlayTypeConfig.field_8;
-                        *(_BYTE *)(this + 99) = 0;
+                        this->u8_63 = 0;
                       }
                     }
                     else
@@ -752,7 +753,7 @@ LABEL_101:
                   {
                     LOBYTE(aP4) = 0;
                   }
-                  _DWORD * v116 = Coord::To_Cell(&DataGlobal_87F7E8, (IUnknown *)(this + 64));
+                  _DWORD * v116 = Coord::To_Cell(&DataGlobal_87F7E8, (IUnknown *)(&this->u32_184));
                   Cell::ApplyDamage(v116, &g_OverlayTypeConfig, 1, 1, (IUnknown *)aP4);
                   break;
                 default:
@@ -769,7 +770,7 @@ LABEL_101:
       goto LABEL_141;
   }
   v120 = this->q00C;
-  int * v122 = (int *)(this + 64);
+  int * v122 = (int *)(&this->u32_184);
   int v123 = *(_DWORD *)&v120->__pad_74[40];
   int v124 = *(_DWORD *)&v120->__pad_74[44];
   aP3.ambientSoundController[1] = *(_DWORD *)&v120->__pad_74[48];
@@ -791,14 +792,14 @@ LABEL_101:
     al148 = v127->__pad_74[0];
     v127->__pad_74[0] = 0;
     char v179 = al148;
-    (*(void (__thiscall **)(_DWORD, int))(*this->q00C + 436))(this->q00C, this + 64);
+    (*(void (__thiscall **)(_DWORD, int))(*this->q00C + 436))(this->q00C, &this->u32_184);
     (*(void (__thiscall **)(_DWORD, _DWORD))(*this->q00C + 460))(this->q00C, 0);
     *(_BYTE *)(this->q00C + 116) = v179;
   }
   else
   {
     (*(void (__thiscall **)(MouseClass *, _DWORD))(v127->field_0 + 292))(v127, 0);
-    (*(void (__thiscall **)(_DWORD, int))(*this->q00C + 436))(this->q00C, this + 64);
+    (*(void (__thiscall **)(_DWORD, int))(*this->q00C + 436))(this->q00C, &this->u32_184);
     (*(void (__thiscall **)(_DWORD, _DWORD))(*this->q00C + 460))(this->q00C, 0);
     (*(void (__thiscall **)(_DWORD, int))(*this->q00C + 292))(this->q00C, 1);
   }
@@ -809,7 +810,7 @@ LABEL_101:
     *v122 = g_OverlayTypeConfig.field_0;
     this->WalkLocomotion_field_0x44 = g_OverlayTypeConfig.field_4;
     v131 = (TechnoClass *)g_OverlayTypeConfig.field_8;
-    *(_BYTE *)(this + 99) = 0;
+    this->u8_63 = 0;
     this->q048 = v131;
   }
   v132 = this->q00C;
@@ -836,13 +837,13 @@ LABEL_101:
                              &aP3.attachedBomb,
                              this->q00C)
                          + 8)
-             - *(_DWORD *)(this + 60);
+             - this->u32_3C;
       if ( (int)((HIDWORD(rax156) ^ rax156) - HIDWORD(rax156)) < 2 * g_OverlayTypeConfig.field_40 )
       {
         v180 = 1;
-        *(_DWORD *)(this + 52) = g_OverlayTypeConfig.field_0;
-        *(_DWORD *)(this + 56) = g_OverlayTypeConfig.field_4;
-        *(_DWORD *)(this + 60) = g_OverlayTypeConfig.field_8;
+        this->ptr_34 = g_OverlayTypeConfig.field_0;
+        this->u32_38 = g_OverlayTypeConfig.field_4;
+        this->u32_3C = g_OverlayTypeConfig.field_8;
         if ( *v122 != g_OverlayTypeConfig.field_0
           || this->WalkLocomotion_field_0x44 != g_OverlayTypeConfig.field_4
           || this->q048 != g_OverlayTypeConfig.field_8 )
@@ -850,9 +851,9 @@ LABEL_101:
           *v122 = g_OverlayTypeConfig.field_0;
           this->WalkLocomotion_field_0x44 = g_OverlayTypeConfig.field_4;
           this->q048 = g_OverlayTypeConfig.field_8;
-          *(_BYTE *)(this + 99) = 0;
+          this->u8_63 = 0;
         }
-        *(_BYTE *)(this + 99) = 0;
+        this->u8_63 = 0;
       }
     }
   }
@@ -881,14 +882,14 @@ LABEL_101:
     return 0;
 LABEL_141:
   cc140 = *(_DWORD *)&aP3[4] <= 0;
-  *(_DWORD *)(this + 76) = *(_DWORD *)&aP3[4];
+  this->u32_4C = *(_DWORD *)&aP3[4];
   if ( cc140 )
     return 0;
   v117 = this->q058;
   if ( (int)v117 <= -1 )
     return 0;
   _BYTE * v119 = (_BYTE *)(12 * (_DWORD)v117 + 8333888);
-  eax144 = *(_BYTE *)(this + 96) ? (char)v119[1] : (char)*v119;
+  eax144 = this->ptr_60 ? (char)v119[1] : (char)*v119;
   int v141 = this->q05C;
   int v142 = dword_7F2960[4 * eax144];
   int v143 = *(_DWORD *)(v142 + 12 * v141);
@@ -920,7 +921,7 @@ LABEL_141:
   aP3.ambientSoundController[2] = v153;
   aP3.ambientSoundController[4] = (int)v154;
   v155 = (IUnknown *)Coord::To_Cell(&DataGlobal_87F7E8, (IUnknown *)&aP3.ambientSoundController[2]);
-  double v157 = (double)*(int *)(this + 76) * 0.1428571428571428;
+  double v157 = (double)this->u32_4C * 0.1428571428571428;
   memset(&aP3.location[1], 0, 12);
   float v177 = v157;
   eax178d = Color::RGBFromFloat(&aP3.attachedBomb, (IUnknown *)&aP3.visibilityFlags, v177);
@@ -949,7 +950,7 @@ LABEL_141:
 LABEL_183:
     *(_DWORD *)&v182[8] = v163;
   }
-  else if ( *(int *)(this + 76) > 3 )
+  else if ( this->u32_4C > 3 )
   {
     v163 = (TechnoClass *)aP3.ambientSoundController[4];
     *(_DWORD *)v182 = aP3.ambientSoundController[2];
@@ -998,6 +999,7 @@ LABEL_190:
   }
 }
 } // namespace gamemd
+}
 
 // 0x6A1C80
 namespace gamemd {
@@ -1085,10 +1087,10 @@ int WalkLocomotion::Update(unsigned char * a2, int a3, int a4)
   wchar_t *v230; // [esp+D4h] [ebp-8h]
   int v5 = this->q004;
   unsigned int v6 = *(_DWORD *)(this->q00C + 1504);
-  v215 = this + 4;
+  v215 = &this->u32_10;
   if ( !(*(unsigned __int8 (__stdcall **)(int))(v5 + 16))(this + 4) && v6 == -1 )
   {
-    *(_BYTE *)(this + 97) = 0;
+    this->u8_61 = 0;
     if ( this->WalkLocomotion_field_0x40 != g_OverlayTypeConfig
       || this->WalkLocomotion_field_0x44 != DataGlobal_B077FC
       || this->q048 != DataGlobal_00B07800 )
@@ -1096,7 +1098,7 @@ int WalkLocomotion::Update(unsigned char * a2, int a3, int a4)
       this->WalkLocomotion_field_0x40 = g_OverlayTypeConfig;
       this->WalkLocomotion_field_0x44 = DataGlobal_B077FC;
       this->q048 = DataGlobal_00B07800;
-      *(_BYTE *)(this + 99) = 0;
+      this->u8_63 = 0;
     }
     if ( (*(int (__thiscall **)(_DWORD))(*this->q00C + 388))(this->q00C) == 2 )
     {
@@ -1107,9 +1109,9 @@ int WalkLocomotion::Update(unsigned char * a2, int a3, int a4)
     }
     return 0;
   }
-  if ( *(_DWORD *)(this + 52) == g_OverlayTypeConfig
-    && *(_DWORD *)(this + 56) == DataGlobal_B077FC
-    && *(_DWORD *)(this + 60) == DataGlobal_00B07800 )
+  if ( this->ptr_34 == g_OverlayTypeConfig
+    && this->u32_38 == DataGlobal_B077FC
+    && this->u32_3C == DataGlobal_00B07800 )
   {
     return 0;
   }
@@ -1140,9 +1142,9 @@ int WalkLocomotion::Update(unsigned char * a2, int a3, int a4)
   _DWORD *v13; // eax
       v13 = Coord::Subtract(
               &v216,
-              *v12 - *(_DWORD *)(this + 52),
-              v12[1] - *(_DWORD *)(this + 56),
-              v12[2] - *(_DWORD *)(this + 60));
+              *v12 - this->ptr_34,
+              v12[1] - this->u32_38,
+              v12[2] - this->u32_3C);
       v220 = (_DWORD *)*v13;
       v221 = v13[1];
       v222 = v13[2];
@@ -1173,12 +1175,12 @@ LABEL_31:
   v20 = (wchar_t *)Math::RoundToInt(*((double *)g_RulesClass_Instance + 748) * 900.0);
   v21 = v227;
   *v18 = v16;
-  _DWORD * v22 = (_DWORD *)(this + 52);
+  _DWORD * v22 = (_DWORD *)(&this->u32_142);
   v18[1] = v21;
   v18[2] = v20;
   int v23 = this->q00C;
-  LOWORD(v216) = *(_DWORD *)(this + 52) / 256;
-  WORD1(v216) = *(_DWORD *)(this + 56) / 256;
+  LOWORD(v216) = this->ptr_34 / 256;
+  WORD1(v216) = this->u32_38 / 256;
   char v24 = FootClass::MovementStep(v23, (int)v16, SLODWORD(v216), 0, 0, v213);
   _DWORD * v25 = this->q00C;
   if ( !v24 )
@@ -1188,15 +1190,15 @@ LABEL_31:
       *a2 = 1;
       return 0;
     }
-    if ( !(*(unsigned __int8 (__thiscall **)(_DWORD *, int))(*v25 + 716))(v25, this + 52) )
+    if ( !(*(unsigned __int8 (__thiscall **)(_DWORD *, int))(*v25 + 716))(v25, &this->u32_142) )
     {
   int v26; // ecx
       (*(void (__thiscall **)(int, _DWORD, int))(*this->q00C + 1152))(v26, 0, 1);
       return 0;
     }
     if ( *v22 == g_OverlayTypeConfig
-      && *(_DWORD *)(this + 56) == DataGlobal_B077FC
-      && *(_DWORD *)(this + 60) == DataGlobal_00B07800 )
+      && this->u32_38 == DataGlobal_B077FC
+      && this->u32_3C == DataGlobal_00B07800 )
     {
       return 0;
     }
@@ -1206,7 +1208,7 @@ LABEL_31:
                             this->q00C,
                             &v226),
   _DWORD *v28; // eax
-          v28 = Coord::Subtract(&v216, *v27 - *v22, v27[1] - *(_DWORD *)(this + 56), v27[2] - *(_DWORD *)(this + 60)),
+          v28 = Coord::Subtract(&v216, *v27 - *v22, v27[1] - this->u32_38, v27[2] - this->u32_3C),
           v220 = (_DWORD *)*v28,
           v221 = v28[1],
           v222 = v28[2],
@@ -1221,7 +1223,7 @@ LABEL_31:
         this->WalkLocomotion_field_0x40 = g_OverlayTypeConfig;
         this->WalkLocomotion_field_0x44 = DataGlobal_B077FC;
         this->q048 = DataGlobal_00B07800;
-        *(_BYTE *)(this + 99) = 0;
+        this->u8_63 = 0;
       }
       _DWORD * v29 = this->q00C;
       if ( v29[358] )
@@ -1304,8 +1306,8 @@ LABEL_31:
               v47 = Coord::Subtract(
                       &v216,
                       *v46 - *v22,
-                      v46[1] - *(_DWORD *)(this + 56),
-                      v46[2] - *(_DWORD *)(this + 60));
+                      v46[1] - this->u32_38,
+                      v46[2] - this->u32_3C);
               v220 = (_DWORD *)*v47;
               v221 = v47[1];
               v222 = v47[2];
@@ -1315,7 +1317,7 @@ LABEL_31:
                 _DWORD * v48 = (_DWORD *)(this->q00C + 156);
                 v226 = (_DWORD *)*v48;
                 v227 = (wchar_t *)v48[1];
-                __int64 v49 = *(_DWORD *)(this + 60) - v48[2];
+                __int64 v49 = this->u32_3C - v48[2];
                 if ( (int)((HIDWORD(v49) ^ v49) - HIDWORD(v49)) < 2 * DataGlobal_B07838 )
                 {
                   v220 = (_DWORD *)*v48;
@@ -1330,7 +1332,7 @@ LABEL_31:
                       this->WalkLocomotion_field_0x40 = g_OverlayTypeConfig;
                       this->WalkLocomotion_field_0x44 = DataGlobal_B077FC;
                       this->q048 = DataGlobal_00B07800;
-                      *(_BYTE *)(this + 99) = 0;
+                      this->u8_63 = 0;
                     }
                     _DWORD * v50 = this->q00C;
                     if ( !v50[358] )
@@ -1375,7 +1377,7 @@ LABEL_31:
           this->WalkLocomotion_field_0x40 = g_OverlayTypeConfig;
           this->WalkLocomotion_field_0x44 = DataGlobal_B077FC;
           this->q048 = DataGlobal_00B07800;
-          *(_BYTE *)(this + 99) = 0;
+          this->u8_63 = 0;
         }
         if ( v53[358] )
         {
@@ -1425,10 +1427,10 @@ LABEL_31:
       this->WalkLocomotion_field_0x40 = g_OverlayTypeConfig;
       this->WalkLocomotion_field_0x44 = DataGlobal_B077FC;
       this->q048 = DataGlobal_00B07800;
-      *(_BYTE *)(this + 99) = 0;
+      this->u8_63 = 0;
     }
     this->WalkLocomotion_field_0x58 = -1;
-    *(_BYTE *)(this + 97) = 0;
+    this->u8_61 = 0;
     return 0;
   }
   if ( v25[376] == 8 )
@@ -1484,7 +1486,7 @@ LABEL_31:
           v71 = (_DWORD *)(*(int (__thiscall **)(_DWORD, _DWORD **))(*this->q00C + 72))(
                             this->q00C,
                             &v226);
-          _DWORD * v72 = Coord::Subtract(&v216, *v71 - *v22, v71[1] - *(_DWORD *)(this + 56), v71[2] - *(_DWORD *)(this + 60));
+          _DWORD * v72 = Coord::Subtract(&v216, *v71 - *v22, v71[1] - this->u32_38, v71[2] - this->u32_3C);
           v220 = (_DWORD *)*v72;
           v221 = v72[1];
           v222 = v72[2];
@@ -1494,7 +1496,7 @@ LABEL_31:
             _DWORD * v73 = (_DWORD *)(this->q00C + 156);
             v226 = (_DWORD *)*v73;
             v227 = (wchar_t *)v73[1];
-            __int64 v74 = *(_DWORD *)(this + 60) - v73[2];
+            __int64 v74 = this->u32_3C - v73[2];
             if ( (int)((HIDWORD(v74) ^ v74) - HIDWORD(v74)) < 2 * DataGlobal_B07838 )
             {
               v220 = (_DWORD *)*v73;
@@ -1656,9 +1658,9 @@ LABEL_153:
   _DWORD *v113; // eax
         v113 = Coord::Subtract(
                  &v229,
-                 *v112 - *(_DWORD *)(this + 52),
-                 v112[1] - *(_DWORD *)(this + 56),
-                 v112[2] - *(_DWORD *)(this + 60));
+                 *v112 - this->ptr_34,
+                 v112[1] - this->u32_38,
+                 v112[2] - this->u32_3C);
         v220 = (_DWORD *)*v113;
         int v114 = v113[1];
         int v115 = v113[2];
@@ -1673,7 +1675,7 @@ LABEL_153:
               v226 = (_DWORD *)*v117,
               v227 = (wchar_t *)v117[1],
   __int64 v118; // rax
-              v118 = *(_DWORD *)(this + 60) - v117[2],
+              v118 = this->u32_3C - v117[2],
               (int)((HIDWORD(v118) ^ v118) - HIDWORD(v118)) >= 2 * DataGlobal_B07838)
           || (v220 = (_DWORD *)*v117,
               v221 = v117[1],
@@ -1707,7 +1709,7 @@ LABEL_153:
             this->WalkLocomotion_field_0x40 = g_OverlayTypeConfig;
             this->WalkLocomotion_field_0x44 = DataGlobal_B077FC;
             this->q048 = DataGlobal_00B07800;
-            *(_BYTE *)(this + 99) = 0;
+            this->u8_63 = 0;
           }
           _DWORD * v119 = this->q00C;
           if ( v119[358] )
@@ -1728,7 +1730,7 @@ LABEL_153:
         }
       }
 LABEL_155:
-      _DWORD * v97 = (_DWORD *)(this + 64);
+      _DWORD * v97 = (_DWORD *)(&this->u32_184);
       if ( this->WalkLocomotion_field_0x40 != g_OverlayTypeConfig
         || this->WalkLocomotion_field_0x44 != DataGlobal_B077FC
         || this->q048 != DataGlobal_00B07800 )
@@ -1736,7 +1738,7 @@ LABEL_155:
         *v97 = g_OverlayTypeConfig;
         this->WalkLocomotion_field_0x44 = DataGlobal_B077FC;
         int v98 = DataGlobal_00B07800;
-        *(_BYTE *)(this + 99) = 0;
+        this->u8_63 = 0;
         this->q048 = v98;
       }
       if ( LODWORD(v216) == 2 )
@@ -1777,8 +1779,8 @@ LABEL_166:
 LABEL_171:
                 v108 = 1;
 LABEL_199:
-                LOWORD(a4) = *(_DWORD *)(this + 52) / 256;
-                HIWORD(a4) = *(_DWORD *)(this + 56) / 256;
+                LOWORD(a4) = this->ptr_34 / 256;
+                HIWORD(a4) = this->u32_38 / 256;
                 char v125 = FootClass::MovementStep(v102, v103, a4, 0, (v108 != 0) + 1, v213);
                 int v126 = this->q00C;
                 if ( !v126 )
@@ -1786,7 +1788,7 @@ LABEL_199:
                   *a2 = 1;
                   return 0;
                 }
-                if ( v125 || (*(unsigned __int8 (__thiscall **)(int, int))(*(_DWORD *)v126 + 716))(v126, this + 52) )
+                if ( v125 || (*(unsigned __int8 (__thiscall **)(int, int))(*(_DWORD *)v126 + 716))(v126, &this->u32_142) )
                 {
                   v127 = g_CurrentFrame;
                   v128 = (wchar_t *)Math::RoundToInt(*((double *)g_RulesClass_Instance + 748) * 900.0);
@@ -1909,7 +1911,7 @@ LABEL_327:
     this->WalkLocomotion_field_0x44 = DataGlobal_B077FC;
     this->q048 = DataGlobal_00B07800;
 LABEL_117:
-    *(_BYTE *)(this + 99) = 0;
+    this->u8_63 = 0;
     goto LABEL_118;
   }
 LABEL_149:
@@ -1988,12 +1990,12 @@ LABEL_242:
   if ( v154 == -1 )
   {
     _DWORD * v155 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, int *))(*v153 + 72))(v153, &v229);
-    int v156 = *(_DWORD *)(this + 56);
-    int v157 = *v155 - *(_DWORD *)(this + 52);
+    int v156 = this->u32_38;
+    int v157 = *v155 - this->ptr_34;
     int v158 = v155[1];
     int v159 = v155[2];
     LODWORD(v216) = v157;
-    int v160 = *(_DWORD *)(this + 60);
+    int v160 = this->u32_3C;
     HIDWORD(v216) = v158 - v156;
     v217 = v159 - v160;
   double v161; // st7
@@ -2009,8 +2011,8 @@ LABEL_262:
     }
     char v162 = *(_BYTE *)((*(int (__thiscall **)(_DWORD))(*this->q00C + 132))(this->q00C) + 3220);
     int v163 = this->q00C;
-    LOWORD(v216) = *(_DWORD *)(this + 52) / 256;
-    WORD1(v216) = *(_DWORD *)(this + 56) / 256;
+    LOWORD(v216) = this->ptr_34 / 256;
+    WORD1(v216) = this->u32_38 / 256;
     result = FootClass::MovementStep(v163, v156, SLODWORD(v216), v162 != 0, 0, v213);
     if ( !result )
     {
@@ -2020,7 +2022,7 @@ LABEL_262:
         *a2 = 1;
         return result;
       }
-      if ( !(*(unsigned __int8 (__thiscall **)(int, int))(*(_DWORD *)v164 + 716))(v164, this + 52) )
+      if ( !(*(unsigned __int8 (__thiscall **)(int, int))(*(_DWORD *)v164 + 716))(v164, &this->u32_142) )
         (*(void (__thiscall **)(_DWORD, _DWORD, int))(*this->q00C + 1152))(this->q00C, 0, 1);
     }
     v154 = *(_DWORD *)(this->q00C + 1508);
@@ -2039,14 +2041,14 @@ LABEL_263:
     || v214 )
   {
     v154 = v6;
-    *(_BYTE *)(this + 100) = 1;
+    this->u8_64 = 1;
   }
   else
   {
-    *(_BYTE *)(this + 100) = 0;
+    this->u8_64 = 0;
   }
   v168 = v154 + 8 * v6;
-  *(_BYTE *)(this + 96) = 0;
+  this->ptr_60 = 0;
   this->WalkLocomotion_field_0x58 = v168;
   if ( !byte_7F2A40[12 * v168] )
     this->WalkLocomotion_field_0x58 = 9 * v6;
@@ -2120,12 +2122,12 @@ LABEL_263:
             goto LABEL_327;
           }
           _DWORD * v179 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, int *))(*v178 + 72))(v178, &v229);
-          int v180 = *(_DWORD *)(this + 56);
-          _DWORD * v181 = (_DWORD *)(*v179 - *(_DWORD *)(this + 52));
+          int v180 = this->u32_38;
+          _DWORD * v181 = (_DWORD *)(*v179 - this->ptr_34);
           int v182 = v179[1];
           int v183 = v179[2];
           v220 = v181;
-          int v184 = v183 - *(_DWORD *)(this + 60);
+          int v184 = v183 - this->u32_3C;
           v221 = v182 - v180;
           v222 = v184;
   double v185; // st7
@@ -2139,7 +2141,7 @@ LABEL_263:
                 v226 = (_DWORD *)*v186,
                 v227 = (wchar_t *)v186[1],
   __int64 v187; // rax
-                v187 = *(_DWORD *)(this + 60) - v186[2],
+                v187 = this->u32_3C - v186[2],
                 (int)((HIDWORD(v187) ^ v187) - HIDWORD(v187)) >= 2 * DataGlobal_B07838)
             || (v226 = (_DWORD *)*v186,
                 v227 = (wchar_t *)v186[1],
@@ -2180,7 +2182,7 @@ LABEL_291:
             this->WalkLocomotion_field_0x40 = g_OverlayTypeConfig;
             this->WalkLocomotion_field_0x44 = DataGlobal_B077FC;
             this->q048 = DataGlobal_00B07800;
-            *(_BYTE *)(this + 99) = 0;
+            this->u8_63 = 0;
           }
           _DWORD * v188 = this->q00C;
           if ( !v188[358] )
@@ -2211,7 +2213,7 @@ LABEL_291:
             this->WalkLocomotion_field_0x40 = g_OverlayTypeConfig;
             this->WalkLocomotion_field_0x44 = DataGlobal_B077FC;
             this->q048 = DataGlobal_00B07800;
-            *(_BYTE *)(this + 99) = 0;
+            this->u8_63 = 0;
           }
           v75 = this->q00C;
           if ( v75[358] )
@@ -2237,7 +2239,7 @@ LABEL_119:
         this->WalkLocomotion_field_0x40 = g_OverlayTypeConfig;
         this->WalkLocomotion_field_0x44 = DataGlobal_B077FC;
         this->q048 = DataGlobal_00B07800;
-        *(_BYTE *)(this + 99) = 0;
+        this->u8_63 = 0;
       }
       if ( v75[358] )
       {
@@ -2259,7 +2261,7 @@ LABEL_333:
     qmemcpy((void *)(this->q00C + 1504), (const void *)(this->q00C + 1508), 0x5Cu);
   }
 LABEL_336:
-  v195 = (int *)(this + 64);
+  v195 = (int *)(&this->u32_184);
   *(_DWORD *)(this->q00C + 1596) = -1;
   LOWORD(a4) = v223 / 256;
   v196 = this->q00C;
@@ -2275,7 +2277,7 @@ LABEL_336:
     *v195 = g_OverlayTypeConfig;
     this->WalkLocomotion_field_0x44 = DataGlobal_B077FC;
     int v198 = DataGlobal_00B07800;
-    *(_BYTE *)(this + 99) = 0;
+    this->u8_63 = 0;
     this->q048 = v198;
     v197 = g_OverlayTypeConfig;
   }
@@ -2285,7 +2287,7 @@ LABEL_336:
   v202 = v224;
   if ( !v201 || v224 != DataGlobal_B077FC || v225 != DataGlobal_00B07800 )
   {
-    *(_BYTE *)(this + 99) = 1;
+    this->u8_63 = 1;
     *v195 = v199;
     this->WalkLocomotion_field_0x44 = v202;
     this->q048 = v200;
@@ -2301,7 +2303,7 @@ LABEL_336:
       *v195 = g_OverlayTypeConfig;
       this->WalkLocomotion_field_0x44 = DataGlobal_B077FC;
       this->q048 = DataGlobal_00B07800;
-      *(_BYTE *)(this + 99) = 0;
+      this->u8_63 = 0;
     }
   }
   v204 = this->q00C;
@@ -2312,6 +2314,7 @@ LABEL_336:
 }
 
 } // namespace gamemd
+}
 
 // 0x6A3DB0
 namespace gamemd {
@@ -2347,3 +2350,4 @@ unsigned int * WalkLocomotion::TransformCoords(ObjectClass * aP1, IUnknown * aP2
   return aP1->__pad_0; /*0x6a3e20*/
 }
 } // namespace gamemd
+}

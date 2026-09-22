@@ -7,7 +7,7 @@ MSBitPrintAnim * MSBitPrintAnim::QueryInterface(char a2)
 {
 {
     *(void**)this = &vt_MSBitPrintAnim;
-    DeleteAndZero::Alt(this + 7);
+    this->DeleteAndZero_7.Alt();
     *(void**)this = &vt_MSAnim;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);

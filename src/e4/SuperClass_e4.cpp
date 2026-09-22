@@ -48,6 +48,7 @@ void * SuperClass::LaunchPsychicDominator(int a2)
   return result; /*0x53af2d*/
 }
 } // namespace gamemd
+}
 
 // 0x6CAEC0
 namespace gamemd {
@@ -93,6 +94,7 @@ int SuperClass::Constructor()
   return this; /*0x6caf85*/
 }
 } // namespace gamemd
+}
 
 // 0x6CAF90
 namespace gamemd {
@@ -163,6 +165,7 @@ int SuperClass::Construct(int a2, CCINIClass * aP2)
   return this; /*0x6cb110*/
 }
 } // namespace gamemd
+}
 
 // 0x6CB120
 namespace gamemd {
@@ -239,6 +242,7 @@ SuperClass * * SuperClass::CleanupMembers()
   AbstractClass::DTOR((_DWORD *)this); /*0x6cb2d3*/
 }
 } // namespace gamemd
+}
 
 // 0x6CB560
 namespace gamemd {
@@ -267,7 +271,7 @@ AbstractClass * * SuperClass::StartTimer(IUnknown * aP1, IUnknown * aP2, IUnknow
       {
         if ( this->SuperClass_field_0x30 != -1 ) /*0x6cb5bd*/
         {
-          this->SuperClass_field_0x38 = CDTimerClass::TimeRemaining((int *)(this + 48)); /*0x6cb5c6*/
+          this->SuperClass_field_0x38 = CDTimerClass::TimeRemaining((int *)(&this->q0108)); /*0x6cb5c6*/
           this->SuperClass_field_0x30 = -1; /*0x6cb5c9*/
         }
       }
@@ -297,9 +301,9 @@ AbstractClass * * SuperClass::StartTimer(IUnknown * aP1, IUnknown * aP2, IUnknow
       this->SuperClass_field_0x78 = -1; /*0x6cb64c*/
       if ( v10 == -1 ) /*0x6cb656*/
         v10 = *(_DWORD *)(v9 + 176); /*0x6cb658*/
-      v11 = (TerrainTypeClass *)(this + 48); /*0x6cb664*/
+      v11 = (TerrainTypeClass *)(&this->q0108); /*0x6cb664*/
       this->SuperClass_field_0x30 = *(_DWORD *)&g_NetworkPlayerBuffer[5960]; /*0x6cb669*/
-      *(_DWORD *)(this + 52) = v22; /*0x6cb66f*/
+      this->u32_34 = v22; /*0x6cb66f*/
       this->SuperClass_field_0x38 = v10; /*0x6cb672*/
       v12 = this->q030; /*0x6cb675*/
       if ( v12 != (IUnknown *)-1 ) /*0x6cb67a*/
@@ -343,7 +347,7 @@ AbstractClass * * SuperClass::StartTimer(IUnknown * aP1, IUnknown * aP2, IUnknow
       else
       {
         this->SuperClass_field_0x78 = -1; /*0x6cb70f*/
-        SuperClass::SetCurrentFrame((_DWORD *)(this + 48)); /*0x6cb718*/
+        SuperClass::SetCurrentFrame((_DWORD *)(&this->q0108)); /*0x6cb718*/
         DefaultTimer = (DynamicVector *)Super::GetDefaultTimer((_DWORD *)this); /*0x6cb71f*/
   int v21; // [esp+8h] [ebp-Ch] BYREF
         Timer::Start(&v21, DefaultTimer); /*0x6cb729*/
@@ -351,7 +355,7 @@ AbstractClass * * SuperClass::StartTimer(IUnknown * aP1, IUnknown * aP2, IUnknow
         v18 = v23; /*0x6cb736*/
         this->SuperClass_field_0x30 = v21; /*0x6cb73a*/
         int v19 = this->SuperClass_field_0x28; /*0x6cb73c*/
-        *(_DWORD *)(this + 52) = v17; /*0x6cb73f*/
+        this->u32_34 = v17; /*0x6cb73f*/
         this->SuperClass_field_0x38 = v18; /*0x6cb742*/
         if ( *(_BYTE *)(v19 + 229) ) /*0x6cb745*/
           this->SuperClass_field_0x7C = 0; /*0x6cb74d*/
@@ -366,7 +370,7 @@ AbstractClass * * SuperClass::StartTimer(IUnknown * aP1, IUnknown * aP2, IUnknow
       {
         if ( (unsigned char)this->SuperClass_field_0x60 ) /*0x6cb774*/
         {
-          SuperClass::AdvanceCountdown((int *)(this + 48)); /*0x6cb77c*/
+          SuperClass::AdvanceCountdown((int *)(&this->q0108)); /*0x6cb77c*/
           this->q070 = 1; /*0x6cb781*/
         }
       }
@@ -380,6 +384,7 @@ LABEL_45:
   return 0; /*0x6cb79a*/
 }
 } // namespace gamemd
+}
 
 // 0x6CB7B0
 namespace gamemd {
@@ -406,6 +411,7 @@ int SuperClass::Lose()
   return 1; /*0x6cb80c*/
 }
 } // namespace gamemd
+}
 
 // 0x6CB830
 namespace gamemd {
@@ -451,13 +457,14 @@ AbstractClass * * SuperClass::StopPreclickAnim(IUnknown * aP1)
   if ( v6 == -1 ) /*0x6cb8d7*/
     v6 = *(_DWORD *)(this->SuperClass_field_0x28 + 176); /*0x6cb8dc*/
   this->SuperClass_field_0x30 = *(_DWORD *)&g_NetworkPlayerBuffer[5960]; /*0x6cb8e7*/
-  *(_DWORD *)(this + 52) = v8[2]; /*0x6cb8ee*/
+  this->u32_34 = v8[2]; /*0x6cb8ee*/
   this->SuperClass_field_0x38 = v6; /*0x6cb8f1*/
   if ( *(_BYTE *)(this->SuperClass_field_0x28 + 229) ) /*0x6cb8f7*/
     this->SuperClass_field_0x7C = 0; /*0x6cb8ff*/
   return 1; /*0x6cb902*/
 }
 } // namespace gamemd
+}
 
 // 0x6CB920
 namespace gamemd {
@@ -476,7 +483,7 @@ int SuperClass::ClickFire(int a2, short * a3)
   int v4 = this->SuperClass_field_0x28; /*0x6cb92a*/
   if ( *(_BYTE *)(v4 + 229) ) /*0x6cb92d*/
   {
-    if ( (unsigned __int8)House::IsCurrentPlayer(*(#375 **)(this + 44)) ) /*0x6cb93c*/
+    if ( (unsigned __int8)House::IsCurrentPlayer(*(#375 **)(&this->q0104)) ) /*0x6cb93c*/
     {
       int v5 = this->SuperClass_field_0x7C; /*0x6cb949*/
       if ( v5 == 2 ) /*0x6cb94f*/
@@ -490,7 +497,7 @@ int SuperClass::ClickFire(int a2, short * a3)
         int v7 = this->SuperClass_field_0x30; /*0x6cb973*/
         int v8 = this->SuperClass_field_0x38; /*0x6cb976*/
         v9 = g_CurrentFrame; /*0x6cb979*/
-        v10 = (wchar_t **)(this + 48); /*0x6cb97f*/
+        v10 = (wchar_t **)(&this->q0108); /*0x6cb97f*/
         if ( v7 != -1 ) /*0x6cb985*/
         {
           if ( (int)g_CurrentFrame - v7 >= v8 ) /*0x6cb98d*/
@@ -528,7 +535,7 @@ LABEL_11:
         int v17 = Math::RoundToInt((double)(v13 - v15) * *(double *)&g_RulesClass_Instance->WallBuildSpeedCoefficient[2]); /*0x6cba23*/
         SuperClass *v18 = a2; /*0x6cba2c*/
         this->SuperClass_field_0x30 = v16; /*0x6cba30*/
-        *(_DWORD *)(this + 52) = v30; /*0x6cba33*/
+        this->u32_34 = v30; /*0x6cba33*/
         this->SuperClass_field_0x38 = v17; /*0x6cba36*/
         SuperClass::Launch(this, v18, a3, v18); /*0x6cba41*/
         return 0; /*0x6cba4f*/
@@ -541,7 +548,7 @@ LABEL_11:
     }
     return 0; /*0x6cbc96*/
   }
-  v19 = (wchar_t **)(this + 48); /*0x6cba80*/
+  v19 = (wchar_t **)(&this->q0108); /*0x6cba80*/
   if ( (this->SuperClass_field_0x30 == -1 || !this->Granted || !this->IsCharged) && !*(_BYTE *)(v4 + 238) ) /*0x6cba98*/
     return 0; /*0x6cba98*/
   if ( *(_DWORD *)(v4 + 180) == 2 && (unsigned __int8)Weapon_Helper() ) /*0x6cbaa7*/
@@ -576,7 +583,7 @@ LABEL_11:
       v24 = g_CurrentFrame; /*0x6cbb79*/
       this->SuperClass_field_0x78 = -1; /*0x6cbb80*/
       *v19 = v24; /*0x6cbb87*/
-      *(_DWORD *)(this + 52) = v30; /*0x6cbb8d*/
+      this->u32_34 = v30; /*0x6cbb8d*/
       this->SuperClass_field_0x38 = v23; /*0x6cbb90*/
       v25 = *v19; /*0x6cbb93*/
       if ( *v19 != (wchar_t *)-1 ) /*0x6cbb98*/
@@ -623,7 +630,7 @@ LABEL_11:
         if ( v29 == -1 ) /*0x6cbc6a*/
           v29 = *(_DWORD *)(this->SuperClass_field_0x28 + 176); /*0x6cbc6f*/
         *v19 = g_CurrentFrame; /*0x6cbc7a*/
-        *(_DWORD *)(this + 52) = v30; /*0x6cbc80*/
+        this->u32_34 = v30; /*0x6cbc80*/
         this->SuperClass_field_0x38 = v29; /*0x6cbc83*/
         if ( *(_BYTE *)(this->SuperClass_field_0x28 + 229) ) /*0x6cbc89*/
           this->SuperClass_field_0x7C = 0; /*0x6cbc91*/
@@ -644,6 +651,7 @@ LABEL_11:
   return 1; /*0x6cb9bc*/
 }
 } // namespace gamemd
+}
 
 // 0x6CC080
 namespace gamemd {
@@ -666,7 +674,7 @@ int SuperClass::AnnounceReady(DynamicVector * aP1)
       this->SuperClass_field_0x30 = *(_DWORD *)&g_NetworkPlayerBuffer[5960]; /*0x6cc0c8*/
     this->SuperClass_field_0x30 = *(_DWORD *)&g_NetworkPlayerBuffer[5960]; /*0x6cc0d4*/
   int v7; // [esp+Ch] [ebp-8h]
-    *(_DWORD *)(this + 52) = v7; /*0x6cc0db*/
+    this->u32_34 = v7; /*0x6cc0db*/
     this->SuperClass_field_0x38 = v5; /*0x6cc0de*/
     if ( (_BYTE)aP1 ) /*0x6cc0e4*/
     {
@@ -716,6 +724,7 @@ int SuperClass::AnnounceReady(DynamicVector * aP1)
   return result; /*0x6cc19b*/
 }
 } // namespace gamemd
+}
 
 // 0x6CC1E0
 namespace gamemd {
@@ -736,18 +745,19 @@ int SuperClass::SetCharge(int a2)
       int v5 = v4 - Math::RoundToInt((double)a2 * 0.0099999998 * (double)v4); /*0x6cc223*/
       if ( !v5 ) /*0x6cc225*/
         this->IsCharged = 1; /*0x6cc227*/
-      v3 = (_DWORD *)(this + 48); /*0x6cc22e*/
+      v3 = (_DWORD *)(&this->q0108); /*0x6cc22e*/
       if ( this->SuperClass_field_0x30 == -1 ) /*0x6cc234*/
         *v3 = g_CurrentFrame; /*0x6cc23c*/
       *v3 = g_CurrentFrame; /*0x6cc248*/
   int v7; // [esp+Ch] [ebp-8h]
-      *(_DWORD *)(this + 52) = v7; /*0x6cc24a*/
+      this->u32_34 = v7; /*0x6cc24a*/
       this->SuperClass_field_0x38 = v5; /*0x6cc24d*/
     }
   }
   return (char)v3; /*0x6cc251*/
 }
 } // namespace gamemd
+}
 
 // 0x6CC390
 namespace gamemd {
@@ -1945,6 +1955,7 @@ LABEL_180:
 }
 
 } // namespace gamemd
+}
 
 // 0x6CE0B0
 namespace gamemd {
@@ -1973,7 +1984,7 @@ AbstractClass * * SuperClass::Reset()
     this->q06C = 0; /*0x6ce120*/
   }
   int v5 = this->SuperClass_field_0x24; /*0x6ce124*/
-  result = (int *)(this + 48); /*0x6ce127*/
+  result = (int *)(&this->q0108); /*0x6ce127*/
   this->IsCharged = 0; /*0x6ce12b*/
   int v7 = this->SuperClass_field_0x30; /*0x6ce12f*/
   this->SuperClass_field_0x78 = -1; /*0x6ce131*/
@@ -1981,7 +1992,7 @@ AbstractClass * * SuperClass::Reset()
   if ( v5 == -1 ) /*0x6ce141*/
     v5 = *(_DWORD *)(this->SuperClass_field_0x28 + 176); /*0x6ce146*/
   *result = (int)g_CurrentFrame; /*0x6ce156*/
-  *(_DWORD *)(this + 52) = v12[2]; /*0x6ce15d*/
+  this->u32_34 = v12[2]; /*0x6ce15d*/
   this->SuperClass_field_0x38 = v5; /*0x6ce160*/
   if ( !v8 ) /*0x6ce163*/
   {
@@ -2005,6 +2016,7 @@ AbstractClass * * SuperClass::Reset()
   return result; /*0x6ce18b*/
 }
 } // namespace gamemd
+}
 
 // 0x6CB3A0
 namespace gamemd {

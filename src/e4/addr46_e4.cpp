@@ -98,6 +98,7 @@ bool sub_46D650()
   return v0; /*0x46d808*/
 }
 } // namespace gamemd
+}
 
 // 0x46D8B0
 namespace gamemd {
@@ -174,6 +175,7 @@ void sub_46D8B0()
   return v0; /*0x46d8e2*/
 }
 } // namespace gamemd
+}
 
 // 0x46DA70
 namespace gamemd {
@@ -205,7 +207,7 @@ void sub_46DA70()
       DataGlobal_A8D24C[28 * v3] = 0; /*0x46db0b*/
       DataGlobal_A8D25C[28 * v3] = 0; /*0x46db11*/
       DataGlobal_A8D224[28 * v3] = v2->q16054; /*0x46db1d*/
-      if ( !*(_BYTE *)(v2 + 501) ) /*0x46db23*/
+      if ( !v2->u8_1F5 ) /*0x46db23*/
       {
         ++DataGlobal_A8D228[28 * v3]; /*0x46db34*/
         DataGlobal_A8D584 = v3; /*0x46db3a*/
@@ -229,15 +231,15 @@ void sub_46DA70()
       }
       while ( v10 ); /*0x46db68*/
       DataGlobal_A8D23C[v4] = v5; /*0x46db6a*/
-      DataGlobal_A8D22C[v4] = *(_DWORD *)(v2 + 21640) + *(_DWORD *)(v2 + 21556); /*0x46db84*/
+      DataGlobal_A8D22C[v4] = v2->u32_5488 + v2->u32_5434; /*0x46db84*/
       Count = VectorClass::GetCount((_DWORD *)(v2 + 21840)); /*0x46db95*/
       int v13 = VectorClass::GetCount((_DWORD *)(v2 + 21860)) + Count; /*0x46dba2*/
       int v14 = VectorClass::GetCount((_DWORD *)(v2 + 21880)) + v13; /*0x46dbaf*/
-      DataGlobal_A8D24C[v4] = *(_DWORD *)(v2 + 21640) /*0x46dbc8*/
+      DataGlobal_A8D24C[v4] = v2->u32_5488 /*0x46dbc8*/
                            + VectorClass::GetCount((_DWORD *)(v2 + 21900))
                            + v14
-                           + *(_DWORD *)(v2 + 21556);
-      int v15 = *(_DWORD *)(v2 + 21736); /*0x46dbce*/
+                           + v2->u32_5434;
+      int v15 = v2->u32_54E8; /*0x46dbce*/
       if ( v15 > 0 ) /*0x46dbd6*/
         DataGlobal_A8D25C[v4] += v15; /*0x46dbd8*/
       Debug::Log(); /*0x46dc1c*/
@@ -248,6 +250,7 @@ void sub_46DA70()
   }
 }
 } // namespace gamemd
+}
 
 // 0x46DCC0
 namespace gamemd {
@@ -288,6 +291,7 @@ void sub_46DCC0(HWND hDlg, bool a2)
   return result; /*0x46dd60*/
 }
 } // namespace gamemd
+}
 
 // 0x46DD70
 namespace gamemd {
@@ -332,6 +336,7 @@ void EnableGameModeControls(HWND hDlg, bool a2)
   return result; /*0x46de10*/
 }
 } // namespace gamemd
+}
 
 // 0x46DE20
 namespace gamemd {
@@ -439,6 +444,7 @@ void sub_46DE20(HWND hDlg, int nCmdShow)
   return result; /*0x46dfc1*/
 }
 } // namespace gamemd
+}
 
 // 0x465CB0
 namespace gamemd {
@@ -1165,6 +1171,7 @@ void sub_46D480()
   return result; /*0x46d486*/
 }
 } // namespace gamemd
+}
 
 // 0x46D490
 namespace gamemd {

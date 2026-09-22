@@ -127,6 +127,7 @@ char UpdateBuildingActiveAnim(int a1, int edx0)
   }
 }
 } // namespace gamemd
+}
 
 // 0x452000
 namespace gamemd {
@@ -202,6 +203,7 @@ void sub_452000(unsigned int * a1)
   return result; /*0x45215d*/
 }
 } // namespace gamemd
+}
 
 // 0x452D40
 namespace gamemd {
@@ -232,6 +234,7 @@ void sub_452D40()
   return result; /*0x452dbe*/
 }
 } // namespace gamemd
+}
 
 // 0x456980
 namespace gamemd {
@@ -402,6 +405,7 @@ LABEL_20:
   return v14; /*0x456df5*/
 }
 } // namespace gamemd
+}
 
 // 0x456FB0
 namespace gamemd {
@@ -425,6 +429,7 @@ BuildingTypeClass * * sub_456FB0(unsigned int * a1, int a2, int a3)
   }
 }
 } // namespace gamemd
+}
 
 // 0x459F40
 namespace gamemd {
@@ -437,6 +442,7 @@ int ObjectType_IsBuildingType(int a1)
     return 0; /*0x459f47*/
 }
 } // namespace gamemd
+}
 
 // 0x45C300
 namespace gamemd {
@@ -780,6 +786,7 @@ int Map_InitCellOffsets()
   return Array::ForEach((int)&stru_89DD44, 4, 29, (int (__thiscall *)(int))__0Iostream_init_QAE_XZ_2);
 }
 } // namespace gamemd
+}
 
 // 0x45DD20
 namespace gamemd {
@@ -799,6 +806,7 @@ void * E4Recv_45DD20::sub_45DD20()
   return (&off_819288)[2 * v1]; /*0x45dd3b*/
 }
 } // namespace gamemd
+}
 
 // 0x45DD50
 namespace gamemd {
@@ -820,6 +828,7 @@ int E4Recv_45DD50::sub_45DD50()
   return dword_81928C[2 * (_DWORD)v2]; /*0x45dd78*/
 }
 } // namespace gamemd
+}
 
 // 0x4503E0
 namespace gamemd {

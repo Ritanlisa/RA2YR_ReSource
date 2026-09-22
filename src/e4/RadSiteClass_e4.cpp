@@ -45,6 +45,7 @@ unsigned int * RadSiteClass::RadSiteClass()
   return this; /*0x65b298*/
 }
 } // namespace gamemd
+}
 
 // 0x65B3A0
 namespace gamemd {

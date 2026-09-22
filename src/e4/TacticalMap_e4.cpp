@@ -21,74 +21,75 @@ ScenarioClass * * TacticalMap::ComputeScreenTint()
   __int16 v14; // cx
   __int16 v15; // ax
   __int16 v16; // ax
-  v2 = *(_WORD *)(this + 264) + (__int16)(1000 * *((_WORD *)g_ScenarioClass_Instance + 6806)) / 100; /*0x4846ab*/
-  *(_WORD *)(this + 266) = v2; /*0x4846b2*/
-  *(_WORD *)(this + 270) = v2; /*0x4846b9*/
+  v2 = this->q108 + (__int16)(1000 * *((_WORD *)g_ScenarioClass_Instance + 6806)) / 100; /*0x4846ab*/
+  this->u16_10A = v2; /*0x4846b2*/
+  this->u16_10E = v2; /*0x4846b9*/
   if ( LightningStorm::IsActive() ) /*0x4846c0*/
   {
-    v3 = *(char *)(this + 283); /*0x4846cf*/
-    *(_WORD *)(this + 266) += v3 * *((_WORD *)g_ScenarioClass_Instance + 6830) - *((_WORD *)g_ScenarioClass_Instance + 6828); /*0x4846ec*/
+    v3 = this->u32_11B; /*0x4846cf*/
+    this->u16_10A += v3 * *((_WORD *)g_ScenarioClass_Instance + 6830) - *((_WORD *)g_ScenarioClass_Instance + 6828); /*0x4846ec*/
     v4 = (v3 + 4) * *((_WORD *)g_ScenarioClass_Instance + 6830) - *((_WORD *)g_ScenarioClass_Instance + 6828); /*0x484703*/
   }
   else if ( PsyDom::IsActive() ) /*0x48470f*/
   {
-    v5 = *(char *)(this + 283); /*0x48471e*/
-    *(_WORD *)(this + 266) += v5 * *((_WORD *)g_ScenarioClass_Instance + 6856) - *((_WORD *)g_ScenarioClass_Instance + 6854); /*0x48473b*/
+    v5 = this->u32_11B; /*0x48471e*/
+    this->u16_10A += v5 * *((_WORD *)g_ScenarioClass_Instance + 6856) - *((_WORD *)g_ScenarioClass_Instance + 6854); /*0x48473b*/
     v4 = (v5 + 4) * *((_WORD *)g_ScenarioClass_Instance + 6856) - *((_WORD *)g_ScenarioClass_Instance + 6854); /*0x484752*/
   }
   else
   {
     bool v6 = !NukeFlash::IsActive(); /*0x484766*/
-    v7 = *(char *)(this + 283); /*0x484768*/
+    v7 = this->u32_11B; /*0x484768*/
     if ( v6 ) /*0x484770*/
     {
-      *(_WORD *)(this + 266) += v7 * *((_WORD *)g_ScenarioClass_Instance + 6818) - *((_WORD *)g_ScenarioClass_Instance + 6816); /*0x4847bc*/
+      this->u16_10A += v7 * *((_WORD *)g_ScenarioClass_Instance + 6818) - *((_WORD *)g_ScenarioClass_Instance + 6816); /*0x4847bc*/
       v4 = (v7 + 4) * *((_WORD *)g_ScenarioClass_Instance + 6818) - *((_WORD *)g_ScenarioClass_Instance + 6816); /*0x4847d3*/
     }
     else
     {
-      *(_WORD *)(this + 266) += v7 * *((_WORD *)g_ScenarioClass_Instance + 6842) - *((_WORD *)g_ScenarioClass_Instance + 6840); /*0x484787*/
+      this->u16_10A += v7 * *((_WORD *)g_ScenarioClass_Instance + 6842) - *((_WORD *)g_ScenarioClass_Instance + 6840); /*0x484787*/
       v4 = (v7 + 4) * *((_WORD *)g_ScenarioClass_Instance + 6842) - *((_WORD *)g_ScenarioClass_Instance + 6840); /*0x48479e*/
     }
   }
-  int v8 = *(__int16 *)(this + 266); /*0x4847da*/
-  int v9 = *(_DWORD *)(this + 260); /*0x4847e1*/
-  *(_WORD *)(this + 270) += v4; /*0x4847e7*/
-  *(_WORD *)(this + 268) = (unsigned int)(v9 * v8) >> 16; /*0x4847f4*/
-  int v10 = v9 * *(__int16 *)(this + 270); /*0x484802*/
-  v11 = *(_WORD *)(this + 266); /*0x484805*/
+  int v8 = *(__int16 *)(&this->u32_686); /*0x4847da*/
+  int v9 = this->q104; /*0x4847e1*/
+  this->u16_10E += v4; /*0x4847e7*/
+  this->u16_10C = (unsigned int)(v9 * v8) >> 16; /*0x4847f4*/
+  int v10 = v9 * *(__int16 *)(&this->u32_6C0); /*0x484802*/
+  v11 = this->u16_10A; /*0x484805*/
   int v12 = v10 >> 16; /*0x48480c*/
-  *(_WORD *)(this + 270) = v12; /*0x484814*/
+  this->u16_10E = v12; /*0x484814*/
   if ( v11 >= 2000 ) /*0x48481e*/
     v11 = 2000; /*0x484820*/
-  *(_WORD *)(this + 266) = v11; /*0x484825*/
-  v13 = *(_WORD *)(this + 268); /*0x484838*/
+  this->u16_10A = v11; /*0x484825*/
+  v13 = this->u16_10C; /*0x484838*/
   if ( v13 >= 2000 ) /*0x48483b*/
     v13 = 2000; /*0x48483d*/
-  *(_WORD *)(this + 268) = v13; /*0x484846*/
+  this->u16_10C = v13; /*0x484846*/
   v14 = v12; /*0x48484d*/
   if ( (__int16)v12 >= 2000 ) /*0x484850*/
     v14 = 2000; /*0x484852*/
-  v15 = *(_WORD *)(this + 266); /*0x484857*/
-  *(_WORD *)(this + 270) = v14; /*0x48485e*/
+  v15 = this->u16_10A; /*0x484857*/
+  this->u16_10E = v14; /*0x48485e*/
   if ( v15 <= 0 ) /*0x484868*/
     v15 = 0; /*0x48486f*/
-  *(_WORD *)(this + 266) = v15; /*0x484874*/
+  this->u16_10A = v15; /*0x484874*/
   if ( v13 <= 0 ) /*0x48487b*/
     v16 = 0; /*0x484882*/
   else
     v16 = v13; /*0x48487d*/
-  *(_WORD *)(this + 268) = v16; /*0x484887*/
+  this->u16_10C = v16; /*0x484887*/
   if ( v14 <= 0 ) /*0x48488e*/
   {
-    *(_WORD *)(this + 270) = 0; /*0x48489e*/
+    this->u16_10E = 0; /*0x48489e*/
     return 0; /*0x48489c*/
   }
   else
   {
-    *(_WORD *)(this + 270) = v14; /*0x484893*/
+    this->u16_10E = v14; /*0x484893*/
     return v14; /*0x484890*/
   }
+}
 }
 
 // 0x4F4480
@@ -133,6 +134,7 @@ int TacticalMap::Redraw()
   g_DSurface_Hidden_2 = v1; /*0x4f459d*/
   return result; /*0x4f45a3*/
 }
+}
 
 // 0x5AEA10
 void TacticalMap::MultiplyByScalar(ObjectClass * aP1)
@@ -148,6 +150,7 @@ void TacticalMap::MultiplyByScalar(ObjectClass * aP1)
   this->m_TintFactor = *(float *)&aP1 * this->m_TintFactor; /*0x5aea5b*/
   this->q028 = *(float *)&aP1 * this->q028; /*0x5aea65*/
 }
+}
 
 // 0x5D49A0
 int TacticalMap::DrawCursor()
@@ -156,18 +159,18 @@ int TacticalMap::DrawCursor()
   char result; // al
 
   int v9 = 0; /*0x5d49a6*/
-  result = *((_BYTE *)this + 25); /*0x5d49b4*/
+  result = this->u8_19; /*0x5d49b4*/
   if ( result ) /*0x5d49b9*/
   {
     (*(void (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 12))(g_WWMouseClass_Instance); /*0x5d49c8*/
     (*(void (__thiscall **)(_DWORD, int))(*(_DWORD *)this->q024 + 108))(this->q024, 1); /*0x5d49d2*/
     TextRenderer::GetInstance(); /*0x5d49db*/
     CampaignScore *v3 = Text::MeasureWidth(*(_DWORD *)(this->q024 + 48), 0); /*0x5d49f8*/
-    if ( *((_WORD *)this + 348) /*0x5d4a1b*/
-      && *(this + 172) - *(this + 173) < this->TacticalMap_field_10 - 1
+    if ( this->u16_2B8 /*0x5d4a1b*/
+      && *(&this->u32_442) - *(&this->u32_443) < this->TacticalMap_field_10 - 1
       && (*(unsigned __int8 (__thiscall **)(_DWORD))(*(_DWORD *)this->q024 + 88))(this->q024) )
     {
-      LOWORD(v9) = *((_WORD *)this + 348); /*0x5d4a29*/
+      LOWORD(v9) = this->u16_2B8; /*0x5d4a29*/
       CampaignScore *v4 = (_DWORD *)this->q024; /*0x5d4a2e*/
       int v5 = v4[3]; /*0x5d4a31*/
   _DWORD v10[2]; // [esp+Ch] [ebp-20h] BYREF
@@ -186,6 +189,7 @@ int TacticalMap::DrawCursor()
     return (*(int (__thiscall **)(_DWORD, int))(*(_DWORD *)*this + 44))(*this, 1); /*0x5d4a98*/
   return result; /*0x5d4a8f*/
 }
+}
 
 // 0x6D1C20
 int TacticalMap::Construct()
@@ -193,71 +197,72 @@ int TacticalMap::Construct()
 {
 
   AbstractClass::Constructor(this); /*0x6d1c25*/
-  *(_DWORD *)(this + 168) = -1; /*0x6d1c2c*/
-  *(_BYTE *)(this + 172) = 0; /*0x6d1c36*/
-  *(_BYTE *)(this + 173) = 0; /*0x6d1c3c*/
+  this->u32_A8 = -1; /*0x6d1c2c*/
+  this->u8_AC = 0; /*0x6d1c36*/
+  this->u8_AD = 0; /*0x6d1c3c*/
   this->q030 = 0; /*0x6d1c42*/
   this->q0B0 = 0; /*0x6d1c48*/
   this->q0B4 = 0; /*0x6d1c4e*/
   this->q0B8 = 0; /*0x6d1c54*/
-  *(_DWORD *)(this + 188) = 0; /*0x6d1c5a*/
-  *(_DWORD *)(this + 196) = 1072693248; /*0x6d1c60*/
-  *(_DWORD *)(this + 200) = DataGlobal_B0CE08; /*0x6d1c6f*/
-  *(_DWORD *)(this + 204) = DataGlobal_B0CE0C; /*0x6d1c7b*/
+  this->u32_BC = 0; /*0x6d1c5a*/
+  this->u32_C4 = 1072693248; /*0x6d1c60*/
+  this->u32_C8 = DataGlobal_B0CE08; /*0x6d1c6f*/
+  this->u32_CC = DataGlobal_B0CE0C; /*0x6d1c7b*/
   this->q034 = DataGlobal_B0CE08; /*0x6d1c87*/
-  *(_DWORD *)(this + 212) = DataGlobal_B0CE0C; /*0x6d1c92*/
-  *(_DWORD *)(this + 216) = 0; /*0x6d1c98*/
-  *(_DWORD *)(this + 220) = 0; /*0x6d1c9e*/
+  this->u32_D4 = DataGlobal_B0CE0C; /*0x6d1c92*/
+  this->u32_D8 = 0; /*0x6d1c98*/
+  this->u32_DC = 0; /*0x6d1c9e*/
   this->q038 = 0; /*0x6d1ca4*/
   this->q3590 = 0; /*0x6d1caa*/
-  *(_DWORD *)(this + 3432) = 0; /*0x6d1cb0*/
-  *(_DWORD *)(this + 3436) = 0; /*0x6d1cb6*/
-  *(_DWORD *)(this + 3440) = 0; /*0x6d1cbc*/
-  *(_DWORD *)(this + 3444) = 0; /*0x6d1cc2*/
-  *(_DWORD *)(this + 3448) = 0; /*0x6d1cc8*/
-  *(_BYTE *)(this + 3452) = 1; /*0x6d1cce*/
-  *(_BYTE *)(this + 3453) = 0; /*0x6d1cd5*/
-  *(_BYTE *)(this + 3454) = 0; /*0x6d1cdb*/
-  *(_DWORD *)(this + 3456) = DataGlobal_B0CD60; /*0x6d1ced*/
-  *(_DWORD *)(this + 3460) = DataGlobal_B0CD64; /*0x6d1cf8*/
-  *(_DWORD *)(this + 3464) = DataGlobal_B0CD68; /*0x6d1d01*/
-  *(_DWORD *)(this + 3468) = DataGlobal_B0CD6C; /*0x6d1d09*/
+  this->u32_D68 = 0; /*0x6d1cb0*/
+  this->u32_D6C = 0; /*0x6d1cb6*/
+  this->u32_D70 = 0; /*0x6d1cbc*/
+  this->u32_D74 = 0; /*0x6d1cc2*/
+  this->u32_D78 = 0; /*0x6d1cc8*/
+  this->u8_D7C = 1; /*0x6d1cce*/
+  this->u8_D7D = 0; /*0x6d1cd5*/
+  this->u8_D7E = 0; /*0x6d1cdb*/
+  this->u32_D80 = DataGlobal_B0CD60; /*0x6d1ced*/
+  this->u32_D84 = DataGlobal_B0CD64; /*0x6d1cf8*/
+  this->u32_D88 = DataGlobal_B0CD68; /*0x6d1d01*/
+  this->u32_D8C = DataGlobal_B0CD6C; /*0x6d1d09*/
   this->qD90 = 0; /*0x6d1d0c*/
   this->qD94 = 0; /*0x6d1d12*/
   this->qD98 = 0; /*0x6d1d18*/
   this->qD9C = 0; /*0x6d1d1e*/
   this->qDA0 = 0; /*0x6d1d2a*/
-  *(_DWORD *)(this + 3492) = ((Timer *)((char *)this + 3496)).GetTicks(); /*0x6d1d35*/
-  *(_DWORD *)(this + 3500) = 0; /*0x6d1d3b*/
-  *(_DWORD *)(this + 3504) = 0; /*0x6d1d4e*/
+  this->u32_DA4 = ((Timer *)((char *)&this->u32_5746)).GetTicks(); /*0x6d1d35*/
+  this->u32_DAC = 0; /*0x6d1d3b*/
+  this->u32_DB0 = 0; /*0x6d1d4e*/
   *(_DWORD *)this = &Tactical::`vftable'; /*0x6d1d54*/
   this->TacticalMap_field_04 = &Tactical::`vftable'; /*0x6d1d5a*/
   this->TacticalMap_field_08 = &Tactical::`vftable'; /*0x6d1d61*/
   this->TacticalMap_field_0C = &vt_Tactical; /*0x6d1d68*/
-  memset((void *)(this + 228), 0, 0xC80u); /*0x6d1d6f*/
+  memset((void *)(&this->u32_588), 0, 0xC80u); /*0x6d1d6f*/
   this->q024 = 0; /*0x6d1d77*/
-  *(_DWORD *)(this + 164) = -1; /*0x6d1d7d*/
-  ((Matrix3x4 *)((char *)this + 3508)).Identity(); /*0x6d1d87*/
+  this->u32_A4 = -1; /*0x6d1d7d*/
+  ((Matrix3x4 *)((char *)&this->u32_5788)).Identity(); /*0x6d1d87*/
   float v3 = DataGlobal_B0CD88; /*0x6d1d95*/
   Matrix3x3::RotateX(v3); /*0x6d1d98*/
   float v4 = DataGlobal_B0CE98; /*0x6d1da6*/
   Matrix2D::Rotate(v4); /*0x6d1da9*/
   float v5 = 60.0 / DataGlobal_B0CD78; /*0x6d1dbb*/
   TacticalMap::MultiplyByScalar(v5); /*0x6d1dc0*/
-  *(_DWORD *)(this + 3556) = 1082689742; /*0x6d1dca*/
-  *(_DWORD *)(this + 3560) = 1091078350; /*0x6d1dd4*/
-  *(_DWORD *)(this + 3564) = 0; /*0x6d1dda*/
-  *(_DWORD *)(this + 3568) = 0; /*0x6d1de0*/
-  *(_DWORD *)(this + 3572) = -1064793906; /*0x6d1de6*/
-  *(_DWORD *)(this + 3576) = 1091078350; /*0x6d1df0*/
-  *(_DWORD *)(this + 3580) = 0; /*0x6d1df6*/
-  *(_DWORD *)(this + 3584) = 0; /*0x6d1dfc*/
-  *(_DWORD *)(this + 3588) = 0; /*0x6d1e02*/
-  *(_DWORD *)(this + 3592) = 0; /*0x6d1e08*/
-  *(_DWORD *)(this + 3596) = 1065353216; /*0x6d1e0e*/
-  *(_DWORD *)(this + 3600) = 0; /*0x6d1e18*/
+  this->u32_DE4 = 1082689742; /*0x6d1dca*/
+  this->u32_DE8 = 1091078350; /*0x6d1dd4*/
+  this->u32_DEC = 0; /*0x6d1dda*/
+  this->u32_DF0 = 0; /*0x6d1de0*/
+  this->u32_DF4 = -1064793906; /*0x6d1de6*/
+  this->u32_DF8 = 1091078350; /*0x6d1df0*/
+  this->u32_DFC = 0; /*0x6d1df6*/
+  this->u32_E00 = 0; /*0x6d1dfc*/
+  this->u32_E04 = 0; /*0x6d1e02*/
+  this->u32_E08 = 0; /*0x6d1e08*/
+  this->u32_E0C = 1065353216; /*0x6d1e0e*/
+  this->u32_E10 = 0; /*0x6d1e18*/
   g_TacticalClass_Instance = (LPPERSISTSTREAM)this; /*0x6d1e1e*/
   return this; /*0x6d1e26*/
+}
 }
 
 // 0x6D2B60
@@ -381,6 +386,7 @@ void* TacticalMap::RenderCell(char arg0, AbstractClass * aP2, int a4, int a2)
   }
   return result; /*0x6d2dc8*/
 }
+}
 
 // 0x6D3D10
 namespace gamemd {
@@ -388,6 +394,7 @@ AbstractClass * * TacticalMap_Render()
 {
 // (no pseudocode — ASM-only function)
 } // namespace gamemd
+}
 
 // 0x6D8DB0
 int TacticalMap::RenderAllObjects(int a2)
@@ -725,6 +732,7 @@ LABEL_53:
   while ( (int)v62 < (int)((int *)&DataGlobal_8A03D8 + 1) ); /*0x6d97b5*/
   return result; /*0x6d97bb*/
 }
+}
 
 // 0x6DA180
 int TacticalMap::DrawOccupiedRegion()
@@ -767,6 +775,7 @@ int TacticalMap::DrawOccupiedRegion()
              v9);
   }
   return result; /*0x6da224*/
+}
 }
 
 // 0x7BCFB0
@@ -864,4 +873,5 @@ unsigned int TacticalMap::FillScanlinesOpaque(int a2, int a3, TacticalMap * aP3,
     while ( v26 ); /*0x7bd0cf*/
   }
   return result; /*0x7bd0d7*/
+}
 }

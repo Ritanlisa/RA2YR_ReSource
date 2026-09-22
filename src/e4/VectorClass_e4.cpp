@@ -179,6 +179,7 @@ int VectorClass::RemoveObjectById()
   }
   return v7; /*0x4137ae*/
 }
+}
 
 // 0x65A970
 int VectorClass::RemoveElement()
@@ -190,27 +191,27 @@ int VectorClass::RemoveElement()
   ObjectClass *v1 = v19; /*0x65a974*/
   if ( !v19 ) /*0x65a97c*/
   {
-    v1 = (int *)**((_DWORD **)this + 57); /*0x65a984*/
+    v1 = (int *)**((_DWORD **)&this->u32_147); /*0x65a984*/
     if ( !v1 ) /*0x65a988*/
       return 0; /*0x65a990*/
   }
   int v17; // [esp+14h] [ebp+4h]
   if ( v17 == 3 ) /*0x65a99a*/
   {
-    int v4 = *((_DWORD *)this + 58); /*0x65a99c*/
+    int v4 = this->u32_E8; /*0x65a99c*/
     int v5 = 0; /*0x65a9a2*/
     if ( v4 > 0 ) /*0x65a9a6*/
     {
       do /*0x65a9c7*/
       {
-        int v6 = *((_DWORD *)this + 57); /*0x65a9a8*/
+        int v6 = this->u32_E4; /*0x65a9a8*/
         int * v7 = *(int **)(v6 + 4 * v5); /*0x65a9ae*/
         _DWORD * v8 = (_DWORD *)(v6 + 4 * v5); /*0x65a9b1*/
         if ( v7 == v1 ) /*0x65a9b6*/
           *v8 = 0; /*0x65a9b8*/
         ++v5; /*0x65a9c4*/
       }
-      while ( v5 < *((_DWORD *)this + 58) ); /*0x65a9c7*/
+      while ( v5 < this->u32_E8 ); /*0x65a9c7*/
     }
     goto LABEL_9; /*0x65a9c7*/
   }
@@ -221,12 +222,12 @@ LABEL_9:
     void * v10 = AbstractClass::IsTechnoType(this); /*0x65a9d3*/
     return v9->ProcessInputKey(v1, v10, v17, v18); /*0x65a9e5*/
   }
-  int v11 = *((_DWORD *)this + 58); /*0x65a9ed*/
+  int v11 = this->u32_E8; /*0x65a9ed*/
   int v12 = -1; /*0x65a9f3*/
   int v13 = 0; /*0x65a9f6*/
   if ( v11 > 0 ) /*0x65a9fa*/
   {
-    v14 = (int **)*((_DWORD *)this + 57); /*0x65a9fc*/
+    v14 = (int **)this->u32_E4; /*0x65a9fc*/
     while ( 1 ) /*0x65aa02*/
     {
       if ( v12 == -1 && !*v14 ) /*0x65aa07*/
@@ -243,17 +244,18 @@ LABEL_9:
       }
     }
   }
-  this->vt_slot_632(3, **((_DWORD **)this + 57)); /*0x65aa1f*/
+  this->vt_slot_632(3, **((_DWORD **)&this->u32_147)); /*0x65aa1f*/
   v12 = 0; /*0x65aa34*/
 LABEL_20:
   ObjectClass *v15 = *v1; /*0x65aa36*/
   void * v16 = AbstractClass::IsTechnoType(this); /*0x65aa41*/
   if ( v15->ProcessInputKey(v1, v16, 2, v18) == 1 ) /*0x65aa52*/
   {
-    *(_DWORD *)(*((_DWORD *)this + 57) + 4 * v12) = v1; /*0x65aa5a*/
+    *(_DWORD *)(this->u32_E4 + 4 * v12) = v1; /*0x65aa5a*/
     return 1; /*0x65aa66*/
   }
   return 10; /*0x65a98a*/
+}
 }
 
 // 0x763BA0
@@ -268,6 +270,7 @@ int VectorClass::GetAtChecked(IUnknown * aP1)
     return 0; /*0x763bd7*/
   else
     return this->q02C + 12 * v3; /*0x763bd1*/
+}
 }
 
 // 0x42F6F0
@@ -325,6 +328,7 @@ AbstractClass * * VectorClass_Cell::Release(int a2, unsigned int * a3)
   }
 }
 } // namespace gamemd
+}
 
 // 0x4E0840
 namespace gamemd {
@@ -425,6 +429,7 @@ AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistrib
   }
 }
 } // namespace gamemd
+}
 
 // 0x4E0B10
 namespace gamemd {
@@ -527,26 +532,28 @@ AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistrib
   return 1; /*0x4e0c1b*/
 }
 } // namespace gamemd
+}
 
 // 0x4A2820
 namespace gamemd {
 unsigned int * VectorClass_K_8::Constructor()
 {
 {
-  *(this + 2) = 0; /*0x4a282a*/
-  *(this + 3) = 0; /*0x4a282d*/
-  *((_BYTE *)this + 16) = 0; /*0x4a2830*/
-  *((_BYTE *)this + 17) = 0; /*0x4a2833*/
-  *(this + 5) = 0; /*0x4a2836*/
-  *(this + 6) = __2_YAPAXI_Z(0x10000u); /*0x4a2843*/
-  *(this + 7) = __2_YAPAXI_Z(0x10000u); /*0x4a2850*/
-  *(this + 8) = __2_YAPAXI_Z(0x10000u); /*0x4a285b*/
+  this->u32_8 = 0; /*0x4a282a*/
+  this->u32_C = 0; /*0x4a282d*/
+  this->u8_10 = 0; /*0x4a2830*/
+  this->u8_11 = 0; /*0x4a2833*/
+  this->u32_14 = 0; /*0x4a2836*/
+  this->u32_18 = __2_YAPAXI_Z(0x10000u); /*0x4a2843*/
+  this->u32_1C = __2_YAPAXI_Z(0x10000u); /*0x4a2850*/
+  this->u32_20 = __2_YAPAXI_Z(0x10000u); /*0x4a285b*/
   *this = &CStreamClass::`vftable'; /*0x4a285e*/
-  *(this + 1) = &vt_CStreamClass; /*0x4a2864*/
-  *(this + 9) = 0xFFFF; /*0x4a286b*/
+  this->u32_4 = &vt_CStreamClass; /*0x4a2864*/
+  this->u32_24 = 0xFFFF; /*0x4a286b*/
   return this; /*0x4a2874*/
 }
 } // namespace gamemd
+}
 
 // 0x5AD010
 namespace gamemd {
@@ -557,40 +564,41 @@ AbstractClass * * VectorClass_Ptr::ResizeAndCopy(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x5ad01c*/
   {
-    *((_BYTE *)this + 12) = 0; /*0x5ad022*/
+    this->u8_C = 0; /*0x5ad022*/
     if ( a3 ) /*0x5ad028*/
       AbstractClass *v4 = a3; /*0x5ad03e*/
     AbstractClass *v4 = __2_YAPAXI_Z(4 * a2); /*0x5ad03a*/
-    *((_BYTE *)this + 12) = 1; /*0x5ad042*/
+    this->u8_C = 1; /*0x5ad042*/
     if ( !v4 ) /*0x5ad046*/
       return 0; /*0x5ad0ba*/
-    if ( *((_DWORD *)this + 1) ) /*0x5ad048*/
+    if ( this->ptr_4 ) /*0x5ad048*/
     {
-      AbstractClass *v5 = *((_DWORD *)this + 2); /*0x5ad04f*/
+      AbstractClass *v5 = this->ptr_8; /*0x5ad04f*/
       if ( a2 < v5 ) /*0x5ad054*/
         v5 = a2; /*0x5ad056*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x5ad05c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->ptr_4 + 4 * i - 4) ) /*0x5ad05c*/
         ++i; /*0x5ad061*/
-      if ( *((_BYTE *)this + 13) ) /*0x5ad06e*/
+      if ( this->u8_D ) /*0x5ad06e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x5ad079*/
-        *((_DWORD *)this + 1) = 0; /*0x5ad081*/
+        this->ptr_4 = 0; /*0x5ad081*/
       }
     }
-    *((_DWORD *)this + 1) = v4; /*0x5ad08a*/
-    *((_DWORD *)this + 2) = a2; /*0x5ad092*/
-    *((_BYTE *)this + 13) = a3 == 0; /*0x5ad095*/
+    this->ptr_4 = v4; /*0x5ad08a*/
+    this->ptr_8 = a2; /*0x5ad092*/
+    this->u8_D = a3 == 0; /*0x5ad095*/
   }
   else
   {
     this->vt_slot_12(); /*0x5ad09e*/
   }
-  AbstractClass *v7 = *((_DWORD *)this + 2); /*0x5ad0a1*/
-  if ( v7 < *((_DWORD *)this + 4) ) /*0x5ad0a9*/
-    *((_DWORD *)this + 4) = v7; /*0x5ad0ab*/
+  AbstractClass *v7 = this->ptr_8; /*0x5ad0a1*/
+  if ( v7 < this->ptr_10 ) /*0x5ad0a9*/
+    this->ptr_10 = v7; /*0x5ad0ab*/
   return 1; /*0x5ad0ae*/
 }
 } // namespace gamemd
+}
 
 // 0x4A0C20
 namespace gamemd {
@@ -602,15 +610,15 @@ unsigned int * VectorClass_ptr_BuildChoiceClass_int_ouseClass::Constructor(EnumC
   int EnumConnectionPointsClass_field_0x08; // eax
   int i; // esi
 
-  _DWORD * v3 = this + 3; /*0x4a0c2c*/
+  _DWORD * v3 = &this->IsInitialized; /*0x4a0c2c*/
   this->Items = 0; /*0x4a0c2f*/
   this->Capacity = 0; /*0x4a0c32*/
   this->Count = 0; /*0x4a0c37*/
   this->CapacityIncrement = 0; /*0x4a0c3a*/
   this->q018 = 1; /*0x4a0c3d*/
-  *((_BYTE *)this + 25) = 0; /*0x4a0c41*/
+  this->u8_19 = 0; /*0x4a0c41*/
   this->IsInitialized = &vt_VectorClass_IConnectionPoint; /*0x4a0c44*/
-  if ( this + 3 != (_DWORD *)aP1 ) /*0x4a0c4a*/
+  if ( &this->IsInitialized != (_DWORD *)aP1 ) /*0x4a0c4a*/
   {
     VectorClass::CleanupTyped((int)(this + 3)); /*0x4a0c4e*/
     EnumConnectionPointsClass_field_0x08 = aP1->EnumConnectionPointsClass_field_0x08; /*0x4a0c54*/
@@ -653,6 +661,7 @@ unsigned int * VectorClass_ptr_BuildChoiceClass_int_ouseClass::Constructor(EnumC
   return this; /*0x4a0cd1*/
 }
 } // namespace gamemd
+}
 
 // 0x4F6A20
 namespace gamemd {
@@ -675,6 +684,7 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity(int a1, int a2)
   return v2; /*0x4f6a6c*/
 }
 } // namespace gamemd
+}
 
 // 0x4F6A80
 namespace gamemd {
@@ -697,6 +707,7 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_0(int a1, int a2
   return v2; /*0x4f6acc*/
 }
 } // namespace gamemd
+}
 
 // 0x4F6AE0
 namespace gamemd {
@@ -720,6 +731,7 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_1(int a1, int a2
   return v2; /*0x4f6b3f*/
 }
 } // namespace gamemd
+}
 
 // 0x4F6B50
 namespace gamemd {
@@ -743,6 +755,7 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_2(int a1, int a2
   return v2; /*0x4f6baf*/
 }
 } // namespace gamemd
+}
 
 // 0x4F6BC0
 namespace gamemd {
@@ -805,6 +818,7 @@ unsigned int * VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_3(int
   return a2; /*0x4f6cea*/
 }
 } // namespace gamemd
+}
 
 // 0x4F6D10
 namespace gamemd {
@@ -867,6 +881,7 @@ unsigned int * VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_4(int
   return a2; /*0x4f6e3a*/
 }
 } // namespace gamemd
+}
 
 // 0x501400
 namespace gamemd {
@@ -925,6 +940,7 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_5(int a1)
   }
 }
 } // namespace gamemd
+}
 
 // 0x50F520
 namespace gamemd {
@@ -972,6 +988,7 @@ AbstractClass * * VectorClass_ptr_BuildChoiceClass_int_ouseClass::Release(int a2
   }
 }
 } // namespace gamemd
+}
 
 // 0x50F660
 namespace gamemd {
@@ -1016,6 +1033,7 @@ AbstractClass * * VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_6(
   return 1; /*0x50f6fe*/
 }
 } // namespace gamemd
+}
 
 // 0x6288F0
 namespace gamemd {
@@ -1123,6 +1141,7 @@ AbstractClass * * VectorClass_ptr_ColorScheme::SetCapacity_0(CCINIClass * aP1, u
   }
 }
 } // namespace gamemd
+}
 
 // 0x491210
 namespace gamemd {
@@ -1154,6 +1173,7 @@ void * VectorClass_ptr_ConvertClass::Constructor_ConvertClass(char a2)
   return (ConvertClass *)this; /*0x4912a8*/
 }
 } // namespace gamemd
+}
 
 // 0x4E1960
 namespace gamemd {
@@ -1163,6 +1183,7 @@ void VectorClass_ptr_ConvertClass::MarkDirty()
   this->q01C = 1; /*0x4e1960*/
 }
 } // namespace gamemd
+}
 
 // 0x63E090
 namespace gamemd {
@@ -1210,6 +1231,7 @@ AbstractClass * * VectorClass_ptr_PlanningBranchClass::Release(int a2, unsigned 
   }
 }
 } // namespace gamemd
+}
 
 // 0x76B8C0
 namespace gamemd {
@@ -1296,6 +1318,7 @@ LABEL_14:
   return 1; /*0x76b957*/
 }
 } // namespace gamemd
+}
 
 // 0x5D8470
 namespace gamemd {
@@ -1306,40 +1329,41 @@ AbstractClass * * VectorClass_Scenario::ResizeAndCopy(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x5d847c*/
   {
-    *((_BYTE *)this + 12) = 0; /*0x5d8482*/
+    this->u8_C = 0; /*0x5d8482*/
     if ( a3 ) /*0x5d8488*/
       AbstractClass *v4 = a3; /*0x5d849e*/
     AbstractClass *v4 = __2_YAPAXI_Z(4 * a2); /*0x5d849a*/
-    *((_BYTE *)this + 12) = 1; /*0x5d84a2*/
+    this->u8_C = 1; /*0x5d84a2*/
     if ( !v4 ) /*0x5d84a6*/
       return 0; /*0x5d851a*/
-    if ( *((_DWORD *)this + 1) ) /*0x5d84a8*/
+    if ( this->ptr_4 ) /*0x5d84a8*/
     {
-      AbstractClass *v5 = *((_DWORD *)this + 2); /*0x5d84af*/
+      AbstractClass *v5 = this->ptr_8; /*0x5d84af*/
       if ( a2 < v5 ) /*0x5d84b4*/
         v5 = a2; /*0x5d84b6*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x5d84bc*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->ptr_4 + 4 * i - 4) ) /*0x5d84bc*/
         ++i; /*0x5d84c1*/
-      if ( *((_BYTE *)this + 13) ) /*0x5d84ce*/
+      if ( this->u8_D ) /*0x5d84ce*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x5d84d9*/
-        *((_DWORD *)this + 1) = 0; /*0x5d84e1*/
+        this->ptr_4 = 0; /*0x5d84e1*/
       }
     }
-    *((_DWORD *)this + 1) = v4; /*0x5d84ea*/
-    *((_DWORD *)this + 2) = a2; /*0x5d84f2*/
-    *((_BYTE *)this + 13) = a3 == 0; /*0x5d84f5*/
+    this->ptr_4 = v4; /*0x5d84ea*/
+    this->ptr_8 = a2; /*0x5d84f2*/
+    this->u8_D = a3 == 0; /*0x5d84f5*/
   }
   else
   {
     this->vt_slot_12(); /*0x5d84fe*/
   }
-  AbstractClass *v7 = *((_DWORD *)this + 2); /*0x5d8501*/
-  if ( v7 < *((_DWORD *)this + 4) ) /*0x5d8509*/
-    *((_DWORD *)this + 4) = v7; /*0x5d850b*/
+  AbstractClass *v7 = this->ptr_8; /*0x5d8501*/
+  if ( v7 < this->ptr_10 ) /*0x5d8509*/
+    this->ptr_10 = v7; /*0x5d850b*/
   return 1; /*0x5d850e*/
 }
 } // namespace gamemd
+}
 
 // 0x5D8730
 namespace gamemd {
@@ -1350,40 +1374,41 @@ AbstractClass * * VectorClass_Scenario2::ResizeAndCopy(int a2, unsigned int * a3
 
   if ( a2 ) /*0x5d873c*/
   {
-    *((_BYTE *)this + 12) = 0; /*0x5d8742*/
+    this->u8_C = 0; /*0x5d8742*/
     if ( a3 ) /*0x5d8748*/
       AbstractClass *v4 = a3; /*0x5d875e*/
     AbstractClass *v4 = __2_YAPAXI_Z(4 * a2); /*0x5d875a*/
-    *((_BYTE *)this + 12) = 1; /*0x5d8762*/
+    this->u8_C = 1; /*0x5d8762*/
     if ( !v4 ) /*0x5d8766*/
       return 0; /*0x5d87da*/
-    if ( *((_DWORD *)this + 1) ) /*0x5d8768*/
+    if ( this->ptr_4 ) /*0x5d8768*/
     {
-      AbstractClass *v5 = *((_DWORD *)this + 2); /*0x5d876f*/
+      AbstractClass *v5 = this->ptr_8; /*0x5d876f*/
       if ( a2 < v5 ) /*0x5d8774*/
         v5 = a2; /*0x5d8776*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x5d877c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->ptr_4 + 4 * i - 4) ) /*0x5d877c*/
         ++i; /*0x5d8781*/
-      if ( *((_BYTE *)this + 13) ) /*0x5d878e*/
+      if ( this->u8_D ) /*0x5d878e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x5d8799*/
-        *((_DWORD *)this + 1) = 0; /*0x5d87a1*/
+        this->ptr_4 = 0; /*0x5d87a1*/
       }
     }
-    *((_DWORD *)this + 1) = v4; /*0x5d87aa*/
-    *((_DWORD *)this + 2) = a2; /*0x5d87b2*/
-    *((_BYTE *)this + 13) = a3 == 0; /*0x5d87b5*/
+    this->ptr_4 = v4; /*0x5d87aa*/
+    this->ptr_8 = a2; /*0x5d87b2*/
+    this->u8_D = a3 == 0; /*0x5d87b5*/
   }
   else
   {
     this->vt_slot_12(); /*0x5d87be*/
   }
-  AbstractClass *v7 = *((_DWORD *)this + 2); /*0x5d87c1*/
-  if ( v7 < *((_DWORD *)this + 4) ) /*0x5d87c9*/
-    *((_DWORD *)this + 4) = v7; /*0x5d87cb*/
+  AbstractClass *v7 = this->ptr_8; /*0x5d87c1*/
+  if ( v7 < this->ptr_10 ) /*0x5d87c9*/
+    this->ptr_10 = v7; /*0x5d87cb*/
   return 1; /*0x5d87ce*/
 }
 } // namespace gamemd
+}
 
 // 0x5D8590
 namespace gamemd {
@@ -1394,29 +1419,29 @@ AbstractClass * * VectorClass_Scenario3::ResizeAndCopy(int a2, unsigned int * a3
 
   if ( a2 ) /*0x5d859c*/
   {
-    *((_BYTE *)this + 12) = 0; /*0x5d85a6*/
+    this->u8_C = 0; /*0x5d85a6*/
     if ( a3 ) /*0x5d85ac*/
       AbstractClass *v4 = a3; /*0x5d85c2*/
     AbstractClass *v4 = __2_YAPAXI_Z(4 * a2); /*0x5d85be*/
-    *((_BYTE *)this + 12) = 1; /*0x5d85c6*/
+    this->u8_C = 1; /*0x5d85c6*/
     if ( v4 ) /*0x5d85ca*/
     {
-      if ( *((_DWORD *)this + 1) ) /*0x5d85d5*/
+      if ( this->ptr_4 ) /*0x5d85d5*/
       {
-        int v6 = *((_DWORD *)this + 2); /*0x5d85dc*/
+        int v6 = this->u32_8; /*0x5d85dc*/
         if ( a2 < v6 ) /*0x5d85e1*/
           v6 = a2; /*0x5d85e3*/
-        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x5d85e9*/
+        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->ptr_4 + 4 * i - 4) ) /*0x5d85e9*/
           ++i; /*0x5d85ee*/
-        if ( *((_BYTE *)this + 13) ) /*0x5d85fb*/
+        if ( this->u8_D ) /*0x5d85fb*/
         {
           __3_YAXPAX_Z(*((void **)this + 1)); /*0x5d8606*/
-          *((_DWORD *)this + 1) = 0; /*0x5d860e*/
+          this->ptr_4 = 0; /*0x5d860e*/
         }
       }
-      *((_DWORD *)this + 1) = v4; /*0x5d8617*/
-      *((_DWORD *)this + 2) = a2; /*0x5d861f*/
-      *((_BYTE *)this + 13) = a3 == 0; /*0x5d8622*/
+      this->ptr_4 = v4; /*0x5d8617*/
+      this->u32_8 = a2; /*0x5d861f*/
+      this->u8_D = a3 == 0; /*0x5d8622*/
       return 1; /*0x5d8628*/
     }
     else
@@ -1431,6 +1456,7 @@ AbstractClass * * VectorClass_Scenario3::ResizeAndCopy(int a2, unsigned int * a3
   }
 }
 } // namespace gamemd
+}
 
 // 0x4E9840
 namespace gamemd {
@@ -1441,40 +1467,41 @@ AbstractClass * * VectorClass_SuperPtr::ResizeAndCopy(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x4e984c*/
   {
-    *((_BYTE *)this + 12) = 0; /*0x4e9852*/
+    this->u8_C = 0; /*0x4e9852*/
     if ( a3 ) /*0x4e9858*/
       AbstractClass *v4 = a3; /*0x4e986e*/
     AbstractClass *v4 = __2_YAPAXI_Z(4 * a2); /*0x4e986a*/
-    *((_BYTE *)this + 12) = 1; /*0x4e9872*/
+    this->u8_C = 1; /*0x4e9872*/
     if ( !v4 ) /*0x4e9876*/
       return 0; /*0x4e98ea*/
-    if ( *((_DWORD *)this + 1) ) /*0x4e9878*/
+    if ( this->ptr_4 ) /*0x4e9878*/
     {
-      AbstractClass *v5 = *((_DWORD *)this + 2); /*0x4e987f*/
+      AbstractClass *v5 = this->ptr_8; /*0x4e987f*/
       if ( a2 < v5 ) /*0x4e9884*/
         v5 = a2; /*0x4e9886*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x4e988c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->ptr_4 + 4 * i - 4) ) /*0x4e988c*/
         ++i; /*0x4e9891*/
-      if ( *((_BYTE *)this + 13) ) /*0x4e989e*/
+      if ( this->u8_D ) /*0x4e989e*/
       {
         __3_YAXPAX_Z(*((void **)this + 1)); /*0x4e98a9*/
-        *((_DWORD *)this + 1) = 0; /*0x4e98b1*/
+        this->ptr_4 = 0; /*0x4e98b1*/
       }
     }
-    *((_DWORD *)this + 1) = v4; /*0x4e98ba*/
-    *((_DWORD *)this + 2) = a2; /*0x4e98c2*/
-    *((_BYTE *)this + 13) = a3 == 0; /*0x4e98c5*/
+    this->ptr_4 = v4; /*0x4e98ba*/
+    this->ptr_8 = a2; /*0x4e98c2*/
+    this->u8_D = a3 == 0; /*0x4e98c5*/
   }
   else
   {
     this->vt_slot_12(); /*0x4e98ce*/
   }
-  AbstractClass *v7 = *((_DWORD *)this + 2); /*0x4e98d1*/
-  if ( v7 < *((_DWORD *)this + 4) ) /*0x4e98d9*/
-    *((_DWORD *)this + 4) = v7; /*0x4e98db*/
+  AbstractClass *v7 = this->ptr_8; /*0x4e98d1*/
+  if ( v7 < this->ptr_10 ) /*0x4e98d9*/
+    this->ptr_10 = v7; /*0x4e98db*/
   return 1; /*0x4e98de*/
 }
 } // namespace gamemd
+}
 
 // 0x6DC850
 namespace gamemd {
@@ -1574,6 +1601,7 @@ LABEL_26:
   return 1; /*0x6dc95a*/
 }
 } // namespace gamemd
+}
 
 // 0x6B44A0
 namespace gamemd {
@@ -1667,6 +1695,7 @@ LABEL_14:
   return 1; /*0x6b451b*/
 }
 } // namespace gamemd
+}
 
 // 0x6B4650
 namespace gamemd {
@@ -1765,6 +1794,7 @@ LABEL_26:
   return 1; /*0x6b4741*/
 }
 } // namespace gamemd
+}
 
 // 0x40B120
 int VectorClass::Clear(int a2, int a3)
@@ -2490,15 +2520,15 @@ DynamicVector * VectorClass_ptr_LightConvertClass::Constructor_VectorClass_Light
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_LightConvertClass;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -2780,15 +2810,15 @@ DynamicVector * VectorClass_ptr_IsometricTileClass::Constructor_VectorClass_Isom
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_IsometricTileClass;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -2812,15 +2842,15 @@ LogicClass * VectorClass_ptr_IsometricTileClass::Constructor_VectorClass_ObjectC
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_ObjectClass;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (LogicClass *)this;
@@ -3618,15 +3648,15 @@ DynamicVector * VectorClass_ptr_VoxelAnimClass::Constructor_VectorClass_VoxelAni
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_VoxelAnimClass;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -3908,15 +3938,15 @@ DynamicVector * VectorClass_ptr_WarheadTypeClass::Constructor_VectorClass_Warhea
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_WarheadTypeClass;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -4198,15 +4228,15 @@ DynamicVector * VectorClass_ptr_WeaponTypeClass::Constructor_VectorClass_WeaponT
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_WeaponTypeClass;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -4488,15 +4518,15 @@ DynamicVector * VectorClass_ptr_AirstrikeClass::Constructor_VectorClass_Airstrik
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_AirstrikeClass;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -5686,15 +5716,15 @@ DynamicVector * VectorClass_ptr_FoggedObjectClass::Constructor_VectorClass_Fogge
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_FoggedObjectClass;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -6710,15 +6740,15 @@ DynamicVector * VectorClass_ptr_CaptureManagerClass::Constructor_VectorClass_Cap
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_CaptureManagerClass;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -9196,9 +9226,9 @@ void VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_Ce
   int result; // eax
   _DWORD *i; // ecx
 
-  if ( !*(_BYTE *)(this + 12) ) /*0x4e0990*/
+  if ( !this->IsInitialized ) /*0x4e0990*/
     return 0; /*0x4e099e*/
-  int v3 = *(_DWORD *)(this + 8); /*0x4e09a4*/
+  int v3 = this->Capacity; /*0x4e09a4*/
   result = 0; /*0x4e09a7*/
   if ( v3 <= 0 ) /*0x4e09ab*/
     return -1; /*0x4e09cc*/
@@ -9210,6 +9240,7 @@ void VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_Ce
   return result; /*0x4e099b*/
 }
 } // namespace gamemd
+}
 
 // 0x4E09E0
 namespace gamemd {
@@ -9284,15 +9315,15 @@ VectorClass * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributio
 {
 {
     int v3;
-    v3 = *(this + 1);
+    v3 = this->Items;
     *(void**)this = &vt_VectorClass_DiscreteDistributionClass_CellClass_DistributionObject_CellClass;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z((void *)(v3 - 4));
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (VectorClass *)this;
@@ -9306,15 +9337,15 @@ DynamicVector * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistribut
 {
 {
     int v3;
-    v3 = *(this + 1);
+    v3 = this->Items;
     *(void**)this = &vt_VectorClass_DiscreteDistributionClass_CellClass_DistributionObject_CellClass;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z((void *)(v3 - 4));
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -18387,15 +18418,15 @@ DynamicVector * VectorClass_ptr_AITriggerTypeClass::Constructor_VectorClass_AITr
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_AITriggerTypeClass;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -18431,15 +18462,15 @@ DynamicVector * VectorClass_ptr_BuildingLightClass::Constructor_VectorClass_Buil
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_BuildingLightClass;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -18541,15 +18572,15 @@ DynamicVector * VectorClass_ptr_AITriggerTypeClass::Constructor_VectorClass_Trig
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_TriggerClass;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -18585,15 +18616,15 @@ DynamicVector * VectorClass_ptr_AITriggerTypeClass::Constructor_VectorClass_Trig
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_TriggerTypeClass;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -18673,15 +18704,15 @@ DynamicVector * VectorClass_ptr_BuildingLightClass::Constructor_VectorClass_Part
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_ParticleSystemClass;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -19003,15 +19034,15 @@ DynamicVector * VectorClass_ptr_CampaignClass::Constructor_VectorClass_CampaignC
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_CampaignClass;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -19091,15 +19122,15 @@ DynamicVector * VectorClass_ptr_HouseTypeClass::Constructor_VectorClass_HouseTyp
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_HouseTypeClass;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -19135,15 +19166,15 @@ DynamicVector * VectorClass_ptr_HouseTypeClass::Constructor_VectorClass_TaskForc
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_TaskForceClass;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -19179,15 +19210,15 @@ DynamicVector * VectorClass_ptr_HouseTypeClass::Constructor_VectorClass_TeamType
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_TeamTypeClass;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -19223,15 +19254,15 @@ DynamicVector * VectorClass_ptr_ScriptTypeClass::Constructor_VectorClass_ScriptT
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_ScriptTypeClass;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -19267,15 +19298,15 @@ DynamicVector * VectorClass_ptr_ScriptTypeClass::Constructor_VectorClass_Overlay
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_OverlayTypeClass;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -19311,15 +19342,15 @@ DynamicVector * VectorClass_ptr_SmudgeTypeClass::Constructor_VectorClass_SmudgeT
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_SmudgeTypeClass;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -19355,15 +19386,15 @@ DynamicVector * VectorClass_ptr_SmudgeTypeClass::Constructor_VectorClass_Terrain
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_TerrainTypeClass;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -19399,15 +19430,15 @@ DynamicVector * VectorClass_ptr_SmudgeTypeClass::Constructor_VectorClass_Buildin
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_BuildingTypeClass;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -19443,15 +19474,15 @@ DynamicVector * VectorClass_ptr_AircraftTypeClass::Constructor_VectorClass_Aircr
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_AircraftTypeClass;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -19487,15 +19518,15 @@ DynamicVector * VectorClass_ptr_AircraftTypeClass::Constructor_VectorClass_UnitT
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_UnitTypeClass;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -19531,15 +19562,15 @@ DynamicVector * VectorClass_ptr_AnimTypeClass::Constructor_VectorClass_AnimTypeC
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_AnimTypeClass;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -19575,15 +19606,15 @@ DynamicVector * VectorClass_ptr_AnimTypeClass::Constructor_VectorClass_InfantryT
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_InfantryTypeClass;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -19619,15 +19650,15 @@ DynamicVector * VectorClass_ptr_AnimTypeClass::Constructor_VectorClass_BulletTyp
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_BulletTypeClass;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -19663,15 +19694,15 @@ DynamicVector * VectorClass_ptr_VoxelAnimTypeClass::Constructor_VectorClass_Voxe
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_VoxelAnimTypeClass;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -19707,15 +19738,15 @@ DynamicVector * VectorClass_ptr_VoxelAnimTypeClass::Constructor_VectorClass_Isom
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_IsometricTileTypeClass;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -19751,15 +19782,15 @@ DynamicVector * VectorClass_ptr_ParticleTypeClass::Constructor_VectorClass_Parti
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_ParticleTypeClass;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -19795,15 +19826,15 @@ DynamicVector * VectorClass_ptr_ParticleTypeClass::Constructor_VectorClass_Parti
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_ParticleSystemTypeClass;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -19839,15 +19870,15 @@ DynamicVector * VectorClass_ptr_ParticleTypeClass::Constructor_VectorClass_Super
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_SuperWeaponTypeClass;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -19883,15 +19914,15 @@ DynamicVector * VectorClass_ptr_SuperClass::Constructor_VectorClass_AbstractType
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_AbstractTypeClass;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -23103,15 +23134,15 @@ DynamicVector * VectorClass_ptr_IonBlastClass::Constructor_VectorClass_IonBlastC
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_IonBlastClass;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -23537,15 +23568,15 @@ VectorClass * VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass::QueryIn
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_IsometricTileTypeClass_TileInsertType;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (VectorClass *)this;
@@ -23559,15 +23590,15 @@ DynamicVector * VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass::Const
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_IsometricTileTypeClass_TileInsertType;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -23849,15 +23880,15 @@ DynamicVector * VectorClass_ptr_LaserDrawClass::Constructor_VectorClass_LaserDra
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_LaserDrawClass;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -24385,15 +24416,15 @@ DynamicVector * VectorClass_ptr_LightSourceClass::Constructor_VectorClass_LightS
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_LightSourceClass;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -29334,15 +29365,15 @@ DynamicVector * VectorClass_ptr_ObjectTypeClass::Constructor_VectorClass_ObjectT
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_ObjectTypeClass;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -29622,15 +29653,15 @@ DynamicVector * VectorClass_ptr_SpotLightClass::Constructor_VectorClass_SpotLigh
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_SpotLightClass;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -30382,15 +30413,15 @@ DynamicVector * VectorClass_ptr_ParasiteClass::Constructor_VectorClass_ParasiteC
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_ParasiteClass;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -31078,15 +31109,15 @@ DynamicVector * VectorClass_ptr_PlanningMemberClass::Constructor_VectorClass_Pla
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_PlanningMemberClass;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -31122,15 +31153,15 @@ DynamicVector * VectorClass_ptr_PlanningMemberClass::Constructor_VectorClass_Pla
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_PlanningBranchClass;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -33286,15 +33317,15 @@ DynamicVector * VectorClass_ptr_GlobalPacketType::Constructor_VectorClass_MultiM
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_MultiMission;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -33330,15 +33361,15 @@ DynamicVector * VectorClass_ptr_GlobalPacketType::Constructor_VectorClass_Global
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_GlobalPacketType;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -33735,15 +33766,15 @@ DynamicVector * VectorClass_ptr_SlaveManagerClass::Constructor_VectorClass_Slave
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_SlaveManagerClass;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -34227,15 +34258,15 @@ DynamicVector * VectorClass_ptr_SpawnManagerClass::Constructor_VectorClass_Spawn
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_SpawnManagerClass;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -36059,15 +36090,15 @@ DynamicVector * VectorClass_UDirtyAreaStruct::Constructor_VectorClass_ShadowCont
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_ShadowControlClass;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -36690,15 +36721,15 @@ DynamicVector * VectorClass_ptr_TemporalClass::Constructor_VectorClass_TemporalC
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_TemporalClass;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -37394,15 +37425,15 @@ DynamicVector * VectorClass_ptr_TiberiumClass::Constructor_VectorClass_TiberiumC
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_TiberiumClass;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
@@ -38578,15 +38609,15 @@ DynamicVector * VectorClass_ptr_WaypointPathClass::Constructor_VectorClass_Waypo
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_WaypointPathClass;
     if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
     this->IsAllocated = 0;
-    *(this + 2) = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;

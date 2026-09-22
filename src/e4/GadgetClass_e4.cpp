@@ -26,6 +26,7 @@ void * GadgetClass::Construct(GadgetClass * aP1, GadgetClass * aP2, GadgetClass 
   return (ControlClass *)result; /*0x4e1333*/
 }
 } // namespace gamemd
+}
 
 // 0x4E1390
 namespace gamemd {
@@ -52,6 +53,7 @@ GadgetClass * * GadgetClass::Dtor()
   return LinkClass::Destruct();
 }
 } // namespace gamemd
+}
 
 // 0x557920
 namespace gamemd {
@@ -89,13 +91,14 @@ int GadgetClass::DrawBuildingPlacement(ControlClass * aP1)
           this->Width + 1,
           i * this->q130 + this->Height + 1,
           this->Visible - 2,
-          v7 == *(_DWORD *)(this + 364));
+          v7 == this->u32_16C);
     }
   }
   (*(void (__thiscall **)(_DWORD))(**(_DWORD **)&DataGlobal_87F8E4[32092] + 36))(*(_DWORD *)&DataGlobal_87F8E4[32092]); /*0x5579f6*/
   return 1; /*0x5579fe*/
 }
 } // namespace gamemd
+}
 
 // 0x60AAB0
 namespace gamemd {
@@ -258,6 +261,7 @@ LABEL_86:
   return 1; /*0x60af23*/
 }
 } // namespace gamemd
+}
 
 // 0x623560
 namespace gamemd {
@@ -282,6 +286,7 @@ AbstractClass * * GadgetClass::SetTooltip(CCINIClass * aP1)
   }
 }
 } // namespace gamemd
+}
 
 // 0x723EA0
 namespace gamemd {
@@ -294,3 +299,4 @@ int GadgetClass::Show()
   return v1->GetInvalidCoord();
 }
 } // namespace gamemd
+}

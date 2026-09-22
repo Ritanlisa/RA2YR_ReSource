@@ -46,6 +46,7 @@ void Player::BuildListString()
   }
   while ( (int)v2 < (int)&HouseClass_Player[40292] ); /*0x5e8e89*/
 }
+}
 
 // 0x5E8BF0
 wchar_t * Player::FindByName()

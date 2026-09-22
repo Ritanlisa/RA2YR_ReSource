@@ -9,20 +9,20 @@ int ArtConfig::validateConfig(Selection_WorldDominationTour * aP1, int a3, Selec
 {
   ObjectClass *v5; // ebp
   MSShapeAnim *v9; // eax
-  v5 = (ObjectClass *)(this + 32); /*0x76fc68*/
-  int v6 = *(_DWORD *)aP3->__pad_4 + *(_DWORD *)(this + 28); /*0x76fc6b*/
-  int v7 = aP3->field_0 + *(_DWORD *)(this + 24); /*0x76fc72*/
+  v5 = (ObjectClass *)(&this->u32_C2); /*0x76fc68*/
+  int v6 = *(_DWORD *)aP3->__pad_4 + this->u32_1C; /*0x76fc6b*/
+  int v7 = aP3->field_0 + this->u32_18; /*0x76fc72*/
   _DWORD v11[22]; // [esp+10h] [ebp-6Ch] BYREF
-  CCFileClass::Construct2(v11, (char **)(this + 32)); /*0x76fc74*/
+  CCFileClass::Construct2(v11, (char **)(&this->u32_C2)); /*0x76fc74*/
   if ( CCFileClass::Open(v11, 0) ) /*0x76fc7f*/
   {
     void * v8 = (void *)__2_YAPAXI_Z(0x4Cu); /*0x76fc8a*/
     if ( v8 ) /*0x76fc94*/
       v9 = (MSShapeAnim *)MSOverlayAnim::Init(v8, v5, v7, v6, a3, 0, (MSShapeAnim *)&aP1->__pad_4[20], 1, 0, 0); /*0x76fcb6*/
     MSShapeAnim *v9 = 0; /*0x76fcbd*/
-    *(_DWORD *)(this + 40) = v9; /*0x76fcbf*/
+    this->ptr_28 = v9; /*0x76fcbf*/
     (*(void (__thiscall **)(MSShapeAnim *, _DWORD))(*(_DWORD *)v9->__pad_0 + 4))(v9, 0); /*0x76fcc8*/
-    PriorityQueue::Add(aP1, *(MSAnim **)(this + 40)); /*0x76fcd6*/
+    PriorityQueue::Add(aP1, *(MSAnim **)(&this->u32_100)); /*0x76fcd6*/
   }
   v11[0] = &vt_CCFileClass; /*0x76fcdf*/
   int v13 = 0; /*0x76fce7*/
@@ -30,6 +30,7 @@ int ArtConfig::validateConfig(Selection_WorldDominationTour * aP1, int a3, Selec
   Vector::Clear((int)v12); /*0x76fcef*/
   v11[0] = &off_7E1668; /*0x76fcf8*/
   return BufferIOFileClass::Dtor(v11); /*0x76fd05*/
+}
 }
 
 // 0x76F910

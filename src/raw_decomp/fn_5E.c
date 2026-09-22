@@ -12108,7 +12108,7 @@ _DWORD *__thiscall NullModemClass::initConnection(
 int __thiscall NullModemClass::closeConnection(_DWORD *this, WinModemClass *aP1)
 {
   Struct::ZeroInitAndSetup(this); /*0x5ef173*/
-  this->q04C = aP1; /*0x5ef17c*/
+  this->u32_4C = aP1; /*0x5ef17c*/
   return (int)aP1->__pad_0; /*0x5ef17f*/
 }
 

@@ -19,6 +19,7 @@ int Font::GetGlyphDataForChar(AbstractClass * aP1)
   }
   return result; /*0x4346ee*/
 }
+}
 
 // 0x434CD0
 int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, int aP1a, AbstractClass * aP4, AbstractClass * aP5, AbstractClass * aP6, AbstractClass * aP7, AbstractClass * aP8, AbstractClass * aP9)
@@ -335,4 +336,5 @@ LABEL_59:
 LABEL_73:
   BufferIO::Cleanup(aP0, aP1); /*0x4352ed*/
   return 1; /*0x435157*/
+}
 }

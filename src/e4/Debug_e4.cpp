@@ -20,11 +20,11 @@ int Debug::ScrollText(CellStruct * aP1)
   result = *((_BYTE *)&(&g_MatrixTransformState)[22] + 10); /*0x5bd0d0*/
   if ( *((_BYTE *)&(&g_MatrixTransformState)[22] + 10) ) /*0x5bd0dd*/
   {
-    int v4 = *(_DWORD *)(this + 10020); /*0x5bd0ef*/
-    v5 = (IUnknown *)(*(_DWORD *)(this + 10012) + v4); /*0x5bd108*/
-    aP2 = (IUnknown *)(*(_DWORD *)(this + 10016) + *(_DWORD *)(this + 10024)); /*0x5bd10e*/
-    v6 = (IUnknown *)(v4 + *(_DWORD *)(this + 10028)); /*0x5bd112*/
-    *(_BYTE *)(this + 10036) = 0; /*0x5bd119*/
+    int v4 = this->u32_2724; /*0x5bd0ef*/
+    v5 = (IUnknown *)(this->u32_271C + v4); /*0x5bd108*/
+    aP2 = (IUnknown *)(this->u32_2720 + this->u32_2728); /*0x5bd10e*/
+    v6 = (IUnknown *)(v4 + this->u32_272C); /*0x5bd112*/
+    this->u8_2734 = 0; /*0x5bd119*/
     v7 = (IUnknown *)((char *)v5 + strlen((const char *)aP1)); /*0x5bd127*/
     if ( (int)v7 > (int)v6 ) /*0x5bd12b*/
       v7 = v6; /*0x5bd12d*/
@@ -33,21 +33,21 @@ int Debug::ScrollText(CellStruct * aP1)
     {
       char * v12 = (char *)aP2 + 20 * (_DWORD)v5 + 5 * (_DWORD)v5 + this; /*0x5bd148*/
       char * v9 = (char *)((char *)aP1 - (char *)v5); /*0x5bd15c*/
-      _DWORD * v11 = (_DWORD *)(this + 4 * (_DWORD)&aP2->__pad_1D8[20 * (_DWORD)v5 + 28 + 5 * (_DWORD)v5]); /*0x5bd15e*/
+      _DWORD * v11 = (_DWORD *)(&this->u32_10 * (_DWORD)&aP2->__pad_1D8[20 * (_DWORD)v5 + 28 + 5 * (_DWORD)v5]); /*0x5bd15e*/
       for ( i = (char *)((char *)aP1 - (char *)v5); ; v9 = i ) /*0x5bd162*/
       {
         aP1a = *((_BYTE *)&v8->field_0 + (_DWORD)v9); /*0x5bd16f*/
         *v12 = Debug_Helper(aP1a); /*0x5bd187*/
-        *v11 = *(_DWORD *)(this + 10000); /*0x5bd18f*/
+        *v11 = this->u32_2710; /*0x5bd18f*/
         if ( aP1a == 10 ) /*0x5bd197*/
         {
-          int v10 = *(_DWORD *)(this + 10016); /*0x5bd199*/
-          *(_DWORD *)(this + 10012) = 0; /*0x5bd19f*/
-          *(_DWORD *)(this + 10016) = v10 + 1; /*0x5bd1aa*/
+          int v10 = this->u32_2720; /*0x5bd199*/
+          this->u32_271C = 0; /*0x5bd19f*/
+          this->u32_2720 = v10 + 1; /*0x5bd1aa*/
         }
         else
         {
-          ++*(_DWORD *)(this + 10012); /*0x5bd1b2*/
+          ++this->u32_271C; /*0x5bd1b2*/
         }
         v8 = (IUnknown *)((char *)v8 + 1); /*0x5bd1c0*/
         v11 += 25; /*0x5bd1c9*/
@@ -61,6 +61,7 @@ int Debug::ScrollText(CellStruct * aP1)
   return result; /*0x5bd1e8*/
 }
 } // namespace gamemd
+}
 
 // 0x6E61F0
 namespace gamemd {
@@ -79,6 +80,7 @@ int Debug::AccumFlags()
   return i; /*0x6e6213*/
 }
 } // namespace gamemd
+}
 
 // 0x4068E0
 namespace gamemd {

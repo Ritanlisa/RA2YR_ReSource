@@ -40,6 +40,7 @@ int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25(unsigned short * a
   return result; /*0x4939c9*/
 }
 } // namespace gamemd
+}
 
 // 0x493A60
 namespace gamemd {
@@ -80,6 +81,7 @@ int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent50(unsigned short * a
   return result; /*0x493af4*/
 }
 } // namespace gamemd
+}
 
 // 0x493B90
 namespace gamemd {
@@ -118,6 +120,7 @@ int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25_0(unsigned short *
   return result; /*0x493c29*/
 }
 } // namespace gamemd
+}
 
 // 0x493DF0
 namespace gamemd {
@@ -153,6 +156,7 @@ int BlitTransXlatAlpha_ushort::AddRef(unsigned short * a2, unsigned char * a3, i
   return result; /*0x493e92*/
 }
 } // namespace gamemd
+}
 
 // 0x493EA0
 namespace gamemd {
@@ -179,6 +183,7 @@ int BlitTransXlatAlpha_ushort::BlitRect(int a2, int a3, int a4, int a5, int a6, 
            0);
 }
 } // namespace gamemd
+}
 
 // 0x493F00
 namespace gamemd {
@@ -197,6 +202,7 @@ int BlitTransXlatAlpha_ushort::GetSize(int a2, int a3, int a4, int a5, int a6, i
            0);
 }
 } // namespace gamemd
+}
 
 // 0x4939D0
 namespace gamemd {
@@ -333,10 +339,10 @@ BlitTransXlatAlpha_ushort * BlitTransXlatAlpha_ushort::Blit(char a2)
 {
 {
     void *v3;
-    v3 = (void *)*(this + 2);
+    v3 = (void *)this->ptr_8;
     *(void**)this = &vt_BlitTransXlatAlpha_unsigned_short;
     FractalNoise::Release(v3);
-    *(this + 2) = 0;
+    this->ptr_8 = 0;
     *(void**)this = &vt_Blitter;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);

@@ -17,7 +17,7 @@ void TacticalClass::DrawBuildingPlacement(IUnknown * aP1, int * a2)
 {
   unsigned __int8 v12; // cl
   _BYTE * v4 = *(_BYTE **)&g_BuildingTypeClass_Array->__pad_0[4 * this->field44]; /*0x47f52c*/
-  int v15 = 15 * *(char *)(this + 283); /*0x47f534*/
+  int v15 = 15 * this->u32_11B; /*0x47f534*/
   int v16 = (*(int (__thiscall **)(_BYTE *))(*(_DWORD *)v4 + 156))(v4); /*0x47f544*/
   int v19; // [esp+20h] [ebp-8h] BYREF
   int * v5 = BuildingClass::CalcDrawPos(this, (IUnknown *)&v19); /*0x47f54b*/
@@ -32,7 +32,7 @@ void TacticalClass::DrawBuildingPlacement(IUnknown * aP1, int * a2)
   int v18 = v11; /*0x47f580*/
   if ( (v9 & 0x80u) != 0 ) /*0x47f584*/
   {
-    v12 = *(_BYTE *)(this + 286); /*0x47f586*/
+    v12 = this->u8_11E; /*0x47f586*/
     if ( v12 >= 9u && v12 <= 0x11u ) /*0x47f594*/
     {
       v17 -= 15; /*0x47f5a0*/
@@ -42,7 +42,7 @@ void TacticalClass::DrawBuildingPlacement(IUnknown * aP1, int * a2)
   if ( !this->field34 ) /*0x47f5a8*/
     TacticalClass::SetView(this, 0, 0x10000, 0, 1000, 1000, 1000); /*0x47f5c9*/
   char v13 = v4[682]; /*0x47f5ce*/
-  LOBYTE(aP1) = *(_BYTE *)(this + 286); /*0x47f5dc*/
+  LOBYTE(aP1) = this->u8_11E; /*0x47f5dc*/
   if ( v13 ) /*0x47f5e0*/
   {
     LOBYTE(aP1) = 0; /*0x47f5e2*/
@@ -92,6 +92,7 @@ LABEL_9:
   }
 }
 } // namespace gamemd
+}
 
 // 0x4801F0
 namespace gamemd {
@@ -101,7 +102,7 @@ unsigned int TacticalClass::RenderCellFogOfWar(IUnknown * aP1, Tactical * aP2)
   unsigned int result; // eax
 
   unsigned int v4; // eax
-  LOBYTE(v4) = Cell::GetAdjacentPassableMask((__int16 *)(this + 36), 0); /*0x480202*/
+  LOBYTE(v4) = Cell::GetAdjacentPassableMask((__int16 *)(&this->q00C6), 0); /*0x480202*/
   this->field48 = v4; /*0x480207*/
   v4 = (char)v4; /*0x48020d*/
   if ( (char)v4 == -2 ) /*0x480213*/
@@ -113,8 +114,8 @@ unsigned int TacticalClass::RenderCellFogOfWar(IUnknown * aP1, Tactical * aP2)
     v4 = 0; /*0x480221*/
   }
   RenderFogOfWar((unsigned int *)aP1, (int *)aP2->__pad_0, v4); /*0x480230*/
-  result = Cell::GetAdjacentPassableMask((__int16 *)(this + 36), 1); /*0x48023e*/
-  *(_BYTE *)(this + 289) = result; /*0x480243*/
+  result = Cell::GetAdjacentPassableMask((__int16 *)(&this->q00C6), 1); /*0x48023e*/
+  this->u8_121 = result; /*0x480243*/
   if ( (g_ScenarioClass_Instance->nextScenario[0] & 0x1000) != 0 && !HouseClass_Player->__pad_1D8[29] ) /*0x48025c*/
   {
     result = (char)result; /*0x480266*/
@@ -132,6 +133,7 @@ unsigned int TacticalClass::RenderCellFogOfWar(IUnknown * aP1, Tactical * aP2)
   return result; /*0x48027d*/
 }
 } // namespace gamemd
+}
 
 // 0x4802A0
 namespace gamemd {
@@ -148,10 +150,10 @@ void TacticalClass::DrawCellTerrainOverlay(int * a2, int * a3)
   }
   else
   {
-    v5 = *(unsigned __int8 *)(this + 282); /*0x4802b8*/
+    v5 = *(unsigned __int8 *)(&this->field702); /*0x4802b8*/
     v6 = *((_DWORD *)g_FrameCounter + v4); /*0x4802be*/
     if ( *(int *)(v6 + 752) > 1 ) /*0x4802c8*/
-      CellClass::GetTerrainFlag((void *)v6, *(unsigned __int8 *)(this + 282)); /*0x4802cd*/
+      CellClass::GetTerrainFlag((void *)v6, *(unsigned __int8 *)(&this->field702)); /*0x4802cd*/
   }
   if ( *(_BYTE *)(v6 + 737) ) /*0x4802e4*/
     TacticalClass::DrawCellOverlay( /*0x480339*/
@@ -159,14 +161,15 @@ void TacticalClass::DrawCellTerrainOverlay(int * a2, int * a3)
       v5,
       g_DSurface_Hidden_2,
       *a2,
-      a2[1] - 15 * *(char *)(this + 283),
+      a2[1] - 15 * this->u32_11B,
       *a3,
       a3[1],
       a3[2],
       a3[3],
-      58 - 15 * *(char *)(this + 283));
+      58 - 15 * this->u32_11B);
 }
 } // namespace gamemd
+}
 
 // 0x4AC380
 namespace gamemd {
@@ -176,22 +179,22 @@ void* TacticalClass::ProcessScroll(int * a2)
   VectorClass *v3; // eax
   VectorClass *v10; // [esp+10h] [ebp-10h] BYREF
   int v11; // [esp+14h] [ebp-Ch]
-  if ( !*(_BYTE *)(this + 4559) || this->q11B3 || this->q11B4 ) /*0x4ac3a3*/
+  if ( !this->u8_11CF || this->q11B3 || this->q11B4 ) /*0x4ac3a3*/
   {
-    LOBYTE(v3) = *(_BYTE *)(this + 4560); /*0x4ac436*/
+    LOBYTE(v3) = this->u8_11D0; /*0x4ac436*/
     if ( (_BYTE)v3 ) /*0x4ac43e*/
     {
       int v6 = a2[1]; /*0x4ac45b*/
-      v10 = *a2 - *(_DWORD *)(this + 4564); /*0x4ac45e*/
-      v11 = v6 - *(_DWORD *)(this + 4568); /*0x4ac467*/
+      v10 = *a2 - this->u32_11D4; /*0x4ac45e*/
+      v11 = v6 - this->u32_11D8; /*0x4ac467*/
       double v7 = Math::Sqrt((double)v10 * (double)v10 + (double)v11 * (double)v11); /*0x4ac484*/
       v3 = Math::RoundToInt(v7); /*0x4ac48c*/
       if ( v3 > 4 ) /*0x4ac494*/
       {
         char v8 = this->q11B3; /*0x4ac496*/
         LOBYTE(v3) = 1; /*0x4ac49c*/
-        *(_BYTE *)(this + 4559) = 1; /*0x4ac4a0*/
-        *(_BYTE *)(this + 4560) = 0; /*0x4ac4a6*/
+        this->u8_11CF = 1; /*0x4ac4a0*/
+        this->u8_11D0 = 0; /*0x4ac4a6*/
         if ( !v8 && !this->q11B4 ) /*0x4ac4af*/
         {
           BYTE1(g_TacticalClass_Instance[863].__tail_0) = 1; /*0x4ac4c0*/
@@ -215,10 +218,10 @@ void* TacticalClass::ProcessScroll(int * a2)
       v4 = 0; /*0x4ac3ea*/
     if ( v4 >= g_DSurface_WindowOffset ) /*0x4ac3ee*/
       v4 = g_DSurface_WindowOffset - 1; /*0x4ac3f0*/
-    int v5 = *(_DWORD *)(this + 4572); /*0x4ac3f3*/
+    int v5 = this->u32_11DC; /*0x4ac3f3*/
     v10 = v3; /*0x4ac3f9*/
     v11 = v4; /*0x4ac3ff*/
-    if ( v3 != v5 || v4 != *(_DWORD *)(this + 4576) ) /*0x4ac40b*/
+    if ( v3 != v5 || v4 != this->u32_11E0 ) /*0x4ac40b*/
     {
       BYTE1(g_TacticalClass_Instance[863].__tail_0) = 1; /*0x4ac41c*/
       LOBYTE(v3) = TacticalClass::UpdateScrollMaxBounds(&v10); /*0x4ac429*/
@@ -227,6 +230,7 @@ void* TacticalClass::ProcessScroll(int * a2)
   return v3; /*0x4ac42e*/
 }
 } // namespace gamemd
+}
 
 // 0x4AC700
 namespace gamemd {
@@ -286,9 +290,9 @@ unsigned int * TacticalClass::SetDisplayMode(unsigned int * a2, char a3)
         result = (_DWORD *)this->q11BC; /*0x4ac7d4*/
         if ( result ) /*0x4ac7dc*/
         {
-          *result = *((_DWORD *)this + 1136); /*0x4ac7ea*/
-          result[1] = *((_DWORD *)this + 1137); /*0x4ac7ef*/
-          result[2] = *((_DWORD *)this + 1138); /*0x4ac7f5*/
+          *result = this->u32_11C0; /*0x4ac7ea*/
+          result[1] = this->u32_11C4; /*0x4ac7ef*/
+          result[2] = this->u32_11C8; /*0x4ac7f5*/
           this->q11BC = 0; /*0x4ac7f8*/
           return (_DWORD *)(*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 16))(g_WWMouseClass_Instance); /*0x4ac80a*/
         }
@@ -298,6 +302,7 @@ unsigned int * TacticalClass::SetDisplayMode(unsigned int * a2, char a3)
   return result; /*0x4ac7a0*/
 }
 } // namespace gamemd
+}
 
 // 0x4AE290
 namespace gamemd {
@@ -408,6 +413,7 @@ void TacticalClass::InterpolateView()
   }
 }
 } // namespace gamemd
+}
 
 // 0x4F45B0
 namespace gamemd {
@@ -463,6 +469,7 @@ LABEL_13:
   return result; /*0x4f476d*/
 }
 } // namespace gamemd
+}
 
 // 0x547230
 namespace gamemd {
@@ -481,7 +488,7 @@ void TacticalClass::DrawCellOverlay(int a2, IUnknown * aP2, int a4, int a5, IUnk
      || v10 >= *(_DWORD *)&g_NetworkPlayerBuffer[80476] + 10)
     || v10 - (_DWORD)v11 == -1 )
   {
-    if ( *(_BYTE *)(this + 737) ) /*0x547294*/
+    if ( this->u8_2E1 ) /*0x547294*/
     {
   unsigned int v17; // eax
       v16 = (IUnknown *)&g_NetworkPlayerBuffer[80368]; /*0x5472a2*/
@@ -543,6 +550,7 @@ LABEL_17:
   }
 }
 } // namespace gamemd
+}
 
 // 0x6D04F0
 namespace gamemd {
@@ -618,6 +626,7 @@ LABEL_18:
   return v4; /*0x6d0535*/
 }
 } // namespace gamemd
+}
 
 // 0x6D2DE0
 namespace gamemd {
@@ -726,6 +735,7 @@ signed int TacticalClass::RenderIsometricOverlay(IUnknown * aP1, IUnknown * aP2,
   return result; /*0x6d3034*/
 }
 } // namespace gamemd
+}
 
 // 0x6D3660
 namespace gamemd {
@@ -813,6 +823,7 @@ LABEL_11:
   return result; /*0x6d3866*/
 }
 } // namespace gamemd
+}
 
 // 0x6D6D10
 namespace gamemd {
@@ -1006,6 +1017,7 @@ void* * TacticalClass::DrawBuildingsInView(AbstractClass * aP1)
   return result; /*0x6d71d3*/
 }
 } // namespace gamemd
+}
 
 // 0x6D9B50
 namespace gamemd {
@@ -1046,6 +1058,7 @@ LABEL_10:
   }
 }
 } // namespace gamemd
+}
 
 // 0x6DA380
 namespace gamemd {
@@ -1140,6 +1153,7 @@ LABEL_15:
   return result; /*0x6da501*/
 }
 } // namespace gamemd
+}
 
 // 0x6DBE20
 namespace gamemd {
@@ -1373,6 +1387,7 @@ LABEL_44:
   }
 }
 } // namespace gamemd
+}
 
 // 0x732D10
 namespace gamemd {
@@ -1524,6 +1539,7 @@ LABEL_11:
   return v2; /*0x732fd0*/
 }
 } // namespace gamemd
+}
 
 // 0x41B900
 namespace gamemd {

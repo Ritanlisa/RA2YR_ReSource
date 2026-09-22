@@ -55,6 +55,7 @@ Tactical * * Mouse::SetBounds(IUnknown * aP1)
   return result; /*0x4a8d17*/
 }
 } // namespace gamemd
+}
 
 // 0x5BDC80
 namespace gamemd {
@@ -118,6 +119,7 @@ int Mouse::SetCursor(ObjectClass * aP1, ObjectClass * aP2)
   return 1; /*0x5bdcd8*/
 }
 } // namespace gamemd
+}
 
 // 0x6938C0
 namespace gamemd {
@@ -134,6 +136,7 @@ int Mouse::ReleaseCapture()
   return result; /*0x6938db*/
 }
 } // namespace gamemd
+}
 
 // 0x7B93F0
 namespace gamemd {
@@ -170,6 +173,7 @@ AbstractClass * * Mouse::DrawCursor(IUnknown * aP1, WWMouseClass * aP2, int a4)
   }
 }
 } // namespace gamemd
+}
 
 // 0x53EC90
 namespace gamemd {

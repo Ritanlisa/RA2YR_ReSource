@@ -25,6 +25,7 @@ int Trigger::EnableOnce(AbstractClass * aP1)
   return result; /*0x554a75*/
 }
 } // namespace gamemd
+}
 
 // 0x5CBD20
 namespace gamemd {
@@ -39,23 +40,24 @@ MSShapeAnim * * Trigger::initTrigger(MSShapeAnim * aP1, MSShapeAnim * aP2, int a
   this->Trigger_field_0x10 = Timer::GetTicks(); /*0x5cbd48*/
   this->q018 = 0; /*0x5cbd4f*/
   this->q008 = a5; /*0x5cbd52*/
-  *((_DWORD *)this + 14) = a7; /*0x5cbd58*/
-  *((_DWORD *)this + 9) = a6; /*0x5cbd5f*/
-  *((_DWORD *)this + 10) = 0; /*0x5cbd62*/
-  *((_BYTE *)this + 52) = 0; /*0x5cbd65*/
-  *((_BYTE *)this + 60) = 0; /*0x5cbd68*/
+  this->u32_38 = a7; /*0x5cbd58*/
+  this->ptr_24 = a6; /*0x5cbd5f*/
+  this->u32_28 = 0; /*0x5cbd62*/
+  this->u8_34 = 0; /*0x5cbd65*/
+  this->u8_3C = 0; /*0x5cbd68*/
   *(_DWORD *)this = &vt_MSShapeAnim; /*0x5cbd6a*/
-  FileClassToBuffer = LoadFileClassToBuffer((char **)aP1, (bool *)this + 60); /*0x5cbd70*/
-  *((_DWORD *)this + 7) = FileClassToBuffer; /*0x5cbd75*/
+  FileClassToBuffer = LoadFileClassToBuffer((char **)aP1, (bool *)&this->u32_180); /*0x5cbd70*/
+  this->u32_1C = FileClassToBuffer; /*0x5cbd75*/
   this->Trigger_field_0x2C = 0; /*0x5cbd78*/
   ObjectClass *v10 = *(__int16 *)(FileClassToBuffer + 6) - 1; /*0x5cbd83*/
-  *((_DWORD *)this + 17) = aP7; /*0x5cbd84*/
+  this->u32_44 = aP7; /*0x5cbd84*/
   this->q030 = v10; /*0x5cbd87*/
   this->q010 = 0; /*0x5cbd8a*/
   *(_DWORD *)this = &vt_MSFadeAnim; /*0x5cbd8d*/
   return this; /*0x5cbd95*/
 }
 } // namespace gamemd
+}
 
 // 0x76D4D0
 namespace gamemd {
@@ -94,7 +96,7 @@ void Trigger::ProcessMapEvents(int this@<ecx> a1, int *a2@<ebp> a2, int a3@<edi>
   MSShapeAnim *v51; // [esp+6Ch] [ebp-E0h]
   int v52; // [esp+70h] [ebp-DCh]
   v5 = 0; /*0x76d4da*/
-  int v8 = Count::Get((_DWORD *)(this + 1112)); /*0x76d4e3*/
+  int v8 = Count::Get((_DWORD *)(&this->u32_1BC2)); /*0x76d4e3*/
   VectorCursor::Construct(&v28, v8 + 44, 0); /*0x76d4f0*/
   while ( ((unsigned __int8 (__thiscall *)(void ***))v28[1])(&v28) ) /*0x76d4fd*/
   {
@@ -111,7 +113,7 @@ void Trigger::ProcessMapEvents(int this@<ecx> a1, int *a2@<ebp> a2, int a3@<edi>
   v52 = 10; /*0x76d565*/
   v51 = 0; /*0x76d569*/
   Trigger::checkCondition(&v41, 0, 0); /*0x76d56d*/
-  int v11 = *(_DWORD *)(this + 1116); /*0x76d572*/
+  int v11 = this->u32_45C; /*0x76d572*/
   v41 = &vt_DynamicVectorClass_MSAnim; /*0x76d57c*/
   v39 = (ObjectClass *)10; /*0x76d585*/
   v45 = 0; /*0x76d589*/
@@ -120,7 +122,7 @@ void Trigger::ProcessMapEvents(int this@<ecx> a1, int *a2@<ebp> a2, int a3@<edi>
   {
   int v32; // [esp+20h] [ebp-12Ch]
     unsigned int v12 = *(_DWORD *)(*(_DWORD *)(*(_DWORD *)(v32 + 4) + 8 * var128 + 4) + 8); /*0x76d5bc*/
-    CellType = WDTClass::GetCellType(*(_DWORD **)(this + 1164), v12); /*0x76d5cd*/
+    CellType = WDTClass::GetCellType(*(_DWORD **)(&this->u32_1D04), v12); /*0x76d5cd*/
     int v14 = WDTClass::GetCellType(*(_DWORD **)(a4 + 4), v12); /*0x76d5d7*/
     if ( v14 != CellType ) /*0x76d5db*/
     {
@@ -128,34 +130,34 @@ void Trigger::ProcessMapEvents(int this@<ecx> a1, int *a2@<ebp> a2, int a3@<edi>
       while ( EventQueue::Process(*(_DWORD **)&stru_87C374[13308]) ) /*0x76d5ea*/
       {
         if ( EventQueue::Read(*(_DWORD **)&stru_87C374[13308]) == 27 ) /*0x76d603*/
-          *(_BYTE *)(this + 1092) = 1; /*0x76d605*/
+          this->q444 = 1; /*0x76d605*/
       }
-      ecx13 = !*(_BYTE *)(this + 1092) || a6; /*0x76d635*/
+      ecx13 = !this->q444 || a6; /*0x76d635*/
   int v27; // [esp+8h] [ebp-144h]
       Map_Process_76FD40(v14, (ObjectClass *)this, ecx13, v25, v26, v27); /*0x76d64f*/
     }
     if ( a5 && v14 == 1 )
     {
       int v16 = *(_DWORD *)(*(_DWORD *)(v32 + 4) + 8 * var128 + 4); /*0x76d67a*/
-      v15 = (MSShapeAnim *)(*(_DWORD *)(v16 + 16) + *(_DWORD *)(*(_DWORD *)(this + 1116) + 68)); /*0x76d695*/
-      ebp18 = *(_DWORD *)(*(_DWORD *)(this + 1116) + 72) + *(_DWORD *)(v16 + 20); /*0x76d69a*/
-      if ( *(_DWORD *)(this + 1136) ) /*0x76d68f*/
+      v15 = (MSShapeAnim *)(*(_DWORD *)(v16 + 16) + *(_DWORD *)(this->u32_45C + 68)); /*0x76d695*/
+      ebp18 = *(_DWORD *)(this->u32_45C + 72) + *(_DWORD *)(v16 + 20); /*0x76d69a*/
+      if ( this->ptr_470 ) /*0x76d68f*/
       {
   _DWORD v53[22]; // [esp+74h] [ebp-D8h] BYREF
-        CCFileClass::Construct2(v53, *(char ***)(this + 1136)); /*0x76d6a9*/
+        CCFileClass::Construct2(v53, *(char ***)(&this->u32_1C46)); /*0x76d6a9*/
         if ( CCFileClass::Open(v53, 0) ) /*0x76d6b3*/
         {
           void * v19 = (void *)__2_YAPAXI_Z(0x48u); /*0x76d6be*/
           if ( v19 ) /*0x76d6c8*/
             v5 = (ObjectClass *)Trigger::initTrigger( /*0x76d6ec*/
                                   v19,
-                                  *(MSShapeAnim **)(this + 1136),
+                                  *(MSShapeAnim **)(&this->u32_1C46),
                                   v15,
                                   ebp18,
-                                  *(_DWORD *)(this + 1132),
+                                  this->u32_46C,
                                   3,
                                   512,
-                                  (MSShapeAnim *)(this + 24));
+                                  (MSShapeAnim *)(&this->u32_84));
   int v49; // [esp+64h] [ebp-E8h]
           if ( (int)v51 < v49 /*0x76d71b*/
             || (v50 || !v49)
@@ -176,22 +178,22 @@ void Trigger::ProcessMapEvents(int this@<ecx> a1, int *a2@<ebp> a2, int a3@<edi>
         BufferIOFileClass::Dtor(v53); /*0x76d75d*/
       }
   _DWORD v56[22]; // [esp+E0h] [ebp-6Ch] BYREF
-      CCFileClass::Construct2(v56, *(char ***)(this + 1140)); /*0x76d770*/
+      CCFileClass::Construct2(v56, *(char ***)(&this->u32_1C80)); /*0x76d770*/
       if ( CCFileClass::Open(v56, 0) )
       {
         void * v21 = (void *)__2_YAPAXI_Z(0x40u); /*0x76d78c*/
         v18 = v21
             ? (MSShapeAnim *)MSShapeAnim::Constructor(
                                v21,
-                               *(MSShapeAnim **)(this + 1140),
+                               *(MSShapeAnim **)(&this->u32_1C80),
                                v15,
                                ebp18,
-                               *(MSShapeAnim **)(this + 1132),
+                               *(MSShapeAnim **)(&this->u32_1C42),
                                5,
                                (MSShapeAnim *)1,
                                (MSShapeAnim *)0x200)
             : 0;
-        MSAnim::SetField(v18, *(_DWORD *)(this + 1144) - 1); /*0x76d7c8*/
+        MSAnim::SetField(v18, this->u32_478 - 1); /*0x76d7c8*/
         MSAnim::GetField(v18, 0); /*0x76d7d0*/
         TerritoryUpdateDisplayWOL(v18, 0); /*0x76d7d8*/
         Trigger::executeActions(*(_DWORD **)(*(_DWORD *)(v32 + 4) + 8 * var128 + 4), (int)v18); /*0x76d7f0*/
@@ -226,11 +228,11 @@ void Trigger::ProcessMapEvents(int this@<ecx> a1, int *a2@<ebp> a2, int a3@<edi>
       while ( EventQueue::Process(*(_DWORD **)&stru_87C374[13308]) ) /*0x76d8cb*/
       {
         if ( EventQueue::Read(*(_DWORD **)&stru_87C374[13308]) == 27 ) /*0x76d8e4*/
-          *(_BYTE *)(this + 1092) = 1; /*0x76d8e6*/
+          this->q444 = 1; /*0x76d8e6*/
       }
       if ( ((unsigned __int8 (__thiscall *)(void ***))v34[1])(&v34) ) /*0x76d905*/
       {
-        if ( *(_BYTE *)(this + 1092) ) /*0x76d910*/
+        if ( this->q444 ) /*0x76d910*/
         {
           v24 = (void (__thiscall ***)(_DWORD, int))v35[1][v36]; /*0x76d925*/
           if ( v24 ) /*0x76d92a*/
@@ -242,7 +244,7 @@ void Trigger::ProcessMapEvents(int this@<ecx> a1, int *a2@<ebp> a2, int a3@<edi>
           String::Assign((char **)&v37, aTargetzoom); /*0x76d944*/
           if ( String::NotEquals((const char **)&v37, 0) ) /*0x76d94e*/
           {
-            Trigger::processTrigger(&v28, this + 1172, 0); /*0x76d963*/
+            Trigger::processTrigger(&v28, &this->u32_1250, 0); /*0x76d963*/
             while ( ((unsigned __int8 (__thiscall *)(void ***))v28[1])(&v28) ) /*0x76d970*/
             {
               if ( !String::Compare((const char **)&v37, *(const char ***)(*(_DWORD *)(v29 + 4) + 4 * v30)) ) /*0x76d98a*/
@@ -264,7 +266,7 @@ void Trigger::ProcessMapEvents(int this@<ecx> a1, int *a2@<ebp> a2, int a3@<edi>
     }
     while ( ((unsigned __int8 (__thiscall *)(void ***))v38[1])(&v38) ); /*0x76da41*/
   }
-  ComPtr::Set((rc_ptr_base *)(this + 1160), *(_DWORD *)(a4 + 4)); /*0x76da5d*/
+  ComPtr::Set((rc_ptr_base *)(&this->u32_1D00), *(_DWORD *)(a4 + 4)); /*0x76da5d*/
   v38 = &vt_VectorCursor_MSAnim_DynamicVectorClass_MSAnim; /*0x76da66*/
   v34 = &vt_VectorCursor_MSAnim_DynamicVectorClass_MSAnim; /*0x76da6a*/
   v31 = &vt_VectorCursor_rc_ptr_WorldDominationTour_Territory_DynamicVectorClass_rc_ptr_WorldDominationTour_Territory; /*0x76da76*/
@@ -284,6 +286,7 @@ void Trigger::ProcessMapEvents(int this@<ecx> a1, int *a2@<ebp> a2, int a3@<edi>
   }
 }
 } // namespace gamemd
+}
 
 // 0x76F090
 namespace gamemd {
@@ -296,6 +299,7 @@ unsigned int * Trigger::processTrigger(int a2, int a3)
   return this; /*0x76f0a6*/
 }
 } // namespace gamemd
+}
 
 // 0x76F1C0
 namespace gamemd {
@@ -305,7 +309,7 @@ unsigned int * Trigger::checkCondition(ObjectClass * aP1, ObjectClass * aP2)
   this->q004 = 0; /*0x76f1cb*/
   this->q008 = aP1; /*0x76f1ce*/
   this->q030 = 1; /*0x76f1d1*/
-  *((_BYTE *)this + 13) = 0; /*0x76f1d5*/
+  this->u8_D = 0; /*0x76f1d5*/
   *this = &vt_VectorClass_MSAnim; /*0x76f1d8*/
   if ( aP1 ) /*0x76f1de*/
   {
@@ -315,11 +319,12 @@ unsigned int * Trigger::checkCondition(ObjectClass * aP1, ObjectClass * aP2)
       return this; /*0x76f1ee*/
     }
     this->q004 = __2_YAPAXI_Z(4 * (_DWORD)aP1); /*0x76f1fd*/
-    *((_BYTE *)this + 13) = 1; /*0x76f200*/
+    this->u8_D = 1; /*0x76f200*/
   }
   return this; /*0x76f1ed*/
 }
 } // namespace gamemd
+}
 
 // 0x76FF20
 namespace gamemd {
@@ -330,3 +335,4 @@ int Trigger::executeActions(int a2)
   return a2; /*0x76ff27*/
 }
 } // namespace gamemd
+}

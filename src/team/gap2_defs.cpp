@@ -179,7 +179,7 @@ LABEL_16:
   if ( a4 ) /*0x41e7ab*/
     return 0; /*0x41e7ab*/
 LABEL_17:
-  if ( *(_DWORD *)(this + 156) == 1 && *((_BYTE *)g_ScenarioClass_Instance + 13492) == 1 || !this->q0A4 ) /*0x41e7cd*/
+  if ( this->u32_9C == 1 && *((_BYTE *)g_ScenarioClass_Instance + 13492) == 1 || !this->q0A4 ) /*0x41e7cd*/
     return 0; /*0x41e7d5*/
   if ( g_GameMode_Current[0] ) /*0x41e7df*/
   {
@@ -189,7 +189,7 @@ LABEL_17:
     if ( !v11 ) /*0x41e811*/
     {
 LABEL_28:
-      if ( !*(_BYTE *)(this + 212) ) /*0x41e813*/
+      if ( !this->u8_D4 ) /*0x41e813*/
         return 0; /*0x41e823*/
       goto LABEL_36; /*0x41e81b*/
     }
@@ -203,7 +203,7 @@ LABEL_28:
   if ( !v10 ) /*0x41e7fc*/
   {
 LABEL_34:
-    if ( *(_BYTE *)(this + 210) ) /*0x41e842*/
+    if ( this->u8_D2 ) /*0x41e842*/
       goto LABEL_36; /*0x41e84a*/
     return 0; /*0x41e852*/
   }
@@ -214,7 +214,7 @@ LABEL_34:
     goto LABEL_28; /*0x41e805*/
   }
 LABEL_31:
-  if ( !*(_BYTE *)(this + 211) ) /*0x41e82a*/
+  if ( !this->u8_D3 ) /*0x41e82a*/
     return 0; /*0x41e83a*/
 LABEL_36:
   v12 = this->nextTrigger; /*0x41e855*/
@@ -239,7 +239,7 @@ LABEL_36:
   }
   if ( this->house > v8[117] ) /*0x41e8e5*/
     return 0; /*0x41e8ea*/
-  v14 = *(_DWORD *)(this + 152); /*0x41e8f0*/
+  v14 = this->u32_98; /*0x41e8f0*/
   if ( a3 ) /*0x41e8f8*/
   {
     switch ( v14 ) /*0x41e908*/
@@ -325,6 +325,8 @@ LABEL_70:
     }
   }
   return result; /*0x41e798*/
+}
+}
 }
 // 0x41FB10
 namespace gamemd { int TriggerTypeClass::SaveToINI(void* a1) {
@@ -838,6 +840,8 @@ LABEL_80:
   *(_DWORD *)aP1[0] = &off_7E1668; /*0x49e392*/
   return BufferIOFileClass::Dtor(&aP1); /*0x49db61*/
 }
+}
+}
 // 0x49E400
 namespace gamemd { int CampaignClass::FindMission(void* a1, void* a2) {
 {
@@ -888,6 +892,8 @@ LABEL_10:
     }
   }
   return 0; /*0x49e4b5*/
+}
+}
 }
 // 0x49E4F0
 namespace gamemd { int CampaignClass::GetValue(void* a1) {
@@ -1243,6 +1249,8 @@ LABEL_11:
   this->q098 = v5; /*0x691763*/
   return this; /*0x69176b*/
 }
+}
+}
 // 0x6917F0
 namespace gamemd { int ScriptTypeClass::GetParameter(void* a1) {
 {
@@ -1378,6 +1386,8 @@ LABEL_18:
     }
   }
 }
+}
+}
 // 0x691EE0
 namespace gamemd { void* ScriptClass::ProcessEvent(int a1) {
 {
@@ -1494,6 +1504,8 @@ LABEL_11:
   this->Value = 0; /*0x6dd170*/
   return this; /*0x6dd178*/
 }
+}
+}
 // 0x6E3EE0
 namespace gamemd { int TriggerTypeClass::Dispatch() {
 {
@@ -1582,6 +1594,8 @@ LABEL_12:
   }
   return result; /*0x6eca50*/
 }
+}
+}
 // 0x6ECA70
 namespace gamemd { int TeamClass::SelectAttackTarget(ScriptClass * aP1, char a3) {
 {
@@ -1630,6 +1644,8 @@ LABEL_13:
     this->stepCompleted = 1; /*0x6ecb27*/
   }
   return result; /*0x6ecb2e*/
+}
+}
 }
 // 0x6ECCE0
 namespace gamemd { void TeamClass::MoveToCellAndAttack(int a1, int a2) {
@@ -1752,6 +1768,8 @@ LABEL_10:
   }
   return (char)ObjectCell; /*0x6eceea*/
 }
+}
+}
 // 0x6ECFB0
 namespace gamemd { int TeamClass::Create(int a1, int a2) {
 {
@@ -1859,6 +1877,8 @@ LABEL_25:
   }
   return TeamClass::AttackCoordinator((int *)v3); /*0x6ed1ef*/
 }
+}
+}
 // 0x6EDB50
 namespace gamemd { int TeamClass::AssignAttackTarget(int a1, int a2) {
 {
@@ -1959,6 +1979,8 @@ LABEL_14:
     this->stepCompleted = 1; /*0x6edd43*/
   }
 }
+}
+}
 // 0x6EE310
 namespace gamemd { int TeamClass::SelectAreaAttackTarget(ScriptClass * aP1, TeamClass * aP2) {
 {
@@ -2005,6 +2027,8 @@ LABEL_9:
       goto LABEL_13; /*0x6ee3bc*/
   }
   return TeamClass::AttackCoordinator((int *)this); /*0x6ee3c7*/
+}
+}
 }
 // 0x6EE3F0
 namespace gamemd { void TeamClass::ProcessTeamMovement(int a1, int a2) {
@@ -2200,6 +2224,8 @@ namespace gamemd { void TeamClass::SelectBestMember(int a1, int a2) {
 LABEL_22:
   TeamClass::UpdateMembers((int)v3); /*0x6ee7e8*/
 }
+}
+}
 // 0x6EEEA0
 namespace gamemd { void* TeamClass::ScoreMember(void* a1, int a2, int a3) {
 {
@@ -2302,6 +2328,8 @@ LABEL_10:
   }
   return result; /*0x6ef0ec*/
 }
+}
+}
 // 0x6EF610
 namespace gamemd { void TeamClass::PlayMemberAnimation(ScriptClass * aP1, char a3) {
 {
@@ -2377,9 +2405,9 @@ namespace gamemd { void TeamClass::SelectDeploymentTarget(int a1, int a2) {
         LODWORD(v24) = -1;
         for ( i = (_DWORD *)v3; v3; v3 = v3->q1760 )
         {
-          v5 = *(_DWORD *)((*(int (__thiscall **)(int))(*(_DWORD *)v3 + 132))(v3) + 1532);
+          v5 = *(_DWORD *)((*(int (__thiscall **)(int))(v3->hasParachute)(v3) + 1532);
           if ( TechnoClass::IsDeployed(v3)
-            && (*(_BYTE *)(v3 + 1673) || (*(int (__thiscall **)(int))(*(_DWORD *)v3 + 44))(v3) == 2)
+            && (v3->u8_689 || (*(int (__thiscall **)(int))(v3->fallRate)(v3) == 2)
             && v5 > SLODWORD(v24) )
           {
             i = (_DWORD *)v3;
@@ -2562,6 +2590,8 @@ LABEL_28:
   }
   v16->stepCompleted = 1; /*0x6f031b*/
 }
+}
+}
 // 0x6F0450
 namespace gamemd { void* TeamClass::ProcessEvent(int a2) {
 {
@@ -2663,7 +2693,7 @@ namespace gamemd { int TriggerClass::UnlinkTags() {
       v2 = this->nextTrigger;
       if ( v2 )
       {
-        *(_BYTE *)(v2 + 624) = 0;
+        v2->u8_270 = 0;
         *(_DWORD *)(this->nextTrigger + 632) = 0;
         this->nextTrigger = 0;
       }
@@ -2672,7 +2702,7 @@ namespace gamemd { int TriggerClass::UnlinkTags() {
       {
         if ( *(_DWORD *)(v3 + 64) == this )
           *(_DWORD *)(v3 + 64) = 0;
-        TagClass::Unlink(*(int **)(this + 68));
+        TagClass::Unlink(*(int **)(&this->nextArrayIndex8));
         this->enabled = 0;
       }
       result = this->occuredEvents;
@@ -2680,7 +2710,7 @@ namespace gamemd { int TriggerClass::UnlinkTags() {
       {
         if ( *(_DWORD *)(result + 68) == this )
           *(_DWORD *)(result + 68) = 0;
-        result = TagClass::Unlink(*(int **)(this + 64));
+        result = TagClass::Unlink(*(int **)(&this->nextArrayIndex4));
         this->occuredEvents = 0;
       }
       this->enabled = 0;
@@ -2907,6 +2937,8 @@ LABEL_6:
   }
   return *(TriggerClass **)(*(_DWORD *)&HouseClass_Player[44448] + 4 * v2); /*0x726672*/
 }
+}
+}
 // 0x726690
 namespace gamemd { int TriggerClass::FireAction(int aP1, int a3) {
 {
@@ -3053,9 +3085,9 @@ namespace gamemd { void* TriggerTypeClass::Construct(void* a1) {
       this->FirstEvent = 0;
       this->FirstAction = 0;
       *this = &TriggerTypeClass::`vftable';
-      *(this + 1) = &TriggerTypeClass::`vftable';
-      *(this + 2) = &TriggerTypeClass::`vftable';
-      *(this + 3) = &vt_TriggerTypeClass;
+      this->vtable2 = &TriggerTypeClass::`vftable';
+      this->vtable3 = &TriggerTypeClass::`vftable';
+      this->vtable4 = &vt_TriggerTypeClass;
       if ( *(int *)&stru_B05488[41440] < *(int *)&stru_B05488[41432]
         || (stru_B05488[41437] || !*(_DWORD *)&stru_B05488[41432])
         && *(int *)&stru_B05488[41444] > 0
@@ -3336,6 +3368,8 @@ LABEL_15:
   }
   return 1; /*0x7275a7*/
 }
+}
+}
 // 0x7275D0
 namespace gamemd { int TriggerClass::Process() {
 {
@@ -3379,6 +3413,8 @@ LABEL_11:
     result = (*(int (__thiscall **)(TriggerTypeClass *, char *))(*(_DWORD *)v7->__pad_0 + 100))(v7, this); /*0x72767c*/
   }
   return result; /*0x727691*/
+}
+}
 }
 // 0x7276A0
 namespace gamemd { int TriggerTypeClass::GetParameter(void* a1) {

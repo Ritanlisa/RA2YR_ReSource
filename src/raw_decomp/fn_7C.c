@@ -8,7 +8,7 @@ int __thiscall sub_7C0490(_DWORD *this)
   int i; // edi
   int result; // eax
 
-  for ( i = 0; i < this->q022; ++i ) /*0x7c049e*/
+  for ( i = 0; i < this->u32_88; ++i ) /*0x7c049e*/
   {
     result = FillAudioStreamBuffer((int)this, 32); /*0x7c04a7*/
     if ( result == -1 ) /*0x7c04af*/

@@ -59,6 +59,7 @@ int Lobby::InvalidatePlayerSlots()
   }
   return result; /*0x4e5e0e*/
 }
+}
 
 // 0x5EB060
 void Lobby::UpdatePlayerLabels()
@@ -358,6 +359,7 @@ LABEL_111:
   }
   while ( v16 + 1 < 8 );
 }
+}
 
 // 0x5EBA00
 void Lobby::SetupPlayerWidgets()
@@ -479,6 +481,7 @@ void Lobby::SetupPlayerWidgets()
     }
   }
 }
+}
 
 // 0x77DB90
 int Lobby::BuildPlayerList()
@@ -520,4 +523,5 @@ int Lobby::BuildPlayerList()
   }
   while ( (int)v0 < (int)&g_PlayerNameListEnd ); /*0x77dc6e*/
   return (*(int (__stdcall **)(LPVOID, char *))(*(_DWORD *)ppv + 60))(ppv, Destination); /*0x77dc84*/
+}
 }

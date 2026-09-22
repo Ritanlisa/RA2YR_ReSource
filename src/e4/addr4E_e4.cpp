@@ -18,10 +18,10 @@ unsigned int * E4Recv_4E0A00::sub_4E0A00(int a2, unsigned int * a3)
 {
 {
 
-  *(this + 1) = 0; /*0x4e0a0a*/
-  *(this + 2) = a2; /*0x4e0a11*/
-  *((_BYTE *)this + 12) = 1; /*0x4e0a14*/
-  *((_BYTE *)this + 13) = 0; /*0x4e0a18*/
+  this->M4 = 0; /*0x4e0a0a*/
+  this->M8 = a2; /*0x4e0a11*/
+  this->M12 = 1; /*0x4e0a14*/
+  this->M13 = 0; /*0x4e0a18*/
   *this = &vt_VectorClass_DiscreteDistributionClass_CellClass_DistributionObject_CellClass; /*0x4e0a1c*/
   if ( a2 ) /*0x4e0a22*/
   {
@@ -40,7 +40,7 @@ unsigned int * E4Recv_4E0A00::sub_4E0A00(int a2, unsigned int * a3)
         }
         while ( v5 ); /*0x4e0a46*/
       }
-      *(this + 1) = a3 + 1; /*0x4e0a48*/
+      this->M4 = a3 + 1; /*0x4e0a48*/
     }
     else
     {
@@ -68,16 +68,17 @@ unsigned int * E4Recv_4E0A00::sub_4E0A00(int a2, unsigned int * a3)
       {
         v10 = 0; /*0x4e0a81*/
       }
-      *(this + 1) = v10; /*0x4e0a83*/
-      *((_BYTE *)this + 13) = 1; /*0x4e0a86*/
+      this->M4 = v10; /*0x4e0a83*/
+      this->M13 = 1; /*0x4e0a86*/
     }
   }
   *this = &vt_DynamicVectorClass_DiscreteDistributionClass_CellClass_DistributionObject_CellClass; /*0x4e0a8a*/
-  *(this + 5) = 10; /*0x4e0a90*/
-  *(this + 4) = 0; /*0x4e0a97*/
+  this->M20 = 10; /*0x4e0a90*/
+  this->M16 = 0; /*0x4e0a97*/
   return this; /*0x4e0aa0*/
 }
 } // namespace gamemd
+}
 
 // 0x4E1FE0
 namespace gamemd {
@@ -273,6 +274,7 @@ LABEL_38:
   return result; /*0x4e2229*/
 }
 } // namespace gamemd
+}
 
 // 0x4E34A0
 namespace gamemd {
@@ -342,6 +344,7 @@ void * UpdateLobbyGraphicsWOL(HWND hDlg, int a2, int a3)
   return result; /*0x4e355b*/
 }
 } // namespace gamemd
+}
 
 // 0x4E3690
 namespace gamemd {
@@ -431,6 +434,7 @@ void * sub_4E3690(HWND hDlg, int a2)
   return CacheDialogInvalidate(DlgItem, Default); /*0x4e37b8*/
 }
 } // namespace gamemd
+}
 
 // 0x4E3CE0
 namespace gamemd {
@@ -596,6 +600,7 @@ LABEL_23:
   return CacheDialogInvalidate(v10, Default); /*0x4e3f5c*/
 }
 } // namespace gamemd
+}
 
 // 0x4E3F70
 namespace gamemd {
@@ -714,6 +719,7 @@ LABEL_6:
   return CacheDialogInvalidate(DlgItem, Default); /*0x4e4157*/
 }
 } // namespace gamemd
+}
 
 // 0x4E45A0
 namespace gamemd {
@@ -791,6 +797,7 @@ void FillComboBoxFactions(HWND hDlg, int nIDDlgItem)
   return result; /*0x4e475a*/
 }
 } // namespace gamemd
+}
 
 // 0x4E48E0
 namespace gamemd {
@@ -841,6 +848,7 @@ void SkirmishDialog_MapPlayerToControl(HWND a1, int a2)
   return SetupSkirmishSpawnLocations(a1, v3, v2); /*0x4e4991*/
 }
 } // namespace gamemd
+}
 
 // 0x4E49A0
 namespace gamemd {
@@ -1002,6 +1010,7 @@ LABEL_44:
   return result; /*0x4e4c13*/
 }
 } // namespace gamemd
+}
 
 // 0x4E4C20
 namespace gamemd {
@@ -1137,6 +1146,7 @@ LABEL_22:
   return result; /*0x4e4e18*/
 }
 } // namespace gamemd
+}
 
 // 0x4E50C0
 namespace gamemd {
@@ -1212,6 +1222,7 @@ void FillComboBoxAllianceSlots(HWND hDlg, int nIDDlgItem)
   return result; /*0x4e5256*/
 }
 } // namespace gamemd
+}
 
 // 0x4E53D0
 namespace gamemd {
@@ -1260,6 +1271,7 @@ void Lobby_FillFactionComboBox(HWND a1, int a2)
   return SetupLobbyFactionSlots(a1, v3, v2); /*0x4e5471*/
 }
 } // namespace gamemd
+}
 
 // 0x4E5480
 namespace gamemd {
@@ -1423,6 +1435,7 @@ LABEL_44:
   return result; /*0x4e56f3*/
 }
 } // namespace gamemd
+}
 
 // 0x4E5700
 namespace gamemd {
@@ -1558,6 +1571,7 @@ LABEL_22:
   return result; /*0x4e58f8*/
 }
 } // namespace gamemd
+}
 
 // 0x4E5B60
 namespace gamemd {
@@ -1624,6 +1638,7 @@ LABEL_9:
   return result; /*0x4e5c90*/
 }
 } // namespace gamemd
+}
 
 // 0x4E5E20
 namespace gamemd {
@@ -1672,6 +1687,7 @@ void Lobby_SetupPlayerSlotDialog(HWND a1, int a2)
   return SetupLobbyPlayerSlots(a1, v3, v2); /*0x4e5ebe*/
 }
 } // namespace gamemd
+}
 
 // 0x4E5ED0
 namespace gamemd {
@@ -1748,6 +1764,7 @@ LABEL_22:
   return result; /*0x4e6007*/
 }
 } // namespace gamemd
+}
 
 // 0x4E6860
 namespace gamemd {
@@ -1764,6 +1781,7 @@ int sub_4E6860()
   return atexit(sub_4E68A0); /*0x4e689c*/
 }
 } // namespace gamemd
+}
 
 // 0x4E6CE0
 namespace gamemd {
@@ -1780,6 +1798,7 @@ int sub_4E6CE0()
   return atexit(sub_4E6D20); /*0x4e6d1c*/
 }
 } // namespace gamemd
+}
 
 // 0x4E6D20
 namespace gamemd {
@@ -1796,6 +1815,7 @@ void sub_4E6D20()
   dword_A80230 = 0; /*0x4e6d53*/
 }
 } // namespace gamemd
+}
 
 // 0x4E7460
 namespace gamemd {
@@ -1812,6 +1832,7 @@ int sub_4E7460()
   return atexit(sub_4E74A0); /*0x4e749c*/
 }
 } // namespace gamemd
+}
 
 // 0x4E74A0
 namespace gamemd {
@@ -1828,6 +1849,7 @@ void sub_4E74A0()
   dword_A83CE8 = 0; /*0x4e74d3*/
 }
 } // namespace gamemd
+}
 
 // 0x4E75E0
 namespace gamemd {
@@ -1844,6 +1866,7 @@ int sub_4E75E0()
   return atexit(sub_4E7620); /*0x4e761c*/
 }
 } // namespace gamemd
+}
 
 // 0x4E7620
 namespace gamemd {
@@ -1860,6 +1883,7 @@ void sub_4E7620()
   dword_A83C88 = 0; /*0x4e7653*/
 }
 } // namespace gamemd
+}
 
 // 0x4E7EA0
 namespace gamemd {
@@ -1883,6 +1907,7 @@ char * * sub_4E7EA0()
   return result; /*0x4e7ec6*/
 }
 } // namespace gamemd
+}
 
 // 0x4E8090
 namespace gamemd {
@@ -1920,6 +1945,7 @@ LABEL_10:
   *(_DWORD *)&g_NetworkPlayerBuffer[5172] = &vt_ConnManClass; /*0x5f16cf*/
 }
 } // namespace gamemd
+}
 
 // 0x4E9240
 namespace gamemd {
@@ -1967,6 +1993,7 @@ AbstractClass * * HouseClass__vt_02_(int a2, unsigned int * a3)
   }
 }
 } // namespace gamemd
+}
 
 // 0x4E9E20
 namespace gamemd {
@@ -2014,21 +2041,23 @@ AbstractClass * * ParticleSystemClass__vt_02_(int a2, unsigned int * a3)
   }
 }
 } // namespace gamemd
+}
 
 // 0x4E9ED0
 namespace gamemd {
 void ParticleSystemClass__vt_03_()
 {
 {
-  if ( this->vtable1 && *(_BYTE *)(this + 13) ) /*0x4e9edd*/
+  if ( this->vtable1 && this->IsAllocated ) /*0x4e9edd*/
   {
     __3_YAXPAX_Z(*(void **)(this + 4)); /*0x4e9ee3*/
     this->vtable1 = 0; /*0x4e9eeb*/
   }
-  *(_BYTE *)(this + 13) = 0; /*0x4e9eee*/
+  this->IsAllocated = 0; /*0x4e9eee*/
   this->vtable2 = 0; /*0x4e9ef1*/
 }
 } // namespace gamemd
+}
 
 // 0x4E0C30
 namespace gamemd {
@@ -2044,15 +2073,15 @@ unsigned int * FoggedObjectClass_42::loc_4E0D30(char a2)
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_FootClass;
-    if ( v3 && *((char *)(this) + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Items = 0;
   }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
+    this->IsAllocated = 0;
+    this->Capacity = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return this;
@@ -2829,6 +2858,7 @@ int * _cfltcvt_init()
   return result; /*0x4e4fbf*/
 }
 } // namespace gamemd
+}
 
 // 0x4E4FC0
 namespace gamemd {
@@ -5322,15 +5352,15 @@ VectorClass * HouseClass::vt_00_(char a2)
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->vtable2;
     *(void**)this = &vt_VectorClass_TagClass;
-    if ( v3 && *((char *)(this) + 13) )
+    if ( v3 && this->relatedTagsCapacity )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->vtable2 = 0;
   }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
+    this->relatedTagsCapacity = 0;
+    this->vtable3 = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (VectorClass *)this;
@@ -5344,15 +5374,15 @@ VectorClass * ParticleSystemClass::vt_00_(char a2)
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->vtable2;
     *(void**)this = &vt_VectorClass_ParticleClass;
-    if ( v3 && *((char *)(this) + 13) )
+    if ( v3 && this->attachedTag )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->vtable2 = 0;
   }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
+    this->attachedTag = 0;
+    this->vtable3 = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (VectorClass *)this;

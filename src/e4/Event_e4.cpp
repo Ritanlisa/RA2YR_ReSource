@@ -74,6 +74,7 @@ LABEL_11:
   return (char)v0; /*0x48d1bf*/
 }
 } // namespace gamemd
+}
 
 // 0x5E2FA0
 namespace gamemd {
@@ -102,6 +103,7 @@ void sub_5E2FA0()
   return result; /*0x5e2fed*/
 }
 } // namespace gamemd
+}
 
 // 0x5E95E0
 namespace gamemd {
@@ -147,6 +149,7 @@ LABEL_13:
   return 1; /*0x5e9689*/
 }
 } // namespace gamemd
+}
 
 // 0x796960
 namespace gamemd {
@@ -226,6 +229,7 @@ LABEL_24:
   return v0; /*0x796ad4*/
 }
 } // namespace gamemd
+}
 
 // 0x7A0F40
 namespace gamemd {
@@ -276,6 +280,7 @@ int sub_7A0F40()
   return result; /*0x7a104e*/
 }
 } // namespace gamemd
+}
 
 // 0x786270
 namespace gamemd {
@@ -316,6 +321,7 @@ void sub_786270()
   return 1; /*0x78631f*/
 }
 } // namespace gamemd
+}
 
 // 0x7C5F3D
 namespace gamemd {
@@ -369,6 +375,7 @@ LABEL_8:
   }
 }
 } // namespace gamemd
+}
 
 // 0x7C5FFF
 namespace gamemd {
@@ -394,6 +401,7 @@ LABEL_4:
   }
 }
 } // namespace gamemd
+}
 
 // 0x48D1D0
 char Event_Dispatch::Return0()

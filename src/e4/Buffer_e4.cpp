@@ -240,6 +240,7 @@ LABEL_60:
   }
   return result; /*0x7bcece*/
 }
+}
 
 // 0x7C1730
 int Buffer::AllocateCodecFrameBuffers()
@@ -251,18 +252,18 @@ int Buffer::AllocateCodecFrameBuffers()
     return -2; /*0x7c1759*/
   if ( v28 != 1212371789 ) /*0x7c1762*/
     return -4; /*0x7c1770*/
-  unsigned int * v3 = (unsigned int *)(this + 1852); /*0x7c1775*/
+  unsigned int * v3 = (unsigned int *)(&this->u32_2E42); /*0x7c1775*/
   unsigned int v29; // [esp+2Ch] [ebp-4h]
   unsigned int v4 = ((((v29 << 16) | v29 & 0xFF00) << 8) | ((HIWORD(v29) | v29 & 0xFF0000) >> 8)) + 1; /*0x7c179e*/
   LOBYTE(v4) = (HIBYTE(v29) + 1) & 0xFE; /*0x7c179f*/
-  if ( this->vt_slot_64(5, this + 1852, v4) ) /*0x7c17a6*/
+  if ( this->vt_slot_64(5, &this->u32_1CF0, v4) ) /*0x7c17a6*/
     return -4; /*0x7c17bc*/
   unsigned int v5 = *v3; /*0x7c17bd*/
   if ( !*v3 ) /*0x7c17bd*/
     goto LABEL_16; /*0x7c17bd*/
   int v6 = 16 * v5; /*0x7c17cc*/
   int v7 = this->vt_slot_68(2, 0, 16 * v5); /*0x7c17d3*/
-  *(_DWORD *)(this + 1860) = v7; /*0x7c17db*/
+  this->q744 = v7; /*0x7c17db*/
   if ( !v7 ) /*0x7c17e1*/
     return -8; /*0x7c17ef*/
   this->vt_slot_68(4, v7, v6); /*0x7c17f5*/
@@ -273,7 +274,7 @@ int Buffer::AllocateCodecFrameBuffers()
     return -4; /*0x7c1837*/
   unsigned int v8 = ((((v29 << 16) | v29 & 0xFF00) << 8) | ((HIWORD(v29) | v29 & 0xFF0000) >> 8)) + 1; /*0x7c185f*/
   LOBYTE(v8) = (HIBYTE(v29) + 1) & 0xFE; /*0x7c1860*/
-  if ( this->vt_slot_64(5, *(_DWORD *)(this + 1860), v8) ) /*0x7c186d*/
+  if ( this->vt_slot_64(5, this->q744, v8) ) /*0x7c186d*/
     return -4; /*0x7c187a*/
 LABEL_16:
   unsigned int v9 = *v3; /*0x7c1884*/
@@ -281,7 +282,7 @@ LABEL_16:
   if ( !v9 ) /*0x7c188c*/
     return -1; /*0x7c19de*/
   int v10 = this->vt_slot_68(2, 0, 12 * v9); /*0x7c189d*/
-  *(_DWORD *)(this + 1864) = v10; /*0x7c18a5*/
+  this->u32_748 = v10; /*0x7c18a5*/
   if ( v10 ) /*0x7c18ab*/
   {
     this->vt_slot_68(4, v10, 12 * v9); /*0x7c18bf*/
@@ -292,10 +293,10 @@ LABEL_16:
     int v22 = 0; /*0x7c18df*/
     while ( 1 ) /*0x7c18ed*/
     {
-      int v12 = *(_DWORD *)(this + 136); /*0x7c18ed*/
-      int v13 = *(_DWORD *)(this + 1864); /*0x7c18f3*/
+      int v12 = this->u32_88; /*0x7c18ed*/
+      int v13 = this->u32_748; /*0x7c18f3*/
       int v25 = v13; /*0x7c18fd*/
-      int v23 = *(_DWORD *)(v21 + *(_DWORD *)(this + 1860) + 4); /*0x7c1903*/
+      int v23 = *(_DWORD *)(v21 + this->q744 + 4); /*0x7c1903*/
       if ( v12 > 0 ) /*0x7c1907*/
       {
         *(_DWORD *)(v11 + v13) = v12; /*0x7c1911*/
@@ -338,6 +339,7 @@ LABEL_16:
   }
   return -8; /*0x7c174d*/
 }
+}
 
 // 0x43AD00
 unsigned int * Buffer::Init(int a2, AbstractClass * aP2)
@@ -360,15 +362,15 @@ DynamicVector * Buffer::Constructor_VectorClass_ObjectClass___(char a2)
 {
 {
     void *v3;
-    v3 = (void *)*(this + 1);
+    v3 = (void *)this->Buffer_field_04;
     *(void**)this = &vt_VectorClass_ObjectClass;
-    if ( v3 && *((char *)(this) + 13) )
+    if ( v3 && this->IsAllocated )
   {
     __3_YAXPAX_Z(v3);
-    *(this + 1) = 0;
+    this->Buffer_field_04 = 0;
   }
-    *((char *)(this) + 13) = 0;
-    *(this + 2) = 0;
+    this->IsAllocated = 0;
+    this->Buffer_field_08 = 0;
     if ( (a2 & 1) != 0 )
     __3_YAXPAX_Z(this);
     return (DynamicVector *)this;
