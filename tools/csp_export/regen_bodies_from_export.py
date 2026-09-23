@@ -135,14 +135,18 @@ for p in sorted(SRC.rglob('*.cpp')):
             i = k + 1
             continue
         old_len = k - j
-        new_lines = lines[j].split('(')[0]
-        # rebuild: def line + '{' + body + '}'
+        # rebuild: def line + '{' + body + '}'; K&R defs (brace on its own
+        # line, which the span consumed) get the opener re-emitted
         def_line = lines[j]
         indent = re.match(r'\s*', lines[j]).group(0)
         body_lines = [(indent + '  ' + bl[2:]).rstrip()
                       if bl.strip() else ''
                       for bl in new_body.split('\n')]
-        repl = [def_line] + body_lines + [indent + '}']
+        repl = [def_line]
+        if '{' not in def_line:
+            repl.append(indent + '{')
+        repl.extend(body_lines)
+        repl.append(indent + '}')
         lines[j:k + 1] = repl
         manifest['%X' % addr] = {'file': rel, 'action': 'replaced',
                                  'old_lines': old_len,

@@ -1409,17 +1409,19 @@ def verify_single_function(ida_addr, func_name, display_name, M,
     # (G11: moved BEFORE the IDA build so the located body's class_name can
     # drive til-named `this->Member` extraction on the IDA side — sub_* names
     # carry no `::` and the class is only visible in the C++ def.)
-    # Name-first (exact def-pattern match), addr as fallback: the by-addr
-    # backward walk can false-positive onto a def-SHAPED line inside the
-    # PREVIOUS function's body (e.g. an ASM comment block carrying call-like
-    # text), which once made 0x7105E0 extract CheckHealthForRepair's middle.
+    # G32: addr-FIRST (annotation `// 0xADDR` -> def below): after the
+    # Step-4 wholesale body regen the def-line names come from the canon
+    # generation and can diverge from the signals name — name-first then
+    # grabbed a DIFFERENT function's body (misc_ext 0x597D50 precedent).
+    # The annotation->def mapping is the address authority; name stays as
+    # fallback for functions without annotations.
     body = None
-    if func_name:
+    if ida_addr:
+        body = find_cpp_function_by_addr(ida_addr)
+    if not body and func_name:
         body = find_cpp_function(func_name)
     if not body and display_name and display_name != func_name:
         body = find_cpp_function(display_name)
-    if not body and ida_addr:
-        body = find_cpp_function_by_addr(ida_addr)
 
     # ---- IDA side ----
     this_type = detect_this_type(ida_decompiled)
