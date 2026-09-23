@@ -313,6 +313,7 @@ def build_members(cc):
                           'size': 4, 'obs': []}
     total = lay.get('size') or e.get('size') or 0
     out = []
+    out_names = set()
     used = set()
     mt_override = mt_by_cls.get(cc, {})
     for o in sorted(members):
@@ -374,16 +375,19 @@ def build_members(cc):
                 i += 1
             n = n2
         sz = mo.get('size') if mt_has_ev else m['size']
-        if n in {e[2] for e in out}:
+        if n in out_names:
+            # G32: O(1) incremental name-set — the old `{e[2] for e in out}`
+            # per-iteration rebuild was O(M^2) per class and turned dense
+            # classes (10k+ registered members) into hours.
             base = n
             n2, i = base + '_d', 2
-            allnames = used | {e[2] for e in out}
-            while n2 in allnames:
+            while n2 in used or n2 in out_names:
                 n2 = '%s_%d' % (base, i)
                 i += 1
             n = n2
         used.add(n)
         out.append((o, t, n, sz, m['name'] or ''))
+        out_names.add(n)
     padded = []
     prev_end = 0
     for (o, t, n, sz, orig) in out:
