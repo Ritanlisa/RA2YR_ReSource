@@ -304,8 +304,12 @@ def process_file(rel):
         i = k + 1
 
     # ---- pass 2: real code, per-function verify-gated ----
-    # function spans: nearest preceding `// 0xADDR` annotation outside pending
-    ADDR = re.compile(r'//\s*0x([0-9A-Fa-f]{6,8})\s*$')
+    # function spans: preceding annotation (comment-style generalized —
+    # `// 0xADDR` bare AND `// IDA: 0xADDR (name, size)` both mark functions;
+    # structure/unit-era files use only the latter and were fully invisible
+    # to the old annotation-only match)
+    ADDR = re.compile(
+        r'^//\s*(?:IDA[:\s]\s*)?0x([0-9A-Fa-f]{6,8})(?:\s*:|\s*\(|\s*$)')
     spans = []  # (addr, def_idx, end_idx)
     i = 0
     in_pend = False
@@ -324,12 +328,9 @@ def process_file(rel):
                 k += 1
             i = k + 1
             continue
-        a = ADDR.search(ln.strip())
-        if a and '(' in ln:
-            # def line carrying annotation? or annotation above def
-            j = i
-        if a and '(' not in ln:
-            # annotation-only line: def is below until '{'
+        a = ADDR.match(ln.strip())
+        if a:
+            # annotation line (comment lines always start with //): def below
             j = i + 1
             while j < len(lines) and '(' not in lines[j]:
                 j += 1
@@ -359,6 +360,40 @@ def process_file(rel):
                     spans.append((int(a.group(1), 16), i, j, min(k, nb - 1)))
         i += 1
 
+    # pass 2b: UNANNOTATED defs (structure-era hand-written functions carry
+    # no `// 0xADDR` line at all). addr=0: class-keyed rewrites (mem_of via
+    # the def-line class) still fire; type_map channels that need an address
+    # are simply unavailable for these.
+    covered = [(s, e) for (_a, _i, s, e) in spans]
+    for j, ln in enumerate(lines):
+        if ln.strip().startswith('//') or '(' not in ln or '::' not in ln:
+            continue
+        if not DEF_Q.search(ln):
+            continue
+        if any(s <= j <= e for (s, e) in covered):
+            continue
+        nb2 = j + 1
+        while nb2 < len(lines):
+            s2 = lines[nb2].strip()
+            if s2.startswith('//') and re.match(
+                    r'^//\s*(?:IDA[:\s]\s*)?0x[0-9A-Fa-f]{6,8}', s2):
+                break
+            nb2 += 1
+        depth, started, k = 0, False, j
+        while k < nb2:
+            d = brace_delta(lines[k])
+            if d:
+                started = True
+            if started:
+                depth += d
+                if depth <= 0:
+                    break
+            k += 1
+        if started:
+            end = min(k, nb2 - 1)
+            spans.append((0, j, j, end))
+            covered.append((j, end))
+
     fixed = rolled = 0
     for (addr, ann_i, def_i, end_i) in spans:
         if def_i >= len(lines) or end_i >= len(lines) or def_i > end_i:
@@ -368,7 +403,7 @@ def process_file(rel):
         dm = DEF_Q.search(lines[def_i])
         if dm:
             cls = dm.group(1)
-        env_full = build_types(seg, cls, addr) if addr else ({}, {}, {})
+        env_full = build_types(seg, cls, addr or None)
         env = env_full[0]
         cls_eff = env.get('this') or cls
         nb, c_mem = real_mem_rewrite(seg, cls_eff, env)

@@ -41,7 +41,8 @@ BARE_THIS = re.compile(r'(?<![\w\*&])this\s*\+\s*(0x[0-9A-Fa-f]+|\d+)'
                        r'(?!\s*\))')
 R_BARE_DEREF = re.compile(
     r'\*\(\s*(this|[a-z]\w*)\s*\+\s*(0x[0-9A-Fa-f]+|\d+)\s*\)')
-ADDR = re.compile(r'//\s*0x([0-9A-Fa-f]{6,8})\s*$')
+ADDR = re.compile(
+    r'^//\s*(?:IDA[:\s]\s*)?0x([0-9A-Fa-f]{6,8})(?:\s*:|\s*\(|\s*$)')
 DEF_Q = re.compile(r'([A-Za-z_]\w*)::\s*~?[A-Za-z_]\w*\s*\(')
 
 WIDTH_T = {'unsigned char': 1, 'unsigned short': 2, 'unsigned int': 4,
@@ -240,7 +241,7 @@ for p in sorted(SRC.rglob('*.cpp')):
         continue
     i = 0
     while i < len(lines):
-        a = ADDR.search(lines[i].strip())
+        a = ADDR.match(lines[i].strip())
         if not a or '(' in lines[i]:
             i += 1
             continue
