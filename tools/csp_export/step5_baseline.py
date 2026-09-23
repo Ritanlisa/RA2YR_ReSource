@@ -107,19 +107,31 @@ def main():
         for ln in (r.stdout or '').split('\n')[-6:]:
             print('    |', ln)
 
-    print('[step5] c. 抽样验证 (changed completed)')
+    print('[step5] c. 抽样验证 (changed completed, 单进程批量)')
     addrs = changed_completed()
     print(f'    changed completed: {len(addrs)}')
     random.seed(20260923)
     sample = random.sample(addrs, min(SAMPLE_N, len(addrs)))
+    # in-process: load_all_maps/member_lookup parse ONCE (286MB), then each
+    # verify is fast. Subprocess-per-address re-parses per sample (~40s each).
+    sys.path.insert(0, str(ROOT / 'tools'))
+    import verify_execution_flow as V
+    M = V.load_all_maps()
+    signals = V._load_efv()['cpp_events'].get_signals()
     fails = []
     for a in sample:
-        r = subprocess.run([sys.executable,
-                            str(ROOT / 'tools/verify_execution_flow.py'),
-                            '0x%X' % a],
-                           capture_output=True, text=True, encoding='utf-8',
-                           errors='replace', timeout=600, cwd=str(ROOT))
-        if r.returncode != 0:
+        name = M.addr_to_name.get(a) or 'sub_%X' % a
+        ida_decomp, _c = V.load_ida_cache(a)
+        if not ida_decomp or not ida_decomp.strip():
+            fails.append(a)
+            continue
+        try:
+            passed, info = V.verify_single_function(
+                a, name, name, M, ida_decomp, verbose=False,
+                signals=signals)
+        except Exception:
+            passed = False
+        if not passed:
             fails.append(a)
     rate = (len(sample) - len(fails)) / max(1, len(sample))
     print(f'    sample PASS {len(sample) - len(fails)}/{len(sample)} '

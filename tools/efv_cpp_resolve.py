@@ -67,7 +67,15 @@ Dependencies: stdlib + `load_signals` ONLY (per task constraints).
 """
 
 import os
+import re
 import sys
+
+# G32: IDA auto-name data globals — `dword_AA0598`, `byte_5010AF`, `flt_...`,
+# `unk_...`, plus the tree's `DataGlobal_AA0598` convention. The hex suffix IS
+# the address.
+_AUTO_GLOBAL = re.compile(
+    r'^(?:(?:dword|byte|word|flt|dbl|qword|unk)_([0-9A-Fa-f]{5,8})'
+    r'|DataGlobal_([0-9A-Fa-f]{6,8}))$')
 
 _HERE = os.path.dirname(os.path.abspath(__file__))
 if _HERE not in sys.path:
@@ -189,6 +197,15 @@ class Resolver:
         iaddr = self._sig.global_addr(ident)
         if iaddr is not None:
             return ("global", iaddr)
+
+        # 3c. G32: IDA auto-name globals (`dword_AA0598` / `byte_...` / `flt_...`
+        #     / `DataGlobal_AA0598` / `unk_...`) — the address IS the suffix.
+        #     The fresh typed export renders raw auto-names natively; the IDA
+        #     side emits events for them via _IDA_DWORD_GLOBAL, so the cpp side
+        #     must resolve the same identifiers or both sides diverge.
+        m = _AUTO_GLOBAL.match(ident)
+        if m:
+            return ("global", int(m.group(1) or m.group(2), 16))
 
         # 4. Unknown -> not a data location (callee name / type / macro / ...).
         return (None, None)

@@ -64,6 +64,48 @@ pending = {}
 upgrades = {}
 FILLER = re.compile(r'^u(?:8|16|32|64|ptr)_[0-9A-F]+$')
 
+# usage-driven prune: keep only filler members actually referenced in src
+# (`->u32_1C` etc.) plus all semantic entries. Historical unbounded
+# registration grew these tables to 582MB/286MB — every pipeline stage
+# (canon gen, census, EVERY verify) re-parses them, so dead fillers cost
+# minutes per stage. --prune-unused applies; runs automatically on APPLY.
+if '--prune-unused' in sys.argv or APPLY:
+    used = set()
+    for _p in SRC.rglob('*.cpp'):
+        try:
+            _t = _p.read_text(encoding='latin-1', errors='replace')
+        except OSError:
+            continue
+        for _m in re.finditer(
+                r'->\s*(u(?:8|16|32|64)|ptr)_[0-9A-F]+\b', _t):
+            used.add(_m.group(0)[2:])
+    pruned_dead = 0
+    for cls in list(ml.keys()):
+        members = ml[cls]
+        for off in list(members.keys()):
+            e = members[off]
+            if not isinstance(e, dict):
+                continue
+            nm = e.get('name', '')
+            if FILLER.match(nm) and nm not in used:
+                del members[off]
+                mt.pop('%s+0x%s' % (cls, off), None)
+                mbn.get(cls, {}).pop(nm, None)
+                pruned_dead += 1
+    if APPLY and pruned_dead:
+        import os as _os
+        (ROOT / 'tools' / 'member_lookup.json').write_text(
+            json.dumps(ml, separators=(',', ':'), ensure_ascii=False),
+            encoding='utf-8')
+        (ROOT / 'anchors' / 'member_types.json').write_text(
+            json.dumps(mt, separators=(',', ':'), ensure_ascii=False),
+            encoding='utf-8')
+        _tmp = ROOT / 'signals.json.tmp'
+        _tmp.write_text(json.dumps(sg, separators=(',', ':'),
+                                   ensure_ascii=False), encoding='utf-8')
+        _os.replace(_tmp, ROOT / 'signals.json')
+    print('unused fillers pruned:', pruned_dead)
+
 # class layout sizes for the registration bound
 CLS_SIZE = {}
 try:
