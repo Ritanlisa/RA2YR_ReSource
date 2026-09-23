@@ -1355,6 +1355,10 @@ class TypeInferenceEngine:
     @staticmethod
     def _to_lattice_type(typ_name: str, valid_classes: set[str]) -> LatticeElement | None:
         """Convert a type name string to a lattice element, or None if unfittable."""
+        # G32: anchor tables may carry type:null entries (registered members
+        # without a type) — treat as unfittable instead of crashing.
+        if not typ_name:
+            return None
         # ── Sampling diagnostic ──
         if not hasattr(TypeInferenceEngine._to_lattice_type, '_sample_count'):
             TypeInferenceEngine._to_lattice_type._sample_count = 0

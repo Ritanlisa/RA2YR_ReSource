@@ -334,9 +334,19 @@ def process_file(rel):
             while j < len(lines) and '(' not in lines[j]:
                 j += 1
             if j < len(lines):
-                # span from def to balanced close
+                # G32: bounded scan — stop at the next annotation boundary.
+                # Files carry residual brace imbalance (regen-era artifacts);
+                # demanding a perfect close let whole functions escape every
+                # rewrite pass (gap2_global_defs: spans ran to EOF, 0 fixed).
+                nb = j + 1
+                while nb < len(lines):
+                    s2 = lines[nb].strip()
+                    if s2.startswith('//') and re.match(
+                            r'^//\s*(?:IDA[:\s]\s*)?0x[0-9A-Fa-f]{6,8}', s2):
+                        break
+                    nb += 1
                 depth, started, k = 0, False, j
-                while k < len(lines):
+                while k < nb:
                     d = brace_delta(lines[k])
                     if d:
                         started = True
@@ -345,8 +355,8 @@ def process_file(rel):
                         if depth <= 0:
                             break
                     k += 1
-                if started and depth <= 0:
-                    spans.append((int(a.group(1), 16), i, j, k))
+                if started:
+                    spans.append((int(a.group(1), 16), i, j, min(k, nb - 1)))
         i += 1
 
     fixed = rolled = 0

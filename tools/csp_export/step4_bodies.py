@@ -39,10 +39,16 @@ def main():
     print('[step4] a2. 验证器快照缓存同步 (与 cpp 同源)')
     run('sync_ida_cache.py', '--apply',
         grep=('cache updated', 'identical kept'))
+    print('[step4] a3. 花括号 sanitizer (单一权威, 修 regen 残留不平衡)')
+    run('fix_leaks_general.py', '--apply',
+        grep=('close-braces', 'files changed'))
     print('[step4] b. canon 重生成')
     run('gen_cpp_canon.py', grep=('classes emitted', 'members table'))
-    print('[step4] c. 成员引用改写')
-    run('rewrite_member_refs.py', grep=('total member refs',))
+    # (rewrite_member_refs 已退役: 它从 ida_cache 桶重建文件, 与 regen 的
+    #  树内落地数据源打架 — gap2_global_defs 0x597D50 案。体来源唯一化:
+    #  regen 落地 + fix_addr 树内改写 + register 供给。)
+    print('[step4] c. 声明前置到首用点 (lower_temp_decls)')
+    run('lower_temp_decls.py', grep=('moved', 'decls', 'DONE'))
     print('[step4] d. fix_addr 到不动点')
     for rnd in range(1, 7):
         out = run('fix_addr_violations.py', '--no-verify', '--workers', '8',

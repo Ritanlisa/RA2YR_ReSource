@@ -84,13 +84,13 @@ def changed_completed():
 
 def main():
     no_commit = '--no-commit' in sys.argv
-    print('[step5] a. 残差供给 + 一轮 fix_addr')
+    print('[step5] a. 残差供给 + fix_addr 一轮')
     run('register_offset_members.py', '--apply',
         grep=('sync', 'to register', 'to upgrade'))
     run('gen_cpp_canon.py', grep=('members table',))
     run('register_offset_members.py', '--align-ml', '--apply',
         grep=('aligned',))
-    run('rewrite_member_refs.py', grep=('total member refs',))
+    # (rewrite_member_refs 已退役 — 数据源唯一化, 见 step4)
     run('fix_addr_violations.py', '--no-verify', '--workers', '8',
         grep=('real functions fixed',))
 
