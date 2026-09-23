@@ -134,6 +134,44 @@ for p in sorted(SRC.rglob('*.cpp')):
             tot_keep += 1
             i = k + 1
             continue
+        # G32: param-name alignment — snapshot signature names vs def-line
+        # names. Body identifiers must match the signature it lands in.
+        def _sig_params(sig):
+            m = re.search(r'\(([^()]*(?:\([^()]*\)[^()]*)*)\)',
+                          sig.split('{', 1)[0], re.S)
+            if not m:
+                return []
+            out = []
+            for p in m.group(1).split(','):
+                p = ' '.join(p.split())
+                nm = re.search(r'([A-Za-z_]\w*)\s*$', p)
+                if nm and p not in ('void',):
+                    out.append(nm.group(1))
+            return out
+        snap_names = _sig_params(code)
+        def_m = re.search(r'\(([^()]*(?:\([^()]*\)[^()]*)*)\)', lines[j],
+                          re.S)
+        def_names = []
+        if def_m:
+            for p2 in def_m.group(1).split(','):
+                p2 = ' '.join(p2.split())
+                nm2 = re.search(r'([A-Za-z_]\w*)\s*$', p2)
+                if nm2 and p2 != 'void':
+                    def_names.append(nm2.group(1))
+        rename = {}
+        if def_names and len(snap_names) == len(def_names) + 1 and \
+                snap_names[0] != def_names[0]:
+            # snapshot's first param is the this receiver
+            rename[snap_names[0]] = 'this'
+            for sn, dn in zip(snap_names[1:], def_names):
+                if sn != dn:
+                    rename[sn] = dn
+        elif len(snap_names) == len(def_names):
+            for sn, dn in zip(snap_names, def_names):
+                if sn != dn:
+                    rename[sn] = dn
+        for sn, dn in rename.items():
+            new_body = re.sub(r'\b%s\b' % re.escape(sn), dn, new_body)
         old_len = k - j
         # rebuild: def line + '{' + body + '}'; K&R defs (brace on its own
         # line, which the span consumed) get the opener re-emitted

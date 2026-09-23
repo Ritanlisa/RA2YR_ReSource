@@ -270,6 +270,7 @@ def real_mem_rewrite(text, cls, env=None):
                                    if m.get('name')}
             return _rev_cache[cls]
         def s7(m):
+            nonlocal n
             t_cast = m.group(1).strip()
             recv_expr = m.group(2)
             mname = m.group(3)
