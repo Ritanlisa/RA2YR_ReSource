@@ -250,8 +250,18 @@ for p in sorted(SRC.rglob('*.cpp')):
         if j >= len(lines):
             i += 1
             continue
+        # G32: bounded scan — next annotation boundary (mirrors fix_addr);
+        # demanding a perfect close let functions in imbalance-carrier files
+        # escape registration entirely.
+        nb = j + 1
+        while nb < len(lines):
+            s2 = lines[nb].strip()
+            if s2.startswith('//') and re.match(
+                    r'^//\s*(?:IDA[:\s]\s*)?0x[0-9A-Fa-f]{6,8}', s2):
+                break
+            nb += 1
         depth, started, k = 0, False, j
-        while k < len(lines):
+        while k < nb:
             d = brace_delta(lines[k])
             if d:
                 started = True
@@ -260,7 +270,7 @@ for p in sorted(SRC.rglob('*.cpp')):
                 if depth <= 0:
                     break
             k += 1
-        if not (started and depth <= 0):
+        if not started:
             i += 1
             continue
         addr = int(a.group(1), 16)
