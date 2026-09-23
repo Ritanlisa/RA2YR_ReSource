@@ -203,19 +203,55 @@ def real_mem_rewrite(text, cls, env=None):
             r'\(\s*(?:_BYTE|_DWORD|_WORD|char|unsigned int|int)\s*\*\s*\)\s*'
             r'\(\s*this\s*\+\s*(0x[0-9A-Fa-f]+|\d+)\s*\)',
             s_bare, text)
+    # G32 chain composition: `vN = (T *)(this + K)` with vN otherwise
+    # untyped — vN + M ≡ this + (K+M). Composed offsets rewrite through
+    # the base class table directly (single-assignment vars only).
+    chain = {}
+    if env is not None:
+        for cm in re.finditer(
+                r'\b([a-z]\w*)\s*=\s*(?:\(\s*[A-Za-z_][\w\s\*]*?\s*\*\s*\)'
+                r'\s*)?\(?\s*this\s*\)?\s*\+\s*(0x[0-9A-Fa-f]+|\d+)', text):
+            v, kk = cm.group(1), int(cm.group(2), 0)
+            if v in ('this',) or v in chain:
+                continue
+            if len(re.findall(r'\b%s\s*=' % re.escape(v), text)) == 1:
+                chain[v] = kk
+        # member-address bases: `vN = &this->M` (post-bare-rewrite form) —
+        # compose via M's own offset in the class table
+        if this_cls:
+            _revc = {mm['name']: int(oo) for oo, mm in
+                     (mtab.get(this_cls) or {}).get('members', {}).items()
+                     if mm.get('name')}
+            for cm in re.finditer(
+                    r'\b([a-z]\w*)\s*=\s*(?:\(\s*[A-Za-z_][\w\s\*]*?\s*\*\s*\)'
+                    r'\s*)?&\s*this->([A-Za-z_]\w*)', text):
+                v, mn = cm.group(1), cm.group(2)
+                if v in ('this',) or v in chain:
+                    continue
+                if len(re.findall(r'\b%s\s*=' % re.escape(v), text)) == 1:
+                    if mn in _revc:
+                        chain[v] = _revc[mn]
     # R5: typed-local receivers *(T *)(vN + N)
     if env:
         def s3(m):
             nonlocal n
             recv, off = m.group(1), int(m.group(2), 0)
             c = env.get(recv)
-            if not c or recv == 'this':
-                return m.group(0)
-            name = mem_of(c, off)
-            if not name:
-                return m.group(0)
-            n += 1
-            return '%s->%s' % (recv, name)
+            if c:
+                name = mem_of(c, off)
+                if not name:
+                    return m.group(0)
+                n += 1
+                return '%s->%s' % (recv, name)
+            # chain-composed sub-object: vN = this + K, access at off
+            if recv in chain:
+                r = rewrite_one('this', chain[recv] + off)
+                if r is not None:
+                    return r
+                r = rewrite_one('this', chain[recv] + off * 4)
+                if r is not None:
+                    return r
+            return m.group(0)
         text = re.sub(
             r'\*\(\s*[A-Za-z_][\w\s\*]*?\s*\*\s*\)\s*\(?\s*([a-z]\w*)\s*\)?\s*\+\s*'
             r'(0x[0-9A-Fa-f]+|\d+)\s*\)',
