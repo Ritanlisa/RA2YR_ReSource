@@ -19,6 +19,7 @@ Usage: python tools/csp_export/register_offset_members.py [--apply]
 """
 import re
 import sys
+import json
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -61,7 +62,50 @@ mt, ml, sg = _load()
 mbn = sg.setdefault('_member_by_name', {})
 pending = {}
 upgrades = {}
-FILLER = re.compile(r'^u(?:8|16|32|64)_[0-9A-F]+$')
+FILLER = re.compile(r'^u(?:8|16|32|64|ptr)_[0-9A-F]+$')
+
+# class layout sizes for the registration bound
+CLS_SIZE = {}
+try:
+    _layouts = json.loads((ROOT / 'tools' / 'class_layouts.json')
+                          .read_text(encoding='utf-8'))
+    for _c, _v in _layouts.items():
+        if isinstance(_v, dict) and _v.get('size'):
+            CLS_SIZE[_c] = _v['size']
+except OSError:
+    pass
+
+# hygiene: drop step-4 filler members at/beyond the class size (legacy of
+# unbounded registration; they re-register under the bound when in range)
+if '--purge-oob' in sys.argv or APPLY:
+    purged_oob = 0
+    for cls in list(ml.keys()):
+        lim = CLS_SIZE.get(cls)
+        if lim is None:
+            continue
+        members = ml[cls]
+        for off in list(members.keys()):
+            e = members[off]
+            if not isinstance(e, dict):
+                continue
+            if FILLER.match(e.get('name', '')) and int(off) >= lim:
+                del members[off]
+                mt.pop('%s+0x%s' % (cls, off), None)
+                mbn.get(cls, {}).pop(e.get('name', ''), None)
+                purged_oob += 1
+    if APPLY and purged_oob:
+        import os as _os
+        (ROOT / 'tools' / 'member_lookup.json').write_text(
+            json.dumps(ml, indent=1, ensure_ascii=False) + '\n',
+            encoding='utf-8')
+        (ROOT / 'anchors' / 'member_types.json').write_text(
+            json.dumps(mt, indent=1, ensure_ascii=False) + '\n',
+            encoding='utf-8')
+        _tmp = ROOT / 'signals.json.tmp'
+        _tmp.write_text(json.dumps(sg, indent=2, ensure_ascii=False) + '\n',
+                        encoding='utf-8')
+        _os.replace(_tmp, ROOT / 'signals.json')
+    print('oob fillers purged:', purged_oob)
 
 # Sync classes that live only in member_lookup (old E4Recv/Gap2Recv
 # synthesis wrote ml directly) into member_types so gen_cpp_canon emits
@@ -111,10 +155,16 @@ def upgrade(cls, off, fn):
 
 
 def reg(cls, off, ctype):
-    key = '%s+0x%X' % (cls, off)
-    ent = pending.get(key) or (ml.get(cls) or {}).get(str(off))
-    if ent:
+    # registration bound: an offset at/beyond the class layout size cannot
+    # be a member of it (unbounded registration once bloated member_types
+    # into a 2M-line classes.hpp). Classes without layout data get a hard
+    # 64 KiB sanity cap.
+    lim = CLS_SIZE.get(cls)
+    if lim is None:
+        lim = 0x10000
+    if off >= lim:
         return
+    key = '%s+0x%X' % (cls, off)
     # CSP member-value type channel: `0xFN:this.member(0xOFF)` says the
     # VALUE stored at OFF is a class pointer -> member type `T *`
     vkey = '%s:this.member(0x%X)' % (fn_tag, off)
