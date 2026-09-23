@@ -203,34 +203,34 @@ def real_mem_rewrite(text, cls, env=None):
             r'\(\s*(?:_BYTE|_DWORD|_WORD|char|unsigned int|int)\s*\*\s*\)\s*'
             r'\(\s*this\s*\+\s*(0x[0-9A-Fa-f]+|\d+)\s*\)',
             s_bare, text)
-    # G32 chain composition: `vN = (T *)(this + K)` with vN otherwise
-    # untyped — vN + M ≡ this + (K+M). Composed offsets rewrite through
-    # the base class table directly (single-assignment vars only).
+    # G32 chain composition (dominance form): `vN = this + K` / `vN = &this->M`
+    # — compose vN + M ≡ this + (K+M) ONLY when every assignment of vN in the
+    # function agrees on the same base (sound across branches); var reuse with
+    # differing bases stays untouched.
     chain = {}
     if env is not None:
+        assign_ks = {}
         for cm in re.finditer(
                 r'\b([a-z]\w*)\s*=\s*(?:\(\s*[A-Za-z_][\w\s\*]*?\s*\*\s*\)'
-                r'\s*)?\(?\s*this\s*\)?\s*\+\s*(0x[0-9A-Fa-f]+|\d+)', text):
-            v, kk = cm.group(1), int(cm.group(2), 0)
-            if v in ('this',) or v in chain:
+                r'\s*)?(?:\(?\s*this\s*\)?\s*\+\s*(0x[0-9A-Fa-f]+|\d+)'
+                r'|\(?\s*&\s*\(?\s*this->([A-Za-z_]\w*)*)', text):
+            v = cm.group(1)
+            if v == 'this':
                 continue
-            if len(re.findall(r'\b%s\s*=' % re.escape(v), text)) == 1:
-                chain[v] = kk
-        # member-address bases: `vN = &this->M` (post-bare-rewrite form) —
-        # compose via M's own offset in the class table
-        if this_cls:
-            _revc = {mm['name']: int(oo) for oo, mm in
-                     (mtab.get(this_cls) or {}).get('members', {}).items()
-                     if mm.get('name')}
-            for cm in re.finditer(
-                    r'\b([a-z]\w*)\s*=\s*(?:\(\s*[A-Za-z_][\w\s\*]*?\s*\*\s*\)'
-                    r'\s*)?&\s*this->([A-Za-z_]\w*)', text):
-                v, mn = cm.group(1), cm.group(2)
-                if v in ('this',) or v in chain:
+            if cm.group(2):
+                kk = int(cm.group(2), 0)
+            elif this_cls:
+                mn = cm.group(3)
+                kk = {mm['name']: int(oo) for oo, mm in
+                      (mtab.get(this_cls) or {}).get('members', {}).items()
+                      if mm.get('name')}.get(mn)
+                if kk is None:
                     continue
-                if len(re.findall(r'\b%s\s*=' % re.escape(v), text)) == 1:
-                    if mn in _revc:
-                        chain[v] = _revc[mn]
+            else:
+                continue
+            assign_ks.setdefault(v, set()).add(kk)
+        chain = {v: next(iter(ks)) for v, ks in assign_ks.items()
+                 if len(ks) == 1}
     # R5: typed-local receivers *(T *)(vN + N)
     if env:
         def s3(m):

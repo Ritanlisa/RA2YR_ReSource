@@ -161,6 +161,15 @@ def build_types(body, cls, addr):
                 t = v.get('type')
                 if is_cls(t):
                     env[nm.group(1)] = t
+            # G32: def-line typed params — `ObjectTypeClass *a1` carries the
+            # receiver class right in the signature; no type_map needed.
+            pm = re.match(
+                r'^(?:struct\s+)?([A-Za-z_]\w*)\s*\*\s*([A-Za-z_]\w*)$',
+                pspec)
+            if pm and pm.group(1) not in ('void', 'int', 'char', 'BOOL',
+                                          'float', 'double') and \
+                    is_cls(pm.group(1)):
+                env.setdefault(pm.group(2), pm.group(1))
             pn += 1
     # stack slots: `T vN; // [esp+Xh] [ebp-Yh]` -> `0xADDR::stack_+0xX`
     if ai:
