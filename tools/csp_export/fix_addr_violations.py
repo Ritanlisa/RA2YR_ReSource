@@ -221,6 +221,50 @@ def real_mem_rewrite(text, cls, env=None):
             r'(0x[0-9A-Fa-f]+|\d+)\s*\)',
             s3,
             text)
+    # R7: chained member-of-member `*(T *)(this->M + N)` — the member M's
+    # own class type (from the member table) types the receiver; iterative
+    # rounds converge the inner forms first.
+    if this_cls or env:
+        _rev_cache = {}
+        def _rev(cls):
+            if cls not in _rev_cache:
+                _rev_cache[cls] = {m['name']: int(o) for o, m in
+                                   (mtab.get(cls) or {}).get('members',
+                                                             {}).items()
+                                   if m.get('name')}
+            return _rev_cache[cls]
+        def s7(m):
+            t_cast = m.group(1).strip()
+            recv_expr = m.group(2)
+            mname = m.group(3)
+            off = int(m.group(4), 0)
+            base_obj = recv_expr.split('->')[0]
+            base_cls = env.get(base_obj) or (this_cls if base_obj == 'this'
+                                             else None)
+            if not base_cls:
+                return m.group(0)
+            mo = _rev(base_cls).get(mname)
+            if mo is None:
+                return m.group(0)
+            mt_info = (mtab.get(base_cls) or {}).get('members', {}).get(
+                str(mo), {})
+            mt = (mt_info.get('type') or '').strip().rstrip('*').strip()
+            recv_cls = env.get(recv_expr) or \
+                (mt if mt and re.match(r'^[A-Za-z_]\w*$', mt) else None)
+            if not recv_cls:
+                return m.group(0)
+            name2 = mem_of(recv_cls, off)
+            if not name2:
+                name2 = mem_of(recv_cls, off * 4)
+            if not name2:
+                return m.group(0)
+            n += 1
+            return '%s->%s' % (recv_expr, name2)
+        text = re.sub(
+            r'\*\(\s*([A-Za-z_][\w\s\*]*?)\s*\*\s*\)\s*\(?\s*'
+            r'((?:this|[a-z]\w*)->([A-Za-z_]\w*))\s*\)?\s*\+\s*'
+            r'(0x[0-9A-Fa-f]+|\d+)\s*\)',
+            s7, text)
     # R6: bare deref-of-offset *(recv + N). IDA renders these on untyped
     # (_DWORD *) receivers, so N is in dword units: byte offset = N*4.
     if env or this_cls:
