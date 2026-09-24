@@ -185,6 +185,12 @@ for p in sorted(SRC.rglob('*.cpp')):
             repl.append(indent + '{')
         repl.extend(body_lines)
         repl.append(indent + '}')
+        # G32: self-balance -- def lines may open extra scopes (per-function
+        # `namespace gamemd {` wrappers); emit the closers so every
+        # replacement block leaves the file brace-neutral.
+        net = sum(brace_delta(l) for l in repl)
+        for _ in range(net):
+            repl.append(indent + '}')
         lines[j:k + 1] = repl
         manifest['%X' % addr] = {'file': rel, 'action': 'replaced',
                                  'old_lines': old_len,

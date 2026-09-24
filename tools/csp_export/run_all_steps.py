@@ -18,6 +18,31 @@ STEPS = ['step1_csp.py', 'step2_canon.py', 'step3_export.py',
          'step4_bodies.py', 'step5_baseline.py']
 
 
+def assert_braces_balanced():
+    """HARD GATE (user directive): every src cpp/hpp must end at depth
+    {0,1,2}. Violations abort the chain — brace damage never passes
+    silently again."""
+    sys.path.insert(0, str(ROOT / 'tools' / 'csp_export'))
+    from _blockspan import block_walker
+    bad = []
+    for p in sorted((ROOT / 'src').rglob('*')):
+        if p.suffix not in ('.cpp', '.hpp') or '_generated' in str(p):
+            continue
+        try:
+            lines = p.read_text(encoding='latin-1', errors='replace').split('\n')
+        except OSError:
+            continue
+        d = sum(block_walker(lines))
+        if d not in (0, 1, 2):
+            bad.append((d, str(p)))
+    if bad:
+        print('!! 花括号断言失败 (不平衡 cpp/hpp):')
+        for d, p in bad[:20]:
+            print(f'   depth={d:+d} {p}')
+        sys.exit(10)
+    print('[gate] 花括号平衡断言: ALL PASS')
+
+
 def main():
     extra = [a for a in sys.argv[1:]]
     only = None
@@ -36,6 +61,8 @@ def main():
         if r.returncode != 0:
             print(f'!! {s} 退出码 {r.returncode} — 链停止')
             sys.exit(r.returncode)
+        if s == 'step4_bodies.py':
+            assert_braces_balanced()
     print('======== ALL STEPS DONE ========')
 
 

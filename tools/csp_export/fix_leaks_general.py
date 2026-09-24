@@ -71,9 +71,30 @@ for p in sorted(SRC.rglob('*.cpp')):
         leak = depth - base
         if leak > 0:
             ins.append((end, leak))
+        elif leak < 0:
+            ins.append((end, leak))  # negative: remove |leak| extra closes
     if not ins:
         continue
     for at, leak in sorted(ins, reverse=True):
+        if leak < 0:
+            # over-closed: remove |leak| trailing '}' tokens just above the
+            # boundary (the sanitizer's own earlier over-inserts)
+            need = -leak
+            x = at
+            while need > 0 and x > 0:
+                x -= 1
+                ln = lines[x]
+                if ln.strip() == '}':
+                    lines[x] = None
+                    need -= 1
+                elif ln.strip().endswith('}'):
+                    ci = ln.rfind('}')
+                    lines[x] = ln[:ci] + ln[ci+1:]
+                    need -= 1
+            lo = max(0, x)
+            lines[lo:at] = [l for l in lines[lo:at] if l is not None]
+            tot_ins -= (-leak)
+            continue
         indent = ''
         for l in range(at - 1, -1, -1):
             if lines[l].strip():
