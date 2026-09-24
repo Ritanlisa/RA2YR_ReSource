@@ -39,6 +39,19 @@ R_INDEX = re.compile(
     r'(0x[0-9A-Fa-f]+|\d+)\s*\)')
 BARE_THIS = re.compile(r'(?<![\w\*&])this\s*\+\s*(0x[0-9A-Fa-f]+|\d+)'
                        r'(?!\s*\))')
+# cast-inside form `*((_DWORD *)this + N)` — byte offset = N * width;
+# previously unscanned, so these offsets never registered (building.cpp
+# R_THIS2 mass precedent)
+R_THIS2_SCAN = re.compile(
+    r'\*\(\s*\(\s*(_DWORD|_BYTE|_WORD|_QWORD|char|unsigned char|short|'
+    r'unsigned short|int|unsigned int|long|float|BOOL|double)\s*\*\s*\)'
+    r'\s*\(?\s*(this|[a-z]\w*)\s*\)?\s*\+\s*(0x[0-9A-Fa-f]+|\d+)\s*\)')
+CAST_WIDTH = {'_DWORD': 4, 'int': 4, 'unsigned int': 4, 'long': 4,
+              'unsigned long': 4, 'float': 4, 'BOOL': 4, '_QWORD': 8,
+              'double': 8, 'long long': 8, '_BYTE': 1, 'char': 1,
+              'unsigned char': 1, '_WORD': 2, 'short': 2,
+              'unsigned short': 2}
+
 R_BARE_DEREF = re.compile(
     r'\*\(\s*(this|[a-z]\w*)\s*\+\s*(0x[0-9A-Fa-f]+|\d+)\s*\)')
 ADDR = re.compile(
@@ -312,6 +325,14 @@ for p in sorted(SRC.rglob('*.cpp')):
                 if member_name(c, off) is None:
                     reg(c, off, 'unsigned int')
                 break
+        for m in R_THIS2_SCAN.finditer(seg):
+            t_cast, recv, raw = m.group(1), m.group(2), int(m.group(3), 0)
+            c = this_cls if recv == 'this' else env.get(recv)
+            if not c:
+                continue
+            off = raw * CAST_WIDTH.get(t_cast, 4)
+            if member_name(c, off) is None:
+                reg(c, off, C_TYPE.get(t_cast.split()[0], 'unsigned int'))
         if this_cls:
             for m in BARE_THIS.finditer(seg):
                 raw = int(m.group(1), 0)

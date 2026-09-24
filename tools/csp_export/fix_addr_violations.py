@@ -451,6 +451,8 @@ def process_file(rel):
     for j, ln in enumerate(lines):
         if ln.strip().startswith('//') or '(' not in ln or '::' not in ln:
             continue
+        if ln.rstrip().endswith(';'):
+            continue  # a call statement, not a def header
         if not DEF_Q.search(ln):
             continue
         if any(s <= j <= e for (s, e) in covered):
