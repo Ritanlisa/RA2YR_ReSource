@@ -94,6 +94,21 @@ def main():
     run('fix_addr_violations.py', '--no-verify', '--workers', '8',
         grep=('real functions fixed',))
 
+    print('[step5] a2. 编译门 (计划变更: Step5 必须通过编译)')
+    build_cfg = 'Release'
+    r = subprocess.run(['cmake', '--build', 'build_win', '--config', build_cfg],
+                       capture_output=True, text=True, encoding='utf-8',
+                       errors='replace', cwd=str(ROOT))
+    build_out = (r.stdout or '') + (r.stderr or '')
+    errs = len(re.findall(r'error C\d+|error LNK\d+', build_out))
+    print(f'    build rc={r.returncode} compile errors={errs}')
+    (ROOT / '.omo' / 'step5_build_tail.txt').write_text(
+        build_out[-20000:], encoding='utf-8', errors='replace')
+    if errs > 0 or r.returncode != 0:
+        print('[step5] 编译未通过 — 不提交; 错误明细见 '
+              '.omo/step5_build_tail.txt')
+        sys.exit(4)
+
     print('[step5] b. census')
     r = subprocess.run([sys.executable, str(TOOLS / 'census.py')],
                        capture_output=True, text=True, encoding='utf-8',
