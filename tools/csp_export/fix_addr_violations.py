@@ -180,6 +180,7 @@ def real_mem_rewrite(text, cls, env=None):
     # this renders as untyped/_DWORD* in raw decomp: OFF is dword units.
     if this_cls:
         def s_bare(m):
+            nonlocal n
             info = None
             nm = None
             for off in (int(m.group(1), 0) * 4, int(m.group(1), 0)):
@@ -189,6 +190,7 @@ def real_mem_rewrite(text, cls, env=None):
                     break
             if nm is None:
                 return m.group(0)
+            n += 1
             t = (info.get('type') or '').strip()
             nm = info['name']
             # `this + OFF` is an ADDRESS: only arrays decay to this->M;
