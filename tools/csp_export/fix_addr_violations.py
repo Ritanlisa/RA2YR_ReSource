@@ -439,8 +439,10 @@ def process_file(rel):
                         if depth <= 0:
                             break
                     k += 1
-                if started:
-                    spans.append((int(a.group(1), 16), i, j, min(k, nb - 1)))
+                # G32: always create the span to the boundary -- one-liner
+                # wrappers + orphaned bodies (ValidateFoundation shape) must
+                # be covered or their forms escape every rewrite pass.
+                spans.append((int(a.group(1), 16), i, j, min(k, nb - 1)))
         i += 1
 
     # pass 2b: UNANNOTATED defs (structure-era hand-written functions carry
