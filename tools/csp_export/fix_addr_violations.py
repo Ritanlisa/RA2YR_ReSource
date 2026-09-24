@@ -151,6 +151,48 @@ def _chain(cls):
     return seen
 
 
+# G32: on-miss member overlay -- rewrite-time auto-registration. Missing
+# members on typed receivers become fillers immediately (in-process), and
+# are persisted to the member tables when main() finishes.
+_MEM_OVERLAY = {}   # 'Cls+0xX' -> {'name':..., 'size':...}
+_MEM_PERSIST = []   # (cls, off, name, ctype, size)
+
+
+def _overlay_member(cls, off, ctype='unsigned int', size=4):
+    key = '%s+0x%X' % (cls, off)
+    ent = _MEM_OVERLAY.get(key)
+    if ent:
+        return ent['name']
+    name = 'u%d_%X' % (size * 8, off)
+    _MEM_OVERLAY[key] = {'name': name, 'size': size}
+    _MEM_PERSIST.append((cls, off, name, ctype, size))
+    return name
+
+
+# G32: method-name -> return CLASS (for call-return var typing). Built
+# from csp_canon headers; only class-pointer returns are recorded.
+_NAME_RET_CLASS = {}
+try:
+    _ret_src = chr(10).join(
+        (ROOT / h).read_text(encoding='utf-8', errors='replace')
+        for h in ('src/csp_canon/functions.hpp',
+                  'src/csp_canon/classes.hpp') if (ROOT / h).exists())
+    _re_decl = re.compile(
+        r'^[ \t]*([A-Za-z_]\w*)[ \t]*\*?[ \t]*'
+        r'(?:[A-Za-z_]\w*::)*~?([A-Za-z_]\w*)[ \t]*\(', re.M)
+    for _m in _re_decl.finditer(_ret_src):
+        _ret, _mname = _m.group(1), _m.group(2)
+        if _ret in ('void', 'int', 'bool', 'char', 'BOOL', 'float',
+                    'double', 'long', 'short', 'unsigned', 'const'):
+            continue
+        _base = _ret.rstrip('*').strip()
+        if not re.match(r'^[A-Za-z_]\w*$', _base) or _base not in mtab:
+            continue
+        if _mname not in _NAME_RET_CLASS:
+            _NAME_RET_CLASS[_mname] = _base
+except Exception:
+    pass
+
 def mem_of(cls, off):
     for c in _chain(cls):
         e = mtab.get(c)
@@ -169,6 +211,10 @@ def mem_of(cls, off):
             m = e['members'].get(str(alt))
             if m and m.get('name'):
                 return m['name']
+    # overlay (rewrite-time auto-registration)
+    ent = _MEM_OVERLAY.get('%s+0x%X' % (cls, off))
+    if ent:
+        return ent['name']
     return None
 
 def real_mem_rewrite(text, cls, env=None):
@@ -183,7 +229,10 @@ def real_mem_rewrite(text, cls, env=None):
             return None
         name = mem_of(c, off)
         if not name:
-            return None
+            # G32: on-miss auto-registration -- typed receiver + missing
+            # member is a real access; create a width-4 filler so the
+            # rewrite converges instead of stalling.
+            name = _overlay_member(c, off)
         n += 1
         if recv == 'this':
             return 'this->%s' % name
@@ -203,6 +252,96 @@ def real_mem_rewrite(text, cls, env=None):
         if r is not None:
             return r
         return m.group(0)
+    # G32 line-dominance chain composition: walk lines in order; each var's
+    # active base is its most recent `vN = this + K` / `vN = &this->M`
+    # assignment; any other assignment invalidates it. Uses `*(vN + M)` /
+    # `*(T *)(vN + M)` compose to this->Member(K+M) via mem_of+overlay.
+    if this_cls:
+        _rev0 = {mm['name']: int(oo) for oo, mm in
+                 (mtab.get(this_cls) or {}).get('members', {}).items()
+                 if mm.get('name')}
+        var_info = {}   # var -> ('rel', K) | ('cls', C)
+        assign_re = re.compile(
+            r'^\s*([a-z]\w*)\s*=\s*(?:\(\s*[A-Za-z_][\w\s\*]*?\s*\*\s*\)\s*)?'
+            r'(?:\(?\s*this\s*\)?\s*\+\s*(0x[0-9A-Fa-f]+|\d+)'
+            r'|&?\s*\(?\s*this->([A-Za-z_]\w*))')
+        ebp_decl_re = re.compile(
+            r'^\s*(?:int|_DWORD|unsigned int|char|_BYTE|long|unsigned long|'
+            r'short|unsigned short)\s+([a-z]\w*)\s*;.*//\s*ebp')
+        callassign_re = re.compile(
+            r'^\s*([a-z]\w*)\s*=\s*([A-Za-z_][\w:]*)\s*\($')
+        use_re = re.compile(
+            r'\*(\(\s*([A-Za-z_][\w\s\*]*?)\s*\*\s*\)\s*)?\(?\s*'
+            r'([a-z]\w*)\s*\)?\s*\+\s*(0x[0-9A-Fa-f]+|\d+)\s*\)')
+        star_re = re.compile(r'\*\s*([a-z]\w*)(?!\s*[+\[])(?!\s*=\s*\*)')
+        out_lines = []
+        for tln in text.split(chr(10)):
+            dm2 = ebp_decl_re.match(tln)
+            if dm2:
+                var_info[dm2.group(1)] = ('rel', 0)
+                out_lines.append(tln)
+                continue
+            am = assign_re.match(tln)
+            if am:
+                v = am.group(1)
+                if am.group(2):
+                    var_info[v] = ('rel', int(am.group(2), 0))
+                elif am.group(3) in _rev0:
+                    var_info[v] = ('rel', _rev0[am.group(3)])
+                else:
+                    var_info.pop(v, None)
+                out_lines.append(tln)
+                continue
+            cm = callassign_re.match(tln)
+            if cm:
+                v, fname = cm.group(1), cm.group(2).split('::')[-1]
+                rc = _NAME_RET_CLASS.get(fname)
+                if rc:
+                    var_info[v] = ('cls', rc)
+                else:
+                    var_info.pop(v, None)
+                out_lines.append(tln)
+                continue
+            # any other assignment to a tracked var invalidates it
+            im = re.match(r'^\s*([a-z]\w*)\s*=\s*', tln)
+            if im and im.group(1) in var_info:
+                del var_info[im.group(1)]
+
+            def _use(m):
+                recv, off = m.group(3), int(m.group(4), 0)
+                info = var_info.get(recv)
+                if not info:
+                    return m.group(0)
+                kind, base = info
+                if kind == 'rel':
+                    nm = (mem_of(this_cls, base + off)
+                          or mem_of(this_cls, base + off * 4)
+                          or _overlay_member(this_cls, base + off))
+                    if not nm:
+                        return m.group(0)
+                    return 'this->%s' % nm
+                nm = (mem_of(base, off) or mem_of(base, off * 4)
+                      or _overlay_member(base, off))
+                if not nm:
+                    return m.group(0)
+                return '%s->%s' % (recv, nm)
+            tln = use_re.sub(_use, tln)
+
+            def _star(m):
+                v = m.group(1)
+                info = var_info.get(v)
+                if not info:
+                    return m.group(0)
+                kind, base = info
+                cls2 = this_cls if kind == 'rel' else base
+                nm = (mem_of(cls2, base) or _overlay_member(cls2, base))
+                if not nm:
+                    return m.group(0)
+                return 'this->%s' % nm if kind == 'rel' else '%s->%s' % (v, nm)
+            if var_info:
+                tln = star_re.sub(_star, tln)
+            out_lines.append(tln)
+        text = chr(10).join(out_lines)
     text = R_THIS1.sub(s1, text)
     text = R_THIS2.sub(s2, text)
     # bare `this + OFF` (pointer initializer / cast argument).
@@ -578,6 +717,34 @@ if __name__ == '__main__':
                 print('  {file}: pending_mem={pending_mem} pending_glob={pending_glob} '
                       'real_fixed={real_fixed} real_rolled={real_rolled}'.format(**r),
                       flush=True)
+
+    # G32: persist the on-miss member overlay so the next cycle and the
+    # verifier resolve the same names.
+    if _MEM_PERSIST:
+        ml2 = json.loads((ROOT / 'tools/member_lookup.json').read_text(encoding='utf-8'))
+        mt2 = json.loads((ROOT / 'anchors/member_types.json').read_text(encoding='utf-8'))
+        sg2 = json.loads((ROOT / 'signals.json').read_text(encoding='utf-8'))
+        mbn2 = sg2.setdefault('_member_by_name', {})
+        for cls, off, name, ctype, size in _MEM_PERSIST:
+            key = '%s+0x%X' % (cls, off)
+            (ml2.setdefault(cls, {}))[str(off)] = {
+                'name': name, 'type': ctype, 'size': size,
+                'src': 'fix_addr on-miss supply'}
+            mt2[key] = {'name': name, 'type': ctype, 'size': size,
+                        'confidence': 'ANCHORED',
+                        'evidence': 'fix_addr on-miss supply (G32)'}
+            mbn2.setdefault(cls, {})[name] = off
+        (ROOT / 'tools/member_lookup.json').write_text(
+            json.dumps(ml2, separators=(',', ':'), ensure_ascii=False),
+            encoding='utf-8')
+        (ROOT / 'anchors/member_types.json').write_text(
+            json.dumps(mt2, separators=(',', ':'), ensure_ascii=False),
+            encoding='utf-8')
+        tmp = ROOT / 'signals.json.tmp'
+        tmp.write_text(json.dumps(sg2, separators=(',', ':'),
+                                  ensure_ascii=False), encoding='utf-8')
+        os.replace(tmp, ROOT / 'signals.json')
+        print('overlay members persisted:', len(_MEM_PERSIST))
 
     print('=== summary ===')
     print('files changed:', len(out))
