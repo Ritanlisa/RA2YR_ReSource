@@ -127,19 +127,48 @@ WIDTH = {'_DWORD': 4, 'int': 4, 'unsigned int': 4, 'long': 4, 'long long': 8,
          '_WORD': 2, 'short': 2, 'unsigned short': 2, '_QWORD': 8,
          'float': 4, 'double': 8, 'BOOL': 4}
 
+# G32: ancestor chain per class (class_db full_ancestors) — base-class
+# members (AbstractClass 2/3/7...) live in ancestor tables, not the leaf's
+_ANCESTORS = {}
+try:
+    _cdb = json.loads((ROOT / 'anchors/class_db.json').read_text(encoding='utf-8'))
+    for _c, _v in _cdb.items():
+        _fa = (_v or {}).get('full_ancestors') or []
+        if _fa:
+            _ANCESTORS[_c] = list(_fa)
+except Exception:
+    pass
+
+
+def _chain(cls):
+    """[cls] + ancestors (deduped, canonical names)."""
+    if cls not in _ANCESTORS:
+        _ANCESTORS[cls] = [a for a in _ANCESTORS.get(cls, [])]
+    seen = [cls]
+    for a in _ANCESTORS[cls]:
+        if a not in seen:
+            seen.append(a)
+    return seen
+
+
 def mem_of(cls, off):
-    e = mtab.get(cls)
-    if not e:
-        return None
-    m = e['members'].get(str(off))
-    if m and m.get('name'):
-        return m['name']
-    for alt in (off * 4, off // 4 if off % 4 == 0 else None):
-        if alt is None or alt == off:
+    for c in _chain(cls):
+        e = mtab.get(c)
+        if not e:
             continue
-        m = e['members'].get(str(alt))
+        m = e['members'].get(str(off))
         if m and m.get('name'):
             return m['name']
+    for c in _chain(cls):
+        e = mtab.get(c)
+        if not e:
+            continue
+        for alt in (off * 4, off // 4 if off % 4 == 0 else None):
+            if alt is None or alt == off:
+                continue
+            m = e['members'].get(str(alt))
+            if m and m.get('name'):
+                return m['name']
     return None
 
 def real_mem_rewrite(text, cls, env=None):
@@ -439,10 +468,11 @@ def process_file(rel):
                         if depth <= 0:
                             break
                     k += 1
-                # G32: always create the span to the boundary -- one-liner
-                # wrappers + orphaned bodies (ValidateFoundation shape) must
-                # be covered or their forms escape every rewrite pass.
-                spans.append((int(a.group(1), 16), i, j, min(k, nb - 1)))
+                # G32: span ALWAYS extends to the next annotation boundary.
+                # Truncating at the first balance point let one-liner
+                # wrappers + orphan bodies escape (building.cpp 5049 hits).
+                # Rewrites are idempotent, so overlapping spans are safe.
+                spans.append((int(a.group(1), 16), i, j, nb - 1))
         i += 1
 
     # pass 2b: UNANNOTATED defs (structure-era hand-written functions carry
