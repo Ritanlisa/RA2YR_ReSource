@@ -13,77 +13,85 @@
 
 // 0x5D67B0
 namespace gamemd { void* GameConfig::Constructor() {
-{
-    char **v1;
-    int *v2;
-    int *v3;
-    int v6[22];
-    char v7[12];
-    int v8;
-    v1 = this;
-    if ( !this->q038 )
+  char **v1; // edi
+  _DWORD *v2; // eax
+  _DWORD *v3; // esi
+  _DWORD v6[22]; // [esp+Ch] [ebp-6Ch] BYREF
+  char v7[12]; // [esp+64h] [ebp-14h] BYREF
+  int v8; // [esp+70h] [ebp-8h]
+
+  v1 = this; /*0x5d67b5*/
+  if ( !*(&this->ptr_44) ) /*0x5d67bd*/
   {
-    v2 = __2_YAPAXI_Z(0x58u);
-    v3 = v2;
-    if ( v2 )
+    v2 = __2_YAPAXI_Z(0x58u); /*0x5d67c9*/
+    v3 = v2; /*0x5d67ce*/
+    if ( v2 ) /*0x5d67d5*/
     {
-    v2[1] = 0;
-    v2[2] = 0;
-    v2[5] = 0;
-    v2[6] = 0;
-    v2[4] = &vt_GenericNode;
-    GenericNode::Constructor(v2 + 7);
-    v3[3] = &vt_GenericList;
-    LinkedList::Prepend(v3 + 4, (int)(v3 + 7));
-    v1 = this;
-    v3[3] = &vt_List_INIClass_INISection;
-    v3[10] = 0;
-    v3[11] = 0;
-    v3[12] = 0;
-    *((char *)(v3) + 52) = 0;
-    v3[14] = 0;
-    v3[15] = 0;
-    *((char *)(v3) + 64) = 0;
-    *v3 = &CCINIClass_Vtable;
+      v2[1] = 0; /*0x5d67de*/
+      v2[2] = 0; /*0x5d67e1*/
+      v2[5] = 0; /*0x5d67e6*/
+      v2[6] = 0; /*0x5d67e9*/
+      v2[4] = &GenericNode::`vftable'; /*0x5d67ec*/
+      GenericNode::Constructor(v2 + 7); /*0x5d67f2*/
+      v3[3] = &GenericList::`vftable'; /*0x5d67fa*/
+      LinkedList::Prepend(v3 + 4, (int)(v3 + 7)); /*0x5d6801*/
+      v1 = this; /*0x5d6806*/
+      v3[3] = &List<INIClass::INISection *>::`vftable'; /*0x5d680a*/
+      v3[10] = 0; /*0x5d6811*/
+      v3[11] = 0; /*0x5d6814*/
+      v3[12] = 0; /*0x5d6817*/
+      *((_BYTE *)v3 + 52) = 0; /*0x5d681a*/
+      v3[14] = 0; /*0x5d681d*/
+      v3[15] = 0; /*0x5d6820*/
+      *((_BYTE *)v3 + 64) = 0; /*0x5d6823*/
+      *v3 = &CCINIClass_Vtable; /*0x5d6826*/
     }
     else
     {
-    v3 = 0;
+      v3 = 0; /*0x5d682f*/
     }
-    v1[14] = (char *)v3;
-    CCFileClass::Construct2(v6, v1 + 11);
-    if ( CCFileClass::Open(v6, 0) )
-    CCINIClass::Load(v1[14], (int)v6, 0, 0);
-    v6[0] = &vt_CCFileClass;
-    v8 = 0;
-    Vector::Clear((int)v7);
-    v6[0] = &vt_CDFileClass;
-    BufferIOFileClass::Dtor(v6);
+    v1[14] = (char *)v3; /*0x5d6839*/
+    CCFileClass::Construct2(v6, v1 + 11); /*0x5d683c*/
+    if ( CCFileClass::Open(v6, 0) ) /*0x5d6846*/
+      CCINIClass::Load(v1[14], (int)v6, 0, 0); /*0x5d685a*/
+    v6[0] = &CCFileClass::`vftable'; /*0x5d6863*/
+    v8 = 0; /*0x5d686b*/
+    Vector::Clear((int)v7); /*0x5d686f*/
+    v6[0] = &off_7E1668; /*0x5d6878*/
+    BufferIOFileClass::Dtor(v6); /*0x5d6880*/
   }
-    return v1[14];
+  return v1[14]; /*0x5d6888*/
 }
-} }
+}
 // 0x77E7A0
 namespace gamemd { int GameConfig::BuildChecksum() {
-{
-    int v2;
-    void **p_attachedTag;
-    INIClass *Entry;
-    v2 = DataGlobal_B76B1C;
-    if ( DataGlobal_B76B1C > 0 )
+  int v2; // ecx
+  int *v3; // eax
+  int v4; // esi
+  char v5; // al
+  unsigned __int8 v6; // al
+  int Entry; // eax
+  int v9; // [esp-10h] [ebp-1Ch]
+  int v10; // [esp-Ch] [ebp-18h]
+  int v11; // [esp-8h] [ebp-14h]
+  const char *v12; // [esp-4h] [ebp-10h]
+
+  v2 = dword_B76B1C; /*0x77e7a5*/
+  if ( dword_B76B1C > 0 ) /*0x77e7ad*/
   {
-    p_attachedTag = &g_WOL_LoginObject.attachedTag;
-    do
+    v3 = dword_B76E58; /*0x77e7af*/
+    do /*0x77e7c0*/
     {
-    p_attachedTag += 37;
-    --v2;
+      v3 += 37; /*0x77e7b6*/
+      --v2; /*0x77e7bb*/
     }
-    while ( v2 );
+    while ( v2 ); /*0x77e7c0*/
   }
-    GameOption::CheckDuplicate();
-    Hash_Check_5E9580();
-    Hash_Check_5E94D0();
-    Entry = GameOptions::GetEntry();
-    return (INIClass *)sprintf(Buffer, (ObjectClass *)&g_INI_Key_WOnline.sectionHead[1], Entry);
+  v4 = CCINIClass_RulesHash ^ CCINIClass_AIHash ^ CCINIClass_ArtHash; /*0x77e7db*/
+  v5 = GameOption::CheckDuplicate(&Destination); /*0x77e7dd*/
+  v6 = Hash_Check_5E9580(v5 == 0); /*0x77e7e8*/
+  v9 = Hash_Check_5E94D0(v6); /*0x77e7f8*/
+  Entry = GameOptions::GetEntry(); /*0x77e7fa*/
+  return sprintf(Buffer, "%d,%d,%d,%d,%d,%s", Entry, v4, v9, v10, v11, v12); /*0x77e80e*/
 }
-} }
+}

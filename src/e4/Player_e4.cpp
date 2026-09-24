@@ -6,89 +6,86 @@
 // 0x5E8DC0
 void Player::BuildListString()
 {
-{
-  SessionClass *v2; // edi
-  ReferenceCounted *v3; // esi
+  wchar_t **v2; // edi
+  wchar_t *v3; // esi
   wchar_t **v4; // eax
-  CampaignScore *v5; // eax
-  wchar_t *v6; // [esp+Ch] [ebp-Ch] BYREF
-  *this = 0; /*0x5e8dc8*/
-  v2 = (SessionClass *)&HouseClass_Player[40260]; /*0x5e8dcd*/
+  wchar_t *v5; // eax
+  void *v6; // [esp+Ch] [ebp-Ch] BYREF
+  void *v7; // [esp+10h] [ebp-8h] BYREF
+  void *v8; // [esp+14h] [ebp-4h] BYREF
+
+  *Destination = 0; /*0x5e8dc8*/
+  v2 = (wchar_t **)&g_NetworkPlayerName; /*0x5e8dcd*/
   do /*0x5e8e89*/
   {
-    v3 = (ReferenceCounted *)v2->GameMode[0]; /*0x5e8dd2*/
+    v3 = *v2; /*0x5e8dd2*/
     unknown_libname_74(&v6); /*0x5e8dd8*/
     if ( !v3 /*0x5e8e17*/
-      || v3 == (ReferenceCounted *)*(&g_MatrixTransformState + 2275)
-      || v3 == (ReferenceCounted *)*(&g_MatrixTransformState + 2276)
-      || v3 == (ReferenceCounted *)*(&g_MatrixTransformState + 2280)
-      || v3 == (ReferenceCounted *)*(&g_MatrixTransformState + 2281)
-      || v3 == (ReferenceCounted *)*(&g_MatrixTransformState + 2277)
-      || v3 == (ReferenceCounted *)*(&g_MatrixTransformState + 2278)
-      || v3 == (ReferenceCounted *)*(&g_MatrixTransformState + 2279) )
+      || v3 == (wchar_t *)g_HouseClass_ObserverFlags
+      || v3 == (wchar_t *)g_Lobby_PlayerCount
+      || v3 == g_Lobby_PlayerReady
+      || v3 == (wchar_t *)g_Lobby_MaxPlayers
+      || v3 == (wchar_t *)g_Lobby_PlayerTeam
+      || v3 == (wchar_t *)g_Lobby_PlayerSide
+      || v3 == (wchar_t *)g_Lobby_PlayerColor )
     {
-  char *a1; // [esp+10h] [ebp-8h] BYREF
-      GetPlayerTypeString(&a1, (wchar_t *)v3); /*0x5e8e2b*/
-      void * v8 = CharStringToWide((ObjectClass *)&v8, (const char **)&a1); /*0x5e8e38*/
-      WideString::Reassign_Alt((void **)&v6, (const wchar_t **)v4); /*0x5e8e42*/
+      GetPlayerTypeString(&v7, v3); /*0x5e8e2b*/
+      v4 = CharStringToWide((wchar_t **)&v8, (const char **)&v7); /*0x5e8e38*/
+      WideString::Reassign_Alt(&v6, (const wchar_t **)v4); /*0x5e8e42*/
       DeleteAndZero::Alt(&v8); /*0x5e8e4b*/
-      DeleteAndZero((int)&a1); /*0x5e8e54*/
+      DeleteAndZero(&v7); /*0x5e8e54*/
     }
     else
     {
-      WideString::Assign_Alt((void **)&v6, (wchar_t *)v3); /*0x5e8e1e*/
+      WideString::Assign_Alt(&v6, v3); /*0x5e8e1e*/
     }
-    v5 = WideString::GetOrEmpty(&v6); /*0x5e8e5d*/
-    wcscat(this, v5); /*0x5e8e64*/
-    wcscat(this, (CampaignScore *)&stru_8304AC.unknown50); /*0x5e8e6f*/
-    DeleteAndZero::Alt((void **)&v6); /*0x5e8e7b*/
-    v2 = (SessionClass *)((char *)v2 + 4); /*0x5e8e80*/
+    v5 = WideString::GetOrEmpty((wchar_t **)&v6); /*0x5e8e5d*/
+    wcscat(Destination, v5); /*0x5e8e64*/
+    wcscat(Destination, asc_8304FC); /*0x5e8e6f*/
+    DeleteAndZero::Alt(&v6); /*0x5e8e7b*/
+    ++v2; /*0x5e8e80*/
   }
-  while ( (int)v2 < (int)&HouseClass_Player[40292] ); /*0x5e8e89*/
+  while ( (int)v2 < (int)&g_PlayerNameListEnd ); /*0x5e8e89*/
 }
-}
-
 // 0x5E8BF0
 wchar_t * Player::FindByName()
 {
-{
-    int v3;
-    int v4;
-    const wchar_t *v5;
-    if ( !wcscmp((const wchar_t *)g_HouseClass_ObserverFlags, this) )
-    return (wchar_t *)g_HouseClass_ObserverFlags;
-    if ( !wcscmp((const wchar_t *)g_Lobby_PlayerCount, this) )
-    return (wchar_t *)g_Lobby_PlayerCount;
-    if ( !wcscmp((const wchar_t *)g_Lobby_PlayerTeam, this) )
-    return (wchar_t *)g_Lobby_PlayerTeam;
-    if ( !wcscmp((const wchar_t *)g_Lobby_PlayerSide, this) )
-    return (wchar_t *)g_Lobby_PlayerSide;
-    if ( !wcscmp((const wchar_t *)g_Lobby_PlayerColor, this) )
-    return (wchar_t *)g_Lobby_PlayerColor;
-    if ( !wcscmp(g_Lobby_PlayerReady, this) )
-    return g_Lobby_PlayerReady;
-    if ( !wcscmp((const wchar_t *)g_Lobby_MaxPlayers, this) )
-    return (wchar_t *)g_Lobby_MaxPlayers;
-    v3 = Game_PlayerCount;
-    v4 = 0;
-    if ( Game_PlayerCount <= 0 )
-    return 0;
-    while ( 1 )
-  {
-    v5 = *(const wchar_t **)(Game_PlayerInfoArray + 4 * v4);
-    if ( !wcscmp(v5, this) )
-    break;
-    if ( ++v4 >= v3 )
-    return 0;
-  }
-    return (wchar_t *)v5;
-}
-}
+  int v3; // ebp
+  int v4; // esi
+  const wchar_t *v5; // edi
 
+  if ( !wcscmp((const wchar_t *)g_HouseClass_ObserverFlags, String2) ) /*0x5e8bfd*/
+    return (wchar_t *)g_HouseClass_ObserverFlags; /*0x5e8c09*/
+  if ( !wcscmp((const wchar_t *)g_Lobby_PlayerCount, String2) ) /*0x5e8c1b*/
+    return (wchar_t *)g_Lobby_PlayerCount; /*0x5e8c27*/
+  if ( !wcscmp((const wchar_t *)g_Lobby_PlayerTeam, String2) ) /*0x5e8c39*/
+    return (wchar_t *)g_Lobby_PlayerTeam; /*0x5e8c45*/
+  if ( !wcscmp((const wchar_t *)g_Lobby_PlayerSide, String2) ) /*0x5e8c56*/
+    return (wchar_t *)g_Lobby_PlayerSide; /*0x5e8c62*/
+  if ( !wcscmp((const wchar_t *)g_Lobby_PlayerColor, String2) ) /*0x5e8c74*/
+    return (wchar_t *)g_Lobby_PlayerColor; /*0x5e8c80*/
+  if ( !wcscmp(g_Lobby_PlayerReady, String2) ) /*0x5e8c92*/
+    return g_Lobby_PlayerReady; /*0x5e8c9e*/
+  if ( !wcscmp((const wchar_t *)g_Lobby_MaxPlayers, String2) ) /*0x5e8caf*/
+    return (wchar_t *)g_Lobby_MaxPlayers; /*0x5e8cbb*/
+  v3 = Game_PlayerCount; /*0x5e8cc5*/
+  v4 = 0; /*0x5e8ccb*/
+  if ( Game_PlayerCount <= 0 ) /*0x5e8ccf*/
+    return 0; /*0x5e8ced*/
+  while ( 1 ) /*0x5e8cd8*/
+  {
+    v5 = *(const wchar_t **)(Game_PlayerInfoArray + 4 * v4); /*0x5e8cd8*/
+    if ( !wcscmp(v5, String2) ) /*0x5e8cdc*/
+      break; /*0x5e8cdc*/
+    if ( ++v4 >= v3 ) /*0x5e8ceb*/
+      return 0; /*0x5e8ceb*/
+  }
+  return (wchar_t *)v5; /*0x5e8c0e*/
+}
 // 0x5E9440
 BOOL Player::IsObserver()
 {
-{
-    return this && (this == (void *)g_Lobby_PlayerTeam || this == (void *)g_Lobby_PlayerSide || this == (void *)g_Lobby_PlayerColor);
-}
+  return this /*0x5e9461*/
+      && (this == (void *)g_Lobby_PlayerTeam || this == (void *)g_Lobby_PlayerSide
+                                             || this == (void *)g_Lobby_PlayerColor);
 }

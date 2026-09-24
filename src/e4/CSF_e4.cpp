@@ -5,7 +5,5 @@
 // 0x536210
 wchar_t * CSF::GetTeamString()
 {
-{
-    return GetStringCSF(g_Str_TXT_TEAM, 0, g_Str_File_Init_CPP, 6363);
-}
+  return GetStringCSF(g_Str_TXT_TEAM, 0, g_Str_File_Init_CPP, 6363); /*0x536226*/
 }

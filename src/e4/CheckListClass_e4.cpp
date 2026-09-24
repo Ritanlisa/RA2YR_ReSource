@@ -7,116 +7,100 @@
 namespace gamemd {
 void CheckListClass_OnClick()
 {
-{
-  CheckListClass *result; // eax
-  wchar_t *Type; // ebx
-  size_t v17; // [esp-10h] [ebp-104h]
-  result = (CheckListClass *)(*(int (__thiscall **)(_DWORD *))(*a1 + 148))(a1); /*0x48852b*/
-  if ( (int)aP1 < (int)result )
+  size_t *result; // eax
+  int v9; // edi
+  int Type; // ebx
+  int v11; // ecx
+  int v12; // eax
+  int v13; // eax
+  int v14; // eax
+  int v15; // [esp-20h] [ebp-114h]
+  size_t v16; // [esp-10h] [ebp-104h]
+  int v17; // [esp-10h] [ebp-104h]
+  _DWORD v18[4]; // [esp+4h] [ebp-F0h] BYREF
+  _DWORD v19[2]; // [esp+14h] [ebp-E0h] BYREF
+  _BYTE v20[16]; // [esp+1Ch] [ebp-D8h] BYREF
+  _WORD v21[100]; // [esp+2Ch] [ebp-C8h] BYREF
+
+  result = (size_t *)(*(int (__thiscall **)(_DWORD *))(*a1 + 148))(a1); /*0x48852b*/
+  if ( a3 < (int)result )
   {
-    result = (CheckListClass *)Array::GetClamped(a1, aP1); /*0x488543*/
+    result = (size_t *)Array::GetClamped(a1, a3); /*0x488543*/
     if ( result )
     {
-  _DWORD v19[4]; // [esp+4h] [ebp-F0h] BYREF
-  _WORD v22[100]; // [esp+2Ch] [ebp-C8h] BYREF
-      memset(&v22[1], 0, 198); /*0x488560*/
-      v17 = *(_DWORD *)result->__pad_0; /*0x48856b*/
-      v22[0] = LOBYTE(result->CheckListClass_field_0x04) != 0 ? 3 : 32;
-      v22[1] = 32; /*0x48857e*/
-      swprintf(&v22[2], v17, a2, a3); /*0x488585*/
-      int v10 = a1[11]; /*0x48858a*/
-      Type = (wchar_t *)BuildingAnim::GetType(); /*0x48859c*/
-      if ( a8 ) /*0x4885a7*/
+      memset(&v21[1], 0, 198); /*0x488560*/
+      v16 = *result; /*0x48856b*/
+      v21[0] = *((_BYTE *)result + 4) != 0 ? 3 : 32;
+      v21[1] = 32; /*0x48857e*/
+      swprintf(&v21[2], v16, a2); /*0x488585*/
+      v9 = a1[11]; /*0x48858a*/
+      Type = BuildingAnim::GetType(); /*0x48859c*/
+      if ( a7 ) /*0x4885a7*/
       {
-        v10 |= 0x2000u; /*0x4885b4*/
-        int v12 = *(_DWORD *)(*(_DWORD *)(stru_B05488.field_4C + 4 * (_DWORD)Type) + 796); /*0x4885bd*/
-        if ( *(_DWORD *)(*(_DWORD *)&stru_87C374[13136] + 4) == 1 ) /*0x4885c9*/
-          int v13 = *(unsigned __int8 *)(*(_DWORD *)(*(_DWORD *)&stru_87C374[13136] + 372) + v12); /*0x4885d6*/
+        v9 |= 0x2000u; /*0x4885b4*/
+        v11 = *(_DWORD *)(*((_DWORD *)BuildingTypeClass_AnimTable + Type) + 796); /*0x4885bd*/
+        if ( *(_DWORD *)(g_FileSystem_THEATER_PAL + 4) == 1 ) /*0x4885c9*/
+          v12 = *(unsigned __int8 *)(*(_DWORD *)(g_FileSystem_THEATER_PAL + 372) + v11); /*0x4885d6*/
         else
-          v13 = *(unsigned __int16 *)(*(_DWORD *)(*(_DWORD *)&stru_87C374[13136] + 372) + 2 * v12); /*0x4885e2*/
-        v19[0] = a5; /*0x4885f4*/
-        v19[3] = a1[19]; /*0x4885fb*/
-        v19[1] = a6; /*0x488606*/
-        v19[2] = a7; /*0x48860a*/
-        (*(void (__thiscall **)(_DWORD, _DWORD *, int))(**(_DWORD **)&stru_87C374[44960] + 20))( /*0x488615*/
-          *(_DWORD *)&stru_87C374[44960],
-          v19,
-          v13);
+          v12 = *(unsigned __int16 *)(*(_DWORD *)(g_FileSystem_THEATER_PAL + 372) + 2 * v11); /*0x4885e2*/
+        v18[0] = a4; /*0x4885f4*/
+        v18[3] = a1[19]; /*0x4885fb*/
+        v18[1] = a5; /*0x488606*/
+        v18[2] = a6; /*0x48860a*/
+        (*(void (__thiscall **)(int, _DWORD *, int))(*(_DWORD *)g_DSurface_Hidden_2 + 20))( /*0x488615*/
+          g_DSurface_Hidden_2,
+          v18,
+          v12);
       }
-      else if ( (v10 & 0x4000) == 0 ) /*0x488620*/
+      else if ( (v9 & 0x4000) == 0 ) /*0x488620*/
       {
-        v10 |= 0x1000u; /*0x488622*/
+        v9 |= 0x1000u; /*0x488622*/
       }
-      int v14 = a1[12]; /*0x48862f*/
-  int v20[2]; // [esp+14h] [ebp-E0h] BYREF
-      v20[0] = a5; /*0x488639*/
-      int v18 = v14; /*0x488643*/
-      v20[1] = a6; /*0x488644*/
-      int v16 = *(_DWORD *)(stru_B05488.field_4C + 4 * (_DWORD)Type); /*0x488659*/
-  int v15; // eax
-      v15 = (*(int (__thiscall **)(_DWORD, _BYTE *))(**(_DWORD **)&stru_87C374[44960] + 120))( /*0x488662*/
-              *(_DWORD *)&stru_87C374[44960],
-  _BYTE v21[16]; // [esp+1Ch] [ebp-D8h] BYREF
-              v21);
-      return (CheckListClass *)FillRectangle( /*0x488675*/
-                                 (IUnknown *)v19,
-                                 (IUnknown *)v22,
-                                 *(int *)&stru_87C374[44960],
-                                 v15,
-                                 (int)v20,
-                                 v16,
-                                 0,
-                                 v10,
-                                 a7,
-                                 v18);
+      v13 = a1[12]; /*0x48862f*/
+      v19[0] = a4; /*0x488639*/
+      v17 = v13; /*0x488643*/
+      v19[1] = a5; /*0x488644*/
+      v15 = *((_DWORD *)BuildingTypeClass_AnimTable + Type); /*0x488659*/
+      v14 = (*(int (__thiscall **)(int, _BYTE *))(*(_DWORD *)g_DSurface_Hidden_2 + 120))(g_DSurface_Hidden_2, v20); /*0x488662*/
+      return FillRectangle(v18, (int)v21, g_DSurface_Hidden_2, v14, (int)v19, v15, 0, v9, a6, v17); /*0x488675*/
     }
   }
   return result; /*0x48867d*/
 }
-} // namespace gamemd
 }
-
 // 0x4886B0
 int CheckListClass::COMStub()
 {
-{
-  return this->q044; /*0x4886b3*/
+  return *(this + 17); /*0x4886b3*/
 }
-}
-
 // 0x557E10
 int CheckListClass::ddtor(int a2)
 {
-    if ( this->IsReadOnly )
-    {
-        this->subList3->Dispatch(a2);
-        this->subList2->Dispatch(a2);
-        this->subList1->Dispatch(a2);
-    }
-    return LinkedList::InsertAfter(this, a2);
+  if ( *(_BYTE *)(this + 84) ) /*0x557e18*/
+  {
+    (*(void (__thiscall **)(int, int))(*(_DWORD *)(this + 280) + 12))(this + 280, a2); /*0x557e2c*/
+    (*(void (__thiscall **)(int, int))(*(_DWORD *)(this + 184) + 12))(this + 184, a2); /*0x557e3c*/
+    (*(void (__thiscall **)(int, int))(*(_DWORD *)(this + 88) + 12))(this + 88, a2); /*0x557e46*/
+  }
+  return LinkedList::InsertAfter((_DWORD *)this, a2); /*0x557e51*/
 }
-}
-
 // 0x48E650
 void CheckListClass::StubReturnFalse(int a1, int a2, int a3)
 {
-  ;
+  ; /*0x48e650*/
 }
-
 // 0x4AEBA0
 int CheckListClass::COMStub_Return0()
 {
-return 0;
+  return 0; /*0x4aeba2*/
 }
-
 // 0x4E1510
 void CheckListClass::StubReturnVoid()
 {
-  ;
+  ; /*0x4e1510*/
 }
-
 // 0x4E1520
 void CheckListClass::StubReturn()
 {
-  ;
+  ; /*0x4e1520*/
 }

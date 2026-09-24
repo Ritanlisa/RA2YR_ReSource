@@ -6,8 +6,6 @@
 namespace gamemd {
 void sub_58BC20()
 {
-{
-    DataGlobal_ABED0C = 0;
-}
+  dword_ABED0C = 0; /*0x58bc20*/
 }
 } // namespace gamemd

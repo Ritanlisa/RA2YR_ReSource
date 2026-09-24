@@ -5,7 +5,5 @@
 // 0x48ACE0
 int Return::HRESULT_Fail(BulletClass * aP0, int a2, int a3)
 {
-{
-    return -15;
-}
+  return -15; /*0x48ace5*/
 }

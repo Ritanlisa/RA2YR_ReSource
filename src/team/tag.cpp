@@ -30,25 +30,27 @@ void TagClass::NotifyLocalChanged(int idx_local)
 // 0x6e5320
 bool TagClass::HasCrossesHorizontalLineEvent() const
 {
-    // Delegates to the tag's type (buildingType) for the check.
-    return buildingType
-           && buildingType->HasCrossesHorizontalLineEvent();
-}
+  _DWORD *v1; // ecx
 
+  v1 = (_DWORD *)*(this + 9); /*0x6e5320*/
+  return v1 && TagTypeClass::HasCrossesHorizontalLineEvent(v1); /*0x6e5335*/
+}
 // 0x6e5300
 bool TagClass::HasCrossesVerticalLineEvent() const
 {
-    return buildingType
-           && buildingType->HasCrossesVerticalLineEvent();
-}
+  _DWORD *v1; // ecx
 
+  v1 = (_DWORD *)*(this + 9); /*0x6e5300*/
+  return v1 && TagTypeClass::HasCrossesVerticalLineEvent(v1); /*0x6e5315*/
+}
 // 0x6e5340
 bool TagClass::HasZoneEntryByEvent() const
 {
-    return buildingType
-           && buildingType->HasZoneEntryByEvent();
-}
+  _DWORD *v1; // ecx
 
+  v1 = (_DWORD *)*(this + 9); /*0x6e5340*/
+  return v1 && TagTypeClass::HasZoneEntryByEvent(v1); /*0x6e5355*/
+}
 bool TagClass::HasAllowWinAction() const
 {
     if (!buildingType)
@@ -96,9 +98,19 @@ void TagClass::LocalChanged(int idx_local)
 // 0x6e5850
 bool TagClass::IsOnlyInstanceOfType() const
 {
-    return instanceCount <= 1;
-}
+  int v1; // edx
+  char *i; // esi
 
+  v1 = 0; /*0x6e5859*/
+  if ( g_GameObjectCleanup <= 0 ) /*0x6e585d*/
+    return 1; /*0x6e587d*/
+  for ( i = (char *)g_TagClassCount; *(_DWORD **)i == this || *(_DWORD *)(*(_DWORD *)i + 36) != *(this + 9); i += 4 ) /*0x6e585f*/
+  {
+    if ( ++v1 >= g_GameObjectCleanup ) /*0x6e587b*/
+      return 1; /*0x6e587b*/
+  }
+  return 0; /*0x6e587d*/
+}
 bool TagClass::RaiseEvent(int event, ObjectClass* tag_owner,
                            CellStruct location, bool force_all,
                            TechnoClass* source)
@@ -160,19 +172,31 @@ bool TagClass::ShouldReplace() const
 // 0x6e5230
 void TagClass::Destroy()
 {
-    destroyed = true;
-}
+  int result; // eax
 
+  *(this + 52) = 1; /*0x6e5233*/
+  result = dword_B0F6A0; /*0x6e5237*/
+  if ( g_LaserDrawConfig < dword_B0F6A0 /*0x6e5270*/
+    || (byte_B0F6A5 || !dword_B0F6A0)
+    && dword_B0F6AC > 0
+    && (result = (*(int (__thiscall **)(int *, int, _DWORD))(g_DiskLaserManager + 8))(
+                   &g_DiskLaserManager,
+                   dword_B0F6A0 + dword_B0F6AC,
+                   0),
+        (_BYTE)result) )
+  {
+    result = g_LaserDrawConfig++; /*0x6e5278*/
+    *((_DWORD *)dword_B0F69C + result) = this; /*0x6e5287*/
+  }
+  return result; /*0x6e528a*/
+}
 // 0x6e55c0
 void TagClass::AddTrigger(TriggerClass* trigger)
 {
-    // Insert trigger at the head of the linked list.
-    if (!trigger)
-        return;
-    trigger->nextTrigger = firstTrigger;
-    firstTrigger = trigger;
+  *(_DWORD *)(trigger + 40) = *(this + 10); /*0x6e55c7*/
+  *(this + 10) = trigger; /*0x6e55ca*/
+  return trigger; /*0x6e55cd*/
 }
-
 bool TagClass::RemoveTrigger(TriggerClass* trigger)
 {
     // Unlink trigger from the singly-linked list.
@@ -236,36 +260,51 @@ bool TagTypeClass::HasAllowWinAction() const
 // 0x6e6250
 bool TagTypeClass::HasCrossesHorizontalLineEvent() const
 {
-    for (TriggerTypeClass* tt = firstTrigger; tt; tt = tt->nextTrigger)
-    {
-        if (tt->HasCrossesHorizontalLineEvent())
-            return true;
-    }
-    return false;
-}
+  _DWORD *v1; // esi
 
+  v1 = (_DWORD *)*(this + 40); /*0x6e6251*/
+  if ( !v1 ) /*0x6e6259*/
+    return 0; /*0x6e6270*/
+  while ( !HouseClass::HasType25Building(v1) ) /*0x6e6264*/
+  {
+    v1 = (_DWORD *)v1[42]; /*0x6e6266*/
+    if ( !v1 ) /*0x6e626e*/
+      return 0; /*0x6e626e*/
+  }
+  return 1; /*0x6e6272*/
+}
 // 0x6e6280
 bool TagTypeClass::HasCrossesVerticalLineEvent() const
 {
-    for (TriggerTypeClass* tt = firstTrigger; tt; tt = tt->nextTrigger)
-    {
-        if (tt->HasCrossesVerticalLineEvent())
-            return true;
-    }
-    return false;
-}
+  _DWORD *v1; // esi
 
+  v1 = (_DWORD *)*(this + 40); /*0x6e6281*/
+  if ( !v1 ) /*0x6e6289*/
+    return 0; /*0x6e62a0*/
+  while ( !HouseClass::HasType26Building(v1) ) /*0x6e6294*/
+  {
+    v1 = (_DWORD *)v1[42]; /*0x6e6296*/
+    if ( !v1 ) /*0x6e629e*/
+      return 0; /*0x6e629e*/
+  }
+  return 1; /*0x6e62a2*/
+}
 // 0x6e62b0
 bool TagTypeClass::HasZoneEntryByEvent() const
 {
-    for (TriggerTypeClass* tt = firstTrigger; tt; tt = tt->nextTrigger)
-    {
-        if (tt->HasZoneEntryByEvent())
-            return true;
-    }
-    return false;
-}
+  int v1; // esi
 
+  v1 = *(this + 40); /*0x6e62b1*/
+  if ( !v1 ) /*0x6e62b9*/
+    return 0; /*0x6e62d0*/
+  while ( !HouseClass::FindType24((std::codecvt_base **)v1) ) /*0x6e62c4*/
+  {
+    v1 = *(_DWORD *)(v1 + 168); /*0x6e62c6*/
+    if ( !v1 ) /*0x6e62ce*/
+      return 0; /*0x6e62ce*/
+  }
+  return 1; /*0x6e62d2*/
+}
 bool TagTypeClass::AddTrigger(TriggerTypeClass* trigger)
 {
     if (!trigger)
@@ -346,6 +385,6 @@ HRESULT __stdcall TagTypeClass::Save(IStream* stream, int clear_dirty) { return 
 void TagTypeClass::pointerExpired(AbstractClass* ptr, bool removed) {}
 AbstractType __stdcall TagTypeClass::whatAmI() const { return AbstractType::TagType; }
 int TagTypeClass::objectSize() const { return 0; }
-void TagTypeClass::calculateChecksum(void* checksum) const {}
+void TagTypeClass::calculateChecksum(void* checksum) const {
 
 } // namespace gamemd

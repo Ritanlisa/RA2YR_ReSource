@@ -5,92 +5,82 @@
 // 0x557AE0
 int ColorListClass::SetColor()
 {
-{
+  int v1; // eax
 
-  ListClass *v1 = this->q16C; /*0x557ae0*/
-  if ( this->q044 > v1 ) /*0x557aeb*/
-    return *(_DWORD *)(this->q038 + 4 * v1); /*0x557af3*/
+  v1 = *(this + 91); /*0x557ae0*/
+  if ( *(this + 17) > v1 ) /*0x557aeb*/
+    return *(_DWORD *)(*(this + 14) + 4 * v1); /*0x557af3*/
   else
     return 0; /*0x557aed*/
 }
-}
-
 // 0x557F40
 int ColorListClass::Clear(unsigned int a2)
 {
-{
   int result; // eax
+  int v4; // ecx
 
   result = a2; /*0x557f40*/
-  if ( a2 >= this->q044 ) /*0x557f4a*/
+  if ( a2 >= *(this + 17) ) /*0x557f4a*/
   {
-    this->q05B = 0; /*0x557f9b*/
+    *(this + 91) = 0; /*0x557f9b*/
   }
   else
   {
-    this->q05B = a2; /*0x557f4c*/
-    this->AddItem_1(); /*0x557f56*/
-    if ( this->q05B < this->q170 ) /*0x557f67*/
-      this->OnKeyDown(this->q05B); /*0x557f6e*/
-    int v4 = this->q014; /*0x557f74*/
-    result = this->q05B; /*0x557f7d*/
-    if ( result >= v4 + this->q170 ) /*0x557f87*/
-      return this->OnKeyDown(result - v4 + 1); /*0x557f91*/
+    *(this + 91) = a2; /*0x557f4c*/
+    (*(void (__thiscall **)(int *))(*this + 72))(this); /*0x557f56*/
+    if ( *(this + 91) < *(this + 92) ) /*0x557f67*/
+      (*(void (__thiscall **)(int *, _DWORD))(*this + 192))(this, *(this + 91)); /*0x557f6e*/
+    v4 = *(this + 20); /*0x557f74*/
+    result = *(this + 91); /*0x557f7d*/
+    if ( result >= v4 + *(this + 92) ) /*0x557f87*/
+      return (*(int (__thiscall **)(int *, int))(*this + 192))(this, result - v4 + 1); /*0x557f91*/
   }
   return result; /*0x557f97*/
 }
-}
-
 // 0x558010
 void ColorListClass::RemoveColor(wchar_t * String2)
 {
-{
+  int v3; // esi
 
-  if ( String2 && (int)this->q044 > 0 ) /*0x558022*/
+  if ( String2 && (int)*(this + 17) > 0 ) /*0x558022*/
   {
-    int v3 = 0; /*0x558024*/
-    while ( _wcsicmp(*(const wchar_t **)(this->q038 + 4 * v3), String2) ) /*0x55803c*/
+    v3 = 0; /*0x558024*/
+    while ( _wcsicmp(*(const wchar_t **)(*(this + 14) + 4 * v3), String2) ) /*0x55803c*/
     {
-      if ( ++v3 >= this->q044 ) /*0x558044*/
+      if ( ++v3 >= *(this + 17) ) /*0x558044*/
         return; /*0x558044*/
     }
-    this->Clear(v3); /*0x558051*/
+    (*(void (__thiscall **)(_DWORD *, int))(*this + 184))(this, v3); /*0x558051*/
   }
 }
-}
-
 // 0x488EE0
 int ColorListClass::GetColor(int a2)
 {
-{
-    return this->GetIndex(a2, 0);
+  return (*(int (__thiscall **)(void *, int, _DWORD))(*(_DWORD *)this + 204))(this, a2, 0); /*0x488eef*/
 }
-}
-
 // 0x488F00
 ColorListClass * ColorListClass::QueryInterface(char a2)
 {
-{
-    int v3;
-    char *v4;
-    void *v5;
-    v3 = this->__pad_174;
-    v4 = &this->u32_5D0;
-    *(int *)this = &vt_ColorListClass;
-    (*(void (__thiscall **)(char *))(v3 + 12))(&this->u32_942);
-    this->q190 = 0;
-    v5 = (void *)*((int *)(v4) + 1);
-    *(int *)v4 = &vt_VectorClass_int;
-    if ( v5 && v4[13] )
+  int v3; // eax
+  char *v4; // esi
+  void *v5; // eax
+
+  v3 = *((_DWORD *)this + 93); /*0x488f05*/
+  v4 = this + 372; /*0x488f0b*/
+  *(_DWORD *)this = &ColorListClass::`vftable'; /*0x488f13*/
+  (*(void (__thiscall **)(char *))(v3 + 12))(this + 372); /*0x488f19*/
+  *((_DWORD *)this + 100) = 0; /*0x488f1e*/
+  v5 = (void *)*((_DWORD *)v4 + 1); /*0x488f24*/
+  *(_DWORD *)v4 = &VectorClass<int>::`vftable'; /*0x488f29*/
+  if ( v5 && v4[13] ) /*0x488f31*/
   {
-    __3_YAXPAX_Z(v5);
-    *((int *)(v4) + 1) = 0;
+    __3_YAXPAX_Z(v5); /*0x488f37*/
+    *((_DWORD *)v4 + 1) = 0; /*0x488f3f*/
   }
-    v4[13] = 0;
-    *((int *)(v4) + 2) = 0;
-    ListClass::Destruct(this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (ColorListClass *)this;
-}
+  v4[13] = 0; /*0x488f44*/
+  *((_DWORD *)v4 + 2) = 0; /*0x488f47*/
+  ListClass::Destruct(this); /*0x488f4a*/
+  if ( (a2 & 1) != 0 ) /*0x488f54*/
+    __3_YAXPAX_Z(this); /*0x488f57*/
+  return this; /*0x488f61*/
 }

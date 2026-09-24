@@ -25,23 +25,26 @@ ScriptActionNode* ScriptClass::GetCurrentAction(
 
 // 0x691540
 ScriptActionNode* ScriptClass::GetNextAction(
-    ScriptActionNode* buffer) const
 {
-    // Return the script action after the current line.
-    int next = idxCurrentLine + 1;
-    if (!buildingType || next < 0
-        || next >= buildingType->actionsCount)
-    {
-        if (buffer)
-            *buffer = {};
-        return buffer;
-    }
+  int v2; // edx
+  int v3; // ecx
+  _DWORD *result; // eax
 
-    if (buffer)
-        *buffer = buildingType->scriptActions[next];
-    return buffer;
+  v2 = *(this + 9); /*0x691540*/
+  v3 = *(this + 11); /*0x691543*/
+  result = a2; /*0x691554*/
+  if ( v3 + 1 < *(_DWORD *)(v2 + 160) ) /*0x691552*/
+  {
+    *a2 = *(_DWORD *)(v2 + 8 * v3 + 172); /*0x691571*/
+    a2[1] = *(_DWORD *)(v2 + 8 * v3 + 176); /*0x69157a*/
+  }
+  else
+  {
+    *a2 = -1; /*0x69155e*/
+    a2[1] = 0; /*0x691560*/
+  }
+  return result; /*0x69155d*/
 }
-
 bool ScriptClass::HasNextAction() const
 {
     // Check if there is another action after the current line index.

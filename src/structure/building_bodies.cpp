@@ -13,7 +13,126 @@ int RoundToInt(double value) {
 namespace gamemd {
 // 0x50af10
 void SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(HouseClass* ownerHouse) {
-        (void)ownerHouse;  // refresh owning house's super-weapon collection (callee body out of scope)
-    }
-}
+  int v1; // eax
+  _BYTE *v3; // eax
+  char v4; // bl
+  int v5; // eax
+  int v6; // edi
+  int *v7; // ecx
+  int v8; // edx
+  int v9; // eax
+  _BYTE *v10; // ecx
+  int v11; // edx
+  int v12; // eax
+  int Status; // esi
+  int v14; // edi
+  char v16; // [esp+8h] [ebp-Eh]
+  bool v17; // [esp+9h] [ebp-Dh]
+  int i; // [esp+Ah] [ebp-Ch]
+  int j; // [esp+Eh] [ebp-8h]
+  int v20; // [esp+12h] [ebp-4h]
 
+  LOBYTE(v1) = g_WTFMode; /*0x50af10*/
+  if ( g_WTFMode ) /*0x50af1d*/
+  {
+    v17 = HouseClass_Player == (#375 *)ownerHouse; /*0x50af31*/
+    v1 = 0; /*0x50af36*/
+    for ( i = 0; i < *(_DWORD *)(ownerHouse + 612); ++i ) /*0x50af3a*/
+    {
+      v3 = *(_BYTE **)(*(_DWORD *)(ownerHouse + 600) + 4 * v1); /*0x50af4d*/
+      if ( !v3[109] || (!v3[96] || v3[110] && v3[109]) && !*(_BYTE *)(ownerHouse + 501) ) /*0x50af70*/
+        goto LABEL_55; /*0x50af78*/
+      v4 = 0; /*0x50af84*/
+      v16 = 0; /*0x50af88*/
+      if ( !*(_BYTE *)(ownerHouse + 501) ) /*0x50af7e*/
+      {
+        v5 = 0; /*0x50af99*/
+        for ( j = 0; v5 < g_BuildingProductionState; j = ++v5 ) /*0x50afa1*/
+        {
+          v6 = *((_DWORD *)g_BuildingClass_InstanceCount + v5); /*0x50afad*/
+          if ( !*(_BYTE *)(v6 + 129) && *(_BYTE *)(v6 + 144) ) /*0x50afbe*/
+          {
+            v20 = (*(int (__stdcall **)(int))(*(_DWORD *)(*(_DWORD *)(v6 + 540) + 4) + 16))(*(_DWORD *)(v6 + 540) + 4); /*0x50afe3*/
+            if ( v20 == (*(int (__stdcall **)(int))(*(_DWORD *)(ownerHouse + 4) + 16))(ownerHouse + 4) ) /*0x50aff0*/
+            {
+              v7 = (int *)(v6 + 1516); /*0x50aff2*/
+              v8 = 3; /*0x50aff8*/
+              do /*0x50b02a*/
+              {
+                v9 = *v7; /*0x50affd*/
+                if ( *v7 && (*(_DWORD *)(v9 + 5872) == i || *(_DWORD *)(v9 + 5876) == i) ) /*0x50b015*/
+                {
+                  v16 = 1; /*0x50b019*/
+                  if ( !v4 ) /*0x50b01e*/
+                    v4 = *(_BYTE *)(v6 + 1632); /*0x50b020*/
+                }
+                ++v7; /*0x50b026*/
+                --v8; /*0x50b029*/
+              }
+              while ( v8 ); /*0x50b02a*/
+              if ( BuildingClass::SWAvailable(v6) == i || BuildingClass::SW2Available(v6) == i ) /*0x50b044*/
+              {
+                v16 = 1; /*0x50b048*/
+                if ( v4 ) /*0x50b04d*/
+                  break; /*0x50b04d*/
+                v4 = *(_BYTE *)(v6 + 1632); /*0x50b04f*/
+              }
+              if ( v4 && v16 ) /*0x50b05f*/
+                break; /*0x50b05f*/
+            }
+            v5 = j; /*0x50b061*/
+          }
+        }
+      }
+      v10 = *(_BYTE **)(*(_DWORD *)(*(_DWORD *)(ownerHouse + 600) + 4 * i) + 40); /*0x50b078*/
+      if ( v10[231] && !SWAllowed ) /*0x50b099*/
+        v16 = 0; /*0x50b09b*/
+      v11 = *(_DWORD *)(ownerHouse + 21412); /*0x50b0a0*/
+      v12 = *(_DWORD *)(ownerHouse + 21416); /*0x50b0a6*/
+      if ( v11 < v12 && v12 && (!v11 || (double)*(int *)(ownerHouse + 21412) / (double)*(int *)(ownerHouse + 21416) < 1.0) ) /*0x50b0d3*/
+        v4 = 0; /*0x50b0d5*/
+      (*(void (__thiscall **)(_BYTE *))(*(_DWORD *)v10 + 64))(v10); /*0x50b0d9*/
+      Status = HouseClass::GetStatus((void *)0x39, 0); /*0x50b0ea*/
+      if ( !v16 || *(_BYTE *)(ownerHouse + 501) ) /*0x50b0f4*/
+      {
+        if ( !(unsigned __int8)SuperClass::Lose(*(_DWORD *)(*(_DWORD *)(ownerHouse + 600) + 4 * i)) || !HouseClass_Player ) /*0x50b179*/
+          goto LABEL_55; /*0x50b179*/
+        if ( !v17 ) /*0x50b181*/
+          goto LABEL_54; /*0x50b181*/
+        if ( g_BuildingPlacementState == i ) /*0x50b18e*/
+  LABEL_52:
+          g_BuildingPlacementState = -1; /*0x50b190*/
+  LABEL_53:
+        Sidebar::ActivateTab((int)&MapClass_Instance, Status); /*0x50b19a*/
+        goto LABEL_54; /*0x50b1a0*/
+      }
+      if ( v4 ) /*0x50b100*/
+      {
+        v14 = i; /*0x50b12e*/
+      }
+      else
+      {
+        v14 = i; /*0x50b108*/
+        if ( (unsigned __int8)SuperWeapon::GetField10(*(_DWORD *)(*(_DWORD *)(ownerHouse + 600) + 4 * i)) /*0x50b123*/
+          && (unsigned __int8)SuperClass::SetOnHold(1) )
+        {
+          goto LABEL_45; /*0x50b12a*/
+        }
+      }
+      if ( !v4 || !(unsigned __int8)SuperClass::SetOnHold(0) ) /*0x50b141*/
+        goto LABEL_55; /*0x50b148*/
+  LABEL_45:
+      if ( v17 ) /*0x50b150*/
+      {
+        if ( g_BuildingPlacementState == v14 ) /*0x50b158*/
+          goto LABEL_52; /*0x50b158*/
+        goto LABEL_53; /*0x50b158*/
+      }
+  LABEL_54:
+      *(_BYTE *)(ownerHouse + 508) = 1; /*0x50b1a5*/
+  LABEL_55:
+      v1 = i + 1; /*0x50b1ac*/
+    }
+  }
+  return v1; /*0x50b1c6*/
+}

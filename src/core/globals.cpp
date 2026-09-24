@@ -145,12 +145,93 @@ void FindGameDirectoryCD(const char* path) {
 
   char v1 = 0;
   if ( !Source )
-    return 0;
-  char * v3 = _strdup(Source);
-  if ( v3 != (char *)&DataGlobal_87F7E8[31501] )
   {
-    strcat((char *)&DataGlobal_87F7E8[31501], asc_81C8FC);
-    strcat((char *)&DataGlobal_87F7E8[31501], v3);
+    char v1; // bl
+    char *v3; // ebp
+    char *i; // edx
+    char v5; // cl
+    _DWORD *v6; // esi
+    _DWORD *v7; // ecx
+    _DWORD *v8; // eax
+    _DWORD *v9; // eax
+    char Str1[260]; // [esp+8h] [ebp-104h] BYREF
+
+    v1 = 0; /*0x47ab17*/
+    if ( !Source ) /*0x47ab1b*/
+      return 0; /*0x47ab26*/
+    v3 = _strdup(Source); /*0x47ab30*/
+    if ( v3 != byte_89E41C ) /*0x47ab3b*/
+    {
+      strcat(byte_89E41C, asc_81C8FC); /*0x47ab61*/
+      strcat(byte_89E41C, v3); /*0x47ab89*/
+    }
+    for ( i = strtok(v3, asc_81C8FC); i; i = strtok(0, asc_81C8FC) ) /*0x47aba4*/
+    {
+      if ( strlen(i) ) /*0x47abac*/
+      {
+        strcpy(Str1, i); /*0x47abd6*/
+        v5 = Str1[strlen(Str1) - 1]; /*0x47abed*/
+        if ( v5 != 58 && v5 != 92 ) /*0x47abf9*/
+          strcat(Str1, asc_815E74); /*0x47ac1e*/
+        if ( !strncmp(Str1, Str2, 2u) ) /*0x47ac33*/
+        {
+          if ( !dword_89E414 ) /*0x47ac47*/
+            continue; /*0x47ac47*/
+          v1 = 1; /*0x47ac52*/
+          if ( AlwaysFindYRCD(dword_89E414, 120) <= -1 ) /*0x47ac5c*/
+            continue; /*0x47ac5c*/
+          Str1[0] = dword_89E414 + 65; /*0x47ac6d*/
+          v6 = __2_YAPAXI_Z(8u); /*0x47ac7a*/
+          v6[1] = _strdup(Str1); /*0x47ac82*/
+          *v6 = 0; /*0x47ac85*/
+          v7 = CmdLine_NoCD; /*0x47ac8b*/
+          if ( CmdLine_NoCD ) /*0x47ac96*/
+          {
+            v8 = *(_DWORD **)CmdLine_NoCD; /*0x47aca0*/
+            if ( *(_DWORD *)CmdLine_NoCD ) /*0x47aca0*/
+            {
+              do /*0x47acac*/
+              {
+                v7 = v8; /*0x47aca6*/
+                v8 = (_DWORD *)*v8; /*0x47aca8*/
+              }
+              while ( v8 ); /*0x47acac*/
+            }
+    LABEL_24:
+            *v7 = v6; /*0x47ad0c*/
+            continue; /*0x47ad0c*/
+          }
+          CmdLine_NoCD = v6; /*0x47ac98*/
+        }
+        else
+        {
+          if ( Str1[0] - 65 <= 0 || AlwaysFindYRCD(Str1[0] - 65, 120) != 2 ) /*0x47acc9*/
+            continue; /*0x47acc9*/
+          v1 = 1; /*0x47accd*/
+          v6 = __2_YAPAXI_Z(8u); /*0x47acd4*/
+          v6[1] = _strdup(Str1); /*0x47ace0*/
+          *v6 = 0; /*0x47ace3*/
+          v7 = CmdLine_NoCD; /*0x47ace9*/
+          if ( CmdLine_NoCD ) /*0x47acf4*/
+          {
+            v9 = *(_DWORD **)CmdLine_NoCD; /*0x47acfe*/
+            if ( *(_DWORD *)CmdLine_NoCD ) /*0x47acfe*/
+            {
+              do /*0x47ad0a*/
+              {
+                v7 = v9; /*0x47ad04*/
+                v9 = (_DWORD *)*v9; /*0x47ad06*/
+              }
+              while ( v9 ); /*0x47ad0a*/
+            }
+            goto LABEL_24; /*0x47ad0a*/
+          }
+          CmdLine_NoCD = v6; /*0x47acf6*/
+        }
+      }
+    }
+    free(v3); /*0x47ad27*/
+    return v1 == 0; /*0x47ab1f*/
   }
   for ( i = strtok(v3, asc_81C8FC); i; i = strtok(0, asc_81C8FC) )
   {
@@ -517,68 +598,16 @@ void NetworkGetField(int port) {
   int result; // eax
   __int16 v3; // dx
   LOWORD(result) = a2;
-  LOBYTE(v3) = HIBYTE(a2);
-  HIBYTE(v3) = a2;
-  *(this + 17) = v3;
-  return result;
-}
+  {
+    int result; // eax
+    __int16 v3; // dx
 
-/* ASM:
-mov     ax, [esp+arg_0]
-xor     edx, edx
-mov     dl, ah
-mov     dh, al
-mov     [ecx+22h], dx
-retn    4
-*/
-
-// IDA 0x7B2720 -- SessionClass::SetInstance (defined in app/cmdline.cpp)
-
-// ============================================================
-// MainGame (0x48CCC0) -- required global variables
-// ============================================================
-
-// 0x81D4E0: g_MenuReturnState -- next MenuSelect state
-int  g_MenuReturnState = 1;
-
-// 0xA8E7AC: IKnowWhatImDoing -- developer skip flag
-bool IKnowWhatImDoing = false;  // data: 0xa8e7ac
-
-// 0xA8B238: GameMode_Current -- current game mode (0=menu, 1/2=campaign, 3=internet, 4=skirmish, 5=setup)
-int  GameMode_Current = 0;
-
-// 0xA8EDA0: g_MainGameState -- in-game UI state (0=idle, 1-9=UI screens)
-int  g_MainGameState = 0;
-
-// 0xA8ED9C: g_GameActive -- game active flag
-bool g_GameActive = false;  // data: 0xa8ed9c
-
-// 0xA8ED84: CurrentFrame -- frame counter
-int  CurrentFrame = 0;
-
-// 0x822CFC: g_GameLoopActive -- game loop running flag
-bool g_GameLoopActive = true;
-
-// 0xA8F900: g_SkirmishInitFlag -- skirmish initialized
-bool g_SkirmishInitFlag = false;
-
-// 0xB0BDB8: g_SkirmishSettings -- skirmish config pointer
-int  g_SkirmishSettings = 0;
-
-// 0xB0BD78: g_SkirmishFlag -- skirmish mode flag
-bool g_SkirmishFlag = false;
-
-// 0xA8EB80: byte_A8EB80 -- toolbar option flag
-bool byte_A8EB80 = false;
-
-// ============================================================
-// MainGame stub functions
-// ============================================================
-
-// IDA 0x4A3C30 -- FadePalette (screen fade to/from black)
-// IDA: creates dark palette, loops blending current->dark over a2 frames,
-//      calls Surface::CreateSurfacePalette each frame, optional callback a3()
-void FadePalette(int mode) {
+    LOWORD(result) = result; /*0x542430*/
+    LOBYTE(v3) = HIBYTE(result); /*0x542437*/
+    HIBYTE(v3) = result; /*0x542439*/
+    *(this + 17) = v3; /*0x54243b*/
+    return result; /*0x54243f*/
+  }
     (void)mode;
     // Simplified: just sleep briefly to simulate fade timing
     // Full impl: DSurface::Lock -> palette blend -> Unlock -> Flip, ~400B of loop
@@ -622,23 +651,30 @@ void DumpNetworkStats() {
   result = this->q30D8;
   if ( !result )
   {
-    result = DataGlobal_87F7E8[539758];
-    if ( LOBYTE(DataGlobal_87F7E8[539758]) )
+    char result; // al
+
+    result = *(result + 12504); /*0x69bab0*/
+    if ( !result ) /*0x69bab8*/
     {
-      this->q30D8 = 1;
-      if ( dword_83ED20 == -1 )
-        dword_83ED20 = DataGlobal_87F7E8[539870];
-      if ( !*(_DWORD *)this )
-        DataGlobal_87F7E8[539870] = 2;
-      if ( !*(_BYTE *)(DataGlobal_87F7E8[536210] + 13730) )
+      result = g_WTFMode; /*0x69babe*/
+      if ( g_WTFMode ) /*0x69bac5*/
       {
-        Scenario::ClearScreen();
-        dword_A8ED54[123532] = dword_A8ED54[12] + 3;
+        *(result + 12504) = 1; /*0x69bac7*/
+        if ( dword_83ED20 == -1 ) /*0x69bad6*/
+          dword_83ED20 = *(_DWORD *)g_GameModeOptions; /*0x69badd*/
+        if ( !*(_DWORD *)result ) /*0x69bae2*/
+          *(_DWORD *)g_GameModeOptions = 2; /*0x69bae7*/
+        if ( !*((_BYTE *)g_ScenarioClass_Instance + 13730) ) /*0x69baf7*/
+        {
+          Scenario::ClearScreen(); /*0x69bb01*/
+          dword_B07784 = (int)g_CurrentFrame + 3; /*0x69bb0f*/
+        }
+        if ( !(*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 28))(g_WWMouseClass_Instance) ) /*0x69bb1d*/
+          (*(void (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 24))(g_WWMouseClass_Instance); /*0x69bb2c*/
+        return EndBufferMixer((int *)g_MixerState, 0x4000); /*0x69bb3a*/
       }
-      if ( !(*(unsigned __int8 (__thiscall **)(_DWORD))(*(_DWORD *)DataGlobal_87F7E8[8086] + 28))(DataGlobal_87F7E8[8086]) )
-        (*(void (__thiscall **)(_DWORD))(*(_DWORD *)DataGlobal_87F7E8[8086] + 24))(DataGlobal_87F7E8[8086]);
-      return EndBufferMixer(g_MixerState, 0x4000);
     }
+    return result; /*0x69bb3f*/
   }
   return result;
 }
@@ -804,138 +840,15 @@ void NetworkShutdownInterface() {
   int result; // eax
 
   LOWORD(DataGlobal_87F7E8[538506]) = 0;
-  if ( DataGlobal_87F7E8[8080] )
-    result = (**(int (__thiscall ***)(_DWORD, int))DataGlobal_87F7E8[8080])(DataGlobal_87F7E8[8080], 1);
-  DataGlobal_87F7E8[8080] = 0;
-  return result;
-}
+  {
+    int result; // eax
 
-/* ASM:
-mov     ecx, ds:887628h
-push    esi
-xor     esi, esi
-cmp     ecx, esi
-mov     ds:0A8D610h, si
-jz      short loc_5DA73A
-mov     eax, [ecx]
-push    1
-call    dword ptr [eax]
-
-loc_5DA73A:                             ; CODE XREF: Network__ShutdownInterface+12↑j
-mov     ds:887628h, esi
-pop     esi
-retn
-*/
-
-// IDA: 0x6E6FF0 -- BuildingLoadQueue_FindObject
-// These globals are used by all object constructors (Unit/Infantry/Aircraft/Building)
-// for orderly post-construction initialization via binary search queue
-
-// 0xB0E840: BuildingLoadQueue_Array -- array of (id, object*) pairs
-void* BuildingLoadQueue_Array = nullptr;
-
-// 0xB0E844: BuildingLoadQueue_Count -- number of entries in queue
-int BuildingLoadQueue_Count = 0;
-
-// 0xB0E848: BuildingLoadQueue_Capacity -- allocated capacity
-int BuildingLoadQueue_Capacity = 0;
-
-// 0xB0E84C: BuildingLoadQueue_Dirty -- queue needs resort
-bool BuildingLoadQueue_Dirty = false;
-
-// 0xB0E850: BuildingLoadQueue_Active -- cached active entry
-void* BuildingLoadQueue_Active = nullptr;
-
-// ============================================================
-// GameFrameLoop (0x55D360) -- required global variables
-// ============================================================
-
-// 0xA8E9A0: WTFMode -- game loop control flag
-int WTFMode = 0;
-
-// 0xABCD58: byte_ABCD58 -- frame processing active flag
-bool byte_ABCD58 = false;
-
-// 0xA8E378: g_FramePresent_State -- frame presentation state
-int g_FramePresent_State = 0;
-
-// 0xA8B55C: dword_A8B55C -- frame start timestamp (timeGetTime)
-int dword_A8B55C = 0;
-
-// 0xA8B550: g_ScenarioState -- scenario state counter
-int g_ScenarioState = 30;
-
-// 0xA8B558: dword_A8B558 -- game speed setting (FPS)
-int dword_A8B558 = 0;
-
-// 0x887328: g_TacticalState -- tactical render state
-int g_TacticalState = -1;
-
-// 0xABCD04: dword_ABCE04 -- frame sync delay
-int dword_ABCE04 = 0;
-
-// 0x88732C: dword_88732C -- timer high-precision data
-int dword_88732C = 0;
-
-// 0x887330: dword_887330 -- frame interval (ms)
-int dword_887330 = 33;
-
-// 0x887348: dword_887348 -- frame timer start
-int dword_887348 = 0;
-
-// 0x88734C: dword_88734C -- frame timer value
-int dword_88734C = 0;
-
-// 0x887350: dwMilliseconds -- frame delay milliseconds
-int dwMilliseconds = 2;
-
-// 0xA8ED72: byte_A8ED72 -- high precision timer flag
-bool byte_A8ED72 = false;
-
-// 0xA8B560: ArgList -- argument list for timing
-int ArgList = 0;
-
-// 0xA8B564: dword_A8B564 -- frame counter
-int dword_A8B564 = 0;
-
-// 0xA83D14: dword_A83D14 -- theme queue state
-int dword_A83D14 = 0;
-
-// 0xA83D18: dword_A83D18 -- theme queue backup
-int dword_A83D18 = 0;
-
-// 0xA8EBA5: byte_A8EBA5 -- theme enabled flag
-bool byte_A8EBA5 = false;
-
-// 0xA8EC08: BombListClass_Array
-void* BombListClass_Array = nullptr;
-
-// 0xA8EC0C: dword_A8EC0C
-int dword_A8EC0C = 0;
-
-// 0xA8EC00: dword_A8EC00 -- mouse input flags
-int dword_A8EC00 = 0;
-
-// 0xA8EC04: dword_A8EC04 -- mouse input flags 2
-int dword_A8EC04 = 0;
-
-// 0x87F8DC: g_Cell_PositionLUT -- cell position lookup table
-int g_Cell_PositionLUT = 0;
-
-// 0x87F8E0: g_CellPositionOffset -- cell position offset
-int g_CellPositionOffset = 0;
-
-// 0xABCE14: dword_ABCE14 -- input flags
-int dword_ABCE14 = 0;
-
-// 0xB07784: dword_B07784 -- mouse update frame counter
-int dword_B07784 = 0;
-
-// ============================================================
-}
-
-// 0x5F9E80: Checksummer::HashString
-int HashString(const char* str) {
+    g_CurrentPlayerName[0] = 0; /*0x5da72b*/
+    if ( g_NetworkInterface ) /*0x5da732*/
+      result = (**(int (__thiscall ***)(int, int))g_NetworkInterface)(g_NetworkInterface, 1); /*0x5da738*/
+    g_NetworkInterface = 0; /*0x5da73a*/
+    return result; /*0x5da740*/
+  }
 // 0x5f9e80
 {
   int i; // edx
@@ -945,25 +858,110 @@ int HashString(const char* str) {
 
   int v1; // ebp
   HIWORD(v1) = 0;
-  if ( !Source )
-    return 0;
-  memset(Destination, 0xA5u, sizeof(Destination));
-  strncpy(Destination, Source, 128);
-  Destination[127] = 0;
-  unsigned int v3 = strlen(Destination) + 1;
-  int v4 = v3 - 1;
-  int v23 = v3 - 1;
-  _strupr(Destination);
-  int v5 = 0;
-  if ( (int)(v3 - 1) > 0 )
   {
-    do
+    int v1; // ebp
+    unsigned int v3; // kr04_4
+    int v4; // ebx
+    int v5; // esi
+    int v6; // esi
+    int v7; // ecx
+    int i; // edx
+    int v9; // ecx
+    int j; // esi
+    int k; // edi
+    char v12; // si
+    char v13; // dl
+    char v14; // cl
+    char v15; // cl
+    char v16; // si
+    char v17; // al
+    int v18; // [esp+4h] [ebp-9Ch]
+    char v19; // [esp+8h] [ebp-98h]
+    unsigned int v20; // [esp+Ch] [ebp-94h] BYREF
+    int v21; // [esp+10h] [ebp-90h]
+    int v22; // [esp+14h] [ebp-8Ch]
+    int v23; // [esp+18h] [ebp-88h]
+    int v24; // [esp+1Ch] [ebp-84h]
+    char Destination[128]; // [esp+20h] [ebp-80h] BYREF
+
+    HIWORD(v1) = 0; /*0x5f9e89*/
+    if ( !v1 ) /*0x5f9e8d*/
+      return 0; /*0x5f9e8f*/
+    memset(Destination, 0xA5u, sizeof(Destination)); /*0x5f9eaa*/
+    strncpy(Destination, v1, 0x80u); /*0x5f9eb7*/
+    Destination[127] = 0; /*0x5f9ec5*/
+    v3 = strlen(Destination) + 1; /*0x5f9ecd*/
+    v4 = v3 - 1; /*0x5f9ed2*/
+    v23 = v3 - 1; /*0x5f9ed9*/
+    _strupr(Destination); /*0x5f9edd*/
+    v5 = 0; /*0x5f9ee5*/
+    if ( (int)(v3 - 1) > 0 ) /*0x5f9ee9*/
     {
-      if ( !isgraph(Destination[v5]) )
-        Destination[v5] = v5 % 26 + 65;
-      ++v5;
+      do /*0x5f9f11*/
+      {
+        if ( !isgraph(Destination[v5]) ) /*0x5f9ef1*/
+          Destination[v5] = v5 % 26 + 65; /*0x5f9f0a*/
+        ++v5; /*0x5f9f0e*/
+      }
+      while ( v5 < v4 ); /*0x5f9f11*/
     }
-    while ( v5 < v4 );
+    if ( v4 < 16 || (v4 & 3) != 0 ) /*0x5f9f1b*/
+    {
+      v6 = 16; /*0x5f9f20*/
+      if ( (((_BYTE)v4 + 3) & 0xFCu) > 0x10 ) /*0x5f9f2c*/
+        v6 = ((_BYTE)v4 + 3) & 0xFC; /*0x5f9f2e*/
+      v7 = v3 - 1; /*0x5f9f32*/
+      if ( v4 < v6 ) /*0x5f9f34*/
+      {
+        do /*0x5f9f56*/
+        {
+          Destination[v7] = (v7 + (Destination[v7 - v4] ^ 0x3F)) % 26 + 65; /*0x5f9f4f*/
+          ++v7; /*0x5f9f53*/
+        }
+        while ( v7 < v6 ); /*0x5f9f56*/
+      }
+      v4 = v7; /*0x5f9f58*/
+      Destination[v7] = 0; /*0x5f9f5a*/
+      v23 = v7; /*0x5f9f5f*/
+    }
+    v20 = 0; /*0x5f9f6d*/
+    v21 = 0; /*0x5f9f71*/
+    v22 = 0; /*0x5f9f75*/
+    Checksummer::Add_Buffer(&v20, (unsigned __int8 *)Destination, v4); /*0x5f9f79*/
+    _strrev(Destination); /*0x5f9f83*/
+    v20 = 0; /*0x5f9f93*/
+    v21 = 0; /*0x5f9f99*/
+    v22 = 0; /*0x5f9f9d*/
+    v18 = Checksummer::Add_Buffer(&v20, (unsigned __int8 *)Destination, v4); /*0x5f9fa6*/
+    _strrev(Destination); /*0x5f9faf*/
+    for ( i = 0; i < v4; v18 = (v9 >> 8) | ((unsigned __int8)v9 << 24) ) /*0x5f9fbb*/
+    {
+      v9 = (unsigned __int8)Destination[i] ^ v18; /*0x5f9fcd*/
+      Destination[i++] = v18; /*0x5f9fd1*/
+    }
+    for ( j = 0; j < v4; ++j ) /*0x5f9ff1*/
+      Destination[j] = ~byte_832C0C[j & 7] & (Destination[j] | byte_832C14[j & 7]); /*0x5fa00e*/
+    for ( k = 0; k < v4; Destination[k - 1] = (v17 + v16) ^ v15 ) /*0x5fa01b*/
+    {
+      v12 = Destination[k]; /*0x5fa01d*/
+      LOWORD(v1) = Destination[k + 2]; /*0x5fa029*/
+      v13 = v12 * v12; /*0x5fa033*/
+      v14 = Destination[k + 3]; /*0x5fa036*/
+      v19 = 2 * Destination[k + 1]; /*0x5fa03c*/
+      v24 = 2 * v1; /*0x5fa044*/
+      v15 = v14 * v14; /*0x5fa051*/
+      v16 = v12 * ((v12 * v12) ^ (2 * v1)); /*0x5fa058*/
+      k += 4; /*0x5fa066*/
+      v17 = v1 * (v16 + (v19 ^ v15)); /*0x5fa069*/
+      Destination[k - 4] = v17 ^ v13; /*0x5fa070*/
+      Destination[k - 3] = v17 ^ v24; /*0x5fa080*/
+      v4 = v23; /*0x5fa086*/
+      Destination[k - 2] = (v17 + v16) ^ v19; /*0x5fa08a*/
+    }
+    v20 = 0; /*0x5fa0a6*/
+    v21 = 0; /*0x5fa0aa*/
+    v22 = 0; /*0x5fa0ae*/
+    return Checksummer::Add_Buffer(&v20, (unsigned __int8 *)Destination, v4); /*0x5f9e91*/
   }
   if ( v4 < 16 || (v4 & 3) != 0 )
   {
@@ -1264,6 +1262,7 @@ pop     ebp
 add     esp, 9Ch
 retn
 */
+}
 }
 
 // 0x734E60: GetStringCSF -- returns "TXT_KEY" as placeholder

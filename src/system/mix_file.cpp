@@ -421,519 +421,104 @@ REVERSE(0x5301a0, "MixFileClass::Bootstrap: IDA verified", "None")
 // 0x5301a0
 MixFileClass * * MixFileClass::Bootstrap()
 {
-// 0x5301a0
-{
   int i; // edi
+  int v1; // eax
+  char v2; // bl
+  int v3; // esi
+  int v4; // eax
+  int v5; // eax
+  int v7; // eax
+  int v8; // eax
+  int v9; // [esp+10h] [ebp-68h]
+  _BYTE v10[36]; // [esp+14h] [ebp-64h] BYREF
   char Buffer[64]; // [esp+38h] [ebp-40h] BYREF
 
-  int v16 = dword_81C1D0;
-  SetSoundWarning(-2);
-  for ( i = 99; i >= 0; --i )
+  v9 = dword_81C1D0; /*0x5301b1*/
+  SetSoundWarning(-2); /*0x5301b5*/
+  for ( i = 99; i >= 0; --i ) /*0x5301ba*/
   {
-    sprintf(Buffer, "EXPANDMD%02d.MIX", i);
-  int v17[9]; // [esp+14h] [ebp-64h] BYREF
-    _DWORD * v1 = RawFileClass::Construct(v17, (int)Buffer);
-    char v2 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v1 + 20))(v1, 0);
-    RawFileClass::Dtor(v17);
-    if ( v2 )
+    sprintf(Buffer, "EXPANDMD%02d.MIX", i); /*0x5301ca*/
+    v1 = RawFileClass::Construct(Buffer); /*0x5301db*/
+    v2 = (*(int (__thiscall **)(int, _DWORD))(*(_DWORD *)v1 + 20))(v1, 0); /*0x5301ee*/
+    RawFileClass::Dtor(v10); /*0x5301f0*/
+    if ( v2 ) /*0x5301f7*/
     {
-      _DWORD * v3 = (_DWORD *)__2_YAPAXI_Z(40);
-      if ( v3 )
+      if ( __2_YAPAXI_Z(0x28u) ) /*0x5301ff*/
       {
-        _DWORD * v4 = MixFileClass::FromFile(v3, Buffer, (int)&DataGlobal_87F7E8[7270]);
-        if ( v4 )
+        v3 = MixFileClass::FromFile(Buffer, (int)&dword_886980); /*0x53021c*/
+        if ( v3 ) /*0x530220*/
         {
-          if ( DataGlobal_87F7E8[5486] < DataGlobal_87F7E8[5484]
-            || (BYTE1(DataGlobal_87F7E8[5485]) || !DataGlobal_87F7E8[5484])
-            && DataGlobal_87F7E8[5487] > 0
-            && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(DataGlobal_87F7E8[5482] + 8))(
-                 &DataGlobal_87F7E8[5482],
-                 DataGlobal_87F7E8[5484] + DataGlobal_87F7E8[5487],
+          if ( g_MixFilePool_Count < g_MixFilePool_Capacity /*0x530258*/
+            || (g_MixFilePool_Flag || !g_MixFilePool_Capacity)
+            && g_MixFilePool_GrowSize > 0
+            && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(g_MixFileArray + 8))(
+                 &g_MixFileArray,
+                 g_MixFilePool_Capacity + g_MixFilePool_GrowSize,
                  0) )
           {
-            int v5 = DataGlobal_87F7E8[5486]++;
-            *(_DWORD *)(DataGlobal_87F7E8[5483] + 4 * v5) = v4;
+            v4 = g_MixFilePool_Count++; /*0x530265*/
+            *((_DWORD *)g_MixFilePool + v4) = v3; /*0x530274*/
           }
-          Debug::Log_0();
+          Debug::Log_0((const char *)&off_826688, Buffer); /*0x530281*/
         }
       }
     }
   }
-  _DWORD * v6 = (_DWORD *)__2_YAPAXI_Z(40);
-  if ( !v6 )
+  if ( !__2_YAPAXI_Z(0x28u) ) /*0x53029c*/
   {
-    DataGlobal_87F7E8[5508] = 0;
-    return 0;
+    g_MixFile_RA2MD = 0; /*0x5302de*/
+    return 0; /*0x5302de*/
   }
-  DataGlobal_87F7E8[5508] = MixFileClass::FromFile(v6, aRa2mdMix, (int)&DataGlobal_87F7E8[7270]);
-  if ( !DataGlobal_87F7E8[5508] )
-    return 0;
-  _DWORD * v7 = (_DWORD *)__2_YAPAXI_Z(40);
-  if ( !v7 )
+  g_MixFile_RA2MD = MixFileClass::FromFile(aRa2mdMix, (int)&dword_886980); /*0x5302b1*/
+  if ( !g_MixFile_RA2MD ) /*0x5302b6*/
+    return 0; /*0x5302b6*/
+  if ( !__2_YAPAXI_Z(0x28u) ) /*0x5302c4*/
   {
-    DataGlobal_87F7E8[5509] = 0;
-    return 0;
+    g_MixFile_RA2 = 0; /*0x5302ef*/
+    return 0; /*0x5302fd*/
   }
-  _DWORD * v8 = MixFileClass::FromFile(v7, aRa2Mix, (int)&DataGlobal_87F7E8[7270]);
-  DataGlobal_87F7E8[5509] = v8;
-  if ( !v8 )
-    return 0;
-  Debug::Log_0();
-  _DWORD * v10 = (_DWORD *)__2_YAPAXI_Z(40);
-  if ( !v10 )
+  v5 = MixFileClass::FromFile(aRa2Mix, (int)&dword_886980); /*0x5302d2*/
+  g_MixFile_RA2 = v5; /*0x5302d7*/
+  if ( !v5 ) /*0x530300*/
+    return 0; /*0x530300*/
+  Debug::Log_0(g_Str_File_CACHE_MIX); /*0x530307*/
+  if ( !__2_YAPAXI_Z(0x28u) ) /*0x530318*/
   {
-    DataGlobal_87F7E8[5528] = 0;
-    return 0;
+    g_MixFile_CACHEMD = 0; /*0x530375*/
+    return 0; /*0x530383*/
   }
-  DataGlobal_87F7E8[5528] = MixFileClass::FromFile(v10, aCachemdMix, (int)&DataGlobal_87F7E8[7270]);
-  if ( !DataGlobal_87F7E8[5528] || !_do_always_noconv_codecvt_base_std__MBE_NXZ_7((#345 *)aCachemdMix) )
-    return 0;
-  Debug::Log_0();
-  _DWORD * v11 = (_DWORD *)__2_YAPAXI_Z(40);
-  if ( !v11 )
+  g_MixFile_CACHEMD = MixFileClass::FromFile(aCachemdMix, (int)&dword_886980); /*0x53032d*/
+  if ( !g_MixFile_CACHEMD || !_do_always_noconv_codecvt_base_std__MBE_NXZ_7((std::codecvt_base *)aCachemdMix) ) /*0x53033b*/
+    return 0; /*0x53033b*/
+  Debug::Log_0(g_Str_File_CACHE_MIX); /*0x530349*/
+  if ( !__2_YAPAXI_Z(0x28u) ) /*0x53035a*/
   {
-    DataGlobal_87F7E8[5529] = 0;
-    return 0;
+    g_MixFile_CACHE = 0; /*0x530385*/
+    return 0; /*0x530393*/
   }
-  _DWORD * v12 = MixFileClass::FromFile(v11, aCacheMix_0, (int)&DataGlobal_87F7E8[7270]);
-  DataGlobal_87F7E8[5529] = v12;
-  if ( !v12 || !_do_always_noconv_codecvt_base_std__MBE_NXZ_7((#345 *)aCacheMix_0) )
-    return 0;
-  Debug::Log_0();
-  _DWORD * v13 = (_DWORD *)__2_YAPAXI_Z(40);
-  if ( !v13 )
+  v7 = MixFileClass::FromFile(aCacheMix_0, (int)&dword_886980); /*0x530368*/
+  g_MixFile_CACHE = v7; /*0x53036d*/
+  if ( !v7 || !_do_always_noconv_codecvt_base_std__MBE_NXZ_7((std::codecvt_base *)aCacheMix_0) ) /*0x5303a3*/
+    return 0; /*0x5303a3*/
+  Debug::Log_0(g_Str_File_CACHE_MIX); /*0x5303b5*/
+  if ( !__2_YAPAXI_Z(0x28u) ) /*0x5303c6*/
   {
-    DataGlobal_87F7E8[5530] = 0;
-    return 0;
+    g_MixFile_LOCALMD = 0; /*0x53040d*/
+    return 0; /*0x53041b*/
   }
-  DataGlobal_87F7E8[5530] = MixFileClass::FromFile(v13, aLocalmdMix, (int)&DataGlobal_87F7E8[7270]);
-  if ( !DataGlobal_87F7E8[5530] )
-    return 0;
-  _DWORD * v14 = (_DWORD *)__2_YAPAXI_Z(40);
-  if ( !v14 )
+  g_MixFile_LOCALMD = MixFileClass::FromFile(aLocalmdMix, (int)&dword_886980); /*0x5303db*/
+  if ( !g_MixFile_LOCALMD ) /*0x5303e0*/
+    return 0; /*0x5303e0*/
+  if ( !__2_YAPAXI_Z(0x28u) ) /*0x5303f2*/
   {
-    DataGlobal_87F7E8[5531] = 0;
-    return 0;
+    g_MixFile_LOCAL = 0; /*0x53041d*/
+    return 0; /*0x53042b*/
   }
-  _DWORD * v15 = MixFileClass::FromFile(v14, aLocalMix, (int)&DataGlobal_87F7E8[7270]);
-  DataGlobal_87F7E8[5531] = v15;
-  if ( !v15 )
-    return 0;
-  Debug::Log_0();
-  SetSoundWarning(v16);
-  return 1;
+  v8 = MixFileClass::FromFile(aLocalMix, (int)&dword_886980); /*0x530400*/
+  g_MixFile_LOCAL = v8; /*0x530405*/
+  if ( !v8 ) /*0x53042e*/
+    return 0; /*0x5302ed*/
+  Debug::Log_0(aLocalMix_0); /*0x530439*/
+  SetSoundWarning(v9); /*0x530445*/
+  return 1; /*0x5302e4*/
 }
-
-/* ASM:
-Buffer          = byte ptr -40h
-
-sub     esp, 68h
-mov     eax, dword_81C1D0
-push    ebx
-push    ebp
-push    esi
-push    edi
-mov     ecx, 0FFFFFFFEh
-mov     [esp+78h+var_68], eax
-call    SetSoundWarning
-mov     edi, 63h ; 'c'
-
-loc_5301BF:                             ; CODE XREF: MixFileClass__Bootstrap+EA↓j
-push    edi
-lea     ecx, [esp+7Ch+Buffer]
-push    offset aExpandmd02dMix ; "EXPANDMD%02d.MIX"
-push    ecx             ; Buffer
-call    _sprintf
-add     esp, 0Ch
-lea     edx, [esp+78h+Buffer]
-lea     ecx, [esp+78h+var_64]
-push    edx
-call    RawFileClass__Construct
-mov     edx, [eax]
-xor     ebp, ebp
-push    ebp
-mov     ecx, eax
-call    dword ptr [edx+14h]
-lea     ecx, [esp+78h+var_64]
-mov     bl, al
-call    RawFileClass__Dtor
-test    bl, bl
-jz      loc_530289
-push    28h ; '('       ; Size
-call    ??2_YAPAXI_Z
-add     esp, 4
-cmp     eax, ebp
-jz      short loc_530289
-lea     ecx, [esp+78h+Buffer]
-push    886980h         ; int
-push    ecx             ; char *
-mov     ecx, eax
-call    MixFileClass__FromFile
-mov     esi, eax
-cmp     esi, ebp
-jz      short loc_530289
-mov     eax, ds:884D98h
-mov     ecx, ds:884DA0h
-cmp     ecx, eax
-jl      short loc_53025F
-mov     cl, ds:884D9Dh
-test    cl, cl
-jnz     short loc_53023F
-cmp     eax, ebp
-jnz     short loc_530277
-
-loc_53023F:                             ; CODE XREF: MixFileClass__Bootstrap+99↑j
-mov     ecx, ds:884DA4h
-cmp     ecx, ebp
-jle     short loc_530277
-mov     edx, ds:884D90h
-add     ecx, eax
-push    ebp
-push    ecx
-mov     ecx, 884D90h
-call    dword ptr [edx+8]
-test    al, al
-jz      short loc_530277
-
-loc_53025F:                             ; CODE XREF: MixFileClass__Bootstrap+8F↑j
-mov     ecx, ds:884DA0h
-mov     eax, ecx
-inc     ecx
-mov     ds:884DA0h, ecx
-mov     ecx, ds:884D94h
-mov     [ecx+eax*4], esi
-
-loc_530277:                             ; CODE XREF: MixFileClass__Bootstrap+9D↑j
-; MixFileClass__Bootstrap+A7↑j ...
-lea     edx, [esp+78h+Buffer]
-push    edx
-push    offset off_826688
-call    Debug__Log_0
-add     esp, 8
-
-loc_530289:                             ; CODE XREF: MixFileClass__Bootstrap+57↑j
-; MixFileClass__Bootstrap+69↑j ...
-dec     edi
-jns     loc_5301BF
-push    28h ; '('       ; Size
-call    ??2_YAPAXI_Z
-add     esp, 4
-cmp     eax, ebp
-jz      short loc_5302DE
-push    886980h         ; int
-push    offset aRa2mdMix ; "RA2MD.MIX"
-mov     ecx, eax
-call    MixFileClass__FromFile
-cmp     eax, ebp
-mov     ds:884DF8h, eax
-jz      short loc_5302E4
-push    28h ; '('       ; Size
-call    ??2_YAPAXI_Z
-add     esp, 4
-cmp     eax, ebp
-jz      short loc_5302EE
-push    886980h         ; int
-push    offset aRa2Mix  ; "RA2.MIX"
-mov     ecx, eax
-call    MixFileClass__FromFile
-mov     ds:884DFCh, eax
-jmp     short loc_5302FE
-; ---------------------------------------------------------------------------
-
-loc_5302DE:                             ; CODE XREF: MixFileClass__Bootstrap+FC↑j
-mov     ds:884DF8h, ebp
-
-loc_5302E4:                             ; CODE XREF: MixFileClass__Bootstrap+116↑j
-; MixFileClass__Bootstrap+160↓j ...
-pop     edi
-pop     esi
-pop     ebp
-xor     al, al
-pop     ebx
-add     esp, 68h
-retn
-; ---------------------------------------------------------------------------
-
-loc_5302EE:                             ; CODE XREF: MixFileClass__Bootstrap+124↑j
-pop     edi
-mov     ds:884DFCh, ebp
-pop     esi
-pop     ebp
-xor     al, al
-pop     ebx
-add     esp, 68h
-retn
-; ---------------------------------------------------------------------------
-
-loc_5302FE:                             ; CODE XREF: MixFileClass__Bootstrap+13C↑j
-cmp     eax, ebp
-jz      short loc_5302E4
-push    offset g_Str_File_CACHE_MIX ; " CACHE.MIX"
-call    Debug__Log_0
-push    28h ; '('       ; Size
-call    ??2_YAPAXI_Z
-add     esp, 8
-cmp     eax, ebp
-jz      short loc_530374
-push    886980h         ; int
-push    offset aCachemdMix ; "CACHEMD.MIX"
-mov     ecx, eax
-call    MixFileClass__FromFile
-cmp     eax, ebp
-mov     ds:884E48h, eax
-jz      short loc_5302E4
-xor     edx, edx
-mov     ecx, offset aCachemdMix ; "CACHEMD.MIX"
-call    ?do_always_noconv_codecvt_base_std__MBE_NXZ_7
-test    al, al
-jz      short loc_5302E4
-push    offset g_Str_File_CACHE_MIX ; " CACHE.MIX"
-call    Debug__Log_0
-push    28h ; '('       ; Size
-call    ??2_YAPAXI_Z
-add     esp, 8
-cmp     eax, ebp
-jz      short loc_530384
-push    886980h         ; int
-push    offset aCacheMix_0 ; "CACHE.MIX"
-mov     ecx, eax
-call    MixFileClass__FromFile
-mov     ds:884E4Ch, eax
-jmp     short loc_530394
-; ---------------------------------------------------------------------------
-
-loc_530374:                             ; CODE XREF: MixFileClass__Bootstrap+178↑j
-pop     edi
-mov     ds:884E48h, ebp
-pop     esi
-pop     ebp
-xor     al, al
-pop     ebx
-add     esp, 68h
-retn
-; ---------------------------------------------------------------------------
-
-loc_530384:                             ; CODE XREF: MixFileClass__Bootstrap+1BA↑j
-pop     edi
-mov     ds:884E4Ch, ebp
-pop     esi
-pop     ebp
-xor     al, al
-pop     ebx
-add     esp, 68h
-retn
-; ---------------------------------------------------------------------------
-
-loc_530394:                             ; CODE XREF: MixFileClass__Bootstrap+1D2↑j
-cmp     eax, ebp
-jz      loc_5302E4
-xor     edx, edx
-mov     ecx, offset aCacheMix_0 ; "CACHE.MIX"
-call    ?do_always_noconv_codecvt_base_std__MBE_NXZ_7
-test    al, al
-jz      loc_5302E4
-push    offset g_Str_File_CACHE_MIX ; " CACHE.MIX"
-call    Debug__Log_0
-push    28h ; '('       ; Size
-call    ??2_YAPAXI_Z
-add     esp, 8
-cmp     eax, ebp
-jz      short loc_53040C
-push    886980h         ; int
-push    offset aLocalmdMix ; "LOCALMD.MIX"
-mov     ecx, eax
-call    MixFileClass__FromFile
-cmp     eax, ebp
-mov     ds:884E50h, eax
-jz      loc_5302E4
-push    28h ; '('       ; Size
-call    ??2_YAPAXI_Z
-add     esp, 4
-cmp     eax, ebp
-jz      short loc_53041C
-push    886980h         ; int
-push    offset aLocalMix ; "LOCAL.MIX"
-mov     ecx, eax
-call    MixFileClass__FromFile
-mov     ds:884E54h, eax
-jmp     short loc_53042C
-; ---------------------------------------------------------------------------
-
-loc_53040C:                             ; CODE XREF: MixFileClass__Bootstrap+226↑j
-pop     edi
-mov     ds:884E50h, ebp
-pop     esi
-pop     ebp
-xor     al, al
-pop     ebx
-add     esp, 68h
-retn
-; ---------------------------------------------------------------------------
-
-loc_53041C:                             ; CODE XREF: MixFileClass__Bootstrap+252↑j
-pop     edi
-mov     ds:884E54h, ebp
-pop     esi
-pop     ebp
-xor     al, al
-pop     ebx
-add     esp, 68h
-retn
-; ---------------------------------------------------------------------------
-
-loc_53042C:                             ; CODE XREF: MixFileClass__Bootstrap+26A↑j
-cmp     eax, ebp
-jz      loc_5302E4
-push    offset aLocalMix_0 ; " LOCAL.MIX"
-call    Debug__Log_0
-mov     ecx, [esp+7Ch+var_68]
-add     esp, 4
-call    SetSoundWarning
-mov     al, 1
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-add     esp, 68h
-retn
-*/
-
-// ============================================================
-// Compute MIX ID from filename
-// ============================================================
-
-uint32_t MixFileClass::ComputeID(const char* filename)
-{
-    return mix::ComputeId(filename);
-}
-
-// ============================================================
-// Lookup -- find a file index by ID or name
-// ============================================================
-
-int MixFileClass::FindIndex(uint32_t id) const
-{
-    for (int i = 0; i < CountFiles; ++i) {
-        if (Headers[i].ID == id)
-            return i;
-    }
-    return -1;
-}
-
-int MixFileClass::FindIndex(const char* filename) const
-{
-    uint32_t crc = ComputeID(filename);
-    int idx = FindIndex(crc);
-    if (idx >= 0) return idx;
-
-    // Fallback: try Classic (TD) hash
-    int len = (int)strlen(filename);
-    int i = 0; uint32_t cls = 0;
-    while (i < len) {
-        uint32_t a = 0;
-        for (int j = 0; j < 4; ++j) { a >>= 8; if (i < len) a += (uint32_t)toupper((uint8_t)filename[i]) << 24; ++i; }
-        cls = (cls << 1) | (cls >> 31); cls += a;
-    }
-    return FindIndex(cls);
-}
-
-// ============================================================
-// GetSize -- return size of internal file
-// ============================================================
-
-int MixFileClass::GetSize(int index) const
-{
-    if (index < 0 || index >= CountFiles)
-        return 0;
-    return Headers[index].Size;
-}
-
-int MixFileClass::GetSize(const char* filename) const
-{
-    return GetSize(FindIndex(filename));
-}
-
-// ============================================================
-// Extract -- read an internal file into a buffer
-// ============================================================
-
-bool MixFileClass::Extract(int index, void* buffer, int buffer_size) const
-{
-    if (index < 0 || index >= CountFiles || !buffer)
-        return false;
-    if (buffer_size < (int)(Headers[index].Size))
-        return false;
-
-    // Memory-backed: read directly from MemoryData buffer
-    if (MemoryData) {
-        int pos = FileStartOffset + (int)(Headers[index].Offset);
-        int sz  = (int)(Headers[index].Size);
-        if (pos + sz > MemoryDataSize) return false;
-        memcpy(buffer, MemoryData + pos, sz);
-        return true;
-    }
-
-    if (!FileName) return false;
-
-    FILE* fp = fopen(FileName, "rb");
-    if (!fp)
-        return false;
-
-    int file_pos = FileStartOffset + (int)(Headers[index].Offset);
-    fseek(fp, file_pos, SEEK_SET);
-
-    size_t read = fread(buffer, 1, (size_t)(Headers[index].Size), fp);
-    fclose(fp);
-
-    return read == (size_t)(Headers[index].Size);
-}
-
-bool MixFileClass::Extract(const char* filename, void* buffer, int buffer_size) const
-{
-    return Extract(FindIndex(filename), buffer, buffer_size);
-}
-
-bool MixFileClass::Peek(int index, void* buffer, int size) const
-{
-    if (index < 0 || index >= CountFiles || !buffer)
-        return false;
-    if (size > (int)(Headers[index].Size))
-        size = (int)(Headers[index].Size);
-
-    // Memory-backed
-    if (MemoryData) {
-        int pos = FileStartOffset + (int)(Headers[index].Offset);
-        if (pos + size > MemoryDataSize) return false;
-        memcpy(buffer, MemoryData + pos, size);
-        return true;
-    }
-
-    if (!FileName) return false;
-
-    FILE* fp = fopen(FileName, "rb");
-    if (!fp) return false;
-    int pos = FileStartOffset + (int)(Headers[index].Offset);
-    fseek(fp, pos, SEEK_SET);
-    size_t read = fread(buffer, 1, size, fp);
-    fclose(fp);
-    return read == (size_t)(size);
-}
-
-// ============================================================
-// IsValid -- check if MIX was successfully loaded
-// ============================================================
-
-bool MixFileClass::IsValid() const
-{
-    return CountFiles > 0 && FileName != nullptr && Headers != nullptr;
-}
-
-void MixFileClass::DumpEntries() const
-{
-    if (!FileName || CountFiles <= 0) return;
-    LOG_INFO("--- %s (%d entries) ---", FileName, CountFiles);
-    for (int i = 0; i < CountFiles && i < 200; ++i)
-        LOG_INFO("  [%3d] 0x%08X sz=%d off=%d", i, Headers[i].ID, Headers[i].Size, Headers[i].Offset);
-}
-
-} // namespace gamemd

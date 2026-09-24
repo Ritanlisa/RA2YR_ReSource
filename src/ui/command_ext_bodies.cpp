@@ -17,5 +17,4 @@ void DeleteAndZero::Alt() {}
 
 // 0x55cc20
 void ScreenCapture::Frame() {}
-}
 

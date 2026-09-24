@@ -6,11 +6,14 @@
 // 0x4810A0
 int Input::OffsetToDirection()
 {
-{
+  int v1; // edi
+  int v2; // esi
+  double v3; // st7
   int v4; // eax
-  IPXGlobalConnClass *v1 = (unsigned __int8)this->q004; /*0x4810aa*/
-  ObjectClass *v2 = (unsigned __int8)*this; /*0x4810b0*/
-  double v3 = Math::Sqrt((double)(v2 - 128) * (double)(v2 - 128) + (double)(v1 - 128) * (double)(v1 - 128)); /*0x4810e0*/
+
+  v1 = (unsigned __int8)*(this + 1); /*0x4810aa*/
+  v2 = (unsigned __int8)*this; /*0x4810b0*/
+  v3 = Math::Sqrt((double)(v2 - 128) * (double)(v2 - 128) + (double)(v1 - 128) * (double)(v1 - 128)); /*0x4810e0*/
   if ( (int)Math::RoundToInt(v3) >= 60 ) /*0x4810f0*/
   {
     v4 = v2 > 128; /*0x481104*/
@@ -24,5 +27,4 @@ int Input::OffsetToDirection()
     LOBYTE(v4) = 0; /*0x4810f3*/
   }
   return v4; /*0x4810f2*/
-}
 }

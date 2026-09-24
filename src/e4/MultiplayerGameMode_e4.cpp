@@ -5,60 +5,56 @@
 // 0x5D89F0
 unsigned int * MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass(int a2, int a3)
 {
-{
-  this->q004 = 0; /*0x5d89fb*/
-  this->q008 = a2; /*0x5d89fe*/
-  this->q030 = 1; /*0x5d8a01*/
-  this->q034 = 0; /*0x5d8a05*/
-  *this = &vt_VectorClass_MultiplayerGameMode; /*0x5d8a08*/
+  *(this + 1) = 0; /*0x5d89fb*/
+  *(this + 2) = a2; /*0x5d89fe*/
+  *((_BYTE *)this + 12) = 1; /*0x5d8a01*/
+  *((_BYTE *)this + 13) = 0; /*0x5d8a05*/
+  *this = &VectorClass<MultiplayerGameMode *>::`vftable'; /*0x5d8a08*/
   if ( a2 ) /*0x5d8a0e*/
   {
     if ( a3 ) /*0x5d8a16*/
     {
-      this->q004 = a3; /*0x5d8a18*/
+      *(this + 1) = a3; /*0x5d8a18*/
       return this; /*0x5d8a1e*/
     }
-    this->q004 = __2_YAPAXI_Z(4 * a2); /*0x5d8a2d*/
-    this->q034 = 1; /*0x5d8a30*/
+    *(this + 1) = __2_YAPAXI_Z(4 * a2); /*0x5d8a2d*/
+    *((_BYTE *)this + 13) = 1; /*0x5d8a30*/
   }
   return this; /*0x5d8a1d*/
 }
-}
-
 // 0x5D7F20
 MultiplayerGameMode * MultiplayerGameMode::QueryInterface(char a2)
 {
-{
-    int v3;
-    void (__thiscall ***v4)(int, int);
-    void (__thiscall ***v5)(int, int);
-    void *v6;
-    v3 = 0;
-    for ( *(int *)this = &vt_MultiplayerGameMode; v3 < this->q018; ++v3 )
+  int v3; // edi
+  void (__thiscall ***v4)(_DWORD, int); // ecx
+  void (__thiscall ***v5)(_DWORD, int); // ecx
+  void *v6; // eax
+
+  v3 = 0; /*0x5d7f24*/
+  for ( *(_DWORD *)this = &MultiplayerGameMode::`vftable'; v3 < *((_DWORD *)this + 6); ++v3 ) /*0x5d7f31*/
   {
-    v4 = *(void (__thiscall ****)(int, int))(this->q00C + 4 * v3);
-    if ( v4 )
-    (**v4)(v4, 1);
+    v4 = *(void (__thiscall ****)(_DWORD, int))(*((_DWORD *)this + 3) + 4 * v3); /*0x5d7f36*/
+    if ( v4 ) /*0x5d7f3b*/
+      (**v4)(v4, 1); /*0x5d7f41*/
   }
-    (*(void (__thiscall **)(char *))(this->q008 + 12))(this + 8);
-    v5 = (void (__thiscall ***)(int, int))this->q038;
-    if ( v5 )
-    (**v5)(v5, 1);
-    DeleteAndZero((void **)(this) + 12);
-    DeleteAndZero((void **)(this) + 11);
-    DeleteAndZero::Alt((void **)(this) + 9);
-    DeleteAndZero::Alt((void **)(this) + 8);
-    v6 = (void *)this->q00C;
-    this->q008 = &vt_VectorClass_MultiplayerTeam;
-    if ( v6 && *(&this->u32_81) )
+  (*(void (__thiscall **)(char *))(*((_DWORD *)this + 2) + 12))(this + 8); /*0x5d7f53*/
+  v5 = (void (__thiscall ***)(_DWORD, int))*((_DWORD *)this + 14); /*0x5d7f56*/
+  if ( v5 ) /*0x5d7f5b*/
+    (**v5)(v5, 1); /*0x5d7f61*/
+  DeleteAndZero((void **)this + 12); /*0x5d7f66*/
+  DeleteAndZero((void **)this + 11); /*0x5d7f6e*/
+  DeleteAndZero::Alt((void **)this + 9); /*0x5d7f76*/
+  DeleteAndZero::Alt((void **)this + 8); /*0x5d7f7e*/
+  v6 = (void *)*((_DWORD *)this + 3); /*0x5d7f83*/
+  *((_DWORD *)this + 2) = &VectorClass<MultiplayerTeam *>::`vftable'; /*0x5d7f86*/
+  if ( v6 && *(this + 21) ) /*0x5d7f90*/
   {
-    __3_YAXPAX_Z(v6);
-    this->q00C = 0;
+    __3_YAXPAX_Z(v6); /*0x5d7f98*/
+    *((_DWORD *)this + 3) = 0; /*0x5d7fa0*/
   }
-    *(&this->u32_81) = 0;
-    this->q010 = 0;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (MultiplayerGameMode *)this;
-}
+  *(this + 21) = 0; /*0x5d7fab*/
+  *((_DWORD *)this + 4) = 0; /*0x5d7fb1*/
+  if ( (a2 & 1) != 0 ) /*0x5d7fb8*/
+    __3_YAXPAX_Z(this); /*0x5d7fbb*/
+  return this; /*0x5d7fc5*/
 }

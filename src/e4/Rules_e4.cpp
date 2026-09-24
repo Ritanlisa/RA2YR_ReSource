@@ -3288,61 +3288,61 @@ IUnknown * * Rules::ReadCombatINI()
 namespace gamemd {
 unsigned int * Rules::CopyDataArray(VectorClass * aP1)
 {
-{
+  int v3; // eax
+  void *v4; // eax
+  int v5; // ecx
+  int v6; // eax
 
-  if ( this == (_DWORD *)aP1 ) /*0x67a57a*/
+  if ( this == aP1 ) /*0x67a57a*/
     goto LABEL_8; /*0x67a57a*/
-  this->vt_slot_12(); /*0x67a57e*/
-  int v3 = aP1->Capacity; /*0x67a581*/
-  this->u32_8 = v3; /*0x67a586*/
+  (*(void (__thiscall **)(_DWORD *))(*this + 12))(this); /*0x67a57e*/
+  v3 = aP1[2]; /*0x67a581*/
+  *(this + 2) = v3; /*0x67a586*/
   if ( !v3 ) /*0x67a589*/
   {
-    this->u32_4 = 0; /*0x67a5d6*/
-    this->u8_D = 0; /*0x67a5dd*/
-LABEL_8:
-    this->u32_10 = aP1[1].vtable0; /*0x67a5e1*/
-    this->u32_14 = aP1[1].Items; /*0x67a5ea*/
+    *(this + 1) = 0; /*0x67a5d6*/
+    *((_BYTE *)this + 13) = 0; /*0x67a5dd*/
+  LABEL_8:
+    *(this + 4) = aP1[4]; /*0x67a5e1*/
+    *(this + 5) = aP1[5]; /*0x67a5ea*/
     return this; /*0x67a5ed*/
   }
-  int v4 = __2_YAPAXI_Z(4 * v3); /*0x67a593*/
-  this->u32_4 = v4; /*0x67a59b*/
+  v4 = __2_YAPAXI_Z(4 * v3); /*0x67a593*/
+  *(this + 1) = v4; /*0x67a59b*/
   if ( !v4 ) /*0x67a5a0*/
     goto LABEL_8; /*0x67a5a0*/
-  int v5 = this->u32_8; /*0x67a5a2*/
-  int v6 = 0; /*0x67a5a5*/
-  this->u8_D = 1; /*0x67a5a9*/
+  v5 = *(this + 2); /*0x67a5a2*/
+  v6 = 0; /*0x67a5a5*/
+  *((_BYTE *)this + 13) = 1; /*0x67a5a9*/
   if ( v5 <= 0 ) /*0x67a5ad*/
     goto LABEL_8; /*0x67a5ad*/
   do /*0x67a5c1*/
   {
-    *(_DWORD *)(this->u32_4 + 4 * v6) = *((_DWORD *)aP1->Items + v6); /*0x67a5b8*/
+    *(_DWORD *)(*(this + 1) + 4 * v6) = *(_DWORD *)(aP1[1] + 4 * v6); /*0x67a5b8*/
     ++v6; /*0x67a5be*/
   }
-  while ( v6 < this->u32_8 ); /*0x67a5c1*/
-  this->u32_10 = aP1[1].vtable0; /*0x67a5c6*/
-  this->u32_14 = aP1[1].Items; /*0x67a5cc*/
+  while ( v6 < *(this + 2) ); /*0x67a5c1*/
+  *(this + 4) = aP1[4]; /*0x67a5c6*/
+  *(this + 5) = aP1[5]; /*0x67a5cc*/
   return this; /*0x67a5d1*/
 }
-} // namespace gamemd
 }
-
 // 0x5FB2E0
 namespace gamemd {
 char * Rules::GetProductionTimeMult(CellStruct * aP1)
 {
-{
-    CellStruct *result;
-    int v3;
-    result = aP1;
-    if ( aP1 )
+  char *result; // eax
+  int v3; // ecx
+
+  result = (char *)aP1; /*0x5fb2e0*/
+  if ( aP1 ) /*0x5fb2e6*/
   {
-    v3 = *(void**)this;
-    if ( (int)aP1 >= 5 )
-    return (char *)(8 * (int)aP1 / (v3 + 1));
+    v3 = *this; /*0x5fb2e8*/
+    if ( aP1 >= 5 ) /*0x5fb2ed*/
+      return (char *)(8 * aP1 / (v3 + 1)); /*0x5fb301*/
     else
-    return *(char **)&DataGlobal_830620[5296][32 * (int)aP1 + 4636 + 4 * v3];
+      return (&(&off_832CEC)[8 * aP1])[v3]; /*0x5fb2f2*/
   }
-    return (char *)result;
-}
+  return result; /*0x5fb2f9*/
 }
 } // namespace gamemd

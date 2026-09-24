@@ -9,19 +9,20 @@
 namespace gamemd {
 int NetworkClass::ExecutePlanningModeCmd()
 {
-{
+  char v1; // al
   wchar_t *StringCSF; // eax
   wchar_t *v3; // eax
-  char v1 = *this; /*0x639fd0*/
+
+  v1 = *this; /*0x639fd0*/
   if ( *this == 9 ) /*0x639fd4*/
   {
     if ( !g_PlanningModeActive ) /*0x639fdd*/
     {
       g_PlanningModeActive = 1; /*0x639fe8*/
       StringCSF = GetStringCSF((wchar_t *)g_Str_MSG_PlanningModeNoDeploy, 0, g_Str_File_PlanMgr_cpp, 3233); /*0x639ffb*/
-LABEL_10:
+  LABEL_10:
       AddMessageListPlayerMessage(StringCSF, 480); /*0x63a07b*/
-      PlayVocClass(g_RulesClass_Instance->?[3], 0x2000, 1.0, 0); /*0x63a09e*/
+      PlayVocClass(g_RulesClass_Instance->Scorches1[3], 0x2000, 1.0, 0); /*0x63a09e*/
     }
   }
   else if ( v1 == 6 ) /*0x639fff*/
@@ -31,7 +32,7 @@ LABEL_10:
       g_PlanningModeActive = 1; /*0x63a01f*/
       v3 = GetStringCSF(g_Str_MSG_PlanningModeNoStop, 0, g_Str_File_PlanMgr_cpp, 3233); /*0x63a026*/
       AddMessageListPlayerMessage(v3, 480); /*0x63a032*/
-      PlayVocClass(g_RulesClass_Instance->?[3], 0x2000, 1.0, 0); /*0x63a04f*/
+      PlayVocClass(g_RulesClass_Instance->Scorches1[3], 0x2000, 1.0, 0); /*0x63a04f*/
     }
   }
   else if ( v1 == 7 && !g_PlanningModeActive ) /*0x63a05c*/
@@ -40,29 +41,24 @@ LABEL_10:
     StringCSF = GetStringCSF(g_Str_MSG_PlanningModeNoScatter, 0, g_Str_File_PlanMgr_cpp, 3233); /*0x63a076*/
     goto LABEL_10; /*0x63a076*/
   }
-  return PlayVocClass(g_RulesClass_Instance->?[3], 0x2000, 1.0, 0); /*0x63a0c0*/
+  return PlayVocClass(g_RulesClass_Instance->Scorches1[3], 0x2000, 1.0, 0); /*0x63a0c0*/
 }
-} // namespace gamemd
 }
-
 // 0x6FFE00
 namespace gamemd {
 AbstractClass * * NetworkClass::RecordEvent()
 {
-{
   _BYTE *WaypointCoords; // eax
   int result; // eax
-  __int16 v6; // [esp+7Ch] [ebp-4h]
-  unsigned __int8 v8; // [esp+84h] [ebp+4h]
+  char *v3; // edi
   _BYTE v4[8]; // [esp+8h] [ebp-78h] BYREF
-  WaypointCoords = ScriptAction::GetWaypointCoords(v4, (IUnknown *)this); /*0x6ffe0a*/
-  EventClass::Add( /*0x6ffe34*/
   char v5[108]; // [esp+10h] [ebp-70h] BYREF
-    v5,
-    *(AbstractClass **)&HouseClass_Player->__pad_28[8],
-    v8,
-    *(_DWORD *)WaypointCoords,
-    WaypointCoords[4]);
+  __int16 v6; // [esp+7Ch] [ebp-4h]
+  char v7; // [esp+7Eh] [ebp-2h]
+  unsigned __int8 v8; // [esp+84h] [ebp+4h]
+
+  WaypointCoords = ScriptAction::GetWaypointCoords(v4, this); /*0x6ffe0a*/
+  EventClass::Add(v5, *((_DWORD *)HouseClass_Player + 12), v8, *(_DWORD *)WaypointCoords, WaypointCoords[4]); /*0x6ffe34*/
   if ( FactoryClass::GetFlag() ) /*0x6ffe39*/
   {
     result = NetworkClass::ExecutePlanningModeCmd(v5); /*0x6ffe46*/
@@ -72,11 +68,11 @@ AbstractClass * * NetworkClass::RecordEvent()
   {
     if ( Networking_LastEventIndex < 128 ) /*0x6ffe5f*/
     {
-      char * v3 = &g_NetworkPacketIndex[111 * Networking_NextPacketIndex]; /*0x6ffe75*/
+      v3 = &g_NetworkPacketIndex[111 * Networking_NextPacketIndex]; /*0x6ffe75*/
       qmemcpy(v3, v5, 0x6Cu); /*0x6ffe7c*/
       v3 += 108; /*0x6ffe7c*/
       *(_WORD *)v3 = v6; /*0x6ffe7e*/
-      char v7 = v7; /*0x6ffe80*/
+      v3[2] = v7; /*0x6ffe80*/
       g_CrateSystemState[Networking_NextPacketIndex] = timeGetTime(); /*0x6ffe8d*/
       Networking_NextPacketIndex = ((_BYTE)Networking_NextPacketIndex + 1) & 0x7F; /*0x6ffe9d*/
       result = ++Networking_LastEventIndex; /*0x6ffea7*/
@@ -85,16 +81,13 @@ AbstractClass * * NetworkClass::RecordEvent()
   }
   return result; /*0x6ffe4d*/
 }
-} // namespace gamemd
 }
-
 // 0x7B1C50
 namespace gamemd {
 AnimClass * * NetworkClass::UnregisterAsync()
 {
-{
-  ObjectClass *v2; // ecx
-  AnimClass *v3; // eax
+  HWND v2; // ecx
+  SOCKET v3; // eax
   SOCKET result; // eax
 
   v2 = g_hWnd; /*0x7b1c53*/
@@ -112,5 +105,4 @@ AnimClass * * NetworkClass::UnregisterAsync()
   }
   return result; /*0x7b1c7f*/
 }
-} // namespace gamemd
 }

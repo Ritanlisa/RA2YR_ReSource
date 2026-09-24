@@ -12,187 +12,219 @@
 namespace gamemd {
 MixFileClass * * MixFile::LoadAll()
 {
-{
-  _DWORD *v66; // eax
-  _DWORD *v67; // eax
-  char v68; // bl
-  _DWORD v69[22]; // [esp+38h] [ebp-198h] BYREF
-  _BYTE v70[12]; // [esp+90h] [ebp-140h] BYREF
-  int v71; // [esp+9Ch] [ebp-134h]
-  int v72; // [esp+A4h] [ebp-12Ch]
+  _DWORD *v0; // eax
+  char v1; // bl
+  int v3; // eax
+  int v4; // eax
+  _DWORD *v5; // eax
+  char v6; // bl
+  _DWORD *v7; // eax
+  char v8; // bl
+  _DWORD *v9; // eax
+  char v10; // bl
+  int v11; // esi
+  int v12; // esi
+  int v13; // eax
+  int v14; // esi
+  int v15; // eax
+  _DWORD *v16; // eax
+  char v17; // bl
+  _DWORD *v18; // eax
+  char v19; // bl
+  _DWORD *v20; // eax
+  char v21; // bl
+  _DWORD *v22; // eax
+  char v23; // bl
+  _DWORD *v24; // eax
+  char v25; // bl
+  int v26; // eax
+  char v27; // bl
+  int v28; // eax
+  char v29; // bl
+  int v30; // eax
+  char v31; // bl
+  int v32; // eax
+  char v33; // bl
+  int v34; // eax
+  char v35; // bl
+  int v36; // eax
+  char v37; // bl
+  int v38; // esi
+  int v39; // eax
+  int v40; // esi
+  int v41; // eax
+  int v42; // esi
+  _DWORD *v43; // eax
+  char v44; // bl
+  _DWORD *v45; // eax
+  char v46; // bl
+  _DWORD v47[22]; // [esp+38h] [ebp-198h] BYREF
+  _BYTE v48[12]; // [esp+90h] [ebp-140h] BYREF
+  int v49; // [esp+9Ch] [ebp-134h]
+  int v50; // [esp+A4h] [ebp-12Ch]
+  _BYTE v51[36]; // [esp+A8h] [ebp-128h] BYREF
   char Buffer[260]; // [esp+CCh] [ebp-104h] BYREF
 
-  _DWORD * v0 = CCFileClass::Construct(v69, aConqmdMix); /*0x530473*/
-  char v1 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v0 + 20))(v0, 0); /*0x53048b*/
-  v69[0] = &CCFileClass::`vftable'; /*0x53048d*/
-  v71 = 0; /*0x530491*/
-  Vector::Clear((int)v70); /*0x530495*/
-  v69[0] = &off_7E1668; /*0x5304a3*/
-  BufferIOFileClass::Dtor(v69); /*0x5304a7*/
+  v0 = CCFileClass::Construct(v47, aConqmdMix); /*0x530473*/
+  v1 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v0 + 20))(v0, 0); /*0x53048b*/
+  v47[0] = &CCFileClass::`vftable'; /*0x53048d*/
+  v49 = 0; /*0x530491*/
+  Vector::Clear(v48); /*0x530495*/
+  v47[0] = &off_7E1668; /*0x5304a3*/
+  BufferIOFileClass::Dtor(v47); /*0x5304a7*/
   if ( v1 ) /*0x5304ae*/
   {
-    _DWORD * v2 = (_DWORD *)__2_YAPAXI_Z(40); /*0x5304b2*/
-    if ( v2 ) /*0x5304bc*/
-      DataGlobal_87F7E8[5524] = MixFileClass::FromFile(v2, aConqmdMix, (int)&DataGlobal_87F7E8[7270]); /*0x5304cf*/
+    if ( __2_YAPAXI_Z(0x28u) ) /*0x5304b2*/
+      g_MixFile_CONQMD = MixFileClass::FromFile(aConqmdMix, (int)&dword_886980); /*0x5304cf*/
     else
-      DataGlobal_87F7E8[5524] = 0; /*0x5304d6*/
+      g_MixFile_CONQMD = 0; /*0x5304d6*/
   }
-  Debug::Log_0(); /*0x5304e1*/
-  if ( !DataGlobal_87F7E8[5524] ) /*0x5304f0*/
+  Debug::Log_0(aConqmdMix_0); /*0x5304e1*/
+  if ( !g_MixFile_CONQMD ) /*0x5304f0*/
     return 0; /*0x5304fe*/
-  if ( DataGlobal_87F7E8[5516] ) /*0x530507*/
-    (**(void (__thiscall ***)(_DWORD, int))DataGlobal_87F7E8[5516])(DataGlobal_87F7E8[5516], 1); /*0x53050d*/
-  _DWORD * v4 = (_DWORD *)__2_YAPAXI_Z(40); /*0x530511*/
-  if ( v4 ) /*0x53051b*/
-    MixFileClass *v5 = MixFileClass::FromFile(v4, aGenermdMix, (int)&DataGlobal_87F7E8[7270]); /*0x530529*/
-  MixFileClass *v5 = 0; /*0x530530*/
-  DataGlobal_87F7E8[5516] = v5; /*0x530535*/
+  if ( g_MixFile_GENERMD ) /*0x530507*/
+    (**(void (__thiscall ***)(int, int))g_MixFile_GENERMD)(g_MixFile_GENERMD, 1); /*0x53050d*/
+  if ( __2_YAPAXI_Z(0x28u) ) /*0x530511*/
+    v3 = MixFileClass::FromFile(aGenermdMix, (int)&dword_886980); /*0x530529*/
+  else
+    v3 = 0; /*0x530530*/
+  g_MixFile_GENERMD = v3; /*0x530535*/
   ReturnTrue(0); /*0x53053a*/
-  if ( DataGlobal_87F7E8[5515] ) /*0x530547*/
-    (**(void (__thiscall ***)(_DWORD, int))DataGlobal_87F7E8[5515])(DataGlobal_87F7E8[5515], 1); /*0x53054d*/
-  _DWORD * v6 = (_DWORD *)__2_YAPAXI_Z(40); /*0x530551*/
-  if ( v6 ) /*0x53055b*/
-    _DWORD * v7 = MixFileClass::FromFile(v6, aGenericMix, (int)&DataGlobal_87F7E8[7270]); /*0x530569*/
+  if ( g_MixFile_GENERIC ) /*0x530547*/
+    (**(void (__thiscall ***)(int, int))g_MixFile_GENERIC)(g_MixFile_GENERIC, 1); /*0x53054d*/
+  if ( __2_YAPAXI_Z(0x28u) ) /*0x530551*/
+    v4 = MixFileClass::FromFile(aGenericMix, (int)&dword_886980); /*0x530569*/
   else
-    v7 = 0; /*0x530570*/
-  DataGlobal_87F7E8[5515] = v7; /*0x530575*/
+    v4 = 0; /*0x530570*/
+  g_MixFile_GENERIC = v4; /*0x530575*/
   ReturnTrue(0); /*0x53057a*/
-  if ( DataGlobal_87F7E8[5520] ) /*0x530587*/
-    (**(void (__thiscall ***)(_DWORD, int))DataGlobal_87F7E8[5520])(DataGlobal_87F7E8[5520], 1); /*0x53058d*/
-  _DWORD * v8 = (_DWORD *)__2_YAPAXI_Z(40); /*0x530591*/
-  if ( v8 ) /*0x53059b*/
-    DataGlobal_87F7E8[5520] = MixFileClass::FromFile(v8, aIsogenmdMix, (int)&DataGlobal_87F7E8[7270]); /*0x5305ae*/
+  if ( g_MixFile_ISOGENMD ) /*0x530587*/
+    (**(void (__thiscall ***)(int, int))g_MixFile_ISOGENMD)(g_MixFile_ISOGENMD, 1); /*0x53058d*/
+  if ( __2_YAPAXI_Z(0x28u) ) /*0x530591*/
+    g_MixFile_ISOGENMD = MixFileClass::FromFile(aIsogenmdMix, (int)&dword_886980); /*0x5305ae*/
   else
-    DataGlobal_87F7E8[5520] = 0; /*0x5305b5*/
-  if ( DataGlobal_87F7E8[5519] ) /*0x5305c3*/
-    (**(void (__thiscall ***)(_DWORD, int))DataGlobal_87F7E8[5519])(DataGlobal_87F7E8[5519], 1); /*0x5305c9*/
-  _DWORD * v9 = (_DWORD *)__2_YAPAXI_Z(40); /*0x5305cd*/
-  if ( v9 ) /*0x5305d7*/
-    DataGlobal_87F7E8[5519] = MixFileClass::FromFile(v9, aIsogenMix, (int)&DataGlobal_87F7E8[7270]); /*0x5305ea*/
+    g_MixFile_ISOGENMD = 0; /*0x5305b5*/
+  if ( g_MixFile_ISOGEN ) /*0x5305c3*/
+    (**(void (__thiscall ***)(int, int))g_MixFile_ISOGEN)(g_MixFile_ISOGEN, 1); /*0x5305c9*/
+  if ( __2_YAPAXI_Z(0x28u) ) /*0x5305cd*/
+    g_MixFile_ISOGEN = MixFileClass::FromFile(aIsogenMix, (int)&dword_886980); /*0x5305ea*/
   else
-    DataGlobal_87F7E8[5519] = 0; /*0x5305f1*/
-  _DWORD * v10 = CCFileClass::Construct(v69, aConquerMix); /*0x530600*/
-  char v11 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v10 + 20))(v10, 0); /*0x530611*/
-  v69[0] = &CCFileClass::`vftable'; /*0x530613*/
-  v71 = 0; /*0x530617*/
-  Vector::Clear((int)v70); /*0x53061b*/
-  v69[0] = &off_7E1668; /*0x530624*/
-  BufferIOFileClass::Dtor(v69); /*0x530628*/
-  if ( v11 ) /*0x53062f*/
+    g_MixFile_ISOGEN = 0; /*0x5305f1*/
+  v5 = CCFileClass::Construct(v47, aConquerMix); /*0x530600*/
+  v6 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v5 + 20))(v5, 0); /*0x530611*/
+  v47[0] = &CCFileClass::`vftable'; /*0x530613*/
+  v49 = 0; /*0x530617*/
+  Vector::Clear(v48); /*0x53061b*/
+  v47[0] = &off_7E1668; /*0x530624*/
+  BufferIOFileClass::Dtor(v47); /*0x530628*/
+  if ( v6 ) /*0x53062f*/
   {
-    _DWORD * v12 = (_DWORD *)__2_YAPAXI_Z(40); /*0x530633*/
-    if ( v12 ) /*0x53063d*/
-      DataGlobal_87F7E8[5525] = MixFileClass::FromFile(v12, aConquerMix, (int)&DataGlobal_87F7E8[7270]); /*0x530650*/
+    if ( __2_YAPAXI_Z(0x28u) ) /*0x530633*/
+      g_MixFile_CONQUER = MixFileClass::FromFile(aConquerMix, (int)&dword_886980); /*0x530650*/
     else
-      DataGlobal_87F7E8[5525] = 0; /*0x530657*/
+      g_MixFile_CONQUER = 0; /*0x530657*/
   }
-  Debug::Log_0(); /*0x530662*/
-  if ( !DataGlobal_87F7E8[5525] ) /*0x530671*/
+  Debug::Log_0(aConquerMix_0); /*0x530662*/
+  if ( !g_MixFile_CONQUER ) /*0x530671*/
     return 0; /*0x53067f*/
-  _DWORD * v13 = CCFileClass::Construct(v69, aCameomdMix); /*0x530689*/
-  char v14 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v13 + 20))(v13, 0); /*0x53069a*/
-  v69[0] = &CCFileClass::`vftable'; /*0x53069c*/
-  v71 = 0; /*0x5306a0*/
-  Vector::Clear((int)v70); /*0x5306a4*/
-  v69[0] = &off_7E1668; /*0x5306ad*/
-  BufferIOFileClass::Dtor(v69); /*0x5306b1*/
-  if ( v14 ) /*0x5306b8*/
+  v7 = CCFileClass::Construct(v47, aCameomdMix); /*0x530689*/
+  v8 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v7 + 20))(v7, 0); /*0x53069a*/
+  v47[0] = &CCFileClass::`vftable'; /*0x53069c*/
+  v49 = 0; /*0x5306a0*/
+  Vector::Clear(v48); /*0x5306a4*/
+  v47[0] = &off_7E1668; /*0x5306ad*/
+  BufferIOFileClass::Dtor(v47); /*0x5306b1*/
+  if ( v8 ) /*0x5306b8*/
   {
-    _DWORD * v15 = (_DWORD *)__2_YAPAXI_Z(40); /*0x5306bc*/
-    if ( v15 ) /*0x5306c6*/
-      DataGlobal_87F7E8[5526] = MixFileClass::FromFile(v15, aCameomdMix, (int)&DataGlobal_87F7E8[7270]); /*0x5306d9*/
+    if ( __2_YAPAXI_Z(0x28u) ) /*0x5306bc*/
+      g_MixFile_CAMEOMD = MixFileClass::FromFile(aCameomdMix, (int)&dword_886980); /*0x5306d9*/
     else
-      DataGlobal_87F7E8[5526] = 0; /*0x5306e0*/
+      g_MixFile_CAMEOMD = 0; /*0x5306e0*/
   }
-  Debug::Log_0(); /*0x5306eb*/
-  if ( !DataGlobal_87F7E8[5526] ) /*0x5306fa*/
+  Debug::Log_0(aCameomdMix_0); /*0x5306eb*/
+  if ( !g_MixFile_CAMEOMD ) /*0x5306fa*/
     return 0; /*0x530708*/
-  _DWORD * v16 = CCFileClass::Construct(v69, aCameoMix); /*0x530712*/
-  char v17 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v16 + 20))(v16, 0); /*0x530723*/
-  v69[0] = &CCFileClass::`vftable'; /*0x530725*/
-  v71 = 0; /*0x530729*/
-  Vector::Clear((int)v70); /*0x53072d*/
-  v69[0] = &off_7E1668; /*0x530736*/
-  BufferIOFileClass::Dtor(v69); /*0x53073a*/
-  if ( v17 ) /*0x530741*/
+  v9 = CCFileClass::Construct(v47, aCameoMix); /*0x530712*/
+  v10 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v9 + 20))(v9, 0); /*0x530723*/
+  v47[0] = &CCFileClass::`vftable'; /*0x530725*/
+  v49 = 0; /*0x530729*/
+  Vector::Clear(v48); /*0x53072d*/
+  v47[0] = &off_7E1668; /*0x530736*/
+  BufferIOFileClass::Dtor(v47); /*0x53073a*/
+  if ( v10 ) /*0x530741*/
   {
-    _DWORD * v18 = (_DWORD *)__2_YAPAXI_Z(40); /*0x530745*/
-    if ( v18 ) /*0x53074f*/
-      DataGlobal_87F7E8[5527] = MixFileClass::FromFile(v18, aCameoMix, (int)&DataGlobal_87F7E8[7270]); /*0x530762*/
+    if ( __2_YAPAXI_Z(0x28u) ) /*0x530745*/
+      g_MixFile_CAMEO = MixFileClass::FromFile(aCameoMix, (int)&dword_886980); /*0x530762*/
     else
-      DataGlobal_87F7E8[5527] = 0; /*0x530769*/
+      g_MixFile_CAMEO = 0; /*0x530769*/
   }
-  Debug::Log_0(); /*0x530774*/
-  if ( !DataGlobal_87F7E8[5527] ) /*0x530783*/
+  Debug::Log_0(aCameoMix_0); /*0x530774*/
+  if ( !g_MixFile_CAMEO ) /*0x530783*/
     return 0; /*0x530791*/
-  int v19 = Game::CheckForGameCD((void *)0x3C) + 1; /*0x5307a3*/
-  v72 = v19; /*0x5307a6*/
-  if ( LOBYTE(DataGlobal_87F7E8[31470]) == 1 ) /*0x5307aa*/
+  v11 = Game::CheckForGameCD(60) + 1; /*0x5307a3*/
+  v50 = v11; /*0x5307a6*/
+  if ( byte_89E3A0 == 1 ) /*0x5307aa*/
   {
     strcpy(Buffer, aMapsmdMix); /*0x5307d0*/
-    if ( FileClass::FindFirstWithCD(Buffer) == 1 ) /*0x5307e7*/
+    if ( (unsigned __int8)FileClass::FindFirstWithCD(Buffer) == 1 ) /*0x5307e7*/
     {
-      Debug::Log_0(); /*0x5307fa*/
-      _DWORD * v20 = (_DWORD *)__2_YAPAXI_Z(40); /*0x530801*/
-      if ( v20 ) /*0x53080b*/
-        DataGlobal_87F7E8[5534] = MixFileClass::FromFile(v20, Buffer, (int)&DataGlobal_87F7E8[7270]); /*0x530821*/
+      Debug::Log_0(&off_826688); /*0x5307fa*/
+      if ( __2_YAPAXI_Z(0x28u) ) /*0x530801*/
+        g_MixFile_MAPSMDFirst = MixFileClass::FromFile(Buffer, (int)&dword_886980); /*0x530821*/
       else
-        DataGlobal_87F7E8[5534] = 0; /*0x530828*/
-      while ( FileFind::Next(Buffer) == 1 ) /*0x53083c*/
+        g_MixFile_MAPSMDFirst = 0; /*0x530828*/
+      while ( (unsigned __int8)FileFind::Next(Buffer) == 1 ) /*0x53083c*/
       {
-        Debug::Log_0(); /*0x53084f*/
-        _DWORD * v21 = (_DWORD *)__2_YAPAXI_Z(40); /*0x530856*/
-        if ( v21 ) /*0x530860*/
+        Debug::Log_0(&off_826688); /*0x53084f*/
+        if ( __2_YAPAXI_Z(0x28u) ) /*0x530856*/
         {
-          AbstractClass *v22 = MixFileClass::FromFile(v21, Buffer, (int)&DataGlobal_87F7E8[7270]); /*0x530876*/
-          if ( v22 ) /*0x53087a*/
+          v12 = MixFileClass::FromFile(Buffer, (int)&dword_886980); /*0x530876*/
+          if ( v12 ) /*0x53087a*/
           {
-            if ( DataGlobal_87F7E8[5492] < DataGlobal_87F7E8[5490] /*0x5308b2*/
-              || (BYTE1(DataGlobal_87F7E8[5491]) || !DataGlobal_87F7E8[5490])
-              && DataGlobal_87F7E8[5493] > 0
-              && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(DataGlobal_87F7E8[5488] + 8))(
-                   &DataGlobal_87F7E8[5488],
-                   DataGlobal_87F7E8[5493] + DataGlobal_87F7E8[5490],
+            if ( dword_884DB8 < dword_884DB0 /*0x5308b2*/
+              || (byte_884DB5 || !dword_884DB0)
+              && dword_884DBC > 0
+              && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(g_MixFileArray_Maps + 8))(
+                   &g_MixFileArray_Maps,
+                   dword_884DBC + dword_884DB0,
                    0) )
             {
-              int v23 = DataGlobal_87F7E8[5492]++; /*0x5308bf*/
-              *(_DWORD *)(DataGlobal_87F7E8[5489] + 4 * v23) = v22; /*0x5308ce*/
+              v13 = dword_884DB8++; /*0x5308bf*/
+              *((_DWORD *)dword_884DAC + v13) = v12; /*0x5308ce*/
             }
           }
         }
       }
-LABEL_60:
+  LABEL_60:
       FileFind::CloseHandle(); /*0x5308e5*/
       goto LABEL_85; /*0x5308ea*/
     }
     strcpy(Buffer, aMapsMix); /*0x53090f*/
-    if ( FileClass::FindFirstWithCD(Buffer) == 1 ) /*0x530926*/
+    if ( (unsigned __int8)FileClass::FindFirstWithCD(Buffer) == 1 ) /*0x530926*/
     {
-      Debug::Log_0(); /*0x530939*/
-      _DWORD * v24 = (_DWORD *)__2_YAPAXI_Z(40); /*0x530940*/
-      if ( v24 ) /*0x53094a*/
-        DataGlobal_87F7E8[5535] = MixFileClass::FromFile(v24, Buffer, (int)&DataGlobal_87F7E8[7270]); /*0x530960*/
+      Debug::Log_0(&off_826688); /*0x530939*/
+      if ( __2_YAPAXI_Z(0x28u) ) /*0x530940*/
+        g_MixFile_MAPSFirst = MixFileClass::FromFile(Buffer, (int)&dword_886980); /*0x530960*/
       else
-        DataGlobal_87F7E8[5535] = 0; /*0x530967*/
-      while ( FileFind::Next(Buffer) == 1 ) /*0x53097b*/
+        g_MixFile_MAPSFirst = 0; /*0x530967*/
+      while ( (unsigned __int8)FileFind::Next(Buffer) == 1 ) /*0x53097b*/
       {
-        Debug::Log_0(); /*0x53098e*/
-        _DWORD * v25 = (_DWORD *)__2_YAPAXI_Z(40); /*0x530995*/
-        if ( v25 ) /*0x53099f*/
+        Debug::Log_0(&off_826688); /*0x53098e*/
+        if ( __2_YAPAXI_Z(0x28u) ) /*0x530995*/
         {
-          AbstractClass *v26 = MixFileClass::FromFile(v25, Buffer, (int)&DataGlobal_87F7E8[7270]); /*0x5309b5*/
-          if ( v26 ) /*0x5309b9*/
+          v14 = MixFileClass::FromFile(Buffer, (int)&dword_886980); /*0x5309b5*/
+          if ( v14 ) /*0x5309b9*/
           {
-            if ( DataGlobal_87F7E8[5492] < DataGlobal_87F7E8[5490] /*0x5309f1*/
-              || (BYTE1(DataGlobal_87F7E8[5491]) || !DataGlobal_87F7E8[5490])
-              && DataGlobal_87F7E8[5493] > 0
-              && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(DataGlobal_87F7E8[5488] + 8))(
-                   &DataGlobal_87F7E8[5488],
-                   DataGlobal_87F7E8[5493] + DataGlobal_87F7E8[5490],
+            if ( dword_884DB8 < dword_884DB0 /*0x5309f1*/
+              || (byte_884DB5 || !dword_884DB0)
+              && dword_884DBC > 0
+              && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(g_MixFileArray_Maps + 8))(
+                   &g_MixFileArray_Maps,
+                   dword_884DBC + dword_884DB0,
                    0) )
             {
-              int v27 = DataGlobal_87F7E8[5492]++; /*0x5309fe*/
-              *(_DWORD *)(DataGlobal_87F7E8[5489] + 4 * v27) = v26; /*0x530a0d*/
+              v15 = dword_884DB8++; /*0x5309fe*/
+              *((_DWORD *)dword_884DAC + v15) = v14; /*0x530a0d*/
             }
           }
         }
@@ -202,164 +234,156 @@ LABEL_60:
   }
   else
   {
-    sprintf(Buffer, "MAPSMD%02d.MIX", v19); /*0x530a3c*/
-    _DWORD * v28 = CCFileClass::Construct(v69, Buffer); /*0x530a50*/
-    char v29 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v28 + 20))(v28, 0); /*0x530a61*/
-    v69[0] = &CCFileClass::`vftable'; /*0x530a63*/
-    v71 = 0; /*0x530a67*/
-    Vector::Clear((int)v70); /*0x530a6b*/
-    v69[0] = &off_7E1668; /*0x530a74*/
-    BufferIOFileClass::Dtor(v69); /*0x530a7c*/
-    if ( v29 ) /*0x530a83*/
+    sprintf(Buffer, "MAPSMD%02d.MIX", v11); /*0x530a3c*/
+    v16 = CCFileClass::Construct(v47, Buffer); /*0x530a50*/
+    v17 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v16 + 20))(v16, 0); /*0x530a61*/
+    v47[0] = &CCFileClass::`vftable'; /*0x530a63*/
+    v49 = 0; /*0x530a67*/
+    Vector::Clear(v48); /*0x530a6b*/
+    v47[0] = &off_7E1668; /*0x530a74*/
+    BufferIOFileClass::Dtor(v47); /*0x530a7c*/
+    if ( v17 ) /*0x530a83*/
     {
-      _DWORD * v30 = (_DWORD *)__2_YAPAXI_Z(40); /*0x530a87*/
-      if ( v30 ) /*0x530a91*/
-        DataGlobal_87F7E8[5534] = MixFileClass::FromFile(v30, Buffer, (int)&DataGlobal_87F7E8[7270]); /*0x530aa7*/
+      if ( __2_YAPAXI_Z(0x28u) ) /*0x530a87*/
+        g_MixFile_MAPSMDFirst = MixFileClass::FromFile(Buffer, (int)&dword_886980); /*0x530aa7*/
       else
-        DataGlobal_87F7E8[5534] = 0; /*0x530aae*/
+        g_MixFile_MAPSMDFirst = 0; /*0x530aae*/
     }
-    Debug::Log_0(); /*0x530ac1*/
-    sprintf(Buffer, "MAPS%02d.MIX", v19); /*0x530ad4*/
-    _DWORD * v31 = CCFileClass::Construct(v69, Buffer); /*0x530ae8*/
-    char v32 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v31 + 20))(v31, 0); /*0x530af9*/
-    v69[0] = &CCFileClass::`vftable'; /*0x530afb*/
-    v71 = 0; /*0x530aff*/
-    Vector::Clear((int)v70); /*0x530b03*/
-    v69[0] = &off_7E1668; /*0x530b0c*/
-    BufferIOFileClass::Dtor(v69); /*0x530b14*/
-    if ( v32 ) /*0x530b1b*/
+    Debug::Log_0(&off_826688); /*0x530ac1*/
+    sprintf(Buffer, "MAPS%02d.MIX", v11); /*0x530ad4*/
+    v18 = CCFileClass::Construct(v47, Buffer); /*0x530ae8*/
+    v19 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v18 + 20))(v18, 0); /*0x530af9*/
+    v47[0] = &CCFileClass::`vftable'; /*0x530afb*/
+    v49 = 0; /*0x530aff*/
+    Vector::Clear(v48); /*0x530b03*/
+    v47[0] = &off_7E1668; /*0x530b0c*/
+    BufferIOFileClass::Dtor(v47); /*0x530b14*/
+    if ( v19 ) /*0x530b1b*/
     {
-      _DWORD * v33 = (_DWORD *)__2_YAPAXI_Z(40); /*0x530b1f*/
-      if ( v33 ) /*0x530b29*/
-        DataGlobal_87F7E8[5535] = MixFileClass::FromFile(v33, Buffer, (int)&DataGlobal_87F7E8[7270]); /*0x530b3f*/
+      if ( __2_YAPAXI_Z(0x28u) ) /*0x530b1f*/
+        g_MixFile_MAPSFirst = MixFileClass::FromFile(Buffer, (int)&dword_886980); /*0x530b3f*/
       else
-        DataGlobal_87F7E8[5535] = 0; /*0x530b46*/
+        g_MixFile_MAPSFirst = 0; /*0x530b46*/
     }
-    Debug::Log_0(); /*0x530b59*/
+    Debug::Log_0(&off_826688); /*0x530b59*/
   }
-LABEL_85:
-  if ( !DataGlobal_87F7E8[5534] ) /*0x530b67*/
+  LABEL_85:
+  if ( !g_MixFile_MAPSMDFirst ) /*0x530b67*/
     return 0; /*0x530b75*/
-  _DWORD * v34 = CCFileClass::Construct(v69, g_Str_File_MULTIMD_MIX); /*0x530b7f*/
-  char v35 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v34 + 20))(v34, 0); /*0x530b95*/
-  v69[0] = &CCFileClass::`vftable'; /*0x530b97*/
-  v71 = 0; /*0x530b9b*/
-  Vector::Clear((int)v70); /*0x530b9f*/
-  v69[0] = &off_7E1668; /*0x530bad*/
-  BufferIOFileClass::Dtor(v69); /*0x530bb1*/
-  if ( v35 ) /*0x530bb8*/
+  v20 = CCFileClass::Construct(v47, g_Str_File_MULTIMD_MIX); /*0x530b7f*/
+  v21 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v20 + 20))(v20, 0); /*0x530b95*/
+  v47[0] = &CCFileClass::`vftable'; /*0x530b97*/
+  v49 = 0; /*0x530b9b*/
+  Vector::Clear(v48); /*0x530b9f*/
+  v47[0] = &off_7E1668; /*0x530bad*/
+  BufferIOFileClass::Dtor(v47); /*0x530bb1*/
+  if ( v21 ) /*0x530bb8*/
   {
-    _DWORD * v36 = (_DWORD *)__2_YAPAXI_Z(40); /*0x530bbc*/
-    if ( v36 ) /*0x530bc6*/
-      DataGlobal_87F7E8[5500] = MixFileClass::FromFile(v36, g_Str_File_MULTIMD_MIX, (int)&DataGlobal_87F7E8[7270]); /*0x530bd9*/
+    if ( __2_YAPAXI_Z(0x28u) ) /*0x530bbc*/
+      g_MixFile_MULTIMD = MixFileClass::FromFile(g_Str_File_MULTIMD_MIX, (int)&dword_886980); /*0x530bd9*/
     else
-      DataGlobal_87F7E8[5500] = 0; /*0x530be0*/
+      g_MixFile_MULTIMD = 0; /*0x530be0*/
   }
-  Debug::Log_0(); /*0x530beb*/
-  if ( !DataGlobal_87F7E8[5500] ) /*0x530bfa*/
+  Debug::Log_0(aMultimdMix_0); /*0x530beb*/
+  if ( !g_MixFile_MULTIMD ) /*0x530bfa*/
     return 0; /*0x530c08*/
-  _DWORD * v37 = CCFileClass::Construct(v69, g_Str_File_THEMEMD_MIX); /*0x530c12*/
-  char v38 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v37 + 20))(v37, 0); /*0x530c23*/
-  v69[0] = &CCFileClass::`vftable'; /*0x530c25*/
-  v71 = 0; /*0x530c29*/
-  Vector::Clear((int)v70); /*0x530c2d*/
-  v69[0] = &off_7E1668; /*0x530c36*/
-  BufferIOFileClass::Dtor(v69); /*0x530c3a*/
-  if ( v38 ) /*0x530c41*/
+  v22 = CCFileClass::Construct(v47, g_Str_File_THEMEMD_MIX); /*0x530c12*/
+  v23 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v22 + 20))(v22, 0); /*0x530c23*/
+  v47[0] = &CCFileClass::`vftable'; /*0x530c25*/
+  v49 = 0; /*0x530c29*/
+  Vector::Clear(v48); /*0x530c2d*/
+  v47[0] = &off_7E1668; /*0x530c36*/
+  BufferIOFileClass::Dtor(v47); /*0x530c3a*/
+  if ( v23 ) /*0x530c41*/
   {
-    Debug::Log(); /*0x530c48*/
-    _DWORD * v39 = (_DWORD *)__2_YAPAXI_Z(40); /*0x530c4f*/
-    if ( v39 ) /*0x530c59*/
+    Debug::Log(aInitializingTh); /*0x530c48*/
+    if ( __2_YAPAXI_Z(0x28u) ) /*0x530c4f*/
     {
-      g_MixFile_THEME = MixFileClass::FromFile(v39, g_Str_File_THEMEMD_MIX, (int)&DataGlobal_87F7E8[7270]); /*0x530c70*/
+      g_MixFile_THEME = MixFileClass::FromFile(g_Str_File_THEMEMD_MIX, (int)&dword_886980); /*0x530c70*/
       goto LABEL_100; /*0x530c75*/
     }
   }
   else
   {
-    _DWORD * v40 = CCFileClass::Construct(v69, g_Str_File_THEME_MIX); /*0x530c80*/
-    char v41 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v40 + 20))(v40, 0); /*0x530c91*/
-    v69[0] = &CCFileClass::`vftable'; /*0x530c93*/
-    v71 = 0; /*0x530c97*/
-    Vector::Clear((int)v70); /*0x530c9b*/
-    v69[0] = &off_7E1668; /*0x530ca4*/
-    BufferIOFileClass::Dtor(v69); /*0x530ca8*/
-    if ( !v41 ) /*0x530caf*/
+    v24 = CCFileClass::Construct(v47, g_Str_File_THEME_MIX); /*0x530c80*/
+    v25 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v24 + 20))(v24, 0); /*0x530c91*/
+    v47[0] = &CCFileClass::`vftable'; /*0x530c93*/
+    v49 = 0; /*0x530c97*/
+    Vector::Clear(v48); /*0x530c9b*/
+    v47[0] = &off_7E1668; /*0x530ca4*/
+    BufferIOFileClass::Dtor(v47); /*0x530ca8*/
+    if ( !v25 ) /*0x530caf*/
       goto LABEL_100; /*0x530caf*/
-    Debug::Log(); /*0x530cb6*/
-    _DWORD * v42 = (_DWORD *)__2_YAPAXI_Z(40); /*0x530cbd*/
-    if ( v42 ) /*0x530cc7*/
+    Debug::Log(aInitializingTh_0); /*0x530cb6*/
+    if ( __2_YAPAXI_Z(0x28u) ) /*0x530cbd*/
     {
-      g_MixFile_THEME = MixFileClass::FromFile(v42, g_Str_File_THEME_MIX, (int)&DataGlobal_87F7E8[7270]); /*0x530cda*/
+      g_MixFile_THEME = MixFileClass::FromFile(g_Str_File_THEME_MIX, (int)&dword_886980); /*0x530cda*/
       goto LABEL_100; /*0x530cdf*/
     }
   }
   g_MixFile_THEME = 0; /*0x530ce1*/
-LABEL_100:
-  Debug::Log_0(); /*0x530ce7*/
-  LOBYTE(DataGlobal_87F7E8[539939]) = 1; /*0x530cf9*/
-  Audio::LoadWAVFiles(&DataGlobal_87F7E8[528714]); /*0x530d00*/
-  if ( LOBYTE(DataGlobal_87F7E8[31470]) == 1 ) /*0x530d0c*/
+  LABEL_100:
+  Debug::Log_0(aThemeMix_0); /*0x530ce7*/
+  g_ThemeMIXLoaded = 1; /*0x530cf9*/
+  Audio::LoadWAVFiles(&g_BuildingTypeClass_Count); /*0x530d00*/
+  if ( byte_89E3A0 == 1 ) /*0x530d0c*/
   {
     strcpy(Buffer, g_Str_File_MOVMD__MIX); /*0x530d37*/
-  int v73[9]; // [esp+A8h] [ebp-128h] BYREF
-    _DWORD * v43 = RawFileClass::Construct(v73, (int)aMovies01Mix); /*0x530d47*/
-    char v44 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v43 + 20))(v43, 0); /*0x530d5b*/
-    RawFileClass::Dtor(v73); /*0x530d5d*/
-    if ( v44 ) /*0x530d64*/
+    v26 = RawFileClass::Construct(aMovies01Mix); /*0x530d47*/
+    v27 = (*(int (__thiscall **)(int, _DWORD))(*(_DWORD *)v26 + 20))(v26, 0); /*0x530d5b*/
+    RawFileClass::Dtor(v51); /*0x530d5d*/
+    if ( v27 ) /*0x530d64*/
       strcpy(Buffer, aMoviesMix); /*0x530d86*/
-    _DWORD * v45 = RawFileClass::Construct(v73, (int)aMixfilesMovies); /*0x530d9b*/
-    char v46 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v45 + 20))(v45, 0); /*0x530daf*/
-    RawFileClass::Dtor(v73); /*0x530db1*/
-    if ( v46 ) /*0x530db8*/
+    v28 = RawFileClass::Construct(aMixfilesMovies); /*0x530d9b*/
+    v29 = (*(int (__thiscall **)(int, _DWORD))(*(_DWORD *)v28 + 20))(v28, 0); /*0x530daf*/
+    RawFileClass::Dtor(v51); /*0x530db1*/
+    if ( v29 ) /*0x530db8*/
       strcpy(Buffer, aMixfilesMovies_0); /*0x530dda*/
-    _DWORD * v47 = RawFileClass::Construct(v73, (int)aMovmd01Mix); /*0x530def*/
-    char v48 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v47 + 20))(v47, 0); /*0x530e03*/
-    RawFileClass::Dtor(v73); /*0x530e05*/
-    if ( v48 ) /*0x530e0c*/
+    v30 = RawFileClass::Construct(aMovmd01Mix); /*0x530def*/
+    v31 = (*(int (__thiscall **)(int, _DWORD))(*(_DWORD *)v30 + 20))(v30, 0); /*0x530e03*/
+    RawFileClass::Dtor(v51); /*0x530e05*/
+    if ( v31 ) /*0x530e0c*/
       strcpy(Buffer, g_Str_File_MOVMD__MIX); /*0x530e2e*/
-    _DWORD * v49 = RawFileClass::Construct(v73, (int)aMixfilesMovmd0); /*0x530e43*/
-    char v50 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v49 + 20))(v49, 0); /*0x530e57*/
-    RawFileClass::Dtor(v73); /*0x530e59*/
-    if ( v50 ) /*0x530e60*/
+    v32 = RawFileClass::Construct(aMixfilesMovmd0); /*0x530e43*/
+    v33 = (*(int (__thiscall **)(int, _DWORD))(*(_DWORD *)v32 + 20))(v32, 0); /*0x530e57*/
+    RawFileClass::Dtor(v51); /*0x530e59*/
+    if ( v33 ) /*0x530e60*/
       strcpy(Buffer, aMixfilesMovmdM); /*0x530e82*/
-    _DWORD * v51 = RawFileClass::Construct(v73, (int)aMovmd03Mix); /*0x530e97*/
-    char v52 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v51 + 20))(v51, 0); /*0x530eab*/
-    RawFileClass::Dtor(v73); /*0x530ead*/
-    if ( v52 ) /*0x530eb4*/
+    v34 = RawFileClass::Construct(aMovmd03Mix); /*0x530e97*/
+    v35 = (*(int (__thiscall **)(int, _DWORD))(*(_DWORD *)v34 + 20))(v34, 0); /*0x530eab*/
+    RawFileClass::Dtor(v51); /*0x530ead*/
+    if ( v35 ) /*0x530eb4*/
       strcpy(Buffer, g_Str_File_MOVMD__MIX); /*0x530ed6*/
-    _DWORD * v53 = RawFileClass::Construct(v73, (int)aMixfilesMovmd0_0); /*0x530eeb*/
-    char v54 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v53 + 20))(v53, 0); /*0x530eff*/
-    RawFileClass::Dtor(v73); /*0x530f01*/
-    if ( v54 ) /*0x530f08*/
+    v36 = RawFileClass::Construct(aMixfilesMovmd0_0); /*0x530eeb*/
+    v37 = (*(int (__thiscall **)(int, _DWORD))(*(_DWORD *)v36 + 20))(v36, 0); /*0x530eff*/
+    RawFileClass::Dtor(v51); /*0x530f01*/
+    if ( v37 ) /*0x530f08*/
       strcpy(Buffer, aMixfilesMovmdM); /*0x530f2a*/
-    if ( FileClass::FindFirstWithCD(Buffer) == 1 ) /*0x530f41*/
+    if ( (unsigned __int8)FileClass::FindFirstWithCD(Buffer) == 1 ) /*0x530f41*/
     {
-      Debug::Log_0(); /*0x530f54*/
-      _DWORD * v55 = (_DWORD *)__2_YAPAXI_Z(40); /*0x530f5b*/
-      if ( v55 ) /*0x530f65*/
-        DataGlobal_87F7E8[5521] = MixFileClass::FromFile(v55, Buffer, (int)&DataGlobal_87F7E8[7270]); /*0x530f7b*/
+      Debug::Log_0(&off_826688); /*0x530f54*/
+      if ( __2_YAPAXI_Z(0x28u) ) /*0x530f5b*/
+        g_MixFile_MOVIES = MixFileClass::FromFile(Buffer, (int)&dword_886980); /*0x530f7b*/
       else
-        DataGlobal_87F7E8[5521] = 0; /*0x530f82*/
-      while ( FileFind::Next(Buffer) == 1 ) /*0x530f96*/
+        g_MixFile_MOVIES = 0; /*0x530f82*/
+      while ( (unsigned __int8)FileFind::Next(Buffer) == 1 ) /*0x530f96*/
       {
-        Debug::Log_0(); /*0x530fa9*/
-        _DWORD * v56 = (_DWORD *)__2_YAPAXI_Z(40); /*0x530fb0*/
-        if ( v56 ) /*0x530fba*/
+        Debug::Log_0(&off_826688); /*0x530fa9*/
+        if ( __2_YAPAXI_Z(0x28u) ) /*0x530fb0*/
         {
-          AbstractClass *v57 = MixFileClass::FromFile(v56, Buffer, (int)&DataGlobal_87F7E8[7270]); /*0x530fd0*/
-          if ( v57 ) /*0x530fd4*/
+          v38 = MixFileClass::FromFile(Buffer, (int)&dword_886980); /*0x530fd0*/
+          if ( v38 ) /*0x530fd4*/
           {
-            if ( DataGlobal_87F7E8[5506] < DataGlobal_87F7E8[5504] /*0x53100c*/
-              || (BYTE1(DataGlobal_87F7E8[5505]) || !DataGlobal_87F7E8[5504])
-              && DataGlobal_87F7E8[5507] > 0
-              && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(DataGlobal_87F7E8[5502] + 8))(
-                   &DataGlobal_87F7E8[5502],
-                   DataGlobal_87F7E8[5504] + DataGlobal_87F7E8[5507],
+            if ( dword_884DF0 < dword_884DE8 /*0x53100c*/
+              || (byte_884DED || !dword_884DE8)
+              && dword_884DF4 > 0
+              && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(g_MixFileArray_Movies + 8))(
+                   &g_MixFileArray_Movies,
+                   dword_884DE8 + dword_884DF4,
                    0) )
             {
-              int v58 = DataGlobal_87F7E8[5506]++; /*0x531019*/
-              *(_DWORD *)(DataGlobal_87F7E8[5503] + 4 * v58) = v57; /*0x531028*/
+              v39 = dword_884DF0++; /*0x531019*/
+              *((_DWORD *)dword_884DE4 + v39) = v38; /*0x531028*/
             }
           }
         }
@@ -368,95 +392,103 @@ LABEL_100:
     else
     {
       strcpy(Buffer, aMoviesMix); /*0x531069*/
-      Debug::Log_0(); /*0x53107f*/
-      _DWORD * v59 = (_DWORD *)__2_YAPAXI_Z(40); /*0x531086*/
-      if ( v59 ) /*0x531090*/
-        DataGlobal_87F7E8[5521] = MixFileClass::FromFile(v59, Buffer, (int)&DataGlobal_87F7E8[7270]); /*0x5310a6*/
+      Debug::Log_0(&off_826688); /*0x53107f*/
+      if ( __2_YAPAXI_Z(0x28u) ) /*0x531086*/
+        g_MixFile_MOVIES = MixFileClass::FromFile(Buffer, (int)&dword_886980); /*0x5310a6*/
       else
-        DataGlobal_87F7E8[5521] = 0; /*0x5310ad*/
-      while ( FileFind::Next(Buffer) == 1 ) /*0x5310c1*/
+        g_MixFile_MOVIES = 0; /*0x5310ad*/
+      while ( (unsigned __int8)FileFind::Next(Buffer) == 1 ) /*0x5310c1*/
       {
-        Debug::Log_0(); /*0x5310d4*/
-        _DWORD * v60 = (_DWORD *)__2_YAPAXI_Z(40); /*0x5310db*/
-        if ( v60 ) /*0x5310e5*/
+        Debug::Log_0(&off_826688); /*0x5310d4*/
+        if ( __2_YAPAXI_Z(0x28u) ) /*0x5310db*/
         {
-          AbstractClass *v61 = MixFileClass::FromFile(v60, Buffer, (int)&DataGlobal_87F7E8[7270]); /*0x5310fb*/
-          if ( v61 ) /*0x5310ff*/
+          v40 = MixFileClass::FromFile(Buffer, (int)&dword_886980); /*0x5310fb*/
+          if ( v40 ) /*0x5310ff*/
           {
-            if ( DataGlobal_87F7E8[5506] < DataGlobal_87F7E8[5504] /*0x531137*/
-              || (BYTE1(DataGlobal_87F7E8[5505]) || !DataGlobal_87F7E8[5504])
-              && DataGlobal_87F7E8[5507] > 0
-              && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(DataGlobal_87F7E8[5502] + 8))(
-                   &DataGlobal_87F7E8[5502],
-                   DataGlobal_87F7E8[5504] + DataGlobal_87F7E8[5507],
+            if ( dword_884DF0 < dword_884DE8 /*0x531137*/
+              || (byte_884DED || !dword_884DE8)
+              && dword_884DF4 > 0
+              && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(g_MixFileArray_Movies + 8))(
+                   &g_MixFileArray_Movies,
+                   dword_884DE8 + dword_884DF4,
                    0) )
             {
-              int v62 = DataGlobal_87F7E8[5506]++; /*0x531144*/
-              *(_DWORD *)(DataGlobal_87F7E8[5503] + 4 * v62) = v61; /*0x531153*/
+              v41 = dword_884DF0++; /*0x531144*/
+              *((_DWORD *)dword_884DE4 + v41) = v40; /*0x531153*/
             }
           }
         }
       }
     }
     FileFind::CloseHandle(); /*0x53103f*/
-    return DataGlobal_87F7E8[5521] != 0; /*0x531044*/
+    return g_MixFile_MOVIES != 0; /*0x531044*/
   }
-  int v63 = v72; /*0x531174*/
-  sprintf(Buffer, "MOVMD%02d.MIX", v72); /*0x531186*/
-  _DWORD * v64 = CCFileClass::Construct(v69, Buffer); /*0x53119a*/
-  char v65 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v64 + 20))(v64, 0); /*0x5311ab*/
-  v69[0] = &CCFileClass::`vftable'; /*0x5311ad*/
-  v71 = 0; /*0x5311b5*/
-  Vector::Clear((int)v70); /*0x5311b9*/
-  v69[0] = &off_7E1668; /*0x5311c2*/
-  BufferIOFileClass::Dtor(v69); /*0x5311c6*/
-  if ( v65 ) /*0x5311cd*/
+  v42 = v50; /*0x531174*/
+  sprintf(Buffer, "MOVMD%02d.MIX", v50); /*0x531186*/
+  v43 = CCFileClass::Construct(v47, Buffer); /*0x53119a*/
+  v44 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v43 + 20))(v43, 0); /*0x5311ab*/
+  v47[0] = &CCFileClass::`vftable'; /*0x5311ad*/
+  v49 = 0; /*0x5311b5*/
+  Vector::Clear(v48); /*0x5311b9*/
+  v47[0] = &off_7E1668; /*0x5311c2*/
+  BufferIOFileClass::Dtor(v47); /*0x5311c6*/
+  if ( v44 ) /*0x5311cd*/
   {
-    v66 = (_DWORD *)__2_YAPAXI_Z(40); /*0x5311d1*/
-    if ( v66 ) /*0x5311db*/
+    if ( __2_YAPAXI_Z(0x28u) ) /*0x5311d1*/
       goto LABEL_147; /*0x5311db*/
     goto LABEL_148; /*0x5311db*/
   }
-  sprintf(Buffer, "MOVIES%02d.MIX", v63); /*0x5311f1*/
-  v67 = CCFileClass::Construct(v69, Buffer); /*0x531205*/
-  v68 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v67 + 20))(v67, 0); /*0x531216*/
-  v69[0] = &CCFileClass::`vftable'; /*0x531218*/
-  v71 = 0; /*0x531220*/
-  Vector::Clear((int)v70); /*0x531224*/
-  v69[0] = &off_7E1668; /*0x53122d*/
-  BufferIOFileClass::Dtor(v69); /*0x531231*/
-  if ( v68 ) /*0x531238*/
+  sprintf(Buffer, "MOVIES%02d.MIX", v42); /*0x5311f1*/
+  v45 = CCFileClass::Construct(v47, Buffer); /*0x531205*/
+  v46 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v45 + 20))(v45, 0); /*0x531216*/
+  v47[0] = &CCFileClass::`vftable'; /*0x531218*/
+  v49 = 0; /*0x531220*/
+  Vector::Clear(v48); /*0x531224*/
+  v47[0] = &off_7E1668; /*0x53122d*/
+  BufferIOFileClass::Dtor(v47); /*0x531231*/
+  if ( v46 ) /*0x531238*/
   {
-    v66 = (_DWORD *)__2_YAPAXI_Z(40); /*0x53123c*/
-    if ( v66 ) /*0x531246*/
+    if ( __2_YAPAXI_Z(0x28u) ) /*0x53123c*/
     {
-LABEL_147:
-      DataGlobal_87F7E8[5521] = MixFileClass::FromFile(v66, Buffer, (int)&DataGlobal_87F7E8[7270]); /*0x531248*/
+  LABEL_147:
+      g_MixFile_MOVIES = MixFileClass::FromFile(Buffer, (int)&dword_886980); /*0x531248*/
       goto LABEL_149; /*0x531261*/
     }
-LABEL_148:
-    DataGlobal_87F7E8[5521] = 0; /*0x531263*/
+  LABEL_148:
+    g_MixFile_MOVIES = 0; /*0x531263*/
   }
-LABEL_149:
-  Debug::Log_0(); /*0x531269*/
-  return DataGlobal_87F7E8[5521] != 0; /*0x5304f2*/
+  LABEL_149:
+  Debug::Log_0(&off_826688); /*0x531269*/
+  return g_MixFile_MOVIES != 0; /*0x5304f2*/
 }
-} // namespace gamemd
 }
-
 // 0x534FA0
 namespace gamemd {
 AbstractClass * * MixFile::LoadSide()
 {
-{
-  MixFile *v2; // ebx
+  unsigned int v2; // ebx
   unsigned int YR; // eax
-  AbstractClass *v12; // eax
-  MixFile *v17; // [esp+1Ch] [ebp-11Ch]
+  unsigned int v5; // esi
+  _DWORD *v6; // eax
+  char v7; // bl
+  _DWORD *v8; // eax
+  _DWORD *v9; // eax
+  char v10; // bl
+  _DWORD *v11; // eax
+  _DWORD *v12; // eax
+  _DWORD *v13; // eax
+  char v14; // bl
+  _DWORD *v15; // eax
+  char v16; // al
+  unsigned int v17; // [esp+1Ch] [ebp-11Ch]
   char Buffer[64]; // [esp+20h] [ebp-118h] BYREF
   _DWORD v19[22]; // [esp+60h] [ebp-D8h] BYREF
   _BYTE v20[12]; // [esp+B8h] [ebp-80h] BYREF
   int v21; // [esp+C4h] [ebp-74h]
+  _DWORD v22[22]; // [esp+CCh] [ebp-6Ch] BYREF
+  _BYTE v23[12]; // [esp+124h] [ebp-14h] BYREF
+  int v24; // [esp+130h] [ebp-8h]
+
   VoxClass::SetEVAIndex(); /*0x534fac*/
   if ( this == 2 ) /*0x534fb4*/
     this = 1; /*0x534fb6*/
@@ -464,7 +496,7 @@ AbstractClass * * MixFile::LoadSide()
   v17 = this; /*0x534fc0*/
   if ( this == -1 ) /*0x534fc4*/
   {
-    YR = AlwaysFindYRCD(DataGlobal_89E414, 60); /*0x534fd1*/
+    YR = AlwaysFindYRCD(dword_89E414, 60); /*0x534fd1*/
     if ( YR >= 2 ) /*0x534fda*/
     {
       Debug::Log(); /*0x534fe6*/
@@ -474,110 +506,107 @@ AbstractClass * * MixFile::LoadSide()
     v2 = YR; /*0x534fff*/
   }
   Debug::Log(); /*0x53500b*/
-  if ( DataGlobal_884E68 ) /*0x53501a*/
+  if ( dword_884E68 ) /*0x53501a*/
   {
     Debug::Log(); /*0x535025*/
-    if ( DataGlobal_884E68 ) /*0x535035*/
-      (**(void (__thiscall ***)(int, int))DataGlobal_884E68)(DataGlobal_884E68, 1); /*0x53503b*/
-    DataGlobal_884E68 = 0; /*0x53503d*/
+    if ( dword_884E68 ) /*0x535035*/
+      (**(void (__thiscall ***)(int, int))dword_884E68)(dword_884E68, 1); /*0x53503b*/
+    dword_884E68 = 0; /*0x53503d*/
   }
-  if ( DataGlobal_884E74 ) /*0x53504a*/
+  if ( dword_884E74 ) /*0x53504a*/
   {
     Debug::Log(); /*0x535055*/
-    if ( DataGlobal_884E74 ) /*0x535065*/
-      (**(void (__thiscall ***)(int, int))DataGlobal_884E74)(DataGlobal_884E74, 1); /*0x53506b*/
-    DataGlobal_884E74 = 0; /*0x53506d*/
+    if ( dword_884E74 ) /*0x535065*/
+      (**(void (__thiscall ***)(int, int))dword_884E74)(dword_884E74, 1); /*0x53506b*/
+    dword_884E74 = 0; /*0x53506d*/
   }
-  if ( DataGlobal_884E70 ) /*0x53507a*/
+  if ( dword_884E70 ) /*0x53507a*/
   {
     Debug::Log(); /*0x535085*/
-    if ( DataGlobal_884E70 ) /*0x535095*/
-      (**(void (__thiscall ***)(int, int))DataGlobal_884E70)(DataGlobal_884E70, 1); /*0x53509b*/
-    DataGlobal_884E70 = 0; /*0x53509d*/
+    if ( dword_884E70 ) /*0x535095*/
+      (**(void (__thiscall ***)(int, int))dword_884E70)(dword_884E70, 1); /*0x53509b*/
+    dword_884E70 = 0; /*0x53509d*/
   }
-  if ( DataGlobal_884E78 ) /*0x5350aa*/
+  if ( dword_884E78 ) /*0x5350aa*/
   {
     Debug::Log(); /*0x5350b5*/
-    if ( DataGlobal_884E78 ) /*0x5350c5*/
-      (**(void (__thiscall ***)(int, int))DataGlobal_884E78)(DataGlobal_884E78, 1); /*0x5350cb*/
-    DataGlobal_884E78 = 0; /*0x5350cd*/
+    if ( dword_884E78 ) /*0x5350c5*/
+      (**(void (__thiscall ***)(int, int))dword_884E78)(dword_884E78, 1); /*0x5350cb*/
+    dword_884E78 = 0; /*0x5350cd*/
   }
-  INIClass *v5 = v2 + 1; /*0x5350d3*/
-  sprintf(Buffer, DataGlobal_827E0C, v2 + 1); /*0x5350e1*/
+  v5 = v2 + 1; /*0x5350d3*/
+  sprintf(Buffer, "SIDEC%02dMD.MIX", v2 + 1); /*0x5350e1*/
   Debug::Log(); /*0x5350f0*/
-  _DWORD * v6 = CCFileClass::Construct(v19, Buffer); /*0x535101*/
-  char v7 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v6 + 20))(v6, 0); /*0x535115*/
-  v19[0] = &vt_CCFileClass; /*0x535117*/
+  v6 = CCFileClass::Construct(v19, Buffer); /*0x535101*/
+  v7 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v6 + 20))(v6, 0); /*0x535115*/
+  v19[0] = &CCFileClass::`vftable'; /*0x535117*/
   v21 = 0; /*0x53511f*/
   Vector::Clear((int)v20); /*0x535126*/
   v19[0] = &off_7E1668; /*0x535134*/
   BufferIOFileClass::Dtor(v19); /*0x535138*/
   if ( v7 ) /*0x53513f*/
   {
-    _DWORD * v8 = __2_YAPAXI_Z(0x28u); /*0x535143*/
+    v8 = __2_YAPAXI_Z(0x28u); /*0x535143*/
     if ( v8 ) /*0x53514d*/
-      DataGlobal_884E70 = (int)MixFileClass::FromFile(v8, Buffer, (int)&DataGlobal_886980); /*0x535160*/
+      dword_884E70 = (int)MixFileClass::FromFile(v8, Buffer, (int)&dword_886980); /*0x535160*/
     else
-      DataGlobal_884E70 = 0; /*0x535167*/
+      dword_884E70 = 0; /*0x535167*/
   }
   ReturnTrue(0); /*0x535174*/
-  sprintf(Buffer, DataGlobal_827DE4, v5); /*0x535184*/
+  sprintf(Buffer, "SIDEC%02d.MIX", v5); /*0x535184*/
   Debug::Log(); /*0x535193*/
-  _DWORD * v9 = CCFileClass::Construct(v19, Buffer); /*0x5351a4*/
-  char v10 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v9 + 20))(v9, 0); /*0x5351b8*/
-  v19[0] = &vt_CCFileClass; /*0x5351ba*/
+  v9 = CCFileClass::Construct(v19, Buffer); /*0x5351a4*/
+  v10 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v9 + 20))(v9, 0); /*0x5351b8*/
+  v19[0] = &CCFileClass::`vftable'; /*0x5351ba*/
   v21 = 0; /*0x5351c2*/
   Vector::Clear((int)v20); /*0x5351c9*/
   v19[0] = &off_7E1668; /*0x5351d2*/
   BufferIOFileClass::Dtor(v19); /*0x5351d6*/
   if ( v10 ) /*0x5351dd*/
   {
-    _DWORD * v11 = __2_YAPAXI_Z(0x28u); /*0x5351e1*/
+    v11 = __2_YAPAXI_Z(0x28u); /*0x5351e1*/
     if ( !v11 ) /*0x5351eb*/
     {
-      DataGlobal_884E74 = 0; /*0x53520a*/
+      dword_884E74 = 0; /*0x53520a*/
       Debug::Log(); /*0x535210*/
       return 0; /*0x535224*/
     }
-    v12 = MixFileClass::FromFile(v11, Buffer, (int)&DataGlobal_886980); /*0x5351f9*/
-    DataGlobal_884E74 = (int)v12; /*0x5351fe*/
+    v12 = MixFileClass::FromFile(v11, Buffer, (int)&dword_886980); /*0x5351f9*/
+    dword_884E74 = (int)v12; /*0x5351fe*/
   }
   else
   {
-    v12 = (_DWORD *)DataGlobal_884E74; /*0x535225*/
+    v12 = (_DWORD *)dword_884E74; /*0x535225*/
   }
   if ( v12 ) /*0x53522c*/
   {
-  int v24; // [esp+130h] [ebp-8h]
-  _BYTE v23[12]; // [esp+124h] [ebp-14h] BYREF
     ReturnTrue(0); /*0x53524b*/
-    sprintf(Buffer, stru_827DD4, v5); /*0x53525b*/
+    sprintf(Buffer, "SIDENC%02d.MIX", v5); /*0x53525b*/
     Debug::Log(); /*0x53526a*/
-    _DWORD * v13 = CCFileClass::Construct(v19, Buffer); /*0x53527b*/
-    char v14 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v13 + 20))(v13, 0); /*0x535294*/
-    v19[0] = &vt_CCFileClass; /*0x535296*/
+    v13 = CCFileClass::Construct(v19, Buffer); /*0x53527b*/
+    v14 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v13 + 20))(v13, 0); /*0x535294*/
+    v19[0] = &CCFileClass::`vftable'; /*0x535296*/
     v21 = 0; /*0x53529a*/
     Vector::Clear((int)v20); /*0x5352a1*/
     v19[0] = &off_7E1668; /*0x5352aa*/
     BufferIOFileClass::Dtor(v19); /*0x5352ae*/
     if ( v14 ) /*0x5352b5*/
     {
-      _DWORD * v15 = __2_YAPAXI_Z(0x28u); /*0x5352b9*/
+      v15 = __2_YAPAXI_Z(0x28u); /*0x5352b9*/
       if ( v15 ) /*0x5352c3*/
-        DataGlobal_884E78 = (int)MixFileClass::FromFile(v15, Buffer, (int)&DataGlobal_886980); /*0x5352d6*/
+        dword_884E78 = (int)MixFileClass::FromFile(v15, Buffer, (int)&dword_886980); /*0x5352d6*/
       else
-        DataGlobal_884E78 = 0; /*0x5352dd*/
+        dword_884E78 = 0; /*0x5352dd*/
     }
     House_Load(); /*0x5352e3*/
     Game::InitializeToolTipColor(v17); /*0x5352ec*/
-  _DWORD v22[22]; // [esp+CCh] [ebp-6Ch] BYREF
-    CCFileClass::Construct(v22, unk_827DC8); /*0x5352fd*/
+    CCFileClass::Construct(v22, aUimdIni); /*0x5352fd*/
     if ( CCINIClass::Load(&CCINIClass_INI_UIMD, (int)v22, 0, 0) ) /*0x535311*/
     {
-      char v16 = g_GameMode_Current[0] && g_GameMode_Current[0] != 5; /*0x53532f*/
+      v16 = g_GameMode_Current[0] && g_GameMode_Current[0] != 5; /*0x53532f*/
       SidebarClass::ReadButtonList(&CCINIClass_INI_UIMD, v16); /*0x53533d*/
-      SidebarClass::LoadButtonSHPs(&DataGlobal_87F7E8); /*0x535347*/
-      v22[0] = &vt_CCFileClass; /*0x535353*/
+      SidebarClass::LoadButtonSHPs(&MapClass_Instance); /*0x535347*/
+      v22[0] = &CCFileClass::`vftable'; /*0x535353*/
       v24 = 0; /*0x53535a*/
       Vector::Clear((int)v23); /*0x535361*/
       v22[0] = &off_7E1668; /*0x53536d*/
@@ -587,7 +616,7 @@ AbstractClass * * MixFile::LoadSide()
     else
     {
       Debug::Log(); /*0x53538b*/
-      v22[0] = &vt_CCFileClass; /*0x53539a*/
+      v22[0] = &CCFileClass::`vftable'; /*0x53539a*/
       v24 = 0; /*0x5353a1*/
       Vector::Clear((int)v23); /*0x5353a8*/
       v22[0] = &off_7E1668; /*0x5353b4*/
@@ -601,78 +630,94 @@ AbstractClass * * MixFile::LoadSide()
     return 0; /*0x53523b*/
   }
 }
-} // namespace gamemd
 }
-
 // 0x627590
 namespace gamemd {
 unsigned int * MIXFile::Load(ObjectClass * aP1)
 {
-{
-  ObjectClass *v3; // edx
+  _DWORD *v2; // ebp
+  int v3; // edx
+  int *v5; // esi
+  int v6; // edi
+  const void *v7; // eax
+  int v8; // ebx
   int i; // esi
-  AbstractClass *v12; // edi
-  char *eax15; // eax
-  ObjectClass *v17; // edi
-  int ecx21; // ecx
-  ObjectClass *v21; // eax
-  ObjectClass *v22; // edx
-  ObjectClass *v23; // edi
-  int eax27; // eax
-  int ecx30; // ecx
-  ObjectClass *v26; // eax
-  ObjectClass *v27; // edx
-  __int16 v31; // [esp+10h] [ebp-414h]
-  ObjectClass aP2; // [esp+14h] [ebp-410h] BYREF
+  char *v10; // eax
+  char v11; // cl
+  int v12; // edi
+  _DWORD *v13; // eax
+  _DWORD *v14; // esi
+  char *v15; // ebp
+  __int16 *v16; // edx
+  int *v17; // edi
+  int v18; // ebx
+  int v19; // eax
+  int v20; // ecx
+  int v21; // eax
+  int v22; // edx
+  _DWORD *v23; // edi
+  int v24; // eax
+  int v25; // ecx
+  int v26; // eax
+  int v27; // edx
+  bool v28; // cc
+  __int16 v29; // [esp+10h] [ebp-414h]
+  int v30; // [esp+10h] [ebp-414h]
+  __int16 v31; // [esp+14h] [ebp-410h] BYREF
+  char v32; // [esp+16h] [ebp-40Eh]
+  int v33; // [esp+18h] [ebp-40Ch]
+  _DWORD *v34; // [esp+1Ch] [ebp-408h]
+  int v35; // [esp+20h] [ebp-404h]
+  char String[256]; // [esp+24h] [ebp-400h] BYREF
+  int v37[192]; // [esp+124h] [ebp-300h] BYREF
 
-  MIXFile *v2 = this; /*0x627598*/
-  *(_DWORD *)&aP2[8] = this; /*0x62759c*/
-  v3 = (ObjectClass *)*this; /*0x6275a0*/
+  v2 = this; /*0x627598*/
+  v34 = this; /*0x62759c*/
+  v3 = *this; /*0x6275a0*/
   if ( *this == -1 ) /*0x6275a6*/
     return 0; /*0x6275ab*/
-  strcpy((char *)&aP2.uniqueId, aP1->__pad_0); /*0x6275d6*/
-  strcat((char *)&aP2.uniqueId, (const char *)&off_7E1BC6 + 112 * (_DWORD)v3); /*0x627611*/
-  strcat((char *)&aP2.uniqueId, stru_826598[0]); /*0x62763d*/
-  strcat((char *)&aP2.uniqueId, *(const char **)&stru_830620[24132]); /*0x62766a*/
-  _strupr((char *)&aP2.uniqueId); /*0x627678*/
-  _BYTE aP3[768]; // [esp+124h] [ebp-300h] BYREF
-  _BYTE * v5 = aP3; /*0x627680*/
-  int v6 = 256; /*0x627687*/
+  strcpy(String, aP1); /*0x6275d6*/
+  strcat(String, (const char *)&off_7E1BC6 + 112 * v3); /*0x627611*/
+  strcat(String, asc_826598); /*0x62763d*/
+  strcat(String, (const char *)off_836464); /*0x62766a*/
+  _strupr(String); /*0x627678*/
+  v5 = v37; /*0x627680*/
+  v6 = 256; /*0x627687*/
   do /*0x627697*/
   {
     Struct::Zero3(v5); /*0x62768e*/
-    v5 += 3; /*0x627693*/
+    v5 = (int *)((char *)v5 + 3); /*0x627693*/
     --v6; /*0x627696*/
   }
   while ( v6 ); /*0x627697*/
-  const void * v7 = (const void *)SearchMIXFile((char *)&aP2.uniqueId, 0); /*0x62769f*/
-  int v8 = 0; /*0x6276a4*/
+  v7 = (const void *)SearchMIXFile(String, 0); /*0x62769f*/
+  v8 = 0; /*0x6276a4*/
   if ( !v7 ) /*0x6276a8*/
     return 0; /*0x6276ad*/
-  qmemcpy(aP3, v7, sizeof(aP3)); /*0x6276c7*/
+  qmemcpy(v37, v7, sizeof(v37)); /*0x6276c7*/
   for ( i = 0; i < 256; ++i ) /*0x6276c9*/
   {
-    _BYTE * v10 = &aP3[2 * (i % 256) + i % 256]; /*0x6276e2*/
-    v31 = *(_WORD *)v10; /*0x6276ea*/
-    char v11 = v10[2]; /*0x6276ef*/
+    v10 = (char *)v37 + 2 * (i % 256) + i % 256; /*0x6276e2*/
+    v29 = *(_WORD *)v10; /*0x6276ea*/
+    v11 = v10[2]; /*0x6276ef*/
     *v10 = 4 * *(_WORD *)v10; /*0x6276f9*/
-    v10[1] = 4 * HIBYTE(v31); /*0x627706*/
+    v10[1] = 4 * HIBYTE(v29); /*0x627706*/
     v10[2] = 4 * v11; /*0x62770f*/
   }
-  v12 = *(ObjectClass **)(v2[2] + 16); /*0x627719*/
-  *(_DWORD *)&aP2[12] = v12; /*0x62771c*/
-  int v13 = __2_YAPAXI_Z(0x18u); /*0x627720*/
-  AbstractClass *v14 = (_DWORD *)v13; /*0x627725*/
+  v12 = *(_DWORD *)(v2[2] + 16); /*0x627719*/
+  v35 = v12; /*0x62771c*/
+  v13 = __2_YAPAXI_Z(0x18u); /*0x627720*/
+  v14 = v13; /*0x627725*/
   if ( v13 ) /*0x62772c*/
   {
-    *(_DWORD *)(v13 + 4) = 0; /*0x627730*/
-    *(_DWORD *)(v13 + 8) = 20; /*0x627733*/
-    *(_BYTE *)(v13 + 12) = 1; /*0x62773a*/
-    *(_BYTE *)(v13 + 13) = 0; /*0x62773e*/
-    *(_DWORD *)v13 = &vt_VectorClass_ColorScheme; /*0x627742*/
-    *(_DWORD *)(v13 + 4) = __2_YAPAXI_Z(0x50u); /*0x627750*/
-    v14->q034 = 1; /*0x627753*/
-    *v14 = &vt_DynamicVectorClass_ColorScheme; /*0x627757*/
+    v13[1] = 0; /*0x627730*/
+    v13[2] = 20; /*0x627733*/
+    *((_BYTE *)v13 + 12) = 1; /*0x62773a*/
+    *((_BYTE *)v13 + 13) = 0; /*0x62773e*/
+    *v13 = &VectorClass<ColorScheme *>::`vftable'; /*0x627742*/
+    v13[1] = __2_YAPAXI_Z(0x50u); /*0x627750*/
+    *((_BYTE *)v14 + 13) = 1; /*0x627753*/
+    *v14 = &DynamicVectorClass<ColorScheme *>::`vftable'; /*0x627757*/
     v14[5] = 10; /*0x62775d*/
     v14[4] = 0; /*0x627764*/
   }
@@ -680,74 +725,57 @@ unsigned int * MIXFile::Load(ObjectClass * aP1)
   {
     v14 = 0; /*0x627769*/
   }
-  *(_DWORD *)&aP2[4] = 0; /*0x62776d*/
-  if ( (int)v12 > 0 ) /*0x627771*/
+  v33 = 0; /*0x62776d*/
+  if ( v12 > 0 ) /*0x627771*/
   {
-    int v32 = 0; /*0x627777*/
+    v30 = 0; /*0x627777*/
     while ( 1 ) /*0x62779b*/
     {
-      char * v15 = *(char **)(*(_DWORD *)(v2[1] + 4) + 4 * v8); /*0x62779b*/
-      int v16 = v32 + *(_DWORD *)(*(_DWORD *)(*(_DWORD *)&aP2[8] + 8) + 4); /*0x6277a1*/
-      *(_WORD *)aP2[0] = *(_WORD *)v16; /*0x6277a6*/
-      aP2[2] = *(_BYTE *)(v16 + 2); /*0x6277ae*/
-      eax15 = (char *)__2_YAPAXI_Z(0x33Cu); /*0x6277b2*/
-      if ( eax15 ) /*0x6277bc*/
-        v17 = (ObjectClass *)FontClass::InitMetrics( /*0x6277dc*/
-                               eax15,
-                               v15,
-                               &aP2,
-                               (ObjectClass *)aP3,
-                               (int)&DataGlobal_87F8E4[24220],
-                               1,
-                               0);
+      v15 = *(char **)(*(_DWORD *)(v2[1] + 4) + 4 * v8); /*0x62779b*/
+      v16 = (__int16 *)(v30 + *(_DWORD *)(v34[2] + 4)); /*0x6277a1*/
+      v31 = *v16; /*0x6277a6*/
+      v32 = *((_BYTE *)v16 + 2); /*0x6277ae*/
+      if ( __2_YAPAXI_Z(0x33Cu) ) /*0x6277b2*/
+        v17 = (int *)FontClass::InitMetrics(v15, (int)&v31, (int)v37, (int)&FileSystem_TEMPERAT_PAL, 1, 0); /*0x6277dc*/
       else
         v17 = 0; /*0x6277e0*/
-      int v19 = 2 * v8; /*0x6277e2*/
-      *(_DWORD *)v17->__pad_0 = v19; /*0x6277e4*/
-      int v20 = v14[2]; /*0x6277e6*/
-      if ( v14[4] < v20 /*0x627809*/
-        || (v14->q034 || !v20)
-        && (ecx21 = v14[5], ecx21 > 0)
-        && v14->COMStub_Release(v20 + ecx21, 0) )
+      v18 = 2 * v8; /*0x6277e2*/
+      *v17 = v18; /*0x6277e4*/
+      v19 = v14[2]; /*0x6277e6*/
+      if ( v14[4] < v19 /*0x627809*/
+        || (*((_BYTE *)v14 + 13) || !v19)
+        && (v20 = v14[5], v20 > 0)
+        && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*v14 + 8))(v14, v19 + v20, 0) )
       {
-        v21 = (ObjectClass *)v14[4]; /*0x627810*/
-        v22 = (ObjectClass *)v14[1]; /*0x627813*/
-        v14[4] = &v21->__pad_0[1]; /*0x627819*/
-        *(_DWORD *)&v22->__pad_0[4 * (_DWORD)v21] = v17; /*0x62781c*/
+        v21 = v14[4]; /*0x627810*/
+        v22 = v14[1]; /*0x627813*/
+        v14[4] = v21 + 1; /*0x627819*/
+        *(_DWORD *)(v22 + 4 * v21) = v17; /*0x62781c*/
       }
-      char * v24 = (char *)__2_YAPAXI_Z(0x33Cu); /*0x627824*/
-      if ( v24 ) /*0x62782e*/
-        v23 = (ObjectClass *)FontClass::InitMetrics( /*0x62784e*/
-                               v24,
-                               v15,
-                               &aP2,
-                               (ObjectClass *)aP3,
-                               (int)&DataGlobal_87F8E4[24220],
-                               53,
-                               0);
+      if ( __2_YAPAXI_Z(0x33Cu) ) /*0x627824*/
+        v23 = (_DWORD *)FontClass::InitMetrics(v15, (int)&v31, (int)v37, (int)&FileSystem_TEMPERAT_PAL, 53, 0); /*0x62784e*/
       else
         v23 = 0; /*0x627852*/
-      *(_DWORD *)v23->__pad_0 = v19 + 1; /*0x627855*/
-      eax27 = v14[2]; /*0x627857*/
-      if ( v14[4] < eax27 /*0x62787a*/
-        || (v14->q034 || !eax27)
-        && (ecx30 = v14[5], ecx30 > 0)
-        && v14->COMStub_Release(eax27 + ecx30, 0) )
+      *v23 = v18 + 1; /*0x627855*/
+      v24 = v14[2]; /*0x627857*/
+      if ( v14[4] < v24 /*0x62787a*/
+        || (*((_BYTE *)v14 + 13) || !v24)
+        && (v25 = v14[5], v25 > 0)
+        && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*v14 + 8))(v14, v24 + v25, 0) )
       {
-        v26 = (ObjectClass *)v14[4]; /*0x627881*/
-        v27 = (ObjectClass *)v14[1]; /*0x627884*/
-        v14[4] = &v26->__pad_0[1]; /*0x62788a*/
-        *(_DWORD *)&v27->__pad_0[4 * (_DWORD)v26] = v23; /*0x62788d*/
+        v26 = v14[4]; /*0x627881*/
+        v27 = v14[1]; /*0x627884*/
+        v14[4] = v26 + 1; /*0x62788a*/
+        *(_DWORD *)(v27 + 4 * v26) = v23; /*0x62788d*/
       }
-      bool v30 = ++*(_DWORD *)&aP2[4] < *(_DWORD *)&aP2[12]; /*0x6278a0*/
-      v32 += 3; /*0x6278a6*/
-      if ( !v30 ) /*0x6278aa*/
+      v28 = ++v33 < v35; /*0x6278a0*/
+      v30 += 3; /*0x6278a6*/
+      if ( !v28 ) /*0x6278aa*/
         break; /*0x6278aa*/
-      v8 = *(_DWORD *)&aP2[4]; /*0x62777d*/
-      v2 = *(_DWORD **)&aP2[8]; /*0x627781*/
+      v8 = v33; /*0x62777d*/
+      v2 = v34; /*0x627781*/
     }
   }
   return v14; /*0x6275a8*/
 }
-} // namespace gamemd
 }

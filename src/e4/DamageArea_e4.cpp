@@ -56,7 +56,7 @@ int DamageArea::ApplyScatter()
       }
     }
 LABEL_34:
-    result = (*(int (__stdcall **)(int))(*(_DWORD *)v4 + 16))(this + 4);
+    result = (*(int (__stdcall **)(int))(this->u32_20)(this + 4);
     if ( !(_BYTE)result )
       return result;
     int v22 = (*(int (__thiscall **)(_DWORD))(*this->q00C + 132))(this->q00C);
@@ -68,7 +68,7 @@ LABEL_34:
     v108 = *(double *)(v24 + 156);
     v109 = *(_DWORD *)(v24 + 164);
     int v25 = *ProgressTimer::GetValue((_WORD *)(v24 + 904), &v106);
-    LODWORD(v101) = (*(int (__stdcall **)(int))(*(_DWORD *)v4 + 132))(this + 4);
+    LODWORD(v101) = (*(int (__stdcall **)(int))(this->q250)(this + 4);
     if ( SLODWORD(v101) > 0 )
     {
       int v26 = v109;
@@ -548,13 +548,18 @@ LABEL_23:
 // 0x4D0180
 int DamageArea::CheckOccupancyEligibility()
 {
-{
+  _DWORD *v2; // esi
   int (__stdcall ***v3)(_DWORD, void *, int *); // ecx
+  int v4; // eax
+  int v5; // esi
+  int v6; // edi
+  int v8; // [esp+18h] [ebp-8h] BYREF
+  int v9; // [esp+1Ch] [ebp-4h] BYREF
 
-  _DWORD * v2 = this->q00C; /*0x4d0187*/
+  v2 = *(_DWORD **)(this + 12); /*0x4d0187*/
   if ( v2 ) /*0x4d018c*/
   {
-    if ( (*(int (__thiscall **)(_DWORD))(*v2 + 44))(this->q00C) == 2 ) /*0x4d0198*/
+    if ( (*(int (__thiscall **)(_DWORD))(*v2 + 44))(*(_DWORD *)(this + 12)) == 2 ) /*0x4d0198*/
     {
       if ( (*(int (__stdcall **)(_DWORD *))(v2[432] + 32))(v2 + 432) ) /*0x4d01ab*/
         return 0; /*0x4d01b0*/
@@ -564,20 +569,19 @@ int DamageArea::CheckOccupancyEligibility()
       v2 = 0; /*0x4d019a*/
     }
   }
-  if ( this->u8_51 || !this->u8_5C ) /*0x4d01c1*/
+  if ( *(_BYTE *)(this + 81) || !*(_BYTE *)(this + 92) ) /*0x4d01c1*/
     return 1; /*0x4d01c6*/
   if ( !v2 || !*(_BYTE *)(v2[433] + 3595) ) /*0x4d01d6*/
   {
-    v3 = *(int (__stdcall ****)(_DWORD, void *, int *))(&this->u32_42); /*0x4d01e4*/
-    int v4 = 0; /*0x4d01e7*/
-    int v8 = 0; /*0x4d01eb*/
+    v3 = *(int (__stdcall ****)(_DWORD, void *, int *))(this + 12); /*0x4d01e4*/
+    v4 = 0; /*0x4d01e7*/
+    v8 = 0; /*0x4d01eb*/
     if ( v3 ) /*0x4d01ef*/
     {
-  int v9; // [esp+1Ch] [ebp-4h] BYREF
-      int v5 = (**v3)(v3, &unk_822410, &v9); /*0x4d0204*/
+      v5 = (**v3)(v3, &unk_822410, &v9); /*0x4d0204*/
       if ( v5 >= 0 ) /*0x4d0208*/
       {
-        int v6 = v9; /*0x4d021c*/
+        v6 = v9; /*0x4d021c*/
         Release3COM(&v8); /*0x4d0224*/
         v4 = v6; /*0x4d0229*/
         v8 = v6; /*0x4d022c*/
@@ -605,9 +609,9 @@ int DamageArea::CheckOccupancyEligibility()
         v4 = v8; /*0x4d027a*/
       }
     }
-    if ( !*(_DWORD *)(this->q00C + 764) ) /*0x4d0281*/
+    if ( !*(_DWORD *)(*(_DWORD *)(this + 12) + 764) ) /*0x4d0281*/
     {
-LABEL_24:
+  LABEL_24:
       if ( v4 ) /*0x4d028d*/
         (*(void (__stdcall **)(int))(*(_DWORD *)v4 + 8))(v4); /*0x4d0292*/
       return 1; /*0x4d029c*/
@@ -617,27 +621,30 @@ LABEL_24:
   }
   return 0; /*0x4d0295*/
 }
-}
-
 // 0x565660
 unsigned int * DamageArea::CalcScatterOffset(unsigned int * a2, short * a3)
 {
-{
+  int v3; // ebx
+  int v4; // ebp
+  int v5; // esi
   __int16 v6; // di
-  int v3 = this->q0F4; /*0x565668*/
-  int v4 = this->q0FC; /*0x56566f*/
-  int v5 = a3[1]; /*0x565676*/
+  int v7; // eax
+  int v8; // ecx
+  int v9; // ecx
+  int v11; // [esp+20h] [ebp+8h]
+
+  v3 = *(this + 61); /*0x565668*/
+  v4 = *(this + 63); /*0x56566f*/
+  v5 = a3[1]; /*0x565676*/
   v6 = *a3; /*0x56567b*/
-  int v7 = this->q100; /*0x56567e*/
-  int v8 = *a3; /*0x565684*/
+  v7 = *(this + 64); /*0x56567e*/
+  v8 = *a3; /*0x565684*/
   if ( (v3 & 1) != 0 ) /*0x56568d*/
-    int v9 = v8 - v5 + 1; /*0x565691*/
+    v9 = v8 - v5 + 1; /*0x565691*/
   else
     v9 = v8 - v5; /*0x565694*/
-  int v11; // [esp+20h] [ebp+8h]
   LOWORD(v11) = v3 / 2 + (v9 >> 1) - v4; /*0x5656b1*/
   HIWORD(v11) = v6 + v5 - v3 - v7; /*0x5656b6*/
   *a2 = v11; /*0x5656c2*/
   return a2; /*0x5656bf*/
-}
 }

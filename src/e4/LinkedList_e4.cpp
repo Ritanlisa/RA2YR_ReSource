@@ -8,241 +8,211 @@
 // 0x4791F0
 AbstractClass * * LinkedList::LoadScenarioMixFiles(INIClass * aP0, int aP2, int a3, int a4)
 {
-{
-  CD *v4; // ecx
-  CD *v5; // esi
-  AbstractClass *v6; // eax
-  INIClass *v10; // edi
-  CCFileClass *v15; // eax
-  CCFileClass *v19; // eax
-  _DWORD *v21; // eax
-  MixFileClass Buffer; // [esp+24h] [ebp-ACh] BYREF
+  int v5; // eax
+  _DWORD *v7; // eax
+  _DWORD *v8; // eax
+  int v9; // edi
+  _DWORD *v10; // eax
+  _DWORD *v11; // eax
+  _DWORD *v12; // eax
+  _DWORD *v13; // eax
+  _DWORD *v14; // eax
+  char v15; // bl
+  _DWORD *v16; // eax
+  _DWORD *v17; // eax
+  _DWORD *v18; // eax
+  char v19; // bl
+  _DWORD *v20; // eax
+  char Buffer[4]; // [esp+24h] [ebp-ACh] BYREF
+  char Source[60]; // [esp+28h] [ebp-A8h] BYREF
   void **v23; // [esp+64h] [ebp-6Ch] BYREF
   _DWORD v24[21]; // [esp+68h] [ebp-68h] BYREF
   _BYTE v25[4]; // [esp+BCh] [ebp-14h] BYREF
   _BYTE v26[8]; // [esp+C0h] [ebp-10h] BYREF
   int v27; // [esp+C8h] [ebp-8h]
   int v28; // [esp+CCh] [ebp-4h]
-  v5 = v4; /*0x479201*/
+
   Debug::Log(); /*0x479208*/
-  if ( *(_DWORD *)&v5[1] == -1 ) /*0x479216*/
+  if ( *(_DWORD *)(a1 + 4) == -1 ) /*0x479216*/
   {
-    v6 = dword_A83D14; /*0x479218*/
-    if ( dword_A83D14 == (IUnknown *)-1 ) /*0x479220*/
-      v6 = dword_A83D18; /*0x479222*/
-    v5[1] = (CD)v6; /*0x479227*/
+    v5 = dword_A83D14; /*0x479218*/
+    if ( dword_A83D14 == -1 ) /*0x479220*/
+      v5 = dword_A83D18; /*0x479222*/
+    *(_DWORD *)(a1 + 4) = v5; /*0x479227*/
   }
   Theme::Stop(&g_BuildingTypeClass_Count, 0); /*0x479232*/
-  if ( *(_DWORD *)&stru_87C374[35512] ) /*0x47923e*/
+  if ( g_MixFile_MOVIES ) /*0x47923e*/
   {
     Debug::Log(); /*0x479249*/
-    if ( *(_DWORD *)&stru_87C374[35512] ) /*0x479259*/
-      (***(void (__thiscall ****)(_DWORD, int))&stru_87C374[35512])( /*0x47925f*/
-        *(_DWORD *)&stru_87C374[35512],
-        1);
-    *(_DWORD *)&stru_87C374[35512] = 0; /*0x479261*/
+    if ( g_MixFile_MOVIES ) /*0x479259*/
+      (**(void (__thiscall ***)(int, int))g_MixFile_MOVIES)(g_MixFile_MOVIES, 1); /*0x47925f*/
+    g_MixFile_MOVIES = 0; /*0x479261*/
   }
-  if ( *(_DWORD *)&stru_87C374[9156] ) /*0x47926e*/
+  if ( g_MixFile_THEME ) /*0x47926e*/
   {
     Debug::Log(); /*0x479279*/
-    if ( *(_DWORD *)&stru_87C374[9156] ) /*0x479289*/
-      (***(void (__thiscall ****)(_DWORD, int))&stru_87C374[9156])( /*0x47928f*/
-        *(_DWORD *)&stru_87C374[9156],
-        1);
-    *(_DWORD *)&stru_87C374[9156] = 0; /*0x479291*/
+    if ( g_MixFile_THEME ) /*0x479289*/
+      (**(void (__thiscall ***)(int, int))g_MixFile_THEME)(g_MixFile_THEME, 1); /*0x47928f*/
+    g_MixFile_THEME = 0; /*0x479291*/
   }
-  if ( *(_DWORD *)&stru_87C374[35432] ) /*0x47929e*/
+  if ( MixFileClass_MULTI ) /*0x47929e*/
   {
     Debug::Log(); /*0x4792a9*/
-    if ( *(_DWORD *)&stru_87C374[35432] ) /*0x4792b9*/
-      (***(void (__thiscall ****)(_DWORD, int))&stru_87C374[35432])( /*0x4792bf*/
-        *(_DWORD *)&stru_87C374[35432],
-        1);
-    *(_DWORD *)&stru_87C374[35432] = 0; /*0x4792c1*/
+    if ( MixFileClass_MULTI ) /*0x4792b9*/
+      (**(void (__thiscall ***)(int, int))MixFileClass_MULTI)(MixFileClass_MULTI, 1); /*0x4792bf*/
+    MixFileClass_MULTI = 0; /*0x4792c1*/
   }
-  if ( *(_DWORD *)&stru_87C374[35428] ) /*0x4792ce*/
+  if ( g_MixFile_MULTIMD ) /*0x4792ce*/
   {
     Debug::Log(); /*0x4792d9*/
-    if ( *(_DWORD *)&stru_87C374[35428] ) /*0x4792e9*/
-      (***(void (__thiscall ****)(_DWORD, int))&stru_87C374[35428])( /*0x4792ef*/
-        *(_DWORD *)&stru_87C374[35428],
-        1);
-    *(_DWORD *)&stru_87C374[35428] = 0; /*0x4792f1*/
+    if ( g_MixFile_MULTIMD ) /*0x4792e9*/
+      (**(void (__thiscall ***)(int, int))g_MixFile_MULTIMD)(g_MixFile_MULTIMD, 1); /*0x4792ef*/
+    g_MixFile_MULTIMD = 0; /*0x4792f1*/
   }
-  if ( *(_DWORD *)&stru_87C374[35568] ) /*0x4792fe*/
+  if ( g_MixFile_MAPSFirst ) /*0x4792fe*/
   {
     Debug::Log(); /*0x479309*/
-    if ( *(_DWORD *)&stru_87C374[35568] ) /*0x479319*/
-      (***(void (__thiscall ****)(_DWORD, int))&stru_87C374[35568])( /*0x47931f*/
-        *(_DWORD *)&stru_87C374[35568],
-        1);
-    *(_DWORD *)&stru_87C374[35568] = 0; /*0x479321*/
+    if ( g_MixFile_MAPSFirst ) /*0x479319*/
+      (**(void (__thiscall ***)(int, int))g_MixFile_MAPSFirst)(g_MixFile_MAPSFirst, 1); /*0x47931f*/
+    g_MixFile_MAPSFirst = 0; /*0x479321*/
   }
-  if ( *(_DWORD *)&stru_87C374[35564] ) /*0x47932e*/
+  if ( g_MixFile_MAPSMDFirst ) /*0x47932e*/
   {
     Debug::Log(); /*0x479339*/
-    if ( *(_DWORD *)&stru_87C374[35564] ) /*0x479349*/
-      (***(void (__thiscall ****)(_DWORD, int))&stru_87C374[35564])( /*0x47934f*/
-        *(_DWORD *)&stru_87C374[35564],
-        1);
-    *(_DWORD *)&stru_87C374[35564] = 0; /*0x479351*/
+    if ( g_MixFile_MAPSMDFirst ) /*0x479349*/
+      (**(void (__thiscall ***)(int, int))g_MixFile_MAPSMDFirst)(g_MixFile_MAPSMDFirst, 1); /*0x47934f*/
+    g_MixFile_MAPSMDFirst = 0; /*0x479351*/
   }
-  if ( *(_DWORD *)&stru_87C374[35520] ) /*0x47935e*/
+  if ( dword_884E34 ) /*0x47935e*/
   {
     Debug::Log(); /*0x479369*/
-    if ( *(_DWORD *)&stru_87C374[35520] ) /*0x479379*/
-      (***(void (__thiscall ****)(_DWORD, int))&stru_87C374[35520])( /*0x47937f*/
-        *(_DWORD *)&stru_87C374[35520],
-        1);
-    *(_DWORD *)&stru_87C374[35520] = 0; /*0x479381*/
+    if ( dword_884E34 ) /*0x479379*/
+      (**(void (__thiscall ***)(int, int))dword_884E34)(dword_884E34, 1); /*0x47937f*/
+    dword_884E34 = 0; /*0x479381*/
   }
-  if ( !Map_Load_751C30() ) /*0x479387*/
+  if ( !(unsigned __int8)Map_Load_751C30() ) /*0x479387*/
     return 1; /*0x47939b*/
-  _DWORD * v8 = (_DWORD *)__2_YAPAXI_Z(0x28u); /*0x4793a0*/
-  if ( v8 ) /*0x4793aa*/
-  _DWORD *v9; // eax
-    v9 = MixFileClass::FromFile( /*0x4793b8*/
-           v8,
-           (MixFileClass *)stru_81C2C4.customSound_controller,
-           (int)&stru_87C374[42508]);
+  v7 = __2_YAPAXI_Z(0x28u); /*0x4793a0*/
+  if ( v7 ) /*0x4793aa*/
+    v8 = MixFileClass::FromFile(v7, aMainMix, (int)&dword_886980); /*0x4793b8*/
   else
-    v9 = 0; /*0x4793bf*/
-  *(_DWORD *)&stru_87C374[35520] = v9; /*0x4793c1*/
+    v8 = 0; /*0x4793bf*/
+  dword_884E34 = (int)v8; /*0x4793c1*/
   Debug::Log(); /*0x4793cf*/
-  v10 = (INIClass *)&aP0->__pad_0[1]; /*0x4793d4*/
-  sprintf(Buffer[0], (ObjectClass *)&stru_81C2C4.owningHouseIndex, (INIClass *)&aP0->__pad_0[1]); /*0x4793e7*/
+  v9 = a3 + 1; /*0x4793d4*/
+  sprintf(Buffer, "MAPSMD%02d.MIX", a3 + 1); /*0x4793e7*/
   Debug::Log(); /*0x4793f6*/
-  _DWORD * v11 = (_DWORD *)__2_YAPAXI_Z(0x28u); /*0x4793fd*/
-  if ( v11 ) /*0x479407*/
-    *(_DWORD *)&stru_87C374[35564] = MixFileClass::FromFile( /*0x47941a*/
-                                                  v11,
-                                                  &Buffer,
-                                                  (int)&stru_87C374[42508]);
+  v10 = __2_YAPAXI_Z(0x28u); /*0x4793fd*/
+  if ( v10 ) /*0x479407*/
+    g_MixFile_MAPSMDFirst = (int)MixFileClass::FromFile(v10, Buffer, (int)&dword_886980); /*0x47941a*/
   else
-    *(_DWORD *)&stru_87C374[35564] = 0; /*0x479421*/
-  sprintf(Buffer[0], &stru_81C2C4, v10); /*0x479432*/
+    g_MixFile_MAPSMDFirst = 0; /*0x479421*/
+  sprintf(Buffer, "MAPS%02d.MIX", v9); /*0x479432*/
   Debug::Log(); /*0x479441*/
-  _DWORD * v12 = (_DWORD *)__2_YAPAXI_Z(0x28u); /*0x479448*/
-  if ( !v12 ) /*0x479452*/
+  v11 = __2_YAPAXI_Z(0x28u); /*0x479448*/
+  if ( !v11 ) /*0x479452*/
   {
-    *(_DWORD *)&stru_87C374[35568] = 0; /*0x479489*/
-LABEL_61:
+    g_MixFile_MAPSFirst = 0; /*0x479489*/
+  LABEL_61:
     Debug::Log(); /*0x479664*/
     return 0; /*0x47967c*/
   }
-  *(_DWORD *)&stru_87C374[35568] = MixFileClass::FromFile(v12, &Buffer, (int)&stru_87C374[42508]); /*0x479467*/
-  if ( !*(_DWORD *)&stru_87C374[35568] ) /*0x47946c*/
+  g_MixFile_MAPSFirst = (int)MixFileClass::FromFile(v11, Buffer, (int)&dword_886980); /*0x479467*/
+  if ( !g_MixFile_MAPSFirst ) /*0x47946c*/
     goto LABEL_61; /*0x47946c*/
   Debug::Log(); /*0x479496*/
-  _DWORD * v13 = (_DWORD *)__2_YAPAXI_Z(0x28u); /*0x47949d*/
-  if ( v13 ) /*0x4794a7*/
-    *(_DWORD *)&stru_87C374[35428] = MixFileClass::FromFile( /*0x4794ba*/
-                                                  v13,
-                                                  (MixFileClass *)&stru_81C200.hasParachute,
-                                                  (int)&stru_87C374[42508]);
+  v12 = __2_YAPAXI_Z(0x28u); /*0x47949d*/
+  if ( v12 ) /*0x4794a7*/
+    g_MixFile_MULTIMD = (int)MixFileClass::FromFile(v12, g_Str_File_MULTIMD_MIX, (int)&dword_886980); /*0x4794ba*/
   else
-    *(_DWORD *)&stru_87C374[35428] = 0; /*0x4794c1*/
+    g_MixFile_MULTIMD = 0; /*0x4794c1*/
   Debug::Log(); /*0x4794cc*/
-  _DWORD * v14 = (_DWORD *)__2_YAPAXI_Z(0x28u); /*0x4794d3*/
-  if ( !v14 ) /*0x4794dd*/
+  v13 = __2_YAPAXI_Z(0x28u); /*0x4794d3*/
+  if ( !v13 ) /*0x4794dd*/
   {
-    *(_DWORD *)&stru_87C374[35432] = 0; /*0x479514*/
+    MixFileClass_MULTI = 0; /*0x479514*/
     goto LABEL_61; /*0x47951a*/
   }
-  *(_DWORD *)&stru_87C374[35432] = MixFileClass::FromFile( /*0x4794f2*/
-                                                v14,
-                                                (MixFileClass *)&stru_81C200.customSound_controller[2],
-                                                (int)&stru_87C374[42508]);
-  if ( !*(_DWORD *)&stru_87C374[35432] ) /*0x4794f7*/
+  MixFileClass_MULTI = (int)MixFileClass::FromFile(v13, aMultiMix, (int)&dword_886980); /*0x4794f2*/
+  if ( !MixFileClass_MULTI ) /*0x4794f7*/
     goto LABEL_61; /*0x4794f7*/
-  v15 = CCFileClass::Construct(&v23, (char *)&stru_81C200.ambientSoundController[4]); /*0x479526*/
-  char v16 = (*(int (__thiscall **)(CCFileClass *, _DWORD))(*(_DWORD *)v15->__pad_0 + 20))(v15, 0); /*0x47953f*/
-  v24[0] = &vt_CCFileClass; /*0x479541*/
+  v14 = CCFileClass::Construct(&v23, g_Str_File_THEMEMD_MIX); /*0x479526*/
+  v15 = (*(int (__thiscall **)(_DWORD *, _DWORD, int))(*v14 + 20))(v14, 0, a2); /*0x47953f*/
+  v24[0] = &CCFileClass::`vftable'; /*0x479541*/
   v28 = 0; /*0x479545*/
   Vector::Clear((int)v26); /*0x47954c*/
   v24[0] = &off_7E1668; /*0x47955a*/
   BufferIOFileClass::Dtor(v24); /*0x47955e*/
-  if ( v16 ) /*0x47956a*/
+  if ( v15 ) /*0x47956a*/
   {
     Debug::Log(); /*0x47956c*/
-    _DWORD * v17 = (_DWORD *)__2_YAPAXI_Z(0x28u); /*0x479573*/
-    if ( v17 ) /*0x47957d*/
+    v16 = __2_YAPAXI_Z(0x28u); /*0x479573*/
+    if ( v16 ) /*0x47957d*/
     {
-      *(_DWORD *)&stru_87C374[9156] = MixFileClass::FromFile( /*0x479590*/
-                                                   v17,
-                                                   (MixFileClass *)&stru_81C200.ambientSoundController[4],
-                                                   (int)&stru_87C374[42508]);
+      g_MixFile_THEME = (int)MixFileClass::FromFile(v16, g_Str_File_THEMEMD_MIX, (int)&dword_886980); /*0x479590*/
       goto LABEL_58; /*0x479595*/
     }
   }
   else
   {
     Debug::Log(); /*0x479597*/
-    _DWORD * v18 = (_DWORD *)__2_YAPAXI_Z(0x28u); /*0x47959e*/
-    if ( v18 ) /*0x4795a8*/
+    v17 = __2_YAPAXI_Z(0x28u); /*0x47959e*/
+    if ( v17 ) /*0x4795a8*/
     {
-      *(_DWORD *)&stru_87C374[9156] = MixFileClass::FromFile( /*0x4795bb*/
-                                                   v18,
-                                                   (MixFileClass *)&stru_81C200.NeedsSaveOrLink,
-                                                   (int)&stru_87C374[42508]);
+      g_MixFile_THEME = (int)MixFileClass::FromFile(v17, g_Str_File_THEME_MIX, (int)&dword_886980); /*0x4795bb*/
       goto LABEL_58; /*0x4795c0*/
     }
   }
-  *(_DWORD *)&stru_87C374[9156] = 0; /*0x4795c2*/
-LABEL_58:
+  g_MixFile_THEME = 0; /*0x4795c2*/
+  LABEL_58:
   Audio::LoadWAVFiles(&g_BuildingTypeClass_Count); /*0x4795c8*/
-  sprintf((char *const)&Buffer.Previous, (ObjectClass *)&stru_81C200.uniqueId, (INIClass *)aP2); /*0x4795e4*/
-  v19 = CCFileClass::Construct(v24, (char *)&Buffer.Previous); /*0x4795f5*/
-  char v20 = (*(int (__thiscall **)(CCFileClass *, _DWORD))(*(_DWORD *)v19->__pad_0 + 20))(v19, 0); /*0x479609*/
-  v23 = &vt_CCFileClass; /*0x47960b*/
+  sprintf(Source, "MOVMD%02d.MIX", a4); /*0x4795e4*/
+  v18 = CCFileClass::Construct(v24, Source); /*0x4795f5*/
+  v19 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v18 + 20))(v18, 0); /*0x479609*/
+  v23 = &CCFileClass::`vftable'; /*0x47960b*/
   v27 = 0; /*0x47960f*/
   Vector::Clear((int)v25); /*0x479616*/
   v23 = (void **)&off_7E1668; /*0x47961f*/
   BufferIOFileClass::Dtor(&v23); /*0x479623*/
-  if ( v20 ) /*0x47962b*/
+  if ( v19 ) /*0x47962b*/
   {
     Debug::Log(); /*0x479637*/
-    v21 = (_DWORD *)__2_YAPAXI_Z(0x28u); /*0x47963e*/
-    if ( v21 ) /*0x479648*/
+    v20 = __2_YAPAXI_Z(0x28u); /*0x47963e*/
+    if ( v20 ) /*0x479648*/
       goto LABEL_60; /*0x479648*/
-LABEL_63:
-    *(_DWORD *)&stru_87C374[35512] = 0; /*0x4796bf*/
+  LABEL_63:
+    g_MixFile_MOVIES = 0; /*0x4796bf*/
     goto LABEL_61; /*0x4796c5*/
   }
-  sprintf(Buffer[0], &stru_81C200, v10); /*0x479691*/
+  sprintf(Buffer, "MOVIES%02d.MIX", v9); /*0x479691*/
   Debug::Log(); /*0x4796a0*/
-  v21 = (_DWORD *)__2_YAPAXI_Z(0x28u); /*0x4796a7*/
-  if ( !v21 ) /*0x4796b1*/
+  v20 = __2_YAPAXI_Z(0x28u); /*0x4796a7*/
+  if ( !v20 ) /*0x4796b1*/
     goto LABEL_63; /*0x4796b1*/
-LABEL_60:
-  *(_DWORD *)&stru_87C374[35512] = MixFileClass::FromFile(v21, &Buffer, (int)&stru_87C374[42508]); /*0x47964a*/
-  if ( !*(_DWORD *)&stru_87C374[35512] ) /*0x479662*/
+  LABEL_60:
+  g_MixFile_MOVIES = (int)MixFileClass::FromFile(v20, Buffer, (int)&dword_886980); /*0x47964a*/
+  if ( !g_MixFile_MOVIES ) /*0x479662*/
     goto LABEL_61; /*0x479662*/
   return Map_Load_751C30(); /*0x479390*/
 }
-}
-
 // 0x556600
 void * LinkedList::MoveNode(void * a2)
 {
-{
   if ( a2 != this ) /*0x55660a*/
   {
-    this->vt_slot_36(); /*0x55660e*/
-    (*(void (__thiscall **)(void *, void *))(this->q00C)(this, a2); /*0x556616*/
+    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 36))(this); /*0x55660e*/
+    (*(void (__thiscall **)(void *, void *))(*(_DWORD *)this + 12))(this, a2); /*0x556616*/
   }
   return this; /*0x55661b*/
 }
-}
-
 // 0x556640
 unsigned int * LinkedList::FindPrev()
 {
-{
+  _DWORD *v1; // edx
   _DWORD *result; // eax
 
-  LinkClass *v1 = this + 2; /*0x556643*/
-  if ( !this->q008 ) /*0x556640*/
+  v1 = this + 2; /*0x556643*/
+  if ( !*(this + 2) ) /*0x556640*/
     return this; /*0x55665d*/
   do /*0x556651*/
   {
@@ -254,83 +224,78 @@ unsigned int * LinkedList::FindPrev()
   while ( result[2] ); /*0x556651*/
   return result; /*0x55665b*/
 }
-}
-
 // 0x5566A0
 LinkClass * * LinkedList::InsertAfter(int a2)
 {
-{
+  int v3; // eax
 
-  this->vt_slot_36(); /*0x5566a5*/
-  LinkClass *v3 = *(_DWORD *)(a2 + 4); /*0x5566ac*/
+  (*(void (__thiscall **)(_DWORD *))(*this + 36))(this); /*0x5566a5*/
+  v3 = *(_DWORD *)(a2 + 4); /*0x5566ac*/
   *(_DWORD *)(a2 + 4) = this; /*0x5566af*/
-  this->q008 = a2; /*0x5566b4*/
-  this->Tail = v3; /*0x5566b7*/
+  *(this + 2) = a2; /*0x5566b4*/
+  *(this + 1) = v3; /*0x5566b7*/
   if ( v3 ) /*0x5566ba*/
-    v3->m_Prev = this; /*0x5566bc*/
-  return this->vt_slot_24(); /*0x5566c6*/
+    *(_DWORD *)(v3 + 8) = this; /*0x5566bc*/
+  return (*(int (__thiscall **)(_DWORD *))(*this + 24))(this); /*0x5566c6*/
 }
-}
-
 // 0x5566D0
 unsigned int * LinkedList::Attach(int a2)
 {
-{
+  int v3; // eax
 
-  this->vt_slot_36(); /*0x5566d5*/
-  int v3 = (*(int (__thiscall **)(int))(*(_DWORD *)a2 + 24))(a2); /*0x5566de*/
+  (*(void (__thiscall **)(_DWORD *))(*this + 36))(this); /*0x5566d5*/
+  v3 = (*(int (__thiscall **)(int))(*(_DWORD *)a2 + 24))(a2); /*0x5566de*/
   *(_DWORD *)(v3 + 8) = this; /*0x5566e1*/
-  this->Tail = v3; /*0x5566e4*/
-  this->q008 = 0; /*0x5566e7*/
+  *(this + 1) = v3; /*0x5566e4*/
+  *(this + 2) = 0; /*0x5566e7*/
   return this; /*0x5566f0*/
 }
-}
-
 // 0x556700
 LinkClass * * LinkedList::Append(int a2)
 {
-{
+  int v3; // eax
+  int v4; // eax
 
-  this->vt_slot_36(); /*0x556705*/
-  int v3 = (*(int (__thiscall **)(int))(*(_DWORD *)a2 + 28))(a2); /*0x55670e*/
+  (*(void (__thiscall **)(_DWORD *))(*this + 36))(this); /*0x556705*/
+  v3 = (*(int (__thiscall **)(int))(*(_DWORD *)a2 + 28))(a2); /*0x55670e*/
   *(_DWORD *)(v3 + 4) = this; /*0x556711*/
-  this->q008 = v3; /*0x556714*/
-  LinkClass *v4 = *this; /*0x556717*/
-  this->Tail = 0; /*0x55671b*/
-  return this->vt_slot_24(); /*0x556725*/
+  *(this + 2) = v3; /*0x556714*/
+  v4 = *this; /*0x556717*/
+  *(this + 1) = 0; /*0x55671b*/
+  return (*(int (__thiscall **)(_DWORD *))(v4 + 24))(this); /*0x556725*/
 }
-}
-
 // 0x556730
 int LinkedList::RemoveNode()
 {
-{
+  int v2; // edi
+  int v3; // eax
+  int v4; // edx
+  int v5; // edx
 
-  int v2 = this->vt_slot_24(); /*0x55673e*/
-  int v3 = this->vt_slot_28(); /*0x556740*/
-  LinkClass *v4 = this->q008; /*0x556743*/
+  v2 = (*(int (__thiscall **)(_DWORD *))(*this + 24))(this); /*0x55673e*/
+  v3 = (*(int (__thiscall **)(_DWORD *))(*this + 28))(this); /*0x556740*/
+  v4 = *(this + 2); /*0x556743*/
   if ( v4 ) /*0x55674a*/
-    v4->m_Next = this->Tail; /*0x55674f*/
-  LinkClass *v5 = this->Tail; /*0x556752*/
+    *(_DWORD *)(v4 + 4) = *(this + 1); /*0x55674f*/
+  v5 = *(this + 1); /*0x556752*/
   if ( v5 ) /*0x556757*/
-    v5->m_Prev = this->q008; /*0x55675c*/
-  this->q008 = 0; /*0x556761*/
-  this->Tail = 0; /*0x556764*/
+    *(_DWORD *)(v5 + 8) = *(this + 2); /*0x55675c*/
+  *(this + 2) = 0; /*0x556761*/
+  *(this + 1) = 0; /*0x556764*/
   if ( (_DWORD *)v2 != this ) /*0x556767*/
     return v2; /*0x55677e*/
   if ( (_DWORD *)v3 == this ) /*0x55676b*/
     return 0; /*0x55676f*/
   return (*(int (__thiscall **)(int))(*(_DWORD *)v3 + 24))(v3); /*0x55676d*/
 }
-}
-
 // 0x623460
 void LinkedList::Remove(unsigned int * a2)
 {
-{
+  _DWORD *v2; // eax
+  _DWORD *v3; // edx
 
-  CampaignClass *v2 = (_DWORD *)this->q034; /*0x623460*/
-  CampaignClass *v3 = 0; /*0x623463*/
+  v2 = (_DWORD *)*(this + 13); /*0x623460*/
+  v3 = 0; /*0x623463*/
   if ( v2 ) /*0x623468*/
   {
     while ( a2 != v2 ) /*0x623470*/
@@ -343,49 +308,46 @@ void LinkedList::Remove(unsigned int * a2)
     if ( v3 ) /*0x623484*/
       *v3 = *v2; /*0x623489*/
     else
-      this->q034 = *v2; /*0x62349a*/
+      *(this + 13) = *v2; /*0x62349a*/
     __3_YAXPAX_Z(v2); /*0x62348b*/
   }
 }
-}
-
 // 0x632D10
 void LinkedList::RelinkNode(int a2)
 {
-{
+  int v3; // ecx
+  int v4; // eax
 
-  if ( this->u32_18 != a2 ) /*0x632d1b*/
+  if ( *(this + 6) != a2 ) /*0x632d1b*/
   {
     if ( a2 ) /*0x632d1f*/
     {
-      Pipe *v3 = *(_DWORD *)(a2 + 8); /*0x632d21*/
+      v3 = *(_DWORD *)(a2 + 8); /*0x632d21*/
       if ( v3 ) /*0x632d26*/
       {
-        v3->SetDelegate(0); /*0x632d2c*/
+        (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)v3 + 12))(v3, 0); /*0x632d2c*/
         *(_DWORD *)(a2 + 8) = 0; /*0x632d2f*/
       }
     }
-    int v4 = this->u32_18; /*0x632d36*/
+    v4 = *(this + 6); /*0x632d36*/
     if ( v4 ) /*0x632d3b*/
       *(_DWORD *)(v4 + 8) = 0; /*0x632d3d*/
-    this->u32_18 = a2; /*0x632d46*/
+    *(this + 6) = a2; /*0x632d46*/
     if ( a2 ) /*0x632d49*/
-      *(_DWORD *)(a2 + 8) = &this->ptr_14; /*0x632d4e*/
-    this->u32_1C = this; /*0x632d54*/
-    this->Tail = &this->ptr_14; /*0x632d57*/
+      *(_DWORD *)(a2 + 8) = this + 5; /*0x632d4e*/
+    *(this + 7) = this; /*0x632d54*/
+    *(this + 1) = this + 5; /*0x632d57*/
   }
 }
-}
-
 // 0x6E5380
 int LinkedList::Contains(IUnknown * aP1)
 {
-{
+  int v2; // eax
 
-  int v2 = this->q028; /*0x6e5380*/
+  v2 = *(this + 10); /*0x6e5380*/
   if ( !v2 ) /*0x6e5385*/
     return 0; /*0x6e5396*/
-  while ( (IUnknown *)v2 != aP1 ) /*0x6e538d*/
+  while ( v2 != aP1 ) /*0x6e538d*/
   {
     v2 = *(_DWORD *)(v2 + 40); /*0x6e538f*/
     if ( !v2 ) /*0x6e5394*/
@@ -393,118 +355,104 @@ int LinkedList::Contains(IUnknown * aP1)
   }
   return 1; /*0x6e5398*/
 }
-}
-
 // 0x407450
 int LinkedList::Init()
 {
-{
-    int result;
-    *(void**)this->Tail = *(void**)this;
-    result = (int)*(void**)this;
-    (*(void**)this)[1] = this->Tail;
-    *(void**)this = this;
-    this->Tail = this;
-    return result;
-}
-}
+  int result; // eax
 
+  **(this + 1) = *this; /*0x407455*/
+  result = (int)*this; /*0x407457*/
+  (*this)[1] = *(this + 1); /*0x40745c*/
+  *this = this; /*0x40745f*/
+  *(this + 1) = this; /*0x407461*/
+  return result; /*0x407464*/
+}
 // 0x407520
 int * LinkedList::Next()
 {
-{
-    int *result;
-    int *v2;
-    result = *(void**)this;
-    if ( *(void**)this )
-  {
-    v2 = (int *)*result;
-    *(void**)this = v2;
-    result += 2;
-  }
-    return result;
-}
-}
+  int *result; // eax
+  int *v2; // edx
 
+  result = *this; /*0x407520*/
+  if ( *this ) /*0x407520*/
+  {
+    v2 = (int *)*result; /*0x407527*/
+    *this = v2; /*0x40752c*/
+    result += 2; /*0x407529*/
+  }
+  return result; /*0x407526*/
+}
 // 0x40E340
 int LinkedList::Prepend(int a2)
 {
-{
-    int result;
-    int v3;
-    int v4;
-    int v5;
-    int v6;
-    result = a2;
-    if ( a2 )
+  int result; // eax
+  int v3; // esi
+  int v4; // edx
+  int v5; // edx
+  int v6; // edx
+
+  result = a2; /*0x40e340*/
+  if ( a2 ) /*0x40e347*/
   {
-    v3 = *(int *)(a2 + 4);
-    if ( v3 )
+    v3 = *(_DWORD *)(a2 + 4); /*0x40e349*/
+    if ( v3 ) /*0x40e34e*/
     {
-    v4 = *(int *)(a2 + 8);
-    if ( v4 )
+      v4 = *(_DWORD *)(a2 + 8); /*0x40e350*/
+      if ( v4 ) /*0x40e355*/
       {
-    *(int *)(v4 + 4) = v3;
-    *(int *)(*(int *)(a2 + 4) + 8) = *(int *)(a2 + 8);
-    *(int *)(a2 + 8) = 0;
-    *(int *)(a2 + 4) = 0;
+        *(_DWORD *)(v4 + 4) = v3; /*0x40e357*/
+        *(_DWORD *)(*(_DWORD *)(a2 + 4) + 8) = *(_DWORD *)(a2 + 8); /*0x40e360*/
+        *(_DWORD *)(a2 + 8) = 0; /*0x40e363*/
+        *(_DWORD *)(a2 + 4) = 0; /*0x40e36a*/
       }
     }
   }
-    v5 = this->Tail;
-    *(int *)(a2 + 8) = this;
-    *(int *)(a2 + 4) = v5;
-    v6 = this->Tail;
-    if ( v6 )
-    *(int *)(v6 + 8) = a2;
-    this->Tail = a2;
-    return result;
+  v5 = *(this + 1); /*0x40e371*/
+  *(_DWORD *)(a2 + 8) = this; /*0x40e374*/
+  *(_DWORD *)(a2 + 4) = v5; /*0x40e377*/
+  v6 = *(this + 1); /*0x40e37a*/
+  if ( v6 ) /*0x40e380*/
+    *(_DWORD *)(v6 + 8) = a2; /*0x40e382*/
+  *(this + 1) = a2; /*0x40e385*/
+  return result; /*0x40e37f*/
 }
-}
-
 // 0x473430
 int LinkedList::Pop()
 {
-{
-    int result;
-    result = this->Tail;
-    if ( result )
-  {
-    this->Tail = result->ptr_30;
-    result->ptr_30 = 0;
-    --*(void**)this;
-  }
-    return result;
-}
-}
+  int result; // eax
 
+  result = *(this + 1); /*0x473430*/
+  if ( result ) /*0x473435*/
+  {
+    *(this + 1) = *(_DWORD *)(result + 48); /*0x47343b*/
+    *(_DWORD *)(result + 48) = 0; /*0x47343e*/
+    --*this; /*0x473445*/
+  }
+  return result; /*0x473437*/
+}
 // 0x556670
 unsigned int * LinkedList::FindNext()
 {
-{
-    int *v1;
-    int *result;
-    v1 = this + 1;
-    if ( !this->Tail )
-    return this;
-    do
-  {
-    result = (int *)*v1;
-    if ( (int *)*v1 == this )
-    break;
-    v1 = result + 1;
-  }
-    while ( result[1] );
-    return result;
-}
-}
+  _DWORD *v1; // edx
+  _DWORD *result; // eax
 
+  v1 = this + 1; /*0x556673*/
+  if ( !*(this + 1) ) /*0x556670*/
+    return this; /*0x55668d*/
+  do /*0x556681*/
+  {
+    result = (_DWORD *)*v1; /*0x55667b*/
+    if ( (_DWORD *)*v1 == this ) /*0x55667f*/
+      break; /*0x55667f*/
+    v1 = result + 1; /*0x556684*/
+  }
+  while ( result[1] ); /*0x556681*/
+  return result; /*0x55668b*/
+}
 // 0x625AE0
 int LinkedList::PushFront(IUnknown * aP1)
 {
-{
-    aP1->field_C = this->Tail;
-    this->Tail = aP1;
-    return (int)aP1;
-}
+  *(_DWORD *)(aP1 + 12) = *(this + 1); /*0x625ae7*/
+  *(this + 1) = aP1; /*0x625aea*/
+  return aP1; /*0x625aed*/
 }

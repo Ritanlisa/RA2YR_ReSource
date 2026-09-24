@@ -7,19 +7,18 @@
 namespace gamemd {
 int sub_7535D0()
 {
-{
-    int result;
-    if ( DataGlobal_B1D4C4 )
+  int result; // eax
+
+  if ( dword_B1D4C4 ) /*0x7535d7*/
   {
-    *(int *)(DataGlobal_B1D4C4 + 80) = 2;
-    DataGlobal_B1D4C4 = 0;
+    *(_DWORD *)(dword_B1D4C4 + 80) = 2; /*0x7535d9*/
+    dword_B1D4C4 = 0; /*0x7535e0*/
   }
-    if ( g_InfantryDrawState )
-    Audio::Release(g_InfantryDrawState);
-    result = ThemeClass::ClearQueues();
-    DataGlobal_B1D428 = 0;
-    DataGlobal_B1D3D8 = 0;
-    return result;
-}
+  if ( g_InfantryDrawState ) /*0x7535f2*/
+    Audio::Release(g_InfantryDrawState); /*0x7535f4*/
+  result = ThemeClass::ClearQueues(); /*0x7535f9*/
+  dword_B1D428 = 0; /*0x7535fe*/
+  dword_B1D3D8 = 0; /*0x753608*/
+  return result; /*0x753612*/
 }
 } // namespace gamemd

@@ -9,17 +9,18 @@
 namespace gamemd {
 AbstractClass * * sub_777420()
 {
-{
+  int v0; // ecx
+  void *v1; // ecx
   HWND result; // eax
   HWND Current; // eax
   HWND v4; // eax
+
   Debug::Log(); /*0x777425*/
-  int v0; // ecx
   sub_407040(v0); /*0x77742d*/
   Debug::Log(); /*0x77744b*/
-  if ( g_WWMouseClass_Instance && byte_B73560 == 1 && !ArmageddonMode ) /*0x77746d*/
+  if ( g_WWMouseClass_Instance && byte_B73560 == 1 && !g_ArmageddonMode ) /*0x77746d*/
     (*(void (**)(void))(*(_DWORD *)g_WWMouseClass_Instance + 24))(); /*0x777471*/
-  if ( !g_lpDirectDraw7 ) /*0x77747c*/
+  if ( !g_DDraw_Initialized ) /*0x77747c*/
   {
     if ( DSurface_Alternate ) /*0x77748a*/
       DSurface::RestoreIfLost((int *)DSurface_Alternate); /*0x77748c*/
@@ -56,9 +57,8 @@ AbstractClass * * sub_777420()
         0);
     }
   }
-  MapClass::MarkForRedraw(&DataGlobal_87F7E8, 2); /*0x77757c*/
+  MapClass::MarkForRedraw(&MapClass_Instance, 2); /*0x77757c*/
   InvalidateRect(g_hWnd, 0, 0); /*0x77758c*/
-  void *v1; // ecx
   LOBYTE(v1) = 0; /*0x777592*/
   AsyncIO::Read(v1); /*0x777594*/
   result = Dialog::GetCurrent(); /*0x777599*/
@@ -71,30 +71,23 @@ AbstractClass * * sub_777420()
   }
   return result; /*0x7775bb*/
 }
-} // namespace gamemd
 }
-
 // 0x5C09A0
 namespace gamemd {
 void sub_5C09A0()
 {
-{
   int result; // eax
 
-  if ( DataGlobal_ABF3F8 ) /*0x5c09a8*/
-    return (*(int (__thiscall **)(int))(*(_DWORD *)DataGlobal_ABF3F8 + 40))(DataGlobal_ABF3F8); /*0x5c09ac*/
+  if ( dword_ABF3F8 ) /*0x5c09a8*/
+    return (*(int (__thiscall **)(int))(*(_DWORD *)dword_ABF3F8 + 40))(dword_ABF3F8); /*0x5c09ac*/
   return result; /*0x5c09af*/
 }
-} // namespace gamemd
 }
-
 // 0x5C0980
 namespace gamemd {
 BOOL sub_5C0980()
 {
-{
-    return g_BigIntPool || DataGlobal_ABF3F8;
-}
+  return g_BigIntPool || dword_ABF3F8; /*0x5c0994*/
 }
 } // namespace gamemd
 
@@ -102,37 +95,36 @@ BOOL sub_5C0980()
 namespace gamemd {
 char * E4Recv_724000::sub_724000(int a2)
 {
-{
-    char *v3;
-    int v4;
-    v3 = this + 564;
-    this->M4 = 0;
-    this->M8 = a2;
-    this->M12 = 0;
-    this->M552 = 1000;
-    this->M560 = 10000;
-    *((int *)(v3) + 1) = 0;
-    *((int *)(v3) + 2) = 0;
-    v3[12] = 1;
-    v3[13] = 0;
-    *(int *)v3 = &vt_DynamicVectorClass_ToolTip_const;
-    *((int *)(v3) + 5) = 10;
-    *((int *)(v3) + 4) = 0;
-    this->M588 = 0;
-    this->M592 = 0;
-    this->M596 = 0;
-    this->M600 = 0;
-    this->M604 = 0;
-    v4 = *(int *)v3;
-    *(int *)this = &vt_ToolTipManager;
-    (*(void (__thiscall **)(char *))(v4 + 12))(v3);
-    __3_YAXPAX_Z(*((void **)(this) + 147));
-    this->M588 = 0;
-    this->M592 = 0;
-    this->M596 = 0;
-    this->M600 = 0;
-    this->M604 = 0;
-    return this;
-}
+  char *v3; // ecx
+  int v4; // edx
+
+  v3 = this + 564; /*0x72400a*/
+  *((_DWORD *)this + 1) = 0; /*0x724010*/
+  *((_DWORD *)this + 2) = a2; /*0x724013*/
+  *(this + 12) = 0; /*0x724016*/
+  *((_DWORD *)this + 138) = 1000; /*0x724019*/
+  *((_DWORD *)this + 140) = 10000; /*0x724023*/
+  *((_DWORD *)v3 + 1) = 0; /*0x72402d*/
+  *((_DWORD *)v3 + 2) = 0; /*0x724030*/
+  v3[12] = 1; /*0x724033*/
+  v3[13] = 0; /*0x724037*/
+  *(_DWORD *)v3 = &DynamicVectorClass<ToolTip const *>::`vftable'; /*0x72403a*/
+  *((_DWORD *)v3 + 5) = 10; /*0x724040*/
+  *((_DWORD *)v3 + 4) = 0; /*0x724047*/
+  *((_DWORD *)this + 147) = 0; /*0x72404a*/
+  *((_DWORD *)this + 148) = 0; /*0x724050*/
+  *((_DWORD *)this + 149) = 0; /*0x724056*/
+  *(this + 600) = 0; /*0x72405c*/
+  *((_DWORD *)this + 151) = 0; /*0x724062*/
+  v4 = *(_DWORD *)v3; /*0x724068*/
+  *(_DWORD *)this = &ToolTipManager::`vftable'; /*0x72406a*/
+  (*(void (__thiscall **)(char *))(v4 + 12))(v3); /*0x724070*/
+  __3_YAXPAX_Z(*((void **)this + 147)); /*0x72407a*/
+  *((_DWORD *)this + 147) = 0; /*0x724082*/
+  *((_DWORD *)this + 148) = 0; /*0x724088*/
+  *((_DWORD *)this + 149) = 0; /*0x72408e*/
+  *(this + 600) = 0; /*0x724094*/
+  *((_DWORD *)this + 151) = 0; /*0x72409a*/
+  return this; /*0x7240a2*/
 }
 } // namespace gamemd

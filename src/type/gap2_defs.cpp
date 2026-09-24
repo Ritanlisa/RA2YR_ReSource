@@ -15,21 +15,17 @@
 
 // 0x45EC90
 namespace gamemd { short BuildingTypeClass::GetFoundationWidth() const {
-{
-    return DataGlobal_8192B8[this->Foundation];
+  return dword_8192B8[*(&this->u32_17C6)]; /*0x45ec9d*/
 }
-} }
 // 0x0 (lnk)
 namespace gamemd { AbstractTypeClass::AbstractTypeClass(char const *) noexcept {} }
 // 0x45ECA0
 namespace gamemd { short BuildingTypeClass::GetFoundationHeight(IUnknown * aP1) const {
-{
-    if ( (char)aP1 && this->Bib )
-    return DataGlobal_819310[this->Foundation] + 1;
-    else
-    return DataGlobal_819310[this->Foundation];
+  if ( a2 && this->Bib ) /*0x45eca8*/
+    return dword_819310[this->qEF0] + 1; /*0x45ecc4*/
+  else
+    return dword_819310[this->qEF0]; /*0x45ecd1*/
 }
-} }
 // 0x0 (lnk)
 namespace gamemd { bool BuildingTypeClass::IsCellClearOfTerrainObstacles(gamemd::Vector2D<short> const &) const { return false; } }
 // 0x0 (lnk)

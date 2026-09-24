@@ -5,8 +5,6 @@
 // 0x537E70
 unsigned int * CursorPositionCommandClass::Constructor()
 {
-{
-    *(void**)this = &vt_CursorPositionCommandClass;
-    return this;
-}
+  *this = &CursorPositionCommandClass::`vftable'; /*0x537e72*/
+  return this; /*0x537e78*/
 }

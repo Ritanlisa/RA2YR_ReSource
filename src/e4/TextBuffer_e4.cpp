@@ -5,15 +5,19 @@
 // 0x5BCC90
 int TextBuffer::Init()
 {
-{
+  int v1; // edi
+  _DWORD *v2; // ebx
+  _BYTE *v3; // edx
+  _DWORD *v4; // eax
+  int v5; // esi
 
-  int v1 = 0; /*0x5bcc93*/
-  _DWORD * v2 = this + 2000; /*0x5bcc95*/
+  v1 = 0; /*0x5bcc93*/
+  v2 = this + 2000; /*0x5bcc95*/
   do /*0x5bccbe*/
   {
-    _BYTE * v3 = this + v1; /*0x5bcc9b*/
-    _DWORD * v4 = v2; /*0x5bcc9e*/
-    int v5 = 80; /*0x5bcca0*/
+    v3 = this + v1; /*0x5bcc9b*/
+    v4 = v2; /*0x5bcc9e*/
+    v5 = 80; /*0x5bcca0*/
     do /*0x5bccb5*/
     {
       *v3 = 32; /*0x5bcca5*/
@@ -27,7 +31,6 @@ int TextBuffer::Init()
     ++v2; /*0x5bccb8*/
   }
   while ( v1 < 25 ); /*0x5bccbe*/
-  this->q2734 = 1; /*0x5bccc8*/
+  *(this + 10036) = 1; /*0x5bccc8*/
   return Text::DrawRepeated(this, 0, 0, 80, 25); /*0x5bccd4*/
-}
 }

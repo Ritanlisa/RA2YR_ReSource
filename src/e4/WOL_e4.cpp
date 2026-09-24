@@ -5,10 +5,8 @@
 // 0x76EFE0
 void * WOL::QueryInterface(char a2)
 {
-{
-    SelectionInitializeWOL(this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return this;
-}
+  SelectionInitializeWOL((int)this); /*0x76efe3*/
+  if ( (a2 & 1) != 0 ) /*0x76efed*/
+    __3_YAXPAX_Z(this); /*0x76eff0*/
+  return this; /*0x76effa*/
 }

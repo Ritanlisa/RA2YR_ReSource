@@ -5,7 +5,5 @@
 // 0x69E9E0
 int SHA1::ComputeThunk(ObjectClass * aP1)
 {
-{
-    return SHA1::Compute((Pipe *)(this + 3), aP1);
-}
+  return SHA1::Compute(this + 3, aP1); /*0x69e9ed*/
 }

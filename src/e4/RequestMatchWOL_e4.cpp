@@ -6,8 +6,6 @@
 namespace gamemd {
 int * sub_7B0370()
 {
-{
-    return &DataGlobal_B77F68;
-}
+  return &dword_B77F68; /*0x7b0375*/
 }
 } // namespace gamemd

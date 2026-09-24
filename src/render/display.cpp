@@ -234,16 +234,186 @@ void DisplayClass::vt_entry_8C() {}
 bool DisplayClass::vt_entry_90(const CellStruct& cell, HouseClass* house) { return false; }
 // 0x4a9ca0
 bool DisplayClass::vt_entry_94(const CellStruct& cell, HouseClass* house, bool unk) { return false; }
-bool DisplayClass::vt_entry_98(const CellStruct& cell, HouseClass* house) { return false; }
-bool DisplayClass::vt_entry_9C(const CellStruct& cell, HouseClass* house) { return false; }
-bool DisplayClass::vt_entry_A4(uint32_t unk1, uint32_t unk2, uint32_t unk3) { return false; }
-void DisplayClass::SetViewDimensions(const RectangleStruct& rect) {}
-// 0x40d250
-void DisplayClass::vt_entry_AC(uint32_t unk) {}
-// 0x4aad20
-void DisplayClass::vt_entry_B0(uint32_t unk) {}
-void DisplayClass::vt_entry_B4(Point2D* point) {}
-void DisplayClass::LeftMouseButtonDown(const Point2D& point) {}
-void DisplayClass::RightMouseButtonUp(uint32_t unk) {}
+  int *v5; // esi
+  int v6; // eax
+  bool v7; // bl
+  char AdjacentPassableMask; // al
+  int v9; // eax
+  char v10; // cl
+  char result; // al
+  char v12; // [esp+Ch] [ebp-4h]
+  char v13; // [esp+14h] [ebp+4h]
 
-} // namespace gamemd
+  v5 = (int *)CellCoord::To_CellObj(this, cell); /*0x4a9cae*/
+  v6 = v5[80]; /*0x4a9cb0*/
+  v7 = (v6 & 2) == 0; /*0x4a9cbc*/
+  if ( (v6 & 2) == 0 || (v13 = 0, (v5[75] & 8) == 0) ) /*0x4a9cd1*/
+    v13 = 1; /*0x4a9cd3*/
+  LOBYTE(v6) = v6 & 0xBD | 2; /*0x4a9cde*/
+  v12 = v13; /*0x4a9ce0*/
+  v5[80] = v6; /*0x4a9ce4*/
+  if ( unk ) /*0x4a9cf2*/
+    DisplayClass::AdvanceFrameCounter(v5); /*0x4a9cf4*/
+  else
+    DisplayClass::UpdateDisplayTimer(v5); /*0x4a9cfb*/
+  AdjacentPassableMask = Cell::GetAdjacentPassableMask(cell, 0); /*0x4a9d09*/
+  if ( AdjacentPassableMask != *((_BYTE *)v5 + 288) ) /*0x4a9d14*/
+  {
+    v13 = 1; /*0x4a9d16*/
+    *((_BYTE *)v5 + 288) = AdjacentPassableMask; /*0x4a9d1b*/
+  }
+  if ( *((_BYTE *)v5 + 288) == 0xFF ) /*0x4a9d28*/
+  {
+    v9 = v5[75]; /*0x4a9d2a*/
+    LOBYTE(v9) = v9 | 0x10; /*0x4a9d30*/
+    v5[75] = v9; /*0x4a9d32*/
+  }
+  v10 = Cell::GetAdjacentPassableMask(cell, 1); /*0x4a9d46*/
+  if ( v10 == *((_BYTE *)v5 + 289) ) /*0x4a9d50*/
+  {
+    result = v13; /*0x4a9d60*/
+  }
+  else
+  {
+    result = 1; /*0x4a9d52*/
+    *((_BYTE *)v5 + 289) = v10; /*0x4a9d54*/
+    v13 = 1; /*0x4a9d5a*/
+  }
+  if ( *((_BYTE *)v5 + 289) == 0xFF ) /*0x4a9d6b*/
+    v5[80] |= 1u; /*0x4a9d6d*/
+  if ( result ) /*0x4a9d76*/
+  {
+    Tactical::AddCellToDrawList((int)g_TacticalClass_Instance, (int)v5); /*0x4a9d7f*/
+    CellClass::SpiralFindClosest((int)v5, house, v12); /*0x4a9d94*/
+    result = v13; /*0x4a9d99*/
+  }
+  if ( (v5[80] & 2) != 0 && v7 && (*(_DWORD *)g_ScenarioClass_Instance & 0x1000) != 0 ) /*0x4a9db5*/
+  {
+    CellClass::UpdateZone(v5); /*0x4a9db9*/
+    return v13; /*0x4a9dbe*/
+  }
+  return result; /*0x4a9dc2*/
+}
+  if ( *((_BYTE *)v5 + 288) == 0xFF ) /*0x4a9d28*/
+  {
+    v9 = v5[75]; /*0x4a9d2a*/
+    LOBYTE(v9) = v9 | 0x10; /*0x4a9d30*/
+    v5[75] = v9; /*0x4a9d32*/
+  }
+  v10 = Cell::GetAdjacentPassableMask(cell, 1); /*0x4a9d46*/
+  if ( v10 == *((_BYTE *)v5 + 289) ) /*0x4a9d50*/
+  {
+    result = v13; /*0x4a9d60*/
+  }
+  else
+  {
+    result = 1; /*0x4a9d52*/
+    *((_BYTE *)v5 + 289) = v10; /*0x4a9d54*/
+    v13 = 1; /*0x4a9d5a*/
+  }
+  if ( *((_BYTE *)v5 + 289) == 0xFF ) /*0x4a9d6b*/
+    v5[80] |= 1u; /*0x4a9d6d*/
+  if ( result ) /*0x4a9d76*/
+  {
+    Tactical::AddCellToDrawList((int)g_TacticalClass_Instance, (int)v5); /*0x4a9d7f*/
+    CellClass::SpiralFindClosest((int)v5, house, v12); /*0x4a9d94*/
+    result = v13; /*0x4a9d99*/
+  }
+  if ( (v5[80] & 2) != 0 && v7 && (*(_DWORD *)g_ScenarioClass_Instance & 0x1000) != 0 ) /*0x4a9db5*/
+  {
+    CellClass::UpdateZone(v5); /*0x4a9db9*/
+    return v13; /*0x4a9dbe*/
+  }
+  return result; /*0x4a9dc2*/
+}
+  if ( *((_BYTE *)v5 + 288) == 0xFF ) /*0x4a9d28*/
+  {
+    v9 = v5[75]; /*0x4a9d2a*/
+    LOBYTE(v9) = v9 | 0x10; /*0x4a9d30*/
+    v5[75] = v9; /*0x4a9d32*/
+  }
+  v10 = Cell::GetAdjacentPassableMask(cell, 1); /*0x4a9d46*/
+  if ( v10 == *((_BYTE *)v5 + 289) ) /*0x4a9d50*/
+  {
+    result = v13; /*0x4a9d60*/
+  }
+  else
+  {
+    result = 1; /*0x4a9d52*/
+    *((_BYTE *)v5 + 289) = v10; /*0x4a9d54*/
+    v13 = 1; /*0x4a9d5a*/
+  }
+  if ( *((_BYTE *)v5 + 289) == 0xFF ) /*0x4a9d6b*/
+    v5[80] |= 1u; /*0x4a9d6d*/
+  if ( result ) /*0x4a9d76*/
+  {
+    Tactical::AddCellToDrawList((int)g_TacticalClass_Instance, (int)v5); /*0x4a9d7f*/
+    CellClass::SpiralFindClosest((int)v5, house, v12); /*0x4a9d94*/
+    result = v13; /*0x4a9d99*/
+  }
+  if ( (v5[80] & 2) != 0 && v7 && (*(_DWORD *)g_ScenarioClass_Instance & 0x1000) != 0 ) /*0x4a9db5*/
+  {
+    CellClass::UpdateZone(v5); /*0x4a9db9*/
+    return v13; /*0x4a9dbe*/
+  }
+  return result; /*0x4a9dc2*/
+}
+  if ( *((_BYTE *)v5 + 288) == 0xFF ) /*0x4a9d28*/
+  {
+    v9 = v5[75]; /*0x4a9d2a*/
+    LOBYTE(v9) = v9 | 0x10; /*0x4a9d30*/
+    v5[75] = v9; /*0x4a9d32*/
+  }
+  v10 = Cell::GetAdjacentPassableMask(cell, 1); /*0x4a9d46*/
+  if ( v10 == *((_BYTE *)v5 + 289) ) /*0x4a9d50*/
+  {
+    result = v13; /*0x4a9d60*/
+  }
+  else
+  {
+    result = 1; /*0x4a9d52*/
+    *((_BYTE *)v5 + 289) = v10; /*0x4a9d54*/
+    v13 = 1; /*0x4a9d5a*/
+  }
+  if ( *((_BYTE *)v5 + 289) == 0xFF ) /*0x4a9d6b*/
+    v5[80] |= 1u; /*0x4a9d6d*/
+  if ( result ) /*0x4a9d76*/
+  {
+    Tactical::AddCellToDrawList((int)g_TacticalClass_Instance, (int)v5); /*0x4a9d7f*/
+    CellClass::SpiralFindClosest((int)v5, house, v12); /*0x4a9d94*/
+    result = v13; /*0x4a9d99*/
+  }
+  if ( (v5[80] & 2) != 0 && v7 && (*(_DWORD *)g_ScenarioClass_Instance & 0x1000) != 0 ) /*0x4a9db5*/
+  {
+    CellClass::UpdateZone(v5); /*0x4a9db9*/
+    return v13; /*0x4a9dbe*/
+  }
+  return result; /*0x4a9dc2*/
+}
+  if ( *((_BYTE *)v5 + 288) == 0xFF ) /*0x4a9d28*/
+  {
+    v9 = v5[75]; /*0x4a9d2a*/
+    LOBYTE(v9) = v9 | 0x10; /*0x4a9d30*/
+    v5[75] = v9; /*0x4a9d32*/
+  }
+  v10 = Cell::GetAdjacentPassableMask(cell, 1); /*0x4a9d46*/
+  if ( v10 == *((_BYTE *)v5 + 289) ) /*0x4a9d50*/
+  {
+    result = v13; /*0x4a9d60*/
+  else
+  {
+    result = 1; /*0x4a9d52*/
+    *((_BYTE *)v5 + 289) = v10; /*0x4a9d54*/
+    v13 = 1; /*0x4a9d5a*/
+  if ( *((_BYTE *)v5 + 289) == 0xFF ) /*0x4a9d6b*/
+    v5[80] |= 1u; /*0x4a9d6d*/
+  if ( result ) /*0x4a9d76*/
+  {
+    Tactical::AddCellToDrawList((int)g_TacticalClass_Instance, (int)v5); /*0x4a9d7f*/
+    CellClass::SpiralFindClosest((int)v5, house, v12); /*0x4a9d94*/
+    result = v13; /*0x4a9d99*/
+  if ( (v5[80] & 2) != 0 && v7 && (*(_DWORD *)g_ScenarioClass_Instance & 0x1000) != 0 ) /*0x4a9db5*/
+  {
+    CellClass::UpdateZone(v5); /*0x4a9db9*/
+    return v13; /*0x4a9dbe*/
+  return result; /*0x4a9dc2*/

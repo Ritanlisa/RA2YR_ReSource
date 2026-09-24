@@ -16,26 +16,23 @@ double RulesClass::GetFiringDistance()
 // 0x538B30
 unsigned int * RulesClass::InitINIChain(int a2, int a3)
 {
-{
-  this->DetailMinFrameRateMovie = 0; /*0x538b3b*/
-  this->DetailBufferZoneWidth = a2; /*0x538b3e*/
-  this->SelfHealInfantryFrames = 1; /*0x538b41*/
-  this->SelfHealInfantryAmount = 0; /*0x538b45*/
-  *this = &vt_VectorClass_CCINIClass; /*0x538b48*/
+  *(this + 1) = 0; /*0x538b3b*/
+  *(this + 2) = a2; /*0x538b3e*/
+  *((_BYTE *)this + 12) = 1; /*0x538b41*/
+  *((_BYTE *)this + 13) = 0; /*0x538b45*/
+  *this = &VectorClass<CCINIClass *>::`vftable'; /*0x538b48*/
   if ( a2 ) /*0x538b4e*/
   {
     if ( a3 ) /*0x538b56*/
     {
-      this->DetailMinFrameRateMovie = a3; /*0x538b58*/
+      *(this + 1) = a3; /*0x538b58*/
       return this; /*0x538b5e*/
     }
-    this->DetailMinFrameRateMovie = __2_YAPAXI_Z(4 * a2); /*0x538b6d*/
-    this->SelfHealInfantryAmount = 1; /*0x538b70*/
+    *(this + 1) = __2_YAPAXI_Z(4 * a2); /*0x538b6d*/
+    *((_BYTE *)this + 13) = 1; /*0x538b70*/
   }
   return this; /*0x538b5d*/
 }
-}
-
 // 0x665650
 R RulesClass::RulesClass()
 {
@@ -1706,37 +1703,39 @@ int result;
 // 0x66D150
 void* RulesClass::readAudioVisual()
 {
-{
   int result; // eax
   int Int_Overwrite; // eax
+  int v4; // ecx
   double Double_Overwrite; // st7
-
+  unsigned int v6; // eax
+  unsigned int v7; // ecx
+  double v8; // [esp-8h] [ebp-10h]
   int v9; // [esp+Ch] [ebp+4h]
-  result = INIClass::BinarySearchSection(v9, (unsigned __int8 *)DataGlobal_839E70); /*0x66d160*/
+
+  result = INIClass::BinarySearchSection(v9, (unsigned __int8 *)aElevationmodel); /*0x66d160*/
   if ( result ) /*0x66d16c*/
   {
     Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x66d183*/
                       v9,
-                      (unsigned __int8 *)DataGlobal_839E70,
-                      (unsigned __int8 *)DataGlobal_83B370,
-                      this->u32_1838);
-    double v4 = this->IceCrackingWeight; /*0x66d188*/
-    this->u32_1838 = Int_Overwrite; /*0x66d18e*/
-  double v8; // [esp-8h] [ebp-10h]
-    HIDWORD(v8) = this->LaserTargetColor; /*0x66d1a0*/
+                      (unsigned __int8 *)aElevationmodel,
+                      (unsigned __int8 *)aElevationincre,
+                      *((_DWORD *)this + 1550));
+    v4 = *((_DWORD *)this + 1552); /*0x66d188*/
+    *((_DWORD *)this + 1550) = Int_Overwrite; /*0x66d18e*/
+    HIDWORD(v8) = *((_DWORD *)this + 1553); /*0x66d1a0*/
     LODWORD(v8) = v4; /*0x66d1a1*/
     Double_Overwrite = INIClass::ReadDouble_Overwrite( /*0x66d1aa*/
                          v9,
-                         (unsigned __int8 *)DataGlobal_839E70,
-                         (unsigned __int8 *)DataGlobal_83B358,
+                         (unsigned __int8 *)aElevationmodel,
+                         (unsigned __int8 *)aElevationincre_0,
                          v8);
-    IUnknown *v6 = this->BerserkColor; /*0x66d1af*/
-    unsigned int v7 = this->IronCurtainColor; /*0x66d1b5*/
-    this->qC20 = Double_Overwrite; /*0x66d1bb*/
-    this->q309 = INIClass::ReadDouble_Overwrite( /*0x66d1d6*/
+    v6 = *((_DWORD *)this + 1555); /*0x66d1af*/
+    v7 = *((_DWORD *)this + 1554); /*0x66d1b5*/
+    *((double *)this + 776) = Double_Overwrite; /*0x66d1bb*/
+    *((double *)this + 777) = INIClass::ReadDouble_Overwrite( /*0x66d1d6*/
                                 v9,
-                                (unsigned __int8 *)DataGlobal_839E70,
-                                (unsigned __int8 *)DataGlobal_83B344,
+                                (unsigned __int8 *)aElevationmodel,
+                                (unsigned __int8 *)aElevationbonus,
                                 COERCE_DOUBLE(__PAIR64__(v6, v7)));
     LOBYTE(result) = 1; /*0x66d1dd*/
   }
@@ -1746,66 +1745,72 @@ void* RulesClass::readAudioVisual()
   }
   return result; /*0x66d1dc*/
 }
-}
-
 // 0x673E80
 INIClass * * RulesClass::ReadPowerupsSection()
 {
-{
   int result; // eax
+  int v2; // edi
+  double *v3; // ebp
+  char *v4; // eax
+  const char *v5; // esi
+  char *v6; // eax
+  char *v7; // esi
+  char *v8; // eax
+  char *v9; // esi
+  char *v10; // esi
+  double v11; // st7
   char String[128]; // [esp+0h] [ebp-80h] BYREF
   unsigned __int8 ***v13; // [esp+84h] [ebp+4h]
 
-  result = INIClass::BinarySearchSection((int)v13, (unsigned __int8 *)DataGlobal_839D98); /*0x673e90*/
+  result = INIClass::BinarySearchSection((int)v13, (unsigned __int8 *)aPowerups); /*0x673e90*/
   if ( result ) /*0x673e9c*/
   {
-    WeaponTypeClass *v2 = 0; /*0x673ea5*/
-    double * v3 = DataGlobal_89EC28; /*0x673ea7*/
+    v2 = 0; /*0x673ea5*/
+    v3 = dbl_89EC28; /*0x673ea7*/
     do /*0x673fd7*/
     {
       result = INIClass::GetString( /*0x673ed0*/
                  v13,
-                 (unsigned __int8 *)DataGlobal_839D98,
+                 (unsigned __int8 *)aPowerups,
                  *((unsigned __int8 **)&off_7E523C + v2),
-                 DataGlobal_83D4AC,
+                 a0None,
                  String,
                  128);
       if ( result ) /*0x673ed7*/
       {
-        char * v4 = strtok(String, Delimiter); /*0x673ee7*/
-        const char * v5 = v4; /*0x673eec*/
+        v4 = strtok(String, Delimiter); /*0x673ee7*/
+        v5 = v4; /*0x673eec*/
         if ( v4 ) /*0x673ef3*/
         {
           String::Trim(v4); /*0x673ef7*/
           dword_81DA8C[v2] = atoi(v5); /*0x673f05*/
         }
-        char * v6 = strtok(0, Delimiter); /*0x673f13*/
-        INIClass *v7 = v6; /*0x673f18*/
+        v6 = strtok(0, Delimiter); /*0x673f13*/
+        v7 = v6; /*0x673f18*/
         if ( v6 ) /*0x673f1f*/
         {
           String::Trim(v6); /*0x673f23*/
           dword_81DAD8[v2] = GlobalArray::FindString(v7); /*0x673f2f*/
         }
-        char * v8 = strtok(0, Delimiter); /*0x673f3d*/
-        INIClass *v9 = v8; /*0x673f42*/
+        v8 = strtok(0, Delimiter); /*0x673f3d*/
+        v9 = v8; /*0x673f42*/
         if ( v8 ) /*0x673f49*/
         {
           String::Trim(v8); /*0x673f4d*/
-          if ( _strcmpi(v9, DataGlobal_825BF8) ) /*0x673f58*/
+          if ( _strcmpi(v9, off_825BF8) ) /*0x673f58*/
           {
             if ( !_strcmpi(v9, g_Str_no) ) /*0x673f73*/
-              DataGlobal_89ECC0[v2] = 0; /*0x673f7f*/
+              byte_89ECC0[v2] = 0; /*0x673f7f*/
           }
           else
           {
-            DataGlobal_89ECC0[v2] = 1; /*0x673f64*/
+            byte_89ECC0[v2] = 1; /*0x673f64*/
           }
         }
         result = (int)strtok(0, Delimiter); /*0x673f8c*/
-        INIClass *v10 = (char *)result; /*0x673f91*/
+        v10 = (char *)result; /*0x673f91*/
         if ( result ) /*0x673f98*/
         {
-  double v11; // st7
           if ( strchr((const char *)result, 37) ) /*0x673f9d*/
           {
             v11 = atof(v10) * 0.01; /*0x673faf*/
@@ -1821,7 +1826,7 @@ INIClass * * RulesClass::ReadPowerupsSection()
       ++v3; /*0x673fcd*/
       ++v2; /*0x673fd0*/
     }
-    while ( (int)v3 < (int)DataGlobal_89ECC0 ); /*0x673fd7*/
+    while ( (int)v3 < (int)byte_89ECC0 ); /*0x673fd7*/
     LOBYTE(result) = 1; /*0x673fdf*/
   }
   else
@@ -1830,69 +1835,74 @@ INIClass * * RulesClass::ReadPowerupsSection()
   }
   return result; /*0x673fe2*/
 }
-}
-
 // 0x6743D0
 INIClass * * RulesClass::readDifficulty()
 {
-{
   int result; // eax
   int Int_Overwrite; // eax
+  int v4; // edx
   double Double_Overwrite; // st7
-
+  int v6; // edx
+  int v7; // eax
+  int v8; // ecx
+  int v9; // edx
+  double v10; // st7
+  int v11; // ecx
+  int v12; // edx
+  double v13; // st7
+  int v14; // ecx
+  double v15; // [esp-8h] [ebp-10h]
   int v16; // [esp+Ch] [ebp+4h]
-  result = INIClass::BinarySearchSection(v16, (unsigned __int8 *)DataGlobal_839D58); /*0x6743e0*/
+
+  result = INIClass::BinarySearchSection(v16, (unsigned __int8 *)aJumpjetcontrol); /*0x6743e0*/
   if ( result ) /*0x6743ec*/
   {
-    this->?[8] = INIClass::ReadInt_Overwrite( /*0x67440c*/
-                   v16,
-                   (unsigned __int8 *)DataGlobal_839D58,
-                   (unsigned __int8 *)DataGlobal_83D554,
-                   this->?[8]);
+    this->V3Rocket[8] = INIClass::ReadInt_Overwrite( /*0x67440c*/
+                          v16,
+                          (unsigned __int8 *)aJumpjetcontrol,
+                          (unsigned __int8 *)aTurnrate,
+                          this->V3Rocket[8]);
     Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x674427*/
                       v16,
-                      (unsigned __int8 *)DataGlobal_839D58,
+                      (unsigned __int8 *)aJumpjetcontrol,
                       (unsigned __int8 *)g_INI_Key_Speed,
-                      this->?[9]);
-    IUnknown *v4 = this->?[12]; /*0x67442c*/
-    this->?[9] = Int_Overwrite; /*0x674432*/
-  double v15; // [esp-8h] [ebp-10h]
+                      this->V3Rocket[9]);
+    v4 = this->V3Rocket[12]; /*0x67442c*/
+    this->V3Rocket[9] = Int_Overwrite; /*0x674432*/
     HIDWORD(v15) = v4; /*0x674444*/
-    LODWORD(v15) = this->?[11]; /*0x674445*/
+    LODWORD(v15) = this->V3Rocket[11]; /*0x674445*/
     Double_Overwrite = INIClass::ReadDouble_Overwrite( /*0x67444e*/
                          v16,
-                         (unsigned __int8 *)DataGlobal_839D58,
-                         (unsigned __int8 *)DataGlobal_83D54C,
+                         (unsigned __int8 *)aJumpjetcontrol,
+                         (unsigned __int8 *)aClimb,
                          v15);
-    INIClass *v6 = this->?[13]; /*0x674453*/
-    *(double *)&this->?[11] = Double_Overwrite; /*0x67445b*/
-    int v7 = INIClass::ReadInt_Overwrite(v16, (unsigned __int8 *)DataGlobal_839D58, (unsigned __int8 *)DataGlobal_83D53C, v6); /*0x67446d*/
-    int v8 = this->?[2]; /*0x674472*/
-    IUnknown *v9 = this->?[1]; /*0x674478*/
-    this->?[13] = v7; /*0x67447e*/
-  double v10; // st7
+    v6 = this->V3Rocket[13]; /*0x674453*/
+    *(double *)&this->V3Rocket[11] = Double_Overwrite; /*0x67445b*/
+    v7 = INIClass::ReadInt_Overwrite(v16, (unsigned __int8 *)aJumpjetcontrol, (unsigned __int8 *)aCruiseheight, v6); /*0x67446d*/
+    v8 = this->DMisl[2]; /*0x674472*/
+    v9 = this->DMisl[1]; /*0x674478*/
+    this->V3Rocket[13] = v7; /*0x67447e*/
     v10 = INIClass::ReadDouble_Overwrite( /*0x674493*/
             v16,
-            (unsigned __int8 *)DataGlobal_839D58,
-            (unsigned __int8 *)DataGlobal_81B140,
+            (unsigned __int8 *)aJumpjetcontrol,
+            (unsigned __int8 *)aAcceleration,
             COERCE_DOUBLE(__PAIR64__(v8, v9)));
-    int v11 = this->?[4]; /*0x674498*/
-    IUnknown *v12 = this->?[3]; /*0x67449e*/
-    *(double *)&this->?[1] = v10; /*0x6744a4*/
-  double v13; // st7
+    v11 = this->DMisl[4]; /*0x674498*/
+    v12 = this->DMisl[3]; /*0x67449e*/
+    *(double *)&this->DMisl[1] = v10; /*0x6744a4*/
     v13 = INIClass::ReadDouble_Overwrite( /*0x6744b9*/
             v16,
-            (unsigned __int8 *)DataGlobal_839D58,
-            (unsigned __int8 *)DataGlobal_83D528,
+            (unsigned __int8 *)aJumpjetcontrol,
+            (unsigned __int8 *)aWobblesperseco,
             COERCE_DOUBLE(__PAIR64__(v11, v12)));
-    INIClass *v14 = this->?[5]; /*0x6744be*/
-    *(double *)&this->?[3] = v13; /*0x6744c4*/
+    v14 = this->DMisl[5]; /*0x6744be*/
+    *(double *)&this->DMisl[3] = v13; /*0x6744c4*/
     result = INIClass::ReadInt_Overwrite( /*0x6744d9*/
                v16,
-               (unsigned __int8 *)DataGlobal_839D58,
-               (unsigned __int8 *)DataGlobal_83D518,
+               (unsigned __int8 *)aJumpjetcontrol,
+               (unsigned __int8 *)aWobbledeviatio,
                v14);
-    this->?[5] = result; /*0x6744de*/
+    this->DMisl[5] = result; /*0x6744de*/
     LOBYTE(result) = 1; /*0x6744e5*/
   }
   else
@@ -1901,29 +1911,28 @@ INIClass * * RulesClass::readDifficulty()
   }
   return result; /*0x6744e4*/
 }
-}
-
 // 0x674550
 INIClass * * RulesClass::ReadMovies()
 {
-{
   int result; // eax
+  int v2; // ebp
   int i; // ebx
   unsigned __int8 *StringByIndex; // eax
+  char *v5; // esi
   char Source[32]; // [esp+4h] [ebp-20h] BYREF
-
   char *v7; // [esp+28h] [ebp+4h]
-  result = INIClass::BinarySearchSection((int)v7, (unsigned __int8 *)DataGlobal_839D50); /*0x674560*/
+
+  result = INIClass::BinarySearchSection((int)v7, (unsigned __int8 *)aMovies); /*0x674560*/
   if ( result ) /*0x67456c*/
   {
-    result = INIClass::GetKeyCount(v7, (unsigned __int8 *)DataGlobal_839D50); /*0x67457d*/
-    int v2 = result; /*0x674582*/
+    result = INIClass::GetKeyCount(v7, (unsigned __int8 *)aMovies); /*0x67457d*/
+    v2 = result; /*0x674582*/
     for ( i = 0; i < v2; ++i ) /*0x674588*/
     {
-      StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v7, (unsigned __int8 *)DataGlobal_839D50, i); /*0x6745a4*/
+      StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v7, (unsigned __int8 *)aMovies, i); /*0x6745a4*/
       result = INIClass::GetString( /*0x6745b3*/
                  (unsigned __int8 ***)v7,
-                 (unsigned __int8 *)DataGlobal_839D50,
+                 (unsigned __int8 *)aMovies,
                  StringByIndex,
                  g_Str__none_,
                  Source,
@@ -1933,19 +1942,19 @@ INIClass * * RulesClass::ReadMovies()
         result = LookupNameIndex(Source); /*0x6745c0*/
         if ( result == -1 ) /*0x6745c8*/
         {
-          INIClass *v5 = _strdup(Source); /*0x6745da*/
-          result = DataGlobal_ABF398; /*0x6745dc*/
-          if ( DataGlobal_ABF3A0 < DataGlobal_ABF398 /*0x674614*/
-            || (DataGlobal_ABF39D || !DataGlobal_ABF398)
-            && DataGlobal_ABF3A4 > 0
+          v5 = _strdup(Source); /*0x6745da*/
+          result = dword_ABF398; /*0x6745dc*/
+          if ( dword_ABF3A0 < dword_ABF398 /*0x674614*/
+            || (byte_ABF39D || !dword_ABF398)
+            && dword_ABF3A4 > 0
             && (result = (*(int (__thiscall **)(int *, int, _DWORD))(MovieInfo_Array + 8))(
                            &MovieInfo_Array,
-                           DataGlobal_ABF398 + DataGlobal_ABF3A4,
+                           dword_ABF398 + dword_ABF3A4,
                            0),
                 (_BYTE)result) )
           {
-            result = DataGlobal_ABF3A0++; /*0x67461c*/
-            *((_DWORD *)DataGlobal_ABF394 + result) = v5; /*0x67462b*/
+            result = dword_ABF3A0++; /*0x67461c*/
+            *((_DWORD *)dword_ABF394 + result) = v5; /*0x67462b*/
           }
         }
       }
@@ -1958,274 +1967,272 @@ INIClass * * RulesClass::ReadMovies()
   }
   return result; /*0x67463c*/
 }
-}
-
 // 0x679FA0
 void RulesClass::readMaximums()
 {
-{
+  void *v2; // eax
 
-  AbstractClass *v2 = (void *)this->DetailMinFrameRateMovie; /*0x679fa6*/
-  *this = &vt_VectorClass_BuildingTypeClass_const; /*0x679fa9*/
-  if ( v2 && this->SelfHealInfantryAmount ) /*0x679fb3*/
+  v2 = (void *)*(this + 1); /*0x679fa6*/
+  *this = &VectorClass<BuildingTypeClass const *>::`vftable'; /*0x679fa9*/
+  if ( v2 && *((_BYTE *)this + 13) ) /*0x679fb3*/
   {
     __3_YAXPAX_Z(v2); /*0x679fb9*/
-    this->DetailMinFrameRateMovie = 0; /*0x679fc1*/
+    *(this + 1) = 0; /*0x679fc1*/
   }
-  this->SelfHealInfantryAmount = 0; /*0x679fc4*/
-  this->DetailBufferZoneWidth = 0; /*0x679fc7*/
+  *((_BYTE *)this + 13) = 0; /*0x679fc4*/
+  *(this + 2) = 0; /*0x679fc7*/
 }
-}
-
 // 0x679FD0
 void RulesClass::readInfantryTypes()
 {
-{
+  void *v2; // eax
 
-  AbstractClass *v2 = (void *)this->DetailMinFrameRateMovie; /*0x679fd6*/
-  *this = &vt_VectorClass_UnitTypeClass_const; /*0x679fd9*/
-  if ( v2 && this->SelfHealInfantryAmount ) /*0x679fe3*/
+  v2 = (void *)*(this + 1); /*0x679fd6*/
+  *this = &VectorClass<UnitTypeClass const *>::`vftable'; /*0x679fd9*/
+  if ( v2 && *((_BYTE *)this + 13) ) /*0x679fe3*/
   {
     __3_YAXPAX_Z(v2); /*0x679fe9*/
-    this->DetailMinFrameRateMovie = 0; /*0x679ff1*/
+    *(this + 1) = 0; /*0x679ff1*/
   }
-  this->SelfHealInfantryAmount = 0; /*0x679ff4*/
-  this->DetailBufferZoneWidth = 0; /*0x679ff7*/
+  *((_BYTE *)this + 13) = 0; /*0x679ff4*/
+  *(this + 2) = 0; /*0x679ff7*/
 }
-}
-
 // 0x67A000
 void RulesClass::readCountries()
 {
-{
+  void *v2; // eax
 
-  AbstractClass *v2 = (void *)this->DetailMinFrameRateMovie; /*0x67a006*/
-  *this = &vt_VectorClass_AircraftTypeClass_const; /*0x67a009*/
-  if ( v2 && this->SelfHealInfantryAmount ) /*0x67a013*/
+  v2 = (void *)*(this + 1); /*0x67a006*/
+  *this = &VectorClass<AircraftTypeClass const *>::`vftable'; /*0x67a009*/
+  if ( v2 && *((_BYTE *)this + 13) ) /*0x67a013*/
   {
     __3_YAXPAX_Z(v2); /*0x67a019*/
-    this->DetailMinFrameRateMovie = 0; /*0x67a021*/
+    *(this + 1) = 0; /*0x67a021*/
   }
-  this->SelfHealInfantryAmount = 0; /*0x67a024*/
-  this->DetailBufferZoneWidth = 0; /*0x67a027*/
+  *((_BYTE *)this + 13) = 0; /*0x67a024*/
+  *(this + 2) = 0; /*0x67a027*/
 }
-}
-
 // 0x67A060
 void RulesClass::readVehicleTypes()
 {
-{
+  void *v2; // eax
 
-  AbstractClass *v2 = (void *)this->DetailMinFrameRateMovie; /*0x67a066*/
-  *this = &vt_VectorClass_TerrainTypeClass_const; /*0x67a069*/
-  if ( v2 && this->SelfHealInfantryAmount ) /*0x67a073*/
+  v2 = (void *)*(this + 1); /*0x67a066*/
+  *this = &VectorClass<TerrainTypeClass const *>::`vftable'; /*0x67a069*/
+  if ( v2 && *((_BYTE *)this + 13) ) /*0x67a073*/
   {
     __3_YAXPAX_Z(v2); /*0x67a079*/
-    this->DetailMinFrameRateMovie = 0; /*0x67a081*/
+    *(this + 1) = 0; /*0x67a081*/
   }
-  this->SelfHealInfantryAmount = 0; /*0x67a084*/
-  this->DetailBufferZoneWidth = 0; /*0x67a087*/
+  *((_BYTE *)this + 13) = 0; /*0x67a084*/
+  *(this + 2) = 0; /*0x67a087*/
 }
-}
-
 // 0x67A190
 void * RulesClass::readAircraftTypes(int * a2)
 {
-{
+  int v3; // eax
+  void *v4; // eax
+  int v5; // ecx
+  int v6; // eax
 
   if ( this != a2 ) /*0x67a19a*/
   {
-    this->vt_slot_12(); /*0x67a19e*/
-    int v3 = a2[2]; /*0x67a1a1*/
-    this->DetailBufferZoneWidth = v3; /*0x67a1a6*/
+    (*(void (__thiscall **)(int *))(*this + 12))(this); /*0x67a19e*/
+    v3 = a2[2]; /*0x67a1a1*/
+    *(this + 2) = v3; /*0x67a1a6*/
     if ( v3 ) /*0x67a1a9*/
     {
-      void * v4 = __2_YAPAXI_Z(4 * v3); /*0x67a1b3*/
-      this->DetailMinFrameRateMovie = (int)v4; /*0x67a1bb*/
+      v4 = __2_YAPAXI_Z(4 * v3); /*0x67a1b3*/
+      *(this + 1) = (int)v4; /*0x67a1bb*/
       if ( v4 ) /*0x67a1c0*/
       {
-        int v5 = this->DetailBufferZoneWidth; /*0x67a1c2*/
-        int v6 = 0; /*0x67a1c5*/
-        this->SelfHealInfantryAmount = 1; /*0x67a1c9*/
+        v5 = *(this + 2); /*0x67a1c2*/
+        v6 = 0; /*0x67a1c5*/
+        *((_BYTE *)this + 13) = 1; /*0x67a1c9*/
         if ( v5 > 0 ) /*0x67a1cd*/
         {
           do /*0x67a1e1*/
           {
-            *(_DWORD *)(this->DetailMinFrameRateMovie + 4 * v6) = *(_DWORD *)(a2[1] + 4 * v6); /*0x67a1d8*/
+            *(_DWORD *)(*(this + 1) + 4 * v6) = *(_DWORD *)(a2[1] + 4 * v6); /*0x67a1d8*/
             ++v6; /*0x67a1de*/
           }
-          while ( v6 < this->DetailBufferZoneWidth ); /*0x67a1e1*/
+          while ( v6 < *(this + 2) ); /*0x67a1e1*/
         }
       }
     }
     else
     {
-      this->DetailMinFrameRateMovie = 0; /*0x67a1e5*/
-      this->SelfHealInfantryAmount = 0; /*0x67a1ec*/
+      *(this + 1) = 0; /*0x67a1e5*/
+      *((_BYTE *)this + 13) = 0; /*0x67a1ec*/
     }
   }
-  this->DetailMinFrameRateMovie = a2[4]; /*0x67a1f3*/
-  this->SmallVisceroid = a2[5]; /*0x67a1f9*/
-  this->AttackingAircraftSightRange = a2[6]; /*0x67a1ff*/
+  *(this + 4) = a2[4]; /*0x67a1f3*/
+  *(this + 5) = a2[5]; /*0x67a1f9*/
+  *(this + 6) = a2[6]; /*0x67a1ff*/
   return this; /*0x67a204*/
 }
-}
-
 // 0x67A210
 void * RulesClass::readSuperWeaponTypes(int * a2)
 {
-{
+  int v3; // eax
+  void *v4; // eax
+  int v5; // ecx
+  int v6; // eax
 
   if ( this != a2 ) /*0x67a21a*/
   {
-    this->vt_slot_12(); /*0x67a21e*/
-    int v3 = a2[2]; /*0x67a221*/
-    this->DetailBufferZoneWidth = v3; /*0x67a226*/
+    (*(void (__thiscall **)(int *))(*this + 12))(this); /*0x67a21e*/
+    v3 = a2[2]; /*0x67a221*/
+    *(this + 2) = v3; /*0x67a226*/
     if ( v3 ) /*0x67a229*/
     {
-      void * v4 = __2_YAPAXI_Z(4 * v3); /*0x67a233*/
-      this->DetailMinFrameRateMovie = (int)v4; /*0x67a23b*/
+      v4 = __2_YAPAXI_Z(4 * v3); /*0x67a233*/
+      *(this + 1) = (int)v4; /*0x67a23b*/
       if ( v4 ) /*0x67a240*/
       {
-        int v5 = this->DetailBufferZoneWidth; /*0x67a242*/
-        int v6 = 0; /*0x67a245*/
-        this->SelfHealInfantryAmount = 1; /*0x67a249*/
+        v5 = *(this + 2); /*0x67a242*/
+        v6 = 0; /*0x67a245*/
+        *((_BYTE *)this + 13) = 1; /*0x67a249*/
         if ( v5 > 0 ) /*0x67a24d*/
         {
           do /*0x67a261*/
           {
-            *(_DWORD *)(this->DetailMinFrameRateMovie + 4 * v6) = *(_DWORD *)(a2[1] + 4 * v6); /*0x67a258*/
+            *(_DWORD *)(*(this + 1) + 4 * v6) = *(_DWORD *)(a2[1] + 4 * v6); /*0x67a258*/
             ++v6; /*0x67a25e*/
           }
-          while ( v6 < this->DetailBufferZoneWidth ); /*0x67a261*/
+          while ( v6 < *(this + 2) ); /*0x67a261*/
         }
       }
     }
     else
     {
-      this->DetailMinFrameRateMovie = 0; /*0x67a265*/
-      this->SelfHealInfantryAmount = 0; /*0x67a26c*/
+      *(this + 1) = 0; /*0x67a265*/
+      *((_BYTE *)this + 13) = 0; /*0x67a26c*/
     }
   }
-  this->DetailMinFrameRateMovie = a2[4]; /*0x67a273*/
-  this->SmallVisceroid = a2[5]; /*0x67a279*/
-  this->AttackingAircraftSightRange = a2[6]; /*0x67a27f*/
+  *(this + 4) = a2[4]; /*0x67a273*/
+  *(this + 5) = a2[5]; /*0x67a279*/
+  *(this + 6) = a2[6]; /*0x67a27f*/
   return this; /*0x67a284*/
 }
-}
-
 // 0x67A310
 void * RulesClass::readBuildingTypes(int * a2)
 {
-{
+  int v3; // eax
+  void *v4; // eax
+  int v5; // ecx
+  int v6; // eax
 
   if ( this != a2 ) /*0x67a31a*/
   {
-    this->vt_slot_12(); /*0x67a31e*/
-    int v3 = a2[2]; /*0x67a321*/
-    this->DetailBufferZoneWidth = v3; /*0x67a326*/
+    (*(void (__thiscall **)(int *))(*this + 12))(this); /*0x67a31e*/
+    v3 = a2[2]; /*0x67a321*/
+    *(this + 2) = v3; /*0x67a326*/
     if ( v3 ) /*0x67a329*/
     {
-      void * v4 = __2_YAPAXI_Z(4 * v3); /*0x67a333*/
-      this->DetailMinFrameRateMovie = (int)v4; /*0x67a33b*/
+      v4 = __2_YAPAXI_Z(4 * v3); /*0x67a333*/
+      *(this + 1) = (int)v4; /*0x67a33b*/
       if ( v4 ) /*0x67a340*/
       {
-        int v5 = this->DetailBufferZoneWidth; /*0x67a342*/
-        int v6 = 0; /*0x67a345*/
-        this->SelfHealInfantryAmount = 1; /*0x67a349*/
+        v5 = *(this + 2); /*0x67a342*/
+        v6 = 0; /*0x67a345*/
+        *((_BYTE *)this + 13) = 1; /*0x67a349*/
         if ( v5 > 0 ) /*0x67a34d*/
         {
           do /*0x67a361*/
           {
-            *(_DWORD *)(this->DetailMinFrameRateMovie + 4 * v6) = *(_DWORD *)(a2[1] + 4 * v6); /*0x67a358*/
+            *(_DWORD *)(*(this + 1) + 4 * v6) = *(_DWORD *)(a2[1] + 4 * v6); /*0x67a358*/
             ++v6; /*0x67a35e*/
           }
-          while ( v6 < this->DetailBufferZoneWidth ); /*0x67a361*/
+          while ( v6 < *(this + 2) ); /*0x67a361*/
         }
       }
     }
     else
     {
-      this->DetailMinFrameRateMovie = 0; /*0x67a365*/
-      this->SelfHealInfantryAmount = 0; /*0x67a36c*/
+      *(this + 1) = 0; /*0x67a365*/
+      *((_BYTE *)this + 13) = 0; /*0x67a36c*/
     }
   }
-  this->DetailMinFrameRateMovie = a2[4]; /*0x67a373*/
-  this->SmallVisceroid = a2[5]; /*0x67a379*/
-  this->AttackingAircraftSightRange = a2[6]; /*0x67a37f*/
+  *(this + 4) = a2[4]; /*0x67a373*/
+  *(this + 5) = a2[5]; /*0x67a379*/
+  *(this + 6) = a2[6]; /*0x67a37f*/
   return this; /*0x67a384*/
 }
-}
-
 // 0x67A8B0
 unsigned int * RulesClass::readParticles()
 {
-{
-  this->DetailMinFrameRateMovie = 0; /*0x67a8b4*/
-  this->DetailBufferZoneWidth = 0; /*0x67a8b7*/
-  this->SelfHealInfantryFrames = 1; /*0x67a8ba*/
-  this->SelfHealInfantryAmount = 0; /*0x67a8be*/
-  this->SmallVisceroid = 10; /*0x67a8c1*/
-  this->LargeVisceroid = 0; /*0x67a8c8*/
-  *this = &vt_TypeList_TerrainTypeClass_const; /*0x67a8cb*/
+  *(this + 1) = 0; /*0x67a8b4*/
+  *(this + 2) = 0; /*0x67a8b7*/
+  *((_BYTE *)this + 12) = 1; /*0x67a8ba*/
+  *((_BYTE *)this + 13) = 0; /*0x67a8be*/
+  *(this + 5) = 10; /*0x67a8c1*/
+  *(this + 4) = 0; /*0x67a8c8*/
+  *this = &TypeList<TerrainTypeClass const *>::`vftable'; /*0x67a8cb*/
   return this; /*0x67a8d1*/
 }
-}
-
 // 0x67B480
 int RulesClass::readAI(unsigned int * a2)
 {
-{
+  int v3; // ecx
+  int v4; // eax
+  int v6; // eax
+  int v7; // edx
 
-  int v3 = this->DetailBufferZoneWidth; /*0x67b483*/
-  if ( this->LargeVisceroid >= v3 ) /*0x67b48b*/
+  v3 = *(this + 2); /*0x67b483*/
+  if ( *(this + 4) >= v3 ) /*0x67b48b*/
   {
-    if ( !this->SelfHealInfantryAmount && v3 ) /*0x67b496*/
+    if ( !*((_BYTE *)this + 13) && v3 ) /*0x67b496*/
       return 0; /*0x67b496*/
-    int v4 = this->SmallVisceroid; /*0x67b498*/
-    if ( v4 <= 0 || !this->vt_slot_8(v3 + v4, 0) ) /*0x67b4a8*/
+    v4 = *(this + 5); /*0x67b498*/
+    if ( v4 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*this + 8))(this, v3 + v4, 0) ) /*0x67b4a8*/
       return 0; /*0x67b4af*/
   }
-  int v6 = this->LargeVisceroid; /*0x67b4b5*/
-  int v7 = this->DetailMinFrameRateMovie; /*0x67b4b8*/
-  this->LargeVisceroid = v6 + 1; /*0x67b4be*/
+  v6 = *(this + 4); /*0x67b4b5*/
+  v7 = *(this + 1); /*0x67b4b8*/
+  *(this + 4) = v6 + 1; /*0x67b4be*/
   *(_DWORD *)(v7 + 4 * v6) = *a2; /*0x67b4c8*/
   return 1; /*0x67b4b1*/
 }
-}
-
 // 0x67BDD0
 void * RulesClass::LoadTypeList(int a1, unsigned char *** edx0, INIClass * aP1, unsigned char * a2, unsigned int * a5)
 {
-{
   char *i; // eax
-  INIClass *v7; // edi
-  VectorClass *v9; // ecx
-  VectorClass *v15; // ecx
-  VectorClass *v17; // [esp+Ch] [ebp-9Ch] BYREF
+  int v7; // edi
+  int v8; // eax
+  int v9; // ecx
+  void *v10; // eax
+  bool v11; // zf
+  int v13; // eax
+  void *v14; // eax
+  int v15; // ecx
+  int v16; // eax
+  void **v17; // [esp+Ch] [ebp-9Ch] BYREF
   void *Block; // [esp+10h] [ebp-98h]
-  INIClass String[2]; // [esp+28h] [ebp-80h] BYREF
-
-  if ( INIClass::GetString(edx0, aP1, a2, (INIClass *)&DataGlobal_87F8E4[42624], String, 128) ) /*0x67bdfc*/
-  {
+  int v19; // [esp+14h] [ebp-94h]
   char v20; // [esp+19h] [ebp-8Fh]
+  int v21; // [esp+1Ch] [ebp-8Ch]
+  int v22; // [esp+20h] [ebp-88h]
+  char String[128]; // [esp+28h] [ebp-80h] BYREF
+
+  if ( INIClass::GetString(edx0, aP1, a2, &g_INI_DefaultBuffer, String, 128) ) /*0x67bdfc*/
+  {
     RulesClass::readIQ(&v17, 0, 0); /*0x67be11*/
-    int v22 = 10; /*0x67be1a*/
-    int v21 = 0; /*0x67be28*/
-    v17 = (VectorClass *)&vt_TypeList_TerrainTypeClass_const; /*0x67be2c*/
-    for ( i = strtok(String[0].__pad_0, Delimiter[0]); i; i = strtok(0, Delimiter[0]) ) /*0x67be3e*/
+    v22 = 10; /*0x67be1a*/
+    v21 = 0; /*0x67be28*/
+    v17 = &TypeList<TerrainTypeClass const *>::`vftable'; /*0x67be2c*/
+    for ( i = strtok(String, Delimiter); i; i = strtok(0, Delimiter) ) /*0x67be3e*/
     {
       if ( !*i ) /*0x67be40*/
         break; /*0x67be42*/
-      v7 = (INIClass *)TerrainTypeClass::FindOrCreate(i); /*0x67be4b*/
+      v7 = TerrainTypeClass::FindOrCreate(i); /*0x67be4b*/
       if ( v7 /*0x67be7b*/
-  int v19; // [esp+14h] [ebp-94h]
         && (v21 < v19
          || (v20 || !v19)
          && v22 > 0
-         && ((unsigned __int8 (__thiscall *)(VectorClass **, int, _DWORD))v17->Capacity)(&v17, v22 + v19, 0)) )
+         && ((unsigned __int8 (__thiscall *)(void ***, int, _DWORD))v17[2])(&v17, v22 + v19, 0)) )
       {
-        int v8 = v21++; /*0x67be86*/
+        v8 = v21++; /*0x67be86*/
         *((_DWORD *)Block + v8) = v7; /*0x67be91*/
       }
     }
@@ -2233,19 +2240,19 @@ void * RulesClass::LoadTypeList(int a1, unsigned char *** edx0, INIClass * aP1, 
     *(_DWORD *)(a1 + 8) = 0; /*0x67beb0*/
     *(_BYTE *)(a1 + 12) = 1; /*0x67beb3*/
     *(_BYTE *)(a1 + 13) = 0; /*0x67beb7*/
-    *(_DWORD *)a1 = &vt_VectorClass_TerrainTypeClass_const; /*0x67beba*/
+    *(_DWORD *)a1 = &VectorClass<TerrainTypeClass const *>::`vftable'; /*0x67beba*/
     System_Load_67BFA0((_DWORD *)a1, &v17); /*0x67bec0*/
-    *(_DWORD *)a1 = &vt_TypeList_TerrainTypeClass_const; /*0x67bec5*/
-    v17 = (VectorClass *)&vt_VectorClass_TerrainTypeClass_const; /*0x67becb*/
-    v9 = (VectorClass *)v22; /*0x67bed7*/
+    *(_DWORD *)a1 = &TypeList<TerrainTypeClass const *>::`vftable'; /*0x67bec5*/
+    v17 = &VectorClass<TerrainTypeClass const *>::`vftable'; /*0x67becb*/
+    v9 = v22; /*0x67bed7*/
     *(_DWORD *)(a1 + 16) = v21; /*0x67bedb*/
-    void * v10 = Block; /*0x67bede*/
-    bool v11 = Block == 0; /*0x67bee2*/
+    v10 = Block; /*0x67bede*/
+    v11 = Block == 0; /*0x67bee2*/
     *(_DWORD *)(a1 + 20) = v9; /*0x67bee4*/
     if ( !v11 && v20 ) /*0x67bef1*/
     {
       __3_YAXPAX_Z(v10); /*0x67bef8*/
-      return (VectorClass *)a1; /*0x67bf0b*/
+      return a1; /*0x67bf0b*/
     }
   }
   else
@@ -2254,22 +2261,22 @@ void * RulesClass::LoadTypeList(int a1, unsigned char *** edx0, INIClass * aP1, 
     *(_DWORD *)(a1 + 8) = 0; /*0x67bf1c*/
     *(_BYTE *)(a1 + 12) = 1; /*0x67bf1f*/
     *(_BYTE *)(a1 + 13) = 0; /*0x67bf23*/
-    *(_DWORD *)a1 = &vt_VectorClass_TerrainTypeClass_const; /*0x67bf26*/
+    *(_DWORD *)a1 = &VectorClass<TerrainTypeClass const *>::`vftable'; /*0x67bf26*/
     if ( (_DWORD *)a1 != a5 ) /*0x67bf2c*/
     {
       TypeList_cptr_TerrainTypeClass::TryFreeAndClear(a1); /*0x67bf30*/
-      int v13 = a5[2]; /*0x67bf36*/
+      v13 = a5[2]; /*0x67bf36*/
       *(_DWORD *)(a1 + 8) = v13; /*0x67bf3b*/
       if ( v13 ) /*0x67bf3e*/
       {
-        int v14 = __2_YAPAXI_Z(4 * v13); /*0x67bf48*/
+        v14 = __2_YAPAXI_Z(4 * v13); /*0x67bf48*/
         *(_DWORD *)(a1 + 4) = v14; /*0x67bf52*/
         if ( v14 ) /*0x67bf55*/
         {
-          v15 = *(VectorClass **)(a1 + 8); /*0x67bf57*/
-          int v16 = 0; /*0x67bf5a*/
+          v15 = *(_DWORD *)(a1 + 8); /*0x67bf57*/
+          v16 = 0; /*0x67bf5a*/
           *(_BYTE *)(a1 + 13) = 1; /*0x67bf5e*/
-          if ( (int)v15 > 0 ) /*0x67bf62*/
+          if ( v15 > 0 ) /*0x67bf62*/
           {
             do /*0x67bf76*/
             {
@@ -2288,323 +2295,317 @@ void * RulesClass::LoadTypeList(int a1, unsigned char *** edx0, INIClass * aP1, 
     }
     *(_DWORD *)(a1 + 16) = a5[4]; /*0x67bf83*/
     *(_DWORD *)(a1 + 20) = a5[5]; /*0x67bf89*/
-    *(_DWORD *)a1 = &vt_TypeList_TerrainTypeClass_const; /*0x67bf8c*/
+    *(_DWORD *)a1 = &TypeList<TerrainTypeClass const *>::`vftable'; /*0x67bf8c*/
   }
-  return (VectorClass *)a1; /*0x67bf02*/
+  return a1; /*0x67bf02*/
 }
-}
-
 // 0x67C430
 unsigned int * RulesClass::readIQ(int a2, int a3)
 {
-{
-  this->DetailMinFrameRateMovie = 0; /*0x67c43b*/
-  this->DetailBufferZoneWidth = a2; /*0x67c43e*/
-  this->SelfHealInfantryFrames = 1; /*0x67c441*/
-  this->SelfHealInfantryAmount = 0; /*0x67c445*/
-  *this = &vt_VectorClass_TerrainTypeClass_const; /*0x67c448*/
+  *(this + 1) = 0; /*0x67c43b*/
+  *(this + 2) = a2; /*0x67c43e*/
+  *((_BYTE *)this + 12) = 1; /*0x67c441*/
+  *((_BYTE *)this + 13) = 0; /*0x67c445*/
+  *this = &VectorClass<TerrainTypeClass const *>::`vftable'; /*0x67c448*/
   if ( a2 ) /*0x67c44e*/
   {
     if ( a3 ) /*0x67c456*/
     {
-      this->DetailMinFrameRateMovie = a3; /*0x67c458*/
+      *(this + 1) = a3; /*0x67c458*/
       return this; /*0x67c45e*/
     }
-    this->DetailMinFrameRateMovie = __2_YAPAXI_Z(4 * a2); /*0x67c46d*/
-    this->SelfHealInfantryAmount = 1; /*0x67c470*/
+    *(this + 1) = __2_YAPAXI_Z(4 * a2); /*0x67c46d*/
+    *((_BYTE *)this + 13) = 1; /*0x67c470*/
   }
   return this; /*0x67c45d*/
 }
-}
-
 // 0x6614F0
 int RulesClass::readGeneralSection(TechnoTypeClass * aP1)
 {
-{
-    return (*(int (__stdcall **)(TechnoTypeClass *, void *, int, int))(*(int *)aP1->vtable0 + 16))(aP1, this, 3, 0);
+  return (*(int (__stdcall **)(int, void *, int, _DWORD))(*(_DWORD *)aP1 + 16))(aP1, this, 3, 0); /*0x6614ff*/
 }
-}
-
 // 0x661510
 int RulesClass::readCombatDamage(int a2)
 {
-{
-    return (*(int (__stdcall **)(int, void *, int, int))(*(int *)(a2) + 12))(a2, this, 3, 0);
+  return (*(int (__stdcall **)(int, void *, int, _DWORD))(*(_DWORD *)a2 + 12))(a2, this, 3, 0); /*0x66151f*/
 }
-}
-
 // 0x66D1F0
 int RulesClass::readSpecialWeapons()
 {
-{
-    int result;
-    char Bool_Overwrite;
-    int v4;
-    double v5;
-    int v6;
-    result = INIClass::BinarySearchSection(v6, (unsigned char *)DataGlobal_839E64);
-    if ( result )
-  {
-    Bool_Overwrite = INIClass::ReadBool_Overwrite( v6, (unsigned char *)DataGlobal_839E64, (unsigned char *)DataGlobal_83B39C, (unsigned char)this->ForceShieldColor);
-    v4 = this->FallBackCoefficient;
-    this->ForceShieldColor = Bool_Overwrite;
-    HIDWORD(v5) = this->CrewCount;
-    LODWORD(v5) = v4;
-    this->FallBackCoefficient = INIClass::ReadDouble_Overwrite( v6, (unsigned char *)DataGlobal_839E64, (unsigned char *)DataGlobal_83B384, v5);
-    LOBYTE(result) = 1;
-  }
-    else
-  {
-    LOBYTE(result) = 0;
-  }
-    return result;
-}
-}
+  int result; // eax
+  char Bool_Overwrite; // al
+  int v4; // ecx
+  double v5; // [esp-8h] [ebp-10h]
+  int v6; // [esp+Ch] [ebp+4h]
 
+  result = INIClass::BinarySearchSection(v6, (unsigned __int8 *)aWallmodel); /*0x66d200*/
+  if ( result ) /*0x66d20c*/
+  {
+    Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x66d223*/
+                       v6,
+                       (unsigned __int8 *)aWallmodel,
+                       (unsigned __int8 *)aAlliedwalltran,
+                       *((_BYTE *)this + 6224));
+    v4 = *((_DWORD *)this + 1558); /*0x66d228*/
+    *((_BYTE *)this + 6224) = Bool_Overwrite; /*0x66d22e*/
+    HIDWORD(v5) = *((_DWORD *)this + 1559); /*0x66d240*/
+    LODWORD(v5) = v4; /*0x66d241*/
+    *((double *)this + 779) = INIClass::ReadDouble_Overwrite( /*0x66d24f*/
+                                v6,
+                                (unsigned __int8 *)aWallmodel,
+                                (unsigned __int8 *)aWallpenetrator,
+                                v5);
+    LOBYTE(result) = 1; /*0x66d256*/
+  }
+  else
+  {
+    LOBYTE(result) = 0; /*0x66d25d*/
+  }
+  return result; /*0x66d255*/
+}
 // 0x66D3A0
 int RulesClass::ReadColors()
 {
-{
-    char *v1;
-    int result;
-    int v3;
-    int i;
-    unsigned char *StringByIndex;
-    int Color;
-    unsigned char v7[4];
-    char v8[4];
-    char *v9;
-    v1 = v9;
-    result = INIClass::BinarySearchSection((int)v9, (unsigned char *)DataGlobal_839E5C);
-    if ( result )
-  {
-    result = INIClass::GetKeyCount(v1, (unsigned char *)DataGlobal_839E5C);
-    v3 = result;
-    for ( i = 0; i < v3; ++i )
-    {
-    StringByIndex = (unsigned char *)INIClass::GetStringByIndex(v1, (unsigned char *)DataGlobal_839E5C, i);
-    v7[0] = 0;
-    v7[1] = 0;
-    v7[2] = 0;
-    Color = INIEntry::ReadColor( (unsigned char ***)v1, (int)v8, (unsigned char *)DataGlobal_839E5C, StringByIndex, v7);
-    LOWORD(v9) = *(short *)Color;
-    BYTE2(v9) = *(char *)(Color + 2);
-    System_Read((const char *)StringByIndex, (int)&v9);
-    System_Read_68C9C0((char *)StringByIndex, (int)&v9, (int)DataGlobal_886380, (int)&FileSystem_TEMPERAT_PAL, 1);
-    result = System_Read_68C9C0((char *)StringByIndex, (int)&v9, (int)DataGlobal_886380, (int)&FileSystem_TEMPERAT_PAL, 53);
-    }
-    LOBYTE(result) = 1;
-  }
-    else
-  {
-    LOBYTE(result) = 0;
-  }
-    return result;
-}
-}
+  char *v1; // ebp
+  int result; // eax
+  int v3; // ebx
+  int i; // edi
+  unsigned __int8 *StringByIndex; // esi
+  int Color; // eax
+  unsigned __int8 v7[4]; // [esp+4h] [ebp-8h] BYREF
+  _BYTE v8[4]; // [esp+8h] [ebp-4h] BYREF
+  char *v9; // [esp+10h] [ebp+4h] BYREF
 
+  v1 = v9; /*0x66d3a9*/
+  result = INIClass::BinarySearchSection((int)v9, (unsigned __int8 *)aColors); /*0x66d3b0*/
+  if ( result ) /*0x66d3bc*/
+  {
+    result = INIClass::GetKeyCount(v1, (unsigned __int8 *)aColors); /*0x66d3cd*/
+    v3 = result; /*0x66d3d2*/
+    for ( i = 0; i < v3; ++i ) /*0x66d3d8*/
+    {
+      StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v1, (unsigned __int8 *)aColors, i); /*0x66d3f4*/
+      v7[0] = 0; /*0x66d404*/
+      v7[1] = 0; /*0x66d409*/
+      v7[2] = 0; /*0x66d40e*/
+      Color = INIEntry::ReadColor((unsigned __int8 ***)v1, (int)v8, (unsigned __int8 *)aColors, StringByIndex, v7); /*0x66d413*/
+      LOWORD(v9) = *(_WORD *)Color; /*0x66d41b*/
+      BYTE2(v9) = *(_BYTE *)(Color + 2); /*0x66d425*/
+      System_Read((const char *)StringByIndex, (int)&v9); /*0x66d42d*/
+      System_Read_68C9C0((char *)StringByIndex, (int)&v9, (int)byte_886380, (int)&FileSystem_TEMPERAT_PAL, 1); /*0x66d444*/
+      result = System_Read_68C9C0((char *)StringByIndex, (int)&v9, (int)byte_886380, (int)&FileSystem_TEMPERAT_PAL, 53); /*0x66d45b*/
+    }
+    LOBYTE(result) = 1; /*0x66d46c*/
+  }
+  else
+  {
+    LOBYTE(result) = 0; /*0x66d475*/
+  }
+  return result; /*0x66d46e*/
+}
 // 0x66D480
 int RulesClass::ReadColorAdd()
 {
-{
-    char *v1;
-    int result;
-    int v4;
-    char *v5;
-    unsigned char *StringByIndex;
-    int Coord;
-    char *v8;
-    char v9;
-    bool v10;
-    char v11[4];
-    int v12;
-    char *v13;
-    v1 = v13;
-    result = INIClass::BinarySearchSection((int)v13, (unsigned char *)DataGlobal_839E50);
-    if ( result )
-  {
-    result = INIClass::GetKeyCount(v1, (unsigned char *)DataGlobal_839E50);
-    v4 = 0;
-    v12 = result;
-    if ( result > 0 )
-    {
-    v5 = (char *)(this) + 6260;
-    do
-      {
-    StringByIndex = (unsigned char *)INIClass::GetStringByIndex(v1, (unsigned char *)DataGlobal_839E50, v4);
-    LOWORD(v13) = 0;
-    BYTE2(v13) = 0;
-    Coord = INIClass::GetCoord( (unsigned char ***)v1, (int)v11, (unsigned char *)DataGlobal_839E50, StringByIndex, (unsigned char *)&v13);
-    v8 = v5;
-    ++v4;
-    v5 += 3;
-    v9 = *(char *)(Coord + 2);
-    *(short *)v8 = *(short *)Coord;
-    result = v12;
-    v10 = v4 < v12;
-    v8[2] = v9;
-      }
-    while ( v10 );
-    }
-    LOBYTE(result) = 1;
-  }
-    else
-  {
-    LOBYTE(result) = 0;
-  }
-    return result;
-}
-}
+  char *v1; // edi
+  int result; // eax
+  int v4; // esi
+  char *v5; // ebp
+  unsigned __int8 *StringByIndex; // eax
+  int Coord; // eax
+  char *v8; // edx
+  char v9; // cl
+  bool v10; // cc
+  char v11[4]; // [esp+Ch] [ebp-8h] BYREF
+  int v12; // [esp+10h] [ebp-4h]
+  char *v13; // [esp+18h] [ebp+4h] BYREF
 
+  v1 = v13; /*0x66d48b*/
+  result = INIClass::BinarySearchSection((int)v13, (unsigned __int8 *)aColoradd); /*0x66d494*/
+  if ( result ) /*0x66d4a2*/
+  {
+    result = INIClass::GetKeyCount(v1, (unsigned __int8 *)aColoradd); /*0x66d4ae*/
+    v4 = 0; /*0x66d4b3*/
+    v12 = result; /*0x66d4b7*/
+    if ( result > 0 ) /*0x66d4bb*/
+    {
+      v5 = (char *)this + 6260; /*0x66d4bd*/
+      do /*0x66d511*/
+      {
+        StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v1, (unsigned __int8 *)aColoradd, v4); /*0x66d4cd*/
+        LOWORD(v13) = 0; /*0x66d4e6*/
+        BYTE2(v13) = 0; /*0x66d4ee*/
+        Coord = INIClass::GetCoord( /*0x66d4f2*/
+                  (unsigned __int8 ***)v1,
+                  (int)v11,
+                  (unsigned __int8 *)aColoradd,
+                  StringByIndex,
+                  (unsigned __int8 *)&v13);
+        v8 = v5; /*0x66d4f9*/
+        ++v4; /*0x66d4fb*/
+        v5 += 3; /*0x66d4fc*/
+        v9 = *(_BYTE *)(Coord + 2); /*0x66d502*/
+        *(_WORD *)v8 = *(_WORD *)Coord; /*0x66d505*/
+        result = v12; /*0x66d508*/
+        v10 = v4 < v12; /*0x66d50c*/
+        v8[2] = v9; /*0x66d50e*/
+      }
+      while ( v10 ); /*0x66d511*/
+    }
+    LOBYTE(result) = 1; /*0x66d516*/
+  }
+  else
+  {
+    LOBYTE(result) = 0; /*0x66d521*/
+  }
+  return result; /*0x66d514*/
+}
 // 0x672280
 int RulesClass::readCrateRules()
 {
-{
-    int KeyCount;
-    int i;
-    unsigned char *StringByIndex;
-    char Destination[32];
-    char *v6;
-    KeyCount = INIClass::GetKeyCount(v6, (unsigned char *)DataGlobal_839E34);
-    for ( i = 0; i < KeyCount; ++i )
+  int KeyCount; // ebx
+  int i; // esi
+  unsigned __int8 *StringByIndex; // eax
+  char Destination[32]; // [esp+Ch] [ebp-20h] BYREF
+  char *v6; // [esp+30h] [ebp+4h]
+
+  KeyCount = INIClass::GetKeyCount(v6, (unsigned __int8 *)aInfantrytypes); /*0x672297*/
+  for ( i = 0; i < KeyCount; ++i ) /*0x67229d*/
   {
-    StringByIndex = (unsigned char *)INIClass::GetStringByIndex(v6, (unsigned char *)DataGlobal_839E34, i);
-    if ( INIClass::GetString( (unsigned char ***)v6, (unsigned char *)DataGlobal_839E34, StringByIndex, &g_INI_DefaultBuffer, Destination, 32) )
+    StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v6, (unsigned __int8 *)aInfantrytypes, i); /*0x6722b5*/
+    if ( INIClass::GetString( /*0x6722c3*/
+           (unsigned __int8 ***)v6,
+           (unsigned __int8 *)aInfantrytypes,
+           StringByIndex,
+           &g_INI_DefaultBuffer,
+           Destination,
+           32) )
     {
-    KeywordType::FindOrCreate2(Destination);
+      KeywordType::FindOrCreate2(Destination); /*0x6722d0*/
     }
   }
-    return KeyCount > 0;
+  return KeyCount > 0; /*0x6722dc*/
 }
-}
-
 // 0x6723D0
 int RulesClass::readRadiation()
 {
-{
-    int KeyCount;
-    int i;
-    unsigned char *StringByIndex;
-    char Destination[32];
-    char *v6;
-    KeyCount = INIClass::GetKeyCount(v6, (unsigned char *)DataGlobal_839E08);
-    for ( i = 0; i < KeyCount; ++i )
+  int KeyCount; // ebx
+  int i; // esi
+  unsigned __int8 *StringByIndex; // eax
+  char Destination[32]; // [esp+Ch] [ebp-20h] BYREF
+  char *v6; // [esp+30h] [ebp+4h]
+
+  KeyCount = INIClass::GetKeyCount(v6, (unsigned __int8 *)aAircrafttypes); /*0x6723e7*/
+  for ( i = 0; i < KeyCount; ++i ) /*0x6723ed*/
   {
-    StringByIndex = (unsigned char *)INIClass::GetStringByIndex(v6, (unsigned char *)DataGlobal_839E08, i);
-    if ( INIClass::GetString( (unsigned char ***)v6, (unsigned char *)DataGlobal_839E08, StringByIndex, &g_INI_DefaultBuffer, Destination, 32) )
+    StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v6, (unsigned __int8 *)aAircrafttypes, i); /*0x672405*/
+    if ( INIClass::GetString( /*0x672413*/
+           (unsigned __int8 ***)v6,
+           (unsigned __int8 *)aAircrafttypes,
+           StringByIndex,
+           &g_INI_DefaultBuffer,
+           Destination,
+           32) )
     {
-    KeywordClass::FindOrCreate(Destination);
+      KeywordClass::FindOrCreate(Destination); /*0x672420*/
     }
   }
-    return KeyCount > 0;
+  return KeyCount > 0; /*0x67242c*/
 }
-}
-
 // 0x6725F0
 int RulesClass::ReadSidesList()
 {
-{
-    int KeyCount;
-    int i;
-    unsigned char *StringByIndex;
-    char Destination[32];
-    char *v6;
-    KeyCount = INIClass::GetKeyCount(v6, (unsigned char *)DataGlobal_839DEC);
-    for ( i = 0; i < KeyCount; ++i )
+  int KeyCount; // ebx
+  int i; // esi
+  unsigned __int8 *StringByIndex; // eax
+  char Destination[32]; // [esp+Ch] [ebp-20h] BYREF
+  char *v6; // [esp+30h] [ebp+4h]
+
+  KeyCount = INIClass::GetKeyCount(v6, (unsigned __int8 *)aSuperweapontyp); /*0x672607*/
+  for ( i = 0; i < KeyCount; ++i ) /*0x67260d*/
   {
-    StringByIndex = (unsigned char *)INIClass::GetStringByIndex(v6, (unsigned char *)DataGlobal_839DEC, i);
-    if ( INIClass::GetString( (unsigned char ***)v6, (unsigned char *)DataGlobal_839DEC, StringByIndex, &g_INI_DefaultBuffer, Destination, 32) )
+    StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v6, (unsigned __int8 *)aSuperweapontyp, i); /*0x672625*/
+    if ( INIClass::GetString( /*0x672633*/
+           (unsigned __int8 ***)v6,
+           (unsigned __int8 *)aSuperweapontyp,
+           StringByIndex,
+           &g_INI_DefaultBuffer,
+           Destination,
+           32) )
     {
-    WeaponTypeClass::Process(Destination);
+      WeaponTypeClass::Process(Destination); /*0x672640*/
     }
   }
-    return KeyCount > 0;
+  return KeyCount > 0; /*0x67264c*/
 }
-}
-
 // 0x67A3C0
 int RulesClass::readTerrainTypes(TechnoTypeClass * aP1)
 {
-{
-    int v3;
-    int result;
-    int i;
-    int v6;
-    v3 = *(int *)aP1->vtable0;
-    v6 = this->LargeVisceroid;
-    (*(void (__stdcall **)(TechnoTypeClass *, int *, int, int))(v3 + 16))(aP1, &v6, 4, 0);
-    result = v6;
-    for ( i = 0; i < v6; ++i )
-  {
-    (*(void (__stdcall **)(TechnoTypeClass *, int, int, int))(*(int *)aP1->vtable0 + 16))( aP1, this->DetailMinFrameRateMovie + 4 * i, 4, 0);
-    result = v6;
-  }
-    return result;
-}
-}
+  int v3; // ecx
+  int result; // eax
+  int i; // esi
+  int v6; // [esp+20h] [ebp-4h] BYREF
 
+  v3 = *aP1; /*0x67a3cc*/
+  v6 = *(this + 4); /*0x67a3d9*/
+  (*(void (__stdcall **)(int *, int *, int, _DWORD))(v3 + 16))(aP1, &v6, 4, 0); /*0x67a3dd*/
+  result = v6; /*0x67a3e0*/
+  for ( i = 0; i < v6; ++i ) /*0x67a3e8*/
+  {
+    (*(void (__stdcall **)(int *, int, int, _DWORD))(*aP1 + 16))(aP1, *(this + 1) + 4 * i, 4, 0); /*0x67a3f8*/
+    result = v6; /*0x67a3fb*/
+  }
+  return result; /*0x67a404*/
+}
 // 0x67A730
 int RulesClass::readSmudgeTypes()
 {
-{
-    return this->LargeVisceroid;
+  return *(this + 4); /*0x67a733*/
 }
-}
-
 // 0x67A7C0
 int RulesClass::readOverlayTypes()
 {
-{
-    return this->LargeVisceroid;
+  return *(this + 4); /*0x67a7c3*/
 }
-}
-
 // 0x67A7D0
 int RulesClass::readAnimations(TechnoTypeClass * aP1)
 {
-{
-    int v3;
-    int result;
-    int i;
-    int v6;
-    v3 = *(int *)aP1->vtable0;
-    v6 = this->LargeVisceroid;
-    (*(void (__stdcall **)(TechnoTypeClass *, int *, int, int))(v3 + 16))(aP1, &v6, 4, 0);
-    result = v6;
-    for ( i = 0; i < v6; ++i )
-  {
-    (*(void (__stdcall **)(TechnoTypeClass *, int, int, int))(*(int *)aP1->vtable0 + 16))( aP1, this->DetailMinFrameRateMovie + 4 * i, 4, 0);
-    result = v6;
-  }
-    return result;
-}
-}
+  int v3; // ecx
+  int result; // eax
+  int i; // esi
+  int v6; // [esp+20h] [ebp-4h] BYREF
 
+  v3 = *aP1; /*0x67a7dc*/
+  v6 = *(this + 4); /*0x67a7e9*/
+  (*(void (__stdcall **)(int *, int *, int, _DWORD))(v3 + 16))(aP1, &v6, 4, 0); /*0x67a7ed*/
+  result = v6; /*0x67a7f0*/
+  for ( i = 0; i < v6; ++i ) /*0x67a7f8*/
+  {
+    (*(void (__stdcall **)(int *, int, int, _DWORD))(*aP1 + 16))(aP1, *(this + 1) + 4 * i, 4, 0); /*0x67a808*/
+    result = v6; /*0x67a80b*/
+  }
+  return result; /*0x67a814*/
+}
 // 0x67A8A0
 int RulesClass::readWarheads()
 {
-{
-    return this->LargeVisceroid;
+  return *(this + 4); /*0x67a8a3*/
 }
-}
-
 // 0x67A8E0
 int RulesClass::readParticleSystems(TechnoTypeClass * aP1)
 {
-{
-    int v3;
-    int result;
-    int i;
-    int v6;
-    v3 = *(int *)aP1->vtable0;
-    v6 = this->LargeVisceroid;
-    (*(void (__stdcall **)(TechnoTypeClass *, int *, int, int))(v3 + 16))(aP1, &v6, 4, 0);
-    result = v6;
-    for ( i = 0; i < v6; ++i )
+  int v3; // ecx
+  int result; // eax
+  int i; // esi
+  int v6; // [esp+20h] [ebp-4h] BYREF
+
+  v3 = *aP1; /*0x67a8ec*/
+  v6 = *(this + 4); /*0x67a8f9*/
+  (*(void (__stdcall **)(int *, int *, int, _DWORD))(v3 + 16))(aP1, &v6, 4, 0); /*0x67a8fd*/
+  result = v6; /*0x67a900*/
+  for ( i = 0; i < v6; ++i ) /*0x67a908*/
   {
-    (*(void (__stdcall **)(TechnoTypeClass *, int, int, int))(*(int *)aP1->vtable0 + 16))( aP1, this->DetailMinFrameRateMovie + 4 * i, 4, 0);
-    result = v6;
+    (*(void (__stdcall **)(int *, int, int, _DWORD))(*aP1 + 16))(aP1, *(this + 1) + 4 * i, 4, 0); /*0x67a918*/
+    result = v6; /*0x67a91b*/
   }
-    return result;
-}
+  return result; /*0x67a924*/
 }

@@ -7,23 +7,21 @@
 namespace gamemd {
 unsigned int * E4Recv_7AECD0::sub_7AECD0(int a2, int a3)
 {
-{
-    this->M4 = 0;
-    this->M8 = a2;
-    this->M12 = 1;
-    this->M13 = 0;
-    *(void**)this = &vt_VectorClass_tConnInfoStruct;
-    if ( a2 )
+  *(this + 1) = 0; /*0x7aecdb*/
+  *(this + 2) = a2; /*0x7aecde*/
+  *((_BYTE *)this + 12) = 1; /*0x7aece1*/
+  *((_BYTE *)this + 13) = 0; /*0x7aece5*/
+  *this = &VectorClass<tConnInfoStruct *>::`vftable'; /*0x7aece8*/
+  if ( a2 ) /*0x7aecee*/
   {
-    if ( a3 )
+    if ( a3 ) /*0x7aecf6*/
     {
-    this->M4 = a3;
-    return this;
+      *(this + 1) = a3; /*0x7aecf8*/
+      return this; /*0x7aecfe*/
     }
-    this->M4 = __2_YAPAXI_Z(4 * a2);
-    this->M13 = 1;
+    *(this + 1) = __2_YAPAXI_Z(4 * a2); /*0x7aed0d*/
+    *((_BYTE *)this + 13) = 1; /*0x7aed10*/
   }
-    return this;
-}
+  return this; /*0x7aecfd*/
 }
 } // namespace gamemd

@@ -6,16 +6,15 @@
 namespace gamemd {
 int ChronoScreenEffect::DecrementCounter()
 {
-{
-    int result;
-    result = DataGlobal_B1D3D8;
-    if ( DataGlobal_B1D3D8 )
+  int result; // eax
+
+  result = dword_B1D3D8; /*0x753580*/
+  if ( dword_B1D3D8 ) /*0x753587*/
   {
-    result = --DataGlobal_B1D3D8;
-    if ( DataGlobal_B1D3D8 < 0 )
-    DataGlobal_B1D3D8 = 0;
+    result = --dword_B1D3D8; /*0x75358e*/
+    if ( dword_B1D3D8 < 0 ) /*0x753594*/
+      dword_B1D3D8 = 0; /*0x753596*/
   }
-    return result;
-}
+  return result; /*0x7535a0*/
 }
 } // namespace gamemd

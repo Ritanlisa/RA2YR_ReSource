@@ -8,10 +8,8 @@ namespace ra2 {
 namespace game {
 unsigned int IRTTITypeInfo::GetOffset()
 {
-{
-  return this->q0C8; /*0x71d156*/
+  return *((_DWORD *)this + 50); /*0x71d156*/
 }
-} // namespace game
 } // namespace ra2
 }
 
@@ -20,9 +18,7 @@ namespace ra2 {
 namespace game {
 int IRTTITypeInfo::QueryInterface(int a1, const void * a2, unsigned int * a3)
 {
-{
-    return AbstractClass::QueryInterface(a1 - 4, a2, a3);
-}
+  return AbstractClass::QueryInterface(a1 - 4, a2, a3);
 }
 } // namespace game
 } // namespace ra2

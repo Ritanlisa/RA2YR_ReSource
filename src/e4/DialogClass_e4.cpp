@@ -6,32 +6,30 @@
 namespace gamemd {
 int DialogClass::GetFlag()
 {
-{
-  return this->q034; /*0x5d6353*/
+  return *(this + 52); /*0x5d6353*/
 }
-} // namespace gamemd
 }
-
 // 0x775BC0
 namespace gamemd {
 int DialogClass::Reposition(SkirmishDialog * aP0, LPARAM a2)
-{
 {
   HWND WindowLongA; // eax
   LONG right; // edi
   HWND DialogParamA; // esi
   LONG bottom; // ebx
+  int v7; // [esp-Ch] [ebp-BCh]
+  int v8; // [esp-8h] [ebp-B8h]
   struct tagRECT Rect; // [esp+10h] [ebp-A0h] BYREF
   struct tagRECT v10; // [esp+20h] [ebp-90h] BYREF
   CHAR ClassName[128]; // [esp+30h] [ebp-80h] BYREF
 
-  GetWindowRect((HWND)aP0, &Rect); /*0x775bdd*/
-  GetClassNameA((HWND)aP0, ClassName, 128); /*0x775bea*/
-  if ( !strcmp(ClassName, &stru_830620[12524]) ) /*0x775c01*/
-    SendMessageA((HWND)aP0, 0x152u, 0, (LPARAM)&Rect); /*0x775c37*/
+  GetWindowRect(aP0, &Rect); /*0x775bdd*/
+  GetClassNameA(aP0, ClassName, 128); /*0x775bea*/
+  if ( !strcmp(ClassName, g_INI_Key_ComboBox) ) /*0x775c01*/
+    SendMessageA(aP0, 0x152u, 0, (LPARAM)&Rect); /*0x775c37*/
   if ( a2 ) /*0x775c46*/
   {
-    WindowLongA = (HWND)GetWindowLongA((HWND)aP0, -8); /*0x775c4b*/
+    WindowLongA = (HWND)GetWindowLongA(aP0, -8); /*0x775c4b*/
     GetWindowRect(WindowLongA, &v10); /*0x775c57*/
     Rect.left -= v10.left; /*0x775c79*/
     Rect.right -= v10.left; /*0x775c7d*/
@@ -45,7 +43,7 @@ int DialogClass::Reposition(SkirmishDialog * aP0, LPARAM a2)
   }
   else
   {
-    DialogParamA = CreateDialogParamA((HINSTANCE)g_hInstance, (LPCSTR)0xC6, 0, sub_775B40, 0); /*0x775cac*/
+    DialogParamA = CreateDialogParamA(g_hInstance, (LPCSTR)0xC6, 0, sub_775B40, 0); /*0x775cac*/
     GetClientRect(DialogParamA, &v10); /*0x775cb4*/
     DestroyWindow(DialogParamA); /*0x775cbb*/
     right = v10.right; /*0x775cc1*/
@@ -53,48 +51,45 @@ int DialogClass::Reposition(SkirmishDialog * aP0, LPARAM a2)
     dwInitParam = (HWND)v10.right; /*0x775cc9*/
     dword_B72F58 = v10.bottom; /*0x775ccf*/
   }
-  int v8 = dword_849DE4 * (Rect.bottom - Rect.top + 1) / bottom; /*0x775d19*/
-  int v7 = dword_849DE0 * (Rect.right - Rect.left + 1) / right; /*0x775d1a*/
+  v8 = dword_849DE4 * (Rect.bottom - Rect.top + 1) / bottom; /*0x775d19*/
+  v7 = dword_849DE0 * (Rect.right - Rect.left + 1) / right; /*0x775d1a*/
   Rect.left = Rect.left * dword_849DE0 / right; /*0x775d2e*/
   Rect.right = v7 + Rect.left - 1; /*0x775d32*/
   Rect.top = Rect.top * dword_849DE4 / bottom; /*0x775d36*/
   Rect.bottom = v8 + Rect.top - 1; /*0x775d48*/
-  MoveWindow((HWND)aP0, Rect.left, Rect.top, v7, v8, 1); /*0x775d4c*/
+  MoveWindow(aP0, Rect.left, Rect.top, v7, v8, 1); /*0x775d4c*/
   return 1; /*0x775d52*/
 }
-} // namespace gamemd
 }
-
 // 0x60D450
 namespace gamemd {
 ATOM DialogClass::RegisterWinClasses()
 {
-{
-    ATOM result;
-    WNDCLASSA WndClass;
-    result = 1;
-    if ( DataGlobal_AC48CC != 1 )
+  ATOM result; // ax
+  WNDCLASSA WndClass; // [esp+0h] [ebp-28h] BYREF
+
+  result = 1; /*0x60d456*/
+  if ( dword_AC48CC != 1 ) /*0x60d460*/
   {
-    DataGlobal_AC48CC = 1;
-    WndClass.hInstance = g_hInstance;
-    WndClass.style = 3;
-    WndClass.lpfnWndProc = GameScreen::DlgProc;
-    WndClass.cbClsExtra = 0;
-    WndClass.cbWndExtra = 0;
-    memset(&WndClass.hIcon, 0, 12);
-    WndClass.lpszMenuName = DataGlobal_8357A0;
-    WndClass.lpszClassName = DataGlobal_8357A0;
-    RegisterClassA(&WndClass);
-    WndClass.style = 131;
-    WndClass.lpfnWndProc = sub_60D520;
-    WndClass.cbClsExtra = 0;
-    WndClass.cbWndExtra = 0;
-    WndClass.hInstance = g_hInstance;
-    memset(&WndClass.hIcon, 0, 16);
-    WndClass.lpszClassName = g_INI_Key_NewEdit;
-    return RegisterClassA(&WndClass);
+    dword_AC48CC = 1; /*0x60d469*/
+    WndClass.hInstance = g_hInstance; /*0x60d48a*/
+    WndClass.style = 3; /*0x60d496*/
+    WndClass.lpfnWndProc = GameScreen::DlgProc; /*0x60d49e*/
+    WndClass.cbClsExtra = 0; /*0x60d4a6*/
+    WndClass.cbWndExtra = 0; /*0x60d4aa*/
+    memset(&WndClass.hIcon, 0, 12); /*0x60d4ae*/
+    WndClass.lpszMenuName = aCombodropwin; /*0x60d4ba*/
+    WndClass.lpszClassName = aCombodropwin; /*0x60d4be*/
+    RegisterClassA(&WndClass); /*0x60d4c2*/
+    WndClass.style = 131; /*0x60d4db*/
+    WndClass.lpfnWndProc = sub_60D520; /*0x60d4e4*/
+    WndClass.cbClsExtra = 0; /*0x60d4ec*/
+    WndClass.cbWndExtra = 0; /*0x60d4f0*/
+    WndClass.hInstance = g_hInstance; /*0x60d4f4*/
+    memset(&WndClass.hIcon, 0, 16); /*0x60d4f8*/
+    WndClass.lpszClassName = g_INI_Key_NewEdit; /*0x60d508*/
+    return RegisterClassA(&WndClass); /*0x60d510*/
   }
-    return result;
-}
+  return result; /*0x60d515*/
 }
 } // namespace gamemd

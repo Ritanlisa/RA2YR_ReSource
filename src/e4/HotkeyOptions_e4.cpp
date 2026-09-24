@@ -511,19 +511,21 @@ LABEL_81:
 namespace gamemd {
 void sub_5FC120(int a1, int a2, int * a3)
 {
-{
+  int v3; // esi
+  int v4; // ebx
   int v5; // edi
-  int v3 = a2; /*0x5fc125*/
+
+  v3 = a2; /*0x5fc125*/
   if ( a2 <= 0 ) /*0x5fc127*/
     return 0; /*0x5fc159*/
-  int v4 = *a3; /*0x5fc12d*/
+  v4 = *a3; /*0x5fc12d*/
   while ( 1 ) /*0x5fc136*/
   {
     v5 = *(_DWORD *)(a1 + 8 * (v3 / 2)); /*0x5fc136*/
     if ( v5 <= v4 ) /*0x5fc13e*/
       break; /*0x5fc13e*/
     v3 /= 2; /*0x5fc140*/
-LABEL_7:
+  LABEL_7:
     if ( v3 <= 0 ) /*0x5fc152*/
       return 0; /*0x5fc152*/
   }
@@ -535,5 +537,4 @@ LABEL_7:
   }
   return a1 + 8 * (v3 / 2); /*0x5fc154*/
 }
-} // namespace gamemd
 }

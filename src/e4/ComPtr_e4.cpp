@@ -5,9 +5,6 @@
 // 0x76F000
 int ComPtr::DestroyWrapper(int aP0, ObjectClass * aP1)
 {
-{
-    int v2;
-    FindTerritoryWOL((ObjectClass *)aP0, v2 + 44, (int)aP1);
-    return aP0;
-}
+  FindTerritoryWOL(aP1); /*0x76f00f*/
+  return aP0; /*0x76f016*/
 }

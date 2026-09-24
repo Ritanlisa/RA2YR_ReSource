@@ -70,48 +70,112 @@ void TextRenderer::Shutdown()
 
 // 0x4a61c0
 void TextRenderer::DrawText(DSurface* target, int x, int y,
-                             const wchar_t* text, uint8_t r, uint8_t g, uint8_t b)
 {
-    if (!m_hdc || !m_bits || !target) return;
+  int v8; // eax
+  int *v9; // eax
+  int v10; // eax
+  va_list v12; // [esp+0h] [ebp-410h]
+  int v13[2]; // [esp+4h] [ebp-40Ch] BYREF
+  _BYTE v14[4]; // [esp+Ch] [ebp-404h] BYREF
+  wchar_t Buffer[512]; // [esp+10h] [ebp-400h] BYREF
+  va_list Format; // [esp+434h] [ebp+24h] BYREF
 
-    RECT rc = { 0, 0, m_width, m_height };
-    SetTextColor(m_hdc, RGB(r, g, b));
-    DrawTextW(m_hdc, text, -1, &rc, DT_LEFT | DT_TOP | DT_NOCLIP);
-
-    DDSURFACEDESC2 desc = {};
-    desc.dwSize = sizeof(desc);
-    if (FAILED(target->Surface->Lock(nullptr, &desc, DDLOCK_WAIT, nullptr))) return;
-
-    uint16_t* dst = (uint16_t*)(desc.lpSurface);
-    int pitch = desc.lPitch / 2;
-
-    for (int row = 0; row < m_height && (y + row) < target->Height; ++row) {
-        for (int col = 0; col < m_width && (x + col) < target->Width; ++col) {
-            uint8_t* src_px = &m_bits[(row * m_width + col) * 4];
-            if (src_px[3] > 0) {
-                uint16_t r5 = (uint16_t)(src_px[2] >> 3);
-                uint16_t g6 = (uint16_t)(src_px[1] >> 2);
-                uint16_t b5 = (uint16_t)(src_px[0] >> 3);
-                dst[(y + row) * pitch + (x + col)] =
-                    (uint16_t)((r5 << 11) | (g6 << 5) | b5);
-            }
-        }
-    }
-
-    target->Surface->Unlock(nullptr);
+  va_start(Format, a8);
+  if ( BufferCount ) /*0x4a61cd*/
+  {
+    vswprintf(Buffer, BufferCount, (const wchar_t *const)Format, v12); /*0x4a61e1*/
+    v8 = Color::ConvertToRGB(v14); /*0x4a6202*/
+    LOWORD(v13[0]) = *(_WORD *)v8; /*0x4a6210*/
+    BYTE2(v13[0]) = *(_BYTE *)(v8 + 2); /*0x4a621b*/
+    v9 = RenderTextLabel( /*0x4a6293*/
+           v13,
+           (int)Buffer,
+           a3,
+           a4,
+           a5,
+           (BYTE1(v13[0]) >> g_BitMask_Blue << g_BitMask_Green)
+         | (BYTE2(v13[0]) >> g_BitMask_Red << g_BitShift_Blue)
+         | (LOBYTE(v13[0]) >> g_BitShift_Green_0 << g_BitShift_Red),
+           a7,
+           a8,
+           1);
+  }
+  else
+  {
+    v10 = Color::ConvertToRGB(v14); /*0x4a62b1*/
+    LOWORD(v13[0]) = *(_WORD *)v10; /*0x4a62bf*/
+    BYTE2(v13[0]) = *(_BYTE *)(v10 + 2); /*0x4a62ca*/
+    v9 = RenderTextLabel( /*0x4a6340*/
+           v13,
+           0,
+           a3,
+           a4,
+           a5,
+           (BYTE1(v13[0]) >> g_BitMask_Blue << g_BitMask_Green)
+         | (BYTE2(v13[0]) >> g_BitMask_Red << g_BitShift_Blue)
+         | (LOBYTE(v13[0]) >> g_BitShift_Green_0 << g_BitShift_Red),
+           a7,
+           a8,
+           1);
+  }
+  *a1 = *v9; /*0x4a6351*/
+  a1[1] = v9[1]; /*0x4a6356*/
+  return a1; /*0x4a634e*/
 }
-
 // 0x4a61c0
 void TextRenderer::DrawText(DSurface* target, int x, int y,
-                             const char* text, uint8_t r, uint8_t g, uint8_t b)
 {
-    if (!text) return;
-    int len = MultiByteToWideChar(CP_ACP, 0, text, -1, nullptr, 0);
-    std::wstring wstr(len, L'\0');
-    MultiByteToWideChar(CP_ACP, 0, text, -1, &wstr[0], len);
-    DrawText(target, x, y, wstr.c_str(), r, g, b);
-}
+  int v8; // eax
+  int *v9; // eax
+  int v10; // eax
+  va_list v12; // [esp+0h] [ebp-410h]
+  int v13[2]; // [esp+4h] [ebp-40Ch] BYREF
+  _BYTE v14[4]; // [esp+Ch] [ebp-404h] BYREF
+  wchar_t Buffer[512]; // [esp+10h] [ebp-400h] BYREF
+  va_list Format; // [esp+434h] [ebp+24h] BYREF
 
+  va_start(Format, a8);
+  if ( BufferCount ) /*0x4a61cd*/
+  {
+    vswprintf(Buffer, BufferCount, (const wchar_t *const)Format, v12); /*0x4a61e1*/
+    v8 = Color::ConvertToRGB(v14); /*0x4a6202*/
+    LOWORD(v13[0]) = *(_WORD *)v8; /*0x4a6210*/
+    BYTE2(v13[0]) = *(_BYTE *)(v8 + 2); /*0x4a621b*/
+    v9 = RenderTextLabel( /*0x4a6293*/
+           v13,
+           (int)Buffer,
+           a3,
+           a4,
+           a5,
+           (BYTE1(v13[0]) >> g_BitMask_Blue << g_BitMask_Green)
+         | (BYTE2(v13[0]) >> g_BitMask_Red << g_BitShift_Blue)
+         | (LOBYTE(v13[0]) >> g_BitShift_Green_0 << g_BitShift_Red),
+           a7,
+           a8,
+           1);
+  }
+  else
+  {
+    v10 = Color::ConvertToRGB(v14); /*0x4a62b1*/
+    LOWORD(v13[0]) = *(_WORD *)v10; /*0x4a62bf*/
+    BYTE2(v13[0]) = *(_BYTE *)(v10 + 2); /*0x4a62ca*/
+    v9 = RenderTextLabel( /*0x4a6340*/
+           v13,
+           0,
+           a3,
+           a4,
+           a5,
+           (BYTE1(v13[0]) >> g_BitMask_Blue << g_BitMask_Green)
+         | (BYTE2(v13[0]) >> g_BitMask_Red << g_BitShift_Blue)
+         | (LOBYTE(v13[0]) >> g_BitShift_Green_0 << g_BitShift_Red),
+           a7,
+           a8,
+           1);
+  }
+  *a1 = *v9; /*0x4a6351*/
+  a1[1] = v9[1]; /*0x4a6356*/
+  return a1; /*0x4a634e*/
+}
 int TextRenderer::GetTextWidth(const wchar_t* text)
 {
     if (!m_hdc || !text) return 0;

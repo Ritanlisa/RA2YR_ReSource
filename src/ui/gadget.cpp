@@ -231,18 +231,18 @@ void GadgetClass::Construct(int x, int y, int w, int h, unsigned flags, bool isS
 {
     uint8_t* p = (uint8_t*)(this);
     // Set vtable (IDA: *this = &GadgetClass::vftable) — skip for modern C++
-    *(int*)(p + 0x0C) = x;
-    *(int*)(p + 0x10) = y;
-    *(int*)(p + 0x14) = w;
-    *(int*)(p + 0x18) = h;
-    *(int*)(p + 0x00) = 0; // LinkClass::Next
-    *(int*)(p + 0x04) = 0; // LinkClass::Prev
+    p->u32_C = x;
+    p->ptr_10 = y;
+    p->ptr_14 = w;
+    p->ptr_18 = h;
+    p->u32_0 = 0; // LinkClass::Next
+    p->u32_4 = 0; // LinkClass::Prev
     p[0x1C] = 0; // NeedsRedraw = false
     p[0x1E] = 0; // Disabled = false
     p[0x1D] = isSticky ? 1 : 0;
-    *(unsigned*)(p + 0x20) = flags;
+    p->ptr_20 = flags;
     if (isSticky)
-        *(unsigned*)(p + 0x20) = flags | 5;
+        p->ptr_20 = flags | 5;
 }
 
 // IDA 0x4E1390: GadgetClass::Dtor — destructor, clears global gadget pointers
@@ -259,9 +259,9 @@ int GadgetClass::Dtor()
 
     if ((void*)this == g_focusedGadget) {
         uint8_t* p = (uint8_t*)(this);
-        unsigned flags = *(unsigned*)(p + 0x20);
+        unsigned flags = p->ptr_20;
         flags &= ~1u;
-        *(unsigned*)(p + 0x20) = flags;
+        p->ptr_20 = flags;
         g_focusedGadget = nullptr;
     }
     if ((void*)this == g_prevGadget)
@@ -327,7 +327,7 @@ void GadgetClass::SetTooltip(const wchar_t* tooltip)
 char GadgetClass::TrackState(int newState, int eventType)
 {
     uint8_t* p = (uint8_t*)(this);
-    int curState = *(int*)(p + 0x10);
+    int curState = p->ptr_10;
 
     if (newState == curState) {
         if (eventType == 2) {
@@ -336,11 +336,11 @@ char GadgetClass::TrackState(int newState, int eventType)
                 p[0x08] = 1; // NeedsRedraw-like byte at +0x08
             }
         }
-    } else if ((!curState || eventType >= *(int*)(p + 0x18)) && newState) {
+    } else if ((!curState || eventType >= p->ptr_18) && newState) {
         if (eventType == 3)
             p[0x14] = 0;
-        *(int*)(p + 0x10) = newState;
-        *(int*)(p + 0x18) = eventType;
+        p->ptr_10 = newState;
+        p->ptr_18 = eventType;
         p[0x08] = 1;
     }
     return (char)(curState);
@@ -357,10 +357,10 @@ void Gadget_InitProperties(void* self)
     uint8_t* p = (uint8_t*)(self);
     // IDA: unknown_libname_74(this+1) — sub-object init
     //       unknown_libname_74(this+2) — sub-object init
-    *(int*)(p + 0x00) = 0;  // clear
-    *(int*)(p + 0x0C) = -1; // index = -1
-    *(int*)(p + 0x14) = -1; // end index = -1
-    *(int*)(p + 0x10) = 0;  // start index = 0
+    p->u32_0 = 0;  // clear
+    p->u32_C = -1; // index = -1
+    p->ptr_14 = -1; // end index = -1
+    p->ptr_10 = 0;  // start index = 0
 }
 
 // ============================================================================
@@ -373,7 +373,7 @@ void Gadget_InitProperties(void* self)
 static void SimpleDialogControl_Construct(void* self)
 {
     uint8_t* p = (uint8_t*)(self);
-    *(int*)(p + 0x00) = 0; // +0: vtable placeholder
+    p->u32_0 = 0; // +0: vtable placeholder
     p[0x08] = 0; // +8: flag byte = 0
 }
 
@@ -388,21 +388,21 @@ void DialogControl::Constructor()
     uint8_t* p = (uint8_t*)(this);
     memset(p, 0, 0x200);
 
-    *(int*)(p + 0x68) = 11;     // +26 dwords = 0x68: default value 11
-    *(int*)(p + 0x64) = 1;      // +25 dwords: g_FogOfWarState-like
+    p->u32_68 = 11;     // +26 dwords = 0x68: default value 11
+    p->ptr_64 = 1;      // +25 dwords: g_FogOfWarState-like
 
     // Allocate internal sub-struct
     void* sub = operator new(4);
     if (sub) {
         memset(sub, 0, 4);
-        *(int*)(p + 0x3C) = (int)(sub); // +15 dwords
+        p->u32_3C = (int)(sub); // +15 dwords
     } else {
-        *(int*)(p + 0x3C) = 0;
+        p->u32_3C = 0;
     }
 
-    *(int*)(p + 0x40) = 0;      // +16 dwords = 0
-    *(int*)(p + 0x5C) = 0;      // +23 dwords = 0
-    *(int*)(p + 0x90) = -1;     // +36 dwords = -1
+    p->u32_40 = 0;      // +16 dwords = 0
+    p->u32_5C = 0;      // +23 dwords = 0
+    p->u32_90 = -1;     // +36 dwords = -1
 }
 
 // IDA 0x4E1450: DialogControl::Hide
@@ -438,25 +438,25 @@ void GadgetGrid::InsertItem(int index, void* item)
 {
     // IDA: array insert at position index
     uint8_t* p = (uint8_t*)(this);
-    int count = *(int*)(p + 0x04); // item count at +4
-    void** items = (void**)(*(int*)(p + 0x08)); // array ptr at +8
+    int count = p->u32_4; // item count at +4
+    void** items = (void**)(p->u32_8); // array ptr at +8
 
     // Shift items down
     if (index < count) {
         memmove(&items[index + 1], &items[index], (count - index) * sizeof(void*));
     }
     items[index] = item;
-    *(int*)(p + 0x04) = count + 1;
+    p->u32_4 = count + 1;
 }
 
 // IDA 0x4135D0: GadgetGrid::RemoveItem
 void GadgetGrid::RemoveItem(int index)
 {
     uint8_t* p = (uint8_t*)(this);
-    int count = *(int*)(p + 0x04);
+    int count = p->u32_4;
     if (index < 0 || index >= count) return;
 
-    void** items = (void**)(*(int*)(p + 0x08));
+    void** items = (void**)(p->u32_8);
     delete items[index]; // free the item
 
     // Shift items up
@@ -464,7 +464,7 @@ void GadgetGrid::RemoveItem(int index)
     if (tail > 0)
         memmove(&items[index], &items[index + 1], tail * sizeof(void*));
     items[count - 1] = nullptr;
-    *(int*)(p + 0x04) = count - 1;
+    p->u32_4 = count - 1;
 }
 
 // ============================================================================
@@ -476,12 +476,12 @@ void GadgetGrid::RemoveItem(int index)
 void DialogQueue::PushEntry(int entryType, int param)
 {
     uint8_t* p = (uint8_t*)(this);
-    int count = *(int*)(p + 0x00);
+    int count = p->u32_0;
     if (count >= 16) return; // max 16 entries
 
     *(int*)(p + 0x04 + count * 8) = entryType;
     *(int*)(p + 0x08 + count * 8) = param;
-    *(int*)(p + 0x00) = count + 1;
+    p->u32_0 = count + 1;
 }
 
 // IDA 0x5D4ED0: DialogQueue::RemoveEntry — remove entry from front of queue
@@ -489,14 +489,14 @@ void DialogQueue::PushEntry(int entryType, int param)
 int DialogQueue::RemoveEntry()
 {
     uint8_t* p = (uint8_t*)(this);
-    int count = *(int*)(p + 0x00);
+    int count = p->u32_0;
     if (count <= 0) return 0;
 
     // Shift entries left
     int tail = count - 1;
     if (tail > 0)
         memmove(p + 0x04, p + 0x0C, tail * 8);
-    *(int*)(p + 0x00) = tail;
+    p->u32_0 = tail;
     return 1;
 }
 
@@ -516,7 +516,7 @@ bool DialogClass_GetFlag(void* self)
 void DialogClass::CopyTemplateStruct(const void* template_data, int template_size)
 {
     uint8_t* p = (uint8_t*)(this);
-    // IDA: allocates buffer, copies template data to *(this+72)
+    // IDA: allocates buffer, copies template data to *(&this->u32_1C2)
     // PENDING: full decompile
     (void)template_data;
     (void)template_size;
@@ -718,6 +718,6 @@ bool DialogClass::IsVisible() const { return visible; }
 bool DialogClass::IsFinished() const { return finished; }
 void DialogClass::Finish(int result) { finished = true; this->result = result; }
 int DialogClass::GetResult() const { return result; }
-std::vector<GadgetClass*>& DialogClass::Gadgets() { return gadgets; }
+std::vector<GadgetClass*>& DialogClass::Gadgets() { return gadgets; 
 
 } // namespace gamemd

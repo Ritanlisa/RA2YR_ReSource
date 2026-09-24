@@ -5,8 +5,6 @@
 // 0x4A0180
 int EnumConnectionsClass::Skip(int a1)
 {
-{
-    *(int *)(a1 + 28) = 0;
-    return 0;
-}
+  *(_DWORD *)(a1 + 28) = 0; /*0x4a0184*/
+  return 0; /*0x4a018d*/
 }

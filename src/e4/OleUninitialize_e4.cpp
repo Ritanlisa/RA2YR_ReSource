@@ -6,9 +6,6 @@
 namespace gamemd {
 void OleUninitialize_0()
 {
-// attributes: thunk
-{
   OleUninitialize(); /*0x7c891a*/
-}
 }
 }

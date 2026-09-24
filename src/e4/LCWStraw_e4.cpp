@@ -5,15 +5,15 @@
 // 0x552450
 int LCWStraw::Dtor()
 {
-{
+  void *v2; // eax
+  void *v3; // ecx
 
-  AbstractClass *v2 = (void *)this->q014; /*0x552453*/
-  *this = (int)&vt_LCWStraw; /*0x552456*/
+  v2 = (void *)*(this + 5); /*0x552453*/
+  *this = (int)&LCWStraw::`vftable'; /*0x552456*/
   __3_YAXPAX_Z(v2); /*0x55245d*/
-  AbstractClass *v3 = (void *)this->q018; /*0x552462*/
-  this->q014 = 0; /*0x552465*/
+  v3 = (void *)*(this + 6); /*0x552462*/
+  *(this + 5) = 0; /*0x552465*/
   __3_YAXPAX_Z(v3); /*0x55246d*/
-  this->q018 = 0; /*0x552477*/
+  *(this + 6) = 0; /*0x552477*/
   return Straw::Dtor(this); /*0x552483*/
-}
 }

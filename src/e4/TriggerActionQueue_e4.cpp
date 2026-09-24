@@ -5,15 +5,14 @@
 // 0x6E5820
 int TriggerActionQueue::ProcessAll()
 {
-{
-    int result;
-    int i;
-    result = g_GameObjectCleanup;
-    for ( i = 0; i < g_GameObjectCleanup; ++i )
+  int result; // eax
+  int i; // esi
+
+  result = g_GameObjectCleanup; /*0x6e5820*/
+  for ( i = 0; i < g_GameObjectCleanup; ++i ) /*0x6e582d*/
   {
-    TriggerClass::NotifyLocalChanged(this);
-    result = g_GameObjectCleanup;
+    TriggerClass::NotifyLocalChanged(this); /*0x6e583b*/
+    result = g_GameObjectCleanup; /*0x6e5840*/
   }
-    return result;
-}
+  return result; /*0x6e584a*/
 }

@@ -5,47 +5,43 @@
 // 0x4A5110
 int Window::IsVisible()
 {
-{
-  return this->q018 && *(this + 25); /*0x4a5120*/
+  return *(this + 24) && *(this + 25); /*0x4a5120*/
 }
-}
-
 // 0x776D80
 char Window::ClampToScreen(int * a1)
 {
-{
-    char v1;
-    int v2;
-    int v3;
-    int v4;
-    int v5;
-    v1 = 0;
-    v2 = *a1;
-    if ( *a1 < 0 )
+  char v1; // bl
+  int v2; // eax
+  int v3; // ecx
+  int v4; // eax
+  int v5; // ecx
+
+  v1 = 0; /*0x776d86*/
+  v2 = *a1; /*0x776d89*/
+  if ( *a1 < 0 ) /*0x776d8d*/
   {
-    v3 = *((int*)(a1) + 2);
-    *a1 = 0;
-    v1 = 1;
-    *((int*)(a1) + 2) = v3 - v2;
+    v3 = a1[2]; /*0x776d8f*/
+    *a1 = 0; /*0x776d92*/
+    v1 = 1; /*0x776d9a*/
+    a1[2] = v3 - v2; /*0x776d9c*/
   }
-    v4 = *((int*)(a1) + 1);
-    if ( v4 < 0 )
+  v4 = a1[1]; /*0x776d9f*/
+  if ( v4 < 0 ) /*0x776da4*/
   {
-    v5 = *((int*)(a1) + 3);
-    *((int*)(a1) + 1) = 0;
-    v1 = 1;
-    *((int*)(a1) + 3) = v5 - v4;
+    v5 = a1[3]; /*0x776da6*/
+    a1[1] = 0; /*0x776da9*/
+    v1 = 1; /*0x776db2*/
+    a1[3] = v5 - v4; /*0x776db4*/
   }
-    if ( *((int*)(a1) + 2) > GetSystemMetrics(16) )
+  if ( a1[2] > GetSystemMetrics(16) ) /*0x776dc4*/
   {
-    *a1 += GetSystemMetrics(16) - *((int*)(a1) + 2);
-    *((int*)(a1) + 2) = GetSystemMetrics(16);
-    v1 = 1;
+    *a1 += GetSystemMetrics(16) - a1[2]; /*0x776dd5*/
+    a1[2] = GetSystemMetrics(16); /*0x776dd9*/
+    v1 = 1; /*0x776ddc*/
   }
-    if ( *((int*)(a1) + 3) <= GetSystemMetrics(17) )
-    return v1;
-    *((int*)(a1) + 1) += GetSystemMetrics(17) - *((int*)(a1) + 3);
-    *((int*)(a1) + 3) = GetSystemMetrics(17);
-    return 1;
-}
+  if ( a1[3] <= GetSystemMetrics(17) ) /*0x776de5*/
+    return v1; /*0x776e08*/
+  a1[1] += GetSystemMetrics(17) - a1[3]; /*0x776df7*/
+  a1[3] = GetSystemMetrics(17); /*0x776dfc*/
+  return 1; /*0x776e01*/
 }

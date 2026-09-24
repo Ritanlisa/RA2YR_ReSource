@@ -42,345 +42,88 @@ bool ObjectClass::Put(const CoordStruct& coords, unsigned int face_dir)
 // 0x5f44a0
 bool ObjectClass::Remove()
 {
-// 0x5f44a0
-{
   int result; // eax
+  int v3; // eax
   #374 *v4; // [esp+4h] [ebp-4h] BYREF
 
-  LOBYTE(result) = this->isSelected;
-  if ( (_BYTE)result )
+  LOBYTE(result) = *((_BYTE *)this + 131); /*0x5f44a4*/
+  if ( (_BYTE)result ) /*0x5f44ac*/
   {
-    v4 = this;
-    int v3 = (*(int (__thiscall **)(_DWORD *, #374 **))(DataGlobal_87F7E8[539956] + 16))(&DataGlobal_87F7E8[539956], &v4);
-    if ( v3 != -1 && v3 < DataGlobal_87F7E8[539960] )
+    v4 = this; /*0x5f44be*/
+    v3 = ((int (__thiscall *)(ObjectClass **, #374 **))ObjectClass_CurrentObjects->parent_gap[4])( /*0x5f44c2*/
+           &ObjectClass_CurrentObjects,
+           &v4);
+    if ( v3 != -1 && v3 < (int)g_SelectionManager ) /*0x5f44d2*/
     {
-      --DataGlobal_87F7E8[539960];
-      for ( ;
-            v3 < DataGlobal_87F7E8[539960];
-            *(_DWORD *)(DataGlobal_87F7E8[539957] + 4 * v3 - 4) = *(_DWORD *)(DataGlobal_87F7E8[539957] + 4 * v3) )
+      for ( g_SelectionManager = (wchar_t *)((char *)g_SelectionManager - 1); /*0x5f44dd*/
+            v3 < (int)g_SelectionManager;
+            *((_DWORD *)g_ObjectClass_CurrentCount + v3 - 1) = *((_DWORD *)g_ObjectClass_CurrentCount + v3) )
       {
-        ++v3;
+        ++v3; /*0x5f44e5*/
       }
     }
-    this->isSelected = 0;
-    result = MapClass::GetScrollMode((int)DataGlobal_87F7E8);
-    if ( (#374 *)result == this )
-      LOBYTE(result) = MapClass::SetScrollMode((int)DataGlobal_87F7E8, 0);
+    *((_BYTE *)this + 131) = 0; /*0x5f44fc*/
+    result = MapClass::GetScrollMode((int)&MapClass_Instance); /*0x5f4503*/
+    if ( (#374 *)result == this ) /*0x5f450a*/
+      LOBYTE(result) = MapClass::SetScrollMode((int)&MapClass_Instance, 0); /*0x5f4513*/
   }
-  return result;
-}
-
-// IDA: 0x5F65F0 -- ObjectClass::Destroy (146B)
+  return result; /*0x5f4518*/
 }
 // 0x5f65f0
 AbstractClass * * ObjectClass::Destroy()
 {
-// 0x5f65f0
-{
+  int v2; // ecx
   int result; // eax
 
-  BombClass *v2 = this->attachedBomb;
-  if ( v2 )
-    ObjectClass::CleanupAudioAndRefs(v2);
-  if ( this && (this->abstractFlags & 1) != 0 )
-    TechnoClass::CleanupAll(this, 0);
-  AbstractClass::AnnounceExpiredPointer((void **)this, 1);
-  (*(void (__thiscall **)(#374 *))(this->q0D4)(this);
-  this->isAliveFlag = 0;
-  result = DataGlobal_B0F6A0;
-  if ( DataGlobal_B0F6A8 < DataGlobal_B0F6A0
-    || (DataGlobal_B0F6A5 || !DataGlobal_B0F6A0)
-    && DataGlobal_B0F6AC > 0
-    && (result = (*(int (__thiscall **)(int *, int, _DWORD))(DataGlobal_B0F698 + 8))(
-                   &DataGlobal_B0F698,
-                   DataGlobal_B0F6A0 + DataGlobal_B0F6AC,
+  v2 = *((_DWORD *)this + 14); /*0x5f65f3*/
+  if ( v2 ) /*0x5f65f8*/
+    ObjectClass::CleanupAudioAndRefs(v2); /*0x5f65fa*/
+  if ( this && (*((_BYTE *)this + 20) & 1) != 0 ) /*0x5f6607*/
+    TechnoClass::CleanupAll(this, 0); /*0x5f660d*/
+  AbstractClass::AnnounceExpiredPointer((void **)this, 1); /*0x5f6616*/
+  (*(void (__thiscall **)(#374 *))(*(_DWORD *)this + 212))(this); /*0x5f661f*/
+  *((_BYTE *)this + 144) = 0; /*0x5f6625*/
+  result = dword_B0F6A0; /*0x5f662c*/
+  if ( g_LaserDrawConfig < dword_B0F6A0 /*0x5f6666*/
+    || (byte_B0F6A5 || !dword_B0F6A0)
+    && dword_B0F6AC > 0
+    && (result = (*(int (__thiscall **)(int *, int, _DWORD))(g_DiskLaserManager + 8))(
+                   &g_DiskLaserManager,
+                   dword_B0F6A0 + dword_B0F6AC,
                    0),
         (_BYTE)result) )
   {
-    result = DataGlobal_B0F6A8++;
-    *((_DWORD *)DataGlobal_B0F69C + result) = this;
+    result = g_LaserDrawConfig++; /*0x5f666e*/
+    *((_DWORD *)dword_B0F69C + result) = this; /*0x5f667d*/
   }
-  return result;
-}
-    // TODO stub - translate quarantined IDA block above
-
-/* ASM:
-push    esi
-mov     esi, ecx
-mov     ecx, [esi+38h]
-test    ecx, ecx
-jz      short loc_5F65FF
-call    ObjectClass__CleanupAudioAndRefs
-
-loc_5F65FF:                             ; CODE XREF: ObjectClass__Destroy+8↑j
-test    esi, esi
-jz      short loc_5F6612
-test    byte ptr [esi+14h], 1
-jz      short loc_5F6612
-push    0
-mov     ecx, esi
-call    TechnoClass__CleanupAll
-
-loc_5F6612:                             ; CODE XREF: ObjectClass__Destroy+11↑j
-; ObjectClass__Destroy+17↑j
-mov     dl, 1
-mov     ecx, esi        ; void **
-call    AbstractClass__AnnounceExpiredPointer
-mov     eax, [esi]
-mov     ecx, esi
-call    dword ptr [eax+0D4h]
-mov     byte ptr [esi+90h], 0
-mov     eax, dword_A8ED54+8094Ch
-cmp     dword_A8ED54+80954h, eax
-jl      short loc_5F6668
-mov     cl, byte ptr dword_A8ED54+80951h
-test    cl, cl
-jnz     short loc_5F6647
-test    eax, eax
-jnz     short loc_5F6680
-
-loc_5F6647:                             ; CODE XREF: ObjectClass__Destroy+51↑j
-mov     ecx, dword_A8ED54+80958h
-test    ecx, ecx
-jle     short loc_5F6680
-mov     edx, dword_A8ED54+80944h
-add     ecx, eax
-push    0
-push    ecx
-mov     ecx, (offset dword_A8ED54+80944h)
-call    dword ptr [edx+8]
-test    al, al
-jz      short loc_5F6680
-
-loc_5F6668:                             ; CODE XREF: ObjectClass__Destroy+47↑j
-mov     ecx, dword_A8ED54+80954h
-mov     eax, ecx
-inc     ecx
-mov     dword_A8ED54+80954h, ecx
-mov     ecx, dword_A8ED54+80948h
-mov     [ecx+eax*4], esi
-
-loc_5F6680:                             ; CODE XREF: ObjectClass__Destroy+55↑j
-; ObjectClass__Destroy+5F↑j ...
-pop     esi
-retn
-*/
-
-void ObjectClass::RestoreMission(Mission mission)
-{
-    // Override in MissionClass for actual mission queue management
-}
-
-DamageState ObjectClass::ReceiveDamage(int* damage, int distance_from_epicenter, WarheadTypeClass* wh,
-    ObjectClass* attacker, bool ignore_defenses, bool prevent_passenger_escape, HouseClass* attacking_house)
-{
-    // IDA: 0x5F5390 — ObjectClass::ReceiveDamage
-    // Base class damage reception. Called for all game objects.
-    //
-    // Algorithm:
-    // 1. Hard exit: dead or not on map → damage state 0
-    // 2. If already at 0 health, destroy and return 0
-    // 3. If damage is valid (> 0):
-    //    a. Calculate effective damage considering modifiers
-    //    b. Apply damage to health
-    //    c. If health <= 0: destroy object, register kill/assist, return DEAD
-    //    d. Otherwise: return DAMAGED
-    // 4. Return ALIVE if no damage taken
-
-    if (!isAliveFlag || !isOnMap)
-        return (DamageState)(0);
-
-    if (health <= 0)
-    {
-        Destroy();
-        return (DamageState)(0);
-    }
-
-    if (damage && *damage > 0)
-    {
-        int actual_damage = *damage;
-
-        // Warhead versus armor multiplier (applied in derived classes)
-        // Base class applies raw damage directly
-
-        // Iron Curtained objects take no damage
-        if (IsIronCurtained())
-            actual_damage = 0;
-
-        // Clamp to remaining health
-        if (actual_damage > health)
-            actual_damage = health;
-
-        health -= actual_damage;
-        estimatedHealth = health;
-
-        if (health <= 0)
-        {
-            health = 0;
-            Destroy();
-            if (attacker)
-                RegisterDestruction((TechnoClass*)(attacker));
-            if (attacking_house)
-                RegisterKill(attacking_house);
-            return (DamageState)(1); // DEAD
-        }
-
-        return (DamageState)(2); // DAMAGED
-    }
-
-    return (DamageState)(0); // NONE
-}
-
-void ObjectClass::Scatter(const CoordStruct& coords, bool ignore_mission, bool ignore_destination)
-{
-    if (!isAliveFlag || !isOnMap)
-        return;
-    (void)coords;
-    (void)ignore_mission;
-    (void)ignore_destination;
-}
-
-bool ObjectClass::Ignite()
-{
-    return true;
-}
-
-void ObjectClass::Extinguish()
-{
-}
-
-int ObjectClass::GetWeaponRange(int weapon_idx) const
-{
-    auto* type = (gamemd::ObjectTypeClass*)(GetType());
-    if (!type)
-        return 0;
-    (void)weapon_idx;
-    return 0;
-}
-
-int ObjectClass::DistanceFrom(AbstractClass* that) const
-{
-    if (!that)
-        return 0;
-
-    CoordStruct my_coords = fetchCoordinatesHere();
-    CoordStruct their_coords = that->fetchCoordinatesHere();
-
-    int dx = my_coords.X - their_coords.X;
-    int dy = my_coords.Y - their_coords.Y;
-    int dz = my_coords.Z - their_coords.Z;
-
-    return (int)(std::sqrt((double)(dx*dx + dy*dy + dz*dz)));
-}
-
-Move ObjectClass::IsCellOccupied(CellClass* dest_cell, int facing, int level, CellClass* source_cell, bool alt) const
-{
-    if (!dest_cell)
-        return (Move)(0);
-    return (Move)(1);
-}
-
-// 0x556630
-int ObjectClass::GetHeight() const
-{
-    return location.Z;
-}
-
-void ObjectClass::SetHeight(uint32_t height)
-{
-    location.Z = (int)(height);
-}
-
-int ObjectClass::GetZ() const
-{
-    return location.Z;
-}
-
-// 0x5f6690
-bool ObjectClass::IsActive() const
-{
-    return isAliveFlag && isOnMap && !inLimbo;
-}
-
-bool ObjectClass::IsControllable() const
-{
-    return isOnMap && isAliveFlag;
-}
-
-bool ObjectClass::IsSurfaced()
-{
-    return isOnMap;
-}
-
-bool ObjectClass::IsStrange() const
-{
-    return isBomb || isFallingDown;
-}
-
-uint32_t ObjectClass::GetPointsValue() const
-{
-    return 0;
-}
-
-bool ObjectClass::CanBeRepaired() const
-{
-    return health > 0;
-}
-
-bool ObjectClass::CanBeSold() const
-{
-    return health > 0 && !inLimbo;
-}
-
-DamageState ObjectClass::IronCurtain(int duration, HouseClass* source, bool force_shield)
-{
-    // IDA: 0x70E2B0 — Iron Curtain invulnerability effect.
-    // Base class stub: actual implementation in TechnoClass.
-
-    if (!isAliveFlag || !isOnMap)
-        return (DamageState)(0);
-
-    if (duration <= 0)
-        return (DamageState)(0);
-
-    // Base class: objects just mark themselves as invulnerable for the duration.
-    // TechnoClass overrides this with full visual tint + timer management.
-    (void)source;
-    (void)force_shield;
-
-    return (DamageState)(2);
-}
-
-bool ObjectClass::IsIronCurtained() const
-{
-    // Base class: no iron curtain state.
-    // TechnoClass overrides with forceShielded check.
-    return false;
-}
-
-void ObjectClass::Reveal()
-{
-    isVisible = true;
-}
-
-// IDA: 0x5F4D10 -- ObjectClass::MarkForRedraw
+  return result; /*0x5f6680*/
 }
 // 0x5f4d10
 void ObjectClass::MarkForRedraw()
 {
+  int result; // eax
+
+  LOBYTE(result) = *((_BYTE *)this + 128); /*0x5f4d10*/
+  if ( !(_BYTE)result ) /*0x5f4d18*/
+  {
+    *((_BYTE *)this + 128) = 1; /*0x5f4d1a*/
+    return MapClass::MarkForRedraw(&MapClass_Instance, 0); /*0x5f4d28*/
+  }
+  return result; /*0x5f4d2d*/
 }
 // 0x5f4d10
     int __thiscall ObjectClass::MarkForRedraw(#374 *(void**)this)
-{
-    int result;
-    LOBYTE(result) = this->needsRedraw;
-    if ( !(char)result )
-  {
-    this->needsRedraw = 1;
-    return MapClass::MarkForRedraw(&DataGlobal_87F7E8, 0);
-  }
-    return result;
-}
+    {
+      int result; // eax
+
+      LOBYTE(result) = *((_BYTE *)this + 128); /*0x5f4d10*/
+      if ( !(_BYTE)result ) /*0x5f4d18*/
+      {
+        *((_BYTE *)this + 128) = 1; /*0x5f4d1a*/
+        return MapClass::MarkForRedraw(&MapClass_Instance, 0); /*0x5f4d28*/
+      }
+      return result; /*0x5f4d2d*/
+    }
     // TODO stub - translate quarantined IDA block above
 
 /* ASM:
@@ -501,25 +244,75 @@ ObjectClass::ObjectClass() noexcept
     std::memset(&customSound_controller, 0, sizeof(customSound_controller));
 
     abstractFlags |= kObjectFlag;
-}
 
 // IDA: AudioController
 // 0x405d40
 void AudioController::Stop() { }
-void AudioController::Start(int32_t soundIndex) { (void)soundIndex; }
-void AudioController::Pause() { }
-void AudioController::Resume() { }
+  _DWORD *result; // eax
+  int v2; // esi
+  int v3; // ecx
+  int v4; // ebx
+  _DWORD *v5; // edi
 
-} // namespace game
-} // namespace ra2
-
-#include "object/object.hpp"
-
-namespace ra2 { namespace game {
-
-// --- AudioController ---
-
-bool AudioController::IsSoundEnabled() { return false; }
-
-} // namespace game
-} // namespace ra2
+  result = this; /*0x405d41*/
+  if ( g_AudioConfigState ) /*0x405d53*/
+  {
+    if ( (int *)*(this + 3) == &dword_87E294 ) /*0x405d60*/
+    {
+      v2 = *this; /*0x405d66*/
+      if ( *this ) /*0x405d66*/
+      {
+        if ( *(this + 2) == *(_DWORD *)(v2 + 36) /*0x405d93*/
+          && *(this + 1) == *(_DWORD *)(v2 + 312)
+          && (*(_BYTE *)(v2 + 24) & 1) == 0 )
+        {
+          v3 = *(_DWORD *)(v2 + 176); /*0x405d99*/
+          if ( v3 && v2 == *(_DWORD *)(v3 + 192) ) /*0x405da9*/
+          {
+            if ( (*(_BYTE *)(v2 + 24) & 2) != 0 ) /*0x405daf*/
+              Voice::Stop(); /*0x405db1*/
+            AudioStream::ReleaseChannel(*(_DWORD *)(v2 + 176)); /*0x405dbc*/
+            *(_DWORD *)(*(_DWORD *)(v2 + 176) + 192) = 0; /*0x405dc7*/
+            *(_DWORD *)(*(_DWORD *)(v2 + 176) + 188) = 0; /*0x405dd3*/
+            *(_DWORD *)(*(_DWORD *)(v2 + 176) + 180) = 0; /*0x405ddf*/
+            *(_DWORD *)(*(_DWORD *)(v2 + 176) + 184) = 0; /*0x405deb*/
+            *(_DWORD *)(*(_DWORD *)(v2 + 176) + 144) = 0; /*0x405df7*/
+            *(_DWORD *)(*(_DWORD *)(v2 + 176) + 152) = 0; /*0x405e03*/
+            *(_DWORD *)(*(_DWORD *)(v2 + 176) + 156) = 0; /*0x405e0f*/
+            result = this; /*0x405e15*/
+            *(_DWORD *)(v2 + 176) = 0; /*0x405e19*/
+          }
+          v4 = 0; /*0x405e26*/
+          if ( *(int *)(v2 + 168) > 0 ) /*0x405e2a*/
+          {
+            v5 = (_DWORD *)(v2 + 40); /*0x405e2d*/
+            do /*0x405e45*/
+            {
+              RefCount::Decrement(*v5); /*0x405e32*/
+              *v5 = 0; /*0x405e37*/
+              ++v4; /*0x405e3f*/
+              ++v5; /*0x405e40*/
+            }
+            while ( v4 < *(_DWORD *)(v2 + 168) ); /*0x405e45*/
+            result = this; /*0x405e47*/
+          }
+          *(_DWORD *)(v2 + 168) = 0; /*0x405e4c*/
+          *(_DWORD *)(v2 + 28) = 4; /*0x405e52*/
+          *(_DWORD *)(v2 + 312) = 0; /*0x405e59*/
+          *(_DWORD *)(v2 + 632) = 0; /*0x405e5f*/
+          *(_DWORD *)(v2 + 24) |= 1u; /*0x405e6b*/
+        }
+        *result = 0; /*0x405e6f*/
+      }
+    }
+  }
+  result[2] = 0; /*0x405e71*/
+  return result; /*0x405e74*/
+  result[2] = 0; /*0x405e71*/
+  return result; /*0x405e74*/
+  result[2] = 0; /*0x405e71*/
+  return result; /*0x405e74*/
+  result[2] = 0; /*0x405e71*/
+  return result; /*0x405e74*/
+  result[2] = 0; /*0x405e71*/
+  return result; /*0x405e74*/

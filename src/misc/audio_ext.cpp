@@ -6,111 +6,37 @@ namespace gamemd {
 
 // 0x55a7d0
 void Audio3D::ComputeRotation() {}
+  _DWORD *v3; // eax
+  int v4; // ebp
+  float v6; // [esp+0h] [ebp-88h]
+  int v7; // [esp+18h] [ebp-70h] BYREF
+  _DWORD v8[3]; // [esp+1Ch] [ebp-6Ch] BYREF
+  float v9[12]; // [esp+28h] [ebp-60h] BYREF
+  char v10[48]; // [esp+58h] [ebp-30h] BYREF
 
-// --- AudioBuffer ---
-
-// 0x409c40
-void AudioBuffer::InitializePlayback() {}
-
-// --- AudioChannel ---
-
-// 0x4010a0
-void AudioChannel::IsActive() {}
-// 0x402600
-void AudioChannel::DeactivatePlay() {}
-// 0x402650
-void AudioChannel::ActivatePlay() {}
-
-// --- AudioCodec ---
-
-// 0x7c81db
-void AudioCodec::Decode() {}
-
-// --- AudioConfig ---
-
-// 0x754be0
-void AudioConfig::InitDefault() {}
-
-// --- AudioEvent ---
-
-// 0x752db0
-void AudioEvent::LoadFromINI() {}
-
-// --- AudioFile ---
-
-// 0x4026a0
-void AudioFile::GetCallback() {}
-// 0x405fd0
-void AudioFile::Stop() {}
-
-// --- AudioFileClass ---
-
-// 0x405c00
-void AudioFileClass::Release() {}
-
-// --- AudioFrame ---
-
-// 0x407fb0
-void AudioFrame::ProcessAudioFrame() {}
-// 0x7535b0
-void AudioFrame::CounterInc() {}
-
-// --- AudioIndex ---
-
-// 0x401640
-void AudioIndex::GetSampleInformation() {}
-
-// --- AudioList ---
-
-// 0x407480
-void AudioList::GetNextEntry() {}
-
-// --- AudioNode ---
-
-// 0x408600
-void AudioNode::Release() {}
-
-// --- AudioOcclusion ---
-
-// 0x756bb0
-void AudioOcclusion::ComputeBoundingVertices() {}
-
-// --- AudioOptionsClass ---
-
-// 0x5fb160
-void AudioOptionsClass::ApplySettings() {}
-
-// --- AudioPool ---
-
-// 0x405190
-void AudioPool::ProcessQueue() {}
-
-// --- AudioSample ---
-
-// 0x4024a0
-void AudioSample::ResetState() {}
-// 0x407a90
-void AudioSample::Destructor() {}
-// 0x4080d0
-void AudioSample::IsBuffering() {}
-// 0x408840
-void AudioSample::InitLinkedList() {}
-// 0x408930
-void AudioSample::SetField() {}
-
-// --- AudioSource ---
-
-// 0x406130
-void AudioSource::Get() {}
-
-// --- AudioThread ---
-
-// 0x403920
-void AudioThread::UpdateStats() {}
-
-// --- AudioTimer ---
-
-// 0x408230
-void AudioTimer::DecrementAll() {}
-
-} // namespace gamemd
+  v3 = (_DWORD *)(*(_DWORD *)(a1 + 8) + 156); /*0x55a7de*/
+  v8[0] = *v3; /*0x55a7e5*/
+  v8[1] = v3[1]; /*0x55a7f1*/
+  v8[2] = v3[2]; /*0x55a7fd*/
+  v4 = *((unsigned __int8 *)Coord::To_Cell(&MapClass_Instance, v8) + 284); /*0x55a812*/
+  qmemcpy(v9, CopyAudioData(v10, v4), sizeof(v9)); /*0x55a828*/
+  v6 = (double)(int)((((unsigned int)((*ProgressTimer::GetValue((_WORD *)(*(_DWORD *)(a1 + 8) + 904), &v7) >> 10) + 1) >> 1) /*0x55a85a*/
+                    & 0x1F)
+                   - 8)
+     * -0.1963495408493621;
+  Matrix2D::Rotate(v9, v6); /*0x55a85d*/
+  if ( a3 && *a3 != -1 ) /*0x55a872*/
+  {
+    *a3 = 32 * (v4 + (*a3 << 6)); /*0x55a880*/
+    *a3 |= ((unsigned int)((*ProgressTimer::GetValue((_WORD *)(*(_DWORD *)(a1 + 8) + 904), &v7) >> 10) + 1) >> 1) & 0x1F; /*0x55a8a0*/
+  }
+  qmemcpy(a2, v9, 0x30u); /*0x55a8b4*/
+  return a2; /*0x55a8b6*/
+  qmemcpy(a2, v9, 0x30u); /*0x55a8b4*/
+  return a2; /*0x55a8b6*/
+  qmemcpy(a2, v9, 0x30u); /*0x55a8b4*/
+  return a2; /*0x55a8b6*/
+  qmemcpy(a2, v9, 0x30u); /*0x55a8b4*/
+  return a2; /*0x55a8b6*/
+  qmemcpy(a2, v9, 0x30u); /*0x55a8b4*/
+  return a2; /*0x55a8b6*/

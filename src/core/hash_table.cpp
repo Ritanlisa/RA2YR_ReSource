@@ -30,402 +30,222 @@ uint32_t Hash::ComputeHashSHA1(const void* data, uint32_t size)
 // 0x4f4410
 int Hash::InsertOrdered(void* table, const void* entry)
 {
-{
-  if ( this->vt_slot_44(a2) )
-    return 0;
-  if ( DataGlobal_A8EF54 )
-    (*(void (__thiscall **)(int, int))(*(_DWORD *)a2 + 16))(a2, DataGlobal_A8EF54);
+  if ( (*(unsigned __int8 (__thiscall **)(void *, int))(*(_DWORD *)table + 44))(table, entry) ) /*0x4f4418*/
+    return 0; /*0x4f441f*/
+  if ( dword_A8EF54 ) /*0x4f442c*/
+    (*(void (__thiscall **)(int, int))(*(_DWORD *)entry + 16))(entry, dword_A8EF54); /*0x4f4433*/
   else
-    DataGlobal_A8EF54 = a2;
-  return 1;
-}
-
-/* ASM:
-mov     eax, [ecx]
-push    esi
-mov     esi, [esp+4+arg_0]
-push    esi
-call    dword ptr [eax+2Ch]
-test    al, al
-jz      short loc_4F4425
-xor     al, al
-pop     esi
-retn    4
-; ---------------------------------------------------------------------------
-
-loc_4F4425:                             ; CODE XREF: Hash__InsertOrdered+D↑j
-mov     eax, dword_A8ED54+200h
-test    eax, eax
-jz      short loc_4F443C
-mov     edx, [esi]
-push    eax
-mov     ecx, esi
-call    dword ptr [edx+10h]
-mov     al, 1
-pop     esi
-retn    4
-; ---------------------------------------------------------------------------
-
-loc_4F443C:                             ; CODE XREF: Hash__InsertOrdered+1C↑j
-mov     dword_A8ED54+200h, esi
-mov     al, 1
-pop     esi
-retn    4
-*/
-
-// ============================================================================
-// SHA1 implementation (simplified — full SHA-1 is ~200 lines)
-// ============================================================================
-
-// SHA-1 constants
-static const uint32_t K[4] = {
-    0x5A827999, // t=0..19
-    0x6ED9EBA1, // t=20..39
-    0x8F1BBCDC, // t=40..59
-    0xCA62C1D6  // t=60..79
-};
-
-static inline uint32_t RotL(uint32_t x, int n) {
-    return (x << n) | (x >> (32 - n));
-}
-
-// SHA1::SHA1 -- constructor, calls Init()
-// unmatched: no callgraph reference and no git history record
-SHA1::SHA1()
-{
-    Init();
-    ;
-    ;
-}
-
-// SHA1::Init -- initialize SHA1 state (simplified reimpl; cf. IDA SHA1::Reset @ 0x69DFF0).
-void SHA1::Init()
-{
-    state[0] = 0x67452301;
-    state[1] = 0xEFCDAB89;
-    state[2] = 0x98BADCFE;
-    state[3] = 0x10325476;
-    state[4] = 0xC3D2E1F0;
-    count = 0;
-    buffer_index = 0;
-    memset(buffer, 0, sizeof(buffer));
-}
-
-// IDA 0x69DA00: Process
+    dword_A8EF54 = entry; /*0x4f443c*/
+  return 1; /*0x4f4421*/
 }
 // 0x69d960
 EditClass * * SHA1::Process(const void* data, uint32_t size)
 {
-{
   int result; // eax
+  int v5; // edi
+  int v6; // ebx
 
-  *(_BYTE *)this = 0;
-  SHA1::ProcessBlock(&a2, &a3);
-  result = a3;
-  if ( a3 )
+  *(_BYTE *)this = 0; /*0x69d96f*/
+  SHA1::ProcessBlock(&data, &size); /*0x69d972*/
+  result = size; /*0x69d977*/
+  if ( size ) /*0x69d97d*/
   {
-    int v5 = a2;
-    if ( a3 / 64 > 0 )
+    v5 = data; /*0x69d984*/
+    if ( size / 64 > 0 ) /*0x69d98f*/
     {
-      int v6 = a3 / 64;
-      do
+      v6 = size / 64; /*0x69d996*/
+      do /*0x69d9bb*/
       {
-        SHA1::Transform(v5, this + 6);
-        v5 += 64;
-        this->q02C += 64;
-        --v6;
-        a3 -= 64;
+        SHA1::Transform(v5, this + 6); /*0x69d99c*/
+        v5 += 64; /*0x69d9ab*/
+        *(&this->u32_41) += 64; /*0x69d9ad*/
+        --v6; /*0x69d9b6*/
+        size -= 64; /*0x69d9b7*/
       }
-      while ( v6 );
+      while ( v6 ); /*0x69d9bb*/
     }
-    a2 = v5;
-    return SHA1::ProcessBlock(&a2, &a3);
+    data = v5; /*0x69d9cb*/
+    return SHA1::ProcessBlock(&data, &size); /*0x69d9cf*/
   }
-  return result;
-}
-
-/* ASM:
-push    esi
-mov     esi, ecx
-lea     eax, [esp+4+arg_4]
-lea     ecx, [esp+4+arg_0]
-push    eax
-push    ecx
-mov     ecx, esi
-mov     byte ptr [esi], 0
-call    SHA1__ProcessBlock
-mov     eax, [esp+4+arg_4]
-test    eax, eax
-jz      short loc_69D9D5
-cdq
-and     edx, 3Fh
-push    edi
-mov     edi, [esp+8+arg_0]
-add     eax, edx
-sar     eax, 6
-test    eax, eax
-jle     short loc_69D9BF
-push    ebx
-push    ebp
-lea     ebp, [esi+18h]
-mov     ebx, eax
-
-loc_69D998:                             ; CODE XREF: SHA1__Process+5B↓j
-push    ebp
-push    edi
-mov     ecx, esi
-call    SHA1__Transform
-mov     ecx, [esi+2Ch]
-mov     eax, 40h ; '@'
-add     ecx, eax
-add     edi, eax
-mov     [esi+2Ch], ecx
-mov     ecx, [esp+10h+arg_4]
-sub     ecx, eax
-dec     ebx
-mov     [esp+10h+arg_4], ecx
-jnz     short loc_69D998
-pop     ebp
-pop     ebx
-
-loc_69D9BF:                             ; CODE XREF: SHA1__Process+2F↑j
-lea     edx, [esp+8+arg_4]
-lea     eax, [esp+8+arg_0]
-push    edx
-push    eax
-mov     ecx, esi
-mov     [esp+10h+arg_0], edi
-call    SHA1__ProcessBlock
-pop     edi
-
-loc_69D9D5:                             ; CODE XREF: SHA1__Process+1D↑j
-pop     esi
-retn    8
-*/
-
-// IDA 0x69DC00: Compute
+  return result; /*0x69d9d5*/
 }
 // 0x69d9e0
 int SHA1::Compute(uint8_t digest[20])
 {
-{
+  int v3; // edx
+  int v4; // ebx
+  unsigned int v5; // ebx
   int v6; // edx
   unsigned __int16 v7; // cx
   unsigned int *v8; // ecx
   int v9; // esi
+  unsigned int v10; // eax
   _BYTE v12[20]; // [esp+14h] [ebp-54h] BYREF
   _DWORD v13[16]; // [esp+28h] [ebp-40h] BYREF
 
-  if ( *(_BYTE *)this )
-    qmemcpy(a2, this + 1, 0x14u);
-  int v3 = this->q030;
-  int v4 = this->q02C;
-  qmemcpy(v13, this + 13, sizeof(v13));
-  unsigned int v5 = v3 + v4;
-  *((_BYTE *)v13 + v3) = 0x80;
-  qmemcpy(v12, this + 6, sizeof(v12));
-  if ( 64 - v3 >= 9 )
+  if ( *(_BYTE *)this ) /*0x69d9e9*/
+    qmemcpy(a2, &this->u32_4, 0x14u); /*0x69d9fb*/
+  v3 = *(&this->u32_42); /*0x69d9fd*/
+  v4 = *(&this->u32_41); /*0x69da00*/
+  qmemcpy(v13, &this->q034, sizeof(v13)); /*0x69da14*/
+  v5 = v3 + v4; /*0x69da18*/
+  *((_BYTE *)v13 + v3) = 0x80; /*0x69da29*/
+  qmemcpy(v12, &this->u32_18, sizeof(v12)); /*0x69da2e*/
+  if ( 64 - v3 >= 9 ) /*0x69da30*/
   {
-    v6 = v3 + 1;
+    v6 = v3 + 1; /*0x69da6a*/
   }
   else
   {
-    if ( v3 + 1 < 64 )
-      memset((char *)v13 + v3 + 1, 0, 63 - v3);
-    SHA1::Transform(v13, v12);
-    v6 = 0;
+    if ( v3 + 1 < 64 ) /*0x69da38*/
+      memset((char *)v13 + v3 + 1, 0, 63 - v3); /*0x69da4c*/
+    SHA1::Transform(v13, v12); /*0x69da61*/
+    v6 = 0; /*0x69da66*/
   }
-  memset((char *)v13 + v6, 0, 64 - v6);
-  LOBYTE(v7) = (8 * v5) >> 24;
-  HIBYTE(v7) = v5 >> 13;
-  v13[15] = (v5 << 27) | (v5 << 11) & 0xFF0000 | v7;
-  SHA1::Transform(v13, v12);
-  qmemcpy(this + 1, v12, 0x14u);
-  v8 = this + 1;
-  v9 = 5;
-  do
+  memset((char *)v13 + v6, 0, 64 - v6); /*0x69da7d*/
+  LOBYTE(v7) = (8 * v5) >> 24; /*0x69da99*/
+  HIBYTE(v7) = v5 >> 13; /*0x69da9e*/
+  v13[15] = (v5 << 27) | (v5 << 11) & 0xFF0000 | v7; /*0x69dab8*/
+  SHA1::Transform(v13, v12); /*0x69dac3*/
+  qmemcpy(&this->u32_4, v12, 0x14u); /*0x69dad6*/
+  v8 = &this->u32_4; /*0x69dad8*/
+  v9 = 5; /*0x69dada*/
+  do /*0x69db0b*/
   {
-    unsigned int v10 = *v8++;
-    --v9;
-    *(v8 - 1) = ((v10 & 0xFF00 | (v10 << 16)) << 8) | ((HIWORD(v10) | v10 & 0xFF0000) >> 8);
+    v10 = *v8++; /*0x69dadf*/
+    --v9; /*0x69db07*/
+    *(v8 - 1) = ((v10 & 0xFF00 | (v10 << 16)) << 8) | ((HIWORD(v10) | v10 & 0xFF0000) >> 8); /*0x69db08*/
   }
-  while ( v9 );
-  *(_BYTE *)this = 1;
-  qmemcpy(a2, this + 1, 0x14u);
-  return 20;
-}
-
-/* ASM:
-sub     esp, 58h
-push    ebx
-push    ebp
-mov     ebp, ecx
-push    esi
-push    edi
-cmp     byte ptr [ebp+0], 0
-jz      short loc_69D9FD
-mov     edi, [esp+68h+arg_0]
-lea     esi, [ebp+4]
-mov     ecx, 5
-rep movsd
-
-loc_69D9FD:                             ; CODE XREF: SHA1__Compute+D↑j
-mov     edx, [ebp+30h]
-mov     ebx, [ebp+2Ch]
-lea     esi, [ebp+34h]
-mov     ecx, 10h
-lea     edi, [esp+68h+var_40]
-mov     eax, 40h ; '@'
-rep movsd
-sub     eax, edx
-add     ebx, edx
-lea     esi, [ebp+18h]
-mov     ecx, 5
-lea     edi, [esp+68h+var_54]
-cmp     eax, 9
-mov     [esp+edx+68h+var_40], 80h
-rep movsd
-jge     short loc_69DA6A
-lea     ecx, [edx+1]
-cmp     ecx, 40h ; '@'
-jge     short loc_69DA55
-mov     ecx, 3Fh ; '?'
-lea     edi, [esp+edx+68h+var_3F]
-sub     ecx, edx
-xor     eax, eax
-mov     edx, ecx
-shr     ecx, 2
-rep stosd
-mov     ecx, edx
-and     ecx, 3
-rep stosb
-
-loc_69DA55:                             ; CODE XREF: SHA1__Compute+58↑j
-lea     eax, [esp+68h+var_54]
-lea     ecx, [esp+68h+var_40]
-push    eax
-push    ecx
-mov     ecx, ebp
-call    SHA1__Transform
-xor     edx, edx
-jmp     short loc_69DA6B
-; ---------------------------------------------------------------------------
-
-loc_69DA6A:                             ; CODE XREF: SHA1__Compute+50↑j
-inc     edx
-
-loc_69DA6B:                             ; CODE XREF: SHA1__Compute+88↑j
-mov     ecx, 40h ; '@'
-lea     edi, [esp+edx+68h+var_40]
-sub     ecx, edx
-xor     eax, eax
-mov     edx, ecx
-shr     ecx, 2
-rep stosd
-mov     ecx, edx
-mov     edx, ebx
-and     ecx, 3
-rep stosb
-lea     eax, ds:0[ebx*8]
-xor     ecx, ecx
-mov     [esp+68h+var_58], eax
-lea     eax, [esp+68h+var_54]
-mov     cl, byte ptr [esp+68h+var_58+3]
-push    eax
-mov     ch, byte ptr [esp+6Ch+var_58+2]
-shl     edx, 0Bh
-and     edx, 0FF0000h
-shl     ebx, 1Bh
-or      ecx, edx
-and     ebx, 0FF000000h
-or      ecx, ebx
-mov     [esp+6Ch+var_4], ecx
-lea     ecx, [esp+6Ch+var_40]
-push    ecx
-mov     ecx, ebp
-call    SHA1__Transform
-lea     edx, [ebp+4]
-mov     ecx, 5
-lea     esi, [esp+68h+var_54]
-mov     edi, edx
-rep movsd
-mov     ecx, edx
-mov     esi, 5
-
-loc_69DADF:                             ; CODE XREF: SHA1__Compute+12B↓j
-mov     eax, [ecx]
-add     ecx, 4
-mov     edi, eax
-mov     ebx, eax
-and     edi, 0FF0000h
-shr     ebx, 10h
-or      edi, ebx
-mov     ebx, eax
-shl     ebx, 10h
-and     eax, 0FF00h
-or      ebx, eax
-shr     edi, 8
-shl     ebx, 8
-or      edi, ebx
-dec     esi
-mov     [ecx-4], edi
-jnz     short loc_69DADF
-mov     edi, [esp+68h+arg_0]
-mov     ecx, 5
-mov     esi, edx
-mov     byte ptr [ebp+0], 1
-rep movsd
-pop     edi
-pop     esi
-pop     ebp
-mov     eax, 14h
-pop     ebx
-add     esp, 58h
-retn    4
-*/
-
-// Transform: process one 64-byte block
+  while ( v9 ); /*0x69db0b*/
+  *(_BYTE *)this = 1; /*0x69db18*/
+  qmemcpy(a2, &this->u32_4, 0x14u); /*0x69db1c*/
+  return 20; /*0x69db1e*/
 }
 // 0x69db30
 void SHA1::Transform()
 {
-    uint32_t w[80];
-    // Copy chunk into w[0..15]
-    for (int i = 0; i < 16; ++i) {
-        w[i] = ((uint32_t)(buffer[i * 4]) << 24) |
-               ((uint32_t)(buffer[i * 4 + 1]) << 16) |
-               ((uint32_t)(buffer[i * 4 + 2]) << 8) |
-               (uint32_t)(buffer[i * 4 + 3]);
-    }
-    // Extend w[16..79]
-    for (int i = 16; i < 80; ++i) {
-        w[i] = RotL(w[i - 3] ^ w[i - 8] ^ w[i - 14] ^ w[i - 16], 1);
-    }
+  int *v2; // ecx
+  int v3; // esi
+  int v4; // eax
+  int v5; // edi
+  int *v6; // ecx
+  int v7; // edx
+  int v8; // esi
+  int v9; // ebp
+  int v10; // eax
+  int v11; // ebx
+  unsigned int v12; // edx
+  int v13; // edi
+  int v14; // esi
+  unsigned int v15; // ebp
+  int v16; // ecx
+  int v17; // ecx
+  int v18; // ebx
+  int v19; // eax
+  unsigned int v20; // eax
+  bool v21; // cf
+  unsigned int v22; // ebp
+  unsigned int v23; // edx
+  unsigned int v24; // ebx
+  unsigned int v25; // eax
+  int v26; // ebx
+  int v27; // edx
+  unsigned int result; // eax
+  _DWORD *v29; // [esp+10h] [ebp-160h]
+  int v30; // [esp+14h] [ebp-15Ch]
+  int v31; // [esp+18h] [ebp-158h]
+  _DWORD v32[5]; // [esp+1Ch] [ebp-154h] BYREF
+  _BYTE v33[8]; // [esp+30h] [ebp-140h] BYREF
+  char v34; // [esp+38h] [ebp-138h] BYREF
 
-    uint32_t a = state[0], b = state[1], c = state[2], d = state[3], e = state[4];
-
-    for (int i = 0; i < 80; ++i) {
-        uint32_t f, k;
-        if (i < 20) {
-            f = (b & c) | ((~b) & d);
-            k = K[0];
-        } else if (i < 40) {
-            f = b ^ c ^ d;
-            k = K[1];
-        } else if (i < 60) {
-            f = (b & c) | (b & d) | (c & d);
-            k = K[2];
-        } else {
-            f = b ^ c ^ d;
-            k = K[3];
-        }
-        uint32_t temp = RotL(a, 5) + f + e + k + w[i];
-        e = d; d = c; c = RotL(b, 30); b = a; a = temp;
+  v2 = a1; /*0x69db30*/
+  v3 = 16; /*0x69db44*/
+  do /*0x69db76*/
+  {
+    v4 = *v2++; /*0x69db49*/
+    v5 = HIBYTE(v4) | ((v4 & 0xFF00 | (v4 << 16)) << 8); /*0x69db67*/
+    LOBYTE(v4) = 0; /*0x69db69*/
+    BYTE1(v4) = BYTE2(v4); /*0x69db6b*/
+    --v3; /*0x69db71*/
+    *(int *)((char *)v2 + v33 - (_BYTE *)a1 - 4) = (unsigned __int16)v4 | v5; /*0x69db72*/
+  }
+  while ( v3 ); /*0x69db76*/
+  v6 = (int *)&v34; /*0x69db78*/
+  v7 = 64; /*0x69db7c*/
+  do /*0x69dba2*/
+  {
+    v8 = *(v6 - 2); /*0x69db87*/
+    v9 = *v6; /*0x69db8a*/
+    v10 = v6[6] ^ v6[11]; /*0x69db8c*/
+    ++v6; /*0x69db8e*/
+    --v7; /*0x69db9e*/
+    v6[13] = (2 * (v9 ^ v8 ^ v10)) | ((v9 ^ v8 ^ (unsigned int)v10) >> 31); /*0x69db9f*/
+  }
+  while ( v7 ); /*0x69dba2*/
+  v11 = 0; /*0x69dbb4*/
+  qmemcpy(v32, a2, sizeof(v32)); /*0x69dbb6*/
+  v12 = v32[1]; /*0x69dbb8*/
+  v13 = v32[2]; /*0x69dbbc*/
+  v14 = v32[3]; /*0x69dbc0*/
+  v15 = v32[0]; /*0x69dbc4*/
+  v31 = 0; /*0x69dbcc*/
+  v29 = v33; /*0x69dbd0*/
+  do
+  {
+    if ( v11 >= 20 ) /*0x69dbd7*/
+    {
+      if ( v11 >= 40 && v11 < 60 ) /*0x69dbe9*/
+      {
+        v17 = v13 & v12 | v14 & (v13 | v12); /*0x69dbf5*/
+        goto LABEL_13; /*0x69dbf7*/
+      }
+      v16 = v13 ^ v12; /*0x69dbfb*/
     }
-
-    state[0] += a; state[1] += b; state[2] += c; state[3] += d; state[4] += e;
+    else
+    {
+      v16 = v12 & (v14 ^ v13); /*0x69dbdd*/
+    }
+    v17 = v14 ^ v16; /*0x69dbfd*/
+  LABEL_13:
+    if ( v11 >= 20 )
+    {
+      if ( v11 >= 40 )
+        v30 = v11 >= 60 ? -899497514 : -1894007588;
+      else
+        v30 = 1859775393; /*0x69dc13*/
+    }
+    else
+    {
+      v30 = 1518500249; /*0x69dc04*/
+    }
+    v18 = v32[4]; /*0x69dc4c*/
+    v19 = v17 + v30 + *v29 + ((32 * v15) | (v15 >> 27)); /*0x69dc50*/
+    v32[4] = v14; /*0x69dc5a*/
+    v20 = v18 + v19; /*0x69dc60*/
+    v14 = v13; /*0x69dc66*/
+    v13 = (v12 >> 2) | (v12 << 30); /*0x69dc68*/
+    v11 = v31 + 1; /*0x69dc6e*/
+    v12 = v15; /*0x69dc72*/
+    v21 = (unsigned int)(v31 + 1) < 0x50; /*0x69dc74*/
+    v15 = v20; /*0x69dc77*/
+    ++v31; /*0x69dc79*/
+    ++v29; /*0x69dc7d*/
+  }
+  while ( v21 );
+  v22 = v12 + a2[1]; /*0x69dc93*/
+  v23 = a2[3]; /*0x69dc95*/
+  v24 = v20 + *a2; /*0x69dc98*/
+  v25 = a2[4]; /*0x69dc9a*/
+  *a2 = v24; /*0x69dc9d*/
+  v26 = v13 + a2[2]; /*0x69dca4*/
+  a2[3] = v14 + v23; /*0x69dca6*/
+  v27 = v32[4]; /*0x69dca9*/
+  a2[1] = v22; /*0x69dcae*/
+  result = v27 + v25; /*0x69dcb1*/
+  a2[2] = v26; /*0x69dcb4*/
+  a2[4] = result; /*0x69dcb8*/
+  return result; /*0x69dcad*/
 }
-
 // PadMessage: append padding + length
 void SHA1::PadMessage()
 {
@@ -511,53 +331,21 @@ static const uint32_t crc32_table[256] = {
 // 0x4a1fb0
 int CRC32::Compute(const void* data, uint32_t size)
 {
-// 0x4a1fb0
-{
+  int v4; // edx
+  unsigned int v5; // eax
+  int v6; // esi
 
-  int v4 = a2 - 1;
-  unsigned int v5 = ~a3;
-  if ( a2 )
+  v4 = data - 1; /*0x4a1fb7*/
+  v5 = ~size; /*0x4a1fba*/
+  if ( data ) /*0x4a1fbc*/
   {
-    int v6 = v4 + 1;
-    do
+    v6 = v4 + 1; /*0x4a1fbf*/
+    do /*0x4a1fde*/
     {
-      v5 = CRC32_Table[*a1++ ^ (unsigned __int8)v5] ^ (v5 >> 8);
-      --v6;
+      v5 = CRC32_Table[*this++ ^ (unsigned __int8)v5] ^ (v5 >> 8); /*0x4a1fda*/
+      --v6; /*0x4a1fdd*/
     }
-    while ( v6 );
+    while ( v6 ); /*0x4a1fde*/
   }
-  return ~v5;
+  return ~v5; /*0x4a1fe3*/
 }
-
-/* ASM:
-mov     eax, [esp+arg_0]
-push    esi
-mov     esi, edx
-dec     edx
-test    esi, esi
-not     eax
-jz      short loc_4A1FE1
-push    ebx
-lea     esi, [edx+1]
-
-loc_4A1FC2:                             ; CODE XREF: CRC32__Compute+2E↓j
-mov     edx, eax
-xor     ebx, ebx
-mov     bl, [ecx]
-and     edx, 0FFh
-xor     edx, ebx
-shr     eax, 8
-mov     edx, CRC32_Table[edx*4]
-xor     eax, edx
-inc     ecx
-dec     esi
-jnz     short loc_4A1FC2
-pop     ebx
-
-loc_4A1FE1:                             ; CODE XREF: CRC32__Compute+C↑j
-not     eax
-pop     esi
-retn    4
-*/
-
-} // namespace gamemd

@@ -5,7 +5,5 @@
 // 0x643E60
 int LoadScreen::IsActive()
 {
-{
-  return this->q064 != 0; /*0x643e6a*/
-}
+  return *(this + 25) != 0; /*0x643e6a*/
 }

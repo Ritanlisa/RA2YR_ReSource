@@ -9,14 +9,26 @@
 namespace gamemd {
 BuildingTypeClass * * AudioClass::ProcessEvent()
 {
-{
+  int v2; // ecx
+  int *v3; // eax
   int i; // eax
   int result; // eax
   _DWORD *j; // edi
   __int16 *v7; // ecx
+  int v8; // eax
+  _DWORD *v9; // ebp
+  unsigned int v10; // ebx
+  unsigned int v11; // edx
+  unsigned int v12; // edi
+  int v13; // ecx
+  int v14; // ebx
+  unsigned int v15; // eax
+  float v16; // [esp+8h] [ebp-Ch]
   __int16 *v17; // [esp+Ch] [ebp-8h]
-  int v2 = 0; /*0x7228b6*/
-  CampaignClass *v3 = *(this + 61); /*0x7228b9*/
+  unsigned int v18; // [esp+10h] [ebp-4h]
+
+  v2 = 0; /*0x7228b6*/
+  v3 = *(this + 61); /*0x7228b9*/
   *(this + 60) = 0; /*0x7228bf*/
   if ( *v3 >= 0 ) /*0x7228cc*/
   {
@@ -30,8 +42,8 @@ BuildingTypeClass * * AudioClass::ProcessEvent()
   *v3 = 0; /*0x7228e0*/
   for ( i = Object::ComputeAllocationSize() - 1; i >= 0; *((_BYTE *)*(this + 62) + i + 1) = 0 ) /*0x7228ec*/
     --i; /*0x7228f4*/
-  LayerClass::CellIteratorReset(&DataGlobal_87F7E8); /*0x722901*/
-  result = LayerClass::CellIteratorNext(&DataGlobal_87F7E8); /*0x72290b*/
+  LayerClass::CellIteratorReset(&MapClass_Instance); /*0x722901*/
+  result = LayerClass::CellIteratorNext(&MapClass_Instance); /*0x72290b*/
   for ( j = (_DWORD *)result; result; j = (_DWORD *)result ) /*0x722914*/
   {
     if ( (int *)BuildingClass::FindByCellHash(j) == *(this + 38) /*0x722931*/
@@ -41,22 +53,22 @@ BuildingTypeClass * * AudioClass::ProcessEvent()
       v17 = (__int16 *)(j + 9); /*0x72294d*/
       (*(this + 63))[2 * (_DWORD)*(this + 60)] = j[9]; /*0x722953*/
       (*(this + 63))[2 * (_DWORD)*(this + 60) + 1] = 0; /*0x722962*/
-      int v8 = (int)*(this + 60); /*0x72296a*/
-      _DWORD * v9 = *(this + 61); /*0x722976*/
-      unsigned int v10 = (unsigned int)&(*(this + 63))[2 * v8]; /*0x72297c*/
+      v8 = (int)*(this + 60); /*0x72296a*/
+      v9 = *(this + 61); /*0x722976*/
+      v10 = (unsigned int)&(*(this + 63))[2 * v8]; /*0x72297c*/
       *(this + 60) = (int *)(v8 + 1); /*0x722980*/
-      unsigned int v11 = *v9 + 1; /*0x72298c*/
-      float v16 = *(float *)(v10 + 4); /*0x72298f*/
-      unsigned int v18 = v10; /*0x722996*/
-      unsigned int v12 = v11 >> 1; /*0x72299a*/
+      v11 = *v9 + 1; /*0x72298c*/
+      v16 = *(float *)(v10 + 4); /*0x72298f*/
+      v18 = v10; /*0x722996*/
+      v12 = v11 >> 1; /*0x72299a*/
       if ( v11 < v9[1] ) /*0x72299e*/
       {
         if ( v11 > 1 ) /*0x7229a3*/
         {
           do /*0x7229c3*/
           {
-            int v13 = v9[2]; /*0x7229a5*/
-            int v14 = *(_DWORD *)(v13 + 4 * v12); /*0x7229a8*/
+            v13 = v9[2]; /*0x7229a5*/
+            v14 = *(_DWORD *)(v13 + 4 * v12); /*0x7229a8*/
             if ( *(float *)(v14 + 4) <= (double)v16 ) /*0x7229b7*/
               break; /*0x7229b7*/
             *(_DWORD *)(v13 + 4 * v11) = v14; /*0x7229b9*/
@@ -68,7 +80,7 @@ BuildingTypeClass * * AudioClass::ProcessEvent()
           v10 = v18; /*0x7229c9*/
         }
         *(_DWORD *)(v9[2] + 4 * v11) = v10; /*0x7229d0*/
-        unsigned int v15 = v9[3]; /*0x7229d6*/
+        v15 = v9[3]; /*0x7229d6*/
         ++*v9; /*0x7229dc*/
         if ( v10 > v15 ) /*0x7229df*/
           v9[3] = v10; /*0x7229e1*/
@@ -77,9 +89,8 @@ BuildingTypeClass * * AudioClass::ProcessEvent()
       }
       *((_BYTE *)*(this + 62) + Cell::PosToIndex(v7)) = 1; /*0x7229f7*/
     }
-    result = LayerClass::CellIteratorNext(&DataGlobal_87F7E8); /*0x722a00*/
+    result = LayerClass::CellIteratorNext(&MapClass_Instance); /*0x722a00*/
   }
   return result; /*0x722a11*/
 }
-} // namespace gamemd
 }

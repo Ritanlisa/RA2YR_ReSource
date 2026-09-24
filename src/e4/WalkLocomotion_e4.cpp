@@ -12,62 +12,69 @@
 namespace gamemd {
 AbstractClass * * WalkLocomotion::MoveTo(IUnknown * aP1, int aP3)
 {
-{
-  IUnknown *v3; // edx
-  v3 = aP1; /*0x6a01a0*/
-  if ( aP1->field_0 != g_OverlayTypeConfig.field_0 /*0x6a01ce*/
-    || aP1->field_4 != g_OverlayTypeConfig.field_4
+  _DWORD *v3; // edx
   int v5; // eax
-    || (v5 = aP1->field_8, v5 != g_OverlayTypeConfig.field_8) )
+  int v6; // ebp
+  int v7; // eax
+  int v8; // ecx
+  _DWORD *v9; // ecx
+  int v10; // eax
+  int v11; // edi
+  int v12; // ebx
+  int v13; // eax
+  int v14; // ecx
+  int v15; // eax
+  int v16; // ecx
+  _DWORD v18[2]; // [esp+10h] [ebp-14h] BYREF
+  int v19; // [esp+18h] [ebp-Ch] BYREF
+  int v20; // [esp+1Ch] [ebp-8h]
+  int v21; // [esp+20h] [ebp-4h]
+
+  v3 = aP1; /*0x6a01a0*/
+  if ( *aP1 != g_OverlayTypeConfig || aP1[1] != qword_B077FC || (v5 = aP1[2], v5 != MEMORY[0xB07800]) ) /*0x6a01ce*/
   {
-    LOBYTE(v5) = this->ptr_60; /*0x6a01d4*/
-    int v6 = aP3; /*0x6a01d7*/
+    LOBYTE(v5) = *(_BYTE *)(this + 96); /*0x6a01d4*/
+    v6 = aP3; /*0x6a01d7*/
     if ( !(_BYTE)v5 ) /*0x6a01dd*/
     {
-      v5 = this->WalkLocomotion_field_0x58; /*0x6a01e3*/
+      v5 = *(_DWORD *)(this + 88); /*0x6a01e3*/
       if ( v5 != -1 ) /*0x6a01e9*/
       {
         v5 = byte_7F2A40[12 * v5]; /*0x6a01f2*/
         if ( v5 ) /*0x6a01fc*/
         {
-          int v7 = 4 * v5; /*0x6a0202*/
-          int v8 = dword_7F2960[v7]; /*0x6a0205*/
+          v7 = 4 * v5; /*0x6a0202*/
+          v8 = dword_7F2960[v7]; /*0x6a0205*/
           v5 = dword_7F296C[v7]; /*0x6a020b*/
           if ( v5 > -1 ) /*0x6a0214*/
           {
-            _DWORD * v9 = (_DWORD *)(v8 + 12 * v5); /*0x6a021d*/
+            v9 = (_DWORD *)(v8 + 12 * v5); /*0x6a021d*/
             aP3 = v9[2]; /*0x6a0223*/
-            if ( this->q05C < v5 ) /*0x6a022c*/
+            if ( *(_DWORD *)(this + 92) < v5 ) /*0x6a022c*/
             {
-              int v10 = v9[1]; /*0x6a0234*/
-  _DWORD v18[2]; // [esp+10h] [ebp-14h] BYREF
+              v10 = v9[1]; /*0x6a0234*/
               v18[0] = *v9; /*0x6a0237*/
               v18[1] = v10; /*0x6a023f*/
-              v5 = (int)WalkLocomotion::TransformCoords( /*0x6a0250*/
-                          (_DWORD *)this,
-  int v19; // [esp+18h] [ebp-Ch] BYREF
-                          (ObjectClass *)&v19,
-                          (IUnknown *)v18,
-                          (ObjectClass *)&aP3);
-              int v11 = *(_DWORD *)v5; /*0x6a0255*/
-              int v12 = *(_DWORD *)(v5 + 4); /*0x6a0259*/
+              v5 = WalkLocomotion::TransformCoords(&v19, v18, &aP3); /*0x6a0250*/
+              v11 = *(_DWORD *)v5; /*0x6a0255*/
+              v12 = *(_DWORD *)(v5 + 4); /*0x6a0259*/
               if ( !v6 ) /*0x6a025c*/
               {
-                int v13 = (*(int (__thiscall **)(_DWORD))(*this->q00C + 464))(this->q00C); /*0x6a0263*/
-                int v14 = this->q00C; /*0x6a0269*/
+                v13 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 12) + 464))(*(_DWORD *)(this + 12)); /*0x6a0263*/
+                v14 = *(_DWORD *)(this + 12); /*0x6a0269*/
                 v19 = v11; /*0x6a026c*/
-                int v20 = v12; /*0x6a0270*/
-                int v21 = v13; /*0x6a0274*/
+                v20 = v12; /*0x6a0270*/
+                v21 = v13; /*0x6a0274*/
                 (*(void (__thiscall **)(int, int *))(*(_DWORD *)v14 + 244))(v14, &v19); /*0x6a027f*/
-                LOBYTE(v5) = (*(char (__thiscall **)(_DWORD, IUnknown *))(*this->q00C + 244))( /*0x6a028f*/
-                               this->q00C,
+                LOBYTE(v5) = (*(int (__thiscall **)(_DWORD, _DWORD *))(**(_DWORD **)(this + 12) + 244))( /*0x6a028f*/
+                               *(_DWORD *)(this + 12),
                                aP1);
                 return v5; /*0x6a029c*/
               }
               if ( v6 == 1 || v6 == 3 ) /*0x6a02a7*/
               {
-                int v15 = (*(int (__thiscall **)(_DWORD))(*this->q00C + 464))(this->q00C); /*0x6a02ae*/
-                int v16 = this->q00C; /*0x6a02b4*/
+                v15 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 12) + 464))(*(_DWORD *)(this + 12)); /*0x6a02ae*/
+                v16 = *(_DWORD *)(this + 12); /*0x6a02b4*/
                 v21 = v15; /*0x6a02b7*/
                 v19 = v11; /*0x6a02bb*/
                 v20 = v12; /*0x6a02bf*/
@@ -82,22 +89,20 @@ AbstractClass * * WalkLocomotion::MoveTo(IUnknown * aP1, int aP3)
     if ( v6 ) /*0x6a02d6*/
     {
       if ( v6 == 1 || v6 == 3 ) /*0x6a02f6*/
-        LOBYTE(v5) = (*(char (__thiscall **)(_DWORD, IUnknown *))(*this->q00C + 240))( /*0x6a02fe*/
-                       this->q00C,
+        LOBYTE(v5) = (*(int (__thiscall **)(_DWORD, _DWORD *))(**(_DWORD **)(this + 12) + 240))( /*0x6a02fe*/
+                       *(_DWORD *)(this + 12),
                        v3);
     }
     else
     {
-      LOBYTE(v5) = (*(char (__thiscall **)(_DWORD, IUnknown *))(*this->q00C + 244))( /*0x6a02de*/
-                     this->q00C,
+      LOBYTE(v5) = (*(int (__thiscall **)(_DWORD, _DWORD *))(**(_DWORD **)(this + 12) + 244))( /*0x6a02de*/
+                     *(_DWORD *)(this + 12),
                      v3);
     }
   }
   return v5; /*0x6a0295*/
 }
-} // namespace gamemd
 }
-
 // 0x6A05F0
 namespace gamemd {
 int WalkLocomotion::ProcessCollision(char a2)
@@ -1406,7 +1411,7 @@ LABEL_31:
         v53[403] = v54 - 1;
       }
     }
-    if ( !(*(unsigned __int8 (__stdcall **)(int))(*(_DWORD *)v215 + 16))(v215) )
+    if ( !(*(unsigned __int8 (__stdcall **)(int))(this->u32_20)(v215) )
     {
       _DWORD * v56 = this->q00C;
       if ( v56[173] )
@@ -1579,7 +1584,7 @@ LABEL_125:
   if ( abs16(*(_WORD *)ProgressTimer::GetValue((_WORD *)(this->q00C + 904), &v220) - ((_WORD)v6 << 13)) )
   {
     LOWORD(a4) = (_WORD)v6 << 13;
-    (*(void (__stdcall **)(int, int))(*(_DWORD *)v215 + 76))(v215, a4);
+    (*(void (__stdcall **)(int, int))(this->q05C)(v215, a4);
     return 1;
   }
   LOWORD(v216) = v223 / 256;
@@ -2320,16 +2325,21 @@ LABEL_336:
 namespace gamemd {
 unsigned int * WalkLocomotion::TransformCoords(ObjectClass * aP1, IUnknown * aP2, ObjectClass * aP3)
 {
-{
+  int v4; // eax
+  int v5; // ebx
+  int v6; // edi
+  int v7; // esi
+  int v8; // edx
+  int v9; // ecx
 
-  int v4 = *(_DWORD *)aP3->__pad_0; /*0x6a3dbd*/
-  int v5 = dword_7F2A48[3 * this->q058]; /*0x6a3dc1*/
-  int v6 = aP2->field_0; /*0x6a3dcf*/
-  int v7 = aP2->field_4; /*0x6a3dd1*/
+  v4 = *aP3; /*0x6a3dbd*/
+  v5 = dword_7F2A48[3 * *(this + 22)]; /*0x6a3dc1*/
+  v6 = *aP2; /*0x6a3dcf*/
+  v7 = aP2[1]; /*0x6a3dd1*/
   if ( (v5 & 1) != 0 ) /*0x6a3dd4*/
   {
-    v6 = aP2->field_4; /*0x6a3dd8*/
-    v7 = aP2->field_0; /*0x6a3dda*/
+    v6 = aP2[1]; /*0x6a3dd8*/
+    v7 = *aP2; /*0x6a3dda*/
     v4 = (unsigned __int8)(-64 - v4); /*0x6a3de9*/
   }
   if ( (v5 & 2) != 0 ) /*0x6a3dee*/
@@ -2342,12 +2352,11 @@ unsigned int * WalkLocomotion::TransformCoords(ObjectClass * aP1, IUnknown * aP2
     v7 = -v7; /*0x6a3e05*/
     v4 = (unsigned __int8)(0x80 - v4); /*0x6a3e0d*/
   }
-  *(_DWORD *)aP3->__pad_0 = v4; /*0x6a3e0f*/
-  IUnknown *v8 = this->q040; /*0x6a3e12*/
-  int v9 = this->q044; /*0x6a3e15*/
-  *(_DWORD *)aP1->__pad_0 = v6 + v8; /*0x6a3e22*/
-  *(_DWORD *)&aP1->__pad_0[4] = v7 + v9; /*0x6a3e25*/
-  return aP1->__pad_0; /*0x6a3e20*/
+  *aP3 = v4; /*0x6a3e0f*/
+  v8 = *(this + 16); /*0x6a3e12*/
+  v9 = *(this + 17); /*0x6a3e15*/
+  *aP1 = v6 + v8; /*0x6a3e22*/
+  aP1[1] = v7 + v9; /*0x6a3e25*/
+  return aP1; /*0x6a3e20*/
 }
-} // namespace gamemd
 }

@@ -8,30 +8,29 @@
 namespace gamemd {
 char sub_6DA770()
 {
-{
-    int *v0;
-    int v1;
-    bool v2;
-    HouseClass *v3;
-    if ( g_SelectionManager != (wchar_t *)1 )
-    return 0;
-    v0 = *(int **)g_ObjectClass_CurrentCount;
-    if ( !(*(int (__thiscall **)(int))(**(int **)g_ObjectClass_CurrentCount + 60))(*(int *)g_ObjectClass_CurrentCount) )
-    return 0;
-    v1 = *v0;
-    if ( g_GameMode_Current[0] )
+  int *v0; // esi
+  int v1; // eax
+  bool v2; // zf
+  #375 *v3; // eax
+
+  if ( g_SelectionManager != (wchar_t *)1 ) /*0x6da779*/
+    return 0; /*0x6da779*/
+  v0 = *(int **)g_ObjectClass_CurrentCount; /*0x6da780*/
+  if ( !(*(int (__thiscall **)(_DWORD))(**(_DWORD **)g_ObjectClass_CurrentCount + 60))(*(_DWORD *)g_ObjectClass_CurrentCount) ) /*0x6da786*/
+    return 0; /*0x6da786*/
+  v1 = *v0; /*0x6da796*/
+  if ( g_GameMode_Current[0] ) /*0x6da798*/
   {
-    v3 = (HouseClass *)(*(int (__thiscall **)(int *))(v1 + 60))(v0);
-    v2 = (unsigned char)House::IsHumanPlayer(v3) == 0;
+    v3 = (#375 *)(*(int (__thiscall **)(int *))(v1 + 60))(v0); /*0x6da7a7*/
+    v2 = (unsigned __int8)House::IsHumanPlayer(v3) == 0; /*0x6da7b1*/
   }
-    else
+  else
   {
-    v2 = *(char *)((*(int (__thiscall **)(int *))(v1 + 60))(v0) + 493) == 0;
+    v2 = *(_BYTE *)((*(int (__thiscall **)(int *))(v1 + 60))(v0) + 493) == 0; /*0x6da7a3*/
   }
-    if ( !v2 )
-    return 0;
-    (*(void (__thiscall **)(int *))(*v0 + 336))(v0);
-    return 1;
-}
+  if ( !v2 ) /*0x6da7b3*/
+    return 0; /*0x6da7c3*/
+  (*(void (__thiscall **)(int *))(*v0 + 336))(v0); /*0x6da7b9*/
+  return 1; /*0x6da7c1*/
 }
 } // namespace gamemd

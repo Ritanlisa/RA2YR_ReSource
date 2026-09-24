@@ -5,14 +5,17 @@
 // 0x4A3020
 int IStream::Read(IStream * pstm, void * pv, ULONG cb)
 {
-{
+  _DWORD *v3; // ecx
+  _DWORD *v4; // esi
+  void *v5; // ecx
   HRESULT result; // eax
+  void *v7; // [esp+20h] [ebp-4h] BYREF
 
-  _DWORD * v3 = v3; /*0x4a3026*/
-  void * v7 = pv; /*0x4a302d*/
+  v4 = v3; /*0x4a3026*/
+  v7 = pv; /*0x4a302d*/
   WriteCompressionBlock(v3[7], &v7, v3[8]); /*0x4a303e*/
-  void * v5 = v7; /*0x4a3043*/
-  _DWORD * v4 = 0x10000; /*0x4a304a*/
+  v5 = v7; /*0x4a3043*/
+  v4[10] = 0x10000; /*0x4a304a*/
   pv = 0; /*0x4a3051*/
   v4[9] = v5; /*0x4a3059*/
   if ( !v4[2] ) /*0x4a305b*/
@@ -34,5 +37,4 @@ int IStream::Read(IStream * pstm, void * pv, ULONG cb)
     }
   }
   return result; /*0x4a3088*/
-}
 }

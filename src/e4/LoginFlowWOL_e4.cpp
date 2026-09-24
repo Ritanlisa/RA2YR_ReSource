@@ -8,7 +8,8 @@
 namespace gamemd {
 void sub_786EF0()
 {
-{
+  const char *v1; // [esp-8h] [ebp-110h]
+  int v2; // [esp-4h] [ebp-10Ch]
   char Buffer[260]; // [esp+4h] [ebp-104h] BYREF
 
   if ( dword_B77DF8 == -2147221385 /*0x786f26*/
@@ -23,19 +24,19 @@ void sub_786EF0()
       switch ( dword_B77DF8 ) /*0x786f78*/
       {
         case -2147221390: /*0x786f78*/
-          int v2 = dword_B77E50; /*0x786f99*/
-          const char * v1 = aHttpApiregiste_1; /*0x786f9a*/
+          v2 = dword_B77E50; /*0x786f99*/
+          v1 = aHttpApiregiste_1; /*0x786f9a*/
           goto LABEL_16; /*0x786f9f*/
         case -2147221388: /*0x786f78*/
-          sprintf(Buffer, DataGlobal_84B4C4, dword_B77E50); /*0x786fac*/
+          sprintf(Buffer, "http://apiregister.westwood.com/support/disabled_%d.html", dword_B77E50); /*0x786fac*/
           break; /*0x786fac*/
         case -2147221387: /*0x786f78*/
-          sprintf(Buffer, DataGlobal_84B484, dword_B77E50); /*0x786fb9*/
+          sprintf(Buffer, "http://apiregister.westwood.com/support/serialbanned_%d.html", dword_B77E50); /*0x786fb9*/
           break; /*0x786fb9*/
         case -2147221386: /*0x786f78*/
           v2 = dword_B77E50; /*0x786fbb*/
-          v1 = stru_84B448; /*0x786fbc*/
-LABEL_16:
+          v1 = aHttpApiregiste_4; /*0x786fbc*/
+  LABEL_16:
           sprintf(Buffer, v1, v2); /*0x786fc1*/
           break; /*0x786fc6*/
         case -2147221385: /*0x786f78*/
@@ -57,25 +58,22 @@ LABEL_16:
     return 0; /*0x786f3b*/
   }
 }
-} // namespace gamemd
 }
-
 // 0x72BCA0
 namespace gamemd {
 char sub_72BCA0()
 {
-{
-    char result;
-    result = DataGlobal_B0FD45;
-    if ( !DataGlobal_B0FD45 )
+  char result; // al
+
+  result = byte_B0FD45; /*0x72bca0*/
+  if ( !byte_B0FD45 ) /*0x72bca7*/
   {
-    if ( g_DisplayWidth == 800 )
-    DataGlobal_B0FA98 = LoadFileSHP(DataGlobal_844DB4, (bool *)&DataGlobal_B0FD44);
-    result = LoadPaletteSimple(DataGlobal_844DB8, &DataGlobal_B0FD48, &DataGlobal_B0FD4C);
-    DataGlobal_B0FD45 = 1;
+    if ( g_DisplayWidth == 800 ) /*0x72bcb3*/
+      dword_B0FA98 = LoadFileSHP(off_844DB4, (bool *)&byte_B0FD44); /*0x72bcc5*/
+    result = LoadPaletteSimple(off_844DB8, &dword_B0FD48, &dword_B0FD4C); /*0x72bcda*/
+    byte_B0FD45 = 1; /*0x72bcdf*/
   }
-    return result;
-}
+  return result; /*0x72bce6*/
 }
 } // namespace gamemd
 
@@ -83,34 +81,33 @@ char sub_72BCA0()
 namespace gamemd {
 void sub_72BCF0()
 {
-{
-    void *v0;
-    if ( DataGlobal_B0FD45 )
+  void *v0; // esi
+
+  if ( byte_B0FD45 ) /*0x72bcfa*/
   {
-    if ( DataGlobal_B0FD44 )
+    if ( byte_B0FD44 ) /*0x72bd02*/
     {
-    v0 = DataGlobal_B0FA98;
-    if ( DataGlobal_B0FA98 )
+      v0 = dword_B0FA98; /*0x72bd05*/
+      if ( dword_B0FA98 ) /*0x72bd0d*/
       {
-    FileTreeNode::Destroy(DataGlobal_B0FA98);
-    __3_YAXPAX_Z(v0);
+        FileTreeNode::Destroy(dword_B0FA98); /*0x72bd11*/
+        __3_YAXPAX_Z(v0); /*0x72bd17*/
       }
-    DataGlobal_B0FD44 = 0;
+      byte_B0FD44 = 0; /*0x72bd1f*/
     }
-    DataGlobal_B0FA98 = 0;
-    if ( DataGlobal_B0FD48 )
+    dword_B0FA98 = 0; /*0x72bd2b*/
+    if ( dword_B0FD48 ) /*0x72bd33*/
     {
-    __3_YAXPAX_Z(DataGlobal_B0FD48);
-    DataGlobal_B0FD48 = 0;
+      __3_YAXPAX_Z(dword_B0FD48); /*0x72bd36*/
+      dword_B0FD48 = 0; /*0x72bd3e*/
     }
-    if ( DataGlobal_B0FD4C )
+    if ( dword_B0FD4C ) /*0x72bd4c*/
     {
-    (**(void (__thiscall ***)(int, int))DataGlobal_B0FD4C)(DataGlobal_B0FD4C, 1);
-    DataGlobal_B0FD4C = 0;
+      (**(void (__thiscall ***)(int, int))dword_B0FD4C)(dword_B0FD4C, 1); /*0x72bd52*/
+      dword_B0FD4C = 0; /*0x72bd54*/
     }
   }
-    DataGlobal_B0FD45 = 0;
-}
+  byte_B0FD45 = 0; /*0x72bd5a*/
 }
 } // namespace gamemd
 
@@ -118,18 +115,17 @@ void sub_72BCF0()
 namespace gamemd {
 char sub_72C600()
 {
-{
-    char result;
-    result = DataGlobal_B0FD09;
-    if ( !DataGlobal_B0FD09 )
+  char result; // al
+
+  result = byte_B0FD09; /*0x72c600*/
+  if ( !byte_B0FD09 ) /*0x72c607*/
   {
-    if ( g_DisplayWidth == 800 )
-    DataGlobal_B0FB0C = LoadFileSHP(DataGlobal_844D8C, (bool *)&DataGlobal_B0FD08);
-    result = LoadPaletteSimple(DataGlobal_844D90, &DataGlobal_B0FD0C, &DataGlobal_B0FD10);
-    DataGlobal_B0FD09 = 1;
+    if ( g_DisplayWidth == 800 ) /*0x72c613*/
+      dword_B0FB0C = LoadFileSHP(off_844D8C, (bool *)&byte_B0FD08); /*0x72c625*/
+    result = LoadPaletteSimple(off_844D90, &dword_B0FD0C, &dword_B0FD10); /*0x72c63a*/
+    byte_B0FD09 = 1; /*0x72c63f*/
   }
-    return result;
-}
+  return result; /*0x72c646*/
 }
 } // namespace gamemd
 
@@ -137,34 +133,33 @@ char sub_72C600()
 namespace gamemd {
 void sub_72C650()
 {
-{
-    void *v0;
-    if ( DataGlobal_B0FD09 )
+  void *v0; // esi
+
+  if ( byte_B0FD09 ) /*0x72c65a*/
   {
-    if ( DataGlobal_B0FD08 )
+    if ( byte_B0FD08 ) /*0x72c662*/
     {
-    v0 = DataGlobal_B0FB0C;
-    if ( DataGlobal_B0FB0C )
+      v0 = dword_B0FB0C; /*0x72c665*/
+      if ( dword_B0FB0C ) /*0x72c66d*/
       {
-    FileTreeNode::Destroy(DataGlobal_B0FB0C);
-    __3_YAXPAX_Z(v0);
+        FileTreeNode::Destroy(dword_B0FB0C); /*0x72c671*/
+        __3_YAXPAX_Z(v0); /*0x72c677*/
       }
-    DataGlobal_B0FD08 = 0;
+      byte_B0FD08 = 0; /*0x72c67f*/
     }
-    DataGlobal_B0FB0C = 0;
-    if ( DataGlobal_B0FD0C )
+    dword_B0FB0C = 0; /*0x72c68b*/
+    if ( dword_B0FD0C ) /*0x72c693*/
     {
-    __3_YAXPAX_Z(DataGlobal_B0FD0C);
-    DataGlobal_B0FD0C = 0;
+      __3_YAXPAX_Z(dword_B0FD0C); /*0x72c696*/
+      dword_B0FD0C = 0; /*0x72c69e*/
     }
-    if ( DataGlobal_B0FD10 )
+    if ( dword_B0FD10 ) /*0x72c6ac*/
     {
-    (**(void (__thiscall ***)(int, int))DataGlobal_B0FD10)(DataGlobal_B0FD10, 1);
-    DataGlobal_B0FD10 = 0;
+      (**(void (__thiscall ***)(int, int))dword_B0FD10)(dword_B0FD10, 1); /*0x72c6b2*/
+      dword_B0FD10 = 0; /*0x72c6b4*/
     }
   }
-    DataGlobal_B0FD09 = 0;
-}
+  byte_B0FD09 = 0; /*0x72c6ba*/
 }
 } // namespace gamemd
 
@@ -172,43 +167,42 @@ void sub_72C650()
 namespace gamemd {
 int sub_786390()
 {
-{
-    HANDLE *v1;
-    BYTE Data[4];
-    HKEY phkResult;
-    DWORD cbData;
-    DWORD Type;
-    CHAR SubKey[256];
-    if ( DataGlobal_B77E75 )
-    return 1;
-    DataGlobal_B77E75 = 1;
-    LoadNetworkShareStrings();
-    Game::ResetFlags();
-    Network::InitPlayerSlots();
-    *(int *)Data = 0;
-    if ( g_Str_SOFTWARE_Westwood_Yuri_s_Reven )
+  HANDLE *v1; // esi
+  BYTE Data[4]; // [esp+0h] [ebp-110h] BYREF
+  HKEY phkResult; // [esp+4h] [ebp-10Ch] BYREF
+  DWORD cbData; // [esp+8h] [ebp-108h] BYREF
+  DWORD Type; // [esp+Ch] [ebp-104h] BYREF
+  CHAR SubKey[256]; // [esp+10h] [ebp-100h] BYREF
+
+  if ( byte_B77E75 ) /*0x78639d*/
+    return 1; /*0x78639f*/
+  byte_B77E75 = 1; /*0x7863ad*/
+  LoadNetworkShareStrings(); /*0x7863b4*/
+  Game::ResetFlags(); /*0x7863b9*/
+  Network::InitPlayerSlots(); /*0x7863be*/
+  *(_DWORD *)Data = 0; /*0x7863c8*/
+  if ( g_Str_SOFTWARE_Westwood_Yuri_s_Reven ) /*0x7863d2*/
   {
-    if ( strlen(g_Str_SOFTWARE_Westwood_Yuri_s_Reven) )
+    if ( strlen(g_Str_SOFTWARE_Westwood_Yuri_s_Reven) ) /*0x7863da*/
     {
-    strcpy(SubKey, g_Str_SOFTWARE_Westwood_Yuri_s_Reven);
-    if ( !RegOpenKeyExA(HKEY_LOCAL_MACHINE, SubKey, 0, 0x20019u, &phkResult) )
+      strcpy(SubKey, g_Str_SOFTWARE_Westwood_Yuri_s_Reven); /*0x786405*/
+      if ( !RegOpenKeyExA(HKEY_LOCAL_MACHINE, SubKey, 0, 0x20019u, &phkResult) ) /*0x786420*/
       {
-    cbData = 4;
-    RegQueryValueExA(phkResult, DataGlobal_84A940, 0, &Type, Data, &cbData);
-    RegCloseKey(phkResult);
+        cbData = 4; /*0x786445*/
+        RegQueryValueExA(phkResult, off_84A940, 0, &Type, Data, &cbData); /*0x78644d*/
+        RegCloseKey(phkResult); /*0x786458*/
       }
     }
   }
-    *(int *)Data = Data[0];
-    DataGlobal_B77E50 = Data[0];
-    g_NetworkRematchState = Data[0] + 10496;
-    ResetSystemWOL();
-    DataGlobal_B77DC0 = 1;
-    v1 = &Handles;
-    do
-    *v1++ = CreateEventA(0, 0, 0, 0);
-    while ( (int)v1 < (int)g_WOL_RequestObject );
-    return InitializeWestwoodOnline(g_hInstance);
-}
+  *(_DWORD *)Data = Data[0]; /*0x786467*/
+  dword_B77E50 = Data[0]; /*0x78646b*/
+  g_NetworkRematchState = Data[0] + 10496; /*0x786475*/
+  ResetSystemWOL(); /*0x78647a*/
+  byte_B77DC0 = 1; /*0x786485*/
+  v1 = &Handles; /*0x78648c*/
+  do /*0x7864a6*/
+    *v1++ = CreateEventA(0, 0, 0, 0); /*0x78649b*/
+  while ( (int)v1 < (int)g_WOL_RequestObject ); /*0x7864a6*/
+  return InitializeWestwoodOnline(g_hInstance); /*0x7863a4*/
 }
 } // namespace gamemd

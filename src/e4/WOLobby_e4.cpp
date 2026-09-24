@@ -17,56 +17,55 @@
 namespace gamemd {
 int INIClass::WOLobby_Play()
 {
-{
-  const char *v1; // edx
-  Coord *v2; // ebx
+  LPVOID v2; // ebx
   int result; // eax
   int i; // esi
-  __int16 v9; // [esp+244h] [ebp-4h]
-  v2 = (int)*(&g_MatrixTransformState + 2263); /*0x5e3857*/
-  if ( *(&g_MatrixTransformState + 2263) ) /*0x5e3864*/
-  {
+  char *v6; // eax
   char v7[108]; // [esp+14h] [ebp-234h] BYREF
+  _DWORD v8[113]; // [esp+80h] [ebp-1C8h] BYREF
+  __int16 v9; // [esp+244h] [ebp-4h]
+  char v10; // [esp+246h] [ebp-2h]
+
+  v2 = ppv; /*0x5e3857*/
+  if ( ppv ) /*0x5e3864*/
+  {
     memset(v7, 0, sizeof(v7)); /*0x5e3875*/
-    strcpy(&v7[36], this->__pad_0); /*0x5e3892*/
-    return v2->vt_slot_56(v7, v1); /*0x5e38a3*/
+    strcpy(&v7[36], a1); /*0x5e3892*/
+    return (*(int (__stdcall **)(LPVOID, char *, const char *))(*(_DWORD *)v2 + 56))(v2, v7, a2); /*0x5e38a3*/
   }
   else
   {
-  _DWORD v8[113]; // [esp+80h] [ebp-1C8h] BYREF
     memset(v8, 0, sizeof(v8)); /*0x5e38c6*/
     v9 = 0; /*0x5e38c8*/
-    char v10 = 0; /*0x5e38ca*/
+    v10 = 0; /*0x5e38ca*/
     v8[0] = 24; /*0x5e38d5*/
-    strcpy((char *)&v8[1], &HouseClass_Player[30260]); /*0x5e38f6*/
-    strcpy((char *)&v8[11] + 3, v1); /*0x5e3915*/
-    *(_DWORD *)&HouseClass_Player[39595] = Session::GetPlayerColor(&HouseClass_Player[29932]); /*0x5e392d*/
-    *(_DWORD *)&HouseClass_Player[39599] = WideString::Hash((wchar_t *)&HouseClass_Player[39108]); /*0x5e3937*/
-    result = *(_DWORD *)&HouseClass_Player[40248]; /*0x5e393c*/
-    for ( i = 1; i < *(int *)&HouseClass_Player[40248]; ++i ) /*0x5e3948*/
+    strcpy((char *)&v8[1], g_GameSetupBuffer); /*0x5e38f6*/
+    strcpy((char *)&v8[11] + 3, a2); /*0x5e3915*/
+    dword_A8D7F7 = Session::GetPlayerColor(g_GameMode_Current); /*0x5e392d*/
+    dword_A8D7FB = WideString::Hash(g_CurrentPlayerName); /*0x5e3937*/
+    result = Game_PlayerCount; /*0x5e393c*/
+    for ( i = 1; i < Game_PlayerCount; ++i ) /*0x5e3948*/
     {
-      char * v6 = ToWideStringChar(*(IUnknown **)(*(_DWORD *)&HouseClass_Player[40236] + 4 * i)); /*0x5e3953*/
-      if ( !_strcmpi(v6, this) ) /*0x5e3959*/
+      v6 = ToWideStringChar(*(char **)(Game_PlayerInfoArray + 4 * i)); /*0x5e3953*/
+      if ( !_strcmpi(v6, a1) ) /*0x5e3959*/
       {
         Debug::Log(); /*0x5e3974*/
         Network::SendMessage( /*0x5e39a0*/
-          (int)&HouseClass_Player[44148],
+          (int)g_NetworkManager,
           (int)v8,
           455,
           1,
-          *(_DWORD *)(*(_DWORD *)&HouseClass_Player[40236] + 4 * i) + 40,
+          *(_DWORD *)(Game_PlayerInfoArray + 4 * i) + 40,
           0,
           0);
         Event::Dispatch(); /*0x5e39a5*/
       }
-      result = *(_DWORD *)&HouseClass_Player[40248]; /*0x5e39aa*/
+      result = Game_PlayerCount; /*0x5e39aa*/
     }
   }
   return result; /*0x5e38a6*/
 }
-} // namespace gamemd
 }
-
 // 0x78F7F0
 int WOLobby::SetupDlgProc(HWND hDlg, unsigned int a2, unsigned int nIDDlgItem, HWND hWnd)
 {
@@ -2120,17 +2119,16 @@ LABEL_33:
 namespace gamemd {
 wchar_t ** WOLobby_Setup(wchar_t ** a1, HWND a2, LPARAM a3)
 {
-{
-    LPARAM lParam[2];
-    void *v7;
-    unknown_libname_74(&v7);
-    lParam[0] = a3;
-    lParam[1] = -1;
-    SendMessageA(a2, 0x4E9u, 0, (LPARAM)lParam);
-    WideString::AssignFromPtr(a1, (const wchar_t **)&v7);
-    DeleteAndZero::Alt(&v7);
-    return a1;
-}
+  LPARAM lParam[2]; // [esp+8h] [ebp-Ch] BYREF
+  void *v7; // [esp+10h] [ebp-4h] BYREF
+
+  unknown_libname_74(&v7); /*0x603f6d*/
+  lParam[0] = a3; /*0x603f83*/
+  lParam[1] = -1; /*0x603f87*/
+  SendMessageA(a2, 0x4E9u, 0, (LPARAM)lParam); /*0x603f8f*/
+  WideString::AssignFromPtr(a1, (const wchar_t **)&v7); /*0x603f9c*/
+  DeleteAndZero::Alt(&v7); /*0x603fa5*/
+  return a1; /*0x603fac*/
 }
 } // namespace gamemd
 
@@ -2138,18 +2136,17 @@ wchar_t ** WOLobby_Setup(wchar_t ** a1, HWND a2, LPARAM a3)
 namespace gamemd {
 char sub_72BAC0()
 {
-{
-    char result;
-    result = DataGlobal_B0FD51;
-    if ( !DataGlobal_B0FD51 )
+  char result; // al
+
+  result = byte_B0FD51; /*0x72bac0*/
+  if ( !byte_B0FD51 ) /*0x72bac7*/
   {
-    if ( g_DisplayWidth == 800 )
-    DataGlobal_B0FB2C = LoadFileSHP(DataGlobal_844DBC, (bool *)&DataGlobal_B0FD50);
-    result = LoadPaletteSimple(DataGlobal_844DC0, &DataGlobal_B0FD54, &DataGlobal_B0FD58);
-    DataGlobal_B0FD51 = 1;
+    if ( g_DisplayWidth == 800 ) /*0x72bad3*/
+      dword_B0FB2C = LoadFileSHP(off_844DBC, (bool *)&byte_B0FD50); /*0x72bae5*/
+    result = LoadPaletteSimple(off_844DC0, &dword_B0FD54, &dword_B0FD58); /*0x72bafa*/
+    byte_B0FD51 = 1; /*0x72baff*/
   }
-    return result;
-}
+  return result; /*0x72bb06*/
 }
 } // namespace gamemd
 
@@ -2157,34 +2154,33 @@ char sub_72BAC0()
 namespace gamemd {
 void sub_72BB10()
 {
-{
-    void *v0;
-    if ( DataGlobal_B0FD51 )
+  void *v0; // esi
+
+  if ( byte_B0FD51 ) /*0x72bb1a*/
   {
-    if ( DataGlobal_B0FD50 )
+    if ( byte_B0FD50 ) /*0x72bb22*/
     {
-    v0 = DataGlobal_B0FB2C;
-    if ( DataGlobal_B0FB2C )
+      v0 = dword_B0FB2C; /*0x72bb25*/
+      if ( dword_B0FB2C ) /*0x72bb2d*/
       {
-    FileTreeNode::Destroy(DataGlobal_B0FB2C);
-    __3_YAXPAX_Z(v0);
+        FileTreeNode::Destroy(dword_B0FB2C); /*0x72bb31*/
+        __3_YAXPAX_Z(v0); /*0x72bb37*/
       }
-    DataGlobal_B0FD50 = 0;
+      byte_B0FD50 = 0; /*0x72bb3f*/
     }
-    DataGlobal_B0FB2C = 0;
-    if ( DataGlobal_B0FD54 )
+    dword_B0FB2C = 0; /*0x72bb4b*/
+    if ( dword_B0FD54 ) /*0x72bb53*/
     {
-    __3_YAXPAX_Z(DataGlobal_B0FD54);
-    DataGlobal_B0FD54 = 0;
+      __3_YAXPAX_Z(dword_B0FD54); /*0x72bb56*/
+      dword_B0FD54 = 0; /*0x72bb5e*/
     }
-    if ( DataGlobal_B0FD58 )
+    if ( dword_B0FD58 ) /*0x72bb6c*/
     {
-    (**(void (__thiscall ***)(int, int))DataGlobal_B0FD58)(DataGlobal_B0FD58, 1);
-    DataGlobal_B0FD58 = 0;
+      (**(void (__thiscall ***)(int, int))dword_B0FD58)(dword_B0FD58, 1); /*0x72bb72*/
+      dword_B0FD58 = 0; /*0x72bb74*/
     }
   }
-    DataGlobal_B0FD51 = 0;
-}
+  byte_B0FD51 = 0; /*0x72bb7a*/
 }
 } // namespace gamemd
 
@@ -2192,27 +2188,26 @@ void sub_72BB10()
 namespace gamemd {
 CampaignScore * WOLobby_Get(wchar_t ** a1, HWND a2, WPARAM wParam)
 {
-{
-    wchar_t *StringCSF;
-    LRESULT v5;
-    char v7[108];
-    if ( wParam == -1 )
+  wchar_t *StringCSF; // eax
+  LRESULT v5; // eax
+  char v7[108]; // [esp+4h] [ebp-6Ch] BYREF
+
+  if ( wParam == -1 ) /*0x78109d*/
   {
-    StringCSF = GetStringCSF((wchar_t *)&DataGlobal_830620[19864], 0, g_Str_File_wonline_cpp, 3050);
+    StringCSF = GetStringCSF(aSttLobbylistus, 0, g_Str_File_wonline_cpp, 3050); /*0x7810a4*/
   }
-    else
+  else
   {
-    v5 = SendMessageA(a2, 0x199u, wParam, 0);
-    if ( v5 >= 0 && v5 < (int)g_WOL_State )
+    v5 = SendMessageA(a2, 0x199u, wParam, 0); /*0x7810af*/
+    if ( v5 >= 0 && v5 < (int)g_WOL_State ) /*0x7810c1*/
     {
-    qmemcpy(v7, &g_WOL_ConnectionFlags[3 * v5], sizeof(v7));
-    FormatWOLPlayerInfo(a1, v7);
-    return (CampaignScore *)a1;
+      qmemcpy(v7, (char *)g_WOL_ConnectionFlags + 108 * v5, sizeof(v7)); /*0x7810ee*/
+      FormatWOLPlayerInfo(a1, v7); /*0x7810f2*/
+      return a1; /*0x7810ff*/
     }
-    StringCSF = GetStringCSF((wchar_t *)&DataGlobal_830620[19864], 0, g_Str_File_wonline_cpp, 3055);
+    StringCSF = GetStringCSF(aSttLobbylistus, 0, g_Str_File_wonline_cpp, 3055); /*0x781113*/
   }
-    WideString::Assign(a1, (CampaignScore *)StringCSF);
-    return (CampaignScore *)a1;
-}
+  WideString::Assign(a1, StringCSF); /*0x78111b*/
+  return a1; /*0x7810fb*/
 }
 } // namespace gamemd

@@ -6,19 +6,14 @@
 namespace gamemd {
 void Function_643E80()
 {
-{
-  this->q004 = a2; /*0x643e84*/
+  *(this + 1) = a2; /*0x643e84*/
   return a2; /*0x643e87*/
 }
-} // namespace gamemd
 }
-
 // 0x645D00
 namespace gamemd {
 int Function::645D00(int a2)
 {
-{
-    return this + 4 * a2;
-}
+  return this + 4 * a2; /*0x645d07*/
 }
 } // namespace gamemd

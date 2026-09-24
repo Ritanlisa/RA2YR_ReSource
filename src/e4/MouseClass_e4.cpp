@@ -5,71 +5,68 @@
 // 0x6D1770
 char MouseClass::ToggleContextGadget(int a1, int a2)
 {
-{
-    unsigned int v2;
-    char *v3;
-    unsigned int v5;
-    char *v6;
-    if ( a1 == 4551 )
-  {
-    v2 = g_ObjectTrackingPool[DataGlobal_B0CC1C];
-    if ( v2 <= 0x18 )
-    {
-    v3 = (char *)&DataGlobal_B0C1C0 + 96 * v2;
-    if ( v3 )
-      {
-    if ( !v3[45] )
-    GadgetClass::Show(v3);
-      }
-    }
-    return 1;
-  }
-    else if ( a1 == 4552 )
-  {
-    v5 = g_ObjectTrackingPool[DataGlobal_B0CC1C];
-    if ( v5 <= 0x18 )
-    {
-    v6 = (char *)&DataGlobal_B0C1C0 + 96 * v5;
-    if ( v6 )
-      {
-    if ( v6[45] )
-    GadgetClass::Hide(v6);
-      }
-    }
-    return 1;
-  }
-    else
-  {
-    return 0;
-  }
-}
-}
+  unsigned int v2; // eax
+  char *v3; // ecx
+  unsigned int v5; // eax
+  char *v6; // ecx
 
+  if ( a1 == 4551 ) /*0x6d1779*/
+  {
+    v2 = g_ObjectTrackingPool[dword_B0CC1C]; /*0x6d1780*/
+    if ( v2 <= 0x18 ) /*0x6d1789*/
+    {
+      v3 = (char *)&unk_B0C1C0 + 96 * v2; /*0x6d1796*/
+      if ( v3 ) /*0x6d179e*/
+      {
+        if ( !v3[45] ) /*0x6d17a0*/
+          GadgetClass::Show(v3); /*0x6d17a7*/
+      }
+    }
+    return 1; /*0x6d17ac*/
+  }
+  else if ( a1 == 4552 ) /*0x6d17b6*/
+  {
+    v5 = g_ObjectTrackingPool[dword_B0CC1C]; /*0x6d17be*/
+    if ( v5 <= 0x18 ) /*0x6d17c7*/
+    {
+      v6 = (char *)&unk_B0C1C0 + 96 * v5; /*0x6d17d4*/
+      if ( v6 ) /*0x6d17dc*/
+      {
+        if ( v6[45] ) /*0x6d17de*/
+          GadgetClass::Hide(v6); /*0x6d17e5*/
+      }
+    }
+    return 1; /*0x6d17ea*/
+  }
+  else
+  {
+    return 0; /*0x6d17ef*/
+  }
+}
 // 0x72DDB0
 char MouseClass::LoadCursors()
 {
-{
-    char result;
-    result = DataGlobal_B0FBE0;
-    if ( !DataGlobal_B0FBE0 )
+  char result; // al
+
+  result = byte_B0FBE0; /*0x72ddb0*/
+  if ( !byte_B0FBE0 ) /*0x72ddb7*/
   {
-    AssetClass::ReleaseAndReload();
-    DataGlobal_B0FAC4 = LoadFileSHP(DataGlobal_844CD4, (bool *)&DataGlobal_B0FC95);
-    DataGlobal_B0F9DC = LoadFileSHP(DataGlobal_844CD8, (bool *)&DataGlobal_B0FC96);
-    DataGlobal_B0FAC0 = LoadFileSHP(DataGlobal_844CDC, (bool *)&DataGlobal_B0FC97);
-    g_DialogControlPool = LoadFileSHP(DataGlobal_844CE0, (bool *)&DataGlobal_B0FC98);
-    DataGlobal_B0FA04 = LoadFileSHP(DataGlobal_844CE4, (bool *)&DataGlobal_B0FC99);
-    DataGlobal_B0FAF8 = LoadFileSHP(DataGlobal_844CE8, (bool *)&DataGlobal_B0FC9A);
-    DataGlobal_B0FA74 = LoadFileSHP(DataGlobal_844CEC, (bool *)&DataGlobal_B0FC9B);
-    DataGlobal_B0FA38 = LoadFileSHP(DataGlobal_844CF0, (bool *)&DataGlobal_B0FC9C);
-    DataGlobal_B0FAE8 = LoadFileSHP(DataGlobal_844CF4, (bool *)&DataGlobal_B0FC9D);
-    DataGlobal_B0FA54 = LoadFileSHP(DataGlobal_844CF8, (bool *)&DataGlobal_B0FC9E);
-    LoadPaletteSimple(DataGlobal_844BE4, &DataGlobal_B0FBC8, &DataGlobal_B0FBCC);
-    LoadPaletteSimple(DataGlobal_844BE8, &DataGlobal_B0FBD0, &DataGlobal_B0FBD4);
-    LoadPaletteSimple(DataGlobal_844BEC, &DataGlobal_B0FBD8, &DataGlobal_B0FBDC);
-    result = SetupMouseClassResources(g_DisplayWidth, DataGlobal_8A00A8);
-    DataGlobal_B0FBE0 = 1;
+    AssetClass::ReleaseAndReload(); /*0x72ddbd*/
+    dword_B0FAC4 = LoadFileSHP(off_844CD4, (bool *)&byte_B0FC95); /*0x72dddd*/
+    dword_B0F9DC = LoadFileSHP(off_844CD8, (bool *)&byte_B0FC96); /*0x72ddf2*/
+    dword_B0FAC0 = LoadFileSHP(off_844CDC, (bool *)&byte_B0FC97); /*0x72de07*/
+    g_DialogControlPool = LoadFileSHP(off_844CE0, (bool *)&byte_B0FC98); /*0x72de1c*/
+    dword_B0FA04 = LoadFileSHP(off_844CE4, (bool *)&byte_B0FC99); /*0x72de31*/
+    dword_B0FAF8 = LoadFileSHP(off_844CE8, (bool *)&byte_B0FC9A); /*0x72de46*/
+    dword_B0FA74 = LoadFileSHP(off_844CEC, (bool *)&byte_B0FC9B); /*0x72de5b*/
+    dword_B0FA38 = LoadFileSHP(off_844CF0, (bool *)&byte_B0FC9C); /*0x72de70*/
+    dword_B0FAE8 = LoadFileSHP(off_844CF4, (bool *)&byte_B0FC9D); /*0x72de85*/
+    dword_B0FA54 = LoadFileSHP(off_844CF8, (bool *)&byte_B0FC9E); /*0x72de9f*/
+    LoadPaletteSimple(off_844BE4, &dword_B0FBC8, &dword_B0FBCC); /*0x72dea4*/
+    LoadPaletteSimple(off_844BE8, &dword_B0FBD0, &dword_B0FBD4); /*0x72deb9*/
+    LoadPaletteSimple(off_844BEC, &dword_B0FBD8, &dword_B0FBDC); /*0x72dece*/
+    result = SetupMouseClassResources(g_DisplayWidth, MEMORY[0x8A00A8]); /*0x72dedf*/
+    byte_B0FBE0 = 1; /*0x72dee4*/
   }
-    return result;
-}
+  return result; /*0x72deeb*/
 }

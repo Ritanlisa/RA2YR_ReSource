@@ -6,58 +6,60 @@
 // 0x47B3A0
 long long Isometric::InitTables(IUnknown * aP1)
 {
-{
+  char v2; // al
   __int64 result; // rax
+  int v5; // ecx
+  double v6; // st7
 
-  char v2 = DataGlobal_89E770; /*0x47b3a9*/
-  if ( (DataGlobal_89E770 & 1) == 0 ) /*0x47b3b3*/
+  v2 = byte_89E770; /*0x47b3a9*/
+  if ( (byte_89E770 & 1) == 0 ) /*0x47b3b3*/
   {
-    v2 = DataGlobal_89E770 | 1; /*0x47b3bb*/
-    DataGlobal_89E770 |= 1u; /*0x47b3bd*/
-    *(double *)&DataGlobal_89E720 = (double)DataGlobal_89E7C0; /*0x47b3c2*/
+    v2 = byte_89E770 | 1; /*0x47b3bb*/
+    byte_89E770 |= 1u; /*0x47b3bd*/
+    dbl_89E720 = (double)dword_89E7C0; /*0x47b3c2*/
   }
   if ( (v2 & 2) == 0 ) /*0x47b3ca*/
   {
     v2 |= 2u; /*0x47b3d8*/
-    DataGlobal_89E770 = v2; /*0x47b3da*/
-    DataGlobal_89E740 = *(double *)&DataGlobal_89E720 * 0.00390625; /*0x47b3df*/
+    byte_89E770 = v2; /*0x47b3da*/
+    dbl_89E740 = dbl_89E720 * 0.00390625; /*0x47b3df*/
   }
   if ( (v2 & 4) == 0 ) /*0x47b3e7*/
   {
-    DataGlobal_89E770 = v2 | 4; /*0x47b3f5*/
-    DataGlobal_81C918[0] = DataGlobal_89E720; /*0x47b3ff*/
-    DataGlobal_81C940 = DataGlobal_89E720; /*0x47b40e*/
-    DataGlobal_81C960 = DataGlobal_89E720; /*0x47b41d*/
-    DataGlobal_81C968 = DataGlobal_89E720; /*0x47b433*/
-    DataGlobal_81C988 = DataGlobal_89E720; /*0x47b442*/
-    DataGlobal_81C990 = DataGlobal_89E720; /*0x47b451*/
-    qword_81C9B8 = DataGlobal_89E720; /*0x47b461*/
-    qword_81C9E0 = DataGlobal_89E720; /*0x47b470*/
-    dbl_81C9B0 = -*(double *)&DataGlobal_89E720; /*0x47b47a*/
-    DataGlobal_81C920 = 0; /*0x47b482*/
-    DataGlobal_81C924 = 0; /*0x47b48c*/
-    DataGlobal_81C928 = 0; /*0x47b496*/
-    DataGlobal_81C92C = 0; /*0x47b4a0*/
-    DataGlobal_81C930 = 0; /*0x47b4aa*/
-    DataGlobal_81C934 = 1072693248; /*0x47b4b4*/
-    DataGlobal_81C938 = 0; /*0x47b4be*/
-    DataGlobal_81C93C = 0; /*0x47b4c8*/
-    DataGlobal_81C948 = 0; /*0x47b4d2*/
-    DataGlobal_81C94C = 0; /*0x47b4dc*/
-    DataGlobal_81C950 = 0; /*0x47b4e6*/
-    DataGlobal_81C954 = -1074790400; /*0x47b4f0*/
-    DataGlobal_81C958 = 0; /*0x47b4fa*/
-    DataGlobal_81C95C = 0; /*0x47b504*/
-    DataGlobal_81C970 = 0; /*0x47b50e*/
-    DataGlobal_81C974 = 0; /*0x47b518*/
-    DataGlobal_81C978 = 0; /*0x47b522*/
-    DataGlobal_81C97C = 0; /*0x47b52c*/
-    DataGlobal_81C980 = 0; /*0x47b536*/
-    DataGlobal_81C984 = -1074790400; /*0x47b540*/
-    DataGlobal_81C998 = 0; /*0x47b54a*/
-    DataGlobal_81C99C = 0; /*0x47b554*/
-    DataGlobal_81C9A0 = 0; /*0x47b55e*/
-    DataGlobal_81C9A4 = 1072693248; /*0x47b568*/
+    byte_89E770 = v2 | 4; /*0x47b3f5*/
+    *(double *)qword_81C918 = dbl_89E720; /*0x47b3ff*/
+    qword_81C940 = *(_QWORD *)&dbl_89E720; /*0x47b40e*/
+    qword_81C960 = *(_QWORD *)&dbl_89E720; /*0x47b41d*/
+    qword_81C968 = *(_QWORD *)&dbl_89E720; /*0x47b433*/
+    qword_81C988 = *(_QWORD *)&dbl_89E720; /*0x47b442*/
+    qword_81C990 = *(_QWORD *)&dbl_89E720; /*0x47b451*/
+    qword_81C9B8 = *(_QWORD *)&dbl_89E720; /*0x47b461*/
+    qword_81C9E0 = *(_QWORD *)&dbl_89E720; /*0x47b470*/
+    dbl_81C9B0 = -dbl_89E720; /*0x47b47a*/
+    dword_81C920 = 0; /*0x47b482*/
+    dword_81C924 = 0; /*0x47b48c*/
+    dword_81C928 = 0; /*0x47b496*/
+    dword_81C92C = 0; /*0x47b4a0*/
+    dword_81C930 = 0; /*0x47b4aa*/
+    dword_81C934 = 1072693248; /*0x47b4b4*/
+    dword_81C938 = 0; /*0x47b4be*/
+    dword_81C93C = 0; /*0x47b4c8*/
+    dword_81C948 = 0; /*0x47b4d2*/
+    dword_81C94C = 0; /*0x47b4dc*/
+    dword_81C950 = 0; /*0x47b4e6*/
+    dword_81C954 = -1074790400; /*0x47b4f0*/
+    dword_81C958 = 0; /*0x47b4fa*/
+    dword_81C95C = 0; /*0x47b504*/
+    dword_81C970 = 0; /*0x47b50e*/
+    dword_81C974 = 0; /*0x47b518*/
+    dword_81C978 = 0; /*0x47b522*/
+    dword_81C97C = 0; /*0x47b52c*/
+    dword_81C980 = 0; /*0x47b536*/
+    dword_81C984 = -1074790400; /*0x47b540*/
+    dword_81C998 = 0; /*0x47b54a*/
+    dword_81C99C = 0; /*0x47b554*/
+    dword_81C9A0 = 0; /*0x47b55e*/
+    dword_81C9A4 = 1072693248; /*0x47b568*/
     dword_81C9A8 = 0; /*0x47b572*/
     dword_81C9AC = 1072693248; /*0x47b57c*/
     dword_81C9C0 = 0; /*0x47b586*/
@@ -74,16 +76,16 @@ long long Isometric::InitTables(IUnknown * aP1)
     dword_81C9F4 = -1074790400; /*0x47b5f9*/
     dword_81C9F8 = 0; /*0x47b603*/
     dword_81C9FC = -1074790400; /*0x47b60d*/
-    qword_81CA00 = DataGlobal_89E720; /*0x47b617*/
-    qword_81CA08 = DataGlobal_89E720; /*0x47b627*/
-    qword_81CA30 = DataGlobal_89E720; /*0x47b63c*/
-    qword_81CA58 = DataGlobal_89E720; /*0x47b64b*/
-    qword_81CA78 = DataGlobal_89E720; /*0x47b65b*/
-    qword_81CA80 = DataGlobal_89E720; /*0x47b66a*/
-    qword_81CAA8 = DataGlobal_89E720; /*0x47b67b*/
-    qword_81CAC8 = DataGlobal_89E720; /*0x47b68b*/
-    dbl_81CAA0 = *(double *)&DataGlobal_89E720 + *(double *)&DataGlobal_89E720; /*0x47b692*/
-    dbl_81CAF8 = *(double *)&DataGlobal_89E720 + *(double *)&DataGlobal_89E720; /*0x47b698*/
+    qword_81CA00 = *(_QWORD *)&dbl_89E720; /*0x47b617*/
+    qword_81CA08 = *(_QWORD *)&dbl_89E720; /*0x47b627*/
+    qword_81CA30 = *(_QWORD *)&dbl_89E720; /*0x47b63c*/
+    qword_81CA58 = *(_QWORD *)&dbl_89E720; /*0x47b64b*/
+    qword_81CA78 = *(_QWORD *)&dbl_89E720; /*0x47b65b*/
+    qword_81CA80 = *(_QWORD *)&dbl_89E720; /*0x47b66a*/
+    qword_81CAA8 = *(_QWORD *)&dbl_89E720; /*0x47b67b*/
+    qword_81CAC8 = *(_QWORD *)&dbl_89E720; /*0x47b68b*/
+    dbl_81CAA0 = dbl_89E720 + dbl_89E720; /*0x47b692*/
+    dbl_81CAF8 = dbl_89E720 + dbl_89E720; /*0x47b698*/
     dword_81CA10 = 0; /*0x47b6a0*/
     dword_81CA14 = 0; /*0x47b6aa*/
     dword_81CA18 = 0; /*0x47b6b4*/
@@ -118,7 +120,7 @@ long long Isometric::InitTables(IUnknown * aP1)
     dword_81CABC = 1072693248; /*0x47b7d6*/
     dword_81CAC0 = 0; /*0x47b7e0*/
     dword_81CAC4 = -1074790400; /*0x47b7ea*/
-    qword_81CAD0 = DataGlobal_89E720; /*0x47b7fa*/
+    qword_81CAD0 = *(_QWORD *)&dbl_89E720; /*0x47b7fa*/
     dword_81CAD8 = 0; /*0x47b805*/
     dword_81CADC = 0; /*0x47b80f*/
     dword_81CAE0 = 0; /*0x47b819*/
@@ -130,22 +132,22 @@ long long Isometric::InitTables(IUnknown * aP1)
     dword_81CB00 = 0; /*0x47b855*/
     dword_81CB04 = 0; /*0x47b85f*/
     dword_81CB08 = 0; /*0x47b869*/
-    dbl_81CB20 = *(double *)&DataGlobal_89E720 + *(double *)&DataGlobal_89E720; /*0x47b873*/
-    dbl_81CB40 = *(double *)&DataGlobal_89E720 + *(double *)&DataGlobal_89E720; /*0x47b879*/
-    dbl_81CB48 = *(double *)&DataGlobal_89E720 + *(double *)&DataGlobal_89E720; /*0x47b87f*/
-    dbl_81CB70 = *(double *)&DataGlobal_89E720 + *(double *)&DataGlobal_89E720; /*0x47b885*/
-    qword_81CB18 = DataGlobal_89E720; /*0x47b89b*/
-    dbl_81CB98 = *(double *)&DataGlobal_89E720 * 0.5; /*0x47b8ab*/
-    dbl_81CBA0 = *(double *)&DataGlobal_89E720 * 0.5; /*0x47b8b1*/
-    dbl_81CBC0 = *(double *)&DataGlobal_89E720 * 0.5; /*0x47b8b7*/
-    qword_81CB68 = DataGlobal_89E720; /*0x47b8c9*/
-    qword_81CBB8 = DataGlobal_89E720; /*0x47b8da*/
-    dbl_81CBC8 = *(double *)&DataGlobal_89E720 * -0.5; /*0x47b8e4*/
-    qword_81CC08 = DataGlobal_89E720; /*0x47b8f5*/
+    dbl_81CB20 = dbl_89E720 + dbl_89E720; /*0x47b873*/
+    dbl_81CB40 = dbl_89E720 + dbl_89E720; /*0x47b879*/
+    dbl_81CB48 = dbl_89E720 + dbl_89E720; /*0x47b87f*/
+    dbl_81CB70 = dbl_89E720 + dbl_89E720; /*0x47b885*/
+    qword_81CB18 = *(_QWORD *)&dbl_89E720; /*0x47b89b*/
+    dbl_81CB98 = dbl_89E720 * 0.5; /*0x47b8ab*/
+    dbl_81CBA0 = dbl_89E720 * 0.5; /*0x47b8b1*/
+    dbl_81CBC0 = dbl_89E720 * 0.5; /*0x47b8b7*/
+    qword_81CB68 = *(_QWORD *)&dbl_89E720; /*0x47b8c9*/
+    qword_81CBB8 = *(_QWORD *)&dbl_89E720; /*0x47b8da*/
+    dbl_81CBC8 = dbl_89E720 * -0.5; /*0x47b8e4*/
+    qword_81CC08 = *(_QWORD *)&dbl_89E720; /*0x47b8f5*/
     dword_81CB0C = -1074790400; /*0x47b8ff*/
-    dbl_81CBE8 = *(double *)&DataGlobal_89E720 * 0.5; /*0x47b909*/
-    dbl_81CBF0 = *(double *)&DataGlobal_89E720 * 0.5; /*0x47b90f*/
-    dbl_81CC10 = *(double *)&DataGlobal_89E720 * 0.5; /*0x47b915*/
+    dbl_81CBE8 = dbl_89E720 * 0.5; /*0x47b909*/
+    dbl_81CBF0 = dbl_89E720 * 0.5; /*0x47b90f*/
+    dbl_81CC10 = dbl_89E720 * 0.5; /*0x47b915*/
     dword_81CB10 = 0; /*0x47b91b*/
     dword_81CB14 = 1072693248; /*0x47b925*/
     dword_81CB28 = 0; /*0x47b92f*/
@@ -182,23 +184,21 @@ long long Isometric::InitTables(IUnknown * aP1)
     dword_81CBFC = 0; /*0x47ba65*/
     dword_81CC00 = 0; /*0x47ba6f*/
     dword_81CC04 = 0; /*0x47ba79*/
-    *(double *)&qword_81CC18 = *(double *)&DataGlobal_89E720 * -0.5; /*0x47ba89*/
+    *(double *)&qword_81CC18 = dbl_89E720 * -0.5; /*0x47ba89*/
   }
-  result = Math::RoundToInt((double)(DataGlobal_89E7C0 * this->u32_11B) + 0.5); /*0x47bab0*/
-  if ( this->u8_11C ) /*0x47bab5*/
+  result = Math::RoundToInt((double)(dword_89E7C0 * *(char *)(this + 283)) + 0.5); /*0x47bab0*/
+  if ( *(_BYTE *)(this + 284) ) /*0x47bab5*/
   {
-    int v5 = 40 * (*(unsigned __int8 *)(&this->u32_704) - 1); /*0x47baec*/
-  double v6; // st7
-    v6 = (double)(unsigned __int8)aP1->field_4 * *(double *)(v5 + 8505608) * DataGlobal_89E740 /*0x47bb17*/
-       + (double)(unsigned __int8)aP1->field_0 * *(double *)(v5 + 8505600) * DataGlobal_89E740
+    v5 = 40 * (*(unsigned __int8 *)(this + 284) - 1); /*0x47baec*/
+    v6 = (double)(unsigned __int8)aP1[1] * *(double *)(v5 + 8505608) * dbl_89E740 /*0x47bb17*/
+       + (double)(unsigned __int8)*aP1 * *(double *)(v5 + 8505600) * dbl_89E740
        + *(double *)(v5 + 8505616)
        + *(double *)(v5 + 8505632);
     if ( v6 < 0.0 ) /*0x47bb28*/
       v6 = 0.0; /*0x47bb2c*/
-    if ( v6 > *(double *)&DataGlobal_81C918[5 * *(unsigned __int8 *)(&this->u32_704) - 5] ) /*0x47bb3d*/
-      v6 = *(double *)&DataGlobal_81C918[5 * *(unsigned __int8 *)(&this->u32_704) - 5]; /*0x47bb41*/
+    if ( v6 > *(double *)&qword_81C918[5 * *(unsigned __int8 *)(this + 284) - 5] ) /*0x47bb3d*/
+      v6 = *(double *)&qword_81C918[5 * *(unsigned __int8 *)(this + 284) - 5]; /*0x47bb41*/
     return Math::RoundToInt(v6); /*0x47bb4d*/
   }
   return result; /*0x47bb54*/
-}
 }

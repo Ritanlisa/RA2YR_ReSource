@@ -5,22 +5,21 @@
 // 0x53ECE0
 unsigned int * NetworkAddress::Assign(unsigned int * a1, IUnknown * aP2, short a4)
 {
-{
-    int *result;
-    int *v5;
-    result = this;
-    v5 = this + 1;
-    *v5 = aP2->field_0;
-    *((short *)(v5) + 2) = aP2->field_4;
-    if ( DataGlobal_828140 == 1 )
+  _DWORD *result; // eax
+  char *v5; // ecx
+
+  result = this; /*0x53ece4*/
+  v5 = (char *)(this + 1); /*0x53ece9*/
+  *(_DWORD *)v5 = *(_DWORD *)aP2; /*0x53ecec*/
+  *((_WORD *)v5 + 2) = *(_WORD *)(aP2 + 4); /*0x53ecf4*/
+  if ( dword_828140 == 1 ) /*0x53ed01*/
   {
-    *result = *a1;
+    *result = *a1; /*0x53ed09*/
   }
-    else
+  else
   {
-    *result = 0;
-    *(short *)result = a4;
+    *result = 0; /*0x53ed13*/
+    *(_WORD *)result = a4; /*0x53ed19*/
   }
-    return result;
-}
+  return result; /*0x53ecf3*/
 }

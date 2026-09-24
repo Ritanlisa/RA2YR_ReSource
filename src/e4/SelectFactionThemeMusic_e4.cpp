@@ -8,20 +8,19 @@
 namespace gamemd {
 int sub_732210(int a1, const char * a2)
 {
-{
-    int v2;
-    int v3;
-    const char **i;
-    v2 = *(int *)(a1 + 16);
-    v3 = 0;
-    if ( v2 <= 0 )
-    return -1;
-    for ( i = *(const char ***)(a1 + 4); strcmp(a2, *i); ++i )
+  int v2; // eax
+  int v3; // edi
+  const char **i; // ebp
+
+  v2 = *(_DWORD *)(a1 + 16); /*0x732211*/
+  v3 = 0; /*0x732218*/
+  if ( v2 <= 0 ) /*0x732220*/
+    return -1; /*0x732261*/
+  for ( i = *(const char ***)(a1 + 4); strcmp(a2, *i); ++i ) /*0x732222*/
   {
-    if ( ++v3 >= v2 )
-    return -1;
+    if ( ++v3 >= v2 ) /*0x73225f*/
+      return -1; /*0x73225f*/
   }
-    return v3;
-}
+  return v3; /*0x732261*/
 }
 } // namespace gamemd

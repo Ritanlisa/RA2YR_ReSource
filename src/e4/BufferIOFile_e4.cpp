@@ -7,25 +7,20 @@
 namespace gamemd {
 void * BufferIOFile::Constructor(char * Source)
 {
-{
-  BufferIOFileClass::Constructor(this); /*0x47a9d3*/
+  BufferIOFileClass::Constructor(); /*0x47a9d3*/
   *(this + 84) = 0; /*0x47a9df*/
   *(_DWORD *)this = &off_7E1668; /*0x47a9e3*/
-  FileClass::OpenWithCDSearch(this, (IUnknown *)Source); /*0x47a9e9*/
-  return (CDFileClass *)this; /*0x47a9f0*/
+  FileClass::OpenWithCDSearch(Source); /*0x47a9e9*/
+  return this; /*0x47a9f0*/
 }
-} // namespace gamemd
 }
-
 // 0x47AA30
 namespace gamemd {
 unsigned char * BufferIOFile::Init()
-{
 {
   BufferIOFileClass::Constructor(); /*0x47aa33*/
   *(this + 84) = 0; /*0x47aa38*/
   *(_DWORD *)this = &off_7E1668; /*0x47aa3c*/
   return this; /*0x47aa44*/
 }
-} // namespace gamemd
 }

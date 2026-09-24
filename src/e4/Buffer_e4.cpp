@@ -6,71 +6,109 @@
 // 0x7BCB50
 void * Buffer::FillCircularBufferScroll2(int a2, MouseClass * aP2, unsigned short a4)
 {
-{
+  signed int v5; // ebx
   char *result; // eax
-  unsigned __int16 *v28; // edi
-  unsigned __int16 *v31; // edx
-  unsigned __int16 *v33; // ecx
-  unsigned __int16 *v37; // edx
-  unsigned __int16 *v40; // ebx
-  unsigned __int16 *v46; // edx
+  int v8; // edi
+  unsigned int v9; // edx
+  int v10; // eax
+  unsigned int v11; // eax
+  int v12; // eax
+  int v13; // ecx
+  int v14; // eax
+  int v15; // edx
+  int v16; // edi
+  int v17; // ecx
+  int v18; // eax
+  int v19; // ecx
+  int v20; // edi
+  int v21; // edx
+  int v22; // ecx
+  int v23; // eax
+  int v24; // ecx
+  int v25; // ebx
+  signed int v26; // edx
+  int v27; // eax
+  char *v28; // edi
+  char *v29; // edx
+  int v30; // ebx
+  char *v31; // edx
+  int v32; // eax
+  char *v33; // ecx
+  unsigned int v34; // ebx
+  int v35; // ecx
+  __int64 v36; // rax
+  char *v37; // edx
+  int v38; // ebx
+  int v39; // eax
+  char *v40; // ebx
+  int v41; // edx
+  unsigned int v42; // esi
+  bool v43; // zf
+  int v44; // eax
+  __int64 v45; // rax
+  char *v46; // edx
+  int v47; // ebx
   unsigned __int16 *v48; // eax
+  unsigned int v49; // esi
+  int v50; // ecx
+  int v51; // ecx
+  int v52; // [esp+10h] [ebp-14h]
   int v53; // [esp+14h] [ebp-10h] BYREF
   int v54; // [esp+18h] [ebp-Ch]
   int v55; // [esp+1Ch] [ebp-8h]
   int v56; // [esp+20h] [ebp-4h]
-  int aP2a; // [esp+2Ch] [ebp+8h]
+  int v57; // [esp+2Ch] [ebp+8h]
+  int v58; // [esp+30h] [ebp+Ch]
 
-  signed int v5 = this->q028; /*0x7bcb60*/
-  int v52 = this->Buffer_field_04 / 2 % v5; /*0x7bcb72*/
-  if ( (int)abs32(a2) > v5 || (result = (char *)abs32((int)aP2), (int)result > this->q0B0) ) /*0x7bcb8e*/
+  v5 = *(this + 10); /*0x7bcb60*/
+  v52 = *(this + 4) / 2 % v5; /*0x7bcb72*/
+  if ( (int)abs32(a2) > v5 || (result = (char *)abs32(aP2), (int)result > *(this + 11)) ) /*0x7bcb8e*/
   {
-    int v50 = this->q0B0; /*0x7bcf06*/
+    v50 = *(this + 11); /*0x7bcf06*/
     v53 = 0; /*0x7bcf0b*/
     v54 = 0; /*0x7bcf0f*/
     v56 = v50; /*0x7bcf17*/
-    int v51 = this->Buffer_field_14; /*0x7bcf1b*/
+    v51 = *(this + 5); /*0x7bcf1b*/
     v55 = v5; /*0x7bcf24*/
     result = (char *)(*(int (__thiscall **)(int, int *, _DWORD))(*(_DWORD *)v51 + 20))(v51, &v53, a4); /*0x7bcf2f*/
-    this->Buffer_field_24 = 0x8000; /*0x7bcf32*/
+    *(this + 9) = 0x8000; /*0x7bcf32*/
     return result; /*0x7bcf32*/
   }
-  int v8 = a2 + this->Buffer_field_04 / 2 % v5; /*0x7bcb98*/
+  v8 = a2 + *(this + 4) / 2 % v5; /*0x7bcb98*/
   if ( a2 ) /*0x7bcb9c*/
   {
-    unsigned int v9 = this->Buffer_field_18; /*0x7bcba5*/
-    int v10 = this->Buffer_field_04 + 2 * a2; /*0x7bcba8*/
-    this->Buffer_field_04 = v10; /*0x7bcbab*/
-    unsigned int v11 = v9 + v10; /*0x7bcbae*/
+    v9 = *(this + 6); /*0x7bcba5*/
+    v10 = *(this + 4) + 2 * a2; /*0x7bcba8*/
+    *(this + 4) = v10; /*0x7bcbab*/
+    v11 = v9 + v10; /*0x7bcbae*/
     if ( v11 < v9 ) /*0x7bcbb2*/
-      v11 += this->Buffer_field_08; /*0x7bcbb4*/
-    if ( v11 >= this->Buffer_field_1C ) /*0x7bcbba*/
-      v11 -= this->Buffer_field_08; /*0x7bcbbc*/
-    this->Buffer_field_04 = v11 - this->Buffer_field_18; /*0x7bcbc4*/
+      v11 += *(this + 8); /*0x7bcbb4*/
+    if ( v11 >= *(this + 7) ) /*0x7bcbba*/
+      v11 -= *(this + 8); /*0x7bcbbc*/
+    *(this + 4) = v11 - *(this + 6); /*0x7bcbc4*/
     if ( a2 >= 0 ) /*0x7bcbc7*/
     {
-  int v22; // ecx
       v53 = v52; /*0x7bcc6e*/
       if ( v8 < v5 ) /*0x7bcc64*/
       {
         v54 = 0; /*0x7bcccf*/
-        int v23 = this->q0B0; /*0x7bccd3*/
+        v23 = *(this + 11); /*0x7bccd3*/
         v55 = a2; /*0x7bccd6*/
-        v22 = this->Buffer_field_14; /*0x7bccda*/
+        v22 = *(this + 5); /*0x7bccda*/
         v56 = v23; /*0x7bcce3*/
       }
       else
       {
-        int v18 = this->q0B0; /*0x7bcc72*/
+        v18 = *(this + 11); /*0x7bcc72*/
         v55 = v5 - v52; /*0x7bcc75*/
         v54 = 0; /*0x7bcc79*/
-        int v19 = this->Buffer_field_14; /*0x7bcc7d*/
+        v19 = *(this + 5); /*0x7bcc7d*/
         v56 = v18; /*0x7bcc82*/
         (*(void (__thiscall **)(int, int *, _DWORD))(*(_DWORD *)v19 + 20))(v19, &v53, a4); /*0x7bcc94*/
-        int v20 = v8 - this->q028; /*0x7bcc9e*/
-        int v21 = this->q0B0; /*0x7bcca0*/
+        v20 = v8 - *(this + 10); /*0x7bcc9e*/
+        v21 = *(this + 11); /*0x7bcca0*/
         v54 = 0; /*0x7bcca3*/
-        v22 = this->Buffer_field_14; /*0x7bcca7*/
+        v22 = *(this + 5); /*0x7bcca7*/
         v53 = 0; /*0x7bccaa*/
         v55 = v20; /*0x7bccae*/
         v56 = v21; /*0x7bccb2*/
@@ -81,10 +119,10 @@ void * Buffer::FillCircularBufferScroll2(int a2, MouseClass * aP2, unsigned shor
     {
       v53 = v8; /*0x7bcc33*/
       v54 = 0; /*0x7bcc37*/
-      v56 = this->q0B0; /*0x7bcc3e*/
+      v56 = *(this + 11); /*0x7bcc3e*/
       v55 = -a2; /*0x7bcc46*/
-      result = (char *)(*(int (__thiscall **)(_DWORD, int *, _DWORD))(*(_DWORD *)this->Buffer_field_14 + 20))( /*0x7bcc5a*/
-                         this->Buffer_field_14,
+      result = (char *)(*(int (__thiscall **)(_DWORD, int *, _DWORD))(*(_DWORD *)*(this + 5) + 20))( /*0x7bcc5a*/
+                         *(this + 5),
                          &v53,
                          a4);
     }
@@ -92,16 +130,16 @@ void * Buffer::FillCircularBufferScroll2(int a2, MouseClass * aP2, unsigned shor
     {
       v53 = 0; /*0x7bcbd5*/
       v55 = v52; /*0x7bcbdd*/
-      int v12 = this->q0B0; /*0x7bcbe1*/
+      v12 = *(this + 11); /*0x7bcbe1*/
       v54 = 0; /*0x7bcbe4*/
-      int v13 = this->Buffer_field_14; /*0x7bcbe8*/
+      v13 = *(this + 5); /*0x7bcbe8*/
       v56 = v12; /*0x7bcbed*/
       (*(void (__thiscall **)(int, int *, _DWORD))(*(_DWORD *)v13 + 20))(v13, &v53, a4); /*0x7bcbff*/
-      int v14 = this->q028; /*0x7bcc02*/
-      int v15 = this->q0B0; /*0x7bcc05*/
-      int v16 = v14 + v8; /*0x7bcc08*/
+      v14 = *(this + 10); /*0x7bcc02*/
+      v15 = *(this + 11); /*0x7bcc05*/
+      v16 = v14 + v8; /*0x7bcc08*/
       v54 = 0; /*0x7bcc0e*/
-      int v17 = this->Buffer_field_14; /*0x7bcc12*/
+      v17 = *(this + 5); /*0x7bcc12*/
       v55 = v14 - v16; /*0x7bcc15*/
       v53 = v16; /*0x7bcc19*/
       v56 = v15; /*0x7bcc1d*/
@@ -110,63 +148,62 @@ void * Buffer::FillCircularBufferScroll2(int a2, MouseClass * aP2, unsigned shor
   }
   if ( aP2 ) /*0x7bccf8*/
   {
-  unsigned int v49; // esi
-  bool v43; // zf
-  int v38; // ebx
-    int v24 = this->Buffer_field_04; /*0x7bccfe*/
-    int v25 = this->q028; /*0x7bcd01*/
-    this->Buffer_field_24 -= (int)aP2; /*0x7bcd16*/
-    signed int v26 = v24 + 2 * (_DWORD)aP2 * v25; /*0x7bcd19*/
-    this->Buffer_field_04 = v26; /*0x7bcd1c*/
-    char * v27 = (char *)aP2 + v24 / 2 / v25; /*0x7bcd1f*/
-    v28 = (unsigned __int16 *)this->Buffer_field_18; /*0x7bcd21*/
-    unsigned int v29 = (unsigned int)v28 + v26; /*0x7bcd24*/
-    char * v58 = v27; /*0x7bcd26*/
-    if ( v29 < (unsigned int)v28 ) /*0x7bcd2c*/
-      v29 += this->Buffer_field_08; /*0x7bcd2e*/
-    if ( v29 >= this->Buffer_field_1C ) /*0x7bcd34*/
-      v29 -= this->Buffer_field_08; /*0x7bcd36*/
-    unsigned int v30 = v29 - (_DWORD)v28; /*0x7bcd3f*/
-    this->Buffer_field_04 = v29 - (_DWORD)v28; /*0x7bcd43*/
-    if ( (int)aP2 >= 0 ) /*0x7bcd46*/
+    v24 = *(this + 4); /*0x7bccfe*/
+    v25 = *(this + 10); /*0x7bcd01*/
+    *(this + 9) -= aP2; /*0x7bcd16*/
+    v26 = v24 + 2 * aP2 * v25; /*0x7bcd19*/
+    *(this + 4) = v26; /*0x7bcd1c*/
+    v27 = aP2 + v24 / 2 / v25; /*0x7bcd1f*/
+    v28 = (char *)*(this + 6); /*0x7bcd21*/
+    v29 = &v28[v26]; /*0x7bcd24*/
+    v58 = v27; /*0x7bcd26*/
+    if ( v29 < v28 ) /*0x7bcd2c*/
+      v29 += *(this + 8); /*0x7bcd2e*/
+    if ( (unsigned int)v29 >= *(this + 7) ) /*0x7bcd34*/
+      v29 -= *(this + 8); /*0x7bcd36*/
+    v30 = v29 - v28; /*0x7bcd3f*/
+    *(this + 4) = v29 - v28; /*0x7bcd43*/
+    if ( aP2 >= 0 ) /*0x7bcd46*/
     {
-      int v44 = this->q0B0; /*0x7bce1d*/
-      if ( (int)v58 >= v44 ) /*0x7bce26*/
+      v44 = *(this + 11); /*0x7bce1d*/
+      if ( v58 >= v44 ) /*0x7bce26*/
       {
-        __int64 v45 = 2 * this->q028 * v44 - v24; /*0x7bce34*/
+        v45 = 2 * *(this + 10) * v44 - v24; /*0x7bce34*/
         LODWORD(v45) = v45 - HIDWORD(v45); /*0x7bce35*/
-        v46 = (unsigned __int16 *)((char *)v28 + v24); /*0x7bce37*/
-        int v47 = (int)v45 >> 1; /*0x7bce3c*/
+        v46 = &v28[v24]; /*0x7bce37*/
+        v47 = (int)v45 >> 1; /*0x7bce3c*/
         if ( (((_BYTE)v28 + (_BYTE)v24) & 2) != 0 && v47 ) /*0x7bce45*/
         {
-          *v46++ = a4; /*0x7bce47*/
+          *(_WORD *)v46 = a4; /*0x7bce47*/
+          v46 += 2; /*0x7bce4a*/
           --v47; /*0x7bce4d*/
         }
         v48 = 0; /*0x7bce50*/
         if ( v47 >> 1 ) /*0x7bce55*/
         {
           memset32(v46, 65537 * a4, v47 >> 1); /*0x7bce70*/
-          v48 = &v46[2 * (v47 >> 1)]; /*0x7bce76*/
+          v48 = (unsigned __int16 *)&v46[4 * (v47 >> 1)]; /*0x7bce76*/
         }
         if ( (v47 & 1) != 0 && v48 ) /*0x7bce80*/
           *v48 = a4; /*0x7bce82*/
-        v37 = (unsigned __int16 *)this->Buffer_field_18; /*0x7bce8b*/
-        v38 = this->Buffer_field_04 / 2; /*0x7bce90*/
+        v37 = (char *)*(this + 6); /*0x7bce8b*/
+        v38 = *(this + 4) / 2; /*0x7bce90*/
         if ( ((unsigned __int8)v37 & 2) != 0 && v38 ) /*0x7bce99*/
         {
-          *v37++ = a4; /*0x7bce9b*/
+          *(_WORD *)v37 = a4; /*0x7bce9b*/
+          v37 += 2; /*0x7bce9e*/
           --v38; /*0x7bcea1*/
         }
         result = 0; /*0x7bcea4*/
         v49 = v38 >> 1; /*0x7bcea9*/
         if ( !(v38 >> 1) ) /*0x7bceab*/
           goto LABEL_54; /*0x7bceab*/
-LABEL_53:
+  LABEL_53:
         memset32(v37, 65537 * a4, v49); /*0x7bcec0*/
-        result = (char *)&v37[2 * v49]; /*0x7bcec2*/
-LABEL_54:
+        result = &v37[4 * v49]; /*0x7bcec2*/
+  LABEL_54:
         v43 = (v38 & 1) == 0; /*0x7bcec5*/
-LABEL_55:
+  LABEL_55:
         if ( !v43 ) /*0x7bcec8*/
         {
           if ( result ) /*0x7bcecc*/
@@ -174,61 +211,63 @@ LABEL_55:
         }
         return result; /*0x7bced8*/
       }
-      v37 = (unsigned __int16 *)((char *)v28 + v24); /*0x7bcee2*/
-      v38 = (int)(v30 - v24) / 2; /*0x7bcee7*/
+      v37 = &v28[v24]; /*0x7bcee2*/
+      v38 = (v30 - v24) / 2; /*0x7bcee7*/
       if ( (((_BYTE)v28 + (_BYTE)v24) & 2) != 0 && v38 ) /*0x7bcef0*/
         goto LABEL_60; /*0x7bcef0*/
     }
     else
     {
-      if ( (int)v27 >= 0 ) /*0x7bcd50*/
+      if ( v27 >= 0 ) /*0x7bcd50*/
       {
-        int v39 = v24 - v30; /*0x7bcdd7*/
-        v40 = (unsigned __int16 *)v29; /*0x7bcdd9*/
-        int v41 = v39 / 2; /*0x7bcde0*/
+        v39 = v24 - v30; /*0x7bcdd7*/
+        v40 = v29; /*0x7bcdd9*/
+        v41 = v39 / 2; /*0x7bcde0*/
         if ( ((unsigned __int8)v40 & 2) != 0 && v41 ) /*0x7bcde9*/
         {
-          *v40++ = a4; /*0x7bcdeb*/
+          *(_WORD *)v40 = a4; /*0x7bcdeb*/
+          v40 += 2; /*0x7bcdee*/
           --v41; /*0x7bcdf1*/
         }
         result = 0; /*0x7bcdf4*/
-        unsigned int v42 = v41 >> 1; /*0x7bcdf9*/
+        v42 = v41 >> 1; /*0x7bcdf9*/
         if ( v41 >> 1 ) /*0x7bcdf9*/
         {
           memset32(v40, 65537 * a4, v42); /*0x7bce10*/
-          result = (char *)&v40[2 * v42]; /*0x7bce12*/
+          result = &v40[4 * v42]; /*0x7bce12*/
         }
         v43 = (v41 & 1) == 0; /*0x7bce15*/
         goto LABEL_55; /*0x7bce18*/
       }
       v31 = v28; /*0x7bcd59*/
-      int v32 = v24 / 2; /*0x7bcd5b*/
-      aP2a = v24 / 2; /*0x7bcd60*/
+      v32 = v24 / 2; /*0x7bcd5b*/
+      v57 = v24 / 2; /*0x7bcd60*/
       if ( ((unsigned __int8)v28 & 2) != 0 && v32 ) /*0x7bcd68*/
       {
-        *v28 = a4; /*0x7bcd6a*/
-        v31 = v28 + 1; /*0x7bcd6d*/
-        LOBYTE(aP2a) = --v32; /*0x7bcd71*/
+        *(_WORD *)v28 = a4; /*0x7bcd6a*/
+        v31 = v28 + 2; /*0x7bcd6d*/
+        LOBYTE(v57) = --v32; /*0x7bcd71*/
       }
       v33 = 0; /*0x7bcd77*/
-      unsigned int v34 = v32 >> 1; /*0x7bcd7c*/
+      v34 = v32 >> 1; /*0x7bcd7c*/
       if ( v32 >> 1 ) /*0x7bcd7c*/
       {
         memset32(v31, 65537 * a4, v34); /*0x7bcd93*/
-        LOBYTE(v32) = aP2a; /*0x7bcd95*/
-        v33 = &v31[2 * v34]; /*0x7bcd99*/
+        LOBYTE(v32) = v57; /*0x7bcd95*/
+        v33 = &v31[4 * v34]; /*0x7bcd99*/
       }
       if ( (v32 & 1) != 0 && v33 ) /*0x7bcda2*/
-        *v33 = a4; /*0x7bcda4*/
-      int v35 = this->Buffer_field_04; /*0x7bcdaa*/
-      __int64 v36 = 2 * this->q028 * this->q0B0 - v35; /*0x7bcdb5*/
+        *(_WORD *)v33 = a4; /*0x7bcda4*/
+      v35 = *(this + 4); /*0x7bcdaa*/
+      v36 = 2 * *(this + 10) * *(this + 11) - v35; /*0x7bcdb5*/
       LODWORD(v36) = v36 - HIDWORD(v36); /*0x7bcdb6*/
-      v37 = (unsigned __int16 *)(v35 + this->Buffer_field_18); /*0x7bcdbd*/
+      v37 = (char *)(v35 + *(this + 6)); /*0x7bcdbd*/
       v38 = (int)v36 >> 1; /*0x7bcdbf*/
       if ( ((unsigned __int8)v37 & 2) != 0 && v38 ) /*0x7bcdcc*/
       {
-LABEL_60:
-        *v37++ = a4; /*0x7bcef2*/
+  LABEL_60:
+        *(_WORD *)v37 = a4; /*0x7bcef2*/
+        v37 += 2; /*0x7bcef5*/
         --v38; /*0x7bcef8*/
       }
     }
@@ -240,83 +279,105 @@ LABEL_60:
   }
   return result; /*0x7bcece*/
 }
-}
-
 // 0x7C1730
 int Buffer::AllocateCodecFrameBuffers()
 {
-{
-
+  unsigned int *v3; // ebx
+  unsigned int v4; // eax
+  unsigned int v5; // eax
+  int v6; // edi
+  int v7; // eax
+  unsigned int v8; // eax
+  unsigned int v9; // ebx
+  int v10; // eax
+  int v11; // ecx
+  int v12; // ebp
+  int v13; // eax
+  int v14; // eax
+  int v15; // ebx
+  unsigned int v16; // edi
+  int v17; // eax
+  int v18; // ebx
+  int v19; // eax
+  bool v20; // cf
+  int v21; // [esp+10h] [ebp-20h]
+  int v22; // [esp+14h] [ebp-1Ch]
+  int v23; // [esp+18h] [ebp-18h]
+  int v24; // [esp+1Ch] [ebp-14h]
+  int v25; // [esp+20h] [ebp-10h]
+  int *v26; // [esp+20h] [ebp-10h]
+  unsigned int v27; // [esp+24h] [ebp-Ch]
   int v28; // [esp+28h] [ebp-8h] BYREF
-  if ( this->vt_slot_64(5, &v28, 8) ) /*0x7c1743*/
+  unsigned int v29; // [esp+2Ch] [ebp-4h]
+
+  if ( (*(int (__cdecl **)(int, int, int *, int))(this + 64))(this, 5, &v28, 8) ) /*0x7c1743*/
     return -2; /*0x7c1759*/
   if ( v28 != 1212371789 ) /*0x7c1762*/
     return -4; /*0x7c1770*/
-  unsigned int * v3 = (unsigned int *)(&this->u32_2E42); /*0x7c1775*/
-  unsigned int v29; // [esp+2Ch] [ebp-4h]
-  unsigned int v4 = ((((v29 << 16) | v29 & 0xFF00) << 8) | ((HIWORD(v29) | v29 & 0xFF0000) >> 8)) + 1; /*0x7c179e*/
+  v3 = (unsigned int *)(this + 1852); /*0x7c1775*/
+  v4 = ((((v29 << 16) | v29 & 0xFF00) << 8) | ((HIWORD(v29) | v29 & 0xFF0000) >> 8)) + 1; /*0x7c179e*/
   LOBYTE(v4) = (HIBYTE(v29) + 1) & 0xFE; /*0x7c179f*/
-  if ( this->vt_slot_64(5, &this->u32_1CF0, v4) ) /*0x7c17a6*/
+  if ( (*(int (__cdecl **)(int, int, int, unsigned int))(this + 64))(this, 5, this + 1852, v4) ) /*0x7c17a6*/
     return -4; /*0x7c17bc*/
-  unsigned int v5 = *v3; /*0x7c17bd*/
+  v5 = *v3; /*0x7c17bd*/
   if ( !*v3 ) /*0x7c17bd*/
     goto LABEL_16; /*0x7c17bd*/
-  int v6 = 16 * v5; /*0x7c17cc*/
-  int v7 = this->vt_slot_68(2, 0, 16 * v5); /*0x7c17d3*/
-  this->q744 = v7; /*0x7c17db*/
+  v6 = 16 * v5; /*0x7c17cc*/
+  v7 = (*(int (__cdecl **)(int, int, _DWORD, unsigned int))(this + 68))(this, 2, 0, 16 * v5); /*0x7c17d3*/
+  *(_DWORD *)(this + 1860) = v7; /*0x7c17db*/
   if ( !v7 ) /*0x7c17e1*/
     return -8; /*0x7c17ef*/
-  this->vt_slot_68(4, v7, v6); /*0x7c17f5*/
-  this->Buffer_field_0C += v6; /*0x7c17ff*/
-  if ( this->vt_slot_64(5, &v28, 8) ) /*0x7c180a*/
+  (*(void (__cdecl **)(int, int, int, int))(this + 68))(this, 4, v7, v6); /*0x7c17f5*/
+  *(_DWORD *)(this + 48) += v6; /*0x7c17ff*/
+  if ( (*(int (__cdecl **)(int, int, int *, int))(this + 64))(this, 5, &v28, 8) ) /*0x7c180a*/
     return -2; /*0x7c1820*/
   if ( v28 != 1413698381 ) /*0x7c1829*/
     return -4; /*0x7c1837*/
-  unsigned int v8 = ((((v29 << 16) | v29 & 0xFF00) << 8) | ((HIWORD(v29) | v29 & 0xFF0000) >> 8)) + 1; /*0x7c185f*/
+  v8 = ((((v29 << 16) | v29 & 0xFF00) << 8) | ((HIWORD(v29) | v29 & 0xFF0000) >> 8)) + 1; /*0x7c185f*/
   LOBYTE(v8) = (HIBYTE(v29) + 1) & 0xFE; /*0x7c1860*/
-  if ( this->vt_slot_64(5, this->q744, v8) ) /*0x7c186d*/
+  if ( (*(int (__cdecl **)(int, int, _DWORD, unsigned int))(this + 64))(this, 5, *(_DWORD *)(this + 1860), v8) ) /*0x7c186d*/
     return -4; /*0x7c187a*/
-LABEL_16:
-  unsigned int v9 = *v3; /*0x7c1884*/
-  unsigned int v27 = v9; /*0x7c1888*/
+  LABEL_16:
+  v9 = *v3; /*0x7c1884*/
+  v27 = v9; /*0x7c1888*/
   if ( !v9 ) /*0x7c188c*/
     return -1; /*0x7c19de*/
-  int v10 = this->vt_slot_68(2, 0, 12 * v9); /*0x7c189d*/
-  this->u32_748 = v10; /*0x7c18a5*/
+  v10 = (*(int (__cdecl **)(int, int, _DWORD, unsigned int))(this + 68))(this, 2, 0, 12 * v9); /*0x7c189d*/
+  *(_DWORD *)(this + 1864) = v10; /*0x7c18a5*/
   if ( v10 ) /*0x7c18ab*/
   {
-    this->vt_slot_68(4, v10, 12 * v9); /*0x7c18bf*/
-    this->Buffer_field_0C += 12 * v9; /*0x7c18cc*/
-    int v24 = 0; /*0x7c18cf*/
-    int v11 = 0; /*0x7c18d9*/
-    int v21 = 0; /*0x7c18db*/
-    int v22 = 0; /*0x7c18df*/
+    (*(void (__cdecl **)(int, int, int, unsigned int))(this + 68))(this, 4, v10, 12 * v9); /*0x7c18bf*/
+    *(_DWORD *)(this + 48) += 12 * v9; /*0x7c18cc*/
+    v24 = 0; /*0x7c18cf*/
+    v11 = 0; /*0x7c18d9*/
+    v21 = 0; /*0x7c18db*/
+    v22 = 0; /*0x7c18df*/
     while ( 1 ) /*0x7c18ed*/
     {
-      int v12 = this->u32_88; /*0x7c18ed*/
-      int v13 = this->u32_748; /*0x7c18f3*/
-      int v25 = v13; /*0x7c18fd*/
-      int v23 = *(_DWORD *)(v21 + this->q744 + 4); /*0x7c1903*/
+      v12 = *(_DWORD *)(this + 136); /*0x7c18ed*/
+      v13 = *(_DWORD *)(this + 1864); /*0x7c18f3*/
+      v25 = v13; /*0x7c18fd*/
+      v23 = *(_DWORD *)(v21 + *(_DWORD *)(this + 1860) + 4); /*0x7c1903*/
       if ( v12 > 0 ) /*0x7c1907*/
       {
         *(_DWORD *)(v11 + v13) = v12; /*0x7c1911*/
         *(_DWORD *)(v11 + v13 + 4) = 0; /*0x7c191d*/
-        int v14 = this->vt_slot_68(2, 0, 12 * v12); /*0x7c1925*/
-        int v15 = v14; /*0x7c1928*/
+        v14 = (*(int (__cdecl **)(int, int, _DWORD, int))(this + 68))(this, 2, 0, 12 * v12); /*0x7c1925*/
+        v15 = v14; /*0x7c1928*/
         if ( !v14 ) /*0x7c192f*/
           return -8; /*0x7c192f*/
-        this->vt_slot_68(4, v14, 12 * v12); /*0x7c193a*/
-        this->Buffer_field_0C += 12 * v12; /*0x7c194d*/
-        unsigned int v16 = v12 * ((v23 + 1) & 0xFFFFFFFE); /*0x7c1957*/
-        int * v26 = (int *)(v22 + v25 + 8); /*0x7c1964*/
+        (*(void (__cdecl **)(int, int, int, int))(this + 68))(this, 4, v14, 12 * v12); /*0x7c193a*/
+        *(_DWORD *)(this + 48) += 12 * v12; /*0x7c194d*/
+        v16 = v12 * ((v23 + 1) & 0xFFFFFFFE); /*0x7c1957*/
+        v26 = (int *)(v22 + v25 + 8); /*0x7c1964*/
         *v26 = v15; /*0x7c1968*/
-        int v17 = this->vt_slot_68(2, 0, v16); /*0x7c196a*/
-        int v18 = v17; /*0x7c196d*/
+        v17 = (*(int (__cdecl **)(int, int, _DWORD, unsigned int))(this + 68))(this, 2, 0, v16); /*0x7c196a*/
+        v18 = v17; /*0x7c196d*/
         if ( !v17 ) /*0x7c1974*/
           return -8; /*0x7c1974*/
-        this->vt_slot_68(4, v17, v16); /*0x7c197f*/
-        this->Buffer_field_0C += v16; /*0x7c198c*/
-        int v19 = 0; /*0x7c1991*/
+        (*(void (__cdecl **)(int, int, int, unsigned int))(this + 68))(this, 4, v17, v16); /*0x7c197f*/
+        *(_DWORD *)(this + 48) += v16; /*0x7c198c*/
+        v19 = 0; /*0x7c1991*/
         do /*0x7c19b1*/
         {
           v19 += 12; /*0x7c199b*/
@@ -330,7 +391,7 @@ LABEL_16:
         v11 = v22; /*0x7c19b7*/
       }
       v11 += 12; /*0x7c19c7*/
-      bool v20 = ++v24 < v9; /*0x7c19ca*/
+      v20 = ++v24 < v9; /*0x7c19ca*/
       v21 += 16; /*0x7c19d0*/
       v22 = v11; /*0x7c19d4*/
       if ( !v20 ) /*0x7c19d8*/
@@ -339,111 +400,101 @@ LABEL_16:
   }
   return -8; /*0x7c174d*/
 }
-}
-
 // 0x43AD00
 unsigned int * Buffer::Init(int a2, AbstractClass * aP2)
 {
-{
-    *(void**)this = a2;
-    this->Items = aP2;
-    this->Capacity = 0;
-    if ( !a2 && (int)aP2 > 0 )
+  *this = a2; /*0x43ad0d*/
+  *(this + 1) = aP2; /*0x43ad0f*/
+  *((_BYTE *)this + 8) = 0; /*0x43ad12*/
+  if ( !a2 && aP2 > 0 ) /*0x43ad1a*/
   {
-    *(void**)this = __2_YAPAXI_Z((size_t)aP2);
-    this->Capacity = 1;
+    *this = __2_YAPAXI_Z(aP2); /*0x43ad25*/
+    *((_BYTE *)this + 8) = 1; /*0x43ad27*/
   }
-    return this;
+  return this; /*0x43ad2d*/
 }
-}
-
 // 0x488030
 DynamicVector * Buffer::Constructor_VectorClass_ObjectClass___(char a2)
 {
-{
-    void *v3;
-    v3 = (void *)this->Buffer_field_04;
-    *(void**)this = &vt_VectorClass_ObjectClass;
-    if ( v3 && this->IsAllocated )
-  {
-    __3_YAXPAX_Z(v3);
-    this->Buffer_field_04 = 0;
-  }
-    this->IsAllocated = 0;
-    this->Buffer_field_08 = 0;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (DynamicVector *)this;
-}
-}
+  void *v3; // eax
 
+  v3 = (void *)*(this + 1); /*0x488033*/
+  *this = &VectorClass<ObjectClass *>::`vftable'; /*0x488036*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x488040*/
+  {
+    __3_YAXPAX_Z(v3); /*0x488048*/
+    *(this + 1) = 0; /*0x488050*/
+  }
+  *((_BYTE *)this + 13) = 0; /*0x48805b*/
+  *(this + 2) = 0; /*0x488061*/
+  if ( (a2 & 1) != 0 ) /*0x488068*/
+    __3_YAXPAX_Z(this); /*0x48806b*/
+  return this; /*0x488075*/
+}
 // 0x632B70
 int * Buffer::RotateBufferCrypto(int * a2, int a3)
 {
-{
-    int v4[64];
-    qmemcpy(v4, this, sizeof(v4));
-    RotateBitBufferLeft(v4, a3, 64);
-    qmemcpy(a2, v4, 0x100u);
-    return a2;
-}
-}
+  int v4[64]; // [esp+8h] [ebp-100h] BYREF
 
+  qmemcpy(v4, this, sizeof(v4)); /*0x632b8c*/
+  RotateBitBufferLeft(v4, a3, 64); /*0x632b92*/
+  qmemcpy(a2, v4, 0x100u); /*0x632ba9*/
+  return a2; /*0x632bab*/
+}
 // 0x6C89E0
 int Buffer::AppendCellData(AbstractClass * aP1, int a3)
 {
-{
-    AbstractClass *v4;
-    int *v7;
-    AbstractClass *v8;
-    int v9;
-    unsigned int v10;
-    char *v11;
-    int v12;
-    int v13;
-    int v14;
-    AbstractClass *v15;
-    char *v16;
-    v4 = (AbstractClass *)this->Capacity;
-    if ( (unsigned int)&v4->__pad_0[12] > this->Items + *(void**)this )
-    return 0;
-    v15 = (AbstractClass *)this->Capacity;
-    this->Capacity = &v4->__pad_0[12];
-    if ( !v4 )
-    return 0;
-    *(short *)v4->__pad_0 = *(short *)a3;
-    *(short *)&v4->__pad_0[2] = *(short *)(a3 + 4);
-    *(short *)&v4->__pad_0[4] = *(short *)(a3 + 16);
-    *(short *)&v4->__pad_0[6] = *(short *)(a3 + 20);
-    *(int *)&v4->__pad_0[8] = this->Capacity;
-    v7 = CellStruct::Copy((int *)(a3 + 8), (IUnknown *)&v14);
-    v8 = aP1;
-    v16 = (char *)(*(int (__thiscall **)(AbstractClass *, int, int))(*(int *)aP1->__pad_0 + 92))( aP1, *v7, v7[1]);
-    v9 = *(int *)(a3 + 20);
-    v14 = 0;
-    if ( v9 > 0 )
+  int v4; // edi
+  _DWORD *v7; // eax
+  int *v8; // esi
+  int v9; // eax
+  unsigned int v10; // eax
+  char *v11; // edi
+  int v12; // esi
+  int v13; // edx
+  int v14; // [esp+10h] [ebp-10h] BYREF
+  int v15; // [esp+18h] [ebp-8h]
+  int v16; // [esp+28h] [ebp+8h]
+
+  v4 = *(this + 2); /*0x6c89e9*/
+  if ( v4 + 12 > (unsigned int)(*(this + 1) + *this) ) /*0x6c89f9*/
+    return 0; /*0x6c89f9*/
+  v15 = *(this + 2); /*0x6c89fd*/
+  *(this + 2) = v4 + 12; /*0x6c8a01*/
+  if ( !v4 ) /*0x6c8a04*/
+    return 0; /*0x6c8a06*/
+  *(_WORD *)v4 = *(_WORD *)a3; /*0x6c8a19*/
+  *(_WORD *)(v4 + 2) = *(_WORD *)(a3 + 4); /*0x6c8a20*/
+  *(_WORD *)(v4 + 4) = *(_WORD *)(a3 + 16); /*0x6c8a28*/
+  *(_WORD *)(v4 + 6) = *(_WORD *)(a3 + 20); /*0x6c8a34*/
+  *(_DWORD *)(v4 + 8) = *(this + 2); /*0x6c8a3f*/
+  v7 = CellStruct::Copy((int *)(a3 + 8), &v14); /*0x6c8a42*/
+  v8 = aP1; /*0x6c8a49*/
+  v16 = (*(int (__thiscall **)(int *, _DWORD, _DWORD))(*aP1 + 92))(aP1, *v7, v7[1]); /*0x6c8a61*/
+  v9 = *(_DWORD *)(a3 + 20); /*0x6c8a65*/
+  v14 = 0; /*0x6c8a6a*/
+  if ( v9 > 0 ) /*0x6c8a72*/
   {
-    while ( 1 )
+    while ( 1 ) /*0x6c8a8a*/
     {
-    v10 = Map_Append(v16, (int)&g_OverlayTypeConfig[17880], *(int *)(a3 + 16));
-    v11 = (char *)this->Capacity;
-    if ( (unsigned int)&v11[v10] > this->Items + *(void**)this || (this->Capacity = &v11[v10], !v11) )
+      v10 = Map_Append(v16, &unk_B0BDD0, *(_DWORD *)(a3 + 16)); /*0x6c8a8a*/
+      v11 = (char *)*(this + 2); /*0x6c8a8f*/
+      if ( (unsigned int)&v11[v10] > *(this + 1) + *this || (*(this + 2) = &v11[v10], !v11) ) /*0x6c8aa4*/
       {
-    (*(void (__thiscall **)(AbstractClass *))(*(int *)v8->__pad_0 + 96))(v8);
-    return 0;
+        (*(void (__thiscall **)(int *))(*v8 + 96))(v8); /*0x6c8ae6*/
+        return 0; /*0x6c8af2*/
       }
-    qmemcpy(v11, &g_OverlayTypeConfig[17880], v10);
-    v13 = *(int *)aP1->__pad_0;
-    v12 = ++v14;
-    v16 += (*(int (__thiscall **)(AbstractClass *))(v13 + 116))(aP1);
-    if ( v12 >= *(int *)(a3 + 20) )
-    break;
-    v8 = aP1;
+      qmemcpy(v11, &unk_B0BDD0, v10); /*0x6c8ab0*/
+      v13 = *aP1; /*0x6c8ac2*/
+      v12 = ++v14; /*0x6c8ac1*/
+      v16 += (*(int (__thiscall **)(int *))(v13 + 116))(aP1); /*0x6c8ad6*/
+      if ( v12 >= *(_DWORD *)(a3 + 20) ) /*0x6c8ada*/
+        break; /*0x6c8ada*/
+      v8 = aP1; /*0x6c8adc*/
     }
-    v4 = v15;
-    v8 = aP1;
+    v4 = v15; /*0x6c8af5*/
+    v8 = aP1; /*0x6c8af9*/
   }
-    (*(void (__thiscall **)(AbstractClass *))(*(int *)v8->__pad_0 + 96))(v8);
-    return (int)v4->__pad_0;
-}
+  (*(void (__thiscall **)(int *))(*v8 + 96))(v8); /*0x6c8b01*/
+  return v4; /*0x6c8a08*/
 }

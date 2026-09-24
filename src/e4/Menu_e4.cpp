@@ -5,13 +5,11 @@
 // 0x4C6140
 int Menu::Reset()
 {
-{
-  this->u32_34 = 0; /*0x4c614c*/
-  this->u32_38 = 0; /*0x4c614f*/
-  this->u32_3C = 1; /*0x4c6152*/
-  this->u16_40 = 0; /*0x4c6159*/
+  *(_DWORD *)(this + 52) = 0; /*0x4c614c*/
+  *(_DWORD *)(this + 56) = 0; /*0x4c614f*/
+  *(_DWORD *)(this + 60) = 1; /*0x4c6152*/
+  *(_WORD *)(this + 64) = 0; /*0x4c6159*/
   memset((void *)this, 0, 0x30u); /*0x4c615d*/
-  this->u16_30 = 0; /*0x4c615f*/
+  *(_WORD *)(this + 48) = 0; /*0x4c615f*/
   return this; /*0x4c6163*/
-}
 }

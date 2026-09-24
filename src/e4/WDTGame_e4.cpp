@@ -6,25 +6,22 @@
 namespace gamemd {
 wchar_t ** WDTGame_Helper(CampaignScore * aP0, const wchar_t * a1, wchar_t * Format)
 {
-{
-    size_t v5;
-    short *v6;
-    CampaignScore *v8;
-    CampaignScore *v9;
-    wchar_t String[32];
-    swprintf(String, (const size_t)&DataGlobal_84DD9C[2040], Format, v9);
-    swprintf(String, (const size_t)String, a1, v8);
-    *(int *)aP0->__pad_0 = 0;
-    if ( String )
-    v5 = wcslen(String) + 1;
-    else
-    v5 = 1;
-    v6 = (short *)__2_YAPAXI_Z(2 * v5);
-    *(int *)aP0->__pad_0 = v6;
-    *v6 = 0;
-    if ( String )
-    wcscpy(*(wchar_t **)aP0->__pad_0, String);
-    return (wchar_t **)aP0;
-}
+  size_t v5; // eax
+  wchar_t *v6; // eax
+  wchar_t String[32]; // [esp+8h] [ebp-40h] BYREF
+
+  swprintf(String, (const size_t)a0Dd_0, Format); /*0x7b7e58*/
+  swprintf(String, (const size_t)String, a1); /*0x7b7e68*/
+  *aP0 = 0; /*0x7b7e76*/
+  if ( String ) /*0x7b7e7c*/
+    v5 = wcslen(String) + 1; /*0x7b7e8b*/
+  else
+    v5 = 1; /*0x7b7e8e*/
+  v6 = (wchar_t *)__2_YAPAXI_Z(2 * v5); /*0x7b7e96*/
+  *aP0 = v6; /*0x7b7ea2*/
+  *v6 = 0; /*0x7b7ea4*/
+  if ( String ) /*0x7b7eab*/
+    wcscpy(*aP0, String); /*0x7b7eb5*/
+  return aP0; /*0x7b7ebf*/
 }
 } // namespace gamemd

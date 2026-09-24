@@ -6,9 +6,7 @@
 namespace gamemd {
 int GetBitShift_Red()
 {
-{
-    return g_BitShift_Red;
-}
+  return g_BitShift_Red; /*0x4bbc35*/
 }
 } // namespace gamemd
 
@@ -16,9 +14,7 @@ int GetBitShift_Red()
 namespace gamemd {
 int GetBitShift_Green()
 {
-{
-    return g_BitShift_Green_0;
-}
+  return g_BitShift_Green_0; /*0x4bbc45*/
 }
 } // namespace gamemd
 
@@ -26,8 +22,6 @@ int GetBitShift_Green()
 namespace gamemd {
 XSurface * GetBitShift_Blue()
 {
-{
-    return *(XSurface **)&DataGlobal_89E138[11424];
-}
+  return g_BitShift_Blue; /*0x4bbc75*/
 }
 } // namespace gamemd

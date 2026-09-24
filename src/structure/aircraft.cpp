@@ -97,7 +97,7 @@ LABEL_107:
       this->AircraftClass_field_bool_6D2 = 0;
       if ( !v11 || !this->q0BF )
         goto LABEL_83;
-      ProgressTimer *v12 = this + 432;
+      ProgressTimer *v12 = &this->vtable5;
       if ( this->q1B0->vt_slot_24() )
       {
         int v13 = *(_DWORD *)this->SelectVocOrSfx(0);
@@ -161,7 +161,7 @@ LABEL_14:
     case 4:
       if ( !this->q2B4 || !this->q0BF )
         goto LABEL_83;
-      ProgressTimer *v20 = this + 432;
+      ProgressTimer *v20 = &this->vtable5;
       if ( !this->q1B0->vt_slot_24() )
       {
   int v109; // [esp+94h] [ebp-78h] BYREF
@@ -1899,758 +1899,390 @@ int AircraftClass::Mission_Retreat()
 // 0x4166c0
 int AircraftClass::Mission_Enter()
 {
-{
   int result; // eax
+  int v7; // eax
   char *MissionControl; // eax
+  int v9; // esi
+  int v10; // edi
   void *NearbyCell; // eax
+  int v12; // ecx
+  _DWORD *v13; // eax
+  int v14; // ecx
+  int *v15; // eax
+  int v16; // edx
+  int v17; // edi
+  int *v18; // eax
   int Element; // eax
-
-  if ( *(_BYTE *)(*(_DWORD *)(a1 + 1732) + 3580) )
-    return Carryall::MissionStateMachine(a1);
-  switch ( *(_DWORD *)(a1 + 188) )
-  {
+  int *v20; // eax
+  int v21; // ecx
+  _DWORD *v22; // eax
+  int v23; // edi
+  int v24; // ebx
+  _WORD *v25; // eax
+  int v26; // ecx
+  _DWORD *v27; // eax
+  int v28; // ecx
+  _DWORD *v29; // eax
+  int v30; // edi
+  int v31; // ebx
+  _WORD *v32; // eax
+  int v33; // ecx
+  _DWORD *v34; // eax
+  int v35; // [esp+0h] [ebp-60h]
+  int v36; // [esp+4h] [ebp-5Ch]
+  int v39; // [esp+1Ch] [ebp-44h]
+  int v40; // [esp+1Ch] [ebp-44h]
+  int v41; // [esp+20h] [ebp-40h] BYREF
+  int v42; // [esp+24h] [ebp-3Ch] BYREF
+  _BYTE v43[4]; // [esp+28h] [ebp-38h] BYREF
+  int v44; // [esp+2Ch] [ebp-34h] BYREF
+  int v45[2]; // [esp+30h] [ebp-30h] BYREF
+  int v46; // [esp+38h] [ebp-28h]
+  _BYTE v47[12]; // [esp+3Ch] [ebp-24h] BYREF
+  _BYTE v48[12]; // [esp+48h] [ebp-18h] BYREF
   _DWORD v49[3]; // [esp+54h] [ebp-Ch] BYREF
-    case 0:
-      int v7 = *(_DWORD *)(a1 + 1444);
-      if ( v7 )
+
+  if ( *(_BYTE *)(*(_DWORD *)(a1 + 1732) + 3580) ) /*0x4166c6*/
+    return Carryall::MissionStateMachine(a1); /*0x4166d0*/
+  switch ( *(_DWORD *)(a1 + 188) ) /*0x4166f4*/
+  {
+    case 0: /*0x4166f4*/
+      v7 = *(_DWORD *)(a1 + 1444); /*0x4166fb*/
+      if ( v7 ) /*0x416703*/
       {
-        int v10 = *(_DWORD *)a1;
-        NearbyCell = InfantryClass::FindNearbyCell((_DWORD *)a1, v7);
-        (*(void (__thiscall **)(int, void *, int))(v10 + 1152))(a1, NearbyCell, 1);
-        *(_DWORD *)(a1 + 188) = 1;
+        v10 = *(_DWORD *)a1; /*0x416748*/
+        NearbyCell = InfantryClass::FindNearbyCell((_DWORD *)a1, v7); /*0x41674f*/
+        (*(void (__thiscall **)(int, void *, int))(v10 + 1152))(a1, NearbyCell, 1); /*0x416757*/
+        *(_DWORD *)(a1 + 188) = 1; /*0x41675d*/
       }
       else
       {
-        (*(void (__thiscall **)(int, _DWORD, int))(*(_DWORD *)a1 + 1156))(a1, 0, 1);
+        (*(void (__thiscall **)(int, _DWORD, int))(*(_DWORD *)a1 + 1156))(a1, 0, 1); /*0x41670d*/
       }
-      goto LABEL_6;
-    case 1:
-      int v12 = *(_DWORD *)(a1 + 1444);
-      if ( !v12 )
-        goto LABEL_29;
-  _DWORD *v13; // eax
-      v13 = (_DWORD *)(*(int (__thiscall **)(int, _BYTE *, int, int, int, int, int))(*(_DWORD *)v12 + 76))(
+      goto LABEL_6; /*0x41670d*/
+    case 1: /*0x4166f4*/
+      v12 = *(_DWORD *)(a1 + 1444); /*0x416769*/
+      if ( !v12 ) /*0x416771*/
+        goto LABEL_29; /*0x416771*/
+      v13 = (_DWORD *)(*(int (__thiscall **)(int, _BYTE *, int, int, int, int, int))(*(_DWORD *)v12 + 76))( /*0x41677f*/
                         v12,
-  _BYTE v47[12]; // [esp+3Ch] [ebp-24h] BYREF
                         v47,
                         a1,
                         a4,
                         a5,
                         a3,
                         a2);
-      if ( !*(_DWORD *)(a1 + 1652) )
-        WinAPI::Wrapper(-2147467261);
-      (*(void (__cdecl **)(_DWORD, _DWORD))(**(_DWORD **)(a1 + 1652) + 68))(*(_DWORD *)(a1 + 1652), *v13);
-      *(_DWORD *)(a1 + 188) = 2;
-      return 1;
-    case 2:
-      if ( *(_DWORD *)(a1 + 1312) != -1 )
+      if ( !*(_DWORD *)(a1 + 1652) ) /*0x41678a*/
+        WinAPI::Wrapper(-2147467261); /*0x416799*/
+      (*(void (__cdecl **)(_DWORD, _DWORD))(**(_DWORD **)(a1 + 1652) + 68))(*(_DWORD *)(a1 + 1652), *v13); /*0x4167b4*/
+      *(_DWORD *)(a1 + 188) = 2; /*0x4167b7*/
+      return 1; /*0x4167cd*/
+    case 2: /*0x4166f4*/
+      if ( *(_DWORD *)(a1 + 1312) != -1 ) /*0x4167d5*/
       {
-        int v14 = *(_DWORD *)(a1 + 1444);
-        if ( !v14 )
-          goto LABEL_15;
-  _BYTE v48[12]; // [esp+48h] [ebp-18h] BYREF
-        int * v15 = (int *)(*(int (__thiscall **)(int, _BYTE *))(*(_DWORD *)v14 + 72))(v14, v48);
-        int v16 = *v15;
-        int v17 = v15[1];
-        int v46 = v15[2];
-        a2 = *(_DWORD *)(a1 + 164);
-        int v36 = *(_DWORD *)(a1 + 160) - v17;
-        int v35 = *(_DWORD *)(a1 + 156) - v16;
-        v46 = a2;
-        int * v18 = Coord::Subtract(v49, v35, v36, 0);
-  int v45[2]; // [esp+30h] [ebp-30h] BYREF
-        v45[0] = *v18;
-        v45[1] = v18[1];
-        v46 = v18[2];
-        if ( (int)Coord::Length(v45) < 256 )
+        v14 = *(_DWORD *)(a1 + 1444); /*0x4167db*/
+        if ( !v14 ) /*0x4167e3*/
+          goto LABEL_15; /*0x4167e3*/
+        v15 = (int *)(*(int (__thiscall **)(int, _BYTE *))(*(_DWORD *)v14 + 72))(v14, v48); /*0x4167ec*/
+        v16 = *v15; /*0x4167ef*/
+        v17 = v15[1]; /*0x4167fb*/
+        v46 = v15[2]; /*0x416801*/
+        a2 = *(_DWORD *)(a1 + 164); /*0x41680e*/
+        v36 = *(_DWORD *)(a1 + 160) - v17; /*0x416811*/
+        v35 = *(_DWORD *)(a1 + 156) - v16; /*0x416812*/
+        v46 = a2; /*0x416817*/
+        v18 = Coord::Subtract(v49, v35, v36, 0); /*0x41681b*/
+        v45[0] = *v18; /*0x416822*/
+        v45[1] = v18[1]; /*0x416829*/
+        v46 = v18[2]; /*0x416834*/
+        if ( (int)Coord::Length(v45) < 256 ) /*0x416847*/
         {
-LABEL_15:
-          Element = Array::GetElement(
+  LABEL_15:
+          Element = Array::GetElement( /*0x416864*/
                       *((_DWORD **)HouseClass_Player + *(_DWORD *)(a1 + 1312) + 132),
                       *(char *)(a1 + 1670));
-          int * v20 = (int *)VectorClass::GetAtChecked(*((int **)HouseClass_Player + *(_DWORD *)(a1 + 1312) + 132), Element);
-          BuildingClass::ValidateFoundation_0(a1, a2, a3, v20, a4, a5);
+          v20 = (int *)VectorClass::GetAtChecked(*((int **)HouseClass_Player + *(_DWORD *)(a1 + 1312) + 132), Element); /*0x41687d*/
+          BuildingClass::ValidateFoundation_0(a1, a2, a3, v20, a4, a5); /*0x416885*/
         }
       }
-      if ( !*(_DWORD *)(a1 + 1652) )
-        WinAPI::Wrapper(-2147467261);
-      if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(**(_DWORD **)(a1 + 1652) + 16))(*(_DWORD *)(a1 + 1652)) )
-        goto LABEL_40;
-      int v21 = *(_DWORD *)(a1 + 1444);
-      if ( v21 )
+      if ( !*(_DWORD *)(a1 + 1652) ) /*0x41688a*/
+        WinAPI::Wrapper(-2147467261); /*0x416899*/
+      if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(**(_DWORD **)(a1 + 1652) + 16))(*(_DWORD *)(a1 + 1652)) ) /*0x4168a7*/
+        goto LABEL_40; /*0x4168a7*/
+      v21 = *(_DWORD *)(a1 + 1444); /*0x4168b2*/
+      if ( v21 ) /*0x4168ba*/
       {
-        _DWORD * v22 = (_DWORD *)(*(int (__thiscall **)(int, _DWORD *, int))(*(_DWORD *)v21 + 76))(v21, v49, a1);
-        int v23 = *v22 / 256;
-        int v24 = v22[1] / 256;
-  _BYTE v43[4]; // [esp+28h] [ebp-38h] BYREF
-        _WORD * v25 = (_WORD *)(*(int (__thiscall **)(int, _BYTE *))(*(_DWORD *)a1 + 440))(a1, v43);
-        if ( (_WORD)v23 == *v25 && (_WORD)v24 == v25[1] )
-          goto LABEL_40;
+        v22 = (_DWORD *)(*(int (__thiscall **)(int, _DWORD *, int))(*(_DWORD *)v21 + 76))(v21, v49, a1); /*0x4168c4*/
+        v23 = *v22 / 256; /*0x4168ed*/
+        v24 = v22[1] / 256; /*0x4168f0*/
+        v25 = (_WORD *)(*(int (__thiscall **)(int, _BYTE *))(*(_DWORD *)a1 + 440))(a1, v43); /*0x4168f3*/
+        if ( (_WORD)v23 == *v25 && (_WORD)v24 == v25[1] ) /*0x416902*/
+          goto LABEL_40; /*0x416902*/
       }
-      int v26 = *(_DWORD *)(a1 + 1444);
-      if ( v26 )
+      v26 = *(_DWORD *)(a1 + 1444); /*0x416908*/
+      if ( v26 ) /*0x416910*/
       {
-        _DWORD * v27 = (_DWORD *)(*(int (__thiscall **)(int, _DWORD *, int))(*(_DWORD *)v26 + 76))(v26, v49, a1);
-  int v39; // [esp+1Ch] [ebp-44h]
-        LOWORD(v39) = *v27 / 256;
-        HIWORD(v39) = v27[1] / 256;
-        int v41 = v39;
-        if ( !Cell::IsOccupied((void **)a1, (__int16 *)&v41, 1) )
-          goto LABEL_24;
+        v27 = (_DWORD *)(*(int (__thiscall **)(int, _DWORD *, int))(*(_DWORD *)v26 + 76))(v26, v49, a1); /*0x41691a*/
+        LOWORD(v39) = *v27 / 256; /*0x41692f*/
+        HIWORD(v39) = v27[1] / 256; /*0x416947*/
+        v41 = v39; /*0x416950*/
+        if ( !Cell::IsOccupied((void **)a1, (__int16 *)&v41, 1) ) /*0x416957*/
+          goto LABEL_24; /*0x41695e*/
       }
-      *(_DWORD *)(a1 + 188) = 4;
-      return 1;
-    case 3:
-      if ( !*(_DWORD *)(a1 + 1652) )
-        WinAPI::Wrapper(-2147467261);
-      if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(**(_DWORD **)(a1 + 1652) + 16))(*(_DWORD *)(a1 + 1652)) )
-LABEL_29:
-        (*(void (__thiscall **)(int, _DWORD, int))(*(_DWORD *)a1 + 1156))(a1, 0, 1);
-      return 1;
-    case 4:
-      if ( !*(_DWORD *)(a1 + 1652) )
-        WinAPI::Wrapper(-2147467261);
-      if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(**(_DWORD **)(a1 + 1652) + 16))(*(_DWORD *)(a1 + 1652))
-  int v28; // ecx
+      *(_DWORD *)(a1 + 188) = 4; /*0x416977*/
+      return 1; /*0x41698d*/
+    case 3: /*0x4166f4*/
+      if ( !*(_DWORD *)(a1 + 1652) ) /*0x41698e*/
+        WinAPI::Wrapper(-2147467261); /*0x41699d*/
+      if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(**(_DWORD **)(a1 + 1652) + 16))(*(_DWORD *)(a1 + 1652)) ) /*0x4169ab*/
+  LABEL_29:
+        (*(void (__thiscall **)(int, _DWORD, int))(*(_DWORD *)a1 + 1156))(a1, 0, 1); /*0x4169b2*/
+      return 1; /*0x4169cc*/
+    case 4: /*0x4166f4*/
+      if ( !*(_DWORD *)(a1 + 1652) ) /*0x4169cd*/
+        WinAPI::Wrapper(-2147467261); /*0x4169dc*/
+      if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(**(_DWORD **)(a1 + 1652) + 16))(*(_DWORD *)(a1 + 1652)) /*0x416a45*/
         || (v28 = *(_DWORD *)(a1 + 1444)) != 0
-  _DWORD *v29; // eax
         && (v29 = (_DWORD *)(*(int (__thiscall **)(int, _DWORD *, int))(*(_DWORD *)v28 + 76))(v28, v49, a1),
-  int v30; // edi
             v30 = *v29 / 256,
-  int v31; // ebx
             v31 = v29[1] / 256,
-  _WORD *v32; // eax
-  int v44; // [esp+2Ch] [ebp-34h] BYREF
             v32 = (_WORD *)(*(int (__thiscall **)(int, int *))(*(_DWORD *)a1 + 440))(a1, &v44),
             (_WORD)v30 == *v32)
         && (_WORD)v31 == v32[1] )
       {
-LABEL_40:
-        *(_DWORD *)(a1 + 188) = 3;
+  LABEL_40:
+        *(_DWORD *)(a1 + 188) = 3; /*0x416ab6*/
       }
       else
       {
-        int v33 = *(_DWORD *)(a1 + 1444);
-        if ( v33 )
+        v33 = *(_DWORD *)(a1 + 1444); /*0x416a47*/
+        if ( v33 ) /*0x416a4f*/
         {
-          _DWORD * v34 = (_DWORD *)(*(int (__thiscall **)(int, _DWORD *, int))(*(_DWORD *)v33 + 76))(v33, v49, a1);
-  int v40; // [esp+1Ch] [ebp-44h]
-          LOWORD(v40) = *v34 / 256;
-          HIWORD(v40) = v34[1] / 256;
-          int v42 = v40;
-          if ( !Cell::IsOccupied((void **)a1, (__int16 *)&v42, 1) )
+          v34 = (_DWORD *)(*(int (__thiscall **)(int, _DWORD *, int))(*(_DWORD *)v33 + 76))(v33, v49, a1); /*0x416a59*/
+          LOWORD(v40) = *v34 / 256; /*0x416a6e*/
+          HIWORD(v40) = v34[1] / 256; /*0x416a86*/
+          v42 = v40; /*0x416a8f*/
+          if ( !Cell::IsOccupied((void **)a1, (__int16 *)&v42, 1) ) /*0x416a96*/
           {
-LABEL_24:
-            *(_DWORD *)(a1 + 188) = 0;
-            return 1;
+  LABEL_24:
+            *(_DWORD *)(a1 + 188) = 0; /*0x416960*/
+            return 1; /*0x416976*/
           }
         }
       }
-      result = 1;
-      break;
+      result = 1; /*0x416ac3*/
+      break; /*0x416ac3*/
     default:
-LABEL_6:
-      MissionControl = MissionClass::GetMissionControl((_DWORD *)a1);
-      int v9 = Math::RoundToInt(*((double *)MissionControl + 2) * 900.0);
-      return v9 + Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 2);
+  LABEL_6:
+      MissionControl = MissionClass::GetMissionControl((_DWORD *)a1); /*0x416713*/
+      v9 = Math::RoundToInt(*((double *)MissionControl + 2) * 900.0); /*0x416728*/
+      return v9 + Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 2); /*0x416747*/
   }
-  return result;
-}
-
-/* ASM:
-mov     eax, [ecx+6C4h]
-mov     dl, [eax+0DFCh]
-test    dl, dl
-jz      short loc_4166D5
-jmp     Carryall__MissionStateMachine
-; ---------------------------------------------------------------------------
-
-loc_4166D5:                             ; CODE XREF: AircraftClass__Mission_Enter+E↑j
-jmp     loc_4166E0
-; ---------------------------------------------------------------------------
-align 10h
-
-loc_4166E0:                             ; CODE XREF: AircraftClass__Mission_Enter:loc_4166D5↑j
-sub     esp, 44h
-push    ebx
-push    ebp
-push    esi
-mov     esi, ecx
-push    edi
-mov     eax, [esi+0BCh]
-cmp     eax, 4          ; switch 5 cases
-ja      short def_4166F4 ; jumptable 004166F4 default case
-jmp     ds:jpt_4166F4[eax*4] ; switch jump
-; ---------------------------------------------------------------------------
-
-loc_4166FB:                             ; CODE XREF: AircraftClass__Mission_Enter+34↑j
-; DATA XREF: .text:jpt_4166F4↓o
-mov     eax, [esi+5A4h] ; jumptable 004166F4 case 0
-test    eax, eax
-jnz     short loc_416748
-mov     eax, [esi]
-push    1
-push    0
-mov     ecx, esi
-call    dword ptr [eax+484h]
-
-def_4166F4:                             ; CODE XREF: AircraftClass__Mission_Enter+32↑j
-; AircraftClass__Mission_Enter+A7↓j
-mov     ecx, esi        ; jumptable 004166F4 default case
-call    MissionClass__GetMissionControl
-fld     qword ptr [eax+10h]
-fmul    ds:dbl_7E27F8
-call    Math__RoundToInt
-mov     esi, eax
-mov     eax, ds:0A8B230h
-push    2
-push    0
-lea     ecx, [eax+218h]
-call    Random__Range
-add     eax, esi
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-add     esp, 44h
-retn
-; ---------------------------------------------------------------------------
-
-loc_416748:                             ; CODE XREF: AircraftClass__Mission_Enter+43↑j
-mov     edi, [esi]
-push    1
-push    eax
-mov     ecx, esi
-call    InfantryClass__FindNearbyCell
-push    eax
-mov     ecx, esi
-call    dword ptr [edi+480h]
-mov     dword ptr [esi+0BCh], 1
-jmp     short def_4166F4 ; jumptable 004166F4 default case
-; ---------------------------------------------------------------------------
-
-loc_416769:                             ; CODE XREF: AircraftClass__Mission_Enter+34↑j
-; DATA XREF: .text:jpt_4166F4↓o
-mov     ecx, [esi+5A4h] ; jumptable 004166F4 case 1
-test    ecx, ecx
-jz      loc_4169B2
-mov     eax, [ecx]
-lea     edx, [esp+54h+var_24]
-push    esi
-push    edx
-call    dword ptr [eax+4Ch]
-mov     edi, [eax]
-mov     ebx, [eax+4]
-mov     ebp, [eax+8]
-mov     eax, [esi+674h]
-test    eax, eax
-jnz     short loc_41679E
-push    80004003h
-call    WinAPI__Wrapper
-; ---------------------------------------------------------------------------
-
-loc_41679E:                             ; CODE XREF: AircraftClass__Mission_Enter+D2↑j
-mov     eax, [esi+674h]
-sub     esp, 0Ch
-mov     edx, esp
-mov     ecx, [eax]
-push    eax
-mov     [edx], edi
-mov     [edx+4], ebx
-mov     [edx+8], ebp
-call    dword ptr [ecx+44h]
-mov     dword ptr [esi+0BCh], 2
-mov     eax, 1
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-add     esp, 44h
-retn
-; ---------------------------------------------------------------------------
-
-loc_4167CE:                             ; CODE XREF: AircraftClass__Mission_Enter+34↑j
-; DATA XREF: .text:jpt_4166F4↓o
-cmp     dword ptr [esi+520h], 0FFFFFFFFh ; jumptable 004166F4 case 2
-jz      loc_41688A
-mov     ecx, [esi+5A4h]
-test    ecx, ecx
-jz      short loc_416849
-mov     eax, [ecx]
-lea     edx, [esp+54h+var_18]
-push    edx
-call    dword ptr [eax+48h]
-mov     edx, [eax]
-lea     ecx, [esi+9Ch]
-mov     ebx, ecx
-push    0
-mov     edi, [eax+4]
-mov     eax, [eax+8]
-mov     [esp+58h+var_28], eax
-mov     eax, [ebx]
-sub     eax, edx
-mov     ecx, [ebx+4]
-sub     ecx, edi
-mov     ebx, [ebx+8]
-push    ecx
-push    eax
-lea     ecx, [esp+60h+var_C]
-mov     [esp+60h+var_28], ebx
-call    Coord__Subtract
-mov     edx, [eax]
-mov     [esp+54h+var_30], edx
-mov     ecx, [eax+4]
-mov     [esp+54h+var_2C], ecx
-lea     ecx, [esp+54h+var_30]
-mov     edx, [eax+8]
-mov     [esp+54h+var_28], edx
-call    Coord__Length
-cmp     eax, 100h
-setl    al
-test    al, al
-jz      short loc_41688A
-
-loc_416849:                             ; CODE XREF: AircraftClass__Mission_Enter+123↑j
-movsx   eax, byte ptr [esi+686h]
-mov     ecx, [esi+520h]
-mov     edx, ds:0A83D4Ch
-push    eax
-mov     ecx, [edx+ecx*4+210h]
-call    Array__GetElement
-mov     ecx, ds:0A83D4Ch
-push    eax
-mov     eax, [esi+520h]
-mov     ecx, [ecx+eax*4+210h]
-call    VectorClass__GetAtChecked
-push    eax
-mov     ecx, esi
-call    BuildingClass__ValidateFoundation_0
-
-loc_41688A:                             ; CODE XREF: AircraftClass__Mission_Enter+115↑j
-; AircraftClass__Mission_Enter+187↑j
-mov     eax, [esi+674h]
-test    eax, eax
-jnz     short loc_41689E
-push    80004003h
-call    WinAPI__Wrapper
-; ---------------------------------------------------------------------------
-
-loc_41689E:                             ; CODE XREF: AircraftClass__Mission_Enter+1D2↑j
-mov     eax, [esi+674h]
-push    eax
-mov     edx, [eax]
-call    dword ptr [edx+10h]
-test    al, al
-jz      loc_416AB6
-mov     ecx, [esi+5A4h]
-test    ecx, ecx
-jz      short loc_416908
-mov     eax, [ecx]
-lea     edx, [esp+54h+var_C]
-push    esi
-push    edx
-call    dword ptr [eax+4Ch]
-mov     ecx, eax
-mov     eax, [ecx]
-cdq
-and     edx, 0FFh
-add     eax, edx
-mov     edi, eax
-mov     eax, [ecx+4]
-cdq
-and     edx, 0FFh
-lea     ecx, [esp+54h+var_38]
-add     eax, edx
-push    ecx
-mov     ebx, eax
-mov     eax, [esi]
-mov     ecx, esi
-sar     edi, 8
-sar     ebx, 8
-call    dword ptr [eax+1B8h]
-cmp     di, [eax]
-jnz     short loc_416908
-cmp     bx, [eax+2]
-jz      loc_416AB6
-
-loc_416908:                             ; CODE XREF: AircraftClass__Mission_Enter+1FA↑j
-; AircraftClass__Mission_Enter+23C↑j
-mov     ecx, [esi+5A4h]
-test    ecx, ecx
-jz      short loc_416977
-mov     edx, [ecx]
-lea     eax, [esp+54h+var_C]
-push    esi
-push    eax
-call    dword ptr [edx+4Ch]
-mov     ecx, eax
-push    1
-mov     eax, [ecx]
-cdq
-and     edx, 0FFh
-add     eax, edx
-sar     eax, 8
-mov     word ptr [esp+58h+var_44], ax
-mov     eax, [ecx+4]
-cdq
-and     edx, 0FFh
-add     eax, edx
-lea     edx, [esp+58h+var_40]
-sar     eax, 8
-mov     word ptr [esp+58h+var_44+2], ax
-mov     ecx, [esp+58h+var_44]
-mov     [esp+58h+var_40], ecx
-push    edx
-mov     ecx, esi
-call    Cell__IsOccupied
-test    al, al
-jnz     short loc_416977
-mov     dword ptr [esi+0BCh], 0
-mov     eax, 1
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-add     esp, 44h
-retn
-; ---------------------------------------------------------------------------
-
-loc_416977:                             ; CODE XREF: AircraftClass__Mission_Enter+250↑j
-; AircraftClass__Mission_Enter+29E↑j
-mov     dword ptr [esi+0BCh], 4
-mov     eax, 1
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-add     esp, 44h
-retn
-; ---------------------------------------------------------------------------
-
-loc_41698E:                             ; CODE XREF: AircraftClass__Mission_Enter+34↑j
-; DATA XREF: .text:jpt_4166F4↓o
-mov     eax, [esi+674h] ; jumptable 004166F4 case 3
-test    eax, eax
-jnz     short loc_4169A2
-push    80004003h
-call    WinAPI__Wrapper
-; ---------------------------------------------------------------------------
-
-loc_4169A2:                             ; CODE XREF: AircraftClass__Mission_Enter+2D6↑j
-mov     eax, [esi+674h]
-push    eax
-mov     ecx, [eax]
-call    dword ptr [ecx+10h]
-test    al, al
-jnz     short loc_4169C0
-
-loc_4169B2:                             ; CODE XREF: AircraftClass__Mission_Enter+B1↑j
-mov     edx, [esi]
-push    1
-push    0
-mov     ecx, esi
-call    dword ptr [edx+484h]
-
-loc_4169C0:                             ; CODE XREF: AircraftClass__Mission_Enter+2F0↑j
-mov     eax, 1
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-add     esp, 44h
-retn
-; ---------------------------------------------------------------------------
-
-loc_4169CD:                             ; CODE XREF: AircraftClass__Mission_Enter+34↑j
-; DATA XREF: .text:jpt_4166F4↓o
-mov     eax, [esi+674h] ; jumptable 004166F4 case 4
-test    eax, eax
-jnz     short loc_4169E1
-push    80004003h
-call    WinAPI__Wrapper
-; ---------------------------------------------------------------------------
-
-loc_4169E1:                             ; CODE XREF: AircraftClass__Mission_Enter+315↑j
-mov     eax, [esi+674h]
-push    eax
-mov     ecx, [eax]
-call    dword ptr [ecx+10h]
-test    al, al
-jz      loc_416AB6
-mov     ecx, [esi+5A4h]
-test    ecx, ecx
-jz      short loc_416A47
-mov     edx, [ecx]
-lea     eax, [esp+54h+var_C]
-push    esi
-push    eax
-call    dword ptr [edx+4Ch]
-mov     ecx, eax
-mov     eax, [ecx]
-cdq
-and     edx, 0FFh
-add     eax, edx
-mov     edi, eax
-mov     eax, [ecx+4]
-cdq
-and     edx, 0FFh
-mov     ecx, esi
-add     eax, edx
-mov     edx, [esi]
-mov     ebx, eax
-lea     eax, [esp+54h+var_34]
-push    eax
-sar     edi, 8
-sar     ebx, 8
-call    dword ptr [edx+1B8h]
-cmp     di, [eax]
-jnz     short loc_416A47
-cmp     bx, [eax+2]
-jz      short loc_416AB6
-
-loc_416A47:                             ; CODE XREF: AircraftClass__Mission_Enter+33D↑j
-; AircraftClass__Mission_Enter+37F↑j
-mov     ecx, [esi+5A4h]
-test    ecx, ecx
-jz      short loc_416AC0
-mov     edx, [ecx]
-lea     eax, [esp+54h+var_C]
-push    esi
-push    eax
-call    dword ptr [edx+4Ch]
-mov     ecx, eax
-push    1
-mov     eax, [ecx]
-cdq
-and     edx, 0FFh
-add     eax, edx
-sar     eax, 8
-mov     word ptr [esp+58h+var_44], ax
-mov     eax, [ecx+4]
-cdq
-and     edx, 0FFh
-add     eax, edx
-lea     edx, [esp+58h+var_3C]
-sar     eax, 8
-mov     word ptr [esp+58h+var_44+2], ax
-mov     ecx, [esp+58h+var_44]
-mov     [esp+58h+var_3C], ecx
-push    edx
-mov     ecx, esi
-call    Cell__IsOccupied
-test    al, al
-jnz     short loc_416AC0
-mov     dword ptr [esi+0BCh], 0
-mov     eax, 1
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-add     esp, 44h
-retn
-; ---------------------------------------------------------------------------
-
-loc_416AB6:                             ; CODE XREF: AircraftClass__Mission_Enter+1EC↑j
-; AircraftClass__Mission_Enter+242↑j ...
-mov     dword ptr [esi+0BCh], 3
-
-loc_416AC0:                             ; CODE XREF: AircraftClass__Mission_Enter+38F↑j
-; AircraftClass__Mission_Enter+3DD↑j
-pop     edi
-pop     esi
-pop     ebp
-mov     eax, 1
-pop     ebx
-add     esp, 44h
-retn
-*/
-
-// IDA: 0x419C80 (Mission_Transport, 1215B)
+  return result; /*0x416747*/
 }
 // 0x419c80
 ILocomotion * * AircraftClass::Mission_Transport()
 {
-{
+  _DWORD *v3; // edi
+  _DWORD *v4; // eax
+  _DWORD *v5; // eax
+  int v6; // edx
   int result; // eax
+  int v8; // ecx
+  int v9; // edi
+  int v10; // eax
+  int v11; // edi
+  int *v12; // eax
+  int v13; // ecx
+  int v14; // edx
+  int v15; // eax
+  int v16; // ecx
+  int v17; // edi
+  int v18; // edx
+  int v19; // edi
+  int v20; // edx
+  int v21; // edx
+  int v22; // eax
   int Member; // eax
+  int v24; // ebx
+  _DWORD *v25; // edi
+  int v26; // edi
   void *ClosestPlacementCell; // eax
+  _DWORD v28[3]; // [esp+Ch] [ebp-30h] BYREF
+  _BYTE v29[12]; // [esp+18h] [ebp-24h] BYREF
+  _BYTE v30[20]; // [esp+24h] [ebp-18h] BYREF
+  int v31; // [esp+38h] [ebp-4h]
 
   if ( (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 456))(a1)
     || !*(_BYTE *)(*(_DWORD *)(a1 + 1732) + 3597)
     || !*(_DWORD *)(a1 + 1444)
-  _DWORD *v3; // edi
     || (v3 = *(_DWORD **)(a1 + 1444),
-  _DWORD *v4; // eax
         v4 = (_DWORD *)(*(int (__thiscall **)(int))(*(_DWORD *)a1 + 444))(a1),
         v3 == Cell::IsBridge(v4)) )
   {
     if ( (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 456))(a1) > 0 )
     {
-      int v8 = *(_DWORD *)(a1 + 1444);
+      v8 = *(_DWORD *)(a1 + 1444); /*0x419d19*/
       if ( *(_DWORD *)(a1 + 1740) != v8 && v8 && (*(int (__thiscall **)(int))(*(_DWORD *)v8 + 44))(v8) == 6 )
       {
-        int v9 = *(_DWORD *)(a1 + 1444);
+        v9 = *(_DWORD *)(a1 + 1444); /*0x419d37*/
         if ( v9 )
-          int v10 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)v9 + 44))(*(_DWORD *)(a1 + 1444)) == 6 ? v9 : 0;
+          v10 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)v9 + 44))(*(_DWORD *)(a1 + 1444)) == 6 ? v9 : 0;
         else
-          v10 = 0;
-        *(_DWORD *)(a1 + 1740) = v10;
+          v10 = 0; /*0x419d41*/
+        *(_DWORD *)(a1 + 1740) = v10; /*0x419d57*/
       }
     }
-    if ( *(_DWORD *)(a1 + 1444)
+    if ( *(_DWORD *)(a1 + 1444) /*0x419d86*/
       || (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 120))(a1) == 2
       || (*(int (__thiscall **)(int, int))(*(_DWORD *)a1 + 628))(a1, 14) == 1
       || TechnoClass::PlaceAtCell((int *)a1) )
     {
-      switch ( *(_DWORD *)(a1 + 188) )
+      switch ( *(_DWORD *)(a1 + 188) ) /*0x419dbc*/
       {
-        case 0:
-          *(_DWORD *)(a1 + 188) = 6;
-          goto LABEL_24;
-        case 1:
-        case 2:
-        case 3:
-        case 4:
-        case 5:
-LABEL_24:
-          *(_BYTE *)(a1 + 1748) = 1;
-          return 1;
-        case 6:
-          if ( *(_BYTE *)(*(_DWORD *)(a1 + 1732) + 3597) && (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 456))(a1) )
-            (*(void (__thiscall **)(int, int))(*(_DWORD *)a1 + 628))(a1, 14);
-          if ( Team::AllMembersValid((int *)a1) )
+        case 0: /*0x419dbc*/
+          *(_DWORD *)(a1 + 188) = 6; /*0x419dc3*/
+          goto LABEL_24; /*0x419dc3*/
+        case 1: /*0x419dbc*/
+        case 2: /*0x419dbc*/
+        case 3: /*0x419dbc*/
+        case 4: /*0x419dbc*/
+        case 5: /*0x419dbc*/
+  LABEL_24:
+          *(_BYTE *)(a1 + 1748) = 1; /*0x419dcd*/
+          return 1; /*0x419ddf*/
+        case 6: /*0x419dbc*/
+          if ( *(_BYTE *)(*(_DWORD *)(a1 + 1732) + 3597) && (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 456))(a1) ) /*0x419df4*/
+            (*(void (__thiscall **)(int, int))(*(_DWORD *)a1 + 628))(a1, 14); /*0x419e04*/
+          if ( Team::AllMembersValid((int *)a1) ) /*0x419e0c*/
           {
-            if ( !*(_DWORD *)(a1 + 1652) )
-              WinAPI::Wrapper(-2147467261);
-            if ( (*(int (__stdcall **)(_DWORD))(**(_DWORD **)(a1 + 1652) + 144))(*(_DWORD *)(a1 + 1652)) == 1
+            if ( !*(_DWORD *)(a1 + 1652) ) /*0x419eaa*/
+              WinAPI::Wrapper(-2147467261); /*0x419eb9*/
+            if ( (*(int (__stdcall **)(_DWORD))(**(_DWORD **)(a1 + 1652) + 144))(*(_DWORD *)(a1 + 1652)) == 1 /*0x419ee6*/
               || *(_BYTE *)(*(_DWORD *)(a1 + 1732) + 3597) && !(*(int (__thiscall **)(int))(*(_DWORD *)a1 + 456))(a1) )
             {
-              *(_DWORD *)(a1 + 188) = 7;
-              *(_BYTE *)(a1 + 1748) = 0;
+              *(_DWORD *)(a1 + 188) = 7; /*0x419ef0*/
+              *(_BYTE *)(a1 + 1748) = 0; /*0x419ef6*/
             }
-            result = 3;
+            result = 3; /*0x419eff*/
           }
           else
           {
-            if ( !TechnoClass::PlaceAtCell((int *)a1) )
+            if ( !TechnoClass::PlaceAtCell((int *)a1) ) /*0x419e1b*/
             {
-              if ( !*(_DWORD *)(a1 + 1652) )
-                WinAPI::Wrapper(-2147467261);
-              if ( (*(int (__stdcall **)(_DWORD))(**(_DWORD **)(a1 + 1652) + 144))(*(_DWORD *)(a1 + 1652)) == 1 )
+              if ( !*(_DWORD *)(a1 + 1652) ) /*0x419e24*/
+                WinAPI::Wrapper(-2147467261); /*0x419e33*/
+              if ( (*(int (__stdcall **)(_DWORD))(**(_DWORD **)(a1 + 1652) + 144))(*(_DWORD *)(a1 + 1652)) == 1 ) /*0x419e4a*/
               {
-                *(_DWORD *)(a1 + 188) = 7;
-                *(_BYTE *)(a1 + 1748) = 1;
+                *(_DWORD *)(a1 + 188) = 7; /*0x419e4c*/
+                *(_BYTE *)(a1 + 1748) = 1; /*0x419e52*/
               }
-              if ( *(_DWORD *)(a1 + 180) == -1 )
+              if ( *(_DWORD *)(a1 + 180) == -1 ) /*0x419e5f*/
               {
-                (*(void (__thiscall **)(int, _DWORD, int))(*(_DWORD *)a1 + 1152))(a1, 0, 1);
-                (*(void (__thiscall **)(int, _DWORD, int))(*(_DWORD *)a1 + 1156))(a1, 0, 1);
-                *(_BYTE *)(a1 + 1748) = 1;
-                return 1;
+                (*(void (__thiscall **)(int, _DWORD, int))(*(_DWORD *)a1 + 1152))(a1, 0, 1); /*0x419e69*/
+                (*(void (__thiscall **)(int, _DWORD, int))(*(_DWORD *)a1 + 1156))(a1, 0, 1); /*0x419e77*/
+                *(_BYTE *)(a1 + 1748) = 1; /*0x419e7d*/
+                return 1; /*0x419e8f*/
               }
-              *(_BYTE *)(a1 + 1748) = 1;
+              *(_BYTE *)(a1 + 1748) = 1; /*0x419e90*/
             }
-            *(_BYTE *)(a1 + 1748) = 1;
-            result = 1;
+            *(_BYTE *)(a1 + 1748) = 1; /*0x419e97*/
+            result = 1; /*0x419ea0*/
           }
-          break;
-        case 7:
-          if ( !*(_DWORD *)(a1 + 1652) )
-            WinAPI::Wrapper(-2147467261);
-          if ( (*(int (__stdcall **)(_DWORD))(**(_DWORD **)(a1 + 1652) + 144))(*(_DWORD *)(a1 + 1652)) == 1 )
+          break; /*0x419ea9*/
+        case 7: /*0x419dbc*/
+          if ( !*(_DWORD *)(a1 + 1652) ) /*0x419f09*/
+            WinAPI::Wrapper(-2147467261); /*0x419f18*/
+          if ( (*(int (__stdcall **)(_DWORD))(**(_DWORD **)(a1 + 1652) + 144))(*(_DWORD *)(a1 + 1652)) == 1 ) /*0x419f2f*/
           {
-            int v11 = *(_DWORD *)(a1 + 1444);
-            if ( v11 )
+            v11 = *(_DWORD *)(a1 + 1444); /*0x419f35*/
+            if ( v11 ) /*0x419f3d*/
             {
-              if ( (*(int (__thiscall **)(_DWORD))(*(_DWORD *)v11 + 44))(*(_DWORD *)(a1 + 1444)) == 6 )
-  _BYTE v29[12]; // [esp+18h] [ebp-24h] BYREF
-                int * v12 = (int *)(*(int (__thiscall **)(int, _BYTE *, int))(*(_DWORD *)v11 + 168))(v11, v29, a1);
+              if ( (*(int (__thiscall **)(_DWORD))(*(_DWORD *)v11 + 44))(*(_DWORD *)(a1 + 1444)) == 6 ) /*0x419f4d*/
+                v12 = (int *)(*(int (__thiscall **)(int, _BYTE *, int))(*(_DWORD *)v11 + 168))(v11, v29, a1); /*0x419f59*/
               else
-                v12 = (int *)(*(int (__thiscall **)(_DWORD, _BYTE *))(**(_DWORD **)(a1 + 1444) + 72))(
+                v12 = (int *)(*(int (__thiscall **)(_DWORD, _BYTE *))(**(_DWORD **)(a1 + 1444) + 72))( /*0x419f6e*/
                                *(_DWORD *)(a1 + 1444),
-  _BYTE v30[20]; // [esp+24h] [ebp-18h] BYREF
                                v30);
-              int v13 = *v12;
-              int v14 = v12[1];
-              int v31 = v12[2];
-              int v15 = *(_DWORD *)(a1 + 156);
-              int v16 = v13 - v15;
-              int v17 = *(_DWORD *)(a1 + 160);
-              int v18 = v14 - v17;
-  _DWORD v28[3]; // [esp+Ch] [ebp-30h] BYREF
-              v28[2] = *(_DWORD *)(a1 + 164);
-              if ( v16 <= 0 )
+              v13 = *v12; /*0x419f71*/
+              v14 = v12[1]; /*0x419f73*/
+              v31 = v12[2]; /*0x419f79*/
+              v15 = *(_DWORD *)(a1 + 156); /*0x419f85*/
+              v16 = v13 - v15; /*0x419f87*/
+              v17 = *(_DWORD *)(a1 + 160); /*0x419f89*/
+              v18 = v14 - v17; /*0x419f8c*/
+              v28[2] = *(_DWORD *)(a1 + 164); /*0x419f93*/
+              if ( v16 <= 0 ) /*0x419f97*/
               {
-                if ( v16 < -5 )
-                  v16 = -5;
+                if ( v16 < -5 ) /*0x419fa8*/
+                  v16 = -5; /*0x419faa*/
               }
-              else if ( v16 > 5 )
+              else if ( v16 > 5 ) /*0x419f9c*/
               {
-                v16 = 5;
+                v16 = 5; /*0x419f9e*/
               }
-              if ( v18 <= 0 )
+              if ( v18 <= 0 ) /*0x419fb1*/
               {
-                if ( v18 < -5 )
-                  v18 = -5;
+                if ( v18 < -5 ) /*0x419fc2*/
+                  v18 = -5; /*0x419fc4*/
               }
-              else if ( v18 > 5 )
+              else if ( v18 > 5 ) /*0x419fb6*/
               {
-                v18 = 5;
+                v18 = 5; /*0x419fb8*/
               }
-              int v19 = v18 + v17;
-              int v20 = *(_DWORD *)a1;
-              v28[0] = v16 + v15;
-              v28[1] = v19;
-              (*(void (__thiscall **)(int, _DWORD *))(v20 + 436))(a1, v28);
+              v19 = v18 + v17; /*0x419fcb*/
+              v20 = *(_DWORD *)a1; /*0x419fcd*/
+              v28[0] = v16 + v15; /*0x419fcf*/
+              v28[1] = v19; /*0x419fda*/
+              (*(void (__thiscall **)(int, _DWORD *))(v20 + 436))(a1, v28); /*0x419fde*/
             }
-            *(_BYTE *)(a1 + 1748) = 1;
-            return 1;
+            *(_BYTE *)(a1 + 1748) = 1; /*0x419fe4*/
+            return 1; /*0x419fed*/
           }
           else
           {
-            int v21 = *(_DWORD *)a1;
-            *(_BYTE *)(a1 + 1748) = 1;
-            int v22 = (*(int (__thiscall **)(int, int))(v21 + 628))(a1, 21) - 1;
-            if ( v22 )
+            v21 = *(_DWORD *)a1; /*0x419ff7*/
+            *(_BYTE *)(a1 + 1748) = 1; /*0x419ffd*/
+            v22 = (*(int (__thiscall **)(int, int))(v21 + 628))(a1, 21) - 1; /*0x41a00a*/
+            if ( v22 ) /*0x41a00b*/
             {
-              if ( v22 == 4 )
+              if ( v22 == 4 ) /*0x41a010*/
               {
-                (*(void (__thiscall **)(int))(*(_DWORD *)a1 + 212))(a1);
-                Member = Team::GetMember((_DWORD *)a1, 0);
-                CellClass::AddObject((_DWORD *)(Member + 276), (_DWORD *)a1);
+                (*(void (__thiscall **)(int))(*(_DWORD *)a1 + 212))(a1); /*0x41a030*/
+                Member = Team::GetMember((_DWORD *)a1, 0); /*0x41a03b*/
+                CellClass::AddObject((_DWORD *)(Member + 276), (_DWORD *)a1); /*0x41a048*/
               }
               else
               {
-                (*(void (__thiscall **)(int, _DWORD, int))(*(_DWORD *)a1 + 1156))(a1, 0, 1);
+                (*(void (__thiscall **)(int, _DWORD, int))(*(_DWORD *)a1 + 1156))(a1, 0, 1); /*0x41a01a*/
               }
-              return 1;
+              return 1; /*0x41a022*/
             }
-            else if ( *(_BYTE *)(*(_DWORD *)(a1 + 1732) + 3580) && *(_DWORD *)(a1 + 280) )
+            else if ( *(_BYTE *)(*(_DWORD *)(a1 + 1732) + 3580) && *(_DWORD *)(a1 + 280) ) /*0x41a06d*/
             {
-              int v24 = Team::GetMember((_DWORD *)a1, 0);
-              _DWORD * v25 = (_DWORD *)LinkedList::Pop((_DWORD *)(a1 + 276));
-              (*(void (__thiscall **)(int, int, int))(*(_DWORD *)a1 + 628))(a1, 3, a2);
-              if ( (*(int (__thiscall **)(_DWORD *, int, int))(*v25 + 632))(v25, 2, v24) == 1 )
+              v24 = Team::GetMember((_DWORD *)a1, 0); /*0x41a08b*/
+              v25 = (_DWORD *)LinkedList::Pop((_DWORD *)(a1 + 276)); /*0x41a09a*/
+              (*(void (__thiscall **)(int, int, int))(*(_DWORD *)a1 + 628))(a1, 3, a2); /*0x41a09c*/
+              if ( (*(int (__thiscall **)(_DWORD *, int, int))(*v25 + 632))(v25, 2, v24) == 1 ) /*0x41a0b2*/
               {
-                CellClass::AddObject((_DWORD *)(a1 + 276), v25);
-                (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)a1 + 292))(a1, 0);
-                FootClass::MissionMoveCarryallLand((int *)a1);
-                (*(void (__thiscall **)(int, int))(*(_DWORD *)a1 + 292))(a1, 1);
+                CellClass::AddObject((_DWORD *)(a1 + 276), v25); /*0x41a0b7*/
+                (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)a1 + 292))(a1, 0); /*0x41a0c2*/
+                FootClass::MissionMoveCarryallLand((int *)a1); /*0x41a0ca*/
+                (*(void (__thiscall **)(int, int))(*(_DWORD *)a1 + 292))(a1, 1); /*0x41a0d5*/
               }
               else
               {
-                int v26 = *(_DWORD *)a1;
-                ClosestPlacementCell = TechnoClass::FindClosestPlacementCell((int *)a1);
-                (*(void (__thiscall **)(int, void *))(v26 + 1152))(a1, ClosestPlacementCell);
+                v26 = *(_DWORD *)a1; /*0x41a0f6*/
+                ClosestPlacementCell = TechnoClass::FindClosestPlacementCell((int *)a1); /*0x41a0fc*/
+                (*(void (__thiscall **)(int, void *))(v26 + 1152))(a1, ClosestPlacementCell); /*0x41a104*/
               }
-              (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)a1 + 488))(a1, 2, 0);
-              return 1;
+              (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)a1 + 488))(a1, 2, 0); /*0x41a0e3*/
+              return 1; /*0x41a0ec*/
             }
             else
             {
-              (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)a1 + 488))(a1, 5, 0);
-              return 1;
+              (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)a1 + 488))(a1, 5, 0); /*0x41a12d*/
+              return 1; /*0x41a133*/
             }
           }
         default:
@@ -2659,1382 +2291,248 @@ LABEL_24:
     }
     else
     {
-      (*(void (__thiscall **)(int, _DWORD, int))(*(_DWORD *)a1 + 1156))(a1, 0, 1);
-      return 1;
+      (*(void (__thiscall **)(int, _DWORD, int))(*(_DWORD *)a1 + 1156))(a1, 0, 1); /*0x419d97*/
+      return 1; /*0x419d9f*/
     }
   }
   else
   {
     if ( v3 )
-      _DWORD * v5 = (*(int (__thiscall **)(_DWORD *))(*v3 + 44))(v3) == 6 ? v3 : 0;
+      v5 = (*(int (__thiscall **)(_DWORD *))(*v3 + 44))(v3) == 6 ? v3 : 0;
     else
-      v5 = 0;
-    int v6 = *(_DWORD *)a1;
-    *(_DWORD *)(a1 + 1740) = v5;
-    (*(void (__thiscall **)(int, int))(v6 + 628))(a1, 3);
-    (*(void (__thiscall **)(int, int, int))(*(_DWORD *)a1 + 488))(a1, 2, 1);
-    return 1;
+      v5 = 0; /*0x419cc9*/
+    v6 = *(_DWORD *)a1; /*0x419cdf*/
+    *(_DWORD *)(a1 + 1740) = v5; /*0x419ce5*/
+    (*(void (__thiscall **)(int, int))(v6 + 628))(a1, 3); /*0x419ceb*/
+    (*(void (__thiscall **)(int, int, int))(*(_DWORD *)a1 + 488))(a1, 2, 1); /*0x419cf9*/
+    return 1; /*0x419d01*/
   }
-  return result;
-}
-
-/* ASM:
-sub     esp, 30h
-push    ebx
-push    esi
-mov     esi, ecx
-push    edi
-mov     eax, [esi]
-call    dword ptr [eax+1C8h]
-test    eax, eax
-jnz     short loc_419D0B
-mov     ecx, [esi+6C4h]
-mov     al, [ecx+0E0Dh]
-test    al, al
-jz      short loc_419D0B
-mov     eax, [esi+5A4h]
-test    eax, eax
-jz      short loc_419D0B
-mov     edx, [esi]
-mov     ecx, esi
-mov     edi, eax
-call    dword ptr [edx+1BCh]
-mov     ecx, eax
-call    Cell__IsBridge
-cmp     edi, eax
-jz      short loc_419D0B
-test    edi, edi
-jnz     short loc_419CCD
-xor     eax, eax
-jmp     short loc_419CDF
-; ---------------------------------------------------------------------------
-
-loc_419CCD:                             ; CODE XREF: AircraftClass__Mission_Transport+47↑j
-mov     eax, [edi]
-mov     ecx, edi
-call    dword ptr [eax+2Ch]
-sub     eax, 6
-neg     eax
-sbb     eax, eax
-not     eax
-and     eax, edi
-
-loc_419CDF:                             ; CODE XREF: AircraftClass__Mission_Transport+4B↑j
-mov     edx, [esi]
-push    3
-mov     ecx, esi
-mov     [esi+6CCh], eax
-call    dword ptr [edx+274h]
-mov     eax, [esi]
-push    1
-push    2
-mov     ecx, esi
-call    dword ptr [eax+1E8h]
-pop     edi
-pop     esi
-mov     eax, 1
-pop     ebx
-add     esp, 30h
-retn
-; ---------------------------------------------------------------------------
-
-loc_419D0B:                             ; CODE XREF: AircraftClass__Mission_Transport+12↑j
-; AircraftClass__Mission_Transport+22↑j ...
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+1C8h]
-test    eax, eax
-jle     short loc_419D5D
-mov     ecx, [esi+5A4h]
-mov     eax, [esi+6CCh]
-cmp     eax, ecx
-jz      short loc_419D5D
-test    ecx, ecx
-jz      short loc_419D5D
-mov     eax, [ecx]
-call    dword ptr [eax+2Ch]
-cmp     eax, 6
-jnz     short loc_419D5D
-mov     edi, [esi+5A4h]
-test    edi, edi
-jnz     short loc_419D45
-xor     eax, eax
-jmp     short loc_419D57
-; ---------------------------------------------------------------------------
-
-loc_419D45:                             ; CODE XREF: AircraftClass__Mission_Transport+BF↑j
-mov     edx, [edi]
-mov     ecx, edi
-call    dword ptr [edx+2Ch]
-sub     eax, 6
-neg     eax
-sbb     eax, eax
-not     eax
-and     eax, edi
-
-loc_419D57:                             ; CODE XREF: AircraftClass__Mission_Transport+C3↑j
-mov     [esi+6CCh], eax
-
-loc_419D5D:                             ; CODE XREF: AircraftClass__Mission_Transport+97↑j
-; AircraftClass__Mission_Transport+A7↑j ...
-mov     eax, [esi+5A4h]
-test    eax, eax
-jnz     short loc_419DA9
-mov     eax, [esi]
-mov     ecx, esi
-call    dword ptr [eax+78h]
-cmp     eax, 2
-jz      short loc_419DA9
-mov     edx, [esi]
-push    0Eh
-mov     ecx, esi
-call    dword ptr [edx+274h]
-cmp     eax, 1
-jz      short loc_419DA9
-mov     ecx, esi
-call    TechnoClass__PlaceAtCell
-test    al, al
-jnz     short loc_419DA9
-mov     eax, [esi]
-push    1
-push    0
-mov     ecx, esi
-call    dword ptr [eax+484h]
-pop     edi
-pop     esi
-mov     eax, 1
-pop     ebx
-add     esp, 30h
-retn
-; ---------------------------------------------------------------------------
-
-loc_419DA9:                             ; CODE XREF: AircraftClass__Mission_Transport+E5↑j
-; AircraftClass__Mission_Transport+F1↑j ...
-mov     eax, [esi+0BCh]
-mov     edi, 7
-cmp     eax, edi        ; switch 8 cases
-ja      def_419DBC      ; jumptable 00419DBC default case
-jmp     ds:jpt_419DBC[eax*4] ; switch jump
-; ---------------------------------------------------------------------------
-
-loc_419DC3:                             ; CODE XREF: AircraftClass__Mission_Transport+13C↑j
-; DATA XREF: .text:jpt_419DBC↓o
-mov     dword ptr [esi+0BCh], 6 ; jumptable 00419DBC case 0
-
-loc_419DCD:                             ; CODE XREF: AircraftClass__Mission_Transport+13C↑j
-; DATA XREF: .text:jpt_419DBC↓o
-mov     byte ptr [esi+6D4h], 1 ; jumptable 00419DBC cases 1-5
-pop     edi
-pop     esi
-mov     eax, 1
-pop     ebx
-add     esp, 30h
-retn
-; ---------------------------------------------------------------------------
-
-loc_419DE0:                             ; CODE XREF: AircraftClass__Mission_Transport+13C↑j
-; DATA XREF: .text:jpt_419DBC↓o
-mov     ecx, [esi+6C4h] ; jumptable 00419DBC case 6
-mov     al, [ecx+0E0Dh]
-test    al, al
-jz      short loc_419E0A
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+1C8h]
-test    eax, eax
-jz      short loc_419E0A
-mov     eax, [esi]
-push    0Eh
-mov     ecx, esi
-call    dword ptr [eax+274h]
-
-loc_419E0A:                             ; CODE XREF: AircraftClass__Mission_Transport+16E↑j
-; AircraftClass__Mission_Transport+17C↑j
-mov     ecx, esi
-call    Team__AllMembersValid
-test    al, al
-jnz     loc_419EAA
-mov     ecx, esi
-call    TechnoClass__PlaceAtCell
-test    al, al
-jnz     short loc_419E97
-mov     eax, [esi+674h]
-test    eax, eax
-jnz     short loc_419E38
-push    80004003h
-call    WinAPI__Wrapper
-; ---------------------------------------------------------------------------
-
-loc_419E38:                             ; CODE XREF: AircraftClass__Mission_Transport+1AC↑j
-mov     eax, [esi+674h]
-push    eax
-mov     ecx, [eax]
-call    dword ptr [ecx+90h]
-cmp     eax, 1
-jnz     short loc_419E58
-mov     [esi+0BCh], edi
-mov     [esi+6D4h], al
-
-loc_419E58:                             ; CODE XREF: AircraftClass__Mission_Transport+1CA↑j
-cmp     dword ptr [esi+0B4h], 0FFFFFFFFh
-jnz     short loc_419E90
-mov     edx, [esi]
-push    1
-push    0
-mov     ecx, esi
-call    dword ptr [edx+480h]
-mov     eax, [esi]
-push    1
-push    0
-mov     ecx, esi
-call    dword ptr [eax+484h]
-mov     byte ptr [esi+6D4h], 1
-pop     edi
-pop     esi
-mov     eax, 1
-pop     ebx
-add     esp, 30h
-retn
-; ---------------------------------------------------------------------------
-
-loc_419E90:                             ; CODE XREF: AircraftClass__Mission_Transport+1DF↑j
-mov     byte ptr [esi+6D4h], 1
-
-loc_419E97:                             ; CODE XREF: AircraftClass__Mission_Transport+1A2↑j
-mov     byte ptr [esi+6D4h], 1
-pop     edi
-pop     esi
-mov     eax, 1
-pop     ebx
-add     esp, 30h
-retn
-; ---------------------------------------------------------------------------
-
-loc_419EAA:                             ; CODE XREF: AircraftClass__Mission_Transport+193↑j
-mov     eax, [esi+674h]
-test    eax, eax
-jnz     short loc_419EBE
-push    80004003h
-call    WinAPI__Wrapper
-; ---------------------------------------------------------------------------
-
-loc_419EBE:                             ; CODE XREF: AircraftClass__Mission_Transport+232↑j
-mov     eax, [esi+674h]
-push    eax
-mov     ecx, [eax]
-call    dword ptr [ecx+90h]
-cmp     eax, 1
-jz      short loc_419EF0
-mov     edx, [esi+6C4h]
-mov     al, [edx+0E0Dh]
-test    al, al
-jz      short loc_419EFD
-mov     eax, [esi]
-mov     ecx, esi
-call    dword ptr [eax+1C8h]
-test    eax, eax
-jnz     short loc_419EFD
-
-loc_419EF0:                             ; CODE XREF: AircraftClass__Mission_Transport+250↑j
-mov     [esi+0BCh], edi
-mov     byte ptr [esi+6D4h], 0
-
-loc_419EFD:                             ; CODE XREF: AircraftClass__Mission_Transport+260↑j
-; AircraftClass__Mission_Transport+26E↑j
-pop     edi
-pop     esi
-mov     eax, 3
-pop     ebx
-add     esp, 30h
-retn
-; ---------------------------------------------------------------------------
-
-loc_419F09:                             ; CODE XREF: AircraftClass__Mission_Transport+13C↑j
-; DATA XREF: .text:jpt_419DBC↓o
-mov     eax, [esi+674h] ; jumptable 00419DBC case 7
-test    eax, eax
-jnz     short loc_419F1D
-push    80004003h
-call    WinAPI__Wrapper
-; ---------------------------------------------------------------------------
-
-loc_419F1D:                             ; CODE XREF: AircraftClass__Mission_Transport+291↑j
-mov     eax, [esi+674h]
-push    eax
-mov     ecx, [eax]
-call    dword ptr [ecx+90h]
-cmp     eax, 1
-jnz     loc_419FF7
-mov     edi, [esi+5A4h]
-test    edi, edi
-jz      loc_419FE4
-mov     edx, [edi]
-mov     ecx, edi
-call    dword ptr [edx+2Ch]
-cmp     eax, 6
-jnz     short loc_419F61
-mov     eax, [edi]
-lea     ecx, [esp+3Ch+var_24]
-push    esi
-push    ecx
-mov     ecx, edi
-call    dword ptr [eax+0A8h]
-jmp     short loc_419F71
-; ---------------------------------------------------------------------------
-
-loc_419F61:                             ; CODE XREF: AircraftClass__Mission_Transport+2CD↑j
-mov     ecx, [esi+5A4h]
-lea     eax, [esp+3Ch+var_18]
-push    eax
-mov     edx, [ecx]
-call    dword ptr [edx+48h]
-
-loc_419F71:                             ; CODE XREF: AircraftClass__Mission_Transport+2DF↑j
-mov     ecx, [eax]
-mov     edx, [eax+4]
-mov     eax, [eax+8]
-mov     [esp+3Ch+var_4], eax
-lea     eax, [esi+9Ch]
-mov     ebx, eax
-mov     eax, [ebx]
-sub     ecx, eax
-mov     edi, [ebx+4]
-sub     edx, edi
-mov     ebx, [ebx+8]
-test    ecx, ecx
-mov     dword ptr [esp+3Ch+var_28], ebx
-jle     short loc_419FA5
-cmp     ecx, 5
-jle     short loc_419FAF
-mov     ecx, 5
-jmp     short loc_419FAF
-; ---------------------------------------------------------------------------
-
-loc_419FA5:                             ; CODE XREF: AircraftClass__Mission_Transport+317↑j
-cmp     ecx, 0FFFFFFFBh
-jge     short loc_419FAF
-mov     ecx, 0FFFFFFFBh
-
-loc_419FAF:                             ; CODE XREF: AircraftClass__Mission_Transport+31C↑j
-; AircraftClass__Mission_Transport+323↑j ...
-test    edx, edx
-jle     short loc_419FBF
-cmp     edx, 5
-jle     short loc_419FC9
-mov     edx, 5
-jmp     short loc_419FC9
-; ---------------------------------------------------------------------------
-
-loc_419FBF:                             ; CODE XREF: AircraftClass__Mission_Transport+331↑j
-cmp     edx, 0FFFFFFFBh
-jge     short loc_419FC9
-mov     edx, 0FFFFFFFBh
-
-loc_419FC9:                             ; CODE XREF: AircraftClass__Mission_Transport+336↑j
-; AircraftClass__Mission_Transport+33D↑j ...
-add     eax, ecx
-add     edi, edx
-mov     edx, [esi]
-mov     [esp+3Ch+var_30], eax
-lea     eax, [esp+3Ch+var_30]
-mov     ecx, esi
-push    eax
-mov     [esp+40h+var_2C], edi
-call    dword ptr [edx+1B4h]
-
-loc_419FE4:                             ; CODE XREF: AircraftClass__Mission_Transport+2BD↑j
-mov     byte ptr [esi+6D4h], 1
-pop     edi
-pop     esi
-mov     eax, 1
-pop     ebx
-add     esp, 30h
-retn
-; ---------------------------------------------------------------------------
-
-loc_419FF7:                             ; CODE XREF: AircraftClass__Mission_Transport+2AF↑j
-mov     edx, [esi]
-push    15h
-mov     ecx, esi
-mov     byte ptr [esi+6D4h], 1
-call    dword ptr [edx+274h]
-dec     eax
-jz      short loc_41A059
-sub     eax, 4
-jz      short loc_41A02C
-mov     eax, [esi]
-push    1
-push    0
-mov     ecx, esi
-call    dword ptr [eax+484h]
-pop     edi
-pop     esi
-mov     eax, 1
-pop     ebx
-add     esp, 30h
-retn
-; ---------------------------------------------------------------------------
-
-loc_41A02C:                             ; CODE XREF: AircraftClass__Mission_Transport+390↑j
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+0D4h]
-push    esi
-push    0
-mov     ecx, esi
-call    Team__GetMember
-mov     ecx, eax
-add     ecx, 114h
-call    CellClass__AddObject
-pop     edi
-pop     esi
-mov     eax, 1
-pop     ebx
-add     esp, 30h
-retn
-; ---------------------------------------------------------------------------
-
-loc_41A059:                             ; CODE XREF: AircraftClass__Mission_Transport+38B↑j
-mov     eax, [esi+6C4h]
-mov     cl, [eax+0DFCh]
-test    cl, cl
-jz      loc_41A125
-mov     eax, [esi+118h]
-test    eax, eax
-jz      loc_41A125
-push    ebp
-push    0
-mov     ecx, esi
-call    Team__GetMember
-lea     ebp, [esi+114h]
-mov     ebx, eax
-mov     ecx, ebp
-call    LinkedList__Pop
-mov     edx, [esi]
-push    3
-mov     ecx, esi
-mov     edi, eax
-call    dword ptr [edx+274h]
-mov     eax, [edi]
-push    ebx
-push    2
-mov     ecx, edi
-call    dword ptr [eax+278h]
-cmp     eax, 1
-jnz     short loc_41A0F6
-push    edi
-mov     ecx, ebp
-call    CellClass__AddObject
-mov     edx, [esi]
-push    0
-mov     ecx, esi
-call    dword ptr [edx+124h]
-mov     ecx, esi
-call    FootClass__MissionMoveCarryallLand
-mov     eax, [esi]
-push    1
-mov     ecx, esi
-call    dword ptr [eax+124h]
-mov     edx, [esi]
-push    0
-push    2
-mov     ecx, esi
-call    dword ptr [edx+1E8h]
-pop     ebp
-pop     edi
-pop     esi
-mov     eax, 1
-pop     ebx
-add     esp, 30h
-retn
-; ---------------------------------------------------------------------------
-
-loc_41A0F6:                             ; CODE XREF: AircraftClass__Mission_Transport+432↑j
-mov     edi, [esi]
-push    1
-mov     ecx, esi
-call    TechnoClass__FindClosestPlacementCell
-push    eax
-mov     ecx, esi
-call    dword ptr [edi+480h]
-mov     edx, [esi]
-push    0
-push    2
-mov     ecx, esi
-call    dword ptr [edx+1E8h]
-pop     ebp
-pop     edi
-pop     esi
-mov     eax, 1
-pop     ebx
-add     esp, 30h
-retn
-; ---------------------------------------------------------------------------
-
-loc_41A125:                             ; CODE XREF: AircraftClass__Mission_Transport+3E7↑j
-; AircraftClass__Mission_Transport+3F5↑j
-mov     eax, [esi]
-push    0
-push    5
-mov     ecx, esi
-call    dword ptr [eax+1E8h]
-
-def_419DBC:                             ; CODE XREF: AircraftClass__Mission_Transport+136↑j
-pop     edi             ; jumptable 00419DBC default case
-pop     esi
-mov     eax, 1
-pop     ebx
-add     esp, 30h
-retn
-*/
-
-// IDA: 0x4190B0 (MissionDispatch, 1147B)
+  return result; /*0x419cff*/
 }
 // 0x4190b0
 int AircraftClass::MissionDispatch()
 {
-// 0x4190b0
-{
   int result; // eax
+  int v6; // ebx
   void *ClosestPlacementCell; // eax
+  void *v8; // edi
+  int v9; // ebx
+  void *v10; // eax
+  int v11; // ecx
+  int v12; // eax
+  _DWORD *v13; // eax
+  int v14; // eax
   int Member; // eax
+  int v16; // eax
 
-  switch ( this->currentMission )
+  switch ( *(_DWORD *)(this + 172) )
   {
     case 4:
     case 0x1A:
     case 0x1B:
     case 0x1E:
     case 0x1F:
-      if ( this->airstrike )
-        goto LABEL_4;
-LABEL_3:
-      result = 0;
-      break;
+      if ( *(_DWORD *)(this + 660) ) /*0x4190d3*/
+        goto LABEL_4; /*0x4190db*/
+  LABEL_3:
+      result = 0; /*0x4190dd*/
+      break; /*0x4190e3*/
     default:
-LABEL_4:
+  LABEL_4:
       switch ( a3 )
       {
         case 8:
-          if ( !*(_BYTE *)(this->Type + 3580)
-            || (*(int (__thiscall **)(int))(this->q184)(this) != 2
-            || !this->isTether
-            || (!this->q118 || (_DWORD *)CCINIClass::GetDB((_DWORD *)(this + 276)) != a2)
-            && this->movementDestination != a2 )
+          if ( !*(_BYTE *)(*(_DWORD *)(this + 1732) + 3580) /*0x419519*/
+            || (*(int (__thiscall **)(int))(*(_DWORD *)this + 388))(this) != 2
+            || !*(_BYTE *)(this + 1048)
+            || (!*(_DWORD *)(this + 280) || (_DWORD *)CCINIClass::GetDB((_DWORD *)(this + 276)) != a2)
+            && *(_DWORD **)(this + 1444) != a2 )
           {
-            return FootClass::MissionDispatch((int *)this, a2, a3, a4);
+            return FootClass::MissionDispatch((int *)this, a2, a3, a4); /*0x419519*/
           }
-          return 10;
+          return 10; /*0x419519*/
         case 14:
-          int v14 = *(_DWORD *)(this->Type + 1504);
-          if ( v14 <= 0 || this->inAirFlag >= v14 )
-            return FootClass::MissionDispatch((int *)this, a2, a3, a4);
-          FootClass::MissionDispatch((int *)this, a2, a3, a4);
-          if ( !this->locomotor )
-            WinAPI::Wrapper(-2147467261);
-          if ( (*(unsigned __int8 (__stdcall **)(_DWORD))(*this->locomotor + 16))(this->locomotor) )
-            return 1;
-          RateScaler::Init((_BYTE *)(this + 848), *(double *)(this->Type + 968));
-          if ( (*(int (__thiscall **)(int, int, _DWORD *))(this->temporalTargetingMe)(this, 19, a2) != 1 )
-            return 1;
-          *a4 = (void *)this;
-          if ( (*(int (__thiscall **)(int, int, void **, _DWORD *))(this->isImmobilized)(this, 18, a4, a2) == 1 )
+          v14 = *(_DWORD *)(*(_DWORD *)(this + 1732) + 1504); /*0x41939d*/
+          if ( v14 <= 0 || *(_DWORD *)(this + 276) >= v14 ) /*0x4193b1*/
+            return FootClass::MissionDispatch((int *)this, a2, a3, a4); /*0x4193b1*/
+          FootClass::MissionDispatch((int *)this, a2, a3, a4); /*0x4193c4*/
+          if ( !*(_DWORD *)(this + 1652) ) /*0x4193c9*/
+            WinAPI::Wrapper(-2147467261); /*0x4193d8*/
+          if ( (*(unsigned __int8 (__stdcall **)(_DWORD))(**(_DWORD **)(this + 1652) + 16))(*(_DWORD *)(this + 1652)) ) /*0x4193e6*/
+            return 1; /*0x4193e6*/
+          RateScaler::Init((_BYTE *)(this + 848), *(double *)(*(_DWORD *)(this + 1732) + 968)); /*0x419407*/
+          if ( (*(int (__thiscall **)(int, int, _DWORD *))(*(_DWORD *)this + 632))(this, 19, a2) != 1 ) /*0x41941c*/
+            return 1; /*0x41941c*/
+          *a4 = (void *)this; /*0x41941e*/
+          if ( (*(int (__thiscall **)(int, int, void **, _DWORD *))(*(_DWORD *)this + 636))(this, 18, a4, a2) == 1 ) /*0x419431*/
           {
-            Member = Team::GetMember((_DWORD *)this, 0);
-            (*(void (__thiscall **)(int))(*(_DWORD *)Member + 336))(Member);
-            return 1;
+            Member = Team::GetMember((_DWORD *)this, 0); /*0x419450*/
+            (*(void (__thiscall **)(int))(*(_DWORD *)Member + 336))(Member); /*0x419459*/
+            return 1; /*0x41945f*/
           }
           else
           {
-            (*(void (__thiscall **)(int, int, _DWORD *))(this->temporalTargetingMe)(this, 3, a2);
-            return 1;
+            (*(void (__thiscall **)(int, int, _DWORD *))(*(_DWORD *)this + 632))(this, 3, a2); /*0x41943a*/
+            return 1; /*0x419443*/
           }
         case 15:
-          if ( !*(_DWORD *)(this->Type + 1504)
+          if ( !*(_DWORD *)(*(_DWORD *)(this + 1732) + 1504) /*0x419492*/
             || !a2
-            || !Object::IsAlliedWithObjectHouse(this->focus, (int)a2) )
+            || !Object::IsAlliedWithObjectHouse(*(_DWORD **)(this + 540), (int)a2) )
           {
-            goto LABEL_3;
+            goto LABEL_3; /*0x419499*/
           }
-          int v16 = (this->inAirFlag >= *(_DWORD *)(this->Type + 1504)) - 1;
-          LOBYTE(v16) = v16 & 0xF7;
-          return v16 + 10;
+          v16 = (*(_DWORD *)(this + 276) >= *(_DWORD *)(*(_DWORD *)(this + 1732) + 1504)) - 1; /*0x4194b9*/
+          LOBYTE(v16) = v16 & 0xF7; /*0x4194bb*/
+          return v16 + 10; /*0x4194c2*/
         case 18:
-          FootClass::MissionDispatch((int *)this, a2, a3, a4);
-          void * v8 = *a4;
-          if ( *a4 && (*(int (__thiscall **)(void *))(*(_DWORD *)v8 + 44))(v8) == 6 )
+          FootClass::MissionDispatch((int *)this, a2, a3, a4); /*0x4191ff*/
+          v8 = *a4; /*0x419204*/
+          if ( *a4 && (*(int (__thiscall **)(void *))(*(_DWORD *)v8 + 44))(v8) == 6 ) /*0x419214*/
           {
-            int v9 = *(_DWORD *)this;
-            void * v10 = AbstractClass::IsTechnoType(v8);
-            if ( (*(int (__thiscall **)(int, int, void *))(v9 + 632))(this, 15, v10) != 1 )
-              return 10;
-            (*(void (__thiscall **)(int, int, _DWORD))(this->q7A0)(this, 7, 0);
+            v9 = *(_DWORD *)this; /*0x419216*/
+            v10 = AbstractClass::IsTechnoType(v8); /*0x41921a*/
+            if ( (*(int (__thiscall **)(int, int, void *))(v9 + 632))(this, 15, v10) != 1 ) /*0x41922d*/
+              return 10; /*0x419238*/
+            (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)this + 488))(this, 7, 0); /*0x419241*/
           }
           else
           {
-            (*(void (__thiscall **)(int, int, _DWORD))(this->q7A0)(this, 2, 0);
+            (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)this + 488))(this, 2, 0); /*0x41924b*/
           }
-          (*(void (__thiscall **)(int, void *, int))(this->q120)(this, v8, 1);
-          (*(void (__thiscall **)(int))(this->disguiseBlinkTimer)(this);
-          result = 1;
-          break;
+          (*(void (__thiscall **)(int, void *, int))(*(_DWORD *)this + 1152))(this, v8, 1); /*0x419258*/
+          (*(void (__thiscall **)(int))(*(_DWORD *)this + 492))(this); /*0x419262*/
+          result = 1; /*0x41926b*/
+          break; /*0x419271*/
         case 19:
-          FootClass::MissionDispatch((int *)this, a2, a3, a4);
-          if ( !this->locomotor )
-            WinAPI::Wrapper(-2147467261);
-          if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(*this->locomotor + 16))(this->locomotor) )
-            return 1;
-          int v11 = this->movementDestination;
-          if ( !v11 )
-            return 1;
-          if ( *(_BYTE *)(this->Type + 3597)
+          FootClass::MissionDispatch((int *)this, a2, a3, a4); /*0x419281*/
+          if ( !*(_DWORD *)(this + 1652) ) /*0x419286*/
+            WinAPI::Wrapper(-2147467261); /*0x419295*/
+          if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(**(_DWORD **)(this + 1652) + 16))(*(_DWORD *)(this + 1652)) ) /*0x4192a3*/
+            return 1; /*0x4192a3*/
+          v11 = *(_DWORD *)(this + 1444); /*0x4192ae*/
+          if ( !v11 ) /*0x4192b6*/
+            return 1; /*0x4192b6*/
+          if ( *(_BYTE *)(*(_DWORD *)(this + 1732) + 3597) /*0x4192ee*/
             && (*(int (__thiscall **)(int))(*(_DWORD *)v11 + 44))(v11) == 11
-            && this->movementDestination == (*(int (__thiscall **)(int))(this->q1BC)(this) )
+            && *(_DWORD *)(this + 1444) == (*(int (__thiscall **)(int))(*(_DWORD *)this + 444))(this) )
           {
-            return 1;
+            return 1; /*0x4192f7*/
           }
           else
           {
-            return 10;
+            return 10; /*0x41951f*/
           }
         case 21:
-          int v12 = this->Type;
-          if ( this->inAirFlag == *(_DWORD *)(v12 + 1504) )
-            Timer::StartDouble((_BYTE *)(this + 848), *(double *)(v12 + 968));
+          v12 = *(_DWORD *)(this + 1732); /*0x419300*/
+          if ( *(_DWORD *)(this + 276) == *(_DWORD *)(v12 + 1504) ) /*0x419312*/
+            Timer::StartDouble((_BYTE *)(this + 848), *(double *)(v12 + 968)); /*0x419328*/
           if ( a2 )
           {
-            _DWORD * v13 = (*(int (__thiscall **)(_DWORD *))(*a2 + 44))(a2) == 15 ? a2 : 0;
-            if ( v13 )
+            v13 = (*(int (__thiscall **)(_DWORD *))(*a2 + 44))(a2) == 15 ? a2 : 0;
+            if ( v13 ) /*0x419347*/
             {
-              if ( *(_BYTE *)(v13[432] + 3777) && !*((_BYTE *)v13 + 1753) )
+              if ( *(_BYTE *)(v13[432] + 3777) && !*((_BYTE *)v13 + 1753) ) /*0x419359*/
               {
-                (*(void (__thiscall **)(int, _DWORD))(this->unknown_short_3C8)(this, 0);
-                (*(void (__thiscall **)(int, _DWORD, int))(this->q120)(this, 0, 1);
-                (*(void (__thiscall **)(int, int, _DWORD))(this->q7A0)(this, 4, 0);
+                (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)this + 968))(this, 0); /*0x419369*/
+                (*(void (__thiscall **)(int, _DWORD, int))(*(_DWORD *)this + 1152))(this, 0, 1); /*0x419377*/
+                (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)this + 488))(this, 4, 0); /*0x419385*/
               }
             }
           }
-          return 5;
+          return 5; /*0x419394*/
         case 23:
-          (*(void (__thiscall **)(int, int, _DWORD))(this->q7A0)(this, 2, 0);
-          int v6 = *(_DWORD *)this;
-          ClosestPlacementCell = TechnoClass::FindClosestPlacementCell((int *)this);
-          (*(void (__thiscall **)(int, void *, int))(v6 + 1152))(this, ClosestPlacementCell, 1);
-          (*(void (__thiscall **)(int, int))(this->temporalUsing)(this, 3);
-          return FootClass::MissionDispatch((int *)this, a2, a3, a4);
+          (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)this + 488))(this, 2, 0); /*0x4191b7*/
+          v6 = *(_DWORD *)this; /*0x4191bd*/
+          ClosestPlacementCell = TechnoClass::FindClosestPlacementCell((int *)this); /*0x4191c3*/
+          (*(void (__thiscall **)(int, void *, int))(v6 + 1152))(this, ClosestPlacementCell, 1); /*0x4191cb*/
+          (*(void (__thiscall **)(int, int))(*(_DWORD *)this + 628))(this, 3); /*0x4191d7*/
+          return FootClass::MissionDispatch((int *)this, a2, a3, a4); /*0x4191d7*/
         case 29:
-          if ( this->q2B4 )
-            return 10;
+          if ( *(_DWORD *)(this + 692) )
+            return 10; /*0x419160*/
           else
-            return *(_DWORD *)(this->Type + 1668) != this->pitchAngle ? 10 : 1;
+            return *(_DWORD *)(*(_DWORD *)(this + 1732) + 1668) != *(_DWORD *)(this + 764) ? 10 : 1;
         case 31:
-          if ( this->pitchAngle >= *(_DWORD *)(this->Type + 1668) / 2 && this->q2B4 )
-            return 1;
+          if ( *(_DWORD *)(this + 764) >= *(_DWORD *)(*(_DWORD *)(this + 1732) + 1668) / 2 && *(_DWORD *)(this + 692) ) /*0x419124*/
+            return 1; /*0x419131*/
           else
-            return FootClass::MissionDispatch((int *)this, a2, a3, a4);
+            return FootClass::MissionDispatch((int *)this, a2, a3, a4); /*0x419147*/
         case 33:
-          return *(_DWORD *)(this->Type + 1668) != this->pitchAngle ? 10 : 1;
+          return *(_DWORD *)(*(_DWORD *)(this + 1732) + 1668) != *(_DWORD *)(this + 764) ? 10 : 1;
         default:
-          return FootClass::MissionDispatch((int *)this, a2, a3, a4);
+          return FootClass::MissionDispatch((int *)this, a2, a3, a4); /*0x4191ef*/
       }
-      break;
+      break; /*0x4191ef*/
   }
-  return result;
-}
-
-/* ASM:
-push    ebx
-push    ebp
-push    esi
-mov     esi, ecx
-push    edi
-mov     eax, [esi+0ACh]
-add     eax, 0FFFFFFFCh ; switch 28 cases
-cmp     eax, 1Bh
-ja      short def_4190CC ; jumptable 004190CC default case, cases 5-25,28,29
-xor     ecx, ecx
-mov     cl, ds:byte_419534[eax]
-jmp     ds:jpt_4190CC[ecx*4] ; switch jump
-; ---------------------------------------------------------------------------
-
-loc_4190D3:                             ; CODE XREF: AircraftClass__MissionDispatch+1C↑j
-; DATA XREF: .text:jpt_4190CC↓o
-mov     eax, [esi+294h] ; jumptable 004190CC cases 4,26,27,30,31
-test    eax, eax
-jnz     short def_4190CC ; jumptable 004190CC default case, cases 5-25,28,29
-
-loc_4190DD:                             ; CODE XREF: AircraftClass__MissionDispatch+3C9↓j
-; AircraftClass__MissionDispatch+3D5↓j ...
-pop     edi
-pop     esi
-pop     ebp
-xor     eax, eax
-pop     ebx
-retn    0Ch
-; ---------------------------------------------------------------------------
-
-def_4190CC:                             ; CODE XREF: AircraftClass__MissionDispatch+12↑j
-; AircraftClass__MissionDispatch+1C↑j ...
-mov     ebp, [esp+10h+arg_4] ; jumptable 004190CC default case, cases 5-25,28,29
-mov     edi, [esp+10h+arg_0]
-lea     eax, [ebp-8]    ; switch 26 cases
-cmp     eax, 19h
-ja      def_419102      ; jumptable 00419102 default case, cases 9-13,16,17,20,22,24-28,30,32
-xor     edx, edx
-mov     dl, ds:byte_41957C[eax]
-jmp     ds:jpt_419102[edx*4] ; switch jump
-; ---------------------------------------------------------------------------
-
-loc_419109:                             ; CODE XREF: AircraftClass__MissionDispatch+52↑j
-; DATA XREF: .text:jpt_419102↓o
-mov     eax, [esi+6C4h] ; jumptable 00419102 case 31
-mov     ecx, [esi+2FCh]
-mov     eax, [eax+684h]
-cdq
-sub     eax, edx
-sar     eax, 1
-cmp     ecx, eax
-jl      short loc_41913A
-mov     eax, [esi+2B4h]
-test    eax, eax
-jz      short loc_41913A
-pop     edi
-pop     esi
-pop     ebp
-mov     eax, 1
-pop     ebx
-retn    0Ch
-; ---------------------------------------------------------------------------
-
-loc_41913A:                             ; CODE XREF: AircraftClass__MissionDispatch+72↑j
-; AircraftClass__MissionDispatch+7C↑j
-mov     ecx, [esp+10h+arg_8]
-mov     edx, [esp+10h+arg_0]
-push    ecx
-push    ebp
-push    edx
-mov     ecx, esi
-call    FootClass__MissionDispatch
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-retn    0Ch
-; ---------------------------------------------------------------------------
-
-loc_419153:                             ; CODE XREF: AircraftClass__MissionDispatch+52↑j
-; DATA XREF: .text:jpt_419102↓o
-mov     eax, [esi+2B4h] ; jumptable 00419102 case 29
-test    eax, eax
-jz      short loc_419169
-pop     edi
-pop     esi
-pop     ebp
-mov     eax, 0Ah
-pop     ebx
-retn    0Ch
-; ---------------------------------------------------------------------------
-
-loc_419169:                             ; CODE XREF: AircraftClass__MissionDispatch+AB↑j
-mov     ecx, [esi+6C4h]
-mov     eax, [esi+2FCh]
-mov     edi, [ecx+684h]
-sub     eax, edi
-pop     edi
-neg     eax
-sbb     eax, eax
-pop     esi
-and     eax, 9
-pop     ebp
-inc     eax
-pop     ebx
-retn    0Ch
-; ---------------------------------------------------------------------------
-
-loc_41918C:                             ; CODE XREF: AircraftClass__MissionDispatch+52↑j
-; DATA XREF: .text:jpt_419102↓o
-mov     edx, [esi+6C4h] ; jumptable 00419102 case 33
-mov     eax, [esi+2FCh]
-mov     edi, [edx+684h]
-sub     eax, edi
-pop     edi
-neg     eax
-sbb     eax, eax
-pop     esi
-and     eax, 9
-pop     ebp
-inc     eax
-pop     ebx
-retn    0Ch
-; ---------------------------------------------------------------------------
-
-loc_4191AF:                             ; CODE XREF: AircraftClass__MissionDispatch+52↑j
-; DATA XREF: .text:jpt_419102↓o
-mov     eax, [esi]      ; jumptable 00419102 case 23
-push    0
-push    2
-mov     ecx, esi
-call    dword ptr [eax+1E8h]
-mov     ebx, [esi]
-push    1
-mov     ecx, esi
-call    TechnoClass__FindClosestPlacementCell
-push    eax
-mov     ecx, esi
-call    dword ptr [ebx+480h]
-mov     edx, [esi]
-push    3
-mov     ecx, esi
-call    dword ptr [edx+274h]
-
-def_419102:                             ; CODE XREF: AircraftClass__MissionDispatch+44↑j
-; AircraftClass__MissionDispatch+52↑j ...
-mov     eax, [esp+10h+arg_8] ; jumptable 00419102 default case, cases 9-13,16,17,20,22,24-28,30,32
-mov     ecx, esi
-push    eax
-push    ebp
-push    edi
-call    FootClass__MissionDispatch
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-retn    0Ch
-; ---------------------------------------------------------------------------
-
-loc_4191F2:                             ; CODE XREF: AircraftClass__MissionDispatch+52↑j
-; DATA XREF: .text:jpt_419102↓o
-mov     edi, [esp+10h+arg_8] ; jumptable 00419102 case 18
-mov     eax, [esp+10h+arg_0]
-push    edi
-push    ebp
-push    eax
-mov     ecx, esi
-call    FootClass__MissionDispatch
-mov     edi, [edi]
-test    edi, edi
-jz      short loc_419243
-mov     edx, [edi]
-mov     ecx, edi
-call    dword ptr [edx+2Ch]
-cmp     eax, 6
-jnz     short loc_419243
-mov     ebx, [esi]
-mov     ecx, edi
-call    AbstractClass__IsTechnoType
-push    eax
-push    0Fh
-mov     ecx, esi
-call    dword ptr [ebx+278h]
-cmp     eax, 1
-jz      short loc_41923B
-pop     edi
-pop     esi
-pop     ebp
-mov     eax, 0Ah
-pop     ebx
-retn    0Ch
-; ---------------------------------------------------------------------------
-
-loc_41923B:                             ; CODE XREF: AircraftClass__MissionDispatch+17D↑j
-mov     eax, [esi]
-push    0
-push    7
-jmp     short loc_419249
-; ---------------------------------------------------------------------------
-
-loc_419243:                             ; CODE XREF: AircraftClass__MissionDispatch+158↑j
-; AircraftClass__MissionDispatch+164↑j
-mov     eax, [esi]
-push    0
-push    2
-
-loc_419249:                             ; CODE XREF: AircraftClass__MissionDispatch+191↑j
-mov     ecx, esi
-call    dword ptr [eax+1E8h]
-mov     edx, [esi]
-push    1
-push    edi
-mov     ecx, esi
-call    dword ptr [edx+480h]
-mov     eax, [esi]
-mov     ecx, esi
-call    dword ptr [eax+1ECh]
-pop     edi
-pop     esi
-pop     ebp
-mov     eax, 1
-pop     ebx
-retn    0Ch
-; ---------------------------------------------------------------------------
-
-loc_419274:                             ; CODE XREF: AircraftClass__MissionDispatch+52↑j
-; DATA XREF: .text:jpt_419102↓o
-mov     ecx, [esp+10h+arg_8] ; jumptable 00419102 case 19
-mov     edx, [esp+10h+arg_0]
-push    ecx
-push    ebp
-push    edx
-mov     ecx, esi
-call    FootClass__MissionDispatch
-mov     eax, [esi+674h]
-test    eax, eax
-jnz     short loc_41929A
-push    80004003h
-call    WinAPI__Wrapper
-; ---------------------------------------------------------------------------
-
-loc_41929A:                             ; CODE XREF: AircraftClass__MissionDispatch+1DE↑j
-mov     eax, [esi+674h]
-push    eax
-mov     ecx, [eax]
-call    dword ptr [ecx+10h]
-test    al, al
-jz      loc_41945F
-mov     ecx, [esi+5A4h]
-test    ecx, ecx
-jz      loc_41945F
-mov     edx, [esi+6C4h]
-mov     al, [edx+0E0Dh]
-test    al, al
-jz      loc_41951F
-mov     eax, [ecx]
-call    dword ptr [eax+2Ch]
-cmp     eax, 0Bh
-jnz     loc_41951F
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+1BCh]
-cmp     [esi+5A4h], eax
-jnz     loc_41951F
-pop     edi
-pop     esi
-pop     ebp
-mov     eax, 1
-pop     ebx
-retn    0Ch
-; ---------------------------------------------------------------------------
-
-loc_419300:                             ; CODE XREF: AircraftClass__MissionDispatch+52↑j
-; DATA XREF: .text:jpt_419102↓o
-mov     eax, [esi+6C4h] ; jumptable 00419102 case 21
-mov     ecx, [esi+114h]
-cmp     ecx, [eax+5E0h]
-jnz     short loc_41932D
-mov     edx, [eax+3CCh]
-mov     eax, [eax+3C8h]
-push    edx
-push    eax             ; double
-lea     ecx, [esi+350h]
-call    Timer__StartDouble
-
-loc_41932D:                             ; CODE XREF: AircraftClass__MissionDispatch+262↑j
-mov     edi, [esp+10h+arg_0]
-test    edi, edi
-jz      short loc_41938B
-mov     edx, [edi]
-mov     ecx, edi
-call    dword ptr [edx+2Ch]
-sub     eax, 0Fh
-neg     eax
-sbb     eax, eax
-not     eax
-and     eax, edi
-jz      short loc_41938B
-mov     ecx, [eax+6C0h]
-mov     dl, [ecx+0EC1h]
-test    dl, dl
-jz      short loc_41938B
-mov     cl, [eax+6D9h]
-test    cl, cl
-jnz     short loc_41938B
-mov     edx, [esi]
-push    0
-mov     ecx, esi
-call    dword ptr [edx+3C8h]
-mov     eax, [esi]
-push    1
-push    0
-mov     ecx, esi
-call    dword ptr [eax+480h]
-mov     edx, [esi]
-push    0
-push    4
-mov     ecx, esi
-call    dword ptr [edx+1E8h]
-
-loc_41938B:                             ; CODE XREF: AircraftClass__MissionDispatch+283↑j
-; AircraftClass__MissionDispatch+297↑j ...
-pop     edi
-pop     esi
-pop     ebp
-mov     eax, 5
-pop     ebx
-retn    0Ch
-; ---------------------------------------------------------------------------
-
-loc_419397:                             ; CODE XREF: AircraftClass__MissionDispatch+52↑j
-; DATA XREF: .text:jpt_419102↓o
-mov     eax, [esi+6C4h] ; jumptable 00419102 case 14
-mov     eax, [eax+5E0h]
-test    eax, eax
-jle     def_419102      ; jumptable 00419102 default case, cases 9-13,16,17,20,22,24-28,30,32
-cmp     [esi+114h], eax
-jge     def_419102      ; jumptable 00419102 default case, cases 9-13,16,17,20,22,24-28,30,32
-mov     ebx, [esp+10h+arg_8]
-mov     edi, [esp+10h+arg_0]
-push    ebx
-push    ebp
-push    edi
-mov     ecx, esi
-call    FootClass__MissionDispatch
-mov     eax, [esi+674h]
-test    eax, eax
-jnz     short loc_4193DD
-push    80004003h
-call    WinAPI__Wrapper
-; ---------------------------------------------------------------------------
-
-loc_4193DD:                             ; CODE XREF: AircraftClass__MissionDispatch+321↑j
-mov     eax, [esi+674h]
-push    eax
-mov     ecx, [eax]
-call    dword ptr [ecx+10h]
-test    al, al
-jnz     short loc_41945F
-mov     edx, [esi+6C4h]
-mov     eax, [edx+3CCh]
-push    eax
-mov     ecx, [edx+3C8h]
-push    ecx             ; double
-lea     ecx, [esi+350h]
-call    RateScaler__Init
-mov     edx, [esi]
-push    edi
-push    13h
-mov     ecx, esi
-call    dword ptr [edx+278h]
-cmp     eax, 1
-jnz     short loc_41945F
-mov     [ebx], esi
-mov     eax, [esi]
-push    edi
-push    ebx
-push    12h
-mov     ecx, esi
-call    dword ptr [eax+27Ch]
-cmp     eax, 1
-jz      short loc_41944C
-mov     edx, [esi]
-push    edi
-push    3
-mov     ecx, esi
-call    dword ptr [edx+278h]
-pop     edi
-pop     esi
-pop     ebp
-mov     eax, 1
-pop     ebx
-retn    0Ch
-; ---------------------------------------------------------------------------
-
-loc_41944C:                             ; CODE XREF: AircraftClass__MissionDispatch+381↑j
-push    0
-mov     ecx, esi
-call    Team__GetMember
-mov     edx, [eax]
-mov     ecx, eax
-call    dword ptr [edx+150h]
-
-loc_41945F:                             ; CODE XREF: AircraftClass__MissionDispatch+1F8↑j
-; AircraftClass__MissionDispatch+206↑j ...
-pop     edi
-pop     esi
-pop     ebp
-mov     eax, 1
-pop     ebx
-retn    0Ch
-; ---------------------------------------------------------------------------
-
-loc_41946B:                             ; CODE XREF: AircraftClass__MissionDispatch+52↑j
-; DATA XREF: .text:jpt_419102↓o
-mov     eax, [esi+6C4h] ; jumptable 00419102 case 15
-mov     ecx, [eax+5E0h]
-test    ecx, ecx
-jz      loc_4190DD
-mov     eax, [esp+10h+arg_0]
-test    eax, eax
-jz      loc_4190DD
-mov     ecx, [esi+21Ch]
-push    eax
-call    Object__IsAlliedWithObjectHouse
-test    al, al
-jz      loc_4190DD
-mov     ecx, [esi+6C4h]
-mov     edx, [esi+114h]
-xor     eax, eax
-mov     edi, [ecx+5E0h]
-cmp     edx, edi
-pop     edi
-setnl   al
-dec     eax
-pop     esi
-and     al, 0F7h
-pop     ebp
-add     eax, 0Ah
-pop     ebx
-retn    0Ch
-; ---------------------------------------------------------------------------
-
-loc_4194C5:                             ; CODE XREF: AircraftClass__MissionDispatch+52↑j
-; DATA XREF: .text:jpt_419102↓o
-mov     eax, [esi+6C4h] ; jumptable 00419102 case 8
-mov     cl, [eax+0DFCh]
-test    cl, cl
-jz      def_419102      ; jumptable 00419102 default case, cases 9-13,16,17,20,22,24-28,30,32
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+184h]
-cmp     eax, 2
-jnz     def_419102      ; jumptable 00419102 default case, cases 9-13,16,17,20,22,24-28,30,32
-mov     al, [esi+418h]
-test    al, al
-jz      def_419102      ; jumptable 00419102 default case, cases 9-13,16,17,20,22,24-28,30,32
-mov     eax, [esi+118h]
-test    eax, eax
-jz      short loc_419513
-lea     ecx, [esi+114h]
-call    CCINIClass__GetDB
-cmp     eax, edi
-jz      short loc_41951F
-
-loc_419513:                             ; CODE XREF: AircraftClass__MissionDispatch+452↑j
-cmp     [esi+5A4h], edi
-jnz     def_419102      ; jumptable 00419102 default case, cases 9-13,16,17,20,22,24-28,30,32
-
-loc_41951F:                             ; CODE XREF: AircraftClass__MissionDispatch+21A↑j
-; AircraftClass__MissionDispatch+228↑j ...
-pop     edi
-pop     esi
-pop     ebp
-mov     eax, 0Ah
-pop     ebx
-retn    0Ch
-*/
-
-// ============================================================
-// Phase 3: Flight Paths
-// ============================================================
-
-// IDA: 0x414310 (MoveTo, 406B)
+  return result; /*0x4190dd*/
 }
 // 0x414310
 int AircraftClass::MoveTo()
 {
-{
+  _DWORD *v3; // ebx
+  int v5; // ecx
+  int v6; // edi
+  int v7; // ebx
+  char v8; // bl
+  int v9; // eax
   __int16 v10; // dx
-  _DWORD * v3 = a2;
-  int v15 = *a2;
-  int v5 = this->Type;
-  int v16 = a2[1];
-  int v17 = a2[2];
-  if ( !*(_BYTE *)(v5 + 3432) )
+  int v11; // eax
+  int v12; // ecx
+  int v13; // edi
+  int v15; // [esp+Ch] [ebp-Ch] BYREF
+  int v16; // [esp+10h] [ebp-8h]
+  int v17; // [esp+14h] [ebp-4h]
+
+  v3 = a2; /*0x414314*/
+  v15 = *a2; /*0x414320*/
+  v5 = *(this + 433); /*0x414324*/
+  v16 = a2[1]; /*0x41432d*/
+  v17 = a2[2]; /*0x414334*/
+  if ( !*(_BYTE *)(v5 + 3432) ) /*0x414338*/
   {
-    if ( this->isALoaner || !(unsigned __int8)IsCoordVisibleMap(a2) )
+    if ( *((_BYTE *)this + 980) || !(unsigned __int8)IsCoordVisibleMap(a2) ) /*0x414352*/
     {
-      int v6 = this->Type;
-      int v7 = Cell::GetGroundHeight(v3);
-      v17 = (*(int (__thiscall **)(int))(*(_DWORD *)v6 + 188))(v6) + v7;
+      v6 = *(this + 433); /*0x41436c*/
+      v7 = Cell::GetGroundHeight(v3); /*0x414381*/
+      v17 = (*(int (__thiscall **)(int))(*(_DWORD *)v6 + 188))(v6) + v7; /*0x41438b*/
     }
     else
     {
-      v17 = Cell::GetGroundHeight(v3);
+      v17 = Cell::GetGroundHeight(v3); /*0x414366*/
     }
   }
-  char v8 = a3;
-  if ( !(unsigned __int8)FootClass::DispatchInput(&v15, a3) )
-    return 0;
-  int v9 = this->Type;
-  if ( !*(_BYTE *)(v9 + 560)
+  v8 = a3; /*0x41438f*/
+  if ( !(unsigned __int8)FootClass::DispatchInput(&v15, a3) ) /*0x41439b*/
+    return 0; /*0x41449d*/
+  v9 = *(this + 433); /*0x4143a8*/
+  if ( !*(_BYTE *)(v9 + 560) /*0x4143e1*/
     || !*(_BYTE *)(v9 + 3594)
-    || *(_DWORD *)this->SelectVocOrSfx(0)
-    && *(_BYTE *)(*(_DWORD *)this->SelectVocOrSfx(0) + 327) )
+    || *(_DWORD *)(*(int (__thiscall **)(_DWORD *, _DWORD))(*this + 1016))(this, 0)
+    && *(_BYTE *)(*(_DWORD *)(*(int (__thiscall **)(_DWORD *, _DWORD))(*this + 1016))(this, 0) + 327) )
   {
-    this->isALoaner = 1;
+    *((_BYTE *)this + 980) = 1; /*0x4143eb*/
   }
-  if ( this->q118 )
-    this->HasPassengers = 1;
-  LOBYTE(v10) = 0;
-  HIBYTE(v10) = v8;
-  LOWORD(a2) = v10;
-  FacingClass::Set_SyncLog(&a2);
-  this->turretChargeTimer = g_CurrentFrame;
-  int v11 = v16;
-  this->behindAnim = 1;
-  this->currentTurretNumber = v11;
-  this->secondaryTurretIndex = 1;
-  int v12 = this->Type;
-  this->radioContact = 0;
-  int v13 = (*(int (__thiscall **)(int))(*(_DWORD *)v12 + 188))(v12);
-  if ( this->GetZAboveGround() == v13 )
-    this->Destru_vt337(0, 1072693248);
+  if ( *(this + 70) ) /*0x4143f2*/
+    *((_BYTE *)this + 1737) = 1; /*0x4143fc*/
+  LOBYTE(v10) = 0; /*0x414403*/
+  HIBYTE(v10) = v8; /*0x414409*/
+  LOWORD(a2) = v10; /*0x414412*/
+  FacingClass::Set_SyncLog(&a2); /*0x414417*/
+  *(this + 64) = g_CurrentFrame; /*0x41442c*/
+  v11 = v16; /*0x41442e*/
+  *(this + 67) = 1; /*0x414432*/
+  *(this + 65) = v11; /*0x414438*/
+  *(this + 66) = 1; /*0x41443b*/
+  v12 = *(this + 433); /*0x41443e*/
+  *(this + 62) = 0; /*0x414444*/
+  v13 = (*(int (__thiscall **)(int))(*(_DWORD *)v12 + 188))(v12); /*0x414456*/
+  if ( (*(int (__thiscall **)(_DWORD *))(*this + 456))(this) == v13 ) /*0x414464*/
+    (*(void (__thiscall **)(_DWORD *, _DWORD, int))(*this + 1348))(this, 0, 1072693248); /*0x414471*/
   else
-    this->Destru_vt337(0, 0);
-  return 1;
+    (*(void (__thiscall **)(_DWORD *, _DWORD, _DWORD))(*this + 1348))(this, 0, 0); /*0x41448a*/
+  return 1; /*0x414477*/
 }
-
-/* ASM:
-sub     esp, 0Ch
-push    ebx
-mov     ebx, [esp+10h+arg_0]
-push    esi
-mov     eax, ebx
-mov     esi, ecx
-push    edi
-mov     ecx, [eax]
-mov     [esp+18h+var_C], ecx
-mov     ecx, [esi+6C4h]
-mov     edx, [eax+4]
-mov     [esp+18h+var_8], edx
-mov     eax, [eax+8]
-mov     [esp+18h+var_4], eax
-mov     al, [ecx+0D68h]
-test    al, al
-jnz     short loc_41438F
-mov     al, [esi+3D4h]
-test    al, al
-jnz     short loc_41436C
-push    ebx
-mov     ecx, 87F7E8h
-call    IsCoordVisibleMap
-test    al, al
-jz      short loc_41436C
-push    ebx
-mov     ecx, 87F7E8h
-call    Cell__GetGroundHeight
-mov     [esp+18h+var_4], eax
-jmp     short loc_41438F
-; ---------------------------------------------------------------------------
-
-loc_41436C:                             ; CODE XREF: AircraftClass__MoveTo+3A↑j
-; AircraftClass__MoveTo+49↑j
-mov     edi, [esi+6C4h]
-push    ebx
-mov     ecx, 87F7E8h
-call    Cell__GetGroundHeight
-mov     edx, [edi]
-mov     ecx, edi
-mov     ebx, eax
-call    dword ptr [edx+0BCh]
-add     ebx, eax
-mov     [esp+18h+var_4], ebx
-
-loc_41438F:                             ; CODE XREF: AircraftClass__MoveTo+30↑j
-; AircraftClass__MoveTo+5A↑j
-mov     ebx, [esp+18h+arg_4]
-lea     eax, [esp+18h+var_C]
-push    ebx
-push    eax
-mov     ecx, esi
-call    FootClass__DispatchInput
-test    al, al
-jz      loc_41449B
-mov     eax, [esi+6C4h]
-mov     cl, [eax+230h]
-test    cl, cl
-jz      short loc_4143EB
-mov     cl, [eax+0E0Ah]
-test    cl, cl
-jz      short loc_4143EB
-mov     edx, [esi]
-push    0
-mov     ecx, esi
-call    dword ptr [edx+3F8h]
-cmp     dword ptr [eax], 0
-jz      short loc_4143F2
-mov     eax, [esi]
-push    0
-mov     ecx, esi
-call    dword ptr [eax+3F8h]
-mov     ecx, [eax]
-mov     al, [ecx+147h]
-test    al, al
-jz      short loc_4143F2
-
-loc_4143EB:                             ; CODE XREF: AircraftClass__MoveTo+A6↑j
-; AircraftClass__MoveTo+B0↑j
-mov     byte ptr [esi+3D4h], 1
-
-loc_4143F2:                             ; CODE XREF: AircraftClass__MoveTo+C1↑j
-; AircraftClass__MoveTo+D9↑j
-mov     eax, [esi+118h]
-test    eax, eax
-jz      short loc_414403
-mov     byte ptr [esi+6C9h], 1
-
-loc_414403:                             ; CODE XREF: AircraftClass__MoveTo+EA↑j
-xor     edx, edx
-lea     eax, [esp+18h+arg_0]
-mov     dh, bl
-push    eax
-lea     ecx, [esi+3A0h]
-mov     word ptr [esp+1Ch+arg_0], dx
-call    FacingClass__Set_SyncLog
-mov     eax, dword_A8ED54+30h
-lea     edx, [esi+100h]
-mov     ecx, 1
-mov     [edx], eax
-mov     eax, [esp+18h+var_8]
-mov     [esi+10Ch], ecx
-mov     [edx+4], eax
-mov     [edx+8], ecx
-mov     ecx, [esi+6C4h]
-mov     dword ptr [esi+0F8h], 0
-mov     edx, [ecx]
-call    dword ptr [edx+0BCh]
-mov     edi, eax
-mov     eax, [esi]
-mov     ecx, esi
-call    dword ptr [eax+1C8h]
-cmp     eax, edi
-jnz     short loc_414482
-mov     edx, [esi]
-push    3FF00000h
-push    0
-mov     ecx, esi
-call    dword ptr [edx+544h]
-pop     edi
-pop     esi
-mov     al, 1
-pop     ebx
-add     esp, 0Ch
-retn    8
-; ---------------------------------------------------------------------------
-
-loc_414482:                             ; CODE XREF: AircraftClass__MoveTo+154↑j
-mov     eax, [esi]
-push    0
-push    0
-mov     ecx, esi
-call    dword ptr [eax+544h]
-pop     edi
-pop     esi
-mov     al, 1
-pop     ebx
-add     esp, 0Ch
-retn    8
-; ---------------------------------------------------------------------------
-
-loc_41449B:                             ; CODE XREF: AircraftClass__MoveTo+92↑j
-pop     edi
-pop     esi
-xor     al, al
-pop     ebx
-add     esp, 0Ch
-retn    8
-*/
-}
-
 // IDA: 0x417BD0 (ValidateMovement, 137B)
 int AircraftClass::ValidateMovement()
 {
@@ -4057,81 +2555,36 @@ bool AircraftClass::CanEnterCell()
 // 0x41ba90
 int AircraftClass::ProcessLanding()
 {
-{
   int result; // eax
 
-  switch ( this->currentMission )
+  switch ( *(_DWORD *)(this + 172) ) /*0x41baab*/
   {
-    case 4:
-    case 0x1A:
-    case 0x1B:
-    case 0x1E:
-    case 0x1F:
-      if ( this->airstrike )
-        goto LABEL_4;
-      result = a2 - 4;
-      switch ( a2 )
+    case 4: /*0x41baab*/
+    case 0x1A: /*0x41baab*/
+    case 0x1B: /*0x41baab*/
+    case 0x1E: /*0x41baab*/
+    case 0x1F: /*0x41baab*/
+      if ( *(_DWORD *)(this + 660) ) /*0x41bab2*/
+        goto LABEL_4; /*0x41baba*/
+      result = a2 - 4; /*0x41babc*/
+      switch ( a2 ) /*0x41bacc*/
       {
-        case 4:
-        case 26:
-        case 27:
-        case 30:
-        case 31:
+        case 4: /*0x41bacc*/
+        case 26: /*0x41bacc*/
+        case 27: /*0x41bacc*/
+        case 30: /*0x41bacc*/
+        case 31: /*0x41bacc*/
           goto LABEL_4;
         default:
           return result;
       }
     default:
-LABEL_4:
-      result = MissionClass::QueueMission((#377 *)this);
-      break;
+  LABEL_4:
+      result = ParticleClass::MissionDispatch((#377 *)this); /*0x41bad3*/
+      break; /*0x41bad9*/
   }
-  return result;
+  return result; /*0x41bade*/
 }
-
-/* ASM:
-mov     eax, [ecx+0ACh]
-push    esi
-mov     esi, [esp+4+arg_0]
-add     eax, 0FFFFFFFCh ; switch 28 cases
-cmp     eax, 1Bh
-ja      short def_41BAAB ; jumptable 0041BAAB default case, cases 5-25,28,29
-; jumptable 0041BACC cases 4,26,27,30,31
-xor     edx, edx
-mov     dl, ds:byte_41BAEC[eax]
-jmp     ds:jpt_41BAAB[edx*4] ; switch jump
-; ---------------------------------------------------------------------------
-
-loc_41BAB2:                             ; CODE XREF: AircraftClass__ProcessLanding+1B↑j
-; DATA XREF: .text:jpt_41BAAB↓o
-mov     eax, [ecx+294h] ; jumptable 0041BAAB cases 4,26,27,30,31
-test    eax, eax
-jnz     short def_41BAAB ; jumptable 0041BAAB default case, cases 5-25,28,29
-; jumptable 0041BACC cases 4,26,27,30,31
-lea     eax, [esi-4]    ; switch 28 cases
-cmp     eax, 1Bh
-ja      short def_41BACC ; jumptable 0041BACC default case, cases 5-25,28,29
-xor     edx, edx
-mov     dl, ds:byte_41BB10[eax]
-jmp     ds:jpt_41BACC[edx*4] ; switch jump
-; ---------------------------------------------------------------------------
-
-def_41BAAB:                             ; CODE XREF: AircraftClass__ProcessLanding+11↑j
-; AircraftClass__ProcessLanding+1B↑j ...
-mov     eax, [esp+4+arg_4] ; jumptable 0041BAAB default case, cases 5-25,28,29
-; jumptable 0041BACC cases 4,26,27,30,31
-push    eax
-push    esi
-call    ParticleClass__MissionDispatch
-
-def_41BACC:                             ; CODE XREF: AircraftClass__ProcessLanding+32↑j
-; AircraftClass__ProcessLanding+3C↑j
-; DATA XREF: ...
-pop     esi             ; jumptable 0041BACC default case, cases 5-25,28,29
-retn    8
-*/
-}
-
 // IDA: 0x415B10 (FindLandingCell, 336B)
 int AircraftClass::FindLandingCell()
 {
@@ -4150,111 +2603,43 @@ int AircraftClass::ValidateLandingCell()
 // 0x415a50
 int AircraftClass::ProcessReturnToBase()
 {
-{
-    unsigned int *v2;
-    unsigned int TransitionCount;
-    unsigned int *v4;
-    void *v5;
-    int v7;
-    int v8;
-    if ( this->Archive )
+  unsigned int *v2; // ecx
+  unsigned int TransitionCount; // eax
+  unsigned int *v4; // edi
+  void *v5; // eax
+  int v7; // [esp+4h] [ebp-8h] BYREF
+  int v8; // [esp+8h] [ebp-4h] BYREF
+
+  if ( *(this + 361) ) /*0x415a56*/
   {
-    if ( this->Archive == (unsigned int *)((int (__thiscall *)(unsigned int **))(*(void**)this)[111])(this) )
-    ((void (__thiscall *)(unsigned int **, int, int))(*(void**)this)[288])(this, 0, 1);
+    if ( *(this + 361) == (unsigned int *)((int (__thiscall *)(unsigned int **))(*this)[111])(this) ) /*0x415aef*/
+      ((void (__thiscall *)(unsigned int **, _DWORD, int))(*this)[288])(this, 0, 1); /*0x415af9*/
   }
-    else
+  else
   {
-    v2 = this->focus;
-    TransitionCount = v2[120];
-    if ( TransitionCount >= 4 )
-    TransitionCount = HouseClass::GetTransitionCount(v2);
-    v7 = *CellClass::FindOpenNeighbor( (int *)&DataGlobal_87F7E8, &v8, TransitionCount, (int)&g_AircraftStatusFlag, (int)&g_AircraftStatusFlag, 4, 1, 0);
-    if ( v7 != g_AircraftStatusFlag )
+    v2 = *(this + 135); /*0x415a60*/
+    TransitionCount = v2[120]; /*0x415a66*/
+    if ( TransitionCount >= 4 ) /*0x415a6e*/
+      TransitionCount = HouseClass::GetTransitionCount(v2); /*0x415a75*/
+    v7 = *CellClass::FindOpenNeighbor( /*0x415aa3*/
+            (int *)&MapClass_Instance,
+            &v8,
+            TransitionCount,
+            (int)&g_AircraftStatusFlag,
+            (int)&g_AircraftStatusFlag,
+            4,
+            1,
+            0);
+    if ( v7 != g_AircraftStatusFlag ) /*0x415aa7*/
     {
-    v4 = *(void**)this;
-    v5 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (short *)&v7);
-    ((void (__thiscall *)(unsigned int **, void *, int))v4[288])(this, v5, 1);
-    return 3;
+      v4 = *this; /*0x415ab8*/
+      v5 = CellCoord::To_CellObj(&MapClass_Instance, (__int16 *)&v7); /*0x415ac6*/
+      ((void (__thiscall *)(unsigned int **, void *, int))v4[288])(this, v5, 1); /*0x415ace*/
+      return 3; /*0x415ade*/
     }
   }
-    return 3;
+  return 3; /*0x415ada*/
 }
-
-/* ASM:
-sub     esp, 8
-push    esi
-mov     esi, ecx
-mov     eax, [esi+5A4h]
-test    eax, eax
-jnz     short loc_415ADF
-mov     ecx, [esi+21Ch]
-mov     eax, [ecx+1E0h]
-test    eax, eax
-jl      short loc_415A75
-cmp     eax, 3
-jle     short loc_415A7A
-
-loc_415A75:                             ; CODE XREF: AircraftClass__ProcessReturnToBase+1E↑j
-call    HouseClass__GetTransitionCount
-
-loc_415A7A:                             ; CODE XREF: AircraftClass__ProcessReturnToBase+23↑j
-push    0
-push    1
-push    4
-push    889E68h
-push    889E68h
-push    eax
-lea     eax, [esp+24h+var_4]
-mov     ecx, 87F7E8h
-push    eax
-call    CellClass__FindOpenNeighbor
-mov     eax, [eax]
-cmp     ax, ds:889E68h
-mov     [esp+0Ch+var_8], eax
-jnz     short loc_415AB7
-mov     cx, word ptr [esp+0Ch+var_8+2]
-cmp     cx, ds:889E6Ah
-jz      short loc_415AFF
-
-loc_415AB7:                             ; CODE XREF: AircraftClass__ProcessReturnToBase+57↑j
-push    edi
-mov     edi, [esi]
-lea     edx, [esp+10h+var_8]
-push    1
-push    edx
-mov     ecx, 87F7E8h
-call    CellCoord__To_CellObj
-push    eax
-mov     ecx, esi
-call    dword ptr [edi+480h]
-pop     edi
-mov     eax, 3
-pop     esi
-add     esp, 8
-retn
-; ---------------------------------------------------------------------------
-
-loc_415ADF:                             ; CODE XREF: AircraftClass__ProcessReturnToBase+E↑j
-mov     eax, [esi]
-mov     ecx, esi
-call    dword ptr [eax+1BCh]
-cmp     [esi+5A4h], eax
-jnz     short loc_415AFF
-mov     edx, [esi]
-push    1
-push    0
-mov     ecx, esi
-call    dword ptr [edx+480h]
-
-loc_415AFF:                             ; CODE XREF: AircraftClass__ProcessReturnToBase+65↑j
-; AircraftClass__ProcessReturnToBase+9F↑j
-mov     eax, 3
-pop     esi
-add     esp, 8
-retn
-*/
-}
-
 // IDA: 0x41A590 (CheckLandingClearance, 33B)
 int AircraftClass::CheckLandingClearance()
 {
@@ -4289,22 +2674,10 @@ int AircraftClass::LandingCheckStub()
 // 0x41b870
 int AircraftClass::ProcessPassengerEjection()
 {
-{
-  if ( this->q02B != 30 )
-    this->AircraftClass_field_bool_6D2 = 0;
-  return MissionClass::NextMission(this);
+  if ( *((_DWORD *)this + 43) != 30 ) /*0x41b877*/
+    *((_BYTE *)this + 1746) = 0; /*0x41b879*/
+  return MissionClass::AdvanceState(this);
 }
-
-/* ASM:
-cmp     dword ptr [ecx+0ACh], 1Eh
-jz      short loc_41B880
-mov     byte ptr [ecx+6D2h], 0
-
-loc_41B880:                             ; CODE XREF: AircraftClass__ProcessPassengerEjection+7↑j
-jmp     MissionClass__AdvanceState
-*/
-}
-
 // IDA: 0x41B5C0 (CheckPassengerCount, 23B)
 int AircraftClass::CheckPassengerCount()
 {
@@ -4351,695 +2724,237 @@ int AircraftClass::CheckReloadTimer()
 // 0x41b610
 int AircraftClass::PowerDrainUpdate(int a2)
 {
-    // Per-frame power for aircraft (vt13). a2 is the COM-stub context, unused.
-    return 0;
-}
+  int v3; // eax
+  int v4; // ecx
+  int v5; // edx
 
+  v3 = FootClass::BeginPowerUpdate((int)this, a2); /*0x41b619*/
+  LOBYTE(v3) = *(this + 1737); /*0x41b61e*/
+  Power::FlagProcess(a2, v3); /*0x41b627*/
+  LOBYTE(v4) = *(this + 1744); /*0x41b62c*/
+  Power::FlagProcess(a2, v4); /*0x41b635*/
+  LOBYTE(v5) = *(this + 1745); /*0x41b63a*/
+  Power::FlagProcess(a2, v5); /*0x41b643*/
+  return Power::TimerProcess((char)*(this + 1747)); /*0x41b657*/
+}
 // IDA: 0x41B660 (HandleTargetDestroyed, 56B)
 // 0x41b660
 AircraftTypeClass * * AircraftClass::HandleTargetDestroyed()
 {
-{
   int result; // eax
 
-  FootClass::HandleTargetDestroyed(this, a2, a3);
-  result = 0;
-  if ( (int *)this->AircraftClass_field_6CC == a2 )
-    this->AircraftClass_field_6CC = 0;
-  if ( (int *)this->q1B1 == a2 )
-    this->q1B1 = 0;
-  return result;
-}
-
-/* ASM:
-mov     eax, [esp+arg_4]
-push    esi
-push    edi
-mov     edi, [esp+8+arg_0]
-push    eax
-mov     esi, ecx
-push    edi
-call    FootClass__HandleTargetDestroyed
-mov     ecx, [esi+6CCh]
-xor     eax, eax
-cmp     ecx, edi
-jnz     short loc_41B685
-mov     [esi+6CCh], eax
-
-loc_41B685:                             ; CODE XREF: AircraftClass__HandleTargetDestroyed+1D↑j
-cmp     [esi+6C4h], edi
-jnz     short loc_41B693
-mov     [esi+6C4h], eax
-
-loc_41B693:                             ; CODE XREF: AircraftClass__HandleTargetDestroyed+2B↑j
-pop     edi
-pop     esi
-retn    8
-*/
-
-// IDA: 0x414A80 (ProcessMissionTimeout, 302B)
+  FootClass::HandleTargetDestroyed(this, a2, a3); /*0x41b66e*/
+  result = 0; /*0x41b679*/
+  if ( (int *)*(this + 435) == a2 ) /*0x41b67d*/
+    *(this + 435) = 0; /*0x41b67f*/
+  if ( (int *)*(this + 433) == a2 ) /*0x41b68b*/
+    *(this + 433) = 0; /*0x41b68d*/
+  return result; /*0x41b693*/
 }
 // 0x414a80
 AbstractClass * * AircraftClass::ProcessMissionTimeout()
 {
-// 0x414a80
-{
   char *MissionControl; // eax
-
-  if ( this->pitchAngle )
-  {
-  int v11; // [esp+18h] [ebp-4h]
-  int v10; // [esp+14h] [ebp-8h]
+  int v3; // esi
+  int v5; // edi
+  int v6; // eax
+  int v7; // edi
+  int v8; // eax
   int v9; // [esp+10h] [ebp-Ch] BYREF
-    if ( this->q2B4 )
-      goto LABEL_12;
-    if ( g_GameMode_Current[0] )
+  int v10; // [esp+14h] [ebp-8h]
+  int v11; // [esp+18h] [ebp-4h]
+
+  if ( *(this + 191) ) /*0x414a86*/
+  {
+    if ( *(this + 173) ) /*0x414ae5*/
+      goto LABEL_12; /*0x414ae5*/
+    if ( g_GameMode_Current[0] ) /*0x414afb*/
     {
-      int v5 = *this;
-      v9 = this->location;
-      v10 = this->q0A0;
-      v11 = this->q0A4;
-      int v6 = this->SelectAutoTarget_Cloaked(64, &v9, 0);
-      this->AssignTarget_SyncLog(v6);
+      v5 = *this; /*0x414b03*/
+      v9 = *(this + 39); /*0x414b09*/
+      v10 = *(this + 40); /*0x414b15*/
+      v11 = *(this + 41); /*0x414b20*/
+      v6 = (*(int (__thiscall **)(_DWORD *, int, int *, _DWORD))(v5 + 964))(this, 64, &v9, 0); /*0x414b24*/
+      (*(void (__thiscall **)(_DWORD *, int))(v5 + 968))(this, v6); /*0x414b2d*/
     }
-    if ( !this->q2B4 )
+    if ( !*(this + 173) ) /*0x414b33*/
     {
-      int v7 = *this;
-      v9 = this->location;
-      v10 = this->q0A0;
-      v11 = this->q0A4;
-      int v8 = this->SelectAutoTarget_Cloaked(0, &v9, 0);
-      this->AssignTarget_SyncLog(v8);
+      v7 = *this; /*0x414b43*/
+      v9 = *(this + 39); /*0x414b49*/
+      v10 = *(this + 40); /*0x414b57*/
+      v11 = *(this + 41); /*0x414b5e*/
+      v8 = (*(int (__thiscall **)(_DWORD *, _DWORD, int *, _DWORD))(v7 + 964))(this, 0, &v9, 0); /*0x414b64*/
+      (*(void (__thiscall **)(_DWORD *, int))(v7 + 968))(this, v8); /*0x414b6d*/
     }
-    if ( this->q2B4 )
+    if ( *(this + 173) ) /*0x414b73*/
     {
-LABEL_12:
-      this->ProcessLanding(1, 0);
-      return 1;
+  LABEL_12:
+      (*(void (__thiscall **)(_DWORD *, int, _DWORD))(*this + 488))(this, 1, 0); /*0x414b9e*/
+      return 1; /*0x414ba4*/
     }
     else
     {
-      this->ValidatePlacement(0, 1);
-      return 1;
+      (*(void (__thiscall **)(_DWORD *, _DWORD, int))(*this + 1156))(this, 0, 1); /*0x414b86*/
+      return 1; /*0x414b8c*/
     }
   }
   else
   {
-    if ( this->team )
-      TeamClass::LiberateMember_Start(this, -1, 0);
-    this->ValidatePlacement(0, 1);
-    MissionControl = MissionClass::GetMissionControl(this);
-    int v3 = Math::RoundToInt(*((double *)MissionControl + 2) * 900.0);
-    return v3 + Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 2);
+    if ( *(this + 373) ) /*0x414a90*/
+      TeamClass::LiberateMember_Start(this, -1, 0); /*0x414a9f*/
+    (*(void (__thiscall **)(_DWORD *, _DWORD, int))(*this + 1156))(this, 0, 1); /*0x414aac*/
+    MissionControl = MissionClass::GetMissionControl(this); /*0x414ab4*/
+    v3 = Math::RoundToInt(*((double *)MissionControl + 2) * 900.0); /*0x414ad7*/
+    return v3 + Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 2); /*0x414ade*/
   }
-}
-
-/* ASM:
-sub     esp, 0Ch
-push    esi
-mov     esi, ecx
-mov     eax, [esi+2FCh]
-test    eax, eax
-jnz     short loc_414AE5
-mov     ecx, [esi+5D4h]
-test    ecx, ecx
-jz      short loc_414AA4
-push    0
-push    0FFFFFFFFh
-push    esi
-call    TeamClass__LiberateMember_Start
-
-loc_414AA4:                             ; CODE XREF: AircraftClass__ProcessMissionTimeout+18↑j
-mov     eax, [esi]
-push    1
-push    0
-mov     ecx, esi
-call    dword ptr [eax+484h]
-mov     ecx, esi
-call    MissionClass__GetMissionControl
-fld     qword ptr [eax+10h]
-fmul    ds:dbl_7E27F8
-call    Math__RoundToInt
-mov     ecx, ds:0A8B230h
-push    2
-push    0
-add     ecx, 218h
-mov     esi, eax
-call    Random__Range
-add     eax, esi
-pop     esi
-add     esp, 0Ch
-retn
-; ---------------------------------------------------------------------------
-
-loc_414AE5:                             ; CODE XREF: AircraftClass__ProcessMissionTimeout+E↑j
-mov     eax, [esi+2B4h]
-test    eax, eax
-jnz     loc_414B96
-mov     eax, ds:0A8B238h
-push    edi
-test    eax, eax
-jz      short loc_414B33
-lea     edx, [esi+9Ch]
-mov     edi, [esi]
-push    0
-mov     eax, [edx]
-mov     [esp+18h+var_C], eax
-lea     eax, [esp+18h+var_C]
-mov     ecx, [edx+4]
-push    eax
-mov     [esp+1Ch+var_8], ecx
-push    40h ; '@'
-mov     edx, [edx+8]
-mov     ecx, esi
-mov     [esp+20h+var_4], edx
-call    dword ptr [edi+3C4h]
-push    eax
-mov     ecx, esi
-call    dword ptr [edi+3C8h]
-
-loc_414B33:                             ; CODE XREF: AircraftClass__ProcessMissionTimeout+7B↑j
-mov     eax, [esi+2B4h]
-test    eax, eax
-jnz     short loc_414B73
-lea     ecx, [esi+9Ch]
-mov     edi, [esi]
-push    0
-mov     edx, [ecx]
-mov     [esp+18h+var_C], edx
-lea     edx, [esp+18h+var_C]
-mov     eax, [ecx+4]
-push    edx
-push    0
-mov     [esp+20h+var_8], eax
-mov     ecx, [ecx+8]
-mov     [esp+20h+var_4], ecx
-mov     ecx, esi
-call    dword ptr [edi+3C4h]
-push    eax
-mov     ecx, esi
-call    dword ptr [edi+3C8h]
-
-loc_414B73:                             ; CODE XREF: AircraftClass__ProcessMissionTimeout+BB↑j
-mov     eax, [esi+2B4h]
-pop     edi
-test    eax, eax
-jnz     short loc_414B96
-mov     eax, [esi]
-push    1
-push    0
-mov     ecx, esi
-call    dword ptr [eax+484h]
-mov     eax, 1
-pop     esi
-add     esp, 0Ch
-retn
-; ---------------------------------------------------------------------------
-
-loc_414B96:                             ; CODE XREF: AircraftClass__ProcessMissionTimeout+6D↑j
-; AircraftClass__ProcessMissionTimeout+FC↑j
-mov     edx, [esi]
-push    0
-push    1
-mov     ecx, esi
-call    dword ptr [edx+1E8h]
-mov     eax, 1
-pop     esi
-add     esp, 0Ch
-retn
-*/
-
-// IDA: 0x41A5C0 (GetMissionTimer, 886B)
 }
 // 0x41a5c0
 int AircraftClass::GetMissionTimer()
 {
-// 0x41a5c0
-{
+  int v2; // edi
+  int v3; // eax
   char *MissionControl; // eax
+  int v6; // edi
+  void *v7; // eax
+  int v8; // eax
+  int v9; // ecx
   int Member; // eax
+  int v11; // edi
+  int v12; // eax
+  char *v13; // eax
+  int v14; // esi
   int v15; // [esp+8h] [ebp-Ch] BYREF
   int v16; // [esp+Ch] [ebp-8h]
   int v17; // [esp+10h] [ebp-4h]
-  int v2 = (*(int (__thiscall **)(_DWORD))(*this->Type + 188))(this->Type);
-  if ( (*(int (__thiscall **)(int))(this->forceShielded)(this) == v2 )
+
+  v2 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 1732) + 188))(*(_DWORD *)(this + 1732)); /*0x41a5d9*/
+  if ( (*(int (__thiscall **)(int))(*(_DWORD *)this + 456))(this) == v2 ) /*0x41a5e3*/
   {
-    if ( this->team )
+    if ( *(_DWORD *)(this + 1492) ) /*0x41a5e9*/
     {
-      if ( this->movementDestination )
+      if ( *(_DWORD *)(this + 1444) ) /*0x41a5f3*/
       {
-        int v3 = *(_DWORD *)this;
-        this->AircraftClass_field_bool_6D4 = 1;
-        (*(void (__thiscall **)(int, int, _DWORD))(v3 + 488))(this, 2, 0);
+        v3 = *(_DWORD *)this; /*0x41a5fd*/
+        *(_BYTE *)(this + 1748) = 1; /*0x41a605*/
+        (*(void (__thiscall **)(int, int, _DWORD))(v3 + 488))(this, 2, 0); /*0x41a60c*/
       }
-      MissionControl = MissionClass::GetMissionControl((_DWORD *)this);
-      return Math::RoundToInt(*((double *)MissionControl + 2) * 900.0);
+      MissionControl = MissionClass::GetMissionControl((_DWORD *)this); /*0x41a614*/
+      return Math::RoundToInt(*((double *)MissionControl + 2) * 900.0); /*0x41a622*/
     }
-    else if ( *(_DWORD *)(*(int (__thiscall **)(int, _DWORD))(this->barrelRecoil)(this, 0) )
+    else if ( *(_DWORD *)(*(int (__thiscall **)(int, _DWORD))(*(_DWORD *)this + 1016))(this, 0) ) /*0x41a639*/
     {
-      if ( !this->team )
+      if ( !*(_DWORD *)(this + 1492) ) /*0x41a68d*/
       {
-        int v8 = *(_DWORD *)this;
-        this->AircraftClass_field_bool_6D4 = 1;
-        (*(void (__thiscall **)(int, _DWORD, int))(v8 + 1156))(this, 0, 1);
+        v8 = *(_DWORD *)this; /*0x41a697*/
+        *(_BYTE *)(this + 1748) = 1; /*0x41a69f*/
+        (*(void (__thiscall **)(int, _DWORD, int))(v8 + 1156))(this, 0, 1); /*0x41a6a6*/
       }
-      return 1;
+      return 1; /*0x41a6ad*/
     }
     else
     {
-      int v6 = *(_DWORD *)this;
-      v15 = this->location;
-      v16 = this->q0A0;
-      v17 = this->q0A4;
-      void * v7 = Coord::To_Cell(&DataGlobal_87F7E8, &v15);
-      (*(void (__thiscall **)(int, void *, int))(v6 + 1152))(this, v7, 1);
-      (*(void (__thiscall **)(int, int, _DWORD))(this->q7A0)(this, 2, 0);
-      return 1;
+      v6 = *(_DWORD *)this; /*0x41a644*/
+      v15 = *(_DWORD *)(this + 156); /*0x41a64a*/
+      v16 = *(_DWORD *)(this + 160); /*0x41a65b*/
+      v17 = *(_DWORD *)(this + 164); /*0x41a662*/
+      v7 = Coord::To_Cell(&MapClass_Instance, &v15); /*0x41a666*/
+      (*(void (__thiscall **)(int, void *, int))(v6 + 1152))(this, v7, 1); /*0x41a66e*/
+      (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)this + 488))(this, 2, 0); /*0x41a67c*/
+      return 1; /*0x41a683*/
     }
   }
-  if ( DataGlobal_00889ECC )
+  if ( byte_889ECC ) /*0x41a6be*/
   {
-    if ( this->pitchAngle || !(*(unsigned __int8 (__thiscall **)(int))(this->isBerserk)(this) )
-      goto LABEL_14;
-LABEL_26:
-    if ( !Team::AllMembersValid((int *)this) )
+    if ( *(_DWORD *)(this + 764) || !(*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)this + 684))(this) ) /*0x41a6d2*/
+      goto LABEL_14; /*0x41a6da*/
+  LABEL_26:
+    if ( !Team::AllMembersValid((int *)this) ) /*0x41a7bf*/
     {
-  int v11; // edi
-      v11 = (*(int (__thiscall **)(int, int, _DWORD, _DWORD))(this->unknownShort528)(
+      v11 = (*(int (__thiscall **)(int, int, _DWORD, _DWORD))(*(_DWORD *)this + 1320))( /*0x41a7e6*/
               this,
-              this->Type + 1000,
+              *(_DWORD *)(this + 1732) + 1000,
               0,
               0);
-      if ( v11 )
+      if ( v11 ) /*0x41a7ea*/
       {
-        (*(void (__thiscall **)(int, int, _DWORD))(this->q7A0)(this, 7, 0);
-        (*(void (__thiscall **)(int, int, int))(this->q120)(this, v11, 1);
-        (*(void (__thiscall **)(int, _DWORD))(this->unknown_short_3C8)(this, 0);
-        return 1;
+        (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)this + 488))(this, 7, 0); /*0x41a7f8*/
+        (*(void (__thiscall **)(int, int, int))(*(_DWORD *)this + 1152))(this, v11, 1); /*0x41a805*/
+        (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)this + 968))(this, 0); /*0x41a811*/
+        return 1; /*0x41a821*/
       }
     }
-    goto LABEL_14;
+    goto LABEL_14; /*0x41a7ea*/
   }
-  if ( DataGlobal_00889ECD )
+  if ( byte_889ECD ) /*0x41a75f*/
   {
-    if ( (*(unsigned __int8 (__thiscall **)(int))(this->isBerserk)(this)
-      && this->pitchAngle < *(_DWORD *)(this->Type + 1668) / 2 )
+    if ( (*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)this + 684))(this) /*0x41a78c*/
+      && *(_DWORD *)(this + 764) < *(_DWORD *)(*(_DWORD *)(this + 1732) + 1668) / 2 )
     {
-      goto LABEL_26;
+      goto LABEL_26; /*0x41a78c*/
     }
   }
-  else if ( (*(unsigned __int8 (__thiscall **)(int))(this->isBerserk)(this)
-         && this->pitchAngle < *(_DWORD *)(this->Type + 1668) )
+  else if ( (*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)this + 684))(this) /*0x41a7b7*/
+         && *(_DWORD *)(this + 764) < *(_DWORD *)(*(_DWORD *)(this + 1732) + 1668) )
   {
-    goto LABEL_26;
+    goto LABEL_26; /*0x41a7b7*/
   }
-LABEL_14:
-  int v9 = this->pitchAngle;
-  if ( v9 != -1 && v9 < *(_DWORD *)(this->Type + 1668) / 2 )
+  LABEL_14:
+  v9 = *(_DWORD *)(this + 764); /*0x41a6e0*/
+  if ( v9 != -1 && v9 < *(_DWORD *)(*(_DWORD *)(this + 1732) + 1668) / 2 ) /*0x41a702*/
   {
-    if ( Team::AllMembersValid((int *)this) )
+    if ( Team::AllMembersValid((int *)this) ) /*0x41a70a*/
     {
-      Member = Team::GetMember((_DWORD *)this, 0);
-      if ( (*(int (__thiscall **)(int))(*(_DWORD *)Member + 44))(Member) == 6 )
+      Member = Team::GetMember((_DWORD *)this, 0); /*0x41a71b*/
+      if ( (*(int (__thiscall **)(int))(*(_DWORD *)Member + 44))(Member) == 6 ) /*0x41a72a*/
       {
-        if ( *(_BYTE *)(*(_DWORD *)(Team::GetMember((_DWORD *)this, 0) + 1312) + 5802) )
-          return 1;
+        if ( *(_BYTE *)(*(_DWORD *)(Team::GetMember((_DWORD *)this, 0) + 1312) + 5802) ) /*0x41a73f*/
+          return 1; /*0x41a74e*/
       }
     }
   }
-  if ( this->q2B4 )
+  if ( *(_DWORD *)(this + 692) ) /*0x41a822*/
   {
-    (*(void (__thiscall **)(int, int, _DWORD))(this->q7A0)(this, 1, 0);
-    return 1;
+    (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)this + 488))(this, 1, 0); /*0x41a834*/
+    return 1; /*0x41a83b*/
   }
-  else if ( (*(unsigned __int8 (__thiscall **)(int))(this->isBerserk)(this) )
+  else if ( (*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)this + 684))(this) ) /*0x41a849*/
   {
-    if ( (*(int (__thiscall **)(int))(this->forceShielded)(this) || Team::AllMembersValid((int *)this) )
+    if ( (*(int (__thiscall **)(int))(*(_DWORD *)this + 456))(this) || Team::AllMembersValid((int *)this) ) /*0x41a86e*/
     {
-      if ( !(unsigned __int8)House::IsCurrentPlayer(*(#375 **)(this + 540)) )
+      if ( !(unsigned __int8)House::IsCurrentPlayer(*(#375 **)(this + 540)) ) /*0x41a888*/
       {
-        v15 = this->location;
-        v16 = this->q0A0;
-        v17 = this->q0A4;
-        int v12 = CellClass::ScanOccupiers(&v15);
-        if ( v12 )
+        v15 = *(_DWORD *)(this + 156); /*0x41a89d*/
+        v16 = *(_DWORD *)(this + 160); /*0x41a8af*/
+        v17 = *(_DWORD *)(this + 164); /*0x41a8b6*/
+        v12 = CellClass::ScanOccupiers(&v15); /*0x41a8ba*/
+        if ( v12 ) /*0x41a8c1*/
         {
-          (*(void (__thiscall **)(int, int))(this->unknown_short_3C8)(this, v12);
-          (*(void (__thiscall **)(int, int, _DWORD))(this->q7A0)(this, 1, 0);
+          (*(void (__thiscall **)(int, int))(*(_DWORD *)this + 968))(this, v12); /*0x41a8c8*/
+          (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)this + 488))(this, 1, 0); /*0x41a8d6*/
         }
       }
-      if ( !(unsigned __int8)House::IsCurrentPlayer(*(#375 **)(this + 540))
-        || (*(unsigned __int8 (__thiscall **)(int))(this->q054)(this) )
+      if ( !(unsigned __int8)House::IsCurrentPlayer(*(#375 **)(this + 540)) /*0x41a8ef*/
+        || (*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)this + 84))(this) )
       {
-        return FootClass::FindMovePosition(this);
+        return FootClass::FindMovePosition(this); /*0x41a92b*/
       }
       else
       {
-        char * v13 = MissionClass::GetMissionControl((_DWORD *)this);
-        int v14 = Math::RoundToInt(*((double *)v13 + 2) * 900.0);
-        return v14 + Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 2);
+        v13 = MissionClass::GetMissionControl((_DWORD *)this); /*0x41a8f8*/
+        v14 = Math::RoundToInt(*((double *)v13 + 2) * 900.0); /*0x41a90b*/
+        return v14 + Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 2); /*0x41a921*/
       }
     }
     else
     {
-      return 45;
+      return 45; /*0x41a878*/
     }
   }
   else
   {
-    return 45;
+    return 45; /*0x41a854*/
   }
 }
-
-/* ASM:
-sub     esp, 0Ch
-push    esi
-mov     esi, ecx
-push    edi
-mov     ecx, [esi+6C4h]
-mov     eax, [ecx]
-call    dword ptr [eax+0BCh]
-mov     edx, [esi]
-mov     ecx, esi
-mov     edi, eax
-call    dword ptr [edx+1C8h]
-cmp     eax, edi
-jnz     loc_41A6B7
-mov     eax, [esi+5D4h]
-test    eax, eax
-jz      short loc_41A62D
-mov     eax, [esi+5A4h]
-test    eax, eax
-jz      short loc_41A612
-mov     eax, [esi]
-push    0
-push    2
-mov     ecx, esi
-mov     byte ptr [esi+6D4h], 1
-call    dword ptr [eax+1E8h]
-
-loc_41A612:                             ; CODE XREF: AircraftClass__GetMissionTimer+3B↑j
-mov     ecx, esi
-call    MissionClass__GetMissionControl
-fld     qword ptr [eax+10h]
-fmul    ds:dbl_7E27F8
-call    Math__RoundToInt
-pop     edi
-pop     esi
-add     esp, 0Ch
-retn
-; ---------------------------------------------------------------------------
-
-loc_41A62D:                             ; CODE XREF: AircraftClass__GetMissionTimer+31↑j
-mov     edx, [esi]
-push    0
-mov     ecx, esi
-call    dword ptr [edx+3F8h]
-cmp     dword ptr [eax], 0
-jnz     short loc_41A68D
-lea     eax, [esi+9Ch]
-mov     edi, [esi]
-push    1
-mov     ecx, [eax]
-mov     [esp+18h+var_C], ecx
-lea     ecx, [esp+18h+var_C]
-mov     edx, [eax+4]
-push    ecx
-mov     ecx, 87F7E8h
-mov     [esp+1Ch+var_8], edx
-mov     eax, [eax+8]
-mov     [esp+1Ch+var_4], eax
-call    Coord__To_Cell
-push    eax
-mov     ecx, esi
-call    dword ptr [edi+480h]
-mov     edx, [esi]
-push    0
-push    2
-mov     ecx, esi
-call    dword ptr [edx+1E8h]
-pop     edi
-mov     eax, 1
-pop     esi
-add     esp, 0Ch
-retn
-; ---------------------------------------------------------------------------
-
-loc_41A68D:                             ; CODE XREF: AircraftClass__GetMissionTimer+7C↑j
-mov     eax, [esi+5D4h]
-test    eax, eax
-jnz     short loc_41A6AC
-mov     eax, [esi]
-push    1
-push    0
-mov     ecx, esi
-mov     byte ptr [esi+6D4h], 1
-call    dword ptr [eax+484h]
-
-loc_41A6AC:                             ; CODE XREF: AircraftClass__GetMissionTimer+D5↑j
-pop     edi
-mov     eax, 1
-pop     esi
-add     esp, 0Ch
-retn
-; ---------------------------------------------------------------------------
-
-loc_41A6B7:                             ; CODE XREF: AircraftClass__GetMissionTimer+23↑j
-mov     al, ds:889ECCh
-test    al, al
-jz      loc_41A758
-mov     eax, [esi+2FCh]
-test    eax, eax
-jnz     short loc_41A6E0
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+2ACh]
-test    al, al
-jnz     loc_41A7BD
-
-loc_41A6E0:                             ; CODE XREF: AircraftClass__GetMissionTimer+10C↑j
-; AircraftClass__GetMissionTimer+1AD↓j ...
-mov     ecx, [esi+2FCh]
-cmp     ecx, 0FFFFFFFFh
-jz      loc_41A822
-mov     eax, [esi+6C4h]
-mov     eax, [eax+684h]
-cdq
-sub     eax, edx
-sar     eax, 1
-cmp     ecx, eax
-jge     loc_41A822
-mov     ecx, esi
-call    Team__AllMembersValid
-test    al, al
-jz      loc_41A822
-push    0
-mov     ecx, esi
-call    Team__GetMember
-mov     edx, [eax]
-mov     ecx, eax
-call    dword ptr [edx+2Ch]
-cmp     eax, 6
-jnz     loc_41A822
-push    0
-mov     ecx, esi
-call    Team__GetMember
-mov     eax, [eax+520h]
-mov     cl, [eax+16AAh]
-test    cl, cl
-jz      loc_41A822
-pop     edi
-mov     eax, 1
-pop     esi
-add     esp, 0Ch
-retn
-; ---------------------------------------------------------------------------
-
-loc_41A758:                             ; CODE XREF: AircraftClass__GetMissionTimer+FE↑j
-mov     al, ds:889ECDh
-test    al, al
-jz      short loc_41A793
-mov     eax, [esi]
-mov     ecx, esi
-call    dword ptr [eax+2ACh]
-test    al, al
-jz      loc_41A6E0
-mov     ecx, [esi+6C4h]
-mov     eax, [ecx+684h]
-mov     ecx, [esi+2FCh]
-cdq
-sub     eax, edx
-sar     eax, 1
-cmp     ecx, eax
-jl      short loc_41A7BD
-jmp     loc_41A6E0
-; ---------------------------------------------------------------------------
-
-loc_41A793:                             ; CODE XREF: AircraftClass__GetMissionTimer+19F↑j
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+2ACh]
-test    al, al
-jz      loc_41A6E0
-mov     eax, [esi+6C4h]
-mov     ecx, [esi+2FCh]
-cmp     ecx, [eax+684h]
-jge     loc_41A6E0
-
-loc_41A7BD:                             ; CODE XREF: AircraftClass__GetMissionTimer+11A↑j
-; AircraftClass__GetMissionTimer+1CC↑j
-mov     ecx, esi
-call    Team__AllMembersValid
-test    al, al
-jnz     loc_41A6E0
-mov     eax, [esi+6C4h]
-mov     edx, [esi]
-push    0
-add     eax, 3E8h
-push    0
-push    eax
-mov     ecx, esi
-call    dword ptr [edx+528h]
-mov     edi, eax
-test    edi, edi
-jz      loc_41A6E0
-mov     edx, [esi]
-push    0
-push    7
-mov     ecx, esi
-call    dword ptr [edx+1E8h]
-mov     eax, [esi]
-push    1
-push    edi
-mov     ecx, esi
-call    dword ptr [eax+480h]
-mov     edx, [esi]
-push    0
-mov     ecx, esi
-call    dword ptr [edx+3C8h]
-pop     edi
-mov     eax, 1
-pop     esi
-add     esp, 0Ch
-retn
-; ---------------------------------------------------------------------------
-
-loc_41A822:                             ; CODE XREF: AircraftClass__GetMissionTimer+129↑j
-; AircraftClass__GetMissionTimer+142↑j ...
-mov     eax, [esi+2B4h]
-test    eax, eax
-jz      short loc_41A845
-mov     edx, [esi]
-push    0
-push    1
-mov     ecx, esi
-call    dword ptr [edx+1E8h]
-pop     edi
-mov     eax, 1
-pop     esi
-add     esp, 0Ch
-retn
-; ---------------------------------------------------------------------------
-
-loc_41A845:                             ; CODE XREF: AircraftClass__GetMissionTimer+26A↑j
-mov     eax, [esi]
-mov     ecx, esi
-call    dword ptr [eax+2ACh]
-test    al, al
-jnz     short loc_41A85E
-pop     edi
-mov     eax, 2Dh ; '-'
-pop     esi
-add     esp, 0Ch
-retn
-; ---------------------------------------------------------------------------
-
-loc_41A85E:                             ; CODE XREF: AircraftClass__GetMissionTimer+291↑j
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+1C8h]
-test    eax, eax
-jnz     short loc_41A882
-mov     ecx, esi
-call    Team__AllMembersValid
-test    al, al
-jnz     short loc_41A882
-pop     edi
-mov     eax, 2Dh ; '-'
-pop     esi
-add     esp, 0Ch
-retn
-; ---------------------------------------------------------------------------
-
-loc_41A882:                             ; CODE XREF: AircraftClass__GetMissionTimer+2AA↑j
-; AircraftClass__GetMissionTimer+2B5↑j
-mov     ecx, [esi+21Ch] ; this
-call    House__IsCurrentPlayer
-test    al, al
-jnz     short loc_41A8DC
-lea     eax, [esi+9Ch]
-mov     ecx, [esi+9Ch]
-mov     [esp+14h+var_C], ecx
-lea     ecx, [esp+14h+var_C]
-mov     edx, [eax+4]
-push    ecx
-mov     ecx, [esi+21Ch]
-mov     [esp+18h+var_8], edx
-mov     eax, [eax+8]
-mov     [esp+18h+var_4], eax
-call    CellClass__ScanOccupiers
-test    eax, eax
-jz      short loc_41A8DC
-mov     edx, [esi]
-push    eax
-mov     ecx, esi
-call    dword ptr [edx+3C8h]
-mov     eax, [esi]
-push    0
-push    1
-mov     ecx, esi
-call    dword ptr [eax+1E8h]
-
-loc_41A8DC:                             ; CODE XREF: AircraftClass__GetMissionTimer+2CF↑j
-; AircraftClass__GetMissionTimer+301↑j
-mov     ecx, [esi+21Ch] ; this
-call    House__IsCurrentPlayer
-test    al, al
-jz      short loc_41A929
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+54h]
-test    al, al
-jnz     short loc_41A929
-mov     ecx, esi
-call    MissionClass__GetMissionControl
-fld     qword ptr [eax+10h]
-fmul    ds:dbl_7E27F8
-call    Math__RoundToInt
-mov     esi, eax
-mov     eax, ds:0A8B230h
-push    2
-push    0
-lea     ecx, [eax+218h]
-call    Random__Range
-add     eax, esi
-pop     edi
-pop     esi
-add     esp, 0Ch
-retn
-; ---------------------------------------------------------------------------
-
-loc_41A929:                             ; CODE XREF: AircraftClass__GetMissionTimer+329↑j
-; AircraftClass__GetMissionTimer+334↑j
-mov     ecx, esi
-call    FootClass__FindMovePosition
-pop     edi
-pop     esi
-add     esp, 0Ch
-retn
-*/
-}
-
 // IDA: 0x41A940 (EvaluateTargetingState, 157B)
 int AircraftClass::EvaluateTargetingState()
 {
@@ -5097,313 +3012,115 @@ int AircraftClass::LoadFromStream()
 // 0x414080
 int AircraftClass::Destruct()
 {
-// 0x414080
-{
   void **v2; // esi
+  int v3; // eax
+  int v4; // eax
   int Vtable3; // eax
-  void **v10; // edx
-  void **v16; // [esp+10h] [ebp-4h] BYREF
+  signed int v6; // ebx
+  #374 *v7; // ebp
+  int v8; // esi
+  void **v9; // edx
+  char *v10; // ecx
+  int v11; // ecx
+  signed int v12; // ecx
+  _DWORD *v13; // eax
+  void **v15; // [esp+10h] [ebp-4h] BYREF
 
-  v2 = this + 1;
-  *this = &AircraftClass::`vftable';
-  this->vtable3 = &AircraftClass::`vftable';
-  this->vtable4 = &AircraftClass::`vftable';
-  this->vtable2 = &AircraftClass::`vftable';
-  this->q1B0 = &AircraftClass::`vftable';
-  if ( LOBYTE(DataGlobal_87F7E8[539758]) )
+  v2 = this + 1; /*0x414087*/
+  *this = &AircraftClass::`vftable'; /*0x41408a*/
+  *(this + 2) = &AircraftClass::`vftable'; /*0x414090*/
+  *(this + 3) = &AircraftClass::`vftable'; /*0x414097*/
+  *(this + 1) = &AircraftClass::`vftable'; /*0x41409e*/
+  *(this + 432) = &AircraftClass::`vftable'; /*0x4140a4*/
+  if ( g_WTFMode ) /*0x4140b5*/
   {
-    int v3 = (int)this->q1B1;
-    if ( v3 )
+    v3 = (int)*(this + 433); /*0x4140b7*/
+    if ( v3 ) /*0x4140c1*/
     {
-      if ( HouseClass::CanBuild(this->focus, v3, 0, 0) == -1 )
-        *((_BYTE *)this->focus + 508) = 1;
-      TechnoClass::CleanupAll(this, 0);
-      int v4 = (int)this->q175;
-      if ( v4 )
+      if ( HouseClass::CanBuild(*(this + 135), v3, 0, 0) == -1 ) /*0x4140d4*/
+        *((_BYTE *)*(this + 135) + 508) = 1; /*0x4140dc*/
+      TechnoClass::CleanupAll(this, 0); /*0x4140e6*/
+      if ( *(this + 373) ) /*0x4140eb*/
       {
-        TeamClass::LiberateMember_Start(v4, (int)this, 0xFFFFFFFF, 0);
-        this->q175 = 0;
+        TeamClass::LiberateMember_Start(this, -1, 0); /*0x4140f9*/
+        *(this + 373) = 0; /*0x4140fe*/
       }
-      HouseClass::DecrementUnitCount(this->focus, this);
-      TechnoClass::CleanupDirection(this);
-      this->q1B1 = 0;
+      HouseClass::DecrementUnitCount(*(this + 135), this); /*0x41410b*/
+      TechnoClass::CleanupDirection(this); /*0x414112*/
+      *(this + 433) = 0; /*0x414117*/
     }
   }
-  AbstractClass::AnnounceExpiredPointer(this, 1);
-  v16 = this;
-  int v5 = (*(int (__thiscall **)(_DWORD *, void ***))(DataGlobal_87F7E8[539370] + 16))(&DataGlobal_87F7E8[539370], &v16);
-  if ( v5 != -1 && v5 < DataGlobal_87F7E8[539374] )
+  AbstractClass::AnnounceExpiredPointer(this); /*0x414125*/
+  v15 = this; /*0x41413a*/
+  v4 = (*(int (__thiscall **)(int *, void ***))(AircraftClass_Array + 16))(&AircraftClass_Array, &v15); /*0x41413e*/
+  if ( v4 != -1 && v4 < g_AircraftClassCount && v4 < --g_AircraftClassCount ) /*0x414159*/
   {
-    --DataGlobal_87F7E8[539374];
-    for ( ;
-          v5 < DataGlobal_87F7E8[539374];
-          *(_DWORD *)(DataGlobal_87F7E8[539371] + 4 * v5 - 4) = *(_DWORD *)(DataGlobal_87F7E8[539371] + 4 * v5) )
+    do /*0x414171*/
     {
-      ++v5;
+      ++v4; /*0x414161*/
+      *((_DWORD *)dword_A8E394 + v4 - 1) = *((_DWORD *)dword_A8E394 + v4); /*0x414165*/
     }
+    while ( v4 < g_AircraftClassCount ); /*0x414171*/
   }
-  Vtable3 = AbstractClass::GetVtable3((int)v2);
-  int v7 = dword_A8ED54[130748];
-  v16 = (void **)Vtable3;
-  if ( dword_A8ED54[130748] )
+  Vtable3 = AbstractClass::GetVtable3((int)v2); /*0x414174*/
+  v6 = g_BuildingLoadQueue_Count; /*0x414179*/
+  v15 = (void **)Vtable3; /*0x41417f*/
+  if ( g_BuildingLoadQueue_Count ) /*0x414185*/
   {
-    if ( !LOBYTE(dword_A8ED54[130750]) )
+    if ( !g_BuildingLoadQueue_Dirty ) /*0x414192*/
     {
-      qsort((void *)dword_A8ED54[130747], dword_A8ED54[130748], 8, CompareFunction);
-      v7 = dword_A8ED54[130748];
-      dword_A8ED54[130751] = 0;
-      LOBYTE(dword_A8ED54[130750]) = 1;
+      qsort(g_BuildingLoadQueue_Array, g_BuildingLoadQueue_Count, 8u, CompareFunction); /*0x4141a2*/
+      v6 = g_BuildingLoadQueue_Count; /*0x4141a7*/
+      g_BuildingLoadQueue_Active = 0; /*0x4141b0*/
+      g_BuildingLoadQueue_Dirty = 1; /*0x4141b6*/
     }
-    int v8 = dword_A8ED54[130747];
-    int v9 = v7;
-    while ( v9 > 0 )
+    v7 = g_BuildingLoadQueue_Array; /*0x4141bd*/
+    v8 = v6; /*0x4141c3*/
+    while ( v8 > 0 ) /*0x4141c7*/
     {
-      v10 = *(void ***)(v8 + 8 * (v9 / 2));
-      int v11 = v8 + 8 * (v9 / 2);
-      if ( (int)v16 >= (int)v10 )
+      v9 = (void **)*((_DWORD *)v7 + 2 * (v8 / 2)); /*0x4141d4*/
+      v10 = (char *)v7 + 8 * (v8 / 2); /*0x4141d8*/
+      if ( (int)v15 >= (int)v9 ) /*0x4141e0*/
       {
-        if ( v10 == v16 )
+        if ( v9 == v15 ) /*0x4141ea*/
         {
-          if ( v11 )
+          if ( v10 ) /*0x414210*/
           {
-            int v12 = (v11 - dword_A8ED54[130747]) >> 3;
-            if ( v12 != -1 )
+            v11 = (v10 - (char *)g_BuildingLoadQueue_Array) >> 3; /*0x414218*/
+            if ( v11 != -1 ) /*0x41421e*/
             {
-              int v13 = v12 + 1;
-              if ( v13 < v7 )
+              v12 = v11 + 1; /*0x414220*/
+              if ( v12 < v6 ) /*0x414223*/
               {
-                do
+                do /*0x414242*/
                 {
-                  _DWORD * v14 = (_DWORD *)(dword_A8ED54[130747] + 8 * v13++);
-                  *(v14 - 2) = *v14;
-                  *(v14 - 1) = v14[1];
-                  v7 = dword_A8ED54[130748];
+                  v13 = (_DWORD *)((char *)g_BuildingLoadQueue_Array + 8 * v12++); /*0x41422b*/
+                  *(v13 - 2) = *v13; /*0x414231*/
+                  *(v13 - 1) = v13[1]; /*0x414237*/
+                  v6 = g_BuildingLoadQueue_Count; /*0x41423a*/
                 }
-                while ( v13 < dword_A8ED54[130748] );
+                while ( v12 < (int)g_BuildingLoadQueue_Count ); /*0x414242*/
               }
-              dword_A8ED54[130748] = v7 - 1;
-              *(_DWORD *)(dword_A8ED54[130747] + 8 * dword_A8ED54[130748]) = 0;
-              *(_DWORD *)(dword_A8ED54[130747] + 8 * dword_A8ED54[130748] + 4) = 0;
-              dword_A8ED54[130751] = 0;
+              g_BuildingLoadQueue_Count = v6 - 1; /*0x41424f*/
+              *((_DWORD *)g_BuildingLoadQueue_Array + 2 * g_BuildingLoadQueue_Count) = 0; /*0x414255*/
+              *((_DWORD *)g_BuildingLoadQueue_Array + 2 * g_BuildingLoadQueue_Count + 1) = 0; /*0x414263*/
+              g_BuildingLoadQueue_Active = 0; /*0x414267*/
             }
           }
-          break;
+          break; /*0x414267*/
         }
-        v8 = v11 + 8;
-        v9 += -1 - v9 / 2;
+        v7 = (#374 *)(v10 + 8); /*0x4141ec*/
+        v8 += -1 - v8 / 2; /*0x4141f4*/
       }
       else
       {
-        v9 /= 2;
+        v8 /= 2; /*0x4141e2*/
       }
     }
   }
-  this->isAliveFlag = 0;
-  return FootClass::Destruct(this);
+  *((_BYTE *)this + 144) = 0; /*0x41426d*/
+  return FootClass::Destruct(this); /*0x414208*/
 }
-
-/* ASM:
-push    ecx
-push    ebx
-push    ebp
-push    esi
-push    edi
-mov     edi, ecx
-lea     esi, [edi+4]
-mov     dword ptr [edi], offset ??_7AircraftClass@@6B@ ; const AircraftClass::`vftable'
-mov     dword ptr [edi+8], offset ??_7AircraftClass@@6B@_1 ; const AircraftClass::`vftable'
-mov     dword ptr [edi+0Ch], offset ??_7AircraftClass@@6B@_2 ; const AircraftClass::`vftable'
-mov     dword ptr [esi], offset ??_7AircraftClass@@6B@_0 ; const AircraftClass::`vftable'
-mov     dword ptr [edi+6C0h], offset ??_7AircraftClass@@6B@_3 ; const AircraftClass::`vftable'
-mov     al, ds:0A8E9A0h
-test    al, al
-jz      short loc_41411F
-mov     eax, [edi+6C4h]
-xor     ebp, ebp
-cmp     eax, ebp
-jz      short loc_414121
-mov     ecx, [edi+21Ch]
-push    ebp
-push    ebp
-push    eax
-call    HouseClass__CanBuild
-cmp     eax, 0FFFFFFFFh
-jnz     short loc_4140E3
-mov     eax, [edi+21Ch]
-mov     byte ptr [eax+1FCh], 1
-
-loc_4140E3:                             ; CODE XREF: AircraftClass__Destruct+54↑j
-push    ebp
-mov     ecx, edi
-call    TechnoClass__CleanupAll
-mov     ecx, [edi+5D4h]
-cmp     ecx, ebp
-jz      short loc_414104
-push    ebp
-push    0FFFFFFFFh
-push    edi
-call    TeamClass__LiberateMember_Start
-mov     [edi+5D4h], ebp
-
-loc_414104:                             ; CODE XREF: AircraftClass__Destruct+73↑j
-mov     ecx, [edi+21Ch]
-push    edi
-call    HouseClass__DecrementUnitCount
-mov     ecx, edi
-call    TechnoClass__CleanupDirection
-mov     [edi+6C4h], ebp
-jmp     short loc_414121
-; ---------------------------------------------------------------------------
-
-loc_41411F:                             ; CODE XREF: AircraftClass__Destruct+35↑j
-xor     ebp, ebp
-
-loc_414121:                             ; CODE XREF: AircraftClass__Destruct+41↑j
-; AircraftClass__Destruct+9D↑j
-mov     dl, 1
-mov     ecx, edi        ; void **
-call    AbstractClass__AnnounceExpiredPointer
-mov     edx, ds:0A8E390h
-lea     ecx, [esp+14h+var_4]
-push    ecx
-mov     ecx, 0A8E390h
-mov     [esp+18h+var_4], edi
-call    dword ptr [edx+10h]
-cmp     eax, 0FFFFFFFFh
-jz      short loc_414173
-mov     ecx, ds:0A8E3A0h
-cmp     eax, ecx
-jge     short loc_414173
-dec     ecx
-cmp     eax, ecx
-mov     ds:0A8E3A0h, ecx
-jge     short loc_414173
-
-loc_41415B:                             ; CODE XREF: AircraftClass__Destruct+F1↓j
-mov     ecx, ds:0A8E394h
-inc     eax
-mov     edx, [ecx+eax*4]
-mov     [ecx+eax*4-4], edx
-mov     ecx, ds:0A8E3A0h
-cmp     eax, ecx
-jl      short loc_41415B
-
-loc_414173:                             ; CODE XREF: AircraftClass__Destruct+C4↑j
-; AircraftClass__Destruct+CE↑j ...
-push    esi
-call    AbstractClass__GetVtable3
-mov     ebx, dword_A8ED54+7FAF0h
-mov     [esp+14h+var_4], eax
-cmp     ebx, ebp
-jz      loc_41426D
-mov     al, byte ptr dword_A8ED54+7FAF8h
-test    al, al
-jnz     short loc_4141BD
-mov     eax, dword_A8ED54+7FAECh
-push    offset CompareFunction ; CompareFunction
-push    8               ; SizeOfElements
-push    ebx             ; NumOfElements
-push    eax             ; Base
-call    _qsort
-mov     ebx, dword_A8ED54+7FAF0h
-add     esp, 10h
-mov     dword_A8ED54+7FAFCh, ebp
-mov     byte ptr dword_A8ED54+7FAF8h, 1
-
-loc_4141BD:                             ; CODE XREF: AircraftClass__Destruct+112↑j
-mov     ebp, dword_A8ED54+7FAECh
-mov     esi, ebx
-test    esi, esi
-jle     loc_41426D
-
-loc_4141CD:                             ; CODE XREF: AircraftClass__Destruct+178↓j
-mov     eax, esi
-cdq
-sub     eax, edx
-sar     eax, 1
-mov     edx, [ebp+eax*8+0]
-lea     ecx, [ebp+eax*8+0]
-cmp     [esp+14h+var_4], edx
-jge     short loc_4141E6
-mov     esi, eax
-jmp     short loc_4141F6
-; ---------------------------------------------------------------------------
-
-loc_4141E6:                             ; CODE XREF: AircraftClass__Destruct+160↑j
-cmp     edx, [esp+14h+var_4]
-jz      short loc_41420E
-lea     ebp, [ecx+8]
-or      ecx, 0FFFFFFFFh
-sub     ecx, eax
-add     esi, ecx
-
-loc_4141F6:                             ; CODE XREF: AircraftClass__Destruct+164↑j
-test    esi, esi
-jg      short loc_4141CD
-mov     ecx, edi
-mov     byte ptr [edi+90h], 0
-call    FootClass__Destruct
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-pop     ecx
-retn
-; ---------------------------------------------------------------------------
-
-loc_41420E:                             ; CODE XREF: AircraftClass__Destruct+16A↑j
-test    ecx, ecx
-jz      short loc_41426D
-sub     ecx, dword_A8ED54+7FAECh
-sar     ecx, 3
-cmp     ecx, 0FFFFFFFFh
-jz      short loc_41426D
-inc     ecx
-cmp     ecx, ebx
-jge     short loc_414244
-
-loc_414225:                             ; CODE XREF: AircraftClass__Destruct+1C2↓j
-mov     edx, dword_A8ED54+7FAECh
-lea     eax, [edx+ecx*8]
-inc     ecx
-mov     edx, [eax]
-mov     [eax-8], edx
-mov     edx, [eax+4]
-mov     [eax-4], edx
-mov     ebx, dword_A8ED54+7FAF0h
-cmp     ecx, ebx
-jl      short loc_414225
-
-loc_414244:                             ; CODE XREF: AircraftClass__Destruct+1A3↑j
-mov     edx, dword_A8ED54+7FAECh
-dec     ebx
-xor     ecx, ecx
-xor     eax, eax
-mov     dword_A8ED54+7FAF0h, ebx
-mov     [edx+ebx*8], eax
-mov     eax, dword_A8ED54+7FAF0h
-mov     edx, dword_A8ED54+7FAECh
-mov     [edx+eax*8+4], ecx
-mov     dword_A8ED54+7FAFCh, ecx
-
-loc_41426D:                             ; CODE XREF: AircraftClass__Destruct+105↑j
-; AircraftClass__Destruct+147↑j ...
-mov     ecx, edi
-mov     byte ptr [edi+90h], 0
-call    FootClass__Destruct
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-pop     ecx
-retn
-*/
-
-// ============================================================
-// Phase 3: Cursor & State
-// ============================================================
-}
-
 // IDA: 0x417CC0 (GetCursorOverObject, 692B)
 int AircraftClass::GetActionOnObject()
 {
@@ -5415,53 +3132,15 @@ int AircraftClass::GetActionOnObject()
 // 0x41b920
 int AircraftClass::IsHeightAboveThreshold()
 {
-{
-    int v1;
-    v1 = this->Type;
-    if ( v1 != *(int *)(DataGlobal_87F7E8[7806] + 1248) && v1 != *(int *)(DataGlobal_87F7E8[7806] + 1300) )
-    return ObjectClass::IsHeightAboveThreshold_0((AnimClass *)this);
-    if ( !this->Locomotor )
-    WinAPI::Wrapper(-2147467261);
-    return (*(unsigned char (__stdcall **)(int))(**((int **)(this) + 413) + 128))(this->Locomotor) != 0;
+  int v1; // eax
+
+  v1 = *((_DWORD *)this + 433); /*0x41b929*/
+  if ( v1 != LODWORD(g_RulesClass_Instance->MissileROTVar) && v1 != g_RulesClass_Instance->HoverHeight ) /*0x41b93d*/
+    return ObjectClass::IsHeightAboveThreshold_0(this); /*0x41b941*/
+  if ( !*((_DWORD *)this + 413) ) /*0x41b948*/
+    WinAPI::Wrapper(-2147467261); /*0x41b957*/
+  return (*(unsigned __int8 (__stdcall **)(_DWORD))(**((_DWORD **)this + 413) + 128))(*((_DWORD *)this + 413)) != 0; /*0x41b946*/
 }
-
-/* ASM:
-push    esi
-mov     esi, ecx
-mov     ecx, ds:8871E0h
-mov     eax, [esi+6C4h]
-cmp     eax, [ecx+4E0h]
-jz      short loc_41B948
-cmp     eax, [ecx+514h]
-jz      short loc_41B948
-mov     ecx, esi        ; this
-call    ObjectClass__IsHeightAboveThreshold_0
-pop     esi
-retn
-; ---------------------------------------------------------------------------
-
-loc_41B948:                             ; CODE XREF: AircraftClass__IsHeightAboveThreshold+15↑j
-; AircraftClass__IsHeightAboveThreshold+1D↑j
-mov     eax, [esi+674h]
-test    eax, eax
-jnz     short loc_41B95C
-push    80004003h
-call    WinAPI__Wrapper
-; ---------------------------------------------------------------------------
-
-loc_41B95C:                             ; CODE XREF: AircraftClass__IsHeightAboveThreshold+30↑j
-mov     esi, [esi+674h]
-push    esi
-mov     eax, [esi]
-call    dword ptr [eax+80h]
-neg     al
-sbb     eax, eax
-pop     esi
-neg     eax
-retn
-*/
-}
-
 // IDA: 0x41B980 (IsBelowScreen, 82B)
 int AircraftClass::IsBelowScreen()
 {
@@ -5524,76 +3203,5 @@ int AircraftClass::CheckStateFlag2()
 
 // 0x41be70
 bool AircraftClass::StubReturnFalse2() { return false; }
-// 0x5f43b0
-bool AircraftClass::StubReturnFalse3() { return false; }
-// 0x5f43f0
-bool AircraftClass::StubReturnFalse4() { return false; }
-// 0x5f43c0
-bool AircraftClass::StubReturnTrue()  { return true; }
-// 0x41b910
-int AircraftClass::MissionStubReturnZero()  { return 0; }
-// 0x41c170
-int AircraftClass::MissionStubReturnZero2() { return 0; }
-// 0x41c180
-int AircraftClass::MissionStubReturnZero3() { return 0; }
-
-// ============================================================
-// Phase 3: Drawing
-// ============================================================
-
-// 0x4144b0
-void AircraftClass::Draw(Point2D* screen_pos, RectangleStruct* bounds) const
-{
-    if (!screen_pos || !Type)
-        return;
-
-    (void)bounds;
-}
-
-void AircraftClass::DrawShadow(Point2D* screen_pos, RectangleStruct* bounds) const
-{
-    (void)screen_pos;
-    (void)bounds;
-}
-
-void AircraftClass::DrawJetExhaust(Point2D* screen_pos) const
-{
-    (void)screen_pos;
-}
-
-} // namespace gamemd
-
-#include "structure/aircraft.hpp"
-
-namespace gamemd {
-
-// --- StageClass ---
-
-int __stdcall StageClass::Landing_Altitude() { return 0; }
-int __stdcall StageClass::Landing_Direction() { return 0; }
-long __stdcall StageClass::Is_Loaded() { return 0; }
-long __stdcall StageClass::Is_Strafe() { return 0; }
-long __stdcall StageClass::Is_Fighter() { return 0; }
-long __stdcall StageClass::Is_Locked() { return 0; }
-
-// --- AircraftClass ---
-
-int __stdcall AircraftClass::Landing_Altitude() { return 0; }
-int __stdcall AircraftClass::Landing_Direction() { return 0; }
-long __stdcall AircraftClass::Is_Loaded() { return 0; }
-long __stdcall AircraftClass::Is_Strafe() { return 0; }
-long __stdcall AircraftClass::Is_Fighter() { return 0; }
-long __stdcall AircraftClass::Is_Locked() { return 0; }
-// 0x414290
-HRESULT __stdcall AircraftClass::QueryInterface(const IID& iid, void** ppvObject) { return E_NOINTERFACE; }
-// 0x4142f0
-ULONG __stdcall AircraftClass::AddRef() { return 0; }
-// 0x414300
-ULONG __stdcall AircraftClass::Release() { return 0; }
-HRESULT __stdcall AircraftClass::GetClassID(CLSID* pClassID) { return E_NOTIMPL; }
-HRESULT __stdcall AircraftClass::Load(IStream* pStm) { return S_OK; }
-HRESULT __stdcall AircraftClass::Save(IStream* pStm, BOOL fClearDirty) { return S_OK; }
-AbstractType __stdcall AircraftClass::whatAmI() const { return kObjectTypeId; }
-int AircraftClass::objectSize() const { return sizeof(AircraftClass); }
-
-} // namespace gamemd
+  return 0; /*0x41be72*/
+  return result; /*0x4142d4*/

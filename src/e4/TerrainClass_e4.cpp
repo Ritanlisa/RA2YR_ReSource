@@ -1179,16 +1179,27 @@ LABEL_290:
 namespace gamemd {
 void* TerrainClass::LoadFromStream(unsigned int * a1, int a2)
 {
-{
+  _DWORD *v2; // ebp
+  _DWORD *v3; // esi
+  int v4; // eax
   #374 *v5; // ecx
+  int v6; // edx
+  int v7; // edi
+  int v8; // eax
+  int v9; // eax
+  signed int v10; // ecx
   size_t i; // eax
+  _DWORD *v12; // eax
   int Register; // edi
+  int v14; // esi
+  int v15; // eax
+  int v17; // [esp+Ch] [ebp-8h] BYREF
 
-  _DWORD * v2 = a1; /*0x71cda4*/
-  _DWORD * v3 = a1 + 1; /*0x71cdad*/
-  int v4 = (*(int (__stdcall **)(_DWORD *))(a1[1] + 16))(a1 + 1); /*0x71cdb1*/
-  IUnknown *v6 = g_BuildingLoadQueue_Count; /*0x71cdb4*/
-  int v7 = v4; /*0x71cdba*/
+  v2 = a1; /*0x71cda4*/
+  v3 = a1 + 1; /*0x71cdad*/
+  v4 = (*(int (__stdcall **)(_DWORD *))(a1[1] + 16))(a1 + 1); /*0x71cdb1*/
+  v6 = g_BuildingLoadQueue_Count; /*0x71cdb4*/
+  v7 = v4; /*0x71cdba*/
   if ( g_BuildingLoadQueue_Count ) /*0x71cdbe*/
   {
     if ( !g_BuildingLoadQueue_Dirty ) /*0x71cdcb*/
@@ -1198,17 +1209,17 @@ void* TerrainClass::LoadFromStream(unsigned int * a1, int a2)
       g_BuildingLoadQueue_Active = 0; /*0x71cdea*/
       g_BuildingLoadQueue_Dirty = 1; /*0x71cdf4*/
     }
-    int v17 = v7; /*0x71ce06*/
-    int v8 = BinaryArraySearch((int)g_BuildingLoadQueue_Array, v6, &v17); /*0x71ce0a*/
+    v17 = v7; /*0x71ce06*/
+    v8 = BinaryArraySearch((int)g_BuildingLoadQueue_Array, v6, &v17); /*0x71ce0a*/
     if ( v8 ) /*0x71ce11*/
     {
-      int v9 = (v8 - (int)g_BuildingLoadQueue_Array) >> 3; /*0x71ce19*/
+      v9 = (v8 - (int)g_BuildingLoadQueue_Array) >> 3; /*0x71ce19*/
       if ( v9 != -1 ) /*0x71ce1f*/
       {
-        signed int v10 = v9 + 1; /*0x71ce21*/
+        v10 = v9 + 1; /*0x71ce21*/
         for ( i = g_BuildingLoadQueue_Count; v10 < (int)g_BuildingLoadQueue_Count; i = g_BuildingLoadQueue_Count ) /*0x71ce2b*/
         {
-          _DWORD * v12 = (_DWORD *)((char *)g_BuildingLoadQueue_Array + 8 * v10++); /*0x71ce33*/
+          v12 = (_DWORD *)((char *)g_BuildingLoadQueue_Array + 8 * v10++); /*0x71ce33*/
           *(v12 - 2) = *v12; /*0x71ce39*/
           *(v12 - 1) = v12[1]; /*0x71ce3f*/
         }
@@ -1229,17 +1240,17 @@ void* TerrainClass::LoadFromStream(unsigned int * a1, int a2)
       *v2 = &TerrainClass::`vftable'; /*0x71ce98*/
       *v3 = &off_7F5200; /*0x71ce9f*/
       v2[2] = &TerrainClass::`vftable'; /*0x71cea5*/
-      v2[3] = &vt_TerrainClass; /*0x71ceac*/
+      v2[3] = &TerrainClass::`vftable'; /*0x71ceac*/
     }
-    ObjectClass *v14 = (*(int (__stdcall **)(_DWORD *))(*v3 + 16))(v3); /*0x71cebf*/
-    AbstractClass *v15 = g_BuildingLoadQueue_Capacity; /*0x71cec1*/
+    v14 = (*(int (__stdcall **)(_DWORD *))(*v3 + 16))(v3); /*0x71cebf*/
+    v15 = g_BuildingLoadQueue_Capacity; /*0x71cec1*/
     if ( (int)(g_BuildingLoadQueue_Count + 1) <= g_BuildingLoadQueue_Capacity ) /*0x71cec9*/
       goto LABEL_16; /*0x71cec9*/
     if ( !g_BuildingLoadQueue_Capacity ) /*0x71cecd*/
       v15 = 10; /*0x71cecf*/
     if ( BuildingTypeClass::Enqueue((int)&g_BuildingLoadQueue_Array, v15) ) /*0x71ceda*/
     {
-LABEL_16:
+  LABEL_16:
       *((_DWORD *)g_BuildingLoadQueue_Array + 2 * g_BuildingLoadQueue_Count) = v14; /*0x71ceee*/
       *((_DWORD *)g_BuildingLoadQueue_Array + 2 * g_BuildingLoadQueue_Count + 1) = v2; /*0x71cefc*/
       g_BuildingLoadQueue_Dirty = 0; /*0x71cf06*/
@@ -1249,61 +1260,60 @@ LABEL_16:
   }
   return Register; /*0x71cf25*/
 }
-} // namespace gamemd
 }
-
 // 0x71D000
 namespace gamemd {
 AbstractClass * * TerrainClass::ProcessSpawnAnim(unsigned int * a1, AbstractClass * aP2)
 {
-{
-  IUnknown *v3; // ebp
-  IUnknown *v4; // edi
-  IUnknown *v5; // ebx
-  IUnknown *i; // esi
+  _DWORD *v3; // ebp
+  int v4; // edi
+  int v5; // ebx
+  int i; // esi
+  int v7; // ecx
   __int16 v8; // ax
-  v3 = (IUnknown *)a1; /*0x71d008*/
+  _BYTE *v9; // eax
+  _DWORD *v10; // eax
+  char *v11; // edi
+  char v14[12]; // [esp+8h] [ebp-Ch] BYREF
+
+  v3 = a1; /*0x71d008*/
   if ( !(unsigned __int8)ObjectClass::Deploy((#374 *)this) ) /*0x71d012*/
     return 0; /*0x71d13e*/
-  v4 = (IUnknown *)(v3->field_0 / 256); /*0x71d03e*/
-  v5 = (IUnknown *)(v3->field_4 / 256); /*0x71d041*/
-  for ( i = 0; (int)i < 8; i = (IUnknown *)((char *)i + 1) ) /*0x71d044*/
+  v4 = *v3 / 256; /*0x71d03e*/
+  v5 = v3[1] / 256; /*0x71d041*/
+  for ( i = 0; i < 8; ++i ) /*0x71d044*/
   {
-    int v7 = (unsigned __int8)i & 7; /*0x71d048*/
-    v8 = *((_WORD *)&DataGlobal_89F68A + 2 * v7); /*0x71d05d*/
-    LOWORD(aP2) = (_WORD)v4 + *((_WORD *)&Direction_X_Offsets.field_0 + 2 * v7); /*0x71d061*/
-    HIWORD(aP2) = (_WORD)v5 + v8; /*0x71d06d*/
-    a1 = aP2->__pad_0; /*0x71d076*/
-    _BYTE * v9 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&a1); /*0x71d080*/
+    v7 = i & 7; /*0x71d048*/
+    v8 = HIWORD(Direction_X_Offsets[v7]); /*0x71d05d*/
+    LOWORD(aP2) = v4 + LOWORD(Direction_X_Offsets[v7]); /*0x71d061*/
+    HIWORD(aP2) = v5 + v8; /*0x71d06d*/
+    a1 = aP2; /*0x71d076*/
+    v9 = CellCoord::To_CellObj(&MapClass_Instance, (__int16 *)&a1); /*0x71d080*/
     ++v9[290]; /*0x71d091*/
   }
-  char v14[12]; // [esp+8h] [ebp-Ch] BYREF
-  _DWORD * v10 = (_DWORD *)(*(int (__stdcall **)(char *))(this->Animation)(v14); /*0x71d0ab*/
-  Coord::To_Screen(*(_DWORD **)&DataGlobal_87F8E4[31296], v10, (IUnknown *)(this + 216)); /*0x71d0b8*/
-  int v11 = *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[31296] + 180) + this->q0DC; /*0x71d0d6*/
-  this->q0D8 += *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[31296] + 176); /*0x71d0dd*/
-  this->q0DC = v11; /*0x71d0df*/
-  if ( *((_DWORD *)Coord::To_Cell(&DataGlobal_87F7E8, v3) + 17) != -1 ) /*0x71d0ef*/
+  v10 = (_DWORD *)(*(int (__stdcall **)(char *))(*(_DWORD *)this + 172))(v14); /*0x71d0ab*/
+  Coord::To_Screen(g_TacticalClass_Instance, v10, (int *)(this + 216)); /*0x71d0b8*/
+  v11 = (char *)g_TacticalClass_Instance[45].lpVtbl + *(_DWORD *)(this + 220); /*0x71d0d6*/
+  *(_DWORD *)(this + 216) += g_TacticalClass_Instance[44].lpVtbl; /*0x71d0dd*/
+  *(_DWORD *)(this + 220) = v11; /*0x71d0df*/
+  if ( *((_DWORD *)Coord::To_Cell(&MapClass_Instance, v3) + 17) != -1 ) /*0x71d0ef*/
   {
-    if ( *(_BYTE *)(*(_DWORD *)&g_BuildingTypeClass_Array->__pad_0[4 * *((_DWORD *)Coord::To_Cell(&DataGlobal_87F7E8, v3) + 17)] /*0x71d108*/
+    if ( *(_BYTE *)(*(_DWORD *)&g_BuildingTypeClass_Array->gap0[4 /*0x71d108*/
+                                                              * *((_DWORD *)Coord::To_Cell(&MapClass_Instance, v3) + 17)]
                   + 681) )
     {
-      *((_DWORD *)Coord::To_Cell(&DataGlobal_87F7E8, v3) + 17) = -1; /*0x71d123*/
-      *((_BYTE *)Coord::To_Cell(&DataGlobal_87F7E8, v3) + 286) = 0; /*0x71d12b*/
+      *((_DWORD *)Coord::To_Cell(&MapClass_Instance, v3) + 17) = -1; /*0x71d123*/
+      *((_BYTE *)Coord::To_Cell(&MapClass_Instance, v3) + 286) = 0; /*0x71d12b*/
     }
   }
   return 1; /*0x71d137*/
 }
-} // namespace gamemd
 }
-
 // 0x71CF30
 namespace gamemd {
 int TerrainClass::CheckFrameUpdate(TechnoTypeClass * aP0, int * a1, int aP2)
 {
-{
-    return AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
-}
+  return AbstractClass::SaveLoad_Prefix(aP0, a1, aP2); /*0x71cf44*/
 }
 } // namespace gamemd
 
@@ -1311,7 +1321,7 @@ int TerrainClass::CheckFrameUpdate(TechnoTypeClass * aP0, int * a1, int aP2)
 namespace gamemd {
 int TerrainClass::MissionStubReturnZero()
 {
-return 224;
+  return 224; /*0x71d2f5*/
 }
 } // namespace gamemd
 
@@ -1319,7 +1329,7 @@ return 224;
 namespace gamemd {
 int TerrainClass::MissionStubReturnZero2()
 {
-return 36;
+  return 36; /*0x71d305*/
 }
 } // namespace gamemd
 
@@ -1327,12 +1337,12 @@ return 36;
 namespace gamemd {
 int TerrainClass::MissionStubReturnZero3(int a1, unsigned int * a2)
 {
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 237448654;
-  a2[1] = 298949647;
-  a2[2] = -1610610249;
-  a2[3] = -777003740;
-  return 0;
+  if ( !a2 ) /*0x71d316*/
+    return -2147467261; /*0x71d318*/
+  *a2 = 237448654; /*0x71d326*/
+  a2[1] = 298949647; /*0x71d32e*/
+  a2[2] = -1610610249; /*0x71d337*/
+  a2[3] = -777003740; /*0x71d340*/
+  return 0; /*0x71d31d*/
 }
 } // namespace gamemd

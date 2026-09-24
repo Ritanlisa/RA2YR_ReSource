@@ -84,9 +84,13 @@ void Map::Release() noexcept
 // 0x552c90
 WDTError Map::Load()
 {
-    return { 0, "" };
-}
+  int result; // eax
 
+  result = -1; /*0x552c96*/
+  if ( g_GameMode_Current[0] )
+    return g_DisplayWidth != 640 ? 406 : 326;
+  return result; /*0x552cb6*/
+}
 WDTError Map::Draw()
 {
     return { 0, "" };
@@ -230,12 +234,10 @@ void History::Record(const char* event)
     entry.Frame = 0;
     std::strncpy(entry.Text, event ? event : "", sizeof(entry.Text) - 1);
     entries.push_back(entry);
-}
 
 void History::Clear()
 {
     entries.clear();
-}
 
 // TODO: complete WDT implementations
 

@@ -7,57 +7,47 @@
 // 0x724AA0
 char ToolTipManager::addRef(int a1)
 {
-{
-    return 1;
+  return 1; /*0x724aa2*/
 }
-}
-
 // 0x724B80
 int ToolTipManager::ddtor(char a2)
 {
-{
-    int result;
-    if ( a2 == 1 )
-    ToolTipClass::initString((wchar_t *)this);
-    result = this->Position;
-    if ( result )
-    return this->read(this + 24);
-    return result;
-}
-}
+  int result; // eax
 
+  if ( a2 == 1 ) /*0x724b89*/
+    ToolTipClass::initString((wchar_t *)this); /*0x724b8b*/
+  result = *(_DWORD *)(this + 4); /*0x724b90*/
+  if ( result ) /*0x724b95*/
+    return (*(int (__thiscall **)(int, int))(*(_DWORD *)this + 16))(this, this + 24); /*0x724b9f*/
+  return result; /*0x724ba2*/
+}
 // 0x724BB0
 void ToolTipManager::read(int a1)
 {
-{
-    Debug::Log();
+  Debug::Log(); /*0x724bbd*/
 }
-}
-
 // 0x724BD0
 int ToolTipManager::stubReturnFalse(int a1)
 {
-return 0;
+  return 0; /*0x724bd2*/
 }
-
 // 0x724F40
 namespace gamemd {
 DynamicVector * ToolTipManager_7::QueryInterface(char a2)
 {
-{
-    void *v3;
-    v3 = (void *)this->Items;
-    *(void**)this = &vt_VectorClass_ToolTip_const;
-    if ( v3 && this->IsAllocated )
+  void *v3; // eax
+
+  v3 = (void *)*(this + 1); /*0x724f43*/
+  *this = &VectorClass<ToolTip const *>::`vftable'; /*0x724f46*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x724f50*/
   {
-    __3_YAXPAX_Z(v3);
-    this->Items = 0;
+    __3_YAXPAX_Z(v3); /*0x724f58*/
+    *(this + 1) = 0; /*0x724f60*/
   }
-    this->IsAllocated = 0;
-    this->Capacity = 0;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (DynamicVector *)this;
-}
+  *((_BYTE *)this + 13) = 0; /*0x724f6b*/
+  *(this + 2) = 0; /*0x724f71*/
+  if ( (a2 & 1) != 0 ) /*0x724f78*/
+    __3_YAXPAX_Z(this); /*0x724f7b*/
+  return this; /*0x724f85*/
 }
 } // namespace gamemd

@@ -7,35 +7,32 @@
 // 0x720B20
 int Theme::QueueSong(IUnknown * aP1)
 {
-{
   int IsSoundEnabled; // eax
 
-  LOBYTE(IsSoundEnabled) = g_NetworkPlayerBuffer[5688]; /*0x720b20*/
-  if ( g_NetworkPlayerBuffer[5688] ) /*0x720b2a*/
+  LOBYTE(IsSoundEnabled) = g_ThemeMIXLoaded; /*0x720b20*/
+  if ( g_ThemeMIXLoaded ) /*0x720b2a*/
   {
     IsSoundEnabled = Audio::IsSoundEnabled(); /*0x720b2c*/
     if ( IsSoundEnabled ) /*0x720b33*/
     {
-      LOBYTE(IsSoundEnabled) = g_NetworkPlayerBuffer[5928]; /*0x720b35*/
-      if ( !g_NetworkPlayerBuffer[5928] ) /*0x720b3c*/
+      LOBYTE(IsSoundEnabled) = byte_A8ED64; /*0x720b35*/
+      if ( !byte_A8ED64 ) /*0x720b3c*/
       {
-        LOBYTE(IsSoundEnabled) = (_BYTE)aP1; /*0x720b3e*/
-        this->q002 = aP1; /*0x720b45*/
-        if ( aP1 != (IUnknown *)-1 && aP1 != (IUnknown *)-2 && aP1 != this->q001 ) /*0x720b52*/
+        LOBYTE(IsSoundEnabled) = aP1; /*0x720b3e*/
+        *(_DWORD *)(this + 8) = aP1; /*0x720b45*/
+        if ( aP1 != -1 && aP1 != -2 && aP1 != *(_DWORD *)(this + 4) ) /*0x720b52*/
         {
-          Debug::Log(); /*0x720b5a*/
-          int v4 = this->audioSample; /*0x720b5f*/
-          if ( v4 ) /*0x720b67*/
+          LOBYTE(IsSoundEnabled) = Debug::Log("Theme::QueueSong(%d)\n", aP1); /*0x720b5a*/
+          if ( *(_DWORD *)(this + 44) ) /*0x720b5f*/
           {
-            if ( this->u8_11 && !AudioSample::IsBuffering(v4) ) /*0x720b70*/
-              Audio::Release(this->audioSample); /*0x720b7c*/
-            LOBYTE(IsSoundEnabled) = Audio::IsSoundPlaying(this->audioSample) != 0; /*0x720b8b*/
+            if ( *(_BYTE *)(this + 17) && !AudioSample::IsBuffering() ) /*0x720b70*/
+              Audio::Release(*(_DWORD *)(this + 44)); /*0x720b7c*/
+            LOBYTE(IsSoundEnabled) = Audio::IsSoundPlaying(*(_DWORD *)(this + 44)) != 0; /*0x720b8b*/
             if ( (_BYTE)IsSoundEnabled == 1 ) /*0x720b90*/
             {
-              _DWORD * v5 = this->audioSample; /*0x720b92*/
-              if ( v5 ) /*0x720b97*/
-                LOBYTE(IsSoundEnabled) = ThemeClass::RequestBuffer(v5); /*0x720b99*/
-              this->u8_11 = 1; /*0x720b9e*/
+              if ( *(_DWORD *)(this + 44) ) /*0x720b92*/
+                LOBYTE(IsSoundEnabled) = ThemeClass::RequestBuffer(); /*0x720b99*/
+              *(_BYTE *)(this + 17) = 1; /*0x720b9e*/
             }
           }
         }
@@ -44,67 +41,57 @@ int Theme::QueueSong(IUnknown * aP1)
   }
   return IsSoundEnabled; /*0x720ba2*/
 }
-}
-
 // 0x720EA0
 int Theme::Stop(ObjectClass * aP1)
 {
-{
   int IsSoundEnabled; // eax
+  int v4; // ecx
 
-  LOBYTE(IsSoundEnabled) = g_NetworkPlayerBuffer[5688]; /*0x720ea0*/
-  if ( g_NetworkPlayerBuffer[5688] ) /*0x720eaa*/
+  LOBYTE(IsSoundEnabled) = g_ThemeMIXLoaded; /*0x720ea0*/
+  if ( g_ThemeMIXLoaded ) /*0x720eaa*/
   {
     IsSoundEnabled = Audio::IsSoundEnabled(); /*0x720eb0*/
     if ( IsSoundEnabled ) /*0x720eb7*/
     {
-      LOBYTE(IsSoundEnabled) = g_NetworkPlayerBuffer[5928]; /*0x720ebd*/
-      if ( !g_NetworkPlayerBuffer[5928] && *this != -1 ) /*0x720ecd*/
+      LOBYTE(IsSoundEnabled) = byte_A8ED64; /*0x720ebd*/
+      if ( !byte_A8ED64 && *this != -1 ) /*0x720ecd*/
       {
-        if ( !(_BYTE)aP1 ) /*0x720ed9*/
-          goto LABEL_14; /*0x720ed9*/
-        int v4 = this->audioSample; /*0x720edb*/
-        if ( !v4 ) /*0x720ee0*/
-          goto LABEL_14; /*0x720ee0*/
-        if ( this->u8_11 && !AudioSample::IsBuffering(v4) ) /*0x720ee9*/
-          Audio::Release((_DWORD *)this->audioSample); /*0x720ef5*/
-        if ( Audio::IsSoundPlaying((_DWORD *)this->audioSample) != 0 ) /*0x720f04*/
+        if ( !aP1 || !*(this + 11) ) /*0x720edb*/
+          goto LABEL_14; /*0x720edb*/
+        if ( *((_BYTE *)this + 17) && !AudioSample::IsBuffering() ) /*0x720ee9*/
+          Audio::Release(*(this + 11)); /*0x720ef5*/
+        if ( Audio::IsSoundPlaying(*(this + 11)) != 0 ) /*0x720f04*/
         {
-          Debug::Log(); /*0x720f14*/
-          _DWORD * v5 = (_DWORD *)this->audioSample; /*0x720f19*/
-          if ( v5 ) /*0x720f21*/
-            LOBYTE(IsSoundEnabled) = ThemeClass::RequestBuffer(v5); /*0x720f23*/
-          this->u8_11 = 1; /*0x720f28*/
+          LOBYTE(IsSoundEnabled) = Debug::Log("Theme::Stop(%d) - Fading\n", *(this + 1)); /*0x720f14*/
+          if ( *(this + 11) ) /*0x720f19*/
+            LOBYTE(IsSoundEnabled) = ThemeClass::RequestBuffer(); /*0x720f23*/
+          *((_BYTE *)this + 17) = 1; /*0x720f28*/
         }
         else
         {
-LABEL_14:
-          Debug::Log(); /*0x720f37*/
-          _DWORD * v6 = (_DWORD *)this->audioSample; /*0x720f3c*/
-          if ( v6 ) /*0x720f44*/
-            Audio::Release(v6); /*0x720f46*/
+  LABEL_14:
+          LOBYTE(IsSoundEnabled) = Debug::Log("Theme::Stop(%d)\n", *(this + 1)); /*0x720f37*/
+          v4 = *(this + 11); /*0x720f3c*/
+          if ( v4 ) /*0x720f44*/
+            LOBYTE(IsSoundEnabled) = Audio::Release(v4); /*0x720f46*/
         }
         *this = -1; /*0x720f4b*/
-        this->q001 = -1; /*0x720f51*/
-        this->q002 = -1; /*0x720f58*/
+        *(this + 1) = -1; /*0x720f51*/
+        *(this + 2) = -1; /*0x720f58*/
       }
     }
   }
   return IsSoundEnabled; /*0x720f5f*/
 }
-}
-
 // 0x720FD0
 int Theme::IsPlaying()
 {
-{
-  if ( !this->audioSample ) /*0x720fd3*/
+  if ( !*(_DWORD *)(this + 44) ) /*0x720fd3*/
     return 0; /*0x721002*/
-  if ( this->u8_11 ) /*0x720fda*/
+  if ( *(_BYTE *)(this + 17) ) /*0x720fda*/
   {
     if ( !AudioSample::IsBuffering() ) /*0x720fe1*/
-      Audio::Release(this->audioSample); /*0x720fed*/
+      Audio::Release(*(_DWORD **)(this + 44)); /*0x720fed*/
   }
-  return Audio::IsSoundPlaying(this->audioSample) != 0; /*0x720ffe*/
-}
+  return Audio::IsSoundPlaying(*(_DWORD **)(this + 44)) != 0; /*0x720ffe*/
 }

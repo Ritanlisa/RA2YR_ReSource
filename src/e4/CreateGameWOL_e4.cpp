@@ -8,22 +8,21 @@
 namespace gamemd {
 HWND sub_792EC0(int a1)
 {
-{
-    HWND v2;
-    HWND Current;
-    HWND result;
-    v2 = (HWND)Dialog::FindByHandle((void *)0xC4);
-    if ( v2 )
+  HWND v2; // eax
+  HWND Current; // eax
+  HWND result; // eax
+
+  v2 = (HWND)Dialog::FindByHandle((void *)0xC4); /*0x792ec8*/
+  if ( v2 ) /*0x792ecf*/
   {
-    g_WOL_ChannelList &= ~a1;
-    if ( !g_WOL_ChannelList )
-    CloseDialog(v2, 0);
+    g_WOL_ChannelList &= ~a1; /*0x792edb*/
+    if ( !g_WOL_ChannelList ) /*0x792ee1*/
+      CloseDialog(v2, 0); /*0x792ee7*/
   }
-    Current = Dialog::GetCurrent();
-    result = GetDlgItem(Current, 1344);
-    if ( result )
-    return SetFocus(result);
-    return result;
-}
+  Current = Dialog::GetCurrent(); /*0x792eec*/
+  result = GetDlgItem(Current, 1344); /*0x792ef7*/
+  if ( result ) /*0x792f00*/
+    return SetFocus(result); /*0x792f03*/
+  return result; /*0x792eff*/
 }
 } // namespace gamemd

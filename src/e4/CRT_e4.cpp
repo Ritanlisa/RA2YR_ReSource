@@ -6,10 +6,9 @@
 namespace gamemd {
 int sub_7C5EE4()
 {
-{
-    unsigned short v1;
-    DataGlobal_822D80 = v1;
-    return v1;
-}
+  unsigned __int16 v1; // [esp+Ah] [ebp-2h]
+
+  dword_822D80 = v1; /*0x7c5ef9*/
+  return v1; /*0x7c5efe*/
 }
 } // namespace gamemd

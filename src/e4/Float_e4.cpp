@@ -5,31 +5,28 @@
 // 0x6C9690
 float Float::Accumulate(float value, int index)
 {
-{
-    double v3;
-    v3 = value + *(this + index);
-    *(this + index) = v3;
-    return v3;
-}
-}
+  double result; // st7
 
+  result = value + *(this + index); /*0x6c9698*/
+  *(this + index) = result; /*0x6c969b*/
+  return result; /*0x6c969e*/
+}
 // 0x6C96B0
 double Float::SubtractClamped(BuildingTypeClass * aP1, IUnknown * aP2)
 {
-{
-    double result;
-    double v4;
-    if ( *(this + (int)aP2) >= (double)*(float *)&aP1 )
+  double result; // st7
+  double v4; // st6
+
+  if ( *(this + aP2) >= (double)aP1 ) /*0x6c96c0*/
   {
-    result = *(float *)&aP1;
-    v4 = *(this + (int)aP2) - *(float *)&aP1;
+    result = aP1; /*0x6c96d0*/
+    v4 = *(this + aP2) - aP1; /*0x6c96d7*/
   }
-    else
+  else
   {
-    result = *(this + (int)aP2);
-    v4 = result - result;
+    result = *(this + aP2); /*0x6c96c2*/
+    v4 = result - result; /*0x6c96c8*/
   }
-    *(this + (int)aP2) = v4;
-    return result;
-}
+  *(this + aP2) = v4; /*0x6c96ca*/
+  return result; /*0x6c96cd*/
 }

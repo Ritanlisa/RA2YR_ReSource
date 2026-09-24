@@ -5,100 +5,104 @@
 // 0x4134A0
 int GadgetGrid::InsertItem(ObjectClass * aP1)
 {
-{
-    ObjectClass **v4;
-    ObjectClass *v5;
-    int v6;
-    int v7;
-    int v8;
-    int v9;
-    int v10;
-    int result;
-    int *v12;
-    int v13;
-    int v14;
-    char v15[4];
-    ObjectClass *aP1a;
-    v4 = (ObjectClass **)(*(int (__thiscall **)(ObjectClass *, char *))(*(int *)aP1->__pad_0 + 440))(aP1, v15);
-    v5 = *v4;
-    aP1a = *v4;
-    (*(void (__thiscall **)(ObjectClass *, ObjectClass *))(*(int *)aP1->__pad_0 + 760))(aP1, *v4);
-    if ( (short)v5 >= 0 )
-    v5 = (ObjectClass *)(short)v5;
-    else
-    v5 = 0;
-    if ( SHIWORD(aP1a) >= 0 )
-    v6 = SHIWORD(aP1a);
-    else
-    v6 = 0;
-    v7 = (int)v5 / (*(int *)&DataGlobal_87F8E4.field_2D[3] / 20);
-    v8 = 19;
-    if ( v7 <= 19 )
-    v8 = v7;
-    v9 = v6 / (*(int *)&DataGlobal_87F8E4[52] / 20);
-    if ( v9 > 19 )
-    v9 = 19;
-    v10 = 3 * (v8 + 20 * v9);
-    result = *(this + 120 * v9 + 6 * v8 + 2);
-    v12 = this + 2 * v10;
-    if ( v12[4] < result || (*((char *)(v12) + 13) || !result) && (v13 = v12[5], v13 > 0) && (result = (*(int (__thiscall **)(int *, int, int))(*v12 + 8))(v12, result + v13, 0), (char)result) )
-  {
-    result = v12[4];
-    v14 = v12[1];
-    v12[4] = result + 1;
-    *(int *)(v14 + 4 * result) = aP1;
-  }
-    return result;
-}
-}
+  _DWORD *v4; // eax
+  int v5; // esi
+  int v6; // edi
+  int v7; // eax
+  int v8; // esi
+  int v9; // eax
+  int v10; // ecx
+  int result; // eax
+  char *v12; // esi
+  int v13; // ecx
+  int v14; // edx
+  char v15[4]; // [esp+Ch] [ebp-4h] BYREF
+  int v16; // [esp+14h] [ebp+4h]
 
+  v4 = (_DWORD *)(*(int (__thiscall **)(int, char *))(*(_DWORD *)aP1 + 440))(aP1, v15); /*0x4134b3*/
+  v5 = *v4; /*0x4134b9*/
+  v16 = *v4; /*0x4134c0*/
+  (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)aP1 + 760))(aP1, *v4); /*0x4134c4*/
+  if ( (v5 & 0x8000u) == 0 ) /*0x4134cd*/
+    v5 = (__int16)v5; /*0x4134d3*/
+  else
+    v5 = 0; /*0x4134cf*/
+  if ( v16 >= 0 ) /*0x4134df*/
+    v6 = SHIWORD(v16); /*0x4134e5*/
+  else
+    v6 = 0; /*0x4134e1*/
+  v7 = v5 / (g_AircraftTrackerPool / 20); /*0x413504*/
+  v8 = 19; /*0x413506*/
+  if ( v7 <= 19 ) /*0x41350e*/
+    v8 = v7; /*0x413510*/
+  v9 = v6 / (g_AircraftTrackerState / 20); /*0x41352f*/
+  if ( v9 > 19 ) /*0x413534*/
+    v9 = 19; /*0x413536*/
+  v10 = 3 * (v8 + 20 * v9); /*0x413541*/
+  result = *(this + 120 * v9 + 6 * v8 + 2); /*0x413544*/
+  v12 = (char *)(this + 2 * v10); /*0x413548*/
+  if ( *((_DWORD *)v12 + 4) < result /*0x413574*/
+    || (v12[13] || !result)
+    && (v13 = *((_DWORD *)v12 + 5), v13 > 0)
+    && (result = (*(int (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)v12 + 8))(v12, result + v13, 0), (_BYTE)result) )
+  {
+    result = *((_DWORD *)v12 + 4); /*0x413576*/
+    v14 = *((_DWORD *)v12 + 1); /*0x413579*/
+    *((_DWORD *)v12 + 4) = result + 1; /*0x41357f*/
+    *(_DWORD *)(v14 + 4 * result) = aP1; /*0x413582*/
+  }
+  return result; /*0x413585*/
+}
 // 0x4135D0
 int GadgetGrid::RemoveItem(IUnknown * aP1)
 {
-{
-    int v3;
-    int v4;
-    int v5;
-    int v6;
-    int v7;
-    int v8;
-    int *v9;
-    int result;
-    int v11;
-    int v12;
-    short v13;
-    char v14[4];
-    v3 = *(int *)(*(int (__thiscall **)(IUnknown *, char *))(aP1->field_0 + 756))(aP1, v14);
-    v13 = HIWORD(v3);
-    (*(void (__thiscall **)(IUnknown *, int))(aP1->field_0 + 760))(aP1, *(int *)&DataGlobal_87F8E4[32620]);
-    if ( (v3 & 0x8000u) == 0 )
-    v3 = (short)v3;
-    else
-    v3 = 0;
-    if ( v13 >= 0 )
-    v4 = v13;
-    else
-    v4 = 0;
-    v5 = v3 / (*(int *)&DataGlobal_87F8E4.field_2D[3] / 20);
-    v6 = 19;
-    if ( v5 <= 19 )
-    v6 = v5;
-    v7 = v4 / (*(int *)&DataGlobal_87F8E4[52] / 20);
-    if ( v7 > 19 )
-    v7 = 19;
-    v8 = *(this + 120 * v7 + 6 * v6);
-    v9 = this + 120 * v7 + 6 * v6;
-    result = (*(int (__thiscall **)(int *, IUnknown **))(v8 + 16))(v9, &aP1);
-    if ( result != -1 )
+  int v3; // esi
+  int v4; // edi
+  int v5; // eax
+  int v6; // esi
+  int v7; // eax
+  int v8; // edx
+  char *v9; // esi
+  int result; // eax
+  int v11; // ecx
+  int v12; // ecx
+  __int16 v13; // [esp+Ah] [ebp-6h]
+  char v14[4]; // [esp+Ch] [ebp-4h] BYREF
+
+  v3 = *(_DWORD *)(*(int (__thiscall **)(int, char *))(*(_DWORD *)aP1 + 756))(aP1, v14); /*0x4135ec*/
+  v13 = HIWORD(v3); /*0x4135f4*/
+  (*(void (__thiscall **)(int, int))(*(_DWORD *)aP1 + 760))(aP1, dword_887850); /*0x4135fb*/
+  if ( (v3 & 0x8000u) == 0 ) /*0x413604*/
+    v3 = (__int16)v3; /*0x41360a*/
+  else
+    v3 = 0; /*0x413606*/
+  if ( v13 >= 0 ) /*0x413616*/
+    v4 = v13; /*0x41361c*/
+  else
+    v4 = 0; /*0x413618*/
+  v5 = v3 / (g_AircraftTrackerPool / 20); /*0x41363b*/
+  v6 = 19; /*0x41363d*/
+  if ( v5 <= 19 ) /*0x413645*/
+    v6 = v5; /*0x413647*/
+  v7 = v4 / (g_AircraftTrackerState / 20); /*0x413666*/
+  if ( v7 > 19 ) /*0x41366b*/
+    v7 = 19; /*0x41366d*/
+  v8 = *(this + 120 * v7 + 6 * v6); /*0x413680*/
+  v9 = (char *)(this + 120 * v7 + 6 * v6); /*0x413683*/
+  result = (*(int (__thiscall **)(char *, int *))(v8 + 16))(v9, &aP1); /*0x413688*/
+  if ( result != -1 ) /*0x41368e*/
   {
-    v11 = v9[4];
-    if ( result < v11 )
+    v11 = *((_DWORD *)v9 + 4); /*0x413690*/
+    if ( result < v11 ) /*0x413695*/
     {
-    v12 = v11 - 1;
-    for ( v9[4] = v12; result < v9[4]; *(int *)(v9[1] + 4 * result - 4) = *(int *)(v9[1] + 4 * result) )
-    ++result;
+      v12 = v11 - 1; /*0x413697*/
+      for ( *((_DWORD *)v9 + 4) = v12; /*0x41369d*/
+            result < *((_DWORD *)v9 + 4);
+            *(_DWORD *)(*((_DWORD *)v9 + 1) + 4 * result - 4) = *(_DWORD *)(*((_DWORD *)v9 + 1) + 4 * result) )
+      {
+        ++result; /*0x4136a2*/
+      }
     }
   }
-    return result;
-}
+  return result; /*0x4136b1*/
 }

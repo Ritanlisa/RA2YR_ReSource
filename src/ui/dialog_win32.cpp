@@ -340,17 +340,17 @@ void IdleProcess(HWND hWnd)
 // ShowMessage and ShowStatusText defined below (near bottom of file)
 
 // IDA 0x6233A0: Dialog::CleanupTree — cleanup dialog widget tree
-// Frees: (this+40) pointer, linked list at (this+52), and vector at (this+60)
+// Frees: (&this->q0100) pointer, linked list at (&this->u32_142), and vector at (&this->u32_180)
 void CleanupTree(void* dialog_data)
 {
-    // IDA: free *(this+40), cleanup linked list at *(this+52), DeleteAndZero::Alt *(this+60)
+    // IDA: free *(&this->q0100), cleanup linked list at *(&this->u32_142), DeleteAndZero::Alt *(&this->u32_180)
     uint8_t* base = (uint8_t*)(dialog_data);
     uint32_t* ptr40 = (uint32_t*)(base + 40);
     uint32_t* ptr52 = (uint32_t*)(base + 52);
     uint32_t* ptr60 = (uint32_t*)(base + 60);
 
     if (*ptr40) {
-        // IDA: operator delete(*(this+40))
+        // IDA: operator delete(*(&this->q0100))
         delete (void*)(*ptr40);
         *ptr40 = 0;
     }
@@ -778,7 +778,6 @@ void DestroyDialogSystem()
     g_count = 0;
     g_currentHwnd = 0;
     g_currentType = 0;
-}
 
 // IDA 0x5D3490: Dialog::ShowMessageBox — show CSF-message dialog
 // 524 bytes — Creates dialog from resource, loads CSF strings, shows message
@@ -796,7 +795,6 @@ int ShowMessageBox(const wchar_t* msg, const wchar_t* ok, const wchar_t* cancel,
         ok ? ok : L"OK", type | MB_ICONINFORMATION);
 
     return (result == IDOK) ? 1 : 0;
-}
 
 } // namespace Dialog
 } // namespace gamemd

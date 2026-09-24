@@ -6,9 +6,7 @@
 namespace gamemd {
 int GetBitMask_Green()
 {
-{
-    return g_BitMask_Green;
-}
+  return g_BitMask_Green; /*0x4bbc55*/
 }
 } // namespace gamemd
 
@@ -16,9 +14,7 @@ int GetBitMask_Green()
 namespace gamemd {
 int GetBitMask_Blue()
 {
-{
-    return g_BitMask_Blue;
-}
+  return g_BitMask_Blue; /*0x4bbc65*/
 }
 } // namespace gamemd
 
@@ -26,8 +22,6 @@ int GetBitMask_Blue()
 namespace gamemd {
 int GetBitMask_Red()
 {
-{
-    return g_BitMask_Red;
-}
+  return g_BitMask_Red; /*0x4bbc85*/
 }
 } // namespace gamemd

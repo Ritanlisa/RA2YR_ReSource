@@ -5,22 +5,25 @@
 // 0x767010
 void * COMClass::lockServer(char a2)
 {
-{
-  rc_ptr_base *v4; // ebp
-  rc_ptr_base *v5; // esi
+  int v3; // eax
+  char *v4; // ebp
+  _DWORD *v5; // esi
+  int v6; // eax
+  int v7; // edi
+
   if ( (a2 & 2) != 0 ) /*0x76701b*/
   {
-    int v3 = *((_DWORD *)this - 1); /*0x76701d*/
-    v4 = this - 1; /*0x767021*/
+    v3 = *(this - 1); /*0x76701d*/
+    v4 = (char *)(this - 1); /*0x767021*/
     v5 = this + 2 * v3; /*0x767024*/
-    int v6 = v3 - 1; /*0x767027*/
+    v6 = v3 - 1; /*0x767027*/
     if ( v6 >= 0 ) /*0x767028*/
     {
-      int v7 = v6 + 1; /*0x76702b*/
+      v7 = v6 + 1; /*0x76702b*/
       do /*0x76703f*/
       {
         v5 -= 2; /*0x76702e*/
-        v5->vfptr = &vt_rc_ptr_WorldDominationTour_GameOption; /*0x767033*/
+        *v5 = &rc_ptr<WorldDominationTour::GameOption>::`vftable'; /*0x767033*/
         ComPtr::Release(v5); /*0x767039*/
         --v7; /*0x76703e*/
       }
@@ -32,22 +35,18 @@ void * COMClass::lockServer(char a2)
   }
   else
   {
-    this->vfptr = &vt_rc_ptr_WorldDominationTour_GameOption; /*0x76705a*/
+    *this = &rc_ptr<WorldDominationTour::GameOption>::`vftable'; /*0x76705a*/
     ComPtr::Release(this); /*0x767060*/
     if ( (a2 & 1) != 0 ) /*0x767068*/
       __3_YAXPAX_Z(this); /*0x76706b*/
-    return this; /*0x767073*/
+    return (char *)this; /*0x767073*/
   }
 }
-}
-
 // 0x7669F0
 VectorCursor * COMClass::disconnectPoint(char a2)
 {
-{
-    *(void**)this = &vt_VectorCursor_rc_ptr_WorldDominationTour_GameOption_DynamicVectorClass_rc_ptr_WorldDominationTour_GameOption;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (VectorCursor *)this;
-}
+  *this = &VectorCursor<rc_ptr<WorldDominationTour::GameOption>,DynamicVectorClass<rc_ptr<WorldDominationTour::GameOption>>>::`vftable'; /*0x7669f9*/
+  if ( (a2 & 1) != 0 ) /*0x7669ff*/
+    __3_YAXPAX_Z(this); /*0x766a02*/
+  return this; /*0x766a0c*/
 }

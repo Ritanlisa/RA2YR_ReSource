@@ -9,123 +9,124 @@
 namespace gamemd {
 TriggerClass * * TagClass::Destructor(void ** a1, AbstractClass * a2)
 {
-{
-  TagTypeClass *v2; // ecx
-  int eax5; // eax
-  ParticleSystemClass *v4; // ecx
-  ParticleSystemClass *v5; // ecx
-  TagTypeClass *v6; // ecx
-  int eax18; // eax
-  ParticleSystemClass *v8; // ecx
-  ParticleSystemClass *v9; // ecx
-  TriggerClass *v10; // eax
-  _DWORD *buildingType; // eax
-  int Owner; // eax
-  _DWORD *eax35; // eax
-  TriggerClass *v15; // esi
-  int eax37; // eax
-  AbstractClass *v17; // eax
-  AbstractClass *v22; // edx
-  _DWORD v23[4]; // [esp+10h] [ebp-10h] BYREF
+  _DWORD *v2; // ecx
+  int v3; // eax
+  void ***v4; // ecx
+  int v5; // ecx
+  _DWORD *v6; // ecx
+  int v7; // eax
+  void ***v8; // ecx
+  int v9; // ecx
+  int v10; // eax
+  int v11; // eax
+  int OwnerHouseClass; // eax
+  int v13; // ecx
+  _DWORD *v14; // eax
+  int v15; // esi
+  int v16; // eax
+  int v17; // eax
+  int v18; // eax
+  int v19; // eax
+  int v20; // eax
+  _DWORD v22[4]; // [esp+10h] [ebp-10h] BYREF
 
-  LOBYTE(a2) = 1; /*0x6e4f63*/
-  *a1 = &TagClass::`vftable'; /*0x6e4f69*/
-  a1[1] = &TagClass::`vftable'; /*0x6e4f6f*/
-  a1[2] = &TagClass::`vftable'; /*0x6e4f76*/
-  a1[3] = &vt_TagClass; /*0x6e4f7d*/
-  AbstractClass::AnnounceExpiredPointer((AbstractClass *)a1, a2); /*0x6e4f84*/
-  if ( HouseClass_Player[44116] ) /*0x6e4f90*/
+  *this = &TagClass::`vftable'; /*0x6e4f69*/
+  *(this + 1) = &TagClass::`vftable'; /*0x6e4f6f*/
+  *(this + 2) = &TagClass::`vftable'; /*0x6e4f76*/
+  *(this + 3) = &TagClass::`vftable'; /*0x6e4f7d*/
+  AbstractClass::AnnounceExpiredPointer(this); /*0x6e4f84*/
+  if ( g_WTFMode ) /*0x6e4f90*/
   {
-    if ( HouseClass_Player[45072] ) /*0x6e4f9d*/
+    if ( g_BounceClassInit ) /*0x6e4f9d*/
     {
-      v2 = (TagTypeClass *)a1[9]; /*0x6e4f9f*/
+      v2 = *(this + 9); /*0x6e4f9f*/
       if ( v2 ) /*0x6e4fa4*/
       {
         if ( (Debug::AccumFlags(v2) & 0x10) != 0 ) /*0x6e4fad*/
         {
-          eax5 = 0; /*0x6e4fb5*/
-          if ( *(int *)&stru_89E138[90016] <= 0 ) /*0x6e4fb9*/
+          v3 = 0; /*0x6e4fb5*/
+          if ( g_ScenarioUpdateState <= 0 ) /*0x6e4fb9*/
           {
-LABEL_9:
-            eax5 = -1; /*0x6e4fcd*/
+  LABEL_9:
+            v3 = -1; /*0x6e4fcd*/
           }
           else
           {
-            v4 = *(ParticleSystemClass **)&stru_89E138[90004]; /*0x6e4fbb*/
-            while ( *(void ***)v4->__pad_0 != a1 ) /*0x6e4fc3*/
+            v4 = (void ***)dword_8B40CC; /*0x6e4fbb*/
+            while ( *v4 != this ) /*0x6e4fc3*/
             {
-              ++eax5; /*0x6e4fc5*/
-              v4 = (ParticleSystemClass *)((char *)v4 + 4); /*0x6e4fc6*/
-              if ( eax5 >= *(int *)&stru_89E138[90016] ) /*0x6e4fcb*/
+              ++v3; /*0x6e4fc5*/
+              ++v4; /*0x6e4fc6*/
+              if ( v3 >= g_ScenarioUpdateState ) /*0x6e4fcb*/
                 goto LABEL_9; /*0x6e4fcb*/
             }
           }
-          v5 = (ParticleSystemClass *)dword_A83CDC; /*0x6e4fd0*/
-          if ( dword_A83CDC >= eax5 ) /*0x6e4fd8*/
+          v5 = dword_A83CDC; /*0x6e4fd0*/
+          if ( dword_A83CDC >= v3 ) /*0x6e4fd8*/
           {
             --dword_A83CDC; /*0x6e4fdd*/
-            if ( (int)&v5[-1].OwnerHouse + 3 < 0 && !*(_DWORD *)&stru_89E138[90016] ) /*0x6e4fe6*/
+            if ( v5 - 1 < 0 && !g_ScenarioUpdateState ) /*0x6e4fe6*/
               dword_A83CDC = 0; /*0x6e4fe8*/
           }
         }
       }
     }
-    if ( HouseClass_Player[44116] ) /*0x6e4ff5*/
+    if ( g_WTFMode ) /*0x6e4ff5*/
     {
-      if ( HouseClass_Player[45072] ) /*0x6e5002*/
+      if ( g_BounceClassInit ) /*0x6e5002*/
       {
-        v6 = (TagTypeClass *)a1[9]; /*0x6e5004*/
+        v6 = *(this + 9); /*0x6e5004*/
         if ( v6 ) /*0x6e5009*/
         {
           if ( (Debug::AccumFlags(v6) & 4) != 0 ) /*0x6e5012*/
           {
-            eax18 = 0; /*0x6e501a*/
+            v7 = 0; /*0x6e501a*/
             if ( dword_8B41B8 <= 0 ) /*0x6e501e*/
             {
-LABEL_22:
-              eax18 = -1; /*0x6e5032*/
+  LABEL_22:
+              v7 = -1; /*0x6e5032*/
             }
             else
             {
-              v8 = (ParticleSystemClass *)unk_8B41AC; /*0x6e5020*/
-              while ( *(void ***)v8->__pad_0 != a1 ) /*0x6e5028*/
+              v8 = (void ***)dword_8B41AC; /*0x6e5020*/
+              while ( *v8 != this ) /*0x6e5028*/
               {
-                ++eax18; /*0x6e502a*/
-                v8 = (ParticleSystemClass *)((char *)v8 + 4); /*0x6e502b*/
-                if ( eax18 >= dword_8B41B8 ) /*0x6e5030*/
+                ++v7; /*0x6e502a*/
+                ++v8; /*0x6e502b*/
+                if ( v7 >= dword_8B41B8 ) /*0x6e5030*/
                   goto LABEL_22; /*0x6e5030*/
               }
             }
-            v9 = (ParticleSystemClass *)HouseClass_Player.field_70; /*0x6e5035*/
-            if ( HouseClass_Player.field_70 >= eax18 ) /*0x6e503d*/
+            v9 = dword_A83DBC; /*0x6e5035*/
+            if ( dword_A83DBC >= v7 ) /*0x6e503d*/
             {
-              --HouseClass_Player.field_70; /*0x6e5042*/
-              if ( (int)&v9[-1].OwnerHouse + 3 < 0 && !dword_8B41B8 ) /*0x6e504b*/
-                HouseClass_Player.field_70 = 0; /*0x6e504d*/
+              --dword_A83DBC; /*0x6e5042*/
+              if ( v9 - 1 < 0 && !dword_8B41B8 ) /*0x6e504b*/
+                dword_A83DBC = 0; /*0x6e504d*/
             }
           }
         }
       }
-      if ( HouseClass_Player[44116] ) /*0x6e505a*/
+      if ( g_WTFMode ) /*0x6e505a*/
       {
-        if ( HouseClass_Player[45072] ) /*0x6e5063*/
+        if ( g_BounceClassInit ) /*0x6e5063*/
         {
-          v10 = (TriggerClass *)a1[10]; /*0x6e5065*/
+          v10 = (int)*(this + 10); /*0x6e5065*/
           if ( v10 ) /*0x6e506a*/
           {
-            buildingType = v10->buildingType; /*0x6e506c*/
-            if ( buildingType ) /*0x6e5071*/
+            v11 = *(_DWORD *)(v10 + 36); /*0x6e506c*/
+            if ( v11 ) /*0x6e5071*/
             {
-              if ( buildingType[41] && TagClass::HasValidHouse(a1[9]) ) /*0x6e5080*/
+              if ( *(_DWORD *)(v11 + 164) && (unsigned __int8)TagClass::HasValidHouse(*(this + 9)) ) /*0x6e5080*/
               {
-                Owner = HouseClass::FindOwner(*(void **)(*(_DWORD *)(*((_DWORD *)a1[10] + 9) + 164) + 184)); /*0x6e509b*/
-                int v14 = *(_DWORD *)(Owner + 636); /*0x6e50a0*/
-                if ( v14 ) /*0x6e50a8*/
-                  *(_DWORD *)(Owner + 636) = v14 - 1; /*0x6e50ab*/
-                eax35 = (_DWORD *)(Owner + 664); /*0x6e50b7*/
-                *eax35 = *(_DWORD *)&HouseClass_Player[45112]; /*0x6e50c1*/
-                eax35[1] = v23[2]; /*0x6e50c7*/
-                eax35[2] = 60; /*0x6e50ca*/
+                OwnerHouseClass = HouseClass::FindOwner(*(void **)(*(_DWORD *)(*((_DWORD *)*(this + 10) + 9) + 164) + 184)); /*0x6e509b*/
+                v13 = *(_DWORD *)(OwnerHouseClass + 636); /*0x6e50a0*/
+                if ( v13 ) /*0x6e50a8*/
+                  *(_DWORD *)(OwnerHouseClass + 636) = v13 - 1; /*0x6e50ab*/
+                v14 = (_DWORD *)(OwnerHouseClass + 664); /*0x6e50b7*/
+                *v14 = g_CurrentFrame; /*0x6e50c1*/
+                v14[1] = v22[2]; /*0x6e50c7*/
+                v14[2] = 60; /*0x6e50ca*/
               }
             }
           }
@@ -133,93 +134,75 @@ LABEL_22:
       }
     }
   }
-  v15 = (TriggerClass *)a1[10]; /*0x6e50cd*/
+  v15 = (int)*(this + 10); /*0x6e50cd*/
   if ( v15 ) /*0x6e50d2*/
   {
-    eax37 = *(_DWORD *)&stru_B05488[41496]; /*0x6e50d4*/
+    v16 = dword_B0F6A0; /*0x6e50d4*/
     do /*0x6e50d9*/
     {
-      if ( *(int *)&stru_B05488[41504] < eax37 ) /*0x6e50df*/
+      if ( g_LaserDrawConfig < v16 ) /*0x6e50df*/
         goto LABEL_43; /*0x6e50df*/
-      if ( !stru_B05488[41501] && eax37 || *(int *)&stru_B05488[41508] <= 0 ) /*0x6e50f7*/
+      if ( !byte_B0F6A5 && v16 || dword_B0F6AC <= 0 ) /*0x6e50f7*/
         goto LABEL_45; /*0x6e50f7*/
-      if ( (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&stru_B05488[41488] + 8))( /*0x6e5109*/
-             &stru_B05488[41488],
-             eax37 + *(_DWORD *)&stru_B05488[41508],
+      if ( (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(g_DiskLaserManager + 8))( /*0x6e5109*/
+             &g_DiskLaserManager,
+             v16 + dword_B0F6AC,
              0) )
       {
-LABEL_43:
-        v17 = (AbstractClass *)(*(_DWORD *)&stru_B05488[41504])++; /*0x6e5116*/
-        *(_DWORD *)(*(_DWORD *)&stru_B05488[41492] + 4 * (_DWORD)v17) = v15; /*0x6e5125*/
+  LABEL_43:
+        v17 = g_LaserDrawConfig++; /*0x6e5116*/
+        *((_DWORD *)dword_B0F69C + v17) = v15; /*0x6e5125*/
       }
-      eax37 = *(_DWORD *)&stru_B05488[41496]; /*0x6e5128*/
-LABEL_45:
-      v15 = (TriggerClass *)v15->nextTrigger; /*0x6e512d*/
+      v16 = dword_B0F6A0; /*0x6e5128*/
+  LABEL_45:
+      v15 = *(_DWORD *)(v15 + 40); /*0x6e512d*/
     }
     while ( v15 ); /*0x6e50d9*/
   }
-  v23[0] = a1; /*0x6e5134*/
-  int v19; // eax
-  v19 = (*(int (__thiscall **)(char *, _DWORD *))(*(_DWORD *)&stru_B05488[41448] + 16))( /*0x6e5147*/
-          &stru_B05488[41448],
-          v23);
-  if ( v19 != -1 && v19 < *(int *)&stru_B05488[41464] ) /*0x6e5157*/
+  v22[0] = this; /*0x6e5134*/
+  v18 = (*(int (__thiscall **)(int *, _DWORD *))(g_AnimPoolManager + 16))(&g_AnimPoolManager, v22); /*0x6e5147*/
+  if ( v18 != -1 && v18 < g_AnimManager && v18 < --g_AnimManager ) /*0x6e5162*/
   {
-    --*(_DWORD *)&stru_B05488[41464]; /*0x6e515c*/
-    for ( ; /*0x6e5162*/
-          v19 < *(int *)&stru_B05488[41464];
-          *(_DWORD *)(*(_DWORD *)&stru_B05488[41452] + 4 * v19 - 4) = *(_DWORD *)(*(_DWORD *)&stru_B05488[41452]
-                                                                                           + 4 * v19) )
+    do /*0x6e517a*/
     {
-      ++v19; /*0x6e516a*/
+      ++v18; /*0x6e516a*/
+      *((_DWORD *)g_AnimPoolCount + v18 - 1) = *((_DWORD *)g_AnimPoolCount + v18); /*0x6e516e*/
     }
+    while ( v18 < g_AnimManager ); /*0x6e517a*/
   }
-  v23[0] = a1; /*0x6e518c*/
-  int v20; // eax
-  v20 = (*(int (__thiscall **)(char *, _DWORD *))(*(_DWORD *)&stru_B05488[41600] + 16))( /*0x6e5190*/
-          &stru_B05488[41600],
-          v23);
-  if ( v20 != -1 && v20 < *(int *)&stru_B05488[41616] ) /*0x6e51a0*/
+  v22[0] = this; /*0x6e518c*/
+  v19 = (*(int (__thiscall **)(int *, _DWORD *))(dword_B0F708 + 16))(&dword_B0F708, v22); /*0x6e5190*/
+  if ( v19 != -1 && v19 < dword_B0F718 && v19 < --dword_B0F718 ) /*0x6e51ab*/
   {
-    --*(_DWORD *)&stru_B05488[41616]; /*0x6e51a5*/
-    for ( ; /*0x6e51ab*/
-          v20 < *(int *)&stru_B05488[41616];
-          *(_DWORD *)(*(_DWORD *)&stru_B05488[41604] + 4 * v20 - 4) = *(_DWORD *)(*(_DWORD *)&stru_B05488[41604]
-                                                                                           + 4 * v20) )
+    do /*0x6e51c3*/
     {
-      ++v20; /*0x6e51b3*/
+      ++v19; /*0x6e51b3*/
+      *((_DWORD *)dword_B0F70C + v19 - 1) = *((_DWORD *)dword_B0F70C + v19); /*0x6e51b7*/
     }
+    while ( v19 < dword_B0F718 ); /*0x6e51c3*/
   }
-  v23[0] = a1; /*0x6e51d5*/
-  int v21; // eax
-  v21 = (*(int (__thiscall **)(char *, _DWORD *))(*(_DWORD *)&stru_B05488[37528] + 16))( /*0x6e51d9*/
-          &stru_B05488[37528],
-          v23);
-  if ( v21 != -1 && v21 < *(int *)&stru_B05488[37544] ) /*0x6e51e9*/
+  v22[0] = this; /*0x6e51d5*/
+  v20 = (*(int (__thiscall **)(int *, _DWORD *))(TagClass_Array + 16))(&TagClass_Array, v22); /*0x6e51d9*/
+  if ( v20 != -1 && v20 < g_GameObjectCleanup && v20 < --g_GameObjectCleanup ) /*0x6e51f4*/
   {
-    --*(_DWORD *)&stru_B05488[37544]; /*0x6e51ee*/
-    for ( ; /*0x6e51f4*/
-          v21 < *(int *)&stru_B05488[37544];
-          *(_DWORD *)(*(_DWORD *)&stru_B05488[37532] + 4 * v21 - 4) = v22 )
+    do /*0x6e520c*/
     {
-      ++v21; /*0x6e51fc*/
-      v22 = *(AbstractClass **)(*(_DWORD *)&stru_B05488[37532] + 4 * v21); /*0x6e51fd*/
+      ++v20; /*0x6e51fc*/
+      *((_DWORD *)g_TagClassCount + v20 - 1) = *((_DWORD *)g_TagClassCount + v20); /*0x6e5200*/
     }
+    while ( v20 < g_GameObjectCleanup ); /*0x6e520c*/
   }
-  LOBYTE(v22) = 1; /*0x6e520e*/
-  AbstractClass::AnnounceExpiredPointer((AbstractClass *)a1, v22); /*0x6e5212*/
-  AbstractClass::DTOR(a1); /*0x6e5219*/
+  AbstractClass::AnnounceExpiredPointer(this); /*0x6e5212*/
+  return AbstractClass::DTOR(this); /*0x6e521e*/
 }
-} // namespace gamemd
 }
-
 // 0x6E6220
 namespace gamemd {
 int TagClass::HasValidHouse()
 {
-{
+  _DWORD *v1; // esi
 
-  _DWORD * v1 = (_DWORD *)this->q0A0; /*0x6e6221*/
+  v1 = (_DWORD *)*(this + 40); /*0x6e6221*/
   if ( !v1 ) /*0x6e6229*/
     return 0; /*0x6e6240*/
   while ( !HouseClass::FindType15(v1) ) /*0x6e6234*/
@@ -230,70 +213,73 @@ int TagClass::HasValidHouse()
   }
   return 1; /*0x6e6242*/
 }
-} // namespace gamemd
 }
-
 // 0x71ADE0
 namespace gamemd {
 Coord * * TagClass::Unlink()
 {
-{
+  int v2; // eax
   int result; // eax
+  int v4; // ecx
 
-  *(_BYTE *)(this->firstTrigger + 624) = 0; /*0x71ade9*/
-  *(_DWORD *)(this->firstTrigger + 632) = 0; /*0x71adf2*/
-  Coord *v2 = this->q011; /*0x71adf8*/
-  this->firstTrigger = 0; /*0x71adfd*/
+  *(_BYTE *)(*(this + 10) + 624) = 0; /*0x71ade9*/
+  *(_DWORD *)(*(this + 10) + 632) = 0; /*0x71adf2*/
+  v2 = *(this + 17); /*0x71adf8*/
+  *(this + 10) = 0; /*0x71adfd*/
   if ( v2 ) /*0x71ae00*/
   {
-    if ( v2->ptr_40 == this ) /*0x71ae05*/
-      v2->ptr_40 = 0; /*0x71ae07*/
-    TagClass::Unlink(this->q011); /*0x71ae0d*/
+    if ( *(int **)(v2 + 64) == this ) /*0x71ae05*/
+      *(_DWORD *)(v2 + 64) = 0; /*0x71ae07*/
+    TagClass::Unlink(*(this + 17)); /*0x71ae0d*/
   }
-  result = this->uniqueId; /*0x71ae12*/
+  result = *(this + 16); /*0x71ae12*/
   if ( result ) /*0x71ae17*/
   {
-    if ( result->ptr_44 == this ) /*0x71ae1c*/
-      result->ptr_44 = 0; /*0x71ae1e*/
-    result = TagClass::Unlink(this->uniqueId); /*0x71ae24*/
+    if ( *(int **)(result + 68) == this ) /*0x71ae1c*/
+      *(_DWORD *)(result + 68) = 0; /*0x71ae1e*/
+    result = TagClass::Unlink(*(this + 16)); /*0x71ae24*/
   }
-  int v4 = this->buildingType; /*0x71ae29*/
-  this->q011 = 0; /*0x71ae2c*/
-  this->uniqueId = 0; /*0x71ae31*/
-  this->q03C = 0; /*0x71ae34*/
-  this->q038 = 0; /*0x71ae37*/
+  v4 = *(this + 9); /*0x71ae29*/
+  *(this + 17) = 0; /*0x71ae2c*/
+  *(this + 16) = 0; /*0x71ae31*/
+  *(this + 15) = 0; /*0x71ae34*/
+  *(this + 14) = 0; /*0x71ae37*/
   if ( v4 ) /*0x71ae3a*/
     return (*(int (__thiscall **)(int, _DWORD, int))(*(_DWORD *)v4 + 1156))(v4, 0, 1); /*0x71ae41*/
   return result; /*0x71ae47*/
 }
-} // namespace gamemd
 }
-
 // 0x6E5610
 namespace gamemd {
 int TagClass::CheckEvent(int a2, TagTypeClass * aP2)
 {
-{
-    TriggerClass *v4;
-    TagTypeClass *result;
-    if ( this->buildingType == a2 )
-    this->buildingType = 0;
-    v4 = *(TriggerClass **)(this + 40);
-    if ( v4 == (TriggerClass *)a2 )
-    this->firstTrigger = v4->nextTrigger;
-    result = *(TagTypeClass **)(this + 36);
-    if ( !result )
+  int v4; // eax
+  int result; // eax
+
+  if ( *(_DWORD *)(this + 36) == a2 ) /*0x6e561a*/
+    *(_DWORD *)(this + 36) = 0; /*0x6e561c*/
+  v4 = *(_DWORD *)(this + 40); /*0x6e5623*/
+  if ( v4 == a2 ) /*0x6e5628*/
+    *(_DWORD *)(this + 40) = *(_DWORD *)(v4 + 40); /*0x6e562d*/
+  result = *(_DWORD *)(this + 36); /*0x6e5630*/
+  if ( !result ) /*0x6e5635*/
   {
-    this->destroyed = 1;
-    result = *(TagTypeClass **)&DataGlobal_B05488[41496];
-    if ( *(int *)&DataGlobal_B05488[41504] < *(int *)&DataGlobal_B05488[41496] || (DataGlobal_B05488[41501] || !*(int *)&DataGlobal_B05488[41496]) && *(int *)&DataGlobal_B05488[41508] > 0 && (result = (TagTypeClass *)(*(int (__thiscall **)(char *, int, int))(*(int *)&DataGlobal_B05488[41488] + 8))( &DataGlobal_B05488[41488], *(int *)&DataGlobal_B05488[41496] + *(int *)&DataGlobal_B05488[41508], 0), (char)result) )
+    *(_BYTE *)(this + 52) = 1; /*0x6e5637*/
+    result = dword_B0F6A0; /*0x6e563b*/
+    if ( g_LaserDrawConfig < dword_B0F6A0 /*0x6e5675*/
+      || (byte_B0F6A5 || !dword_B0F6A0)
+      && dword_B0F6AC > 0
+      && (result = (*(int (__thiscall **)(int *, int, _DWORD))(g_DiskLaserManager + 8))(
+                     &g_DiskLaserManager,
+                     dword_B0F6A0 + dword_B0F6AC,
+                     0),
+          (_BYTE)result) )
     {
-    result = (TagTypeClass *)(*(int *)&DataGlobal_B05488[41504])++;
-    *(int *)(*(int *)&DataGlobal_B05488[41492] + 4 * (int)result) = this;
+      result = g_LaserDrawConfig++; /*0x6e567d*/
+      *((_DWORD *)dword_B0F69C + result) = this; /*0x6e568c*/
     }
   }
-    return (int)result->__pad_0;
-}
+  return result; /*0x6e568f*/
 }
 } // namespace gamemd
 
@@ -301,13 +287,13 @@ int TagClass::CheckEvent(int a2, TagTypeClass * aP2)
 namespace gamemd {
 int TagClass::ddtor(int a1, unsigned int * a2)
 {
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 1425466418;
-  a2[1] = 298977773;
-  a2[2] = 1610655148;
-  a2[3] = -1252326136;
-  return 0;
+  if ( !a2 ) /*0x6e56a6*/
+    return -2147467261; /*0x6e56a8*/
+  *a2 = 1425466418; /*0x6e56b6*/
+  a2[1] = 298977773; /*0x6e56be*/
+  a2[2] = 1610655148; /*0x6e56c7*/
+  a2[3] = -1252326136; /*0x6e56d0*/
+  return 0; /*0x6e56ad*/
 }
 } // namespace gamemd
 
@@ -315,22 +301,21 @@ int TagClass::ddtor(int a1, unsigned int * a2)
 namespace gamemd {
 int TagClass::ProcessTag(int * a2)
 {
-{
-    int v3;
-    int v4;
-    int v5;
-    AbstractClass::ProcessPower((AbstractClass *)this);
-    v3 = (*(int (__stdcall **)(int))(*(int *)(this->buildingType + 4) + 16))(this->buildingType + 4);
-    Power::TimerProcess(v3);
-    v4 = this->firstTrigger;
-    if ( v4 )
+  int v3; // eax
+  int v4; // eax
+  int v5; // eax
+
+  AbstractClass::ProcessPower((#378 *)this); /*0x6e56e9*/
+  v3 = (*(int (__stdcall **)(int))(*(_DWORD *)(*(_DWORD *)(this + 36) + 4) + 16))(*(_DWORD *)(this + 36) + 4); /*0x6e56f7*/
+  Power::TimerProcess(v3); /*0x6e56fd*/
+  v4 = *(_DWORD *)(this + 40); /*0x6e5702*/
+  if ( v4 ) /*0x6e5707*/
   {
-    v5 = (*(int (__stdcall **)(int))(v4->vtable2 + 16))(v4 + 4);
-    v4 = Power::TimerProcess(v5);
+    v5 = (*(int (__stdcall **)(int))(*(_DWORD *)(v4 + 4) + 16))(v4 + 4); /*0x6e5710*/
+    v4 = Power::TimerProcess(v5); /*0x6e5716*/
   }
-    LOBYTE(v4) = this->destroyed;
-    return Power::FlagProcess(a2, v4);
-}
+  LOBYTE(v4) = *(_BYTE *)(this + 52); /*0x6e571b*/
+  return Power::FlagProcess(a2, v4); /*0x6e5726*/
 }
 } // namespace gamemd
 
@@ -338,25 +323,24 @@ int TagClass::ProcessTag(int * a2)
 namespace gamemd {
 int TagClass::LoadTag(AbstractClass * aP0, int aP1)
 {
-{
-    int result;
-    result = AbstractClass::SaveLoad_Prefix_0(aP0, (AbstractClass *)aP1);
-    if ( result >= 0 )
+  int result; // eax
+
+  result = AbstractClass::SaveLoad_Prefix_0(aP0, aP1); /*0x6e573b*/
+  if ( result >= 0 ) /*0x6e5742*/
   {
-    if ( aP0 )
+    if ( aP0 ) /*0x6e5746*/
     {
-    AbstractClass::InitVtables(aP0, (IUnknown *)&aP1);
-    *(int *)aP0->__pad_0 = (unsigned int)vt_TagClass;
-    *(int *)&aP0->__pad_0[4] = (unsigned int)vt_TagClass;
-    *(int *)&aP0->__pad_0[8] = (unsigned int)vt_TagClass;
-    *(int *)&aP0->__pad_0[12] = &vt_TagClass;
+      AbstractClass::InitVtables(aP0, (int)&aP1); /*0x6e574f*/
+      *aP0 = &TagClass::`vftable'; /*0x6e5754*/
+      aP0[1] = &TagClass::`vftable'; /*0x6e575a*/
+      aP0[2] = &TagClass::`vftable'; /*0x6e5761*/
+      aP0[3] = &TagClass::`vftable'; /*0x6e5768*/
     }
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1]);
-    ObjectPtr::RegisterForTracking( (SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1].__pad_0[4]);
-    return 0;
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP0 + 9); /*0x6e5778*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP0 + 10); /*0x6e5786*/
+    return 0; /*0x6e578b*/
   }
-    return result;
-}
+  return result; /*0x6e578d*/
 }
 } // namespace gamemd
 
@@ -364,13 +348,12 @@ int TagClass::LoadTag(AbstractClass * aP0, int aP1)
 namespace gamemd {
 int TagClass::SaveTag(TechnoTypeClass * aP0, int * a1, int aP2)
 {
-{
-    int result;
-    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
-    if ( result >= 0 )
-    return 0;
-    return result;
-}
+  int result; // eax
+
+  result = AbstractClass::SaveLoad_Prefix(aP0, a1, aP2); /*0x6e57af*/
+  if ( result >= 0 ) /*0x6e57b6*/
+    return 0; /*0x6e57b8*/
+  return result; /*0x6e57ba*/
 }
 } // namespace gamemd
 
@@ -378,7 +361,7 @@ int TagClass::SaveTag(TechnoTypeClass * aP0, int * a1, int aP2)
 namespace gamemd {
 int TagClass::StubReturn56()
 {
-return 56;
+  return 56; /*0x6e5895*/
 }
 } // namespace gamemd
 
@@ -386,7 +369,7 @@ return 56;
 namespace gamemd {
 int TagClass::StubReturn44()
 {
-return 44;
+  return 44; /*0x6e58a5*/
 }
 } // namespace gamemd
 
@@ -394,11 +377,9 @@ return 44;
 namespace gamemd {
 TagClass * TagClass::ProcessTrigger(char a2)
 {
-{
-    TagClass::Destructor(this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (TagClass *)this;
-}
+  TagClass::Destructor(this); /*0x6e58b3*/
+  if ( (a2 & 1) != 0 ) /*0x6e58bd*/
+    __3_YAXPAX_Z(this); /*0x6e58c0*/
+  return this; /*0x6e58ca*/
 }
 } // namespace gamemd

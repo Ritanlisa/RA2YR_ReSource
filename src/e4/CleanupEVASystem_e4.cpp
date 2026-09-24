@@ -6,55 +6,54 @@
 namespace gamemd {
 void sub_72DC20()
 {
-{
-    void *v0;
-    void *v1;
-    void *v2;
-    void *v3;
-    if ( DataGlobal_B0FCC8 )
+  void *v0; // esi
+  void *v1; // esi
+  void *v2; // esi
+  void *v3; // esi
+
+  if ( byte_B0FCC8 ) /*0x72dc2b*/
   {
-    v0 = DataGlobal_B0FB48;
-    if ( DataGlobal_B0FB48 )
+    v0 = dword_B0FB48; /*0x72dc2d*/
+    if ( dword_B0FB48 ) /*0x72dc35*/
     {
-    FileTreeNode::Destroy(DataGlobal_B0FB48);
-    __3_YAXPAX_Z(v0);
+      FileTreeNode::Destroy(dword_B0FB48); /*0x72dc39*/
+      __3_YAXPAX_Z(v0); /*0x72dc3f*/
     }
-    DataGlobal_B0FCC8 = 0;
+    byte_B0FCC8 = 0; /*0x72dc47*/
   }
-    DataGlobal_B0FB48 = 0;
-    if ( DataGlobal_B0FCCA )
+  dword_B0FB48 = 0; /*0x72dc52*/
+  if ( byte_B0FCCA ) /*0x72dc5a*/
   {
-    v1 = DataGlobal_B0FB10;
-    if ( DataGlobal_B0FB10 )
+    v1 = dword_B0FB10; /*0x72dc5c*/
+    if ( dword_B0FB10 ) /*0x72dc64*/
     {
-    FileTreeNode::Destroy(DataGlobal_B0FB10);
-    __3_YAXPAX_Z(v1);
+      FileTreeNode::Destroy(dword_B0FB10); /*0x72dc68*/
+      __3_YAXPAX_Z(v1); /*0x72dc6e*/
     }
-    DataGlobal_B0FCCA = 0;
+    byte_B0FCCA = 0; /*0x72dc76*/
   }
-    DataGlobal_B0FB10 = 0;
-    if ( DataGlobal_B0FCCB )
+  dword_B0FB10 = 0; /*0x72dc81*/
+  if ( byte_B0FCCB ) /*0x72dc89*/
   {
-    v2 = DataGlobal_B0F9F8;
-    if ( DataGlobal_B0F9F8 )
+    v2 = dword_B0F9F8; /*0x72dc8b*/
+    if ( dword_B0F9F8 ) /*0x72dc93*/
     {
-    FileTreeNode::Destroy(DataGlobal_B0F9F8);
-    __3_YAXPAX_Z(v2);
+      FileTreeNode::Destroy(dword_B0F9F8); /*0x72dc97*/
+      __3_YAXPAX_Z(v2); /*0x72dc9d*/
     }
-    DataGlobal_B0FCCB = 0;
+    byte_B0FCCB = 0; /*0x72dca5*/
   }
-    DataGlobal_B0F9F8 = 0;
-    if ( DataGlobal_B0FCCC )
+  dword_B0F9F8 = 0; /*0x72dcb0*/
+  if ( byte_B0FCCC ) /*0x72dcb8*/
   {
-    v3 = DataGlobal_B0FA6C;
-    if ( DataGlobal_B0FA6C )
+    v3 = dword_B0FA6C; /*0x72dcba*/
+    if ( dword_B0FA6C ) /*0x72dcc2*/
     {
-    FileTreeNode::Destroy(DataGlobal_B0FA6C);
-    __3_YAXPAX_Z(v3);
+      FileTreeNode::Destroy(dword_B0FA6C); /*0x72dcc6*/
+      __3_YAXPAX_Z(v3); /*0x72dccc*/
     }
-    DataGlobal_B0FCCC = 0;
+    byte_B0FCCC = 0; /*0x72dcd4*/
   }
-    DataGlobal_B0FA6C = 0;
-}
+  dword_B0FA6C = 0; /*0x72dcda*/
 }
 } // namespace gamemd

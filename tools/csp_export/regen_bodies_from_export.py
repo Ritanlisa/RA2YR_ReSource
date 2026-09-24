@@ -173,6 +173,18 @@ for p in sorted(SRC.rglob('*.cpp')):
         for sn, dn in rename.items():
             new_body = re.sub(r'\b%s\b' % re.escape(sn), dn, new_body)
         old_len = k - j
+        # G32 root-cause fix: also CONSUME the old span's trailing orphan
+        # closers (previous sanitizer inserts / wrapper closes). Everything
+        # from the def line to the next annotation that is only `}` tokens
+        # or blanks beyond the balanced close belongs to the old block.
+        m2 = k + 1
+        while m2 < len(lines):
+            s3 = lines[m2].strip()
+            if s3 == '}' or not s3:
+                m2 += 1
+                continue
+            break
+        k = m2 - 1  # last trailing '}'-only/blank line of the old block
         # rebuild: def line + '{' + body + '}'; K&R defs (brace on its own
         # line, which the span consumed) get the opener re-emitted
         def_line = lines[j]

@@ -13,35 +13,37 @@
 namespace gamemd {
 void ** HouseClass::PsiWarn(InfantryClass * aP0, int a2, int arg0, void * a3)
 {
-{
-  Coord *v6; // edi
-  void **v7; // eax
-  AbstractClass *v9; // esi
-  CoordStruct aP2; // [esp+Ch] [ebp-18h] BYREF
+  void *v6; // edi
+  int *v7; // eax
+  void **v8; // eax
+  void **v9; // esi
+  int v11[3]; // [esp+Ch] [ebp-18h] BYREF
+  _BYTE v12[12]; // [esp+18h] [ebp-Ch] BYREF
 
-  v6 = *(CoordStruct **)(*(_DWORD *)&stru_89E138[90140] + 4 * AnimTypeClass::FindIndex(a3)); /*0x43b5fb*/
-  _BYTE v11[12]; // [esp+18h] [ebp-Ch] BYREF
-  aP2 = *(CoordStruct *)(*(int (__thiscall **)(int, _BYTE *))(*(_DWORD *)a2 + 72))(a2, v11); /*0x43b60a*/
-  v7 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x43b621*/
-  if ( v7 ) /*0x43b62b*/
-    v9 = AnimClass::ctor(v7, v6, &aP2, 0, (CoordStruct *)1, (void *)0x600, 0, 0); /*0x43b647*/
-  AbstractClass *v9 = 0; /*0x43b64b*/
-  AnimClass::SetField95(v9, arg0); /*0x43b654*/
-  Function::Method_424CA0(v9, (int)aP0); /*0x43b65c*/
-  v9->__pad_194[9] = 1; /*0x43b661*/
-  return (void **)v9; /*0x43b66a*/
+  v6 = (void *)*((_DWORD *)g_AnimTypeCount + AnimTypeClass::FindIndex(a3)); /*0x43b5fb*/
+  v7 = (int *)(*(int (__thiscall **)(int, _BYTE *))(*(_DWORD *)a2 + 72))(a2, v12); /*0x43b605*/
+  v11[0] = *v7; /*0x43b60a*/
+  v11[1] = v7[1]; /*0x43b616*/
+  v11[2] = v7[2]; /*0x43b61d*/
+  v8 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x43b621*/
+  if ( v8 ) /*0x43b62b*/
+    v9 = AnimClass::ctor(v8, v6, v11, 0, 1, (void *)0x600, 0, 0); /*0x43b647*/
+  else
+    v9 = 0; /*0x43b64b*/
+  BuildingClass::SetField95(v9, arg0); /*0x43b654*/
+  Function::424CA0(v9, aP0); /*0x43b65c*/
+  *((_BYTE *)v9 + 413) = 1; /*0x43b661*/
+  return v9; /*0x43b66a*/
 }
-} // namespace gamemd
 }
-
 // 0x459840
 namespace gamemd {
 int HouseClass::GetRepairStepAmount()
 {
-{
+  _DWORD *v1; // edx
   int result; // eax
 
-  _DWORD * v1 = (_DWORD *)this->q520; /*0x459840*/
+  v1 = (_DWORD *)*(this + 328); /*0x459840*/
   result = v1[937]; /*0x459846*/
   if ( !result ) /*0x45984e*/
   {
@@ -50,25 +52,24 @@ int HouseClass::GetRepairStepAmount()
     {
       result = v1[939]; /*0x45985a*/
       if ( !result ) /*0x459862*/
-        return this->q6F4; /*0x459864*/
+        return *(this + 445); /*0x459864*/
     }
   }
   return result; /*0x45986a*/
 }
-} // namespace gamemd
 }
-
 // 0x4ADEE0
 namespace gamemd {
 void HouseClass::ResetObjectOrders(char a1, int a2)
 {
-{
+  int v2; // ebx
+  int v3; // edi
+  int v4; // esi
 
-  int v2 = g_SidebarState; /*0x4adee1*/
-  int v3 = 0; /*0x4adee8*/
+  v2 = g_SidebarState; /*0x4adee1*/
+  v3 = 0; /*0x4adee8*/
   if ( g_SidebarState > 0 ) /*0x4adeec*/
   {
-  int v4; // esi
     while ( 1 ) /*0x4adefd*/
     {
       v4 = *((_DWORD *)g_TechnoClass_Count + v3); /*0x4adefd*/
@@ -90,7 +91,7 @@ void HouseClass::ResetObjectOrders(char a1, int a2)
       {
         goto LABEL_15; /*0x4adfd3*/
       }
-LABEL_16:
+  LABEL_16:
       if ( ++v3 >= v2 ) /*0x4adfe2*/
         return; /*0x4adfe2*/
     }
@@ -99,30 +100,27 @@ LABEL_16:
     (*(void (__thiscall **)(int, _DWORD, _DWORD, _DWORD, _DWORD))(*(_DWORD *)v4 + 1164))(v4, 0, 0, 0, 0); /*0x4adf57*/
     if ( !*(_BYTE *)((*(int (__thiscall **)(int))(*(_DWORD *)v4 + 132))(v4) + 3281) ) /*0x4adf67*/
       goto LABEL_16; /*0x4adf6f*/
-LABEL_15:
+  LABEL_15:
     (*(void (__thiscall **)(int))(*(_DWORD *)v4 + 1048))(v4); /*0x4adfd5*/
     goto LABEL_16; /*0x4adfd9*/
   }
 }
-} // namespace gamemd
 }
-
 // 0x4ADFF0
 namespace gamemd {
 int HouseClass::RevealShroudForAllies(char a1, int a2)
-{
 {
   int result; // eax
   int i; // ebp
   #375 **v4; // esi
 
-  result = DataGlobal_8A03A0; /*0x4adff0*/
-  for ( i = 0; i < DataGlobal_8A03A0; ++i ) /*0x4adffa*/
+  result = dword_8A03A0; /*0x4adff0*/
+  for ( i = 0; i < dword_8A03A0; ++i ) /*0x4adffa*/
   {
-    v4 = *(#375 ***)(DataGlobal_8A0394 + 4 * i); /*0x4ae010*/
+    v4 = *(#375 ***)(dword_8A0394 + 4 * i); /*0x4ae010*/
     if ( v4 /*0x4ae02b*/
       && ((_BYTE)v4[5] & 1) != 0
-      && ((*((int (__thiscall **)(_DWORD))*v4 + 11))(*(_DWORD *)(DataGlobal_8A0394 + 4 * i)) != 6 || !a1) )
+      && ((*((int (__thiscall **)(_DWORD))*v4 + 11))(*(_DWORD *)(dword_8A0394 + 4 * i)) != 6 || !a1) )
     {
       if ( (unsigned __int8)House::IsHumanPlayer(v4[135]) ) /*0x4ae033*/
       {
@@ -130,19 +128,17 @@ int HouseClass::RevealShroudForAllies(char a1, int a2)
           (*((void (__thiscall **)(#375 **, _DWORD, int))*v4 + 72))(v4, 0, a2); /*0x4ae04d*/
       }
       else if ( (*((int (__thiscall **)(#375 **))*v4 + 11))(v4) == 6 /*0x4ae07d*/
-             && HIBYTE(g_RulesClass_Instance[1].?[2])
+             && HIBYTE(g_RulesClass_Instance[1].RadarEventDurations[2])
              && (unsigned __int8)HouseClass::IsAlliedWith(v4[135], HouseClass_Player) )
       {
         (*((void (__thiscall **)(#375 **, int, _DWORD))*v4 + 72))(v4, a2, 0); /*0x4ae08d*/
       }
     }
-    result = DataGlobal_8A03A0; /*0x4ae093*/
+    result = dword_8A03A0; /*0x4ae093*/
   }
   return result; /*0x4ae0a4*/
 }
-} // namespace gamemd
 }
-
 // 0x4F54A0
 namespace gamemd {
 void HouseClass::Construct(CCINIClass * aP1)
@@ -207,91 +203,94 @@ void HouseClass::Construct(CCINIClass * aP1)
 namespace gamemd {
 int HouseClass::IsAlliedWith(IUnknown * aP1)
 {
-{
-  IUnknown *result; // eax
+  int result; // eax
+  int v3; // ecx
 
-  result = (IUnknown *)this; /*0x4f9a50*/
+  result = (int)this; /*0x4f9a50*/
   if ( !aP1 ) /*0x4f9a58*/
     goto LABEL_8; /*0x4f9a58*/
   if ( aP1 == this ) /*0x4f9a5c*/
   {
     LOBYTE(result) = 1; /*0x4f9a5e*/
-    return (int)result; /*0x4f9a60*/
+    return result; /*0x4f9a60*/
   }
-  int v3 = *(_DWORD *)&aP1->__pad_28[8]; /*0x4f9a63*/
-  if ( v3 == *(_DWORD *)&result->__pad_28[8] ) /*0x4f9a6b*/
+  v3 = *((_DWORD *)aP1 + 12); /*0x4f9a63*/
+  if ( v3 == *(_DWORD *)(result + 48) ) /*0x4f9a6b*/
   {
     LOBYTE(result) = 1; /*0x4f9a6d*/
-    return (int)result; /*0x4f9a6f*/
+    return result; /*0x4f9a6f*/
   }
   if ( v3 == -1 ) /*0x4f9a75*/
-LABEL_8:
+  LABEL_8:
     LOBYTE(result) = 0; /*0x4f9a8a*/
   else
-    LOBYTE(result) = ((1 << v3) & *(_DWORD *)&result->__pad_5778[16]) != 0; /*0x4f9a84*/
-  return (int)result; /*0x4f9a60*/
+    LOBYTE(result) = ((1 << v3) & *(_DWORD *)(result + 22408)) != 0; /*0x4f9a84*/
+  return result; /*0x4f9a60*/
 }
-} // namespace gamemd
 }
-
 // 0x4FBE40
 namespace gamemd {
 int HouseClass::IsCellOccupied(IUnknown * aP1, char a3)
 {
-{
-  IUnknown *v9; // [esp+Ch] [ebp-10h] BYREF
-  IUnknown *aP1a; // [esp+20h] [ebp+4h]
+  char v4; // bl
+  _DWORD *v6; // eax
+  void *v7; // eax
+  int v9; // [esp+Ch] [ebp-10h] BYREF
+  _BYTE v10[12]; // [esp+10h] [ebp-Ch] BYREF
+  int v11; // [esp+20h] [ebp+4h]
 
-  char v4 = 0; /*0x4fbe49*/
+  v4 = 0; /*0x4fbe49*/
   if ( !aP1 ) /*0x4fbe50*/
     return 0; /*0x4fbf50*/
-  if ( (*(int (__thiscall **)(IUnknown *))(aP1->field_0 + 44))(aP1) == 1 ) /*0x4fbe60*/
+  if ( (*(int (__thiscall **)(int))(*(_DWORD *)aP1 + 44))(aP1) == 1 ) /*0x4fbe60*/
   {
     v4 = HouseClass::ClearPrimaryFactory(aP1); /*0x4fbe69*/
-    if ( !v4 || this->ourFlagCoords != aP1 ) /*0x4fbe79*/
+    if ( !v4 || *(_DWORD *)(this + 21468) != aP1 ) /*0x4fbe79*/
       goto LABEL_10; /*0x4fbe79*/
   }
   else
   {
-  _BYTE v10[12]; // [esp+10h] [ebp-Ch] BYREF
-    _DWORD * v6 = (_DWORD *)(*(int (__thiscall **)(IUnknown *, _BYTE *))(aP1->field_0 + 72))(aP1, v10); /*0x4fbe8a*/
-    LOWORD(aP1a) = *v6 / 256; /*0x4fbe9d*/
-    HIWORD(aP1a) = v6[1] / 256; /*0x4fbeb5*/
-    v9 = aP1a; /*0x4fbebe*/
-    if ( !LayerClass::CoordinatesLegal(&DataGlobal_87F7E8, (IUnknown *)&v9) ) /*0x4fbec8*/
+    v6 = (_DWORD *)(*(int (__thiscall **)(int, _BYTE *))(*(_DWORD *)aP1 + 72))(aP1, v10); /*0x4fbe8a*/
+    LOWORD(v11) = *v6 / 256; /*0x4fbe9d*/
+    HIWORD(v11) = v6[1] / 256; /*0x4fbeb5*/
+    v9 = v11; /*0x4fbebe*/
+    if ( !LayerClass::CoordinatesLegal(&MapClass_Instance, (__int16 *)&v9) ) /*0x4fbec8*/
       goto LABEL_10; /*0x4fbec8*/
-    _DWORD * v7 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v9); /*0x4fbedb*/
+    v7 = CellCoord::To_CellObj(&MapClass_Instance, (__int16 *)&v9); /*0x4fbedb*/
     v4 = HouseClass::checkAutoProduction(v7); /*0x4fbee7*/
-    if ( !v4 || this->ourFlagCoords != aP1 ) /*0x4fbef3*/
+    if ( !v4 || *(_DWORD *)(this + 21468) != aP1 ) /*0x4fbef3*/
       goto LABEL_10; /*0x4fbef3*/
   }
-  this->ourFlagCoords = 0; /*0x4fbef5*/
-LABEL_10:
-  if ( a3 /*0x4fbf28*/
-    && ((unsigned short)this->killedUnitsOfHouses != *(_WORD *)&g_NetworkPlayerBuffer[6492]
-     || this->u16_53E2 != *(_WORD *)&g_NetworkPlayerBuffer[6494]) )
+  *(_DWORD *)(this + 21468) = 0; /*0x4fbef5*/
+  LABEL_10:
+  if ( a3 ) /*0x4fbf05*/
   {
-    *((_DWORD *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)(&this->u32_218C2)) + 17) = -1; /*0x4fbf35*/
-    this->killedUnitsOfHouses = *(_DWORD *)&g_NetworkPlayerBuffer[6492]; /*0x4fbf41*/
+    if ( *(_DWORD *)(this + 21472) != g_ControlGroupState ) /*0x4fbf1b*/
+    {
+      *((_DWORD *)CellCoord::To_CellObj(&MapClass_Instance, (__int16 *)(this + 21472)) + 17) = -1; /*0x4fbf35*/
+      *(_DWORD *)(this + 21472) = g_ControlGroupState; /*0x4fbf41*/
+    }
   }
   return v4; /*0x4fbf43*/
 }
-} // namespace gamemd
 }
-
 // 0x4FC790
 namespace gamemd {
 int HouseClass::DestroyAllBuildings()
 {
-{
   int PriorityTarget; // eax
+  int v2; // ebx
+  int v3; // edi
+  int v5; // esi
+  int v6; // ecx
+  int v8; // [esp+Ch] [ebp-4h] BYREF
 
   LOBYTE(PriorityTarget) = g_SidebarState; /*0x4fc791*/
-  int v2 = 0; /*0x4fc799*/
-  int v3 = 0; /*0x4fc79b*/
+  v2 = 0; /*0x4fc799*/
+  v3 = 0; /*0x4fc79b*/
   while ( v2 < g_SidebarState ) /*0x4fc7a1*/
   {
-    int v5 = *((_DWORD *)g_TechnoClass_Count + v2); /*0x4fc7a9*/
+    v5 = *((_DWORD *)g_TechnoClass_Count + v2); /*0x4fc7a9*/
     PriorityTarget = ObjectClass::GetPriorityTarget((_DWORD *)v5); /*0x4fc7ae*/
     if ( (void *)PriorityTarget != this /*0x4fc7cf*/
       || (PriorityTarget = (*(int (__thiscall **)(int))(*(_DWORD *)v5 + 44))(v5), PriorityTarget != 6)
@@ -302,15 +301,15 @@ int HouseClass::DestroyAllBuildings()
     }
     else
     {
-      int v8 = *(_DWORD *)(v5 + 108); /*0x4fc7d4*/
-      int v6 = *(_DWORD *)(v5 + 632); /*0x4fc7d8*/
+      v8 = *(_DWORD *)(v5 + 108); /*0x4fc7d4*/
+      v6 = *(_DWORD *)(v5 + 632); /*0x4fc7d8*/
       if ( v6 ) /*0x4fc7e0*/
         TriggerClass::UnlinkTags(v6); /*0x4fc7e2*/
       LOBYTE(PriorityTarget) = (*(int (__thiscall **)(int, int *, _DWORD, int, _DWORD, int, int, _DWORD))(*(_DWORD *)v5 + 364))( /*0x4fc806*/
                                  v5,
                                  &v8,
                                  0,
-                                 g_RulesClass_Instance->?[5],
+                                 g_RulesClass_Instance->SilverCrate[5],
                                  0,
                                  1,
                                  1,
@@ -320,22 +319,24 @@ int HouseClass::DestroyAllBuildings()
   }
   return PriorityTarget; /*0x4fc81a*/
 }
-} // namespace gamemd
 }
-
 // 0x4FC820
 namespace gamemd {
 int HouseClass::DestroyAllNonBuildingsNonNaval()
 {
-{
   int PriorityTarget; // eax
+  int v2; // ebx
+  int v3; // edi
+  int v5; // esi
+  int v6; // ecx
+  int v8; // [esp+Ch] [ebp-4h] BYREF
 
   LOBYTE(PriorityTarget) = g_SidebarState; /*0x4fc821*/
-  int v2 = 0; /*0x4fc829*/
-  int v3 = 0; /*0x4fc82b*/
+  v2 = 0; /*0x4fc829*/
+  v3 = 0; /*0x4fc82b*/
   while ( v2 < g_SidebarState ) /*0x4fc831*/
   {
-    int v5 = *((_DWORD *)g_TechnoClass_Count + v2); /*0x4fc83d*/
+    v5 = *((_DWORD *)g_TechnoClass_Count + v2); /*0x4fc83d*/
     PriorityTarget = ObjectClass::GetPriorityTarget((_DWORD *)v5); /*0x4fc842*/
     if ( (void *)PriorityTarget != this /*0x4fc877*/
       || (PriorityTarget = (*(int (__thiscall **)(int))(*(_DWORD *)v5 + 44))(v5), PriorityTarget == 6)
@@ -347,15 +348,15 @@ int HouseClass::DestroyAllNonBuildingsNonNaval()
     }
     else
     {
-      int v8 = *(_DWORD *)(v5 + 108); /*0x4fc87c*/
-      int v6 = *(_DWORD *)(v5 + 632); /*0x4fc880*/
+      v8 = *(_DWORD *)(v5 + 108); /*0x4fc87c*/
+      v6 = *(_DWORD *)(v5 + 632); /*0x4fc880*/
       if ( v6 ) /*0x4fc888*/
         TriggerClass::UnlinkTags(v6); /*0x4fc88a*/
       LOBYTE(PriorityTarget) = (*(int (__thiscall **)(int, int *, _DWORD, int, _DWORD, int, int, _DWORD))(*(_DWORD *)v5 + 364))( /*0x4fc8ae*/
                                  v5,
                                  &v8,
                                  0,
-                                 g_RulesClass_Instance->?[5],
+                                 g_RulesClass_Instance->SilverCrate[5],
                                  0,
                                  1,
                                  1,
@@ -365,22 +366,24 @@ int HouseClass::DestroyAllNonBuildingsNonNaval()
   }
   return PriorityTarget; /*0x4fc8c6*/
 }
-} // namespace gamemd
 }
-
 // 0x4FC8D0
 namespace gamemd {
 int HouseClass::DestroyAllNonBuildingsNaval()
 {
-{
   int PriorityTarget; // eax
+  int v2; // ebx
+  int v3; // edi
+  int v5; // esi
+  int v6; // ecx
+  int v8; // [esp+Ch] [ebp-4h] BYREF
 
   LOBYTE(PriorityTarget) = g_SidebarState; /*0x4fc8d1*/
-  int v2 = 0; /*0x4fc8d9*/
-  int v3 = 0; /*0x4fc8db*/
+  v2 = 0; /*0x4fc8d9*/
+  v3 = 0; /*0x4fc8db*/
   while ( v2 < g_SidebarState ) /*0x4fc8e1*/
   {
-    int v5 = *((_DWORD *)g_TechnoClass_Count + v2); /*0x4fc8ed*/
+    v5 = *((_DWORD *)g_TechnoClass_Count + v2); /*0x4fc8ed*/
     PriorityTarget = ObjectClass::GetPriorityTarget((_DWORD *)v5); /*0x4fc8f2*/
     if ( (void *)PriorityTarget != this /*0x4fc927*/
       || (PriorityTarget = (*(int (__thiscall **)(int))(*(_DWORD *)v5 + 44))(v5), PriorityTarget == 6)
@@ -392,15 +395,15 @@ int HouseClass::DestroyAllNonBuildingsNaval()
     }
     else
     {
-      int v8 = *(_DWORD *)(v5 + 108); /*0x4fc92c*/
-      int v6 = *(_DWORD *)(v5 + 632); /*0x4fc930*/
+      v8 = *(_DWORD *)(v5 + 108); /*0x4fc92c*/
+      v6 = *(_DWORD *)(v5 + 632); /*0x4fc930*/
       if ( v6 ) /*0x4fc938*/
         TriggerClass::UnlinkTags(v6); /*0x4fc93a*/
       LOBYTE(PriorityTarget) = (*(int (__thiscall **)(int, int *, _DWORD, int, _DWORD, int, int, _DWORD))(*(_DWORD *)v5 + 364))( /*0x4fc95e*/
                                  v5,
                                  &v8,
                                  0,
-                                 g_RulesClass_Instance->?[5],
+                                 g_RulesClass_Instance->SilverCrate[5],
                                  0,
                                  1,
                                  1,
@@ -410,81 +413,77 @@ int HouseClass::DestroyAllNonBuildingsNaval()
   }
   return PriorityTarget; /*0x4fc976*/
 }
-} // namespace gamemd
 }
-
 // 0x501540
 namespace gamemd {
 int HouseClass::CanAlly(HouseClass * aP1)
 {
-{
-  int relatedTagsCount; // ecx
+  int v3; // ecx
+  int v5; // edi
+  int v6; // ebp
   HouseClass *v7; // edx
-  IUnknown *v8; // ebx
+  int v8; // ebx
+  int v9; // eax
+  int v10; // eax
+
   if ( aP1 ) /*0x50154a*/
   {
-    if ( aP1 == (HouseClass *)this ) /*0x50154e*/
+    if ( aP1 == this ) /*0x50154e*/
       return 0; /*0x50154e*/
-    relatedTagsCount = aP1->relatedTagsCount; /*0x501550*/
-    if ( relatedTagsCount == this->relatedTagsCount /*0x501573*/
-      || relatedTagsCount != -1 && (this->HouseClass_field_timer_D & (1 << relatedTagsCount)) != 0 )
-    {
+    v3 = *(_DWORD *)(aP1 + 48); /*0x501550*/
+    if ( v3 == *(_DWORD *)(this + 48) || v3 != -1 && (*(_DWORD *)(this + 22408) & (1 << v3)) != 0 ) /*0x501573*/
       return 0; /*0x501576*/
-    }
   }
-  if ( *(_DWORD *)(aP1->relatedTagsCapacity + 188) == HouseTypeClass::Find(&g_INI_Key_Easy.unknown30) /*0x501598*/
-    && g_GameMode_Current )
-  {
+  if ( *(_DWORD *)(*(_DWORD *)(aP1 + 52) + 188) == HouseTypeClass::Find(g_INI_Key_Civilian) && g_GameMode_Current[0] ) /*0x501598*/
     return 0; /*0x50159b*/
-  }
-  if ( *(_DWORD *)&g_NetworkPlayerBuffer[4464] ) /*0x5015a8*/
+  if ( g_IKnowWhatImDoing ) /*0x5015a8*/
     return 1; /*0x5015ab*/
-  if ( this->defeated ) /*0x5015b1*/
+  if ( *(_BYTE *)(this + 501) ) /*0x5015b1*/
     return 0; /*0x5015bc*/
-  int v5 = 0; /*0x5015c8*/
-  int v6 = 0; /*0x5015ca*/
-  if ( (int)HouseClass_Count > 0 ) /*0x5015ce*/
+  v5 = 0; /*0x5015c8*/
+  v6 = 0; /*0x5015ca*/
+  if ( HouseClass_Count > 0 ) /*0x5015ce*/
   {
     v7 = HouseClass_Array; /*0x5015d0*/
     v8 = HouseClass_Count; /*0x5015d7*/
     do /*0x50162c*/
     {
-      int v9 = *(_DWORD *)v7->__pad_0; /*0x5015d9*/
-      if ( !*(_BYTE *)(*(_DWORD *)v7->__pad_0 + 501) && !*(_BYTE *)(*(_DWORD *)(v9 + 52) + 422) ) /*0x5015e8*/
+      v9 = *(_DWORD *)v7->gap0; /*0x5015d9*/
+      if ( !*(_BYTE *)(*(_DWORD *)v7->gap0 + 501) && !*(_BYTE *)(*(_DWORD *)(v9 + 52) + 422) ) /*0x5015e8*/
       {
         ++v5; /*0x5015f1*/
         if ( v9 ) /*0x5015f4*/
         {
           if ( v9 == this /*0x501625*/
-  int v10; // eax
-            || (v10 = *(_DWORD *)(v9 + 48), v10 == this->relatedTagsCount)
-            || v10 != -1 && ((1 << v10) & this->HouseClass_field_timer_D) != 0 )
+            || (v10 = *(_DWORD *)(v9 + 48), v10 == *(_DWORD *)(this + 48))
+            || v10 != -1 && ((1 << v10) & *(_DWORD *)(this + 22408)) != 0 )
           {
             ++v6; /*0x501627*/
           }
         }
       }
       v7 = (HouseClass *)((char *)v7 + 4); /*0x501628*/
-      v8 = (IUnknown *)((char *)v8 - 1); /*0x50162b*/
+      --v8; /*0x50162b*/
     }
     while ( v8 ); /*0x50162c*/
   }
   return v5 != v6 + 1; /*0x501575*/
 }
-} // namespace gamemd
 }
-
 // 0x501640
 namespace gamemd {
 int HouseClass::CanDetect()
 {
-{
-  int i; // ebp
-  int j; // edi
-
   _BYTE *v0; // eax
+  char v1; // bl
+  int v2; // ecx
+  int i; // ebp
+  _BYTE *v4; // esi
+  int j; // edi
+  char v6; // cl
+
   LOBYTE(v0) = (_BYTE)g_RulesClass_Instance; /*0x501640*/
-  char v1 = *((_BYTE *)g_RulesClass_Instance + 5301); /*0x50164d*/
+  v1 = *((_BYTE *)g_RulesClass_Instance + 5301); /*0x50164d*/
   if ( g_GameStateFlags /*0x501662*/
     && (LOBYTE(v0) = (*(int (__thiscall **)(int))(*(_DWORD *)g_GameStateFlags + 4))(g_GameStateFlags), (_BYTE)v0)
     || v1 )
@@ -492,10 +491,10 @@ int HouseClass::CanDetect()
     LOBYTE(v0) = (_BYTE)g_ScenarioClass_Instance; /*0x501668*/
     if ( !*((_BYTE *)g_ScenarioClass_Instance + 4576) ) /*0x50166d*/
     {
-      int v2 = HouseClass_Count; /*0x50167b*/
+      v2 = HouseClass_Count; /*0x50167b*/
       for ( i = 0; i < v2; ++i ) /*0x501685*/
       {
-        _BYTE * v4 = (_BYTE *)*((_DWORD *)HouseClass_Array + i); /*0x501695*/
+        v4 = (_BYTE *)*((_DWORD *)HouseClass_Array + i); /*0x501695*/
         if ( v4 ) /*0x50169a*/
         {
           LOBYTE(v0) = v4[501]; /*0x5016a0*/
@@ -513,7 +512,7 @@ int HouseClass::CanDetect()
                 v0 = (_BYTE *)*((_DWORD *)HouseClass_Array + j); /*0x5016ec*/
                 if ( v0 && !v0[501] ) /*0x5016f3*/
                 {
-                  char v6 = v0[492]; /*0x501705*/
+                  v6 = v0[492]; /*0x501705*/
                   if ( !g_GameMode_Current ) /*0x50170b*/
                     v6 = v6 || v0[493]; /*0x50171f*/
                   if ( v6 ) /*0x501728*/
@@ -531,9 +530,7 @@ int HouseClass::CanDetect()
   }
   return (char)v0; /*0x50174c*/
 }
-} // namespace gamemd
 }
-
 // 0x503040
 namespace gamemd {
 AbstractClass * * HouseClass::SaveLoad_Prefix(int a1, LPSTREAM pStm)
@@ -1482,81 +1479,84 @@ LABEL_187:
 namespace gamemd {
 int HouseClass::PrerequisitesForTechnoTypeAreListed(int a1, VectorClass * aP1, TechnoTypeClass * aP2)
 {
-{
+  int v3; // eax
+  int v4; // ecx
+  int v5; // edx
   _DWORD *j; // eax
+  int *HarvesterUnit; // esi
+  int v8; // ebx
+  int v9; // eax
+  int v10; // ecx
+  _DWORD *v11; // edx
   int i; // [esp+10h] [ebp-4h]
 
   for ( i = 0; i < *(_DWORD *)(a1 + 1608); ++i ) /*0x505379*/
   {
-    int v3 = *(_DWORD *)(*(_DWORD *)(a1 + 1596) + 4 * i); /*0x505395*/
+    v3 = *(_DWORD *)(*(_DWORD *)(a1 + 1596) + 4 * i); /*0x505395*/
     if ( v3 < 0 ) /*0x50539a*/
     {
-  int v10; // ecx
-  int v9; // eax
-      int * v7 = 0; /*0x5053cb*/
+      HarvesterUnit = 0; /*0x5053cb*/
       switch ( v3 ) /*0x5053d2*/
       {
         case -6: /*0x5053d2*/
-          v7 = (int *)(*(_DWORD *)&stru_87C374[44652] + 2276); /*0x505423*/
+          HarvesterUnit = (int *)&g_RulesClass_Instance->GDIBaseDefenseCoefficient + 1; /*0x505423*/
           break; /*0x505423*/
         case -5: /*0x5053d2*/
-          v7 = (int *)(*(_DWORD *)&stru_87C374[44652] + 2332); /*0x505415*/
+          HarvesterUnit = &g_RulesClass_Instance->PadAircraft[3]; /*0x505415*/
           break; /*0x50541b*/
         case -4: /*0x5053d2*/
-          v7 = (int *)(*(_DWORD *)&stru_87C374[44652] + 2612); /*0x505407*/
+          HarvesterUnit = &g_RulesClass_Instance->SecretUnits[2]; /*0x505407*/
           break; /*0x50540d*/
         case -3: /*0x5053d2*/
-          v7 = (int *)(*(_DWORD *)&stru_87C374[44652] + 2304); /*0x5053fa*/
+          HarvesterUnit = g_RulesClass_Instance->HarvesterUnit; /*0x5053fa*/
           break; /*0x505400*/
         case -2: /*0x5053d2*/
-          v7 = (int *)(*(_DWORD *)&stru_87C374[44652] + 2360); /*0x5053ec*/
+          HarvesterUnit = &g_RulesClass_Instance->TreeFire[2]; /*0x5053ec*/
           break; /*0x5053f2*/
         case -1: /*0x5053d2*/
-          v7 = (int *)(*(_DWORD *)&stru_87C374[44652] + 2248); /*0x5053de*/
+          HarvesterUnit = (int *)&g_RulesClass_Instance->GDIWallDefense; /*0x5053de*/
           break; /*0x5053e4*/
         default:
           break;
       }
-      int v8 = 0; /*0x505429*/
-      if ( v7[4] <= 0 ) /*0x505430*/
+      v8 = 0; /*0x505429*/
+      if ( HarvesterUnit[4] <= 0 ) /*0x505430*/
         return 0; /*0x50547c*/
       while ( 1 ) /*0x505437*/
       {
-        v9 = (*(int (__thiscall **)(int *, int))(*v7 + 24))(v7, v8); /*0x505437*/
+        v9 = (*(int (__thiscall **)(int *, int))(*HarvesterUnit + 24))(HarvesterUnit, v8); /*0x505437*/
         v10 = 0; /*0x50543a*/
-        if ( (int)aP2 > 0 ) /*0x50543e*/
+        if ( aP2 > 0 ) /*0x50543e*/
           break; /*0x50543e*/
-LABEL_20:
-        if ( ++v8 >= v7[4] ) /*0x505455*/
+  LABEL_20:
+        if ( ++v8 >= HarvesterUnit[4] ) /*0x505455*/
           return 0; /*0x505455*/
       }
-      _DWORD * v11 = *(_DWORD **)&aP1->?[3]; /*0x505440*/
+      v11 = *(_DWORD **)(aP1 + 4); /*0x505440*/
       while ( *v11 != v9 ) /*0x505445*/
       {
         ++v10; /*0x505447*/
         ++v11; /*0x505448*/
-        if ( v10 >= (int)aP2 ) /*0x50544d*/
+        if ( v10 >= aP2 ) /*0x50544d*/
           goto LABEL_20; /*0x50544d*/
       }
     }
     else
     {
-      int v4 = 0; /*0x50539c*/
-      if ( (int)aP2 <= 0 ) /*0x5053a0*/
+      v4 = 0; /*0x50539c*/
+      if ( aP2 <= 0 ) /*0x5053a0*/
         return 0; /*0x5053a0*/
-      int v5 = *((_DWORD *)g_TriggerTypeCount + v3); /*0x5053ac*/
-      for ( j = *(_DWORD **)&aP1->?[3]; *j != v5; ++j ) /*0x5053af*/
+      v5 = *((_DWORD *)g_TriggerTypeCount + v3); /*0x5053ac*/
+      for ( j = *(_DWORD **)(aP1 + 4); *j != v5; ++j ) /*0x5053af*/
       {
-        if ( ++v4 >= (int)aP2 ) /*0x5053c0*/
+        if ( ++v4 >= aP2 ) /*0x5053c0*/
           return 0; /*0x5053c0*/
       }
     }
   }
   return 1; /*0x505475*/
 }
-} // namespace gamemd
 }
-
 // 0x506EF0
 namespace gamemd {
 AbstractClass * * HouseClass::AutoBuildScanAndSort(int a2, unsigned int * a3)
@@ -1618,49 +1618,60 @@ AbstractClass * * HouseClass::AutoBuildScanAndSort(int a2, unsigned int * a3)
 namespace gamemd {
 int HouseClass::UpdatePower()
 {
-{
+  int v2; // ecx
+  int v3; // eax
+  int v4; // ebp
+  int v5; // edi
+  int v6; // edx
+  int v7; // eax
+  int v8; // ecx
+  int v9; // eax
+  int v10; // eax
+  char v12; // [esp+Bh] [ebp-Dh]
+  int v13; // [esp+10h] [ebp-8h]
+  bool v14; // [esp+14h] [ebp-4h]
 
-  int v2 = this->powerOutput; /*0x508c39*/
-  int v3 = this->powerDrain; /*0x508c3f*/
-  bool v14 = v2 < v3 && v3 && (!v2 || (double)v2 / (double)this->powerDrain < 1.0); /*0x508c75*/
-  this->q5778 = 0; /*0x508c79*/
-  this->powerOutput = 0; /*0x508c7f*/
-  this->powerDrain = 0; /*0x508c85*/
-  int v4 = 0; /*0x508c8f*/
-  char v12 = 0; /*0x508c93*/
-  int v13 = this->bunkersCount; /*0x508c97*/
+  v2 = *(_DWORD *)(this + 21412); /*0x508c39*/
+  v3 = *(_DWORD *)(this + 21416); /*0x508c3f*/
+  v14 = v2 < v3 && v3 && (!v2 || (double)v2 / (double)*(int *)(this + 21416) < 1.0); /*0x508c75*/
+  *(_BYTE *)(this + 22392) = 0; /*0x508c79*/
+  *(_DWORD *)(this + 21412) = 0; /*0x508c7f*/
+  *(_DWORD *)(this + 21416) = 0; /*0x508c85*/
+  v4 = 0; /*0x508c8f*/
+  v12 = 0; /*0x508c93*/
+  v13 = *(_DWORD *)(this + 120); /*0x508c97*/
   if ( v13 > 0 ) /*0x508c9b*/
   {
     do /*0x508ca5*/
     {
-      BuildingClass *v5 = *(_DWORD *)(this->absorbersCount + 4 * v4); /*0x508ca5*/
-      if ( v5 && !v5->inLimbo && v5->isOnMap ) /*0x508cb8*/
+      v5 = *(_DWORD *)(*(_DWORD *)(this + 108) + 4 * v4); /*0x508ca5*/
+      if ( v5 && !*(_BYTE *)(v5 + 129) && *(_BYTE *)(v5 + 116) ) /*0x508cb8*/
       {
         if ( g_GameMode_Current[0] ) /*0x508cc5*/
         {
           if ( (#375 *)this != HouseClass_Player ) /*0x508ce4*/
             goto LABEL_18; /*0x508ce4*/
         }
-        else if ( !this->currentPlayer && !this->playerControl ) /*0x508cd5*/
+        else if ( !*(_BYTE *)(this + 492) && !*(_BYTE *)(this + 493) ) /*0x508cd5*/
         {
-LABEL_18:
-          this->powerOutput += BuildingClass::GetPowerOutput((int *)v5); /*0x508cf2*/
-          this->powerDrain += BuildingClass::GetPowerDrain((_BYTE *)v5); /*0x508d18*/
+  LABEL_18:
+          *(_DWORD *)(this + 21412) += BuildingClass::GetPowerOutput((int *)v5); /*0x508cf2*/
+          *(_DWORD *)(this + 21416) += BuildingClass::GetPowerDrain((_BYTE *)v5); /*0x508d18*/
           if ( ObjectClass::HasLocation((_DWORD *)v5) && BuildingClass::GetPowerOutput((int *)v5) > 0 ) /*0x508d30*/
             v12 = 1; /*0x508d32*/
           goto LABEL_21; /*0x508d32*/
         }
-        if ( v5->isDiscoveredByCurrentPlayer || g_GameMode_Current[0] ) /*0x508cf0*/
+        if ( *(_BYTE *)(v5 + 1051) || g_GameMode_Current[0] ) /*0x508cf0*/
           goto LABEL_18; /*0x508cf0*/
       }
-LABEL_21:
+  LABEL_21:
       ++v4; /*0x508d37*/
     }
     while ( v4 < v13 ); /*0x508ca5*/
   }
-  this->u8_577B = v12; /*0x508d45*/
-  TimerStruct *v6 = this->powerBlackoutTimer; /*0x508d50*/
-  int v7 = this->q0AB; /*0x508d56*/
+  *(_BYTE *)(this + 22395) = v12; /*0x508d45*/
+  v6 = *(_DWORD *)(this + 676); /*0x508d50*/
+  v7 = *(_DWORD *)(this + 684); /*0x508d56*/
   if ( v6 != -1 ) /*0x508d5f*/
   {
     if ( (int)g_CurrentFrame - v6 >= v7 ) /*0x508d6b*/
@@ -1669,41 +1680,46 @@ LABEL_21:
   }
   if ( v7 ) /*0x508d71*/
   {
-LABEL_27:
-    this->powerOutput = 0; /*0x508d79*/
+  LABEL_27:
+    *(_DWORD *)(this + 21412) = 0; /*0x508d79*/
     goto LABEL_28; /*0x508d79*/
   }
-LABEL_26:
+  LABEL_26:
   if ( v12 ) /*0x508d77*/
     goto LABEL_27; /*0x508d77*/
-LABEL_28:
+  LABEL_28:
   nullsub_5(this); /*0x508d7f*/
   HouseClass::UpdateTeamProductionSpeed((void *)this); /*0x508d88*/
-  int v8 = this->powerOutput; /*0x508d8d*/
-  int v9 = this->powerDrain; /*0x508d93*/
-  int v10 = v8 < v9 && v9 && (!v8 || (double)this->powerOutput / (double)this->powerDrain < 1.0); /*0x508dc9*/
+  v8 = *(_DWORD *)(this + 21412); /*0x508d8d*/
+  v9 = *(_DWORD *)(this + 21416); /*0x508d93*/
+  v10 = v8 < v9 && v9 && (!v8 || (double)*(int *)(this + 21412) / (double)*(int *)(this + 21416) < 1.0); /*0x508dc9*/
   if ( v14 != v10 ) /*0x508dd7*/
     LOBYTE(v10) = SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(this); /*0x508ddb*/
-  this->u8_5779 = 1; /*0x508de0*/
+  *(_BYTE *)(this + 22393) = 1; /*0x508de0*/
   return v10; /*0x508de7*/
 }
-} // namespace gamemd
 }
-
 // 0x508DF0
 namespace gamemd {
 void * HouseClass::CanTogglePower()
 {
-{
   #375 *result; // eax
+  int v2; // eax
+  int v3; // esi
+  int v4; // edx
+  int v5; // eax
+  int v6; // edi
+  int v7; // edx
+  _DWORD *v8; // esi
+  int v9; // eax
+  int v10; // [esp+0h] [ebp-Ch]
 
-  this->u8_5779 = 0; /*0x508df0*/
+  *(_BYTE *)(this + 22393) = 0; /*0x508df0*/
   result = HouseClass_Player; /*0x508df7*/
   if ( (#375 *)this == HouseClass_Player ) /*0x508e01*/
   {
-    int v2 = this->q2B8; /*0x508e07*/
-    TimerStruct *v3 = this->radarBlackoutTimer; /*0x508e10*/
-  int v10; // [esp+0h] [ebp-Ch]
+    v2 = *(_DWORD *)(this + 696); /*0x508e07*/
+    v3 = *(_DWORD *)(this + 688); /*0x508e10*/
     LOBYTE(v10) = 0; /*0x508e1a*/
     if ( v3 != -1 ) /*0x508e1f*/
     {
@@ -1713,25 +1729,24 @@ void * HouseClass::CanTogglePower()
     }
     if ( v2 ) /*0x508e31*/
     {
-LABEL_30:
-      result = (#375 *)HouseClass::updateAlliedStatus(&DataGlobal_87F7E8); /*0x508f2f*/
+  LABEL_30:
+      result = (#375 *)HouseClass::updateAlliedStatus(&MapClass_Instance); /*0x508f2f*/
       if ( (_BYTE)result != (_BYTE)v10 ) /*0x508f43*/
         return (#375 *)HouseClass::SetRadarVisibility(v10); /*0x508f4f*/
       return result; /*0x508f4f*/
     }
-LABEL_6:
+  LABEL_6:
     if ( *((_BYTE *)g_ScenarioClass_Instance + 13476) ) /*0x508e3c*/
       goto LABEL_29; /*0x508e3c*/
-    int v4 = this->powerOutput; /*0x508e4a*/
-    int v5 = this->powerDrain; /*0x508e50*/
-    if ( v4 >= v5 || !v5 || v4 && (double)this->powerOutput / (double)this->powerDrain >= 1.0 ) /*0x508e81*/
+    v4 = *(_DWORD *)(this + 21412); /*0x508e4a*/
+    v5 = *(_DWORD *)(this + 21416); /*0x508e50*/
+    if ( v4 >= v5 || !v5 || v4 && (double)*(int *)(this + 21412) / (double)*(int *)(this + 21416) >= 1.0 ) /*0x508e81*/
     {
-      int v6 = this->bunkersCount; /*0x508e87*/
-      int v7 = 0; /*0x508e8a*/
+      v6 = *(_DWORD *)(this + 120); /*0x508e87*/
+      v7 = 0; /*0x508e8a*/
       if ( v6 > 0 ) /*0x508e8e*/
       {
-  int v9; // eax
-        _DWORD * v8 = this->absorbersCount; /*0x508e94*/
+        v8 = *(_DWORD **)(this + 108); /*0x508e94*/
         while ( 1 ) /*0x508e9d*/
         {
           v9 = *v8; /*0x508e9d*/
@@ -1740,7 +1755,7 @@ LABEL_6:
             && *(_BYTE *)(*(_DWORD *)(v9 + 1312) + 5796)
             && !*(_BYTE *)(v9 + 129)
             && *(_BYTE *)(v9 + 116)
-            && (!g_GameMode_Current[0] && !this->currentPlayer && !this->playerControl
+            && (!g_GameMode_Current[0] && !*(_BYTE *)(this + 492) && !*(_BYTE *)(this + 493)
              || *(_BYTE *)(v9 + 1051)
              || g_GameMode_Current[0])
             && *(_DWORD *)(v9 + 172) != 19
@@ -1754,7 +1769,7 @@ LABEL_6:
             goto LABEL_30; /*0x508f0e*/
         }
         if ( !*(_DWORD *)(v9 + 1284) && !(*(unsigned __int8 (__thiscall **)(_DWORD))(*(_DWORD *)v9 + 468))(*v8) ) /*0x508f20*/
-LABEL_29:
+  LABEL_29:
           LOBYTE(v10) = 1; /*0x508f2a*/
       }
     }
@@ -1762,99 +1777,94 @@ LABEL_29:
   }
   return result; /*0x508f54*/
 }
-} // namespace gamemd
 }
-
 // 0x5098F0
 namespace gamemd {
 CellStruct * * HouseClass::UpdateAITryFireSW()
 {
-{
-  int i; // edi
-  CellStruct *v6; // eax
-  CellStruct **v7; // eax
-  CellStruct *v8; // eax
-  AbstractClass *v9; // eax
-  CellStruct *v11; // [esp+8h] [ebp-10h] BYREF
   int v2; // eax
-  LOBYTE(v2) = this->currentPlayer; /*0x5098fe*/
-  if ( !g_GameMode_Current ) /*0x509904*/
-    LOBYTE(v2) = (_BYTE)v2 || this->playerControl; /*0x509918*/
+  int i; // edi
+  int v4; // eax
+  bool v5; // zf
+  int v6; // eax
+  int *v7; // eax
+  int v8; // eax
+  int v9; // eax
+  int v11; // [esp+8h] [ebp-10h] BYREF
+  int v12; // [esp+Ch] [ebp-Ch] BYREF
+  int v13; // [esp+10h] [ebp-8h] BYREF
+  int v14; // [esp+14h] [ebp-4h] BYREF
+
+  LOBYTE(v2) = *(_BYTE *)(this + 492); /*0x5098fe*/
+  if ( !g_GameMode_Current[0] ) /*0x509904*/
+    LOBYTE(v2) = (_BYTE)v2 || *(_BYTE *)(this + 493); /*0x509918*/
   if ( !(_BYTE)v2 )
   {
-    v2 = this->lastBuiltInfantryType; /*0x509922*/
+    v2 = *(_DWORD *)(this + 612); /*0x509922*/
     for ( i = 0; i < v2; ++i )
     {
-      int v4 = *(_DWORD *)(this->supersCount + 4 * i); /*0x509939*/
+      v4 = *(_DWORD *)(*(_DWORD *)(this + 600) + 4 * i); /*0x509939*/
       if ( v4 && *(_BYTE *)(v4 + 111) )
       {
         switch ( *(_DWORD *)(*(_DWORD *)(v4 + 40) + 180) )
         {
-  bool v5; // zf
           case 0:
-            int v12 = *(_DWORD *)(this->supersCount + 4 * i); /*0x509968*/
-            if ( this->enemyHouseIndex != -1 )
+            v12 = *(_DWORD *)(*(_DWORD *)(this + 600) + 4 * i); /*0x509968*/
+            if ( *(_DWORD *)(this + 22016) != -1 )
             {
-              v5 = (unsigned short)this->preferredTargetCell == *(_WORD *)&g_NetworkPlayerBuffer[6492]; /*0x509980*/
-              v11 = *(CellStruct **)&g_NetworkPlayerBuffer[6492]; /*0x509987*/
-              if ( v5 && this->q54F2 == *(_WORD *)&g_NetworkPlayerBuffer[6494] )
+              v5 = *(_WORD *)(this + 21744) == (unsigned __int16)g_ControlGroupState; /*0x509980*/
+              v11 = g_ControlGroupState; /*0x509987*/
+              if ( v5 && *(_WORD *)(this + 21746) == HIWORD(g_ControlGroupState) )
               {
-                v7 = (CellStruct **)(this->preferredTargetType == 1
-  int v13; // [esp+10h] [ebp-8h] BYREF
-                                   ? HouseClass::FindSWBuilding((_DWORD *)this, (HouseClass *)&v13)
-                                   : HouseClass::FindSWTarget(
-                                       (void *)this,
-  int v14; // [esp+14h] [ebp-4h] BYREF
-                                       (HouseClass *)&v14,
-                                       this->preferredTargetType));
+                v7 = *(_DWORD *)(this + 21740) == 1
+                   ? HouseClass::FindSWBuilding((_DWORD *)this, &v13)
+                   : HouseClass::FindSWTarget((void *)this, &v14, *(_DWORD *)(this + 21740));
                 v6 = *v7; /*0x5099cb*/
               }
               else
               {
-                v6 = this->preferredTargetCell; /*0x50999d*/
+                v6 = *(_DWORD *)(this + 21744); /*0x50999d*/
               }
               v11 = v6; /*0x5099d4*/
-              if ( v6 != *(CellStruct **)&g_NetworkPlayerBuffer[6492] ) /*0x5099d8*/
-                goto LABEL_33; /*0x5099d8*/
+              if ( v6 != g_ControlGroupState ) /*0x5099d8*/
+                goto LABEL_32; /*0x5099d8*/
             }
             break; /*0x5099d8*/
           case 2:
-            HouseClass::Fire_LightningStorm(this, *(_DWORD *)(this->supersCount + 4 * i)); /*0x509a0d*/
+            HouseClass::Fire_LightningStorm(this, *(_DWORD *)(*(_DWORD *)(this + 600) + 4 * i)); /*0x509a0d*/
             break; /*0x509a12*/
           case 5:
           case 6:
           case 8:
           case 0xB:
-            HouseClass::Fire_ParaDrop((_DWORD *)this, *(_DWORD *)(this->supersCount + 4 * i)); /*0x509a34*/
+            HouseClass::Fire_ParaDrop((_DWORD *)this, *(_DWORD *)(*(_DWORD *)(this + 600) + 4 * i)); /*0x509a34*/
             break; /*0x509a39*/
           case 7:
-            HouseClass::Fire_PsyDom(this, *(_DWORD *)(this->supersCount + 4 * i)); /*0x509a1a*/
+            HouseClass::Fire_PsyDom(this, *(_DWORD *)(*(_DWORD *)(this + 600) + 4 * i)); /*0x509a1a*/
             break; /*0x509a1f*/
           case 9:
-            HouseClass::Fire_GenMutator(this, *(_DWORD *)(this->supersCount + 4 * i)); /*0x509a27*/
+            HouseClass::Fire_GenMutator(this, *(_DWORD *)(*(_DWORD *)(this + 600) + 4 * i)); /*0x509a27*/
             break; /*0x509a2c*/
           case 0xA:
-            v5 = (unsigned short)this->preferredDefensiveCell2 == *(_WORD *)&g_NetworkPlayerBuffer[6492]; /*0x509a4b*/
-            v12 = *(_DWORD *)(this->supersCount + 4 * i); /*0x509a52*/
-            v11 = *(CellStruct **)&g_NetworkPlayerBuffer[6492]; /*0x509a56*/
-            if ( !v5 || this->u16_54FA != *(_WORD *)&g_NetworkPlayerBuffer[6494] ) /*0x509a63*/
+            v5 = *(_WORD *)(this + 21752) == (unsigned __int16)g_ControlGroupState; /*0x509a4b*/
+            v12 = *(_DWORD *)(*(_DWORD *)(this + 600) + 4 * i); /*0x509a52*/
+            v11 = g_ControlGroupState; /*0x509a56*/
+            if ( !v5 || *(_WORD *)(this + 21754) != HIWORD(g_ControlGroupState) ) /*0x509a63*/
             {
-              v8 = this->preferredDefensiveCell2; /*0x509a65*/
-              goto LABEL_32; /*0x509a6b*/
+              v8 = *(_DWORD *)(this + 21752); /*0x509a65*/
+              goto LABEL_31; /*0x509a6b*/
             }
-            if ( ((unsigned short)this->preferredDefensiveCell != *(_WORD *)&g_NetworkPlayerBuffer[6492] /*0x509a99*/
-               || this->u16_54F6 != *(_WORD *)&g_NetworkPlayerBuffer[6494])
-              && *(_DWORD *)(*(_DWORD *)&DataGlobal_87F8E4[30972] + 3808) + this->preferredDefensiveCellStartTime > *(int *)&g_NetworkPlayerBuffer[5960] )
+            if ( *(_DWORD *)(this + 21748) != g_ControlGroupState /*0x509a99*/
+              && g_RulesClass_Instance->AIExtraRefineries[2] + *(_DWORD *)(this + 21756) > (int)g_CurrentFrame )
             {
-              v8 = this->preferredDefensiveCell; /*0x509a9b*/
-LABEL_32:
+              v8 = *(_DWORD *)(this + 21748); /*0x509a9b*/
+  LABEL_31:
               v11 = v8; /*0x509aa1*/
-              if ( v8 != *(CellStruct **)&g_NetworkPlayerBuffer[6492] ) /*0x509aa8*/
+              if ( v8 != g_ControlGroupState ) /*0x509aa8*/
               {
-LABEL_33:
-                v9 = (AbstractClass *)this->supers->IsClean(/*0x509aca*/
-                                        &this->u32_950, &v12);
-                SuperWeapon::FireSuperWeaponHouseClass((void *)this, v9, (AbstractClass *)&v11); /*0x509acd*/
+  LABEL_32:
+                v9 = (*(int (__thiscall **)(int, int *))(*(_DWORD *)(this + 596) + 16))(this + 596, &v12); /*0x509aca*/
+                SuperWeapon::FireSuperWeaponHouseClass((#375 *)this, v9, (int)&v11); /*0x509acd*/
               }
               break; /*0x509acd*/
             }
@@ -1863,80 +1873,82 @@ LABEL_33:
             break;
         }
       }
-      v2 = this->lastBuiltInfantryType; /*0x509ad2*/
+      v2 = *(_DWORD *)(this + 612); /*0x509ad2*/
     }
   }
   return v2; /*0x509ae2*/
 }
-} // namespace gamemd
 }
-
 // 0x50BC90
 namespace gamemd {
 int HouseClass::CreatePowerOutage(int a2)
 {
-{
   wchar_t *v2; // eax
-  v2 = g_CurrentFrame; /*0x50bc90*/
-  this->q5778 = 1; /*0x50bc9c*/
-  this->powerBlackoutTimer = v2; /*0x50bcaa*/
   int v4; // [esp+8h] [ebp-8h]
-  this->q2A8 = v4; /*0x50bcb4*/
-  this->q0AB = a2; /*0x50bcb7*/
+
+  v2 = g_CurrentFrame; /*0x50bc90*/
+  *(_BYTE *)(this + 22392) = 1; /*0x50bc9c*/
+  *(_DWORD *)(this + 676) = v2; /*0x50bcaa*/
+  *(_DWORD *)(this + 680) = v4; /*0x50bcb4*/
+  *(_DWORD *)(this + 684) = a2; /*0x50bcb7*/
   return v4; /*0x50bcba*/
 }
-} // namespace gamemd
 }
-
 // 0x50BCD0
 namespace gamemd {
 int HouseClass::CreateRadarOutage(int a2)
 {
-{
   wchar_t *v2; // eax
-  v2 = g_CurrentFrame; /*0x50bcd0*/
-  this->u8_5779 = 1; /*0x50bcdc*/
-  this->radarBlackoutTimer = v2; /*0x50bcea*/
   int v4; // [esp+8h] [ebp-8h]
-  this->u32_2B4 = v4; /*0x50bcf4*/
-  this->q2B8 = a2; /*0x50bcf7*/
+
+  v2 = g_CurrentFrame; /*0x50bcd0*/
+  *(_BYTE *)(this + 22393) = 1; /*0x50bcdc*/
+  *(_DWORD *)(this + 688) = v2; /*0x50bcea*/
+  *(_DWORD *)(this + 692) = v4; /*0x50bcf4*/
+  *(_DWORD *)(this + 696) = a2; /*0x50bcf7*/
   return v4; /*0x50bcfa*/
 }
-} // namespace gamemd
 }
-
 // 0x50D320
 namespace gamemd {
 void HouseClass_RespawnStartingBuildings()
 {
-{
   int result; // eax
   __int16 *v6; // edi
+  int v7; // esi
   __int16 *v8; // ebx
+  _DWORD *v9; // eax
+  int *v10; // eax
+  int v11; // ecx
+  int v12; // edx
+  int v13; // edi
+  int v14; // esi
+  void *v15; // eax
+  _DWORD *v16; // eax
   int i; // [esp+10h] [ebp-20h]
+  int v21[3]; // [esp+14h] [ebp-1Ch] BYREF
+  _DWORD v22[4]; // [esp+20h] [ebp-10h] BYREF
   _UNKNOWN *retaddr; // [esp+30h] [ebp+0h] BYREF
 
   result = *(_DWORD *)(a1 + 380) - 1; /*0x50d32c*/
   for ( i = result; i >= 0; --i )
   {
     v6 = *(__int16 **)(*(_DWORD *)(a1 + 368) + 4 * result); /*0x50d340*/
-    int v7 = *(_DWORD *)v6; /*0x50d343*/
+    v7 = *(_DWORD *)v6; /*0x50d343*/
     if ( (*(int (__thiscall **)(_DWORD))(**(_DWORD **)v6 + 44))(*(_DWORD *)v6) == 7 )
     {
       v8 = v6 + 2; /*0x50d355*/
-      _DWORD * v9 = CellCoord::To_CellObj(&DataGlobal_87F7E8, v6 + 2); /*0x50d35e*/
-      int * v10 = Cell::IsBridge(v9); /*0x50d365*/
-  int v11; // ecx
+      v9 = CellCoord::To_CellObj(&MapClass_Instance, v6 + 2); /*0x50d35e*/
+      v10 = Cell::IsBridge(v9); /*0x50d365*/
       if ( v10 && (v11 = v10[328], v11 == v7) && v10[135] == a1 )
       {
-        int v12 = *v10; /*0x50d386*/
-  int v21[3]; // [esp+14h] [ebp-1Ch] BYREF
+        v12 = *v10; /*0x50d386*/
         v21[0] = -*(_DWORD *)(v11 + 160); /*0x50d38a*/
         (*(void (__thiscall **)(int *, int *, _DWORD, int, _DWORD, _DWORD, _DWORD, _DWORD))(v12 + 364))( /*0x50d3ac*/
           v10,
           v21,
           0,
-          g_RulesClass_Instance->?[5],
+          g_RulesClass_Instance->SilverCrate[5],
           0,
           0,
           0,
@@ -1944,16 +1956,15 @@ void HouseClass_RespawnStartingBuildings()
       }
       else
       {
-        int v13 = (*(int (__thiscall **)(int, int, _DWORD *, int, _UNKNOWN **))(*(_DWORD *)v7 + 140))(v7, a1, a3, a4, a2); /*0x50d3bf*/
+        v13 = (*(int (__thiscall **)(int, int, _DWORD *, int, _UNKNOWN **))(*(_DWORD *)v7 + 140))(v7, a1, a3, a4, a2); /*0x50d3bf*/
         if ( v13 )
-          int v14 = (*(int (__thiscall **)(int))(*(_DWORD *)v13 + 44))(v13) == 6 ? v13 : 0;
+          v14 = (*(int (__thiscall **)(int))(*(_DWORD *)v13 + 44))(v13) == 6 ? v13 : 0;
         else
           v14 = 0; /*0x50d3c5*/
-        void * v15 = CellCoord::To_CellObj(&DataGlobal_87F7E8, v8); /*0x50d3e3*/
+        v15 = CellCoord::To_CellObj(&MapClass_Instance, v8); /*0x50d3e3*/
         a2 = &retaddr; /*0x50d3ee*/
-        _DWORD * v16 = (_DWORD *)(*(int (__thiscall **)(void *))(*(_DWORD *)v15 + 72))(v15); /*0x50d3f1*/
+        v16 = (_DWORD *)(*(int (__thiscall **)(void *))(*(_DWORD *)v15 + 72))(v15); /*0x50d3f1*/
         a4 = 0; /*0x50d3f6*/
-  _DWORD v22[4]; // [esp+20h] [ebp-10h] BYREF
         v22[0] = *v16; /*0x50d3f8*/
         v22[1] = v16[1]; /*0x50d3ff*/
         a3 = v22; /*0x50d40a*/
@@ -1966,125 +1977,114 @@ void HouseClass_RespawnStartingBuildings()
   }
   return result; /*0x50d439*/
 }
-} // namespace gamemd
 }
-
 // 0x50D440
 namespace gamemd {
 int HouseClass::RespawnStartingForces(TechnoClass * aP0, _UNKNOWN ** a1, unsigned int * a2, int a4)
 {
-{
-  _UNKNOWN **v5; // ebp
-  HouseClass *v8; // ebx
   int result; // eax
-  __int16 *v11; // ebp
-  _UNKNOWN **v18; // [esp+8h] [ebp-24h]
+  int v6; // edi
+  __int16 *v7; // ebp
+  int v8; // esi
+  int v9; // eax
+  void *v10; // eax
+  _DWORD *v11; // eax
+  int v15; // [esp+10h] [ebp-1Ch]
+  _DWORD v16[4]; // [esp+1Ch] [ebp-10h] BYREF
   _UNKNOWN *retaddr; // [esp+2Ch] [ebp+0h] BYREF
 
-  HouseClass *v4 = (HouseClass *)v4; /*0x50d444*/
-  result = v4->q17C - 1; /*0x50d44c*/
-  int v19 = result; /*0x50d44d*/
+  result = *(_DWORD *)(a1 + 380) - 1; /*0x50d44c*/
+  v15 = result; /*0x50d44d*/
   if ( result >= 0 )
   {
-    v18 = v5; /*0x50d457*/
-    int v7 = v7; /*0x50d458*/
-    _DWORD * v6 = v6; /*0x50d459*/
     while ( 1 )
     {
-      int v10 = 0; /*0x50d466*/
-      v11 = *(__int16 **)(*(_DWORD *)&v8->__pad_13C[52] + 4 * result); /*0x50d468*/
-      int v12 = *(_DWORD *)v11; /*0x50d46b*/
-      switch ( (*(int (__thiscall **)(_DWORD, _DWORD *, int, _UNKNOWN **))(**(_DWORD **)v11 + 44))(
-                 *(_DWORD *)v11,
-  _DWORD *v16; // [esp+0h] [ebp-2Ch]
-                 v16,
-  int v17; // [esp+4h] [ebp-28h]
-                 v17,
-                 v18) )
+      v6 = 0; /*0x50d466*/
+      v7 = *(__int16 **)(*(_DWORD *)(a1 + 368) + 4 * result); /*0x50d468*/
+      v8 = *(_DWORD *)v7; /*0x50d46b*/
+      switch ( (*(int (__thiscall **)(_DWORD, _DWORD *, int, _UNKNOWN **))(**(_DWORD **)v7 + 44))(
+                 *(_DWORD *)v7,
+                 a3,
+                 a4,
+                 a2) )
       {
         case 3:
         case 7:
         case 40:
-          int v13 = (*(int (__thiscall **)(int, HouseClass *))(*(_DWORD *)v12 + 140))(v12, v8); /*0x50d491*/
-          if ( v13 ) /*0x50d499*/
+          v9 = (*(int (__thiscall **)(int, int))(*(_DWORD *)v8 + 140))(v8, a1); /*0x50d491*/
+          if ( v9 ) /*0x50d499*/
             goto LABEL_9; /*0x50d499*/
-          v10 = 0; /*0x50d49b*/
+          v6 = 0; /*0x50d49b*/
           break; /*0x50d49d*/
         case 16:
-          v13 = (*(int (__thiscall **)(int, HouseClass *))(*(_DWORD *)v12 + 140))(v12, v8); /*0x50d4a4*/
-          if ( v13 )
-LABEL_9:
-            v10 = (*(_BYTE *)(v13 + 20) & 1) != 0 ? v13 : 0;
+          v9 = (*(int (__thiscall **)(int, int))(*(_DWORD *)v8 + 140))(v8, a1); /*0x50d4a4*/
+          if ( v9 )
+  LABEL_9:
+            v6 = (*(_BYTE *)(v9 + 20) & 1) != 0 ? v9 : 0;
           else
-            v10 = 0; /*0x50d4ae*/
+            v6 = 0; /*0x50d4ae*/
           break; /*0x50d4b0*/
         default:
           break;
       }
-      void * v14 = CellCoord::To_CellObj(&stru_87C374[13428], v11 + 2); /*0x50d4c0*/
-      v18 = &retaddr; /*0x50d4d4*/
-      _DWORD * v15 = (_DWORD *)(*(int (__thiscall **)(void *))(*(_DWORD *)v14 + 72))(v14); /*0x50d4d7*/
-      v17 = 0; /*0x50d4dc*/
-  _DWORD v20[4]; // [esp+1Ch] [ebp-10h] BYREF
-      v20[0] = *v15; /*0x50d4de*/
-      v20[1] = v15[1]; /*0x50d4e5*/
-      v16 = v20; /*0x50d4f0*/
-      v20[2] = v15[2]; /*0x50d4f1*/
-      if ( !(*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)v10 + 1168))(v10) ) /*0x50d4f9*/
-        (*(void (__thiscall **)(int))(*(_DWORD *)v10 + 248))(v10); /*0x50d507*/
-      result = --v19; /*0x50d511*/
-      if ( v19 < 0 ) /*0x50d516*/
+      v10 = CellCoord::To_CellObj(&MapClass_Instance, v7 + 2); /*0x50d4c0*/
+      a2 = &retaddr; /*0x50d4d4*/
+      v11 = (_DWORD *)(*(int (__thiscall **)(void *))(*(_DWORD *)v10 + 72))(v10); /*0x50d4d7*/
+      a4 = 0; /*0x50d4dc*/
+      v16[0] = *v11; /*0x50d4de*/
+      v16[1] = v11[1]; /*0x50d4e5*/
+      a3 = v16; /*0x50d4f0*/
+      v16[2] = v11[2]; /*0x50d4f1*/
+      if ( !(*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)v6 + 1168))(v6) ) /*0x50d4f9*/
+        (*(void (__thiscall **)(int))(*(_DWORD *)v6 + 248))(v6); /*0x50d507*/
+      result = --v15; /*0x50d511*/
+      if ( v15 < 0 ) /*0x50d516*/
         break; /*0x50d516*/
-      result = v19; /*0x50d45c*/
+      result = v15; /*0x50d45c*/
     }
   }
   return result; /*0x50d51f*/
 }
-} // namespace gamemd
 }
-
 // 0x50D9E0
 namespace gamemd {
 int HouseClass::GetInfSelfHealStep()
 {
-{
-  return this->q059 * g_RulesClass_Instance->SelfHealInfantryAmount; /*0x50d9ef*/
+  return *(this + 89) * g_RulesClass_Instance->SelfHealInfantryAmount; /*0x50d9ef*/
 }
-} // namespace gamemd
 }
-
 // 0x50D9F0
 namespace gamemd {
 int HouseClass::GetUnitSelfHealStep()
 {
-{
-  return this->q05A * g_RulesClass_Instance->SelfHealUnitAmount; /*0x50d9ff*/
+  return *(this + 90) * g_RulesClass_Instance->SelfHealUnitAmount; /*0x50d9ff*/
 }
-} // namespace gamemd
 }
-
 // 0x50E0E0
 namespace gamemd {
 void HouseClass::LostPoweredCenter(int a2)
 {
-{
+  int v3; // eax
+  char v4; // bl
+  int v5; // edi
+  int v6; // esi
 
-  int v3 = this->poweredUnitCenters - 1; /*0x50e0eb*/
-  this->poweredUnitCenters = v3; /*0x50e0ec*/
+  v3 = *(_DWORD *)(this + 728) - 1; /*0x50e0eb*/
+  *(_DWORD *)(this + 728) = v3; /*0x50e0ec*/
   if ( !v3 ) /*0x50e0f2*/
   {
     if ( a2 ) /*0x50e0fe*/
     {
-      char v4 = 0; /*0x50e109*/
-      int v5 = g_SidebarState - 1; /*0x50e10b*/
+      v4 = 0; /*0x50e109*/
+      v5 = g_SidebarState - 1; /*0x50e10b*/
       if ( g_SidebarState - 1 >= 0 ) /*0x50e110*/
       {
         do /*0x50e14c*/
         {
-          BuildingClass *v6 = *((_DWORD *)g_TechnoClass_Count + v5); /*0x50e11d*/
-          if ( v6->owner == this /*0x50e138*/
-            && v6->Vt34Thunk(*((_DWORD *)g_TechnoClass_Count + v5)) == a2
-            && !v6->inLimbo )
+          v6 = *((_DWORD *)g_TechnoClass_Count + v5); /*0x50e11d*/
+          if ( *(_DWORD *)(v6 + 540) == this /*0x50e138*/
+            && (*(int (__thiscall **)(_DWORD))(*(_DWORD *)v6 + 132))(*((_DWORD *)g_TechnoClass_Count + v5)) == a2
+            && !*(_BYTE *)(v6 + 129) )
           {
             TechnoClass::Deactivate((_DWORD *)v6); /*0x50e144*/
             v4 = 1; /*0x50e149*/
@@ -2100,101 +2100,120 @@ void HouseClass::LostPoweredCenter(int a2)
               return; /*0x50e186*/
             goto LABEL_16; /*0x50e186*/
           }
-          if ( this->currentPlayer || this->playerControl ) /*0x50e16f*/
+          if ( *(_BYTE *)(this + 492) || *(_BYTE *)(this + 493) ) /*0x50e16f*/
           {
-LABEL_16:
+  LABEL_16:
             if ( !g_IKnowWhatImDoing ) /*0x50e18f*/
-              VoxClass::FindAndPlay(unk_824E4C, -1); /*0x50e19b*/
+              VoxClass::FindAndPlay(g_Str_EVA_RobotTanksOffline, -1); /*0x50e19b*/
           }
         }
       }
     }
   }
 }
-} // namespace gamemd
 }
-
 // 0x5471B0
 namespace gamemd {
 int HouseClass::GetCameoTypeIndex(int a2)
 {
-{
-
-  _DWORD * v2 = (_DWORD *)(*(int (__thiscall **)(void *))(this->secretLabsCount)(this); /*0x5471b2*/
+  _DWORD *v2; // eax
   int v3; // ecx
+
+  v2 = (_DWORD *)(*(int (__thiscall **)(void *))(*(_DWORD *)this + 156))(this); /*0x5471b2*/
   if ( v2 && (v3 = v2[a2 % (*v2 * v2[1]) + 4]) != 0 ) /*0x5471d3*/
     return *(char *)(v3 + 42); /*0x5471d5*/
   else
     return 0; /*0x5471dc*/
 }
-} // namespace gamemd
 }
-
 // 0x5D70F0
 namespace gamemd {
 AbstractClass * * HouseClass::AIDecision(ObjectClass * aP0, int * a1)
 {
-{
-  _DWORD *attachedTag; // eax
-  CCINIClass *v6; // edi
-  CCINIClass *v13; // eax
-  IUnknown *v23; // eax
-  ObjectClass *v24; // edi
-  ObjectClass *CurrentOption; // eax
+  int v2; // ebp
+  int v3; // edx
+  int v4; // eax
+  int v5; // ebx
+  int v6; // edi
+  int v7; // esi
+  int v8; // eax
+  int v9; // edx
+  _DWORD *v10; // ecx
+  int v11; // eax
+  int v12; // edi
+  int v13; // eax
+  int v14; // esi
+  int v15; // eax
+  int v16; // esi
+  int v18; // ebp
+  int v19; // ecx
+  int v20; // eax
+  _DWORD *v21; // edx
+  int v22; // esi
+  void **v23; // eax
+  int *v24; // edi
+  __int16 *CurrentOption; // eax
+  int *v26; // esi
+  int v27; // eax
+  int v28; // [esp+10h] [ebp-38h]
+  int v29; // [esp+14h] [ebp-34h] BYREF
   void **v30; // [esp+18h] [ebp-30h] BYREF
   void *Block; // [esp+1Ch] [ebp-2Ch]
-  CCINIClass *v32; // [esp+20h] [ebp-28h]
-  CCINIClass *v33; // [esp+24h] [ebp-24h]
+  int v32; // [esp+20h] [ebp-28h]
+  int v33; // [esp+24h] [ebp-24h]
+  int v34; // [esp+28h] [ebp-20h]
+  int v35; // [esp+2Ch] [ebp-1Ch]
   void **v36; // [esp+30h] [ebp-18h] BYREF
   void *v37; // [esp+34h] [ebp-14h]
-  AbstractClass *v38; // [esp+38h] [ebp-10h]
+  int v38; // [esp+38h] [ebp-10h]
   char v39; // [esp+3Dh] [ebp-Bh]
   int v40; // [esp+40h] [ebp-8h]
   int v41; // [esp+44h] [ebp-4h]
-  int v2 = 0; /*0x5d70fb*/
+
+  v2 = 0; /*0x5d70fb*/
   if ( *a1 <= 0 ) /*0x5d7101*/
     return 1; /*0x5d7492*/
-  int v28 = *a1; /*0x5d710d*/
-  UnitTypeVector::Construct2(&v36, 0, 0); /*0x5d7111*/
-  v36 = &vt_DynamicVectorClass_UnitTypeClass; /*0x5d711c*/
+  v28 = *a1; /*0x5d710d*/
+  ((void (__stdcall *)(_DWORD, _DWORD))UnitTypeVector::Construct2)(0, 0); /*0x5d7111*/
+  v36 = &DynamicVectorClass<UnitTypeClass *>::`vftable'; /*0x5d711c*/
   v41 = 10; /*0x5d7124*/
   v40 = 0; /*0x5d712c*/
-  InfantryTypeVector::ConstructFromData(&v30, 0, 0); /*0x5d7130*/
-  int v3 = 10; /*0x5d7139*/
-  v30 = &vt_DynamicVectorClass_InfantryTypeClass; /*0x5d713e*/
-  int v35 = 10; /*0x5d7146*/
-  attachedTag = aP0->attachedTag; /*0x5d714a*/
-  int v34 = 0; /*0x5d714d*/
-  int v5 = 1 << attachedTag[45]; /*0x5d7161*/
-  if ( (int)g_CrateCount <= 0 ) /*0x5d7165*/
+  ((void (__stdcall *)(_DWORD, _DWORD))InfantryTypeVector::ConstructFromData)(0, 0); /*0x5d7130*/
+  v3 = 10; /*0x5d7139*/
+  v30 = &DynamicVectorClass<InfantryTypeClass *>::`vftable'; /*0x5d713e*/
+  v35 = 10; /*0x5d7146*/
+  v4 = *((_DWORD *)aP0 + 13); /*0x5d714a*/
+  v34 = 0; /*0x5d714d*/
+  v5 = 1 << *(_DWORD *)(v4 + 180); /*0x5d7161*/
+  if ( g_CrateCount <= 0 ) /*0x5d7165*/
     goto LABEL_20; /*0x5d7165*/
-  v6 = (CCINIClass *)v38; /*0x5d716b*/
+  v6 = v38; /*0x5d716b*/
   do /*0x5d7210*/
   {
-    int v7 = *(_DWORD *)&g_UnitTypeCount2->__pad_0[4 * v2]; /*0x5d7175*/
-    if ( *(_BYTE *)(v7 + 1749) && (v5 & *(_DWORD *)(v7 + 1740)) != 0 && *(_DWORD *)(v7 + 1588) <= aP0[2].visibilityFlags ) /*0x5d719e*/
+    v7 = *((_DWORD *)g_UnitTypeCount2 + v2); /*0x5d7175*/
+    if ( *(_BYTE *)(v7 + 1749) && (v5 & *(_DWORD *)(v7 + 1740)) != 0 && *(_DWORD *)(v7 + 1588) <= *((_DWORD *)aP0 + 117) ) /*0x5d719e*/
     {
-      int v8 = 0; /*0x5d71a6*/
-      int v9 = *(_DWORD *)(*(_DWORD *)&stru_87C374[44652] + 2864); /*0x5d71a8*/
+      v8 = 0; /*0x5d71a6*/
+      v9 = g_RulesClass_Instance->AICaptureLowMoney[1]; /*0x5d71a8*/
       if ( v9 <= 0 ) /*0x5d71b0*/
       {
-LABEL_11:
-        if ( v40 < (int)v6 ) /*0x5d71c8*/
+  LABEL_11:
+        if ( v40 < v6 ) /*0x5d71c8*/
           goto LABEL_16; /*0x5d71c8*/
         if ( (v39 || !v6) && v41 > 0 ) /*0x5d71dc*/
         {
-          if ( ((unsigned __int8 (__thiscall *)(void ***, char *, _DWORD))v36[2])(&v36, &v6->__pad_0[v41], 0) ) /*0x5d71eb*/
+          if ( ((unsigned __int8 (__thiscall *)(void ***, int, _DWORD))v36[2])(&v36, v41 + v6, 0) ) /*0x5d71eb*/
           {
-LABEL_16:
-            int v11 = v40++; /*0x5d71f2*/
+  LABEL_16:
+            v11 = v40++; /*0x5d71f2*/
             *((_DWORD *)v37 + v11) = v7; /*0x5d7201*/
           }
-          v6 = (CCINIClass *)v38; /*0x5d7204*/
+          v6 = v38; /*0x5d7204*/
         }
       }
       else
       {
-        _DWORD * v10 = *(_DWORD **)(*(_DWORD *)&stru_87C374[44652] + 2852); /*0x5d71b2*/
+        v10 = (_DWORD *)g_RulesClass_Instance->AICaptureLowPower[2]; /*0x5d71b2*/
         while ( *v10 != v7 ) /*0x5d71ba*/
         {
           ++v8; /*0x5d71bc*/
@@ -2206,95 +2225,84 @@ LABEL_16:
     }
     ++v2; /*0x5d7208*/
   }
-  while ( v2 < (int)g_CrateCount ); /*0x5d7210*/
+  while ( v2 < g_CrateCount ); /*0x5d7210*/
   v3 = v35; /*0x5d7216*/
-LABEL_20:
-  InfantryTypeClass *v12 = 0; /*0x5d721a*/
-  if ( *(int *)&HouseClass_Player[42508] > 0 ) /*0x5d7223*/
+  LABEL_20:
+  v12 = 0; /*0x5d721a*/
+  if ( g_LoadScreenProgress > 0 ) /*0x5d7223*/
   {
-  int v14; // esi
     v13 = v32; /*0x5d7229*/
     while ( 1 ) /*0x5d7239*/
     {
-      v14 = *(_DWORD *)(*(_DWORD *)&HouseClass_Player[42496] + 4 * v12); /*0x5d7239*/
+      v14 = *((_DWORD *)Factory_ExitCellTable + v12); /*0x5d7239*/
       if ( *(_BYTE *)(v14 + 1749) /*0x5d725e*/
         && (v5 & *(_DWORD *)(v14 + 1740)) != 0
-        && *(_DWORD *)(v14 + 1588) <= aP0[2].visibilityFlags )
+        && *(_DWORD *)(v14 + 1588) <= *((_DWORD *)aP0 + 117) )
       {
-        if ( v34 < (int)v13 ) /*0x5d7264*/
+        if ( v34 < v13 ) /*0x5d7264*/
           goto LABEL_31; /*0x5d7264*/
         if ( (BYTE1(v33) || !v13) && v3 > 0 ) /*0x5d7274*/
           break; /*0x5d7274*/
       }
-LABEL_33:
-      if ( ++v12 >= *(int *)&HouseClass_Player[42508] ) /*0x5d72a9*/
+  LABEL_33:
+      if ( ++v12 >= g_LoadScreenProgress ) /*0x5d72a9*/
         goto LABEL_34; /*0x5d72a9*/
       v3 = v35; /*0x5d722f*/
     }
-    if ( ((unsigned __int8 (__thiscall *)(void ***, char *, _DWORD))v30[2])(&v30, &v13->__pad_0[v3], 0) ) /*0x5d7283*/
+    if ( ((unsigned __int8 (__thiscall *)(void ***, int, _DWORD))v30[2])(&v30, v3 + v13, 0) ) /*0x5d7283*/
     {
-LABEL_31:
-      int v15 = v34++; /*0x5d728a*/
+  LABEL_31:
+      v15 = v34++; /*0x5d728a*/
       *((_DWORD *)Block + v15) = v14; /*0x5d7299*/
     }
     v13 = v32; /*0x5d729c*/
     goto LABEL_33; /*0x5d729c*/
   }
-LABEL_34:
-  int v16 = v40; /*0x5d72ab*/
+  LABEL_34:
+  v16 = v40; /*0x5d72ab*/
   if ( v40 || v34 ) /*0x5d72b9*/
   {
-    int v18 = 20; /*0x5d731a*/
-    int v19 = *a1; /*0x5d731f*/
+    v18 = 20; /*0x5d731a*/
+    v19 = *a1; /*0x5d731f*/
     if ( *a1 > 0 ) /*0x5d7323*/
     {
       while ( v18 > 0 ) /*0x5d7331*/
       {
-  int *v26; // esi
-  _DWORD *v21; // edx
-  int v20; // eax
         if ( v19 > v28 / 3 && v16 ) /*0x5d734d*/
         {
-          v20 = Random::Range( /*0x5d735f*/
-                  (_DWORD *)(*(_DWORD *)&HouseClass_Player[29924] + 536),
-                  0,
-                  (IUnknown *)(v16 - 1));
+          v20 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, v16 - 1); /*0x5d735f*/
           v21 = v37; /*0x5d7364*/
         }
         else
         {
-          v20 = Random::Range( /*0x5d737e*/
-                  (_DWORD *)(*(_DWORD *)&HouseClass_Player[29924] + 536),
-                  0,
-                  (IUnknown *)(v34 - 1));
+          v20 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, v34 - 1); /*0x5d737e*/
           v21 = Block; /*0x5d7383*/
         }
-        int v22 = v21[v20]; /*0x5d7387*/
-        v23 = (IUnknown *)(*(int (__thiscall **)(int, ObjectClass *))(*(_DWORD *)v22 + 140))(v22, aP0); /*0x5d7393*/
-        v24 = (ObjectClass *)__RTDynamicCast( /*0x5d73b4*/
-                               v23,
-                               0,
-                               &ObjectClass `RTTI Type Descriptor',
-                               &TechnoClass `RTTI Type Descriptor',
-                               0);
-  int v29; // [esp+14h] [ebp-34h] BYREF
-        CurrentOption = HouseClass::GetCurrentOption(aP0, (IUnknown *)&v29); /*0x5d73bb*/
-        if ( FindInfantryDeployPosition((int *)v24->__pad_0, (RadarClass *)CurrentOption, 4) ) /*0x5d73c4*/
+        v22 = v21[v20]; /*0x5d7387*/
+        v23 = (void **)(*(int (__thiscall **)(int, #375 *))(*(_DWORD *)v22 + 140))(v22, aP0); /*0x5d7393*/
+        v24 = (int *)__RTDynamicCast( /*0x5d73b4*/
+                       v23,
+                       0,
+                       &ObjectClass `RTTI Type Descriptor',
+                       &TechnoClass `RTTI Type Descriptor',
+                       0);
+        CurrentOption = (__int16 *)HouseClass::GetCurrentOption(aP0, &v29); /*0x5d73bb*/
+        if ( FindInfantryDeployPosition(v24, CurrentOption, 4) ) /*0x5d73c4*/
         {
-          int v27 = (*(int (__thiscall **)(int))(*(_DWORD *)v22 + 172))(v22); /*0x5d73e5*/
+          v27 = (*(int (__thiscall **)(int))(*(_DWORD *)v22 + 172))(v22); /*0x5d73e5*/
           v26 = a1; /*0x5d73eb*/
           *a1 -= v27; /*0x5d73f3*/
-          if ( (**(_DWORD **)&HouseClass_Player[29924] & 0x200) != 0 ) /*0x5d7400*/
-            Timer::SetFlag(&v24[1].location[2], 1); /*0x5d740a*/
-          if ( (unsigned __int8)House::IsCurrentPlayer((#375 *)aP0) ) /*0x5d7411*/
-            (*(void (__thiscall **)(ObjectClass *, int))(*(_DWORD *)v24->__pad_0 + 496))(v24, 5); /*0x5d7420*/
+          if ( (*(_DWORD *)g_ScenarioClass_Instance & 0x200) != 0 ) /*0x5d7400*/
+            Timer::SetFlag(v24 + 84, 1); /*0x5d740a*/
+          if ( (unsigned __int8)House::IsCurrentPlayer(aP0) ) /*0x5d7411*/
+            (*(void (__thiscall **)(int *, int))(*v24 + 496))(v24, 5); /*0x5d7420*/
           else
-            (*(void (__thiscall **)(ObjectClass *, int))(*(_DWORD *)v24->__pad_0 + 496))(v24, 11); /*0x5d742e*/
+            (*(void (__thiscall **)(int *, int))(*v24 + 496))(v24, 11); /*0x5d742e*/
         }
         else
         {
           if ( v24 ) /*0x5d73cf*/
-            (*(void (__thiscall **)(ObjectClass *, int))(*(_DWORD *)v24->__pad_0 + 32))(v24, 1); /*0x5d73d7*/
+            (*(void (__thiscall **)(int *, int))(*v24 + 32))(v24, 1); /*0x5d73d7*/
           v26 = a1; /*0x5d73da*/
           --v18; /*0x5d73de*/
         }
@@ -2304,7 +2312,7 @@ LABEL_34:
         v16 = v40; /*0x5d732b*/
       }
     }
-    v30 = &vt_VectorClass_InfantryTypeClass; /*0x5d7446*/
+    v30 = &VectorClass<InfantryTypeClass *>::`vftable'; /*0x5d7446*/
     if ( Block && BYTE1(v33) ) /*0x5d7456*/
     {
       __3_YAXPAX_Z(Block); /*0x5d7459*/
@@ -2312,12 +2320,12 @@ LABEL_34:
     }
     BYTE1(v33) = 0; /*0x5d7469*/
     v32 = 0; /*0x5d7470*/
-    v36 = &vt_VectorClass_UnitTypeClass; /*0x5d7474*/
+    v36 = &VectorClass<UnitTypeClass *>::`vftable'; /*0x5d7474*/
     if ( v37 && v39 ) /*0x5d7484*/
       __3_YAXPAX_Z(v37); /*0x5d7487*/
     return 1; /*0x5d7487*/
   }
-  v30 = &vt_VectorClass_InfantryTypeClass; /*0x5d72bf*/
+  v30 = &VectorClass<InfantryTypeClass *>::`vftable'; /*0x5d72bf*/
   if ( Block && BYTE1(v33) ) /*0x5d72d1*/
   {
     __3_YAXPAX_Z(Block); /*0x5d72d4*/
@@ -2325,7 +2333,7 @@ LABEL_34:
   }
   BYTE1(v33) = 0; /*0x5d72e4*/
   v32 = 0; /*0x5d72eb*/
-  v36 = &vt_VectorClass_UnitTypeClass; /*0x5d72ef*/
+  v36 = &VectorClass<UnitTypeClass *>::`vftable'; /*0x5d72ef*/
   if ( v37 ) /*0x5d72f7*/
   {
     if ( v39 ) /*0x5d72ff*/
@@ -2333,33 +2341,38 @@ LABEL_34:
   }
   return 0; /*0x5d730a*/
 }
-} // namespace gamemd
 }
-
 // 0x5D74A0
 namespace gamemd {
 int HouseClass::InitAlliances()
 {
-{
+  int v0; // edx
+  _DWORD *v1; // eax
+  int v2; // edi
+  int v3; // ebp
+  int v4; // ebx
+  int v5; // ecx
+  int v6; // esi
+  int v8; // [esp+0h] [ebp-4h]
 
-  int v0 = HouseClass_Count; /*0x5d74a1*/
+  v0 = HouseClass_Count; /*0x5d74a1*/
   if ( HouseClass_Count <= 0 ) /*0x5d74a9*/
     return 1; /*0x5d754a*/
-  _DWORD * v1 = HouseClass_Array; /*0x5d74af*/
-  int v2 = 1; /*0x5d74b8*/
-  int v3 = 0; /*0x5d74bd*/
-  int v8 = 1; /*0x5d74bf*/
+  v1 = HouseClass_Array; /*0x5d74af*/
+  v2 = 1; /*0x5d74b8*/
+  v3 = 0; /*0x5d74bd*/
+  v8 = 1; /*0x5d74bf*/
   do /*0x5d7540*/
   {
-    int v4 = v1[v3]; /*0x5d74c3*/
+    v4 = v1[v3]; /*0x5d74c3*/
     if ( !*(_BYTE *)(*(_DWORD *)(v4 + 52) + 422) ) /*0x5d74c9*/
     {
-      int v5 = *(_DWORD *)(v4 + 90204); /*0x5d74d4*/
+      v5 = *(_DWORD *)(v4 + 90204); /*0x5d74d4*/
       if ( v5 != -2 && v5 != -1 && v2 < v0 ) /*0x5d74e6*/
       {
         do /*0x5d752d*/
         {
-          int v6 = v1[v2]; /*0x5d74e8*/
+          v6 = v1[v2]; /*0x5d74e8*/
           if ( !*(_BYTE *)(*(_DWORD *)(v6 + 52) + 422) && *(_DWORD *)(v1[v3] + 90204) == *(_DWORD *)(v6 + 90204) ) /*0x5d7509*/
           {
             HouseClass::HandleAlliance(v4, v6, 0); /*0x5d7510*/
@@ -2380,38 +2393,48 @@ int HouseClass::InitAlliances()
   while ( v2 - 1 < v0 ); /*0x5d7540*/
   return 1; /*0x5d7549*/
 }
-} // namespace gamemd
 }
-
 // 0x5EE9D0
 namespace gamemd {
 AbstractClass * * HouseClass::FindStartPositions()
 {
-{
+  int v0; // eax
+  _DWORD *v1; // ecx
+  int v2; // eax
   int i; // edi
+  int v4; // esi
+  char v5; // bl
+  int v6; // edx
+  int v7; // eax
+  _DWORD *v8; // ecx
   int *started; // eax
+  int v10; // edi
+  int v11; // esi
+  int *v12; // eax
   int v13; // [esp+0h] [ebp-34h] BYREF
   int v14; // [esp+4h] [ebp-30h] BYREF
   int v15; // [esp+8h] [ebp-2Ch] BYREF
   _BYTE v16[16]; // [esp+Ch] [ebp-28h] BYREF
   void **v17; // [esp+1Ch] [ebp-18h] BYREF
   void *Block; // [esp+20h] [ebp-14h]
+  char v19; // [esp+29h] [ebp-Bh]
+
   Multiplayer::FindStartPositions(&v17); /*0x5ee9d9*/
-  int v0 = 0; /*0x5ee9e4*/
-  _DWORD * v1 = (char *)g_ScenarioClass_Instance + 4480; /*0x5ee9e6*/
+  v0 = 0; /*0x5ee9e4*/
+  v1 = (char *)g_ScenarioClass_Instance + 4480; /*0x5ee9e6*/
   do /*0x5eea04*/
     v16[v0++] = *v1++ != -1; /*0x5ee9f1*/
   while ( v0 < 16 ); /*0x5eea04*/
-  int v2 = HouseClass_Count; /*0x5eea06*/
+  v2 = HouseClass_Count; /*0x5eea06*/
   for ( i = 0; i < HouseClass_Count; ++i ) /*0x5eea11*/
   {
-    ObjectClass *v4 = *(_DWORD *)&HouseClass_Array->__pad_0[4 * i]; /*0x5eea1f*/
-    if ( !*(_BYTE *)(v4->attachedTag + 422) && v4->q1EC ) /*0x5eea33*/
+    v4 = *(_DWORD *)&HouseClass_Array->gap0[4 * i]; /*0x5eea1f*/
+    if ( !*(_BYTE *)(*(_DWORD *)(v4 + 52) + 422) && *(_BYTE *)(v4 + 492) ) /*0x5eea33*/
     {
-      char v5 = 0; /*0x5eea47*/
-      int v6 = -1; /*0x5eea49*/
-      int v7 = 0; /*0x5eea4c*/
-      _DWORD * v8 = (char *)g_ScenarioClass_Instance + 4480; /*0x5eea4e*/
+      v5 = 0; /*0x5eea47*/
+      v6 = -1; /*0x5eea49*/
+      v7 = 0; /*0x5eea4c*/
+      v8 = (char *)g_ScenarioClass_Instance + 4480; /*0x5eea4e*/
       do /*0x5eea63*/
       {
         if ( *v8 == i ) /*0x5eea56*/
@@ -2439,16 +2462,16 @@ AbstractClass * * HouseClass::FindStartPositions()
     }
     v2 = HouseClass_Count; /*0x5eeadb*/
   }
-  AbstractClass *v10 = 0; /*0x5eeaeb*/
+  v10 = 0; /*0x5eeaeb*/
   if ( v2 > 0 ) /*0x5eeaef*/
   {
     do /*0x5eeb7e*/
     {
-      ObjectClass *v11 = *(_DWORD *)&HouseClass_Array->__pad_0[4 * v10]; /*0x5eeafb*/
-      if ( !*(_BYTE *)(v11->attachedTag + 422) && !v11->q1EC ) /*0x5eeb0b*/
+      v11 = *(_DWORD *)&HouseClass_Array->gap0[4 * v10]; /*0x5eeafb*/
+      if ( !*(_BYTE *)(*(_DWORD *)(v11 + 52) + 422) && !*(_BYTE *)(v11 + 492) ) /*0x5eeb0b*/
       {
         Debug::Log(); /*0x5eeb1f*/
-        int * v12 = AssignRandomMapStartPositions(&v15, v10, (int)&v17, (int)v16, 0); /*0x5eeb39*/
+        v12 = AssignRandomMapStartPositions(&v15, v10, (int)&v17, (int)v16, 0); /*0x5eeb39*/
         HouseClass::SetMapSeed((_DWORD *)v11, *v12); /*0x5eeb43*/
         HouseClass::GetCurrentOption((_DWORD *)v11, &v14); /*0x5eeb4f*/
         HouseClass::GetCurrentOption((_DWORD *)v11, &v13); /*0x5eeb60*/
@@ -2458,47 +2481,36 @@ AbstractClass * * HouseClass::FindStartPositions()
     }
     while ( v10 < HouseClass_Count ); /*0x5eeb7e*/
   }
-  v17 = &vt_VectorClass_Cell; /*0x5eeb8b*/
+  v17 = &VectorClass<Cell>::`vftable'; /*0x5eeb8b*/
   if ( Block ) /*0x5eeb94*/
   {
-  char v19; // [esp+29h] [ebp-Bh]
     if ( v19 ) /*0x5eeb9c*/
       __3_YAXPAX_Z(Block); /*0x5eeb9f*/
   }
 }
-} // namespace gamemd
 }
-
 // 0x740DF0
 namespace gamemd {
 int HouseClass::SetPrimaryFactory(int a2)
 {
-{
-  if ( a2 == -1 || this->q6CC != -1 ) /*0x740e00*/
+  if ( a2 == -1 || *(this + 435) != -1 ) /*0x740e00*/
     return 0; /*0x740e17*/
-  this->q6CC = a2; /*0x740e02*/
-  this->ModifyCellTiles(2); /*0x740e0c*/
+  *(this + 435) = a2; /*0x740e02*/
+  (*(void (__thiscall **)(_DWORD *, int))(*this + 292))(this, 2); /*0x740e0c*/
   return 1; /*0x740e14*/
 }
-} // namespace gamemd
 }
-
 // 0x429210
 namespace gamemd {
 int HouseClass::QueryInterface_Helper()
 {
-{
-    int v2;
-    const void *v3;
-    int *v4;
-    if ( !v4 )
-    return -2147467261;
-    if ( memcmp(v3, &DataGlobal_7F7CA0, 0x10u) && memcmp(v3, &IID_IUnknown, 0x10u) )
-    return -2147467262;
-    *v4 = v2;
-    (*(void (__stdcall **)(int))(*(int *)(v2) + 4))(v2);
-    return 0;
-}
+  if ( !a3 ) /*0x429218*/
+    return -2147467261; /*0x42921b*/
+  if ( memcmp(a2, &unk_7F7CA0, 0x10u) && memcmp(a2, &IID_IUnknown, 0x10u) ) /*0x42924a*/
+    return -2147467262; /*0x42924f*/
+  *a3 = a1; /*0x42925c*/
+  (*(void (__stdcall **)(int))(*(_DWORD *)a1 + 4))(a1); /*0x429261*/
+  return 0; /*0x42921a*/
 }
 } // namespace gamemd
 
@@ -2506,38 +2518,34 @@ int HouseClass::QueryInterface_Helper()
 namespace gamemd {
 int HouseClass::QueryInterface_Dispatch()
 {
-{
-    int *v1;
-    int v3;
-    int v4;
-    const void *v5;
-    int *v6;
-    v1 = v6;
-    if ( !v6 )
-    return -2147024809;
-    *v6 = 0;
-    if ( v4 )
-    return -2147221232;
-    v3 = -2147467262;
-    if ( !memcmp(v5, &DataGlobal_7E36C0, 0x10u) || !memcmp(v5, &IID_IUnknown, 0x10u) )
+  void **v4; // eax
+  int v6; // ebx
+
+  v4 = a4; /*0x429270*/
+  if ( !a4 ) /*0x42927a*/
+    return -2147024809; /*0x429285*/
+  *a4 = 0; /*0x42928c*/
+  if ( a2 ) /*0x429294*/
+    return -2147221232; /*0x42929f*/
+  v6 = -2147467262; /*0x4292b4*/
+  if ( !memcmp(a3, &unk_7E36C0, 0x10u) || !memcmp(a3, &IID_IUnknown, 0x10u) ) /*0x4292cb*/
   {
-    if ( !&punk )
-    return -2147024882;
-    v3 = (*(int (__stdcall **)(IUnknown *, const void *, int *))punk.field_0)(&punk, v5, v6);
-    if ( v3 < 0 )
-    __3_YAXPAX_Z(&punk);
-    v1 = v6;
+    if ( !&punk ) /*0x4292d6*/
+      return -2147024882; /*0x4292e1*/
+    v6 = punk.lpVtbl->QueryInterface(&punk, a3, a4); /*0x4292f3*/
+    if ( v6 < 0 ) /*0x4292f7*/
+      __3_YAXPAX_Z(&punk); /*0x4292fe*/
+    v4 = a4; /*0x429306*/
   }
-    if ( !memcmp(v5, &DataGlobal_7EA6E8, 0x10u) )
+  if ( !memcmp(a3, &unk_7EA6E8, 0x10u) ) /*0x429318*/
   {
-    if ( !&DataGlobal_87F7E8 )
-    return -2147024882;
-    v3 = ((int (__stdcall *)(MouseClass **, const void *, int *))DataGlobal_87F7E8->field_0)( &DataGlobal_87F7E8, v5, v1);
-    if ( v3 < 0 )
-    __3_YAXPAX_Z(&DataGlobal_87F7E8);
+    if ( !&MapClass_Instance ) /*0x429323*/
+      return -2147024882; /*0x42932e*/
+    v6 = MapClass_Instance.lpVtbl->QueryInterface(&MapClass_Instance, a3, v4); /*0x429340*/
+    if ( v6 < 0 ) /*0x429344*/
+      __3_YAXPAX_Z(&MapClass_Instance); /*0x42934b*/
   }
-    return v3;
-}
+  return v6; /*0x42927c*/
 }
 } // namespace gamemd
 
@@ -2545,18 +2553,17 @@ int HouseClass::QueryInterface_Dispatch()
 namespace gamemd {
 int HouseClass::FailedToPlaceNode(int a1)
 {
-{
-    int result;
-    int v2;
-    result = a1;
-    if ( a1 )
+  int result; // eax
+  int v2; // ecx
+
+  result = a1; /*0x42f380*/
+  if ( a1 ) /*0x42f386*/
   {
-    v2 = *(int *)(a1 + 12) + 1;
-    *(int *)(a1 + 12) = v2;
-    return v2;
+    v2 = *(_DWORD *)(a1 + 12) + 1; /*0x42f38e*/
+    *(_DWORD *)(a1 + 12) = v2; /*0x42f38f*/
+    return v2; /*0x42f392*/
   }
-    return result;
-}
+  return result; /*0x42f388*/
 }
 } // namespace gamemd
 
@@ -2564,7 +2571,7 @@ int HouseClass::FailedToPlaceNode(int a1)
 namespace gamemd {
 int HouseClass::vt_placeholder_00()
 {
-return 1;
+  return 1; /*0x4e8245*/
 }
 } // namespace gamemd
 
@@ -2572,7 +2579,7 @@ return 1;
 namespace gamemd {
 int HouseClass::vt_placeholder_01()
 {
-return 1;
+  return 1; /*0x4e8255*/
 }
 } // namespace gamemd
 
@@ -2580,7 +2587,7 @@ return 1;
 namespace gamemd {
 int HouseClass::vt_placeholder_02()
 {
-return 0;
+  return 0; /*0x4e8262*/
 }
 } // namespace gamemd
 
@@ -2588,12 +2595,10 @@ return 0;
 namespace gamemd {
 std::locale::facet * HouseClass::initAngerStruct(char a2)
 {
-{
-    *(int *)this = &vt_VersionClass;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return this;
-}
+  *(_DWORD *)this = &VersionClass::`vftable'; /*0x4e8279*/
+  if ( (a2 & 1) != 0 ) /*0x4e827f*/
+    __3_YAXPAX_Z(this); /*0x4e8282*/
+  return this; /*0x4e828c*/
 }
 } // namespace gamemd
 
@@ -2601,9 +2606,7 @@ std::locale::facet * HouseClass::initAngerStruct(char a2)
 namespace gamemd {
 int HouseClass_24::Seek(int a2)
 {
-{
-    return *(int *)(this->Items + 4 * a2);
-}
+  return *(_DWORD *)(*(this + 1) + 4 * a2); /*0x4f28aa*/
 }
 } // namespace gamemd
 
@@ -2611,12 +2614,10 @@ int HouseClass_24::Seek(int a2)
 namespace gamemd {
 VectorCursor * HouseClass::vt_placeholder_07(char a2)
 {
-{
-    *(int *)this = &vt_VectorCursor_GraphicMenuItem_DynamicVectorClass_GraphicMenuItem;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (VectorCursor *)this;
-}
+  *(_DWORD *)this = &VectorCursor<GraphicMenuItem *,DynamicVectorClass<GraphicMenuItem *>>::`vftable'; /*0x4f28c9*/
+  if ( (a2 & 1) != 0 ) /*0x4f28cf*/
+    __3_YAXPAX_Z(this); /*0x4f28d2*/
+  return this; /*0x4f28dc*/
 }
 } // namespace gamemd
 
@@ -2624,29 +2625,28 @@ VectorCursor * HouseClass::vt_placeholder_07(char a2)
 namespace gamemd {
 char HouseClass_24::AddRef(int a2)
 {
-{
-    int v2;
-    int v3;
-    int *v4;
-    int v5;
-    v2 = this->Capacity;
-    if ( v2 == *(int *)(a2 + 8) )
+  int v2; // esi
+  int v3; // edx
+  _DWORD *v4; // eax
+  int v5; // ecx
+
+  v2 = *(this + 2); /*0x4f28e2*/
+  if ( v2 == *(_DWORD *)(a2 + 8) ) /*0x4f28ed*/
   {
-    v3 = 0;
-    if ( v2 <= 0 )
-    return 1;
-    v4 = (int *)this->Items;
-    v5 = *(int *)(a2 + 4) - (int)v4;
-    while ( *v4 == *(int *)((char *)(v4) + v5) )
+    v3 = 0; /*0x4f28ef*/
+    if ( v2 <= 0 ) /*0x4f28f3*/
+      return 1; /*0x4f2913*/
+    v4 = (_DWORD *)*(this + 1); /*0x4f28f5*/
+    v5 = *(_DWORD *)(a2 + 4) - (_DWORD)v4; /*0x4f28fb*/
+    while ( *v4 == *(_DWORD *)((char *)v4 + v5) ) /*0x4f2904*/
     {
-    ++v3;
-    ++v4;
-    if ( v3 >= v2 )
-    return 1;
+      ++v3; /*0x4f2906*/
+      ++v4; /*0x4f2907*/
+      if ( v3 >= v2 ) /*0x4f290c*/
+        return 1; /*0x4f290c*/
     }
   }
-    return 0;
-}
+  return 0; /*0x4f290e*/
 }
 } // namespace gamemd
 
@@ -2654,49 +2654,48 @@ char HouseClass_24::AddRef(int a2)
 namespace gamemd {
 char HouseClass_24::Release(int a2, unsigned int * a3)
 {
-{
-    int *v4;
-    int v6;
-    int i;
-    if ( a2 )
+  _DWORD *v4; // edi
+  int v6; // ecx
+  int i; // eax
+
+  if ( a2 ) /*0x4f292c*/
   {
-    this->IsInitialized = 0;
-    if ( a3 )
-    v4 = a3;
+    *((_BYTE *)this + 12) = 0; /*0x4f2936*/
+    if ( a3 ) /*0x4f293c*/
+      v4 = a3; /*0x4f2952*/
     else
-    v4 = __2_YAPAXI_Z(4 * a2);
-    this->IsInitialized = 1;
-    if ( v4 )
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4f294e*/
+    *((_BYTE *)this + 12) = 1; /*0x4f2956*/
+    if ( v4 ) /*0x4f295a*/
     {
-    if ( this->HouseClass_24_field_0x4 )
+      if ( *((_DWORD *)this + 1) ) /*0x4f2965*/
       {
-    v6 = this->HouseClass_24_field_0x8;
-    if ( a2 < v6 )
-    v6 = a2;
-    for ( i = 0; i < v6; v4[i - 1] = *(int *)(this->HouseClass_24_field_0x4 + 4 * i - 4) )
-    ++i;
-    if ( this->IsAllocated )
+        v6 = *((_DWORD *)this + 2); /*0x4f296c*/
+        if ( a2 < v6 ) /*0x4f2971*/
+          v6 = a2; /*0x4f2973*/
+        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(*((_DWORD *)this + 1) + 4 * i - 4) ) /*0x4f2979*/
+          ++i; /*0x4f297e*/
+        if ( *((_BYTE *)this + 13) ) /*0x4f298b*/
         {
-    __3_YAXPAX_Z(*((void **)(this) + 1));
-    this->HouseClass_24_field_0x4 = 0;
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4f2996*/
+          *((_DWORD *)this + 1) = 0; /*0x4f299e*/
         }
       }
-    this->HouseClass_24_field_0x4 = v4;
-    this->HouseClass_24_field_0x8 = a2;
-    this->IsAllocated = a3 == 0;
-    return 1;
+      *((_DWORD *)this + 1) = v4; /*0x4f29a7*/
+      *((_DWORD *)this + 2) = a2; /*0x4f29af*/
+      *((_BYTE *)this + 13) = a3 == 0; /*0x4f29b2*/
+      return 1; /*0x4f29b8*/
     }
     else
     {
-    return 0;
+      return 0; /*0x4f295f*/
     }
   }
-    else
+  else
   {
-    this->ddtor();
-    return 1;
+    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 12))(this); /*0x4f29c2*/
+    return 1; /*0x4f29c8*/
   }
-}
 }
 } // namespace gamemd
 
@@ -2704,15 +2703,13 @@ char HouseClass_24::Release(int a2, unsigned int * a3)
 namespace gamemd {
 void HouseClass_24::ddtor()
 {
-{
-    if ( this->HouseClass_24_field_0x4 && this->IsAllocated )
+  if ( *(_DWORD *)(this + 4) && *(_BYTE *)(this + 13) ) /*0x4f29dd*/
   {
-    __3_YAXPAX_Z(*(void **)(this + 4));
-    this->HouseClass_24_field_0x4 = 0;
+    __3_YAXPAX_Z(*(void **)(this + 4)); /*0x4f29e3*/
+    *(_DWORD *)(this + 4) = 0; /*0x4f29eb*/
   }
-    this->IsAllocated = 0;
-    this->HouseClass_24_field_0x8 = 0;
-}
+  *(_BYTE *)(this + 13) = 0; /*0x4f29ee*/
+  *(_DWORD *)(this + 8) = 0; /*0x4f29f1*/
 }
 } // namespace gamemd
 
@@ -2720,23 +2717,22 @@ void HouseClass_24::ddtor()
 namespace gamemd {
 int HouseClass_24::Read(unsigned int * a2)
 {
-{
-    int result;
-    int v3;
-    int *i;
-    if ( !(unsigned char)this->HouseClass_24_field_0xC )
-    return 0;
-    v3 = this->HouseClass_24_field_0x8;
-    result = 0;
-    if ( v3 <= 0 )
-    return -1;
-    for ( i = *(int **)(this + 4); *i != *a2; ++i )
+  int result; // eax
+  int v3; // edx
+  _DWORD *i; // ecx
+
+  if ( !*(_BYTE *)(this + 12) ) /*0x4f2a00*/
+    return 0; /*0x4f2a08*/
+  v3 = *(_DWORD *)(this + 8); /*0x4f2a0e*/
+  result = 0; /*0x4f2a11*/
+  if ( v3 <= 0 ) /*0x4f2a15*/
+    return -1; /*0x4f2a2c*/
+  for ( i = *(_DWORD **)(this + 4); *i != *a2; ++i ) /*0x4f2a1b*/
   {
-    if ( ++result >= v3 )
-    return -1;
+    if ( ++result >= v3 ) /*0x4f2a2a*/
+      return -1; /*0x4f2a2a*/
   }
-    return result;
-}
+  return result; /*0x4f2a0a*/
 }
 } // namespace gamemd
 
@@ -2744,12 +2740,10 @@ int HouseClass_24::Read(unsigned int * a2)
 namespace gamemd {
 unsigned int HouseClass_24::Write(int a2)
 {
-{
-    if ( (unsigned char)this->HouseClass_24_field_0xC )
-    return (unsigned int)(a2 - this->HouseClass_24_field_0x4) >> 2;
-    else
-    return 0;
-}
+  if ( *(_BYTE *)(this + 12) ) /*0x4f2a40*/
+    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x4f2a55*/
+  else
+    return 0; /*0x4f2a47*/
 }
 } // namespace gamemd
 
@@ -2757,10 +2751,8 @@ unsigned int HouseClass_24::Write(int a2)
 namespace gamemd {
 unsigned int * HouseClass::vt_placeholder_09()
 {
-{
-    ++this->vtable2;
-    return this;
-}
+  ++*(this + 2); /*0x4f2b42*/
+  return this; /*0x4f2b45*/
 }
 } // namespace gamemd
 
@@ -2768,10 +2760,8 @@ unsigned int * HouseClass::vt_placeholder_09()
 namespace gamemd {
 unsigned int * HouseClass::vt_placeholder_10()
 {
-{
-    --this->vtable2;
-    return this;
-}
+  --*(this + 2); /*0x4f2b52*/
+  return this; /*0x4f2b55*/
 }
 } // namespace gamemd
 
@@ -2779,21 +2769,20 @@ unsigned int * HouseClass::vt_placeholder_10()
 namespace gamemd {
 VectorClass * HouseClass_24::QueryInterface(char a2)
 {
-{
-    void *v3;
-    v3 = (void *)this->Items;
-    *(void**)this = &vt_VectorClass_GraphicMenuItem;
-    if ( v3 && this->IsAllocated )
+  void *v3; // eax
+
+  v3 = (void *)*(this + 1); /*0x4f2b63*/
+  *this = &VectorClass<GraphicMenuItem *>::`vftable'; /*0x4f2b66*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x4f2b70*/
   {
-    __3_YAXPAX_Z(v3);
-    this->Items = 0;
+    __3_YAXPAX_Z(v3); /*0x4f2b78*/
+    *(this + 1) = 0; /*0x4f2b80*/
   }
-    this->IsAllocated = 0;
-    this->Capacity = 0;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (VectorClass *)this;
-}
+  *((_BYTE *)this + 13) = 0; /*0x4f2b8b*/
+  *(this + 2) = 0; /*0x4f2b91*/
+  if ( (a2 & 1) != 0 ) /*0x4f2b98*/
+    __3_YAXPAX_Z(this); /*0x4f2b9b*/
+  return this; /*0x4f2ba5*/
 }
 } // namespace gamemd
 
@@ -2801,48 +2790,47 @@ VectorClass * HouseClass_24::QueryInterface(char a2)
 namespace gamemd {
 int HouseClass::QueryInterface(CCINIClass * aP0, const void * a1, unsigned int * a2)
 {
-{
-    char *v4;
-    char *v5;
-    int *p_INIClass_field_2C;
-    if ( !a2 )
-    return -2147467261;
-    *a2 = 0;
-    if ( !memcmp(a1, &IID_IUnknown, 0x10u) )
-    *a2 = aP0;
-    if ( !memcmp(a1, &IID_IHouse, 0x10u) )
+  int v4; // ecx
+  int v5; // ecx
+  int v6; // ecx
+
+  if ( !a2 ) /*0x4f6836*/
+    return -2147467261; /*0x4f6838*/
+  *a2 = 0; /*0x4f6859*/
+  if ( !memcmp(a1, &IID_IUnknown, 0x10u) ) /*0x4f685f*/
+    *a2 = aP0; /*0x4f6863*/
+  if ( !memcmp(a1, &IID_IHouse, 0x10u) ) /*0x4f6874*/
   {
-    if ( aP0 )
-    v4 = &aP0->__pad_20[4];
+    if ( aP0 ) /*0x4f687a*/
+      v4 = aP0 + 36; /*0x4f687c*/
     else
-    v4 = 0;
-    *a2 = v4;
+      v4 = 0; /*0x4f6881*/
+    *a2 = v4; /*0x4f6883*/
   }
-    if ( !memcmp(a1, &IID_IPublicHouse, 0x10u) )
+  if ( !memcmp(a1, &IID_IPublicHouse, 0x10u) ) /*0x4f6893*/
   {
-    if ( aP0 )
-    v5 = &aP0->__pad_20[8];
+    if ( aP0 ) /*0x4f6899*/
+      v5 = aP0 + 40; /*0x4f689b*/
     else
-    v5 = 0;
-    *a2 = v5;
+      v5 = 0; /*0x4f68a0*/
+    *a2 = v5; /*0x4f68a2*/
   }
-    if ( !memcmp(a1, &DataGlobal_7F7CD0, 0x10u) )
+  if ( !memcmp(a1, &unk_7F7CD0, 0x10u) ) /*0x4f68b2*/
   {
-    if ( aP0 )
-    p_INIClass_field_2C = &aP0->INIClass_field_2C;
+    if ( aP0 ) /*0x4f68b8*/
+      v6 = aP0 + 44; /*0x4f68ba*/
     else
-    p_INIClass_field_2C = 0;
-    *a2 = p_INIClass_field_2C;
+      v6 = 0; /*0x4f68bf*/
+    *a2 = v6; /*0x4f68c1*/
   }
-    if ( !memcmp(a1, &IID_IPersist, 0x10u) )
-    *a2 = aP0;
-    if ( !memcmp(a1, &IID_IPersistStream, 0x10u) )
-    *a2 = aP0;
-    if ( !*a2 )
-    return -2147467262;
-    (*(void (__stdcall **)(CCINIClass *))(*(int *)aP0->__pad_0 + 4))(aP0);
-    return 0;
-}
+  if ( !memcmp(a1, &IID_IPersist, 0x10u) ) /*0x4f68d1*/
+    *a2 = aP0; /*0x4f68d6*/
+  if ( !memcmp(a1, &IID_IPersistStream, 0x10u) ) /*0x4f68e6*/
+    *a2 = aP0; /*0x4f68ed*/
+  if ( !*a2 ) /*0x4f68ef*/
+    return -2147467262; /*0x4f68f4*/
+  (*(void (__stdcall **)(int))(*(_DWORD *)aP0 + 4))(aP0); /*0x4f68ff*/
+  return 0; /*0x4f683d*/
 }
 } // namespace gamemd
 
@@ -2850,11 +2838,13 @@ int HouseClass::QueryInterface(CCINIClass * aP0, const void * a1, unsigned int *
 namespace gamemd {
 double HouseClass::GiveTiberium_Storage(AbstractClass * aP1, BuildingClass * aP2)
 {
-{
-    this->siloMoney = Math::RoundToInt(*(float *)&aP1 * 5.0 + (double)(int)this->siloMoney);
-    this->balance = Math::RoundToInt( (double)*(int *)(*(int *)(*(int *)&g_OverlayTypeConfig[31988] + 4 * (int)aP2) + 184) * *(float *)(this->relatedTagsCapacity + 328) * *(float *)&aP1 + (double)(int)this->balance);
-    return *(float *)&aP1;
-}
+  *(this + 5434) = Math::RoundToInt(aP1 * 5.0 + (double)(int)*(this + 5434)); /*0x4f9628*/
+  *(this + 195) = Math::RoundToInt( /*0x4f965d*/
+                    (double)*(int *)(*(_DWORD *)&BuildingClass_InstanceArray->gap0[4 * aP2] + 184)
+                  * *(float *)(*(this + 13) + 328)
+                  * aP1
+                  + (double)(int)*(this + 195));
+  return aP1; /*0x4f9664*/
 }
 } // namespace gamemd
 
@@ -2862,43 +2852,42 @@ double HouseClass::GiveTiberium_Storage(AbstractClass * aP1, BuildingClass * aP2
 namespace gamemd {
 char HouseClass::UpdateAllSilos(int a2, int a3)
 {
-{
-    int v3;
-    int v5;
-    double v6;
-    int v7;
-    int i;
-    int v9;
-    v3 = 0;
-    if ( a3 )
-    v3 = Math::RoundToInt((double)a2 / (double)a3 * 4.0 + 0.5);
-    v5 = 0;
-    if ( this->totalStorage )
+  int v3; // esi
+  int v5; // eax
+  double v6; // st7
+  int v7; // ebx
+  int i; // esi
+  int v9; // ecx
+
+  v3 = 0; /*0x4f9976*/
+  if ( a3 ) /*0x4f997d*/
+    v3 = Math::RoundToInt((double)a2 / (double)a3 * 4.0 + 0.5); /*0x4f9998*/
+  v5 = 0; /*0x4f99a0*/
+  if ( *(_DWORD *)(this + 784) ) /*0x4f999a*/
   {
-    v6 = Float4::Sum((float *)(this + 764));
-    v5 = Math::RoundToInt(v6 / (double)this->totalStorage * 4.0 + 0.5);
+    v6 = Float4::Sum((float *)(this + 764)); /*0x4f99ac*/
+    v5 = Math::RoundToInt(v6 / (double)*(int *)(this + 784) * 4.0 + 0.5); /*0x4f99c3*/
   }
-    if ( v3 != v5 )
+  if ( v3 != v5 ) /*0x4f99ca*/
   {
-    v7 = this->bunkersCount;
-    for ( i = 0; i < v7; ++i )
+    v7 = *(_DWORD *)(this + 120); /*0x4f99cc*/
+    for ( i = 0; i < v7; ++i ) /*0x4f99d3*/
     {
-    v5 = this->absorbersCount;
-    v9 = *(int *)(v5 + 4 * i);
-    if ( v9 )
+      v5 = *(_DWORD *)(this + 108); /*0x4f99d5*/
+      v9 = *(_DWORD *)(v5 + 4 * i); /*0x4f99d8*/
+      if ( v9 ) /*0x4f99dd*/
       {
-    LOBYTE(v5) = *(char *)(v9 + 129);
-    if ( !(char)v5 )
+        LOBYTE(v5) = *(_BYTE *)(v9 + 129); /*0x4f99df*/
+        if ( !(_BYTE)v5 ) /*0x4f99e7*/
         {
-    LOBYTE(v5) = *(char *)(*(int *)(v9 + 1312) + 5800);
-    if ( (char)v5 )
-    LOBYTE(v5) = (*(int (__thiscall **)(int, int))(*(int *)(v9) + 292))(v9, 2);
+          LOBYTE(v5) = *(_BYTE *)(*(_DWORD *)(v9 + 1312) + 5800); /*0x4f99ef*/
+          if ( (_BYTE)v5 ) /*0x4f99f7*/
+            LOBYTE(v5) = (*(int (__thiscall **)(int, int))(*(_DWORD *)v9 + 292))(v9, 2); /*0x4f99fd*/
         }
       }
     }
   }
-    return v5;
-}
+  return v5; /*0x4f9a08*/
 }
 } // namespace gamemd
 
@@ -2906,9 +2895,7 @@ char HouseClass::UpdateAllSilos(int a2, int a3)
 namespace gamemd {
 int HouseClass::MakeAlly(int a2, char a3)
 {
-{
-    return HouseClass::HandleAlliance((int)this, *(int *)&HouseClass_Array->__pad_0[4 * a2], a3);
-}
+  return HouseClass::HandleAlliance((int)this, *(_DWORD *)&HouseClass_Array->gap0[4 * a2], a3); /*0x4f9b67*/
 }
 } // namespace gamemd
 
@@ -2916,58 +2903,57 @@ int HouseClass::MakeAlly(int a2, char a3)
 namespace gamemd {
 unsigned int * HouseClass::SDDTORAllAndTriggers()
 {
-{
-    int v1;
-    int *v3;
-    int *v4;
-    int *result;
-    int v6;
-    int v7;
-    v1 = 0;
-    if ( g_SidebarState > 0 )
+  int v1; // esi
+  _DWORD *v3; // eax
+  _DWORD *v4; // ecx
+  _DWORD *result; // eax
+  int v6; // esi
+  int v7; // ecx
+
+  v1 = 0; /*0x4fb926*/
+  if ( g_SidebarState > 0 ) /*0x4fb92d*/
   {
-    v3 = g_TechnoClass_Count;
-    do
+    v3 = g_TechnoClass_Count; /*0x4fb92f*/
+    do /*0x4fb959*/
     {
-    v4 = (int *)v3[v1];
-    if ( (int *)v4[135] == this )
+      v4 = (_DWORD *)v3[v1]; /*0x4fb934*/
+      if ( (_DWORD *)v4[135] == this ) /*0x4fb93d*/
       {
-    if ( v4 )
+        if ( v4 ) /*0x4fb941*/
         {
-    (*(void (__thiscall **)(int *, int))(*v4 + 32))(v4, 1);
-    v3 = g_TechnoClass_Count;
+          (*(void (__thiscall **)(_DWORD *, int))(*v4 + 32))(v4, 1); /*0x4fb947*/
+          v3 = g_TechnoClass_Count; /*0x4fb94a*/
         }
-    --v1;
+        --v1; /*0x4fb94f*/
       }
-    ++v1;
+      ++v1; /*0x4fb956*/
     }
-    while ( v1 < g_SidebarState );
+    while ( v1 < g_SidebarState ); /*0x4fb959*/
   }
-    result = (int *)g_ProductionQueueState;
-    v6 = 0;
-    if ( g_ProductionQueueState > 0 )
+  result = (_DWORD *)g_ProductionQueueState; /*0x4fb95b*/
+  v6 = 0; /*0x4fb960*/
+  if ( g_ProductionQueueState > 0 ) /*0x4fb964*/
   {
-    result = g_TriggerClassCapacity;
-    do
+    result = g_TriggerClassCapacity; /*0x4fb966*/
+    do /*0x4fb99b*/
     {
-    if ( *(int *)(*(int *)(result[v6] + 36) + 164) == this->relatedTagsCapacity )
+      if ( *(_DWORD *)(*(_DWORD *)(result[v6] + 36) + 164) == *(this + 13) ) /*0x4fb97c*/
       {
-    v7 = result[v6];
-    if ( v7 )
+        v7 = result[v6]; /*0x4fb97e*/
+        if ( v7 ) /*0x4fb983*/
         {
-    (*(void (__thiscall **)(int, int))(*(int *)(v7) + 32))(v7, 1);
-    result = g_TriggerClassCapacity;
+          (*(void (__thiscall **)(int, int))(*(_DWORD *)v7 + 32))(v7, 1); /*0x4fb989*/
+          result = g_TriggerClassCapacity; /*0x4fb98c*/
         }
-    --v6;
+        --v6; /*0x4fb991*/
       }
-    ++v6;
+      ++v6; /*0x4fb998*/
     }
-    while ( v6 < g_ProductionQueueState );
+    while ( v6 < g_ProductionQueueState ); /*0x4fb99b*/
   }
-    if ( this )
-    return (int *)this->getMovementSpeed(1);
-    return result;
-}
+  if ( this ) /*0x4fb99f*/
+    return (_DWORD *)(*(int (__thiscall **)(_DWORD *, int))(*this + 32))(this, 1); /*0x4fb9a7*/
+  return result; /*0x4fb9aa*/
 }
 } // namespace gamemd
 
@@ -2975,30 +2961,52 @@ unsigned int * HouseClass::SDDTORAllAndTriggers()
 namespace gamemd {
 char HouseClass::DroppedFlag(UnitClass * aP1, int a3)
 {
-{
-    MouseClass *v3;
-    HouseClass *v5;
-    void *v6;
-    char v7;
-    void *v8;
-    int productionFactory_plants_capacity;
-    int v11;
-    int v12;
-    v3 = (MouseClass *)aP1;
-    if ( !LayerClass::CoordinatesLegal(&DataGlobal_87F7E8, (IUnknown *)aP1) )
-    return 0;
-    HouseClass::IsCellOccupied((int)this, (IUnknown *)this->ourFlagCoords, a3);
-    v5 = (HouseClass *)this->relatedTagsCapacity;
-    aP1 = (UnitClass *)v3->field_0;
-    productionFactory_plants_capacity = v5->productionFactory_plants_capacity;
-    v6 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (short *)&aP1);
-    v7 = HouseClass::MarkCellBuildable((int)v6, productionFactory_plants_capacity);
-    if ( v7 || (a3 = 0, aP1 = (UnitClass *)*LayerClass::Pathfinding_Find( &DataGlobal_87F7E8, 0, &v12, (short *)v3, 1, -1, 0, 0, 1, 1, 0, 0, 0, 1, (short *)&a3, 0, 0), aP1 != *(UnitClass **)&g_NetworkPlayerBuffer[6492]) && (v11 = *(int *)(this->relatedTagsCapacity + 184), v8 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (short *)&aP1), (v7 = HouseClass::MarkCellBuildable((int)v8, v11)) != 0) )
+  __int16 *v3; // edi
+  int v5; // eax
+  void *v6; // eax
+  char v7; // bl
+  void *v8; // eax
+  int v10; // [esp-8h] [ebp-14h]
+  int v11; // [esp-8h] [ebp-14h]
+  int v12; // [esp+8h] [ebp-4h] BYREF
+
+  v3 = aP1; /*0x4fbf63*/
+  if ( !LayerClass::CoordinatesLegal(&MapClass_Instance, aP1) ) /*0x4fbf6f*/
+    return 0; /*0x4fc055*/
+  HouseClass::IsCellOccupied((int)this, *(this + 5367), a3); /*0x4fbf8b*/
+  v5 = *(this + 13); /*0x4fbf92*/
+  aP1 = *(__int16 **)v3; /*0x4fbf95*/
+  v10 = *(_DWORD *)(v5 + 184); /*0x4fbfa3*/
+  v6 = CellCoord::To_CellObj(&MapClass_Instance, (__int16 *)&aP1); /*0x4fbfaa*/
+  v7 = HouseClass::MarkCellBuildable((int)v6, v10); /*0x4fbfb6*/
+  if ( v7 /*0x4fc034*/
+    || (a3 = 0,
+        aP1 = (__int16 *)*LayerClass::Pathfinding_Find(
+                           &MapClass_Instance,
+                           0,
+                           &v12,
+                           v3,
+                           1,
+                           -1,
+                           0,
+                           0,
+                           1,
+                           1,
+                           0,
+                           0,
+                           0,
+                           1,
+                           (__int16 *)&a3,
+                           0,
+                           0),
+        aP1 != (__int16 *)g_ControlGroupState)
+    && (v11 = *(_DWORD *)(*(this + 13) + 184),
+        v8 = CellCoord::To_CellObj(&MapClass_Instance, (__int16 *)&aP1),
+        (v7 = HouseClass::MarkCellBuildable((int)v8, v11)) != 0) )
   {
-    this->ourFlagCoords = (int)CellCoord::To_CellObj(&DataGlobal_87F7E8, (short *)&aP1);
+    *(this + 5367) = (int)CellCoord::To_CellObj(&MapClass_Instance, (__int16 *)&aP1); /*0x4fc045*/
   }
-    return v7;
-}
+  return v7; /*0x4fc04e*/
 }
 } // namespace gamemd
 
@@ -3006,14 +3014,12 @@ char HouseClass::DroppedFlag(UnitClass * aP1, int a3)
 namespace gamemd {
 char HouseClass::PickedUpFlag(ObjectClass * aP1, char a3)
 {
-{
-    if ( !aP1 || aP1->inLimbo )
-    return 0;
-    HouseClass::IsCellOccupied((int)this, (IUnknown *)this->ourFlagCoords, a3);
-    HouseClass::SetPrimaryFactory(aP1, *(int *)(this->relatedTagsCapacity + 184));
-    this->ourFlagCoords = (int)aP1;
-    return 1;
-}
+  if ( !aP1 || *(_BYTE *)(aP1 + 129) ) /*0x4fc06c*/
+    return 0; /*0x4fc0a8*/
+  HouseClass::IsCellOccupied((int)this, *(this + 5367), a3); /*0x4fc084*/
+  HouseClass::SetPrimaryFactory((_DWORD *)aP1, *(_DWORD *)(*(this + 13) + 184)); /*0x4fc095*/
+  *(this + 5367) = aP1; /*0x4fc09a*/
+  return 1; /*0x4fc0a0*/
 }
 } // namespace gamemd
 
@@ -3021,9 +3027,7 @@ char HouseClass::PickedUpFlag(ObjectClass * aP1, char a3)
 namespace gamemd {
 void HouseClass::AcquiredThreatNode()
 {
-{
-    this->hasThreatNode = 1;
-}
+  *(this + 507) = 1; /*0x509130*/
 }
 } // namespace gamemd
 
@@ -3031,13 +3035,12 @@ void HouseClass::AcquiredThreatNode()
 namespace gamemd {
 char HouseClass::ReshroudMap()
 {
-{
-    char result;
-    result = this->__pad_5778[2];
-    if ( !result )
-    return ShroudClass::Reset(&DataGlobal_87F7E8, this);
-    return result;
-}
+  char result; // al
+
+  result = *(this + 22394); /*0x50bd10*/
+  if ( !result ) /*0x50bd18*/
+    return ShroudClass::Reset(&MapClass_Instance, (int)this); /*0x50bd20*/
+  return result; /*0x50bd25*/
 }
 } // namespace gamemd
 
@@ -3045,9 +3048,7 @@ char HouseClass::ReshroudMap()
 namespace gamemd {
 BOOL HouseClass::GainedPoweredCenter(int a2)
 {
-{
-    return this->poweredUnitCenters > 0;
-}
+  return *(this + 182) > 0; /*0x50e1bd*/
 }
 } // namespace gamemd
 
@@ -3055,7 +3056,7 @@ BOOL HouseClass::GainedPoweredCenter(int a2)
 namespace gamemd {
 int HouseClass::COMStub_Ret1_1(int a1)
 {
-return 1;
+  return 1; /*0x50e345*/
 }
 } // namespace gamemd
 
@@ -3063,7 +3064,7 @@ return 1;
 namespace gamemd {
 int HouseClass::COMStub_Ret1_2(int a1)
 {
-return 1;
+  return 1; /*0x50e355*/
 }
 } // namespace gamemd
 
@@ -3071,7 +3072,7 @@ return 1;
 namespace gamemd {
 char HouseClass::IonSensitivesShouldBeOffline()
 {
-return 0;
+  return 0; /*0x53a132*/
 }
 } // namespace gamemd
 
@@ -3079,34 +3080,36 @@ return 0;
 namespace gamemd {
 char HouseClass::Set()
 {
-{
-    short *v2;
-    int *Value;
-    int v4;
-    int v6;
-    LOBYTE(v2) = (*(int (__stdcall **)(int))(this->vtable1 + 16))(this + 4);
-    if ( (char)v2 )
+  _WORD *v2; // eax
+  _DWORD *Value; // eax
+  int v4; // ecx
+  int v6; // [esp+Ch] [ebp-4h] BYREF
+
+  LOBYTE(v2) = (*(int (__stdcall **)(int))(*(_DWORD *)(this + 4) + 16))(this + 4); /*0x54b98b*/
+  if ( (_BYTE)v2 ) /*0x54b990*/
   {
-    (*(void (__thiscall **)(int, int, int))(**(int **)(this + 12) + 1348))( this->vtable3, 0, 1072693248);
-    Value = ProgressTimer::GetValue((short *)(this->vtable3 + 904), &v6);
-    this->repairStationsCount.Set_SyncLog(Value);
-    v4 = this->relatedTags;
-    this->absorbersCapacity = 0;
-    this->bunkersCount = 0;
-    this->bunkers = 0;
-    this->bunkersCapacity = 0;
-    this->occupiables = v4;
-    LOBYTE(v2) = HouseClass::IonSensitivesShouldBeOffline();
-    if ( !(char)v2 )
+    (*(void (__thiscall **)(_DWORD, _DWORD, int))(**(_DWORD **)(this + 12) + 1348))( /*0x54b9a4*/
+      *(_DWORD *)(this + 12),
+      0,
+      1072693248);
+    Value = ProgressTimer::GetValue((_WORD *)(*(_DWORD *)(this + 12) + 904), &v6); /*0x54b9b8*/
+    FacingClass::Set_SyncLog((char *)(this + 84), Value); /*0x54b9c1*/
+    v4 = *(_DWORD *)(this + 44); /*0x54b9c6*/
+    *(_DWORD *)(this + 112) = 0; /*0x54b9cc*/
+    *(_DWORD *)(this + 120) = 0; /*0x54b9cf*/
+    *(_DWORD *)(this + 116) = 0; /*0x54b9d2*/
+    *(_DWORD *)(this + 124) = 0; /*0x54b9d5*/
+    *(_DWORD *)(this + 128) = v4; /*0x54b9d8*/
+    LOBYTE(v2) = HouseClass::IonSensitivesShouldBeOffline(); /*0x54b9e4*/
+    if ( !(_BYTE)v2 ) /*0x54b9ec*/
     {
-    v2 = (short *)(*(int (__thiscall **)(int, int *))(**(int **)(this + 12) + 756))(this->vtable3, &v6);
-    if ( *v2 == DataGlobal_ABC588 && v2[1] == DataGlobal_ABC58A )
-    LOBYTE(v2) = GadgetGrid::InsertItem(g_CellClassManager, this->vtable3);
-    this->unitRepairStations = 1;
+      v2 = (_WORD *)(*(int (__thiscall **)(_DWORD, int *))(**(_DWORD **)(this + 12) + 756))(*(_DWORD *)(this + 12), &v6); /*0x54b9f8*/
+      if ( *v2 == dword_ABC588 && v2[1] == MEMORY[0xABC58A] ) /*0x54ba15*/
+        LOBYTE(v2) = GadgetGrid::InsertItem(g_CellClassManager, *(_DWORD *)(this + 12)); /*0x54ba20*/
+      *(_DWORD *)(this + 80) = 1; /*0x54ba25*/
     }
   }
-    return (char)v2;
-}
+  return (char)v2; /*0x54ba2c*/
 }
 } // namespace gamemd
 
@@ -3114,17 +3117,14 @@ char HouseClass::Set()
 namespace gamemd {
 int HouseClass::GetStatus(IUnknown * aP1)
 {
-{
-    int v2;
-    if ( this == (IUnknown *)15 || this == (IUnknown *)16 )
-    return 2;
-    if ( this == (IUnknown *)1 || this == (IUnknown *)40 || this == (IUnknown *)2 || this == (IUnknown *)3 )
-    return 3;
-    if ( this == (IUnknown *)6 || this == (IUnknown *)7 )
-    return GetHouseTechLevel((int)this, v2) == 5;
-    if ( this == (IUnknown *)57 || this == (IUnknown *)32 || this == (IUnknown *)31 )
-    return 1;
-    return -1;
-}
+  if ( this == (void *)15 || this == (void *)16 ) /*0x6abc68*/
+    return 2; /*0x6abcbf*/
+  if ( this == (void *)1 || this == (void *)40 || this == (void *)2 || this == (void *)3 ) /*0x6abc7c*/
+    return 3; /*0x6abcb7*/
+  if ( this == (void *)6 || this == (void *)7 ) /*0x6abc86*/
+    return GetHouseTechLevel() == 5; /*0x6abcb2*/
+  if ( this == (void *)57 || this == (void *)32 || this == (void *)31 ) /*0x6abc95*/
+    return 1; /*0x6abc9d*/
+  return -1; /*0x6abc9a*/
 }
 } // namespace gamemd

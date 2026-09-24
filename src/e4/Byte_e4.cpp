@@ -5,8 +5,6 @@
 // 0x4F4C20
 unsigned char * Byte::Zero()
 {
-{
-    *(void**)this = 0;
-    return this;
-}
+  *this = 0; /*0x4f4c22*/
+  return this; /*0x4f4c25*/
 }

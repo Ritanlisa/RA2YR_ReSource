@@ -6,44 +6,92 @@
 namespace gamemd {
 AbstractClass * * UnholyAlliance_GetResult()
 {
-// (no pseudocode — ASM-only function)
-} // namespace gamemd
-}
+  char v2; // bl
+  int v3; // edi
+  _DWORD *v4; // ebp
+  int v5; // esi
+  void *v6; // eax
+  int *v7; // esi
+  _WORD *CurrentOption; // eax
+  __int16 v9; // cx
+  __int16 v10; // ax
+  int v11; // edx
+  int v12; // eax
+  __int16 *v13; // eax
+  int v15; // [esp+8h] [ebp-10h] BYREF
+  _DWORD v16[3]; // [esp+Ch] [ebp-Ch] BYREF
 
+  v2 = 0; /*0x5cb450*/
+  v3 = g_RulesClass_Instance->AICaptureLowMoney[1] - 1; /*0x5cb452*/
+  if ( v3 >= 0 ) /*0x5cb453*/
+  {
+    v4 = ppv; /*0x5cb45a*/
+    do /*0x5cb51b*/
+    {
+      v5 = *(_DWORD *)(g_RulesClass_Instance->AICaptureLowPower[2] + 4 * v3); /*0x5cb46b*/
+      if ( v5 ) /*0x5cb470*/
+      {
+        v6 = __2_YAPAXI_Z(0x8E8u); /*0x5cb47e*/
+        if ( v6 && (v7 = (int *)UnitClass::Construct((int)v6, v5, v4)) != 0 ) /*0x5cb497*/
+        {
+          CurrentOption = HouseClass::GetCurrentOption(v4, &ppv); /*0x5cb4a4*/
+          v9 = *CurrentOption + 3; /*0x5cb4b0*/
+          v10 = CurrentOption[1] + 3; /*0x5cb4b4*/
+          if ( v3 /*0x5cb4ea*/
+            || (v11 = v10,
+                v12 = *v7,
+                v16[0] = (v9 << 8) + 128,
+                v16[1] = (v11 << 8) + 128,
+                v16[2] = 0,
+                !(*(unsigned __int8 (__thiscall **)(int *, _DWORD *, _DWORD))(v12 + 216))(v7, v16, 0)) )
+          {
+            v13 = (__int16 *)HouseClass::GetCurrentOption(v4, &v15); /*0x5cb4fd*/
+            if ( !FindInfantryDeployPosition(v7, v13, 3) ) /*0x5cb506*/
+            {
+              v2 = 1; /*0x5cb515*/
+              (*(void (__thiscall **)(int *, int))(*v7 + 32))(v7, 1); /*0x5cb517*/
+            }
+          }
+        }
+        else
+        {
+          v2 = 1; /*0x5cb499*/
+        }
+      }
+      else
+      {
+        v2 = 1; /*0x5cb472*/
+      }
+      --v3; /*0x5cb51a*/
+    }
+    while ( v3 >= 0 ); /*0x5cb51b*/
+  }
+  return v2 == 0; /*0x5cb525*/
+}
+}
 // 0x5CB540
 UnholyAlliance * UnholyAlliance::QueryInterface(char a2)
 {
-{
-  *this = &vt_UnholyAlliance; /*0x5cb543*/
+  *this = &UnholyAlliance::`vftable'; /*0x5cb543*/
   MultiplayerGameMode::Dtor(this); /*0x5cb549*/
   if ( (a2 & 1) != 0 ) /*0x5cb553*/
     __3_YAXPAX_Z(this); /*0x5cb556*/
-  return (UnholyAlliance *)this; /*0x5cb560*/
+  return this; /*0x5cb560*/
 }
-}
-
 // 0x5CB3F0
 char UnholyAlliance::Read()
 {
-{
-    Bases = 1;
-    return 1;
+  Bases = 1; /*0x5cb3f2*/
+  return 1; /*0x5cb3f7*/
 }
-}
-
 // 0x5CB400
 BOOL UnholyAlliance::Write(MPCooperative * aP0)
 {
-{
-    return HouseClass_Player[29964] && ScenarioClass::MissionStubReturnZero2(aP0);
+  return Bases && ScenarioClass::MissionStubReturnZero2(aP0); /*0x5cb41c*/
 }
-}
-
 // 0x5CB430
 char UnholyAlliance::Seek()
 {
-{
-    Bases = 1;
-    return 1;
-}
+  Bases = 1; /*0x5cb432*/
+  return 1; /*0x5cb437*/
 }

@@ -842,7 +842,6 @@ void GetCapacity();  // 0x45AC70 sig=csp
 void QueryInterface();  // 0x45AC90 sig=csp
 void Add();  // 0x45ACE0 sig=csp
 void Constructor_VectorClass_Reestablish();  // 0x45AD30 sig=csp
-void Construct(void* a1);  // 0x45AE50 sig=csp
 void sub_45AFA0();  // 0x45AFA0 sig=ida-proto
 void sub_45AFD0();  // 0x45AFD0 sig=ida-proto
 void sub_45AFF0();  // 0x45AFF0 sig=ida-proto

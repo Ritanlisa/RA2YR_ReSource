@@ -115,7 +115,6 @@ LABEL_11:
 namespace gamemd {
 void* __usercall CIpow_Helper_Helper(double a1@<st0> a1)
 {
-{
   _ST6 = a1; /*0x7c91a5*/
   __asm { frndint } /*0x7c91a7*/
   if ( _ST6 == a1 ) /*0x7c91b1*/
@@ -124,5 +123,4 @@ void* __usercall CIpow_Helper_Helper(double a1@<st0> a1)
     __asm { frndint } /*0x7c91bd*/
   }
 }
-} // namespace gamemd
 }

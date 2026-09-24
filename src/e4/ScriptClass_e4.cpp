@@ -7,13 +7,13 @@
 namespace gamemd {
 int ScriptClass::ddtor(int a1, unsigned int * a2)
 {
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 1123264070;
-  a2[1] = 298977161;
-  a2[2] = 1610655148;
-  a2[3] = -1252326136;
-  return 0;
+  if ( !a2 ) /*0x6915f6*/
+    return -2147467261; /*0x6915f8*/
+  *a2 = 1123264070; /*0x691606*/
+  a2[1] = 298977161; /*0x69160e*/
+  a2[2] = 1610655148; /*0x691617*/
+  a2[3] = -1252326136; /*0x691620*/
+  return 0; /*0x6915fd*/
 }
 } // namespace gamemd
 
@@ -21,24 +21,23 @@ int ScriptClass::ddtor(int a1, unsigned int * a2)
 namespace gamemd {
 int ScriptClass::LoadState(AbstractClass * aP0, int aP1)
 {
-{
-    int result;
-    result = AbstractClass::SaveLoad_Prefix_0(aP0, (AbstractClass *)aP1);
-    if ( result >= 0 )
+  int result; // eax
+
+  result = AbstractClass::SaveLoad_Prefix_0(aP0, aP1); /*0x69163b*/
+  if ( result >= 0 ) /*0x691642*/
   {
-    if ( aP0 )
+    if ( aP0 ) /*0x691646*/
     {
-    AbstractClass::InitVtables(aP0, (IUnknown *)&aP1);
-    *(int *)aP0->__pad_0 = (unsigned int)vt_ScriptClass;
-    *(int *)&aP0->__pad_0[4] = (unsigned int)vt_ScriptClass;
-    *(int *)&aP0->__pad_0[8] = (unsigned int)vt_ScriptClass;
-    *(int *)&aP0->__pad_0[12] = &vt_ScriptClass;
+      AbstractClass::InitVtables(aP0, (int)&aP1); /*0x69164f*/
+      *aP0 = &ScriptClass::`vftable'; /*0x691654*/
+      aP0[1] = &ScriptClass::`vftable'; /*0x69165a*/
+      aP0[2] = &ScriptClass::`vftable'; /*0x691661*/
+      aP0[3] = &ScriptClass::`vftable'; /*0x691668*/
     }
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&DataGlobal_B05488[27784], (MouseClass *)&aP0[1]);
-    return 0;
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP0 + 9); /*0x691678*/
+    return 0; /*0x69167d*/
   }
-    return result;
-}
+  return result; /*0x69167f*/
 }
 } // namespace gamemd
 
@@ -46,13 +45,12 @@ int ScriptClass::LoadState(AbstractClass * aP0, int aP1)
 namespace gamemd {
 int ScriptClass::SaveState(TechnoTypeClass * aP0, int * a1, int aP2)
 {
-{
-    int result;
-    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
-    if ( result >= 0 )
-    return 0;
-    return result;
-}
+  int result; // eax
+
+  result = AbstractClass::SaveLoad_Prefix(aP0, a1, aP2); /*0x69169f*/
+  if ( result >= 0 ) /*0x6916a6*/
+    return 0; /*0x6916a8*/
+  return result; /*0x6916aa*/
 }
 } // namespace gamemd
 
@@ -60,7 +58,7 @@ int ScriptClass::SaveState(TechnoTypeClass * aP0, int * a1, int aP2)
 namespace gamemd {
 int ScriptClass::StubReturn26()
 {
-return 26;
+  return 26; /*0x691ec5*/
 }
 } // namespace gamemd
 
@@ -68,6 +66,6 @@ return 26;
 namespace gamemd {
 int ScriptClass::StubReturn48()
 {
-return 48;
+  return 48; /*0x691ed5*/
 }
 } // namespace gamemd

@@ -6,58 +6,57 @@
 namespace gamemd {
 int sub_7AC500(int a1)
 {
-{
-    int v2;
-    int v3;
-    int *v4;
-    int *v5;
-    unsigned int v6;
-    if ( !a1 )
-    return -2147024809;
-    v2 = *(int *)(a1 + 16);
-    if ( v2 && *(int *)v2 )
+  int v2; // esi
+  int v3; // eax
+  _DWORD *v4; // esi
+  _DWORD *v5; // ebp
+  unsigned int v6; // esi
+
+  if ( !a1 ) /*0x7ac507*/
+    return -2147024809; /*0x7ac509*/
+  v2 = *(_DWORD *)(a1 + 16); /*0x7ac514*/
+  if ( v2 && *(_DWORD *)v2 ) /*0x7ac51b*/
   {
-    do
+    do /*0x7ac546*/
     {
-    v3 = *(int *)(v2 + 16);
-    if ( v3 )
-    (*(void (__stdcall **)(int))(*(int *)(v3) + 8))(*(int *)(v2 + 16));
-    *(int *)(v2 + 16) = 0;
-    (*(void (__stdcall **)(int))(v2 + 32))(0);
-    if ( *(int *)a1 == 100 )
-    v2 += 28;
-    else
-    v2 += 36;
+      v3 = *(_DWORD *)(v2 + 16); /*0x7ac520*/
+      if ( v3 ) /*0x7ac525*/
+        (*(void (__stdcall **)(_DWORD))(*(_DWORD *)v3 + 8))(*(_DWORD *)(v2 + 16)); /*0x7ac52a*/
+      *(_DWORD *)(v2 + 16) = 0; /*0x7ac52f*/
+      (*(void (__stdcall **)(_DWORD))(v2 + 32))(0); /*0x7ac536*/
+      if ( *(_DWORD *)a1 == 100 ) /*0x7ac53c*/
+        v2 += 28; /*0x7ac53e*/
+      else
+        v2 += 36; /*0x7ac543*/
     }
-    while ( *(int *)v2 );
+    while ( *(_DWORD *)v2 ); /*0x7ac546*/
   }
-    DeleteCriticalSection((LPCRITICAL_SECTION)(a1 + 28));
-    DeleteCriticalSection((LPCRITICAL_SECTION)(a1 + 52));
-    DeleteCriticalSection((LPCRITICAL_SECTION)(a1 + 76));
-    v4 = *(int **)(a1 + 128);
-    if ( v4 )
+  DeleteCriticalSection((LPCRITICAL_SECTION)(a1 + 28)); /*0x7ac555*/
+  DeleteCriticalSection((LPCRITICAL_SECTION)(a1 + 52)); /*0x7ac55b*/
+  DeleteCriticalSection((LPCRITICAL_SECTION)(a1 + 76)); /*0x7ac561*/
+  v4 = *(_DWORD **)(a1 + 128); /*0x7ac563*/
+  if ( v4 ) /*0x7ac56b*/
   {
-    do
+    do /*0x7ac583*/
     {
-    ((void (__stdcall *)(int))*v4)(v4[1]);
-    v5 = (int *)v4[2];
-    __3_YAXPAX_Z(v4);
-    v4 = v5;
+      ((void (__stdcall *)(_DWORD))*v4)(v4[1]); /*0x7ac571*/
+      v5 = (_DWORD *)v4[2]; /*0x7ac573*/
+      __3_YAXPAX_Z(v4); /*0x7ac577*/
+      v4 = v5; /*0x7ac57f*/
     }
-    while ( v5 );
+    while ( v5 ); /*0x7ac583*/
   }
-    if ( *(int *)(a1 + 24) && *(char *)(a1 + 108) )
+  if ( *(_DWORD *)(a1 + 24) && *(_BYTE *)(a1 + 108) ) /*0x7ac58c*/
   {
-    if ( *(int *)(a1 + 120) )
+    if ( *(_DWORD *)(a1 + 120) ) /*0x7ac593*/
     {
-    v6 = 0;
-    do
-    HeapDestroy(*(HANDLE *)(*(int *)(a1 + 120) + 4 * v6++));
-    while ( v6 <= *(int *)(a1 + 116) );
+      v6 = 0; /*0x7ac5a0*/
+      do /*0x7ac5b1*/
+        HeapDestroy(*(HANDLE *)(*(_DWORD *)(a1 + 120) + 4 * v6++)); /*0x7ac5a9*/
+      while ( v6 <= *(_DWORD *)(a1 + 116) ); /*0x7ac5b1*/
     }
-    HeapDestroy(*(HANDLE *)(a1 + 24));
+    HeapDestroy(*(HANDLE *)(a1 + 24)); /*0x7ac5b7*/
   }
-    return 0;
-}
+  return 0; /*0x7ac50e*/
 }
 } // namespace gamemd

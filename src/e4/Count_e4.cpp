@@ -5,15 +5,16 @@
 // 0x408E70
 AbstractClass * * Count::DecrementRefCountsAudio()
 {
-{
+  int v1; // eax
   int result; // eax
+  int v3; // edx
 
-  int v1 = this->q01C - 1; /*0x408e73*/
-  this->q01C = v1; /*0x408e76*/
+  v1 = *(this + 7) - 1; /*0x408e73*/
+  *(this + 7) = v1; /*0x408e76*/
   if ( v1 < 0 ) /*0x408e79*/
-    this->q01C = 0; /*0x408e7b*/
+    *(this + 7) = 0; /*0x408e7b*/
   result = *this; /*0x408e82*/
-  int v3 = *(_DWORD *)(*this + 152) - 1; /*0x408e8a*/
+  v3 = *(_DWORD *)(*this + 152) - 1; /*0x408e8a*/
   *(_DWORD *)(*this + 152) = v3; /*0x408e8d*/
   if ( v3 < 0 ) /*0x408e93*/
   {
@@ -22,23 +23,24 @@ AbstractClass * * Count::DecrementRefCountsAudio()
   }
   return result; /*0x408ea1*/
 }
-}
-
 // 0x46F6D0
 int Count::SetupAllCountriesLobby()
 {
-{
+  void *v1; // ecx
   wchar_t **v2; // esi
   int ResourceID2; // ebp
   BOOL result; // eax
-  SessionClass *v5; // ebx
+  wchar_t *v5; // ebx
+  int v6; // edi
   int PlayerSide; // esi
+  int *v8; // [esp+10h] [ebp-10h]
+  int v10; // [esp+18h] [ebp-8h]
   HWND hWnd; // [esp+1Ch] [ebp-4h]
 
-  void * v1 = 0; /*0x46f6da*/
+  v1 = 0; /*0x46f6da*/
   v2 = (wchar_t **)&g_NetworkPlayerName; /*0x46f6dc*/
-  int v10 = 0; /*0x46f6e2*/
-  int * v8 = &g_NetworkPlayerName; /*0x46f6e6*/
+  v10 = 0; /*0x46f6e2*/
+  v8 = &g_NetworkPlayerName; /*0x46f6e6*/
   do /*0x46f7ff*/
   {
     ResourceID2 = GetResourceID2CSF(v1); /*0x46f6ef*/
@@ -47,7 +49,7 @@ int Count::SetupAllCountriesLobby()
     if ( result ) /*0x46f70c*/
     {
       v5 = *v2; /*0x46f718*/
-      CampaignClass *v6 = -2; /*0x46f71c*/
+      v6 = -2; /*0x46f71c*/
       if ( g_GameStateFlags && (g_GameMode_Current == 3 || g_GameMode_Current == 4) ) /*0x46f730*/
         v6 = (*(int (__thiscall **)(int))(*(_DWORD *)g_GameStateFlags + 40))(g_GameStateFlags); /*0x46f737*/
       if ( (unsigned __int8)Player::IsObserver(v5) ) /*0x46f73b*/
@@ -100,43 +102,31 @@ int Count::SetupAllCountriesLobby()
   while ( (int)v2 < (int)&g_PlayerNameListEnd ); /*0x46f7ff*/
   return result; /*0x46f805*/
 }
-}
-
 // 0x5F1EA0
 int Count::GetCountQueue()
 {
-{
+  int v1; // eax
 
-  int v1 = this->q038; /*0x5f1ea0*/
+  v1 = *(this + 14); /*0x5f1ea0*/
   if ( v1 ) /*0x5f1ea5*/
     return *(_DWORD *)(*(_DWORD *)(v1 + 4) + 40); /*0x5f1eaa*/
   else
     return 0; /*0x5f1eae*/
 }
-}
-
 // 0x76F080
 int Count::Get()
 {
-{
-  return this->q004; /*0x76f083*/
+  return *(this + 1); /*0x76f083*/
 }
-}
-
 // 0x76F160
 unsigned int * Count::Release()
 {
-{
-  ++this->q008; /*0x76f162*/
+  ++*(this + 2); /*0x76f162*/
   return this; /*0x76f165*/
 }
-}
-
 // 0x76F170
 unsigned int * Count::ddtor()
 {
-{
-  --this->q008; /*0x76f172*/
+  --*(this + 2); /*0x76f172*/
   return this; /*0x76f175*/
-}
 }

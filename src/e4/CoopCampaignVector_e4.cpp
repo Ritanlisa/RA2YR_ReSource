@@ -5,53 +5,46 @@
 // 0x5C5750
 unsigned int CoopCampaignVector::Write(int a2)
 {
-{
-    if ( (unsigned char)this->CoopCampaignVector_field_0x0C )
-    return (unsigned int)(a2 - this->CoopCampaignVector_field_0x04) >> 2;
-    else
-    return 0;
+  if ( *(_BYTE *)(this + 12) ) /*0x5c5750*/
+    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x5c5765*/
+  else
+    return 0; /*0x5c5757*/
 }
-}
-
 // 0x5C5940
 VectorClass * CoopCampaignVector::QueryInterface(char a2)
 {
-{
-    void *v3;
-    v3 = (void *)this->Items;
-    *(void**)this = &vt_VectorClass_CoopCampaignClass;
-    if ( v3 && this->IsAllocated )
-  {
-    __3_YAXPAX_Z(v3);
-    this->Items = 0;
-  }
-    this->IsAllocated = 0;
-    this->Capacity = 0;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (VectorClass *)this;
-}
-}
+  void *v3; // eax
 
+  v3 = (void *)*(this + 1); /*0x5c5943*/
+  *this = &VectorClass<CoopCampaignClass *>::`vftable'; /*0x5c5946*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x5c5950*/
+  {
+    __3_YAXPAX_Z(v3); /*0x5c5958*/
+    *(this + 1) = 0; /*0x5c5960*/
+  }
+  *((_BYTE *)this + 13) = 0; /*0x5c596b*/
+  *(this + 2) = 0; /*0x5c5971*/
+  if ( (a2 & 1) != 0 ) /*0x5c5978*/
+    __3_YAXPAX_Z(this); /*0x5c597b*/
+  return this; /*0x5c5985*/
+}
 // 0x5C5A80
 unsigned int * CoopCampaignVector::Construct(MultiplayerGameMode * aP1, MultiplayerGameMode * aP2)
 {
-{
-    this->Items = 0;
-    this->Capacity = aP1;
-    this->IsInitialized = 1;
-    this->IsAllocated = 0;
-    *(void**)this = &vt_VectorClass_CoopCampaignClass;
-    if ( aP1 )
+  *(this + 1) = 0; /*0x5c5a8b*/
+  *(this + 2) = aP1; /*0x5c5a8e*/
+  *((_BYTE *)this + 12) = 1; /*0x5c5a91*/
+  *((_BYTE *)this + 13) = 0; /*0x5c5a95*/
+  *this = &VectorClass<CoopCampaignClass *>::`vftable'; /*0x5c5a98*/
+  if ( aP1 ) /*0x5c5a9e*/
   {
-    if ( aP2 )
+    if ( aP2 ) /*0x5c5aa6*/
     {
-    this->Items = aP2;
-    return this;
+      *(this + 1) = aP2; /*0x5c5aa8*/
+      return this; /*0x5c5aae*/
     }
-    this->Items = __2_YAPAXI_Z(4 * (int)aP1);
-    this->IsAllocated = 1;
+    *(this + 1) = __2_YAPAXI_Z(4 * aP1); /*0x5c5abd*/
+    *((_BYTE *)this + 13) = 1; /*0x5c5ac0*/
   }
-    return this;
-}
+  return this; /*0x5c5aad*/
 }

@@ -6,14 +6,14 @@
 namespace gamemd {
 int sub_53AB70()
 {
-{
-
-  char * v0 = (char *)g_ScenarioClass_Instance + 4680; /*0x53ab7b*/
-  unk_A9FABC = 1; /*0x53ab81*/
-  unk_827FCC = 30; /*0x53ab8b*/
-  unk_827FC8 = (int)g_CurrentFrame; /*0x53ab95*/
-  *((_DWORD *)g_ScenarioClass_Instance + 1170) = g_CurrentFrame; /*0x53ab9a*/
+  char *v0; // edx
   int v2; // [esp+Ch] [ebp-8h]
+
+  v0 = (char *)g_ScenarioClass_Instance + 4680; /*0x53ab7b*/
+  NukeFlash_Status = 1; /*0x53ab81*/
+  NukeFlash_Duration = 30; /*0x53ab8b*/
+  NukeFlash_StartTime = (int)g_CurrentFrame; /*0x53ab95*/
+  *((_DWORD *)g_ScenarioClass_Instance + 1170) = g_CurrentFrame; /*0x53ab9a*/
   *((_DWORD *)v0 + 1) = v2; /*0x53aba8*/
   *((_DWORD *)v0 + 2) = 1; /*0x53abad*/
   *((_DWORD *)g_ScenarioClass_Instance + 3404) = *((_DWORD *)g_ScenarioClass_Instance + 3416); /*0x53abbd*/
@@ -22,23 +22,20 @@ int sub_53AB70()
     1000 * *((_DWORD *)g_ScenarioClass_Instance + 3418) / 100,
     1000 * *((_DWORD *)g_ScenarioClass_Instance + 3419) / 100,
     1);
-  return MapClass::MarkForRedraw(&DataGlobal_87F7E8, 1); /*0x53ac4a*/
+  return MapClass::MarkForRedraw(&MapClass_Instance, 1); /*0x53ac4a*/
 }
-} // namespace gamemd
 }
-
 // 0x5C0080
 namespace gamemd {
 char sub_5C0080(char ** a1, unsigned char * a2)
 {
-{
-    char result;
-    if ( g_BigIntPool )
-    return 0;
-    g_BigIntPool = (int)a1;
-    result = VQAClass::AdvanceFrame(*a1, a2);
-    g_BigIntPool = 0;
-    return result;
-}
+  char result; // al
+
+  if ( g_BigIntPool ) /*0x5c0087*/
+    return 0; /*0x5c0089*/
+  g_BigIntPool = (int)a1; /*0x5c008c*/
+  result = VQAClass::AdvanceFrame(*a1, a2); /*0x5c0095*/
+  g_BigIntPool = 0; /*0x5c009a*/
+  return result; /*0x5c008b*/
 }
 } // namespace gamemd

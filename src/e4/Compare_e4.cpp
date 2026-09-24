@@ -5,13 +5,13 @@
 // 0x46DC90
 int Compare::Field96(const void * a1, const void * a2)
 {
-{
+  int v2; // eax
+  int v3; // ecx
 
-  int v2 = *(_DWORD *)(*(_DWORD *)a1 + 96); /*0x46dc9c*/
-  int v3 = *(_DWORD *)(*(_DWORD *)a2 + 96); /*0x46dc9f*/
+  v2 = *(_DWORD *)(*(_DWORD *)a1 + 96); /*0x46dc9c*/
+  v3 = *(_DWORD *)(*(_DWORD *)a2 + 96); /*0x46dc9f*/
   if ( v2 == v3 )
     return 0; /*0x46dca6*/
   else
     return v2 <= v3 ? 1 : -1;
-}
 }

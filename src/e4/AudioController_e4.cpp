@@ -7,12 +7,24 @@ namespace ra2 {
 namespace game {
 int AudioController::LoadThemeBank(int a1, char * a2, signed int * a3, char * a4, signed int * a5)
 {
-{
+  signed int v7; // edx
+  unsigned int v8; // eax
+  const void *v9; // esi
+  int v10; // eax
+  signed int v11; // edx
+  int v12; // ecx
+  unsigned int v13; // eax
+  int v14; // eax
+  int v15; // eax
+  signed int v17; // [esp+10h] [ebp-14h]
+  signed int v18; // [esp+14h] [ebp-10h]
+  signed int v20; // [esp+1Ch] [ebp-8h]
+  signed int v21; // [esp+20h] [ebp-4h]
 
-  signed int v17 = 0; /*0x409df7*/
-  signed int v18 = 0; /*0x409dfb*/
-  signed int v20 = 0; /*0x409dff*/
-  signed int v21 = 0; /*0x409e03*/
+  v17 = 0; /*0x409df7*/
+  v18 = 0; /*0x409dfb*/
+  v20 = 0; /*0x409dff*/
+  v21 = 0; /*0x409e03*/
   if ( !*(_DWORD *)(a1 + 144) || !*(_DWORD *)(a1 + 124) ) /*0x409e0d*/
     return 0; /*0x409fd0*/
   if ( a5 ) /*0x409e1c*/
@@ -24,15 +36,15 @@ int AudioController::LoadThemeBank(int a1, char * a2, signed int * a3, char * a4
     switch ( *(_DWORD *)(a1 + 116) ) /*0x409e3e*/
     {
       case 0: /*0x409e3e*/
-        signed int v7 = *(_DWORD *)(a1 + 132); /*0x409e45*/
+        v7 = *(_DWORD *)(a1 + 132); /*0x409e45*/
         if ( v7 && a4 ) /*0x409e51*/
         {
-          unsigned int v8 = *(_DWORD *)(a1 + 132); /*0x409e57*/
+          v8 = *(_DWORD *)(a1 + 132); /*0x409e57*/
           if ( v7 > v17 ) /*0x409e5b*/
             v8 = v17; /*0x409e5d*/
           if ( !v8 ) /*0x409e61*/
             goto LABEL_25; /*0x409e61*/
-          const void * v9 = a4; /*0x409e78*/
+          v9 = a4; /*0x409e78*/
           a4 += v8; /*0x409e7a*/
           qmemcpy((void *)(*(_DWORD *)(a1 + 124) + *(_DWORD *)(a1 + 128) - v7), v9, v8); /*0x409e7f*/
           v20 += v8; /*0x409e9c*/
@@ -42,21 +54,21 @@ int AudioController::LoadThemeBank(int a1, char * a2, signed int * a3, char * a4
         }
         else
         {
-          int v10 = *(_DWORD *)(a1 + 120); /*0x409ebb*/
+          v10 = *(_DWORD *)(a1 + 120); /*0x409ebb*/
           *(_DWORD *)(a1 + 132) = 0; /*0x409ebe*/
           *(_DWORD *)(a1 + 116) = v10; /*0x409ec4*/
         }
         continue; /*0x409eb6*/
       case 1: /*0x409e3e*/
-        signed int v11 = *(_DWORD *)(a1 + 152); /*0x409ecc*/
+        v11 = *(_DWORD *)(a1 + 152); /*0x409ecc*/
         if ( !v11 ) /*0x409ed4*/
         {
-          int v12 = *(_DWORD *)(a1 + 120); /*0x409ed6*/
+          v12 = *(_DWORD *)(a1 + 120); /*0x409ed6*/
           *(_DWORD *)(a1 + 168) = 0; /*0x409ed9*/
           *(_DWORD *)(a1 + 116) = v12; /*0x409edf*/
           continue; /*0x409ee2*/
         }
-        unsigned int v13 = *(_DWORD *)(a1 + 152); /*0x409eeb*/
+        v13 = *(_DWORD *)(a1 + 152); /*0x409eeb*/
         if ( v11 > v18 ) /*0x409eef*/
           v13 = v18; /*0x409ef1*/
         if ( v13 ) /*0x409ef5*/
@@ -68,7 +80,7 @@ int AudioController::LoadThemeBank(int a1, char * a2, signed int * a3, char * a4
           *(_DWORD *)(a1 + 152) -= v13; /*0x409f45*/
           continue; /*0x409f4d*/
         }
-LABEL_25:
+  LABEL_25:
         if ( a5 ) /*0x409fa8*/
           *a5 = v20; /*0x409fae*/
         if ( a3 ) /*0x409fb6*/
@@ -77,7 +89,7 @@ LABEL_25:
       case 2: /*0x409e3e*/
         if ( !(*(int (__thiscall **)(int))(a1 + 176))(a1) ) /*0x409f5c*/
           return 0; /*0x409f5c*/
-        int v14 = *(_DWORD *)(a1 + 148); /*0x409f5e*/
+        v14 = *(_DWORD *)(a1 + 148); /*0x409f5e*/
         *(_DWORD *)(a1 + 116) = 1; /*0x409f64*/
         *(_DWORD *)(a1 + 152) = v14; /*0x409f6b*/
         *(_DWORD *)(a1 + 120) = 3; /*0x409f71*/
@@ -85,7 +97,7 @@ LABEL_25:
       case 3: /*0x409e3e*/
         if ( !a4 ) /*0x409f7f*/
           goto LABEL_25; /*0x409f7f*/
-        int v15 = *(_DWORD *)(a1 + 172); /*0x409f81*/
+        v15 = *(_DWORD *)(a1 + 172); /*0x409f81*/
         *(_DWORD *)(a1 + 116) = 0; /*0x409f87*/
         *(_DWORD *)(a1 + 128) = v15; /*0x409f8a*/
         *(_DWORD *)(a1 + 132) = v15; /*0x409f90*/
@@ -96,7 +108,6 @@ LABEL_25:
     }
   }
 }
-} // namespace game
 } // namespace ra2
 }
 
@@ -105,34 +116,33 @@ namespace ra2 {
 namespace game {
 void AudioController::GetVolume()
 {
-{
-    void *v0;
-    if ( DataGlobal_B0FCCE )
+  void *v0; // esi
+
+  if ( byte_B0FCCE ) /*0x72d17a*/
   {
-    if ( DataGlobal_B0FCCD )
+    if ( byte_B0FCCD ) /*0x72d182*/
     {
-    v0 = DataGlobal_B0FAB8;
-    if ( DataGlobal_B0FAB8 )
+      v0 = dword_B0FAB8; /*0x72d185*/
+      if ( dword_B0FAB8 ) /*0x72d18d*/
       {
-    FileTreeNode::Destroy(DataGlobal_B0FAB8);
-    __3_YAXPAX_Z(v0);
+        FileTreeNode::Destroy(dword_B0FAB8); /*0x72d191*/
+        __3_YAXPAX_Z(v0); /*0x72d197*/
       }
-    DataGlobal_B0FCCD = 0;
+      byte_B0FCCD = 0; /*0x72d19f*/
     }
-    DataGlobal_B0FAB8 = 0;
-    if ( DataGlobal_B0FCD0 )
+    dword_B0FAB8 = 0; /*0x72d1ab*/
+    if ( dword_B0FCD0 ) /*0x72d1b3*/
     {
-    __3_YAXPAX_Z(DataGlobal_B0FCD0);
-    DataGlobal_B0FCD0 = 0;
+      __3_YAXPAX_Z(dword_B0FCD0); /*0x72d1b6*/
+      dword_B0FCD0 = 0; /*0x72d1be*/
     }
-    if ( DataGlobal_B0FCD4 )
+    if ( dword_B0FCD4 ) /*0x72d1cc*/
     {
-    (**(void (__thiscall ***)(int, int))DataGlobal_B0FCD4)(DataGlobal_B0FCD4, 1);
-    DataGlobal_B0FCD4 = 0;
+      (**(void (__thiscall ***)(int, int))dword_B0FCD4)(dword_B0FCD4, 1); /*0x72d1d2*/
+      dword_B0FCD4 = 0; /*0x72d1d4*/
     }
   }
-    DataGlobal_B0FCCE = 0;
-}
+  byte_B0FCCE = 0; /*0x72d1da*/
 }
 } // namespace game
 } // namespace ra2

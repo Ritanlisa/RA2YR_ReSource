@@ -7,71 +7,73 @@
 namespace gamemd {
 int Debug::ScrollText(CellStruct * aP1)
 {
-{
   char result; // al
-  IUnknown *v5; // ebp
-  IUnknown *v6; // edx
-  IUnknown *v7; // edi
-  IUnknown *v8; // ebx
-  IUnknown *aP2; // [esp+Ch] [ebp-8h]
-  char *i; // [esp+10h] [ebp-4h]
-  char aP1a; // [esp+18h] [ebp+4h]
+  int v4; // eax
+  int v5; // ebp
+  int v6; // edx
+  int v7; // edi
+  int v8; // ebx
+  const char *v9; // eax
+  int v10; // eax
+  _DWORD *v11; // [esp+4h] [ebp-10h]
+  _BYTE *v12; // [esp+8h] [ebp-Ch]
+  int v13; // [esp+Ch] [ebp-8h]
+  const char *i; // [esp+10h] [ebp-4h]
+  char v15; // [esp+18h] [ebp+4h]
 
-  result = *((_BYTE *)&(&g_MatrixTransformState)[22] + 10); /*0x5bd0d0*/
-  if ( *((_BYTE *)&(&g_MatrixTransformState)[22] + 10) ) /*0x5bd0dd*/
+  result = g_MiscFlag; /*0x5bd0d0*/
+  if ( g_MiscFlag ) /*0x5bd0dd*/
   {
-    int v4 = this->u32_2724; /*0x5bd0ef*/
-    v5 = (IUnknown *)(this->u32_271C + v4); /*0x5bd108*/
-    aP2 = (IUnknown *)(this->u32_2720 + this->u32_2728); /*0x5bd10e*/
-    v6 = (IUnknown *)(v4 + this->u32_272C); /*0x5bd112*/
-    this->u8_2734 = 0; /*0x5bd119*/
-    v7 = (IUnknown *)((char *)v5 + strlen((const char *)aP1)); /*0x5bd127*/
-    if ( (int)v7 > (int)v6 ) /*0x5bd12b*/
+    v4 = *(_DWORD *)(this + 10020); /*0x5bd0ef*/
+    v5 = *(_DWORD *)(this + 10012) + v4; /*0x5bd108*/
+    v13 = *(_DWORD *)(this + 10016) + *(_DWORD *)(this + 10024); /*0x5bd10e*/
+    v6 = v4 + *(_DWORD *)(this + 10028); /*0x5bd112*/
+    *(_BYTE *)(this + 10036) = 0; /*0x5bd119*/
+    v7 = v5 + strlen(aP1); /*0x5bd127*/
+    if ( v7 > v6 ) /*0x5bd12b*/
       v7 = v6; /*0x5bd12d*/
     v8 = v5; /*0x5bd131*/
-    if ( (int)v5 < (int)v7 ) /*0x5bd133*/
+    if ( v5 < v7 ) /*0x5bd133*/
     {
-      char * v12 = (char *)aP2 + 20 * (_DWORD)v5 + 5 * (_DWORD)v5 + this; /*0x5bd148*/
-      char * v9 = (char *)((char *)aP1 - (char *)v5); /*0x5bd15c*/
-      _DWORD * v11 = (_DWORD *)(&this->u32_10 * (_DWORD)&aP2->__pad_1D8[20 * (_DWORD)v5 + 28 + 5 * (_DWORD)v5]); /*0x5bd15e*/
-      for ( i = (char *)((char *)aP1 - (char *)v5); ; v9 = i ) /*0x5bd162*/
+      v12 = (_BYTE *)(this + v13 + 20 * v5 + 5 * v5); /*0x5bd148*/
+      v9 = &aP1[-v5]; /*0x5bd15c*/
+      v11 = (_DWORD *)(this + 4 * (v13 + 4 * (5 * v5 + 100) + 5 * v5 + 100)); /*0x5bd15e*/
+      for ( i = &aP1[-v5]; ; v9 = i ) /*0x5bd162*/
       {
-        aP1a = *((_BYTE *)&v8->field_0 + (_DWORD)v9); /*0x5bd16f*/
-        *v12 = Debug_Helper(aP1a); /*0x5bd187*/
-        *v11 = this->u32_2710; /*0x5bd18f*/
-        if ( aP1a == 10 ) /*0x5bd197*/
+        v15 = v9[v8]; /*0x5bd16f*/
+        *v12 = Debug_Helper(v15); /*0x5bd187*/
+        *v11 = *(_DWORD *)(this + 10000); /*0x5bd18f*/
+        if ( v15 == 10 ) /*0x5bd197*/
         {
-          int v10 = this->u32_2720; /*0x5bd199*/
-          this->u32_271C = 0; /*0x5bd19f*/
-          this->u32_2720 = v10 + 1; /*0x5bd1aa*/
+          v10 = *(_DWORD *)(this + 10016); /*0x5bd199*/
+          *(_DWORD *)(this + 10012) = 0; /*0x5bd19f*/
+          *(_DWORD *)(this + 10016) = v10 + 1; /*0x5bd1aa*/
         }
         else
         {
-          ++this->u32_271C; /*0x5bd1b2*/
+          ++*(_DWORD *)(this + 10012); /*0x5bd1b2*/
         }
-        v8 = (IUnknown *)((char *)v8 + 1); /*0x5bd1c0*/
+        ++v8; /*0x5bd1c0*/
         v11 += 25; /*0x5bd1c9*/
         v12 += 25; /*0x5bd1cd*/
-        if ( (int)v8 >= (int)v7 ) /*0x5bd1d1*/
+        if ( v8 >= v7 ) /*0x5bd1d1*/
           break; /*0x5bd1d1*/
       }
     }
-    return Text::DrawRepeated((void *)this, v5, aP2, (char *)v7 - (char *)v5, 1); /*0x5bd1e0*/
+    return Text::DrawRepeated((void *)this, v5, v13, v7 - v5, 1); /*0x5bd1e0*/
   }
   return result; /*0x5bd1e8*/
 }
-} // namespace gamemd
 }
-
 // 0x6E61F0
 namespace gamemd {
 int Debug::AccumFlags()
 {
-{
+  int v1; // esi
   int i; // edi
-
-  int v1 = this->q0A0; /*0x6e61f1*/
   int v3; // eax
+
+  v1 = *(this + 40); /*0x6e61f1*/
   for ( i = 0; v1; i |= v3 ) /*0x6e61fc*/
   {
     v3 = TriggerTypeClass::GetFlags(v1); /*0x6e6200*/
@@ -79,14 +81,12 @@ int Debug::AccumFlags()
   }
   return i; /*0x6e6213*/
 }
-} // namespace gamemd
 }
-
 // 0x4068E0
 namespace gamemd {
 void Debug::Log()
 {
-  ;
+  ; /*0x4068e0*/
 }
 } // namespace gamemd
 
@@ -94,7 +94,7 @@ void Debug::Log()
 namespace gamemd {
 void Debug::Log_0()
 {
-  ;
+  ; /*0x4a4ac0*/
 }
 } // namespace gamemd
 
@@ -102,21 +102,19 @@ void Debug::Log_0()
 namespace gamemd {
 char Debug::Printf()
 {
-{
-    char result;
-    char Buffer[256];
-    int v3;
-    char *Format;
-    char ArgList;
-    result = g_MiscFlag;
-    if ( g_MiscFlag )
+  char result; // al
+  char Buffer[256]; // [esp+0h] [ebp-100h] BYREF
+  va_list va; // [esp+10Ch] [ebp+Ch] BYREF
+
+  va_start(va, Format);
+  result = g_MiscFlag; /*0x5bd1f0*/
+  if ( g_MiscFlag ) /*0x5bd1fd*/
   {
-    vsprintf(Buffer, Format, &ArgList);
-    Buffer[255] = 0;
-    return Debug::ScrollText(v3, Buffer);
+    vsprintf(Buffer, Format, va); /*0x5bd214*/
+    Buffer[255] = 0; /*0x5bd227*/
+    return Debug::ScrollText(Buffer); /*0x5bd230*/
   }
-    return result;
-}
+  return result; /*0x5bd235*/
 }
 } // namespace gamemd
 
@@ -124,18 +122,35 @@ char Debug::Printf()
 namespace gamemd {
 char Debug_Helper(ObjectClass * aP0)
 {
-{
-    char result;
-    result = (char)aP0;
-    switch ( (char)aP0 )
+  char result; // al
+
+  result = aP0; /*0x5bd360*/
+  switch ( aP0 ) /*0x5bd366*/
   {
-    case 0xA: return 32;
-    case 0xB3: return 124;
-    case 0xC4: return 45;
-    case 0xCD: return 61;
-    case 0xDA: case 0xC2: case 0xBF: case 0xC6: case 0xC3: case 0xD1: case 0xC5: case 0xD8: case 0xB5: case 0xC0: case 0xC1: case 0xD9: case 0xD5: case 0xB4: return 43;
+    case 10: /*0x5bd366*/
+      return 32; /*0x5bd368*/
+    case -77: /*0x5bd366*/
+      return 124; /*0x5bd371*/
+    case -60: /*0x5bd366*/
+      return 45; /*0x5bd37a*/
+    case -51: /*0x5bd366*/
+      return 61; /*0x5bd383*/
+    case -38: /*0x5bd366*/
+    case -62: /*0x5bd366*/
+    case -65: /*0x5bd366*/
+    case -58: /*0x5bd366*/
+    case -61: /*0x5bd366*/
+    case -47: /*0x5bd366*/
+    case -59: /*0x5bd366*/
+    case -40: /*0x5bd366*/
+    case -75: /*0x5bd366*/
+    case -64: /*0x5bd366*/
+    case -63: /*0x5bd366*/
+    case -39: /*0x5bd366*/
+    case -43: /*0x5bd366*/
+    case -76: /*0x5bd366*/
+      return 43; /*0x5bd3c0*/
   }
-    return result;
-}
+  return result; /*0x5bd36a*/
 }
 } // namespace gamemd

@@ -6,8 +6,6 @@
 namespace gamemd {
 int sub_7D7C1B(int a1, int a2)
 {
-{
-    return _ld12cvt(a1, a2, &DataGlobal_87D3C0);
-}
+  return _ld12cvt(a1, a2, &unk_87D3C0); /*0x7d7c30*/
 }
 } // namespace gamemd

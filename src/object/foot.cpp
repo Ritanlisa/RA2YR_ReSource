@@ -100,35 +100,67 @@ FootClass::FootClass() noexcept
 // 0x4da530
 Coord * * FootClass::MovementAI()
 {
-{
   char result; // al
+  _DWORD *v3; // eax
+  int v4; // eax
+  _DWORD *v5; // edi
+  int v6; // eax
+  int v7; // edx
+  int v8; // eax
+  int v9; // edx
+  int v10; // ecx
+  int v11; // eax
+  int v12; // edx
+  int v13; // eax
+  int v14; // edx
+  int v15; // eax
+  int v16; // ebp
+  int v17; // edi
+  int v18; // edx
+  int v19; // eax
+  char v20; // al
+  int v21; // edx
+  char v22; // al
+  int v23; // edx
+  int v24; // eax
+  char v25; // al
+  int v26; // edx
+  int v27; // edx
+  int v28; // edx
   int (__stdcall ***v29)(_DWORD, void *, int *); // eax
+  _DWORD *v30; // ebp
+  int v31; // edi
+  int v32; // eax
+  int v33; // eax
+  int v34; // esi
+  int v35; // [esp+54h] [ebp-30h]
+  int v36; // [esp+70h] [ebp-14h] BYREF
   int v37; // [esp+74h] [ebp-10h] BYREF
   int v38; // [esp+78h] [ebp-Ch] BYREF
   int v39; // [esp+7Ch] [ebp-8h]
   int v40; // [esp+80h] [ebp-4h]
-  MovementAI::Begin();
-  result = *(_BYTE *)(a1 + 144);
-  if ( !result )
-    return result;
-  *(_BYTE *)(a1 + 1715) = 0;
-  if ( !((int)g_CurrentFrame % *((_DWORD *)g_RulesClass_Instance + 1538))
+
+  MovementAI::Begin(); /*0x4da539*/
+  result = *(_BYTE *)(a1 + 144); /*0x4da53e*/
+  if ( !result ) /*0x4da548*/
+    return result; /*0x4da548*/
+  *(_BYTE *)(a1 + 1715) = 0; /*0x4da54e*/
+  if ( !((int)g_CurrentFrame % *((_DWORD *)g_RulesClass_Instance + 1538)) /*0x4da593*/
     && !*(_BYTE *)((*(int (__thiscall **)(int))(*(_DWORD *)a1 + 132))(a1) + 3383)
     && !(*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)a1 + 84))(a1)
     && !*(_BYTE *)(a1 + 129) )
   {
-    _DWORD * v3 = (_DWORD *)(*(int (__thiscall **)(int, int *))(*(_DWORD *)a1 + 72))(a1, &v38);
-  int v36; // [esp+70h] [ebp-14h] BYREF
-    LOWORD(v36) = *v3 / 256;
-    HIWORD(v36) = v3[1] / 256;
-    v37 = v36;
-    int v4 = CellCoord::To_CellObj(&v37);
-    v36 = Cell::GetTraversability(v4);
-    if ( v36 > 0 )
+    v3 = (_DWORD *)(*(int (__thiscall **)(int, int *))(*(_DWORD *)a1 + 72))(a1, &v38); /*0x4da5a8*/
+    LOWORD(v36) = *v3 / 256; /*0x4da5bb*/
+    HIWORD(v36) = v3[1] / 256; /*0x4da5d3*/
+    v37 = v36; /*0x4da5dc*/
+    v4 = CellCoord::To_CellObj(&v37); /*0x4da5e6*/
+    v36 = Cell::GetTraversability(v4); /*0x4da5f4*/
+    if ( v36 > 0 ) /*0x4da5f8*/
     {
-      _DWORD * v5 = g_RulesClass_Instance;
-      v36 = Math::RoundToInt((double)v36 * *((double *)g_RulesClass_Instance + 771));
-      result = (*(int (__thiscall **)(int, int *, _DWORD, _DWORD, _DWORD, _DWORD, int, _DWORD))(*(_DWORD *)a1 + 364))(
+      v5 = g_RulesClass_Instance; /*0x4da5fe*/
+      v36 = Math::RoundToInt((double)v36 * *((double *)g_RulesClass_Instance + 771)); /*0x4da610*/
+      result = (*(int (__thiscall **)(int, int *, _DWORD, _DWORD, _DWORD, _DWORD, int, _DWORD))(*(_DWORD *)a1 + 364))( /*0x4da629*/
                  a1,
                  &v36,
                  0,
@@ -137,96 +169,96 @@ Coord * * FootClass::MovementAI()
                  0,
                  1,
                  0);
-      if ( !*(_BYTE *)(a1 + 144) )
-        return result;
+      if ( !*(_BYTE *)(a1 + 144) ) /*0x4da62f*/
+        return result; /*0x4da635*/
     }
   }
-  if ( !*(_BYTE *)(a1 + 981) )
+  if ( !*(_BYTE *)(a1 + 981) ) /*0x4da63b*/
   {
-    if ( *(_BYTE *)((*(int (__thiscall **)(int))(*(_DWORD *)a1 + 132))(a1) + 3434) )
+    if ( *(_BYTE *)((*(int (__thiscall **)(int))(*(_DWORD *)a1 + 132))(a1) + 3434) ) /*0x4da64d*/
     {
-      int v6 = (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 444))(a1);
-      if ( (unsigned __int8)Type::CheckAmbiguity(v6, 1) )
-        *(_BYTE *)(a1 + 981) = 1;
+      v6 = (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 444))(a1); /*0x4da65b*/
+      if ( (unsigned __int8)Type::CheckAmbiguity(v6, 1) ) /*0x4da667*/
+        *(_BYTE *)(a1 + 981) = 1; /*0x4da670*/
     }
   }
-  if ( !*(_DWORD *)(a1 + 1652) )
-    WinAPI::Wrapper(-2147467261);
-  if ( (*(unsigned __int8 (__stdcall **)(_DWORD))(**(_DWORD **)(a1 + 1652) + 128))(*(_DWORD *)(a1 + 1652))
+  if ( !*(_DWORD *)(a1 + 1652) ) /*0x4da677*/
+    WinAPI::Wrapper(-2147467261); /*0x4da684*/
+  if ( (*(unsigned __int8 (__stdcall **)(_DWORD))(**(_DWORD **)(a1 + 1652) + 128))(*(_DWORD *)(a1 + 1652)) /*0x4da6bb*/
     && (*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)a1 + 84))(a1)
     && (unsigned __int8)HouseClass::IsAlliedWith(HouseClass_Player) )
   {
-    int v7 = *(_DWORD *)(a1 + 1628);
-    int v8 = *(_DWORD *)(a1 + 1636);
-    if ( v7 != -1 )
+    v7 = *(_DWORD *)(a1 + 1628); /*0x4da6c8*/
+    v8 = *(_DWORD *)(a1 + 1636); /*0x4da6ce*/
+    if ( v7 != -1 ) /*0x4da6d7*/
     {
-      if ( (int)g_CurrentFrame - v7 >= v8 )
+      if ( (int)g_CurrentFrame - v7 >= v8 ) /*0x4da6e3*/
       {
-LABEL_21:
-        (*(void (__thiscall **)(int, _DWORD, _DWORD, _DWORD, _DWORD))(*(_DWORD *)a1 + 1164))(a1, 0, 0, 0, 0);
-        (*(void (__thiscall **)(int, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD))(*(_DWORD *)a1 + 1160))(a1, 0, 0, 0, 0, 0);
-        if ( *(_DWORD *)(a1 + 612) == (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 456))(a1) )
+  LABEL_21:
+        (*(void (__thiscall **)(int, _DWORD, _DWORD, _DWORD, _DWORD))(*(_DWORD *)a1 + 1164))(a1, 0, 0, 0, 0); /*0x4da6ef*/
+        (*(void (__thiscall **)(int, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD))(*(_DWORD *)a1 + 1160))(a1, 0, 0, 0, 0, 0); /*0x4da706*/
+        if ( *(_DWORD *)(a1 + 612) == (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 456))(a1) ) /*0x4da72a*/
         {
-          int v12 = *(_DWORD *)(a1 + 160);
-          v38 = *(_DWORD *)(a1 + 156);
-          v39 = v12;
-          v40 = *(_DWORD *)(a1 + 164);
-          MapClass::RevealArea2(&v38, *(_DWORD *)(a1 + 608) - 3, *(_DWORD *)(a1 + 608) + 3, 0);
+          v12 = *(_DWORD *)(a1 + 160); /*0x4da750*/
+          v38 = *(_DWORD *)(a1 + 156); /*0x4da753*/
+          v39 = v12; /*0x4da758*/
+          v40 = *(_DWORD *)(a1 + 164); /*0x4da763*/
+          MapClass::RevealArea2(&v38, *(_DWORD *)(a1 + 608) - 3, *(_DWORD *)(a1 + 608) + 3, 0); /*0x4da77b*/
         }
         else
         {
-          int v9 = *(_DWORD *)(a1 + 160);
-          v38 = *(_DWORD *)(a1 + 156);
-          int v10 = *(_DWORD *)(a1 + 608);
-          int v11 = *(_DWORD *)(a1 + 164);
-          v39 = v9;
-          v40 = v11;
-          MapClass::RevealArea2(&v38, 0, v10 + 3, 0);
+          v9 = *(_DWORD *)(a1 + 160); /*0x4da72c*/
+          v38 = *(_DWORD *)(a1 + 156); /*0x4da72f*/
+          v10 = *(_DWORD *)(a1 + 608); /*0x4da733*/
+          v11 = *(_DWORD *)(a1 + 164); /*0x4da73a*/
+          v39 = v9; /*0x4da740*/
+          v40 = v11; /*0x4da745*/
+          MapClass::RevealArea2(&v38, 0, v10 + 3, 0); /*0x4da74e*/
         }
-        int v13 = (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 456))(a1);
-        int v14 = v39;
-        *(_DWORD *)(a1 + 612) = v13;
-        *(_DWORD *)(a1 + 1628) = g_CurrentFrame;
-        *(_DWORD *)(a1 + 1632) = v14;
-        *(_DWORD *)(a1 + 1636) = 15;
-        goto LABEL_25;
+        v13 = (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 456))(a1); /*0x4da784*/
+        v14 = v39; /*0x4da78a*/
+        *(_DWORD *)(a1 + 612) = v13; /*0x4da78e*/
+        *(_DWORD *)(a1 + 1628) = g_CurrentFrame; /*0x4da79e*/
+        *(_DWORD *)(a1 + 1632) = v14; /*0x4da7a4*/
+        *(_DWORD *)(a1 + 1636) = 15; /*0x4da7aa*/
+        goto LABEL_25; /*0x4da7aa*/
       }
-      v8 -= (int)g_CurrentFrame - v7;
+      v8 -= (int)g_CurrentFrame - v7; /*0x4da6e5*/
     }
-    if ( v8 )
-      goto LABEL_25;
-    goto LABEL_21;
+    if ( v8 ) /*0x4da6e9*/
+      goto LABEL_25; /*0x4da6e9*/
+    goto LABEL_21; /*0x4da6e9*/
   }
-LABEL_25:
-  if ( !((int)g_CurrentFrame % 16)
+  LABEL_25:
+  if ( !((int)g_CurrentFrame % 16) /*0x4da7d8*/
     && (*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)a1 + 84))(a1)
     && *(_DWORD *)((*(int (__thiscall **)(int))(*(_DWORD *)a1 + 444))(a1) + 60) )
   {
-    int v35 = *(_DWORD *)(*(int (__thiscall **)(int, int *))(*(_DWORD *)a1 + 440))(a1, &v37);
-    int v15 = (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 444))(a1);
-    TeamClass::Update_0(*(void ***)(v15 + 60), 59, a1, v35, 0, 0);
+    v35 = *(_DWORD *)(*(int (__thiscall **)(int, int *))(*(_DWORD *)a1 + 440))(a1, &v37); /*0x4da7f2*/
+    v15 = (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 444))(a1); /*0x4da7f8*/
+    TeamClass::Update_0(*(void ***)(v15 + 60), 59, a1, v35, 0, 0); /*0x4da801*/
   }
-  int v16 = *(_DWORD *)(a1 + 1336);
-  if ( !*(_DWORD *)(a1 + 1652)
+  v16 = *(_DWORD *)(a1 + 1336); /*0x4da80c*/
+  if ( !*(_DWORD *)(a1 + 1652) /*0x4da850*/
     || *(_BYTE *)(a1 + 973)
     || *(_BYTE *)(a1 + 141)
     || *(_DWORD *)(a1 + 680) && !*(_BYTE *)((*(int (__thiscall **)(int))(*(_DWORD *)a1 + 132))(a1) + 1682)
     || *(_BYTE *)(a1 + 129) )
   {
-    goto LABEL_67;
+    goto LABEL_67; /*0x4da856*/
   }
-  if ( !*(_DWORD *)(a1 + 1652) )
-    WinAPI::Wrapper(-2147467261);
-  result = (*(int (__stdcall **)(_DWORD))(**(_DWORD **)(a1 + 1652) + 64))(*(_DWORD *)(a1 + 1652));
+  if ( !*(_DWORD *)(a1 + 1652) ) /*0x4da85c*/
+    WinAPI::Wrapper(-2147467261); /*0x4da869*/
+  result = (*(int (__stdcall **)(_DWORD))(**(_DWORD **)(a1 + 1652) + 64))(*(_DWORD *)(a1 + 1652)); /*0x4da877*/
   if ( *(_BYTE *)(a1 + 144) )
   {
     if ( a1 )
-      int v17 = (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 44))(a1) == 1 ? a1 : 0;
+      v17 = (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 44))(a1) == 1 ? a1 : 0;
     else
-      v17 = 0;
-    if ( !*(_DWORD *)(a1 + 1652) )
-      WinAPI::Wrapper(-2147467261);
-    if ( ((*(unsigned __int8 (__stdcall **)(_DWORD))(**(_DWORD **)(a1 + 1652) + 128))(*(_DWORD *)(a1 + 1652))
+      v17 = 0; /*0x4da88a*/
+    if ( !*(_DWORD *)(a1 + 1652) ) /*0x4da8a0*/
+      WinAPI::Wrapper(-2147467261); /*0x4da8ad*/
+    if ( ((*(unsigned __int8 (__stdcall **)(_DWORD))(**(_DWORD **)(a1 + 1652) + 128))(*(_DWORD *)(a1 + 1652)) /*0x4da934*/
        && !(*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)a1 + 472))(a1)
        || *(_DWORD *)(a1 + 692)
        && *(_BYTE *)((*(int (__thiscall **)(int))(*(_DWORD *)a1 + 132))(a1) + 912)
@@ -237,1342 +269,213 @@ LABEL_25:
       && !(*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)a1 + 472))(a1)
       && !*(_BYTE *)(a1 + 1709) )
     {
-      goto LABEL_66;
+      goto LABEL_66; /*0x4da934*/
     }
-    if ( *(_DWORD *)((*(int (__thiscall **)(int))(*(_DWORD *)a1 + 132))(a1) + 664) )
+    if ( *(_DWORD *)((*(int (__thiscall **)(int))(*(_DWORD *)a1 + 132))(a1) + 664) ) /*0x4da94a*/
     {
-      if ( !*(_DWORD *)(a1 + 1652) )
-        WinAPI::Wrapper(-2147467261);
-      if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(**(_DWORD **)(a1 + 1652) + 128))(*(_DWORD *)(a1 + 1652))
+      if ( !*(_DWORD *)(a1 + 1652) ) /*0x4da952*/
+        WinAPI::Wrapper(-2147467261); /*0x4da95f*/
+      if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(**(_DWORD **)(a1 + 1652) + 128))(*(_DWORD *)(a1 + 1652)) /*0x4da9af*/
         && !((int)g_CurrentFrame % *(_DWORD *)((*(int (__thiscall **)(int))(*(_DWORD *)a1 + 132))(a1) + 664))
         && !(*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)a1 + 468))(a1)
         && !(*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)a1 + 472))(a1)
         && !*(_BYTE *)(a1 + 1709) )
       {
-        goto LABEL_66;
+        goto LABEL_66; /*0x4da9af*/
       }
     }
-    if ( *(_BYTE *)((*(int (__thiscall **)(int))(*(_DWORD *)a1 + 132))(a1) + 1709)
+    if ( *(_BYTE *)((*(int (__thiscall **)(int))(*(_DWORD *)a1 + 132))(a1) + 1709) /*0x4da9f3*/
       && (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 456))(a1) > 0
       && !(*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)a1 + 468))(a1)
       && !(*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)a1 + 472))(a1)
       && !*(_BYTE *)(a1 + 1709) )
     {
-LABEL_66:
-      ++*(_DWORD *)(a1 + 1336);
+  LABEL_66:
+      ++*(_DWORD *)(a1 + 1336); /*0x4da9fb*/
     }
-LABEL_67:
-    if ( v16 == *(_DWORD *)(a1 + 1336) )
+  LABEL_67:
+    if ( v16 == *(_DWORD *)(a1 + 1336) ) /*0x4daa07*/
     {
-      if ( !*(_DWORD *)(a1 + 1652) )
-        WinAPI::Wrapper(-2147467261);
-      if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(**(_DWORD **)(a1 + 1652) + 128))(*(_DWORD *)(a1 + 1652)) )
-        goto LABEL_136;
+      if ( !*(_DWORD *)(a1 + 1652) ) /*0x4daa09*/
+        WinAPI::Wrapper(-2147467261); /*0x4daa16*/
+      if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(**(_DWORD **)(a1 + 1652) + 128))(*(_DWORD *)(a1 + 1652)) ) /*0x4daa24*/
+        goto LABEL_136; /*0x4daa24*/
     }
-    if ( *(_BYTE *)(a1 + 141)
+    if ( *(_BYTE *)(a1 + 141) /*0x4daa5c*/
       || *(_BYTE *)(a1 + 1061)
       || *(_DWORD *)(a1 + 680) && *(_BYTE *)((*(int (__thiscall **)(int))(*(_DWORD *)a1 + 132))(a1) + 1682) )
     {
-LABEL_136:
-      if ( *(_BYTE *)(a1 + 1340) )
+  LABEL_136:
+      if ( *(_BYTE *)(a1 + 1340) ) /*0x4daafa*/
       {
-        int v19 = *(_DWORD *)(a1 + 1344);
-        if ( !v19 || *(_BYTE *)(a1 + 141) || *(_BYTE *)(a1 + 1061) )
+        v19 = *(_DWORD *)(a1 + 1344); /*0x4dab02*/
+        if ( !v19 || *(_BYTE *)(a1 + 141) || *(_BYTE *)(a1 + 1061) ) /*0x4dab14*/
         {
-          Mixer::ReleaseChannel(a1 + 1348);
-          *(_BYTE *)(a1 + 1340) = 0;
-          *(_DWORD *)(a1 + 1344) = 0;
+          Mixer::ReleaseChannel(a1 + 1348); /*0x4dab2b*/
+          *(_BYTE *)(a1 + 1340) = 0; /*0x4dab30*/
+          *(_DWORD *)(a1 + 1344) = 0; /*0x4dab36*/
         }
         else
         {
-          *(_DWORD *)(a1 + 1344) = v19 - 1;
+          *(_DWORD *)(a1 + 1344) = v19 - 1; /*0x4dab1d*/
         }
       }
     }
     else
     {
-      if ( !*(_BYTE *)(a1 + 1340) && *(int *)((*(int (__thiscall **)(int))(*(_DWORD *)a1 + 132))(a1) + 1284) > 0 )
+      if ( !*(_BYTE *)(a1 + 1340) && *(int *)((*(int (__thiscall **)(int))(*(_DWORD *)a1 + 132))(a1) + 1284) > 0 ) /*0x4daa87*/
       {
-        AudioController::Stop(a1 + 1348);
-        v38 = *(_DWORD *)(a1 + 156);
-        int v18 = *(_DWORD *)a1;
-        v39 = *(_DWORD *)(a1 + 160);
-        v40 = *(_DWORD *)(a1 + 164);
-        (*(int (__thiscall **)(int))(v18 + 132))(a1);
-        Random::State(&Randomizer_Global);
-        StartAudioControllerAt(a1 + 1348);
-        *(_BYTE *)(a1 + 1340) = 1;
+        AudioController::Stop(a1 + 1348); /*0x4daa91*/
+        v38 = *(_DWORD *)(a1 + 156); /*0x4daaa2*/
+        v18 = *(_DWORD *)a1; /*0x4daaa6*/
+        v39 = *(_DWORD *)(a1 + 160); /*0x4daaab*/
+        v40 = *(_DWORD *)(a1 + 164); /*0x4daab2*/
+        (*(int (__thiscall **)(int))(v18 + 132))(a1); /*0x4daab8*/
+        Random::State(&Randomizer_Global); /*0x4daacb*/
+        StartAudioControllerAt(a1 + 1348); /*0x4daae2*/
+        *(_BYTE *)(a1 + 1340) = 1; /*0x4daae7*/
       }
-      *(_DWORD *)(a1 + 1344) = 3;
+      *(_DWORD *)(a1 + 1344) = 3; /*0x4daaee*/
     }
-    char v20 = *(_BYTE *)(a1 + 141);
-    if ( v20 != *(_BYTE *)(a1 + 142) )
+    v20 = *(_BYTE *)(a1 + 141); /*0x4dab3c*/
+    if ( v20 != *(_BYTE *)(a1 + 142) ) /*0x4dab4a*/
     {
-      if ( v20
+      if ( v20 /*0x4dab67*/
         && *(_DWORD *)((*(int (__thiscall **)(int))(*(_DWORD *)a1 + 132))(a1) + 1356) != -1
         && *(_BYTE *)(a1 + 143) )
       {
-        v38 = *(_DWORD *)(a1 + 156);
-        v39 = *(_DWORD *)(a1 + 160);
-        int v21 = *(_DWORD *)a1;
-        v40 = *(_DWORD *)(a1 + 164);
-        (*(void (__thiscall **)(int))(v21 + 132))(a1);
-        StartAudioControllerAt(0);
-        *(_BYTE *)(a1 + 142) = *(_BYTE *)(a1 + 141);
+        v38 = *(_DWORD *)(a1 + 156); /*0x4dab7c*/
+        v39 = *(_DWORD *)(a1 + 160); /*0x4dab85*/
+        v21 = *(_DWORD *)a1; /*0x4dab89*/
+        v40 = *(_DWORD *)(a1 + 164); /*0x4dab8e*/
+        (*(void (__thiscall **)(int))(v21 + 132))(a1); /*0x4dab92*/
+        StartAudioControllerAt(0); /*0x4daba0*/
+        *(_BYTE *)(a1 + 142) = *(_BYTE *)(a1 + 141); /*0x4dabab*/
       }
       else
       {
-        *(_BYTE *)(a1 + 142) = *(_BYTE *)(a1 + 141);
+        *(_BYTE *)(a1 + 142) = *(_BYTE *)(a1 + 141); /*0x4dabbc*/
       }
     }
-    char v22 = *(_BYTE *)(a1 + 973);
-    if ( v22 != *(_BYTE *)(a1 + 974) )
+    v22 = *(_BYTE *)(a1 + 973); /*0x4dabc7*/
+    if ( v22 != *(_BYTE *)(a1 + 974) ) /*0x4dabd5*/
     {
-      if ( v22 )
+      if ( v22 ) /*0x4dabdd*/
       {
-        if ( *(_DWORD *)((*(int (__thiscall **)(int))(*(_DWORD *)a1 + 132))(a1) + 1364) != -1 )
+        if ( *(_DWORD *)((*(int (__thiscall **)(int))(*(_DWORD *)a1 + 132))(a1) + 1364) != -1 ) /*0x4dabf3*/
         {
-          v38 = *(_DWORD *)(a1 + 156);
-          v39 = *(_DWORD *)(a1 + 160);
-          int v23 = *(_DWORD *)a1;
-          v40 = *(_DWORD *)(a1 + 164);
-          (*(void (__thiscall **)(int))(v23 + 132))(a1);
-          StartAudioControllerAt(0);
+          v38 = *(_DWORD *)(a1 + 156); /*0x4dac02*/
+          v39 = *(_DWORD *)(a1 + 160); /*0x4dac0b*/
+          v23 = *(_DWORD *)a1; /*0x4dac0f*/
+          v40 = *(_DWORD *)(a1 + 164); /*0x4dac14*/
+          (*(void (__thiscall **)(int))(v23 + 132))(a1); /*0x4dac18*/
+          StartAudioControllerAt(0); /*0x4dac26*/
         }
-        if ( *(_DWORD *)((*(int (__thiscall **)(int))(*(_DWORD *)a1 + 132))(a1) + 1352) == -1 )
+        if ( *(_DWORD *)((*(int (__thiscall **)(int))(*(_DWORD *)a1 + 132))(a1) + 1352) == -1 ) /*0x4dac3b*/
         {
-          if ( *((_DWORD *)g_RulesClass_Instance + 130) != -1 )
+          if ( *((_DWORD *)g_RulesClass_Instance + 130) != -1 ) /*0x4dac86*/
           {
-            v38 = *(_DWORD *)(a1 + 156);
-            v39 = *(_DWORD *)(a1 + 160);
-            v40 = *(_DWORD *)(a1 + 164);
-            StartAudioControllerAt(a1 + 1348);
+            v38 = *(_DWORD *)(a1 + 156); /*0x4dac94*/
+            v39 = *(_DWORD *)(a1 + 160); /*0x4dac9b*/
+            v40 = *(_DWORD *)(a1 + 164); /*0x4daca9*/
+            StartAudioControllerAt(a1 + 1348); /*0x4dacb7*/
           }
         }
         else
         {
-          v38 = *(_DWORD *)(a1 + 156);
-          v39 = *(_DWORD *)(a1 + 160);
-          int v24 = *(_DWORD *)a1;
-          v40 = *(_DWORD *)(a1 + 164);
-          (*(void (__thiscall **)(int))(v24 + 132))(a1);
-          StartAudioControllerAt(a1 + 1348);
+          v38 = *(_DWORD *)(a1 + 156); /*0x4dac49*/
+          v39 = *(_DWORD *)(a1 + 160); /*0x4dac57*/
+          v24 = *(_DWORD *)a1; /*0x4dac5b*/
+          v40 = *(_DWORD *)(a1 + 164); /*0x4dac60*/
+          (*(void (__thiscall **)(int))(v24 + 132))(a1); /*0x4dac66*/
+          StartAudioControllerAt(a1 + 1348); /*0x4dac74*/
         }
       }
-      else if ( !*(_BYTE *)(a1 + 1340) )
+      else if ( !*(_BYTE *)(a1 + 1340) ) /*0x4dacbe*/
       {
-        Mixer::ReleaseChannel(a1 + 1348);
+        Mixer::ReleaseChannel(a1 + 1348); /*0x4daccc*/
       }
-      *(_BYTE *)(a1 + 974) = *(_BYTE *)(a1 + 973);
+      *(_BYTE *)(a1 + 974) = *(_BYTE *)(a1 + 973); /*0x4dacd7*/
     }
-    char v25 = *(_BYTE *)(a1 + 1061);
-    if ( v25 != *(_BYTE *)(a1 + 1062) )
+    v25 = *(_BYTE *)(a1 + 1061); /*0x4dacdd*/
+    if ( v25 != *(_BYTE *)(a1 + 1062) ) /*0x4daceb*/
     {
-      if ( v25 )
+      if ( v25 ) /*0x4dacf3*/
       {
-        Mixer::ReleaseChannel(a1 + 1348);
-        if ( *(_DWORD *)((*(int (__thiscall **)(int))(*(_DWORD *)a1 + 132))(a1) + 1360) != -1
+        Mixer::ReleaseChannel(a1 + 1348); /*0x4dad01*/
+        if ( *(_DWORD *)((*(int (__thiscall **)(int))(*(_DWORD *)a1 + 132))(a1) + 1360) != -1 /*0x4dad1f*/
           && (unsigned __int8)House::IsHumanPlayer(*(_DWORD *)(a1 + 540)) )
         {
-          v38 = *(_DWORD *)(a1 + 156);
-          v39 = *(_DWORD *)(a1 + 160);
-          int v26 = *(_DWORD *)a1;
-          v40 = *(_DWORD *)(a1 + 164);
-          (*(void (__thiscall **)(int))(v26 + 132))(a1);
-          StartAudioControllerAt(0);
+          v38 = *(_DWORD *)(a1 + 156); /*0x4dad35*/
+          v39 = *(_DWORD *)(a1 + 160); /*0x4dad3e*/
+          v26 = *(_DWORD *)a1; /*0x4dad42*/
+          v40 = *(_DWORD *)(a1 + 164); /*0x4dad47*/
+          (*(void (__thiscall **)(int))(v26 + 132))(a1); /*0x4dad4b*/
+          StartAudioControllerAt(0); /*0x4dad59*/
         }
-        if ( *(_DWORD *)((*(int (__thiscall **)(int))(*(_DWORD *)a1 + 132))(a1) + 1348) != -1 )
+        if ( *(_DWORD *)((*(int (__thiscall **)(int))(*(_DWORD *)a1 + 132))(a1) + 1348) != -1 ) /*0x4dad6f*/
         {
-          v38 = *(_DWORD *)(a1 + 156);
-          int v27 = *(_DWORD *)a1;
-          v39 = *(_DWORD *)(a1 + 160);
-          v40 = *(_DWORD *)(a1 + 164);
-          (*(void (__thiscall **)(int))(v27 + 132))(a1);
-          StartAudioControllerAt(a1 + 1348);
+          v38 = *(_DWORD *)(a1 + 156); /*0x4dad7e*/
+          v27 = *(_DWORD *)a1; /*0x4dad82*/
+          v39 = *(_DWORD *)(a1 + 160); /*0x4dad87*/
+          v40 = *(_DWORD *)(a1 + 164); /*0x4dad8e*/
+          (*(void (__thiscall **)(int))(v27 + 132))(a1); /*0x4dad94*/
+          StartAudioControllerAt(a1 + 1348); /*0x4dada2*/
         }
       }
-      else if ( !*(_BYTE *)(a1 + 1340) )
+      else if ( !*(_BYTE *)(a1 + 1340) ) /*0x4dada9*/
       {
-        Mixer::ReleaseChannel(a1 + 1348);
+        Mixer::ReleaseChannel(a1 + 1348); /*0x4dadb7*/
       }
-      *(_BYTE *)(a1 + 1062) = *(_BYTE *)(a1 + 1061);
+      *(_BYTE *)(a1 + 1062) = *(_BYTE *)(a1 + 1061); /*0x4dadc2*/
     }
-    v38 = *(_DWORD *)(a1 + 156);
-    v39 = *(_DWORD *)(a1 + 160);
-    v40 = *(_DWORD *)(a1 + 164);
-    StartAudioController(&v38, a1 + 1348);
-    if ( ((unsigned __int8)g_CurrentFrame & 0x3F) == 0x3F
+    v38 = *(_DWORD *)(a1 + 156); /*0x4dadd4*/
+    v39 = *(_DWORD *)(a1 + 160); /*0x4dade1*/
+    v40 = *(_DWORD *)(a1 + 164); /*0x4dade8*/
+    StartAudioController(&v38, a1 + 1348); /*0x4dadf0*/
+    if ( ((unsigned __int8)g_CurrentFrame & 0x3F) == 0x3F /*0x4dae37*/
       && !*(_DWORD *)(a1 + 1444)
       && !*(_BYTE *)(a1 + 140)
       && !*(_BYTE *)((*(int (__thiscall **)(int))(*(_DWORD *)a1 + 444))(a1) + 284)
       && (*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)a1 + 688))(a1)
       && !(*(int (__thiscall **)(int))(*(_DWORD *)a1 + 456))(a1) )
     {
-      int v28 = *(_DWORD *)a1;
-      v38 = 0;
-      v39 = 0;
-      v40 = 0;
-      (*(void (__thiscall **)(int, int *, int, _DWORD))(v28 + 372))(a1, &v38, 1, 0);
+      v28 = *(_DWORD *)a1; /*0x4dae41*/
+      v38 = 0; /*0x4dae4d*/
+      v39 = 0; /*0x4dae51*/
+      v40 = 0; /*0x4dae55*/
+      (*(void (__thiscall **)(int, int *, int, _DWORD))(v28 + 372))(a1, &v38, 1, 0); /*0x4dae59*/
     }
-    v29 = *(int (__stdcall ****)(_DWORD, void *, int *))(a1 + 1652);
-    _DWORD * v30 = (_DWORD *)(a1 + 1652);
-    int v31 = 0;
+    v29 = *(int (__stdcall ****)(_DWORD, void *, int *))(a1 + 1652); /*0x4dae5f*/
+    v30 = (_DWORD *)(a1 + 1652); /*0x4dae65*/
+    v31 = 0; /*0x4dae6b*/
     if ( v29 )
     {
-      int v32 = (**v29)(v29, &unk_819088, &v37);
+      v32 = (**v29)(v29, &unk_819088, &v37); /*0x4dae7e*/
       v31 = v32 < 0 ? 0 : v37;
-      if ( v32 < 0 && v32 != -2147467262 )
-        WinAPI::Wrapper(v32);
+      if ( v32 < 0 && v32 != -2147467262 ) /*0x4dae99*/
+        WinAPI::Wrapper(v32); /*0x4dae9c*/
       if ( v31 && (*(unsigned __int8 (__stdcall **)(int))(*(_DWORD *)v31 + 20))(v32 < 0 ? 0 : v37) )
       {
-        if ( *v30 )
-          (*(void (__stdcall **)(_DWORD))(*(_DWORD *)*v30 + 8))(*v30);
-        *v30 = 0;
-        (*(void (__stdcall **)(int, int))(*(_DWORD *)v31 + 16))(v31, a1 + 1652);
+        if ( *v30 ) /*0x4daeaf*/
+          (*(void (__stdcall **)(_DWORD))(*(_DWORD *)*v30 + 8))(*v30); /*0x4daeb9*/
+        *v30 = 0; /*0x4daebc*/
+        (*(void (__stdcall **)(int, int))(*(_DWORD *)v31 + 16))(v31, a1 + 1652); /*0x4daec3*/
       }
     }
-    int v33 = *(_DWORD *)a1;
-    *(_BYTE *)(a1 + 1716) = 0;
-    result = (*(int (__thiscall **)(int))(v33 + 472))(a1);
-    if ( !result )
-      result = FootClass::ProcessEnterTransport(a1);
-    int v34 = *(_DWORD *)(a1 + 1684);
-    if ( v34 )
-      result = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(v34 + 1692) + 92))(*(_DWORD *)(v34 + 1692));
-    if ( v31 )
-      return (*(int (__stdcall **)(int))(*(_DWORD *)v31 + 8))(v31);
+    v33 = *(_DWORD *)a1; /*0x4daec6*/
+    *(_BYTE *)(a1 + 1716) = 0; /*0x4daeca*/
+    result = (*(int (__thiscall **)(int))(v33 + 472))(a1); /*0x4daed0*/
+    if ( !result ) /*0x4daed8*/
+      result = FootClass::ProcessEnterTransport(a1); /*0x4daedc*/
+    v34 = *(_DWORD *)(a1 + 1684); /*0x4daee1*/
+    if ( v34 ) /*0x4daee9*/
+      result = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(v34 + 1692) + 92))(*(_DWORD *)(v34 + 1692)); /*0x4daef3*/
+    if ( v31 ) /*0x4daef8*/
+      return (*(int (__stdcall **)(int))(*(_DWORD *)v31 + 8))(v31); /*0x4daefd*/
   }
-  return result;
+  return result; /*0x4daf00*/
 }
-
-/* ASM:
-sub     esp, 14h
-push    ebx
-push    ebp
-push    esi
-push    edi
-mov     esi, ecx
-call    MovementAI__Begin
-mov     al, [esi+90h]
-xor     ebx, ebx
-cmp     al, bl
-jz      loc_4DAF00
-mov     [esi+6B3h], bl
-mov     eax, dword_A8ED54+30h
-mov     ecx, ds:8871E0h
-cdq
-idiv    dword ptr [ecx+1808h]
-test    edx, edx
-jnz     loc_4DA63B
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+84h]
-cmp     [eax+0D37h], bl
-jnz     loc_4DA63B
-mov     eax, [esi]
-mov     ecx, esi
-call    dword ptr [eax+54h]
-test    al, al
-jnz     loc_4DA63B
-cmp     [esi+81h], bl
-jnz     loc_4DA63B
-mov     edx, [esi]
-lea     eax, [esp+24h+var_C]
-push    eax
-mov     ecx, esi
-call    dword ptr [edx+48h]
-mov     ecx, eax
-mov     eax, [ecx]
-cdq
-and     edx, 0FFh
-add     eax, edx
-sar     eax, 8
-mov     word ptr [esp+24h+var_14], ax
-mov     eax, [ecx+4]
-cdq
-and     edx, 0FFh
-add     eax, edx
-lea     edx, [esp+24h+var_10]
-sar     eax, 8
-mov     word ptr [esp+24h+var_14+2], ax
-mov     ecx, [esp+24h+var_14]
-mov     [esp+24h+var_10], ecx
-push    edx
-mov     ecx, 87F7E8h
-call    CellCoord__To_CellObj
-mov     ecx, eax
-call    Cell__GetTraversability
-cmp     eax, ebx
-mov     [esp+24h+var_14], eax
-jle     short loc_4DA63B
-fild    [esp+24h+var_14]
-mov     edi, ds:8871E0h
-fmul    qword ptr [edi+1818h]
-call    Math__RoundToInt
-push    ebx
-mov     [esp+28h+var_14], eax
-mov     ecx, [edi+1834h]
-mov     eax, [esi]
-push    1
-push    ebx
-push    ebx
-push    ecx
-lea     edx, [esp+38h+var_14]
-push    ebx
-push    edx
-mov     ecx, esi
-call    dword ptr [eax+16Ch]
-cmp     [esi+90h], bl
-jz      loc_4DAF00
-
-loc_4DA63B:                             ; CODE XREF: FootClass__MovementAI+38↑j
-; FootClass__MovementAI+4E↑j ...
-cmp     [esi+3D5h], bl
-jnz     short loc_4DA677
-mov     eax, [esi]
-mov     ecx, esi
-call    dword ptr [eax+84h]
-cmp     [eax+0D6Ah], bl
-jz      short loc_4DA677
-mov     edx, [esi]
-push    1
-mov     ecx, esi
-call    dword ptr [edx+1BCh]
-push    eax
-mov     ecx, 87F7E8h
-call    Type__CheckAmbiguity
-test    al, al
-jz      short loc_4DA677
-mov     byte ptr [esi+3D5h], 1
-
-loc_4DA677:                             ; CODE XREF: FootClass__MovementAI+111↑j
-; FootClass__MovementAI+123↑j ...
-cmp     [esi+674h], ebx
-jnz     short loc_4DA689
-push    80004003h
-call    WinAPI__Wrapper
-; ---------------------------------------------------------------------------
-
-loc_4DA689:                             ; CODE XREF: FootClass__MovementAI+14D↑j
-mov     eax, [esi+674h]
-push    eax
-mov     ecx, [eax]
-call    dword ptr [ecx+80h]
-test    al, al
-jz      loc_4DA7B0
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+54h]
-test    al, al
-jz      loc_4DA7B0
-mov     eax, ds:0A83D4Ch
-mov     ecx, [esi+21Ch] ; this
-push    eax             ; other
-call    HouseClass__IsAlliedWith
-test    al, al
-jz      loc_4DA7B0
-mov     edx, [esi+65Ch]
-mov     eax, [esi+664h]
-cmp     edx, 0FFFFFFFFh
-jz      short loc_4DA6E7
-mov     ecx, dword_A8ED54+30h
-sub     ecx, edx
-cmp     ecx, eax
-jge     short loc_4DA6EF
-sub     eax, ecx
-
-loc_4DA6E7:                             ; CODE XREF: FootClass__MovementAI+1A7↑j
-cmp     eax, ebx
-jnz     loc_4DA7B0
-
-loc_4DA6EF:                             ; CODE XREF: FootClass__MovementAI+1B3↑j
-mov     edx, [esi]
-push    ebx
-push    ebx
-push    ebx
-push    ebx
-mov     ecx, esi
-call    dword ptr [edx+48Ch]
-mov     eax, [esi]
-push    ebx
-push    ebx
-push    ebx
-push    ebx
-push    ebx
-mov     ecx, esi
-call    dword ptr [eax+488h]
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+1C8h]
-mov     ecx, [esi+264h]
-cmp     ecx, eax
-lea     eax, [esi+9Ch]
-mov     ecx, [esi+9Ch]
-jz      short loc_4DA750
-mov     edx, [eax+4]
-mov     [esp+24h+var_C], ecx
-mov     ecx, [esi+260h]
-push    ebx
-mov     eax, [eax+8]
-add     ecx, 3
-mov     [esp+28h+var_8], edx
-push    ecx
-mov     [esp+2Ch+var_4], eax
-push    ebx
-lea     edx, [esp+30h+var_C]
-jmp     short loc_4DA775
-; ---------------------------------------------------------------------------
-
-loc_4DA750:                             ; CODE XREF: FootClass__MovementAI+1FA↑j
-mov     edx, [eax+4]
-mov     [esp+24h+var_C], ecx
-push    ebx
-mov     [esp+28h+var_8], edx
-mov     eax, [eax+8]
-lea     edx, [esp+28h+var_C]
-mov     [esp+28h+var_4], eax
-mov     eax, [esi+260h]
-lea     ecx, [eax+3]
-add     eax, 0FFFFFFFDh
-push    ecx
-push    eax
-
-loc_4DA775:                             ; CODE XREF: FootClass__MovementAI+21E↑j
-push    edx
-mov     ecx, 87F7E8h
-call    MapClass__RevealArea2
-mov     eax, [esi]
-mov     ecx, esi
-call    dword ptr [eax+1C8h]
-mov     edx, [esp+24h+var_8]
-mov     [esi+264h], eax
-mov     eax, dword_A8ED54+30h
-mov     ecx, 0Fh
-mov     [esi+65Ch], eax
-mov     [esi+660h], edx
-mov     [esi+664h], ecx
-
-loc_4DA7B0:                             ; CODE XREF: FootClass__MovementAI+16A↑j
-; FootClass__MovementAI+179↑j ...
-mov     eax, dword_A8ED54+30h
-and     eax, 8000000Fh
-jns     short loc_4DA7C1
-dec     eax
-or      eax, 0FFFFFFF0h
-inc     eax
-
-loc_4DA7C1:                             ; CODE XREF: FootClass__MovementAI+28A↑j
-jnz     short loc_4DA806
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+54h]
-test    al, al
-jz      short loc_4DA806
-mov     eax, [esi]
-mov     ecx, esi
-call    dword ptr [eax+1BCh]
-cmp     [eax+3Ch], ebx
-jz      short loc_4DA806
-mov     edx, [esi]
-push    ebx             ; int
-lea     eax, [esp+28h+var_10]
-push    ebx             ; int
-push    eax
-mov     ecx, esi
-call    dword ptr [edx+1B8h]
-mov     ecx, [eax]
-mov     edx, [esi]
-push    ecx             ; int
-push    esi             ; int
-push    3Bh ; ';'       ; int
-mov     ecx, esi
-call    dword ptr [edx+1BCh]
-mov     ecx, [eax+3Ch]  ; void **
-call    TeamClass__Update_0
-
-loc_4DA806:                             ; CODE XREF: FootClass__MovementAI:loc_4DA7C1↑j
-; FootClass__MovementAI+29C↑j ...
-mov     eax, [esi+674h]
-mov     ebp, [esi+538h]
-cmp     eax, ebx
-jz      loc_4DAA01
-cmp     [esi+3CDh], bl
-jnz     loc_4DAA01
-cmp     [esi+8Dh], bl
-jnz     loc_4DAA01
-cmp     [esi+2A8h], ebx
-jz      short loc_4DA850
-mov     eax, [esi]
-mov     ecx, esi
-call    dword ptr [eax+84h]
-cmp     [eax+692h], bl
-jz      loc_4DAA01
-
-loc_4DA850:                             ; CODE XREF: FootClass__MovementAI+308↑j
-cmp     [esi+81h], bl
-jnz     loc_4DAA01
-cmp     [esi+674h], ebx
-jnz     short loc_4DA86E
-push    80004003h
-call    WinAPI__Wrapper
-; ---------------------------------------------------------------------------
-
-loc_4DA86E:                             ; CODE XREF: FootClass__MovementAI+332↑j
-mov     eax, [esi+674h]
-push    eax
-mov     ecx, [eax]
-call    dword ptr [ecx+40h]
-cmp     [esi+90h], bl
-jz      loc_4DAF00
-cmp     esi, ebx
-jnz     short loc_4DA88E
-xor     edi, edi
-jmp     short loc_4DA8A0
-; ---------------------------------------------------------------------------
-
-loc_4DA88E:                             ; CODE XREF: FootClass__MovementAI+358↑j
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+2Ch]
-mov     edi, eax
-dec     edi
-neg     edi
-sbb     edi, edi
-not     edi
-and     edi, esi
-
-loc_4DA8A0:                             ; CODE XREF: FootClass__MovementAI+35C↑j
-cmp     [esi+674h], ebx
-jnz     short loc_4DA8B2
-push    80004003h
-call    WinAPI__Wrapper
-; ---------------------------------------------------------------------------
-
-loc_4DA8B2:                             ; CODE XREF: FootClass__MovementAI+376↑j
-mov     eax, [esi+674h]
-push    eax
-mov     ecx, [eax]
-call    dword ptr [ecx+80h]
-test    al, al
-jz      short loc_4DA8D3
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+1D8h]
-test    al, al
-jz      short loc_4DA8FC
-
-loc_4DA8D3:                             ; CODE XREF: FootClass__MovementAI+393↑j
-cmp     [esi+2B4h], ebx
-jz      short loc_4DA940
-mov     eax, [esi]
-mov     ecx, esi
-call    dword ptr [eax+84h]
-cmp     [eax+390h], bl
-jz      short loc_4DA940
-cmp     edi, ebx
-jz      short loc_4DA940
-mov     ecx, edi
-call    FootClass__updateScanRange
-test    al, al
-jnz     short loc_4DA940
-
-loc_4DA8FC:                             ; CODE XREF: FootClass__MovementAI+3A1↑j
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+84h]
-mov     ecx, eax
-mov     eax, dword_A8ED54+30h
-cdq
-idiv    dword ptr [ecx+294h]
-test    edx, edx
-jnz     short loc_4DA940
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+1D4h]
-test    al, al
-jnz     short loc_4DA940
-mov     eax, [esi]
-mov     ecx, esi
-call    dword ptr [eax+1D8h]
-test    al, al
-jnz     short loc_4DA940
-cmp     [esi+6ADh], bl
-jz      loc_4DA9FB
-
-loc_4DA940:                             ; CODE XREF: FootClass__MovementAI+3A9↑j
-; FootClass__MovementAI+3BB↑j ...
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+84h]
-cmp     [eax+298h], ebx
-jz      short loc_4DA9B7
-cmp     [esi+674h], ebx
-jnz     short loc_4DA964
-push    80004003h
-call    WinAPI__Wrapper
-; ---------------------------------------------------------------------------
-
-loc_4DA964:                             ; CODE XREF: FootClass__MovementAI+428↑j
-mov     eax, [esi+674h]
-push    eax
-mov     ecx, [eax]
-call    dword ptr [ecx+80h]
-test    al, al
-jnz     short loc_4DA9B7
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+84h]
-mov     ecx, eax
-mov     eax, dword_A8ED54+30h
-cdq
-idiv    dword ptr [ecx+298h]
-test    edx, edx
-jnz     short loc_4DA9B7
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+1D4h]
-test    al, al
-jnz     short loc_4DA9B7
-mov     eax, [esi]
-mov     ecx, esi
-call    dword ptr [eax+1D8h]
-test    al, al
-jnz     short loc_4DA9B7
-cmp     [esi+6ADh], bl
-jz      short loc_4DA9FB
-
-loc_4DA9B7:                             ; CODE XREF: FootClass__MovementAI+420↑j
-; FootClass__MovementAI+445↑j ...
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+84h]
-cmp     [eax+6ADh], bl
-jz      short loc_4DAA01
-mov     eax, [esi]
-mov     ecx, esi
-call    dword ptr [eax+1C8h]
-test    eax, eax
-jle     short loc_4DAA01
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+1D4h]
-test    al, al
-jnz     short loc_4DAA01
-mov     eax, [esi]
-mov     ecx, esi
-call    dword ptr [eax+1D8h]
-test    al, al
-jnz     short loc_4DAA01
-cmp     [esi+6ADh], bl
-jnz     short loc_4DAA01
-
-loc_4DA9FB:                             ; CODE XREF: FootClass__MovementAI+40A↑j
-; FootClass__MovementAI+485↑j
-inc     dword ptr [esi+538h]
-
-loc_4DAA01:                             ; CODE XREF: FootClass__MovementAI+2E4↑j
-; FootClass__MovementAI+2F0↑j ...
-cmp     ebp, [esi+538h]
-jnz     short loc_4DAA32
-cmp     [esi+674h], ebx
-jnz     short loc_4DAA1B
-push    80004003h
-call    WinAPI__Wrapper
-; ---------------------------------------------------------------------------
-
-loc_4DAA1B:                             ; CODE XREF: FootClass__MovementAI+4DF↑j
-mov     eax, [esi+674h]
-push    eax
-mov     ecx, [eax]
-call    dword ptr [ecx+80h]
-test    al, al
-jz      loc_4DAAFA
-
-loc_4DAA32:                             ; CODE XREF: FootClass__MovementAI+4D7↑j
-cmp     [esi+8Dh], bl
-jnz     loc_4DAAFA
-cmp     [esi+425h], bl
-jnz     loc_4DAAFA
-cmp     [esi+2A8h], ebx
-jz      short loc_4DAA68
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+84h]
-cmp     [eax+692h], bl
-jnz     loc_4DAAFA
-
-loc_4DAA68:                             ; CODE XREF: FootClass__MovementAI+520↑j
-cmp     [esi+53Ch], bl
-jnz     short loc_4DAAEE
-mov     eax, [esi]
-mov     ecx, esi
-call    dword ptr [eax+84h]
-mov     ecx, [eax+504h]
-add     eax, 4F4h
-cmp     ecx, ebx
-jle     short loc_4DAAEE
-lea     ebp, [esi+544h]
-mov     ecx, ebp
-call    AudioController__Stop
-lea     ecx, [esi+9Ch]
-mov     edx, [esi+9Ch]
-mov     [esp+24h+var_C], edx
-mov     edx, [esi]
-mov     eax, [ecx+4]
-mov     [esp+24h+var_8], eax
-mov     ecx, [ecx+8]
-mov     [esp+24h+var_4], ecx
-mov     ecx, esi
-call    dword ptr [edx+84h]
-mov     edi, eax
-mov     ecx, 886B88h
-add     edi, 4F4h
-call    Random__State
-xor     edx, edx
-push    ebp
-div     dword ptr [edi+10h]
-mov     eax, [edi+4]
-lea     ebp, [esp+28h+var_C]
-mov     ecx, [eax+edx*4]
-mov     edx, ebp
-call    StartAudioControllerAt
-mov     byte ptr [esi+53Ch], 1
-
-loc_4DAAEE:                             ; CODE XREF: FootClass__MovementAI+53E↑j
-; FootClass__MovementAI+557↑j
-mov     dword ptr [esi+540h], 3
-jmp     short loc_4DAB3C
-; ---------------------------------------------------------------------------
-
-loc_4DAAFA:                             ; CODE XREF: FootClass__MovementAI+4FC↑j
-; FootClass__MovementAI+508↑j ...
-cmp     [esi+53Ch], bl
-jz      short loc_4DAB3C
-mov     eax, [esi+540h]
-cmp     eax, ebx
-jz      short loc_4DAB25
-cmp     [esi+8Dh], bl
-jnz     short loc_4DAB25
-cmp     [esi+425h], bl
-jnz     short loc_4DAB25
-dec     eax
-mov     [esi+540h], eax
-jmp     short loc_4DAB3C
-; ---------------------------------------------------------------------------
-
-loc_4DAB25:                             ; CODE XREF: FootClass__MovementAI+5DA↑j
-; FootClass__MovementAI+5E2↑j ...
-lea     ecx, [esi+544h]
-call    Mixer__ReleaseChannel
-mov     [esi+53Ch], bl
-mov     [esi+540h], ebx
-
-loc_4DAB3C:                             ; CODE XREF: FootClass__MovementAI+5C8↑j
-; FootClass__MovementAI+5D0↑j ...
-mov     al, [esi+8Dh]
-mov     cl, [esi+8Eh]
-cmp     al, cl
-jz      short loc_4DABC4
-cmp     al, bl
-jz      short loc_4DABB3
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+84h]
-mov     ecx, [eax+54Ch]
-or      edi, 0FFFFFFFFh
-cmp     ecx, edi
-jz      short loc_4DABB6
-cmp     [esi+8Fh], bl
-jz      short loc_4DABB6
-lea     eax, [esi+9Ch]
-push    ebx
-lea     ebp, [esp+28h+var_C]
-mov     ecx, [eax]
-mov     [esp+28h+var_C], ecx
-mov     ecx, esi
-mov     edx, [eax+4]
-mov     [esp+28h+var_8], edx
-mov     edx, [esi]
-mov     eax, [eax+8]
-mov     [esp+28h+var_4], eax
-call    dword ptr [edx+84h]
-mov     ecx, [eax+54Ch]
-mov     edx, ebp
-call    StartAudioControllerAt
-mov     al, [esi+8Dh]
-mov     [esi+8Eh], al
-jmp     short loc_4DABC7
-; ---------------------------------------------------------------------------
-
-loc_4DABB3:                             ; CODE XREF: FootClass__MovementAI+61E↑j
-or      edi, 0FFFFFFFFh
-
-loc_4DABB6:                             ; CODE XREF: FootClass__MovementAI+635↑j
-; FootClass__MovementAI+63D↑j
-mov     al, [esi+8Dh]
-mov     [esi+8Eh], al
-jmp     short loc_4DABC7
-; ---------------------------------------------------------------------------
-
-loc_4DABC4:                             ; CODE XREF: FootClass__MovementAI+61A↑j
-or      edi, 0FFFFFFFFh
-
-loc_4DABC7:                             ; CODE XREF: FootClass__MovementAI+681↑j
-; FootClass__MovementAI+692↑j
-mov     al, [esi+3CDh]
-mov     cl, [esi+3CEh]
-cmp     al, cl
-jz      loc_4DACDD
-cmp     al, bl
-jz      loc_4DACBE
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+84h]
-cmp     [eax+554h], edi
-jz      short loc_4DAC2B
-lea     eax, [esi+9Ch]
-push    ebx
-lea     ebp, [esp+28h+var_C]
-mov     ecx, [eax]
-mov     [esp+28h+var_C], ecx
-mov     ecx, esi
-mov     edx, [eax+4]
-mov     [esp+28h+var_8], edx
-mov     edx, [esi]
-mov     eax, [eax+8]
-mov     [esp+28h+var_4], eax
-call    dword ptr [edx+84h]
-mov     ecx, [eax+554h]
-mov     edx, ebp
-call    StartAudioControllerAt
-
-loc_4DAC2B:                             ; CODE XREF: FootClass__MovementAI+6C3↑j
-mov     eax, [esi]
-mov     ecx, esi
-call    dword ptr [eax+84h]
-cmp     [eax+548h], edi
-jz      short loc_4DAC7B
-lea     ecx, [esi+9Ch]
-lea     edi, [esp+24h+var_C]
-mov     edx, [ecx]
-mov     [esp+24h+var_C], edx
-lea     edx, [esi+544h]
-mov     eax, [ecx+4]
-push    edx
-mov     [esp+28h+var_8], eax
-mov     eax, [esi]
-mov     ecx, [ecx+8]
-mov     [esp+28h+var_4], ecx
-mov     ecx, esi
-call    dword ptr [eax+84h]
-mov     ecx, [eax+548h]
-mov     edx, edi
-call    StartAudioControllerAt
-jmp     short loc_4DACD1
-; ---------------------------------------------------------------------------
-
-loc_4DAC7B:                             ; CODE XREF: FootClass__MovementAI+70B↑j
-mov     eax, ds:8871E0h
-cmp     [eax+208h], edi
-jz      short loc_4DACD1
-lea     ecx, [esi+9Ch]
-mov     edx, [esi+9Ch]
-mov     [esp+24h+var_C], edx
-mov     edx, [ecx+4]
-mov     [esp+24h+var_8], edx
-lea     edx, [esi+544h]
-mov     ecx, [ecx+8]
-push    edx
-mov     [esp+28h+var_4], ecx
-mov     ecx, [eax+208h]
-lea     edx, [esp+28h+var_C]
-call    StartAudioControllerAt
-jmp     short loc_4DACD1
-; ---------------------------------------------------------------------------
-
-loc_4DACBE:                             ; CODE XREF: FootClass__MovementAI+6AD↑j
-cmp     [esi+53Ch], bl
-jnz     short loc_4DACD1
-lea     ecx, [esi+544h]
-call    Mixer__ReleaseChannel
-
-loc_4DACD1:                             ; CODE XREF: FootClass__MovementAI+749↑j
-; FootClass__MovementAI+756↑j ...
-mov     al, [esi+3CDh]
-mov     [esi+3CEh], al
-
-loc_4DACDD:                             ; CODE XREF: FootClass__MovementAI+6A5↑j
-mov     al, [esi+425h]
-mov     cl, [esi+426h]
-cmp     al, cl
-jz      loc_4DADC8
-cmp     al, bl
-jz      loc_4DADA9
-lea     edi, [esi+544h]
-mov     ecx, edi
-call    Mixer__ReleaseChannel
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+84h]
-cmp     dword ptr [eax+550h], 0FFFFFFFFh
-jz      short loc_4DAD5E
-mov     ecx, [esi+21Ch] ; this
-call    House__IsHumanPlayer
-test    al, al
-jz      short loc_4DAD5E
-lea     eax, [esi+9Ch]
-push    ebx
-lea     ebp, [esp+28h+var_C]
-mov     ecx, [eax]
-mov     [esp+28h+var_C], ecx
-mov     ecx, esi
-mov     edx, [eax+4]
-mov     [esp+28h+var_8], edx
-mov     edx, [esi]
-mov     eax, [eax+8]
-mov     [esp+28h+var_4], eax
-call    dword ptr [edx+84h]
-mov     ecx, [eax+550h]
-mov     edx, ebp
-call    StartAudioControllerAt
-
-loc_4DAD5E:                             ; CODE XREF: FootClass__MovementAI+7E7↑j
-; FootClass__MovementAI+7F6↑j
-mov     eax, [esi]
-mov     ecx, esi
-call    dword ptr [eax+84h]
-cmp     dword ptr [eax+544h], 0FFFFFFFFh
-jz      short loc_4DADBC
-lea     ecx, [esi+9Ch]
-push    edi
-lea     edi, [esp+28h+var_C]
-mov     edx, [ecx]
-mov     [esp+28h+var_C], edx
-mov     edx, [esi]
-mov     eax, [ecx+4]
-mov     [esp+28h+var_8], eax
-mov     ecx, [ecx+8]
-mov     [esp+28h+var_4], ecx
-mov     ecx, esi
-call    dword ptr [edx+84h]
-mov     ecx, [eax+544h]
-mov     edx, edi
-call    StartAudioControllerAt
-jmp     short loc_4DADBC
-; ---------------------------------------------------------------------------
-
-loc_4DADA9:                             ; CODE XREF: FootClass__MovementAI+7C3↑j
-cmp     [esi+53Ch], bl
-jnz     short loc_4DADBC
-lea     ecx, [esi+544h]
-call    Mixer__ReleaseChannel
-
-loc_4DADBC:                             ; CODE XREF: FootClass__MovementAI+83F↑j
-; FootClass__MovementAI+877↑j ...
-mov     al, [esi+425h]
-mov     [esi+426h], al
-
-loc_4DADC8:                             ; CODE XREF: FootClass__MovementAI+7BB↑j
-lea     ecx, [esi+9Ch]
-mov     edx, [esi+9Ch]
-mov     [esp+24h+var_C], edx
-lea     edx, [esi+544h]
-mov     eax, [ecx+4]
-mov     [esp+24h+var_8], eax
-mov     ecx, [ecx+8]
-mov     [esp+24h+var_4], ecx
-lea     ecx, [esp+24h+var_C]
-call    StartAudioController
-mov     edx, dword_A8ED54+30h
-and     edx, 3Fh
-cmp     dl, 3Fh ; '?'
-jnz     short loc_4DAE5F
-cmp     [esi+5A4h], ebx
-jnz     short loc_4DAE5F
-cmp     [esi+8Ch], bl
-jnz     short loc_4DAE5F
-mov     eax, [esi]
-mov     ecx, esi
-call    dword ptr [eax+1BCh]
-cmp     [eax+11Ch], bl
-jnz     short loc_4DAE5F
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+2B0h]
-test    al, al
-jz      short loc_4DAE5F
-mov     eax, [esi]
-mov     ecx, esi
-call    dword ptr [eax+1C8h]
-test    eax, eax
-jnz     short loc_4DAE5F
-mov     edx, [esi]
-push    ebx
-lea     eax, [esp+28h+var_C]
-push    1
-push    eax
-mov     ecx, esi
-mov     [esp+30h+var_C], ebx
-mov     [esp+30h+var_8], ebx
-mov     [esp+30h+var_4], ebx
-call    dword ptr [edx+174h]
-
-loc_4DAE5F:                             ; CODE XREF: FootClass__MovementAI+8D1↑j
-; FootClass__MovementAI+8D9↑j ...
-mov     eax, [esi+674h]
-lea     ebp, [esi+674h]
-xor     edi, edi
-cmp     eax, ebx
-jz      short loc_4DAEC6
-mov     ecx, [eax]
-lea     edx, [esp+24h+var_10]
-push    edx
-push    offset unk_819088
-push    eax
-call    dword ptr [ecx]
-mov     edx, [esp+24h+var_10]
-xor     ecx, ecx
-cmp     eax, ebx
-setl    cl
-dec     ecx
-and     ecx, edx
-cmp     eax, ebx
-mov     edi, ecx
-jge     short loc_4DAEA1
-cmp     eax, 80004002h
-jz      short loc_4DAEA1
-push    eax
-call    WinAPI__Wrapper
-; ---------------------------------------------------------------------------
-
-loc_4DAEA1:                             ; CODE XREF: FootClass__MovementAI+962↑j
-; FootClass__MovementAI+969↑j
-cmp     edi, ebx
-jz      short loc_4DAEC6
-mov     edx, [edi]
-push    edi
-call    dword ptr [edx+14h]
-test    al, al
-jz      short loc_4DAEC6
-mov     eax, [ebp+0]
-cmp     eax, ebx
-jz      short loc_4DAEBC
-mov     ecx, [eax]
-push    eax
-call    dword ptr [ecx+8]
-
-loc_4DAEBC:                             ; CODE XREF: FootClass__MovementAI+984↑j
-mov     [ebp+0], ebx
-mov     edx, [edi]
-push    ebp
-push    edi
-call    dword ptr [edx+10h]
-
-loc_4DAEC6:                             ; CODE XREF: FootClass__MovementAI+93F↑j
-; FootClass__MovementAI+973↑j ...
-mov     eax, [esi]
-mov     ecx, esi
-mov     [esi+6B4h], bl
-call    dword ptr [eax+1D8h]
-test    al, al
-jnz     short loc_4DAEE1
-mov     ecx, esi
-call    FootClass__ProcessEnterTransport
-
-loc_4DAEE1:                             ; CODE XREF: FootClass__MovementAI+9A8↑j
-mov     esi, [esi+694h]
-cmp     esi, ebx
-jz      short loc_4DAEF6
-mov     ecx, [esi+69Ch]
-mov     edx, [ecx]
-call    dword ptr [edx+5Ch]
-
-loc_4DAEF6:                             ; CODE XREF: FootClass__MovementAI+9B9↑j
-cmp     edi, ebx
-jz      short loc_4DAF00
-mov     eax, [edi]
-push    edi
-call    dword ptr [eax+8]
-
-loc_4DAF00:                             ; CODE XREF: FootClass__MovementAI+18↑j
-; FootClass__MovementAI+105↑j ...
-pop     edi
-pop     esi
-pop     ebp
-pop     ebx
-add     esp, 14h
-retn
-*/
-
-void FootClass::EmitMovementSmoke()
-{
-    // IDA: Every 6 frames, if not in limbo, not airborne, not a bomb:
-    // Get cell at map coordinates, check traversability (sub_487CB0),
-    // scale damage by traversability * rules.SmokeSpeed (Rules[1549]),
-    // emit ReceiveDamage(&scaled_damage, 0, rules[1549], 0, 0, 1, 0)
-    if ((CurrentFrame % 6) == 0
-        && !inLimbo
-        && !isAirborne()
-        && !isBomb)
-    {
-        CoordStruct coords;
-        fetchCoordinatesHere(&coords);
-
-        int cell_x = coords.X / 256;
-        int cell_y = coords.Y / 256;
-
-        CellStruct map_coords = { (int16_t)(cell_x), (int16_t)(cell_y) };
-
-        // IDA: cell = CellCoord::To_CellObj(&MapClass_Instance, &map_coords) — sub_5657A0
-        // IDA: if (cell) traversability = Cell::GetTraversability(cell) — sub_487CB0
-        // IDA: if (traversability) damage = traversability * Rules[1549] (SmokeSpeed)
-        // IDA: ReceiveDamage(&damage, 0, Rules[1549], 0, 0, 1, 0)
-    }
-}
-
-void FootClass::UpdateMovementAmbiguity()
-{
-    // IDA: if (!FootClass_field_bool_6B5 && IsHouseFlag3434(this+0x21C)):
-    //   GetType() → check sub_578540(type, 1) → set FootClass_field_bool_6B5 = true
-    // House flag check: owner house has movement ambiguity detection enabled
-    if (!FootClass_field_bool_6B5)
-    {
-        // IDA: auto* owner = *(this + 0x21C); // owning house
-        // IDA: if (owner && IsHouseFlag3434(owner)):
-        //     auto* type = GetType();
-        //     sub_578540(type, 1); // enable ambiguity detection for type
-        //     FootClass_field_bool_6B5 = true;
-    }
-}
-
-void FootClass::UpdateMovementSpeed()
-{
-    // IDA: ILocomotion speed recalculation.
-    // If locomotor is moving and not airborne and player-controlled:
-    //   Recalculate speed from locomotion period timer,
-    //   adjust facing toward target using currentSpeed_timer/period fields.
-    //   Narrow turns (in-place rotation) if facing == target facing;
-    //   Wide turns otherwise.
-    // Uses: vtable[1164] and vtable[1160] for speed reset.
-    if (!locomotor.ptr)
-        return;
-
-    // IDA: ILocomotion::Is_Moving() → !isAirborne() → IsCurrentPlayer()
-    // → update currentSpeed_percentage from movement period
-    // → recalculate target-facing for smooth rotation
-}
-
-void FootClass::HandleMovementSoundupdateLogic()
-{
-    // IDA: Section 6 from MovementAI — terrain transition sound effects.
-    // Checks: onBridge, isSinking, isCrashing state changes.
-    // Audio position update for ambient/engine sounds (sub_750D40).
-
-    bool was_on_bridge = onBridge;
-    bool was_sinking = isSinking;
-    bool was_crashing = isCrashing;
-
-    // IDA: Refresh bridge state: onBridge = IsOnBridge()
-    // Refresh sink/crash states from locomotion/terrain state
-    onBridge = IsOnBridge();
-
-    // IDA: isSinking and isCrashing are read from locomotor/terrain state
-    // The actual values would be set by the locomotion system
-
-    if (was_on_bridge != onBridge)
-    {
-        // IDA: Bridge entry/exit sound via Rules sound index
-    }
-
-    if (was_sinking != isSinking)
-    {
-        // IDA: Sinking state change → play water entry/exit sound
-    }
-
-    if (was_crashing != isCrashing)
-    {
-        // IDA: Crashing state change → play crash sound
-    }
-
-    // IDA: Audio position update (sub_750D40) for position-dependent audio
-    // Uses fetchCoordinatesHere() to update audio source position
-    CoordStruct loc;
-    fetchCoordinatesHere(&loc);
-}
-
-void FootClass::HandleLocomotionupdateLogic()
-{
-    // IDA: Section 7 from MovementAI — COM ILocomotion QueryInterface.
-    // Resets attack flag, checks locomotion state:
-    //   if (locomotor && vt_entry_472(this) → not moving):
-    //     sub_70D7E0 → process enter transport or movement result
-    //   if (parasiteEatingMe):
-    //     update parasite position
-
-    isAttackedByLocomotor = false;
-
-    if (!locomotor.ptr)
-        return;
-
-    // IDA: vt_entry_472(this) — check if locomotor reports "is moving"
-    // If not moving, call FootClass::ProcessEnterTransport (sub_70D7E0)
-    // to handle transport entry/exit and movement completion
-
-    // IDA: Check parasite state (parasiteEatingMe at this+0x694)
-    // If parasite is active, update parasite position to match this object
-}
-
-// ============================================================
-// Mission state overrides
-// ============================================================
-
-int FootClass::Mission_Move()
-{
-    // IDA: Mission_Move in FootClass — navigation toward destination.
-    // If no destination and no queued mission, switch to Guard.
-    // AI-controlled units scan for nearby threats while moving.
-    if (!movementDestination && missionQueued == 0)
-    {
-        queueMission((Mission)((int)(::gamemd::Mission::Guard)), true);
-        return 1;
-    }
-
-    // IDA: AI units: scan for nearby enemy targets while in transit
-    // if (!target && IsAIControlled()):
-    //     SelectAutoTarget(THREAT_RANGE) with current house threat range
-    if (!target)
-    {
-        // IDA: check if owner house is AI-controlled (not human player)
-        // If so, scan for nearby threats with SelectAutoTarget
-    }
-
-    return 10;
-}
-
-int FootClass::Mission_Attack()
-{
-    // IDA: Mission_Attack — close distance → fire → repeat.
-    // Checks attacker-weapon readiness and target validity.
-    auto* tgt = target;
-    if (!tgt)
-        return 0;
-
-    if (!IsCloseEnoughToAttack(tgt))
-    {
-        movementDestination = target;
-        return 0;
-    }
-
-    int weapon_idx = SelectWeapon(target);
-    Fire(target, weapon_idx);
-
-    return 0;
-}
-
-int FootClass::Mission_Guard()
-{
-    // IDA: Mission_Guard — area defense scan.
-    // Periodically scans for enemies within guard range.
-    // If target found, queue Attack mission.
-    if (!target)
-    {
-        SelectAutoTarget((TargetFlags)(0), 0, false);
-    }
-    return 30;
-}
-
-int FootClass::Mission_Hunt()
-{
-    // IDA: Mission_Hunt — aggressive scan + chase.
-    // If no target, scan. If still no target after scan,
-    // fall back to Guard mode.
-    if (!target)
-    {
-        SelectAutoTarget((TargetFlags)(0), 0, false);
-    }
-    if (!target)
-    {
-        queueMission((Mission)((int)(::gamemd::Mission::Guard)), true);
-        return 30;
-    }
-    return 0;
-}
-
-// ============================================================
-// Movement control helpers
-// ============================================================
-
-bool FootClass::MoveTo(CoordStruct* coords)
-{
-    if (!coords)
-        return false;
-
-    // IDA: Reset pathfinding delay and navigation destination
-    pathDelayTimer = {};
-    movementDestination = nullptr;
-
-    return true;
-}
-
-bool FootClass::StopMoving()
-{
-    // IDA: Stop ILocomotion, release track reservation, set speed to 0.
-    // Calls ILocomotion::Stop() COM method, then clears movement destination.
-    if (!locomotor.ptr)
-        return false;
-
-    // IDA: ILocomotion::Stop() — COM method to halt movement
-    // IDA: Release track reservation (path planning node release)
-    // IDA: Set locomotor speed to 0 via speed multiplier
-
-    movementDestination = nullptr;
-
-    return true;
-}
-
-// ============================================================
-// Destroyed (IDA: 0x4D98C0, 91B)
-// Handles unit death: stop movement, eject passengers, award experience,
-// play EVA "UnitLost" for human players when trigger is far enough.
-// ============================================================
-void FootClass::Destroyed(ObjectClass* killer)
-{
-    // IDA: if already dead (isAliveFlag false), skip
-    if (!isAliveFlag)
-        return;
-
-    isAliveFlag = false;
-    isCrashing = true;
-
-    // IDA: Stop movement via ILocomotion COM
-    if (locomotor.ptr) {
-        StopMoving();
-    }
-
-    // IDA: Eject passengers from transport (FootClass::EjectPassengers)
-
-    // IDA: Award experience to killer
-    if (killer) {
-        RegisterDestruction((TechnoClass*)(killer));
-        auto* killer_house = killer->owningHouse();
-        if (killer_house)
-            RegisterKill(killer_house);
-    }
-
-    // IDA: EVA "UnitLost" announcement for human players
-    // Check: House::IsHumanPlayer(owner) && !Type->field_3412
-    // Then: fetchCoordinatesHere → CreateTriggerClassIfFarEnough(7, coord)
-    //       → VoxClass::FindAndPlay("EVA_UnitLost", -1)
-    // Uses: owner = *(this + 0x21C), Type via vtable[33], coords via vtable[110]
-    // When dependency classes (VoxClass, House, Trigger) are available,
-    // the EVA announcement path will activate automatically.
-    // For now: EVA is deferred to the audio subsystem.
-
-    // IDA: Start crash/death animation and remove from map
-    Remove();
-}
-
-} // namespace game
 } // namespace ra2
 
 #include "object/foot.hpp"
@@ -1607,240 +510,306 @@ void FootClass::onMovementDone() {}
 }
 // 0x709290
 bool FootClass::CanEnterCell(uint32_t a) { return false; }
-// 0x416af0
-int FootClass::MissionMoveCarryallLand() { return 0; }
-// 0x41c080
-void FootClass::vt_entry_4F8() {}
-// 0x41c090
-int FootClass::Destru_vt323() { return 0; }
-// 0x41c0f0
-void FootClass::vt_entry_514() {}
-// 0x41c100
-bool FootClass::StubReturnFalse() { return false; }
-// 0x41c110
-void FootClass::StubReturnVoid() {}
-// 0x41c130
-void FootClass::vt_entry_534() {}
-// 0x41c140
-void FootClass::vt_entry_540() {}
-// 0x43ed40
-int FootClass::GetTurretAngle() const { return 0; }
-// 0x4415f0
-void FootClass::ProcessDemolish() {}
-// 0x4456d0
-void FootClass::UpdateSidebar() {}
-// 0x448160
-void FootClass::ProcessPrimarySelect() {}
-// 0x452250
-int FootClass::StubReturn0() { return 0; }
-// 0x4556d0
-void FootClass::ScanCircleForUnits() {}
-// 0x455820
-void FootClass::ScanCircleForUnits2() {}
-// 0x45a540
-int FootClass::GetCapacity() const { return 0; }
-// 0x45a560
-int FootClass::ResizeOccupiedCellList() { return 0; }
-int FootClass::sub_4734B0() { return 0; }
-// 0x487150
-int FootClass::checkTerrainSpeed() { return 0; }
-// 0x487160
-int FootClass::updateLocomotion() { return 0; }
-// 0x4cbba0
-int FootClass::FindPathWithRetry() { return -1; }
-// 0x4cd2a0
-void FootClass::ProcessDeployMission() {}
-// 0x4ce680
-void FootClass::UpdateDeployMovement() {}
-// 0x4d3540
-int FootClass::PostLoadInit() { return 0; }
-// 0x4d3710
-int FootClass::Destru_vt337() { return 0; }
-// 0x4d3780
-void FootClass::UpdateReveal() {}
-// 0x4d3810
-bool FootClass::CheckTileSeed(int* coords) { return false; }
-// 0x4d3920
-int FootClass::MovementStep() { return 0; }
-// 0x4d4200
-int FootClass::Destru_vt139() { return 0; }
-// 0x4d4b20
-bool FootClass::CheckVoiceResponse() const { return false; }
-// 0x4d4cb0
-void FootClass::ProcessMissionVoice() {}
-// 0x4d5070
-int FootClass::FindMovePosition() { return -1; }
-// 0x4d55c0
-int FootClass::PlayCOM_audio() { return 0; }
-// 0x4d55f0
-int FootClass::Destru_vt319() { return 0; }
-// 0x4d5660
-int FootClass::EnterAttackState() { return 0; }
-// 0x4d5690
-void FootClass::CalculateApproachPath(char a2) {}
-// 0x4d6aa0
-int FootClass::FindAITarget() { return -1; }
-// 0x4d7170
-int FootClass::DispatchInput(int* coords, int a3) { return 0; }
-// 0x4d7330
-void FootClass::ProcessDeploy() {}
-// 0x4d74e0
-int FootClass::ValidateMove(int action, AbstractClass* target, int flags) { return 0; }
-// 0x4d82b0
-int FootClass::ValidatePlacement() { return 0; }
-// 0x4d8560
-int FootClass::GetCoords() const { return 0; }
-// 0x4d85d0
-void FootClass::UpdateAI() {}
-// 0x4d8f40
-int FootClass::OverrideMission_SyncLog() { return 0; }
-// 0x4d8f80
-int FootClass::ConditionalAction() { return 0; }
-// 0x4d8fb0
-int FootClass::MissionDispatch() { return 0; }
-// 0x4d9290
-void FootClass::ProcessTeamAction() {}
-// 0x4d94b0
-int FootClass::AssignDestination() { return 0; }
-// 0x4d9720
-int FootClass::DispatchSell() { return 0; }
-// 0x4d9920
-int FootClass::SelectAutoTarget_Cloaked() { return 0; }
-// 0x4d9960
-int FootClass::HandleTargetDestroyed() { return 0; }
-// 0x4d9c00
-void FootClass::vt_entry_524() {}
-// 0x4d9c10
-int FootClass::Destru_vt107() { return 0; }
-// 0x4d9ff0
-int FootClass::vt_entry_4F0() { return 0; }
-// 0x4da1c0
-void FootClass::ClearSomeVector() {}
-// 0x4da1d0
-bool FootClass::CanBeControlled() const { return false; }
-// 0x4da230
-bool FootClass::CanBeRecruited() const { return false; }
-// 0x4da2a0
-void FootClass::ClearSomeVector2() {}
-// 0x4da2c0
-void FootClass::ProcessMovement() {}
-// 0x4da4e0
-bool FootClass::CheckTargetValidity() const { return false; }
-// 0x4daf10
-int FootClass::UpdateState() { return 0; }
-// 0x4db0a0
-int FootClass::GetAttackSpeed() const { return 0; }
-// 0x4db7e0
-int FootClass::Destru_vt30() { return 0; }
-// 0x4dba30
-void FootClass::vt_entry_548() {}
-// 0x4dba40
-void FootClass::vt_entry_54C() {}
-// 0x4dbad0
-int FootClass::BeginPowerUpdate() { return 0; }
-// 0x4dbda0
-bool FootClass::CanBeHunted() const { return false; }
-// 0x4dbed0
-int FootClass::LiberateMember() { return 0; }
-// 0x4dbfd0
-int FootClass::vt_entry_4E0() { return 0; }
-// 0x4dc030
-int FootClass::vt_entry_4F4() { return 0; }
-// 0x4dc060
-int FootClass::CheckTargetCell() const { return 0; }
-// 0x4dc790
-int FootClass::Destru_vt311() { return 0; }
-// 0x4dc810
-void FootClass::SetBuildingType() {}
-// 0x4dcfe0
-int FootClass::MoveToTiberium() { return 0; }
-// 0x4dd0a0
-int FootClass::FindMoveTarget() { return -1; }
-// 0x4ddb90
-int FootClass::MoveToWeed() { return 0; }
-// 0x4ddc40
-bool FootClass::CheckHeightDiff() const { return false; }
-// 0x4ddc60
-int FootClass::ValidateTargetCell() { return 0; }
-// 0x4ddde0
-int FootClass::HandleCursorWithCheck() { return 0; }
-// 0x4ddf90
-void FootClass::ProcessMissionState() {}
-// 0x4de580
-int FootClass::ValidateFoundation() { return 0; }
-// 0x4de5d0
-int FootClass::PreDestroy() { return 0; }
-// 0x4de630
-int FootClass::OnCompleteAction() { return 0; }
-// 0x4de670
-int FootClass::RemovePassenger() { return 0; }
-// 0x4de710
-int FootClass::PopAndProcess() { return 0; }
-// 0x4de770
-bool FootClass::IsTimerActive() const { return false; }
-// 0x4de7b0
-bool FootClass::IsTargetInRange() const { return false; }
-// 0x4de940
-int FootClass::CheckCellPassable() const { return 0; }
-// 0x4deae0
-bool FootClass::DeployAction() { return false; }
-// 0x4debb0
-void FootClass::UpdateTeamAI() {}
-// 0x4dee50
-int FootClass::vt_entry_530() { return 0; }
-// 0x4df0d0
-void FootClass::ClearPathIndex() {}
-// 0x4df0e0
-int FootClass::MissionSell_Dispatch() { return 0; }
-// 0x4df3a0
-void FootClass::UpdateAttackMove_SelectNewTarget() {}
-// 0x4df510
-void FootClass::ScanAdjacentCells() {}
-// 0x4df7f0
-int FootClass::Destru_vt322() { return 0; }
-// 0x4dfa50
-bool FootClass::IsNotAttackAndPlayer() const { return false; }
-// 0x4e00b0
-int FootClass::Jumpjet_OccupyCell() { return 0; }
-// 0x4e0170
-int FootClass::Destru_vt08() { return 0; }
-// 0x4e0ed0
-int FootClass::RemoveFromPointerArray() { return 0; }
-int FootClass::sub_550DAA0() { return 0; }
-// 0x586fc0
-int FootClass::FindNearestApproachableCell() { return -1; }
-// 0x629e90
-bool FootClass::CreateWakes() { return false; }
-int FootClass::sub_56E52F0() { return 0; }
-// 0x6eb380
-int FootClass::LinkToTransporter() { return 0; }
-// 0x6f03b0
-int FootClass::GetGameSpeedFromSession() const { return 0; }
-// 0x6f5090
-int FootClass::CompleteProduction() { return 0; }
-// 0x6fb740
-void FootClass::UpdateLocomotion() {}
-// 0x70d7e0
-int FootClass::ProcessEnterTransport() { return 0; }
-// 0x70f670
-void FootClass::SetThreatBounds() {}
-// 0x70f6a0
-int FootClass::ApplyThreatBounds() { return 0; }
-int FootClass::sub_570F7E0() { return 0; }
-int FootClass::sub_70FEB0() { return 0; }
-// 0x7104f0
-void FootClass::UpdatePassengerCoords() {}
-// 0x729480
-void FootClass::Cleanup() {}
-// 0x738970
-int FootClass::RespondToDestruction() { return 0; }
-int FootClass::sub_5746D80() { return 0; }
-// 0x750030
-bool FootClass::CheckAccelLimit() const { return false; }
-// 0x7500d0
-int FootClass::GetField() const { return 0; }
-// 0x7500e0
-void FootClass::SetField() {}
+  int v3; // eax
+  int v4; // eax
+  bool result; // al
+  _DWORD *v6; // ecx
+  int v7; // edi
+  _DWORD *v8; // ecx
+  int v9; // edi
+  int *v10; // eax
+  int v11; // eax
+  bool v12; // bl
+  bool v13; // al
 
-} // namespace game
-} // namespace ra2
+  if ( !*(_DWORD *)(a1 + 692) && !(unsigned __int8)House::IsCurrentPlayer(*(#375 **)(a1 + 540)) ) /*0x7092aa*/
+  {
+    if ( a1 ) /*0x7092b5*/
+    {
+      if ( (*(_BYTE *)(a1 + 20) & 4) != 0 ) /*0x7092c3*/
+      {
+        v3 = *(_DWORD *)(a1 + 1492); /*0x7092c5*/
+        if ( v3 ) /*0x7092cd*/
+        {
+          v4 = *(_DWORD *)(v3 + 36); /*0x7092cf*/
+          if ( !*(_BYTE *)(v4 + 175) && *(_BYTE *)(v4 + 173) && *(_DWORD *)(a1 + 172) == 2 ) /*0x7092ec*/
+            return 1; /*0x7092ec*/
+        }
+      }
+    }
+  }
+  result = FootClass::CanEnterBuilding((int *)a1); /*0x7092f4*/
+  if ( !result ) /*0x7092fb*/
+    return result; /*0x7092fb*/
+  if ( *(_DWORD *)(a1 + 172) == 2 )
+  {
+    if ( *(_BYTE *)((*(int (__thiscall **)(int))(*(_DWORD *)a1 + 132))(a1) + 3434) ) /*0x709317*/
+    {
+      if ( !a1 || (*(_BYTE *)(a1 + 20) & 4) == 0 ) /*0x709331*/
+        return 0; /*0x709338*/
+      if ( *(_DWORD *)(a1 + 1444) == (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 444))(a1) ) /*0x709349*/
+      {
+        v6 = *(_DWORD **)(a1 + 1300); /*0x70934b*/
+        if ( !v6 || FactoryClass::GetState(v6) <= 0 ) /*0x709360*/
+          return 1; /*0x709360*/
+      }
+    }
+    if ( *(_DWORD *)(a1 + 172) == 2 )
+    {
+      if ( a1 )
+      {
+        if ( (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 44))(a1) == 1 )
+        {
+          if ( *(_BYTE *)(*(_DWORD *)((*(int (__thiscall **)(int))(*(_DWORD *)a1 + 44))(a1) == 1 ? a1 + 0x6C4 : 1732)
+                        + 3603) )
+          {
+            v7 = (*(_BYTE *)(a1 + 20) & 4) != 0 ? a1 : 0;
+            if ( *(_DWORD *)(v7 + 1444) == (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 444))(a1) ) /*0x7093bc*/
+            {
+              v8 = *(_DWORD **)(a1 + 1300); /*0x7093be*/
+              if ( !v8 || FactoryClass::GetState(v8) <= 0 ) /*0x7093d3*/
+                return 1; /*0x7093d3*/
+            }
+          }
+        }
+      }
+    }
+  }
+  if ( *(_BYTE *)((*(int (__thiscall **)(int))(*(_DWORD *)a1 + 132))(a1) + 1711) ) /*0x7093df*/
+    return 1; /*0x7093df*/
+  if ( *(_DWORD *)(a1 + 172) != 5 ) /*0x7093f0*/
+    return 0; /*0x7093f7*/
+  v9 = (*(int (__thiscall **)(int, int))(*(_DWORD *)a1 + 996))(a1, a2); /*0x709403*/
+  v10 = (int *)(*(int (__thiscall **)(int, int))(*(_DWORD *)a1 + 1016))(a1, v9); /*0x70940a*/
+  v12 = 0; /*0x709424*/
+  if ( v10 ) /*0x709412*/
+  {
+    v11 = *v10; /*0x709414*/
+    if ( v11 ) /*0x709418*/
+    {
+      if ( *(_BYTE *)(v11 + 336) ) /*0x70941a*/
+        v12 = 1; /*0x709412*/
+    }
+  }
+  v13 = (*(int (__thiscall **)(int, _DWORD))(*(_DWORD *)a1 + 740))(a1, *(_DWORD *)(a1 + 692)) == v9; /*0x70943d*/
+  return !v12 || !v13; /*0x709450*/
+}
+  result = FootClass::CanEnterBuilding((int *)a1); /*0x7092f4*/
+  if ( !result ) /*0x7092fb*/
+    return result; /*0x7092fb*/
+  if ( *(_DWORD *)(a1 + 172) == 2 )
+  {
+    if ( *(_BYTE *)((*(int (__thiscall **)(int))(*(_DWORD *)a1 + 132))(a1) + 3434) ) /*0x709317*/
+    {
+      if ( !a1 || (*(_BYTE *)(a1 + 20) & 4) == 0 ) /*0x709331*/
+        return 0; /*0x709338*/
+      if ( *(_DWORD *)(a1 + 1444) == (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 444))(a1) ) /*0x709349*/
+      {
+        v6 = *(_DWORD **)(a1 + 1300); /*0x70934b*/
+        if ( !v6 || FactoryClass::GetState(v6) <= 0 ) /*0x709360*/
+          return 1; /*0x709360*/
+      }
+    }
+    if ( *(_DWORD *)(a1 + 172) == 2 )
+    {
+      if ( a1 )
+      {
+        if ( (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 44))(a1) == 1 )
+        {
+          if ( *(_BYTE *)(*(_DWORD *)((*(int (__thiscall **)(int))(*(_DWORD *)a1 + 44))(a1) == 1 ? a1 + 0x6C4 : 1732)
+                        + 3603) )
+          {
+            v7 = (*(_BYTE *)(a1 + 20) & 4) != 0 ? a1 : 0;
+            if ( *(_DWORD *)(v7 + 1444) == (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 444))(a1) ) /*0x7093bc*/
+            {
+              v8 = *(_DWORD **)(a1 + 1300); /*0x7093be*/
+              if ( !v8 || FactoryClass::GetState(v8) <= 0 ) /*0x7093d3*/
+                return 1; /*0x7093d3*/
+            }
+          }
+        }
+      }
+    }
+  }
+  if ( *(_BYTE *)((*(int (__thiscall **)(int))(*(_DWORD *)a1 + 132))(a1) + 1711) ) /*0x7093df*/
+    return 1; /*0x7093df*/
+  if ( *(_DWORD *)(a1 + 172) != 5 ) /*0x7093f0*/
+    return 0; /*0x7093f7*/
+  v9 = (*(int (__thiscall **)(int, int))(*(_DWORD *)a1 + 996))(a1, a2); /*0x709403*/
+  v10 = (int *)(*(int (__thiscall **)(int, int))(*(_DWORD *)a1 + 1016))(a1, v9); /*0x70940a*/
+  v12 = 0; /*0x709424*/
+  if ( v10 ) /*0x709412*/
+  {
+    v11 = *v10; /*0x709414*/
+    if ( v11 ) /*0x709418*/
+    {
+      if ( *(_BYTE *)(v11 + 336) ) /*0x70941a*/
+        v12 = 1; /*0x709412*/
+    }
+  }
+  v13 = (*(int (__thiscall **)(int, _DWORD))(*(_DWORD *)a1 + 740))(a1, *(_DWORD *)(a1 + 692)) == v9; /*0x70943d*/
+  return !v12 || !v13; /*0x709450*/
+}
+  result = FootClass::CanEnterBuilding((int *)a1); /*0x7092f4*/
+  if ( !result ) /*0x7092fb*/
+    return result; /*0x7092fb*/
+  if ( *(_DWORD *)(a1 + 172) == 2 )
+  {
+    if ( *(_BYTE *)((*(int (__thiscall **)(int))(*(_DWORD *)a1 + 132))(a1) + 3434) ) /*0x709317*/
+    {
+      if ( !a1 || (*(_BYTE *)(a1 + 20) & 4) == 0 ) /*0x709331*/
+        return 0; /*0x709338*/
+      if ( *(_DWORD *)(a1 + 1444) == (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 444))(a1) ) /*0x709349*/
+      {
+        v6 = *(_DWORD **)(a1 + 1300); /*0x70934b*/
+        if ( !v6 || FactoryClass::GetState(v6) <= 0 ) /*0x709360*/
+          return 1; /*0x709360*/
+      }
+    }
+    if ( *(_DWORD *)(a1 + 172) == 2 )
+    {
+      if ( a1 )
+      {
+        if ( (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 44))(a1) == 1 )
+        {
+          if ( *(_BYTE *)(*(_DWORD *)((*(int (__thiscall **)(int))(*(_DWORD *)a1 + 44))(a1) == 1 ? a1 + 0x6C4 : 1732)
+                        + 3603) )
+          {
+            v7 = (*(_BYTE *)(a1 + 20) & 4) != 0 ? a1 : 0;
+            if ( *(_DWORD *)(v7 + 1444) == (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 444))(a1) ) /*0x7093bc*/
+            {
+              v8 = *(_DWORD **)(a1 + 1300); /*0x7093be*/
+              if ( !v8 || FactoryClass::GetState(v8) <= 0 ) /*0x7093d3*/
+                return 1; /*0x7093d3*/
+            }
+          }
+        }
+      }
+    }
+  }
+  if ( *(_BYTE *)((*(int (__thiscall **)(int))(*(_DWORD *)a1 + 132))(a1) + 1711) ) /*0x7093df*/
+    return 1; /*0x7093df*/
+  if ( *(_DWORD *)(a1 + 172) != 5 ) /*0x7093f0*/
+    return 0; /*0x7093f7*/
+  v9 = (*(int (__thiscall **)(int, int))(*(_DWORD *)a1 + 996))(a1, a2); /*0x709403*/
+  v10 = (int *)(*(int (__thiscall **)(int, int))(*(_DWORD *)a1 + 1016))(a1, v9); /*0x70940a*/
+  v12 = 0; /*0x709424*/
+  if ( v10 ) /*0x709412*/
+  {
+    v11 = *v10; /*0x709414*/
+    if ( v11 ) /*0x709418*/
+    {
+      if ( *(_BYTE *)(v11 + 336) ) /*0x70941a*/
+        v12 = 1; /*0x709412*/
+    }
+  }
+  v13 = (*(int (__thiscall **)(int, _DWORD))(*(_DWORD *)a1 + 740))(a1, *(_DWORD *)(a1 + 692)) == v9; /*0x70943d*/
+  return !v12 || !v13; /*0x709450*/
+}
+  result = FootClass::CanEnterBuilding((int *)a1); /*0x7092f4*/
+  if ( !result ) /*0x7092fb*/
+    return result; /*0x7092fb*/
+  if ( *(_DWORD *)(a1 + 172) == 2 )
+  {
+    if ( *(_BYTE *)((*(int (__thiscall **)(int))(*(_DWORD *)a1 + 132))(a1) + 3434) ) /*0x709317*/
+    {
+      if ( !a1 || (*(_BYTE *)(a1 + 20) & 4) == 0 ) /*0x709331*/
+        return 0; /*0x709338*/
+      if ( *(_DWORD *)(a1 + 1444) == (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 444))(a1) ) /*0x709349*/
+      {
+        v6 = *(_DWORD **)(a1 + 1300); /*0x70934b*/
+        if ( !v6 || FactoryClass::GetState(v6) <= 0 ) /*0x709360*/
+          return 1; /*0x709360*/
+      }
+    }
+    if ( *(_DWORD *)(a1 + 172) == 2 )
+    {
+      if ( a1 )
+      {
+        if ( (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 44))(a1) == 1 )
+        {
+          if ( *(_BYTE *)(*(_DWORD *)((*(int (__thiscall **)(int))(*(_DWORD *)a1 + 44))(a1) == 1 ? a1 + 0x6C4 : 1732)
+                        + 3603) )
+          {
+            v7 = (*(_BYTE *)(a1 + 20) & 4) != 0 ? a1 : 0;
+            if ( *(_DWORD *)(v7 + 1444) == (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 444))(a1) ) /*0x7093bc*/
+            {
+              v8 = *(_DWORD **)(a1 + 1300); /*0x7093be*/
+              if ( !v8 || FactoryClass::GetState(v8) <= 0 ) /*0x7093d3*/
+                return 1; /*0x7093d3*/
+            }
+          }
+        }
+      }
+    }
+  }
+  if ( *(_BYTE *)((*(int (__thiscall **)(int))(*(_DWORD *)a1 + 132))(a1) + 1711) ) /*0x7093df*/
+    return 1; /*0x7093df*/
+  if ( *(_DWORD *)(a1 + 172) != 5 ) /*0x7093f0*/
+    return 0; /*0x7093f7*/
+  v9 = (*(int (__thiscall **)(int, int))(*(_DWORD *)a1 + 996))(a1, a2); /*0x709403*/
+  v10 = (int *)(*(int (__thiscall **)(int, int))(*(_DWORD *)a1 + 1016))(a1, v9); /*0x70940a*/
+  v12 = 0; /*0x709424*/
+  if ( v10 ) /*0x709412*/
+  {
+    v11 = *v10; /*0x709414*/
+    if ( v11 ) /*0x709418*/
+    {
+      if ( *(_BYTE *)(v11 + 336) ) /*0x70941a*/
+        v12 = 1; /*0x709412*/
+    }
+  }
+  v13 = (*(int (__thiscall **)(int, _DWORD))(*(_DWORD *)a1 + 740))(a1, *(_DWORD *)(a1 + 692)) == v9; /*0x70943d*/
+  return !v12 || !v13; /*0x709450*/
+}
+  result = FootClass::CanEnterBuilding((int *)a1); /*0x7092f4*/
+  if ( !result ) /*0x7092fb*/
+    return result; /*0x7092fb*/
+  if ( *(_DWORD *)(a1 + 172) == 2 )
+  {
+    if ( *(_BYTE *)((*(int (__thiscall **)(int))(*(_DWORD *)a1 + 132))(a1) + 3434) ) /*0x709317*/
+    {
+      if ( !a1 || (*(_BYTE *)(a1 + 20) & 4) == 0 ) /*0x709331*/
+        return 0; /*0x709338*/
+      if ( *(_DWORD *)(a1 + 1444) == (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 444))(a1) ) /*0x709349*/
+      {
+        v6 = *(_DWORD **)(a1 + 1300); /*0x70934b*/
+        if ( !v6 || FactoryClass::GetState(v6) <= 0 ) /*0x709360*/
+          return 1; /*0x709360*/
+      }
+    }
+    if ( *(_DWORD *)(a1 + 172) == 2 )
+    {
+      if ( a1 )
+      {
+        if ( (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 44))(a1) == 1 )
+        {
+          if ( *(_BYTE *)(*(_DWORD *)((*(int (__thiscall **)(int))(*(_DWORD *)a1 + 44))(a1) == 1 ? a1 + 0x6C4 : 1732)
+                        + 3603) )
+          {
+            v7 = (*(_BYTE *)(a1 + 20) & 4) != 0 ? a1 : 0;
+            if ( *(_DWORD *)(v7 + 1444) == (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 444))(a1) ) /*0x7093bc*/
+            {
+              v8 = *(_DWORD **)(a1 + 1300); /*0x7093be*/
+              if ( !v8 || FactoryClass::GetState(v8) <= 0 ) /*0x7093d3*/
+                return 1; /*0x7093d3*/
+            }
+          }
+        }
+      }
+  if ( *(_BYTE *)((*(int (__thiscall **)(int))(*(_DWORD *)a1 + 132))(a1) + 1711) ) /*0x7093df*/
+    return 1; /*0x7093df*/
+  if ( *(_DWORD *)(a1 + 172) != 5 ) /*0x7093f0*/
+    return 0; /*0x7093f7*/
+  v9 = (*(int (__thiscall **)(int, int))(*(_DWORD *)a1 + 996))(a1, a2); /*0x709403*/
+  v10 = (int *)(*(int (__thiscall **)(int, int))(*(_DWORD *)a1 + 1016))(a1, v9); /*0x70940a*/
+  v12 = 0; /*0x709424*/
+  if ( v10 ) /*0x709412*/
+  {
+    v11 = *v10; /*0x709414*/
+    if ( v11 ) /*0x709418*/
+    {
+      if ( *(_BYTE *)(v11 + 336) ) /*0x70941a*/
+        v12 = 1; /*0x709412*/
+  v13 = (*(int (__thiscall **)(int, _DWORD))(*(_DWORD *)a1 + 740))(a1, *(_DWORD *)(a1 + 692)) == v9; /*0x70943d*/
+  return !v12 || !v13; /*0x709450*/

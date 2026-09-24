@@ -6,7 +6,5 @@
 // 0x4105F0
 int INoticeSource::Dispatch(int a1)
 {
-{
-    return AbstractClass::COMStub_AddRef(a1 - 4);
-}
+  return AbstractClass::COMStub_AddRef(a1 - 4);
 }

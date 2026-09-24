@@ -27,145 +27,59 @@ REVERSE(0x473c50, "CCFileClass::Open: IDA verified", "None")
 // 0x473c50
 int CCFileClass::Open(const char* pFileName)
 {
-{
-  if ( this->q068 == 1 )
-    return 1;
-  if ( this->Destru_vt06() )
+  if ( *(this + 26) == 1 ) /*0x473c5c*/
+    return 1; /*0x473c5e*/
+  if ( (*(unsigned __int8 (__thiscall **)(_DWORD *))(*this + 24))(this) ) /*0x473c69*/
   {
-    this->q068 = 1;
-    return 1;
+    *(this + 26) = 1; /*0x473c70*/
+    return 1; /*0x473c73*/
   }
   else
   {
-    this->GetMember06();
-    if ( (unsigned __int8)LookupFileInfoCache(0, 0, 0) )
+    (*(void (__thiscall **)(_DWORD *))(*this + 4))(this); /*0x473c84*/
+    if ( (unsigned __int8)LookupFileInfoCache(0, 0, 0) ) /*0x473c8b*/
     {
-      this->q068 = 1;
-      return 1;
+      *(this + 26) = 1; /*0x473c94*/
+      return 1; /*0x473c97*/
     }
-    else if ( (unsigned __int8)File::IsReady(0) )
+    else if ( (unsigned __int8)File::IsReady(0) ) /*0x473ca2*/
     {
-      this->q068 = 1;
-      return 1;
+      *(this + 26) = 1; /*0x473cab*/
+      return 1; /*0x473cae*/
     }
     else
     {
-      this->q068 = 2;
-      return 0;
+      *(this + 26) = 2; /*0x473cb5*/
+      return 0; /*0x473cbd*/
     }
   }
-}
-
-/* ASM:
-push    ebx
-push    esi
-mov     esi, ecx
-mov     ebx, 1
-cmp     [esi+68h], ebx
-jnz     short loc_473C65
-mov     al, bl
-pop     esi
-pop     ebx
-retn    4
-; ---------------------------------------------------------------------------
-
-loc_473C65:                             ; CODE XREF: CCFileClass__Open+C↑j
-mov     eax, [esi]
-mov     ecx, esi
-call    dword ptr [eax+18h]
-test    al, al
-jz      short loc_473C7A
-mov     [esi+68h], ebx
-mov     al, bl
-pop     esi
-pop     ebx
-retn    4
-; ---------------------------------------------------------------------------
-
-loc_473C7A:                             ; CODE XREF: CCFileClass__Open+1E↑j
-mov     edx, [esi]
-push    0
-push    0
-push    0
-mov     ecx, esi
-call    dword ptr [edx+4]
-mov     ecx, eax
-xor     edx, edx
-call    LookupFileInfoCache
-test    al, al
-jz      short loc_473C9E
-mov     [esi+68h], ebx
-mov     al, bl
-pop     esi
-pop     ebx
-retn    4
-; ---------------------------------------------------------------------------
-
-loc_473C9E:                             ; CODE XREF: CCFileClass__Open+42↑j
-push    0
-mov     ecx, esi
-call    File__IsReady
-test    al, al
-jz      short loc_473CB5
-mov     [esi+68h], ebx
-mov     al, bl
-pop     esi
-pop     ebx
-retn    4
-; ---------------------------------------------------------------------------
-
-loc_473CB5:                             ; CODE XREF: CCFileClass__Open+59↑j
-mov     dword ptr [esi+68h], 2
-pop     esi
-xor     al, al
-pop     ebx
-retn    4
-*/
-
-REVERSE(0x4a3890, "CCFileClass::ReadEntireFile: IDA verified", "None")
-// IDA 0x4A3890 -- CCFileClass::ReadEntireFile
 }
 // 0x4a3890
 void* CCFileClass::ReadEntireFile()
 {
-    if (Buffer.Buffer && Buffer.Size > 0)
-        return Buffer.Buffer;
+  void *v2; // edi
+  size_t v3; // ebx
 
-    // If not loaded, try to open the stored filename
-    // (filename is stored in the base class's FileName field)
-    return FileSystem::LoadFile(FileName, false);
+  v2 = 0; /*0x4a3895*/
+  if ( (*(unsigned __int8 (__thiscall **)(void *, _DWORD))(*(_DWORD *)this + 20))(this, 0) ) /*0x4a389a*/
+  {
+    v3 = (*(int (__thiscall **)(void *))(*(_DWORD *)this + 44))(this); /*0x4a38a8*/
+    v2 = __2_YAPAXI_Z(v3); /*0x4a38b0*/
+    if ( v2 ) /*0x4a38b7*/
+      (*(void (__thiscall **)(void *, void *, size_t))(*(_DWORD *)this + 36))(this, v2, v3); /*0x4a38bf*/
+  }
+  return v2; /*0x4a38c4*/
 }
-
 REVERSE(0x473ce0, "CCFileClass::Reset: IDA verified", "None")
 // IDA 0x473CE0 -- CCFileClass::Reset
 // 0x473ce0
 int CCFileClass::Reset()
 {
-{
+  _DWORD *v2; // ecx
 
-  _DWORD * v2 = this + 22;
-  if ( v2 )
-    Buffer::Init(v2, 0, 0);
-  this->q064 = 0;
-  return CCFileClass::Close(this);
+  v2 = this + 22; /*0x473ce3*/
+  if ( v2 ) /*0x473ce8*/
+    Buffer::Init(v2, 0, 0); /*0x473cee*/
+  *(this + 25) = 0; /*0x473cf5*/
+  return CCFileClass::Close(this); /*0x473d01*/
 }
-
-/* ASM:
-push    esi
-mov     esi, ecx
-lea     ecx, [esi+58h]
-test    ecx, ecx
-jz      short loc_473CF3
-push    0               ; Size
-push    0               ; int
-call    Buffer__Init
-
-loc_473CF3:                             ; CODE XREF: CCFileClass__Reset+8↑j
-mov     ecx, esi
-mov     dword ptr [esi+64h], 0
-call    CCFileClass__Close
-pop     esi
-retn
-*/
-
-} // namespace gamemd

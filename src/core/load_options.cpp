@@ -85,9 +85,27 @@ void LoadOptions::Construct() {
 
 // 0x558740
 LoadOptions::LoadOptions() {
-    Construct();
-}
+  _DWORD *v2; // ecx
+  int v3; // eax
 
+  v2 = &this->is_active; /*0x558745*/
+  v2[1] = 0; /*0x558748*/
+  v2[2] = 0; /*0x55874b*/
+  *((_BYTE *)v2 + 12) = 1; /*0x55874e*/
+  *((_BYTE *)v2 + 13) = 0; /*0x558752*/
+  *v2 = &DynamicVectorClass<FileEntryClass *>::`vftable'; /*0x558755*/
+  v2[5] = 10; /*0x55875b*/
+  v2[4] = 0; /*0x558762*/
+  this->Items = 0; /*0x558765*/
+  this->q00C = 0; /*0x558768*/
+  this->q014 = 0; /*0x55876b*/
+  v3 = *v2; /*0x55876e*/
+  *this = &LoadOptionsClass::`vftable'; /*0x558770*/
+  this->Capacity = &off_829EA0; /*0x558776*/
+  this->max_entries = 2048; /*0x55877d*/
+  (*(void (__thiscall **)(_DWORD *))(v3 + 12))(v2); /*0x558784*/
+  return this; /*0x558789*/
+}
 LoadOptions::~LoadOptions() {
     Cleanup();
 }
@@ -95,75 +113,27 @@ LoadOptions::~LoadOptions() {
 // IDA 0x558790: LoadOptions::Cleanup
 // 0x558790
 void LoadOptions::Cleanup() {
-{
+  int v2; // edi
+  int v3; // edx
+  _DWORD *v4; // esi
+  void *v5; // eax
 
-  int v2 = 0;
-  for ( *this = &LoadOptionsClass::`vftable'; v2 < this->capacity; ++v2 )
-    __3_YAXPAX_Z(*(void **)(this->q009 + 4 * v2));
-  int v3 = this->is_active;
-  _DWORD * v4 = this + 8;
-  (*(void (__thiscall **)(_DWORD *))(v3 + 12))(v4);
-  void * v5 = (void *)v4[1];
-  *v4 = &VectorClass<FileEntryClass *>::`vftable';
-  if ( v5 && *((_BYTE *)v4 + 13) )
+  v2 = 0; /*0x558797*/
+  for ( *this = &LoadOptionsClass::`vftable'; v2 < *(&this->Items2); ++v2 ) /*0x5587a4*/
+    __3_YAXPAX_Z(*(void **)(this->q024 + 4 * v2)); /*0x5587ad*/
+  v3 = this->is_active; /*0x5587bd*/
+  v4 = &this->is_active; /*0x5587c0*/
+  (*(void (__thiscall **)(_DWORD *))(v3 + 12))(v4); /*0x5587c5*/
+  v5 = (void *)v4[1]; /*0x5587c8*/
+  *v4 = &VectorClass<FileEntryClass *>::`vftable'; /*0x5587cb*/
+  if ( v5 && *((_BYTE *)v4 + 13) ) /*0x5587d5*/
   {
-    __3_YAXPAX_Z(v5);
-    v4[1] = 0;
+    __3_YAXPAX_Z(v5); /*0x5587db*/
+    v4[1] = 0; /*0x5587e3*/
   }
-  *((_BYTE *)v4 + 13) = 0;
-  v4[2] = 0;
+  *((_BYTE *)v4 + 13) = 0; /*0x5587e6*/
+  v4[2] = 0; /*0x5587e9*/
 }
-
-/* ASM:
-push    ebx
-push    esi
-mov     esi, ecx
-push    edi
-xor     ebx, ebx
-xor     edi, edi
-mov     dword ptr [esi], offset ??_7LoadOptionsClass@@6B@ ; const LoadOptionsClass::`vftable'
-mov     eax, [esi+30h]
-cmp     eax, ebx
-jle     short loc_5587BD
-
-loc_5587A6:                             ; CODE XREF: LoadOptions__Cleanup+2B↓j
-mov     eax, [esi+24h]
-mov     ecx, [eax+edi*4]
-push    ecx             ; Block
-call    ??3_YAXPAX_Z
-mov     eax, [esi+30h]
-add     esp, 4
-inc     edi
-cmp     edi, eax
-jl      short loc_5587A6
-
-loc_5587BD:                             ; CODE XREF: LoadOptions__Cleanup+14↑j
-mov     edx, [esi+20h]
-add     esi, 20h ; ' '
-mov     ecx, esi
-call    dword ptr [edx+0Ch]
-mov     eax, [esi+4]
-mov     dword ptr [esi], offset ??_7?$VectorClass@PAVFileEntryClass@@@@6B@ ; const VectorClass<FileEntryClass *>::`vftable'
-cmp     eax, ebx
-jz      short loc_5587E6
-cmp     [esi+0Dh], bl
-jz      short loc_5587E6
-push    eax             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-mov     [esi+4], ebx
-
-loc_5587E6:                             ; CODE XREF: LoadOptions__Cleanup+43↑j
-; LoadOptions__Cleanup+48↑j
-mov     [esi+0Dh], bl
-mov     [esi+8], ebx
-pop     edi
-pop     esi
-pop     ebx
-retn
-*/
-}
-
 // IDA 0x55A0D0: VT00_Destroy (QueryInterface destructor)
 void LoadOptions::VT00_Destroy(char free_self) {
     Cleanup();
@@ -180,64 +150,117 @@ bool LoadOptions::DeleteSaveFile(const char* filename) {
 // IDA 0x5587F0: Run — launch save/load dialog
 // 0x5587f0
 int LoadOptions::Run() {
-{
-{
-  this->Items = (const char *)1; /*0x5587f0*/
+  this->Items = 1; /*0x5587f0*/
   this->q00C = 0; /*0x5587f7*/
-  return SaveLoadDialog::DlgProc(this);
-}
-}
+  return SaveLoadDialog::DlgProc((LONG)this);
 }
 // 0x559c20
 bool LoadOptions::Check() {
+  char v2; // bl
+  const char *v3; // eax
+  HANDLE FirstFileA; // edi
+  CHAR FileName[64]; // [esp+Ch] [ebp-33Ch] BYREF
+  _WORD v7[128]; // [esp+4Ch] [ebp-2FCh] BYREF
+  char v8; // [esp+14Ch] [ebp-1FCh]
+  int v9; // [esp+16Ch] [ebp-1DCh]
+  int v10; // [esp+170h] [ebp-1D8h]
+  __int16 v11; // [esp+174h] [ebp-1D4h]
+  int v12; // [esp+1F4h] [ebp-154h]
+  int v13; // [esp+1F8h] [ebp-150h]
+  int v14; // [esp+1FCh] [ebp-14Ch]
+  char v15; // [esp+200h] [ebp-148h]
+  char v16; // [esp+201h] [ebp-147h]
+  int v17; // [esp+204h] [ebp-144h]
+  struct _WIN32_FIND_DATAA FindFileData; // [esp+208h] [ebp-140h] BYREF
+
+  v2 = 0; /*0x559c2f*/
+  v3 = this->Capacity; /*0x559c31*/
+  v9 = 0; /*0x559c34*/
+  v10 = -1; /*0x559c42*/
+  v12 = -1; /*0x559c4d*/
+  v15 = 1; /*0x559c58*/
+  v16 = 0; /*0x559c60*/
+  v17 = 0; /*0x559c67*/
+  v7[0] = 0; /*0x559c6e*/
+  v8 = 0; /*0x559c73*/
+  v11 = 0; /*0x559c7a*/
+  v14 = 0; /*0x559c82*/
+  v13 = 0; /*0x559c89*/
+  sprintf(FileName, "*.%3s", v3); /*0x559c90*/
+  FirstFileA = FindFirstFileA(FileName, &FindFileData); /*0x559cab*/
+  if ( FirstFileA != (HANDLE)-1 ) /*0x559cb0*/
+  {
+    while ( (FindFileData.dwFileAttributes & 0x116) != 0 /*0x559cf7*/
+         || !_strcmpi(FindFileData.cFileName, MultiByteStr)
+         || (*((unsigned __int8 (__thiscall **)(const char **, _WORD *, struct _WIN32_FIND_DATAA *))*this + 4))(
+              this,
+              v7,
+              &FindFileData) != 1
+         || v16 )
+    {
+      if ( !FindNextFileA(FirstFileA, &FindFileData) ) /*0x559d0a*/
+        goto LABEL_9; /*0x559d0a*/
+    }
+    v2 = 1; /*0x559d0e*/
+  }
+  LABEL_9:
+  FindClose(FirstFileA); /*0x559d10*/
+  return v2; /*0x559d17*/
 }
 // 0x559c20
     char __thiscall LoadOptions::Check(const char **(void**)this)
-{
-    char v2;
-    const char *v3;
-    int v4;
-    char FileName[64];
-    short v7[128];
-    char v8;
-    int v9;
-    int v10;
-    short v11;
-    int v12;
-    int v13;
-    int v14;
-    char v15;
-    char v16;
-    int v17;
-    short FindFileData[160];
-    v2 = 0;
-    v3 = this->Capacity;
-    v9 = 0;
-    v10 = -1;
-    v12 = -1;
-    v15 = 1;
-    v16 = 0;
-    v17 = 0;
-    v7[0] = 0;
-    v8 = 0;
-    v11 = 0;
-    v14 = 0;
-    v13 = 0;
-    sprintf(FileName, "*.%3s", v3);
-    v4 = FindFirstFileA(FileName, FindFileData);
-    if ( v4 != -1 )
-  {
-    while ( (FindFileData[0] & 0x116) != 0 || !_strcmpi(&FindFileData[22], MultiByteStr) || (*((unsigned char (__thiscall **)(const char **, short *, short *))*(void**)(this) + 4))(this, v7, FindFileData) != 1 || v16 )
     {
-    if ( !FindNextFileA(v4, FindFileData) )
-    goto LABEL_9;
-    }
-    v2 = 1;
-  }
-    LABEL_9: FindClose(v4);
-    return v2;
-}
+      char v2; // bl
+      const char *v3; // eax
+      HANDLE FirstFileA; // edi
+      CHAR FileName[64]; // [esp+Ch] [ebp-33Ch] BYREF
+      _WORD v7[128]; // [esp+4Ch] [ebp-2FCh] BYREF
+      char v8; // [esp+14Ch] [ebp-1FCh]
+      int v9; // [esp+16Ch] [ebp-1DCh]
+      int v10; // [esp+170h] [ebp-1D8h]
+      __int16 v11; // [esp+174h] [ebp-1D4h]
+      int v12; // [esp+1F4h] [ebp-154h]
+      int v13; // [esp+1F8h] [ebp-150h]
+      int v14; // [esp+1FCh] [ebp-14Ch]
+      char v15; // [esp+200h] [ebp-148h]
+      char v16; // [esp+201h] [ebp-147h]
+      int v17; // [esp+204h] [ebp-144h]
+      struct _WIN32_FIND_DATAA FindFileData; // [esp+208h] [ebp-140h] BYREF
 
+      v2 = 0; /*0x559c2f*/
+      v3 = this->Capacity; /*0x559c31*/
+      v9 = 0; /*0x559c34*/
+      v10 = -1; /*0x559c42*/
+      v12 = -1; /*0x559c4d*/
+      v15 = 1; /*0x559c58*/
+      v16 = 0; /*0x559c60*/
+      v17 = 0; /*0x559c67*/
+      v7[0] = 0; /*0x559c6e*/
+      v8 = 0; /*0x559c73*/
+      v11 = 0; /*0x559c7a*/
+      v14 = 0; /*0x559c82*/
+      v13 = 0; /*0x559c89*/
+      sprintf(FileName, "*.%3s", v3); /*0x559c90*/
+      FirstFileA = FindFirstFileA(FileName, &FindFileData); /*0x559cab*/
+      if ( FirstFileA != (HANDLE)-1 ) /*0x559cb0*/
+      {
+        while ( (FindFileData.dwFileAttributes & 0x116) != 0 /*0x559cf7*/
+             || !_strcmpi(FindFileData.cFileName, MultiByteStr)
+             || (*((unsigned __int8 (__thiscall **)(const char **, _WORD *, struct _WIN32_FIND_DATAA *))*this + 4))(
+                  this,
+                  v7,
+                  &FindFileData) != 1
+             || v16 )
+        {
+          if ( !FindNextFileA(FirstFileA, &FindFileData) ) /*0x559d0a*/
+            goto LABEL_9; /*0x559d0a*/
+        }
+        v2 = 1; /*0x559d0e*/
+      }
+      LABEL_9:
+      FindClose(FirstFileA); /*0x559d10*/
+      return v2; /*0x559d17*/
+    }
 /* ASM:
 FileName        = OMOTestDerived ptr -33Ch
 var_2FC         = word ptr -2FCh
@@ -333,7 +356,6 @@ pop     ebx
 add     esp, 33Ch
 retn
 */
-}
 
 // IDA 0x559D60: LoadGame (AddRef/vt01)
 bool LoadOptions::LoadGame(const char* filename) {
@@ -366,152 +388,51 @@ bool LoadOptions::ReadEntry(FileEntryClass* dest, int a2) {
 // IDA 0x55A1F0: CopyItems — resize vector, preserve existing entries
 // 0x55a1f0
 AbstractClass * * LoadOptions::CopyItems(uint32_t new_size, FileEntryClass** out_buffer) {
-// 0x55a1f0
-{
+  _DWORD *v4; // edi
+  int v6; // ecx
   int i; // eax
 
-  if ( a2 )
+  if ( new_size ) /*0x55a1fc*/
   {
-    this->q00C = 0;
-    if ( a3 )
-      _DWORD * v4 = a3;
+    this->q00C = 0; /*0x55a206*/
+    if ( out_buffer ) /*0x55a20c*/
+      v4 = out_buffer; /*0x55a222*/
     else
-      v4 = (_DWORD *)__2_YAPAXI_Z(4 * a2);
-    this->q00C = 1;
-    if ( v4 )
+      v4 = __2_YAPAXI_Z(4 * new_size); /*0x55a21e*/
+    this->q00C = 1; /*0x55a226*/
+    if ( v4 ) /*0x55a22a*/
     {
-      if ( this->Items )
+      if ( this->Items ) /*0x55a235*/
       {
-        int v6 = this->Capacity;
-        if ( a2 < v6 )
-          v6 = a2;
-        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) )
-          ++i;
-        if ( this->IsAllocated )
+        v6 = this->Capacity; /*0x55a23c*/
+        if ( new_size < v6 ) /*0x55a241*/
+          v6 = new_size; /*0x55a243*/
+        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x55a249*/
+          ++i; /*0x55a24e*/
+        if ( this->IsAllocated ) /*0x55a25b*/
         {
-          __3_YAXPAX_Z(this->Items);
-          this->Items = 0;
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x55a266*/
+          this->Items = 0; /*0x55a26e*/
         }
       }
-      this->Items = v4;
-      this->Capacity = a2;
-      this->IsAllocated = a3 == 0;
-      return 1;
+      this->Items = v4; /*0x55a277*/
+      this->Capacity = new_size; /*0x55a27f*/
+      this->IsAllocated = out_buffer == 0; /*0x55a282*/
+      return 1; /*0x55a288*/
     }
     else
     {
-      return 0;
+      return 0; /*0x55a22f*/
     }
   }
   else
   {
-    (*(void (__thiscall **)(void *))(this->q00C)(this);
-    return 1;
+    (*(void (__thiscall **)(void *))(*(_DWORD *)&this->Items2))(this); /*0x55a292*/
+    return 1; /*0x55a298*/
   }
-}
-
-/* ASM:
-push    ebx             ; TODO: classify (grp=blit, sz=0xae)
-push    ebp
-mov     ebp, [esp+8+arg_0]
-push    esi
-test    ebp, ebp
-push    edi
-mov     esi, ecx
-jz      loc_55A28E
-mov     ebx, [esp+10h+arg_4]
-mov     byte ptr [esi+0Ch], 0
-test    ebx, ebx
-jnz     short loc_55A222
-lea     eax, ds:0[ebp*4]
-push    eax             ; Size
-call    ??2_YAPAXI_Z
-add     esp, 4
-mov     edi, eax
-jmp     short loc_55A224
-; ---------------------------------------------------------------------------
-
-loc_55A222:                             ; CODE XREF: LoadOptions__CopyItems+1C↑j
-mov     edi, ebx
-
-loc_55A224:                             ; CODE XREF: LoadOptions__CopyItems+30↑j
-test    edi, edi
-mov     byte ptr [esi+0Ch], 1
-jnz     short loc_55A235
-pop     edi
-pop     esi
-pop     ebp
-xor     al, al
-pop     ebx
-retn    8
-; ---------------------------------------------------------------------------
-
-loc_55A235:                             ; CODE XREF: LoadOptions__CopyItems+3A↑j
-mov     eax, [esi+4]
-test    eax, eax
-jz      short loc_55A275
-mov     ecx, [esi+8]
-cmp     ebp, ecx
-jge     short loc_55A245
-mov     ecx, ebp
-
-loc_55A245:                             ; CODE XREF: LoadOptions__CopyItems+51↑j
-xor     eax, eax
-test    ecx, ecx
-jle     short loc_55A25B
-
-loc_55A24B:                             ; CODE XREF: LoadOptions__CopyItems+69↓j
-mov     edx, [esi+4]
-inc     eax
-cmp     eax, ecx
-mov     edx, [edx+eax*4-4]
-mov     [edi+eax*4-4], edx
-jl      short loc_55A24B
-
-loc_55A25B:                             ; CODE XREF: LoadOptions__CopyItems+59↑j
-mov     al, [esi+0Dh]
-test    al, al
-jz      short loc_55A275
-mov     eax, [esi+4]
-push    eax             ; Block
-call    ??3_YAXPAX_Z
-add     esp, 4
-mov     dword ptr [esi+4], 0
-
-loc_55A275:                             ; CODE XREF: LoadOptions__CopyItems+4A↑j
-; LoadOptions__CopyItems+70↑j
-xor     eax, eax
-mov     [esi+4], edi
-test    ebx, ebx
-setz    al
-mov     [esi+8], ebp
-mov     [esi+0Dh], al
-pop     edi
-pop     esi
-pop     ebp
-mov     al, 1
-pop     ebx
-retn    8
-; ---------------------------------------------------------------------------
-
-loc_55A28E:                             ; CODE XREF: LoadOptions__CopyItems+C↑j
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+0Ch]
-pop     edi
-pop     esi
-pop     ebp
-mov     al, 1
-pop     ebx
-retn    8
-*/
-
-// IDA 0x55A2A0: ClearBuffer
 }
 // 0x55a2a0
 void LoadOptions::ClearBuffer() {
-// [IDA decompile] original pseudocode - translation pending (final goal)
-{
   if ( this->Items && this->IsAllocated ) /*0x55a2ad*/
   {
     __3_YAXPAX_Z(this->Items); /*0x55a2b3*/
@@ -520,37 +441,32 @@ void LoadOptions::ClearBuffer() {
   this->IsAllocated = 0; /*0x55a2be*/
   this->Capacity = 0; /*0x55a2c1*/
 }
-
-// IDA 0x55A2D0: FindItem — linear search by first dword
-}
 // 0x55a2d0
 int LoadOptions::FindItem(FileEntryClass* const* key) {
-{
   int result; // eax
+  int v3; // edx
   _DWORD *i; // ecx
 
   if ( !this->q00C ) /*0x55a2d0*/
     return 0; /*0x55a2d8*/
-  int v3 = this->Capacity; /*0x55a2de*/
+  v3 = this->Capacity; /*0x55a2de*/
   result = 0; /*0x55a2e1*/
   if ( v3 <= 0 ) /*0x55a2e5*/
     return -1; /*0x55a2fc*/
-  for ( i = this->Items; *i != *a2; ++i ) /*0x55a2eb*/
+  for ( i = this->Items; *i != *key; ++i ) /*0x55a2eb*/
   {
     if ( ++result >= v3 ) /*0x55a2fa*/
       return -1; /*0x55a2fa*/
   }
   return result; /*0x55a2da*/
 }
-
-// IDA 0x55A310: PointerToIndex
-}
 // 0x55a310
 uint32_t LoadOptions::PointerToIndex(FileEntryClass* ptr) {
-    if (!is_active) return 0;
-    return (uint32_t)((char*)(ptr) - (char*)(entries)) / sizeof(FileEntryClass*);
+  if ( this->q00C ) /*0x55a310*/
+    return (unsigned int)(ptr - this->Items) >> 2; /*0x55a325*/
+  else
+    return 0; /*0x55a317*/
 }
-
 // IDA 0x55A180: vt05 — PointerToIndex compat
 uint32_t LoadOptions::VT05_PointerToIndex(FileEntryClass* ptr) {
     if (!is_active) return 0;
@@ -752,15 +668,15 @@ namespace gamemd {
 char* LoadOptions::GetDataPtr() { return (char*)(this) + 264; }
 // 0x681120
 uint32_t LoadOptions::GetFlag98() const {
-return this->q188;
+  return *(&this->q0248); /*0x681126*/
 }
 // 0x681140
 uint32_t LoadOptions::GetFlag99() const {
-return this->q18C;
+  return *(&this->q0249); /*0x681146*/
 }
 // 0x6812d0
 uint32_t LoadOptions::GetFlag252() const {
-return this->q3F0;
+  return *(&this->q0642); /*0x6812d6*/
 }
 uint32_t LoadOptions::GetMode() const { return mode; }
 void LoadOptions::SetMode(uint32_t m) { mode = m; }

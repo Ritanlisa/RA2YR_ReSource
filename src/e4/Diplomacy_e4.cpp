@@ -7,27 +7,43 @@
 // 0x657DA0
 CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4)
 {
-{
   int result; // eax
   int i; // ebx
   HWND DlgItem; // eax
   HWND v8; // eax
   HWND v9; // ebp
+  int v10; // eax
+  int v11; // eax
   int ResourceID_Hardcoded; // eax
   HWND v13; // ebp
+  bool v14; // cc
   HWND v15; // eax
   HWND v16; // eax
   HWND v17; // ebp
   HWND v18; // ebx
-  CampaignScore *v19; // eax
+  wchar_t *v19; // eax
   HWND v20; // eax
   int DlgCtrlID; // eax
+  int *v22; // ecx
+  int *v23; // ecx
+  int v24; // edx
+  int *v25; // ecx
   int v26; // esi
+  int *v27; // ecx
+  int v28; // edx
+  unsigned int v29; // edi
   HWND hWnd; // [esp+10h] [ebp-14h]
+  int v31; // [esp+14h] [ebp-10h]
+  int v32; // [esp+18h] [ebp-Ch]
+  int v33; // [esp+1Ch] [ebp-8h]
   unsigned __int8 IsAlliedWith; // [esp+20h] [ebp-4h]
   #375 *hDlga; // [esp+28h] [ebp+4h]
   HWND hDlgb; // [esp+28h] [ebp+4h]
   HWND hDlgc; // [esp+28h] [ebp+4h]
+  int v38; // [esp+2Ch] [ebp+8h]
+  char v39; // [esp+30h] [ebp+Ch]
+  char v40; // [esp+34h] [ebp+10h]
+
   result = BaseDialogProc(hDlg, a2, a3, (unsigned int)a4); /*0x657dbd*/
   if ( result ) /*0x657dc4*/
     return result; /*0x657dc4*/
@@ -41,36 +57,34 @@ CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
     }
     if ( a2 == 1175 ) /*0x657de5*/
     {
-  bool v14; // cc
       for ( i = 0; i < 32; i += 4 ) /*0x657df1*/
       {
-        DlgItem = GetDlgItem(hDlg, *(int *)((char *)&DataGlobal_8391FC + i)); /*0x657dfb*/
+        DlgItem = GetDlgItem(hDlg, *(int *)((char *)&dword_8391FC + i)); /*0x657dfb*/
         SendMessageA(DlgItem, 0x4B2u, 0, (LPARAM)&g_TypeClass_DefaultString); /*0x657e10*/
-        v8 = GetDlgItem(hDlg, *(int *)((char *)&DataGlobal_83921C + i)); /*0x657e1a*/
+        v8 = GetDlgItem(hDlg, *(int *)((char *)&dword_83921C + i)); /*0x657e1a*/
         SendMessageA(v8, 0x4B2u, 0, (LPARAM)&g_TypeClass_DefaultString); /*0x657e29*/
       }
-      char v40 = 0; /*0x657e3e*/
-      char v39 = 0; /*0x657e43*/
-      int v33 = HouseClass_Count; /*0x657e48*/
-      int v32 = 1; /*0x657e4c*/
-      int v38 = 0; /*0x657e54*/
+      v40 = 0; /*0x657e3e*/
+      v39 = 0; /*0x657e43*/
+      v33 = HouseClass_Count; /*0x657e48*/
+      v32 = 1; /*0x657e4c*/
+      v38 = 0; /*0x657e54*/
       do /*0x65807d*/
       {
-        v9 = GetDlgItem(hDlg, DataGlobal_839240[v38]); /*0x657e6a*/
-        hWnd = GetDlgItem(hDlg, DataGlobal_839260[v38]); /*0x657e84*/
-        int v10 = v32; /*0x657e8b*/
-        int v31 = v32; /*0x657e8d*/
+        v9 = GetDlgItem(hDlg, dword_839240[v38]); /*0x657e6a*/
+        hWnd = GetDlgItem(hDlg, dword_839260[v38]); /*0x657e84*/
+        v10 = v32; /*0x657e8b*/
+        v31 = v32; /*0x657e8d*/
         if ( v32 == *((_DWORD *)HouseClass_Player + 12) ) /*0x657e91*/
         {
           v31 = 0; /*0x657e93*/
           v10 = 0; /*0x657e9b*/
         }
         if ( v10 < v33 /*0x657ec1*/
-  int v11; // eax
-          && (v11 = *(_DWORD *)&HouseClass_Array->__pad_0[4 * v10], (hDlga = (#375 *)v11) != 0)
+          && (v11 = *(_DWORD *)&HouseClass_Array->gap0[4 * v10], (hDlga = (#375 *)v11) != 0)
           && *(_BYTE *)(*(_DWORD *)(v11 + 52) + 421) )
         {
-          if ( !BYTE1(g_RulesClass_Instance[1].InfantryBrute) /*0x657ef9*/
+          if ( !BYTE1(g_RulesClass_Instance[1].FlamingInfantry) /*0x657ef9*/
             || (#375 *)HouseClass_Observer == HouseClass_Player
             || g_GameOptionsFlags == 2 )
           {
@@ -96,7 +110,7 @@ CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
             }
             else
             {
-              SendMessageA(hWnd, 0xF1u, *((unsigned __int8 *)&DataGlobal_A8D108 + v31), 0); /*0x657fb0*/
+              SendMessageA(hWnd, 0xF1u, *((unsigned __int8 *)&dword_A8D108 + v31), 0); /*0x657fb0*/
             }
             v39 = 1; /*0x657fb6*/
           }
@@ -111,14 +125,14 @@ CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
           hDlgb = GetDlgItem(hDlg, ResourceID_Hardcoded); /*0x657ff1*/
           EnableWindow(hDlgb, 0); /*0x657ff5*/
           ShowWindow(hDlgb, 0); /*0x658002*/
-          hDlgc = GetDlgItem(hDlg, DataGlobal_839200[v38]); /*0x658015*/
+          hDlgc = GetDlgItem(hDlg, dword_839200[v38]); /*0x658015*/
           EnableWindow(hDlgc, 0); /*0x658019*/
           ShowWindow(hDlgc, 0); /*0x658026*/
           EnableWindow(v9, 0); /*0x65802b*/
           ShowWindow(v9, 0); /*0x658034*/
           EnableWindow(hWnd, 0); /*0x65803d*/
           ShowWindow(hWnd, 0); /*0x658046*/
-          v13 = GetDlgItem(hDlg, DataGlobal_839220[v38]); /*0x658056*/
+          v13 = GetDlgItem(hDlg, dword_839220[v38]); /*0x658056*/
           EnableWindow(v13, 0); /*0x65805b*/
           ShowWindow(v13, 0); /*0x658064*/
         }
@@ -145,11 +159,11 @@ CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
           ShowWindow(v17, 5); /*0x6580d4*/
           if ( g_GameMode_Current[0] == 3 ) /*0x6580de*/
           {
-            SendMessageA(v17, 0xF1u, (unsigned __int8)DataGlobal_A8D110, 0); /*0x6580ef*/
+            SendMessageA(v17, 0xF1u, (unsigned __int8)dword_A8D110, 0); /*0x6580ef*/
           }
           else if ( g_GameMode_Current[0] == 4 ) /*0x6580f4*/
           {
-            SendMessageA(v17, 0xF1u, BYTE1(DataGlobal_A8D110), 0); /*0x658106*/
+            SendMessageA(v17, 0xF1u, BYTE1(dword_A8D110), 0); /*0x658106*/
           }
         }
         else
@@ -182,28 +196,28 @@ CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
     }
     return 0; /*0x6581b7*/
   }
-  int * v22 = &DataGlobal_83923C; /*0x6581e1*/
+  v22 = &dword_83923C; /*0x6581e1*/
   while ( *v22 != DlgCtrlID ) /*0x6581e8*/
   {
-    if ( (int)++v22 >= (int)&DataGlobal_83925C ) /*0x6581f3*/
+    if ( (int)++v22 >= (int)&dword_83925C ) /*0x6581f3*/
     {
-      int * v23 = &DataGlobal_83925C; /*0x6581f5*/
+      v23 = &dword_83925C; /*0x6581f5*/
       while ( *v23 != DlgCtrlID ) /*0x6581fc*/
       {
         if ( (int)++v23 >= (int)g_Str_File_OPTBTN_SHP ) /*0x658207*/
         {
           if ( DlgCtrlID == 1840 ) /*0x6582d8*/
           {
-            unsigned int v29 = HIWORD(a3); /*0x6582da*/
+            v29 = HIWORD(a3); /*0x6582da*/
             if ( HIWORD(a3) <= 1u ) /*0x6582e0*/
             {
               if ( g_GameMode_Current[0] == 3 ) /*0x6582ee*/
               {
-                LOBYTE(DataGlobal_A8D110) = v29 == 1; /*0x6582f9*/
+                LOBYTE(dword_A8D110) = v29 == 1; /*0x6582f9*/
                 return 0; /*0x658305*/
               }
               if ( g_GameMode_Current[0] == 4 ) /*0x65830b*/
-                BYTE1(DataGlobal_A8D110) = v29 == 1; /*0x658313*/
+                BYTE1(dword_A8D110) = v29 == 1; /*0x658313*/
             }
           }
           return 0; /*0x658313*/
@@ -211,8 +225,8 @@ CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
       }
       if ( HIWORD(a3) != 1 && HIWORD(a3) ) /*0x65828e*/
         return 0; /*0x65828e*/
-      int * v27 = &DataGlobal_83925C; /*0x658298*/
-      int v28 = 0; /*0x6582a0*/
+      v27 = &dword_83925C; /*0x658298*/
+      v28 = 0; /*0x6582a0*/
       while ( *v27 != DlgCtrlID ) /*0x6582a4*/
       {
         ++v27; /*0x6582a6*/
@@ -225,26 +239,26 @@ CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
       }
       if ( v28 == *((_DWORD *)HouseClass_Player + 12) ) /*0x6582bd*/
         v28 = 0; /*0x6582bf*/
-      *((_BYTE *)&DataGlobal_A8D108 + v28) = HIWORD(a3) == 1; /*0x6582c3*/
+      *((_BYTE *)&dword_A8D108 + v28) = HIWORD(a3) == 1; /*0x6582c3*/
       return 0; /*0x6582d0*/
     }
   }
   if ( HIWORD(a3) > 1u ) /*0x658214*/
     return 0; /*0x658214*/
-  int v24 = 0; /*0x65821e*/
-  int * v25 = &DataGlobal_83923C; /*0x658220*/
+  v24 = 0; /*0x65821e*/
+  v25 = &dword_83923C; /*0x658220*/
   while ( *v25 != DlgCtrlID ) /*0x658227*/
   {
     ++v25; /*0x658229*/
     ++v24; /*0x65822c*/
-    if ( (int)v25 >= (int)&DataGlobal_83925C ) /*0x658233*/
+    if ( (int)v25 >= (int)&dword_83925C ) /*0x658233*/
     {
       v26 = -1; /*0x658235*/
       goto LABEL_60; /*0x658235*/
     }
   }
   v26 = v24; /*0x65824e*/
-LABEL_60:
+  LABEL_60:
   if ( v26 == *((_DWORD *)HouseClass_Player + 12) ) /*0x658241*/
     v26 = 0; /*0x658243*/
   if ( HIWORD(a3) ) /*0x65820e*/
@@ -254,22 +268,16 @@ LABEL_60:
   SquadClass::ProcessMove(v26); /*0x658269*/
   return 0; /*0x658178*/
 }
-}
-
 // 0x603DB0
 namespace gamemd {
 LRESULT Diplomacy_Helper(HWND hWnd, unsigned char a2)
 {
-{
-    return SendMessageA(hWnd, 0x4E5u, 0, a2);
-}
+  return SendMessageA(hWnd, 0x4E5u, 0, a2); /*0x603dc5*/
 }
 } // namespace gamemd
 
 // 0x656580
 char * Diplomacy::GetField(BuildingTypeClass * aP1)
 {
-{
-    return this + 24 * aP1->Foundation + 4728;
-}
+  return this + 24 * *(_DWORD *)(aP1 + 3824) + 4728; /*0x656595*/
 }

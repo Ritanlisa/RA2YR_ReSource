@@ -7,9 +7,6 @@
 namespace gamemd {
 int GameLoop::Thunk()
 {
-// attributes: thunk
-{
-  return Game::ProcessIdle(this);
-}
+  return Game::ProcessIdle();
 }
 }

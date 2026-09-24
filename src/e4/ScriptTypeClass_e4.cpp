@@ -8,13 +8,13 @@
 namespace gamemd {
 int ScriptTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
 {
-  if ( !a2 )
-    return -2147467261;
-  *a2 = 1123264071;
-  a2[1] = 298977161;
-  a2[2] = 1610655148;
-  a2[3] = -1252326136;
-  return 0;
+  if ( !a2 ) /*0x691d56*/
+    return -2147467261; /*0x691d58*/
+  *a2 = 1123264071; /*0x691d66*/
+  a2[1] = 298977161; /*0x691d6e*/
+  a2[2] = 1610655148; /*0x691d77*/
+  a2[3] = -1252326136; /*0x691d80*/
+  return 0; /*0x691d5d*/
 }
 } // namespace gamemd
 
@@ -22,23 +22,22 @@ int ScriptTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
 namespace gamemd {
 int ScriptTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
 {
-{
-    int result;
-    result = AbstractClass::SaveLoad_Prefix_0((AbstractClass *)aP0, (AbstractClass *)aP1);
-    if ( result >= 0 )
+  int result; // eax
+
+  result = AbstractClass::SaveLoad_Prefix_0(aP0, aP1); /*0x691d9b*/
+  if ( result >= 0 ) /*0x691da2*/
   {
-    if ( aP0 )
+    if ( aP0 ) /*0x691da6*/
     {
-    AbstractTypeClass::Init((int)aP0, (AbstractTypeClass *)&aP1);
-    *(int *)aP0->__pad_0 = (unsigned int)vt_ScriptTypeClass;
-    *(int *)&aP0->__pad_0[4] = (unsigned int)vt_ScriptTypeClass;
-    *(int *)&aP0->__pad_0[8] = (unsigned int)vt_ScriptTypeClass;
-    *(int *)&aP0->__pad_0[12] = &vt_ScriptTypeClass;
+      AbstractTypeClass::Init((int)aP0, (int)&aP1); /*0x691daf*/
+      *aP0 = &ScriptTypeClass::`vftable'; /*0x691db4*/
+      aP0[1] = &ScriptTypeClass::`vftable'; /*0x691dba*/
+      aP0[2] = &ScriptTypeClass::`vftable'; /*0x691dc1*/
+      aP0[3] = &ScriptTypeClass::`vftable'; /*0x691dc8*/
     }
-    return 0;
+    return 0; /*0x691dcf*/
   }
-    return result;
-}
+  return result; /*0x691dd1*/
 }
 } // namespace gamemd
 
@@ -46,13 +45,12 @@ int ScriptTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
 namespace gamemd {
 int ScriptTypeClass::SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2)
 {
-{
-    int result;
-    result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2);
-    if ( result >= 0 )
-    return 0;
-    return result;
-}
+  int result; // eax
+
+  result = AbstractClass::SaveLoad_Prefix(aP0, a1, aP2); /*0x691def*/
+  if ( result >= 0 ) /*0x691df6*/
+    return 0; /*0x691df8*/
+  return result; /*0x691dfa*/
 }
 } // namespace gamemd
 
@@ -60,7 +58,7 @@ int ScriptTypeClass::SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2)
 namespace gamemd {
 int ScriptTypeClass::GetTypeIdentifier()
 {
-return 27;
+  return 27; /*0x691f75*/
 }
 } // namespace gamemd
 
@@ -68,7 +66,7 @@ return 27;
 namespace gamemd {
 int ScriptTypeClass::GetObjectSize()
 {
-return 564;
+  return 564; /*0x691f85*/
 }
 } // namespace gamemd
 
@@ -76,30 +74,29 @@ return 564;
 namespace gamemd {
 ScriptTypeClass * ScriptTypeClass::ddtor(char a2)
 {
-{
-    int v3;
-    void **v5;
-    *(void**)this = vt_ScriptTypeClass;
-    this->vtable2 = (unsigned int)vt_ScriptTypeClass;
-    this->vtable3 = (unsigned int)vt_ScriptTypeClass;
-    this->vtable4 = &vt_ScriptTypeClass;
-    AbstractClass::AnnounceExpiredPointer(this, 1);
-    v5 = this;
-    v3 = (*(int (__thiscall **)(int *, void ***))(DataGlobal_8B41C8 + 16))(&DataGlobal_8B41C8, &v5);
-    if ( v3 != -1 && v3 < g_MultiplayerDebugState && v3 < --g_MultiplayerDebugState )
+  int v3; // eax
+  void **v5; // [esp+4h] [ebp-4h] BYREF
+
+  *this = &ScriptTypeClass::`vftable'; /*0x691fa6*/
+  *(this + 1) = &ScriptTypeClass::`vftable'; /*0x691fac*/
+  *(this + 2) = &ScriptTypeClass::`vftable'; /*0x691fb3*/
+  *(this + 3) = &ScriptTypeClass::`vftable'; /*0x691fba*/
+  AbstractClass::AnnounceExpiredPointer(this, 1); /*0x691fc1*/
+  v5 = this; /*0x691fd6*/
+  v3 = (*(int (__thiscall **)(int *, void ***))(dword_8B41C8 + 16))(&dword_8B41C8, &v5); /*0x691fda*/
+  if ( v3 != -1 && v3 < g_MultiplayerDebugState && v3 < --g_MultiplayerDebugState ) /*0x691ff5*/
   {
-    do
+    do /*0x69200d*/
     {
-    ++v3;
-    *((int *)(g_MultiplayerSyncState) + v3 - 1) = *((int *)(g_MultiplayerSyncState) + v3);
+      ++v3; /*0x691ffd*/
+      *((_DWORD *)g_MultiplayerSyncState + v3 - 1) = *((_DWORD *)g_MultiplayerSyncState + v3); /*0x692001*/
     }
-    while ( v3 < g_MultiplayerDebugState );
+    while ( v3 < g_MultiplayerDebugState ); /*0x69200d*/
   }
-    AbstractTypeClass::Dtor(this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (ScriptTypeClass *)this;
-}
+  AbstractTypeClass::Dtor(this); /*0x692011*/
+  if ( (a2 & 1) != 0 ) /*0x69201b*/
+    __3_YAXPAX_Z(this); /*0x69201e*/
+  return this; /*0x692028*/
 }
 } // namespace gamemd
 
@@ -107,41 +104,45 @@ ScriptTypeClass * ScriptTypeClass::ddtor(char a2)
 namespace gamemd {
 TaskForceClass * ScriptTypeClass::ReadINI(char * a1, int a2)
 {
-{
-    CCINIClass *KeyCount;
-    CCINIClass *i;
-    unsigned char *StringByIndex;
-    TaskForceClass *result;
-    INIClass *v7;
-    int j;
-    int v9;
-    INIClass *v10;
-    char Buffer[32];
-    KeyCount = (CCINIClass *)INIClass::GetKeyCount(a1, (INIClass *)&DataGlobal_830620[75672]);
-    for ( i = 0; (int)i < (int)KeyCount; i = (CCINIClass *)((char *)(i) + 1) )
+  int KeyCount; // ebx
+  int i; // edi
+  unsigned __int8 *StringByIndex; // eax
+  int result; // eax
+  int v7; // ebx
+  int j; // ebp
+  int v9; // edi
+  int v10; // [esp-4h] [ebp-38h]
+  char Buffer[32]; // [esp+14h] [ebp-20h] BYREF
+
+  KeyCount = INIClass::GetKeyCount(a1, (unsigned __int8 *)g_INI_Key_TaskForces); /*0x6e8357*/
+  for ( i = 0; i < KeyCount; ++i ) /*0x6e835d*/
   {
-    StringByIndex = (unsigned char *)INIClass::GetStringByIndex(a1, (CCINIClass *)&DataGlobal_830620[75672], i);
-    INIClass::GetString( (unsigned char ***)a1, (INIClass *)&DataGlobal_830620[75672], StringByIndex, (INIClass *)&DataGlobal_87F8E4[42624], (INIClass *)Buffer, 32);
-    INIClass::ClearSection((int)a1, (INIClass *)Buffer, 0);
+    StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(a1, (unsigned __int8 *)g_INI_Key_TaskForces, i); /*0x6e8367*/
+    INIClass::GetString( /*0x6e8380*/
+      (unsigned __int8 ***)a1,
+      (unsigned __int8 *)g_INI_Key_TaskForces,
+      StringByIndex,
+      &g_INI_DefaultBuffer,
+      Buffer,
+      32);
+    INIClass::ClearSection((int)a1, (int)Buffer, 0); /*0x6e838e*/
   }
-    INIClass::ClearSection((int)a1, (INIClass *)&DataGlobal_830620[75672], 0);
-    result = *(TaskForceClass **)&g_NetworkPlayerBuffer[4772];
-    v7 = 0;
-    for ( j = 0; j < *(int *)&g_NetworkPlayerBuffer[4772]; ++j )
+  INIClass::ClearSection((int)a1, (int)g_INI_Key_TaskForces, 0); /*0x6e83a1*/
+  result = g_MultiplayerLogFlags; /*0x6e83a6*/
+  v7 = 0; /*0x6e83ab*/
+  for ( j = 0; j < g_MultiplayerLogFlags; ++j ) /*0x6e83b1*/
   {
-    v9 = *(int *)(*(int *)&g_NetworkPlayerBuffer[4760] + 4 * j);
-    if ( *(int *)(v9 + 160) == a2 )
+    v9 = *((_DWORD *)g_MultiplayerLogEntry + j); /*0x6e83bc*/
+    if ( *(_DWORD *)(v9 + 160) == a2 ) /*0x6e83c5*/
     {
-    v10 = v7;
-    v7 = (INIClass *)((char *)(v7) + 1);
-    sprintf(Buffer, g_Str_Trace__d, v10);
-    String::Trim(Buffer);
-    INIClass::SetString(a1, (INIClass *)&DataGlobal_830620[75672], (INIClass *)Buffer, (INIClass *)(v9 + 36));
-    (*(void (__thiscall **)(int, char *))(*(int *)(v9) + 104))(v9, a1);
+      v10 = v7++; /*0x6e83cd*/
+      sprintf(Buffer, "%d", v10); /*0x6e83d5*/
+      String::Trim(Buffer); /*0x6e83e1*/
+      INIClass::SetString(a1, (unsigned __int8 *)g_INI_Key_TaskForces, Buffer, (char *)(v9 + 36)); /*0x6e83f6*/
+      (*(void (__thiscall **)(int, char *))(*(_DWORD *)v9 + 104))(v9, a1); /*0x6e8400*/
     }
-    result = *(TaskForceClass **)&g_NetworkPlayerBuffer[4772];
+    result = g_MultiplayerLogFlags; /*0x6e8403*/
   }
-    return result;
-}
+  return result; /*0x6e840d*/
 }
 } // namespace gamemd

@@ -5,11 +5,9 @@
 // 0x7784A0
 CCToolTip * CCToolTip::QueryInterface(char a2)
 {
-{
-    *(void**)this = &vt_CCToolTip;
-    ToolTipClass::updateString(this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (CCToolTip *)this;
-}
+  *this = &CCToolTip::`vftable'; /*0x7784a3*/
+  ToolTipClass::updateString(this); /*0x7784a9*/
+  if ( (a2 & 1) != 0 ) /*0x7784b3*/
+    __3_YAXPAX_Z(this); /*0x7784b6*/
+  return this; /*0x7784c0*/
 }

@@ -5,27 +5,23 @@
 // 0x5CEB50
 void MSOverlayAnim::StubReturnFalse(int a1)
 {
-{
-    ;
+  ; /*0x5ceb50*/
 }
-}
-
 // 0x5CEB80
 MSShapeAnim * MSOverlayAnim::QueryInterface(char a2)
 {
-{
-    void *v3;
-    v3 = (void *)this->u32_1C;
-    *(void**)this = &vt_MSShapeAnim;
-    if ( v3 && this->q03C )
+  void *v3; // eax
+
+  v3 = (void *)*(this + 7); /*0x5ceb83*/
+  *this = &MSShapeAnim::`vftable'; /*0x5ceb86*/
+  if ( v3 && *((_BYTE *)this + 60) ) /*0x5ceb90*/
   {
-    __3_YAXPAX_Z(v3);
-    this->u32_1C = 0;
-    this->q03C = 0;
+    __3_YAXPAX_Z(v3); /*0x5ceb98*/
+    *(this + 7) = 0; /*0x5ceba0*/
+    *((_BYTE *)this + 60) = 0; /*0x5ceba7*/
   }
-    *(void**)this = &vt_MSAnim;
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (MSShapeAnim *)this;
-}
+  *this = &MSAnim::`vftable'; /*0x5cebaf*/
+  if ( (a2 & 1) != 0 ) /*0x5cebb7*/
+    __3_YAXPAX_Z(this); /*0x5cebba*/
+  return this; /*0x5cebc4*/
 }

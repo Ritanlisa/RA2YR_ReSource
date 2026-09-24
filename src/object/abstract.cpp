@@ -30,126 +30,33 @@ REVERSE(0x410260, "AbstractClass::QueryInterface: IDA verified", "None")
 // Checks IUnknown / IPersistStream / IPersist / IRTTITypeInfo IIDs
 // 0x410260
 HRESULT AbstractClass::QueryInterface(const IID& iid, void** ppv) {
-  if ( !ppv )
-    return E_POINTER;
-  *ppv = 0;
-  if ( !memcmp(&iid, &IID_IUnknown, 0x10u) )
-    *ppv = this;
-  if ( !memcmp(&iid, &IID_IPersistStream, 0x10u) )
-    *ppv = this;
-  if ( !memcmp(&iid, &IID_IPersist, 0x10u) )
-    *ppv = this;
-  if ( !memcmp(&iid, &IID_IRTTITypeInfo, 0x10u) ) {
-    // MI interface subobject @ +4
-    if ( this )
-      *ppv = (IRTTITypeInfo*)this;
+  int *v2; // ecx
+  AbstractClass *thisa; // [esp+8h] [ebp+4h]
+  const void *iid; // [esp+Ch] [ebp+8h]
+  void **ppv; // [esp+10h] [ebp+Ch]
+
+  if ( !ppv ) /*0x410267*/
+    return -2147467261; /*0x410269*/
+  *ppv = 0; /*0x410286*/
+  if ( !memcmp(iid, &IID_IUnknown, 0x10u) ) /*0x410290*/
+    *ppv = thisa; /*0x410294*/
+  if ( !memcmp(iid, &IID_IPersistStream, 0x10u) ) /*0x4102a5*/
+    *ppv = thisa; /*0x4102a9*/
+  if ( !memcmp(iid, &IID_IPersist, 0x10u) ) /*0x4102b9*/
+    *ppv = thisa; /*0x4102be*/
+  if ( !memcmp(iid, &IID_IRTTITypeInfo, 0x10u) ) /*0x4102ce*/
+  {
+    if ( thisa ) /*0x4102d6*/
+      v2 = &thisa->parent_gap[1]; /*0x4102d8*/
     else
-      *ppv = 0;
+      v2 = 0; /*0x4102dd*/
+    *ppv = v2; /*0x4102df*/
   }
-  if ( !*ppv )
-    return E_NOINTERFACE;
-  this->COMStub_AddRef();  // vtable[0][1] @0x7E1F54 -> 0x410300 (indirect dispatch)
-  return S_OK;
-
-/* ASM:
-this            = dword ptr  4
-iid             = dword ptr  8
-ppv             = dword ptr  0Ch
-
-mov     eax, [esp+ppv]
-
-AbstractClass__sub_410264:
-push    ebx
-test    eax, eax
-jnz     short loc_410272
-mov     eax, 80004003h
-
-AbstractClass__sub_41026E:
-pop     ebx
-retn    0Ch
-; ---------------------------------------------------------------------------
-
-loc_410272:                             ; CODE XREF: AbstractClass__QueryInterface+7↑j
-mov     edx, [esp+4+iid]
-push    esi
-push    edi
-mov     ecx, 4
-mov     edi, offset IID_IUnknown
-mov     esi, edx
-xor     ebx, ebx
-mov     dword ptr [eax], 0
-mov     ebx, [esp+0Ch+this]
-repe cmpsd
-jnz     short loc_410296
-
-AbstractClass__sub_410294:
-mov     [eax], ebx
-
-loc_410296:                             ; CODE XREF: AbstractClass__QueryInterface+32↑j
-push    ebp
-mov     ecx, 4
-mov     edi, offset IID_IPersistStream
-mov     esi, edx
-xor     ebp, ebp
-repe cmpsd
-jnz     short loc_4102AB
-mov     [eax], ebx
-
-loc_4102AB:                             ; CODE XREF: AbstractClass__QueryInterface+47↑j
-mov     ecx, 4
-mov     edi, offset IID_IPersist
-mov     esi, edx
-xor     ebp, ebp
-repe cmpsd
-pop     ebp
-jnz     short loc_4102C0
-mov     [eax], ebx
-
-loc_4102C0:                             ; CODE XREF: AbstractClass__QueryInterface+5C↑j
-mov     esi, edx
-
-AbstractClass__sub_4102C2:
-mov     ecx, 4
-mov     edi, offset IID_IRTTITypeInfo
-xor     edx, edx
-repe cmpsd
-pop     edi
-pop     esi
-jnz     short loc_4102E1
-test    ebx, ebx
-
-AbstractClass__sub_4102D6:
-jz      short loc_4102DD
-lea     ecx, [ebx+4]
-jmp     short loc_4102DF
-; ---------------------------------------------------------------------------
-
-loc_4102DD:                             ; CODE XREF: AbstractClass__QueryInterface:AbstractClass__sub_4102D6↑j
-xor     ecx, ecx
-
-loc_4102DF:                             ; CODE XREF: AbstractClass__QueryInterface+7B↑j
-mov     [eax], ecx
-
-loc_4102E1:                             ; CODE XREF: AbstractClass__QueryInterface+72↑j
-cmp     dword ptr [eax], 0
-
-AbstractClass__sub_4102E4:
-jnz     short loc_4102EF
-mov     eax, 80004002h
-pop     ebx
-retn    0Ch
-; ---------------------------------------------------------------------------
-
-loc_4102EF:                             ; CODE XREF: AbstractClass__QueryInterface:AbstractClass__sub_4102E4↑j
-mov     eax, [ebx]
-push    ebx
-call    dword ptr [eax+4]
-xor     eax, eax
-pop     ebx
-retn    0Ch
-*/
+  if ( !*ppv ) /*0x4102e1*/
+    return -2147467262; /*0x4102e6*/
+  (*(void (__stdcall **)(AbstractClass *))(thisa->parent_gap[0] + 4))(thisa); /*0x4102f2*/
+  return 0; /*0x41026e*/
 }
-
 // IDA: 0x410300 -- vtable[0][1] (COMStub_AddRef)
 ULONG AbstractClass::AddRef() {
     return 1;  // IDA: returns 1 (stub, not tracking ref count)
@@ -194,7 +101,7 @@ HRESULT AbstractClass::GetSizeMax(ULARGE_INTEGER* size) {
 void AbstractClass::createId() {
     if (gamemd::ScenarioClass::Instance) {
         // IDA: result = AbstractClass::updateAITimer() -- generates next unique ID
-        // The generated ID is stored in uniqueId (at this+12 via IRTTITypeInfo sub-object offset)
+        // The generated ID is stored in uniqueId (at &this->u32_30 via IRTTITypeInfo sub-object offset)
         uniqueId = 0;  // updateAITimer() returns the next ID; stub until full ID system is wired
     } else {
         uniqueId = 0;
@@ -207,14 +114,16 @@ void AbstractClass::createId() {
 // buffer, then copies the returned XYZ to the out param.
 // 0x410540
 CoordStruct* AbstractClass::GetCoords(CoordStruct* out) const {
-    CoordStruct buf;
-    CoordStruct* v1 = ((ObjectClass*)this)->GetExitCoords(&buf, 0);
-    out->X = v1->X;
-    out->Y = v1->Y;
-    out->Z = v1->Z;
-    return out;
-}
+  int *v1; // ecx
+  _BYTE v3[12]; // [esp+4h] [ebp-Ch] BYREF
+  CoordStruct *out; // [esp+14h] [ebp+4h]
 
+  v1 = (int *)(*(int (__thiscall **)(#374 *, _BYTE *))(*(_DWORD *)out + 72))(out, v3); /*0x41054e*/
+  out->X = *v1; /*0x410558*/
+  out->Y = v1[1]; /*0x41055d*/
+  out->Z = v1[2]; /*0x410564*/
+  return (int)out; /*0x410560*/
+}
 // src-model helper kept for the existing callers (techno.cpp): the pointer
 // flavor simply forwards to the virtual GetCoords above.
 CoordStruct* AbstractClass::fetchCoordinatesHere(CoordStruct* out) const {
@@ -249,8 +158,8 @@ CoordStruct* AbstractClass::fetchAlternateCoordinates(CoordStruct* out) const { 
 void AbstractClass::updateLogic() {}
 CoordStruct AbstractClass::fetchCoordinatesHere() const { CoordStruct crd; fetchCoordinatesHere(&crd); return crd; }
 CoordStruct AbstractClass::fetchDestination(TechnoClass* docker) const { CoordStruct crd; fetchDestination(&crd, docker); return crd; }
-CoordStruct AbstractClass::fetchAlternateCoordinates() const { CoordStruct crd; fetchAlternateCoordinates(&crd); return crd; }
-bool AbstractClass::operator<(const AbstractClass& rhs) const { return uniqueId < rhs.uniqueId; }
+CoordStruct AbstractClass::fetchAlternateCoordinates() const { CoordStruct crd; fetchAlternateCoordinates(&crd); return crd; 
+bool AbstractClass::operator<(const AbstractClass& rhs) const { return uniqueId < rhs.uniqueId; 
 
 } // namespace game
 } // namespace ra2

@@ -6,25 +6,22 @@
 // 0x49F5C0
 bool CopyProtection::CheckLauncher()
 {
-{
   HANDLE MutexA; // esi
+  bool v1; // bl
 
   Debug::Log(aCopyprotection_0); /*0x49f5c8*/
-  MutexA = CreateMutexA(0, 0, unk_81F3E0); /*0x49f5df*/
-  bool v1 = GetLastError() == 183; /*0x49f5ec*/
+  MutexA = CreateMutexA(0, 0, Name); /*0x49f5df*/
+  v1 = GetLastError() == 183; /*0x49f5ec*/
   if ( MutexA ) /*0x49f5f5*/
     CloseHandle(MutexA); /*0x49f5f8*/
-  Debug::Log(unk_81F3D0, v1); /*0x49f60d*/
+  Debug::Log("result was %d\n", v1); /*0x49f60d*/
   return v1; /*0x49f617*/
 }
-}
-
 // 0x49F620
 char CopyProtection::NotifyLauncher()
 {
-{
   DWORD v0; // edi
-  AnimClass *v1; // esi
+  HANDLE v1; // esi
   DWORD v2; // esi
   struct tagMSG Msg; // [esp+10h] [ebp-1Ch] BYREF
 
@@ -60,14 +57,12 @@ char CopyProtection::NotifyLauncher()
         return 1; /*0x49f72d*/
     }
   }
-LABEL_9:
+  LABEL_9:
   Debug::Log(aFailedToNotify); /*0x49f6f2*/
   return 0; /*0x49f701*/
 }
-}
-
 // 0x49F7A0
 char CopyProtection::CheckProtectedData()
 {
-return 1;
+  return 1; /*0x49f7a2*/
 }

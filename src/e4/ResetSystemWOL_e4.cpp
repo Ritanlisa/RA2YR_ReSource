@@ -5,10 +5,8 @@
 // 0x7AD2F0
 void ** SessionClass::ResetSystemWOL_Reset(char a2)
 {
-{
-    DeleteAndZero((void **)this);
-    if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
-    return (void **)this;
-}
+  DeleteAndZero(this); /*0x7ad2f3*/
+  if ( (a2 & 1) != 0 ) /*0x7ad2fd*/
+    __3_YAXPAX_Z(this); /*0x7ad300*/
+  return this; /*0x7ad30a*/
 }

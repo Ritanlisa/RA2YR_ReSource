@@ -5,37 +5,33 @@
 // 0x65CA00
 void RawFileClass::Dtor()
 {
-{
-    int v2;
-    DWORD LastError;
-    int v4;
-    *(void**)this = (int)&vt_RawFileClass;
-    if ( (unsigned char)RawFileClass::Write() )
-  {
-    if ( !CloseHandle((HANDLE)this->FileTimeDateLo) )
-    {
-    v2 = *(void**)this;
-    v4 = this->FileNameAllocated;
-    LastError = GetLastError();
-    (*(void (__thiscall **)(int *, DWORD, int, int))(v2 + 64))(this, LastError, 0, v4);
-    }
-    this->FileTimeDateLo = -1;
-  }
-    if ( this->CacheReadAhead && this->FileNameAllocated )
-  {
-    free((void *)this->FileNameAllocated);
-    this->FileNameAllocated = 0;
-    this->CacheReadAhead = 0;
-  }
-    *(void**)this = (int)&vt_FileClass;
-}
-}
+  int v2; // edi
+  DWORD LastError; // eax
+  int v4; // [esp-8h] [ebp-Ch]
 
+  *this = (int)&RawFileClass::`vftable'; /*0x65ca03*/
+  if ( (unsigned __int8)RawFileClass::Write() ) /*0x65ca09*/
+  {
+    if ( !CloseHandle((HANDLE)*(this + 5)) ) /*0x65ca17*/
+    {
+      v2 = *this; /*0x65ca25*/
+      v4 = *(this + 6); /*0x65ca27*/
+      LastError = GetLastError(); /*0x65ca29*/
+      (*(void (__thiscall **)(int *, DWORD, _DWORD, int))(v2 + 64))(this, LastError, 0, v4); /*0x65ca32*/
+    }
+    *(this + 5) = -1; /*0x65ca36*/
+  }
+  if ( *((_BYTE *)this + 32) && *(this + 6) ) /*0x65ca44*/
+  {
+    free((void *)*(this + 6)); /*0x65ca4c*/
+    *(this + 6) = 0; /*0x65ca54*/
+    *((_BYTE *)this + 32) = 0; /*0x65ca5b*/
+  }
+  *this = (int)&FileClass::`vftable'; /*0x65ca5f*/
+}
 // 0x65CB30
 int RawFileClass::Close(int a2, int a3)
 {
-{
-    this->SetName(a2);
-    return this->Open2(a3);
-}
+  (*(void (__thiscall **)(void *, int))(*(_DWORD *)this + 8))(this, a2); /*0x65cb3c*/
+  return (*(int (__thiscall **)(void *, int))(*(_DWORD *)this + 28))(this, a3); /*0x65cb4b*/
 }
