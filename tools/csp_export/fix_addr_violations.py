@@ -342,6 +342,50 @@ def real_mem_rewrite(text, cls, env=None):
                 tln = star_re.sub(_star, tln)
             out_lines.append(tln)
         text = chr(10).join(out_lines)
+
+    # G32: operator new/delete translation (MSVC decorated CRT forms)
+    text = re.sub(r'__2_YAPAXI_Z\(([^()]*)\)', r'new unsigned char[\1]', text)
+    text = re.sub(r'__3_YAXPAX_Z\(([^()]*)\)', r'delete \1', text)
+
+    # this-copy elimination: vars assigned ONLY `= this` become `this`
+    copyv = set()
+    for cm in re.finditer(r'\b([a-z]\w*)\s*=\s*this\b', text):
+        v = cm.group(1)
+        assigns = re.findall(r'\b%s\s*=\s*([^;]*)' % v, text)
+        if assigns and all(a.strip() == 'this' for a in assigns):
+            copyv.add(v)
+    for v in copyv:
+        # drop decl lines declaring v
+        text = re.sub(r'^[ \t]*[\w \t*]*\b%s\b[ \t]*;[^\n]*\n' % v,
+                      '', text, flags=re.M)
+        # drop assignment lines `v = this;`
+        text = re.sub(r'^[ \t]*%s\s*=\s*this\s*;[^\n]*\n' % v,
+                      '', text, flags=re.M)
+        # replace remaining uses
+        text = re.sub(r'\b%s\b' % v, 'this', text)
+
+    # var-alias elimination: vB = vA (single assignment, same live range)
+    aliasv = {}
+    for cm in re.finditer(r'\b([a-z]\w*)\s*=\s*([a-z]\w*)\s*;', text):
+        vb, va = cm.group(1), cm.group(2)
+        if va == 'this' or va in aliasv:
+            continue
+        n_as = len(re.findall(r'\b%s\s*=\s*' % vb, text))
+        if n_as == 1 and re.search(r'\b%s\b' % vb, text):
+            aliasv[vb] = va
+    for vb, va in aliasv.items():
+        text = re.sub(r'^[ \t]*[\w \t*]*\b%s\b[ \t]*;[^\n]*\n' % vb,
+                      '', text, flags=re.M)
+        text = re.sub(r'\b%s\b' % vb, va, text)
+
+    # typed this-index: this[K] -> this->Member(K*4)
+    if this_cls:
+        def _tidx(m):
+            off = int(m.group(1), 0) * 4
+            nm = mem_of(this_cls, off) or _overlay_member(this_cls, off)
+            return 'this->%s' % nm if nm else m.group(0)
+        text = re.sub(r'\bthis\s*\[\s*(0x[0-9A-Fa-f]+|\d+)\s*\]', _tidx, text)
+
     text = R_THIS1.sub(s1, text)
     text = R_THIS2.sub(s2, text)
     # bare `this + OFF` (pointer initializer / cast argument).
