@@ -395,10 +395,25 @@ def _tok_end(tok):
     return tok.pos + len(tok.value)
 
 
+# G32: MSVC-decorated CRT operator addresses (binary-stable; signals only
+# carries the OperatorDelete alias, bodies reference the decorated forms)
+_DECORATED_CRT = {
+    '__3_YAXPAX_Z': 0x7C8B3D,   # operator delete(void*)
+    '__2_YAPAXI_Z': 0x7C8E17,   # operator new(size_t)
+}
+
+
 def _is_pascal_case(name):
     """First character is an upper-case ASCII letter (a callable/type name shape;
-    matches the legacy `[A-Z][A-Za-z0-9_]*` simple/qualified-call regexes)."""
-    return bool(name) and "A" <= name[0] <= "Z"
+    matches the legacy `[A-Z][A-Za-z0-9_]*` simple/qualified-call regexes).
+    G32: MSVC-decorated CRT names (`__2_YAPAXI_Z` = new, `__3_YAXPAX_Z` =
+    delete) start with underscores and ARE callables — the IDA side emits
+    events for them, so the cpp side must too."""
+    if not name:
+        return False
+    if name.startswith('__') and len(name) > 2 and name[2].isdigit():
+        return True
+    return "A" <= name[0] <= "Z"
 
 
 def _looks_like_definition(toks, lparen_idx, n):
@@ -649,6 +664,11 @@ def make_cpp_leaf(class_name, locals_set, M, signals):
             if _is_op(nxt, "(") and _is_pascal_case(val):
                 if not _looks_like_definition(toks, i + 1, n):
                     addr = _resolve_call(val, M)
+                    if not addr:
+                        # G32: MSVC-decorated CRT operators — signals carry
+                        # only the OperatorDelete alias; new/delete family
+                        # addresses are binary-stable.
+                        addr = _DECORATED_CRT.get(val)
                     if addr:
                         hits.append((t.pos, _tok_end(t), call_direct(addr)))
                 i += 1
