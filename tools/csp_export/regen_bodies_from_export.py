@@ -193,6 +193,12 @@ for p in sorted(SRC.rglob('*.cpp')):
                       if bl.strip() else ''
                       for bl in new_body.split('\n')]
         repl = [def_line]
+        # G32: split one-line `namespace gamemd { Ret Cls::Fn() {` into
+        # proper lines (namespace on its own line, def on the next).
+        dm_ns = re.match(r'^((?:namespace\s+\w+\s*\{\s*)+)(.*)$', def_line.strip())
+        if dm_ns and dm_ns.group(2):
+            repl[0] = indent + dm_ns.group(1)
+            repl.insert(1, indent + dm_ns.group(2))
         if '{' not in def_line:
             repl.append(indent + '{')
         repl.extend(body_lines)

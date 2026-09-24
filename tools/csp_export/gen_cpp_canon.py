@@ -300,7 +300,10 @@ def build_members(cc):
         if isinstance(o, int) and o in members and not members[o]['name']:
             members[o]['name'] = n
     # UNION old member_lookup chain offsets (offset completeness; no silent gaps)
-    mlc = ml_chain_offsets(cc)
+    # G32 emission policy: pure width fillers (u8_/u16_/u32_/u64_) stay in
+    # member_lookup for the rewriters/verifier but do NOT bloat the header.
+    mlc = {o: m for o, m in ml_chain_offsets(cc).items()
+           if not re.match(r'^u(?:8|16|32|64)_[0-9A-F]+$', (m or {}).get('name', ''))}
     for o, m in mlc.items():
         if o in members:
             cur = members[o]

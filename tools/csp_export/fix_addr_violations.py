@@ -302,6 +302,12 @@ def real_mem_rewrite(text, cls, env=None):
                     var_info.pop(v, None)
                 out_lines.append(tln)
                 continue
+            # var-to-var alias: propagate the source's tracking (v3 = v2)
+            im2 = re.match(r'^\s*([a-z]\w*)\s*=\s*([a-z]\w*)\s*[;)]?', tln)
+            if im2 and im2.group(2) in var_info:
+                var_info[im2.group(1)] = var_info[im2.group(2)]
+                out_lines.append(tln)
+                continue
             # any other assignment to a tracked var invalidates it
             im = re.match(r'^\s*([a-z]\w*)\s*=\s*', tln)
             if im and im.group(1) in var_info:

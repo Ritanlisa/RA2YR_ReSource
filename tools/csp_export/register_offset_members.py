@@ -163,13 +163,14 @@ if '--purge-oob' in sys.argv or APPLY:
         _os.replace(_tmp, ROOT / 'signals.json')
     print('oob fillers purged:', purged_oob)
 
-# Sync classes that live only in member_lookup (old E4Recv/Gap2Recv
-# synthesis wrote ml directly) into member_types so gen_cpp_canon emits
-# them into the canon universe. Where an old-epoch filler name
-# (field_0x.. / q-hex) occupies the slot, the ml semantic name wins.
+# Sync classes that live only in member_lookup into member_types. G32:
+# OFF by default -- it re-materializes millions of dense entries every run
+# (the 698MB table bloat). Run explicitly with --sync-ml when ml gained
+# genuinely new classes.
 synced = 0
+DO_SYNC = '--sync-ml' in sys.argv
 OLD_FILLER = re.compile(r'^(?:[A-Za-z_]\w*_field_0x[0-9A-F]+|q[0-9A-F]{1,3}|\w+_\w[0-9A-F]{2})$')
-for cls, members in ml.items():
+for cls, members in (ml.items() if DO_SYNC else []):
     if not members:
         continue
     for off, ent in members.items():
@@ -388,7 +389,7 @@ if '--align-ml' in sys.argv:
         _os.replace(tmp, ROOT / 'signals.json')
         print('ml+signals written')
 
-if APPLY and (pending or upgrades or synced):
+if APPLY and (pending or upgrades or (synced and DO_SYNC)):
     import json
     (ROOT / 'anchors' / 'member_types.json').write_text(
         json.dumps(mt, indent=1, ensure_ascii=False) + '\n', encoding='utf-8')
