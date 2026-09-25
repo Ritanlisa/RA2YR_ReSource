@@ -4,6 +4,8 @@
 #include "e4/classes/Dial8Class_48_e4.hpp"
 #include "e4/classes/DialogClass_e4.hpp"
 #include "e4/classes/SkirmishDialog_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x4A7D20
@@ -243,7 +245,7 @@ VectorClass_flat * Dial8Class_48::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->q004; /*0x4a8033*/
-  *this = &(void*)(void*)&VectorClass_DiskLaserClass___vftable; /*0x4a8036*/
+  *(void **)this = (void*)&VectorClass_DiskLaserClass___vftable; /*0x4a8036*/
   if ( v3 && this->IsAllocated ) /*0x4a8040*/
   {
     RA2_OPDEL(v3); /*0x4a8048*/
@@ -264,7 +266,7 @@ DynamicVector * Dial8Class_48::Constructor_VectorClass_DiskLaserClass___(char a2
   void *v3; // eax
 
   v3 = (void *)this->q004; /*0x4a8083*/
-  *this = &(void*)(void*)&VectorClass_DiskLaserClass___vftable; /*0x4a8086*/
+  *(void **)this = (void*)&VectorClass_DiskLaserClass___vftable; /*0x4a8086*/
   if ( v3 && this->IsAllocated ) /*0x4a8090*/
   {
     RA2_OPDEL(v3); /*0x4a8098*/

@@ -9,6 +9,8 @@
 #include "e4/classes/Object_e4.hpp"
 #include "e4/classes/TeamTypeClass_28_e4.hpp"
 #include "e4/classes/Timer_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x6F0AB0
@@ -60,7 +62,7 @@ void AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
   _DWORD v53[2]; // [esp+18h] [ebp-48h] BYREF
   int v54; // [esp+20h] [ebp-40h]
   void ***v55; // [esp+24h] [ebp-3Ch]
-  void **v56; // [esp+28h] [ebp-38h] BYREF
+  void* v56;
   void *Block; // [esp+2Ch] [ebp-34h]
   int v58; // [esp+30h] [ebp-30h]
   char v59; // [esp+35h] [ebp-2Bh]
@@ -77,7 +79,7 @@ void AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
   v55 = aP0; /*0x6f0ab9*/
   Team_Helper_6F2230(0, 0); /*0x6f0ac9*/
   v5 = *(_DWORD *)(a2 + 22016); /*0x6f0ace*/
-  v56 = &(void*)(void*)&TypeList_TeamTypeClass_const___vftable; /*0x6f0ad4*/
+  v56 = (void*)&TypeList_TeamTypeClass_const___vftable; /*0x6f0ad4*/
   v54 = 0; /*0x6f0adf*/
   if ( v5 != -1 ) /*0x6f0ae3*/
     v54 = *(_DWORD *)&HouseClass_Array->gap0[4 * v5]; /*0x6f0aee*/
@@ -143,7 +145,7 @@ void AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
     {
       v17 = 0; /*0x6f0bfa*/
       Team_Helper_6F27F0(0, 0); /*0x6f0c02*/
-      v62 = &(void*)(void*)&DynamicVectorClass_DiscreteDistributionClass_AITriggerTypeClass_DistributionObject_AITriggerTypeClass___vftable; /*0x6f0c0b*/
+      v62 = (void*)&DynamicVectorClass_DiscreteDistributionClass_AITriggerTypeClass_DistributionObject_AITriggerTypeClass___vftable; /*0x6f0c0b*/
       v66 = 10; /*0x6f0c13*/
       v65 = 0; /*0x6f0c1b*/
       v67 = 0; /*0x6f0c1f*/
@@ -235,7 +237,7 @@ void AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
         *((_DWORD *)Block + v30) = v29; /*0x6f0dbf*/
       }
   LABEL_58:
-      v62 = &(void*)(void*)&VectorClass_DiscreteDistributionClass_AITriggerTypeClass_DistributionObject_AITriggerTypeClass___vftable; /*0x6f0dc2*/
+      v62 = (void*)&VectorClass_DiscreteDistributionClass_AITriggerTypeClass_DistributionObject_AITriggerTypeClass___vftable; /*0x6f0dc2*/
       if ( v63 && v64 ) /*0x6f0dd8*/
         Team_Helper_6F26E0(v63, 3); /*0x6f0de0*/
     }
@@ -256,7 +258,7 @@ void AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
     *(_DWORD *)(v40 + 8) = 0; /*0x6f0e73*/
     *(_BYTE *)(v40 + 12) = 1; /*0x6f0e76*/
     *(_BYTE *)(v40 + 13) = 0; /*0x6f0e7a*/
-    *(_DWORD *)v40 = &(void*)(void*)&VectorClass_TeamTypeClass_const___vftable; /*0x6f0e7e*/
+    *(_DWORD *)v40 = (void*)&VectorClass_TeamTypeClass_const___vftable; /*0x6f0e7e*/
     if ( !v41 ) /*0x6f0e84*/
     {
       VectorClass::ClearAndFree3(v40); /*0x6f0e8c*/
@@ -293,8 +295,8 @@ void AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
     v61 = v61; /*0x6f0f7f*/
     *(_DWORD *)(v40 + 16) = v60; /*0x6f0f85*/
     *(_DWORD *)(v40 + 20) = v61; /*0x6f0f88*/
-    *(_DWORD *)v40 = &(void*)(void*)&TypeList_TeamTypeClass_const___vftable; /*0x6f0f8b*/
-    v56 = &(void*)(void*)&VectorClass_TeamTypeClass_const___vftable; /*0x6f0f91*/
+    *(_DWORD *)v40 = (void*)&TypeList_TeamTypeClass_const___vftable; /*0x6f0f8b*/
+    v56 = (void*)&VectorClass_TeamTypeClass_const___vftable; /*0x6f0f91*/
     if ( v31 ) /*0x6f0f99*/
     {
       if ( v59 ) /*0x6f0fa1*/
@@ -342,10 +344,10 @@ void AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
     v46[2] = 0; /*0x6f0f19*/
     *((_BYTE *)v46 + 12) = 1; /*0x6f0f1c*/
     *((_BYTE *)v46 + 13) = 0; /*0x6f0f20*/
-    *v46 = &(void*)(void*)&VectorClass_TeamTypeClass_const___vftable; /*0x6f0f24*/
+    *v46 = (void*)&VectorClass_TeamTypeClass_const___vftable; /*0x6f0f24*/
     Team_Helper_6F2780(&v56); /*0x6f0f2a*/
-    *(_DWORD *)v40 = &(void*)(void*)&TypeList_TeamTypeClass_const___vftable; /*0x6f0f2f*/
-    v56 = &(void*)(void*)&VectorClass_TeamTypeClass_const___vftable; /*0x6f0f35*/
+    *(_DWORD *)v40 = (void*)&TypeList_TeamTypeClass_const___vftable; /*0x6f0f2f*/
+    v56 = (void*)&VectorClass_TeamTypeClass_const___vftable; /*0x6f0f35*/
     v47 = Block; /*0x6f0f3d*/
     v61 = v61; /*0x6f0f45*/
     v41 = Block == 0; /*0x6f0f49*/

@@ -24,6 +24,8 @@ struct E4Recv_6A93F0 {
     unsigned int q598;  // 0x598
     unsigned int q1910;  // 0x1910
     unsigned int q5170;  // 0x5170
+    unsigned int attachedBomb;
+    unsigned int referenceCount;
 // --- flat members (END) ---
     char sub_6A93F0();  // 0x6A93F0
 };

@@ -16,6 +16,8 @@
 #include "e4/classes/Math_e4.hpp"
 #include "e4/classes/TeamClass_e4.hpp"
 #include "e4/classes/VectorClass_flat_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x574600
@@ -296,40 +298,40 @@ void* CreateMapObject(ProgressScreenClass * aP0, int aP1)
 namespace gamemd {
 MapClass * * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, IUnknown * aP2, int aP1a, int a5)
 {
-  int v7; // eax
+  MapClass * v7;
   char *CellData; // esi
   int TerrainMask; // eax
-  char v10; // bl
-  unsigned int v11; // eax
-  int *v12; // eax
-  unsigned int v13; // eax
-  int *v14; // eax
+  IUnknown * v10;
+  int * v11;
+  unsigned int v12;
+  int * v13;
+  unsigned int v14;
   char v15; // al
-  unsigned int v16; // eax
-  int *v17; // eax
+  int * v16;
+  unsigned int v17;
   char v18; // bl
-  unsigned int v19; // eax
-  int *v20; // eax
+  int * v19;
+  unsigned int v20;
   char v21; // al
-  unsigned int v22; // eax
-  int *v23; // eax
+  int * v22;
+  unsigned int v23;
   char v24; // bl
-  unsigned int v25; // eax
-  int *v26; // eax
+  int * v25;
+  unsigned int v26;
   char v27; // al
-  unsigned int v28; // eax
-  int *v29; // eax
+  int * v28;
+  unsigned int v29;
   char v30; // bl
-  unsigned int v31; // eax
-  int *v32; // eax
+  int * v31;
+  unsigned int v32;
   char v33; // al
   int v34; // eax
-  unsigned int v39; // eax
+  IUnknown * v39;
   _DWORD *NeighbourContent; // esi
   int v41; // edx
   int v42; // edi
   char *v43; // eax
-  char v45; // [esp+13h] [ebp-15h]
+  unsigned int v45;
   int v46; // [esp+14h] [ebp-14h]
   int v47; // [esp+14h] [ebp-14h]
   int v48; // [esp+14h] [ebp-14h]

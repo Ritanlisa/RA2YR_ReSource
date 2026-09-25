@@ -15,9 +15,8 @@ struct Isometric {
     unsigned int q628;  // 0x628
     unsigned char q644;  // 0x644
     unsigned char q1604;  // 0x1604
-    unsigned int u32_704;
 // --- flat members (END) ---
-    long long InitTables(IUnknown * aP1);
+    long long InitTables(void* aP1);
 };
 
 } // namespace gamemd

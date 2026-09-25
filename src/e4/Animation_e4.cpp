@@ -10,7 +10,10 @@
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/RulesClass_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/AsyncIO_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
+#include "e4/classes/Factory_e4.hpp"
 
 // 0x4549B0
 namespace gamemd {
@@ -25,7 +28,7 @@ BuildingClass * * Animation::UpdateBuildingAnimations()
   int v8; // ebp
   int i; // edi
   double HealthRatioBuildingClass; // st7
-  RulesClass *v11; // edx
+  unsigned int v11;
   int v12; // ecx
   _BYTE *v13; // eax
   _DWORD *v14; // ecx
@@ -185,9 +188,9 @@ BuildingClass * * Animation::UpdateBuildingAnimations()
 namespace gamemd {
 int Animation::GetProgress()
 {
-  int v1; // esi
-  int v3; // edx
-  int v4; // eax
+  void * v1;
+  void * v3;
+  void * v4;
 
   if ( !this->q018 ) /*0x4a52f0*/
     return 1.0; /*0x4a5352*/

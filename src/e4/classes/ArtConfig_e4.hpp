@@ -17,12 +17,12 @@ struct ArtConfig {
     unsigned int u32_1C;  // 0x1C
     unsigned char q020;  // 0x20
     unsigned int q024;  // 0x24
-    MSAnim * ptr_28;  // 0x28
+    void* ptr_28;  // 0x28
     unsigned char q02C;  // 0x2C
     unsigned char q030;  // 0x30
     unsigned int q034;  // 0x34
     unsigned char q038;  // 0x38
-    MSAnim * q040;  // 0x40
+    void* q040;  // 0x40
     unsigned char q044;  // 0x44
     unsigned char q048;  // 0x48
     unsigned char q04C;  // 0x4C
@@ -30,7 +30,7 @@ struct ArtConfig {
     unsigned int q054;  // 0x54
     unsigned char q058;  // 0x58
     unsigned char q05C;  // 0x5C
-    MSAnim * q064;  // 0x64
+    void* q064;  // 0x64
     unsigned char q068;  // 0x68
     unsigned char q06C;  // 0x6C
     unsigned char q074;  // 0x74
@@ -46,7 +46,7 @@ struct ArtConfig {
     unsigned char q0A0;  // 0xA0
     unsigned int u32_C4;  // 0xC4
     unsigned char q0C8;  // 0xC8
-    MSAnim * q100;  // 0x100
+    void* q100;  // 0x100
     unsigned int u32_C2;
 // --- flat members (END) ---
     int validateConfig(Selection_WorldDominationTour * aP1, int a3, Selection_WorldDominationTour * aP3);

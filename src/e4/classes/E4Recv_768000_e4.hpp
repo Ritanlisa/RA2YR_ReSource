@@ -91,6 +91,6 @@ struct E4Recv_768000 {
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    void * ConstructWDTSelection_Create_767FB0_Create(int a2, int a3, ReferenceCounted * aP3);  // 0x768000
+    void * ConstructWDTSelection_Create_767FB0_Create(int a2,  int a3,  void* aP3);    // 0x768000
 };
 } // namespace gamemd

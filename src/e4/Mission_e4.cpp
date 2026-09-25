@@ -1,9 +1,12 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Mission_e4.hpp"
 #include "e4/classes/AnimClass_e4.hpp"
 #include "e4/classes/Mixer_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x520AE0
@@ -360,7 +363,7 @@ char Mission::ProcessUnitMissionAI()
 namespace gamemd {
 int Mission::SetAndCall(IUnknown * aP1, IUnknown * aP2)
 {
-  int v3; // edx
+  IUnknown * v3;
 
   v3 = *this; /*0x5bda84*/
   *(&this->u32_8885) = aP1; /*0x5bda8d*/

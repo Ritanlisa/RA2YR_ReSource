@@ -12,7 +12,7 @@ struct FileClass {
     unsigned char q008;  // 0x8
     unsigned int q00C;  // 0xC
     unsigned int q010;  // 0x10
-    void* q014;  // 0x14
+    unsigned int q014;  // 0x14
     unsigned char q018;  // 0x18
     unsigned int u32_1C;  // 0x1C
     unsigned char q020;  // 0x20
@@ -100,14 +100,12 @@ struct FileClass {
     unsigned int Open2;
     unsigned int Seek_1;
     unsigned int q0082;
-    unsigned int q0086;
     unsigned int vt_slot_24;
     unsigned int vt_slot_28;
     unsigned int vt_slot_4;
     unsigned int vt_slot_40;
     unsigned int vt_slot_52;
     unsigned int vt_slot_64;
-    unsigned int OpenWithCDSearch;
 // --- flat members (END) ---
     char Stub(int a1);
     int Close();
@@ -115,7 +113,7 @@ struct FileClass {
     int Open(int a2);
     int Read(BufferIOFileClass * aP1, AbstractClass * aP2);
     int Seek(LONG lDistanceToMove, DWORD dwMoveMethod);
-    int SetFileName(IUnknown * aP1);
+    int SetFileName(void* aP1);
     int SetState();
     int StubReturnFalse();
     int Write(CCFileClass * aP1, DWORD nNumberOfBytesToWrite);

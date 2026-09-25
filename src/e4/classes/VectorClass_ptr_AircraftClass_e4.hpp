@@ -30,10 +30,10 @@ struct VectorClass_ptr_AircraftClass {
 // --- flat members (END) ---
     int Get(int a2);  // 0x4E8890
     char Add(int a2);  // 0x4EB720
-    char Release(int a2, unsigned int * a3);  // 0x4EB760
+    char Release(int a2,  unsigned int * a3);    // 0x4EB760
     void Remove();  // 0x4EB810
     int GetSize(unsigned int * a2);  // 0x4EB840
     unsigned int GetCapacity(int a2);  // 0x4EB880
-    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x4EFE90
+    VectorClass_flat * QueryInterface(unsigned int * Block,  char a2);    // 0x4EFE90
 };
 } // namespace gamemd

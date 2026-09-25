@@ -17,7 +17,7 @@ struct E4Recv_6D1570 {
     unsigned int q1584;  // 0x1584
     unsigned int q5508;  // 0x5508
 // --- flat members (END) ---
-    int Vf48(int, ...);  // G6 vtable slot dispatch
+    int Vf48(int,  ...);    // G6 vtable slot dispatch
     char sub_6D1570();  // 0x6D1570
 };
 } // namespace gamemd

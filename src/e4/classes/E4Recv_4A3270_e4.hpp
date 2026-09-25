@@ -41,6 +41,6 @@ struct E4Recv_4A3270 {
     unsigned int q5510;  // 0x5510
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    int * sub_4A3270(int a2, int a3, int a4);  // 0x4A3270
+    int * sub_4A3270(int a2,  int a3,  int a4);    // 0x4A3270
 };
 } // namespace gamemd

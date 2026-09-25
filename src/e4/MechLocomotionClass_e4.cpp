@@ -2,6 +2,8 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/MechLocomotionClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x5B1960
@@ -28,8 +30,8 @@ int MechLocomotionClass::BeginMove(int * a1, int * a2)
   {
     if ( a1 ) /*0x5b19b6*/
     {
-      *a1 = (int)&(void*)(void*)&MechLocomotionClass_vftable; /*0x5b19b8*/
-      a1[1] = (int)&(void*)(void*)&MechLocomotionClass_vftable; /*0x5b19be*/
+      *a1 = (int)&MechLocomotionClass_vftable; /*0x5b19b8*/
+      a1[1] = (int)&MechLocomotionClass_vftable; /*0x5b19be*/
     }
   }
   return result; /*0x5b19c5*/
@@ -46,8 +48,8 @@ int MechLocomotionClass::StubReturn52()
 namespace gamemd {
 MechLocomotionClass * MechLocomotionClass::ProcessMove(char a2)
 {
-  *this = &(void*)(void*)&MechLocomotionClass_vftable; /*0x5b1b53*/
-  this->vtable2 = &(void*)(void*)&MechLocomotionClass_vftable; /*0x5b1b59*/
+  *(void **)this = (void*)&MechLocomotionClass_vftable; /*0x5b1b53*/
+  this->vtable2 = (void*)&MechLocomotionClass_vftable; /*0x5b1b59*/
   LocomotionClass::Construct(); /*0x5b1b60*/
   if ( (a2 & 1) != 0 ) /*0x5b1b6a*/
     RA2_OPDEL(); /*0x5b1b6d*/

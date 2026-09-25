@@ -31,7 +31,10 @@
 #include "e4/classes/Vector_e4.hpp"
 #include "e4/classes/AnimClass_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_alias_e4.hpp"
+#include "e4/classes/Draw_e4.hpp"
 
 // 0x4C1440
 namespace gamemd {
@@ -1298,7 +1301,7 @@ int sub_4C1D90()
   dword_8A0E90 = 0; /*0x4c1d9c*/
   byte_8A0E94 = 1; /*0x4c1da1*/
   byte_8A0E95 = 0; /*0x4c1da8*/
-  dword_8A0E88 = (int)&(void*)(void*)&DynamicVectorClass_EBolt___vftable; /*0x4c1dad*/
+  dword_8A0E88 = (int)&DynamicVectorClass_EBolt___vftable; /*0x4c1dad*/
   dword_8A0E9C = 10; /*0x4c1db7*/
   dword_8A0E98 = 0; /*0x4c1dc1*/
   return atexit(sub_4C1DD0); /*0x4c1dcc*/
@@ -1309,7 +1312,7 @@ int sub_4C1D90()
 namespace gamemd {
 void sub_4C1DD0()
 {
-  dword_8A0E88 = (int)&(void*)(void*)&VectorClass_EBolt___vftable; /*0x4c1dd8*/
+  dword_8A0E88 = (int)&VectorClass_EBolt___vftable; /*0x4c1dd8*/
   if ( dword_8A0E8C && byte_8A0E95 ) /*0x4c1dec*/
   {
     RA2_OPDEL(dword_8A0E8C); /*0x4c1def*/
@@ -1384,7 +1387,7 @@ int * E4Recv_4C2FC0::sub_4C2FC0(DropListClass * aP1, ControlClass * aP2, int a4,
   aP4 = aP4; /*0x4c2ff6*/
   IDA_BYTE1(aP4) = IDA_BYTE1(aP4) & 0xFE; /*0x4c2ff8*/
   *(&this->q0041) = aP4; /*0x4c2ffc*/
-  *this = (int)&(void*)(void*)&EditClass_vftable; /*0x4c3004*/
+  *this = (int)&EditClass_vftable; /*0x4c3004*/
   *(&this->q0042) = a10; /*0x4c300a*/
   *(&this->q0043) = (int)aP2; /*0x4c300d*/
   *(&this->q0044) = a4 - 1; /*0x4c3010*/
@@ -1736,7 +1739,7 @@ int sub_4C3C10()
   dword_8A3778 = 0; /*0x4c3c1c*/
   byte_8A377C = 1; /*0x4c3c21*/
   byte_8A377D = 0; /*0x4c3c28*/
-  dword_8A3770 = (int)&(void*)(void*)&DynamicVectorClass_EgoClass___vftable; /*0x4c3c2d*/
+  dword_8A3770 = (int)&DynamicVectorClass_EgoClass___vftable; /*0x4c3c2d*/
   dword_8A3784 = 10; /*0x4c3c37*/
   dword_8A3780 = 0; /*0x4c3c41*/
   return atexit(sub_4C3C50); /*0x4c3c4c*/
@@ -1747,7 +1750,7 @@ int sub_4C3C10()
 namespace gamemd {
 void sub_4C3C50()
 {
-  dword_8A3770 = (int)&(void*)(void*)&VectorClass_EgoClass___vftable; /*0x4c3c58*/
+  dword_8A3770 = (int)&VectorClass_EgoClass___vftable; /*0x4c3c58*/
   if ( dword_8A3774 && byte_8A377D ) /*0x4c3c6c*/
   {
     RA2_OPDEL(dword_8A3774); /*0x4c3c6f*/
@@ -2066,7 +2069,7 @@ int sub_4C5210()
   dword_8A3878 = 0; /*0x4c521c*/
   byte_8A387C = 1; /*0x4c5221*/
   byte_8A387D = 0; /*0x4c5228*/
-  dword_8A3870 = (int)&(void*)(void*)&DynamicVectorClass_EMPulseClass___vftable; /*0x4c522d*/
+  dword_8A3870 = (int)&DynamicVectorClass_EMPulseClass___vftable; /*0x4c522d*/
   dword_8A3884 = 10; /*0x4c5237*/
   dword_8A3880 = 0; /*0x4c5241*/
   return atexit(sub_4C5250); /*0x4c524c*/
@@ -2079,7 +2082,7 @@ void sub_4C5250()
 {
   if ( (byte_8A3818 & 1) == 0 ) /*0x4c525a*/
   {
-    dword_8A3870 = (int)&(void*)(void*)&VectorClass_EMPulseClass___vftable; /*0x4c525e*/
+    dword_8A3870 = (int)&VectorClass_EMPulseClass___vftable; /*0x4c525e*/
     byte_8A3818 |= 1u; /*0x4c5271*/
     if ( dword_8A3874 ) /*0x4c5277*/
     {
@@ -2722,7 +2725,7 @@ char sub_4C9160()
 
   CCFileClass::Construct(v2, aExpandDat); /*0x4c916d*/
   v0 = CCFileClass::Open(v2, 0); /*0x4c9181*/
-  v2[0] = &(void*)(void*)&CCFileClass_vftable; /*0x4c9183*/
+  v2[0] = (void*)&CCFileClass_vftable; /*0x4c9183*/
   v4 = 0; /*0x4c918b*/
   Vector::Clear((int)v3); /*0x4c9193*/
   v2[0] = &off_7E1668; /*0x4c919c*/
@@ -3439,8 +3442,8 @@ int sub_4CC980()
 namespace gamemd {
 void E4Recv_4CCA70::sub_4CCA70()
 {
-  *this = &(void*)(void*)&FlyLocomotionClass_vftable; /*0x4cca70*/
-  *(this + 1) = &(void*)(void*)&FlyLocomotionClass_vftable; /*0x4cca76*/
+  *this = (void*)&FlyLocomotionClass_vftable; /*0x4cca70*/
+  *(this + 1) = (void*)&FlyLocomotionClass_vftable; /*0x4cca76*/
   LocomotionClass::Construct(); /*0x4cca7d*/
 }
 } // namespace gamemd

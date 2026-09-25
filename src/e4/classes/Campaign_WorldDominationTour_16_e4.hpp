@@ -20,10 +20,10 @@ struct Campaign_WorldDominationTour_16 {
     unsigned int q0042;
     unsigned int q0043;
 // --- flat members (END) ---
-    char Release(int a2, unsigned int * a3);  // 0x765840
-    unsigned int * Seek(unsigned int * a2, int a3);  // 0x7656D0
-    rc_ptr * Constructor(char a2);  // 0x765710
-    rc_ptr * Constructor_0(char a2);  // 0x765740
+    char Release(int a2,  unsigned int * a3);    // 0x765840
+    unsigned int * Seek(unsigned int * a2,  int a3);    // 0x7656D0
+    void* Constructor(char a2);  // 0x765710
+    void* Constructor_0(char a2);  // 0x765740
     VectorCursor * Constructor_1(char a2);  // 0x765770
     char AddRef(int a2);  // 0x7657F0
     int ddtor();  // 0x765960

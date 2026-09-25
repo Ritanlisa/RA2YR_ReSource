@@ -3,7 +3,10 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/BlitTransLucent25AlphaZReadWrite_ushort_e4.hpp"
 #include "e4/classes/BlitTransLucent25Alpha_ushort_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/AbstractClass_e4.hpp"
 
 // 0x496130
 namespace gamemd {
@@ -213,10 +216,10 @@ BlitTransLucent25Alpha_ushort * BlitTransLucent25Alpha_ushort::Blit(char a2)
   void *v3; // eax
 
   v3 = (void *)this->ptr_8; /*0x49a348*/
-  *this = &(void*)(void*)&BlitTransLucent25Alpha_unsigned_short_vftable; /*0x49a34b*/
+  *(void **)this = (void*)&BlitTransLucent25Alpha_unsigned_short_vftable; /*0x49a34b*/
   FractalNoise::Dtor(v3); /*0x49a352*/
   this->ptr_8 = 0; /*0x49a35b*/
-  *this = &(void*)(void*)&Blitter_vftable; /*0x49a364*/
+  *(void **)this = (void*)&Blitter_vftable; /*0x49a364*/
   if ( (a2 & 1) != 0 ) /*0x49a36a*/
     RA2_OPDEL(); /*0x49a36d*/
   return this; /*0x49a377*/
@@ -226,7 +229,7 @@ BlitTransLucent25Alpha_ushort * BlitTransLucent25Alpha_ushort::Blit(char a2)
 namespace gamemd {
 std::locale::facet * BlitTransLucent25Alpha_ushort::Constructor_Blitter(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&Blitter_vftable; /*0x49a389*/
+  *(void **)this = (void*)&Blitter_vftable; /*0x49a389*/
   if ( (a2 & 1) != 0 ) /*0x49a38f*/
     RA2_OPDEL(); /*0x49a392*/
   return this; /*0x49a39c*/
@@ -239,10 +242,10 @@ BlitTransLucent25AlphaZReadWrite_ushort * BlitTransLucent25AlphaZReadWrite_ushor
   void *v3; // eax
 
   v3 = (void *)this->ptr_8; /*0x49a728*/
-  *this = &(void*)(void*)&BlitTransLucent25AlphaZReadWrite_unsigned_short_vftable; /*0x49a72b*/
+  *(void **)this = (void*)&BlitTransLucent25AlphaZReadWrite_unsigned_short_vftable; /*0x49a72b*/
   FractalNoise::Dtor(v3); /*0x49a732*/
   this->ptr_8 = 0; /*0x49a73b*/
-  *this = &(void*)(void*)&Blitter_vftable; /*0x49a744*/
+  *(void **)this = (void*)&Blitter_vftable; /*0x49a744*/
   if ( (a2 & 1) != 0 ) /*0x49a74a*/
     RA2_OPDEL(); /*0x49a74d*/
   return this; /*0x49a757*/
@@ -252,7 +255,7 @@ BlitTransLucent25AlphaZReadWrite_ushort * BlitTransLucent25AlphaZReadWrite_ushor
 namespace gamemd {
 RLEBlitTransXlat * BlitTransLucent25AlphaZReadWrite_ushort::Constructor_RLEBlitter(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&RLEBlitter_vftable; /*0x49a769*/
+  *(void **)this = (void*)&RLEBlitter_vftable; /*0x49a769*/
   if ( (a2 & 1) != 0 ) /*0x49a76f*/
     RA2_OPDEL(); /*0x49a772*/
   return this; /*0x49a77c*/
@@ -262,7 +265,7 @@ RLEBlitTransXlat * BlitTransLucent25AlphaZReadWrite_ushort::Constructor_RLEBlitt
 namespace gamemd {
 std::locale::facet * BlitTransLucent25AlphaZReadWrite_ushort::Constructor_RLEBlitter_0(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&RLEBlitter_vftable; /*0x49a789*/
+  *(void **)this = (void*)&RLEBlitter_vftable; /*0x49a789*/
   if ( (a2 & 1) != 0 ) /*0x49a78f*/
     RA2_OPDEL(); /*0x49a792*/
   return this; /*0x49a79c*/
@@ -272,7 +275,7 @@ std::locale::facet * BlitTransLucent25AlphaZReadWrite_ushort::Constructor_RLEBli
 namespace gamemd {
 std::locale::facet * BlitTransLucent25AlphaZReadWrite_ushort::Constructor_RLEBlitter_1(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&RLEBlitter_vftable; /*0x49a7a9*/
+  *(void **)this = (void*)&RLEBlitter_vftable; /*0x49a7a9*/
   if ( (a2 & 1) != 0 ) /*0x49a7af*/
     RA2_OPDEL(); /*0x49a7b2*/
   return this; /*0x49a7bc*/

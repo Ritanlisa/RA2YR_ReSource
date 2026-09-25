@@ -7,13 +7,16 @@
 #include "e4/classes/AbstractTypeClass_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/TechnoTypeClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/ConvertClass_e4.hpp"
 
 // 0x549B70
 namespace gamemd {
 int IsometricTileTypeClass::ProcessPower(int * a2)
 {
-  int v3; // eax
+  void * v3;
   int v4; // eax
   int v5; // edx
   int v6; // eax
@@ -68,13 +71,13 @@ AbstractClass * * IsometricTileTypeClass::LoadTypeData(int * a1, int a2)
     {
       ObjectTypeClass::Construct(a1, (int)&a2); /*0x549cd8*/
       IsometricTileTypeClass::Constructor_0(a1 + 169, 0, 0); /*0x549ce9*/
-      a1[169] = (int)&(void*)(void*)&DynamicVectorClass_unsigned_short___vftable; /*0x549cee*/
+      a1[169] = (int)&DynamicVectorClass_unsigned_short___vftable; /*0x549cee*/
       a1[174] = 10; /*0x549cf4*/
       a1[173] = 0; /*0x549cfb*/
-      *a1 = (int)&(void*)(void*)&IsometricTileTypeClass_vftable; /*0x549d02*/
-      a1[1] = (int)&(void*)(void*)&IsometricTileTypeClass_vftable; /*0x549d08*/
-      a1[2] = (int)&(void*)(void*)&IsometricTileTypeClass_vftable; /*0x549d0f*/
-      a1[3] = (int)&(void*)(void*)&IsometricTileTypeClass_vftable; /*0x549d16*/
+      *a1 = (int)&IsometricTileTypeClass_vftable; /*0x549d02*/
+      a1[1] = (int)&IsometricTileTypeClass_vftable; /*0x549d08*/
+      a1[2] = (int)&IsometricTileTypeClass_vftable; /*0x549d0f*/
+      a1[3] = (int)&IsometricTileTypeClass_vftable; /*0x549d16*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, a1 + 175); /*0x549d2a*/
     for ( j = 0; j < g_SurfaceAnimState; *((_DWORD *)dword_87F69C + j - 1) = 0 ) /*0x549d39*/
@@ -187,9 +190,9 @@ namespace gamemd {
 char IsometricTileTypeClass::SetCapacity(int a2, unsigned int * a3)
 {
   _DWORD *v4; // edi
-  int v5; // ecx
+  unsigned int v5;
   int i; // eax
-  int v7; // eax
+  void * v7;
 
   if ( a2 ) /*0x54a3dc*/
   {
@@ -255,7 +258,7 @@ DynamicVector * IsometricTileTypeClass::Constructor(char a2)
   void *v3; // eax
 
   v3 = (void *)this->vtable2; /*0x54a763*/
-  *this = &(void*)(void*)&VectorClass_unsigned_short___vftable; /*0x54a766*/
+  *(void **)this = (void*)&VectorClass_unsigned_short___vftable; /*0x54a766*/
   if ( v3 && this->q034 ) /*0x54a770*/
   {
     RA2_OPDEL(v3); /*0x54a778*/
@@ -276,7 +279,7 @@ unsigned int * IsometricTileTypeClass::Constructor_0(int a2, int a3)
   this->vtable3 = a2; /*0x54a85e*/
   this->vtable4 = 1; /*0x54a861*/
   this->q034 = 0; /*0x54a865*/
-  *this = &(void*)(void*)&VectorClass_unsigned_short___vftable; /*0x54a868*/
+  *(void **)this = (void*)&VectorClass_unsigned_short___vftable; /*0x54a868*/
   if ( a2 ) /*0x54a86e*/
   {
     if ( a3 ) /*0x54a876*/

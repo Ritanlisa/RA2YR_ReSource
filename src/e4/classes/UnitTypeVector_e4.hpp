@@ -8,7 +8,7 @@ namespace gamemd {
 struct UnitTypeVector {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
-    AbstractClass * ptr_4;  // 0x4
+    unsigned int q004;  // 0x4
     unsigned char q008;  // 0x8
     unsigned char q00C;  // 0xC
     unsigned char u8_D;  // 0xD
@@ -38,6 +38,7 @@ struct UnitTypeVector {
     unsigned char q078;  // 0x78
     unsigned char q080;  // 0x80
     unsigned char q084;  // 0x84
+    void* ptr_4;
 // --- flat members (END) ---
     unsigned int * Construct2(int a2, int a3);
     unsigned int * ConstructUnitTypeVectorClass(int a2, int a3);

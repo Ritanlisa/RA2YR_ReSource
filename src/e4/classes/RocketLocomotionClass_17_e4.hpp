@@ -30,10 +30,10 @@ struct RocketLocomotionClass_17 {
     void ddtor();  // 0x6647B0
     int UpdateMovement(int a2);  // 0x664800
     char AddRef(int a2);  // 0x664810
-    char SetCapacity(int a2, unsigned int * a3);  // 0x664850
+    char SetCapacity(int a2,  unsigned int * a3);    // 0x664850
     void Destroy();  // 0x664900
     int IndexOf(unsigned int * a2);  // 0x664930
-    char Release(int a2, unsigned int * a3);  // 0x664990
+    char Release(int a2,  unsigned int * a3);    // 0x664990
     int Launch(unsigned int * a2);  // 0x664A40
     VectorClass_flat * Constructor(char a2);  // 0x664A70
     DynamicVector * QueryInterface(char a2);  // 0x664AC0

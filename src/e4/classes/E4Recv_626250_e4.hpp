@@ -13,6 +13,6 @@ struct E4Recv_626250 {
     unsigned int q598;  // 0x598
     unsigned int q5170;  // 0x5170
 // --- flat members (END) ---
-    int sub_626250(const char * a2, int a3);  // 0x626250
+    int sub_626250(const char * a2,  int a3);    // 0x626250
 };
 } // namespace gamemd

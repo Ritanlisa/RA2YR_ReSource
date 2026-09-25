@@ -14,7 +14,7 @@ struct E4Recv_70E5A0 {
     unsigned int q408;  // 0x408
     unsigned int q420;  // 0x420
 // --- flat members (END) ---
-    int Vf352(int, ...);  // G6 vtable slot dispatch
+    int Vf352(int,  ...);    // G6 vtable slot dispatch
     int UpdateTechnoIdleTimer();  // 0x70E5A0
 };
 } // namespace gamemd

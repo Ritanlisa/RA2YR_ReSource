@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+
 #include "e4/e4_globals.hpp"
 #include "e4/classes/ProgressTimer_e4.hpp"
 #include "e4/classes/Value_e4.hpp"
@@ -7,7 +8,10 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/Math_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/VoxelRenderer_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
 
 // 0x73C5F0
 namespace gamemd {

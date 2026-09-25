@@ -12,6 +12,8 @@
 #include "e4/classes/MixFileClass_e4.hpp"
 #include "e4/classes/Mouse_e4.hpp"
 #include "e4/classes/AudioStream_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x530460
@@ -19,28 +21,28 @@ namespace gamemd {
 MixFileClass * * MixFile::LoadAll()
 {
   _DWORD *v0; // eax
-  char v1; // bl
+  void * v1;
   int v3; // eax
   int v4; // eax
   _DWORD *v5; // eax
-  char v6; // bl
+  void * v6;
   _DWORD *v7; // eax
-  char v8; // bl
+  void * v8;
   _DWORD *v9; // eax
-  char v10; // bl
+  void * v10;
   int v11; // esi
   int v12; // esi
   int v13; // eax
   int v14; // esi
   int v15; // eax
   _DWORD *v16; // eax
-  char v17; // bl
+  void * v17;
   _DWORD *v18; // eax
-  char v19; // bl
+  void * v19;
   _DWORD *v20; // eax
-  char v21; // bl
+  void * v21;
   _DWORD *v22; // eax
-  char v23; // bl
+  void * v23;
   _DWORD *v24; // eax
   char v25; // bl
   int v26; // eax
@@ -73,7 +75,7 @@ MixFileClass * * MixFile::LoadAll()
 
   v0 = CCFileClass::Construct(v47, aConqmdMix); /*0x530473*/
   v1 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v0 + 20))(v0, 0); /*0x53048b*/
-  v47[0] = &(void*)(void*)&CCFileClass_vftable; /*0x53048d*/
+  v47[0] = (void*)&CCFileClass_vftable; /*0x53048d*/
   v49 = 0; /*0x530491*/
   Vector::Clear(v48); /*0x530495*/
   v47[0] = &off_7E1668; /*0x5304a3*/
@@ -118,7 +120,7 @@ MixFileClass * * MixFile::LoadAll()
     g_MixFile_ISOGEN = 0; /*0x5305f1*/
   v5 = CCFileClass::Construct(v47, aConquerMix); /*0x530600*/
   v6 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v5 + 20))(v5, 0); /*0x530611*/
-  v47[0] = &(void*)(void*)&CCFileClass_vftable; /*0x530613*/
+  v47[0] = (void*)&CCFileClass_vftable; /*0x530613*/
   v49 = 0; /*0x530617*/
   Vector::Clear(v48); /*0x53061b*/
   v47[0] = &off_7E1668; /*0x530624*/
@@ -135,7 +137,7 @@ MixFileClass * * MixFile::LoadAll()
     return 0; /*0x53067f*/
   v7 = CCFileClass::Construct(v47, aCameomdMix); /*0x530689*/
   v8 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v7 + 20))(v7, 0); /*0x53069a*/
-  v47[0] = &(void*)(void*)&CCFileClass_vftable; /*0x53069c*/
+  v47[0] = (void*)&CCFileClass_vftable; /*0x53069c*/
   v49 = 0; /*0x5306a0*/
   Vector::Clear(v48); /*0x5306a4*/
   v47[0] = &off_7E1668; /*0x5306ad*/
@@ -152,7 +154,7 @@ MixFileClass * * MixFile::LoadAll()
     return 0; /*0x530708*/
   v9 = CCFileClass::Construct(v47, aCameoMix); /*0x530712*/
   v10 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v9 + 20))(v9, 0); /*0x530723*/
-  v47[0] = &(void*)(void*)&CCFileClass_vftable; /*0x530725*/
+  v47[0] = (void*)&CCFileClass_vftable; /*0x530725*/
   v49 = 0; /*0x530729*/
   Vector::Clear(v48); /*0x53072d*/
   v47[0] = &off_7E1668; /*0x530736*/
@@ -243,7 +245,7 @@ MixFileClass * * MixFile::LoadAll()
     sprintf(Buffer, "MAPSMD%02d.MIX", v11); /*0x530a3c*/
     v16 = CCFileClass::Construct(v47, Buffer); /*0x530a50*/
     v17 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v16 + 20))(v16, 0); /*0x530a61*/
-    v47[0] = &(void*)(void*)&CCFileClass_vftable; /*0x530a63*/
+    v47[0] = (void*)&CCFileClass_vftable; /*0x530a63*/
     v49 = 0; /*0x530a67*/
     Vector::Clear(v48); /*0x530a6b*/
     v47[0] = &off_7E1668; /*0x530a74*/
@@ -259,7 +261,7 @@ MixFileClass * * MixFile::LoadAll()
     sprintf(Buffer, "MAPS%02d.MIX", v11); /*0x530ad4*/
     v18 = CCFileClass::Construct(v47, Buffer); /*0x530ae8*/
     v19 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v18 + 20))(v18, 0); /*0x530af9*/
-    v47[0] = &(void*)(void*)&CCFileClass_vftable; /*0x530afb*/
+    v47[0] = (void*)&CCFileClass_vftable; /*0x530afb*/
     v49 = 0; /*0x530aff*/
     Vector::Clear(v48); /*0x530b03*/
     v47[0] = &off_7E1668; /*0x530b0c*/
@@ -278,7 +280,7 @@ MixFileClass * * MixFile::LoadAll()
     return 0; /*0x530b75*/
   v20 = CCFileClass::Construct(v47, g_Str_File_MULTIMD_MIX); /*0x530b7f*/
   v21 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v20 + 20))(v20, 0); /*0x530b95*/
-  v47[0] = &(void*)(void*)&CCFileClass_vftable; /*0x530b97*/
+  v47[0] = (void*)&CCFileClass_vftable; /*0x530b97*/
   v49 = 0; /*0x530b9b*/
   Vector::Clear(v48); /*0x530b9f*/
   v47[0] = &off_7E1668; /*0x530bad*/
@@ -295,7 +297,7 @@ MixFileClass * * MixFile::LoadAll()
     return 0; /*0x530c08*/
   v22 = CCFileClass::Construct(v47, g_Str_File_THEMEMD_MIX); /*0x530c12*/
   v23 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v22 + 20))(v22, 0); /*0x530c23*/
-  v47[0] = &(void*)(void*)&CCFileClass_vftable; /*0x530c25*/
+  v47[0] = (void*)&CCFileClass_vftable; /*0x530c25*/
   v49 = 0; /*0x530c29*/
   Vector::Clear(v48); /*0x530c2d*/
   v47[0] = &off_7E1668; /*0x530c36*/
@@ -313,7 +315,7 @@ MixFileClass * * MixFile::LoadAll()
   {
     v24 = CCFileClass::Construct(v47, g_Str_File_THEME_MIX); /*0x530c80*/
     v25 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v24 + 20))(v24, 0); /*0x530c91*/
-    v47[0] = &(void*)(void*)&CCFileClass_vftable; /*0x530c93*/
+    v47[0] = (void*)&CCFileClass_vftable; /*0x530c93*/
     v49 = 0; /*0x530c97*/
     Vector::Clear(v48); /*0x530c9b*/
     v47[0] = &off_7E1668; /*0x530ca4*/
@@ -433,7 +435,7 @@ MixFileClass * * MixFile::LoadAll()
   sprintf(Buffer, "MOVMD%02d.MIX", v50); /*0x531186*/
   v43 = CCFileClass::Construct(v47, Buffer); /*0x53119a*/
   v44 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v43 + 20))(v43, 0); /*0x5311ab*/
-  v47[0] = &(void*)(void*)&CCFileClass_vftable; /*0x5311ad*/
+  v47[0] = (void*)&CCFileClass_vftable; /*0x5311ad*/
   v49 = 0; /*0x5311b5*/
   Vector::Clear(v48); /*0x5311b9*/
   v47[0] = &off_7E1668; /*0x5311c2*/
@@ -447,7 +449,7 @@ MixFileClass * * MixFile::LoadAll()
   sprintf(Buffer, "MOVIES%02d.MIX", v42); /*0x5311f1*/
   v45 = CCFileClass::Construct(v47, Buffer); /*0x531205*/
   v46 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v45 + 20))(v45, 0); /*0x531216*/
-  v47[0] = &(void*)(void*)&CCFileClass_vftable; /*0x531218*/
+  v47[0] = (void*)&CCFileClass_vftable; /*0x531218*/
   v49 = 0; /*0x531220*/
   Vector::Clear(v48); /*0x531224*/
   v47[0] = &off_7E1668; /*0x53122d*/
@@ -545,7 +547,7 @@ AbstractClass * * MixFile::LoadSide()
   Debug::Log(); /*0x5350f0*/
   v6 = CCFileClass::Construct(v19, Buffer); /*0x535101*/
   v7 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v6 + 20))(v6, 0); /*0x535115*/
-  v19[0] = &(void*)(void*)&CCFileClass_vftable; /*0x535117*/
+  v19[0] = (void*)&CCFileClass_vftable; /*0x535117*/
   v21 = 0; /*0x53511f*/
   Vector::Clear((int)v20); /*0x535126*/
   v19[0] = &off_7E1668; /*0x535134*/
@@ -563,7 +565,7 @@ AbstractClass * * MixFile::LoadSide()
   Debug::Log(); /*0x535193*/
   v9 = CCFileClass::Construct(v19, Buffer); /*0x5351a4*/
   v10 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v9 + 20))(v9, 0); /*0x5351b8*/
-  v19[0] = &(void*)(void*)&CCFileClass_vftable; /*0x5351ba*/
+  v19[0] = (void*)&CCFileClass_vftable; /*0x5351ba*/
   v21 = 0; /*0x5351c2*/
   Vector::Clear((int)v20); /*0x5351c9*/
   v19[0] = &off_7E1668; /*0x5351d2*/
@@ -591,7 +593,7 @@ AbstractClass * * MixFile::LoadSide()
     Debug::Log(); /*0x53526a*/
     v13 = CCFileClass::Construct(v19, Buffer); /*0x53527b*/
     v14 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v13 + 20))(v13, 0); /*0x535294*/
-    v19[0] = &(void*)(void*)&CCFileClass_vftable; /*0x535296*/
+    v19[0] = (void*)&CCFileClass_vftable; /*0x535296*/
     v21 = 0; /*0x53529a*/
     Vector::Clear((int)v20); /*0x5352a1*/
     v19[0] = &off_7E1668; /*0x5352aa*/
@@ -612,7 +614,7 @@ AbstractClass * * MixFile::LoadSide()
       v16 = g_GameMode_Current[0] && g_GameMode_Current[0] != 5; /*0x53532f*/
       SidebarClass::ReadButtonList(&CCINIClass_INI_UIMD, v16); /*0x53533d*/
       SidebarClass::LoadButtonSHPs(&MapClass_Instance); /*0x535347*/
-      v22[0] = &(void*)(void*)&CCFileClass_vftable; /*0x535353*/
+      v22[0] = (void*)&CCFileClass_vftable; /*0x535353*/
       v24 = 0; /*0x53535a*/
       Vector::Clear((int)v23); /*0x535361*/
       v22[0] = &off_7E1668; /*0x53536d*/
@@ -622,7 +624,7 @@ AbstractClass * * MixFile::LoadSide()
     else
     {
       Debug::Log(); /*0x53538b*/
-      v22[0] = &(void*)(void*)&CCFileClass_vftable; /*0x53539a*/
+      v22[0] = (void*)&CCFileClass_vftable; /*0x53539a*/
       v24 = 0; /*0x5353a1*/
       Vector::Clear((int)v23); /*0x5353a8*/
       v22[0] = &off_7E1668; /*0x5353b4*/
@@ -720,10 +722,10 @@ unsigned int * MIXFile::Load(ObjectClass * aP1)
     v13[2] = 20; /*0x627733*/
     *((_BYTE *)v13 + 12) = 1; /*0x62773a*/
     *((_BYTE *)v13 + 13) = 0; /*0x62773e*/
-    *v13 = &(void*)(void*)&VectorClass_ColorScheme___vftable; /*0x627742*/
+    *v13 = (void*)&VectorClass_ColorScheme___vftable; /*0x627742*/
     v13[1] = RA2_OPNEW(0x50u); /*0x627750*/
     *((_BYTE *)v14 + 13) = 1; /*0x627753*/
-    *v14 = &(void*)(void*)&DynamicVectorClass_ColorScheme___vftable; /*0x627757*/
+    *v14 = (void*)&DynamicVectorClass_ColorScheme___vftable; /*0x627757*/
     v14[5] = 10; /*0x62775d*/
     v14[4] = 0; /*0x627764*/
   }

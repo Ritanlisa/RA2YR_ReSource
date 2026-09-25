@@ -10,6 +10,8 @@
 #include "e4/classes/CChatEventSink_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x7AA870
@@ -567,7 +569,7 @@ char CChatEventSink::EncodeString(char a2)
     v10 = v9; /*0x7b5e9a*/
   if ( *this ) /*0x7b5e9c*/
     RA2_OPDEL(); /*0x7b5ea3*/
-  *this = 0; /*0x7b5ead*/
+  *(_DWORD *)this = 0; /*0x7b5ead*/
   if ( v10 ) /*0x7b5eb3*/
     v11 = strlen(v10) + 1; /*0x7b5ebc*/
   else

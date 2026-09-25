@@ -15,7 +15,7 @@ struct Object {
     unsigned char q018;  // 0x18
     unsigned int q020;  // 0x20
     unsigned char q024;  // 0x24
-    IUnknown * ptr_28;  // 0x28
+    void * ptr_28;  // 0x28
     void* q030;  // 0x30
     void* q034;  // 0x34
     unsigned char q038;  // 0x38
@@ -348,40 +348,35 @@ struct Object {
     unsigned char q645C;  // 0x645C
     unsigned char q6468;  // 0x6468
     unsigned char q646C;  // 0x646C
-    unsigned int Type;
     unsigned int q0042;
     unsigned int q0181;
     unsigned int q0182;
     unsigned int u32_147;
-    unsigned int u32_148;
     unsigned int u32_8C02;
-    unsigned int vtable2;
-    unsigned int vtable3;
-    unsigned int vtable4;
+    unsigned int Type;
     unsigned int q03C6;
     unsigned int q0442;
     unsigned int q0A0;
     unsigned int q0A4;
-    unsigned int uniqueId3;
 // --- flat members (END) ---
-    int FindClosestObjectCell(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3);  // 0x47C3D0
-    int FindObjectCell(TechnoClass * aP1, char aP2);  // 0x47C5A0
-    bool IsAlliedWithObjectHouse(IUnknown * aP1);  // 0x4F9A90
+    int FindClosestObjectCell(void* aP1,  void* aP2,  void* aP3);    // 0x47C3D0
+    int FindObjectCell(TechnoClass * aP1,  char aP2);    // 0x47C5A0
+    bool IsAlliedWithObjectHouse(void* aP1);  // 0x4F9A90
     bool IsAlliedWithObjectSimpleHouse(unsigned char * a2);  // 0x4F9AF0
     unsigned int * FindNearestObjectAtCell(unsigned int * a2);  // 0x56C210
-    OverlayClass * SpawnAtCell(IUnknown * aP1, IUnknown * aP2, BuildingTypeClass * aP3);  // 0x5FC380
-    void HandleAction(int * a2, int * a3);  // 0x5FD970
+    void* SpawnAtCell(void* aP1,  void* aP2,  BuildingTypeClass * aP3);    // 0x5FC380
+    void HandleAction(int * a2,  int * a3);    // 0x5FD970
     int ProcessEvent();  // 0x5FDDE0
-    OverlayClass * DrawObject(char a2);  // 0x5FDF70
+    void* DrawObject(char a2);  // 0x5FDF70
     int * CalculateObjectPlacementPosition(int * a2);  // 0x62AC30
-    int LoadObject(ObjectClass * aP1, int aP1a);  // 0x5FD8F0
+    int LoadObject(ObjectClass * aP1,  int aP1a);    // 0x5FD8F0
     SessionClass * DtorWithDelete(char a2);  // 0x7AD330
     int ComputeAllocationSize();  // 0x42B1F0
     void ** RemoveObjectArray();  // 0x53E420
     int Unlink();  // 0x5F5230
-    char CheckState(IUnknown * aP1, int a3);  // 0x5FD270
-    int SaveObject(TechnoTypeClass * aP0, int * a1, int aP2);  // 0x5FD950
-    int ddtor(int a1, unsigned int * a2);  // 0x5FDF10
+    char CheckState(void* aP1,  int a3);    // 0x5FD270
+    int SaveObject(TechnoTypeClass * aP0,  int * a1,  int aP2);    // 0x5FD950
+    int ddtor(int a1,  unsigned int * a2);    // 0x5FDF10
     int StubReturn176();  // 0x5FDF00
     int StubReturn20();  // 0x5FDF50
 };

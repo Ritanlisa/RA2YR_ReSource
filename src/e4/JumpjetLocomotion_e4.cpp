@@ -11,14 +11,16 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/BufferIOFileClass_e4.hpp"
 
 // 0x4B0AD0
 namespace gamemd {
 AbstractClass * * JumpjetLocomotion::MoveTo(IUnknown * aP1, int aP3)
 {
-  _DWORD *v3; // edx
-  int v5; // eax
+  IUnknown * v3;
+  void * v5;
   int v6; // ebp
   int v7; // eax
   int v8; // ecx
@@ -27,9 +29,9 @@ AbstractClass * * JumpjetLocomotion::MoveTo(IUnknown * aP1, int aP3)
   int v11; // edi
   int v12; // ebx
   int v13; // eax
-  int v14; // ecx
+  int v14;
   int v15; // eax
-  int v16; // ecx
+  int v16;
   _DWORD v18[2]; // [esp+10h] [ebp-14h] BYREF
   int v19; // [esp+18h] [ebp-Ch] BYREF
   int v20; // [esp+1Ch] [ebp-8h]
@@ -182,7 +184,7 @@ int JumpjetLocomotion::ProcessCollision(char a2)
   AbstractClass *v179; // [esp+2Ch] [ebp-104h]
   IUnknown *aP4; // [esp+44h] [ebp-ECh] BYREF
   _BYTE v185[12]; // [esp+48h] [ebp-E8h] BYREF
-  double varDC; // [esp+54h] [ebp-DCh] BYREF
+  unsigned int varDC;
   TechnoClass *v186; // [esp+5Ch] [ebp-D4h]
   IUnknown *aP3; // [esp+60h] [ebp-D0h] BYREF
   IUnknown *v188; // [esp+64h] [ebp-CCh] BYREF
@@ -305,7 +307,7 @@ int JumpjetLocomotion::ProcessCollision(char a2)
       {
         if ( !v15 )
         {
-  double v24; // st7
+  void * v24;
           if ( *(double *)&v21->__pad_1D4[932] >= this->q140 )
           {
             if ( *(double *)&v21->__pad_1D4[932] <= this->q140 )

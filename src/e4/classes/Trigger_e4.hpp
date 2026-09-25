@@ -7,7 +7,7 @@ namespace gamemd {
 struct Trigger {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
-    MSAnim * ptr_4;  // 0x4
+    unsigned int q004;  // 0x4
     unsigned int u32_8;  // 0x8
     unsigned char q00C;  // 0xC
     unsigned char u8_D;  // 0xD
@@ -16,7 +16,7 @@ struct Trigger {
     CampaignClass * ptr_18;  // 0x18
     unsigned int u32_1C;  // 0x1C
     unsigned int q020;  // 0x20
-    MSShapeAnim * q024;  // 0x24
+    unsigned int q024;  // 0x24
     unsigned int u32_28;  // 0x28
     void* q02C;  // 0x2C
     unsigned char q030;  // 0x30
@@ -217,14 +217,15 @@ struct Trigger {
     unsigned char q5944;  // 0x5944
     unsigned char q5948;  // 0x5948
     void* ptr_180;
+    void* ptr_4;
     void* ptr_41;
     unsigned int u32_1C2;
 // --- flat members (END) ---
     char EnableOnce(AbstractClass * aP1);  // 0x554A60
-    void * initTrigger(MSShapeAnim * aP1, MSShapeAnim * aP2, int a4, int a5, int a6, int a7, MSShapeAnim * aP7);  // 0x5CBD20
-    void ProcessMapEvents(int this@<ecx> a1, int *a2@<ebp> a2, int a3@<edi> a3, int a4, char a5, char a6);  // 0x76D4D0
-    unsigned int * processTrigger(int a2, int a3);  // 0x76F090
-    unsigned int * checkCondition(ObjectClass * aP1, ObjectClass * aP2);  // 0x76F1C0
+    void * initTrigger(MSShapeAnim * aP1,  MSShapeAnim * aP2,  int a4,  int a5,  int a6,  int a7,  MSShapeAnim * aP7);    // 0x5CBD20
+    void ProcessMapEvents(int this@<ecx> a1,  int *a2@<ebp> a2,  int a3@<edi> a3,  int a4,  char a5,  char a6);    // 0x76D4D0
+    unsigned int * processTrigger(int a2,  int a3);    // 0x76F090
+    unsigned int * checkCondition(ObjectClass * aP1,  ObjectClass * aP2);    // 0x76F1C0
     int executeActions(int a2);  // 0x76FF20
 };
 } // namespace gamemd

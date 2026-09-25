@@ -2,6 +2,8 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/AudioController_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x409DE0
@@ -115,7 +117,7 @@ int AudioController::LoadThemeBank(int a1, char * a2, signed int * a3, char * a4
 namespace gamemd {
 void AudioController::GetVolume()
 {
-  void *v0; // esi
+  unsigned int v0;
 
   if ( byte_B0FCCE ) /*0x72d17a*/
   {

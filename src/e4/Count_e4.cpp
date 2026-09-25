@@ -4,13 +4,15 @@
 #include "e4/classes/Count_e4.hpp"
 #include "e4/classes/Player_e4.hpp"
 #include "e4/classes/SessionClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x408E70
 namespace gamemd {
 AbstractClass * * Count::DecrementRefCountsAudio()
 {
-  int v1; // eax
+  void * v1;
   int result; // eax
   int v3; // edx
 

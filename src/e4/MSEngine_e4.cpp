@@ -6,6 +6,8 @@
 #include "e4/classes/Timer_e4.hpp"
 #include "e4/classes/SessionClass_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 
 // 0x5ACD30
@@ -16,7 +18,7 @@ AbstractClass * * MSEngine::Release(int a2, char * a3)
   char *v5; // ebp
   char *v6; // eax
   char *v7; // edi
-  int v9; // ecx
+  unsigned int v9;
   int v10; // eax
   char *v11; // ebx
   _DWORD *v12; // edx
@@ -95,11 +97,11 @@ AbstractClass * * MSEngine::SetCapacity(int a2, char * a3)
   char *v5; // ebp
   char *v6; // eax
   char *v7; // edi
-  int v8; // ecx
+  unsigned int v8;
   int v9; // eax
   char *v10; // ebx
   _DWORD *v11; // edx
-  int v12; // eax
+  void * v12;
 
   v3 = a2; /*0x5aced2*/
   if ( a2 ) /*0x5acedd*/
@@ -174,7 +176,7 @@ CampaignClass * * MSEngine::Destructor()
 
   SessionClass::Destruct(); /*0x5cee64*/
   v2 = *(void **)(&this->u32_1C2); /*0x5cee69*/
-  this->q044 = &(void*)(void*)&VectorClass_MSSfxEntry___vftable; /*0x5cee70*/
+  this->q044 = (void*)&VectorClass_MSSfxEntry___vftable; /*0x5cee70*/
   if ( v2 && this->u8_51 ) /*0x5cee79*/
   {
     RA2_OPDEL(v2); /*0x5cee7f*/
@@ -183,7 +185,7 @@ CampaignClass * * MSEngine::Destructor()
   this->u8_51 = 0; /*0x5cee8a*/
   this->u32_4C = 0; /*0x5cee8d*/
   v3 = *(void **)(&this->q0108); /*0x5cee90*/
-  this->q02C = &(void*)(void*)&VectorClass_MSAnimEntry___vftable; /*0x5cee93*/
+  this->q02C = (void*)&VectorClass_MSAnimEntry___vftable; /*0x5cee93*/
   if ( v3 && this->u8_39 ) /*0x5cee9e*/
   {
     RA2_OPDEL(v3); /*0x5ceea4*/
@@ -193,7 +195,7 @@ CampaignClass * * MSEngine::Destructor()
   this->q034 = 0; /*0x5ceeb5*/
   DeleteAndZero((void **)(&this->q0100)); /*0x5ceeb8*/
   v4 = this->q004; /*0x5ceebd*/
-  *(_DWORD *)this = &(void*)(void*)&VectorClass_MapStage___vftable; /*0x5ceec0*/
+  *(void **)this = (void*)&VectorClass_MapStage___vftable; /*0x5ceec0*/
   if ( v4 && this->IsAllocated ) /*0x5ceeca*/
   {
     RA2_OPDEL(v4); /*0x5ceed0*/
@@ -215,23 +217,23 @@ unsigned int * MSEngine::Construct()
   *((_DWORD *)v2 + 2) = 0; /*0x5d1ab5*/
   v2[12] = 1; /*0x5d1ab8*/
   v2[13] = 0; /*0x5d1abb*/
-  *(_DWORD *)v2 = &(void*)(void*)&VectorClass_TRect_int_vftable; /*0x5d1abe*/
+  *(void **)v2 = (void*)&VectorClass_TRect_int_vftable; /*0x5d1abe*/
   this->u32_1C = 0; /*0x5d1ac4*/
   this->u32_20 = 0; /*0x5d1ac7*/
   this->q024 = 1; /*0x5d1aca*/
   this->q094 = 0; /*0x5d1acd*/
-  this->u32_18 = &(void*)(void*)&DynamicVectorClass_MSAnim___vftable; /*0x5d1ad0*/
+  this->u32_18 = (void*)&DynamicVectorClass_MSAnim___vftable; /*0x5d1ad0*/
   *(&this->q0041) = 10; /*0x5d1ad6*/
   *(&this->q0040) = 0; /*0x5d1add*/
   *(&this->q0043) = 0; /*0x5d1ae0*/
   *(&this->q0044) = 0; /*0x5d1ae3*/
   this->u8_3C = 1; /*0x5d1ae6*/
   this->u8_3D = 0; /*0x5d1ae9*/
-  *(&this->q0042) = &(void*)(void*)&DynamicVectorClass_MSSfx___vftable; /*0x5d1aec*/
+  *(&this->q0042) = (void*)&DynamicVectorClass_MSSfx___vftable; /*0x5d1aec*/
   *(&this->q0047) = 10; /*0x5d1af2*/
   *(&this->q0046) = 0; /*0x5d1af9*/
   v3 = *(_DWORD *)v2; /*0x5d1afc*/
-  *this = &(void*)(void*)&MSEngine_vftable; /*0x5d1b01*/
+  *(void **)this = (void*)&MSEngine_vftable; /*0x5d1b01*/
   this->q004 = 0; /*0x5d1b07*/
   (*(void (__thiscall **)(char *, int, _DWORD))(v3 + 8))(v2, 20, 0); /*0x5d1b0a*/
   (*(void (__thiscall **)(_DWORD *))(this->u32_18 + 12))(this + 6); /*0x5d1b11*/
@@ -250,14 +252,14 @@ void MSEngine::Destruct()
   int i; // edi
   void (__thiscall ***v7)(_DWORD, int); // ecx
   _DWORD *v8; // edi
-  int v9; // edx
+  void * v9;
   _DWORD *v10; // esi
   void *v11; // eax
   void *v12; // eax
   void *v13; // eax
 
   v2 = 0; /*0x5d1b37*/
-  for ( *this = &(void*)(void*)&MSEngine_vftable; v2 < *(&this->q0046); ++v2 ) /*0x5d1b45*/
+  for ( *this = (void*)&MSEngine_vftable; v2 < *(&this->q0046); ++v2 ) /*0x5d1b45*/
   {
     v3 = *(&this->q0043); /*0x5d1b47*/
     v4 = *(void **)(v3 + 4 * v2); /*0x5d1b4a*/
@@ -281,7 +283,7 @@ void MSEngine::Destruct()
   v10 = &this->q008; /*0x5d1ba3*/
   (*(void (__thiscall **)(_DWORD *))(v9 + 12))(v10); /*0x5d1ba8*/
   v11 = (void *)v5[1]; /*0x5d1bab*/
-  *v5 = &(void*)(void*)&VectorClass_MSSfx___vftable; /*0x5d1bae*/
+  *(void **)v5 = (void*)&VectorClass_MSSfx___vftable; /*0x5d1bae*/
   if ( v11 && *((_BYTE *)v5 + 13) ) /*0x5d1bb9*/
   {
     RA2_OPDEL(v11); /*0x5d1bbf*/
@@ -290,7 +292,7 @@ void MSEngine::Destruct()
   *((_BYTE *)v5 + 13) = 0; /*0x5d1bca*/
   v5[2] = 0; /*0x5d1bcd*/
   v12 = (void *)v8[1]; /*0x5d1bd0*/
-  *v8 = &(void*)(void*)&VectorClass_MSAnim___vftable; /*0x5d1bd3*/
+  *(void **)v8 = (void*)&VectorClass_MSAnim___vftable; /*0x5d1bd3*/
   if ( v12 && *((_BYTE *)v8 + 13) ) /*0x5d1bdd*/
   {
     RA2_OPDEL(v12); /*0x5d1be3*/
@@ -299,7 +301,7 @@ void MSEngine::Destruct()
   *((_BYTE *)v8 + 13) = 0; /*0x5d1bee*/
   v8[2] = 0; /*0x5d1bf1*/
   v13 = (void *)v10[1]; /*0x5d1bf4*/
-  *v10 = &(void*)(void*)&VectorClass_TRect_int_vftable; /*0x5d1bf7*/
+  *(void **)v10 = (void*)&VectorClass_TRect_int_vftable; /*0x5d1bf7*/
   if ( v13 && *((_BYTE *)v10 + 13) ) /*0x5d1c01*/
   {
     RA2_OPDEL(v13); /*0x5d1c07*/
@@ -462,7 +464,7 @@ unsigned int MSEngine::Run(int a2)
 namespace gamemd {
 int MSEngine::FindItem(unsigned int * a2)
 {
-  int v2; // esi
+  void * v2;
   int result; // eax
   _DWORD *i; // ecx
 
@@ -485,7 +487,7 @@ VectorClass_flat * MSEngine::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x5ad4d3*/
-  *this = &(void*)(void*)&VectorClass_TRect_int_vftable; /*0x5ad4d6*/
+  *(void **)this = (void*)&VectorClass_TRect_int_vftable; /*0x5ad4d6*/
   if ( v3 && this->IsAllocated ) /*0x5ad4e0*/
   {
     RA2_OPDEL(v3); /*0x5ad4e8*/
@@ -506,7 +508,7 @@ DynamicVector * MSEngine::Constructor(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x5ad523*/
-  *this = &(void*)(void*)&VectorClass_TRect_int_vftable; /*0x5ad526*/
+  *(void **)this = (void*)&VectorClass_TRect_int_vftable; /*0x5ad526*/
   if ( v3 && this->IsAllocated ) /*0x5ad530*/
   {
     RA2_OPDEL(v3); /*0x5ad538*/

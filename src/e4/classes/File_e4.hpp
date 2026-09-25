@@ -9,7 +9,7 @@ struct File {
     unsigned char q000;  // 0x0
     unsigned int u32_4;  // 0x4
     unsigned int u16_6;  // 0x6
-    AbstractClass * ptr_8;  // 0x8
+    unsigned int q008;  // 0x8
     unsigned int u32_C;  // 0xC
     AbstractClass * ptr_10;  // 0x10
     unsigned int u32_14;  // 0x14
@@ -292,6 +292,7 @@ struct File {
     unsigned char q7300;  // 0x7300
     unsigned char q7304;  // 0x7304
     void* ptr_101;
+    void* ptr_8;
     unsigned int u32_42;
     unsigned int vtable2;
 // --- flat members (END) ---
@@ -299,13 +300,13 @@ struct File {
     unsigned int * LoadFont();  // 0x433990
     short Dispatch();  // 0x4CB920
     unsigned int * LoadFileHVA(ObjectClass * aP1);  // 0x5BD570
-    int ParseFileHVA(int a2);  // 0x5BD5C0
+    AbstractClass * * ParseFileHVA(int a2);  // 0x5BD5C0
     u_short * LoadPaletteData(ObjectClass * aP1);  // 0x625AF0
-    bool FindByPrefix(char * Str1, unsigned char * a3);  // 0x625DB0
+    bool FindByPrefix(char * Str1,  unsigned char * a3);    // 0x625DB0
     int ParseCSFString();  // 0x734990
-    unsigned int * LoadFileVXL(ObjectClass * aP1, SomeVoxelCache * aP2);  // 0x755CD0
+    unsigned int * LoadFileVXL(ObjectClass * aP1,  void* aP2);    // 0x755CD0
     WDTState * LoadWDT(ObjectClass * aP1);  // 0x76AC90
-    char LoadWDTDecompress(CCINIClass * aP1, int a3);  // 0x76B0A0
+    char LoadWDTDecompress(CCINIClass * aP1,  int a3);    // 0x76B0A0
     int ParseAudioFileRIFF();  // 0x7C12B0
 };
 } // namespace gamemd

@@ -6,6 +6,8 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/Array_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x5BF450
@@ -13,7 +15,7 @@ namespace gamemd {
 AbstractClass * * AsyncIO::Shutdown()
 {
   int v0; // esi
-  _DWORD *i; // eax
+  unsigned int i;
   void (__thiscall ***v2)(_DWORD, int); // ecx
   char result; // al
 

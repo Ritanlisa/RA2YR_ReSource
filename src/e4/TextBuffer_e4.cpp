@@ -4,6 +4,8 @@
 #include "e4/classes/TextBuffer_e4.hpp"
 #include "e4/classes/ComPtr_e4.hpp"
 #include "e4/classes/Territory_WorldDominationTour_8_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x5BCC90

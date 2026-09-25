@@ -4,6 +4,8 @@
 #include "e4/classes/BlitTransXlatAlpha_ushort_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/Block_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x493930
@@ -11,7 +13,7 @@ namespace gamemd {
 int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
 {
   int result; // eax
-  _DWORD *v11; // edx
+  unsigned int v11;
   _WORD *v13; // eax
 
   result = a4; /*0x493930*/
@@ -47,7 +49,7 @@ int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent50(unsigned short * a
 {
   int result; // eax
   int v12; // ebp
-  _DWORD *v14; // edi
+  unsigned int v14;
   _WORD *v15; // eax
   int v16; // [esp+14h] [ebp+14h]
 
@@ -85,7 +87,7 @@ namespace gamemd {
 int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25_0(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
 {
   int result; // eax
-  _DWORD *v11; // edx
+  unsigned int v11;
   _WORD *v13; // eax
   int v14; // [esp+18h] [ebp+14h]
 
@@ -121,8 +123,8 @@ namespace gamemd {
 int BlitTransXlatAlpha_ushort::AddRef(unsigned short * a2, unsigned char * a3, int a4, int a5, int a6, unsigned short * a7, int a8, int a9)
 {
   int v11; // eax
-  int result; // eax
-  _DWORD *v14; // edi
+  AbstractClass * result;
+  unsigned int v14;
   unsigned __int8 v16; // bl
 
   v11 = (261 * (a8 <= 0 ? 0 : a8)) >> 11;
@@ -358,7 +360,7 @@ int BlitTransXlatAlpha_ushort::CallBlit0_7(int a2, int a3, int a4, int a5, int a
 namespace gamemd {
 std::locale::facet * BlitTransXlatAlpha_ushort::Constructor_Blitter(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&Blitter_vftable; /*0x49a1a9*/
+  *(void **)this = (void*)&Blitter_vftable; /*0x49a1a9*/
   if ( (a2 & 1) != 0 ) /*0x49a1af*/
     RA2_OPDEL(); /*0x49a1b2*/
   return this; /*0x49a1bc*/
@@ -369,7 +371,7 @@ std::locale::facet * BlitTransXlatAlpha_ushort::Constructor_Blitter(char a2)
 namespace gamemd {
 std::locale::facet * BlitTransXlatAlpha_ushort::Constructor_Blitter_0(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&Blitter_vftable; /*0x49a1c9*/
+  *(void **)this = (void*)&Blitter_vftable; /*0x49a1c9*/
   if ( (a2 & 1) != 0 ) /*0x49a1cf*/
     RA2_OPDEL(); /*0x49a1d2*/
   return this; /*0x49a1dc*/
@@ -380,7 +382,7 @@ std::locale::facet * BlitTransXlatAlpha_ushort::Constructor_Blitter_0(char a2)
 namespace gamemd {
 std::locale::facet * BlitTransXlatAlpha_ushort::Constructor_Blitter_1(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&Blitter_vftable; /*0x49a1e9*/
+  *(void **)this = (void*)&Blitter_vftable; /*0x49a1e9*/
   if ( (a2 & 1) != 0 ) /*0x49a1ef*/
     RA2_OPDEL(); /*0x49a1f2*/
   return this; /*0x49a1fc*/
@@ -394,10 +396,10 @@ BlitTransXlatAlpha_ushort * BlitTransXlatAlpha_ushort::Blit(char a2)
   void *v3; // eax
 
   v3 = (void *)*(this + 2); /*0x49a248*/
-  *this = &(void*)(void*)&BlitTransXlatAlpha_unsigned_short_vftable; /*0x49a24b*/
+  *(void **)this = (void*)&BlitTransXlatAlpha_unsigned_short_vftable; /*0x49a24b*/
   FractalNoise::Dtor(v3); /*0x49a252*/
   *(this + 2) = 0; /*0x49a25b*/
-  *this = &(void*)(void*)&Blitter_vftable; /*0x49a264*/
+  *(void **)this = (void*)&Blitter_vftable; /*0x49a264*/
   if ( (a2 & 1) != 0 ) /*0x49a26a*/
     RA2_OPDEL(); /*0x49a26d*/
   return this; /*0x49a277*/

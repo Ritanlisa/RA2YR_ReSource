@@ -5,7 +5,10 @@
 #include "e4/classes/BaseClass_e4.hpp"
 #include "e4/classes/VectorClass_flat_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_alias_e4.hpp"
+#include "e4/classes/CampaignClass_e4.hpp"
 
 // 0x42EE30
 namespace gamemd {
@@ -13,20 +16,20 @@ int BaseClass::LoadBaseNodeClass(VectorClass_flat * aP0, int a2)
 {
   int v3; // ecx
   int v4; // ebp
-  int v5; // ecx
+  void * v5;
   int v6; // eax
   int v7; // eax
   int v8; // edx
   _DWORD *v9; // eax
   int v10; // ebp
-  int v11; // ecx
+  ObjectClass * v11;
   int v12; // eax
-  int v13; // eax
-  int v14; // edx
+  CampaignClass * v13;
+  AbstractClass * v14;
   int v15; // ebp
-  int v16; // ecx
+  ObjectClass * v16;
   int v17; // eax
-  int v18; // eax
+  CampaignClass * v18;
   int v19; // edx
   int v21; // [esp+88h] [ebp-14h] BYREF
   _DWORD v22[4]; // [esp+8Ch] [ebp-10h] BYREF
@@ -37,12 +40,12 @@ int BaseClass::LoadBaseNodeClass(VectorClass_flat * aP0, int a2)
     if ( aP0 ) /*0x42ee53*/
     {
       BaseNodeClass::Vector_Constructor((_DWORD *)(aP0 + 4), 0, 0); /*0x42ee5e*/
-      aP0->Items = &(void*)(void*)&DynamicVectorClass_BaseNodeClass_vftable; /*0x42ee6a*/
+      aP0->Items = (void*)&DynamicVectorClass_BaseNodeClass_vftable; /*0x42ee6a*/
       aP0->q018 = 10; /*0x42ee70*/
       aP0->u32_14 = 0; /*0x42ee77*/
       DynamicVector::Constructor_Cell((_DWORD *)(aP0 + 32), 0, 0); /*0x42ee7e*/
       DynamicVector::Constructor_Cell((_DWORD *)(aP0 + 56), 0, 0); /*0x42ee8a*/
-      *(_DWORD *)aP0 = &(void*)(void*)&BaseClass_vftable; /*0x42ee8f*/
+      *(void **)aP0 = (void*)&BaseClass_vftable; /*0x42ee8f*/
     }
     v3 = *(_DWORD *)a2; /*0x42ee96*/
     a2 = 0; /*0x42eea2*/

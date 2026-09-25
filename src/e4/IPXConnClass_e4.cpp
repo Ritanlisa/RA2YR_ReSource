@@ -5,6 +5,8 @@
 #include "e4/classes/Waypoint_e4.hpp"
 #include "e4/classes/IPXConnClass_e4.hpp"
 #include "e4/classes/SessionClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x53F430
@@ -16,7 +18,7 @@ void * IPXConnClass::constructor(int aP1, SessionClass * aP2, IPXConnClass * aP3
 
   IPXConnClass::initConnection(aP1, aP2, aP3, aP4, 2, -1, 60, aP8); /*0x53f458*/
   Waypoint::InitInvalid((_BYTE *)&this->RemoteAddress6); /*0x53f462*/
-  *(_DWORD *)this = &(void*)(void*)&IPXConnClass_vftable; /*0x53f46b*/
+  *(void **)this = (void*)&IPXConnClass_vftable; /*0x53f46b*/
   if ( a5 ) /*0x53f473*/
   {
     this->u32_4C = *a5; /*0x53f479*/

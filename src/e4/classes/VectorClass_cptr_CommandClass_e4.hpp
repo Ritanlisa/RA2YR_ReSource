@@ -27,7 +27,7 @@ struct VectorClass_cptr_CommandClass {
     unsigned char q048;  // 0x48
     unsigned char q050;  // 0x50
 // --- flat members (END) ---
-    char Release(int a2, unsigned int * a3);  // 0x40BEF0
+    char Release(int a2,  unsigned int * a3);    // 0x40BEF0
     int Capacity(int a2);  // 0x40BEA0
     char GetAt(int a2);  // 0x40BEB0
     void SetAt();  // 0x40BFA0

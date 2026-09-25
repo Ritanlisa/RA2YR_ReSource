@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+
 #include "e4/e4_globals.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/Audio_e4.hpp"
@@ -21,7 +22,10 @@
 #include "e4/classes/Event_e4.hpp"
 #include "e4/classes/RawFileClass_e4.hpp"
 #include "e4/classes/Stream_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/BufferIOFileClass_e4.hpp"
 
 // 0x540DC0
 namespace gamemd {
@@ -293,12 +297,12 @@ AbstractClass * * SessionClass::LoadMapSelection(char ** a1)
   v49[1] = 0; /*0x5cef0f*/
   v49[2] = 0; /*0x5cef13*/
   GenericList::Constructor(v50); /*0x5cef17*/
-  v50[0] = &(void*)(void*)&List_INIClass_INISection___vftable; /*0x5cef20*/
+  v50[0] = (void*)&List_INIClass_INISection___vftable; /*0x5cef20*/
   memset(&v50[7], 0, 12); /*0x5cef28*/
   v51 = 0; /*0x5cef34*/
   v52 = 0; /*0x5cef39*/
   v53 = 0; /*0x5cef3d*/
-  v49[0] = &(void*)(void*)&INIClass_vftable; /*0x5cef41*/
+  v49[0] = (void*)&INIClass_vftable; /*0x5cef41*/
   unknown_libname_73(&v46); /*0x5cef49*/
   unknown_libname_73(&v44); /*0x5cef52*/
   SessionClass::Destruct(v2); /*0x5cef59*/
@@ -493,7 +497,7 @@ AbstractClass * * SessionClass::LoadMapSelection(char ** a1)
     DeleteAndZero(&v44); /*0x5cf59a*/
     DeleteAndZero(&v46); /*0x5cf5a3*/
     HashTable::DestroyHashTableINIClass(v49); /*0x5cf5ac*/
-    v54[0] = &(void*)(void*)&CCFileClass_vftable; /*0x5cf5b8*/
+    v54[0] = (void*)&CCFileClass_vftable; /*0x5cf5b8*/
     v56 = 0; /*0x5cf5c0*/
     Vector::Clear((int)v55); /*0x5cf5c7*/
     v54[0] = &off_7E1668; /*0x5cf5d0*/
@@ -507,7 +511,7 @@ AbstractClass * * SessionClass::LoadMapSelection(char ** a1)
     DeleteAndZero(&v44); /*0x5cf089*/
     DeleteAndZero(&v46); /*0x5cf092*/
     HashTable::DestroyHashTableINIClass(v49); /*0x5cf09b*/
-    v54[0] = &(void*)(void*)&CCFileClass_vftable; /*0x5cf0a7*/
+    v54[0] = (void*)&CCFileClass_vftable; /*0x5cf0a7*/
     v56 = 0; /*0x5cf0af*/
     Vector::Clear((int)v55); /*0x5cf0b6*/
     v54[0] = &off_7E1668; /*0x5cf0bf*/
@@ -604,7 +608,7 @@ CampaignClass * * SessionClass::loadSettings()
     }
   }
   v7 = *(void **)(&this->u32_208); /*0x5d00cf*/
-  this->u32_54 = &(void*)(void*)&VectorClass_MapSelection___vftable; /*0x5d00d2*/
+  this->u32_54 = (void*)&VectorClass_MapSelection___vftable; /*0x5d00d2*/
   if ( v7 && this->Side ) /*0x5d00dd*/
   {
     RA2_OPDEL(v7); /*0x5d00e3*/
@@ -613,7 +617,7 @@ CampaignClass * * SessionClass::loadSettings()
   this->Side = 0; /*0x5d00ee*/
   this->q05C = 0; /*0x5d00f1*/
   v8 = *(void **)(&this->Config4); /*0x5d00f4*/
-  this->u32_3C = &(void*)(void*)&VectorClass_MSTextEntry___vftable; /*0x5d00f7*/
+  this->u32_3C = (void*)&VectorClass_MSTextEntry___vftable; /*0x5d00f7*/
   if ( v8 && this->u32_49 ) /*0x5d0102*/
   {
     RA2_OPDEL(v8); /*0x5d0108*/
@@ -622,7 +626,7 @@ CampaignClass * * SessionClass::loadSettings()
   this->u32_49 = 0; /*0x5d0113*/
   this->ptr_44 = 0; /*0x5d0116*/
   v9 = *(void **)(&this->SessionClass_field_100); /*0x5d0119*/
-  this->q024 = &(void*)(void*)&VectorClass_Point2D_vftable; /*0x5d011c*/
+  this->q024 = (void*)&VectorClass_Point2D_vftable; /*0x5d011c*/
   if ( v9 && this->u8_31 ) /*0x5d0127*/
   {
     RA2_OPDEL(v9); /*0x5d012d*/
@@ -1035,7 +1039,7 @@ SessionClass::SessionClass()
   *((_DWORD *)this + 422) = 0; /*0x6971f3*/
   *(this + 1692) = 1; /*0x6971f9*/
   *(this + 1693) = 0; /*0x697200*/
-  *((_DWORD *)this + 420) = &(void*)(void*)&DynamicVectorClass_MultiMission___vftable; /*0x697206*/
+  *((_DWORD *)this + 420) = (void*)&DynamicVectorClass_MultiMission___vftable; /*0x697206*/
   *((_DWORD *)this + 425) = 10; /*0x697210*/
   *((_DWORD *)this + 424) = 0; /*0x697216*/
   this->Waypoint_8E4.InitInvalid(); /*0x69721c*/
@@ -1043,7 +1047,7 @@ SessionClass::SessionClass()
   *((_DWORD *)this + 574) = 0; /*0x69722d*/
   *(this + 2300) = 1; /*0x697233*/
   *(this + 2301) = 0; /*0x69723a*/
-  *((_DWORD *)this + 572) = &(void*)(void*)&DynamicVectorClass_GlobalPacketType___vftable; /*0x697240*/
+  *((_DWORD *)this + 572) = (void*)&DynamicVectorClass_GlobalPacketType___vftable; /*0x697240*/
   *((_DWORD *)this + 577) = 10; /*0x69724a*/
   *((_DWORD *)this + 576) = 0; /*0x697250*/
   this->SessionClass_A28.saveSettings(); /*0x697256*/
@@ -1055,21 +1059,21 @@ SessionClass::SessionClass()
   *((_DWORD *)this + 2565) = 0; /*0x697292*/
   *(this + 10264) = 1; /*0x697298*/
   *(this + 10265) = 0; /*0x69729f*/
-  *((_DWORD *)this + 2563) = &(void*)(void*)&DynamicVectorClass_NodeNameType___vftable; /*0x6972a5*/
+  *((_DWORD *)this + 2563) = (void*)&DynamicVectorClass_NodeNameType___vftable; /*0x6972a5*/
   *((_DWORD *)this + 2568) = 10; /*0x6972ab*/
   *((_DWORD *)this + 2567) = 0; /*0x6972b1*/
   *((_DWORD *)this + 2570) = 0; /*0x6972b7*/
   *((_DWORD *)this + 2571) = 0; /*0x6972bd*/
   *(this + 10288) = 1; /*0x6972c3*/
   *(this + 10289) = 0; /*0x6972ca*/
-  *((_DWORD *)this + 2569) = &(void*)(void*)&DynamicVectorClass_NodeNameType___vftable; /*0x6972d0*/
+  *((_DWORD *)this + 2569) = (void*)&DynamicVectorClass_NodeNameType___vftable; /*0x6972d0*/
   *((_DWORD *)this + 2574) = 10; /*0x6972d6*/
   *((_DWORD *)this + 2573) = 0; /*0x6972dc*/
   *((_DWORD *)this + 2576) = 0; /*0x6972e2*/
   *((_DWORD *)this + 2577) = 0; /*0x6972e8*/
   *(this + 10312) = 1; /*0x6972ee*/
   *(this + 10313) = 0; /*0x6972f5*/
-  *((_DWORD *)this + 2575) = &(void*)(void*)&DynamicVectorClass_NodeNameType___vftable; /*0x6972fb*/
+  *((_DWORD *)this + 2575) = (void*)&DynamicVectorClass_NodeNameType___vftable; /*0x6972fb*/
   *((_DWORD *)this + 2580) = 10; /*0x697301*/
   *((_DWORD *)this + 2579) = 0; /*0x697307*/
   *((_DWORD *)this + 2624) = 0; /*0x69730d*/
@@ -1083,14 +1087,14 @@ SessionClass::SessionClass()
   *((_DWORD *)this + 2631) = 0; /*0x697342*/
   *(this + 10528) = 1; /*0x697348*/
   *(this + 10529) = 0; /*0x69734f*/
-  *((_DWORD *)this + 2629) = &(void*)(void*)&DynamicVectorClass_char___vftable; /*0x697355*/
+  *((_DWORD *)this + 2629) = (void*)&DynamicVectorClass_char___vftable; /*0x697355*/
   *((_DWORD *)this + 2634) = 10; /*0x69735f*/
   *((_DWORD *)this + 2633) = 0; /*0x697365*/
   *((_DWORD *)this + 2636) = 0; /*0x697371*/
   *((_DWORD *)this + 2637) = 0; /*0x697377*/
   *(this + 10552) = 1; /*0x69737d*/
   *(this + 10553) = 0; /*0x697384*/
-  *((_DWORD *)this + 2635) = &(void*)(void*)&DynamicVectorClass_unsigned_short_const___vftable; /*0x69738a*/
+  *((_DWORD *)this + 2635) = (void*)&DynamicVectorClass_unsigned_short_const___vftable; /*0x69738a*/
   *((_DWORD *)this + 2640) = 10; /*0x697394*/
   *((_DWORD *)this + 2639) = 0; /*0x69739a*/
   this->Waypoint_296C.InitInvalid(); /*0x6973a0*/
@@ -1479,12 +1483,12 @@ AbstractClass * * SessionClass::LoadMissionList()
   GenericList::Constructor(v61); /*0x69999a*/
   v3 = *(this + 420); /*0x69999f*/
   v4 = this + 420; /*0x6999a5*/
-  v61[0] = &(void*)(void*)&List_INIClass_INISection___vftable; /*0x6999ad*/
+  v61[0] = (void*)&List_INIClass_INISection___vftable; /*0x6999ad*/
   memset(&v61[7], 0, 12); /*0x6999b5*/
   v62 = 0; /*0x6999c1*/
   v63 = 0; /*0x6999c6*/
   v64 = 0; /*0x6999ca*/
-  v60[0] = (int)&(void*)(void*)&INIClass_vftable; /*0x6999ce*/
+  v60[0] = (int)&INIClass_vftable; /*0x6999ce*/
   (*(void (__thiscall **)(_DWORD *))(v3 + 12))(v4); /*0x6999d6*/
   CCFileClass::Construct(v67, aMissionsmdPkt); /*0x6999e2*/
   if ( CCFileClass::Open(v67, 0) ) /*0x6999ec*/
@@ -1754,7 +1758,7 @@ AbstractClass * * SessionClass::LoadMissionList()
     while ( FindNextFileA(hFindFileb, &FindFileData) ); /*0x69a190*/
     FindClose(hFindFileb); /*0x69a1a3*/
   }
-  v67[0] = &(void*)(void*)&CCFileClass_vftable; /*0x69a1b2*/
+  v67[0] = (void*)&CCFileClass_vftable; /*0x69a1b2*/
   v69 = 0; /*0x69a1ba*/
   Vector::Clear((int)v68); /*0x69a1c1*/
   v67[0] = &off_7E1668; /*0x69a1ca*/
@@ -1784,10 +1788,10 @@ ObjectClass * * SessionClass::ParseGameInfo(char * Source, CampaignScore * aP2, 
   v10 = this + 210; /*0x69a99c*/
   *((_DWORD *)v9 + 5) = 10; /*0x69a9ad*/
   *((_DWORD *)v9 + 4) = 0; /*0x69a9b0*/
-  *(_DWORD *)v9 = &(void*)(void*)&TypeList_enum_DiskID_vftable; /*0x69a9b7*/
+  *(_DWORD *)v9 = (void*)&TypeList_enum_DiskID_vftable; /*0x69a9b7*/
   VectorClass::WstringConstructor(0, 0); /*0x69a9bd*/
   v11 = Source; /*0x69a9c2*/
-  *((_DWORD *)this + 105) = &(void*)(void*)&DynamicVectorClass_Wstring_vftable; /*0x69a9c6*/
+  *((_DWORD *)this + 105) = (void*)&DynamicVectorClass_Wstring_vftable; /*0x69a9c6*/
   *((_DWORD *)this + 110) = 10; /*0x69a9cf*/
   *((_DWORD *)this + 109) = 0; /*0x69a9d2*/
   if ( v11 ) /*0x69a9d9*/
@@ -2024,13 +2028,13 @@ void SessionClass::SetupNetwork()
   v1 = 0; /*0x69bd65*/
   v55 = 1; /*0x69bd6f*/
   AbstractClass::updateAnimationState(0, 0); /*0x69bd77*/
-  v62 = &(void*)(void*)&DynamicVectorClass_NodeNameType___vftable; /*0x69bd81*/
+  v62 = (void*)&DynamicVectorClass_NodeNameType___vftable; /*0x69bd81*/
   v67 = 10; /*0x69bd89*/
   v66 = 0; /*0x69bd91*/
   Debug::Log(); /*0x69bd95*/
   if ( this->u32_284C < 2 ) /*0x69bda6*/
   {
-    v62 = &(void*)(void*)&VectorClass_NodeNameType___vftable; /*0x69bdac*/
+    v62 = (void*)&VectorClass_NodeNameType___vftable; /*0x69bdac*/
     MPCooperative::updateScoreBoard(&v62); /*0x69bdb4*/
     return; /*0x69bdbe*/
   }
@@ -2304,7 +2308,7 @@ void SessionClass::SetupNetwork()
     (*(void (__thiscall **)(int, int))(*(_DWORD *)g_NetworkInterface + 92))(g_NetworkInterface, v47); /*0x69c457*/
     (*(void (__thiscall **)(int))(*(_DWORD *)g_NetworkInterface + 28))(g_NetworkInterface); /*0x69c462*/
   }
-  v62 = &(void*)(void*)&VectorClass_NodeNameType___vftable; /*0x69c469*/
+  v62 = (void*)&VectorClass_NodeNameType___vftable; /*0x69c469*/
   if ( Block ) /*0x69c473*/
   {
     if ( v65 ) /*0x69c47b*/
@@ -2508,7 +2512,7 @@ TypeList_flat * SessionClass::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x69c6c3*/
-  *this = &(void*)(void*)&VectorClass_enum_DiskID_vftable; /*0x69c6c6*/
+  *this = (void*)&VectorClass_enum_DiskID_vftable; /*0x69c6c6*/
   if ( v3 && this->IsAllocated ) /*0x69c6d0*/
   {
     RA2_OPDEL(v3); /*0x69c6d8*/
@@ -2699,7 +2703,7 @@ VectorClass_flat * SessionClass::validateGame(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x69d463*/
-  *this = &(void*)(void*)&VectorClass_enum_DiskID_vftable; /*0x69d466*/
+  *this = (void*)&VectorClass_enum_DiskID_vftable; /*0x69d466*/
   if ( v3 && this->IsAllocated ) /*0x69d470*/
   {
     RA2_OPDEL(v3); /*0x69d478*/

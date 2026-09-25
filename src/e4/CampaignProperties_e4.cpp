@@ -3,6 +3,8 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/CampaignProperties_WorldDominationTour_22_e4.hpp"
 #include "e4/classes/AbstractTypeClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x5D2770
@@ -54,7 +56,7 @@ VectorClass_flat * CampaignProperties_WorldDominationTour_22::QueryInterface(cha
   void *v3; // eax
 
   v3 = (void *)this->q004; /*0x5d2ca3*/
-  *this = &(void*)(void*)&VectorClass_MSAnim___vftable; /*0x5d2ca6*/
+  *(void **)this = (void*)&VectorClass_MSAnim___vftable; /*0x5d2ca6*/
   if ( v3 && this->IsAllocated ) /*0x5d2cb0*/
   {
     RA2_OPDEL(v3); /*0x5d2cb8*/

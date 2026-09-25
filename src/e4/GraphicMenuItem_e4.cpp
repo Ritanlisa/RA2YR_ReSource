@@ -3,6 +3,8 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/GraphicMenuItem_e4.hpp"
 #include "e4/classes/E4Recv_63DB20_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x4F3A70
@@ -12,7 +14,7 @@ void GraphicMenuItem::Dtor()
   void **v1; // esi
 
   v1 = this->q00C; /*0x4f3a71*/
-  *this = &(void*)(void*)&GraphicMenuItem_vftable; /*0x4f3a76*/
+  *(void **)this = (void*)&GraphicMenuItem_vftable; /*0x4f3a76*/
   if ( v1 ) /*0x4f3a7c*/
   {
     j_DeleteAndZero(v1); /*0x4f3a80*/

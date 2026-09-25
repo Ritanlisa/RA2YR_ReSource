@@ -83,10 +83,9 @@ struct Control {
     unsigned char q894;  // 0x894
     unsigned char q898;  // 0x898
     unsigned char q900;  // 0x900
-    unsigned int q0040;
 // --- flat members (END) ---
     int CheckControlTypeDialog();
-    int DispatchClick(ControlClass * aP1);
+    int DispatchClick(void* aP1);
     int RepositionControlsDialog();
 };
 

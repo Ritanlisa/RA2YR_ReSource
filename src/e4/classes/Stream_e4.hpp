@@ -17,7 +17,7 @@ struct Stream {
     char q018[4];  // 0x18
     unsigned char q01C;  // 0x1C
     void* q020;  // 0x20
-    unsigned int q024;  // 0x24
+    char q024[4];  // 0x24
     unsigned char q028;  // 0x28
     unsigned int u32_2C;  // 0x2C
     unsigned int u32_30;  // 0x30
@@ -258,8 +258,6 @@ struct Stream {
     unsigned int Stream_field_042;
     unsigned int vt_slot_12;
     unsigned int vt_slot_8;
-    unsigned int ReadPacket;
-    unsigned int WriteBlock;
 // --- flat members (END) ---
     int FlushAndReset();
     int GetChecked();

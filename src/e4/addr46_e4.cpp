@@ -12,13 +12,15 @@
 #include "e4/classes/Particle_e4.hpp"
 #include "e4/classes/SessionClass_e4.hpp"
 #include "e4/classes/SkirmishDialog_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x46D350
 namespace gamemd {
 void E4Recv_46D350::sub_46D350()
 {
-  *this = &(void*)(void*)&CampaignScoreClass_vftable; /*0x46d350*/
+  *(void **)this = (void*)&CampaignScoreClass_vftable; /*0x46d350*/
 }
 } // namespace gamemd
 
@@ -279,7 +281,7 @@ void sub_46DCC0(HWND hDlg, bool a2)
   int i; // edi
   BOOL result; // eax
   int v5; // eax
-  HWND DlgItem; // eax
+  int DlgItem;
   int ResourceID2CSF; // eax
   HWND v8; // eax
   int ResourceIDCSF; // eax
@@ -317,11 +319,11 @@ namespace gamemd {
 void EnableGameModeControls(HWND hDlg, bool a2)
 {
   int v4; // eax
-  HWND DlgItem; // eax
+  int DlgItem;
   int ResourceID2; // eax
-  HWND v7; // eax
+  int v7;
   int ResourceID; // eax
-  HWND v9; // eax
+  int v9;
   int ResourceID3; // eax
   HWND v11; // eax
   HWND result; // eax
@@ -633,7 +635,7 @@ void sub_466320()
 {
   if ( (byte_89DDD0 & 1) == 0 ) /*0x46632a*/
   {
-    dword_89DE18 = (int)&(void*)(void*)&VectorClass_BulletClass___vftable; /*0x46632e*/
+    dword_89DE18 = (int)&VectorClass_BulletClass___vftable; /*0x46632e*/
     byte_89DDD0 |= 1u; /*0x466341*/
     if ( dword_89DE1C ) /*0x466347*/
     {

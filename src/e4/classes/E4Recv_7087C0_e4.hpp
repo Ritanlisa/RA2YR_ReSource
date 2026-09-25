@@ -41,12 +41,12 @@ struct E4Recv_7087C0 {
     unsigned int q6194;  // 0x6194
     unsigned int q6210;  // 0x6210
 // --- flat members (END) ---
-    int Vf1016(int, ...);  // G6 vtable slot dispatch
-    int Vf132(int, ...);  // G6 vtable slot dispatch
-    int Vf44(int, ...);  // G6 vtable slot dispatch
-    int Vf684(int, ...);  // G6 vtable slot dispatch
-    int Vf740(int, ...);  // G6 vtable slot dispatch
-    int Vf956(int, ...);  // G6 vtable slot dispatch
-    bool ValidateAttackTarget(TechnoClass * aP1, int a3);  // 0x7087C0
+    int Vf1016(int,  ...);    // G6 vtable slot dispatch
+    int Vf132(int,  ...);    // G6 vtable slot dispatch
+    int Vf44(int,  ...);    // G6 vtable slot dispatch
+    int Vf684(int,  ...);    // G6 vtable slot dispatch
+    int Vf740(int,  ...);    // G6 vtable slot dispatch
+    int Vf956(int,  ...);    // G6 vtable slot dispatch
+    bool ValidateAttackTarget(TechnoClass * aP1,  int a3);    // 0x7087C0
 };
 } // namespace gamemd

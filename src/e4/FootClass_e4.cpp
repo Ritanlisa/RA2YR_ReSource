@@ -8,7 +8,10 @@
 #include "e4/classes/Mixer_e4.hpp"
 #include "e4/classes/TeamClass_e4.hpp"
 #include "e4/classes/TechnoClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/Frame_e4.hpp"
 
 // 0x4D3590
 namespace gamemd {
@@ -19,15 +22,15 @@ AbstractClass * * FootClass::Destruct()
   int v4; // eax
   int v5; // ecx
   _DWORD *v6; // eax
-  int v7; // eax
+  ILocomotion * v7;
   void *v8; // eax
   void *v9; // eax
 
   v2 = this->FootClass_field_5D4; /*0x4d3597*/
-  *(_DWORD *)this = &(void*)(void*)&FootClass_vftable; /*0x4d359d*/
-  this->vtable2 = &(void*)(void*)&FootClass_vftable; /*0x4d35a5*/
-  this->vtable3 = &(void*)(void*)&FootClass_vftable; /*0x4d35ac*/
-  this->vtable4 = &(void*)(void*)&FootClass_vftable; /*0x4d35b3*/
+  *(void **)this = (void*)&FootClass_vftable; /*0x4d359d*/
+  this->vtable2 = (void*)&FootClass_vftable; /*0x4d35a5*/
+  this->vtable3 = (void*)&FootClass_vftable; /*0x4d35ac*/
+  this->vtable4 = (void*)&FootClass_vftable; /*0x4d35b3*/
   if ( v2 && g_WTFMode ) /*0x4d35c2*/
     TeamClass::LiberateMember_Start(-1, 0); /*0x4d35c8*/
   v3 = (*(int (__thiscall **)(int *, void **))(FootClass_Array + 16))(&FootClass_Array, &this); /*0x4d35e1*/
@@ -54,7 +57,7 @@ AbstractClass * * FootClass::Destruct()
   if ( v7 ) /*0x4d368b*/
     (*(void (__stdcall **)(_DWORD))(v7->q008)(this->Locomotor); /*0x4d3690*/
   v8 = (void *)this->q5B0; /*0x4d3693*/
-  this->FootClass_DVC_5AC = &(void*)(void*)&VectorClass_AbstractClass___vftable; /*0x4d36a0*/
+  this->FootClass_DVC_5AC = (void*)&VectorClass_AbstractClass___vftable; /*0x4d36a0*/
   if ( v8 && this->u8_5B9 ) /*0x4d36a8*/
   {
     RA2_OPDEL(v8); /*0x4d36b1*/
@@ -63,7 +66,7 @@ AbstractClass * * FootClass::Destruct()
   this->u8_5B9 = 0; /*0x4d36bf*/
   this->q5B4 = 0; /*0x4d36c5*/
   v9 = (void *)this->q58C; /*0x4d36cb*/
-  this->FootClass_DVC_588 = &(void*)(void*)&VectorClass_AbstractClass___vftable; /*0x4d36d1*/
+  this->FootClass_DVC_588 = (void*)&VectorClass_AbstractClass___vftable; /*0x4d36d1*/
   if ( v9 && this->u8_595 ) /*0x4d36dc*/
   {
     RA2_OPDEL(v9); /*0x4d36e5*/
@@ -96,15 +99,15 @@ void FootClass::Destroyed(int a2)
 namespace gamemd {
 int FootClass::updateThreat()
 {
-  int v1; // edx
-  int v2; // eax
+  void * v1;
+  void * v2;
 
   v1 = *(&this->ptr_246); /*0x70f7e0*/
   v2 = *(&this->ptr_248); /*0x70f7e6*/
   if ( v1 != -1 ) /*0x70f7ef*/
   {
     if ( (int)g_CurrentFrame - v1 < v2 ) /*0x70f7fb*/
-      return v2 == (_DWORD)g_CurrentFrame - v1; /*0x70f808*/
+      return v2 == (_DWORD, unsigned int a2, unsigned int a3)g_CurrentFrame - v1; /*0x70f808*/
     v2 = 0; /*0x70f809*/
   }
   return v2 == 0; /*0x70f808*/
@@ -115,7 +118,7 @@ int FootClass::updateThreat()
 namespace gamemd {
 void FootClass::FootClass_ImbueLocomotor(int *a1@<ecx> a1, int a2@<ebp> a2, int a3@<edi> a3, unsigned int * ppv, IID rclsid, int a6)
 {
-  _DWORD *v5; // esi
+  _DWORD * v5;
   _DWORD *v6; // ecx
   _DWORD *v7; // ecx
   int v8; // eax

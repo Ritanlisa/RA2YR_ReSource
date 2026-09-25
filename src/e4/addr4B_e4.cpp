@@ -20,6 +20,8 @@
 #include "e4/classes/TimerClass_e4.hpp"
 #include "e4/classes/E4Recv_4A0380_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x4B0500
@@ -397,7 +399,7 @@ int E4Recv_4B6BF0::sub_4B6BF0()
 namespace gamemd {
 CampaignScore * * DisplayBuildingInfoPanel(CampaignScore ** a1, unsigned int * a2, wchar_t * a3, char a4)
 {
-  int v6; // eax
+  CampaignScore * v6;
   int v7; // edi
   int v8; // edi
   int v9; // ebx
@@ -408,7 +410,7 @@ CampaignScore * * DisplayBuildingInfoPanel(CampaignScore ** a1, unsigned int * a
   char result; // al
   const wchar_t *v15; // eax
   int AudioEntryTechnoClass; // eax
-  char *v17; // ecx
+  void * v17;
   int v18; // esi
   _DWORD *v19; // eax
   _DWORD *v20; // eax
@@ -692,7 +694,7 @@ DropListClass * E4Recv_4B4E10::sub_4B4E10(DropListClass * aP1, wchar_t * String,
   this->q04C = a9; /*0x4b4e66*/
   ShapeButtonClass::Constructor((_BYTE *)(&this->q0200), 0, a11, aP7 + aP5, aP6, 0, 0, 0); /*0x4b4e69*/
   ListClass::Construct(&this->u32_2C0, 0, aP5, aP6 + *(__int16 *)(a11 + 4), aP7 + *(__int16 *)(a11 + 2), a9, aP4, a10, a11); /*0x4b4ea3*/
-  *(_DWORD *)this = &(void*)(void*)&DropListClass_vftable; /*0x4b4eac*/
+  *(void **)this = (void*)&DropListClass_vftable; /*0x4b4eac*/
   Instance = TextRenderer::GetInstance(); /*0x4b4eb2*/
   v13 = this->q0B0; /*0x4b4eba*/
   this->q018 = *(_DWORD *)(Instance + 28) + 1; /*0x4b4ebf*/
@@ -716,14 +718,14 @@ int E4Recv_4B53E0::sub_4B53E0(int a2)
   this->q03C = *(_DWORD *)(a2 + 60); /*0x4b540e*/
   this->q040 = *(_DWORD *)(a2 + 64); /*0x4b5414*/
   this->q044 = *(_DWORD *)(a2 + 68); /*0x4b541a*/
-  *(_DWORD *)this = &(void*)(void*)&EditClass_vftable; /*0x4b541d*/
+  *(void **)this = (void*)&EditClass_vftable; /*0x4b541d*/
   this->q048 = *(_BYTE *)(a2 + 72); /*0x4b5429*/
   this->q04C = *(_DWORD *)(a2 + 76); /*0x4b5432*/
   ControlClass::CtorFromData((_DWORD *)(&this->q0200), a2 + 80); /*0x4b5435*/
   this->u32_7C = *(_BYTE *)(a2 + 124); /*0x4b5443*/
   this->u32_7D = *(_BYTE *)(a2 + 125); /*0x4b5449*/
   this->q080 = *(_DWORD *)(a2 + 128); /*0x4b544f*/
-  this->q050 = &(void*)(void*)&ToggleClass_vftable; /*0x4b5452*/
+  this->q050 = (void*)&ToggleClass_vftable; /*0x4b5452*/
   this->q084 = *(_BYTE *)(a2 + 132); /*0x4b545c*/
   this->q088 = *(_DWORD *)(a2 + 136); /*0x4b5462*/
   this->q08C = *(_DWORD *)(a2 + 140); /*0x4b5468*/
@@ -736,10 +738,10 @@ int E4Recv_4B53E0::sub_4B53E0(int a2)
   this->u32_A5 = *(_BYTE *)(a2 + 165); /*0x4b5492*/
   this->u32_A8 = *(_DWORD *)(a2 + 168); /*0x4b5498*/
   this->u32_AC = *(_BYTE *)(a2 + 172); /*0x4b54a4*/
-  this->q050 = &(void*)(void*)&ShapeButtonClass_vftable; /*0x4b54a9*/
+  this->q050 = (void*)&ShapeButtonClass_vftable; /*0x4b54a9*/
   sub_557380(&this->q0B0, a2 + 176); /*0x4b54af*/
   v3 = this->q0B0; /*0x4b54b4*/
-  *(_DWORD *)this = &(void*)(void*)&DropListClass_vftable; /*0x4b54b9*/
+  *(_DWORD *)this = (void*)&DropListClass_vftable; /*0x4b54b9*/
   (*(void (__thiscall **)(int, int))(v3 + 132))(&this->q0B0, this); /*0x4b54bf*/
   (*(void (__thiscall **)(int, int))(this->q050 + 132))(&this->q140, this); /*0x4b54ca*/
   return this; /*0x4b54d3*/

@@ -45,6 +45,6 @@ struct WorldDominationTour__Territory {
     void * q5684;  // 0x5684
     void * q6408;  // 0x6408
 // --- flat members (END) ---
-    char * Constructor(int aP1, unsigned int * a2, ReferenceCounted * aP3, const char ** a4, ReferenceCounted * aP5);  // 0x76F970
+    char * Constructor(int aP1,  unsigned int * a2,  ReferenceCounted * aP3,  const char ** a4,  ReferenceCounted * aP5);    // 0x76F970
 };
 } // namespace gamemd

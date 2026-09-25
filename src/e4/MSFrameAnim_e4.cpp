@@ -8,13 +8,15 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/ConvertClass_e4.hpp"
 #include "e4/classes/VectorClass_flat_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x769BD0
 namespace gamemd {
 void * MSFrameAnim::QueryInterface(char a2)
 {
-  *this = &(void*)(void*)&MSFrameAnim_vftable; /*0x769bd3*/
+  *(void **)this = (void*)&MSFrameAnim_vftable; /*0x769bd3*/
   VtableStub::5CB6C0(); /*0x769bd9*/
   if ( (a2 & 1) != 0 ) /*0x769be3*/
     RA2_OPDEL(); /*0x769be6*/
@@ -25,14 +27,14 @@ void * MSFrameAnim::QueryInterface(char a2)
 namespace gamemd {
 AbstractClass * * MSFrameAnim::setFrameRate(int a2, unsigned int * a3)
 {
-  int v3; // ebp
+  unsigned int v3;
   _DWORD *v5; // eax
   _DWORD *v6; // ebx
   _DWORD *v7; // esi
   _DWORD *v8; // esi
   int i; // esi
   void (__thiscall ***v11)(_DWORD, int); // ecx
-  int v12; // eax
+  void * v12;
 
   v3 = a2; /*0x769fe3*/
   if ( a2 ) /*0x769fed*/
@@ -48,7 +50,7 @@ AbstractClass * * MSFrameAnim::setFrameRate(int a2, unsigned int * a3)
         do /*0x76a065*/
         {
           ComPtr::Constructor(v8); /*0x76a056*/
-          *v8 = &(void*)(void*)&rc_ptr_WorldDominationTour_Territory_vftable; /*0x76a05b*/
+          *(void **)v8 = (void*)&rc_ptr_WorldDominationTour_Territory_vftable; /*0x76a05b*/
           v8 += 2; /*0x76a061*/
           --a2; /*0x76a064*/
         }
@@ -240,7 +242,7 @@ unsigned int MSFrameAnim::pauseAnimation(int a2)
 namespace gamemd {
 rc_ptr * MSFrameAnim::resumeAnimation(char a2)
 {
-  *this = &(void*)(void*)&rc_ptr_WorldDominationTour_Map_vftable; /*0x769d93*/
+  *(void ** *)this = (void*)&rc_ptr_WorldDominationTour_Map_vftable; /*0x769d93*/
   ComPtr::Release(); /*0x769d99*/
   if ( (a2 & 1) != 0 ) /*0x769da3*/
     RA2_OPDEL(); /*0x769da6*/
@@ -252,7 +254,7 @@ rc_ptr * MSFrameAnim::resumeAnimation(char a2)
 namespace gamemd {
 int MSFrameAnim::getCurrentFrame(int a2)
 {
-  int v2; // edx
+  void * v2;
   int result; // eax
   _DWORD *i; // ecx
 
@@ -273,9 +275,9 @@ namespace gamemd {
 char MSFrameAnim::loopAnimation(int a2, unsigned int * a3)
 {
   _DWORD *v4; // edi
-  int v5; // ecx
+  unsigned int v5;
   int i; // eax
-  int v7; // eax
+  void * v7;
 
   if ( a2 ) /*0x76a2bc*/
   {
@@ -319,7 +321,7 @@ char MSFrameAnim::loopAnimation(int a2, unsigned int * a3)
 namespace gamemd {
 int MSFrameAnim::resetAnimation(unsigned int * a2)
 {
-  int v2; // edx
+  void * v2;
   int result; // eax
   _DWORD *i; // ecx
 
@@ -342,7 +344,7 @@ DynamicVector * MSFrameAnim::setPosition(char a2)
   void (__thiscall ***v3)(_DWORD, int); // ecx
 
   v3 = (void (__thiscall ***)(_DWORD, int))this->Items; /*0x76a683*/
-  *this = &(void*)(void*)&VectorClass_rc_ptr_WorldDominationTour_Territory_vftable; /*0x76a686*/
+  *(void **)this = (void*)&VectorClass_rc_ptr_WorldDominationTour_Territory_vftable; /*0x76a686*/
   if ( v3 && this->IsAllocated ) /*0x76a690*/
   {
     (**v3)(v3, 3); /*0x76a69f*/
@@ -363,7 +365,7 @@ DynamicVector * MSFrameAnim::setScale(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x76a723*/
-  *this = &(void*)(void*)&VectorClass_WorldDominationTour_Map_AnimationPalette___vftable; /*0x76a726*/
+  *(void **)this = (void*)&VectorClass_WorldDominationTour_Map_AnimationPalette___vftable; /*0x76a726*/
   if ( v3 && this->IsAllocated ) /*0x76a730*/
   {
     RA2_OPDEL(v3); /*0x76a738*/
@@ -382,7 +384,7 @@ namespace gamemd {
 unsigned int * MSFrameAnim::drawFrame()
 {
   ComPtr::Constructor(); /*0x76a7c3*/
-  *this = &(void*)(void*)&rc_ptr_WorldDominationTour_Territory_vftable; /*0x76a7c8*/
+  *(void **)this = (void*)&rc_ptr_WorldDominationTour_Territory_vftable; /*0x76a7c8*/
   return this; /*0x76a7d0*/
 }
 } // namespace gamemd

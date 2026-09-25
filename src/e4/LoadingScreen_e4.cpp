@@ -6,6 +6,8 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/WideString_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/ConvertClass_e4.hpp"
 
 // 0x642B60
@@ -23,16 +25,16 @@ int LoadingScreen::GetColorScheme()
 namespace gamemd {
 void LoadingScreen::DestroyFileTrees()
 {
-  void *v0; // esi
-  void *v1; // esi
-  void *v2; // esi
-  void *v3; // esi
-  void *v4; // esi
-  void *v5; // esi
-  void *v6; // esi
-  void *v7; // esi
-  void *v8; // esi
-  void *v9; // esi
+  unsigned int v0;
+  unsigned int v1;
+  unsigned int v2;
+  unsigned int v3;
+  unsigned int v4;
+  unsigned int v5;
+  unsigned int v6;
+  unsigned int v7;
+  unsigned int v8;
+  unsigned int v9;
 
   if ( byte_B0FC95 ) /*0x72ef6b*/
   {

@@ -9,6 +9,8 @@
 #include "e4/classes/LocomotionClass_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/ConvertClass_e4.hpp"
 
 // 0x4E5D60
@@ -76,7 +78,7 @@ void Lobby::UpdatePlayerLabels()
   int v4; // eax
   int v5; // eax
   int v6; // ebp
-  HWND v7; // ebx
+  Lobby * v7;
   HWND DlgItem; // esi
   wchar_t *v9; // ebx
   wchar_t *v10; // ebp
@@ -108,7 +110,7 @@ void Lobby::UpdatePlayerLabels()
   int v36; // [esp+4h] [ebp-10h]
   int v37; // [esp+8h] [ebp-Ch]
   void *v38; // [esp+Ch] [ebp-8h] BYREF
-  HWND hDlg; // [esp+10h] [ebp-4h]
+  Lobby * hDlg;
 
   hDlg = this; /*0x5eb063*/
   if ( g_GameStateFlags /*0x5eb07a*/

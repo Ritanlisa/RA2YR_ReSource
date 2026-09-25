@@ -27,6 +27,8 @@
 #include "e4/classes/LinkedList_flat_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x6B2430
@@ -440,7 +442,7 @@ AbstractClass * * sub_6B2F30(char a1, int a2, int a3)
   int v7; // esi
   int v8; // ecx
   int v9; // edx
-  void *v10; // eax
+  unsigned int v10;
   __int16 v11; // di
   _DWORD *v12; // ebx
   int v13; // ecx
@@ -530,7 +532,7 @@ AbstractClass * * sub_6B2F30(char a1, int a2, int a3)
   int v98; // [esp+60h] [ebp-5Ch] BYREF
   int v99; // [esp+64h] [ebp-58h]
   int v100; // [esp+68h] [ebp-54h]
-  void **v101; // [esp+6Ch] [ebp-50h] BYREF
+  void* v101;
   void *Block; // [esp+70h] [ebp-4Ch]
   int v103; // [esp+74h] [ebp-48h]
   char v104; // [esp+79h] [ebp-43h]
@@ -573,7 +575,7 @@ AbstractClass * * sub_6B2F30(char a1, int a2, int a3)
   ObjectVector::Construct(&v101, 0, 0); /*0x6b3003*/
   v8 = v5; /*0x6b3008*/
   v9 = v6; /*0x6b300b*/
-  v101 = &(void*)(void*)&DynamicVectorClass_ObjectClass___vftable; /*0x6b3010*/
+  v101 = (void*)&DynamicVectorClass_ObjectClass___vftable; /*0x6b3010*/
   v106 = 10; /*0x6b3018*/
   v105 = 0; /*0x6b3023*/
   v100 = v5; /*0x6b3027*/
@@ -960,7 +962,7 @@ AbstractClass * * sub_6B2F30(char a1, int a2, int a3)
     }
     while ( v61 <= v62 ); /*0x6b3811*/
   }
-  v101 = &(void*)(void*)&VectorClass_ObjectClass___vftable; /*0x6b381b*/
+  v101 = (void*)&VectorClass_ObjectClass___vftable; /*0x6b381b*/
   if ( Block && v104 ) /*0x6b382d*/
     RA2_OPDEL(Block); /*0x6b3830*/
   return 1; /*0x6b3838*/
@@ -1474,7 +1476,7 @@ int FactoryClass_LoadTheaterSHP(int a1)
       _makepath(Buffer, 0, 0, (const char *)(v4 + 36), (const char *)&off_7E1BC6 + 112 * a1); /*0x6b54dc*/
       CCFileClass::Construct(v5, Buffer); /*0x6b54ed*/
       *(_DWORD *)(v4 + 164) = CCFileClass::ReadEntireFile(v5); /*0x6b54ff*/
-      v5[0] = &(void*)(void*)&CCFileClass_vftable; /*0x6b5505*/
+      v5[0] = (void*)&CCFileClass_vftable; /*0x6b5505*/
       v7 = 0; /*0x6b550d*/
       Vector::Clear((int)v6); /*0x6b5515*/
       v5[0] = &off_7E1668; /*0x6b551e*/
@@ -1525,7 +1527,7 @@ void StandardCreateUnitAtCoords(unsigned int * a0, IUnknown * aP1, int a3, char 
     return 0; /*0x6b59e6*/
   Game::LockMutex(0, 0); /*0x6b59f4*/
   v6 = 0; /*0x6b59fe*/
-  v30 = &(void*)(void*)&DynamicVectorClass_SmudgeTypeClass_const___vftable; /*0x6b5a02*/
+  v30 = (void*)&DynamicVectorClass_SmudgeTypeClass_const___vftable; /*0x6b5a02*/
   v35 = 10; /*0x6b5a0a*/
   for ( i = 0; v6 < FactoryClass_Count; ++v6 ) /*0x6b5a16*/
   {
@@ -1552,7 +1554,7 @@ void StandardCreateUnitAtCoords(unsigned int * a0, IUnknown * aP1, int a3, char 
   v9 = 10; /*0x6b5ad1*/
   v10 = 0; /*0x6b5ad6*/
   v11 = i; /*0x6b5ad8*/
-  v24 = &(void*)(void*)&DynamicVectorClass_SmudgeTypeClass_const___vftable; /*0x6b5adc*/
+  v24 = (void*)&DynamicVectorClass_SmudgeTypeClass_const___vftable; /*0x6b5adc*/
   v29 = 10; /*0x6b5ae6*/
   v28 = 0; /*0x6b5aea*/
   if ( i > 0 ) /*0x6b5aee*/
@@ -1619,7 +1621,7 @@ void StandardCreateUnitAtCoords(unsigned int * a0, IUnknown * aP1, int a3, char 
       UnitClass::Create(v16, *((_DWORD *)Block + v17), (int)v4, -1); /*0x6b5bee*/
     }
   }
-  v24 = &(void*)(void*)&VectorClass_SmudgeTypeClass_const___vftable; /*0x6b5c3c*/
+  v24 = (void*)&VectorClass_SmudgeTypeClass_const___vftable; /*0x6b5c3c*/
   if ( Block && IDA_BYTE1(v27) ) /*0x6b5c46*/
   {
     RA2_OPDEL(Block); /*0x6b5c49*/
@@ -1627,7 +1629,7 @@ void StandardCreateUnitAtCoords(unsigned int * a0, IUnknown * aP1, int a3, char 
   }
   IDA_BYTE1(v27) = 0; /*0x6b5c59*/
   v26 = 0; /*0x6b5c5f*/
-  v30 = &(void*)(void*)&VectorClass_SmudgeTypeClass_const___vftable; /*0x6b5c63*/
+  v30 = (void*)&VectorClass_SmudgeTypeClass_const___vftable; /*0x6b5c63*/
   if ( v31 ) /*0x6b5c67*/
   {
     if ( v33 ) /*0x6b5c6d*/
@@ -1676,7 +1678,7 @@ void TimedCreateUnitAtCoords(unsigned int * a0, IUnknown * aP1, int a3, char a4)
     return 0; /*0x6b5cd6*/
   Game::LockMutex(0, 0); /*0x6b5ce4*/
   v6 = 0; /*0x6b5cee*/
-  v30 = &(void*)(void*)&DynamicVectorClass_SmudgeTypeClass_const___vftable; /*0x6b5cf2*/
+  v30 = (void*)&DynamicVectorClass_SmudgeTypeClass_const___vftable; /*0x6b5cf2*/
   v35 = 10; /*0x6b5cfa*/
   for ( i = 0; v6 < FactoryClass_Count; ++v6 ) /*0x6b5d06*/
   {
@@ -1703,7 +1705,7 @@ void TimedCreateUnitAtCoords(unsigned int * a0, IUnknown * aP1, int a3, char a4)
   v9 = 10; /*0x6b5dc1*/
   v10 = 0; /*0x6b5dc6*/
   v11 = i; /*0x6b5dc8*/
-  v24 = &(void*)(void*)&DynamicVectorClass_SmudgeTypeClass_const___vftable; /*0x6b5dcc*/
+  v24 = (void*)&DynamicVectorClass_SmudgeTypeClass_const___vftable; /*0x6b5dcc*/
   v29 = 10; /*0x6b5dd6*/
   v28 = 0; /*0x6b5dda*/
   if ( i > 0 ) /*0x6b5dde*/
@@ -1770,7 +1772,7 @@ void TimedCreateUnitAtCoords(unsigned int * a0, IUnknown * aP1, int a3, char a4)
       UnitClass::Create(v16, *((_DWORD *)Block + v17), (int)v4, -1); /*0x6b5ede*/
     }
   }
-  v24 = &(void*)(void*)&VectorClass_SmudgeTypeClass_const___vftable; /*0x6b5f2c*/
+  v24 = (void*)&VectorClass_SmudgeTypeClass_const___vftable; /*0x6b5f2c*/
   if ( Block && IDA_BYTE1(v27) ) /*0x6b5f36*/
   {
     RA2_OPDEL(Block); /*0x6b5f39*/
@@ -1778,7 +1780,7 @@ void TimedCreateUnitAtCoords(unsigned int * a0, IUnknown * aP1, int a3, char a4)
   }
   IDA_BYTE1(v27) = 0; /*0x6b5f49*/
   v26 = 0; /*0x6b5f4f*/
-  v30 = &(void*)(void*)&VectorClass_SmudgeTypeClass_const___vftable; /*0x6b5f53*/
+  v30 = (void*)&VectorClass_SmudgeTypeClass_const___vftable; /*0x6b5f53*/
   if ( v31 ) /*0x6b5f57*/
   {
     if ( v33 ) /*0x6b5f5d*/
@@ -2333,7 +2335,7 @@ AbstractClass * * Palette_LoadFromFile(int a1, int a2, char * Source, int a4, in
     if ( v47 / (double)v45 >= *(double *)(v5 + 40) ) /*0x6ba0c9*/
       Render_Load_6BAFA0(v5); /*0x6ba0cd*/
     DeleteAndZero(&v48); /*0x6ba0d6*/
-    v55[0] = &(void*)(void*)&CCFileClass_vftable; /*0x6ba0e2*/
+    v55[0] = (void*)&CCFileClass_vftable; /*0x6ba0e2*/
     v57 = 0; /*0x6ba0ea*/
     Vector::Clear((int)v56); /*0x6ba0f1*/
     v55[0] = &off_7E1668; /*0x6ba0fa*/
@@ -2342,7 +2344,7 @@ AbstractClass * * Palette_LoadFromFile(int a1, int a2, char * Source, int a4, in
   }
   else
   {
-    v55[0] = &(void*)(void*)&CCFileClass_vftable; /*0x6b9d68*/
+    v55[0] = (void*)&CCFileClass_vftable; /*0x6b9d68*/
     v57 = 0; /*0x6b9d70*/
     Vector::Clear((int)v56); /*0x6b9d77*/
     v55[0] = &off_7E1668; /*0x6b9d80*/
@@ -4311,7 +4313,7 @@ void WinMain_Setup()
   if ( g_ScenarioClass_Instance ) /*0x6beacc*/
   {
     v19 = (void *)*((_DWORD *)g_ScenarioClass_Instance + 3396); /*0x6bead2*/
-    *((_DWORD *)g_ScenarioClass_Instance + 3395) = &(void*)(void*)&VectorClass_int_vftable; /*0x6beadf*/
+    *((_DWORD *)g_ScenarioClass_Instance + 3395) = (void*)&VectorClass_int_vftable; /*0x6beadf*/
     if ( v19 && *((_BYTE *)v18 + 13593) ) /*0x6beae7*/
     {
       RA2_OPDEL(v19); /*0x6beaf0*/
@@ -4320,7 +4322,7 @@ void WinMain_Setup()
     *((_BYTE *)v18 + 13593) = 0; /*0x6beafe*/
     v18[3397] = 0; /*0x6beb04*/
     v20 = (void *)v18[3389]; /*0x6beb0a*/
-    v18[3388] = &(void*)(void*)&VectorClass_int_vftable; /*0x6beb10*/
+    v18[3388] = (void*)&VectorClass_int_vftable; /*0x6beb10*/
     if ( v20 && *((_BYTE *)v18 + 13565) ) /*0x6beb1a*/
     {
       RA2_OPDEL(v20); /*0x6beb23*/
@@ -4329,7 +4331,7 @@ void WinMain_Setup()
     *((_BYTE *)v18 + 13565) = 0; /*0x6beb31*/
     v18[3390] = 0; /*0x6beb37*/
     v21 = (void *)v18[3382]; /*0x6beb3d*/
-    v18[3381] = &(void*)(void*)&VectorClass_TechnoTypeClass___vftable; /*0x6beb43*/
+    v18[3381] = (void*)&VectorClass_TechnoTypeClass___vftable; /*0x6beb43*/
     if ( v21 && *((_BYTE *)v18 + 13537) ) /*0x6beb51*/
     {
       RA2_OPDEL(v21); /*0x6beb5a*/
@@ -4591,7 +4593,7 @@ int sub_6B23B0()
   dword_B0B658 = 0; /*0x6b23bc*/
   byte_B0B65C = 1; /*0x6b23c1*/
   byte_B0B65D = 0; /*0x6b23c8*/
-  dword_B0B650 = (int)&(void*)(void*)&DynamicVectorClass_UndoInfoStruct_vftable; /*0x6b23cd*/
+  dword_B0B650 = (int)&DynamicVectorClass_UndoInfoStruct_vftable; /*0x6b23cd*/
   dword_B0B664 = 10; /*0x6b23d7*/
   g_SlaveMgrPool = 0; /*0x6b23e1*/
   return atexit(sub_6B23F0); /*0x6b23ec*/
@@ -4602,7 +4604,7 @@ int sub_6B23B0()
 namespace gamemd {
 void sub_6B23F0()
 {
-  dword_B0B650 = (int)&(void*)(void*)&VectorClass_UndoInfoStruct_vftable; /*0x6b23f8*/
+  dword_B0B650 = (int)&VectorClass_UndoInfoStruct_vftable; /*0x6b23f8*/
   if ( dword_B0B654 && byte_B0B65D ) /*0x6b240c*/
   {
     RA2_OPDEL(dword_B0B654); /*0x6b240f*/
@@ -5048,7 +5050,7 @@ int sub_6B6C10()
   dword_B0B888 = 0; /*0x6b6c1c*/
   byte_B0B88C = 1; /*0x6b6c21*/
   byte_B0B88D = 0; /*0x6b6c28*/
-  SpawnManagerClass_Array = (int)&(void*)(void*)&DynamicVectorClass_SpawnManagerClass___vftable; /*0x6b6c2d*/
+  SpawnManagerClass_Array = (int)&DynamicVectorClass_SpawnManagerClass___vftable; /*0x6b6c2d*/
   dword_B0B894 = 10; /*0x6b6c37*/
   dword_B0B890 = 0; /*0x6b6c41*/
   return atexit(sub_6B6C50); /*0x6b6c4c*/
@@ -5059,7 +5061,7 @@ int sub_6B6C10()
 namespace gamemd {
 void sub_6B6C50()
 {
-  SpawnManagerClass_Array = (int)&(void*)(void*)&VectorClass_SpawnManagerClass___vftable; /*0x6b6c58*/
+  SpawnManagerClass_Array = (int)&VectorClass_SpawnManagerClass___vftable; /*0x6b6c58*/
   if ( dword_B0B884 && byte_B0B88D ) /*0x6b6c6c*/
   {
     RA2_OPDEL(dword_B0B884); /*0x6b6c6f*/
@@ -5499,7 +5501,7 @@ int sub_6BB260()
   g_AnimClass_Capacity = 0; /*0x6bb26c*/
   byte_B0BC94 = 1; /*0x6bb271*/
   byte_B0BC95 = 0; /*0x6bb278*/
-  g_AnimationManager = (int)&(void*)(void*)&DynamicVectorClass_unsigned_long_vftable; /*0x6bb27d*/
+  g_AnimationManager = (int)&DynamicVectorClass_unsigned_long_vftable; /*0x6bb27d*/
   dword_B0BC9C = 10; /*0x6bb287*/
   dword_B0BC98 = 0; /*0x6bb291*/
   return atexit(sub_6BB2A0); /*0x6bb29c*/
@@ -5510,7 +5512,7 @@ int sub_6BB260()
 namespace gamemd {
 void sub_6BB2A0()
 {
-  g_AnimationManager = (int)&(void*)(void*)&VectorClass_unsigned_long_vftable; /*0x6bb2a8*/
+  g_AnimationManager = (int)&VectorClass_unsigned_long_vftable; /*0x6bb2a8*/
   if ( dword_B0BC8C && byte_B0BC95 ) /*0x6bb2bc*/
   {
     RA2_OPDEL(dword_B0BC8C); /*0x6bb2bf*/

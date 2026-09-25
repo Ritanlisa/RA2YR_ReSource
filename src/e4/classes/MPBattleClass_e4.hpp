@@ -24,7 +24,7 @@ struct MPBattleClass {
     unsigned char q054;  // 0x54
     bool q080;  // 0x80
     unsigned char q084;  // 0x84
-    RandomStruct* q0AC;  // 0xAC
+    void* q0AC;  // 0xAC
     bool q0AD;  // 0xAD
     unsigned int q0AF;  // 0xAF
     unsigned int q0B1;  // 0xB1
@@ -39,7 +39,7 @@ struct MPBattleClass {
     unsigned char q220;  // 0x220
     unsigned char q224;  // 0x224
     unsigned char q228;  // 0x228
-    RandomStruct* q370;  // 0x370
+    void* q370;  // 0x370
     unsigned char q374;  // 0x374
     unsigned char q394;  // 0x394
     unsigned char q398;  // 0x398
@@ -47,7 +47,7 @@ struct MPBattleClass {
     unsigned char q548;  // 0x548
     unsigned char q694;  // 0x694
     unsigned char q698;  // 0x698
-    RandomStruct* q880;  // 0x880
+    void* q880;  // 0x880
 // --- flat members (END) ---
     int areTeamChangesAllowed();
     int drawTeamDropdown();

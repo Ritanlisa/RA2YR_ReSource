@@ -30,7 +30,7 @@ struct E4Recv_5EEF60 {
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    int Vf4(int, ...);  // G6 vtable slot dispatch
+    int Vf4(int,  ...);    // G6 vtable slot dispatch
     void sub_5EEF60();  // 0x5EEF60
 };
 } // namespace gamemd

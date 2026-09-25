@@ -8,6 +8,8 @@
 #include "e4/classes/DamageArea_e4.hpp"
 #include "e4/classes/LayerClass_e4.hpp"
 #include "e4/classes/ProgressTimer_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x4CD600
@@ -40,20 +42,20 @@ int DamageArea::ApplyScatter()
   {
     this->u8_5C = 0;
   }
-  int v4 = &this->u32_10;
+  unsigned int * v4 =
   if ( this->q004->vt_slot_96()
     && *(_DWORD *)(this->q00C + 108)
     || !(*(int (__thiscall **)(_DWORD))(*this->q00C + 456))(this->q00C) )
   {
   int v54; // ebx
-    int * v20 = this->q00C;
+    unsigned int v20 =
     if ( v20[27] > 0 )
     {
       if ( v20[361] )
       {
         if ( (*(int (__thiscall **)(int *))(*v20 + 388))(v20) == 5 )
         {
-          _DWORD * v21 = this->q00C;
+          unsigned int v21 =
           if ( v21[45] == -1 && !this->u8_18 )
             (*(void (__thiscall **)(_DWORD *, int, _DWORD))(*v21 + 488))(v21, 2, 0);
         }
@@ -145,7 +147,7 @@ LABEL_50:
       }
     }
     int v41 = this->q070;
-    int v42 = this->q008;
+    void * v42 =
     int v112 = this->u32_24;
     _DWORD * v43 = (_DWORD *)(this->q00C + 156);
     int v44 = *(_DWORD *)(this->q00C + 160);
@@ -209,9 +211,9 @@ LABEL_50:
     int v55 = this->u32_38;
     if ( v38 <= v55 && *(_DWORD *)(this->q00C + 108) )
     {
-  double v97; // st7
+  void * v97;
 LABEL_114:
-      int * v73 = this->q00C;
+      unsigned int v73 =
       if ( v73[27] > 0
         && !this->u8_51
         && (!this->q050 || (*(int (__thiscall **)(int *))(*v73 + 456))(v73) >= this->u32_38 / 2)
@@ -290,7 +292,7 @@ LABEL_114:
           if ( SLODWORD(v102) < SLODWORD(v106) )
           {
   double v86; // st7
-            int * v80 = this->q00C;
+            unsigned int v80 =
             int v81 = *v80;
             v106 = 1.0 - ((double)SLODWORD(v102) - (double)SLODWORD(v106) * 0.6) / ((double)SLODWORD(v106) * 0.4);
             double v82 = *(double *)((*(int (__thiscall **)(int *))(v81 + 132))(v80) + 944);
@@ -313,7 +315,7 @@ LABEL_114:
       }
       if ( !this->u8_5C )
       {
-        int * v88 = this->q00C;
+        unsigned int v88 =
         if ( v88[27] > 0 && !this->u8_51 && !this->q050 )
         {
           int v89 = this->q070 / 256;
@@ -327,7 +329,7 @@ LABEL_114:
           }
         }
       }
-      int * v93 = this->q00C;
+      unsigned int v93 =
       if ( v93[27] <= 0 )
         return (*(int (__thiscall **)(int *, int))(*v93 + 292))(v93, 1);
       double v95 = *(double *)(&this->u32_1C2);
@@ -412,7 +414,7 @@ LABEL_97:
       {
 LABEL_105:
         (*(void (__thiscall **)(_DWORD, int))(*this->q00C + 460))(this->q00C, v54 + v61);
-        int * v62 = this->q00C;
+        unsigned int v62 =
         if ( v62[27] > 0
           && (this->q070 != DataGlobal_8B3C78
            || this->q008 != DataGlobal_8B3C7C

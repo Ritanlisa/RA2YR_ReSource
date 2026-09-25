@@ -28,7 +28,7 @@ struct HouseTypeClass_28 {
     int Seek(int a2);  // 0x5129E0
     TypeList_flat * QueryInterface(char a2);  // 0x512A90
     char AddRef(int a2);  // 0x5133E0
-    char Release(int a2, unsigned int * a3);  // 0x513610
+    char Release(int a2,  unsigned int * a3);    // 0x513610
     int Read(unsigned int * a2);  // 0x513710
     unsigned int Write(int a2);  // 0x5129C0
 };

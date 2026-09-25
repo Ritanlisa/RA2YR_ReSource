@@ -30,6 +30,6 @@ struct E4Recv_734330 {
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    unsigned int * SelectFactionThemeMusic_Helper_734330(VectorClass_flat * aP1, VectorClass_flat * aP2);  // 0x734330
+    unsigned int * SelectFactionThemeMusic_Helper_734330(VectorClass_flat * aP1,  VectorClass_flat * aP2);    // 0x734330
 };
 } // namespace gamemd

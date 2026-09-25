@@ -3,6 +3,8 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/IPXManagerClass_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x540D80
@@ -94,13 +96,13 @@ int IPXManagerClass::receivePacket(int a2)
 namespace gamemd {
 int IPXManagerClass::ddtor(int a2, int a3, unsigned int * v10)
 {
-  int v5; // eax
+  void * v5;
   int v6; // ecx
   int v7; // eax
   int v8; // ecx
   int v9; // edx
   int v10; // edi
-  int v11; // edx
+  void * v11;
   int v13; // [esp+10h] [ebp-4h]
 
   if ( !this->Initialized ) /*0x5415f7*/

@@ -42,6 +42,8 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/HouseClass_e4.hpp"
 #include "e4/classes/ConvertClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x52B6D0
@@ -225,8 +227,8 @@ void sub_6AC430()
 namespace gamemd {
 wchar_t * * sub_730EA0()
 {
-  wchar_t *result; // eax
-  wchar_t *v1; // ebp
+  unsigned int result;
+  unsigned int v1;
   int v2; // edi
   char v3; // bl
   _BYTE *v4; // esi
@@ -271,7 +273,7 @@ wchar_t * * sub_730EA0()
 namespace gamemd {
 void * sub_730F30()
 {
-  wchar_t *result; // eax
+  unsigned int result;
   char *v1; // eax
   char v2[112]; // [esp+0h] [ebp-70h] BYREF
 
@@ -300,8 +302,8 @@ void * sub_730F30()
 namespace gamemd {
 void * sub_730FE0()
 {
-  wchar_t *result; // eax
-  wchar_t *v1; // ebp
+  unsigned int result;
+  unsigned int v1;
   int v2; // edi
   char v3; // bl
   _BYTE *v4; // esi
@@ -390,7 +392,7 @@ AbstractClass * * sub_7318F0()
 namespace gamemd {
 void sub_6D0E60()
 {
-  void *v0; // esi
+  unsigned int v0;
   int *v1; // eax
   int v2[2]; // [esp+4h] [ebp-18h] BYREF
   _BYTE v3[16]; // [esp+Ch] [ebp-10h] BYREF
@@ -624,7 +626,7 @@ namespace gamemd {
 void UI_Helper_6217E0(ObjectClass * aP0, ObjectClass * aP1, short a3, int a4)
 {
   _DWORD *v4; // esi
-  int v5; // ebp
+  ObjectClass * v5;
   int v6; // ebx
   __int16 v7; // di
   int v8; // ecx
@@ -817,7 +819,7 @@ void sub_6D0FD0()
 namespace gamemd {
 int sub_639DA0()
 {
-  wchar_t *v0; // ebx
+  unsigned int v0;
   int v1; // edi
   _BYTE *v2; // esi
 

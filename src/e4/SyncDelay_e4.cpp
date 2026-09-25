@@ -9,7 +9,10 @@
 #include "e4/classes/Surface_e4.hpp"
 #include "e4/classes/SwizzleManagerClass_19_e4.hpp"
 #include "e4/classes/TacticalMap_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x55E160
 namespace gamemd {
@@ -36,7 +39,7 @@ signed int SyncDelay::Start()
   signed int result; // eax
   int v19; // esi
   int v20; // ecx
-  bool v21; // cc
+  wchar_t * v21;
   int v22; // [esp+Ch] [ebp-18h] BYREF
   int v23; // [esp+10h] [ebp-14h] BYREF
   _DWORD v24[4]; // [esp+14h] [ebp-10h] BYREF

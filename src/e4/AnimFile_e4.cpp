@@ -2,6 +2,8 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/AnimFile_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x427290
@@ -19,7 +21,7 @@ AnimFile * AnimFile::QueryInterface(char a2)
   void (__thiscall ***v4)(_DWORD, int); // ecx
 
   v3 = this->u32_89; /*0x4272a6*/
-  *(_DWORD *)this = &(void*)(void*)&AnimFile_vftable; /*0x4272ac*/
+  *(void **)this = (void*)&AnimFile_vftable; /*0x4272ac*/
   if ( v3 ) /*0x4272b4*/
   {
     (*(void (__thiscall **)(_DWORD))(**((_DWORD **)&this->q00C3) + 52))(this->q084); /*0x4272be*/
@@ -38,7 +40,7 @@ AnimFile * AnimFile::QueryInterface(char a2)
     this->qE10 = 0; /*0x4272f6*/
   }
   this->u32_88 = 0; /*0x427300*/
-  *(_DWORD *)this = &(void*)(void*)&Animate_vftable; /*0x427308*/
+  *(void **)this = (void*)&Animate_vftable; /*0x427308*/
   if ( (a2 & 1) != 0 ) /*0x42730e*/
     RA2_OPDEL(); /*0x427311*/
   return this; /*0x42731b*/

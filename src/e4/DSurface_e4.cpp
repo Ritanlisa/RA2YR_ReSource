@@ -9,7 +9,10 @@
 #include "e4/classes/Vector_e4.hpp"
 #include "e4/classes/DSurface_e4.hpp"
 #include "e4/classes/DDraw_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_alias_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
 
 // 0x480180
 namespace gamemd {
@@ -42,7 +45,7 @@ AbstractClass * * DSurface::Construct(IUnknown * aP1, DSurface * aP2, ObjectClas
 {
   _DWORD *v6; // ebp
   void *v7; // edi
-  int v8; // eax
+  void * v8;
 
   v6 = &this->u32_70; /*0x4ba5b0*/
   this->q004 = aP1; /*0x4ba5b5*/
@@ -90,9 +93,9 @@ AbstractClass * * DSurface::Construct(IUnknown * aP1, DSurface * aP2, ObjectClas
 namespace gamemd {
 int DSurface::Destroy()
 {
-  char v2; // al
+  void * v2;
   int v3; // eax
-  int result; // eax
+  unsigned char (*)[4] result;
 
   v2 = this->q018; /*0x4ba6b6*/
   *(_DWORD *)this = &DSurface_Vtable; /*0x4ba6b9*/
@@ -124,8 +127,8 @@ namespace gamemd {
 unsigned int * DSurface::CreatePrimary()
 {
   char v1; // bl
-  const char *v2; // eax
-  const char *v3; // eax
+  const unsigned int v2;
+  const unsigned int v3;
   _DWORD *v4; // eax
   void *v6; // edi
   _DWORD *v7; // ebp

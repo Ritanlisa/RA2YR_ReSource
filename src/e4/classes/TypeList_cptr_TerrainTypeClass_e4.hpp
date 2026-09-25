@@ -34,11 +34,11 @@ struct TypeList_cptr_TerrainTypeClass {
     int SaveToINI(int a2);  // 0x67A980
     TypeList_flat * Add(char a2);  // 0x67AA30
     char AddRef(int a2);  // 0x67B1F0
-    char SetCapacity(int a2, unsigned int * a3);  // 0x67B230
+    char SetCapacity(int a2,  unsigned int * a3);    // 0x67B230
     void TryFreeAndClear();  // 0x67B2E0
     int IndexOf(unsigned int * a2);  // 0x67B310
     unsigned int PointerToIndex(int a2);  // 0x67B350
-    char Remove(int a2, unsigned int * a3);  // 0x67B3D0
+    char Remove(int a2,  unsigned int * a3);    // 0x67B3D0
     int GetSize(unsigned int * a2);  // 0x67B4D0
     VectorClass_flat * Constructor(char a2);  // 0x67C150
 };

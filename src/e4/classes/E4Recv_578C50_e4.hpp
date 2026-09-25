@@ -34,6 +34,6 @@ struct E4Recv_578C50 {
     unsigned int q5444;  // 0x5444
     unsigned int q5460;  // 0x5460
 // --- flat members (END) ---
-    unsigned int * sub_578C50(unsigned int * a2, int a3);  // 0x578C50
+    unsigned int * sub_578C50(unsigned int * a2,  int a3);    // 0x578C50
 };
 } // namespace gamemd

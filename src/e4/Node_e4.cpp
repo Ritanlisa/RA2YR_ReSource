@@ -2,13 +2,15 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Node_flat_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x49EA10
 namespace gamemd {
 unsigned int * Node_flat::Init()
 {
-  *this = 0; /*0x49ea14*/
+  *(_DWORD *)this = 0; /*0x49ea14*/
   this->u32_4 = 0; /*0x49ea16*/
   this->u32_8 = 0; /*0x49ea19*/
   this->u32_C = 0; /*0x49ea1c*/

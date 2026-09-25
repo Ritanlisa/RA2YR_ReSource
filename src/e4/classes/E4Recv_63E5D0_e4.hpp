@@ -13,7 +13,7 @@ struct E4Recv_63E5D0 {
     unsigned int q130;  // 0x130
     unsigned int q304;  // 0x304
 // --- flat members (END) ---
-    int Vf16(int, ...);  // G6 vtable slot dispatch
+    int Vf16(int,  ...);    // G6 vtable slot dispatch
     char Team_Destroy(VectorClass_flat * aP1);  // 0x63E5D0
 };
 } // namespace gamemd

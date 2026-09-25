@@ -2,6 +2,8 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/TeleportLocomotionClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x718000
@@ -23,8 +25,8 @@ TeleportLocomotionClass::TeleportLocomotionClass()
   this->q044 = 0; /*0x718055*/
   this->Timer = g_CurrentFrame; /*0x718058*/
   this->Piggybackee = 0; /*0x71805b*/
-  *(_DWORD *)this = &(void*)(void*)&TeleportLocomotionClass_vftable; /*0x71805e*/
-  this->vtable2 = &(void*)(void*)&TeleportLocomotionClass_vftable; /*0x718064*/
-  this->vtable3 = &(void*)(void*)&TeleportLocomotionClass_vftable; /*0x71806b*/
+  *(_DWORD *)this = (void*)&TeleportLocomotionClass_vftable; /*0x71805e*/
+  this->vtable2 = (void*)&TeleportLocomotionClass_vftable; /*0x718064*/
+  this->vtable3 = (void*)&TeleportLocomotionClass_vftable; /*0x71806b*/
   return this; /*0x718074*/
 }

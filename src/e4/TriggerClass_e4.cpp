@@ -11,6 +11,8 @@
 #include "e4/classes/TechnoTypeClass_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x610950
@@ -167,10 +169,10 @@ int TriggerClass::LoadTrigger(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x726876*/
     {
       AbstractClass::InitVtables(aP0, (int)&aP1); /*0x72687f*/
-      *aP0 = (int)&(void*)(void*)&TriggerClass_vftable; /*0x726884*/
-      aP0[1] = (int)&(void*)(void*)&TriggerClass_vftable; /*0x72688a*/
-      aP0[2] = (int)&(void*)(void*)&TriggerClass_vftable; /*0x726891*/
-      aP0[3] = (int)&(void*)(void*)&TriggerClass_vftable; /*0x726898*/
+      *(_DWORD *)aP0 = (int)&TriggerClass_vftable; /*0x726884*/
+      aP0[1] = (int)&TriggerClass_vftable; /*0x72688a*/
+      aP0[2] = (int)&TriggerClass_vftable; /*0x726891*/
+      aP0[3] = (int)&TriggerClass_vftable; /*0x726898*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP0 + 9); /*0x7268a8*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP0 + 10); /*0x7268b6*/

@@ -30,10 +30,10 @@ struct VectorClass_ptr_MapSelection {
 // --- flat members (END) ---
     int Get(int a2);  // 0x5D06C0
     char Add(int a2);  // 0x5D0D40
-    char Release(int a2, unsigned int * a3);  // 0x5D0D80
+    char Release(int a2,  unsigned int * a3);    // 0x5D0D80
     void Remove();  // 0x5D0E30
     int GetSize(unsigned int * a2);  // 0x5D0E60
     unsigned int GetCapacity(int a2);  // 0x5D0EA0
-    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x5D1800
+    VectorClass_flat * QueryInterface(unsigned int * Block,  char a2);    // 0x5D1800
 };
 } // namespace gamemd

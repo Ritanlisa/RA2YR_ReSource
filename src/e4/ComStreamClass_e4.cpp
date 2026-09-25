@@ -10,6 +10,8 @@
 #include "e4/classes/GameLoop_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/CommandClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/Struct_e4.hpp"
 
 // 0x7A3D90
@@ -33,7 +35,7 @@ int ComStreamClass::Write()
   bool v20; // [esp+Ah] [ebp-281Ah]
   char v21; // [esp+Bh] [ebp-2819h]
   LPARAM Channel; // [esp+Ch] [ebp-2818h] BYREF
-  void **v23; // [esp+10h] [ebp-2814h] BYREF
+  void* v23;
   int v24; // [esp+14h] [ebp-2810h]
   WPARAM wParam; // [esp+18h] [ebp-280Ch]
   int v26; // [esp+1Ch] [ebp-2808h] BYREF
@@ -110,7 +112,7 @@ int ComStreamClass::Write()
         goto LABEL_14; /*0x7a3f97*/
     }
   }
-  v23 = &(void*)(void*)&rc_ptr_PlayerProfile_vftable; /*0x7a3fd1*/
+  v23 = (void*)&rc_ptr_PlayerProfile_vftable; /*0x7a3fd1*/
   ComPtr::Release(&v23); /*0x7a3fdd*/
   LABEL_16:
   if ( a3 ) /*0x7a3fed*/
@@ -328,9 +330,9 @@ unsigned int * ComStreamClass::seekToPosition()
   v2 = Audio_Create_76BE90(v6, (int)this); /*0x7b023a*/
   v3 = Audio_Create(v5, (const char **)&g_WebBrowser, (int)v2); /*0x7b0249*/
   ComPtr::Set(&dword_B77F68, v3[1]); /*0x7b0257*/
-  v5[0] = &(void*)(void*)&rc_ptr_WorldDominationTour_Campaign_vftable; /*0x7b0260*/
+  v5[0] = (void*)&rc_ptr_WorldDominationTour_Campaign_vftable; /*0x7b0260*/
   ComPtr::Release(v5); /*0x7b0268*/
-  v6[0] = &(void*)(void*)&rc_ptr_WorldDominationTour_CampaignProperties_vftable; /*0x7b0271*/
+  v6[0] = (void*)&rc_ptr_WorldDominationTour_CampaignProperties_vftable; /*0x7b0271*/
   return ComPtr::Release(v6); /*0x7b027e*/
 }
 } // namespace gamemd
@@ -347,10 +349,10 @@ unsigned int * ComStreamClass::getStreamSize()
   v2 = Audio_Create_76BE90(v6, (int)this); /*0x7b02ba*/
   v3 = Audio_Create(v5, (const char **)&g_WebBrowser, (int)v2); /*0x7b02c9*/
   ComPtr::Set(&dword_B77F78, v3[1]); /*0x7b02d7*/
-  v5[0] = &(void*)(void*)&rc_ptr_WorldDominationTour_Campaign_vftable; /*0x7b02e0*/
+  v5[0] = (void*)&rc_ptr_WorldDominationTour_Campaign_vftable; /*0x7b02e0*/
   ComPtr::Release(v5); /*0x7b02e8*/
-  v6[0] = &(void*)(void*)&rc_ptr_WorldDominationTour_CampaignProperties_vftable; /*0x7b02f1*/
-  return ComPtr::Release(v6); /*0x7b02fe*/
+  v6[0] = (void*)&rc_ptr_WorldDominationTour_CampaignProperties_vftable; /*0x7b02f1*/
+  return ComPtr::Release(v6, unsigned int a2, unsigned int a3, unsigned int a4); /*0x7b02fe*/
 }
 } // namespace gamemd
 // 0x7A4070
@@ -378,7 +380,7 @@ int ComStreamClass::Seek()
   Current = Dialog::GetCurrent(); /*0x7a40c8*/
   DlgItem = GetDlgItem(Current, 1344); /*0x7a40d3*/
   if ( DlgItem ) /*0x7a40db*/
-    SetFocus(DlgItem); /*0x7a40de*/
+    SetFocus(DlgItem, unsigned int a2); /*0x7a40de*/
   return 0; /*0x7a40e6*/
 }
 } // namespace gamemd

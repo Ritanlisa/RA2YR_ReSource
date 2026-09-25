@@ -21,6 +21,8 @@
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/INIClass_e4.hpp"
 #include "e4/classes/BuildingTypeClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x483610
@@ -48,7 +50,7 @@ int ObjectClass::SpawnInfantry(FootClass * aP1, FootClass * aP2, FootClass * aP3
   int v17; // ebp
   void **v18; // eax
   int v19; // eax
-  int v20; // eax
+  FootClass * v20;
   int v21; // edi
   void *v22; // eax
   int v23; // eax
@@ -324,13 +326,13 @@ int ObjectClass::LoadFromStream_Common(FootClass * aP0, LPSTREAM pStm)
 {
   int v3; // eax
   int result; // eax
-  int v6; // edi
+  FootClass * v6;
   IStream v7; // ecx
   int v8; // ecx
   int v9; // eax
   int v10; // eax
   int v11; // edx
-  int v12; // edi
+  FootClass * v12;
   IStream v13; // ecx
   int v14; // ecx
   int v15; // eax
@@ -357,7 +359,7 @@ int ObjectClass::LoadFromStream_Common(FootClass * aP0, LPSTREAM pStm)
       if ( aP0 != -1416 ) /*0x4db413*/
       {
         AbstractClassVector::Construct((_DWORD *)(aP0 + 1416), 0, 0); /*0x4db419*/
-        *(_DWORD *)v6 = &(void*)(void*)&DynamicVectorClass_AbstractClass___vftable; /*0x4db41e*/
+        *(void **)v6 = (void*)&DynamicVectorClass_AbstractClass___vftable; /*0x4db41e*/
         *(_DWORD *)(aP0 + 1436) = 10; /*0x4db424*/
         *(_DWORD *)(aP0 + 1432) = 0; /*0x4db42b*/
       }
@@ -372,7 +374,7 @@ int ObjectClass::LoadFromStream_Common(FootClass * aP0, LPSTREAM pStm)
           if ( aP0 != -1452 ) /*0x4db4c1*/
           {
             AbstractClassVector::Construct((_DWORD *)(aP0 + 1452), 0, 0); /*0x4db4c7*/
-            *(_DWORD *)v12 = &(void*)(void*)&DynamicVectorClass_AbstractClass___vftable; /*0x4db4cc*/
+            *(void **)v12 = (void*)&DynamicVectorClass_AbstractClass___vftable; /*0x4db4cc*/
             *(_DWORD *)(aP0 + 1472) = 10; /*0x4db4d2*/
             *(_DWORD *)(aP0 + 1468) = 0; /*0x4db4d9*/
           }
@@ -921,10 +923,10 @@ ObjectClass * * ObjectClass::Dtor()
   int v7; // eax
 
   v2 = *(&this->vtable24); /*0x5f3b84*/
-  *this = &(void*)(void*)&ObjectClass_vftable; /*0x5f3b87*/
-  this->vtable2 = &(void*)(void*)&ObjectClass_vftable; /*0x5f3b8f*/
-  this->vtable3 = &(void*)(void*)&ObjectClass_vftable; /*0x5f3b96*/
-  this->vtable4 = &(void*)(void*)&ObjectClass_vftable; /*0x5f3b9d*/
+  *this = (void*)&ObjectClass_vftable; /*0x5f3b87*/
+  this->vtable2 = (void*)&ObjectClass_vftable; /*0x5f3b8f*/
+  this->vtable3 = (void*)&ObjectClass_vftable; /*0x5f3b96*/
+  this->vtable4 = (void*)&ObjectClass_vftable; /*0x5f3b9d*/
   if ( v2 ) /*0x5f3ba4*/
     ObjectClass::CleanupAudioAndRefs(); /*0x5f3ba6*/
   v3 = (*(int (__thiscall **)(int *, _DWORD **))(g_DiskLaserManager + 16))(&g_DiskLaserManager, &this); /*0x5f3bbf*/

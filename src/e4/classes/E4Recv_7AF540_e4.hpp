@@ -35,7 +35,7 @@ struct E4Recv_7AF540 {
     unsigned int q6408;  // 0x6408
     unsigned int vt_slot_8;
 // --- flat members (END) ---
-    int Vf8(int, ...);  // G6 vtable slot dispatch
-    int sub_7AF540(HWND hWnd, int * a3);  // 0x7AF540
+    int Vf8(int,  ...);    // G6 vtable slot dispatch
+    int sub_7AF540(HWND hWnd,  int * a3);    // 0x7AF540
 };
 } // namespace gamemd

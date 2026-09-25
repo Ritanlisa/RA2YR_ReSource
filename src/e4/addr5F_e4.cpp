@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+
 #include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_5F15C0_e4.hpp"
 #include "e4/classes/E4Recv_5F1F20_e4.hpp"
@@ -17,7 +18,14 @@
 #include "e4/classes/Stream_e4.hpp"
 #include "e4/classes/WinModemClass_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/Movie_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
+#include "e4/classes/Process_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/String_e4.hpp"
+#include "e4/classes/WideString_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x5F0070
 namespace gamemd {
@@ -168,10 +176,10 @@ char HandlePlayerDisconnection(int a1, int a2)
 namespace gamemd {
 AbstractClass * * WaitModemConnection()
 {
-  int v3; // ebp
+  unsigned int v3;
   wchar_t *String; // eax
   LPARAM v5; // esi
-  char v6; // bl
+  unsigned int v6;
   wchar_t *v7; // eax
   HWND v8; // eax
   int v9; // esi
@@ -521,7 +529,7 @@ AbstractClass * * sub_5FDDF0()
   v8 = 0; /*0x5fde1b*/
   v9 = 1; /*0x5fde1f*/
   v10 = 0; /*0x5fde24*/
-  v6 = &(void*)(void*)&DynamicVectorClass_CellClass___vftable; /*0x5fde28*/
+  v6 = (void*)&DynamicVectorClass_CellClass___vftable; /*0x5fde28*/
   v11 = 0; /*0x5fde30*/
   v12 = 1000; /*0x5fde34*/
   if ( v0 ) /*0x5fde38*/
@@ -553,7 +561,7 @@ AbstractClass * * sub_5FDDF0()
     if ( BuildingClass::CheckAdjacentCells((int)v5) ) /*0x5fdebc*/
       BuildingClass::VisualizePlacement(v5); /*0x5fdec7*/
   }
-  v6 = &(void*)(void*)&VectorClass_CellClass___vftable; /*0x5fded3*/
+  v6 = (void*)&VectorClass_CellClass___vftable; /*0x5fded3*/
   if ( Block ) /*0x5fdedd*/
   {
     if ( v10 ) /*0x5fdee3*/
@@ -998,7 +1006,7 @@ unsigned int * E4Recv_5F15C0::sub_5F15C0(int a2, int a3, int a4, short a5)
   this->u32_4C = a5; /*0x5f15e2*/
   *(&this->PlayerIndex1) = 60; /*0x5f15eb*/
   *(&this->Active3) = 60; /*0x5f15ee*/
-  *this = &(void*)(void*)&NullModemClass_vftable; /*0x5f15f1*/
+  *this = (void*)&NullModemClass_vftable; /*0x5f15f1*/
   *(&this->PlayerIndex6) = -1; /*0x5f15f7*/
   *(&this->PlayerIndex4) = 0; /*0x5f15fa*/
   *(&this->Active0) = 0; /*0x5f15fd*/
@@ -1368,7 +1376,7 @@ int sub_5F6FF0()
   dword_AC1420 = 0; /*0x5f6ffc*/
   byte_AC1424 = 1; /*0x5f7001*/
   byte_AC1425 = 0; /*0x5f7008*/
-  dword_AC1418 = (int)&(void*)(void*)&DynamicVectorClass_ObjectTypeClass___vftable; /*0x5f700d*/
+  dword_AC1418 = (int)&DynamicVectorClass_ObjectTypeClass___vftable; /*0x5f700d*/
   dword_AC142C = 10; /*0x5f7017*/
   dword_AC1428 = 0; /*0x5f7021*/
   return atexit(sub_5F7030); /*0x5f702c*/
@@ -1381,7 +1389,7 @@ void sub_5F7030()
 {
   if ( (byte_AC1470 & 1) == 0 ) /*0x5f703a*/
   {
-    dword_AC1418 = (int)&(void*)(void*)&VectorClass_ObjectTypeClass___vftable; /*0x5f703e*/
+    dword_AC1418 = (int)&VectorClass_ObjectTypeClass___vftable; /*0x5f703e*/
     byte_AC1470 |= 1u; /*0x5f7051*/
     if ( dword_AC141C ) /*0x5f7057*/
     {
@@ -2061,7 +2069,7 @@ int sub_5FF1D0()
   dword_AC1680 = 0; /*0x5ff1dc*/
   byte_AC1684 = 1; /*0x5ff1e1*/
   byte_AC1685 = 0; /*0x5ff1e8*/
-  dword_AC1678 = (int)&(void*)(void*)&DynamicVectorClass_SpotLightClass___vftable; /*0x5ff1ed*/
+  dword_AC1678 = (int)&DynamicVectorClass_SpotLightClass___vftable; /*0x5ff1ed*/
   dword_AC168C = 10; /*0x5ff1f7*/
   dword_AC1688 = 0; /*0x5ff201*/
   return atexit(sub_5FF210); /*0x5ff20c*/
@@ -2072,7 +2080,7 @@ int sub_5FF1D0()
 namespace gamemd {
 void sub_5FF210()
 {
-  dword_AC1678 = (int)&(void*)(void*)&VectorClass_SpotLightClass___vftable; /*0x5ff218*/
+  dword_AC1678 = (int)&VectorClass_SpotLightClass___vftable; /*0x5ff218*/
   if ( dword_AC167C && byte_AC1685 ) /*0x5ff22c*/
   {
     RA2_OPDEL(dword_AC167C); /*0x5ff22f*/

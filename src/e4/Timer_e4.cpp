@@ -5,13 +5,15 @@
 #include "e4/classes/Math_e4.hpp"
 #include "e4/classes/DynamicVector_e4.hpp"
 #include "e4/classes/ToolTipManager_7_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x46B640
 namespace gamemd {
 void * Timer::Start(DynamicVector * aP1)
 {
-  *this = g_CurrentFrame; /*0x46b64c*/
+  *(_DWORD *)this = g_CurrentFrame; /*0x46b64c*/
   *(this + 2) = aP1; /*0x46b64e*/
   return this; /*0x46b651*/
 }
@@ -42,7 +44,7 @@ int Timer::StartDouble(double a2)
 namespace gamemd {
 void * Timer::Init(DWORD a2)
 {
-  *this = Timer::GetTicks(); /*0x4f1b0b*/
+  *(_DWORD *)this = Timer::GetTicks(); /*0x4f1b0b*/
   *(this + 2) = a2; /*0x4f1b11*/
   return this; /*0x4f1b16*/
 }
@@ -165,9 +167,9 @@ char Timer::SetFlag(char a2)
 
   result = a2; /*0x7500b0*/
   if ( a2 ) /*0x7500b6*/
-    *this = 0x40000000; /*0x7500b8*/
+    *(_DWORD *)this = 0x40000000; /*0x7500b8*/
   else
-    *this = 0; /*0x7500c1*/
+    *(_DWORD *)this = 0; /*0x7500c1*/
   return result; /*0x7500be*/
 }
 } // namespace gamemd

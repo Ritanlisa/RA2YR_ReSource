@@ -3,6 +3,8 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/ShipLocomotionClass_e4.hpp"
 #include "e4/classes/IStream_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x69EE90
@@ -21,8 +23,8 @@ HRESULT ShipLocomotionClass::BeginMove(int * a1, int * pStm)
   if ( a1 ) /*0x69eeaa*/
   {
     a1[26] = 0; /*0x69eeac*/
-    *a1 = (int)&(void*)(void*)&ShipLocomotionClass_vftable; /*0x69eeb3*/
-    a1[1] = (int)&(void*)(void*)&ShipLocomotionClass_vftable; /*0x69eeb9*/
+    *a1 = (int)&ShipLocomotionClass_vftable; /*0x69eeb3*/
+    a1[1] = (int)&ShipLocomotionClass_vftable; /*0x69eeb9*/
     a1[6] = (int)&off_7F2D68; /*0x69eec0*/
   }
   v2->lpVtbl->Read(v2, &pStm, 1, 0); /*0x69eed3*/
@@ -117,8 +119,8 @@ ShipLocomotionClass * ShipLocomotionClass::ProcessMove(char a2)
 {
   int v3; // eax
 
-  *this = &(void*)(void*)&ShipLocomotionClass_vftable; /*0x6a42b3*/
-  this->vtable2 = &(void*)(void*)&ShipLocomotionClass_vftable; /*0x6a42b9*/
+  *(void **)this = (void*)&ShipLocomotionClass_vftable; /*0x6a42b3*/
+  this->vtable2 = (void*)&ShipLocomotionClass_vftable; /*0x6a42b9*/
   this->vtable3 = &off_7F2D68; /*0x6a42c0*/
   v3 = *(&this->u32_86); /*0x6a42c7*/
   if ( v3 ) /*0x6a42cc*/

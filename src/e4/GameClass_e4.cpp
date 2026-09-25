@@ -14,6 +14,8 @@
 #include "e4/classes/MultiplayerGameMode_e4.hpp"
 #include "e4/classes/HashTable_flat_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/BufferIOFileClass_e4.hpp"
 
 // 0x437FD0
@@ -78,7 +80,7 @@ namespace gamemd {
 int GameClass::loadScenarioFiles(ObjectClass * aP1)
 {
   int result; // eax
-  int v4; // ebx
+  ObjectClass * v4;
   int v5; // edi
   int *v6; // [esp+0h] [ebp-40h]
   int v7; // [esp+1Ch] [ebp-24h]
@@ -253,7 +255,7 @@ void * GameClass::WriteEncryptedStream(BombClass * Src, signed int aP2)
   int v6; // ecx
   int v7; // eax
   int v8; // eax
-  signed int v9; // edi
+  CampaignClass * v9;
   bool v10; // zf
   char v12[256]; // [esp+8h] [ebp-100h] BYREF
 
@@ -646,7 +648,7 @@ wchar_t * GameClass::GetDifficultyString()
 namespace gamemd {
 unsigned int * GameClass::saveGameState(char a2)
 {
-  *this = &(void*)(void*)&PixelFXClass_vftable; /*0x631f49*/
+  *this = (void*)&PixelFXClass_vftable; /*0x631f49*/
   if ( (a2 & 1) != 0 ) /*0x631f4f*/
     RA2_OPDEL(); /*0x631f52*/
   return this; /*0x631f5c*/
@@ -670,7 +672,7 @@ PKPipe * GameClass::validateGameFile(char a2)
 
   v3 = (int *)this->q020; /*0x632ff5*/
   v4 = &this->q014; /*0x632ff8*/
-  this->q014 = &(void*)(void*)&BlowPipe_vftable; /*0x632ffd*/
+  this->q014 = (void*)&BlowPipe_vftable; /*0x632ffd*/
   if ( v3 ) /*0x633003*/
   {
     COMObject::Release(v3); /*0x633007*/
@@ -702,7 +704,7 @@ PKStrawClass * GameClass::applyGameSettings(char a2)
 
   v3 = (int *)this->q020; /*0x633375*/
   v4 = &this->q014; /*0x633378*/
-  this->q014 = &(void*)(void*)&BlowStraw_vftable; /*0x63337d*/
+  this->q014 = (void*)&BlowStraw_vftable; /*0x63337d*/
   if ( v3 ) /*0x633383*/
   {
     COMObject::Release(v3); /*0x633387*/

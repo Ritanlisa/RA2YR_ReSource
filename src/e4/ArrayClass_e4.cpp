@@ -2,13 +2,15 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/ArrayClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x636E60
 namespace gamemd {
 int ArrayClass::GetAt_Wrap(int a2)
 {
-  int v2; // edi
+  void * v2;
   int v3; // eax
   int v4; // esi
 

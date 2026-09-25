@@ -12,6 +12,8 @@
 #include "e4/classes/LayerClass_e4.hpp"
 #include "e4/classes/LightConvertClass_e4.hpp"
 #include "e4/classes/CellClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x568300
@@ -415,7 +417,7 @@ unsigned int * LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnk
   if ( v77 <= 0 ) /*0x56e5b9*/
   {
   LABEL_123:
-    *aP2 = g_MapSeedState; /*0x56e7aa*/
+    *(_DWORD *)aP2 = g_MapSeedState; /*0x56e7aa*/
     return aP2; /*0x56e79a*/
   }
   v80 = 0; /*0x56e5c5*/
@@ -454,9 +456,9 @@ unsigned int * LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnk
   if ( *(_DWORD *)aP14 == g_MapSeedState ) /*0x56e699*/
   {
     if ( v80 ) /*0x56e6b0*/
-      *aP2 = v104[(int)g_CurrentFrame % v80]; /*0x56e6c6*/
+      *(_DWORD *)aP2 = v104[(int)g_CurrentFrame % v80]; /*0x56e6c6*/
     else
-      *aP2 = v105[(int)g_CurrentFrame % v81]; /*0x56e6e5*/
+      *(_DWORD *)aP2 = v105[(int)g_CurrentFrame % v81]; /*0x56e6e5*/
     return aP2; /*0x56e6b4*/
   }
   else
@@ -490,7 +492,7 @@ unsigned int * LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnk
 namespace gamemd {
 void * LayerClass::Reveal(int a2)
 {
-  void *result; // eax
+  unsigned int result;
   int v4; // eax
   int v5; // edx
   int v6; // ecx
@@ -762,7 +764,7 @@ void* LayerClass::DestroyCliff(int * a1, int a2, int a3)
             {
               *(_WORD *)(v13[28] + 10 * CellToTileIndexMap(v13, (__int16 *)&a3)) = 0;
               unsigned int v17 = (__int16)a3 + (IDA_SHIWORD(a3) << 9);
-  _DWORD *v18; // eax
+  unsigned int v18;
               if ( v17 >= 0x40000 || (v18 = *(_DWORD **)(g_Shroud_CellArray + 4 * v17)) == 0 )
               {
                 g_Map_GlobalCellIndex = a3;

@@ -3,6 +3,8 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/IsometricTileClass_e4.hpp"
 #include "e4/classes/Isometric_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x543780
@@ -12,10 +14,10 @@ IsometricTileClass::IsometricTileClass(IsometricTileClass * aP1, IsometricTileCl
 
   ObjectClass::ctor(); /*0x543786*/
   this->q0AC = *((_DWORD *)g_FrameCounter + aP1); /*0x54379c*/
-  *(_DWORD *)this->gap0 = &(void*)(void*)&IsometricTileClass_vftable; /*0x5437a2*/
-  *(_DWORD *)&this->gap0[4] = &(void*)(void*)&IsometricTileClass_vftable; /*0x5437a8*/
-  *(_DWORD *)&this->gap0[8] = &(void*)(void*)&IsometricTileClass_vftable; /*0x5437af*/
-  *(_DWORD *)&this->gap0[12] = &(void*)(void*)&IsometricTileClass_vftable; /*0x5437b6*/
+  *(_DWORD *)this->gap0 = (void*)&IsometricTileClass_vftable; /*0x5437a2*/
+  *(_DWORD *)&this->gap0[4] = (void*)&IsometricTileClass_vftable; /*0x5437a8*/
+  *(_DWORD *)&this->gap0[8] = (void*)&IsometricTileClass_vftable; /*0x5437af*/
+  *(_DWORD *)&this->gap0[12] = (void*)&IsometricTileClass_vftable; /*0x5437b6*/
   if ( *aP2 != word_AA06D0 || aP2[1] != word_AA06D2 ) /*0x5437d4*/
   {
     this->gap0[129] = 0; /*0x543805*/

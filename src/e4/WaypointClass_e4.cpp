@@ -8,6 +8,8 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/WaveClass_e4.hpp"
 #include "e4/classes/WaypointPathClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x502160

@@ -10,6 +10,8 @@
 #include "e4/classes/MapSeedClass_e4.hpp"
 #include "e4/classes/PlayerClass_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x5A5360
@@ -202,7 +204,7 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
   if ( v23 ) /*0x5a551e*/
   {
     VectorClass::CellConstructor(v23, 0, 0); /*0x5a5526*/
-    *v24 = &(void*)(void*)&DynamicVectorClass_Cell_vftable; /*0x5a552b*/
+    *(void **)v24 = (void*)&DynamicVectorClass_Cell_vftable; /*0x5a552b*/
     v24[5] = 10; /*0x5a5531*/
     v24[4] = 0; /*0x5a5538*/
   }

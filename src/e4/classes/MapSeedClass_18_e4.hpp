@@ -27,9 +27,9 @@ struct MapSeedClass_18 {
     void ClearBuffer();  // 0x5AC4C0
     int GetCell(int a2);  // 0x5AC510
     char AddRef(int a2);  // 0x5ACA60
-    char Release(int a2, unsigned int * a3);  // 0x5ACAA0
+    char Release(int a2,  unsigned int * a3);    // 0x5ACAA0
     bool ddtor(char* lpFileName);  // 0x5ACB50
-    char SetCapacity(int a2, unsigned int * a3);  // 0x5ACBE0
+    char SetCapacity(int a2,  unsigned int * a3);    // 0x5ACBE0
     int FindItem(unsigned int * a2);  // 0x5ACC90
     VectorClass_flat * QueryInterface(char a2);  // 0x5AD430
     DynamicVector * Constructor_VectorClass__WIN32_FIND_DATAA___(char a2);  // 0x5AD480

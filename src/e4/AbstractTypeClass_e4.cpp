@@ -4,14 +4,17 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/AbstractTypeClass_e4.hpp"
 #include "e4/classes/INIClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x410800
 namespace gamemd {
 int AbstractTypeClass::Constructor(AbstractClass * aP1)
 {
   char *v3; // ebx
-  int v4; // eax
+  AbstractTypeClass * v4;
   char Buffer[16]; // [esp+10h] [ebp-44h] BYREF
   char Destination[48]; // [esp+20h] [ebp-34h] BYREF
   char v8; // [esp+50h] [ebp-4h]
@@ -21,10 +24,10 @@ int AbstractTypeClass::Constructor(AbstractClass * aP1)
   this->q024 = 0; /*0x410817*/
   this->UINameLabel = 0; /*0x41081a*/
   this->Name = 0; /*0x41081e*/
-  *(_DWORD *)this = &(void*)(void*)&AbstractTypeClass_vftable; /*0x410822*/
-  this->vtable2 = &(void*)(void*)&AbstractTypeClass_vftable; /*0x410829*/
-  this->vtable3 = &(void*)(void*)&AbstractTypeClass_vftable; /*0x410830*/
-  this->vtable4 = &(void*)(void*)&AbstractTypeClass_vftable; /*0x410837*/
+  *(void **)this = (void*)&AbstractTypeClass_vftable; /*0x410822*/
+  this->vtable2 = (void*)&AbstractTypeClass_vftable; /*0x410829*/
+  this->vtable3 = (void*)&AbstractTypeClass_vftable; /*0x410830*/
+  this->vtable4 = (void*)&AbstractTypeClass_vftable; /*0x410837*/
   if ( aP1 ) /*0x41083e*/
   {
     strncpy(Destination, aP1, 0x18u); /*0x410895*/
@@ -85,10 +88,10 @@ int AbstractTypeClass::Dtor()
 {
   int v2; // eax
 
-  *this = &(void*)(void*)&AbstractTypeClass_vftable; /*0x4109cd*/
-  this->vtable2 = &(void*)(void*)&AbstractTypeClass_vftable; /*0x4109d3*/
-  this->vtable3 = &(void*)(void*)&AbstractTypeClass_vftable; /*0x4109da*/
-  this->vtable4 = &(void*)(void*)&AbstractTypeClass_vftable; /*0x4109e1*/
+  *(void **)this = (void*)&AbstractTypeClass_vftable; /*0x4109cd*/
+  this->vtable2 = (void*)&AbstractTypeClass_vftable; /*0x4109d3*/
+  this->vtable3 = (void*)&AbstractTypeClass_vftable; /*0x4109da*/
+  this->vtable4 = (void*)&AbstractTypeClass_vftable; /*0x4109e1*/
   v2 = (*(int (__thiscall **)(int *, _DWORD **))(dword_A8E968 + 16))(&dword_A8E968, &this); /*0x4109f3*/
   if ( v2 != -1 && v2 < g_AbstractTypePool && v2 < --g_AbstractTypePool ) /*0x410a0e*/
   {
@@ -169,10 +172,10 @@ AbstractTypeClass * AbstractTypeClass::ddtor(char a2)
 {
   int v3; // eax
 
-  *this = &(void*)(void*)&AbstractTypeClass_vftable; /*0x410c3d*/
-  this->vtable2 = &(void*)(void*)&AbstractTypeClass_vftable; /*0x410c43*/
-  this->vtable3 = &(void*)(void*)&AbstractTypeClass_vftable; /*0x410c4a*/
-  this->vtable4 = &(void*)(void*)&AbstractTypeClass_vftable; /*0x410c51*/
+  *(void **)this = (void*)&AbstractTypeClass_vftable; /*0x410c3d*/
+  this->vtable2 = (void*)&AbstractTypeClass_vftable; /*0x410c43*/
+  this->vtable3 = (void*)&AbstractTypeClass_vftable; /*0x410c4a*/
+  this->vtable4 = (void*)&AbstractTypeClass_vftable; /*0x410c51*/
   v3 = (*(int (__thiscall **)(int *, _DWORD **))(dword_A8E968 + 16))(&dword_A8E968, &this); /*0x410c63*/
   if ( v3 != -1 && v3 < g_AbstractTypePool && v3 < --g_AbstractTypePool ) /*0x410c7e*/
   {
@@ -197,10 +200,10 @@ int AbstractTypeClass::Init(AbstractTypeClass * aP1)
 
   AbstractClass::InitVtables(aP1); /*0x410968*/
   v3 = this->q03D; /*0x41096d*/
-  *(_DWORD *)this = &(void*)(void*)&AbstractTypeClass_vftable; /*0x410975*/
-  this->vtable2 = &(void*)(void*)&AbstractTypeClass_vftable; /*0x41097b*/
-  this->vtable3 = &(void*)(void*)&AbstractTypeClass_vftable; /*0x410982*/
-  this->vtable4 = &(void*)(void*)&AbstractTypeClass_vftable; /*0x410989*/
+  *(void **)this = (void*)&AbstractTypeClass_vftable; /*0x410975*/
+  this->vtable2 = (void*)&AbstractTypeClass_vftable; /*0x41097b*/
+  this->vtable3 = (void*)&AbstractTypeClass_vftable; /*0x410982*/
+  this->vtable4 = (void*)&AbstractTypeClass_vftable; /*0x410989*/
   if ( v3 ) /*0x410990*/
     this->q060 = GetStringCSF((wchar_t *)(&this->nextArrayIndex1), 0, aDRa2mdpostAbst, 127); /*0x4109a0*/
   else

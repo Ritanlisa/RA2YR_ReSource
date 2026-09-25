@@ -30,10 +30,10 @@ struct VectorClass_ptr_OverlayTypeClass {
 // --- flat members (END) ---
     int Get(int a2);  // 0x4E8CB0
     char Add(int a2);  // 0x4ED140
-    char Release(int a2, unsigned int * a3);  // 0x4ED180
+    char Release(int a2,  unsigned int * a3);    // 0x4ED180
     void Remove();  // 0x4ED230
     int GetSize(unsigned int * a2);  // 0x4ED260
     unsigned int LoadTypeData(int a2);  // 0x4ED2A0
-    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x4F0570
+    VectorClass_flat * QueryInterface(unsigned int * Block,  char a2);    // 0x4F0570
 };
 } // namespace gamemd

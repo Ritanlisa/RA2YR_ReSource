@@ -20,6 +20,6 @@ struct E4Recv_6D3470 {
     unsigned int q2180;  // 0x2180
     unsigned int q2304;  // 0x2304
 // --- flat members (END) ---
-    int DrawBuildingShadow(IUnknown * aP1, AbstractClass * aP2, char a4);  // 0x6D3470
+    int DrawBuildingShadow(void* aP1,  AbstractClass * aP2,  char a4);    // 0x6D3470
 };
 } // namespace gamemd

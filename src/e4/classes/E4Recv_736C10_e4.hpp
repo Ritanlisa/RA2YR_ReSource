@@ -34,9 +34,9 @@ struct E4Recv_736C10 {
     unsigned int q2128;  // 0x2128
     unsigned int q2324;  // 0x2324
 // --- flat members (END) ---
-    int Vf248(int, ...);  // G6 vtable slot dispatch
-    int Vf388(int, ...);  // G6 vtable slot dispatch
-    int Vf928(int, ...);  // G6 vtable slot dispatch
+    int Vf248(int,  ...);    // G6 vtable slot dispatch
+    int Vf388(int,  ...);    // G6 vtable slot dispatch
+    int Vf928(int,  ...);    // G6 vtable slot dispatch
     char sub_736C10();  // 0x736C10
 };
 } // namespace gamemd

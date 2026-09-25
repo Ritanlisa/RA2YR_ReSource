@@ -27,10 +27,11 @@ struct DynamicVectorClass_PAD_16 {
     unsigned char q044;  // 0x44
     unsigned char q048;  // 0x48
     unsigned char q050;  // 0x50
+    unsigned int Items2;
 // --- flat members (END) ---
     int Get(int a2);  // 0x49EA00
     char Add(int a2);  // 0x49EB50
-    char Release(int a2, unsigned int * a3);  // 0x49EB90
+    char Release(int a2,  unsigned int * a3);    // 0x49EB90
     void Remove();  // 0x49EC40
     int GetSize(unsigned int * a2);  // 0x49EC70
     VectorClass_flat * QueryInterface(char a2);  // 0x49EFF0

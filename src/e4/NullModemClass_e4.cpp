@@ -7,6 +7,8 @@
 #include "e4/classes/Rect_e4.hpp"
 #include "e4/classes/Stream_e4.hpp"
 #include "e4/classes/WinModemClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x5F1950
@@ -117,7 +119,7 @@ void * NullModemClass::QueryInterface(char a2)
   void *v3; // edi
 
   v3 = (void *)*(&this->PlayerIndex3); /*0x5f3654*/
-  *this = &(void*)(void*)&NullModemClass_vftable; /*0x5f3657*/
+  *(void **)this = (void*)&NullModemClass_vftable; /*0x5f3657*/
   if ( v3 ) /*0x5f365f*/
   {
     FileFind::Close(); /*0x5f3663*/
@@ -141,7 +143,7 @@ void * NullModemClass::QueryInterface(char a2)
     g_ClipboardBuffer = 0; /*0x5f36c5*/
   }
   LABEL_10:
-  *this = &(void*)(void*)&ConnManClass_vftable; /*0x5f36cf*/
+  *(void **)this = (void*)&ConnManClass_vftable; /*0x5f36cf*/
   if ( (a2 & 1) != 0 ) /*0x5f36db*/
     RA2_OPDEL(); /*0x5f36de*/
   return this; /*0x5f36e8*/

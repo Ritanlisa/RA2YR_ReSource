@@ -23,7 +23,7 @@ struct LayerClass {
     unsigned int q028;  // 0x28
     BufferIOFileClass* q02A;  // 0x2A
     bool q02B;  // 0x2B
-    unsigned int q02C;  // 0x2C
+    char q02C[4];  // 0x2C
     bool q02D;  // 0x2D
     CampaignClass* q030;  // 0x30
     unsigned char q031;  // 0x31
@@ -281,12 +281,21 @@ struct LayerClass {
     unsigned char q5744;  // 0x5744
     unsigned int q0181;
     unsigned int q0182;
+    unsigned int q0187;
+    unsigned int q0188;
+    unsigned int q0189;
+    unsigned int q01C0;
+    unsigned int q0183;
+    unsigned int q0184;
+    unsigned int q0185;
+    unsigned int q0186;
+    unsigned int q01C9;
 // --- flat members (END) ---
     int CellIteratorNext();
     int CellIteratorReset();
-    int CoordinatesLegal(IUnknown * aP1);
+    int CoordinatesLegal(void* aP1);
     int IsWithinUsableArea(IUnknown * aP1, TechnoClass * aP2);
-    unsigned int * Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnknown * aP4, IUnknown * aP5, IUnknown * aP6, IUnknown * aP7, IUnknown * aP8, IUnknown * aP9, IUnknown * aP10, IUnknown * aP11, IUnknown * aP12, IUnknown * aP13, IUnknown * aP14, MouseClass * aP15, char a17);
+    unsigned int * Pathfinding_Find(void* aP0, void* aP1, void* aP2, void* aP3, void* aP4, void* aP5, void* aP6, void* aP7, void* aP8, void* aP9, void* aP10, void* aP11, void* aP12, void* aP13, void* aP14, MouseClass * aP15, char a17);
     void * Reveal(int a2);
     void* DestroyCliff(int * a1, int a2, int a3);
     static double Save(...);  // C2597 interim stub

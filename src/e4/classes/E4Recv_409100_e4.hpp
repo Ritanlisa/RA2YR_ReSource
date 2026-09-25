@@ -47,7 +47,7 @@ struct E4Recv_409100 {
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    int Vf24(int, ...);  // G6 vtable slot dispatch
+    int Vf24(int,  ...);    // G6 vtable slot dispatch
     int sub_409100();  // 0x409100
 };
 } // namespace gamemd

@@ -7,7 +7,7 @@ namespace gamemd {
 struct Timer {
 // --- flat members (BEGIN) ---
     unsigned int u32_4;  // 0x4
-    AbstractClass * ptr_8;  // 0x8
+    unsigned int q008;  // 0x8
     unsigned int u32_C;  // 0xC
     unsigned int u32_10;  // 0x10
     unsigned int u32_14;  // 0x14
@@ -44,6 +44,7 @@ struct Timer {
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
     unsigned int q6440;  // 0x6440
+    void* ptr_8;
     void* ptr_84;
     void* ptr_85;
     unsigned int q04C7;

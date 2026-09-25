@@ -4,13 +4,15 @@
 #include "e4/classes/BuildingType_e4.hpp"
 #include "e4/classes/TabClass_e4.hpp"
 #include "e4/classes/Tactical_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x4A2350
 namespace gamemd {
 unsigned int * TabClass::initStripClass()
 {
-  *this = 0; /*0x4a2354*/
+  *(_DWORD *)this = 0; /*0x4a2354*/
   this->q004 = 0; /*0x4a2356*/
   this->u32_8 = 0; /*0x4a2359*/
   this->q024 = 0; /*0x4a235c*/

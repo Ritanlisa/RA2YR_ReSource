@@ -11,7 +11,7 @@ struct CCFileClass {
     void* FilePointer;  // 0x4
     int FileSize;  // 0x8
     void * Handle;  // 0xC
-    void * FileName;  // 0x10
+    unsigned int q010;  // 0x10
     unsigned int FileTimeDateLo;  // 0x14
     unsigned int FileTimeDateHi;  // 0x16
     char FileNameAllocated;  // 0x18
@@ -142,20 +142,19 @@ struct CCFileClass {
     unsigned char q76C;  // 0x76C
     unsigned int Destru_vt06;
     unsigned int Destru_vt16;
+    unsigned int FileName;
     unsigned int FileName1;
+    unsigned int FileName4;
+    unsigned int FileSize0;
     unsigned int FileSize2;
     unsigned int FileSize5;
-    unsigned int GetSize;
+    unsigned int FileSize6;
+    unsigned int GetMember06;
+    unsigned int Handle6;
     unsigned int Handle7;
     unsigned int Handle8;
     unsigned int Load_1;
     unsigned int Reset_8;
-    unsigned int FileName4;
-    unsigned int FileSize0;
-    unsigned int FileSize6;
-    unsigned int GetMember06;
-    unsigned int Handle6;
-    unsigned int Construct;
 // --- flat members (END) ---
     AudioController * * Close();
     int Destruct();
@@ -166,6 +165,7 @@ struct CCFileClass {
     static double Read(...);  // C2597 interim stub
     static double ReadEntireFile(...);  // C2597 interim stub
     static double Reset(...);  // C2597 interim stub
+    static double GetSize(...);  // C2597 interim stub
 };
 
 } // namespace gamemd

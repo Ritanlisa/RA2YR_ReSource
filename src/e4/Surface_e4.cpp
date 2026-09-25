@@ -11,7 +11,10 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/SwizzleManagerClass_19_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Timer_e4.hpp"
 
 // 0x411580
 namespace gamemd {
@@ -39,7 +42,7 @@ unsigned int * Surface::CopyRect(ObjectClass * aP1)
   int v15; // edx
   int v16; // eax
   int v18; // eax
-  int v19; // edx
+  void * v19;
   _DWORD *v20; // edi
   _DWORD *v21; // edx
   int v22; // ecx
@@ -246,7 +249,7 @@ void sub_626C60()
   _DWORD *v8; // eax
   _DWORD *v9; // edi
   int v10; // ecx
-  int v11; // eax
+  _DWORD * v11;
   int v12; // ecx
 
   if ( g_FileExtensionState ) /*0x626c68*/
@@ -261,7 +264,7 @@ void sub_626C60()
     if ( v2 ) /*0x626c98*/
     {
       StringVector::Construct(v2, 0, 0); /*0x626ca0*/
-      *v3 = &(void*)(void*)&DynamicVectorClass_char___vftable; /*0x626caa*/
+      *(void **)v3 = (void*)&DynamicVectorClass_char___vftable; /*0x626caa*/
       v3[5] = 10; /*0x626cb0*/
       v3[4] = 0; /*0x626cb3*/
     }
@@ -275,7 +278,7 @@ void sub_626C60()
     if ( v4 ) /*0x626cd4*/
     {
       VectorClass::ConstructHSV(v4, 0, 0); /*0x626cdc*/
-      *v5 = &(void*)(void*)&DynamicVectorClass_HSVClass_vftable; /*0x626ce1*/
+      *(void **)v5 = (void*)&DynamicVectorClass_HSVClass_vftable; /*0x626ce1*/
       v5[5] = 10; /*0x626ce7*/
       v5[4] = 0; /*0x626cea*/
     }
@@ -370,7 +373,7 @@ AbstractClass * * Surface::LoadToSurfaceSHP(char * Source)
     (*(void (__thiscall **)(char *, _DWORD))(v6->nextArrayIndex)(v6, 0); /*0x641e5f*/
     (*(void (__thiscall **)(char *, _DWORD *, _DWORD, int))(*(_DWORD *)*this + 4))(*this, v3, 0, 1); /*0x641e6b*/
     (*(void (__thiscall **)(_DWORD *, int))*v3)(v3, 1); /*0x641e74*/
-    v9[0] = &(void*)(void*)&CCFileClass_vftable; /*0x641e7a*/
+    v9[0] = (void*)&CCFileClass_vftable; /*0x641e7a*/
     v11 = 0; /*0x641e82*/
     Vector::Clear((int)v10); /*0x641e8a*/
     v9[0] = &off_7E1668; /*0x641e93*/
@@ -380,7 +383,7 @@ AbstractClass * * Surface::LoadToSurfaceSHP(char * Source)
   else
   {
   LABEL_11:
-    v9[0] = &(void*)(void*)&CCFileClass_vftable; /*0x641eaf*/
+    v9[0] = (void*)&CCFileClass_vftable; /*0x641eaf*/
     v11 = 0; /*0x641eb7*/
     Vector::Clear((int)v10); /*0x641ebf*/
     v9[0] = &off_7E1668; /*0x641ec8*/

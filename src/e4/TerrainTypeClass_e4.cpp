@@ -10,14 +10,17 @@
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/TerrainClass_e4.hpp"
 #include "e4/classes/VectorClass_flat_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/LoadingScreen_e4.hpp"
 
 // 0x5447C0
 namespace gamemd {
 unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned char a4, MapClass * aP4, char a6)
 {
-  int v7; // eax
-  int v8; // eax
+  TerrainTypeClass * v7;
+  TerrainTypeClass * v8;
   char Destination[48]; // [esp+10h] [ebp-34h] BYREF
   char v11; // [esp+40h] [ebp-4h]
 
@@ -30,7 +33,7 @@ unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned ch
   *(&this->u32_441) = 0; /*0x5447fe*/
   this->WaterBound = 1; /*0x544804*/
   this->q2B1 = 0; /*0x54480b*/
-  *(&this->q0409) = &(void*)(void*)&DynamicVectorClass_unsigned_short___vftable; /*0x544811*/
+  *(&this->q0409) = (void*)&DynamicVectorClass_unsigned_short___vftable; /*0x544811*/
   *(&this->u32_444) = 10; /*0x54481b*/
   *(&this->u32_443) = 0; /*0x544825*/
   *(&this->u32_449) = 0; /*0x544830*/
@@ -54,10 +57,10 @@ unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned ch
   this->u32_305 = 1; /*0x5448b5*/
   this->u32_306 = 0; /*0x5448bc*/
   *(&this->u32_4C4) = 0; /*0x5448c2*/
-  *this = &(void*)(void*)&IsometricTileTypeClass_vftable; /*0x5448c8*/
-  this->vtable2 = &(void*)(void*)&IsometricTileTypeClass_vftable; /*0x5448cf*/
-  this->vtable3 = &(void*)(void*)&IsometricTileTypeClass_vftable; /*0x5448d6*/
-  this->vtable4 = &(void*)(void*)&IsometricTileTypeClass_vftable; /*0x5448dd*/
+  *(void **)this = (void*)&IsometricTileTypeClass_vftable; /*0x5448c8*/
+  this->vtable2 = (void*)&IsometricTileTypeClass_vftable; /*0x5448cf*/
+  this->vtable3 = (void*)&IsometricTileTypeClass_vftable; /*0x5448d6*/
+  this->vtable4 = (void*)&IsometricTileTypeClass_vftable; /*0x5448dd*/
   if ( g_AnimManager < g_AnimTypePool /*0x544917*/
     || (g_AnimPoolLocked || !g_AnimTypePool)
     && g_AnimManagerConfig > 0
@@ -129,10 +132,10 @@ TerrainTypeClass::TerrainTypeClass(ObjectClass * aP1)
   this->q2B3 = 0; /*0x71dae5*/
   this->IsVeinhole = 0; /*0x71daeb*/
   *(&this->u32_444) = 0; /*0x71daf1*/
-  *this = &(void*)(void*)&TerrainTypeClass_vftable; /*0x71daf7*/
-  this->vtable2 = &(void*)(void*)&TerrainTypeClass_vftable; /*0x71dafd*/
-  this->vtable3 = &(void*)(void*)&TerrainTypeClass_vftable; /*0x71db03*/
-  this->vtable4 = &(void*)(void*)&TerrainTypeClass_vftable; /*0x71db0a*/
+  *this = (void*)&TerrainTypeClass_vftable; /*0x71daf7*/
+  this->vtable2 = (void*)&TerrainTypeClass_vftable; /*0x71dafd*/
+  this->vtable3 = (void*)&TerrainTypeClass_vftable; /*0x71db03*/
+  this->vtable4 = (void*)&TerrainTypeClass_vftable; /*0x71db0a*/
   AbstractClass::GenerateUniqueID((int)(this + 1)); /*0x71db11*/
   this->Selectable = 0; /*0x71db18*/
   this->q234 = 1; /*0x71db1e*/
@@ -290,10 +293,10 @@ TerrainTypeClass * TerrainTypeClass::ddtor(AbstractClass *a2, char a3)
   void **v6; // [esp+4h] [ebp-4h] BYREF
 
   v3 = *(a3 + 41); /*0x71e364*/
-  *a3 = &(void*)(void*)&TerrainTypeClass_vftable; /*0x71e36a*/
-  *(a3 + 1) = &(void*)(void*)&TerrainTypeClass_vftable; /*0x71e372*/
-  *(a3 + 2) = &(void*)(void*)&TerrainTypeClass_vftable; /*0x71e379*/
-  *(a3 + 3) = &(void*)(void*)&TerrainTypeClass_vftable; /*0x71e380*/
+  *a3 = (void*)&TerrainTypeClass_vftable; /*0x71e36a*/
+  *(a3 + 1) = (void*)&TerrainTypeClass_vftable; /*0x71e372*/
+  *(a3 + 2) = (void*)&TerrainTypeClass_vftable; /*0x71e379*/
+  *(a3 + 3) = (void*)&TerrainTypeClass_vftable; /*0x71e380*/
   if ( v3 ) /*0x71e387*/
   {
     RA2_OPDEL(v3); /*0x71e38a*/
@@ -418,10 +421,10 @@ int TerrainTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x71e1e6*/
     {
       ObjectTypeClass::Construct(aP0, (int)&aP1); /*0x71e1ef*/
-      *(_DWORD *)aP0 = &(void*)(void*)&TerrainTypeClass_vftable; /*0x71e1f4*/
-      *((_DWORD *)aP0 + 1) = &(void*)(void*)&TerrainTypeClass_vftable; /*0x71e1fa*/
-      *((_DWORD *)aP0 + 2) = &(void*)(void*)&TerrainTypeClass_vftable; /*0x71e201*/
-      *((_DWORD *)aP0 + 3) = &(void*)(void*)&TerrainTypeClass_vftable; /*0x71e208*/
+      *(_DWORD *)aP0 = (void*)&TerrainTypeClass_vftable; /*0x71e1f4*/
+      *((_DWORD *)aP0 + 1) = (void*)&TerrainTypeClass_vftable; /*0x71e1fa*/
+      *((_DWORD *)aP0 + 2) = (void*)&TerrainTypeClass_vftable; /*0x71e201*/
+      *((_DWORD *)aP0 + 3) = (void*)&TerrainTypeClass_vftable; /*0x71e208*/
     }
     VoxelAnimType::LoadAnim(aP0); /*0x71e211*/
     ObjectTypeClass::Load2DArt(aP0); /*0x71e218*/

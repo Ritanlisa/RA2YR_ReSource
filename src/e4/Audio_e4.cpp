@@ -27,6 +27,8 @@
 #include "e4/classes/RefCount_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/BSurface_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/Buffer_e4.hpp"
 
 // 0x402720
@@ -404,7 +406,7 @@ ObjectClass * * Audio::ParseVolume(const char ** a1, ObjectClass * aP2)
 namespace gamemd {
 char ** Audio::SetSoundFileName(char * Source, int a3)
 {
-  *this = 0; /*0x5d5825*/
+  *(_DWORD *)this = 0; /*0x5d5825*/
   this->u32_4 = 0; /*0x5d5827*/
   this->q008 = 0; /*0x5d582a*/
   if ( Audio::IsSoundEnabled() ) /*0x5d582d*/
@@ -612,7 +614,7 @@ int Audio::LoadWAVFiles()
               *(float *)(IDA_HIDWORD(v6) + 644) = (float)(int)v6; /*0x7208ec*/
             }
           }
-          v10[0] = (int)&(void*)(void*)&CCFileClass_vftable; /*0x7208f9*/
+          v10[0] = (int)&CCFileClass_vftable; /*0x7208f9*/
           v12 = 0; /*0x720901*/
           Vector::Clear((int)v11); /*0x72090c*/
           v10[0] = (int)&off_7E1668; /*0x720915*/
@@ -2664,14 +2666,14 @@ rc_ptr * Audio_Create(rc_ptr_base * a1, const char ** a2, int a3)
     else
       v7 = 0; /*0x764b70*/
     ComPtr::Constructor(a1); /*0x764b74*/
-    *a1 = &(void*)(void*)&rc_ptr_WorldDominationTour_Campaign_vftable; /*0x764b7b*/
+    *a1 = (void*)&rc_ptr_WorldDominationTour_Campaign_vftable; /*0x764b7b*/
     ComPtr::Set(a1, (int)v7); /*0x764b82*/
     return a1; /*0x764b87*/
   }
   else
   {
     ComPtr::Constructor(a1); /*0x764b42*/
-    *a1 = &(void*)(void*)&rc_ptr_WorldDominationTour_Campaign_vftable; /*0x764b47*/
+    *a1 = (void*)&rc_ptr_WorldDominationTour_Campaign_vftable; /*0x764b47*/
     return a1; /*0x764b4d*/
   }
 }
@@ -2690,7 +2692,7 @@ rc_ptr * Audio_Set(rc_ptr_base * a1, void * a2)
   else
     WDT = 0; /*0x76abc0*/
   ComPtr::Constructor(a1); /*0x76abc4*/
-  *a1 = &(void*)(void*)&rc_ptr_WDTState_vftable; /*0x76abcb*/
+  *a1 = (void*)&rc_ptr_WDTState_vftable; /*0x76abcb*/
   ComPtr::Set(a1, (int)WDT); /*0x76abd2*/
   return a1; /*0x76abd9*/
 }
@@ -2709,7 +2711,7 @@ rc_ptr * Audio_Create_76BE90(rc_ptr_base * a1, int a2)
   else
     v5 = 0; /*0x76beb0*/
   ComPtr::Constructor(a1); /*0x76beb4*/
-  *a1 = &(void*)(void*)&rc_ptr_WorldDominationTour_CampaignProperties_vftable; /*0x76bebb*/
+  *a1 = (void*)&rc_ptr_WorldDominationTour_CampaignProperties_vftable; /*0x76bebb*/
   ComPtr::Set(a1, (int)v5); /*0x76bec2*/
   return a1; /*0x76bec9*/
 }

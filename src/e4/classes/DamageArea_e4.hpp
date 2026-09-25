@@ -42,7 +42,7 @@ struct DamageArea {
     void* q0F4;  // 0xF4
     unsigned char q0F8;  // 0xF8
     void* q0FC;  // 0xFC
-    void* q100;  // 0x100
+    unsigned int q100;  // 0x100
     unsigned char q104;  // 0x104
     void* q108;  // 0x108
     unsigned char q10C;  // 0x10C
@@ -131,7 +131,6 @@ struct DamageArea {
     unsigned char q64B8;  // 0x64B8
     unsigned int q00C;
     unsigned int u32_38;
-    unsigned char u8_18;
     unsigned int u32_1C2;
     unsigned int u32_42;
     unsigned int u32_44;

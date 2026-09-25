@@ -12,7 +12,10 @@
 #include "e4/classes/TeamClass_e4.hpp"
 #include "e4/classes/VectorClass_flat_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x48B720
 namespace gamemd {
@@ -111,7 +114,7 @@ AbstractClass * * Terrain::PlaceCliffs(int a2, int a3, IUnknown * aP3)
   int v78; // [esp+50h] [ebp-24h] BYREF
   int v79; // [esp+54h] [ebp-20h]
   int v80; // [esp+58h] [ebp-1Ch]
-  void **v81; // [esp+5Ch] [ebp-18h] BYREF
+  void* v81;
   void *Block; // [esp+60h] [ebp-14h]
   int v83; // [esp+64h] [ebp-10h]
   char v84; // [esp+69h] [ebp-Bh]
@@ -135,7 +138,7 @@ AbstractClass * * Terrain::PlaceCliffs(int a2, int a3, IUnknown * aP3)
   VectorClass::CellConstructor(&v81, 0, 0); /*0x568ea5*/
   v7 = g_TerrainSoundTable2; /*0x568eae*/
   v8 = g_TerrainSoundConfig; /*0x568eb4*/
-  v81 = &(void*)(void*)&DynamicVectorClass_Cell_vftable; /*0x568ebd*/
+  v81 = (void*)&DynamicVectorClass_Cell_vftable; /*0x568ebd*/
   v86 = 10; /*0x568ec5*/
   v85 = 0; /*0x568ed4*/
   for ( i = 1; i < 30; ++i ) /*0x568edc*/
@@ -325,7 +328,7 @@ AbstractClass * * Terrain::PlaceCliffs(int a2, int a3, IUnknown * aP3)
   }
   if ( i == 30 ) /*0x569473*/
   {
-    v81 = &(void*)(void*)&VectorClass_Cell_vftable; /*0x569479*/
+    v81 = (void*)&VectorClass_Cell_vftable; /*0x569479*/
     Buffer::Cleanup((int)&v81); /*0x569481*/
   }
   else
@@ -432,7 +435,7 @@ AbstractClass * * Terrain::PlaceCliffs(int a2, int a3, IUnknown * aP3)
       Terrain::ConnectivityGraph(); /*0x56970c*/
     if ( v85 > 0 ) /*0x569717*/
       LayerClass::Update_Pathfinding_2(&v81); /*0x569722*/
-    v81 = &(void*)(void*)&VectorClass_Cell_vftable; /*0x56972b*/
+    v81 = (void*)&VectorClass_Cell_vftable; /*0x56972b*/
     if ( Block ) /*0x569735*/
     {
       if ( v84 ) /*0x56973d*/
@@ -536,7 +539,7 @@ AbstractClass * * Terrain::ConnectivityGraph()
   int v94; // [esp+38h] [ebp-2Ch]
   int v95; // [esp+3Ch] [ebp-28h]
   int v96; // [esp+40h] [ebp-24h]
-  void **v99; // [esp+4Ch] [ebp-18h] BYREF
+  void* v99;
   void *v100; // [esp+50h] [ebp-14h]
   int v101; // [esp+54h] [ebp-10h]
   int v102; // [esp+58h] [ebp-Ch]
@@ -552,7 +555,7 @@ AbstractClass * * Terrain::ConnectivityGraph()
   v100 = 0; /*0x56c531*/
   v101 = 0; /*0x56c535*/
   IDA_LOWORD(v102) = 1; /*0x56c539*/
-  v99 = &(void*)(void*)&DynamicVectorClass_enum_PassabilityType_vftable; /*0x56c542*/
+  v99 = (void*)&DynamicVectorClass_enum_PassabilityType_vftable; /*0x56c542*/
   v103 = 0; /*0x56c54a*/
   v104 = 300; /*0x56c54e*/
   v5 = v2[2]; /*0x56c556*/
@@ -901,7 +904,7 @@ AbstractClass * * Terrain::ConnectivityGraph()
   RA2_OPDEL(v77); /*0x56cb39*/
   RA2_OPDEL(v40); /*0x56cb3f*/
   RA2_OPDEL(v91); /*0x56cb49*/
-  v99 = &(void*)(void*)&VectorClass_enum_PassabilityType_vftable; /*0x56cb5a*/
+  v99 = (void*)&VectorClass_enum_PassabilityType_vftable; /*0x56cb5a*/
   if ( v100 && IDA_BYTE1(v102) ) /*0x56cb6b*/
     RA2_OPDEL(v100); /*0x56cb6e*/
   return v81; /*0x56cb57*/
@@ -1112,7 +1115,7 @@ int Terrain::FloodFillConnectivity(unsigned char * a1, IUnknown * aP2, AbstractC
   v37 = a1 + 4; /*0x56cdec*/
   v82 = 0; /*0x56cdf2*/
   v83 = 0; /*0x56cdf6*/
-  *aP3 = ((v8 - a1) >> 2) - 1; /*0x56cdff*/
+  *(_DWORD *)aP3 = ((v8 - a1) >> 2) - 1; /*0x56cdff*/
   v38 = v8 - 4; /*0x56ce01*/
   v39 = this->q0F8 + this->u32_F4 + 1; /*0x56ce12*/
   v40 = 4 * v39 + 4; /*0x56ce16*/
@@ -1492,7 +1495,7 @@ AbstractClass * * Terrain::ProcessCellModification(IUnknown * aP1)
     IDA_LOBYTE(aP1) = 0; /*0x570386*/
     VectorClass::CellConstructor(&v85, 0, 0); /*0x57038b*/
     v31 = *(_DWORD *)v80; /*0x570390*/
-    v85 = &(void*)(void*)&DynamicVectorClass_Cell_vftable; /*0x570394*/
+    v85 = (void*)&DynamicVectorClass_Cell_vftable; /*0x570394*/
     v90 = 10; /*0x57039c*/
     v89 = 0; /*0x5703a4*/
     while ( 1 ) /*0x5703ba*/
@@ -1640,7 +1643,7 @@ AbstractClass * * Terrain::ProcessCellModification(IUnknown * aP1)
   LABEL_139:
             if ( v89 > 0 ) /*0x570a99*/
               LayerClass::Update_Pathfinding_2((int)&v85); /*0x570aa4*/
-            v85 = &(void*)(void*)&VectorClass_Cell_vftable; /*0x570aad*/
+            v85 = (void*)&VectorClass_Cell_vftable; /*0x570aad*/
             if ( Block ) /*0x570ab7*/
             {
               if ( v88 ) /*0x570abf*/
@@ -1968,7 +1971,7 @@ AbstractClass * * Terrain::RecursiveModify(IUnknown * aP1)
     VectorClass::CellConstructor(&v91, 0, 0); /*0x57386f*/
     v37 = *(_DWORD *)v86; /*0x573874*/
     v38 = *(&this->referenceCount3); /*0x57387f*/
-    v91 = &(void*)(void*)&DynamicVectorClass_Cell_vftable; /*0x573885*/
+    v91 = (void*)&DynamicVectorClass_Cell_vftable; /*0x573885*/
     v96 = 10; /*0x57388f*/
     v95 = 0; /*0x573897*/
     IDA_LOBYTE(aP1) = 0; /*0x57389f*/
@@ -2205,7 +2208,7 @@ AbstractClass * * Terrain::RecursiveModify(IUnknown * aP1)
   LABEL_141:
           if ( v95 > 0 ) /*0x573fbc*/
             LayerClass::Update_Pathfinding_2((int)&v91); /*0x573fc7*/
-          v91 = &(void*)(void*)&VectorClass_Cell_vftable; /*0x573fd0*/
+          v91 = (void*)&VectorClass_Cell_vftable; /*0x573fd0*/
           if ( Block ) /*0x573fda*/
           {
             if ( v94 ) /*0x573fe2*/

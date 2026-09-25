@@ -2,6 +2,8 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/LCWPipe_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x552060
@@ -12,7 +14,7 @@ int LCWPipe::Dtor()
   void *v3; // ecx
 
   v2 = (void *)this->q014; /*0x552063*/
-  *this = (int)&(void*)(void*)&LCWPipe_vftable; /*0x552066*/
+  *(_DWORD *)this = (int)&LCWPipe_vftable; /*0x552066*/
   RA2_OPDEL(v2); /*0x55206d*/
   v3 = (void *)this->q018; /*0x552072*/
   this->q014 = 0; /*0x552075*/

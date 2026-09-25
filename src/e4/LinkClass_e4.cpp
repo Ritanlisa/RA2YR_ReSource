@@ -4,6 +4,8 @@
 #include "e4/classes/LinkClass_e4.hpp"
 #include "e4/classes/LinkedList_flat_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/Math_e4.hpp"
 
 // 0x4E1480
@@ -20,10 +22,10 @@ int LinkClass::Destruct()
 {
   _DWORD *Prev; // edi
   int result; // eax
-  int v4; // edx
-  int v5; // edx
+  LinkClass * v4;
+  LinkClass * v5;
 
-  *this = &(void*)(void*)&LinkClass_vftable; /*0x5565a5*/
+  *(void **)this = (void*)&LinkClass_vftable; /*0x5565a5*/
   Prev = LinkedList::FindPrev(this); /*0x5565b1*/
   result = this->FindNext(); /*0x5565b7*/
   v4 = this->m_Prev; /*0x5565ba*/

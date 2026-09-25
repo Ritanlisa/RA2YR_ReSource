@@ -8,16 +8,16 @@ struct MSEngine {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     void* q004;  // 0x4
-    void* q008;  // 0x8
+    unsigned int q008;  // 0x8
     bool q00A;  // 0xA
     bool q00B;  // 0xB
     unsigned int u32_C;  // 0xC
     void* IsAllocated;  // 0xD
     bool q00E;  // 0xE
-    void* q010;  // 0x10
+    unsigned int q010;  // 0x10
     unsigned int u32_14;  // 0x14
     int Count;  // 0x16
-    unsigned int u32_18;  // 0x18
+    void* q018;  // 0x18
     unsigned int u32_1C;  // 0x1C
     unsigned int u32_20;  // 0x20
     unsigned int q024;  // 0x24
@@ -114,6 +114,7 @@ struct MSEngine {
     unsigned char q644;  // 0x644
     unsigned char q648;  // 0x648
     unsigned char q650;  // 0x650
+    unsigned int Capacity;
     unsigned int IsInitialized;
     unsigned int Items;
     unsigned int q0040;
@@ -125,17 +126,17 @@ struct MSEngine {
     unsigned int q0047;
     unsigned int q0100;
     unsigned int q0108;
+    unsigned int u32_18;
     unsigned int u32_1C2;
-    unsigned int Capacity;
 // --- flat members (END) ---
-    char Release(int a2, char * a3);  // 0x5ACD30
-    char SetCapacity(int a2, char * a3);  // 0x5ACED0
+    char Release(int a2,  char * a3);    // 0x5ACD30
+    char SetCapacity(int a2,  char * a3);    // 0x5ACED0
     void Destructor();  // 0x5CEE60
     unsigned int * Construct();  // 0x5D1AA0
     void Destruct();  // 0x5D1B30
-    int ProcessEvents(MSVQAnim * aP1, int a3);  // 0x5D1DF0
+    int ProcessEvents(MSVQAnim * aP1,  int a3);    // 0x5D1DF0
     void ClearBuffer();  // 0x5AC520
-    unsigned int * Shutdown(unsigned int * a2, int a3);  // 0x5AC570
+    unsigned int * Shutdown(unsigned int * a2,  int a3);    // 0x5AC570
     char AddRef(int a2);  // 0x5ACCC0
     void ddtor();  // 0x5ACE20
     int Init(unsigned int * a2);  // 0x5ACE50

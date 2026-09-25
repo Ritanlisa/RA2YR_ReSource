@@ -21,7 +21,7 @@ struct NeuronClass_25 {
 // --- flat members (END) ---
     int Update(int a2);  // 0x43AB20
     char AddRef(int a2);  // 0x43AB30
-    char Release(int a2, unsigned int * a3);  // 0x43AB70
+    char Release(int a2,  unsigned int * a3);    // 0x43AB70
     void ddtor();  // 0x43AC20
     int Activate(unsigned int * a2);  // 0x43AC50
     VectorClass_flat * QueryInterface(char a2);  // 0x43ACB0

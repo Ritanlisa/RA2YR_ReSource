@@ -14,6 +14,8 @@
 #include "e4/classes/TacticalClass_e4.hpp"
 #include "e4/classes/ScenarioClass_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/AudioStream_e4.hpp"
 
 // 0x484680
@@ -270,10 +272,10 @@ int TacticalMap::Construct()
   this->qDA4 = this->qDA8.GetTicks(); /*0x6d1d35*/
   this->q36B = 0; /*0x6d1d3b*/
   this->qDB0 = 0; /*0x6d1d4e*/
-  *(_DWORD *)this = &(void*)(void*)&Tactical_vftable; /*0x6d1d54*/
-  this->vtable2 = &(void*)(void*)&Tactical_vftable; /*0x6d1d5a*/
-  this->vtable3 = &(void*)(void*)&Tactical_vftable; /*0x6d1d61*/
-  this->vtable4 = &(void*)(void*)&Tactical_vftable; /*0x6d1d68*/
+  *(void **)this = (void*)&Tactical_vftable; /*0x6d1d54*/
+  this->vtable2 = (void*)&Tactical_vftable; /*0x6d1d5a*/
+  this->vtable3 = (void*)&Tactical_vftable; /*0x6d1d61*/
+  this->vtable4 = (void*)&Tactical_vftable; /*0x6d1d68*/
   memset((void *)(&this->q0588), 0, 0xC80u); /*0x6d1d6f*/
   this->q024 = 0; /*0x6d1d77*/
   this->q0A4 = -1; /*0x6d1d7d*/

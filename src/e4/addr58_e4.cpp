@@ -28,6 +28,8 @@
 #include "e4/classes/TeamClass_e4.hpp"
 #include "e4/classes/VectorClass_flat_e4.hpp"
 #include "e4/classes/MouseClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x5835D0
@@ -36,13 +38,13 @@ VectorClass_flat * * FindCliffSeedCell(int * a0, IUnknown * aP1, IUnknown * aP2)
 {
   unsigned int v3; // eax
   int *v4; // eax
-  int *v5; // ecx
+  int * v5;
   int v7; // eax
   unsigned int v8; // eax
-  int *NeighbourContent; // edi
+  unsigned int NeighbourContent;
   _DWORD *v10; // ebp
   _DWORD *v11; // ebx
-  int *v12; // esi
+  unsigned int v12;
   int v13; // ebx
   _WORD *v14; // esi
   double v15; // st7
@@ -52,7 +54,7 @@ VectorClass_flat * * FindCliffSeedCell(int * a0, IUnknown * aP1, IUnknown * aP2)
   double v19; // st7
   double v20; // st7
   int v21; // [esp+18h] [ebp-Ch] BYREF
-  int v22; // [esp+1Ch] [ebp-8h]
+  unsigned int v22;
   unsigned int v23; // [esp+20h] [ebp-4h]
 
   v3 = *aP1 + (aP1[1] << 9); /*0x5835e1*/
@@ -161,7 +163,7 @@ AbstractClass * * E4Recv_583AD0::sub_583AD0(int * a2)
   int v14; // eax
   int *v15; // edi
   int v16; // esi
-  void **v18; // [esp+10h] [ebp-18h] BYREF
+  void* v18;
   void *Block; // [esp+14h] [ebp-14h]
   int v20; // [esp+18h] [ebp-10h]
   char v21; // [esp+1Dh] [ebp-Bh]
@@ -169,7 +171,7 @@ AbstractClass * * E4Recv_583AD0::sub_583AD0(int * a2)
   int v23; // [esp+24h] [ebp-4h]
 
   VectorClass::Construct(&v18, 0, 0); /*0x583ae1*/
-  v18 = &(void*)(void*)&DynamicVectorClass_int_vftable; /*0x583af1*/
+  v18 = (void*)&DynamicVectorClass_int_vftable; /*0x583af1*/
   v23 = 10; /*0x583af9*/
   v22 = 0; /*0x583b05*/
   dword_87F904 = dword_87F8E4 + dword_87F8E8 + 1; /*0x583b0d*/
@@ -240,7 +242,7 @@ AbstractClass * * E4Recv_583AD0::sub_583AD0(int * a2)
   *a2 = v12; /*0x583bfe*/
   if ( v12 < 0 ) /*0x583c00*/
   {
-    v18 = &(void*)(void*)&VectorClass_int_vftable; /*0x583c31*/
+    v18 = (void*)&VectorClass_int_vftable; /*0x583c31*/
     if ( v11 && v21 ) /*0x583c41*/
       RA2_OPDEL(v11); /*0x583c44*/
     return 0; /*0x583c4f*/
@@ -248,7 +250,7 @@ AbstractClass * * E4Recv_583AD0::sub_583AD0(int * a2)
   else
   {
     v16 = *((_DWORD *)v11 + v12); /*0x583c02*/
-    v18 = &(void*)(void*)&VectorClass_int_vftable; /*0x583c06*/
+    v18 = (void*)&VectorClass_int_vftable; /*0x583c06*/
     if ( v11 ) /*0x583c10*/
     {
       if ( v21 ) /*0x583c18*/
@@ -371,19 +373,19 @@ int MarkCliffEdgePassability(int a1)
   _WORD *v5; // ebx
   int i; // edx
   int v7; // esi
-  unsigned int v8; // eax
-  _DWORD *v9; // eax
+  _DWORD * v8;
+  unsigned int v9;
   int v10; // ecx
-  unsigned int v11; // eax
-  _DWORD *v12; // eax
+  _DWORD * v11;
+  unsigned int v12;
   _WORD *v13; // ebx
   int j; // edx
   bool v15; // zf
   unsigned int v16; // eax
-  _DWORD *v17; // eax
+  unsigned int v17;
   int v18; // ecx
   unsigned int v19; // eax
-  _DWORD *v20; // eax
+  unsigned int v20;
   int v21; // [esp+0h] [ebp-34h]
   int v22; // [esp+4h] [ebp-30h]
   int v23; // [esp+8h] [ebp-2Ch]
@@ -501,11 +503,11 @@ namespace gamemd {
 void globalHelper_088570(MouseClass * aP0, VectorClass_flat * aP1, MouseClass * aP2)
 {
   char v3; // cl
-  int v4; // ebp
+  MouseClass * v4;
   int v5; // eax
   _WORD *v6; // edi
   unsigned int v7; // esi
-  _DWORD *v8; // ecx
+  unsigned int v8;
   int v9; // edx
   _DWORD *v10; // esi
   _DWORD *v11; // ecx
@@ -1075,7 +1077,7 @@ AbstractClass * * BuildRandomMapTiles()
             while ( v26 < g_RandomMap_TileData ); /*0x58ee5c*/
           }
           v27 = *(void **)(v25 + 44); /*0x58ee5e*/
-          *(_DWORD *)(v25 + 40) = &(void*)(void*)&VectorClass_Cell_vftable; /*0x58ee61*/
+          *(_DWORD *)(v25 + 40) = (void*)&VectorClass_Cell_vftable; /*0x58ee61*/
           if ( v27 ) /*0x58ee66*/
           {
             if ( *(_BYTE *)(v25 + 53) ) /*0x58ee68*/
@@ -1743,7 +1745,7 @@ void sub_58BC70()
 {
   if ( (byte_ABDFB0 & 1) == 0 ) /*0x58bc7a*/
   {
-    g_RandomMap_BuildObject = (int)&(void*)(void*)&VectorClass_MapRegionClass___vftable; /*0x58bc7e*/
+    g_RandomMap_BuildObject = (int)&VectorClass_MapRegionClass___vftable; /*0x58bc7e*/
     byte_ABDFB0 |= 1u; /*0x58bc91*/
     if ( g_RandomMap_TerrainState ) /*0x58bc97*/
     {
@@ -1867,7 +1869,7 @@ void sub_58C100()
         while ( v2 < g_RandomMap_TileData ); /*0x58c182*/
       }
       v3 = (void *)v1[11]; /*0x58c184*/
-      v1[10] = &(void*)(void*)&VectorClass_Cell_vftable; /*0x58c187*/
+      v1[10] = (void*)&VectorClass_Cell_vftable; /*0x58c187*/
       if ( v3 ) /*0x58c190*/
       {
         if ( *((_BYTE *)v1 + 53) ) /*0x58c192*/

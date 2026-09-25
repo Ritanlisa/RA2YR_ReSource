@@ -74,7 +74,7 @@ struct BlitTransLucent25AlphaZReadWrite_ushort {
     unsigned char q304;  // 0x304
 // --- flat members (END) ---
     BlitTransLucent25AlphaZReadWrite_ushort * Blit(char a2);
-    RLEBlitTransXlat * Constructor_RLEBlitter(char a2);
+    void* Constructor_RLEBlitter(char a2);
     int Blit_RLE_Remap(int arg0, unsigned char * a2, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11);
     int CallBlit0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12);
     int CallBlit0_0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12);

@@ -13,7 +13,7 @@ struct Frame {
     void* q018;  // 0x18
     void* q024;  // 0x24
 // --- flat members (END) ---
-    TechnoTypeClass * * Present(IUnknown * aP1);
+    TechnoTypeClass * * Present(void* aP1);
     int Init();
 };
 

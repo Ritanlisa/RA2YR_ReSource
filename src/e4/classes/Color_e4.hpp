@@ -19,7 +19,7 @@ struct Color {
     unsigned char * Lerp2(int a2, int a3, float a4);
     unsigned char * ScaleRGB(unsigned char * a2, float a3);
     unsigned char Lerp(ObjectClass * aP1, unsigned char * a2);
-    unsigned int * RGBFromFloat(IUnknown * aP1, float a3);
+    unsigned int * RGBFromFloat(void* aP1, float a3);
 };
 
 } // namespace gamemd

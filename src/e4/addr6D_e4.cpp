@@ -18,13 +18,15 @@
 #include "e4/classes/Coord_e4.hpp"
 #include "e4/classes/Math_e4.hpp"
 #include "e4/classes/ConvertClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x6D1130
 namespace gamemd {
 int sub_6D1130()
 {
-  void *v0; // esi
+  unsigned int v0;
 
   dword_B0CCD4 = 240; /*0x6d1149*/
   dword_B0CD00 = g_SidebarConfig; /*0x6d1153*/
@@ -141,7 +143,7 @@ namespace gamemd {
 void * sub_6D0F10()
 {
   int v0; // esi
-  int *v1; // edi
+  unsigned int v1;
   void *result; // eax
   bool v3; // cl
   bool v4; // [esp+Bh] [ebp-101h] BYREF
@@ -373,7 +375,7 @@ void sub_6D1AA0()
 {
   if ( (byte_B0CD58 & 1) == 0 ) /*0x6d1aaa*/
   {
-    dword_B0CE78 = (int)&(void*)(void*)&VectorClass_DirtyAreaStruct_vftable; /*0x6d1aae*/
+    dword_B0CE78 = (int)&VectorClass_DirtyAreaStruct_vftable; /*0x6d1aae*/
     byte_B0CD58 |= 1u; /*0x6d1ac1*/
     if ( g_CraterPool ) /*0x6d1ac7*/
     {
@@ -397,7 +399,7 @@ int sub_6D1B10()
   dword_B0CDF0 = 0; /*0x6d1b1c*/
   byte_B0CDF4 = 1; /*0x6d1b21*/
   byte_B0CDF5 = 0; /*0x6d1b28*/
-  dword_B0CDE8 = (int)&(void*)(void*)&DynamicVectorClass_ShadowControlClass___vftable; /*0x6d1b2d*/
+  dword_B0CDE8 = (int)&DynamicVectorClass_ShadowControlClass___vftable; /*0x6d1b2d*/
   dword_B0CDFC = 10; /*0x6d1b37*/
   dword_B0CDF8 = 0; /*0x6d1b41*/
   return atexit(sub_6D1B50); /*0x6d1b4c*/
@@ -410,7 +412,7 @@ void sub_6D1B50()
 {
   if ( (byte_B0CD59 & 1) == 0 ) /*0x6d1b5a*/
   {
-    dword_B0CDE8 = (int)&(void*)(void*)&VectorClass_ShadowControlClass___vftable; /*0x6d1b5e*/
+    dword_B0CDE8 = (int)&VectorClass_ShadowControlClass___vftable; /*0x6d1b5e*/
     byte_B0CD59 |= 1u; /*0x6d1b71*/
     if ( dword_B0CDEC ) /*0x6d1b77*/
     {
@@ -447,10 +449,10 @@ void sub_6D1BF0()
 namespace gamemd {
 void E4Recv_6D1E80::sub_6D1E80()
 {
-  *this = &(void*)(void*)&Tactical_vftable; /*0x6d1e80*/
-  this->M4 = &(void*)(void*)&Tactical_vftable; /*0x6d1e86*/
-  this->M8 = &(void*)(void*)&Tactical_vftable; /*0x6d1e8d*/
-  this->M12 = &(void*)(void*)&Tactical_vftable; /*0x6d1e94*/
+  *(void **)this = (void*)&Tactical_vftable; /*0x6d1e80*/
+  this->M4 = (void*)&Tactical_vftable; /*0x6d1e86*/
+  this->M8 = (void*)&Tactical_vftable; /*0x6d1e8d*/
+  this->M12 = (void*)&Tactical_vftable; /*0x6d1e94*/
   g_TacticalClass_Instance = 0; /*0x6d1e9b*/
   AbstractClass::DTOR(); /*0x6d1ea5*/
 }
@@ -586,13 +588,13 @@ char ClampCoordMap(AbstractClass * aP0)
     }
     else
     {
-      *aP0 = v2; /*0x6d86e9*/
+      *(_DWORD *)aP0 = v2; /*0x6d86e9*/
       return 1; /*0x6d86ef*/
     }
   }
   else
   {
-    *aP0 = v1; /*0x6d86d9*/
+    *(_DWORD *)aP0 = v1; /*0x6d86d9*/
     return 1; /*0x6d86df*/
   }
 }
@@ -834,7 +836,7 @@ int sub_6DCF80()
 namespace gamemd {
 void sub_6DCFC0()
 {
-  dword_B0E658 = (int)&(void*)(void*)&VectorClass_TActionClass___vftable; /*0x6dcfc8*/
+  dword_B0E658 = (int)&VectorClass_TActionClass___vftable; /*0x6dcfc8*/
   if ( dword_B0E65C && byte_B0E665 ) /*0x6dcfdc*/
   {
     RA2_OPDEL(dword_B0E65C); /*0x6dcfdf*/

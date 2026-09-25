@@ -16,7 +16,7 @@ struct MultiplayerSiege {
     char q018[4];  // 0x18
     unsigned char q01C;  // 0x1C
     unsigned char q020;  // 0x20
-    unsigned int q024;  // 0x24
+    char q024[4];  // 0x24
     unsigned char q028;  // 0x28
     ObjectClass* q02C;  // 0x2C
     ObjectClass* q030;  // 0x30
@@ -30,7 +30,7 @@ struct MultiplayerSiege {
     ObjectClass* q048;  // 0x48
     unsigned char q04C;  // 0x4C
     unsigned char q050;  // 0x50
-    unsigned int q054;  // 0x54
+    char q054[4];  // 0x54
     unsigned char q058;  // 0x58
     unsigned char q060;  // 0x60
     unsigned char q064;  // 0x64

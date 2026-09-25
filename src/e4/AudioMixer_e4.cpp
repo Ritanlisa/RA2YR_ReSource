@@ -7,6 +7,8 @@
 #include "e4/classes/AudioMixer_e4.hpp"
 #include "e4/classes/Timer_e4.hpp"
 #include "e4/classes/Math_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x406650
@@ -25,13 +27,13 @@ int AudioMixer::SetVolume()
 namespace gamemd {
 int AudioMixer::PlaySample()
 {
-  int v2; // eax
-  int v3; // ecx
+  AudioMixer * v2;
+  AudioMixer * v3;
   int v4; // ebx
   int v5; // eax
   int v7; // eax
   unsigned int v8; // edi
-  unsigned int v9; // ebp
+  void * v9;
   unsigned int v11; // eax
   int v12; // ecx
   unsigned int v13; // edi
@@ -53,7 +55,7 @@ int AudioMixer::PlaySample()
     this->AudioMixer_field_04 = v2; /*0x4071dc*/
     v5 = *this; /*0x4071df*/
     IDA_LOBYTE(v5) = *this | 2; /*0x4071e1*/
-    *this = v5; /*0x4071e3*/
+    *(_DWORD *)this = v5; /*0x4071e3*/
     return 1; /*0x4071e6*/
   }
   else
@@ -86,7 +88,7 @@ int AudioMixer::PlaySample()
         v19 = *this; /*0x407273*/
         IDA_LOBYTE(v19) = *this | 2; /*0x407275*/
       }
-      *this = v19; /*0x407277*/
+      *(_DWORD *)this = v19; /*0x407277*/
       return 1; /*0x40727a*/
     }
     else
@@ -104,7 +106,7 @@ int AudioMixer::PlaySample()
         v17 = *this; /*0x40723d*/
         IDA_LOBYTE(v17) = *this | 2; /*0x40723f*/
       }
-      *this = v17; /*0x407241*/
+      *(_DWORD *)this = v17; /*0x407241*/
       return 1; /*0x407244*/
     }
   }

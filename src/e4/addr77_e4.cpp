@@ -46,7 +46,11 @@
 #include "e4/classes/AnimClass_e4.hpp"
 #include "e4/classes/DialogClass_e4.hpp"
 #include "e4/classes/DialogQueue_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/ScoreScreen_e4.hpp"
 
 // 0x770E70
 namespace gamemd {
@@ -71,7 +75,7 @@ void sub_770E70(char **this@<ecx> a1, ObjectClass * aP1, ObjectClass * aP2, Obje
 namespace gamemd {
 void E4Recv_771890::sub_771890()
 {
-  *this = &(void*)(void*)&WorldDominationTour_Voices_Anim_vftable; /*0x771890*/
+  *(void **)this = (void*)&WorldDominationTour_Voices_Anim_vftable; /*0x771890*/
   VtableStub::5CB6C0(unsigned int a2); /*0x771896*/
 }
 }
@@ -148,7 +152,7 @@ int E4Recv_7741C0::FindRegistrySubKey()
 namespace gamemd {
 void ScreenDialogToClient(HWND hWnd, LPRECT lpRect)
 {
-  BOOL result; // eax
+  HWND result;
   BOOL v4; // edi
   LONG v5; // ecx
   LONG top; // eax
@@ -365,9 +369,9 @@ int sub_775B30()
 namespace gamemd {
 int CacheRenderedText(HDC a1, const char * a2, int a3, int a4, int a5)
 {
-  int v5; // eax
+  char * v5;
   int v6; // ebp
-  const void *v8; // esi
+  const unsigned int v8;
   int result; // eax
   int v10; // edx
   int v11; // eax
@@ -752,7 +756,7 @@ int WindowProc_Main(int a1, int a2, HWND hWnd, UINT Msg, signed int wParam, LPAR
         {
           MainWindowProc_Helper_724000(v9); /*0x7777a3*/
           v11[153] = 7; /*0x7777a8*/
-          *v11 = &(void*)(void*)&CCToolTip_vftable; /*0x7777b2*/
+          *v11 = (void*)&CCToolTip_vftable; /*0x7777b2*/
           g_TacticalRender = (int)v11; /*0x7777b8*/
         }
         else
@@ -1091,15 +1095,15 @@ unsigned int * PlayerProfile_Load(unsigned int * a1, const char ** a2)
     v22[2] = 0; /*0x778ac3*/
     v23[1] = 0; /*0x778ac7*/
     v23[2] = 0; /*0x778acb*/
-    v23[0] = &(void*)(void*)&GenericNode_vftable; /*0x778acf*/
+    v23[0] = (void*)&GenericNode_vftable; /*0x778acf*/
     GenericNode::Constructor(v24); /*0x778ad7*/
     LinkedList::Prepend(v23, (int)v24); /*0x778aed*/
-    v22[3] = &(void*)(void*)&List_INIClass_INISection___vftable; /*0x778af9*/
+    v22[3] = (void*)&List_INIClass_INISection___vftable; /*0x778af9*/
     memset(&v24[3], 0, 12); /*0x778b07*/
     v25 = 0; /*0x778b13*/
     v26 = 0; /*0x778b18*/
     v27 = 0; /*0x778b1c*/
-    v22[0] = &(void*)(void*)&INIClass_vftable; /*0x778b20*/
+    v22[0] = (void*)&INIClass_vftable; /*0x778b20*/
     FileStraw::Open(v22, (int)v36, 0); /*0x778b28*/
     CCFileClass::Close(v36); /*0x778b34*/
     String::AssignFromPtr((char **)&v17, a2); /*0x778b3e*/
@@ -1174,7 +1178,7 @@ unsigned int * PlayerProfile_Load(unsigned int * a1, const char ** a2)
         v14 = 0; /*0x778eb7*/
       v15 = v32; /*0x778eb9*/
       ComPtr::Constructor(v32); /*0x778ebf*/
-      *v15 = &(void*)(void*)&rc_ptr_PlayerProfile_vftable; /*0x778ec6*/
+      *v15 = (void*)&rc_ptr_PlayerProfile_vftable; /*0x778ec6*/
       ComPtr::Set(v15, v14); /*0x778ecd*/
       DeleteAndZero::Alt(&v20); /*0x778ed6*/
       DeleteAndZero::Alt(&v21); /*0x778edf*/
@@ -3738,7 +3742,7 @@ unsigned int * E4Recv_771850::sub_771850(int a2)
   this->q010 = Timer::GetTicks(); /*0x771867*/
   this->q018 = 0; /*0x77186e*/
   this->q01C = a2; /*0x771871*/
-  *this = &(void*)(void*)&WorldDominationTour_Voices_Anim_vftable; /*0x771874*/
+  *this = (void*)&WorldDominationTour_Voices_Anim_vftable; /*0x771874*/
   return this; /*0x77187c*/
 }
 } // namespace gamemd
@@ -3751,7 +3755,7 @@ int E4Recv_7719E0::sub_7719E0()
   *((_DWORD *)this + 1) = 0; /*0x7719e6*/
   *((_DWORD *)this + 2) = 0; /*0x7719e9*/
   *(this + 13) = 0; /*0x7719ec*/
-  *(_DWORD *)this = &(void*)(void*)&DynamicVectorClass_unsigned_int_vftable; /*0x7719ef*/
+  *(_DWORD *)this = (void*)&DynamicVectorClass_unsigned_int_vftable; /*0x7719ef*/
   *((_DWORD *)this + 5) = 10; /*0x7719f5*/
   *((_DWORD *)this + 4) = 0; /*0x7719fc*/
   return 0; /*0x7719ff*/
@@ -3765,7 +3769,7 @@ void E4Recv_771A00::sub_771A00()
   void *v2; // eax
 
   v2 = (void *)this->Items; /*0x771a06*/
-  *this = &(void*)(void*)&VectorClass_unsigned_int_vftable; /*0x771a09*/
+  *this = (void*)&VectorClass_unsigned_int_vftable; /*0x771a09*/
   if ( v2 && this->IsAllocated ) /*0x771a13*/
   {
     RA2_OPDEL(v2); /*0x771a19*/
@@ -4067,7 +4071,7 @@ unsigned int * sub_773450(int a1, int a2)
     v4[2] = 0; /*0x773480*/
     *((_BYTE *)v4 + 1036) = 0; /*0x773482*/
     v4[260] = 0; /*0x773488*/
-    *v4 = &(void*)(void*)&WebBrowser_vftable; /*0x77348e*/
+    *v4 = (void*)&WebBrowser_vftable; /*0x77348e*/
     Debug::Log(); /*0x773494*/
     v4[260] = a1; /*0x77349c*/
     Debug::Log(); /*0x7734a7*/
@@ -4987,8 +4991,8 @@ char sub_779730()
   BufferIOFile::Constructor(v8, g_Str_File_wolinfoMD_ini); /*0x779740*/
   if ( File::IsReady(v8, 0) ) /*0x77974c*/
   {
-    v3[0] = &(void*)(void*)&GenericNode_vftable; /*0x779779*/
-    v4[0] = &(void*)(void*)&GenericNode_vftable; /*0x77977d*/
+    v3[0] = (void*)&GenericNode_vftable; /*0x779779*/
+    v4[0] = (void*)&GenericNode_vftable; /*0x77977d*/
     v2[1] = 0; /*0x779785*/
     v2[2] = 0; /*0x77978a*/
     v3[1] = 0; /*0x77978e*/
@@ -4996,12 +5000,12 @@ char sub_779730()
     v4[1] = 0; /*0x779796*/
     v4[2] = 0; /*0x77979a*/
     LinkedList::Prepend(v3, (int)v4); /*0x7797a6*/
-    v2[3] = &(void*)(void*)&List_INIClass_INISection___vftable; /*0x7797af*/
+    v2[3] = (void*)&List_INIClass_INISection___vftable; /*0x7797af*/
     memset(&v4[3], 0, 12); /*0x7797bd*/
     v5 = 0; /*0x7797c9*/
     v6 = 0; /*0x7797cd*/
     v7 = 0; /*0x7797d1*/
-    v2[0] = &(void*)(void*)&INIClass_vftable; /*0x7797d5*/
+    v2[0] = (void*)&INIClass_vftable; /*0x7797d5*/
     FileStraw::Open(v2, (int)v8, 0); /*0x7797dd*/
     CCFileClass::Close(v8); /*0x7797e6*/
     Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x779804*/
@@ -5042,8 +5046,8 @@ int ReadWOLGameOption(INIClass * a1)
     CCFileClass::Close(v9); /*0x779865*/
     CCFileClass::Reopen(v9, g_Str_File_wolinfoMD_ini, 1); /*0x779875*/
   }
-  v4[0] = &(void*)(void*)&GenericNode_vftable; /*0x779883*/
-  v5[0] = &(void*)(void*)&GenericNode_vftable; /*0x779887*/
+  v4[0] = (void*)&GenericNode_vftable; /*0x779883*/
+  v5[0] = (void*)&GenericNode_vftable; /*0x779887*/
   v3[1] = 0; /*0x77988f*/
   v3[2] = 0; /*0x779894*/
   v4[1] = 0; /*0x779898*/
@@ -5051,12 +5055,12 @@ int ReadWOLGameOption(INIClass * a1)
   v5[1] = 0; /*0x7798a0*/
   v5[2] = 0; /*0x7798a4*/
   LinkedList::Prepend(v4, (int)v5); /*0x7798b0*/
-  v3[3] = &(void*)(void*)&List_INIClass_INISection___vftable; /*0x7798b9*/
+  v3[3] = (void*)&List_INIClass_INISection___vftable; /*0x7798b9*/
   memset(&v5[3], 0, 12); /*0x7798c2*/
   v6 = 0; /*0x7798ce*/
   v7 = 0; /*0x7798d2*/
   v8 = 0; /*0x7798d6*/
-  v3[0] = &(void*)(void*)&INIClass_vftable; /*0x7798da*/
+  v3[0] = (void*)&INIClass_vftable; /*0x7798da*/
   if ( File::IsReady(v9, 0) ) /*0x7798e2*/
   {
     FileStraw::Open(v3, (int)v9, 0); /*0x7798f5*/
@@ -5085,8 +5089,8 @@ char sub_779940()
   BufferIOFile::Constructor(v8, g_Str_File_wolinfoMD_ini); /*0x779950*/
   if ( File::IsReady(v8, 0) ) /*0x77995c*/
   {
-    v3[0] = &(void*)(void*)&GenericNode_vftable; /*0x779989*/
-    v4[0] = &(void*)(void*)&GenericNode_vftable; /*0x77998d*/
+    v3[0] = (void*)&GenericNode_vftable; /*0x779989*/
+    v4[0] = (void*)&GenericNode_vftable; /*0x77998d*/
     v2[1] = 0; /*0x779995*/
     v2[2] = 0; /*0x77999a*/
     v3[1] = 0; /*0x77999e*/
@@ -5094,12 +5098,12 @@ char sub_779940()
     v4[1] = 0; /*0x7799a6*/
     v4[2] = 0; /*0x7799aa*/
     LinkedList::Prepend(v3, (int)v4); /*0x7799b6*/
-    v2[3] = &(void*)(void*)&List_INIClass_INISection___vftable; /*0x7799bf*/
+    v2[3] = (void*)&List_INIClass_INISection___vftable; /*0x7799bf*/
     memset(&v4[3], 0, 12); /*0x7799cd*/
     v5 = 0; /*0x7799d9*/
     v6 = 0; /*0x7799dd*/
     v7 = 0; /*0x7799e1*/
-    v2[0] = &(void*)(void*)&INIClass_vftable; /*0x7799e5*/
+    v2[0] = (void*)&INIClass_vftable; /*0x7799e5*/
     FileStraw::Open(v2, (int)v8, 0); /*0x7799ed*/
     CCFileClass::Close(v8); /*0x7799f6*/
     Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x779a14*/
@@ -5140,8 +5144,8 @@ int ReadWOLLobbyOption(INIClass * a1)
     CCFileClass::Close(v9); /*0x779a75*/
     CCFileClass::Reopen(v9, g_Str_File_wolinfoMD_ini, 1); /*0x779a85*/
   }
-  v4[0] = &(void*)(void*)&GenericNode_vftable; /*0x779a93*/
-  v5[0] = &(void*)(void*)&GenericNode_vftable; /*0x779a97*/
+  v4[0] = (void*)&GenericNode_vftable; /*0x779a93*/
+  v5[0] = (void*)&GenericNode_vftable; /*0x779a97*/
   v3[1] = 0; /*0x779a9f*/
   v3[2] = 0; /*0x779aa4*/
   v4[1] = 0; /*0x779aa8*/
@@ -5149,12 +5153,12 @@ int ReadWOLLobbyOption(INIClass * a1)
   v5[1] = 0; /*0x779ab0*/
   v5[2] = 0; /*0x779ab4*/
   LinkedList::Prepend(v4, (int)v5); /*0x779ac0*/
-  v3[3] = &(void*)(void*)&List_INIClass_INISection___vftable; /*0x779ac9*/
+  v3[3] = (void*)&List_INIClass_INISection___vftable; /*0x779ac9*/
   memset(&v5[3], 0, 12); /*0x779ad2*/
   v6 = 0; /*0x779ade*/
   v7 = 0; /*0x779ae2*/
   v8 = 0; /*0x779ae6*/
-  v3[0] = &(void*)(void*)&INIClass_vftable; /*0x779aea*/
+  v3[0] = (void*)&INIClass_vftable; /*0x779aea*/
   if ( File::IsReady(v9, 0) ) /*0x779af2*/
   {
     FileStraw::Open(v3, (int)v9, 0); /*0x779b05*/
@@ -6411,7 +6415,7 @@ namespace gamemd {
 int sub_77D120()
 {
   ComPtr::Constructor(&dword_B75E48); /*0x77d125*/
-  dword_B75E48 = (int)&(void*)(void*)&rc_ptr_PlayerProfile_vftable; /*0x77d12f*/
+  dword_B75E48 = (int)&rc_ptr_PlayerProfile_vftable; /*0x77d12f*/
   return atexit(sub_77D140); /*0x77d13f*/
 }
 } // namespace gamemd
@@ -6420,7 +6424,7 @@ int sub_77D120()
 namespace gamemd {
 void sub_77D140()
 {
-  dword_B75E48 = (int)&(void*)(void*)&rc_ptr_PlayerProfile_vftable; /*0x77d140*/
+  dword_B75E48 = (int)&rc_ptr_PlayerProfile_vftable; /*0x77d140*/
   ComPtr::Release(&dword_B75E48); /*0x77d14f*/
 }
 } // namespace gamemd

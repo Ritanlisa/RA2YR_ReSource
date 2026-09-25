@@ -26,6 +26,6 @@ struct E4Recv_5840C0 {
     unsigned int q5460;  // 0x5460
     unsigned int q5494;  // 0x5494
 // --- flat members (END) ---
-    char CheckMapReachability(CCINIClass * aP1, int a3, int a4, int j);  // 0x5840C0
+    char CheckMapReachability(CCINIClass * aP1,  int a3,  int a4,  int j);    // 0x5840C0
 };
 } // namespace gamemd

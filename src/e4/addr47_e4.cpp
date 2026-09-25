@@ -22,7 +22,10 @@
 #include "e4/classes/INIClass_e4.hpp"
 #include "e4/classes/VectorClass_flat_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/CellStruct_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
 
 // 0x472A80
 namespace gamemd {
@@ -60,7 +63,7 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
   int v17; // eax
   int v18; // eax
   int v19; // eax
-  void **v21; // [esp+2Ch] [ebp-A0h] BYREF
+  void* v21;
   int v22; // [esp+30h] [ebp-9Ch]
   int v23; // [esp+34h] [ebp-98h]
   char v24; // [esp+39h] [ebp-93h]
@@ -72,7 +75,7 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
   if ( INIClass::GetString(a2, a3, a4, &g_INI_DefaultBuffer, String, 128) ) /*0x47710a*/
   {
     DynamicVectorClass::Construct(&v21, 0, 0); /*0x477121*/
-    v21 = &(void*)(void*)&TypeList_int_vftable; /*0x47712a*/
+    v21 = (void*)&TypeList_int_vftable; /*0x47712a*/
     for ( i = strtok(String, Delimiter); i; i = strtok(0, Delimiter) ) /*0x477144*/
     {
       if ( !*i ) /*0x47714a*/
@@ -157,17 +160,17 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
       }
     }
     DynamicVectorClass::Copy(a1, &v21); /*0x4773cb*/
-    *a1 = &(void*)(void*)&TypeList_int_vftable; /*0x4773d9*/
-    v21 = &(void*)(void*)&VectorClass_int_vftable; /*0x4773df*/
+    *(void **)a1 = (void*)&TypeList_int_vftable; /*0x4773d9*/
+    v21 = (void*)&VectorClass_int_vftable; /*0x4773df*/
     VectorClass::Destroy((int)&v21); /*0x4773e3*/
-    a5 = &(void*)(void*)&VectorClass_int_vftable; /*0x4773ef*/
+    a5 = (void*)&VectorClass_int_vftable; /*0x4773ef*/
     VectorClass::Destroy((int, unsigned int a5)&a5); /*0x4773f6*/
     return a1; /*0x4773fb*/
   }
   else
   {
     VectorClass::Copy(a1, &a5); /*0x477413*/
-    a5 = &(void*)(void*)&VectorClass_int_vftable; /*0x47741f*/
+    a5 = (void*)&VectorClass_int_vftable; /*0x47741f*/
     VectorClass::Destroy((int)&a5); /*0x47742a*/
     return a1; /*0x47742f*/
   }
@@ -1302,7 +1305,7 @@ unsigned short * RenderFogOfWarOverlay(int a1, int * a2, unsigned int a3)
 namespace gamemd {
 void E4Recv_470C30::sub_470C30()
 {
-  *this = &(void*)(void*)&CampaignEndScoreClass_vftable; /*0x470c30*/
+  *this = (void*)&CampaignEndScoreClass_vftable; /*0x470c30*/
 }
 } // namespace gamemd
 
@@ -1464,7 +1467,7 @@ int sub_471750()
   dword_89E0F8 = 0; /*0x47175c*/
   byte_89E0FC = 1; /*0x471761*/
   byte_89E0FD = 0; /*0x471768*/
-  dword_89E0F0 = (int)&(void*)(void*)&DynamicVectorClass_CaptureManagerClass___vftable; /*0x47176d*/
+  dword_89E0F0 = (int)&DynamicVectorClass_CaptureManagerClass___vftable; /*0x47176d*/
   dword_89E104 = 10; /*0x471777*/
   dword_89E100 = 0; /*0x471781*/
   return atexit(sub_471790); /*0x47178c*/
@@ -1475,7 +1478,7 @@ int sub_471750()
 namespace gamemd {
 void sub_471790()
 {
-  dword_89E0F0 = (int)&(void*)(void*)&VectorClass_CaptureManagerClass___vftable; /*0x471798*/
+  dword_89E0F0 = (int)&VectorClass_CaptureManagerClass___vftable; /*0x471798*/
   if ( dword_89E0F4 && byte_89E0FD ) /*0x4717ac*/
   {
     RA2_OPDEL(dword_89E0F4); /*0x4717af*/
@@ -1770,7 +1773,7 @@ unsigned int * E4Recv_473750::sub_473750(unsigned int * a2)
   this->q058 = 0; /*0x473767*/
   this->q018 = 0; /*0x47376d*/
   this->u32_1C = -1; /*0x473770*/
-  *this = &(void*)(void*)&CarryoverClass_vftable; /*0x473777*/
+  *this = (void*)&CarryoverClass_vftable; /*0x473777*/
   if ( a2 ) /*0x47377d*/
   {
     v4 = (*(int (__thiscall **)(_DWORD *))(*a2 + 44))(a2); /*0x473783*/
@@ -1977,7 +1980,7 @@ CCINIClass * E4Recv_474540::sub_474540(CCINIClass * aP1, char a3)
   v10 = -1732584194; /*0x4745a5*/
   v11 = 271733878; /*0x4745ad*/
   v12 = -1009589776; /*0x4745b5*/
-  v6[0] = (int)&(void*)(void*)&SHAPipe_vftable; /*0x4745bd*/
+  v6[0] = (int)&SHAPipe_vftable; /*0x4745bd*/
   INIClass::WriteToString((int)v6); /*0x4745c5*/
   SHA1::ComputeThunk(v6, (char *)(&this->nextArrayIndex5)); /*0x4745d2*/
   this->q040 = 1; /*0x4745db*/
@@ -2021,7 +2024,7 @@ int E4Recv_476E20::sub_476E20()
   v7 = -1732584194; /*0x476e54*/
   v8 = 271733878; /*0x476e5c*/
   v9 = -1009589776; /*0x476e64*/
-  v3[0] = (int)&(void*)(void*)&SHAPipe_vftable; /*0x476e6c*/
+  v3[0] = (int)&SHAPipe_vftable; /*0x476e6c*/
   INIClass::WriteToString((int)v3); /*0x476e74*/
   SHA1::ComputeThunk(v3, (char *)(&this->nextArrayIndex5)); /*0x476e81*/
   this->q040 = 1; /*0x476e8a*/

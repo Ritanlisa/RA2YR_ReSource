@@ -122,7 +122,7 @@ struct Sidebar {
     unsigned char u8_53D2;  // 0x53D2
     unsigned char u8_53D3;  // 0x53D3
     void* q53D4;  // 0x53D4
-    void* q53D8;  // 0x53D8
+    unsigned int q53D8;  // 0x53D8
     unsigned char q53DC;  // 0x53DC
     unsigned char q53E0;  // 0x53E0
     unsigned int q5404;  // 0x5404
@@ -151,16 +151,21 @@ struct Sidebar {
     unsigned char q7950;  // 0x7950
     unsigned char q7954;  // 0x7954
     unsigned char q7958;  // 0x7958
+    unsigned int u32_21846;
+    unsigned int u32_21847;
+    unsigned int u32_21848;
+    unsigned int u32_21849;
+    unsigned int q14F50;
 // --- flat members (END) ---
-    int StartSidebarProduction(void * a1, BuildingTypeClass * aP2, HouseClass * aP3, char a5);  // 0x4FA350
-    char Dispatch(IUnknown * aP1, char a3, int a4, char a5);  // 0x5007A0
+    int StartSidebarProduction(void * a1,  BuildingTypeClass * aP2,  HouseClass * aP3,  char a5);    // 0x4FA350
+    int Dispatch(IUnknown * aP1,  char a3,  int a4,  char a5);    // 0x5007A0
     int ScrollSidebarSkipGame();  // 0x533F50
     void CancelSidebarProductionQueue();  // 0x636310
     char RemoveItem(int a2);  // 0x63F040
     int Render(char a2);  // 0x63FB20
     int ActivateTab(IUnknown * aP1);  // 0x6A60A0
     void FlushSidebarTooltip(char a2);  // 0x6A70E0
-    char FindProductionType(FactoryClass * aP1, MouseClass * aP2, int a4);  // 0x6A6140
+    char FindProductionType(FactoryClass * aP1,  MouseClass * aP2,  int a4);    // 0x6A6140
     static double UpdateProductionDisplay(...);  // C2597 interim stub
 };
 } // namespace gamemd

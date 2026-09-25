@@ -6,6 +6,6 @@
 namespace gamemd {
 struct VectorClass_BombClass {
     void* vfptr;  // minimal E2 declaration
-    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x40BC60
+    VectorClass_flat * QueryInterface(unsigned int * Block,  char a2);    // 0x40BC60
 };
 } // namespace gamemd

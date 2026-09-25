@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+
 #include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_5B1D90_e4.hpp"
 #include "e4/classes/E4Recv_5B3910_e4.hpp"
@@ -47,7 +48,13 @@
 #include "e4/classes/CampaignClass_e4.hpp"
 #include "e4/classes/Movie_e4.hpp"
 #include "e4/classes/SideClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
+#include "e4/classes/MouseClass_e4.hpp"
+#include "e4/classes/RandomMap_e4.hpp"
 
 // 0x5B3B10
 namespace gamemd {
@@ -62,7 +69,7 @@ void sub_5B3B10()
   if ( (byte_ABF008 & 1) == 0 ) /*0x5b3b1b*/
   {
     byte_ABF008 |= 1u; /*0x5b3b25*/
-    MixFileClass_MIXes = (int)&(void*)(void*)&GenericList_vftable; /*0x5b3b2b*/
+    MixFileClass_MIXes = (int)&GenericList_vftable; /*0x5b3b2b*/
   LABEL_3:
     v0 = dword_ABEFE0; /*0x5b3b37*/
     while ( dword_ABEFE0 && *(_DWORD *)(dword_ABEFE0 + 4) && *(_DWORD *)(dword_ABEFE0 + 8) && dword_ABEFE0 ) /*0x5b3b4d*/
@@ -83,7 +90,7 @@ void sub_5B3B10()
         }
       }
     }
-    dword_ABEFE8 = (int)&(void*)(void*)&GenericNode_vftable; /*0x5b3b7f*/
+    dword_ABEFE8 = (int)&GenericNode_vftable; /*0x5b3b7f*/
     if ( &dword_ABEFE8 && dword_ABEFEC && g_MixFilePool_Root ) /*0x5b3b98*/
     {
       *(_DWORD *)(g_MixFilePool_Root + 4) = dword_ABEFEC; /*0x5b3b9a*/
@@ -92,7 +99,7 @@ void sub_5B3B10()
       g_MixFilePool_Root = 0; /*0x5b3bb2*/
       dword_ABEFEC = 0; /*0x5b3bb8*/
     }
-    dword_ABEFDC = (int)&(void*)(void*)&GenericNode_vftable; /*0x5b3bc3*/
+    dword_ABEFDC = (int)&GenericNode_vftable; /*0x5b3bc3*/
     if ( &dword_ABEFDC && v0 && dword_ABEFE4 ) /*0x5b3bda*/
     {
       *(_DWORD *)(dword_ABEFE4 + 4) = v0; /*0x5b3bdc*/
@@ -126,13 +133,13 @@ namespace gamemd {
 AbstractClass * * SearchMIXFile(char * Source, IUnknown * aP1)
 {
   int v3; // edi
-  _DWORD *v4; // eax
+  unsigned int v4;
   int v5; // ecx
   bool v6; // cc
   _DWORD *v8; // eax
   _DWORD *v9; // esi
-  int v10; // edi
-  void *v11; // eax
+  void * v10;
+  int v11;
   _DWORD v13[22]; // [esp+20h] [ebp-170h] BYREF
   _BYTE v14[12]; // [esp+78h] [ebp-118h] BYREF
   int v15; // [esp+84h] [ebp-10Ch]
@@ -195,7 +202,7 @@ AbstractClass * * SearchMIXFile(char * Source, IUnknown * aP1)
       v10 = CCFileClass::ReadEntireFile(v13); /*0x5b420a*/
     }
     v9[3] = v10; /*0x5b422a*/
-    v13[0] = &(void*)(void*)&CCFileClass_vftable; /*0x5b4231*/
+    v13[0] = (void*)&CCFileClass_vftable; /*0x5b4231*/
     v15 = 0; /*0x5b4239*/
     Vector::Clear(v14); /*0x5b4240*/
     v13[0] = &off_7E1668; /*0x5b4249*/
@@ -204,7 +211,7 @@ AbstractClass * * SearchMIXFile(char * Source, IUnknown * aP1)
   }
   else
   {
-    v13[0] = &(void*)(void*)&CCFileClass_vftable; /*0x5b4169*/
+    v13[0] = (void*)&CCFileClass_vftable; /*0x5b4169*/
     v15 = 0; /*0x5b4171*/
     Vector::Clear(v14); /*0x5b4178*/
     v13[0] = &off_7E1668; /*0x5b4181*/
@@ -308,7 +315,7 @@ void GameSetupDialogProc(HWND hWnd, unsigned int a2, unsigned int a3, unsigned i
   LRESULT v12; // eax
   HWND v13; // eax
   HWND v14; // edi
-  void *v15; // esi
+  unsigned int v15;
   int v16; // [esp-4h] [ebp-338h] BYREF
   wchar_t v17[22]; // [esp+Ch] [ebp-328h] BYREF
   _DWORD v18[62]; // [esp+38h] [ebp-2FCh] BYREF
@@ -644,10 +651,10 @@ LZOPipe * * __usercall GenerateRandomMapPreview(int a1@<esi> a1)
     v4 = RA2_OPNEW(4 * Buffer); /*0x5bb435*/
     v12[1] = 0; /*0x5bb437*/
     v12[2] = 0; /*0x5bb448*/
-    v12[0] = (int)&(void*)(void*)&Pipe_vftable; /*0x5bb44c*/
+    v12[0] = (int)&Pipe_vftable; /*0x5bb44c*/
     Buffer::Init(v13, (int)v4, 4 * Buffer); /*0x5bb454*/
     v13[3] = 0; /*0x5bb463*/
-    v12[0] = (int)&(void*)(void*)&BufferPipe_vftable; /*0x5bb467*/
+    v12[0] = (int)&BufferPipe_vftable; /*0x5bb467*/
     LZOPipe::Constructor(v16, 0, 0x2000); /*0x5bb46f*/
     Pipe::SetDelegate(v16, (int)v12); /*0x5bb47d*/
     v5 = Compression::Read((int)v16, (int)Palette, Buffer); /*0x5bb499*/
@@ -1258,7 +1265,7 @@ void* * LoadVQMovie(char * Source, int * a2, int a3, int a4, IUnknown * a5, int 
   v15[18] = 0; /*0x5bfb11*/
   v16 = CCFileClass::Construct(v47, Source); /*0x5bfb14*/
   v17 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v16 + 20))(v16, 0); /*0x5bfb1e*/
-  v47[0] = &(void*)(void*)&CCFileClass_vftable; /*0x5bfb2a*/
+  v47[0] = (void*)&CCFileClass_vftable; /*0x5bfb2a*/
   v39 = v17 == 0; /*0x5bfb32*/
   v49 = 0; /*0x5bfb37*/
   Vector::Clear(v48); /*0x5bfb3e*/
@@ -1907,12 +1914,12 @@ namespace gamemd {
 int sub_5B3AC0()
 {
   dword_ABEFE4 = 0; /*0x5b3acc*/
-  dword_ABEFDC = (int)&(void*)(void*)&GenericNode_vftable; /*0x5b3ad2*/
-  dword_ABEFE8 = (int)&(void*)(void*)&GenericNode_vftable; /*0x5b3ad7*/
+  dword_ABEFDC = (int)&GenericNode_vftable; /*0x5b3ad2*/
+  dword_ABEFE8 = (int)&GenericNode_vftable; /*0x5b3ad7*/
   dword_ABEFEC = 0; /*0x5b3adc*/
   g_MixFilePool_Root = (int)&dword_ABEFDC; /*0x5b3ae2*/
   dword_ABEFE0 = (int)&dword_ABEFE8; /*0x5b3aec*/
-  MixFileClass_MIXes = (int)&(void*)(void*)&List_MixFileClass___vftable; /*0x5b3af6*/
+  MixFileClass_MIXes = (int)&List_MixFileClass___vftable; /*0x5b3af6*/
   return atexit(sub_5B3B10); /*0x5b3b06*/
 }
 } // namespace gamemd
@@ -1958,7 +1965,7 @@ void E4Recv_5B3F50::sub_5B3F50()
   int v7; // eax
 
   v2 = (void *)this->CountFiles; /*0x5b3f56*/
-  *(_DWORD *)this = &(void*)(void*)&MixFileClass_vftable; /*0x5b3f59*/
+  *(_DWORD *)this = (void*)&MixFileClass_vftable; /*0x5b3f59*/
   if ( v2 ) /*0x5b3f61*/
     free(v2); /*0x5b3f64*/
   if ( this->MixFileClass_field_24 && this->u8_12 ) /*0x5b3f73*/
@@ -1988,7 +1995,7 @@ void E4Recv_5B3F50::sub_5B3F50()
       }
     }
   }
-  *(_DWORD *)this = &(void*)(void*)&GenericNode_vftable; /*0x5b3fc0*/
+  *(_DWORD *)this = (void*)&GenericNode_vftable; /*0x5b3fc0*/
   if ( this ) /*0x5b3fc6*/
   {
     v6 = this->Previous; /*0x5b3fc8*/
@@ -3353,12 +3360,12 @@ namespace gamemd {
 unsigned char * E4Recv_5BDA40::sub_5BDA40()
 {
   SmallFunc_692290(); /*0x5bda43*/
-  *(_DWORD *)this = &(void*)(void*)&MouseClass_vftable; /*0x5bda4a*/
+  *(_DWORD *)this = (void*)&MouseClass_vftable; /*0x5bda4a*/
   *(this + 21852) = 0; /*0x5bda50*/
   *((_DWORD *)this + 5464) = 0; /*0x5bda56*/
   *((_DWORD *)this + 5465) = 0; /*0x5bda5c*/
   this->u32_5568 = 0; /*0x5bda62*/
-  this->u32_5518 = &(void*)(void*)&MouseClass_vftable; /*0x5bda68*/
+  this->u32_5518 = (void*)&MouseClass_vftable; /*0x5bda68*/
   return this; /*0x5bda74*/
 }
 } // namespace gamemd
@@ -3704,7 +3711,7 @@ int sub_5BF7D0()
   dword_ABF398 = 0; /*0x5bf7dc*/
   byte_ABF39C = 1; /*0x5bf7e1*/
   byte_ABF39D = 0; /*0x5bf7e8*/
-  MovieInfo_Array = (int)&(void*)(void*)&DynamicVectorClass_char_const___vftable; /*0x5bf7ed*/
+  MovieInfo_Array = (int)&DynamicVectorClass_char_const___vftable; /*0x5bf7ed*/
   dword_ABF3A4 = 10; /*0x5bf7f7*/
   dword_ABF3A0 = 0; /*0x5bf801*/
   return atexit(sub_5BF810); /*0x5bf80c*/
@@ -3715,7 +3722,7 @@ int sub_5BF7D0()
 namespace gamemd {
 void sub_5BF810()
 {
-  MovieInfo_Array = (int)&(void*)(void*)&VectorClass_char_const___vftable; /*0x5bf818*/
+  MovieInfo_Array = (int)&VectorClass_char_const___vftable; /*0x5bf818*/
   if ( dword_ABF394 && byte_ABF39D ) /*0x5bf82c*/
   {
     RA2_OPDEL(dword_ABF394); /*0x5bf82f*/

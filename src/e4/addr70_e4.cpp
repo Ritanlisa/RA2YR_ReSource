@@ -18,6 +18,8 @@
 #include "e4/classes/Voxel_e4.hpp"
 #include "e4/classes/Rect_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x7049C0
@@ -355,7 +357,7 @@ void * TechnoClass_RenderVoxel(int * a1, int a2, void * a3, unsigned int * a4, c
   int v36; // [esp-4h] [ebp-140h]
   _DWORD *v37; // [esp+10h] [ebp-12Ch] BYREF
   int v38; // [esp+14h] [ebp-128h]
-  int v39; // [esp+18h] [ebp-124h]
+  unsigned int v39;
   int v40; // [esp+1Ch] [ebp-120h]
   int v41; // [esp+20h] [ebp-11Ch] BYREF
   int v42; // [esp+24h] [ebp-118h]
@@ -568,12 +570,12 @@ AbstractClass * * __usercall SelectTargetByWeight(unsigned int *a1@<ecx> a1, int
       }
     }
     AbstractClassVector::Construct(&v35, 0, 0); /*0x7095e2*/
-    v35 = &(void*)(void*)&DynamicVectorClass_AbstractClass___vftable; /*0x7095f2*/
+    v35 = (void*)&DynamicVectorClass_AbstractClass___vftable; /*0x7095f2*/
     v40 = 10; /*0x7095fa*/
     v39 = 0; /*0x7095fe*/
     VectorClass::Construct(&v29, 0, 0); /*0x709602*/
     v10 = a1[288]; /*0x709607*/
-    v29 = &(void*)(void*)&DynamicVectorClass_int_vftable; /*0x70960d*/
+    v29 = (void*)&DynamicVectorClass_int_vftable; /*0x70960d*/
     v34 = 10; /*0x709617*/
     v33 = 0; /*0x70961b*/
     if ( v10 > 0 ) /*0x70961f*/
@@ -648,7 +650,7 @@ AbstractClass * * __usercall SelectTargetByWeight(unsigned int *a1@<ecx> a1, int
       }
       (*(void (__thiscall **)(_DWORD *))(*a1 + 968))(a1); /*0x70975d*/
     }
-    v29 = &(void*)(void*)&VectorClass_int_vftable; /*0x7097a0*/
+    v29 = (void*)&VectorClass_int_vftable; /*0x7097a0*/
     if ( Block && IDA_BYTE1(v32) ) /*0x7097b0*/
     {
       RA2_OPDEL(Block); /*0x7097b3*/
@@ -656,7 +658,7 @@ AbstractClass * * __usercall SelectTargetByWeight(unsigned int *a1@<ecx> a1, int
     }
     v31 = 0; /*0x7097c3*/
     IDA_BYTE1(v32) = 0; /*0x7097ca*/
-    v35 = &(void*)(void*)&VectorClass_AbstractClass___vftable; /*0x7097cf*/
+    v35 = (void*)&VectorClass_AbstractClass___vftable; /*0x7097cf*/
     if ( v36 ) /*0x7097d8*/
     {
       if ( v38 ) /*0x7097e0*/

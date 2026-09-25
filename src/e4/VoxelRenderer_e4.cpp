@@ -2,6 +2,8 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/VoxelRenderer_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x758EA0
@@ -57,8 +59,8 @@ int VoxelRenderer::InitializeBuffers(int a2, unsigned int * a3, int a4)
 {
   BOOL result; // eax
   bool v6; // al
-  int v8; // esi
-  int v9; // esi
+  unsigned int * v8;
+  unsigned int * v9;
 
   result = 1; /*0x759fb7*/
   switch ( a2 ) /*0x759fc6*/

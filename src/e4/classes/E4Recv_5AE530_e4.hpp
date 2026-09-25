@@ -10,6 +10,6 @@ struct E4Recv_5AE530 {
     unsigned int q1298;  // 0x1298
     unsigned int q4760;  // 0x4760
 // --- flat members (END) ---
-    DWORD sub_5AE530(ObjectClass * aP1, ObjectClass * aP2);  // 0x5AE530
+    DWORD sub_5AE530(ObjectClass * aP1,  ObjectClass * aP2);    // 0x5AE530
 };
 } // namespace gamemd

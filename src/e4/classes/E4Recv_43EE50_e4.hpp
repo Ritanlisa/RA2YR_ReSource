@@ -17,7 +17,7 @@ struct E4Recv_43EE50 {
     unsigned int q2048;  // 0x2048
     unsigned int q5128;  // 0x5128
 // --- flat members (END) ---
-    int Vf1020(int, ...);  // G6 vtable slot dispatch
+    int Vf1020(int,  ...);    // G6 vtable slot dispatch
     int sub_43EE50();  // 0x43EE50
 };
 } // namespace gamemd

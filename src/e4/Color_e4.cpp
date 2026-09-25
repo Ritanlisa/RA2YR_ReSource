@@ -4,15 +4,17 @@
 #include "e4/classes/Math_e4.hpp"
 #include "e4/classes/Color_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x517440
 namespace gamemd {
 int Color::ConvertToRGB(int v9)
 {
-  int v2; // esi
-  int v3; // ebx
-  int v4; // ecx
+  void * v2;
+  void * v3;
+  void * v4;
   unsigned int v5; // eax
   unsigned int v6; // eax
   unsigned int v7; // edx
@@ -48,7 +50,7 @@ unsigned char * Color::Lerp2(int a2, int a3, float a4)
   double v6; // st7
 
   v4 = 1.0 - a4; /*0x661028*/
-  *this = Math::RoundToInt(v4); /*0x66109d*/
+  *(_DWORD *)this = Math::RoundToInt(v4); /*0x66109d*/
   *(this + 1) = Math::RoundToInt(v4); /*0x661105*/
   v6 = v4 * (double)*(unsigned __int8 *)(a2 + 2) + (double)*(unsigned __int8 *)(a3 + 2) * a4; /*0x661124*/
   if ( v6 > 255.0 || v6 >= 0.0 ) /*0x661142*/
@@ -83,7 +85,7 @@ unsigned char * Color::ScaleRGB(unsigned char * a2, float a3)
   {
     v4 = 0.0; /*0x6611c8*/
   }
-  *this = Math::RoundToInt(v4); /*0x6611ee*/
+  *(_DWORD *)this = Math::RoundToInt(v4); /*0x6611ee*/
   v5 = (double)a2[1] * a3; /*0x6611fb*/
   if ( v5 > 255.0 || v5 >= 0.0 ) /*0x66121b*/
   {
@@ -142,7 +144,7 @@ unsigned int * Color::RGBFromFloat(IUnknown * aP1, float a3)
   v5 = Math::RoundToInt(v3); /*0x75f56d*/
   v8 = Math::RoundToInt(v3); /*0x75f582*/
   v6 = Math::RoundToInt(v3); /*0x75f591*/
-  *this = v5; /*0x75f59e*/
+  *(_DWORD *)this = v5; /*0x75f59e*/
   *(this + 1) = v8; /*0x75f5a0*/
   *(this + 2) = v6; /*0x75f5a3*/
   return this; /*0x75f5ac*/

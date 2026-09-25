@@ -46,7 +46,7 @@ struct IPXGlobalConnClass {
     unsigned char q090;  // 0x90
     unsigned char q094;  // 0x94
     unsigned char q098;  // 0x98
-    CampaignScore* q0C4;  // 0xC4
+    void* q0C4;  // 0xC4
     unsigned char q0C8;  // 0xC8
     unsigned int u32_CC;  // 0xCC
     unsigned int u32_D0;  // 0xD0
@@ -168,7 +168,7 @@ struct IPXGlobalConnClass {
     unsigned char qA08;  // 0xA08
     unsigned char qA0C;  // 0xA0C
     unsigned char qA10;  // 0xA10
-    CampaignScore* q1030;  // 0x1030
+    void* q1030;  // 0x1030
     unsigned char q1034;  // 0x1034
     unsigned char q1038;  // 0x1038
     unsigned char q1040;  // 0x1040

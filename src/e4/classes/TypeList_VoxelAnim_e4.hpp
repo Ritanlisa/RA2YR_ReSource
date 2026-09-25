@@ -37,10 +37,10 @@ struct TypeList_VoxelAnim {
     TypeList_flat * Add(char a2);  // 0x67A990
     TypeList_flat * TypeList_vt00(char a2);  // 0x67A9E0
     char AddRef(int a2);  // 0x67AAF0
-    char SetCapacity(int a2, unsigned int * a3);  // 0x67AB30
+    char SetCapacity(int a2,  unsigned int * a3);    // 0x67AB30
     int IndexOf(unsigned int * a2);  // 0x67AC10
     unsigned int PointerToIndex(int a2);  // 0x67AC50
-    char Remove(int a2, unsigned int * a3);  // 0x67ACD0
+    char Remove(int a2,  unsigned int * a3);    // 0x67ACD0
     int GetSize(unsigned int * a2);  // 0x67ADD0
     int TypeList_vt04(unsigned int * a2);  // 0x67B150
     VectorClass_flat * Constructor(char a2);  // 0x67C010

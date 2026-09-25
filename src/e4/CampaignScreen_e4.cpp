@@ -10,6 +10,8 @@
 #include "e4/classes/AbstractTypeClass_e4.hpp"
 #include "e4/classes/CampaignClass_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/Campaign_WorldDominationTour_24_e4.hpp"
 
 // 0x470D30
@@ -56,7 +58,7 @@ void CampaignScreen_Init()
   HWND v42; // eax
   HWND DlgItem; // eax
   int v44; // [esp-Ch] [ebp-174h]
-  const wchar_t *v45; // [esp-8h] [ebp-170h]
+  const unsigned int v45;
   wchar_t *v46; // [esp-8h] [ebp-170h]
   wchar_t *v47; // [esp-8h] [ebp-170h]
   wchar_t *v48; // [esp-8h] [ebp-170h]

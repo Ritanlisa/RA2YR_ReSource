@@ -8,9 +8,9 @@ namespace gamemd {
 struct RulesClass {
 // --- flat members (BEGIN) ---
     char DetailMinFrameRateNormal[4];  // 0x0
-    unsigned int DetailMinFrameRateMovie;  // 0x4
+    void* ;  // 0x4
     unsigned int DetailBufferZoneWidth;  // 0x8
-    char AmmoCrateDamage[4];  // 0xC
+    unsigned int AmmoCrateDamage;  // 0xC
     unsigned char u8_D;  // 0xD
     UnitTypeClass* LargeVisceroid;  // 0x10
     UnitTypeClass* SmallVisceroid;  // 0x14
@@ -504,8 +504,8 @@ struct RulesClass {
     unsigned char q8BA;  // 0x8BA
     char IvanIconFlickerRate[4];  // 0x8BC
     WeaponTypeClass* DeathWeapon;  // 0x8C0
-    SHPStruct* BOMBCURS_SHP;  // 0x8C4
-    SHPStruct* CHRONOSK_SHP;  // 0x8C8
+    void* BOMBCURS_SHP;  // 0x8C4
+    void* CHRONOSK_SHP;  // 0x8C8
     char IronCurtainDuration[4];  // 0x8CC
     char PsychicRevealRadius[4];  // 0x8D0
     char V3Rocket[52];  // 0x8D4
@@ -1081,7 +1081,7 @@ struct RulesClass {
     char ColorAdd[48];  // 0x1814
     unsigned int q1818;  // 0x1818
     unsigned int q181C;  // 0x181C
-    IUnknown * ptr_1820;  // 0x1820
+    void * ptr_1820;  // 0x1820
     unsigned int u32_1824;  // 0x1824
     unsigned int u32_1828;  // 0x1828
     unsigned int u32_182C;  // 0x182C
@@ -2221,6 +2221,7 @@ struct RulesClass {
     unsigned char q6548;  // 0x6548
     unsigned char q6554;  // 0x6554
     unsigned char q6558;  // 0x6558
+    unsigned int DetailMinFrameRateMovie;
 // --- flat members (END) ---
     INIClass * * ReadMovies();
     INIClass * * ReadPowerupsSection();

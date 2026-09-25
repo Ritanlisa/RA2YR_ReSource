@@ -16,7 +16,10 @@
 #include "e4/classes/MouseClass_e4.hpp"
 #include "e4/classes/Factory_e4.hpp"
 #include "e4/classes/TaskForceClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/TacticalClass_e4.hpp"
 
 // 0x42A6D0
 namespace gamemd {
@@ -27,12 +30,12 @@ void * Tactical::ConstructTacticalSurface()
   _DWORD *v4; // eax
   _DWORD *v5; // edi
   void *v6; // eax
-  int v7; // ecx
+  void * v7;
   int v8; // eax
   _DWORD *v9; // eax
   _DWORD *v10; // edi
   void *v11; // eax
-  int v12; // ecx
+  void * v12;
   int v13; // eax
   _DWORD *v14; // eax
   _DWORD *v15; // ecx
@@ -48,7 +51,7 @@ void * Tactical::ConstructTacticalSurface()
   char *v26; // [esp+14h] [ebp-8h]
   int v27; // [esp+18h] [ebp-4h]
 
-  *this = 0; /*0x42a6e0*/
+  *(_DWORD *)this = 0; /*0x42a6e0*/
   this->vtable2 = 0; /*0x42a6e2*/
   this->vtable3 = 0; /*0x42a6e5*/
   this->vtable4 = 1; /*0x42a6e8*/
@@ -70,7 +73,7 @@ void * Tactical::ConstructTacticalSurface()
   do /*0x42a73d*/
   {
     VectorClassUInt::Constructor(0, 0); /*0x42a724*/
-    *v2 = &(void*)(void*)&DynamicVectorClass_unsigned_int_vftable; /*0x42a729*/
+    *(void **)v2 = (void*)&DynamicVectorClass_unsigned_int_vftable; /*0x42a729*/
     v2[5] = 10; /*0x42a72f*/
     v2[4] = 0; /*0x42a736*/
     v2 += 6; /*0x42a739*/
@@ -295,10 +298,10 @@ ScenarioClass * * Tactical::CalculateTacticalLighting(int * a1, IUnknown * aP2, 
   if ( !*(&this->u32_48) && !*(&this->u32_49) || *(&this->u32_48) == 0xFFFF && *(&this->u32_49) == 0xFFFF ) /*0x4841a9*/
   {
     *a1 = 0x10000; /*0x48462e*/
-    *aP2 = 0; /*0x484638*/
+    *(_DWORD *)aP2 = 0; /*0x484638*/
     *a3 = 1000; /*0x484642*/
     *a4 = 1000; /*0x48464c*/
-    *aP5 = 1000; /*0x484656*/
+    *(_DWORD *)aP5 = 1000; /*0x484656*/
     *a6 = 1000; /*0x484660*/
     *(_DWORD *)a8 = 1000; /*0x484666*/
     *(_DWORD *)IDA_HIDWORD(a8) = 1000; /*0x48466c*/
@@ -357,7 +360,7 @@ ScenarioClass * * Tactical::CalculateTacticalLighting(int * a1, IUnknown * aP2, 
   }
   v21 = *aP2 + *v9; /*0x48446b*/
   *v9 = v21; /*0x48446f*/
-  *aP5 = v21; /*0x484471*/
+  *(_DWORD *)aP5 = v21; /*0x484471*/
   if ( !LightningStorm::IsActive() ) /*0x48447a*/
   {
     if ( PsyDom::IsActive() ) /*0x4844c4*/
@@ -392,7 +395,7 @@ ScenarioClass * * Tactical::CalculateTacticalLighting(int * a1, IUnknown * aP2, 
       - *((_DWORD *)g_ScenarioClass_Instance + 3414)
       + *aP5;
   LABEL_21:
-  *aP5 = v22; /*0x4845a0*/
+  *(_DWORD *)aP5 = v22; /*0x4845a0*/
   v25 = *v9; /*0x4845a2*/
   if ( *v9 >= 2000 ) /*0x4845a9*/
     v25 = 2000; /*0x4845ab*/
@@ -400,14 +403,14 @@ ScenarioClass * * Tactical::CalculateTacticalLighting(int * a1, IUnknown * aP2, 
   *a4 = v25; /*0x4845c2*/
   Map_Calc(a6, a8, IDA_HIDWORD(a8)); /*0x4845cf*/
   v26 = (*a1 * *aP5) >> 16; /*0x4845da*/
-  *aP5 = v26; /*0x4845e2*/
+  *(_DWORD *)aP5 = v26; /*0x4845e2*/
   if ( v26 >= 2000 ) /*0x4845e4*/
     v26 = 2000; /*0x4845e6*/
-  *aP5 = v26; /*0x4845eb*/
+  *(_DWORD *)aP5 = v26; /*0x4845eb*/
   *v9 = *v9 <= 0 ? 0 : *v9;
   *a4 = *a4 <= 0 ? 0 : *a4;
   result = *aP5 <= 0 ? 0 : *aP5;
-  *aP5 = result; /*0x484615*/
+  *(_DWORD *)aP5 = result; /*0x484615*/
   return result; /*0x48461a*/
 }
 }
@@ -428,7 +431,7 @@ unsigned int * Tactical::MouseMove(MouseClass * aP1, MouseClass * aP2)
   _DWORD *v14; // eax
   int v15; // ecx
   int v16; // eax
-  int v17; // ecx
+  _DWORD * v17;
   __int16 v19; // dx
   _WORD *v20; // eax
   __int16 v21; // dx
@@ -540,7 +543,7 @@ unsigned int * Tactical::MouseMove(MouseClass * aP1, MouseClass * aP2)
                                   *(_DWORD *)(this + 4524),
                                   *(_DWORD *)(this + 4476),
                                   &aP2);
-      *aP1 = v22; /*0x4a94e6*/
+      *(_DWORD *)aP1 = v22; /*0x4a94e6*/
       return aP1; /*0x4a94e0*/
     }
   }
@@ -548,7 +551,7 @@ unsigned int * Tactical::MouseMove(MouseClass * aP1, MouseClass * aP2)
   {
     v17 = *(_DWORD *)(this + 4468); /*0x4a92bf*/
     *(_DWORD *)(this + 4468) = v3; /*0x4a92c9*/
-    *aP1 = v17; /*0x4a92d2*/
+    *(_DWORD *)aP1 = v17; /*0x4a92d2*/
     return aP1; /*0x4a92c5*/
   }
 }
@@ -571,7 +574,7 @@ int Tactical::IsCellVisible(IUnknown * aP1)
 namespace gamemd {
 void * Tactical::GetCellData()
 {
-  return (char *)g_MapTileArray + 80 * *this + 80 * g_MapCellWidth * *(this + 1); /*0x58c2be*/
+  return (char *, unsigned int a1)g_MapTileArray + 80 * *this + 80 * g_MapCellWidth * *(this + 1); /*0x58c2be*/
 }
 }
 // 0x640A40
@@ -1956,10 +1959,10 @@ int Tactical::StubReturn3608()
 namespace gamemd {
 Tactical * Tactical::UpdateView(char a2)
 {
-  *this = &(void*)(void*)&Tactical_vftable; /*0x6dc473*/
-  this->vtable2 = &(void*)(void*)&Tactical_vftable; /*0x6dc479*/
-  this->vtable3 = &(void*)(void*)&Tactical_vftable; /*0x6dc480*/
-  *(this + 3) = &(void*)(void*)&Tactical_vftable; /*0x6dc487*/
+  *this = (void*)&Tactical_vftable; /*0x6dc473*/
+  this->vtable2 = (void*)&Tactical_vftable; /*0x6dc479*/
+  this->vtable3 = (void*)&Tactical_vftable; /*0x6dc480*/
+  *(this + 3) = (void*)&Tactical_vftable; /*0x6dc487*/
   g_TacticalClass_Instance = 0; /*0x6dc48e*/
   AbstractClass::DTOR(); /*0x6dc498*/
   if ( (a2 & 1) != 0 ) /*0x6dc4a2*/
@@ -2185,7 +2188,7 @@ VectorClass_flat * Tactical_42::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->vtable2; /*0x6e4ab3*/
-  *this = &(void*)(void*)&VectorClass_TActionClass___vftable; /*0x6e4ab6*/
+  *this = (void*)&VectorClass_TActionClass___vftable; /*0x6e4ab6*/
   if ( v3 && this->u32_34 ) /*0x6e4ac0*/
   {
     RA2_OPDEL(v3); /*0x6e4ac8*/

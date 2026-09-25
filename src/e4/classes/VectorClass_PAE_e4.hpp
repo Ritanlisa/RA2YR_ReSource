@@ -30,10 +30,10 @@ struct VectorClass_PAE {
 // --- flat members (END) ---
     int Count(int a2);  // 0x7B4310
     char Get(int a2);  // 0x7B4320
-    char Release(int a2, unsigned int * a3);  // 0x7B4360
+    char Release(int a2,  unsigned int * a3);    // 0x7B4360
     void Set();  // 0x7B4410
     int GetSize(unsigned int * a2);  // 0x7B4440
     unsigned int GetCapacity(int a2);  // 0x7B4480
-    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x7B4580
+    VectorClass_flat * QueryInterface(unsigned int * Block,  char a2);    // 0x7B4580
 };
 } // namespace gamemd

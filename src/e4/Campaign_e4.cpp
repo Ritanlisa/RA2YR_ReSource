@@ -10,6 +10,8 @@
 #include "e4/classes/ComPtr_e4.hpp"
 #include "e4/classes/Screen_e4.hpp"
 #include "e4/classes/VectorCursor_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x765840
@@ -41,7 +43,7 @@ int Campaign_WorldDominationTour_16::Release(int a2, unsigned int * a3)
       do /*0x7658c7*/
       {
         ComPtr::Constructor(v6); /*0x7658b8*/
-        *v6 = &(void*)(void*)&rc_ptr_WorldDominationTour_Conflict_vftable; /*0x7658bd*/
+        *(void **)v6 = (void*)&rc_ptr_WorldDominationTour_Conflict_vftable; /*0x7658bd*/
         v6 += 2; /*0x7658c3*/
         --a2; /*0x7658c6*/
       }
@@ -66,7 +68,7 @@ int Campaign_WorldDominationTour_16::Release(int a2, unsigned int * a3)
       do /*0x765897*/
       {
         ComPtr::Constructor(v6); /*0x765888*/
-        *v6 = &(void*)(void*)&rc_ptr_WorldDominationTour_Conflict_vftable; /*0x76588d*/
+        *(void **)v6 = (void*)&rc_ptr_WorldDominationTour_Conflict_vftable; /*0x76588d*/
         v6 += 2; /*0x765893*/
         --a2; /*0x765896*/
       }
@@ -166,7 +168,7 @@ unsigned int * Campaign_WorldDominationTour_16::Seek(unsigned int * a2, int a3)
 
   v3 = this->Items + 8 * a3; /*0x7656dd*/
   ComPtr::Constructor(a2); /*0x7656e2*/
-  *a2 = &(void*)(void*)&rc_ptr_WorldDominationTour_Conflict_vftable; /*0x7656e7*/
+  *(void **)a2 = (void*)&rc_ptr_WorldDominationTour_Conflict_vftable; /*0x7656e7*/
   ComPtr::Set(a2, v3->q010); /*0x7656f3*/
   return a2; /*0x7656fa*/
 }
@@ -176,7 +178,7 @@ unsigned int * Campaign_WorldDominationTour_16::Seek(unsigned int * a2, int a3)
 namespace gamemd {
 rc_ptr * Campaign_WorldDominationTour_16::Constructor(char a2)
 {
-  *this = &(void*)(void*)&rc_ptr_WorldDominationTour_CampaignProperties_vftable; /*0x765713*/
+  *(void ** *)this = (void*)&rc_ptr_WorldDominationTour_CampaignProperties_vftable; /*0x765713*/
   ComPtr::Release(); /*0x765719*/
   if ( (a2 & 1) != 0 ) /*0x765723*/
     RA2_OPDEL(); /*0x765726*/
@@ -188,7 +190,7 @@ rc_ptr * Campaign_WorldDominationTour_16::Constructor(char a2)
 namespace gamemd {
 rc_ptr * Campaign_WorldDominationTour_16::Constructor_0(char a2)
 {
-  *this = &(void*)(void*)&rc_ptr_WorldDominationTour_History_vftable; /*0x765743*/
+  *(void ** *)this = (void*)&rc_ptr_WorldDominationTour_History_vftable; /*0x765743*/
   ComPtr::Release(); /*0x765749*/
   if ( (a2 & 1) != 0 ) /*0x765753*/
     RA2_OPDEL(); /*0x765756*/
@@ -200,7 +202,7 @@ rc_ptr * Campaign_WorldDominationTour_16::Constructor_0(char a2)
 namespace gamemd {
 VectorCursor * Campaign_WorldDominationTour_16::Constructor_1(char a2)
 {
-  *this = &(void*)(void*)&VectorCursor_rc_ptr_WorldDominationTour_Conflict_DynamicVectorClass_rc_ptr_WorldDominationTour_Conflict_vftable; /*0x765779*/
+  *(void **)this = (void*)&VectorCursor_rc_ptr_WorldDominationTour_Conflict_DynamicVectorClass_rc_ptr_WorldDominationTour_Conflict_vftable; /*0x765779*/
   if ( (a2 & 1) != 0 ) /*0x76577f*/
     RA2_OPDEL(); /*0x765782*/
   return this; /*0x76578c*/
@@ -294,7 +296,7 @@ VectorClass_flat * Campaign_WorldDominationTour_16::QueryInterface(char a2)
   void (__thiscall ***v3)(_DWORD, int); // ecx
 
   v3 = (void (__thiscall ***)(_DWORD, int))*(this + 1); /*0x765b63*/
-  *this = &(void*)(void*)&VectorClass_rc_ptr_WorldDominationTour_Conflict_vftable; /*0x765b66*/
+  *(void **)this = (void*)&VectorClass_rc_ptr_WorldDominationTour_Conflict_vftable; /*0x765b66*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x765b70*/
   {
     (**v3)(v3, 3); /*0x765b7f*/

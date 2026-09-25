@@ -12,7 +12,10 @@
 #include "e4/classes/TypeList_flat_e4.hpp"
 #include "e4/classes/Type_e4.hpp"
 #include "e4/classes/VectorClass_flat_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_alias_e4.hpp"
+#include "e4/classes/Count_e4.hpp"
 
 // 0x459F90
 namespace gamemd {
@@ -55,7 +58,7 @@ int TypeList_Particle::GetIndex(int a2)
 namespace gamemd {
 char TypeList_Particle::AddRef(int a2)
 {
-  int v2; // esi
+  void * v2;
   int v3; // edx
   _DWORD *v4; // eax
   int v5; // ecx
@@ -85,7 +88,7 @@ namespace gamemd {
 char TypeList_Particle::Remove(int a2, unsigned int * a3)
 {
   _DWORD *v4; // edi
-  int v6; // ecx
+  unsigned int v6;
   int i; // eax
 
   if ( a2 ) /*0x45a1cc*/
@@ -134,7 +137,7 @@ namespace gamemd {
 int TypeList_Particle::GetSize(unsigned int * a2)
 {
   int result; // eax
-  int v3; // edx
+  void * v3;
   _DWORD *i; // ecx
 
   if ( !this->IsInitialized ) /*0x45a2a0*/
@@ -214,7 +217,7 @@ char TypeList_cptr_ParticleSystemTypeClass::Add(int a2, unsigned int * a3)
 namespace gamemd {
 int TypeList_cptr_ParticleSystemTypeClass::Remove(unsigned int * a2)
 {
-  int v2; // edx
+  void * v2;
   int result; // eax
   _DWORD *i; // ecx
 
@@ -237,7 +240,7 @@ VectorClass_flat * TypeList_Particle::Add(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x45a9c3*/
-  *this = &(void*)(void*)&VectorClass_ParticleSystemTypeClass_const___vftable; /*0x45a9c6*/
+  *(void **)this = (void*)&VectorClass_ParticleSystemTypeClass_const___vftable; /*0x45a9c6*/
   if ( v3 && this->IsAllocated ) /*0x45a9d0*/
   {
     RA2_OPDEL(v3); /*0x45a9d8*/
@@ -288,7 +291,7 @@ TypeList_flat * TypeList_flat::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->u32_4; /*0x477993*/
-  *this = &(void*)(void*)&VectorClass_int_vftable; /*0x477996*/
+  *this = (void*)&VectorClass_int_vftable; /*0x477996*/
   if ( v3 && this->u32_D ) /*0x4779a0*/
   {
     RA2_OPDEL(v3); /*0x4779a8*/
@@ -322,7 +325,7 @@ int TypeList_flat::GetSize(unsigned int * a2)
 namespace gamemd {
 char TypeList_TechnoType::AddRef(int a2)
 {
-  int v2; // esi
+  void * v2;
   int v3; // edx
   _DWORD *v4; // eax
   int v5; // ecx
@@ -352,7 +355,7 @@ namespace gamemd {
 char TypeList_TechnoType::Remove(int a2, unsigned int * a3)
 {
   _DWORD *v4; // edi
-  int v6; // ecx
+  unsigned int v6;
   int i; // eax
 
   if ( a2 ) /*0x47800c*/
@@ -415,7 +418,7 @@ namespace gamemd {
 int TypeList_TechnoType::GetSize(unsigned int * a2)
 {
   int result; // eax
-  int v3; // edx
+  void * v3;
   _DWORD *i; // ecx
 
   if ( !this->IsInitialized ) /*0x4780e0*/
@@ -451,7 +454,7 @@ VectorClass_flat * TypeList_TechnoType::Add(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x478683*/
-  *this = &(void*)(void*)&VectorClass_TechnoTypeClass___vftable; /*0x478686*/
+  *(void **)this = (void*)&VectorClass_TechnoTypeClass___vftable; /*0x478686*/
   if ( v3 && this->IsAllocated ) /*0x478690*/
   {
     RA2_OPDEL(v3); /*0x478698*/
@@ -508,7 +511,7 @@ unsigned int * TypeList_flat::TechnoTypeConstructor(int a2, int a3)
   this->u32_8 = a2; /*0x47879e*/
   this->u32_C = 1; /*0x4787a1*/
   this->u32_D = 0; /*0x4787a5*/
-  *this = &(void*)(void*)&VectorClass_TechnoTypeClass___vftable; /*0x4787a8*/
+  *this = (void*)&VectorClass_TechnoTypeClass___vftable; /*0x4787a8*/
   if ( a2 ) /*0x4787ae*/
   {
     if ( a3 ) /*0x4787b6*/
@@ -565,7 +568,7 @@ TypeList_flat * TypeList_Infantry::Add(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x5129f3*/
-  *this = &(void*)(void*)&VectorClass_InfantryTypeClass_const___vftable; /*0x5129f6*/
+  *(void **)this = (void*)&VectorClass_InfantryTypeClass_const___vftable; /*0x5129f6*/
   if ( v3 && this->IsAllocated ) /*0x512a00*/
   {
     RA2_OPDEL(v3); /*0x512a08*/
@@ -583,7 +586,7 @@ TypeList_flat * TypeList_Infantry::Add(char a2)
 namespace gamemd {
 char TypeList_Infantry::AddRef(int a2)
 {
-  int v2; // esi
+  void * v2;
   int v3; // edx
   _DWORD *v4; // eax
   int v5; // ecx
@@ -615,7 +618,7 @@ DynamicVector * TypeList_Infantry::Constructor(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x512e23*/
-  *this = &(void*)(void*)&VectorClass_InfantryTypeClass_const___vftable; /*0x512e26*/
+  *(void **)this = (void*)&VectorClass_InfantryTypeClass_const___vftable; /*0x512e26*/
   if ( v3 && this->IsAllocated ) /*0x512e30*/
   {
     RA2_OPDEL(v3); /*0x512e38*/
@@ -634,7 +637,7 @@ namespace gamemd {
 char TypeList_Infantry::Remove(int a2, unsigned int * a3)
 {
   _DWORD *v4; // edi
-  int v5; // ecx
+  void * v5;
   int i; // eax
   int v7; // eax
 
@@ -704,7 +707,7 @@ DynamicVector * TypeList_Infantry::Constructor_0(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x5131f3*/
-  *this = &(void*)(void*)&VectorClass_UnitTypeClass_const___vftable; /*0x5131f6*/
+  *this = (void*)&VectorClass_UnitTypeClass_const___vftable; /*0x5131f6*/
   if ( v3 && this->IsAllocated ) /*0x513200*/
   {
     RA2_OPDEL(v3); /*0x513208*/
@@ -725,7 +728,7 @@ DynamicVector * TypeList_Infantry::Constructor_1(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x5135c3*/
-  *this = &(void*)(void*)&VectorClass_AircraftTypeClass_const___vftable; /*0x5135c6*/
+  *this = (void*)&VectorClass_AircraftTypeClass_const___vftable; /*0x5135c6*/
   if ( v3 && this->IsAllocated ) /*0x5135d0*/
   {
     RA2_OPDEL(v3); /*0x5135d8*/
@@ -751,7 +754,7 @@ unsigned int * TypeList_flat::CopyConstructor(VectorClass_flat * aP1)
   this->u32_8 = 0; /*0x513750*/
   this->u32_C = 1; /*0x513753*/
   this->u32_D = 0; /*0x513757*/
-  *this = &(void*)(void*)&VectorClass_UnitTypeClass_const___vftable; /*0x51375a*/
+  *this = (void*)&VectorClass_UnitTypeClass_const___vftable; /*0x51375a*/
   if ( this != aP1 ) /*0x513760*/
   {
     Vector::Destructor(); /*0x513762*/
@@ -785,7 +788,7 @@ unsigned int * TypeList_flat::CopyConstructor(VectorClass_flat * aP1)
   }
   this->u32_10 = aP1[4]; /*0x5137b1*/
   this->u32_14 = aP1[5]; /*0x5137b7*/
-  *this = &(void*)(void*)&TypeList_UnitTypeClass_const___vftable; /*0x5137ba*/
+  *this = (void*)&TypeList_UnitTypeClass_const___vftable; /*0x5137ba*/
   return this; /*0x5137c2*/
 }
 // 0x5255F0
@@ -800,7 +803,7 @@ unsigned int * TypeList_flat::AnimTypeCopy(VectorClass_flat * aP1)
   this->u32_8 = 0; /*0x525600*/
   this->u32_C = 1; /*0x525603*/
   this->u32_D = 0; /*0x525607*/
-  *this = &(void*)(void*)&VectorClass_AnimTypeClass_const___vftable; /*0x52560a*/
+  *this = (void*)&VectorClass_AnimTypeClass_const___vftable; /*0x52560a*/
   if ( this != aP1 ) /*0x525610*/
   {
     DynamicVectorClass::Destroy_Alt(); /*0x525612*/
@@ -834,7 +837,7 @@ unsigned int * TypeList_flat::AnimTypeCopy(VectorClass_flat * aP1)
   }
   this->u32_10 = aP1[4]; /*0x525661*/
   this->u32_14 = aP1[5]; /*0x525667*/
-  *this = &(void*)(void*)&TypeList_AnimTypeClass_const___vftable; /*0x52566a*/
+  *this = (void*)&TypeList_AnimTypeClass_const___vftable; /*0x52566a*/
   return this; /*0x525672*/
 }
 // 0x5AC400
@@ -846,7 +849,7 @@ CCINIClass * TypeList_flat::BuildingTypeConstructor()
   this->u32_D = 0; /*0x5ac40e*/
   this->u32_14 = 10; /*0x5ac411*/
   this->u32_10 = 0; /*0x5ac418*/
-  *this = &(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x5ac41b*/
+  *this = (void*)&TypeList_BuildingTypeClass_const___vftable; /*0x5ac41b*/
   return this; /*0x5ac421*/
 }
 // 0x5AC650
@@ -856,7 +859,7 @@ TypeList_flat * TypeList_BuildingType::Add(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x5ac653*/
-  *this = &(void*)(void*)&VectorClass_BuildingTypeClass_const___vftable; /*0x5ac656*/
+  *this = (void*)&VectorClass_BuildingTypeClass_const___vftable; /*0x5ac656*/
   if ( v3 && this->IsAllocated ) /*0x5ac660*/
   {
     RA2_OPDEL(v3); /*0x5ac668*/
@@ -882,7 +885,7 @@ unsigned int * TypeList_flat::BuildingTypeCopy(VectorClass_flat * aP1)
   this->u32_8 = 0; /*0x5ad670*/
   this->u32_C = 1; /*0x5ad673*/
   this->u32_D = 0; /*0x5ad677*/
-  *this = &(void*)(void*)&VectorClass_BuildingTypeClass_const___vftable; /*0x5ad67a*/
+  *this = (void*)&VectorClass_BuildingTypeClass_const___vftable; /*0x5ad67a*/
   if ( this != aP1 ) /*0x5ad680*/
   {
     DynamicVectorClass::Destroy(); /*0x5ad682*/
@@ -916,7 +919,7 @@ unsigned int * TypeList_flat::BuildingTypeCopy(VectorClass_flat * aP1)
   }
   this->u32_10 = aP1[4]; /*0x5ad6d1*/
   this->u32_14 = aP1[5]; /*0x5ad6d7*/
-  *this = &(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x5ad6da*/
+  *this = (void*)&TypeList_BuildingTypeClass_const___vftable; /*0x5ad6da*/
   return this; /*0x5ad6e2*/
 }
 // 0x67A030
@@ -925,7 +928,7 @@ void TypeList_flat::InfantryCleanup()
   void *v2; // eax
 
   v2 = (void *)this->u32_4; /*0x67a036*/
-  *this = &(void*)(void*)&VectorClass_InfantryTypeClass_const___vftable; /*0x67a039*/
+  *this = (void*)&VectorClass_InfantryTypeClass_const___vftable; /*0x67a039*/
   if ( v2 && this->u32_D ) /*0x67a043*/
   {
     RA2_OPDEL(v2); /*0x67a049*/
@@ -1075,7 +1078,7 @@ CCINIClass * TypeList_flat::VoxelAnimConstructor()
   this->u32_D = 0; /*0x67a39e*/
   this->u32_14 = 10; /*0x67a3a1*/
   this->u32_10 = 0; /*0x67a3a8*/
-  *this = &(void*)(void*)&TypeList_VoxelAnimTypeClass_const___vftable; /*0x67a3ab*/
+  *this = (void*)&TypeList_VoxelAnimTypeClass_const___vftable; /*0x67a3ab*/
   return this; /*0x67a3b1*/
 }
 // 0x67A410
@@ -1124,7 +1127,7 @@ DynamicVector * TypeList_flat::Construct()
   this->u32_D = 0; /*0x67a4fe*/
   this->u32_14 = 10; /*0x67a501*/
   this->u32_10 = 0; /*0x67a508*/
-  *this = &(void*)(void*)&TypeList_int_vftable; /*0x67a50b*/
+  *this = (void*)&TypeList_int_vftable; /*0x67a50b*/
   return this; /*0x67a511*/
 }
 // 0x67A600
@@ -1136,7 +1139,7 @@ CCINIClass * TypeList_flat::ConstructSmudge()
   this->u32_D = 0; /*0x67a60e*/
   this->u32_14 = 10; /*0x67a611*/
   this->u32_10 = 0; /*0x67a618*/
-  *this = &(void*)(void*)&TypeList_SmudgeTypeClass_const___vftable; /*0x67a61b*/
+  *this = (void*)&TypeList_SmudgeTypeClass_const___vftable; /*0x67a61b*/
   return this; /*0x67a621*/
 }
 // 0x67A680
@@ -1182,7 +1185,7 @@ unsigned int * TypeList_flat::InfantryConstructor()
   this->u32_D = 0; /*0x67a82e*/
   this->u32_14 = 10; /*0x67a831*/
   this->u32_10 = 0; /*0x67a838*/
-  *this = &(void*)(void*)&TypeList_InfantryTypeClass_const___vftable; /*0x67a83b*/
+  *this = (void*)&TypeList_InfantryTypeClass_const___vftable; /*0x67a83b*/
   return this; /*0x67a841*/
 }
 // 0x67A930
@@ -1229,7 +1232,7 @@ TypeList_flat * TypeList_VoxelAnim::Add(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x67a993*/
-  *this = &(void*)(void*)&VectorClass_VoxelAnimTypeClass_const___vftable; /*0x67a996*/
+  *this = (void*)&VectorClass_VoxelAnimTypeClass_const___vftable; /*0x67a996*/
   if ( v3 && this->IsAllocated ) /*0x67a9a0*/
   {
     RA2_OPDEL(v3); /*0x67a9a8*/
@@ -1250,7 +1253,7 @@ TypeList_flat * TypeList_VoxelAnim::TypeList_vt00(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x67a9e3*/
-  *this = &(void*)(void*)&VectorClass_SmudgeTypeClass_const___vftable; /*0x67a9e6*/
+  *this = (void*)&VectorClass_SmudgeTypeClass_const___vftable; /*0x67a9e6*/
   if ( v3 && this->IsAllocated ) /*0x67a9f0*/
   {
     RA2_OPDEL(v3); /*0x67a9f8*/
@@ -1271,7 +1274,7 @@ TypeList_flat * TypeList_cptr_TerrainTypeClass::Add(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x67aa33*/
-  *this = &(void*)(void*)&VectorClass_TerrainTypeClass_const___vftable; /*0x67aa36*/
+  *this = (void*)&VectorClass_TerrainTypeClass_const___vftable; /*0x67aa36*/
   if ( v3 && this->IsAllocated ) /*0x67aa40*/
   {
     RA2_OPDEL(v3); /*0x67aa48*/
@@ -1757,7 +1760,7 @@ VectorClass_flat * TypeList_VoxelAnim::Constructor(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x67c013*/
-  *this = &(void*)(void*)&VectorClass_VoxelAnimTypeClass_const___vftable; /*0x67c016*/
+  *this = (void*)&VectorClass_VoxelAnimTypeClass_const___vftable; /*0x67c016*/
   if ( v3 && this->IsAllocated ) /*0x67c020*/
   {
     RA2_OPDEL(v3); /*0x67c028*/
@@ -1778,7 +1781,7 @@ DynamicVector * TypeList_VoxelAnim::Constructor_0(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x67c103*/
-  *this = &(void*)(void*)&VectorClass_SmudgeTypeClass_const___vftable; /*0x67c106*/
+  *this = (void*)&VectorClass_SmudgeTypeClass_const___vftable; /*0x67c106*/
   if ( v3 && this->IsAllocated ) /*0x67c110*/
   {
     RA2_OPDEL(v3); /*0x67c118*/
@@ -1799,7 +1802,7 @@ VectorClass_flat * TypeList_cptr_TerrainTypeClass::Constructor(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x67c153*/
-  *this = &(void*)(void*)&VectorClass_TerrainTypeClass_const___vftable; /*0x67c156*/
+  *this = (void*)&VectorClass_TerrainTypeClass_const___vftable; /*0x67c156*/
   if ( v3 && this->IsAllocated ) /*0x67c160*/
   {
     RA2_OPDEL(v3); /*0x67c168*/
@@ -1820,7 +1823,7 @@ DynamicVector * TypeList_VoxelAnim::Constructor_1(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x67c1a3*/
-  *this = &(void*)(void*)&VectorClass_TerrainTypeClass_const___vftable; /*0x67c1a6*/
+  *this = (void*)&VectorClass_TerrainTypeClass_const___vftable; /*0x67c1a6*/
   if ( v3 && this->IsAllocated ) /*0x67c1b0*/
   {
     RA2_OPDEL(v3); /*0x67c1b8*/
@@ -1846,7 +1849,7 @@ unsigned int * TypeList_flat::CopyVoxelAnim(VectorClass_flat * aP1)
   this->u32_8 = 0; /*0x67c200*/
   this->u32_C = 1; /*0x67c203*/
   this->u32_D = 0; /*0x67c207*/
-  *this = &(void*)(void*)&VectorClass_VoxelAnimTypeClass_const___vftable; /*0x67c20a*/
+  *this = (void*)&VectorClass_VoxelAnimTypeClass_const___vftable; /*0x67c20a*/
   if ( this != aP1 ) /*0x67c210*/
   {
     Vector::Cleanup2(); /*0x67c212*/
@@ -1880,7 +1883,7 @@ unsigned int * TypeList_flat::CopyVoxelAnim(VectorClass_flat * aP1)
   }
   this->u32_10 = aP1[4]; /*0x67c261*/
   this->u32_14 = aP1[5]; /*0x67c267*/
-  *this = &(void*)(void*)&TypeList_VoxelAnimTypeClass_const___vftable; /*0x67c26a*/
+  *this = (void*)&TypeList_VoxelAnimTypeClass_const___vftable; /*0x67c26a*/
   return this; /*0x67c272*/
 }
 // 0x717B70
@@ -1890,7 +1893,7 @@ TypeList_flat * TypeList_cptr_ParticleSystemTypeClass::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x717b73*/
-  *this = &(void*)(void*)&VectorClass_ParticleSystemTypeClass_const___vftable; /*0x717b76*/
+  *this = (void*)&VectorClass_ParticleSystemTypeClass_const___vftable; /*0x717b76*/
   if ( v3 && this->IsAllocated ) /*0x717b80*/
   {
     RA2_OPDEL(v3); /*0x717b88*/
@@ -1911,7 +1914,7 @@ unsigned int * TypeList_flat::ParticleConstructor(int a2, int a3)
   this->u32_8 = a2; /*0x717c80*/
   this->u32_C = 1; /*0x717c83*/
   this->u32_D = 0; /*0x717c87*/
-  *this = &(void*)(void*)&VectorClass_ParticleSystemTypeClass_const___vftable; /*0x717c8b*/
+  *this = (void*)&VectorClass_ParticleSystemTypeClass_const___vftable; /*0x717c8b*/
   if ( a2 ) /*0x717c91*/
   {
     if ( a3 ) /*0x717c99*/
@@ -1924,7 +1927,7 @@ unsigned int * TypeList_flat::ParticleConstructor(int a2, int a3)
       this->u32_D = 1; /*0x717caf*/
     }
   }
-  *this = &(void*)(void*)&DynamicVectorClass_ParticleSystemTypeClass_const___vftable; /*0x717cb3*/
+  *this = (void*)&DynamicVectorClass_ParticleSystemTypeClass_const___vftable; /*0x717cb3*/
   this->u32_14 = 10; /*0x717cb9*/
   this->u32_10 = 0; /*0x717cc0*/
   return this; /*0x717cc9*/

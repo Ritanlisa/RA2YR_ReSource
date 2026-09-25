@@ -50,6 +50,8 @@
 #include "e4/classes/ScenarioClass_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/FootClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x6E0250
@@ -380,20 +382,20 @@ unsigned int * DamageMapClassArea(int ecx0, void * a1, FootClass * aP2, int a4, 
   _DWORD *result; // eax
   _DWORD *v7; // esi
   void *v8; // eax
-  int v9; // edi
+  FootClass * v9;
   int v10; // ecx
   _DWORD *v11; // eax
   int v12; // edx
   _DWORD *v13; // eax
   int v14; // edx
   int TileData; // eax
-  int v16; // ecx
+  FootClass * v16;
   int v17; // edi
   int v18; // ebx
   int v19; // ecx
   int v20; // edx
   double v21; // st7
-  int v22; // eax
+  FootClass * v22;
   int v23; // edi
   int v24; // ebx
   int v25; // ecx
@@ -1071,7 +1073,7 @@ int sub_6E4D60()
   dword_B0E728 = 0; /*0x6e4d6c*/
   byte_B0E72C = 1; /*0x6e4d71*/
   byte_B0E72D = 0; /*0x6e4d78*/
-  TagClass_Array = (int)&(void*)(void*)&DynamicVectorClass_TagClass___vftable; /*0x6e4d7d*/
+  TagClass_Array = (int)&DynamicVectorClass_TagClass___vftable; /*0x6e4d7d*/
   dword_B0E734 = 10; /*0x6e4d87*/
   g_GameObjectCleanup = 0; /*0x6e4d91*/
   return atexit(sub_6E4DA0); /*0x6e4d9c*/
@@ -1082,7 +1084,7 @@ int sub_6E4D60()
 namespace gamemd {
 void sub_6E4DA0()
 {
-  TagClass_Array = (int)&(void*)(void*)&VectorClass_TagClass___vftable; /*0x6e4da8*/
+  TagClass_Array = (int)&VectorClass_TagClass___vftable; /*0x6e4da8*/
   if ( g_TagClassCount && byte_B0E72D ) /*0x6e4dbc*/
   {
     RA2_OPDEL(g_TagClassCount); /*0x6e4dbf*/
@@ -1254,7 +1256,7 @@ int sub_6E5AE0()
   dword_B0E788 = 0; /*0x6e5aec*/
   byte_B0E78C = 1; /*0x6e5af1*/
   byte_B0E78D = 0; /*0x6e5af8*/
-  dword_B0E780 = (int)&(void*)(void*)&DynamicVectorClass_TagTypeClass___vftable; /*0x6e5afd*/
+  dword_B0E780 = (int)&DynamicVectorClass_TagTypeClass___vftable; /*0x6e5afd*/
   dword_B0E794 = 10; /*0x6e5b07*/
   g_MultiplayerCleanup = 0; /*0x6e5b11*/
   return atexit(sub_6E5B20); /*0x6e5b1c*/
@@ -1265,7 +1267,7 @@ int sub_6E5AE0()
 namespace gamemd {
 void sub_6E5B20()
 {
-  dword_B0E780 = (int)&(void*)(void*)&VectorClass_TagTypeClass___vftable; /*0x6e5b28*/
+  dword_B0E780 = (int)&VectorClass_TagTypeClass___vftable; /*0x6e5b28*/
   if ( dword_B0E784 && byte_B0E78D ) /*0x6e5b3c*/
   {
     RA2_OPDEL(dword_B0E784); /*0x6e5b3f*/
@@ -1596,25 +1598,25 @@ unsigned int * E4Recv_6E8000::sub_6E8000(int a2)
   int v5; // esi
   int v6; // edx
 
-  this->vtable3 = &(void*)(void*)&INoticeSink_vftable; /*0x6e8008*/
-  this->vtable4 = &(void*)(void*)&INoticeSource_vftable; /*0x6e800f*/
+  this->vtable3 = (void*)&INoticeSink_vftable; /*0x6e8008*/
+  this->vtable4 = (void*)&INoticeSource_vftable; /*0x6e800f*/
   this->uniqueId = *(_DWORD *)(a2 + 16); /*0x6e801c*/
   this->abstractFlags = *(_BYTE *)(a2 + 20); /*0x6e8022*/
   this->nextArrayIndex = *(_DWORD *)(a2 + 24); /*0x6e8028*/
   this->referenceCount = *(_DWORD *)(a2 + 28); /*0x6e802e*/
   this->needsSave = *(_BYTE *)(a2 + 32); /*0x6e8034*/
-  *this = &(void*)(void*)&AbstractClass_vftable; /*0x6e803f*/
-  this->vtable2 = &(void*)(void*)&AbstractClass_vftable; /*0x6e8045*/
-  this->vtable3 = &(void*)(void*)&AbstractClass_vftable; /*0x6e804c*/
-  this->vtable4 = &(void*)(void*)&AbstractClass_vftable; /*0x6e8053*/
+  *this = (void*)&AbstractClass_vftable; /*0x6e803f*/
+  this->vtable2 = (void*)&AbstractClass_vftable; /*0x6e8045*/
+  this->vtable3 = (void*)&AbstractClass_vftable; /*0x6e804c*/
+  this->vtable4 = (void*)&AbstractClass_vftable; /*0x6e8053*/
   qmemcpy(&this->q024, (const void *)(a2 + 36), 0x19u); /*0x6e805a*/
   qmemcpy((char *)&this->q0F4, (const void *)(a2 + 61), 0x20u); /*0x6e8068*/
   *(&this->vtable34) = *(_DWORD *)(a2 + 96); /*0x6e8070*/
   qmemcpy(&this->q064, (const void *)(a2 + 100), 0x31u); /*0x6e807b*/
-  *this = &(void*)(void*)&TaskForceClass_vftable; /*0x6e807e*/
-  this->vtable2 = &(void*)(void*)&TaskForceClass_vftable; /*0x6e8084*/
-  this->vtable3 = &(void*)(void*)&TaskForceClass_vftable; /*0x6e808b*/
-  this->vtable4 = &(void*)(void*)&TaskForceClass_vftable; /*0x6e8092*/
+  *this = (void*)&TaskForceClass_vftable; /*0x6e807e*/
+  this->vtable2 = (void*)&TaskForceClass_vftable; /*0x6e8084*/
+  this->vtable3 = (void*)&TaskForceClass_vftable; /*0x6e808b*/
+  this->vtable4 = (void*)&TaskForceClass_vftable; /*0x6e8092*/
   v3 = &this->q0A4; /*0x6e809f*/
   this->q098 = *(_DWORD *)(a2 + 152); /*0x6e80a5*/
   this->q09C = *(_DWORD *)(a2 + 156); /*0x6e80b1*/

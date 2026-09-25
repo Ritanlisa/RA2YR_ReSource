@@ -13,6 +13,8 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/Building_e4.hpp"
 #include "e4/classes/ScenarioClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x690A10
@@ -28,10 +30,10 @@ unsigned int * ScoreScreen::LoadScoreFont(ScoreFontClass * aP1)
   this->q008 = 0; /*0x690a1c*/
   this->q00C = 0; /*0x690a1f*/
   this->q014 = 0; /*0x690a22*/
-  *this = &(void*)(void*)&ScoreFontClass_vftable; /*0x690a25*/
+  *(void ** *)this = (void*)&ScoreFontClass_vftable; /*0x690a25*/
   ScoreScreen::LoadAudio(); /*0x690a2b*/
   ++dword_B0558C; /*0x690a3c*/
-  *this = &(void*)(void*)&ScoreFullFontClass_vftable; /*0x690a44*/
+  *(void ** *)this = (void*)&ScoreFullFontClass_vftable; /*0x690a44*/
   this->q010 = 0; /*0x690a4a*/
   v3 = SearchMIXFile(g_Str_File_FULLFNT3_SHP, 0); /*0x690a4d*/
   this->q00C = v3; /*0x690a54*/
@@ -42,7 +44,7 @@ unsigned int * ScoreScreen::LoadScoreFont(ScoreFontClass * aP1)
     this->q010 = 1; /*0x690a77*/
     CCFileClass::Reset(v5); /*0x690a7b*/
     Debug::Log(); /*0x690a85*/
-    v5[0] = &(void*)(void*)&CCFileClass_vftable; /*0x690a91*/
+    v5[0] = (void*)&CCFileClass_vftable; /*0x690a91*/
     v7 = 0; /*0x690a99*/
     Vector::Clear((int)v6); /*0x690a9d*/
     v5[0] = &off_7E1668; /*0x690aa6*/
@@ -67,10 +69,10 @@ unsigned int * ScoreScreen::LoadCountryFlags(int a2)
   this->q008 = 0; /*0x690aec*/
   this->q00C = 0; /*0x690aef*/
   this->q014 = 0; /*0x690af2*/
-  *this = &(void*)(void*)&ScoreFontClass_vftable; /*0x690af5*/
+  *(void **)this = (void*)&ScoreFontClass_vftable; /*0x690af5*/
   ScoreScreen::LoadAudio(); /*0x690afb*/
   ++dword_B0558C; /*0x690b0c*/
-  *this = &(void*)(void*)&ScoreBigFontClass_vftable; /*0x690b14*/
+  *(void **)this = (void*)&ScoreBigFontClass_vftable; /*0x690b14*/
   this->q010 = 0; /*0x690b1a*/
   v3 = SearchMIXFile(aBigfontShp, 0); /*0x690b1d*/
   this->q00C = v3; /*0x690b24*/
@@ -81,7 +83,7 @@ unsigned int * ScoreScreen::LoadCountryFlags(int a2)
     this->q010 = 1; /*0x690b47*/
     CCFileClass::Reset(v5); /*0x690b4b*/
     Debug::Log(); /*0x690b55*/
-    v5[0] = &(void*)(void*)&CCFileClass_vftable; /*0x690b61*/
+    v5[0] = (void*)&CCFileClass_vftable; /*0x690b61*/
     v7 = 0; /*0x690b69*/
     Vector::Clear((int)v6); /*0x690b6d*/
     v5[0] = &off_7E1668; /*0x690b76*/
@@ -102,7 +104,7 @@ unsigned int * ScoreScreen::Constructor(ScoreAnimClass * aP1, int a3, int a4)
   this->q00C = Timer::GetTicks(); /*0x690f4d*/
   this->q014 = 0; /*0x690f50*/
   this->q018 = a4; /*0x690f57*/
-  *this = &(void*)(void*)&ScoreAnimClass_vftable; /*0x690f5a*/
+  *(void **)this = (void*)&ScoreAnimClass_vftable; /*0x690f5a*/
   return this; /*0x690f62*/
 }
 } // namespace gamemd
@@ -116,7 +118,7 @@ void ScoreScreen::RemoveItem(int a2, int a3, ObjectClass * aP3, char a5, int a6)
   int v10; // eax
   int v12; // edx
   int v13; // ecx
-  int v14; // esi
+  unsigned int * v14;
   int v15; // eax
   int v16; // eax
   int v17; // eax
@@ -311,7 +313,7 @@ AbstractClass * * ScoreScreen_DrawSHPBackground()
     }
     (*(void (__thiscall **)(int *, int))*v8)(v8, 1); /*0x778456*/
   }
-  v38[0] = &(void*)(void*)&CCFileClass_vftable; /*0x778461*/
+  v38[0] = (void*)&CCFileClass_vftable; /*0x778461*/
   v40 = 0; /*0x778469*/
   Vector::Clear((int)v39); /*0x778474*/
   v38[0] = &off_7E1668; /*0x77847d*/

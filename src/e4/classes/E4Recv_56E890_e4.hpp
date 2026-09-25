@@ -17,6 +17,6 @@ struct E4Recv_56E890 {
     unsigned int q5128;  // 0x5128
     unsigned int q5138;  // 0x5138
 // --- flat members (END) ---
-    char sub_56E890(short * a2, unsigned int * a3, int * a4);  // 0x56E890
+    char sub_56E890(short * a2,  unsigned int * a3,  int * a4);    // 0x56E890
 };
 } // namespace gamemd

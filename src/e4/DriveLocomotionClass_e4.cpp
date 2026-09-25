@@ -3,6 +3,8 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/DriveLocomotionClass_e4.hpp"
 #include "e4/classes/IStream_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x4AF780
@@ -21,8 +23,8 @@ HRESULT DriveLocomotionClass::BeginMove(int * a1, int * pStm)
   if ( a1 ) /*0x4af79a*/
   {
     a1[26] = 0; /*0x4af79c*/
-    *a1 = (int)&(void*)(void*)&DriveLocomotionClass_vftable; /*0x4af7a3*/
-    a1[1] = (int)&(void*)(void*)&DriveLocomotionClass_vftable; /*0x4af7a9*/
+    *a1 = (int)&DriveLocomotionClass_vftable; /*0x4af7a3*/
+    a1[1] = (int)&DriveLocomotionClass_vftable; /*0x4af7a9*/
     a1[6] = (int)&off_7E7E8C; /*0x4af7b0*/
   }
   v2->lpVtbl->Read(v2, &pStm, 1, 0); /*0x4af7c3*/
@@ -117,8 +119,8 @@ DriveLocomotionClass * DriveLocomotionClass::ProcessMove(char a2)
 {
   int v3; // eax
 
-  *this = &(void*)(void*)&DriveLocomotionClass_vftable; /*0x4b4d03*/
-  this->vtable2 = &(void*)(void*)&DriveLocomotionClass_vftable; /*0x4b4d09*/
+  *(void **)this = (void*)&DriveLocomotionClass_vftable; /*0x4b4d03*/
+  this->vtable2 = (void*)&DriveLocomotionClass_vftable; /*0x4b4d09*/
   this->vtable3 = &off_7E7E8C; /*0x4b4d10*/
   v3 = *(&this->u32_86); /*0x4b4d17*/
   if ( v3 ) /*0x4b4d1c*/

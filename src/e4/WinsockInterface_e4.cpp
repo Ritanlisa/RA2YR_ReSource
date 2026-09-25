@@ -10,6 +10,8 @@
 #include "e4/classes/VectorClass_flat_e4.hpp"
 #include "e4/classes/Winsock_e4.hpp"
 #include "e4/classes/Init_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x770270
@@ -41,7 +43,7 @@ void * WinsockInterface::ProcessPacket(int a2)
   do /*0x7702e2*/
   {
     VectorClassUInt::Constructor(v6, 0, 0); /*0x7702c9*/
-    *v6 = &(void*)(void*)&DynamicVectorClass_unsigned_int_vftable; /*0x7702ce*/
+    *(void **)v6 = (void*)&DynamicVectorClass_unsigned_int_vftable; /*0x7702ce*/
     v6[5] = 10; /*0x7702d4*/
     v6[4] = 0; /*0x7702db*/
     v6 += 6; /*0x7702de*/
@@ -53,7 +55,7 @@ void * WinsockInterface::ProcessPacket(int a2)
   *(this + 952) = 1; /*0x770305*/
   *((_DWORD *)this + 239) = 0; /*0x77030c*/
   VectorClass::WstringConstructor((_DWORD *)this + 240, 0, 0); /*0x770312*/
-  *((_DWORD *)this + 240) = &(void*)(void*)&DynamicVectorClass_Wstring_vftable; /*0x770317*/
+  *((_DWORD *)this + 240) = (void*)&DynamicVectorClass_Wstring_vftable; /*0x770317*/
   *((_DWORD *)this + 245) = 10; /*0x77031d*/
   *((_DWORD *)this + 244) = 0; /*0x770324*/
   *((_DWORD *)this + 246) = 0; /*0x770327*/

@@ -23,11 +23,13 @@ struct SpawnManagerClass_25 {
     unsigned char q04C;  // 0x4C
     unsigned char q050;  // 0x50
     bool q054;  // 0x54
+    unsigned int Capacity;
+    unsigned int Items;
 // --- flat members (END) ---
     void ddtor();  // 0x6B8160
     int SaveState(int a2);  // 0x6B81B0
     char AddRef(int a2);  // 0x6B8220
-    char Release(int a2, unsigned int * a3);  // 0x6B8400
+    char Release(int a2,  unsigned int * a3);    // 0x6B8400
     int Spawn(unsigned int * a2);  // 0x6B84B0
     DynamicVector * QueryInterface(char a2);  // 0x6B8790
     unsigned int LoadState(int a2);  // 0x6B8190

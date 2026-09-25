@@ -154,18 +154,20 @@
 #include "e4/classes/VectorClass_e_e4.hpp"
 #include "e4/classes/EnumConnectionPointsClass_e4.hpp"
 #include "e4/classes/Vector_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x4137A0
 namespace gamemd {
 int VectorClass_flat::RemoveObjectById()
 {
-  int v2; // esi
+  VectorClass_flat * v2;
   int v3; // eax
   int v4; // eax
   int v5; // ecx
   int v6; // ecx
-  int v7; // [esp+4h] [ebp-4h] BYREF
+  VectorClass_flat * v7;
 
   v7 = this; /*0x4137a0*/
   if ( !this->u32_2590 ) /*0x4137a1*/
@@ -302,7 +304,7 @@ AbstractClass * * VectorClass_Cell::Release(int a2, unsigned int * a3)
 {
   _DWORD *v4; // eax
   _DWORD *v5; // edi
-  int v7; // ecx
+  unsigned int v7;
   int i; // eax
 
   if ( a2 ) /*0x42f6fc*/
@@ -357,7 +359,7 @@ AbstractClass * * VectorClass_Cell::Release(int a2, unsigned int * a3)
 namespace gamemd {
 AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::Release(int a2, int * a2)
 {
-  int *v4; // ebx
+  unsigned int v4;
   int *v5; // eax
   _DWORD *v6; // edi
   _DWORD *v7; // eax
@@ -463,15 +465,15 @@ AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistrib
 namespace gamemd {
 AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::SetCapacity(int a2, int * a3)
 {
-  int *v4; // ebp
+  unsigned int v4;
   int *v5; // eax
   _DWORD *v6; // edi
   _DWORD *v7; // eax
   _DWORD *v9; // eax
   int v11; // ecx
   int v12; // eax
-  int v13; // edx
-  int v14; // eax
+  void * v13;
+  void * v14;
   void *v15; // ebp
   int v16; // eax
 
@@ -581,8 +583,8 @@ unsigned int * VectorClass_K_8::Constructor()
   this->q018 = RA2_OPNEW(0x10000u); /*0x4a2843*/
   this->q01C = RA2_OPNEW(0x10000u); /*0x4a2850*/
   this->q020 = RA2_OPNEW(0x10000u); /*0x4a285b*/
-  *this = &(void*)(void*)&CStreamClass_vftable; /*0x4a285e*/
-  this->vtable2 = &(void*)(void*)&CStreamClass_vftable; /*0x4a2864*/
+  *(void **)this = (void*)&CStreamClass_vftable; /*0x4a285e*/
+  this->vtable2 = (void*)&CStreamClass_vftable; /*0x4a2864*/
   this->q024 = 0xFFFF; /*0x4a286b*/
   return this; /*0x4a2874*/
 }
@@ -652,7 +654,7 @@ unsigned int * VectorClass_ptr_BuildChoiceClass_int_ouseClass::Constructor(EnumC
   this->q014 = 0; /*0x4a0c3a*/
   this->q018 = 1; /*0x4a0c3d*/
   this->q064 = 0; /*0x4a0c41*/
-  this->q00C = &(void*)(void*)&VectorClass_IConnectionPoint___vftable; /*0x4a0c44*/
+  this->q00C = (void*)&VectorClass_IConnectionPoint___vftable; /*0x4a0c44*/
   if ( &this->q00C != aP1 ) /*0x4a0c4a*/
   {
     VectorClass::CleanupTyped((int)(this + 3)); /*0x4a0c4e*/
@@ -686,8 +688,8 @@ unsigned int * VectorClass_ptr_BuildChoiceClass_int_ouseClass::Constructor(EnumC
   }
   *((_DWORD *)v3 + 4) = aP1[4]; /*0x4a0c9d*/
   *((_DWORD *)v3 + 5) = aP1[5]; /*0x4a0ca3*/
-  *(_DWORD *)v3 = &(void*)(void*)&DynamicVectorClass_IConnectionPoint___vftable; /*0x4a0ca6*/
-  *this = &(void*)(void*)&EnumConnectionPointsClass_vftable; /*0x4a0cac*/
+  *(void **)v3 = (void*)&DynamicVectorClass_IConnectionPoint___vftable; /*0x4a0ca6*/
+  *(void **)this = (void*)&EnumConnectionPointsClass_vftable; /*0x4a0cac*/
   for ( i = 0; i < this->q01C; ++i ) /*0x4a0cb9*/
   {
     v10 = *(_DWORD *)(this->q010 + 4 * i); /*0x4a0cc1*/
@@ -994,7 +996,7 @@ namespace gamemd {
 AbstractClass * * VectorClass_ptr_BuildChoiceClass_int_ouseClass::Release(int a2, unsigned int * a3)
 {
   _DWORD *v4; // edi
-  int v6; // ecx
+  unsigned int v6;
   int i; // eax
 
   if ( a2 ) /*0x50f52c*/
@@ -1042,7 +1044,7 @@ namespace gamemd {
 AbstractClass * * VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_6(int a2, unsigned int * a3)
 {
   _DWORD *v4; // edi
-  int v5; // ecx
+  unsigned int v5;
   int i; // eax
   int v7; // eax
 
@@ -1195,7 +1197,7 @@ void * VectorClass_ptr_ConvertClass::Constructor_ConvertClass(char a2)
   int v4; // eax
   void **v6; // [esp+4h] [ebp-4h] BYREF
 
-  *this = &(void*)(void*)&ConvertClass_vftable; /*0x491214*/
+  *this = (void*)&ConvertClass_vftable; /*0x491214*/
   COMClass::RegisterAll(); /*0x49121a*/
   RA2_OPDEL(*(this + 92)); /*0x491226*/
   v3 = *(&this->q0244); /*0x49122b*/
@@ -1303,7 +1305,7 @@ int VectorClass_rc_ptr_WDTTerritory::Release(int a2, unsigned int * a3)
       do /*0x76b947*/
       {
         ComPtr::Constructor(v6); /*0x76b938*/
-        *v6 = &(void*)(void*)&rc_ptr_WDTTerritory_vftable; /*0x76b93d*/
+        *v6 = (void*)&rc_ptr_WDTTerritory_vftable; /*0x76b93d*/
         v6 += 2; /*0x76b943*/
         --a2; /*0x76b946*/
       }
@@ -1328,7 +1330,7 @@ int VectorClass_rc_ptr_WDTTerritory::Release(int a2, unsigned int * a3)
       do /*0x76b917*/
       {
         ComPtr::Constructor(v6); /*0x76b908*/
-        *v6 = &(void*)(void*)&rc_ptr_WDTTerritory_vftable; /*0x76b90d*/
+        *v6 = (void*)&rc_ptr_WDTTerritory_vftable; /*0x76b90d*/
         v6 += 2; /*0x76b913*/
         --a2; /*0x76b916*/
       }
@@ -2036,7 +2038,7 @@ VectorClass_flat * VectorClass_flat::QueryInterface(unsigned int * Block, char a
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x40b303*/
-  *Block = &(void*)(void*)&VectorClass_SubzoneConnectionStruct_vftable; /*0x40b306*/
+  *Block = (void*)&VectorClass_SubzoneConnectionStruct_vftable; /*0x40b306*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x40b310*/
   {
     RA2_OPDEL(v3); /*0x40b318*/
@@ -2188,7 +2190,7 @@ VectorClass_flat * VectorClass_ptr_BombClass::QueryInterface(unsigned int * Bloc
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x40bbc3*/
-  *Block = &(void*)(void*)&VectorClass_BombClass___vftable; /*0x40bbc6*/
+  *Block = (void*)&VectorClass_BombClass___vftable; /*0x40bbc6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x40bbd0*/
   {
     RA2_OPDEL(v3); /*0x40bbd8*/
@@ -2209,7 +2211,7 @@ VectorClass_flat * VectorClass_BombClass::QueryInterface(unsigned int * Block, c
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x40bc63*/
-  *Block = &(void*)(void*)&VectorClass_TechnoClass___vftable; /*0x40bc66*/
+  *Block = (void*)&VectorClass_TechnoClass___vftable; /*0x40bc66*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x40bc70*/
   {
     RA2_OPDEL(v3); /*0x40bc78*/
@@ -2537,7 +2539,7 @@ VectorClass_flat * VectorClass_ptr_LightConvertClass::QueryInterface(unsigned in
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x40c4f3*/
-  *Block = &(void*)(void*)&VectorClass_LightConvertClass___vftable; /*0x40c4f6*/
+  *Block = (void*)&VectorClass_LightConvertClass___vftable; /*0x40c4f6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x40c500*/
   {
     RA2_OPDEL(v3); /*0x40c508*/
@@ -2558,7 +2560,7 @@ DynamicVector * VectorClass_ptr_LightConvertClass::Constructor_VectorClass_Light
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x40c543*/
-  *this = &(void*)(void*)&VectorClass_LightConvertClass___vftable; /*0x40c546*/
+  *this = (void*)&VectorClass_LightConvertClass___vftable; /*0x40c546*/
   if ( v3 && this->IsAllocated ) /*0x40c550*/
   {
     RA2_OPDEL(v3); /*0x40c558*/
@@ -2810,7 +2812,7 @@ VectorClass_flat * VectorClass_ptr_IsometricTileClass::QueryInterface(unsigned i
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x40cae3*/
-  *Block = &(void*)(void*)&VectorClass_IsometricTileClass___vftable; /*0x40cae6*/
+  *Block = (void*)&VectorClass_IsometricTileClass___vftable; /*0x40cae6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x40caf0*/
   {
     RA2_OPDEL(v3); /*0x40caf8*/
@@ -2831,7 +2833,7 @@ DynamicVector * VectorClass_ptr_IsometricTileClass::Constructor_VectorClass_Isom
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x40cb33*/
-  *this = &(void*)(void*)&VectorClass_IsometricTileClass___vftable; /*0x40cb36*/
+  *this = (void*)&VectorClass_IsometricTileClass___vftable; /*0x40cb36*/
   if ( v3 && this->IsAllocated ) /*0x40cb40*/
   {
     RA2_OPDEL(v3); /*0x40cb48*/
@@ -2860,7 +2862,7 @@ LogicClass * VectorClass_ptr_IsometricTileClass::Constructor_VectorClass_ObjectC
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x40cc23*/
-  *this = &(void*)(void*)&VectorClass_ObjectClass___vftable; /*0x40cc26*/
+  *this = (void*)&VectorClass_ObjectClass___vftable; /*0x40cc26*/
   if ( v3 && this->IsAllocated ) /*0x40cc30*/
   {
     RA2_OPDEL(v3); /*0x40cc38*/
@@ -3070,7 +3072,7 @@ VectorClass_flat * VectorClass_ptr_MixFileClass::QueryInterface(unsigned int * B
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x40d803*/
-  *Block = &(void*)(void*)&VectorClass_MixFileClass___vftable; /*0x40d806*/
+  *Block = (void*)&VectorClass_MixFileClass___vftable; /*0x40d806*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x40d810*/
   {
     RA2_OPDEL(v3); /*0x40d818*/
@@ -3322,7 +3324,7 @@ VectorClass_flat * VectorClass_ptr_ScriptClass::QueryInterface(unsigned int * Bl
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x40eab3*/
-  *Block = &(void*)(void*)&VectorClass_ScriptClass___vftable; /*0x40eab6*/
+  *Block = (void*)&VectorClass_ScriptClass___vftable; /*0x40eab6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x40eac0*/
   {
     RA2_OPDEL(v3); /*0x40eac8*/
@@ -3343,7 +3345,7 @@ DynamicVector * VectorClass_ptr_ScriptClass::Constructor_VectorClass_ScriptClass
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x40eb03*/
-  *Block = &(void*)(void*)&VectorClass_ScriptClass___vftable; /*0x40eb06*/
+  *Block = (void*)&VectorClass_ScriptClass___vftable; /*0x40eb06*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x40eb10*/
   {
     RA2_OPDEL(v3); /*0x40eb18*/
@@ -3595,7 +3597,7 @@ VectorClass_flat * VectorClass_ptr_VoxelAnimClass::QueryInterface(unsigned int *
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x40f183*/
-  *Block = &(void*)(void*)&VectorClass_VoxelAnimClass___vftable; /*0x40f186*/
+  *Block = (void*)&VectorClass_VoxelAnimClass___vftable; /*0x40f186*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x40f190*/
   {
     RA2_OPDEL(v3); /*0x40f198*/
@@ -3616,7 +3618,7 @@ DynamicVector * VectorClass_ptr_VoxelAnimClass::Constructor_VectorClass_VoxelAni
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x40f1d3*/
-  *this = &(void*)(void*)&VectorClass_VoxelAnimClass___vftable; /*0x40f1d6*/
+  *this = (void*)&VectorClass_VoxelAnimClass___vftable; /*0x40f1d6*/
   if ( v3 && this->IsAllocated ) /*0x40f1e0*/
   {
     RA2_OPDEL(v3); /*0x40f1e8*/
@@ -3868,7 +3870,7 @@ VectorClass_flat * VectorClass_ptr_WarheadTypeClass::QueryInterface(unsigned int
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x40f8a3*/
-  *Block = &(void*)(void*)&VectorClass_WarheadTypeClass___vftable; /*0x40f8a6*/
+  *Block = (void*)&VectorClass_WarheadTypeClass___vftable; /*0x40f8a6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x40f8b0*/
   {
     RA2_OPDEL(v3); /*0x40f8b8*/
@@ -3889,7 +3891,7 @@ DynamicVector * VectorClass_ptr_WarheadTypeClass::Constructor_VectorClass_Warhea
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x40f8f3*/
-  *this = &(void*)(void*)&VectorClass_WarheadTypeClass___vftable; /*0x40f8f6*/
+  *this = (void*)&VectorClass_WarheadTypeClass___vftable; /*0x40f8f6*/
   if ( v3 && this->IsAllocated ) /*0x40f900*/
   {
     RA2_OPDEL(v3); /*0x40f908*/
@@ -4141,7 +4143,7 @@ VectorClass_flat * VectorClass_ptr_WeaponTypeClass::QueryInterface(unsigned int 
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x40fe73*/
-  *Block = &(void*)(void*)&VectorClass_WeaponTypeClass___vftable; /*0x40fe76*/
+  *Block = (void*)&VectorClass_WeaponTypeClass___vftable; /*0x40fe76*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x40fe80*/
   {
     RA2_OPDEL(v3); /*0x40fe88*/
@@ -4162,7 +4164,7 @@ DynamicVector * VectorClass_ptr_WeaponTypeClass::Constructor_VectorClass_WeaponT
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x40fec3*/
-  *this = &(void*)(void*)&VectorClass_WeaponTypeClass___vftable; /*0x40fec6*/
+  *this = (void*)&VectorClass_WeaponTypeClass___vftable; /*0x40fec6*/
   if ( v3 && this->IsAllocated ) /*0x40fed0*/
   {
     RA2_OPDEL(v3); /*0x40fed8*/
@@ -4414,7 +4416,7 @@ VectorClass_flat * VectorClass_ptr_AirstrikeClass::QueryInterface(unsigned int *
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x41e0a3*/
-  *Block = &(void*)(void*)&VectorClass_AirstrikeClass___vftable; /*0x41e0a6*/
+  *Block = (void*)&VectorClass_AirstrikeClass___vftable; /*0x41e0a6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x41e0b0*/
   {
     RA2_OPDEL(v3); /*0x41e0b8*/
@@ -4435,7 +4437,7 @@ DynamicVector * VectorClass_ptr_AirstrikeClass::Constructor_VectorClass_Airstrik
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x41e0f3*/
-  *this = &(void*)(void*)&VectorClass_AirstrikeClass___vftable; /*0x41e0f6*/
+  *this = (void*)&VectorClass_AirstrikeClass___vftable; /*0x41e0f6*/
   if ( v3 && this->IsAllocated ) /*0x41e100*/
   {
     RA2_OPDEL(v3); /*0x41e108*/
@@ -4687,7 +4689,7 @@ VectorClass_flat * VectorClass_ptr_AlphaShapeClass::QueryInterface(unsigned int 
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x421ac3*/
-  *Block = &(void*)(void*)&VectorClass_AlphaShapeClass___vftable; /*0x421ac6*/
+  *Block = (void*)&VectorClass_AlphaShapeClass___vftable; /*0x421ac6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x421ad0*/
   {
     RA2_OPDEL(v3); /*0x421ad8*/
@@ -4959,7 +4961,7 @@ VectorClass_ushort * VectorClass_ushort::Add(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x42dbb3*/
-  *Block = &(void*)(void*)&VectorClass_unsigned_short_vftable; /*0x42dbb6*/
+  *Block = (void*)&VectorClass_unsigned_short_vftable; /*0x42dbb6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x42dbc0*/
   {
     RA2_OPDEL(v3); /*0x42dbc8*/
@@ -4980,7 +4982,7 @@ DynamicVector * VectorClass_ushort::Constructor(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x42dc03*/
-  *Block = &(void*)(void*)&VectorClass_unsigned_short_vftable; /*0x42dc06*/
+  *Block = (void*)&VectorClass_unsigned_short_vftable; /*0x42dc06*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x42dc10*/
   {
     RA2_OPDEL(v3); /*0x42dc18*/
@@ -5088,7 +5090,7 @@ VectorClass_flat * VectorClass_Cell::QueryInterface(unsigned int * Block, char a
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x42fba3*/
-  *Block = &(void*)(void*)&VectorClass_Cell_vftable; /*0x42fba6*/
+  *Block = (void*)&VectorClass_Cell_vftable; /*0x42fba6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x42fbb0*/
   {
     RA2_OPDEL(v3); /*0x42fbb8*/
@@ -5111,7 +5113,7 @@ unsigned int * VectorClass_flat::CellConstructor(IUnknown * aP1, IUnknown * aP2)
   this->Capacity = aP1; /*0x42fcc1*/
   this->IsInitialized = 1; /*0x42fcc4*/
   this->IsAllocated = 0; /*0x42fcc8*/
-  *this = &(void*)(void*)&VectorClass_Cell_vftable; /*0x42fccc*/
+  *this = (void*)&VectorClass_Cell_vftable; /*0x42fccc*/
   if ( aP1 ) /*0x42fcd2*/
   {
     if ( aP2 ) /*0x42fcda*/
@@ -5528,7 +5530,7 @@ DynamicVector * VectorClass_ptr_Reestablish::Constructor(unsigned int * Block, c
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x45aa13*/
-  *Block = &(void*)(void*)&VectorClass_ParticleSystemTypeClass_const___vftable; /*0x45aa16*/
+  *Block = (void*)&VectorClass_ParticleSystemTypeClass_const___vftable; /*0x45aa16*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x45aa20*/
   {
     RA2_OPDEL(v3); /*0x45aa28*/
@@ -5549,7 +5551,7 @@ DynamicVector * VectorClass_InfantryPtr::Destruct(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x45aab3*/
-  *Block = &(void*)(void*)&VectorClass_InfantryClass___vftable; /*0x45aab6*/
+  *Block = (void*)&VectorClass_InfantryClass___vftable; /*0x45aab6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x45aac0*/
   {
     RA2_OPDEL(v3); /*0x45aac8*/
@@ -5570,7 +5572,7 @@ DynamicVector * VectorClass_ptr_FoggedObjectClass::Constructor_VectorClass_Fogge
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x45ab03*/
-  *this = &(void*)(void*)&VectorClass_FoggedObjectClass___vftable; /*0x45ab06*/
+  *this = (void*)&VectorClass_FoggedObjectClass___vftable; /*0x45ab06*/
   if ( v3 && this->IsAllocated ) /*0x45ab10*/
   {
     RA2_OPDEL(v3); /*0x45ab18*/
@@ -5688,7 +5690,7 @@ VectorClass_flat * VectorClass_ptr_FoggedObjectClass::QueryInterface(unsigned in
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x45ac93*/
-  *Block = &(void*)(void*)&VectorClass_FoggedObjectClass___vftable; /*0x45ac96*/
+  *Block = (void*)&VectorClass_FoggedObjectClass___vftable; /*0x45ac96*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x45aca0*/
   {
     RA2_OPDEL(v3); /*0x45aca8*/
@@ -5709,7 +5711,7 @@ VectorClass_flat * VectorClass_ptr_Reestablish::Add(unsigned int * Block, char a
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x45ace3*/
-  *Block = &(void*)(void*)&VectorClass_Reestablish___vftable; /*0x45ace6*/
+  *Block = (void*)&VectorClass_Reestablish___vftable; /*0x45ace6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x45acf0*/
   {
     RA2_OPDEL(v3); /*0x45acf8*/
@@ -5730,7 +5732,7 @@ DynamicVector * VectorClass_ptr_Reestablish::Constructor_VectorClass_Reestablish
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x45ad33*/
-  *Block = &(void*)(void*)&VectorClass_Reestablish___vftable; /*0x45ad36*/
+  *Block = (void*)&VectorClass_Reestablish___vftable; /*0x45ad36*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x45ad40*/
   {
     RA2_OPDEL(v3); /*0x45ad48*/
@@ -5751,7 +5753,7 @@ unsigned int * VectorClass_flat::ConstructorWithVtable(TechnoTypeClass * aP1, Te
   this->q008 = aP1; /*0x45ad8e*/
   this->IsInitialized = 1; /*0x45ad91*/
   this->IsAllocated = 0; /*0x45ad95*/
-  *this = &(void*)(void*)&VectorClass_ParticleSystemTypeClass_const___vftable; /*0x45ad98*/
+  *this = (void*)&VectorClass_ParticleSystemTypeClass_const___vftable; /*0x45ad98*/
   if ( aP1 ) /*0x45ad9e*/
   {
     if ( aP2 ) /*0x45ada6*/
@@ -5772,7 +5774,7 @@ unsigned int * VectorClass_ReestablishPtr::Construct(BuildingClass * aP1, Buildi
   this->Capacity = aP1; /*0x45ae5e*/
   this->IsInitialized = 1; /*0x45ae61*/
   this->IsAllocated = 0; /*0x45ae65*/
-  *this = &(void*)(void*)&VectorClass_Reestablish___vftable; /*0x45ae68*/
+  *this = (void*)&VectorClass_Reestablish___vftable; /*0x45ae68*/
   if ( aP1 ) /*0x45ae6e*/
   {
     if ( aP2 ) /*0x45ae76*/
@@ -5968,7 +5970,7 @@ VectorClass_flat * VectorClass_TPoint3D_int::QueryInterface(unsigned int * Block
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x466083*/
-  *Block = &(void*)(void*)&VectorClass_TPoint3D_int_vftable; /*0x466086*/
+  *Block = (void*)&VectorClass_TPoint3D_int_vftable; /*0x466086*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x466090*/
   {
     RA2_OPDEL(v3); /*0x466098*/
@@ -6220,7 +6222,7 @@ VectorClass_flat * VectorClass_ptr_BulletClass::QueryInterface(unsigned int * Bl
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x46b8c3*/
-  *Block = &(void*)(void*)&VectorClass_BulletClass___vftable; /*0x46b8c6*/
+  *Block = (void*)&VectorClass_BulletClass___vftable; /*0x46b8c6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x46b8d0*/
   {
     RA2_OPDEL(v3); /*0x46b8d8*/
@@ -6508,7 +6510,7 @@ VectorClass_flat * VectorClass_ptr_CaptureManagerClass::QueryInterface(unsigned 
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x4730a3*/
-  *Block = &(void*)(void*)&VectorClass_CaptureManagerClass___vftable; /*0x4730a6*/
+  *Block = (void*)&VectorClass_CaptureManagerClass___vftable; /*0x4730a6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x4730b0*/
   {
     RA2_OPDEL(v3); /*0x4730b8*/
@@ -6529,7 +6531,7 @@ DynamicVector * VectorClass_ptr_CaptureManagerClass::Constructor_VectorClass_Cap
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x4730f3*/
-  *this = &(void*)(void*)&VectorClass_CaptureManagerClass___vftable; /*0x4730f6*/
+  *this = (void*)&VectorClass_CaptureManagerClass___vftable; /*0x4730f6*/
   if ( v3 && this->IsAllocated ) /*0x473100*/
   {
     RA2_OPDEL(v3); /*0x473108*/
@@ -6563,7 +6565,7 @@ unsigned int * VectorClass_flat::Copy(VectorClass_flat * aP1)
   this->u32_8 = 0; /*0x4777c0*/
   this->u32_C = 1; /*0x4777c3*/
   this->u32_D = 0; /*0x4777c7*/
-  *this = &(void*)(void*)&VectorClass_int_vftable; /*0x4777ca*/
+  *this = (void*)&VectorClass_int_vftable; /*0x4777ca*/
   if ( this != aP1 ) /*0x4777d0*/
   {
     VectorClass::Destroy(); /*0x4777d2*/
@@ -6597,7 +6599,7 @@ unsigned int * VectorClass_flat::Copy(VectorClass_flat * aP1)
   }
   this->q010 = aP1[4]; /*0x477821*/
   this->u32_14 = aP1[5]; /*0x477827*/
-  *this = &(void*)(void*)&TypeList_int_vftable; /*0x47782a*/
+  *this = (void*)&TypeList_int_vftable; /*0x47782a*/
   return this; /*0x477832*/
 }
 // 0x477890
@@ -6612,7 +6614,7 @@ unsigned int * VectorClass_flat::Construct(int a2, int a3)
   this->Capacity = a2; /*0x477bee*/
   this->IsInitialized = 1; /*0x477bf1*/
   this->IsAllocated = 0; /*0x477bf5*/
-  *this = &(void*)(void*)&VectorClass_int_vftable; /*0x477bf8*/
+  *this = (void*)&VectorClass_int_vftable; /*0x477bf8*/
   if ( a2 ) /*0x477bfe*/
   {
     if ( a3 ) /*0x477c06*/
@@ -6760,7 +6762,7 @@ VectorClass_flat * VectorClass_flat::vt00(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x478633*/
-  *Block = &(void*)(void*)&VectorClass_int_vftable; /*0x478636*/
+  *Block = (void*)&VectorClass_int_vftable; /*0x478636*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x478640*/
   {
     RA2_OPDEL(v3); /*0x478648*/
@@ -7010,7 +7012,7 @@ VectorClass_flat * VectorClass_ptr_DamageGroup::Add(unsigned int * Block, char a
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x48afd3*/
-  *Block = &(void*)(void*)&VectorClass_DamageGroup___vftable; /*0x48afd6*/
+  *Block = (void*)&VectorClass_DamageGroup___vftable; /*0x48afd6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x48afe0*/
   {
     RA2_OPDEL(v3); /*0x48afe8*/
@@ -7031,7 +7033,7 @@ DynamicVector * VectorClass_ptr_DamageGroup::Constructor_VectorClass_DamageGroup
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x48b023*/
-  *Block = &(void*)(void*)&VectorClass_DamageGroup___vftable; /*0x48b026*/
+  *Block = (void*)&VectorClass_DamageGroup___vftable; /*0x48b026*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x48b030*/
   {
     RA2_OPDEL(v3); /*0x48b038*/
@@ -7283,7 +7285,7 @@ VectorClass_flat * VectorClass_ptr_ConvertClass::QueryInterface(unsigned int * B
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x49b0e3*/
-  *Block = &(void*)(void*)&VectorClass_ConvertClass___vftable; /*0x49b0e6*/
+  *Block = (void*)&VectorClass_ConvertClass___vftable; /*0x49b0e6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x49b0f0*/
   {
     RA2_OPDEL(v3); /*0x49b0f8*/
@@ -7304,7 +7306,7 @@ DynamicVector * VectorClass_ptr_ConvertClass::Constructor_VectorClass_ConvertCla
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x49b133*/
-  *Block = &(void*)(void*)&VectorClass_ConvertClass___vftable; /*0x49b136*/
+  *Block = (void*)&VectorClass_ConvertClass___vftable; /*0x49b136*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x49b140*/
   {
     RA2_OPDEL(v3); /*0x49b148*/
@@ -7330,7 +7332,7 @@ DynamicVector * VectorClass_UtagCONNECTDATA::Constructor_VectorClass_tagCONNECTD
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x4a0e13*/
-  *Block = &(void*)(void*)&VectorClass_tagCONNECTDATA_vftable; /*0x4a0e16*/
+  *Block = (void*)&VectorClass_tagCONNECTDATA_vftable; /*0x4a0e16*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x4a0e20*/
   {
     RA2_OPDEL(v3); /*0x4a0e28*/
@@ -7627,7 +7629,7 @@ VectorClass_flat * VectorClass_UtagCONNECTDATA::QueryInterface(unsigned int * Bl
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x4a14a3*/
-  *Block = &(void*)(void*)&VectorClass_tagCONNECTDATA_vftable; /*0x4a14a6*/
+  *Block = (void*)&VectorClass_tagCONNECTDATA_vftable; /*0x4a14a6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x4a14b0*/
   {
     RA2_OPDEL(v3); /*0x4a14b8*/
@@ -7959,7 +7961,7 @@ VectorClass_flat * VectorClass_ptr_CrossDissolveEffect::Add(unsigned int * Block
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x4ba253*/
-  *Block = &(void*)(void*)&VectorClass_CrossDissolveEffect___vftable; /*0x4ba256*/
+  *Block = (void*)&VectorClass_CrossDissolveEffect___vftable; /*0x4ba256*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x4ba260*/
   {
     RA2_OPDEL(v3); /*0x4ba268*/
@@ -8211,7 +8213,7 @@ VectorClass_flat * VectorClass_ptr_EBolt::QueryInterface(unsigned int * Block, c
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x4c2f03*/
-  *Block = &(void*)(void*)&VectorClass_EBolt___vftable; /*0x4c2f06*/
+  *Block = (void*)&VectorClass_EBolt___vftable; /*0x4c2f06*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x4c2f10*/
   {
     RA2_OPDEL(v3); /*0x4c2f18*/
@@ -8232,7 +8234,7 @@ DynamicVector * VectorClass_ptr_EBolt::Constructor_VectorClass_EBolt___(unsigned
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x4c2f53*/
-  *Block = &(void*)(void*)&VectorClass_EBolt___vftable; /*0x4c2f56*/
+  *Block = (void*)&VectorClass_EBolt___vftable; /*0x4c2f56*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x4c2f60*/
   {
     RA2_OPDEL(v3); /*0x4c2f68*/
@@ -8484,7 +8486,7 @@ VectorClass_flat * VectorClass_ptr_EgoClass::QueryInterface(unsigned int * Block
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x4c4c63*/
-  *Block = &(void*)(void*)&VectorClass_EgoClass___vftable; /*0x4c4c66*/
+  *Block = (void*)&VectorClass_EgoClass___vftable; /*0x4c4c66*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x4c4c70*/
   {
     RA2_OPDEL(v3); /*0x4c4c78*/
@@ -8505,7 +8507,7 @@ DynamicVector * VectorClass_ptr_EgoClass::Constructor_VectorClass_EgoClass___(un
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x4c4cb3*/
-  *Block = &(void*)(void*)&VectorClass_EgoClass___vftable; /*0x4c4cb6*/
+  *Block = (void*)&VectorClass_EgoClass___vftable; /*0x4c4cb6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x4c4cc0*/
   {
     RA2_OPDEL(v3); /*0x4c4cc8*/
@@ -8757,7 +8759,7 @@ VectorClass_flat * VectorClass_ptr_EMPulseClass::QueryInterface(unsigned int * B
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x4c5e23*/
-  *Block = &(void*)(void*)&VectorClass_EMPulseClass___vftable; /*0x4c5e26*/
+  *Block = (void*)&VectorClass_EMPulseClass___vftable; /*0x4c5e26*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x4c5e30*/
   {
     RA2_OPDEL(v3); /*0x4c5e38*/
@@ -8778,7 +8780,7 @@ DynamicVector * VectorClass_ptr_EMPulseClass::Constructor_VectorClass_EMPulseCla
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x4c5e73*/
-  *Block = &(void*)(void*)&VectorClass_EMPulseClass___vftable; /*0x4c5e76*/
+  *Block = (void*)&VectorClass_EMPulseClass___vftable; /*0x4c5e76*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x4c5e80*/
   {
     RA2_OPDEL(v3); /*0x4c5e88*/
@@ -8948,7 +8950,7 @@ VectorClass_flat * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistri
   int v3; // eax
 
   v3 = this->Items; /*0x4e0d83*/
-  *this = &(void*)(void*)&VectorClass_DiscreteDistributionClass_CellClass_DistributionObject_CellClass___vftable; /*0x4e0d86*/
+  *this = (void*)&VectorClass_DiscreteDistributionClass_CellClass_DistributionObject_CellClass___vftable; /*0x4e0d86*/
   if ( v3 && this->IsAllocated ) /*0x4e0d90*/
   {
     RA2_OPDEL((void *)(v3 - 4)); /*0x4e0da3*/
@@ -8969,7 +8971,7 @@ DynamicVector * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistribut
   int v3; // eax
 
   v3 = this->Items; /*0x4e0e23*/
-  *this = &(void*)(void*)&VectorClass_DiscreteDistributionClass_CellClass_DistributionObject_CellClass___vftable; /*0x4e0e26*/
+  *this = (void*)&VectorClass_DiscreteDistributionClass_CellClass_DistributionObject_CellClass___vftable; /*0x4e0e26*/
   if ( v3 && this->IsAllocated ) /*0x4e0e30*/
   {
     RA2_OPDEL((void *)(v3 - 4)); /*0x4e0e43*/
@@ -17423,7 +17425,7 @@ VectorClass_flat * VectorClass_Building::QueryInterface(unsigned int * Block, ch
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x4ef583*/
-  *Block = &(void*)(void*)&VectorClass_BuildingClass___vftable; /*0x4ef586*/
+  *Block = (void*)&VectorClass_BuildingClass___vftable; /*0x4ef586*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x4ef590*/
   {
     RA2_OPDEL(v3); /*0x4ef598*/
@@ -17444,7 +17446,7 @@ VectorClass_flat * VectorClass_ptr_SuperClass::QueryInterface(unsigned int * Blo
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x4ef623*/
-  *Block = &(void*)(void*)&VectorClass_SuperClass___vftable; /*0x4ef626*/
+  *Block = (void*)&VectorClass_SuperClass___vftable; /*0x4ef626*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x4ef630*/
   {
     RA2_OPDEL(v3); /*0x4ef638*/
@@ -17465,7 +17467,7 @@ DynamicVector * VectorClass_ptr_SuperClass::Constructor_VectorClass_SuperClass__
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x4ef673*/
-  *Block = &(void*)(void*)&VectorClass_SuperClass___vftable; /*0x4ef676*/
+  *Block = (void*)&VectorClass_SuperClass___vftable; /*0x4ef676*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x4ef680*/
   {
     RA2_OPDEL(v3); /*0x4ef688*/
@@ -17486,7 +17488,7 @@ VectorClass_flat * VectorClass_ptr_AITriggerTypeClass::QueryInterface(unsigned i
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x4ef6c3*/
-  *Block = &(void*)(void*)&VectorClass_AITriggerTypeClass___vftable; /*0x4ef6c6*/
+  *Block = (void*)&VectorClass_AITriggerTypeClass___vftable; /*0x4ef6c6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x4ef6d0*/
   {
     RA2_OPDEL(v3); /*0x4ef6d8*/
@@ -17507,7 +17509,7 @@ DynamicVector * VectorClass_ptr_AITriggerTypeClass::Constructor_VectorClass_AITr
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x4ef713*/
-  *this = &(void*)(void*)&VectorClass_AITriggerTypeClass___vftable; /*0x4ef716*/
+  *this = (void*)&VectorClass_AITriggerTypeClass___vftable; /*0x4ef716*/
   if ( v3 && this->IsAllocated ) /*0x4ef720*/
   {
     RA2_OPDEL(v3); /*0x4ef728*/
@@ -17528,7 +17530,7 @@ VectorClass_flat * VectorClass_ptr_BuildingLightClass::QueryInterface(unsigned i
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x4ef763*/
-  *Block = &(void*)(void*)&VectorClass_BuildingLightClass___vftable; /*0x4ef766*/
+  *Block = (void*)&VectorClass_BuildingLightClass___vftable; /*0x4ef766*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x4ef770*/
   {
     RA2_OPDEL(v3); /*0x4ef778*/
@@ -17549,7 +17551,7 @@ DynamicVector * VectorClass_ptr_BuildingLightClass::Constructor_VectorClass_Buil
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x4ef7b3*/
-  *this = &(void*)(void*)&VectorClass_BuildingLightClass___vftable; /*0x4ef7b6*/
+  *this = (void*)&VectorClass_BuildingLightClass___vftable; /*0x4ef7b6*/
   if ( v3 && this->IsAllocated ) /*0x4ef7c0*/
   {
     RA2_OPDEL(v3); /*0x4ef7c8*/
@@ -17570,7 +17572,7 @@ VectorClass_flat * VectorClass_ptr_TeamClass::QueryInterface(unsigned int * Bloc
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x4ef8a3*/
-  *Block = &(void*)(void*)&VectorClass_TeamClass___vftable; /*0x4ef8a6*/
+  *Block = (void*)&VectorClass_TeamClass___vftable; /*0x4ef8a6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x4ef8b0*/
   {
     RA2_OPDEL(v3); /*0x4ef8b8*/
@@ -17591,7 +17593,7 @@ DynamicVector * VectorClass_ptr_TeamClass::Constructor_VectorClass_TeamClass___(
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x4ef8f3*/
-  *Block = &(void*)(void*)&VectorClass_TeamClass___vftable; /*0x4ef8f6*/
+  *Block = (void*)&VectorClass_TeamClass___vftable; /*0x4ef8f6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x4ef900*/
   {
     RA2_OPDEL(v3); /*0x4ef908*/
@@ -17612,7 +17614,7 @@ VectorClass_flat * VectorClass_ptr_ThemeControl::Add(unsigned int * Block, char 
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x4ef943*/
-  *Block = &(void*)(void*)&VectorClass_ThemeControl___vftable; /*0x4ef946*/
+  *Block = (void*)&VectorClass_ThemeControl___vftable; /*0x4ef946*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x4ef950*/
   {
     RA2_OPDEL(v3); /*0x4ef958*/
@@ -17633,7 +17635,7 @@ VectorClass_flat * VectorClass_ptr_TriggerClass::QueryInterface(unsigned int * B
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x4ef993*/
-  *Block = &(void*)(void*)&VectorClass_TriggerClass___vftable; /*0x4ef996*/
+  *Block = (void*)&VectorClass_TriggerClass___vftable; /*0x4ef996*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x4ef9a0*/
   {
     RA2_OPDEL(v3); /*0x4ef9a8*/
@@ -17654,7 +17656,7 @@ DynamicVector * VectorClass_ptr_AITriggerTypeClass::Constructor_VectorClass_Trig
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x4ef9e3*/
-  *this = &(void*)(void*)&VectorClass_TriggerClass___vftable; /*0x4ef9e6*/
+  *this = (void*)&VectorClass_TriggerClass___vftable; /*0x4ef9e6*/
   if ( v3 && this->IsAllocated ) /*0x4ef9f0*/
   {
     RA2_OPDEL(v3); /*0x4ef9f8*/
@@ -17675,7 +17677,7 @@ VectorClass_flat * VectorClass_ptr_TriggerTypeClass::QueryInterface(unsigned int
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x4efa33*/
-  *Block = &(void*)(void*)&VectorClass_TriggerTypeClass___vftable; /*0x4efa36*/
+  *Block = (void*)&VectorClass_TriggerTypeClass___vftable; /*0x4efa36*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x4efa40*/
   {
     RA2_OPDEL(v3); /*0x4efa48*/
@@ -17696,7 +17698,7 @@ DynamicVector * VectorClass_ptr_AITriggerTypeClass::Constructor_VectorClass_Trig
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x4efa83*/
-  *this = &(void*)(void*)&VectorClass_TriggerTypeClass___vftable; /*0x4efa86*/
+  *this = (void*)&VectorClass_TriggerTypeClass___vftable; /*0x4efa86*/
   if ( v3 && this->IsAllocated ) /*0x4efa90*/
   {
     RA2_OPDEL(v3); /*0x4efa98*/
@@ -17717,7 +17719,7 @@ VectorClass_flat * VectorClass_ptr_TubeClass::QueryInterface(unsigned int * Bloc
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x4efad3*/
-  *Block = &(void*)(void*)&VectorClass_TubeClass___vftable; /*0x4efad6*/
+  *Block = (void*)&VectorClass_TubeClass___vftable; /*0x4efad6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x4efae0*/
   {
     RA2_OPDEL(v3); /*0x4efae8*/
@@ -17738,7 +17740,7 @@ DynamicVector * VectorClass_ptr_TubeClass::Constructor_VectorClass_TubeClass___(
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x4efb23*/
-  *Block = &(void*)(void*)&VectorClass_TubeClass___vftable; /*0x4efb26*/
+  *Block = (void*)&VectorClass_TubeClass___vftable; /*0x4efb26*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x4efb30*/
   {
     RA2_OPDEL(v3); /*0x4efb38*/
@@ -17759,7 +17761,7 @@ VectorClass_flat * VectorClass_ptr_ParticleSystemClass::QueryInterface(unsigned 
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x4efb73*/
-  *Block = &(void*)(void*)&VectorClass_ParticleSystemClass___vftable; /*0x4efb76*/
+  *Block = (void*)&VectorClass_ParticleSystemClass___vftable; /*0x4efb76*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x4efb80*/
   {
     RA2_OPDEL(v3); /*0x4efb88*/
@@ -17780,7 +17782,7 @@ DynamicVector * VectorClass_ptr_BuildingLightClass::Constructor_VectorClass_Part
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x4efbc3*/
-  *this = &(void*)(void*)&VectorClass_ParticleSystemClass___vftable; /*0x4efbc6*/
+  *this = (void*)&VectorClass_ParticleSystemClass___vftable; /*0x4efbc6*/
   if ( v3 && this->IsAllocated ) /*0x4efbd0*/
   {
     RA2_OPDEL(v3); /*0x4efbd8*/
@@ -17801,7 +17803,7 @@ VectorClass_flat * VectorClass_ptr_WaveClass::QueryInterface(unsigned int * Bloc
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x4efc13*/
-  *Block = &(void*)(void*)&VectorClass_WaveClass___vftable; /*0x4efc16*/
+  *Block = (void*)&VectorClass_WaveClass___vftable; /*0x4efc16*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x4efc20*/
   {
     RA2_OPDEL(v3); /*0x4efc28*/
@@ -17822,7 +17824,7 @@ DynamicVector * VectorClass_ptr_TubeClass::Constructor_VectorClass_WaveClass___(
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x4efc63*/
-  *Block = &(void*)(void*)&VectorClass_WaveClass___vftable; /*0x4efc66*/
+  *Block = (void*)&VectorClass_WaveClass___vftable; /*0x4efc66*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x4efc70*/
   {
     RA2_OPDEL(v3); /*0x4efc78*/
@@ -17843,7 +17845,7 @@ VectorClass_flat * VectorClass_ptr_OverlayClass::QueryInterface(unsigned int * B
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x4efcb3*/
-  *Block = &(void*)(void*)&VectorClass_OverlayClass___vftable; /*0x4efcb6*/
+  *Block = (void*)&VectorClass_OverlayClass___vftable; /*0x4efcb6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x4efcc0*/
   {
     RA2_OPDEL(v3); /*0x4efcc8*/
@@ -17864,7 +17866,7 @@ DynamicVector * VectorClass_ptr_TubeClass::Constructor_VectorClass_OverlayClass_
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x4efd03*/
-  *Block = &(void*)(void*)&VectorClass_OverlayClass___vftable; /*0x4efd06*/
+  *Block = (void*)&VectorClass_OverlayClass___vftable; /*0x4efd06*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x4efd10*/
   {
     RA2_OPDEL(v3); /*0x4efd18*/
@@ -17885,7 +17887,7 @@ VectorClass_flat * VectorClass_ptr_AircraftClass::QueryInterface(unsigned int * 
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x4efe93*/
-  *Block = &(void*)(void*)&VectorClass_AircraftClass___vftable; /*0x4efe96*/
+  *Block = (void*)&VectorClass_AircraftClass___vftable; /*0x4efe96*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x4efea0*/
   {
     RA2_OPDEL(v3); /*0x4efea8*/
@@ -17906,7 +17908,7 @@ VectorClass_flat * VectorClass_ptr_UnitClass::QueryInterface(unsigned int * Bloc
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x4eff33*/
-  *Block = &(void*)(void*)&VectorClass_UnitClass___vftable; /*0x4eff36*/
+  *Block = (void*)&VectorClass_UnitClass___vftable; /*0x4eff36*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x4eff40*/
   {
     RA2_OPDEL(v3); /*0x4eff48*/
@@ -17927,7 +17929,7 @@ DynamicVector * VectorClass_ptr_UnitClass::Constructor_VectorClass_UnitClass___(
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x4eff83*/
-  *Block = &(void*)(void*)&VectorClass_UnitClass___vftable; /*0x4eff86*/
+  *Block = (void*)&VectorClass_UnitClass___vftable; /*0x4eff86*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x4eff90*/
   {
     RA2_OPDEL(v3); /*0x4eff98*/
@@ -17948,7 +17950,7 @@ VectorClass_flat * VectorClass_ptr_HouseClass::QueryInterface(unsigned int * Blo
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x4effd3*/
-  *Block = &(void*)(void*)&VectorClass_HouseClass___vftable; /*0x4effd6*/
+  *Block = (void*)&VectorClass_HouseClass___vftable; /*0x4effd6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x4effe0*/
   {
     RA2_OPDEL(v3); /*0x4effe8*/
@@ -17969,7 +17971,7 @@ DynamicVector * VectorClass_ptr_UnitClass::Constructor_VectorClass_HouseClass___
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x4f0023*/
-  *Block = &(void*)(void*)&VectorClass_HouseClass___vftable; /*0x4f0026*/
+  *Block = (void*)&VectorClass_HouseClass___vftable; /*0x4f0026*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x4f0030*/
   {
     RA2_OPDEL(v3); /*0x4f0038*/
@@ -17990,7 +17992,7 @@ VectorClass_flat * VectorClass_ptr_AnimClass::QueryInterface(unsigned int * Bloc
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x4f0073*/
-  *Block = &(void*)(void*)&VectorClass_AnimClass___vftable; /*0x4f0076*/
+  *Block = (void*)&VectorClass_AnimClass___vftable; /*0x4f0076*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x4f0080*/
   {
     RA2_OPDEL(v3); /*0x4f0088*/
@@ -18011,7 +18013,7 @@ DynamicVector * VectorClass_ptr_TeamClass::Constructor_VectorClass_AnimClass___(
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x4f00c3*/
-  *Block = &(void*)(void*)&VectorClass_AnimClass___vftable; /*0x4f00c6*/
+  *Block = (void*)&VectorClass_AnimClass___vftable; /*0x4f00c6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x4f00d0*/
   {
     RA2_OPDEL(v3); /*0x4f00d8*/
@@ -18032,7 +18034,7 @@ VectorClass_flat * VectorClass_ptr_FactoryClass::QueryInterface(unsigned int * B
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x4f0113*/
-  *Block = &(void*)(void*)&VectorClass_FactoryClass___vftable; /*0x4f0116*/
+  *Block = (void*)&VectorClass_FactoryClass___vftable; /*0x4f0116*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x4f0120*/
   {
     RA2_OPDEL(v3); /*0x4f0128*/
@@ -18053,7 +18055,7 @@ DynamicVector * VectorClass_ptr_TeamClass::Constructor_VectorClass_FactoryClass_
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x4f0163*/
-  *Block = &(void*)(void*)&VectorClass_FactoryClass___vftable; /*0x4f0166*/
+  *Block = (void*)&VectorClass_FactoryClass___vftable; /*0x4f0166*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x4f0170*/
   {
     RA2_OPDEL(v3); /*0x4f0178*/
@@ -18074,7 +18076,7 @@ VectorClass_flat * VectorClass_ptr_CampaignClass::QueryInterface(unsigned int * 
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x4f01b3*/
-  *Block = &(void*)(void*)&VectorClass_CampaignClass___vftable; /*0x4f01b6*/
+  *Block = (void*)&VectorClass_CampaignClass___vftable; /*0x4f01b6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x4f01c0*/
   {
     RA2_OPDEL(v3); /*0x4f01c8*/
@@ -18095,7 +18097,7 @@ DynamicVector * VectorClass_ptr_CampaignClass::Constructor_VectorClass_CampaignC
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x4f0203*/
-  *this = &(void*)(void*)&VectorClass_CampaignClass___vftable; /*0x4f0206*/
+  *this = (void*)&VectorClass_CampaignClass___vftable; /*0x4f0206*/
   if ( v3 && this->IsAllocated ) /*0x4f0210*/
   {
     RA2_OPDEL(v3); /*0x4f0218*/
@@ -18116,7 +18118,7 @@ VectorClass_flat * VectorClass_ptr_SideClass::QueryInterface(unsigned int * Bloc
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x4f0253*/
-  *Block = &(void*)(void*)&VectorClass_SideClass___vftable; /*0x4f0256*/
+  *Block = (void*)&VectorClass_SideClass___vftable; /*0x4f0256*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x4f0260*/
   {
     RA2_OPDEL(v3); /*0x4f0268*/
@@ -18137,7 +18139,7 @@ DynamicVector * VectorClass_ptr_CampaignClass::Constructor_VectorClass_SideClass
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x4f02a3*/
-  *Block = &(void*)(void*)&VectorClass_SideClass___vftable; /*0x4f02a6*/
+  *Block = (void*)&VectorClass_SideClass___vftable; /*0x4f02a6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x4f02b0*/
   {
     RA2_OPDEL(v3); /*0x4f02b8*/
@@ -18158,7 +18160,7 @@ VectorClass_flat * VectorClass_ptr_HouseTypeClass::QueryInterface(unsigned int *
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x4f02f3*/
-  *Block = &(void*)(void*)&VectorClass_HouseTypeClass___vftable; /*0x4f02f6*/
+  *Block = (void*)&VectorClass_HouseTypeClass___vftable; /*0x4f02f6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x4f0300*/
   {
     RA2_OPDEL(v3); /*0x4f0308*/
@@ -18179,7 +18181,7 @@ DynamicVector * VectorClass_ptr_HouseTypeClass::Constructor_VectorClass_HouseTyp
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x4f0343*/
-  *this = &(void*)(void*)&VectorClass_HouseTypeClass___vftable; /*0x4f0346*/
+  *this = (void*)&VectorClass_HouseTypeClass___vftable; /*0x4f0346*/
   if ( v3 && this->IsAllocated ) /*0x4f0350*/
   {
     RA2_OPDEL(v3); /*0x4f0358*/
@@ -18200,7 +18202,7 @@ VectorClass_flat * VectorClass_ptr_TaskForceClass::QueryInterface(unsigned int *
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x4f0393*/
-  *Block = &(void*)(void*)&VectorClass_TaskForceClass___vftable; /*0x4f0396*/
+  *Block = (void*)&VectorClass_TaskForceClass___vftable; /*0x4f0396*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x4f03a0*/
   {
     RA2_OPDEL(v3); /*0x4f03a8*/
@@ -18221,7 +18223,7 @@ DynamicVector * VectorClass_ptr_HouseTypeClass::Constructor_VectorClass_TaskForc
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x4f03e3*/
-  *this = &(void*)(void*)&VectorClass_TaskForceClass___vftable; /*0x4f03e6*/
+  *this = (void*)&VectorClass_TaskForceClass___vftable; /*0x4f03e6*/
   if ( v3 && this->IsAllocated ) /*0x4f03f0*/
   {
     RA2_OPDEL(v3); /*0x4f03f8*/
@@ -18242,7 +18244,7 @@ VectorClass_flat * VectorClass_ptr_TeamTypeClass::QueryInterface(unsigned int * 
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x4f0433*/
-  *Block = &(void*)(void*)&VectorClass_TeamTypeClass___vftable; /*0x4f0436*/
+  *Block = (void*)&VectorClass_TeamTypeClass___vftable; /*0x4f0436*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x4f0440*/
   {
     RA2_OPDEL(v3); /*0x4f0448*/
@@ -18263,7 +18265,7 @@ DynamicVector * VectorClass_ptr_HouseTypeClass::Constructor_VectorClass_TeamType
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x4f0483*/
-  *this = &(void*)(void*)&VectorClass_TeamTypeClass___vftable; /*0x4f0486*/
+  *this = (void*)&VectorClass_TeamTypeClass___vftable; /*0x4f0486*/
   if ( v3 && this->IsAllocated ) /*0x4f0490*/
   {
     RA2_OPDEL(v3); /*0x4f0498*/
@@ -18284,7 +18286,7 @@ VectorClass_flat * VectorClass_ptr_ScriptTypeClass::QueryInterface(unsigned int 
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x4f04d3*/
-  *Block = &(void*)(void*)&VectorClass_ScriptTypeClass___vftable; /*0x4f04d6*/
+  *Block = (void*)&VectorClass_ScriptTypeClass___vftable; /*0x4f04d6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x4f04e0*/
   {
     RA2_OPDEL(v3); /*0x4f04e8*/
@@ -18305,7 +18307,7 @@ DynamicVector * VectorClass_ptr_ScriptTypeClass::Constructor_VectorClass_ScriptT
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x4f0523*/
-  *this = &(void*)(void*)&VectorClass_ScriptTypeClass___vftable; /*0x4f0526*/
+  *this = (void*)&VectorClass_ScriptTypeClass___vftable; /*0x4f0526*/
   if ( v3 && this->IsAllocated ) /*0x4f0530*/
   {
     RA2_OPDEL(v3); /*0x4f0538*/
@@ -18326,7 +18328,7 @@ VectorClass_flat * VectorClass_ptr_OverlayTypeClass::QueryInterface(unsigned int
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x4f0573*/
-  *Block = &(void*)(void*)&VectorClass_OverlayTypeClass___vftable; /*0x4f0576*/
+  *Block = (void*)&VectorClass_OverlayTypeClass___vftable; /*0x4f0576*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x4f0580*/
   {
     RA2_OPDEL(v3); /*0x4f0588*/
@@ -18347,7 +18349,7 @@ DynamicVector * VectorClass_ptr_ScriptTypeClass::Constructor_VectorClass_Overlay
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x4f05c3*/
-  *this = &(void*)(void*)&VectorClass_OverlayTypeClass___vftable; /*0x4f05c6*/
+  *this = (void*)&VectorClass_OverlayTypeClass___vftable; /*0x4f05c6*/
   if ( v3 && this->IsAllocated ) /*0x4f05d0*/
   {
     RA2_OPDEL(v3); /*0x4f05d8*/
@@ -18368,7 +18370,7 @@ VectorClass_flat * VectorClass_ptr_SmudgeTypeClass::QueryInterface(unsigned int 
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x4f0613*/
-  *Block = &(void*)(void*)&VectorClass_SmudgeTypeClass___vftable; /*0x4f0616*/
+  *Block = (void*)&VectorClass_SmudgeTypeClass___vftable; /*0x4f0616*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x4f0620*/
   {
     RA2_OPDEL(v3); /*0x4f0628*/
@@ -18389,7 +18391,7 @@ DynamicVector * VectorClass_ptr_SmudgeTypeClass::Constructor_VectorClass_SmudgeT
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x4f0663*/
-  *this = &(void*)(void*)&VectorClass_SmudgeTypeClass___vftable; /*0x4f0666*/
+  *this = (void*)&VectorClass_SmudgeTypeClass___vftable; /*0x4f0666*/
   if ( v3 && this->IsAllocated ) /*0x4f0670*/
   {
     RA2_OPDEL(v3); /*0x4f0678*/
@@ -18410,7 +18412,7 @@ VectorClass_flat * VectorClass_ptr_TerrainTypeClass::QueryInterface(unsigned int
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x4f06b3*/
-  *Block = &(void*)(void*)&VectorClass_TerrainTypeClass___vftable; /*0x4f06b6*/
+  *Block = (void*)&VectorClass_TerrainTypeClass___vftable; /*0x4f06b6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x4f06c0*/
   {
     RA2_OPDEL(v3); /*0x4f06c8*/
@@ -18431,7 +18433,7 @@ DynamicVector * VectorClass_ptr_SmudgeTypeClass::Constructor_VectorClass_Terrain
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x4f0703*/
-  *this = &(void*)(void*)&VectorClass_TerrainTypeClass___vftable; /*0x4f0706*/
+  *this = (void*)&VectorClass_TerrainTypeClass___vftable; /*0x4f0706*/
   if ( v3 && this->IsAllocated ) /*0x4f0710*/
   {
     RA2_OPDEL(v3); /*0x4f0718*/
@@ -18452,7 +18454,7 @@ VectorClass_flat * VectorClass_ptr_BuildingTypeClass::QueryInterface(unsigned in
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x4f0753*/
-  *Block = &(void*)(void*)&VectorClass_BuildingTypeClass___vftable; /*0x4f0756*/
+  *Block = (void*)&VectorClass_BuildingTypeClass___vftable; /*0x4f0756*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x4f0760*/
   {
     RA2_OPDEL(v3); /*0x4f0768*/
@@ -18473,7 +18475,7 @@ DynamicVector * VectorClass_ptr_SmudgeTypeClass::Constructor_VectorClass_Buildin
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x4f07a3*/
-  *this = &(void*)(void*)&VectorClass_BuildingTypeClass___vftable; /*0x4f07a6*/
+  *this = (void*)&VectorClass_BuildingTypeClass___vftable; /*0x4f07a6*/
   if ( v3 && this->IsAllocated ) /*0x4f07b0*/
   {
     RA2_OPDEL(v3); /*0x4f07b8*/
@@ -18494,7 +18496,7 @@ VectorClass_flat * VectorClass_ptr_AircraftTypeClass::QueryInterface(unsigned in
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x4f07f3*/
-  *Block = &(void*)(void*)&VectorClass_AircraftTypeClass___vftable; /*0x4f07f6*/
+  *Block = (void*)&VectorClass_AircraftTypeClass___vftable; /*0x4f07f6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x4f0800*/
   {
     RA2_OPDEL(v3); /*0x4f0808*/
@@ -18515,7 +18517,7 @@ DynamicVector * VectorClass_ptr_AircraftTypeClass::Constructor_VectorClass_Aircr
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x4f0843*/
-  *this = &(void*)(void*)&VectorClass_AircraftTypeClass___vftable; /*0x4f0846*/
+  *this = (void*)&VectorClass_AircraftTypeClass___vftable; /*0x4f0846*/
   if ( v3 && this->IsAllocated ) /*0x4f0850*/
   {
     RA2_OPDEL(v3); /*0x4f0858*/
@@ -18536,7 +18538,7 @@ VectorClass_flat * VectorClass_ptr_UnitTypeClass::QueryInterface(unsigned int * 
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x4f0893*/
-  *Block = &(void*)(void*)&VectorClass_UnitTypeClass___vftable; /*0x4f0896*/
+  *Block = (void*)&VectorClass_UnitTypeClass___vftable; /*0x4f0896*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x4f08a0*/
   {
     RA2_OPDEL(v3); /*0x4f08a8*/
@@ -18557,7 +18559,7 @@ DynamicVector * VectorClass_ptr_AircraftTypeClass::Constructor_VectorClass_UnitT
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x4f08e3*/
-  *this = &(void*)(void*)&VectorClass_UnitTypeClass___vftable; /*0x4f08e6*/
+  *this = (void*)&VectorClass_UnitTypeClass___vftable; /*0x4f08e6*/
   if ( v3 && this->IsAllocated ) /*0x4f08f0*/
   {
     RA2_OPDEL(v3); /*0x4f08f8*/
@@ -18578,7 +18580,7 @@ VectorClass_flat * VectorClass_ptr_AnimTypeClass::QueryInterface(unsigned int * 
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x4f0933*/
-  *Block = &(void*)(void*)&VectorClass_AnimTypeClass___vftable; /*0x4f0936*/
+  *Block = (void*)&VectorClass_AnimTypeClass___vftable; /*0x4f0936*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x4f0940*/
   {
     RA2_OPDEL(v3); /*0x4f0948*/
@@ -18599,7 +18601,7 @@ DynamicVector * VectorClass_ptr_AnimTypeClass::Constructor_VectorClass_AnimTypeC
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x4f0983*/
-  *this = &(void*)(void*)&VectorClass_AnimTypeClass___vftable; /*0x4f0986*/
+  *this = (void*)&VectorClass_AnimTypeClass___vftable; /*0x4f0986*/
   if ( v3 && this->IsAllocated ) /*0x4f0990*/
   {
     RA2_OPDEL(v3); /*0x4f0998*/
@@ -18620,7 +18622,7 @@ VectorClass_flat * VectorClass_ptr_InfantryTypeClass::QueryInterface(unsigned in
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x4f09d3*/
-  *Block = &(void*)(void*)&VectorClass_InfantryTypeClass___vftable; /*0x4f09d6*/
+  *Block = (void*)&VectorClass_InfantryTypeClass___vftable; /*0x4f09d6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x4f09e0*/
   {
     RA2_OPDEL(v3); /*0x4f09e8*/
@@ -18641,7 +18643,7 @@ DynamicVector * VectorClass_ptr_AnimTypeClass::Constructor_VectorClass_InfantryT
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x4f0a23*/
-  *this = &(void*)(void*)&VectorClass_InfantryTypeClass___vftable; /*0x4f0a26*/
+  *this = (void*)&VectorClass_InfantryTypeClass___vftable; /*0x4f0a26*/
   if ( v3 && this->IsAllocated ) /*0x4f0a30*/
   {
     RA2_OPDEL(v3); /*0x4f0a38*/
@@ -18662,7 +18664,7 @@ VectorClass_flat * VectorClass_ptr_BulletTypeClass::QueryInterface(unsigned int 
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x4f0a73*/
-  *Block = &(void*)(void*)&VectorClass_BulletTypeClass___vftable; /*0x4f0a76*/
+  *Block = (void*)&VectorClass_BulletTypeClass___vftable; /*0x4f0a76*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x4f0a80*/
   {
     RA2_OPDEL(v3); /*0x4f0a88*/
@@ -18683,7 +18685,7 @@ DynamicVector * VectorClass_ptr_AnimTypeClass::Constructor_VectorClass_BulletTyp
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x4f0ac3*/
-  *this = &(void*)(void*)&VectorClass_BulletTypeClass___vftable; /*0x4f0ac6*/
+  *this = (void*)&VectorClass_BulletTypeClass___vftable; /*0x4f0ac6*/
   if ( v3 && this->IsAllocated ) /*0x4f0ad0*/
   {
     RA2_OPDEL(v3); /*0x4f0ad8*/
@@ -18704,7 +18706,7 @@ VectorClass_flat * VectorClass_ptr_VoxelAnimTypeClass::QueryInterface(unsigned i
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x4f0b13*/
-  *Block = &(void*)(void*)&VectorClass_VoxelAnimTypeClass___vftable; /*0x4f0b16*/
+  *Block = (void*)&VectorClass_VoxelAnimTypeClass___vftable; /*0x4f0b16*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x4f0b20*/
   {
     RA2_OPDEL(v3); /*0x4f0b28*/
@@ -18725,7 +18727,7 @@ DynamicVector * VectorClass_ptr_VoxelAnimTypeClass::Constructor_VectorClass_Voxe
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x4f0b63*/
-  *this = &(void*)(void*)&VectorClass_VoxelAnimTypeClass___vftable; /*0x4f0b66*/
+  *this = (void*)&VectorClass_VoxelAnimTypeClass___vftable; /*0x4f0b66*/
   if ( v3 && this->IsAllocated ) /*0x4f0b70*/
   {
     RA2_OPDEL(v3); /*0x4f0b78*/
@@ -18746,7 +18748,7 @@ VectorClass_flat * VectorClass_ptr_IsometricTileTypeClass::QueryInterface(unsign
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x4f0bb3*/
-  *Block = &(void*)(void*)&VectorClass_IsometricTileTypeClass___vftable; /*0x4f0bb6*/
+  *Block = (void*)&VectorClass_IsometricTileTypeClass___vftable; /*0x4f0bb6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x4f0bc0*/
   {
     RA2_OPDEL(v3); /*0x4f0bc8*/
@@ -18767,7 +18769,7 @@ DynamicVector * VectorClass_ptr_VoxelAnimTypeClass::Constructor_VectorClass_Isom
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x4f0c03*/
-  *this = &(void*)(void*)&VectorClass_IsometricTileTypeClass___vftable; /*0x4f0c06*/
+  *this = (void*)&VectorClass_IsometricTileTypeClass___vftable; /*0x4f0c06*/
   if ( v3 && this->IsAllocated ) /*0x4f0c10*/
   {
     RA2_OPDEL(v3); /*0x4f0c18*/
@@ -18788,7 +18790,7 @@ VectorClass_flat * VectorClass_ptr_ParticleTypeClass::QueryInterface(unsigned in
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x4f0c53*/
-  *Block = &(void*)(void*)&VectorClass_ParticleTypeClass___vftable; /*0x4f0c56*/
+  *Block = (void*)&VectorClass_ParticleTypeClass___vftable; /*0x4f0c56*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x4f0c60*/
   {
     RA2_OPDEL(v3); /*0x4f0c68*/
@@ -18809,7 +18811,7 @@ DynamicVector * VectorClass_ptr_ParticleTypeClass::Constructor_VectorClass_Parti
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x4f0ca3*/
-  *this = &(void*)(void*)&VectorClass_ParticleTypeClass___vftable; /*0x4f0ca6*/
+  *this = (void*)&VectorClass_ParticleTypeClass___vftable; /*0x4f0ca6*/
   if ( v3 && this->IsAllocated ) /*0x4f0cb0*/
   {
     RA2_OPDEL(v3); /*0x4f0cb8*/
@@ -18830,7 +18832,7 @@ VectorClass_flat * VectorClass_ptr_ParticleSystemTypeClass::QueryInterface(unsig
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x4f0cf3*/
-  *Block = &(void*)(void*)&VectorClass_ParticleSystemTypeClass___vftable; /*0x4f0cf6*/
+  *Block = (void*)&VectorClass_ParticleSystemTypeClass___vftable; /*0x4f0cf6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x4f0d00*/
   {
     RA2_OPDEL(v3); /*0x4f0d08*/
@@ -18851,7 +18853,7 @@ DynamicVector * VectorClass_ptr_ParticleTypeClass::Constructor_VectorClass_Parti
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x4f0d43*/
-  *this = &(void*)(void*)&VectorClass_ParticleSystemTypeClass___vftable; /*0x4f0d46*/
+  *this = (void*)&VectorClass_ParticleSystemTypeClass___vftable; /*0x4f0d46*/
   if ( v3 && this->IsAllocated ) /*0x4f0d50*/
   {
     RA2_OPDEL(v3); /*0x4f0d58*/
@@ -18872,7 +18874,7 @@ VectorClass_flat * VectorClass_ptr_SuperWeaponTypeClass::QueryInterface(unsigned
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x4f0d93*/
-  *Block = &(void*)(void*)&VectorClass_SuperWeaponTypeClass___vftable; /*0x4f0d96*/
+  *Block = (void*)&VectorClass_SuperWeaponTypeClass___vftable; /*0x4f0d96*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x4f0da0*/
   {
     RA2_OPDEL(v3); /*0x4f0da8*/
@@ -18893,7 +18895,7 @@ DynamicVector * VectorClass_ptr_ParticleTypeClass::Constructor_VectorClass_Super
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x4f0de3*/
-  *this = &(void*)(void*)&VectorClass_SuperWeaponTypeClass___vftable; /*0x4f0de6*/
+  *this = (void*)&VectorClass_SuperWeaponTypeClass___vftable; /*0x4f0de6*/
   if ( v3 && this->IsAllocated ) /*0x4f0df0*/
   {
     RA2_OPDEL(v3); /*0x4f0df8*/
@@ -18914,7 +18916,7 @@ VectorClass_flat * VectorClass_ptr_AbstractTypeClass::QueryInterface(unsigned in
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x4f0e33*/
-  *Block = &(void*)(void*)&VectorClass_AbstractTypeClass___vftable; /*0x4f0e36*/
+  *Block = (void*)&VectorClass_AbstractTypeClass___vftable; /*0x4f0e36*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x4f0e40*/
   {
     RA2_OPDEL(v3); /*0x4f0e48*/
@@ -18935,7 +18937,7 @@ DynamicVector * VectorClass_ptr_SuperClass::Constructor_VectorClass_AbstractType
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x4f0e83*/
-  *this = &(void*)(void*)&VectorClass_AbstractTypeClass___vftable; /*0x4f0e86*/
+  *this = (void*)&VectorClass_AbstractTypeClass___vftable; /*0x4f0e86*/
   if ( v3 && this->IsAllocated ) /*0x4f0e90*/
   {
     RA2_OPDEL(v3); /*0x4f0e98*/
@@ -19401,7 +19403,7 @@ TypeList_flat * VectorClass_BuildingType::Constructor(unsigned int * Block, char
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x50e7e3*/
-  *Block = &(void*)(void*)&VectorClass_TeamTypeClass_const___vftable; /*0x50e7e6*/
+  *Block = (void*)&VectorClass_TeamTypeClass_const___vftable; /*0x50e7e6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x50e7f0*/
   {
     RA2_OPDEL(v3); /*0x50e7f8*/
@@ -19422,7 +19424,7 @@ DynamicVector * VectorClass__N_18::Constructor(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x50e8c3*/
-  *Block = &(void*)(void*)&VectorClass_TeamTypeClass_const___vftable; /*0x50e8c6*/
+  *Block = (void*)&VectorClass_TeamTypeClass_const___vftable; /*0x50e8c6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x50e8d0*/
   {
     RA2_OPDEL(v3); /*0x50e8d8*/
@@ -21102,7 +21104,7 @@ VectorClass_flat * VectorClass_BuildingType::Get(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x50fff3*/
-  *Block = &(void*)(void*)&VectorClass_BuildingTypeClass_const___vftable; /*0x50fff6*/
+  *Block = (void*)&VectorClass_BuildingTypeClass_const___vftable; /*0x50fff6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x510000*/
   {
     RA2_OPDEL(v3); /*0x510008*/
@@ -21123,7 +21125,7 @@ DynamicVector * VectorClass_UScoutStruct___33::QueryInterface(unsigned int * Blo
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x510043*/
-  *Block = &(void*)(void*)&VectorClass_BuildingTypeClass_const___vftable; /*0x510046*/
+  *Block = (void*)&VectorClass_BuildingTypeClass_const___vftable; /*0x510046*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x510050*/
   {
     RA2_OPDEL(v3); /*0x510058*/
@@ -21144,7 +21146,7 @@ VectorClass_flat * VectorClass_UAngerStruct___16::QueryInterface(unsigned int * 
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x510093*/
-  *Block = &(void*)(void*)&VectorClass_HouseClass_StartingTechnoStruct___vftable; /*0x510096*/
+  *Block = (void*)&VectorClass_HouseClass_StartingTechnoStruct___vftable; /*0x510096*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x5100a0*/
   {
     RA2_OPDEL(v3); /*0x5100a8*/
@@ -21165,7 +21167,7 @@ DynamicVector * VectorClass_UAngerStruct::Constructor(unsigned int * Block, char
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x5100e3*/
-  *Block = &(void*)(void*)&VectorClass_HouseClass_StartingTechnoStruct___vftable; /*0x5100e6*/
+  *Block = (void*)&VectorClass_HouseClass_StartingTechnoStruct___vftable; /*0x5100e6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x5100f0*/
   {
     RA2_OPDEL(v3); /*0x5100f8*/
@@ -21186,7 +21188,7 @@ VectorClass_flat * VectorClass_UAngerStruct::QueryInterface(unsigned int * Block
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x510133*/
-  *Block = &(void*)(void*)&VectorClass_AngerStruct_vftable; /*0x510136*/
+  *Block = (void*)&VectorClass_AngerStruct_vftable; /*0x510136*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x510140*/
   {
     RA2_OPDEL(v3); /*0x510148*/
@@ -21207,7 +21209,7 @@ DynamicVector * VectorClass_UAngerStruct::Constructor_VectorClass_AngerStruct_(u
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x510183*/
-  *Block = &(void*)(void*)&VectorClass_AngerStruct_vftable; /*0x510186*/
+  *Block = (void*)&VectorClass_AngerStruct_vftable; /*0x510186*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x510190*/
   {
     RA2_OPDEL(v3); /*0x510198*/
@@ -21228,7 +21230,7 @@ VectorClass_flat * VectorClass_UScoutStruct::QueryInterface(unsigned int * Block
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x5101d3*/
-  *Block = &(void*)(void*)&VectorClass_ScoutStruct_vftable; /*0x5101d6*/
+  *Block = (void*)&VectorClass_ScoutStruct_vftable; /*0x5101d6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x5101e0*/
   {
     RA2_OPDEL(v3); /*0x5101e8*/
@@ -21249,7 +21251,7 @@ VectorClass_flat * VectorClass_ptr_BuildChoiceClass_int_ouseClass::QueryInterfac
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x510273*/
-  *Block = &(void*)(void*)&VectorClass_HouseClass_BuildChoiceClass___vftable; /*0x510276*/
+  *Block = (void*)&VectorClass_HouseClass_BuildChoiceClass___vftable; /*0x510276*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x510280*/
   {
     RA2_OPDEL(v3); /*0x510288*/
@@ -21290,7 +21292,7 @@ VectorClass_flat * VectorClass_BuildingType::Constructor_0(unsigned int * Block,
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x510313*/
-  *Block = &(void*)(void*)&VectorClass_TeamTypeClass_const___vftable; /*0x510316*/
+  *Block = (void*)&VectorClass_TeamTypeClass_const___vftable; /*0x510316*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x510320*/
   {
     RA2_OPDEL(v3); /*0x510328*/
@@ -21311,7 +21313,7 @@ VectorClass_flat * VectorClass__N::Add(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x510363*/
-  *Block = &(void*)(void*)&VectorClass_bool_vftable; /*0x510366*/
+  *Block = (void*)&VectorClass_bool_vftable; /*0x510366*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x510370*/
   {
     RA2_OPDEL(v3); /*0x510378*/
@@ -21332,7 +21334,7 @@ DynamicVector * VectorClass__N::Constructor_VectorClass_bool_(unsigned int * Blo
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x5103b3*/
-  *Block = &(void*)(void*)&VectorClass_bool_vftable; /*0x5103b6*/
+  *Block = (void*)&VectorClass_bool_vftable; /*0x5103b6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x5103c0*/
   {
     RA2_OPDEL(v3); /*0x5103c8*/
@@ -21353,7 +21355,7 @@ VectorClass_flat * VectorClass__N_18::Add(unsigned int * Block, char a2)
   int v3; // eax
 
   v3 = *(Block + 1); /*0x510403*/
-  *Block = &(void*)(void*)&VectorClass_DiscreteDistributionClass_BuildingTypeClass_DistributionObject_BuildingTypeClass___vftable; /*0x510406*/
+  *Block = (void*)&VectorClass_DiscreteDistributionClass_BuildingTypeClass_DistributionObject_BuildingTypeClass___vftable; /*0x510406*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x510410*/
   {
     RA2_OPDEL((void *)(v3 - 4)); /*0x510423*/
@@ -21374,7 +21376,7 @@ DynamicVector * VectorClass__N_18::Constructor_0(unsigned int * Block, char a2)
   int v3; // eax
 
   v3 = *(Block + 1); /*0x5104a3*/
-  *Block = &(void*)(void*)&VectorClass_DiscreteDistributionClass_BuildingTypeClass_DistributionObject_BuildingTypeClass___vftable; /*0x5104a6*/
+  *Block = (void*)&VectorClass_DiscreteDistributionClass_BuildingTypeClass_DistributionObject_BuildingTypeClass___vftable; /*0x5104a6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x5104b0*/
   {
     RA2_OPDEL((void *)(v3 - 4)); /*0x5104c3*/
@@ -21395,7 +21397,7 @@ unsigned int * VectorClass_flat::BuildingConstructor(int a2, int a3)
   this->Capacity = a2; /*0x51055e*/
   this->IsInitialized = 1; /*0x510561*/
   this->IsAllocated = 0; /*0x510565*/
-  *this = &(void*)(void*)&VectorClass_BuildingClass___vftable; /*0x510568*/
+  *this = (void*)&VectorClass_BuildingClass___vftable; /*0x510568*/
   if ( a2 ) /*0x51056e*/
   {
     if ( a3 ) /*0x510576*/
@@ -21415,7 +21417,7 @@ unsigned int * VectorClass_flat::BuildingTypeConstructor(TechnoTypeClass * aP1, 
   this->q008 = aP1; /*0x5105ae*/
   this->IsInitialized = 1; /*0x5105b1*/
   this->IsAllocated = 0; /*0x5105b5*/
-  *this = &(void*)(void*)&VectorClass_BuildingTypeClass_const___vftable; /*0x5105b8*/
+  *this = (void*)&VectorClass_BuildingTypeClass_const___vftable; /*0x5105b8*/
   if ( aP1 ) /*0x5105be*/
   {
     if ( aP2 ) /*0x5105c6*/
@@ -21763,7 +21765,7 @@ VectorClass_flat * VectorClass_ptr_CCINIClass::Add(unsigned int * Block, char a2
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x538a93*/
-  *Block = &(void*)(void*)&VectorClass_CCINIClass___vftable; /*0x538a96*/
+  *Block = (void*)&VectorClass_CCINIClass___vftable; /*0x538a96*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x538aa0*/
   {
     RA2_OPDEL(v3); /*0x538aa8*/
@@ -22015,7 +22017,7 @@ VectorClass_flat * VectorClass_ptr_IonBlastClass::QueryInterface(unsigned int * 
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x53dd03*/
-  *Block = &(void*)(void*)&VectorClass_IonBlastClass___vftable; /*0x53dd06*/
+  *Block = (void*)&VectorClass_IonBlastClass___vftable; /*0x53dd06*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x53dd10*/
   {
     RA2_OPDEL(v3); /*0x53dd18*/
@@ -22036,7 +22038,7 @@ DynamicVector * VectorClass_ptr_IonBlastClass::Constructor_VectorClass_IonBlastC
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x53dd53*/
-  *this = &(void*)(void*)&VectorClass_IonBlastClass___vftable; /*0x53dd56*/
+  *this = (void*)&VectorClass_IonBlastClass___vftable; /*0x53dd56*/
   if ( v3 && this->IsAllocated ) /*0x53dd60*/
   {
     RA2_OPDEL(v3); /*0x53dd68*/
@@ -22422,7 +22424,7 @@ VectorClass_flat * VectorClass_PAG::QueryInterface(unsigned int * Block, char a2
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x54a713*/
-  *Block = &(void*)(void*)&VectorClass_unsigned_short___vftable; /*0x54a716*/
+  *Block = (void*)&VectorClass_unsigned_short___vftable; /*0x54a716*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x54a720*/
   {
     RA2_OPDEL(v3); /*0x54a728*/
@@ -22443,7 +22445,7 @@ VectorClass_flat * VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass::Qu
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x54a7b3*/
-  *this = &(void*)(void*)&VectorClass_IsometricTileTypeClass_TileInsertType___vftable; /*0x54a7b6*/
+  *this = (void*)&VectorClass_IsometricTileTypeClass_TileInsertType___vftable; /*0x54a7b6*/
   if ( v3 && this->IsAllocated ) /*0x54a7c0*/
   {
     RA2_OPDEL(v3); /*0x54a7c8*/
@@ -22464,7 +22466,7 @@ DynamicVector * VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass::Const
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x54a803*/
-  *this = &(void*)(void*)&VectorClass_IsometricTileTypeClass_TileInsertType___vftable; /*0x54a806*/
+  *this = (void*)&VectorClass_IsometricTileTypeClass_TileInsertType___vftable; /*0x54a806*/
   if ( v3 && this->IsAllocated ) /*0x54a810*/
   {
     RA2_OPDEL(v3); /*0x54a818*/
@@ -22716,7 +22718,7 @@ VectorClass_flat * VectorClass_ptr_LaserDrawClass::QueryInterface(unsigned int *
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x551593*/
-  *Block = &(void*)(void*)&VectorClass_LaserDrawClass___vftable; /*0x551596*/
+  *Block = (void*)&VectorClass_LaserDrawClass___vftable; /*0x551596*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x5515a0*/
   {
     RA2_OPDEL(v3); /*0x5515a8*/
@@ -22737,7 +22739,7 @@ DynamicVector * VectorClass_ptr_LaserDrawClass::Constructor_VectorClass_LaserDra
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x5515e3*/
-  *this = &(void*)(void*)&VectorClass_LaserDrawClass___vftable; /*0x5515e6*/
+  *this = (void*)&VectorClass_LaserDrawClass___vftable; /*0x5515e6*/
   if ( v3 && this->IsAllocated ) /*0x5515f0*/
   {
     RA2_OPDEL(v3); /*0x5515f8*/
@@ -23220,7 +23222,7 @@ VectorClass_flat * VectorClass_ptr_LightSourceClass::QueryInterface(unsigned int
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x555783*/
-  *Block = &(void*)(void*)&VectorClass_LightSourceClass___vftable; /*0x555786*/
+  *Block = (void*)&VectorClass_LightSourceClass___vftable; /*0x555786*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x555790*/
   {
     RA2_OPDEL(v3); /*0x555798*/
@@ -23241,7 +23243,7 @@ DynamicVector * VectorClass_ptr_LightSourceClass::Constructor_VectorClass_LightS
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x5557d3*/
-  *this = &(void*)(void*)&VectorClass_LightSourceClass___vftable; /*0x5557d6*/
+  *this = (void*)&VectorClass_LightSourceClass___vftable; /*0x5557d6*/
   if ( v3 && this->IsAllocated ) /*0x5557e0*/
   {
     RA2_OPDEL(v3); /*0x5557e8*/
@@ -23262,7 +23264,7 @@ VectorClass_flat * VectorClass_ptr_PendingCellClass_LightSourceClass::QueryInter
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x555823*/
-  *Block = &(void*)(void*)&VectorClass_LightSourceClass_PendingCellClass___vftable; /*0x555826*/
+  *Block = (void*)&VectorClass_LightSourceClass_PendingCellClass___vftable; /*0x555826*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x555830*/
   {
     RA2_OPDEL(v3); /*0x555838*/
@@ -23283,7 +23285,7 @@ DynamicVector * VectorClass_ptr_LightSourceClass::Constructor(unsigned int * Blo
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x555873*/
-  *Block = &(void*)(void*)&VectorClass_LightSourceClass_PendingCellClass___vftable; /*0x555876*/
+  *Block = (void*)&VectorClass_LightSourceClass_PendingCellClass___vftable; /*0x555876*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x555880*/
   {
     RA2_OPDEL(v3); /*0x555888*/
@@ -23438,7 +23440,7 @@ VectorClass_flat * VectorClass_ptr_LineTrail::QueryInterface(unsigned int * Bloc
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x557173*/
-  *Block = &(void*)(void*)&VectorClass_LineTrail___vftable; /*0x557176*/
+  *Block = (void*)&VectorClass_LineTrail___vftable; /*0x557176*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x557180*/
   {
     RA2_OPDEL(v3); /*0x557188*/
@@ -23593,7 +23595,7 @@ VectorClass_flat * VectorClass_PBG::QueryInterface(unsigned int * Block, char a2
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x5584a3*/
-  *Block = &(void*)(void*)&VectorClass_unsigned_short_const___vftable; /*0x5584a6*/
+  *Block = (void*)&VectorClass_unsigned_short_const___vftable; /*0x5584a6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x5584b0*/
   {
     RA2_OPDEL(v3); /*0x5584b8*/
@@ -23667,7 +23669,7 @@ int VectorClass_USubzoneTrackingStruct::Clear(int a2, int a3)
   *(_DWORD *)(a2 + 8) = 0; /*0x588e2c*/
   *(_BYTE *)(a2 + 12) = 1; /*0x588e2f*/
   *(_BYTE *)(a2 + 13) = 0; /*0x588e33*/
-  *(_DWORD *)a2 = &(void*)(void*)&VectorClass_SubzoneConnectionStruct_vftable; /*0x588e36*/
+  *(_DWORD *)a2 = (void*)&VectorClass_SubzoneConnectionStruct_vftable; /*0x588e36*/
   if ( a2 != v3 ) /*0x588e3c*/
   {
     VectorClass::Cleanup5(a2); /*0x588e40*/
@@ -23724,7 +23726,7 @@ int VectorClass_USubzoneTrackingStruct::Clear(int a2, int a3)
   }
   *(_DWORD *)(a2 + 16) = *(_DWORD *)(v3 + 16); /*0x588eb9*/
   *(_DWORD *)(a2 + 20) = *(_DWORD *)(v3 + 20); /*0x588ebf*/
-  *(_DWORD *)a2 = &(void*)(void*)&DynamicVectorClass_SubzoneConnectionStruct_vftable; /*0x588ec2*/
+  *(_DWORD *)a2 = (void*)&DynamicVectorClass_SubzoneConnectionStruct_vftable; /*0x588ec2*/
   *(_WORD *)(a2 + 24) = *(_WORD *)(v3 + 24); /*0x588ecc*/
   *(_DWORD *)(a2 + 28) = *(_DWORD *)(v3 + 28); /*0x588ed3*/
   *(_DWORD *)(a2 + 32) = *(_DWORD *)(v3 + 32); /*0x588ed9*/
@@ -23928,7 +23930,7 @@ char VectorClass_USubzoneTrackingStruct::Release(int a2, int * a3)
         do /*0x589817*/
         {
           VectorClass::ConstructSubzone(v7, 0, 0); /*0x5897f1*/
-          *v7 = &(void*)(void*)&DynamicVectorClass_SubzoneConnectionStruct_vftable; /*0x5897f6*/
+          *v7 = (void*)&DynamicVectorClass_SubzoneConnectionStruct_vftable; /*0x5897f6*/
           v7[5] = 10; /*0x5897fc*/
           v7[4] = 0; /*0x5897ff*/
           (*(void (__thiscall **)(_DWORD *))(*v7 + 12))(v7); /*0x589806*/
@@ -23957,7 +23959,7 @@ char VectorClass_USubzoneTrackingStruct::Release(int a2, int * a3)
           do /*0x5897bf*/
           {
             VectorClass::ConstructSubzone(v6, 0, 0); /*0x589799*/
-            *v6 = &(void*)(void*)&DynamicVectorClass_SubzoneConnectionStruct_vftable; /*0x58979e*/
+            *v6 = (void*)&DynamicVectorClass_SubzoneConnectionStruct_vftable; /*0x58979e*/
             v6[5] = 10; /*0x5897a4*/
             v6[4] = 0; /*0x5897a7*/
             (*(void (__thiscall **)(_DWORD *))(*v6 + 12))(v6); /*0x5897ae*/
@@ -24026,7 +24028,7 @@ char VectorClass_USubzoneTrackingStruct::Release(int a2, int * a3)
               {
                 v19 = *(void **)(v18 - 32); /*0x5898d7*/
                 v18 -= 36; /*0x5898da*/
-                *(_DWORD *)v18 = &(void*)(void*)&VectorClass_SubzoneConnectionStruct_vftable; /*0x5898df*/
+                *(_DWORD *)v18 = (void*)&VectorClass_SubzoneConnectionStruct_vftable; /*0x5898df*/
                 if ( v19 ) /*0x5898e5*/
                 {
                   if ( *(_BYTE *)(v18 + 13) ) /*0x5898e7*/
@@ -24096,7 +24098,7 @@ void VectorClass_USubzoneTrackingStruct::ddtor()
       {
         v9 = *(void **)(v7 - 32); /*0x58998f*/
         v7 -= 36; /*0x589992*/
-        *(_DWORD *)v7 = &(void*)(void*)&VectorClass_SubzoneConnectionStruct_vftable; /*0x589997*/
+        *(_DWORD *)v7 = (void*)&VectorClass_SubzoneConnectionStruct_vftable; /*0x589997*/
         if ( v9 && *(_BYTE *)(v7 + 13) ) /*0x58999f*/
         {
           RA2_OPDEL(v9); /*0x5899a5*/
@@ -24638,7 +24640,7 @@ VectorClass_flat * VectorClass_USubzoneTrackingStruct::QueryInterface(unsigned i
   void *v12; // [esp+8h] [ebp-4h]
 
   v3 = *(Block + 1); /*0x58a477*/
-  *Block = &(void*)(void*)&VectorClass_SubzoneTrackingStruct_vftable; /*0x58a47a*/
+  *Block = (void*)&VectorClass_SubzoneTrackingStruct_vftable; /*0x58a47a*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x58a484*/
   {
     v4 = *(_DWORD *)(v3 - 4); /*0x58a48d*/
@@ -24654,7 +24656,7 @@ VectorClass_flat * VectorClass_USubzoneTrackingStruct::QueryInterface(unsigned i
       {
         v10 = *(void **)(v8 - 32); /*0x58a4a5*/
         v8 -= 36; /*0x58a4a8*/
-        *(_DWORD *)v8 = &(void*)(void*)&VectorClass_SubzoneConnectionStruct_vftable; /*0x58a4ad*/
+        *(_DWORD *)v8 = (void*)&VectorClass_SubzoneConnectionStruct_vftable; /*0x58a4ad*/
         if ( v10 && *(_BYTE *)(v8 + 13) ) /*0x58a4b5*/
         {
           RA2_OPDEL(v10); /*0x58a4bb*/
@@ -24705,7 +24707,7 @@ char * VectorClass_W4PassabilityType::Constructor(unsigned int * Block, char a2)
       {
         v9 = (void *)*((_DWORD *)v7 - 5); /*0x58a652*/
         v7 -= 24; /*0x58a655*/
-        *(_DWORD *)v7 = &(void*)(void*)&VectorClass_HashObject_unsigned_int_unsigned_int_vftable; /*0x58a65a*/
+        *(_DWORD *)v7 = (void*)&VectorClass_HashObject_unsigned_int_unsigned_int_vftable; /*0x58a65a*/
         if ( v9 && v7[13] ) /*0x58a662*/
         {
           RA2_OPDEL(v9); /*0x58a668*/
@@ -24723,7 +24725,7 @@ char * VectorClass_W4PassabilityType::Constructor(unsigned int * Block, char a2)
   else
   {
     v11 = (void *)*(Block + 1); /*0x58a695*/
-    *Block = &(void*)(void*)&VectorClass_HashObject_unsigned_int_unsigned_int_vftable; /*0x58a69c*/
+    *Block = (void*)&VectorClass_HashObject_unsigned_int_unsigned_int_vftable; /*0x58a69c*/
     if ( v11 && *((_BYTE *)Block + 13) ) /*0x58a6a4*/
     {
       RA2_OPDEL(v11); /*0x58a6aa*/
@@ -24884,7 +24886,7 @@ char * VectorClass_W4PassabilityType::Constructor_0(unsigned int * Block, char a
       {
         v9 = (void *)*((_DWORD *)v7 - 5); /*0x58a862*/
         v7 -= 24; /*0x58a865*/
-        *(_DWORD *)v7 = &(void*)(void*)&VectorClass_HashObject_unsigned_int_SubzoneConnectionStruct_vftable; /*0x58a86a*/
+        *(_DWORD *)v7 = (void*)&VectorClass_HashObject_unsigned_int_SubzoneConnectionStruct_vftable; /*0x58a86a*/
         if ( v9 && v7[13] ) /*0x58a872*/
         {
           RA2_OPDEL(v9); /*0x58a878*/
@@ -24903,7 +24905,7 @@ char * VectorClass_W4PassabilityType::Constructor_0(unsigned int * Block, char a
   else
   {
     v11 = (void *)*(Block + 1); /*0x58a8a5*/
-    *Block = &(void*)(void*)&VectorClass_HashObject_unsigned_int_SubzoneConnectionStruct_vftable; /*0x58a8ac*/
+    *Block = (void*)&VectorClass_HashObject_unsigned_int_SubzoneConnectionStruct_vftable; /*0x58a8ac*/
     if ( v11 && *((_BYTE *)Block + 13) ) /*0x58a8b4*/
     {
       RA2_OPDEL(v11); /*0x58a8ba*/
@@ -25080,7 +25082,7 @@ VectorClass_flat * VectorClass_W4PassabilityType::QueryInterface(unsigned int * 
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x58aa93*/
-  *Block = &(void*)(void*)&VectorClass_enum_PassabilityType_vftable; /*0x58aa96*/
+  *Block = (void*)&VectorClass_enum_PassabilityType_vftable; /*0x58aa96*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x58aaa0*/
   {
     RA2_OPDEL(v3); /*0x58aaa8*/
@@ -25101,7 +25103,7 @@ DynamicVector * VectorClass_W4PassabilityType::Constructor_1(unsigned int * Bloc
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x58aae3*/
-  *Block = &(void*)(void*)&VectorClass_enum_PassabilityType_vftable; /*0x58aae6*/
+  *Block = (void*)&VectorClass_enum_PassabilityType_vftable; /*0x58aae6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x58aaf0*/
   {
     RA2_OPDEL(v3); /*0x58aaf8*/
@@ -25122,7 +25124,7 @@ VectorClass_flat * VectorClass_UHashObject_uint_uint::QueryInterface(unsigned in
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x58ab33*/
-  *Block = &(void*)(void*)&VectorClass_HashObject_unsigned_int_unsigned_int_vftable; /*0x58ab36*/
+  *Block = (void*)&VectorClass_HashObject_unsigned_int_unsigned_int_vftable; /*0x58ab36*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x58ab40*/
   {
     RA2_OPDEL(v3); /*0x58ab48*/
@@ -25143,7 +25145,7 @@ VectorClass_flat * VectorClass_UHashObject_uint_SubzoneConn::QueryInterface(unsi
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x58ab83*/
-  *Block = &(void*)(void*)&VectorClass_HashObject_unsigned_int_SubzoneConnectionStruct_vftable; /*0x58ab86*/
+  *Block = (void*)&VectorClass_HashObject_unsigned_int_SubzoneConnectionStruct_vftable; /*0x58ab86*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x58ab90*/
   {
     RA2_OPDEL(v3); /*0x58ab98*/
@@ -25169,7 +25171,7 @@ unsigned int * VectorClass_flat::ConstructSubzone(int a2, int a3)
   this->Capacity = a2; /*0x58ac80*/
   this->IsInitialized = 1; /*0x58ac83*/
   this->IsAllocated = 0; /*0x58ac87*/
-  *this = &(void*)(void*)&VectorClass_SubzoneConnectionStruct_vftable; /*0x58ac8a*/
+  *this = (void*)&VectorClass_SubzoneConnectionStruct_vftable; /*0x58ac8a*/
   if ( !a2 ) /*0x58ac90*/
     return this; /*0x58ac90*/
   if ( !a3 ) /*0x58ac98*/
@@ -25777,7 +25779,7 @@ VectorClass_flat * VectorClass_ptr_MapRegionClass::QueryInterface(unsigned int *
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x5ad393*/
-  *Block = &(void*)(void*)&VectorClass_MapRegionClass___vftable; /*0x5ad396*/
+  *Block = (void*)&VectorClass_MapRegionClass___vftable; /*0x5ad396*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x5ad3a0*/
   {
     RA2_OPDEL(v3); /*0x5ad3a8*/
@@ -25818,7 +25820,7 @@ VectorClass_flat * VectorClass_N::QueryInterface(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x5ad5c3*/
-  *Block = &(void*)(void*)&VectorClass_double_vftable; /*0x5ad5c6*/
+  *Block = (void*)&VectorClass_double_vftable; /*0x5ad5c6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x5ad5d0*/
   {
     RA2_OPDEL(v3); /*0x5ad5d8*/
@@ -25839,7 +25841,7 @@ DynamicVector * VectorClass_N::Constructor_VectorClass_double_(unsigned int * Bl
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x5ad613*/
-  *Block = &(void*)(void*)&VectorClass_double_vftable; /*0x5ad616*/
+  *Block = (void*)&VectorClass_double_vftable; /*0x5ad616*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x5ad620*/
   {
     RA2_OPDEL(v3); /*0x5ad628*/
@@ -26429,7 +26431,7 @@ VectorClass_flat * VectorClass_Point2D::QueryInterface(unsigned int * Block, cha
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x5d16c3*/
-  *Block = &(void*)(void*)&VectorClass_Point2D_vftable; /*0x5d16c6*/
+  *Block = (void*)&VectorClass_Point2D_vftable; /*0x5d16c6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x5d16d0*/
   {
     RA2_OPDEL(v3); /*0x5d16d8*/
@@ -26450,7 +26452,7 @@ VectorClass_flat * VectorClass_ptr_MSTextEntry::QueryInterface(unsigned int * Bl
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x5d1763*/
-  *Block = &(void*)(void*)&VectorClass_MSTextEntry___vftable; /*0x5d1766*/
+  *Block = (void*)&VectorClass_MSTextEntry___vftable; /*0x5d1766*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x5d1770*/
   {
     RA2_OPDEL(v3); /*0x5d1778*/
@@ -26471,7 +26473,7 @@ VectorClass_flat * VectorClass_ptr_MapSelection::QueryInterface(unsigned int * B
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x5d1803*/
-  *Block = &(void*)(void*)&VectorClass_MapSelection___vftable; /*0x5d1806*/
+  *Block = (void*)&VectorClass_MapSelection___vftable; /*0x5d1806*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x5d1810*/
   {
     RA2_OPDEL(v3); /*0x5d1818*/
@@ -26492,7 +26494,7 @@ VectorClass_flat * VectorClass_ptr_MSSfxEntry::QueryInterface(unsigned int * Blo
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x5d19e3*/
-  *Block = &(void*)(void*)&VectorClass_MSSfxEntry___vftable; /*0x5d19e6*/
+  *Block = (void*)&VectorClass_MSSfxEntry___vftable; /*0x5d19e6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x5d19f0*/
   {
     RA2_OPDEL(v3); /*0x5d19f8*/
@@ -26933,7 +26935,7 @@ DynamicVector * VectorClass_ptr_MSSfx::Constructor_VectorClass_MSAnim___(unsigne
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x5d2cf3*/
-  *Block = &(void*)(void*)&VectorClass_MSAnim___vftable; /*0x5d2cf6*/
+  *Block = (void*)&VectorClass_MSAnim___vftable; /*0x5d2cf6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x5d2d00*/
   {
     RA2_OPDEL(v3); /*0x5d2d08*/
@@ -26954,7 +26956,7 @@ VectorClass_flat * VectorClass_ptr_MSSfx::QueryInterface(unsigned int * Block, c
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x5d2d43*/
-  *Block = &(void*)(void*)&VectorClass_MSSfx___vftable; /*0x5d2d46*/
+  *Block = (void*)&VectorClass_MSSfx___vftable; /*0x5d2d46*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x5d2d50*/
   {
     RA2_OPDEL(v3); /*0x5d2d58*/
@@ -26975,7 +26977,7 @@ DynamicVector * VectorClass_Point2D::Constructor_VectorClass_MSSfx___(unsigned i
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x5d2d93*/
-  *Block = &(void*)(void*)&VectorClass_MSSfx___vftable; /*0x5d2d96*/
+  *Block = (void*)&VectorClass_MSSfx___vftable; /*0x5d2d96*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x5d2da0*/
   {
     RA2_OPDEL(v3); /*0x5d2da8*/
@@ -27198,7 +27200,7 @@ VectorClass_flat * VectorClass_UAcceleratorTracker::QueryInterface(unsigned int 
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x5d5783*/
-  *Block = &(void*)(void*)&VectorClass_AcceleratorTracker_vftable; /*0x5d5786*/
+  *Block = (void*)&VectorClass_AcceleratorTracker_vftable; /*0x5d5786*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x5d5790*/
   {
     RA2_OPDEL(v3); /*0x5d5798*/
@@ -27364,7 +27366,7 @@ VectorClass_flat * VectorClass_ptr_MultiplayerTeam::QueryInterface(unsigned int 
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x5d8813*/
-  *Block = &(void*)(void*)&VectorClass_MultiplayerTeam___vftable; /*0x5d8816*/
+  *Block = (void*)&VectorClass_MultiplayerTeam___vftable; /*0x5d8816*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x5d8820*/
   {
     RA2_OPDEL(v3); /*0x5d8828*/
@@ -27613,7 +27615,7 @@ VectorClass_flat * VectorClass_cptr_MultiMission::GetAt(unsigned int * Block, ch
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x5eeec3*/
-  *Block = &(void*)(void*)&VectorClass_MultiMission_const___vftable; /*0x5eeec6*/
+  *Block = (void*)&VectorClass_MultiMission_const___vftable; /*0x5eeec6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x5eeed0*/
   {
     RA2_OPDEL(v3); /*0x5eeed8*/
@@ -27634,7 +27636,7 @@ DynamicVector * VectorClass_cptr_MultiMission::Constructor(unsigned int * Block,
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x5eef13*/
-  *Block = &(void*)(void*)&VectorClass_MultiMission_const___vftable; /*0x5eef16*/
+  *Block = (void*)&VectorClass_MultiMission_const___vftable; /*0x5eef16*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x5eef20*/
   {
     RA2_OPDEL(v3); /*0x5eef28*/
@@ -27692,7 +27694,7 @@ unsigned int * VectorClass_cptr_MultiMission::j_vt00(char a2)
   void *v3; // eax
 
   v3 = (void *)*(&this->q0080); /*0x5ef293*/
-  *this = &(void*)(void*)&NullModemConnClass_vftable; /*0x5ef296*/
+  *this = (void*)&NullModemConnClass_vftable; /*0x5ef296*/
   RA2_OPDEL(v3); /*0x5ef29d*/
   ConnectionClass::dtor(); /*0x5ef2a7*/
   if ( (a2 & 1) != 0 ) /*0x5ef2b1*/
@@ -27939,7 +27941,7 @@ VectorClass_flat * VectorClass_ptr_ObjectTypeClass::QueryInterface(unsigned int 
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x5f9de3*/
-  *Block = &(void*)(void*)&VectorClass_ObjectTypeClass___vftable; /*0x5f9de6*/
+  *Block = (void*)&VectorClass_ObjectTypeClass___vftable; /*0x5f9de6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x5f9df0*/
   {
     RA2_OPDEL(v3); /*0x5f9df8*/
@@ -27960,7 +27962,7 @@ DynamicVector * VectorClass_ptr_ObjectTypeClass::Constructor_VectorClass_ObjectT
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x5f9e33*/
-  *this = &(void*)(void*)&VectorClass_ObjectTypeClass___vftable; /*0x5f9e36*/
+  *this = (void*)&VectorClass_ObjectTypeClass___vftable; /*0x5f9e36*/
   if ( v3 && this->IsAllocated ) /*0x5f9e40*/
   {
     RA2_OPDEL(v3); /*0x5f9e48*/
@@ -28209,7 +28211,7 @@ VectorClass_flat * VectorClass_ptr_SpotLightClass::QueryInterface(unsigned int *
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x600283*/
-  *Block = &(void*)(void*)&VectorClass_SpotLightClass___vftable; /*0x600286*/
+  *Block = (void*)&VectorClass_SpotLightClass___vftable; /*0x600286*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x600290*/
   {
     RA2_OPDEL(v3); /*0x600298*/
@@ -28230,7 +28232,7 @@ DynamicVector * VectorClass_ptr_SpotLightClass::Constructor_VectorClass_SpotLigh
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x6002d3*/
-  *this = &(void*)(void*)&VectorClass_SpotLightClass___vftable; /*0x6002d6*/
+  *this = (void*)&VectorClass_SpotLightClass___vftable; /*0x6002d6*/
   if ( v3 && this->IsAllocated ) /*0x6002e0*/
   {
     RA2_OPDEL(v3); /*0x6002e8*/
@@ -28533,7 +28535,7 @@ VectorClass_flat * VectorClass_ptr_ColorScheme::QueryInterface(unsigned int * Bl
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x6285f3*/
-  *Block = &(void*)(void*)&VectorClass_ColorScheme___vftable; /*0x6285f6*/
+  *Block = (void*)&VectorClass_ColorScheme___vftable; /*0x6285f6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x628600*/
   {
     RA2_OPDEL(v3); /*0x628608*/
@@ -28554,7 +28556,7 @@ VectorClass_flat * VectorClass_ptr_ColorScheme::Constructor_VectorClass_HSVClass
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x628763*/
-  *Block = &(void*)(void*)&VectorClass_HSVClass_vftable; /*0x628766*/
+  *Block = (void*)&VectorClass_HSVClass_vftable; /*0x628766*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x628770*/
   {
     RA2_OPDEL(v3); /*0x628778*/
@@ -28620,7 +28622,7 @@ unsigned int * VectorClass_flat::ConstructHSV(int a2, int a3)
   this->Capacity = a2; /*0x628e00*/
   this->IsInitialized = 1; /*0x628e03*/
   this->IsAllocated = 0; /*0x628e07*/
-  *this = &(void*)(void*)&VectorClass_HSVClass_vftable; /*0x628e0a*/
+  *this = (void*)&VectorClass_HSVClass_vftable; /*0x628e0a*/
   if ( !a2 ) /*0x628e10*/
     return this; /*0x628e70*/
   if ( !a3 ) /*0x628e18*/
@@ -28672,7 +28674,7 @@ VectorClass_flat * VectorClass_ptr_ColorScheme::Constructor(unsigned int * Block
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x628e83*/
-  *Block = &(void*)(void*)&VectorClass_HashObject_HashString_SchemeNode___vftable; /*0x628e86*/
+  *Block = (void*)&VectorClass_HashObject_HashString_SchemeNode___vftable; /*0x628e86*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x628e90*/
   {
     RA2_OPDEL(v3); /*0x628e98*/
@@ -28924,7 +28926,7 @@ VectorClass_flat * VectorClass_ptr_ParasiteClass::QueryInterface(unsigned int * 
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x62b333*/
-  *Block = &(void*)(void*)&VectorClass_ParasiteClass___vftable; /*0x62b336*/
+  *Block = (void*)&VectorClass_ParasiteClass___vftable; /*0x62b336*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x62b340*/
   {
     RA2_OPDEL(v3); /*0x62b348*/
@@ -28945,7 +28947,7 @@ DynamicVector * VectorClass_ptr_ParasiteClass::Constructor_VectorClass_ParasiteC
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x62b383*/
-  *this = &(void*)(void*)&VectorClass_ParasiteClass___vftable; /*0x62b386*/
+  *this = (void*)&VectorClass_ParasiteClass___vftable; /*0x62b386*/
   if ( v3 && this->IsAllocated ) /*0x62b390*/
   {
     RA2_OPDEL(v3); /*0x62b398*/
@@ -29574,7 +29576,7 @@ VectorClass_flat * VectorClass_ptr_PlanningMemberClass::QueryInterface(unsigned 
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x63ec53*/
-  *Block = &(void*)(void*)&VectorClass_PlanningMemberClass___vftable; /*0x63ec56*/
+  *Block = (void*)&VectorClass_PlanningMemberClass___vftable; /*0x63ec56*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x63ec60*/
   {
     RA2_OPDEL(v3); /*0x63ec68*/
@@ -29595,7 +29597,7 @@ DynamicVector * VectorClass_ptr_PlanningMemberClass::Constructor_VectorClass_Pla
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x63eca3*/
-  *this = &(void*)(void*)&VectorClass_PlanningMemberClass___vftable; /*0x63eca6*/
+  *this = (void*)&VectorClass_PlanningMemberClass___vftable; /*0x63eca6*/
   if ( v3 && this->IsAllocated ) /*0x63ecb0*/
   {
     RA2_OPDEL(v3); /*0x63ecb8*/
@@ -29616,7 +29618,7 @@ VectorClass_flat * VectorClass_ptr_PlanningBranchClass::QueryInterface(unsigned 
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x63ecf3*/
-  *Block = &(void*)(void*)&VectorClass_PlanningBranchClass___vftable; /*0x63ecf6*/
+  *Block = (void*)&VectorClass_PlanningBranchClass___vftable; /*0x63ecf6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x63ed00*/
   {
     RA2_OPDEL(v3); /*0x63ed08*/
@@ -29637,7 +29639,7 @@ DynamicVector * VectorClass_ptr_PlanningMemberClass::Constructor_VectorClass_Pla
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x63ed43*/
-  *this = &(void*)(void*)&VectorClass_PlanningBranchClass___vftable; /*0x63ed46*/
+  *this = (void*)&VectorClass_PlanningBranchClass___vftable; /*0x63ed46*/
   if ( v3 && this->IsAllocated ) /*0x63ed50*/
   {
     RA2_OPDEL(v3); /*0x63ed58*/
@@ -29658,7 +29660,7 @@ VectorClass_flat * VectorClass_ptr_PlanningTokenClass::QueryInterface(unsigned i
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x63eed3*/
-  *Block = &(void*)(void*)&VectorClass_PlanningTokenClass___vftable; /*0x63eed6*/
+  *Block = (void*)&VectorClass_PlanningTokenClass___vftable; /*0x63eed6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x63eee0*/
   {
     RA2_OPDEL(v3); /*0x63eee8*/
@@ -29681,7 +29683,7 @@ unsigned int * VectorClass_flat::PointConstructor(MapClass * aP1, MapClass * aP2
   *(this + 2) = aP1; /*0x658d71*/
   this->IsInitialized = 1; /*0x658d74*/
   this->IsAllocated = 0; /*0x658d78*/
-  *this = &(void*)(void*)&VectorClass_Point2D_vftable; /*0x658d7c*/
+  *this = (void*)&VectorClass_Point2D_vftable; /*0x658d7c*/
   if ( aP1 ) /*0x658d82*/
   {
     if ( aP2 ) /*0x658d8a*/
@@ -29939,7 +29941,7 @@ VectorClass_flat * VectorClass_ptr_RadBeam::QueryInterface(unsigned int * Block,
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x65a4a3*/
-  *Block = &(void*)(void*)&VectorClass_RadBeam___vftable; /*0x65a4a6*/
+  *Block = (void*)&VectorClass_RadBeam___vftable; /*0x65a4a6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x65a4b0*/
   {
     RA2_OPDEL(v3); /*0x65a4b8*/
@@ -29960,7 +29962,7 @@ DynamicVector * VectorClass_ptr_RadBeam::Constructor_VectorClass_RadBeam___(unsi
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x65a4f3*/
-  *Block = &(void*)(void*)&VectorClass_RadBeam___vftable; /*0x65a4f6*/
+  *Block = (void*)&VectorClass_RadBeam___vftable; /*0x65a4f6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x65a500*/
   {
     RA2_OPDEL(v3); /*0x65a508*/
@@ -30212,7 +30214,7 @@ VectorClass_flat * VectorClass_ptr_RadSiteClass::QueryInterface(unsigned int * B
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x65c1b3*/
-  *Block = &(void*)(void*)&VectorClass_RadSiteClass___vftable; /*0x65c1b6*/
+  *Block = (void*)&VectorClass_RadSiteClass___vftable; /*0x65c1b6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x65c1c0*/
   {
     RA2_OPDEL(v3); /*0x65c1c8*/
@@ -30233,7 +30235,7 @@ DynamicVector * VectorClass_ptr_RadSiteClass::Constructor_VectorClass_RadSiteCla
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x65c203*/
-  *Block = &(void*)(void*)&VectorClass_RadSiteClass___vftable; /*0x65c206*/
+  *Block = (void*)&VectorClass_RadSiteClass___vftable; /*0x65c206*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x65c210*/
   {
     RA2_OPDEL(v3); /*0x65c218*/
@@ -30485,7 +30487,7 @@ VectorClass_flat * VectorClass_ptr_RadarEventClass::QueryInterface(unsigned int 
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x660f83*/
-  *Block = &(void*)(void*)&VectorClass_RadarEventClass___vftable; /*0x660f86*/
+  *Block = (void*)&VectorClass_RadarEventClass___vftable; /*0x660f86*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x660f90*/
   {
     RA2_OPDEL(v3); /*0x660f98*/
@@ -30525,7 +30527,7 @@ void VectorClass_flat::Dtor()
   void *v2; // eax
 
   v2 = (void *)this->Items; /*0x679f76*/
-  *this = &(void*)(void*)&VectorClass_int_vftable; /*0x679f79*/
+  *this = (void*)&VectorClass_int_vftable; /*0x679f79*/
   if ( v2 && *((_BYTE *)this + 13) ) /*0x679f83*/
   {
     RA2_OPDEL(v2); /*0x679f89*/
@@ -31635,7 +31637,7 @@ VectorClass_flat * VectorClass_Wstring::QueryInterface(unsigned int * Block, cha
   int v8; // ebp
 
   v3 = *(Block + 1); /*0x69d4b3*/
-  *Block = &(void*)(void*)&VectorClass_Wstring_vftable; /*0x69d4b6*/
+  *Block = (void*)&VectorClass_Wstring_vftable; /*0x69d4b6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x69d4c0*/
   {
     v4 = *(_DWORD *)(v3 - 4); /*0x69d4cb*/
@@ -31670,7 +31672,7 @@ VectorClass_flat * VectorClass_ptr_MultiMission::QueryInterface(unsigned int * B
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x69d593*/
-  *Block = &(void*)(void*)&VectorClass_MultiMission___vftable; /*0x69d596*/
+  *Block = (void*)&VectorClass_MultiMission___vftable; /*0x69d596*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x69d5a0*/
   {
     RA2_OPDEL(v3); /*0x69d5a8*/
@@ -31691,7 +31693,7 @@ DynamicVector * VectorClass_ptr_GlobalPacketType::Constructor_VectorClass_MultiM
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x69d5e3*/
-  *this = &(void*)(void*)&VectorClass_MultiMission___vftable; /*0x69d5e6*/
+  *this = (void*)&VectorClass_MultiMission___vftable; /*0x69d5e6*/
   if ( v3 && this->IsAllocated ) /*0x69d5f0*/
   {
     RA2_OPDEL(v3); /*0x69d5f8*/
@@ -31712,7 +31714,7 @@ VectorClass_flat * VectorClass_ptr_GlobalPacketType::QueryInterface(unsigned int
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x69d633*/
-  *Block = &(void*)(void*)&VectorClass_GlobalPacketType___vftable; /*0x69d636*/
+  *Block = (void*)&VectorClass_GlobalPacketType___vftable; /*0x69d636*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x69d640*/
   {
     RA2_OPDEL(v3); /*0x69d648*/
@@ -31733,7 +31735,7 @@ DynamicVector * VectorClass_ptr_GlobalPacketType::Constructor_VectorClass_Global
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x69d683*/
-  *this = &(void*)(void*)&VectorClass_GlobalPacketType___vftable; /*0x69d686*/
+  *this = (void*)&VectorClass_GlobalPacketType___vftable; /*0x69d686*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x69d690*/
   {
     RA2_OPDEL(v3); /*0x69d698*/
@@ -31754,7 +31756,7 @@ VectorClass_flat * VectorClass_ptr_PhoneEntryClass::QueryInterface(unsigned int 
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x69d6d3*/
-  *Block = &(void*)(void*)&VectorClass_PhoneEntryClass___vftable; /*0x69d6d6*/
+  *Block = (void*)&VectorClass_PhoneEntryClass___vftable; /*0x69d6d6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x69d6e0*/
   {
     RA2_OPDEL(v3); /*0x69d6e8*/
@@ -31802,7 +31804,7 @@ unsigned int * VectorClass_flat::WstringConstructor(int a2, unsigned int * a3)
   this->Capacity = a2; /*0x69d7d3*/
   this->IsInitialized = 1; /*0x69d7d6*/
   this->IsAllocated = 0; /*0x69d7da*/
-  *this = &(void*)(void*)&VectorClass_Wstring_vftable; /*0x69d7de*/
+  *this = (void*)&VectorClass_Wstring_vftable; /*0x69d7de*/
   if ( !a2 ) /*0x69d7e4*/
     return this; /*0x69d7e4*/
   if ( !a3 ) /*0x69d7ec*/
@@ -32091,7 +32093,7 @@ VectorClass_flat * VectorClass_ptr_SlaveManagerClass::QueryInterface(unsigned in
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x6b19d3*/
-  *Block = &(void*)(void*)&VectorClass_SlaveManagerClass___vftable; /*0x6b19d6*/
+  *Block = (void*)&VectorClass_SlaveManagerClass___vftable; /*0x6b19d6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x6b19e0*/
   {
     RA2_OPDEL(v3); /*0x6b19e8*/
@@ -32112,7 +32114,7 @@ DynamicVector * VectorClass_ptr_SlaveManagerClass::Constructor_VectorClass_Slave
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x6b1a23*/
-  *this = &(void*)(void*)&VectorClass_SlaveManagerClass___vftable; /*0x6b1a26*/
+  *this = (void*)&VectorClass_SlaveManagerClass___vftable; /*0x6b1a26*/
   if ( v3 && this->IsAllocated ) /*0x6b1a30*/
   {
     RA2_OPDEL(v3); /*0x6b1a38*/
@@ -32279,7 +32281,7 @@ VectorClass_flat * VectorClass_UUndoInfoStruct::QueryInterface(unsigned int * Bl
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x6b47a3*/
-  *Block = &(void*)(void*)&VectorClass_UndoInfoStruct_vftable; /*0x6b47a6*/
+  *Block = (void*)&VectorClass_UndoInfoStruct_vftable; /*0x6b47a6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x6b47b0*/
   {
     RA2_OPDEL(v3); /*0x6b47b8*/
@@ -32300,7 +32302,7 @@ DynamicVector * VectorClass_UUndoInfoStruct::Constructor_VectorClass_UndoInfoStr
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x6b47f3*/
-  *Block = &(void*)(void*)&VectorClass_UndoInfoStruct_vftable; /*0x6b47f6*/
+  *Block = (void*)&VectorClass_UndoInfoStruct_vftable; /*0x6b47f6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x6b4800*/
   {
     RA2_OPDEL(v3); /*0x6b4808*/
@@ -32552,7 +32554,7 @@ VectorClass_flat * VectorClass_ptr_SpawnManagerClass::QueryInterface(unsigned in
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x6b87e3*/
-  *Block = &(void*)(void*)&VectorClass_SpawnManagerClass___vftable; /*0x6b87e6*/
+  *Block = (void*)&VectorClass_SpawnManagerClass___vftable; /*0x6b87e6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x6b87f0*/
   {
     RA2_OPDEL(v3); /*0x6b87f8*/
@@ -32573,7 +32575,7 @@ DynamicVector * VectorClass_ptr_SpawnManagerClass::Constructor_VectorClass_Spawn
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x6b8833*/
-  *this = &(void*)(void*)&VectorClass_SpawnManagerClass___vftable; /*0x6b8836*/
+  *this = (void*)&VectorClass_SpawnManagerClass___vftable; /*0x6b8836*/
   if ( v3 && this->IsAllocated ) /*0x6b8840*/
   {
     RA2_OPDEL(v3); /*0x6b8848*/
@@ -33399,7 +33401,7 @@ VectorClass_flat * VectorClass_K::QueryInterface(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x6c6483*/
-  *Block = &(void*)(void*)&VectorClass_unsigned_long_vftable; /*0x6c6486*/
+  *Block = (void*)&VectorClass_unsigned_long_vftable; /*0x6c6486*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x6c6490*/
   {
     RA2_OPDEL(v3); /*0x6c6498*/
@@ -33420,7 +33422,7 @@ DynamicVector * VectorClass_K::Constructor(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x6c64d3*/
-  *Block = &(void*)(void*)&VectorClass_unsigned_long_vftable; /*0x6c64d6*/
+  *Block = (void*)&VectorClass_unsigned_long_vftable; /*0x6c64d6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x6c64e0*/
   {
     RA2_OPDEL(v3); /*0x6c64e8*/
@@ -33575,7 +33577,7 @@ DynamicVector * VectorClass_ptr_SubTitle::Constructor_VectorClass_SubTitle___(un
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x6ca9c3*/
-  *Block = &(void*)(void*)&VectorClass_SubTitle___vftable; /*0x6ca9c6*/
+  *Block = (void*)&VectorClass_SubTitle___vftable; /*0x6ca9c6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x6ca9d0*/
   {
     RA2_OPDEL(v3); /*0x6ca9d8*/
@@ -33693,7 +33695,7 @@ VectorClass_flat * VectorClass_ptr_SubTitle::QueryInterface(unsigned int * Block
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x6cab53*/
-  *Block = &(void*)(void*)&VectorClass_SubTitle___vftable; /*0x6cab56*/
+  *Block = (void*)&VectorClass_SubTitle___vftable; /*0x6cab56*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x6cab60*/
   {
     RA2_OPDEL(v3); /*0x6cab68*/
@@ -34243,7 +34245,7 @@ VectorClass_flat * VectorClass_UDirtyAreaStruct::QueryInterface(unsigned int * B
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x6dcc33*/
-  *Block = &(void*)(void*)&VectorClass_DirtyAreaStruct_vftable; /*0x6dcc36*/
+  *Block = (void*)&VectorClass_DirtyAreaStruct_vftable; /*0x6dcc36*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x6dcc40*/
   {
     RA2_OPDEL(v3); /*0x6dcc48*/
@@ -34284,7 +34286,7 @@ VectorClass_flat * VectorClass_UDirtyAreaStruct___16::QueryInterface(unsigned in
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x6dccd3*/
-  *Block = &(void*)(void*)&VectorClass_ShadowControlClass___vftable; /*0x6dccd6*/
+  *Block = (void*)&VectorClass_ShadowControlClass___vftable; /*0x6dccd6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x6dcce0*/
   {
     RA2_OPDEL(v3); /*0x6dcce8*/
@@ -34305,7 +34307,7 @@ DynamicVector * VectorClass_UDirtyAreaStruct::Constructor_VectorClass_ShadowCont
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x6dcd23*/
-  *this = &(void*)(void*)&VectorClass_ShadowControlClass___vftable; /*0x6dcd26*/
+  *this = (void*)&VectorClass_ShadowControlClass___vftable; /*0x6dcd26*/
   if ( v3 && this->IsAllocated ) /*0x6dcd30*/
   {
     RA2_OPDEL(v3); /*0x6dcd38*/
@@ -34557,7 +34559,7 @@ VectorClass_flat * VectorClass_ptr_TagTypeClass::QueryInterface(unsigned int * B
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x6e67a3*/
-  *Block = &(void*)(void*)&VectorClass_TagTypeClass___vftable; /*0x6e67a6*/
+  *Block = (void*)&VectorClass_TagTypeClass___vftable; /*0x6e67a6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x6e67b0*/
   {
     RA2_OPDEL(v3); /*0x6e67b8*/
@@ -34578,7 +34580,7 @@ DynamicVector * VectorClass_ptr_TagTypeClass::Constructor_VectorClass_TagTypeCla
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x6e67f3*/
-  *Block = &(void*)(void*)&VectorClass_TagTypeClass___vftable; /*0x6e67f6*/
+  *Block = (void*)&VectorClass_TagTypeClass___vftable; /*0x6e67f6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x6e6800*/
   {
     RA2_OPDEL(v3); /*0x6e6808*/
@@ -34604,7 +34606,7 @@ unsigned int * VectorClass_flat::CopyParticle(DynamicVector * aP1)
   this->q008 = 0; /*0x717d30*/
   *((_BYTE *)this + 12) = 1; /*0x717d33*/
   *((_BYTE *)this + 13) = 0; /*0x717d37*/
-  *this = &(void*)(void*)&VectorClass_ParticleSystemTypeClass_const___vftable; /*0x717d3a*/
+  *this = (void*)&VectorClass_ParticleSystemTypeClass_const___vftable; /*0x717d3a*/
   if ( this != aP1 ) /*0x717d40*/
   {
     VectorClass::Cleanup(); /*0x717d42*/
@@ -34638,7 +34640,7 @@ unsigned int * VectorClass_flat::CopyParticle(DynamicVector * aP1)
   }
   this->q010 = aP1[4]; /*0x717d91*/
   this->CapacityIncrement = aP1[5]; /*0x717d97*/
-  *this = &(void*)(void*)&TypeList_ParticleSystemTypeClass_const___vftable; /*0x717d9a*/
+  *this = (void*)&TypeList_ParticleSystemTypeClass_const___vftable; /*0x717d9a*/
   return this; /*0x717da2*/
 }
 // 0x71B240
@@ -34879,7 +34881,7 @@ VectorClass_flat * VectorClass_ptr_TemporalClass::QueryInterface(unsigned int * 
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x71b503*/
-  *Block = &(void*)(void*)&VectorClass_TemporalClass___vftable; /*0x71b506*/
+  *Block = (void*)&VectorClass_TemporalClass___vftable; /*0x71b506*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x71b510*/
   {
     RA2_OPDEL(v3); /*0x71b518*/
@@ -34900,7 +34902,7 @@ DynamicVector * VectorClass_ptr_TemporalClass::Constructor_VectorClass_TemporalC
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x71b553*/
-  *this = &(void*)(void*)&VectorClass_TemporalClass___vftable; /*0x71b556*/
+  *this = (void*)&VectorClass_TemporalClass___vftable; /*0x71b556*/
   if ( v3 && this->IsAllocated ) /*0x71b560*/
   {
     RA2_OPDEL(v3); /*0x71b568*/
@@ -35152,7 +35154,7 @@ VectorClass_flat * VectorClass_ptr_TEventClass::QueryInterface(unsigned int * Bl
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x71fe63*/
-  *Block = &(void*)(void*)&VectorClass_TEventClass___vftable; /*0x71fe66*/
+  *Block = (void*)&VectorClass_TEventClass___vftable; /*0x71fe66*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x71fe70*/
   {
     RA2_OPDEL(v3); /*0x71fe78*/
@@ -35173,7 +35175,7 @@ DynamicVector * VectorClass_ptr_TEventClass::Constructor_VectorClass_TEventClass
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x71feb3*/
-  *Block = &(void*)(void*)&VectorClass_TEventClass___vftable; /*0x71feb6*/
+  *Block = (void*)&VectorClass_TEventClass___vftable; /*0x71feb6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x71fec0*/
   {
     RA2_OPDEL(v3); /*0x71fec8*/
@@ -35291,7 +35293,7 @@ DynamicVector * VectorClass_ptr_ThemeControl::Constructor_VectorClass_ThemeContr
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x7213e3*/
-  *Block = &(void*)(void*)&VectorClass_ThemeControl___vftable; /*0x7213e6*/
+  *Block = (void*)&VectorClass_ThemeControl___vftable; /*0x7213e6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x7213f0*/
   {
     RA2_OPDEL(v3); /*0x7213f8*/
@@ -35543,7 +35545,7 @@ VectorClass_flat * VectorClass_ptr_TiberiumClass::QueryInterface(unsigned int * 
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x7239f3*/
-  *Block = &(void*)(void*)&VectorClass_TiberiumClass___vftable; /*0x7239f6*/
+  *Block = (void*)&VectorClass_TiberiumClass___vftable; /*0x7239f6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x723a00*/
   {
     RA2_OPDEL(v3); /*0x723a08*/
@@ -35564,7 +35566,7 @@ DynamicVector * VectorClass_ptr_TiberiumClass::Constructor_VectorClass_TiberiumC
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x723a43*/
-  *this = &(void*)(void*)&VectorClass_TiberiumClass___vftable; /*0x723a46*/
+  *this = (void*)&VectorClass_TiberiumClass___vftable; /*0x723a46*/
   if ( v3 && this->IsAllocated ) /*0x723a50*/
   {
     RA2_OPDEL(v3); /*0x723a58*/
@@ -35593,7 +35595,7 @@ VectorClass_flat * VectorClass_E::QueryInterface(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x74bfa3*/
-  *Block = &(void*)(void*)&VectorClass_unsigned_char_vftable; /*0x74bfa6*/
+  *Block = (void*)&VectorClass_unsigned_char_vftable; /*0x74bfa6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x74bfb0*/
   {
     RA2_OPDEL(v3); /*0x74bfb8*/
@@ -35966,7 +35968,7 @@ VectorClass_flat * VectorClass_ptr_VocClass::QueryInterface(unsigned int * Block
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x751b93*/
-  *Block = &(void*)(void*)&VectorClass_VocClass___vftable; /*0x751b96*/
+  *Block = (void*)&VectorClass_VocClass___vftable; /*0x751b96*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x751ba0*/
   {
     RA2_OPDEL(v3); /*0x751ba8*/
@@ -35987,7 +35989,7 @@ DynamicVector * VectorClass_ptr_VocClass::Constructor_VectorClass_VocClass___(un
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x751be3*/
-  *Block = &(void*)(void*)&VectorClass_VocClass___vftable; /*0x751be6*/
+  *Block = (void*)&VectorClass_VocClass___vftable; /*0x751be6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x751bf0*/
   {
     RA2_OPDEL(v3); /*0x751bf8*/
@@ -36142,7 +36144,7 @@ VectorClass_flat * VectorClass_ptr_VoxClass::QueryInterface(unsigned int * Block
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x753913*/
-  *Block = &(void*)(void*)&VectorClass_VoxClass___vftable; /*0x753916*/
+  *Block = (void*)&VectorClass_VoxClass___vftable; /*0x753916*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x753920*/
   {
     RA2_OPDEL(v3); /*0x753928*/
@@ -36394,7 +36396,7 @@ VectorClass_flat * VectorClass_ptr_MovieHandle::QueryInterface(unsigned int * Bl
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x75a6f3*/
-  *Block = &(void*)(void*)&VectorClass_MovieHandle___vftable; /*0x75a6f6*/
+  *Block = (void*)&VectorClass_MovieHandle___vftable; /*0x75a6f6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x75a700*/
   {
     RA2_OPDEL(v3); /*0x75a708*/
@@ -36415,7 +36417,7 @@ DynamicVector * VectorClass_ptr_MovieHandle::Constructor_VectorClass_MovieHandle
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x75a743*/
-  *Block = &(void*)(void*)&VectorClass_MovieHandle___vftable; /*0x75a746*/
+  *Block = (void*)&VectorClass_MovieHandle___vftable; /*0x75a746*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x75a750*/
   {
     RA2_OPDEL(v3); /*0x75a758*/
@@ -36667,7 +36669,7 @@ VectorClass_flat * VectorClass_ptr_WaypointPathClass::QueryInterface(unsigned in
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x7646c3*/
-  *Block = &(void*)(void*)&VectorClass_WaypointPathClass___vftable; /*0x7646c6*/
+  *Block = (void*)&VectorClass_WaypointPathClass___vftable; /*0x7646c6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x7646d0*/
   {
     RA2_OPDEL(v3); /*0x7646d8*/
@@ -36688,7 +36690,7 @@ DynamicVector * VectorClass_ptr_WaypointPathClass::Constructor_VectorClass_Waypo
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x764713*/
-  *this = &(void*)(void*)&VectorClass_WaypointPathClass___vftable; /*0x764716*/
+  *this = (void*)&VectorClass_WaypointPathClass___vftable; /*0x764716*/
   if ( v3 && this->IsAllocated ) /*0x764720*/
   {
     RA2_OPDEL(v3); /*0x764728*/
@@ -36722,7 +36724,7 @@ unsigned int * VectorClass_rc_ptr_WDTTerritory::Clear(unsigned int * a2, int a3)
 
   v3 = this->Items + 8 * a3; /*0x76b76d*/
   ComPtr::Constructor(a2); /*0x76b772*/
-  *a2 = &(void*)(void*)&rc_ptr_WDTTerritory_vftable; /*0x76b777*/
+  *a2 = (void*)&rc_ptr_WDTTerritory_vftable; /*0x76b777*/
   ComPtr::Set(a2, *(_DWORD *)(v3 + 4)); /*0x76b783*/
   return a2; /*0x76b78a*/
 }
@@ -36816,7 +36818,7 @@ VectorClass_flat * VectorClass_rc_ptr_WDTTerritory::QueryInterface(unsigned int 
   void (__thiscall ***v3)(_DWORD, int); // ecx
 
   v3 = (void (__thiscall ***)(_DWORD, int))*(Block + 1); /*0x76bbc3*/
-  *Block = &(void*)(void*)&VectorClass_rc_ptr_WDTTerritory_vftable; /*0x76bbc6*/
+  *Block = (void*)&VectorClass_rc_ptr_WDTTerritory_vftable; /*0x76bbc6*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x76bbd0*/
   {
     (**v3)(v3, 3); /*0x76bbdf*/
@@ -37000,7 +37002,7 @@ VectorClass_flat * VectorClass_ptr_WinsockBufferType_WinsockInterfaceClass::Quer
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x7b2b03*/
-  *Block = &(void*)(void*)&VectorClass_WinsockInterfaceClass_WinsockBufferType___vftable; /*0x7b2b06*/
+  *Block = (void*)&VectorClass_WinsockInterfaceClass_WinsockBufferType___vftable; /*0x7b2b06*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x7b2b10*/
   {
     RA2_OPDEL(v3); /*0x7b2b18*/
@@ -37155,7 +37157,7 @@ VectorClass_flat * VectorClass_PAE::QueryInterface(unsigned int * Block, char a2
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x7b4583*/
-  *Block = &(void*)(void*)&VectorClass_unsigned_char___vftable; /*0x7b4586*/
+  *Block = (void*)&VectorClass_unsigned_char___vftable; /*0x7b4586*/
   if ( v3 && *((_BYTE *)Block + 13) ) /*0x7b4590*/
   {
     RA2_OPDEL(v3); /*0x7b4598*/

@@ -12,6 +12,6 @@ struct E4Recv_517360 {
     unsigned int u32_4;  // 0x4
     unsigned int u32_8;  // 0x8
 // --- flat members (END) ---
-    unsigned char sub_517360(unsigned char a2, unsigned char * a3);  // 0x517360
+    unsigned char sub_517360(unsigned char a2,  unsigned char * a3);    // 0x517360
 };
 } // namespace gamemd

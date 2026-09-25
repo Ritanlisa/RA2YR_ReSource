@@ -6,6 +6,8 @@
 #include "e4/classes/INIClass_e4.hpp"
 #include "e4/classes/Init_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x758A30
@@ -26,7 +28,7 @@ int VoxelPaletteClass::ConvertFromFile(int a2)
     goto LABEL_5; /*0x758a5c*/
   v4 = v9[2]; /*0x758a62*/
   v5 = v9[1]; /*0x758a66*/
-  *this = v9[0]; /*0x758a6a*/
+  *(_DWORD *)this = v9[0]; /*0x758a6a*/
   v6 = v9[3]; /*0x758a6c*/
   this->q020 = v4; /*0x758a70*/
   v7 = this->u32_10; /*0x758a73*/

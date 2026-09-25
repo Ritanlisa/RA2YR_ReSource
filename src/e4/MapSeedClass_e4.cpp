@@ -13,6 +13,8 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/MapClass_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/Map_e4.hpp"
 
 // 0x5A5B50
@@ -29,7 +31,7 @@ MapSeedClass * * MapSeedClass::PlaceBuildingClusters(MapSeedClass * aP1)
   __int16 v9; // ax
   __int16 v10; // cx
   int i; // esi
-  unsigned int v12; // eax
+  ObjectClass * v12;
   int v13; // ebx
   char v14; // bl
   unsigned int v15; // eax
@@ -754,7 +756,7 @@ VectorClass_flat * MapSeedClass_18::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x5ad433*/
-  *this = &(void*)(void*)&VectorClass__WIN32_FIND_DATAA___vftable; /*0x5ad436*/
+  *this = (void*)&VectorClass__WIN32_FIND_DATAA___vftable; /*0x5ad436*/
   if ( v3 && this->IsAllocated ) /*0x5ad440*/
   {
     RA2_OPDEL(v3); /*0x5ad448*/
@@ -775,7 +777,7 @@ DynamicVector * MapSeedClass_18::Constructor_VectorClass__WIN32_FIND_DATAA___(ch
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x5ad483*/
-  *this = &(void*)(void*)&VectorClass__WIN32_FIND_DATAA___vftable; /*0x5ad486*/
+  *this = (void*)&VectorClass__WIN32_FIND_DATAA___vftable; /*0x5ad486*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x5ad490*/
   {
     RA2_OPDEL(v3); /*0x5ad498*/

@@ -22,7 +22,7 @@ struct Camera {
     unsigned char q048;  // 0x48
     unsigned char q04C;  // 0x4C
     unsigned char q050;  // 0x50
-    unsigned int q054;  // 0x54
+    char q054[4];  // 0x54
     unsigned char q058;  // 0x58
     unsigned char q05C;  // 0x5C
     float q064;  // 0x64

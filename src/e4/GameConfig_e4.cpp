@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Vector_e4.hpp"
 #include "e4/classes/GameConfig_e4.hpp"
@@ -15,7 +16,11 @@
 #include "e4/classes/Timer_e4.hpp"
 #include "e4/classes/BombClass_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x5E84D0
 namespace gamemd {
@@ -91,7 +96,7 @@ int GameConfig::ComputeHash()
   char v11; // [esp+50h] [ebp-84h]
   _DWORD v12[22]; // [esp+68h] [ebp-6Ch] BYREF
   _BYTE v13[12]; // [esp+C0h] [ebp-14h] BYREF
-  int v14; // [esp+CCh] [ebp-8h]
+  void ** v14;
 
   v0 = Hash::ComputeHashSHA1(CCINIClass_INI_Rules); /*0x679da5*/
   v1 = MultiplayerGameMode::ListGet(); /*0x679dac*/
@@ -109,7 +114,7 @@ int GameConfig::ComputeHash()
   v6[1] = 0; /*0x679de9*/
   v6[2] = 0; /*0x679ded*/
   GenericList::Constructor(v7); /*0x679df1*/
-  v7[0] = &(void*)(void*)&List_INIClass_INISection___vftable; /*0x679dfa*/
+  v7[0] = (void*)&List_INIClass_INISection___vftable; /*0x679dfa*/
   memset(&v7[7], 0, 12); /*0x679e07*/
   v8 = 0; /*0x679e13*/
   v9 = 0; /*0x679e17*/
@@ -120,7 +125,7 @@ int GameConfig::ComputeHash()
   if ( CCINIClass::Load(v6, (int)v12, 0, 0) ) /*0x679e3b*/
     dword_B053B4 = Hash::ComputeHashSHA1((int)v6); /*0x679e4d*/
   byte_B053B8 = 1; /*0x679e59*/
-  v12[0] = &(void*)(void*)&CCFileClass_vftable; /*0x679e60*/
+  v12[0] = (void*)&CCFileClass_vftable; /*0x679e60*/
   v14 = 0; /*0x679e68*/
   Vector::Clear((int)v13); /*0x679e6f*/
   v12[0] = &off_7E1668; /*0x679e78*/

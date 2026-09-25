@@ -2,7 +2,10 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x76F470
 namespace gamemd {
@@ -19,12 +22,12 @@ rc_ptr_base * ActivateScreenWDT_Create(rc_ptr_base * a1, int a2, unsigned int a3
   {
     v7 = v5 + 2; /*0x76f488*/
     v5[1] = 0; /*0x76f48d*/
-    *v5 = &(void*)(void*)&ReferenceCounted_vftable; /*0x76f494*/
+    *(void **)v5 = (void*)&ReferenceCounted_vftable; /*0x76f494*/
     ComPtr::Constructor(v5 + 2); /*0x76f49a*/
-    *v7 = &(void*)(void*)&rc_ptr_WDTState_vftable; /*0x76f49f*/
+    *(void **)v7 = (void*)&rc_ptr_WDTState_vftable; /*0x76f49f*/
     ComPtr::Set(v6 + 2, *(_DWORD *)(a2 + 4)); /*0x76f4ab*/
     v6[4] = 0; /*0x76f4b0*/
-    *v6 = &(void*)(void*)&WorldDominationTour_State_vftable; /*0x76f4b7*/
+    *(void **)v6 = (void*)&WorldDominationTour_State_vftable; /*0x76f4b7*/
     v8 = v6[3]; /*0x76f4bd*/
     if ( v8 && a3 < *(_DWORD *)(v8 + 36) ) /*0x76f4ce*/
       v6[4] = *(_DWORD *)(*(_DWORD *)(v8 + 68) + 4 * a3); /*0x76f4d6*/
@@ -34,7 +37,7 @@ rc_ptr_base * ActivateScreenWDT_Create(rc_ptr_base * a1, int a2, unsigned int a3
     v6 = 0; /*0x76f4db*/
   }
   ComPtr::Constructor(a1); /*0x76f4df*/
-  *a1 = &(void*)(void*)&rc_ptr_WorldDominationTour_State_vftable; /*0x76f4e6*/
+  *a1 = (void*)&rc_ptr_WorldDominationTour_State_vftable; /*0x76f4e6*/
   ComPtr::Set(a1, (int)v6); /*0x76f4ee*/
   return a1; /*0x76f4f5*/
 }

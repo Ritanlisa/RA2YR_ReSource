@@ -58,6 +58,6 @@ struct E4Recv_779690 {
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    void * LoadAccountInfoWOL_Load(ReferenceCounted * aP1, ObjectClass * aP2, ReferenceCounted * aP3, ReferenceCounted * aP4, int a6, ObjectClass * aP6, ReferenceCounted * aP7, ReferenceCounted * aP8, ReferenceCounted * aP9, ReferenceCounted * aP10, ReferenceCounted * aP11, ReferenceCounted * aP12, ReferenceCounted * aP13, ReferenceCounted * aP14);  // 0x779690
+    void * LoadAccountInfoWOL_Load(void* aP1,  ObjectClass * aP2,  void* aP3,  void* aP4,  int a6,  ObjectClass * aP6,  void* aP7,  void* aP8,  void* aP9,  void* aP10,  void* aP11,  void* aP12,  void* aP13,  void* aP14);    // 0x779690
 };
 } // namespace gamemd

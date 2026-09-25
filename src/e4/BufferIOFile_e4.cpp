@@ -5,6 +5,8 @@
 #include "e4/classes/BufferIOFileClass_e4.hpp"
 #include "e4/classes/FileClass_e4.hpp"
 #include "e4/classes/Init_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x47A9D0

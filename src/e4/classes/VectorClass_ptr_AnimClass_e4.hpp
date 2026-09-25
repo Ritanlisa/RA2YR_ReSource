@@ -30,9 +30,9 @@ struct VectorClass_ptr_AnimClass {
 // --- flat members (END) ---
     int Clear(int a2);  // 0x4E89B0
     char Add(int a2);  // 0x4EBE40
-    char Release(int a2, unsigned int * a3);  // 0x4EBE80
+    char Release(int a2,  unsigned int * a3);    // 0x4EBE80
     void Remove();  // 0x4EBF30
     int GetSize(unsigned int * a2);  // 0x4EBF60
-    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x4F0070
+    VectorClass_flat * QueryInterface(unsigned int * Block,  char a2);    // 0x4F0070
 };
 } // namespace gamemd

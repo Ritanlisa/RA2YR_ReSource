@@ -100,14 +100,14 @@ struct ScoreScreen {
     unsigned char q5484;  // 0x5484
     unsigned char q637C;  // 0x637C
     unsigned char q6380;  // 0x6380
-    unsigned int LoadAudio;
     unsigned int u32_1784;
 // --- flat members (END) ---
     unsigned int * Constructor(ScoreAnimClass * aP1, int a3, int a4);
     unsigned int * LoadCountryFlags(int a2);
-    unsigned int * LoadScoreFont(ScoreFontClass * aP1);
+    unsigned int * LoadScoreFont(void* aP1);
     void RemoveItem(int a2, int a3, ObjectClass * aP3, char a5, int a6);
     static double DrawSHPBackground(...);  // C2597 interim stub
+    static double LoadAudio(...);  // C2597 interim stub
 };
 
 } // namespace gamemd

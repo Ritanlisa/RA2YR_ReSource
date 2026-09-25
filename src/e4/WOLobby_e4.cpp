@@ -15,7 +15,10 @@
 #include "e4/classes/INIClass_e4.hpp"
 #include "e4/classes/WOLobby_e4.hpp"
 #include "e4/classes/HashTable_flat_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/WalkLocomotion_e4.hpp"
 
 // 0x5E3850
 namespace gamemd {
@@ -347,7 +350,7 @@ LABEL_320:
       GDlg::LoadLetterStrings();
       Lobby::InvalidatePlayerSlots(hDlg);
       RefreshLobbyPlayerSlots(0xFFFFFFFF);
-      int * v122 = g_CampaignFactionSlot;
+      unsigned int v122 =
       do
       {
         *(v122 - 8) = -2;

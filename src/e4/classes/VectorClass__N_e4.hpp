@@ -29,11 +29,11 @@ struct VectorClass__N {
     unsigned char q050;  // 0x50
     unsigned int q054;  // 0x54
 // --- flat members (END) ---
-    char Remove(signed int Size, char * a3);  // 0x50F9E0
-    char SetCapacity(signed int Size, char * a3);  // 0x50FB20
+    char Remove(signed int Size,  char * a3);    // 0x50F9E0
+    char SetCapacity(signed int Size,  char * a3);    // 0x50FB20
     int Destroy_0(unsigned char * a2);  // 0x50FBD0
-    VectorClass_flat * Add(unsigned int * Block, char a2);  // 0x510360
-    DynamicVector * Constructor_VectorClass_bool_(unsigned int * Block, char a2);  // 0x5103B0
+    VectorClass_flat * Add(unsigned int * Block,  char a2);    // 0x510360
+    DynamicVector * Constructor_VectorClass_bool_(unsigned int * Block,  char a2);    // 0x5103B0
     void Destroy();  // 0x50E700
     int GetItemIndex(int a2);  // 0x50E730
     char Clear(int a2);  // 0x50E750

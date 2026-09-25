@@ -26,6 +26,8 @@
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/TeamClass_e4.hpp"
 #include "e4/classes/Value_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x44F820
@@ -810,7 +812,7 @@ void Scenario::Update()
   v40 = 0; /*0x55b4f5*/
   ScenarioClass::ProcessAmbientEffects(0, 0); /*0x55b4fd*/
   v41 = 10; /*0x55b507*/
-  v60 = &(void*)(void*)&DynamicVectorClass_TeamClass___vftable; /*0x55b50e*/
+  v60 = (void*)&DynamicVectorClass_TeamClass___vftable; /*0x55b50e*/
   v65 = 10; /*0x55b516*/
   v64 = 0; /*0x55b51a*/
   if ( g_HouseClass_AIProductionState > 0 ) /*0x55b51e*/
@@ -883,7 +885,7 @@ void Scenario::Update()
     v59 = v55[2]; /*0x55b6ef*/
     Tactical::SetTacticalPosition(&v57); /*0x55b6f3*/
   }
-  v60 = &(void*)(void*)&VectorClass_TeamClass___vftable; /*0x55b6fc*/
+  v60 = (void*)&VectorClass_TeamClass___vftable; /*0x55b6fc*/
   if ( Block ) /*0x55b706*/
   {
     if ( v63 ) /*0x55b70e*/

@@ -24,6 +24,6 @@ struct CoordStruct {
     unsigned int q1544;  // 0x1544
     unsigned int q5444;  // 0x5444
 // --- flat members (END) ---
-    unsigned int * Set2(IUnknown * aP1, AbstractClass * aP2);  // 0x642740
+    unsigned int * Set2(void* aP1,  AbstractClass * aP2);    // 0x642740
 };
 } // namespace gamemd

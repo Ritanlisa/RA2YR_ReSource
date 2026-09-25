@@ -28,16 +28,16 @@ struct BlowPipe_23 {
     void Clear();  // 0x63DC80
     int Seek(int a2);  // 0x63DCD0
     void Clear_0();  // 0x63DCE0
-    char SetCapacity(int a2, unsigned int * a3);  // 0x63E350
+    char SetCapacity(int a2,  unsigned int * a3);    // 0x63E350
     void Clear_1();  // 0x63E400
     int FindItemIndex(unsigned int * a2);  // 0x63E430
     char AddRef(int a2);  // 0x63E650
-    char Release(int a2, unsigned int * a3);  // 0x63E690
+    char Release(int a2,  unsigned int * a3);    // 0x63E690
     void ddtor();  // 0x63E740
     int Read(unsigned int * a2);  // 0x63E770
-    char SetCapacity_0(int a2, unsigned int * a3);  // 0x63E7D0
+    char SetCapacity_0(int a2,  unsigned int * a3);    // 0x63E7D0
     int FindItemIndex_0(unsigned int * a2);  // 0x63E8D0
-    char SetCapacity_1(int a2, unsigned int * a3);  // 0x63EAD0
+    char SetCapacity_1(int a2,  unsigned int * a3);    // 0x63EAD0
     int FindItemIndex_1(unsigned int * a2);  // 0x63EC20
     VectorClass_flat * Destructor(char a2);  // 0x63ED90
     VectorClass_flat * QueryInterface(char a2);  // 0x63EE30

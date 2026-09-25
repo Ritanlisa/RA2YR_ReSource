@@ -3,6 +3,8 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/ColorListClass_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/ColorScheme_e4.hpp"
 
 // 0x557AE0
@@ -79,11 +81,11 @@ ColorListClass * ColorListClass::QueryInterface(char a2)
 
   v3 = this->q174; /*0x488f05*/
   v4 = &this->u32_5D0; /*0x488f0b*/
-  *(_DWORD *)this = &(void*)(void*)&ColorListClass_vftable; /*0x488f13*/
+  *(void **)this = (void*)&ColorListClass_vftable; /*0x488f13*/
   (*(void (__thiscall **)(char *))(v3 + 12))(&this->u32_942); /*0x488f19*/
   this->q190 = 0; /*0x488f1e*/
   v5 = (void *)*((_DWORD *)v4 + 1); /*0x488f24*/
-  *(_DWORD *)v4 = &(void*)(void*)&VectorClass_int_vftable; /*0x488f29*/
+  *(void **)v4 = (void*)&VectorClass_int_vftable; /*0x488f29*/
   if ( v5 && v4[13] ) /*0x488f31*/
   {
     RA2_OPDEL(v5); /*0x488f37*/

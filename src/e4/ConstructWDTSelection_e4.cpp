@@ -14,6 +14,8 @@
 #include "e4/classes/E4Recv_76F500_e4.hpp"
 #include "e4/classes/E4Recv_771800_e4.hpp"
 #include "e4/classes/ComPtr_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x767FB0
@@ -29,7 +31,7 @@ rc_ptr * ConstructWDTSelection_Create_767FB0(rc_ptr_base * a1, int a2, int a3, R
   else
     v7 = 0; /*0x767fdd*/
   ComPtr::Constructor(a1); /*0x767fe1*/
-  *a1 = &(void*)(void*)&rc_ptr_WorldDominationTour_Map_vftable; /*0x767fe8*/
+  *a1 = (void*)&rc_ptr_WorldDominationTour_Map_vftable; /*0x767fe8*/
   ComPtr::Set(a1, (int)v7); /*0x767fef*/
   return a1; /*0x767ff6*/
 }

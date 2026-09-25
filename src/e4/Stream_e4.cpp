@@ -3,7 +3,10 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Stream_e4.hpp"
 #include "e4/classes/TechnoTypeClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x439110
 namespace gamemd {
@@ -12,7 +15,7 @@ int Stream::FlushAndReset()
   int v2; // eax
   int v3; // edi
   int v4; // eax
-  int v5; // edi
+  void * v5;
 
   v2 = *this; /*0x439114*/
   v3 = this->Stream_field_08; /*0x439116*/

@@ -59,6 +59,6 @@ struct E4Recv_5CD570 {
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    int sub_5CD570(const wchar_t ** a2, int a3, int a4, int a5, int * a6, int a7, int a8, char a9, char a10);  // 0x5CD570
+    int sub_5CD570(const wchar_t ** a2,  int a3,  int a4,  int a5,  int * a6,  int a7,  int a8,  char a9,  char a10);    // 0x5CD570
 };
 } // namespace gamemd

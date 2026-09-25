@@ -6,13 +6,15 @@
 #include "e4/classes/TechnoTypeClass_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/RadarHashVector_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x65B1E0
 namespace gamemd {
 RadSiteClass::RadSiteClass()
 {
-  int v3; // eax
+  RadSiteClass * v3;
 
   AbstractClass::Constructor(); /*0x65b1e3*/
   this->LightSource = 0; /*0x65b1ea*/
@@ -32,10 +34,10 @@ RadSiteClass::RadSiteClass()
   *(&this->vtable36) = 0; /*0x65b21f*/
   *(&this->vtable37) = 0; /*0x65b222*/
   *(&this->vtable38) = 0; /*0x65b225*/
-  *this = &(void*)(void*)&RadSiteClass_vftable; /*0x65b228*/
-  this->vtable2 = &(void*)(void*)&RadSiteClass_vftable; /*0x65b22e*/
-  this->vtable3 = &(void*)(void*)&RadSiteClass_vftable; /*0x65b235*/
-  this->vtable4 = &(void*)(void*)&RadSiteClass_vftable; /*0x65b23c*/
+  *(void **)this = (void*)&RadSiteClass_vftable; /*0x65b228*/
+  this->vtable2 = (void*)&RadSiteClass_vftable; /*0x65b22e*/
+  this->vtable3 = (void*)&RadSiteClass_vftable; /*0x65b235*/
+  this->vtable4 = (void*)&RadSiteClass_vftable; /*0x65b23c*/
   if ( dword_B04BE0 < dword_B04BD8 /*0x65b277*/
     || (byte_B04BDD || !dword_B04BD8)
     && dword_B04BE4 > 0
@@ -71,7 +73,7 @@ namespace gamemd {
 int RadSiteClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
 {
   int Prefix_0; // edi
-  wchar_t *v3; // edx
+  unsigned int v3;
 
   Prefix_0 = AbstractClass::SaveLoad_Prefix_0(aP0, aP1); /*0x65b3e1*/
   if ( Prefix_0 >= 0 ) /*0x65b3e5*/
@@ -84,10 +86,10 @@ int RadSiteClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
       aP0[10] = v3; /*0x65b404*/
       aP0[13] = g_CurrentFrame; /*0x65b40c*/
       aP0[15] = 0; /*0x65b40f*/
-      *aP0 = &(void*)(void*)&RadSiteClass_vftable; /*0x65b416*/
-      aP0[1] = &(void*)(void*)&RadSiteClass_vftable; /*0x65b41c*/
-      aP0[2] = &(void*)(void*)&RadSiteClass_vftable; /*0x65b423*/
-      aP0[3] = &(void*)(void*)&RadSiteClass_vftable; /*0x65b42a*/
+      *(void **)aP0 = (void*)&RadSiteClass_vftable; /*0x65b416*/
+      aP0[1] = (void*)&RadSiteClass_vftable; /*0x65b41c*/
+      aP0[2] = (void*)&RadSiteClass_vftable; /*0x65b423*/
+      aP0[3] = (void*)&RadSiteClass_vftable; /*0x65b42a*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP0 + 9); /*0x65b43a*/
   }

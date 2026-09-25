@@ -32,7 +32,7 @@ struct TechnoTypeClass {
     unsigned int q03B;  // 0x3B
     unsigned char zero_3C;  // 0x3C
     char UINameLabel;  // 0x3D
-    IUnknown* TargetDistanceCoefficient;  // 0x40
+    void* TargetDistanceCoefficient;  // 0x40
     bool q042;  // 0x42
     int q044;  // 0x44
     void* q046;  // 0x46
@@ -88,7 +88,7 @@ struct TechnoTypeClass {
     unsigned int q0C3;  // 0xC3
     unsigned int u32_C4;  // 0xC4
     unsigned int u32_C8;  // 0xC8
-    IUnknown* q0CC;  // 0xCC
+    void* q0CC;  // 0xCC
     unsigned char q0D0;  // 0xD0
     unsigned int u32_D4;  // 0xD4
     void* q0D8;  // 0xD8
@@ -97,7 +97,7 @@ struct TechnoTypeClass {
     unsigned int u32_E4;  // 0xE4
     AbstractClass* q0E8;  // 0xE8
     unsigned int q0EC;  // 0xEC
-    void* q0F0;  // 0xF0
+    unsigned int q0F0;  // 0xF0
     unsigned char u8_F1;  // 0xF1
     unsigned char u8_F2;  // 0xF2
     unsigned char u8_F3;  // 0xF3
@@ -290,7 +290,7 @@ struct TechnoTypeClass {
     unsigned int q304;  // 0x304
     double AccelerationFactor;  // 0x308
     unsigned int q30A;  // 0x30A
-    IUnknown* q30C;  // 0x30C
+    unsigned int q30C;  // 0x30C
     int CloakingSpeed;  // 0x310
     unsigned char DebrisTypes;  // 0x314
     CampaignClass* VoxelAnimList_Items;  // 0x318
@@ -319,13 +319,13 @@ struct TechnoTypeClass {
     double unknown_double_368;  // 0x368
     unsigned char q36C;  // 0x36C
     double Weight;  // 0x370
-    IUnknown* q374;  // 0x374
+    unsigned int q374;  // 0x374
     double PhysicalSize;  // 0x378
     unsigned int u32_37C;  // 0x37C
     double Size;  // 0x380
-    IUnknown* q384;  // 0x384
+    unsigned int q384;  // 0x384
     double SizeLimit;  // 0x388
-    IUnknown* q38C;  // 0x38C
+    void* q38C;  // 0x38C
     bool HoverAttack;  // 0x390
     unsigned char q391;  // 0x391
     int VHPScan;  // 0x394
@@ -334,12 +334,12 @@ struct TechnoTypeClass {
     double RollAngle;  // 0x3A0
     unsigned int u32_3A4;  // 0x3A4
     double PitchSpeed;  // 0x3A8
-    IUnknown* q3AC;  // 0x3AC
+    unsigned int q3AC;  // 0x3AC
     double PitchAngle;  // 0x3B0
     unsigned int u32_3B4;  // 0x3B4
     unsigned int q3B7;  // 0x3B7
     int BuildLimit;  // 0x3B8
-    char Category[4];  // 0x3BC
+    unsigned int Category;  // 0x3BC
     unsigned int unknown_3C0;  // 0x3C0
     unsigned int q3C4;  // 0x3C4
     double DeployTime;  // 0x3C8
@@ -403,7 +403,7 @@ struct TechnoTypeClass {
     unsigned int q48F;  // 0x48F
     unsigned int IntList_F_FlagByte;  // 0x491
     TechnoTypeClass * ptr_494;  // 0x494
-    void* q498;  // 0x498
+    unsigned int q498;  // 0x498
     void* q49C;  // 0x49C
     unsigned int q49D;  // 0x49D
     unsigned char VoiceSpecialAttack;  // 0x4A0
@@ -412,7 +412,7 @@ struct TechnoTypeClass {
     unsigned char q4AC;  // 0x4AC
     unsigned int IntList_G_FlagByte;  // 0x4AD
     void* q4B0;  // 0x4B0
-    void* q4B4;  // 0x4B4
+    unsigned int q4B4;  // 0x4B4
     unsigned char q4B8;  // 0x4B8
     unsigned char VoiceDie;  // 0x4BC
     CampaignClass* IntList_H_Items;  // 0x4C0
@@ -420,7 +420,7 @@ struct TechnoTypeClass {
     unsigned char q4C8;  // 0x4C8
     unsigned int IntList_H_FlagByte;  // 0x4C9
     void* q4CC;  // 0x4CC
-    void* q4D0;  // 0x4D0
+    unsigned int q4D0;  // 0x4D0
     unsigned char q4D4;  // 0x4D4
     unsigned char VoiceFeedback;  // 0x4D8
     CampaignClass* VoiceFeedback_Items;  // 0x4DC
@@ -486,7 +486,7 @@ struct TechnoTypeClass {
     unsigned char q5C8;  // 0x5C8
     void* q5CC;  // 0x5CC
     unsigned char q5D0;  // 0x5D0
-    IUnknown* q5D4;  // 0x5D4
+    void* q5D4;  // 0x5D4
     unsigned char q5D8;  // 0x5D8
     int Passengers;  // 0x5E0
     bool OpenTopped;  // 0x5E4
@@ -529,7 +529,7 @@ struct TechnoTypeClass {
     int ThreatPosed;  // 0x670
     int Points;  // 0x674
     int Speed;  // 0x678
-    char SpeedType[4];  // 0x67C
+    unsigned int SpeedType;  // 0x67C
     int InitialAmmo;  // 0x680
     int Ammo;  // 0x684
     int IFVMode;  // 0x688
@@ -553,7 +553,7 @@ struct TechnoTypeClass {
     bool DamageReducesReadiness;  // 0x6B1
     unsigned char q6B2;  // 0x6B2
     int ReadinessReductionMultiplier;  // 0x6B4
-    char UnloadingClass[4];  // 0x6B8
+    unsigned int UnloadingClass;  // 0x6B8
     char DeployingAnim[4];  // 0x6BC
     bool AttackFriendlies;  // 0x6C0
     bool AttackCursorOnFriendlies;  // 0x6C1
@@ -606,36 +606,36 @@ struct TechnoTypeClass {
     unsigned char q750;  // 0x750
     double ThreatAvoidanceCoefficient;  // 0x752
     TechnoTypeClass * ptr_758;  // 0x758
-    IUnknown* q75C;  // 0x75C
+    unsigned int ;  // 0x75C
     int q760;  // 0x760
-    char NaturalParticleSystem[4];  // 0x764
-    char NaturalParticleSystemLocation[12];  // 0x768
+    unsigned int NaturalParticleSystem;  // 0x764
+    unsigned int NaturalParticleSystemLocation;  // 0x768
     unsigned int u32_76C;  // 0x76C
     TechnoTypeClass * ptr_770;  // 0x770
     char RefinerySmokeParticleSystem[4];  // 0x774
     unsigned char DamageParticleSystems;  // 0x778
-    IUnknown* q77C;  // 0x77C
-    IUnknown* q780;  // 0x780
+    void* q77C;  // 0x77C
+    void* q780;  // 0x780
     int q784;  // 0x784
     unsigned int VoxelAnimList_Embed;  // 0x788
     unsigned char q78C;  // 0x78C
     unsigned int q790;  // 0x790
     unsigned char DestroyParticleSystems;  // 0x794
     unsigned char q798;  // 0x798
-    IUnknown* q79C;  // 0x79C
+    void* q79C;  // 0x79C
     unsigned int q7A0;  // 0x7A0
     unsigned int q7A4;  // 0x7A4
-    void* q7A8;  // 0x7A8
+    unsigned int ;  // 0x7A8
     unsigned char q7AC;  // 0x7AC
     char DamageSmokeOffset[12];  // 0x7B0
     unsigned int u32_7B4;  // 0x7B4
     unsigned int u32_7B8;  // 0x7B8
     bool DamSmkOffScrnRel;  // 0x7BC
     unsigned char q7BD;  // 0x7BD
-    char DestroySmokeOffset[12];  // 0x7C0
+    unsigned int DestroySmokeOffset;  // 0x7C0
     unsigned int q7C4;  // 0x7C4
     unsigned int u32_7C8;  // 0x7C8
-    char RefinerySmokeOffsetOne[12];  // 0x7CC
+    unsigned int RefinerySmokeOffsetOne;  // 0x7CC
     unsigned int u32_7D0;  // 0x7D0
     unsigned int u32_7D4;  // 0x7D4
     char RefinerySmokeOffsetTwo[12];  // 0x7D8
@@ -679,7 +679,7 @@ struct TechnoTypeClass {
     unsigned char q874;  // 0x874
     unsigned char q878;  // 0x878
     double q880;  // 0x880
-    IUnknown* q884;  // 0x884
+    void* q884;  // 0x884
     double q888;  // 0x888
     unsigned char q88C;  // 0x88C
     void* Weapon;  // 0x898
@@ -697,9 +697,9 @@ struct TechnoTypeClass {
     unsigned int u32_8D0;  // 0x8D0
     void* q8E4;  // 0x8E4
     unsigned char q8E8;  // 0x8E8
-    IUnknown* q900;  // 0x900
+    void* q900;  // 0x900
     double q904;  // 0x904
-    IUnknown* q908;  // 0x908
+    void* q908;  // 0x908
     unsigned char q90C;  // 0x90C
     unsigned char q910;  // 0x910
     char q914[4];  // 0x914
@@ -712,7 +712,7 @@ struct TechnoTypeClass {
     unsigned char q930;  // 0x930
     void* q938;  // 0x938
     unsigned char q93C;  // 0x93C
-    IUnknown* q940;  // 0x940
+    void* q940;  // 0x940
     double q944;  // 0x944
     unsigned int q948;  // 0x948
     void* q954;  // 0x954
@@ -960,40 +960,40 @@ struct TechnoTypeClass {
     bool q1040;  // 0x1040
     unsigned int IntList_B_Embed;  // 0x1044
     unsigned int q1048;  // 0x1048
-    IUnknown* q104C;  // 0x104C
+    void* q104C;  // 0x104C
     unsigned char q1050;  // 0x1050
-    IUnknown* q1054;  // 0x1054
+    void* q1054;  // 0x1054
     unsigned int q1058;  // 0x1058
-    IUnknown* q105C;  // 0x105C
+    void* q105C;  // 0x105C
     TechnoTypeClass * q1060;  // 0x1060
     unsigned int q1064;  // 0x1064
     HouseClass* q1068;  // 0x1068
-    IUnknown* q106C;  // 0x106C
+    void* q106C;  // 0x106C
     unsigned char q1070;  // 0x1070
     unsigned int IntList_C_Embed;  // 0x1072
     unsigned int q1074;  // 0x1074
     unsigned int q1078;  // 0x1078
-    IUnknown* q107C;  // 0x107C
+    void* q107C;  // 0x107C
     unsigned int q1080;  // 0x1080
     void* q1084;  // 0x1084
     unsigned int q1088;  // 0x1088
-    IUnknown* q108C;  // 0x108C
+    void* q108C;  // 0x108C
     unsigned char q1090;  // 0x1090
-    IUnknown* q1094;  // 0x1094
+    void* q1094;  // 0x1094
     unsigned char q1098;  // 0x1098
-    IUnknown* q109C;  // 0x109C
+    void* q109C;  // 0x109C
     unsigned char q10A0;  // 0x10A0
-    IUnknown* q10A4;  // 0x10A4
+    void* q10A4;  // 0x10A4
     unsigned char q10A8;  // 0x10A8
-    IUnknown* q10AC;  // 0x10AC
+    void* q10AC;  // 0x10AC
     unsigned char q10B0;  // 0x10B0
-    IUnknown* q10B4;  // 0x10B4
+    void* q10B4;  // 0x10B4
     unsigned char q10B8;  // 0x10B8
-    IUnknown* q10BC;  // 0x10BC
+    void* q10BC;  // 0x10BC
     void* q10C0;  // 0x10C0
     unsigned char q10C4;  // 0x10C4
     unsigned char q10C8;  // 0x10C8
-    IUnknown* q10CC;  // 0x10CC
+    void* q10CC;  // 0x10CC
     unsigned char q10D0;  // 0x10D0
     unsigned char q10D4;  // 0x10D4
     unsigned char q10D8;  // 0x10D8
@@ -1001,11 +1001,11 @@ struct TechnoTypeClass {
     void* q10E0;  // 0x10E0
     unsigned char q10E4;  // 0x10E4
     unsigned char q10E8;  // 0x10E8
-    IUnknown* q10EC;  // 0x10EC
+    void* q10EC;  // 0x10EC
     void* q10F0;  // 0x10F0
     unsigned char q10F4;  // 0x10F4
     unsigned char q10F8;  // 0x10F8
-    IUnknown* q10FC;  // 0x10FC
+    void* q10FC;  // 0x10FC
     unsigned int IntList_D_Embed;  // 0x1100
     unsigned int q1104;  // 0x1104
     unsigned int q1108;  // 0x1108
@@ -1013,11 +1013,11 @@ struct TechnoTypeClass {
     unsigned int q1110;  // 0x1110
     unsigned char q1114;  // 0x1114
     unsigned char q1118;  // 0x1118
-    IUnknown* q111C;  // 0x111C
+    void* q111C;  // 0x111C
     unsigned int q1120;  // 0x1120
     unsigned int q1124;  // 0x1124
     AbstractTypeClass* IntList_E_Embed;  // 0x1128
-    IUnknown* q112C;  // 0x112C
+    void* q112C;  // 0x112C
     void* q1130;  // 0x1130
     void* q1134;  // 0x1134
     unsigned int q1138;  // 0x1138
@@ -1027,7 +1027,7 @@ struct TechnoTypeClass {
     unsigned int q1148;  // 0x1148
     unsigned char q114C;  // 0x114C
     unsigned char q1150;  // 0x1150
-    IUnknown* q1154;  // 0x1154
+    void* q1154;  // 0x1154
     char IntList_F_Embed;  // 0x1156
     void* q1158;  // 0x1158
     unsigned char q115C;  // 0x115C
@@ -1133,9 +1133,9 @@ struct TechnoTypeClass {
     int q1404;  // 0x1404
     int q1408;  // 0x1408
     unsigned char q1410;  // 0x1410
-    IUnknown* q1414;  // 0x1414
+    void* q1414;  // 0x1414
     unsigned char q1418;  // 0x1418
-    IUnknown* q141C;  // 0x141C
+    void* q141C;  // 0x141C
     int q1420;  // 0x1420
     int q1424;  // 0x1424
     int q1428;  // 0x1428
@@ -1161,9 +1161,9 @@ struct TechnoTypeClass {
     unsigned char q148C;  // 0x148C
     unsigned char q1490;  // 0x1490
     void* q14BC;  // 0x14BC
-    IUnknown* q14C0;  // 0x14C0
-    IUnknown* q14C4;  // 0x14C4
-    IUnknown* q14C8;  // 0x14C8
+    void* q14C0;  // 0x14C0
+    void* q14C4;  // 0x14C4
+    void* q14C8;  // 0x14C8
     unsigned char q14CC;  // 0x14CC
     void* q14E0;  // 0x14E0
     unsigned char q14E4;  // 0x14E4
@@ -1174,30 +1174,30 @@ struct TechnoTypeClass {
     unsigned int q14E9;  // 0x14E9
     unsigned int q14EA;  // 0x14EA
     unsigned int q14EB;  // 0x14EB
-    IUnknown* q14EC;  // 0x14EC
+    void* q14EC;  // 0x14EC
     unsigned int q14ED;  // 0x14ED
     unsigned int q14EE;  // 0x14EE
     unsigned int q14EF;  // 0x14EF
     unsigned int q14F3;  // 0x14F3
-    IUnknown* q14F4;  // 0x14F4
+    void* q14F4;  // 0x14F4
     unsigned char q14F7;  // 0x14F7
     unsigned char q14F8;  // 0x14F8
     void* q14FC;  // 0x14FC
     void* q1500;  // 0x1500
     int q1504;  // 0x1504
     bool q1508;  // 0x1508
-    IUnknown* q150C;  // 0x150C
+    void* q150C;  // 0x150C
     unsigned char q1510;  // 0x1510
     unsigned char q1514;  // 0x1514
     bool q1518;  // 0x1518
-    IUnknown* q151C;  // 0x151C
+    void* q151C;  // 0x151C
     int q1520;  // 0x1520
     int q1524;  // 0x1524
     unsigned int q1525;  // 0x1525
     unsigned int q1526;  // 0x1526
     int q1528;  // 0x1528
     unsigned char q152A;  // 0x152A
-    IUnknown* q152C;  // 0x152C
+    void* q152C;  // 0x152C
     unsigned char q1530;  // 0x1530
     int q1540;  // 0x1540
     float q1544;  // 0x1544
@@ -1226,49 +1226,49 @@ struct TechnoTypeClass {
     AbstractClass* q1628;  // 0x1628
     unsigned int q1634;  // 0x1634
     unsigned char q1638;  // 0x1638
-    IUnknown* q163C;  // 0x163C
+    void* q163C;  // 0x163C
     char q1640[4];  // 0x1640
     unsigned char q1644;  // 0x1644
     int q1648;  // 0x1648
     unsigned char q164C;  // 0x164C
     WeaponTypeClass* q1650;  // 0x1650
     WeaponTypeClass* q1654;  // 0x1654
-    IUnknown* q1658;  // 0x1658
+    void* q1658;  // 0x1658
     unsigned char q165C;  // 0x165C
     char q1660[4];  // 0x1660
     int q1664;  // 0x1664
     int q1668;  // 0x1668
-    IUnknown* q166C;  // 0x166C
+    void* q166C;  // 0x166C
     char q1670[4];  // 0x1670
-    IUnknown* q1674;  // 0x1674
+    void* q1674;  // 0x1674
     unsigned char q1678;  // 0x1678
-    IUnknown* q167C;  // 0x167C
+    void* q167C;  // 0x167C
     bool q1680;  // 0x1680
     bool q1684;  // 0x1684
     int q1688;  // 0x1688
     unsigned char q168C;  // 0x168C
-    IUnknown* q16A8;  // 0x16A8
-    IUnknown* q16AC;  // 0x16AC
+    void* q16A8;  // 0x16A8
+    void* q16AC;  // 0x16AC
     unsigned char q16B0;  // 0x16B0
-    IUnknown* q16B4;  // 0x16B4
+    void* q16B4;  // 0x16B4
     unsigned int q16B7;  // 0x16B7
     unsigned char q16BB;  // 0x16BB
     void* q16CC;  // 0x16CC
     unsigned char q16D0;  // 0x16D0
-    IUnknown* q16D4;  // 0x16D4
+    void* q16D4;  // 0x16D4
     void* q16D8;  // 0x16D8
     unsigned char q16DC;  // 0x16DC
-    IUnknown* q16E4;  // 0x16E4
+    void* q16E4;  // 0x16E4
     unsigned char q16E8;  // 0x16E8
-    IUnknown* q16EC;  // 0x16EC
+    void* q16EC;  // 0x16EC
     unsigned char q16F0;  // 0x16F0
-    IUnknown* q16F4;  // 0x16F4
+    void* q16F4;  // 0x16F4
     unsigned int q16F8;  // 0x16F8
     unsigned char q16FC;  // 0x16FC
     int q1700;  // 0x1700
     int q1704;  // 0x1704
     bool q1708;  // 0x1708
-    IUnknown* q170C;  // 0x170C
+    void* q170C;  // 0x170C
     bool q1710;  // 0x1710
     unsigned char q1714;  // 0x1714
     unsigned char q1718;  // 0x1718
@@ -1280,13 +1280,13 @@ struct TechnoTypeClass {
     unsigned char q1730;  // 0x1730
     unsigned char q1734;  // 0x1734
     unsigned char q1738;  // 0x1738
-    IUnknown* q173C;  // 0x173C
+    void* q173C;  // 0x173C
     unsigned int q1740;  // 0x1740
     int q1744;  // 0x1744
     bool q1748;  // 0x1748
-    IUnknown* q174C;  // 0x174C
+    void* q174C;  // 0x174C
     char q1750;  // 0x1750
-    IUnknown* q1754;  // 0x1754
+    void* q1754;  // 0x1754
     unsigned char q1758;  // 0x1758
     unsigned char q175C;  // 0x175C
     unsigned int q1760;  // 0x1760
@@ -1324,20 +1324,20 @@ struct TechnoTypeClass {
     unsigned char q180C;  // 0x180C
     double q1810;  // 0x1810
     float q1814;  // 0x1814
-    IUnknown* q181C;  // 0x181C
+    void* q181C;  // 0x181C
     int q1820;  // 0x1820
     int q1824;  // 0x1824
     bool q1828;  // 0x1828
-    IUnknown* q182C;  // 0x182C
+    void* q182C;  // 0x182C
     Color* q1830;  // 0x1830
     ObjectTypeClass* q1834;  // 0x1834
     unsigned int Explosion_Embed;  // 0x1836
     unsigned char q1838;  // 0x1838
     void* q1844;  // 0x1844
     unsigned char q1848;  // 0x1848
-    IUnknown* q184C;  // 0x184C
+    void* q184C;  // 0x184C
     unsigned char q1850;  // 0x1850
-    IUnknown* q185C;  // 0x185C
+    void* q185C;  // 0x185C
     double q1860;  // 0x1860
     unsigned int DestroyAnim_Embed;  // 0x1864
     unsigned char q1868;  // 0x1868
@@ -1346,7 +1346,7 @@ struct TechnoTypeClass {
     double q1874;  // 0x1874
     unsigned int q1878;  // 0x1878
     TechnoTypeClass * q1880;  // 0x1880
-    IUnknown* q1884;  // 0x1884
+    void* q1884;  // 0x1884
     int q1888;  // 0x1888
     void* q18A8;  // 0x18A8
     void* q18AC;  // 0x18AC
@@ -1356,13 +1356,13 @@ struct TechnoTypeClass {
     char q1908[4];  // 0x1908
     double q1910;  // 0x1910
     unsigned int DamageParticleSystems_Embed;  // 0x1912
-    IUnknown* q1920;  // 0x1920
+    void* q1920;  // 0x1920
     int q1924;  // 0x1924
     unsigned int q1928;  // 0x1928
     unsigned int q1938;  // 0x1938
     unsigned int DestroyParticleSystems_Embed;  // 0x1940
     unsigned char q1944;  // 0x1944
-    IUnknown* q1948;  // 0x1948
+    void* q1948;  // 0x1948
     void* q1960;  // 0x1960
     unsigned char q1964;  // 0x1964
     char q1968[4];  // 0x1968
@@ -1404,7 +1404,7 @@ struct TechnoTypeClass {
     unsigned char q2164;  // 0x2164
     unsigned int u32_2170;  // 0x2170
     unsigned char q2178;  // 0x2178
-    IUnknown* q2180;  // 0x2180
+    void* q2180;  // 0x2180
     double q2184;  // 0x2184
     unsigned int q2194;  // 0x2194
     double q2198;  // 0x2198
@@ -1418,7 +1418,7 @@ struct TechnoTypeClass {
     WeaponTypeClass* q2248;  // 0x2248
     unsigned char q2280;  // 0x2280
     unsigned int u32_22A0;  // 0x22A0
-    IUnknown* q2304;  // 0x2304
+    void* q2304;  // 0x2304
     double q2308;  // 0x2308
     unsigned char q2320;  // 0x2320
     char q2324[4];  // 0x2324
@@ -1430,7 +1430,7 @@ struct TechnoTypeClass {
     double q2358;  // 0x2358
     void* q2360;  // 0x2360
     unsigned char q2364;  // 0x2364
-    IUnknown* q2368;  // 0x2368
+    void* q2368;  // 0x2368
     void* q2388;  // 0x2388
     char q2390[4];  // 0x2390
     unsigned char q2394;  // 0x2394
@@ -1658,7 +1658,7 @@ struct TechnoTypeClass {
     unsigned char q4174;  // 0x4174
     unsigned int q4178;  // 0x4178
     unsigned char q417C;  // 0x417C
-    IUnknown* q4180;  // 0x4180
+    void* q4180;  // 0x4180
     unsigned int q4184;  // 0x4184
     unsigned char q4188;  // 0x4188
     unsigned char q418C;  // 0x418C
@@ -1671,27 +1671,27 @@ struct TechnoTypeClass {
     unsigned int q4210;  // 0x4210
     unsigned int q4214;  // 0x4214
     unsigned char q4218;  // 0x4218
-    IUnknown* q4220;  // 0x4220
+    void* q4220;  // 0x4220
     unsigned int q4224;  // 0x4224
     void* q4228;  // 0x4228
     unsigned char q422C;  // 0x422C
     unsigned char q4240;  // 0x4240
-    IUnknown* q4244;  // 0x4244
+    void* q4244;  // 0x4244
     unsigned char q4248;  // 0x4248
     unsigned char q424C;  // 0x424C
-    IUnknown* q4260;  // 0x4260
+    void* q4260;  // 0x4260
     unsigned char q4264;  // 0x4264
-    IUnknown* q4268;  // 0x4268
+    void* q4268;  // 0x4268
     unsigned char q426C;  // 0x426C
     unsigned char q4270;  // 0x4270
     unsigned char q4274;  // 0x4274
     unsigned char q4280;  // 0x4280
-    IUnknown* q4284;  // 0x4284
+    void* q4284;  // 0x4284
     void* q4288;  // 0x4288
     unsigned char q428C;  // 0x428C
     unsigned char q4290;  // 0x4290
     unsigned char q4294;  // 0x4294
-    IUnknown* q4300;  // 0x4300
+    void* q4300;  // 0x4300
     unsigned char q4304;  // 0x4304
     unsigned char q4308;  // 0x4308
     unsigned char q430C;  // 0x430C
@@ -1703,7 +1703,7 @@ struct TechnoTypeClass {
     unsigned char q4330;  // 0x4330
     unsigned char q4340;  // 0x4340
     unsigned char q4344;  // 0x4344
-    IUnknown* q4348;  // 0x4348
+    void* q4348;  // 0x4348
     unsigned char q434C;  // 0x434C
     unsigned char q4350;  // 0x4350
     unsigned char q4354;  // 0x4354
@@ -1717,7 +1717,7 @@ struct TechnoTypeClass {
     unsigned char q4374;  // 0x4374
     unsigned char q4378;  // 0x4378
     unsigned char q437C;  // 0x437C
-    IUnknown* q4380;  // 0x4380
+    void* q4380;  // 0x4380
     unsigned int q4384;  // 0x4384
     unsigned int q4388;  // 0x4388
     unsigned char q438C;  // 0x438C
@@ -1920,7 +1920,7 @@ struct TechnoTypeClass {
     unsigned char q513C;  // 0x513C
     unsigned char q5140;  // 0x5140
     unsigned char q5144;  // 0x5144
-    IUnknown* q5148;  // 0x5148
+    void* q5148;  // 0x5148
     unsigned char q514C;  // 0x514C
     unsigned char q5150;  // 0x5150
     unsigned char q5154;  // 0x5154
@@ -1930,7 +1930,7 @@ struct TechnoTypeClass {
     unsigned char q5164;  // 0x5164
     void* q5168;  // 0x5168
     unsigned char q516C;  // 0x516C
-    IUnknown* q5170;  // 0x5170
+    void* q5170;  // 0x5170
     unsigned char q5174;  // 0x5174
     unsigned char q5178;  // 0x5178
     unsigned char q517C;  // 0x517C
@@ -1969,7 +1969,7 @@ struct TechnoTypeClass {
     unsigned char q530C;  // 0x530C
     unsigned char q5310;  // 0x5310
     unsigned char q5314;  // 0x5314
-    IUnknown* q5320;  // 0x5320
+    void* q5320;  // 0x5320
     unsigned char q5324;  // 0x5324
     unsigned char q5328;  // 0x5328
     unsigned char q532C;  // 0x532C
@@ -1987,7 +1987,7 @@ struct TechnoTypeClass {
     unsigned char q536C;  // 0x536C
     int q5380;  // 0x5380
     bool q5384;  // 0x5384
-    IUnknown* q5388;  // 0x5388
+    void* q5388;  // 0x5388
     unsigned char q538C;  // 0x538C
     int q5394;  // 0x5394
     bool q5398;  // 0x5398
@@ -2015,14 +2015,14 @@ struct TechnoTypeClass {
     unsigned char q53F0;  // 0x53F0
     unsigned char q53F4;  // 0x53F4
     bool q5400;  // 0x5400
-    IUnknown* q5404;  // 0x5404
+    void* q5404;  // 0x5404
     int q5408;  // 0x5408
     unsigned char q540C;  // 0x540C
     unsigned char q5410;  // 0x5410
     unsigned int q5414;  // 0x5414
     unsigned char q5418;  // 0x5418
     unsigned char q541C;  // 0x541C
-    IUnknown* q5420;  // 0x5420
+    void* q5420;  // 0x5420
     unsigned char q5424;  // 0x5424
     unsigned char q5428;  // 0x5428
     bool q5430;  // 0x5430
@@ -2034,7 +2034,7 @@ struct TechnoTypeClass {
     unsigned char q544C;  // 0x544C
     int q5458;  // 0x5458
     unsigned char q545C;  // 0x545C
-    IUnknown* q5460;  // 0x5460
+    void* q5460;  // 0x5460
     unsigned char q5464;  // 0x5464
     unsigned char q5468;  // 0x5468
     int q5480;  // 0x5480
@@ -2042,7 +2042,7 @@ struct TechnoTypeClass {
     unsigned char q5488;  // 0x5488
     unsigned char q548C;  // 0x548C
     char q5490[4];  // 0x5490
-    IUnknown* q5494;  // 0x5494
+    void* q5494;  // 0x5494
     unsigned char q5498;  // 0x5498
     unsigned char q549C;  // 0x549C
     unsigned char q54A0;  // 0x54A0
@@ -2069,7 +2069,7 @@ struct TechnoTypeClass {
     unsigned char q5570;  // 0x5570
     unsigned char q5574;  // 0x5574
     unsigned char q5578;  // 0x5578
-    IUnknown* q55F0;  // 0x55F0
+    void* q55F0;  // 0x55F0
     unsigned char q55F4;  // 0x55F4
     unsigned char q55F8;  // 0x55F8
     unsigned char q55FC;  // 0x55FC
@@ -2080,7 +2080,7 @@ struct TechnoTypeClass {
     unsigned char q5610;  // 0x5610
     unsigned char q5618;  // 0x5618
     unsigned char q561C;  // 0x561C
-    IUnknown* q5634;  // 0x5634
+    void* q5634;  // 0x5634
     unsigned char q5638;  // 0x5638
     unsigned char q563C;  // 0x563C
     unsigned int q5640;  // 0x5640
@@ -2104,15 +2104,15 @@ struct TechnoTypeClass {
     int q5714;  // 0x5714
     int q5718;  // 0x5718
     unsigned char q571C;  // 0x571C
-    IUnknown* q5720;  // 0x5720
+    void* q5720;  // 0x5720
     unsigned char q5724;  // 0x5724
     char q5728[4];  // 0x5728
     unsigned char q572C;  // 0x572C
     unsigned char q5730;  // 0x5730
     unsigned char q5734;  // 0x5734
-    IUnknown* q5740;  // 0x5740
+    void* q5740;  // 0x5740
     char q5744[4];  // 0x5744
-    IUnknown* q5748;  // 0x5748
+    void* q5748;  // 0x5748
     unsigned char q574C;  // 0x574C
     AudioController* q5750;  // 0x5750
     unsigned char q5754;  // 0x5754
@@ -2123,7 +2123,7 @@ struct TechnoTypeClass {
     int q5768;  // 0x5768
     unsigned char q576C;  // 0x576C
     unsigned char q5770;  // 0x5770
-    IUnknown* q5774;  // 0x5774
+    void* q5774;  // 0x5774
     unsigned char q5778;  // 0x5778
     unsigned char q577C;  // 0x577C
     unsigned char q5780;  // 0x5780
@@ -2132,40 +2132,40 @@ struct TechnoTypeClass {
     unsigned char q578C;  // 0x578C
     unsigned char q5790;  // 0x5790
     unsigned char q5794;  // 0x5794
-    IUnknown* q5798;  // 0x5798
+    void* q5798;  // 0x5798
     unsigned char q579C;  // 0x579C
     unsigned char q57A0;  // 0x57A0
-    IUnknown* q57A4;  // 0x57A4
+    void* q57A4;  // 0x57A4
     unsigned char q57A8;  // 0x57A8
     unsigned char q57AC;  // 0x57AC
-    IUnknown* q57B0;  // 0x57B0
+    void* q57B0;  // 0x57B0
     unsigned char q57B4;  // 0x57B4
     unsigned char q57B8;  // 0x57B8
-    IUnknown* q57BC;  // 0x57BC
+    void* q57BC;  // 0x57BC
     unsigned char q57C0;  // 0x57C0
     unsigned char q57C4;  // 0x57C4
-    IUnknown* q57C8;  // 0x57C8
+    void* q57C8;  // 0x57C8
     unsigned char q57CC;  // 0x57CC
     unsigned char q57D0;  // 0x57D0
-    IUnknown* q57D4;  // 0x57D4
+    void* q57D4;  // 0x57D4
     unsigned char q57D8;  // 0x57D8
     unsigned char q57DC;  // 0x57DC
     unsigned char q57E0;  // 0x57E0
     unsigned char q57E4;  // 0x57E4
     unsigned char q57E8;  // 0x57E8
-    IUnknown* q5800;  // 0x5800
-    IUnknown* q5804;  // 0x5804
+    void* q5800;  // 0x5800
+    void* q5804;  // 0x5804
     unsigned char q5808;  // 0x5808
     unsigned char q580C;  // 0x580C
     unsigned char q5810;  // 0x5810
     unsigned char q5814;  // 0x5814
     unsigned char q5840;  // 0x5840
-    IUnknown* q5844;  // 0x5844
+    void* q5844;  // 0x5844
     void* q5848;  // 0x5848
     unsigned char q584C;  // 0x584C
-    IUnknown* q5860;  // 0x5860
+    void* q5860;  // 0x5860
     unsigned char q5864;  // 0x5864
-    IUnknown* q5868;  // 0x5868
+    void* q5868;  // 0x5868
     unsigned char q586C;  // 0x586C
     unsigned char q5870;  // 0x5870
     unsigned char q5874;  // 0x5874
@@ -2177,7 +2177,7 @@ struct TechnoTypeClass {
     unsigned char q58EC;  // 0x58EC
     unsigned char q58F0;  // 0x58F0
     unsigned char q58F4;  // 0x58F4
-    IUnknown* q5900;  // 0x5900
+    void* q5900;  // 0x5900
     bool q5904;  // 0x5904
     unsigned char q5908;  // 0x5908
     unsigned char q590C;  // 0x590C
@@ -2193,12 +2193,12 @@ struct TechnoTypeClass {
     unsigned char q593C;  // 0x593C
     unsigned char q5940;  // 0x5940
     unsigned char q5944;  // 0x5944
-    IUnknown* q5948;  // 0x5948
+    void* q5948;  // 0x5948
     unsigned char q594C;  // 0x594C
     unsigned char q5950;  // 0x5950
     unsigned char q5954;  // 0x5954
     bool q5960;  // 0x5960
-    IUnknown* q5964;  // 0x5964
+    void* q5964;  // 0x5964
     char q5968;  // 0x5968
     unsigned char q596C;  // 0x596C
     AbstractClass* q5970;  // 0x5970
@@ -2250,7 +2250,7 @@ struct TechnoTypeClass {
     unsigned char q6174;  // 0x6174
     int q6180;  // 0x6180
     bool q6184;  // 0x6184
-    IUnknown* q6188;  // 0x6188
+    void* q6188;  // 0x6188
     unsigned char q618C;  // 0x618C
     unsigned int q6194;  // 0x6194
     unsigned char q6198;  // 0x6198
@@ -2260,7 +2260,7 @@ struct TechnoTypeClass {
     unsigned int q6210;  // 0x6210
     double q6214;  // 0x6214
     unsigned char q6218;  // 0x6218
-    IUnknown* q6220;  // 0x6220
+    void* q6220;  // 0x6220
     unsigned char q6224;  // 0x6224
     unsigned char q6228;  // 0x6228
     bool q6230;  // 0x6230
@@ -2341,10 +2341,38 @@ struct TechnoTypeClass {
     unsigned int vtable23;
     unsigned int vtable48;
     unsigned int vtable49;
+    unsigned int ammo0;
+    unsigned int ammo1;
+    unsigned int ammo2;
+    unsigned int ammo3;
+    unsigned int cost8;
+    unsigned int cost9;
+    unsigned int eliteWeapon28;
+    unsigned int eliteWeapon29;
+    unsigned int guardRange8;
+    unsigned int guardRange9;
     unsigned int q25C6;
     unsigned int q25C7;
     unsigned int q25C8;
     unsigned int q25C9;
+    unsigned int sight6;
+    unsigned int techLevel4;
+    unsigned int weapon20;
+    unsigned int weapon21;
+    unsigned int weapon22;
+    unsigned int weapon23;
+    unsigned int weapon24;
+    unsigned int weapon25;
+    unsigned int pipScale0;
+    unsigned int pipScale1;
+    unsigned int speedType5;
+    unsigned int strength0;
+    unsigned int threatAvoidValue8;
+    unsigned int threatPosed2;
+    unsigned int VoxelAnimList_Items0;
+    unsigned int IntList_A_Items2;
+    unsigned int q75C;
+    unsigned int q7A8;
 // --- flat members (END) ---
     AbstractClass * * Construct(ObjectTypeClass * aP1);
     AbstractClass * * GetByTypeAndIndex(int a1, int a2);
@@ -2368,6 +2396,7 @@ struct TechnoTypeClass {
     void * ReadINI(char * Source, int a3);
     void* CanAttackMove_IgnoreWeapon_0();
     void* CanAttackMove_IgnoreWeapon_0_0();
+    static double HasVoiceResponse(...);  // C2597 interim stub
 };
 
 } // namespace gamemd

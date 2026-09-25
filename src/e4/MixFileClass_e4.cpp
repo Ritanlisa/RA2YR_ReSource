@@ -4,17 +4,19 @@
 #include "e4/classes/MixFileClass_e4.hpp"
 #include "e4/classes/MixFile_e4.hpp"
 #include "e4/classes/Mission_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x69E210
 namespace gamemd {
 void MixFileClass::CleanupCache()
 {
-  _DWORD *v0; // edi
+  unsigned int v0;
   void *v1; // esi
   int v2; // eax
   int v3; // eax
-  void *v4; // esi
+  unsigned int v4;
   _BYTE *v5; // ebp
   void *v6; // ecx
   _DWORD *v7; // edi
@@ -97,7 +99,7 @@ void MixFileClass::CleanupCache()
 namespace gamemd {
 void MixFileClass::DestroyCache()
 {
-  void *v0; // esi
+  unsigned int v0;
   void *v1; // edi
   void *v2; // ecx
   int v3; // eax

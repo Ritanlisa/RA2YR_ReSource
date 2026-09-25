@@ -4,7 +4,11 @@
 #include "e4/classes/Font_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/Math_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/FogOfWar_e4.hpp"
+#include "e4/classes/MapClass_e4.hpp"
 
 // 0x4346C0
 namespace gamemd {
@@ -35,9 +39,9 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
   int v14; // esi
   _WORD *v15; // edx
   int v16; // ecx
-  int v17; // eax
-  int v18; // ecx
-  int v19; // edi
+  AbstractClass * v17;
+  AbstractClass * v18;
+  AbstractClass * v19;
   char v20; // bl
   int v21; // eax
   _BYTE *v22; // eax
@@ -45,25 +49,25 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
   unsigned __int8 *v24; // eax
   int v25; // eax
   _WORD *v26; // ecx
-  int v27; // eax
-  int v28; // edx
+  AbstractClass * v27;
+  AbstractClass * v28;
   int v29; // ecx
-  int v30; // ebx
+  AbstractClass * v30;
   char v31; // di
   int v32; // ecx
   int v33; // eax
   int v34; // eax
   _WORD *v35; // ecx
-  int v36; // eax
-  int v37; // edx
-  int v38; // ebx
+  AbstractClass * v36;
+  AbstractClass * v37;
+  AbstractClass * v38;
   char v39; // di
   int v40; // ecx
   int v41; // eax
   __int16 v43; // [esp+10h] [ebp-30h]
   char v44[4]; // [esp+14h] [ebp-2Ch] BYREF
   int v45; // [esp+18h] [ebp-28h]
-  int xLeft; // [esp+1Ch] [ebp-24h]
+  AbstractClass * xLeft;
   int v47; // [esp+20h] [ebp-20h]
   _WORD *v48; // [esp+24h] [ebp-1Ch]
   _WORD *v49; // [esp+28h] [ebp-18h]

@@ -5,7 +5,10 @@
 #include "e4/classes/E4Recv_7ACBE0_e4.hpp"
 #include "e4/classes/E4Recv_7AE180_e4.hpp"
 #include "e4/classes/ComPtr_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x77D1F0
 namespace gamemd {

@@ -10,7 +10,10 @@
 #include "e4/classes/RawFileClass_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/Bink_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/BinkMovieHandle_e4.hpp"
 
 // 0x432690
 namespace gamemd {
@@ -89,7 +92,7 @@ AbstractClass * * BinkMovie::InitFromFile(LPCSTR * FullPath)
   LONG v16; // edi
   int v17; // ebx
   LONG v18; // edx
-  int v19; // ecx
+  void * v19;
   int v21; // eax
   LPCSTR *v22; // ecx
   int v23; // edx
@@ -1426,7 +1429,7 @@ int BinkMovie::InitKeyframeTracking(char * Source)
   if ( !(unsigned __int8)CCFileClass::Open(0) ) /*0x6c9b8a*/
   {
   LABEL_6:
-    v7[0] = &(void*)(void*)&CCFileClass_vftable; /*0x6c9be2*/
+    v7[0] = (void*)&CCFileClass_vftable; /*0x6c9be2*/
     v9 = 0; /*0x6c9bee*/
     Vector::Clear(v8); /*0x6c9bf5*/
     v7[0] = &off_7E1668; /*0x6c9bfe*/
@@ -1437,7 +1440,7 @@ int BinkMovie::InitKeyframeTracking(char * Source)
   v5[2] = 0; /*0x6c9ba0*/
   v5[3] = v7; /*0x6c9ba4*/
   v6 = 0; /*0x6c9ba8*/
-  v5[0] = &(void*)(void*)&FileStraw_vftable; /*0x6c9bac*/
+  v5[0] = (void*)&FileStraw_vftable; /*0x6c9bac*/
   BinkMovie::VtableDispatch(v5); /*0x6c9bb4*/
   v3 = ParseMovieSubtitles(Source); /*0x6c9bc1*/
   *this = v3; /*0x6c9bc8*/
@@ -1449,7 +1452,7 @@ int BinkMovie::InitKeyframeTracking(char * Source)
   }
   nullsub_40(v10); /*0x6c9c19*/
   FileStraw::Destructor(v5); /*0x6c9c22*/
-  v7[0] = &(void*)(void*)&CCFileClass_vftable; /*0x6c9c2b*/
+  v7[0] = (void*)&CCFileClass_vftable; /*0x6c9c2b*/
   v9 = 0; /*0x6c9c33*/
   Vector::Clear(v8); /*0x6c9c3a*/
   v7[0] = &off_7E1668; /*0x6c9c43*/

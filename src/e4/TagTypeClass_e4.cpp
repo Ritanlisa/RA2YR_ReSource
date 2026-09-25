@@ -11,14 +11,16 @@
 #include "e4/classes/TechnoTypeClass_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/Tactical_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x6E5B60
 namespace gamemd {
 AbstractTypeClass * * TagTypeClass::Construct(ObjectClass * aP1)
 {
-  int v3; // eax
-  int v4; // eax
+  TagTypeClass * v3;
+  TagTypeClass * v4;
   char Destination[48]; // [esp+8h] [ebp-34h] BYREF
   char v7; // [esp+38h] [ebp-4h]
 
@@ -26,10 +28,10 @@ AbstractTypeClass * * TagTypeClass::Construct(ObjectClass * aP1)
   this->q098 = -1; /*0x6e5b78*/
   this->q09C = 0; /*0x6e5b82*/
   this->q0A0 = 0; /*0x6e5b88*/
-  *(_DWORD *)this = &(void*)(void*)&TagTypeClass_vftable; /*0x6e5b8e*/
-  this->vtable2 = &(void*)(void*)&TagTypeClass_vftable; /*0x6e5b95*/
-  this->vtable3 = &(void*)(void*)&TagTypeClass_vftable; /*0x6e5b9c*/
-  this->vtable4 = &(void*)(void*)&TagTypeClass_vftable; /*0x6e5ba3*/
+  *(void **)this = (void*)&TagTypeClass_vftable; /*0x6e5b8e*/
+  this->vtable2 = (void*)&TagTypeClass_vftable; /*0x6e5b95*/
+  this->vtable3 = (void*)&TagTypeClass_vftable; /*0x6e5b9c*/
+  this->vtable4 = (void*)&TagTypeClass_vftable; /*0x6e5ba3*/
   if ( this == (char *)-36 ) /*0x6e5baa*/
   {
     Destination[0] = 0; /*0x6e5bac*/
@@ -77,15 +79,15 @@ AbstractClass * * TagTypeClass::CleanupMembers()
   _DWORD *v2; // ecx
   _DWORD *v3; // esi
   int v4; // esi
-  _DWORD *v5; // eax
+  unsigned int v5;
   _DWORD *v6; // ecx
   int v7; // eax
   int v8; // eax
 
-  *(_DWORD *)this = &(void*)(void*)&TagTypeClass_vftable; /*0x6e5ca7*/
-  this->vtable2 = &(void*)(void*)&TagTypeClass_vftable; /*0x6e5cad*/
-  this->vtable3 = &(void*)(void*)&TagTypeClass_vftable; /*0x6e5cb4*/
-  this->vtable4 = &(void*)(void*)&TagTypeClass_vftable; /*0x6e5cbb*/
+  *(void **)this = (void*)&TagTypeClass_vftable; /*0x6e5ca7*/
+  this->vtable2 = (void*)&TagTypeClass_vftable; /*0x6e5cad*/
+  this->vtable3 = (void*)&TagTypeClass_vftable; /*0x6e5cb4*/
+  this->vtable4 = (void*)&TagTypeClass_vftable; /*0x6e5cbb*/
   AbstractClass::AnnounceExpiredPointer(1); /*0x6e5cc2*/
   v2 = *(_DWORD **)(&this->q0400); /*0x6e5cc7*/
   this->q0A0 = 0; /*0x6e5ccd*/
@@ -204,7 +206,7 @@ void* TagTypeClass::GetAction(unsigned char *** a2)
 namespace gamemd {
 int TagTypeClass::GetParameter(char * a2)
 {
-  int v3; // eax
+  void * v3;
   CHAR Source[128]; // [esp+4h] [ebp-80h] BYREF
 
   v3 = this->q0A0; /*0x6e6169*/
@@ -309,10 +311,10 @@ int TagTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x6e6426*/
     {
       AbstractTypeClass::Init((int)aP0, (int)&aP1); /*0x6e642f*/
-      *aP0 = &(void*)(void*)&TagTypeClass_vftable; /*0x6e6434*/
-      aP0[1] = &(void*)(void*)&TagTypeClass_vftable; /*0x6e643a*/
-      aP0[2] = &(void*)(void*)&TagTypeClass_vftable; /*0x6e6441*/
-      aP0[3] = &(void*)(void*)&TagTypeClass_vftable; /*0x6e6448*/
+      *(void **)aP0 = (void*)&TagTypeClass_vftable; /*0x6e6434*/
+      aP0[1] = (void*)&TagTypeClass_vftable; /*0x6e643a*/
+      aP0[2] = (void*)&TagTypeClass_vftable; /*0x6e6441*/
+      aP0[3] = (void*)&TagTypeClass_vftable; /*0x6e6448*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP0 + 40); /*0x6e645b*/
     return 0; /*0x6e6460*/

@@ -10,14 +10,17 @@
 #include "e4/classes/ScenarioClass_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/CCINIClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/Vector_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x5C0DD0
 namespace gamemd {
 unsigned int * MPBattleClass::initGame(const wchar_t ** a1, MultiplayerBattle * aP2, const char ** a3, MultiplayerBattle * aP4, char aP5, MultiplayerBattle * aP6)
 {
   MultiplayerGameMode::Construct(a1, aP2, a3, aP4, aP5, aP6); /*0x5c0df3*/
-  *this = &(void*)(void*)&MultiplayerBattle_vftable; /*0x5c0df8*/
+  *(void **)this = (void*)&MultiplayerBattle_vftable; /*0x5c0df8*/
   return this; /*0x5c0e00*/
 }
 } // namespace gamemd
@@ -26,7 +29,7 @@ namespace gamemd {
 unsigned int * MPBattleClass::MPFreeForAllClass(const wchar_t ** a1, FreeForAll * aP2, const char ** a3, FreeForAll * aP4, char aP5, FreeForAll * aP6)
 {
   MultiplayerGameMode::Construct(a1, aP2, a3, aP4, aP5, aP6); /*0x5c5d03*/
-  *this = &(void*)(void*)&FreeForAll_vftable; /*0x5c5d08*/
+  *(void **)this = (void*)&FreeForAll_vftable; /*0x5c5d08*/
   return this; /*0x5c5d10*/
 }
 } // namespace gamemd
@@ -35,7 +38,7 @@ namespace gamemd {
 unsigned int * MPBattleClass::MPManBattleClass(const wchar_t ** a1, MultiplayerManBattle * aP2, const char ** a3, MultiplayerManBattle * aP4, char aP5, MultiplayerManBattle * aP6)
 {
   MultiplayerGameMode::Construct(a1, aP2, a3, aP4, aP5, aP6); /*0x5c6173*/
-  *this = &(void*)(void*)&MultiplayerManBattle_vftable; /*0x5c6178*/
+  *(void **)this = (void*)&MultiplayerManBattle_vftable; /*0x5c6178*/
   return this; /*0x5c6180*/
 }
 } // namespace gamemd
@@ -44,7 +47,7 @@ namespace gamemd {
 unsigned int * MPBattleClass::MPMegawealthClass(const wchar_t ** a1, const wchar_t ** a2, const char ** a3, MPCooperative * aP4, char aP5, int aP6)
 {
   MultiplayerGameMode::Construct(a1, a2, a3, aP4, aP5, aP6); /*0x5c9403*/
-  *this = &(void*)(void*)&Megawealth_vftable; /*0x5c9408*/
+  *(void **)this = (void*)&Megawealth_vftable; /*0x5c9408*/
   return this; /*0x5c9410*/
 }
 } // namespace gamemd
@@ -53,7 +56,7 @@ namespace gamemd {
 unsigned int * MPBattleClass::MPSiegeClass(const wchar_t ** a1, MultiplayerSiege * aP2, const char ** a3, MultiplayerSiege * aP4, char aP5, MultiplayerSiege * aP6)
 {
   MultiplayerGameMode::Construct(a1, aP2, a3, aP4, aP5, aP6); /*0x5ca653*/
-  *this = &(void*)(void*)&MultiplayerSiege_vftable; /*0x5ca658*/
+  *(void **)this = (void*)&MultiplayerSiege_vftable; /*0x5ca658*/
   return this; /*0x5ca660*/
 }
 } // namespace gamemd
@@ -174,7 +177,7 @@ int MPBattleClass::isAIAllowed()
 unsigned int * MPBattleClass::MPUnholyAllianceClass(const wchar_t ** a1, UnholyAlliance * aP2, const char ** a3, UnholyAlliance * aP4, char aP5, UnholyAlliance * aP6)
 {
   MultiplayerGameMode::Construct(a1, aP2, a3, aP4, aP5, aP6); /*0x5cb3c3*/
-  *this = &(void*)(void*)&UnholyAlliance_vftable; /*0x5cb3c8*/
+  *this = (void*)&UnholyAlliance_vftable; /*0x5cb3c8*/
   return this; /*0x5cb3d0*/
 }
 // 0x5CB570
@@ -290,7 +293,7 @@ int MPBattleClass::onDialogDestroyed()
   dword_ABFC98 = 0; /*0x5d4c5c*/
   byte_ABFC9C = 1; /*0x5d4c61*/
   byte_ABFC9D = 0; /*0x5d4c68*/
-  dword_ABFC90 = (int)&(void*)(void*)&DynamicVectorClass_HWND_____vftable; /*0x5d4c6d*/
+  dword_ABFC90 = (int)&DynamicVectorClass_HWND_____vftable; /*0x5d4c6d*/
   dword_ABFCA4 = 10; /*0x5d4c77*/
   dword_ABFCA0 = 0; /*0x5d4c81*/
   return atexit(sub_5D4C90); /*0x5d4c8c*/
@@ -302,7 +305,7 @@ int MPBattleClass::unfixAlliances()
   dword_ABFCC0 = 0; /*0x5d4cdc*/
   byte_ABFCC4 = 1; /*0x5d4ce1*/
   byte_ABFCC5 = 0; /*0x5d4ce8*/
-  dword_ABFCB8 = (int)&(void*)(void*)&DynamicVectorClass_AcceleratorTracker_vftable; /*0x5d4ced*/
+  dword_ABFCB8 = (int)&DynamicVectorClass_AcceleratorTracker_vftable; /*0x5d4ced*/
   dword_ABFCCC = 10; /*0x5d4cf7*/
   dword_ABFCC8 = 0; /*0x5d4d01*/
   return atexit(sub_5D4D10); /*0x5d4d0c*/

@@ -10,6 +10,8 @@
 #include "e4/classes/TiberiumClass_e4.hpp"
 #include "e4/classes/DynamicVector_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/INIClass_e4.hpp"
 
 // 0x59D510
@@ -47,7 +49,7 @@ int Tiberium::ProcessGrowth(int a2, MapResourceClass * aP2, char _140)
   MouseClass *v67; // esi
   int j; // eax
   int k; // eax
-  char inited; // [esp+Fh] [ebp-121h]
+  char (__thiscall Tiberium::* )(int,MapResourceClass *,char) inited;
   __int16 v74; // [esp+10h] [ebp-120h] BYREF
   int v76; // [esp+14h] [ebp-11Ch]
   double v77; // [esp+18h] [ebp-118h]
@@ -233,7 +235,7 @@ int Tiberium::ProcessGrowth(int a2, MapResourceClass * aP2, char _140)
     if ( (int)v28 > 0 )
     {
   int v33; // edx
-      _DWORD * v30 = g_MapTileArray;
+      unsigned int v30 =
       v89[0] = v28;
       while ( 1 )
       {

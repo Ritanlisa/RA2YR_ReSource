@@ -28,6 +28,8 @@
 #include "e4/classes/VeterancyStruct_e4.hpp"
 #include "e4/classes/E4Recv_655050_e4.hpp"
 #include "e4/classes/E4Recv_655890_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x6613A0
@@ -951,7 +953,7 @@ unsigned int * E4Recv_6616B0::sub_6616B0()
   v2 = 32; /*0x6616b8*/
   this->q004 = 0; /*0x6616bd*/
   this->q008 = 0; /*0x6616c0*/
-  *this = &(void*)(void*)&Straw_vftable; /*0x6616c3*/
+  *this = (void*)&Straw_vftable; /*0x6616c3*/
   this->q00C = 0; /*0x6616c9*/
   this->q010 = 0; /*0x6616cc*/
   v3 = &this->q014; /*0x6616cf*/
@@ -964,7 +966,7 @@ unsigned int * E4Recv_6616B0::sub_6616B0()
   while ( v2 ); /*0x6616df*/
   this->q00C = 0; /*0x6616e1*/
   this->q010 = 0; /*0x6616e4*/
-  *this = &(void*)(void*)&RandomStraw_vftable; /*0x6616f1*/
+  *this = (void*)&RandomStraw_vftable; /*0x6616f1*/
   memset(&this->q014, 0, 0x100u); /*0x6616f7*/
   return this; /*0x6616fb*/
 }
@@ -1253,8 +1255,8 @@ int sub_661EA0()
 namespace gamemd {
 void E4Recv_661F30::sub_661F30()
 {
-  *this = &(void*)(void*)&RocketLocomotionClass_vftable; /*0x661f30*/
-  this->vtable2 = &(void*)(void*)&RocketLocomotionClass_vftable; /*0x661f36*/
+  *this = (void*)&RocketLocomotionClass_vftable; /*0x661f30*/
+  this->vtable2 = (void*)&RocketLocomotionClass_vftable; /*0x661f36*/
   LocomotionClass::Construct(); /*0x661f3d*/
 }
 } // namespace gamemd
@@ -1432,7 +1434,7 @@ int sub_663800()
   dword_B052D8 = 0; /*0x66380c*/
   byte_B052DC = 1; /*0x663811*/
   byte_B052DD = 0; /*0x663818*/
-  g_NetworkEventQueue = (int)&(void*)(void*)&DynamicVectorClass_OwnerTalkClass_ConnectionListStruct___vftable; /*0x66381d*/
+  g_NetworkEventQueue = (int)&DynamicVectorClass_OwnerTalkClass_ConnectionListStruct___vftable; /*0x66381d*/
   dword_B052E4 = 10; /*0x663827*/
   dword_B052E0 = 0; /*0x663831*/
   byte_B052E8 = 0; /*0x663836*/
@@ -1472,7 +1474,7 @@ void sub_663850()
     }
     while ( !v0 ); /*0x66389d*/
   }
-  g_NetworkEventQueue = (int)&(void*)(void*)&VectorClass_OwnerTalkClass_ConnectionListStruct___vftable; /*0x6638a4*/
+  g_NetworkEventQueue = (int)&VectorClass_OwnerTalkClass_ConnectionListStruct___vftable; /*0x6638a4*/
   if ( dword_B052D4 && byte_B052DD ) /*0x6638b8*/
   {
     RA2_OPDEL(dword_B052D4); /*0x6638bb*/
@@ -1491,7 +1493,7 @@ unsigned int * E4Recv_6638E0::sub_6638E0()
   this->q008 = 0; /*0x6638e7*/
   this->IsInitialized = 1; /*0x6638ea*/
   this->IsAllocated = 0; /*0x6638ee*/
-  *this = &(void*)(void*)&DynamicVectorClass_OwnerTalkClass_ConnectionListStruct___vftable; /*0x6638f1*/
+  *this = (void*)&DynamicVectorClass_OwnerTalkClass_ConnectionListStruct___vftable; /*0x6638f1*/
   this->CapacityIncrement = 10; /*0x6638f7*/
   this->q010 = 0; /*0x6638fe*/
   this->q018 = 0; /*0x663901*/
@@ -1526,7 +1528,7 @@ void E4Recv_663960::sub_663960()
     }
   }
   v5 = (void *)this->Items; /*0x6639a3*/
-  *(_DWORD *)this = &(void*)(void*)&VectorClass_OwnerTalkClass_ConnectionListStruct___vftable; /*0x6639a6*/
+  *(_DWORD *)this = (void*)&VectorClass_OwnerTalkClass_ConnectionListStruct___vftable; /*0x6639a6*/
   if ( v5 && this->IsAllocated ) /*0x6639b0*/
   {
     RA2_OPDEL(v5); /*0x6639b6*/

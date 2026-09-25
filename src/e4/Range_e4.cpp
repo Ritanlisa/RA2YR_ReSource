@@ -3,13 +3,15 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Math_e4.hpp"
 #include "e4/classes/MapClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x598030
 namespace gamemd {
 long long Range_RandomInt(MouseClass * aP0, MapClass * aP1)
 {
-  double v3; // st7
+  MouseClass * v3;
   __int64 result; // rax
   __int64 v5; // [esp+8h] [ebp-18h]
   __int64 v6; // [esp+8h] [ebp-18h]

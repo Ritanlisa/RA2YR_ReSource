@@ -2,13 +2,15 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/DialogQueue_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x5D4E70
 namespace gamemd {
 int DialogQueue::PushEntry()
 {
-  int result; // eax
+  unsigned int result;
 
   result = dword_ABFC98; /*0x5d4e70*/
   if ( dword_ABFCA0 < dword_ABFC98 /*0x5d4eac*/

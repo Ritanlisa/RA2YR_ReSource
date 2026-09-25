@@ -10,6 +10,8 @@
 #include "e4/classes/AudioController_e4.hpp"
 #include "e4/classes/AnimTypeClass_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/TechnoClass_e4.hpp"
 
 // 0x420DA0
@@ -50,10 +52,10 @@ AlphaShapeClass * AlphaShapeClass::SDDTOR(char a2)
   int v3; // eax
   int v4; // eax
 
-  *this = &(void*)(void*)&AlphaShapeClass_vftable; /*0x42173d*/
-  this->vtable2 = &(void*)(void*)&AlphaShapeClass_vftable; /*0x421743*/
-  this->vtable3 = &(void*)(void*)&AlphaShapeClass_vftable; /*0x42174a*/
-  this->vtable4 = &(void*)(void*)&AlphaShapeClass_vftable; /*0x421751*/
+  *(void **)this = (void*)&AlphaShapeClass_vftable; /*0x42173d*/
+  this->vtable2 = (void*)&AlphaShapeClass_vftable; /*0x421743*/
+  this->vtable3 = (void*)&AlphaShapeClass_vftable; /*0x42174a*/
+  this->vtable4 = (void*)&AlphaShapeClass_vftable; /*0x421751*/
   v3 = (*(int (__thiscall **)(int *, _DWORD **))(dword_88A0F0 + 16))(&dword_88A0F0, &this); /*0x421763*/
   if ( v3 != -1 && v3 < g_AlphaShapeLimit && v3 < --g_AlphaShapeLimit ) /*0x42177e*/
   {
@@ -92,10 +94,10 @@ int AlphaShapeClass::SD_vt05(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x420df9*/
     {
       AbstractClass::InitVtables(aP0, (int)&aP1); /*0x420e02*/
-      *aP0 = &(void*)(void*)&AlphaShapeClass_vftable; /*0x420e07*/
-      aP0[1] = &(void*)(void*)&AlphaShapeClass_vftable; /*0x420e0d*/
-      aP0[2] = &(void*)(void*)&AlphaShapeClass_vftable; /*0x420e14*/
-      aP0[3] = &(void*)(void*)&AlphaShapeClass_vftable; /*0x420e1b*/
+      *(void **)aP0 = (void*)&AlphaShapeClass_vftable; /*0x420e07*/
+      aP0[1] = (void*)&AlphaShapeClass_vftable; /*0x420e0d*/
+      aP0[2] = (void*)&AlphaShapeClass_vftable; /*0x420e14*/
+      aP0[3] = (void*)&AlphaShapeClass_vftable; /*0x420e1b*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP0 + 9); /*0x420e2b*/
     aP0[14] = 0; /*0x420e30*/

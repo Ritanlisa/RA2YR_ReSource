@@ -7,6 +7,8 @@
 #include "e4/classes/LocomotionClass_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/ObjectVector_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x4CC9A0
@@ -35,8 +37,8 @@ int FlyLocomotionClass::LocomotionClass()
   this->FlyLocomotionClass_field_54 = 0; /*0x4cca03*/
   this->FlyLocomotionClass_field_58 = 0; /*0x4cca06*/
   this->IsElevating = 0; /*0x4cca09*/
-  *(_DWORD *)this = &(void*)(void*)&FlyLocomotionClass_vftable; /*0x4cca0c*/
-  this->vtable2 = &(void*)(void*)&FlyLocomotionClass_vftable; /*0x4cca12*/
+  *(void **)this = (void*)&FlyLocomotionClass_vftable; /*0x4cca0c*/
+  this->vtable2 = (void*)&FlyLocomotionClass_vftable; /*0x4cca12*/
   this->ptr_30 = dword_8B3C80; /*0x4cca1b*/
   return this; /*0x4cca1e*/
 }
@@ -53,13 +55,13 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
   int v7; // eax
   _DWORD *v8; // esi
   int v9; // edx
-  void **v10; // [esp+Ch] [ebp-30h] BYREF
+  void* v10;
   void *Block; // [esp+10h] [ebp-2Ch]
   int v12; // [esp+14h] [ebp-28h]
   char v13; // [esp+19h] [ebp-23h]
   int v14; // [esp+1Ch] [ebp-20h]
   int v15; // [esp+20h] [ebp-1Ch]
-  void **v16; // [esp+24h] [ebp-18h] BYREF
+  void* v16;
   void *v17; // [esp+28h] [ebp-14h]
   int v18; // [esp+2Ch] [ebp-10h]
   char v19; // [esp+31h] [ebp-Bh]
@@ -70,11 +72,11 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
   if ( *(_DWORD *)(*(_DWORD *)(a1 + 8) + 692) ) /*0x4cfe8e*/
     return; /*0x4cfe94*/
   ObjectVector::Construct(&v16, 0, 0); /*0x4cfea2*/
-  v16 = &(void*)(void*)&DynamicVectorClass_ObjectClass___vftable; /*0x4cfeb7*/
+  v16 = (void*)&DynamicVectorClass_ObjectClass___vftable; /*0x4cfeb7*/
   v21 = 10; /*0x4cfebb*/
   v20 = 0; /*0x4cfebf*/
   ObjectVector::Construct(&v10, 0, 0); /*0x4cfec3*/
-  v10 = &(void*)(void*)&DynamicVectorClass_ObjectClass___vftable; /*0x4cfecd*/
+  v10 = (void*)&DynamicVectorClass_ObjectClass___vftable; /*0x4cfecd*/
   v15 = 10; /*0x4cfed3*/
   v14 = 0; /*0x4cfed7*/
   if ( !g_GameMode_Current[0] /*0x4cfeef*/
@@ -155,13 +157,13 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
   }
   (*(void (__stdcall **)(_DWORD))(v9 + 968))(v8[v7]); /*0x4d011b*/
   LABEL_45:
-  v10 = &(void*)(void*)&VectorClass_ObjectClass___vftable; /*0x4d0121*/
+  v10 = (void*)&VectorClass_ObjectClass___vftable; /*0x4d0121*/
   if ( Block && v13 ) /*0x4d0136*/
   {
     RA2_OPDEL(Block); /*0x4d0139*/
     Block = 0; /*0x4d0141*/
   }
-  v16 = &(void*)(void*)&VectorClass_ObjectClass___vftable; /*0x4d0149*/
+  v16 = (void*)&VectorClass_ObjectClass___vftable; /*0x4d0149*/
   v13 = 0; /*0x4d0150*/
   v12 = 0; /*0x4d0154*/
   if ( v17 ) /*0x4d0159*/
@@ -195,8 +197,8 @@ int FlyLocomotionClass::BeginMove(int * a1, int * a2)
   {
     if ( a1 ) /*0x4cfcd6*/
     {
-      *a1 = (int)&(void*)(void*)&FlyLocomotionClass_vftable; /*0x4cfcd8*/
-      a1[1] = (int)&(void*)(void*)&FlyLocomotionClass_vftable; /*0x4cfcde*/
+      *a1 = (int)&FlyLocomotionClass_vftable; /*0x4cfcd8*/
+      a1[1] = (int)&FlyLocomotionClass_vftable; /*0x4cfcde*/
     }
   }
   return result; /*0x4cfce5*/
@@ -213,8 +215,8 @@ int FlyLocomotionClass::StubReturn96()
 namespace gamemd {
 FlyLocomotionClass * FlyLocomotionClass::ProcessMove(char a2)
 {
-  *this = &(void*)(void*)&FlyLocomotionClass_vftable; /*0x4d03a3*/
-  *(this + 1) = &(void*)(void*)&FlyLocomotionClass_vftable; /*0x4d03a9*/
+  *(void **)this = (void*)&FlyLocomotionClass_vftable; /*0x4d03a3*/
+  *(this + 1) = (void*)&FlyLocomotionClass_vftable; /*0x4d03a9*/
   LocomotionClass::Construct(); /*0x4d03b0*/
   if ( (a2 & 1) != 0 ) /*0x4d03ba*/
     RA2_OPDEL(); /*0x4d03bd*/

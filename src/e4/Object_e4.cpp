@@ -21,6 +21,8 @@
 #include "e4/classes/FootClass_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/ConvertClass_e4.hpp"
 
 // 0x47C3D0
@@ -172,8 +174,8 @@ unsigned int * Object::FindNearestObjectAtCell(unsigned int * a2)
   int v8; // edi
   int v9; // eax
   int v11; // ecx
-  unsigned int v12; // eax
-  _DWORD *v13; // eax
+  _DWORD * v12;
+  unsigned int v13;
   _DWORD *i; // esi
   int *v15; // eax
   int v16; // eax
@@ -373,11 +375,11 @@ void * Object::SpawnAtCell(IUnknown * aP1, IUnknown * aP2, BuildingTypeClass * a
 
   ObjectClass::ctor(); /*0x5fc386*/
   aP1 = aP1; /*0x5fc38b*/
-  *(_DWORD *)this = &(void*)(void*)&OverlayClass_vftable; /*0x5fc38f*/
+  *(void **)this = (void*)&OverlayClass_vftable; /*0x5fc38f*/
   this->Type = aP1; /*0x5fc395*/
-  this->vtable3 = &(void*)(void*)&OverlayClass_vftable; /*0x5fc39f*/
-  this->vtable2 = &(void*)(void*)&OverlayClass_vftable; /*0x5fc3a6*/
-  this->vtable4 = &(void*)(void*)&OverlayClass_vftable; /*0x5fc3ac*/
+  this->vtable3 = (void*)&OverlayClass_vftable; /*0x5fc39f*/
+  this->vtable2 = (void*)&OverlayClass_vftable; /*0x5fc3a6*/
+  this->vtable4 = (void*)&OverlayClass_vftable; /*0x5fc3ac*/
   AbstractClass::GenerateUniqueID((int)this + 4); /*0x5fc3b3*/
   if ( dword_A8EC60 < dword_A8EC58 /*0x5fc3ef*/
     || (byte_A8EC5D || !dword_A8EC58)
@@ -412,13 +414,13 @@ void* Object::HandleAction(int * a2, int * a3)
   int v5; // ebp
   int GroundHeight; // eax
   int v7; // eax
-  BuildingTypeClass *v8; // edx
+  unsigned int v8;
   int v9; // ebx
   int v10; // edx
   int v11; // eax
   int v12; // eax
   int v13; // edx
-  BuildingTypeClass *v14; // esi
+  unsigned int v14;
   int v15; // eax
   int v16; // esi
   int v17; // ecx
@@ -615,10 +617,10 @@ void * Object::DrawObject(char a2)
   int v3; // eax
   void **v5; // [esp+4h] [ebp-4h] BYREF
 
-  *this = &(void*)(void*)&OverlayClass_vftable; /*0x5fdf76*/
-  this->vtable2 = &(void*)(void*)&OverlayClass_vftable; /*0x5fdf7c*/
-  this->vtable3 = &(void*)(void*)&OverlayClass_vftable; /*0x5fdf83*/
-  this->vtable4 = &(void*)(void*)&OverlayClass_vftable; /*0x5fdf8a*/
+  *this = (void*)&OverlayClass_vftable; /*0x5fdf76*/
+  this->vtable2 = (void*)&OverlayClass_vftable; /*0x5fdf7c*/
+  this->vtable3 = (void*)&OverlayClass_vftable; /*0x5fdf83*/
+  this->vtable4 = (void*)&OverlayClass_vftable; /*0x5fdf8a*/
   AbstractClass::AnnounceExpiredPointer(1); /*0x5fdf91*/
   v3 = (*(int (__thiscall **)(int *, void ***))(OverlayClass_Array + 16))(&OverlayClass_Array, &this); /*0x5fdfaa*/
   if ( v3 != -1 && v3 < dword_A8EC60 && v3 < --dword_A8EC60 ) /*0x5fdfc5*/
@@ -1669,10 +1671,10 @@ int Object::LoadObject(ObjectClass * aP1, int aP1a)
     if ( aP1 ) /*0x5fd909*/
     {
       ObjectClass::Init(aP1, (int)&aP1a); /*0x5fd912*/
-      *aP1 = &(void*)(void*)&OverlayClass_vftable; /*0x5fd917*/
-      aP1[1] = &(void*)(void*)&OverlayClass_vftable; /*0x5fd91d*/
-      aP1[2] = &(void*)(void*)&OverlayClass_vftable; /*0x5fd924*/
-      aP1[3] = &(void*)(void*)&OverlayClass_vftable; /*0x5fd92b*/
+      *aP1 = (void*)&OverlayClass_vftable; /*0x5fd917*/
+      aP1[1] = (void*)&OverlayClass_vftable; /*0x5fd91d*/
+      aP1[2] = (void*)&OverlayClass_vftable; /*0x5fd924*/
+      aP1[3] = (void*)&OverlayClass_vftable; /*0x5fd92b*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP1 + 43); /*0x5fd93e*/
   }

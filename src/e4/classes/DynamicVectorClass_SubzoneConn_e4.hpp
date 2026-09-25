@@ -9,10 +9,10 @@ struct DynamicVectorClass_SubzoneConn {
     unsigned int vfptr;  // 0x0
     void* Items;  // 0x4
     unsigned int Capacity;  // 0x8
-    void* IsInitialized;  // 0xC
+    unsigned int q00C;  // 0xC
     unsigned char IsAllocated;  // 0xD
     unsigned char q00E;  // 0xE
-    void* Count;  // 0x10
+    unsigned int q010;  // 0x10
     unsigned char q014;  // 0x14
     unsigned int q018;  // 0x18
     unsigned char q01C;  // 0x1C
@@ -28,9 +28,11 @@ struct DynamicVectorClass_SubzoneConn {
     unsigned char q048;  // 0x48
     unsigned char q050;  // 0x50
     unsigned int q054;  // 0x54
+    unsigned int Count;
+    unsigned int IsInitialized;
     unsigned int Items2;
 // --- flat members (END) ---
-    char Release(int a2, char * a3);  // 0x589190
+    char Release(int a2,  char * a3);    // 0x589190
     DynamicVector * Add(char a2);  // 0x5890B0
     int GetSize(unsigned int * a2);  // 0x5892D0
     unsigned int Remove(int a2);  // 0x588CC0

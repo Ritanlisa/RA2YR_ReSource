@@ -7,6 +7,8 @@
 #include "e4/classes/AudioQueue_e4.hpp"
 #include "e4/classes/Math_e4.hpp"
 #include "e4/classes/MovieClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x5D89F0
@@ -17,7 +19,7 @@ unsigned int * MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass(int 
   this->u32_8 = a2; /*0x5d89fe*/
   this->q00C = 1; /*0x5d8a01*/
   this->u8_D = 0; /*0x5d8a05*/
-  *this = &(void*)(void*)&VectorClass_MultiplayerGameMode___vftable; /*0x5d8a08*/
+  *(void **)this = (void*)&VectorClass_MultiplayerGameMode___vftable; /*0x5d8a08*/
   if ( a2 ) /*0x5d8a0e*/
   {
     if ( a3 ) /*0x5d8a16*/
@@ -35,13 +37,13 @@ unsigned int * MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass(int 
 namespace gamemd {
 MultiplayerGameMode * MultiplayerGameMode::QueryInterface(char a2)
 {
-  int v3; // edi
+  void * v3;
   void (__thiscall ***v4)(_DWORD, int); // ecx
   void (__thiscall ***v5)(_DWORD, int); // ecx
   void *v6; // eax
 
   v3 = 0; /*0x5d7f24*/
-  for ( *(_DWORD *)this = &(void*)(void*)&MultiplayerGameMode_vftable; v3 < this->q018; ++v3 ) /*0x5d7f31*/
+  for ( *(_DWORD *)this = (void*)&MultiplayerGameMode_vftable; v3 < this->q018; ++v3 ) /*0x5d7f31*/
   {
     v4 = *(void (__thiscall ****)(_DWORD, int))(this->q00C + 4 * v3); /*0x5d7f36*/
     if ( v4 ) /*0x5d7f3b*/
@@ -56,7 +58,7 @@ MultiplayerGameMode * MultiplayerGameMode::QueryInterface(char a2)
   DeleteAndZero::Alt((void **)this + 9); /*0x5d7f76*/
   DeleteAndZero::Alt((void **)this + 8); /*0x5d7f7e*/
   v6 = (void *)this->q00C; /*0x5d7f83*/
-  this->u32_8 = &(void*)(void*)&VectorClass_MultiplayerTeam___vftable; /*0x5d7f86*/
+  this->u32_8 = (void*)&VectorClass_MultiplayerTeam___vftable; /*0x5d7f86*/
   if ( v6 && *(&this->u32_81) ) /*0x5d7f90*/
   {
     RA2_OPDEL(v6); /*0x5d7f98*/

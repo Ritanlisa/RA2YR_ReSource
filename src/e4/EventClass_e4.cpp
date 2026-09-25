@@ -16,13 +16,15 @@
 #include "e4/classes/Team_e4.hpp"
 #include "e4/classes/Timer_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x48B390
 namespace gamemd {
 int EventClass::serializeEvent()
 {
-  int result; // eax
+  void * result;
   int v2; // esi
   _DWORD *v3; // edx
 
@@ -73,14 +75,14 @@ void * EventClass::Add(AbstractClass * aP1, unsigned char a3, int a4, char a5)
   if ( aP1 < 0 ) /*0x4c660a*/
   {
     this->q008 = -1; /*0x4c6631*/
-    *this = 0; /*0x4c6635*/
+    *(_DWORD *)this = 0; /*0x4c6635*/
     this->u32_3 = g_CurrentFrame; /*0x4c663d*/
     return this; /*0x4c6640*/
   }
   else
   {
     this->q008 = aP1; /*0x4c6610*/
-    *this = a3; /*0x4c661a*/
+    *(_DWORD *)this = a3; /*0x4c661a*/
     this->q01C = a4; /*0x4c661c*/
     *(&this->q0041) = a5; /*0x4c6620*/
     this->u32_3 = g_CurrentFrame; /*0x4c6629*/
@@ -96,14 +98,14 @@ void * EventClass::AddEvent(int a2, unsigned char a3)
   if ( a2 < 0 ) /*0x4c66ea*/
   {
     this->q008 = -1; /*0x4c6701*/
-    *this = 0; /*0x4c6705*/
+    *(_DWORD *)this = 0; /*0x4c6705*/
     this->u32_3 = g_CurrentFrame; /*0x4c670d*/
     return this; /*0x4c6710*/
   }
   else
   {
     this->q008 = a2; /*0x4c66ec*/
-    *this = a3; /*0x4c66ef*/
+    *(_DWORD *)this = a3; /*0x4c66ef*/
     this->u32_3 = g_CurrentFrame; /*0x4c66f9*/
     return this; /*0x4c66f7*/
   }
@@ -117,14 +119,14 @@ void * EventClass::Add2(AnimClass * aP1, unsigned char a3, IUnknown * aP3)
   if ( aP1 < 0 ) /*0x4c674a*/
   {
     this->q008 = -1; /*0x4c6767*/
-    *this = 0; /*0x4c676b*/
+    *(_DWORD *)this = 0; /*0x4c676b*/
     this->u32_3 = g_CurrentFrame; /*0x4c6776*/
     return this; /*0x4c6774*/
   }
   else
   {
     this->q008 = aP1; /*0x4c6750*/
-    *this = a3; /*0x4c6753*/
+    *(_DWORD *)this = a3; /*0x4c6753*/
     this->q01C = aP3; /*0x4c6755*/
     this->u32_3 = g_CurrentFrame; /*0x4c675d*/
     return this; /*0x4c6760*/
@@ -139,14 +141,14 @@ void * EventClass::AddEventEx(SelectClass_StripClass_SidebarClass * aP1, unsigne
   if ( aP1 < 0 ) /*0x4c699a*/
   {
     this->q008 = -1; /*0x4c69c6*/
-    *this = 0; /*0x4c69ca*/
+    *(_DWORD *)this = 0; /*0x4c69ca*/
     this->u32_3 = g_CurrentFrame; /*0x4c69d2*/
     return this; /*0x4c69d5*/
   }
   else
   {
     this->q008 = aP1; /*0x4c69a4*/
-    *this = a3; /*0x4c69ab*/
+    *(_DWORD *)this = a3; /*0x4c69ab*/
     this->q01C = aP3; /*0x4c69ad*/
     this->q00B = aP4; /*0x4c69b0*/
     this->u32_F = aP5; /*0x4c69b3*/
@@ -163,7 +165,7 @@ void * EventClass::Init(IUnknown * aP1, char a3, int a4, int a5, int arg10, unsi
   if ( aP1 < 0 ) /*0x4c6b0a*/
   {
     this->q008 = -1; /*0x4c6b49*/
-    *this = 0; /*0x4c6b4d*/
+    *(_DWORD *)this = 0; /*0x4c6b4d*/
     this->u32_3 = g_CurrentFrame; /*0x4c6b58*/
     return this; /*0x4c6b56*/
   }
@@ -171,7 +173,7 @@ void * EventClass::Init(IUnknown * aP1, char a3, int a4, int a5, int arg10, unsi
   {
     this->q008 = aP1; /*0x4c6b14*/
     this->q00B = a5; /*0x4c6b1b*/
-    *this = a3; /*0x4c6b22*/
+    *(_DWORD *)this = a3; /*0x4c6b22*/
     this->q01C = a4; /*0x4c6b24*/
     this->u32_F = arg10; /*0x4c6b27*/
     this->u32_4C = *a6; /*0x4c6b2d*/
@@ -185,7 +187,7 @@ void * EventClass::Init(IUnknown * aP1, char a3, int a4, int a5, int arg10, unsi
 namespace gamemd {
 AbstractClass * * EventClass::ProcessEvent()
 {
-  HouseClass *v3; // ecx
+  unsigned int v3;
   BuildingClass *Building; // esi
   BuildingClass *v7; // esi
   ObjectClass *v8; // edi
@@ -247,7 +249,7 @@ AbstractClass * * EventClass::ProcessEvent()
   wchar_t v107[256]; // [esp+182h] [ebp-200h] BYREF
 
   v3 = HouseClass_Array;
-  int v4 = this->q008;
+  void * v4 =
   int v5 = *(_DWORD *)&HouseClass_Array->__pad_0[4 * v4];
   switch ()
   {
@@ -1347,7 +1349,7 @@ DynamicVector * EventClass::executeAction(char a2)
   void *v3; // eax
 
   v3 = (void *)this->q004; /*0x40bc13*/
-  *this = &(void*)(void*)&VectorClass_BombClass___vftable; /*0x40bc16*/
+  *this = (void*)&VectorClass_BombClass___vftable; /*0x40bc16*/
   if ( v3 && this->IsAllocated ) /*0x40bc20*/
   {
     RA2_OPDEL(v3); /*0x40bc28*/
@@ -1369,7 +1371,7 @@ unsigned int * EventClass::resetEvent(BuildingClass * aP1, BuildingClass * aP2)
   this->q008 = aP1; /*0x40bd0e*/
   this->q00C = 1; /*0x40bd11*/
   this->IsAllocated = 0; /*0x40bd15*/
-  *this = &(void*)(void*)&VectorClass_TechnoClass___vftable; /*0x40bd18*/
+  *this = (void*)&VectorClass_TechnoClass___vftable; /*0x40bd18*/
   if ( aP1 ) /*0x40bd1e*/
   {
     if ( aP2 ) /*0x40bd26*/
@@ -1388,7 +1390,7 @@ unsigned int * EventClass::resetEvent(BuildingClass * aP1, BuildingClass * aP2)
 namespace gamemd {
 void EventClass::finalizeEvent()
 {
-  g_CommandClassVector = (int)&(void*)(void*)&VectorClass_CommandClass_const___vftable; /*0x40be18*/
+  g_CommandClassVector = (int)&VectorClass_CommandClass_const___vftable; /*0x40be18*/
   if ( g_CommandClass_Capacity && g_CommandClass_HasInit ) /*0x40be2c*/
   {
     RA2_OPDEL(g_CommandClass_Capacity); /*0x40be2f*/
@@ -1406,7 +1408,7 @@ VectorClass_flat * EventClass::queueEvent(char a2)
   void *v3; // eax
 
   v3 = (void *)this->q004; /*0x40c113*/
-  *this = &(void*)(void*)&VectorClass_CommandClass_const___vftable; /*0x40c116*/
+  *this = (void*)&VectorClass_CommandClass_const___vftable; /*0x40c116*/
   if ( v3 && this->IsAllocated ) /*0x40c120*/
   {
     RA2_OPDEL(v3); /*0x40c128*/

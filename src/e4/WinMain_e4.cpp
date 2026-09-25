@@ -77,13 +77,16 @@
 #include "e4/classes/WideString_e4.hpp"
 #include "e4/classes/WinModemClass_e4.hpp"
 #include "e4/classes/Window_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x5BC180
 namespace gamemd {
 void char WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
 {
-  int *v3; // edi
+  unsigned int v3;
   _DWORD *v4; // eax
   _BYTE *v5; // esi
   int v6; // edi
@@ -91,7 +94,7 @@ void char WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
   _BYTE *v8; // ecx
   _DWORD *v9; // eax
   int v10; // edx
-  int *v11; // ebx
+  unsigned int v11;
   _BYTE *v12; // ecx
   int v13; // edi
   int v14; // ebp
@@ -99,7 +102,7 @@ void char WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
   _DWORD *v16; // eax
   int v17; // esi
   unsigned __int8 result; // al
-  int *v19; // [esp+10h] [ebp-4h]
+  ObjectClass * v19;
   int v20; // [esp+18h] [ebp+4h]
 
   v3 = dword_ABF168; /*0x5bc18b*/
@@ -214,10 +217,10 @@ int WinMain::Constructor_VectorClass_Wstring_()
     v3 = *(_DWORD *)(*(&this->u32_A81) + 4 * i); /*0x69a208*/
     if ( v3 ) /*0x69a20d*/
     {
-      v3->q690 = &(void*)(void*)&VectorClass_Wstring_vftable; /*0x69a215*/
+      v3->q690 = (void*)&VectorClass_Wstring_vftable; /*0x69a215*/
       VectorClass_Wstring::ddtor(v3 + 420); /*0x69a21b*/
       v4 = v3->q630; /*0x69a220*/
-      v3->q188 = &(void*)(void*)&VectorClass_enum_DiskID_vftable; /*0x69a226*/
+      v3->q188 = (void*)&VectorClass_enum_DiskID_vftable; /*0x69a226*/
       if ( v4 && *(_BYTE *)(v3 + 405) ) /*0x69a234*/
       {
         RA2_OPDEL(v4); /*0x69a23d*/
@@ -322,7 +325,7 @@ void sub_5D7E50()
       dword_ABFDA8 = 0; /*0x5d7e81*/
       byte_ABFDAC = 1; /*0x5d7e87*/
       byte_ABFDAD = 0; /*0x5d7e8e*/
-      g_MultiplayerModeConfig = (int)&(void*)(void*)&DynamicVectorClass_MultiplayerGameMode___vftable; /*0x5d7e94*/
+      g_MultiplayerModeConfig = (int)&DynamicVectorClass_MultiplayerGameMode___vftable; /*0x5d7e94*/
       dword_ABFDB4 = 10; /*0x5d7e9a*/
       g_MultiplayerGameList = 0; /*0x5d7ea0*/
       result = atexit(MultiplayerConfig::Cleanup); /*0x5d7ea6*/
@@ -336,7 +339,7 @@ void sub_5D7E50()
       dword_ABFDA8 = 0; /*0x5d7ed5*/
       byte_ABFDAC = 1; /*0x5d7edb*/
       byte_ABFDAD = 0; /*0x5d7ee2*/
-      g_MultiplayerModeConfig = (int)&(void*)(void*)&DynamicVectorClass_MultiplayerGameMode___vftable; /*0x5d7ee8*/
+      g_MultiplayerModeConfig = (int)&DynamicVectorClass_MultiplayerGameMode___vftable; /*0x5d7ee8*/
       dword_ABFDB4 = 10; /*0x5d7eee*/
       g_MultiplayerGameList = 0; /*0x5d7ef4*/
       atexit(MultiplayerConfig::Cleanup); /*0x5d7efa*/

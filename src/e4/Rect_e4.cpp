@@ -3,6 +3,8 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Rect_e4.hpp"
 #include "e4/classes/RandomMap_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x487F40
@@ -26,7 +28,7 @@ int Rect::Union(IUnknown * aP0, const RECT * lprcSrc1, const RECT * lprcSrc2)
   v15 = v4; /*0x487f4c*/
   if ( v3[2] <= 0 || v3[3] <= 0 ) /*0x487f5b*/
   {
-    *v4 = *aP0; /*0x488012*/
+    *(_DWORD *)v4 = *aP0; /*0x488012*/
     return (BOOL)v4; /*0x488026*/
   }
   else
@@ -85,7 +87,7 @@ IUnknown * Rect::Set(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnknown * 
 namespace gamemd {
 AbstractClass * Rect::Construct(IUnknown * aP1, AbstractClass * aP2, AbstractClass * aP3)
 {
-  *this = *aP1; /*0x45a138*/
+  *(_DWORD *)this = *aP1; /*0x45a138*/
   this->u32_4 = aP1[1]; /*0x45a141*/
   this->q008 = aP2; /*0x45a148*/
   this->q00C = aP3; /*0x45a14b*/

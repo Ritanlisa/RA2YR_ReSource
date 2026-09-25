@@ -20,7 +20,11 @@
 #include "e4/classes/House_e4.hpp"
 #include "e4/classes/Math_e4.hpp"
 #include "e4/classes/Tactical_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/ConvertClass_e4.hpp"
 
 // 0x730A90
 namespace gamemd {
@@ -43,7 +47,7 @@ AbstractClass * * ProcessSelectionExperience()
   int v0; // eax
   void **v1; // esi
   _BYTE *v2; // ecx
-  wchar_t *v3; // ebp
+  unsigned int v3;
   int v4; // edi
   _DWORD *v5; // esi
   int v6; // ebx
@@ -53,7 +57,7 @@ AbstractClass * * ProcessSelectionExperience()
   char v11; // [esp+11h] [ebp-7h]
   char v12; // [esp+12h] [ebp-6h]
   char v13; // [esp+13h] [ebp-5h]
-  wchar_t *v14; // [esp+14h] [ebp-4h]
+  unsigned int v14;
 
   IDA_LOBYTE(v0) = (_BYTE)g_SelectionManager; /*0x730af3*/
   v13 = 0; /*0x730afe*/
@@ -185,7 +189,7 @@ CellStruct * * sub_730D60()
   int v5; // eax
   int v6; // edi
   int v7; // eax
-  wchar_t *v8; // [esp+10h] [ebp-4h]
+  unsigned int v8;
 
   if ( FactoryClass::GetFlag() ) /*0x730d65*/
     return System_Get(); /*0x730d6e*/
@@ -279,7 +283,7 @@ int E4Recv_731130::sub_731130()
 namespace gamemd {
 AbstractClass * * sub_731AA0()
 {
-  wchar_t *v0; // edi
+  unsigned int v0;
   int v1; // esi
   _BYTE *v2; // ecx
 
@@ -322,7 +326,7 @@ unsigned int * sub_731EB0(unsigned char (__fastcall *a1)(int, int) a1, int a2)
     v2[2] = 0; /*0x731ed1*/
     *((_BYTE *)v2 + 12) = 1; /*0x731ed4*/
     *((_BYTE *)v2 + 13) = 0; /*0x731ed8*/
-    *v2 = &(void*)(void*)&DynamicVectorClass_TechnoClass___vftable; /*0x731edb*/
+    *v2 = (void*)&DynamicVectorClass_TechnoClass___vftable; /*0x731edb*/
     v2[5] = 10; /*0x731ee1*/
     v2[4] = 0; /*0x731ee8*/
     v3 = v2; /*0x731eeb*/
@@ -379,7 +383,7 @@ unsigned int * TechnoClass_GatherFiltered(unsigned char (__fastcall *a1)(int, in
     v2[2] = 0; /*0x731f91*/
     *((_BYTE *)v2 + 12) = 1; /*0x731f94*/
     *((_BYTE *)v2 + 13) = 0; /*0x731f98*/
-    *v2 = &(void*)(void*)&DynamicVectorClass_TechnoClass___vftable; /*0x731f9b*/
+    *v2 = (void*)&DynamicVectorClass_TechnoClass___vftable; /*0x731f9b*/
     v2[5] = 10; /*0x731fa1*/
     v2[4] = 0; /*0x731fa8*/
     v3 = v2; /*0x731fab*/
@@ -477,7 +481,7 @@ void SelectAllOfType()
     if ( v2 ) /*0x7329a4*/
     {
       EventClass::resetEvent(v2, 0, 0); /*0x7329aa*/
-      *v3 = &(void*)(void*)&DynamicVectorClass_TechnoClass___vftable; /*0x7329af*/
+      *(void **)v3 = (void*)&DynamicVectorClass_TechnoClass___vftable; /*0x7329af*/
       v3[5] = 10; /*0x7329b5*/
       v3[4] = 0; /*0x7329bc*/
     }
@@ -506,7 +510,7 @@ void SelectAllOfType()
     if ( v6 ) /*0x732a08*/
     {
       EventClass::resetEvent(v6, 0, 0); /*0x732a0e*/
-      *v7 = &(void*)(void*)&DynamicVectorClass_TechnoClass___vftable; /*0x732a13*/
+      *(void **)v7 = (void*)&DynamicVectorClass_TechnoClass___vftable; /*0x732a13*/
       v7[5] = 10; /*0x732a1a*/
       v7[4] = 0; /*0x732a21*/
     }
@@ -626,7 +630,7 @@ char sub_732FF0(void * a1, int (__fastcall *a2)(unsigned int, int) a2, int a3)
     if ( HeightMap ) /*0x73301c*/
     {
       IDA_LOBYTE(HeightMap) = (unsigned __int8)EventClass::resetEvent((_DWORD *)HeightMap, 0, 0); /*0x733022*/
-      *v4 = &(void*)(void*)&DynamicVectorClass_TechnoClass___vftable; /*0x733027*/
+      *v4 = (void*)&DynamicVectorClass_TechnoClass___vftable; /*0x733027*/
       v4[5] = 10; /*0x73302d*/
       v4[4] = 0; /*0x733034*/
     }
@@ -668,7 +672,7 @@ char sub_732FF0(void * a1, int (__fastcall *a2)(unsigned int, int) a2, int a3)
     if ( v10 ) /*0x7330b1*/
     {
       EventClass::resetEvent(v10, 0, 0); /*0x7330b9*/
-      *v4 = &(void*)(void*)&DynamicVectorClass_TechnoClass___vftable; /*0x7330be*/
+      *v4 = (void*)&DynamicVectorClass_TechnoClass___vftable; /*0x7330be*/
       v4[5] = 10; /*0x7330c4*/
       v4[4] = 0; /*0x7330cb*/
     }
@@ -732,7 +736,7 @@ void sub_7331B0()
   if ( v1 ) /*0x7331db*/
   {
     EventClass::resetEvent(v1, 0, 0); /*0x7331e1*/
-    *(_DWORD *)v2 = &(void*)(void*)&DynamicVectorClass_TechnoClass___vftable; /*0x7331e6*/
+    *(void **)v2 = (void*)&DynamicVectorClass_TechnoClass___vftable; /*0x7331e6*/
     v2->abstractFlags = 10; /*0x7331ec*/
     v2->uniqueId = 0; /*0x7331f3*/
   }
@@ -777,7 +781,7 @@ void sub_7331B0()
     if ( v10 ) /*0x733290*/
     {
       EventClass::resetEvent(v10, 0, 0); /*0x733296*/
-      *(_DWORD *)v11 = &(void*)(void*)&DynamicVectorClass_TechnoClass___vftable; /*0x73329b*/
+      *(_DWORD *)v11 = (void*)&DynamicVectorClass_TechnoClass___vftable; /*0x73329b*/
       v11->u32_14 = 10; /*0x7332a1*/
       v11->q010 = 0; /*0x7332a8*/
     }
@@ -1291,7 +1295,7 @@ unsigned int * E4Recv_733CD0::sub_733CD0()
     v2[2] = 0; /*0x733cef*/
     *((_BYTE *)v2 + 12) = 1; /*0x733cf2*/
     *((_BYTE *)v2 + 13) = 0; /*0x733cf6*/
-    *v2 = &(void*)(void*)&DynamicVectorClass_char_const___vftable; /*0x733cf9*/
+    *v2 = (void*)&DynamicVectorClass_char_const___vftable; /*0x733cf9*/
     v2[5] = 10; /*0x733cff*/
     v2[4] = 0; /*0x733d06*/
     v3 = v2; /*0x733d09*/
@@ -1420,7 +1424,7 @@ void * SelectFactionThemeMusic(int a1, const char * a2, int a3, unsigned int * a
     VectorClass::Construct(v9, 0, 0); /*0x733e99*/
     v10[4] = 0; /*0x733e9e*/
     v11 = v10; /*0x733ea1*/
-    *v10 = &(void*)(void*)&DynamicVectorClass_int_vftable; /*0x733ea3*/
+    *v10 = (void*)&DynamicVectorClass_int_vftable; /*0x733ea3*/
     v10[5] = 10; /*0x733ea9*/
     v36 = v10; /*0x733eb0*/
   }

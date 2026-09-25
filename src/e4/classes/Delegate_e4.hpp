@@ -15,7 +15,7 @@ struct Delegate {
     char Delegate_field_10[4];  // 0x10
     char Delegate_field_14[4];  // 0x14
     void* m_straw;  // 0x18
-    void* m_pipe;  // 0x1C
+    unsigned int q01C;  // 0x1C
     char Delegate_field_20[4];  // 0x20
     char Delegate_field_24[4];  // 0x24
     void* q028;  // 0x28
@@ -28,7 +28,7 @@ struct Delegate {
     unsigned char q048;  // 0x48
     unsigned char q04C;  // 0x4C
     unsigned int q050;  // 0x50
-    unsigned int q054;  // 0x54
+    char q054[4];  // 0x54
     unsigned char q058;  // 0x58
     unsigned char q05C;  // 0x5C
     void* q064;  // 0x64
@@ -56,18 +56,19 @@ struct Delegate {
     unsigned int Delegate_field_084;
     unsigned int Previous;
     unsigned int __pad_060;
+    unsigned int m_pipe;
     unsigned int q008;
 // --- flat members (END) ---
     GenericNode * Constructor_GenericNode(char a2);
     int * ClearVectorAndStraw(char a2);
     int * DestroyPipe(char a2);
     int * DestroyStraw(char a2);
-    int Invoke(int a2, Straw * aP2);
+    int Invoke(int a2, void* aP2);
     int ProcessBitmapAndDispatch();
     int ProcessBitmapStream(char * Src, int a3);
     int StreamToBuffer(char * a1, int a3);
     unsigned int * GetField();
-    void * Dispatch(Pipe * aP1, Pipe * aP2);
+    void * Dispatch(void* aP1, void* aP2);
     void Set(AbstractTypeClass * aP1);
 };
 

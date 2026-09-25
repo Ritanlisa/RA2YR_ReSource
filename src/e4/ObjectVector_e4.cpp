@@ -3,6 +3,8 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/ObjectVector_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x4D0440
@@ -13,7 +15,7 @@ unsigned int * ObjectVector::Construct(IUnknown * aP1, IUnknown * aP2)
   this->q008 = aP1; /*0x4d044e*/
   this->q00C = 1; /*0x4d0451*/
   this->IsAllocated = 0; /*0x4d0455*/
-  *this = &(void*)(void*)&VectorClass_ObjectClass___vftable; /*0x4d0458*/
+  *(void ** *)this = (void*)&VectorClass_ObjectClass___vftable; /*0x4d0458*/
   if ( aP1 ) /*0x4d045e*/
   {
     if ( aP2 ) /*0x4d0466*/

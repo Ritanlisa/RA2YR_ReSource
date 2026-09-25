@@ -8,13 +8,15 @@
 #include "e4/classes/SHA1_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/MultiplayerGameMode_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x41F2E0
 namespace gamemd {
 int CCINIClass::ReadTypeList(char * a1, CCINIClass * a2)
 {
-  int v2; // edi
+  CCINIClass * v2;
   int result; // eax
   int v5; // ebp
   void *StringByIndex; // esi
@@ -124,14 +126,14 @@ MultiplayerGameMode * * CCINIClass::Load(MultiplayerGameMode * aP1, char a3, cha
   int v7; // esi
   bool v8; // zf
   _DWORD v10[4]; // [esp+Ch] [ebp-A8h] BYREF
-  char v11; // [esp+1Ch] [ebp-98h]
+  void * v11;
   _DWORD v12[3]; // [esp+20h] [ebp-94h] BYREF
   char v13; // [esp+2Ch] [ebp-88h]
   int v14; // [esp+44h] [ebp-70h]
   int v15; // [esp+48h] [ebp-6Ch]
   int v16; // [esp+4Ch] [ebp-68h]
   int v17; // [esp+50h] [ebp-64h]
-  int v18; // [esp+54h] [ebp-60h]
+  unsigned int v18;
   int v19; // [esp+58h] [ebp-5Ch]
   int v20; // [esp+5Ch] [ebp-58h]
   int v21[5]; // [esp+A0h] [ebp-14h] BYREF
@@ -140,7 +142,7 @@ MultiplayerGameMode * * CCINIClass::Load(MultiplayerGameMode * aP1, char a3, cha
   v10[2] = 0; /*0x474217*/
   v10[3] = aP1; /*0x47421b*/
   v11 = 0; /*0x47421f*/
-  v10[0] = &(void*)(void*)&FileStraw_vftable; /*0x474223*/
+  v10[0] = (void*)&FileStraw_vftable; /*0x474223*/
   v5 = INIClass::LoadFile(v10, aP2); /*0x474230*/
   *(&this->u32_184) = 0; /*0x474232*/
   if ( !v5 || !a3 ) /*0x474244*/
@@ -164,7 +166,7 @@ MultiplayerGameMode * * CCINIClass::Load(MultiplayerGameMode * aP1, char a3, cha
   v16 = -1732584194; /*0x4742ad*/
   v17 = 271733878; /*0x4742b5*/
   v18 = -1009589776; /*0x4742bd*/
-  v12[0] = &(void*)(void*)&SHAPipe_vftable; /*0x4742c5*/
+  v12[0] = (void*)&SHAPipe_vftable; /*0x4742c5*/
   INIClass::WriteToString(v12); /*0x4742cd*/
   SHA1::ComputeThunk(&this->u32_185); /*0x4742da*/
   *(&this->u32_184) = 1; /*0x4742e3*/
@@ -183,12 +185,12 @@ MultiplayerGameMode * * CCINIClass::Load(MultiplayerGameMode * aP1, char a3, cha
 namespace gamemd {
 CCINIClass::CCINIClass()
 {
-  _DWORD *result; // eax
+  void** result;
   _DWORD *v2; // esi
   _DWORD *v3; // ecx
   int v4; // ebx
   int v5; // edi
-  int v6; // edi
+  _DWORD * v6;
   int v7; // edi
 
   result = this; /*0x535b30*/
@@ -198,11 +200,11 @@ CCINIClass::CCINIClass()
   result[2] = 0; /*0x535b3f*/
   v2[1] = 0; /*0x535b42*/
   v2[2] = 0; /*0x535b45*/
-  *v2 = &(void*)(void*)&GenericNode_vftable; /*0x535b48*/
+  *(void **)v2 = (void*)&GenericNode_vftable; /*0x535b48*/
   v3[1] = 0; /*0x535b4e*/
   v3[2] = 0; /*0x535b51*/
-  *v3 = &(void*)(void*)&GenericNode_vftable; /*0x535b54*/
-  result[3] = &(void*)(void*)&GenericList_vftable; /*0x535b5d*/
+  *(void **)v3 = (void*)&GenericNode_vftable; /*0x535b54*/
+  result[3] = (void*)&GenericList_vftable; /*0x535b5d*/
   if ( v3 ) /*0x535b64*/
   {
     v4 = v3[1]; /*0x535b66*/
@@ -225,7 +227,7 @@ CCINIClass::CCINIClass()
   if ( v7 ) /*0x535b94*/
     this->v3 = v3; /*0x535b96*/
   v2[1] = v3; /*0x535b99*/
-  result[3] = &(void*)(void*)&List_INIClass_INISection___vftable; /*0x535b9c*/
+  result[3] = (void*)&List_INIClass_INISection___vftable; /*0x535b9c*/
   result[10] = 0; /*0x535ba4*/
   result[11] = 0; /*0x535ba7*/
   result[12] = 0; /*0x535baa*/

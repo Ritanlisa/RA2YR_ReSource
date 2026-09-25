@@ -16,7 +16,10 @@
 #include "e4/classes/Object_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/RulesClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/ConvertClass_e4.hpp"
 
 // 0x45DD90
 namespace gamemd {
@@ -233,13 +236,13 @@ int BuildingTypeClass::ConstructFull(char * Source)
   this->ProductionCompletionThreshold = 1; /*0x45e298*/
   this->CostRatePerFrame = 1; /*0x45e29e*/
   this->q1791 = 0; /*0x45e2a5*/
-  this->DockingOffsets = &(void*)(void*)&VectorClass_TPoint3D_int_vftable; /*0x45e2ab*/
+  this->DockingOffsets = (void*)&VectorClass_TPoint3D_int_vftable; /*0x45e2ab*/
   this->PreventsPlacementOverlap = RA2_OPNEW(0xCu); /*0x45e2ba*/
   this->q1791 = 1; /*0x45e2c6*/
-  *(_DWORD *)this = &(void*)(void*)&BuildingTypeClass_vftable; /*0x45e2cd*/
-  this->vtable2 = &(void*)(void*)&BuildingTypeClass_vftable; /*0x45e2d3*/
-  this->vtable3 = &(void*)(void*)&BuildingTypeClass_vftable; /*0x45e2d9*/
-  this->vtable4 = &(void*)(void*)&BuildingTypeClass_vftable; /*0x45e2e1*/
+  *(void **)this = (void*)&BuildingTypeClass_vftable; /*0x45e2cd*/
+  this->vtable2 = (void*)&BuildingTypeClass_vftable; /*0x45e2d3*/
+  this->vtable3 = (void*)&BuildingTypeClass_vftable; /*0x45e2d9*/
+  this->vtable4 = (void*)&BuildingTypeClass_vftable; /*0x45e2e1*/
   this->vtable2.GenerateUniqueID(); /*0x45e2e8*/
   v4 = g_TriggerClassCount; /*0x45e2ed*/
   if ( g_TriggerClassCount < dword_A83C70 /*0x45e32b*/
@@ -387,11 +390,11 @@ unsigned int * BuildingTypeClass::loadBuildingProperty_b_545E520(ObjectTypeClass
   *(&this->q2587) = 0; /*0x45e53b*/
   this->CostRatePerFrame = 1; /*0x45e541*/
   this->q1791 = 0; /*0x45e548*/
-  *(&this->q2585) = &(void*)(void*)&VectorClass_TPoint3D_int_vftable; /*0x45e54e*/
-  *this = &(void*)(void*)&BuildingTypeClass_vftable; /*0x45e558*/
-  this->vtable2 = &(void*)(void*)&BuildingTypeClass_vftable; /*0x45e55e*/
-  this->vtable3 = &(void*)(void*)&BuildingTypeClass_vftable; /*0x45e565*/
-  this->vtable4 = &(void*)(void*)&BuildingTypeClass_vftable; /*0x45e56c*/
+  *(&this->q2585) = (void*)&VectorClass_TPoint3D_int_vftable; /*0x45e54e*/
+  *(void **)this = (void*)&BuildingTypeClass_vftable; /*0x45e558*/
+  this->vtable2 = (void*)&BuildingTypeClass_vftable; /*0x45e55e*/
+  this->vtable3 = (void*)&BuildingTypeClass_vftable; /*0x45e565*/
+  this->vtable4 = (void*)&BuildingTypeClass_vftable; /*0x45e56c*/
   return this; /*0x45e575*/
 }
 } // namespace gamemd
@@ -404,10 +407,10 @@ AbstractClass * * BuildingTypeClass::CleanupMembers(AbstractClass * a1, Abstract
   void *v4; // eax
 
   v2 = this->qE04; /*0x45e587*/
-  *this = &(void*)(void*)&BuildingTypeClass_vftable; /*0x45e58d*/
-  this->vtable2 = &(void*)(void*)&BuildingTypeClass_vftable; /*0x45e595*/
-  this->vtable3 = &(void*)(void*)&BuildingTypeClass_vftable; /*0x45e59c*/
-  this->vtable4 = &(void*)(void*)&BuildingTypeClass_vftable; /*0x45e5a3*/
+  *(void **)this = (void*)&BuildingTypeClass_vftable; /*0x45e58d*/
+  this->vtable2 = (void*)&BuildingTypeClass_vftable; /*0x45e595*/
+  this->vtable3 = (void*)&BuildingTypeClass_vftable; /*0x45e59c*/
+  this->vtable4 = (void*)&BuildingTypeClass_vftable; /*0x45e5a3*/
   if ( v2 && *(&this->q1646) ) /*0x45e5ac*/
   {
     RA2_OPDEL(*(&this->q1646)); /*0x45e5b7*/
@@ -462,7 +465,7 @@ AbstractClass * * BuildingTypeClass::CleanupMembers(AbstractClass * a1, Abstract
     while ( v3 < g_TriggerClassCount ); /*0x45e705*/
   }
   v4 = *(&this->q2586); /*0x45e707*/
-  *(&this->q2585) = &(void*)(void*)&VectorClass_TPoint3D_int_vftable; /*0x45e70d*/
+  *(&this->q2585) = (void*)&VectorClass_TPoint3D_int_vftable; /*0x45e70d*/
   if ( v4 && this->q1791 ) /*0x45e71b*/
   {
     RA2_OPDEL(v4); /*0x45e724*/
@@ -590,14 +593,14 @@ AbstractClass * * BuildingTypeClass::LoadRepairAnimations()
 namespace gamemd {
 void* BuildingTypeClass::LoadAnimations(ObjectTypeClass * aP1)
 {
-  int v3; // eax
+  AbstractClass ** v3;
   int v4; // ecx
   int v5; // esi
   _BYTE *v6; // esi
   void *SHP; // eax
   _BYTE *v8; // esi
   void *v9; // eax
-  int v10; // eax
+  AbstractClass ** v10;
   _BYTE *v11; // esi
   void *v12; // eax
   _BYTE *v13; // esi
@@ -990,7 +993,7 @@ void BuildingTypeClass::LoadVoxel()
           Info = VoxelSection::GetInfo(*(_DWORD **)(&this->ThreatAvoidanceCoefficient4), 0, 0); /*0x45fc12*/
           Matrix::Scale(*(unsigned int **)(&this->ThreatAvoidanceCoefficient8), *(float *)(Info + 12)); /*0x45fc21*/
         }
-        v22[0] = &(void*)(void*)&CCFileClass_vftable; /*0x45fc2a*/
+        v22[0] = (void*)&CCFileClass_vftable; /*0x45fc2a*/
         v24 = 0; /*0x45fc32*/
         Vector::Clear((int)v23); /*0x45fc36*/
         v22[0] = &off_7E1668; /*0x45fc3f*/
@@ -1008,7 +1011,7 @@ void BuildingTypeClass::LoadVoxel()
         *v12 = 76; /*0x45fc7f*/
         v12[1] = 0; /*0x45fc82*/
       }
-      v25[0] = &(void*)(void*)&CCFileClass_vftable; /*0x45fc8c*/
+      v25[0] = (void*)&CCFileClass_vftable; /*0x45fc8c*/
       v27 = 0; /*0x45fc94*/
       Vector::Clear((int)v26); /*0x45fc9b*/
       v25[0] = &off_7E1668; /*0x45fca4*/
@@ -1056,13 +1059,13 @@ void BuildingTypeClass::LoadVoxel()
           Matrix::Scale(*(unsigned int **)(&this->u32_4C6), *(float *)(v19 + 12)); /*0x45fdea*/
         }
       }
-      v22[0] = &(void*)(void*)&CCFileClass_vftable; /*0x45fdf3*/
+      v22[0] = (void*)&CCFileClass_vftable; /*0x45fdf3*/
       v24 = 0; /*0x45fdfb*/
       Vector::Clear((int)v23); /*0x45fdff*/
       v22[0] = &off_7E1668; /*0x45fe08*/
       BufferIOFileClass::Dtor(v22); /*0x45fe0c*/
     }
-    v28[0] = &(void*)(void*)&CCFileClass_vftable; /*0x45fe18*/
+    v28[0] = (void*)&CCFileClass_vftable; /*0x45fe18*/
     v30 = 0; /*0x45fe23*/
     Vector::Clear((int)v29); /*0x45fe2a*/
     v28[0] = &off_7E1668; /*0x45fe36*/
@@ -1344,7 +1347,7 @@ AbstractClass * * BuildingTypeClass::SaveLoad_Prefix()
         *(_DWORD *)(v1 + 6028) = 0; /*0x465174*/
         *(_BYTE *)(v1 + 6032) = 1; /*0x465177*/
         *(_BYTE *)(v1 + 6033) = 0; /*0x46517b*/
-        *(_DWORD *)v4 = &(void*)(void*)&VectorClass_TPoint3D_int_vftable; /*0x46517e*/
+        *(_DWORD *)v4 = (void*)&VectorClass_TPoint3D_int_vftable; /*0x46517e*/
       }
       (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)v4 + 8))(v4, v14, 0); /*0x46518c*/
       v5 = 0; /*0x46518f*/
@@ -1639,7 +1642,7 @@ unsigned int * BuildingTypeClass::Construct(AbstractClass * aP1)
   BuildingTypeClass::loadBuildingProperty_b_5478850(0, 0); /*0x644c37*/
   *(&this->ParticleTypeClass_field_2CC9) = 10; /*0x644c3c*/
   *(&this->ParticleTypeClass_field_2CC8) = 0; /*0x644c43*/
-  *(&this->ParticleTypeClass_field_2CC4) = &(void*)(void*)&TypeList_RGBClass_vftable; /*0x644c46*/
+  *(&this->ParticleTypeClass_field_2CC4) = (void*)&TypeList_RGBClass_vftable; /*0x644c46*/
   this->q2D4 = 0; /*0x644c4c*/
   this->u32_2D5 = 0; /*0x644c52*/
   this->u8_2D6 = 0; /*0x644c58*/
@@ -1667,10 +1670,10 @@ unsigned int * BuildingTypeClass::Construct(AbstractClass * aP1)
   this->u8_30F = 0; /*0x644ce2*/
   *(&this->Elasticity6) = -1; /*0x644ce8*/
   *(&this->Elasticity7) = -1; /*0x644cee*/
-  *this = &(void*)(void*)&ParticleTypeClass_vftable; /*0x644cf4*/
-  this->vtable2 = &(void*)(void*)&ParticleTypeClass_vftable; /*0x644cfa*/
-  this->vtable3 = &(void*)(void*)&ParticleTypeClass_vftable; /*0x644d01*/
-  this->vtable4 = &(void*)(void*)&ParticleTypeClass_vftable; /*0x644d08*/
+  *this = (void*)&ParticleTypeClass_vftable; /*0x644cf4*/
+  this->vtable2 = (void*)&ParticleTypeClass_vftable; /*0x644cfa*/
+  this->vtable3 = (void*)&ParticleTypeClass_vftable; /*0x644d01*/
+  this->vtable4 = (void*)&ParticleTypeClass_vftable; /*0x644d08*/
   if ( g_BuildingTypeInitState < dword_A83DA0 /*0x644d43*/
     || (byte_A83DA5 || !dword_A83DA0)
     && dword_A83DAC > 0
@@ -2321,7 +2324,7 @@ unsigned int * BuildingTypeClass::loadBuildingProperty_b_5478850(int a2, int a3)
   this->Capacity = a2; /*0x478860*/
   this->IsInitialized = 1; /*0x478863*/
   this->IsAllocated = 0; /*0x478867*/
-  *this = &(void*)(void*)&VectorClass_RGBClass_vftable; /*0x47886a*/
+  *this = (void*)&VectorClass_RGBClass_vftable; /*0x47886a*/
   if ( !a2 ) /*0x478870*/
     return this; /*0x4788d0*/
   if ( !a3 ) /*0x478878*/

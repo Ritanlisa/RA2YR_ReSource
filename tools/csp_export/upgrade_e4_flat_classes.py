@@ -106,6 +106,10 @@ for p in sorted(E4C.glob('*_e4.hpp')):
     # flat-member lines — they are re-derived from the table below
     method_lines = [ln for ln in body.split('\n')
                     if '(' in ln and re.search(r';\s*(//.*)?$', ln)]
+    # tree alias pointer spellings in method decls -> void*
+    for a in ('CellStruct', 'Point2D', 'CoordStruct', 'RGBClass'):
+        method_lines = [re.sub(r'%s\s*([*&])' % a, 'void\1', ln)
+                        for ln in method_lines]
     # ---- members from the canon table (sole authority) ----
     used = set(re.findall(r'\b(\w+)\s*\(', '\n'.join(method_lines)))
     lines = []

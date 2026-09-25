@@ -6,6 +6,8 @@
 #include "e4/classes/GameMode_e4.hpp"
 #include "e4/classes/INIClass_e4.hpp"
 #include "e4/classes/Game_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x798340
@@ -44,7 +46,7 @@ char sub_72C060()
 namespace gamemd {
 void sub_72C0B0()
 {
-  void *v0; // esi
+  unsigned int v0;
 
   if ( byte_B0FD2D ) /*0x72c0ba*/
   {

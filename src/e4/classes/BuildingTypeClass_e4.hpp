@@ -63,12 +63,12 @@ struct BuildingTypeClass {
     unsigned char unused_9B;  // 0x9B
     unsigned int Armor;  // 0x9C
     int Strength;  // 0xA0
-    SHPStruct* Image;  // 0xA4
+    void* Image;  // 0xA4
     bool ImageAllocated;  // 0xA8
     unsigned char q0A9;  // 0xA9
     unsigned char q0AA;  // 0xAA
     unsigned int q0AB;  // 0xAB
-    SHPStruct* AlphaImage;  // 0xAC
+    void* AlphaImage;  // 0xAC
     unsigned int MainVoxel;  // 0xB0
     char TurretVoxel[4];  // 0xB4
     unsigned int q0B8;  // 0xB8
@@ -78,7 +78,7 @@ struct BuildingTypeClass {
     unsigned int q0C3;  // 0xC3
     CampaignClass* q0C4;  // 0xC4
     unsigned int u32_C8;  // 0xC8
-    IUnknown* q0CC;  // 0xCC
+    void* q0CC;  // 0xCC
     unsigned char q0D0;  // 0xD0
     AnimClass* q0D4;  // 0xD4
     void* q0D8;  // 0xD8
@@ -122,7 +122,7 @@ struct BuildingTypeClass {
     unsigned int u32_15C;  // 0x15C
     int q160;  // 0x160
     unsigned int q162;  // 0x162
-    SHPStruct* q164;  // 0x164
+    void* q164;  // 0x164
     bool q168;  // 0x168
     bool q16B;  // 0x16B
     void* q16C;  // 0x16C
@@ -212,26 +212,26 @@ struct BuildingTypeClass {
     unsigned int u32_250;  // 0x250
     void* q254;  // 0x254
     unsigned char q258;  // 0x258
-    SomeVoxelCache* q25C;  // 0x25C
+    void* q25C;  // 0x25C
     char q260[4];  // 0x260
     unsigned int q264;  // 0x264
     unsigned int q268;  // 0x268
-    SomeVoxelCache* q26C;  // 0x26C
-    SomeVoxelCache* q270;  // 0x270
-    SomeVoxelCache* q274;  // 0x274
+    void* q26C;  // 0x26C
+    void* q270;  // 0x270
+    void* q274;  // 0x274
     unsigned int q278;  // 0x278
-    SomeVoxelCache* q27C;  // 0x27C
+    void* q27C;  // 0x27C
     unsigned int q280;  // 0x280
     unsigned int q284;  // 0x284
     unsigned int q288;  // 0x288
-    char q28C[4];  // 0x28C
+    unsigned int q28C;  // 0x28C
     unsigned char q290;  // 0x290
     int armed;  // 0x294
     unsigned char hasTurretFlag;  // 0x295
     int weaponCount;  // 0x298
     char weapon1[4];  // 0x29C
     unsigned int weapon2;  // 0x2A0
-    IUnknown* eliteWeapon1;  // 0x2A4
+    void* eliteWeapon1;  // 0x2A4
     unsigned char u8_2A5;  // 0x2A5
     unsigned int eliteWeapon2;  // 0x2A8
     unsigned int ammo;  // 0x2AC
@@ -258,7 +258,7 @@ struct BuildingTypeClass {
     unsigned char q2E5;  // 0x2E5
     double buildLimit;  // 0x2E8
     void* FoundationData;  // 0x2EC
-    SHPStruct* Buildup;  // 0x2F0
+    void* Buildup;  // 0x2F0
     bool BuildupLoaded;  // 0x2F4
     unsigned char q2F5;  // 0x2F5
     char BuildCat[4];  // 0x2F8
@@ -486,7 +486,7 @@ struct BuildingTypeClass {
     unsigned char q5C8;  // 0x5C8
     void* q5CC;  // 0x5CC
     unsigned int u32_5D0;  // 0x5D0
-    IUnknown* q5D4;  // 0x5D4
+    void* q5D4;  // 0x5D4
     unsigned char q5D8;  // 0x5D8
     unsigned int u32_5DC;  // 0x5DC
     int q5E0;  // 0x5E0
@@ -998,29 +998,29 @@ struct BuildingTypeClass {
     unsigned char qDD8;  // 0xDD8
     void* qDF0;  // 0xDF0
     unsigned int qDF4;  // 0xDF4
-    void* ArrayIndex;  // 0xDF8
+    unsigned int qDF8;  // 0xDF8
     unsigned int qDFC;  // 0xDFC
     unsigned int qE00;  // 0xE00
     bool qE04;  // 0xE04
     unsigned char qE05;  // 0xE05
     unsigned int qE08;  // 0xE08
-    char HalfDamageSmokeLocation1[12];  // 0xE0C
-    void* qE10;  // 0xE10
+    unsigned int HalfDamageSmokeLocation1;  // 0xE0C
+    unsigned int qE10;  // 0xE10
     unsigned int u32_E14;  // 0xE14
     unsigned int HalfDamageSmokeLocation2;  // 0xE18
     unsigned int u32_E1C;  // 0xE1C
     unsigned int u32_E20;  // 0xE20
     unsigned long qE24;  // 0xE24
     double GateCloseDelay;  // 0xE28
-    SHPStruct* qE2C;  // 0xE2C
+    void* qE2C;  // 0xE2C
     int LightVisibility;  // 0xE30
     int LightIntensity;  // 0xE34
-    int LightRedTint;  // 0xE38
-    int LightGreenTint;  // 0xE3C
-    int LightBlueTint;  // 0xE40
+    int LightRedTint qE38;  // 0xE38
+    int LightGreenTint qE3C;  // 0xE3C
+    int LightBlueTint qE40;  // 0xE40
     unsigned int PrimaryFirePixelOffset;  // 0xE44
     unsigned int u32_E48;  // 0xE48
-    char SecondaryFirePixelOffset[8];  // 0xE4C
+    unsigned int SecondaryFirePixelOffset;  // 0xE4C
     unsigned char qE50;  // 0xE50
     OverlayTypeClass* ToOverlay;  // 0xE54
     int ToTile;  // 0xE58
@@ -1032,50 +1032,50 @@ struct BuildingTypeClass {
     int WorkingSound;  // 0xE74
     int NotWorkingSound;  // 0xE78
     char PowersUpBuilding_0x18;  // 0xE7C
-    UnitTypeClass* FreeUnit;  // 0xE80
-    InfantryTypeClass* SecretInfantry;  // 0xE84
+    unsigned int qE80;  // 0xE80
+    unsigned int qE84;  // 0xE84
     UnitTypeClass* SecretUnit;  // 0xE88
     unsigned char qE8C;  // 0xE8C
     UnitTypeClass* qEA0;  // 0xEA0
     InfantryTypeClass* qEA4;  // 0xEA4
-    char ExitCoord[4];  // 0xEA8
+    unsigned int ExitCoord;  // 0xEA8
     BuildingTypeClass* SecretBuilding;  // 0xEAC
     int BuildingTypeClass_field_EB0;  // 0xEB0
-    void* FoundationOutside;  // 0xEB4
+    unsigned int qEB4;  // 0xEB4
     int BuildingTypeClass_field_ED8;  // 0xEB8
     int DeployFacing;  // 0xEBC
-    SHPStruct* qEC0;  // 0xEC0
-    SHPStruct* qEC4;  // 0xEC4
+    void* qEC0;  // 0xEC0
+    void* qEC4;  // 0xEC4
     int ExtraPowerBonus;  // 0xEC8
-    SHPStruct* qECC;  // 0xECC
-    SHPStruct* qED0;  // 0xED0
+    void* qECC;  // 0xECC
+    void* qED0;  // 0xED0
     int Height;  // 0xED4
     int OccupyHeight;  // 0xED8
-    int MidPoint;  // 0xEDC
+    int MidPoint qEDC;  // 0xEDC
     int DoorStages;  // 0xEE0
     unsigned int BuildingAnimFrame_6;  // 0xEE4
     char BuildingAnim_0x15[4];  // 0xEE8
     int Upgrades;  // 0xEEC
-    SHPStruct* qEF0;  // 0xEF0
+    void* qEF0;  // 0xEF0
     bool DeployingAnimLoaded;  // 0xEF4
-    SHPStruct* UnderDoorAnim;  // 0xEF8
+    unsigned int qEF8;  // 0xEF8
     bool UnderDoorAnimLoaded;  // 0xEFC
-    SHPStruct* Rubble;  // 0xF00
+    void* Rubble;  // 0xF00
     bool RubbleLoaded;  // 0xF04
     unsigned int qF08;  // 0xF08
-    SHPStruct* qF0C;  // 0xF0C
-    SHPStruct* qF10;  // 0xF10
+    unsigned int qF0C;  // 0xF0C
+    void* qF10;  // 0xF10
     unsigned int u32_F14;  // 0xF14
-    SHPStruct* qF18;  // 0xF18
+    void* qF18;  // 0xF18
     char BuildingAnim[84];  // 0xF1C
-    void* qF20;  // 0xF20
-    SHPStruct* qF24;  // 0xF24
-    SHPStruct* qF34;  // 0xF34
+    unsigned int qF20;  // 0xF20
+    void* qF24;  // 0xF24
+    void* qF34;  // 0xF34
     unsigned int u32_F38;  // 0xF38
-    SHPStruct* qF3C;  // 0xF3C
-    SHPStruct* qF40;  // 0xF40
+    void* qF3C;  // 0xF3C
+    void* qF40;  // 0xF40
     unsigned int u32_F44;  // 0xF44
-    SHPStruct* qF48;  // 0xF48
+    void* qF48;  // 0xF48
     int BuildingTypeClass_field_1540;  // 0xF4C
     unsigned char qF70;  // 0xF70
     WeaponTypeClass* qF8C;  // 0xF8C
@@ -1095,39 +1095,39 @@ struct BuildingTypeClass {
     bool q1040;  // 0x1040
     unsigned int q1044;  // 0x1044
     unsigned int q1048;  // 0x1048
-    IUnknown* q104C;  // 0x104C
+    void* q104C;  // 0x104C
     unsigned char q1050;  // 0x1050
-    IUnknown* q1054;  // 0x1054
+    void* q1054;  // 0x1054
     unsigned int q1058;  // 0x1058
-    IUnknown* q105C;  // 0x105C
+    void* q105C;  // 0x105C
     unsigned int q1060;  // 0x1060
     unsigned int q1064;  // 0x1064
     unsigned int q1068;  // 0x1068
-    IUnknown* q106C;  // 0x106C
+    void* q106C;  // 0x106C
     unsigned char q1070;  // 0x1070
-    IUnknown* q1074;  // 0x1074
+    void* q1074;  // 0x1074
     unsigned char q1078;  // 0x1078
-    IUnknown* q107C;  // 0x107C
+    void* q107C;  // 0x107C
     unsigned int q1080;  // 0x1080
     unsigned int q1084;  // 0x1084
     unsigned int q1088;  // 0x1088
-    IUnknown* q108C;  // 0x108C
+    void* q108C;  // 0x108C
     unsigned char q1090;  // 0x1090
-    IUnknown* q1094;  // 0x1094
+    void* q1094;  // 0x1094
     unsigned char q1098;  // 0x1098
-    IUnknown* q109C;  // 0x109C
+    void* q109C;  // 0x109C
     unsigned char q10A0;  // 0x10A0
-    IUnknown* q10A4;  // 0x10A4
+    void* q10A4;  // 0x10A4
     unsigned char q10A8;  // 0x10A8
-    IUnknown* q10AC;  // 0x10AC
+    void* q10AC;  // 0x10AC
     unsigned char q10B0;  // 0x10B0
-    IUnknown* q10B4;  // 0x10B4
+    void* q10B4;  // 0x10B4
     unsigned char q10B8;  // 0x10B8
-    IUnknown* q10BC;  // 0x10BC
+    void* q10BC;  // 0x10BC
     void* q10C0;  // 0x10C0
     unsigned char q10C4;  // 0x10C4
     unsigned char q10C8;  // 0x10C8
-    IUnknown* q10CC;  // 0x10CC
+    void* q10CC;  // 0x10CC
     unsigned char q10D0;  // 0x10D0
     unsigned char q10D4;  // 0x10D4
     unsigned char q10D8;  // 0x10D8
@@ -1135,11 +1135,11 @@ struct BuildingTypeClass {
     void* q10E0;  // 0x10E0
     unsigned char q10E4;  // 0x10E4
     unsigned char q10E8;  // 0x10E8
-    IUnknown* q10EC;  // 0x10EC
+    void* q10EC;  // 0x10EC
     void* q10F0;  // 0x10F0
     unsigned char q10F4;  // 0x10F4
     unsigned char q10F8;  // 0x10F8
-    IUnknown* q10FC;  // 0x10FC
+    void* q10FC;  // 0x10FC
     unsigned int q1100;  // 0x1100
     unsigned int q1104;  // 0x1104
     unsigned int q1108;  // 0x1108
@@ -1147,11 +1147,11 @@ struct BuildingTypeClass {
     void* q1110;  // 0x1110
     unsigned char q1114;  // 0x1114
     unsigned char q1118;  // 0x1118
-    IUnknown* q111C;  // 0x111C
+    void* q111C;  // 0x111C
     unsigned int q1120;  // 0x1120
     unsigned int q1124;  // 0x1124
     unsigned int q1128;  // 0x1128
-    IUnknown* q112C;  // 0x112C
+    void* q112C;  // 0x112C
     void* q1130;  // 0x1130
     void* q1134;  // 0x1134
     void* q1138;  // 0x1138
@@ -1161,7 +1161,7 @@ struct BuildingTypeClass {
     unsigned int q1148;  // 0x1148
     unsigned char q114C;  // 0x114C
     unsigned char q1150;  // 0x1150
-    IUnknown* q1154;  // 0x1154
+    void* q1154;  // 0x1154
     void* q1158;  // 0x1158
     unsigned char q115C;  // 0x115C
     char q1160[4];  // 0x1160
@@ -1270,7 +1270,7 @@ struct BuildingTypeClass {
     unsigned char q1410;  // 0x1410
     unsigned int q1414;  // 0x1414
     unsigned char q1418;  // 0x1418
-    IUnknown* q141C;  // 0x141C
+    void* q141C;  // 0x141C
     int q1420;  // 0x1420
     int q1424;  // 0x1424
     int q1428;  // 0x1428
@@ -1295,12 +1295,12 @@ struct BuildingTypeClass {
     unsigned char q148C;  // 0x148C
     unsigned char q1490;  // 0x1490
     void* q14BC;  // 0x14BC
-    IUnknown* q14C0;  // 0x14C0
-    IUnknown* q14C4;  // 0x14C4
-    IUnknown* q14C8;  // 0x14C8
+    void* q14C0;  // 0x14C0
+    void* q14C4;  // 0x14C4
+    void* q14C8;  // 0x14C8
     unsigned char q14CC;  // 0x14CC
     int q14E0;  // 0x14E0
-    SHPStruct* q14E4;  // 0x14E4
+    void* q14E4;  // 0x14E4
     unsigned int q14E5;  // 0x14E5
     unsigned int q14E6;  // 0x14E6
     unsigned int q14E7;  // 0x14E7
@@ -1308,22 +1308,22 @@ struct BuildingTypeClass {
     unsigned int q14E9;  // 0x14E9
     unsigned int q14EA;  // 0x14EA
     unsigned int q14EB;  // 0x14EB
-    SHPStruct* q14EC;  // 0x14EC
+    void* q14EC;  // 0x14EC
     unsigned int q14ED;  // 0x14ED
     unsigned int q14EE;  // 0x14EE
     unsigned int q14EF;  // 0x14EF
     bool q14F0;  // 0x14F0
     unsigned int q14F3;  // 0x14F3
-    SHPStruct* q14F4;  // 0x14F4
+    void* q14F4;  // 0x14F4
     bool q14F8;  // 0x14F8
-    SHPStruct* RoofDeployingAnim;  // 0x14FC
+    void* RoofDeployingAnim;  // 0x14FC
     bool RoofDeployingAnimLoaded;  // 0x1500
-    SHPStruct* UnderRoofDoorAnim;  // 0x1504
+    void* UnderRoofDoorAnim;  // 0x1504
     bool UnderRoofDoorAnimLoaded;  // 0x1508
-    SHPStruct* DoorAnim;  // 0x150C
-    SHPStruct* SpecialZOverlay;  // 0x1510
+    void* DoorAnim;  // 0x150C
+    void* SpecialZOverlay;  // 0x1510
     int SpecialZOverlayZAdjust;  // 0x1514
-    SHPStruct* BibShape;  // 0x1518
+    void* BibShape;  // 0x1518
     bool BibShapeLoaded;  // 0x151C
     int NormalZAdjust;  // 0x1520
     int AntiAirValue;  // 0x1524
@@ -1332,7 +1332,7 @@ struct BuildingTypeClass {
     int AntiArmorValue;  // 0x1528
     int AntiInfantryValue;  // 0x152C
     unsigned int ZShapePointMove;  // 0x1530
-    SHPStruct* q1534;  // 0x1534
+    void* q1534;  // 0x1534
     int BuildingTypeClass_field_1538;  // 0x1538
     int BuildingTypeClass_field_153C;  // 0x153C
     int q1540;  // 0x1540
@@ -1383,29 +1383,29 @@ struct BuildingTypeClass {
     unsigned int q1604;  // 0x1604
     unsigned int q1608;  // 0x1608
     char QueueingCell[8];  // 0x1618
-    SHPStruct* q161C;  // 0x161C
+    void* q161C;  // 0x161C
     int NumberImpassableRows;  // 0x1620
     char RemoveOccupy[4];  // 0x1624
     unsigned char q1628;  // 0x1628
     unsigned char q1634;  // 0x1634
     unsigned char q1638;  // 0x1638
-    IUnknown* q163C;  // 0x163C
+    void* q163C;  // 0x163C
     char q1640[4];  // 0x1640
     unsigned char q1644;  // 0x1644
     int q1648;  // 0x1648
     unsigned char q164C;  // 0x164C
-    IUnknown* q1650;  // 0x1650
+    void* q1650;  // 0x1650
     unsigned char q1654;  // 0x1654
-    IUnknown* q1658;  // 0x1658
+    void* q1658;  // 0x1658
     unsigned char q165C;  // 0x165C
     char q1660[4];  // 0x1660
     char AddOccupy[4];  // 0x1664
     unsigned char q1668;  // 0x1668
-    IUnknown* q166C;  // 0x166C
+    void* q166C;  // 0x166C
     char q1670[4];  // 0x1670
-    IUnknown* q1674;  // 0x1674
+    void* q1674;  // 0x1674
     unsigned char q1678;  // 0x1678
-    IUnknown* q167C;  // 0x167C
+    void* q167C;  // 0x167C
     bool q1680;  // 0x1680
     bool q1684;  // 0x1684
     int q1688;  // 0x1688
@@ -1511,17 +1511,17 @@ struct BuildingTypeClass {
     bool CrateBeneathIsMoney;  // 0x1769
     char TheaterSpecificID;  // 0x176A
     unsigned char q176E;  // 0x176E
-    IUnknown* q1770;  // 0x1770
+    void* q1770;  // 0x1770
     bool q1774;  // 0x1774
     AbstractTypeClass* q1778;  // 0x1778
     void* q177C;  // 0x177C
     int NumberOfDocks;  // 0x1780
     char AltCameoFile;  // 0x1781
-    unsigned int DockingOffsets;  // 0x1784
+    void* q1784;  // 0x1784
     bool PreventsPlacementOverlap;  // 0x1788
     int ProductionCompletionThreshold;  // 0x178C
     double CostRatePerFrame;  // 0x1790
-    UnitTypeClass* q1791;  // 0x1791
+    unsigned int q1791;  // 0x1791
     unsigned int q1794;  // 0x1794
     int BuildingTypeClass_field_688;  // 0x1798
     int InitialProductionProgress;  // 0x179C
@@ -1554,20 +1554,20 @@ struct BuildingTypeClass {
     unsigned char q180C;  // 0x180C
     double q1810;  // 0x1810
     unsigned int q1814;  // 0x1814
-    IUnknown* q181C;  // 0x181C
+    void* q181C;  // 0x181C
     int q1820;  // 0x1820
     int q1824;  // 0x1824
     bool q1828;  // 0x1828
-    IUnknown* q182C;  // 0x182C
+    void* q182C;  // 0x182C
     unsigned char q1830;  // 0x1830
     ObjectTypeClass* q1834;  // 0x1834
     unsigned char q1838;  // 0x1838
     unsigned int q1840;  // 0x1840
     unsigned int q1844;  // 0x1844
     unsigned int q1848;  // 0x1848
-    IUnknown* q184C;  // 0x184C
+    void* q184C;  // 0x184C
     unsigned char q1850;  // 0x1850
-    IUnknown* q185C;  // 0x185C
+    void* q185C;  // 0x185C
     unsigned int q1860;  // 0x1860
     unsigned int q1864;  // 0x1864
     unsigned int q1868;  // 0x1868
@@ -1840,7 +1840,7 @@ struct BuildingTypeClass {
     char q3608[4];  // 0x3608
     unsigned int q3620;  // 0x3620
     double q3624;  // 0x3624
-    SHPStruct* q3628;  // 0x3628
+    void* q3628;  // 0x3628
     unsigned char q362C;  // 0x362C
     unsigned char q3630;  // 0x3630
     unsigned char q3634;  // 0x3634
@@ -1873,9 +1873,9 @@ struct BuildingTypeClass {
     int Adjacent;  // 0x3764
     char Factory[4];  // 0x3768
     char TargetCoordOffset[4];  // 0x3772
-    SHPStruct* q3780;  // 0x3780
+    void* q3780;  // 0x3780
     char q3784[4];  // 0x3784
-    SHPStruct* q3788;  // 0x3788
+    void* q3788;  // 0x3788
     unsigned char q37A8;  // 0x37A8
     unsigned char q37AC;  // 0x37AC
     unsigned char q37B0;  // 0x37B0
@@ -1898,10 +1898,10 @@ struct BuildingTypeClass {
     unsigned char q3850;  // 0x3850
     unsigned char q3854;  // 0x3854
     unsigned int q3860;  // 0x3860
-    SHPStruct* q3864;  // 0x3864
+    void* q3864;  // 0x3864
     char q3868[4];  // 0x3868
-    SHPStruct* q3900;  // 0x3900
-    SHPStruct* q3904;  // 0x3904
+    void* q3900;  // 0x3900
+    void* q3904;  // 0x3904
     unsigned int q3908;  // 0x3908
     WeaponTypeClass* q3980;  // 0x3980
     unsigned char q3984;  // 0x3984
@@ -1941,40 +1941,40 @@ struct BuildingTypeClass {
     unsigned char q4174;  // 0x4174
     unsigned int q4178;  // 0x4178
     unsigned char q417C;  // 0x417C
-    IUnknown* q4180;  // 0x4180
+    void* q4180;  // 0x4180
     unsigned int q4184;  // 0x4184
-    IUnknown* q4188;  // 0x4188
+    void* q4188;  // 0x4188
     unsigned char q418C;  // 0x418C
     unsigned char q4190;  // 0x4190
     unsigned char q4194;  // 0x4194
     unsigned int q4200;  // 0x4200
-    IUnknown* q4204;  // 0x4204
+    void* q4204;  // 0x4204
     unsigned char q4208;  // 0x4208
     unsigned char q420C;  // 0x420C
     unsigned int q4210;  // 0x4210
     unsigned int q4214;  // 0x4214
     unsigned char q4218;  // 0x4218
-    IUnknown* q4220;  // 0x4220
+    void* q4220;  // 0x4220
     unsigned int q4224;  // 0x4224
     unsigned int q4228;  // 0x4228
     unsigned char q422C;  // 0x422C
     unsigned char q4240;  // 0x4240
-    IUnknown* q4244;  // 0x4244
+    void* q4244;  // 0x4244
     unsigned char q4248;  // 0x4248
     unsigned char q424C;  // 0x424C
-    IUnknown* q4260;  // 0x4260
+    void* q4260;  // 0x4260
     unsigned char q4264;  // 0x4264
-    IUnknown* q4268;  // 0x4268
+    void* q4268;  // 0x4268
     unsigned char q426C;  // 0x426C
     unsigned char q4270;  // 0x4270
     unsigned char q4274;  // 0x4274
     unsigned char q4280;  // 0x4280
-    IUnknown* q4284;  // 0x4284
+    void* q4284;  // 0x4284
     void* q4288;  // 0x4288
     unsigned char q428C;  // 0x428C
     unsigned char q4290;  // 0x4290
     unsigned char q4294;  // 0x4294
-    IUnknown* q4300;  // 0x4300
+    void* q4300;  // 0x4300
     unsigned char q4304;  // 0x4304
     unsigned char q4308;  // 0x4308
     unsigned char q430C;  // 0x430C
@@ -1986,7 +1986,7 @@ struct BuildingTypeClass {
     unsigned char q4330;  // 0x4330
     unsigned char q4340;  // 0x4340
     unsigned char q4344;  // 0x4344
-    IUnknown* q4348;  // 0x4348
+    void* q4348;  // 0x4348
     unsigned char q434C;  // 0x434C
     unsigned char q4350;  // 0x4350
     unsigned char q4354;  // 0x4354
@@ -2000,7 +2000,7 @@ struct BuildingTypeClass {
     unsigned int q4374;  // 0x4374
     unsigned char q4378;  // 0x4378
     unsigned char q437C;  // 0x437C
-    IUnknown* q4380;  // 0x4380
+    void* q4380;  // 0x4380
     unsigned int q4384;  // 0x4384
     unsigned int q4388;  // 0x4388
     unsigned char q438C;  // 0x438C
@@ -2204,7 +2204,7 @@ struct BuildingTypeClass {
     unsigned char q513C;  // 0x513C
     unsigned int q5140;  // 0x5140
     unsigned char q5144;  // 0x5144
-    IUnknown* q5148;  // 0x5148
+    void* q5148;  // 0x5148
     unsigned char q514C;  // 0x514C
     unsigned char q5150;  // 0x5150
     unsigned char q5154;  // 0x5154
@@ -2253,25 +2253,25 @@ struct BuildingTypeClass {
     unsigned char q530C;  // 0x530C
     unsigned char q5310;  // 0x5310
     unsigned char q5314;  // 0x5314
-    IUnknown* q5320;  // 0x5320
+    void* q5320;  // 0x5320
     unsigned char q5324;  // 0x5324
     unsigned char q5328;  // 0x5328
     unsigned char q532C;  // 0x532C
     unsigned char q5330;  // 0x5330
     int q5344;  // 0x5344
-    SHPStruct* q5348;  // 0x5348
+    void* q5348;  // 0x5348
     unsigned char q534C;  // 0x534C
     unsigned int q5350;  // 0x5350
     unsigned int q5354;  // 0x5354
     unsigned int q5358;  // 0x5358
     unsigned char q535C;  // 0x535C
     bool q5360;  // 0x5360
-    SHPStruct* q5364;  // 0x5364
+    void* q5364;  // 0x5364
     bool q5368;  // 0x5368
     unsigned char q536C;  // 0x536C
-    SHPStruct* q5380;  // 0x5380
+    void* q5380;  // 0x5380
     bool q5384;  // 0x5384
-    SHPStruct* q5388;  // 0x5388
+    void* q5388;  // 0x5388
     unsigned char q538C;  // 0x538C
     int q5394;  // 0x5394
     bool q5398;  // 0x5398
@@ -2298,7 +2298,7 @@ struct BuildingTypeClass {
     unsigned char q53EC;  // 0x53EC
     unsigned char q53F0;  // 0x53F0
     unsigned char q53F4;  // 0x53F4
-    SHPStruct* q5400;  // 0x5400
+    void* q5400;  // 0x5400
     bool q5404;  // 0x5404
     int q5408;  // 0x5408
     unsigned char q540C;  // 0x540C
@@ -2308,7 +2308,7 @@ struct BuildingTypeClass {
     unsigned char q541C;  // 0x541C
     unsigned int q5420;  // 0x5420
     char q5424[4];  // 0x5424
-    SHPStruct* q5428;  // 0x5428
+    void* q5428;  // 0x5428
     unsigned char q542C;  // 0x542C
     int q5430;  // 0x5430
     int unknown_1538;  // 0x5432
@@ -2367,7 +2367,7 @@ struct BuildingTypeClass {
     unsigned char q55A4;  // 0x55A4
     unsigned char q55A8;  // 0x55A8
     unsigned char q55AC;  // 0x55AC
-    IUnknown* q55F0;  // 0x55F0
+    void* q55F0;  // 0x55F0
     unsigned char q55F4;  // 0x55F4
     unsigned char q55F8;  // 0x55F8
     unsigned char q55FC;  // 0x55FC
@@ -2378,7 +2378,7 @@ struct BuildingTypeClass {
     unsigned char q5610;  // 0x5610
     unsigned char q5618;  // 0x5618
     unsigned char q561C;  // 0x561C
-    IUnknown* q5634;  // 0x5634
+    void* q5634;  // 0x5634
     unsigned char q5638;  // 0x5638
     unsigned char q563C;  // 0x563C
     unsigned int q5640;  // 0x5640
@@ -2388,7 +2388,7 @@ struct BuildingTypeClass {
     unsigned char q5650;  // 0x5650
     unsigned char q5654;  // 0x5654
     unsigned char q5658;  // 0x5658
-    SHPStruct* q5660;  // 0x5660
+    void* q5660;  // 0x5660
     int q5664;  // 0x5664
     char q5668[4];  // 0x5668
     unsigned char q566C;  // 0x566C
@@ -2405,13 +2405,13 @@ struct BuildingTypeClass {
     int q5714;  // 0x5714
     int q5718;  // 0x5718
     unsigned char q571C;  // 0x571C
-    IUnknown* q5720;  // 0x5720
+    void* q5720;  // 0x5720
     unsigned char q5724;  // 0x5724
     char q5728[4];  // 0x5728
     unsigned char q572C;  // 0x572C
     unsigned char q5730;  // 0x5730
     unsigned char q5734;  // 0x5734
-    IUnknown* q5740;  // 0x5740
+    void* q5740;  // 0x5740
     char q5744[4];  // 0x5744
     unsigned char q5748;  // 0x5748
     unsigned char q574C;  // 0x574C
@@ -2424,31 +2424,31 @@ struct BuildingTypeClass {
     int q5768;  // 0x5768
     unsigned char q576C;  // 0x576C
     unsigned char q5770;  // 0x5770
-    IUnknown* q5774;  // 0x5774
+    void* q5774;  // 0x5774
     int q5778;  // 0x5778
     unsigned char q577C;  // 0x577C
     unsigned char q5780;  // 0x5780
     unsigned char q5784;  // 0x5784
-    TimerStruct * ptr_5788;  // 0x5788
+    void* ptr_5788;  // 0x5788
     unsigned char q578C;  // 0x578C
     unsigned char q5790;  // 0x5790
     unsigned char q5794;  // 0x5794
     bool q5798;  // 0x5798
     unsigned char q579C;  // 0x579C
     unsigned char q57A0;  // 0x57A0
-    IUnknown* q57A4;  // 0x57A4
+    void* q57A4;  // 0x57A4
     unsigned char q57A8;  // 0x57A8
     unsigned char q57AC;  // 0x57AC
-    IUnknown* q57B0;  // 0x57B0
+    void* q57B0;  // 0x57B0
     unsigned char q57B4;  // 0x57B4
     unsigned char q57B8;  // 0x57B8
-    IUnknown* q57BC;  // 0x57BC
+    void* q57BC;  // 0x57BC
     unsigned char q57C0;  // 0x57C0
     unsigned char q57C4;  // 0x57C4
-    IUnknown* q57C8;  // 0x57C8
+    void* q57C8;  // 0x57C8
     unsigned char q57CC;  // 0x57CC
     unsigned char q57D0;  // 0x57D0
-    IUnknown* q57D4;  // 0x57D4
+    void* q57D4;  // 0x57D4
     unsigned char q57D8;  // 0x57D8
     unsigned char q57DC;  // 0x57DC
     unsigned char q57E0;  // 0x57E0
@@ -2553,7 +2553,7 @@ struct BuildingTypeClass {
     unsigned char q5D5C;  // 0x5D5C
     unsigned char q5D60;  // 0x5D60
     unsigned char q5D64;  // 0x5D64
-    IUnknown* q6000;  // 0x6000
+    void* q6000;  // 0x6000
     bool q6004;  // 0x6004
     AbstractTypeClass* q6008;  // 0x6008
     unsigned char q600C;  // 0x600C
@@ -2609,7 +2609,7 @@ struct BuildingTypeClass {
     unsigned char q6174;  // 0x6174
     int q6180;  // 0x6180
     bool q6184;  // 0x6184
-    IUnknown* q6188;  // 0x6188
+    void* q6188;  // 0x6188
     unsigned char q618C;  // 0x618C
     unsigned int q6194;  // 0x6194
     unsigned char q6198;  // 0x6198
@@ -2621,7 +2621,7 @@ struct BuildingTypeClass {
     unsigned char q6210;  // 0x6210
     double q6214;  // 0x6214
     unsigned char q6218;  // 0x6218
-    IUnknown* q6220;  // 0x6220
+    void* q6220;  // 0x6220
     unsigned char q6224;  // 0x6224
     unsigned char q6228;  // 0x6228
     unsigned char q6230;  // 0x6230
@@ -2686,7 +2686,19 @@ struct BuildingTypeClass {
     unsigned int q7124;  // 0x7124
     unsigned char q7128;  // 0x7128
     unsigned char q712C;  // 0x712C
+    unsigned int ArrayIndex;
+    unsigned int DockingOffsets;
+    unsigned int FoundationOutside;
+    unsigned int FreeUnit;
+    unsigned int SecretInfantry;
+    unsigned int UnderDoorAnim;
     unsigned int q1646;
+    unsigned int q1761;
+    unsigned int q2147;
+    unsigned int q2149;
+    unsigned int q2181;
+    unsigned int q2183;
+    unsigned int q2185;
     unsigned int q21C0;
     unsigned int q2585;
     unsigned int q2586;
@@ -2696,18 +2708,24 @@ struct BuildingTypeClass {
     unsigned int u32_89C2;
     unsigned int u32_8BC2;
     unsigned int u32_8F42;
-    unsigned int q2147;
-    unsigned int q2149;
-    unsigned int q2181;
-    unsigned int q2183;
-    unsigned int q2185;
-    unsigned int gap0;
+    unsigned int q14FC;
+    unsigned int q1500;
     unsigned int q16B7;
     unsigned int q16F6;
     unsigned int q16F8;
-    unsigned int q1761;
+    unsigned int q85C2;
+    unsigned int q8642;
+    unsigned int q8646;
     unsigned int qF04;
     unsigned int u32_C84;
+    unsigned int gap0;
+    unsigned int q150C;
+    unsigned int q85C6;
+    unsigned char u8_14F0;
+    unsigned int q8588;
+    unsigned int q8600;
+    unsigned int q8608;
+    unsigned int q8604;
 // --- flat members (END) ---
     AbstractClass * * CleanupMembers(AbstractClass * a1, AbstractClass * a2);
     AbstractClass * * FindOrCreateAlt();
@@ -2730,7 +2748,7 @@ struct BuildingTypeClass {
     int GetObjectSize();
     int GetPowerOutput(ObjectClass * aP1);
     int GetTypeIdentifier();
-    int IsPlacementValid(IUnknown * aP1, IUnknown * aP2);
+    int IsPlacementValid(void* aP1, void* aP2);
     int ProcessData(unsigned int * a2, short * a3);
     int SaveLoad_Prefix_0();
     int UpdatePower();

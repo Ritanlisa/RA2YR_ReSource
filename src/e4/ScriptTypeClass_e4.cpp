@@ -8,6 +8,8 @@
 #include "e4/classes/INIClass_e4.hpp"
 #include "e4/classes/Init_e4.hpp"
 #include "e4/classes/TaskForceClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x691D50
@@ -36,10 +38,10 @@ int ScriptTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x691da6*/
     {
       AbstractTypeClass::Init((int)aP0, (int)&aP1); /*0x691daf*/
-      *aP0 = &(void*)(void*)&ScriptTypeClass_vftable; /*0x691db4*/
-      aP0[1] = &(void*)(void*)&ScriptTypeClass_vftable; /*0x691dba*/
-      aP0[2] = &(void*)(void*)&ScriptTypeClass_vftable; /*0x691dc1*/
-      aP0[3] = &(void*)(void*)&ScriptTypeClass_vftable; /*0x691dc8*/
+      *(void **)aP0 = (void*)&ScriptTypeClass_vftable; /*0x691db4*/
+      aP0[1] = (void*)&ScriptTypeClass_vftable; /*0x691dba*/
+      aP0[2] = (void*)&ScriptTypeClass_vftable; /*0x691dc1*/
+      aP0[3] = (void*)&ScriptTypeClass_vftable; /*0x691dc8*/
     }
     return 0; /*0x691dcf*/
   }
@@ -82,10 +84,10 @@ ScriptTypeClass * ScriptTypeClass::ddtor(char a2)
 {
   int v3; // eax
 
-  *this = &(void*)(void*)&ScriptTypeClass_vftable; /*0x691fa6*/
-  this->vtable2 = &(void*)(void*)&ScriptTypeClass_vftable; /*0x691fac*/
-  this->vtable3 = &(void*)(void*)&ScriptTypeClass_vftable; /*0x691fb3*/
-  this->vtable4 = &(void*)(void*)&ScriptTypeClass_vftable; /*0x691fba*/
+  *(void **)this = (void*)&ScriptTypeClass_vftable; /*0x691fa6*/
+  this->vtable2 = (void*)&ScriptTypeClass_vftable; /*0x691fac*/
+  this->vtable3 = (void*)&ScriptTypeClass_vftable; /*0x691fb3*/
+  this->vtable4 = (void*)&ScriptTypeClass_vftable; /*0x691fba*/
   AbstractClass::AnnounceExpiredPointer(1); /*0x691fc1*/
   v3 = (*(int (__thiscall **)(int *, void ***))(dword_8B41C8 + 16))(&dword_8B41C8, &this); /*0x691fda*/
   if ( v3 != -1 && v3 < g_MultiplayerDebugState && v3 < --g_MultiplayerDebugState ) /*0x691ff5*/

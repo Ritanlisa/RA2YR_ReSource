@@ -8,6 +8,8 @@
 #include "e4/classes/WideString_e4.hpp"
 #include "e4/classes/WinMain_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/NullModemClass_e4.hpp"
 
 // 0x774980
@@ -178,20 +180,20 @@ namespace gamemd {
 WinModemClass * * WinModemClass::LoadTypeData(int a2, char * Str, int a4, WinModemClass * aP4)
 {
   int v6; // ebx
-  int v7; // edi
+  WinModemClass * v7;
   int (*v8)(void); // eax
   int result; // eax
   int Bytes; // eax
   int v11; // esi
   int v12; // eax
-  int v13; // esi
+  WinModemClass * v13;
   int v14; // eax
   char *v15; // esi
   char *v16; // eax
   int v17; // eax
   DWORD v19; // [esp+14h] [ebp-30h]
   DWORD Ticks; // [esp+20h] [ebp-24h]
-  int v21; // [esp+28h] [ebp-1Ch]
+  WinModemClass * v21;
 
   v6 = 0; /*0x774ce6*/
   Timer::GetTicks(); /*0x774ce1*/
@@ -551,10 +553,10 @@ int WinModemClass::LogCommErrors(NullModemClass * aP1, char a3, int a4, int a5)
 namespace gamemd {
 WinModemClass * WinModemClass::QueryInterface(char a2)
 {
-  int v3; // eax
+  void * v3;
 
   v3 = this->q05C; /*0x775613*/
-  *(_DWORD *)this = &(void*)(void*)&WinModemClass_vftable; /*0x775616*/
+  *(void **)this = (void*)&WinModemClass_vftable; /*0x775616*/
   if ( v3 != -1 ) /*0x77561f*/
   {
     Debug::Log(); /*0x775626*/

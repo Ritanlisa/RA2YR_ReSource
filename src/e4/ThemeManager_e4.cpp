@@ -8,6 +8,8 @@
 #include "e4/classes/INIClass_e4.hpp"
 #include "e4/classes/Theme_e4.hpp"
 #include "e4/classes/ThemeClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x4080F0

@@ -27,6 +27,6 @@ struct E4Recv_541170 {
     unsigned int q5508;  // 0x5508
     unsigned int u32_1C2;
 // --- flat members (END) ---
-    int sub_541170(int a2, int a3, int a4, int a5);  // 0x541170
+    int sub_541170(int a2,  int a3,  int a4,  int a5);    // 0x541170
 };
 } // namespace gamemd

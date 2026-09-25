@@ -24,6 +24,8 @@
 #include "e4/classes/TechnoTypeClass_e4.hpp"
 #include "e4/classes/BuildingTypeClass_e4.hpp"
 #include "e4/classes/TerrainTypeClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x6F19B0
@@ -85,8 +87,8 @@ void sub_40D1B0()
   int *v0; // esi
   int v1; // edi
 
-  MapClass_Instance.lpVtbl = (struct IUnknownVtbl *)&(void*)(void*)&MouseClass_vftable; /*0x40d1b2*/
-  dword_884D00 = (int)&(void*)(void*)&MouseClass_vftable; /*0x40d1bc*/
+  MapClass_Instance.lpVtbl = (struct IUnknownVtbl *)(void*)&MouseClass_vftable; /*0x40d1b2*/
+  dword_884D00 = (int)&MouseClass_vftable; /*0x40d1bc*/
   v0 = &dword_884B84; /*0x40d1c6*/
   v1 = 4; /*0x40d1cb*/
   do /*0x40d1f0*/
@@ -185,9 +187,9 @@ int E4Recv_5AFEF0::sub_5AFEF0()
   this->q028 = dword_ABEE14; /*0x5aff26*/
   dword_ABEE18 = dword_ABEE18; /*0x5aff29*/
   this->M48 = 0; /*0x5aff2e*/
-  *(_DWORD *)this = &(void*)(void*)&MechLocomotionClass_vftable; /*0x5aff32*/
+  *(void **)this = (void*)&MechLocomotionClass_vftable; /*0x5aff32*/
   this->M44 = dword_ABEE18; /*0x5aff38*/
-  this->M4 = &(void*)(void*)&MechLocomotionClass_vftable; /*0x5aff3b*/
+  this->M4 = (void*)&MechLocomotionClass_vftable; /*0x5aff3b*/
   return this; /*0x5aff44*/
 }
 } // namespace gamemd
@@ -292,8 +294,8 @@ int E4Recv_728A00::sub_728A00()
   *(_DWORD *)(this + 48) = 0; /*0x728a33*/
   *(_DWORD *)(this + 52) = 0; /*0x728a36*/
   *(_BYTE *)(this + 56) = 0; /*0x728a39*/
-  *(_DWORD *)this = &(void*)(void*)&TunnelLocomotionClass_vftable; /*0x728a3c*/
-  *(_DWORD *)(this + 4) = &(void*)(void*)&TunnelLocomotionClass_vftable; /*0x728a42*/
+  *(void **)this = (void*)&TunnelLocomotionClass_vftable; /*0x728a3c*/
+  *(_DWORD *)(this + 4) = (void*)&TunnelLocomotionClass_vftable; /*0x728a42*/
   return this; /*0x728a4b*/
 }
 } // namespace gamemd

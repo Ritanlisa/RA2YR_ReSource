@@ -16,13 +16,15 @@
 #include "e4/classes/ScenarioClass_e4.hpp"
 #include "e4/classes/CCINIClass_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/RulesClass_e4.hpp"
 
 // 0x53AE50
 namespace gamemd {
 void * SuperClass::LaunchPsychicDominator(int a2)
 {
-  RulesClass *result; // eax
+  unsigned int result;
   void *v3; // esi
   void *v4; // eax
   int *v5; // eax
@@ -61,7 +63,7 @@ void * SuperClass::LaunchPsychicDominator(int a2)
 namespace gamemd {
 int SuperClass::Constructor()
 {
-  int v2; // eax
+  SuperClass * v2;
 
   AbstractClass::Constructor(); /*0x6caec3*/
   this->q024 = -1; /*0x6caecd*/
@@ -82,10 +84,10 @@ int SuperClass::Constructor()
   this->IsCharged = 0; /*0x6caf07*/
   this->q070 = 0; /*0x6caf0a*/
   this->q07C = -1; /*0x6caf0d*/
-  *(_DWORD *)this = &(void*)(void*)&SuperClass_vftable; /*0x6caf10*/
-  this->vtable2 = &(void*)(void*)&SuperClass_vftable; /*0x6caf16*/
-  this->vtable3 = &(void*)(void*)&SuperClass_vftable; /*0x6caf1d*/
-  this->vtable4 = &(void*)(void*)&SuperClass_vftable; /*0x6caf24*/
+  *(void **)this = (void*)&SuperClass_vftable; /*0x6caf10*/
+  this->vtable2 = (void*)&SuperClass_vftable; /*0x6caf16*/
+  this->vtable3 = (void*)&SuperClass_vftable; /*0x6caf1d*/
+  this->vtable4 = (void*)&SuperClass_vftable; /*0x6caf24*/
   this->q03C = &g_TypeClass_DefaultString; /*0x6caf2b*/
   if ( dword_A83CC8 < dword_A83CC0 /*0x6caf64*/
     || (byte_A83CC5 || !dword_A83CC0)
@@ -105,9 +107,9 @@ int SuperClass::Constructor()
 namespace gamemd {
 int SuperClass::Construct(int a2, CCINIClass * aP2)
 {
-  int v5; // eax
-  int v6; // eax
-  int v7; // eax
+  SuperClass * v5;
+  SuperClass * v6;
+  SuperClass * v7;
 
   AbstractClass::Constructor(); /*0x6caf94*/
   this->q028 = a2; /*0x6cafa4*/
@@ -131,10 +133,10 @@ int SuperClass::Construct(int a2, CCINIClass * aP2)
   this->IsCharged = 0; /*0x6cafea*/
   this->q070 = 0; /*0x6cafed*/
   this->q074 = -100; /*0x6caff0*/
-  *(_DWORD *)this = &(void*)(void*)&SuperClass_vftable; /*0x6caff7*/
-  this->vtable2 = &(void*)(void*)&SuperClass_vftable; /*0x6caffd*/
-  this->vtable3 = &(void*)(void*)&SuperClass_vftable; /*0x6cb003*/
-  this->vtable4 = &(void*)(void*)&SuperClass_vftable; /*0x6cb00a*/
+  *(void **)this = (void*)&SuperClass_vftable; /*0x6caff7*/
+  this->vtable2 = (void*)&SuperClass_vftable; /*0x6caffd*/
+  this->vtable3 = (void*)&SuperClass_vftable; /*0x6cb003*/
+  this->vtable4 = (void*)&SuperClass_vftable; /*0x6cb00a*/
   this->vtable2.GenerateUniqueID(); /*0x6cb011*/
   if ( dword_A83CC8 < dword_A83CC0 /*0x6cb049*/
     || (byte_A83CC5 || !dword_A83CC0)
@@ -176,7 +178,7 @@ int SuperClass::Construct(int a2, CCINIClass * aP2)
 namespace gamemd {
 SuperClass * * SuperClass::CleanupMembers()
 {
-  int v2; // eax
+  void * v2;
   int v3; // eax
   int v4; // eax
   int v5; // eax
@@ -185,10 +187,10 @@ SuperClass * * SuperClass::CleanupMembers()
   int v8; // eax
 
   v2 = this->q068; /*0x6cb124*/
-  *(_DWORD *)this = &(void*)(void*)&SuperClass_vftable; /*0x6cb127*/
-  this->vtable2 = &(void*)(void*)&SuperClass_vftable; /*0x6cb12f*/
-  this->vtable3 = &(void*)(void*)&SuperClass_vftable; /*0x6cb136*/
-  this->vtable4 = &(void*)(void*)&SuperClass_vftable; /*0x6cb13d*/
+  *(void **)this = (void*)&SuperClass_vftable; /*0x6cb127*/
+  this->vtable2 = (void*)&SuperClass_vftable; /*0x6cb12f*/
+  this->vtable3 = (void*)&SuperClass_vftable; /*0x6cb136*/
+  this->vtable4 = (void*)&SuperClass_vftable; /*0x6cb13d*/
   if ( v2 ) /*0x6cb144*/
   {
     *(_BYTE *)(v2 + 405) = 0; /*0x6cb146*/
@@ -251,17 +253,17 @@ SuperClass * * SuperClass::CleanupMembers()
 namespace gamemd {
 AbstractClass * * SuperClass::StartTimer(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3)
 {
-  char v5; // al
-  int v6; // ecx
+  SuperClass * v5;
+  void * v6;
   int v7; // edx
-  int v8; // eax
-  int v9; // eax
-  int v10; // edx
+  SuperClass * v8;
+  void * v9;
+  void * v10;
   _DWORD *v11; // eax
   int v12; // ecx
-  int v13; // edx
+  void * v13;
   char *v14; // edi
-  int v15; // eax
+  void * v15;
   int DefaultTimer; // eax
   int v19; // edx
   int v21; // [esp+8h] [ebp-Ch] BYREF
@@ -474,7 +476,7 @@ int SuperClass::ClickFire(int a2, short * a3)
   __int16 *v6; // eax
   int v7; // edx
   int v8; // ecx
-  wchar_t *v9; // edi
+  unsigned int v9;
   wchar_t **v10; // esi
   wchar_t *v11; // eax
   int v13; // edi
@@ -2247,10 +2249,10 @@ int SuperClass::LoadFromStream(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x6cdf0a*/
     {
       AbstractClass::Constructor(aP0); /*0x6cdf0e*/
-      aP0->parent_gap = &(void*)(void*)&SuperClass_vftable; /*0x6cdf13*/
-      aP0->? = &(void*)(void*)&SuperClass_vftable; /*0x6cdf19*/
-      aP0->? = &(void*)(void*)&SuperClass_vftable; /*0x6cdf20*/
-      aP0->? = &(void*)(void*)&SuperClass_vftable; /*0x6cdf27*/
+      aP0->parent_gap = (void*)&SuperClass_vftable; /*0x6cdf13*/
+      aP0->? = (void*)&SuperClass_vftable; /*0x6cdf19*/
+      aP0->? = (void*)&SuperClass_vftable; /*0x6cdf20*/
+      aP0->? = (void*)&SuperClass_vftable; /*0x6cdf27*/
     }
     if ( *(_DWORD *)&aP0[2].unknown_18 /*0x6cdf70*/
       && (g_BuildingTypeInstanceCount < dword_B0F5C0

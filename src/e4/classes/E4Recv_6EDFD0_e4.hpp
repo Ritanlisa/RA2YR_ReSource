@@ -23,9 +23,9 @@ struct E4Recv_6EDFD0 {
     unsigned int q5508;  // 0x5508
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
-    unsigned int needsRedraw;
     unsigned int q054;
+    unsigned int needsRedraw;
 // --- flat members (END) ---
-    void sub_6EDFD0(int a2, int a3);  // 0x6EDFD0
+    void sub_6EDFD0(int a2,  int a3);    // 0x6EDFD0
 };
 } // namespace gamemd

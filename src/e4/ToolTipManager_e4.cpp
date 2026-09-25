@@ -8,6 +8,8 @@
 #include "e4/classes/Timer_e4.hpp"
 #include "e4/classes/DynamicVector_e4.hpp"
 #include "e4/classes/TechnoTypeClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x724AA0
@@ -52,7 +54,7 @@ DynamicVector * ToolTipManager_7::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x724f43*/
-  *this = &(void*)(void*)&VectorClass_ToolTip_const___vftable; /*0x724f46*/
+  *(void **)this = (void*)&VectorClass_ToolTip_const___vftable; /*0x724f46*/
   if ( v3 && this->IsAllocated ) /*0x724f50*/
   {
     RA2_OPDEL(v3); /*0x724f58*/

@@ -8,7 +8,7 @@ struct E4Recv_74EA70 {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
 // --- flat members (END) ---
-    int Vf12(int, ...);  // G6 vtable slot dispatch
+    int Vf12(int,  ...);    // G6 vtable slot dispatch
     char LoadVeinholeMonsters();  // 0x74EA70
 };
 } // namespace gamemd

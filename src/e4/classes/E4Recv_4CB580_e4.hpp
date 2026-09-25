@@ -19,6 +19,6 @@ struct E4Recv_4CB580 {
     unsigned int q1908;  // 0x1908
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    ObjectClass * sub_4CB580(char * Source, int a3);  // 0x4CB580
+    ObjectClass * sub_4CB580(char * Source,  int a3);    // 0x4CB580
 };
 } // namespace gamemd

@@ -6,6 +6,8 @@
 #include "e4/classes/WalkLocomotionClass_e4.hpp"
 #include "e4/classes/IStream_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x6A0310
@@ -179,9 +181,9 @@ HRESULT WalkLocomotionClass::BeginMove(int * a1, int * pStm)
   if ( a1 ) /*0x75c69a*/
   {
     a1[14] = 0; /*0x75c69c*/
-    *a1 = (int)&(void*)(void*)&WalkLocomotionClass_vftable; /*0x75c6a3*/
-    a1[1] = (int)&(void*)(void*)&WalkLocomotionClass_vftable; /*0x75c6a9*/
-    a1[6] = (int)&(void*)(void*)&WalkLocomotionClass_vftable; /*0x75c6b0*/
+    *a1 = (int)&WalkLocomotionClass_vftable; /*0x75c6a3*/
+    a1[1] = (int)&WalkLocomotionClass_vftable; /*0x75c6a9*/
+    a1[6] = (int)&WalkLocomotionClass_vftable; /*0x75c6b0*/
   }
   v2->lpVtbl->Read(v2, &pStm, 1, 0); /*0x75c6c3*/
   if ( !(_BYTE)pStm ) /*0x75c6cc*/
@@ -262,9 +264,9 @@ WalkLocomotionClass * WalkLocomotionClass::ProcessMove(char a2)
 {
   int v3; // eax
 
-  *this = &(void*)(void*)&WalkLocomotionClass_vftable; /*0x75cbe3*/
-  *(this + 1) = &(void*)(void*)&WalkLocomotionClass_vftable; /*0x75cbe9*/
-  *(this + 6) = &(void*)(void*)&WalkLocomotionClass_vftable; /*0x75cbf0*/
+  *(void **)this = (void*)&WalkLocomotionClass_vftable; /*0x75cbe3*/
+  *(this + 1) = (void*)&WalkLocomotionClass_vftable; /*0x75cbe9*/
+  *(this + 6) = (void*)&WalkLocomotionClass_vftable; /*0x75cbf0*/
   v3 = *(this + 14); /*0x75cbf7*/
   if ( v3 ) /*0x75cbfc*/
     (*(void (__stdcall **)(int))(*(_DWORD *)v3 + 8))(v3); /*0x75cc01*/

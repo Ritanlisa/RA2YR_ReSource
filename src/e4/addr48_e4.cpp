@@ -32,7 +32,10 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/VectorClass_flat_e4.hpp"
 #include "e4/classes/DynamicVectorClass_flat_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/E4Recv_479740_e4.hpp"
 
 // 0x4880F0
 namespace gamemd {
@@ -186,7 +189,7 @@ void PlaySoundEffectAt(TechnoClass * aP0, IUnknown * aP1, unsigned int * a2, Obj
   void *Block; // [esp+7Ch] [ebp-A4h]
   int v126; // [esp+80h] [ebp-A0h]
   int v127; // [esp+84h] [ebp-9Ch]
-  IUnknown *v121; // [esp+88h] [ebp-98h]
+  int * v121;
   int var94; // [esp+8Ch] [ebp-94h]
   __int64 v130; // [esp+90h] [ebp-90h] BYREF
   __int64 v132; // [esp+9Ch] [ebp-84h] BYREF
@@ -205,7 +208,7 @@ void PlaySoundEffectAt(TechnoClass * aP0, IUnknown * aP1, unsigned int * a2, Obj
   v120 = (TechnoClass *)aP1;
   aP2 = (CoordStruct *)aP0;
   sub_48B070(&v117, 0, 0);
-  v117 = (IUnknown *)(void*)(void*)&DynamicVectorClass_DamageGroup___vftable;
+  v117 = (IUnknown *)(void*)&DynamicVectorClass_DamageGroup___vftable;
   var94 = 10;
   v121 = 0;
   if ( !aP1 || (**(_BYTE **)&HouseClass_Player[29924] & 0x20) != 0 || (v8 = aP3) == 0 )
@@ -1016,7 +1019,7 @@ AbstractClass * * CommBufferClass::sub_48B0E0(int a2, int a3, size_t Size, int a
   int v8; // ebx
   int v9; // edi
 
-  *this = &(void*)(void*)&CommBufferClass_vftable; /*0x48b0fd*/
+  *this = (void*)&CommBufferClass_vftable; /*0x48b0fd*/
   this->q004 = a2; /*0x48b103*/
   this->q008 = a3; /*0x48b106*/
   this->q00C = Size; /*0x48b109*/
@@ -1810,7 +1813,7 @@ CheckListClass * E4Recv_488280::sub_488280(ListClass * aP1, int a3, int a4, List
 {
   ListClass::Construct(aP1, a3, a4, aP4, a6, aP6, aP7, a9); /*0x4882ad*/
   *(&this->q0942) = 0; /*0x4882b2*/
-  *(_DWORD *)this = &(void*)(void*)&CheckListClass_vftable; /*0x4882b9*/
+  *(_DWORD *)this = (void*)&CheckListClass_vftable; /*0x4882b9*/
   return this; /*0x4882c1*/
 }
 } // namespace gamemd
@@ -1836,12 +1839,12 @@ ColorListClass * E4Recv_488760::sub_488760(ListClass * aP1, int a3, int a4, List
   *(&this->q0245) = 0; /*0x48879f*/
   this->q180 = 1; /*0x4887a5*/
   this->u32_181 = 0; /*0x4887ab*/
-  *(&this->q0243) = &(void*)(void*)&DynamicVectorClass_int_vftable; /*0x4887b1*/
+  *(&this->q0243) = (void*)&DynamicVectorClass_int_vftable; /*0x4887b1*/
   *(&this->q0248) = 10; /*0x4887bb*/
   *(&this->q0247) = 0; /*0x4887c5*/
   *(&this->q0280) = 0; /*0x4887cb*/
   *(&this->q0249) = 1; /*0x4887d1*/
-  *this = &(void*)(void*)&ColorListClass_vftable; /*0x4887d7*/
+  *this = (void*)&ColorListClass_vftable; /*0x4887d7*/
   return this; /*0x4887df*/
 }
 } // namespace gamemd
@@ -1856,11 +1859,11 @@ int E4Recv_4887F0::sub_4887F0()
 
   v2 = *(&this->q0243); /*0x4887f5*/
   v3 = &this->q174; /*0x4887fb*/
-  *this = &(void*)(void*)&ColorListClass_vftable; /*0x488803*/
+  *this = (void*)&ColorListClass_vftable; /*0x488803*/
   (*(void (__thiscall **)(_DWORD *))(v2 + 12))(&this->q0243); /*0x488809*/
   *(&this->q0280) = 0; /*0x48880e*/
   v4 = (void *)v3[1]; /*0x488814*/
-  *v3 = &(void*)(void*)&VectorClass_int_vftable; /*0x488819*/
+  *v3 = (void*)&VectorClass_int_vftable; /*0x488819*/
   if ( v4 && *((_BYTE *)v3 + 13) ) /*0x488821*/
   {
     RA2_OPDEL(v4); /*0x488827*/
@@ -2128,7 +2131,7 @@ unsigned int * E4Recv_48B070::sub_48B070(int a2, int a3)
   this->Capacity = a2; /*0x48b07e*/
   this->IsInitialized = 1; /*0x48b081*/
   this->IsAllocated = 0; /*0x48b085*/
-  *this = &(void*)(void*)&VectorClass_DamageGroup___vftable; /*0x48b088*/
+  *this = (void*)&VectorClass_DamageGroup___vftable; /*0x48b088*/
   if ( a2 ) /*0x48b08e*/
   {
     if ( a3 ) /*0x48b096*/
@@ -2169,7 +2172,7 @@ void CommBufferClass::sub_48B1F0()
 
   v2 = 0; /*0x48b1f4*/
   v3 = this->q004; /*0x48b1f7*/
-  *(_DWORD *)this = &(void*)(void*)&CommBufferClass_vftable; /*0x48b1fa*/
+  *(_DWORD *)this = (void*)&CommBufferClass_vftable; /*0x48b1fa*/
   if ( v3 > 0 ) /*0x48b202*/
   {
     v4 = 0; /*0x48b204*/
@@ -2765,7 +2768,7 @@ int sub_48E6A0()
   dword_89ED00 = 0; /*0x48e6ac*/
   byte_89ED04 = 1; /*0x48e6b1*/
   byte_89ED05 = 0; /*0x48e6b8*/
-  dword_89ECF8 = (int)&(void*)(void*)&DynamicVectorClass_ConvertClass___vftable; /*0x48e6bd*/
+  dword_89ECF8 = (int)&DynamicVectorClass_ConvertClass___vftable; /*0x48e6bd*/
   dword_89ED0C = 10; /*0x48e6c7*/
   dword_89ED08 = 0; /*0x48e6d1*/
   return atexit(sub_48E6E0); /*0x48e6dc*/
@@ -2778,7 +2781,7 @@ void sub_48E6E0()
 {
   if ( (byte_89ED10 & 1) == 0 ) /*0x48e6ea*/
   {
-    dword_89ECF8 = (int)&(void*)(void*)&VectorClass_ConvertClass___vftable; /*0x48e6ee*/
+    dword_89ECF8 = (int)&VectorClass_ConvertClass___vftable; /*0x48e6ee*/
     byte_89ED10 |= 1u; /*0x48e701*/
     if ( dword_89ECFC ) /*0x48e707*/
     {

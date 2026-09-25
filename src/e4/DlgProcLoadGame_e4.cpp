@@ -6,6 +6,8 @@
 #include "e4/classes/E4Recv_696C40_e4.hpp"
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/Draw_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x696AE0
@@ -16,7 +18,7 @@ HWND E4Recv_696AE0::sub_696AE0()
   HWND result; // eax
   char *v5; // esi
   LRESULT v6; // edi
-  int v7; // eax
+  char * v7;
   char *v8; // [esp+10h] [ebp-8h]
 
   DlgItem = GetDlgItem(*(HWND *)this, 1629); /*0x696b05*/

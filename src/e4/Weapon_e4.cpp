@@ -14,7 +14,10 @@
 #include "e4/classes/ObjectVector_e4.hpp"
 #include "e4/classes/WeaponTypeClass_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/WebBrowser_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
 
 // 0x53AE00
 namespace gamemd {
@@ -203,7 +206,7 @@ AbstractClass * * Weapon::DestroyTerrain(int * a1, IUnknown * aP2, InfantryClass
   v56 = v69 - v72; /*0x70c764*/
   v57 = v70 - v73; /*0x70c773*/
   ObjectVector::Construct(&v48, 0, 0); /*0x70c777*/
-  v48 = &(void*)(void*)&DynamicVectorClass_ObjectClass___vftable; /*0x70c77c*/
+  v48 = (void*)&DynamicVectorClass_ObjectClass___vftable; /*0x70c77c*/
   v53 = 10; /*0x70c784*/
   v52 = 0; /*0x70c78c*/
   v47 = 0; /*0x70c790*/
@@ -365,7 +368,7 @@ AbstractClass * * Weapon::DestroyTerrain(int * a1, IUnknown * aP2, InfantryClass
           LayerClass::DestroyCliff((int *)&MapClass_Instance, v41, (int)aP3); /*0x70cc39*/
       }
       v66 = v66; /*0x70cc45*/
-      v48 = &(void*)(void*)&VectorClass_ObjectClass___vftable; /*0x70cc4b*/
+      v48 = (void*)&VectorClass_ObjectClass___vftable; /*0x70cc4b*/
       *a1 = v65; /*0x70cc53*/
       v43 = v6; /*0x70cc55*/
       a1[1] = v66; /*0x70cc59*/
@@ -389,7 +392,7 @@ AbstractClass * * Weapon::DestroyTerrain(int * a1, IUnknown * aP2, InfantryClass
     }
   }
   v60 = v60; /*0x70cb37*/
-  v48 = &(void*)(void*)&VectorClass_ObjectClass___vftable; /*0x70cb3d*/
+  v48 = (void*)&VectorClass_ObjectClass___vftable; /*0x70cb3d*/
   *a1 = v59; /*0x70cb45*/
   v61 = v61; /*0x70cb47*/
   a1[1] = v60; /*0x70cb4b*/

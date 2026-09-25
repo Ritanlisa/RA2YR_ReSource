@@ -2,13 +2,15 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/ScoreAnimClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x691000
 namespace gamemd {
 unsigned int * ScoreAnimClass::Constructor_ScoreAnimClass_0(char a2)
 {
-  *this = &(void*)(void*)&ScoreAnimClass_vftable; /*0x691009*/
+  *(void **)this = (void*)&ScoreAnimClass_vftable; /*0x691009*/
   if ( (a2 & 1) != 0 ) /*0x69100f*/
     RA2_OPDEL(); /*0x691012*/
   return this; /*0x69101c*/
@@ -18,7 +20,7 @@ unsigned int * ScoreAnimClass::Constructor_ScoreAnimClass_0(char a2)
 namespace gamemd {
 unsigned int * ScoreAnimClass::Constructor_ScoreAnimClass_1(char a2)
 {
-  *this = &(void*)(void*)&ScoreAnimClass_vftable; /*0x691029*/
+  *(void **)this = (void*)&ScoreAnimClass_vftable; /*0x691029*/
   if ( (a2 & 1) != 0 ) /*0x69102f*/
     RA2_OPDEL(); /*0x691032*/
   return this; /*0x69103c*/
@@ -32,7 +34,7 @@ unsigned int * ScoreAnimClass::Constructor_ScoreFontClass(char a2)
   char *v4; // eax
 
   v3 = (void *)this->u32_C; /*0x6910a6*/
-  *this = &(void*)(void*)&ScoreFontClass_vftable; /*0x6910a9*/
+  *(void **)this = (void*)&ScoreFontClass_vftable; /*0x6910a9*/
   if ( v3 && this->q010 == 1 ) /*0x6910b7*/
   {
     RA2_OPDEL(v3); /*0x6910ba*/

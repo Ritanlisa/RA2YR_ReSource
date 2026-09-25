@@ -5,7 +5,10 @@
 #include "e4/classes/Math_e4.hpp"
 #include "e4/classes/Matrix3x4_e4.hpp"
 #include "e4/classes/ParticleSystemClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_alias_e4.hpp"
+#include "e4/classes/BuildingTypeClass_e4.hpp"
 
 // 0x40FFFF
 namespace gamemd {
@@ -162,7 +165,7 @@ void * Math::BuildRotationMatrix(float * a2, float a3)
   v16 = Math::ArcTan2(a3); /*0x5ae76f*/
   v5 = Math::SinCos(a3); /*0x5ae775*/
   v7 = *a2 * *a2; /*0x5ae787*/
-  *this = (1.0 - v7) * v16 + v7; /*0x5ae797*/
+  *(_DWORD *)this = (1.0 - v7) * v16 + v7; /*0x5ae797*/
   v8 = 1.0 - v16; /*0x5ae7a1*/
   this->u32_4 = *a2 * a2[1] * v8 - v5 * a2[2]; /*0x5ae7b3*/
   v9 = a2[2] * *a2 * v8; /*0x5ae7bb*/

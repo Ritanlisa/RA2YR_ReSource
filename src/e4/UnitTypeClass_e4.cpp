@@ -10,6 +10,8 @@
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/UnitClass_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/UnitTypeVector_e4.hpp"
 
 // 0x6B4DD0
@@ -96,10 +98,10 @@ UnitTypeClass::UnitTypeClass(INIClass * aP1)
   this->WalkFrames = 12; /*0x7471ab*/
   this->qE5D = 0; /*0x7471b2*/
   this->AltImageFile = 0; /*0x7471b8*/
-  *(_DWORD *)this = &(void*)(void*)&UnitTypeClass_vftable; /*0x7471bf*/
-  this->vtable2 = &(void*)(void*)&UnitTypeClass_vftable; /*0x7471c5*/
-  this->vtable3 = &(void*)(void*)&UnitTypeClass_vftable; /*0x7471cb*/
-  this->vtable4 = &(void*)(void*)&UnitTypeClass_vftable; /*0x7471d2*/
+  *(_DWORD *)this = (void*)&UnitTypeClass_vftable; /*0x7471bf*/
+  this->vtable2 = (void*)&UnitTypeClass_vftable; /*0x7471c5*/
+  this->vtable3 = (void*)&UnitTypeClass_vftable; /*0x7471cb*/
+  this->vtable4 = (void*)&UnitTypeClass_vftable; /*0x7471d2*/
   this->vtable2.GenerateUniqueID(); /*0x7471d9*/
   this->RotCount = 32; /*0x7471de*/
   v3 = g_CrateCount; /*0x7471e8*/
@@ -602,10 +604,10 @@ int UnitTypeClass::LoadFromINI2(int a1, int a2)
     if ( a1 ) /*0x74802f*/
     {
       TechnoTypeClass::Construct(a1, (int)&v3); /*0x748038*/
-      *(_DWORD *)a1 = &(void*)(void*)&UnitTypeClass_vftable; /*0x74803d*/
-      *(_DWORD *)(a1 + 4) = &(void*)(void*)&UnitTypeClass_vftable; /*0x748043*/
-      *(_DWORD *)(a1 + 8) = &(void*)(void*)&UnitTypeClass_vftable; /*0x74804a*/
-      *(_DWORD *)(a1 + 12) = &(void*)(void*)&UnitTypeClass_vftable; /*0x748051*/
+      *(_DWORD *)a1 = (void*)&UnitTypeClass_vftable; /*0x74803d*/
+      *(_DWORD *)(a1 + 4) = (void*)&UnitTypeClass_vftable; /*0x748043*/
+      *(_DWORD *)(a1 + 8) = (void*)&UnitTypeClass_vftable; /*0x74804a*/
+      *(_DWORD *)(a1 + 12) = (void*)&UnitTypeClass_vftable; /*0x748051*/
     }
     VoxelAnimType::LoadAnim((char *)a1); /*0x74805a*/
     ObjectTypeClass::Load2DArt((char *)a1); /*0x748061*/
@@ -649,10 +651,10 @@ UnitTypeClass * UnitTypeClass::ddtor(char a2)
   int v3; // eax
   void **v5; // [esp+4h] [ebp-4h] BYREF
 
-  *this = &(void*)(void*)&UnitTypeClass_vftable; /*0x748196*/
-  *(this + 1) = &(void*)(void*)&UnitTypeClass_vftable; /*0x74819c*/
-  *(this + 2) = &(void*)(void*)&UnitTypeClass_vftable; /*0x7481a3*/
-  *(this + 3) = &(void*)(void*)&UnitTypeClass_vftable; /*0x7481aa*/
+  *this = (void*)&UnitTypeClass_vftable; /*0x748196*/
+  *(this + 1) = (void*)&UnitTypeClass_vftable; /*0x74819c*/
+  *(this + 2) = (void*)&UnitTypeClass_vftable; /*0x7481a3*/
+  *(this + 3) = (void*)&UnitTypeClass_vftable; /*0x7481aa*/
   AbstractClass::AnnounceExpiredPointer(1); /*0x7481b1*/
   v5 = this; /*0x7481c6*/
   v3 = (*(int (__thiscall **)(int *, void ***))(UnitTypeClass_Array + 16))(&UnitTypeClass_Array, &v5); /*0x7481ca*/

@@ -7,20 +7,22 @@
 #include "e4/classes/AudioController_e4.hpp"
 #include "e4/classes/Init_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/CellStruct_e4.hpp"
 
 // 0x4385D0
 namespace gamemd {
 int BombClass::AbstractClass()
 {
-  int v2; // eax
+  BombClass * v2;
 
   AbstractClass::Constructor(); /*0x4385d4*/
   this->BombClass_field_54 = 0; /*0x4385de*/
-  *(_DWORD *)this = &(void*)(void*)&BombClass_vftable; /*0x4385e1*/
-  this->vtable2 = &(void*)(void*)&BombClass_vftable; /*0x4385e7*/
-  this->vtable3 = &(void*)(void*)&BombClass_vftable; /*0x4385ee*/
-  this->vtable4 = &(void*)(void*)&BombClass_vftable; /*0x4385f5*/
+  *(void **)this = (void*)&BombClass_vftable; /*0x4385e1*/
+  this->vtable2 = (void*)&BombClass_vftable; /*0x4385e7*/
+  this->vtable3 = (void*)&BombClass_vftable; /*0x4385ee*/
+  this->vtable4 = (void*)&BombClass_vftable; /*0x4385f5*/
   this->BombClass_field_28 = 0; /*0x4385fc*/
   this->BombClass_field_2C = 0; /*0x4385ff*/
   this->BombClass_field_58 = 0; /*0x438602*/
@@ -111,7 +113,7 @@ int BombClass::InitPool()
   dword_89C670 = 0; /*0x43855c*/
   byte_89C674 = 1; /*0x438561*/
   byte_89C675 = 0; /*0x438568*/
-  dword_89C668 = (int)&(void*)(void*)&DynamicVectorClass_BombClass___vftable; /*0x43856d*/
+  dword_89C668 = (int)&DynamicVectorClass_BombClass___vftable; /*0x43856d*/
   dword_89C67C = 10; /*0x438577*/
   dword_89C678 = 0; /*0x438581*/
   return atexit(globalHelper_038590); /*0x43858c*/
@@ -152,10 +154,10 @@ int BombClass::Write(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x438b59*/
     {
       AbstractClass::InitVtables(aP0, (int)&aP1); /*0x438b62*/
-      *aP0 = (int)&(void*)(void*)&BombClass_vftable; /*0x438b67*/
-      aP0[1] = (int)&(void*)(void*)&BombClass_vftable; /*0x438b6d*/
-      aP0[2] = (int)&(void*)(void*)&BombClass_vftable; /*0x438b74*/
-      aP0[3] = (int)&(void*)(void*)&BombClass_vftable; /*0x438b7b*/
+      *aP0 = (int)&BombClass_vftable; /*0x438b67*/
+      aP0[1] = (int)&BombClass_vftable; /*0x438b6d*/
+      aP0[2] = (int)&BombClass_vftable; /*0x438b74*/
+      aP0[3] = (int)&BombClass_vftable; /*0x438b7b*/
     }
     AudioController::Init(aP0 + 15); /*0x438b85*/
     aP0[21] = 0; /*0x438b8d*/
@@ -181,10 +183,10 @@ BombClass * BombClass::CopyTo(char a2)
 {
   int v3; // eax
 
-  *this = &(void*)(void*)&BombClass_vftable; /*0x4393f7*/
-  this->vtable2 = &(void*)(void*)&BombClass_vftable; /*0x4393fd*/
-  this->vtable3 = &(void*)(void*)&BombClass_vftable; /*0x439404*/
-  this->vtable4 = &(void*)(void*)&BombClass_vftable; /*0x43940b*/
+  *(void **)this = (void*)&BombClass_vftable; /*0x4393f7*/
+  this->vtable2 = (void*)&BombClass_vftable; /*0x4393fd*/
+  this->vtable3 = (void*)&BombClass_vftable; /*0x439404*/
+  this->vtable4 = (void*)&BombClass_vftable; /*0x43940b*/
   AudioFileClass::Release(&this->vtable25); /*0x439412*/
   v3 = (*(int (__thiscall **)(int *, _DWORD **))(dword_89C668 + 16))(&dword_89C668, &this); /*0x43942b*/
   if ( v3 != -1 && v3 < dword_89C678 && v3 < --dword_89C678 ) /*0x439446*/

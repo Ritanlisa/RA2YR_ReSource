@@ -7,6 +7,8 @@
 #include "e4/classes/CCFileClass_e4.hpp"
 #include "e4/classes/FilePipe_30_e4.hpp"
 #include "e4/classes/File_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x473AE0
@@ -84,7 +86,7 @@ int FileClass::Read(BufferIOFileClass * aP1, AbstractClass * aP2)
   DWORD v4; // ebx
   DWORD result; // eax
   int v6; // eax
-  signed int v7; // edi
+  AbstractClass * v7;
   int v9; // ebx
   DWORD LastError; // eax
   void *v11; // [esp-1Ch] [ebp-2Ch]

@@ -13,19 +13,21 @@
 #include "e4/classes/Frame_e4.hpp"
 #include "e4/classes/MovieClass_e4.hpp"
 #include "e4/classes/MultiplayerGameMode_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x49CAF0
 namespace gamemd {
 AbstractClass * * Movie::SetupScreen(CCINIClass * aP1)
 {
-  int v3; // eax
+  CCINIClass * v3;
   int v5; // ebp
-  int v6; // ecx
+  void * v6;
   int i; // edi
   int v8; // edx
   int v9; // edi
-  int v10; // ebx
+  void * v10;
   int v12; // [esp+8h] [ebp-4h]
 
   if ( !byte_89F578 ) /*0x49cafc*/
@@ -94,7 +96,7 @@ CampaignClass * * Movie::GetSection(CCINIClass * aP1, CCINIClass * aP2)
     CampaignClass::LoadFromINI(); /*0x49e3ba*/
   if ( aP1 < 0 || aP1 >= this->q05C ) /*0x49e3ca*/
   {
-    *aP2 = 0; /*0x49e3e9*/
+    *(_DWORD *)aP2 = 0; /*0x49e3e9*/
     return 0; /*0x49e3ef*/
   }
   else

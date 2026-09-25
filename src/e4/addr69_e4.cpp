@@ -37,7 +37,11 @@
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/Stream_e4.hpp"
 #include "e4/classes/RawFileClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/Compare_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
+#include "e4/classes/Init_e4.hpp"
 
 // 0x690400
 namespace gamemd {
@@ -112,7 +116,7 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
   int v28; // esi
   int v29; // eax
   char v30; // bl
-  const char *v31; // eax
+  const unsigned int v31;
   DWORD Ticks; // [esp+10h] [ebp-5C0h]
   DWORD v33; // [esp+10h] [ebp-5C0h]
   DWORD v34; // [esp+10h] [ebp-5C0h]
@@ -642,7 +646,7 @@ void Network_SendFile(char * Source, int a2, char a3, char a4)
   CCFileClass::Construct(v61, Source); /*0x69479d*/
   if ( !CCFileClass::Open(v61, 0) ) /*0x6947a7*/
   {
-    v61[0] = (int)&(void*)(void*)&CCFileClass_vftable; /*0x6947b7*/
+    v61[0] = (int)&CCFileClass_vftable; /*0x6947b7*/
     v63 = 0; /*0x6947bf*/
     Vector::Clear((int)v62); /*0x6947c6*/
     v61[0] = (int)&off_7E1668; /*0x6947cf*/
@@ -782,7 +786,7 @@ void Network_SendFile(char * Source, int a2, char a3, char a4)
     {
   LABEL_38:
       Debug::Log(aFileInfoSendTi); /*0x694abd*/
-      v61[0] = (int)&(void*)(void*)&CCFileClass_vftable; /*0x694ad1*/
+      v61[0] = (int)&CCFileClass_vftable; /*0x694ad1*/
       v63 = 0; /*0x694ad9*/
       Vector::Clear((int)v62); /*0x694ae4*/
       v61[0] = (int)&off_7E1668; /*0x694aed*/
@@ -1028,7 +1032,7 @@ void Network_SendFile(char * Source, int a2, char a3, char a4)
   if ( !v48 ) /*0x69518f*/
     v49 = aFailure; /*0x695191*/
   Debug::Log("File upload completed - %s\n", v49); /*0x69519c*/
-  v61[0] = (int)&(void*)(void*)&CCFileClass_vftable; /*0x6951ab*/
+  v61[0] = (int)&CCFileClass_vftable; /*0x6951ab*/
   v63 = 0; /*0x6951b3*/
   Vector::Clear((int)v62); /*0x6951be*/
   v61[0] = (int)&off_7E1668; /*0x6951c7*/
@@ -1078,10 +1082,10 @@ AbstractClass * * FindAndValidateMap(ObjectClass * aP0, int edx0, const char * a
       SetSoundWarning(v9); /*0x6952a5*/
     }
     ++g_GameFlags_Campaign; /*0x6952bb*/
-    if ( !(unsigned __int8)(void*)(void*)&CD_vftable(dword_81C1D0) ) /*0x6952d5*/
+    if ( !(unsigned __int8)(void*)&CD_vftable(dword_81C1D0) ) /*0x6952d5*/
     {
       --g_GameFlags_Campaign; /*0x695418*/
-      v18[0] = (int)&(void*)(void*)&CCFileClass_vftable; /*0x69541d*/
+      v18[0] = (int)&CCFileClass_vftable; /*0x69541d*/
       v20 = 0; /*0x695425*/
       Vector::Clear((int)v19); /*0x69542c*/
       v18[0] = (int)&off_7E1668; /*0x695435*/
@@ -1093,7 +1097,7 @@ AbstractClass * * FindAndValidateMap(ObjectClass * aP0, int edx0, const char * a
   if ( !CCFileClass::Open(v18, 0) || CCFileClass::GetSize(v18) != edx0 ) /*0x695300*/
   {
   LABEL_16:
-    v18[0] = (int)&(void*)(void*)&CCFileClass_vftable; /*0x6953c3*/
+    v18[0] = (int)&CCFileClass_vftable; /*0x6953c3*/
     v20 = 0; /*0x6953d2*/
     Vector::Clear((int)v19); /*0x6953d9*/
     v18[0] = (int)&off_7E1668; /*0x6953e2*/
@@ -1104,12 +1108,12 @@ AbstractClass * * FindAndValidateMap(ObjectClass * aP0, int edx0, const char * a
   v13[1] = 0; /*0x69530a*/
   v13[2] = 0; /*0x69530e*/
   GenericList::Constructor(v14); /*0x695312*/
-  v14[0] = &(void*)(void*)&List_INIClass_INISection___vftable; /*0x695321*/
+  v14[0] = (void*)&List_INIClass_INISection___vftable; /*0x695321*/
   memset(&v14[7], 0, 12); /*0x695329*/
   v15 = 0; /*0x695335*/
   v16 = 0; /*0x695339*/
   v17 = 0; /*0x69533d*/
-  v13[0] = &(void*)(void*)&INIClass_vftable; /*0x695341*/
+  v13[0] = (void*)&INIClass_vftable; /*0x695341*/
   FileStraw::Open(v13, (int)v18, 0); /*0x695349*/
   INIClass::GetString( /*0x69536b*/
     (unsigned __int8 ***)v13,
@@ -1125,7 +1129,7 @@ AbstractClass * * FindAndValidateMap(ObjectClass * aP0, int edx0, const char * a
   }
   strcpy((char *)aP0, (const char *)(*(_DWORD *)(g_MultiplayerGameState + 4 * v6) + 88)); /*0x695472*/
   HashTable::DestroyHashTableINIClass(v13); /*0x69547f*/
-  v18[0] = (int)&(void*)(void*)&CCFileClass_vftable; /*0x69548b*/
+  v18[0] = (int)&CCFileClass_vftable; /*0x69548b*/
   v20 = 0; /*0x695493*/
   Vector::Clear((int)v19); /*0x69549a*/
   v18[0] = (int)&off_7E1668; /*0x6954a3*/
@@ -1427,10 +1431,10 @@ void ParseMapFileHeader(CampaignScore * aP0, unsigned short * a1, char * a2, Cam
               v27[0] = &CCINIClass_Vtable; /*0x6996e3*/
               v25[1] = 0; /*0x6996ea*/
               v25[2] = 0; /*0x6996f1*/
-              v25[0] = (int)&(void*)(void*)&Straw_vftable; /*0x6996f8*/
+              v25[0] = (int)&Straw_vftable; /*0x6996f8*/
               Buffer::Init(v26, (int)v8, v19 - (_BYTE *)v8); /*0x699703*/
               v26[3] = 0; /*0x69970f*/
-              v25[0] = (int)&(void*)(void*)&BufferStraw_vftable; /*0x699720*/
+              v25[0] = (int)&BufferStraw_vftable; /*0x699720*/
               CCINIClass::LoadAndVerifyDigest((int)v27, (int)v25, 0, 0); /*0x69972b*/
               v31[1] = 0; /*0x699737*/
               v31[2] = 0; /*0x69973e*/
@@ -1441,10 +1445,10 @@ void ParseMapFileHeader(CampaignScore * aP0, unsigned short * a1, char * a2, Cam
               v34 = 0; /*0x69976b*/
               v23[1] = 0; /*0x69977f*/
               v23[2] = 0; /*0x699786*/
-              v23[0] = (int)&(void*)(void*)&Straw_vftable; /*0x69978d*/
+              v23[0] = (int)&Straw_vftable; /*0x69978d*/
               Buffer::Init(v24, (int)v14, strlen((const char *)v14) + 1); /*0x699798*/
               v24[3] = 0; /*0x6997ae*/
-              v23[0] = (int)&(void*)(void*)&BufferStraw_vftable; /*0x6997b5*/
+              v23[0] = (int)&BufferStraw_vftable; /*0x6997b5*/
               CCINIClass::LoadAndVerifyDigest((int)v31, (int)v23, 0, 0); /*0x6997c0*/
               *a5 = INIClass::ReadInt_Overwrite(g_INI_Key_Basic, aMinplayers, *a5); /*0x6997e5*/
               *a6 = INIClass::ReadInt_Overwrite(g_INI_Key_Basic, aMaxplayers, *a6); /*0x69981b*/
@@ -1501,7 +1505,7 @@ void ParseMapFileHeader(CampaignScore * aP0, unsigned short * a1, char * a2, Cam
     }
   }
   LABEL_20:
-  v20[0] = (int)&(void*)(void*)&CCFileClass_vftable; /*0x699947*/
+  v20[0] = (int)&CCFileClass_vftable; /*0x699947*/
   v22 = 0; /*0x699953*/
   Vector::Clear((int)v21); /*0x69995a*/
   v20[0] = (int)&off_7E1668; /*0x699963*/
@@ -1682,7 +1686,7 @@ char * E4Recv_6905F0::sub_6905F0()
   char *result; // eax
 
   v2 = (void *)this->M12; /*0x6905f6*/
-  *this = &(void*)(void*)&ScoreFontClass_vftable; /*0x6905f9*/
+  *this = (void*)&ScoreFontClass_vftable; /*0x6905f9*/
   if ( v2 && this->M16 == 1 ) /*0x690607*/
   {
     RA2_OPDEL(v2); /*0x69060a*/

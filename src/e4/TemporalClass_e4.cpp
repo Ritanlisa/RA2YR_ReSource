@@ -10,22 +10,24 @@
 #include "e4/classes/MapClass_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/TerrainTypeClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x71A450
 namespace gamemd {
 int TemporalClass::Constructor()
 {
-  int v3; // eax
+  TemporalClass * v3;
 
   AbstractClass::Constructor(); /*0x71a453*/
   g_CurrentFrame = g_CurrentFrame; /*0x71a458*/
   this->TemporalClass_field_34 = 0; /*0x71a45d*/
   this->q02C = g_CurrentFrame; /*0x71a464*/
-  *(_DWORD *)this = &(void*)(void*)&TemporalClass_vftable; /*0x71a467*/
-  this->vtable2 = &(void*)(void*)&TemporalClass_vftable; /*0x71a46d*/
-  this->vtable3 = &(void*)(void*)&TemporalClass_vftable; /*0x71a474*/
-  this->vtable4 = &(void*)(void*)&TemporalClass_vftable; /*0x71a47b*/
+  *(void **)this = (void*)&TemporalClass_vftable; /*0x71a467*/
+  this->vtable2 = (void*)&TemporalClass_vftable; /*0x71a46d*/
+  this->vtable3 = (void*)&TemporalClass_vftable; /*0x71a474*/
+  this->vtable4 = (void*)&TemporalClass_vftable; /*0x71a47b*/
   if ( dword_B0EC70 < dword_B0EC68 /*0x71a4b7*/
     || (byte_B0EC6D || !dword_B0EC68)
     && dword_B0EC74 > 0
@@ -45,16 +47,16 @@ int TemporalClass::Constructor()
 namespace gamemd {
 TemporalClass::TemporalClass(TechnoClass * aP1)
 {
-  int v3; // eax
+  TemporalClass * v3;
   int v5; // [esp+Ch] [ebp-8h]
 
   AbstractClass::Constructor(); /*0x71a4e7*/
   *(&this->vtable21) = g_CurrentFrame; /*0x71a4fb*/
   *(&this->vtable23) = 0; /*0x71a4fe*/
-  *this = &(void*)(void*)&TemporalClass_vftable; /*0x71a501*/
-  this->vtable2 = &(void*)(void*)&TemporalClass_vftable; /*0x71a507*/
-  this->vtable3 = &(void*)(void*)&TemporalClass_vftable; /*0x71a50e*/
-  this->vtable4 = &(void*)(void*)&TemporalClass_vftable; /*0x71a515*/
+  *(void **)this = (void*)&TemporalClass_vftable; /*0x71a501*/
+  this->vtable2 = (void*)&TemporalClass_vftable; /*0x71a507*/
+  this->vtable3 = (void*)&TemporalClass_vftable; /*0x71a50e*/
+  this->vtable4 = (void*)&TemporalClass_vftable; /*0x71a515*/
   this->creationFrame = aP1; /*0x71a51c*/
   *(&this->vtable20) = 0; /*0x71a51f*/
   *(&this->vtable21) = g_CurrentFrame; /*0x71a529*/
@@ -98,7 +100,7 @@ void ** TemporalClass::ProcessTimeWarp()
   double v12; // st7
   int **v13; // ecx
   int WarpPerStep; // ebp
-  int *v15; // ecx
+  int * v15;
   int v16; // edi
   int v17; // eax
   int v18; // eax
@@ -327,10 +329,10 @@ void * TemporalClass::ProcessEvent(char a2)
 {
   int v3; // eax
 
-  *this = &(void*)(void*)&TemporalClass_vftable; /*0x71b1bd*/
-  this->vtable2 = &(void*)(void*)&TemporalClass_vftable; /*0x71b1c3*/
-  this->vtable3 = &(void*)(void*)&TemporalClass_vftable; /*0x71b1ca*/
-  this->vtable4 = &(void*)(void*)&TemporalClass_vftable; /*0x71b1d1*/
+  *(void **)this = (void*)&TemporalClass_vftable; /*0x71b1bd*/
+  this->vtable2 = (void*)&TemporalClass_vftable; /*0x71b1c3*/
+  this->vtable3 = (void*)&TemporalClass_vftable; /*0x71b1ca*/
+  this->vtable4 = (void*)&TemporalClass_vftable; /*0x71b1d1*/
   v3 = (*(int (__thiscall **)(int *, _DWORD **))(dword_B0EC60 + 16))(&dword_B0EC60, &this); /*0x71b1e3*/
   if ( v3 != -1 && v3 < dword_B0EC70 && v3 < --dword_B0EC70 ) /*0x71b1fe*/
   {
@@ -368,10 +370,10 @@ int TemporalClass::LoadTemporal(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x71a679*/
     {
       AbstractClass::InitVtables(aP0, (int)&aP1); /*0x71a682*/
-      *aP0 = (int)&(void*)(void*)&TemporalClass_vftable; /*0x71a687*/
-      aP0[1] = (int)&(void*)(void*)&TemporalClass_vftable; /*0x71a68d*/
-      aP0[2] = (int)&(void*)(void*)&TemporalClass_vftable; /*0x71a694*/
-      aP0[3] = (int)&(void*)(void*)&TemporalClass_vftable; /*0x71a69b*/
+      *(_DWORD *)aP0 = (int)&TemporalClass_vftable; /*0x71a687*/
+      aP0[1] = (int)&TemporalClass_vftable; /*0x71a68d*/
+      aP0[2] = (int)&TemporalClass_vftable; /*0x71a694*/
+      aP0[3] = (int)&TemporalClass_vftable; /*0x71a69b*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP0 + 9); /*0x71a6ab*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP0 + 10); /*0x71a6b9*/

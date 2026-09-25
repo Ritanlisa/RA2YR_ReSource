@@ -17,7 +17,7 @@ struct MixFileClass {
     unsigned char u8_11;  // 0x11
     unsigned char u8_12;  // 0x12
     int FileStartOffset;  // 0x14
-    MixHeaderData* Headers;  // 0x18
+    void* Headers;  // 0x18
     unsigned int q01C;  // 0x1C
     int q020;  // 0x20
     int MixFileClass_field_24;  // 0x24

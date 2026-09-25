@@ -4,13 +4,15 @@
 #include "e4/classes/Math_e4.hpp"
 #include "e4/classes/Matrix3x4_e4.hpp"
 #include "e4/classes/ParticleSystemClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x5AE860
 namespace gamemd {
 int Matrix3x4::Identity()
 {
-  *this = 1065353216; /*0x5ae867*/
+  *(_DWORD *)this = 1065353216; /*0x5ae867*/
   this->q004 = 0; /*0x5ae869*/
   this->q008 = 0; /*0x5ae86c*/
   this->q00C = 0; /*0x5ae86f*/

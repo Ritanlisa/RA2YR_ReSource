@@ -6,6 +6,8 @@
 #include "e4/classes/BuildingAnim_e4.hpp"
 #include "e4/classes/ColorListClass_e4.hpp"
 #include "e4/classes/LinkedList_flat_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x488520

@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Math_e4.hpp"
 #include "e4/classes/String_e4.hpp"
@@ -15,6 +16,8 @@
 #include "e4/classes/BuildingClass_e4.hpp"
 #include "e4/classes/CellClass_e4.hpp"
 #include "e4/classes/HouseClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x526810
@@ -27,8 +30,8 @@ ObjectClass * * INIClass::BinarySearchSection(INIClass * aP1)
   int v7; // eax
   size_t v8; // eax
   _DWORD *v9; // ecx
-  int v10; // ecx
-  int v11; // ebp
+  void * v10;
+  void * v11;
   int v12; // edi
   int v13; // edx
   unsigned int v15[3]; // [esp+Ch] [ebp-Ch] BYREF
@@ -300,12 +303,12 @@ unsigned int INIClass::GetString(INIClass * aP1, unsigned char * a2, INIClass * 
 namespace gamemd {
 INIClass::INIClass()
 {
-  _DWORD *result; // eax
+  void** result;
   _DWORD *v2; // ecx
   _DWORD *v3; // edx
-  int v4; // edi
-  int v5; // esi
-  int v6; // esi
+  void * v4;
+  void * v5;
+  _DWORD * v6;
   int v7; // esi
 
   result = this; /*0x535aa0*/
@@ -315,11 +318,11 @@ INIClass::INIClass()
   result[2] = 0; /*0x535aaf*/
   v2[1] = 0; /*0x535ab2*/
   v2[2] = 0; /*0x535ab5*/
-  *v2 = &(void*)(void*)&GenericNode_vftable; /*0x535ab8*/
+  *(void **)v2 = (void*)&GenericNode_vftable; /*0x535ab8*/
   result[8] = 0; /*0x535abe*/
   result[9] = 0; /*0x535ac1*/
-  result[7] = &(void*)(void*)&GenericNode_vftable; /*0x535ac4*/
-  result[3] = &(void*)(void*)&GenericList_vftable; /*0x535acd*/
+  result[7] = (void*)&GenericNode_vftable; /*0x535ac4*/
+  result[3] = (void*)&GenericList_vftable; /*0x535acd*/
   if ( result != (_DWORD *)-28 ) /*0x535ad4*/
   {
     v4 = result[8]; /*0x535ad6*/
@@ -342,7 +345,7 @@ INIClass::INIClass()
   if ( v7 ) /*0x535b04*/
     this->v3 = v3; /*0x535b06*/
   v2[1] = v3; /*0x535b09*/
-  result[3] = &(void*)(void*)&List_INIClass_INISection___vftable; /*0x535b0c*/
+  result[3] = (void*)&List_INIClass_INISection___vftable; /*0x535b0c*/
   result[10] = 0; /*0x535b13*/
   result[11] = 0; /*0x535b16*/
   result[12] = 0; /*0x535b19*/

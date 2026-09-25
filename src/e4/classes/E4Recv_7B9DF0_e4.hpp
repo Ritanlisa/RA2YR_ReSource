@@ -20,7 +20,7 @@ struct E4Recv_7B9DF0 {
     unsigned int q1908;  // 0x1908
     unsigned int q5444;  // 0x5444
 // --- flat members (END) ---
-    int Vf68(int, ...);  // G6 vtable slot dispatch
-    int sub_7B9DF0(LONG * a2, LONG * a3);  // 0x7B9DF0
+    int Vf68(int,  ...);    // G6 vtable slot dispatch
+    int sub_7B9DF0(LONG * a2,  LONG * a3);    // 0x7B9DF0
 };
 } // namespace gamemd

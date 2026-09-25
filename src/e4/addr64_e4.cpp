@@ -31,7 +31,11 @@
 #include "e4/classes/Process_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/E4Recv_631300_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/E4Recv_635560_e4.hpp"
+#include "e4/classes/E4Recv_631640_e4.hpp"
 
 // 0x6406E0
 namespace gamemd {
@@ -424,7 +428,7 @@ void RunNetworkGameLoop()
 {
   int v0; // eax
   void *v1; // ebx
-  int *v2; // esi
+  int * v2;
   int v3; // edi
   signed int v4; // eax
   int v5; // edi
@@ -434,7 +438,7 @@ void RunNetworkGameLoop()
   wchar_t *v9; // ebx
   int v10; // edi
   int *v11; // ebp
-  void *v12; // [esp+10h] [ebp-60h]
+  int * v12;
   unsigned int v13; // [esp+18h] [ebp-58h] BYREF
   int v14; // [esp+1Ch] [ebp-54h] BYREF
   int v15; // [esp+20h] [ebp-50h] BYREF
@@ -2920,7 +2924,7 @@ void Network_ProcessMapEvent(int a1, int a2)
         {
           ObjectVector::Construct(&v77, 0, 0); /*0x64ce2b*/
           v5 = v2 + a2; /*0x64ce30*/
-          v77 = &(void*)(void*)&DynamicVectorClass_ObjectClass___vftable; /*0x64ce33*/
+          v77 = (void*)&DynamicVectorClass_ObjectClass___vftable; /*0x64ce33*/
           v82 = 10; /*0x64ce3d*/
           v81 = 0; /*0x64ce45*/
           v2 = v2; /*0x64ce4d*/
@@ -2999,14 +3003,14 @@ void Network_ProcessMapEvent(int a1, int a2)
             v80 = 0; /*0x64d063*/
             v79 = 0; /*0x64d068*/
             VectorClass::CellConstructor(&v100, 0, 0); /*0x64d06c*/
-            v100 = &(void*)(void*)&DynamicVectorClass_Cell_vftable; /*0x64d07c*/
+            v100 = (void*)&DynamicVectorClass_Cell_vftable; /*0x64d07c*/
             v105 = 10; /*0x64d087*/
             v104 = 0; /*0x64d08e*/
             BoolVector::Construct(0, 0); /*0x64d095*/
             v99 = 10; /*0x64d09a*/
             v22 = 0; /*0x64d09e*/
             v23 = NumOfElements; /*0x64d0a0*/
-            v94 = &(void*)(void*)&DynamicVectorClass_bool_vftable; /*0x64d0a4*/
+            v94 = (void*)&DynamicVectorClass_bool_vftable; /*0x64d0a4*/
             for ( j = 0; v22 < (int)NumOfElements; ++v22 ) /*0x64d0b2*/
             {
               if ( !(_BYTE)v92 ) /*0x64d0c2*/
@@ -3276,7 +3280,7 @@ void Network_ProcessMapEvent(int a1, int a2)
               IDA_BYTE1(v70) &= ~0x80u; /*0x64d8d1*/
               ++k; /*0x64d8d4*/
             }
-            v94 = &(void*)(void*)&VectorClass_bool_vftable; /*0x64d8e6*/
+            v94 = (void*)&VectorClass_bool_vftable; /*0x64d8e6*/
             if ( v95 && IDA_BYTE1(v97) ) /*0x64d8f8*/
             {
               RA2_OPDEL(v95); /*0x64d8fb*/
@@ -3284,7 +3288,7 @@ void Network_ProcessMapEvent(int a1, int a2)
             }
             IDA_BYTE1(v97) = 0; /*0x64d90e*/
             v96 = 0; /*0x64d915*/
-            v100 = &(void*)(void*)&VectorClass_Cell_vftable; /*0x64d919*/
+            v100 = (void*)&VectorClass_Cell_vftable; /*0x64d919*/
             if ( v101 && IDA_BYTE1(v103) ) /*0x64d92f*/
             {
               RA2_OPDEL(v101); /*0x64d932*/
@@ -3294,7 +3298,7 @@ void Network_ProcessMapEvent(int a1, int a2)
             v102 = 0; /*0x64d94e*/
             RA2_OPDEL(Base); /*0x64d955*/
           }
-          v77 = &(void*)(void*)&VectorClass_ObjectClass___vftable; /*0x64d963*/
+          v77 = (void*)&VectorClass_ObjectClass___vftable; /*0x64d963*/
           if ( Block ) /*0x64d96d*/
           {
             if ( v80 ) /*0x64d975*/
@@ -3745,7 +3749,7 @@ int sub_642980()
 namespace gamemd {
 void sub_6429A0()
 {
-  g_UIManager[0] = (int)&(void*)(void*)&ProgressScreenClass_vftable; /*0x6429a5*/
+  g_UIManager[0] = (int)&ProgressScreenClass_vftable; /*0x6429a5*/
   if ( byte_AC4FB0 ) /*0x6429b1*/
   {
     RA2_OPDEL(dword_AC4FAC); /*0x6429b9*/
@@ -3775,7 +3779,7 @@ unsigned int * E4Recv_6429E0::sub_6429E0()
   this->u32_80 = -1; /*0x642a0f*/
   this->u32_70 = 0; /*0x642a1d*/
   this->u32_7C = 0; /*0x642a20*/
-  *this = &(void*)(void*)&ProgressScreenClass_vftable; /*0x642a23*/
+  *this = (void*)&ProgressScreenClass_vftable; /*0x642a23*/
   memset(this + 2, 0, 0x40u); /*0x642a29*/
   return this; /*0x642a2d*/
 }

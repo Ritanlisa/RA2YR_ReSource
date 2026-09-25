@@ -2,6 +2,8 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/ProgressTimer_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x4C93D0
@@ -9,14 +11,14 @@ namespace gamemd {
 unsigned int * ProgressTimer::GetValue(IUnknown * aP1)
 {
   __int16 v2; // bx
-  int v3; // esi
-  int v4; // eax
+  void * v3;
+  void * v4;
   int v5; // esi
   __int64 v6; // rax
   int v7; // eax
-  int v8; // edx
-  int v9; // ecx
-  __int16 v10; // cx
+  void * v8;
+  void * v9;
+  void * v10;
   int v12; // [esp+Ch] [ebp-4h]
 
   v2 = *(&this->u32_40); /*0x4c93d2*/
@@ -39,7 +41,7 @@ unsigned int * ProgressTimer::GetValue(IUnknown * aP1)
     if ( (__int16)v7 <= 0 ) /*0x4c941c*/
     {
   LABEL_12:
-      *aP1 = v12; /*0x4c9445*/
+      *(_DWORD *)aP1 = v12; /*0x4c9445*/
       return aP1; /*0x4c9453*/
     }
     v8 = this->q010; /*0x4c941e*/
@@ -59,7 +61,7 @@ unsigned int * ProgressTimer::GetValue(IUnknown * aP1)
     goto LABEL_12; /*0x4c9440*/
   }
   LABEL_14:
-  *aP1 = *(_DWORD *)this; /*0x4c945a*/
+  *(_DWORD *)aP1 = *(_DWORD *)this; /*0x4c945a*/
   return aP1; /*0x4c944d*/
 }
 } // namespace gamemd

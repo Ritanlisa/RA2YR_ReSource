@@ -32,6 +32,8 @@
 #include "e4/classes/StreamClass_e4.hpp"
 #include "e4/classes/XSurface_e4.hpp"
 #include "e4/classes/MouseClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x431BC0
@@ -177,28 +179,28 @@ MouseClass * * BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XS
   int v41; // eax
   int v42; // esi
   int v43; // edx
-  unsigned int v44; // ecx
+  void * v44;
   unsigned int v45; // eax
   int v46; // eax
   int v47; // ecx
   char *v48; // ebx
-  unsigned int v50; // edi
-  unsigned int v51; // eax
-  int v52; // eax
+  void * v50;
+  void * v51;
+  void * v52;
   unsigned int v53; // eax
   int v54; // eax
   int v55; // ecx
-  unsigned int v57; // edi
-  unsigned int v58; // eax
-  int v59; // eax
+  void * v57;
+  void * v58;
+  void * v59;
   unsigned int v60; // eax
   unsigned int v61; // [esp+20h] [ebp-4Ch]
   int v62; // [esp+24h] [ebp-48h] BYREF
-  unsigned int v63; // [esp+28h] [ebp-44h]
-  int v64; // [esp+2Ch] [ebp-40h]
+  void * v63;
+  void * v64;
   int v65; // [esp+30h] [ebp-3Ch]
   int v66; // [esp+34h] [ebp-38h]
-  int v67; // [esp+38h] [ebp-34h]
+  void * v67;
   int v68; // [esp+3Ch] [ebp-30h]
   int v70; // [esp+44h] [ebp-28h]
   int v71; // [esp+48h] [ebp-24h]
@@ -530,7 +532,7 @@ MouseClass * * BlitterRLEBlitSHP(IUnknown * aP0, int * a1, TechnoClass * aP2, IU
   int v31; // edi
   unsigned __int16 *v32; // edi
   int v33; // eax
-  int v34; // ebp
+  IUnknown * v34;
   int v35; // eax
   int v36; // edx
   unsigned int v37; // eax
@@ -765,7 +767,7 @@ unsigned int * E4Recv_437F50::sub_437F50()
   HRESULT v2; // esi
   LPVOID ppv; // [esp+Ch] [ebp-4h] BYREF
 
-  *this = 0; /*0x437f68*/
+  *(_DWORD *)this = 0; /*0x437f68*/
   v2 = CoCreateInstance(&stru_7E9500, 0, 7u, &riid, &ppv); /*0x437f74*/
   if ( v2 < 0 ) /*0x437f78*/
     goto LABEL_5; /*0x437f78*/
@@ -792,7 +794,7 @@ void BrainClass::sub_43A600()
   void *v5; // eax
 
   v2 = 0; /*0x43a608*/
-  *this = &(void*)(void*)&BrainClass_vftable; /*0x43a60a*/
+  *(void ** *)this = (void*)&BrainClass_vftable; /*0x43a60a*/
   v3 = *(this + 5); /*0x43a610*/
   if ( v3 > 0 ) /*0x43a615*/
   {
@@ -808,7 +810,7 @@ void BrainClass::sub_43A600()
   }
   (*(void (__thiscall **)(_DWORD *))(this->q004 + 12))(this + 1); /*0x43a63c*/
   v5 = (void *)this->u32_8; /*0x43a63f*/
-  this->q004 = &(void*)(void*)&VectorClass_NeuronClass___vftable; /*0x43a642*/
+  this->q004 = (void*)&VectorClass_NeuronClass___vftable; /*0x43a642*/
   if ( v5 && this->u8_11 ) /*0x43a64c*/
   {
     RA2_OPDEL(v5); /*0x43a652*/
@@ -828,7 +830,7 @@ unsigned int * BrainClass::sub_43AA90(char a2)
   void *v6; // eax
 
   v3 = 0; /*0x43aa95*/
-  *this = &(void*)(void*)&BrainClass_vftable; /*0x43aa97*/
+  *this = (void*)&BrainClass_vftable; /*0x43aa97*/
   v4 = *(this + 5); /*0x43aa9d*/
   if ( v4 > 0 ) /*0x43aaa2*/
   {
@@ -844,7 +846,7 @@ unsigned int * BrainClass::sub_43AA90(char a2)
   }
   (*(void (__thiscall **)(char *))(this->q004 + 12))((char *)this + 4); /*0x43aacd*/
   v6 = (void *)this->u32_8; /*0x43aad0*/
-  this->q004 = &(void*)(void*)&VectorClass_NeuronClass___vftable; /*0x43aad3*/
+  this->q004 = (void*)&VectorClass_NeuronClass___vftable; /*0x43aad3*/
   if ( v6 && this->u8_11 ) /*0x43aadd*/
   {
     RA2_OPDEL(v6); /*0x43aae5*/
@@ -1831,7 +1833,7 @@ int sub_438530()
 namespace gamemd {
 void sub_438590()
 {
-  dword_89C668 = (int)&(void*)(void*)&VectorClass_BombClass___vftable; /*0x438598*/
+  dword_89C668 = (int)&VectorClass_BombClass___vftable; /*0x438598*/
   if ( dword_89C66C && byte_89C675 ) /*0x4385ac*/
   {
     RA2_OPDEL(dword_89C66C); /*0x4385af*/

@@ -60,7 +60,7 @@ struct E4Recv_62D510 {
     unsigned int q5640;  // 0x5640
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    int Vf436(int, ...);  // G6 vtable slot dispatch
+    int Vf436(int,  ...);    // G6 vtable slot dispatch
     int sub_62D510();  // 0x62D510
 };
 } // namespace gamemd

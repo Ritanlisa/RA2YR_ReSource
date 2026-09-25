@@ -35,12 +35,11 @@ struct GameOption {
     unsigned int q5010;  // 0x5010
     unsigned int q5398;  // 0x5398
     unsigned int q5458;  // 0x5458
-    unsigned int u32_103;
     unsigned int u32_949;
 // --- flat members (END) ---
     char CheckDuplicate();
     int GetField();
-    void * SetDescriptionWStr(CampaignScore * aP1);
+    void * SetDescriptionWStr(void* aP1);
     void * SetDigest(CCINIClass * aP1);
 };
 

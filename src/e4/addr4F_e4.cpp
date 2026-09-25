@@ -34,6 +34,8 @@
 #include "e4/classes/MapClass_e4.hpp"
 #include "e4/classes/Options_e4.hpp"
 #include "e4/classes/ScenarioClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x4F10E0
@@ -124,7 +126,7 @@ void sub_4F18B0(HWND hDlg, unsigned int a2, unsigned int a3, unsigned int a4)
   HWND v7; // esi
   int v8; // edi
   wchar_t *v9; // eax
-  HouseClass *v10; // ecx
+  HouseClass * v10;
   int v11; // edx
   wchar_t *v12; // eax
   _DWORD *WindowLongA; // eax
@@ -224,9 +226,9 @@ void LoadFromINIGraphicMenu()
   bool v9; // bl
   int v10; // esi
   _DWORD *v11; // eax
-  char v12; // bl
+  void * v12;
   _DWORD *v13; // eax
-  char v14; // bl
+  void * v14;
   char *v15; // eax
   char v16; // bl
   char *v17; // eax
@@ -278,10 +280,10 @@ void LoadFromINIGraphicMenu()
   v8 = v7 + 22; /*0x4f1d18*/
   v7[21] = 0; /*0x4f1d1b*/
   sub_4F2C00(0, 0); /*0x4f1d22*/
-  v7[22] = (char *)&(void*)(void*)&DynamicVectorClass_GraphicMenuItem___vftable; /*0x4f1d27*/
+  v7[22] = (char *)(void*)&DynamicVectorClass_GraphicMenuItem___vftable; /*0x4f1d27*/
   v7[27] = (char *)10; /*0x4f1d2d*/
   v7[26] = 0; /*0x4f1d34*/
-  *v7 = (char *)&(void*)(void*)&GraphicMenu_vftable; /*0x4f1d3b*/
+  *v7 = (char *)(void*)&GraphicMenu_vftable; /*0x4f1d3b*/
   unknown_libname_73(Source); /*0x4f1d42*/
   String::Assign((char **)&v35, &g_INI_DefaultBuffer); /*0x4f1d50*/
   String::Assign((char **)&v32, aBackground); /*0x4f1d5e*/
@@ -298,7 +300,7 @@ void LoadFromINIGraphicMenu()
     String::Concat2((const char **)Source, (char **)&v32, aVqa); /*0x4f1dd6*/
     v11 = CCFileClass::Construct2(&v45, (char **)&v32); /*0x4f1de4*/
     v12 = (*(int (__thiscall **)(_DWORD *, _DWORD, int))(*v11 + 20))(v11, 0, a3); /*0x4f1df8*/
-    v46[0] = &(void*)(void*)&CCFileClass_vftable; /*0x4f1dfa*/
+    v46[0] = (void*)&CCFileClass_vftable; /*0x4f1dfa*/
     v48 = 0; /*0x4f1e02*/
     Vector::Clear((int)v47); /*0x4f1e09*/
     v46[0] = &off_7E1668; /*0x4f1e12*/
@@ -334,7 +336,7 @@ void LoadFromINIGraphicMenu()
     String::Concat2((const char **)&v35, (char **)&a2, aBik_0); /*0x4f1e66*/
     v13 = CCFileClass::Construct2(v46, (char **)&a2); /*0x4f1e74*/
     v14 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v13 + 20))(v13, 0); /*0x4f1e89*/
-    v46[0] = &(void*)(void*)&CCFileClass_vftable; /*0x4f1e8b*/
+    v46[0] = (void*)&CCFileClass_vftable; /*0x4f1e8b*/
     v48 = 0; /*0x4f1e93*/
     Vector::Clear((int)v47); /*0x4f1e9e*/
     v46[0] = &off_7E1668; /*0x4f1ea7*/
@@ -484,7 +486,7 @@ ObjectClass * * E4Recv_4F2300::ProcessGraphicMenu()
         v11 = 0; /*0x4f24a7*/
         v22 = &this->q160; /*0x4f24a9*/
         v23 = 0; /*0x4f24b1*/
-        v21 = &(void*)(void*)&VectorCursor_GraphicMenuItem___DynamicVectorClass_GraphicMenuItem___vftable; /*0x4f24b5*/
+        v21 = (void*)&VectorCursor_GraphicMenuItem___DynamicVectorClass_GraphicMenuItem___vftable; /*0x4f24b5*/
         if ( Map::CanScroll(&v21) ) /*0x4f24bd*/
         {
           do /*0x4f24f6*/
@@ -498,13 +500,13 @@ ObjectClass * * E4Recv_4F2300::ProcessGraphicMenu()
         }
         if ( ((unsigned __int8 (__thiscall *)(void ***))v21[1])(&v21) ) /*0x4f2505*/
           v11 = *(_BYTE **)(this->q05C + 4 * v23); /*0x4f2517*/
-        v21 = &(void*)(void*)&VectorCursor_GraphicMenuItem___DynamicVectorClass_GraphicMenuItem___vftable; /*0x4f251a*/
+        v21 = (void*)&VectorCursor_GraphicMenuItem___DynamicVectorClass_GraphicMenuItem___vftable; /*0x4f251a*/
       }
       else
       {
         v19 = &this->q160; /*0x4f241e*/
         v20 = 0; /*0x4f2422*/
-        v18 = &(void*)(void*)&VectorCursor_GraphicMenuItem___DynamicVectorClass_GraphicMenuItem___vftable; /*0x4f242a*/
+        v18 = (void*)&VectorCursor_GraphicMenuItem___DynamicVectorClass_GraphicMenuItem___vftable; /*0x4f242a*/
         if ( Map::CanScroll(&v18) ) /*0x4f2432*/
         {
           do /*0x4f2467*/
@@ -520,7 +522,7 @@ ObjectClass * * E4Recv_4F2300::ProcessGraphicMenu()
           v11 = *(_BYTE **)(this->q05C + 4 * v20); /*0x4f2488*/
         else
           v11 = 0; /*0x4f2498*/
-        v18 = &(void*)(void*)&VectorCursor_GraphicMenuItem___DynamicVectorClass_GraphicMenuItem___vftable; /*0x4f248b*/
+        v18 = (void*)&VectorCursor_GraphicMenuItem___DynamicVectorClass_GraphicMenuItem___vftable; /*0x4f248b*/
       }
       if ( v11 ) /*0x4f2524*/
       {
@@ -539,7 +541,7 @@ ObjectClass * * E4Recv_4F2300::ProcessGraphicMenu()
       v13 = 0; /*0x4f2553*/
       v25 = &this->q160; /*0x4f2559*/
       v26 = 0; /*0x4f255d*/
-      v24 = &(void*)(void*)&VectorCursor_GraphicMenuItem___DynamicVectorClass_GraphicMenuItem___vftable; /*0x4f2561*/
+      v24 = (void*)&VectorCursor_GraphicMenuItem___DynamicVectorClass_GraphicMenuItem___vftable; /*0x4f2561*/
       if ( Map::CanScroll(&v24) ) /*0x4f2569*/
       {
         do /*0x4f25a2*/
@@ -553,7 +555,7 @@ ObjectClass * * E4Recv_4F2300::ProcessGraphicMenu()
       }
       if ( ((unsigned __int8 (__thiscall *)(void ***))v24[1])(&v24) ) /*0x4f25b1*/
         v13 = *(_BYTE **)(this->q05C + 4 * v26); /*0x4f25c3*/
-      v24 = &(void*)(void*)&VectorCursor_GraphicMenuItem___DynamicVectorClass_GraphicMenuItem___vftable; /*0x4f25c8*/
+      v24 = (void*)&VectorCursor_GraphicMenuItem___DynamicVectorClass_GraphicMenuItem___vftable; /*0x4f25c8*/
       if ( v13 != v4 ) /*0x4f25d0*/
       {
         if ( v4 ) /*0x4f25d4*/
@@ -828,7 +830,7 @@ MSAnim * * E4Recv_4F3460::sub_4F3460(int aP1, ReferenceCounted * aP2, unsigned i
   this->q030 = 0; /*0x4f34a7*/
   unknown_libname_73(&this->q0142); /*0x4f34aa*/
   aP8 = aP8; /*0x4f34af*/
-  *(_DWORD *)this = &(void*)(void*)&GraphicMenuImageItem_vftable; /*0x4f34b3*/
+  *(_DWORD *)this = (void*)&GraphicMenuImageItem_vftable; /*0x4f34b3*/
   if ( String::Length(aP8) && (aP2 = RA2_OPNEW(0x10u)) != 0 ) /*0x4f34d4*/
   {
     String::Assign((char **)&aP1, aHighlightsound); /*0x4f34df*/
@@ -1129,7 +1131,7 @@ int E4Recv_4FA210::sub_4FA210(int a2, int a3)
   *(_DWORD *)(a2 + 8) = 0; /*0x4fa234*/
   *(_BYTE *)(a2 + 12) = 1; /*0x4fa237*/
   *(_BYTE *)(a2 + 13) = 0; /*0x4fa23b*/
-  *(_DWORD *)a2 = &(void*)(void*)&VectorClass_TeamTypeClass_const___vftable; /*0x4fa23e*/
+  *(_DWORD *)a2 = (void*)&VectorClass_TeamTypeClass_const___vftable; /*0x4fa23e*/
   if ( (void ***)a2 != &v11 ) /*0x4fa244*/
   {
     VectorClass::ClearAndFree3(a2); /*0x4fa248*/
@@ -1167,8 +1169,8 @@ int E4Recv_4FA210::sub_4FA210(int a2, int a3)
   v9 = Block; /*0x4fa2a5*/
   v4 = Block == 0; /*0x4fa2a9*/
   *(_DWORD *)(a2 + 20) = v8; /*0x4fa2ab*/
-  *(_DWORD *)a2 = &(void*)(void*)&TypeList_TeamTypeClass_const___vftable; /*0x4fa2ae*/
-  v11 = &(void*)(void*)&VectorClass_TeamTypeClass_const___vftable; /*0x4fa2b4*/
+  *(_DWORD *)a2 = (void*)&TypeList_TeamTypeClass_const___vftable; /*0x4fa2ae*/
+  v11 = (void*)&VectorClass_TeamTypeClass_const___vftable; /*0x4fa2b4*/
   if ( !v4 && v14 ) /*0x4fa2c2*/
     RA2_OPDEL(v9); /*0x4fa2c5*/
   return a2; /*0x4fa2cf*/
@@ -1409,21 +1411,21 @@ int sub_4F1B80()
     v6[2] = 0; /*0x4f1be3*/
     v7[1] = 0; /*0x4f1be7*/
     v7[2] = 0; /*0x4f1beb*/
-    v7[0] = &(void*)(void*)&GenericNode_vftable; /*0x4f1bef*/
+    v7[0] = (void*)&GenericNode_vftable; /*0x4f1bef*/
     GenericNode::Constructor(v8); /*0x4f1bf7*/
     LinkedList::Prepend(v7, (int)v8); /*0x4f1c0d*/
-    v6[3] = &(void*)(void*)&List_INIClass_INISection___vftable; /*0x4f1c16*/
+    v6[3] = (void*)&List_INIClass_INISection___vftable; /*0x4f1c16*/
     memset(&v8[3], 0, 12); /*0x4f1c24*/
     v9 = 0; /*0x4f1c30*/
     v10 = 0; /*0x4f1c34*/
     v11 = 0; /*0x4f1c38*/
-    v6[0] = &(void*)(void*)&INIClass_vftable; /*0x4f1c3c*/
+    v6[0] = (void*)&INIClass_vftable; /*0x4f1c3c*/
     if ( FileStraw::Open(v6, (int)v12, 0) <= 0 ) /*0x4f1c4b*/
       v5 = 0; /*0x4f1c5c*/
     else
       v5 = LoadFromINIGraphicMenu(a1, v6, a3); /*0x4f1c58*/
     HashTable::DestroyHashTableINIClass(v6); /*0x4f1c62*/
-    v12[0] = &(void*)(void*)&CCFileClass_vftable; /*0x4f1c6e*/
+    v12[0] = (void*)&CCFileClass_vftable; /*0x4f1c6e*/
     v14 = 0; /*0x4f1c76*/
     Vector::Clear((int)v13); /*0x4f1c7d*/
     v12[0] = &off_7E1668; /*0x4f1c86*/
@@ -1432,7 +1434,7 @@ int sub_4F1B80()
   }
   else
   {
-    v12[0] = &(void*)(void*)&CCFileClass_vftable; /*0x4f1bab*/
+    v12[0] = (void*)&CCFileClass_vftable; /*0x4f1bab*/
     v14 = 0; /*0x4f1bb3*/
     Vector::Clear((int)v13); /*0x4f1bba*/
     v12[0] = &off_7E1668; /*0x4f1bc3*/
@@ -1453,7 +1455,7 @@ int E4Recv_4F2280::sub_4F2280(int a2, int a3)
 
   v6 = 0; /*0x4f2286*/
   v5 = this + 88; /*0x4f228e*/
-  v4 = &(void*)(void*)&VectorCursor_GraphicMenuItem___DynamicVectorClass_GraphicMenuItem___vftable; /*0x4f2296*/
+  v4 = (void*)&VectorCursor_GraphicMenuItem___DynamicVectorClass_GraphicMenuItem___vftable; /*0x4f2296*/
   for ( result = Map::CanScroll(&v4); (_BYTE)result; result = ((int (__thiscall *)(void ***))v4[1])(&v4) ) /*0x4f22a6*/
   {
     if ( *(_DWORD *)(*(_DWORD *)(*((_DWORD *)v5 + 1) + 4 * v6) + 4) == a2 ) /*0x4f22c3*/
@@ -1475,7 +1477,7 @@ int E4Recv_4F26E0::sub_4F26E0(int a2)
 
   v5 = &this->q058; /*0x4f26e7*/
   v6 = 0; /*0x4f26ef*/
-  v4 = &(void*)(void*)&VectorCursor_GraphicMenuItem___DynamicVectorClass_GraphicMenuItem___vftable; /*0x4f26f7*/
+  v4 = (void*)&VectorCursor_GraphicMenuItem___DynamicVectorClass_GraphicMenuItem___vftable; /*0x4f26f7*/
   if ( Map::CanScroll(&v4) ) /*0x4f26ff*/
   {
     do /*0x4f2738*/
@@ -1505,7 +1507,7 @@ int E4Recv_4F2770::sub_4F2770(int a2)
 
   v5 = &this->q058; /*0x4f2777*/
   v6 = 0; /*0x4f277f*/
-  v4 = &(void*)(void*)&VectorCursor_GraphicMenuItem___DynamicVectorClass_GraphicMenuItem___vftable; /*0x4f2787*/
+  v4 = (void*)&VectorCursor_GraphicMenuItem___DynamicVectorClass_GraphicMenuItem___vftable; /*0x4f2787*/
   if ( Map::CanScroll(&v4) ) /*0x4f278f*/
   {
     do /*0x4f27c8*/
@@ -1532,7 +1534,7 @@ unsigned int * E4Recv_4F2C00::sub_4F2C00(int a2, int a3)
   this->Height = a2; /*0x4f2c0e*/
   this->Name = 1; /*0x4f2c11*/
   this->q034 = 0; /*0x4f2c15*/
-  *this = &(void*)(void*)&VectorClass_GraphicMenuItem___vftable; /*0x4f2c18*/
+  *this = (void*)&VectorClass_GraphicMenuItem___vftable; /*0x4f2c18*/
   if ( a2 ) /*0x4f2c1e*/
   {
     if ( a3 ) /*0x4f2c26*/
@@ -1583,7 +1585,7 @@ int * E4Recv_4F2F10::sub_4F2F10(GraphicMenuAnimItem * aP1, unsigned int * a2, Gr
   this->q020 = 0; /*0x4f2f4d*/
   this->q01C = v10; /*0x4f2f50*/
   this->q024 = 0; /*0x4f2f5a*/
-  *this = (int)&(void*)(void*)&GraphicMenuAnimItem_vftable; /*0x4f2f5d*/
+  *this = (int)&GraphicMenuAnimItem_vftable; /*0x4f2f5d*/
   CCFileClass::Construct2(v19, aP5); /*0x4f2f63*/
   CCFileClass::Construct2(v16, a6); /*0x4f2f74*/
   if ( CCFileClass::Open(v19, 0) ) /*0x4f2f81*/
@@ -1603,12 +1605,12 @@ int * E4Recv_4F2F10::sub_4F2F10(GraphicMenuAnimItem * aP1, unsigned int * a2, Gr
       }
     }
   }
-  v16[0] = &(void*)(void*)&CCFileClass_vftable; /*0x4f3011*/
+  v16[0] = (void*)&CCFileClass_vftable; /*0x4f3011*/
   v18 = 0; /*0x4f3015*/
   Vector::Clear((int)v17); /*0x4f3019*/
   v16[0] = &off_7E1668; /*0x4f3027*/
   BufferIOFileClass::Dtor(v16); /*0x4f302b*/
-  v19[0] = &(void*)(void*)&CCFileClass_vftable; /*0x4f3037*/
+  v19[0] = (void*)&CCFileClass_vftable; /*0x4f3037*/
   v21 = 0; /*0x4f303e*/
   Vector::Clear((int)v20); /*0x4f3045*/
   v19[0] = &off_7E1668; /*0x4f3051*/
@@ -1673,10 +1675,10 @@ unsigned int * E4Recv_4F3C40::sub_4F3C40(int a2, const char ** a3)
   v3[6] = 0; /*0x4f3c61*/
   *((_BYTE *)v3 + 28) = 1; /*0x4f3c64*/
   *((_BYTE *)v3 + 29) = 0; /*0x4f3c68*/
-  v3[4] = &(void*)(void*)&DynamicVectorClass_unsigned_int_vftable; /*0x4f3c6b*/
+  v3[4] = (void*)&DynamicVectorClass_unsigned_int_vftable; /*0x4f3c6b*/
   v3[9] = 10; /*0x4f3c71*/
   v3[8] = 0; /*0x4f3c78*/
-  *v3 = &(void*)(void*)&GraphicMenuShortcutItem_vftable; /*0x4f3c7b*/
+  *v3 = (void*)&GraphicMenuShortcutItem_vftable; /*0x4f3c7b*/
   unknown_libname_73(&a2); /*0x4f3c82*/
   v5 = String::Tokenize(a3, 0, Delimiter, (void **)&a2); /*0x4f3c9f*/
   if ( String::Length((const char **)&a2) ) /*0x4f3ca1*/
@@ -2019,7 +2021,7 @@ void sub_4F5130()
 {
   if ( (byte_A8EF60 & 1) == 0 ) /*0x4f513a*/
   {
-    dword_A8EFC8 = (int)&(void*)(void*)&VectorClass_HouseClass_BuildChoiceClass___vftable; /*0x4f513e*/
+    dword_A8EFC8 = (int)&VectorClass_HouseClass_BuildChoiceClass___vftable; /*0x4f513e*/
     byte_A8EF60 |= 1u; /*0x4f5151*/
     if ( dword_A8EFCC ) /*0x4f5157*/
     {

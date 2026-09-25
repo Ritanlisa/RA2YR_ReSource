@@ -4,6 +4,8 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/CellStruct_e4.hpp"
 #include "e4/classes/XSurface_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x7BA8C0
@@ -830,23 +832,23 @@ XSurface * * XSurface::BlitPart(void ** a2, XSurface * a3, void ** arg8, void **
   {
     if ( this->vt_slot_112() == 1 ) /*0x7bbc1f*/
     {
-      a4 = &(void*)(void*)&BlitTrans_unsigned_char_vftable; /*0x7bbc3d*/
+      a4 = (void*)&BlitTrans_unsigned_char_vftable; /*0x7bbc3d*/
       return BlitterCopySimpleSHP(v6, v11, &a4, 0, 3, 1000, 0); /*0x7bbc45*/
     }
     else
     {
-      a3 = &(void*)(void*)&BlitTrans_unsigned_short_vftable; /*0x7bbc5c*/
+      a3 = (void*)&BlitTrans_unsigned_short_vftable; /*0x7bbc5c*/
       return BlitterCopySimpleSHP(v6, v11, &a3, 0, 3, 1000, 0); /*0x7bbc6a*/
     }
   }
   else if ( this->vt_slot_112() == 1 ) /*0x7bbc72*/
   {
-    a2 = &(void*)(void*)&BlitPlain_unsigned_char_vftable; /*0x7bbc90*/
+    a2 = (void*)&BlitPlain_unsigned_char_vftable; /*0x7bbc90*/
     return BlitterCopySimpleSHP(v6, v11, &a2, 0, 3, 1000, 0); /*0x7bbc98*/
   }
   else
   {
-    arg8 = &(void*)(void*)&BlitPlain_unsigned_short_vftable; /*0x7bbcaf*/
+    arg8 = (void*)&BlitPlain_unsigned_short_vftable; /*0x7bbcaf*/
     return BlitterCopySimpleSHP(v6, v11, &arg8, 0, 3, 1000, 0); /*0x7bbcca*/
   }
 }
@@ -871,23 +873,23 @@ XSurface * * XSurface::Blit(int a2, void ** a3, XSurface * arg8, int a5, unsigne
   {
     if ( (*(int (__thiscall **)(void *))(*(_DWORD *)&this->q02C2))(this) == 1 ) /*0x7bbd65*/
     {
-      a4 = &(void*)(void*)&BlitTrans_unsigned_char_vftable; /*0x7bbd70*/
+      a4 = (void*)&BlitTrans_unsigned_char_vftable; /*0x7bbd70*/
       return BlitterCopySimpleSHP(arg8, v10, &a4, 0, 3, 1000, 0); /*0x7bbd7e*/
     }
     else
     {
-      a3 = &(void*)(void*)&BlitTrans_unsigned_short_vftable; /*0x7bbd89*/
+      a3 = (void*)&BlitTrans_unsigned_short_vftable; /*0x7bbd89*/
       return BlitterCopySimpleSHP(arg8, v10, &a3, 0, 3, 1000, 0); /*0x7bbda8*/
     }
   }
   else if ( (*(int (__thiscall **)(void *))(*(_DWORD *)&this->q02C2))(this) == 1 ) /*0x7bbdbe*/
   {
-    a4 = &(void*)(void*)&BlitPlain_unsigned_char_vftable; /*0x7bbdc9*/
+    a4 = (void*)&BlitPlain_unsigned_char_vftable; /*0x7bbdc9*/
     return BlitterCopySimpleSHP(arg8, v10, &a4, 0, 3, 1000, 0); /*0x7bbdd7*/
   }
   else
   {
-    a3 = &(void*)(void*)&BlitPlain_unsigned_short_vftable; /*0x7bbde2*/
+    a3 = (void*)&BlitPlain_unsigned_short_vftable; /*0x7bbde2*/
     return BlitterCopySimpleSHP(arg8, v10, &a3, 0, 3, 1000, 0); /*0x7bbe01*/
   }
 }

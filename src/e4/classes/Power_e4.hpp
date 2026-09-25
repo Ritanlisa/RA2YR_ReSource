@@ -379,7 +379,7 @@ struct Power {
 // --- flat members (END) ---
     int Update(int * a2);  // 0x43A5D0
     unsigned int * UpdateAll();  // 0x67C6E0
-    int ComputeHousePowerChecksum(unsigned int * a2);  // 0x68B940
+    void* ComputeHousePowerChecksum(unsigned int * a2);  // 0x68B940
     int FinalizeDrain(int a2);  // 0x4A1C10
     int FlagProcess(int a2);  // 0x4A1CA0
     int TimerProcess();  // 0x4A1D50

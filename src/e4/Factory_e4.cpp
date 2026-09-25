@@ -5,14 +5,17 @@
 #include "e4/classes/Cell_e4.hpp"
 #include "e4/classes/Coord_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/FactoryClass_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
 
 // 0x663D60
 namespace gamemd {
 int Factory::GetLinkedIndex(DynamicVector * aP1)
 {
   char result; // al
-  int v3; // edx
+  void * v3;
   int v4; // eax
   char **v5; // esi
 

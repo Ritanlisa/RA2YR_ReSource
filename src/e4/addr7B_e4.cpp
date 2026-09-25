@@ -51,6 +51,8 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/UDPInterfaceClass_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x7B0310
@@ -492,7 +494,7 @@ CampaignClass * * E4Recv_7B2E50::sub_7B2E50()
   void *v8; // eax
   void *v9; // eax
 
-  *(_DWORD *)this = &(void*)(void*)&UDPInterfaceClass_vftable; /*0x7b2e56*/
+  *(void **)this = (void*)&UDPInterfaceClass_vftable; /*0x7b2e56*/
   while ( this->qFCD2 ) /*0x7b2e5c*/
   {
     RA2_OPDEL(*this->q3F33C); /*0x7b2e6f*/
@@ -527,7 +529,7 @@ CampaignClass * * E4Recv_7B2E50::sub_7B2E50()
   }
   UDPInterfaceClass::connect(); /*0x7b2f04*/
   v8 = this->q3F554; /*0x7b2f09*/
-  this->qFD54 = &(void*)(void*)&VectorClass_unsigned_char___vftable; /*0x7b2f0f*/
+  this->qFD54 = (void*)&VectorClass_unsigned_char___vftable; /*0x7b2f0f*/
   if ( v8 && this->u8_3F55D ) /*0x7b2f1d*/
   {
     RA2_OPDEL(v8); /*0x7b2f26*/
@@ -536,7 +538,7 @@ CampaignClass * * E4Recv_7B2E50::sub_7B2E50()
   this->u8_3F55D = 0; /*0x7b2f34*/
   this->q3F558 = 0; /*0x7b2f3a*/
   v9 = this->q3F33C; /*0x7b2f40*/
-  this->q3F338 = &(void*)(void*)&VectorClass_unsigned_char___vftable; /*0x7b2f46*/
+  this->q3F338 = (void*)&VectorClass_unsigned_char___vftable; /*0x7b2f46*/
   if ( v9 && this->u8_3F345 ) /*0x7b2f54*/
   {
     RA2_OPDEL(v9); /*0x7b2f5d*/
@@ -664,7 +666,7 @@ char ** ProcessStringAndCopy(AbstractClass * aP0, CCINIClass * aP1, char ** a2)
   if ( !*a2 ) /*0x7b6459*/
     v7 = &g_INI_DefaultBuffer; /*0x7b645f*/
   String_Process_7B4A10(v7); /*0x7b6469*/
-  *aP0 = 0; /*0x7b6472*/
+  *(_DWORD *)aP0 = 0; /*0x7b6472*/
   if ( Block ) /*0x7b647b*/
   {
     v8 = (char *)RA2_OPNEW(strlen(Block) + 1); /*0x7b6490*/
@@ -756,7 +758,7 @@ void unknown_libname_74()
 namespace gamemd {
 AbstractClass * * E4Recv_7B7C00::sub_7B7C00(int a2, void ** a3)
 {
-  int v5; // esi
+  unsigned int v5;
   const wchar_t *v6; // eax
   const wchar_t *v8; // eax
   const wchar_t *v9; // eax
@@ -942,7 +944,7 @@ void IntersectSurfaceRects(IUnknown * aP0, int a2, XSurface * aP2, int a4)
       aP2[2] = v5 + *aP0; /*0x7bbe56*/
       v6 = *aP0; /*0x7bbe59*/
       v7 = aP0[2]; /*0x7bbe5b*/
-      *aP0 = 0; /*0x7bbe5e*/
+      *(_DWORD *)aP0 = 0; /*0x7bbe5e*/
       aP0[2] = v6 + v7; /*0x7bbe66*/
     }
     v8 = aP0[1]; /*0x7bbe69*/
@@ -1101,12 +1103,12 @@ char sub_7BC1F0(XSurface * a1, XSurface * a2, XSurface * aP2, int arg4)
 
   if ( (*(int (__thiscall **)(int *))(*a1 + 112))(a1) == 1 ) /*0x7bc1ff*/
   {
-    v7 = &(void*)(void*)&BlitPlain_unsigned_char_vftable; /*0x7bc20a*/
+    v7 = (void*)&BlitPlain_unsigned_char_vftable; /*0x7bc20a*/
     return BlitterCopySimpleSHP(a1, a2, aP2, arg4, (int *)&v7, 0, 3, 1000, 0); /*0x7bc218*/
   }
   else
   {
-    v7 = &(void*)(void*)&BlitPlain_unsigned_short_vftable; /*0x7bc223*/
+    v7 = (void*)&BlitPlain_unsigned_short_vftable; /*0x7bc223*/
     return BlitterCopySimpleSHP(a1, a2, aP2, arg4, (int *)&v7, 0, 3, 1000, 0); /*0x7bc240*/
   }
 }
@@ -1119,12 +1121,12 @@ char sub_7BC250(XSurface * a1, XSurface * a2, XSurface * aP2, int arg4)
 
   if ( (*(int (__thiscall **)(int *))(*a1 + 112))(a1) == 1 ) /*0x7bc25f*/
   {
-    v7 = &(void*)(void*)&BlitTrans_unsigned_char_vftable; /*0x7bc26a*/
+    v7 = (void*)&BlitTrans_unsigned_char_vftable; /*0x7bc26a*/
     return BlitterCopySimpleSHP(a1, a2, aP2, arg4, (int *)&v7, 0, 3, 1000, 0); /*0x7bc278*/
   }
   else
   {
-    v7 = &(void*)(void*)&BlitTrans_unsigned_short_vftable; /*0x7bc283*/
+    v7 = (void*)&BlitTrans_unsigned_short_vftable; /*0x7bc283*/
     return BlitterCopySimpleSHP(a1, a2, aP2, arg4, (int *)&v7, 0, 3, 1000, 0); /*0x7bc2a0*/
   }
 }
@@ -1670,7 +1672,7 @@ namespace gamemd {
 int sub_7B0110()
 {
   ComPtr::Constructor(&dword_B77F58); /*0x7b0115*/
-  dword_B77F58 = (int)&(void*)(void*)&rc_ptr_WDTState_vftable; /*0x7b011f*/
+  dword_B77F58 = (int)&rc_ptr_WDTState_vftable; /*0x7b011f*/
   return atexit(sub_7B0130); /*0x7b012f*/
 }
 } // namespace gamemd
@@ -1679,7 +1681,7 @@ int sub_7B0110()
 namespace gamemd {
 void sub_7B0130()
 {
-  dword_B77F58 = (int)&(void*)(void*)&rc_ptr_WDTState_vftable; /*0x7b0130*/
+  dword_B77F58 = (int)&rc_ptr_WDTState_vftable; /*0x7b0130*/
   ComPtr::Release(&dword_B77F58); /*0x7b013f*/
 }
 } // namespace gamemd
@@ -1689,7 +1691,7 @@ namespace gamemd {
 int sub_7B0150()
 {
   ComPtr::Constructor(&dword_B77F70); /*0x7b0155*/
-  dword_B77F70 = (int)&(void*)(void*)&rc_ptr_WDTState_vftable; /*0x7b015f*/
+  dword_B77F70 = (int)&rc_ptr_WDTState_vftable; /*0x7b015f*/
   return atexit(sub_7B0170); /*0x7b016f*/
 }
 } // namespace gamemd
@@ -1698,7 +1700,7 @@ int sub_7B0150()
 namespace gamemd {
 void sub_7B0170()
 {
-  dword_B77F70 = (int)&(void*)(void*)&rc_ptr_WDTState_vftable; /*0x7b0170*/
+  dword_B77F70 = (int)&rc_ptr_WDTState_vftable; /*0x7b0170*/
   ComPtr::Release(&dword_B77F70); /*0x7b017f*/
 }
 } // namespace gamemd
@@ -1708,7 +1710,7 @@ namespace gamemd {
 int sub_7B0190()
 {
   ComPtr::Constructor(&dword_B77F68); /*0x7b0195*/
-  dword_B77F68 = (int)&(void*)(void*)&rc_ptr_WorldDominationTour_Campaign_vftable; /*0x7b019f*/
+  dword_B77F68 = (int)&rc_ptr_WorldDominationTour_Campaign_vftable; /*0x7b019f*/
   return atexit(sub_7B01B0); /*0x7b01af*/
 }
 } // namespace gamemd
@@ -1717,7 +1719,7 @@ int sub_7B0190()
 namespace gamemd {
 void sub_7B01B0()
 {
-  dword_B77F68 = (int)&(void*)(void*)&rc_ptr_WorldDominationTour_Campaign_vftable; /*0x7b01b0*/
+  dword_B77F68 = (int)&rc_ptr_WorldDominationTour_Campaign_vftable; /*0x7b01b0*/
   ComPtr::Release(&dword_B77F68); /*0x7b01bf*/
 }
 } // namespace gamemd
@@ -1727,7 +1729,7 @@ namespace gamemd {
 int sub_7B01D0()
 {
   ComPtr::Constructor(&dword_B77F78); /*0x7b01d5*/
-  dword_B77F78 = (int)&(void*)(void*)&rc_ptr_WorldDominationTour_Campaign_vftable; /*0x7b01df*/
+  dword_B77F78 = (int)&rc_ptr_WorldDominationTour_Campaign_vftable; /*0x7b01df*/
   return atexit(sub_7B01F0); /*0x7b01ef*/
 }
 } // namespace gamemd
@@ -1736,7 +1738,7 @@ int sub_7B01D0()
 namespace gamemd {
 void sub_7B01F0()
 {
-  dword_B77F78 = (int)&(void*)(void*)&rc_ptr_WorldDominationTour_Campaign_vftable; /*0x7b01f0*/
+  dword_B77F78 = (int)&rc_ptr_WorldDominationTour_Campaign_vftable; /*0x7b01f0*/
   ComPtr::Release(&dword_B77F78); /*0x7b01ff*/
 }
 } // namespace gamemd
@@ -1776,16 +1778,16 @@ rc_ptr * FindWDTTerritoryClass(rc_ptr_base * a1, int a2)
   else
   {
     ComPtr::Constructor(v6); /*0x7b03d9*/
-    v6[0] = &(void*)(void*)&rc_ptr_WDTTerritory_vftable; /*0x7b03de*/
+    v6[0] = (void*)&rc_ptr_WDTTerritory_vftable; /*0x7b03de*/
     v3 = 1; /*0x7b03e6*/
     v4 = v6; /*0x7b03eb*/
   }
   ComPtr::Constructor(a1); /*0x7b03f1*/
-  *a1 = &(void*)(void*)&rc_ptr_WDTTerritory_vftable; /*0x7b03f6*/
+  *a1 = (void*)&rc_ptr_WDTTerritory_vftable; /*0x7b03f6*/
   ComPtr::Set(a1, v4[1]); /*0x7b0402*/
   if ( (v3 & 1) != 0 ) /*0x7b040a*/
   {
-    v6[0] = &(void*)(void*)&rc_ptr_WDTTerritory_vftable; /*0x7b0410*/
+    v6[0] = (void*)&rc_ptr_WDTTerritory_vftable; /*0x7b0410*/
     ComPtr::Release(v6); /*0x7b0418*/
   }
   return a1; /*0x7b041f*/
@@ -3073,7 +3075,7 @@ void sub_7BC610(int a1, char * a2, int a3, int a4, int a5, int a6, int a7, int a
 namespace gamemd {
 BlitPlain * E4Recv_7BC640::___Gfacet_locale_std__UAEPAXI_Z_148(char a2)
 {
-  *this = &(void*)(void*)&Blitter_vftable; /*0x7bc649*/
+  *this = (void*)&Blitter_vftable; /*0x7bc649*/
   if ( (a2 & 1) != 0 ) /*0x7bc64f*/
     RA2_OPDEL(); /*0x7bc652*/
   return this; /*0x7bc65c*/
@@ -3084,7 +3086,7 @@ BlitPlain * E4Recv_7BC640::___Gfacet_locale_std__UAEPAXI_Z_148(char a2)
 namespace gamemd {
 BlitPlain * E4Recv_7BC660::___Gfacet_locale_std__UAEPAXI_Z_149(char a2)
 {
-  *this = &(void*)(void*)&Blitter_vftable; /*0x7bc669*/
+  *this = (void*)&Blitter_vftable; /*0x7bc669*/
   if ( (a2 & 1) != 0 ) /*0x7bc66f*/
     RA2_OPDEL(); /*0x7bc672*/
   return this; /*0x7bc67c*/
@@ -3095,7 +3097,7 @@ BlitPlain * E4Recv_7BC660::___Gfacet_locale_std__UAEPAXI_Z_149(char a2)
 namespace gamemd {
 BlitTrans * E4Recv_7BC680::___Gfacet_locale_std__UAEPAXI_Z_150(char a2)
 {
-  *this = &(void*)(void*)&Blitter_vftable; /*0x7bc689*/
+  *this = (void*)&Blitter_vftable; /*0x7bc689*/
   if ( (a2 & 1) != 0 ) /*0x7bc68f*/
     RA2_OPDEL(); /*0x7bc692*/
   return this; /*0x7bc69c*/
@@ -3106,7 +3108,7 @@ BlitTrans * E4Recv_7BC680::___Gfacet_locale_std__UAEPAXI_Z_150(char a2)
 namespace gamemd {
 BlitTrans * E4Recv_7BC6A0::___Gfacet_locale_std__UAEPAXI_Z_151(char a2)
 {
-  *this = &(void*)(void*)&Blitter_vftable; /*0x7bc6a9*/
+  *this = (void*)&Blitter_vftable; /*0x7bc6a9*/
   if ( (a2 & 1) != 0 ) /*0x7bc6af*/
     RA2_OPDEL(); /*0x7bc6b2*/
   return this; /*0x7bc6bc*/

@@ -36,6 +36,6 @@ struct E4Recv_6A04C0 {
     unsigned int q5508;  // 0x5508
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    char sub_6A04C0(IUnknown * aP1);  // 0x6A04C0
+    char sub_6A04C0(void* aP1);  // 0x6A04C0
 };
 } // namespace gamemd

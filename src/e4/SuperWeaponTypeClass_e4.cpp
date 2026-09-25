@@ -11,7 +11,11 @@
 #include "e4/classes/HouseClass_e4.hpp"
 #include "e4/classes/ScenarioClass_e4.hpp"
 #include "e4/classes/SuperClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_alias_e4.hpp"
+#include "e4/classes/WeaponTypeClass_e4.hpp"
+#include "e4/classes/Type_e4.hpp"
 
 // 0x4F6540
 namespace gamemd {
@@ -239,24 +243,24 @@ unsigned char * SuperWeaponTypeClass::Construct(AbstractClass * aP1)
   InfantryTypeVector::Construct2((_DWORD *)&this->q14C, 0, 0); /*0x5114fc*/
   this->q160 = 10; /*0x511501*/
   this->q15C = 0; /*0x511508*/
-  this->q14C = &(void*)(void*)&TypeList_InfantryTypeClass_const___vftable; /*0x51150b*/
+  this->q14C = (void*)&TypeList_InfantryTypeClass_const___vftable; /*0x51150b*/
   UnitTypeVector::ConstructUnitTypeVectorClass((_DWORD *)&this->q168, 0, 0); /*0x51151b*/
   this->u32_17C = 10; /*0x511520*/
   this->u32_178 = 0; /*0x511527*/
-  this->q168 = &(void*)(void*)&TypeList_UnitTypeClass_const___vftable; /*0x51152a*/
+  this->q168 = (void*)&TypeList_UnitTypeClass_const___vftable; /*0x51152a*/
   AircraftTypeVector::Constructor(0, 0); /*0x51153a*/
   this->q198 = 10; /*0x511542*/
   this->q194 = 0; /*0x511549*/
-  this->q184 = &(void*)(void*)&TypeList_AircraftTypeClass_const___vftable; /*0x51154c*/
+  this->q184 = (void*)&TypeList_AircraftTypeClass_const___vftable; /*0x51154c*/
   *(&this->veteranInfantryCount0) = 65; /*0x511552*/
   *(&this->veteranInfantryCount1) = 0; /*0x511559*/
   *(&this->veteranInfantryCount2) = 0; /*0x51155f*/
   *(&this->veteranInfantryCount3) = 1; /*0x511565*/
   *(&this->veteranInfantryCount4) = 0; /*0x51156c*/
-  *(_DWORD *)this = &(void*)(void*)&HouseTypeClass_vftable; /*0x511572*/
-  this->vtable2 = &(void*)(void*)&HouseTypeClass_vftable; /*0x511578*/
-  this->vtable3 = &(void*)(void*)&HouseTypeClass_vftable; /*0x51157f*/
-  this->vtable4 = &(void*)(void*)&HouseTypeClass_vftable; /*0x511586*/
+  *(void **)this = (void*)&HouseTypeClass_vftable; /*0x511572*/
+  this->vtable2 = (void*)&HouseTypeClass_vftable; /*0x511578*/
+  this->vtable3 = (void*)&HouseTypeClass_vftable; /*0x51157f*/
+  this->vtable4 = (void*)&HouseTypeClass_vftable; /*0x511586*/
   AbstractClass::GenerateUniqueID((int)(this + 4)); /*0x51158d*/
   *(&this->veteranInfantry6) = 0; /*0x511592*/
   v4 = g_SuperWeaponTypeArray; /*0x511598*/
@@ -317,9 +321,9 @@ unsigned char * SuperWeaponTypeClass::Construct(AbstractClass * aP1)
 namespace gamemd {
 void* SuperWeaponTypeClass::SD_vt25(unsigned char *** aP1)
 {
-  int v3; // edi
-  int v4; // eax
-  int v5; // ecx
+  WeaponTypeClass * v3;
+  WeaponTypeClass * v4;
+  WeaponTypeClass * v5;
   int v6; // eax
   char Bool_Overwrite; // al
   int v8; // ecx
@@ -337,7 +341,7 @@ void* SuperWeaponTypeClass::SD_vt25(unsigned char *** aP1)
   int v20; // edx
   const void **v21; // edi
   const void **v22; // edi
-  int v23; // edi
+  BuildingTypeClass * v23;
   int v24; // eax
   char v25; // cl
   char v26; // al
@@ -608,10 +612,10 @@ SuperWeaponTypeClass * SuperWeaponTypeClass::SDDTOR(char a2)
   int v3; // eax
   _DWORD *v5; // [esp+4h] [ebp-4h] BYREF
 
-  *this = &(void*)(void*)&SuperWeaponTypeClass_vftable; /*0x6cefed*/
-  this->vtable2 = &(void*)(void*)&SuperWeaponTypeClass_vftable; /*0x6ceff3*/
-  this->vtable3 = &(void*)(void*)&SuperWeaponTypeClass_vftable; /*0x6ceffa*/
-  this->vtable4 = &(void*)(void*)&SuperWeaponTypeClass_vftable; /*0x6cf001*/
+  *this = (void*)&SuperWeaponTypeClass_vftable; /*0x6cefed*/
+  this->vtable2 = (void*)&SuperWeaponTypeClass_vftable; /*0x6ceff3*/
+  this->vtable3 = (void*)&SuperWeaponTypeClass_vftable; /*0x6ceffa*/
+  this->vtable4 = (void*)&SuperWeaponTypeClass_vftable; /*0x6cf001*/
   v3 = (*(int (__thiscall **)(int *, _DWORD **))(dword_A8E330 + 16))(&dword_A8E330, &this); /*0x6cf013*/
   if ( v3 != -1 && v3 < g_HouseClassInitState && v3 < --g_HouseClassInitState ) /*0x6cf02e*/
   {
@@ -751,10 +755,10 @@ SuperWeaponTypeClass::SuperWeaponTypeClass(ObjectClass * aP1)
   *(_BYTE *)(this + 245) = 0; /*0x6ce654*/
   *(_DWORD *)(this + 248) = 0; /*0x6ce65a*/
   *(_DWORD *)(this + 252) = 0; /*0x6ce660*/
-  *(_DWORD *)this = &(void*)(void*)&SuperWeaponTypeClass_vftable; /*0x6ce666*/
-  *(_DWORD *)(this + 4) = &(void*)(void*)&SuperWeaponTypeClass_vftable; /*0x6ce66d*/
-  *(_DWORD *)(this + 8) = &(void*)(void*)&SuperWeaponTypeClass_vftable; /*0x6ce673*/
-  *(_DWORD *)(this + 12) = &(void*)(void*)&SuperWeaponTypeClass_vftable; /*0x6ce67a*/
+  *(_DWORD *)this = (void*)&SuperWeaponTypeClass_vftable; /*0x6ce666*/
+  *(_DWORD *)(this + 4) = (void*)&SuperWeaponTypeClass_vftable; /*0x6ce66d*/
+  *(_DWORD *)(this + 8) = (void*)&SuperWeaponTypeClass_vftable; /*0x6ce673*/
+  *(_DWORD *)(this + 12) = (void*)&SuperWeaponTypeClass_vftable; /*0x6ce67a*/
   this->AbstractClass_4.GenerateUniqueID(); /*0x6ce681*/
   *(_DWORD *)(this + 152) = g_HouseClassInitState; /*0x6ce68c*/
   if ( g_HouseClassInitState < dword_A8E338 /*0x6ce6c4*/
@@ -804,10 +808,10 @@ int SuperWeaponTypeClass::SaveLoad_Prefix(int a1, int a2)
     {
       AbstractTypeClass::Init(a1, (int)&v4); /*0x6ce82c*/
       *(_DWORD *)(a1 + 184) = 0; /*0x6ce831*/
-      *(_DWORD *)a1 = &(void*)(void*)&SuperWeaponTypeClass_vftable; /*0x6ce83b*/
-      *(_DWORD *)(a1 + 4) = &(void*)(void*)&SuperWeaponTypeClass_vftable; /*0x6ce841*/
-      *(_DWORD *)(a1 + 8) = &(void*)(void*)&SuperWeaponTypeClass_vftable; /*0x6ce848*/
-      *(_DWORD *)(a1 + 12) = &(void*)(void*)&SuperWeaponTypeClass_vftable; /*0x6ce84f*/
+      *(_DWORD *)a1 = (void*)&SuperWeaponTypeClass_vftable; /*0x6ce83b*/
+      *(_DWORD *)(a1 + 4) = (void*)&SuperWeaponTypeClass_vftable; /*0x6ce841*/
+      *(_DWORD *)(a1 + 8) = (void*)&SuperWeaponTypeClass_vftable; /*0x6ce848*/
+      *(_DWORD *)(a1 + 12) = (void*)&SuperWeaponTypeClass_vftable; /*0x6ce84f*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(a1 + 156)); /*0x6ce862*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(a1 + 200)); /*0x6ce873*/

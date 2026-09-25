@@ -11,6 +11,8 @@
 #include "e4/classes/ComPtr_e4.hpp"
 #include "e4/classes/TextBuffer_e4.hpp"
 #include "e4/classes/VectorCursor_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x7665D0
@@ -28,9 +30,9 @@ wchar_t ** E4Recv_7665D0::sub_7665D0(wchar_t ** a2)
   void *v11; // [esp+20h] [ebp-20h] BYREF
   char *v12; // [esp+24h] [ebp-1Ch]
   void *v13; // [esp+28h] [ebp-18h] BYREF
-  void **v14; // [esp+2Ch] [ebp-14h] BYREF
+  void* v14;
   _DWORD *v15; // [esp+30h] [ebp-10h]
-  void **v16; // [esp+34h] [ebp-Ch] BYREF
+  void* v16;
   int *v17; // [esp+38h] [ebp-8h]
   int v18; // [esp+3Ch] [ebp-4h]
 
@@ -42,14 +44,14 @@ wchar_t ** E4Recv_7665D0::sub_7665D0(wchar_t ** a2)
   unknown_libname_74(&v11); /*0x7665f4*/
   v17 = &dword_B72760; /*0x7665f9*/
   v18 = 0; /*0x766601*/
-  v16 = &(void*)(void*)&VectorCursor_rc_ptr_WorldDominationTour_GameOption_DynamicVectorClass_rc_ptr_WorldDominationTour_GameOption_vftable; /*0x766605*/
+  v16 = (void*)&VectorCursor_rc_ptr_WorldDominationTour_GameOption_DynamicVectorClass_rc_ptr_WorldDominationTour_GameOption_vftable; /*0x766605*/
   do /*0x7666b0*/
   {
     if ( !((unsigned __int8 (__thiscall *)(void ***))v16[1])(&v16) ) /*0x76661a*/
       break; /*0x76661f*/
     v4 = v17[1] + 8 * v18; /*0x766634*/
     ComPtr::Constructor(&v14); /*0x766637*/
-    v14 = &(void*)(void*)&rc_ptr_WorldDominationTour_GameOption_vftable; /*0x76663c*/
+    v14 = (void*)&rc_ptr_WorldDominationTour_GameOption_vftable; /*0x76663c*/
     ComPtr::Set(&v14, *(_DWORD *)(v4 + 4)); /*0x766648*/
     if ( (v2 & v15[2]) == 0 ) /*0x766654*/
     {
@@ -67,7 +69,7 @@ wchar_t ** E4Recv_7665D0::sub_7665D0(wchar_t ** a2)
         v2 |= v15[2]; /*0x766693*/
       }
     }
-    v14 = &(void*)(void*)&rc_ptr_WorldDominationTour_GameOption_vftable; /*0x76669a*/
+    v14 = (void*)&rc_ptr_WorldDominationTour_GameOption_vftable; /*0x76669a*/
     ComPtr::Release(&v14); /*0x76669e*/
     ((void (__thiscall *)(void ***))v16[2])(&v16); /*0x7666ab*/
   }
@@ -79,7 +81,7 @@ wchar_t ** E4Recv_7665D0::sub_7665D0(wchar_t ** a2)
       break; /*0x7666d3*/
     v7 = v17[1] + 8 * v18; /*0x7666e8*/
     ComPtr::Constructor(&v14); /*0x7666eb*/
-    v14 = &(void*)(void*)&rc_ptr_WorldDominationTour_GameOption_vftable; /*0x7666f0*/
+    v14 = (void*)&rc_ptr_WorldDominationTour_GameOption_vftable; /*0x7666f0*/
     ComPtr::Set(&v14, *(_DWORD *)(v7 + 4)); /*0x7666fc*/
     if ( (v2 & v15[2]) == 0 ) /*0x766708*/
     {
@@ -97,12 +99,12 @@ wchar_t ** E4Recv_7665D0::sub_7665D0(wchar_t ** a2)
         v2 |= v15[2]; /*0x766748*/
       }
     }
-    v14 = &(void*)(void*)&rc_ptr_WorldDominationTour_GameOption_vftable; /*0x76674f*/
+    v14 = (void*)&rc_ptr_WorldDominationTour_GameOption_vftable; /*0x76674f*/
     ComPtr::Release(&v14); /*0x766753*/
     ((void (__thiscall *)(void ***))v16[2])(&v16); /*0x766760*/
   }
   WideString::AssignFromPtr(a2, (const wchar_t **)&v11); /*0x766776*/
-  v16 = &(void*)(void*)&VectorCursor_rc_ptr_WorldDominationTour_GameOption_DynamicVectorClass_rc_ptr_WorldDominationTour_GameOption_vftable; /*0x76677f*/
+  v16 = (void*)&VectorCursor_rc_ptr_WorldDominationTour_GameOption_DynamicVectorClass_rc_ptr_WorldDominationTour_GameOption_vftable; /*0x76677f*/
   DeleteAndZero::Alt(&v11); /*0x766787*/
   return a2; /*0x76678e*/
 }

@@ -13,6 +13,6 @@ struct E4Recv_52A110 {
     unsigned int vtable20;
     unsigned int vtable3;
 // --- flat members (END) ---
-    float * sub_52A110(float * a2, unsigned char * a3, float a4, float * a5);  // 0x52A110
+    float * sub_52A110(float * a2,  unsigned char * a3,  float a4,  float * a5);    // 0x52A110
 };
 } // namespace gamemd

@@ -40,16 +40,16 @@ struct VectorClass_ptr_AITriggerTypeClass {
     void Destroy_1();  // 0x4E85A0
     unsigned int GetItemIndex_1(int a2);  // 0x4E85D0
     char Add(int a2);  // 0x4E9920
-    char Release(int a2, unsigned int * a3);  // 0x4E9960
+    char Release(int a2,  unsigned int * a3);    // 0x4E9960
     void Remove();  // 0x4E9A10
     int GetSize(unsigned int * a2);  // 0x4E9A40
     unsigned int LoadTypeData(int a2);  // 0x4E9A80
-    char SetCapacity(int a2, unsigned int * a3);  // 0x4E9AA0
+    char SetCapacity(int a2,  unsigned int * a3);    // 0x4E9AA0
     int FindItemIndex(unsigned int * a2);  // 0x4E9B50
-    char SetCapacity_0(int a2, unsigned int * a3);  // 0x4EA5A0
+    char SetCapacity_0(int a2,  unsigned int * a3);    // 0x4EA5A0
     int FindItemIndex_0(unsigned int * a2);  // 0x4EA650
-    char SetCapacity_1(int a2, unsigned int * a3);  // 0x4EA800
+    char SetCapacity_1(int a2,  unsigned int * a3);    // 0x4EA800
     int FindItemIndex_1(unsigned int * a2);  // 0x4EA8B0
-    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x4EF6C0
+    VectorClass_flat * QueryInterface(unsigned int * Block,  char a2);    // 0x4EF6C0
 };
 } // namespace gamemd

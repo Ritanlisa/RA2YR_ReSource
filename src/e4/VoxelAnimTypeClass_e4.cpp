@@ -16,13 +16,18 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/Math_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/BufferIOFileClass_e4.hpp"
+#include "e4/classes/BuildingClass_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
 
 // 0x74AD80
 namespace gamemd {
 unsigned int * VoxelAnimTypeClass::Constructor(ObjectClass * aP1)
 {
-  int v3; // eax
+  VoxelAnimTypeClass * v3;
   int v4; // eax
 
   ObjectTypeClass::ConstructFull(aP1); /*0x74ad89*/
@@ -56,10 +61,10 @@ unsigned int * VoxelAnimTypeClass::Constructor(ObjectClass * aP1)
   *(&this->q04C0) = 0; /*0x74ae59*/
   *(&this->q04C1) = 0; /*0x74ae5f*/
   this->IsTiberium = 0; /*0x74ae65*/
-  *this = &(void*)(void*)&VoxelAnimTypeClass_vftable; /*0x74ae6b*/
-  this->vtable2 = &(void*)(void*)&VoxelAnimTypeClass_vftable; /*0x74ae71*/
-  this->vtable3 = &(void*)(void*)&VoxelAnimTypeClass_vftable; /*0x74ae77*/
-  this->vtable4 = &(void*)(void*)&VoxelAnimTypeClass_vftable; /*0x74ae7e*/
+  *(void **)this = (void*)&VoxelAnimTypeClass_vftable; /*0x74ae6b*/
+  this->vtable2 = (void*)&VoxelAnimTypeClass_vftable; /*0x74ae71*/
+  this->vtable3 = (void*)&VoxelAnimTypeClass_vftable; /*0x74ae77*/
+  this->vtable4 = (void*)&VoxelAnimTypeClass_vftable; /*0x74ae7e*/
   AbstractClass::GenerateUniqueID((int)(this + 1)); /*0x74ae85*/
   this->q231 = 0; /*0x74ae8c*/
   this->q234 = 1; /*0x74ae92*/
@@ -367,7 +372,7 @@ AbstractTypeClass * * VoxelAnimTypeClass::LoadFromINI(unsigned char *** aP1)
     else
       File = 0; /*0x74b5d5*/
     *(_DWORD *)(a1 + 176) = File; /*0x74b5db*/
-    *(_DWORD *)Destination = &(void*)(void*)&CCFileClass_vftable; /*0x74b5e1*/
+    *(_DWORD *)Destination = (void*)&CCFileClass_vftable; /*0x74b5e1*/
     v50 = 0; /*0x74b5e9*/
     Vector::Clear((int)v49); /*0x74b5f1*/
     *(_DWORD *)Destination = &off_7E1668; /*0x74b5fa*/
@@ -419,10 +424,10 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::ddtor(char a2)
   int v3; // eax
   int v4; // eax
 
-  *this = &(void*)(void*)&VoxelAnimTypeClass_vftable; /*0x74ba36*/
-  this->vtable2 = &(void*)(void*)&VoxelAnimTypeClass_vftable; /*0x74ba3c*/
-  this->vtable3 = &(void*)(void*)&VoxelAnimTypeClass_vftable; /*0x74ba43*/
-  this->vtable4 = &(void*)(void*)&VoxelAnimTypeClass_vftable; /*0x74ba4a*/
+  *this = (void*)&VoxelAnimTypeClass_vftable; /*0x74ba36*/
+  this->vtable2 = (void*)&VoxelAnimTypeClass_vftable; /*0x74ba3c*/
+  this->vtable3 = (void*)&VoxelAnimTypeClass_vftable; /*0x74ba43*/
+  this->vtable4 = (void*)&VoxelAnimTypeClass_vftable; /*0x74ba4a*/
   AbstractClass::AnnounceExpiredPointer(1); /*0x74ba51*/
   v3 = (*(int (__thiscall **)(int *, void ***))(g_AnimPoolManager + 16))(&g_AnimPoolManager, &this); /*0x74ba6a*/
   if ( v3 != -1 && v3 < g_AnimManager && v3 < --g_AnimManager ) /*0x74ba85*/
@@ -482,10 +487,10 @@ int VoxelAnimTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x74b82a*/
     {
       ObjectTypeClass::Construct(aP0, (int)&aP1); /*0x74b833*/
-      *aP0 = &(void*)(void*)&VoxelAnimTypeClass_vftable; /*0x74b838*/
-      aP0[1] = &(void*)(void*)&VoxelAnimTypeClass_vftable; /*0x74b83e*/
-      aP0[2] = &(void*)(void*)&VoxelAnimTypeClass_vftable; /*0x74b845*/
-      aP0[3] = &(void*)(void*)&VoxelAnimTypeClass_vftable; /*0x74b84c*/
+      *aP0 = (void*)&VoxelAnimTypeClass_vftable; /*0x74b838*/
+      aP0[1] = (void*)&VoxelAnimTypeClass_vftable; /*0x74b83e*/
+      aP0[2] = (void*)&VoxelAnimTypeClass_vftable; /*0x74b845*/
+      aP0[3] = (void*)&VoxelAnimTypeClass_vftable; /*0x74b84c*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP0 + 190); /*0x74b85f*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP0 + 185); /*0x74b870*/

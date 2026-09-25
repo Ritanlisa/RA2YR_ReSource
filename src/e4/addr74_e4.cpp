@@ -32,6 +32,8 @@
 #include "e4/classes/AudioQueue_e4.hpp"
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/VocClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x743270
@@ -81,7 +83,7 @@ Coord * * PlaceScenarioUnits()
   unsigned int v42; // eax
   int v43; // edx
   int v44; // eax
-  void **v46; // [esp+14h] [ebp-C0h] BYREF
+  void* v46;
   void *Block; // [esp+18h] [ebp-BCh]
   int v48; // [esp+1Ch] [ebp-B8h]
   char v49; // [esp+20h] [ebp-B4h]
@@ -104,7 +106,7 @@ Coord * * PlaceScenarioUnits()
   INIClass::ResetSection(a1); /*0x74327f*/
   Block = 0; /*0x74328e*/
   v49 = 1; /*0x743292*/
-  v46 = &(void*)(void*)&DynamicVectorClass_int_vftable; /*0x743297*/
+  v46 = (void*)&DynamicVectorClass_int_vftable; /*0x743297*/
   v52 = 10; /*0x74329f*/
   v51 = 0; /*0x7432a7*/
   v50 = 0; /*0x7432ab*/
@@ -257,7 +259,7 @@ Coord * * PlaceScenarioUnits()
     }
     v40 = g_HouseClass_BuildState; /*0x7436a1*/
   }
-  v46 = &(void*)(void*)&VectorClass_int_vftable; /*0x7436b4*/
+  v46 = (void*)&VectorClass_int_vftable; /*0x7436b4*/
   if ( Block ) /*0x7436bd*/
   {
     if ( v50 ) /*0x7436c5*/
@@ -720,7 +722,7 @@ unsigned int * E4Recv_74BBF0::sub_74BBF0(int a2)
   this->M20 = 0; /*0x74bc07*/
   this->q018 = 1; /*0x74bc0a*/
   this->M25 = 0; /*0x74bc0e*/
-  this->M12 = &(void*)(void*)&VectorClass_unsigned_char_vftable; /*0x74bc11*/
+  this->M12 = (void*)&VectorClass_unsigned_char_vftable; /*0x74bc11*/
   this->M8 = -1; /*0x74bc17*/
   this->M4 = *(_BYTE *)(a2 + 4); /*0x74bc21*/
   this->M8 = *(_DWORD *)(a2 + 8); /*0x74bc27*/
@@ -734,7 +736,7 @@ unsigned int * E4Recv_74BBF0::sub_74BBF0(int a2)
     *((_DWORD *)v3 + 1) = 0; /*0x74bc7f*/
     v3[13] = 0; /*0x74bc82*/
   LABEL_8:
-    *this = *(_DWORD *)a2; /*0x74bc85*/
+    *(_DWORD *)this = *(_DWORD *)a2; /*0x74bc85*/
     return this; /*0x74bc8d*/
   }
   v5 = RA2_OPNEW(v4); /*0x74bc3e*/
@@ -752,7 +754,7 @@ unsigned int * E4Recv_74BBF0::sub_74BBF0(int a2)
     ++v7; /*0x74bc69*/
   }
   while ( v7 < *((_DWORD *)v3 + 2) ); /*0x74bc6c*/
-  *this = *(_DWORD *)a2; /*0x74bc74*/
+  *(_DWORD *)this = *(_DWORD *)a2; /*0x74bc74*/
   return this; /*0x74bc78*/
 }
 }
@@ -784,7 +786,7 @@ unsigned int * E4Recv_74BCA0::sub_74BCA0(int a2)
     this->M16 = 0; /*0x74bd2c*/
     this->M25 = 0; /*0x74bd33*/
   LABEL_10:
-    *this = *(_DWORD *)a2; /*0x74bd37*/
+    *(_DWORD *)this = *(_DWORD *)a2; /*0x74bd37*/
     return this; /*0x74bd39*/
   }
   v5 = RA2_OPNEW(v4); /*0x74bcef*/
@@ -802,7 +804,7 @@ unsigned int * E4Recv_74BCA0::sub_74BCA0(int a2)
     ++v7; /*0x74bd1a*/
   }
   while ( v7 < this->M20 ); /*0x74bd1d*/
-  *this = *(_DWORD *)a2; /*0x74bd23*/
+  *(_DWORD *)this = *(_DWORD *)a2; /*0x74bd23*/
   return this; /*0x74bd25*/
 }
 }
@@ -828,7 +830,7 @@ int E4Recv_74BDC0::sub_74BDC0(unsigned int a2)
   {
     v5 = *this; /*0x74bdeb*/
     v6 = (*(int (__thiscall **)(unsigned int *, unsigned int, _DWORD))(this->M12 + 8))(&this->M12, (a2 + 7) >> 3, 0); /*0x74bdf9*/
-    *this = a2; /*0x74be01*/
+    *(_DWORD *)this = a2; /*0x74be01*/
     v6 = v6; /*0x74be03*/
     if ( v6 && v5 < a2 ) /*0x74be0b*/
     {
@@ -864,7 +866,7 @@ int E4Recv_74BDC0::sub_74BDC0(unsigned int a2)
       this->M8 = -1; /*0x74be75*/
     }
     v11 = this->M12; /*0x74be78*/
-    *this = 0; /*0x74be7e*/
+    *(_DWORD *)this = 0; /*0x74be7e*/
     (*(void (__thiscall **)(unsigned int *))(v11 + 12))(this + 3); /*0x74be84*/
     return 1; /*0x74be89*/
   }
@@ -899,7 +901,7 @@ int InitializeVeinholeSystem(char a1)
 {
   size_t v2; // edi
   int i; // esi
-  void *v4; // eax
+  unsigned int v4;
   int v5; // ebp
   void *v6; // eax
   _DWORD *v7; // esi
@@ -1752,7 +1754,7 @@ char * E4Recv_74BBA0::sub_74BBA0(int a2, int a3)
   *((_DWORD *)v4 + 2) = 0; /*0x74bbc3*/
   v4[12] = 1; /*0x74bbc6*/
   v4[13] = 0; /*0x74bbca*/
-  *(_DWORD *)v4 = &(void*)(void*)&VectorClass_unsigned_char_vftable; /*0x74bbcd*/
+  *(_DWORD *)v4 = (void*)&VectorClass_unsigned_char_vftable; /*0x74bbcd*/
   (*(void (__thiscall **)(char *, unsigned int, int))(*(_DWORD *)v4 + 8))(v4, (unsigned int)(a2 + 7) >> 3, a3); /*0x74bbda*/
   return this; /*0x74bbdf*/
 }
@@ -1938,7 +1940,7 @@ void sub_74C3C0()
 {
   if ( (byte_B1D250 & 1) == 0 ) /*0x74c3ca*/
   {
-    dword_B1D290 = (int)&(void*)(void*)&VectorClass_VeinholeMonsterClass___vftable; /*0x74c3ce*/
+    dword_B1D290 = (int)&VectorClass_VeinholeMonsterClass___vftable; /*0x74c3ce*/
     byte_B1D250 |= 1u; /*0x74c3e1*/
     if ( g_VoxelDrawState ) /*0x74c3e7*/
     {
@@ -1976,7 +1978,7 @@ VectorClass_flat * _::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x74f653*/
-  *this = &(void*)(void*)&VectorClass_VeinholeMonsterClass___vftable; /*0x74f656*/
+  *this = (void*)&VectorClass_VeinholeMonsterClass___vftable; /*0x74f656*/
   if ( v3 && this->IsAllocated ) /*0x74f660*/
   {
     RA2_OPDEL(v3); /*0x74f668*/
@@ -2003,7 +2005,7 @@ unsigned int * E4Recv_74F730::sub_74F730()
   this->u32_3C = 0; /*0x74f745*/
   this->u32_40 = 0; /*0x74f748*/
   this->u32_44 = v2 & 0xFFFFFFF0; /*0x74f74b*/
-  *this = &(void*)(void*)&VersionClass_vftable; /*0x74f74e*/
+  *this = (void*)&VersionClass_vftable; /*0x74f74e*/
   this->u32_2A = 0; /*0x74f754*/
   this->u32_C = 0; /*0x74f757*/
   return this; /*0x74f75a*/

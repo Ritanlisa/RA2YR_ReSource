@@ -5,6 +5,8 @@
 #include "e4/classes/FoggedObject_DrawVector_e4.hpp"
 #include "e4/classes/FoggedObjectClass_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/BuildingClass_e4.hpp"
 
 // 0x4D2DB0
@@ -12,7 +14,7 @@ namespace gamemd {
 unsigned int * FoggedObject::DrawVector_Constructor(IUnknown * aP1, IUnknown * aP2)
 {
   char *v4; // ebx
-  int v5; // eax
+  IUnknown * v5;
   char *v8; // eax
   char *v9; // ecx
 
@@ -21,7 +23,7 @@ unsigned int * FoggedObject::DrawVector_Constructor(IUnknown * aP1, IUnknown * a
   this->q008 = aP1; /*0x4d2dc0*/
   this->u8_C = 1; /*0x4d2dc3*/
   this->u8_D = 0; /*0x4d2dc7*/
-  *this = &(void*)(void*)&VectorClass_FoggedObjectClass_DrawRecord_vftable; /*0x4d2dca*/
+  *(void ** *)this = (void*)&VectorClass_FoggedObjectClass_DrawRecord_vftable; /*0x4d2dca*/
   if ( !aP1 ) /*0x4d2dd0*/
     return this; /*0x4d2e38*/
   if ( !aP2 ) /*0x4d2dd8*/
@@ -75,7 +77,7 @@ VectorClass_flat * FoggedObject_DrawVector::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x4d2d13*/
-  *this = &(void*)(void*)&VectorClass_FoggedObjectClass_DrawRecord_vftable; /*0x4d2d16*/
+  *this = (void*)&VectorClass_FoggedObjectClass_DrawRecord_vftable; /*0x4d2d16*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x4d2d20*/
   {
     RA2_OPDEL(v3); /*0x4d2d28*/

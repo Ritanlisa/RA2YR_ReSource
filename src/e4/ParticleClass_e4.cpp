@@ -14,7 +14,10 @@
 #include "e4/classes/StreamClass_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/ParticleSystemTypeClass_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
+#include "e4/classes/ParticleSystemClass_32_e4.hpp"
 
 // 0x62CEC0
 namespace gamemd {
@@ -34,7 +37,7 @@ void ParticleClass::DrawParticle(int * a2, int * a3)
   int v15; // ebp
   int v16; // eax
   int v17; // esi
-  int v18; // ecx
+  IUnknown * v18;
   int v19; // eax
   __int16 v20; // dx
   char v21; // al
@@ -256,10 +259,10 @@ int ParticleClass::LoadParticleData(ObjectClass * aP1, int aP1a)
     if ( aP1 ) /*0x62d7b6*/
     {
       ObjectClass::Init(aP1, (int)&aP1a); /*0x62d7bf*/
-      *aP1 = &(void*)(void*)&ParticleClass_vftable; /*0x62d7c4*/
-      aP1[1] = &(void*)(void*)&ParticleClass_vftable; /*0x62d7ca*/
-      aP1[2] = &(void*)(void*)&ParticleClass_vftable; /*0x62d7d1*/
-      aP1[3] = &(void*)(void*)&ParticleClass_vftable; /*0x62d7d8*/
+      *aP1 = (void*)&ParticleClass_vftable; /*0x62d7c4*/
+      aP1[1] = (void*)&ParticleClass_vftable; /*0x62d7ca*/
+      aP1[2] = (void*)&ParticleClass_vftable; /*0x62d7d1*/
+      aP1[3] = (void*)&ParticleClass_vftable; /*0x62d7d8*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP1 + 43); /*0x62d7eb*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP1 + 73); /*0x62d7fc*/

@@ -7,13 +7,13 @@ namespace gamemd {
 struct DynamicVector {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
-    void* Items;  // 0x4
-    AbstractClass* q008;  // 0x8
+    unsigned int q004;  // 0x4
+    unsigned int q008;  // 0x8
     char q00B[4];  // 0xB
     bool IsInitialized;  // 0xC
     bool IsAllocated;  // 0xD
     unsigned int tail_E;  // 0xE
-    void* q010;  // 0x10
+    unsigned int q010;  // 0x10
     int CapacityIncrement;  // 0x14
     unsigned char q018;  // 0x18
     AbstractClass* q01C;  // 0x1C
@@ -22,7 +22,7 @@ struct DynamicVector {
     void* q028;  // 0x28
     BufferIOFileClass* q02A;  // 0x2A
     bool q02B;  // 0x2B
-    unsigned int q02C;  // 0x2C
+    char q02C[4];  // 0x2C
     bool q02D;  // 0x2D
     CampaignClass* q030;  // 0x30
     unsigned char q031;  // 0x31
@@ -188,16 +188,16 @@ struct DynamicVector {
     unsigned char q5744;  // 0x5744
     unsigned int Capacity;
     unsigned int Count;
+    unsigned int Items;
     unsigned int Resize;
     unsigned int checkCondition;
     unsigned int initEvent;
     unsigned int u32_14;
-    unsigned int Release;
 // --- flat members (END) ---
     unsigned int * Copy(VectorClass_flat * aP1);  // 0x5AC430
     char AddItem(VectorClass_flat * aP1);  // 0x413A70
-    unsigned int * Constructor_Cell(ObjectClass * aP1, ObjectClass * aP2);  // 0x42F670
-    char RemoveItem(IUnknown * aP1);  // 0x45ADD0
+    unsigned int * Constructor_Cell(ObjectClass * aP1,  ObjectClass * aP2);    // 0x42F670
+    char RemoveItem(void* aP1);  // 0x45ADD0
     char Add_Alt(VectorClass_flat * aP1);  // 0x477EC0
     int GetOrGrow(DynamicVector * aP1);  // 0x49FAE0
     char Add_Alt4(VectorClass_flat * aP1);  // 0x5253B0
@@ -206,12 +206,12 @@ struct DynamicVector {
     char GrowCapacity();  // 0x624810
     int Read(TechnoTypeClass * aP1);  // 0x67A520
     int Read_Alt(TechnoTypeClass * aP1);  // 0x67A6E0
-    unsigned int * Constructor_VoxelAnim(int a2, int a3);  // 0x67AC70
+    unsigned int * Constructor_VoxelAnim(int a2,  int a3);    // 0x67AC70
     char Add2(VectorClass_flat * aP1);  // 0x67AD80
     char RemoveAt(int a2);  // 0x67C360
     char RemoveAt2(int a2);  // 0x67C3F0
     char Add(DynamicVector * aP1);  // 0x6C6400
-    unsigned int * Constructor_Techno(int a2, int a3);  // 0x7342D0
+    unsigned int * Constructor_Techno(int a2,  int a3);    // 0x7342D0
     char EnsureCapacity();  // 0x7AF000
 };
 } // namespace gamemd

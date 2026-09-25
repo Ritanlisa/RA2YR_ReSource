@@ -2,6 +2,8 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/AddTeamCommand_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x5360B0
@@ -9,7 +11,7 @@ namespace gamemd {
 unsigned int * AddTeamCommand::Construct(int a2)
 {
   this->AddTeamCommand_field_00 = a2; /*0x5360b6*/
-  *this = &(void*)(void*)&AddTeamCommandClass_vftable; /*0x5360b9*/
+  *(void **)this = (void*)&AddTeamCommandClass_vftable; /*0x5360b9*/
   return this; /*0x5360bf*/
 }
 } // namespace gamemd

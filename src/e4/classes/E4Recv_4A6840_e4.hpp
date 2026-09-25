@@ -43,6 +43,6 @@ struct E4Recv_4A6840 {
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    char * sub_4A6840(HWND hWnd, int a3, int a4, int a5);  // 0x4A6840
+    char * sub_4A6840(HWND hWnd,  int a3,  int a4,  int a5);    // 0x4A6840
 };
 } // namespace gamemd

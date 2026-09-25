@@ -15,7 +15,10 @@
 #include "e4/classes/TacticalMap_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/ConvertClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/ScenarioClass_e4.hpp"
 
 // 0x47F510
 namespace gamemd {
@@ -327,11 +330,11 @@ unsigned int * TacticalClass::SetDisplayMode(unsigned int * a2, char a3)
 namespace gamemd {
 void TacticalClass::InterpolateView()
 {
-  wchar_t *v0; // ebp
+  unsigned int v0;
   int v1; // edi
-  int v2; // ecx
-  int v3; // esi
-  _DWORD *v4; // eax
+  unsigned int v2;
+  wchar_t * v3;
+  unsigned int v4;
   _DWORD *v5; // edx
   int v6; // ebx
   bool v7; // zf
@@ -343,17 +346,17 @@ void TacticalClass::InterpolateView()
   int v13; // esi
   int v14; // edi
   int v15; // eax
-  wchar_t *v16; // [esp+8h] [ebp-40h]
+  wchar_t * v16;
   int v17; // [esp+8h] [ebp-40h]
   int v18; // [esp+Ch] [ebp-3Ch] BYREF
-  int v19; // [esp+10h] [ebp-38h]
-  int v20; // [esp+14h] [ebp-34h]
+  wchar_t * v19;
+  unsigned int v20;
   int v21; // [esp+18h] [ebp-30h]
   int v22; // [esp+1Ch] [ebp-2Ch]
   int v23; // [esp+20h] [ebp-28h]
   int v24; // [esp+24h] [ebp-24h]
-  int v25; // [esp+28h] [ebp-20h]
-  int v26; // [esp+2Ch] [ebp-1Ch]
+  wchar_t * v25;
+  unsigned int v26;
   int v27[3]; // [esp+30h] [ebp-18h] BYREF
   int v28[3]; // [esp+3Ch] [ebp-Ch] BYREF
 
@@ -456,7 +459,7 @@ void TacticalClass::InterpolateView()
 namespace gamemd {
 AbstractClass * * TacticalClass_RenderFrame()
 {
-  void *v3; // ecx
+  unsigned int v3;
   char result; // al
   int v5[24]; // [esp+4h] [ebp-C0h] BYREF
   _DWORD v6[24]; // [esp+64h] [ebp-60h] BYREF
@@ -512,7 +515,7 @@ void TacticalClass::DrawCellOverlay(int a2, IUnknown * aP2, int a4, int a5, IUnk
   int v13; // esi
   int v14; // edx
   int v15; // ecx
-  int *v16; // ecx
+  unsigned int v16;
   unsigned int v17; // eax
   int v18; // eax
 
@@ -1538,7 +1541,7 @@ unsigned int * TacticalClass::CollectSelectedIDs()
   if ( v0 ) /*0x732d26*/
   {
     TacticalClass::updateScroll(v0, 0, 0); /*0x732d2c*/
-    *v1 = &(void*)(void*)&DynamicVectorClass_char_const___vftable; /*0x732d31*/
+    *v1 = (void*)&DynamicVectorClass_char_const___vftable; /*0x732d31*/
     v1[5] = 10; /*0x732d37*/
     v1[4] = 0; /*0x732d3e*/
     v2 = v1; /*0x732d41*/

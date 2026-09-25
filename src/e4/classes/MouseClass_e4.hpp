@@ -139,7 +139,7 @@ struct MouseClass {
     unsigned char q174;  // 0x174
     unsigned int q178;  // 0x178
     unsigned int q180;  // 0x180
-    IUnknown* q184;  // 0x184
+    void* q184;  // 0x184
     char q188[4];  // 0x188
     unsigned char q18C;  // 0x18C
     void* q190;  // 0x190
@@ -186,7 +186,7 @@ struct MouseClass {
     unsigned int q288;  // 0x288
     AbstractClass* q294;  // 0x294
     unsigned char q298;  // 0x298
-    IUnknown* q2A4;  // 0x2A4
+    void* q2A4;  // 0x2A4
     unsigned char q2A8;  // 0x2A8
     AbstractClass* q2B4;  // 0x2B4
     unsigned int q2E4;  // 0x2E4
@@ -560,7 +560,7 @@ struct MouseClass {
     unsigned int q14E6;  // 0x14E6
     unsigned int q14E8;  // 0x14E8
     unsigned int q14EB;  // 0x14EB
-    IUnknown* q14EC;  // 0x14EC
+    void* q14EC;  // 0x14EC
     unsigned int q14ED;  // 0x14ED
     unsigned int q14EE;  // 0x14EE
     unsigned int q14EF;  // 0x14EF
@@ -618,7 +618,7 @@ struct MouseClass {
     unsigned int q1634;  // 0x1634
     unsigned char q1638;  // 0x1638
     unsigned char q1640;  // 0x1640
-    IUnknown* q1654;  // 0x1654
+    void* q1654;  // 0x1654
     unsigned char q1658;  // 0x1658
     unsigned int q1660;  // 0x1660
     unsigned char q1664;  // 0x1664
@@ -855,7 +855,7 @@ struct MouseClass {
     unsigned char q5164;  // 0x5164
     unsigned char q5168;  // 0x5168
     unsigned char q516C;  // 0x516C
-    IUnknown* q5170;  // 0x5170
+    void* q5170;  // 0x5170
     unsigned char q5174;  // 0x5174
     unsigned char q5178;  // 0x5178
     unsigned char q517C;  // 0x517C
@@ -951,13 +951,13 @@ struct MouseClass {
     unsigned char q5448;  // 0x5448
     unsigned char q544C;  // 0x544C
     unsigned char q5450;  // 0x5450
-    IUnknown* q5460;  // 0x5460
+    void* q5460;  // 0x5460
     unsigned int q5464;  // 0x5464
     unsigned char q5468;  // 0x5468
     unsigned int q5480;  // 0x5480
     unsigned char q5484;  // 0x5484
     unsigned char q5488;  // 0x5488
-    IUnknown* q5494;  // 0x5494
+    void* q5494;  // 0x5494
     unsigned char q5498;  // 0x5498
     unsigned char q549C;  // 0x549C
     unsigned char q54A0;  // 0x54A0
@@ -975,9 +975,9 @@ struct MouseClass {
     unsigned int q5520;  // 0x5520
     unsigned char q5524;  // 0x5524
     unsigned char q5528;  // 0x5528
-    IUnknown* q552C;  // 0x552C
+    void* q552C;  // 0x552C
     unsigned char q5530;  // 0x5530
-    IUnknown* q5538;  // 0x5538
+    void* q5538;  // 0x5538
     unsigned char q553C;  // 0x553C
     unsigned int q5544;  // 0x5544
     unsigned int q5545;  // 0x5545
@@ -1040,16 +1040,16 @@ struct MouseClass {
     AudioController* q5750;  // 0x5750
     unsigned char q5754;  // 0x5754
     unsigned char q5758;  // 0x5758
-    IUnknown* q5774;  // 0x5774
+    void* q5774;  // 0x5774
     unsigned char q5778;  // 0x5778
     unsigned char q577C;  // 0x577C
     unsigned char q5780;  // 0x5780
     unsigned char q5784;  // 0x5784
-    TimerStruct * ptr_5788;  // 0x5788
+    void* ptr_5788;  // 0x5788
     unsigned char q578C;  // 0x578C
     unsigned char q5790;  // 0x5790
     unsigned char q5794;  // 0x5794
-    IUnknown* q5798;  // 0x5798
+    void* q5798;  // 0x5798
     unsigned char q579C;  // 0x579C
     unsigned char q57A0;  // 0x57A0
     unsigned char q57A4;  // 0x57A4
@@ -1129,13 +1129,12 @@ struct MouseClass {
     unsigned int _file;
     unsigned int _flag;
     unsigned int _ptr;
-    unsigned int Construct;
-    unsigned int LoadGameAssets;
 // --- flat members (END) ---
     char LoadCursors();
     char ToggleContextGadget(int a1, int a2);
     static double DrawCursor(...);  // C2597 interim stub
     static double CalcConfiningRect(...);  // C2597 interim stub
+    static double Construct(...);  // C2597 interim stub
 };
 
 } // namespace gamemd

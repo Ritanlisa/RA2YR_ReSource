@@ -24,7 +24,7 @@ struct NullModemClass {
     unsigned char q02C;  // 0x2C
     void* q030;  // 0x30
     AbstractClass* q034;  // 0x34
-    void* q038;  // 0x38
+    _DWORD q038;  // 0x38
     void* q03C;  // 0x3C
     unsigned char q040;  // 0x40
     unsigned char q044;  // 0x44

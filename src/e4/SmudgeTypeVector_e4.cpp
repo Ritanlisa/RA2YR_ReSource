@@ -2,6 +2,8 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/SmudgeTypeVector_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x67C0B0
@@ -11,7 +13,7 @@ VectorClass_flat * SmudgeTypeVector::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->q004; /*0x67c0b3*/
-  *this = &(void*)(void*)&VectorClass_SmudgeTypeClass_const___vftable; /*0x67c0b6*/
+  *(void **)this = (void*)&VectorClass_SmudgeTypeClass_const___vftable; /*0x67c0b6*/
   if ( v3 && this->IsAllocated ) /*0x67c0c0*/
   {
     RA2_OPDEL(v3); /*0x67c0c8*/

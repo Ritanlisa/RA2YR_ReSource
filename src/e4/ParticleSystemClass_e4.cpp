@@ -7,6 +7,8 @@
 #include "e4/classes/ParticleSystemClass_e4.hpp"
 #include "e4/classes/Init_e4.hpp"
 #include "e4/classes/VectorClass_flat_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x62FE60
@@ -621,7 +623,7 @@ char ParticleSystemClass_32_::ResizeDataArray(int a2, unsigned int * a3)
 namespace gamemd {
 int ParticleSystemClass_32_::FindElementByValue(unsigned int * a2)
 {
-  int v2; // edx
+  void * v2;
   int result; // eax
   _DWORD *i; // ecx
 
@@ -645,7 +647,7 @@ DynamicVector * ParticleSystemClass_32::Constructor_VectorClass_BuildingClass___
   void *v3; // eax
 
   v3 = (void *)this->q004; /*0x4ef5d3*/
-  *this = &(void*)(void*)&VectorClass_BuildingClass___vftable; /*0x4ef5d6*/
+  *(void **)this = (void*)&VectorClass_BuildingClass___vftable; /*0x4ef5d6*/
   if ( v3 && this->IsAllocated ) /*0x4ef5e0*/
   {
     RA2_OPDEL(v3); /*0x4ef5e8*/
@@ -666,7 +668,7 @@ VectorClass_flat * ParticleSystemClass_16::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->q004; /*0x4efd53*/
-  *this = &(void*)(void*)&VectorClass_SmudgeClass___vftable; /*0x4efd56*/
+  *(void **)this = (void*)&VectorClass_SmudgeClass___vftable; /*0x4efd56*/
   if ( v3 && this->IsAllocated ) /*0x4efd60*/
   {
     RA2_OPDEL(v3); /*0x4efd68*/
@@ -687,7 +689,7 @@ VectorClass_flat * ParticleSystemClass_32::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->q004; /*0x4efdf3*/
-  *this = &(void*)(void*)&VectorClass_TerrainClass___vftable; /*0x4efdf6*/
+  *(void **)this = (void*)&VectorClass_TerrainClass___vftable; /*0x4efdf6*/
   if ( v3 && this->IsAllocated ) /*0x4efe00*/
   {
     RA2_OPDEL(v3); /*0x4efe08*/
@@ -708,7 +710,7 @@ DynamicVector * ParticleSystemClass_32::Constructor_VectorClass_TerrainClass___(
   void *v3; // eax
 
   v3 = (void *)this->q004; /*0x4efe43*/
-  *this = &(void*)(void*)&VectorClass_TerrainClass___vftable; /*0x4efe46*/
+  *(void **)this = (void*)&VectorClass_TerrainClass___vftable; /*0x4efe46*/
   if ( v3 && this->IsAllocated ) /*0x4efe50*/
   {
     RA2_OPDEL(v3); /*0x4efe58*/
@@ -729,7 +731,7 @@ DynamicVector * ParticleSystemClass_32::Constructor_VectorClass_AircraftClass___
   void *v3; // eax
 
   v3 = (void *)this->q004; /*0x4efee3*/
-  *this = &(void*)(void*)&VectorClass_AircraftClass___vftable; /*0x4efee6*/
+  *(void **)this = (void*)&VectorClass_AircraftClass___vftable; /*0x4efee6*/
   if ( v3 && this->IsAllocated ) /*0x4efef0*/
   {
     RA2_OPDEL(v3); /*0x4efef8*/

@@ -48,6 +48,7 @@ Usage
     python tools/verify_execution_flow.py --fetch-cache
 """
 
+import bisect
 import json
 import re
 import sys
@@ -873,15 +874,167 @@ def _extract_function_body(lines, start_idx, cppf_relative):
     }
 
 
+_CPP_FILES_MEMO = None
+
+
 def _cpp_files():
-    files = list(SRC_DIR.glob("**/*.cpp"))
-    app = PROJECT_ROOT / "app"
-    if app.exists():
-        files.extend(app.glob("**/*.cpp"))
-    return files
+    # Perf (perf-verify): the glob over src/ + app/ costs ~230ms and
+    # find_cpp_function* used to re-glob on every lookup. Memoized; the list
+    # content is identical to the original scan.
+    global _CPP_FILES_MEMO
+    if _CPP_FILES_MEMO is None:
+        files = list(SRC_DIR.glob("**/*.cpp"))
+        app = PROJECT_ROOT / "app"
+        if app.exists():
+            files.extend(app.glob("**/*.cpp"))
+        _CPP_FILES_MEMO = files
+    return _CPP_FILES_MEMO
+
+
+# ===================================================================
+# C++ source pre-index (perf only -- lookup results are identical)
+# ===================================================================
+# find_cpp_function / find_cpp_function_by_addr used to re-open and rescan
+# every src cpp file on every call (~869 file opens per lookup; the --auto
+# pool paid this per verified function = ~89% of total wall time). The index
+# below reads each file ONCE per process and keeps:
+#   lines[fi]     -- f.readlines() list (verbatim content)
+#   text[fi]      -- ''.join(lines)  (C-speed substring search)
+#   offs[fi]      -- char offset of each line start (pos -> line bisect)
+#   addr_hits     -- canonical hex text -> ascending [(file_idx, line_idx)]
+#                    of `//`-comment lines matched by the same pattern the
+#                    per-address `addr_pattern.search` used
+#                     (`//\s*(?:IDA:?\s*)?0x<canonical>\b`, case-insensitive).
+# Files are treated as static for the lifetime of the process (true for every
+# CLI invocation of this verifier; previously they were re-read per call).
+
+_SRC_INDEX = None
+
+# One regex upstream of the per-address patterns: capture the hex run after
+# `//` + optional whitespace + optional `IDA:` (+ws). A captured hex matches a
+# lookup addr iff it equals (case-insensitively) format(addr,'X').rjust(6,'0')
+# -- exactly the strings the original `0x{addr:0>6X}\b` pattern matched
+# (greedy capture + trailing \b makes the captured run the maximal hex run,
+# so e.g. `0x40B140X` never matches addr 0x40B140, same as before).
+_ADDR_COMMENT_RE = re.compile(r'//\s*(?:IDA:?\s*)?0x([0-9A-Fa-f]+)\b')
+
+
+def _src_index():
+    global _SRC_INDEX
+    if _SRC_INDEX is None:
+        idx = {"lines": [], "text": [], "offs": [], "rel": [], "addr_hits": {}}
+        addr_hits = idx["addr_hits"]
+        for cppf in _cpp_files():
+            try:
+                with open(cppf, "r", encoding="utf-8", errors="replace") as f:
+                    lines = f.readlines()
+            except OSError:
+                lines = []
+            fi = len(idx["lines"])
+            idx["lines"].append(lines)
+            idx["text"].append("".join(lines))
+            offs = []
+            pos = 0
+            for ln in lines:
+                offs.append(pos)
+                pos += len(ln)
+            idx["offs"].append(offs)
+            idx["rel"].append(str(cppf.relative_to(PROJECT_ROOT)))
+            for i, line in enumerate(lines):
+                stripped = line.strip()
+                if not stripped.startswith("//"):
+                    continue
+                for m in _ADDR_COMMENT_RE.finditer(stripped):
+                    hexs = m.group(1).upper()
+                    lst = addr_hits.get(hexs)
+                    if lst is None:
+                        addr_hits[hexs] = [(fi, i)]
+                    elif lst[-1] != (fi, i):
+                        lst.append((fi, i))
+        _SRC_INDEX = idx
+    return _SRC_INDEX
+
+
+def _index_body(loc):
+    fi, k = loc
+    idx = _SRC_INDEX
+    return _extract_function_body(idx["lines"][fi], k, idx["rel"][fi])
+
+
+_FN_ADDR_MEMO = {}
+
+
+def find_cpp_function_by_addr(ida_addr):
+    # Perf (perf-verify): comment-line candidates come from the one-time
+    # _src_index (identical match semantics to the old per-address regex over
+    # `//`-comment lines); the enclosing/forward def resolution below is the
+    # original logic, unchanged. Resolution is memoized per (addr) for static
+    # sources; the returned body dict is rebuilt per call.
+    memo = _FN_ADDR_MEMO
+    if ida_addr in memo:
+        loc = memo[ida_addr]
+        return _index_body(loc) if loc is not None else None
+    if _SRC_INDEX is None:
+        _src_index()
+
+    def_re = re.compile(
+        r'^\s*(?:namespace\s+\w+\s*\{\s*)*(?:inline\s+)?[\w\s*&<>:\-]+\s+'
+        r'(?:([\w:]+)::)?(~?\w+)\s*\([^)]*\)\s*(?:const\s*)?(?:\{|$)')
+
+    def _is_def_line(lns, j):
+        head = lns[j].lstrip()[:1]
+        if head in (":", ",", "{", "}"):
+            return False
+        sig = _logical_signature(lns, j)
+        return bool(def_re.match(sig)) or _is_ctor_def(sig)
+
+    idx = _SRC_INDEX
+    hexs = format(ida_addr, 'X').rjust(6, '0')
+    result = None
+    for fi, i in idx["addr_hits"].get(hexs, ()):
+        lines = idx["lines"][fi]
+        n = len(lines)
+        rel = idx["rel"][fi]
+        enclosing = None
+        for k in range(i - 1, max(i - 600, -1), -1):
+            if not _is_def_line(lines, k):
+                continue
+            body = _extract_function_body(lines, k, rel)
+            last = body["start_line"] + len(body["lines"]) - 1
+            if body["start_line"] <= i <= last:
+                enclosing = body
+            break
+        if enclosing is not None:
+            result = (fi, enclosing["start_line"])
+            break
+        for j in range(i + 1, min(i + 12, n)):
+            if _is_def_line(lines, j):
+                result = (fi, j)
+                break
+        if result is not None:
+            break
+    if result is None:
+        memo[ida_addr] = None
+        return None
+    memo[ida_addr] = result
+    return _index_body(result)
+
+
+_FN_NAME_MEMO = {}
 
 
 def find_cpp_function(func_name):
+    # Perf (perf-verify): candidate lines come from C-level substring search
+    # over the cached file text (identical to the old per-line
+    # `hint not in line` pre-filter), then the original signature checks run
+    # per candidate. Memoized per name; body dict rebuilt per call.
+    memo = _FN_NAME_MEMO
+    if func_name in memo:
+        loc = memo[func_name]
+        return _index_body(loc) if loc is not None else None
+    if _SRC_INDEX is None:
+        _src_index()
+
     parts = func_name.split("::")
     class_name = parts[0] if len(parts) >= 2 else None
     method_name = parts[-1]
@@ -897,66 +1050,41 @@ def find_cpp_function(func_name):
     ctor_re = _ctor_def_re(class_name, method_name)
     hint = method_name[1:] if method_name.startswith("~") else method_name
     ctor_hint = class_name if ctor_re is not None else None
-    for cppf in _cpp_files():
+
+    idx = _SRC_INDEX
+    result = None
+    for fi, cppf in enumerate(_cpp_files()):
         # G6: Task 17/18 存根（return 0; 占位）会按名抢占匹配（glob 序 _generated
         # 先于 e4），真体在 e4/模块文件——跳过。by_addr 回退不受影响（存根无地址注解）。
         if "_generated" in cppf.parts:
             continue
-        try:
-            with open(cppf, "r", encoding="utf-8", errors="replace") as f:
-                lines = f.readlines()
-        except OSError:
+        text = idx["text"][fi]
+        has_hint = hint in text
+        has_ctor = ctor_hint is not None and ctor_hint in text
+        if not has_hint and not has_ctor:
             continue
-        rel = str(cppf.relative_to(PROJECT_ROOT))
-        for i, line in enumerate(lines):
-            if hint not in line and (ctor_hint is None or ctor_hint not in line):
+        lines = idx["lines"][fi]
+        offs = idx["offs"][fi]
+        cand = set()
+        for needle in (hint, ctor_hint):
+            if needle is None:
                 continue
+            pos = text.find(needle)
+            while pos >= 0:
+                cand.add(bisect.bisect_right(offs, pos) - 1)
+                pos = text.find(needle, pos + 1)
+        for i in sorted(cand):
             sig = _logical_signature(lines, i)
             if def_pattern.search(sig) or (ctor_re is not None and ctor_re.search(sig)):
-                return _extract_function_body(lines, i, rel)
-    return None
-
-
-def find_cpp_function_by_addr(ida_addr):
-    addr_pattern = re.compile(rf'//\s*(?:IDA:?\s*)?0x{ida_addr:0>6X}\b', re.IGNORECASE)
-    def_re = re.compile(
-        r'^\s*(?:namespace\s+\w+\s*\{\s*)*(?:inline\s+)?[\w\s*&<>:\-]+\s+'
-        r'(?:([\w:]+)::)?(~?\w+)\s*\([^)]*\)\s*(?:const\s*)?(?:\{|$)')
-
-    def _is_def_line(lns, j):
-        head = lns[j].lstrip()[:1]
-        if head in (":", ",", "{", "}"):
-            return False
-        sig = _logical_signature(lns, j)
-        return bool(def_re.match(sig)) or _is_ctor_def(sig)
-
-    for cppf in _cpp_files():
-        try:
-            with open(cppf, "r", encoding="utf-8", errors="replace") as f:
-                lines = f.readlines()
-        except OSError:
-            continue
-        rel = str(cppf.relative_to(PROJECT_ROOT))
-        n = len(lines)
-        for i, line in enumerate(lines):
-            stripped = line.strip()
-            if not (stripped.startswith("//") and addr_pattern.search(stripped)):
-                continue
-            enclosing = None
-            for k in range(i - 1, max(i - 600, -1), -1):
-                if not _is_def_line(lines, k):
-                    continue
-                body = _extract_function_body(lines, k, rel)
-                last = body["start_line"] + len(body["lines"]) - 1
-                if body["start_line"] <= i <= last:
-                    enclosing = body
+                result = (fi, i)
                 break
-            if enclosing is not None:
-                return enclosing
-            for j in range(i + 1, min(i + 12, n)):
-                if _is_def_line(lines, j):
-                    return _extract_function_body(lines, j, rel)
-    return None
+        if result is not None:
+            break
+    if result is None:
+        memo[func_name] = None
+        return None
+    memo[func_name] = result
+    return _index_body(result)
 
 
 # ===================================================================
@@ -1264,6 +1392,9 @@ def _cache_path(addr):
     return IDA_CACHE_DIR / f"func_0x{addr:X}.json"
 
 
+_IDA_CACHE_MEMO = {}
+
+
 def save_ida_cache(addr, decompiled_text, func_name=None):
     IDA_CACHE_DIR.mkdir(parents=True, exist_ok=True)
     import datetime
@@ -1272,19 +1403,33 @@ def save_ida_cache(addr, decompiled_text, func_name=None):
     path = _cache_path(addr)
     with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
+    # keep the load memo coherent with the write (perf-verify): a later
+    # load_ida_cache in the same process must observe the fresh text
+    _IDA_CACHE_MEMO[addr] = (decompiled_text, func_name)
     return path
 
 
 def load_ida_cache(addr):
+    # Perf (perf-verify): --auto reads every cache file up to 3x per run
+    # (phase-A fingerprint pass, worker verify, phase-C PASS-cache pass);
+    # memoize per process. Files are static within one invocation, and
+    # save_ida_cache keeps the memo coherent after writes.
+    memo = _IDA_CACHE_MEMO
+    hit = memo.get(addr)
+    if hit is not None:
+        return hit
     path = _cache_path(addr)
     if not path.exists():
-        return None, None
-    try:
-        with open(path, "r", encoding="utf-8") as f:
-            data = json.load(f)
-        return data.get("decompiled", ""), data.get("name")
-    except (json.JSONDecodeError, KeyError):
-        return None, None
+        result = (None, None)
+    else:
+        try:
+            with open(path, "r", encoding="utf-8") as f:
+                data = json.load(f)
+            result = (data.get("decompiled", ""), data.get("name"))
+        except (json.JSONDecodeError, KeyError):
+            result = (None, None)
+    memo[addr] = result
+    return result
 
 
 # ===================================================================
@@ -1721,7 +1866,16 @@ _POOL_SIGNALS = None
 def _pool_init():
     global _POOL_M, _POOL_SIGNALS
     _POOL_M = load_all_maps()
+    # Memory discipline (perf-verify): the raw member_lookup dict is consumed
+    # only by build_member_name_index() (inside load_all_maps); no verifier
+    # path reads it afterwards (efv_* read member_name_to_off / Signals).
+    # Workers release it (~1.7GB of the ~3.0GB steady per-worker RSS). The
+    # main-process M keeps it for external importers of load_all_maps.
+    _POOL_M.member_lookup = {}
     _POOL_SIGNALS = _load_efv()["cpp_events"].get_signals()
+    # Perf (perf-verify): build the cpp source pre-index during worker startup
+    # (~3.5s, one read of the ~869 src cpp files) so verify tasks never pay it.
+    _src_index()
 
 
 def _pool_verify(task):
@@ -1760,7 +1914,8 @@ def main():
     p.add_argument("--verbose", "-v", action="store_true")
     p.add_argument("--workers", type=int, default=1,
                    help="(--auto) shard the verify over N worker processes; "
-                        "each loads the ~286MB maps (keep <= 3, memory)")
+                        "each loads the big maps + cpp source index "
+                        "(~400MB RSS measured; keep <= 8, hard cap 12)")
     p.add_argument("--no-cache", action="store_true",
                    help="(--auto) disable the incremental PASS cache "
                         "(full re-verify of every completed function)")
@@ -1858,12 +2013,12 @@ def main():
                 print(f"  {reason}")
 
         results = []
-        workers = max(1, min(int(getattr(args, 'workers', 1) or 1), 3))
+        workers = max(1, min(int(getattr(args, 'workers', 1) or 1), 12))
         if workers > 1 and len(todo) >= 32:
             import multiprocessing as mp
             ctx = mp.get_context('spawn')
             with ctx.Pool(processes=workers, initializer=_pool_init) as pool:
-                for addr, passed, reason, _ish in pool.imap_unordered(
+                for addr, passed, reason, ish in pool.imap_unordered(
                         _pool_verify, todo, chunksize=8):
                     if passed is None:
                         print(f"SKIP (no cache): sub_{addr:X}")
@@ -1872,7 +2027,7 @@ def main():
                     if not passed:
                         all_passed = False
                         _report_fail(addr, reason)
-                    results.append((addr, passed))
+                    results.append((addr, passed, ish))
         else:
             for addr, name in todo:
                 disp = name or f"sub_{addr:X}"
@@ -1890,7 +2045,7 @@ def main():
                     if isinstance(info, dict) and info.get("reject")                             and info.get("reason"):
                         reason = str(info['reason'])
                     _report_fail(addr, reason)
-                results.append((addr, passed))
+                results.append((addr, passed, _sha1_text(ida_decomp)))
 
         # phase C: persist the PASS cache (pruned to the current pool)
         if use_cache:
@@ -1903,13 +2058,16 @@ def main():
                     continue
                 if ai in addr_set and isinstance(ent, dict)                         and ent.get('k') == env_key:
                     new_cache[a] = ent
-            for addr, passed in results:
+            for addr, passed, ish in results:
                 if not passed:
                     continue
-                ida_text = load_ida_cache(addr)[0] or ''
+                # Perf (perf-verify): prefer the sha the verifying side already
+                # computed over its own copy of the cached IDA text; fall back
+                # to re-reading when absent. Identical fingerprint either way.
+                if not ish:
+                    ish = _sha1_text(load_ida_cache(addr)[0] or '')
                 new_cache[str(addr)] = {'k': env_key,
-                                        'f': [_cpp_fn_hash(addr),
-                                              _sha1_text(ida_text)],
+                                        'f': [_cpp_fn_hash(addr), ish],
                                         'v': 1}
             _verify_cache_save(new_cache)
         if fetched:

@@ -23,11 +23,11 @@ struct MSOverlayAnim {
     void* q02C;  // 0x2C
     unsigned int q030;  // 0x30
     MPCooperative* q034;  // 0x34
-    CampaignScore* q038;  // 0x38
+    void* q038;  // 0x38
     ObjectClass* q03C;  // 0x3C
     void* q040;  // 0x40
     void* q044;  // 0x44
-    char q048[4];  // 0x48
+    unsigned int q048;  // 0x48
     unsigned char q04C;  // 0x4C
     ObjectClass* q050;  // 0x50
     ObjectClass* q054;  // 0x54
@@ -61,7 +61,7 @@ struct MSOverlayAnim {
     unsigned char q128;  // 0x128
     unsigned char q12C;  // 0x12C
     MPCooperative* q130;  // 0x130
-    CampaignScore* q134;  // 0x134
+    void* q134;  // 0x134
     unsigned char q138;  // 0x138
     unsigned char q13C;  // 0x13C
     unsigned char q140;  // 0x140
@@ -115,7 +115,7 @@ struct MSOverlayAnim {
     unsigned char q2BC;  // 0x2BC
     unsigned char q300;  // 0x300
     MPCooperative* q304;  // 0x304
-    CampaignScore* q308;  // 0x308
+    void* q308;  // 0x308
     unsigned char q30C;  // 0x30C
     unsigned char q310;  // 0x310
     unsigned char q314;  // 0x314
@@ -455,7 +455,7 @@ struct MSOverlayAnim {
     unsigned char q1904;  // 0x1904
     ObjectClass* q1908;  // 0x1908
     unsigned char q190C;  // 0x190C
-    CampaignScore* q1910;  // 0x1910
+    void* q1910;  // 0x1910
     unsigned char q1914;  // 0x1914
     unsigned char q1918;  // 0x1918
     unsigned char q191C;  // 0x191C
@@ -910,7 +910,7 @@ struct MSOverlayAnim {
     unsigned char q6B78;  // 0x6B78
     unsigned char q6B7C;  // 0x6B7C
 // --- flat members (END) ---
-    MSShapeAnim * QueryInterface(char a2);
+    void* QueryInterface(char a2);
     void StubReturnFalse(int a1);
 };
 

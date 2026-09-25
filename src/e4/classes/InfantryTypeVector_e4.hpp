@@ -8,7 +8,7 @@ namespace gamemd {
 struct InfantryTypeVector {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
-    unsigned int u32_4;  // 0x4
+    void* q004;  // 0x4
     unsigned char q008;  // 0x8
     unsigned char q00C;  // 0xC
     unsigned char u8_D;  // 0xD
@@ -43,6 +43,7 @@ struct InfantryTypeVector {
     unsigned char q094;  // 0x94
     unsigned char q098;  // 0x98
     unsigned char q100;  // 0x100
+    unsigned int u32_4;
     unsigned int vt_slot_8;
 // --- flat members (END) ---
     int Add(InfantryTypeClass * aP1);

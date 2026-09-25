@@ -80,8 +80,8 @@ struct Session {
     unsigned int q5750;  // 0x5750
     unsigned int q6408;  // 0x6408
     unsigned int q6440;  // 0x6440
-    unsigned int q0244;
     unsigned int q0243;
+    unsigned int q0244;
 // --- flat members (END) ---
     int RemoveTeam(MSShapeAnim * aP1);  // 0x5D1D80
     int PrepareGame();  // 0x5E74E0

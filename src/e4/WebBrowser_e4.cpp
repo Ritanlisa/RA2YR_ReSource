@@ -7,7 +7,10 @@
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/Power_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/WideString_e4.hpp"
 
 // 0x773600
 namespace gamemd {
@@ -16,7 +19,7 @@ int WebBrowser::LoadURLFromRegistry(const char * a2)
   LSTATUS v3; // esi
   LSTATUS v4; // esi
   char *v5; // edx
-  int v6; // eax
+  void * v6;
   HKEY phkResult; // [esp+10h] [ebp-558h] BYREF
   DWORD cbData; // [esp+14h] [ebp-554h] BYREF
   DWORD Type; // [esp+18h] [ebp-550h] BYREF
@@ -113,7 +116,7 @@ int WebBrowser::ShowDialog()
       v5[2] = 0; /*0x773f7d*/
       *((_BYTE *)v5 + 1036) = 0; /*0x773f84*/
       v5[260] = 0; /*0x773f8b*/
-      *v5 = &(void*)(void*)&WebBrowser_vftable; /*0x773f95*/
+      *(void **)v5 = (void*)&WebBrowser_vftable; /*0x773f95*/
       Debug::Log(g_Str_Instantiating_embedded_WebBrow); /*0x773f9b*/
       *(_DWORD *)(v6 + 1040) = v3; /*0x773fa3*/
       Debug::Log(g_Str_Creating_WOLBrowser_component_); /*0x773fae*/
@@ -150,10 +153,10 @@ int WebBrowser::ShowDialog()
 namespace gamemd {
 int WebBrowser::GoForward()
 {
-  int v2; // eax
+  void * v2;
   char v4; // [esp+10h] [ebp+4h]
 
-  *(_DWORD *)this = &(void*)(void*)&WebBrowser_vftable; /*0x7740a8*/
+  *(void **)this = (void*)&WebBrowser_vftable; /*0x7740a8*/
   Debug::Log(); /*0x7740ae*/
   if ( this->q008 ) /*0x7740b3*/
   {
@@ -417,7 +420,7 @@ int WebBrowser::GoBack()
   }
   String::Assign_Alt((void **)&g_WebBrowser, Dest); /*0x773dee*/
   String::Assign_Alt((void **)&g_WebBrowserConfig, v7); /*0x773dfd*/
-  v3[0] = &(void*)(void*)&rc_ptr_PlayerProfile_vftable; /*0x773e06*/
+  v3[0] = (void*)&rc_ptr_PlayerProfile_vftable; /*0x773e06*/
   ComPtr::Release(v3); /*0x773e0e*/
   DeleteAndZero(&v2); /*0x773e17*/
   return 0; /*0x773e1e*/

@@ -23,14 +23,17 @@ struct AITriggerTypeClass_40 {
     unsigned char q04C;  // 0x4C
     unsigned char q050;  // 0x50
     bool q054;  // 0x54
+    unsigned int Capacity;
+    unsigned int Items;
+    unsigned int Items2;
 // --- flat members (END) ---
     void ClearBuffer();  // 0x420370
     int Seek(int a2);  // 0x4203C0
     char AddRef(int a2);  // 0x4203D0
-    char Release(int a2, unsigned int * a3);  // 0x420410
+    char Release(int a2,  unsigned int * a3);    // 0x420410
     void ddtor();  // 0x4204C0
     int Read(unsigned int * a2);  // 0x4204F0
-    char SetCapacity(int a2, unsigned int * a3);  // 0x420550
+    char SetCapacity(int a2,  unsigned int * a3);    // 0x420550
     int FindItem(unsigned int * a2);  // 0x420600
     VectorClass_flat * QueryInterface(char a2);  // 0x420630
     DynamicVector * Constructor_VectorClass_AlphaLightingRemapClass___(char a2);  // 0x420680

@@ -9,7 +9,11 @@
 #include "e4/classes/BuildingClass_e4.hpp"
 #include "e4/classes/MapClass_e4.hpp"
 #include "e4/classes/Math_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x544C80
 namespace gamemd {
@@ -24,7 +28,7 @@ int CellClass::EnsureFileLoaded()
 namespace gamemd {
 HouseClass * * CellClass::UpdateVariant3(IUnknown * aP0, IUnknown * aP1)
 {
-  int v2; // edi
+  IUnknown * v2;
   int v3; // ecx
   unsigned int v4; // eax
   _BYTE *v5; // eax
@@ -190,7 +194,7 @@ HouseClass * * CellClass::UpdateVariant3(IUnknown * aP0, IUnknown * aP1)
 namespace gamemd {
 HouseClass * * CellClass::UpdateVariant4(IUnknown * aP0, IUnknown * aP1)
 {
-  int v2; // edi
+  IUnknown * v2;
   int v3; // ecx
   unsigned int v4; // eax
   _BYTE *v5; // eax
@@ -356,7 +360,7 @@ HouseClass * * CellClass::UpdateVariant4(IUnknown * aP0, IUnknown * aP1)
 namespace gamemd {
 HouseClass * * CellClass::UpdateTerrain(IUnknown * aP0, IUnknown * aP1)
 {
-  int v2; // edi
+  IUnknown * v2;
   int v3; // ecx
   unsigned int v4; // eax
   _BYTE *v5; // eax

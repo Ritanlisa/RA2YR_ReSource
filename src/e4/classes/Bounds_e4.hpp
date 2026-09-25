@@ -18,7 +18,7 @@ struct Bounds {
     unsigned char q020;  // 0x20
     void* q024;  // 0x24
 // --- flat members (END) ---
-    unsigned int * Subtract(IUnknown * aP1, unsigned int * a2);
+    unsigned int * Subtract(void* aP1, unsigned int * a2);
 };
 
 } // namespace gamemd

@@ -13,6 +13,7 @@ struct E4Recv_6A74A0 {
     unsigned int q3988;  // 0x3988
     unsigned int u32_3E50;  // 0x3E50
     unsigned int M21404;  // 0x539C
+    unsigned int u32_85C1;
 // --- flat members (END) ---
     int sub_6A74A0(int a2);  // 0x6A74A0
 };

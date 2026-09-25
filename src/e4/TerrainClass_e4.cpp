@@ -24,7 +24,11 @@
 #include "e4/classes/TeamClass_e4.hpp"
 #include "e4/classes/TeamTypeClass_e4.hpp"
 #include "e4/classes/Terrain_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/TerrainTypeClass_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x6DD8B0
 namespace gamemd {
@@ -1245,10 +1249,10 @@ void* TerrainClass::LoadFromStream(unsigned int * a1, int a2)
     if ( v2 ) /*0x71ce8a*/
     {
       ObjectClass::Init(v2, (int)&a1); /*0x71ce93*/
-      *v2 = &(void*)(void*)&TerrainClass_vftable; /*0x71ce98*/
+      *v2 = (void*)&TerrainClass_vftable; /*0x71ce98*/
       *v3 = &off_7F5200; /*0x71ce9f*/
-      v2[2] = &(void*)(void*)&TerrainClass_vftable; /*0x71cea5*/
-      v2[3] = &(void*)(void*)&TerrainClass_vftable; /*0x71ceac*/
+      v2[2] = (void*)&TerrainClass_vftable; /*0x71cea5*/
+      v2[3] = (void*)&TerrainClass_vftable; /*0x71ceac*/
     }
     v14 = (*(int (__stdcall **)(_DWORD *))(*v3 + 16))(v3); /*0x71cebf*/
     v15 = g_BuildingLoadQueue_Capacity; /*0x71cec1*/

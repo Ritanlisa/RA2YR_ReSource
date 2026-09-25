@@ -18,7 +18,10 @@
 #include "e4/classes/Vector_e4.hpp"
 #include "e4/classes/String_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/CCFileClass_e4.hpp"
+#include "e4/classes/ProgressTimer_e4.hpp"
 
 // 0x7586F0
 namespace gamemd {
@@ -131,7 +134,7 @@ int VoxelAnim::Draw(unsigned int * a2)
   int v145; // [esp+1Ch] [ebp-54h]
   int v148; // [esp+20h] [ebp-50h]
   int v151; // [esp+24h] [ebp-4Ch]
-  _DWORD *v152; // [esp+38h] [ebp-38h] BYREF
+  unsigned int v152;
   double v153; // [esp+3Ch] [ebp-34h] BYREF
   double v154; // [esp+44h] [ebp-2Ch] BYREF
   double v155; // [esp+4Ch] [ebp-24h] BYREF
@@ -174,11 +177,11 @@ int VoxelAnim::Draw(unsigned int * a2)
       (*(void (__thiscall **)(_DWORD, _DWORD))(*this->q00C + 460))(this->q00C, 0);
       *(_BYTE *)(this->q00C + 1719) = 0;
       Voxel::DrawHelper(&g_AsyncMovieState);
-      _DWORD * v116 = this->q00C;
+      unsigned int v116 =
       if ( v116[376] == -1 )
         (*(void (__thiscall **)(_DWORD *, _DWORD, _DWORD))(*v116 + 1348))(v116, 0, 0);
       (*(void (__thiscall **)(_DWORD, int))(*this->q00C + 396))(this->q00C, 2);
-      _BYTE * v117 = this->q00C;
+      unsigned int v117 =
       IDA_LOBYTE(v9) = v117[144];
       if ( (_BYTE)v9 )
       {
@@ -322,7 +325,7 @@ LABEL_120:
     && this->matrices == g_MovieFrameState1
     && this->q090 == g_MovieFrameState2 )
   {
-    double * v106 = this->q00C;
+    unsigned int v106 =
     if ( v106[175] > 0.0 )
     {
       (*(void (__thiscall **)(double *, _DWORD, _DWORD))(*(_DWORD *)v106 + 1348))(v106, 0, 0);
@@ -335,12 +338,12 @@ LABEL_123:
     *(_BYTE *)(v9 + 1674) = 0;
     return v9;
   }
-  _DWORD * v5 = this->q00C;
+  unsigned int v5 =
   v152 = v5;
   if ( v5[376] != -1 )
     goto LABEL_32;
   int v6 = v5[400];
-  int v7 = v5[402];
+  unsigned int v7 =
   _DWORD * v8 = v5 + 400;
   if ( v6 == -1 )
     goto LABEL_11;
@@ -373,7 +376,7 @@ LABEL_11:
       v13 = (_DWORD *)(*(int (__thiscall **)(_DWORD, int *))(*this->q00C + 72))(
                         this->q00C,
                         &v160);
-      int * v14 = Coord::Subtract(&v155, *v13 - *v4, v13[1] - this->matrices, v13[2] - this->q090);
+      unsigned int v14 =
       v157 = *v14;
       v158 = v14[1];
       v159 = v14[2];
@@ -395,14 +398,14 @@ LABEL_11:
           IDA_LOWORD(a2) = *v4 / 256;
           IDA_HIWORD(a2) = this->matrices / 256;
           IDA_LODWORD(v153) = a2;
-          _BYTE * v18 = this->q00C;
+          unsigned int v18 =
           if ( v18[981] )
           {
             _DWORD * v19 = (_DWORD *)(*(int (__thiscall **)(_BYTE *, int *, _DWORD))(*(_DWORD *)v18 + 76))(v18, &v160, 0);
             IDA_LOWORD(a2) = *v19 / 256;
-            _DWORD * v20 = this->q00C;
+            unsigned int v20 =
             IDA_HIWORD(a2) = v19[1] / 256;
-            _DWORD * v21 = v20;
+            unsigned int v21 =
             IDA_LODWORD(v154) = a2;
             v152 = v20;
             char v149 = (*(int (__thiscall **)(_DWORD *))(*v20 + 800))(v20);

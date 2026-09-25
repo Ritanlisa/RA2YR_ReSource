@@ -10,6 +10,8 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/TechnoClass_e4.hpp"
 #include "e4/classes/MovieClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x4A8BF0
@@ -67,7 +69,7 @@ Tactical * * Mouse::SetBounds(IUnknown * aP1)
 namespace gamemd {
 int Mouse::SetCursor(ObjectClass * aP1, ObjectClass * aP2)
 {
-  char v4; // bl
+  ObjectClass * v4;
   int v6; // edi
   DWORD Ticks; // eax
   int v8; // ecx
@@ -141,7 +143,7 @@ AbstractClass * * Mouse::DrawCursor(IUnknown * aP1, WWMouseClass * aP2, int a4)
   char **v5; // ecx
   int v6; // ebx
   int v7; // ebp
-  int v8; // esi
+  WWMouseClass * v8;
   int v9; // edi
   int SubFile; // eax
   int v11; // eax

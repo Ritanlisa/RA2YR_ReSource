@@ -115,7 +115,7 @@ struct COMObject {
     unsigned int q0088;
     unsigned int u32_20;
 // --- flat members (END) ---
-    bool IsSameType(GScreenClass * aP0);
+    bool IsSameType(void* aP0);
     int FindNextActive(unsigned char * a1);
     int GetSizeMaxWrapper(AbstractClass * aP0, AbstractClass * aP1);
     int GetSpecialValue(int a1);

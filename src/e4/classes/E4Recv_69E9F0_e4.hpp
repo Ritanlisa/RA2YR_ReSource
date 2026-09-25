@@ -17,6 +17,6 @@ struct E4Recv_69E9F0 {
     unsigned int q1908;  // 0x1908
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    int sub_69E9F0(int a1, Straw * aP2);  // 0x69E9F0
+    int sub_69E9F0(int a1,  void* aP2);    // 0x69E9F0
 };
 } // namespace gamemd

@@ -47,7 +47,7 @@ struct AbstractClass {
     void* q058;  // 0x58
     unsigned char q05C;  // 0x5C
     unsigned int q060;  // 0x60
-    IUnknown* q064;  // 0x64
+    void* q064;  // 0x64
     unsigned int q068;  // 0x68
     ObjectClass* q06C;  // 0x6C
     unsigned char q070;  // 0x70
@@ -63,7 +63,7 @@ struct AbstractClass {
     unsigned char u8_99;  // 0x99
     Coord* q09C;  // 0x9C
     unsigned int u32_A0;  // 0xA0
-    CampaignScore* q0A4;  // 0xA4
+    void* q0A4;  // 0xA4
     unsigned int q0A8;  // 0xA8
     unsigned char q0A9;  // 0xA9
     unsigned char q0AA;  // 0xAA
@@ -76,11 +76,11 @@ struct AbstractClass {
     unsigned int u32_BC;  // 0xBC
     unsigned char q0BD;  // 0xBD
     unsigned int q0C3;  // 0xC3
-    IUnknown* q0C4;  // 0xC4
+    void* q0C4;  // 0xC4
     void* q0C8;  // 0xC8
-    IUnknown* q0CC;  // 0xCC
+    void* q0CC;  // 0xCC
     unsigned char q0D0;  // 0xD0
-    IUnknown* q0D4;  // 0xD4
+    void* q0D4;  // 0xD4
     void* q0D8;  // 0xD8
     void* q0DC;  // 0xDC
     void* q0E0;  // 0xE0
@@ -95,9 +95,9 @@ struct AbstractClass {
     unsigned char q0FB;  // 0xFB
     unsigned int u32_FC;  // 0xFC
     unsigned char q0FF;  // 0xFF
-    IUnknown* q100;  // 0x100
+    void* q100;  // 0x100
     unsigned int q104;  // 0x104
-    IUnknown* q108;  // 0x108
+    void* q108;  // 0x108
     ObjectClass* q10C;  // 0x10C
     DynamicVector* q110;  // 0x110
     unsigned int q111;  // 0x111
@@ -121,7 +121,7 @@ struct AbstractClass {
     unsigned char q15C;  // 0x15C
     unsigned int q160;  // 0x160
     unsigned int q162;  // 0x162
-    IUnknown* q164;  // 0x164
+    void* q164;  // 0x164
     unsigned char q166;  // 0x166
     unsigned int q168;  // 0x168
     bool q16B;  // 0x16B
@@ -130,7 +130,7 @@ struct AbstractClass {
     unsigned char q170;  // 0x170
     unsigned char q174;  // 0x174
     void* q180;  // 0x180
-    IUnknown* q184;  // 0x184
+    void* q184;  // 0x184
     unsigned int q188;  // 0x188
     unsigned int q190;  // 0x190
     unsigned int q194;  // 0x194
@@ -154,7 +154,7 @@ struct AbstractClass {
     unsigned char q200;  // 0x200
     int q201;  // 0x201
     int q202;  // 0x202
-    IUnknown* q204;  // 0x204
+    void* q204;  // 0x204
     unsigned char q206;  // 0x206
     unsigned char q208;  // 0x208
     void* q20C;  // 0x20C
@@ -176,24 +176,24 @@ struct AbstractClass {
     bool q258;  // 0x258
     unsigned char q25C;  // 0x25C
     unsigned int q260;  // 0x260
-    IUnknown* q264;  // 0x264
+    void* q264;  // 0x264
     unsigned char q268;  // 0x268
     unsigned char q26C;  // 0x26C
     unsigned char q270;  // 0x270
-    IUnknown* q274;  // 0x274
+    void* q274;  // 0x274
     bool q278;  // 0x278
     unsigned char q27C;  // 0x27C
     AbstractClass* q280;  // 0x280
     unsigned char q284;  // 0x284
     unsigned char q288;  // 0x288
-    IUnknown* q28C;  // 0x28C
+    void* q28C;  // 0x28C
     unsigned char q290;  // 0x290
-    IUnknown* q298;  // 0x298
+    void* q298;  // 0x298
     unsigned char q29C;  // 0x29C
     void* q2A0;  // 0x2A0
-    IUnknown* q2A4;  // 0x2A4
+    void* q2A4;  // 0x2A4
     unsigned char q2A8;  // 0x2A8
-    IUnknown* q2B0;  // 0x2B0
+    void* q2B0;  // 0x2B0
     ObjectClass* q2B4;  // 0x2B4
     unsigned char q2B8;  // 0x2B8
     void* q2BC;  // 0x2BC
@@ -257,7 +257,7 @@ struct AbstractClass {
     unsigned int q404;  // 0x404
     unsigned char q408;  // 0x408
     unsigned int q418;  // 0x418
-    IUnknown* q41C;  // 0x41C
+    void* q41C;  // 0x41C
     unsigned char q420;  // 0x420
     unsigned int q428;  // 0x428
     HouseClass* q42C;  // 0x42C
@@ -308,7 +308,7 @@ struct AbstractClass {
     void* q51C;  // 0x51C
     BuildingTypeClass* q520;  // 0x520
     AbstractClass* q524;  // 0x524
-    IUnknown* q528;  // 0x528
+    void* q528;  // 0x528
     unsigned int q52B;  // 0x52B
     void* q52C;  // 0x52C
     unsigned int q52D;  // 0x52D
@@ -321,44 +321,44 @@ struct AbstractClass {
     AbstractClass* q548;  // 0x548
     AbstractClass* q54C;  // 0x54C
     void* q550;  // 0x550
-    IUnknown* q554;  // 0x554
+    void* q554;  // 0x554
     AbstractClass* q558;  // 0x558
-    IUnknown* q55C;  // 0x55C
+    void* q55C;  // 0x55C
     unsigned char q560;  // 0x560
-    IUnknown* q564;  // 0x564
+    void* q564;  // 0x564
     unsigned char q568;  // 0x568
     unsigned char q570;  // 0x570
     unsigned int q580;  // 0x580
     OverlayTypeClass* q584;  // 0x584
     unsigned char q588;  // 0x588
-    IUnknown* q58C;  // 0x58C
+    void* q58C;  // 0x58C
     unsigned char q590;  // 0x590
     ObjectClass* q594;  // 0x594
-    IUnknown* q598;  // 0x598
-    IUnknown* q59C;  // 0x59C
+    void* q598;  // 0x598
+    void* q59C;  // 0x59C
     unsigned char q5A0;  // 0x5A0
     ObjectClass* q5A4;  // 0x5A4
     unsigned char q5A8;  // 0x5A8
-    IUnknown* q5B4;  // 0x5B4
+    void* q5B4;  // 0x5B4
     unsigned char q5B8;  // 0x5B8
     unsigned int u32_5BC;  // 0x5BC
     unsigned char q5C0;  // 0x5C0
-    IUnknown* q5C4;  // 0x5C4
+    void* q5C4;  // 0x5C4
     unsigned char q5C8;  // 0x5C8
     void* q5CC;  // 0x5CC
     unsigned char q5D0;  // 0x5D0
-    IUnknown* q5D4;  // 0x5D4
+    void* q5D4;  // 0x5D4
     unsigned char q5D8;  // 0x5D8
     ObjectClass* q5E0;  // 0x5E0
     unsigned char q5E4;  // 0x5E4
     unsigned int q5E8;  // 0x5E8
     BuildingTypeClass* q5EC;  // 0x5EC
     unsigned char q5F0;  // 0x5F0
-    IUnknown* q5F4;  // 0x5F4
+    void* q5F4;  // 0x5F4
     unsigned char q5F8;  // 0x5F8
-    IUnknown* q5FC;  // 0x5FC
+    void* q5FC;  // 0x5FC
     bool q600;  // 0x600
-    IUnknown* q604;  // 0x604
+    void* q604;  // 0x604
     unsigned int q608;  // 0x608
     AbstractClass* q60C;  // 0x60C
     AbstractClass* q610;  // 0x610
@@ -367,7 +367,7 @@ struct AbstractClass {
     AbstractClass* q61C;  // 0x61C
     AbstractClass* q620;  // 0x620
     void* q624;  // 0x624
-    IUnknown* q628;  // 0x628
+    void* q628;  // 0x628
     void* q62C;  // 0x62C
     ObjectClass * q630;  // 0x630
     AbstractClass* q634;  // 0x634
@@ -409,7 +409,7 @@ struct AbstractClass {
     unsigned char u8_6CA;  // 0x6CA
     unsigned int q6CB;  // 0x6CB
     void* q6CC;  // 0x6CC
-    IUnknown* q6D0;  // 0x6D0
+    void* q6D0;  // 0x6D0
     unsigned char q6D4;  // 0x6D4
     AbstractClass* q6D8;  // 0x6D8
     unsigned char q6DC;  // 0x6DC
@@ -447,23 +447,23 @@ struct AbstractClass {
     unsigned int q728;  // 0x728
     void* q734;  // 0x734
     unsigned char q738;  // 0x738
-    IUnknown* q75C;  // 0x75C
+    void* q75C;  // 0x75C
     unsigned char q760;  // 0x760
-    IUnknown* q764;  // 0x764
+    void* q764;  // 0x764
     unsigned int q768;  // 0x768
-    IUnknown* q76C;  // 0x76C
+    void* q76C;  // 0x76C
     unsigned char q770;  // 0x770
     Coord* q774;  // 0x774
     unsigned char q778;  // 0x778
-    IUnknown* q77C;  // 0x77C
+    void* q77C;  // 0x77C
     unsigned char q780;  // 0x780
     AnimClass* q784;  // 0x784
     void* q788;  // 0x788
     unsigned char q78C;  // 0x78C
     void* q790;  // 0x790
-    IUnknown* q794;  // 0x794
+    void* q794;  // 0x794
     unsigned char q798;  // 0x798
-    IUnknown* q79C;  // 0x79C
+    void* q79C;  // 0x79C
     void* q7A0;  // 0x7A0
     void* q7A4;  // 0x7A4
     void* q7A8;  // 0x7A8
@@ -487,7 +487,7 @@ struct AbstractClass {
     unsigned char q844;  // 0x844
     unsigned char q848;  // 0x848
     AbstractClass* q850;  // 0x850
-    IUnknown* q854;  // 0x854
+    void* q854;  // 0x854
     unsigned char q858;  // 0x858
     unsigned char q85C;  // 0x85C
     unsigned char q860;  // 0x860
@@ -593,18 +593,18 @@ struct AbstractClass {
     void* qD38;  // 0xD38
     unsigned char qD3C;  // 0xD3C
     AbstractClass* qD64;  // 0xD64
-    IUnknown* qD68;  // 0xD68
+    void* qD68;  // 0xD68
     unsigned char u8_D6A;  // 0xD6A
     unsigned char qD6C;  // 0xD6C
     Tactical* qD70;  // 0xD70
     AbstractClass* qD74;  // 0xD74
-    IUnknown* qD78;  // 0xD78
+    void* qD78;  // 0xD78
     void* qD7C;  // 0xD7C
     void* qD80;  // 0xD80
     unsigned char qD84;  // 0xD84
     void* qD9C;  // 0xD9C
     unsigned char qDA0;  // 0xDA0
-    IUnknown* qDB0;  // 0xDB0
+    void* qDB0;  // 0xDB0
     unsigned char qDB4;  // 0xDB4
     void* qDB8;  // 0xDB8
     unsigned char qDBC;  // 0xDBC
@@ -657,56 +657,56 @@ struct AbstractClass {
     unsigned char q1018;  // 0x1018
     unsigned int q1024;  // 0x1024
     unsigned int q1028;  // 0x1028
-    IUnknown* q1030;  // 0x1030
-    IUnknown* q1044;  // 0x1044
+    void* q1030;  // 0x1030
+    void* q1044;  // 0x1044
     unsigned int q1048;  // 0x1048
-    IUnknown* q104C;  // 0x104C
+    void* q104C;  // 0x104C
     unsigned char q1050;  // 0x1050
-    IUnknown* q1054;  // 0x1054
+    void* q1054;  // 0x1054
     unsigned char q1058;  // 0x1058
-    IUnknown* q105C;  // 0x105C
+    void* q105C;  // 0x105C
     unsigned char q1060;  // 0x1060
     unsigned int q1064;  // 0x1064
     HouseClass* q1068;  // 0x1068
-    IUnknown* q106C;  // 0x106C
+    void* q106C;  // 0x106C
     unsigned char q1070;  // 0x1070
-    IUnknown* q1074;  // 0x1074
+    void* q1074;  // 0x1074
     unsigned char q1078;  // 0x1078
-    IUnknown* q107C;  // 0x107C
+    void* q107C;  // 0x107C
     unsigned char q1080;  // 0x1080
-    IUnknown* q1084;  // 0x1084
+    void* q1084;  // 0x1084
     unsigned int q1088;  // 0x1088
-    IUnknown* q108C;  // 0x108C
+    void* q108C;  // 0x108C
     unsigned char q1090;  // 0x1090
-    IUnknown* q1094;  // 0x1094
+    void* q1094;  // 0x1094
     unsigned char q1098;  // 0x1098
-    IUnknown* q109C;  // 0x109C
+    void* q109C;  // 0x109C
     unsigned char q10A0;  // 0x10A0
-    IUnknown* q10A4;  // 0x10A4
+    void* q10A4;  // 0x10A4
     unsigned char q10A8;  // 0x10A8
-    IUnknown* q10AC;  // 0x10AC
+    void* q10AC;  // 0x10AC
     unsigned char q10B0;  // 0x10B0
-    IUnknown* q10B4;  // 0x10B4
+    void* q10B4;  // 0x10B4
     unsigned char q10B8;  // 0x10B8
-    IUnknown* q10BC;  // 0x10BC
+    void* q10BC;  // 0x10BC
     void* q10C0;  // 0x10C0
     unsigned char q10C4;  // 0x10C4
-    IUnknown* q10CC;  // 0x10CC
+    void* q10CC;  // 0x10CC
     unsigned char q10D0;  // 0x10D0
     void* q10E0;  // 0x10E0
     unsigned char q10E4;  // 0x10E4
-    IUnknown* q10EC;  // 0x10EC
+    void* q10EC;  // 0x10EC
     void* q10F0;  // 0x10F0
     unsigned char q10F4;  // 0x10F4
-    IUnknown* q10FC;  // 0x10FC
+    void* q10FC;  // 0x10FC
     unsigned char q1100;  // 0x1100
     void* q1110;  // 0x1110
     unsigned char q1114;  // 0x1114
-    IUnknown* q111C;  // 0x111C
+    void* q111C;  // 0x111C
     void* q1120;  // 0x1120
     unsigned int q1124;  // 0x1124
     AbstractTypeClass* q1128;  // 0x1128
-    IUnknown* q112C;  // 0x112C
+    void* q112C;  // 0x112C
     void* q1130;  // 0x1130
     void* q1134;  // 0x1134
     void* q1138;  // 0x1138
@@ -714,7 +714,7 @@ struct AbstractClass {
     void* q1140;  // 0x1140
     void* q1144;  // 0x1144
     unsigned char q1148;  // 0x1148
-    IUnknown* q1154;  // 0x1154
+    void* q1154;  // 0x1154
     void* q1158;  // 0x1158
     unsigned char q115C;  // 0x115C
     char q1160[4];  // 0x1160
@@ -788,12 +788,12 @@ struct AbstractClass {
     void* q1358;  // 0x1358
     unsigned char q135C;  // 0x135C
     void* q1360;  // 0x1360
-    IUnknown* q1364;  // 0x1364
+    void* q1364;  // 0x1364
     AbstractClass* q1368;  // 0x1368
     void* q1374;  // 0x1374
     unsigned char q1378;  // 0x1378
     unsigned char q137C;  // 0x137C
-    IUnknown* q1380;  // 0x1380
+    void* q1380;  // 0x1380
     unsigned char q1384;  // 0x1384
     unsigned char q1388;  // 0x1388
     void* q1390;  // 0x1390
@@ -808,11 +808,11 @@ struct AbstractClass {
     unsigned int q1400;  // 0x1400
     unsigned int q1404;  // 0x1404
     unsigned int q1408;  // 0x1408
-    IUnknown* q1414;  // 0x1414
+    void* q1414;  // 0x1414
     unsigned char q1418;  // 0x1418
-    IUnknown* q141C;  // 0x141C
+    void* q141C;  // 0x141C
     unsigned char q1420;  // 0x1420
-    IUnknown* q1424;  // 0x1424
+    void* q1424;  // 0x1424
     ObjectClass* q1428;  // 0x1428
     unsigned char q142C;  // 0x142C
     unsigned char q1430;  // 0x1430
@@ -835,9 +835,9 @@ struct AbstractClass {
     unsigned char q148C;  // 0x148C
     unsigned char q1490;  // 0x1490
     void* q14BC;  // 0x14BC
-    IUnknown* q14C0;  // 0x14C0
-    IUnknown* q14C4;  // 0x14C4
-    IUnknown* q14C8;  // 0x14C8
+    void* q14C0;  // 0x14C0
+    void* q14C4;  // 0x14C4
+    void* q14C8;  // 0x14C8
     unsigned char q14CC;  // 0x14CC
     void* q14E0;  // 0x14E0
     unsigned char q14E4;  // 0x14E4
@@ -848,32 +848,32 @@ struct AbstractClass {
     unsigned int q14E9;  // 0x14E9
     unsigned int q14EA;  // 0x14EA
     unsigned int q14EB;  // 0x14EB
-    IUnknown* q14EC;  // 0x14EC
+    void* q14EC;  // 0x14EC
     unsigned int q14ED;  // 0x14ED
     unsigned int q14EE;  // 0x14EE
     unsigned int q14EF;  // 0x14EF
     unsigned int q14F3;  // 0x14F3
-    IUnknown* q14F4;  // 0x14F4
+    void* q14F4;  // 0x14F4
     unsigned char q14F8;  // 0x14F8
     void* q14FC;  // 0x14FC
     void* q1500;  // 0x1500
     unsigned char q1504;  // 0x1504
     unsigned char q1508;  // 0x1508
-    IUnknown* q150C;  // 0x150C
+    void* q150C;  // 0x150C
     unsigned char q1510;  // 0x1510
-    IUnknown* q151C;  // 0x151C
+    void* q151C;  // 0x151C
     unsigned char q1520;  // 0x1520
     int q1524;  // 0x1524
     unsigned int q1525;  // 0x1525
     unsigned int q1526;  // 0x1526
     unsigned char q1528;  // 0x1528
     unsigned char q152A;  // 0x152A
-    IUnknown* q152C;  // 0x152C
+    void* q152C;  // 0x152C
     unsigned char q1530;  // 0x1530
-    IUnknown* q1540;  // 0x1540
+    void* q1540;  // 0x1540
     unsigned int q1544;  // 0x1544
     AbstractClass* q1548;  // 0x1548
-    IUnknown* q1554;  // 0x1554
+    void* q1554;  // 0x1554
     unsigned char q1558;  // 0x1558
     AbstractClass* q1560;  // 0x1560
     AbstractClass* q1564;  // 0x1564
@@ -890,57 +890,57 @@ struct AbstractClass {
     AbstractClass* q1600;  // 0x1600
     unsigned char q1604;  // 0x1604
     unsigned char q1608;  // 0x1608
-    IUnknown* q1618;  // 0x1618
+    void* q1618;  // 0x1618
     unsigned int q1624;  // 0x1624
     AbstractClass* q1628;  // 0x1628
     unsigned int q1634;  // 0x1634
     unsigned char q1638;  // 0x1638
-    IUnknown* q163C;  // 0x163C
-    IUnknown* q1640;  // 0x1640
+    void* q163C;  // 0x163C
+    void* q1640;  // 0x1640
     unsigned char q1644;  // 0x1644
-    IUnknown* q1648;  // 0x1648
+    void* q1648;  // 0x1648
     unsigned char q164C;  // 0x164C
-    IUnknown* q1650;  // 0x1650
-    IUnknown* q1654;  // 0x1654
-    IUnknown* q1658;  // 0x1658
+    void* q1650;  // 0x1650
+    void* q1654;  // 0x1654
+    void* q1658;  // 0x1658
     unsigned char q165C;  // 0x165C
     void* q1660;  // 0x1660
     unsigned char q1664;  // 0x1664
-    IUnknown* q1668;  // 0x1668
-    IUnknown* q166C;  // 0x166C
-    IUnknown* q1670;  // 0x1670
-    IUnknown* q1674;  // 0x1674
+    void* q1668;  // 0x1668
+    void* q166C;  // 0x166C
+    void* q1670;  // 0x1670
+    void* q1674;  // 0x1674
     unsigned char q1678;  // 0x1678
-    IUnknown* q167C;  // 0x167C
-    IUnknown* q1680;  // 0x1680
-    IUnknown* q1684;  // 0x1684
+    void* q167C;  // 0x167C
+    void* q1680;  // 0x1680
+    void* q1684;  // 0x1684
     void* q1688;  // 0x1688
     unsigned char q168C;  // 0x168C
-    IUnknown* q16A8;  // 0x16A8
-    IUnknown* q16AC;  // 0x16AC
+    void* q16A8;  // 0x16A8
+    void* q16AC;  // 0x16AC
     unsigned char q16B0;  // 0x16B0
-    IUnknown* q16B4;  // 0x16B4
+    void* q16B4;  // 0x16B4
     unsigned int q16B7;  // 0x16B7
     unsigned char q16BB;  // 0x16BB
     void* q16CC;  // 0x16CC
     unsigned char q16D0;  // 0x16D0
-    IUnknown* q16D4;  // 0x16D4
+    void* q16D4;  // 0x16D4
     void* q16D8;  // 0x16D8
     unsigned char q16DC;  // 0x16DC
-    IUnknown* q16E4;  // 0x16E4
+    void* q16E4;  // 0x16E4
     unsigned char q16E8;  // 0x16E8
-    IUnknown* q16EC;  // 0x16EC
+    void* q16EC;  // 0x16EC
     unsigned char q16F0;  // 0x16F0
-    IUnknown* q16F4;  // 0x16F4
+    void* q16F4;  // 0x16F4
     unsigned int q16F8;  // 0x16F8
     unsigned char q16FC;  // 0x16FC
-    IUnknown* q1700;  // 0x1700
-    IUnknown* q1704;  // 0x1704
+    void* q1700;  // 0x1700
+    void* q1704;  // 0x1704
     unsigned int u32_1707;  // 0x1707
-    IUnknown* q1708;  // 0x1708
-    IUnknown* q170C;  // 0x170C
-    IUnknown* q1710;  // 0x1710
-    IUnknown* q1714;  // 0x1714
+    void* q1708;  // 0x1708
+    void* q170C;  // 0x170C
+    void* q1710;  // 0x1710
+    void* q1714;  // 0x1714
     AbstractTypeClass* q1718;  // 0x1718
     AbstractTypeClass* q171C;  // 0x171C
     void* q1720;  // 0x1720
@@ -950,22 +950,22 @@ struct AbstractClass {
     AbstractTypeClass* q1730;  // 0x1730
     unsigned char q1734;  // 0x1734
     unsigned char q1738;  // 0x1738
-    IUnknown* q173C;  // 0x173C
+    void* q173C;  // 0x173C
     unsigned char q1740;  // 0x1740
-    IUnknown* q1744;  // 0x1744
+    void* q1744;  // 0x1744
     unsigned char q1748;  // 0x1748
-    IUnknown* q174C;  // 0x174C
+    void* q174C;  // 0x174C
     unsigned char q1750;  // 0x1750
-    IUnknown* q1754;  // 0x1754
+    void* q1754;  // 0x1754
     unsigned char q1758;  // 0x1758
     unsigned char q175C;  // 0x175C
     unsigned int q1760;  // 0x1760
-    IUnknown* q1764;  // 0x1764
+    void* q1764;  // 0x1764
     void* q1768;  // 0x1768
-    RandomStruct* q176A;  // 0x176A
+    void* q176A;  // 0x176A
     unsigned char q176E;  // 0x176E
-    IUnknown* q1770;  // 0x1770
-    IUnknown* q1774;  // 0x1774
+    void* q1770;  // 0x1770
+    void* q1774;  // 0x1774
     AbstractTypeClass* q1778;  // 0x1778
     void* q177C;  // 0x177C
     void* q1780;  // 0x1780
@@ -992,19 +992,19 @@ struct AbstractClass {
     unsigned char q180C;  // 0x180C
     unsigned char q1810;  // 0x1810
     unsigned char q1814;  // 0x1814
-    IUnknown* q181C;  // 0x181C
+    void* q181C;  // 0x181C
     unsigned char q1820;  // 0x1820
-    IUnknown* q1824;  // 0x1824
+    void* q1824;  // 0x1824
     unsigned char q1828;  // 0x1828
-    IUnknown* q182C;  // 0x182C
+    void* q182C;  // 0x182C
     Color* q1830;  // 0x1830
     ObjectTypeClass* q1834;  // 0x1834
     unsigned char q1838;  // 0x1838
-    IUnknown* q1844;  // 0x1844
+    void* q1844;  // 0x1844
     unsigned char q1848;  // 0x1848
-    IUnknown* q184C;  // 0x184C
+    void* q184C;  // 0x184C
     unsigned char q1850;  // 0x1850
-    IUnknown* q185C;  // 0x185C
+    void* q185C;  // 0x185C
     Color* q1860;  // 0x1860
     Color* q1863;  // 0x1863
     Color* q1866;  // 0x1866
@@ -1012,21 +1012,21 @@ struct AbstractClass {
     void* q186C;  // 0x186C
     unsigned char q1870;  // 0x1870
     unsigned int q1878;  // 0x1878
-    IUnknown* q1884;  // 0x1884
+    void* q1884;  // 0x1884
     unsigned char q1888;  // 0x1888
     void* q18A8;  // 0x18A8
     void* q18AC;  // 0x18AC
     unsigned char q18B0;  // 0x18B0
-    IUnknown* q1900;  // 0x1900
+    void* q1900;  // 0x1900
     unsigned char q1904;  // 0x1904
     Coord* q1908;  // 0x1908
     unsigned char q1910;  // 0x1910
     unsigned char q1920;  // 0x1920
     AnimClass* q1924;  // 0x1924
     void* q1928;  // 0x1928
-    IUnknown* q1940;  // 0x1940
+    void* q1940;  // 0x1940
     unsigned char q1944;  // 0x1944
-    IUnknown* q1948;  // 0x1948
+    void* q1948;  // 0x1948
     void* q1960;  // 0x1960
     unsigned char q1964;  // 0x1964
     void* q1968;  // 0x1968
@@ -1113,11 +1113,11 @@ struct AbstractClass {
     unsigned char q3434;  // 0x3434
     Tactical* q3440;  // 0x3440
     AbstractClass* q3444;  // 0x3444
-    IUnknown* q3448;  // 0x3448
+    void* q3448;  // 0x3448
     unsigned char q3460;  // 0x3460
     void* q3484;  // 0x3484
     unsigned char q3488;  // 0x3488
-    IUnknown* q3504;  // 0x3504
+    void* q3504;  // 0x3504
     unsigned char q3508;  // 0x3508
     void* q3540;  // 0x3540
     unsigned char q3544;  // 0x3544
@@ -1146,37 +1146,37 @@ struct AbstractClass {
     unsigned char q3984;  // 0x3984
     unsigned char q4040;  // 0x4040
     unsigned char q4120;  // 0x4120
-    IUnknown* q4164;  // 0x4164
+    void* q4164;  // 0x4164
     unsigned int q4168;  // 0x4168
-    IUnknown* q4178;  // 0x4178
-    IUnknown* q4180;  // 0x4180
+    void* q4178;  // 0x4178
+    void* q4180;  // 0x4180
     unsigned int q4184;  // 0x4184
-    IUnknown* q4188;  // 0x4188
+    void* q4188;  // 0x4188
     HouseClass* q4200;  // 0x4200
-    IUnknown* q4204;  // 0x4204
+    void* q4204;  // 0x4204
     unsigned char q4208;  // 0x4208
-    IUnknown* q4220;  // 0x4220
+    void* q4220;  // 0x4220
     unsigned char q4224;  // 0x4224
-    IUnknown* q4228;  // 0x4228
+    void* q4228;  // 0x4228
     unsigned char q4240;  // 0x4240
-    IUnknown* q4244;  // 0x4244
+    void* q4244;  // 0x4244
     unsigned char q4248;  // 0x4248
-    IUnknown* q4260;  // 0x4260
+    void* q4260;  // 0x4260
     unsigned char q4264;  // 0x4264
-    IUnknown* q4268;  // 0x4268
+    void* q4268;  // 0x4268
     unsigned char q4280;  // 0x4280
-    IUnknown* q4284;  // 0x4284
+    void* q4284;  // 0x4284
     void* q4288;  // 0x4288
-    IUnknown* q4300;  // 0x4300
+    void* q4300;  // 0x4300
     unsigned char q4304;  // 0x4304
     void* q4320;  // 0x4320
     unsigned char q4324;  // 0x4324
     unsigned char q4340;  // 0x4340
-    IUnknown* q4348;  // 0x4348
+    void* q4348;  // 0x4348
     unsigned int q4368;  // 0x4368
     void* q4370;  // 0x4370
     unsigned char q4374;  // 0x4374
-    IUnknown* q4380;  // 0x4380
+    void* q4380;  // 0x4380
     void* q4384;  // 0x4384
     unsigned int q4388;  // 0x4388
     void* q4400;  // 0x4400
@@ -1235,9 +1235,9 @@ struct AbstractClass {
     unsigned char q4944;  // 0x4944
     AbstractClass* q4950;  // 0x4950
     void* q4960;  // 0x4960
-    IUnknown* q4964;  // 0x4964
+    void* q4964;  // 0x4964
     AbstractClass* q4968;  // 0x4968
-    IUnknown* q4978;  // 0x4978
+    void* q4978;  // 0x4978
     void* q4980;  // 0x4980
     unsigned char q4984;  // 0x4984
     unsigned char q4988;  // 0x4988
@@ -1251,15 +1251,15 @@ struct AbstractClass {
     unsigned int q5124;  // 0x5124
     unsigned int q5128;  // 0x5128
     OverlayTypeClass* q5138;  // 0x5138
-    IUnknown* q5140;  // 0x5140
+    void* q5140;  // 0x5140
     unsigned char q5144;  // 0x5144
-    IUnknown* q5148;  // 0x5148
+    void* q5148;  // 0x5148
     unsigned char q5158;  // 0x5158
     ObjectClass* q5160;  // 0x5160
     unsigned char q5164;  // 0x5164
     unsigned char q5168;  // 0x5168
-    IUnknown* q5170;  // 0x5170
-    IUnknown* q5174;  // 0x5174
+    void* q5170;  // 0x5170
+    void* q5174;  // 0x5174
     unsigned char q5178;  // 0x5178
     unsigned char q5184;  // 0x5184
     unsigned int q5188;  // 0x5188
@@ -1269,25 +1269,25 @@ struct AbstractClass {
     unsigned char q5224;  // 0x5224
     unsigned char q5228;  // 0x5228
     unsigned char q5234;  // 0x5234
-    IUnknown* q5238;  // 0x5238
+    void* q5238;  // 0x5238
     unsigned char q5248;  // 0x5248
     unsigned char q5260;  // 0x5260
     unsigned char q5264;  // 0x5264
     unsigned char q5270;  // 0x5270
     unsigned char q5278;  // 0x5278
     void* q5308;  // 0x5308
-    IUnknown* q5320;  // 0x5320
+    void* q5320;  // 0x5320
     unsigned char q5324;  // 0x5324
     void* q5344;  // 0x5344
     unsigned char q5348;  // 0x5348
     unsigned int q5350;  // 0x5350
     unsigned int q5354;  // 0x5354
     unsigned int q5358;  // 0x5358
-    IUnknown* q5364;  // 0x5364
+    void* q5364;  // 0x5364
     unsigned char q5368;  // 0x5368
     unsigned char q5380;  // 0x5380
     unsigned char q5384;  // 0x5384
-    IUnknown* q5388;  // 0x5388
+    void* q5388;  // 0x5388
     unsigned int q5394;  // 0x5394
     BuildingTypeClass* q5398;  // 0x5398
     BuildingClass* q53AC;  // 0x53AC
@@ -1310,28 +1310,28 @@ struct AbstractClass {
     unsigned char q53E4;  // 0x53E4
     unsigned char q53E8;  // 0x53E8
     unsigned char q53EC;  // 0x53EC
-    IUnknown* q5404;  // 0x5404
+    void* q5404;  // 0x5404
     unsigned char q5408;  // 0x5408
     unsigned int q5414;  // 0x5414
     unsigned char q5418;  // 0x5418
-    IUnknown* q5420;  // 0x5420
+    void* q5420;  // 0x5420
     unsigned char q5424;  // 0x5424
     bool q5430;  // 0x5430
     unsigned char q5434;  // 0x5434
     unsigned char q5438;  // 0x5438
-    IUnknown* q5440;  // 0x5440
+    void* q5440;  // 0x5440
     unsigned int q5444;  // 0x5444
     unsigned char q5448;  // 0x5448
     unsigned char q544C;  // 0x544C
     AbstractClass* q5458;  // 0x5458
-    IUnknown* q5460;  // 0x5460
+    void* q5460;  // 0x5460
     unsigned char q5464;  // 0x5464
     unsigned char q5468;  // 0x5468
     AbstractClass* q5480;  // 0x5480
     unsigned char q5484;  // 0x5484
     unsigned char q5488;  // 0x5488
-    IUnknown* q5490;  // 0x5490
-    IUnknown* q5494;  // 0x5494
+    void* q5490;  // 0x5490
+    void* q5494;  // 0x5494
     unsigned char q5498;  // 0x5498
     unsigned char q549C;  // 0x549C
     unsigned char q54A0;  // 0x54A0
@@ -1358,17 +1358,17 @@ struct AbstractClass {
     unsigned int u32_55B4;  // 0x55B4
     unsigned int u32_55C8;  // 0x55C8
     unsigned int u32_55DC;  // 0x55DC
-    IUnknown* q55F0;  // 0x55F0
+    void* q55F0;  // 0x55F0
     unsigned char q55F4;  // 0x55F4
     unsigned char q5604;  // 0x5604
     unsigned char q560C;  // 0x560C
     unsigned char q5610;  // 0x5610
     unsigned char q5618;  // 0x5618
     unsigned char q561C;  // 0x561C
-    IUnknown* q5634;  // 0x5634
+    void* q5634;  // 0x5634
     unsigned char q5638;  // 0x5638
     unsigned char q563C;  // 0x563C
-    IUnknown* q5640;  // 0x5640
+    void* q5640;  // 0x5640
     unsigned char q5644;  // 0x5644
     unsigned char q5650;  // 0x5650
     AbstractTypeClass* q5660;  // 0x5660
@@ -1380,58 +1380,58 @@ struct AbstractClass {
     unsigned char q5688;  // 0x5688
     unsigned char q568C;  // 0x568C
     unsigned char q5700;  // 0x5700
-    IUnknown* q5704;  // 0x5704
+    void* q5704;  // 0x5704
     unsigned char q5708;  // 0x5708
     AbstractClass* q5714;  // 0x5714
     unsigned char q5718;  // 0x5718
-    IUnknown* q5720;  // 0x5720
+    void* q5720;  // 0x5720
     unsigned char q5724;  // 0x5724
     void* q5728;  // 0x5728
     unsigned char q572C;  // 0x572C
-    IUnknown* q5740;  // 0x5740
-    IUnknown* q5744;  // 0x5744
-    IUnknown* q5748;  // 0x5748
+    void* q5740;  // 0x5740
+    void* q5744;  // 0x5744
+    void* q5748;  // 0x5748
     AudioController* q5750;  // 0x5750
     unsigned char q5754;  // 0x5754
     unsigned char q5758;  // 0x5758
-    IUnknown* q5760;  // 0x5760
-    IUnknown* q5764;  // 0x5764
+    void* q5760;  // 0x5760
+    void* q5764;  // 0x5764
     void* q5768;  // 0x5768
-    IUnknown* q5774;  // 0x5774
+    void* q5774;  // 0x5774
     unsigned char q5778;  // 0x5778
     unsigned char q577C;  // 0x577C
-    TimerStruct * ptr_5788;  // 0x5788
-    IUnknown* q578C;  // 0x578C
+    void* ptr_5788;  // 0x5788
+    void* q578C;  // 0x578C
     unsigned char q5790;  // 0x5790
-    IUnknown* q5798;  // 0x5798
+    void* q5798;  // 0x5798
     unsigned char q579C;  // 0x579C
     unsigned char q57A0;  // 0x57A0
-    IUnknown* q57A4;  // 0x57A4
+    void* q57A4;  // 0x57A4
     unsigned char q57A8;  // 0x57A8
-    IUnknown* q57B0;  // 0x57B0
+    void* q57B0;  // 0x57B0
     unsigned char q57B4;  // 0x57B4
-    IUnknown* q57BC;  // 0x57BC
+    void* q57BC;  // 0x57BC
     unsigned char q57C0;  // 0x57C0
-    IUnknown* q57C8;  // 0x57C8
+    void* q57C8;  // 0x57C8
     unsigned char q57CC;  // 0x57CC
-    IUnknown* q57D4;  // 0x57D4
+    void* q57D4;  // 0x57D4
     unsigned char q57D8;  // 0x57D8
-    IUnknown* q5800;  // 0x5800
-    IUnknown* q5804;  // 0x5804
+    void* q5800;  // 0x5800
+    void* q5804;  // 0x5804
     unsigned char q5808;  // 0x5808
     unsigned char q5840;  // 0x5840
-    IUnknown* q5844;  // 0x5844
+    void* q5844;  // 0x5844
     void* q5848;  // 0x5848
-    IUnknown* q5860;  // 0x5860
+    void* q5860;  // 0x5860
     unsigned char q5864;  // 0x5864
-    IUnknown* q5868;  // 0x5868
+    void* q5868;  // 0x5868
     unsigned int q5880;  // 0x5880
     int q5884;  // 0x5884
-    IUnknown* q5888;  // 0x5888
+    void* q5888;  // 0x5888
     unsigned char q588C;  // 0x588C
-    IUnknown* q5900;  // 0x5900
-    IUnknown* q5904;  // 0x5904
-    IUnknown* q5908;  // 0x5908
+    void* q5900;  // 0x5900
+    void* q5904;  // 0x5904
+    void* q5908;  // 0x5908
     void* q5920;  // 0x5920
     void* q5924;  // 0x5924
     unsigned int q5928;  // 0x5928
@@ -1441,19 +1441,19 @@ struct AbstractClass {
     unsigned char q593C;  // 0x593C
     unsigned char q5940;  // 0x5940
     unsigned char q5944;  // 0x5944
-    IUnknown* q5948;  // 0x5948
+    void* q5948;  // 0x5948
     unsigned char q5960;  // 0x5960
-    IUnknown* q5964;  // 0x5964
+    void* q5964;  // 0x5964
     unsigned char q5968;  // 0x5968
     AbstractClass* q5970;  // 0x5970
     unsigned char q5974;  // 0x5974
     unsigned int q5984;  // 0x5984
-    IUnknown* q5988;  // 0x5988
+    void* q5988;  // 0x5988
     unsigned int q5990;  // 0x5990
-    RandomStruct* q5994;  // 0x5994
+    void* q5994;  // 0x5994
     unsigned char q5998;  // 0x5998
-    IUnknown* q6000;  // 0x6000
-    IUnknown* q6004;  // 0x6004
+    void* q6000;  // 0x6000
+    void* q6004;  // 0x6004
     AbstractTypeClass* q6008;  // 0x6008
     AbstractTypeClass* q6020;  // 0x6020
     void* q6024;  // 0x6024
@@ -1474,27 +1474,27 @@ struct AbstractClass {
     unsigned char q6148;  // 0x6148
     unsigned char q6160;  // 0x6160
     unsigned char q6170;  // 0x6170
-    IUnknown* q6180;  // 0x6180
+    void* q6180;  // 0x6180
     unsigned char q6184;  // 0x6184
-    IUnknown* q6188;  // 0x6188
+    void* q6188;  // 0x6188
     unsigned int q6194;  // 0x6194
     unsigned char q6198;  // 0x6198
     unsigned char q619C;  // 0x619C
     unsigned char q6200;  // 0x6200
     AnimClass* q6210;  // 0x6210
     unsigned char q6214;  // 0x6214
-    IUnknown* q6220;  // 0x6220
+    void* q6220;  // 0x6220
     unsigned char q6224;  // 0x6224
     Color* q6240;  // 0x6240
     unsigned int q6264;  // 0x6264
     unsigned char q6268;  // 0x6268
     unsigned char q6280;  // 0x6280
     unsigned char q6284;  // 0x6284
-    IUnknown* q6290;  // 0x6290
+    void* q6290;  // 0x6290
     unsigned int q6294;  // 0x6294
     unsigned char q6298;  // 0x6298
     unsigned char q6320;  // 0x6320
-    IUnknown* q6400;  // 0x6400
+    void* q6400;  // 0x6400
     unsigned char q6404;  // 0x6404
     Coord* q6408;  // 0x6408
     unsigned char q640C;  // 0x640C
@@ -1502,29 +1502,30 @@ struct AbstractClass {
     unsigned char q6418;  // 0x6418
     void* q6440;  // 0x6440
     unsigned char q6450;  // 0x6450
-    IUnknown* q6464;  // 0x6464
+    void* q6464;  // 0x6464
     unsigned char q6468;  // 0x6468
     unsigned char q6500;  // 0x6500
     void* q6504;  // 0x6504
     void* q6514;  // 0x6514
     unsigned char q6518;  // 0x6518
     void* q6528;  // 0x6528
+    unsigned int COMStub_Release;
+    unsigned int Dirty;
+    unsigned int RefCount;
+    unsigned int parent_gap;
     unsigned int u32_1C;
     unsigned int u32_24;
     unsigned int u32_2C;
-    unsigned int parent_gap;
-    unsigned int COMStub_AddRef;
-    unsigned int ProcessPower;
-    unsigned int QueryInterface;
+    unsigned int vtable22;
 // --- flat members (END) ---
-    void Initialize(TechnoClass * aP1, TechnoClass * aP2);  // 0x438E70
+    void Initialize(TechnoClass * aP1,  TechnoClass * aP2);    // 0x438E70
     unsigned int * checkVisibility(char a2);  // 0x5D7FD0
     unsigned int * updateVisibilityState(char a2);  // 0x5D8030
     unsigned int * processFogReveal(char a2);  // 0x5D8050
     unsigned int * checkShroudState(char a2);  // 0x5D8070
     unsigned int * updateShroudMap(char a2);  // 0x5D8090
     void ClearTargetToMeClearManagerTarget(int a1);  // 0x70D4A0
-    void AnnounceExpiredPointer(AbstractClass * aP0, AbstractClass * aP1);  // 0x7258D0
+    AbstractClass * * AnnounceExpiredPointer(AbstractClass * aP0,  AbstractClass * aP1);    // 0x7258D0
     int getMapCoords();  // 0x426A80
     void DTOR();  // 0x4101F0
     MissionClass * getWeaponRange(char a2);  // 0x5B3A60
@@ -1533,51 +1534,51 @@ struct AbstractClass {
     unsigned int setMissionState(int a2);  // 0x4D2960
     void updateMission();  // 0x4E0190
     DynamicVector * processMissionQueue(char a2);  // 0x4E0270
-    char completeMission(int a2, unsigned int * a3);  // 0x4E04A0
+    char completeMission(int a2,  unsigned int * a3);    // 0x4E04A0
     AbstractClass * getMovementSpeed(char a2);  // 0x50E380
     void getTargetCoordinates();  // 0x50E5D0
     unsigned int setTargetCoordinates(int a2);  // 0x50E600
-    char evaluateTarget(int a2, char * a3);  // 0x50F3A0
+    char evaluateTarget(int a2,  char * a3);    // 0x50F3A0
     int selectBestTarget(int a2);  // 0x50F4A0
     DynamicVector * updateThreatMap(char a2);  // 0x510220
     char ModifyCellTiles(int a2);  // 0x543330
-    int COMStub_5(ObjectClass * aP1, int aP1a);  // 0x543990
-    int COMStub_54(int a2, int a3);  // 0x543A10
+    int COMStub_5(ObjectClass * aP1,  int aP1a);    // 0x543990
+    int COMStub_54(int a2,  int a3);    // 0x543A10
     char COMStub_53();  // 0x543A40
     IsometricTileClass * CreateInstance(char a2);  // 0x543B10
     void processStateTransition(AbstractClass * aP1);  // 0x54E590
-    int COMStub_125(int a2, int a3, TechnoClass * aP3);  // 0x5B3650
+    int COMStub_125(int a2,  int a3,  TechnoClass * aP3);    // 0x5B3650
     char COMStub_126();  // 0x5B36B0
     int COMStub_13(AbstractClass * aP1);  // 0x5B3970
-    GenericList * getWeaponSpeed(char a2);  // 0x5B46E0
+    void* getWeaponSpeed(char a2);  // 0x5B46E0
     void checkLOS(char a2);  // 0x5C0280
     char computePathCost();  // 0x5C02C0
     char processPathNode();  // 0x5C02F0
-    int computePathDistance(int a2, int a3);  // 0x5C0340
+    int computePathDistance(int a2,  int a3);    // 0x5C0340
     int checkPathEnd(int a2);  // 0x5C0380
     void finalizePath(signed int a2);  // 0x5C03A0
-    VQMovieHandle * processCombatState(char a2);  // 0x5C09B0
-    char checkCombatFlags(int a2, unsigned int * a3);  // 0x5C0B10
+    void* processCombatState(char a2);  // 0x5C09B0
+    char checkCombatFlags(int a2,  unsigned int * a3);    // 0x5C0B10
     void processDamageEvent();  // 0x5C0BC0
     int applyDamageEffects(unsigned int * a2);  // 0x5C0BF0
     unsigned int checkDamageThreshold(int a2);  // 0x5C0C30
     VectorClass_flat * processDeathEvent(char a2);  // 0x5C0D30
-    unsigned int * updateAnimationState(MultiplayerGameMode * aP1, MultiplayerGameMode * aP2);  // 0x5C5A30
+    unsigned int * updateAnimationState(MultiplayerGameMode * aP1,  MultiplayerGameMode * aP2);    // 0x5C5A30
     int IsNotNull();  // 0x5F5930
     int COMStub_79();  // 0x5F6C70
     void ProcessData();  // 0x6293E0
     DynamicVector * getTeamIndex(char a2);  // 0x645B10
     int checkTeamMembership();  // 0x65C2E0
-    int dispatchTeamEvent(int a2, int a3);  // 0x65C340
-    size_t validateTeamConfig(void * Src, signed int Size);  // 0x65C4B0
+    int dispatchTeamEvent(int a2,  int a3);    // 0x65C340
+    size_t validateTeamConfig(void * Src,  signed int Size);    // 0x65C4B0
     int * checkAICondition(char a2);  // 0x65D4D0
     int updateAITimer();  // 0x68BCB0
-    char getAIPriority(int a2, unsigned int * a3);  // 0x6B14B0
+    char getAIPriority(int a2,  unsigned int * a3);    // 0x6B14B0
     void setAIPriority();  // 0x6B1560
     int evaluateAIOption(unsigned int * a2);  // 0x6B1590
     unsigned int selectAIAction(int a2);  // 0x6B15D0
     VectorClass_flat * checkAIResources(char a2);  // 0x6B1930
-    char allocatePathMemory(int a2, unsigned int * a3);  // 0x6B8260
+    char allocatePathMemory(int a2,  unsigned int * a3);    // 0x6B8260
     void freePathMemory();  // 0x6B8310
     int initPathState(unsigned int * a2);  // 0x6B8340
     unsigned int resetPathMemory(int a2);  // 0x6B8380
@@ -1585,7 +1586,7 @@ struct AbstractClass {
     int GetTotalValue();  // 0x6C9600
     int getTotalValue(int a2);  // 0x6C9D30
     int checkWeaponCooldown(int a2);  // 0x71FFE0
-    char getCurrentWeapon(int a2, char a3);  // 0x720020
+    char getCurrentWeapon(int a2,  char a3);    // 0x720020
     char selectWeapon();  // 0x720070
     int * fireWeapon(int a2);  // 0x720140
     int reloadWeapon(int a2);  // 0x720200
@@ -1598,26 +1599,26 @@ struct AbstractClass {
     int ProcessInit();  // 0x75D230
     void checkSuperWeaponStatus();  // 0x763EF0
     unsigned int updateSuperWeaponTimer(int a2);  // 0x763F30
-    unsigned int * fireSuperWeapon(unsigned int * a2, int a3);  // 0x763F60
+    unsigned int * fireSuperWeapon(unsigned int * a2,  int a3);    // 0x763F60
     DynamicVector * checkSWTarget(char a2);  // 0x763FF0
     VectorClass_flat * getSWChargeState(char a2);  // 0x764050
     char setSWCharge(int a2);  // 0x7640B0
-    char resetSWCharge(int a2, int * a3);  // 0x764110
+    char resetSWCharge(int a2,  int * a3);    // 0x764110
     void processSpecialAbility();  // 0x764220
     int checkSpecialCooldown(unsigned int * a2);  // 0x764260
     unsigned int updateSpecialTimer(int a2);  // 0x7642B0
-    char AllocateCoordArray(int a2, int * a3);  // 0x7642E0
+    char AllocateCoordArray(int a2,  int * a3);    // 0x7642E0
     int processSpecialEffect(unsigned int * a2);  // 0x764420
     int finalizeDestruction();  // 0x7C35C0
     ObjectClass * Render_Render_660730(ObjectClass ** a2);  // 0x660730
     Surface * getObjectValue(char a2);  // 0x4115D0
-    Blitter * getTileIndex(char a2);  // 0x499CC0
-    BlitPlainXlat * setTileIndex(char a2);  // 0x499CE0
-    BlitTransXlat * getOverlayType(char a2);  // 0x499D00
-    RLEBlitter * clearOverlayFlags(char a2);  // 0x499DA0
-    GScreenClass * getHouseHandle(char a2);  // 0x4F4C00
+    void* getTileIndex(char a2);  // 0x499CC0
+    void* setTileIndex(char a2);  // 0x499CE0
+    void* getOverlayType(char a2);  // 0x499D00
+    void* clearOverlayFlags(char a2);  // 0x499DA0
+    void* getHouseHandle(char a2);  // 0x4F4C00
     FileClass * processAITrigger(char a2);  // 0x65C610
-    int SaveLoad_Prefix_0(AbstractClass * aP0, AbstractClass * aP1);  // 0x410380
+    int SaveLoad_Prefix_0(AbstractClass * aP0,  AbstractClass * aP1);    // 0x410380
     unsigned int updateLayer();  // 0x425520
     int GetType();  // 0x4CA160
     int checkPassability();  // 0x50E370
@@ -1626,7 +1627,7 @@ struct AbstractClass {
     int initVtableBase();  // 0x410100
     int GetVtable3(AbstractClass * aP0);  // 0x410220
     int GenerateUniqueID(int a1);  // 0x410230
-    int SaveLoad_Prefix(ObjectTypeClass * aP0, ObjectTypeClass * aP1, ObjectTypeClass * aP2);  // 0x410320
+    int SaveLoad_Prefix(ObjectTypeClass * aP0, ObjectTypeClass * aP0, ObjectTypeClass * aP2);      // 0x410320
     int computeDistance();  // 0x410440
     int StubReturnFalse();  // 0x410470
     int COMStub_Return0_10();  // 0x410480
@@ -1658,15 +1659,15 @@ struct AbstractClass {
     int COMStub_Return0_270();  // 0x459E60
     std::locale::facet * setOverlayFlags(char a2);  // 0x499D20
     unsigned int queueMission(int a2);  // 0x4E01C0
-    int saveToStream(int a1, const void * a2, unsigned int * a3);  // 0x510A20
+    int saveToStream(int a1,  const void * a2,  unsigned int * a3);    // 0x510A20
     int loadFromStream(int a1);  // 0x510A30
     int computeSize(int a1);  // 0x510A40
-    int COMStub_6(TechnoTypeClass * aP0, int * a1, int aP2);  // 0x5439F0
+    int COMStub_6(TechnoTypeClass * aP0,  int * a1,  int aP2);    // 0x5439F0
     char validatePathNode();  // 0x5C02E0
-    unsigned int * processRevealArea(const wchar_t ** a1, const wchar_t ** a2, const char ** a3, const char ** a4, char a5, int a6);  // 0x5D81F0
-    unsigned int * computeRevealRadius(const wchar_t ** a1, const wchar_t ** a2, const char ** a3, const char ** a4, char a5, int a6);  // 0x5D8230
-    unsigned int * applyRevealToCell(const wchar_t ** a1, const wchar_t ** a2, const char ** a3, const char ** a4, char a5, int a6);  // 0x5D8270
-    unsigned int * checkRevealCell(const wchar_t ** a1, const wchar_t ** a2, const char ** a3, const char ** a4, int a5, int a6);  // 0x5D82B0
+    unsigned int * processRevealArea(const wchar_t ** a1,  const wchar_t ** a2,  const char ** a3,  const char ** a4,  char a5,  int a6);    // 0x5D81F0
+    unsigned int * computeRevealRadius(const wchar_t ** a1,  const wchar_t ** a2,  const char ** a3,  const char ** a4,  char a5,  int a6);    // 0x5D8230
+    unsigned int * applyRevealToCell(const wchar_t ** a1,  const wchar_t ** a2,  const char ** a3,  const char ** a4,  char a5,  int a6);    // 0x5D8270
+    unsigned int * checkRevealCell(const wchar_t ** a1,  const wchar_t ** a2,  const char ** a3,  const char ** a4,  int a5,  int a6);    // 0x5D82B0
     int COMStub_Return0_37();  // 0x5F42B0
     int COMStub_Return0_38();  // 0x5F42C0
     int COMStub_Return0_39();  // 0x5F42D0
@@ -1683,11 +1684,11 @@ struct AbstractClass {
     int COMStub_Return0_93();  // 0x5F43A0
     int COMStub_Return0_104();  // 0x5F4400
     int COMStub_Return0_105();  // 0x5F6B50
-    int SaveLoad_PrefixWrapper(TechnoTypeClass * aP0, ObjectTypeClass * aP1, TechnoTypeClass * aP2);  // 0x5F9950
+    int SaveLoad_PrefixWrapper(TechnoTypeClass * aP0,  ObjectTypeClass * aP1,  TechnoTypeClass * aP2);    // 0x5F9950
     char processTeamOrder();  // 0x65C330
     int checkTeamObjective();  // 0x65C4A0
     int compareType(int a1);  // 0x487E50
-    char Stub1INoticeSink(int a1, int a2);  // 0x410580
+    char Stub1INoticeSink(int a1,  int a2);    // 0x410580
     void COM_Stub_Return0(int a1);  // 0x410590
     int COMStub_26();  // 0x4263A0
     int COMStub_107();  // 0x4264C0
@@ -1695,7 +1696,7 @@ struct AbstractClass {
     int getAltitude();  // 0x426580
     char releaseRef();  // 0x465910
     char finalRelease();  // 0x465920
-    void COMStub_Return0_69(Tactical * aP0, AbstractClass * aP1);  // 0x4DB250
+    void COMStub_Return0_69(Tactical * aP0,  AbstractClass * aP1);    // 0x4DB250
     int COMStub_Return0_34();  // 0x4E0130
     char getCurrentMission();  // 0x4E0140
     int computeMovementCost();  // 0x50E360

@@ -17,7 +17,7 @@ struct ConnectionPointClass_9 {
     bool q024;  // 0x24
     unsigned int q0042;
 // --- flat members (END) ---
-    char Release(int a2, unsigned int * a3);  // 0x4A1280
+    char Release(int a2,  unsigned int * a3);    // 0x4A1280
     int EnumConnections(int a2);  // 0x4A0F70
     char AddRef(int a2);  // 0x4A1240
     int Advise(unsigned int * a2);  // 0x4A1360

@@ -19,6 +19,8 @@
 #include "e4/classes/AudioStream_e4.hpp"
 #include "e4/classes/File_e4.hpp"
 #include "e4/classes/DSurface_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x7C0740
@@ -27,9 +29,9 @@ void ProcessAudioStreamPlayback(int a1, DSurface * aP1, int arg0, char a4, char 
 {
   int v8; // eax
   int v9; // ebp
-  int v10; // ecx
+  DSurface * v10;
   int v11; // eax
-  int v12; // eax
+  DSurface * v12;
   int v13; // eax
   int v14; // eax
   int v15; // ebp
@@ -37,30 +39,30 @@ void ProcessAudioStreamPlayback(int a1, DSurface * aP1, int arg0, char a4, char 
   int v17; // edi
   int v18; // eax
   int v19; // ecx
-  int v20; // edx
+  DSurface * v20;
   int v21; // ecx
   int v22; // eax
   int v23; // eax
   unsigned __int16 *v24; // edx
   int v25; // ecx
-  int v26; // ebp
-  int result; // eax
+  DSurface * v26;
+  unsigned int result;
   int v28; // edi
-  int v29; // ebx
+  DSurface * v29;
   bool v30; // cc
-  int v31; // eax
-  int v32; // ebp
+  DSurface * v31;
+  DSurface * v32;
   int v33; // edi
   bool v34; // bl
   int v35; // ecx
   bool v36; // zf
   char v37; // [esp+13h] [ebp-15h]
-  int v38; // [esp+14h] [ebp-14h]
+  unsigned int v38;
   int v39; // [esp+18h] [ebp-10h]
-  int v40; // [esp+1Ch] [ebp-Ch] BYREF
-  int v41; // [esp+20h] [ebp-8h] BYREF
-  int v42; // [esp+24h] [ebp-4h]
-  int v43; // [esp+2Ch] [ebp+4h]
+  unsigned int v40;
+  unsigned int v41;
+  DSurface * v42;
+  DSurface * v43;
   int v44; // [esp+30h] [ebp+8h]
   int v45; // [esp+38h] [ebp+10h]
 
@@ -13011,7 +13013,7 @@ namespace gamemd {
 __non_rtti_object * E4Recv_7CA971::__0__non_rtti_object_QAE_PBD_Z(char * a2)
 {
   __0exception_QAE_ABQBD_Z((const char *const *)&a2); /*0x7ca981*/
-  *(_DWORD *)this = &(void*)(void*)&__non_rtti_object_vftable; /*0x7ca986*/
+  *(_DWORD *)this = (void*)&__non_rtti_object_vftable; /*0x7ca986*/
   return this; /*0x7ca98e*/
 }
 } // namespace gamemd
@@ -13032,7 +13034,7 @@ namespace gamemd {
 exception * E4Recv_7CA9B4::sub_7CA9B4(struct exception * a2)
 {
   __0exception_QAE_ABV0__Z(a2); /*0x7ca9bb*/
-  *(_DWORD *)this = &(void*)(void*)&__non_rtti_object_vftable; /*0x7ca9c0*/
+  *(_DWORD *)this = (void*)&__non_rtti_object_vftable; /*0x7ca9c0*/
   return this; /*0x7ca9c8*/
 }
 } // namespace gamemd
@@ -13042,7 +13044,7 @@ namespace gamemd {
 exception * E4Recv_7CA9CC::sub_7CA9CC(struct exception * a1)
 {
   __0exception_QAE_ABV0__Z(a1); /*0x7ca9d3*/
-  *(_DWORD *)this = &(void*)(void*)&bad_typeid_vftable; /*0x7ca9d8*/
+  *(_DWORD *)this = (void*)&bad_typeid_vftable; /*0x7ca9d8*/
   return this; /*0x7ca9e0*/
 }
 } // namespace gamemd
@@ -13169,7 +13171,7 @@ namespace gamemd {
 exception * E4Recv_7CAC34::sub_7CAC34(struct exception * a2)
 {
   __0exception_QAE_ABV0__Z(a2); /*0x7cac3b*/
-  *(_DWORD *)this = &(void*)(void*)&bad_cast_vftable; /*0x7cac40*/
+  *(_DWORD *)this = (void*)&bad_cast_vftable; /*0x7cac40*/
   return this; /*0x7cac48*/
 }
 } // namespace gamemd

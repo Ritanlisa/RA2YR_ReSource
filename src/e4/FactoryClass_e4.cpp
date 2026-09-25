@@ -15,15 +15,17 @@
 #include "e4/classes/TechnoClass_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/FileClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/FilePipe_30_e4.hpp"
 
 // 0x4C9B20
 namespace gamemd {
 int FactoryClass::UpdateProduction()
 {
-  int Speed; // eax
+  void * Speed;
   _DWORD *v3; // edi
-  int v4; // eax
+  void * v4;
   int v5; // eax
   int v6; // edi
   int v7; // eax
@@ -110,7 +112,7 @@ int FactoryClass::UpdateProduction()
 namespace gamemd {
 int FactoryClass::HasProgressChanged()
 {
-  char result; // al
+  void * result;
 
   result = *(&this->ptr_243); /*0x4c9c60*/
   *(&this->ptr_243) = 0; /*0x4c9c63*/
@@ -123,7 +125,7 @@ int FactoryClass::DemandProduction(int a2, void * a3, char a4)
 {
   int v5; // ecx
   int v6; // eax
-  int v7; // esi
+  FactoryClass * v7;
   int v8; // eax
   int v9; // eax
   int v10; // edx
@@ -285,13 +287,13 @@ int FactoryClass::LoadFromStream(int a1, int * a2)
       AbstractClass::InitVtables((_DWORD *)v3, (int)&a2); /*0x4ca299*/
       __4type_info_AAEAAV0_ABV0__Z(&a2); /*0x4ca2a6*/
       TechnoTypeVector::Constructor(0, 0); /*0x4ca2b2*/
-      v3->q040 = &(void*)(void*)&DynamicVectorClass_TechnoTypeClass_const___vftable; /*0x4ca2b7*/
+      v3->q040 = (void*)&DynamicVectorClass_TechnoTypeClass_const___vftable; /*0x4ca2b7*/
       v3->ptr_24 = 10; /*0x4ca2bd*/
       v3->q050 = 0; /*0x4ca2c4*/
-      *(_DWORD *)v3 = &(void*)(void*)&FactoryClass_vftable; /*0x4ca2c7*/
-      v3->vtable2 = &(void*)(void*)&FactoryClass_vftable; /*0x4ca2cd*/
-      v3->vtable3 = &(void*)(void*)&FactoryClass_vftable; /*0x4ca2d4*/
-      v3->vtable4 = &(void*)(void*)&FactoryClass_vftable; /*0x4ca2db*/
+      *(void **)v3 = (void*)&FactoryClass_vftable; /*0x4ca2c7*/
+      v3->vtable2 = (void*)&FactoryClass_vftable; /*0x4ca2cd*/
+      v3->vtable3 = (void*)&FactoryClass_vftable; /*0x4ca2d4*/
+      v3->vtable4 = (void*)&FactoryClass_vftable; /*0x4ca2db*/
     }
     v5 = *a2; /*0x4ca2e2*/
     a1 = 0; /*0x4ca2ee*/
@@ -352,7 +354,7 @@ AbstractClass * * FactoryClass::Stat(int * a2)
 {
   int v3; // eax
   int v4; // ecx
-  int v5; // eax
+  void * v5;
   int v6; // eax
   int v7; // eax
 
@@ -404,7 +406,7 @@ int FactoryClass::Revert(int a2, int a3)
 namespace gamemd {
 int FactoryClass::StartProduction_2()
 {
-  int v2; // eax
+  void * v2;
   _BYTE *v3; // edi
   int v4; // eax
   int v5; // ecx
@@ -504,10 +506,10 @@ void * FactoryClass::CopyTo(char a2)
   int v4; // eax
   void *v5; // eax
 
-  *this = &(void*)(void*)&FactoryClass_vftable; /*0x4ca776*/
-  this->vtable2 = &(void*)(void*)&FactoryClass_vftable; /*0x4ca77c*/
-  this->vtable3 = &(void*)(void*)&FactoryClass_vftable; /*0x4ca783*/
-  this->vtable4 = &(void*)(void*)&FactoryClass_vftable; /*0x4ca78a*/
+  *(void **)this = (void*)&FactoryClass_vftable; /*0x4ca776*/
+  this->vtable2 = (void*)&FactoryClass_vftable; /*0x4ca77c*/
+  this->vtable3 = (void*)&FactoryClass_vftable; /*0x4ca783*/
+  this->vtable4 = (void*)&FactoryClass_vftable; /*0x4ca78a*/
   AbstractClass::AnnounceExpiredPointer(1); /*0x4ca791*/
   v3 = (*(int (__thiscall **)(int *, void ***))(dword_A83E30 + 16))(&dword_A83E30, &this); /*0x4ca7aa*/
   if ( v3 != -1 && v3 < g_TeamTypeCapacity && v3 < --g_TeamTypeCapacity ) /*0x4ca7c5*/
@@ -532,7 +534,7 @@ void * FactoryClass::CopyTo(char a2)
     while ( v4 < g_AlphaShapePool ); /*0x4ca836*/
   }
   v5 = *(&this->vtable27); /*0x4ca838*/
-  *(&this->vtable26) = &(void*)(void*)&VectorClass_TechnoTypeClass_const___vftable; /*0x4ca83b*/
+  *(&this->vtable26) = (void*)&VectorClass_TechnoTypeClass_const___vftable; /*0x4ca83b*/
   if ( v5 && this->u8_4D ) /*0x4ca846*/
   {
     RA2_OPDEL(v5); /*0x4ca84e*/
@@ -821,7 +823,7 @@ VectorClass_flat * FactoryClass_33::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x4cab53*/
-  *this = &(void*)(void*)&VectorClass_TechnoTypeClass_const___vftable; /*0x4cab56*/
+  *(void **)this = (void*)&VectorClass_TechnoTypeClass_const___vftable; /*0x4cab56*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x4cab60*/
   {
     RA2_OPDEL(v3); /*0x4cab68*/

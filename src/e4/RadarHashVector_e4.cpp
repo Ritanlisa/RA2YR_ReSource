@@ -7,6 +7,8 @@
 #include "e4/classes/VectorClass_flat_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x658B10
@@ -129,7 +131,7 @@ unsigned int * RadarHashVector::Construct(MapClass * aP1, MapClass * aP2)
   this->Capacity = aP1; /*0x658df0*/
   this->IsInitialized = 1; /*0x658df3*/
   this->IsAllocated = 0; /*0x658df7*/
-  *this = &(void*)(void*)&VectorClass_HashObject_RadarTrackingStruct_TechnoClass___vftable; /*0x658dfa*/
+  *(void **)this = (void*)&VectorClass_HashObject_RadarTrackingStruct_TechnoClass___vftable; /*0x658dfa*/
   if ( aP1 ) /*0x658e00*/
   {
     if ( aP2 ) /*0x658e08*/
@@ -178,7 +180,7 @@ unsigned int * RadarHashVector::Construct(MapClass * aP1, MapClass * aP2)
       this->IsAllocated = 1; /*0x658e5a*/
     }
   }
-  *this = &(void*)(void*)&DynamicVectorClass_HashObject_RadarTrackingStruct_TechnoClass___vftable; /*0x658e5e*/
+  *(void **)this = (void*)&DynamicVectorClass_HashObject_RadarTrackingStruct_TechnoClass___vftable; /*0x658e5e*/
   this->u32_14 = 10; /*0x658e64*/
   this->q010 = 0; /*0x658e6b*/
   return this; /*0x658e70*/
@@ -276,7 +278,7 @@ char * RadarHashVector::Destructor(char a2)
       {
         v9 = (void *)*((_DWORD *)v7 - 5); /*0x658c82*/
         v7 -= 24; /*0x658c85*/
-        *(_DWORD *)v7 = &(void*)(void*)&VectorClass_HashObject_RadarTrackingStruct_TechnoClass___vftable; /*0x658c8a*/
+        *(void **)v7 = (void*)&VectorClass_HashObject_RadarTrackingStruct_TechnoClass___vftable; /*0x658c8a*/
         if ( v9 && v7[13] ) /*0x658c92*/
         {
           RA2_OPDEL(v9); /*0x658c98*/
@@ -295,7 +297,7 @@ char * RadarHashVector::Destructor(char a2)
   else
   {
     v11 = (void *)this->Items; /*0x658cc5*/
-    *this = &(void*)(void*)&VectorClass_HashObject_RadarTrackingStruct_TechnoClass___vftable; /*0x658ccc*/
+    *(void **)this = (void*)&VectorClass_HashObject_RadarTrackingStruct_TechnoClass___vftable; /*0x658ccc*/
     if ( v11 && this->IsAllocated ) /*0x658cd4*/
     {
       RA2_OPDEL(v11); /*0x658cda*/
@@ -316,7 +318,7 @@ VectorClass_flat * RadarHashVector::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x658d13*/
-  *this = &(void*)(void*)&VectorClass_HashObject_RadarTrackingStruct_TechnoClass___vftable; /*0x658d16*/
+  *(void **)this = (void*)&VectorClass_HashObject_RadarTrackingStruct_TechnoClass___vftable; /*0x658d16*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x658d20*/
   {
     RA2_OPDEL(v3); /*0x658d28*/

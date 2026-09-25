@@ -3,6 +3,8 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/BlowPipe_23_e4.hpp"
 #include "e4/classes/BlowPipe_31_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x63DC20
@@ -569,7 +571,7 @@ VectorClass_flat * BlowPipe_23::Destructor(char a2)
   void *v3; // eax
 
   v3 = (void *)this->q004; /*0x63ed93*/
-  *this = &(void*)(void*)&VectorClass_PlanningNodeClass___vftable; /*0x63ed96*/
+  *(void **)this = (void*)&VectorClass_PlanningNodeClass___vftable; /*0x63ed96*/
   if ( v3 && this->IsAllocated ) /*0x63eda0*/
   {
     RA2_OPDEL(v3); /*0x63eda8*/
@@ -590,7 +592,7 @@ DynamicVector * BlowPipe_31::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->q004; /*0x63ede3*/
-  *this = &(void*)(void*)&VectorClass_PlanningNodeClass___vftable; /*0x63ede6*/
+  *(void **)this = (void*)&VectorClass_PlanningNodeClass___vftable; /*0x63ede6*/
   if ( v3 && this->IsAllocated ) /*0x63edf0*/
   {
     RA2_OPDEL(v3); /*0x63edf8*/
@@ -611,7 +613,7 @@ VectorClass_flat * BlowPipe_23::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->q004; /*0x63ee33*/
-  *this = &(void*)(void*)&VectorClass_EventClass___vftable; /*0x63ee36*/
+  *(void **)this = (void*)&VectorClass_EventClass___vftable; /*0x63ee36*/
   if ( v3 && this->IsAllocated ) /*0x63ee40*/
   {
     RA2_OPDEL(v3); /*0x63ee48*/
@@ -632,7 +634,7 @@ DynamicVector * BlowPipe_23::Destructor_0(char a2)
   void *v3; // eax
 
   v3 = (void *)this->q004; /*0x63ee83*/
-  *this = &(void*)(void*)&VectorClass_EventClass___vftable; /*0x63ee86*/
+  *(void **)this = (void*)&VectorClass_EventClass___vftable; /*0x63ee86*/
   if ( v3 && this->IsAllocated ) /*0x63ee90*/
   {
     RA2_OPDEL(v3); /*0x63ee98*/
@@ -653,7 +655,7 @@ DynamicVector * BlowPipe_23::Destructor_1(char a2)
   void *v3; // eax
 
   v3 = (void *)this->q004; /*0x63ef23*/
-  *this = &(void*)(void*)&VectorClass_PlanningTokenClass___vftable; /*0x63ef26*/
+  *(void **)this = (void*)&VectorClass_PlanningTokenClass___vftable; /*0x63ef26*/
   if ( v3 && this->IsAllocated ) /*0x63ef30*/
   {
     RA2_OPDEL(v3); /*0x63ef38*/

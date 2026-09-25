@@ -43,6 +43,6 @@ struct E4Recv_528220 {
     unsigned int vtable2;
     unsigned int vtable3;
 // --- flat members (END) ---
-    int sub_528220(unsigned char * a2, unsigned char * a3, int a4);  // 0x528220
+    int sub_528220(unsigned char * a2,  unsigned char * a3,  int a4);    // 0x528220
 };
 } // namespace gamemd

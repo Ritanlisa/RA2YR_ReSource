@@ -3,6 +3,8 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/TimerClass_e4.hpp"
 #include "e4/classes/Timer_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x4C9480
@@ -10,7 +12,7 @@ namespace gamemd {
 int TimerClass::Active()
 {
   int v1; // edx
-  int v2; // eax
+  void * v2;
 
   if ( *(__int16 *)(&this->u32_80) <= 0 ) /*0x4c9485*/
     return 0; /*0x4c9485*/
@@ -30,7 +32,7 @@ namespace gamemd {
 void * TimerClass::Construct(int a2, int a3, TechnoTypeClass * aP3, int a5, int a6, int a7, int a8, char a9, int a10, int a11, int a12, int a13, char a14, char a15, int a16, int a17)
 {
   _DWORD *v18; // ecx
-  int v20; // eax
+  TimerClass * v20;
 
   *(_DWORD *)this = 0; /*0x54fe6a*/
   this->q010 = 0; /*0x54fe6c*/

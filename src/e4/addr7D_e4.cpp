@@ -13,6 +13,8 @@
 #include "e4/classes/MouseClass_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/CCINIClass_e4.hpp"
 
 // 0x7D038F
@@ -9580,7 +9582,7 @@ unsigned int * _com_error::sub_7DCE0E(int a2)
   v3 = *(_DWORD *)(a2 + 8); /*0x7dce1b*/
   this->q00C = 0; /*0x7dce1e*/
   this->q008 = v3; /*0x7dce22*/
-  *this = &(void*)(void*)&_com_error_vftable; /*0x7dce27*/
+  *this = (void*)&_com_error_vftable; /*0x7dce27*/
   if ( v3 ) /*0x7dce2d*/
     (*(void (__stdcall **)(int))(*(_DWORD *)v3 + 4))(v3); /*0x7dce32*/
   return this; /*0x7dce37*/
@@ -9594,7 +9596,7 @@ int _com_error::sub_7DCE3B()
   void *v3; // esi
 
   result = (HLOCAL)*(this + 2); /*0x7dce3e*/
-  *this = &(void*)(void*)&_com_error_vftable; /*0x7dce41*/
+  *this = (void*)&_com_error_vftable; /*0x7dce41*/
   if ( result ) /*0x7dce49*/
     result = (HLOCAL)(*(int (__stdcall **)(HLOCAL))(*(_DWORD *)result + 8))(result); /*0x7dce4e*/
   v3 = (void *)this->q00C; /*0x7dce51*/
@@ -11617,7 +11619,7 @@ unsigned int * E4Recv_7D2E6E::sub_7D2E6E()
 {
   *(this + 1) = 0; /*0x7d2e70*/
   *(this + 2) = 0; /*0x7d2e74*/
-  *this = &(void*)(void*)&exception_vftable; /*0x7d2e78*/
+  *this = (void*)&exception_vftable; /*0x7d2e78*/
   return this; /*0x7d2e7e*/
 }
 } // namespace gamemd
@@ -11640,7 +11642,7 @@ exception * E4Recv_7D2E9B::__0exception_QAE_ABQBD_Z(const char ** a2)
   size_t v3; // eax
   char *v4; // eax
 
-  *(_DWORD *)this = &(void*)(void*)&exception_vftable; /*0x7d2ea3*/
+  *(_DWORD *)this = (void*)&exception_vftable; /*0x7d2ea3*/
   v3 = strlen(*a2); /*0x7d2eab*/
   v4 = (char *)RA2_OPNEW(v3 + 1); /*0x7d2eb2*/
   this->q004 = v4; /*0x7d2eb8*/
@@ -11659,7 +11661,7 @@ exception * E4Recv_7D2ED8::__0exception_QAE_ABV0__Z(const struct exception * a2)
   size_t v4; // eax
   char *v5; // eax
 
-  *(_DWORD *)this = &(void*)(void*)&exception_vftable; /*0x7d2ee0*/
+  *(_DWORD *)this = (void*)&exception_vftable; /*0x7d2ee0*/
   v3 = *((_DWORD *)a2 + 2); /*0x7d2ee6*/
   this->q008 = v3; /*0x7d2eeb*/
   if ( v3 ) /*0x7d2eee*/

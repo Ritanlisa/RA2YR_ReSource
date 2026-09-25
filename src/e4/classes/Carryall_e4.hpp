@@ -26,7 +26,7 @@ struct Carryall {
     unsigned char q08B;  // 0x8B
     BuildingClass* q0BC;  // 0xBC
     unsigned char q0C0;  // 0xC0
-    char q100[4];  // 0x100
+    unsigned int q100;  // 0x100
     char q140[4];  // 0x140
     unsigned char q144;  // 0x144
     bool q175;  // 0x175

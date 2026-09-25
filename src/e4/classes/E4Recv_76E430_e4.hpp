@@ -23,6 +23,6 @@ struct E4Recv_76E430 {
     unsigned int q4224;  // 0x4224
     unsigned int q4228;  // 0x4228
 // --- flat members (END) ---
-    int Team_Start_76E430(int a2, ScoreScreen * aP2);  // 0x76E430
+    int Team_Start_76E430(int a2,  ScoreScreen * aP2);    // 0x76E430
 };
 } // namespace gamemd

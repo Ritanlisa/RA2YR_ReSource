@@ -4,6 +4,8 @@
 #include "e4/classes/FilePipe_30_e4.hpp"
 #include "e4/classes/FilePipe_38_e4.hpp"
 #include "e4/classes/DynamicVector_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x478340
@@ -17,7 +19,7 @@ AbstractClass * * FilePipe_38::Release(int a2, char * a3)
   _BYTE *v9; // eax
   int v12; // ecx
   int v13; // eax
-  int v14; // edx
+  void * v14;
   char *v15; // ebx
 
   v3 = a2; /*0x478342*/
@@ -147,7 +149,7 @@ unsigned int FilePipe_30::Write(int a2)
 namespace gamemd {
 int FilePipe_38::Seek(int a2, int a3)
 {
-  int v3; // ecx
+  void * v3;
 
   v3 = this->Items + 3 * a3; /*0x47796d*/
   *(_WORD *)a2 = *(_WORD *)v3; /*0x477978*/
@@ -163,7 +165,7 @@ TypeList_flat * FilePipe_30::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x477a73*/
-  *this = &(void*)(void*)&VectorClass_TechnoTypeClass___vftable; /*0x477a76*/
+  *(void **)this = (void*)&VectorClass_TechnoTypeClass___vftable; /*0x477a76*/
   if ( v3 && this->IsAllocated ) /*0x477a80*/
   {
     RA2_OPDEL(v3); /*0x477a88*/
@@ -333,7 +335,7 @@ VectorClass_flat * FilePipe_38::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x4786d3*/
-  *this = &(void*)(void*)&VectorClass_RGBClass_vftable; /*0x4786d6*/
+  *(void **)this = (void*)&VectorClass_RGBClass_vftable; /*0x4786d6*/
   if ( v3 && this->IsAllocated ) /*0x4786e0*/
   {
     RA2_OPDEL(v3); /*0x4786e8*/
@@ -547,7 +549,7 @@ DynamicVector * FilePipe_30::Destructor(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x4ba163*/
-  *this = &(void*)(void*)&VectorClass_TechnoTypeClass___vftable; /*0x4ba166*/
+  *(void **)this = (void*)&VectorClass_TechnoTypeClass___vftable; /*0x4ba166*/
   if ( v3 && this->IsAllocated ) /*0x4ba170*/
   {
     RA2_OPDEL(v3); /*0x4ba178*/
@@ -589,7 +591,7 @@ DynamicVector * FilePipe_30::Destructor_1(char a2)
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x4ba2a3*/
-  *this = &(void*)(void*)&VectorClass_CrossDissolveEffect___vftable; /*0x4ba2a6*/
+  *(void **)this = (void*)&VectorClass_CrossDissolveEffect___vftable; /*0x4ba2a6*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x4ba2b0*/
   {
     RA2_OPDEL(v3); /*0x4ba2b8*/

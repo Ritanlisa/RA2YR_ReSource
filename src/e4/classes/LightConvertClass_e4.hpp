@@ -700,48 +700,9 @@ struct LightConvertClass {
     unsigned char q6468;  // 0x6468
     unsigned char q6470;  // 0x6470
     unsigned char q6474;  // 0x6474
-    unsigned int q0142;
-    unsigned int q0143;
-    unsigned int q0144;
-    unsigned int q0145;
-    unsigned int q0146;
-    unsigned int q0147;
-    unsigned int q0148;
-    unsigned int q0149;
-    unsigned int q0180;
-    unsigned int q0181;
-    unsigned int q0182;
-    unsigned int q0183;
-    unsigned int q0184;
-    unsigned int q0185;
-    unsigned int q0186;
-    unsigned int q0187;
-    unsigned int q0188;
-    unsigned int q0189;
-    unsigned int q01C0;
-    unsigned int q01C1;
-    unsigned int q01C2;
-    unsigned int q01C3;
-    unsigned int q01C4;
-    unsigned int q01C5;
-    unsigned int q01C6;
-    unsigned int q01C7;
-    unsigned int q01C8;
-    unsigned int q01C9;
-    unsigned int q0200;
-    unsigned int q0201;
-    unsigned int q0202;
-    unsigned int q0203;
-    unsigned int q0204;
-    unsigned int q0205;
-    unsigned int q0206;
-    unsigned int q0207;
-    unsigned int q0208;
-    unsigned int q0209;
-    unsigned int q0240;
     unsigned int q0908;
 // --- flat members (END) ---
-    int SelectRLEBlitter(IUnknown * aP1);
+    int SelectRLEBlitter(void* aP1);
     static double Constructor(...);  // C2597 interim stub
 };
 

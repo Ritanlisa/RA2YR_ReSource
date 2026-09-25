@@ -47,7 +47,7 @@ struct DisplayClass {
     unsigned char q05C;  // 0x5C
     unsigned int q05D;  // 0x5D
     unsigned int q060;  // 0x60
-    IUnknown* q064;  // 0x64
+    void* q064;  // 0x64
     unsigned int somecount_4C;  // 0x68
     unsigned int ZoneConnections;  // 0x6C
     unsigned int q070;  // 0x70
@@ -135,7 +135,7 @@ struct DisplayClass {
     unsigned int q178;  // 0x178
     unsigned int q17C;  // 0x17C
     unsigned int q180;  // 0x180
-    IUnknown* q184;  // 0x184
+    void* q184;  // 0x184
     char q188[4];  // 0x188
     unsigned char q18C;  // 0x18C
     unsigned char q190;  // 0x190
@@ -173,7 +173,7 @@ struct DisplayClass {
     unsigned int MapCoordBounds;  // 0x292
     AbstractClass* q294;  // 0x294
     unsigned char q298;  // 0x298
-    IUnknown* q2A4;  // 0x2A4
+    void* q2A4;  // 0x2A4
     unsigned char q2A8;  // 0x2A8
     AbstractClass* q2B4;  // 0x2B4
     unsigned int q2E4;  // 0x2E4
@@ -419,7 +419,7 @@ struct DisplayClass {
     unsigned char q1180;  // 0x1180
     unsigned int q1181;  // 0x1181
     unsigned char q1185;  // 0x1185
-    IUnknown* q1194;  // 0x1194
+    void* q1194;  // 0x1194
     unsigned char q1198;  // 0x1198
     unsigned int q119C;  // 0x119C
     unsigned int q11A0;  // 0x11A0
@@ -465,7 +465,7 @@ struct DisplayClass {
     int q1464;  // 0x1464
     unsigned char q1468;  // 0x1468
     unsigned int q14EB;  // 0x14EB
-    IUnknown* q14EC;  // 0x14EC
+    void* q14EC;  // 0x14EC
     unsigned int q14ED;  // 0x14ED
     unsigned int q14EE;  // 0x14EE
     unsigned int q14EF;  // 0x14EF
@@ -499,7 +499,7 @@ struct DisplayClass {
     unsigned int q1634;  // 0x1634
     unsigned char q1638;  // 0x1638
     unsigned char q1640;  // 0x1640
-    IUnknown* q1654;  // 0x1654
+    void* q1654;  // 0x1654
     unsigned char q1658;  // 0x1658
     unsigned int q1660;  // 0x1660
     unsigned char q1664;  // 0x1664
@@ -578,7 +578,7 @@ struct DisplayClass {
     unsigned char q4464;  // 0x4464
     unsigned int q4468;  // 0x4468
     unsigned char q4480;  // 0x4480
-    IUnknown* q4500;  // 0x4500
+    void* q4500;  // 0x4500
     unsigned char q4504;  // 0x4504
     unsigned int q4508;  // 0x4508
     void* q4520;  // 0x4520
@@ -607,7 +607,7 @@ struct DisplayClass {
     unsigned char q5158;  // 0x5158
     ObjectClass* q5160;  // 0x5160
     unsigned int q5168;  // 0x5168
-    IUnknown* q5170;  // 0x5170
+    void* q5170;  // 0x5170
     unsigned int q5188;  // 0x5188
     int q5220;  // 0x5220
     unsigned int q5270;  // 0x5270
@@ -637,13 +637,13 @@ struct DisplayClass {
     unsigned int q5444;  // 0x5444
     unsigned char q5448;  // 0x5448
     unsigned char q544C;  // 0x544C
-    IUnknown* q5460;  // 0x5460
+    void* q5460;  // 0x5460
     unsigned char q5464;  // 0x5464
     unsigned char q5468;  // 0x5468
     unsigned int q5480;  // 0x5480
     unsigned char q5484;  // 0x5484
     unsigned char q5488;  // 0x5488
-    IUnknown* q5494;  // 0x5494
+    void* q5494;  // 0x5494
     unsigned char q5498;  // 0x5498
     unsigned char q549C;  // 0x549C
     unsigned char q54A0;  // 0x54A0
@@ -707,16 +707,16 @@ struct DisplayClass {
     AudioController* q5750;  // 0x5750
     unsigned char q5754;  // 0x5754
     unsigned char q5758;  // 0x5758
-    IUnknown* q5774;  // 0x5774
+    void* q5774;  // 0x5774
     unsigned char q5778;  // 0x5778
     unsigned char q577C;  // 0x577C
     unsigned char q5780;  // 0x5780
     unsigned char q5784;  // 0x5784
-    TimerStruct * ptr_5788;  // 0x5788
+    void* ptr_5788;  // 0x5788
     unsigned char q578C;  // 0x578C
     unsigned char q5790;  // 0x5790
     unsigned char q5794;  // 0x5794
-    IUnknown* q5798;  // 0x5798
+    void* q5798;  // 0x5798
     unsigned char q579C;  // 0x579C
     unsigned char q57A0;  // 0x57A0
     unsigned char q57A4;  // 0x57A4
@@ -767,9 +767,9 @@ struct DisplayClass {
 // --- flat members (END) ---
     DisplayClass * Read(char a2);
     HWND Render();
-    Tactical * * UpdateCellPassability(short * a1, IUnknown * aP2);
-    VectorClass_flat * * ProcessCellReveal(MouseClass * aP1, IUnknown * aP2);
-    bool SetCoordVisible(IUnknown * aP0, MouseClass * aP1, char a3);
+    Tactical * * UpdateCellPassability(short * a1, void* aP2);
+    VectorClass_flat * * ProcessCellReveal(MouseClass * aP1, void* aP2);
+    bool SetCoordVisible(void* aP0, MouseClass * aP1, char a3);
     char ddtor();
     int * processDisplayMode(char a2);
     int AdvanceFrameCounter();
@@ -781,9 +781,9 @@ struct DisplayClass {
     int LoadTypeData();
     int ProcessTacticalMouseInput(char a2, int a3, int a4);
     int ReadFromBuffer(void * a1, signed int Size);
-    int RenderStatusText(IUnknown * aP1, char a3);
-    int RevealFogCell(short * a1, IUnknown * aP2);
-    int ScrollTacticalView(IUnknown * aP1, IUnknown * aP2);
+    int RenderStatusText(void* aP1, char a3);
+    int RevealFogCell(short * a1, void* aP2);
+    int ScrollTacticalView(void* aP1, void* aP2);
     int SetSize();
     int SetSurface(unsigned int * a1);
     int UpdateDisplayTimer();

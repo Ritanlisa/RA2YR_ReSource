@@ -21,7 +21,10 @@
 #include "e4/classes/Settings_e4.hpp"
 #include "e4/classes/CellStruct_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/SessionClass_e4.hpp"
+#include "e4/classes/CampaignClass_e4.hpp"
 
 // 0x5D1D80
 namespace gamemd {
@@ -61,21 +64,21 @@ int Session::RemoveTeam(MSShapeAnim * aP1)
 namespace gamemd {
 int Session::PrepareGame()
 {
-  void *v1; // esi
+  unsigned int v1;
   int v3; // eax
   int v4; // eax
   char *v5; // eax
-  int result; // eax
+  void * result;
   char v7; // bl
-  void *v8; // esi
-  int v9; // esi
+  unsigned int v8;
+  unsigned int v9;
   int v10; // edi
   int v11; // esi
-  void *v12; // esi
+  unsigned int v12;
   _DWORD *v13; // eax
   char v14; // al
   bool v15; // bl
-  int v16; // [esp+10h] [ebp-1F8h]
+  void * v16;
   int v17[9]; // [esp+1Ch] [ebp-1ECh] BYREF
   char Str[452]; // [esp+40h] [ebp-1C8h] BYREF
   __int16 v19; // [esp+204h] [ebp-4h]
@@ -195,7 +198,7 @@ int Session::PrepareGame()
   LABEL_44:
       v13 = CCFileClass::Construct(Str, &Destination); /*0x5e7845*/
       v14 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v13 + 20))(v13, 0); /*0x5e7858*/
-      *(_DWORD *)Str = &(void*)(void*)&CCFileClass_vftable; /*0x5e7864*/
+      *(void **)Str = (void*)&CCFileClass_vftable; /*0x5e7864*/
       v15 = v14 == 0; /*0x5e786c*/
       *(_DWORD *)&Str[100] = 0; /*0x5e786f*/
       Vector::Clear((int)&Str[88]); /*0x5e7876*/
@@ -284,7 +287,7 @@ int Session::GetPlayerColor()
 namespace gamemd {
 int Session::StartGame()
 {
-  void *v2; // esi
+  unsigned int v2;
   void *v3; // eax
   void *v4; // eax
 

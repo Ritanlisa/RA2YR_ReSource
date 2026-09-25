@@ -6,6 +6,8 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/CCINIClass_e4.hpp"
 #include "e4/classes/WaypointPathClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x5023B0
@@ -80,7 +82,7 @@ int Waypoint::FindCell(unsigned int * a2)
 {
   int v3; // ecx
   _DWORD *i; // edi
-  int v6; // [esp+10h] [ebp-8h]
+  void * v6;
 
   v3 = 0; /*0x763a59*/
   v6 = *(&this->ptr_44); /*0x763a64*/

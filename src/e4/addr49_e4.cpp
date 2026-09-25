@@ -211,6 +211,8 @@
 #include "e4/classes/E4Recv_49E7C0_e4.hpp"
 #include "e4/classes/COMClass_e4.hpp"
 #include "e4/classes/VectorClass_flat_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x490400
@@ -220,7 +222,7 @@ int E4Recv_490400::sub_490400()
   void *v2; // ecx
   int result; // eax
 
-  *(_DWORD *)this = &(void*)(void*)&ConvertClass_vftable; /*0x490404*/
+  *(void **)this = (void*)&ConvertClass_vftable; /*0x490404*/
   COMClass::RegisterAll(); /*0x49040a*/
   RA2_OPDEL(*(void **)(&this->u32_908)); /*0x490416*/
   v2 = *(void **)(&this->u32_946); /*0x49041b*/
@@ -311,7 +313,7 @@ int E4Recv_491C50::sub_491C50(unsigned char * a1, unsigned char * a2, int a4, in
 {
   int v12; // edx
   int result; // eax
-  _DWORD *v14; // ecx
+  unsigned int v14;
   _BYTE *v15; // esi
   unsigned int v16; // edx
   int v18; // eax
@@ -390,9 +392,9 @@ int E4Recv_491D90::sub_491D90(unsigned char * a1, unsigned char * a2, RLEBlitTra
   int v11; // eax
   unsigned int v12; // edx
   unsigned __int8 *v14; // esi
-  _DWORD *v15; // ecx
+  unsigned int v15;
   int v18; // eax
-  int v19; // ebx
+  RLEBlitTransRemapDestZRead_E * v19;
 
   v11 = a5; /*0x491d91*/
   v12 = a7; /*0x491d95*/
@@ -527,9 +529,9 @@ unsigned short * E4Recv_491FD0::sub_491FD0(int arg0, unsigned char * a2, RLEBlit
   int v11; // edx
   _WORD *result; // eax
   int v14; // esi
-  _DWORD *v15; // ecx
+  unsigned int v15;
   int v18; // edx
-  int v19; // ebx
+  RLEBlitTransXlatZReadWrite_E * v19;
   unsigned __int8 v20; // dl
   unsigned __int8 v21; // dl
 
@@ -676,9 +678,9 @@ unsigned short * E4Recv_492250::sub_492250(unsigned char * a1, unsigned char * a
   int v11; // edx
   unsigned __int16 *result; // eax
   _BYTE *v14; // esi
-  _DWORD *v15; // ecx
+  unsigned int v15;
   int v18; // edx
-  int v19; // ebx
+  RLEBlitTransRemapDestZReadWrite_E * v19;
   unsigned __int8 v21; // dl
   int v22; // edx
   char *v23; // edi
@@ -755,9 +757,9 @@ unsigned short * E4Recv_492370::sub_492370(unsigned char * a1, unsigned char * a
   int v11; // edx
   unsigned __int16 *result; // eax
   _BYTE *v14; // esi
-  _DWORD *v15; // ecx
+  unsigned int v15;
   int v18; // edx
-  int v19; // ebx
+  RLEBlitTransRemapXlatZReadWrite_E * v19;
   unsigned __int8 v20; // dl
   unsigned __int8 v21; // dl
   __int16 v22; // dx
@@ -1082,7 +1084,7 @@ int E4Recv_496930::sub_496930(int arg0, unsigned char * a2, RLEBlitTransLucent75
   int v12; // edx
   unsigned int v14; // esi
   int v17; // eax
-  int v18; // ebx
+  RLEBlitTransLucent75ZRead_G * v18;
   unsigned __int8 v19; // al
   unsigned __int8 v20; // al
   int v21; // edi
@@ -1148,7 +1150,7 @@ int E4Recv_496A80::sub_496A80(unsigned short * a1, unsigned char * a2, RLEBlitTr
   unsigned int v12; // edx
   _WORD *v14; // esi
   int v17; // eax
-  int v18; // ebx
+  RLEBlitTransLucent50ZRead_G * v18;
   unsigned __int8 v19; // al
   unsigned __int8 v20; // al
   int v21; // edi
@@ -1897,7 +1899,7 @@ AbstractClass * * E4Recv_49C0D0::CampaignClass_LoadCoopSave()
   {
   LABEL_44:
     HashTable::DestroyHashTableINIClass(v24); /*0x49c553*/
-    v29[0] = &(void*)(void*)&CCFileClass_vftable; /*0x49c563*/
+    v29[0] = (void*)&CCFileClass_vftable; /*0x49c563*/
     v31 = 0; /*0x49c56e*/
     Vector::Clear((int)v30); /*0x49c575*/
     v29[0] = &off_7E1668; /*0x49c581*/
@@ -1954,7 +1956,7 @@ AbstractClass * * E4Recv_49C0D0::CampaignClass_LoadCoopSave()
   }
   *(this + 108) = 1; /*0x49c505*/
   HashTable::DestroyHashTableINIClass(v24); /*0x49c509*/
-  v29[0] = &(void*)(void*)&CCFileClass_vftable; /*0x49c515*/
+  v29[0] = (void*)&CCFileClass_vftable; /*0x49c515*/
   v31 = 0; /*0x49c520*/
   Vector::Clear((int)v30); /*0x49c527*/
   v29[0] = &off_7E1668; /*0x49c533*/
@@ -2265,7 +2267,7 @@ int E4Recv_49D390::LoadCoopCampaignSave(IUnknown * aP1)
     CCFileClass::Reset(v17); /*0x49d418*/
   LABEL_5:
     HashTable::DestroyHashTableINIClass(v20); /*0x49d41d*/
-    v17[0] = &(void*)(void*)&CCFileClass_vftable; /*0x49d42a*/
+    v17[0] = (void*)&CCFileClass_vftable; /*0x49d42a*/
     v19 = 0; /*0x49d432*/
     Vector::Clear((int)v18); /*0x49d436*/
     v17[0] = &off_7E1668; /*0x49d43f*/
@@ -2345,7 +2347,7 @@ int E4Recv_49D390::LoadCoopCampaignSave(IUnknown * aP1)
   if ( strcmp(aP1, g_Str_undefined) ) /*0x49d614*/
     goto LABEL_5; /*0x49d63a*/
   HashTable::DestroyHashTableINIClass(v20); /*0x49d644*/
-  v17[0] = &(void*)(void*)&CCFileClass_vftable; /*0x49d64d*/
+  v17[0] = (void*)&CCFileClass_vftable; /*0x49d64d*/
   v19 = 0; /*0x49d655*/
   Vector::Clear((int)v18); /*0x49d659*/
   v17[0] = &off_7E1668; /*0x49d662*/
@@ -2546,7 +2548,7 @@ AbstractClass * * E4Recv_49E7C0::sub_49E7C0(char a2)
         DeleteAndZero(v7 + 7); /*0x49e7fc*/
         DeleteAndZero(v7 + 6); /*0x49e804*/
         v9 = *v7; /*0x49e809*/
-        *(v7 - 1) = &(void*)(void*)&VectorClass_DynamicVectorClass_char_____vftable; /*0x49e80b*/
+        *(v7 - 1) = (void*)&VectorClass_DynamicVectorClass_char_____vftable; /*0x49e80b*/
         if ( v9 && *((_BYTE *)v7 + 9) ) /*0x49e812*/
         {
           RA2_OPDEL(v9); /*0x49e818*/
@@ -2555,7 +2557,7 @@ AbstractClass * * E4Recv_49E7C0::sub_49E7C0(char a2)
         *((_BYTE *)v7 + 9) = 0; /*0x49e822*/
         v7[1] = 0; /*0x49e825*/
         v10 = *(v7 - 6); /*0x49e828*/
-        *(v7 - 7) = &(void*)(void*)&VectorClass_DynamicVectorClass_char_____vftable; /*0x49e82b*/
+        *(v7 - 7) = (void*)&VectorClass_DynamicVectorClass_char_____vftable; /*0x49e82b*/
         if ( v10 && *((_BYTE *)v7 - 15) ) /*0x49e832*/
         {
           RA2_OPDEL(v10); /*0x49e838*/
@@ -2577,7 +2579,7 @@ AbstractClass * * E4Recv_49E7C0::sub_49E7C0(char a2)
     DeleteAndZero((void **)&this->vtable28); /*0x49e86d*/
     DeleteAndZero((void **)&this->vtable27); /*0x49e875*/
     v12 = (void *)this->fallRate; /*0x49e87a*/
-    this->owningHouseIndex = &(void*)(void*)&VectorClass_DynamicVectorClass_char_____vftable; /*0x49e886*/
+    this->owningHouseIndex = (void*)&VectorClass_DynamicVectorClass_char_____vftable; /*0x49e886*/
     if ( v12 && *(&this->abstractFlags3) ) /*0x49e88b*/
     {
       RA2_OPDEL(v12); /*0x49e891*/
@@ -2586,7 +2588,7 @@ AbstractClass * * E4Recv_49E7C0::sub_49E7C0(char a2)
     *(&this->abstractFlags3) = 0; /*0x49e89c*/
     this->nextObject = 0; /*0x49e89f*/
     v13 = (void *)this->abstractFlags; /*0x49e8a2*/
-    this->uniqueId = &(void*)(void*)&VectorClass_DynamicVectorClass_char_____vftable; /*0x49e8a5*/
+    this->uniqueId = (void*)&VectorClass_DynamicVectorClass_char_____vftable; /*0x49e8a5*/
     if ( v13 && *(&this->vtable39) ) /*0x49e8ac*/
     {
       RA2_OPDEL(v13); /*0x49e8b2*/
@@ -5399,7 +5401,7 @@ int E4Recv_497470::sub_497470(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 BlitTransXlat * E4Recv_499CA0::___Gfacet_locale_std__UAEPAXI_Z_4(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&Blitter_vftable; /*0x499ca9*/
+  *(_DWORD *)this = (void*)&Blitter_vftable; /*0x499ca9*/
   if ( (a2 & 1) != 0 ) /*0x499caf*/
     RA2_OPDEL(); /*0x499cb2*/
   return this; /*0x499cbc*/
@@ -5410,7 +5412,7 @@ BlitTransXlat * E4Recv_499CA0::___Gfacet_locale_std__UAEPAXI_Z_4(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_499D40::___Gfacet_locale_std__UAEPAXI_Z_9(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&Blitter_vftable; /*0x499d49*/
+  *(_DWORD *)this = (void*)&Blitter_vftable; /*0x499d49*/
   if ( (a2 & 1) != 0 ) /*0x499d4f*/
     RA2_OPDEL(); /*0x499d52*/
   return this; /*0x499d5c*/
@@ -5421,7 +5423,7 @@ std::locale::facet * E4Recv_499D40::___Gfacet_locale_std__UAEPAXI_Z_9(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_499D60::___Gfacet_locale_std__UAEPAXI_Z_10(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&Blitter_vftable; /*0x499d69*/
+  *(_DWORD *)this = (void*)&Blitter_vftable; /*0x499d69*/
   if ( (a2 & 1) != 0 ) /*0x499d6f*/
     RA2_OPDEL(); /*0x499d72*/
   return this; /*0x499d7c*/
@@ -5432,7 +5434,7 @@ std::locale::facet * E4Recv_499D60::___Gfacet_locale_std__UAEPAXI_Z_10(char a2)
 namespace gamemd {
 RLEBlitTransXlat * E4Recv_499D80::___Gfacet_locale_std__UAEPAXI_Z_11(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&RLEBlitter_vftable; /*0x499d89*/
+  *(_DWORD *)this = (void*)&RLEBlitter_vftable; /*0x499d89*/
   if ( (a2 & 1) != 0 ) /*0x499d8f*/
     RA2_OPDEL(); /*0x499d92*/
   return this; /*0x499d9c*/
@@ -5443,7 +5445,7 @@ RLEBlitTransXlat * E4Recv_499D80::___Gfacet_locale_std__UAEPAXI_Z_11(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_499DC0::___Gfacet_locale_std__UAEPAXI_Z_13(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&RLEBlitter_vftable; /*0x499dc9*/
+  *(_DWORD *)this = (void*)&RLEBlitter_vftable; /*0x499dc9*/
   if ( (a2 & 1) != 0 ) /*0x499dcf*/
     RA2_OPDEL(); /*0x499dd2*/
   return this; /*0x499ddc*/
@@ -5454,7 +5456,7 @@ std::locale::facet * E4Recv_499DC0::___Gfacet_locale_std__UAEPAXI_Z_13(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_499DE0::___Gfacet_locale_std__UAEPAXI_Z_14(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&RLEBlitter_vftable; /*0x499de9*/
+  *(_DWORD *)this = (void*)&RLEBlitter_vftable; /*0x499de9*/
   if ( (a2 & 1) != 0 ) /*0x499def*/
     RA2_OPDEL(); /*0x499df2*/
   return this; /*0x499dfc*/
@@ -5465,7 +5467,7 @@ std::locale::facet * E4Recv_499DE0::___Gfacet_locale_std__UAEPAXI_Z_14(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_499E00::___Gfacet_locale_std__UAEPAXI_Z_15(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&RLEBlitter_vftable; /*0x499e09*/
+  *(_DWORD *)this = (void*)&RLEBlitter_vftable; /*0x499e09*/
   if ( (a2 & 1) != 0 ) /*0x499e0f*/
     RA2_OPDEL(); /*0x499e12*/
   return this; /*0x499e1c*/
@@ -5476,7 +5478,7 @@ std::locale::facet * E4Recv_499E00::___Gfacet_locale_std__UAEPAXI_Z_15(char a2)
 namespace gamemd {
 RLEBlitTransXlatZRead * E4Recv_499E20::___Gfacet_locale_std__UAEPAXI_Z_16(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&RLEBlitter_vftable; /*0x499e29*/
+  *(_DWORD *)this = (void*)&RLEBlitter_vftable; /*0x499e29*/
   if ( (a2 & 1) != 0 ) /*0x499e2f*/
     RA2_OPDEL(); /*0x499e32*/
   return this; /*0x499e3c*/
@@ -5487,7 +5489,7 @@ RLEBlitTransXlatZRead * E4Recv_499E20::___Gfacet_locale_std__UAEPAXI_Z_16(char a
 namespace gamemd {
 std::locale::facet * E4Recv_499E40::___Gfacet_locale_std__UAEPAXI_Z_17(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&RLEBlitter_vftable; /*0x499e49*/
+  *(_DWORD *)this = (void*)&RLEBlitter_vftable; /*0x499e49*/
   if ( (a2 & 1) != 0 ) /*0x499e4f*/
     RA2_OPDEL(); /*0x499e52*/
   return this; /*0x499e5c*/
@@ -5498,7 +5500,7 @@ std::locale::facet * E4Recv_499E40::___Gfacet_locale_std__UAEPAXI_Z_17(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_499E60::___Gfacet_locale_std__UAEPAXI_Z_18(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&RLEBlitter_vftable; /*0x499e69*/
+  *(_DWORD *)this = (void*)&RLEBlitter_vftable; /*0x499e69*/
   if ( (a2 & 1) != 0 ) /*0x499e6f*/
     RA2_OPDEL(); /*0x499e72*/
   return this; /*0x499e7c*/
@@ -5509,7 +5511,7 @@ std::locale::facet * E4Recv_499E60::___Gfacet_locale_std__UAEPAXI_Z_18(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_499E80::___Gfacet_locale_std__UAEPAXI_Z_19(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&RLEBlitter_vftable; /*0x499e89*/
+  *(_DWORD *)this = (void*)&RLEBlitter_vftable; /*0x499e89*/
   if ( (a2 & 1) != 0 ) /*0x499e8f*/
     RA2_OPDEL(); /*0x499e92*/
   return this; /*0x499e9c*/
@@ -5520,7 +5522,7 @@ std::locale::facet * E4Recv_499E80::___Gfacet_locale_std__UAEPAXI_Z_19(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_499EA0::___Gfacet_locale_std__UAEPAXI_Z_20(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&RLEBlitter_vftable; /*0x499ea9*/
+  *(_DWORD *)this = (void*)&RLEBlitter_vftable; /*0x499ea9*/
   if ( (a2 & 1) != 0 ) /*0x499eaf*/
     RA2_OPDEL(); /*0x499eb2*/
   return this; /*0x499ebc*/
@@ -5531,7 +5533,7 @@ std::locale::facet * E4Recv_499EA0::___Gfacet_locale_std__UAEPAXI_Z_20(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_499EC0::___Gfacet_locale_std__UAEPAXI_Z_21(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&RLEBlitter_vftable; /*0x499ec9*/
+  *(_DWORD *)this = (void*)&RLEBlitter_vftable; /*0x499ec9*/
   if ( (a2 & 1) != 0 ) /*0x499ecf*/
     RA2_OPDEL(); /*0x499ed2*/
   return this; /*0x499edc*/
@@ -5542,7 +5544,7 @@ std::locale::facet * E4Recv_499EC0::___Gfacet_locale_std__UAEPAXI_Z_21(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_499EE0::___Gfacet_locale_std__UAEPAXI_Z_22(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&RLEBlitter_vftable; /*0x499ee9*/
+  *(_DWORD *)this = (void*)&RLEBlitter_vftable; /*0x499ee9*/
   if ( (a2 & 1) != 0 ) /*0x499eef*/
     RA2_OPDEL(); /*0x499ef2*/
   return this; /*0x499efc*/
@@ -5553,7 +5555,7 @@ std::locale::facet * E4Recv_499EE0::___Gfacet_locale_std__UAEPAXI_Z_22(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_499F00::___Gfacet_locale_std__UAEPAXI_Z_23(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&RLEBlitter_vftable; /*0x499f09*/
+  *(_DWORD *)this = (void*)&RLEBlitter_vftable; /*0x499f09*/
   if ( (a2 & 1) != 0 ) /*0x499f0f*/
     RA2_OPDEL(); /*0x499f12*/
   return this; /*0x499f1c*/
@@ -5564,7 +5566,7 @@ std::locale::facet * E4Recv_499F00::___Gfacet_locale_std__UAEPAXI_Z_23(char a2)
 namespace gamemd {
 BlitPlainXlat * E4Recv_499F20::___Gfacet_locale_std__UAEPAXI_Z_24(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&Blitter_vftable; /*0x499f29*/
+  *(_DWORD *)this = (void*)&Blitter_vftable; /*0x499f29*/
   if ( (a2 & 1) != 0 ) /*0x499f2f*/
     RA2_OPDEL(); /*0x499f32*/
   return this; /*0x499f3c*/
@@ -5575,7 +5577,7 @@ BlitPlainXlat * E4Recv_499F20::___Gfacet_locale_std__UAEPAXI_Z_24(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_499F40::___Gfacet_locale_std__UAEPAXI_Z_25(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&Blitter_vftable; /*0x499f49*/
+  *(_DWORD *)this = (void*)&Blitter_vftable; /*0x499f49*/
   if ( (a2 & 1) != 0 ) /*0x499f4f*/
     RA2_OPDEL(); /*0x499f52*/
   return this; /*0x499f5c*/
@@ -5586,7 +5588,7 @@ std::locale::facet * E4Recv_499F40::___Gfacet_locale_std__UAEPAXI_Z_25(char a2)
 namespace gamemd {
 BlitTransDarken * E4Recv_499F60::___Gfacet_locale_std__UAEPAXI_Z_26(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&Blitter_vftable; /*0x499f69*/
+  *(_DWORD *)this = (void*)&Blitter_vftable; /*0x499f69*/
   if ( (a2 & 1) != 0 ) /*0x499f6f*/
     RA2_OPDEL(); /*0x499f72*/
   return this; /*0x499f7c*/
@@ -5597,7 +5599,7 @@ BlitTransDarken * E4Recv_499F60::___Gfacet_locale_std__UAEPAXI_Z_26(char a2)
 namespace gamemd {
 BlitTransLucent75 * E4Recv_499F80::___Gfacet_locale_std__UAEPAXI_Z_27(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&Blitter_vftable; /*0x499f89*/
+  *(_DWORD *)this = (void*)&Blitter_vftable; /*0x499f89*/
   if ( (a2 & 1) != 0 ) /*0x499f8f*/
     RA2_OPDEL(); /*0x499f92*/
   return this; /*0x499f9c*/
@@ -5608,7 +5610,7 @@ BlitTransLucent75 * E4Recv_499F80::___Gfacet_locale_std__UAEPAXI_Z_27(char a2)
 namespace gamemd {
 BlitTransLucent50 * E4Recv_499FA0::___Gfacet_locale_std__UAEPAXI_Z_28(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&Blitter_vftable; /*0x499fa9*/
+  *(_DWORD *)this = (void*)&Blitter_vftable; /*0x499fa9*/
   if ( (a2 & 1) != 0 ) /*0x499faf*/
     RA2_OPDEL(); /*0x499fb2*/
   return this; /*0x499fbc*/
@@ -5619,7 +5621,7 @@ BlitTransLucent50 * E4Recv_499FA0::___Gfacet_locale_std__UAEPAXI_Z_28(char a2)
 namespace gamemd {
 BlitTransLucent25 * E4Recv_499FC0::___Gfacet_locale_std__UAEPAXI_Z_29(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&Blitter_vftable; /*0x499fc9*/
+  *(_DWORD *)this = (void*)&Blitter_vftable; /*0x499fc9*/
   if ( (a2 & 1) != 0 ) /*0x499fcf*/
     RA2_OPDEL(); /*0x499fd2*/
   return this; /*0x499fdc*/
@@ -5630,7 +5632,7 @@ BlitTransLucent25 * E4Recv_499FC0::___Gfacet_locale_std__UAEPAXI_Z_29(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_499FE0::___Gfacet_locale_std__UAEPAXI_Z_30(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&Blitter_vftable; /*0x499fe9*/
+  *(_DWORD *)this = (void*)&Blitter_vftable; /*0x499fe9*/
   if ( (a2 & 1) != 0 ) /*0x499fef*/
     RA2_OPDEL(); /*0x499ff2*/
   return this; /*0x499ffc*/
@@ -5641,7 +5643,7 @@ std::locale::facet * E4Recv_499FE0::___Gfacet_locale_std__UAEPAXI_Z_30(char a2)
 namespace gamemd {
 BlitTransXlatZRead * E4Recv_49A000::___Gfacet_locale_std__UAEPAXI_Z_31(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&Blitter_vftable; /*0x49a009*/
+  *(_DWORD *)this = (void*)&Blitter_vftable; /*0x49a009*/
   if ( (a2 & 1) != 0 ) /*0x49a00f*/
     RA2_OPDEL(); /*0x49a012*/
   return this; /*0x49a01c*/
@@ -5652,7 +5654,7 @@ BlitTransXlatZRead * E4Recv_49A000::___Gfacet_locale_std__UAEPAXI_Z_31(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A020::___Gfacet_locale_std__UAEPAXI_Z_32(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&Blitter_vftable; /*0x49a029*/
+  *(_DWORD *)this = (void*)&Blitter_vftable; /*0x49a029*/
   if ( (a2 & 1) != 0 ) /*0x49a02f*/
     RA2_OPDEL(); /*0x49a032*/
   return this; /*0x49a03c*/
@@ -5663,7 +5665,7 @@ std::locale::facet * E4Recv_49A020::___Gfacet_locale_std__UAEPAXI_Z_32(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A040::___Gfacet_locale_std__UAEPAXI_Z_33(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&Blitter_vftable; /*0x49a049*/
+  *(_DWORD *)this = (void*)&Blitter_vftable; /*0x49a049*/
   if ( (a2 & 1) != 0 ) /*0x49a04f*/
     RA2_OPDEL(); /*0x49a052*/
   return this; /*0x49a05c*/
@@ -5674,7 +5676,7 @@ std::locale::facet * E4Recv_49A040::___Gfacet_locale_std__UAEPAXI_Z_33(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A060::___Gfacet_locale_std__UAEPAXI_Z_34(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&Blitter_vftable; /*0x49a069*/
+  *(_DWORD *)this = (void*)&Blitter_vftable; /*0x49a069*/
   if ( (a2 & 1) != 0 ) /*0x49a06f*/
     RA2_OPDEL(); /*0x49a072*/
   return this; /*0x49a07c*/
@@ -5685,7 +5687,7 @@ std::locale::facet * E4Recv_49A060::___Gfacet_locale_std__UAEPAXI_Z_34(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A080::___Gfacet_locale_std__UAEPAXI_Z_35(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&Blitter_vftable; /*0x49a089*/
+  *(_DWORD *)this = (void*)&Blitter_vftable; /*0x49a089*/
   if ( (a2 & 1) != 0 ) /*0x49a08f*/
     RA2_OPDEL(); /*0x49a092*/
   return this; /*0x49a09c*/
@@ -5696,7 +5698,7 @@ std::locale::facet * E4Recv_49A080::___Gfacet_locale_std__UAEPAXI_Z_35(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A0A0::___Gfacet_locale_std__UAEPAXI_Z_36(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&Blitter_vftable; /*0x49a0a9*/
+  *(_DWORD *)this = (void*)&Blitter_vftable; /*0x49a0a9*/
   if ( (a2 & 1) != 0 ) /*0x49a0af*/
     RA2_OPDEL(); /*0x49a0b2*/
   return this; /*0x49a0bc*/
@@ -5707,7 +5709,7 @@ std::locale::facet * E4Recv_49A0A0::___Gfacet_locale_std__UAEPAXI_Z_36(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A0C0::___Gfacet_locale_std__UAEPAXI_Z_37(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&Blitter_vftable; /*0x49a0c9*/
+  *(_DWORD *)this = (void*)&Blitter_vftable; /*0x49a0c9*/
   if ( (a2 & 1) != 0 ) /*0x49a0cf*/
     RA2_OPDEL(); /*0x49a0d2*/
   return this; /*0x49a0dc*/
@@ -5718,7 +5720,7 @@ std::locale::facet * E4Recv_49A0C0::___Gfacet_locale_std__UAEPAXI_Z_37(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A0E0::___Gfacet_locale_std__UAEPAXI_Z_38(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&Blitter_vftable; /*0x49a0e9*/
+  *(_DWORD *)this = (void*)&Blitter_vftable; /*0x49a0e9*/
   if ( (a2 & 1) != 0 ) /*0x49a0ef*/
     RA2_OPDEL(); /*0x49a0f2*/
   return this; /*0x49a0fc*/
@@ -5729,7 +5731,7 @@ std::locale::facet * E4Recv_49A0E0::___Gfacet_locale_std__UAEPAXI_Z_38(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A100::___Gfacet_locale_std__UAEPAXI_Z_39(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&Blitter_vftable; /*0x49a109*/
+  *(_DWORD *)this = (void*)&Blitter_vftable; /*0x49a109*/
   if ( (a2 & 1) != 0 ) /*0x49a10f*/
     RA2_OPDEL(); /*0x49a112*/
   return this; /*0x49a11c*/
@@ -5740,7 +5742,7 @@ std::locale::facet * E4Recv_49A100::___Gfacet_locale_std__UAEPAXI_Z_39(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A120::___Gfacet_locale_std__UAEPAXI_Z_40(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&Blitter_vftable; /*0x49a129*/
+  *(_DWORD *)this = (void*)&Blitter_vftable; /*0x49a129*/
   if ( (a2 & 1) != 0 ) /*0x49a12f*/
     RA2_OPDEL(); /*0x49a132*/
   return this; /*0x49a13c*/
@@ -5751,7 +5753,7 @@ std::locale::facet * E4Recv_49A120::___Gfacet_locale_std__UAEPAXI_Z_40(char a2)
 namespace gamemd {
 BlitTransXlatZReadWrite * E4Recv_49A140::___Gfacet_locale_std__UAEPAXI_Z_41(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&Blitter_vftable; /*0x49a149*/
+  *(_DWORD *)this = (void*)&Blitter_vftable; /*0x49a149*/
   if ( (a2 & 1) != 0 ) /*0x49a14f*/
     RA2_OPDEL(); /*0x49a152*/
   return this; /*0x49a15c*/
@@ -5762,7 +5764,7 @@ BlitTransXlatZReadWrite * E4Recv_49A140::___Gfacet_locale_std__UAEPAXI_Z_41(char
 namespace gamemd {
 std::locale::facet * E4Recv_49A160::___Gfacet_locale_std__UAEPAXI_Z_42(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&Blitter_vftable; /*0x49a169*/
+  *(_DWORD *)this = (void*)&Blitter_vftable; /*0x49a169*/
   if ( (a2 & 1) != 0 ) /*0x49a16f*/
     RA2_OPDEL(); /*0x49a172*/
   return this; /*0x49a17c*/
@@ -5773,7 +5775,7 @@ std::locale::facet * E4Recv_49A160::___Gfacet_locale_std__UAEPAXI_Z_42(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A180::___Gfacet_locale_std__UAEPAXI_Z_43(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&Blitter_vftable; /*0x49a189*/
+  *(_DWORD *)this = (void*)&Blitter_vftable; /*0x49a189*/
   if ( (a2 & 1) != 0 ) /*0x49a18f*/
     RA2_OPDEL(); /*0x49a192*/
   return this; /*0x49a19c*/
@@ -5784,7 +5786,7 @@ std::locale::facet * E4Recv_49A180::___Gfacet_locale_std__UAEPAXI_Z_43(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A7C0::___Gfacet_locale_std__UAEPAXI_Z_55(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&RLEBlitter_vftable; /*0x49a7c9*/
+  *(_DWORD *)this = (void*)&RLEBlitter_vftable; /*0x49a7c9*/
   if ( (a2 & 1) != 0 ) /*0x49a7cf*/
     RA2_OPDEL(); /*0x49a7d2*/
   return this; /*0x49a7dc*/
@@ -5795,7 +5797,7 @@ std::locale::facet * E4Recv_49A7C0::___Gfacet_locale_std__UAEPAXI_Z_55(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A7E0::___Gfacet_locale_std__UAEPAXI_Z_56(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&RLEBlitter_vftable; /*0x49a7e9*/
+  *(_DWORD *)this = (void*)&RLEBlitter_vftable; /*0x49a7e9*/
   if ( (a2 & 1) != 0 ) /*0x49a7ef*/
     RA2_OPDEL(); /*0x49a7f2*/
   return this; /*0x49a7fc*/
@@ -5806,7 +5808,7 @@ std::locale::facet * E4Recv_49A7E0::___Gfacet_locale_std__UAEPAXI_Z_56(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A800::___Gfacet_locale_std__UAEPAXI_Z_57(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&RLEBlitter_vftable; /*0x49a809*/
+  *(_DWORD *)this = (void*)&RLEBlitter_vftable; /*0x49a809*/
   if ( (a2 & 1) != 0 ) /*0x49a80f*/
     RA2_OPDEL(); /*0x49a812*/
   return this; /*0x49a81c*/
@@ -5817,7 +5819,7 @@ std::locale::facet * E4Recv_49A800::___Gfacet_locale_std__UAEPAXI_Z_57(char a2)
 namespace gamemd {
 RLEBlitTransXlatZRead * E4Recv_49A820::___Gfacet_locale_std__UAEPAXI_Z_58(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&RLEBlitter_vftable; /*0x49a829*/
+  *(_DWORD *)this = (void*)&RLEBlitter_vftable; /*0x49a829*/
   if ( (a2 & 1) != 0 ) /*0x49a82f*/
     RA2_OPDEL(); /*0x49a832*/
   return this; /*0x49a83c*/
@@ -5828,7 +5830,7 @@ RLEBlitTransXlatZRead * E4Recv_49A820::___Gfacet_locale_std__UAEPAXI_Z_58(char a
 namespace gamemd {
 std::locale::facet * E4Recv_49A840::___Gfacet_locale_std__UAEPAXI_Z_59(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&RLEBlitter_vftable; /*0x49a849*/
+  *(_DWORD *)this = (void*)&RLEBlitter_vftable; /*0x49a849*/
   if ( (a2 & 1) != 0 ) /*0x49a84f*/
     RA2_OPDEL(); /*0x49a852*/
   return this; /*0x49a85c*/
@@ -5839,7 +5841,7 @@ std::locale::facet * E4Recv_49A840::___Gfacet_locale_std__UAEPAXI_Z_59(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A860::___Gfacet_locale_std__UAEPAXI_Z_60(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&RLEBlitter_vftable; /*0x49a869*/
+  *(_DWORD *)this = (void*)&RLEBlitter_vftable; /*0x49a869*/
   if ( (a2 & 1) != 0 ) /*0x49a86f*/
     RA2_OPDEL(); /*0x49a872*/
   return this; /*0x49a87c*/
@@ -5850,7 +5852,7 @@ std::locale::facet * E4Recv_49A860::___Gfacet_locale_std__UAEPAXI_Z_60(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A880::___Gfacet_locale_std__UAEPAXI_Z_61(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&RLEBlitter_vftable; /*0x49a889*/
+  *(_DWORD *)this = (void*)&RLEBlitter_vftable; /*0x49a889*/
   if ( (a2 & 1) != 0 ) /*0x49a88f*/
     RA2_OPDEL(); /*0x49a892*/
   return this; /*0x49a89c*/
@@ -5861,7 +5863,7 @@ std::locale::facet * E4Recv_49A880::___Gfacet_locale_std__UAEPAXI_Z_61(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A8A0::___Gfacet_locale_std__UAEPAXI_Z_62(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&RLEBlitter_vftable; /*0x49a8a9*/
+  *(_DWORD *)this = (void*)&RLEBlitter_vftable; /*0x49a8a9*/
   if ( (a2 & 1) != 0 ) /*0x49a8af*/
     RA2_OPDEL(); /*0x49a8b2*/
   return this; /*0x49a8bc*/
@@ -5872,7 +5874,7 @@ std::locale::facet * E4Recv_49A8A0::___Gfacet_locale_std__UAEPAXI_Z_62(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A8C0::___Gfacet_locale_std__UAEPAXI_Z_63(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&RLEBlitter_vftable; /*0x49a8c9*/
+  *(_DWORD *)this = (void*)&RLEBlitter_vftable; /*0x49a8c9*/
   if ( (a2 & 1) != 0 ) /*0x49a8cf*/
     RA2_OPDEL(); /*0x49a8d2*/
   return this; /*0x49a8dc*/
@@ -5883,7 +5885,7 @@ std::locale::facet * E4Recv_49A8C0::___Gfacet_locale_std__UAEPAXI_Z_63(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A8E0::___Gfacet_locale_std__UAEPAXI_Z_64(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&RLEBlitter_vftable; /*0x49a8e9*/
+  *(_DWORD *)this = (void*)&RLEBlitter_vftable; /*0x49a8e9*/
   if ( (a2 & 1) != 0 ) /*0x49a8ef*/
     RA2_OPDEL(); /*0x49a8f2*/
   return this; /*0x49a8fc*/
@@ -5894,7 +5896,7 @@ std::locale::facet * E4Recv_49A8E0::___Gfacet_locale_std__UAEPAXI_Z_64(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A900::___Gfacet_locale_std__UAEPAXI_Z_65(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&RLEBlitter_vftable; /*0x49a909*/
+  *(_DWORD *)this = (void*)&RLEBlitter_vftable; /*0x49a909*/
   if ( (a2 & 1) != 0 ) /*0x49a90f*/
     RA2_OPDEL(); /*0x49a912*/
   return this; /*0x49a91c*/
@@ -5905,7 +5907,7 @@ std::locale::facet * E4Recv_49A900::___Gfacet_locale_std__UAEPAXI_Z_65(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A920::___Gfacet_locale_std__UAEPAXI_Z_66(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&RLEBlitter_vftable; /*0x49a929*/
+  *(_DWORD *)this = (void*)&RLEBlitter_vftable; /*0x49a929*/
   if ( (a2 & 1) != 0 ) /*0x49a92f*/
     RA2_OPDEL(); /*0x49a932*/
   return this; /*0x49a93c*/
@@ -5916,7 +5918,7 @@ std::locale::facet * E4Recv_49A920::___Gfacet_locale_std__UAEPAXI_Z_66(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A940::___Gfacet_locale_std__UAEPAXI_Z_67(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&RLEBlitter_vftable; /*0x49a949*/
+  *(_DWORD *)this = (void*)&RLEBlitter_vftable; /*0x49a949*/
   if ( (a2 & 1) != 0 ) /*0x49a94f*/
     RA2_OPDEL(); /*0x49a952*/
   return this; /*0x49a95c*/
@@ -5927,7 +5929,7 @@ std::locale::facet * E4Recv_49A940::___Gfacet_locale_std__UAEPAXI_Z_67(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A960::___Gfacet_locale_std__UAEPAXI_Z_68(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&RLEBlitter_vftable; /*0x49a969*/
+  *(_DWORD *)this = (void*)&RLEBlitter_vftable; /*0x49a969*/
   if ( (a2 & 1) != 0 ) /*0x49a96f*/
     RA2_OPDEL(); /*0x49a972*/
   return this; /*0x49a97c*/
@@ -5938,7 +5940,7 @@ std::locale::facet * E4Recv_49A960::___Gfacet_locale_std__UAEPAXI_Z_68(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A980::___Gfacet_locale_std__UAEPAXI_Z_69(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&RLEBlitter_vftable; /*0x49a989*/
+  *(_DWORD *)this = (void*)&RLEBlitter_vftable; /*0x49a989*/
   if ( (a2 & 1) != 0 ) /*0x49a98f*/
     RA2_OPDEL(); /*0x49a992*/
   return this; /*0x49a99c*/
@@ -6089,9 +6091,9 @@ int sub_49B390()
   dword_89F520 = 0; /*0x49b39e*/
   GenericNode::Constructor(dword_89F528); /*0x49b3a4*/
   GenericNode::Constructor(dword_89F534); /*0x49b3ae*/
-  dword_89F524 = (int)&(void*)(void*)&GenericList_vftable; /*0x49b3bd*/
+  dword_89F524 = (int)&GenericList_vftable; /*0x49b3bd*/
   LinkedList::Prepend(dword_89F528, (int)dword_89F534); /*0x49b3c7*/
-  dword_89F524 = (int)&(void*)(void*)&List_INIClass_INISection___vftable; /*0x49b3d1*/
+  dword_89F524 = (int)&List_INIClass_INISection___vftable; /*0x49b3d1*/
   dword_89F540 = 0; /*0x49b3db*/
   dword_89F544 = 0; /*0x49b3e1*/
   dword_89F548 = 0; /*0x49b3e7*/
@@ -6144,11 +6146,11 @@ unsigned int * E4Recv_49DA60::sub_49DA60()
   result[2] = 0; /*0x49da6f*/
   v2[1] = 0; /*0x49da72*/
   v2[2] = 0; /*0x49da75*/
-  *v2 = &(void*)(void*)&GenericNode_vftable; /*0x49da78*/
+  *v2 = (void*)&GenericNode_vftable; /*0x49da78*/
   v3[1] = 0; /*0x49da7e*/
   v3[2] = 0; /*0x49da81*/
-  *v3 = &(void*)(void*)&GenericNode_vftable; /*0x49da84*/
-  result[3] = &(void*)(void*)&GenericList_vftable; /*0x49da8d*/
+  *v3 = (void*)&GenericNode_vftable; /*0x49da84*/
+  result[3] = (void*)&GenericList_vftable; /*0x49da8d*/
   if ( v3 ) /*0x49da94*/
   {
     v4 = v3[1]; /*0x49da96*/
@@ -6171,7 +6173,7 @@ unsigned int * E4Recv_49DA60::sub_49DA60()
   if ( v7 ) /*0x49dac4*/
     this->v3 = v3; /*0x49dac6*/
   v2[1] = v3; /*0x49dac9*/
-  result[3] = &(void*)(void*)&List_INIClass_INISection___vftable; /*0x49dacc*/
+  result[3] = (void*)&List_INIClass_INISection___vftable; /*0x49dacc*/
   result[10] = 0; /*0x49dad4*/
   result[11] = 0; /*0x49dad7*/
   result[12] = 0; /*0x49dada*/

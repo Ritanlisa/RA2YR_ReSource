@@ -11,6 +11,8 @@
 #include "e4/classes/DeleteCommandClass_e4.hpp"
 #include "e4/classes/DeleteCommandClass_28_e4.hpp"
 #include "e4/classes/GenericNode_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x42DDB0
@@ -21,7 +23,7 @@ int Delegate::ProcessBitmapStream(char * Src, int a3)
   int v5; // esi
   _BYTE *v6; // ebx
   int v7; // ecx
-  size_t v8; // ecx
+  char * v8;
   int v9; // eax
   int v10; // eax
   unsigned __int8 *v12; // [esp+8h] [ebp-Ch]
@@ -102,7 +104,7 @@ void * Delegate::Dispatch(Pipe * aP1, Pipe * aP2)
 namespace gamemd {
 unsigned int * Delegate::GetField()
 {
-  *this = 0; /*0x6c95e6*/
+  *(_DWORD *)this = 0; /*0x6c95e6*/
   this->m_count = 0; /*0x6c95e8*/
   this->Delegate_field_08 = 0; /*0x6c95eb*/
   this->m_allocated = 0; /*0x6c95ee*/
@@ -113,7 +115,7 @@ unsigned int * Delegate::GetField()
 namespace gamemd {
 void Delegate::Set(AbstractTypeClass * aP1)
 {
-  int v3; // ecx
+  void * v3;
   int v4; // eax
 
   if ( this->m_count != aP1 ) /*0x6c989b*/
@@ -155,7 +157,7 @@ int Delegate::ProcessBitmapAndDispatch()
 {
   int v2; // edi
   int v3; // edx
-  int v4; // edi
+  unsigned int * v4;
   int v5; // eax
 
   v2 = 0; /*0x42df44*/
@@ -183,8 +185,8 @@ namespace gamemd {
 int Delegate::StreamToBuffer(char * a1, int a3)
 {
   int result; // eax
-  signed int v7; // edi
-  int v8; // ecx
+  unsigned int v7;
+  void * v8;
   int v9; // eax
   int v10; // [esp+10h] [ebp-4h]
 
@@ -236,7 +238,7 @@ GenericNode * Delegate::Constructor_GenericNode(char a2)
   int v3; // ecx
   int v4; // eax
 
-  *this = &(void*)(void*)&GenericNode_vftable; /*0x52ae27*/
+  *(void **)this = (void*)&GenericNode_vftable; /*0x52ae27*/
   if ( this ) /*0x52ae2d*/
   {
     v3 = this->Previous; /*0x52ae2f*/

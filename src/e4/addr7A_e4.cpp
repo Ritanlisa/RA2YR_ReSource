@@ -21,6 +21,8 @@
 #include "e4/classes/INIClass_e4.hpp"
 #include "e4/classes/ComPtr_e4.hpp"
 #include "e4/classes/Init_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x7A0430
@@ -170,9 +172,9 @@ void WOL_RequestMatch()
   void *v28; // [esp+14h] [ebp-110h] BYREF
   void *v29; // [esp+18h] [ebp-10Ch] BYREF
   void *v30; // [esp+1Ch] [ebp-108h] BYREF
-  void **v31; // [esp+20h] [ebp-104h] BYREF
+  void* v31;
   int v32; // [esp+24h] [ebp-100h]
-  void **v33; // [esp+28h] [ebp-FCh] BYREF
+  void* v33;
   int v34; // [esp+2Ch] [ebp-F8h]
   void *v35; // [esp+30h] [ebp-F4h] BYREF
   int v36; // [esp+34h] [ebp-F0h] BYREF
@@ -233,12 +235,12 @@ void WOL_RequestMatch()
   v37 = 0; /*0x7a0810*/
   ReadRegistryOptionsWOL(&v36); /*0x7a0815*/
   ComPtr::Constructor(&v33); /*0x7a081e*/
-  v33 = &(void*)(void*)&rc_ptr_PlayerProfile_vftable; /*0x7a082c*/
+  v33 = (void*)&rc_ptr_PlayerProfile_vftable; /*0x7a082c*/
   if ( Flag::IsNot2(&v36) ) /*0x7a0830*/
   {
     v7 = LoadPlayerProfile(&v31, (const char **)&g_WebBrowser); /*0x7a0842*/
     ComPtr::Set(&v33, v7[1]); /*0x7a084f*/
-    v31 = &(void*)(void*)&rc_ptr_PlayerProfile_vftable; /*0x7a0858*/
+    v31 = (void*)&rc_ptr_PlayerProfile_vftable; /*0x7a0858*/
     ComPtr::Release(&v31); /*0x7a085c*/
   }
   else
@@ -253,7 +255,7 @@ void WOL_RequestMatch()
   String::Assign_Alt(&v35, aMatchwdt); /*0x7a08a6*/
   v9 = RequestMatchWOL_Helper(); /*0x7a08b4*/
   ComPtr::Constructor(&v31); /*0x7a08b6*/
-  v31 = &(void*)(void*)&rc_ptr_WorldDominationTour_Campaign_vftable; /*0x7a08c4*/
+  v31 = (void*)&rc_ptr_WorldDominationTour_Campaign_vftable; /*0x7a08c4*/
   ComPtr::Set(&v31, v9->q010); /*0x7a08cc*/
   if ( v32 ) /*0x7a08d7*/
   {
@@ -271,11 +273,11 @@ void WOL_RequestMatch()
         g_WOL_IdleHandler = 0; /*0x7a08fe*/
         g_WOL_GameProcessState = -1; /*0x7a0904*/
         g_WOL_GameListPool = time(0); /*0x7a091a*/
-        v31 = &(void*)(void*)&rc_ptr_WorldDominationTour_Campaign_vftable; /*0x7a091f*/
+        v31 = (void*)&rc_ptr_WorldDominationTour_Campaign_vftable; /*0x7a091f*/
         ComPtr::Release(&v31); /*0x7a0923*/
         DeleteAndZero(&v29); /*0x7a092c*/
         DeleteAndZero(&v35); /*0x7a0935*/
-        v33 = &(void*)(void*)&rc_ptr_PlayerProfile_vftable; /*0x7a093e*/
+        v33 = (void*)&rc_ptr_PlayerProfile_vftable; /*0x7a093e*/
         ComPtr::Release(&v33); /*0x7a0946*/
         return 0; /*0x7a0957*/
       }
@@ -292,7 +294,7 @@ void WOL_RequestMatch()
   v10 = FromStringInt((char **)&v28, *(int *)g_GameDifficulty); /*0x7a099f*/
   String::Append2((const char **)&v29, v10); /*0x7a09a9*/
   DeleteAndZero(&v28); /*0x7a09b2*/
-  v31 = &(void*)(void*)&rc_ptr_WorldDominationTour_Campaign_vftable; /*0x7a09bb*/
+  v31 = (void*)&rc_ptr_WorldDominationTour_Campaign_vftable; /*0x7a09bb*/
   ComPtr::Release(&v31); /*0x7a09bf*/
   LABEL_35:
   String = GetStringCSF(aWolRequestingm, 0, g_Str_File_wonline_cpp, 28395); /*0x7a09c9*/
@@ -381,7 +383,7 @@ void WOL_RequestMatch()
   DeleteAndZero(&v27); /*0x7a0cdf*/
   DeleteAndZero(&v29); /*0x7a0ce8*/
   DeleteAndZero(&v35); /*0x7a0cf1*/
-  v33 = &(void*)(void*)&rc_ptr_PlayerProfile_vftable; /*0x7a0cfa*/
+  v33 = (void*)&rc_ptr_PlayerProfile_vftable; /*0x7a0cfa*/
   ComPtr::Release(&v33); /*0x7a0cfe*/
   return 1; /*0x7a07c7*/
 }
@@ -1503,10 +1505,10 @@ AbstractClass * * sub_7AF970()
   v7 = 0; /*0x7af999*/
   v8 = 0; /*0x7af99d*/
   v9 = 0; /*0x7af9a1*/
-  v5[0] = &(void*)(void*)&WorldDominationTour_FactionSelectDialogControl_vftable; /*0x7af9a5*/
+  v5[0] = (void*)&WorldDominationTour_FactionSelectDialogControl_vftable; /*0x7af9a5*/
   CCFileClass::Construct(v11, aWdtfsbsmPcx); /*0x7af9ad*/
   v7 = DecodeFrameSHP((int)v11, 0, 0, 0); /*0x7af9cb*/
-  v11[0] = &(void*)(void*)&CCFileClass_vftable; /*0x7af9cf*/
+  v11[0] = (void*)&CCFileClass_vftable; /*0x7af9cf*/
   v13 = 0; /*0x7af9d3*/
   Vector::Clear((int)v12); /*0x7af9da*/
   v11[0] = &off_7E1668; /*0x7af9e3*/
@@ -1515,7 +1517,7 @@ AbstractClass * * sub_7AF970()
   {
     CCFileClass::Construct(v11, aWdtfsasmPcx); /*0x7af9ff*/
     v2 = DecodeFrameSHP((int)v11, 0, 0, 0); /*0x7afa0c*/
-    v11[0] = &(void*)(void*)&CCFileClass_vftable; /*0x7afa18*/
+    v11[0] = (void*)&CCFileClass_vftable; /*0x7afa18*/
     v8 = (void (__thiscall ***)(_DWORD, int))v2; /*0x7afa1c*/
     v13 = 0; /*0x7afa20*/
     Vector::Clear((int)v12); /*0x7afa27*/
@@ -1530,7 +1532,7 @@ AbstractClass * * sub_7AF970()
   v10 = v7; /*0x7afa76*/
   RunDialog(0x125u, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))WorldDominationFactionDlgProc, (LPARAM)v5); /*0x7afa7a*/
   v3 = v6; /*0x7afa7f*/
-  v5[0] = &(void*)(void*)&WorldDominationTour_FactionSelectDialogControl_vftable; /*0x7afa83*/
+  v5[0] = (void*)&WorldDominationTour_FactionSelectDialogControl_vftable; /*0x7afa83*/
   if ( v7 ) /*0x7afa91*/
     (*(void (__thiscall **)(_DWORD *, int))*v7)(v7, 1); /*0x7afa97*/
   if ( v8 ) /*0x7afa9f*/
@@ -1594,7 +1596,7 @@ int StartWDTCampaign()
   v16 = 0; /*0x7afc65*/
   v5 = CCFileClass::Construct(v24, g_Str_File_WDT_MIX); /*0x7afc69*/
   v6 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v5 + 20))(v5, 0); /*0x7afc82*/
-  v24[0] = &(void*)(void*)&CCFileClass_vftable; /*0x7afc84*/
+  v24[0] = (void*)&CCFileClass_vftable; /*0x7afc84*/
   v26 = 0; /*0x7afc88*/
   Vector::Clear((int)v25); /*0x7afc8f*/
   v24[0] = &off_7E1668; /*0x7afc98*/
@@ -1609,7 +1611,7 @@ int StartWDTCampaign()
   }
   v8 = CCFileClass::Construct(v24, aWdtvoxMix); /*0x7afcdb*/
   v9 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v8 + 20))(v8, 0); /*0x7afcef*/
-  v24[0] = &(void*)(void*)&CCFileClass_vftable; /*0x7afcf1*/
+  v24[0] = (void*)&CCFileClass_vftable; /*0x7afcf1*/
   v26 = 0; /*0x7afcf5*/
   Vector::Clear((int)v25); /*0x7afcfc*/
   v24[0] = &off_7E1668; /*0x7afd05*/
@@ -1624,7 +1626,7 @@ int StartWDTCampaign()
   }
   v11 = CCFileClass::Construct(v24, aLocalMix_1); /*0x7afd48*/
   v12 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v11 + 20))(v11, 0); /*0x7afd5c*/
-  v24[0] = &(void*)(void*)&CCFileClass_vftable; /*0x7afd5e*/
+  v24[0] = (void*)&CCFileClass_vftable; /*0x7afd5e*/
   v26 = 0; /*0x7afd62*/
   Vector::Clear((int)v25); /*0x7afd69*/
   v24[0] = &off_7E1668; /*0x7afd72*/
@@ -1660,7 +1662,7 @@ int StartWDTCampaign()
     switch ( v14 )
     {
       case 1:
-        Screen::Capture(1, 0, v12, (int)&(void*)(void*)&rc_ptr_WorldDominationTour_Campaign_vftable); /*0x7afdf9*/
+        Screen::Capture(1, 0, v12, (int)&rc_ptr_WorldDominationTour_Campaign_vftable); /*0x7afdf9*/
         Team_Start_7B0490(v27); /*0x7afe05*/
         RunDialog(0x125u, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))WorldDominationFactionDlgProc, (LPARAM)v27); /*0x7afe1c*/
         v15 = v27[3]; /*0x7afe21*/
@@ -1672,11 +1674,11 @@ int StartWDTCampaign()
         if ( (unsigned __int8)FetchWOLData() ) /*0x7afeef*/
         {
           ComPtr::Constructor(&v18); /*0x7aff00*/
-          v18 = &(void*)(void*)&rc_ptr_WorldDominationTour_Campaign_vftable; /*0x7aff0f*/
+          v18 = (void*)&rc_ptr_WorldDominationTour_Campaign_vftable; /*0x7aff0f*/
           ComPtr::Set(&v18, dword_B77F6C); /*0x7aff13*/
           if ( !v19 ) /*0x7aff1e*/
           {
-            v18 = &(void*)(void*)&rc_ptr_WorldDominationTour_Campaign_vftable; /*0x7b0030*/
+            v18 = (void*)&rc_ptr_WorldDominationTour_Campaign_vftable; /*0x7b0030*/
             ComPtr::Release(&v18); /*0x7b0034*/
             return 0; /*0x7b0045*/
           }
@@ -1684,11 +1686,11 @@ int StartWDTCampaign()
           if ( (unsigned __int8)Team_Start_764FA0(v19) ) /*0x7aff34*/
           {
             ComPtr::Constructor(&v22); /*0x7aff41*/
-            v22 = &(void*)(void*)&rc_ptr_WorldDominationTour_Campaign_vftable; /*0x7aff50*/
+            v22 = (void*)&rc_ptr_WorldDominationTour_Campaign_vftable; /*0x7aff50*/
             ComPtr::Set(&v22, dword_B77F7C); /*0x7aff54*/
             if ( v23 && !(unsigned __int8)Team_Start_764FA0(v23) ) /*0x7aff61*/
               Team_Start_76ECD0(&v22, dword_B77F98); /*0x7aff74*/
-            v22 = &(void*)(void*)&rc_ptr_WorldDominationTour_Campaign_vftable; /*0x7aff7d*/
+            v22 = (void*)&rc_ptr_WorldDominationTour_Campaign_vftable; /*0x7aff7d*/
             ComPtr::Release(&v22); /*0x7aff81*/
           }
           g_CommandExecState = dword_B77F94 == 3; /*0x7aff9a*/
@@ -1702,7 +1704,7 @@ int StartWDTCampaign()
           {
             v14 = 1; /*0x7affc4*/
           }
-          v18 = &(void*)(void*)&rc_ptr_WorldDominationTour_Campaign_vftable; /*0x7affcd*/
+          v18 = (void*)&rc_ptr_WorldDominationTour_Campaign_vftable; /*0x7affcd*/
           ComPtr::Release(&v18); /*0x7affd1*/
   LABEL_25:
           if ( !v14 ) /*0x7afe43*/

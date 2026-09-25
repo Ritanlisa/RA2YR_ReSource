@@ -20,6 +20,6 @@ struct E4Recv_5D0240 {
     unsigned int u32_82;
     unsigned int u32_85;
 // --- flat members (END) ---
-    char ** sub_5D0240(char ** a2, char a3);  // 0x5D0240
+    char ** sub_5D0240(char ** a2,  char a3);    // 0x5D0240
 };
 } // namespace gamemd

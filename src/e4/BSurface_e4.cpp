@@ -6,6 +6,8 @@
 #include "e4/classes/Buffer_e4.hpp"
 #include "e4/classes/Init_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/String_e4.hpp"
 
 // 0x410CE0
@@ -21,13 +23,13 @@ unsigned int * BSurface::Construct(int a2, int a3, int v14, int a5)
   int v16; // ecx
   int v17; // ecx
   int v18; // edx
-  int v19; // ecx
+  int v19;
 
   a2 = a2; /*0x410ce5*/
   v14 = v14; /*0x410ce9*/
   a5 = a5; /*0x410cef*/
   *(&this->Width1) = a5; /*0x410cf3*/
-  *this = a2; /*0x410cf8*/
+  *(_DWORD *)this = a2; /*0x410cf8*/
   a3 = a3; /*0x410cfa*/
   *(&this->Width0) = v14; /*0x410cfe*/
   this->Width = a3; /*0x410d01*/

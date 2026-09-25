@@ -13,6 +13,8 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/TeamTypeClass_e4.hpp"
 #include "e4/classes/BuildingTypeClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/TerrainTypeClass_e4.hpp"
 
 // 0x6B5260
@@ -29,10 +31,10 @@ SmudgeTypeClass::SmudgeTypeClass(ObjectClass * aP1)
   this->Height = 1; /*0x6b5287*/
   *(&this->q10C2) = 0; /*0x6b528d*/
   *(&this->q10C3) = 0; /*0x6b5294*/
-  *(_DWORD *)this = &(void*)(void*)&SmudgeTypeClass_vftable; /*0x6b529b*/
-  this->vtable2 = &(void*)(void*)&SmudgeTypeClass_vftable; /*0x6b52a1*/
-  this->vtable3 = &(void*)(void*)&SmudgeTypeClass_vftable; /*0x6b52a7*/
-  this->vtable4 = &(void*)(void*)&SmudgeTypeClass_vftable; /*0x6b52ae*/
+  *(_DWORD *)this = (void*)&SmudgeTypeClass_vftable; /*0x6b529b*/
+  this->vtable2 = (void*)&SmudgeTypeClass_vftable; /*0x6b52a1*/
+  this->vtable3 = (void*)&SmudgeTypeClass_vftable; /*0x6b52a7*/
+  this->vtable4 = (void*)&SmudgeTypeClass_vftable; /*0x6b52ae*/
   AbstractClass::GenerateUniqueID((int)(this + 4)); /*0x6b52b5*/
   this->q22F = 1; /*0x6b52ba*/
   *(&this->q0E01) = 0; /*0x6b52c7*/
@@ -156,10 +158,10 @@ SmudgeTypeClass * SmudgeTypeClass::ddtor(AbstractClass *a2, char a3)
   void **v6; // [esp+4h] [ebp-4h] BYREF
 
   v3 = *(a3 + 41); /*0x6b6164*/
-  *a3 = &(void*)(void*)&SmudgeTypeClass_vftable; /*0x6b616a*/
-  *(a3 + 1) = &(void*)(void*)&SmudgeTypeClass_vftable; /*0x6b6172*/
-  *(a3 + 2) = &(void*)(void*)&SmudgeTypeClass_vftable; /*0x6b6179*/
-  *(a3 + 3) = &(void*)(void*)&SmudgeTypeClass_vftable; /*0x6b6180*/
+  *a3 = (void*)&SmudgeTypeClass_vftable; /*0x6b616a*/
+  *(a3 + 1) = (void*)&SmudgeTypeClass_vftable; /*0x6b6172*/
+  *(a3 + 2) = (void*)&SmudgeTypeClass_vftable; /*0x6b6179*/
+  *(a3 + 3) = (void*)&SmudgeTypeClass_vftable; /*0x6b6180*/
   if ( v3 ) /*0x6b6187*/
   {
     RA2_OPDEL(v3); /*0x6b618a*/
@@ -240,10 +242,10 @@ int SmudgeTypeClass::LoadTypeData(ObjectTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x6b5866*/
     {
       ObjectTypeClass::Construct(aP0, (int)&aP1); /*0x6b586f*/
-      *(_DWORD *)aP0 = &(void*)(void*)&SmudgeTypeClass_vftable; /*0x6b5874*/
-      *((_DWORD *)aP0 + 1) = &(void*)(void*)&SmudgeTypeClass_vftable; /*0x6b587a*/
-      *((_DWORD *)aP0 + 2) = &(void*)(void*)&SmudgeTypeClass_vftable; /*0x6b5881*/
-      *((_DWORD *)aP0 + 3) = &(void*)(void*)&SmudgeTypeClass_vftable; /*0x6b5888*/
+      *(_DWORD *)aP0 = (void*)&SmudgeTypeClass_vftable; /*0x6b5874*/
+      *((_DWORD *)aP0 + 1) = (void*)&SmudgeTypeClass_vftable; /*0x6b587a*/
+      *((_DWORD *)aP0 + 2) = (void*)&SmudgeTypeClass_vftable; /*0x6b5881*/
+      *((_DWORD *)aP0 + 3) = (void*)&SmudgeTypeClass_vftable; /*0x6b5888*/
     }
     VoxelAnimType::LoadAnim(aP0); /*0x6b5891*/
     ObjectTypeClass::Load2DArt(aP0); /*0x6b5898*/

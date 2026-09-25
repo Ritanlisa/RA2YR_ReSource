@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+
 #include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_6A04C0_e4.hpp"
 #include "e4/classes/E4Recv_6A6AF0_e4.hpp"
@@ -16,7 +17,10 @@
 #include "e4/classes/Tactical_e4.hpp"
 #include "e4/classes/WalkLocomotion_e4.hpp"
 #include "e4/classes/TechnoClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_alias_e4.hpp"
+#include "e4/classes/Process_e4.hpp"
 
 // 0x6A6AF0
 namespace gamemd {
@@ -468,7 +472,7 @@ void ShowSkirmishSetupScreen()
   HWND v3; // esi
   LONG j; // eax
   int v5; // ecx
-  void *v6; // esi
+  unsigned int v6;
   LONG dwNewLong; // [esp+4h] [ebp-4h] BYREF
 
   dwNewLong = -1; /*0x6ae2ce*/
@@ -501,7 +505,7 @@ void ShowSkirmishSetupScreen()
   if ( g_UIControlState ) /*0x6ae394*/
   {
     ComPtr::Dtor(g_UIControlState); /*0x6ae398*/
-    RA2_OPDEL(v6); /*0x6ae39e*/
+    RA2_OPDEL(v6, unsigned int a1, unsigned int a2); /*0x6ae39e*/
     g_UIControlState = 0; /*0x6ae3a6*/
   }
   CleanupFileTree(); /*0x6ae3b0*/
@@ -1068,7 +1072,7 @@ namespace gamemd {
 int sub_6A4C10()
 {
   GadgetClass::Construct(&dword_B07E58, 0, 0, 1, 1, 8, 0); /*0x6a4c21*/
-  dword_B07E58 = (int)&(void*)(void*)&SidebarClass_SBGadgetClass_vftable; /*0x6a4c2b*/
+  dword_B07E58 = (int)&SidebarClass_SBGadgetClass_vftable; /*0x6a4c2b*/
   return atexit(sub_6A4C40); /*0x6a4c3b*/
 }
 } // namespace gamemd
@@ -1226,7 +1230,7 @@ int sub_6A4DC0()
     ControlClass::Construct(v0, 0, 0, 0, 60, 48, 25, 0); /*0x6a4ddb*/
     v0[11] = 0; /*0x6a4de0*/
     v0[12] = 0; /*0x6a4de3*/
-    *v0 = &(void*)(void*)&SidebarClass_StripClass_SelectClass_vftable; /*0x6a4de6*/
+    *v0 = (void*)&SidebarClass_StripClass_SelectClass_vftable; /*0x6a4de6*/
     v0 += 14; /*0x6a4dec*/
     --v1; /*0x6a4def*/
   }
@@ -1630,7 +1634,7 @@ int sub_6AF120()
   dword_B0B5F8 = 0; /*0x6af12c*/
   byte_B0B5FC = 1; /*0x6af131*/
   byte_B0B5FD = 0; /*0x6af138*/
-  SlaveManagerClass_Array = (int)&(void*)(void*)&DynamicVectorClass_SlaveManagerClass___vftable; /*0x6af13d*/
+  SlaveManagerClass_Array = (int)&DynamicVectorClass_SlaveManagerClass___vftable; /*0x6af13d*/
   dword_B0B604 = 10; /*0x6af147*/
   dword_B0B600 = 0; /*0x6af151*/
   return atexit(sub_6AF160); /*0x6af15c*/
@@ -1641,7 +1645,7 @@ int sub_6AF120()
 namespace gamemd {
 void sub_6AF160()
 {
-  SlaveManagerClass_Array = (int)&(void*)(void*)&VectorClass_SlaveManagerClass___vftable; /*0x6af168*/
+  SlaveManagerClass_Array = (int)&VectorClass_SlaveManagerClass___vftable; /*0x6af168*/
   if ( dword_B0B5F4 && byte_B0B5FD ) /*0x6af17c*/
   {
     RA2_OPDEL(dword_B0B5F4); /*0x6af17f*/

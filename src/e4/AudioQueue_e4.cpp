@@ -10,6 +10,8 @@
 #include "e4/classes/AnimClass_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/Math_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/AudioSettings_e4.hpp"
 
 // 0x402AF0
@@ -208,9 +210,9 @@ RandomStruct * * AudioQueue::Update()
 {
   signed int v2; // edi
   signed int v3; // eax
-  int v4; // eax
-  int v5; // eax
-  int v6; // edi
+  RandomStruct * v4;
+  RandomStruct * v5;
+  unsigned int v6;
   int v7; // eax
   char *v8; // eax
   int v9; // eax
@@ -338,9 +340,9 @@ unsigned char * AudioQueue::AllocBuffer(WinsockInterfaceClass * aP1)
 {
   _BYTE *result; // eax
   int v3; // edi
-  int v4; // esi
+  void * v4;
   int v5; // edi
-  int v6; // esi
+  void * v6;
 
   result = 0; /*0x7b20e7*/
   if ( aP1 ) /*0x7b20ed*/
@@ -415,7 +417,7 @@ namespace gamemd {
 int AudioQueue::ReadBuffer(void * a2, int a3, void * a4, unsigned int * v9, unsigned short * a6)
 {
   int v8; // eax
-  unsigned int v9; // ecx
+  unsigned int v9;
   int v10; // ecx
   int v11; // edx
   int v12; // ecx
@@ -469,7 +471,7 @@ AnimClass * * AudioQueue::WriteBuffer(WinsockInterfaceClass * aP1, unsigned int 
   int v15; // ecx
   int v16; // eax
   int v17; // eax
-  int v18; // edx
+  CampaignClass * v18;
   UINT v19; // eax
 
   v9 = AudioQueue::AllocBuffer((_DWORD *)this, aP5); /*0x7b23c4*/

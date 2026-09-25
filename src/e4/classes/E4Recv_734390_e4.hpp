@@ -22,7 +22,7 @@ struct E4Recv_734390 {
     unsigned int q1634;  // 0x1634
     unsigned int q5684;  // 0x5684
 // --- flat members (END) ---
-    int Vf8(int, ...);  // G6 vtable slot dispatch
+    int Vf8(int,  ...);    // G6 vtable slot dispatch
     char sub_734390(unsigned int * a2);  // 0x734390
 };
 } // namespace gamemd

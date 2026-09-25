@@ -23,6 +23,8 @@
 #include "e4/classes/Terrain_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/LinkedList_flat_e4.hpp"
 
 // 0x439B00
@@ -30,18 +32,18 @@ namespace gamemd {
 void* JumpjetLocomotionClass::Update2()
 {
   float *v1; // esi
-  double v2; // st7
-  float *v3; // ebp
+  void * v2;
+  void * v3;
   char *v4; // ebx
   double v5; // st6
   float v6; // edx
   double v7; // st6
   float v8; // eax
   int v9; // eax
-  float v10; // ecx
+  void * v10;
   double v11; // st7
   int v12; // eax
-  int v13; // eax
+  IUnknown * v13;
   _DWORD *v14; // edi
   double v15; // st7
   _DWORD *v16; // eax
@@ -59,9 +61,9 @@ void* JumpjetLocomotionClass::Update2()
   int v28; // eax
   int v29; // esi
   float v30; // ecx
-  float v31; // edx
+  unsigned int v31;
   int v33; // edx
-  float v34; // ecx
+  void * v34;
   int v35; // eax
   float *v36; // eax
   double v37; // st7
@@ -84,11 +86,11 @@ void* JumpjetLocomotionClass::Update2()
   float v55; // [esp+1Ch] [ebp-12Ch]
   float v56; // [esp+1Ch] [ebp-12Ch]
   float v57; // [esp+1Ch] [ebp-12Ch]
-  double v58; // [esp+20h] [ebp-128h] BYREF
+  void * v58;
   float v59; // [esp+28h] [ebp-120h]
   int v61; // [esp+30h] [ebp-118h]
   int GroundHeight; // [esp+34h] [ebp-114h]
-  float v63; // [esp+38h] [ebp-110h]
+  void * v63;
   int v66; // [esp+44h] [ebp-104h]
   _DWORD v69[3]; // [esp+50h] [ebp-F8h] BYREF
   _DWORD v70[2]; // [esp+5Ch] [ebp-ECh] BYREF
@@ -4191,9 +4193,9 @@ HRESULT JumpjetLocomotionClass::InitClass(int * a1, int * pStm)
   if ( a1 ) /*0x54b76a*/
   {
     a1[37] = 0; /*0x54b76c*/
-    *a1 = (int)&(void*)(void*)&JumpjetLocomotionClass_vftable; /*0x54b776*/
-    a1[1] = (int)&(void*)(void*)&JumpjetLocomotionClass_vftable; /*0x54b77c*/
-    a1[6] = (int)&(void*)(void*)&JumpjetLocomotionClass_vftable; /*0x54b783*/
+    *a1 = (int)&JumpjetLocomotionClass_vftable; /*0x54b776*/
+    a1[1] = (int)&JumpjetLocomotionClass_vftable; /*0x54b77c*/
+    a1[6] = (int)&JumpjetLocomotionClass_vftable; /*0x54b783*/
   }
   v2->lpVtbl->Read(v2, &pStm, 1, 0); /*0x54b796*/
   if ( !(_BYTE)pStm ) /*0x54b79f*/
@@ -4527,9 +4529,9 @@ JumpjetLocomotionClass * JumpjetLocomotionClass::ProcessAttach(char a2)
 {
   int v3; // eax
 
-  *this = &(void*)(void*)&JumpjetLocomotionClass_vftable; /*0x54dfa3*/
-  *(this + 1) = &(void*)(void*)&JumpjetLocomotionClass_vftable; /*0x54dfa9*/
-  this->vtable3 = &(void*)(void*)&JumpjetLocomotionClass_vftable; /*0x54dfb0*/
+  *this = (void*)&JumpjetLocomotionClass_vftable; /*0x54dfa3*/
+  *(this + 1) = (void*)&JumpjetLocomotionClass_vftable; /*0x54dfa9*/
+  this->vtable3 = (void*)&JumpjetLocomotionClass_vftable; /*0x54dfb0*/
   v3 = *(&this->LinkedTo7); /*0x54dfb7*/
   if ( v3 ) /*0x54dfbf*/
     (*(void (__stdcall **)(int))(*(_DWORD *)v3 + 8))(v3); /*0x54dfc4*/
@@ -4784,7 +4786,7 @@ VectorClass_flat * JumpjetLocomotionClass_26::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x54eb53*/
-  *this = &(void*)(void*)&VectorClass_KamikazeControl___vftable; /*0x54eb56*/
+  *this = (void*)&VectorClass_KamikazeControl___vftable; /*0x54eb56*/
   if ( v3 && this->IsAllocated ) /*0x54eb60*/
   {
     RA2_OPDEL(v3); /*0x54eb68*/
@@ -4805,7 +4807,7 @@ DynamicVector * JumpjetLocomotionClass_26::Constructor_VectorClass_KamikazeContr
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x54eba3*/
-  *this = &(void*)(void*)&VectorClass_KamikazeControl___vftable; /*0x54eba6*/
+  *this = (void*)&VectorClass_KamikazeControl___vftable; /*0x54eba6*/
   if ( v3 && this->IsAllocated ) /*0x54ebb0*/
   {
     RA2_OPDEL(v3); /*0x54ebb8*/
@@ -5766,15 +5768,15 @@ HRESULT JumpjetLocomotionClass::InitMultiFieldArray_0(int * a1, int * pStm)
     return v3; /*0x719cb6*/
   if ( a1 ) /*0x719cba*/
   {
-    *a1 = (int)&(void*)(void*)&LocomotionClass_vftable; /*0x719cbc*/
-    a1[1] = (int)&(void*)(void*)&LocomotionClass_vftable; /*0x719cc2*/
+    *a1 = (int)&LocomotionClass_vftable; /*0x719cbc*/
+    a1[1] = (int)&LocomotionClass_vftable; /*0x719cc2*/
     v4 = g_CurrentFrame; /*0x719cc9*/
     a1[17] = 0; /*0x719cce*/
     a1[15] = (int)v4; /*0x719cd5*/
     a1[18] = 0; /*0x719cd8*/
-    *a1 = (int)&(void*)(void*)&TeleportLocomotionClass_vftable; /*0x719cdf*/
-    a1[1] = (int)&(void*)(void*)&TeleportLocomotionClass_vftable; /*0x719ce5*/
-    a1[6] = (int)&(void*)(void*)&TeleportLocomotionClass_vftable; /*0x719cec*/
+    *a1 = (int)&TeleportLocomotionClass_vftable; /*0x719cdf*/
+    a1[1] = (int)&TeleportLocomotionClass_vftable; /*0x719ce5*/
+    a1[6] = (int)&TeleportLocomotionClass_vftable; /*0x719cec*/
   }
   v2->lpVtbl->Read(v2, &pStm, 1, 0); /*0x719cff*/
   if ( !(_BYTE)pStm ) /*0x719d08*/

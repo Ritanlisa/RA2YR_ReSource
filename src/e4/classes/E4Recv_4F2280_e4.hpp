@@ -10,6 +10,6 @@ struct E4Recv_4F2280 {
     unsigned int q850;  // 0x850
     unsigned int q2128;  // 0x2128
 // --- flat members (END) ---
-    int sub_4F2280(int a2, int a3);  // 0x4F2280
+    int sub_4F2280(int a2,  int a3);    // 0x4F2280
 };
 } // namespace gamemd

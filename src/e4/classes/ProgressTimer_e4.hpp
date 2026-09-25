@@ -34,11 +34,10 @@ struct ProgressTimer {
     unsigned char q070;  // 0x70
     unsigned char q074;  // 0x74
     void* q080;  // 0x80
-    unsigned int u32_40;
     unsigned int vt_slot_24;
     unsigned int vt_slot_28;
 // --- flat members (END) ---
-    unsigned int * GetValue(IUnknown * aP1);
+    unsigned int * GetValue(void* aP1);
 };
 
 } // namespace gamemd

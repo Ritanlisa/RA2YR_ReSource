@@ -31,11 +31,11 @@ struct Conflict_WorldDominationTour_12 {
     unsigned int q0042;
     unsigned int q0043;
 // --- flat members (END) ---
-    char Release(int a2, unsigned int * a3);  // 0x766C10
-    char Constructor_1(int a2, unsigned int * a3);  // 0x766DC0
-    unsigned int * Seek(unsigned int * a2, int a3);  // 0x766850
-    rc_ptr * Constructor(char a2);  // 0x766960
-    rc_ptr * Constructor_0(char a2);  // 0x766990
+    char Release(int a2,  unsigned int * a3);    // 0x766C10
+    char Constructor_1(int a2,  unsigned int * a3);    // 0x766DC0
+    unsigned int * Seek(unsigned int * a2,  int a3);    // 0x766850
+    void* Constructor(char a2);  // 0x766960
+    void* Constructor_0(char a2);  // 0x766990
     char AddRef(int a2);  // 0x766BC0
     int ddtor();  // 0x766D30
     int Read(int a2);  // 0x766D60

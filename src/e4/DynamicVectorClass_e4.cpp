@@ -19,14 +19,18 @@
 #include "e4/classes/DroppodLocomotionClass_e4.hpp"
 #include "e4/classes/DynamicVector_e4.hpp"
 #include "e4/classes/Math_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_alias_e4.hpp"
+#include "e4/classes/Count_e4.hpp"
+#include "e4/classes/BulletClass_e4.hpp"
 
 // 0x525110
 namespace gamemd {
 AbstractClass * * DynamicVectorClass_AnimType::Release(int a2, unsigned int * a3)
 {
   _DWORD *v4; // edi
-  int v6; // ecx
+  unsigned int v6;
   int i; // eax
 
   if ( a2 ) /*0x52511c*/
@@ -189,7 +193,7 @@ AbstractClass * * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Set
   _BYTE *v9; // eax
   int v11; // ecx
   int v12; // eax
-  int v13; // edx
+  void * v13;
   char *v14; // ebx
   int v15; // eax
 
@@ -288,12 +292,12 @@ AbstractClass * * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Set
 namespace gamemd {
 AbstractClass * * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Remove(CCINIClass * aP1, unsigned char * a2)
 {
-  int v3; // edi
+  CCINIClass * v3;
   _BYTE *v5; // esi
   _BYTE *v6; // ebx
-  int v9; // eax
+  CCINIClass * v9;
   int v10; // ebx
-  int v12; // esi
+  void * v12;
   int v13; // eax
   char *v16; // [esp+10h] [ebp-8h]
 
@@ -446,7 +450,7 @@ namespace gamemd {
 char DynamicVectorClass_uint::SetCapacity(int a2, unsigned int * a3)
 {
   _DWORD *v4; // edi
-  int v6; // ecx
+  unsigned int v6;
   int i; // eax
 
   if ( a2 ) /*0x42d64c*/
@@ -543,9 +547,9 @@ namespace gamemd {
 char DynamicVectorClass_uint::Remove(int a2, unsigned int * a3)
 {
   _DWORD *v4; // edi
-  int v5; // ecx
+  unsigned int v5;
   int i; // eax
-  int v7; // eax
+  void * v7;
 
   if ( a2 ) /*0x42d78c*/
   {
@@ -589,7 +593,7 @@ char DynamicVectorClass_uint::Remove(int a2, unsigned int * a3)
 namespace gamemd {
 int DynamicVectorClass_uint::GetSize(unsigned int * a2)
 {
-  int v2; // edx
+  void * v2;
   int result; // eax
   _DWORD *i; // ecx
 
@@ -612,7 +616,7 @@ VectorClass_flat * DynamicVectorClass_uint::Destructor(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x42db13*/
-  *this = &(void*)(void*)&VectorClass_unsigned_int_vftable; /*0x42db16*/
+  *(void **)this = (void*)&VectorClass_unsigned_int_vftable; /*0x42db16*/
   if ( v3 && this->IsAllocated ) /*0x42db20*/
   {
     RA2_OPDEL(v3); /*0x42db28*/
@@ -633,7 +637,7 @@ DynamicVectorClass_uint * DynamicVectorClass_uint::Add(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x42db63*/
-  *this = &(void*)(void*)&VectorClass_unsigned_int_vftable; /*0x42db66*/
+  *(void **)this = (void*)&VectorClass_unsigned_int_vftable; /*0x42db66*/
   if ( v3 && this->IsAllocated ) /*0x42db70*/
   {
     RA2_OPDEL(v3); /*0x42db78*/
@@ -659,7 +663,7 @@ unsigned int * DynamicVectorClass_flat::Copy(DynamicVector * aP1)
   *(this + 2) = 0; /*0x4779f0*/
   this->IsInitialized = 1; /*0x4779f3*/
   this->IsAllocated = 0; /*0x4779f7*/
-  *this = &(void*)(void*)&VectorClass_int_vftable; /*0x4779fa*/
+  *this = (void*)&VectorClass_int_vftable; /*0x4779fa*/
   if ( this != aP1 ) /*0x477a00*/
   {
     VectorClass::Destroy(); /*0x477a02*/
@@ -693,7 +697,7 @@ unsigned int * DynamicVectorClass_flat::Copy(DynamicVector * aP1)
   }
   this->q010 = aP1[4]; /*0x477a51*/
   this->u32_14 = aP1[5]; /*0x477a57*/
-  *this = &(void*)(void*)&DynamicVectorClass_int_vftable; /*0x477a5a*/
+  *this = (void*)&DynamicVectorClass_int_vftable; /*0x477a5a*/
   return this; /*0x477a62*/
 }
 // 0x477DB0
@@ -703,7 +707,7 @@ unsigned int * DynamicVectorClass_flat::Construct(int a2, int a3)
   this->Capacity = a2; /*0x477dc0*/
   this->IsInitialized = 1; /*0x477dc3*/
   this->IsAllocated = 0; /*0x477dc7*/
-  *this = &(void*)(void*)&VectorClass_int_vftable; /*0x477dcb*/
+  *this = (void*)&VectorClass_int_vftable; /*0x477dcb*/
   if ( a2 ) /*0x477dd1*/
   {
     if ( a3 ) /*0x477dd9*/
@@ -716,7 +720,7 @@ unsigned int * DynamicVectorClass_flat::Construct(int a2, int a3)
       this->IsAllocated = 1; /*0x477def*/
     }
   }
-  *this = &(void*)(void*)&DynamicVectorClass_int_vftable; /*0x477df3*/
+  *this = (void*)&DynamicVectorClass_int_vftable; /*0x477df3*/
   this->u32_14 = 10; /*0x477df9*/
   this->q010 = 0; /*0x477e00*/
   return this; /*0x477e09*/
@@ -1092,7 +1096,7 @@ DynamicVector * DynamicVectorClass_PAD::Add(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x49ee13*/
-  *this = &(void*)(void*)&VectorClass_char___vftable; /*0x49ee16*/
+  *(void **)this = (void*)&VectorClass_char___vftable; /*0x49ee16*/
   if ( v3 && this->IsAllocated ) /*0x49ee20*/
   {
     RA2_OPDEL(v3); /*0x49ee28*/
@@ -1113,7 +1117,7 @@ VectorClass_flat * DynamicVectorClass_PAD_16::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x49eff3*/
-  *this = &(void*)(void*)&VectorClass_DynamicVectorClass_char_____vftable; /*0x49eff6*/
+  *(void **)this = (void*)&VectorClass_DynamicVectorClass_char_____vftable; /*0x49eff6*/
   if ( v3 && this->IsAllocated ) /*0x49f000*/
   {
     RA2_OPDEL(v3); /*0x49f008*/
@@ -1134,7 +1138,7 @@ DynamicVector * DynamicVectorClass_PAD::Destructor(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x49f043*/
-  *this = &(void*)(void*)&VectorClass_DynamicVectorClass_char_____vftable; /*0x49f046*/
+  *(void **)this = (void*)&VectorClass_DynamicVectorClass_char_____vftable; /*0x49f046*/
   if ( v3 && this->IsAllocated ) /*0x49f050*/
   {
     RA2_OPDEL(v3); /*0x49f058*/
@@ -1166,7 +1170,7 @@ VectorClass_flat * DynamicVectorClass_AnimType::Add(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x525013*/
-  *this = &(void*)(void*)&VectorClass_AnimTypeClass_const___vftable; /*0x525016*/
+  *this = (void*)&VectorClass_AnimTypeClass_const___vftable; /*0x525016*/
   if ( v3 && this->IsAllocated ) /*0x525020*/
   {
     RA2_OPDEL(v3); /*0x525028*/
@@ -1232,7 +1236,7 @@ unsigned int * DynamicVectorClass_flat::AnimTypeConstructor(DynamicVector * aP1,
   this->Capacity = aP1; /*0x525260*/
   this->IsInitialized = 1; /*0x525263*/
   this->IsAllocated = 0; /*0x525267*/
-  *this = &(void*)(void*)&VectorClass_AnimTypeClass_const___vftable; /*0x52526b*/
+  *this = (void*)&VectorClass_AnimTypeClass_const___vftable; /*0x52526b*/
   if ( aP1 ) /*0x525271*/
   {
     if ( aP2 ) /*0x525279*/
@@ -1245,7 +1249,7 @@ unsigned int * DynamicVectorClass_flat::AnimTypeConstructor(DynamicVector * aP1,
       this->IsAllocated = 1; /*0x52528f*/
     }
   }
-  *this = &(void*)(void*)&DynamicVectorClass_AnimTypeClass_const___vftable; /*0x525293*/
+  *this = (void*)&DynamicVectorClass_AnimTypeClass_const___vftable; /*0x525293*/
   this->u32_14 = 10; /*0x525299*/
   this->q010 = 0; /*0x5252a0*/
   return this; /*0x5252a9*/
@@ -1257,7 +1261,7 @@ DynamicVector * DynamicVectorClass_cptr_AnimTypeClass::Add(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x5252b3*/
-  *this = &(void*)(void*)&VectorClass_AnimTypeClass_const___vftable; /*0x5252b6*/
+  *this = (void*)&VectorClass_AnimTypeClass_const___vftable; /*0x5252b6*/
   if ( v3 && this->IsAllocated ) /*0x5252c0*/
   {
     RA2_OPDEL(v3); /*0x5252c8*/
@@ -1289,7 +1293,7 @@ DynamicVector * DynamicVectorClass_SubzoneConn::Add(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x5890b3*/
-  *this = &(void*)(void*)&VectorClass_SubzoneConnectionStruct_vftable; /*0x5890b6*/
+  *this = (void*)&VectorClass_SubzoneConnectionStruct_vftable; /*0x5890b6*/
   if ( v3 && this->IsAllocated ) /*0x5890c0*/
   {
     RA2_OPDEL(v3); /*0x5890c8*/
@@ -1331,7 +1335,7 @@ unsigned int * DynamicVectorClass_flat::BuildingTypeConstructor(int a2, int a3)
   this->q008 = a2; /*0x5ac910*/
   this->IsInitialized = 1; /*0x5ac913*/
   this->IsAllocated = 0; /*0x5ac917*/
-  *this = &(void*)(void*)&VectorClass_BuildingTypeClass_const___vftable; /*0x5ac91b*/
+  *this = (void*)&VectorClass_BuildingTypeClass_const___vftable; /*0x5ac91b*/
   if ( a2 ) /*0x5ac921*/
   {
     if ( a3 ) /*0x5ac929*/
@@ -1344,7 +1348,7 @@ unsigned int * DynamicVectorClass_flat::BuildingTypeConstructor(int a2, int a3)
       this->IsAllocated = 1; /*0x5ac93f*/
     }
   }
-  *this = &(void*)(void*)&DynamicVectorClass_BuildingTypeClass_const___vftable; /*0x5ac943*/
+  *this = (void*)&DynamicVectorClass_BuildingTypeClass_const___vftable; /*0x5ac943*/
   this->u32_14 = 10; /*0x5ac949*/
   this->q010 = 0; /*0x5ac950*/
   return this; /*0x5ac959*/
@@ -1490,7 +1494,7 @@ DynamicVector * DynamicVectorClass_ptr_NodeNameType::Add(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x5c58f3*/
-  *this = &(void*)(void*)&VectorClass_NodeNameType___vftable; /*0x5c58f6*/
+  *this = (void*)&VectorClass_NodeNameType___vftable; /*0x5c58f6*/
   if ( v3 && this->IsAllocated ) /*0x5c5900*/
   {
     RA2_OPDEL(v3); /*0x5c5908*/
@@ -1508,7 +1512,7 @@ DynamicVector * DynamicVectorClass_ptr_NodeNameType::Add(char a2)
 namespace gamemd {
 unsigned int * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Destructor(char a2)
 {
-  *this = &(void*)(void*)&OwnerDraw_DialogControl_vftable; /*0x6244a9*/
+  *this = (void*)&OwnerDraw_DialogControl_vftable; /*0x6244a9*/
   if ( (a2 & 1) != 0 ) /*0x6244af*/
     RA2_OPDEL(); /*0x6244b2*/
   return this; /*0x6244bc*/
@@ -1519,7 +1523,7 @@ unsigned int * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Destru
 namespace gamemd {
 unsigned int * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Destructor_0(char a2)
 {
-  *this = &(void*)(void*)&OwnerDraw_DialogControl_vftable; /*0x6244c9*/
+  *this = (void*)&OwnerDraw_DialogControl_vftable; /*0x6244c9*/
   if ( (a2 & 1) != 0 ) /*0x6244cf*/
     RA2_OPDEL(); /*0x6244d2*/
   return this; /*0x6244dc*/
@@ -1710,7 +1714,7 @@ DynamicVector * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Destr
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x628643*/
-  *this = &(void*)(void*)&VectorClass_ColorScheme___vftable; /*0x628646*/
+  *this = (void*)&VectorClass_ColorScheme___vftable; /*0x628646*/
   if ( v3 && this->IsAllocated ) /*0x628650*/
   {
     RA2_OPDEL(v3); /*0x628658*/
@@ -1751,7 +1755,7 @@ char * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Add(char a2)
       {
         v9 = (void *)*((_DWORD *)v7 - 5); /*0x6286b2*/
         v7 -= 24; /*0x6286b5*/
-        *(_DWORD *)v7 = &(void*)(void*)&VectorClass_HashObject_HashString_SchemeNode___vftable; /*0x6286ba*/
+        *(_DWORD *)v7 = (void*)&VectorClass_HashObject_HashString_SchemeNode___vftable; /*0x6286ba*/
         if ( v9 && v7[13] ) /*0x6286c2*/
         {
           RA2_OPDEL(v9); /*0x6286c8*/
@@ -1770,7 +1774,7 @@ char * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Add(char a2)
   else
   {
     v11 = (void *)this->Items; /*0x6286f5*/
-    *this = &(void*)(void*)&VectorClass_HashObject_HashString_SchemeNode___vftable; /*0x6286fc*/
+    *this = (void*)&VectorClass_HashObject_HashString_SchemeNode___vftable; /*0x6286fc*/
     if ( v11 && this->IsAllocated ) /*0x628704*/
     {
       RA2_OPDEL(v11); /*0x62870a*/
@@ -1792,7 +1796,7 @@ DynamicVector * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Destr
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x6287b3*/
-  *this = &(void*)(void*)&VectorClass_HSVClass_vftable; /*0x6287b6*/
+  *this = (void*)&VectorClass_HSVClass_vftable; /*0x6287b6*/
   if ( v3 && this->IsAllocated ) /*0x6287c0*/
   {
     RA2_OPDEL(v3); /*0x6287c8*/
@@ -1880,7 +1884,7 @@ DynamicVector * DynamicVectorClass_cptr_VoxelAnimTypeClass::Add(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x67c063*/
-  *this = &(void*)(void*)&VectorClass_VoxelAnimTypeClass_const___vftable; /*0x67c066*/
+  *this = (void*)&VectorClass_VoxelAnimTypeClass_const___vftable; /*0x67c066*/
   if ( v3 && this->IsAllocated ) /*0x67c070*/
   {
     RA2_OPDEL(v3); /*0x67c078*/

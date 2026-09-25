@@ -438,15 +438,17 @@ struct Radar {
     unsigned char q6CC0;  // 0x6CC0
     unsigned char q6CC4;  // 0x6CC4
     unsigned int u32_84;
+    unsigned int q0181;
+    unsigned int q0182;
 // --- flat members (END) ---
-    int FindNearestRadarTarget(int a2, int a3, int a4);  // 0x431090
-    void UpdateReveal(char a1, IUnknown * aP1);  // 0x4ADCD0
+    int FindNearestRadarTarget(int a2,  int a3,  int a4);    // 0x431090
+    void UpdateReveal(char a1,  void* aP1);    // 0x4ADCD0
     bool IsRadarTargetEligible();  // 0x5090F0
-    int ProcessSubzone(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnknown * aP4, IUnknown * aP5);  // 0x5824A0
-    void Update(IUnknown * aP1);  // 0x584550
+    void* ProcessSubzone(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnknown * aP4, IUnknown * aP5);    // 0x5824A0
+    void Update(void* aP1);  // 0x584550
     int * CopyDataArray(int * a2);  // 0x58ABD0
     int PixelIndex();  // 0x6558B0
     char RenderMinimap();  // 0x656EC0
-    int ScanWaypoints(MouseClass * aP0, MouseClass * aP1, int aP3_4);  // 0x692610
+    int ScanWaypoints(MouseClass * aP0,  MouseClass * aP1,  int aP3_4);    // 0x692610
 };
 } // namespace gamemd

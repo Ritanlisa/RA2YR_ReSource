@@ -11,13 +11,15 @@
 #include "e4/classes/TypeList_flat_e4.hpp"
 #include "e4/classes/TypeList_TechnoType_e4.hpp"
 #include "e4/classes/VectorClass_flat_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x7B1B50
 namespace gamemd {
 int UDPInterfaceClass::connect()
 {
-  char result; // al
+  void * result;
 
   result = this->q3F068; /*0x7b1b53*/
   if ( result ) /*0x7b1b5b*/
@@ -108,7 +110,7 @@ void UDPInterfaceClass::GetStatistics(unsigned short a2)
 namespace gamemd {
 AbstractClass * * UDPInterfaceClass::Flush()
 {
-  int v2; // ebx
+  void * v2;
   int result; // eax
   SOCKET *v4; // esi
 
@@ -167,8 +169,8 @@ AbstractClass * * UDPInterfaceClass::ProcessSocketIO(int a2, SOCKET s, int a4, u
   _DWORD **v30; // edx
   int v31; // edi
   u_long v32; // eax
-  int v33; // ecx
-  int v34; // eax
+  void * v33;
+  void * v34;
   char *v35; // ebp
   int v36; // eax
   int v37; // eax
@@ -481,7 +483,7 @@ CampaignClass * * UDPInterfaceClass::Destructor(char a2)
   void *v9; // eax
   void *v10; // eax
 
-  *this = &(void*)(void*)&UDPInterfaceClass_vftable; /*0x7b4176*/
+  *this = (void*)&UDPInterfaceClass_vftable; /*0x7b4176*/
   while ( this->qFCD2 ) /*0x7b417c*/
   {
     RA2_OPDEL(*this->q3F33C); /*0x7b418f*/
@@ -508,7 +510,7 @@ CampaignClass * * UDPInterfaceClass::Destructor(char a2)
   }
   UDPInterfaceClass::connect(); /*0x7b4224*/
   v9 = this->q3F554; /*0x7b4229*/
-  this->qFD54 = &(void*)(void*)&VectorClass_unsigned_char___vftable; /*0x7b422f*/
+  this->qFD54 = (void*)&VectorClass_unsigned_char___vftable; /*0x7b422f*/
   if ( v9 && this->u8_3F55D ) /*0x7b423d*/
   {
     RA2_OPDEL(v9); /*0x7b4246*/
@@ -517,7 +519,7 @@ CampaignClass * * UDPInterfaceClass::Destructor(char a2)
   this->u8_3F55D = 0; /*0x7b4254*/
   this->q3F558 = 0; /*0x7b425a*/
   v10 = this->q3F33C; /*0x7b4260*/
-  this->q3F338 = &(void*)(void*)&VectorClass_unsigned_char___vftable; /*0x7b4266*/
+  this->q3F338 = (void*)&VectorClass_unsigned_char___vftable; /*0x7b4266*/
   if ( v10 && this->u8_3F345 ) /*0x7b4274*/
   {
     RA2_OPDEL(v10); /*0x7b427d*/
@@ -927,7 +929,7 @@ DynamicVector * UDPInterfaceClass::receivePacket(char a2)
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x7b45d3*/
-  *this = &(void*)(void*)&VectorClass_unsigned_char___vftable; /*0x7b45d6*/
+  *this = (void*)&VectorClass_unsigned_char___vftable; /*0x7b45d6*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x7b45e0*/
   {
     RA2_OPDEL(v3); /*0x7b45e8*/

@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Array_e4.hpp"
 #include "e4/classes/Cell_e4.hpp"
@@ -7,6 +8,8 @@
 #include "e4/classes/BuildingClass_e4.hpp"
 #include "e4/classes/Lobby_e4.hpp"
 #include "e4/classes/WideString_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x4AF540
@@ -40,8 +43,8 @@ int LocomotionClass::Initialize()
   this->q064 = 0; /*0x4af5b8*/
   this->u32_65 = 1; /*0x4af5bb*/
   this->q068 = 0; /*0x4af5bf*/
-  *(_DWORD *)this = &(void*)(void*)&DriveLocomotionClass_vftable; /*0x4af5c2*/
-  this->vtable2 = &(void*)(void*)&DriveLocomotionClass_vftable; /*0x4af5c8*/
+  *(void **)this = (void*)&DriveLocomotionClass_vftable; /*0x4af5c2*/
+  this->vtable2 = (void*)&DriveLocomotionClass_vftable; /*0x4af5c8*/
   this->ptr_18 = &off_7E7E8C; /*0x4af5cf*/
   return this; /*0x4af5d8*/
 }
@@ -50,7 +53,7 @@ int LocomotionClass::Initialize()
 namespace gamemd {
 void * LocomotionClass::UpdateAll()
 {
-  wchar_t *result; // eax
+  wchar_t * result;
   int i; // esi
   _DWORD *v2; // ecx
 
@@ -105,7 +108,7 @@ int LocomotionClass::CheckBridgeBlock()
 namespace gamemd {
 int LocomotionClass::GetSpeedMultiplier()
 {
-  int v1; // eax
+  void * v1;
 
   v1 = this->q5D4; /*0x4dc760*/
   if ( v1 && v1->q024->q0F2 ) /*0x4dc76d*/
@@ -137,8 +140,8 @@ int LocomotionClass::ProcessData()
   this->HoverLocomotionClass_field_bool_68 = 0; /*0x513c88*/
   this->HoverLocomotionClass_field_6C = 0; /*0x513c8b*/
   this->HoverLocomotionClass_field_bool_70 = 0; /*0x513c8e*/
-  *(_DWORD *)this = &(void*)(void*)&HoverLocomotionClass_vftable; /*0x513c91*/
-  this->vtable2 = &(void*)(void*)&HoverLocomotionClass_vftable; /*0x513c97*/
+  *(void **)this = (void*)&HoverLocomotionClass_vftable; /*0x513c91*/
+  this->vtable2 = (void*)&HoverLocomotionClass_vftable; /*0x513c97*/
   return this; /*0x513ca0*/
 }
 } // namespace gamemd
@@ -166,9 +169,9 @@ int LocomotionClass::Update()
   this->u32_90 = 0; /*0x54aca5*/
   this->unknown_91 = 0; /*0x54acab*/
   this->Piggybackee = 0; /*0x54acb5*/
-  *(_DWORD *)this = &(void*)(void*)&JumpjetLocomotionClass_vftable; /*0x54acc3*/
-  this->vtable2 = &(void*)(void*)&JumpjetLocomotionClass_vftable; /*0x54acc9*/
-  this->vtable3 = &(void*)(void*)&JumpjetLocomotionClass_vftable; /*0x54acd0*/
+  *(void **)this = (void*)&JumpjetLocomotionClass_vftable; /*0x54acc3*/
+  this->vtable2 = (void*)&JumpjetLocomotionClass_vftable; /*0x54acc9*/
+  this->vtable3 = (void*)&JumpjetLocomotionClass_vftable; /*0x54acd0*/
   IDA_LOWORD(v4) = 0x4000; /*0x54acd7*/
   FacingClass::Update((char *)(&this->Climb4), &v4); /*0x54acdc*/
   IDA_LOWORD(v4) = 0x4000; /*0x54ace8*/
@@ -185,8 +188,8 @@ unsigned int * LocomotionClass::Init()
   this->u32_10 = 1; /*0x55a6cc*/
   this->Dirty = 1; /*0x55a6cf*/
   this->u8_14 = 0; /*0x55a6d2*/
-  *this = &(void*)(void*)&LocomotionClass_vftable; /*0x55a6d5*/
-  this->vtable2 = &(void*)(void*)&LocomotionClass_vftable; /*0x55a6db*/
+  *(void **)this = (void*)&LocomotionClass_vftable; /*0x55a6d5*/
+  this->vtable2 = (void*)&LocomotionClass_vftable; /*0x55a6db*/
   return this; /*0x55a6e2*/
 }
 } // namespace gamemd
@@ -194,8 +197,8 @@ unsigned int * LocomotionClass::Init()
 namespace gamemd {
 void LocomotionClass::Construct()
 {
-  *this = &(void*)(void*)&LocomotionClass_vftable; /*0x55a6f0*/
-  this->vtable2 = &(void*)(void*)&LocomotionClass_vftable; /*0x55a6f6*/
+  *(void **)this = (void*)&LocomotionClass_vftable; /*0x55a6f0*/
+  this->vtable2 = (void*)&LocomotionClass_vftable; /*0x55a6f6*/
   this->LinkedTo = 0; /*0x55a6fd*/
 }
 } // namespace gamemd

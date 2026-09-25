@@ -16,13 +16,16 @@
 #include "e4/classes/TClassFactory_MechLocomotionClass_e4.hpp"
 #include "e4/classes/TEventClass_e4.hpp"
 #include "e4/classes/AnimClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/CampaignClass_e4.hpp"
 
 // 0x4FCDC0
 namespace gamemd {
 int TActionClass::executeBuildAction()
 {
-  char result; // al
+  void * result;
 
   result = this->q1F8; /*0x4fcdc0*/
   if ( !result ) /*0x4fcdc8*/
@@ -104,11 +107,11 @@ void sub_567F70(int * a1, int a2)
   int v12; // esi
   int v13; // eax
   int v14; // ebp
-  unsigned int v15; // eax
-  _DWORD *v16; // ecx
-  _DWORD *v17; // ecx
-  _DWORD *v18; // ecx
-  _DWORD *v19; // eax
+  _DWORD * v15;
+  unsigned int v16;
+  unsigned int v17;
+  unsigned int v18;
+  unsigned int v19;
   __int16 v20; // [esp+14h] [ebp-8h]
   __int16 v21; // [esp+16h] [ebp-6h]
   int v22; // [esp+20h] [ebp+4h]
@@ -250,9 +253,9 @@ int TActionClass::executeSellAction()
 namespace gamemd {
 unsigned int * TActionClass::executeHarvestAction(int a2, MouseClass * aP2)
 {
-  _DWORD *result; // eax
+  _DWORD * result;
   int v5; // esi
-  _DWORD *v6; // edx
+  unsigned int v6;
   int v7; // eax
   int v8; // edx
   int v9; // eax
@@ -751,10 +754,10 @@ TActionClass::TActionClass()
   this->TEventClass_field_30 = 0; /*0x71e6b8*/
   this->TEventClass_field_38 = 0; /*0x71e6bb*/
   this->TEventClass_field_54 = 0; /*0x71e6be*/
-  *(_DWORD *)this = &(void*)(void*)&TEventClass_vftable; /*0x71e6c1*/
-  this->vtable2 = &(void*)(void*)&TEventClass_vftable; /*0x71e6c7*/
-  this->vtable3 = &(void*)(void*)&TEventClass_vftable; /*0x71e6ce*/
-  this->vtable4 = &(void*)(void*)&TEventClass_vftable; /*0x71e6d5*/
+  *(_DWORD *)this = (void*)&TEventClass_vftable; /*0x71e6c1*/
+  this->vtable2 = (void*)&TEventClass_vftable; /*0x71e6c7*/
+  this->vtable3 = (void*)&TEventClass_vftable; /*0x71e6ce*/
+  this->vtable4 = (void*)&TEventClass_vftable; /*0x71e6d5*/
   v2 = dword_B0F1B0; /*0x71e6dc*/
   if ( dword_B0F1B0 < dword_B0F1A8 /*0x71e71a*/
     || (byte_B0F1AD || !dword_B0F1A8)
@@ -1539,10 +1542,10 @@ int TActionClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x6e3dc6*/
     {
       AbstractClass::InitVtables(aP0, (int)&aP1); /*0x6e3dcf*/
-      *aP0 = (int)&(void*)(void*)&TActionClass_vftable; /*0x6e3dd4*/
-      aP0[1] = (int)&(void*)(void*)&TActionClass_vftable; /*0x6e3dda*/
-      aP0[2] = (int)&(void*)(void*)&TActionClass_vftable; /*0x6e3de1*/
-      aP0[3] = (int)&(void*)(void*)&TActionClass_vftable; /*0x6e3de8*/
+      *aP0 = (int)&TActionClass_vftable; /*0x6e3dd4*/
+      aP0[1] = (int)&TActionClass_vftable; /*0x6e3dda*/
+      aP0[2] = (int)&TActionClass_vftable; /*0x6e3de1*/
+      aP0[3] = (int)&TActionClass_vftable; /*0x6e3de8*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP0 + 10); /*0x6e3df8*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP0 + 12); /*0x6e3e06*/

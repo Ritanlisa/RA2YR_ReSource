@@ -3,13 +3,15 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/ScreenCaptureCommandClass_e4.hpp"
 #include "e4/classes/ScreenEffect_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x537B40
 namespace gamemd {
 unsigned int * ScreenCaptureCommandClass::Constructor()
 {
-  *this = &(void*)(void*)&ScreenCaptureCommandClass_vftable; /*0x537b42*/
+  *(void **)this = (void*)&ScreenCaptureCommandClass_vftable; /*0x537b42*/
   return this; /*0x537b48*/
 }
 } // namespace gamemd

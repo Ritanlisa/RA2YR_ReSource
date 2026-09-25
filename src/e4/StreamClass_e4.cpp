@@ -5,6 +5,8 @@
 #include "e4/classes/LocomotionClass_e4.hpp"
 #include "e4/classes/MouseClass_e4.hpp"
 #include "e4/classes/Stream_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x411310
@@ -19,7 +21,7 @@ namespace gamemd {
 unsigned int StreamClass::ReadAndSeek(MouseClass * aP1, MouseClass * aP2)
 {
   int v4; // edi
-  unsigned int result; // eax
+  char * result;
 
   v4 = (*(int (__thiscall **)(_DWORD, int, int))(**(_DWORD **)(&this->u32_80) + 92))(this->q014, aP1, aP2); /*0x4114c9*/
   (*(void (__thiscall **)(_DWORD))(**(_DWORD **)(&this->u32_80) + 96))(this->q014); /*0x4114cd*/
@@ -52,7 +54,7 @@ int StreamClass::Set2(unsigned int * a2)
     {
       if ( *this ) /*0x45aec3*/
         (*(void (__stdcall **)(_DWORD))(*(_DWORD *)*this + 8))(*this); /*0x45aecc*/
-      *this = 0; /*0x45aed1*/
+      *(_DWORD *)this = 0; /*0x45aed1*/
       return v3; /*0x45aecf*/
     }
   }
@@ -61,7 +63,7 @@ int StreamClass::Set2(unsigned int * a2)
     v6 = *this; /*0x45aef7*/
     if ( *this ) /*0x45aef7*/
     {
-      *this = 0; /*0x45aefd*/
+      *(_DWORD *)this = 0; /*0x45aefd*/
       (*(void (__stdcall **)(int))(*(_DWORD *)v6 + 8))(v6); /*0x45af06*/
     }
     return -2147467262; /*0x45af0e*/
@@ -91,7 +93,7 @@ int StreamClass::Set(IUnknown * aP1)
     {
       if ( *this ) /*0x45af43*/
         (*(void (__stdcall **)(_DWORD))(*(_DWORD *)*this + 8))(*this); /*0x45af4c*/
-      *this = 0; /*0x45af51*/
+      *(_DWORD *)this = 0; /*0x45af51*/
       return v3; /*0x45af4f*/
     }
   }
@@ -100,7 +102,7 @@ int StreamClass::Set(IUnknown * aP1)
     v6 = *this; /*0x45af77*/
     if ( *this ) /*0x45af77*/
     {
-      *this = 0; /*0x45af7d*/
+      *(_DWORD *)this = 0; /*0x45af7d*/
       (*(void (__stdcall **)(int))(*(_DWORD *)v6 + 8))(v6); /*0x45af86*/
     }
     return -2147467262; /*0x45af8e*/

@@ -8,6 +8,8 @@
 #include "e4/classes/HashTable_flat_e4.hpp"
 #include "e4/classes/LinkClass_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x4E12F0
@@ -25,7 +27,7 @@ void * GadgetClass::Construct(GadgetClass * aP1, GadgetClass * aP2, GadgetClass 
   this->q01E = 0; /*0x4e1322*/
   this->q01D = aP6; /*0x4e1327*/
   this->u32_20 = aP5; /*0x4e132a*/
-  *this = &(void*)(void*)&GadgetClass_vftable; /*0x4e132d*/
+  *(void ** *)this = (void*)&GadgetClass_vftable; /*0x4e132d*/
   if ( aP6 ) /*0x4e1334*/
     this->u32_20 = aP5 | 5; /*0x4e1339*/
 }
@@ -37,7 +39,7 @@ GadgetClass * * GadgetClass::Dtor()
   int v1; // eax
   int v2; // eax
 
-  *this = &(void*)(void*)&GadgetClass_vftable; /*0x4e1390*/
+  *(void **)this = (void*)&GadgetClass_vftable; /*0x4e1390*/
   v1 = dword_8B3E90; /*0x4e1396*/
   if ( this == (_DWORD *)dword_8B3E90 ) /*0x4e139f*/
   {

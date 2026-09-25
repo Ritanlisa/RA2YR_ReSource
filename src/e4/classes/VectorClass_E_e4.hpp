@@ -28,8 +28,8 @@ struct VectorClass_E {
     unsigned char q048;  // 0x48
     unsigned char q050;  // 0x50
 // --- flat members (END) ---
-    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x74BFA0
-    char Release(signed int Size, char * a3);  // 0x74C030
+    VectorClass_flat * QueryInterface(unsigned int * Block,  char a2);    // 0x74BFA0
+    char Release(signed int Size,  char * a3);    // 0x74C030
     void ddtor();  // 0x74C0E0
     char Clear(int a2);  // 0x74BF90
     char AddRef(int a2);  // 0x74BFF0

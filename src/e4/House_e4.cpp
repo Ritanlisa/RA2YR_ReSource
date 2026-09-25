@@ -23,6 +23,8 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/SortedArray_e4.hpp"
 #include "e4/classes/HashTable_flat_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x47D2B0
@@ -32,7 +34,7 @@ void House::AnnounceUpgrade(IUnknown * aP1)
   __int16 *v3; // edi
   _BYTE *v4; // ebx
   int v5; // ecx
-  int v6; // eax
+  void * v6;
   int v7; // ebp
   int v8; // ecx
   int v9; // eax
@@ -44,7 +46,7 @@ void House::AnnounceUpgrade(IUnknown * aP1)
   __int16 v15; // dx
   int v16; // ecx
   int v17; // ecx
-  int v18; // ebp
+  unsigned int v18;
   char v19; // al
   __int16 v20; // cx
   __int16 v21; // ax
@@ -53,7 +55,7 @@ void House::AnnounceUpgrade(IUnknown * aP1)
   __int16 v24; // cx
   __int16 v25; // cx
   _BYTE *v26; // eax
-  int v27; // ecx
+  void * v27;
   __int16 v28; // ax
   int v29; // eax
   int v30; // ecx
@@ -66,7 +68,7 @@ void House::AnnounceUpgrade(IUnknown * aP1)
   int v37; // ecx
   int v38; // eax
   void **v39; // eax
-  void **v40; // eax
+  IUnknown * v40;
   void *v41; // ecx
   _WORD *v42; // ebx
   int v43; // eax
@@ -80,7 +82,7 @@ void House::AnnounceUpgrade(IUnknown * aP1)
   int v51; // eax
   _BYTE *v52; // eax
   int v53; // [esp-8h] [ebp-50h]
-  int v54; // [esp+10h] [ebp-38h] BYREF
+  IUnknown * v54;
   int v57; // [esp+1Ch] [ebp-2Ch] BYREF
   char v58[4]; // [esp+20h] [ebp-28h] BYREF
   int v59[5]; // [esp+24h] [ebp-24h] BYREF
@@ -454,7 +456,7 @@ unsigned int * House::GetStartCoords(IUnknown * aP1)
   if ( !v23 ) /*0x47fd41*/
   {
   LABEL_13:
-    *aP1 = 0; /*0x47fd43*/
+    *(_DWORD *)aP1 = 0; /*0x47fd43*/
     aP1[1] = 0; /*0x47fd53*/
     aP1[2] = 0; /*0x47fd56*/
     aP1[3] = 0; /*0x47fd59*/
@@ -470,7 +472,7 @@ unsigned int * House::GetStartCoords(IUnknown * aP1)
   v20 = v17 + v18[1]; /*0x47fdb7*/
   v21 = v18[2]; /*0x47fdb9*/
   v22 = v18[3]; /*0x47fdbc*/
-  *aP1 = v19; /*0x47fdc1*/
+  *(_DWORD *)aP1 = v19; /*0x47fdc1*/
   aP1[1] = v20; /*0x47fdc3*/
   aP1[2] = v21; /*0x47fdc6*/
   aP1[3] = v22; /*0x47fdc9*/
@@ -482,7 +484,7 @@ namespace gamemd {
 int House::UpdateHouseAI()
 {
   int v2; // ebp
-  int v3; // edx
+  void * v3;
   int v4; // eax
   int v5; // eax
   void *v6; // eax
@@ -1010,7 +1012,7 @@ void House::Constructor()
       *(this + 3) = EntireFile; /*0x69e0bd*/
       *((_BYTE *)this + 16) = 1; /*0x69e0c0*/
     }
-    v3[0] = &(void*)(void*)&CCFileClass_vftable; /*0x69e0c8*/
+    v3[0] = (void*)&CCFileClass_vftable; /*0x69e0c8*/
     v5 = 0; /*0x69e0d0*/
     Vector::Clear((int)v4); /*0x69e0d8*/
     v3[0] = &off_7E1668; /*0x69e0e1*/

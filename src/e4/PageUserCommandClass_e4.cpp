@@ -7,12 +7,15 @@
 #include "e4/classes/Timer_e4.hpp"
 #include "e4/classes/Options_e4.hpp"
 #include "e4/classes/LoadOptions_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x537DD0
 PageUserCommandClass::PageUserCommandClass()
 {
-  *this = &(void*)(void*)&PageUserCommandClass_vftable; /*0x537dd2*/
+  *this = (void*)&PageUserCommandClass_vftable; /*0x537dd2*/
   return this; /*0x537dd8*/
 }
 // 0x537DE0

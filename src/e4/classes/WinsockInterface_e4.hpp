@@ -6,7 +6,7 @@
 namespace gamemd {
 struct WinsockInterface {
 // --- flat members (BEGIN) ---
-    void * ptr_4;  // 0x4
+    unsigned int q004;  // 0x4
     unsigned int u32_5C;  // 0x5C
     unsigned int u32_60;  // 0x60
     unsigned int u32_98;  // 0x98
@@ -51,6 +51,7 @@ struct WinsockInterface {
     unsigned int q6240;  // 0x6240
     unsigned int q6294;  // 0x6294
     unsigned int u32_64D4;  // 0x64D4
+    void* ptr_4;
     unsigned int u32_64D49;
     unsigned int vt_slot_20;
     unsigned int vt_slot_24;

@@ -31,15 +31,15 @@ struct VectorClass_ptr_ThemeControl {
 // --- flat members (END) ---
     int Clear(int a2);  // 0x4E8530
     char AddRef(int a2);  // 0x4EA2A0
-    char Remove(int a2, unsigned int * a3);  // 0x4EA2E0
+    char Remove(int a2,  unsigned int * a3);    // 0x4EA2E0
     void ddtor();  // 0x4EA390
     int GetSize(unsigned int * a2);  // 0x4EA3C0
     unsigned int Get(int a2);  // 0x4EA400
-    VectorClass_flat * Add(unsigned int * Block, char a2);  // 0x4EF940
+    VectorClass_flat * Add(unsigned int * Block,  char a2);    // 0x4EF940
     void Destroy();  // 0x7212B0
     unsigned int GetItemIndex(int a2);  // 0x7212E0
-    char SetCapacity(int a2, unsigned int * a3);  // 0x721300
+    char SetCapacity(int a2,  unsigned int * a3);    // 0x721300
     int FindItemIndex(unsigned int * a2);  // 0x7213B0
-    DynamicVector * Constructor_VectorClass_ThemeControl___(unsigned int * Block, char a2);  // 0x7213E0
+    DynamicVector * Constructor_VectorClass_ThemeControl___(unsigned int * Block,  char a2);    // 0x7213E0
 };
 } // namespace gamemd

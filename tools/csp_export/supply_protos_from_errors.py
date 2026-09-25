@@ -44,6 +44,12 @@ def _clean(line):
         if bad in ln:
             return None
     body = ln[len('extern '):-1]
+    # tree using-alias types (CellStruct/CoordStruct/RGBClass/Point2D) are
+    # template aliases the protos header cannot see (their defining headers
+    # are tree-owned): degrade to void* — call sites pass addresses, which
+    # convert implicitly
+    body = re.sub(r'\b(?:CellStruct|CoordStruct|RGBClass|Point2D)\b\s*([*&])',
+                  r'void*\1', body)
     # double return type: `T * * int Name(` or `int unsigned Name(`
     head = body.split('(')[0]
     toks = head.split()
@@ -108,7 +114,8 @@ for nm in sorted(NAMES):
         emitted.append(d)
 
 lines = ['// GENERATED free-function prototypes (supply_protos_from_errors).',
-         '#pragma once', '', '#include "e4/classes/_fwd_e4.hpp"', '',
+         '#pragma once', '', '#include "e4/classes/_fwd_e4.hpp"',
+         '#include "e4/classes/_tree_alias_e4.hpp"', '',
          'namespace gamemd {', '']
 lines += emitted
 lines += ['', '} // namespace gamemd', '']

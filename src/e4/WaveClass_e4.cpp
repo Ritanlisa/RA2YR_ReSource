@@ -9,7 +9,10 @@
 #include "e4/classes/DamageArea_e4.hpp"
 #include "e4/classes/Init_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/Coord_e4.hpp"
 
 // 0x75F650
 namespace gamemd {
@@ -37,9 +40,9 @@ int WaveClass::LoadWaveData(int a2, int a3)
       v4->q6A0 = 0; /*0x75f68c*/
       FrameSnapshot::Init((_WORD *)(v4 + 472)); /*0x75f692*/
       WaveClass::Constructor_7632D0((_DWORD *)(v4 + 496), 0, 0); /*0x75f69f*/
-      *(_DWORD *)v4 = &(void*)(void*)&WaveClass_vftable; /*0x75f6a4*/
-      v4->vtable2 = &(void*)(void*)&WaveClass_vftable; /*0x75f6aa*/
-      v4->vtable3 = &(void*)(void*)&WaveClass_vftable; /*0x75f6b1*/
+      *(void **)v4 = (void*)&WaveClass_vftable; /*0x75f6a4*/
+      v4->vtable2 = (void*)&WaveClass_vftable; /*0x75f6aa*/
+      v4->vtable3 = (void*)&WaveClass_vftable; /*0x75f6b1*/
       v4->vtable4 = &off_7F6BC8; /*0x75f6b8*/
     }
     v4->q14C = v4->q0B0 == 3 ? v4 + 384 : v4 + 336;
@@ -98,9 +101,9 @@ WaveClass * WaveClass::ddtor(char a2)
   int v3; // eax
   void *v4; // eax
 
-  *this = &(void*)(void*)&WaveClass_vftable; /*0x763206*/
-  this->vtable2 = &(void*)(void*)&WaveClass_vftable; /*0x76320c*/
-  this->vtable3 = &(void*)(void*)&WaveClass_vftable; /*0x763213*/
+  *(void **)this = (void*)&WaveClass_vftable; /*0x763206*/
+  this->vtable2 = (void*)&WaveClass_vftable; /*0x76320c*/
+  this->vtable3 = (void*)&WaveClass_vftable; /*0x763213*/
   this->vtable4 = &off_7F6BC8; /*0x76321a*/
   AbstractClass::AnnounceExpiredPointer(1); /*0x763221*/
   v3 = (*(int (__thiscall **)(int *, void ***))(dword_A8EC38 + 16))(&dword_A8EC38, &this); /*0x76323a*/
@@ -115,7 +118,7 @@ WaveClass * WaveClass::ddtor(char a2)
   }
   (*((void (__thiscall **)(char *))*(&this->WaveClass_field_DC4) + 3))((char *)&this->WaveClass_field_1706); /*0x76327e*/
   v4 = *(&this->WaveClass_field_DC5); /*0x763281*/
-  *(&this->WaveClass_field_DC4) = &(void*)(void*)&VectorClass_CellClass___vftable; /*0x763284*/
+  *(&this->WaveClass_field_DC4) = (void*)&VectorClass_CellClass___vftable; /*0x763284*/
   if ( v4 && this->q1FD ) /*0x76328e*/
   {
     RA2_OPDEL(v4); /*0x763296*/

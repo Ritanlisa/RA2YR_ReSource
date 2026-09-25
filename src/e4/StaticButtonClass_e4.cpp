@@ -4,6 +4,8 @@
 #include "e4/classes/Vector_e4.hpp"
 #include "e4/classes/StaticButtonClass_e4.hpp"
 #include "e4/classes/Stream_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x6C6880
@@ -13,7 +15,7 @@ StaticButtonClass * StaticButtonClass::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)*(&this->u32_42); /*0x6c6883*/
-  *this = &(void*)(void*)&StaticButtonClass_vftable; /*0x6c6886*/
+  *(void **)this = (void*)&StaticButtonClass_vftable; /*0x6c6886*/
   if ( v3 ) /*0x6c688e*/
     RA2_OPDEL(v3); /*0x6c6891*/
   Vector::Clear((int)(this + 9)); /*0x6c689c*/

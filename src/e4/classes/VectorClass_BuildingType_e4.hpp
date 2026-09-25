@@ -29,13 +29,13 @@ struct VectorClass_BuildingType {
     unsigned int q054;  // 0x54
 // --- flat members (END) ---
     void Destroy();  // 0x50E6A0
-    TypeList_flat * Constructor(unsigned int * Block, char a2);  // 0x50E7E0
-    char Set(int a2, unsigned int * a3);  // 0x50E950
-    char SetCapacity(int a2, unsigned int * a3);  // 0x50F780
-    char SetCapacity_0(int a2, unsigned int * a3);  // 0x50F8C0
+    TypeList_flat * Constructor(unsigned int * Block,  char a2);    // 0x50E7E0
+    char Set(int a2,  unsigned int * a3);    // 0x50E950
+    char SetCapacity(int a2,  unsigned int * a3);    // 0x50F780
+    char SetCapacity_0(int a2,  unsigned int * a3);    // 0x50F8C0
     int FindItemIndex_0(unsigned int * a2);  // 0x50F970
-    VectorClass_flat * Get(unsigned int * Block, char a2);  // 0x50FFF0
-    VectorClass_flat * Constructor_0(unsigned int * Block, char a2);  // 0x510310
+    VectorClass_flat * Get(unsigned int * Block,  char a2);    // 0x50FFF0
+    VectorClass_flat * Constructor_0(unsigned int * Block,  char a2);    // 0x510310
     int Count(int a2);  // 0x50E4F0
     unsigned int GetItemIndex(int a2);  // 0x50E6D0
     int GetElement(int a2);  // 0x50E6F0

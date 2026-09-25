@@ -45,7 +45,7 @@ struct Diplomacy {
     unsigned char q778;  // 0x778
     unsigned char q804;  // 0x804
 // --- flat members (END) ---
-    CampaignScore * * DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4);
+    void* * DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4);
     char * GetField(BuildingTypeClass * aP1);
 };
 

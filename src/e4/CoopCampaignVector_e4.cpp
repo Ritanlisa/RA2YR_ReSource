@@ -5,6 +5,8 @@
 #include "e4/classes/MultiplayerGameMode_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/ConvertClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x5C5750
@@ -24,7 +26,7 @@ VectorClass_flat * CoopCampaignVector::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->q004; /*0x5c5943*/
-  *this = &(void*)(void*)&VectorClass_CoopCampaignClass___vftable; /*0x5c5946*/
+  *(void **)this = (void*)&VectorClass_CoopCampaignClass___vftable; /*0x5c5946*/
   if ( v3 && this->IsAllocated ) /*0x5c5950*/
   {
     RA2_OPDEL(v3); /*0x5c5958*/
@@ -45,7 +47,7 @@ unsigned int * CoopCampaignVector::Construct(MultiplayerGameMode * aP1, Multipla
   this->q008 = aP1; /*0x5c5a8e*/
   this->q00C = 1; /*0x5c5a91*/
   this->IsAllocated = 0; /*0x5c5a95*/
-  *this = &(void*)(void*)&VectorClass_CoopCampaignClass___vftable; /*0x5c5a98*/
+  *(void **)this = (void*)&VectorClass_CoopCampaignClass___vftable; /*0x5c5a98*/
   if ( aP1 ) /*0x5c5a9e*/
   {
     if ( aP2 ) /*0x5c5aa6*/

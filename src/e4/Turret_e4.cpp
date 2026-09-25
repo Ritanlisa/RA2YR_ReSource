@@ -10,7 +10,11 @@
 #include "e4/classes/Type_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/Math_e4.hpp"
+#include "e4/classes/TypeList_Particle_e4.hpp"
+#include "e4/classes/VectorClass_flat_e4.hpp"
 
 // 0x5F8CE0
 namespace gamemd {
@@ -24,7 +28,7 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
   _DWORD *v7; // eax
   _DWORD *v8; // eax
   _DWORD *v9; // ecx
-  int Info; // eax
+  void * Info;
   void *v11; // edi
   _DWORD *v12; // eax
   _DWORD *v13; // eax
@@ -32,16 +36,16 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
   _DWORD *v15; // eax
   _DWORD *v16; // eax
   _DWORD *v17; // ecx
-  int v18; // eax
+  void * v18;
   _DWORD v20[22]; // [esp+8h] [ebp-348h] BYREF
   _BYTE v21[12]; // [esp+60h] [ebp-2F0h] BYREF
-  int v22; // [esp+6Ch] [ebp-2E4h]
+  void ** v22;
   _DWORD v23[22]; // [esp+74h] [ebp-2DCh] BYREF
   _BYTE v24[12]; // [esp+CCh] [ebp-284h] BYREF
-  int v25; // [esp+D8h] [ebp-278h]
+  void ** v25;
   _DWORD v26[22]; // [esp+E0h] [ebp-270h] BYREF
   _BYTE v27[12]; // [esp+138h] [ebp-218h] BYREF
-  int v28; // [esp+144h] [ebp-20Ch]
+  void ** v28;
   char Buffer[256]; // [esp+14Ch] [ebp-204h] BYREF
   char Source[260]; // [esp+24Ch] [ebp-104h] BYREF
 
@@ -91,7 +95,7 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
             this->u32_BC = v8; /*0x5f8e52*/
             Info = VoxelSection::GetInfo(v9, 0, 0); /*0x5f8e58*/
             Matrix::Scale(*((unsigned int **)&this->u32_107), *(float *)(Info + 12)); /*0x5f8e67*/
-            v20[0] = &(void*)(void*)&CCFileClass_vftable; /*0x5f8e70*/
+            v20[0] = (void*)&CCFileClass_vftable; /*0x5f8e70*/
             v22 = 0; /*0x5f8e78*/
             Vector::Clear((int)v21); /*0x5f8e7c*/
             v20[0] = &off_7E1668; /*0x5f8e85*/
@@ -135,19 +139,19 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
             this->u32_C4 = v16; /*0x5f8fbc*/
             v18 = VoxelSection::GetInfo(v17, 0, 0); /*0x5f8fc2*/
             Matrix::Scale(*((unsigned int **)&this->u32_109), *(float *)(v18 + 12)); /*0x5f8fd1*/
-            v20[0] = &(void*)(void*)&CCFileClass_vftable; /*0x5f8fda*/
+            v20[0] = (void*)&CCFileClass_vftable; /*0x5f8fda*/
             v22 = 0; /*0x5f8fe2*/
             Vector::Clear((int)v21); /*0x5f8fe6*/
             v20[0] = &off_7E1668; /*0x5f8fef*/
             BufferIOFileClass::Dtor(v20); /*0x5f8ff7*/
           }
         }
-        v23[0] = &(void*)(void*)&CCFileClass_vftable; /*0x5f9008*/
+        v23[0] = (void*)&CCFileClass_vftable; /*0x5f9008*/
         v25 = 0; /*0x5f900c*/
         Vector::Clear((int)v24); /*0x5f9013*/
         v23[0] = &off_7E1668; /*0x5f9021*/
         BufferIOFileClass::Dtor(v23); /*0x5f9025*/
-        v26[0] = &(void*)(void*)&CCFileClass_vftable; /*0x5f9031*/
+        v26[0] = (void*)&CCFileClass_vftable; /*0x5f9031*/
         v28 = 0; /*0x5f9038*/
         Vector::Clear((int)v27); /*0x5f903f*/
         v26[0] = &off_7E1668; /*0x5f904b*/

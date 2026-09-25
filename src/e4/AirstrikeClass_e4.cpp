@@ -10,6 +10,8 @@
 #include "e4/classes/TechnoClass_e4.hpp"
 #include "e4/classes/AlphaShapeClass_e4.hpp"
 #include "e4/classes/AnimTypeClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x41D860
@@ -24,7 +26,7 @@ int AirstrikeClass::SpawnAircraft(int * a2)
   unsigned int *v9; // eax
   int result; // eax
   _DWORD *v11; // eax
-  int v12; // eax
+  AirstrikeClass * v12;
   int v13; // eax
   int v14; // [esp-14h] [ebp-38h]
   int v17; // [esp+14h] [ebp-10h]
@@ -110,7 +112,7 @@ int AirstrikeClass::ReassignTarget(int a2)
   int v8; // eax
   _DWORD *v9; // esi
   int v10; // eax
-  int v11; // eax
+  AirstrikeClass * v11;
   int *v12; // esi
   int v13; // edi
 
@@ -229,10 +231,10 @@ void * AirstrikeClass::CopyTo(char a2)
 {
   int v3; // eax
 
-  *this = &(void*)(void*)&AirstrikeClass_vftable; /*0x41dd5d*/
-  this->vtable2 = &(void*)(void*)&AirstrikeClass_vftable; /*0x41dd63*/
-  this->vtable3 = &(void*)(void*)&AirstrikeClass_vftable; /*0x41dd6a*/
-  this->vtable4 = &(void*)(void*)&AirstrikeClass_vftable; /*0x41dd71*/
+  *(void **)this = (void*)&AirstrikeClass_vftable; /*0x41dd5d*/
+  this->vtable2 = (void*)&AirstrikeClass_vftable; /*0x41dd63*/
+  this->vtable3 = (void*)&AirstrikeClass_vftable; /*0x41dd6a*/
+  this->vtable4 = (void*)&AirstrikeClass_vftable; /*0x41dd71*/
   v3 = (*(int (__thiscall **)(int *, _DWORD **))(dword_889FB8 + 16))(&dword_889FB8, &this); /*0x41dd83*/
   if ( v3 != -1 && v3 < dword_889FC8 && v3 < --dword_889FC8 ) /*0x41dd9e*/
   {
@@ -254,9 +256,9 @@ void * AirstrikeClass::CopyTo(char a2)
 namespace gamemd {
 AbstractClass * * AirstrikeClass::UpdateAll()
 {
-  _DWORD *v0; // eax
+  unsigned int v0;
   int v1; // esi
-  int v2; // ecx
+  _DWORD * v2;
   int v3; // edx
   int v4; // esi
   _BYTE *v5; // edx
@@ -315,24 +317,24 @@ AbstractClass * * AirstrikeClass::UpdateAll()
 namespace gamemd {
 AirstrikeClass::AirstrikeClass(TechnoClass * aP1)
 {
-  int v3; // eax
+  AirstrikeClass * v3;
   int v4; // eax
-  int v5; // ecx
+  int v5;
   int v6; // eax
-  int v7; // ecx
+  int v7;
   int v8; // eax
-  int v9; // ecx
+  int v9;
   int v10; // eax
-  int v11; // ecx
+  int v11;
   int v12; // eax
-  int v13; // ecx
+  TechnoClass * v13;
   int v14; // eax
 
   AbstractClass::Constructor(); /*0x41d384*/
-  *(_DWORD *)this = &(void*)(void*)&AirstrikeClass_vftable; /*0x41d389*/
-  this->vtable2 = &(void*)(void*)&AirstrikeClass_vftable; /*0x41d38f*/
-  this->vtable3 = &(void*)(void*)&AirstrikeClass_vftable; /*0x41d396*/
-  this->vtable4 = &(void*)(void*)&AirstrikeClass_vftable; /*0x41d39d*/
+  *(void **)this = (void*)&AirstrikeClass_vftable; /*0x41d389*/
+  this->vtable2 = (void*)&AirstrikeClass_vftable; /*0x41d38f*/
+  this->vtable3 = (void*)&AirstrikeClass_vftable; /*0x41d396*/
+  this->vtable4 = (void*)&AirstrikeClass_vftable; /*0x41d39d*/
   if ( dword_889FC8 < dword_889FC0 /*0x41d3d9*/
     || (byte_889FC5 || !dword_889FC0)
     && dword_889FCC > 0
@@ -390,10 +392,10 @@ int AirstrikeClass::Write(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x41d709*/
     {
       AbstractClass::InitVtables(aP0, (int)&aP1); /*0x41d712*/
-      *aP0 = (int)&(void*)(void*)&AirstrikeClass_vftable; /*0x41d717*/
-      aP0[1] = (int)&(void*)(void*)&AirstrikeClass_vftable; /*0x41d71d*/
-      aP0[2] = (int)&(void*)(void*)&AirstrikeClass_vftable; /*0x41d724*/
-      aP0[3] = (int)&(void*)(void*)&AirstrikeClass_vftable; /*0x41d72b*/
+      *(_DWORD *)aP0 = (int)&AirstrikeClass_vftable; /*0x41d717*/
+      aP0[1] = (int)&AirstrikeClass_vftable; /*0x41d71d*/
+      aP0[2] = (int)&AirstrikeClass_vftable; /*0x41d724*/
+      aP0[3] = (int)&AirstrikeClass_vftable; /*0x41d72b*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP0 + 19); /*0x41d73b*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP0 + 20); /*0x41d749*/

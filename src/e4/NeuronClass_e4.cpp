@@ -14,6 +14,8 @@
 #include "e4/classes/Math_e4.hpp"
 #include "e4/classes/WideString_e4.hpp"
 #include "e4/classes/Node_flat_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x43A350
@@ -27,10 +29,10 @@ NeuronClass::NeuronClass()
   this->q028 = 0; /*0x43a35f*/
   this->q02C = 0; /*0x43a366*/
   this->q030 = g_CurrentFrame; /*0x43a372*/
-  *(_DWORD *)this = &(void*)(void*)&NeuronClass_vftable; /*0x43a375*/
-  this->vtable2 = &(void*)(void*)&NeuronClass_vftable; /*0x43a37b*/
-  this->vtable3 = &(void*)(void*)&NeuronClass_vftable; /*0x43a382*/
-  this->vtable4 = &(void*)(void*)&NeuronClass_vftable; /*0x43a389*/
+  *(_DWORD *)this = (void*)&NeuronClass_vftable; /*0x43a375*/
+  this->vtable2 = (void*)&NeuronClass_vftable; /*0x43a37b*/
+  this->vtable3 = (void*)&NeuronClass_vftable; /*0x43a382*/
+  this->vtable4 = (void*)&NeuronClass_vftable; /*0x43a389*/
   if ( dword_B0F5E8 < dword_B0F5E0 /*0x43a3c5*/
     || (byte_B0F5E5 || !dword_B0F5E0)
     && dword_B0F5EC > 0
@@ -61,10 +63,10 @@ void * NeuronClass::Reset(char a2)
   int v3; // eax
   int v4; // eax
 
-  *this = &(void*)(void*)&NeuronClass_vftable; /*0x43a9cd*/
-  this->vtable2 = &(void*)(void*)&NeuronClass_vftable; /*0x43a9d3*/
-  this->vtable3 = &(void*)(void*)&NeuronClass_vftable; /*0x43a9da*/
-  this->vtable4 = &(void*)(void*)&NeuronClass_vftable; /*0x43a9e1*/
+  *this = (void*)&NeuronClass_vftable; /*0x43a9cd*/
+  this->vtable2 = (void*)&NeuronClass_vftable; /*0x43a9d3*/
+  this->vtable3 = (void*)&NeuronClass_vftable; /*0x43a9da*/
+  this->vtable4 = (void*)&NeuronClass_vftable; /*0x43a9e1*/
   v3 = (*(int (__thiscall **)(int *, _DWORD **))(g_AnimPoolManager + 16))(&g_AnimPoolManager, &this); /*0x43a9f3*/
   if ( v3 != -1 && v3 < g_AnimManager && v3 < --g_AnimManager ) /*0x43aa0e*/
   {
@@ -231,7 +233,7 @@ VectorClass_flat * NeuronClass_25::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x43acb3*/
-  *this = &(void*)(void*)&VectorClass_NeuronClass___vftable; /*0x43acb6*/
+  *(void **)this = (void*)&VectorClass_NeuronClass___vftable; /*0x43acb6*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x43acc0*/
   {
     RA2_OPDEL(v3); /*0x43acc8*/

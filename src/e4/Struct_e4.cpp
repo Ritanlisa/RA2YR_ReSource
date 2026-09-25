@@ -2,17 +2,19 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Struct_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x48B2A0
 namespace gamemd {
 int Struct::ClearAllMemberFlags()
 {
-  int v1; // eax
+  void * v1;
   int v2; // esi
   int v3; // eax
   _DWORD *v4; // edi
-  int result; // eax
+  void * result;
   int v6; // esi
   _DWORD *v7; // edi
 
@@ -96,7 +98,7 @@ int Struct::ZeroInitAndSetup()
 namespace gamemd {
 unsigned char * Struct::Zero3()
 {
-  *this = 0; /*0x4b9bd4*/
+  *(_DWORD *)this = 0; /*0x4b9bd4*/
   this->q004 = 0; /*0x4b9bd6*/
   this->q008 = 0; /*0x4b9bd9*/
   return this; /*0x4b9bdc*/

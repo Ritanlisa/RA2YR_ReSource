@@ -4,6 +4,8 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/ScriptClass_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x6915F0
@@ -32,10 +34,10 @@ int ScriptClass::LoadState(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x691646*/
     {
       AbstractClass::InitVtables(aP0, (int)&aP1); /*0x69164f*/
-      *aP0 = &(void*)(void*)&ScriptClass_vftable; /*0x691654*/
-      aP0[1] = &(void*)(void*)&ScriptClass_vftable; /*0x69165a*/
-      aP0[2] = &(void*)(void*)&ScriptClass_vftable; /*0x691661*/
-      aP0[3] = &(void*)(void*)&ScriptClass_vftable; /*0x691668*/
+      *(void **)aP0 = (void*)&ScriptClass_vftable; /*0x691654*/
+      aP0[1] = (void*)&ScriptClass_vftable; /*0x69165a*/
+      aP0[2] = (void*)&ScriptClass_vftable; /*0x691661*/
+      aP0[3] = (void*)&ScriptClass_vftable; /*0x691668*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP0 + 9); /*0x691678*/
     return 0; /*0x69167d*/

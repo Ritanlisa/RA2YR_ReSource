@@ -14,6 +14,8 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/BulletTypeClass_e4.hpp"
 #include "e4/classes/MixFileClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/Building_e4.hpp"
 
 // 0x436BE0
@@ -22,7 +24,7 @@ unsigned int * BuildingLightClass::FindTarget(CCINIClass * aP1)
 {
   _DWORD *result; // eax
   int v4; // edx
-  int v5; // eax
+  ObjectClass * v5;
   int v6; // ebx
   _DWORD *v7; // esi
   int v8; // eax
@@ -121,10 +123,10 @@ BuildingLightClass * BuildingLightClass::SDDTOR(char a2)
   int v3; // eax
   void *v5; // [esp+4h] [ebp-4h] BYREF
 
-  *(_DWORD *)this = &(void*)(void*)&BuildingLightClass_vftable; /*0x4370c4*/
-  *((_DWORD *)this + 1) = &(void*)(void*)&BuildingLightClass_vftable; /*0x4370ca*/
-  this->vtable3 = &(void*)(void*)&BuildingLightClass_vftable; /*0x4370d1*/
-  this->vtable4 = &(void*)(void*)&BuildingLightClass_vftable; /*0x4370d8*/
+  *(void **)this = (void*)&BuildingLightClass_vftable; /*0x4370c4*/
+  *((_DWORD *)this + 1) = (void*)&BuildingLightClass_vftable; /*0x4370ca*/
+  this->vtable3 = (void*)&BuildingLightClass_vftable; /*0x4370d1*/
+  this->vtable4 = (void*)&BuildingLightClass_vftable; /*0x4370d8*/
   if ( (unsigned __int8)ObjectClass::Undeploy(this) ) /*0x4370df*/
     VectorClass::RemoveItem(&g_GameConfigManager, (int)this); /*0x4370ee*/
   v3 = (*(int (__thiscall **)(int *, void **))(dword_8B4190 + 16))(&dword_8B4190, &this); /*0x437107*/
@@ -148,10 +150,10 @@ BuildingLightClass * BuildingLightClass::SDDTOR(char a2)
 namespace gamemd {
 signed int BuildingLightClass::UpdateOscillation()
 {
-  int v2; // eax
+  void * v2;
   int *v3; // eax
   int GroundHeight; // edi
-  int v5; // eax
+  void * v5;
   int *v6; // ecx
   int v7; // eax
   int v8; // edx
@@ -165,10 +167,10 @@ signed int BuildingLightClass::UpdateOscillation()
   double v16; // st7
   double v17; // st7
   int v18; // eax
-  int v19; // ecx
+  void * v19;
   char v20; // bl
-  signed int result; // eax
-  RulesClass *v22; // ecx
+  void * result;
+  unsigned int v22;
   double v23; // st7
   int v24; // [esp+1Ch] [ebp-18h]
   int v25; // [esp+1Ch] [ebp-18h]

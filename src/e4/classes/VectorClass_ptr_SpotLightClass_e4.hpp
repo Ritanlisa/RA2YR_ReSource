@@ -33,12 +33,12 @@ struct VectorClass_ptr_SpotLightClass {
     unsigned int GetItemIndex(int a2);  // 0x5FFFF0
     int Get(int a2);  // 0x600010
     char Add(int a2);  // 0x600020
-    char Release(int a2, unsigned int * a3);  // 0x600060
+    char Release(int a2,  unsigned int * a3);    // 0x600060
     void Remove();  // 0x600110
     int GetSize(unsigned int * a2);  // 0x600140
     unsigned int GetCapacity(int a2);  // 0x600180
-    char SetCapacity(int a2, unsigned int * a3);  // 0x6001A0
+    char SetCapacity(int a2,  unsigned int * a3);    // 0x6001A0
     int FindItemIndex(unsigned int * a2);  // 0x600250
-    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x600280
+    VectorClass_flat * QueryInterface(unsigned int * Block,  char a2);    // 0x600280
 };
 } // namespace gamemd

@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+
 #include "e4/e4_globals.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/Array_e4.hpp"
@@ -15,6 +16,8 @@
 #include "e4/classes/TechnoClass_e4.hpp"
 #include "e4/classes/Audio_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/AnimClass_e4.hpp"
 
 // 0x413F80
@@ -646,11 +649,11 @@ void* AircraftClass::LoadFromStream(unsigned int * a0, FootClass * aP1)
     if ( v2 ) /*0x41b4d3*/
     {
       FootClass::PostLoadInit(&a0); /*0x41b4dc*/
-      *v2 = &(void*)(void*)&AircraftClass_vftable; /*0x41b4e1*/
-      *v3 = &(void*)(void*)&AircraftClass_vftable; /*0x41b4e7*/
-      v2[2] = &(void*)(void*)&AircraftClass_vftable; /*0x41b4ed*/
-      v2[3] = &(void*)(void*)&AircraftClass_vftable; /*0x41b4f4*/
-      v2[432] = &(void*)(void*)&AircraftClass_vftable; /*0x41b4fb*/
+      *v2 = (void*)&AircraftClass_vftable; /*0x41b4e1*/
+      *v3 = (void*)&AircraftClass_vftable; /*0x41b4e7*/
+      v2[2] = (void*)&AircraftClass_vftable; /*0x41b4ed*/
+      v2[3] = (void*)&AircraftClass_vftable; /*0x41b4f4*/
+      v2[432] = (void*)&AircraftClass_vftable; /*0x41b4fb*/
     }
     v11 = v2[413]; /*0x41b506*/
     if ( v11 != v10 ) /*0x41b50e*/

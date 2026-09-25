@@ -34,12 +34,12 @@ struct VectorClass_ptr_AirstrikeClass {
     unsigned int GetItemIndex(int a2);  // 0x41DE10
     int Get(int a2);  // 0x41DE30
     char Add(int a2);  // 0x41DE40
-    char Release(int a2, unsigned int * a3);  // 0x41DE80
+    char Release(int a2,  unsigned int * a3);    // 0x41DE80
     void Remove();  // 0x41DF30
     int GetSize(unsigned int * a2);  // 0x41DF60
     unsigned int GetCapacity(int a2);  // 0x41DFA0
-    char SetCapacity(int a2, unsigned int * a3);  // 0x41DFC0
+    char SetCapacity(int a2,  unsigned int * a3);    // 0x41DFC0
     int FindItemIndex(unsigned int * a2);  // 0x41E070
-    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x41E0A0
+    VectorClass_flat * QueryInterface(unsigned int * Block,  char a2);    // 0x41E0A0
 };
 } // namespace gamemd

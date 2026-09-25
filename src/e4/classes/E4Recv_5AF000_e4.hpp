@@ -31,6 +31,6 @@ struct E4Recv_5AF000 {
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    void sub_5AF000(ObjectClass * aP1, ObjectClass * aP2);  // 0x5AF000
+    void sub_5AF000(ObjectClass * aP1,  ObjectClass * aP2);    // 0x5AF000
 };
 } // namespace gamemd

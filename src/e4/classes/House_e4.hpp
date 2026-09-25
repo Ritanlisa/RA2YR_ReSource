@@ -24,7 +24,7 @@ struct House {
     unsigned int u32_34;  // 0x34
     unsigned int q038;  // 0x38
     AbstractClass * ptr_40;  // 0x40
-    void * ptr_44;  // 0x44
+    unsigned int q044;  // 0x44
     unsigned int u32_48;  // 0x48
     unsigned char u8_4C;  // 0x4C
     unsigned int q050;  // 0x50
@@ -159,7 +159,7 @@ struct House {
     unsigned int q460;  // 0x460
     AnimClass * ptr_468;  // 0x468
     unsigned int u32_474;  // 0x474
-    TimerStruct * ptr_480;  // 0x480
+    void* ptr_480;  // 0x480
     unsigned int u32_504;  // 0x504
     unsigned int q508;  // 0x508
     void* q520;  // 0x520
@@ -262,7 +262,7 @@ struct House {
     unsigned int q4368;  // 0x4368
     unsigned int q4374;  // 0x4374
     unsigned int q4384;  // 0x4384
-    TimerStruct * q4434;  // 0x4434
+    void* q4434;  // 0x4434
     void* q4464;  // 0x4464
     unsigned char q4468;  // 0x4468
     unsigned int q4740;  // 0x4740
@@ -305,27 +305,15 @@ struct House {
     unsigned char q6298;  // 0x6298
     unsigned int q6408;  // 0x6408
     unsigned char q640C;  // 0x640C
-    unsigned int q044;
-    unsigned int q0704;
-    unsigned int q0706;
-    unsigned int u32_116;
-    unsigned int u32_702;
-    unsigned int u32_C6;
-    unsigned int u32_C8;
-    unsigned int q00C6;
-    unsigned int q00C8;
-    unsigned int q040;
-    unsigned int u32_21D42;
-    unsigned int u32_22684;
 // --- flat members (END) ---
-    void AnnounceUpgrade(IUnknown * aP1);  // 0x47D2B0
-    unsigned int * GetStartCoords(IUnknown * aP1);  // 0x47FB90
+    void AnnounceUpgrade(void* aP1);  // 0x47D2B0
+    unsigned int * GetStartCoords(void* aP1);  // 0x47FB90
     int UpdateHouseAI();  // 0x4FD500
     int IsHumanPlayer();  // 0x50B6F0
     int IsCurrentPlayer();  // 0x50B730
     int ChooseHouseEnemy(BuildingClass * aP1);  // 0x50DB00
     int LookupObject(int a2);  // 0x544BE0
-    bool LoadMapFileData(int a2, char a3);  // 0x544C20
+    bool LoadMapFileData(int a2,  char a3);    // 0x544C20
     void Constructor();  // 0x69E090
     int PowerBeginUpdate(AbstractClass * aP1);  // 0x70C270
 };

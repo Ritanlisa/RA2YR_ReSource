@@ -4,6 +4,7 @@
 namespace gamemd {
 
 struct LinkedList_flat {
+    unsigned int m_Prev;
     unsigned int u32_28;
     unsigned int u32_18;
     unsigned int u32_34;
@@ -19,10 +20,10 @@ struct LinkedList_flat {
     unsigned int Tail;  // 0x4
     LinkClass * ptr_8;  // 0x8
     unsigned char q00C;  // 0xC
-    Pipe * ptr_14;  // 0x14
+    void* ptr_14;  // 0x14
     unsigned char q018;  // 0x18
     unsigned int u32_1C;  // 0x1C
-    Pipe * q020;  // 0x20
+    void* q020;  // 0x20
     void* q028;  // 0x28
     unsigned char q02C;  // 0x2C
     void* q034;  // 0x34
@@ -63,8 +64,7 @@ int * Next();
 int Contains(IUnknown * aP1);
 int Init();
 int Pop();
-int Prepend(int a2);
-int PushFront(IUnknown * aP1);
+int Prepend(int a2);aP1);
 int RemoveNode();
 unsigned int * Attach(int a2);
 unsigned int * FindNext();

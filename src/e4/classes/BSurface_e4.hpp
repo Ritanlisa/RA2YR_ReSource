@@ -7,13 +7,13 @@ namespace gamemd {
 struct BSurface {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
-    void* Width;  // 0x4
+    unsigned int q004;  // 0x4
     int Height;  // 0x8
     bool q00A;  // 0xA
     bool q00B;  // 0xB
     int LockCount;  // 0xC
     int BytesPerPixel;  // 0x10
-    unsigned char* Buffer;  // 0x14
+    _DWORD q014;  // 0x14
     unsigned int u32_18;  // 0x18
     unsigned char q01C;  // 0x1C
     unsigned int u32_20;  // 0x20
@@ -898,14 +898,16 @@ struct BSurface {
     unsigned char q6994;  // 0x6994
     unsigned char q7000;  // 0x7000
     unsigned char q7004;  // 0x7004
+    unsigned int Buffer;
+    unsigned int Width;
     unsigned int Width0;
     unsigned int Width1;
     unsigned int q0188;
     unsigned int u32_4;
 // --- flat members (END) ---
-    unsigned int * Construct(int a2, int a3, int a4, int a5);  // 0x410CE0
+    unsigned int * Construct(int a2,  int a3,  int a4,  int a5);    // 0x410CE0
     bool CreateTripleBuffer();  // 0x7B8C60
-    unsigned int * ConstructEx(int a2, int a3, int a4, int a5);  // 0x7BC970
+    unsigned int * ConstructEx(int a2,  int a3,  int a4,  int a5);    // 0x7BC970
     int GetBytesPerPixel();  // 0x411630
     int GetPitch();  // 0x411640
     BSurface * ScalarDtor(char a2);  // 0x411650

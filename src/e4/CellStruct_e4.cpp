@@ -2,6 +2,8 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/CellStruct_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x42D510
@@ -56,7 +58,7 @@ IUnknown * CellStruct::Sub(IUnknown * v6, IUnknown * aP2)
 namespace gamemd {
 unsigned short * CellStruct::Set(short a2, short a3)
 {
-  *this = a2; /*0x42d47c*/
+  *(_DWORD *)this = a2; /*0x42d47c*/
   *(this + 1) = a3; /*0x42d47f*/
   return this; /*0x42d483*/
 }

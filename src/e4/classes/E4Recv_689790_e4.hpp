@@ -12,6 +12,6 @@ struct E4Recv_689790 {
     unsigned int q2128;  // 0x2128
     unsigned int u32_7220;  // 0x7220
 // --- flat members (END) ---
-    char sub_689790(const char * a2, unsigned char * a3);  // 0x689790
+    char sub_689790(const char * a2,  unsigned char * a3);    // 0x689790
 };
 } // namespace gamemd

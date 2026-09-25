@@ -7,6 +7,8 @@
 #include "e4/classes/Vector_e4.hpp"
 #include "e4/classes/Movement_e4.hpp"
 #include "e4/classes/MovieClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x5B20F0
@@ -77,7 +79,7 @@ long long Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, I
   double v73[3]; // [esp+28h] [ebp-80h] BYREF
   double *v74; // [esp+44h] [ebp-64h] BYREF
   double v75[2]; // [esp+48h] [ebp-60h] BYREF
-  double v76; // [esp+58h] [ebp-50h] BYREF
+  unsigned int v76;
   double v77; // [esp+60h] [ebp-48h] BYREF
   double v78; // [esp+68h] [ebp-40h]
   double v79; // [esp+78h] [ebp-30h] BYREF
@@ -278,7 +280,7 @@ long long Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, I
       {
         IDA_LOWORD(v75[0]) = 0x4000; /*0x5b2875*/
         IDA_LOWORD(v76) = *a5 / 2; /*0x5b2888*/
-        Movement::CompareAbsCoords(v75, &v76); /*0x5b289a*/
+        Movement::CompareAbsCoords(v75, &v76, unsigned int a5); /*0x5b289a*/
       }
       else
       {
@@ -295,7 +297,7 @@ long long Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, I
         }
         else
         {
-          IDA_LOWORD(v71) = (_WORD)v71 - IDA_LOWORD(v73[0]); /*0x5b285f*/
+          IDA_LOWORD(v71, unsigned int a5) = (_WORD)v71 - IDA_LOWORD(v73[0]); /*0x5b285f*/
         }
       }
     }

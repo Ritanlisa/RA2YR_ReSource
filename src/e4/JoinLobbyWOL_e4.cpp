@@ -7,6 +7,8 @@
 #include "e4/classes/Process_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/Power_e4.hpp"
 
 // 0x72BE80
@@ -31,7 +33,7 @@ char sub_72BE80()
 namespace gamemd {
 void sub_72BED0()
 {
-  void *v0; // esi
+  unsigned int v0;
 
   if ( byte_B0FD39 ) /*0x72beda*/
   {

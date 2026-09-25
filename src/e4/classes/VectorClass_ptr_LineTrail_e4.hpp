@@ -30,10 +30,10 @@ struct VectorClass_ptr_LineTrail {
 // --- flat members (END) ---
     int Get(int a2);  // 0x556F00
     char Add(int a2);  // 0x556F10
-    char Release(int a2, unsigned int * a3);  // 0x556F50
+    char Release(int a2,  unsigned int * a3);    // 0x556F50
     void Remove();  // 0x557000
     int GetSize(unsigned int * a2);  // 0x557030
     unsigned int GetCapacity(int a2);  // 0x557070
-    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x557170
+    VectorClass_flat * QueryInterface(unsigned int * Block,  char a2);    // 0x557170
 };
 } // namespace gamemd

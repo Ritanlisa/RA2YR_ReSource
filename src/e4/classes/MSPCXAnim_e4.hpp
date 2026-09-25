@@ -25,7 +25,7 @@ struct MSPCXAnim {
     unsigned char q02D;  // 0x2D
     void* q030;  // 0x30
     unsigned char q034;  // 0x34
-    CampaignScore* q038;  // 0x38
+    void* q038;  // 0x38
     bool q039;  // 0x39
     ObjectClass* q03C;  // 0x3C
     unsigned char q03D;  // 0x3D
@@ -59,7 +59,7 @@ struct MSPCXAnim {
     unsigned char q124;  // 0x124
     unsigned char q128;  // 0x128
     MPCooperative* q130;  // 0x130
-    CampaignScore* q134;  // 0x134
+    void* q134;  // 0x134
     unsigned char q138;  // 0x138
     unsigned char q13C;  // 0x13C
     unsigned char q144;  // 0x144

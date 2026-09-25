@@ -159,6 +159,18 @@ double XSurface::Fill(...) { return 0; }
 double XSurface::GetPixel(...) { return 0; }
 double XSurface::SetPixel(...) { return 0; }
 
+void* CellCoord::To_CellObj(void* a1, void* a2) { return nullptr; }
+
+double Math::RoundToInt(...) { return 0; }
+double Math::Sqrt(...) { return 0; }
+double Math::ArcTan(...) { return 0; }
+double Math::Sin(...) { return 0; }
+double Math::Cos(...) { return 0; }
+double Math::Hypotenuse2D(...) { return 0; }
+
+double Math::DistSq2D(...) { return 0; }
+double Math::Dist2D(...) { return 0; }
+
 } // namespace gamemd
 
 // GENERATED static-varargs stubs for C2597 no-def methods
@@ -166,6 +178,8 @@ double XSurface::SetPixel(...) { return 0; }
 // fidelity as the tree-era return-0 stubs these replace.
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 namespace gamemd {
@@ -180,6 +194,70 @@ double MouseClass::CalcConfiningRect(...) { return 0; }
 double Network::ShutdownInterface(...) { return 0; }
 double PowerClass::getDrain(...) { return 0; }
 double TacticalClass::BuildCommandBar(...) { return 0; }
+
+void* CellCoord::To_CellObj(void* a1, void* a2) { return nullptr; }
+
+double Math::RoundToInt(...) { return 0; }
+double Math::Sqrt(...) { return 0; }
+double Math::ArcTan(...) { return 0; }
+double Math::Sin(...) { return 0; }
+double Math::Cos(...) { return 0; }
+double Math::Hypotenuse2D(...) { return 0; }
+
+double Math::DistSq2D(...) { return 0; }
+double Math::Dist2D(...) { return 0; }
+
+} // namespace gamemd
+
+// GENERATED static-varargs stubs for C2597 no-def methods
+// (fix_member_static_calls.py). INTERIM: return 0 — same
+// fidelity as the tree-era return-0 stubs these replace.
+#include <cstdint>
+#include "e4/e4_globals.hpp"
+#include "e4/e4_protos.h"
+
+namespace gamemd {
+
+double BuildingClass::Deactivate(...) { return 0; }
+double BuildingClass::IsBeingRepairedOrCaptured(...) { return 0; }
+double BuildingClass::PowerOff(...) { return 0; }
+double CellClass::UpdateAnimations(...) { return 0; }
+double MouseClass::Construct(...) { return 0; }
+double Movement::CompareAbsCoords(...) { return 0; }
+double ObjectClass::StepCleanup(...) { return 0; }
+double ScoreScreen::LoadAudio(...) { return 0; }
+double TechnoClass::SetFocus(...) { return 0; }
+double TechnoTypeClass::HasVoiceResponse(...) { return 0; }
+
+} // namespace gamemd
+
+// GENERATED static-varargs stubs for C2597 no-def methods
+// (fix_member_static_calls.py). INTERIM: return 0 — same
+// fidelity as the tree-era return-0 stubs these replace.
+#include <cstdint>
+#include "e4/e4_globals.hpp"
+#include "e4/e4_protos.h"
+
+namespace gamemd {
+
+double BuildingClass::GetProductionFrame(...) { return 0; }
+double BuildingClass::GetType(...) { return 0; }
+double CellClass::InBounds(...) { return 0; }
+double CellClass::InMapDataRange(...) { return 0; }
+double TiberiumClass::Grow(...) { return 0; }
+
+} // namespace gamemd
+
+// GENERATED static-varargs stubs for C2597 no-def methods
+// (fix_member_static_calls.py). INTERIM: return 0 — same
+// fidelity as the tree-era return-0 stubs these replace.
+#include <cstdint>
+#include "e4/e4_globals.hpp"
+#include "e4/e4_protos.h"
+
+namespace gamemd {
+
+double CCFileClass::GetSize(...) { return 0; }
 
 } // namespace gamemd
 

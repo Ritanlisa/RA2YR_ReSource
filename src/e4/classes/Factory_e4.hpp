@@ -22,7 +22,7 @@ struct Factory {
     void* q5188;  // 0x5188
     void* q5520;  // 0x5520
 // --- flat members (END) ---
-    char GetLinkedIndex(DynamicVector * aP1);  // 0x663D60
+    int GetLinkedIndex(DynamicVector * aP1);  // 0x663D60
     int FindExitCellByName();  // 0x523C90
     int IdleHandler();  // 0x731CD0
 };

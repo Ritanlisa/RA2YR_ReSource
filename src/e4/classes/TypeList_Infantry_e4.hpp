@@ -8,8 +8,8 @@ struct TypeList_Infantry {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
     void* Items;  // 0x4
-    void* Capacity;  // 0x8
-    void* IsInitialized;  // 0xC
+    unsigned int ;  // 0x8
+    unsigned int q00C;  // 0xC
     unsigned char IsAllocated;  // 0xD
     unsigned char q00E;  // 0xE
     void* Count;  // 0x10
@@ -28,6 +28,7 @@ struct TypeList_Infantry {
     unsigned char q048;  // 0x48
     unsigned char q050;  // 0x50
     unsigned int q054;  // 0x54
+    unsigned int IsInitialized;
 // --- flat members (END) ---
     void ddtor();  // 0x5128A0
     unsigned int GetIndex(int a2);  // 0x5128D0
@@ -35,7 +36,7 @@ struct TypeList_Infantry {
     TypeList_flat * Add(char a2);  // 0x5129F0
     char AddRef(int a2);  // 0x512C40
     DynamicVector * Constructor(char a2);  // 0x512E20
-    char Remove(int a2, unsigned int * a3);  // 0x512E70
+    char Remove(int a2,  unsigned int * a3);    // 0x512E70
     int GetSize(unsigned int * a2);  // 0x512F70
     DynamicVector * Constructor_0(char a2);  // 0x5131F0
     DynamicVector * Constructor_1(char a2);  // 0x5135C0

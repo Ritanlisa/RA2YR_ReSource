@@ -28,8 +28,8 @@ struct Particle {
     unsigned int q100;  // 0x100
     void* q108;  // 0x108
     void* q10C;  // 0x10C
-    void* q110;  // 0x110
-    void* q114;  // 0x114
+    unsigned int q110;  // 0x110
+    unsigned int q114;  // 0x114
     unsigned int StateAIAdvance;  // 0x118
     unsigned char q11C;  // 0x11C
     unsigned int q120;  // 0x120
@@ -39,7 +39,7 @@ struct Particle {
     unsigned int StartStateAI;  // 0x12E
     unsigned int Translucency;  // 0x12F
     unsigned char q133;  // 0x133
-    void* q150;  // 0x150
+    unsigned int q150;  // 0x150
     void* q154;  // 0x154
     void* q158;  // 0x158
     unsigned char q15C;  // 0x15C
@@ -385,6 +385,6 @@ struct Particle {
     unsigned char q6C18;  // 0x6C18
     unsigned char q6C1C;  // 0x6C1C
 // --- flat members (END) ---
-    int Init(AbstractClass * aP1, TechnoClass * aP2, IUnknown * aP3, TechnoClass * aP4, InfantryClass * aP5, int a7, AbstractClass * aP7);  // 0x4664C0
+    int Init(AbstractClass * aP1, TechnoClass * aP2, IUnknown * aP3, TechnoClass * aP4, InfantryClass * aP5, int a7, AbstractClass * aP7);    // 0x4664C0
 };
 } // namespace gamemd

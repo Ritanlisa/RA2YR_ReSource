@@ -44,7 +44,7 @@ struct AbstractClassVector {
     unsigned char q100;  // 0x100
 // --- flat members (END) ---
     int Read(unsigned int * a2);
-    unsigned int * Construct(IUnknown * aP1, IUnknown * aP2);
+    unsigned int * Construct(void* aP1, void* aP2);
     unsigned int Write(int a2);
     static double ddtor(...);  // C2597 interim stub
 };

@@ -21,7 +21,7 @@ struct MSVQAnim {
     unsigned char q02C;  // 0x2C
     void* q030;  // 0x30
     unsigned int q034;  // 0x34
-    CampaignScore* q038;  // 0x38
+    void* q038;  // 0x38
     ObjectClass* q03C;  // 0x3C
     unsigned char q040;  // 0x40
     unsigned char q044;  // 0x44
@@ -60,7 +60,7 @@ struct MSVQAnim {
     unsigned char q124;  // 0x124
     unsigned char q128;  // 0x128
     MPCooperative* q130;  // 0x130
-    CampaignScore* q134;  // 0x134
+    void* q134;  // 0x134
     unsigned char q138;  // 0x138
     unsigned char q13C;  // 0x13C
     unsigned char q144;  // 0x144

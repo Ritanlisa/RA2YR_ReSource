@@ -41,22 +41,26 @@
 #include "e4/classes/E4Recv_491D90_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/JumpjetLocomotion_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/TimerClass_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x4A0190
 namespace gamemd {
 int EnumConnectionsClass::_vt06(unsigned int * a1, unsigned int * a2)
 {
-  _DWORD *v3; // edi
+  void** v3;
   int v4; // eax
   void *v5; // eax
-  int v6; // eax
+  void * v6;
   int v7; // ecx
   _DWORD *v8; // edx
   _DWORD *v9; // eax
   int v10; // eax
   int i; // esi
-  int v12; // eax
+  void * v12;
   int v13; // [esp-Ch] [ebp-14h]
 
   if ( !a2 ) /*0x4a019a*/
@@ -68,7 +72,7 @@ int EnumConnectionsClass::_vt06(unsigned int * a1, unsigned int * a2)
   v3[3] = 0; /*0x4a01cb*/
   *((_BYTE *)v3 + 16) = 1; /*0x4a01ce*/
   *((_BYTE *)v3 + 17) = 0; /*0x4a01d2*/
-  v3[1] = &(void*)(void*)&VectorClass_tagCONNECTDATA_vftable; /*0x4a01d5*/
+  v3[1] = (void*)&VectorClass_tagCONNECTDATA_vftable; /*0x4a01d5*/
   if ( v3 + 1 != a1 + 1 ) /*0x4a01db*/
   {
     VectorClass::ClearAndFree2((int)(v3 + 1)); /*0x4a01df*/
@@ -104,11 +108,11 @@ int EnumConnectionsClass::_vt06(unsigned int * a1, unsigned int * a2)
   }
   v3[5] = a1[5]; /*0x4a0249*/
   v3[6] = a1[6]; /*0x4a024f*/
-  v3[1] = &(void*)(void*)&DynamicVectorClass_tagCONNECTDATA_vftable; /*0x4a0252*/
+  v3[1] = (void*)&DynamicVectorClass_tagCONNECTDATA_vftable; /*0x4a0252*/
   v10 = a1[7]; /*0x4a0258*/
   v3[8] = 0; /*0x4a025b*/
   v3[7] = v10; /*0x4a025e*/
-  *v3 = &(void*)(void*)&EnumConnectionsClass_vftable; /*0x4a0261*/
+  *(void **)v3 = (void*)&EnumConnectionsClass_vftable; /*0x4a0261*/
   for ( i = 0; i < v3[5]; ++i ) /*0x4a026e*/
   {
     v13 = *(_DWORD *)(v3[2] + 8 * i); /*0x4a0276*/
@@ -140,7 +144,7 @@ unsigned int * E4Recv_4A02B0::sub_4A02B0(unsigned int * a2)
   this->M12 = 0; /*0x4a02c4*/
   this->M16 = 1; /*0x4a02c7*/
   this->M17 = 0; /*0x4a02cb*/
-  this->M4 = &(void*)(void*)&VectorClass_tagCONNECTDATA_vftable; /*0x4a02ce*/
+  this->M4 = (void*)&VectorClass_tagCONNECTDATA_vftable; /*0x4a02ce*/
   if ( &this->M4 != a2 ) /*0x4a02d4*/
   {
     VectorClass::ClearAndFree2((int)(this + 1)); /*0x4a02d8*/
@@ -177,10 +181,10 @@ unsigned int * E4Recv_4A02B0::sub_4A02B0(unsigned int * a2)
   }
   *((_DWORD *)v3 + 4) = a2[4]; /*0x4a0331*/
   *((_DWORD *)v3 + 5) = a2[5]; /*0x4a0337*/
-  *(_DWORD *)v3 = &(void*)(void*)&DynamicVectorClass_tagCONNECTDATA_vftable; /*0x4a033a*/
+  *(void **)v3 = (void*)&DynamicVectorClass_tagCONNECTDATA_vftable; /*0x4a033a*/
   this->M28 = 0; /*0x4a0340*/
   this->q020 = 0; /*0x4a0343*/
-  *this = &(void*)(void*)&EnumConnectionsClass_vftable; /*0x4a0346*/
+  *(void **)this = (void*)&EnumConnectionsClass_vftable; /*0x4a0346*/
   for ( i = 0; i < this->M20; ++i ) /*0x4a0353*/
   {
     v12 = *(_DWORD *)(this->M8 + 8 * i); /*0x4a035b*/
@@ -209,7 +213,7 @@ unsigned int * E4Recv_4A0380::sub_4A0380(unsigned int * a2)
   this->M12 = 0; /*0x4a0397*/
   this->M16 = 1; /*0x4a039a*/
   this->M17 = 0; /*0x4a039e*/
-  this->M4 = &(void*)(void*)&VectorClass_tagCONNECTDATA_vftable; /*0x4a03a1*/
+  this->M4 = (void*)&VectorClass_tagCONNECTDATA_vftable; /*0x4a03a1*/
   if ( &this->M4 != a2 + 1 ) /*0x4a03a7*/
   {
     VectorClass::ClearAndFree2((int)(this + 1)); /*0x4a03ab*/
@@ -246,11 +250,11 @@ unsigned int * E4Recv_4A0380::sub_4A0380(unsigned int * a2)
   }
   *((_DWORD *)v3 + 4) = a2[5]; /*0x4a040c*/
   *((_DWORD *)v3 + 5) = a2[6]; /*0x4a0412*/
-  *(_DWORD *)v3 = &(void*)(void*)&DynamicVectorClass_tagCONNECTDATA_vftable; /*0x4a0415*/
+  *(void **)v3 = (void*)&DynamicVectorClass_tagCONNECTDATA_vftable; /*0x4a0415*/
   v10 = a2[7]; /*0x4a041b*/
   this->q020 = 0; /*0x4a041e*/
   this->M28 = v10; /*0x4a0421*/
-  *this = &(void*)(void*)&EnumConnectionsClass_vftable; /*0x4a0424*/
+  *(void **)this = (void*)&EnumConnectionsClass_vftable; /*0x4a0424*/
   for ( i = 0; i < this->M20; ++i ) /*0x4a0431*/
   {
     v13 = *(_DWORD *)(this->M8 + 8 * i); /*0x4a0439*/
@@ -281,7 +285,7 @@ int EnumConnectionPointsClass::_vt06(unsigned int * a1, unsigned int * a2)
   v3[5] = 0; /*0x4a0b64*/
   *((_BYTE *)v3 + 24) = 1; /*0x4a0b67*/
   *((_BYTE *)v3 + 25) = 0; /*0x4a0b6b*/
-  v3[3] = &(void*)(void*)&VectorClass_IConnectionPoint___vftable; /*0x4a0b6e*/
+  v3[3] = (void*)&VectorClass_IConnectionPoint___vftable; /*0x4a0b6e*/
   if ( v3 + 3 != a1 + 3 ) /*0x4a0b74*/
   {
     VectorClass::CleanupTyped((int)(v3 + 3)); /*0x4a0b78*/
@@ -315,8 +319,8 @@ int EnumConnectionPointsClass::_vt06(unsigned int * a1, unsigned int * a2)
   }
   v3[7] = a1[7]; /*0x4a0bcb*/
   v3[8] = a1[8]; /*0x4a0bd1*/
-  v3[3] = &(void*)(void*)&DynamicVectorClass_IConnectionPoint___vftable; /*0x4a0bd4*/
-  *v3 = &(void*)(void*)&EnumConnectionPointsClass_vftable; /*0x4a0bda*/
+  v3[3] = (void*)&DynamicVectorClass_IConnectionPoint___vftable; /*0x4a0bd4*/
+  *v3 = (void*)&EnumConnectionPointsClass_vftable; /*0x4a0bda*/
   for ( i = 0; i < v3[7]; ++i ) /*0x4a0be7*/
   {
     v9 = *(_DWORD *)(v3[4] + 4 * i); /*0x4a0bef*/
@@ -379,7 +383,7 @@ AbstractClass * * DrawSidebarCreditsTimer()
                                   0,
                                   0x4108u);
       *(_BYTE *)(a1 + 8) = 0; /*0x4a24e3*/
-      *(_BYTE *)(a1 + 10) = 0; /*0x4a24e7*/
+      *(_BYTE *, unsigned int a1)(a1 + 10) = 0; /*0x4a24e7*/
     }
     else
     {
@@ -389,7 +393,7 @@ AbstractClass * * DrawSidebarCreditsTimer()
           v12 = *(_DWORD *)g_RulesClass_Instance->CameraRange; /*0x4a2526*/
         else
           v12 = *(_DWORD *)(g_RulesClass_Instance->CameraRange + 4); /*0x4a2530*/
-        PlayVocClass(v12, 0x2000, 0.5, 0); /*0x4a2533*/
+        PlayVocClass(v12, 0x2000, 0.5, 0, unsigned int a1); /*0x4a2533*/
       }
       UI_Draw_6D0E60(&MapClass_Instance); /*0x4a253d*/
       v17 = v5 / 2; /*0x4a254e*/
@@ -500,7 +504,7 @@ void * E4Recv_4A3270::sub_4A3270(int a2, int a3, int a4)
   _DWORD v8[25]; // [esp+10h] [ebp-64h] BYREF
 
   v5 = this + 28; /*0x4a3287*/
-  *this = a4; /*0x4a328f*/
+  *(_DWORD *)this = a4; /*0x4a328f*/
   *(this + 28) = 0; /*0x4a3291*/
   *(this + 29) = 0; /*0x4a3297*/
   memset(this + 1, 0, 0x6Cu); /*0x4a329e*/
@@ -575,7 +579,7 @@ AbstractClass * * LoadFileSHP(ConvertClass * aP0, ConvertClass * aP1)
       {
   LABEL_6:
         *aP1 = !v7; /*0x4a392f*/
-        v8[0] = &(void*)(void*)&CCFileClass_vftable; /*0x4a3938*/
+        v8[0] = (void*)&CCFileClass_vftable; /*0x4a3938*/
         v9[3] = 0; /*0x4a3940*/
         Vector::Clear(v9); /*0x4a3948*/
         v8[0] = &off_7E1668; /*0x4a3951*/
@@ -618,7 +622,7 @@ AbstractClass * * FileClass_LoadToBuffer(char ** a1, bool * a2)
       {
   LABEL_6:
         *a2 = !v7; /*0x4a39d6*/
-        v8[0] = &(void*)(void*)&CCFileClass_vftable; /*0x4a39df*/
+        v8[0] = (void*)&CCFileClass_vftable; /*0x4a39df*/
         v9[3] = 0; /*0x4a39e7*/
         Vector::Clear((int)v9); /*0x4a39ef*/
         v8[0] = &off_7E1668; /*0x4a39f8*/
@@ -846,12 +850,12 @@ unsigned int * sub_4A4900(unsigned int a1, unsigned int a2, unsigned int a3, uns
   if ( !g_lpDirectDraw7 ) /*0x4a4915*/
     return 0; /*0x4a4ab2*/
   sub_4A4E30(&v16, 0, 0); /*0x4a4923*/
-  v16 = &(void*)(void*)&DynamicVectorClass__DDSURFACEDESC___vftable; /*0x4a4937*/
+  v16 = (void*)&DynamicVectorClass__DDSURFACEDESC___vftable; /*0x4a4937*/
   v20 = 10; /*0x4a493f*/
   v19 = 0; /*0x4a4947*/
   if ( g_lpDirectDraw7->lpVtbl->EnumDisplayModes(g_lpDirectDraw7, 0, 0, &v16, (LPDDENUMMODESCALLBACK)sub_4A4850) || !v19 ) /*0x4a4967*/
   {
-    v16 = &(void*)(void*)&VectorClass__DDSURFACEDESC___vftable; /*0x4a4a93*/
+    v16 = (void*)&VectorClass__DDSURFACEDESC___vftable; /*0x4a4a93*/
     if ( Block && IDA_BYTE1(v18) ) /*0x4a4aa5*/
       RA2_OPDEL(Block); /*0x4a4aa8*/
     return 0; /*0x4a4aa8*/
@@ -886,7 +890,7 @@ unsigned int * sub_4A4900(unsigned int a1, unsigned int a2, unsigned int a3, uns
   {
   LABEL_13:
     RA2_OPDEL(v5); /*0x4a4a1a*/
-    v16 = &(void*)(void*)&VectorClass__DDSURFACEDESC___vftable; /*0x4a4a28*/
+    v16 = (void*)&VectorClass__DDSURFACEDESC___vftable; /*0x4a4a28*/
     if ( Block && IDA_BYTE1(v18) ) /*0x4a4a38*/
     {
       RA2_OPDEL(Block); /*0x4a4a3b*/
@@ -895,7 +899,7 @@ unsigned int * sub_4A4900(unsigned int a1, unsigned int a2, unsigned int a3, uns
     return 0; /*0x4a4a38*/
   }
   qsort(v5, NumOfElements, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)sub_4A48C0); /*0x4a4a5b*/
-  v16 = &(void*)(void*)&VectorClass__DDSURFACEDESC___vftable; /*0x4a4a69*/
+  v16 = (void*)&VectorClass__DDSURFACEDESC___vftable; /*0x4a4a69*/
   if ( Block && IDA_BYTE1(v18) ) /*0x4a4a79*/
     RA2_OPDEL(Block); /*0x4a4a7c*/
   return v5; /*0x4a4a45*/
@@ -2708,7 +2712,7 @@ void E4Recv_4A0450::sub_4A0450()
   int v6; // [esp-4h] [ebp-10h]
 
   v2 = 0; /*0x4a0457*/
-  for ( *this = &(void*)(void*)&EnumConnectionsClass_vftable; v2 < this->q014; ++v2 ) /*0x4a0464*/
+  for ( *this = (void*)&EnumConnectionsClass_vftable; v2 < this->q014; ++v2 ) /*0x4a0464*/
   {
     v6 = *(_DWORD *)(this->q008 + 8 * v2); /*0x4a046c*/
     (*(void (__stdcall **)(int))(*(_DWORD *)v6 + 8))(v6); /*0x4a046f*/
@@ -2717,7 +2721,7 @@ void E4Recv_4A0450::sub_4A0450()
   v4 = &this->q004; /*0x4a047d*/
   (*(void (__thiscall **)(_DWORD *))(v3 + 12))(v4); /*0x4a0482*/
   v5 = (void *)v4[1]; /*0x4a0485*/
-  *v4 = &(void*)(void*)&VectorClass_tagCONNECTDATA_vftable; /*0x4a0488*/
+  *v4 = (void*)&VectorClass_tagCONNECTDATA_vftable; /*0x4a0488*/
   if ( v5 && *((_BYTE *)v4 + 13) ) /*0x4a0492*/
   {
     RA2_OPDEL(v5); /*0x4a0498*/
@@ -2738,13 +2742,13 @@ void E4Recv_4A08D0::sub_4A08D0()
   void *v5; // eax
 
   v2 = this->q018; /*0x4a08d4*/
-  *this = &(void*)(void*)&ConnectionPointClass_vftable; /*0x4a08d7*/
+  *this = (void*)&ConnectionPointClass_vftable; /*0x4a08d7*/
   (*(void (__stdcall **)(int))(*(_DWORD *)v2 + 8))(v2); /*0x4a08e0*/
   v3 = this->q01C; /*0x4a08e3*/
   v4 = &this->q01C; /*0x4a08e6*/
   (*(void (__thiscall **)(_DWORD *))(v3 + 12))(v4); /*0x4a08eb*/
   v5 = (void *)v4[1]; /*0x4a08ee*/
-  *v4 = &(void*)(void*)&VectorClass_tagCONNECTDATA_vftable; /*0x4a08f5*/
+  *v4 = (void*)&VectorClass_tagCONNECTDATA_vftable; /*0x4a08f5*/
   if ( v5 && *((_BYTE *)v4 + 13) ) /*0x4a08fd*/
   {
     RA2_OPDEL(v5); /*0x4a0903*/
@@ -2774,7 +2778,7 @@ unsigned int * E4Recv_4A0CE0::sub_4A0CE0(unsigned int * a2)
   this->q014 = 0; /*0x4a0d00*/
   this->q018 = 1; /*0x4a0d03*/
   this->q064 = 0; /*0x4a0d07*/
-  this->q00C = &(void*)(void*)&VectorClass_IConnectionPoint___vftable; /*0x4a0d0a*/
+  this->q00C = (void*)&VectorClass_IConnectionPoint___vftable; /*0x4a0d0a*/
   if ( &this->q00C != a2 + 3 ) /*0x4a0d10*/
   {
     VectorClass::CleanupTyped((int)(this + 3)); /*0x4a0d14*/
@@ -2808,8 +2812,8 @@ unsigned int * E4Recv_4A0CE0::sub_4A0CE0(unsigned int * a2)
   }
   this->q01C = a2[7]; /*0x4a0d67*/
   this->q020 = a2[8]; /*0x4a0d6d*/
-  *v3 = &(void*)(void*)&DynamicVectorClass_IConnectionPoint___vftable; /*0x4a0d70*/
-  *this = &(void*)(void*)&EnumConnectionPointsClass_vftable; /*0x4a0d76*/
+  *v3 = (void*)&DynamicVectorClass_IConnectionPoint___vftable; /*0x4a0d70*/
+  *this = (void*)&EnumConnectionPointsClass_vftable; /*0x4a0d76*/
   for ( i = 0; i < this->q01C; ++i ) /*0x4a0d83*/
   {
     v10 = *(_DWORD *)(this->q010 + 4 * i); /*0x4a0d8b*/
@@ -2830,7 +2834,7 @@ void E4Recv_4A0DB0::sub_4A0DB0()
   int v6; // [esp-4h] [ebp-10h]
 
   v2 = 0; /*0x4a0db7*/
-  for ( *this = &(void*)(void*)&EnumConnectionPointsClass_vftable; v2 < this->q01C; ++v2 ) /*0x4a0dc4*/
+  for ( *this = (void*)&EnumConnectionPointsClass_vftable; v2 < this->q01C; ++v2 ) /*0x4a0dc4*/
   {
     v6 = *(_DWORD *)(this->q010 + 4 * v2); /*0x4a0dcc*/
     (*(void (__stdcall **)(int))(*(_DWORD *)v6 + 8))(v6); /*0x4a0dcf*/
@@ -2839,7 +2843,7 @@ void E4Recv_4A0DB0::sub_4A0DB0()
   v4 = &this->q00C; /*0x4a0ddd*/
   (*(void (__thiscall **)(_DWORD *))(v3 + 12))(v4); /*0x4a0de2*/
   v5 = (void *)v4[1]; /*0x4a0de5*/
-  *v4 = &(void*)(void*)&VectorClass_IConnectionPoint___vftable; /*0x4a0de8*/
+  *v4 = (void*)&VectorClass_IConnectionPoint___vftable; /*0x4a0de8*/
   if ( v5 && *((_BYTE *)v4 + 13) ) /*0x4a0df2*/
   {
     RA2_OPDEL(v5); /*0x4a0df8*/
@@ -3157,8 +3161,8 @@ void E4Recv_4A2880::sub_4A2880()
   ULONG v6; // [esp+0h] [ebp-8h]
 
   v2 = this->q008; /*0x4a2886*/
-  *(_DWORD *)this = &(void*)(void*)&CStreamClass_vftable; /*0x4a2889*/
-  this->vtable2 = &(void*)(void*)&CStreamClass_vftable; /*0x4a2891*/
+  *(_DWORD *)this = (void*)&CStreamClass_vftable; /*0x4a2889*/
+  this->vtable2 = (void*)&CStreamClass_vftable; /*0x4a2891*/
   if ( v2 ) /*0x4a2898*/
   {
     if ( this->q044 && this->q014 > 0 && this->q008 ) /*0x4a28aa*/
@@ -3540,7 +3544,7 @@ unsigned int * E4Recv_4A4E30::sub_4A4E30(int a2, int a3)
   *(this + 2) = a2; /*0x4a4e3e*/
   *((_BYTE *)this + 12) = 1; /*0x4a4e41*/
   *((_BYTE *)this + 13) = 0; /*0x4a4e45*/
-  *this = &(void*)(void*)&VectorClass__DDSURFACEDESC___vftable; /*0x4a4e48*/
+  *this = (void*)&VectorClass__DDSURFACEDESC___vftable; /*0x4a4e48*/
   if ( a2 ) /*0x4a4e4e*/
   {
     if ( a3 ) /*0x4a4e56*/
@@ -3993,7 +3997,7 @@ int sub_4A6C70()
   dword_8A0210 = 0; /*0x4a6c7c*/
   byte_8A0214 = 1; /*0x4a6c81*/
   byte_8A0215 = 0; /*0x4a6c88*/
-  dword_8A0208 = (int)&(void*)(void*)&DynamicVectorClass_DiskLaserClass___vftable; /*0x4a6c8d*/
+  dword_8A0208 = (int)&DynamicVectorClass_DiskLaserClass___vftable; /*0x4a6c8d*/
   dword_8A021C = 10; /*0x4a6c97*/
   dword_8A0218 = 0; /*0x4a6ca1*/
   return atexit(sub_4A6CB0); /*0x4a6cac*/
@@ -4004,7 +4008,7 @@ int sub_4A6C70()
 namespace gamemd {
 void sub_4A6CB0()
 {
-  dword_8A0208 = (int)&(void*)(void*)&VectorClass_DiskLaserClass___vftable; /*0x4a6cb8*/
+  dword_8A0208 = (int)&VectorClass_DiskLaserClass___vftable; /*0x4a6cb8*/
   if ( dword_8A020C && byte_8A0215 ) /*0x4a6ccc*/
   {
     RA2_OPDEL(dword_8A020C); /*0x4a6ccf*/
@@ -4193,8 +4197,8 @@ int sub_4A8630()
     *v0 = 0; /*0x4a863f*/
     *((_BYTE *)v0 + 4) = 1; /*0x4a8641*/
     *((_BYTE *)v0 + 5) = 0; /*0x4a8645*/
-    *(v0 - 2) = &(void*)(void*)&VectorClass_ObjectClass___vftable; /*0x4a8648*/
-    *(v0 - 2) = &(void*)(void*)&DynamicVectorClass_ObjectClass___vftable; /*0x4a864f*/
+    *(v0 - 2) = (void*)&VectorClass_ObjectClass___vftable; /*0x4a8648*/
+    *(v0 - 2) = (void*)&DynamicVectorClass_ObjectClass___vftable; /*0x4a864f*/
     v0[3] = 10; /*0x4a8656*/
     v0[2] = 0; /*0x4a865d*/
     *(v0 - 2) = &off_7E6060; /*0x4a8660*/
@@ -4223,7 +4227,7 @@ void sub_4A8680()
     {
       v2 = *(void **)(v0 - 24); /*0x4a86a3*/
       v0 -= 24; /*0x4a86a6*/
-      *(_DWORD *)(v0 - 4) = &(void*)(void*)&VectorClass_ObjectClass___vftable; /*0x4a86ab*/
+      *(_DWORD *)(v0 - 4) = (void*)&VectorClass_ObjectClass___vftable; /*0x4a86ab*/
       if ( v2 ) /*0x4a86b2*/
       {
         if ( *(_BYTE *)(v0 + 9) ) /*0x4a86b4*/
@@ -4246,7 +4250,7 @@ namespace gamemd {
 int sub_4A86E0()
 {
   GadgetClass::Construct(dword_8A06F8, 0, 0, 0, 0, 127, 1); /*0x4a86f1*/
-  dword_8A06F8[0] = (int)&(void*)(void*)&DisplayClass_TacticalClass_vftable; /*0x4a86fb*/
+  dword_8A06F8[0] = (int)&DisplayClass_TacticalClass_vftable; /*0x4a86fb*/
   return atexit(sub_4A8710); /*0x4a870b*/
 }
 } // namespace gamemd

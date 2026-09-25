@@ -13,6 +13,6 @@ struct E4Recv_578640 {
     unsigned int q1408;  // 0x1408
     unsigned int q5128;  // 0x5128
 // --- flat members (END) ---
-    bool sub_578640(unsigned int * a2, short * a3, char a4);  // 0x578640
+    bool sub_578640(unsigned int * a2,  short * a3,  char a4);    // 0x578640
 };
 } // namespace gamemd

@@ -19,6 +19,8 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/Mouse_e4.hpp"
 #include "e4/classes/RadarClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/Tactical_e4.hpp"
 
 // 0x688380
@@ -48,7 +50,7 @@ void * Multiplayer::FindStartPositions()
   int v22; // [esp+1Ch] [ebp-24h]
   int v23; // [esp+20h] [ebp-20h] BYREF
   int v24; // [esp+24h] [ebp-1Ch] BYREF
-  void **v25; // [esp+28h] [ebp-18h] BYREF
+  void* v25;
   void *Block; // [esp+2Ch] [ebp-14h]
   int v27; // [esp+30h] [ebp-10h]
   char v28; // [esp+35h] [ebp-Bh]
@@ -61,7 +63,7 @@ void * Multiplayer::FindStartPositions()
   VectorClass::CellConstructor(&v25, 0, 0); /*0x688395*/
   v3 = (char *)g_ScenarioClass_Instance; /*0x68839a*/
   v4 = 10; /*0x6883a0*/
-  v25 = &(void*)(void*)&DynamicVectorClass_Cell_vftable; /*0x6883a5*/
+  v25 = (void*)&DynamicVectorClass_Cell_vftable; /*0x6883a5*/
   v30 = 10; /*0x6883ad*/
   v29 = 0; /*0x6883b1*/
   v5 = 0; /*0x6883b5*/
@@ -178,10 +180,10 @@ void * Multiplayer::FindStartPositions()
   v2[2] = 0; /*0x688654*/
   *((_BYTE *)v2 + 13) = 0; /*0x688657*/
   *((_BYTE *)v2 + 12) = 1; /*0x68865f*/
-  *v2 = &(void*)(void*)&VectorClass_Cell_vftable; /*0x688663*/
+  *(void **)v2 = (void*)&VectorClass_Cell_vftable; /*0x688663*/
   Multiplayer::CopyDataArray(&v25); /*0x688669*/
-  *v2 = &(void*)(void*)&DynamicVectorClass_Cell_vftable; /*0x68866e*/
-  v25 = &(void*)(void*)&VectorClass_Cell_vftable; /*0x688674*/
+  *(void **)v2 = (void*)&DynamicVectorClass_Cell_vftable; /*0x68866e*/
+  v25 = (void*)&VectorClass_Cell_vftable; /*0x688674*/
   v16 = Block; /*0x68867c*/
   v17 = v30; /*0x688684*/
   v2[4] = v29; /*0x688688*/

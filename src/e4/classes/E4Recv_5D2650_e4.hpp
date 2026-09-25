@@ -19,6 +19,6 @@ struct E4Recv_5D2650 {
     unsigned int vtable23;
     unsigned int vtable26;
 // --- flat members (END) ---
-    void sub_5D2650(void * a2, int a3);  // 0x5D2650
+    void sub_5D2650(void * a2,  int a3);    // 0x5D2650
 };
 } // namespace gamemd

@@ -23,7 +23,10 @@
 #include "e4/classes/SidebarClass_e4.hpp"
 #include "e4/classes/TacticalClass_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/TeamClass_e4.hpp"
 
 // 0x560BF0
 namespace gamemd {
@@ -40,7 +43,7 @@ char ChangeVideoMode(ObjectClass * xRight, int yBottom)
   HWND i; // esi
   BOOL v14; // [esp+4h] [ebp-78h]
   LONG WindowLongA; // [esp+8h] [ebp-74h]
-  __int16 v16; // [esp+1Ch] [ebp-60h]
+  XSurface * v16;
   int v17; // [esp+20h] [ebp-5Ch]
   __int16 v18; // [esp+24h] [ebp-58h]
   int v19; // [esp+28h] [ebp-54h]
@@ -247,7 +250,7 @@ void VideoSettingsDialogProc(INIClass * aP0, unsigned int a2, WPARAM wParam, uns
   _DWORD *WindowLongA; // esi
   HWND v6; // ebx
   _DWORD *v7; // eax
-  LPARAM v8; // esi
+  _DWORD * v8;
   int *v9; // ebp
   int v10; // eax
   int v11; // ecx
@@ -374,8 +377,8 @@ void sub_568140(int * a1, int a2)
   int v12; // esi
   int v13; // ebp
   unsigned int v14; // eax
-  _DWORD *v15; // ecx
-  _DWORD *v16; // ecx
+  unsigned int v15;
+  unsigned int v16;
   _DWORD *v17; // ecx
   _DWORD *v18; // eax
   __int16 v19; // [esp+14h] [ebp-8h]

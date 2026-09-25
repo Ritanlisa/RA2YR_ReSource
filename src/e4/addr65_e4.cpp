@@ -30,6 +30,8 @@
 #include "e4/classes/VeterancyStruct_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/ConvertClass_e4.hpp"
 
 // 0x650A90
@@ -103,7 +105,7 @@ int Trigger_AllocateLog(int a1)
     while ( v4 < 8 );
     int v10 = DataGlobal_87F788;
     int v11 = g_BuildingProductionState + g_AircraftClassCount + g_BuildingClass_Count + g_HouseClass_BuildState;
-    int * v12 = DataGlobal_8A0370;
+    unsigned int v12 =
     do
     {
       int v13 = *v12;
@@ -383,7 +385,7 @@ int Trigger_AllocateLog(int a1)
       v15 += 104;
       ++v52;
     }
-    int * v61 = DataGlobal_8A0370;
+    unsigned int v61 =
     v83[187] = v78;
     _DWORD * v62 = v83 + 193;
     _DWORD * v82 = v83 + 193;
@@ -957,7 +959,7 @@ int sub_65B160()
   dword_B04BD8 = 0; /*0x65b16c*/
   byte_B04BDC = 1; /*0x65b171*/
   byte_B04BDD = 0; /*0x65b178*/
-  RadSiteClass_Array = (int)&(void*)(void*)&DynamicVectorClass_RadSiteClass___vftable; /*0x65b17d*/
+  RadSiteClass_Array = (int)&DynamicVectorClass_RadSiteClass___vftable; /*0x65b17d*/
   dword_B04BE4 = 10; /*0x65b187*/
   dword_B04BE0 = 0; /*0x65b191*/
   return atexit(sub_65B1A0); /*0x65b19c*/
@@ -967,7 +969,7 @@ int sub_65B160()
 namespace gamemd {
 void sub_65B1A0()
 {
-  RadSiteClass_Array = (int)&(void*)(void*)&VectorClass_RadSiteClass___vftable; /*0x65b1a8*/
+  RadSiteClass_Array = (int)&VectorClass_RadSiteClass___vftable; /*0x65b1a8*/
   if ( dword_B04BD4 && byte_B04BDD ) /*0x65b1bc*/
   {
     RA2_OPDEL(dword_B04BD4); /*0x65b1bf*/
@@ -1089,7 +1091,7 @@ void * RAMFileClass::nullsub_0_10(char a2)
   char v3; // al
 
   v3 = this->u8_1D; /*0x65c5a3*/
-  *(_DWORD *)this = &(void*)(void*)&RAMFileClass_vftable; /*0x65c5a6*/
+  *(_DWORD *)this = (void*)&RAMFileClass_vftable; /*0x65c5a6*/
   this->q01C = 0; /*0x65c5ae*/
   if ( v3 ) /*0x65c5b2*/
   {
@@ -1097,7 +1099,7 @@ void * RAMFileClass::nullsub_0_10(char a2)
     this->ptr_8 = 0; /*0x65c5c0*/
     this->u8_1D = 0; /*0x65c5c7*/
   }
-  *(_DWORD *)this = &(void*)(void*)&FileClass_vftable; /*0x65c5cf*/
+  *(_DWORD *)this = (void*)&FileClass_vftable; /*0x65c5cf*/
   if ( (a2 & 1) != 0 ) /*0x65c5d7*/
     RA2_OPDEL(); /*0x65c5da*/
   return this; /*0x65c5e4*/
@@ -1211,7 +1213,7 @@ unsigned int int sub_65D510(int a1, const char * a2, int a3, unsigned char * a4)
   v10[2] = 0; /*0x65d523*/
   v10[3] = a1; /*0x65d527*/
   v11 = 0; /*0x65d52b*/
-  v10[0] = &(void*)(void*)&FileStraw_vftable; /*0x65d530*/
+  v10[0] = (void*)&FileStraw_vftable; /*0x65d530*/
   if ( a3 && a2 ) /*0x65d53c*/
   {
     v6 = 0; /*0x65d54b*/
@@ -2625,7 +2627,7 @@ namespace gamemd {
 int sub_652870()
 {
   GadgetClass::Construct(dword_B04A10, 0, 0, 0, 0, 159, 1); /*0x652884*/
-  dword_B04A10[0] = (int)&(void*)(void*)&RadarClass_RTacticalClass_vftable; /*0x65288e*/
+  dword_B04A10[0] = (int)&RadarClass_RTacticalClass_vftable; /*0x65288e*/
   return atexit(sub_6528A0); /*0x65289e*/
 }
 } // namespace gamemd
@@ -2846,7 +2848,7 @@ int sub_659090()
   dword_B04A68 = 0; /*0x65909c*/
   byte_B04A6C = 1; /*0x6590a1*/
   byte_B04A6D = 0; /*0x6590a8*/
-  RadBeam_Array = (int)&(void*)(void*)&DynamicVectorClass_RadBeam___vftable; /*0x6590ad*/
+  RadBeam_Array = (int)&DynamicVectorClass_RadBeam___vftable; /*0x6590ad*/
   dword_B04A74 = 10; /*0x6590b7*/
   dword_B04A70 = 0; /*0x6590c1*/
   return atexit(sub_6590D0); /*0x6590cc*/
@@ -2857,7 +2859,7 @@ int sub_659090()
 namespace gamemd {
 void sub_6590D0()
 {
-  RadBeam_Array = (int)&(void*)(void*)&VectorClass_RadBeam___vftable; /*0x6590d8*/
+  RadBeam_Array = (int)&VectorClass_RadBeam___vftable; /*0x6590d8*/
   if ( dword_B04A64 && byte_B04A6D ) /*0x6590ec*/
   {
     RA2_OPDEL(dword_B04A64); /*0x6590ef*/
@@ -3806,7 +3808,7 @@ void sub_65F9F0()
 {
   if ( (byte_B04D28 & 1) == 0 ) /*0x65f9fa*/
   {
-    dword_B04DA8 = (int)&(void*)(void*)&VectorClass_RadarEventClass___vftable; /*0x65f9fe*/
+    dword_B04DA8 = (int)&VectorClass_RadarEventClass___vftable; /*0x65f9fe*/
     byte_B04D28 |= 1u; /*0x65fa11*/
     if ( g_TriggerPool ) /*0x65fa17*/
     {

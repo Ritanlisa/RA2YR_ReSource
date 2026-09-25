@@ -5,6 +5,8 @@
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/WideString_e4.hpp"
 #include "e4/classes/LinkedList_flat_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x779690
@@ -13,7 +15,7 @@ void * E4Recv_779690::LoadAccountInfoWOL_Load(ReferenceCounted * aP1, ObjectClas
 {
   this->M4 = 0; /*0x779695*/
   this->M8 = 0; /*0x779698*/
-  *(_DWORD *)this = &(void*)(void*)&ReferenceCounted_vftable; /*0x7796a3*/
+  *(void **)this = (void*)&ReferenceCounted_vftable; /*0x7796a3*/
   String::AssignFromPtr((char **)this + 3, aP1); /*0x7796a9*/
   this->M16 = aP2; /*0x7796ba*/
   this->q018 = aP4; /*0x7796c1*/
@@ -28,7 +30,7 @@ void * E4Recv_779690::LoadAccountInfoWOL_Load(ReferenceCounted * aP1, ObjectClas
   this->M56 = aP12; /*0x779700*/
   WideString::AssignFromPtr((wchar_t **)this + 15, aP14); /*0x779703*/
   WideString::AssignFromPtr((wchar_t **)&this->M40, aP13); /*0x779710*/
-  *(_DWORD *)this = &(void*)(void*)&PlayerProfile_vftable; /*0x779715*/
+  *(void **)this = (void*)&PlayerProfile_vftable; /*0x779715*/
   return this; /*0x77971d*/
 }
 } // namespace gamemd

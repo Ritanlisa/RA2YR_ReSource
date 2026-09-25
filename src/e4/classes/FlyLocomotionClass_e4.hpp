@@ -19,11 +19,11 @@ struct FlyLocomotionClass {
     unsigned int MovingDestination;  // 0x1C
     bool q01D;  // 0x1D
     unsigned int u32_20;  // 0x20
-    TechnoClass * q024;  // 0x24
+    unsigned int q024;  // 0x24
     unsigned int XYZ2;  // 0x28
     bool q02B;  // 0x2B
     unsigned int u32_2C;  // 0x2C
-    ObjectClass * ptr_30;  // 0x30
+    unsigned int q030;  // 0x30
     unsigned char q031;  // 0x31
     unsigned int q033;  // 0x33
     bool HasMoveOrder;  // 0x34
@@ -38,7 +38,7 @@ struct FlyLocomotionClass {
     double CurrentSpeed;  // 0x44
     ObjectClass * q048;  // 0x48
     bool q04A;  // 0x4A
-    char IsTakingOff[1];  // 0x4C
+    unsigned int IsTakingOff;  // 0x4C
     bool IsLanding;  // 0x4D
     bool WasLanding;  // 0x4E
     unsigned char q04F;  // 0x4F
@@ -55,8 +55,8 @@ struct FlyLocomotionClass {
     double q060;  // 0x60
     char q064[4];  // 0x64
     double q068;  // 0x68
-    IUnknown* q06C;  // 0x6C
-    IUnknown* q070;  // 0x70
+    void* q06C;  // 0x6C
+    void* q070;  // 0x70
     bool q074;  // 0x74
     bool q078;  // 0x78
     unsigned char q07C;  // 0x7C
@@ -68,7 +68,7 @@ struct FlyLocomotionClass {
     unsigned char q090;  // 0x90
     bool q094;  // 0x94
     Coord* q09C;  // 0x9C
-    IUnknown* q0A4;  // 0xA4
+    void* q0A4;  // 0xA4
     unsigned char q0A9;  // 0xA9
     unsigned char q0AA;  // 0xAA
     unsigned int q0AB;  // 0xAB
@@ -85,9 +85,9 @@ struct FlyLocomotionClass {
     unsigned char q0FB;  // 0xFB
     ObjectClass* q0FC;  // 0xFC
     unsigned char q0FF;  // 0xFF
-    IUnknown* q100;  // 0x100
+    void* q100;  // 0x100
     unsigned int q104;  // 0x104
-    IUnknown* q108;  // 0x108
+    void* q108;  // 0x108
     ObjectClass * q114;  // 0x114
     AbstractClass* q118;  // 0x118
     bool q120;  // 0x120
@@ -103,7 +103,7 @@ struct FlyLocomotionClass {
     AbstractClass* q158;  // 0x158
     Coord* q15C;  // 0x15C
     AbstractClass* q160;  // 0x160
-    IUnknown* q164;  // 0x164
+    void* q164;  // 0x164
     unsigned int q168;  // 0x168
     bool q16B;  // 0x16B
     void* q16C;  // 0x16C
@@ -112,7 +112,7 @@ struct FlyLocomotionClass {
     unsigned char q170;  // 0x170
     unsigned char q174;  // 0x174
     char q180;  // 0x180
-    IUnknown* q184;  // 0x184
+    void* q184;  // 0x184
     unsigned int q188;  // 0x188
     bool q1A1;  // 0x1A1
     unsigned int q1A2;  // 0x1A2
@@ -134,13 +134,13 @@ struct FlyLocomotionClass {
     OverlayTypeClass* q248;  // 0x248
     bool q258;  // 0x258
     unsigned int q260;  // 0x260
-    IUnknown* q264;  // 0x264
-    IUnknown* q274;  // 0x274
+    void* q264;  // 0x264
+    void* q274;  // 0x274
     bool q278;  // 0x278
     AbstractClass* q280;  // 0x280
     unsigned char q284;  // 0x284
     unsigned char q288;  // 0x288
-    IUnknown* q2A4;  // 0x2A4
+    void* q2A4;  // 0x2A4
     unsigned char q2A8;  // 0x2A8
     AbstractClass* q2B4;  // 0x2B4
     unsigned int q300;  // 0x300
@@ -201,7 +201,7 @@ struct FlyLocomotionClass {
     OverlayTypeClass* q584;  // 0x584
     unsigned int q588;  // 0x588
     ObjectClass* q594;  // 0x594
-    IUnknown* q598;  // 0x598
+    void* q598;  // 0x598
     bool q600;  // 0x600
     unsigned char q604;  // 0x604
     unsigned int q608;  // 0x608
@@ -209,7 +209,7 @@ struct FlyLocomotionClass {
     unsigned char q610;  // 0x610
     unsigned int q620;  // 0x620
     unsigned char q624;  // 0x624
-    IUnknown* q628;  // 0x628
+    void* q628;  // 0x628
     unsigned char q62C;  // 0x62C
     ObjectClass * q630;  // 0x630
     AbstractClass* q640;  // 0x640
@@ -243,7 +243,7 @@ struct FlyLocomotionClass {
     unsigned char q844;  // 0x844
     unsigned char q848;  // 0x848
     AbstractClass* q850;  // 0x850
-    IUnknown* q854;  // 0x854
+    void* q854;  // 0x854
     unsigned char q858;  // 0x858
     unsigned char q85C;  // 0x85C
     unsigned int q864;  // 0x864
@@ -301,7 +301,7 @@ struct FlyLocomotionClass {
     unsigned int q1444;  // 0x1444
     int q1464;  // 0x1464
     unsigned int q14EB;  // 0x14EB
-    IUnknown* q14EC;  // 0x14EC
+    void* q14EC;  // 0x14EC
     unsigned int q14ED;  // 0x14ED
     unsigned int q14EE;  // 0x14EE
     unsigned int q14EF;  // 0x14EF
@@ -313,7 +313,7 @@ struct FlyLocomotionClass {
     unsigned char q1540;  // 0x1540
     unsigned int q1544;  // 0x1544
     unsigned char q1548;  // 0x1548
-    IUnknown* q1554;  // 0x1554
+    void* q1554;  // 0x1554
     unsigned char q1558;  // 0x1558
     unsigned int q1568;  // 0x1568
     unsigned char q1580;  // 0x1580
@@ -332,7 +332,7 @@ struct FlyLocomotionClass {
     unsigned char q1628;  // 0x1628
     unsigned int q1634;  // 0x1634
     unsigned char q1638;  // 0x1638
-    IUnknown* q1654;  // 0x1654
+    void* q1654;  // 0x1654
     unsigned char q1658;  // 0x1658
     unsigned int q1660;  // 0x1660
     unsigned char q1664;  // 0x1664
@@ -397,7 +397,7 @@ struct FlyLocomotionClass {
     unsigned char q5158;  // 0x5158
     ObjectClass* q5160;  // 0x5160
     unsigned int q5168;  // 0x5168
-    IUnknown* q5170;  // 0x5170
+    void* q5170;  // 0x5170
     unsigned int q5188;  // 0x5188
     int q5220;  // 0x5220
     unsigned int q5270;  // 0x5270
@@ -419,13 +419,13 @@ struct FlyLocomotionClass {
     unsigned int q5444;  // 0x5444
     unsigned char q5448;  // 0x5448
     unsigned char q544C;  // 0x544C
-    IUnknown* q5460;  // 0x5460
+    void* q5460;  // 0x5460
     unsigned char q5464;  // 0x5464
     unsigned char q5468;  // 0x5468
     unsigned int q5480;  // 0x5480
     unsigned char q5484;  // 0x5484
     unsigned char q5488;  // 0x5488
-    IUnknown* q5494;  // 0x5494
+    void* q5494;  // 0x5494
     unsigned char q5498;  // 0x5498
     unsigned char q549C;  // 0x549C
     unsigned char q54A0;  // 0x54A0
@@ -469,13 +469,13 @@ struct FlyLocomotionClass {
     AudioController* q5750;  // 0x5750
     unsigned char q5754;  // 0x5754
     unsigned char q5758;  // 0x5758
-    IUnknown* q5774;  // 0x5774
+    void* q5774;  // 0x5774
     unsigned char q5778;  // 0x5778
     unsigned char q577C;  // 0x577C
-    TimerStruct * ptr_5788;  // 0x5788
+    void* ptr_5788;  // 0x5788
     unsigned char q578C;  // 0x578C
     unsigned char q5790;  // 0x5790
-    IUnknown* q5798;  // 0x5798
+    void* q5798;  // 0x5798
     unsigned char q579C;  // 0x579C
     unsigned char q57A0;  // 0x57A0
     int q5884;  // 0x5884
@@ -502,6 +502,7 @@ struct FlyLocomotionClass {
     Coord* q6408;  // 0x6408
     unsigned char q640C;  // 0x640C
     unsigned char q6410;  // 0x6410
+    void* ptr_30;
 // --- flat members (END) ---
     FlyLocomotionClass * ProcessMove(char a2);
     int BeginMove(int * a1, int * a2);

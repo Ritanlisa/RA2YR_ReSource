@@ -7,6 +7,8 @@
 #include "e4/classes/HashTable_flat_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/CoordStruct_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x610570

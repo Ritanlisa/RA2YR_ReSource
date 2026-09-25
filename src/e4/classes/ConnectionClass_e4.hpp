@@ -20,13 +20,13 @@ struct ConnectionClass {
     void* q024;  // 0x24
     void* q028;  // 0x28
     TechnoTypeClass* q02C;  // 0x2C
-    CampaignScore* q030;  // 0x30
+    void* q030;  // 0x30
     unsigned char q034;  // 0x34
     void* q038;  // 0x38
     unsigned char q03C;  // 0x3C
     AbstractClass* q040;  // 0x40
     TechnoTypeClass* q044;  // 0x44
-    CampaignScore* q048;  // 0x48
+    void* q048;  // 0x48
     unsigned char q04C;  // 0x4C
     void* q050;  // 0x50
     void* q054;  // 0x54
@@ -46,7 +46,7 @@ struct ConnectionClass {
     TechnoTypeClass* q104;  // 0x104
     unsigned char q108;  // 0x108
     unsigned char q10C;  // 0x10C
-    CampaignScore* q114;  // 0x114
+    void* q114;  // 0x114
     unsigned char q118;  // 0x118
     unsigned char q11C;  // 0x11C
     unsigned char q124;  // 0x124
@@ -59,6 +59,9 @@ struct ConnectionClass {
     unsigned char q148;  // 0x148
     unsigned char q150;  // 0x150
     unsigned char q154;  // 0x154
+    unsigned int PlayerIndex0;
+    unsigned int PlayerIndex1;
+    unsigned int PlayerIndex2;
     unsigned int PlayerIndex3;
     unsigned int PlayerIndex4;
     unsigned int PlayerIndex5;
@@ -66,9 +69,6 @@ struct ConnectionClass {
     unsigned int PlayerIndex7;
     unsigned int PlayerIndex8;
     unsigned int queueSendPacket;
-    unsigned int PlayerIndex0;
-    unsigned int PlayerIndex1;
-    unsigned int PlayerIndex2;
 // --- flat members (END) ---
     AbstractClass * * sendAck(AnimClass * aP1, AnimClass * aP2, AnimClass * aP3, AnimClass * aP4);
     int StubReturnFalse();

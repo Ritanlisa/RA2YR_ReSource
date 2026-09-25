@@ -20,6 +20,6 @@ struct E4Recv_74BBA0 {
     unsigned int q1584;  // 0x1584
     unsigned int q5508;  // 0x5508
 // --- flat members (END) ---
-    char * sub_74BBA0(int a2, int a3);  // 0x74BBA0
+    char * sub_74BBA0(int a2,  int a3);    // 0x74BBA0
 };
 } // namespace gamemd

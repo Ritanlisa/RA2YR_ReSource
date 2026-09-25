@@ -12,13 +12,15 @@
 #include "e4/classes/CommandClass_e4.hpp"
 #include "e4/classes/HashTable_flat_e4.hpp"
 #include "e4/classes/Mouse_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x629210
 namespace gamemd {
 int ParasiteClass::Constructor()
 {
-  int v3; // eax
+  ParasiteClass * v3;
 
   AbstractClass::Constructor(); /*0x629213*/
   this->q02C = g_CurrentFrame; /*0x62921f*/
@@ -26,10 +28,10 @@ int ParasiteClass::Constructor()
   g_CurrentFrame = g_CurrentFrame; /*0x629225*/
   this->ParasiteClass_field_40 = 0; /*0x62922b*/
   this->u32_38 = g_CurrentFrame; /*0x62922e*/
-  *(_DWORD *)this = &(void*)(void*)&ParasiteClass_vftable; /*0x629231*/
-  this->vtable2 = &(void*)(void*)&ParasiteClass_vftable; /*0x629237*/
-  this->vtable3 = &(void*)(void*)&ParasiteClass_vftable; /*0x62923e*/
-  this->vtable4 = &(void*)(void*)&ParasiteClass_vftable; /*0x629245*/
+  *(void **)this = (void*)&ParasiteClass_vftable; /*0x629231*/
+  this->vtable2 = (void*)&ParasiteClass_vftable; /*0x629237*/
+  this->vtable3 = (void*)&ParasiteClass_vftable; /*0x62923e*/
+  this->vtable4 = (void*)&ParasiteClass_vftable; /*0x629245*/
   if ( dword_AC4920 < dword_AC4918 /*0x62927e*/
     || (byte_AC491D || !dword_AC4918)
     && dword_AC4924 > 0
@@ -49,7 +51,7 @@ int ParasiteClass::Constructor()
 namespace gamemd {
 ParasiteClass::ParasiteClass(TechnoClass * aP1)
 {
-  int v4; // eax
+  ParasiteClass * v4;
   int v6; // [esp+8h] [ebp-8h]
 
   AbstractClass::Constructor(); /*0x6292b6*/
@@ -57,10 +59,10 @@ ParasiteClass::ParasiteClass(TechnoClass * aP1)
   this->ParasiteClass_field_34 = 0; /*0x6292c9*/
   this->u32_38 = g_CurrentFrame; /*0x6292d2*/
   this->ParasiteClass_field_40 = 0; /*0x6292d5*/
-  *(_DWORD *)this = &(void*)(void*)&ParasiteClass_vftable; /*0x6292d8*/
-  this->vtable2 = &(void*)(void*)&ParasiteClass_vftable; /*0x6292de*/
-  this->vtable3 = &(void*)(void*)&ParasiteClass_vftable; /*0x6292e5*/
-  this->vtable4 = &(void*)(void*)&ParasiteClass_vftable; /*0x6292ec*/
+  *(void **)this = (void*)&ParasiteClass_vftable; /*0x6292d8*/
+  this->vtable2 = (void*)&ParasiteClass_vftable; /*0x6292de*/
+  this->vtable3 = (void*)&ParasiteClass_vftable; /*0x6292e5*/
+  this->vtable4 = (void*)&ParasiteClass_vftable; /*0x6292ec*/
   this->creationFrame = aP1; /*0x6292f3*/
   this->q028 = 0; /*0x6292f6*/
   this->u32_38 = g_CurrentFrame; /*0x629303*/
@@ -94,7 +96,7 @@ ParasiteClass::ParasiteClass(TechnoClass * aP1)
 namespace gamemd {
 int ParasiteClass::Attach(int * a2)
 {
-  int v3; // eax
+  IUnknown * v3;
   int v4; // eax
   int v5; // edx
 
@@ -129,7 +131,7 @@ void ParasiteClass::DeploySquad()
   void *v12; // edi
   void **v13; // eax
   void **v14; // eax
-  int v15; // eax
+  ParasiteClass * v15;
   int v16; // eax
   int v17; // ebx
   double v18; // st7
@@ -143,7 +145,7 @@ void ParasiteClass::DeploySquad()
   int v26; // eax
   _BYTE *v27; // edi
   int v28; // eax
-  int v29; // ecx
+  IUnknown * v29;
   int v30; // eax
   _DWORD *v31; // edx
   int v32; // ecx
@@ -151,7 +153,7 @@ void ParasiteClass::DeploySquad()
   _DWORD *v34; // edi
   int v35; // ecx
   int v36; // ebp
-  int v37; // ecx
+  void * v37;
   int v38; // eax
   int v39; // [esp-4h] [ebp-6Ch]
   double v40; // [esp+10h] [ebp-58h]
@@ -575,7 +577,7 @@ AbstractClass * * ParasiteClass::TryInfect(unsigned int * a2)
   _DWORD *v11; // eax
   _DWORD *v12; // edi
   int v13; // ebx
-  int v14; // [esp+1Ch] [ebp-10h] BYREF
+  ParasiteClass * v14;
   int v15; // [esp+20h] [ebp-Ch] BYREF
   int v16; // [esp+24h] [ebp-8h]
   int v17; // [esp+28h] [ebp-4h]
@@ -702,10 +704,10 @@ void * ParasiteClass::UpdateParasite(char a2)
   _DWORD *v7; // [esp+8h] [ebp-4h] BYREF
 
   v3 = *(&this->vtable27); /*0x62af77*/
-  *this = &(void*)(void*)&ParasiteClass_vftable; /*0x62af7a*/
-  this->vtable2 = &(void*)(void*)&ParasiteClass_vftable; /*0x62af82*/
-  this->vtable3 = &(void*)(void*)&ParasiteClass_vftable; /*0x62af89*/
-  this->vtable4 = &(void*)(void*)&ParasiteClass_vftable; /*0x62af90*/
+  *this = (void*)&ParasiteClass_vftable; /*0x62af7a*/
+  this->vtable2 = (void*)&ParasiteClass_vftable; /*0x62af82*/
+  this->vtable3 = (void*)&ParasiteClass_vftable; /*0x62af89*/
+  this->vtable4 = (void*)&ParasiteClass_vftable; /*0x62af90*/
   *(&this->vtable29) = 0; /*0x62af97*/
   *(&this->vtable30) = 0; /*0x62af9a*/
   *(&this->vtable28) = 0; /*0x62af9d*/
@@ -1072,10 +1074,10 @@ int ParasiteClass::LoadParasite(int * a0, AbstractClass * aP1)
       a0[11] = (int)v4; /*0x6295e8*/
       a0[14] = (int)g_CurrentFrame; /*0x6295f0*/
       a0[16] = 0; /*0x6295f3*/
-      *a0 = (int)&(void*)(void*)&ParasiteClass_vftable; /*0x6295fa*/
-      a0[1] = (int)&(void*)(void*)&ParasiteClass_vftable; /*0x629600*/
-      a0[2] = (int)&(void*)(void*)&ParasiteClass_vftable; /*0x629607*/
-      a0[3] = (int)&(void*)(void*)&ParasiteClass_vftable; /*0x62960e*/
+      *a0 = (int)&ParasiteClass_vftable; /*0x6295fa*/
+      a0[1] = (int)&ParasiteClass_vftable; /*0x629600*/
+      a0[2] = (int)&ParasiteClass_vftable; /*0x629607*/
+      a0[3] = (int)&ParasiteClass_vftable; /*0x62960e*/
     }
     if ( a0[17] /*0x629657*/
       && (g_BuildingTypeInstanceCount < dword_B0F5C0

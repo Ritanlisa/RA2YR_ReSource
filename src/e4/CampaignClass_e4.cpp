@@ -12,21 +12,23 @@
 #include "e4/classes/Node_flat_e4.hpp"
 #include "e4/classes/CampaignProperties_WorldDominationTour_22_e4.hpp"
 #include "e4/classes/VectorClass_flat_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x46CB60
 namespace gamemd {
 CampaignClass::CampaignClass(ObjectClass * aP1)
 {
-  int v3; // eax
+  CampaignClass * v3;
 
   AbstractTypeClass::Constructor(aP1); /*0x46cb68*/
-  *(_DWORD *)this = &(void*)(void*)&CampaignClass_vftable; /*0x46cb70*/
+  *(void **)this = (void*)&CampaignClass_vftable; /*0x46cb70*/
   this->q098 = -1; /*0x46cb76*/
   this->q29C = -1; /*0x46cb7c*/
-  this->vtable2 = &(void*)(void*)&CampaignClass_vftable; /*0x46cb82*/
-  this->vtable3 = &(void*)(void*)&CampaignClass_vftable; /*0x46cb89*/
-  this->vtable4 = &(void*)(void*)&CampaignClass_vftable; /*0x46cb90*/
+  this->vtable2 = (void*)&CampaignClass_vftable; /*0x46cb82*/
+  this->vtable3 = (void*)&CampaignClass_vftable; /*0x46cb89*/
+  this->vtable4 = (void*)&CampaignClass_vftable; /*0x46cb90*/
   if ( g_UnitTypeInitState < dword_A83D00 /*0x46cbcc*/
     || (byte_A83D05 || !dword_A83D00)
     && dword_A83D0C > 0
@@ -52,7 +54,7 @@ int CampaignClass::LoadFromINIList()
   unsigned __int8 *StringByIndex; // eax
   int v5; // esi
   void *v6; // esi
-  int v7; // eax
+  void * v7;
   int i; // [esp+8h] [ebp-24h]
   char Source[32]; // [esp+Ch] [ebp-20h] BYREF
 
@@ -85,10 +87,10 @@ int CampaignClass::LoadFromINIList()
         AbstractTypeClass::Constructor((int)v6, Source); /*0x46ceb5*/
         *((_DWORD *)v6 + 38) = -1; /*0x46ceba*/
         *((_DWORD *)v6 + 167) = -1; /*0x46cec0*/
-        *(_DWORD *)v6 = &(void*)(void*)&CampaignClass_vftable; /*0x46cec6*/
-        *((_DWORD *)v6 + 1) = &(void*)(void*)&CampaignClass_vftable; /*0x46cecc*/
-        *((_DWORD *)v6 + 2) = &(void*)(void*)&CampaignClass_vftable; /*0x46ced3*/
-        *((_DWORD *)v6 + 3) = &(void*)(void*)&CampaignClass_vftable; /*0x46ceda*/
+        *(void **)v6 = (void*)&CampaignClass_vftable; /*0x46cec6*/
+        *((_DWORD *)v6 + 1) = (void*)&CampaignClass_vftable; /*0x46cecc*/
+        *((_DWORD *)v6 + 2) = (void*)&CampaignClass_vftable; /*0x46ced3*/
+        *((_DWORD *)v6 + 3) = (void*)&CampaignClass_vftable; /*0x46ceda*/
         if ( g_UnitTypeInitState < dword_A83D00 /*0x46cf18*/
           || (byte_A83D05 || !dword_A83D00)
           && dword_A83D0C > 0
@@ -129,7 +131,7 @@ AbstractClass * * CampaignClass::SaveProgress()
   char v9; // al
   unsigned __int8 v10; // al
   char v11; // al
-  char v12; // al
+  void * v12;
   char *v13; // edi
   int v14; // esi
   char i; // al
@@ -301,13 +303,13 @@ AbstractClass * * CampaignClass::SaveProgress()
   INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, aScore2, this->u32_64, 0); /*0x49ca3e*/
   INIClass::WriteDigest(v28, (int)v33, 0); /*0x49ca51*/
   CCFileClass::Reset(v33); /*0x49ca5d*/
-  v33[0] = &(void*)(void*)&CCFileClass_vftable; /*0x49ca67*/
+  v33[0] = (void*)&CCFileClass_vftable; /*0x49ca67*/
   v35 = 0; /*0x49ca77*/
   Vector::Clear((int)v34); /*0x49ca7e*/
   v33[0] = &off_7E1668; /*0x49ca8f*/
   BufferIOFileClass::Dtor(v33); /*0x49ca96*/
   HashTable::DestroyHashTableINIClass(v28); /*0x49ca9f*/
-  v36[0] = &(void*)(void*)&CCFileClass_vftable; /*0x49caab*/
+  v36[0] = (void*)&CCFileClass_vftable; /*0x49caab*/
   v38 = 0; /*0x49cab2*/
   Vector::Clear((int)v37); /*0x49cab9*/
   v36[0] = &off_7E1668; /*0x49cac5*/
@@ -342,10 +344,10 @@ int CampaignClass::Write(AbstractTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x46d016*/
     {
       AbstractTypeClass::Init((int)aP0, (int)&aP1); /*0x46d01f*/
-      *aP0 = &(void*)(void*)&CampaignClass_vftable; /*0x46d024*/
-      aP0[1] = &(void*)(void*)&CampaignClass_vftable; /*0x46d02a*/
-      aP0[2] = &(void*)(void*)&CampaignClass_vftable; /*0x46d031*/
-      aP0[3] = &(void*)(void*)&CampaignClass_vftable; /*0x46d038*/
+      *aP0 = (void*)&CampaignClass_vftable; /*0x46d024*/
+      aP0[1] = (void*)&CampaignClass_vftable; /*0x46d02a*/
+      aP0[2] = (void*)&CampaignClass_vftable; /*0x46d031*/
+      aP0[3] = (void*)&CampaignClass_vftable; /*0x46d038*/
     }
     return 0; /*0x46d03f*/
   }
@@ -389,10 +391,10 @@ CampaignClass * CampaignClass::DTOR(char a2)
   int v3; // eax
   void **v5; // [esp+4h] [ebp-4h] BYREF
 
-  *this = &(void*)(void*)&CampaignClass_vftable; /*0x46d096*/
-  *(this + 1) = &(void*)(void*)&CampaignClass_vftable; /*0x46d09c*/
-  *(this + 2) = &(void*)(void*)&CampaignClass_vftable; /*0x46d0a3*/
-  *(this + 3) = &(void*)(void*)&CampaignClass_vftable; /*0x46d0aa*/
+  *this = (void*)&CampaignClass_vftable; /*0x46d096*/
+  *(this + 1) = (void*)&CampaignClass_vftable; /*0x46d09c*/
+  *(this + 2) = (void*)&CampaignClass_vftable; /*0x46d0a3*/
+  *(this + 3) = (void*)&CampaignClass_vftable; /*0x46d0aa*/
   AbstractClass::AnnounceExpiredPointer(1); /*0x46d0b1*/
   v5 = this; /*0x46d0c6*/
   v3 = (*(int (__thiscall **)(int *, void ***))(dword_A83CF8 + 16))(&dword_A83CF8, &v5); /*0x46d0ca*/

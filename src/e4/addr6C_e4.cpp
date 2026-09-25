@@ -32,30 +32,33 @@
 #include "e4/classes/Tactical_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/HouseClass_e4.hpp"
+#include "e4/classes/House_e4.hpp"
 
 // 0x6C6F50
 namespace gamemd {
 int ProcessGameResults(char a1)
 {
-  IUnknown *v2; // esi
+  unsigned int v2;
   char *inited; // eax
-  INIClass *v5; // esi
-  ObjectClass *v8; // esi
-  IUnknown *v11; // esi
+  unsigned int v5;
+  unsigned int v8;
+  unsigned int v11;
   ObjectClass *v19; // esi
   char *eax31; // eax
   IUnknown *v21; // esi
-  IUnknown *v30; // esi
+  unsigned int v30;
   IUnknown *v33; // esi
   IUnknown *v41; // esi
   IUnknown *v44; // esi
   IUnknown *v49; // esi
   IUnknown *v52; // esi
-  HouseClass *v55; // edx
+  IUnknown * v55;
   CampaignScore *v57; // edi
   CampaignScore **ecx71; // ecx
-  IUnknown *v59; // esi
+  unsigned int v59;
   CampaignScore *eax72; // eax
   ObjectClass *v60; // ebx
   ObjectClass *v61; // eax
@@ -1689,7 +1692,7 @@ unsigned int * E4Recv_6C6540::sub_6C6540(int a2, wchar_t * String, int a4, int a
   Buffer::Init(&this->u32_24, 0, 0); /*0x6c656c*/
   this->M48 = 0; /*0x6c657e*/
   this->M52 = a4; /*0x6c6585*/
-  *this = &(void*)(void*)&StaticButtonClass_vftable; /*0x6c6588*/
+  *this = (void*)&StaticButtonClass_vftable; /*0x6c6588*/
   StaticButtonClass::Draw(String, 0); /*0x6c658e*/
   if ( aP3 == -1 || aP4 == -1 ) /*0x6c659b*/
   {
@@ -1881,7 +1884,7 @@ void sub_6C6B60()
 namespace gamemd {
 rc_ptr * E4Recv_6C8840::sub_6C8840(char a2)
 {
-  *this = &(void*)(void*)&rc_ptr_PlayerProfile_vftable; /*0x6c8843*/
+  *this = (void*)&rc_ptr_PlayerProfile_vftable; /*0x6c8843*/
   ComPtr::Release(); /*0x6c8849*/
   if ( (a2 & 1) != 0 ) /*0x6c8853*/
     RA2_OPDEL(); /*0x6c8856*/
@@ -2883,13 +2886,13 @@ namespace gamemd {
 int sub_6CF070()
 {
   sub_6CF8F0(&dword_B0C114, 0, 0); /*0x6cf079*/
-  dword_B0C114 = (int)&(void*)(void*)&DynamicVectorClass_SwizzlePointerClass_vftable; /*0x6cf087*/
+  dword_B0C114 = (int)&DynamicVectorClass_SwizzlePointerClass_vftable; /*0x6cf087*/
   dword_B0C128 = 10; /*0x6cf091*/
   dword_B0C124 = 0; /*0x6cf09b*/
   sub_6CF8F0(&dword_B0C12C, 0, 0); /*0x6cf0a5*/
-  dword_B0C12C = (int)&(void*)(void*)&DynamicVectorClass_SwizzlePointerClass_vftable; /*0x6cf0b4*/
+  dword_B0C12C = (int)&DynamicVectorClass_SwizzlePointerClass_vftable; /*0x6cf0b4*/
   dword_B0C13C = 0; /*0x6cf0be*/
-  SwizzleManagerClass_Instance = (int)&(void*)(void*)&SwizzleManagerClass_vftable; /*0x6cf0c8*/
+  SwizzleManagerClass_Instance = (int)&SwizzleManagerClass_vftable; /*0x6cf0c8*/
   dword_B0C128 = 1000; /*0x6cf0d2*/
   dword_B0C140 = 1000; /*0x6cf0d7*/
   return atexit(SwizzleManagerClass::Register); /*0x6cf0e2*/
@@ -2908,7 +2911,7 @@ unsigned int * E4Recv_6CF8F0::sub_6CF8F0(int a2, unsigned int * a3)
   this->M8 = a2; /*0x6cf900*/
   this->M12 = 1; /*0x6cf903*/
   this->M13 = 0; /*0x6cf907*/
-  *this = &(void*)(void*)&VectorClass_SwizzlePointerClass_vftable; /*0x6cf90a*/
+  *this = (void*)&VectorClass_SwizzlePointerClass_vftable; /*0x6cf90a*/
   if ( !a2 ) /*0x6cf910*/
     return this; /*0x6cf910*/
   if ( !a3 ) /*0x6cf918*/

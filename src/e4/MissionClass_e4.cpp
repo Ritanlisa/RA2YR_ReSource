@@ -3,23 +3,25 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/MissionClass_e4.hpp"
 #include "e4/classes/INIClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x5B3760
 namespace gamemd {
 AbstractClass * * MissionClass::LoadFromINI(unsigned int * a2)
 {
-  char *v3; // eax
-  char *v4; // eax
-  char *v5; // eax
-  char *v6; // eax
-  char *v7; // eax
-  char *v8; // eax
-  char *v9; // eax
-  char *v10; // eax
+  unsigned int v3;
+  unsigned int v4;
+  unsigned int v5;
+  unsigned int v6;
+  unsigned int v7;
+  unsigned int v8;
+  unsigned int v9;
+  unsigned int v10;
   double Double_Overwrite; // st7
   int v12; // eax
-  char *v13; // eax
+  unsigned int v13;
   double v14; // st7
   int v15; // ecx
 

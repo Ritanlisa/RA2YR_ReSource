@@ -8,6 +8,8 @@
 #include "e4/classes/Math_e4.hpp"
 #include "e4/classes/HouseClass_e4.hpp"
 #include "e4/classes/TechnoTypeClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x501750
@@ -72,7 +74,7 @@ namespace gamemd {
 void UpdateHouseClassAnger(IUnknown * aP0, HouseClass * aP1, int a3, int a4)
 {
   int v4; // ebx
-  __int64 v5; // rax
+  IUnknown * v5;
   int v6; // ecx
   int v7; // ebp
   int v8; // ecx

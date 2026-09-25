@@ -9,16 +9,18 @@
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/Terrain_e4.hpp"
 #include "e4/classes/Timer_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x4A0760
 namespace gamemd {
 int ConnectionPointClass::GetConnectionInterface(unsigned int * a1, int a2)
 {
-  _DWORD *v3; // edi
+  void** v3;
   int v4; // eax
   void *v5; // eax
-  int v6; // eax
+  void * v6;
   int v7; // ecx
   _DWORD *v8; // edx
   _DWORD *v9; // eax
@@ -34,7 +36,7 @@ int ConnectionPointClass::GetConnectionInterface(unsigned int * a1, int a2)
   v3[3] = 0; /*0x4a079b*/
   *((_BYTE *)v3 + 16) = 1; /*0x4a079e*/
   *((_BYTE *)v3 + 17) = 0; /*0x4a07a2*/
-  v3[1] = &(void*)(void*)&VectorClass_tagCONNECTDATA_vftable; /*0x4a07a5*/
+  v3[1] = (void*)&VectorClass_tagCONNECTDATA_vftable; /*0x4a07a5*/
   if ( v3 + 1 != a1 + 7 ) /*0x4a07ab*/
   {
     VectorClass::ClearAndFree2((int)(v3 + 1)); /*0x4a07af*/
@@ -70,10 +72,10 @@ int ConnectionPointClass::GetConnectionInterface(unsigned int * a1, int a2)
   }
   v3[5] = a1[11]; /*0x4a0815*/
   v3[6] = a1[12]; /*0x4a081b*/
-  v3[1] = &(void*)(void*)&DynamicVectorClass_tagCONNECTDATA_vftable; /*0x4a081e*/
+  v3[1] = (void*)&DynamicVectorClass_tagCONNECTDATA_vftable; /*0x4a081e*/
   v3[7] = 0; /*0x4a0824*/
   v3[8] = 0; /*0x4a0827*/
-  *v3 = &(void*)(void*)&EnumConnectionsClass_vftable; /*0x4a082a*/
+  *(void **)v3 = (void*)&EnumConnectionsClass_vftable; /*0x4a082a*/
   for ( i = 0; i < v3[5]; ++i ) /*0x4a0837*/
   {
     v11 = *(_DWORD *)(v3[2] + 8 * i); /*0x4a083f*/
@@ -96,10 +98,10 @@ unsigned int * ConnectionPointClass::Construct(unsigned int * a1, ConnectionPoin
   this->q024 = 0; /*0x4a089f*/
   this->u8_28 = 1; /*0x4a08a2*/
   this->u8_29 = 0; /*0x4a08a6*/
-  this->q01C = &(void*)(void*)&DynamicVectorClass_tagCONNECTDATA_vftable; /*0x4a08a9*/
+  this->q01C = (void*)&DynamicVectorClass_tagCONNECTDATA_vftable; /*0x4a08a9*/
   *(&this->q0042) = 10; /*0x4a08b0*/
   *(&this->q0041) = 0; /*0x4a08b7*/
-  *this = &(void*)(void*)&ConnectionPointClass_vftable; /*0x4a08ba*/
+  *(void **)this = (void*)&ConnectionPointClass_vftable; /*0x4a08ba*/
   (*(void (__stdcall **)(int))(aP2->q004)(aP2); /*0x4a08c3*/
   return this; /*0x4a08c8*/
 }
@@ -297,7 +299,7 @@ VectorClass_flat * ConnectionPointClass_9::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->q004; /*0x4a14f3*/
-  *this = &(void*)(void*)&VectorClass_IConnectionPoint___vftable; /*0x4a14f6*/
+  *(void **)this = (void*)&VectorClass_IConnectionPoint___vftable; /*0x4a14f6*/
   if ( v3 && this->IsAllocated ) /*0x4a1500*/
   {
     RA2_OPDEL(v3); /*0x4a1508*/

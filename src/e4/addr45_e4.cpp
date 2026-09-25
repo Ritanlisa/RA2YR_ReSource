@@ -18,7 +18,10 @@
 #include "e4/classes/BuildingTypeClass_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/Dialog_e4.hpp"
+#include "e4/classes/SessionClass_e4.hpp"
 
 // 0x451400
 namespace gamemd {
@@ -30,7 +33,7 @@ char UpdateBuildingActiveAnim(int a1, int edx0)
   _DWORD *v6; // ebx
   int v7; // ecx
   double HealthRatioBuildingClass; // st7
-  RulesClass *v9; // edx
+  unsigned int v9;
   int v10; // ecx
   int v11; // edi
   int v12; // esi

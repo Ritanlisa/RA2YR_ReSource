@@ -15,10 +15,13 @@ struct FactoryClass_33 {
     bool q018;  // 0x18
     unsigned char q01C;  // 0x1C
     bool q024;  // 0x24
+    unsigned int Items;
+    unsigned int Capacity;
+    unsigned int Items2;
 // --- flat members (END) ---
     int Seek(int a2);  // 0x4CA8E0
     char AddRef(int a2);  // 0x4CA8F0
-    char Release(int a2, unsigned int * a3);  // 0x4CA930
+    char Release(int a2,  unsigned int * a3);    // 0x4CA930
     void ddtor();  // 0x4CA9E0
     int Read(unsigned int * a2);  // 0x4CAA10
     VectorClass_flat * QueryInterface(char a2);  // 0x4CAB50

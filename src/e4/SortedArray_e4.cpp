@@ -4,6 +4,8 @@
 #include "e4/classes/SortedArray_e4.hpp"
 #include "e4/classes/CCINIClass_e4.hpp"
 #include "e4/classes/DynamicVector_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x52B620
@@ -61,7 +63,7 @@ int SortedArray::Append(DynamicVector * aP1, unsigned int * a2)
   int i; // ecx
   int v8; // eax
   _DWORD *v9; // edx
-  int v10; // eax
+  char * v10;
   int v11; // eax
 
   v4 = *(_DWORD *)(this + 8); /*0x5387da*/

@@ -11,7 +11,10 @@
 #include "e4/classes/Mouse_e4.hpp"
 #include "e4/classes/Tactical_e4.hpp"
 #include "e4/classes/Waypoint_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/MapClass_e4.hpp"
 
 // 0x431090
 namespace gamemd {
@@ -154,7 +157,7 @@ int Radar::IsRadarTargetEligible()
 namespace gamemd {
 void* Radar::ProcessSubzone(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnknown * aP4, IUnknown * aP5)
 {
-  int v6; // ebp
+  IUnknown * v6;
   int v9; // edi
   int v10; // edx
   int v11; // ecx
@@ -191,12 +194,12 @@ void* Radar::ProcessSubzone(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnk
   int v43; // eax
   int *v44; // ecx
   int v46; // ecx
-  int v47; // ebp
-  int v48; // eax
-  int v49; // ebx
+  IUnknown * v47;
+  IUnknown * v48;
+  unsigned int v49;
   int v50; // ecx
-  __int16 v51; // di
-  int v52; // eax
+  unsigned int v51;
+  IUnknown * v52;
   __int64 v53; // rax
   __int64 v54; // rax
   int v55; // edi
@@ -211,10 +214,10 @@ void* Radar::ProcessSubzone(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnk
   int v64; // edx
   int v65; // eax
   int *v66; // ecx
-  int v68; // esi
+  unsigned int v68;
   int v69; // ecx
   int v70; // edx
-  int v71; // eax
+  IUnknown * v71;
   int v72; // ebp
   __int64 v73; // rax
   __int64 v74; // rax
@@ -232,7 +235,7 @@ void* Radar::ProcessSubzone(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnk
   int *v86; // ecx
   int v89; // [esp+18h] [ebp-5Ch]
   int v90; // [esp+18h] [ebp-5Ch]
-  int v95; // [esp+24h] [ebp-50h] BYREF
+  unsigned int v95;
   int v96; // [esp+28h] [ebp-4Ch]
   int v97; // [esp+2Ch] [ebp-48h]
   int v98; // [esp+30h] [ebp-44h]
@@ -250,7 +253,7 @@ void* Radar::ProcessSubzone(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnk
   int v111; // [esp+64h] [ebp-10h]
   int v112; // [esp+6Ch] [ebp-8h]
   int v113; // [esp+70h] [ebp-4h]
-  int v114; // [esp+78h] [ebp+4h]
+  IUnknown * v114;
   int v115; // [esp+88h] [ebp+14h]
 
   v6 = aP1; /*0x5824a5*/
@@ -759,7 +762,7 @@ AbstractClass * * Radar::Update(IUnknown * aP1)
   int v107; // [esp+44h] [ebp-70h]
   __int16 v108; // [esp+48h] [ebp-6Ch] BYREF
   __int16 v109; // [esp+4Ah] [ebp-6Ah]
-  void **v110; // [esp+4Ch] [ebp-68h] BYREF
+  void* v110;
   void *v111; // [esp+50h] [ebp-64h]
   int v112; // [esp+54h] [ebp-60h]
   char v113; // [esp+59h] [ebp-5Bh]
@@ -800,7 +803,7 @@ AbstractClass * * Radar::Update(IUnknown * aP1)
       v6 = 0; /*0x5845bd*/
       WordVector::Constructor(0, 0); /*0x5845c1*/
       v7 = (_DWORD *)v2[i + 32]; /*0x5845c6*/
-      v110 = &(void*)(void*)&DynamicVectorClass_unsigned_short_vftable; /*0x5845cd*/
+      v110 = (void*)&DynamicVectorClass_unsigned_short_vftable; /*0x5845cd*/
       v115 = 10; /*0x5845d5*/
       v114 = 0; /*0x5845dd*/
       v8 = v7[2]; /*0x5845e1*/
@@ -1032,7 +1035,7 @@ AbstractClass * * Radar::Update(IUnknown * aP1)
         v87 = v50; /*0x584c81*/
       }
       while ( v50 < 6144 ); /*0x584c85*/
-      v110 = &(void*)(void*)&VectorClass_unsigned_short_vftable; /*0x584c93*/
+      v110 = (void*)&VectorClass_unsigned_short_vftable; /*0x584c93*/
       if ( v111 && v113 ) /*0x584ca3*/
       {
         RA2_OPDEL(v111); /*0x584ca6*/
@@ -1160,7 +1163,7 @@ AbstractClass * * Radar::Update(IUnknown * aP1)
           v109 = v28; /*0x584920*/
           Radar::ProcessSubzone(v91, i, v86, &v104, &v108); /*0x584925*/
           VectorClass::ConstructSubzone(0, 0); /*0x584932*/
-          v123 = &(void*)(void*)&DynamicVectorClass_SubzoneConnectionStruct_vftable; /*0x58493b*/
+          v123 = (void*)&DynamicVectorClass_SubzoneConnectionStruct_vftable; /*0x58493b*/
           v128 = 10; /*0x584943*/
           v127 = 0; /*0x58494e*/
           VectorClass::CleanupSubzone(&v123); /*0x584955*/
@@ -1183,7 +1186,7 @@ AbstractClass * * Radar::Update(IUnknown * aP1)
             *(_DWORD *)(v39 + 32) = v131; /*0x5849e0*/
             v35 = (int)&v2[6 * i + 35]; /*0x5849e3*/
           }
-          v123 = &(void*)(void*)&VectorClass_SubzoneConnectionStruct_vftable; /*0x5849eb*/
+          v123 = (void*)&VectorClass_SubzoneConnectionStruct_vftable; /*0x5849eb*/
           if ( Block && IDA_BYTE1(v126) ) /*0x5849fd*/
           {
             RA2_OPDEL(Block); /*0x584a00*/
@@ -1222,7 +1225,7 @@ AbstractClass * * Radar::Update(IUnknown * aP1)
     }
     while ( v76 >= 0 ); /*0x584d84*/
     MapClass::AllocArrays(&g_AudioInitFlag); /*0x584d8b*/
-    v110 = &(void*)(void*)&VectorClass_unsigned_short_vftable; /*0x584d94*/
+    v110 = (void*)&VectorClass_unsigned_short_vftable; /*0x584d94*/
     if ( v111 && v113 ) /*0x584daa*/
       RA2_OPDEL(v111); /*0x584db1*/
   }

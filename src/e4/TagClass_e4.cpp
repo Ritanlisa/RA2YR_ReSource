@@ -14,6 +14,8 @@
 #include "e4/classes/AbstractTypeClass_e4.hpp"
 #include "e4/classes/TaskForceClass_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x6E4F60
@@ -39,10 +41,10 @@ TriggerClass * * TagClass::Destructor(void ** a1, AbstractClass * a2)
   int v20; // eax
   _DWORD v22[4]; // [esp+10h] [ebp-10h] BYREF
 
-  *this = &(void*)(void*)&TagClass_vftable; /*0x6e4f69*/
-  this->vtable2 = &(void*)(void*)&TagClass_vftable; /*0x6e4f6f*/
-  this->vtable3 = &(void*)(void*)&TagClass_vftable; /*0x6e4f76*/
-  this->vtable4 = &(void*)(void*)&TagClass_vftable; /*0x6e4f7d*/
+  *(void **)this = (void*)&TagClass_vftable; /*0x6e4f69*/
+  this->vtable2 = (void*)&TagClass_vftable; /*0x6e4f6f*/
+  this->vtable3 = (void*)&TagClass_vftable; /*0x6e4f76*/
+  this->vtable4 = (void*)&TagClass_vftable; /*0x6e4f7d*/
   AbstractClass::AnnounceExpiredPointer(); /*0x6e4f84*/
   if ( g_WTFMode ) /*0x6e4f90*/
   {
@@ -262,8 +264,8 @@ Coord * * TagClass::Unlink()
 namespace gamemd {
 int TagClass::CheckEvent(int a2, TagTypeClass * aP2)
 {
-  int v4; // eax
-  int result; // eax
+  TriggerClass * v4;
+  TagTypeClass * result;
 
   if ( this->buildingType == a2 ) /*0x6e561a*/
     this->buildingType = 0; /*0x6e561c*/
@@ -311,7 +313,7 @@ namespace gamemd {
 int TagClass::ProcessTag(int * a2)
 {
   int v3; // eax
-  int v4; // eax
+  TriggerClass * v4;
   int v5; // eax
 
   AbstractClass::ProcessPower(); /*0x6e56e9*/
@@ -340,10 +342,10 @@ int TagClass::LoadTag(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x6e5746*/
     {
       AbstractClass::InitVtables(aP0, (int)&aP1); /*0x6e574f*/
-      *aP0 = &(void*)(void*)&TagClass_vftable; /*0x6e5754*/
-      aP0[1] = &(void*)(void*)&TagClass_vftable; /*0x6e575a*/
-      aP0[2] = &(void*)(void*)&TagClass_vftable; /*0x6e5761*/
-      aP0[3] = &(void*)(void*)&TagClass_vftable; /*0x6e5768*/
+      *(void **)aP0 = (void*)&TagClass_vftable; /*0x6e5754*/
+      aP0[1] = (void*)&TagClass_vftable; /*0x6e575a*/
+      aP0[2] = (void*)&TagClass_vftable; /*0x6e5761*/
+      aP0[3] = (void*)&TagClass_vftable; /*0x6e5768*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP0 + 9); /*0x6e5778*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP0 + 10); /*0x6e5786*/

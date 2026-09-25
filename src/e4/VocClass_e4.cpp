@@ -5,13 +5,15 @@
 #include "e4/classes/VocClass_e4.hpp"
 #include "e4/classes/RefCount_e4.hpp"
 #include "e4/classes/Voice_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x4052F0
 namespace gamemd {
 int VocClass::Release()
 {
-  int v2; // ecx
+  void * v2;
   int result; // eax
   int v4; // ebx
   _DWORD **v5; // edi

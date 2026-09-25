@@ -2,13 +2,15 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/RefCount_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x401F90
 namespace gamemd {
 int RefCount::Decrement()
 {
-  int result; // eax
+  void * result;
 
   result = this->q00C - 1; /*0x401f93*/
   this->q00C = result; /*0x401f96*/

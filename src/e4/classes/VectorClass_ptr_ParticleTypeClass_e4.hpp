@@ -40,16 +40,16 @@ struct VectorClass_ptr_ParticleTypeClass {
     void Destroy_1();  // 0x4E9140
     unsigned int GetItemIndex_1(int a2);  // 0x4E9170
     char Add(int a2);  // 0x4EEB60
-    char Release(int a2, unsigned int * a3);  // 0x4EEBA0
+    char Release(int a2,  unsigned int * a3);    // 0x4EEBA0
     void Remove();  // 0x4EEC50
     int GetSize(unsigned int * a2);  // 0x4EEC80
     unsigned int LoadTypeData(int a2);  // 0x4EECC0
-    char SetCapacity(int a2, unsigned int * a3);  // 0x4EECE0
+    char SetCapacity(int a2,  unsigned int * a3);    // 0x4EECE0
     int FindItemIndex(unsigned int * a2);  // 0x4EED90
-    char SetCapacity_0(int a2, unsigned int * a3);  // 0x4EEF40
+    char SetCapacity_0(int a2,  unsigned int * a3);    // 0x4EEF40
     int FindItemIndex_0(unsigned int * a2);  // 0x4EEFF0
-    char SetCapacity_1(int a2, unsigned int * a3);  // 0x4EF1A0
+    char SetCapacity_1(int a2,  unsigned int * a3);    // 0x4EF1A0
     int FindItemIndex_1(unsigned int * a2);  // 0x4EF250
-    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x4F0C50
+    VectorClass_flat * QueryInterface(unsigned int * Block,  char a2);    // 0x4F0C50
 };
 } // namespace gamemd

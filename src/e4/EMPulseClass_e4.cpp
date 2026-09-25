@@ -4,6 +4,8 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/EMPulseClass_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/Cell_e4.hpp"
 
 // 0x4C5AA0
@@ -25,12 +27,12 @@ namespace gamemd {
 EMPulseClass * EMPulseClass::CopyTo(AbstractClass * a2, char a3)
 {
   int v3; // eax
-  void **v5; // [esp+4h] [ebp-4h] BYREF
+  unsigned int v5;
 
-  *a3 = &(void*)(void*)&EMPulseClass_vftable; /*0x4c5ac4*/
-  *(a3 + 1) = &(void*)(void*)&EMPulseClass_vftable; /*0x4c5aca*/
-  *(a3 + 2) = &(void*)(void*)&EMPulseClass_vftable; /*0x4c5ad1*/
-  *(a3 + 3) = &(void*)(void*)&EMPulseClass_vftable; /*0x4c5ad8*/
+  *(void **)a3 = (void*)&EMPulseClass_vftable; /*0x4c5ac4*/
+  *(a3 + 1) = (void*)&EMPulseClass_vftable; /*0x4c5aca*/
+  *(a3 + 2) = (void*)&EMPulseClass_vftable; /*0x4c5ad1*/
+  *(a3 + 3) = (void*)&EMPulseClass_vftable; /*0x4c5ad8*/
   if ( g_WTFMode ) /*0x4c5ae6*/
     EMPulseClass::IterateCellsInRadius((int)a3); /*0x4c5ae8*/
   AbstractClass::AnnounceExpiredPointer(a3, 1); /*0x4c5af1*/

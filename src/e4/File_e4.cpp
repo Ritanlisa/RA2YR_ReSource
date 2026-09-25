@@ -10,6 +10,8 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/DynamicVector_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/FilePipe_30_e4.hpp"
 
 // 0x431F10
@@ -397,7 +399,7 @@ AbstractClass * * File::ParseCSFString()
   int v6; // ebp
   size_t v7; // eax
   int v8; // eax
-  wchar_t *v9; // ecx
+  unsigned int v9;
   __int16 v10; // dx
   int v11; // esi
   wchar_t *v12; // ecx
@@ -422,7 +424,7 @@ AbstractClass * * File::ParseCSFString()
     if ( CCFileClass::Read(v23, &v18, 4) != 4 ) /*0x7349fe*/
     {
   LABEL_42:
-      v23[0] = (int)&(void*)(void*)&CCFileClass_vftable; /*0x734cad*/
+      v23[0] = (int)&CCFileClass_vftable; /*0x734cad*/
       v25 = 0; /*0x734cbc*/
       Vector::Clear((int)v24); /*0x734cc3*/
       v23[0] = (int)&off_7E1668; /*0x734ccc*/
@@ -552,7 +554,7 @@ AbstractClass * * File::ParseCSFString()
     }
   }
   LABEL_43:
-  v23[0] = (int)&(void*)(void*)&CCFileClass_vftable; /*0x734ce9*/
+  v23[0] = (int)&CCFileClass_vftable; /*0x734ce9*/
   v25 = 0; /*0x734cf8*/
   Vector::Clear((int)v24); /*0x734cff*/
   v23[0] = (int)&off_7E1668; /*0x734d08*/
@@ -600,10 +602,10 @@ AbstractClass * * File::LoadWDT(ObjectClass * aP1)
   this->q034 = 0; /*0x76aca1*/
   *(&this->q0146) = 1; /*0x76aca4*/
   *(&this->q0147) = 0; /*0x76aca8*/
-  this->q02C = &(void*)(void*)&DynamicVectorClass_rc_ptr_WDTTerritory_vftable; /*0x76acab*/
+  this->q02C = (void*)&DynamicVectorClass_rc_ptr_WDTTerritory_vftable; /*0x76acab*/
   this->q040 = 10; /*0x76acb2*/
   this->q03C = 0; /*0x76acb9*/
-  *(_DWORD *)this = &(void*)(void*)&WDTState_vftable; /*0x76acbe*/
+  *(_DWORD *)this = (void*)&WDTState_vftable; /*0x76acbe*/
   if ( RA2_OPNEW(0xCu) ) /*0x76acc4*/
     v3 = (_DWORD *)File::LoadPaletteData(aP1); /*0x76acdc*/
   else

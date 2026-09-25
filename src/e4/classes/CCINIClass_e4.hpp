@@ -55,7 +55,7 @@ struct CCINIClass {
     unsigned char q108;  // 0x108
     unsigned char q10C;  // 0x10C
     unsigned char q114;  // 0x114
-    char q118[4];  // 0x118
+    unsigned int q118;  // 0x118
     unsigned char q11C;  // 0x11C
     unsigned char q120;  // 0x120
     unsigned char q124;  // 0x124
@@ -196,7 +196,7 @@ struct CCINIClass {
     unsigned int v4;
 // --- flat members (END) ---
     AITriggerTypeClass * ReadInfantryTypeList(char * a1, int a2);
-    IUnknown * WriteHouses();
+    void* WriteHouses();
     MultiplayerGameMode * * Load(MultiplayerGameMode * aP1, char a3, char aP2);
     int GetDB();
     int InitFromINIEVA();

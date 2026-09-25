@@ -29,6 +29,6 @@ struct E4Recv_40E3E0 {
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    GenericList * sub_40E3E0(char a2);  // 0x40E3E0
+    void* sub_40E3E0(char a2);  // 0x40E3E0
 };
 } // namespace gamemd

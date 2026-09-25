@@ -3,7 +3,10 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/CellStruct_e4.hpp"
 #include "e4/classes/Buffer_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/AbstractClass_e4.hpp"
 
 // 0x7BCB50
 namespace gamemd {
@@ -30,7 +33,7 @@ void * Buffer::FillCircularBufferScroll2(int a2, MouseClass * aP2, unsigned shor
   int v24; // ecx
   int v25; // ebx
   signed int v26; // edx
-  int v27; // eax
+  MouseClass * v27;
   char *v28; // edi
   char *v29; // edx
   int v30; // ebx
@@ -405,7 +408,7 @@ int Buffer::AllocateCodecFrameBuffers()
 namespace gamemd {
 unsigned int * Buffer::Init(int a2, AbstractClass * aP2)
 {
-  *this = a2; /*0x43ad0d*/
+  *(_DWORD *)this = a2; /*0x43ad0d*/
   *(this + 1) = aP2; /*0x43ad0f*/
   *((_BYTE *)this + 8) = 0; /*0x43ad12*/
   if ( !a2 && aP2 > 0 ) /*0x43ad1a*/
@@ -423,7 +426,7 @@ DynamicVector * Buffer::Constructor_VectorClass_ObjectClass___(char a2)
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x488033*/
-  *this = &(void*)(void*)&VectorClass_ObjectClass___vftable; /*0x488036*/
+  *(void **)this = (void*)&VectorClass_ObjectClass___vftable; /*0x488036*/
   if ( v3 && this->IsAllocated ) /*0x488040*/
   {
     RA2_OPDEL(v3); /*0x488048*/

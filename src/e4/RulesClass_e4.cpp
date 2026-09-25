@@ -9,6 +9,8 @@
 #include "e4/classes/INIClass_e4.hpp"
 #include "e4/classes/Rules_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/AnimTypeClass_e4.hpp"
 
 // 0x48ACF0
@@ -27,7 +29,7 @@ unsigned int * RulesClass::InitINIChain(int a2, int a3)
   this->DetailBufferZoneWidth = a2; /*0x538b3e*/
   this->AmmoCrateDamage = 1; /*0x538b41*/
   this->u8_D = 0; /*0x538b45*/
-  *this = &(void*)(void*)&VectorClass_CCINIClass___vftable; /*0x538b48*/
+  *(void **)this = (void*)&VectorClass_CCINIClass___vftable; /*0x538b48*/
   if ( a2 ) /*0x538b4e*/
   {
     if ( a3 ) /*0x538b56*/
@@ -1979,7 +1981,7 @@ void RulesClass::readMaximums()
   void *v2; // eax
 
   v2 = (void *)this->DetailMinFrameRateMovie; /*0x679fa6*/
-  *this = &(void*)(void*)&VectorClass_BuildingTypeClass_const___vftable; /*0x679fa9*/
+  *this = (void*)&VectorClass_BuildingTypeClass_const___vftable; /*0x679fa9*/
   if ( v2 && this->u8_D ) /*0x679fb3*/
   {
     RA2_OPDEL(v2); /*0x679fb9*/
@@ -1994,7 +1996,7 @@ void RulesClass::readInfantryTypes()
   void *v2; // eax
 
   v2 = (void *)this->DetailMinFrameRateMovie; /*0x679fd6*/
-  *this = &(void*)(void*)&VectorClass_UnitTypeClass_const___vftable; /*0x679fd9*/
+  *this = (void*)&VectorClass_UnitTypeClass_const___vftable; /*0x679fd9*/
   if ( v2 && this->u8_D ) /*0x679fe3*/
   {
     RA2_OPDEL(v2); /*0x679fe9*/
@@ -2009,7 +2011,7 @@ void RulesClass::readCountries()
   void *v2; // eax
 
   v2 = (void *)this->DetailMinFrameRateMovie; /*0x67a006*/
-  *this = &(void*)(void*)&VectorClass_AircraftTypeClass_const___vftable; /*0x67a009*/
+  *this = (void*)&VectorClass_AircraftTypeClass_const___vftable; /*0x67a009*/
   if ( v2 && this->u8_D ) /*0x67a013*/
   {
     RA2_OPDEL(v2); /*0x67a019*/
@@ -2024,7 +2026,7 @@ void RulesClass::readVehicleTypes()
   void *v2; // eax
 
   v2 = (void *)this->DetailMinFrameRateMovie; /*0x67a066*/
-  *this = &(void*)(void*)&VectorClass_TerrainTypeClass_const___vftable; /*0x67a069*/
+  *this = (void*)&VectorClass_TerrainTypeClass_const___vftable; /*0x67a069*/
   if ( v2 && this->u8_D ) /*0x67a073*/
   {
     RA2_OPDEL(v2); /*0x67a079*/
@@ -2174,7 +2176,7 @@ unsigned int * RulesClass::readParticles()
   this->u8_D = 0; /*0x67a8be*/
   this->SmallVisceroid = 10; /*0x67a8c1*/
   this->LargeVisceroid = 0; /*0x67a8c8*/
-  *this = &(void*)(void*)&TypeList_TerrainTypeClass_const___vftable; /*0x67a8cb*/
+  *this = (void*)&TypeList_TerrainTypeClass_const___vftable; /*0x67a8cb*/
   return this; /*0x67a8d1*/
 }
 // 0x67B480
@@ -2226,7 +2228,7 @@ void * RulesClass::LoadTypeList(int a1, unsigned char *** edx0, INIClass * aP1, 
     RulesClass::readIQ(&v17, 0, 0); /*0x67be11*/
     v22 = 10; /*0x67be1a*/
     v21 = 0; /*0x67be28*/
-    v17 = &(void*)(void*)&TypeList_TerrainTypeClass_const___vftable; /*0x67be2c*/
+    v17 = (void*)&TypeList_TerrainTypeClass_const___vftable; /*0x67be2c*/
     for ( i = strtok(String, Delimiter); i; i = strtok(0, Delimiter) ) /*0x67be3e*/
     {
       if ( !*i ) /*0x67be40*/
@@ -2246,10 +2248,10 @@ void * RulesClass::LoadTypeList(int a1, unsigned char *** edx0, INIClass * aP1, 
     *(_DWORD *)(a1 + 8) = 0; /*0x67beb0*/
     *(_BYTE *)(a1 + 12) = 1; /*0x67beb3*/
     *(_BYTE *)(a1 + 13) = 0; /*0x67beb7*/
-    *(_DWORD *)a1 = &(void*)(void*)&VectorClass_TerrainTypeClass_const___vftable; /*0x67beba*/
+    *(_DWORD *)a1 = (void*)&VectorClass_TerrainTypeClass_const___vftable; /*0x67beba*/
     System_Load_67BFA0((_DWORD *)a1, &v17); /*0x67bec0*/
-    *(_DWORD *)a1 = &(void*)(void*)&TypeList_TerrainTypeClass_const___vftable; /*0x67bec5*/
-    v17 = &(void*)(void*)&VectorClass_TerrainTypeClass_const___vftable; /*0x67becb*/
+    *(_DWORD *)a1 = (void*)&TypeList_TerrainTypeClass_const___vftable; /*0x67bec5*/
+    v17 = (void*)&VectorClass_TerrainTypeClass_const___vftable; /*0x67becb*/
     v9 = v22; /*0x67bed7*/
     *(_DWORD *)(a1 + 16) = v21; /*0x67bedb*/
     v10 = Block; /*0x67bede*/
@@ -2267,7 +2269,7 @@ void * RulesClass::LoadTypeList(int a1, unsigned char *** edx0, INIClass * aP1, 
     *(_DWORD *)(a1 + 8) = 0; /*0x67bf1c*/
     *(_BYTE *)(a1 + 12) = 1; /*0x67bf1f*/
     *(_BYTE *)(a1 + 13) = 0; /*0x67bf23*/
-    *(_DWORD *)a1 = &(void*)(void*)&VectorClass_TerrainTypeClass_const___vftable; /*0x67bf26*/
+    *(_DWORD *)a1 = (void*)&VectorClass_TerrainTypeClass_const___vftable; /*0x67bf26*/
     if ( (_DWORD *)a1 != a5 ) /*0x67bf2c*/
     {
       TypeList_cptr_TerrainTypeClass::TryFreeAndClear(a1); /*0x67bf30*/
@@ -2301,7 +2303,7 @@ void * RulesClass::LoadTypeList(int a1, unsigned char *** edx0, INIClass * aP1, 
     }
     *(_DWORD *)(a1 + 16) = a5[4]; /*0x67bf83*/
     *(_DWORD *)(a1 + 20) = a5[5]; /*0x67bf89*/
-    *(_DWORD *)a1 = &(void*)(void*)&TypeList_TerrainTypeClass_const___vftable; /*0x67bf8c*/
+    *(_DWORD *)a1 = (void*)&TypeList_TerrainTypeClass_const___vftable; /*0x67bf8c*/
   }
   return a1; /*0x67bf02*/
 }
@@ -2312,7 +2314,7 @@ unsigned int * RulesClass::readIQ(int a2, int a3)
   this->DetailBufferZoneWidth = a2; /*0x67c43e*/
   this->AmmoCrateDamage = 1; /*0x67c441*/
   this->u8_D = 0; /*0x67c445*/
-  *this = &(void*)(void*)&VectorClass_TerrainTypeClass_const___vftable; /*0x67c448*/
+  *this = (void*)&VectorClass_TerrainTypeClass_const___vftable; /*0x67c448*/
   if ( a2 ) /*0x67c44e*/
   {
     if ( a3 ) /*0x67c456*/

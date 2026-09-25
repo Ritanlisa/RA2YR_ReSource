@@ -20,6 +20,8 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/DynamicVectorClass_PAD_e4.hpp"
 #include "e4/classes/DynamicVectorClass_uint_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/Byte_e4.hpp"
 
 // 0x4B5B70
@@ -223,9 +225,9 @@ HRESULT DropPodLocomotionClass::BeginMove(int * a1, int * pStm)
   if ( a1 ) /*0x4b625a*/
   {
     a1[11] = 0; /*0x4b625c*/
-    *a1 = (int)&(void*)(void*)&DropPodLocomotionClass_vftable; /*0x4b6263*/
-    a1[1] = (int)&(void*)(void*)&DropPodLocomotionClass_vftable; /*0x4b6269*/
-    a1[6] = (int)&(void*)(void*)&DropPodLocomotionClass_vftable; /*0x4b6270*/
+    *a1 = (int)&DropPodLocomotionClass_vftable; /*0x4b6263*/
+    a1[1] = (int)&DropPodLocomotionClass_vftable; /*0x4b6269*/
+    a1[6] = (int)&DropPodLocomotionClass_vftable; /*0x4b6270*/
   }
   v2->lpVtbl->Read(v2, &pStm, 1, 0); /*0x4b6283*/
   if ( !(_BYTE)pStm ) /*0x4b628c*/
@@ -304,9 +306,9 @@ DropPodLocomotionClass * DropPodLocomotionClass::ProcessMove(char a2)
 {
   int v3; // eax
 
-  *this = &(void*)(void*)&DropPodLocomotionClass_vftable; /*0x4b66f3*/
-  this->vtable2 = &(void*)(void*)&DropPodLocomotionClass_vftable; /*0x4b66f9*/
-  this->vtable3 = &(void*)(void*)&DropPodLocomotionClass_vftable; /*0x4b6700*/
+  *this = (void*)&DropPodLocomotionClass_vftable; /*0x4b66f3*/
+  this->vtable2 = (void*)&DropPodLocomotionClass_vftable; /*0x4b66f9*/
+  this->vtable3 = (void*)&DropPodLocomotionClass_vftable; /*0x4b6700*/
   v3 = *(&this->vtable21); /*0x4b6707*/
   if ( v3 ) /*0x4b670c*/
     (*(void (__stdcall **)(int))(*(_DWORD *)v3 + 8))(v3); /*0x4b6711*/

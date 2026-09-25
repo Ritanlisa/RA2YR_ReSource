@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Cell_e4.hpp"
 #include "e4/classes/Coord_e4.hpp"
@@ -7,7 +8,12 @@
 #include "e4/classes/Mouse_e4.hpp"
 #include "e4/classes/Tactical_e4.hpp"
 #include "e4/classes/BuildingPlacement_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/BuildingType_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/Building_e4.hpp"
 
 // 0x4FB840
 namespace gamemd {
@@ -324,7 +330,7 @@ unsigned int * BuildingPlacement::SelectBuildingPlacementCells(int a2)
   _DWORD *v6; // eax
   _DWORD *v7; // esi
   int v8; // edx
-  _DWORD *v9; // edi
+  unsigned int v9;
   int v10; // ecx
   int v11; // ebx
   int v12; // esi
@@ -348,15 +354,15 @@ unsigned int * BuildingPlacement::SelectBuildingPlacementCells(int a2)
   int v30; // ecx
   int v31; // eax
   int v32; // edx
-  int v33; // [esp+14h] [ebp-34h]
+  unsigned int v33;
   int v34; // [esp+14h] [ebp-34h]
   _DWORD *v35; // [esp+18h] [ebp-30h]
   int v36; // [esp+1Ch] [ebp-2Ch]
   int v37; // [esp+20h] [ebp-28h]
-  double v38; // [esp+20h] [ebp-28h]
+  unsigned int v38;
   int v39; // [esp+2Ch] [ebp-1Ch]
   int v40; // [esp+2Ch] [ebp-1Ch]
-  int v41; // [esp+30h] [ebp-18h]
+  unsigned int v41;
   int v42; // [esp+30h] [ebp-18h]
   int v43; // [esp+34h] [ebp-14h]
   int v44; // [esp+34h] [ebp-14h]
@@ -389,7 +395,7 @@ unsigned int * BuildingPlacement::SelectBuildingPlacementCells(int a2)
   if ( v6 ) /*0x594fd8*/
   {
     VectorClass::CellConstructor(v6, 0, 0); /*0x594fde*/
-    *v7 = &(void*)(void*)&DynamicVectorClass_Cell_vftable; /*0x594fe3*/
+    *(void **)v7 = (void*)&DynamicVectorClass_Cell_vftable; /*0x594fe3*/
     v7[5] = 10; /*0x594fe9*/
     v7[4] = 0; /*0x594ff0*/
     v35 = v7; /*0x594ff3*/
@@ -562,7 +568,7 @@ unsigned int * BuildingPlacement::SelectBuildingPlacementCells(int a2)
     v23 = v7[4]; /*0x59521c*/
     v24 = v7[1]; /*0x59521f*/
     v7[4] = v23 + 1; /*0x595225*/
-    *(_DWORD *)(v24 + 4 * v23) = *v21; /*0x59522a*/
+    *(_DWORD *, unsigned int a2, unsigned int a1)(v24 + 4 * v23) = *v21; /*0x59522a*/
     return v7; /*0x595235*/
   }
   return v7; /*0x594fbd*/

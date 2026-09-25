@@ -3,13 +3,15 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Particle_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x4664C0
 namespace gamemd {
 int Particle::Init(AbstractClass * aP1, TechnoClass * aP2, IUnknown * aP3, TechnoClass * aP4, InfantryClass * aP5, int a7, AbstractClass * aP7)
 {
-  int result; // eax
+  AbstractClass * result;
 
   result = aP1; /*0x4664c4*/
   this->q10C = aP2; /*0x4664c8*/

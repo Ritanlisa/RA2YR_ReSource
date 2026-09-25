@@ -5,6 +5,8 @@
 #include "e4/classes/CCFileClass_e4.hpp"
 #include "e4/classes/BufferIOFileClass_e4.hpp"
 #include "e4/classes/MixFileClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x4325C0
@@ -41,7 +43,7 @@ AudioController * * CCFileClass::Close()
 namespace gamemd {
 int CCFileClass::Destruct()
 {
-  *this = &(void*)(void*)&CCFileClass_vftable; /*0x535a76*/
+  *(void **)this = (void*)&CCFileClass_vftable; /*0x535a76*/
   *(&this->FileSize5) = 0; /*0x535a7c*/
   Vector::Clear((int)(&this->FileSize2)); /*0x535a83*/
   *this = &off_7E1668; /*0x535a8a*/
@@ -53,7 +55,7 @@ namespace gamemd {
 int CCFileClass::GetFileSize()
 {
   DWORD FileSize; // edi
-  int result; // eax
+  void * result;
   int v4; // ebx
   DWORD LastError; // eax
   int v6; // [esp-8h] [ebp-10h]
@@ -91,11 +93,11 @@ int CCFileClass::GetFileSize()
 namespace gamemd {
 void CCFileClass::ProcessStream(unsigned int a1)
 {
-  _DWORD *v1; // edi
+  unsigned int v1;
   void *v3; // esi
   int v4; // eax
   int v5; // eax
-  void *v6; // esi
+  unsigned int v6;
   _BYTE *v7; // ebp
   void *v8; // ecx
   _DWORD *v9; // edi

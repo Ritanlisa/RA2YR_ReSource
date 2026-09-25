@@ -2,6 +2,8 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/RLEBlitTransZRemapXlatAlpha_ushort_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x497A10
@@ -10,7 +12,7 @@ unsigned short * RLEBlitTransZRemapXlatAlpha_ushort::AddRef(int arg0, unsigned c
 {
   unsigned __int16 *result; // eax
   int v14; // edx
-  int v17; // edx
+  RLEBlitTransZRemapXlatAlpha_ushort * v17;
   int v18; // ebx
   unsigned __int8 v19; // dl
   unsigned __int8 v20; // dl
@@ -112,7 +114,7 @@ int RLEBlitTransZRemapXlatAlpha_ushort::CallBlit0_1(int a2, int a3, int a4, int 
 namespace gamemd {
 std::locale::facet * RLEBlitTransZRemapXlatAlpha_ushort::Constructor_RLEBlitter(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&RLEBlitter_vftable; /*0x49a9a9*/
+  *(void **)this = (void*)&RLEBlitter_vftable; /*0x49a9a9*/
   if ( (a2 & 1) != 0 ) /*0x49a9af*/
     RA2_OPDEL(); /*0x49a9b2*/
   return this; /*0x49a9bc*/
@@ -122,7 +124,7 @@ std::locale::facet * RLEBlitTransZRemapXlatAlpha_ushort::Constructor_RLEBlitter(
 namespace gamemd {
 std::locale::facet * RLEBlitTransZRemapXlatAlpha_ushort::Constructor_RLEBlitter_0(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&RLEBlitter_vftable; /*0x49a9c9*/
+  *(void **)this = (void*)&RLEBlitter_vftable; /*0x49a9c9*/
   if ( (a2 & 1) != 0 ) /*0x49a9cf*/
     RA2_OPDEL(); /*0x49a9d2*/
   return this; /*0x49a9dc*/
@@ -132,7 +134,7 @@ std::locale::facet * RLEBlitTransZRemapXlatAlpha_ushort::Constructor_RLEBlitter_
 namespace gamemd {
 std::locale::facet * RLEBlitTransZRemapXlatAlpha_ushort::Constructor_RLEBlitter_1(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&RLEBlitter_vftable; /*0x49a9e9*/
+  *(void **)this = (void*)&RLEBlitter_vftable; /*0x49a9e9*/
   if ( (a2 & 1) != 0 ) /*0x49a9ef*/
     RA2_OPDEL(); /*0x49a9f2*/
   return this; /*0x49a9fc*/
@@ -145,10 +147,10 @@ RLEBlitTransZRemapXlatAlpha_ushort * RLEBlitTransZRemapXlatAlpha_ushort::QueryIn
   void *v3; // eax
 
   v3 = (void *)*(this + 3); /*0x49aa48*/
-  *this = &(void*)(void*)&RLEBlitTransZRemapXlatAlpha_unsigned_short_vftable; /*0x49aa4b*/
+  *(void **)this = (void*)&RLEBlitTransZRemapXlatAlpha_unsigned_short_vftable; /*0x49aa4b*/
   FractalNoise::Dtor(v3); /*0x49aa52*/
   *(this + 3) = 0; /*0x49aa5b*/
-  *this = &(void*)(void*)&RLEBlitter_vftable; /*0x49aa64*/
+  *(void **)this = (void*)&RLEBlitter_vftable; /*0x49aa64*/
   if ( (a2 & 1) != 0 ) /*0x49aa6a*/
     RA2_OPDEL(); /*0x49aa6d*/
   return this; /*0x49aa77*/

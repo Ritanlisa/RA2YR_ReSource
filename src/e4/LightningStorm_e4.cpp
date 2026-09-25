@@ -6,7 +6,10 @@
 #include "e4/classes/Object_e4.hpp"
 #include "e4/classes/LightningStorm_e4.hpp"
 #include "e4/classes/LayerClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_alias_e4.hpp"
+#include "e4/classes/AnimClass_e4.hpp"
 
 // 0x539EB0
 namespace gamemd {
@@ -158,7 +161,7 @@ int LightningStorm::Strike2(int a1, int a2, int a3)
   void **v9; // edi
   int v10; // eax
   void **v11; // eax
-  RulesClass *v12; // eax
+  unsigned int v12;
   unsigned int v13; // eax
   int Climb; // ebp
   void *WarheadVersusMultiplier; // ebx

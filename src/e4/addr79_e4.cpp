@@ -24,7 +24,10 @@
 #include "e4/classes/WebBrowser_e4.hpp"
 #include "e4/classes/WideString_e4.hpp"
 #include "e4/classes/HashTable_flat_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/Compare_e4.hpp"
 
 // 0x792CF0
 namespace gamemd {
@@ -99,7 +102,7 @@ void sub_793280(HWND hWnd, UINT a2, WPARAM a3, char * a4)
 {
   int result; // eax
   int v5; // edi
-  int *v6; // esi
+  unsigned int v6;
   HWND DlgItem; // eax
   int i; // esi
   HWND v9; // edi
@@ -321,7 +324,7 @@ int sub_793B30(char a1, const char * a2)
 namespace gamemd {
 void NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
 {
-  int v3; // ebp
+  IUnknown * v3;
   int v4; // esi
   char *v5; // edi
   char *v6; // ebx
@@ -333,7 +336,7 @@ void NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
   __int16 v13; // si
   unsigned __int16 v14; // di
   char v15; // bl
-  int *v16; // ebx
+  unsigned int v16;
   int v17; // esi
   _DWORD *v18; // ecx
   int v19; // edx
@@ -385,7 +388,7 @@ void NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
   int v65; // [esp+3Eh] [ebp-710h] BYREF
   int v66; // [esp+42h] [ebp-70Ch]
   signed int v67; // [esp+46h] [ebp-708h]
-  int v68; // [esp+4Ah] [ebp-704h]
+  IUnknown * v68;
   DWORD v69; // [esp+4Eh] [ebp-700h]
   int i; // [esp+56h] [ebp-6F8h]
   int v71; // [esp+5Ah] [ebp-6F4h] BYREF
@@ -3038,7 +3041,7 @@ void Multiplayer_GameMode_DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned i
           LoadPlayerProfile(&Type, (const char **)&g_WebBrowser); /*0x7989b5*/
           if ( v35 ) /*0x7989c0*/
             FillPersonaInfoWOL(v35, hWnd, (char **)&g_WebBrowser, (wchar_t **)1); /*0x7989ca*/
-          Type = (DWORD)&(void*)(void*)&rc_ptr_PlayerProfile_vftable; /*0x7989d3*/
+          Type = (DWORD)(void*)&rc_ptr_PlayerProfile_vftable; /*0x7989d3*/
           ComPtr::Release(&Type); /*0x7989db*/
         }
         DlgItem = GetDlgItem(hWnd, 1862); /*0x7989fa*/
@@ -3271,7 +3274,7 @@ void MainLobbyDlgProcWOL(HWND hWnd, LPARAM lParam, ObjectClass a3)
         v49 = GetDlgItem(v6, 1791); /*0x799b1e*/
         SendMessageA(v49, 0xF1u, v50, 0); /*0x799b21*/
         DeleteAndZero(&v57); /*0x799b27*/
-        v66 = &(void*)(void*)&rc_ptr_PlayerProfile_vftable; /*0x799b30*/
+        v66 = (void*)&rc_ptr_PlayerProfile_vftable; /*0x799b30*/
         ComPtr::Release(&v66); /*0x799b38*/
         DeleteAndZero::Alt(&v56); /*0x799b41*/
       }
@@ -3368,7 +3371,7 @@ void MainLobbyDlgProcWOL(HWND hWnd, LPARAM lParam, ObjectClass a3)
             SendMessageA(v33, 0x49Du, 0, 0); /*0x7998a6*/
             InvalidateRect(v33, 0, 0); /*0x7998ad*/
           }
-          v64 = &(void*)(void*)&rc_ptr_PlayerProfile_vftable; /*0x7998b3*/
+          v64 = (void*)&rc_ptr_PlayerProfile_vftable; /*0x7998b3*/
           ComPtr::Release(&v64); /*0x7998bb*/
           result = 0; /*0x7998c3*/
           break; /*0x7998c9*/
@@ -3465,7 +3468,7 @@ void MainLobbyDlgProcWOL(HWND hWnd, LPARAM lParam, ObjectClass a3)
             v17 = GetDlgItem(v6, 1671); /*0x79933d*/
             EnableWindow(v17, v52); /*0x799340*/
             DeleteAndZero((void **)&hWnd); /*0x799346*/
-            v64 = &(void*)(void*)&rc_ptr_PlayerProfile_vftable; /*0x79934f*/
+            v64 = (void*)&rc_ptr_PlayerProfile_vftable; /*0x79934f*/
             ComPtr::Release(&v64); /*0x799357*/
             return 0; /*0x799365*/
           case 1577: /*0x79915a*/
@@ -3479,7 +3482,7 @@ void MainLobbyDlgProcWOL(HWND hWnd, LPARAM lParam, ObjectClass a3)
               WOLOption::SetValue(&lParam); /*0x7993a1*/
               SaveProfileWOL(v65, (const char **)&g_WebBrowser); /*0x7993af*/
             }
-            v64 = &(void*)(void*)&rc_ptr_PlayerProfile_vftable; /*0x7993b8*/
+            v64 = (void*)&rc_ptr_PlayerProfile_vftable; /*0x7993b8*/
             ComPtr::Release(&v64); /*0x7993c0*/
             DeleteAndZero((void **)&lParam); /*0x7993c9*/
             return 0; /*0x7993d7*/
@@ -3540,7 +3543,7 @@ void MainLobbyDlgProcWOL(HWND hWnd, LPARAM lParam, ObjectClass a3)
         SaveProfileWOL(v65, (const char **)&g_WebBrowser); /*0x799522*/
       }
   LABEL_67:
-      v64 = &(void*)(void*)&rc_ptr_PlayerProfile_vftable; /*0x799662*/
+      v64 = (void*)&rc_ptr_PlayerProfile_vftable; /*0x799662*/
       ComPtr::Release(&v64); /*0x79966e*/
       return 0; /*0x799676*/
     }

@@ -18,13 +18,16 @@
 #include "e4/classes/ParticleSystemTypeClass_e4.hpp"
 #include "e4/classes/Power_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/WaveClass_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x41D7E0
 namespace gamemd {
 int Warhead::GetWarheadSound(int a2)
 {
-  int v3; // eax
+  Warhead * v3;
 
   if ( Audio::IsLoud((float *)(this->q130 + 336)) ) /*0x41d7ec*/
     v3 = this->q048; /*0x41d7f5*/

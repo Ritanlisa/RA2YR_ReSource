@@ -12,13 +12,15 @@
 #include "e4/classes/ArtConfig_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/Animation_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/String_e4.hpp"
 
 // 0x41E350
 namespace gamemd {
 unsigned int * AnimTypeClass::Construct2(ObjectClass * aP1)
 {
-  int v3; // eax
+  AnimTypeClass * v3;
 
   AbstractTypeClass::Constructor(aP1); /*0x41e359*/
   *(&this->vtable48) = -1; /*0x41e363*/
@@ -44,10 +46,10 @@ unsigned int * AnimTypeClass::Construct2(ObjectClass * aP1)
   *(&this->abstractFlags6) = 0; /*0x41e3ef*/
   *(&this->nextArrayIndex5) = 0; /*0x41e3f5*/
   *(&this->nextArrayIndex6) = 0; /*0x41e3fb*/
-  *this = &(void*)(void*)&AITriggerTypeClass_vftable; /*0x41e401*/
-  this->vtable2 = &(void*)(void*)&AITriggerTypeClass_vftable; /*0x41e407*/
-  this->vtable3 = &(void*)(void*)&AITriggerTypeClass_vftable; /*0x41e40e*/
-  this->vtable4 = &(void*)(void*)&AITriggerTypeClass_vftable; /*0x41e415*/
+  *(void **)this = (void*)&AITriggerTypeClass_vftable; /*0x41e401*/
+  this->vtable2 = (void*)&AITriggerTypeClass_vftable; /*0x41e407*/
+  this->vtable3 = (void*)&AITriggerTypeClass_vftable; /*0x41e40e*/
+  this->vtable4 = (void*)&AITriggerTypeClass_vftable; /*0x41e415*/
   memset(&this->u32_E4, 0, 0x20u); /*0x41e41c*/
   if ( g_AnimTypeInitQueue < dword_A8B208 /*0x41e452*/
     || (byte_A8B20D || !dword_A8B208)
@@ -67,8 +69,8 @@ unsigned int * AnimTypeClass::Construct2(ObjectClass * aP1)
 namespace gamemd {
 unsigned int * AnimTypeClass::Construct(AbstractClass * aP1)
 {
-  int v3; // eax
-  int v4; // eax
+  AnimTypeClass * v3;
+  AnimTypeClass * v4;
   int v5; // eax
   void **v6; // ecx
 
@@ -150,10 +152,10 @@ unsigned int * AnimTypeClass::Construct(AbstractClass * aP1)
   this->Shadow = 0; /*0x42771e*/
   this->PsiWarning = 0; /*0x427724*/
   this->ShouldFogRemove = 1; /*0x42772a*/
-  *this = &(void*)(void*)&AnimTypeClass_vftable; /*0x427731*/
-  this->vtable2 = &(void*)(void*)&AnimTypeClass_vftable; /*0x427737*/
-  this->vtable3 = &(void*)(void*)&AnimTypeClass_vftable; /*0x42773d*/
-  this->vtable4 = &(void*)(void*)&AnimTypeClass_vftable; /*0x427744*/
+  *(void **)this = (void*)&AnimTypeClass_vftable; /*0x427731*/
+  this->vtable2 = (void*)&AnimTypeClass_vftable; /*0x427737*/
+  this->vtable3 = (void*)&AnimTypeClass_vftable; /*0x42773d*/
+  this->vtable4 = (void*)&AnimTypeClass_vftable; /*0x427744*/
   AbstractClass::GenerateUniqueID((int)(this + 1)); /*0x42774b*/
   this->q234 = 1; /*0x427750*/
   this->q22F = 1; /*0x427757*/
@@ -212,7 +214,7 @@ void* AnimTypeClass::GetWarhead(int a2)
   int v3; // eax
   char v4; // cl
   const char *v5; // eax
-  int v6; // ecx
+  void * v6;
   int v7; // eax
   int v8; // eax
   char v9; // dl
@@ -723,10 +725,10 @@ ScenarioClass * * AnimTypeClass::SaveLoad_Prefix(int a1, int a2)
     if ( a1 ) /*0x428823*/
     {
       ObjectTypeClass::Construct((_DWORD *)a1, (int)&v3); /*0x42882c*/
-      *(_DWORD *)a1 = &(void*)(void*)&AnimTypeClass_vftable; /*0x428831*/
-      *(_DWORD *)(a1 + 4) = &(void*)(void*)&AnimTypeClass_vftable; /*0x428837*/
-      *(_DWORD *)(a1 + 8) = &(void*)(void*)&AnimTypeClass_vftable; /*0x42883e*/
-      *(_DWORD *)(a1 + 12) = &(void*)(void*)&AnimTypeClass_vftable; /*0x428845*/
+      *(_DWORD *)a1 = (void*)&AnimTypeClass_vftable; /*0x428831*/
+      *(_DWORD *)(a1 + 4) = (void*)&AnimTypeClass_vftable; /*0x428837*/
+      *(_DWORD *)(a1 + 8) = (void*)&AnimTypeClass_vftable; /*0x42883e*/
+      *(_DWORD *)(a1 + 12) = (void*)&AnimTypeClass_vftable; /*0x428845*/
     }
     VoxelAnimType::LoadAnim((char *)a1); /*0x42884e*/
     ObjectTypeClass::Load2DArt((char *)a1); /*0x428855*/
@@ -890,7 +892,7 @@ int AnimTypeClass::GetDamage()
       this->Image = v5; /*0x428d4d*/
       if ( v5 ) /*0x428d53*/
         *(&this->DetailLevel8) = 1; /*0x428d55*/
-      v10[0] = &(void*)(void*)&CCFileClass_vftable; /*0x428d63*/
+      v10[0] = (void*)&CCFileClass_vftable; /*0x428d63*/
       v12 = 0; /*0x428d6b*/
       Vector::Clear((int)v11); /*0x428d76*/
       v10[0] = &off_7E1668; /*0x428d7f*/
@@ -898,7 +900,7 @@ int AnimTypeClass::GetDamage()
     }
     (*(void (__thiscall **)(char *, _DWORD))(*(_DWORD *)&this->DetailLevel0))(this, *((_DWORD *)g_ScenarioClass_Instance + 1174)); /*0x428d9c*/
     v6 = this->Image; /*0x428da2*/
-    v7[0] = &(void*)(void*)&CCFileClass_vftable; /*0x428dac*/
+    v7[0] = (void*)&CCFileClass_vftable; /*0x428dac*/
     v9 = 0; /*0x428db4*/
     Vector::Clear((int)v8); /*0x428dbc*/
     v7[0] = &off_7E1668; /*0x428dc5*/
@@ -915,10 +917,10 @@ AnimTypeClass * AnimTypeClass::ddtor(char a2)
   int v3; // eax
   int v4; // eax
 
-  *this = &(void*)(void*)&AnimTypeClass_vftable; /*0x428ead*/
-  this->vtable2 = &(void*)(void*)&AnimTypeClass_vftable; /*0x428eb3*/
-  this->vtable3 = &(void*)(void*)&AnimTypeClass_vftable; /*0x428eba*/
-  this->vtable4 = &(void*)(void*)&AnimTypeClass_vftable; /*0x428ec1*/
+  *this = (void*)&AnimTypeClass_vftable; /*0x428ead*/
+  this->vtable2 = (void*)&AnimTypeClass_vftable; /*0x428eb3*/
+  this->vtable3 = (void*)&AnimTypeClass_vftable; /*0x428eba*/
+  this->vtable4 = (void*)&AnimTypeClass_vftable; /*0x428ec1*/
   v3 = (*(int (__thiscall **)(int *, _DWORD **))(g_AnimPoolManager + 16))(&g_AnimPoolManager, &this); /*0x428ed3*/
   if ( v3 != -1 && v3 < g_AnimManager && v3 < --g_AnimManager ) /*0x428eee*/
   {

@@ -11,7 +11,11 @@
 #include "e4/classes/ScenarioClass_e4.hpp"
 #include "e4/classes/TActionClass_e4.hpp"
 #include "e4/classes/Tactical_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/AnimClass_e4.hpp"
 
 // 0x71E940
 namespace gamemd {
@@ -471,7 +475,7 @@ int TEventClass::PrepareSaveToINI(const char * a2)
   int v2; // edx
   int v3; // eax
   int v4; // esi
-  const CHAR *v6; // [esp-10h] [ebp-18h]
+  const unsigned int v6;
   int v7; // [esp-Ch] [ebp-14h]
   int v8; // [esp-8h] [ebp-10h]
   int v9; // [esp-4h] [ebp-Ch]
@@ -590,10 +594,10 @@ void * TEventClass::Fire(char a2)
   int v4; // eax
   int v5; // eax
 
-  *this = &(void*)(void*)&TEventClass_vftable; /*0x71fa86*/
-  this->vtable2 = &(void*)(void*)&TEventClass_vftable; /*0x71fa8c*/
-  this->vtable3 = &(void*)(void*)&TEventClass_vftable; /*0x71fa93*/
-  this->vtable4 = &(void*)(void*)&TEventClass_vftable; /*0x71fa9a*/
+  *(void **)this = (void*)&TEventClass_vftable; /*0x71fa86*/
+  this->vtable2 = (void*)&TEventClass_vftable; /*0x71fa8c*/
+  this->vtable3 = (void*)&TEventClass_vftable; /*0x71fa93*/
+  this->vtable4 = (void*)&TEventClass_vftable; /*0x71fa9a*/
   AbstractClass::AnnounceExpiredPointer(1); /*0x71faa1*/
   v3 = (*(int (__thiscall **)(int *, void ***))(TActionClass_Array + 16))(&TActionClass_Array, &this); /*0x71faba*/
   if ( v3 != -1 && v3 < g_TActionClassState && v3 < --g_TActionClassState ) /*0x71fad5*/
@@ -684,10 +688,10 @@ int TEventClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x71f8d6*/
     {
       AbstractClass::InitVtables(aP0, (int)&aP1); /*0x71f8df*/
-      *aP0 = (int)&(void*)(void*)&TEventClass_vftable; /*0x71f8e4*/
-      aP0[1] = (int)&(void*)(void*)&TEventClass_vftable; /*0x71f8ea*/
-      aP0[2] = (int)&(void*)(void*)&TEventClass_vftable; /*0x71f8f1*/
-      aP0[3] = (int)&(void*)(void*)&TEventClass_vftable; /*0x71f8f8*/
+      *(_DWORD *)aP0 = (int)&TEventClass_vftable; /*0x71f8e4*/
+      aP0[1] = (int)&TEventClass_vftable; /*0x71f8ea*/
+      aP0[2] = (int)&TEventClass_vftable; /*0x71f8f1*/
+      aP0[3] = (int)&TEventClass_vftable; /*0x71f8f8*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP0 + 10); /*0x71f908*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP0 + 12); /*0x71f916*/

@@ -23,7 +23,7 @@ struct BuildingPlacement {
     unsigned int q034;  // 0x34
     unsigned char q038;  // 0x38
     unsigned char q03C;  // 0x3C
-    IUnknown* q040;  // 0x40
+    void* q040;  // 0x40
     unsigned int q044;  // 0x44
     unsigned char q048;  // 0x48
     unsigned char u8_4C;  // 0x4C
@@ -31,7 +31,7 @@ struct BuildingPlacement {
     unsigned int q054;  // 0x54
     unsigned char q058;  // 0x58
     unsigned char q060;  // 0x60
-    IUnknown* q064;  // 0x64
+    void* q064;  // 0x64
     unsigned int q068;  // 0x68
     unsigned char q06C;  // 0x6C
     unsigned char q070;  // 0x70
@@ -41,14 +41,14 @@ struct BuildingPlacement {
     unsigned int q084;  // 0x84
     unsigned char q085;  // 0x85
     void* q08C;  // 0x8C
-    void* q090;  // 0x90
+    unsigned int ;  // 0x90
     unsigned char q094;  // 0x94
     unsigned char q098;  // 0x98
     unsigned char q09C;  // 0x9C
     unsigned char q0A0;  // 0xA0
     unsigned char q0A4;  // 0xA4
     unsigned char q0A8;  // 0xA8
-    IUnknown* q100;  // 0x100
+    void* q100;  // 0x100
     unsigned int q104;  // 0x104
     unsigned char q108;  // 0x108
     unsigned char q10C;  // 0x10C
@@ -98,10 +98,16 @@ struct BuildingPlacement {
     unsigned char q1924;  // 0x1924
     void* q3720;  // 0x3720
     unsigned char q3724;  // 0x3724
+    unsigned int IsPlacementFlagSet;
     unsigned int RenderBuildingPlacementShadow;
+    unsigned int q0042;
+    unsigned int q020;
+    unsigned int u32_184;
+    unsigned int u32_204;
+    unsigned int q090;
 // --- flat members (END) ---
     VectorClass_flat * * ProcessBuildingPlacementAction();
-    unsigned int * FindPosition(int * a0, IUnknown * aP1, IUnknown a3);
+    unsigned int * FindPosition(int * a0, void* aP1, IUnknown a3);
     unsigned int * SelectBuildingPlacementCells(int a2);
     void* Activate(int a2, unsigned int * a3);
     static double ValidateType(...);  // C2597 interim stub

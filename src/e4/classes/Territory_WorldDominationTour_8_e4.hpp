@@ -46,8 +46,8 @@ struct Territory_WorldDominationTour_8 {
     char AddRef(char a2);  // 0x7718A0
     signed int Release();  // 0x771900
     void ddtor();  // 0x771950
-    char Read(int a2, int a3);  // 0x771970
-    void Write(int a2, int a3);  // 0x771980
+    char Read(int a2,  int a3);    // 0x771970
+    void Write(int a2,  int a3);    // 0x771980
     void Close(int a2);  // 0x7719D0
     unsigned int * QueryInterface(char a2);  // 0x771A30
     unsigned int * Seek(unsigned int * a1);  // 0x771990

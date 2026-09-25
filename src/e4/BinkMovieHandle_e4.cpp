@@ -4,7 +4,12 @@
 #include "e4/classes/BinkMovie_e4.hpp"
 #include "e4/classes/BinkMovieHandle_e4.hpp"
 #include "e4/classes/DSurface_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/Audio_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/RawFileClass_e4.hpp"
 
 // 0x432AB0
 namespace gamemd {
@@ -230,13 +235,13 @@ BinkMovieHandle * BinkMovieHandle::QueryInterface(char a2)
   void *v3; // edi
 
   v3 = (void *)*(this + 4); /*0x5c0a34*/
-  *this = &(void*)(void*)&BinkMovieHandle_vftable; /*0x5c0a37*/
+  *(void **)this = (void*)&BinkMovieHandle_vftable; /*0x5c0a37*/
   if ( v3 ) /*0x5c0a3f*/
   {
     BinkMovie::Stop((int)v3); /*0x5c0a43*/
     RA2_OPDEL(v3); /*0x5c0a49*/
   }
-  *this = &(void*)(void*)&MovieHandle_vftable; /*0x5c0a55*/
+  *(void **)this = (void*)&MovieHandle_vftable; /*0x5c0a55*/
   if ( (a2 & 1) != 0 ) /*0x5c0a5d*/
     RA2_OPDEL(); /*0x5c0a60*/
   return this; /*0x5c0a6a*/

@@ -28,6 +28,6 @@ struct E4Recv_6ABA60 {
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    char sub_6ABA60(int a2, int a3, int a4);  // 0x6ABA60
+    char sub_6ABA60(int a2,  int a3,  int a4);    // 0x6ABA60
 };
 } // namespace gamemd

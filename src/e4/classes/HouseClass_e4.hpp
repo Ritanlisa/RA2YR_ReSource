@@ -79,7 +79,7 @@ struct HouseClass {
     char countWarfactories[4];  // 0xC4
     char infantrySelfHeal[4];  // 0xC8
     char unitsSelfHeal[4];  // 0xCC
-    StartingTechnoStruct** startingUnits;  // 0xD0
+    void** startingUnits;  // 0xD0
     char startingUnitsCount[4];  // 0xD4
     unsigned int q0D5;  // 0xD5
     unsigned int q0D6;  // 0xD6
@@ -244,9 +244,9 @@ struct HouseClass {
     char allowWinBlocks[4];  // 0x270
     char repairTimer[12];  // 0x274
     unsigned int q278;  // 0x278
-    IUnknown* q27C;  // 0x27C
+    void* q27C;  // 0x27C
     bool q27F;  // 0x27F
-    IUnknown* q280;  // 0x280
+    void* q280;  // 0x280
     unsigned int q284;  // 0x284
     unsigned int q288;  // 0x288
     char HouseClass_field_timer_28C[12];  // 0x28C
@@ -354,7 +354,7 @@ struct HouseClass {
     unsigned int q404;  // 0x404
     unsigned int q408;  // 0x408
     unsigned int q418;  // 0x418
-    IUnknown* q41C;  // 0x41C
+    void* q41C;  // 0x41C
     unsigned int q420;  // 0x420
     unsigned int q424;  // 0x424
     unsigned int q428;  // 0x428
@@ -422,42 +422,42 @@ struct HouseClass {
     void* q548;  // 0x548
     AbstractClass* q54C;  // 0x54C
     unsigned int q550;  // 0x550
-    IUnknown* q554;  // 0x554
+    void* q554;  // 0x554
     AbstractClass* q558;  // 0x558
-    IUnknown* q55C;  // 0x55C
+    void* q55C;  // 0x55C
     unsigned char q560;  // 0x560
-    IUnknown* q564;  // 0x564
+    void* q564;  // 0x564
     unsigned char q568;  // 0x568
     unsigned char q570;  // 0x570
     char q578;  // 0x578
     char q580;  // 0x580
     char q584;  // 0x584
     int q588;  // 0x588
-    IUnknown* q58C;  // 0x58C
+    void* q58C;  // 0x58C
     unsigned int q590;  // 0x590
     unsigned int q594;  // 0x594
     unsigned int q598;  // 0x598
-    IUnknown* q59C;  // 0x59C
+    void* q59C;  // 0x59C
     unsigned char q5A0;  // 0x5A0
     ObjectClass* q5A4;  // 0x5A4
     unsigned char q5A8;  // 0x5A8
-    IUnknown* q5B4;  // 0x5B4
+    void* q5B4;  // 0x5B4
     unsigned char q5B8;  // 0x5B8
     unsigned char q5C0;  // 0x5C0
-    IUnknown* q5C4;  // 0x5C4
+    void* q5C4;  // 0x5C4
     unsigned char q5C8;  // 0x5C8
     void* q5CC;  // 0x5CC
     unsigned char q5D0;  // 0x5D0
-    IUnknown* q5D4;  // 0x5D4
+    void* q5D4;  // 0x5D4
     unsigned char q5D8;  // 0x5D8
     ObjectClass* q5E0;  // 0x5E0
     unsigned char q5E4;  // 0x5E4
     unsigned int q5E8;  // 0x5E8
     BuildingTypeClass* q5EC;  // 0x5EC
     unsigned char q5F0;  // 0x5F0
-    IUnknown* q5F4;  // 0x5F4
+    void* q5F4;  // 0x5F4
     unsigned char q5F8;  // 0x5F8
-    IUnknown* q5FC;  // 0x5FC
+    void* q5FC;  // 0x5FC
     void * q600;  // 0x600
     int q604;  // 0x604
     int q608;  // 0x608
@@ -528,23 +528,23 @@ struct HouseClass {
     unsigned int q740;  // 0x740
     int q744;  // 0x744
     int q748;  // 0x748
-    IUnknown* q75C;  // 0x75C
+    void* q75C;  // 0x75C
     int q760;  // 0x760
     unsigned int q764;  // 0x764
     int q768;  // 0x768
-    IUnknown* q76C;  // 0x76C
+    void* q76C;  // 0x76C
     unsigned char q770;  // 0x770
-    IUnknown* q774;  // 0x774
+    void* q774;  // 0x774
     unsigned int q778;  // 0x778
-    IUnknown* q77C;  // 0x77C
+    void* q77C;  // 0x77C
     int q780;  // 0x780
     int q784;  // 0x784
     unsigned int q788;  // 0x788
     unsigned char q78C;  // 0x78C
     unsigned int q790;  // 0x790
-    IUnknown* q794;  // 0x794
+    void* q794;  // 0x794
     unsigned char q798;  // 0x798
-    IUnknown* q79C;  // 0x79C
+    void* q79C;  // 0x79C
     unsigned int q7A0;  // 0x7A0
     unsigned int q7A4;  // 0x7A4
     void* q7A8;  // 0x7A8
@@ -698,17 +698,17 @@ struct HouseClass {
     unsigned int u32_D38;  // 0xD38
     unsigned char qD3C;  // 0xD3C
     AbstractClass* qD64;  // 0xD64
-    IUnknown* qD68;  // 0xD68
+    void* qD68;  // 0xD68
     unsigned char qD6C;  // 0xD6C
     Tactical* qD70;  // 0xD70
     AbstractClass* qD74;  // 0xD74
-    IUnknown* qD78;  // 0xD78
+    void* qD78;  // 0xD78
     void* qD7C;  // 0xD7C
     unsigned int u32_D80;  // 0xD80
     void* qD84;  // 0xD84
     unsigned int u32_D9C;  // 0xD9C
     void* qDA0;  // 0xDA0
-    IUnknown* qDB0;  // 0xDB0
+    void* qDB0;  // 0xDB0
     unsigned char qDB4;  // 0xDB4
     unsigned int u32_DB8;  // 0xDB8
     void* qDBC;  // 0xDBC
@@ -767,55 +767,55 @@ struct HouseClass {
     unsigned int q1024;  // 0x1024
     unsigned int q1028;  // 0x1028
     int q1030;  // 0x1030
-    IUnknown* q1044;  // 0x1044
+    void* q1044;  // 0x1044
     unsigned char q1048;  // 0x1048
-    IUnknown* q104C;  // 0x104C
+    void* q104C;  // 0x104C
     unsigned char q1050;  // 0x1050
-    IUnknown* q1054;  // 0x1054
+    void* q1054;  // 0x1054
     unsigned int q1058;  // 0x1058
-    IUnknown* q105C;  // 0x105C
+    void* q105C;  // 0x105C
     unsigned int q1060;  // 0x1060
     unsigned int q1064;  // 0x1064
     unsigned char q1068;  // 0x1068
-    IUnknown* q106C;  // 0x106C
+    void* q106C;  // 0x106C
     unsigned char q1070;  // 0x1070
     unsigned int q1074;  // 0x1074
     unsigned int q1078;  // 0x1078
-    IUnknown* q107C;  // 0x107C
+    void* q107C;  // 0x107C
     unsigned char q1080;  // 0x1080
     unsigned int q1084;  // 0x1084
     unsigned int q1088;  // 0x1088
-    IUnknown* q108C;  // 0x108C
+    void* q108C;  // 0x108C
     unsigned char q1090;  // 0x1090
-    IUnknown* q1094;  // 0x1094
+    void* q1094;  // 0x1094
     unsigned char q1098;  // 0x1098
-    IUnknown* q109C;  // 0x109C
+    void* q109C;  // 0x109C
     unsigned char q10A0;  // 0x10A0
-    IUnknown* q10A4;  // 0x10A4
+    void* q10A4;  // 0x10A4
     unsigned char q10A8;  // 0x10A8
-    IUnknown* q10AC;  // 0x10AC
+    void* q10AC;  // 0x10AC
     unsigned char q10B0;  // 0x10B0
-    IUnknown* q10B4;  // 0x10B4
+    void* q10B4;  // 0x10B4
     unsigned char q10B8;  // 0x10B8
-    IUnknown* q10BC;  // 0x10BC
+    void* q10BC;  // 0x10BC
     void* q10C0;  // 0x10C0
     unsigned int u32_10C4;  // 0x10C4
-    IUnknown* q10CC;  // 0x10CC
+    void* q10CC;  // 0x10CC
     unsigned char q10D0;  // 0x10D0
     void* q10E0;  // 0x10E0
     unsigned char q10E4;  // 0x10E4
-    IUnknown* q10EC;  // 0x10EC
+    void* q10EC;  // 0x10EC
     void* q10F0;  // 0x10F0
     unsigned char q10F4;  // 0x10F4
-    IUnknown* q10FC;  // 0x10FC
+    void* q10FC;  // 0x10FC
     unsigned char q1100;  // 0x1100
     unsigned int q1110;  // 0x1110
     unsigned char q1114;  // 0x1114
-    IUnknown* q111C;  // 0x111C
+    void* q111C;  // 0x111C
     unsigned int q1120;  // 0x1120
     unsigned int q1124;  // 0x1124
     unsigned int q1128;  // 0x1128
-    IUnknown* q112C;  // 0x112C
+    void* q112C;  // 0x112C
     void* q1130;  // 0x1130
     void* q1134;  // 0x1134
     unsigned int q1138;  // 0x1138
@@ -825,7 +825,7 @@ struct HouseClass {
     unsigned int q1148;  // 0x1148
     unsigned char q114C;  // 0x114C
     unsigned int u32_1150;  // 0x1150
-    IUnknown* q1154;  // 0x1154
+    void* q1154;  // 0x1154
     void * ptr_1158;  // 0x1158
     void* q115C;  // 0x115C
     int q1160;  // 0x1160
@@ -900,12 +900,12 @@ struct HouseClass {
     void* q1358;  // 0x1358
     unsigned char q135C;  // 0x135C
     unsigned int q1360;  // 0x1360
-    IUnknown* q1364;  // 0x1364
+    void* q1364;  // 0x1364
     AbstractClass* q1368;  // 0x1368
     void* q1374;  // 0x1374
     unsigned int q1378;  // 0x1378
     unsigned char q137C;  // 0x137C
-    IUnknown* q1380;  // 0x1380
+    void* q1380;  // 0x1380
     unsigned char q1384;  // 0x1384
     unsigned char q1388;  // 0x1388
     void* q1390;  // 0x1390
@@ -921,9 +921,9 @@ struct HouseClass {
     unsigned int q1404;  // 0x1404
     char q1408;  // 0x1408
     char q1410;  // 0x1410
-    IUnknown* q1414;  // 0x1414
+    void* q1414;  // 0x1414
     unsigned char q1418;  // 0x1418
-    IUnknown* q141C;  // 0x141C
+    void* q141C;  // 0x141C
     unsigned char q1420;  // 0x1420
     unsigned int q1424;  // 0x1424
     unsigned char q1428;  // 0x1428
@@ -949,9 +949,9 @@ struct HouseClass {
     unsigned char q1490;  // 0x1490
     unsigned int q14B0;  // 0x14B0
     void* q14BC;  // 0x14BC
-    IUnknown* q14C0;  // 0x14C0
-    IUnknown* q14C4;  // 0x14C4
-    IUnknown* q14C8;  // 0x14C8
+    void* q14C0;  // 0x14C0
+    void* q14C4;  // 0x14C4
+    void* q14C8;  // 0x14C8
     unsigned char q14CC;  // 0x14CC
     void* q14D8;  // 0x14D8
     void* q14E0;  // 0x14E0
@@ -963,26 +963,26 @@ struct HouseClass {
     unsigned int q14E9;  // 0x14E9
     unsigned int q14EA;  // 0x14EA
     unsigned int q14EB;  // 0x14EB
-    IUnknown* q14EC;  // 0x14EC
+    void* q14EC;  // 0x14EC
     unsigned int q14ED;  // 0x14ED
     unsigned int q14EE;  // 0x14EE
     unsigned int q14EF;  // 0x14EF
     unsigned int q14F3;  // 0x14F3
-    IUnknown* q14F4;  // 0x14F4
+    void* q14F4;  // 0x14F4
     unsigned char q14F8;  // 0x14F8
     void* q14FC;  // 0x14FC
     void* q1500;  // 0x1500
     unsigned char q1504;  // 0x1504
     unsigned char q1508;  // 0x1508
-    IUnknown* q150C;  // 0x150C
+    void* q150C;  // 0x150C
     unsigned char q1510;  // 0x1510
-    IUnknown* q151C;  // 0x151C
+    void* q151C;  // 0x151C
     unsigned char q1520;  // 0x1520
     int q1524;  // 0x1524
     unsigned int q1525;  // 0x1525
     unsigned int q1526;  // 0x1526
     unsigned char q1528;  // 0x1528
-    IUnknown* q152C;  // 0x152C
+    void* q152C;  // 0x152C
     unsigned char q1530;  // 0x1530
     int q1540;  // 0x1540
     int q1544;  // 0x1544
@@ -1014,49 +1014,49 @@ struct HouseClass {
     AbstractClass* q1628;  // 0x1628
     int q1634;  // 0x1634
     unsigned char q1638;  // 0x1638
-    IUnknown* q163C;  // 0x163C
+    void* q163C;  // 0x163C
     unsigned int q1640;  // 0x1640
     unsigned char q1644;  // 0x1644
-    IUnknown* q1648;  // 0x1648
+    void* q1648;  // 0x1648
     unsigned char q164C;  // 0x164C
     unsigned int q1650;  // 0x1650
     unsigned int q1654;  // 0x1654
-    IUnknown* q1658;  // 0x1658
+    void* q1658;  // 0x1658
     unsigned char q165C;  // 0x165C
     void* q1660;  // 0x1660
     unsigned char q1664;  // 0x1664
-    IUnknown* q1668;  // 0x1668
-    IUnknown* q166C;  // 0x166C
-    IUnknown* q1670;  // 0x1670
-    IUnknown* q1674;  // 0x1674
+    void* q1668;  // 0x1668
+    void* q166C;  // 0x166C
+    void* q1670;  // 0x1670
+    void* q1674;  // 0x1674
     unsigned char q1678;  // 0x1678
-    IUnknown* q167C;  // 0x167C
-    IUnknown* q1680;  // 0x1680
-    IUnknown* q1684;  // 0x1684
+    void* q167C;  // 0x167C
+    void* q1680;  // 0x1680
+    void* q1684;  // 0x1684
     void* q1688;  // 0x1688
     unsigned char q168C;  // 0x168C
-    IUnknown* q16A8;  // 0x16A8
-    IUnknown* q16AC;  // 0x16AC
+    void* q16A8;  // 0x16A8
+    void* q16AC;  // 0x16AC
     unsigned char q16B0;  // 0x16B0
-    IUnknown* q16B4;  // 0x16B4
+    void* q16B4;  // 0x16B4
     void* q16CC;  // 0x16CC
     unsigned char q16D0;  // 0x16D0
-    IUnknown* q16D4;  // 0x16D4
+    void* q16D4;  // 0x16D4
     void* q16D8;  // 0x16D8
     unsigned char q16DC;  // 0x16DC
-    IUnknown* q16E4;  // 0x16E4
+    void* q16E4;  // 0x16E4
     unsigned char q16E8;  // 0x16E8
-    IUnknown* q16EC;  // 0x16EC
+    void* q16EC;  // 0x16EC
     void* q16F0;  // 0x16F0
-    IUnknown* q16F4;  // 0x16F4
+    void* q16F4;  // 0x16F4
     unsigned int q16F8;  // 0x16F8
     void* q16FC;  // 0x16FC
-    IUnknown* q1700;  // 0x1700
-    IUnknown* q1704;  // 0x1704
-    IUnknown* q1708;  // 0x1708
-    IUnknown* q170C;  // 0x170C
-    IUnknown* q1710;  // 0x1710
-    IUnknown* q1714;  // 0x1714
+    void* q1700;  // 0x1700
+    void* q1704;  // 0x1704
+    void* q1708;  // 0x1708
+    void* q170C;  // 0x170C
+    void* q1710;  // 0x1710
+    void* q1714;  // 0x1714
     unsigned char q1718;  // 0x1718
     void* q171C;  // 0x171C
     void* q1720;  // 0x1720
@@ -1066,22 +1066,22 @@ struct HouseClass {
     AbstractTypeClass* q1730;  // 0x1730
     unsigned char q1734;  // 0x1734
     unsigned char q1738;  // 0x1738
-    IUnknown* q173C;  // 0x173C
+    void* q173C;  // 0x173C
     unsigned int q1740;  // 0x1740
     unsigned int q1744;  // 0x1744
     unsigned int q1748;  // 0x1748
-    IUnknown* q174C;  // 0x174C
+    void* q174C;  // 0x174C
     unsigned char q1750;  // 0x1750
-    IUnknown* q1754;  // 0x1754
+    void* q1754;  // 0x1754
     unsigned char q1758;  // 0x1758
     unsigned char q175C;  // 0x175C
     unsigned int q1760;  // 0x1760
     unsigned int q1761;  // 0x1761
-    IUnknown* q1764;  // 0x1764
+    void* q1764;  // 0x1764
     void* q1768;  // 0x1768
     unsigned int q176A;  // 0x176A
-    IUnknown* q1770;  // 0x1770
-    IUnknown* q1774;  // 0x1774
+    void* q1770;  // 0x1770
+    void* q1774;  // 0x1774
     AbstractTypeClass* q1778;  // 0x1778
     void* q177C;  // 0x177C
     void* q1780;  // 0x1780
@@ -1109,40 +1109,40 @@ struct HouseClass {
     unsigned char q180C;  // 0x180C
     int q1810;  // 0x1810
     int q1814;  // 0x1814
-    IUnknown* q181C;  // 0x181C
+    void* q181C;  // 0x181C
     unsigned char q1820;  // 0x1820
     int q1824;  // 0x1824
     int q1828;  // 0x1828
-    IUnknown* q182C;  // 0x182C
+    void* q182C;  // 0x182C
     unsigned int q1830;  // 0x1830
     ObjectTypeClass* q1834;  // 0x1834
     unsigned char q1838;  // 0x1838
     void * q1844;  // 0x1844
     unsigned char q1848;  // 0x1848
-    IUnknown* q184C;  // 0x184C
+    void* q184C;  // 0x184C
     unsigned char q1850;  // 0x1850
-    IUnknown* q185C;  // 0x185C
+    void* q185C;  // 0x185C
     int q1860;  // 0x1860
     int q1864;  // 0x1864
     void* q186C;  // 0x186C
     unsigned char q1870;  // 0x1870
     int q1874;  // 0x1874
     int q1878;  // 0x1878
-    IUnknown* q1884;  // 0x1884
+    void* q1884;  // 0x1884
     int q1888;  // 0x1888
     void* q18A8;  // 0x18A8
     void* q18AC;  // 0x18AC
     unsigned char q18B0;  // 0x18B0
-    IUnknown* q1900;  // 0x1900
+    void* q1900;  // 0x1900
     unsigned char q1904;  // 0x1904
-    IUnknown* q1908;  // 0x1908
+    void* q1908;  // 0x1908
     char q1910[4];  // 0x1910
     int q1920;  // 0x1920
     int q1924;  // 0x1924
     unsigned int q1928;  // 0x1928
-    IUnknown* q1940;  // 0x1940
+    void* q1940;  // 0x1940
     unsigned char q1944;  // 0x1944
-    IUnknown* q1948;  // 0x1948
+    void* q1948;  // 0x1948
     void* q1960;  // 0x1960
     unsigned char q1964;  // 0x1964
     unsigned int q1968;  // 0x1968
@@ -1296,11 +1296,11 @@ struct HouseClass {
     unsigned char q3434;  // 0x3434
     Tactical* q3440;  // 0x3440
     AbstractClass* q3444;  // 0x3444
-    IUnknown* q3448;  // 0x3448
+    void* q3448;  // 0x3448
     void* q3460;  // 0x3460
     unsigned int q3484;  // 0x3484
     void* q3488;  // 0x3488
-    IUnknown* q3504;  // 0x3504
+    void* q3504;  // 0x3504
     unsigned char q3508;  // 0x3508
     unsigned int q3540;  // 0x3540
     void* q3544;  // 0x3544
@@ -1338,38 +1338,38 @@ struct HouseClass {
     unsigned int q4130;  // 0x4130
     int q4134;  // 0x4134
     int q4144;  // 0x4144
-    IUnknown* q4164;  // 0x4164
+    void* q4164;  // 0x4164
     unsigned char q4168;  // 0x4168
-    IUnknown* q4178;  // 0x4178
-    IUnknown* q4180;  // 0x4180
+    void* q4178;  // 0x4178
+    void* q4180;  // 0x4180
     unsigned int q4184;  // 0x4184
-    IUnknown* q4188;  // 0x4188
+    void* q4188;  // 0x4188
     unsigned char q4200;  // 0x4200
-    IUnknown* q4204;  // 0x4204
+    void* q4204;  // 0x4204
     unsigned char q4208;  // 0x4208
-    IUnknown* q4220;  // 0x4220
+    void* q4220;  // 0x4220
     unsigned char q4224;  // 0x4224
     unsigned int q4228;  // 0x4228
     unsigned char q4240;  // 0x4240
-    IUnknown* q4244;  // 0x4244
+    void* q4244;  // 0x4244
     unsigned char q4248;  // 0x4248
-    IUnknown* q4260;  // 0x4260
+    void* q4260;  // 0x4260
     unsigned char q4264;  // 0x4264
-    IUnknown* q4268;  // 0x4268
+    void* q4268;  // 0x4268
     unsigned char q4280;  // 0x4280
-    IUnknown* q4284;  // 0x4284
+    void* q4284;  // 0x4284
     void* q4288;  // 0x4288
-    IUnknown* q4300;  // 0x4300
+    void* q4300;  // 0x4300
     unsigned char q4304;  // 0x4304
     void* q4320;  // 0x4320
     unsigned char q4324;  // 0x4324
     unsigned char q4340;  // 0x4340
-    IUnknown* q4348;  // 0x4348
+    void* q4348;  // 0x4348
     unsigned int q4358;  // 0x4358
     char unknownScores[2056];  // 0x4368
     void * q4370;  // 0x4370
     unsigned char q4374;  // 0x4374
-    IUnknown* q4380;  // 0x4380
+    void* q4380;  // 0x4380
     unsigned int q4384;  // 0x4384
     unsigned int q4388;  // 0x4388
     void* q4400;  // 0x4400
@@ -1432,9 +1432,9 @@ struct HouseClass {
     unsigned char q4944;  // 0x4944
     AbstractClass* q4950;  // 0x4950
     unsigned int q4960;  // 0x4960
-    IUnknown* q4964;  // 0x4964
+    void* q4964;  // 0x4964
     AbstractClass* q4968;  // 0x4968
-    IUnknown* q4978;  // 0x4978
+    void* q4978;  // 0x4978
     void* q4980;  // 0x4980
     unsigned int q4984;  // 0x4984
     unsigned char q4988;  // 0x4988
@@ -1451,15 +1451,15 @@ struct HouseClass {
     unsigned int q5124;  // 0x5124
     char q5128;  // 0x5128
     char q5138;  // 0x5138
-    IUnknown* q5140;  // 0x5140
+    void* q5140;  // 0x5140
     unsigned char q5144;  // 0x5144
-    IUnknown* q5148;  // 0x5148
+    void* q5148;  // 0x5148
     int q5158;  // 0x5158
     unsigned char q5160;  // 0x5160
     unsigned char q5164;  // 0x5164
     unsigned int q5168;  // 0x5168
     unsigned int q5170;  // 0x5170
-    IUnknown* q5174;  // 0x5174
+    void* q5174;  // 0x5174
     unsigned char q5178;  // 0x5178
     unsigned char q5184;  // 0x5184
     ObjectClass* q5188;  // 0x5188
@@ -1469,14 +1469,14 @@ struct HouseClass {
     unsigned int q5224;  // 0x5224
     unsigned char q5228;  // 0x5228
     unsigned char q5234;  // 0x5234
-    IUnknown* q5238;  // 0x5238
+    void* q5238;  // 0x5238
     unsigned char q5248;  // 0x5248
     unsigned char q5260;  // 0x5260
     unsigned char q5264;  // 0x5264
     unsigned char q5270;  // 0x5270
     unsigned char q5278;  // 0x5278
     void* q5308;  // 0x5308
-    IUnknown* q5320;  // 0x5320
+    void* q5320;  // 0x5320
     unsigned char q5324;  // 0x5324
     void* q5344;  // 0x5344
     unsigned char q5348;  // 0x5348
@@ -1484,7 +1484,7 @@ struct HouseClass {
     unsigned int q5354;  // 0x5354
     unsigned int q5358;  // 0x5358
     unsigned int u32_5360;  // 0x5360
-    IUnknown* q5364;  // 0x5364
+    void* q5364;  // 0x5364
     unsigned char q5368;  // 0x5368
     char numAirpads[4];  // 0x5378
     char numBarracks[4];  // 0x537C
@@ -1525,11 +1525,11 @@ struct HouseClass {
     unsigned char q53F4;  // 0x53F4
     unsigned char q53F8;  // 0x53F8
     unsigned int q5400;  // 0x5400
-    IUnknown* q5404;  // 0x5404
+    void* q5404;  // 0x5404
     unsigned char q5408;  // 0x5408
     unsigned int q5414;  // 0x5414
     unsigned char q5418;  // 0x5418
-    IUnknown* q5420;  // 0x5420
+    void* q5420;  // 0x5420
     unsigned char q5424;  // 0x5424
     unsigned int q5428;  // 0x5428
     char totalKilledUnits[4];  // 0x5430
@@ -1615,10 +1615,10 @@ struct HouseClass {
     char attackDelayA[4];  // 0x55F8
     char attackDelayB[4];  // 0x55FC
     char enemyHouseIndex[4];  // 0x5600
-    AngerStruct* angerNodes;  // 0x5604
+    void* angerNodes;  // 0x5604
     char angerNodesCount[4];  // 0x5608
     char angerNodesCapacity[4];  // 0x560C
-    ScoutStruct* scoutNodes;  // 0x5610
+    void* scoutNodes;  // 0x5610
     unsigned int q5611;  // 0x5611
     char scoutNodesCount[4];  // 0x5614
     char scoutNodesCapacity[4];  // 0x5618
@@ -1640,9 +1640,9 @@ struct HouseClass {
     char baseDefenseTeamCount[4];  // 0x5654
     char dropshipData[132];  // 0x5658
     unsigned int u32_565C;  // 0x565C
-    IUnknown * ptr_5660;  // 0x5660
-    IUnknown * ptr_5664;  // 0x5664
-    IUnknown * ptr_5668;  // 0x5668
+    void * ptr_5660;  // 0x5660
+    void * ptr_5664;  // 0x5664
+    void * ptr_5668;  // 0x5668
     unsigned int u32_566C;  // 0x566C
     unsigned char q5670;  // 0x5670
     int q5684;  // 0x5684
@@ -1683,12 +1683,12 @@ struct HouseClass {
     unsigned int u32_5754;  // 0x5754
     char teamDelayTimer[12];  // 0x5758
     unsigned int u32_575C;  // 0x575C
-    IUnknown* q5760;  // 0x5760
-    TimerStruct * ptr_5764;  // 0x5764
+    void* q5760;  // 0x5760
+    void* ptr_5764;  // 0x5764
     unsigned char q5768;  // 0x5768
     unsigned char q576C;  // 0x576C
     char HouseClass_field_timer_B[12];  // 0x5770
-    IUnknown * ptr_5774;  // 0x5774
+    void * ptr_5774;  // 0x5774
     void* q5778;  // 0x5778
     unsigned char u8_5779;  // 0x5779
     unsigned char u8_577A;  // 0x577A
@@ -1697,42 +1697,42 @@ struct HouseClass {
     unsigned char q5780;  // 0x5780
     unsigned char q5784;  // 0x5784
     char HouseClass_field_timer_D[12];  // 0x5788
-    IUnknown* q578C;  // 0x578C
+    void* q578C;  // 0x578C
     unsigned char q5790;  // 0x5790
     char HouseClass_field_timer_E[12];  // 0x5794
-    IUnknown* q5798;  // 0x5798
+    void* q5798;  // 0x5798
     unsigned int u32_579C;  // 0x579C
     unsigned char q57A0;  // 0x57A0
-    IUnknown* q57A4;  // 0x57A4
+    void* q57A4;  // 0x57A4
     unsigned char q57A8;  // 0x57A8
     unsigned int u32_57AC;  // 0x57AC
-    IUnknown* q57B0;  // 0x57B0
+    void* q57B0;  // 0x57B0
     unsigned char q57B4;  // 0x57B4
-    IUnknown* q57BC;  // 0x57BC
+    void* q57BC;  // 0x57BC
     unsigned char q57C0;  // 0x57C0
     unsigned int u32_57C4;  // 0x57C4
-    IUnknown* q57C8;  // 0x57C8
+    void* q57C8;  // 0x57C8
     unsigned char q57CC;  // 0x57CC
     unsigned int u32_57D4;  // 0x57D4
     unsigned int u32_57D8;  // 0x57D8
     unsigned int HouseClass_field_57DC;  // 0x57DC
     unsigned char threatPosed_estimates_padding;  // 0x57E0
-    IUnknown* q5800;  // 0x5800
-    IUnknown* q5804;  // 0x5804
+    void* q5800;  // 0x5800
+    void* q5804;  // 0x5804
     unsigned char q5808;  // 0x5808
     unsigned char q5840;  // 0x5840
-    IUnknown* q5844;  // 0x5844
+    void* q5844;  // 0x5844
     void* q5848;  // 0x5848
-    IUnknown* q5860;  // 0x5860
+    void* q5860;  // 0x5860
     unsigned char q5864;  // 0x5864
-    IUnknown* q5868;  // 0x5868
+    void* q5868;  // 0x5868
     unsigned int q5880;  // 0x5880
     void* q5884;  // 0x5884
-    IUnknown* q5888;  // 0x5888
+    void* q5888;  // 0x5888
     unsigned char q588C;  // 0x588C
-    IUnknown* q5900;  // 0x5900
-    IUnknown* q5904;  // 0x5904
-    IUnknown* q5908;  // 0x5908
+    void* q5900;  // 0x5900
+    void* q5904;  // 0x5904
+    void* q5908;  // 0x5908
     void* q5920;  // 0x5920
     void* q5924;  // 0x5924
     unsigned int q5928;  // 0x5928
@@ -1742,19 +1742,19 @@ struct HouseClass {
     unsigned char q593C;  // 0x593C
     unsigned char q5940;  // 0x5940
     unsigned char q5944;  // 0x5944
-    IUnknown* q5948;  // 0x5948
+    void* q5948;  // 0x5948
     unsigned int q5960;  // 0x5960
-    IUnknown* q5964;  // 0x5964
+    void* q5964;  // 0x5964
     unsigned char q5968;  // 0x5968
     unsigned int q5970;  // 0x5970
     unsigned char q5974;  // 0x5974
     unsigned int q5984;  // 0x5984
-    IUnknown* q5988;  // 0x5988
+    void* q5988;  // 0x5988
     unsigned int q5990;  // 0x5990
     unsigned int q5994;  // 0x5994
     unsigned char q5998;  // 0x5998
-    IUnknown* q6000;  // 0x6000
-    IUnknown* q6004;  // 0x6004
+    void* q6000;  // 0x6000
+    void* q6004;  // 0x6004
     AbstractTypeClass* q6008;  // 0x6008
     AbstractTypeClass* q6020;  // 0x6020
     void* q6024;  // 0x6024
@@ -1778,14 +1778,14 @@ struct HouseClass {
     unsigned char q6170;  // 0x6170
     int q6180;  // 0x6180
     int q6184;  // 0x6184
-    IUnknown* q6188;  // 0x6188
+    void* q6188;  // 0x6188
     int q6194;  // 0x6194
     unsigned char q6198;  // 0x6198
     unsigned char q619C;  // 0x619C
     unsigned char q6200;  // 0x6200
     unsigned int q6210;  // 0x6210
     unsigned int q6214;  // 0x6214
-    IUnknown* q6220;  // 0x6220
+    void* q6220;  // 0x6220
     unsigned char q6224;  // 0x6224
     unsigned int q6230;  // 0x6230
     int q6240;  // 0x6240
@@ -1799,9 +1799,9 @@ struct HouseClass {
     int q6294;  // 0x6294
     unsigned char q6298;  // 0x6298
     unsigned char q6320;  // 0x6320
-    IUnknown* q6400;  // 0x6400
+    void* q6400;  // 0x6400
     unsigned char q6404;  // 0x6404
-    IUnknown* q6408;  // 0x6408
+    void* q6408;  // 0x6408
     unsigned char q640C;  // 0x640C
     unsigned char q6410;  // 0x6410
     unsigned int q6418;  // 0x6418
@@ -1809,7 +1809,7 @@ struct HouseClass {
     unsigned int q6440;  // 0x6440
     unsigned char q6450;  // 0x6450
     unsigned int q6454;  // 0x6454
-    IUnknown* q6464;  // 0x6464
+    void* q6464;  // 0x6464
     unsigned char q6468;  // 0x6468
     unsigned char q6500;  // 0x6500
     unsigned int q6504;  // 0x6504
@@ -1821,10 +1821,6 @@ struct HouseClass {
     unsigned int occupiables8;
     unsigned int productionFactory_plants5;
     unsigned int q54E4;
-    unsigned int AIBuildBase;
-    unsigned int CheckWinCondition;
-    unsigned int FindOwner;
-    unsigned int GetPowerRatio;
 // --- flat members (END) ---
     AbstractClass * * AIDecision(ObjectClass * aP0, int * a1);
     AbstractClass * * AutoBuildScanAndSort(int a2, unsigned int * a3);
@@ -1854,11 +1850,11 @@ struct HouseClass {
     int GetCameoTypeIndex(int a2);
     int GetInfSelfHealStep();
     int GetRepairStepAmount();
-    int GetStatus(IUnknown * aP1);
+    int GetStatus(void* aP1);
     int GetUnitSelfHealStep();
     int InitAlliances();
-    int IsAlliedWith(IUnknown * aP1);
-    int IsCellOccupied(IUnknown * aP1, char a3);
+    int IsAlliedWith(void* aP1);
+    int IsCellOccupied(void* aP1, char a3);
     int MakeAlly(int a2, char a3);
     int PrerequisitesForTechnoTypeAreListed(int a1, VectorClass_flat * aP1, TechnoTypeClass * aP2);
     int QueryInterface(CCINIClass * aP0, const void * a1, unsigned int * a2);

@@ -51,8 +51,6 @@ struct ComPtr {
     unsigned char q128;  // 0x128
     unsigned char q12C;  // 0x12C
     unsigned char q130;  // 0x130
-    unsigned int Release;
-    unsigned int ReleaseSimple;
 // --- flat members (END) ---
     int DestroyWrapper(int aP0, ObjectClass * aP1);
     static double Constructor(...);  // C2597 interim stub

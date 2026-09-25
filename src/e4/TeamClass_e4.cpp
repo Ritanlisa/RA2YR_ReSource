@@ -17,6 +17,8 @@
 #include "e4/classes/VectorClass_ptr_PlanningMemberClass_e4.hpp"
 #include "e4/classes/TeamClass_e4.hpp"
 #include "e4/classes/Frame_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x4D9E70
@@ -338,10 +340,10 @@ AbstractClass * * TeamClass::DestroyAllMembers(TechnoClass * aP1)
         g_ScriptState = 0; /*0x634234*/
       if ( (_DWORD *)g_ScriptActionPool == this ) /*0x634240*/
         g_ScriptActionPool = 0; /*0x634242*/
-      this->q020 = &(void*)(void*)&VectorClass_PlanningBranchClass___vftable; /*0x63424b*/
+      this->q020 = (void*)&VectorClass_PlanningBranchClass___vftable; /*0x63424b*/
       VectorClass::Cleanup2((int)(this + 8)); /*0x634251*/
       v16 = (void *)this->Items; /*0x634256*/
-      *this = &(void*)(void*)&VectorClass_PlanningMemberClass___vftable; /*0x634259*/
+      *(void **)this = (void*)&VectorClass_PlanningMemberClass___vftable; /*0x634259*/
       if ( v16 ) /*0x634261*/
       {
         if ( this->IsAllocated ) /*0x634263*/
@@ -605,9 +607,9 @@ TechnoClass * * TeamClass::RemoveAllMembers()
       {
         FactoryClass::ClearObjects(v4); /*0x6361f7*/
         Team_Remove((_UNKNOWN **)v4); /*0x6361fe*/
-        v4[8] = (int)&(void*)(void*)&VectorClass_PlanningBranchClass___vftable; /*0x636206*/
+        v4[8] = (int)&VectorClass_PlanningBranchClass___vftable; /*0x636206*/
         VectorClass::Cleanup2((int)(v4 + 8)); /*0x63620c*/
-        *v4 = (int)&(void*)(void*)&VectorClass_PlanningMemberClass___vftable; /*0x636213*/
+        *v4 = (int)&VectorClass_PlanningMemberClass___vftable; /*0x636213*/
         VectorClass_ptr_PlanningMemberClass::Remove((int)v4); /*0x636219*/
         RA2_OPDEL(v4); /*0x63621f*/
       }
@@ -983,9 +985,9 @@ CampaignClass * * TeamClass::Cleanup(BuildingClass * aP1)
     {
       FactoryClass::ClearObjects(v8); /*0x636c75*/
       Team_Remove((_UNKNOWN **)v8); /*0x636c7c*/
-      v8[8] = (int)&(void*)(void*)&VectorClass_PlanningBranchClass___vftable; /*0x636c84*/
+      v8[8] = (int)&VectorClass_PlanningBranchClass___vftable; /*0x636c84*/
       VectorClass::Cleanup2((int)(v8 + 8)); /*0x636c8a*/
-      *v8 = (int)&(void*)(void*)&VectorClass_PlanningMemberClass___vftable; /*0x636c91*/
+      *v8 = (int)&VectorClass_PlanningMemberClass___vftable; /*0x636c91*/
       VectorClass_ptr_PlanningMemberClass::Remove((int)v8); /*0x636c97*/
       RA2_OPDEL(v8); /*0x636c9d*/
     }
@@ -1137,10 +1139,10 @@ void TeamClass::Destructor(AbstractClass * a2)
   void **v14; // [esp+10h] [ebp-4h] BYREF
 
   v2 = 0; /*0x6e8de5*/
-  *a2 = &(void*)(void*)&TeamClass_vftable; /*0x6e8de7*/
-  *(a2 + 1) = &(void*)(void*)&TeamClass_vftable; /*0x6e8ded*/
-  *(a2 + 2) = &(void*)(void*)&TeamClass_vftable; /*0x6e8df4*/
-  for ( *(a2 + 3) = &(void*)(void*)&TeamClass_vftable; v2 < g_AnimTypeInitQueue; ++v2 ) /*0x6e8e09*/
+  *a2 = (void*)&TeamClass_vftable; /*0x6e8de7*/
+  *(a2 + 1) = (void*)&TeamClass_vftable; /*0x6e8ded*/
+  *(a2 + 2) = (void*)&TeamClass_vftable; /*0x6e8df4*/
+  for ( *(a2 + 3) = (void*)&TeamClass_vftable; v2 < g_AnimTypeInitQueue; ++v2 ) /*0x6e8e09*/
   {
     if ( *(void **)(*((_DWORD *)dword_A8B204 + v2) + 220) == *(a2 + 9) ) /*0x6e8e1e*/
     {
@@ -3540,10 +3542,10 @@ int TeamClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
     {
       AbstractClass::InitVtables(aP0, (int)&aP1); /*0x6ec473*/
       __4type_info_AAEAAV0_ABV0__Z(&aP1); /*0x6ec480*/
-      *aP0 = (int)&(void*)(void*)&TeamClass_vftable; /*0x6ec485*/
-      aP0[1] = (int)&(void*)(void*)&TeamClass_vftable; /*0x6ec48b*/
-      aP0[2] = (int)&(void*)(void*)&TeamClass_vftable; /*0x6ec492*/
-      aP0[3] = (int)&(void*)(void*)&TeamClass_vftable; /*0x6ec499*/
+      *aP0 = (int)&TeamClass_vftable; /*0x6ec485*/
+      aP0[1] = (int)&TeamClass_vftable; /*0x6ec48b*/
+      aP0[2] = (int)&TeamClass_vftable; /*0x6ec492*/
+      aP0[3] = (int)&TeamClass_vftable; /*0x6ec499*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP0 + 9); /*0x6ec4a9*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP0 + 10); /*0x6ec4b7*/

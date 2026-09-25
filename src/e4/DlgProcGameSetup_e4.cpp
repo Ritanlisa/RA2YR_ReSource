@@ -3,7 +3,10 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/DiskLaserClass_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/Display_e4.hpp"
+#include "e4/classes/Tactical_e4.hpp"
 
 // 0x72B8E0
 namespace gamemd {
@@ -27,7 +30,7 @@ char sub_72B8E0()
 namespace gamemd {
 void sub_72B930()
 {
-  void *v0; // esi
+  unsigned int v0;
 
   if ( byte_B0FD5D ) /*0x72b93a*/
   {

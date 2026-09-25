@@ -15,11 +15,11 @@ struct Map_WorldDominationTour_43 {
     unsigned char q01C;  // 0x1C
     unsigned int q024;  // 0x24
 // --- flat members (END) ---
-    char Release(int a2, char * a3);  // 0x76A3F0
+    char Release(int a2,  char * a3);    // 0x76A3F0
     char AddRef(int a2);  // 0x76A390
     void ddtor();  // 0x76A4F0
     VectorClass_flat * QueryInterface(char a2);  // 0x76A770
-    unsigned int * Seek(unsigned int * a2, int a3);  // 0x769D30
+    unsigned int * Seek(unsigned int * a2,  int a3);    // 0x769D30
     int Read(unsigned int * a2);  // 0x76A520
     unsigned int Write(int a2);  // 0x76A570
 };

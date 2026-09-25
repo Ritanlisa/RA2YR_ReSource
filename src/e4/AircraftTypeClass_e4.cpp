@@ -16,7 +16,11 @@
 #include "e4/classes/AirstrikeClass_e4.hpp"
 #include "e4/classes/AlphaShapeClass_e4.hpp"
 #include "e4/classes/AudioController_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/House_e4.hpp"
+#include "e4/classes/Object_e4.hpp"
 
 // 0x41C8B0
 AircraftTypeClass::AircraftTypeClass(ObjectClass * aP1)
@@ -35,10 +39,10 @@ AircraftTypeClass::AircraftTypeClass(ObjectClass * aP1)
   this->FlyBack = 0; /*0x41c8ee*/
   this->qE0D = 0; /*0x41c8f4*/
   this->qE0E = 0; /*0x41c8fa*/
-  *(_DWORD *)this = &(void*)(void*)&AircraftTypeClass_vftable; /*0x41c900*/
-  this->vtable2 = &(void*)(void*)&AircraftTypeClass_vftable; /*0x41c906*/
-  this->vtable3 = &(void*)(void*)&AircraftTypeClass_vftable; /*0x41c90c*/
-  this->vtable4 = &(void*)(void*)&AircraftTypeClass_vftable; /*0x41c913*/
+  *(_DWORD *)this = (void*)&AircraftTypeClass_vftable; /*0x41c900*/
+  this->vtable2 = (void*)&AircraftTypeClass_vftable; /*0x41c906*/
+  this->vtable3 = (void*)&AircraftTypeClass_vftable; /*0x41c90c*/
+  this->vtable4 = (void*)&AircraftTypeClass_vftable; /*0x41c913*/
   this->vtable2.GenerateUniqueID(); /*0x41c91a*/
   v3 = g_TypeClass_FindCache; /*0x41c91f*/
   if ( g_TypeClass_FindCache < dword_A8B220 /*0x41c95d*/
@@ -152,10 +156,10 @@ AircraftTypeClass * AircraftTypeClass::ddtor(char a2)
 {
   int v3; // eax
 
-  *this = &(void*)(void*)&AircraftTypeClass_vftable; /*0x41cfe6*/
-  this->vtable2 = &(void*)(void*)&AircraftTypeClass_vftable; /*0x41cfec*/
-  this->vtable3 = &(void*)(void*)&AircraftTypeClass_vftable; /*0x41cff3*/
-  this->vtable4 = &(void*)(void*)&AircraftTypeClass_vftable; /*0x41cffa*/
+  *this = (void*)&AircraftTypeClass_vftable; /*0x41cfe6*/
+  this->vtable2 = (void*)&AircraftTypeClass_vftable; /*0x41cfec*/
+  this->vtable3 = (void*)&AircraftTypeClass_vftable; /*0x41cff3*/
+  this->vtable4 = (void*)&AircraftTypeClass_vftable; /*0x41cffa*/
   AbstractClass::AnnounceExpiredPointer(1); /*0x41d001*/
   v3 = (*(int (__thiscall **)(int *, void ***))(AircraftTypeClass_Array + 16))(&AircraftTypeClass_Array, &this); /*0x41d01a*/
   if ( v3 != -1 && v3 < g_TypeClass_FindCache && v3 < --g_TypeClass_FindCache ) /*0x41d035*/
@@ -238,10 +242,10 @@ int AircraftTypeClass::LoadFromINI(ObjectTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x41ce36*/
     {
       TechnoTypeClass::Construct(aP0, (int)&aP1); /*0x41ce3f*/
-      *(_DWORD *)aP0 = &(void*)(void*)&AircraftTypeClass_vftable; /*0x41ce44*/
-      *(_DWORD *)(aP0 + 4) = &(void*)(void*)&AircraftTypeClass_vftable; /*0x41ce4a*/
-      *(_DWORD *)(aP0 + 8) = &(void*)(void*)&AircraftTypeClass_vftable; /*0x41ce51*/
-      *(_DWORD *)(aP0 + 12) = &(void*)(void*)&AircraftTypeClass_vftable; /*0x41ce58*/
+      *(_DWORD *)aP0 = (void*)&AircraftTypeClass_vftable; /*0x41ce44*/
+      *(_DWORD *)(aP0 + 4) = (void*)&AircraftTypeClass_vftable; /*0x41ce4a*/
+      *(_DWORD *)(aP0 + 8) = (void*)&AircraftTypeClass_vftable; /*0x41ce51*/
+      *(_DWORD *)(aP0 + 12) = (void*)&AircraftTypeClass_vftable; /*0x41ce58*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(aP0 + 3584)); /*0x41ce6b*/
     VoxelAnimType::LoadAnim((char *)aP0); /*0x41ce72*/

@@ -20,7 +20,13 @@
 #include "e4/classes/Dialog_e4.hpp"
 #include "e4/classes/Timer_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/WideString_e4.hpp"
+#include "e4/classes/Init_e4.hpp"
+#include "e4/classes/TechnoTypeClass_e4.hpp"
+#include "e4/classes/Process_e4.hpp"
+#include "e4/classes/Screen_e4.hpp"
 
 // 0x41A9E0
 namespace gamemd {
@@ -254,21 +260,21 @@ TechnoClass::TechnoClass(AbstractClass * aP1)
   *(&this->health4) = 0; /*0x6f3057*/
   this->u8_44C = 1; /*0x6f305d*/
   this->vecInt_IsAllocated = 0; /*0x6f3064*/
-  *(&this->health2) = &(void*)(void*)&DynamicVectorClass_int_vftable; /*0x6f306a*/
+  *(&this->health2) = (void*)&DynamicVectorClass_int_vftable; /*0x6f306a*/
   *(&this->health7) = 10; /*0x6f3074*/
   *(&this->health6) = 0; /*0x6f307a*/
   *(&this->health9) = 0; /*0x6f3080*/
   *(&this->estimatedHealth0) = 0; /*0x6f3086*/
   this->q464 = 1; /*0x6f308c*/
   this->vecAbs_IsAllocated = 0; /*0x6f3093*/
-  *(&this->health8) = &(void*)(void*)&DynamicVectorClass_AbstractClass___vftable; /*0x6f3099*/
+  *(&this->health8) = (void*)&DynamicVectorClass_AbstractClass___vftable; /*0x6f3099*/
   *(&this->estimatedHealth3) = 10; /*0x6f309f*/
   *(&this->estimatedHealth2) = 0; /*0x6f30a5*/
   *(&this->estimatedHealth5) = 0; /*0x6f30ab*/
   *(&this->estimatedHealth6) = 0; /*0x6f30b1*/
   this->audioController4 = 1; /*0x6f30b7*/
   this->q47D = 0; /*0x6f30be*/
-  *(&this->estimatedHealth4) = &(void*)(void*)&DynamicVectorClass_AbstractClass___vftable; /*0x6f30c4*/
+  *(&this->estimatedHealth4) = (void*)&DynamicVectorClass_AbstractClass___vftable; /*0x6f30c4*/
   *(&this->estimatedHealth9) = 10; /*0x6f30ca*/
   *(&this->estimatedHealth8) = 0; /*0x6f30d0*/
   *(&this->isOnMap5) = 1; /*0x6f30d6*/
@@ -285,9 +291,9 @@ TechnoClass::TechnoClass(AbstractClass * aP1)
   *(&this->needsRedraw5) = 0; /*0x6f311e*/
   *(&this->needsRedraw6) = 0; /*0x6f3124*/
   *(&this->needsRedraw7) = 0; /*0x6f312a*/
-  *this = &(void*)(void*)&TechnoClass_vftable; /*0x6f3130*/
-  this->vtable2 = &(void*)(void*)&TechnoClass_vftable; /*0x6f3136*/
-  this->vtable3 = &(void*)(void*)&TechnoClass_vftable; /*0x6f313d*/
+  *(void **)this = (void*)&TechnoClass_vftable; /*0x6f3130*/
+  this->vtable2 = (void*)&TechnoClass_vftable; /*0x6f3136*/
+  this->vtable3 = (void*)&TechnoClass_vftable; /*0x6f313d*/
   this->vtable4 = &off_7F4934; /*0x6f314a*/
   AudioController::Init(&this->isOnMap0); /*0x6f3151*/
   AudioController::Init(&this->isOnMap7); /*0x6f315c*/
@@ -378,7 +384,7 @@ unsigned int * TechnoClass::Update(BuildingClass * aP0, FootClass * aP1)
       {
         v6 = 0; /*0x6f3ffb*/
       }
-      *(_DWORD *)(a1 + 720) = v6; /*0x6f3ffd*/
+      *(_DWORD *, unsigned int a1)(a1 + 720) = v6; /*0x6f3ffd*/
     }
     if ( *(_DWORD *)((*(int (__thiscall **)(int))(*(_DWORD *)a1 + 132))(a1) + 3392) ) /*0x6f400d*/
     {
@@ -394,7 +400,7 @@ unsigned int * TechnoClass::Update(BuildingClass * aP0, FootClass * aP1)
       {
         v8 = 0; /*0x6f4075*/
       }
-      *(_DWORD *)(a1 + 728) = v8; /*0x6f4077*/
+      *(_DWORD *, unsigned int a1)(a1 + 728) = v8; /*0x6f4077*/
     }
     if ( *(_DWORD *)(*(int (__thiscall **)(int, _DWORD))(*(_DWORD *)a1 + 1016))(a1, 0) /*0x6f40a2*/
       && *(_BYTE *)(*(_DWORD *)(*(_DWORD *)(*(int (__thiscall **)(int, _DWORD))(*(_DWORD *)a1 + 1016))(a1, 0) + 172)
@@ -507,9 +513,9 @@ int TechnoClass::DTOR()
   void *v15; // eax
 
   v2 = *(_DWORD **)(&this->currentBurstCount0); /*0x6f4507*/
-  *(_DWORD *)this = &(void*)(void*)&TechnoClass_vftable; /*0x6f450d*/
-  this->vtable2 = &(void*)(void*)&TechnoClass_vftable; /*0x6f4515*/
-  this->vtable3 = &(void*)(void*)&TechnoClass_vftable; /*0x6f451c*/
+  *(_DWORD *)this = (void*)&TechnoClass_vftable; /*0x6f450d*/
+  this->vtable2 = (void*)&TechnoClass_vftable; /*0x6f4515*/
+  this->vtable3 = (void*)&TechnoClass_vftable; /*0x6f451c*/
   this->vtable4 = &off_7F4934; /*0x6f4523*/
   if ( v2 ) /*0x6f452a*/
   {
@@ -576,10 +582,10 @@ int TechnoClass::DTOR()
     (*(void (__thiscall **)(int))(*(_DWORD *)v12 + 248))(v12); /*0x6f468b*/
     this->deployAnim = 0; /*0x6f4691*/
   }
-  this->q470 = &(void*)(void*)&VectorClass_AbstractClass___vftable; /*0x6f469d*/
+  this->q470 = (void*)&VectorClass_AbstractClass___vftable; /*0x6f469d*/
   AbstractClassVector::ddtor(&this->q1C46); /*0x6f46a3*/
   v13 = *(void **)(&this->q1BC6); /*0x6f46a8*/
-  this->currentTargets = &(void*)(void*)&VectorClass_AbstractClass___vftable; /*0x6f46ae*/
+  this->currentTargets = (void*)&VectorClass_AbstractClass___vftable; /*0x6f46ae*/
   if ( v13 && this->vecAbs_IsAllocated ) /*0x6f46bc*/
   {
     RA2_OPDEL(v13); /*0x6f46c5*/
@@ -588,7 +594,7 @@ int TechnoClass::DTOR()
   this->vecAbs_IsAllocated = 0; /*0x6f46d3*/
   this->audioController3 = 0; /*0x6f46d9*/
   v14 = *(void **)(&this->u32_1B42); /*0x6f46df*/
-  this->currentTargetThreatValues = &(void*)(void*)&VectorClass_int_vftable; /*0x6f46e5*/
+  this->currentTargetThreatValues = (void*)&VectorClass_int_vftable; /*0x6f46e5*/
   if ( v14 && this->vecInt_IsAllocated ) /*0x6f46f3*/
   {
     RA2_OPDEL(v14); /*0x6f46fc*/
@@ -597,12 +603,12 @@ int TechnoClass::DTOR()
   this->vecInt_IsAllocated = 0; /*0x6f4710*/
   this->vecInt_Capacity = 0; /*0x6f4716*/
   nullsub_69(&this->hasParachute6); /*0x6f471c*/
-  *(_DWORD *)this = &(void*)(void*)&RadioClass_vftable; /*0x6f4721*/
-  this->vtable2 = &(void*)(void*)&RadioClass_vftable; /*0x6f4727*/
-  this->vtable3 = &(void*)(void*)&RadioClass_vftable; /*0x6f472e*/
-  this->vtable4 = &(void*)(void*)&RadioClass_vftable; /*0x6f4735*/
+  *(_DWORD *)this = (void*)&RadioClass_vftable; /*0x6f4721*/
+  this->vtable2 = (void*)&RadioClass_vftable; /*0x6f4727*/
+  this->vtable3 = (void*)&RadioClass_vftable; /*0x6f472e*/
+  this->vtable4 = (void*)&RadioClass_vftable; /*0x6f4735*/
   v15 = *(void **)(&this->q0588); /*0x6f473c*/
-  this->radioLinks = &(void*)(void*)&VectorClass_TechnoClass___vftable; /*0x6f4742*/
+  this->radioLinks = (void*)&VectorClass_TechnoClass___vftable; /*0x6f4742*/
   if ( v15 && this->vecTechno_IsAllocated ) /*0x6f4750*/
   {
     RA2_OPDEL(v15); /*0x6f4759*/
@@ -610,10 +616,10 @@ int TechnoClass::DTOR()
   }
   this->vecTechno_IsAllocated = 0; /*0x6f4767*/
   this->vecTechno_Capacity = 0; /*0x6f476d*/
-  *(_DWORD *)this = &(void*)(void*)&MissionClass_vftable; /*0x6f4775*/
-  this->vtable2 = &(void*)(void*)&MissionClass_vftable; /*0x6f477b*/
-  this->vtable3 = &(void*)(void*)&MissionClass_vftable; /*0x6f4782*/
-  this->vtable4 = &(void*)(void*)&MissionClass_vftable; /*0x6f4789*/
+  *(_DWORD *)this = (void*)&MissionClass_vftable; /*0x6f4775*/
+  this->vtable2 = (void*)&MissionClass_vftable; /*0x6f477b*/
+  this->vtable3 = (void*)&MissionClass_vftable; /*0x6f4782*/
+  this->vtable4 = (void*)&MissionClass_vftable; /*0x6f4789*/
   return ObjectClass::Dtor(); /*0x6f4795*/
 }
 } // namespace gamemd

@@ -3,6 +3,8 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/RawFileClass_e4.hpp"
 #include "e4/classes/Math_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x65CA00
@@ -13,7 +15,7 @@ void RawFileClass::Dtor()
   DWORD LastError; // eax
   int v4; // [esp-8h] [ebp-Ch]
 
-  *this = (int)&(void*)(void*)&RawFileClass_vftable; /*0x65ca03*/
+  *(_DWORD *)this = (int)&RawFileClass_vftable; /*0x65ca03*/
   if ( (unsigned __int8)RawFileClass::Write() ) /*0x65ca09*/
   {
     if ( !CloseHandle((HANDLE)this->FileTimeDateLo) ) /*0x65ca17*/
@@ -31,7 +33,7 @@ void RawFileClass::Dtor()
     this->FileNameAllocated = 0; /*0x65ca54*/
     this->q020 = 0; /*0x65ca5b*/
   }
-  *this = (int)&(void*)(void*)&FileClass_vftable; /*0x65ca5f*/
+  *(_DWORD *)this = (int)&FileClass_vftable; /*0x65ca5f*/
 }
 } // namespace gamemd
 // 0x65CB30

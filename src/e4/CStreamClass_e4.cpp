@@ -7,6 +7,8 @@
 #include "e4/classes/Camera_e4.hpp"
 #include "e4/classes/IStream_e4.hpp"
 #include "e4/classes/Math_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x4A2CD0
@@ -94,8 +96,8 @@ CStreamClass * CStreamClass::ddtor(int a2, char a3)
   int v7; // eax
 
   v4 = *((_DWORD *)Block + 2); /*0x4a3116*/
-  *(_DWORD *)Block = &(void*)(void*)&CStreamClass_vftable; /*0x4a3119*/
-  *((_DWORD *)Block + 1) = &(void*)(void*)&CStreamClass_vftable; /*0x4a3121*/
+  *(_DWORD *)Block = (void*)&CStreamClass_vftable; /*0x4a3119*/
+  *((_DWORD *)Block + 1) = (void*)&CStreamClass_vftable; /*0x4a3121*/
   if ( v4 ) /*0x4a3128*/
   {
     if ( *((_BYTE *)Block + 17) /*0x4a314b*/
@@ -377,7 +379,7 @@ VectorClass_flat * CStreamClass_16::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->q004; /*0x4a4d93*/
-  *this = &(void*)(void*)&VectorClass__DDSURFACEDESC___vftable; /*0x4a4d96*/
+  *(void **)this = (void*)&VectorClass__DDSURFACEDESC___vftable; /*0x4a4d96*/
   if ( v3 && this->IsAllocated ) /*0x4a4da0*/
   {
     RA2_OPDEL(v3); /*0x4a4da8*/

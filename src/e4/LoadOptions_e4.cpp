@@ -1,9 +1,12 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Dialog_e4.hpp"
 #include "e4/classes/Game_e4.hpp"
 #include "e4/classes/LoadOptions_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x559D60
@@ -176,15 +179,15 @@ wchar_t * LoadOptions::Close()
 namespace gamemd {
 LoadOptions * LoadOptions::QueryInterface(char a2)
 {
-  int v3; // esi
-  void *v4; // eax
+  void * v3;
+  void * v4;
 
   v3 = 0; /*0x55a0d4*/
-  for ( *(_DWORD *)this = &(void*)(void*)&LoadOptionsClass_vftable; v3 < this->capacity; ++v3 ) /*0x55a0e1*/
+  for ( *(_DWORD *)this = (void*)&LoadOptionsClass_vftable; v3 < this->capacity; ++v3 ) /*0x55a0e1*/
     RA2_OPDEL(*(void **)(this->q024 + 4 * v3)); /*0x55a0ea*/
   (*(void (__thiscall **)(char *))(this->is_active + 12))(&this->q00C2); /*0x55a102*/
   v4 = (void *)this->q024; /*0x55a105*/
-  this->is_active = &(void*)(void*)&VectorClass_FileEntryClass___vftable; /*0x55a108*/
+  this->is_active = (void*)&VectorClass_FileEntryClass___vftable; /*0x55a108*/
   if ( v4 && *(&this->max_entries5) ) /*0x55a112*/
   {
     RA2_OPDEL(v4); /*0x55a11a*/
@@ -320,7 +323,7 @@ VectorClass_flat * LoadOptions::Constructor_VectorClass_FileEntryClass___(char a
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x55a413*/
-  *this = &(void*)(void*)&VectorClass_FileEntryClass___vftable; /*0x55a416*/
+  *(void **)this = (void*)&VectorClass_FileEntryClass___vftable; /*0x55a416*/
   if ( v3 && this->IsAllocated ) /*0x55a420*/
   {
     RA2_OPDEL(v3); /*0x55a428*/
@@ -341,7 +344,7 @@ DynamicVector * LoadOptions::vt00(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x55a463*/
-  *this = &(void*)(void*)&VectorClass_FileEntryClass___vftable; /*0x55a466*/
+  *(void **)this = (void*)&VectorClass_FileEntryClass___vftable; /*0x55a466*/
   if ( v3 && this->IsAllocated ) /*0x55a470*/
   {
     RA2_OPDEL(v3); /*0x55a478*/

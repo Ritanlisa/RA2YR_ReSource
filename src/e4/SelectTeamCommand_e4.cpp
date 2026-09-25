@@ -3,6 +3,8 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/SelectTeamCommand_e4.hpp"
 #include "e4/classes/Selection_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x535FC0
@@ -10,7 +12,7 @@ namespace gamemd {
 unsigned int * SelectTeamCommand::Construct(int a2)
 {
   this->SelectTeamCommand_field_00 = a2; /*0x535fc6*/
-  *this = &(void*)(void*)&SelectTeamCommandClass_vftable; /*0x535fc9*/
+  *(void **)this = (void*)&SelectTeamCommandClass_vftable; /*0x535fc9*/
   return this; /*0x535fcf*/
 }
 } // namespace gamemd

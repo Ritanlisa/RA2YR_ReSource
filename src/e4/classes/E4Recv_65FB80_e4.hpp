@@ -60,6 +60,6 @@ struct E4Recv_65FB80 {
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    unsigned int * Team_Load_65FB80(int a2, IUnknown * aP2);  // 0x65FB80
+    unsigned int * Team_Load_65FB80(int a2,  void* aP2);    // 0x65FB80
 };
 } // namespace gamemd

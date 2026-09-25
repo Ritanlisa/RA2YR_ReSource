@@ -11,6 +11,8 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/MouseClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x5FF850
@@ -24,14 +26,14 @@ Coord * * BuildingLight::CalculateShading()
   int v6; // edx
   int v7; // esi
   unsigned __int16 *v8; // edi
-  int v9; // eax
+  void * v9;
   int v10; // ecx
   bool v11; // zf
   unsigned __int16 v12; // si
   int v13; // ecx
   unsigned __int16 v14; // ax
   int v15; // ebp
-  int v16; // ecx
+  void * v16;
   int v17; // eax
   int v18; // esi
   int v19; // edx

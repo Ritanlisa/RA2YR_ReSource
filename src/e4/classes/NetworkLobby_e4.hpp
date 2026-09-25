@@ -177,9 +177,9 @@ struct NetworkLobby {
     unsigned char q6448;  // 0x6448
     unsigned int MessageHandler;
 // --- flat members (END) ---
-    int MessageList_Append(int a2, int a3, void* aP3, char a5, int a6);  // 0x5D4210
+    int MessageList_Append(int a2,  int a3,  void* aP3,  char a5,  int a6);    // 0x5D4210
     char CreateGame();  // 0x5DC350
-    INT_PTR DlgProc(HWND hDlg, UINT a2, WPARAM nIDDlgItem, unsigned int lParam);  // 0x5DE520
+    INT_PTR DlgProc(HWND hDlg,  UINT a2,  WPARAM nIDDlgItem,  unsigned int lParam);    // 0x5DE520
     void SetupPlayers();  // 0x5E8EA0
     int AssignPlayerSlot();  // 0x5E9240
     int InitLobbyDropdowns();  // 0x5E9E00

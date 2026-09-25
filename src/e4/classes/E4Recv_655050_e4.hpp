@@ -28,6 +28,6 @@ struct E4Recv_655050 {
     unsigned int u32_20C6;
     unsigned int u32_20C8;
 // --- flat members (END) ---
-    unsigned int * sub_655050(unsigned int * a2, short * a3);  // 0x655050
+    unsigned int * sub_655050(unsigned int * a2,  short * a3);    // 0x655050
 };
 } // namespace gamemd

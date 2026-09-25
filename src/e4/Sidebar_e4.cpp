@@ -7,7 +7,12 @@
 #include "e4/classes/House_e4.hpp"
 #include "e4/classes/TeamTypeClass_e4.hpp"
 #include "e4/classes/TechnoTypeClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/Tactical_e4.hpp"
+#include "e4/classes/ConvertClass_e4.hpp"
+#include "e4/classes/Draw_e4.hpp"
 
 // 0x4FA350
 namespace gamemd {
@@ -28,7 +33,7 @@ AbstractClass * * Sidebar::StartSidebarProduction(void * a1, BuildingTypeClass *
   int v18; // eax
   int v19; // ecx
   int v20; // ecx
-  char v21; // [esp+23h] [ebp-11h]
+  void * v21;
   int v22; // [esp+24h] [ebp-10h]
   int v23; // [esp+28h] [ebp-Ch]
   char v24; // [esp+2Ch] [ebp-8h]
@@ -249,7 +254,7 @@ AbstractClass * * Sidebar::StartSidebarProduction(void * a1, BuildingTypeClass *
 namespace gamemd {
 int Sidebar::Dispatch(IUnknown * aP1, char a3, int a4, char a5)
 {
-  char result; // al
+  IUnknown * result;
 
   result = aP1 - 1; /*0x5007a5*/
   switch ( aP1 ) /*0x5007b7*/
@@ -404,7 +409,7 @@ TechnoClass * * Sidebar::CancelSidebarProductionQueue()
     *(Block + 37) = -1; /*0x6364ca*/
     *((_BYTE *)Block + 153) = 0; /*0x6364d0*/
     v15 = (void *)*(Block + 2); /*0x6364d7*/
-    *(_DWORD *)v10 = &(void*)(void*)&VectorClass_PlanningNodeClass___vftable; /*0x6364de*/
+    *(_DWORD *)v10 = (void*)&VectorClass_PlanningNodeClass___vftable; /*0x6364de*/
     if ( v15 ) /*0x6364e4*/
     {
       if ( *((_BYTE *)Block + 17) ) /*0x6364e6*/

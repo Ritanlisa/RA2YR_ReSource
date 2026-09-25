@@ -10,7 +10,7 @@ struct TimerClass {
     unsigned int u32_4;  // 0x4
     unsigned int u32_8;  // 0x8
     unsigned int u32_C;  // 0xC
-    void* q010;  // 0x10
+    unsigned int q010;  // 0x10
     unsigned int u32_14;  // 0x14
     unsigned int u32_18;  // 0x18
     unsigned int u32_1C;  // 0x1C
@@ -19,7 +19,7 @@ struct TimerClass {
     unsigned int q028;  // 0x28
     unsigned char q02C;  // 0x2C
     unsigned char q030;  // 0x30
-    void* q034;  // 0x34
+    unsigned int q034;  // 0x34
     unsigned int u32_38;  // 0x38
     unsigned int u32_3C;  // 0x3C
     unsigned char q040;  // 0x40
@@ -248,7 +248,7 @@ struct TimerClass {
     unsigned int u32_C3;
 // --- flat members (END) ---
     BOOL Active();  // 0x4C9480
-    char * Construct(int a2, int a3, TechnoTypeClass * aP3, int a5, int a6, int a7, int a8, char a9, int a10, int a11, int a12, int a13, char a14, char a15, int a16, int a17);  // 0x54FE60
+    char * Construct(int a2,  int a3,  TechnoTypeClass * aP3,  int a5,  int a6,  int a7,  int a8,  char a9,  int a10,  int a11,  int a12,  int a13,  char a14,  char a15,  int a16,  int a17);    // 0x54FE60
     signed int GetRemaining();  // 0x5CEAD0
     void StartIfIdle();  // 0x5CEB20
 };

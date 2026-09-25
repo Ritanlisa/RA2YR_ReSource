@@ -12,6 +12,8 @@
 #include "e4/classes/Mouse_e4.hpp"
 #include "e4/classes/Movie_e4.hpp"
 #include "e4/classes/ScoreScreen_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x77E110
@@ -150,7 +152,7 @@ Coord * * RunWOLMainLoop_Read()
   char *v3; // eax
   int v4; // esi
   char *v5; // eax
-  BOOL v6; // esi
+  void ** v6;
   int v8; // [esp+1Ch] [ebp-38h]
   int v9; // [esp+28h] [ebp-2Ch]
   int v10; // [esp+34h] [ebp-20h] BYREF
@@ -232,7 +234,7 @@ char sub_72C7E0()
 namespace gamemd {
 void sub_72C830()
 {
-  void *v0; // esi
+  unsigned int v0;
 
   if ( byte_B0FCFD ) /*0x72c83a*/
   {

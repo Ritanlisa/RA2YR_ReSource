@@ -13,6 +13,8 @@
 #include "e4/classes/BuildingClass_e4.hpp"
 #include "e4/classes/Frame_e4.hpp"
 #include "e4/classes/Math_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x4D0980
@@ -33,7 +35,7 @@ int FoggedObjectClass::InitBuildingFog(unsigned int * a2, int a3, int a4)
   int v16; // edi
   int v17; // ebp
   int v18; // edi
-  int v19; // eax
+  FoggedObjectClass * v19;
   int v20; // ecx
   int v21; // eax
   int v22; // edi
@@ -55,14 +57,14 @@ int FoggedObjectClass::InitBuildingFog(unsigned int * a2, int a3, int a4)
   this->q054 = -1; /*0x4d09dd*/
   this->q058 = 0; /*0x4d09e4*/
   FoggedObject::DrawVector_Constructor((_DWORD *)(&this->LastSight2), 0, 0); /*0x4d09e7*/
-  this->q05C = &(void*)(void*)&DynamicVectorClass_FoggedObjectClass_DrawRecord_vftable; /*0x4d09ec*/
+  this->q05C = (void*)&DynamicVectorClass_FoggedObjectClass_DrawRecord_vftable; /*0x4d09ec*/
   this->q070 = 10; /*0x4d09f2*/
   this->q06C = 0; /*0x4d09f9*/
   this->q074 = 1; /*0x4d0a02*/
-  *(_DWORD *)this = &(void*)(void*)&FoggedObjectClass_vftable; /*0x4d0a06*/
-  this->vtable2 = &(void*)(void*)&FoggedObjectClass_vftable; /*0x4d0a0c*/
-  this->vtable3 = &(void*)(void*)&FoggedObjectClass_vftable; /*0x4d0a13*/
-  this->vtable4 = &(void*)(void*)&FoggedObjectClass_vftable; /*0x4d0a1a*/
+  *(void **)this = (void*)&FoggedObjectClass_vftable; /*0x4d0a06*/
+  this->vtable2 = (void*)&FoggedObjectClass_vftable; /*0x4d0a0c*/
+  this->vtable3 = (void*)&FoggedObjectClass_vftable; /*0x4d0a13*/
+  this->vtable4 = (void*)&FoggedObjectClass_vftable; /*0x4d0a1a*/
   v5 = Coord::To_Cell(&MapClass_Instance, a2); /*0x4d0a2a*/
   PlacementRectBuildingClass = BuildingClass::GetPlacementRect((int)v5, v25); /*0x4d0a3b*/
   StartCoordsHouse = House::GetStartCoords((int)v5, v26); /*0x4d0a3d*/
@@ -186,14 +188,14 @@ AbstractClass * * FoggedObjectClass::InitTerrainFog(IUnknown * aP1, int a3, int 
   this->q050 = v5; /*0x4d0c8c*/
   this->q058 = a4; /*0x4d0c8f*/
   FoggedObject::DrawVector_Constructor((_DWORD *)(&this->LastSight2), 0, 0); /*0x4d0c92*/
-  this->q05C = &(void*)(void*)&DynamicVectorClass_FoggedObjectClass_DrawRecord_vftable; /*0x4d0c97*/
+  this->q05C = (void*)&DynamicVectorClass_FoggedObjectClass_DrawRecord_vftable; /*0x4d0c97*/
   this->q070 = 10; /*0x4d0c9e*/
   this->q06C = 0; /*0x4d0ca5*/
   this->q074 = 1; /*0x4d0cae*/
-  *(_DWORD *)this = &(void*)(void*)&FoggedObjectClass_vftable; /*0x4d0cb2*/
-  this->vtable2 = &(void*)(void*)&FoggedObjectClass_vftable; /*0x4d0cb8*/
-  this->vtable3 = &(void*)(void*)&FoggedObjectClass_vftable; /*0x4d0cbf*/
-  this->vtable4 = &(void*)(void*)&FoggedObjectClass_vftable; /*0x4d0cc6*/
+  *(void **)this = (void*)&FoggedObjectClass_vftable; /*0x4d0cb2*/
+  this->vtable2 = (void*)&FoggedObjectClass_vftable; /*0x4d0cb8*/
+  this->vtable3 = (void*)&FoggedObjectClass_vftable; /*0x4d0cbf*/
+  this->vtable4 = (void*)&FoggedObjectClass_vftable; /*0x4d0cc6*/
   v6 = (char *)Coord::To_Cell(&MapClass_Instance, aP1); /*0x4d0ccd*/
   v7 = aP1[1]; /*0x4d0cd4*/
   v8 = aP1[2]; /*0x4d0cd7*/
@@ -276,18 +278,18 @@ int FoggedObjectClass::Constructor(BuildingClass * aP1, FoggedObjectClass * aP2)
   int v4; // eax
   int v5; // ecx
   int v6; // edx
-  int v7; // esi
+  unsigned char * v7;
   _DWORD *v8; // eax
-  int v9; // eax
+  FoggedObjectClass * v9;
   int v10; // eax
   int v11; // ebp
   int ProductionFrame; // eax
   int v13; // ebp
   int v14; // eax
   char v15; // al
-  int v16; // ecx
+  void * v16;
   int v17; // eax
-  int v18; // eax
+  HouseClass * v18;
   int *v20; // edx
   int *v21; // ebx
   int *v22; // eax
@@ -343,14 +345,14 @@ int FoggedObjectClass::Constructor(BuildingClass * aP1, FoggedObjectClass * aP2)
   this->q054 = -1; /*0x4d0f73*/
   this->q058 = 0; /*0x4d0f7a*/
   FoggedObject::DrawVector_Constructor((_DWORD *)(&this->LastSight2), 0, 0); /*0x4d0f81*/
-  this->q05C = &(void*)(void*)&DynamicVectorClass_FoggedObjectClass_DrawRecord_vftable; /*0x4d0f8a*/
+  this->q05C = (void*)&DynamicVectorClass_FoggedObjectClass_DrawRecord_vftable; /*0x4d0f8a*/
   this->q070 = 10; /*0x4d0f90*/
   this->q06C = 0; /*0x4d0f97*/
   this->q074 = aP2; /*0x4d0fa2*/
-  *(_DWORD *)this = &(void*)(void*)&FoggedObjectClass_vftable; /*0x4d0fa5*/
-  this->vtable2 = &(void*)(void*)&FoggedObjectClass_vftable; /*0x4d0fab*/
-  this->vtable3 = &(void*)(void*)&FoggedObjectClass_vftable; /*0x4d0fb2*/
-  this->vtable4 = &(void*)(void*)&FoggedObjectClass_vftable; /*0x4d0fb9*/
+  *(void **)this = (void*)&FoggedObjectClass_vftable; /*0x4d0fa5*/
+  this->vtable2 = (void*)&FoggedObjectClass_vftable; /*0x4d0fab*/
+  this->vtable3 = (void*)&FoggedObjectClass_vftable; /*0x4d0fb2*/
+  this->vtable4 = (void*)&FoggedObjectClass_vftable; /*0x4d0fb9*/
   v8 = (_DWORD *)(*(int (__thiscall **)(int *, char *))(*aP1 + 300))(aP1, v52); /*0x4d0fc5*/
   this->q040 = *v8; /*0x4d0fd2*/
   this->q044 = v8[1]; /*0x4d0fd7*/
@@ -552,14 +554,14 @@ AbstractClass * * FoggedObjectClass::InitDrawRecord(unsigned int * a2)
   this->q054 = -1; /*0x4d13e7*/
   this->q058 = 0; /*0x4d13ee*/
   FoggedObject::DrawVector_Constructor((_DWORD *)(&this->LastSight2), 0, 0); /*0x4d13f1*/
-  this->q05C = &(void*)(void*)&DynamicVectorClass_FoggedObjectClass_DrawRecord_vftable; /*0x4d13f6*/
+  this->q05C = (void*)&DynamicVectorClass_FoggedObjectClass_DrawRecord_vftable; /*0x4d13f6*/
   this->q070 = 10; /*0x4d13fc*/
   this->q06C = 0; /*0x4d1403*/
   this->q074 = 1; /*0x4d140a*/
-  *(_DWORD *)this = &(void*)(void*)&FoggedObjectClass_vftable; /*0x4d140e*/
-  this->vtable2 = &(void*)(void*)&FoggedObjectClass_vftable; /*0x4d1414*/
-  this->vtable3 = &(void*)(void*)&FoggedObjectClass_vftable; /*0x4d141b*/
-  this->vtable4 = &(void*)(void*)&FoggedObjectClass_vftable; /*0x4d1422*/
+  *(_DWORD *)this = (void*)&FoggedObjectClass_vftable; /*0x4d140e*/
+  this->vtable2 = (void*)&FoggedObjectClass_vftable; /*0x4d1414*/
+  this->vtable3 = (void*)&FoggedObjectClass_vftable; /*0x4d141b*/
+  this->vtable4 = (void*)&FoggedObjectClass_vftable; /*0x4d1422*/
   v5 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, _DWORD *))(*a2 + 300))(a2, v22); /*0x4d1431*/
   this->q040 = *v5; /*0x4d143b*/
   this->q044 = v5[1]; /*0x4d1440*/
@@ -667,13 +669,13 @@ int FoggedObjectClass::LoadTypeData(int * a1, int a2)
   {
     AbstractClass::InitVtables(v3, (int)&a2); /*0x4d253b*/
     FoggedObject::DrawVector_Constructor(v3 + 23, 0, 0); /*0x4d2547*/
-    v3[23] = (int)&(void*)(void*)&DynamicVectorClass_FoggedObjectClass_DrawRecord_vftable; /*0x4d254c*/
+    v3[23] = (int)&DynamicVectorClass_FoggedObjectClass_DrawRecord_vftable; /*0x4d254c*/
     v3[28] = 10; /*0x4d2552*/
     v3[27] = 0; /*0x4d2559*/
-    *v3 = (int)&(void*)(void*)&FoggedObjectClass_vftable; /*0x4d255c*/
-    v3[1] = (int)&(void*)(void*)&FoggedObjectClass_vftable; /*0x4d2562*/
-    v3[2] = (int)&(void*)(void*)&FoggedObjectClass_vftable; /*0x4d2569*/
-    v3[3] = (int)&(void*)(void*)&FoggedObjectClass_vftable; /*0x4d2570*/
+    *v3 = (int)&FoggedObjectClass_vftable; /*0x4d255c*/
+    v3[1] = (int)&FoggedObjectClass_vftable; /*0x4d2562*/
+    v3[2] = (int)&FoggedObjectClass_vftable; /*0x4d2569*/
+    v3[3] = (int)&FoggedObjectClass_vftable; /*0x4d2570*/
   }
   ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v3 + 10); /*0x4d2580*/
   v5 = *v2; /*0x4d2585*/
@@ -1041,7 +1043,7 @@ DynamicVector * FoggedObjectClass::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x4d2d63*/
-  *this = &(void*)(void*)&VectorClass_FoggedObjectClass_DrawRecord_vftable; /*0x4d2d66*/
+  *this = (void*)&VectorClass_FoggedObjectClass_DrawRecord_vftable; /*0x4d2d66*/
   if ( v3 && this->IsAllocated ) /*0x4d2d70*/
   {
     RA2_OPDEL(v3); /*0x4d2d78*/
@@ -1270,7 +1272,7 @@ VectorClass_flat * FoggedObjectClass_42::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->vtable2; /*0x4e0ce3*/
-  *this = &(void*)(void*)&VectorClass_FootClass___vftable; /*0x4e0ce6*/
+  *this = (void*)&VectorClass_FootClass___vftable; /*0x4e0ce6*/
   if ( v3 && this->q034 ) /*0x4e0cf0*/
   {
     RA2_OPDEL(v3); /*0x4e0cf8*/

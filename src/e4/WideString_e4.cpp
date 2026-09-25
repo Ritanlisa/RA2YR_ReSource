@@ -5,6 +5,8 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/VectorClass_Wstring_e4.hpp"
 #include "e4/classes/FileSystem_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x5D4B20
@@ -13,8 +15,8 @@ int WideString::WordWrap(wchar_t * a0, CampaignScore * aP1, int a3, CampaignScor
 {
   wchar_t *v6; // ebp
   signed int v7; // eax
-  int v8; // ecx
-  int v9; // ebx
+  CampaignScore * v8;
+  unsigned int v9;
   wchar_t *v10; // esi
   wchar_t *v11; // edx
 
@@ -222,7 +224,7 @@ namespace gamemd {
 wchar_t * WideString::Trim()
 {
   wchar_t v2; // ax
-  wchar_t *v3; // esi
+  unsigned int v3;
   signed int v4; // eax
   wchar_t *v5; // ecx
 
@@ -271,7 +273,7 @@ wchar_t ** WideString::Assign(CampaignScore * aP1)
   size_t v3; // eax
   wchar_t *v4; // eax
 
-  *this = 0; /*0x7b66da*/
+  *(_DWORD *)this = 0; /*0x7b66da*/
   if ( aP1 ) /*0x7b66e0*/
     v3 = wcslen(aP1) + 1; /*0x7b66eb*/
   else
@@ -292,7 +294,7 @@ wchar_t ** WideString::AssignFromPtr(const wchar_t ** a2)
   size_t v3; // eax
   wchar_t *v4; // eax
 
-  *this = 0; /*0x7b6728*/
+  *(_DWORD *)this = 0; /*0x7b6728*/
   if ( *a2 ) /*0x7b672e*/
   {
     v3 = wcslen(*a2); /*0x7b6735*/
@@ -313,7 +315,7 @@ void ** WideString::Assign_Alt(wchar_t * String)
 
   if ( *this ) /*0x7b6884*/
     RA2_OPDEL(); /*0x7b688b*/
-  *this = 0; /*0x7b6897*/
+  *(_DWORD *)this = 0; /*0x7b6897*/
   if ( String ) /*0x7b689f*/
     v3 = wcslen(String) + 1; /*0x7b68aa*/
   else
@@ -344,7 +346,7 @@ void ** WideString::Reassign_Alt(const wchar_t ** a2)
       v4 = &g_TypeClass_DefaultString; /*0x7b6911*/
     if ( *this ) /*0x7b6916*/
       RA2_OPDEL(); /*0x7b691d*/
-    *this = 0; /*0x7b6927*/
+    *(_DWORD *)this = 0; /*0x7b6927*/
     if ( v4 ) /*0x7b692d*/
       v5 = wcslen(v4) + 1; /*0x7b6938*/
     else

@@ -5,6 +5,8 @@
 #include "e4/classes/RocketLocomotionClass_e4.hpp"
 #include "e4/classes/Dialog_e4.hpp"
 #include "e4/classes/Movie_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x661EC0
@@ -28,8 +30,8 @@ RocketLocomotionClass::RocketLocomotionClass()
   this->CurrentPitch = 0; /*0x661f0f*/
   this->RocketLocomotionClass_field_58 = 0; /*0x661f12*/
   this->RocketLocomotionClass_field_bool_4C = 1; /*0x661f15*/
-  *(_DWORD *)this = &(void*)(void*)&RocketLocomotionClass_vftable; /*0x661f19*/
-  this->vtable2 = &(void*)(void*)&RocketLocomotionClass_vftable; /*0x661f1f*/
+  *(_DWORD *)this = (void*)&RocketLocomotionClass_vftable; /*0x661f19*/
+  this->vtable2 = (void*)&RocketLocomotionClass_vftable; /*0x661f1f*/
   return this; /*0x661f28*/
 }
 // 0x6633D0
@@ -47,20 +49,20 @@ int RocketLocomotionClass::ddtor(int a1, unsigned int * a2)
 int RocketLocomotionClass::BeginMove(int * a1, int * a2)
 {
   int result; // eax
-  wchar_t *v3; // ecx
+  unsigned int v3;
 
   result = SwizzleManager::SaveLoad(a1, a2); /*0x66341b*/
   if ( result >= 0 ) /*0x663422*/
   {
     if ( a1 ) /*0x663426*/
     {
-      *a1 = (int)&(void*)(void*)&LocomotionClass_vftable; /*0x663428*/
-      a1[1] = (int)&(void*)(void*)&LocomotionClass_vftable; /*0x66342e*/
+      *a1 = (int)&LocomotionClass_vftable; /*0x663428*/
+      a1[1] = (int)&LocomotionClass_vftable; /*0x66342e*/
       v3 = g_CurrentFrame; /*0x663435*/
       a1[15] = 0; /*0x66343b*/
       a1[13] = (int)v3; /*0x663442*/
-      *a1 = (int)&(void*)(void*)&RocketLocomotionClass_vftable; /*0x663445*/
-      a1[1] = (int)&(void*)(void*)&RocketLocomotionClass_vftable; /*0x66344b*/
+      *a1 = (int)&RocketLocomotionClass_vftable; /*0x663445*/
+      a1[1] = (int)&RocketLocomotionClass_vftable; /*0x66344b*/
     }
   }
   return result; /*0x663452*/
@@ -73,8 +75,8 @@ int RocketLocomotionClass::StubReturn96()
 // 0x6635C0
 RocketLocomotionClass * RocketLocomotionClass::ProcessMove(char a2)
 {
-  *this = &(void*)(void*)&RocketLocomotionClass_vftable; /*0x6635c3*/
-  this->vtable2 = &(void*)(void*)&RocketLocomotionClass_vftable; /*0x6635c9*/
+  *this = (void*)&RocketLocomotionClass_vftable; /*0x6635c3*/
+  this->vtable2 = (void*)&RocketLocomotionClass_vftable; /*0x6635c9*/
   LocomotionClass::Construct(); /*0x6635d0*/
   if ( (a2 & 1) != 0 ) /*0x6635da*/
     RA2_OPDEL(); /*0x6635dd*/
@@ -317,7 +319,7 @@ VectorClass_flat * RocketLocomotionClass_17::Constructor(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x664a73*/
-  *this = &(void*)(void*)&VectorClass_OwnerTalkClass_ConnectionListStruct___vftable; /*0x664a76*/
+  *(void **)this = (void*)&VectorClass_OwnerTalkClass_ConnectionListStruct___vftable; /*0x664a76*/
   if ( v3 && this->IsAllocated ) /*0x664a80*/
   {
     RA2_OPDEL(v3); /*0x664a88*/
@@ -338,7 +340,7 @@ DynamicVector * RocketLocomotionClass_17::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x664ac3*/
-  *this = &(void*)(void*)&VectorClass_OwnerTalkClass_ConnectionListStruct___vftable; /*0x664ac6*/
+  *(void **)this = (void*)&VectorClass_OwnerTalkClass_ConnectionListStruct___vftable; /*0x664ac6*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x664ad0*/
   {
     RA2_OPDEL(v3); /*0x664ad8*/

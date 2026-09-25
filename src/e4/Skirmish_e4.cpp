@@ -10,7 +10,10 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/SkirmishDialog_e4.hpp"
 #include "e4/classes/TechnoTypeClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x46F600
 namespace gamemd {
@@ -67,7 +70,7 @@ CampaignClass * * Skirmish::SetupAllSpawnLocations()
   int v5; // edi
   int PlayerColor; // eax
   char *v7; // ebx
-  int *v8; // edi
+  unsigned int v8;
   int v9; // eax
   wchar_t *v10; // esi
   int v11; // ebp
@@ -297,7 +300,7 @@ int Skirmish::RenderPreview(SkirmishDialog * aP1)
   int v12; // esi
   int v13; // eax
   int v14; // eax
-  _DWORD *v15; // ecx
+  unsigned int v15;
   int v16; // ebp
   int v17; // esi
   int v18; // edi

@@ -3,6 +3,8 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Float_e4.hpp"
 #include "e4/classes/BuildingTypeClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x6C9690
@@ -20,7 +22,7 @@ float Float::Accumulate(float value, int index)
 namespace gamemd {
 double Float::SubtractClamped(BuildingTypeClass * aP1, IUnknown * aP2)
 {
-  double result; // st7
+  BuildingTypeClass * result;
   double v4; // st6
 
   if ( *(this + aP2) >= (double)aP1 ) /*0x6c96c0*/

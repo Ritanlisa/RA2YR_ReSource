@@ -7,6 +7,8 @@
 #include "e4/classes/Math_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/InfantryClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x512F20
@@ -42,7 +44,7 @@ unsigned int * InfantryTypeVector::Construct2(int a2, int a3)
   this->q008 = a2; /*0x5138fe*/
   this->q00C = 1; /*0x513901*/
   this->u8_D = 0; /*0x513905*/
-  *this = &(void*)(void*)&VectorClass_InfantryTypeClass_const___vftable; /*0x513908*/
+  *(void **)this = (void*)&VectorClass_InfantryTypeClass_const___vftable; /*0x513908*/
   if ( a2 ) /*0x51390e*/
   {
     if ( a3 ) /*0x513916*/
@@ -64,7 +66,7 @@ unsigned int * InfantryTypeVector::ConstructFromData(int a2, int a3)
   this->q008 = a2; /*0x5d89ae*/
   this->q00C = 1; /*0x5d89b1*/
   this->u8_D = 0; /*0x5d89b5*/
-  *this = &(void*)(void*)&VectorClass_InfantryTypeClass___vftable; /*0x5d89b8*/
+  *(void **)this = (void*)&VectorClass_InfantryTypeClass___vftable; /*0x5d89b8*/
   if ( a2 ) /*0x5d89be*/
   {
     if ( a3 ) /*0x5d89c6*/

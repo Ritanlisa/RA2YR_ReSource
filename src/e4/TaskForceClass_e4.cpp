@@ -14,6 +14,8 @@
 #include "e4/classes/Tactical_e4.hpp"
 #include "e4/classes/TagClass_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x4C4EF0
@@ -29,7 +31,7 @@ unsigned int * TaskForceClass::ParseUnitCountAndType(char * Buffer)
   _BYTE v10[64]; // [esp+4h] [ebp-40h] BYREF
 
   v9 = Buffer; /*0x4c4f09*/
-  *this = 0; /*0x4c4f0a*/
+  *(_DWORD *)this = 0; /*0x4c4f0a*/
   this->vtable2 = 0; /*0x4c4f10*/
   sscanf(v9, "%d,%s", &Buffer, v10); /*0x4c4f17*/
   *this = Buffer; /*0x4c4f27*/
@@ -63,7 +65,7 @@ unsigned int * TaskForceClass::ParseUnitCountAndType(char * Buffer)
 namespace gamemd {
 unsigned int * TaskForceClass::Construct(ObjectClass * aP1)
 {
-  int v3; // eax
+  TaskForceClass * v3;
   _DWORD *v4; // eax
   int v5; // ecx
 
@@ -71,10 +73,10 @@ unsigned int * TaskForceClass::Construct(ObjectClass * aP1)
   *(&this->vtable48) = -1; /*0x6e7e8f*/
   *(&this->vtable49) = 0; /*0x6e7e99*/
   *(&this->u32_100) = 0; /*0x6e7ea3*/
-  *this = &(void*)(void*)&TaskForceClass_vftable; /*0x6e7ead*/
-  this->vtable2 = &(void*)(void*)&TaskForceClass_vftable; /*0x6e7eb3*/
-  this->vtable3 = &(void*)(void*)&TaskForceClass_vftable; /*0x6e7eba*/
-  this->vtable4 = &(void*)(void*)&TaskForceClass_vftable; /*0x6e7ec1*/
+  *(void **)this = (void*)&TaskForceClass_vftable; /*0x6e7ead*/
+  this->vtable2 = (void*)&TaskForceClass_vftable; /*0x6e7eb3*/
+  this->vtable3 = (void*)&TaskForceClass_vftable; /*0x6e7eba*/
+  this->vtable4 = (void*)&TaskForceClass_vftable; /*0x6e7ec1*/
   if ( g_MultiplayerLogFlags < dword_A8E8D8 /*0x6e7f05*/
     || (byte_A8E8DD || !dword_A8E8D8)
     && dword_A8E8E4 > 0
@@ -173,10 +175,10 @@ void * TaskForceClass::ExecuteAction(char a2)
 {
   int v3; // eax
 
-  *this = &(void*)(void*)&TaskForceClass_vftable; /*0x6e87f6*/
-  this->vtable2 = &(void*)(void*)&TaskForceClass_vftable; /*0x6e87fc*/
-  this->vtable3 = &(void*)(void*)&TaskForceClass_vftable; /*0x6e8803*/
-  this->vtable4 = &(void*)(void*)&TaskForceClass_vftable; /*0x6e880a*/
+  *(void **)this = (void*)&TaskForceClass_vftable; /*0x6e87f6*/
+  this->vtable2 = (void*)&TaskForceClass_vftable; /*0x6e87fc*/
+  this->vtable3 = (void*)&TaskForceClass_vftable; /*0x6e8803*/
+  this->vtable4 = (void*)&TaskForceClass_vftable; /*0x6e880a*/
   AbstractClass::AnnounceExpiredPointer(1); /*0x6e8811*/
   v3 = (*(int (__thiscall **)(int *, void ***))(dword_A8E8D0 + 16))(&dword_A8E8D0, &this); /*0x6e882a*/
   if ( v3 != -1 && v3 < g_MultiplayerLogFlags && v3 < --g_MultiplayerLogFlags ) /*0x6e8845*/
@@ -312,10 +314,10 @@ int TaskForceClass::LoadTaskForce(AbstractTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x6e86b6*/
     {
       AbstractTypeClass::Init((int)aP0, (int)&aP1); /*0x6e86bf*/
-      *aP0 = &(void*)(void*)&TaskForceClass_vftable; /*0x6e86c4*/
-      aP0[1] = &(void*)(void*)&TaskForceClass_vftable; /*0x6e86ca*/
-      aP0[2] = &(void*)(void*)&TaskForceClass_vftable; /*0x6e86d1*/
-      aP0[3] = &(void*)(void*)&TaskForceClass_vftable; /*0x6e86d8*/
+      *(void **)aP0 = (void*)&TaskForceClass_vftable; /*0x6e86c4*/
+      aP0[1] = (void*)&TaskForceClass_vftable; /*0x6e86ca*/
+      aP0[2] = (void*)&TaskForceClass_vftable; /*0x6e86d1*/
+      aP0[3] = (void*)&TaskForceClass_vftable; /*0x6e86d8*/
     }
     v3 = aP0 + 42; /*0x6e86e0*/
     v4 = 6; /*0x6e86e6*/

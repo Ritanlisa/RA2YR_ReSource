@@ -30,10 +30,10 @@ struct VectorClass_ptr_VoxClass {
 // --- flat members (END) ---
     int Get(int a2);  // 0x7536A0
     char Add(int a2);  // 0x7536B0
-    char Release(int a2, unsigned int * a3);  // 0x7536F0
+    char Release(int a2,  unsigned int * a3);    // 0x7536F0
     void Remove();  // 0x7537A0
     int GetSize(unsigned int * a2);  // 0x7537D0
     unsigned int GetCapacity(int a2);  // 0x753810
-    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x753910
+    VectorClass_flat * QueryInterface(unsigned int * Block,  char a2);    // 0x753910
 };
 } // namespace gamemd

@@ -6,8 +6,8 @@
 namespace gamemd {
 struct WideString {
     void* vfptr;  // minimal E2 declaration
-    int WordWrap(wchar_t * a0, CampaignScore * aP1, int a3, CampaignScore * aP3, int a5);  // 0x5D4B20
-    char Replace(CampaignScore * aP1, wchar_t * String);  // 0x7B73F0
+    int WordWrap(wchar_t * a0,  CampaignScore * aP1,  int a3,  CampaignScore * aP3,  int a5);    // 0x5D4B20
+    char Replace(CampaignScore * aP1,  wchar_t * String);    // 0x7B73F0
     int Hash();  // 0x5DAC00
     wchar_t * Trim();  // 0x727D60
     wchar_t ** Assign(CampaignScore * aP1);  // 0x7B66D0
@@ -16,9 +16,9 @@ struct WideString {
     void ** Reassign_Alt(const wchar_t ** a2);  // 0x7B68E0
     wchar_t ** Append2(CampaignScore * aP1);  // 0x7B6AE0
     wchar_t ** Append(CampaignScore * aP1);  // 0x7B6B60
-    wchar_t ** AssignConcat(wchar_t ** a2, wchar_t * String);  // 0x7B6BE0
-    wchar_t ** ConcatAlloc(wchar_t ** a1, ObjectClass * aP2);  // 0x7B6CB0
-    short Erase(int a2, int a3);  // 0x7B6D90
+    wchar_t ** AssignConcat(wchar_t ** a2,  wchar_t * String);    // 0x7B6BE0
+    wchar_t ** ConcatAlloc(wchar_t ** a1,  ObjectClass * aP2);    // 0x7B6CB0
+    short Erase(int a2,  int a3);    // 0x7B6D90
     char RemoveChar(wchar_t a2);  // 0x7B6E20
     CampaignScore * GetOrEmpty();  // 0x7B7100
     CampaignScore * GetOrEmpty_Alt();  // 0x7B7140

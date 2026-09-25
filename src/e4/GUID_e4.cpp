@@ -4,6 +4,8 @@
 #include "e4/classes/GUID_e4.hpp"
 #include "e4/classes/Compare_e4.hpp"
 #include "e4/classes/GadgetClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x53EE70

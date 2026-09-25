@@ -28,10 +28,10 @@ struct DeleteCommandClass_28 {
     void ClearBuffer();  // 0x53C4C0
     int Seek(int a2);  // 0x53C510
     char AddRef(int a2);  // 0x53C520
-    char Release(int a2, unsigned int * a3);  // 0x53C560
+    char Release(int a2,  unsigned int * a3);    // 0x53C560
     void ddtor();  // 0x53C610
     int Read(unsigned int * a2);  // 0x53C640
-    char SetCapacity(int a2, unsigned int * a3);  // 0x53C6A0
+    char SetCapacity(int a2,  unsigned int * a3);    // 0x53C6A0
     int FindItem(unsigned int * a2);  // 0x53C750
     VectorClass_flat * QueryInterface(char a2);  // 0x53C780
     DynamicVector * Constructor(char a2);  // 0x53C7D0

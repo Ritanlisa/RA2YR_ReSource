@@ -63,7 +63,7 @@ struct BlowStraw_29 {
     unsigned char q45D0;  // 0x45D0
     unsigned char q5294;  // 0x5294
     unsigned char q5298;  // 0x5298
-    IUnknown * ptr_5538;  // 0x5538
+    void * ptr_5538;  // 0x5538
     unsigned char q553C;  // 0x553C
     unsigned int u32_5540;  // 0x5540
     unsigned char u8_5544;  // 0x5544
@@ -80,7 +80,7 @@ struct BlowStraw_29 {
     unsigned int vt_slot_56;
     unsigned int u32_14FB0;
 // --- flat members (END) ---
-    int Seek(TabClass * aP1, unsigned int * a2);  // 0x6D0680
+    int Seek(TabClass * aP1,  unsigned int * a2);    // 0x6D0680
     TabClass * Read(char a2);  // 0x5BE9E0
 };
 } // namespace gamemd

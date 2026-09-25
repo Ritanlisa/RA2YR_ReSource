@@ -35,12 +35,7 @@ struct E4Recv_4B0DF0 {
     unsigned int q5444;  // 0x5444
     unsigned int q5508;  // 0x5508
     unsigned int q6408;  // 0x6408
-    unsigned int nextArrayIndex4;
-    unsigned int q044;
-    unsigned int q048;
-    unsigned int q18C;
-    unsigned int vtable4;
 // --- flat members (END) ---
-    char sub_4B0DF0(IUnknown * aP1);  // 0x4B0DF0
+    char sub_4B0DF0(void* aP1);  // 0x4B0DF0
 };
 } // namespace gamemd

@@ -14,14 +14,22 @@
 #include "e4/classes/Dialog_e4.hpp"
 #include "e4/classes/Timer_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/AbstractTypeClass_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/E4Recv_634B20_e4.hpp"
+#include "e4/classes/Game_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/Process_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x4C98B0
 namespace gamemd {
 int TeamTypeClass::Construct()
 {
-  int v3; // eax
-  int v5; // eax
+  TeamTypeClass * v3;
+  TeamTypeClass * v5;
   int v7; // [esp+Ch] [ebp-8h]
 
   AbstractClass::Constructor(); /*0x4c98b7*/
@@ -36,7 +44,7 @@ int TeamTypeClass::Construct()
   this->taskForceCapacity = 0; /*0x4c98dd*/
   this->q04C = 1; /*0x4c98e0*/
   this->u8_4D = 0; /*0x4c98e3*/
-  this->taskForce = &(void*)(void*)&DynamicVectorClass_TechnoTypeClass_const___vftable; /*0x4c98e6*/
+  this->taskForce = (void*)&DynamicVectorClass_TechnoTypeClass_const___vftable; /*0x4c98e6*/
   this->q054 = 10; /*0x4c98ed*/
   this->q050 = 0; /*0x4c98f4*/
   this->TeamTypeClass_field_71 = 1; /*0x4c98f7*/
@@ -48,10 +56,10 @@ int TeamTypeClass::Construct()
   this->TeamTypeClass_field_68 = -1; /*0x4c990d*/
   this->TeamTypeClass_field_6C = 0; /*0x4c9914*/
   this->TeamTypeClass_field_70 = 0; /*0x4c9917*/
-  *(_DWORD *)this = &(void*)(void*)&FactoryClass_vftable; /*0x4c991a*/
-  this->vtable2 = &(void*)(void*)&FactoryClass_vftable; /*0x4c9920*/
-  this->vtable3 = &(void*)(void*)&FactoryClass_vftable; /*0x4c9926*/
-  this->vtable4 = &(void*)(void*)&FactoryClass_vftable; /*0x4c992d*/
+  *(void **)this = (void*)&FactoryClass_vftable; /*0x4c991a*/
+  this->vtable2 = (void*)&FactoryClass_vftable; /*0x4c9920*/
+  this->vtable3 = (void*)&FactoryClass_vftable; /*0x4c9926*/
+  this->vtable4 = (void*)&FactoryClass_vftable; /*0x4c992d*/
   this->vtable2.GenerateUniqueID(); /*0x4c9934*/
   if ( g_TeamTypeCapacity < dword_A83E38 /*0x4c996d*/
     || (byte_A83E3D || !dword_A83E38)
@@ -90,11 +98,11 @@ void * TeamTypeClass::CreateScriptType()
 {
   int v2; // esi
   _DWORD *v3; // eax
-  _DWORD *v4; // esi
+  void** v4;
   int v5; // ecx
   char v6; // al
   int v7; // eax
-  _DWORD *v8; // edx
+  unsigned int v8;
 
   if ( !_strcmpi(g_Str__none_, Source) || !_strcmpi(g_Str_none, Source) ) /*0x691c20*/
     return 0; /*0x691c2a*/
@@ -109,10 +117,10 @@ void * TeamTypeClass::CreateScriptType()
       AbstractTypeClass::Constructor((int)v3, Source); /*0x691c7c*/
       v4[39] = 0; /*0x691c81*/
       v4[40] = 0; /*0x691c8b*/
-      *v4 = &(void*)(void*)&ScriptTypeClass_vftable; /*0x691c95*/
-      v4[1] = &(void*)(void*)&ScriptTypeClass_vftable; /*0x691c9b*/
-      v4[2] = &(void*)(void*)&ScriptTypeClass_vftable; /*0x691ca2*/
-      v4[3] = &(void*)(void*)&ScriptTypeClass_vftable; /*0x691ca9*/
+      *(void **)v4 = (void*)&ScriptTypeClass_vftable; /*0x691c95*/
+      v4[1] = (void*)&ScriptTypeClass_vftable; /*0x691c9b*/
+      v4[2] = (void*)&ScriptTypeClass_vftable; /*0x691ca2*/
+      v4[3] = (void*)&ScriptTypeClass_vftable; /*0x691ca9*/
       v5 = g_MultiplayerDebugState; /*0x691cb0*/
       if ( g_MultiplayerDebugState < dword_8B41D0 /*0x691cf1*/
         || (byte_8B41D5 || !dword_8B41D0)
@@ -242,7 +250,7 @@ int TeamTypeClass::GetTeam(int a2, int a3)
 namespace gamemd {
 AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1)
 {
-  int v3; // ecx
+  void * v3;
   int v4; // eax
   void *v5; // ebp
   int Int_Overwrite; // eax
@@ -253,19 +261,19 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1)
   char v11; // cl
   char v12; // al
   char v13; // al
-  char v14; // cl
+  void * v14;
   char v15; // al
   char v16; // al
-  char v17; // cl
+  void * v17;
   char v18; // al
   char v19; // al
   char v20; // cl
   char v21; // al
   int v22; // eax
-  int v23; // ecx
+  AbstractClass * v23;
   int v24; // eax
   int v25; // eax
-  int v26; // ebp
+  void * v26;
   int v27; // eax
   int v28; // ecx
   int v29; // eax
@@ -282,7 +290,7 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1)
   int v40; // eax
   int v41; // ebp
   int v42; // eax
-  int v44; // [esp-Ch] [ebp-D4h]
+  AbstractClass * v44;
   char v45; // [esp-Ch] [ebp-D4h]
   char v46; // [esp-Ch] [ebp-D4h]
   char v47; // [esp-Ch] [ebp-D4h]
@@ -697,10 +705,10 @@ TeamTypeClass * TeamTypeClass::ddtor(char a2)
   int v3; // eax
   int v4; // eax
 
-  *this = &(void*)(void*)&TeamTypeClass_vftable; /*0x6f20d6*/
-  this->vtable2 = &(void*)(void*)&TeamTypeClass_vftable; /*0x6f20dc*/
-  this->vtable3 = &(void*)(void*)&TeamTypeClass_vftable; /*0x6f20e3*/
-  this->vtable4 = &(void*)(void*)&TeamTypeClass_vftable; /*0x6f20ea*/
+  *this = (void*)&TeamTypeClass_vftable; /*0x6f20d6*/
+  this->vtable2 = (void*)&TeamTypeClass_vftable; /*0x6f20dc*/
+  this->vtable3 = (void*)&TeamTypeClass_vftable; /*0x6f20e3*/
+  this->vtable4 = (void*)&TeamTypeClass_vftable; /*0x6f20ea*/
   AbstractClass::AnnounceExpiredPointer(1); /*0x6f20f1*/
   v3 = (*(int (__thiscall **)(int *, void ***))(TeamTypeClass_Array + 16))(&TeamTypeClass_Array, &this); /*0x6f210a*/
   if ( v3 != -1 && v3 < g_MultiplayerLogState && v3 < --g_MultiplayerLogState ) /*0x6f2125*/
@@ -1043,10 +1051,10 @@ int TeamTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x6f1bc6*/
     {
       AbstractTypeClass::Init((int)aP0, (int)&aP1); /*0x6f1bcf*/
-      *aP0 = (int)&(void*)(void*)&TeamTypeClass_vftable; /*0x6f1bd4*/
-      aP0[1] = (int)&(void*)(void*)&TeamTypeClass_vftable; /*0x6f1bda*/
-      aP0[2] = (int)&(void*)(void*)&TeamTypeClass_vftable; /*0x6f1be1*/
-      aP0[3] = (int)&(void*)(void*)&TeamTypeClass_vftable; /*0x6f1be8*/
+      *aP0 = (int)&TeamTypeClass_vftable; /*0x6f1bd4*/
+      aP0[1] = (int)&TeamTypeClass_vftable; /*0x6f1bda*/
+      aP0[2] = (int)&TeamTypeClass_vftable; /*0x6f1be1*/
+      aP0[3] = (int)&TeamTypeClass_vftable; /*0x6f1be8*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP0 + 49); /*0x6f1bfb*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP0 + 52); /*0x6f1c0c*/
@@ -1289,7 +1297,7 @@ VectorClass_flat * TeamTypeClass_28::QueryInterface(char a2)
   int v3; // eax
 
   v3 = this->Items; /*0x6f2683*/
-  *this = &(void*)(void*)&VectorClass_DiscreteDistributionClass_AITriggerTypeClass_DistributionObject_AITriggerTypeClass___vftable; /*0x6f2686*/
+  *this = (void*)&VectorClass_DiscreteDistributionClass_AITriggerTypeClass_DistributionObject_AITriggerTypeClass___vftable; /*0x6f2686*/
   if ( v3 && this->IsAllocated ) /*0x6f2690*/
   {
     RA2_OPDEL((void *)(v3 - 4)); /*0x6f26a3*/
@@ -1310,7 +1318,7 @@ DynamicVector * TeamTypeClass_28::Constructor(char a2)
   int v3; // eax
 
   v3 = this->Items; /*0x6f2723*/
-  *this = &(void*)(void*)&VectorClass_DiscreteDistributionClass_AITriggerTypeClass_DistributionObject_AITriggerTypeClass___vftable; /*0x6f2726*/
+  *this = (void*)&VectorClass_DiscreteDistributionClass_AITriggerTypeClass_DistributionObject_AITriggerTypeClass___vftable; /*0x6f2726*/
   if ( v3 && this->IsAllocated ) /*0x6f2730*/
   {
     RA2_OPDEL((void *)(v3 - 4)); /*0x6f2743*/

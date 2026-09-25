@@ -154,28 +154,24 @@ struct INIClass {
     unsigned char q5644;  // 0x5644
     unsigned char q5834;  // 0x5834
     unsigned char q5838;  // 0x5838
+    unsigned int q010;
     unsigned int q0146;
     unsigned int sectionHead0;
+    unsigned int u32_14;
     unsigned int u32_28;
     unsigned int u32_4;
     unsigned int u32_41;
     unsigned int u32_44;
-    unsigned int v3;
-    unsigned int q010;
-    unsigned int u32_14;
     unsigned char u8_D;
-    unsigned int ReadInt_Overwrite;
-    unsigned int SetInt;
-    unsigned int SetString;
-    unsigned int WriteToString;
+    unsigned int v3;
 // --- flat members (END) ---
     INIClass * ReadCoord(double aP1, int a2, INIClass * aP2, int a4);
     ObjectClass * * BinarySearchSection(INIClass * aP1);
-    VoxelStruct * * GetKeyCount(INIClass * aP1);
+    void* * GetKeyCount(INIClass * aP1);
     char GetInt(char ** a2, char ** a3, unsigned int * a4);
     int GetBool(INIClass * aP1, unsigned char * a2, int a4);
     int GetStringByIndex(CCINIClass * aP1, CCINIClass * aP2);
-    int ReadInt(ObjectClass * aP1, ReferenceCounted * aP2, INIClass * aP3);
+    int ReadInt(ObjectClass * aP1, void* aP2, INIClass * aP3);
     int WOLobby_Play();
     int sub_44FE60();
     INIClass();

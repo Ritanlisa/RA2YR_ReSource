@@ -30,7 +30,7 @@ struct E4Recv_7AE830 {
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    int Vf4(int, ...);  // G6 vtable slot dispatch
+    int Vf4(int,  ...);    // G6 vtable slot dispatch
     void sub_7AE830();  // 0x7AE830
 };
 } // namespace gamemd

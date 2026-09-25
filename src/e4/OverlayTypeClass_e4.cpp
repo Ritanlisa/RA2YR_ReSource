@@ -11,6 +11,8 @@
 #include "e4/classes/LoadOptions_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x5FE250
@@ -44,10 +46,10 @@ OverlayTypeClass::OverlayTypeClass(ObjectClass * aP1)
   this->q2B6 = 0; /*0x5fe2de*/
   this->q2B7 = 0; /*0x5fe2e4*/
   this->q2B8 = 0; /*0x5fe2ea*/
-  *this = &(void*)(void*)&OverlayTypeClass_vftable; /*0x5fe2f1*/
-  this->vtable2 = &(void*)(void*)&OverlayTypeClass_vftable; /*0x5fe2f7*/
-  this->vtable3 = &(void*)(void*)&OverlayTypeClass_vftable; /*0x5fe2fd*/
-  this->vtable4 = &(void*)(void*)&OverlayTypeClass_vftable; /*0x5fe304*/
+  *this = (void*)&OverlayTypeClass_vftable; /*0x5fe2f1*/
+  this->vtable2 = (void*)&OverlayTypeClass_vftable; /*0x5fe2f7*/
+  this->vtable3 = (void*)&OverlayTypeClass_vftable; /*0x5fe2fd*/
+  this->vtable4 = (void*)&OverlayTypeClass_vftable; /*0x5fe304*/
   AbstractClass::GenerateUniqueID((int)(this + 1)); /*0x5fe30b*/
   this->q22F = 1; /*0x5fe310*/
   this->q230 = 0; /*0x5fe317*/
@@ -210,10 +212,10 @@ ScenarioClass * * OverlayTypeClass::SaveLoad_Prefix(int a1, int a2)
     if ( a1 ) /*0x5feb13*/
     {
       ObjectTypeClass::Construct((_DWORD *)a1, (int)&v3); /*0x5feb1c*/
-      *(_DWORD *)a1 = &(void*)(void*)&OverlayTypeClass_vftable; /*0x5feb21*/
-      *(_DWORD *)(a1 + 4) = &(void*)(void*)&OverlayTypeClass_vftable; /*0x5feb27*/
-      *(_DWORD *)(a1 + 8) = &(void*)(void*)&OverlayTypeClass_vftable; /*0x5feb2e*/
-      *(_DWORD *)(a1 + 12) = &(void*)(void*)&OverlayTypeClass_vftable; /*0x5feb35*/
+      *(_DWORD *)a1 = (void*)&OverlayTypeClass_vftable; /*0x5feb21*/
+      *(_DWORD *)(a1 + 4) = (void*)&OverlayTypeClass_vftable; /*0x5feb27*/
+      *(_DWORD *)(a1 + 8) = (void*)&OverlayTypeClass_vftable; /*0x5feb2e*/
+      *(_DWORD *)(a1 + 12) = (void*)&OverlayTypeClass_vftable; /*0x5feb35*/
     }
     VoxelAnimType::LoadAnim((char *)a1); /*0x5feb3e*/
     ObjectTypeClass::Load2DArt((char *)a1); /*0x5feb45*/
@@ -274,7 +276,7 @@ AnimTypeClass * * OverlayTypeClass::GetCategory()
     this->Image = EntireFile; /*0x5feeb1*/
     if ( EntireFile ) /*0x5feeb7*/
       this->ImageAllocated = 1; /*0x5feeb9*/
-    v4[0] = &(void*)(void*)&CCFileClass_vftable; /*0x5feec4*/
+    v4[0] = (void*)&CCFileClass_vftable; /*0x5feec4*/
     v6 = 0; /*0x5feecc*/
     Vector::Clear((int)v5); /*0x5feed4*/
     v4[0] = &off_7E1668; /*0x5feedd*/
@@ -323,10 +325,10 @@ unsigned int * OverlayTypeClass::Construct(ObjectClass * aP1)
   this->q30A = 0; /*0x644189*/
   this->u32_30B = 0; /*0x644190*/
   this->q30C = 0; /*0x644196*/
-  *this = &(void*)(void*)&ParticleSystemTypeClass_vftable; /*0x64419c*/
-  this->vtable2 = &(void*)(void*)&ParticleSystemTypeClass_vftable; /*0x6441a2*/
-  this->vtable3 = &(void*)(void*)&ParticleSystemTypeClass_vftable; /*0x6441a8*/
-  this->vtable4 = &(void*)(void*)&ParticleSystemTypeClass_vftable; /*0x6441af*/
+  *this = (void*)&ParticleSystemTypeClass_vftable; /*0x64419c*/
+  this->vtable2 = (void*)&ParticleSystemTypeClass_vftable; /*0x6441a2*/
+  this->vtable3 = (void*)&ParticleSystemTypeClass_vftable; /*0x6441a8*/
+  this->vtable4 = (void*)&ParticleSystemTypeClass_vftable; /*0x6441af*/
   AbstractClass::GenerateUniqueID((int)(this + 1)); /*0x6441b6*/
   if ( g_InfantryTypeInitState < dword_A83D70 /*0x6441ef*/
     || (byte_A83D75 || !dword_A83D70)
@@ -532,10 +534,10 @@ OverlayTypeClass * OverlayTypeClass::ddtor(char a2)
 {
   int v3; // eax
 
-  *this = &(void*)(void*)&OverlayTypeClass_vftable; /*0x5fef36*/
-  this->vtable2 = &(void*)(void*)&OverlayTypeClass_vftable; /*0x5fef3c*/
-  this->vtable3 = &(void*)(void*)&OverlayTypeClass_vftable; /*0x5fef43*/
-  this->vtable4 = &(void*)(void*)&OverlayTypeClass_vftable; /*0x5fef4a*/
+  *this = (void*)&OverlayTypeClass_vftable; /*0x5fef36*/
+  this->vtable2 = (void*)&OverlayTypeClass_vftable; /*0x5fef3c*/
+  this->vtable3 = (void*)&OverlayTypeClass_vftable; /*0x5fef43*/
+  this->vtable4 = (void*)&OverlayTypeClass_vftable; /*0x5fef4a*/
   AbstractClass::AnnounceExpiredPointer(1); /*0x5fef51*/
   v3 = (*(int (__thiscall **)(int *, void ***))(dword_A83D80 + 16))(&dword_A83D80, &this); /*0x5fef6a*/
   if ( v3 != -1 && v3 < g_ObjectTypeConfig && v3 < --g_ObjectTypeConfig ) /*0x5fef85*/

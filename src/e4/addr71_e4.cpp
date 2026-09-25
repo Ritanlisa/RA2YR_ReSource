@@ -15,6 +15,8 @@
 #include "e4/classes/HouseClass_e4.hpp"
 #include "e4/classes/TechnoClass_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/BuildingClass_e4.hpp"
 
 // 0x710860
@@ -277,7 +279,7 @@ int ObjectTypeClass_LoadTheaterSHP(int a1)
       *(_BYTE *)(v4 + 168) = 0; /*0x71dd23*/
       CCFileClass::Construct(v5, Buffer); /*0x71dd29*/
       *(_DWORD *)(v4 + 164) = CCFileClass::ReadEntireFile(v5); /*0x71dd3b*/
-      v5[0] = &(void*)(void*)&CCFileClass_vftable; /*0x71dd41*/
+      v5[0] = (void*)&CCFileClass_vftable; /*0x71dd41*/
       v7 = 0; /*0x71dd49*/
       Vector::Clear((int)v6); /*0x71dd4d*/
       v5[0] = &off_7E1668; /*0x71dd56*/
@@ -722,7 +724,7 @@ int sub_71A3D0()
   dword_B0EC68 = 0; /*0x71a3dc*/
   byte_B0EC6C = 1; /*0x71a3e1*/
   byte_B0EC6D = 0; /*0x71a3e8*/
-  dword_B0EC60 = (int)&(void*)(void*)&DynamicVectorClass_TemporalClass___vftable; /*0x71a3ed*/
+  dword_B0EC60 = (int)&DynamicVectorClass_TemporalClass___vftable; /*0x71a3ed*/
   dword_B0EC74 = 10; /*0x71a3f7*/
   dword_B0EC70 = 0; /*0x71a401*/
   return atexit(sub_71A410); /*0x71a40c*/
@@ -733,7 +735,7 @@ int sub_71A3D0()
 namespace gamemd {
 void sub_71A410()
 {
-  dword_B0EC60 = (int)&(void*)(void*)&VectorClass_TemporalClass___vftable; /*0x71a418*/
+  dword_B0EC60 = (int)&VectorClass_TemporalClass___vftable; /*0x71a418*/
   if ( dword_B0EC64 && byte_B0EC6D ) /*0x71a42c*/
   {
     RA2_OPDEL(dword_B0EC64); /*0x71a42f*/
@@ -1201,7 +1203,7 @@ int sub_71E620()
   dword_B0F1A8 = 0; /*0x71e62c*/
   byte_B0F1AC = 1; /*0x71e631*/
   byte_B0F1AD = 0; /*0x71e638*/
-  dword_B0F1A0 = (int)&(void*)(void*)&DynamicVectorClass_TEventClass___vftable; /*0x71e63d*/
+  dword_B0F1A0 = (int)&DynamicVectorClass_TEventClass___vftable; /*0x71e63d*/
   dword_B0F1B4 = 10; /*0x71e647*/
   dword_B0F1B0 = 0; /*0x71e651*/
   return atexit(sub_71E660); /*0x71e65c*/
@@ -1212,7 +1214,7 @@ int sub_71E620()
 namespace gamemd {
 void sub_71E660()
 {
-  dword_B0F1A0 = (int)&(void*)(void*)&VectorClass_TEventClass___vftable; /*0x71e668*/
+  dword_B0F1A0 = (int)&VectorClass_TEventClass___vftable; /*0x71e668*/
   if ( dword_B0F1A4 && byte_B0F1AD ) /*0x71e67c*/
   {
     RA2_OPDEL(dword_B0F1A4); /*0x71e67f*/
@@ -1255,7 +1257,7 @@ int E4Recv_71FF20::sub_71FF20(int aP1, int a3, int a4, int aP2, int aP3, int aP4
   this->u8_34 = a9; /*0x71ff5c*/
   this->ptr_38 = a3; /*0x71ff5f*/
   this->M60 = a4; /*0x71ff62*/
-  *(_DWORD *)this = &(void*)(void*)&TextButtonClass_vftable; /*0x71ff65*/
+  *(_DWORD *)this = (void*)&TextButtonClass_vftable; /*0x71ff65*/
   if ( aP4 == -1 || aP5 == -1 ) /*0x71ff70*/
   {
     Instance = TextRenderer::GetInstance(); /*0x71ff7a*/

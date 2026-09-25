@@ -6,6 +6,8 @@
 #include "e4/classes/E4Recv_7B67C0_e4.hpp"
 #include "e4/classes/E4Recv_7B7740_e4.hpp"
 #include "e4/classes/Dialog_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x5E23A0

@@ -22,7 +22,11 @@
 #include "e4/classes/DropListClass_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Timer_e4.hpp"
+#include "e4/classes/WinModemClass_e4.hpp"
 
 // 0x5E2820
 namespace gamemd {
@@ -251,7 +255,7 @@ void SetDialogPlayerName(HWND hDlg, int a2)
 namespace gamemd {
 AbstractClass * * InitSkirmishDialogControls(HWND hDlg, int a2)
 {
-  int v3; // eax
+  void * v3;
   HWND DlgItem; // eax
   HWND v5; // eax
   HWND v6; // eax
@@ -269,12 +273,12 @@ AbstractClass * * InitSkirmishDialogControls(HWND hDlg, int a2)
   if ( a2 ) /*0x5e303c*/
   {
     ComPtr::Constructor(&wParam); /*0x5e3047*/
-    wParam = (WPARAM)&(void*)(void*)&rc_ptr_WDTTerritory_vftable; /*0x5e3059*/
+    wParam = (WPARAM)(void*)&rc_ptr_WDTTerritory_vftable; /*0x5e3059*/
     if ( g_GameMode_Current == 4 && g_GameOptionsFlags == 3 ) /*0x5e3066*/
     {
       v3 = FindWDTTerritoryClass(v17, *(_DWORD *)g_GameDifficulty); /*0x5e3072*/
       ComPtr::Set(&wParam, v3->q010); /*0x5e307f*/
-      v17[0] = &(void*)(void*)&rc_ptr_WDTTerritory_vftable; /*0x5e3088*/
+      v17[0] = (void*)&rc_ptr_WDTTerritory_vftable; /*0x5e3088*/
       ComPtr::Release(v17); /*0x5e308c*/
     }
     if ( v16 ) /*0x5e3097*/
@@ -323,7 +327,7 @@ AbstractClass * * InitSkirmishDialogControls(HWND hDlg, int a2)
       0x406u,
       1u,
       *((unsigned __int16 *)g_RulesClass_Instance + 2632) | (*((unsigned __int16 *)g_RulesClass_Instance + 2636) << 16));
-    wParam = (WPARAM)&(void*)(void*)&rc_ptr_WDTTerritory_vftable; /*0x5e31ca*/
+    wParam = (WPARAM)(void*)&rc_ptr_WDTTerritory_vftable; /*0x5e31ca*/
     ComPtr::Release(&wParam); /*0x5e31d2*/
   }
   SendDlgItemMessageA(hDlg, 1321, 0x405u, 1u, 6 - g_Rules_EngineerCount); /*0x5e31f1*/
@@ -429,7 +433,7 @@ char Game_CheckSettingsChanged(char a1, char a2)
 namespace gamemd {
 ObjectClass * * ValidateNetworkLobbyHostMap()
 {
-  char *v2; // edi
+  unsigned int v2;
   char *v4; // eax
   HWND result; // eax
   int v6; // esi
@@ -2446,16 +2450,16 @@ AbstractClass * * Map_ReadPlayerCount(int a1)
   GenericNode::Constructor(v5); /*0x5e658b*/
   GenericNode::Constructor(v6); /*0x5e6594*/
   LinkedList::Prepend(v5, (int)v6); /*0x5e65aa*/
-  v4[3] = &(void*)(void*)&List_INIClass_INISection___vftable; /*0x5e65b9*/
+  v4[3] = (void*)&List_INIClass_INISection___vftable; /*0x5e65b9*/
   memset(&v6[3], 0, 12); /*0x5e65c1*/
   v7 = 0; /*0x5e65cd*/
   v8 = 0; /*0x5e65d1*/
   v9 = 0; /*0x5e65d5*/
-  v4[0] = &(void*)(void*)&INIClass_vftable; /*0x5e65d9*/
+  v4[0] = (void*)&INIClass_vftable; /*0x5e65d9*/
   if ( !FileStraw::Open(v4, (int)v10, 0) ) /*0x5e65e1*/
   {
     HashTable::DestroyHashTableINIClass(v4); /*0x5e65ee*/
-    v10[0] = &(void*)(void*)&CCFileClass_vftable; /*0x5e65fa*/
+    v10[0] = (void*)&CCFileClass_vftable; /*0x5e65fa*/
     v12 = 0; /*0x5e6602*/
     Vector::Clear((int)v11); /*0x5e6609*/
     v10[0] = &off_7E1668; /*0x5e6612*/
@@ -2476,7 +2480,7 @@ AbstractClass * * Map_ReadPlayerCount(int a1)
       Int_Overwrite = 8; /*0x5e6687*/
   }
   HashTable::DestroyHashTableINIClass(v4); /*0x5e6690*/
-  v10[0] = &(void*)(void*)&CCFileClass_vftable; /*0x5e669c*/
+  v10[0] = (void*)&CCFileClass_vftable; /*0x5e669c*/
   v12 = 0; /*0x5e66a4*/
   Vector::Clear((int)v11); /*0x5e66ab*/
   v10[0] = &off_7E1668; /*0x5e66b4*/
@@ -2804,7 +2808,7 @@ void ExchangeMultiplayerGameInfo()
     v11[2] = 0; /*0x5e7ac9*/
     Buffer::Init(v12, (int)(v4 + 4), FileSize); /*0x5e7ad9*/
     v12[3] = 0; /*0x5e7ae2*/
-    v11[0] = (int)&(void*)(void*)&BufferStraw_vftable; /*0x5e7af1*/
+    v11[0] = (int)&BufferStraw_vftable; /*0x5e7af1*/
     LZOStraw::Constructor(v14, 1, 0x2000); /*0x5e7af9*/
     Delegate::Set(v14, (int)v11); /*0x5e7b07*/
     v6 = (char *)RA2_OPNEW(2 * v5); /*0x5e7b18*/
@@ -2874,7 +2878,7 @@ char LoadScenarioClassByIndex(int a1)
   }
   v3 = CCFileClass::Construct(v15, (char *)(*(_DWORD *)(g_MultiplayerGameState + 4 * a1) + 88)); /*0x5e7c3b*/
   v4 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v3 + 20))(v3, 0); /*0x5e7c46*/
-  v15[0] = &(void*)(void*)&CCFileClass_vftable; /*0x5e7c4f*/
+  v15[0] = (void*)&CCFileClass_vftable; /*0x5e7c4f*/
   v5 = v4 == 0; /*0x5e7c57*/
   v17 = 0; /*0x5e7c5a*/
   Vector::Clear((int)v16); /*0x5e7c62*/
@@ -2891,7 +2895,7 @@ char LoadScenarioClassByIndex(int a1)
   }
   v6 = Game::CheckForGameCD(60); /*0x5e7c96*/
   if ( (unsigned __int8)ScenarioClass::CheckExists(v6) /*0x5e7cca*/
-    || (v7 = GameOption::GetField(*(_DWORD *)(g_MultiplayerGameState + 4 * a1)), (result = (void*)(void*)&CD_vftable(v7)) != 0) )
+    || (v7 = GameOption::GetField(*(_DWORD *)(g_MultiplayerGameState + 4 * a1)), (result = (void*)&CD_vftable(v7)) != 0) )
   {
   LABEL_9:
     wcscpy((wchar_t *)&MCVRedeploy + 1, *(const wchar_t **)(g_MultiplayerGameState + 4 * a1)); /*0x5e7d31*/
@@ -2921,14 +2925,14 @@ char LoadScenarioClassByIndex(int a1)
     dword_A8BB0C = v10; /*0x5e7e2a*/
     v12 = CCFileClass::Construct(v15, &Destination); /*0x5e7e30*/
     g_MultiplayerConfigState = (*(int (__thiscall **)(_DWORD *))(*v12 + 44))(v12); /*0x5e7e45*/
-    v15[0] = &(void*)(void*)&CCFileClass_vftable; /*0x5e7e4a*/
+    v15[0] = (void*)&CCFileClass_vftable; /*0x5e7e4a*/
     v17 = 0; /*0x5e7e4e*/
     Vector::Clear((int)v16); /*0x5e7e52*/
     v15[0] = &off_7E1668; /*0x5e7e60*/
     BufferIOFileClass::Dtor(v15); /*0x5e7e64*/
     v13 = CCFileClass::Construct(v15, &Destination); /*0x5e7e72*/
     g_MultiplayerConfigState = (*(int (__thiscall **)(_DWORD *))(*v13 + 44))(v13); /*0x5e7e82*/
-    v15[0] = &(void*)(void*)&CCFileClass_vftable; /*0x5e7e87*/
+    v15[0] = (void*)&CCFileClass_vftable; /*0x5e7e87*/
     v17 = 0; /*0x5e7e8b*/
     Vector::Clear((int)v16); /*0x5e7e8f*/
     v15[0] = &off_7E1668; /*0x5e7e98*/

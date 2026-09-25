@@ -11,7 +11,7 @@ struct E4Recv_67BFA0 {
     unsigned int M8;  // 0x8
     unsigned int M13;  // 0xD
 // --- flat members (END) ---
-    int Vf12(int, ...);  // G6 vtable slot dispatch
+    int Vf12(int,  ...);    // G6 vtable slot dispatch
     unsigned int * sub_67BFA0(unsigned int * a2);  // 0x67BFA0
 };
 } // namespace gamemd

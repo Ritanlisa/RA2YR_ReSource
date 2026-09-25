@@ -10,7 +10,10 @@
 #include "e4/classes/Math_e4.hpp"
 #include "e4/classes/MouseClass_e4.hpp"
 #include "e4/classes/Network_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/AbstractClass_e4.hpp"
 
 // 0x652C00
 namespace gamemd {
@@ -22,7 +25,7 @@ CampaignClass * * RadarClass::Destruct()
   void *v5; // eax
   void *v6; // eax
 
-  *this = &(void*)(void*)&RadarClass_vftable; /*0x652c0c*/
+  *(void **)this = (void*)&RadarClass_vftable; /*0x652c0c*/
   AudioFileClass::Release(&this->q2108); /*0x652c12*/
   TacticalClass::FreeResources(); /*0x652c19*/
   v2 = (char *)(&this->u32_20C4); /*0x652c1e*/
@@ -31,7 +34,7 @@ CampaignClass * * RadarClass::Destruct()
   {
     v4 = (void *)*((_DWORD *)v2 - 5); /*0x652c2b*/
     v2 -= 24; /*0x652c2e*/
-    *(_DWORD *)v2 = &(void*)(void*)&VectorClass_Point2D_vftable; /*0x652c33*/
+    *(void **)v2 = (void*)&VectorClass_Point2D_vftable; /*0x652c33*/
     if ( v4 && v2[13] ) /*0x652c3b*/
     {
       RA2_OPDEL(v4); /*0x652c41*/
@@ -43,7 +46,7 @@ CampaignClass * * RadarClass::Destruct()
   }
   while ( v3 ); /*0x652c53*/
   v5 = (void *)*(&this->u32_1D46); /*0x652c55*/
-  *(&this->u32_1D45) = &(void*)(void*)&VectorClass_Point2D_vftable; /*0x652c5b*/
+  *(&this->u32_1D45) = (void*)&VectorClass_Point2D_vftable; /*0x652c5b*/
   if ( v5 && this->u8_1269 ) /*0x652c69*/
   {
     RA2_OPDEL(v5); /*0x652c72*/
@@ -52,7 +55,7 @@ CampaignClass * * RadarClass::Destruct()
   this->u8_1269 = 0; /*0x652c80*/
   *(&this->u32_1D47) = 0; /*0x652c86*/
   v6 = (void *)*(&this->u32_1D02); /*0x652c8c*/
-  *(&this->u32_1D01) = &(void*)(void*)&VectorClass_Cell_vftable; /*0x652c92*/
+  *(&this->u32_1D01) = (void*)&VectorClass_Cell_vftable; /*0x652c92*/
   if ( v6 && this->u8_1231 ) /*0x652ca0*/
   {
     RA2_OPDEL(v6); /*0x652ca9*/

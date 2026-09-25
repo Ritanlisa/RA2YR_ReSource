@@ -21,10 +21,10 @@ struct Movie {
     unsigned char q02C;  // 0x2C
     unsigned char q030;  // 0x30
     unsigned char q034;  // 0x34
-    void* q038;  // 0x38
+    unsigned int q038;  // 0x38
     unsigned char q03C;  // 0x3C
     unsigned int q040;  // 0x40
-    void* q044;  // 0x44
+    unsigned int q044;  // 0x44
     unsigned char q048;  // 0x48
     unsigned int u32_4C;  // 0x4C
     unsigned int u32_50;  // 0x50
@@ -34,7 +34,7 @@ struct Movie {
     unsigned int u32_60;  // 0x60
     unsigned int u32_64;  // 0x64
     unsigned int u32_68;  // 0x68
-    void* q06C;  // 0x6C
+    unsigned int q06C;  // 0x6C
     unsigned char q070;  // 0x70
     unsigned char q074;  // 0x74
     unsigned int q080;  // 0x80
@@ -163,11 +163,10 @@ struct Movie {
     unsigned int q058;
     unsigned int q05C;
     unsigned int q060;
-    unsigned int PlayWrapper;
 // --- flat members (END) ---
     char SetupScreen(CCINIClass * aP1);  // 0x49CAF0
-    char GetSection(CCINIClass * aP1, CCINIClass * aP2);  // 0x49E3B0
-    void Play(CCINIClass * aP0, int a2, CCINIClass * aP2, IUnknown * aP3, char a5, char a6, char a7);  // 0x5BED40
+    char GetSection(CCINIClass * aP1,  CCINIClass * aP2);    // 0x49E3B0
+    void Play(CCINIClass * aP0,  int a2,  CCINIClass * aP2,  void* aP3,  char a5,  char a6,  char a7);    // 0x5BED40
     char Update();  // 0x7209D0
     unsigned int SelectNextBuildableType(AnimClass * aP1);  // 0x720A80
     char GetSectionID(unsigned int * a2);  // 0x49BC80

@@ -12,6 +12,8 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/AnimClass_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/IPXManagerClass_e4.hpp"
 
 // 0x7B0D90
@@ -19,7 +21,7 @@ namespace gamemd {
 unsigned int * IPXInterfaceClass::Construct()
 {
   IPXInterfaceClass::bindSocket(); /*0x7b0d93*/
-  *this = &(void*)(void*)&IPXInterfaceClass_vftable; /*0x7b0da4*/
+  *(void **)this = (void*)&IPXInterfaceClass_vftable; /*0x7b0da4*/
   this->q3F2FC = -1; /*0x7b0dad*/
   this->q3F300 = -1; /*0x7b0db3*/
   this->q3F304 = -1; /*0x7b0db8*/
@@ -105,7 +107,7 @@ AbstractClass * * IPXInterfaceClass::SendPacket(ObjectClass * aP1, int a3, int a
   bool v16; // zf
   int v17; // esi
   _BYTE *v18; // ebx
-  int v19; // eax
+  void * v19;
   int v20; // ecx
   _DWORD *v21; // ebp
   int v22; // ecx
@@ -284,14 +286,14 @@ void * IPXInterfaceClass::bindSocket()
   this->u32_10 = 0; /*0x7b19d5*/
   *(&this->u32_80) = 1; /*0x7b19d8*/
   *(&this->u32_81) = 0; /*0x7b19db*/
-  this->u32_8 = &(void*)(void*)&DynamicVectorClass_WinsockInterfaceClass_WinsockBufferType___vftable; /*0x7b19de*/
+  this->u32_8 = (void*)&DynamicVectorClass_WinsockInterfaceClass_WinsockBufferType___vftable; /*0x7b19de*/
   this->__pad_070 = 10; /*0x7b19e1*/
   this->q018 = 0; /*0x7b19e4*/
   this->q024 = 0; /*0x7b19e7*/
   this->u32_28 = 0; /*0x7b19ea*/
   *(&this->u32_104) = 1; /*0x7b19ed*/
   *(&this->u32_105) = 0; /*0x7b19f0*/
-  this->u32_20 = &(void*)(void*)&DynamicVectorClass_WinsockInterfaceClass_WinsockBufferType___vftable; /*0x7b19f3*/
+  this->u32_20 = (void*)&DynamicVectorClass_WinsockInterfaceClass_WinsockBufferType___vftable; /*0x7b19f3*/
   this->q034 = 10; /*0x7b19f6*/
   this->u32_C = 0; /*0x7b19f9*/
   this->__pad_04C = 10; /*0x7b19fc*/
@@ -299,11 +301,11 @@ void * IPXInterfaceClass::bindSocket()
   this->u32_40 = 0; /*0x7b1a05*/
   *(&this->q0188) = 1; /*0x7b1a08*/
   *(&this->q0189) = 0; /*0x7b1a0b*/
-  this->u32_38 = &(void*)(void*)&DynamicVectorClass_WinsockInterfaceClass_WinsockBufferType___vftable; /*0x7b1a0e*/
+  this->u32_38 = (void*)&DynamicVectorClass_WinsockInterfaceClass_WinsockBufferType___vftable; /*0x7b1a0e*/
   this->q048 = 0; /*0x7b1a11*/
   this->q3F06C = -1; /*0x7b1a14*/
   this->q3F070 = -1; /*0x7b1a1a*/
-  *(_DWORD *)this = &(void*)(void*)&WinsockInterfaceClass_vftable; /*0x7b1a20*/
+  *(void **)this = (void*)&WinsockInterfaceClass_vftable; /*0x7b1a20*/
   this->q3F068 = 0; /*0x7b1a26*/
   v2 = this + 102; /*0x7b1a2c*/
   v3 = 128; /*0x7b1a2f*/
@@ -729,7 +731,7 @@ DynamicVector * IPXInterfaceClass::closeSession(char a2)
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x7b2b53*/
-  *this = &(void*)(void*)&VectorClass_WinsockInterfaceClass_WinsockBufferType___vftable; /*0x7b2b56*/
+  *this = (void*)&VectorClass_WinsockInterfaceClass_WinsockBufferType___vftable; /*0x7b2b56*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x7b2b60*/
   {
     RA2_OPDEL(v3); /*0x7b2b68*/

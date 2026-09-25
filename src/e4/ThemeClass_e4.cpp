@@ -11,6 +11,8 @@
 #include "e4/classes/Theme_e4.hpp"
 #include "e4/classes/ThemeManager_e4.hpp"
 #include "e4/classes/ConvertClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x4080C0
@@ -98,7 +100,7 @@ void * ThemeClass::InitializeThemes(char * a2)
   char *v9; // ebp
   int v10; // eax
   int v11; // ecx
-  int v12; // eax
+  void * v12;
   int v13; // edx
   void *result; // eax
   void *Enabled; // eax

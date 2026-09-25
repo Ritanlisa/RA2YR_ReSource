@@ -32,7 +32,11 @@
 #include "e4/classes/MapClass_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/Tactical_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/BuildingTypeClass_e4.hpp"
+#include "e4/classes/CCFileClass_e4.hpp"
+#include "e4/classes/File_e4.hpp"
 
 // 0x540C50
 namespace gamemd {
@@ -220,7 +224,7 @@ AbstractClass * * SurfaceClass_CreatePrimary(int a1, int a2, int a3)
 namespace gamemd {
 char * * LoadTerrainTypeClassTheatre(AbstractClass * a1, char a2)
 {
-  size_t Size; // eax
+  MapClass * Size;
   int i; // esi
   void **v8; // esi
   size_t v10; // eax
@@ -2207,7 +2211,7 @@ char * E4Recv_5408F0::sub_5408F0(int a2, int a3, int a4, int a5, short a6, short
   _DWORD *v9; // eax
   __int16 v10; // cx
 
-  *(_DWORD *)this = &(void*)(void*)&IPXManagerClass_vftable; /*0x5408f7*/
+  *(_DWORD *)this = (void*)&IPXManagerClass_vftable; /*0x5408f7*/
   if ( g_NetworkInterface ) /*0x540905*/
   {
     (**(void (__thiscall ***)(int, int))g_NetworkInterface)(g_NetworkInterface, 1); /*0x54090b*/
@@ -2595,7 +2599,7 @@ int sub_543E70()
   dword_AA1080 = 0; /*0x543e7c*/
   byte_AA1084 = 1; /*0x543e81*/
   byte_AA1085 = 0; /*0x543e88*/
-  dword_AA1078 = (int)&(void*)(void*)&DynamicVectorClass_IsometricTileTypeClass_TileInsertType___vftable; /*0x543e8d*/
+  dword_AA1078 = (int)&DynamicVectorClass_IsometricTileTypeClass_TileInsertType___vftable; /*0x543e8d*/
   dword_AA108C = 10; /*0x543e97*/
   dword_AA1088 = 0; /*0x543ea1*/
   return atexit(sub_543EB0); /*0x543eac*/
@@ -2608,7 +2612,7 @@ void sub_543EB0()
 {
   if ( (byte_AA0E2C & 1) == 0 ) /*0x543eba*/
   {
-    dword_AA1078 = (int)&(void*)(void*)&VectorClass_IsometricTileTypeClass_TileInsertType___vftable; /*0x543ebe*/
+    dword_AA1078 = (int)&VectorClass_IsometricTileTypeClass_TileInsertType___vftable; /*0x543ebe*/
     byte_AA0E2C |= 1u; /*0x543ed1*/
     if ( dword_AA107C ) /*0x543ed7*/
     {
@@ -3125,7 +3129,7 @@ int sub_54E260()
   g_MissionQueueFrame = (int)g_CurrentFrame; /*0x54e26d*/
   g_MissionQueueType = 0; /*0x54e276*/
   sub_54EBF0(&dword_ABC604, 0, 0); /*0x54e280*/
-  dword_ABC604 = (int)&(void*)(void*)&DynamicVectorClass_KamikazeControl___vftable; /*0x54e298*/
+  dword_ABC604 = (int)&DynamicVectorClass_KamikazeControl___vftable; /*0x54e298*/
   dword_ABC618 = 10; /*0x54e2a2*/
   dword_ABC614 = 0; /*0x54e2ac*/
   g_MissionQueueFrame = (int)g_CurrentFrame; /*0x54e2b6*/
@@ -3147,7 +3151,7 @@ unsigned int * E4Recv_54E360::sub_54E360()
   this->abstractFlags = 0; /*0x54e37b*/
   this->nextArrayIndex = 1; /*0x54e37e*/
   this->customSound = 0; /*0x54e382*/
-  this->vtable4 = &(void*)(void*)&DynamicVectorClass_KamikazeControl___vftable; /*0x54e385*/
+  this->vtable4 = (void*)&DynamicVectorClass_KamikazeControl___vftable; /*0x54e385*/
   this->NeedsSaveOrLink = 10; /*0x54e38c*/
   this->referenceCount = 0; /*0x54e393*/
   *this = g_CurrentFrame; /*0x54e39e*/
@@ -3177,7 +3181,7 @@ void E4Recv_54E690::sub_54E690()
   (*(void (__thiscall **)(_DWORD *))(v3 + 12))(v5); /*0x54e6b8*/
   (*(void (__thiscall **)(_DWORD *, int, _DWORD))(this->fallRate)(v4, v6, 0); /*0x54e6c3*/
   v7 = (void *)v4[1]; /*0x54e6c6*/
-  *v4 = &(void*)(void*)&VectorClass_KamikazeControl___vftable; /*0x54e6c9*/
+  *v4 = (void*)&VectorClass_KamikazeControl___vftable; /*0x54e6c9*/
   if ( v7 && *((_BYTE *)v4 + 13) ) /*0x54e6d3*/
   {
     RA2_OPDEL(v7); /*0x54e6d9*/
@@ -3196,7 +3200,7 @@ unsigned int * E4Recv_54EBF0::sub_54EBF0(int a2, int a3)
   *(this + 2) = a2; /*0x54ebfe*/
   this->IsInitialized = 1; /*0x54ec01*/
   this->IsAllocated = 0; /*0x54ec05*/
-  *this = &(void*)(void*)&VectorClass_KamikazeControl___vftable; /*0x54ec08*/
+  *this = (void*)&VectorClass_KamikazeControl___vftable; /*0x54ec08*/
   if ( a2 ) /*0x54ec0e*/
   {
     if ( a3 ) /*0x54ec16*/
@@ -3509,7 +3513,7 @@ int sub_54FDC0()
   dword_ABC880 = 0; /*0x54fdcc*/
   byte_ABC884 = 1; /*0x54fdd1*/
   byte_ABC885 = 0; /*0x54fdd8*/
-  dword_ABC878 = (int)&(void*)(void*)&DynamicVectorClass_LaserDrawClass___vftable; /*0x54fddd*/
+  dword_ABC878 = (int)&DynamicVectorClass_LaserDrawClass___vftable; /*0x54fddd*/
   dword_ABC88C = 10; /*0x54fde7*/
   g_TimerPool = 0; /*0x54fdf1*/
   return atexit(sub_54FE00); /*0x54fdfc*/
@@ -3522,7 +3526,7 @@ void sub_54FE00()
 {
   if ( (byte_ABC718 & 1) == 0 ) /*0x54fe0a*/
   {
-    dword_ABC878 = (int)&(void*)(void*)&VectorClass_LaserDrawClass___vftable; /*0x54fe0e*/
+    dword_ABC878 = (int)&VectorClass_LaserDrawClass___vftable; /*0x54fe0e*/
     byte_ABC718 |= 1u; /*0x54fe21*/
     if ( dword_ABC87C ) /*0x54fe27*/
     {

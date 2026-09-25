@@ -4,6 +4,8 @@
 #include "e4/classes/WideString_e4.hpp"
 #include "e4/classes/Player_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x5E8DC0

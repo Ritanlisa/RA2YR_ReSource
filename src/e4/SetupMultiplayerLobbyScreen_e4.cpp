@@ -2,19 +2,21 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Network_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x5EBEC0
 namespace gamemd {
 void SetupMultiplayerLobbyScreen_Setup(SkirmishDialog * hDlg, char * a2, int nIDDlgItem)
 {
-  int v3; // ebx
-  int v4; // esi
+  char * v3;
+  char * v4;
   int v6; // esi
   LRESULT v7; // eax
   wchar_t *v8; // eax
   int v10; // [esp+Ch] [ebp-Ch]
-  int v11; // [esp+10h] [ebp-8h]
+  char * v11;
 
   v3 = a2; /*0x5ebec8*/
   v4 = a2 + nIDDlgItem; /*0x5ebed0*/

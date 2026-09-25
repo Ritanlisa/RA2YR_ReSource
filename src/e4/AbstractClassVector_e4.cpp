@@ -4,6 +4,8 @@
 #include "e4/classes/AbstractClassVector_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/Super_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x4E0440
@@ -46,7 +48,7 @@ unsigned int * AbstractClassVector::Construct(IUnknown * aP1, IUnknown * aP2)
   this->q008 = aP1; /*0x4e0e8e*/
   this->q00C = 1; /*0x4e0e91*/
   this->IsAllocated = 0; /*0x4e0e95*/
-  *this = &(void*)(void*)&VectorClass_AbstractClass___vftable; /*0x4e0e98*/
+  *(void ** *)this = (void*)&VectorClass_AbstractClass___vftable; /*0x4e0e98*/
   if ( aP1 ) /*0x4e0e9e*/
   {
     if ( aP2 ) /*0x4e0ea6*/

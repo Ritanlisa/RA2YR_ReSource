@@ -9,6 +9,8 @@
 #include "e4/classes/Connection_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/ConnectionPointClass_9_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x48B750
@@ -110,7 +112,7 @@ void ConnectionClass::dtor()
   void (__thiscall ***v3)(_DWORD, int); // ecx
 
   v2 = (void *)this->q020; /*0x48bee3*/
-  *this = &(void*)(void*)&ConnectionClass_vftable; /*0x48bee6*/
+  *(void **)this = (void*)&ConnectionClass_vftable; /*0x48bee6*/
   RA2_OPDEL(v2); /*0x48beed*/
   v3 = (void (__thiscall ***)(_DWORD, int))this->PlayerIndex; /*0x48bef2*/
   if ( v3 ) /*0x48befb*/
@@ -174,7 +176,7 @@ int ConnectionClass::receivePacket(int a2, int a3)
   int v21; // eax
   int v22; // eax
   int v23; // eax
-  __int16 v25; // [esp+10h] [ebp-10h] BYREF
+  void * v25;
   char v26; // [esp+12h] [ebp-Eh]
   _BYTE v27[13]; // [esp+13h] [ebp-Dh]
 

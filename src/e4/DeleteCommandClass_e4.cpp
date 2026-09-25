@@ -4,6 +4,8 @@
 #include "e4/classes/DeleteCommandClass_28_e4.hpp"
 #include "e4/classes/DeleteCommandClass_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/Delegate_e4.hpp"
 
 // 0x537F90
@@ -16,7 +18,7 @@ void DeleteCommandClass_Undo()
 // 0x537F10
 unsigned int * DeleteCommandClass::Constructor()
 {
-  *this = &(void*)(void*)&DeleteCommandClass_vftable; /*0x537f12*/
+  *this = (void*)&DeleteCommandClass_vftable; /*0x537f12*/
   return this; /*0x537f18*/
 }
 // 0x537F20
@@ -276,7 +278,7 @@ VectorClass_flat * DeleteCommandClass_28::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->q004; /*0x53c783*/
-  *this = &(void*)(void*)&VectorClass_AnimClass_const___vftable; /*0x53c786*/
+  *(void **)this = (void*)&VectorClass_AnimClass_const___vftable; /*0x53c786*/
   if ( v3 && this->IsAllocated ) /*0x53c790*/
   {
     RA2_OPDEL(v3); /*0x53c798*/
@@ -297,7 +299,7 @@ DynamicVector * DeleteCommandClass_28::Constructor(char a2)
   void *v3; // eax
 
   v3 = (void *)this->q004; /*0x53c7d3*/
-  *this = &(void*)(void*)&VectorClass_AnimClass_const___vftable; /*0x53c7d6*/
+  *(void **)this = (void*)&VectorClass_AnimClass_const___vftable; /*0x53c7d6*/
   if ( v3 && this->IsAllocated ) /*0x53c7e0*/
   {
     RA2_OPDEL(v3); /*0x53c7e8*/

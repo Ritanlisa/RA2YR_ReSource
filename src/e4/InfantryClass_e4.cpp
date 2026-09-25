@@ -9,14 +9,18 @@
 #include "e4/classes/MissionClass_e4.hpp"
 #include "e4/classes/InfantryTypeVector_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/TechnoTypeClass_e4.hpp"
+#include "e4/classes/AnimTypeClass_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x4D4DC0
 namespace gamemd {
 int InfantryClass::ScanTarget(int * a1)
 {
-  int v2; // edi
-  __int16 *PlacementCells_Alt; // eax
+  short * v2;
+  short * PlacementCells_Alt;
   void *v4; // eax
   int v5; // edx
   int v6; // eax
@@ -193,10 +197,10 @@ void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
   int v15[2]; // [esp+Ch] [ebp-8h] BYREF
 
   v2 = &this->vtable2; /*0x517d9a*/
-  *this = &(void*)(void*)&InfantryClass_vftable; /*0x517d9d*/
-  this->vtable3 = &(void*)(void*)&InfantryClass_vftable; /*0x517da3*/
+  *(void ** *)this = (void*)&InfantryClass_vftable; /*0x517d9d*/
+  this->vtable3 = (void*)&InfantryClass_vftable; /*0x517da3*/
   this->vtable4 = &off_7EB02C; /*0x517daa*/
-  this->vtable2 = &(void*)(void*)&InfantryClass_vftable; /*0x517db1*/
+  this->vtable2 = (void*)&InfantryClass_vftable; /*0x517db1*/
   if ( g_WTFMode ) /*0x517dbe*/
   {
     v3 = (int)*(&this->currentMission2); /*0x517dc4*/
@@ -268,7 +272,7 @@ void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
     }
   }
   this->isAliveFlag = 0; /*0x517f83*/
-  return FootClass::Destruct(); /*0x517f8e*/
+  return FootClass::Destruct(unsigned int a1); /*0x517f8e*/
 }
 }
 // 0x7447A0

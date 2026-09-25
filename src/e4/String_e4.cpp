@@ -8,6 +8,8 @@
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x49B760
@@ -17,7 +19,7 @@ void String::AssignWideToChar(CampaignScore * aP1, CampaignScore * aP2)
   if ( aP1 ) /*0x49b76b*/
     strcpy(ToWideStringChar(aP1)); /*0x49b788*/
   else
-    *this = 0; /*0x49b793*/
+    *(_DWORD *)this = 0; /*0x49b793*/
   if ( aP2 ) /*0x49b79c*/
     strcpy(&this->u32_70, ToWideStringChar(aP2)); /*0x49b7bc*/
   else
@@ -183,29 +185,29 @@ namespace gamemd {
 AbstractClass * * String::Replace(char * SubStr, const char * a3)
 {
   void **v3; // edi
-  char *v4; // ebx
+  char * v4;
   const char *v5; // ebp
   char *v6; // eax
   size_t v7; // eax
-  char *v8; // esi
+  char * v8;
   size_t v9; // edx
   char *v10; // eax
   const char *v11; // esi
-  char *v12; // ebp
+  char * v12;
   unsigned int v13; // kr1C_4
   size_t v14; // edx
   char *v15; // eax
-  const char *v16; // esi
+  const char * v16;
   unsigned int v17; // kr30_4
   size_t v18; // edx
   char *v19; // eax
-  const char *v20; // esi
+  const unsigned int v20;
   size_t v21; // ecx
   char *v22; // eax
-  char *Block; // [esp+10h] [ebp-Ch]
+  char * Block;
   size_t Count; // [esp+14h] [ebp-8h]
   char *v27; // [esp+18h] [ebp-4h]
-  char *v28; // [esp+24h] [ebp+8h]
+  char * v28;
 
   v3 = (void **)this; /*0x7b57a6*/
   v4 = 0; /*0x7b57a8*/
@@ -366,7 +368,7 @@ AbstractClass * * String::Tokenize(int a2, ObjectClass * aP2, ObjectClass * aP3)
   Stra = v10; /*0x7b5fbf*/
   if ( *aP3 ) /*0x7b5fc3*/
     RA2_OPDEL(*aP3); /*0x7b5fca*/
-  *aP3 = 0; /*0x7b5fd4*/
+  *(_DWORD *)aP3 = 0; /*0x7b5fd4*/
   if ( v11 ) /*0x7b5fda*/
     v12 = strlen(v11) + 1; /*0x7b5fe3*/
   else
@@ -391,7 +393,7 @@ AbstractClass * * String::Tokenize(int a2, ObjectClass * aP2, ObjectClass * aP3)
     v18 = v17; /*0x7b6063*/
   if ( *aP3 ) /*0x7b6065*/
     RA2_OPDEL(*aP3); /*0x7b606c*/
-  *aP3 = 0; /*0x7b6076*/
+  *(_DWORD *)aP3 = 0; /*0x7b6076*/
   if ( v18 ) /*0x7b607c*/
     v19 = strlen(v18) + 1; /*0x7b6085*/
   else

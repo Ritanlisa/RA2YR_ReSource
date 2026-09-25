@@ -19,7 +19,7 @@ struct CStreamClass_16 {
 // --- flat members (END) ---
     int Seek(int a2);  // 0x4A4B20
     char AddRef(int a2);  // 0x4A4B30
-    char Release(int a2, unsigned int * a3);  // 0x4A4B70
+    char Release(int a2,  unsigned int * a3);    // 0x4A4B70
     void ddtor();  // 0x4A4C20
     int Read(unsigned int * a2);  // 0x4A4C50
     VectorClass_flat * QueryInterface(char a2);  // 0x4A4D90

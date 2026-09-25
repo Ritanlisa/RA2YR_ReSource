@@ -56,7 +56,7 @@ struct WalkLocomotion {
     unsigned int q128;  // 0x128
     AbstractClass * q130;  // 0x130
     unsigned int q134;  // 0x134
-    void* q140;  // 0x140
+    _DWORD q140;  // 0x140
     unsigned char q144;  // 0x144
     unsigned char q148;  // 0x148
     unsigned char q14C;  // 0x14C
@@ -307,9 +307,9 @@ struct WalkLocomotion {
     unsigned int q0042;
     unsigned int u32_184;
 // --- flat members (END) ---
-    char MoveTo(IUnknown * aP1, int aP3);  // 0x6A01A0
+    char MoveTo(IUnknown * aP1,  int aP3);    // 0x6A01A0
     char ProcessCollision(char a2);  // 0x6A05F0
-    char Update(unsigned char * a2, int a3, int a4);  // 0x6A1C80
-    unsigned int * TransformCoords(ObjectClass * aP1, IUnknown * aP2, ObjectClass * aP3);  // 0x6A3DB0
+    char Update(unsigned char * a2,  int a3,  int a4);    // 0x6A1C80
+    unsigned int * TransformCoords(ObjectClass * aP1,  IUnknown * aP2,  ObjectClass * aP3);    // 0x6A3DB0
 };
 } // namespace gamemd

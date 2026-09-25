@@ -48,6 +48,11 @@ def supply(log):
               str(log), '--apply'])
     ghp = sh([sys.executable, str(TOOLS / 'fix_ghost_params.py'),
               str(log), '--apply'])
+    tf = sh([sys.executable, str(TOOLS / 'gen_tree_full_e4.py'),
+             str(log), '--apply'])
+    # fwd regeneration must come AFTER tree-full (both scan tree headers;
+    # fwd excludes their enum/alias/template names)
+    sh([sys.executable, str(TOOLS / 'gen_e4_fwd.py'), '--apply'])
     al = sh([sys.executable, str(TOOLS / 'align_tree_decls.py'),
              '--e4', '--force', '--apply'])
     gi = re.search(r'includes inserted: (\d+)', inc.stdout)
@@ -55,10 +60,12 @@ def supply(log):
                    mem.stdout)
     gp = re.search(r'prototypes: (\d+) new', pro.stdout)
     gg = re.search(r'ghost params appended: (\d+)', ghp.stdout)
+    gt = re.search(r'tree full defs: (\d+) classes', tf.stdout)
     return (int(gi.group(1)) if gi else 0,
             (int(gm.group(1)) if gm else 0) + (int(gm.group(2)) if gm else 0)
             + (int(gp.group(1)) if gp else 0)
-            + (int(gg.group(1)) if gg else 0))
+            + (int(gg.group(1)) if gg else 0)
+            + (int(gt.group(1)) if gt else 0))
 
 
 def main():

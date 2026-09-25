@@ -4,6 +4,8 @@
 #include "e4/classes/WDTState_4_e4.hpp"
 #include "e4/classes/ComPtr_e4.hpp"
 #include "e4/classes/DynamicVector_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x76BA70
@@ -33,7 +35,7 @@ AbstractClass * * WDTState_4::Release(int a2, unsigned int * a3)
         do /*0x76baf5*/
         {
           ComPtr::Constructor(v8); /*0x76bae6*/
-          *v8 = &(void*)(void*)&rc_ptr_WDTTerritory_vftable; /*0x76baeb*/
+          *(void **)v8 = (void*)&rc_ptr_WDTTerritory_vftable; /*0x76baeb*/
           v8 += 2; /*0x76baf1*/
           --a2; /*0x76baf4*/
         }
@@ -157,7 +159,7 @@ DynamicVector * WDTState_4::QueryInterface(char a2)
   void (__thiscall ***v3)(_DWORD, int); // ecx
 
   v3 = (void (__thiscall ***)(_DWORD, int))this->Items; /*0x76bc13*/
-  *this = &(void*)(void*)&VectorClass_rc_ptr_WDTTerritory_vftable; /*0x76bc16*/
+  *(void **)this = (void*)&VectorClass_rc_ptr_WDTTerritory_vftable; /*0x76bc16*/
   if ( v3 && this->IsAllocated ) /*0x76bc20*/
   {
     (**v3)(v3, 3); /*0x76bc2f*/
@@ -176,7 +178,7 @@ namespace gamemd {
 unsigned int * WDTState_4::Constructor()
 {
   ComPtr::Constructor(); /*0x76bc63*/
-  *this = &(void*)(void*)&rc_ptr_WDTTerritory_vftable; /*0x76bc68*/
+  *(void **)this = (void*)&rc_ptr_WDTTerritory_vftable; /*0x76bc68*/
   return this; /*0x76bc70*/
 }
 } // namespace gamemd

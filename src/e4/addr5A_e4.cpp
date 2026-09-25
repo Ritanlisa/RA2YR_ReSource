@@ -37,6 +37,8 @@
 #include "e4/classes/Terrain_e4.hpp"
 #include "e4/classes/Timer_e4.hpp"
 #include "e4/classes/LayerClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x5A1350
@@ -232,7 +234,7 @@ int ProcessRandomMapCellAdjacency()
   __int16 *v4; // edi
   int AdjacencyFlags; // eax
   unsigned int v6; // eax
-  _DWORD *v7; // ecx
+  unsigned int v7;
   int v8; // edx
   int v9; // esi
   int v10; // eax
@@ -1087,7 +1089,7 @@ FootClass * * MapSeed_PlaceBuildingsScatter2(int a1)
   StringVector::Construct(&v40, 0, 0); /*0x5a65ac*/
   v7 = v42; /*0x5a65b1*/
   v8 = 10; /*0x5a65b5*/
-  v40 = &(void*)(void*)&DynamicVectorClass_char___vftable; /*0x5a65ba*/
+  v40 = (void*)&DynamicVectorClass_char___vftable; /*0x5a65ba*/
   v45 = 10; /*0x5a65c2*/
   v44 = 0; /*0x5a65c6*/
   v9 = off_82B138; /*0x5a65ca*/
@@ -1205,7 +1207,7 @@ FootClass * * MapSeed_PlaceBuildingsScatter2(int a1)
       v6 = v33; /*0x5a6640*/
     }
   }
-  v40 = &(void*)(void*)&VectorClass_char___vftable; /*0x5a68f5*/
+  v40 = (void*)&VectorClass_char___vftable; /*0x5a68f5*/
   if ( Block ) /*0x5a6903*/
   {
     if ( v43 ) /*0x5a690b*/
@@ -5223,8 +5225,8 @@ int sub_5AFED0()
 namespace gamemd {
 void E4Recv_5AFF50::sub_5AFF50()
 {
-  *this = &(void*)(void*)&MechLocomotionClass_vftable; /*0x5aff50*/
-  *(this + 1) = &(void*)(void*)&MechLocomotionClass_vftable; /*0x5aff56*/
+  *this = (void*)&MechLocomotionClass_vftable; /*0x5aff50*/
+  *(this + 1) = (void*)&MechLocomotionClass_vftable; /*0x5aff56*/
   LocomotionClass::Construct(); /*0x5aff5d*/
 }
 } // namespace gamemd

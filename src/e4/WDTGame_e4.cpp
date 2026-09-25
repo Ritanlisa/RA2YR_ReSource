@@ -1,6 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x7B7E40
@@ -13,7 +15,7 @@ wchar_t ** WDTGame_Helper(CampaignScore * aP0, const wchar_t * a1, wchar_t * For
 
   swprintf(String, (const size_t)a0Dd_0, Format); /*0x7b7e58*/
   swprintf(String, (const size_t)String, a1); /*0x7b7e68*/
-  *aP0 = 0; /*0x7b7e76*/
+  *(_DWORD *)aP0 = 0; /*0x7b7e76*/
   if ( String ) /*0x7b7e7c*/
     v5 = wcslen(String) + 1; /*0x7b7e8b*/
   else

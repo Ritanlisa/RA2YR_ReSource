@@ -28,17 +28,17 @@ struct VectorClass_Point2D {
     unsigned char q050;  // 0x50
     unsigned int q054;  // 0x54
 // --- flat members (END) ---
-    unsigned int * Count(unsigned int * a2, int a3);  // 0x5D05F0
+    unsigned int * Count(unsigned int * a2,  int a3);    // 0x5D05F0
     char Get(int a2);  // 0x5D07F0
-    char Release(int a2, unsigned int * a3);  // 0x5D0850
+    char Release(int a2,  unsigned int * a3);    // 0x5D0850
     void Set();  // 0x5D0920
     int GetSize(unsigned int * a2);  // 0x5D0950
     unsigned int GetCapacity(int a2);  // 0x5D09A0
-    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x5D16C0
+    VectorClass_flat * QueryInterface(unsigned int * Block,  char a2);    // 0x5D16C0
     void Destroy();  // 0x5D2780
     unsigned int GetItemIndex(int a2);  // 0x5D27B0
-    char SetCapacity(int a2, unsigned int * a3);  // 0x5D2BC0
+    char SetCapacity(int a2,  unsigned int * a3);    // 0x5D2BC0
     int FindItemIndex(unsigned int * a2);  // 0x5D2C70
-    DynamicVector * Constructor_VectorClass_MSSfx___(unsigned int * Block, char a2);  // 0x5D2D90
+    DynamicVector * Constructor_VectorClass_MSSfx___(unsigned int * Block,  char a2);    // 0x5D2D90
 };
 } // namespace gamemd

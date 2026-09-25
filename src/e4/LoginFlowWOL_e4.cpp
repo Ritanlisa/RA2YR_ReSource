@@ -6,13 +6,15 @@
 #include "e4/classes/GameLoop_e4.hpp"
 #include "e4/classes/INIClass_e4.hpp"
 #include "e4/classes/MultiplayerGameMode_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x786EF0
 namespace gamemd {
 void sub_786EF0()
 {
-  const char *v1; // [esp-8h] [ebp-110h]
+  const unsigned int v1;
   int v2; // [esp-4h] [ebp-10Ch]
   char Buffer[260]; // [esp+4h] [ebp-104h] BYREF
 
@@ -85,7 +87,7 @@ char sub_72BCA0()
 namespace gamemd {
 void sub_72BCF0()
 {
-  void *v0; // esi
+  unsigned int v0;
 
   if ( byte_B0FD45 ) /*0x72bcfa*/
   {
@@ -137,7 +139,7 @@ char sub_72C600()
 namespace gamemd {
 void sub_72C650()
 {
-  void *v0; // esi
+  unsigned int v0;
 
   if ( byte_B0FD09 ) /*0x72c65a*/
   {

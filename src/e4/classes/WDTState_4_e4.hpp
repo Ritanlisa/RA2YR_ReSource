@@ -29,7 +29,7 @@ struct WDTState_4 {
     unsigned int q0043;
     unsigned int q008;
 // --- flat members (END) ---
-    char Release(int a2, unsigned int * a3);  // 0x76BA70
+    char Release(int a2,  unsigned int * a3);    // 0x76BA70
     int ddtor();  // 0x76B710
     int Read(int a2);  // 0x76BB90
     DynamicVector * QueryInterface(char a2);  // 0x76BC10

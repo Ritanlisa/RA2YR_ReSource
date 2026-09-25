@@ -30,10 +30,10 @@ struct VectorClass_ptr_PhoneEntryClass {
 // --- flat members (END) ---
     int Get(int a2);  // 0x69C6B0
     char Add(int a2);  // 0x69D200
-    char Release(int a2, unsigned int * a3);  // 0x69D240
+    char Release(int a2,  unsigned int * a3);    // 0x69D240
     void Remove();  // 0x69D2F0
     int GetSize(unsigned int * a2);  // 0x69D320
     unsigned int GetCapacity(int a2);  // 0x69D360
-    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x69D6D0
+    VectorClass_flat * QueryInterface(unsigned int * Block,  char a2);    // 0x69D6D0
 };
 } // namespace gamemd

@@ -8,6 +8,8 @@
 #include "e4/classes/FogOfWar_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/RadarClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x655C50
@@ -408,10 +410,10 @@ bool FogOfWar_Get(IUnknown * aP0)
 {
   int v1; // eax
   int v2; // ecx
-  unsigned int v3; // eax
-  _DWORD *v4; // eax
-  _DWORD *NeighbourContent; // eax
-  unsigned int v6; // eax
+  _DWORD * v3;
+  unsigned int v4;
+  unsigned int NeighbourContent;
+  _DWORD * v6;
   __int16 v8; // [esp+4h] [ebp-8h]
   __int16 v9; // [esp+4h] [ebp-8h]
   __int16 v10; // [esp+6h] [ebp-6h]

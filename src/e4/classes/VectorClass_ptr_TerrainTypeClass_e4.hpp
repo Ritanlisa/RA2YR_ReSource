@@ -30,10 +30,10 @@ struct VectorClass_ptr_TerrainTypeClass {
 // --- flat members (END) ---
     int Get(int a2);  // 0x4E8D70
     char Add(int a2);  // 0x4ED600
-    char Release(int a2, unsigned int * a3);  // 0x4ED640
+    char Release(int a2,  unsigned int * a3);    // 0x4ED640
     void Remove();  // 0x4ED6F0
     int GetSize(unsigned int * a2);  // 0x4ED720
     unsigned int LoadTypeData(int a2);  // 0x4ED760
-    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x4F06B0
+    VectorClass_flat * QueryInterface(unsigned int * Block,  char a2);    // 0x4F06B0
 };
 } // namespace gamemd

@@ -13,7 +13,7 @@ struct Vector {
     bool q00B;  // 0xB
     bool IsInitialized;  // 0xC
     unsigned char u8_D;  // 0xD
-    void* q010;  // 0x10
+    unsigned int q010;  // 0x10
     int CapacityIncrement;  // 0x14
     int Count;  // 0x16
     bool q018;  // 0x18
@@ -36,7 +36,7 @@ struct Vector {
 // --- flat members (END) ---
     void Cleanup();  // 0x512D30
     void Destructor();  // 0x513100
-    void MatrixMulVectorMath(float a2, float a3, float a4);  // 0x5AE890
+    void MatrixMulVectorMath(float a2,  float a3,  float a4);    // 0x5AE890
     void Cleanup2();  // 0x67ABE0
     unsigned short * ToFacingMath(unsigned short * a2);  // 0x41C2E0
     void Clear();  // 0x43AE50

@@ -14,6 +14,6 @@ struct E4Recv_76FEB0 {
     unsigned int q598;  // 0x598
     unsigned int q5170;  // 0x5170
 // --- flat members (END) ---
-    void TerritorySelectWDT_Process(int a2, ObjectClass * aP2);  // 0x76FEB0
+    void TerritorySelectWDT_Process(int a2,  ObjectClass * aP2);    // 0x76FEB0
 };
 } // namespace gamemd

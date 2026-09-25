@@ -28,6 +28,6 @@ struct VectorClass_Ptr {
     unsigned int q008;
     unsigned int q010;
 // --- flat members (END) ---
-    char ResizeAndCopy(int a2, unsigned int * a3);  // 0x5AD010
+    char ResizeAndCopy(int a2,  unsigned int * a3);    // 0x5AD010
 };
 } // namespace gamemd

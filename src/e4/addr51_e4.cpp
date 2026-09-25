@@ -14,6 +14,8 @@
 #include "e4/classes/ProgressTimer_e4.hpp"
 #include "e4/classes/MixFileClass_e4.hpp"
 #include "e4/classes/TextRenderer_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x5108F0
@@ -41,7 +43,7 @@ unsigned char E4Recv_517360::sub_517360(unsigned char a2, unsigned char * a3)
   v5 = *this; /*0x5173ba*/
   *(this + 1) = v4; /*0x5173bc*/
   result = v5 + a2 * (*a3 - v5) / 256; /*0x5173de*/
-  *this = result; /*0x5173e1*/
+  *(_DWORD *)this = result; /*0x5173e1*/
   return result; /*0x5173cb*/
 }
 }
@@ -304,7 +306,7 @@ namespace gamemd {
 unsigned int HouseClass_FormatPlayerName(int a1, unsigned char * a2, int a3)
 {
   unsigned int result; // eax
-  const char *v4; // edi
+  const int * v4;
 
   result = a3; /*0x510e10*/
   if ( a3 < 16 ) /*0x510e19*/
@@ -625,8 +627,8 @@ int sub_513C00()
 namespace gamemd {
 void E4Recv_513D00::sub_513D00()
 {
-  *this = &(void*)(void*)&HoverLocomotionClass_vftable; /*0x513d00*/
-  this->M4 = &(void*)(void*)&HoverLocomotionClass_vftable; /*0x513d06*/
+  *(void **)this = (void*)&HoverLocomotionClass_vftable; /*0x513d00*/
+  this->M4 = (void*)&HoverLocomotionClass_vftable; /*0x513d06*/
   LocomotionClass::Construct(); /*0x513d0d*/
 }
 } // namespace gamemd

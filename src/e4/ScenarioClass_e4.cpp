@@ -26,14 +26,16 @@
 #include "e4/classes/ScoreScreen_e4.hpp"
 #include "e4/classes/String_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/ScreenCaptureCommandClass_e4.hpp"
 
 // 0x58BB30
 namespace gamemd {
 ScenarioClass * * ScenarioClass::CopyStartPositions()
 {
-  void *result; // eax
-  _DWORD *v1; // ebx
+  unsigned int result;
+  unsigned int v1;
   int v2; // edi
   int v3; // eax
   int *v4; // esi
@@ -262,7 +264,7 @@ int ScenarioClass::AssignStartPositions(char a1)
   int i; // edi
   _DWORD *v2; // ecx
   int v3; // esi
-  void **v5; // [esp+4h] [ebp-18h] BYREF
+  void* v5;
   void *Block; // [esp+8h] [ebp-14h]
   char v7; // [esp+11h] [ebp-Bh]
 
@@ -280,7 +282,7 @@ int ScenarioClass::AssignStartPositions(char a1)
       }
     }
   }
-  v5 = &(void*)(void*)&VectorClass_Cell_vftable; /*0x5d6c45*/
+  v5 = (void*)&VectorClass_Cell_vftable; /*0x5d6c45*/
   if ( Block && v7 ) /*0x5d6c58*/
     RA2_OPDEL(Block); /*0x5d6c5b*/
   return 1; /*0x5d6c4f*/
@@ -324,15 +326,15 @@ TimerStruct * * ScenarioClass::Constructor()
   TypeList::TechnoTypeConstructor((_DWORD *)(&this->u32_15204), 0, 0); /*0x68338d*/
   this->dropshipUnitCounts = 0; /*0x683397*/
   this->dropshipCountsCount = 10; /*0x68339a*/
-  this->allowableUnits = &(void*)(void*)&TypeList_TechnoTypeClass___vftable; /*0x68339d*/
+  this->allowableUnits = (void*)&TypeList_TechnoTypeClass___vftable; /*0x68339d*/
   VectorClass::Construct((_DWORD *)(&this->u32_152C2), 0, 0); /*0x6833ad*/
   this->ground = 10; /*0x6833b2*/
   this->blue = 0; /*0x6833b5*/
-  this->ambientCurrent = &(void*)(void*)&TypeList_int_vftable; /*0x6833b8*/
+  this->ambientCurrent = (void*)&TypeList_int_vftable; /*0x6833b8*/
   VectorClass::Construct((_DWORD *)(&this->u32_15380), 0, 0); /*0x6833c8*/
   this->ionLevel = 10; /*0x6833cf*/
   this->ionGround = 0; /*0x6833d2*/
-  this->ionAmbient = &(void*)(void*)&TypeList_int_vftable; /*0x6833d5*/
+  this->ionAmbient = (void*)&TypeList_int_vftable; /*0x6833d5*/
   ScenarioClass::InitTimer(); /*0x6833db*/
   this->q3598 = 0; /*0x6833e2*/
   this->isRandom = 0; /*0x6833e8*/
@@ -456,7 +458,7 @@ int ScenarioClass::LoadScenarioAndStart(AnimClass * Source, char a2, int a3)
   }
   LABEL_14:
   v8 = ++g_GameFlags_Campaign; /*0x683bce*/
-  if ( !(unsigned __int8)(void*)(void*)&CD_vftable(dword_81C1D0) ) /*0x683bf6*/
+  if ( !(unsigned __int8)(void*)&CD_vftable(dword_81C1D0) ) /*0x683bf6*/
   {
   LABEL_21:
     if ( g_GameMode_Current == 4 ) /*0x683d3c*/
@@ -468,7 +470,7 @@ int ScenarioClass::LoadScenarioAndStart(AnimClass * Source, char a2, int a3)
   v19[1] = 0; /*0x683c18*/
   v19[2] = 0; /*0x683c1c*/
   GenericList::Constructor(v20); /*0x683c20*/
-  v20[0] = &(void*)(void*)&List_INIClass_INISection___vftable; /*0x683c29*/
+  v20[0] = (void*)&List_INIClass_INISection___vftable; /*0x683c29*/
   memset(&v20[7], 0, 12); /*0x683c32*/
   v21 = 0; /*0x683c3e*/
   v22 = 0; /*0x683c42*/
@@ -495,7 +497,7 @@ int ScenarioClass::LoadScenarioAndStart(AnimClass * Source, char a2, int a3)
       Movie::PlayWrapper(Bool, (int)v3, v8, 1, 1, 1); /*0x683cbd*/
     }
   }
-  v25[0] = &(void*)(void*)&CCFileClass_vftable; /*0x683cc9*/
+  v25[0] = (void*)&CCFileClass_vftable; /*0x683cc9*/
   v27 = 0; /*0x683cd1*/
   Vector::Clear((int)v26); /*0x683cd8*/
   v25[0] = &off_7E1668; /*0x683ce1*/
@@ -634,14 +636,14 @@ void ScenarioClass_Construct()
   _BYTE v10[12]; // [esp+C0h] [ebp-14h] BYREF
   int v11; // [esp+CCh] [ebp-8h]
 
-  result = (void*)(void*)&CD_vftable(dword_81C1D0); /*0x68674c*/
+  result = (void*)&CD_vftable(dword_81C1D0); /*0x68674c*/
   if ( result ) /*0x686754*/
   {
     g_CurrentFrame = 0; /*0x686765*/
     v5[1] = 0; /*0x68676b*/
     v5[2] = 0; /*0x68676f*/
     GenericList::Constructor(&v6); /*0x686773*/
-    v6 = &(void*)(void*)&List_INIClass_INISection___vftable; /*0x68677c*/
+    v6 = (void*)&List_INIClass_INISection___vftable; /*0x68677c*/
     Node::Init(v7); /*0x686784*/
     v7[5] = 0; /*0x68678d*/
     v8 = 0; /*0x686792*/
@@ -652,7 +654,7 @@ void ScenarioClass_Construct()
     {
       strcpy((char *)g_ScenarioClass_Instance + 4700, Source); /*0x686836*/
       v4 = ScenarioClass::LoadMap(0, (int)v5, a2); /*0x686851*/
-      v9[0] = &(void*)(void*)&CCFileClass_vftable; /*0x686853*/
+      v9[0] = (void*)&CCFileClass_vftable; /*0x686853*/
       v11 = 0; /*0x68685b*/
       Vector::Clear((int)v10); /*0x686862*/
       v9[0] = &off_7E1668; /*0x68686b*/
@@ -663,7 +665,7 @@ void ScenarioClass_Construct()
     else
     {
       Debug::Log(); /*0x6867cc*/
-      v9[0] = &(void*)(void*)&CCFileClass_vftable; /*0x6867db*/
+      v9[0] = (void*)&CCFileClass_vftable; /*0x6867db*/
       v11 = 0; /*0x6867e3*/
       Vector::Clear((int)v10); /*0x6867ea*/
       v9[0] = &off_7E1668; /*0x6867f3*/
@@ -2290,7 +2292,7 @@ int ScenarioClass_ClearFlag_0()
 namespace gamemd {
 MSAnim * ScenarioClass::checkWinningConditions(char a2)
 {
-  *this = &(void*)(void*)&MSAnim_vftable; /*0x5ceb69*/
+  *this = (void*)&MSAnim_vftable; /*0x5ceb69*/
   if ( (a2 & 1) != 0 ) /*0x5ceb6f*/
     RA2_OPDEL(); /*0x5ceb72*/
   return this; /*0x5ceb7c*/

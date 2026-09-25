@@ -42,16 +42,16 @@ struct MapClass {
     bool q04A;  // 0x4A
     AbstractClass* q04C;  // 0x4C
     unsigned char q04F;  // 0x4F
-    DynamicVector * ptr_50;  // 0x50
-    IUnknown* q054;  // 0x54
+    void* ;  // 0x50
+    void* q054;  // 0x54
     MapClass* q058;  // 0x58
     unsigned char q05C;  // 0x5C
     unsigned int q05D;  // 0x5D
     unsigned int q060;  // 0x60
     unsigned int q064;  // 0x64
-    IUnknown* somecount_4C;  // 0x68
+    void* somecount_4C;  // 0x68
     unsigned int ZoneConnections;  // 0x6C
-    IUnknown* q070;  // 0x70
+    void* q070;  // 0x70
     unsigned char q074;  // 0x74
     unsigned char q078;  // 0x78
     unsigned int u32_7C;  // 0x7C
@@ -84,14 +84,14 @@ struct MapClass {
     unsigned char q0C0;  // 0xC0
     unsigned int q0C3;  // 0xC3
     unsigned char q0C7;  // 0xC7
-    ObjectClass* q0D4;  // 0xD4
-    IUnknown* q0D8;  // 0xD8
+    void* q0D4;  // 0xD4
+    void* q0D8;  // 0xD8
     MapClass* q0DC;  // 0xDC
     unsigned char q0E0;  // 0xE0
     unsigned int q0E1;  // 0xE1
     ObjectClass* q0E4;  // 0xE4
     unsigned char q0E5;  // 0xE5
-    IUnknown* q0EC;  // 0xEC
+    void* q0EC;  // 0xEC
     unsigned char q0F0;  // 0xF0
     void* q0F4;  // 0xF4
     void* q0F7;  // 0xF7
@@ -115,14 +115,14 @@ struct MapClass {
     unsigned int u32_12C;  // 0x12C
     void* q130;  // 0x130
     unsigned int q134;  // 0x134
-    unsigned int MaxLevel;  // 0x138
+    void* q138;  // 0x138
     void* q13C;  // 0x13C
     MapClass* q140;  // 0x140
     unsigned char q144;  // 0x144
     unsigned int q145;  // 0x145
     unsigned int Crates;  // 0x148
     unsigned char q14C;  // 0x14C
-    HouseClass* q150;  // 0x150
+    unsigned int ;  // 0x150
     unsigned int q154;  // 0x154
     unsigned char q158;  // 0x158
     Coord* q15C;  // 0x15C
@@ -184,7 +184,7 @@ struct MapClass {
     unsigned int MapCoordBounds;  // 0x292
     AbstractClass* q294;  // 0x294
     unsigned char q298;  // 0x298
-    IUnknown* q2A4;  // 0x2A4
+    void* q2A4;  // 0x2A4
     unsigned char q2A8;  // 0x2A8
     AbstractClass* q2B4;  // 0x2B4
     unsigned int q2E4;  // 0x2E4
@@ -382,8 +382,8 @@ struct MapClass {
     unsigned int q1124;  // 0x1124
     AbstractTypeClass* q1128;  // 0x1128
     unsigned int q1158;  // 0x1158
-    ObjectClass* q115C;  // 0x115C
-    IUnknown* q1160;  // 0x1160
+    void* q115C;  // 0x115C
+    void* q1160;  // 0x1160
     MapClass* q1164;  // 0x1164
     unsigned char q1168;  // 0x1168
     unsigned int q1169;  // 0x1169
@@ -425,7 +425,7 @@ struct MapClass {
     unsigned int q1444;  // 0x1444
     int q1464;  // 0x1464
     unsigned int q14EB;  // 0x14EB
-    IUnknown* q14EC;  // 0x14EC
+    void* q14EC;  // 0x14EC
     unsigned int q14ED;  // 0x14ED
     unsigned int q14EE;  // 0x14EE
     unsigned int q14EF;  // 0x14EF
@@ -457,7 +457,7 @@ struct MapClass {
     unsigned char q1628;  // 0x1628
     unsigned int q1634;  // 0x1634
     unsigned char q1638;  // 0x1638
-    IUnknown* q1654;  // 0x1654
+    void* q1654;  // 0x1654
     unsigned char q1658;  // 0x1658
     unsigned int q1660;  // 0x1660
     unsigned char q1664;  // 0x1664
@@ -646,16 +646,16 @@ struct MapClass {
     AudioController* q5750;  // 0x5750
     unsigned char q5754;  // 0x5754
     unsigned char q5758;  // 0x5758
-    IUnknown* q5774;  // 0x5774
+    void* q5774;  // 0x5774
     unsigned char q5778;  // 0x5778
     unsigned char q577C;  // 0x577C
     unsigned char q5780;  // 0x5780
     unsigned char q5784;  // 0x5784
-    TimerStruct * ptr_5788;  // 0x5788
+    void* ptr_5788;  // 0x5788
     unsigned char q578C;  // 0x578C
     unsigned char q5790;  // 0x5790
     unsigned char q5794;  // 0x5794
-    IUnknown* q5798;  // 0x5798
+    void* q5798;  // 0x5798
     unsigned char q579C;  // 0x579C
     unsigned char q57A0;  // 0x57A0
     unsigned char q57A4;  // 0x57A4
@@ -698,22 +698,28 @@ struct MapClass {
     unsigned char q6440;  // 0x6440
     unsigned int q6454;  // 0x6454
     unsigned char q6458;  // 0x6458
+    unsigned int Activated;
     unsigned int q0040;
     unsigned int q0041;
     unsigned int q0042;
     unsigned int q0045;
-    unsigned int q01C6;
-    unsigned int q0181;
-    unsigned int q0182;
-    unsigned int q0404;
-    unsigned int u32_12C7;
-    unsigned int Activated;
     unsigned int q0086;
     unsigned int q0088;
+    unsigned int q0181;
+    unsigned int q0182;
+    unsigned int q01C6;
+    unsigned int q01C9;
     unsigned int q0308;
+    unsigned int q0404;
+    unsigned int u32_12C7;
+    unsigned int MaxLevel;
+    unsigned int outBuffer3;
     unsigned int q0585;
     unsigned int q0805;
     unsigned int u32_6F47;
+    void* ptr_50;
+    unsigned int q150;
+    unsigned int ValidMapCellCount4;
 // --- flat members (END) ---
     AbstractClass * * AllocateMapDataBuffer(int a2, int * a3);
     BombClass * * DecompressCellData(MouseClass * aP1);
@@ -722,7 +728,7 @@ struct MapClass {
     MapClass * * RemoveTriggerRef(AbstractClass * aP1, int a3);
     MapClass * Destru_vt04(char a2);
     MapClass * SetObstruction(short * a0, MapClass * aP1);
-    ObjectClass * * CheckCellsBuildable(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnknown * aP4, IUnknown * aP5, int aP6, IUnknown * aP7, IUnknown * aP8);
+    ObjectClass * * CheckCellsBuildable(void* aP0, void* aP1, void* aP2, void* aP3, void* aP4, void* aP5, int aP6, void* aP7, void* aP8);
     ObjectClass * * LoadFileData();
     TechnoTypeClass * * PostProcessReveal(char a2);
     VectorClass_flat * * Destru_vt05();
@@ -733,17 +739,17 @@ struct MapClass {
     char isCellAccessible(int a2);
     char loadTheaterINI(INIClass * aP1, char * a2, int a4);
     int AllocateCellDataBuffer(int a2, char * a3);
-    int BuildTileConnectivityGraph(MapClass * aP1, IUnknown * aP2, IUnknown * aP3);
+    int BuildTileConnectivityGraph(MapClass * aP1, void* aP2, void* aP3);
     int CalcVisibleCellRange(int a1, int a2, VectorClass_flat * aP2, int * a3);
     int Cleanup(int a1, int a2);
     int ClearCellOverlayFlag();
-    int ClearRegions(IUnknown * aP1);
+    int ClearRegions(void* aP1);
     int FindPassableNeighbor();
     int FindSubzoneConnectionIndex(unsigned short * a2);
     int FreeAllCells();
     int GetScrollMode();
-    int GetTileDataField14(MapResourceClass * aP0);
-    int GetTileIndex(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3);
+    int GetTileDataField14(void* aP0);
+    int GetTileIndex(void* aP1, void* aP2, void* aP3);
     int InitCellVe_vt04(unsigned int * a2);
     int InitCellVe_vt06(int a2);
     int InitCellVector();
@@ -757,14 +763,14 @@ struct MapClass {
     int ProcessTile();
     int ProcessVisibilityFlags();
     int RemoveCellReference(int a2);
-    int RevealArea0(IUnknown * aP1, MouseClass * aP2, HouseClass * aP3, MouseClass * aP4, HouseClass * aP5, char a7, char a8, char a9);
+    int RevealArea0(void* aP1, MouseClass * aP2, HouseClass * aP3, MouseClass * aP4, HouseClass * aP5, char a7, char a8, char a9);
     int ScrollOnce(AbstractClass * aP1);
     int SetCellFlagsAlongPath(IUnknown * aP1, unsigned short * a2);
     int SetCellOverlayFlag();
     int SetScrollMode(MouseClass * aP1);
     int ToggleZoom(int a2);
     int TransitionCliff(MouseClass * aP0);
-    int TriggerEVA(IUnknown * aP0);
+    int TriggerEVA(void* aP0);
     int UnselectAll_ClearLimboLaunchers();
     int UpdateLightingPostProcess();
     int isCellShrouded(unsigned short a2);
@@ -773,7 +779,7 @@ struct MapClass {
     unsigned int * AllocArrays();
     unsigned int * BuildSubzones();
     unsigned int * FastCellLookup(short * a2, int a3, char a4);
-    unsigned int * FindPlacementCellsAlt(IUnknown * aP1, IUnknown * aP2);
+    unsigned int * FindPlacementCellsAlt(void* aP1, void* aP2);
     unsigned int * InitAllCells();
     unsigned int * SpiralSearch();
     unsigned int * allocateMapBuffers();
@@ -785,12 +791,12 @@ struct MapClass {
     void * ClearShroud(HouseClass * v3);
     void ApplyOverlayReveal(MouseClass * aP1, BuildingClass * aP2);
     void Destru_vt07();
-    void FillRevealBuffer(MouseClass * aP1, IUnknown * aP2);
+    void FillRevealBuffer(MouseClass * aP1, void* aP2);
     void IncrementRedrawCounter();
     void InitCellVe_vt03();
     void allocateCellArrays();
     void checkCellBounds();
-    void* ApplyTerrainDamage(IUnknown *this@<ecx> a1, IUnknown aP1);
+    void* ApplyTerrainDamage(void*this@<ecx> a1, IUnknown aP1);
     void* Destruct();
     void* InitTileData(MouseClass * aP0, int aP3);
 };

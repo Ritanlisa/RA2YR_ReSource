@@ -40,16 +40,16 @@ struct VectorClass_ptr_HouseTypeClass {
     void Destroy_1();  // 0x4E8BA0
     unsigned int GetItemIndex_1(int a2);  // 0x4E8BD0
     char Add(int a2);  // 0x4EC7C0
-    char Release(int a2, unsigned int * a3);  // 0x4EC800
+    char Release(int a2,  unsigned int * a3);    // 0x4EC800
     void Remove();  // 0x4EC8B0
     int GetSize(unsigned int * a2);  // 0x4EC8E0
     unsigned int LoadTypeData(int a2);  // 0x4EC920
-    char SetCapacity(int a2, unsigned int * a3);  // 0x4EC940
+    char SetCapacity(int a2,  unsigned int * a3);    // 0x4EC940
     int FindItemIndex(unsigned int * a2);  // 0x4EC9F0
-    char SetCapacity_0(int a2, unsigned int * a3);  // 0x4ECBA0
+    char SetCapacity_0(int a2,  unsigned int * a3);    // 0x4ECBA0
     int FindItemIndex_0(unsigned int * a2);  // 0x4ECC50
-    char SetCapacity_1(int a2, unsigned int * a3);  // 0x4ECE00
+    char SetCapacity_1(int a2,  unsigned int * a3);    // 0x4ECE00
     int FindItemIndex_1(unsigned int * a2);  // 0x4ECEB0
-    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x4F02F0
+    VectorClass_flat * QueryInterface(unsigned int * Block,  char a2);    // 0x4F02F0
 };
 } // namespace gamemd

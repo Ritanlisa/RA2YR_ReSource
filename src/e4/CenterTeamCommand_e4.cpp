@@ -4,14 +4,18 @@
 #include "e4/classes/CenterTeamCommand_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/HouseClass_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
+#include "e4/classes/CellClass_e4.hpp"
+#include "e4/classes/LayerClass_e4.hpp"
 
 // 0x5361A0
 namespace gamemd {
 unsigned int * CenterTeamCommand::Construct(int a2)
 {
   this->CenterTeamCommand_field_00 = a2; /*0x5361a6*/
-  *this = &(void*)(void*)&CenterTeamCommandClass_vftable; /*0x5361a9*/
+  *(void **)this = (void*)&CenterTeamCommandClass_vftable; /*0x5361a9*/
   return this; /*0x5361af*/
 }
 } // namespace gamemd

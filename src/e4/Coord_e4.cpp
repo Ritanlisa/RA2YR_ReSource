@@ -6,6 +6,8 @@
 #include "e4/classes/MouseClass_e4.hpp"
 #include "e4/classes/VectorClass_flat_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/Dialog_e4.hpp"
 
 // 0x4138C0
@@ -219,7 +221,7 @@ void * Coord::WorldToScreen(MouseClass * aP1, MouseClass * aP2, char a4)
     if ( v8 >= v10 ) /*0x655876*/
       v8 = v10 - 1; /*0x655878*/
   }
-  *aP1 = v7; /*0x655881*/
+  *(_DWORD *)aP1 = v7; /*0x655881*/
   aP1[1] = v8; /*0x655883*/
   return aP1; /*0x65587f*/
 }
@@ -239,11 +241,11 @@ AbstractClass * * Coord::To_Screen(unsigned int * a1, IUnknown * aP2)
   v4 = (-60 * v10 / 2 + 60 * *a1 / 2) / 256; /*0x6d21c8*/
   v5 = (30 * v10 / 2 + 30 * *a1 / 2) / 256; /*0x6d21cb*/
   v6 = Math::RoundToInt((double)(int)a1[2] * dbl_B0CD48 + (double)(a1[2] >= 728) + 0.5); /*0x6d21f2*/
-  *aP2 = v4; /*0x6d21fd*/
+  *(_DWORD *)aP2 = v4; /*0x6d21fd*/
   aP2[1] = v5 - v6; /*0x6d21ff*/
   v7 = *aP2 - *(&this->uniqueId4); /*0x6d2213*/
   v8 = aP2[1] - *(&this->uniqueId5); /*0x6d2215*/
-  *aP2 = v7; /*0x6d2217*/
+  *(_DWORD *)aP2 = v7; /*0x6d2217*/
   aP2[1] = v8; /*0x6d221b*/
   if ( v7 < -360 ) /*0x6d222a*/
     return 0; /*0x6d222c*/

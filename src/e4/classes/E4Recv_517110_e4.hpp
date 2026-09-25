@@ -44,6 +44,7 @@ struct E4Recv_517110 {
     unsigned int q5444;  // 0x5444
     unsigned int q5508;  // 0x5508
     unsigned int q6408;  // 0x6408
+    unsigned int u32_42;
 // --- flat members (END) ---
     int sub_517110();  // 0x517110
 };

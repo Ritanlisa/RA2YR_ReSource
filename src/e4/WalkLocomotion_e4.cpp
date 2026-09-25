@@ -9,14 +9,17 @@
 #include "e4/classes/Team_e4.hpp"
 #include "e4/classes/MEMORY_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/AbstractClass_e4.hpp"
 
 // 0x6A01A0
 namespace gamemd {
 AbstractClass * * WalkLocomotion::MoveTo(IUnknown * aP1, int aP3)
 {
-  _DWORD *v3; // edx
-  int v5; // eax
+  unsigned int v3;
+  void * v5;
   int v6; // ebp
   int v7; // eax
   int v8; // ecx
@@ -174,7 +177,7 @@ int WalkLocomotion::ProcessCollision(char a2)
   AbstractClass *v176; // [esp+2Ch] [ebp-F8h]
   ObjectClass *aP4; // [esp+44h] [ebp-E0h] BYREF
   _BYTE v182[12]; // [esp+48h] [ebp-DCh] BYREF
-  double varD0; // [esp+54h] [ebp-D0h] BYREF
+  void * varD0;
   IUnknown *v183; // [esp+5Ch] [ebp-C8h]
   ObjectClass aP3; // [esp+60h] [ebp-C4h] BYREF
   if ( (!this->u8_63 || this->WalkLocomotion_field_0x58 == -1) && *(_DWORD *)(this->q00C + 1504) != 8
@@ -257,7 +260,7 @@ int WalkLocomotion::ProcessCollision(char a2)
       {
         if ( !v15 )
         {
-  double v24; // st7
+  void * v24;
           if ( *(double *)&v21->__pad_1D4[932] >= this->q140 )
           {
             if ( *(double *)&v21->__pad_1D4[932] <= this->q140 )
@@ -385,7 +388,7 @@ LABEL_37:
   if ( v30 <= 7 )
     goto LABEL_141;
   char * v45 = (char *)(12 * this->WalkLocomotion_field_0x58 + 8333888);
-  char v46 = this->ptr_60;
+  ObjectClass * v46 =
   *(_DWORD *)&aP3.bombVisible = v45;
   if ( v46 )
     int v47 = v45[1];

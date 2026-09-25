@@ -4,6 +4,8 @@
 #include "e4/classes/Math_e4.hpp"
 #include "e4/classes/Camera_e4.hpp"
 #include "e4/classes/AbstractTypeClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x58B600

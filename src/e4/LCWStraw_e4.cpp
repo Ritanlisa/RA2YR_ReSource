@@ -3,6 +3,8 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/LCWStraw_e4.hpp"
 #include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x552450
@@ -13,7 +15,7 @@ int LCWStraw::Dtor()
   void *v3; // ecx
 
   v2 = (void *)this->q014; /*0x552453*/
-  *this = (int)&(void*)(void*)&LCWStraw_vftable; /*0x552456*/
+  *(_DWORD *)this = (int)&LCWStraw_vftable; /*0x552456*/
   RA2_OPDEL(v2); /*0x55245d*/
   v3 = (void *)this->q018; /*0x552462*/
   this->q014 = 0; /*0x552465*/

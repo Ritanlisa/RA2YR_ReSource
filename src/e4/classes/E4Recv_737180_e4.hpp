@@ -39,8 +39,8 @@ struct E4Recv_737180 {
     unsigned int q5938;  // 0x5938
     unsigned int q5960;  // 0x5960
 // --- flat members (END) ---
-    int Vf1152(int, ...);  // G6 vtable slot dispatch
-    int Vf440(int, ...);  // G6 vtable slot dispatch
+    int Vf1152(int,  ...);    // G6 vtable slot dispatch
+    int Vf440(int,  ...);    // G6 vtable slot dispatch
     int UpdateInfantryIdleWander();  // 0x737180
 };
 } // namespace gamemd

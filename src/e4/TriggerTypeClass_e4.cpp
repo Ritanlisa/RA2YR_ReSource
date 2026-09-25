@@ -7,6 +7,8 @@
 #include "e4/classes/TriggerTypeClass_e4.hpp"
 #include "e4/classes/Trigger_e4.hpp"
 #include "e4/classes/TEventClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x6FC0B0
@@ -426,10 +428,10 @@ int TriggerTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x727c06*/
     {
       AbstractTypeClass::Init((int)aP0, (int)&aP1); /*0x727c0f*/
-      *aP0 = (int)&(void*)(void*)&TriggerTypeClass_vftable; /*0x727c14*/
-      aP0[1] = (int)&(void*)(void*)&TriggerTypeClass_vftable; /*0x727c1a*/
-      aP0[2] = (int)&(void*)(void*)&TriggerTypeClass_vftable; /*0x727c21*/
-      aP0[3] = (int)&(void*)(void*)&TriggerTypeClass_vftable; /*0x727c28*/
+      *aP0 = (int)&TriggerTypeClass_vftable; /*0x727c14*/
+      aP0[1] = (int)&TriggerTypeClass_vftable; /*0x727c1a*/
+      aP0[2] = (int)&TriggerTypeClass_vftable; /*0x727c21*/
+      aP0[3] = (int)&TriggerTypeClass_vftable; /*0x727c28*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP0 + 42); /*0x727c3b*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP0 + 43); /*0x727c4c*/

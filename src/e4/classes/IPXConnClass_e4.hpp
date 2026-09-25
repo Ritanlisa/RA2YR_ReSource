@@ -21,20 +21,20 @@ struct IPXConnClass {
     unsigned short RemoteSocket;  // 0x28
     unsigned char padding;  // 0x2A
     unsigned char q02C;  // 0x2C
-    CampaignScore* q030;  // 0x30
+    void* q030;  // 0x30
     int q034;  // 0x34
     void* q038;  // 0x38
     unsigned char q03C;  // 0x3C
     unsigned int q040;  // 0x40
     unsigned char q044;  // 0x44
-    CampaignScore* q048;  // 0x48
+    void* q048;  // 0x48
     unsigned int u32_4C;  // 0x4C
     unsigned char q050;  // 0x50
     int q054;  // 0x54
     unsigned int u32_58;  // 0x58
     unsigned int u16_5C;  // 0x5C
     unsigned char q060;  // 0x60
-    IPXGlobalConnClass* q064;  // 0x64
+    unsigned int q064;  // 0x64
     void* q068;  // 0x68
     unsigned char q06C;  // 0x6C
     unsigned char q070;  // 0x70
@@ -57,7 +57,7 @@ struct IPXConnClass {
     void* q104;  // 0x104
     unsigned char q108;  // 0x108
     unsigned char q10C;  // 0x10C
-    CampaignScore* q114;  // 0x114
+    void* q114;  // 0x114
     unsigned int q118;  // 0x118
     unsigned char q11C;  // 0x11C
     unsigned char q120;  // 0x120
@@ -160,10 +160,10 @@ struct IPXConnClass {
     unsigned char q2578;  // 0x2578
     unsigned char q257C;  // 0x257C
     unsigned char q2E78;  // 0x2E78
-    unsigned int RemoteAddress6;
-    unsigned int initConnection;
     unsigned int Active5;
     unsigned int PacketsSent0;
+    unsigned int RemoteAddress6;
+    unsigned int initConnection;
 // --- flat members (END) ---
     void * constructor(int aP1, SessionClass * aP2, IPXConnClass * aP3, IPXConnClass * aP4, unsigned int * a5, int a7, wchar_t * Source, int aP8);
 };

@@ -143,7 +143,7 @@ struct SessionClass {
     unsigned int u32_28C;  // 0x28C
     unsigned int u32_290;  // 0x290
     unsigned int u32_294;  // 0x294
-    IUnknown* q298;  // 0x298
+    void* q298;  // 0x298
     bool q299;  // 0x299
     void* q29A;  // 0x29A
     bool q29B;  // 0x29B
@@ -281,7 +281,7 @@ struct SessionClass {
     unsigned char q658;  // 0x658
     unsigned char q65C;  // 0x65C
     unsigned char q660;  // 0x660
-    IUnknown* q664;  // 0x664
+    void* q664;  // 0x664
     unsigned char q668;  // 0x668
     unsigned char q66C;  // 0x66C
     unsigned char q670;  // 0x670

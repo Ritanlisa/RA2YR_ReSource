@@ -30,10 +30,10 @@ struct VectorClass_ptr_MSSfxEntry {
 // --- flat members (END) ---
     int Get(int a2);  // 0x5D07E0
     char Add(int a2);  // 0x5D1460
-    char Release(int a2, unsigned int * a3);  // 0x5D14A0
+    char Release(int a2,  unsigned int * a3);    // 0x5D14A0
     void Remove();  // 0x5D1550
     int GetSize(unsigned int * a2);  // 0x5D1580
     unsigned int GetCapacity(int a2);  // 0x5D15C0
-    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x5D19E0
+    VectorClass_flat * QueryInterface(unsigned int * Block,  char a2);    // 0x5D19E0
 };
 } // namespace gamemd

@@ -54,6 +54,6 @@ struct E4Recv_5D25D0 {
     unsigned int q044;
     unsigned int q0C0;
 // --- flat members (END) ---
-    char sub_5D25D0(char * Source, int a3);  // 0x5D25D0
+    char sub_5D25D0(char * Source,  int a3);    // 0x5D25D0
 };
 } // namespace gamemd

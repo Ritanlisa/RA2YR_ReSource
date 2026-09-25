@@ -9,6 +9,8 @@
 #include "e4/classes/LinkedList_flat_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/RefCount_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x401910
@@ -80,7 +82,7 @@ void AudioStream::DestroyAll()
 namespace gamemd {
 int AudioStream::Reset()
 {
-  *this = 0; /*0x403822*/
+  *(_DWORD *)this = 0; /*0x403822*/
   this->u8_4 = 0; /*0x403824*/
   this->q008 = 0; /*0x403827*/
   this->q00C = 0; /*0x40382a*/
@@ -128,7 +130,7 @@ int AudioStream::SetupPlayback()
   int v1; // edx
   int v2; // eax
   int v3; // esi
-  int v4; // edi
+  void * v4;
   int *v6; // edx
 
   v1 = this->u32_A8; /*0x404700*/
@@ -178,9 +180,9 @@ int AudioStream::SelectRandom()
 {
   _DWORD *v2; // ecx
   int v3; // edx
-  int v4; // eax
+  void * v4;
   int v5; // eax
-  int v6; // edi
+  void * v6;
   _DWORD *v8; // eax
   int v9; // ecx
   int v10; // ecx
@@ -382,7 +384,7 @@ int AudioStream::ProcessCallback()
 namespace gamemd {
 void AudioStream::InitNodeFields()
 {
-  *this = 0; /*0x4084e2*/
+  *(_DWORD *)this = 0; /*0x4084e2*/
   *(this + 1) = 0; /*0x4084e4*/
   *(this + 5) = 0; /*0x4084e7*/
   *(this + 6) = 0; /*0x4084ea*/
@@ -410,7 +412,7 @@ int AudioStream::ReadSamples(const void * a2)
 {
   _DWORD *v2; // ebx
   int v3; // edx
-  _DWORD *v5; // ecx
+  unsigned int v5;
   _WORD *v6; // ebx
   unsigned int v7; // edi
   int v8; // ebp
@@ -555,7 +557,7 @@ MouseClass * * AudioStream::DrawWaveform(IUnknown * aP1, IUnknown * aP2, IUnknow
   int v35; // eax
   int v36; // ecx
   int v37; // eax
-  _DWORD *v38; // edx
+  unsigned int v38;
   int v39; // ecx
   int v40; // esi
   unsigned __int16 v41; // ax
@@ -564,7 +566,7 @@ MouseClass * * AudioStream::DrawWaveform(IUnknown * aP1, IUnknown * aP2, IUnknow
   _WORD *v44; // eax
   bool v45; // zf
   int v47; // eax
-  _DWORD *v48; // edx
+  unsigned int v48;
   int v49; // esi
   unsigned __int16 v50; // ax
   _WORD *v51; // ecx
@@ -990,7 +992,7 @@ int AudioStream::CalcReadPos()
   unsigned int v8; // eax
   unsigned int v9; // ecx
   int v11; // esi
-  unsigned int v13; // edx
+  void * v13;
   unsigned int v15; // esi
   unsigned int i; // ecx
   unsigned int v17; // [esp+10h] [ebp-Ch]
@@ -1061,10 +1063,10 @@ int AudioStream::CalcReadPos()
 namespace gamemd {
 int AudioStream::ProcessStream()
 {
-  int v1; // esi
+  AudioStream * v1;
   int v2; // ebp
   _DWORD *v3; // ebx
-  int v4; // edi
+  AudioStream * v4;
   char v5; // al
   int v6; // eax
   int v7; // eax

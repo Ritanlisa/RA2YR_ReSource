@@ -95,17 +95,20 @@ struct UDPInterfaceClass {
     unsigned char q644;  // 0x644
     unsigned int q00C2;
     unsigned int q0208;
+    unsigned int q3F330;
     unsigned int q3F068;
     unsigned int q3F06C;
     unsigned int q3F070;
-    unsigned int q3F330;
+    unsigned int q3F074;
     unsigned int q3F334;
     unsigned int q3F554;
     unsigned int q3F560;
     unsigned int u32_3F300;
     unsigned int u32_3F320;
     unsigned int u32_FC1D0;
+    unsigned int u32_FC1E0;
     unsigned int u32_FCC00;
+    unsigned int qFC18;
 // --- flat members (END) ---
     AbstractClass * * Flush();
     AbstractClass * * ProcessSocketIO(int a2, SOCKET s, int a4, unsigned int a5);

@@ -3,6 +3,8 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/BinkMovie_e4.hpp"
 #include "e4/classes/MSVQAnim_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x5CD290
@@ -48,7 +50,7 @@ MSVQAnim * MSVQAnim::QueryInterface(char a2)
   void *v5; // edi
 
   v3 = (void (__thiscall ***)(_DWORD, int))*(&this->q0040); /*0x5cecb3*/
-  *this = &(void*)(void*)&MSVQAnim_vftable; /*0x5cecb6*/
+  *(void **)this = (void*)&MSVQAnim_vftable; /*0x5cecb6*/
   if ( v3 ) /*0x5cecbe*/
     (**v3)(v3, 1); /*0x5cecc4*/
   v4 = (_DWORD **)this->q01C; /*0x5cecc6*/
@@ -62,7 +64,7 @@ MSVQAnim * MSVQAnim::QueryInterface(char a2)
       RA2_OPDEL(v5); /*0x5cece2*/
     }
   }
-  *this = &(void*)(void*)&MSAnim_vftable; /*0x5cecee*/
+  *(void **)this = (void*)&MSAnim_vftable; /*0x5cecee*/
   if ( (a2 & 1) != 0 ) /*0x5cecf7*/
     RA2_OPDEL(); /*0x5cecfa*/
   return this; /*0x5ced04*/

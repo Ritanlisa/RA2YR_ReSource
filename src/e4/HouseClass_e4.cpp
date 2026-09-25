@@ -12,6 +12,8 @@
 #include "e4/classes/AnimClass_e4.hpp"
 #include "e4/classes/AnimTypeClass_e4.hpp"
 #include "e4/classes/BuildingClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x43B5E0
@@ -2177,12 +2179,12 @@ AbstractClass * * HouseClass::AIDecision(ObjectClass * aP0, int * a1)
     return 1; /*0x5d7492*/
   v28 = *a1; /*0x5d710d*/
   ((void (__stdcall *)(_DWORD, _DWORD))UnitTypeVector::Construct2)(0, 0); /*0x5d7111*/
-  v36 = &(void*)(void*)&DynamicVectorClass_UnitTypeClass___vftable; /*0x5d711c*/
+  v36 = (void*)&DynamicVectorClass_UnitTypeClass___vftable; /*0x5d711c*/
   v41 = 10; /*0x5d7124*/
   v40 = 0; /*0x5d712c*/
   ((void (__stdcall *)(_DWORD, _DWORD))InfantryTypeVector::ConstructFromData)(0, 0); /*0x5d7130*/
   v3 = 10; /*0x5d7139*/
-  v30 = &(void*)(void*)&DynamicVectorClass_InfantryTypeClass___vftable; /*0x5d713e*/
+  v30 = (void*)&DynamicVectorClass_InfantryTypeClass___vftable; /*0x5d713e*/
   v35 = 10; /*0x5d7146*/
   v4 = *((_DWORD *)aP0 + 13); /*0x5d714a*/
   v34 = 0; /*0x5d714d*/
@@ -2314,7 +2316,7 @@ AbstractClass * * HouseClass::AIDecision(ObjectClass * aP0, int * a1)
         v16 = v40; /*0x5d732b*/
       }
     }
-    v30 = &(void*)(void*)&VectorClass_InfantryTypeClass___vftable; /*0x5d7446*/
+    v30 = (void*)&VectorClass_InfantryTypeClass___vftable; /*0x5d7446*/
     if ( Block && IDA_BYTE1(v33) ) /*0x5d7456*/
     {
       RA2_OPDEL(Block); /*0x5d7459*/
@@ -2322,12 +2324,12 @@ AbstractClass * * HouseClass::AIDecision(ObjectClass * aP0, int * a1)
     }
     IDA_BYTE1(v33) = 0; /*0x5d7469*/
     v32 = 0; /*0x5d7470*/
-    v36 = &(void*)(void*)&VectorClass_UnitTypeClass___vftable; /*0x5d7474*/
+    v36 = (void*)&VectorClass_UnitTypeClass___vftable; /*0x5d7474*/
     if ( v37 && v39 ) /*0x5d7484*/
       RA2_OPDEL(v37); /*0x5d7487*/
     return 1; /*0x5d7487*/
   }
-  v30 = &(void*)(void*)&VectorClass_InfantryTypeClass___vftable; /*0x5d72bf*/
+  v30 = (void*)&VectorClass_InfantryTypeClass___vftable; /*0x5d72bf*/
   if ( Block && IDA_BYTE1(v33) ) /*0x5d72d1*/
   {
     RA2_OPDEL(Block); /*0x5d72d4*/
@@ -2335,7 +2337,7 @@ AbstractClass * * HouseClass::AIDecision(ObjectClass * aP0, int * a1)
   }
   IDA_BYTE1(v33) = 0; /*0x5d72e4*/
   v32 = 0; /*0x5d72eb*/
-  v36 = &(void*)(void*)&VectorClass_UnitTypeClass___vftable; /*0x5d72ef*/
+  v36 = (void*)&VectorClass_UnitTypeClass___vftable; /*0x5d72ef*/
   if ( v37 ) /*0x5d72f7*/
   {
     if ( v39 ) /*0x5d72ff*/
@@ -2483,7 +2485,7 @@ AbstractClass * * HouseClass::FindStartPositions()
     }
     while ( v10 < HouseClass_Count ); /*0x5eeb7e*/
   }
-  v17 = &(void*)(void*)&VectorClass_Cell_vftable; /*0x5eeb8b*/
+  v17 = (void*)&VectorClass_Cell_vftable; /*0x5eeb8b*/
   if ( Block ) /*0x5eeb94*/
   {
     if ( v19 ) /*0x5eeb9c*/
@@ -2597,7 +2599,7 @@ int HouseClass::vt_placeholder_02()
 namespace gamemd {
 std::locale::facet * HouseClass::initAngerStruct(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&VersionClass_vftable; /*0x4e8279*/
+  *(_DWORD *)this = (void*)&VersionClass_vftable; /*0x4e8279*/
   if ( (a2 & 1) != 0 ) /*0x4e827f*/
     RA2_OPDEL(); /*0x4e8282*/
   return this; /*0x4e828c*/
@@ -2616,7 +2618,7 @@ int HouseClass_24::Seek(int a2)
 namespace gamemd {
 VectorCursor * HouseClass::vt_placeholder_07(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&VectorCursor_GraphicMenuItem___DynamicVectorClass_GraphicMenuItem___vftable; /*0x4f28c9*/
+  *(_DWORD *)this = (void*)&VectorCursor_GraphicMenuItem___DynamicVectorClass_GraphicMenuItem___vftable; /*0x4f28c9*/
   if ( (a2 & 1) != 0 ) /*0x4f28cf*/
     RA2_OPDEL(); /*0x4f28d2*/
   return this; /*0x4f28dc*/
@@ -2774,7 +2776,7 @@ VectorClass_flat * HouseClass_24::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x4f2b63*/
-  *this = &(void*)(void*)&VectorClass_GraphicMenuItem___vftable; /*0x4f2b66*/
+  *this = (void*)&VectorClass_GraphicMenuItem___vftable; /*0x4f2b66*/
   if ( v3 && this->IsAllocated ) /*0x4f2b70*/
   {
     RA2_OPDEL(v3); /*0x4f2b78*/

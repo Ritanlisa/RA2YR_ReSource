@@ -24,10 +24,10 @@ struct TeamTypeClass_28 {
     unsigned char q050;  // 0x50
     unsigned int q054;  // 0x54
 // --- flat members (END) ---
-    char Release(int a2, int * a3);  // 0x6F22F0
-    char SetCapacity(int a2, int * a3);  // 0x6F24B0
+    char Release(int a2,  int * a3);    // 0x6F22F0
+    char SetCapacity(int a2,  int * a3);    // 0x6F24B0
     void ClearBuffer();  // 0x6F21B0
-    unsigned int * Seek(unsigned int * a2, int a3);  // 0x6F2210
+    unsigned int * Seek(unsigned int * a2,  int a3);    // 0x6F2210
     char AddRef(int a2);  // 0x6F2290
     void ddtor();  // 0x6F2400
     int Read(unsigned int * a2);  // 0x6F2440

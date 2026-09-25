@@ -4,6 +4,8 @@
 #include "e4/classes/ConvertClass_e4.hpp"
 #include "e4/classes/CoopCampaignVector_e4.hpp"
 #include "e4/classes/MultiplayerGameMode_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x48E740
@@ -133,7 +135,7 @@ unsigned int * ConvertClass::Construct(ConvertClass * aP1, int a3, ConvertClass 
   *(&this->q0243) = 0; /*0x48e929*/
   *(&this->q0244) = 0; /*0x48e92f*/
   *(&this->q0245) = 0; /*0x48e935*/
-  *this = &(void*)(void*)&ConvertClass_vftable; /*0x48e93b*/
+  *(void **)this = (void*)&ConvertClass_vftable; /*0x48e93b*/
   if ( v9 ) /*0x48e941*/
     *(&this->q0241) = 1; /*0x48e943*/
   if ( this->q004 == 1 ) /*0x48e94f*/

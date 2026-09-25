@@ -12,6 +12,8 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/ConvertClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/Sidebar_e4.hpp"
 
 // 0x5D6130
@@ -36,7 +38,7 @@ void SkirmishSetup_Setup(HWND hWnd, int a2)
     {
       g_MultiplayerMode |= 1u; /*0x5d6171*/
       MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass(&g_MultiplayerModeConfig, 0, 0); /*0x5d617c*/
-      g_MultiplayerModeConfig = (int)&(void*)(void*)&DynamicVectorClass_MultiplayerGameMode___vftable; /*0x5d6181*/
+      g_MultiplayerModeConfig = (int)&DynamicVectorClass_MultiplayerGameMode___vftable; /*0x5d6181*/
       dword_ABFDB4 = 10; /*0x5d618b*/
       g_MultiplayerGameList = 0; /*0x5d619a*/
       result = atexit(MultiplayerConfig::Cleanup); /*0x5d61a0*/
@@ -47,7 +49,7 @@ void SkirmishSetup_Setup(HWND hWnd, int a2)
     {
       g_MultiplayerMode |= 1u; /*0x5d61c4*/
       MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass(&g_MultiplayerModeConfig, 0, 0); /*0x5d61cf*/
-      g_MultiplayerModeConfig = (int)&(void*)(void*)&DynamicVectorClass_MultiplayerGameMode___vftable; /*0x5d61d4*/
+      g_MultiplayerModeConfig = (int)&DynamicVectorClass_MultiplayerGameMode___vftable; /*0x5d61d4*/
       dword_ABFDB4 = 10; /*0x5d61de*/
       g_MultiplayerGameList = 0; /*0x5d61ed*/
       atexit(MultiplayerConfig::Cleanup); /*0x5d61f3*/
@@ -170,7 +172,7 @@ int SkirmishSetup::DlgProc(SkirmishDialog * aP0, int a2, HWND hWnd, signed int a
               MultiMissionVector::Constructor(0, 0); /*0x5e6a67*/
               a2 = g_MultiplayerOptions; /*0x5e6a6c*/
               v12 = 0; /*0x5e6a72*/
-              v44[0] = &(void*)(void*)&DynamicVectorClass_MultiMission_const___vftable; /*0x5e6a76*/
+              v44[0] = (void*)&DynamicVectorClass_MultiMission_const___vftable; /*0x5e6a76*/
               v46 = 10; /*0x5e6a7e*/
               for ( i = 0; v12 < a2; ++v12 ) /*0x5e6a8e*/
               {
@@ -180,7 +182,7 @@ int SkirmishSetup::DlgProc(SkirmishDialog * aP0, int a2, HWND hWnd, signed int a
               }
               DlgItem = GetDlgItem(v8, 1363); /*0x5e6ac2*/
               (*(void (__thiscall **)(LRESULT, HWND, _DWORD *, _DWORD))(*(_DWORD *)v11 + 76))(v11, DlgItem, v44, 0); /*0x5e6ad4*/
-              v44[0] = &(void*)(void*)&VectorClass_MultiMission_const___vftable; /*0x5e6adb*/
+              v44[0] = (void*)&VectorClass_MultiMission_const___vftable; /*0x5e6adb*/
               VectorClass::Cleanup3(v44); /*0x5e6ae3*/
               v9 = (int)a6; /*0x5e6ae8*/
             }
@@ -227,7 +229,7 @@ int SkirmishSetup::DlgProc(SkirmishDialog * aP0, int a2, HWND hWnd, signed int a
             {
               (*(void (__thiscall **)(LRESULT))(*(_DWORD *)v18 + 16))(v18); /*0x5e6c23*/
               MultiMissionVector::Constructor(0, 0); /*0x5e6c2c*/
-              v44[0] = &(void*)(void*)&DynamicVectorClass_MultiMission_const___vftable; /*0x5e6c36*/
+              v44[0] = (void*)&DynamicVectorClass_MultiMission_const___vftable; /*0x5e6c36*/
               v46 = 10; /*0x5e6c40*/
               i = 0; /*0x5e6c48*/
               a4 = g_MultiplayerOptions; /*0x5e6c4c*/
@@ -244,7 +246,7 @@ int SkirmishSetup::DlgProc(SkirmishDialog * aP0, int a2, HWND hWnd, signed int a
               }
               v19 = GetDlgItem(v14, 1363); /*0x5e6c8d*/
               (*(void (__thiscall **)(LRESULT, HWND, _DWORD *, _DWORD))(*(_DWORD *)v18 + 76))(v18, v19, v44, 0); /*0x5e6c9b*/
-              v44[0] = &(void*)(void*)&VectorClass_MultiMission_const___vftable; /*0x5e6ca2*/
+              v44[0] = (void*)&VectorClass_MultiMission_const___vftable; /*0x5e6ca2*/
               VectorClass::Cleanup3(v44); /*0x5e6caa*/
               IDA_LOBYTE(a6) = (*(int (__thiscall **)(LRESULT))(*(_DWORD *)v18 + 60))(v18); /*0x5e6cbc*/
               v20 = GetDlgItem(v14, 1411); /*0x5e6cc0*/
@@ -316,7 +318,7 @@ int SkirmishSetup::DlgProc(SkirmishDialog * aP0, int a2, HWND hWnd, signed int a
     if ( First ) /*0x5e6ee5*/
     {
       MultiMissionVector::Constructor(0, 0); /*0x5e6ef1*/
-      v44[0] = &(void*)(void*)&DynamicVectorClass_MultiMission_const___vftable; /*0x5e6efb*/
+      v44[0] = (void*)&DynamicVectorClass_MultiMission_const___vftable; /*0x5e6efb*/
       v46 = 10; /*0x5e6f05*/
       i = 0; /*0x5e6f0d*/
       a6 = (char *)g_MultiplayerOptions; /*0x5e6f11*/
@@ -333,7 +335,7 @@ int SkirmishSetup::DlgProc(SkirmishDialog * aP0, int a2, HWND hWnd, signed int a
       }
       v38 = GetDlgItem(v36, 1363); /*0x5e6f4d*/
       (*(void (__thiscall **)(int, HWND, _DWORD *, _DWORD))(*(_DWORD *)First + 76))(First, v38, v44, 0); /*0x5e6f5b*/
-      v44[0] = &(void*)(void*)&VectorClass_MultiMission_const___vftable; /*0x5e6f62*/
+      v44[0] = (void*)&VectorClass_MultiMission_const___vftable; /*0x5e6f62*/
       VectorClass::Cleanup3(v44); /*0x5e6f6a*/
     }
     IDA_LOBYTE(hWnd) = (*(int (__thiscall **)(int))(*(_DWORD *)First + 60))(First); /*0x5e6f7c*/
@@ -443,14 +445,14 @@ namespace gamemd {
 AbstractClass * * SkirmishSetup_Setup_5E8590()
 {
   char (*v0)(); // ecx
-  void *v2; // esi
+  unsigned int v2;
   void *v3; // eax
   void *v4; // eax
   int v5; // ebx
   char *v6; // edi
   wchar_t *v7; // eax
   wchar_t *v8; // esi
-  int v9; // eax
+  wchar_t * v9;
   char **v10; // esi
   char *v11; // eax
 

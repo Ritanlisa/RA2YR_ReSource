@@ -21,7 +21,7 @@ struct E4Recv_4B53E0 {
     unsigned int q044;  // 0x44
     unsigned int q048;  // 0x48
     unsigned int M76;  // 0x4C
-    unsigned int q050;  // 0x50
+    void* q050;  // 0x50
     unsigned int M52;  // 0x52
     unsigned int q054;  // 0x54
     unsigned int q060;  // 0x60
@@ -112,15 +112,6 @@ struct E4Recv_4B53E0 {
     unsigned int q5684;  // 0x5684
     unsigned int q6038;  // 0x6038
     unsigned int q6408;  // 0x6408
-    unsigned int q02C;
-    unsigned int q030;
-    unsigned int q0200;
-    unsigned int q038;
-    unsigned int q03C;
-    unsigned int q04C;
-    unsigned int q080;
-    unsigned int u32_7C;
-    unsigned int u32_7D;
 // --- flat members (END) ---
     int sub_4B53E0(int a2);  // 0x4B53E0
 };

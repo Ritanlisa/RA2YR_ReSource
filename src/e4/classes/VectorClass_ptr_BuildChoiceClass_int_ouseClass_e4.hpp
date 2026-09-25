@@ -8,8 +8,8 @@ struct VectorClass_ptr_BuildChoiceClass_int_ouseClass {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
     void* Items;  // 0x4
-    void* Capacity;  // 0x8
-    void* IsInitialized;  // 0xC
+    unsigned int ;  // 0x8
+    unsigned int ;  // 0xC
     unsigned char IsAllocated;  // 0xD
     unsigned char q00E;  // 0xE
     void* Count;  // 0x10
@@ -115,18 +115,21 @@ struct VectorClass_ptr_BuildChoiceClass_int_ouseClass {
     unsigned int q00C;
     unsigned int q010;
     unsigned int q014;
+    unsigned int Items2;
+    unsigned int Capacity;
+    unsigned int IsInitialized;
 // --- flat members (END) ---
     unsigned int * Constructor(EnumConnectionPointsClass * aP1);  // 0x4A0C20
-    int SetCapacity(int a1, int a2);  // 0x4F6A20
-    int SetCapacity_0(int a1, int a2);  // 0x4F6A80
-    int SetCapacity_1(int a1, int a2);  // 0x4F6AE0
-    int SetCapacity_2(int a1, int a2);  // 0x4F6B50
-    unsigned int * SetCapacity_3(int a1, unsigned int * a2);  // 0x4F6BC0
-    unsigned int * SetCapacity_4(int a1, unsigned int * a2);  // 0x4F6D10
+    int SetCapacity(int a1,  int a2);    // 0x4F6A20
+    int SetCapacity_0(int a1,  int a2);    // 0x4F6A80
+    int SetCapacity_1(int a1,  int a2);    // 0x4F6AE0
+    int SetCapacity_2(int a1,  int a2);    // 0x4F6B50
+    unsigned int * SetCapacity_3(int a1,  unsigned int * a2);    // 0x4F6BC0
+    unsigned int * SetCapacity_4(int a1,  unsigned int * a2);    // 0x4F6D10
     int SetCapacity_5(int a1);  // 0x501400
-    char Release(int a2, unsigned int * a3);  // 0x50F520
-    char SetCapacity_6(int a2, unsigned int * a3);  // 0x50F660
-    int StubReturnNullPointer_0(int a1, const void * a2, unsigned int * a3);  // 0x502550
+    char Release(int a2,  unsigned int * a3);    // 0x50F520
+    char SetCapacity_6(int a2,  unsigned int * a3);    // 0x50F660
+    int StubReturnNullPointer_0(int a1,  const void * a2,  unsigned int * a3);    // 0x502550
     void * GetItemIndex_0(int a2);  // 0x4F6930
     bool GetItemIndex(int a1);  // 0x4F6910
     BSTR FindItemIndex(int a1);  // 0x4F6950
@@ -136,7 +139,7 @@ struct VectorClass_ptr_BuildChoiceClass_int_ouseClass {
     int GetItem_0(int a1);  // 0x4F6A10
     int GetItem_1(int a1);  // 0x4F6E60
     int ScalarDeletingDestructor(unsigned int * a1);  // 0x5013A0
-    int StubReturnNullPointer(int a1, unsigned int * a2);  // 0x5024F0
+    int StubReturnNullPointer(int a1,  unsigned int * a2);    // 0x5024F0
     void Destroy_0();  // 0x50E640
     unsigned int GetItemIndex_1(int a2);  // 0x50E670
     int Get(int a2);  // 0x50E690
@@ -145,17 +148,17 @@ struct VectorClass_ptr_BuildChoiceClass_int_ouseClass {
     int GetSize(unsigned int * a2);  // 0x50F600
     unsigned int GetCapacity(int a2);  // 0x50F640
     int FindItemIndex_1(unsigned int * a2);  // 0x50F710
-    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x510270
-    unsigned int * loc_5102C0(unsigned int * Block, char a2);  // 0x5102C0
-    int GetItem_2(int a1, const void * a2, unsigned int * a3);  // 0x510A50
+    VectorClass_flat * QueryInterface(unsigned int * Block,  char a2);    // 0x510270
+    unsigned int * loc_5102C0(unsigned int * Block,  char a2);    // 0x5102C0
+    int GetItem_2(int a1,  const void * a2,  unsigned int * a3);    // 0x510A50
     int GetItem_3(int a1);  // 0x510A60
     int GetItem_4(int a1);  // 0x510A70
-    int GetItem_5(int a1, const void * a2, unsigned int * a3);  // 0x510A80
+    int GetItem_5(int a1,  const void * a2,  unsigned int * a3);    // 0x510A80
     int GetItem_6(int a1);  // 0x510A90
     int GetItem_7(int a1);  // 0x510AA0
     int GetItem_8(int a1);  // 0x510AB0
     BSTR GetItem_9(int a1);  // 0x510AC0
-    int GetItem_10(int a1, const void * a2, unsigned int * a3);  // 0x510AD0
+    int GetItem_10(int a1,  const void * a2,  unsigned int * a3);    // 0x510AD0
     int GetItem_11(int a1);  // 0x510AE0
     int GetItem_12(int a1);  // 0x510AF0
 };

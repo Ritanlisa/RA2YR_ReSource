@@ -11,6 +11,8 @@
 #include "e4/classes/BulletTypeClass_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x465450
@@ -162,10 +164,10 @@ unsigned char * BulletTypeClass::Construct(ObjectClass * aP1)
   *(&this->q12C7) = 0; /*0x46bcd4*/
   *(&this->q12C8) = 0; /*0x46bcda*/
   *(&this->q12C9) = 0; /*0x46bce0*/
-  *(_DWORD *)this = &(void*)(void*)&BulletTypeClass_vftable; /*0x46bce6*/
-  this->vtable2 = &(void*)(void*)&BulletTypeClass_vftable; /*0x46bcec*/
-  this->vtable3 = &(void*)(void*)&BulletTypeClass_vftable; /*0x46bcf2*/
-  this->vtable4 = &(void*)(void*)&BulletTypeClass_vftable; /*0x46bcf9*/
+  *(_DWORD *)this = (void*)&BulletTypeClass_vftable; /*0x46bce6*/
+  this->vtable2 = (void*)&BulletTypeClass_vftable; /*0x46bcec*/
+  this->vtable3 = (void*)&BulletTypeClass_vftable; /*0x46bcf2*/
+  this->vtable4 = (void*)&BulletTypeClass_vftable; /*0x46bcf9*/
   AbstractClass::GenerateUniqueID((int)(this + 4)); /*0x46bd00*/
   *(&this->q0E04) = 1; /*0x46bd05*/
   *(&this->u32_DC9) = 1; /*0x46bd0c*/
@@ -442,10 +444,10 @@ BulletTypeClass * BulletTypeClass::ddtor(char a2)
   int v3; // eax
   int v4; // eax
 
-  *this = &(void*)(void*)&BulletTypeClass_vftable; /*0x46c896*/
-  this->vtable2 = &(void*)(void*)&BulletTypeClass_vftable; /*0x46c89c*/
-  this->vtable3 = &(void*)(void*)&BulletTypeClass_vftable; /*0x46c8a3*/
-  this->vtable4 = &(void*)(void*)&BulletTypeClass_vftable; /*0x46c8aa*/
+  *this = (void*)&BulletTypeClass_vftable; /*0x46c896*/
+  this->vtable2 = (void*)&BulletTypeClass_vftable; /*0x46c89c*/
+  this->vtable3 = (void*)&BulletTypeClass_vftable; /*0x46c8a3*/
+  this->vtable4 = (void*)&BulletTypeClass_vftable; /*0x46c8aa*/
   AbstractClass::AnnounceExpiredPointer(1); /*0x46c8b1*/
   v3 = (*(int (__thiscall **)(int *, void ***))(g_AnimPoolManager + 16))(&g_AnimPoolManager, &this); /*0x46c8ca*/
   if ( v3 != -1 && v3 < g_AnimManager && v3 < --g_AnimManager ) /*0x46c8e5*/
@@ -734,10 +736,10 @@ int BulletTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x46c6b6*/
     {
       ObjectTypeClass::Construct(aP0, (int)&aP1); /*0x46c6bf*/
-      *aP0 = &(void*)(void*)&BulletTypeClass_vftable; /*0x46c6c4*/
-      aP0[1] = &(void*)(void*)&BulletTypeClass_vftable; /*0x46c6ca*/
-      aP0[2] = &(void*)(void*)&BulletTypeClass_vftable; /*0x46c6d1*/
-      aP0[3] = &(void*)(void*)&BulletTypeClass_vftable; /*0x46c6d8*/
+      *aP0 = (void*)&BulletTypeClass_vftable; /*0x46c6c4*/
+      aP0[1] = (void*)&BulletTypeClass_vftable; /*0x46c6ca*/
+      aP0[2] = (void*)&BulletTypeClass_vftable; /*0x46c6d1*/
+      aP0[3] = (void*)&BulletTypeClass_vftable; /*0x46c6d8*/
     }
     VoxelAnimType::LoadAnim((char *)aP0); /*0x46c6e1*/
     ObjectTypeClass::Load2DArt((char *)aP0); /*0x46c6e8*/

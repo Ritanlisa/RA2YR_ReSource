@@ -55,9 +55,9 @@ struct SHA1 {
     unsigned char q148;  // 0x148
     void* q150;  // 0x150
     unsigned char q154;  // 0x154
+    unsigned int Compute;
     unsigned int ProcessBlock;
     unsigned int u32_41;
-    unsigned int Compute;
 // --- flat members (END) ---
     int ComputeThunk(ObjectClass * aP1);
 };

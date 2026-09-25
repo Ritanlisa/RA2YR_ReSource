@@ -19,6 +19,6 @@ struct FoggedObject {
     unsigned char q028;  // 0x28
     unsigned char q02C;  // 0x2C
 // --- flat members (END) ---
-    unsigned int * DrawVector_Constructor(IUnknown * aP1, IUnknown * aP2);  // 0x4D2DB0
+    unsigned int * DrawVector_Constructor(void* aP1,  void* aP2);    // 0x4D2DB0
 };
 } // namespace gamemd

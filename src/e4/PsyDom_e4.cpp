@@ -9,6 +9,8 @@
 #include "e4/classes/BuildingClass_e4.hpp"
 #include "e4/classes/CaptureManagerClass_e4.hpp"
 #include "e4/classes/RadarClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x53B080
@@ -25,7 +27,7 @@ void PsyDom::Fire()
   void **v7; // eax
   int v8; // eax
   int v9; // esi
-  int *v10; // ebp
+  unsigned int v10;
   int v11; // eax
   _DWORD *v12; // eax
   int i; // esi
@@ -50,7 +52,7 @@ void PsyDom::Fire()
   int v32[3]; // [esp+28h] [ebp-3Ch] BYREF
   int v33[3]; // [esp+34h] [ebp-30h] BYREF
   char v34[12]; // [esp+40h] [ebp-24h] BYREF
-  void **v35; // [esp+4Ch] [ebp-18h] BYREF
+  void* v35;
   void *Block; // [esp+50h] [ebp-14h]
   int v37; // [esp+54h] [ebp-10h]
   int v38; // [esp+58h] [ebp-Ch]
@@ -92,7 +94,7 @@ void PsyDom::Fire()
     v8 = 10; /*0x53b181*/
   v9 = dword_7ED3D0[v8]; /*0x53b186*/
   EventClass::resetEvent(&v35, 0, 0); /*0x53b193*/
-  v35 = &(void*)(void*)&DynamicVectorClass_TechnoClass___vftable; /*0x53b19a*/
+  v35 = (void*)&DynamicVectorClass_TechnoClass___vftable; /*0x53b19a*/
   v40 = 10; /*0x53b1a2*/
   v39 = 0; /*0x53b1aa*/
   if ( v9 > 0 )
@@ -170,7 +172,7 @@ void PsyDom::Fire()
     for ( j = v39 - 1; j >= 0; --j ) /*0x53b3af*/
       (*(void (__thiscall **)(_DWORD, int, _DWORD))(**((_DWORD **)Block + j) + 488))(*((_DWORD *)Block + j), 15, 0); /*0x53b3bd*/
   }
-  v35 = &(void*)(void*)&VectorClass_TechnoClass___vftable; /*0x53b3ca*/
+  v35 = (void*)&VectorClass_TechnoClass___vftable; /*0x53b3ca*/
   if ( Block ) /*0x53b3d4*/
   {
     if ( IDA_BYTE1(v38) ) /*0x53b3da*/

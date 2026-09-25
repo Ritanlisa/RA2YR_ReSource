@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+
 #include "e4/e4_globals.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/Power_e4.hpp"
@@ -13,6 +14,8 @@
 #include "e4/classes/AnimClass_e4.hpp"
 #include "e4/classes/Color_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x6442D0
@@ -24,8 +27,8 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
   char Bool_Overwrite; // al
   int Int_Overwrite; // eax
   int v7; // ecx
-  int v8; // eax
-  double v9; // st7
+  ParticleSystemClass * v8;
+  ParticleSystemClass * v9;
   double Double_Overwrite; // st7
   int v11; // edx
   bool v12; // zf
@@ -33,11 +36,11 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
   float *v14; // eax
   double v15; // st7
   double v16; // rax
-  double v17; // st7
-  unsigned int v18; // ecx
-  unsigned int v19; // edx
+  AnimClass * v17;
+  AnimClass * v18;
+  AnimClass * v19;
   double v20; // st7
-  unsigned int v21; // eax
+  void * v21;
   unsigned int v22; // ecx
   double v23; // st7
   double v24; // rax
@@ -47,13 +50,13 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
   double v28; // st7
   char v29; // al
   int Coord; // eax
-  int v31; // ecx
-  int v32; // eax
+  Color * v31;
+  Color * v32;
   char v33; // al
   double v35; // [esp+0h] [ebp-68h]
   double v36; // [esp+0h] [ebp-68h]
-  int v37; // [esp+4h] [ebp-64h]
-  int v38; // [esp+4h] [ebp-64h]
+  void * v37;
+  Color * v38;
   const void **v39; // [esp+14h] [ebp-54h] BYREF
   int v40; // [esp+18h] [ebp-50h]
   float v41[3]; // [esp+1Ch] [ebp-4Ch] BYREF
@@ -245,10 +248,10 @@ ParticleSystemTypeClass * ParticleSystemTypeClass::ddtor(char a2)
 {
   int v3; // eax
 
-  *this = &(void*)(void*)&ParticleSystemTypeClass_vftable; /*0x644966*/
-  this->vtable2 = &(void*)(void*)&ParticleSystemTypeClass_vftable; /*0x64496c*/
-  this->vtable3 = &(void*)(void*)&ParticleSystemTypeClass_vftable; /*0x644973*/
-  this->vtable4 = &(void*)(void*)&ParticleSystemTypeClass_vftable; /*0x64497a*/
+  *(void **)this = (void*)&ParticleSystemTypeClass_vftable; /*0x644966*/
+  this->vtable2 = (void*)&ParticleSystemTypeClass_vftable; /*0x64496c*/
+  this->vtable3 = (void*)&ParticleSystemTypeClass_vftable; /*0x644973*/
+  this->vtable4 = (void*)&ParticleSystemTypeClass_vftable; /*0x64497a*/
   AbstractClass::AnnounceExpiredPointer(1); /*0x644981*/
   v3 = (*(int (__thiscall **)(int *, void ***))(dword_A83D68 + 16))(&dword_A83D68, &this); /*0x64499a*/
   if ( v3 != -1 && v3 < g_InfantryTypeInitState && v3 < --g_InfantryTypeInitState ) /*0x6449b5*/
@@ -325,10 +328,10 @@ int ParticleSystemTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
   if ( ObjectTypeClass::LoadCleanup((int)aP0, aP1) >= 0 && aP0 ) /*0x6447f6*/
   {
     ObjectTypeClass::Construct(aP0, (int)&aP1); /*0x6447ff*/
-    *aP0 = &(void*)(void*)&ParticleSystemTypeClass_vftable; /*0x644804*/
-    aP0[1] = &(void*)(void*)&ParticleSystemTypeClass_vftable; /*0x64480a*/
-    aP0[2] = &(void*)(void*)&ParticleSystemTypeClass_vftable; /*0x644811*/
-    aP0[3] = &(void*)(void*)&ParticleSystemTypeClass_vftable; /*0x644818*/
+    *(void **)aP0 = (void*)&ParticleSystemTypeClass_vftable; /*0x644804*/
+    aP0[1] = (void*)&ParticleSystemTypeClass_vftable; /*0x64480a*/
+    aP0[2] = (void*)&ParticleSystemTypeClass_vftable; /*0x644811*/
+    aP0[3] = (void*)&ParticleSystemTypeClass_vftable; /*0x644818*/
   }
   return 0; /*0x644821*/
 }

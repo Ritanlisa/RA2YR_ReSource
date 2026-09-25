@@ -2,13 +2,15 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Super_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x6CC260
 namespace gamemd {
 int Super::GetDefaultTimer()
 {
-  int result; // eax
+  void * result;
 
   result = this->q024; /*0x6cc260*/
   if ( result == -1 ) /*0x6cc266*/

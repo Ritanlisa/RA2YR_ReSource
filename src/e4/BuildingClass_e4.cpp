@@ -9,7 +9,10 @@
 #include "e4/classes/BuildingTypeClass_e4.hpp"
 #include "e4/classes/Init_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x453E20
 namespace gamemd {
@@ -436,7 +439,7 @@ namespace gamemd {
 int BuildingClass::AllocAndCtor(BuildingClass * aP0, int aP2)
 {
   int result; // eax
-  int v3; // edi
+  BuildingClass * v3;
   int v4; // ebp
 
   result = RadioClass::LoadState(aP0, aP2); /*0x70bf5c*/

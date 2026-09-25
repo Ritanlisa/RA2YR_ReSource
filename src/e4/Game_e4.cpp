@@ -19,6 +19,8 @@
 #include "e4/classes/Settings_e4.hpp"
 #include "e4/classes/GaugeClass_e4.hpp"
 #include "e4/classes/HashTable_flat_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x430980
@@ -380,7 +382,7 @@ int Game::MakeScreenshot(int a1)
   int v5; // eax
   int v6; // esi
   _DWORD *v7; // eax
-  char v8; // bl
+  void * v8;
   struct tagPOINT Point; // [esp+4h] [ebp-198h] BYREF
   struct tagPOINT v10; // [esp+Ch] [ebp-190h] BYREF
   int v11; // [esp+14h] [ebp-188h]
@@ -438,7 +440,7 @@ int Game::MakeScreenshot(int a1)
           sprintf(Buffer, "SCRN%04d.pcx", ++v6); /*0x537d10*/
           v7 = CCFileClass::Construct(v19, Buffer); /*0x537d27*/
           v8 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v7 + 20))(v7, 0); /*0x537d3b*/
-          v19[0] = &(void*)(void*)&CCFileClass_vftable; /*0x537d3d*/
+          v19[0] = (void*)&CCFileClass_vftable; /*0x537d3d*/
           v21 = 0; /*0x537d48*/
           Vector::Clear((int)v20); /*0x537d4f*/
           v19[0] = &off_7E1668; /*0x537d5b*/
@@ -447,7 +449,7 @@ int Game::MakeScreenshot(int a1)
         while ( v8 ); /*0x537d6d*/
         CCFileClass::Construct(v16, Buffer); /*0x537d7b*/
         CompressScreenshot(v16, (int *)g_DSurface_Hidden, &FileSystem_TEMPERAT_PAL); /*0x537d8f*/
-        v16[0] = (int)&(void*)(void*)&CCFileClass_vftable; /*0x537d9b*/
+        v16[0] = (int)&CCFileClass_vftable; /*0x537d9b*/
         v18 = 0; /*0x537da3*/
         Vector::Clear((int)v17); /*0x537daa*/
         v16[0] = (int)&off_7E1668; /*0x537db3*/
@@ -634,7 +636,7 @@ AbstractClass * * Game::BuildGameSetupPacket()
                                      * (*(_BYTE *)(*(_DWORD *)(g_MultiplayerGameState + 4 * g_GameRulesOptions) + 380)
                                       & 1));
   Stream::WriteBlock((int)&g_EventManager, (int)v11, 250, 1); /*0x5ba91d*/
-  v13[0] = (int)&(void*)(void*)&CCFileClass_vftable; /*0x5ba929*/
+  v13[0] = (int)&CCFileClass_vftable; /*0x5ba929*/
   v15 = 0; /*0x5ba934*/
   Vector::Clear((int)v14); /*0x5ba93f*/
   v13[0] = (int)&off_7E1668; /*0x5ba94b*/
@@ -993,7 +995,7 @@ unsigned int * Game::LockMutex(IUnknown * aP1, IUnknown * aP2)
   this->q008 = aP1; /*0x67c3ae*/
   this->q00C = 1; /*0x67c3b1*/
   *((_BYTE *)this + 13) = 0; /*0x67c3b5*/
-  *this = &(void*)(void*)&VectorClass_SmudgeTypeClass_const___vftable; /*0x67c3b8*/
+  *this = (void*)&VectorClass_SmudgeTypeClass_const___vftable; /*0x67c3b8*/
   if ( aP1 ) /*0x67c3be*/
   {
     if ( aP2 ) /*0x67c3c6*/

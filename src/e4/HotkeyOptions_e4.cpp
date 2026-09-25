@@ -5,6 +5,8 @@
 #include "e4/classes/Vector_e4.hpp"
 #include "e4/classes/HotkeyOptions_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x5FB320
@@ -324,7 +326,7 @@ LABEL_16:
         FileClass::Delete((void *)v79); /*0x5fba2d*/
         KeyboardConfig::LoadINI(); /*0x5fba32*/
         SendMessageA(hWnd, 1127, 0, 0); /*0x5fba41*/
-        v79[0] = (void*)(void*)&CCFileClass_vftable; /*0x5fba4b*/
+        v79[0] = (void*)&CCFileClass_vftable; /*0x5fba4b*/
         int v86 = 0; /*0x5fba53*/
   _BYTE v85[12]; // [esp+74h] [ebp-B8h] BYREF
         Vector::Clear((int)v85); /*0x5fba5e*/
@@ -339,7 +341,7 @@ LABEL_16:
       v79[2] = 0; /*0x5fb90a*/
   _DWORD v80[10]; // [esp+28h] [ebp-104h] BYREF
       GenericList::Constructor(v80); /*0x5fb90e*/
-      v80[0] = (void*)(void*)&List_INIClass_INISection___vftable; /*0x5fb919*/
+      v80[0] = (void*)&List_INIClass_INISection___vftable; /*0x5fb919*/
       memset(&v80[7], 0, 12); /*0x5fb921*/
       char v81 = 0; /*0x5fb92d*/
       int v82 = 0; /*0x5fb932*/

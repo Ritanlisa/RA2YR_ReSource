@@ -13,6 +13,8 @@
 #include "e4/classes/Event_e4.hpp"
 #include "e4/classes/Network_e4.hpp"
 #include "e4/classes/Timer_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x5CA680
@@ -134,7 +136,7 @@ AbstractClass * * MultiplayerSiege::ProcessTurn(char a2)
   _DWORD *v10; // edi
   int *v11; // eax
   _DWORD v13[4]; // [esp+10h] [ebp-28h] BYREF
-  void **v14; // [esp+20h] [ebp-18h] BYREF
+  void* v14;
   void *Block; // [esp+24h] [ebp-14h]
   char v16; // [esp+2Dh] [ebp-Bh]
 
@@ -156,7 +158,7 @@ AbstractClass * * MultiplayerSiege::ProcessTurn(char a2)
   if ( v3 >= Game_PlayerCount ) /*0x5ca84c*/
   {
     v5 = Block; /*0x5ca84e*/
-    v14 = &(void*)(void*)&VectorClass_Cell_vftable; /*0x5ca852*/
+    v14 = (void*)&VectorClass_Cell_vftable; /*0x5ca852*/
     if ( !Block || !v16 ) /*0x5ca868*/
       return 0; /*0x5ca868*/
     goto LABEL_26; /*0x5ca868*/
@@ -165,7 +167,7 @@ AbstractClass * * MultiplayerSiege::ProcessTurn(char a2)
   if ( v6 < 0 || v6 >= HouseClass_Count ) /*0x5ca887*/
   {
     v5 = Block; /*0x5ca980*/
-    v14 = &(void*)(void*)&VectorClass_Cell_vftable; /*0x5ca984*/
+    v14 = (void*)&VectorClass_Cell_vftable; /*0x5ca984*/
     if ( !Block || !v16 ) /*0x5ca996*/
       return 0; /*0x5ca996*/
   LABEL_26:
@@ -176,7 +178,7 @@ AbstractClass * * MultiplayerSiege::ProcessTurn(char a2)
   if ( *(_BYTE *)(v7[13] + 422) ) /*0x5ca899*/
   {
     v5 = Block; /*0x5ca8a3*/
-    v14 = &(void*)(void*)&VectorClass_Cell_vftable; /*0x5ca8a7*/
+    v14 = (void*)&VectorClass_Cell_vftable; /*0x5ca8a7*/
     if ( !Block || !v16 ) /*0x5ca8bd*/
       return 0; /*0x5ca8bd*/
     goto LABEL_26; /*0x5ca8bd*/
@@ -200,7 +202,7 @@ AbstractClass * * MultiplayerSiege::ProcessTurn(char a2)
       HouseClass::SetMapSeed(v10, *v11); /*0x5ca944*/
     }
   }
-  v14 = &(void*)(void*)&VectorClass_Cell_vftable; /*0x5ca957*/
+  v14 = (void*)&VectorClass_Cell_vftable; /*0x5ca957*/
   if ( Block && v16 ) /*0x5ca969*/
     RA2_OPDEL(Block); /*0x5ca96c*/
   return 1; /*0x5ca974*/
@@ -345,7 +347,7 @@ char MultiplayerSiege::GetResult(unsigned int * ppv, int a2)
 namespace gamemd {
 MultiplayerSiege * MultiplayerSiege::QueryInterface(char a2)
 {
-  *this = &(void*)(void*)&MultiplayerSiege_vftable; /*0x5cabd3*/
+  *(void **)this = (void*)&MultiplayerSiege_vftable; /*0x5cabd3*/
   MultiplayerGameMode::Dtor(); /*0x5cabd9*/
   if ( (a2 & 1) != 0 ) /*0x5cabe3*/
     RA2_OPDEL(); /*0x5cabe6*/

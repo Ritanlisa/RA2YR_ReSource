@@ -21,10 +21,10 @@ struct Mouse {
     unsigned int u32_5560;
     unsigned int u32_5568;
     void* vfptr;  // minimal E2 declaration
-    int SetBounds(IUnknown * aP1);  // 0x4A8BF0
-    char SetCursor(ObjectClass * aP1, ObjectClass * aP2);  // 0x5BDC80
+    int SetBounds(void* aP1);  // 0x4A8BF0
+    char SetCursor(ObjectClass * aP1,  ObjectClass * aP2);    // 0x5BDC80
     HWND ReleaseCapture();  // 0x6938C0
-    void DrawCursor(IUnknown * aP1, WWMouseClass * aP2, int a4);  // 0x7B93F0
+    AbstractClass * * DrawCursor(IUnknown * aP1,  WWMouseClass * aP2,  int a4);    // 0x7B93F0
     SHORT GetKeyState();  // 0x53EC90
     BOOL IsButtonDown(unsigned char a1);  // 0x54F5C0
     HWND HideWindow();  // 0x5BC400

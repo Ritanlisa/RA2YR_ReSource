@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+
 #include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_597430_e4.hpp"
 #include "e4/classes/E4Recv_6342E0_e4.hpp"
@@ -40,7 +41,14 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/CellStruct_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/RadioClass_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
+#include "e4/classes/Process_e4.hpp"
+#include "e4/classes/Factory_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/Init_e4.hpp"
+#include "e4/classes/TechnoClass_e4.hpp"
 
 // 0x561180
 namespace gamemd {
@@ -505,9 +513,9 @@ bool Team_Start_76ED10()
   bool v6; // bl
   int v7; // edx
   bool v8; // al
-  void **v9; // [esp+4h] [ebp-4C0h] BYREF
+  void* v9;
   int v10; // [esp+8h] [ebp-4BCh]
-  void **v11; // [esp+Ch] [ebp-4B8h] BYREF
+  void* v11;
   int v12; // [esp+10h] [ebp-4B4h]
   int v13[300]; // [esp+14h] [ebp-4B0h] BYREF
 
@@ -552,10 +560,10 @@ bool Team_Start_76ED10()
     {
       v6 = 0; /*0x76ee77*/
     }
-    v9 = &(void*)(void*)&rc_ptr_WDTTerritory_vftable; /*0x76ee7d*/
+    v9 = (void*)&rc_ptr_WDTTerritory_vftable; /*0x76ee7d*/
     ComPtr::Release(&v9); /*0x76ee85*/
   }
-  v11 = &(void*)(void*)&rc_ptr_WorldDominationTour_Territory_vftable; /*0x76ee8e*/
+  v11 = (void*)&rc_ptr_WorldDominationTour_Territory_vftable; /*0x76ee8e*/
   ComPtr::Release(&v11); /*0x76ee96*/
   SelectionInitializeWOL((int, unsigned int a1, unsigned int a2)v13); /*0x76ee9f*/
   return v6; /*0x76ed22*/
@@ -620,18 +628,18 @@ rc_ptr_base * Team_Create_765F60(rc_ptr_base * a1, int a2)
   {
     v6 = v4 + 2; /*0x765f78*/
     v4[1] = 0; /*0x765f7d*/
-    *v4 = &(void*)(void*)&ReferenceCounted_vftable; /*0x765f84*/
+    *v4 = (void*)&ReferenceCounted_vftable; /*0x765f84*/
     ComPtr::Constructor(v4 + 2); /*0x765f8a*/
-    *v6 = &(void*)(void*)&rc_ptr_WDTTerritory_vftable; /*0x765f8f*/
+    *v6 = (void*)&rc_ptr_WDTTerritory_vftable; /*0x765f8f*/
     ComPtr::Set(v5 + 2, *(_DWORD *)(a2 + 4)); /*0x765f9b*/
-    *v5 = &(void*)(void*)&WorldDominationTour_Conflict_vftable; /*0x765fa0*/
+    *v5 = (void*)&WorldDominationTour_Conflict_vftable; /*0x765fa0*/
   }
   else
   {
     v5 = 0; /*0x765fa9*/
   }
   ComPtr::Constructor(a1); /*0x765fad*/
-  *a1 = &(void*)(void*)&rc_ptr_WorldDominationTour_Conflict_vftable; /*0x765fb4*/
+  *a1 = (void*)&rc_ptr_WorldDominationTour_Conflict_vftable; /*0x765fb4*/
   ComPtr::Set(a1, (int)v5); /*0x765fbc*/
   return a1; /*0x765fc3*/
 }
@@ -651,18 +659,18 @@ rc_ptr_base * Team_Create_767B00(rc_ptr_base * a1, int a2)
   {
     v6 = v4 + 2; /*0x767b18*/
     v4[1] = 0; /*0x767b1d*/
-    *v4 = &(void*)(void*)&ReferenceCounted_vftable; /*0x767b24*/
+    *v4 = (void*)&ReferenceCounted_vftable; /*0x767b24*/
     ComPtr::Constructor(v4 + 2); /*0x767b2a*/
-    *v6 = &(void*)(void*)&rc_ptr_WDTState_vftable; /*0x767b2f*/
+    *v6 = (void*)&rc_ptr_WDTState_vftable; /*0x767b2f*/
     ComPtr::Set(v5 + 2, *(_DWORD *)(a2 + 4)); /*0x767b3b*/
-    *v5 = &(void*)(void*)&WorldDominationTour_History_vftable; /*0x767b40*/
+    *v5 = (void*)&WorldDominationTour_History_vftable; /*0x767b40*/
   }
   else
   {
     v5 = 0; /*0x767b49*/
   }
   ComPtr::Constructor(a1); /*0x767b4d*/
-  *a1 = &(void*)(void*)&rc_ptr_WorldDominationTour_History_vftable; /*0x767b54*/
+  *a1 = (void*)&rc_ptr_WorldDominationTour_History_vftable; /*0x767b54*/
   ComPtr::Set(a1, (int)v5); /*0x767b5c*/
   return a1; /*0x767b63*/
 }

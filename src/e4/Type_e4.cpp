@@ -2,6 +2,8 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Type_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x578540
@@ -11,8 +13,8 @@ int Type::CheckAmbiguity(int a2, char a3)
   int v3; // edx
   int v4; // esi
   int v5; // edi
-  int v6; // eax
-  int v7; // esi
+  void * v6;
+  void * v7;
   bool result; // al
 
   v3 = *(__int16 *)(a2 + 38); /*0x57854a*/

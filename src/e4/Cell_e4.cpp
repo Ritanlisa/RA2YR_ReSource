@@ -14,6 +14,8 @@
 #include "e4/classes/LayerClass_e4.hpp"
 #include "e4/classes/HouseClass_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/CellClass_e4.hpp"
 
 // 0x419B00
@@ -153,7 +155,7 @@ AbstractClass * * Cell::ApplyDamage(IUnknown * aP1, int a3, int a4, IUnknown * a
   int v12; // eax
   float *v13; // esi
   char v14; // [esp+13h] [ebp-19h]
-  void **v15; // [esp+14h] [ebp-18h] BYREF
+  void* v15;
   void *Block; // [esp+18h] [ebp-14h]
   int v17; // [esp+1Ch] [ebp-10h]
   char v18; // [esp+20h] [ebp-Ch]
@@ -194,7 +196,7 @@ AbstractClass * * Cell::ApplyDamage(IUnknown * aP1, int a3, int a4, IUnknown * a
   v17 = 0; /*0x4816ed*/
   v18 = 1; /*0x4816f1*/
   v19 = 0; /*0x4816f5*/
-  v15 = &(void*)(void*)&DynamicVectorClass_ObjectClass___vftable; /*0x4816f9*/
+  v15 = (void*)&DynamicVectorClass_ObjectClass___vftable; /*0x4816f9*/
   v21 = 10; /*0x481701*/
   v20 = 0; /*0x481705*/
   if ( v8 ) /*0x481709*/
@@ -243,7 +245,7 @@ AbstractClass * * Cell::ApplyDamage(IUnknown * aP1, int a3, int a4, IUnknown * a
     }
     while ( v9 < v20 ); /*0x4817e0*/
   }
-  v15 = &(void*)(void*)&VectorClass_ObjectClass___vftable; /*0x4817e9*/
+  v15 = (void*)&VectorClass_ObjectClass___vftable; /*0x4817e9*/
   if ( Block ) /*0x4817f4*/
   {
     if ( v19 ) /*0x4817fc*/
@@ -414,7 +416,7 @@ void Cell::IsShore()
 namespace gamemd {
 int Cell::IsBuildableAdvanced()
 {
-  int v3; // eax
+  void * v3;
   _DWORD *v4; // esi
   _DWORD *v5; // esi
 

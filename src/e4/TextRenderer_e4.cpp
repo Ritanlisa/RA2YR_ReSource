@@ -11,6 +11,8 @@
 #include "e4/classes/ConvertClass_e4.hpp"
 #include "e4/classes/TriggerTypeClass_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/ThemeClass_e4.hpp"
 
 // 0x4A60D0
@@ -114,7 +116,7 @@ int TextRenderer::MeasureBuilding(int a2, ProgressScreenClass * aP2, ProgressScr
   int *Viewport; // eax
   int v15; // kr04_4
   int v16; // eax
-  int Instance; // [esp+4h] [ebp-3Ch]
+  void * Instance;
   int v19; // [esp+8h] [ebp-38h]
   int v20; // [esp+Ch] [ebp-34h]
   int v21; // [esp+18h] [ebp-28h]
@@ -185,8 +187,8 @@ void * TextRenderer::MeasureBuilding2()
   int v6; // edi
   int Default; // eax
   int v8; // esi
-  int Instance; // ebx
-  _WORD *v10; // esi
+  void * Instance;
+  unsigned int v10;
   int v11; // eax
   int v12; // ebx
   int *result; // eax
@@ -253,14 +255,14 @@ unsigned int * TextRenderer::Printf(ConvertClass * aP0, size_t BufferCount, Obje
   {
     vswprintf(Buffer, BufferCount, &aP8, v12); /*0x4a60fc*/
     v9 = (_DWORD *)RenderTextLabel(aP2, aP3, a2, a6, a7, a8, 1); /*0x4a6143*/
-    *aP0 = *v9; /*0x4a614e*/
+    *(_DWORD *)aP0 = *v9; /*0x4a614e*/
     aP0[1] = v9[1]; /*0x4a6153*/
     return aP0; /*0x4a6145*/
   }
   else
   {
     v11 = (_DWORD *)RenderTextLabel(aP2, aP3, a2, a6, a7, a8, 1); /*0x4a619a*/
-    *aP0 = *v11; /*0x4a61a5*/
+    *(_DWORD *)aP0 = *v11; /*0x4a61a5*/
     aP0[1] = v11[1]; /*0x4a61aa*/
     return aP0; /*0x4a619c*/
   }

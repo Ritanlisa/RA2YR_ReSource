@@ -4,6 +4,8 @@
 #include "e4/classes/MapFile_e4.hpp"
 #include "e4/classes/MapClass_e4.hpp"
 #include "e4/classes/Math_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x69D520
@@ -18,7 +20,7 @@ DynamicVector * MapFile::QueryInterface(char a2)
   int v8; // ebp
 
   v3 = this->q004; /*0x69d523*/
-  *this = &(void*)(void*)&VectorClass_Wstring_vftable; /*0x69d526*/
+  *(void **)this = (void*)&VectorClass_Wstring_vftable; /*0x69d526*/
   if ( v3 && this->IsAllocated ) /*0x69d530*/
   {
     v4 = *(_DWORD *)(v3 - 4); /*0x69d53b*/
@@ -53,7 +55,7 @@ unsigned int * MapFile::Constructor(int a2, int a3)
   this->q008 = a2; /*0x69d77e*/
   this->q00C = 1; /*0x69d781*/
   this->IsAllocated = 0; /*0x69d785*/
-  *this = &(void*)(void*)&VectorClass_enum_DiskID_vftable; /*0x69d788*/
+  *(void **)this = (void*)&VectorClass_enum_DiskID_vftable; /*0x69d788*/
   if ( a2 ) /*0x69d78e*/
   {
     if ( a3 ) /*0x69d796*/

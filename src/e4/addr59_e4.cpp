@@ -23,6 +23,8 @@
 #include "e4/classes/SuperWeaponTypeClass_e4.hpp"
 #include "e4/classes/VectorClass_flat_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x5904B0
@@ -233,7 +235,7 @@ void FloodFillRandomMapTerrain(int a1, IUnknown * a2, int a3)
   v29 = v6; /*0x59445a*/
   VectorClass::CellConstructor(&v32, 0, 0); /*0x59445e*/
   v7 = *(__int16 *)(a1 + 36) + g_MapCellWidth * *(__int16 *)(a1 + 38); /*0x594478*/
-  v32 = &(void*)(void*)&DynamicVectorClass_Cell_vftable; /*0x59447a*/
+  v32 = (void*)&DynamicVectorClass_Cell_vftable; /*0x59447a*/
   v36 = 0; /*0x594482*/
   v37 = 20000; /*0x59448d*/
   *((_DWORD *)g_MapTileArray + 20 * v7 + 15) = v6; /*0x594498*/
@@ -324,7 +326,7 @@ void FloodFillRandomMapTerrain(int a1, IUnknown * a2, int a3)
       v6 = v29; /*0x5944f8*/
     }
   }
-  v32 = &(void*)(void*)&VectorClass_Cell_vftable; /*0x5946d2*/
+  v32 = (void*)&VectorClass_Cell_vftable; /*0x5946d2*/
   if ( Block ) /*0x5946dd*/
   {
     if ( v35 ) /*0x5946e5*/
@@ -342,7 +344,7 @@ ObjectClass * * RandomMap_DistributeTerrain()
   int v3; // ebp
   int i; // esi
   int v6; // edi
-  _DWORD *v7; // eax
+  unsigned int v7;
   _DWORD *v8; // ecx
   void *v9; // esi
   int j; // edi
@@ -369,7 +371,7 @@ ObjectClass * * RandomMap_DistributeTerrain()
   signed int NumOfElements; // [esp+28h] [ebp-3Ch]
   char v34; // [esp+30h] [ebp-34h]
   _DWORD v35[5]; // [esp+38h] [ebp-2Ch]
-  void **v36; // [esp+4Ch] [ebp-18h] BYREF
+  void* v36;
   void *Block; // [esp+50h] [ebp-14h]
   int v38; // [esp+54h] [ebp-10h]
   char v39; // [esp+59h] [ebp-Bh]
@@ -510,7 +512,7 @@ ObjectClass * * RandomMap_DistributeTerrain()
   }
   ComputeMapCameraBounds(); /*0x594ee3*/
   RA2_OPDEL(0); /*0x594eed*/
-  v36 = &(void*)(void*)&VectorClass_MapRegionClass___vftable; /*0x594efb*/
+  v36 = (void*)&VectorClass_MapRegionClass___vftable; /*0x594efb*/
   if ( Block && v39 ) /*0x594f25*/
     RA2_OPDEL(Block); /*0x594f28*/
   return 1; /*0x594f03*/
@@ -522,8 +524,8 @@ AbstractTypeClass * * CleanupRandomMapCache()
 {
   struct _WIN32_FIND_DATAA *i; // esi
   HANDLE FirstFileA; // edi
-  int v2; // eax
-  int v3; // eax
+  _WIN32_FIND_DATAA * v2;
+  _WIN32_FIND_DATAA * v3;
   int v4; // eax
   int v5; // edi
   int v6; // esi
@@ -534,7 +536,7 @@ AbstractTypeClass * * CleanupRandomMapCache()
   bool v11; // zf
   int v12; // eax
   FILETIME FileTime2; // [esp+10h] [ebp-20h] BYREF
-  void **v14; // [esp+18h] [ebp-18h] BYREF
+  void* v14;
   void *Block; // [esp+1Ch] [ebp-14h]
   int v16; // [esp+20h] [ebp-10h]
   char v17; // [esp+25h] [ebp-Bh]
@@ -542,7 +544,7 @@ AbstractTypeClass * * CleanupRandomMapCache()
   int v19; // [esp+2Ch] [ebp-4h]
 
   Map_Cleanup(0, 0); /*0x595cef*/
-  v14 = &(void*)(void*)&DynamicVectorClass__WIN32_FIND_DATAA___vftable; /*0x595cf4*/
+  v14 = (void*)&DynamicVectorClass__WIN32_FIND_DATAA___vftable; /*0x595cf4*/
   v19 = 10; /*0x595cfc*/
   j = 0; /*0x595d09*/
   i = (struct _WIN32_FIND_DATAA *)RA2_OPNEW(0x140u); /*0x595d19*/
@@ -675,7 +677,7 @@ AbstractTypeClass * * CleanupRandomMapCache()
     }
     while ( !v11 ); /*0x595f85*/
   }
-  v14 = &(void*)(void*)&VectorClass__WIN32_FIND_DATAA___vftable; /*0x595f89*/
+  v14 = (void*)&VectorClass__WIN32_FIND_DATAA___vftable; /*0x595f89*/
   if ( v7 ) /*0x595f91*/
   {
     if ( v17 ) /*0x595f99*/
@@ -707,12 +709,12 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)() a2)
   struct _WIN32_FIND_DATAA FindFileData; // [esp+130h] [ebp-140h] BYREF
 
   ComPtr::Constructor(v15); /*0x595fc2*/
-  v15[0] = &(void*)(void*)&rc_ptr_WDTTerritory_vftable; /*0x595fd8*/
+  v15[0] = (void*)&rc_ptr_WDTTerritory_vftable; /*0x595fd8*/
   if ( g_GameMode_Current[0] == 4 && g_GameOptionsFlags == 3 ) /*0x595fe5*/
   {
     v4 = FindWDTTerritoryClass(v16, *(int *)g_GameDifficulty); /*0x595ff1*/
     ComPtr::Set(v15, v4[1]); /*0x595ffe*/
-    v16[0] = &(void*)(void*)&rc_ptr_WDTTerritory_vftable; /*0x596007*/
+    v16[0] = (void*)&rc_ptr_WDTTerritory_vftable; /*0x596007*/
     ComPtr::Release(v16); /*0x59600b*/
   }
   if ( v15[1] ) /*0x596016*/
@@ -805,12 +807,12 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)() a2)
     dword_ABE150 = 0; /*0x5962b2*/
   }
   LABEL_39:
-  v18[0] = &(void*)(void*)&CCFileClass_vftable; /*0x5962b8*/
+  v18[0] = (void*)&CCFileClass_vftable; /*0x5962b8*/
   v20 = 0; /*0x5962c7*/
   Vector::Clear((int)v19); /*0x5962ce*/
   v18[0] = &off_7E1668; /*0x5962d7*/
   BufferIOFileClass::Dtor(v18); /*0x5962df*/
-  v15[0] = &(void*)(void*)&rc_ptr_WDTTerritory_vftable; /*0x5962e8*/
+  v15[0] = (void*)&rc_ptr_WDTTerritory_vftable; /*0x5962e8*/
   return ComPtr::Release(v15); /*0x5962f5*/
 }
 }
@@ -911,12 +913,12 @@ AbstractClass * * ArrangeBuildingPlacementGrid(int a1, int a2, MapResourceClass 
   v34 = aP2[1]; /*0x59a9df*/
   v33 = *aP2; /*0x59a9e9*/
   VectorClass::Construct(&v43, 0, 0); /*0x59a9ed*/
-  v43 = &(void*)(void*)&DynamicVectorClass_int_vftable; /*0x59a9f8*/
+  v43 = (void*)&DynamicVectorClass_int_vftable; /*0x59a9f8*/
   v48 = 10; /*0x59aa00*/
   v47 = 0; /*0x59aa0b*/
   VectorClass::Construct(&v37, 0, 0); /*0x59aa12*/
   v10 = 0; /*0x59aa1b*/
-  v37 = &(void*)(void*)&DynamicVectorClass_int_vftable; /*0x59aa1f*/
+  v37 = (void*)&DynamicVectorClass_int_vftable; /*0x59aa1f*/
   v42 = 10; /*0x59aa27*/
   i = 0; /*0x59aa2f*/
   if ( v23 > 0 ) /*0x59aa33*/
@@ -1020,13 +1022,13 @@ AbstractClass * * ArrangeBuildingPlacementGrid(int a1, int a2, MapResourceClass 
       v33 = *v7; /*0x59ac8f*/
     ++v16; /*0x59aca0*/
   }
-  v37 = &(void*)(void*)&VectorClass_int_vftable; /*0x59acb8*/
+  v37 = (void*)&VectorClass_int_vftable; /*0x59acb8*/
   if ( Block && IDA_BYTE1(v40) ) /*0x59acc4*/
   {
     RA2_OPDEL(Block); /*0x59acc7*/
     Block = 0; /*0x59accf*/
   }
-  v43 = &(void*)(void*)&VectorClass_int_vftable; /*0x59acdb*/
+  v43 = (void*)&VectorClass_int_vftable; /*0x59acdb*/
   IDA_BYTE1(v40) = 0; /*0x59ace2*/
   v39 = 0; /*0x59ace9*/
   if ( v44 ) /*0x59acf2*/

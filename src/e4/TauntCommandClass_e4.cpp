@@ -5,14 +5,19 @@
 #include "e4/classes/HouseClass_e4.hpp"
 #include "e4/classes/INIClass_e4.hpp"
 #include "e4/classes/TagClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/MouseClass_e4.hpp"
+#include "e4/classes/TaskForceClass_e4.hpp"
+#include "e4/classes/Power_e4.hpp"
 
 // 0x536290
 namespace gamemd {
 unsigned int * TauntCommandClass::Construct(int a2)
 {
   this->TauntCommandClass_field_00 = a2; /*0x536296*/
-  *this = &(void*)(void*)&TauntCommandClass_vftable; /*0x536299*/
+  *(void **)this = (void*)&TauntCommandClass_vftable; /*0x536299*/
   return this; /*0x53629f*/
 }
 } // namespace gamemd

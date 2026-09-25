@@ -14,7 +14,10 @@
 #include "e4/classes/Math_e4.hpp"
 #include "e4/classes/MouseClass_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/TechnoClass_e4.hpp"
 
 // 0x533D20
 namespace gamemd {
@@ -81,7 +84,7 @@ int KeyboardConfig::LoadINI()
   LABEL_14:
       ++i; /*0x533e98*/
     }
-    v10[0] = &(void*)(void*)&CCFileClass_vftable; /*0x533ec0*/
+    v10[0] = (void*)&CCFileClass_vftable; /*0x533ec0*/
     v12 = 0; /*0x533ec8*/
     Vector::Clear((int)v11); /*0x533ecf*/
     v10[0] = &off_7E1668; /*0x533ed8*/
@@ -92,7 +95,7 @@ int KeyboardConfig::LoadINI()
   else
   {
     Debug::Log(); /*0x533efe*/
-    v10[0] = &(void*)(void*)&CCFileClass_vftable; /*0x533f0d*/
+    v10[0] = (void*)&CCFileClass_vftable; /*0x533f0d*/
     v12 = 0; /*0x533f15*/
     Vector::Clear((int)v11); /*0x533f1c*/
     v10[0] = &off_7E1668; /*0x533f25*/
@@ -110,7 +113,7 @@ AbstractClass * * KeyboardConfig::ReleaseBuffer(int a2)
   int i; // ecx
   int v5; // eax
   _DWORD *v6; // edx
-  int v7; // eax
+  char * v7;
 
   if ( a2 < 0 ) /*0x538b8c*/
     return 0; /*0x538b8c*/

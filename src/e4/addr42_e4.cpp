@@ -40,6 +40,8 @@
 #include "e4/classes/E4Recv_431BC0_e4.hpp"
 #include "e4/classes/MixFileClass_e4.hpp"
 #include "e4/classes/StreamClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x420140
@@ -51,11 +53,11 @@ unsigned int * CreateFractalNoise(CCINIClass * aP0)
   _DWORD *v3; // eax
   _DWORD *v4; // ebp
   int v5; // esi
-  int v6; // edi
+  CCINIClass * v6;
   _WORD *v7; // ebx
   int v8; // edx
   __int16 v9; // cx
-  int v11; // eax
+  _DWORD * v11;
 
   v1 = 0; /*0x420149*/
   if ( dword_88A090 <= 0 ) /*0x420152*/
@@ -143,7 +145,7 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
   int v23; // ecx
   int SubFile; // esi
   _WORD *v25; // eax
-  _DWORD *v26; // edx
+  unsigned int v26;
   unsigned __int8 *v27; // esi
   char *v28; // ebp
   int v29; // ecx
@@ -182,7 +184,7 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
   int v62; // [esp+68h] [ebp-68h] BYREF
   int v63; // [esp+6Ch] [ebp-64h]
   int v64; // [esp+70h] [ebp-60h]
-  int v65; // [esp+74h] [ebp-5Ch]
+  unsigned int v65;
   int v66; // [esp+7Ch] [ebp-54h]
   int v67; // [esp+84h] [ebp-4Ch]
   int v68[4]; // [esp+88h] [ebp-48h] BYREF
@@ -1421,7 +1423,7 @@ AbstractClass * * E4Recv_42A900::sub_42A900()
   {
     v11 = *(void **)(v9 - 20); /*0x42aa0f*/
     v9 -= 24; /*0x42aa12*/
-    *(_DWORD *)v9 = &(void*)(void*)&VectorClass_unsigned_int_vftable; /*0x42aa17*/
+    *(_DWORD *)v9 = (void*)&VectorClass_unsigned_int_vftable; /*0x42aa17*/
     if ( v11 ) /*0x42aa1d*/
     {
       if ( this->u32_C9 ) /*0x42aa1f*/
@@ -2256,7 +2258,7 @@ AbstractClass * * E4Recv_42CCD0::sub_42CCD0(int a2)
   {
     v5 = *(_WORD *)(v20 + 2 * v3); /*0x42cd12*/
     WordVector::Constructor(&v22, 0, 0); /*0x42cd16*/
-    v22 = &(void*)(void*)&DynamicVectorClass_unsigned_short_vftable; /*0x42cd1f*/
+    v22 = (void*)&DynamicVectorClass_unsigned_short_vftable; /*0x42cd1f*/
     v27 = 10; /*0x42cd29*/
     v26 = 0; /*0x42cd31*/
     if ( Block && v25 ) /*0x42cd41*/
@@ -2273,7 +2275,7 @@ AbstractClass * * E4Recv_42CCD0::sub_42CCD0(int a2)
       v8 = CellToTileIndexMap((int *)&MapClass_Instance, v6); /*0x42cd8f*/
       sub_42CF80(*(unsigned __int16 *)(dword_87F858 + 10 * v8 + 2 * v3), v3); /*0x42cdac*/
       v9 = Block; /*0x42cdb1*/
-      v22 = &(void*)(void*)&VectorClass_unsigned_short_vftable; /*0x42cdb9*/
+      v22 = (void*)&VectorClass_unsigned_short_vftable; /*0x42cdb9*/
       if ( Block && v25 ) /*0x42cdcd*/
         goto LABEL_25; /*0x42cdcd*/
     }
@@ -2313,7 +2315,7 @@ AbstractClass * * E4Recv_42CCD0::sub_42CCD0(int a2)
         }
       }
       v9 = Block; /*0x42ce5c*/
-      v22 = &(void*)(void*)&VectorClass_unsigned_short_vftable; /*0x42ce64*/
+      v22 = (void*)&VectorClass_unsigned_short_vftable; /*0x42ce64*/
       if ( Block && v25 ) /*0x42ce74*/
       {
   LABEL_25:
@@ -2737,7 +2739,7 @@ int sub_420080()
   dword_88A088 = 0; /*0x42008c*/
   byte_88A08C = 1; /*0x420091*/
   byte_88A08D = 0; /*0x420098*/
-  dword_88A080 = (int)&(void*)(void*)&DynamicVectorClass_AlphaLightingRemapClass___vftable; /*0x42009d*/
+  dword_88A080 = (int)&DynamicVectorClass_AlphaLightingRemapClass___vftable; /*0x42009d*/
   dword_88A094 = 10; /*0x4200a7*/
   dword_88A090 = 0; /*0x4200b1*/
   return atexit(sub_4200C0); /*0x4200bc*/
@@ -2750,7 +2752,7 @@ void sub_4200C0()
 {
   if ( (byte_88A098 & 1) == 0 ) /*0x4200ca*/
   {
-    dword_88A080 = (int)&(void*)(void*)&VectorClass_AlphaLightingRemapClass___vftable; /*0x4200ce*/
+    dword_88A080 = (int)&VectorClass_AlphaLightingRemapClass___vftable; /*0x4200ce*/
     byte_88A098 |= 1u; /*0x4200e1*/
     if ( dword_88A084 ) /*0x4200e7*/
     {
@@ -2975,7 +2977,7 @@ int sub_4208E0()
 namespace gamemd {
 void sub_420920()
 {
-  dword_88A0F0 = (int)&(void*)(void*)&VectorClass_AlphaShapeClass___vftable; /*0x420928*/
+  dword_88A0F0 = (int)&VectorClass_AlphaShapeClass___vftable; /*0x420928*/
   if ( dword_88A0F4 && byte_88A0FD ) /*0x42093c*/
   {
     RA2_OPDEL(dword_88A0F4); /*0x42093f*/
@@ -3158,7 +3160,7 @@ void E4Recv_4266D0::sub_4266D0()
   void (__thiscall ***v3)(_DWORD, int); // ecx
 
   v2 = *((_BYTE *)this + 137); /*0x4266d6*/
-  *(_DWORD *)this = &(void*)(void*)&AnimFile_vftable; /*0x4266dc*/
+  *(_DWORD *)this = (void*)&AnimFile_vftable; /*0x4266dc*/
   if ( v2 ) /*0x4266e4*/
   {
     (*(void (__thiscall **)(_DWORD))(**((_DWORD **)&this->q00C3) + 52))(this->q084); /*0x4266ee*/
@@ -3177,7 +3179,7 @@ void E4Recv_4266D0::sub_4266D0()
     this->qE10 = 0; /*0x426726*/
   }
   this->u32_88 = 0; /*0x42672c*/
-  *(_DWORD *)this = &(void*)(void*)&Animate_vftable; /*0x426732*/
+  *(_DWORD *)this = (void*)&Animate_vftable; /*0x426732*/
 }
 } // namespace gamemd
 

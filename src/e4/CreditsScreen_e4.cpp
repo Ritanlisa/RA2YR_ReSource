@@ -7,6 +7,8 @@
 #include "e4/classes/Tactical_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/CreateTeamCommand_e4.hpp"
 
 // 0x531A00
@@ -20,7 +22,7 @@ INIClass * * CreditsScreen::DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned
   char *ModuleVersion; // eax
   char *ModuleInternalVersion; // eax
   const char *v10; // eax
-  const char *v11; // eax
+  const unsigned int v11;
   const char *v12; // [esp-8h] [ebp-29Ch]
   char v13; // [esp+Fh] [ebp-285h] BYREF
   int v14; // [esp+10h] [ebp-284h] BYREF
@@ -78,6 +80,6 @@ INIClass * * CreditsScreen::DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned
 namespace gamemd {
 void CreditsScreen::Init()
 {
-  *this = 0; /*0x4a3c00*/
+  *(_DWORD *)this = 0; /*0x4a3c00*/
 }
 } // namespace gamemd

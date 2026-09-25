@@ -6,7 +6,10 @@
 #include "e4/classes/TubeClass_e4.hpp"
 #include "e4/classes/House_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/BuildingClass_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
+#include "e4/classes/Init_e4.hpp"
 
 // 0x517070
 namespace gamemd {
@@ -30,11 +33,11 @@ int HoverLocomotionClass::BeginMove(int a1, int * a2)
   v2 = SwizzleManager::SaveLoad((int *)a1, a2); /*0x5170c1*/
   if ( v2 >= 0 && a1 ) /*0x5170c9*/
   {
-    *(_DWORD *)a1 = &(void*)(void*)&LocomotionClass_vftable; /*0x5170ce*/
-    *(_DWORD *)(a1 + 4) = &(void*)(void*)&LocomotionClass_vftable; /*0x5170d4*/
+    *(void **)a1 = (void*)&LocomotionClass_vftable; /*0x5170ce*/
+    *(_DWORD *)(a1 + 4) = (void*)&LocomotionClass_vftable; /*0x5170d4*/
     FrameSnapshot::Init((_WORD *)(a1 + 48)); /*0x5170db*/
-    *(_DWORD *)a1 = &(void*)(void*)&HoverLocomotionClass_vftable; /*0x5170e0*/
-    *(_DWORD *)(a1 + 4) = &(void*)(void*)&HoverLocomotionClass_vftable; /*0x5170e6*/
+    *(void **)a1 = (void*)&HoverLocomotionClass_vftable; /*0x5170e0*/
+    *(_DWORD *)(a1 + 4) = (void*)&HoverLocomotionClass_vftable; /*0x5170e6*/
   }
   return v2; /*0x5170ef*/
 }
@@ -50,8 +53,8 @@ int HoverLocomotionClass::StubReturn120()
 namespace gamemd {
 HoverLocomotionClass * HoverLocomotionClass::ProcessMove(char a2)
 {
-  *this = &(void*)(void*)&HoverLocomotionClass_vftable; /*0x5172c3*/
-  this->vtable2 = &(void*)(void*)&HoverLocomotionClass_vftable; /*0x5172c9*/
+  *(void **)this = (void*)&HoverLocomotionClass_vftable; /*0x5172c3*/
+  this->vtable2 = (void*)&HoverLocomotionClass_vftable; /*0x5172c9*/
   LocomotionClass::Construct(); /*0x5172d0*/
   if ( (a2 & 1) != 0 ) /*0x5172da*/
     RA2_OPDEL(); /*0x5172dd*/

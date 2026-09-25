@@ -8,13 +8,15 @@
 #include "e4/classes/CellStruct_e4.hpp"
 #include "e4/classes/Color_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x466380
 namespace gamemd {
 BulletClass::BulletClass()
 {
-  int v2; // eax
+  BulletClass * v2;
 
   ObjectClass::ctor(); /*0x466384*/
   this->q0AC = 0; /*0x466391*/
@@ -40,10 +42,10 @@ BulletClass::BulletClass()
   this->u16_14E = -1; /*0x46640e*/
   this->q154 = 0; /*0x466419*/
   this->q158 = 0; /*0x46641f*/
-  *(_DWORD *)this = &(void*)(void*)&BulletClass_vftable; /*0x466425*/
-  this->vtable2 = &(void*)(void*)&BulletClass_vftable; /*0x46642b*/
-  this->vtable3 = &(void*)(void*)&BulletClass_vftable; /*0x466431*/
-  this->vtable4 = &(void*)(void*)&BulletClass_vftable; /*0x466438*/
+  *(void **)this = (void*)&BulletClass_vftable; /*0x466425*/
+  this->vtable2 = (void*)&BulletClass_vftable; /*0x46642b*/
+  this->vtable3 = (void*)&BulletClass_vftable; /*0x466431*/
+  this->vtable4 = (void*)&BulletClass_vftable; /*0x466438*/
   this->vtable2.GenerateUniqueID(); /*0x46643f*/
   this->q134 = 0; /*0x466444*/
   this->TargetCoords = 0; /*0x46644a*/
@@ -73,10 +75,10 @@ BulletClass * * BulletClass::Dtor()
   int v3; // eax
   void *this; // [esp+4h] [ebp-4h] BYREF
 
-  *(_DWORD *)this = &(void*)(void*)&BulletClass_vftable; /*0x466566*/
-  this->vtable2 = &(void*)(void*)&BulletClass_vftable; /*0x46656c*/
-  this->vtable3 = &(void*)(void*)&BulletClass_vftable; /*0x466573*/
-  this->vtable4 = &(void*)(void*)&BulletClass_vftable; /*0x46657a*/
+  *(void **)this = (void*)&BulletClass_vftable; /*0x466566*/
+  this->vtable2 = (void*)&BulletClass_vftable; /*0x46656c*/
+  this->vtable3 = (void*)&BulletClass_vftable; /*0x466573*/
+  this->vtable4 = (void*)&BulletClass_vftable; /*0x46657a*/
   AbstractClass::AnnounceExpiredPointer(1); /*0x466581*/
   if ( this->q158 ) /*0x466586*/
   {

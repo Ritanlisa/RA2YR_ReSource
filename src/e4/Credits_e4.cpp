@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Vector_e4.hpp"
 #include "e4/classes/Credits_e4.hpp"
@@ -10,6 +11,8 @@
 #include "e4/classes/INIClass_e4.hpp"
 #include "e4/classes/Multiplayer_e4.hpp"
 #include "e4/classes/MultiplayerGameMode_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x52CB90
@@ -53,7 +56,7 @@ char Credits::Screen()
         v2[1] = 0; /*0x52cc0e*/
         v2[2] = 0; /*0x52cc13*/
         GenericList::Constructor(v2 + 3); /*0x52cc16*/
-        *v4 = &(void*)(void*)&List_INIClass_INISection___vftable; /*0x52cc1b*/
+        *(void **)v4 = (void*)&List_INIClass_INISection___vftable; /*0x52cc1b*/
         v3[10] = 0; /*0x52cc21*/
         v3[11] = 0; /*0x52cc24*/
         v3[12] = 0; /*0x52cc27*/
@@ -73,7 +76,7 @@ char Credits::Screen()
       CampaignClass::LoadFromINIList(v3); /*0x52cc67*/
       if ( v3 ) /*0x52cc6e*/
         (*(void (__thiscall **)(_DWORD *, int))*v3)(v3, 1); /*0x52cc76*/
-      v11[0] = &(void*)(void*)&CCFileClass_vftable; /*0x52cc7c*/
+      v11[0] = (void*)&CCFileClass_vftable; /*0x52cc7c*/
       v13 = 0; /*0x52cc84*/
       Vector::Clear(v12); /*0x52cc88*/
       v11[0] = &off_7E1668; /*0x52cc91*/
@@ -96,7 +99,7 @@ char Credits::Screen()
       v6[1] = 0; /*0x52ccee*/
       v6[2] = 0; /*0x52ccf3*/
       GenericList::Constructor(v6 + 3); /*0x52ccf6*/
-      *v8 = &(void*)(void*)&List_INIClass_INISection___vftable; /*0x52ccff*/
+      *(void **)v8 = (void*)&List_INIClass_INISection___vftable; /*0x52ccff*/
       v7[10] = 0; /*0x52cd08*/
       v7[11] = 0; /*0x52cd0b*/
       v7[12] = 0; /*0x52cd0e*/
@@ -109,7 +112,7 @@ char Credits::Screen()
       CampaignClass::LoadFromINIList(v7); /*0x52cd2c*/
       (*(void (__thiscall **)(_DWORD *, int))*v7)(v7, 1); /*0x52cd37*/
     }
-    v11[0] = &(void*)(void*)&CCFileClass_vftable; /*0x52cd3d*/
+    v11[0] = (void*)&CCFileClass_vftable; /*0x52cd3d*/
     v13 = 0; /*0x52cd45*/
     Vector::Clear(v12); /*0x52cd49*/
     v11[0] = &off_7E1668; /*0x52cd52*/

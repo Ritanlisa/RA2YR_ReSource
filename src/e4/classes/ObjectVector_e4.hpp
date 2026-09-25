@@ -35,7 +35,7 @@ struct ObjectVector {
     unsigned char q078;  // 0x78
     unsigned char q080;  // 0x80
 // --- flat members (END) ---
-    unsigned int * Construct(IUnknown * aP1, IUnknown * aP2);
+    unsigned int * Construct(void* aP1, void* aP2);
 };
 
 } // namespace gamemd

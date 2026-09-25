@@ -9,7 +9,10 @@
 #include "e4/classes/Timer_e4.hpp"
 #include "e4/classes/DynamicVector_e4.hpp"
 #include "e4/classes/Init_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x6CF5A0
 namespace gamemd {
@@ -391,7 +394,7 @@ VectorClass_flat * SwizzleManagerClass_19::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x6cf853*/
-  *this = &(void*)(void*)&VectorClass_SwizzlePointerClass_vftable; /*0x6cf856*/
+  *(void **)this = (void*)&VectorClass_SwizzlePointerClass_vftable; /*0x6cf856*/
   if ( v3 && this->IsAllocated ) /*0x6cf860*/
   {
     RA2_OPDEL(v3); /*0x6cf868*/
@@ -412,7 +415,7 @@ DynamicVector * SwizzleManagerClass_19::Constructor_VectorClass_SwizzlePointerCl
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x6cf8a3*/
-  *this = &(void*)(void*)&VectorClass_SwizzlePointerClass_vftable; /*0x6cf8a6*/
+  *(void **)this = (void*)&VectorClass_SwizzlePointerClass_vftable; /*0x6cf8a6*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x6cf8b0*/
   {
     RA2_OPDEL(v3); /*0x6cf8b8*/

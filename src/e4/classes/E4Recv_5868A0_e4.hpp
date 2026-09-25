@@ -6,6 +6,6 @@
 namespace gamemd {
 struct E4Recv_5868A0 {
     void* vfptr;  // minimal E2 declaration
-    void UpdateAreaConnectivityMap(IUnknown * aP1);  // 0x5868A0
+    void UpdateAreaConnectivityMap(void* aP1);  // 0x5868A0
 };
 } // namespace gamemd

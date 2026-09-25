@@ -10,6 +10,8 @@
 #include "e4/classes/Math_e4.hpp"
 #include "e4/classes/FoggedObjectClass_e4.hpp"
 #include "e4/classes/HouseClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x4D1650
@@ -17,7 +19,7 @@ namespace gamemd {
 void* DestructFoggedObjectClass(FoggedObjectClass * aP0)
 {
   int v2; // eax
-  int v3; // kr00_4
+  void * v3;
   int v4; // esi
   int v5; // eax
   int v6; // eax
@@ -32,10 +34,10 @@ void* DestructFoggedObjectClass(FoggedObjectClass * aP0)
   __int16 v16[4]; // [esp+10h] [ebp-Ch] BYREF
   int v17; // [esp+18h] [ebp-4h] BYREF
 
-  *(_DWORD *)aP0 = &(void*)(void*)&FoggedObjectClass_vftable; /*0x4d1663*/
-  aP0->vtable2 = &(void*)(void*)&FoggedObjectClass_vftable; /*0x4d1669*/
-  aP0->vtable3 = &(void*)(void*)&FoggedObjectClass_vftable; /*0x4d1670*/
-  aP0->vtable4 = &(void*)(void*)&FoggedObjectClass_vftable; /*0x4d1677*/
+  *(void **)aP0 = (void*)&FoggedObjectClass_vftable; /*0x4d1663*/
+  aP0->vtable2 = (void*)&FoggedObjectClass_vftable; /*0x4d1669*/
+  aP0->vtable3 = (void*)&FoggedObjectClass_vftable; /*0x4d1670*/
+  aP0->vtable4 = (void*)&FoggedObjectClass_vftable; /*0x4d1677*/
   *(_DWORD *)v16 = aP0; /*0x4d1684*/
   v2 = (*(int (__thiscall **)(int *, __int16 *))(dword_8B3D10 + 16))(&dword_8B3D10, v16); /*0x4d1688*/
   if ( v2 != -1 && v2 < g_FootClassConfig && v2 < --g_FootClassConfig ) /*0x4d16a3*/
@@ -108,7 +110,7 @@ void* DestructFoggedObjectClass(FoggedObjectClass * aP0)
       aP0->q04C,
       0);
   v14 = aP0->q060; /*0x4d1852*/
-  aP0->q05C = &(void*)(void*)&VectorClass_FoggedObjectClass_DrawRecord_vftable; /*0x4d1855*/
+  aP0->q05C = (void*)&VectorClass_FoggedObjectClass_DrawRecord_vftable; /*0x4d1855*/
   if ( v14 && aP0->u8_69 ) /*0x4d1860*/
   {
     RA2_OPDEL(v14); /*0x4d1866*/
@@ -425,7 +427,7 @@ int sub_4D0750()
   dword_8B3D18 = 0; /*0x4d075c*/
   byte_8B3D1C = 1; /*0x4d0761*/
   byte_8B3D1D = 0; /*0x4d0768*/
-  dword_8B3D10 = (int)&(void*)(void*)&DynamicVectorClass_FoggedObjectClass___vftable; /*0x4d076d*/
+  dword_8B3D10 = (int)&DynamicVectorClass_FoggedObjectClass___vftable; /*0x4d076d*/
   dword_8B3D24 = 10; /*0x4d0777*/
   g_FootClassConfig = 0; /*0x4d0781*/
   return atexit(sub_4D0790); /*0x4d078c*/
@@ -438,7 +440,7 @@ void sub_4D0790()
 {
   if ( (byte_8B3CD5 & 1) == 0 ) /*0x4d079a*/
   {
-    dword_8B3D10 = (int)&(void*)(void*)&VectorClass_FoggedObjectClass___vftable; /*0x4d079e*/
+    dword_8B3D10 = (int)&VectorClass_FoggedObjectClass___vftable; /*0x4d079e*/
     byte_8B3CD5 |= 1u; /*0x4d07b1*/
     if ( dword_8B3D14 ) /*0x4d07b7*/
     {
@@ -639,7 +641,7 @@ int sub_4D3160()
 namespace gamemd {
 void sub_4D31A0()
 {
-  FootClass_Array = (int)&(void*)(void*)&VectorClass_FootClass___vftable; /*0x4d31a8*/
+  FootClass_Array = (int)&VectorClass_FootClass___vftable; /*0x4d31a8*/
   if ( dword_8B3DC4 && byte_8B3DCD ) /*0x4d31bc*/
   {
     RA2_OPDEL(dword_8B3DC4); /*0x4d31bf*/

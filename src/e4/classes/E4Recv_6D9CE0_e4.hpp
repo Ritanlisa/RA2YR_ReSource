@@ -19,6 +19,6 @@ struct E4Recv_6D9CE0 {
     unsigned int q2304;  // 0x2304
     unsigned int q3504;  // 0x3504
 // --- flat members (END) ---
-    int FindBuildingsInScreenRect(int a2, int a3, int a4, int a5);  // 0x6D9CE0
+    int FindBuildingsInScreenRect(int a2,  int a3,  int a4,  int a5);    // 0x6D9CE0
 };
 } // namespace gamemd

@@ -9,6 +9,8 @@
 #include "e4/classes/Vector_e4.hpp"
 #include "e4/classes/Buffer_e4.hpp"
 #include "e4/classes/TacticalClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x624760
@@ -380,7 +382,7 @@ int HashTable_flat::FindString(char * Str1, IUnknown * aP2)
     if ( !v3 ) /*0x625f82*/
       return 0; /*0x625f82*/
   }
-  *aP2 = **(_DWORD **)(v3 + 8); /*0x625f9f*/
+  *(_DWORD *)aP2 = **(_DWORD **)(v3 + 8); /*0x625f9f*/
   return v3 != 0; /*0x625f86*/
 }
 } // namespace gamemd
@@ -404,7 +406,7 @@ int HashTable_flat::FindChunk(char * Str1, void * a2, CCINIClass * aP3)
   if ( *(unsigned __int16 *)(v4 + 6) < (int)*aP3 ) /*0x625ff2*/
     v6 = *(unsigned __int16 *)(v4 + 6); /*0x625ff4*/
   qmemcpy(a2, *(const void **)(v4 + 8), v6); /*0x626003*/
-  *aP3 = *(unsigned __int16 *)(v4 + 6); /*0x626013*/
+  *(_DWORD *)aP3 = *(unsigned __int16 *)(v4 + 6); /*0x626013*/
   return v4 != 0; /*0x625fd6*/
 }
 } // namespace gamemd
@@ -427,7 +429,7 @@ CampaignClass * * HashTable_flat::Clear()
   int v14; // ecx
   int *v15; // ebx
   void *v16; // edi
-  unsigned int v17; // edx
+  void * v17;
   int v20; // esi
   int v21; // edx
   int v22; // ecx

@@ -11,7 +11,7 @@ struct Explosion {
     void* q004;  // 0x4
     unsigned char q008;  // 0x8
     unsigned char q00C;  // 0xC
-    void* q010;  // 0x10
+    unsigned int q010;  // 0x10
     unsigned char q014;  // 0x14
     unsigned char q018;  // 0x18
     unsigned char q020;  // 0x20

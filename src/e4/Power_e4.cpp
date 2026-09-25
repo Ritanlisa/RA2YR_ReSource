@@ -1,11 +1,17 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Power_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/Timer_e4.hpp"
 #include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/CellStruct_e4.hpp"
+#include "e4/classes/Process_e4.hpp"
+#include "e4/classes/ProgressTimer_e4.hpp"
 
 // 0x43A5D0
 namespace gamemd {
@@ -274,7 +280,7 @@ unsigned int * Power::UpdateAll()
   Power::TimerProcess((int)g_CurrentFrame); /*0x67ceb0*/
   Power::TimerProcess((int)g_SelectionManager); /*0x67cebf*/
   v50 = v54; /*0x67ceca*/
-  *this = v53; /*0x67cece*/
+  *(_DWORD *)this = v53; /*0x67cece*/
   v51 = v55; /*0x67ced0*/
   *(this + 1) = v50; /*0x67ced5*/
   *(this + 2) = v51; /*0x67cedb*/
@@ -447,7 +453,7 @@ int Power::FinalizeDrain(int a2)
     }
     while ( v7 ); /*0x4a1c7e*/
     result = ~v6; /*0x4a1c80*/
-    *this = result; /*0x4a1c83*/
+    *(_DWORD *)this = result; /*0x4a1c83*/
     *(this + 1) = 0; /*0x4a1c85*/
   }
   return result; /*0x4a1c8e*/
@@ -487,7 +493,7 @@ int Power::FlagProcess(int a2)
     }
     while ( v7 ); /*0x4a1d16*/
     result = ~v6; /*0x4a1d18*/
-    *this = result; /*0x4a1d1b*/
+    *(_DWORD *)this = result; /*0x4a1d1b*/
     *(this + 1, unsigned int a1) = 0; /*0x4a1d1d*/
   }
   return result; /*0x4a1d23*/
@@ -510,9 +516,9 @@ char Power::ChangedHouse(char a2)
 
   result = a2; /*0x750090*/
   if ( a2 ) /*0x750096*/
-    *this = 1065353216; /*0x750098*/
+    *(_DWORD *)this = 1065353216; /*0x750098*/
   else
-    *this = 0; /*0x7500a1*/
+    *(_DWORD *)this = 0; /*0x7500a1*/
   return result; /*0x75009e*/
 }
 } // namespace gamemd

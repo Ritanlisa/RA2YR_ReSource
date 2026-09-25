@@ -5,6 +5,8 @@
 #include "e4/classes/WideString_e4.hpp"
 #include "e4/classes/WinMain_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x6BB8E0
@@ -58,11 +60,11 @@ AbstractClass * * WinMainSetup_Setup_6BB8E0()
 namespace gamemd {
 void sub_72B130()
 {
-  void *v0; // esi
-  void *v1; // esi
-  void *v2; // esi
-  void *v3; // esi
-  void *v4; // esi
+  unsigned int v0;
+  unsigned int v1;
+  unsigned int v2;
+  unsigned int v3;
+  unsigned int v4;
 
   if ( byte_B0FC90 ) /*0x72b13b*/
   {
@@ -125,7 +127,7 @@ void sub_72B130()
 namespace gamemd {
 int sub_53D550()
 {
-  int *v0; // esi
+  unsigned int v0;
   int result; // eax
 
   v0 = dword_A9FFC8; /*0x53d551*/
@@ -144,7 +146,7 @@ int sub_53D550()
 namespace gamemd {
 void sub_5B4310()
 {
-  _DWORD *v0; // esi
+  unsigned int v0;
   _DWORD *v1; // ecx
 
   v0 = g_FileCacheHashRoot; /*0x5b4318*/
@@ -165,7 +167,7 @@ void sub_5B4310()
 namespace gamemd {
 void sub_5BE940()
 {
-  void *v0; // esi
+  unsigned int v0;
 
   v0 = dword_ABF294; /*0x5be941*/
   if ( dword_ABF294 ) /*0x5be949*/
@@ -240,7 +242,7 @@ int sub_5E8A20()
 namespace gamemd {
 void sub_5FF800()
 {
-  int *v0; // esi
+  unsigned int v0;
 
   if ( dword_AC1838 ) /*0x5ff807*/
   {
@@ -262,7 +264,7 @@ void sub_5FF800()
 namespace gamemd {
 void sub_626FF0()
 {
-  void *v0; // esi
+  unsigned int v0;
 
   v0 = g_FileExtensionState; /*0x626ff1*/
   if ( g_FileExtensionState ) /*0x626ff9*/

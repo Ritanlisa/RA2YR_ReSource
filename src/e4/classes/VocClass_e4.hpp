@@ -58,7 +58,7 @@ struct VocClass {
     char q128[4];  // 0x128
     unsigned int q130;  // 0x130
     char NumSamples[4];  // 0x134
-    unsigned int Attack;  // 0x138
+    char Attack[4];  // 0x138
     char Decay[4];  // 0x13C
     unsigned int VocClass_field_140;  // 0x140
     unsigned int VocClass_field_144;  // 0x144

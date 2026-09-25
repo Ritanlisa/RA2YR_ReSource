@@ -8,8 +8,8 @@ struct VectorClass_Cell {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
     void* Items;  // 0x4
-    void* Capacity;  // 0x8
-    void* IsInitialized;  // 0xC
+    unsigned int q008;  // 0x8
+    unsigned int q00C;  // 0xC
     unsigned char IsAllocated;  // 0xD
     unsigned char q00E;  // 0xE
     unsigned char q010;  // 0x10
@@ -27,10 +27,12 @@ struct VectorClass_Cell {
     unsigned char q044;  // 0x44
     unsigned char q048;  // 0x48
     unsigned char q050;  // 0x50
+    unsigned int Capacity;
+    unsigned int IsInitialized;
     unsigned int Items2;
 // --- flat members (END) ---
-    char Release(int a2, unsigned int * a3);  // 0x42F6F0
-    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x42FBA0
+    char Release(int a2,  unsigned int * a3);    // 0x42F6F0
+    VectorClass_flat * QueryInterface(unsigned int * Block,  char a2);    // 0x42FBA0
     int GetSize(unsigned short * a2);  // 0x42F7F0
     unsigned int GetCapacity(int a2);  // 0x42F840
 };

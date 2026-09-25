@@ -16,6 +16,6 @@ struct E4Recv_68FB10 {
     unsigned int q1908;  // 0x1908
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    unsigned int * sub_68FB10(unsigned int * a2, int a3, size_t BufferCount, wchar_t * Format, wchar_t * a6, int a7, int a8);  // 0x68FB10
+    unsigned int * sub_68FB10(unsigned int * a2,  int a3,  size_t BufferCount,  wchar_t * Format,  wchar_t * a6,  int a7,  int a8);    // 0x68FB10
 };
 } // namespace gamemd

@@ -7,6 +7,8 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/Array_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x76FC50
@@ -37,7 +39,7 @@ int ArtConfig::validateConfig(Selection_WorldDominationTour * aP1, int a3, Selec
     (*(void (__thiscall **)(void *, _DWORD))(v9->q004)(v9, 0); /*0x76fcc8*/
     PriorityQueue::Add(aP1, this->ptr_28); /*0x76fcd6*/
   }
-  v11[0] = &(void*)(void*)&CCFileClass_vftable; /*0x76fcdf*/
+  v11[0] = (void*)&CCFileClass_vftable; /*0x76fcdf*/
   v13 = 0; /*0x76fce7*/
   Vector::Clear((int)v12); /*0x76fcef*/
   v11[0] = &off_7E1668; /*0x76fcf8*/
@@ -57,7 +59,7 @@ rc_ptr * ArtConfig_Read(rc_ptr_base * a1, int edx0, unsigned int * a2, Reference
   else
     v9 = 0; /*0x76f944*/
   ComPtr::Constructor(a1); /*0x76f948*/
-  *a1 = &(void*)(void*)&rc_ptr_WorldDominationTour_Territory_vftable; /*0x76f94f*/
+  *a1 = (void*)&rc_ptr_WorldDominationTour_Territory_vftable; /*0x76f94f*/
   ComPtr::Set(a1, (int)v9); /*0x76f956*/
   return a1; /*0x76f95d*/
 }

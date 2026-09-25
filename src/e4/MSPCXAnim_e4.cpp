@@ -4,6 +4,8 @@
 #include "e4/classes/MSPCXAnim_26_e4.hpp"
 #include "e4/classes/MSPCXAnim_42_e4.hpp"
 #include "e4/classes/MSPCXAnim_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x5CEAB0
@@ -22,7 +24,7 @@ AbstractClass * * MSPCXAnim_42::AllocCopyData_8B(int a2, unsigned int * a3)
   _DWORD *v6; // edi
   int v7; // ecx
   int v8; // eax
-  int v9; // edx
+  void * v9;
   int v10; // eax
 
   if ( a2 ) /*0x5d09cc*/
@@ -88,10 +90,10 @@ MSPCXAnim * MSPCXAnim::QueryInterface(char a2)
   void (__thiscall ***v3)(_DWORD, int); // ecx
 
   v3 = (void (__thiscall ***)(_DWORD, int))this->u32_24; /*0x5ced73*/
-  *this = &(void*)(void*)&MSPCXAnim_vftable; /*0x5ced76*/
+  *this = (void*)&MSPCXAnim_vftable; /*0x5ced76*/
   if ( v3 ) /*0x5ced7e*/
     (**v3)(v3, 1); /*0x5ced84*/
-  *this = &(void*)(void*)&MSAnim_vftable; /*0x5ced8a*/
+  *this = (void*)&MSAnim_vftable; /*0x5ced8a*/
   if ( (a2 & 1) != 0 ) /*0x5ced92*/
     RA2_OPDEL(); /*0x5ced95*/
   return this; /*0x5ced9f*/
@@ -904,7 +906,7 @@ DynamicVector * MSPCXAnim_42::Constructor_VectorClass_Point2D_(char a2)
   void *v3; // eax
 
   v3 = (void *)this->q004; /*0x5d1713*/
-  *this = &(void*)(void*)&VectorClass_Point2D_vftable; /*0x5d1716*/
+  *(void **)this = (void*)&VectorClass_Point2D_vftable; /*0x5d1716*/
   if ( v3 && this->IsAllocated ) /*0x5d1720*/
   {
     RA2_OPDEL(v3); /*0x5d1728*/
@@ -925,7 +927,7 @@ DynamicVector * MSPCXAnim_42::Constructor_VectorClass_MSTextEntry___(char a2)
   void *v3; // eax
 
   v3 = (void *)this->q004; /*0x5d17b3*/
-  *this = &(void*)(void*)&VectorClass_MSTextEntry___vftable; /*0x5d17b6*/
+  *(void **)this = (void*)&VectorClass_MSTextEntry___vftable; /*0x5d17b6*/
   if ( v3 && this->IsAllocated ) /*0x5d17c0*/
   {
     RA2_OPDEL(v3); /*0x5d17c8*/
@@ -946,7 +948,7 @@ DynamicVector * MSPCXAnim_42::Constructor_VectorClass_MapSelection___(char a2)
   void *v3; // eax
 
   v3 = (void *)this->q004; /*0x5d1853*/
-  *this = &(void*)(void*)&VectorClass_MapSelection___vftable; /*0x5d1856*/
+  *(void **)this = (void*)&VectorClass_MapSelection___vftable; /*0x5d1856*/
   if ( v3 && this->IsAllocated ) /*0x5d1860*/
   {
     RA2_OPDEL(v3); /*0x5d1868*/
@@ -967,7 +969,7 @@ VectorClass_flat * MSPCXAnim_26::Constructor_VectorClass_MapStage___(char a2)
   void *v3; // eax
 
   v3 = (void *)this->q004; /*0x5d18a3*/
-  *this = &(void*)(void*)&VectorClass_MapStage___vftable; /*0x5d18a6*/
+  *(void **)this = (void*)&VectorClass_MapStage___vftable; /*0x5d18a6*/
   if ( v3 && this->IsAllocated ) /*0x5d18b0*/
   {
     RA2_OPDEL(v3); /*0x5d18b8*/
@@ -988,7 +990,7 @@ DynamicVector * MSPCXAnim_26::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->q004; /*0x5d18f3*/
-  *this = &(void*)(void*)&VectorClass_MapStage___vftable; /*0x5d18f6*/
+  *(void **)this = (void*)&VectorClass_MapStage___vftable; /*0x5d18f6*/
   if ( v3 && this->IsAllocated ) /*0x5d1900*/
   {
     RA2_OPDEL(v3); /*0x5d1908*/
@@ -1009,7 +1011,7 @@ VectorClass_flat * MSPCXAnim_42::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->q004; /*0x5d1943*/
-  *this = &(void*)(void*)&VectorClass_MSAnimEntry___vftable; /*0x5d1946*/
+  *(void **)this = (void*)&VectorClass_MSAnimEntry___vftable; /*0x5d1946*/
   if ( v3 && this->IsAllocated ) /*0x5d1950*/
   {
     RA2_OPDEL(v3); /*0x5d1958*/
@@ -1030,7 +1032,7 @@ DynamicVector * MSPCXAnim_26::Constructor_VectorClass_MSAnimEntry___(char a2)
   void *v3; // eax
 
   v3 = (void *)this->q004; /*0x5d1993*/
-  *this = &(void*)(void*)&VectorClass_MSAnimEntry___vftable; /*0x5d1996*/
+  *(void **)this = (void*)&VectorClass_MSAnimEntry___vftable; /*0x5d1996*/
   if ( v3 && this->IsAllocated ) /*0x5d19a0*/
   {
     RA2_OPDEL(v3); /*0x5d19a8*/
@@ -1051,7 +1053,7 @@ DynamicVector * MSPCXAnim_26::Constructor_VectorClass_MSSfxEntry___(char a2)
   void *v3; // eax
 
   v3 = (void *)this->q004; /*0x5d1a33*/
-  *this = &(void*)(void*)&VectorClass_MSSfxEntry___vftable; /*0x5d1a36*/
+  *(void **)this = (void*)&VectorClass_MSSfxEntry___vftable; /*0x5d1a36*/
   if ( v3 && this->IsAllocated ) /*0x5d1a40*/
   {
     RA2_OPDEL(v3); /*0x5d1a48*/

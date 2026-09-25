@@ -18,6 +18,6 @@ struct E4Recv_6EFC70 {
     unsigned char q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    void ProcessAISuperWeaponSelection(ScriptClass * aP1, int a3);  // 0x6EFC70
+    void ProcessAISuperWeaponSelection(ScriptClass * aP1,  int a3);    // 0x6EFC70
 };
 } // namespace gamemd

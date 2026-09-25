@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Options_e4.hpp"
 #include "e4/classes/Debug_e4.hpp"
@@ -13,7 +14,10 @@
 #include "e4/classes/OverlayTypeClass_e4.hpp"
 #include "e4/classes/Object_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_alias_e4.hpp"
+#include "e4/classes/Process_e4.hpp"
 
 // 0x4F11B0
 namespace gamemd {
@@ -403,13 +407,13 @@ int Options::DeleteAndZero()
 {
   int v2; // ebx
   int v3; // ebp
-  int v4; // esi
+  void * v4;
   int result; // eax
 
   v2 = 0; /*0x6244e4*/
   if ( *this <= 0 ) /*0x6244e9*/
   {
-    *this = 0; /*0x62451b*/
+    *(_DWORD *)this = 0; /*0x62451b*/
   }
   else
   {

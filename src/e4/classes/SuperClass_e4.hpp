@@ -20,25 +20,25 @@ struct SuperClass {
     int referenceCount;  // 0x1C
     bool q01D;  // 0x1D
     unsigned char q020;  // 0x20
-    void* q024;  // 0x24
-    void* q028;  // 0x28
+    unsigned int q024;  // 0x24
+    unsigned int q028;  // 0x28
     bool q02B;  // 0x2B
     void* q02C;  // 0x2C
-    void* q030;  // 0x30
+    unsigned int q030;  // 0x30
     unsigned char q031;  // 0x31
     unsigned char needsSave;  // 0x32
     unsigned int alignmentPadding;  // 0x33
     unsigned int u32_34;  // 0x34
     int CustomChargeTime;  // 0x36
-    void* q038;  // 0x38
+    void* ;  // 0x38
     unsigned char q03A;  // 0x3A
     unsigned int q03B;  // 0x3B
-    unsigned int q03C;  // 0x3C
+    unsigned int ;  // 0x3C
     unsigned int q03D;  // 0x3D
     bool BlinkState;  // 0x40
     bool q042;  // 0x42
     HouseClass* Owner;  // 0x44
-    char BlinkTimer[4];  // 0x48
+    unsigned int BlinkTimer;  // 0x48
     bool q04A;  // 0x4A
     unsigned int q04C;  // 0x4C
     unsigned char q04F;  // 0x4F
@@ -46,18 +46,18 @@ struct SuperClass {
     char SpecialSoundLocation[4];  // 0x54
     unsigned char q058;  // 0x58
     unsigned char q05C;  // 0x5C
-    void* q060;  // 0x60
-    char ChronoMapCoords[4];  // 0x62
+    unsigned int q060;  // 0x60
+    unsigned int ChronoMapCoords;  // 0x62
     bool q064;  // 0x64
     void* q068;  // 0x68
     void* q06C;  // 0x6C
     void* Granted;  // 0x6D
     void* OneTime;  // 0x6E
     void* IsCharged;  // 0x6F
-    void* q070;  // 0x70
-    void* q074;  // 0x74
+    unsigned int ;  // 0x70
+    unsigned int q074;  // 0x74
     int q078;  // 0x78
-    void* q07C;  // 0x7C
+    unsigned int q07C;  // 0x7C
     int q080;  // 0x80
     char q084[4];  // 0x84
     unsigned char q088;  // 0x88
@@ -83,9 +83,9 @@ struct SuperClass {
     unsigned int q0C3;  // 0xC3
     void* q0C4;  // 0xC4
     unsigned char q0C8;  // 0xC8
-    IUnknown* q0CC;  // 0xCC
+    void* q0CC;  // 0xCC
     unsigned char q0D0;  // 0xD0
-    IUnknown* q0D4;  // 0xD4
+    void* q0D4;  // 0xD4
     void* q0D8;  // 0xD8
     void* q0DC;  // 0xDC
     void* q0E0;  // 0xE0
@@ -139,7 +139,7 @@ struct SuperClass {
     void* q174;  // 0x174
     unsigned char q178;  // 0x178
     unsigned char q180;  // 0x180
-    IUnknown* q184;  // 0x184
+    void* q184;  // 0x184
     unsigned int q188;  // 0x188
     unsigned int q190;  // 0x190
     unsigned int q194;  // 0x194
@@ -166,7 +166,7 @@ struct SuperClass {
     unsigned int q200;  // 0x200
     int q201;  // 0x201
     int q202;  // 0x202
-    IUnknown* q204;  // 0x204
+    void* q204;  // 0x204
     unsigned char q206;  // 0x206
     unsigned char q208;  // 0x208
     void* q20C;  // 0x20C
@@ -194,17 +194,17 @@ struct SuperClass {
     bool q274;  // 0x274
     int q278;  // 0x278
     unsigned char q27C;  // 0x27C
-    IUnknown* q280;  // 0x280
+    void* q280;  // 0x280
     unsigned int q284;  // 0x284
     int q288;  // 0x288
-    IUnknown* q28C;  // 0x28C
+    void* q28C;  // 0x28C
     unsigned char q290;  // 0x290
     void* q298;  // 0x298
     unsigned char q29C;  // 0x29C
     void* q2A0;  // 0x2A0
-    IUnknown* q2A4;  // 0x2A4
+    void* q2A4;  // 0x2A4
     unsigned char q2A8;  // 0x2A8
-    IUnknown* q2B0;  // 0x2B0
+    void* q2B0;  // 0x2B0
     ObjectClass* q2B4;  // 0x2B4
     unsigned char q2B8;  // 0x2B8
     void* q2BC;  // 0x2BC
@@ -266,7 +266,7 @@ struct SuperClass {
     unsigned int q404;  // 0x404
     unsigned char q408;  // 0x408
     unsigned int q418;  // 0x418
-    IUnknown* q41C;  // 0x41C
+    void* q41C;  // 0x41C
     unsigned char q420;  // 0x420
     unsigned int q428;  // 0x428
     HouseClass* q42C;  // 0x42C
@@ -317,7 +317,7 @@ struct SuperClass {
     void* q51C;  // 0x51C
     BuildingTypeClass* q520;  // 0x520
     AbstractClass* q524;  // 0x524
-    IUnknown* q528;  // 0x528
+    void* q528;  // 0x528
     unsigned int q52B;  // 0x52B
     void* q52C;  // 0x52C
     unsigned int q52D;  // 0x52D
@@ -332,41 +332,41 @@ struct SuperClass {
     unsigned int q550;  // 0x550
     unsigned char q554;  // 0x554
     AbstractClass* q558;  // 0x558
-    IUnknown* q55C;  // 0x55C
+    void* q55C;  // 0x55C
     unsigned char q560;  // 0x560
-    IUnknown* q564;  // 0x564
+    void* q564;  // 0x564
     unsigned char q568;  // 0x568
     unsigned char q570;  // 0x570
     void* q580;  // 0x580
     unsigned char q584;  // 0x584
     unsigned int q588;  // 0x588
-    IUnknown* q58C;  // 0x58C
+    void* q58C;  // 0x58C
     unsigned char q590;  // 0x590
-    IUnknown* q594;  // 0x594
+    void* q594;  // 0x594
     unsigned char q598;  // 0x598
-    IUnknown* q59C;  // 0x59C
+    void* q59C;  // 0x59C
     unsigned char q5A0;  // 0x5A0
     ObjectClass* q5A4;  // 0x5A4
     unsigned char q5A8;  // 0x5A8
-    IUnknown* q5B4;  // 0x5B4
+    void* q5B4;  // 0x5B4
     unsigned char q5B8;  // 0x5B8
     unsigned char q5C0;  // 0x5C0
-    IUnknown* q5C4;  // 0x5C4
+    void* q5C4;  // 0x5C4
     unsigned char q5C8;  // 0x5C8
     void* q5CC;  // 0x5CC
     unsigned char q5D0;  // 0x5D0
-    IUnknown* q5D4;  // 0x5D4
+    void* q5D4;  // 0x5D4
     unsigned char q5D8;  // 0x5D8
     ObjectClass* q5E0;  // 0x5E0
     unsigned char q5E4;  // 0x5E4
     unsigned int q5E8;  // 0x5E8
     BuildingTypeClass* q5EC;  // 0x5EC
     unsigned char q5F0;  // 0x5F0
-    IUnknown* q5F4;  // 0x5F4
+    void* q5F4;  // 0x5F4
     unsigned char q5F8;  // 0x5F8
-    IUnknown* q5FC;  // 0x5FC
+    void* q5FC;  // 0x5FC
     AbstractClass* q600;  // 0x600
-    IUnknown* q604;  // 0x604
+    void* q604;  // 0x604
     unsigned char q608;  // 0x608
     AbstractClass* q60C;  // 0x60C
     AbstractClass* q610;  // 0x610
@@ -375,12 +375,12 @@ struct SuperClass {
     AbstractClass* q61C;  // 0x61C
     AbstractClass* q620;  // 0x620
     void* q624;  // 0x624
-    IUnknown* q628;  // 0x628
+    void* q628;  // 0x628
     void* q62C;  // 0x62C
     AbstractClass* q630;  // 0x630
     AbstractClass* q634;  // 0x634
     unsigned char q638;  // 0x638
-    IUnknown* q640;  // 0x640
+    void* q640;  // 0x640
     unsigned int q644;  // 0x644
     void* q648;  // 0x648
     unsigned char q64C;  // 0x64C
@@ -405,7 +405,7 @@ struct SuperClass {
     unsigned char q6C4;  // 0x6C4
     unsigned int q6C8;  // 0x6C8
     void* q6CC;  // 0x6CC
-    IUnknown* q6D0;  // 0x6D0
+    void* q6D0;  // 0x6D0
     unsigned char q6D4;  // 0x6D4
     AbstractClass* q6D8;  // 0x6D8
     unsigned char q6DC;  // 0x6DC
@@ -429,23 +429,23 @@ struct SuperClass {
     unsigned int q728;  // 0x728
     void* q734;  // 0x734
     unsigned char q738;  // 0x738
-    IUnknown* q75C;  // 0x75C
+    void* q75C;  // 0x75C
     unsigned char q760;  // 0x760
-    IUnknown* q764;  // 0x764
+    void* q764;  // 0x764
     unsigned char q768;  // 0x768
-    IUnknown* q76C;  // 0x76C
+    void* q76C;  // 0x76C
     unsigned char q770;  // 0x770
-    IUnknown* q774;  // 0x774
+    void* q774;  // 0x774
     unsigned int q778;  // 0x778
-    IUnknown* q77C;  // 0x77C
+    void* q77C;  // 0x77C
     unsigned char q780;  // 0x780
-    IUnknown* q784;  // 0x784
+    void* q784;  // 0x784
     void* q788;  // 0x788
     unsigned char q78C;  // 0x78C
     unsigned int q790;  // 0x790
-    IUnknown* q794;  // 0x794
+    void* q794;  // 0x794
     unsigned char q798;  // 0x798
-    IUnknown* q79C;  // 0x79C
+    void* q79C;  // 0x79C
     unsigned int q7A0;  // 0x7A0
     unsigned int q7A4;  // 0x7A4
     unsigned char q7A8;  // 0x7A8
@@ -578,17 +578,17 @@ struct SuperClass {
     void* qD38;  // 0xD38
     unsigned char qD3C;  // 0xD3C
     AbstractClass* qD64;  // 0xD64
-    IUnknown* qD68;  // 0xD68
+    void* qD68;  // 0xD68
     unsigned char qD6C;  // 0xD6C
     Tactical* qD70;  // 0xD70
     AbstractClass* qD74;  // 0xD74
-    IUnknown* qD78;  // 0xD78
+    void* qD78;  // 0xD78
     void* qD7C;  // 0xD7C
     void* qD80;  // 0xD80
     unsigned char qD84;  // 0xD84
     void* qD9C;  // 0xD9C
     unsigned char qDA0;  // 0xDA0
-    IUnknown* qDB0;  // 0xDB0
+    void* qDB0;  // 0xDB0
     unsigned char qDB4;  // 0xDB4
     void* qDB8;  // 0xDB8
     unsigned char qDBC;  // 0xDBC
@@ -645,55 +645,55 @@ struct SuperClass {
     unsigned int q1024;  // 0x1024
     unsigned int q1028;  // 0x1028
     void* q1030;  // 0x1030
-    IUnknown* q1044;  // 0x1044
+    void* q1044;  // 0x1044
     unsigned int q1048;  // 0x1048
-    IUnknown* q104C;  // 0x104C
+    void* q104C;  // 0x104C
     unsigned char q1050;  // 0x1050
-    IUnknown* q1054;  // 0x1054
+    void* q1054;  // 0x1054
     unsigned int q1058;  // 0x1058
-    IUnknown* q105C;  // 0x105C
+    void* q105C;  // 0x105C
     unsigned char q1060;  // 0x1060
     unsigned int q1064;  // 0x1064
     HouseClass* q1068;  // 0x1068
-    IUnknown* q106C;  // 0x106C
+    void* q106C;  // 0x106C
     unsigned char q1070;  // 0x1070
     unsigned int q1074;  // 0x1074
     unsigned int q1078;  // 0x1078
-    IUnknown* q107C;  // 0x107C
+    void* q107C;  // 0x107C
     unsigned char q1080;  // 0x1080
     void* q1084;  // 0x1084
     unsigned char q1088;  // 0x1088
-    IUnknown* q108C;  // 0x108C
+    void* q108C;  // 0x108C
     unsigned char q1090;  // 0x1090
-    IUnknown* q1094;  // 0x1094
+    void* q1094;  // 0x1094
     unsigned char q1098;  // 0x1098
-    IUnknown* q109C;  // 0x109C
+    void* q109C;  // 0x109C
     unsigned char q10A0;  // 0x10A0
-    IUnknown* q10A4;  // 0x10A4
+    void* q10A4;  // 0x10A4
     unsigned char q10A8;  // 0x10A8
-    IUnknown* q10AC;  // 0x10AC
+    void* q10AC;  // 0x10AC
     unsigned char q10B0;  // 0x10B0
-    IUnknown* q10B4;  // 0x10B4
+    void* q10B4;  // 0x10B4
     unsigned char q10B8;  // 0x10B8
-    IUnknown* q10BC;  // 0x10BC
+    void* q10BC;  // 0x10BC
     void* q10C0;  // 0x10C0
     unsigned char q10C4;  // 0x10C4
-    IUnknown* q10CC;  // 0x10CC
+    void* q10CC;  // 0x10CC
     unsigned char q10D0;  // 0x10D0
     void* q10E0;  // 0x10E0
     unsigned char q10E4;  // 0x10E4
-    IUnknown* q10EC;  // 0x10EC
+    void* q10EC;  // 0x10EC
     void* q10F0;  // 0x10F0
     unsigned char q10F4;  // 0x10F4
-    IUnknown* q10FC;  // 0x10FC
+    void* q10FC;  // 0x10FC
     unsigned char q1100;  // 0x1100
     unsigned int q1110;  // 0x1110
     unsigned char q1114;  // 0x1114
-    IUnknown* q111C;  // 0x111C
+    void* q111C;  // 0x111C
     void* q1120;  // 0x1120
     unsigned int q1124;  // 0x1124
     AbstractTypeClass* q1128;  // 0x1128
-    IUnknown* q112C;  // 0x112C
+    void* q112C;  // 0x112C
     void* q1130;  // 0x1130
     void* q1134;  // 0x1134
     void* q1138;  // 0x1138
@@ -701,7 +701,7 @@ struct SuperClass {
     void* q1140;  // 0x1140
     unsigned char q1144;  // 0x1144
     unsigned char q1148;  // 0x1148
-    IUnknown* q1154;  // 0x1154
+    void* q1154;  // 0x1154
     void* q1158;  // 0x1158
     unsigned char q115C;  // 0x115C
     char q1160[4];  // 0x1160
@@ -758,7 +758,7 @@ struct SuperClass {
     unsigned char q130C;  // 0x130C
     unsigned char q1310;  // 0x1310
     unsigned char q1314;  // 0x1314
-    IUnknown* q1320;  // 0x1320
+    void* q1320;  // 0x1320
     void* q1324;  // 0x1324
     AbstractClass* q1328;  // 0x1328
     unsigned char q132C;  // 0x132C
@@ -780,7 +780,7 @@ struct SuperClass {
     void* q1374;  // 0x1374
     AbstractClass* q1378;  // 0x1378
     unsigned char q137C;  // 0x137C
-    IUnknown* q1380;  // 0x1380
+    void* q1380;  // 0x1380
     unsigned char q1384;  // 0x1384
     unsigned char q1388;  // 0x1388
     void* q1390;  // 0x1390
@@ -795,12 +795,12 @@ struct SuperClass {
     unsigned int q1400;  // 0x1400
     unsigned int q1404;  // 0x1404
     void* q1408;  // 0x1408
-    IUnknown* q1414;  // 0x1414
+    void* q1414;  // 0x1414
     unsigned char q1418;  // 0x1418
-    IUnknown* q141C;  // 0x141C
-    IUnknown* q1420;  // 0x1420
+    void* q141C;  // 0x141C
+    void* q1420;  // 0x1420
     unsigned char q1424;  // 0x1424
-    IUnknown* q1428;  // 0x1428
+    void* q1428;  // 0x1428
     unsigned char q142C;  // 0x142C
     void* q1430;  // 0x1430
     unsigned char q1434;  // 0x1434
@@ -811,7 +811,7 @@ struct SuperClass {
     unsigned char q1454;  // 0x1454
     unsigned char q1458;  // 0x1458
     unsigned char q145C;  // 0x145C
-    IUnknown* q1460;  // 0x1460
+    void* q1460;  // 0x1460
     unsigned char q1464;  // 0x1464
     unsigned char q1468;  // 0x1468
     unsigned char q146C;  // 0x146C
@@ -822,9 +822,9 @@ struct SuperClass {
     unsigned char q148C;  // 0x148C
     unsigned char q1490;  // 0x1490
     void* q14BC;  // 0x14BC
-    IUnknown* q14C0;  // 0x14C0
-    IUnknown* q14C4;  // 0x14C4
-    IUnknown* q14C8;  // 0x14C8
+    void* q14C0;  // 0x14C0
+    void* q14C4;  // 0x14C4
+    void* q14C8;  // 0x14C8
     unsigned char q14CC;  // 0x14CC
     void* q14E0;  // 0x14E0
     unsigned char q14E4;  // 0x14E4
@@ -835,30 +835,30 @@ struct SuperClass {
     unsigned int q14E9;  // 0x14E9
     unsigned int q14EA;  // 0x14EA
     unsigned int q14EB;  // 0x14EB
-    IUnknown* q14EC;  // 0x14EC
+    void* q14EC;  // 0x14EC
     unsigned int q14ED;  // 0x14ED
     unsigned int q14EE;  // 0x14EE
     unsigned int q14EF;  // 0x14EF
     unsigned int q14F3;  // 0x14F3
-    IUnknown* q14F4;  // 0x14F4
+    void* q14F4;  // 0x14F4
     unsigned char q14F7;  // 0x14F7
     unsigned char q14F8;  // 0x14F8
     void* q14FC;  // 0x14FC
     void* q1500;  // 0x1500
     ObjectClass* q1504;  // 0x1504
     unsigned char q1508;  // 0x1508
-    IUnknown* q150C;  // 0x150C
+    void* q150C;  // 0x150C
     unsigned char q1510;  // 0x1510
-    IUnknown* q151C;  // 0x151C
+    void* q151C;  // 0x151C
     unsigned char q1520;  // 0x1520
     int q1524;  // 0x1524
     unsigned int q1525;  // 0x1525
     unsigned int q1526;  // 0x1526
     unsigned char q1528;  // 0x1528
     unsigned char q152A;  // 0x152A
-    IUnknown* q152C;  // 0x152C
+    void* q152C;  // 0x152C
     unsigned char q1530;  // 0x1530
-    IUnknown* q1540;  // 0x1540
+    void* q1540;  // 0x1540
     unsigned char q1544;  // 0x1544
     AbstractClass* q1548;  // 0x1548
     bool q1554;  // 0x1554
@@ -875,59 +875,59 @@ struct SuperClass {
     unsigned char q1590;  // 0x1590
     unsigned int q15E2;  // 0x15E2
     unsigned char q15E6;  // 0x15E6
-    IUnknown* q1600;  // 0x1600
+    void* q1600;  // 0x1600
     unsigned int q1604;  // 0x1604
     void* q1608;  // 0x1608
-    IUnknown* q1618;  // 0x1618
+    void* q1618;  // 0x1618
     char q1624[4];  // 0x1624
     AbstractClass* q1628;  // 0x1628
     unsigned int q1634;  // 0x1634
     unsigned char q1638;  // 0x1638
-    IUnknown* q163C;  // 0x163C
+    void* q163C;  // 0x163C
     unsigned char q1640;  // 0x1640
     unsigned char q1644;  // 0x1644
     AbstractClass* q1648;  // 0x1648
     unsigned char q164C;  // 0x164C
     void* q1650;  // 0x1650
-    IUnknown* q1654;  // 0x1654
-    IUnknown* q1658;  // 0x1658
+    void* q1654;  // 0x1654
+    void* q1658;  // 0x1658
     unsigned char q165C;  // 0x165C
     AbstractClass* q1660;  // 0x1660
     unsigned char q1664;  // 0x1664
     char q1668;  // 0x1668
-    IUnknown* q166C;  // 0x166C
-    IUnknown* q1670;  // 0x1670
-    IUnknown* q1674;  // 0x1674
+    void* q166C;  // 0x166C
+    void* q1670;  // 0x1670
+    void* q1674;  // 0x1674
     unsigned char q1678;  // 0x1678
-    IUnknown* q167C;  // 0x167C
+    void* q167C;  // 0x167C
     unsigned char q1680;  // 0x1680
     AbstractClass* q1684;  // 0x1684
     unsigned char q1688;  // 0x1688
     unsigned char q168C;  // 0x168C
-    IUnknown* q16A8;  // 0x16A8
-    IUnknown* q16AC;  // 0x16AC
+    void* q16A8;  // 0x16A8
+    void* q16AC;  // 0x16AC
     unsigned char q16B0;  // 0x16B0
-    IUnknown* q16B4;  // 0x16B4
+    void* q16B4;  // 0x16B4
     unsigned int q16B7;  // 0x16B7
     unsigned char q16BB;  // 0x16BB
     void* q16CC;  // 0x16CC
     unsigned char q16D0;  // 0x16D0
-    IUnknown* q16D4;  // 0x16D4
+    void* q16D4;  // 0x16D4
     void* q16D8;  // 0x16D8
     unsigned char q16DC;  // 0x16DC
-    IUnknown* q16E4;  // 0x16E4
+    void* q16E4;  // 0x16E4
     unsigned char q16E8;  // 0x16E8
-    IUnknown* q16EC;  // 0x16EC
+    void* q16EC;  // 0x16EC
     unsigned char q16F0;  // 0x16F0
-    IUnknown* q16F4;  // 0x16F4
+    void* q16F4;  // 0x16F4
     unsigned int q16F8;  // 0x16F8
     unsigned char q16FC;  // 0x16FC
-    IUnknown* q1700;  // 0x1700
-    IUnknown* q1704;  // 0x1704
-    IUnknown* q1708;  // 0x1708
-    IUnknown* q170C;  // 0x170C
-    IUnknown* q1710;  // 0x1710
-    IUnknown* q1714;  // 0x1714
+    void* q1700;  // 0x1700
+    void* q1704;  // 0x1704
+    void* q1708;  // 0x1708
+    void* q170C;  // 0x170C
+    void* q1710;  // 0x1710
+    void* q1714;  // 0x1714
     unsigned char q1718;  // 0x1718
     AbstractTypeClass* q171C;  // 0x171C
     void* q1720;  // 0x1720
@@ -937,13 +937,13 @@ struct SuperClass {
     AbstractTypeClass* q1730;  // 0x1730
     unsigned char q1734;  // 0x1734
     unsigned char q1738;  // 0x1738
-    IUnknown* q173C;  // 0x173C
+    void* q173C;  // 0x173C
     void* q1740;  // 0x1740
-    IUnknown* q1744;  // 0x1744
+    void* q1744;  // 0x1744
     unsigned char q1748;  // 0x1748
-    IUnknown* q174C;  // 0x174C
+    void* q174C;  // 0x174C
     unsigned char q1750;  // 0x1750
-    IUnknown* q1754;  // 0x1754
+    void* q1754;  // 0x1754
     unsigned char q1758;  // 0x1758
     unsigned char q175C;  // 0x175C
     unsigned int q1760;  // 0x1760
@@ -954,7 +954,7 @@ struct SuperClass {
     unsigned int q176A;  // 0x176A
     unsigned char q176E;  // 0x176E
     unsigned char q1770;  // 0x1770
-    IUnknown* q1774;  // 0x1774
+    void* q1774;  // 0x1774
     AbstractTypeClass* q1778;  // 0x1778
     void* q177C;  // 0x177C
     AbstractClass* q1780;  // 0x1780
@@ -981,38 +981,38 @@ struct SuperClass {
     unsigned char q180C;  // 0x180C
     unsigned char q1810;  // 0x1810
     unsigned char q1814;  // 0x1814
-    IUnknown* q181C;  // 0x181C
+    void* q181C;  // 0x181C
     unsigned char q1820;  // 0x1820
-    IUnknown* q1824;  // 0x1824
+    void* q1824;  // 0x1824
     int q1828;  // 0x1828
-    IUnknown* q182C;  // 0x182C
+    void* q182C;  // 0x182C
     Color* q1830;  // 0x1830
     ObjectTypeClass* q1834;  // 0x1834
     unsigned char q1838;  // 0x1838
     void* q1844;  // 0x1844
     unsigned char q1848;  // 0x1848
-    IUnknown* q184C;  // 0x184C
+    void* q184C;  // 0x184C
     unsigned char q1850;  // 0x1850
-    IUnknown* q185C;  // 0x185C
+    void* q185C;  // 0x185C
     Color* q1860;  // 0x1860
     void* q186C;  // 0x186C
     unsigned char q1870;  // 0x1870
     unsigned int q1878;  // 0x1878
-    IUnknown* q1884;  // 0x1884
+    void* q1884;  // 0x1884
     unsigned char q1888;  // 0x1888
     void* q18A8;  // 0x18A8
     void* q18AC;  // 0x18AC
     unsigned char q18B0;  // 0x18B0
-    IUnknown* q1900;  // 0x1900
+    void* q1900;  // 0x1900
     unsigned char q1904;  // 0x1904
-    IUnknown* q1908;  // 0x1908
+    void* q1908;  // 0x1908
     unsigned int q1910;  // 0x1910
     unsigned char q1920;  // 0x1920
-    IUnknown* q1924;  // 0x1924
+    void* q1924;  // 0x1924
     void* q1928;  // 0x1928
-    IUnknown* q1940;  // 0x1940
+    void* q1940;  // 0x1940
     unsigned char q1944;  // 0x1944
-    IUnknown* q1948;  // 0x1948
+    void* q1948;  // 0x1948
     unsigned char q1960;  // 0x1960
     unsigned char q1964;  // 0x1964
     void* q1968;  // 0x1968
@@ -1104,11 +1104,11 @@ struct SuperClass {
     unsigned char q3434;  // 0x3434
     Tactical* q3440;  // 0x3440
     AbstractClass* q3444;  // 0x3444
-    IUnknown* q3448;  // 0x3448
+    void* q3448;  // 0x3448
     unsigned char q3460;  // 0x3460
     void* q3484;  // 0x3484
     unsigned char q3488;  // 0x3488
-    IUnknown* q3504;  // 0x3504
+    void* q3504;  // 0x3504
     unsigned char q3508;  // 0x3508
     void* q3540;  // 0x3540
     unsigned char q3544;  // 0x3544
@@ -1138,37 +1138,37 @@ struct SuperClass {
     unsigned char q4040;  // 0x4040
     unsigned char q4120;  // 0x4120
     void* q4144;  // 0x4144
-    IUnknown* q4164;  // 0x4164
+    void* q4164;  // 0x4164
     unsigned int q4168;  // 0x4168
-    IUnknown* q4178;  // 0x4178
-    IUnknown* q4180;  // 0x4180
+    void* q4178;  // 0x4178
+    void* q4180;  // 0x4180
     unsigned int q4184;  // 0x4184
-    IUnknown* q4188;  // 0x4188
+    void* q4188;  // 0x4188
     HouseClass* q4200;  // 0x4200
-    IUnknown* q4204;  // 0x4204
+    void* q4204;  // 0x4204
     unsigned char q4208;  // 0x4208
-    IUnknown* q4220;  // 0x4220
+    void* q4220;  // 0x4220
     unsigned char q4224;  // 0x4224
     void* q4228;  // 0x4228
     unsigned char q4240;  // 0x4240
-    IUnknown* q4244;  // 0x4244
+    void* q4244;  // 0x4244
     unsigned char q4248;  // 0x4248
-    IUnknown* q4260;  // 0x4260
+    void* q4260;  // 0x4260
     unsigned char q4264;  // 0x4264
-    IUnknown* q4268;  // 0x4268
+    void* q4268;  // 0x4268
     unsigned char q4280;  // 0x4280
-    IUnknown* q4284;  // 0x4284
+    void* q4284;  // 0x4284
     void* q4288;  // 0x4288
-    IUnknown* q4300;  // 0x4300
+    void* q4300;  // 0x4300
     unsigned char q4304;  // 0x4304
     void* q4320;  // 0x4320
     unsigned char q4324;  // 0x4324
     unsigned char q4340;  // 0x4340
-    IUnknown* q4348;  // 0x4348
+    void* q4348;  // 0x4348
     unsigned int q4368;  // 0x4368
     void* q4370;  // 0x4370
     unsigned char q4374;  // 0x4374
-    IUnknown* q4380;  // 0x4380
+    void* q4380;  // 0x4380
     void* q4384;  // 0x4384
     unsigned int q4388;  // 0x4388
     void* q4400;  // 0x4400
@@ -1229,7 +1229,7 @@ struct SuperClass {
     unsigned int q4960;  // 0x4960
     unsigned char q4964;  // 0x4964
     AbstractClass* q4968;  // 0x4968
-    IUnknown* q4978;  // 0x4978
+    void* q4978;  // 0x4978
     void* q4980;  // 0x4980
     AbstractClass* q4984;  // 0x4984
     unsigned char q4988;  // 0x4988
@@ -1245,15 +1245,15 @@ struct SuperClass {
     unsigned int q5124;  // 0x5124
     void* q5128;  // 0x5128
     OverlayTypeClass* q5138;  // 0x5138
-    IUnknown* q5140;  // 0x5140
+    void* q5140;  // 0x5140
     unsigned char q5144;  // 0x5144
-    IUnknown* q5148;  // 0x5148
+    void* q5148;  // 0x5148
     unsigned char q5158;  // 0x5158
     ObjectClass* q5160;  // 0x5160
     unsigned char q5164;  // 0x5164
     void* q5168;  // 0x5168
-    IUnknown* q5170;  // 0x5170
-    IUnknown* q5174;  // 0x5174
+    void* q5170;  // 0x5170
+    void* q5174;  // 0x5174
     unsigned char q5178;  // 0x5178
     unsigned char q5184;  // 0x5184
     unsigned int q5188;  // 0x5188
@@ -1263,25 +1263,25 @@ struct SuperClass {
     unsigned char q5224;  // 0x5224
     unsigned char q5228;  // 0x5228
     unsigned char q5234;  // 0x5234
-    IUnknown* q5238;  // 0x5238
+    void* q5238;  // 0x5238
     unsigned char q5248;  // 0x5248
     unsigned char q5260;  // 0x5260
     unsigned char q5264;  // 0x5264
     unsigned char q5270;  // 0x5270
     unsigned char q5278;  // 0x5278
     void* q5308;  // 0x5308
-    IUnknown* q5320;  // 0x5320
+    void* q5320;  // 0x5320
     unsigned char q5324;  // 0x5324
     void* q5344;  // 0x5344
     unsigned char q5348;  // 0x5348
     unsigned int q5350;  // 0x5350
     unsigned int q5354;  // 0x5354
     unsigned int q5358;  // 0x5358
-    IUnknown* q5364;  // 0x5364
+    void* q5364;  // 0x5364
     unsigned char q5368;  // 0x5368
     ObjectClass* q5380;  // 0x5380
     unsigned char q5384;  // 0x5384
-    IUnknown* q5388;  // 0x5388
+    void* q5388;  // 0x5388
     unsigned int q5394;  // 0x5394
     BuildingTypeClass* q5398;  // 0x5398
     BuildingClass* q53AC;  // 0x53AC
@@ -1306,26 +1306,26 @@ struct SuperClass {
     unsigned char q53EC;  // 0x53EC
     unsigned char q53F0;  // 0x53F0
     unsigned char q53F4;  // 0x53F4
-    IUnknown* q5404;  // 0x5404
+    void* q5404;  // 0x5404
     unsigned char q5408;  // 0x5408
     unsigned char q540C;  // 0x540C
     unsigned char q5410;  // 0x5410
     unsigned int q5414;  // 0x5414
     unsigned char q5418;  // 0x5418
     unsigned char q541C;  // 0x541C
-    IUnknown* q5420;  // 0x5420
+    void* q5420;  // 0x5420
     unsigned char q5424;  // 0x5424
     unsigned char q5428;  // 0x5428
     bool q5430;  // 0x5430
     unsigned char q5434;  // 0x5434
     unsigned char q5438;  // 0x5438
-    IUnknown* q5440;  // 0x5440
+    void* q5440;  // 0x5440
     unsigned int q5444;  // 0x5444
     unsigned char q5448;  // 0x5448
     unsigned char q544C;  // 0x544C
     AbstractClass* q5458;  // 0x5458
     unsigned char q545C;  // 0x545C
-    IUnknown* q5460;  // 0x5460
+    void* q5460;  // 0x5460
     unsigned char q5464;  // 0x5464
     unsigned char q5468;  // 0x5468
     AbstractClass* q5480;  // 0x5480
@@ -1333,7 +1333,7 @@ struct SuperClass {
     unsigned char q5488;  // 0x5488
     unsigned char q548C;  // 0x548C
     void* q5490;  // 0x5490
-    IUnknown* q5494;  // 0x5494
+    void* q5494;  // 0x5494
     unsigned char q5498;  // 0x5498
     unsigned char q549C;  // 0x549C
     unsigned char q54A0;  // 0x54A0
@@ -1360,7 +1360,7 @@ struct SuperClass {
     unsigned char q5570;  // 0x5570
     unsigned char q5574;  // 0x5574
     unsigned char q5578;  // 0x5578
-    IUnknown* q55F0;  // 0x55F0
+    void* q55F0;  // 0x55F0
     unsigned char q55F4;  // 0x55F4
     unsigned char q55F8;  // 0x55F8
     unsigned char q55FC;  // 0x55FC
@@ -1371,7 +1371,7 @@ struct SuperClass {
     unsigned char q5610;  // 0x5610
     unsigned char q5618;  // 0x5618
     unsigned char q561C;  // 0x561C
-    IUnknown* q5634;  // 0x5634
+    void* q5634;  // 0x5634
     unsigned char q5638;  // 0x5638
     unsigned char q563C;  // 0x563C
     void* q5640;  // 0x5640
@@ -1395,15 +1395,15 @@ struct SuperClass {
     AbstractClass* q5714;  // 0x5714
     unsigned char q5718;  // 0x5718
     unsigned char q571C;  // 0x571C
-    IUnknown* q5720;  // 0x5720
+    void* q5720;  // 0x5720
     unsigned char q5724;  // 0x5724
     AbstractClass* q5728;  // 0x5728
     unsigned char q572C;  // 0x572C
     unsigned char q5730;  // 0x5730
     unsigned char q5734;  // 0x5734
-    IUnknown* q5740;  // 0x5740
-    IUnknown* q5744;  // 0x5744
-    IUnknown* q5748;  // 0x5748
+    void* q5740;  // 0x5740
+    void* q5744;  // 0x5744
+    void* q5748;  // 0x5748
     unsigned char q574C;  // 0x574C
     AudioController* q5750;  // 0x5750
     unsigned char q5754;  // 0x5754
@@ -1412,44 +1412,44 @@ struct SuperClass {
     AbstractClass* q5764;  // 0x5764
     unsigned char q5768;  // 0x5768
     unsigned char q576C;  // 0x576C
-    IUnknown* q5774;  // 0x5774
+    void* q5774;  // 0x5774
     unsigned char q5778;  // 0x5778
     unsigned char q577C;  // 0x577C
     TimerStruct * ptr_5788;  // 0x5788
     unsigned char q578C;  // 0x578C
     unsigned char q5790;  // 0x5790
     unsigned char q5794;  // 0x5794
-    IUnknown* q5798;  // 0x5798
+    void* q5798;  // 0x5798
     unsigned char q579C;  // 0x579C
     unsigned char q57A0;  // 0x57A0
-    IUnknown* q57A4;  // 0x57A4
+    void* q57A4;  // 0x57A4
     unsigned char q57A8;  // 0x57A8
     unsigned char q57AC;  // 0x57AC
-    IUnknown* q57B0;  // 0x57B0
+    void* q57B0;  // 0x57B0
     unsigned char q57B4;  // 0x57B4
     unsigned char q57B8;  // 0x57B8
-    IUnknown* q57BC;  // 0x57BC
+    void* q57BC;  // 0x57BC
     unsigned char q57C0;  // 0x57C0
     unsigned char q57C4;  // 0x57C4
-    IUnknown* q57C8;  // 0x57C8
+    void* q57C8;  // 0x57C8
     unsigned char q57CC;  // 0x57CC
     unsigned char q57D0;  // 0x57D0
-    IUnknown* q57D4;  // 0x57D4
+    void* q57D4;  // 0x57D4
     unsigned char q57D8;  // 0x57D8
     unsigned char q57DC;  // 0x57DC
-    IUnknown* q5800;  // 0x5800
-    IUnknown* q5804;  // 0x5804
+    void* q5800;  // 0x5800
+    void* q5804;  // 0x5804
     unsigned char q5808;  // 0x5808
     unsigned char q580C;  // 0x580C
     unsigned char q5810;  // 0x5810
     unsigned char q5814;  // 0x5814
     unsigned char q5840;  // 0x5840
-    IUnknown* q5844;  // 0x5844
+    void* q5844;  // 0x5844
     void* q5848;  // 0x5848
     unsigned char q584C;  // 0x584C
-    IUnknown* q5860;  // 0x5860
+    void* q5860;  // 0x5860
     unsigned char q5864;  // 0x5864
-    IUnknown* q5868;  // 0x5868
+    void* q5868;  // 0x5868
     unsigned char q586C;  // 0x586C
     unsigned char q5870;  // 0x5870
     unsigned char q5874;  // 0x5874
@@ -1461,9 +1461,9 @@ struct SuperClass {
     unsigned char q58EC;  // 0x58EC
     unsigned char q58F0;  // 0x58F0
     unsigned char q58F4;  // 0x58F4
-    IUnknown* q5900;  // 0x5900
-    IUnknown* q5904;  // 0x5904
-    IUnknown* q5908;  // 0x5908
+    void* q5900;  // 0x5900
+    void* q5904;  // 0x5904
+    void* q5908;  // 0x5908
     unsigned char q590C;  // 0x590C
     unsigned char q5910;  // 0x5910
     unsigned char q5914;  // 0x5914
@@ -1477,7 +1477,7 @@ struct SuperClass {
     unsigned char q593C;  // 0x593C
     unsigned char q5940;  // 0x5940
     unsigned char q5944;  // 0x5944
-    IUnknown* q5948;  // 0x5948
+    void* q5948;  // 0x5948
     unsigned char q594C;  // 0x594C
     unsigned char q5950;  // 0x5950
     unsigned char q5954;  // 0x5954
@@ -1498,7 +1498,7 @@ struct SuperClass {
     unsigned char q5998;  // 0x5998
     unsigned char q599C;  // 0x599C
     unsigned char q6000;  // 0x6000
-    IUnknown* q6004;  // 0x6004
+    void* q6004;  // 0x6004
     AbstractTypeClass* q6008;  // 0x6008
     unsigned char q600C;  // 0x600C
     unsigned int q6020;  // 0x6020
@@ -1528,9 +1528,9 @@ struct SuperClass {
     unsigned char q6164;  // 0x6164
     unsigned char q6170;  // 0x6170
     unsigned char q6174;  // 0x6174
-    IUnknown* q6180;  // 0x6180
+    void* q6180;  // 0x6180
     int q6184;  // 0x6184
-    IUnknown* q6188;  // 0x6188
+    void* q6188;  // 0x6188
     unsigned char q618C;  // 0x618C
     unsigned int q6194;  // 0x6194
     unsigned char q6198;  // 0x6198
@@ -1540,7 +1540,7 @@ struct SuperClass {
     AnimClass* q6210;  // 0x6210
     unsigned char q6214;  // 0x6214
     unsigned char q6218;  // 0x6218
-    IUnknown* q6220;  // 0x6220
+    void* q6220;  // 0x6220
     unsigned char q6224;  // 0x6224
     unsigned char q6228;  // 0x6228
     Color* q6240;  // 0x6240
@@ -1549,12 +1549,12 @@ struct SuperClass {
     unsigned char q6268;  // 0x6268
     unsigned char q6280;  // 0x6280
     unsigned char q6284;  // 0x6284
-    IUnknown* q6290;  // 0x6290
+    void* q6290;  // 0x6290
     unsigned char q6294;  // 0x6294
     unsigned char q6298;  // 0x6298
     unsigned char q6320;  // 0x6320
     unsigned char q6324;  // 0x6324
-    IUnknown* q6400;  // 0x6400
+    void* q6400;  // 0x6400
     unsigned char q6404;  // 0x6404
     Coord* q6408;  // 0x6408
     unsigned char q640C;  // 0x640C
@@ -1569,7 +1569,7 @@ struct SuperClass {
     unsigned char q6450;  // 0x6450
     unsigned int q6454;  // 0x6454
     unsigned char q6458;  // 0x6458
-    IUnknown* q6464;  // 0x6464
+    void* q6464;  // 0x6464
     unsigned char q6468;  // 0x6468
     unsigned char q646C;  // 0x646C
     unsigned char q6500;  // 0x6500
@@ -1580,12 +1580,18 @@ struct SuperClass {
     unsigned char q651C;  // 0x651C
     unsigned int q6528;  // 0x6528
     unsigned char q652C;  // 0x652C
+    unsigned int SetCurrentFrame;
+    unsigned int q034;
     unsigned int q040;
     unsigned int u32_30;
     unsigned int u32_6D;
     unsigned int u32_6E;
+    unsigned int u32_6F;
     unsigned int uniqueId8;
-    unsigned int q034;
+    unsigned int AdvanceCountdown;
+    unsigned int q038;
+    unsigned int q03C;
+    unsigned int q070;
 // --- flat members (END) ---
     AbstractClass * * Reset();
     AbstractClass * * StartTimer(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3);

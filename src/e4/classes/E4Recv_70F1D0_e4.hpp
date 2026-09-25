@@ -12,6 +12,6 @@ struct E4Recv_70F1D0 {
     unsigned int q768;  // 0x768
     unsigned int q6294;  // 0x6294
 // --- flat members (END) ---
-    char DrawBuildingRangeIndicator(TechnoClass * aP1, int a3);  // 0x70F1D0
+    char DrawBuildingRangeIndicator(TechnoClass * aP1,  int a3);    // 0x70F1D0
 };
 } // namespace gamemd

@@ -4,13 +4,15 @@
 #include "e4/classes/EventQueue_e4.hpp"
 #include "e4/classes/BuildingTypeClass_e4.hpp"
 #include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x54F000
 namespace gamemd {
 int EventQueue::Process()
 {
-  int v2; // eax
+  void * v2;
 
   if ( (this->q318 + 1) % 256 != this->q314 ) /*0x54f01e*/
     MessageLoop(); /*0x54f020*/
@@ -68,7 +70,7 @@ int EventQueue::Read()
     }
     v8 = *(this + 197); /*0x54f134*/
     v9 = 0; /*0x54f140*/
-    *this = v7; /*0x54f144*/
+    *(_DWORD *)this = v7; /*0x54f144*/
     if ( v8 != v4 ) /*0x54f146*/
     {
       v9 = *((_WORD *)this + v8 + 138); /*0x54f148*/
@@ -96,7 +98,7 @@ int EventQueue::Read()
 namespace gamemd {
 int EventQueue::Check()
 {
-  int v1; // eax
+  void * v1;
 
   v1 = this->q314; /*0x54f650*/
   if ( v1 == this->q318 ) /*0x54f65e*/

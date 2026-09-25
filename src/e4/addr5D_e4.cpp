@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+
 #include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_5D0190_e4.hpp"
 #include "e4/classes/E4Recv_5D0240_e4.hpp"
@@ -33,6 +34,8 @@
 #include "e4/classes/Vector_e4.hpp"
 #include "e4/classes/WideString_e4.hpp"
 #include "e4/classes/CellStruct_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x5D0190
@@ -220,8 +223,8 @@ void* E4Recv_5D2650::sub_5D2650(void * a2, int a3)
 namespace gamemd {
 CampaignScore * * ProcessEditControlKey(CellStruct * aP0, int edx0, int * a2, unsigned short a4)
 {
-  int v4; // edi
-  int v5; // esi
+  unsigned int v4;
+  CellStruct * v5;
   int v7; // eax
   void (__thiscall ***v8)(_DWORD, int); // ecx
   int v9; // edi
@@ -628,7 +631,7 @@ char sub_5D6000(HWND hWnd, int a2)
     {
       g_MultiplayerMode |= 1u; /*0x5d603d*/
       MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass(&g_MultiplayerModeConfig, 0, 0); /*0x5d6048*/
-      g_MultiplayerModeConfig = (int)&(void*)(void*)&DynamicVectorClass_MultiplayerGameMode___vftable; /*0x5d604d*/
+      g_MultiplayerModeConfig = (int)&DynamicVectorClass_MultiplayerGameMode___vftable; /*0x5d604d*/
       dword_ABFDB4 = 10; /*0x5d6057*/
       g_MultiplayerGameList = 0; /*0x5d6066*/
       result = atexit(MultiplayerConfig::Cleanup); /*0x5d606c*/
@@ -639,7 +642,7 @@ char sub_5D6000(HWND hWnd, int a2)
     {
       g_MultiplayerMode |= 1u; /*0x5d6090*/
       MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass(&g_MultiplayerModeConfig, 0, 0); /*0x5d609b*/
-      g_MultiplayerModeConfig = (int)&(void*)(void*)&DynamicVectorClass_MultiplayerGameMode___vftable; /*0x5d60a0*/
+      g_MultiplayerModeConfig = (int)&DynamicVectorClass_MultiplayerGameMode___vftable; /*0x5d60a0*/
       dword_ABFDB4 = 10; /*0x5d60aa*/
       g_MultiplayerGameList = 0; /*0x5d60b9*/
       atexit(MultiplayerConfig::Cleanup); /*0x5d60bf*/
@@ -722,12 +725,12 @@ Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0)
     v45[1] = 0; /*0x5d75ce*/
     v45[2] = 0; /*0x5d75d2*/
     GenericList::Constructor(v46); /*0x5d75d6*/
-    v46[0] = &(void*)(void*)&List_INIClass_INISection___vftable; /*0x5d75e8*/
+    v46[0] = (void*)&List_INIClass_INISection___vftable; /*0x5d75e8*/
     memset(&v46[7], 0, 12); /*0x5d75f3*/
     v47 = 0; /*0x5d7608*/
     v48 = 0; /*0x5d760f*/
     v49 = 0; /*0x5d7616*/
-    v45[0] = &(void*)(void*)&INIClass_vftable; /*0x5d761d*/
+    v45[0] = (void*)&INIClass_vftable; /*0x5d761d*/
     if ( FileStraw::Open(v45, (int)v50, 0) > 0 ) /*0x5d762c*/
     {
       v43 = INIClass::FindKey(v2); /*0x5d763e*/
@@ -843,7 +846,7 @@ Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0)
               g_MultiplayerMode = v16 | 1; /*0x5d79eb*/
               MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass(0, 0); /*0x5d79f0*/
               dword_ABFDB4 = 10; /*0x5d79fa*/
-              g_MultiplayerModeConfig = (int)&(void*)(void*)&DynamicVectorClass_MultiplayerGameMode___vftable; /*0x5d7a05*/
+              g_MultiplayerModeConfig = (int)&DynamicVectorClass_MultiplayerGameMode___vftable; /*0x5d7a05*/
               g_MultiplayerGameList = 0; /*0x5d7a0b*/
               atexit(MultiplayerConfig::Cleanup); /*0x5d7a11*/
               v16 = g_MultiplayerMode; /*0x5d7a16*/
@@ -857,7 +860,7 @@ Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0)
               dword_ABFDA8 = 0; /*0x5d7a43*/
               byte_ABFDAC = 1; /*0x5d7a49*/
               byte_ABFDAD = 0; /*0x5d7a50*/
-              g_MultiplayerModeConfig = (int)&(void*)(void*)&DynamicVectorClass_MultiplayerGameMode___vftable; /*0x5d7a56*/
+              g_MultiplayerModeConfig = (int)&DynamicVectorClass_MultiplayerGameMode___vftable; /*0x5d7a56*/
               dword_ABFDB4 = 10; /*0x5d7a5c*/
               g_MultiplayerGameList = 0; /*0x5d7a62*/
               atexit(MultiplayerConfig::Cleanup); /*0x5d7a68*/
@@ -876,7 +879,7 @@ Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0)
               dword_ABFDA8 = 0; /*0x5d7b6a*/
               byte_ABFDAC = 1; /*0x5d7b70*/
               byte_ABFDAD = 0; /*0x5d7b77*/
-              g_MultiplayerModeConfig = (int)&(void*)(void*)&DynamicVectorClass_MultiplayerGameMode___vftable; /*0x5d7b7d*/
+              g_MultiplayerModeConfig = (int)&DynamicVectorClass_MultiplayerGameMode___vftable; /*0x5d7b7d*/
               dword_ABFDB4 = 10; /*0x5d7b83*/
               g_MultiplayerGameList = 0; /*0x5d7b89*/
               atexit(MultiplayerConfig::Cleanup); /*0x5d7b8f*/
@@ -908,7 +911,7 @@ Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0)
               dword_ABFDA8 = 0; /*0x5d7aae*/
               byte_ABFDAC = 1; /*0x5d7ab4*/
               byte_ABFDAD = 0; /*0x5d7abb*/
-              g_MultiplayerModeConfig = (int)&(void*)(void*)&DynamicVectorClass_MultiplayerGameMode___vftable; /*0x5d7ac1*/
+              g_MultiplayerModeConfig = (int)&DynamicVectorClass_MultiplayerGameMode___vftable; /*0x5d7ac1*/
               dword_ABFDB4 = 10; /*0x5d7ac7*/
               g_MultiplayerGameList = 0; /*0x5d7acd*/
               atexit(MultiplayerConfig::Cleanup); /*0x5d7ad3*/
@@ -938,7 +941,7 @@ Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0)
   LABEL_50:
     HashTable::DestroyHashTableINIClass(v45); /*0x5d7c82*/
   }
-  v50[0] = &(void*)(void*)&CCFileClass_vftable; /*0x5d7c92*/
+  v50[0] = (void*)&CCFileClass_vftable; /*0x5d7c92*/
   v52 = 0; /*0x5d7c9d*/
   Vector::Clear((int)v51); /*0x5d7ca4*/
   v50[0] = &off_7E1668; /*0x5d7cb0*/
@@ -973,27 +976,27 @@ void GameInit_Complete()
     if ( v1 ) /*0x5d7d32*/
       (**v1)(v1, 1); /*0x5d7d37*/
   }
-  v4 = &(void*)(void*)&MultiplayerGameMode_Initializer_MultiplayerBattle_vftable; /*0x5d7d45*/
+  v4 = (void*)&MultiplayerGameMode_Initializer_MultiplayerBattle_vftable; /*0x5d7d45*/
   String::Assign(aBattle); /*0x5d7d4d*/
   LoadMultiplayerModesList(v3, &v4); /*0x5d7d5a*/
   DeleteAndZero(v3); /*0x5d7d63*/
-  v5 = &(void*)(void*)&MultiplayerGameMode_Initializer_MultiplayerManBattle_vftable; /*0x5d7d6c*/
+  v5 = (void*)&MultiplayerGameMode_Initializer_MultiplayerManBattle_vftable; /*0x5d7d6c*/
   String::Assign(aManbattle); /*0x5d7d79*/
   LoadMultiplayerModesList(v3, &v5); /*0x5d7d86*/
   DeleteAndZero(v3); /*0x5d7d8f*/
-  v6 = &(void*)(void*)&MultiplayerGameMode_Initializer_MultiplayerSiege_vftable; /*0x5d7d98*/
+  v6 = (void*)&MultiplayerGameMode_Initializer_MultiplayerSiege_vftable; /*0x5d7d98*/
   String::Assign(aSiege); /*0x5d7da5*/
   LoadMultiplayerModesList(v3, &v6); /*0x5d7db2*/
   DeleteAndZero(v3); /*0x5d7dbb*/
-  v7 = &(void*)(void*)&MultiplayerGameMode_Initializer_UnholyAlliance_vftable; /*0x5d7dc4*/
+  v7 = (void*)&MultiplayerGameMode_Initializer_UnholyAlliance_vftable; /*0x5d7dc4*/
   String::Assign(aUnholy); /*0x5d7dd1*/
   LoadMultiplayerModesList(v3, &v7); /*0x5d7dde*/
   DeleteAndZero(v3); /*0x5d7de7*/
-  v8 = &(void*)(void*)&MultiplayerGameMode_Initializer_FreeForAll_vftable; /*0x5d7df0*/
+  v8 = (void*)&MultiplayerGameMode_Initializer_FreeForAll_vftable; /*0x5d7df0*/
   String::Assign(aFreeforall); /*0x5d7dfd*/
   LoadMultiplayerModesList(v3, &v8); /*0x5d7e0a*/
   DeleteAndZero(v3); /*0x5d7e13*/
-  v9 = &(void*)(void*)&MultiplayerGameMode_Initializer_MPCooperative_vftable; /*0x5d7e1c*/
+  v9 = (void*)&MultiplayerGameMode_Initializer_MPCooperative_vftable; /*0x5d7e1c*/
   String::Assign(aCooperative); /*0x5d7e29*/
   LoadMultiplayerModesList(v3, &v9); /*0x5d7e36*/
   return DeleteAndZero(v3); /*0x5d7e44*/
@@ -2301,7 +2304,7 @@ long long sub_5D38B0()
 namespace gamemd {
 void sub_5D4C90()
 {
-  dword_ABFC90 = (int)&(void*)(void*)&VectorClass_HWND_____vftable; /*0x5d4c98*/
+  dword_ABFC90 = (int)&VectorClass_HWND_____vftable; /*0x5d4c98*/
   if ( dword_ABFC94 && byte_ABFC9D ) /*0x5d4cac*/
   {
     RA2_OPDEL(dword_ABFC94); /*0x5d4caf*/
@@ -2316,7 +2319,7 @@ void sub_5D4C90()
 namespace gamemd {
 void sub_5D4D10()
 {
-  dword_ABFCB8 = (int)&(void*)(void*)&VectorClass_AcceleratorTracker_vftable; /*0x5d4d18*/
+  dword_ABFCB8 = (int)&VectorClass_AcceleratorTracker_vftable; /*0x5d4d18*/
   if ( dword_ABFCBC && byte_ABFCC5 ) /*0x5d4d2c*/
   {
     RA2_OPDEL(dword_ABFCBC); /*0x5d4d2f*/
@@ -2453,7 +2456,7 @@ int sub_5D7550(int a1)
 namespace gamemd {
 unsigned int * E4Recv_5D7580::sub_5D7580()
 {
-  *this = &(void*)(void*)&MultiplayerGameMode_InitializerBase_vftable; /*0x5d7582*/
+  *this = (void*)&MultiplayerGameMode_InitializerBase_vftable; /*0x5d7582*/
   return this; /*0x5d7588*/
 }
 } // namespace gamemd
@@ -2462,7 +2465,7 @@ unsigned int * E4Recv_5D7580::sub_5D7580()
 namespace gamemd {
 void E4Recv_5D7CD0::sub_5D7CD0()
 {
-  *this = &(void*)(void*)&MultiplayerGameMode_InitializerBase_vftable; /*0x5d7cd0*/
+  *this = (void*)&MultiplayerGameMode_InitializerBase_vftable; /*0x5d7cd0*/
 }
 } // namespace gamemd
 
@@ -2470,7 +2473,7 @@ void E4Recv_5D7CD0::sub_5D7CD0()
 namespace gamemd {
 unsigned int * E4Recv_5D7FF0::___Gfacet_locale_std__UAEPAXI_Z_127(char a2)
 {
-  *this = &(void*)(void*)&MultiplayerGameMode_InitializerBase_vftable; /*0x5d7ff9*/
+  *this = (void*)&MultiplayerGameMode_InitializerBase_vftable; /*0x5d7ff9*/
   if ( (a2 & 1) != 0 ) /*0x5d7fff*/
     RA2_OPDEL(); /*0x5d8002*/
   return this; /*0x5d800c*/
@@ -2481,7 +2484,7 @@ unsigned int * E4Recv_5D7FF0::___Gfacet_locale_std__UAEPAXI_Z_127(char a2)
 namespace gamemd {
 unsigned int * E4Recv_5D8010::___Gfacet_locale_std__UAEPAXI_Z_128(char a2)
 {
-  *this = &(void*)(void*)&MultiplayerGameMode_InitializerBase_vftable; /*0x5d8019*/
+  *this = (void*)&MultiplayerGameMode_InitializerBase_vftable; /*0x5d8019*/
   if ( (a2 & 1) != 0 ) /*0x5d801f*/
     RA2_OPDEL(); /*0x5d8022*/
   return this; /*0x5d802c*/

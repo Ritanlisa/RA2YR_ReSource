@@ -10,6 +10,8 @@
 #include "e4/classes/VoxelAnimClass_e4.hpp"
 #include "e4/classes/Mixer_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x4CAF20
@@ -88,14 +90,14 @@ namespace gamemd {
 int VoxelAnimClass::CleanupMembers()
 {
   int v2; // eax
-  int v3; // ecx
+  AbstractClass * v3;
   int v4; // eax
   void *this; // [esp+4h] [ebp-4h] BYREF
 
-  *(_DWORD *)this = &(void*)(void*)&VoxelAnimClass_vftable; /*0x7499f6*/
-  this->vtable2 = &(void*)(void*)&VoxelAnimClass_vftable; /*0x7499fc*/
-  this->vtable3 = &(void*)(void*)&VoxelAnimClass_vftable; /*0x749a03*/
-  this->vtable4 = &(void*)(void*)&VoxelAnimClass_vftable; /*0x749a0a*/
+  *(void **)this = (void*)&VoxelAnimClass_vftable; /*0x7499f6*/
+  this->vtable2 = (void*)&VoxelAnimClass_vftable; /*0x7499fc*/
+  this->vtable3 = (void*)&VoxelAnimClass_vftable; /*0x749a03*/
+  this->vtable4 = (void*)&VoxelAnimClass_vftable; /*0x749a0a*/
   AbstractClass::AnnounceExpiredPointer(1); /*0x749a11*/
   v2 = (*(int (__thiscall **)(int *, void **))(VoxelAnimClass_Array + 16))(&VoxelAnimClass_Array, &this); /*0x749a2a*/
   if ( v2 != -1 && v2 < dword_887398 && v2 < --dword_887398 ) /*0x749a45*/
@@ -769,10 +771,10 @@ int VoxelAnimClass::SaveLoad_Prefix(ObjectClass * aP1, int aP1a)
     if ( aP1 ) /*0x74a989*/
     {
       ObjectClass::Init(aP1, (int)&aP1a); /*0x74a992*/
-      *aP1 = (int)&(void*)(void*)&VoxelAnimClass_vftable; /*0x74a997*/
-      aP1[1] = (int)&(void*)(void*)&VoxelAnimClass_vftable; /*0x74a99d*/
-      aP1[2] = (int)&(void*)(void*)&VoxelAnimClass_vftable; /*0x74a9a4*/
-      aP1[3] = (int)&(void*)(void*)&VoxelAnimClass_vftable; /*0x74a9ab*/
+      *aP1 = (int)&VoxelAnimClass_vftable; /*0x74a997*/
+      aP1[1] = (int)&VoxelAnimClass_vftable; /*0x74a99d*/
+      aP1[2] = (int)&VoxelAnimClass_vftable; /*0x74a9a4*/
+      aP1[3] = (int)&VoxelAnimClass_vftable; /*0x74a9ab*/
     }
     AudioController::Init(aP1 + 69); /*0x74a9b8*/
     AudioController::Init(aP1 + 74); /*0x74a9c3*/
@@ -835,9 +837,9 @@ int VoxelAnimClass::Reset()
   *(_BYTE *)(this + 53) = 0; /*0x75aad6*/
   this->IsReallyMoving = 0; /*0x75aad9*/
   this->ptr_38 = 0; /*0x75aadc*/
-  *(_DWORD *)this = &(void*)(void*)&WalkLocomotionClass_vftable; /*0x75aadf*/
-  this->vtable2 = &(void*)(void*)&WalkLocomotionClass_vftable; /*0x75aae5*/
-  this->vtable3 = &(void*)(void*)&WalkLocomotionClass_vftable; /*0x75aaec*/
+  *(_DWORD *)this = (void*)&WalkLocomotionClass_vftable; /*0x75aadf*/
+  this->vtable2 = (void*)&WalkLocomotionClass_vftable; /*0x75aae5*/
+  this->vtable3 = (void*)&WalkLocomotionClass_vftable; /*0x75aaec*/
   return this; /*0x75aaf5*/
 }
 }
@@ -868,15 +870,15 @@ int VoxelAnimClass::Constructor()
   this->q1F8 = 5; /*0x75ec5d*/
   this->q1FC = 1; /*0x75ec67*/
   this->q1FD = 0; /*0x75ec6e*/
-  this->q1F0 = &(void*)(void*)&VectorClass_CellClass___vftable; /*0x75ec74*/
+  this->q1F0 = (void*)&VectorClass_CellClass___vftable; /*0x75ec74*/
   this->q1F4 = RA2_OPNEW(0x14u); /*0x75ec83*/
   this->q1FD = 1; /*0x75ec89*/
-  this->q1F0 = &(void*)(void*)&DynamicVectorClass_CellClass___vftable; /*0x75ec90*/
+  this->q1F0 = (void*)&DynamicVectorClass_CellClass___vftable; /*0x75ec90*/
   this->q204 = 10; /*0x75ec9a*/
   this->q200 = 0; /*0x75eca4*/
-  *(_DWORD *)this = &(void*)(void*)&WaveClass_vftable; /*0x75ecaa*/
-  this->vtable2 = &(void*)(void*)&WaveClass_vftable; /*0x75ecb0*/
-  this->vtable3 = &(void*)(void*)&WaveClass_vftable; /*0x75ecb7*/
+  *(_DWORD *)this = (void*)&WaveClass_vftable; /*0x75ecaa*/
+  this->vtable2 = (void*)&WaveClass_vftable; /*0x75ecb0*/
+  this->vtable3 = (void*)&WaveClass_vftable; /*0x75ecb7*/
   this->vtable4 = &off_7F6BC8; /*0x75ecbe*/
   if ( dword_A8EC48 < dword_A8EC40 /*0x75ecfb*/
     || (byte_A8EC45 || !dword_A8EC40)

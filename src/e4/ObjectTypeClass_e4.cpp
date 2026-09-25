@@ -20,6 +20,8 @@
 #include "e4/classes/ObjectVector_e4.hpp"
 #include "e4/classes/FootClass_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x46C790
@@ -118,7 +120,7 @@ int ObjectTypeClass::ConstructFull(AbstractClass * aP1)
   int v4; // ecx
   _DWORD *v5; // eax
   int v6; // ecx
-  int v7; // eax
+  ObjectTypeClass * v7;
   char Destination[24]; // [esp+8h] [ebp-1Ch] BYREF
   char v10; // [esp+20h] [ebp-4h]
 
@@ -204,10 +206,10 @@ int ObjectTypeClass::ConstructFull(AbstractClass * aP1)
   this->q288 = 0; /*0x5f723d*/
   this->q28C = 0; /*0x5f7243*/
   this->q290 = 0; /*0x5f7249*/
-  *(_DWORD *)this = &(void*)(void*)&ObjectTypeClass_vftable; /*0x5f7251*/
-  this->vtable2 = &(void*)(void*)&ObjectTypeClass_vftable; /*0x5f7258*/
-  this->vtable3 = &(void*)(void*)&ObjectTypeClass_vftable; /*0x5f725f*/
-  this->vtable4 = &(void*)(void*)&ObjectTypeClass_vftable; /*0x5f7266*/
+  *(void **)this = (void*)&ObjectTypeClass_vftable; /*0x5f7251*/
+  this->vtable2 = (void*)&ObjectTypeClass_vftable; /*0x5f7258*/
+  this->vtable3 = (void*)&ObjectTypeClass_vftable; /*0x5f725f*/
+  this->vtable4 = (void*)&ObjectTypeClass_vftable; /*0x5f7266*/
   if ( &this->u32_90 != &this->u32_C84 ) /*0x5f726d*/
     qmemcpy((void *)(&this->u32_C84), (const void *)(&this->vtable46), 0x19u); /*0x5f7274*/
   if ( &g_INI_DefaultBuffer ) /*0x5f727e*/
@@ -289,10 +291,10 @@ unsigned int * ObjectTypeClass::Construct(ObjectTypeClass * aP1)
   *(&this->q0402) = 0; /*0x5f73c7*/
   this->q28C = 0; /*0x5f73cd*/
   *(&this->q0404) = 0; /*0x5f73d3*/
-  *this = &(void*)(void*)&ObjectTypeClass_vftable; /*0x5f73d9*/
-  this->vtable2 = &(void*)(void*)&ObjectTypeClass_vftable; /*0x5f73df*/
-  this->vtable3 = &(void*)(void*)&ObjectTypeClass_vftable; /*0x5f73e6*/
-  this->vtable4 = &(void*)(void*)&ObjectTypeClass_vftable; /*0x5f73ed*/
+  *(void **)this = (void*)&ObjectTypeClass_vftable; /*0x5f73d9*/
+  this->vtable2 = (void*)&ObjectTypeClass_vftable; /*0x5f73df*/
+  this->vtable3 = (void*)&ObjectTypeClass_vftable; /*0x5f73e6*/
+  this->vtable4 = (void*)&ObjectTypeClass_vftable; /*0x5f73ed*/
   return this; /*0x5f73f6*/
 }
 } // namespace gamemd
@@ -306,10 +308,10 @@ SomeVoxelCache * * ObjectTypeClass::Destruct()
   int *v5; // edi
   int v6; // ebx
 
-  *(_DWORD *)this = &(void*)(void*)&ObjectTypeClass_vftable; /*0x5f740b*/
-  this->vtable2 = &(void*)(void*)&ObjectTypeClass_vftable; /*0x5f7411*/
-  this->vtable3 = &(void*)(void*)&ObjectTypeClass_vftable; /*0x5f7418*/
-  this->vtable4 = &(void*)(void*)&ObjectTypeClass_vftable; /*0x5f741f*/
+  *(void **)this = (void*)&ObjectTypeClass_vftable; /*0x5f740b*/
+  this->vtable2 = (void*)&ObjectTypeClass_vftable; /*0x5f7411*/
+  this->vtable3 = (void*)&ObjectTypeClass_vftable; /*0x5f7418*/
+  this->vtable4 = (void*)&ObjectTypeClass_vftable; /*0x5f741f*/
   v2 = (*(int (__thiscall **)(int *, int *))(dword_AC1418 + 16))(&dword_AC1418, &this); /*0x5f7435*/
   if ( v2 != -1 && v2 < dword_AC1428 && v2 < --dword_AC1428 ) /*0x5f7450*/
   {
@@ -511,10 +513,10 @@ AbstractClass * * ObjectTypeClass::Load2DArt()
   char v4; // al
   char v5; // dl
   int v6; // edx
-  int v7; // eax
+  AbstractClass ** v7;
   char v8; // dl
   int v9; // eax
-  int result; // eax
+  unsigned int result;
   __int16 v11; // cx
   char Destination[24]; // [esp+8h] [ebp-220h] BYREF
   char v13; // [esp+20h] [ebp-208h]
@@ -5389,7 +5391,7 @@ BOOL ObjectTypeClass::loadTypeMember_5717AE0()
 namespace gamemd {
 unsigned int * ObjectTypeClass::CheckFlag(ObjectTypeClass * aP1)
 {
-  *this = &(void*)(void*)&DynamicVectorClass_AnimTypeClass_const___vftable; /*0x717bf2*/
+  *this = (void*)&DynamicVectorClass_AnimTypeClass_const___vftable; /*0x717bf2*/
   return this; /*0x717bf8*/
 }
 } // namespace gamemd

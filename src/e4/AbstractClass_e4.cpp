@@ -9,7 +9,10 @@
 #include "e4/classes/Mouse_e4.hpp"
 #include "e4/classes/Vector_e4.hpp"
 #include "e4/classes/BuildingTypeClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_alias_e4.hpp"
+#include "e4/classes/RefCount_e4.hpp"
 
 // 0x438E70
 namespace gamemd {
@@ -19,10 +22,10 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
   AbstractClass *v5; // esi
   int v6; // eax
   int v7; // ecx
-  int v8; // eax
+  void * v8;
   int v9; // ecx
   int v10; // eax
-  int v11; // edx
+  AbstractClass * v11;
   _DWORD v12[3]; // [esp+Ch] [ebp-Ch] BYREF
 
   if ( aP1 && (*((int (__thiscall **)(void **))*aP1 + 11))(aP1) == 15 && aP2 && !aP2[14] ) /*0x438ea3*/
@@ -33,10 +36,10 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
     {
       AbstractClass::Constructor(v4); /*0x438ec3*/
       *(int *)((char *)v5[2].parent_gap + 2) = 0; /*0x438ecb*/
-      v5->parent_gap[0] = (int)&(void*)(void*)&BombClass_vftable; /*0x438ece*/
-      v5->parent_gap[1] = (int)&(void*)(void*)&BombClass_vftable; /*0x438ed4*/
-      v5->parent_gap[2] = (int)&(void*)(void*)&BombClass_vftable; /*0x438edb*/
-      v5->parent_gap[3] = (int)&(void*)(void*)&BombClass_vftable; /*0x438ee2*/
+      v5->parent_gap[0] = (int)&BombClass_vftable; /*0x438ece*/
+      v5->parent_gap[1] = (int)&BombClass_vftable; /*0x438ed4*/
+      v5->parent_gap[2] = (int)&BombClass_vftable; /*0x438edb*/
+      v5->parent_gap[3] = (int)&BombClass_vftable; /*0x438ee2*/
       *(_DWORD *)&v5->Dirty = 0; /*0x438ee9*/
       *(int *)((char *)v5[1].parent_gap + 3) = 0; /*0x438eec*/
       IDA_BYTE2(v5[2].parent_gap[1]) = 0; /*0x438eef*/
@@ -111,7 +114,7 @@ int AbstractClass_COMStub_137()
 namespace gamemd {
 bool BuildingTypeClass::CanPlacePath(unsigned short *a2, int a3)
 {
-  return this->PlaceAnywhere || BuildingClass::ValidatePath((int *)this, a2, a3); /*0x464aca*/
+  return this->PlaceAnywhere || BuildingClass::ValidatePath((int *, unsigned int a3, unsigned int a1)this, a2, a3); /*0x464aca*/
 }
 } // namespace gamemd
 
@@ -171,7 +174,7 @@ VectorClass_flat * * AbstractClass_RemoveObjectFromHouse()
       if ( v7 < v8 ) /*0x4fba01*/
       {
         v9 = v8 - 1; /*0x4fba03*/
-        for ( a1[18] = v9; v7 < a1[18]; *(_DWORD *)(a1[15] + 4 * v7 - 4) = *(_DWORD *)(a1[15] + 4 * v7) ) /*0x4fba09*/
+        for ( a1[18] = v9; v7 < a1[18]; *(_DWORD *, unsigned int a4, unsigned int a1, unsigned int a2, unsigned int a5)(a1[15] + 4 * v7 - 4) = *(_DWORD *)(a1[15] + 4 * v7) ) /*0x4fba09*/
           ++v7; /*0x4fba0e*/
       }
     }
@@ -192,7 +195,7 @@ VectorClass_flat * * AbstractClass_RemoveObjectFromHouse()
       if ( v13 < v14 ) /*0x4fba7d*/
       {
         v15 = v14 - 1; /*0x4fba7f*/
-        for ( a1[36] = v15; v13 < a1[36]; *(_DWORD *)(a1[33] + 4 * v13 - 4) = *(_DWORD *)(a1[33] + 4 * v13) ) /*0x4fba85*/
+        for ( a1[36] = v15; v13 < a1[36]; *(_DWORD *, unsigned int a1, unsigned int a5)(a1[33] + 4 * v13 - 4) = *(_DWORD *)(a1[33] + 4 * v13) ) /*0x4fba85*/
           ++v13; /*0x4fba8a*/
       }
     }
@@ -353,7 +356,7 @@ ObjectClass * * AbstractClass_getPathDirection()
 namespace gamemd {
 unsigned int * AbstractClass::checkVisibility(char a2)
 {
-  *this = &(void*)(void*)&MultiplayerGameMode_InitializerBase_vftable; /*0x5d7fd9*/
+  *this = (void*)&MultiplayerGameMode_InitializerBase_vftable; /*0x5d7fd9*/
   if ( (a2 & 1) != 0 ) /*0x5d7fdf*/
     RA2_OPDEL(); /*0x5d7fe2*/
   return this; /*0x5d7fec*/
@@ -363,7 +366,7 @@ unsigned int * AbstractClass::checkVisibility(char a2)
 namespace gamemd {
 unsigned int * AbstractClass::updateVisibilityState(char a2)
 {
-  *this = &(void*)(void*)&MultiplayerGameMode_InitializerBase_vftable; /*0x5d8039*/
+  *this = (void*)&MultiplayerGameMode_InitializerBase_vftable; /*0x5d8039*/
   if ( (a2 & 1) != 0 ) /*0x5d803f*/
     RA2_OPDEL(); /*0x5d8042*/
   return this; /*0x5d804c*/
@@ -373,7 +376,7 @@ unsigned int * AbstractClass::updateVisibilityState(char a2)
 namespace gamemd {
 unsigned int * AbstractClass::processFogReveal(char a2)
 {
-  *this = &(void*)(void*)&MultiplayerGameMode_InitializerBase_vftable; /*0x5d8059*/
+  *this = (void*)&MultiplayerGameMode_InitializerBase_vftable; /*0x5d8059*/
   if ( (a2 & 1) != 0 ) /*0x5d805f*/
     RA2_OPDEL(); /*0x5d8062*/
   return this; /*0x5d806c*/
@@ -383,7 +386,7 @@ unsigned int * AbstractClass::processFogReveal(char a2)
 namespace gamemd {
 unsigned int * AbstractClass::checkShroudState(char a2)
 {
-  *this = &(void*)(void*)&MultiplayerGameMode_InitializerBase_vftable; /*0x5d8079*/
+  *this = (void*)&MultiplayerGameMode_InitializerBase_vftable; /*0x5d8079*/
   if ( (a2 & 1) != 0 ) /*0x5d807f*/
     RA2_OPDEL(); /*0x5d8082*/
   return this; /*0x5d808c*/
@@ -393,7 +396,7 @@ unsigned int * AbstractClass::checkShroudState(char a2)
 namespace gamemd {
 unsigned int * AbstractClass::updateShroudMap(char a2)
 {
-  *this = &(void*)(void*)&MultiplayerGameMode_InitializerBase_vftable; /*0x5d8099*/
+  *this = (void*)&MultiplayerGameMode_InitializerBase_vftable; /*0x5d8099*/
   if ( (a2 & 1) != 0 ) /*0x5d809f*/
     RA2_OPDEL(); /*0x5d80a2*/
   return this; /*0x5d80ac*/
@@ -614,10 +617,10 @@ int AbstractClass::initVtableBase()
 namespace gamemd {
 void AbstractClass::DTOR()
 {
-  *this = &(void*)(void*)&AbstractClass_vftable; /*0x4101f0*/
-  this->vtable2 = &(void*)(void*)&AbstractClass_vftable; /*0x4101f6*/
-  this->vtable3 = &(void*)(void*)&AbstractClass_vftable; /*0x4101fd*/
-  this->vtable4 = &(void*)(void*)&AbstractClass_vftable; /*0x410204*/
+  *this = (void*)&AbstractClass_vftable; /*0x4101f0*/
+  this->vtable2 = (void*)&AbstractClass_vftable; /*0x4101f6*/
+  this->vtable3 = (void*)&AbstractClass_vftable; /*0x4101fd*/
+  this->vtable4 = (void*)&AbstractClass_vftable; /*0x410204*/
 }
 } // namespace gamemd
 
@@ -1069,7 +1072,7 @@ int AbstractClass::getMapCoords()
 namespace gamemd {
 std::locale::facet * AbstractClass::setMapCoords(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&Animate_vftable; /*0x427279*/
+  *(_DWORD *)this = (void*)&Animate_vftable; /*0x427279*/
   if ( (a2 & 1) != 0 ) /*0x42727f*/
     RA2_OPDEL(); /*0x427282*/
   return this; /*0x42728c*/
@@ -1153,7 +1156,7 @@ int AbstractClass::compareType(int a1)
 namespace gamemd {
 Blitter * AbstractClass::getTileIndex(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&Blitter_vftable; /*0x499cc9*/
+  *(_DWORD *)this = (void*)&Blitter_vftable; /*0x499cc9*/
   if ( (a2 & 1) != 0 ) /*0x499ccf*/
     RA2_OPDEL(); /*0x499cd2*/
   return this; /*0x499cdc*/
@@ -1164,7 +1167,7 @@ Blitter * AbstractClass::getTileIndex(char a2)
 namespace gamemd {
 BlitPlainXlat * AbstractClass::setTileIndex(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&Blitter_vftable; /*0x499ce9*/
+  *(_DWORD *)this = (void*)&Blitter_vftable; /*0x499ce9*/
   if ( (a2 & 1) != 0 ) /*0x499cef*/
     RA2_OPDEL(); /*0x499cf2*/
   return this; /*0x499cfc*/
@@ -1175,7 +1178,7 @@ BlitPlainXlat * AbstractClass::setTileIndex(char a2)
 namespace gamemd {
 BlitTransXlat * AbstractClass::getOverlayType(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&Blitter_vftable; /*0x499d09*/
+  *(_DWORD *)this = (void*)&Blitter_vftable; /*0x499d09*/
   if ( (a2 & 1) != 0 ) /*0x499d0f*/
     RA2_OPDEL(); /*0x499d12*/
   return this; /*0x499d1c*/
@@ -1186,7 +1189,7 @@ BlitTransXlat * AbstractClass::getOverlayType(char a2)
 namespace gamemd {
 std::locale::facet * AbstractClass::setOverlayFlags(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&Blitter_vftable; /*0x499d29*/
+  *(_DWORD *)this = (void*)&Blitter_vftable; /*0x499d29*/
   if ( (a2 & 1) != 0 ) /*0x499d2f*/
     RA2_OPDEL(); /*0x499d32*/
   return this; /*0x499d3c*/
@@ -1197,7 +1200,7 @@ std::locale::facet * AbstractClass::setOverlayFlags(char a2)
 namespace gamemd {
 RLEBlitter * AbstractClass::clearOverlayFlags(char a2)
 {
-  *(_DWORD *)this = &(void*)(void*)&RLEBlitter_vftable; /*0x499da9*/
+  *(_DWORD *)this = (void*)&RLEBlitter_vftable; /*0x499da9*/
   if ( (a2 & 1) != 0 ) /*0x499daf*/
     RA2_OPDEL(); /*0x499db2*/
   return this; /*0x499dbc*/
@@ -1394,10 +1397,10 @@ int AbstractClass::COMStub_Ret450_151()
 namespace gamemd {
 MissionClass * AbstractClass::getWeaponRange(char a2)
 {
-  *this = &(void*)(void*)&MissionClass_vftable; /*0x5b3a63*/
-  this->vtable2 = &(void*)(void*)&MissionClass_vftable; /*0x5b3a69*/
-  this->vtable3 = &(void*)(void*)&MissionClass_vftable; /*0x5b3a70*/
-  this->vtable4 = &(void*)(void*)&MissionClass_vftable; /*0x5b3a77*/
+  *this = (void*)&MissionClass_vftable; /*0x5b3a63*/
+  this->vtable2 = (void*)&MissionClass_vftable; /*0x5b3a69*/
+  this->vtable3 = (void*)&MissionClass_vftable; /*0x5b3a70*/
+  this->vtable4 = (void*)&MissionClass_vftable; /*0x5b3a77*/
   ObjectClass::Dtor(); /*0x5b3a7e*/
   if ( (a2 & 1) != 0 ) /*0x5b3a88*/
     RA2_OPDEL(); /*0x5b3a8b*/
@@ -1765,7 +1768,7 @@ void AbstractClass::resetTeamState()
 namespace gamemd {
 FileClass * AbstractClass::processAITrigger(char a2)
 {
-  *this = &(void*)(void*)&FileClass_vftable; /*0x65c619*/
+  *this = (void*)&FileClass_vftable; /*0x65c619*/
   if ( (a2 & 1) != 0 ) /*0x65c61f*/
     RA2_OPDEL(); /*0x65c622*/
   return this; /*0x65c62c*/

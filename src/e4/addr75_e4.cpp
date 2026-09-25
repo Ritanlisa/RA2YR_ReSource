@@ -38,6 +38,8 @@
 #include "e4/classes/E4Recv_74BBF0_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/ComPtr_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/String_e4.hpp"
 
 // 0x750920
@@ -325,11 +327,11 @@ void ThemeClass_Update()
 {
   unsigned __int64 v0; // rdi
   unsigned __int64 v1; // rax
-  int v2; // eax
-  _DWORD *v3; // esi
-  int v4; // eax
+  _DWORD * v2;
+  _DWORD * v3;
+  _DWORD * v4;
   char *v5; // edi
-  int v6; // eax
+  _DWORD * v6;
   int v7; // ebp
   const char *v8; // edi
   _BYTE v9[16]; // [esp+0h] [ebp-118h] BYREF
@@ -462,7 +464,7 @@ int TauntClass_Play(int a1)
 {
   char v1; // al
   int result; // eax
-  const char *v3; // [esp-8h] [ebp-1Ch]
+  const unsigned int v3;
   int v4; // [esp-4h] [ebp-18h]
   char Buffer[20]; // [esp+0h] [ebp-14h] BYREF
 
@@ -1923,7 +1925,7 @@ int sub_759180()
   dword_B45B60 = 0; /*0x75918c*/
   byte_B45B64 = 1; /*0x759191*/
   byte_B45B65 = 0; /*0x759198*/
-  dword_B45B58 = (int)&(void*)(void*)&DynamicVectorClass_MovieHandle___vftable; /*0x75919d*/
+  dword_B45B58 = (int)&DynamicVectorClass_MovieHandle___vftable; /*0x75919d*/
   dword_B45B6C = 10; /*0x7591a7*/
   g_AsyncIOState = 0; /*0x7591b1*/
   return atexit(sub_7591C0); /*0x7591bc*/
@@ -1933,7 +1935,7 @@ int sub_759180()
 namespace gamemd {
 void sub_7591C0()
 {
-  dword_B45B58 = (int)&(void*)(void*)&VectorClass_MovieHandle___vftable; /*0x7591c8*/
+  dword_B45B58 = (int)&VectorClass_MovieHandle___vftable; /*0x7591c8*/
   if ( AsyncIO_Instance && byte_B45B65 ) /*0x7591dc*/
   {
     RA2_OPDEL(AsyncIO_Instance); /*0x7591df*/
@@ -2296,7 +2298,7 @@ int sub_750300()
   dword_B1D380 = 0; /*0x75030c*/
   byte_B1D384 = 1; /*0x750311*/
   byte_B1D385 = 0; /*0x750318*/
-  dword_B1D378 = (int)&(void*)(void*)&DynamicVectorClass_VocClass___vftable; /*0x75031d*/
+  dword_B1D378 = (int)&DynamicVectorClass_VocClass___vftable; /*0x75031d*/
   dword_B1D38C = 10; /*0x750327*/
   g_VocPlayState = 0; /*0x750331*/
   return atexit(sub_750340); /*0x75033c*/
@@ -2307,7 +2309,7 @@ int sub_750300()
 namespace gamemd {
 void sub_750340()
 {
-  dword_B1D378 = (int)&(void*)(void*)&VectorClass_VocClass___vftable; /*0x750348*/
+  dword_B1D378 = (int)&VectorClass_VocClass___vftable; /*0x750348*/
   if ( g_VocAudioConfig && byte_B1D385 ) /*0x75035c*/
   {
     RA2_OPDEL(g_VocAudioConfig); /*0x75035f*/
@@ -2703,7 +2705,7 @@ int sub_752210()
   dword_B1D4A8 = 0; /*0x75221c*/
   byte_B1D4AC = 1; /*0x752221*/
   byte_B1D4AD = 0; /*0x752228*/
-  dword_B1D4A0 = (int)&(void*)(void*)&DynamicVectorClass_VoxClass___vftable; /*0x75222d*/
+  dword_B1D4A0 = (int)&DynamicVectorClass_VoxClass___vftable; /*0x75222d*/
   dword_B1D4B4 = 10; /*0x752237*/
   g_InfantrySelectState = 0; /*0x752241*/
   return atexit(sub_752250); /*0x75224c*/
@@ -2714,7 +2716,7 @@ int sub_752210()
 namespace gamemd {
 void sub_752250()
 {
-  dword_B1D4A0 = (int)&(void*)(void*)&VectorClass_VoxClass___vftable; /*0x752258*/
+  dword_B1D4A0 = (int)&VectorClass_VoxClass___vftable; /*0x752258*/
   if ( g_InfantryRenderPool && byte_B1D4AD ) /*0x75226c*/
   {
     RA2_OPDEL(g_InfantryRenderPool); /*0x75226f*/

@@ -10,6 +10,8 @@
 #include "e4/classes/Timer_e4.hpp"
 #include "e4/classes/SlaveManagerClass_e4.hpp"
 #include "e4/classes/TechnoClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x522D00
@@ -59,25 +61,25 @@ void* SlaveManagerClass::ctor(TechnoClass * aP1, int a3, int a4, int a5, int a6)
   int v12; // eax
   int v13; // ecx
   int v14; // eax
-  int v15; // eax
+  void * v15;
   int v16; // edx
-  int v17; // eax
+  SlaveManagerClass * v17;
   int v19; // [esp+10h] [ebp-8h]
   int i; // [esp+1Ch] [ebp+4h]
 
   AbstractClass::Constructor(); /*0x6af1a8*/
   SlaveControlVector::Constructor((_DWORD *)(&this->abstractFlags6), 0, 0); /*0x6af1b6*/
-  this->slaves = &(void*)(void*)&DynamicVectorClass_SlaveManagerClass_SlaveControl___vftable; /*0x6af1c3*/
+  this->slaves = (void*)&DynamicVectorClass_SlaveManagerClass_SlaveControl___vftable; /*0x6af1c3*/
   this->q04C = 10; /*0x6af1c9*/
   this->q048 = 0; /*0x6af1d0*/
   this->q050 = g_CurrentFrame; /*0x6af1d8*/
   this->SlaveManagerClass_field_58 = 0; /*0x6af1df*/
   this->master = aP1; /*0x6af1e2*/
   this->house = a3; /*0x6af1e9*/
-  *(_DWORD *)this = &(void*)(void*)&SlaveManagerClass_vftable; /*0x6af1f2*/
-  this->vtable2 = &(void*)(void*)&SlaveManagerClass_vftable; /*0x6af1f8*/
-  this->vtable3 = &(void*)(void*)&SlaveManagerClass_vftable; /*0x6af1ff*/
-  this->vtable4 = &(void*)(void*)&SlaveManagerClass_vftable; /*0x6af206*/
+  *(void **)this = (void*)&SlaveManagerClass_vftable; /*0x6af1f2*/
+  this->vtable2 = (void*)&SlaveManagerClass_vftable; /*0x6af1f8*/
+  this->vtable3 = (void*)&SlaveManagerClass_vftable; /*0x6af1ff*/
+  this->vtable4 = (void*)&SlaveManagerClass_vftable; /*0x6af206*/
   this->slaveOwner = a4; /*0x6af20d*/
   this->slaveType = a5; /*0x6af210*/
   this->slaveCount = a6; /*0x6af213*/
@@ -149,7 +151,7 @@ void* SlaveManagerClass::ctor(TechnoClass * aP1, int a3, int a4, int a5, int a6)
 namespace gamemd {
 int SlaveManagerClass::Constructor()
 {
-  int v2; // eax
+  SlaveManagerClass * v2;
   int v4; // [esp+8h] [ebp-8h]
 
   AbstractClass::Constructor(); /*0x6af366*/
@@ -157,15 +159,15 @@ int SlaveManagerClass::Constructor()
   this->slaveVectorCapacity = 0; /*0x6af374*/
   this->creationFrame = 1; /*0x6af377*/
   this->u8_45 = 0; /*0x6af37b*/
-  this->slaves = &(void*)(void*)&DynamicVectorClass_SlaveManagerClass_SlaveControl___vftable; /*0x6af37e*/
+  this->slaves = (void*)&DynamicVectorClass_SlaveManagerClass_SlaveControl___vftable; /*0x6af37e*/
   this->q04C = 10; /*0x6af385*/
   this->q048 = 0; /*0x6af38c*/
   this->q050 = g_CurrentFrame; /*0x6af395*/
   this->SlaveManagerClass_field_58 = 0; /*0x6af398*/
-  *(_DWORD *)this = &(void*)(void*)&SlaveManagerClass_vftable; /*0x6af39b*/
-  this->vtable2 = &(void*)(void*)&SlaveManagerClass_vftable; /*0x6af3a1*/
-  this->vtable3 = &(void*)(void*)&SlaveManagerClass_vftable; /*0x6af3a8*/
-  this->vtable4 = &(void*)(void*)&SlaveManagerClass_vftable; /*0x6af3af*/
+  *(void **)this = (void*)&SlaveManagerClass_vftable; /*0x6af39b*/
+  this->vtable2 = (void*)&SlaveManagerClass_vftable; /*0x6af3a1*/
+  this->vtable3 = (void*)&SlaveManagerClass_vftable; /*0x6af3a8*/
+  this->vtable4 = (void*)&SlaveManagerClass_vftable; /*0x6af3af*/
   this->master = 0; /*0x6af3b6*/
   this->house = 0; /*0x6af3b9*/
   this->slaveOwner = 0; /*0x6af3bc*/
@@ -200,10 +202,10 @@ void SlaveManagerClass::Constructor_SlaveManagerClass()
   int v4; // eax
   void *v5; // eax
 
-  *(_DWORD *)this = &(void*)(void*)&SlaveManagerClass_vftable; /*0x6af4a5*/
-  this->vtable2 = &(void*)(void*)&SlaveManagerClass_vftable; /*0x6af4ab*/
-  this->vtable3 = &(void*)(void*)&SlaveManagerClass_vftable; /*0x6af4b2*/
-  this->vtable4 = &(void*)(void*)&SlaveManagerClass_vftable; /*0x6af4b9*/
+  *(void **)this = (void*)&SlaveManagerClass_vftable; /*0x6af4a5*/
+  this->vtable2 = (void*)&SlaveManagerClass_vftable; /*0x6af4ab*/
+  this->vtable3 = (void*)&SlaveManagerClass_vftable; /*0x6af4b2*/
+  this->vtable4 = (void*)&SlaveManagerClass_vftable; /*0x6af4b9*/
   for ( i = this->q048 - 1; i >= 0; --i ) /*0x6af4c4*/
   {
     if ( *(_DWORD *)(this->slaveVectorCount + 4 * i) ) /*0x6af4c9*/
@@ -223,7 +225,7 @@ void SlaveManagerClass::Constructor_SlaveManagerClass()
     while ( v4 < dword_B0B600 ); /*0x6af53d*/
   }
   v5 = *(void **)(&this->nextArrayIndex0); /*0x6af53f*/
-  this->slaves = &(void*)(void*)&VectorClass_SlaveManagerClass_SlaveControl___vftable; /*0x6af542*/
+  this->slaves = (void*)&VectorClass_SlaveManagerClass_SlaveControl___vftable; /*0x6af542*/
   if ( v5 && this->u8_45 ) /*0x6af54c*/
   {
     RA2_OPDEL(v5); /*0x6af554*/
@@ -272,7 +274,7 @@ int SlaveManagerClass::UpdateSlaves()
 {
   int *v2; // edi
   int v3; // edx
-  int v4; // eax
+  TechnoClass * v4;
   int v6; // [esp+Ch] [ebp-8h]
 
   v2 = (int *)g_CurrentFrame; /*0x6af5f7*/
@@ -787,15 +789,15 @@ AbstractClass * * SlaveManagerClass::LoadManager(unsigned int * a1, int a2)
     {
       AbstractClass::InitVtables(v3, (int)&a1); /*0x6b119b*/
       SlaveControlVector::Constructor(v3 + 14, 0, 0); /*0x6b11a7*/
-      v3[14] = &(void*)(void*)&DynamicVectorClass_SlaveManagerClass_SlaveControl___vftable; /*0x6b11b0*/
+      v3[14] = (void*)&DynamicVectorClass_SlaveManagerClass_SlaveControl___vftable; /*0x6b11b0*/
       v3[19] = 10; /*0x6b11b6*/
       v3[18] = 0; /*0x6b11bd*/
       Timer::Start(v3 + 20, 0); /*0x6b11c0*/
-      *v3 = &(void*)(void*)&SlaveManagerClass_vftable; /*0x6b11c5*/
-      v3[1] = &(void*)(void*)&SlaveManagerClass_vftable; /*0x6b11cb*/
+      *v3 = (void*)&SlaveManagerClass_vftable; /*0x6b11c5*/
+      v3[1] = (void*)&SlaveManagerClass_vftable; /*0x6b11cb*/
       v2 = a2; /*0x6b11d2*/
-      v3[2] = &(void*)(void*)&SlaveManagerClass_vftable; /*0x6b11d6*/
-      v3[3] = &(void*)(void*)&SlaveManagerClass_vftable; /*0x6b11dd*/
+      v3[2] = (void*)&SlaveManagerClass_vftable; /*0x6b11d6*/
+      v3[3] = (void*)&SlaveManagerClass_vftable; /*0x6b11dd*/
     }
     Prefix_0 = (*(int (__stdcall **)(int, int *, int, _DWORD))(v2->vtable4)(v2, &v16, 4, 0); /*0x6b11f2*/
     if ( Prefix_0 >= 0 ) /*0x6b11f6*/
@@ -804,7 +806,7 @@ AbstractClass * * SlaveManagerClass::LoadManager(unsigned int * a1, int a2)
       if ( v3 != (_DWORD *)-56 ) /*0x6b1201*/
       {
         SlaveControlVector::Constructor(v3 + 14, 0, 0); /*0x6b1207*/
-        *v6 = &(void*)(void*)&DynamicVectorClass_SlaveManagerClass_SlaveControl___vftable; /*0x6b120c*/
+        *v6 = (void*)&DynamicVectorClass_SlaveManagerClass_SlaveControl___vftable; /*0x6b120c*/
         v3[19] = 10; /*0x6b1212*/
         v3[18] = 0; /*0x6b1219*/
       }
@@ -1109,7 +1111,7 @@ DynamicVector * SlaveManagerClass_25::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x6b1983*/
-  *this = &(void*)(void*)&VectorClass_SlaveManagerClass_SlaveControl___vftable; /*0x6b1986*/
+  *this = (void*)&VectorClass_SlaveManagerClass_SlaveControl___vftable; /*0x6b1986*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x6b1990*/
   {
     RA2_OPDEL(v3); /*0x6b1998*/

@@ -5,14 +5,17 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/ArtConfig_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/Timer_e4.hpp"
 
 // 0x557AC0
 namespace gamemd {
 int Array::GetClamped(CheckListClass * aP1)
 {
   int result; // eax
-  int v3; // edx
+  unsigned int v3;
   int v4; // eax
 
   result = *(&this->q0047); /*0x557ac0*/
@@ -31,7 +34,7 @@ int Array::GetClamped(CheckListClass * aP1)
 namespace gamemd {
 int Array::FindValue(IUnknown * aP1)
 {
-  int v2; // esi
+  void * v2;
   int result; // eax
   int v4; // edx
   _DWORD **i; // ecx
@@ -55,8 +58,8 @@ int Array::FindValue(IUnknown * aP1)
 namespace gamemd {
 int Array::RemoveAt(int a2)
 {
-  int v2; // edx
-  int v4; // edx
+  void * v2;
+  void * v4;
 
   v2 = this->q010; /*0x63e590*/
   a2 = a2; /*0x63e593*/
@@ -172,7 +175,7 @@ int Array::CleanupArrayWOL()
     DeleteAndZero((void **)(*(this + 2) + 4 * i)); /*0x7acd41*/
     result = *this; /*0x7acd46*/
   }
-  *this = 0; /*0x7acd4d*/
+  *(_DWORD *)this = 0; /*0x7acd4d*/
   return result; /*0x7acd53*/
 }
 }
@@ -180,7 +183,7 @@ int Array::CleanupArrayWOL()
 namespace gamemd {
 AbstractClass * * Array::InsertElement(const void * a1, ObjectClass * v5)
 {
-  int v4; // esi
+  ObjectClass * v4;
   int v5; // ecx
   int v6; // eax
   int v7; // ebp
@@ -341,7 +344,7 @@ void Array::RemoveItemByValue(AbstractClass * aP0, int a2)
 {
   int v2; // ecx
   int v3; // edx
-  _DWORD *v4; // esi
+  unsigned int v4;
   int v5; // eax
 
   if ( aP0 ) /*0x55b887*/

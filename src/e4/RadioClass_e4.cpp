@@ -7,6 +7,8 @@
 #include "e4/classes/RadioClass_e4.hpp"
 #include "e4/classes/RandomMap_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x65A750
@@ -18,13 +20,13 @@ unsigned int * RadioClass::Release()
   *(&this->abstractFlags8) = 1; /*0x65a764*/
   this->q0EC = 1; /*0x65a76e*/
   this->q0ED = 0; /*0x65a775*/
-  *(&this->abstractFlags6) = &(void*)(void*)&VectorClass_TechnoClass___vftable; /*0x65a77c*/
+  *(&this->abstractFlags6) = (void*)&VectorClass_TechnoClass___vftable; /*0x65a77c*/
   *(&this->abstractFlags7) = RA2_OPNEW(4u); /*0x65a78b*/
   this->q0ED = 1; /*0x65a791*/
-  *this = &(void*)(void*)&RadioClass_vftable; /*0x65a798*/
-  this->vtable2 = &(void*)(void*)&RadioClass_vftable; /*0x65a79e*/
-  this->vtable3 = &(void*)(void*)&RadioClass_vftable; /*0x65a7a5*/
-  this->vtable4 = &(void*)(void*)&RadioClass_vftable; /*0x65a7ac*/
+  *(void **)this = (void*)&RadioClass_vftable; /*0x65a798*/
+  this->vtable2 = (void*)&RadioClass_vftable; /*0x65a79e*/
+  this->vtable3 = (void*)&RadioClass_vftable; /*0x65a7a5*/
+  this->vtable4 = (void*)&RadioClass_vftable; /*0x65a7ac*/
   *(_DWORD *)*(&this->abstractFlags7) = 0; /*0x65a7be*/
   *(&this->abstractFlags3) = 0; /*0x65a7c4*/
   *(&this->abstractFlags4) = 0; /*0x65a7ca*/
@@ -79,9 +81,9 @@ namespace gamemd {
 int RadioClass::LoadState(ObjectClass * aP1, ObjectClass * aP2)
 {
   int result; // eax
-  int v6; // esi
+  ObjectClass * v6;
   int v7; // esi
-  int v8; // eax
+  ObjectClass * v8;
   int v9; // esi
 
   aP1 = aP1; /*0x65ab81*/
@@ -96,7 +98,7 @@ int RadioClass::LoadState(ObjectClass * aP1, ObjectClass * aP2)
       aP1->q0E8 = 0; /*0x65abab*/
       aP1->q0EC = 1; /*0x65abb2*/
       aP1->q0ED = 0; /*0x65abb6*/
-      *(_DWORD *)v6 = &(void*)(void*)&VectorClass_TechnoClass___vftable; /*0x65abba*/
+      *(void **)v6 = (void*)&VectorClass_TechnoClass___vftable; /*0x65abba*/
     }
     result = (*(int (__stdcall **)(int, int *, int, _DWORD))(aP2->vtable4)(aP2, &aP2, 4, 0); /*0x65abcc*/
     if ( result >= 0 ) /*0x65abd1*/
@@ -208,7 +210,7 @@ int RadioClass::ExecuteAction(TimerStruct * aP1, IUnknown * aP2)
 {
   int result; // eax
   int i; // ecx
-  int v6; // eax
+  void * v6;
   int v7; // edx
   _DWORD *v8; // eax
 

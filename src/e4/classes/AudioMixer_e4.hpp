@@ -14,7 +14,7 @@ struct AudioMixer {
     unsigned int AudioMixer_field_10;  // 0x10
     unsigned int AudioMixer_field_14;  // 0x14
     unsigned int q018;  // 0x18
-    void* q01C;  // 0x1C
+    unsigned int q01C;  // 0x1C
     unsigned int q020;  // 0x20
     void* q024;  // 0x24
     unsigned char q028;  // 0x28

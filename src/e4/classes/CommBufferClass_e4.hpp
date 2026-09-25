@@ -68,7 +68,7 @@ struct CommBufferClass {
     unsigned char q294;  // 0x294
     CampaignClass* q304;  // 0x304
 // --- flat members (END) ---
-    CommBufferClass * sub_48B0E0(int a2, int a3, size_t Size, int a5);  // 0x48B0E0
+    CommBufferClass * sub_48B0E0(int a2,  int a3,  size_t Size,  int a5);    // 0x48B0E0
     void sub_48B1F0();  // 0x48B1F0
 };
 } // namespace gamemd

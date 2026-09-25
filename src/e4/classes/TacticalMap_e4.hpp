@@ -28,7 +28,7 @@ struct TacticalMap {
     void* q044;  // 0x44
     void* q048;  // 0x48
     unsigned int u32_4C;  // 0x4C
-    unsigned int q050;  // 0x50
+    char q050[4];  // 0x50
     float q054;  // 0x54
     unsigned int u32_58;  // 0x58
     unsigned char q060;  // 0x60
@@ -212,6 +212,7 @@ struct TacticalMap {
     unsigned int nextArrayIndex;
     unsigned int objectTypeFlags;
     unsigned int q02D;
+    unsigned int q0588;
     unsigned int q0A8;
     unsigned int q0AC;
     unsigned int q0C4;
@@ -225,31 +226,32 @@ struct TacticalMap {
     unsigned int q2B4;
     unsigned int q300;
     unsigned int q364;
+    unsigned int q3660;
+    unsigned int q36B;
     unsigned int qD6C;
     unsigned int qD70;
     unsigned int qD7C;
     unsigned int qD80;
     unsigned int qD84;
+    unsigned int qDA4;
+    unsigned int qDA8;
+    unsigned int qDB0;
     unsigned int u32_2F0;
     unsigned int u32_686;
     unsigned int u32_6C0;
     unsigned int u32_D64;
     unsigned int u32_D7E;
+    unsigned int u32_D94;
     unsigned int uniqueId;
     unsigned int vt_slot_64;
     unsigned int vt_slot_68;
     unsigned int vtable2;
     unsigned int vtable20;
     unsigned int vtable3;
+    unsigned int vtable4;
     unsigned int abstractFlags6;
     unsigned int abstractFlags7;
-    unsigned int q0588;
     unsigned int q0A4;
-    unsigned int q3660;
-    unsigned int q36B;
-    unsigned int qDA4;
-    unsigned int qDA8;
-    unsigned int qDB0;
     unsigned int qDB4;
     unsigned int qDF0;
     unsigned int qDF4;
@@ -259,10 +261,8 @@ struct TacticalMap {
     unsigned int qE08;
     unsigned int qE0C;
     unsigned int qE10;
-    unsigned int u32_D94;
     unsigned int uniqueId4;
     unsigned int uniqueId5;
-    unsigned int vtable4;
 // --- flat members (END) ---
     ScenarioClass * * ComputeScreenTint();
     int Construct();

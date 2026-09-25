@@ -20,7 +20,10 @@
 #include "e4/classes/ColorStruct_e4.hpp"
 #include "e4/classes/ConvertClass_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x4228E0
 namespace gamemd {
@@ -37,9 +40,9 @@ void AnimClass::Destruct(AbstractClass * a2)
   void *v11; // [esp+10h] [ebp-10h] BYREF
   _DWORD v12[3]; // [esp+14h] [ebp-Ch] BYREF
 
-  *(_DWORD *)a2 = &(void*)(void*)&AnimClass_vftable; /*0x4228eb*/
-  *((_DWORD *)a2 + 1) = &(void*)(void*)&AnimClass_vftable; /*0x4228f1*/
-  *((_DWORD *)a2 + 2) = &(void*)(void*)&AnimClass_vftable; /*0x4228f8*/
+  *(void **)a2 = (void*)&AnimClass_vftable; /*0x4228eb*/
+  *((_DWORD *)a2 + 1) = (void*)&AnimClass_vftable; /*0x4228f1*/
+  *((_DWORD *)a2 + 2) = (void*)&AnimClass_vftable; /*0x4228f8*/
   *((_DWORD *)a2 + 3) = &off_7E3328; /*0x4228ff*/
   AbstractClass::AnnounceExpiredPointer((void **)a2); /*0x422906*/
   if ( g_WTFMode ) /*0x422914*/
@@ -970,7 +973,7 @@ BuildingTypeClass * * AnimClass::drawFrame()
     }
     VectorClass_ReestablishPtr::Construct(&v179, 0, 0);
     int v24 = this->q03A;
-    v179 = (void*)(void*)&DynamicVectorClass_Reestablish___vftable;
+    v179 = (void*)&DynamicVectorClass_Reestablish___vftable;
     int v184 = 10;
     v183 = 0;
     aP1 = 0;

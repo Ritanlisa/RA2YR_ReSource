@@ -142,8 +142,8 @@ struct VoxelAnim {
     unsigned char q69D8;  // 0x69D8
     unsigned int matrices;
     unsigned int u32_100;
-    unsigned char u8_36;
     unsigned int u32_88;
+    unsigned char u8_36;
 // --- flat members (END) ---
     int ComputeTransform(float * a1, float * a2, float a3, int a4);
     int Draw(unsigned int * a2);

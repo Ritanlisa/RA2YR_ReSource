@@ -14,10 +14,10 @@ struct MSBitPrintAnim {
     unsigned char q010;  // 0x10
     unsigned char q014;  // 0x14
     unsigned char q018;  // 0x18
-    CampaignScore* q01C;  // 0x1C
+    void* q01C;  // 0x1C
     unsigned char q020;  // 0x20
     unsigned char q024;  // 0x24
-    CampaignScore* q028;  // 0x28
+    void* q028;  // 0x28
     void* q02C;  // 0x2C
     void* q030;  // 0x30
     unsigned char q034;  // 0x34
@@ -55,7 +55,7 @@ struct MSBitPrintAnim {
     unsigned char q124;  // 0x124
     unsigned char q128;  // 0x128
     unsigned char q130;  // 0x130
-    CampaignScore* q134;  // 0x134
+    void* q134;  // 0x134
     unsigned char q138;  // 0x138
     unsigned char q13C;  // 0x13C
     unsigned char q144;  // 0x144

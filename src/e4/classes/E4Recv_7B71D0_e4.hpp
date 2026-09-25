@@ -6,6 +6,6 @@
 namespace gamemd {
 struct E4Recv_7B71D0 {
     void* vfptr;  // minimal E2 declaration
-    char Render_Helper_7B71D0(CampaignScore * aP1, size_t a3);  // 0x7B71D0
+    char Render_Helper_7B71D0(void* aP1,  size_t a3);    // 0x7B71D0
 };
 } // namespace gamemd

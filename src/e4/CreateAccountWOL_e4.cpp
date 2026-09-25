@@ -5,6 +5,8 @@
 #include "e4/classes/VectorClass_flat_e4.hpp"
 #include "e4/classes/Math_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x72C240
@@ -29,7 +31,7 @@ char sub_72C240()
 namespace gamemd {
 void sub_72C290()
 {
-  void *v0; // esi
+  unsigned int v0;
 
   if ( byte_B0FD21 ) /*0x72c29a*/
   {
@@ -81,7 +83,7 @@ char sub_72C420()
 namespace gamemd {
 void sub_72C470()
 {
-  void *v0; // esi
+  unsigned int v0;
 
   if ( byte_B0FD15 ) /*0x72c47a*/
   {

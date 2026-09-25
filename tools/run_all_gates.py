@@ -18,8 +18,13 @@ def run_gate(name, args):
 gates = [
     ("code-standards", ["tools/check_translated_functions.py"]),
     ("ida-artifact",   ["tools/check_pointer_arithmetic.py", "src/", "app/"]),
+    # exec-flow worker count: measured per-worker steady RSS is ~2.5GB
+    # (signals.json + member_lookup.json parsed per spawn worker), so 4
+    # workers = ~10GB, inside the 12GB memory discipline on the 32GB box.
+    # Measured cold-run (12.7k functions, 2026-09-25): full pool ~T_full with
+    # 4 workers -- see .omo/verify_profile_report.md.
     ("exec-flow",      ["tools/verify_execution_flow.py", "--auto",
-                        "--workers", "2"]),
+                        "--workers", "4"]),
 ]
 
 results = {}

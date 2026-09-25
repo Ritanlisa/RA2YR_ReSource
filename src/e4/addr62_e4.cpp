@@ -38,7 +38,10 @@
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/Timer_e4.hpp"
 #include "e4/classes/WideString_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x620050
 namespace gamemd {
@@ -643,7 +646,7 @@ namespace gamemd {
 double sub_621150(int a1)
 {
   double result; // st7
-  int *v2; // edx
+  unsigned int v2;
   int v3; // esi
   int v4; // eax
   double v5; // st7
@@ -1934,7 +1937,7 @@ unsigned int * sub_627020()
       v2[2] = 0; /*0x627063*/
       *((_BYTE *)v2 + 12) = 1; /*0x627066*/
       *((_BYTE *)v2 + 13) = 0; /*0x62706a*/
-      *v2 = &(void*)(void*)&DynamicVectorClass_char___vftable; /*0x62706d*/
+      *v2 = (void*)&DynamicVectorClass_char___vftable; /*0x62706d*/
       v2[5] = 10; /*0x627073*/
       v2[4] = 0; /*0x62707a*/
     }
@@ -1950,7 +1953,7 @@ unsigned int * sub_627020()
       v3[2] = 0; /*0x627095*/
       *((_BYTE *)v3 + 12) = 1; /*0x627098*/
       *((_BYTE *)v3 + 13) = 0; /*0x62709c*/
-      *v3 = &(void*)(void*)&DynamicVectorClass_HSVClass_vftable; /*0x62709f*/
+      *v3 = (void*)&DynamicVectorClass_HSVClass_vftable; /*0x62709f*/
       v3[5] = 10; /*0x6270a5*/
       v3[4] = 0; /*0x6270ac*/
     }
@@ -2213,9 +2216,9 @@ AbstractClass * * DestructParticleSystemClass(ParticleSystemClass * aP0, int a2)
   void *v11; // eax
   void *v14; // [esp+14h] [ebp-4h] BYREF
 
-  *(_DWORD *)this = &(void*)(void*)&ParticleSystemClass_vftable; /*0x62e077*/
-  this->vtable2 = &(void*)(void*)&ParticleSystemClass_vftable; /*0x62e07d*/
-  this->vtable3 = &(void*)(void*)&ParticleSystemClass_vftable; /*0x62e084*/
+  *(_DWORD *)this = (void*)&ParticleSystemClass_vftable; /*0x62e077*/
+  this->vtable2 = (void*)&ParticleSystemClass_vftable; /*0x62e07d*/
+  this->vtable3 = (void*)&ParticleSystemClass_vftable; /*0x62e084*/
   this->vtable4 = &off_7EFB70; /*0x62e08b*/
   AbstractClass::AnnounceExpiredPointer(); /*0x62e092*/
   ObjectClass::Undeploy(); /*0x62e099*/
@@ -2287,7 +2290,7 @@ AbstractClass * * DestructParticleSystemClass(ParticleSystemClass * aP0, int a2)
     while ( v10 < g_AlphaShapePool ); /*0x62e23c*/
   }
   v11 = (void *)this->TargetCoords; /*0x62e23e*/
-  this->Particles = &(void*)(void*)&VectorClass_ParticleClass___vftable; /*0x62e244*/
+  this->Particles = (void*)&VectorClass_ParticleClass___vftable; /*0x62e244*/
   if ( v11 && this->q0C9 ) /*0x62e252*/
   {
     RA2_OPDEL(v11); /*0x62e25b*/
@@ -2536,7 +2539,7 @@ LRESULT GetListBoxItemText(ObjectClass * aP0, WPARAM wParam, void ** a2)
 namespace gamemd {
 unsigned int * E4Recv_624080::sub_624080()
 {
-  *this = &(void*)(void*)&OwnerDraw_DialogControl_vftable; /*0x624082*/
+  *this = (void*)&OwnerDraw_DialogControl_vftable; /*0x624082*/
   return this; /*0x624088*/
 }
 } // namespace gamemd
@@ -2545,7 +2548,7 @@ unsigned int * E4Recv_624080::sub_624080()
 namespace gamemd {
 void E4Recv_624090::sub_624090()
 {
-  *this = &(void*)(void*)&OwnerDraw_DialogControl_vftable; /*0x624090*/
+  *this = (void*)&OwnerDraw_DialogControl_vftable; /*0x624090*/
 }
 } // namespace gamemd
 
@@ -2815,7 +2818,7 @@ unsigned int * E4Recv_628B00::sub_628B00(int a2, unsigned char * a3)
   *(this + 2) = a2; /*0x628b13*/
   *((_BYTE *)this + 12) = 1; /*0x628b16*/
   *((_BYTE *)this + 13) = 0; /*0x628b1a*/
-  *this = &(void*)(void*)&VectorClass_HashObject_HashString_SchemeNode___vftable; /*0x628b1e*/
+  *this = (void*)&VectorClass_HashObject_HashString_SchemeNode___vftable; /*0x628b1e*/
   if ( a2 ) /*0x628b24*/
   {
     if ( a3 ) /*0x628b2c*/
@@ -2858,7 +2861,7 @@ unsigned int * E4Recv_628B00::sub_628B00(int a2, unsigned char * a3)
       this->IsAllocated = 1; /*0x628b8b*/
     }
   }
-  *this = &(void*)(void*)&DynamicVectorClass_HashObject_HashString_SchemeNode___vftable; /*0x628b8f*/
+  *this = (void*)&DynamicVectorClass_HashObject_HashString_SchemeNode___vftable; /*0x628b8f*/
   this->u32_14 = 10; /*0x628b95*/
   this->q010 = 0; /*0x628b9c*/
   return this; /*0x628ba5*/
@@ -3009,7 +3012,7 @@ int sub_629190()
   dword_AC4918 = 0; /*0x62919c*/
   byte_AC491C = 1; /*0x6291a1*/
   byte_AC491D = 0; /*0x6291a8*/
-  dword_AC4910 = (int)&(void*)(void*)&DynamicVectorClass_ParasiteClass___vftable; /*0x6291ad*/
+  dword_AC4910 = (int)&DynamicVectorClass_ParasiteClass___vftable; /*0x6291ad*/
   dword_AC4924 = 10; /*0x6291b7*/
   dword_AC4920 = 0; /*0x6291c1*/
   return atexit(sub_6291D0); /*0x6291cc*/
@@ -3020,7 +3023,7 @@ int sub_629190()
 namespace gamemd {
 void sub_6291D0()
 {
-  dword_AC4910 = (int)&(void*)(void*)&VectorClass_ParasiteClass___vftable; /*0x6291d8*/
+  dword_AC4910 = (int)&VectorClass_ParasiteClass___vftable; /*0x6291d8*/
   if ( dword_AC4914 && byte_AC491D ) /*0x6291ec*/
   {
     RA2_OPDEL(dword_AC4914); /*0x6291ef*/

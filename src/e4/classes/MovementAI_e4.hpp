@@ -28,7 +28,7 @@ struct MovementAI {
     unsigned int u32_44;  // 0x44
     void* q048;  // 0x48
     unsigned int u32_4C;  // 0x4C
-    unsigned int q050;  // 0x50
+    char q050[4];  // 0x50
     TechnoClass * q054;  // 0x54
     unsigned int u32_60;  // 0x60
     unsigned int u32_64;  // 0x64

@@ -4,6 +4,8 @@
 #include "e4/classes/Dialog_e4.hpp"
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x7A19E0
@@ -20,7 +22,7 @@ void sub_7A19E0()
   char *v7; // eax
   wchar_t *v8; // eax
   wchar_t *v9; // eax
-  int v10; // [esp+0h] [ebp-80h]
+  unsigned int v10;
   void *v11; // [esp+0h] [ebp-80h]
   void *v12; // [esp+Ch] [ebp-74h] BYREF
   int v13; // [esp+10h] [ebp-70h] BYREF

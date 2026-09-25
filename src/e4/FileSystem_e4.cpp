@@ -6,13 +6,15 @@
 #include "e4/classes/File_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/FilePipe_30_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/CCFileClass_e4.hpp"
 
 // 0x626DA0
 namespace gamemd {
 int FileSystem::ProcessNextFileExtension()
 {
-  _DWORD *v0; // edi
+  unsigned int v0;
   _DWORD *v1; // eax
   _DWORD *v2; // eax
   _DWORD *v3; // esi
@@ -55,7 +57,7 @@ int FileSystem::ProcessNextFileExtension()
       if ( v2 ) /*0x626ddb*/
       {
         StringVector::Construct(v2, 0, 0); /*0x626de1*/
-        *v3 = &(void*)(void*)&DynamicVectorClass_char___vftable; /*0x626de6*/
+        *(void **)v3 = (void*)&DynamicVectorClass_char___vftable; /*0x626de6*/
         v3[5] = 10; /*0x626dec*/
         v3[4] = 0; /*0x626df3*/
       }
@@ -220,9 +222,9 @@ void FileSystem::InitPipShapes()
 namespace gamemd {
 void FileSystem::CleanupTrees()
 {
-  void *v0; // esi
-  void *v1; // esi
-  void *v2; // esi
+  unsigned int v0;
+  unsigned int v1;
+  unsigned int v2;
 
   if ( byte_B0FBAC ) /*0x72d35a*/
   {

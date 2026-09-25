@@ -98,7 +98,11 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/SkirmishDialog_e4.hpp"
 #include "e4/classes/EventQueue_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/GameClass_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
+#include "e4/classes/BuildingClass_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
 
 // 0x630310
 namespace gamemd {
@@ -110,14 +114,14 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
   int v9; // esi
   _DWORD *v10; // eax
   _DWORD *v11; // ebx
-  _DWORD *v12; // esi
+  unsigned char (*)[4] v12;
   _DWORD *v13; // eax
   _DWORD *v14; // ebx
   int v15; // ebx
   _BYTE *v16; // ebp
   size_t v17; // esi
   unsigned __int8 v18; // bl
-  char *v19; // ecx
+  unsigned int v19;
   char v20; // al
   char v21; // bl
   unsigned int v22; // edi
@@ -136,7 +140,7 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
   unsigned __int8 *v36; // eax
   char v37; // bl
   unsigned int i; // eax
-  unsigned __int8 *v39; // eax
+  unsigned int v39;
   unsigned int v40; // edi
   unsigned int v41; // ebp
   unsigned __int8 v42; // cl
@@ -145,7 +149,7 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
   char *v45; // edi
   int v46; // eax
   unsigned int v47; // ecx
-  unsigned __int8 *v48; // [esp+30h] [ebp-8B4h]
+  unsigned char * v48;
   unsigned __int8 v51; // [esp+38h] [ebp-8ACh]
   unsigned __int8 v52; // [esp+38h] [ebp-8ACh]
   unsigned __int8 v53; // [esp+38h] [ebp-8ACh]
@@ -2325,7 +2329,7 @@ AbstractClass * * ExportSelectionAsScriptAction()
   }
   EventClass::resetEvent(&v24, 0, 0); /*0x63ad87*/
   v1 = 0; /*0x63ad8e*/
-  v24 = &(void*)(void*)&DynamicVectorClass_TechnoClass___vftable; /*0x63ad92*/
+  v24 = (void*)&DynamicVectorClass_TechnoClass___vftable; /*0x63ad92*/
   v29 = 10; /*0x63ad9a*/
   v28 = 0; /*0x63ada2*/
   v30 = 0; /*0x63ada6*/
@@ -2477,7 +2481,7 @@ AbstractClass * * ExportSelectionAsScriptAction()
       ++dword_AC4C00; /*0x63b008*/
     }
   }
-  v24 = &(void*)(void*)&VectorClass_TechnoClass___vftable; /*0x63b012*/
+  v24 = (void*)&VectorClass_TechnoClass___vftable; /*0x63b012*/
   return VectorClass_Techno::ddtor(&v24); /*0x63b01f*/
 }
 }
@@ -3294,7 +3298,7 @@ int E4Recv_631F10::sub_631F10(int a2, int a3)
 namespace gamemd {
 void E4Recv_631F30::sub_631F30()
 {
-  *this = &(void*)(void*)&PixelFXClass_vftable; /*0x631f30*/
+  *this = (void*)&PixelFXClass_vftable; /*0x631f30*/
 }
 } // namespace gamemd
 
@@ -3560,7 +3564,7 @@ int sub_6335E0()
   dword_AC4B50 = 0; /*0x6335ec*/
   byte_AC4B54 = 1; /*0x6335f1*/
   byte_AC4B55 = 0; /*0x6335f8*/
-  dword_AC4B48 = (int)&(void*)(void*)&DynamicVectorClass_EventClass___vftable; /*0x6335fd*/
+  dword_AC4B48 = (int)&DynamicVectorClass_EventClass___vftable; /*0x6335fd*/
   dword_AC4B5C = 10; /*0x633607*/
   dword_AC4B58 = 0; /*0x633611*/
   return atexit(sub_633620); /*0x63361c*/
@@ -3573,7 +3577,7 @@ void sub_633620()
 {
   if ( (byte_AC4B61 & 1) == 0 ) /*0x63362a*/
   {
-    dword_AC4B48 = (int)&(void*)(void*)&VectorClass_EventClass___vftable; /*0x63362e*/
+    dword_AC4B48 = (int)&VectorClass_EventClass___vftable; /*0x63362e*/
     byte_AC4B61 |= 1u; /*0x633641*/
     if ( dword_AC4B4C ) /*0x633647*/
     {
@@ -3597,7 +3601,7 @@ int sub_633680()
   dword_AC4CA0 = 0; /*0x63368c*/
   byte_AC4CA4 = 1; /*0x633691*/
   byte_AC4CA5 = 0; /*0x633698*/
-  g_ScriptConfig = (int)&(void*)(void*)&DynamicVectorClass_PlanningNodeClass___vftable; /*0x63369d*/
+  g_ScriptConfig = (int)&DynamicVectorClass_PlanningNodeClass___vftable; /*0x63369d*/
   dword_AC4CAC = 10; /*0x6336a7*/
   dword_AC4CA8 = 0; /*0x6336b1*/
   return atexit(sub_6336C0); /*0x6336bc*/
@@ -3610,7 +3614,7 @@ void sub_6336C0()
 {
   if ( (byte_AC4B60 & 1) == 0 ) /*0x6336ca*/
   {
-    g_ScriptConfig = (int)&(void*)(void*)&VectorClass_PlanningNodeClass___vftable; /*0x6336ce*/
+    g_ScriptConfig = (int)&VectorClass_PlanningNodeClass___vftable; /*0x6336ce*/
     byte_AC4B60 |= 1u; /*0x6336e1*/
     if ( dword_AC4C9C ) /*0x6336e7*/
     {
@@ -3634,7 +3638,7 @@ int sub_633720()
   dword_AC4C48 = 0; /*0x63372c*/
   byte_AC4C4C = 1; /*0x633731*/
   byte_AC4C4D = 0; /*0x633738*/
-  dword_AC4C40 = (int)&(void*)(void*)&DynamicVectorClass_TechnoClass___vftable; /*0x63373d*/
+  dword_AC4C40 = (int)&DynamicVectorClass_TechnoClass___vftable; /*0x63373d*/
   dword_AC4C54 = 10; /*0x633747*/
   dword_AC4C50 = 0; /*0x633751*/
   return atexit(sub_633760); /*0x63375c*/
@@ -3647,7 +3651,7 @@ void sub_633760()
 {
   if ( (byte_AC4B63 & 1) == 0 ) /*0x63376a*/
   {
-    dword_AC4C40 = (int)&(void*)(void*)&VectorClass_TechnoClass___vftable; /*0x63376e*/
+    dword_AC4C40 = (int)&VectorClass_TechnoClass___vftable; /*0x63376e*/
     byte_AC4B63 |= 1u; /*0x633781*/
     if ( dword_AC4C44 ) /*0x633787*/
     {
@@ -3671,7 +3675,7 @@ int sub_6337C0()
   dword_AC4B38 = 0; /*0x6337cc*/
   byte_AC4B3C = 1; /*0x6337d1*/
   byte_AC4B3D = 0; /*0x6337d8*/
-  dword_AC4B30 = (int)&(void*)(void*)&DynamicVectorClass_PlanningNodeClass___vftable; /*0x6337dd*/
+  dword_AC4B30 = (int)&DynamicVectorClass_PlanningNodeClass___vftable; /*0x6337dd*/
   dword_AC4B44 = 10; /*0x6337e7*/
   dword_AC4B40 = 0; /*0x6337f1*/
   return atexit(sub_633800); /*0x6337fc*/
@@ -3684,7 +3688,7 @@ void sub_633800()
 {
   if ( (byte_AC4B62 & 1) == 0 ) /*0x63380a*/
   {
-    dword_AC4B30 = (int)&(void*)(void*)&VectorClass_PlanningNodeClass___vftable; /*0x63380e*/
+    dword_AC4B30 = (int)&VectorClass_PlanningNodeClass___vftable; /*0x63380e*/
     byte_AC4B62 |= 1u; /*0x633821*/
     if ( dword_AC4B34 ) /*0x633827*/
     {
@@ -3708,7 +3712,7 @@ int sub_633860()
   dword_AC4C20 = 0; /*0x63386c*/
   byte_AC4C24 = 1; /*0x633871*/
   byte_AC4C25 = 0; /*0x633878*/
-  dword_AC4C18 = (int)&(void*)(void*)&DynamicVectorClass_PlanningNodeClass___vftable; /*0x63387d*/
+  dword_AC4C18 = (int)&DynamicVectorClass_PlanningNodeClass___vftable; /*0x63387d*/
   dword_AC4C2C = 10; /*0x633887*/
   dword_AC4C28 = 0; /*0x633891*/
   return atexit(sub_6338A0); /*0x63389c*/
@@ -3721,7 +3725,7 @@ void sub_6338A0()
 {
   if ( (byte_AC4B62 & 2) == 0 ) /*0x6338aa*/
   {
-    dword_AC4C18 = (int)&(void*)(void*)&VectorClass_PlanningNodeClass___vftable; /*0x6338ae*/
+    dword_AC4C18 = (int)&VectorClass_PlanningNodeClass___vftable; /*0x6338ae*/
     byte_AC4B62 |= 2u; /*0x6338c1*/
     if ( dword_AC4C1C ) /*0x6338c7*/
     {
@@ -3745,7 +3749,7 @@ int sub_633900()
   dword_AC4C80 = 0; /*0x63390c*/
   byte_AC4C84 = 1; /*0x633911*/
   byte_AC4C85 = 0; /*0x633918*/
-  dword_AC4C78 = (int)&(void*)(void*)&DynamicVectorClass_PlanningTokenClass___vftable; /*0x63391d*/
+  dword_AC4C78 = (int)&DynamicVectorClass_PlanningTokenClass___vftable; /*0x63391d*/
   dword_AC4C8C = 10; /*0x633927*/
   dword_AC4C88 = 0; /*0x633931*/
   return atexit(sub_633940); /*0x63393c*/
@@ -3758,7 +3762,7 @@ void sub_633940()
 {
   if ( (byte_AC4B62 & 4) == 0 ) /*0x63394a*/
   {
-    dword_AC4C78 = (int)&(void*)(void*)&VectorClass_PlanningTokenClass___vftable; /*0x63394e*/
+    dword_AC4C78 = (int)&VectorClass_PlanningTokenClass___vftable; /*0x63394e*/
     byte_AC4B62 |= 4u; /*0x633961*/
     if ( dword_AC4C7C ) /*0x633967*/
     {

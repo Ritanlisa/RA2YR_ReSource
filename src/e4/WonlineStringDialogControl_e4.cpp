@@ -5,13 +5,15 @@
 #include "e4/classes/WonlineStringDialogControl_28_e4.hpp"
 #include "e4/classes/Dialog_e4.hpp"
 #include "e4/classes/DynamicVector_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x7AC630
 namespace gamemd {
 void * WonlineStringDialogControl_12::Constructor_WonlineStringDialogControl(char a2)
 {
-  *this = &(void*)(void*)&WonlineStringDialogControl_vftable; /*0x7ac636*/
+  *(void **)this = (void*)&WonlineStringDialogControl_vftable; /*0x7ac636*/
   DeleteAndZero(this + 3); /*0x7ac63c*/
   *this = &off_7F7624; /*0x7ac643*/
   OwnerDrawControl::InitVtable(); /*0x7ac649*/
@@ -305,7 +307,7 @@ VectorClass_flat * WonlineStringDialogControl_12::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->q004; /*0x7ad373*/
-  *this = &(void*)(void*)&VectorClass_tConnInfoStruct___vftable; /*0x7ad376*/
+  *(void **)this = (void*)&VectorClass_tConnInfoStruct___vftable; /*0x7ad376*/
   if ( v3 && this->IsAllocated ) /*0x7ad380*/
   {
     RA2_OPDEL(v3); /*0x7ad388*/
@@ -326,7 +328,7 @@ DynamicVector * WonlineStringDialogControl_12::Constructor_VectorClass_tConnInfo
   void *v3; // eax
 
   v3 = (void *)this->q004; /*0x7ad3c3*/
-  *this = &(void*)(void*)&VectorClass_tConnInfoStruct___vftable; /*0x7ad3c6*/
+  *(void **)this = (void*)&VectorClass_tConnInfoStruct___vftable; /*0x7ad3c6*/
   if ( v3 && this->IsAllocated ) /*0x7ad3d0*/
   {
     RA2_OPDEL(v3); /*0x7ad3d8*/
@@ -452,7 +454,7 @@ LONG WonlineStringDialogControl_28::Release(char * Block)
   v1 = InterlockedDecrement((volatile LONG *)Block + 1); /*0x7ad654*/
   if ( !v1 && Block ) /*0x7ad65c*/
   {
-    *(_DWORD *)Block = &(void*)(void*)&ATL_CComObject_CDownloadEventSink_vftable; /*0x7ad663*/
+    *(void **)Block = (void*)&ATL_CComObject_CDownloadEventSink_vftable; /*0x7ad663*/
     *((_DWORD *)Block + 1) = 1; /*0x7ad669*/
     InterlockedDecrement(&Addend); /*0x7ad66f*/
     DeleteCriticalSection((LPCRITICAL_SECTION)(Block + 8)); /*0x7ad675*/

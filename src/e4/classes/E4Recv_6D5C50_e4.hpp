@@ -6,6 +6,6 @@
 namespace gamemd {
 struct E4Recv_6D5C50 {
     void* vfptr;  // minimal E2 declaration
-    int RenderRadarBlips(char a2, AbstractClass * aP2);  // 0x6D5C50
+    int RenderRadarBlips(char a2,  AbstractClass * aP2);    // 0x6D5C50
 };
 } // namespace gamemd

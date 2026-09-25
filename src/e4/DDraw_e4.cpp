@@ -6,6 +6,8 @@
 #include "e4/classes/DSurface_e4.hpp"
 #include "e4/classes/XSurface_e4.hpp"
 #include "e4/classes/AudioStream_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x4A3370
@@ -41,7 +43,7 @@ void DDraw::Init()
 namespace gamemd {
 int DDraw::CapabilityCheck()
 {
-  const char *v0; // eax
+  const unsigned int v0;
   int v2; // [esp+8h] [ebp-44h] BYREF
   int v3; // [esp+Ch] [ebp-40h]
   int v4; // [esp+10h] [ebp-3Ch]

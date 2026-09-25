@@ -8,12 +8,12 @@ struct DynamicVectorClass_uint {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     void* Items;  // 0x4
-    void* Capacity;  // 0x8
+    unsigned int q008;  // 0x8
     bool q00A;  // 0xA
-    void* IsInitialized;  // 0xC
+    unsigned int q00C;  // 0xC
     unsigned char IsAllocated;  // 0xD
     unsigned int tail_E;  // 0xE
-    void* Count;  // 0x10
+    unsigned int q010;  // 0x10
     unsigned int q011;  // 0x11
     unsigned int CapacityIncrement;  // 0x14
     unsigned char q018;  // 0x18
@@ -24,7 +24,7 @@ struct DynamicVectorClass_uint {
     unsigned char q028;  // 0x28
     BufferIOFileClass* q02A;  // 0x2A
     bool q02B;  // 0x2B
-    unsigned int q02C;  // 0x2C
+    char q02C[4];  // 0x2C
     bool q02D;  // 0x2D
     CampaignClass* q030;  // 0x30
     unsigned char q031;  // 0x31
@@ -47,7 +47,7 @@ struct DynamicVectorClass_uint {
     unsigned int q096;  // 0x96
     unsigned char q09A;  // 0x9A
     unsigned char q100;  // 0x100
-    unsigned int q104;  // 0x104
+    char q104[4];  // 0x104
     CampaignClass* q114;  // 0x114
     unsigned char q118;  // 0x118
     unsigned int q128;  // 0x128
@@ -180,15 +180,18 @@ struct DynamicVectorClass_uint {
     unsigned char q5204;  // 0x5204
     unsigned char q5740;  // 0x5740
     unsigned char q5744;  // 0x5744
+    unsigned int Capacity;
+    unsigned int Count;
+    unsigned int IsInitialized;
     unsigned int Items2;
 // --- flat members (END) ---
     void ddtor();  // 0x42D540
     int Clear(int a2);  // 0x42D590
     char AddRef(int a2);  // 0x42D600
-    char SetCapacity(int a2, unsigned int * a3);  // 0x42D640
+    char SetCapacity(int a2,  unsigned int * a3);    // 0x42D640
     void Clear_0();  // 0x42D6F0
     int FindItemIndex(unsigned int * a2);  // 0x42D720
-    char Remove(int a2, unsigned int * a3);  // 0x42D780
+    char Remove(int a2,  unsigned int * a3);    // 0x42D780
     int GetSize(unsigned int * a2);  // 0x42D880
     VectorClass_flat * Destructor(char a2);  // 0x42DB10
     DynamicVectorClass_uint * Add(char a2);  // 0x42DB60

@@ -9,12 +9,12 @@ struct RandomMap {
     void* q000;  // 0x0
     unsigned int u16_2;  // 0x2
     void* Items;  // 0x4
-    void* q008;  // 0x8
+    unsigned int q008;  // 0x8
     void* q00C;  // 0xC
     bool IsAllocated;  // 0xD
     void* q010;  // 0x10
     bool IsInitialized;  // 0x12
-    void* q014;  // 0x14
+    unsigned int q014;  // 0x14
     int Count;  // 0x16
     void* q018;  // 0x18
     unsigned char u8_1A;  // 0x1A
@@ -24,7 +24,7 @@ struct RandomMap {
     unsigned int u32_24;  // 0x24
     unsigned int u32_28;  // 0x28
     unsigned int u32_2C;  // 0x2C
-    IUnknown * ptr_30;  // 0x30
+    void * ptr_30;  // 0x30
     unsigned char u8_34;  // 0x34
     unsigned char u8_35;  // 0x35
     unsigned int u32_38;  // 0x38
@@ -32,7 +32,7 @@ struct RandomMap {
     unsigned int u32_40;  // 0x40
     unsigned int u32_44;  // 0x44
     unsigned char q047;  // 0x47
-    IUnknown * ptr_48;  // 0x48
+    void * ptr_48;  // 0x48
     unsigned int u32_4C;  // 0x4C
     unsigned char q04F;  // 0x4F
     void* q050;  // 0x50
@@ -396,48 +396,48 @@ struct RandomMap {
     bool Check();  // 0x486790
     unsigned int * TerrainTileDataConstructor(int a2);  // 0x58BF70
     int GenerateTerrain();  // 0x58C800
-    int ExpandTerrainCells(int a2, int a3);  // 0x58D1C0
+    int ExpandTerrainCells(int a2,  int a3);    // 0x58D1C0
     unsigned int * TerrainAlloc();  // 0x58D410
     char CollectTerrainCells(int a2);  // 0x58E740
     char PlaceRandomMapTerrain();  // 0x58E9B0
     void CollectBorderCells();  // 0x58F0C0
-    char PlaceBuildings(int a2, int a3);  // 0x58F2C0
+    char PlaceBuildings(int a2,  int a3);    // 0x58F2C0
     char AllocateArea();  // 0x5905D0
-    char CheckCellPlacement(short * a1, void * a2, DynamicVector * aP3);  // 0x590970
-    int CheckNeighborhoodCompatibility(unsigned short * a1, DynamicVector * aP2, int a4, DynamicVector * aP4);  // 0x590FD0
-    char CheckPlacementArea(short * a2, short * a3, ObjectClass * aP2);  // 0x592440
+    char CheckCellPlacement(short * a1,  void * a2,  DynamicVector * aP3);    // 0x590970
+    int CheckNeighborhoodCompatibility(unsigned short * a1,  DynamicVector * aP2,  int a4,  DynamicVector * aP4);    // 0x590FD0
+    char CheckPlacementArea(short * a2,  short * a3,  ObjectClass * aP2);    // 0x592440
     void CleanupRandomMapData();  // 0x5958E0
     LRESULT SetupDialog(HWND hDlg);  // 0x596E50
-    char LoadInfo(wchar_t * Destination, int a2);  // 0x597D60
+    char LoadInfo(wchar_t * Destination,  int a2);    // 0x597D60
     int LoadConfig();  // 0x5981F0
-    char Generate(char a2, HWND hDlg);  // 0x598960
+    char Generate(char a2,  HWND hDlg);    // 0x598960
     char * SetupTheater(char a2);  // 0x599650
     int FinalizeMapData();  // 0x59A6C0
     void ArrangeBuildingGrid();  // 0x59AD10
     void FillTerrainProgressively();  // 0x59AFA0
     int PlaceTerrainFeatures();  // 0x59B200
     void PlaceShoreObjects();  // 0x59B740
-    int PlaceTerrain(int a2, MapResourceClass * aP2, MapResourceClass * aP3, int a5, MapResourceClass * aP5, double a7, char a8);  // 0x59BBC0
+    int PlaceTerrain(int a2,  void* aP2,  void* aP3,  int a5,  void* aP5,  double a7,  char a8);    // 0x59BBC0
     char GrowTiberium();  // 0x59C580
     unsigned int * CellListAlloc(int a2);  // 0x5A0700
-    char SpreadArea(MouseClass * aP1, float a3, MapResourceClass * aP3, short * a4, char a6);  // 0x5A08D0
+    char SpreadArea(MouseClass * aP1,  float a3,  void* aP3,  short * a4,  char a6);    // 0x5A08D0
     int PlaceRandomMapTiberium();  // 0x5A23A0
     int PlaceResources();  // 0x5A3AE0
     int GenerateRandomMapTerrain();  // 0x5A4280
     int PlaceMapSeedBuildings();  // 0x5A80B0
     void RegenerateRandomMapPreview();  // 0x5B9C90
     unsigned int * PlaceTileSet();  // 0x6558D0
-    char RemoveMatching(IUnknown * aP1);  // 0x74EF10
+    char RemoveMatching(void* aP1);  // 0x74EF10
     void ddtor();  // 0x42F420
     unsigned int Write(int a2);  // 0x42F450
-    unsigned int * Seek(unsigned int * a2, int a3);  // 0x42F470
+    unsigned int * Seek(unsigned int * a2,  int a3);    // 0x42F470
     char AddRef(int a2);  // 0x42F620
     int Read(unsigned short * a2);  // 0x42F930
     DynamicVector * QueryInterface(char a2);  // 0x42FBF0
     unsigned int * Constructor_VectorClass_Cell_(char a2);  // 0x5AC290
-    unsigned int * Constructor(int a2, int a3);  // 0x5AD820
-    unsigned int * Constructor_0(int a2, int a3);  // 0x5ADA40
-    unsigned int * Constructor_1(int a2, int a3);  // 0x5ADAB0
+    unsigned int * Constructor(int a2,  int a3);    // 0x5AD820
+    unsigned int * Constructor_0(int a2,  int a3);    // 0x5ADA40
+    unsigned int * Constructor_1(int a2,  int a3);    // 0x5ADAB0
     int GenerateTerrainForAllCells();  // 0x58CF90
 };
 } // namespace gamemd

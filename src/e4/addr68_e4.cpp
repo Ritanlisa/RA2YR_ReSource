@@ -41,7 +41,10 @@
 #include "e4/classes/WideString_e4.hpp"
 #include "e4/classes/INIClass_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/BufferIOFileClass_e4.hpp"
+#include "e4/classes/BuildingTypeClass_e4.hpp"
 
 // 0x682640
 namespace gamemd {
@@ -469,7 +472,7 @@ void * * ScenarioClass_SetTimer(int a1)
 {
   DWORD Ticks; // eax
   char *v3; // edx
-  void *result; // eax
+  unsigned int result;
   _DWORD *v5; // esi
   DWORD v6; // eax
   int v7; // ecx
@@ -1079,7 +1082,7 @@ void SaveScenarioToINI()
   v9[1] = 0; /*0x687cf4*/
   v9[2] = 0; /*0x687cf8*/
   GenericList::Constructor(&v10); /*0x687cfc*/
-  v10 = &(void*)(void*)&List_INIClass_INISection___vftable; /*0x687d05*/
+  v10 = (void*)&List_INIClass_INISection___vftable; /*0x687d05*/
   Node::Init(v11); /*0x687d0d*/
   v11[5] = 0; /*0x687d17*/
   v12 = 0; /*0x687d1d*/
@@ -1088,7 +1091,7 @@ void SaveScenarioToINI()
   {
     v3 = CCFileClass::Construct(v13, Source); /*0x687d34*/
     v4 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v3 + 20))(v3, 0); /*0x687d3e*/
-    v13[0] = &(void*)(void*)&CCFileClass_vftable; /*0x687d48*/
+    v13[0] = (void*)&CCFileClass_vftable; /*0x687d48*/
     v6 = v4; /*0x687d50*/
     v15 = 0; /*0x687d54*/
     Vector::Clear((int)v14); /*0x687d5b*/
@@ -1098,7 +1101,7 @@ void SaveScenarioToINI()
     {
       CCFileClass::Construct(v13, Source); /*0x687d7c*/
       CCINIClass::Load(v9, (int)v13, 1, 0); /*0x687d8d*/
-      v13[0] = &(void*)(void*)&CCFileClass_vftable; /*0x687d99*/
+      v13[0] = (void*)&CCFileClass_vftable; /*0x687d99*/
       v15 = 0; /*0x687da1*/
       Vector::Clear((int)v14); /*0x687da8*/
       v13[0] = &off_7E1668; /*0x687db1*/
@@ -1463,7 +1466,7 @@ void GenerateScenarioUnits()
 
   a1 = a1; /*0x6886c0*/
   EventClass::resetEvent(&v60, 0, 0); /*0x6886cc*/
-  v60 = &(void*)(void*)&DynamicVectorClass_TechnoClass___vftable; /*0x6886d6*/
+  v60 = (void*)&DynamicVectorClass_TechnoClass___vftable; /*0x6886d6*/
   ppv = (LPVOID)g_Rules_MultiEngineer; /*0x6886de*/
   v65 = 10; /*0x6886e9*/
   v64 = 0; /*0x6886f1*/
@@ -1529,11 +1532,11 @@ void GenerateScenarioUnits()
     v54[250] = aGeneratingUnit; /*0x688848*/
     Debug::Log(); /*0x68884d*/
     UnitTypeVector::Construct2(0, 0); /*0x68885b*/
-    v67 = &(void*)(void*)&DynamicVectorClass_UnitTypeClass___vftable; /*0x68886b*/
+    v67 = (void*)&DynamicVectorClass_UnitTypeClass___vftable; /*0x68886b*/
     v72 = 10; /*0x688873*/
     v71 = 0; /*0x688877*/
     InfantryTypeVector::ConstructFromData(0, 0); /*0x68887b*/
-    v73 = &(void*)(void*)&DynamicVectorClass_InfantryTypeClass___vftable; /*0x688880*/
+    v73 = (void*)&DynamicVectorClass_InfantryTypeClass___vftable; /*0x688880*/
     v78 = 10; /*0x688888*/
     v77 = 0; /*0x68888c*/
     v14 = 0; /*0x688898*/
@@ -1778,7 +1781,7 @@ void GenerateScenarioUnits()
         }
         v63 = 0; /*0x688dcf*/
         v62 = 0; /*0x688dd6*/
-        v73 = &(void*)(void*)&VectorClass_InfantryTypeClass___vftable; /*0x688dda*/
+        v73 = (void*)&VectorClass_InfantryTypeClass___vftable; /*0x688dda*/
         if ( v74 && IDA_BYTE1(v76) ) /*0x688dea*/
         {
           RA2_OPDEL(v74); /*0x688ded*/
@@ -1786,7 +1789,7 @@ void GenerateScenarioUnits()
         }
         IDA_BYTE1(v76) = 0; /*0x688dfd*/
         v75 = 0; /*0x688e04*/
-        v67 = &(void*)(void*)&VectorClass_UnitTypeClass___vftable; /*0x688e08*/
+        v67 = (void*)&VectorClass_UnitTypeClass___vftable; /*0x688e08*/
         if ( v68 && v70 ) /*0x688e18*/
         {
           RA2_OPDEL(v68); /*0x688e1b*/
@@ -1807,7 +1810,7 @@ void GenerateScenarioUnits()
   v54[252] = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 0xFFFF); /*0x688e48*/
   v54[251] = aFinishedUnitGe; /*0x688e5f*/
   Debug::Log(); /*0x688e64*/
-  v80 = &(void*)(void*)&VectorClass_Cell_vftable; /*0x688e75*/
+  v80 = (void*)&VectorClass_Cell_vftable; /*0x688e75*/
   if ( v81 && v83 ) /*0x688e88*/
   {
     RA2_OPDEL(v81); /*0x688e8b*/
@@ -1815,7 +1818,7 @@ void GenerateScenarioUnits()
   }
   v83 = 0; /*0x688e9b*/
   v82 = 0; /*0x688ea5*/
-  v60 = &(void*)(void*)&VectorClass_TechnoClass___vftable; /*0x688ea9*/
+  v60 = (void*)&VectorClass_TechnoClass___vftable; /*0x688ea9*/
   if ( Block ) /*0x688eb1*/
   {
     if ( v63 ) /*0x688eb9*/
@@ -2540,7 +2543,7 @@ int sub_68C330()
   dword_B054D8 = 0; /*0x68c33c*/
   byte_B054DC = 1; /*0x68c341*/
   byte_B054DD = 0; /*0x68c348*/
-  ColorScheme_Array = (int)&(void*)(void*)&DynamicVectorClass_ColorScheme___vftable; /*0x68c34d*/
+  ColorScheme_Array = (int)&DynamicVectorClass_ColorScheme___vftable; /*0x68c34d*/
   dword_B054E4 = 10; /*0x68c357*/
   g_AnimClass_SaveState = 0; /*0x68c361*/
   return atexit(sub_68C370); /*0x68c36c*/
@@ -2551,7 +2554,7 @@ int sub_68C330()
 namespace gamemd {
 void sub_68C370()
 {
-  ColorScheme_Array = (int)&(void*)(void*)&VectorClass_ColorScheme___vftable; /*0x68c378*/
+  ColorScheme_Array = (int)&VectorClass_ColorScheme___vftable; /*0x68c378*/
   if ( BuildingTypeClass_AnimTable && byte_B054DD ) /*0x68c38c*/
   {
     RA2_OPDEL(BuildingTypeClass_AnimTable); /*0x68c38f*/
@@ -2764,7 +2767,7 @@ int E4Recv_68F8A0::sub_68F8A0()
     v4[7] = 0; /*0x68f922*/
     v4[8] = 0; /*0x68f925*/
     *((_BYTE *)v4 + 36) = 0; /*0x68f928*/
-    *v4 = &(void*)(void*)&ScorePrintClass_vftable; /*0x68f92b*/
+    *v4 = (void*)&ScorePrintClass_vftable; /*0x68f92b*/
   }
   else
   {

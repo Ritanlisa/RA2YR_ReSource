@@ -27,6 +27,8 @@
 #include "e4/classes/MouseClass_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/VectorClass_flat_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/RocketLocomotionClass_17_e4.hpp"
 
 // 0x4112D0
@@ -34,7 +36,7 @@ namespace gamemd {
 int MapClass::isLocationShrouded(unsigned short a2)
 {
   int v2; // eax
-  int v3; // ecx
+  void * v3;
   _DWORD v5[4]; // [esp+0h] [ebp-10h] BYREF
 
   v5[3] = *(&this->q0041); /*0x4112d8*/
@@ -339,10 +341,10 @@ INIClass * * MapClass::SaveCellTagsToINI(char * a2)
   v10 = (*(int (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)DSurface_Alternate + 92))(DSurface_Alternate, 0, 0); /*0x4ad94d*/
   v18[1] = 0; /*0x4ad956*/
   v18[2] = 0; /*0x4ad95a*/
-  v18[0] = (int)&(void*)(void*)&Pipe_vftable; /*0x4ad95e*/
+  v18[0] = (int)&Pipe_vftable; /*0x4ad95e*/
   Buffer::Init(v19, v10, v9); /*0x4ad966*/
   v19[3] = 0; /*0x4ad96f*/
-  v18[0] = (int)&(void*)(void*)&BufferPipe_vftable; /*0x4ad979*/
+  v18[0] = (int)&BufferPipe_vftable; /*0x4ad979*/
   v11 = MapClass::DecompressCellData(v18); /*0x4ad990*/
   INIClass::ClearSection((int)a2, (int)aIsomappack, 0); /*0x4ad992*/
   INIClass::ClearSection((int)a2, (int)aIsomappack2, 0); /*0x4ad9a0*/
@@ -463,7 +465,7 @@ ObjectClass * * MapClass::LoadFileData()
   int v7; // edx
   unsigned int *v8; // ecx
   unsigned int v9; // eax
-  unsigned int v10; // edx
+  CampaignClass * v10;
   int v12[22]; // [esp+Ch] [ebp-6Ch] BYREF
   _BYTE v13[12]; // [esp+64h] [ebp-14h] BYREF
   int v14; // [esp+70h] [ebp-8h]
@@ -500,7 +502,7 @@ ObjectClass * * MapClass::LoadFileData()
     while ( v5 < this->q2E8 * this->q2E4 ); /*0x5470cb*/
   }
   TerrainClass::InitTheatre(); /*0x5470cf*/
-  v12[0] = (int)&(void*)(void*)&CCFileClass_vftable; /*0x5470d8*/
+  v12[0] = (int)&CCFileClass_vftable; /*0x5470d8*/
   v14 = 0; /*0x5470e0*/
   Vector::Clear((int)v13); /*0x5470e8*/
   v12[0] = (int)&off_7E1668; /*0x5470f1*/
@@ -539,7 +541,7 @@ void* MapClass::Destruct()
   void *v11; // eax
   int v12; // [esp+8h] [ebp-4h]
 
-  *(_DWORD *)this = &(void*)(void*)&MapClass_vftable; /*0x5652c5*/
+  *(void **)this = (void*)&MapClass_vftable; /*0x5652c5*/
   CleanupVeinholeSystem(); /*0x5652cb*/
   Map_Destroy(); /*0x5652d0*/
   BuildingClass::FreeUpgradeQueue(); /*0x5652d5*/
@@ -579,7 +581,7 @@ void* MapClass::Destruct()
   }
   while ( v12 ); /*0x565361*/
   v5 = (void *)this->q1160; /*0x565363*/
-  this->q115C = &(void*)(void*)&VectorClass_Cell_vftable; /*0x565370*/
+  this->q115C = (void*)&VectorClass_Cell_vftable; /*0x565370*/
   if ( v5 && *(&this->u32_6F47) ) /*0x565378*/
   {
     RA2_OPDEL(v5); /*0x565381*/
@@ -588,7 +590,7 @@ void* MapClass::Destruct()
   *(&this->u32_6F47) = 0; /*0x56538f*/
   this->q1164 = 0; /*0x565395*/
   v6 = (void *)this->q13C; /*0x56539b*/
-  this->MaxLevel = &(void*)(void*)&VectorClass_CellClass___vftable; /*0x5653a1*/
+  this->MaxLevel = (void*)&VectorClass_CellClass___vftable; /*0x5653a1*/
   if ( v6 && *(&this->q0805) ) /*0x5653af*/
   {
     RA2_OPDEL(v6); /*0x5653b8*/
@@ -597,7 +599,7 @@ void* MapClass::Destruct()
   *(&this->q0805) = 0; /*0x5653c6*/
   this->q140 = 0; /*0x5653cc*/
   v7 = (void *)this->q0D8; /*0x5653d2*/
-  this->q0D4 = &(void*)(void*)&VectorClass_Cell_vftable; /*0x5653d8*/
+  this->q0D4 = (void*)&VectorClass_Cell_vftable; /*0x5653d8*/
   if ( v7 && *(&this->q0585) ) /*0x5653e2*/
   {
     RA2_OPDEL(v7); /*0x5653eb*/
@@ -611,7 +613,7 @@ void* MapClass::Destruct()
   {
     v10 = (void *)*((_DWORD *)v8 - 5); /*0x565410*/
     v8 -= 24; /*0x565413*/
-    *(_DWORD *)v8 = &(void*)(void*)&VectorClass_SubzoneTrackingStruct_vftable; /*0x565418*/
+    *(void **)v8 = (void*)&VectorClass_SubzoneTrackingStruct_vftable; /*0x565418*/
     if ( v10 && v8[13] ) /*0x565420*/
     {
       SubzoneConnectionVector::Destruct(v10, 3); /*0x56542b*/
@@ -623,7 +625,7 @@ void* MapClass::Destruct()
   }
   while ( v9 ); /*0x56543a*/
   v11 = (void *)this->q054; /*0x56543c*/
-  this->ptr_50 = &(void*)(void*)&VectorClass_ZoneConnectionClass_vftable; /*0x565442*/
+  this->ptr_50 = (void*)&VectorClass_ZoneConnectionClass_vftable; /*0x565442*/
   if ( v11 && *(&this->outBuffer3) ) /*0x56544c*/
   {
     RA2_OPDEL(v11); /*0x565452*/
@@ -690,7 +692,7 @@ VectorClass_flat * * MapClass::Destru_vt05()
       do /*0x5658ae*/
       {
         HashVector_UInt::Construct(v7, 0, 0); /*0x565891*/
-        *v7 = &(void*)(void*)&DynamicVectorClass_HashObject_unsigned_int_unsigned_int_vftable; /*0x565896*/
+        *(void **)v7 = (void*)&DynamicVectorClass_HashObject_unsigned_int_unsigned_int_vftable; /*0x565896*/
         v7[5] = 10; /*0x56589c*/
         v7[4] = 0; /*0x5658a3*/
         v7 += 6; /*0x5658aa*/
@@ -750,7 +752,7 @@ VectorClass_flat * * MapClass::Destru_vt05()
         do /*0x56597f*/
         {
           SubzoneHashVector::Construct(v18, 0, 0); /*0x565962*/
-          *v18 = &(void*)(void*)&DynamicVectorClass_HashObject_unsigned_int_SubzoneConnectionStruct_vftable; /*0x565967*/
+          *(void **)v18 = (void*)&DynamicVectorClass_HashObject_unsigned_int_SubzoneConnectionStruct_vftable; /*0x565967*/
           v18[5] = 10; /*0x56596d*/
           v18[4] = 0; /*0x565974*/
           v18 += 6; /*0x56597b*/
@@ -853,7 +855,7 @@ int MapClass::InitCellVector()
     v2[2] = 0; /*0x565ab4*/
     *((_BYTE *)v2 + 12) = 1; /*0x565abb*/
     *((_BYTE *)v2 + 13) = 0; /*0x565abf*/
-    *v2 = &(void*)(void*)&VectorClass_CellClass___vftable; /*0x565ac3*/
+    *v2 = (void*)&VectorClass_CellClass___vftable; /*0x565ac3*/
   }
   (*(void (__thiscall **)(_DWORD *, _DWORD, _DWORD))(*v2 + 8))(v2, *(&this->CapacityIncrement5), 0); /*0x565ad4*/
   for ( result = 0; result < *(&this->CapacityIncrement5); *(_DWORD *)(*(&this->q01C9) + 4 * result - 4) = 0 ) /*0x565ae1*/
@@ -2382,7 +2384,7 @@ void* MapClass::ApplyTerrainDamage(IUnknown *this@<ecx> a1, IUnknown aP1)
     VectorClass::CellConstructor(&v68, 0, 0); /*0x574f85*/
     v40 = (int)v62; /*0x574f8a*/
     v41 = v2[73]; /*0x574f8e*/
-    v68 = &(void*)(void*)&DynamicVectorClass_Cell_vftable; /*0x574f99*/
+    v68 = (void*)&DynamicVectorClass_Cell_vftable; /*0x574f99*/
     v72 = 10; /*0x574fa1*/
     v71 = 0; /*0x574fa9*/
     if ( (__int16)v62 >= v41 ) /*0x574fb1*/
@@ -2482,7 +2484,7 @@ void* MapClass::ApplyTerrainDamage(IUnknown *this@<ecx> a1, IUnknown aP1)
       while ( (__int16)aP1 >= v41 ); /*0x574fbd*/
     }
     Terrain::ConnectivityGraph(v2); /*0x5751e6*/
-    v68 = &(void*)(void*)&VectorClass_Cell_vftable; /*0x5751f1*/
+    v68 = (void*)&VectorClass_Cell_vftable; /*0x5751f1*/
     if ( Block ) /*0x5751fb*/
     {
       if ( v70 ) /*0x575203*/
@@ -3466,7 +3468,7 @@ unsigned int * MapClass::allocateMapBuffers()
   this->q008 = 0; /*0x589bd9*/
   this->IsInitialized = 1; /*0x589bdc*/
   this->IsAllocated = 0; /*0x589be0*/
-  *this = &(void*)(void*)&DynamicVectorClass_SubzoneConnectionStruct_vftable; /*0x589be3*/
+  *this = (void*)&DynamicVectorClass_SubzoneConnectionStruct_vftable; /*0x589be3*/
   this->CapacityIncrement = 10; /*0x589be9*/
   this->q010 = 0; /*0x589bf0*/
   VectorClass::CleanupSubzone(); /*0x589bf3*/
@@ -3525,7 +3527,7 @@ int MapClass::Cleanup(int a1, int a2)
       v6 = (*(int (__thiscall **)(int *, _DWORD **))(g_RandomMap_BuildObject + 16))(&g_RandomMap_BuildObject, &v13); /*0x594782*/
       if ( v6 != -1 ) /*0x594787*/
         Vector4::EraseAt(&g_RandomMap_BuildObject, v6); /*0x59478f*/
-      v5[10] = &(void*)(void*)&VectorClass_Cell_vftable; /*0x594797*/
+      v5[10] = (void*)&VectorClass_Cell_vftable; /*0x594797*/
       Buffer::Cleanup((int)(v5 + 10)); /*0x59479d*/
       RA2_OPDEL(v5); /*0x5947a3*/
     }
@@ -3591,7 +3593,7 @@ int MapClass::ProcessTile()
         while ( v3 < g_RandomMap_TileData ); /*0x5995d0*/
       }
       v4 = (void *)v2[11]; /*0x5995d2*/
-      v2[10] = &(void*)(void*)&VectorClass_Cell_vftable; /*0x5995d5*/
+      v2[10] = (void*)&VectorClass_Cell_vftable; /*0x5995d5*/
       if ( v4 && *((_BYTE *)v2 + 53) ) /*0x5995e0*/
       {
         RA2_OPDEL(v4); /*0x5995e6*/
@@ -3681,7 +3683,7 @@ MapClass * * MapClass::GrowLayer(int a2, int a3, int a4)
         if ( v11 ) /*0x5a0515*/
         {
           VectorClass::CellConstructor(v11, 0, 0); /*0x5a051b*/
-          *v12 = &(void*)(void*)&DynamicVectorClass_Cell_vftable; /*0x5a0520*/
+          *v12 = (void*)&DynamicVectorClass_Cell_vftable; /*0x5a0520*/
           v12[5] = 10; /*0x5a0526*/
           v12[4] = 0; /*0x5a052d*/
           v13 = v12; /*0x5a0530*/
@@ -4435,7 +4437,7 @@ VectorClass_flat * MapClass::InitCellVe_vt00(char a2)
   void *v3; // eax
 
   v3 = (void *)this->q004; /*0x589063*/
-  *this = &(void*)(void*)&VectorClass_CellClass___vftable; /*0x589066*/
+  *this = (void*)&VectorClass_CellClass___vftable; /*0x589066*/
   if ( v3 && this->IsAllocated ) /*0x589070*/
   {
     RA2_OPDEL(v3); /*0x589078*/

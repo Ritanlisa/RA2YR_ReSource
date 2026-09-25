@@ -18,7 +18,10 @@
 #include "e4/classes/Vector_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/AnimClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/Coord_e4.hpp"
 
 // 0x4116A0
 namespace gamemd {
@@ -260,7 +263,7 @@ namespace gamemd {
 AbstractClass * * sub_411B20(DWORD_PTR dwUser, AnimClass * aP1, int a3)
 {
   int v3; // eax
-  char *v4; // ecx
+  unsigned int v4;
   _BYTE *v5; // esi
   int v6; // eax
   int v7; // edx
@@ -1331,7 +1334,7 @@ int sub_412870()
   do /*0x41289c*/
   {
     EventClass::resetEvent(v0, 0, 0); /*0x412883*/
-    *v0 = &(void*)(void*)&DynamicVectorClass_TechnoClass___vftable; /*0x412888*/
+    *v0 = (void*)&DynamicVectorClass_TechnoClass___vftable; /*0x412888*/
     v0[5] = 10; /*0x41288e*/
     v0[4] = 0; /*0x412895*/
     v0 += 6; /*0x412898*/
@@ -1342,7 +1345,7 @@ int sub_412870()
   dword_889E10 = 0; /*0x4128a9*/
   byte_889E14 = 1; /*0x4128af*/
   byte_889E15 = 0; /*0x4128b6*/
-  dword_889E08 = (int)&(void*)(void*)&DynamicVectorClass_TechnoClass___vftable; /*0x4128bc*/
+  dword_889E08 = (int)&DynamicVectorClass_TechnoClass___vftable; /*0x4128bc*/
   dword_889E1C = 10; /*0x4128c6*/
   dword_889E18 = 0; /*0x4128d0*/
   return atexit(sub_4128F0); /*0x4128de*/
@@ -1375,7 +1378,7 @@ void sub_4128F0()
   v3 = dword_889E10; /*0x41291e*/
   (*(void (__thiscall **)(int *))(dword_889E08 + 12))(&dword_889E08); /*0x412929*/
   (*(void (__thiscall **)(int *, int, _DWORD))(dword_889E08 + 8))(&dword_889E08, v3, 0); /*0x412939*/
-  dword_889E08 = (int)&(void*)(void*)&VectorClass_TechnoClass___vftable; /*0x412948*/
+  dword_889E08 = (int)&VectorClass_TechnoClass___vftable; /*0x412948*/
   if ( dword_889E0C && byte_889E15 ) /*0x412956*/
   {
     RA2_OPDEL(dword_889E0C); /*0x412959*/
@@ -1389,7 +1392,7 @@ void sub_4128F0()
   {
     v6 = *(v4 - 6); /*0x41297d*/
     v4 -= 6; /*0x412980*/
-    *(v4 - 1) = &(void*)(void*)&VectorClass_TechnoClass___vftable; /*0x412985*/
+    *(v4 - 1) = (void*)&VectorClass_TechnoClass___vftable; /*0x412985*/
     if ( v6 ) /*0x412988*/
     {
       if ( *((_BYTE *)v4 + 9) ) /*0x41298a*/
@@ -1866,7 +1869,7 @@ int sub_41D280()
   dword_889FC0 = 0; /*0x41d28c*/
   byte_889FC4 = 1; /*0x41d291*/
   byte_889FC5 = 0; /*0x41d298*/
-  dword_889FB8 = (int)&(void*)(void*)&DynamicVectorClass_AirstrikeClass___vftable; /*0x41d29d*/
+  dword_889FB8 = (int)&DynamicVectorClass_AirstrikeClass___vftable; /*0x41d29d*/
   dword_889FCC = 10; /*0x41d2a7*/
   dword_889FC8 = 0; /*0x41d2b1*/
   return atexit(sub_41D2C0); /*0x41d2bc*/
@@ -1877,7 +1880,7 @@ int sub_41D280()
 namespace gamemd {
 void sub_41D2C0()
 {
-  dword_889FB8 = (int)&(void*)(void*)&VectorClass_AirstrikeClass___vftable; /*0x41d2c8*/
+  dword_889FB8 = (int)&VectorClass_AirstrikeClass___vftable; /*0x41d2c8*/
   if ( dword_889FBC && byte_889FC5 ) /*0x41d2dc*/
   {
     RA2_OPDEL(dword_889FBC); /*0x41d2df*/

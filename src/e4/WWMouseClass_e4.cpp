@@ -7,18 +7,20 @@
 #include "e4/classes/Mouse_e4.hpp"
 #include "e4/classes/WWMouseClass_e4.hpp"
 #include "e4/classes/MouseClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x7B9040
 namespace gamemd {
 unsigned int * WWMouseClass::initSurface()
 {
-  int v2; // ecx
-  int v3; // ebp
+  IUnknown * v2;
+  MouseClass * v3;
   int v4; // ebx
   int v5; // esi
-  int v6; // edi
-  int v7; // edx
+  void * v6;
+  void * v7;
   _DWORD v8[4]; // [esp+4h] [ebp-20h] BYREF
   _DWORD v9[4]; // [esp+14h] [ebp-10h] BYREF
 
@@ -58,7 +60,7 @@ unsigned int * WWMouseClass::initSurface()
 namespace gamemd {
 int WWMouseClass::hideCursor()
 {
-  int v2; // ecx
+  IUnknown * v2;
   int v3; // ebp
   int v4; // edx
   int v5; // edi
@@ -126,11 +128,11 @@ void* WWMouseClass::captureMouse()
   int v4; // edi
   int v5; // edx
   int v6; // edi
-  int v11; // ebp
-  int *v12; // eax
-  int v13; // ebp
+  void * v11;
+  void * v12;
+  void * v13;
   _DWORD *v14; // eax
-  int v15; // [esp-1Ch] [ebp-50h]
+  IUnknown * v15;
   int v16; // [esp+4h] [ebp-30h] BYREF
   int v17; // [esp+8h] [ebp-2Ch]
   int v18; // [esp+Ch] [ebp-28h]
@@ -206,12 +208,12 @@ namespace gamemd {
 void WWMouseClass::releaseMouse()
 {
   int v2; // edx
-  int v3; // ecx
-  int v4; // ebx
+  IUnknown * v3;
+  MouseClass * v4;
   int v5; // edx
   int v6; // edi
-  int v7; // ebp
-  int v8; // edx
+  void * v7;
+  void * v8;
   _DWORD v9[4]; // [esp+4h] [ebp-20h] BYREF
   _DWORD v10[4]; // [esp+14h] [ebp-10h] BYREF
 
@@ -302,7 +304,7 @@ int WWMouseClass::checkVisible()
 namespace gamemd {
 MouseClass * WWMouseClass::updateHotspot(char a2)
 {
-  *this = &(void*)(void*)&Mouse_vftable; /*0x7ba309*/
+  *(void **)this = (void*)&Mouse_vftable; /*0x7ba309*/
   if ( (a2 & 1) != 0 ) /*0x7ba30f*/
     RA2_OPDEL(); /*0x7ba312*/
   return this; /*0x7ba31c*/

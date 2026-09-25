@@ -9,7 +9,10 @@
 #include "e4/classes/UnitClass_e4.hpp"
 #include "e4/classes/SessionClass_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/RadarClass_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x5CB440
 namespace gamemd {
@@ -17,7 +20,7 @@ AbstractClass * * UnholyAlliance_GetResult()
 {
   char v2; // bl
   int v3; // edi
-  _DWORD *v4; // ebp
+  unsigned int v4;
   int v5; // esi
   void *v6; // eax
   int *v7; // esi
@@ -81,7 +84,7 @@ AbstractClass * * UnholyAlliance_GetResult()
 // 0x5CB540
 UnholyAlliance * UnholyAlliance::QueryInterface(char a2)
 {
-  *this = &(void*)(void*)&UnholyAlliance_vftable; /*0x5cb543*/
+  *this = (void*)&UnholyAlliance_vftable; /*0x5cb543*/
   MultiplayerGameMode::Dtor(); /*0x5cb549*/
   if ( (a2 & 1) != 0 ) /*0x5cb553*/
     RA2_OPDEL(); /*0x5cb556*/

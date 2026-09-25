@@ -15,6 +15,8 @@
 #include "e4/classes/WinsockInterfaceClass_e4.hpp"
 #include "e4/classes/HashTable_flat_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/Compare_e4.hpp"
 
 // 0x540110
@@ -313,7 +315,7 @@ IPXGlobalConnClass * IPXGlobalConnClass::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)*(this + 52); /*0x540673*/
-  *this = &(void*)(void*)&IPXGlobalConnClass_vftable; /*0x540679*/
+  *(void **)this = (void*)&IPXGlobalConnClass_vftable; /*0x540679*/
   if ( v3 ) /*0x540681*/
   {
     RA2_OPDEL(v3); /*0x540684*/
@@ -324,7 +326,7 @@ IPXGlobalConnClass * IPXGlobalConnClass::QueryInterface(char a2)
     RA2_OPDEL((void *)*(this + 51)); /*0x5406a1*/
     *(this + 51) = 0; /*0x5406a9*/
   }
-  *this = &(void*)(void*)&IPXConnClass_vftable; /*0x5406b5*/
+  *(void **)this = (void*)&IPXConnClass_vftable; /*0x5406b5*/
   ConnectionClass::dtor(); /*0x5406bb*/
   if ( (a2 & 1) != 0 ) /*0x5406c5*/
     RA2_OPDEL(); /*0x5406c8*/

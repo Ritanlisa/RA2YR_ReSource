@@ -25,6 +25,6 @@ struct E4Recv_7ACBE0 {
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    char ConnectAndLoginWOL_Connect_7ACBE0(const char ** a1, TechnoTypeClass * aP2);  // 0x7ACBE0
+    char ConnectAndLoginWOL_Connect_7ACBE0(const char ** a1,  TechnoTypeClass * aP2);    // 0x7ACBE0
 };
 } // namespace gamemd

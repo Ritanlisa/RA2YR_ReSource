@@ -27,7 +27,7 @@ struct IPXInterfaceClass {
     bool q02D;  // 0x2D
     unsigned char q031;  // 0x31
     int q034;  // 0x34
-    unsigned int u32_38;  // 0x38
+    void* q038;  // 0x38
     unsigned int u32_3C;  // 0x3C
     CampaignClass * q040;  // 0x40
     unsigned char q044;  // 0x44
@@ -215,6 +215,7 @@ struct IPXInterfaceClass {
     unsigned char q6750;  // 0x6750
     unsigned char q6754;  // 0x6754
     unsigned int u32_194682;
+    unsigned int u32_C;
     unsigned int u32_CA340;
     unsigned int u32_CA344;
     unsigned int __pad_04C;
@@ -231,7 +232,11 @@ struct IPXInterfaceClass {
     unsigned int u32_8;
     unsigned int u32_80;
     unsigned int u32_81;
-    unsigned int u32_C;
+    unsigned int q0189;
+    unsigned int u32_38;
+    unsigned int u32_3F050;
+    unsigned int u32_3F05C;
+    unsigned int u32_4;
     unsigned int q3F060;
     unsigned int q3F06C;
     unsigned int q3F074;
@@ -242,11 +247,16 @@ struct IPXInterfaceClass {
     unsigned int u32_7E0F0;
     unsigned int u32_7E60C;
     unsigned int u32_FC1D0;
+    unsigned int q3F068;
+    unsigned int q3F070;
+    unsigned int qFC15;
+    unsigned int qFC18;
+    unsigned int qFC19;
 // --- flat members (END) ---
     AbstractClass * * Receive();
     AbstractClass * * SendPacket(ObjectClass * aP1, int a3, int a4, unsigned int fromlen);
     AbstractClass * * getSocketState(int a2, unsigned int * a3);
-    AbstractClass * * initSocket(IUnknown * aP1, Color * aP2);
+    AbstractClass * * initSocket(void* aP1, Color * aP2);
     AnimClass * * AddRef();
     AnimClass * * Connect(const void * a1, unsigned int a3, UDPInterfaceClass * aP3);
     DynamicVector * closeSession(char a2);

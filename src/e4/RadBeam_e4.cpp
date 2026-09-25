@@ -2,6 +2,8 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/RadBeam_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x659110
@@ -36,7 +38,7 @@ namespace gamemd {
 unsigned int * RadBeam::InitState(rc_ptr_base * aP1)
 {
   this->nextArrayIndex = 0; /*0x6593fe*/
-  *this = 0; /*0x659401*/
+  *(_DWORD *)this = 0; /*0x659401*/
   this->q004 = 0; /*0x659403*/
   this->u32_8 = 0; /*0x659406*/
   this->range = 1; /*0x659409*/

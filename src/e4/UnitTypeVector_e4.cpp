@@ -3,6 +3,8 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/UnitTypeVector_e4.hpp"
 #include "e4/classes/UnitTypeClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x513940
@@ -13,7 +15,7 @@ unsigned int * UnitTypeVector::ConstructUnitTypeVectorClass(int a2, int a3)
   this->q008 = a2; /*0x51394e*/
   this->q00C = 1; /*0x513951*/
   this->u8_D = 0; /*0x513955*/
-  *this = &(void*)(void*)&VectorClass_UnitTypeClass_const___vftable; /*0x513958*/
+  *(void **)this = (void*)&VectorClass_UnitTypeClass_const___vftable; /*0x513958*/
   if ( a2 ) /*0x51395e*/
   {
     if ( a3 ) /*0x513966*/
@@ -35,7 +37,7 @@ unsigned int * UnitTypeVector::Construct2(int a2, int a3)
   this->q008 = a2; /*0x5d895e*/
   this->q00C = 1; /*0x5d8961*/
   this->u8_D = 0; /*0x5d8965*/
-  *this = &(void*)(void*)&VectorClass_UnitTypeClass___vftable; /*0x5d8968*/
+  *(void **)this = (void*)&VectorClass_UnitTypeClass___vftable; /*0x5d8968*/
   if ( a2 ) /*0x5d896e*/
   {
     if ( a3 ) /*0x5d8976*/

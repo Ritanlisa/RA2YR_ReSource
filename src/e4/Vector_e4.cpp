@@ -4,6 +4,8 @@
 #include "e4/classes/Vector_e4.hpp"
 #include "e4/classes/Math_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x4C1B50
@@ -95,8 +97,8 @@ void Vector::Clear()
 namespace gamemd {
 char Vector::RemoveAt(AbstractClass * aP1)
 {
-  int v2; // edx
-  int v4; // edx
+  void * v2;
+  void * v4;
 
   v2 = this->q010; /*0x45ae10*/
   aP1 = aP1; /*0x45ae13*/
@@ -125,7 +127,7 @@ char Vector::ReallocDynamic(int a2)
   int i; // ecx
   int v5; // eax
   _DWORD *v6; // edx
-  int v7; // eax
+  char * v7;
 
   if ( a2 < 0 ) /*0x4d2e4c*/
     return 0; /*0x4d2e4c*/
@@ -151,7 +153,7 @@ char Vector::ReallocDynamic(int a2)
 namespace gamemd {
 int Vector::Find(unsigned int * a2)
 {
-  int v2; // edx
+  void * v2;
   int result; // eax
   _DWORD *i; // ecx
 

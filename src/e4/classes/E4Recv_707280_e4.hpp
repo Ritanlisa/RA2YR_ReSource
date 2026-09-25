@@ -8,8 +8,8 @@ struct E4Recv_707280 {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
 // --- flat members (END) ---
-    int Vf132(int, ...);  // G6 vtable slot dispatch
-    int Vf748(int, ...);  // G6 vtable slot dispatch
-    void * RenderTechnoOverlaySHP(TechnoClass * aP1, int a3, TechnoClass * aP3, int a5, TechnoClass * aP5, TechnoClass * aP6, int a8, char a9, TechnoClass * aP9, TechnoClass * aP10, int a12);  // 0x707280
+    int Vf132(int,  ...);    // G6 vtable slot dispatch
+    int Vf748(int,  ...);    // G6 vtable slot dispatch
+    void * RenderTechnoOverlaySHP(TechnoClass * aP1,  int a3,  TechnoClass * aP3,  int a5,  TechnoClass * aP5,  TechnoClass * aP6,  int a8,  char a9,  TechnoClass * aP9,  TechnoClass * aP10,  int a12);    // 0x707280
 };
 } // namespace gamemd

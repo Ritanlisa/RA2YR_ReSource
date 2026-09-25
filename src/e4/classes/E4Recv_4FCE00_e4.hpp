@@ -28,6 +28,6 @@ struct E4Recv_4FCE00 {
     unsigned int q4418;  // 0x4418
     unsigned int q5444;  // 0x5444
 // --- flat members (END) ---
-    int sub_4FCE00(ObjectClass * aP1, int a3, ObjectClass * aP3);  // 0x4FCE00
+    int sub_4FCE00(ObjectClass * aP1,  int a3,  ObjectClass * aP3);    // 0x4FCE00
 };
 } // namespace gamemd

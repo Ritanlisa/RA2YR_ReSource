@@ -87,7 +87,7 @@ struct UnitTypeClass {
     char ChargerTurrets[72];  // 0xBC
     unsigned int q0C3;  // 0xC3
     CampaignClass* q0C4;  // 0xC4
-    IUnknown* q0CC;  // 0xCC
+    void* q0CC;  // 0xCC
     unsigned char q0D0;  // 0xD0
     AnimClass* q0D4;  // 0xD4
     void* q0D8;  // 0xD8
@@ -240,7 +240,7 @@ struct UnitTypeClass {
     int weaponCount;  // 0x298
     char weapon1[4];  // 0x29C
     unsigned int weapon2;  // 0x2A0
-    IUnknown* eliteWeapon1;  // 0x2A4
+    void* eliteWeapon1;  // 0x2A4
     unsigned int eliteWeapon2;  // 0x2A8
     unsigned int ammo;  // 0x2AC
     char EliteAbilities[4];  // 0x2AE
@@ -485,7 +485,7 @@ struct UnitTypeClass {
     unsigned char q5C8;  // 0x5C8
     void* q5CC;  // 0x5CC
     unsigned char q5D0;  // 0x5D0
-    IUnknown* q5D4;  // 0x5D4
+    void* q5D4;  // 0x5D4
     unsigned char q5D8;  // 0x5D8
     int q5E0;  // 0x5E0
     bool q5E4;  // 0x5E4
@@ -1053,39 +1053,39 @@ struct UnitTypeClass {
     bool q1040;  // 0x1040
     unsigned int q1044;  // 0x1044
     unsigned int q1048;  // 0x1048
-    IUnknown* q104C;  // 0x104C
+    void* q104C;  // 0x104C
     unsigned char q1050;  // 0x1050
-    IUnknown* q1054;  // 0x1054
+    void* q1054;  // 0x1054
     unsigned int q1058;  // 0x1058
-    IUnknown* q105C;  // 0x105C
+    void* q105C;  // 0x105C
     unsigned int q1060;  // 0x1060
     unsigned int q1064;  // 0x1064
     unsigned int q1068;  // 0x1068
-    IUnknown* q106C;  // 0x106C
+    void* q106C;  // 0x106C
     unsigned char q1070;  // 0x1070
     unsigned int q1074;  // 0x1074
     unsigned int q1078;  // 0x1078
-    IUnknown* q107C;  // 0x107C
+    void* q107C;  // 0x107C
     unsigned int q1080;  // 0x1080
     unsigned int q1084;  // 0x1084
     unsigned int q1088;  // 0x1088
-    IUnknown* q108C;  // 0x108C
+    void* q108C;  // 0x108C
     unsigned char q1090;  // 0x1090
-    IUnknown* q1094;  // 0x1094
+    void* q1094;  // 0x1094
     unsigned char q1098;  // 0x1098
-    IUnknown* q109C;  // 0x109C
+    void* q109C;  // 0x109C
     unsigned char q10A0;  // 0x10A0
-    IUnknown* q10A4;  // 0x10A4
+    void* q10A4;  // 0x10A4
     unsigned char q10A8;  // 0x10A8
-    IUnknown* q10AC;  // 0x10AC
+    void* q10AC;  // 0x10AC
     unsigned char q10B0;  // 0x10B0
-    IUnknown* q10B4;  // 0x10B4
+    void* q10B4;  // 0x10B4
     unsigned char q10B8;  // 0x10B8
-    IUnknown* q10BC;  // 0x10BC
+    void* q10BC;  // 0x10BC
     void* q10C0;  // 0x10C0
     unsigned char q10C4;  // 0x10C4
     unsigned char q10C8;  // 0x10C8
-    IUnknown* q10CC;  // 0x10CC
+    void* q10CC;  // 0x10CC
     unsigned char q10D0;  // 0x10D0
     unsigned char q10D4;  // 0x10D4
     unsigned char q10D8;  // 0x10D8
@@ -1093,11 +1093,11 @@ struct UnitTypeClass {
     void* q10E0;  // 0x10E0
     unsigned char q10E4;  // 0x10E4
     unsigned char q10E8;  // 0x10E8
-    IUnknown* q10EC;  // 0x10EC
+    void* q10EC;  // 0x10EC
     void* q10F0;  // 0x10F0
     unsigned char q10F4;  // 0x10F4
     unsigned char q10F8;  // 0x10F8
-    IUnknown* q10FC;  // 0x10FC
+    void* q10FC;  // 0x10FC
     unsigned int q1100;  // 0x1100
     unsigned int q1104;  // 0x1104
     unsigned int q1108;  // 0x1108
@@ -1105,11 +1105,11 @@ struct UnitTypeClass {
     unsigned int q1110;  // 0x1110
     unsigned char q1114;  // 0x1114
     unsigned char q1118;  // 0x1118
-    IUnknown* q111C;  // 0x111C
+    void* q111C;  // 0x111C
     unsigned int q1120;  // 0x1120
     unsigned int q1124;  // 0x1124
     unsigned int q1128;  // 0x1128
-    IUnknown* q112C;  // 0x112C
+    void* q112C;  // 0x112C
     void* q1130;  // 0x1130
     void* q1134;  // 0x1134
     unsigned int q1138;  // 0x1138
@@ -1119,7 +1119,7 @@ struct UnitTypeClass {
     unsigned int q1148;  // 0x1148
     unsigned char q114C;  // 0x114C
     unsigned char q1150;  // 0x1150
-    IUnknown* q1154;  // 0x1154
+    void* q1154;  // 0x1154
     void* q1158;  // 0x1158
     unsigned char q115C;  // 0x115C
     char q1160[4];  // 0x1160
@@ -1226,7 +1226,7 @@ struct UnitTypeClass {
     unsigned char q1410;  // 0x1410
     unsigned int q1414;  // 0x1414
     unsigned char q1418;  // 0x1418
-    IUnknown* q141C;  // 0x141C
+    void* q141C;  // 0x141C
     int q1420;  // 0x1420
     int q1424;  // 0x1424
     int q1428;  // 0x1428
@@ -1251,9 +1251,9 @@ struct UnitTypeClass {
     unsigned char q148C;  // 0x148C
     unsigned char q1490;  // 0x1490
     void* q14BC;  // 0x14BC
-    IUnknown* q14C0;  // 0x14C0
-    IUnknown* q14C4;  // 0x14C4
-    IUnknown* q14C8;  // 0x14C8
+    void* q14C0;  // 0x14C0
+    void* q14C4;  // 0x14C4
+    void* q14C8;  // 0x14C8
     unsigned char q14CC;  // 0x14CC
     void* q14E0;  // 0x14E0
     unsigned char q14E4;  // 0x14E4
@@ -1264,30 +1264,30 @@ struct UnitTypeClass {
     unsigned int q14E9;  // 0x14E9
     unsigned int q14EA;  // 0x14EA
     unsigned int q14EB;  // 0x14EB
-    IUnknown* q14EC;  // 0x14EC
+    void* q14EC;  // 0x14EC
     unsigned int q14ED;  // 0x14ED
     unsigned int q14EE;  // 0x14EE
     unsigned int q14EF;  // 0x14EF
     unsigned int q14F3;  // 0x14F3
-    IUnknown* q14F4;  // 0x14F4
+    void* q14F4;  // 0x14F4
     unsigned char q14F7;  // 0x14F7
     unsigned char q14F8;  // 0x14F8
     void* q14FC;  // 0x14FC
     void* q1500;  // 0x1500
     int q1504;  // 0x1504
     bool q1508;  // 0x1508
-    IUnknown* q150C;  // 0x150C
+    void* q150C;  // 0x150C
     unsigned char q1510;  // 0x1510
     unsigned char q1514;  // 0x1514
     bool q1518;  // 0x1518
-    IUnknown* q151C;  // 0x151C
+    void* q151C;  // 0x151C
     int q1520;  // 0x1520
     int q1524;  // 0x1524
     unsigned int q1525;  // 0x1525
     unsigned int q1526;  // 0x1526
     int q1528;  // 0x1528
     unsigned char q152A;  // 0x152A
-    IUnknown* q152C;  // 0x152C
+    void* q152C;  // 0x152C
     unsigned char q1530;  // 0x1530
     int q1540;  // 0x1540
     float q1544;  // 0x1544
@@ -1315,51 +1315,51 @@ struct UnitTypeClass {
     AbstractClass* q1628;  // 0x1628
     unsigned char q1634;  // 0x1634
     unsigned char q1638;  // 0x1638
-    IUnknown* q163C;  // 0x163C
+    void* q163C;  // 0x163C
     char q1640[4];  // 0x1640
     unsigned char q1644;  // 0x1644
     int q1648;  // 0x1648
     unsigned char q164C;  // 0x164C
     unsigned int q1650;  // 0x1650
-    IUnknown* q1654;  // 0x1654
-    IUnknown* q1658;  // 0x1658
+    void* q1654;  // 0x1654
+    void* q1658;  // 0x1658
     unsigned char q165C;  // 0x165C
     char q1660[4];  // 0x1660
     int q1664;  // 0x1664
     int q1668;  // 0x1668
-    IUnknown* q166C;  // 0x166C
+    void* q166C;  // 0x166C
     char q1670[4];  // 0x1670
-    IUnknown* q1674;  // 0x1674
+    void* q1674;  // 0x1674
     unsigned char q1678;  // 0x1678
-    IUnknown* q167C;  // 0x167C
+    void* q167C;  // 0x167C
     bool q1680;  // 0x1680
     bool q1684;  // 0x1684
     int q1688;  // 0x1688
     unsigned char q168C;  // 0x168C
-    IUnknown* q16A8;  // 0x16A8
-    IUnknown* q16AC;  // 0x16AC
+    void* q16A8;  // 0x16A8
+    void* q16AC;  // 0x16AC
     unsigned char q16B0;  // 0x16B0
-    IUnknown* q16B4;  // 0x16B4
+    void* q16B4;  // 0x16B4
     unsigned int q16B7;  // 0x16B7
     unsigned char q16BB;  // 0x16BB
     void* q16CC;  // 0x16CC
     unsigned char q16D0;  // 0x16D0
-    IUnknown* q16D4;  // 0x16D4
+    void* q16D4;  // 0x16D4
     void* q16D8;  // 0x16D8
     unsigned char q16DC;  // 0x16DC
-    IUnknown* q16E4;  // 0x16E4
+    void* q16E4;  // 0x16E4
     unsigned char q16E8;  // 0x16E8
-    IUnknown* q16EC;  // 0x16EC
+    void* q16EC;  // 0x16EC
     unsigned char q16F0;  // 0x16F0
-    IUnknown* q16F4;  // 0x16F4
+    void* q16F4;  // 0x16F4
     unsigned int q16F8;  // 0x16F8
     unsigned char q16FC;  // 0x16FC
     int q1700;  // 0x1700
     int q1704;  // 0x1704
     bool q1708;  // 0x1708
-    IUnknown* q170C;  // 0x170C
+    void* q170C;  // 0x170C
     bool q1710;  // 0x1710
-    IUnknown* q1714;  // 0x1714
+    void* q1714;  // 0x1714
     unsigned char q1718;  // 0x1718
     AbstractTypeClass* q171C;  // 0x171C
     char q1720[4];  // 0x1720
@@ -1369,11 +1369,11 @@ struct UnitTypeClass {
     AbstractTypeClass* q1730;  // 0x1730
     unsigned char q1734;  // 0x1734
     unsigned char q1738;  // 0x1738
-    IUnknown* q173C;  // 0x173C
+    void* q173C;  // 0x173C
     unsigned int q1740;  // 0x1740
     int q1744;  // 0x1744
     bool q1748;  // 0x1748
-    IUnknown* q174C;  // 0x174C
+    void* q174C;  // 0x174C
     char q1750;  // 0x1750
     unsigned char q1754;  // 0x1754
     unsigned char q1758;  // 0x1758
@@ -1414,20 +1414,20 @@ struct UnitTypeClass {
     unsigned char q180C;  // 0x180C
     double q1810;  // 0x1810
     unsigned int q1814;  // 0x1814
-    IUnknown* q181C;  // 0x181C
+    void* q181C;  // 0x181C
     int q1820;  // 0x1820
     int q1824;  // 0x1824
     bool q1828;  // 0x1828
-    IUnknown* q182C;  // 0x182C
+    void* q182C;  // 0x182C
     Color* q1830;  // 0x1830
     ObjectTypeClass* q1834;  // 0x1834
     unsigned char q1838;  // 0x1838
     unsigned int q1840;  // 0x1840
     unsigned int q1844;  // 0x1844
     unsigned int q1848;  // 0x1848
-    IUnknown* q184C;  // 0x184C
+    void* q184C;  // 0x184C
     unsigned char q1850;  // 0x1850
-    IUnknown* q185C;  // 0x185C
+    void* q185C;  // 0x185C
     unsigned int q1860;  // 0x1860
     unsigned int q1864;  // 0x1864
     unsigned int q1868;  // 0x1868
@@ -1774,7 +1774,7 @@ struct UnitTypeClass {
     unsigned char q4174;  // 0x4174
     unsigned int q4178;  // 0x4178
     unsigned char q417C;  // 0x417C
-    IUnknown* q4180;  // 0x4180
+    void* q4180;  // 0x4180
     unsigned int q4184;  // 0x4184
     unsigned char q4188;  // 0x4188
     unsigned char q418C;  // 0x418C
@@ -1787,27 +1787,27 @@ struct UnitTypeClass {
     unsigned int q4210;  // 0x4210
     unsigned int q4214;  // 0x4214
     unsigned char q4218;  // 0x4218
-    IUnknown* q4220;  // 0x4220
+    void* q4220;  // 0x4220
     unsigned int q4224;  // 0x4224
     unsigned int q4228;  // 0x4228
     unsigned char q422C;  // 0x422C
     unsigned char q4240;  // 0x4240
-    IUnknown* q4244;  // 0x4244
+    void* q4244;  // 0x4244
     unsigned char q4248;  // 0x4248
     unsigned char q424C;  // 0x424C
-    IUnknown* q4260;  // 0x4260
+    void* q4260;  // 0x4260
     unsigned char q4264;  // 0x4264
-    IUnknown* q4268;  // 0x4268
+    void* q4268;  // 0x4268
     unsigned char q426C;  // 0x426C
     unsigned char q4270;  // 0x4270
     unsigned char q4274;  // 0x4274
     unsigned char q4280;  // 0x4280
-    IUnknown* q4284;  // 0x4284
+    void* q4284;  // 0x4284
     void* q4288;  // 0x4288
     unsigned char q428C;  // 0x428C
     unsigned char q4290;  // 0x4290
     unsigned char q4294;  // 0x4294
-    IUnknown* q4300;  // 0x4300
+    void* q4300;  // 0x4300
     unsigned char q4304;  // 0x4304
     unsigned char q4308;  // 0x4308
     unsigned char q430C;  // 0x430C
@@ -1819,7 +1819,7 @@ struct UnitTypeClass {
     unsigned char q4330;  // 0x4330
     unsigned char q4340;  // 0x4340
     unsigned char q4344;  // 0x4344
-    IUnknown* q4348;  // 0x4348
+    void* q4348;  // 0x4348
     unsigned char q434C;  // 0x434C
     unsigned char q4350;  // 0x4350
     unsigned char q4354;  // 0x4354
@@ -1833,7 +1833,7 @@ struct UnitTypeClass {
     unsigned int q4374;  // 0x4374
     unsigned char q4378;  // 0x4378
     unsigned char q437C;  // 0x437C
-    IUnknown* q4380;  // 0x4380
+    void* q4380;  // 0x4380
     unsigned int q4384;  // 0x4384
     unsigned int q4388;  // 0x4388
     unsigned char q438C;  // 0x438C
@@ -2036,7 +2036,7 @@ struct UnitTypeClass {
     unsigned char q513C;  // 0x513C
     unsigned int q5140;  // 0x5140
     unsigned char q5144;  // 0x5144
-    IUnknown* q5148;  // 0x5148
+    void* q5148;  // 0x5148
     unsigned char q514C;  // 0x514C
     unsigned char q5150;  // 0x5150
     unsigned char q5154;  // 0x5154
@@ -2046,7 +2046,7 @@ struct UnitTypeClass {
     unsigned char q5164;  // 0x5164
     void* q5168;  // 0x5168
     unsigned char q516C;  // 0x516C
-    IUnknown* q5170;  // 0x5170
+    void* q5170;  // 0x5170
     int q5174;  // 0x5174
     unsigned char q5178;  // 0x5178
     unsigned char q517C;  // 0x517C
@@ -2085,7 +2085,7 @@ struct UnitTypeClass {
     unsigned char q530C;  // 0x530C
     unsigned char q5310;  // 0x5310
     unsigned char q5314;  // 0x5314
-    IUnknown* q5320;  // 0x5320
+    void* q5320;  // 0x5320
     unsigned char q5324;  // 0x5324
     unsigned char q5328;  // 0x5328
     unsigned char q532C;  // 0x532C
@@ -2103,7 +2103,7 @@ struct UnitTypeClass {
     unsigned char q536C;  // 0x536C
     int q5380;  // 0x5380
     bool q5384;  // 0x5384
-    IUnknown* q5388;  // 0x5388
+    void* q5388;  // 0x5388
     unsigned char q538C;  // 0x538C
     int q5394;  // 0x5394
     bool q5398;  // 0x5398
@@ -2131,14 +2131,14 @@ struct UnitTypeClass {
     unsigned char q53F0;  // 0x53F0
     unsigned char q53F4;  // 0x53F4
     bool q5400;  // 0x5400
-    IUnknown* q5404;  // 0x5404
+    void* q5404;  // 0x5404
     int q5408;  // 0x5408
     unsigned char q540C;  // 0x540C
     unsigned char q5410;  // 0x5410
     unsigned int q5414;  // 0x5414
     unsigned char q5418;  // 0x5418
     unsigned char q541C;  // 0x541C
-    IUnknown* q5420;  // 0x5420
+    void* q5420;  // 0x5420
     unsigned char q5424;  // 0x5424
     unsigned char q5428;  // 0x5428
     bool q5430;  // 0x5430
@@ -2150,7 +2150,7 @@ struct UnitTypeClass {
     unsigned char q544C;  // 0x544C
     int q5458;  // 0x5458
     unsigned char q545C;  // 0x545C
-    IUnknown* q5460;  // 0x5460
+    void* q5460;  // 0x5460
     unsigned char q5464;  // 0x5464
     unsigned char q5468;  // 0x5468
     int q5480;  // 0x5480
@@ -2158,7 +2158,7 @@ struct UnitTypeClass {
     unsigned char q5488;  // 0x5488
     unsigned char q548C;  // 0x548C
     char q5490[4];  // 0x5490
-    IUnknown* q5494;  // 0x5494
+    void* q5494;  // 0x5494
     unsigned char q5498;  // 0x5498
     unsigned char q549C;  // 0x549C
     unsigned char q54A0;  // 0x54A0
@@ -2185,7 +2185,7 @@ struct UnitTypeClass {
     unsigned char q5570;  // 0x5570
     unsigned char q5574;  // 0x5574
     unsigned char q5578;  // 0x5578
-    IUnknown* q55F0;  // 0x55F0
+    void* q55F0;  // 0x55F0
     unsigned char q55F4;  // 0x55F4
     unsigned char q55F8;  // 0x55F8
     unsigned char q55FC;  // 0x55FC
@@ -2196,7 +2196,7 @@ struct UnitTypeClass {
     unsigned char q5610;  // 0x5610
     unsigned char q5618;  // 0x5618
     unsigned char q561C;  // 0x561C
-    IUnknown* q5634;  // 0x5634
+    void* q5634;  // 0x5634
     unsigned char q5638;  // 0x5638
     unsigned char q563C;  // 0x563C
     unsigned int q5640;  // 0x5640
@@ -2220,15 +2220,15 @@ struct UnitTypeClass {
     int q5714;  // 0x5714
     int q5718;  // 0x5718
     unsigned char q571C;  // 0x571C
-    IUnknown* q5720;  // 0x5720
+    void* q5720;  // 0x5720
     unsigned char q5724;  // 0x5724
     char q5728[4];  // 0x5728
     unsigned char q572C;  // 0x572C
     unsigned char q5730;  // 0x5730
     unsigned char q5734;  // 0x5734
-    IUnknown* q5740;  // 0x5740
+    void* q5740;  // 0x5740
     char q5744[4];  // 0x5744
-    IUnknown* q5748;  // 0x5748
+    void* q5748;  // 0x5748
     unsigned char q574C;  // 0x574C
     AudioController* q5750;  // 0x5750
     unsigned char q5754;  // 0x5754
@@ -2239,7 +2239,7 @@ struct UnitTypeClass {
     int q5768;  // 0x5768
     unsigned char q576C;  // 0x576C
     unsigned char q5770;  // 0x5770
-    IUnknown* q5774;  // 0x5774
+    void* q5774;  // 0x5774
     unsigned char q5778;  // 0x5778
     unsigned char q577C;  // 0x577C
     unsigned char q5780;  // 0x5780
@@ -2248,40 +2248,40 @@ struct UnitTypeClass {
     unsigned char q578C;  // 0x578C
     unsigned char q5790;  // 0x5790
     unsigned char q5794;  // 0x5794
-    IUnknown* q5798;  // 0x5798
+    void* q5798;  // 0x5798
     unsigned char q579C;  // 0x579C
     unsigned char q57A0;  // 0x57A0
-    IUnknown* q57A4;  // 0x57A4
+    void* q57A4;  // 0x57A4
     unsigned char q57A8;  // 0x57A8
     unsigned char q57AC;  // 0x57AC
-    IUnknown* q57B0;  // 0x57B0
+    void* q57B0;  // 0x57B0
     unsigned char q57B4;  // 0x57B4
     unsigned char q57B8;  // 0x57B8
-    IUnknown* q57BC;  // 0x57BC
+    void* q57BC;  // 0x57BC
     unsigned char q57C0;  // 0x57C0
     unsigned char q57C4;  // 0x57C4
-    IUnknown* q57C8;  // 0x57C8
+    void* q57C8;  // 0x57C8
     unsigned char q57CC;  // 0x57CC
     unsigned char q57D0;  // 0x57D0
-    IUnknown* q57D4;  // 0x57D4
+    void* q57D4;  // 0x57D4
     unsigned char q57D8;  // 0x57D8
     unsigned char q57DC;  // 0x57DC
     unsigned char q57E0;  // 0x57E0
     unsigned char q57E4;  // 0x57E4
     unsigned char q57E8;  // 0x57E8
-    IUnknown* q5800;  // 0x5800
-    IUnknown* q5804;  // 0x5804
+    void* q5800;  // 0x5800
+    void* q5804;  // 0x5804
     unsigned char q5808;  // 0x5808
     unsigned char q580C;  // 0x580C
     unsigned char q5810;  // 0x5810
     unsigned char q5814;  // 0x5814
     unsigned char q5840;  // 0x5840
-    IUnknown* q5844;  // 0x5844
+    void* q5844;  // 0x5844
     void* q5848;  // 0x5848
     unsigned char q584C;  // 0x584C
-    IUnknown* q5860;  // 0x5860
+    void* q5860;  // 0x5860
     unsigned char q5864;  // 0x5864
-    IUnknown* q5868;  // 0x5868
+    void* q5868;  // 0x5868
     unsigned char q586C;  // 0x586C
     unsigned char q5870;  // 0x5870
     unsigned char q5874;  // 0x5874
@@ -2293,9 +2293,9 @@ struct UnitTypeClass {
     unsigned char q58EC;  // 0x58EC
     unsigned char q58F0;  // 0x58F0
     unsigned char q58F4;  // 0x58F4
-    IUnknown* q5900;  // 0x5900
+    void* q5900;  // 0x5900
     bool q5904;  // 0x5904
-    IUnknown* q5908;  // 0x5908
+    void* q5908;  // 0x5908
     unsigned char q590C;  // 0x590C
     int q5910;  // 0x5910
     unsigned char q5914;  // 0x5914
@@ -2309,12 +2309,12 @@ struct UnitTypeClass {
     unsigned char q593C;  // 0x593C
     unsigned char q5940;  // 0x5940
     unsigned char q5944;  // 0x5944
-    IUnknown* q5948;  // 0x5948
+    void* q5948;  // 0x5948
     unsigned char q594C;  // 0x594C
     unsigned char q5950;  // 0x5950
     unsigned char q5954;  // 0x5954
     bool q5960;  // 0x5960
-    IUnknown* q5964;  // 0x5964
+    void* q5964;  // 0x5964
     char q5968;  // 0x5968
     unsigned char q596C;  // 0x596C
     AbstractClass* q5970;  // 0x5970
@@ -2366,7 +2366,7 @@ struct UnitTypeClass {
     unsigned char q6174;  // 0x6174
     int q6180;  // 0x6180
     bool q6184;  // 0x6184
-    IUnknown* q6188;  // 0x6188
+    void* q6188;  // 0x6188
     unsigned char q618C;  // 0x618C
     unsigned int q6194;  // 0x6194
     unsigned char q6198;  // 0x6198
@@ -2378,7 +2378,7 @@ struct UnitTypeClass {
     unsigned char q6210;  // 0x6210
     double q6214;  // 0x6214
     unsigned char q6218;  // 0x6218
-    IUnknown* q6220;  // 0x6220
+    void* q6220;  // 0x6220
     unsigned char q6224;  // 0x6224
     unsigned char q6228;  // 0x6228
     unsigned char q6230;  // 0x6230

@@ -141,9 +141,10 @@ struct VoxelAnimType {
     unsigned int q5508;  // 0x5508
     unsigned int q5520;  // 0x5520
     SomeVoxelCache * q5640;  // 0x5640
+    unsigned int u32_105;
 // --- flat members (END) ---
-    char LoadSection(const char * a2, int a3);  // 0x5F7A90
-    char LoadBarrel(const char * a2, int a3);  // 0x5F7DB0
+    char LoadSection(const char * a2,  int a3);    // 0x5F7A90
+    char LoadBarrel(const char * a2,  int a3);    // 0x5F7DB0
     int LoadAnim();  // 0x5F8110
 };
 } // namespace gamemd

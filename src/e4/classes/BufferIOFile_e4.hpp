@@ -15,7 +15,7 @@ struct BufferIOFile {
     unsigned int q5684;  // 0x5684
     unsigned int u32_204;
 // --- flat members (END) ---
-    CDFileClass * Constructor(char * Source);  // 0x47A9D0
+    void* Constructor(char * Source);  // 0x47A9D0
     unsigned char * Init();  // 0x47AA30
 };
 } // namespace gamemd

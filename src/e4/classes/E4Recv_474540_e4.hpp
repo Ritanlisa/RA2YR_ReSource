@@ -24,6 +24,6 @@ struct E4Recv_474540 {
     unsigned int q5444;  // 0x5444
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    CCINIClass * sub_474540(CCINIClass * aP1, char a3);  // 0x474540
+    CCINIClass * sub_474540(CCINIClass * aP1,  char a3);    // 0x474540
 };
 } // namespace gamemd

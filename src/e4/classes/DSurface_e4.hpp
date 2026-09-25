@@ -1014,13 +1014,9 @@ struct DSurface {
     unsigned char q6994;  // 0x6994
     unsigned char q7000;  // 0x7000
     unsigned char q7004;  // 0x7004
-    unsigned int q0084;
-    unsigned int q0085;
-    unsigned int Unlock;
-    unsigned int q0088;
 // --- flat members (END) ---
-    AbstractClass * * Construct(IUnknown * aP1, DSurface * aP2, ObjectClass * aP3, char a5);
-    AbstractClass * * Process(IUnknown * aP1, int * a2);
+    AbstractClass * * Construct(void* aP1, DSurface * aP2, ObjectClass * aP3, char a5);
+    AbstractClass * * Process(void* aP1, int * a2);
     Coord * * DrawLineFaded(int a2, unsigned int * a3, int * a4, unsigned char * a5, int a6, int a7, char a8, float a9, char a10, char a11, float a12);
     Coord * * DrawLineModulated(int * a1, int a2, int a3, unsigned int * a4, unsigned int * a5, int a6, int a7, int a8, char a9);
     DSurface * * Blit(int * a1, int * a2, unsigned int * a3, int * a4, DSurface * aP5, int a7, char a8);

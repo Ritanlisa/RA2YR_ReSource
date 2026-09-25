@@ -8,6 +8,8 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/TechnoClass_e4.hpp"
 #include "e4/classes/Timer_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x7327D0
@@ -42,7 +44,7 @@ int MoveFeedback::ProcessCommand()
     if ( Height ) /*0x732809*/
     {
       IDA_LOBYTE(Height) = (unsigned __int8)EventClass::resetEvent((_DWORD *)Height, 0, 0); /*0x73280f*/
-      *v3 = &(void*)(void*)&DynamicVectorClass_TechnoClass___vftable; /*0x732814*/
+      *(void **)v3 = (void*)&DynamicVectorClass_TechnoClass___vftable; /*0x732814*/
       v3[5] = 10; /*0x73281a*/
       v3[4] = 0; /*0x732821*/
     }
@@ -86,7 +88,7 @@ int MoveFeedback::ProcessCommand()
     if ( v9 ) /*0x73289d*/
     {
       EventClass::resetEvent(v9, 0, 0); /*0x7328a3*/
-      *v3 = &(void*)(void*)&DynamicVectorClass_TechnoClass___vftable; /*0x7328a8*/
+      *(void **)v3 = (void*)&DynamicVectorClass_TechnoClass___vftable; /*0x7328a8*/
       v3[5] = 10; /*0x7328ae*/
       v3[4] = 0; /*0x7328b5*/
     }
@@ -183,7 +185,7 @@ DynamicVector * MoveFeedback::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->q004; /*0x40bcb3*/
-  *this = &(void*)(void*)&VectorClass_TechnoClass___vftable; /*0x40bcb6*/
+  *(void **)this = (void*)&VectorClass_TechnoClass___vftable; /*0x40bcb6*/
   if ( v3 && this->IsAllocated ) /*0x40bcc0*/
   {
     RA2_OPDEL(v3); /*0x40bcc8*/
@@ -296,7 +298,7 @@ DynamicVector * MoveFeedback::Constructor(char a2)
   void *v3; // eax
 
   v3 = (void *)this->q004; /*0x40c163*/
-  *this = &(void*)(void*)&VectorClass_CommandClass_const___vftable; /*0x40c166*/
+  *(void **)this = (void*)&VectorClass_CommandClass_const___vftable; /*0x40c166*/
   if ( v3 && this->IsAllocated ) /*0x40c170*/
   {
     RA2_OPDEL(v3); /*0x40c178*/

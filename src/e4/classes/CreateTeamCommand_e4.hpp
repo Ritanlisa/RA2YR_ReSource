@@ -7,11 +7,11 @@ namespace gamemd {
 struct CreateTeamCommand {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
-    void* q004;  // 0x4
+    unsigned int q004;  // 0x4
     int Capacity;  // 0x8
-    void* q00C;  // 0xC
+    unsigned int q00C;  // 0xC
     bool IsAllocated;  // 0xD
-    void* q010;  // 0x10
+    unsigned int q010;  // 0x10
     bool IsInitialized;  // 0x12
     unsigned char q014;  // 0x14
     unsigned char q015;  // 0x15
@@ -210,9 +210,9 @@ struct CreateTeamCommand {
     unsigned int * performAction_148();  // 0x537350
     unsigned int * performAction_153();  // 0x537440
     unsigned int * performAction_158();  // 0x537530
-    char performAction_241(int a2, unsigned int * a3);  // 0x5386A0
+    char performAction_241(int a2,  unsigned int * a3);    // 0x5386A0
     rc_ptr_base * performAction_243(char a2);  // 0x538A20
-    char performAction_245(char a2, int a3);  // 0x6A6A00
+    char performAction_245(char a2,  int a3);    // 0x6A6A00
     void performAction_246();  // 0x731060
     unsigned int * Construct(int a2);  // 0x535C00
     ObjectClass * AddRef();  // 0x535C20
@@ -222,12 +222,12 @@ struct CreateTeamCommand {
     AddTeamCommand * performAction_23(char a2);  // 0x536180
     CenterTeamCommand * performAction_24(char a2);  // 0x536270
     TauntCommandClass * performAction_25(char a2);  // 0x536580
-    ToggleSellCommandClass * performAction_214(char a2);  // 0x5381A0
-    ToggleRepairCommandClass * performAction_215(char a2);  // 0x5381C0
-    ScatterCommandClass * performAction_219(char a2);  // 0x538240
-    GuardCommandClass * performAction_220(char a2);  // 0x538260
-    StopCommandClass * performAction_221(char a2);  // 0x538280
-    DeployCommandClass * performAction_223(char a2);  // 0x5382C0
+    void* performAction_214(char a2);  // 0x5381A0
+    void* performAction_215(char a2);  // 0x5381C0
+    void* performAction_219(char a2);  // 0x538240
+    void* performAction_220(char a2);  // 0x538260
+    void* performAction_221(char a2);  // 0x538280
+    void* performAction_223(char a2);  // 0x5382C0
     ScreenCaptureCommandClass * performAction_235(char a2);  // 0x538440
     PageUserCommandClass * performAction_236(char a2);  // 0x538460
     CursorPositionCommandClass * performAction_237(char a2);  // 0x538480

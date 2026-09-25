@@ -18,7 +18,10 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/BombClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/Power_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x6D0680
 namespace gamemd {
@@ -183,10 +186,10 @@ int BlowStraw_29::Seek(TabClass * aP1, unsigned int * a2)
 namespace gamemd {
 CellStruct * * sub_731AF0()
 {
-  wchar_t *result; // eax
+  wchar_t * result;
   wchar_t *StringCSF; // eax
   int v2; // ecx
-  wchar_t *v3; // edi
+  unsigned int v3;
   int v4; // esi
   _BYTE *v5; // ecx
   wchar_t *v6; // eax

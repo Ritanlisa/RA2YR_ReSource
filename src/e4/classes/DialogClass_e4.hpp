@@ -27,7 +27,7 @@ struct DialogClass {
 // --- flat members (END) ---
     ATOM RegisterWinClasses();
     int GetFlag();
-    static int Reposition(SkirmishDialog * aP0, LPARAM a2);
+    int Reposition(SkirmishDialog * aP0, LPARAM a2);
 };
 
 } // namespace gamemd

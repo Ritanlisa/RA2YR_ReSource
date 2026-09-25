@@ -11,6 +11,8 @@ struct E4Recv_5093C0 {
     unsigned int q2200;  // 0x2200
     unsigned int M22024;  // 0x5608
     unsigned int M22036;  // 0x5614
+    unsigned int q8986;
+    unsigned int q8989;
 // --- flat members (END) ---
     int sub_5093C0(int a2);  // 0x5093C0
 };

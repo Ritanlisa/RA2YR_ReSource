@@ -17,6 +17,8 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/HouseClass_e4.hpp"
 #include "e4/classes/RadarClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/UnitClass_e4.hpp"
 
 // 0x41EC90
@@ -308,7 +310,7 @@ ObjectClass * * AITriggerTypeClass::LoadFromINI(unsigned char *** a2)
   int v9; // esi
   int ExitCellByName; // eax
   int Index; // eax
-  _DWORD *v12; // edx
+  unsigned int v12;
   int v13; // eax
   char *v14; // eax
   unsigned int v15; // edi
@@ -329,11 +331,11 @@ ObjectClass * * AITriggerTypeClass::LoadFromINI(unsigned char *** a2)
   char *v31; // eax
   char *v32; // eax
   char *v33; // eax
-  int v34; // eax
-  int v35; // esi
-  int MaxBuildLevel; // eax
-  int v37; // eax
-  int v38; // esi
+  ObjectClass * v34;
+  ObjectClass * v35;
+  ObjectClass * MaxBuildLevel;
+  ObjectClass * v37;
+  ObjectClass * v38;
   char v40[4]; // [esp+10h] [ebp-270h] BYREF
   __int64 v41; // [esp+14h] [ebp-26Ch] BYREF
   char v42[23]; // [esp+1Ch] [ebp-264h] BYREF
@@ -550,10 +552,10 @@ ObjectClass * * AITriggerTypeClass::LoadFromINI(unsigned char *** a2)
 namespace gamemd {
 int AITriggerTypeClass::RegisterSuccess()
 {
-  int v1; // edx
+  void * v1;
   double v2; // st7
   double v3; // st7
-  int result; // eax
+  void * result;
 
   v1 = this->q108; /*0x41fd61*/
   v2 = 0.0; /*0x41fd67*/
@@ -585,10 +587,10 @@ int AITriggerTypeClass::RegisterSuccess()
 namespace gamemd {
 int AITriggerTypeClass::RegisterFailure()
 {
-  int v1; // edx
+  void * v1;
   double v2; // st7
   double v3; // st7
-  int result; // eax
+  void * result;
   __int16 v5; // fps
   double v6; // st7
   bool v7; // c0
@@ -634,10 +636,10 @@ AITriggerTypeClass * AITriggerTypeClass::ddtor(char a2)
 {
   int v3; // eax
 
-  *this = &(void*)(void*)&AITriggerTypeClass_vftable; /*0x41fffd*/
-  this->vtable2 = &(void*)(void*)&AITriggerTypeClass_vftable; /*0x420003*/
-  this->vtable3 = &(void*)(void*)&AITriggerTypeClass_vftable; /*0x42000a*/
-  this->vtable4 = &(void*)(void*)&AITriggerTypeClass_vftable; /*0x420011*/
+  *(void **)this = (void*)&AITriggerTypeClass_vftable; /*0x41fffd*/
+  this->vtable2 = (void*)&AITriggerTypeClass_vftable; /*0x420003*/
+  this->vtable3 = (void*)&AITriggerTypeClass_vftable; /*0x42000a*/
+  this->vtable4 = (void*)&AITriggerTypeClass_vftable; /*0x420011*/
   v3 = (*(int (__thiscall **)(int *, _DWORD **))(AITriggerTypeClass_Array + 16))(&AITriggerTypeClass_Array, &this); /*0x420023*/
   if ( v3 != -1 && v3 < g_AnimTypeInitQueue && v3 < --g_AnimTypeInitQueue ) /*0x42003e*/
   {
@@ -905,7 +907,7 @@ VectorClass_flat * AITriggerTypeClass_40::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x420633*/
-  *this = &(void*)(void*)&VectorClass_AlphaLightingRemapClass___vftable; /*0x420636*/
+  *this = (void*)&VectorClass_AlphaLightingRemapClass___vftable; /*0x420636*/
   if ( v3 && this->IsAllocated ) /*0x420640*/
   {
     RA2_OPDEL(v3); /*0x420648*/
@@ -926,7 +928,7 @@ DynamicVector * AITriggerTypeClass_40::Constructor_VectorClass_AlphaLightingRema
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x420683*/
-  *this = &(void*)(void*)&VectorClass_AlphaLightingRemapClass___vftable; /*0x420686*/
+  *this = (void*)&VectorClass_AlphaLightingRemapClass___vftable; /*0x420686*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x420690*/
   {
     RA2_OPDEL(v3); /*0x420698*/

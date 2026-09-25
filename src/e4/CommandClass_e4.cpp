@@ -9,6 +9,8 @@
 #include "e4/classes/ToolTipManager_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/Dialog_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/GameLoop_e4.hpp"
 
 // 0x6D1200
@@ -186,11 +188,11 @@ int CommandClass::AddAction(ToolTipManager * aP1)
   int v11; // eax
   int v12; // edx
   int v13; // eax
-  int v14; // ebx
+  ToolTipManager * v14;
   _DWORD *v15; // eax
   int i; // eax
   int v18; // ecx
-  int v19; // ecx
+  ToolTipManager * v19;
   int v20; // eax
 
   aP1 = aP1; /*0x724584*/

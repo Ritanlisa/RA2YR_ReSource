@@ -4,16 +4,18 @@
 #include "e4/classes/Cell_e4.hpp"
 #include "e4/classes/TechnoClass_e4.hpp"
 #include "e4/classes/ColorListClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x72DC20
 namespace gamemd {
 void sub_72DC20()
 {
-  void *v0; // esi
-  void *v1; // esi
-  void *v2; // esi
-  void *v3; // esi
+  unsigned int v0;
+  unsigned int v1;
+  unsigned int v2;
+  unsigned int v3;
 
   if ( byte_B0FCC8 ) /*0x72dc2b*/
   {

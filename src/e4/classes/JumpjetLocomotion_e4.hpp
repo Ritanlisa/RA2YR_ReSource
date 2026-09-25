@@ -9,7 +9,7 @@ struct JumpjetLocomotion {
     unsigned char q000;  // 0x0
     void* q004;  // 0x4
     void* q008;  // 0x8
-    IUnknown* q00C;  // 0xC
+    _DWORD q00C;  // 0xC
     unsigned int u32_10;  // 0x10
     unsigned int u32_14;  // 0x14
     unsigned int u32_18;  // 0x18
@@ -61,7 +61,7 @@ struct JumpjetLocomotion {
     int q128;  // 0x128
     AbstractClass * q130;  // 0x130
     unsigned int q134;  // 0x134
-    void* q140;  // 0x140
+    _DWORD q140;  // 0x140
     unsigned char q144;  // 0x144
     unsigned char q148;  // 0x148
     unsigned char q14C;  // 0x14C
@@ -375,13 +375,12 @@ struct JumpjetLocomotion {
     unsigned int JumpjetLocomotion_field_0x40;
     unsigned int JumpjetLocomotion_field_0x44;
     unsigned int JumpjetLocomotion_field_0x58;
-    unsigned int q0042;
     unsigned int u32_184;
 // --- flat members (END) ---
-    char MoveTo(IUnknown * aP1, int aP3);  // 0x4B0AD0
+    char MoveTo(void* aP1,  int aP3);    // 0x4B0AD0
     char ProcessCollision(char a2);  // 0x4B0F20
-    char Update(unsigned char * a2, int a3, int a4);  // 0x4B2630
-    unsigned int * TransformCoords(IUnknown * aP1, IUnknown * aP2, ObjectClass * aP3);  // 0x4B4780
+    char Update(unsigned char * a2,  int a3,  int a4);    // 0x4B2630
+    unsigned int * TransformCoords(void* aP1,  void* aP2,  ObjectClass * aP3);    // 0x4B4780
     char Land();  // 0x54CA90
     int UpdateFacing();  // 0x54D0F0
 };

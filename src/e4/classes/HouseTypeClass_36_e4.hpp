@@ -29,9 +29,9 @@ struct HouseTypeClass_36 {
     TypeList_flat * QueryInterface(char a2);  // 0x512A40
     VectorClass_flat * Constructor(char a2);  // 0x512B80
     char AddRef(int a2);  // 0x513010
-    char Release(int a2, unsigned int * a3);  // 0x513240
+    char Release(int a2,  unsigned int * a3);    // 0x513240
     int Read(unsigned int * a2);  // 0x513340
-    char SetCapacity(int a2, unsigned int * a3);  // 0x513420
+    char SetCapacity(int a2,  unsigned int * a3);    // 0x513420
     int IndexOf(unsigned int * a2);  // 0x513500
     unsigned int Write(int a2);  // 0x512930
     unsigned int PointerToIndex(int a2);  // 0x513540

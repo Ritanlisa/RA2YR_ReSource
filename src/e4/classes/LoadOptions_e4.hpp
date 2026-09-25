@@ -8,14 +8,14 @@ namespace gamemd {
 struct LoadOptions {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
-    void* Items;  // 0x4
-    void* Capacity;  // 0x8
+    unsigned int q004;  // 0x4
+    unsigned int q008;  // 0x8
     unsigned int q00C;  // 0xC
     void* IsAllocated;  // 0xD
     unsigned int max_entries;  // 0x10
     bool IsInitialized;  // 0x12
     unsigned int q014;  // 0x14
-    FileEntryClass** entries;  // 0x18
+    void** entries;  // 0x18
     unsigned int count;  // 0x1C
     unsigned char is_active;  // 0x20
     unsigned char owns_memory;  // 0x21
@@ -118,9 +118,11 @@ struct LoadOptions {
     unsigned char q4DCC;  // 0x4DCC
     unsigned char q7314;  // 0x7314
     unsigned char q7318;  // 0x7318
+    unsigned int Capacity;
     unsigned int GetFlag252;
     unsigned int GetFlag98;
     unsigned int GetFlag99;
+    unsigned int Items;
     unsigned int Items2;
     unsigned int max_entries5;
     unsigned int q00C2;
@@ -146,7 +148,7 @@ struct LoadOptions {
     wchar_t * Seek();
     wchar_t * Write();
     char * GetDataPtr(void);
-    gamemd::FileEntryClass ** GetEntries(void);
+    gamemd::void** GetEntries(void);
     void SetExtension(const char *);
     void SetMode(uint32_t);
     static double Cleanup(...);  // C2597 interim stub

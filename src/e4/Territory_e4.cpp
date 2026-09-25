@@ -5,6 +5,8 @@
 #include "e4/classes/Audio_e4.hpp"
 #include "e4/classes/AudioQueue_e4.hpp"
 #include "e4/classes/Timer_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x7718A0
@@ -96,7 +98,7 @@ void Territory_WorldDominationTour_8::Close(int a2)
 namespace gamemd {
 unsigned int * Territory_WorldDominationTour_8::QueryInterface(char a2)
 {
-  *this = &(void*)(void*)&WorldDominationTour_Voices_Anim_vftable; /*0x771a33*/
+  *(void **)this = (void*)&WorldDominationTour_Voices_Anim_vftable; /*0x771a33*/
   VtableStub::5CB6C0(); /*0x771a39*/
   if ( (a2 & 1) != 0 ) /*0x771a43*/
     RA2_OPDEL(); /*0x771a46*/

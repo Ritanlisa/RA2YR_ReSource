@@ -5,6 +5,8 @@
 #include "e4/classes/TunnelLocomotionClass_e4.hpp"
 #include "e4/classes/LayerClass_e4.hpp"
 #include "e4/classes/MapClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x728C00
@@ -149,21 +151,21 @@ namespace gamemd {
 int TunnelLocomotionClass::BeginMove(int * a1, int * a2)
 {
   int result; // eax
-  wchar_t *v3; // edx
+  unsigned int v3;
 
   result = SwizzleManager::SaveLoad(a1, a2); /*0x72a15b*/
   if ( result >= 0 ) /*0x72a164*/
   {
     if ( a1 ) /*0x72a168*/
     {
-      *a1 = (int)&(void*)(void*)&LocomotionClass_vftable; /*0x72a16a*/
-      a1[1] = (int)&(void*)(void*)&LocomotionClass_vftable; /*0x72a170*/
+      *a1 = (int)&LocomotionClass_vftable; /*0x72a16a*/
+      a1[1] = (int)&LocomotionClass_vftable; /*0x72a170*/
       v3 = g_CurrentFrame; /*0x72a177*/
       a1[12] = 0; /*0x72a17d*/
       a1[10] = (int)v3; /*0x72a180*/
       a1[13] = 0; /*0x72a183*/
-      *a1 = (int)&(void*)(void*)&TunnelLocomotionClass_vftable; /*0x72a186*/
-      a1[1] = (int)&(void*)(void*)&TunnelLocomotionClass_vftable; /*0x72a18c*/
+      *a1 = (int)&TunnelLocomotionClass_vftable; /*0x72a186*/
+      a1[1] = (int)&TunnelLocomotionClass_vftable; /*0x72a18c*/
     }
   }
   return result; /*0x72a193*/

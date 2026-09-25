@@ -28,11 +28,11 @@ struct VectorClass_ptr_BuildingTypeClass {
     unsigned char q048;  // 0x48
     unsigned char q050;  // 0x50
 // --- flat members (END) ---
-    char Release(int a2, unsigned int * a3);  // 0x4ED8A0
+    char Release(int a2,  unsigned int * a3);    // 0x4ED8A0
     int SaveToINI(int a2);  // 0x4E8DD0
     char Add(int a2);  // 0x4ED860
     int GetSize(unsigned int * a2);  // 0x4ED980
     unsigned int Remove(int a2);  // 0x4ED9C0
-    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x4F0750
+    VectorClass_flat * QueryInterface(unsigned int * Block,  char a2);    // 0x4F0750
 };
 } // namespace gamemd

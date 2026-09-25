@@ -5,6 +5,8 @@
 #include "e4/classes/ComPtr_e4.hpp"
 #include "e4/classes/GameOption_e4.hpp"
 #include "e4/classes/VectorCursor_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x767010
@@ -29,7 +31,7 @@ void * COMClass::lockServer(char a2)
       do /*0x76703f*/
       {
         v5 -= 2; /*0x76702e*/
-        *v5 = &(void*)(void*)&rc_ptr_WorldDominationTour_GameOption_vftable; /*0x767033*/
+        *(void **)v5 = (void*)&rc_ptr_WorldDominationTour_GameOption_vftable; /*0x767033*/
         ComPtr::Release(v5); /*0x767039*/
         --v7; /*0x76703e*/
       }
@@ -41,7 +43,7 @@ void * COMClass::lockServer(char a2)
   }
   else
   {
-    *this = &(void*)(void*)&rc_ptr_WorldDominationTour_GameOption_vftable; /*0x76705a*/
+    *(void **)this = (void*)&rc_ptr_WorldDominationTour_GameOption_vftable; /*0x76705a*/
     ComPtr::Release(); /*0x767060*/
     if ( (a2 & 1) != 0 ) /*0x767068*/
       RA2_OPDEL(); /*0x76706b*/
@@ -53,7 +55,7 @@ void * COMClass::lockServer(char a2)
 namespace gamemd {
 VectorCursor * COMClass::disconnectPoint(char a2)
 {
-  *this = &(void*)(void*)&VectorCursor_rc_ptr_WorldDominationTour_GameOption_DynamicVectorClass_rc_ptr_WorldDominationTour_GameOption_vftable; /*0x7669f9*/
+  *(void **)this = (void*)&VectorCursor_rc_ptr_WorldDominationTour_GameOption_DynamicVectorClass_rc_ptr_WorldDominationTour_GameOption_vftable; /*0x7669f9*/
   if ( (a2 & 1) != 0 ) /*0x7669ff*/
     RA2_OPDEL(); /*0x766a02*/
   return this; /*0x766a0c*/

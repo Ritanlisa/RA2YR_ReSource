@@ -13,6 +13,8 @@
 #include "e4/classes/BulkData_e4.hpp"
 #include "e4/classes/BuildingLight_e4.hpp"
 #include "e4/classes/BuildingLightClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/BulletTypeClass_e4.hpp"
 
 // 0x425D10
@@ -159,7 +161,7 @@ AnimClass * * Building::ComputePosition(AnimClass * aP1)
       IDA_HIWORD(v36) = IDA_HIWORD(v37); /*0x425f62*/
       if ( (unsigned __int8)BuildingClass::IsCellPlaceable(&v36) ) /*0x425f78*/
       {
-        *aP1 = (v21 << 8) + 128; /*0x425f99*/
+        *(_DWORD *)aP1 = (v21 << 8) + 128; /*0x425f99*/
         aP1[1] = (v30 << 8) + 128; /*0x425fa2*/
         aP1[2] = 0; /*0x425fa7*/
         return aP1; /*0x425fb0*/
@@ -168,7 +170,7 @@ AnimClass * * Building::ComputePosition(AnimClass * aP1)
       IDA_LOWORD(v36) = v37; /*0x425fbd*/
       if ( (unsigned __int8)BuildingClass::IsCellPlaceable(&v36) ) /*0x425fd3*/
       {
-        *aP1 = (v7 << 8) + 128; /*0x425ff0*/
+        *(_DWORD *)aP1 = (v7 << 8) + 128; /*0x425ff0*/
         aP1[1] = (v22 << 8) + 128; /*0x425ffa*/
         aP1[2] = 0; /*0x425ffd*/
         return aP1; /*0x426006*/
@@ -178,7 +180,7 @@ AnimClass * * Building::ComputePosition(AnimClass * aP1)
   if ( dword_89A150 ) /*0x426011*/
   {
   LABEL_39:
-    *aP1 = Map_InvalidCoord_X; /*0x426090*/
+    *(_DWORD *)aP1 = Map_InvalidCoord_X; /*0x426090*/
     aP1[1] = Map_InvalidCoord_Y; /*0x4260a3*/
     aP1[2] = Map_InvalidCoord_Z; /*0x4260ac*/
     return aP1; /*0x4260b5*/
@@ -201,7 +203,7 @@ AnimClass * * Building::ComputePosition(AnimClass * aP1)
   v24 = IDA_SHIWORD(v32); /*0x4260bd*/
   v23 = ((__int16)v32 << 8) + 128; /*0x4260c5*/
   LABEL_41:
-  *aP1 = v23; /*0x4260cb*/
+  *(_DWORD *)aP1 = v23; /*0x4260cb*/
   aP1[1] = (v24 << 8) + 128; /*0x4260dd*/
   aP1[2] = 0; /*0x4260e0*/
   return aP1; /*0x425faa*/

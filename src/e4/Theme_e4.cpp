@@ -5,6 +5,8 @@
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/Theme_e4.hpp"
 #include "e4/classes/ThemeClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x720B20
@@ -51,7 +53,7 @@ namespace gamemd {
 int Theme::Stop(ObjectClass * aP1)
 {
   int IsSoundEnabled; // eax
-  int v4; // ecx
+  void * v4;
 
   IDA_LOBYTE(IsSoundEnabled) = g_ThemeMIXLoaded; /*0x720ea0*/
   if ( g_ThemeMIXLoaded ) /*0x720eaa*/
@@ -81,7 +83,7 @@ int Theme::Stop(ObjectClass * aP1)
           if ( v4 ) /*0x720f44*/
             IDA_LOBYTE(IsSoundEnabled) = Audio::Release(v4); /*0x720f46*/
         }
-        *this = -1; /*0x720f4b*/
+        *(_DWORD *)this = -1; /*0x720f4b*/
         this->ptr_4 = -1; /*0x720f51*/
         this->u32_8 = -1; /*0x720f58*/
       }

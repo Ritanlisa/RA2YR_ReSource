@@ -2,14 +2,16 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Explosion_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x53DDA0
 namespace gamemd {
 int Explosion::RemoveItem(int a2)
 {
-  int v2; // edx
-  int v4; // edx
+  void * v2;
+  void * v4;
 
   v2 = this->q010; /*0x53dda0*/
   a2 = a2; /*0x53dda3*/

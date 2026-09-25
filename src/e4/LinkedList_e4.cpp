@@ -13,6 +13,8 @@
 #include "e4/classes/CellClass_e4.hpp"
 #include "e4/classes/Math_e4.hpp"
 #include "e4/classes/WideString_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/Coord_e4.hpp"
 
 // 0x4791F0
@@ -28,7 +30,7 @@ AbstractClass * * LinkedList_flat::LoadScenarioMixFiles(INIClass * aP0, int aP2,
   _DWORD *v12; // eax
   _DWORD *v13; // eax
   _DWORD *v14; // eax
-  char v15; // bl
+  void * v15;
   _DWORD *v16; // eax
   _DWORD *v17; // eax
   _DWORD *v18; // eax
@@ -36,7 +38,7 @@ AbstractClass * * LinkedList_flat::LoadScenarioMixFiles(INIClass * aP0, int aP2,
   _DWORD *v20; // eax
   char Buffer[4]; // [esp+24h] [ebp-ACh] BYREF
   char Source[60]; // [esp+28h] [ebp-A8h] BYREF
-  void **v23; // [esp+64h] [ebp-6Ch] BYREF
+  void* v23;
   _DWORD v24[21]; // [esp+68h] [ebp-68h] BYREF
   _BYTE v25[4]; // [esp+BCh] [ebp-14h] BYREF
   _BYTE v26[8]; // [esp+C0h] [ebp-10h] BYREF
@@ -149,7 +151,7 @@ AbstractClass * * LinkedList_flat::LoadScenarioMixFiles(INIClass * aP0, int aP2,
     goto LABEL_61; /*0x4794f7*/
   v14 = CCFileClass::Construct(&v23, g_Str_File_THEMEMD_MIX); /*0x479526*/
   v15 = (*(int (__thiscall **)(_DWORD *, _DWORD, int))(*v14 + 20))(v14, 0, a2); /*0x47953f*/
-  v24[0] = &(void*)(void*)&CCFileClass_vftable; /*0x479541*/
+  v24[0] = (void*)&CCFileClass_vftable; /*0x479541*/
   v28 = 0; /*0x479545*/
   Vector::Clear((int)v26); /*0x47954c*/
   v24[0] = &off_7E1668; /*0x47955a*/
@@ -180,7 +182,7 @@ AbstractClass * * LinkedList_flat::LoadScenarioMixFiles(INIClass * aP0, int aP2,
   sprintf(Source, "MOVMD%02d.MIX", a4); /*0x4795e4*/
   v18 = CCFileClass::Construct(v24, Source); /*0x4795f5*/
   v19 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v18 + 20))(v18, 0); /*0x479609*/
-  v23 = &(void*)(void*)&CCFileClass_vftable; /*0x47960b*/
+  v23 = (void*)&CCFileClass_vftable; /*0x47960b*/
   v27 = 0; /*0x47960f*/
   Vector::Clear((int)v25); /*0x479616*/
   v23 = (void **)&off_7E1668; /*0x47961f*/
@@ -244,7 +246,7 @@ unsigned int * LinkedList_flat::FindPrev()
 namespace gamemd {
 LinkClass * * LinkedList_flat::InsertAfter(int a2)
 {
-  int v3; // eax
+  LinkedList_flat * v3;
 
   this->vt_slot_36(); /*0x5566a5*/
   v3 = *(_DWORD *)(a2 + 4); /*0x5566ac*/
@@ -260,7 +262,7 @@ LinkClass * * LinkedList_flat::InsertAfter(int a2)
 namespace gamemd {
 unsigned int * LinkedList_flat::Attach(int a2)
 {
-  int v3; // eax
+  LinkedList_flat * v3;
 
   this->vt_slot_36(); /*0x5566d5*/
   v3 = (*(int (__thiscall **)(int))(*(_DWORD *)a2 + 24))(a2); /*0x5566de*/
@@ -274,7 +276,7 @@ unsigned int * LinkedList_flat::Attach(int a2)
 namespace gamemd {
 LinkClass * * LinkedList_flat::Append(int a2)
 {
-  int v3; // eax
+  LinkedList_flat * v3;
   int v4; // eax
 
   this->vt_slot_36(); /*0x556705*/

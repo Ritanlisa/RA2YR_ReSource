@@ -37,14 +37,14 @@ struct VectorClass_ptr_BuildingLightClass {
     void Destroy_0();  // 0x4E8660
     unsigned int GetItemIndex_0(int a2);  // 0x4E8690
     char Add(int a2);  // 0x4E9B80
-    char Release(int a2, unsigned int * a3);  // 0x4E9BC0
+    char Release(int a2,  unsigned int * a3);    // 0x4E9BC0
     void Remove();  // 0x4E9C70
     int GetSize(unsigned int * a2);  // 0x4E9CA0
     unsigned int GetCapacity(int a2);  // 0x4E9CE0
-    char SetCapacity(int a2, unsigned int * a3);  // 0x4E9D00
+    char SetCapacity(int a2,  unsigned int * a3);    // 0x4E9D00
     int FindItemIndex(unsigned int * a2);  // 0x4E9DB0
-    char SetCapacity_0(int a2, unsigned int * a3);  // 0x4EACC0
+    char SetCapacity_0(int a2,  unsigned int * a3);    // 0x4EACC0
     int FindItemIndex_0(unsigned int * a2);  // 0x4EAD70
-    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x4EF760
+    VectorClass_flat * QueryInterface(unsigned int * Block,  char a2);    // 0x4EF760
 };
 } // namespace gamemd

@@ -9,7 +9,7 @@ struct DynamicVectorClass_PAD {
     unsigned int vfptr;  // 0x0
     void* Items;  // 0x4
     void* Capacity;  // 0x8
-    void* IsInitialized;  // 0xC
+    unsigned int q00C;  // 0xC
     unsigned char IsAllocated;  // 0xD
     unsigned char q00E;  // 0xE
     void* Count;  // 0x10
@@ -28,6 +28,7 @@ struct DynamicVectorClass_PAD {
     unsigned char q048;  // 0x48
     unsigned char q050;  // 0x50
     unsigned int q054;  // 0x54
+    unsigned int IsInitialized;
     unsigned int q008;
     unsigned int q010;
     unsigned int Items2;
@@ -36,9 +37,9 @@ struct DynamicVectorClass_PAD {
     int Clear(int a2);  // 0x49E9A0
     void Clear_49E9B0();  // 0x49E9B0
     char AddRef(int a2);  // 0x49EA30
-    char Remove(int a2, unsigned int * a3);  // 0x49EA70
+    char Remove(int a2,  unsigned int * a3);    // 0x49EA70
     int GetSize(unsigned int * a2);  // 0x49EB20
-    char SetCapacity(int a2, unsigned int * a3);  // 0x49ED30
+    char SetCapacity(int a2,  unsigned int * a3);    // 0x49ED30
     int FindItemIndex(unsigned int * a2);  // 0x49EDE0
     DynamicVector * Add(char a2);  // 0x49EE10
     DynamicVector * Destructor(char a2);  // 0x49F040

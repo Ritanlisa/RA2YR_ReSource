@@ -29,10 +29,10 @@ struct SwizzleManagerClass_19 {
     unsigned int Items2;
     unsigned int q0042;
 // --- flat members (END) ---
-    char Release(int a2, unsigned int * a3);  // 0x6CF5A0
-    char SetCapacity(int a2, unsigned int * a3);  // 0x6CF720
+    char Release(int a2,  unsigned int * a3);    // 0x6CF5A0
+    char SetCapacity(int a2,  unsigned int * a3);    // 0x6CF720
     void ClearBuffer();  // 0x6CF4F0
-    unsigned int * Lookup(unsigned int * a2, int a3);  // 0x6CF540
+    unsigned int * Lookup(unsigned int * a2,  int a3);    // 0x6CF540
     char AddRef(int a2);  // 0x6CF560
     void ddtor();  // 0x6CF690
     int Init(unsigned int * a2);  // 0x6CF6C0

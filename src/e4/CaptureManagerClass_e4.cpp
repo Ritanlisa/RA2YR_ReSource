@@ -12,27 +12,30 @@
 #include "e4/classes/Cell_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/BuildingClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/Object_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x4717D0
 namespace gamemd {
 CaptureManagerClass::CaptureManagerClass(TechnoClass * aP1, int a3, char a4)
 {
-  int v5; // eax
+  CaptureManagerClass * v5;
 
   AbstractClass::Constructor(); /*0x4717d3*/
   this->owner = 1; /*0x4717e2*/
   this->controlNodeCount = 0; /*0x4717e6*/
   this->controlNodeCapacity = 0; /*0x4717e9*/
   this->q031 = 0; /*0x4717ec*/
-  this->controlNodes = &(void*)(void*)&DynamicVectorClass_ControlNode___vftable; /*0x4717ef*/
+  this->controlNodes = (void*)&DynamicVectorClass_ControlNode___vftable; /*0x4717ef*/
   this->CaptureManagerClass_field_30 = 10; /*0x4717f6*/
   this->originalOwner = 0; /*0x4717fd*/
   this->overloadCount = aP1; /*0x471800*/
-  *(_DWORD *)this = &(void*)(void*)&CaptureManagerClass_vftable; /*0x471807*/
-  this->vtable2 = &(void*)(void*)&CaptureManagerClass_vftable; /*0x47180d*/
-  this->vtable3 = &(void*)(void*)&CaptureManagerClass_vftable; /*0x471814*/
-  this->vtable4 = &(void*)(void*)&CaptureManagerClass_vftable; /*0x47181b*/
+  *(void **)this = (void*)&CaptureManagerClass_vftable; /*0x471807*/
+  this->vtable2 = (void*)&CaptureManagerClass_vftable; /*0x47180d*/
+  this->vtable3 = (void*)&CaptureManagerClass_vftable; /*0x471814*/
+  this->vtable4 = (void*)&CaptureManagerClass_vftable; /*0x47181b*/
   this->q03C = a3; /*0x471822*/
   this->CaptureManagerClass_field_40 = a4; /*0x471825*/
   this->CaptureManagerClass_field_41 = 0; /*0x471828*/
@@ -60,7 +63,7 @@ ScenarioClass * * CaptureManagerClass::HandleOverload()
   int v2; // eax
   int v3; // eax
   int v4; // eax
-  int v5; // edx
+  HouseClass * v5;
   int v6; // eax
   _DWORD *v7; // ecx
   int v8; // ebp
@@ -235,7 +238,7 @@ void* CaptureManagerClass::CaptureUnit(int a2)
   int v10; // eax
   _DWORD *v11; // eax
   _DWORD *v12; // ebp
-  wchar_t *v13; // ecx
+  unsigned int v13;
   int v14; // eax
   int v15; // ecx
   int v16; // eax
@@ -394,7 +397,7 @@ AnimClass * * CaptureManagerClass::FreeUnit(IUnknown * aP0, int _28, IUnknown * 
         {
           v20 = a4[39]; /*0x4720af*/
           retaddr = (_UNKNOWN *)a4[40]; /*0x4720b6*/
-          StartAudioControllerAt(g_RulesClass_Instance->IonBeam, (int, unsigned int a4)&v20, 0); /*0x4720cb*/
+          StartAudioControllerAt(g_RulesClass_Instance->IonBeam, (int, unsigned int a4, unsigned int a6)&v20, 0); /*0x4720cb*/
         }
       }
       else
@@ -404,7 +407,7 @@ AnimClass * * CaptureManagerClass::FreeUnit(IUnknown * aP0, int _28, IUnknown * 
         v19[1] = a4[40]; /*0x472072*/
         v19[2] = a4[41]; /*0x472079*/
         v12 = (*(int (__thiscall **)(_DWORD *))(v11 + 132))(a4); /*0x47207f*/
-        StartAudioControllerAt(*(_DWORD *)(v12 + 1456), (int)v19, 0); /*0x47208d*/
+        StartAudioControllerAt(*(_DWORD *, unsigned int a3, unsigned int a4, unsigned int a1)(v12 + 1456), (int)v19, 0); /*0x47208d*/
         v9 = a6; /*0x472092*/
       }
       a2 = 1; /*0x4720d5*/
@@ -752,13 +755,13 @@ TechnoClass * * CaptureManagerClass::LoadFromStream(int a1, int * a2)
     {
       AbstractClass::InitVtables((_DWORD *)v3, (int)&a2); /*0x47274b*/
       CaptureManagerClass::Constructor_473140(0, 0); /*0x472757*/
-      *(_DWORD *)(v3 + 36) = &(void*)(void*)&DynamicVectorClass_ControlNode___vftable; /*0x47275c*/
+      *(_DWORD *)(v3 + 36) = (void*)&DynamicVectorClass_ControlNode___vftable; /*0x47275c*/
       *(_DWORD *)(v3 + 56) = 10; /*0x472762*/
       *(_DWORD *)(v3 + 52) = 0; /*0x472769*/
-      *(_DWORD *)v3 = &(void*)(void*)&CaptureManagerClass_vftable; /*0x47276c*/
-      *(_DWORD *)(v3 + 4) = &(void*)(void*)&CaptureManagerClass_vftable; /*0x472773*/
-      *(_DWORD *)(v3 + 8) = &(void*)(void*)&CaptureManagerClass_vftable; /*0x47277a*/
-      *(_DWORD *)(v3 + 12) = &(void*)(void*)&CaptureManagerClass_vftable; /*0x472781*/
+      *(_DWORD *)v3 = (void*)&CaptureManagerClass_vftable; /*0x47276c*/
+      *(_DWORD *)(v3 + 4) = (void*)&CaptureManagerClass_vftable; /*0x472773*/
+      *(_DWORD *)(v3 + 8) = (void*)&CaptureManagerClass_vftable; /*0x47277a*/
+      *(_DWORD *)(v3 + 12) = (void*)&CaptureManagerClass_vftable; /*0x472781*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v3 + 72)); /*0x472791*/
     v6 = *v2; /*0x472796*/
@@ -973,10 +976,10 @@ CaptureManagerClass * CaptureManagerClass::ddtor(char a2)
   int v3; // eax
   void *v4; // eax
 
-  *this = &(void*)(void*)&CaptureManagerClass_vftable; /*0x4729cd*/
-  this->vtable2 = &(void*)(void*)&CaptureManagerClass_vftable; /*0x4729d3*/
-  this->vtable3 = &(void*)(void*)&CaptureManagerClass_vftable; /*0x4729da*/
-  this->vtable4 = &(void*)(void*)&CaptureManagerClass_vftable; /*0x4729e1*/
+  *this = (void*)&CaptureManagerClass_vftable; /*0x4729cd*/
+  this->vtable2 = (void*)&CaptureManagerClass_vftable; /*0x4729d3*/
+  this->vtable3 = (void*)&CaptureManagerClass_vftable; /*0x4729da*/
+  this->vtable4 = (void*)&CaptureManagerClass_vftable; /*0x4729e1*/
   v3 = (*(int (__thiscall **)(int *, _DWORD **))(dword_89E0F0 + 16))(&dword_89E0F0, &this); /*0x4729f3*/
   if ( v3 != -1 && v3 < dword_89E100 && v3 < --dword_89E100 ) /*0x472a0e*/
   {
@@ -988,7 +991,7 @@ CaptureManagerClass * CaptureManagerClass::ddtor(char a2)
     while ( v3 < dword_89E100 ); /*0x472a26*/
   }
   v4 = (void *)*(&this->vtable20); /*0x472a28*/
-  this->controlNodes = &(void*)(void*)&VectorClass_ControlNode___vftable; /*0x472a2b*/
+  this->controlNodes = (void*)&VectorClass_ControlNode___vftable; /*0x472a2b*/
   if ( v4 && this->q031 ) /*0x472a36*/
   {
     RA2_OPDEL(v4); /*0x472a3e*/
@@ -1194,7 +1197,7 @@ VectorClass_flat * CaptureManagerClass::Constructor_VectorClass_ControlNode___(c
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x473003*/
-  *this = &(void*)(void*)&VectorClass_ControlNode___vftable; /*0x473006*/
+  *this = (void*)&VectorClass_ControlNode___vftable; /*0x473006*/
   if ( v3 && this->IsAllocated ) /*0x473010*/
   {
     RA2_OPDEL(v3); /*0x473018*/
@@ -1215,7 +1218,7 @@ DynamicVector * CaptureManagerClass::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x473053*/
-  *this = &(void*)(void*)&VectorClass_ControlNode___vftable; /*0x473056*/
+  *this = (void*)&VectorClass_ControlNode___vftable; /*0x473056*/
   if ( v3 && this->IsAllocated ) /*0x473060*/
   {
     RA2_OPDEL(v3); /*0x473068*/
@@ -1237,7 +1240,7 @@ unsigned int * CaptureManagerClass::Constructor_473140(int a2, int a3)
   *(this + 2) = a2; /*0x47314e*/
   this->IsInitialized = 1; /*0x473151*/
   this->IsAllocated = 0; /*0x473155*/
-  *this = &(void*)(void*)&VectorClass_ControlNode___vftable; /*0x473158*/
+  *this = (void*)&VectorClass_ControlNode___vftable; /*0x473158*/
   if ( a2 ) /*0x47315e*/
   {
     if ( a3 ) /*0x473166*/

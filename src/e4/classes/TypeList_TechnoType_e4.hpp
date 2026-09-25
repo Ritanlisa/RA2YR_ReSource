@@ -8,8 +8,8 @@ struct TypeList_TechnoType {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
     void* Items;  // 0x4
-    void* Capacity;  // 0x8
-    void* IsInitialized;  // 0xC
+    unsigned int q008;  // 0x8
+    unsigned int q00C;  // 0xC
     unsigned char IsAllocated;  // 0xD
     unsigned char q00E;  // 0xE
     unsigned char q010;  // 0x10
@@ -27,11 +27,13 @@ struct TypeList_TechnoType {
     unsigned char q044;  // 0x44
     unsigned char q048;  // 0x48
     unsigned char q050;  // 0x50
+    unsigned int Capacity;
+    unsigned int IsInitialized;
     unsigned int Items2;
 // --- flat members (END) ---
     int Clear(int a2);  // 0x4778F0
     char AddRef(int a2);  // 0x477FC0
-    char Remove(int a2, unsigned int * a3);  // 0x478000
+    char Remove(int a2,  unsigned int * a3);    // 0x478000
     void ddtor();  // 0x4780B0
     int GetSize(unsigned int * a2);  // 0x4780E0
     unsigned int GetIndex(int a2);  // 0x478120

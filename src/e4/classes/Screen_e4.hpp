@@ -21,7 +21,7 @@ struct Screen {
     int CleanupTransitionObjects();
     int TransitionLoop(int a2);
     int TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4);
-    case 1: Capture(1, 0, v12, (int)&(void*)(void*)&rc_ptr_WorldDominationTour_Campaign_vftable);  // def-aligned
+    case 1: Capture(1,  0,  v12,  (int)&rc_ptr_WorldDominationTour_Campaign_vftable);    // def-aligned
 };
 
 } // namespace gamemd

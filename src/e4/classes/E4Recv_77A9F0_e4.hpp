@@ -25,6 +25,6 @@ struct E4Recv_77A9F0 {
     unsigned int q5170;  // 0x5170
     unsigned int q5684;  // 0x5684
 // --- flat members (END) ---
-    void FillPersonaInfoWOL(HWND hDlg, ObjectClass * aP2, wchar_t ** a3);  // 0x77A9F0
+    void FillPersonaInfoWOL(HWND hDlg,  ObjectClass * aP2,  wchar_t ** a3);    // 0x77A9F0
 };
 } // namespace gamemd

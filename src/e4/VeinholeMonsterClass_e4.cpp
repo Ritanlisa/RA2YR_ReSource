@@ -5,7 +5,11 @@
 #include "e4/classes/VeinholeMonsterClass_e4.hpp"
 #include "e4/classes/MouseClass_e4.hpp"
 #include "e4/classes/Voxel_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/EnumConnectionPointsClass_e4.hpp"
+#include "e4/classes/VectorClass_ptr_BuildChoiceClass_int_ouseClass_e4.hpp"
 
 // 0x5862C0
 namespace gamemd {
@@ -18,7 +22,7 @@ void VeinholeMonsterClass_Update(MouseClass * aP0, int a2)
   int v7; // eax
   int v8; // ecx
   unsigned int v9; // eax
-  _DWORD *v10; // eax
+  unsigned int v10;
   int v12; // [esp+14h] [ebp+4h]
 
   v3 = aP0[1]; /*0x5862d0*/

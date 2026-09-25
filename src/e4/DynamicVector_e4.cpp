@@ -6,6 +6,8 @@
 #include "e4/classes/VectorClass_flat_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/Count_e4.hpp"
 
 // 0x5AC430
@@ -14,7 +16,7 @@ unsigned int * DynamicVector::Copy(VectorClass_flat * aP1)
 {
   int v3; // eax
   void *v4; // eax
-  int v5; // ecx
+  AbstractClass * v5;
   int v6; // eax
 
   if ( this == aP1 ) /*0x5ac43a*/
@@ -55,10 +57,10 @@ unsigned int * DynamicVector::Copy(VectorClass_flat * aP1)
 namespace gamemd {
 char DynamicVector::AddItem(VectorClass_flat * aP1)
 {
-  int v3; // ecx
+  AbstractClass * v3;
   int v4; // eax
-  int v6; // eax
-  int v7; // edx
+  void * v6;
+  void * v7;
 
   v3 = this->q008; /*0x413a73*/
   if ( this->q010 >= v3 ) /*0x413a7b*/
@@ -87,7 +89,7 @@ unsigned int * DynamicVector::Constructor_Cell(ObjectClass * aP1, ObjectClass * 
   this->q008 = aP1; /*0x42f681*/
   this->IsInitialized = 1; /*0x42f684*/
   this->IsAllocated = 0; /*0x42f688*/
-  *this = &(void*)(void*)&VectorClass_Cell_vftable; /*0x42f68c*/
+  *(void **)this = (void*)&VectorClass_Cell_vftable; /*0x42f68c*/
   if ( aP1 ) /*0x42f692*/
   {
     if ( aP2 ) /*0x42f69a*/
@@ -103,7 +105,7 @@ unsigned int * DynamicVector::Constructor_Cell(ObjectClass * aP1, ObjectClass * 
       this->IsAllocated = 1; /*0x42f6c6*/
     }
   }
-  *this = &(void*)(void*)&DynamicVectorClass_Cell_vftable; /*0x42f6ca*/
+  *(void **)this = (void*)&DynamicVectorClass_Cell_vftable; /*0x42f6ca*/
   this->CapacityIncrement = 10; /*0x42f6d0*/
   this->q010 = 0; /*0x42f6d7*/
   return this; /*0x42f6e0*/
@@ -114,8 +116,8 @@ unsigned int * DynamicVector::Constructor_Cell(ObjectClass * aP1, ObjectClass * 
 namespace gamemd {
 char DynamicVector::RemoveItem(IUnknown * aP1)
 {
-  int v2; // edx
-  int v4; // edx
+  void * v2;
+  void * v4;
 
   v2 = this->q010; /*0x45add0*/
   aP1 = aP1; /*0x45add3*/
@@ -142,8 +144,8 @@ char DynamicVector::Add_Alt(VectorClass_flat * aP1)
 {
   int v3; // ecx
   int v4; // eax
-  int v6; // eax
-  int v7; // edx
+  void * v6;
+  void * v7;
 
   v3 = this->Capacity; /*0x477ec3*/
   if ( this->q010 >= v3 ) /*0x477ecb*/
@@ -166,7 +168,7 @@ char DynamicVector::Add_Alt(VectorClass_flat * aP1)
 namespace gamemd {
 int DynamicVector::GetOrGrow(DynamicVector * aP1)
 {
-  int v3; // edi
+  AbstractClass * v3;
 
   v3 = this->q008; /*0x49fae9*/
   if ( aP1 < v3 ) /*0x49faee*/
@@ -187,8 +189,8 @@ char DynamicVector::Add_Alt4(VectorClass_flat * aP1)
 {
   int v3; // ecx
   int v4; // eax
-  int v6; // eax
-  int v7; // edx
+  void * v6;
+  void * v7;
 
   v3 = this->Capacity; /*0x5253b3*/
   if ( this->q010 >= v3 ) /*0x5253bb*/
@@ -240,7 +242,7 @@ char DynamicVector::Add_Alt3(VectorClass_flat * aP1)
   int v3; // ecx
   int v4; // eax
   int v6; // eax
-  int v7; // edx
+  void * v7;
 
   v3 = this->Capacity; /*0x5ad7d3*/
   if ( this->Count >= v3 ) /*0x5ad7db*/
@@ -340,7 +342,7 @@ unsigned int * DynamicVector::Constructor_VoxelAnim(int a2, int a3)
   this->Capacity = a2; /*0x67ac80*/
   this->IsInitialized = 1; /*0x67ac83*/
   this->IsAllocated = 0; /*0x67ac87*/
-  *this = &(void*)(void*)&VectorClass_VoxelAnimTypeClass_const___vftable; /*0x67ac8b*/
+  *(void **)this = (void*)&VectorClass_VoxelAnimTypeClass_const___vftable; /*0x67ac8b*/
   if ( a2 ) /*0x67ac91*/
   {
     if ( a3 ) /*0x67ac99*/
@@ -353,7 +355,7 @@ unsigned int * DynamicVector::Constructor_VoxelAnim(int a2, int a3)
       this->IsAllocated = 1; /*0x67acaf*/
     }
   }
-  *this = &(void*)(void*)&DynamicVectorClass_VoxelAnimTypeClass_const___vftable; /*0x67acb3*/
+  *(void **)this = (void*)&DynamicVectorClass_VoxelAnimTypeClass_const___vftable; /*0x67acb3*/
   this->u32_14 = 10; /*0x67acb9*/
   this->q010 = 0; /*0x67acc0*/
   return this; /*0x67acc9*/
@@ -367,7 +369,7 @@ char DynamicVector::Add2(VectorClass_flat * aP1)
   int v3; // ecx
   int v4; // eax
   int v6; // eax
-  int v7; // edx
+  void * v7;
 
   v3 = this->Capacity; /*0x67ad83*/
   if ( this->Count >= v3 ) /*0x67ad8b*/
@@ -474,7 +476,7 @@ unsigned int * DynamicVector::Constructor_Techno(int a2, int a3)
   this->Capacity = a2; /*0x7342e0*/
   this->IsInitialized = 1; /*0x7342e3*/
   this->IsAllocated = 0; /*0x7342e7*/
-  *this = &(void*)(void*)&VectorClass_TechnoClass___vftable; /*0x7342eb*/
+  *this = (void*)&VectorClass_TechnoClass___vftable; /*0x7342eb*/
   if ( a2 ) /*0x7342f1*/
   {
     if ( a3 ) /*0x7342f9*/
@@ -487,7 +489,7 @@ unsigned int * DynamicVector::Constructor_Techno(int a2, int a3)
       this->IsAllocated = 1; /*0x73430f*/
     }
   }
-  *this = &(void*)(void*)&DynamicVectorClass_TechnoClass___vftable; /*0x734313*/
+  *this = (void*)&DynamicVectorClass_TechnoClass___vftable; /*0x734313*/
   this->u32_14 = 10; /*0x734319*/
   this->q010 = 0; /*0x734320*/
   return this; /*0x734329*/

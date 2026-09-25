@@ -8,6 +8,8 @@
 #include "e4/classes/MSFrameAnim_e4.hpp"
 #include "e4/classes/ConvertClass_e4.hpp"
 #include "e4/classes/DynamicVector_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x5D55A0
@@ -406,7 +408,7 @@ VectorClass_flat * MSFont_18::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x5d56e3*/
-  *this = &(void*)(void*)&VectorClass_HWND_____vftable; /*0x5d56e6*/
+  *(void **)this = (void*)&VectorClass_HWND_____vftable; /*0x5d56e6*/
   if ( v3 && this->IsAllocated ) /*0x5d56f0*/
   {
     RA2_OPDEL(v3); /*0x5d56f8*/
@@ -427,7 +429,7 @@ DynamicVector * MSFont_18::Constructor_VectorClass_HWND_____(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x5d5733*/
-  *this = &(void*)(void*)&VectorClass_HWND_____vftable; /*0x5d5736*/
+  *(void **)this = (void*)&VectorClass_HWND_____vftable; /*0x5d5736*/
   if ( v3 && this->IsAllocated ) /*0x5d5740*/
   {
     RA2_OPDEL(v3); /*0x5d5748*/
@@ -448,7 +450,7 @@ DynamicVector * MSFont_18::Constructor_VectorClass_AcceleratorTracker_(char a2)
   void *v3; // eax
 
   v3 = (void *)*(this + 1); /*0x5d57d3*/
-  *this = &(void*)(void*)&VectorClass_AcceleratorTracker_vftable; /*0x5d57d6*/
+  *(void **)this = (void*)&VectorClass_AcceleratorTracker_vftable; /*0x5d57d6*/
   if ( v3 && *((_BYTE *)this + 13) ) /*0x5d57e0*/
   {
     RA2_OPDEL(v3); /*0x5d57e8*/

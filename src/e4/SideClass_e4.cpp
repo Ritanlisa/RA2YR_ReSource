@@ -8,6 +8,8 @@
 #include "e4/classes/CCINIClass_e4.hpp"
 #include "e4/classes/MissionClass_e4.hpp"
 #include "e4/classes/WeaponTypeClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x679A10
@@ -110,7 +112,7 @@ int SideClass::LoadAllFromINI(CCINIClass * aP0)
 namespace gamemd {
 unsigned int * SideClass::Construct(CCINIClass * aP1)
 {
-  int v3; // eax
+  SideClass * v3;
 
   AbstractTypeClass::Constructor(aP1); /*0x6a4559*/
   *(&this->vtable49) = 0; /*0x6a4563*/
@@ -119,11 +121,11 @@ unsigned int * SideClass::Construct(CCINIClass * aP1)
   this->u8_A5 = 0; /*0x6a4576*/
   *(&this->uniqueId3) = 10; /*0x6a457c*/
   *(&this->uniqueId2) = 0; /*0x6a4586*/
-  *(&this->vtable48) = &(void*)(void*)&TypeList_int_vftable; /*0x6a458c*/
-  *this = &(void*)(void*)&SideClass_vftable; /*0x6a4597*/
-  this->vtable2 = &(void*)(void*)&SideClass_vftable; /*0x6a459d*/
-  this->vtable3 = &(void*)(void*)&SideClass_vftable; /*0x6a45a3*/
-  this->vtable4 = &(void*)(void*)&SideClass_vftable; /*0x6a45aa*/
+  *(&this->vtable48) = (void*)&TypeList_int_vftable; /*0x6a458c*/
+  *(void **)this = (void*)&SideClass_vftable; /*0x6a4597*/
+  this->vtable2 = (void*)&SideClass_vftable; /*0x6a459d*/
+  this->vtable3 = (void*)&SideClass_vftable; /*0x6a45a3*/
+  this->vtable4 = (void*)&SideClass_vftable; /*0x6a45aa*/
   AbstractClass::GenerateUniqueID((int)(this + 1)); /*0x6a45b1*/
   if ( g_ObjectTypeList < dword_8B4128 /*0x6a45ea*/
     || (byte_8B412D || !dword_8B4128)
@@ -174,11 +176,11 @@ int SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
       *(_BYTE *)(v2 + 165) = 0; /*0x6a47c5*/
       v2->q0AC = 10; /*0x6a47cb*/
       v2->q0A8 = 0; /*0x6a47d1*/
-      v2->q098 = &(void*)(void*)&TypeList_int_vftable; /*0x6a47d7*/
-      *(_DWORD *)v2 = &(void*)(void*)&SideClass_vftable; /*0x6a47e1*/
-      v2->vtable2 = &(void*)(void*)&SideClass_vftable; /*0x6a47e7*/
-      v2->vtable3 = &(void*)(void*)&SideClass_vftable; /*0x6a47ee*/
-      v2->vtable4 = &(void*)(void*)&SideClass_vftable; /*0x6a47f5*/
+      v2->q098 = (void*)&TypeList_int_vftable; /*0x6a47d7*/
+      *(void **)v2 = (void*)&SideClass_vftable; /*0x6a47e1*/
+      v2->vtable2 = (void*)&SideClass_vftable; /*0x6a47e7*/
+      v2->vtable3 = (void*)&SideClass_vftable; /*0x6a47ee*/
+      v2->vtable4 = (void*)&SideClass_vftable; /*0x6a47f5*/
     }
     v5 = v2 + 152; /*0x6a47fc*/
     if ( v5 ) /*0x6a4804*/
@@ -189,7 +191,7 @@ int SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
       *(_BYTE *)(v5 + 13) = 0; /*0x6a4810*/
       *(_DWORD *)(v5 + 20) = 10; /*0x6a4813*/
       *(_DWORD *)(v5 + 16) = 0; /*0x6a4816*/
-      *(_DWORD *)v5 = &(void*)(void*)&TypeList_int_vftable; /*0x6a4819*/
+      *(void **)v5 = (void*)&TypeList_int_vftable; /*0x6a4819*/
     }
     (*(void (__stdcall **)(int, int *, int, _DWORD))(aP1->vtable4)(aP1, &aP1, 4, 0); /*0x6a482a*/
     for ( i = 0; i < aP1; ++i ) /*0x6a4833*/
@@ -221,10 +223,10 @@ void * SideClass::Init(char a2)
   int v3; // eax
   void *v4; // eax
 
-  *this = &(void*)(void*)&SideClass_vftable; /*0x6a4936*/
-  this->vtable2 = &(void*)(void*)&SideClass_vftable; /*0x6a493c*/
-  this->vtable3 = &(void*)(void*)&SideClass_vftable; /*0x6a4943*/
-  this->vtable4 = &(void*)(void*)&SideClass_vftable; /*0x6a494a*/
+  *(void **)this = (void*)&SideClass_vftable; /*0x6a4936*/
+  this->vtable2 = (void*)&SideClass_vftable; /*0x6a493c*/
+  this->vtable3 = (void*)&SideClass_vftable; /*0x6a4943*/
+  this->vtable4 = (void*)&SideClass_vftable; /*0x6a494a*/
   AbstractClass::AnnounceExpiredPointer(1); /*0x6a4951*/
   v3 = (*(int (__thiscall **)(int *, void ***))(dword_8B4120 + 16))(&dword_8B4120, &this); /*0x6a496a*/
   if ( v3 != -1 && v3 < g_ObjectTypeList && v3 < --g_ObjectTypeList ) /*0x6a4985*/
@@ -237,7 +239,7 @@ void * SideClass::Init(char a2)
     while ( v3 < g_ObjectTypeList ); /*0x6a499d*/
   }
   v4 = *(&this->vtable49); /*0x6a499f*/
-  *(&this->vtable48) = &(void*)(void*)&VectorClass_int_vftable; /*0x6a49a5*/
+  *(&this->vtable48) = (void*)&VectorClass_int_vftable; /*0x6a49a5*/
   if ( v4 && this->u8_A5 ) /*0x6a49b3*/
   {
     RA2_OPDEL(v4); /*0x6a49be*/

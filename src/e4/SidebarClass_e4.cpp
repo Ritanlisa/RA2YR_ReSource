@@ -14,7 +14,13 @@
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/Skirmish_e4.hpp"
 #include "e4/classes/TeamTypeClass_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/TechnoTypeClass_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
+#include "e4/classes/Draw_e4.hpp"
+#include "e4/classes/String_e4.hpp"
+#include "e4/classes/BuildingTypeClass_e4.hpp"
+#include "e4/classes/TechnoClass_e4.hpp"
 
 // 0x4C9C50
 namespace gamemd {
@@ -242,7 +248,7 @@ int SidebarClass::Redraw(char a2)
 {
   int v2; // edi
   int v3; // esi
-  void *v5; // ebp
+  unsigned int v5;
   int i; // edi
   int v7; // eax
   int *v8; // esi

@@ -52,13 +52,7 @@ struct E4Recv_4B4E10 {
     unsigned int q5684;  // 0x5684
     unsigned int q6038;  // 0x6038
     unsigned int q6408;  // 0x6408
-    unsigned int q018;
-    unsigned int q0200;
-    unsigned int q048;
-    unsigned int q04C;
-    unsigned int q0B0;
-    unsigned int q140;
 // --- flat members (END) ---
-    DropListClass * sub_4B4E10(DropListClass * aP1, wchar_t * String, int a4, DropListClass * aP4, ControlClass * aP5, ControlClass * aP6, ControlClass * aP7, int a9, ListClass * a10, int a11);  // 0x4B4E10
+    DropListClass * sub_4B4E10(DropListClass * aP1,  wchar_t * String,  int a4,  DropListClass * aP4,  void* aP5,  void* aP6,  void* aP7,  int a9,  void* a10,  int a11);    // 0x4B4E10
 };
 } // namespace gamemd

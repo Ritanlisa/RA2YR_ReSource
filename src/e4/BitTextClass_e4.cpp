@@ -4,6 +4,8 @@
 #include "e4/classes/File_e4.hpp"
 #include "e4/classes/BitTextClass_e4.hpp"
 #include "e4/classes/Font_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x433880
@@ -14,7 +16,7 @@ int BitTextClass::ParseFontData(char * Source)
   _DWORD *Font; // eax
 
   v3 = (struct tagRECT *)(&this->u32_108); /*0x43388a*/
-  *(_DWORD *)this = &(void*)(void*)&BitFont_vftable; /*0x433895*/
+  *(void **)this = (void*)&BitFont_vftable; /*0x433895*/
   this->m_CharWidth = 0; /*0x43389b*/
   this->u16_24 = 0x7FFF; /*0x43389e*/
   this->u16_26 = 13653; /*0x4338a4*/
@@ -59,7 +61,7 @@ int BitTextClass::ParseFontData(char * Source)
 namespace gamemd {
 unsigned int * BitTextClass::LoadFont()
 {
-  *this = &(void*)(void*)&BitText_vftable; /*0x434ad5*/
+  *(void **)this = (void*)&BitText_vftable; /*0x434ad5*/
   if ( RA2_OPNEW(0x44u) ) /*0x434adb*/
   {
     g_FogOfWarState = BitTextClass::ParseFontData(aGameFnt); /*0x434af3*/

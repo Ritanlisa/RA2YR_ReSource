@@ -9,6 +9,6 @@ struct E4Recv_7B39D0 {
     unsigned int vfptr;  // 0x0
     unsigned int u32_6554;  // 0x6554
 // --- flat members (END) ---
-    char sub_7B39D0(unsigned int * a2, short a3);  // 0x7B39D0
+    char sub_7B39D0(unsigned int * a2,  short a3);    // 0x7B39D0
 };
 } // namespace gamemd

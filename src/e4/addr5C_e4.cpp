@@ -39,7 +39,15 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/CCFileClass_e4.hpp"
 #include "e4/classes/Vector_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/Game_e4.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
+#include "e4/classes/LayerClass_e4.hpp"
+#include "e4/classes/MouseClass_e4.hpp"
+#include "e4/classes/RandomMap_e4.hpp"
 
 // 0x5C00E0
 namespace gamemd {
@@ -96,7 +104,7 @@ unsigned int * Movie_Create(int a1, int a2, int * a3)
   _DWORD *result; // eax
   _DWORD *v10; // edi
   _BYTE *v11; // eax
-  _BYTE *v12; // esi
+  _DWORD * v12;
   int v13; // [esp+14h] [ebp-E4h]
   int v14; // [esp+18h] [ebp-E0h]
   int v15; // [esp+1Ch] [ebp-DCh]
@@ -132,7 +140,7 @@ unsigned int * Movie_Create(int a1, int a2, int * a3)
     result = RA2_OPNEW(0x14u); /*0x5c0885*/
     if ( result ) /*0x5c088f*/
     {
-      *result = &(void*)(void*)&BinkMovieHandle_vftable; /*0x5c0897*/
+      *(void **)result = (void*)&BinkMovieHandle_vftable; /*0x5c0897*/
       result[4] = v8; /*0x5c089d*/
       if ( v8 ) /*0x5c08a0*/
       {
@@ -151,7 +159,7 @@ unsigned int * Movie_Create(int a1, int a2, int * a3)
   if ( !v11 ) /*0x5c091e*/
     return 0; /*0x5c0955*/
   v11[20] = 0; /*0x5c0920*/
-  *(_DWORD *)v11 = &(void*)(void*)&VQMovieHandle_vftable; /*0x5c0924*/
+  *(void **)v11 = (void*)&VQMovieHandle_vftable; /*0x5c0924*/
   *((_DWORD *)v11 + 4) = v10; /*0x5c092a*/
   *((_DWORD *)v11 + 2) = MovieClass::GetWidth(*v10); /*0x5c0934*/
   *((_DWORD *)v12 + 3) = MovieClass::GetHeight(**((_DWORD **)v12 + 4)); /*0x5c0941*/
@@ -471,23 +479,23 @@ void RotateBitBufferLeft(int * a0, int a2, Buffer * aP2)
   char v3; // di
   int *v4; // esi
   int v5; // eax
-  int v6; // edx
+  Buffer * v6;
   int v7; // ecx
   unsigned int j; // ebp
   int v9; // edx
   int v10; // eax
   int v11; // eax
   int v12; // edi
-  int v13; // ebx
+  Buffer * v13;
   int *v14; // edx
   int *v15; // ebx
   int *v16; // ebp
   bool v17; // zf
   int v18; // esi
   int i; // esi
-  int v20; // ecx
+  Buffer * v20;
   char v21; // [esp+10h] [ebp-4h]
-  int v22; // [esp+10h] [ebp-4h]
+  Buffer * v22;
 
   v3 = a2; /*0x5c67a5*/
   v4 = a0; /*0x5c67a7*/
@@ -758,7 +766,7 @@ int MultiplyAddBigInteger(char * a1, unsigned short * a2, short a3, int a4)
 {
   int v4; // ebx
   char *v5; // ebp
-  int *v6; // eax
+  unsigned int v6;
   int v7; // ecx
   int v8; // edx
   int v9; // ecx
@@ -1052,7 +1060,7 @@ namespace gamemd {
 void SubtractBigInteger(unsigned int * a1, unsigned int * a2, int a3, char * a4, Buffer * aP2)
 {
   char *v7; // eax
-  int v8; // edx
+  Buffer * v8;
   int v9; // esi
   int v11; // ecx
   _DWORD *v12; // eax
@@ -3076,7 +3084,7 @@ int BinkMovieHandle::_vt03(unsigned char a2)
 namespace gamemd {
 void E4Recv_5C0630::sub_5C0630()
 {
-  *this = &(void*)(void*)&MovieHandle_vftable; /*0x5c0630*/
+  *this = (void*)&MovieHandle_vftable; /*0x5c0630*/
 }
 } // namespace gamemd
 
@@ -3084,7 +3092,7 @@ void E4Recv_5C0630::sub_5C0630()
 namespace gamemd {
 void E4Recv_5C0E10::sub_5C0E10()
 {
-  *(_DWORD *)this = &(void*)(void*)&MultiplayerBattle_vftable; /*0x5c0e10*/
+  *(_DWORD *)this = (void*)&MultiplayerBattle_vftable; /*0x5c0e10*/
   MultiplayerGameMode::Dtor(); /*0x5c0e16*/
 }
 } // namespace gamemd
@@ -3375,7 +3383,7 @@ int sub_5C5CC0()
 namespace gamemd {
 void E4Recv_5C5D20::sub_5C5D20()
 {
-  *(_DWORD *)this = &(void*)(void*)&FreeForAll_vftable; /*0x5c5d20*/
+  *(_DWORD *)this = (void*)&FreeForAll_vftable; /*0x5c5d20*/
   MultiplayerGameMode::Dtor(); /*0x5c5d26*/
 }
 } // namespace gamemd
@@ -3538,7 +3546,7 @@ int sub_5C6080(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 namespace gamemd {
 void E4Recv_5C6190::sub_5C6190()
 {
-  *(_DWORD *)this = &(void*)(void*)&MultiplayerManBattle_vftable; /*0x5c6190*/
+  *(_DWORD *)this = (void*)&MultiplayerManBattle_vftable; /*0x5c6190*/
   MultiplayerGameMode::Dtor(); /*0x5c6196*/
 }
 } // namespace gamemd
@@ -4096,7 +4104,7 @@ int sub_5C93C0()
 namespace gamemd {
 void E4Recv_5C9420::sub_5C9420()
 {
-  *(_DWORD *)this = &(void*)(void*)&Megawealth_vftable; /*0x5c9420*/
+  *(_DWORD *)this = (void*)&Megawealth_vftable; /*0x5c9420*/
   MultiplayerGameMode::Dtor(); /*0x5c9426*/
 }
 } // namespace gamemd
@@ -4392,7 +4400,7 @@ int sub_5CA610()
 namespace gamemd {
 void E4Recv_5CA670::sub_5CA670()
 {
-  *(_DWORD *)this = &(void*)(void*)&MultiplayerSiege_vftable; /*0x5ca670*/
+  *(_DWORD *)this = (void*)&MultiplayerSiege_vftable; /*0x5ca670*/
   MultiplayerGameMode::Dtor(); /*0x5ca676*/
 }
 } // namespace gamemd
@@ -4464,7 +4472,7 @@ void sub_5CACD0()
 namespace gamemd {
 void E4Recv_5CAE60::sub_5CAE60()
 {
-  *this = &(void*)(void*)&MultiplayerSiegeDefenderTeam_vftable; /*0x5cae60*/
+  *this = (void*)&MultiplayerSiegeDefenderTeam_vftable; /*0x5cae60*/
   MultiplayerTeam::Destructor(); /*0x5cae66*/
 }
 } // namespace gamemd
@@ -4473,7 +4481,7 @@ void E4Recv_5CAE60::sub_5CAE60()
 namespace gamemd {
 void E4Recv_5CAF00::sub_5CAF00()
 {
-  *this = &(void*)(void*)&MultiplayerSiegeAttackerTeam_vftable; /*0x5caf00*/
+  *this = (void*)&MultiplayerSiegeAttackerTeam_vftable; /*0x5caf00*/
   MultiplayerTeam::Destructor(); /*0x5caf06*/
 }
 } // namespace gamemd
@@ -4563,7 +4571,7 @@ int sub_5CB360()
 namespace gamemd {
 void E4Recv_5CB3E0::sub_5CB3E0()
 {
-  *(_DWORD *)this = &(void*)(void*)&UnholyAlliance_vftable; /*0x5cb3e0*/
+  *(_DWORD *)this = (void*)&UnholyAlliance_vftable; /*0x5cb3e0*/
   MultiplayerGameMode::Dtor(); /*0x5cb3e6*/
 }
 } // namespace gamemd
@@ -4601,7 +4609,7 @@ int E4Recv_5CD570::sub_5CD570(const wchar_t ** a2, int a3, int a4, int a5, int *
   v11 = 0; /*0x5cd597*/
   this->q040 = Timer::GetTicks(); /*0x5cd59c*/
   this->q018 = 0; /*0x5cd59f*/
-  *(_DWORD *)this = &(void*)(void*)&MSAnim_vftable; /*0x5cd5a5*/
+  *(_DWORD *)this = (void*)&MSAnim_vftable; /*0x5cd5a5*/
   WideString::AssignFromPtr((wchar_t **)(&this->q0088), a2); /*0x5cd5ab*/
   this->q02C = a8; /*0x5cd5c0*/
   this->q030 = a9; /*0x5cd5c7*/
@@ -4612,7 +4620,7 @@ int E4Recv_5CD570::sub_5CD570(const wchar_t ** a2, int a3, int a4, int a5, int *
   this->q048 = 0; /*0x5cd5da*/
   this->q124 = a10; /*0x5cd5dd*/
   this->q04C = 0; /*0x5cd5e0*/
-  *(_DWORD *)this = &(void*)(void*)&MSPrintAnim_vftable; /*0x5cd5e3*/
+  *(_DWORD *)this = (void*)&MSPrintAnim_vftable; /*0x5cd5e3*/
   this->q040 = Timer::GetTicks(); /*0x5cd5f6*/
   this->q050 = v15; /*0x5cd5f9*/
   this->q018 = a7; /*0x5cd5ff*/

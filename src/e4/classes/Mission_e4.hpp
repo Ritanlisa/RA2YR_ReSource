@@ -19,7 +19,7 @@ struct Mission {
     ScriptClass * ptr_28;  // 0x28
     unsigned char q02C;  // 0x2C
     unsigned char q030;  // 0x30
-    IUnknown * ptr_34;  // 0x34
+    void * ptr_34;  // 0x34
     unsigned int u32_38;  // 0x38
     unsigned char q03C;  // 0x3C
     unsigned int u32_40;  // 0x40
@@ -27,7 +27,7 @@ struct Mission {
     unsigned char q048;  // 0x48
     unsigned char q04C;  // 0x4C
     unsigned int q050;  // 0x50
-    IUnknown * ptr_54;  // 0x54
+    void * ptr_54;  // 0x54
     unsigned char q058;  // 0x58
     unsigned char q060;  // 0x60
     unsigned int u32_64;  // 0x64
@@ -38,7 +38,7 @@ struct Mission {
     unsigned char q078;  // 0x78
     unsigned char q07C;  // 0x7C
     unsigned int q080;  // 0x80
-    IUnknown * q084;  // 0x84
+    void * q084;  // 0x84
     unsigned char q088;  // 0x88
     unsigned char q08C;  // 0x8C
     unsigned char u8_8D;  // 0x8D
@@ -79,7 +79,7 @@ struct Mission {
     void* q124;  // 0x124
     unsigned char q128;  // 0x128
     unsigned char q12C;  // 0x12C
-    IUnknown * q130;  // 0x130
+    void * q130;  // 0x130
     unsigned int q134;  // 0x134
     unsigned char q138;  // 0x138
     unsigned char q140;  // 0x140
@@ -118,7 +118,7 @@ struct Mission {
     unsigned int u32_2B4;  // 0x2B4
     unsigned int u32_2BC;  // 0x2BC
     unsigned char q300;  // 0x300
-    IUnknown * q304;  // 0x304
+    void * q304;  // 0x304
     unsigned int q308;  // 0x308
     unsigned char q310;  // 0x310
     unsigned char q320;  // 0x320
@@ -161,7 +161,7 @@ struct Mission {
     unsigned char u8_6DC;  // 0x6DC
     unsigned int q700;  // 0x700
     unsigned char q768;  // 0x768
-    IUnknown * q774;  // 0x774
+    void * q774;  // 0x774
     unsigned char q784;  // 0x784
     unsigned char q800;  // 0x800
     unsigned int q804;  // 0x804
@@ -209,7 +209,7 @@ struct Mission {
     void* q171C;  // 0x171C
     unsigned char q1720;  // 0x1720
     unsigned int q1728;  // 0x1728
-    IUnknown * q1908;  // 0x1908
+    void * q1908;  // 0x1908
     unsigned int q1910;  // 0x1910
     unsigned char q1924;  // 0x1924
     unsigned char q2048;  // 0x2048
@@ -268,7 +268,7 @@ struct Mission {
     unsigned char q6038;  // 0x6038
     unsigned char q6294;  // 0x6294
     unsigned char q6298;  // 0x6298
-    IUnknown * q6408;  // 0x6408
+    void * q6408;  // 0x6408
     unsigned char q640C;  // 0x640C
     unsigned int u32_100;
     unsigned int u32_101;
@@ -284,20 +284,18 @@ struct Mission {
     unsigned int vt_slot_1156;
     unsigned int vt_slot_1348;
     unsigned int vt_slot_1368;
+    unsigned int vt_slot_188;
     unsigned int vt_slot_248;
     unsigned int vt_slot_388;
     unsigned int vt_slot_452;
     unsigned int vt_slot_72;
     unsigned int vt_slot_76;
     unsigned int vt_slot_800;
-    unsigned int SetCursor;
-    unsigned int u32_8885;
-    unsigned int vt_slot_188;
 // --- flat members (END) ---
     int ExecuteTechnoMissionAction();  // 0x520AE0
     char ProcessUnitMissionAI();  // 0x520F40
-    int SetAndCall(IUnknown * aP1, IUnknown * aP2);  // 0x5BDA80
-    char AssignTeamMemberMissions(ScriptClass * aP1, int a3);  // 0x6ED7E0
+    int SetAndCall(void* aP1,  void* aP2);    // 0x5BDA80
+    char AssignTeamMemberMissions(ScriptClass * aP1,  int a3);    // 0x6ED7E0
     int GetMissionDelay();  // 0x70F770
 };
 } // namespace gamemd

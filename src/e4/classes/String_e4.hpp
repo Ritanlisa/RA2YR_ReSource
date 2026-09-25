@@ -6,9 +6,9 @@
 namespace gamemd {
 struct String {
 // --- flat members (BEGIN) ---
-    ObjectClass * ptr_4;  // 0x4
+    unsigned int q004;  // 0x4
     unsigned int u16_6;  // 0x6
-    ObjectClass * ptr_8;  // 0x8
+    unsigned int q008;  // 0x8
     unsigned int u32_C;  // 0xC
     unsigned int q018;  // 0x18
     unsigned int q024;  // 0x24
@@ -21,19 +21,21 @@ struct String {
     unsigned int q1908;  // 0x1908
     unsigned int q5494;  // 0x5494
     unsigned int q6408;  // 0x6408
+    void* ptr_4;
+    void* ptr_8;
     void* ptr_88;
 // --- flat members (END) ---
-    void AssignWideToChar(CampaignScore * aP1, CampaignScore * aP2);  // 0x49B760
-    char * AllocAndCopy(RandomStruct * aP1, IUnknown * aP2);  // 0x4CB5E0
+    void AssignWideToChar(CampaignScore * aP1,  CampaignScore * aP2);    // 0x49B760
+    char * AllocAndCopy(RandomStruct * aP1,  IUnknown * aP2);    // 0x4CB5E0
     void Release();  // 0x5BD5A0
     int SplitComma(ObjectClass * aP1);  // 0x5D0380
     int NormalizeNewlines();  // 0x5F3350
     int To_Waypoint();  // 0x763690
     void TrimLeft(ObjectClass * aP1);  // 0x7B51D0
     unsigned int Length();  // 0x7B54B0
-    char Replace(char * SubStr, const char * a3);  // 0x7B57A0
-    int Tokenize(int a2, ObjectClass * aP2, ObjectClass * aP3);  // 0x7B5F10
-    int Tokenize2(int a2, wchar_t * Str, void ** a4);  // 0x7B7A60
+    char Replace(char * SubStr,  const char * a3);    // 0x7B57A0
+    int Tokenize(int a2,  ObjectClass * aP2,  ObjectClass * aP3);    // 0x7B5F10
+    int Tokenize2(int a2,  wchar_t * Str,  void ** a4);    // 0x7B7A60
     ObjectClass * FormatDword();  // 0x777B30
     ObjectClass * CopyConstant();  // 0x777B60
     char * CopyUpper(ObjectClass * aP1);  // 0x4F4C30
@@ -51,9 +53,9 @@ struct String {
     char ** Reassign(AbstractClass * aP1);  // 0x7B4940
     const char ** Append(CCINIClass * aP1);  // 0x7B4C20
     const char ** Append2(IUnknown * aP1);  // 0x7B4CD0
-    char ** Concat2(char ** a2, const char * a3);  // 0x7B4DA0
-    char ** Concat(char ** a1, IUnknown * aP2);  // 0x7B4ED0
-    char Erase(MPCooperative * aP1, int a3);  // 0x7B5020
+    char ** Concat2(char ** a2,  const char * a3);    // 0x7B4DA0
+    char ** Concat(char ** a1,  IUnknown * aP2);    // 0x7B4ED0
+    char Erase(MPCooperative * aP1,  int a3);    // 0x7B5020
     void TrimRight(ObjectClass * aP1);  // 0x7B5230
     char * GetOrEmpty();  // 0x7B5400
     char * GetOrEmpty_Alt();  // 0x7B5440
@@ -62,6 +64,6 @@ struct String {
     char ** ToLowerCopy(ObjectClass * aP1);  // 0x7B5B80
     char CopyTruncated(size_t Count);  // 0x7B5D70
     char TruncateTo(size_t Count);  // 0x7B78D0
-    int Wrapper5to4(CampaignScore * aP0, int a2, int a3, int a4);  // 0x7CCA19
+    int Wrapper5to4(CampaignScore * aP0,  int a2,  int a3,  int a4);    // 0x7CCA19
 };
 } // namespace gamemd

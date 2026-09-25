@@ -32,6 +32,8 @@
 #include "e4/classes/NeuronClass_25_e4.hpp"
 #include "e4/classes/VectorClass_flat_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/Compare_e4.hpp"
 
 // 0x4311C0
@@ -4991,20 +4993,20 @@ int Network::finalizeSession()
   this->u32_3F340 = 0; /*0x7b2dca*/
   this->u32_3F344 = 1; /*0x7b2dd0*/
   this->u32_3F345 = 0; /*0x7b2dd7*/
-  this->u32_3F338 = &(void*)(void*)&DynamicVectorClass_unsigned_char___vftable; /*0x7b2ddd*/
+  this->u32_3F338 = (void*)&DynamicVectorClass_unsigned_char___vftable; /*0x7b2ddd*/
   this->u32_3F34C = 10; /*0x7b2de3*/
   this->u32_3F348 = 0; /*0x7b2de9*/
   this->u32_3F554 = 0; /*0x7b2def*/
   this->u32_3F558 = 0; /*0x7b2df5*/
   this->u32_3F55C = 1; /*0x7b2dfb*/
   this->u32_3F55D = 0; /*0x7b2e02*/
-  this->u32_3F550 = &(void*)(void*)&DynamicVectorClass_unsigned_char___vftable; /*0x7b2e08*/
+  this->u32_3F550 = (void*)&DynamicVectorClass_unsigned_char___vftable; /*0x7b2e08*/
   this->u32_3F564 = 10; /*0x7b2e0e*/
   this->u32_3F560 = 0; /*0x7b2e14*/
   this->u32_3F2FC = 0; /*0x7b2e1a*/
   this->u32_3F330 = 0; /*0x7b2e21*/
   this->qFD5A = 0; /*0x7b2e27*/
-  *(_DWORD *)this = &(void*)(void*)&UDPInterfaceClass_vftable; /*0x7b2e2d*/
+  *(_DWORD *)this = (void*)&UDPInterfaceClass_vftable; /*0x7b2e2d*/
   this->u32_3F334 = -1; /*0x7b2e33*/
   return this; /*0x7b2e3f*/
 }

@@ -5,6 +5,8 @@
 #include "e4/classes/DiskLaserClass_e4.hpp"
 #include "e4/classes/TechnoTypeClass_e4.hpp"
 #include "e4/classes/Math_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 // 0x4A7A30
@@ -13,10 +15,10 @@ DiskLaserClass::DiskLaserClass()
   int v2; // eax
 
   AbstractClass::Constructor(); /*0x4a7a33*/
-  *(_DWORD *)this = &(void*)(void*)&DiskLaserClass_vftable; /*0x4a7a3a*/
-  this->vtable2 = &(void*)(void*)&DiskLaserClass_vftable; /*0x4a7a40*/
-  this->vtable3 = &(void*)(void*)&DiskLaserClass_vftable; /*0x4a7a47*/
-  this->vtable4 = &(void*)(void*)&DiskLaserClass_vftable; /*0x4a7a4e*/
+  *(_DWORD *)this = (void*)&DiskLaserClass_vftable; /*0x4a7a3a*/
+  this->vtable2 = (void*)&DiskLaserClass_vftable; /*0x4a7a40*/
+  this->vtable3 = (void*)&DiskLaserClass_vftable; /*0x4a7a47*/
+  this->vtable4 = (void*)&DiskLaserClass_vftable; /*0x4a7a4e*/
   this->q024 = 0; /*0x4a7a55*/
   this->q028 = 0; /*0x4a7a58*/
   this->q02C = 0; /*0x4a7a5b*/
@@ -42,10 +44,10 @@ void * DiskLaserClass::CopyTo(char a2)
 {
   int v3; // eax
 
-  *this = &(void*)(void*)&DiskLaserClass_vftable; /*0x4a7c9d*/
-  this->vtable2 = &(void*)(void*)&DiskLaserClass_vftable; /*0x4a7ca3*/
-  this->vtable3 = &(void*)(void*)&DiskLaserClass_vftable; /*0x4a7caa*/
-  this->vtable4 = &(void*)(void*)&DiskLaserClass_vftable; /*0x4a7cb1*/
+  *this = (void*)&DiskLaserClass_vftable; /*0x4a7c9d*/
+  this->vtable2 = (void*)&DiskLaserClass_vftable; /*0x4a7ca3*/
+  this->vtable3 = (void*)&DiskLaserClass_vftable; /*0x4a7caa*/
+  this->vtable4 = (void*)&DiskLaserClass_vftable; /*0x4a7cb1*/
   v3 = (*(int (__thiscall **)(int *, _DWORD **))(dword_8A0208 + 16))(&dword_8A0208, &this); /*0x4a7cc3*/
   if ( v3 != -1 && v3 < dword_8A0218 && v3 < --dword_8A0218 ) /*0x4a7cde*/
   {
@@ -72,10 +74,10 @@ int DiskLaserClass::Write(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x4a7ba9*/
     {
       AbstractClass::InitVtables(aP0, (int)&aP1); /*0x4a7bb2*/
-      *aP0 = (int)&(void*)(void*)&DiskLaserClass_vftable; /*0x4a7bb7*/
-      aP0[1] = (int)&(void*)(void*)&DiskLaserClass_vftable; /*0x4a7bbd*/
-      aP0[2] = (int)&(void*)(void*)&DiskLaserClass_vftable; /*0x4a7bc4*/
-      aP0[3] = (int)&(void*)(void*)&DiskLaserClass_vftable; /*0x4a7bcb*/
+      *aP0 = (int)&DiskLaserClass_vftable; /*0x4a7bb7*/
+      aP0[1] = (int)&DiskLaserClass_vftable; /*0x4a7bbd*/
+      aP0[2] = (int)&DiskLaserClass_vftable; /*0x4a7bc4*/
+      aP0[3] = (int)&DiskLaserClass_vftable; /*0x4a7bcb*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP0 + 9); /*0x4a7bdb*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP0 + 10); /*0x4a7be9*/
